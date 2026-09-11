@@ -6626,3 +6626,55 @@ geçince bir karar gibi okunuyor. Beş turdur ölçtüğüm şey hep aynı: yaz�
 gerekçe denetlenmezse eskiyor. Bu seferki en pahalısıydı — öğrenme
 uygulamasında "neden yanlış" açıklaması bir ayrıntı değil, ürünün kendisi.
 
+
+### 11.185 Yürüyüş modunda ağ hatası "tur bitti" gibi gösteriliyordu
+
+Web-özel sözlüğün `walk.` uzayını (45 anahtar, mobilde 13) denetlerken çıktı.
+İki uygulamanın yürüyüş modu farklı adlandırma kullanıyor (mobil `walkmode.*`
++ `walk.*`, web yalnız `walk.*`) ve o ayrım tek başına bir hata değil; altında
+duran şey hataydı.
+
+Android'de walk kuyruğunu getiren **iki çağrının da `catch`i sessizdi**. İlkinin
+yanındaki yorum eskimişti: "girişsiz/hatada demo kalır" - demo yolu kaldırılınca
+geriye BOŞ kuyruk kalıyordu.
+
+Sonuç: kullanıcı "Başla"ya basıyor, mikrofon izni isteniyor, ekran kilidi
+açılıyor, arka plan servisi başlıyor, açılış sesi çalıyor, karşılama okunuyor
+ve tur hemen **"Tur bitti! 0/0 · Kaydedildi"** ekranına düşüyor. Bir ağ hatası
+bitmiş tur gibi gösteriliyordu; tekrar zamanı gelen kelime olmadığında da aynı
+şey oluyordu. Web üç ayrı ekran çiziyor: hata, izin yok, boş.
+
+Kapı: §97 dört çıkmaz durumu ölçüyor. `unsupported` ölçüm dışı - tarayıcının
+konuşma tanıması olmayabilir, Android kendi tanıyıcısıyla geliyor.
+
+### 11.186 Rol yapma sınavı Android'de hiç yoktu
+
+`lessonp.` uzayının denetimi (43 web-özel anahtar, mobilde 6) WP-22'ye çıktı.
+Web ders özetinde "Sınav olarak dene" düğmesi var ve `/lessons/[id]/exam`
+yüzeyine gidiyor: aynı sahne, yardım yok, 5 tur, 3 dakika, sonunda BÜTÜN
+turların tek seferde rubrikle puanlanması ve `assessments`'a yazılması.
+
+Android'de bu yüzey hiç yoktu. Kayıt defterinde §11.34'te bir kenar notu olarak
+duruyordu ("Android'de rol yapma dersin içinde bir aşama, ayrı sınav yüzeyi
+yok") - bir eksik olarak değil, bir olay adının neden eşlenemediğinin gerekçesi
+olarak. **Aynı dersi bitiren iki kullanıcıdan yalnız biri ölçülebiliyordu.**
+
+Taşınan: beş fazlı sınav ekranı (giriş, konuşma, puanlama, sonuç, hata), geri
+sayım, mikrofon tek atış + yazı yolu, rubrik kartı (görev/yapı/dilbilgisi/
+kelime, 0-4), en iyi iki cümle, en sık iki hata tipi, yapabilirlik satırı;
+`candoMap` (tablolar weble birebir, metin `/api/cando`dan); `roleplay.ts`e
+`mode` parametresi; ders özetine giriş düğmesi. 25 metin ortak sözlüğe geldi.
+
+**Bilinçli tek fark:** sağlayıcı kapalıyken web kural tabanlı bir yedek puan
+gösteriyor (`fallbackAssessment`), mobil hiç puan vermiyor. Bu ayrım mobilde
+zaten yerleşik (`ExamScreen` yazma adımı, `assess.fail_*`) ve ölçülmemiş bir
+sınavı ölçülmüş gibi göstermemek daha doğru.
+
+Kapılar: §98 sınavın sözleşmesi, §99 yapabilirlik eşlemesi.
+
+**Kapının kendi hatası da kayda değer:** §98'in "gün anahtarı" ölçümü ilk
+yazımda BİRLEŞİK gövdeye bakıyordu ve ders oynatıcısının kendi `day:` satırını
+görüp yeşil kalıyordu - sınavdan `day` silindiğinde kırmızı olmadı. Bu, §73/§78
+ile aynı sınıf: **ölçüm penceresi komşu dosyanın satırını çalıyor.** Her taraf
+artık kendi isteği kuran dosyadan okunuyor.
+
