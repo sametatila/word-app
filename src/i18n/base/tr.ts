@@ -359,6 +359,8 @@ export const trBase: Record<string, string> = {
   "writp.exact": "Doğru!",
   "writp.spelling_only": "Doğru — yazımda küçük sapma",
   "writp.order_only": "Kelimeler doğru, sıra yanlış",
+  "exam.tap_chunks": "Parçalara dokunarak cümleyi kur.",
+  "writp.build_sentence": "Cümleyi kur",
   "writp.queued": "Metnin kaydedildi; servis açılınca puanlanacak ve bildirim alacaksın.",
   "item.mono_unscored": "Değerlendirme servisi şu an cevap vermedi; kalıp kullanımına göre kaydedildi.",
   "item.mono_self_done": "{n} / {total} madde işaretlendi.",

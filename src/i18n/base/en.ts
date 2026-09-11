@@ -359,6 +359,8 @@ export const enBase: Record<string, string> = {
   "writp.exact": "Correct!",
   "writp.spelling_only": "Correct — a small spelling slip",
   "writp.order_only": "Right words, wrong order",
+  "exam.tap_chunks": "Tap the chunks to build the sentence.",
+  "writp.build_sentence": "Build the sentence",
   "writp.queued": "Your text is saved; it will be scored when the service is back and you'll get a notification.",
   "item.mono_unscored": "The assessment service did not respond; saved based on phrase use.",
   "item.mono_self_done": "{n} / {total} points ticked.",

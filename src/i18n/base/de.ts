@@ -359,6 +359,8 @@ export const deBase: Record<string, string> = {
   "writp.exact": "Richtig!",
   "writp.spelling_only": "Richtig — kleine Abweichung in der Schreibung",
   "writp.order_only": "Richtige Wörter, falsche Reihenfolge",
+  "exam.tap_chunks": "Tippe die Bausteine an, um den Satz zu bilden.",
+  "writp.build_sentence": "Bilde den Satz",
   "writp.queued": "Dein Text ist gespeichert; er wird bewertet, sobald der Dienst wieder läuft, und du bekommst eine Benachrichtigung.",
   "item.mono_unscored": "Der Bewertungsdienst hat nicht geantwortet; nach Verwendung der Redemittel gespeichert.",
   "item.mono_self_done": "{n} / {total} Punkte abgehakt.",

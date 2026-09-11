@@ -3511,9 +3511,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kalip ekler=" + (/writp\.useful_phrases/.test(src) ? "var" : "yok"),
       "hukum=" + (/writp\.exact/.test(src) && /writp\.order_only/.test(src) ? "var" : "yok"),
       "hukum olcutu=" + (/verdict === "exact" \|\| \w+\.verdict === "spelling"/.test(src) ? "exact+spelling" : "baska"),
+      /* Cumle kurma PARCALARLA: kart mobilde duz bir metin kutusuydu, yani
+         ayni gorev iki platformda iki farkli zorluktaydi ve "cumleyi KUR"
+         adinin karsiligi yalniz webdeydi. */
+      "parcalarla kurma=" + (/exam\.tap_chunks/.test(src) ? "var" : "yok"),
+      "iki yanlista acilir=" + (/>= 2\) setPhase\("revealed"\)/.test(src) ? "var" : "yok"),
+      "tohumlu dizilis=" + (/seededShuffle\(/.test(src) ? "var" : "yok"),
     ];
   };
   sameList("yazma gorevi yuzeyi", yazma("mobile/src/game/skillQuiz.tsx"), yazma("src/components/skills/writing-player.tsx"));
+}
+
+/* ── 102. tohumlu karistirma ──────────────────────────────────────────────
+ * Cumle kurma gorevinde parcalarin dizilisi bundan geliyor. Iki tarafta ayni
+ * algoritma olmali: tohum ayni ise sira da ayni olsun ki ayni gorev iki
+ * platformda ayni karisiklikla cikmaya devam etsin. */
+{
+  const govde = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ").replace(/\s+/g, " ");
+    const al = (ad, re) => ad + "=" + (re.test(src) ? "var" : "yok");
+    return [
+      al("fnv", /h \^= key\.charCodeAt\(i\); h = Math\.imul\(h, 16777619\);/),
+      al("mulberry", /a = \(a \+ 0x6d2b79f5\) >>> 0; let t = Math\.imul\(a \^ \(a >>> 15\), 1 \| a\);/),
+      al("fisher-yates", /const j = Math\.floor\(rand\(\) \* \(i \+ 1\)\);/),
+    ];
+  };
+  sameList("tohumlu karistirma", govde("mobile/src/lib/shuffle.ts"), govde("src/lib/shuffle.ts"));
 }
 
 console.log(

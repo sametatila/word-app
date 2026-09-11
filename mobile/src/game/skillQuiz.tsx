@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { todayStr } from "./session";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput } from "react-native";
@@ -10,6 +10,7 @@ import { speakTarget } from "../lib/tts";
 import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
 import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
+import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api } from "../api/client";
@@ -49,6 +50,11 @@ export function written(typed: string, accept: string[]): boolean {
  * "yanlış", sıra hatası da "yanlış" oluyordu ve öğrenci hangisini yaptığını
  * hiçbir yerden öğrenmiyordu.
  */
+/** Kurulan cümlenin karşılaştırma biçimi — web `writing-player` `normalize`. */
+function normalizeBuilt(x: string): string {
+  return x.toLocaleLowerCase("de-DE").replace(/[.!?,]/g, "").replace(/\s+/g, " ").trim();
+}
+
 function isPass(m: SentenceMatch): boolean {
   return m.verdict === "exact" || m.verdict === "spelling";
 }
@@ -268,31 +274,95 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
   );
 }
 
+/**
+ * CÜMLE KURMA — parçalara dokunarak, boş kutuya yazarak değil.
+ *
+ * Kart düz bir metin kutusuydu: aynı içerik webde karışık parçalarla
+ * veriliyor (`skills/writing-player` `BuildTask`), Androidde ise öğrenci
+ * cümleyi sıfırdan yazmak zorundaydı. İki platformda aynı görev iki farklı
+ * zorluktaydı ve "cümleyi KUR" adının karşılığı yalnız webde vardı.
+ *
+ * İki yanlıştan sonra doğru cevap açılıyor (web ile aynı sayı); dizilişi
+ * tohumlu karıştırma veriyor, yani ekran yeniden çizilince parçalar yerinden
+ * oynamıyor.
+ */
 function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
-  const [typed, setTyped] = useState("");
-  const [match, setMatch] = useState<SentenceMatch | null>(null);
-  const ok = match ? isPass(match) : false;
+  const tokens = useMemo(() => seededShuffle(t.answer.replace(/[.!?]$/, "").split(" "), `${n}|${t.answer}`), [t.answer, n]);
+  const [chosen, setChosen] = useState<number[]>([]);
+  const [phase, setPhase] = useState<"editing" | "correct" | "revealed">("editing");
+  const [fails, setFails] = useState(0);
+  const accepted = useMemo(() => [t.answer, ...(t.alternatives ?? [])].map(normalizeBuilt), [t]);
+
+  function check() {
+    const assembled = chosen.map((i) => tokens[i]).join(" ");
+    if (accepted.includes(normalizeBuilt(assembled))) { setPhase("correct"); return; }
+    const f = fails + 1;
+    setFails(f);
+    haptic("wrong");
+    if (f >= 2) setPhase("revealed");
+  }
+  const locked = phase !== "editing";
+
   return (
     <Card padded>
-      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
-      <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-          placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
-        {!done ? (
-          <PressableScale onPress={() => { if (!typed.trim()) return; const m = matchSentence(typed, t.answer, t.alternatives ?? []); setMatch(m); onSettle(isPass(m)); }} disabled={!typed.trim()}
-            style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
+      <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("writp.build_sentence")}</Text>
+      <Text variant="bodyStrong" style={{ marginTop: 4 }}><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
+      {fails > 0 && t.hint && phase === "editing" ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("rounds.hint")}: {t.hint}</Text>
+      ) : null}
+
+      <View style={{ marginTop: spacing.md, minHeight: 52, borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: 8, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
+        {chosen.length === 0 ? (
+          <Text variant="caption" color={colors.textFaint}>{tx("exam.tap_chunks")}</Text>
+        ) : chosen.map((ti, pos) => (
+          <PressableScale key={`${ti}-${pos}`} disabled={locked} onPress={() => setChosen(chosen.filter((_, p) => p !== pos))}
+            style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 5 }}>
+            <Text variant="caption" color={colors.text}>{tokens[ti]}</Text>
           </PressableScale>
-        ) : null}
+        ))}
       </View>
-      {done ? (
-        <View style={{ marginTop: spacing.sm }}>
-          {match ? <Verdict m={match} ok={ok} colors={colors} /> : null}
-          {!ok ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
-          {t.hint ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.hint}</Text> : null}
+
+      {!locked ? (
+        <View style={{ marginTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+          {tokens.map((tok, i) => chosen.includes(i) ? null : (
+            <PressableScale key={i} onPress={() => setChosen([...chosen, i])}
+              style={{ borderRadius: radii.sm, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingHorizontal: 12, paddingVertical: 7 }}>
+              <Text variant="bodyStrong" color={colors.text}>{tok}</Text>
+            </PressableScale>
+          ))}
         </View>
       ) : null}
+
+      {phase === "correct" ? (
+        <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, alignItems: "center" }}>
+          <CheckIcon color={colors.successText} size={16} />
+          <Text variant="bodyStrong" color={colors.successText} style={{ flex: 1 }}>{t.answer}</Text>
+        </View>
+      ) : null}
+      {phase === "revealed" ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("rounds.answer_is")}<Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text>
+      ) : null}
+
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
+        {locked ? (
+          <PressableScale onPress={() => { if (!done) onSettle(phase === "correct"); }}
+            style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.continue")}</Text>
+          </PressableScale>
+        ) : (
+          <>
+            <PressableScale onPress={check} disabled={chosen.length !== tokens.length}
+              style={{ backgroundColor: chosen.length === tokens.length ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+              <Text variant="bodyStrong" color={chosen.length === tokens.length ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
+            </PressableScale>
+            {chosen.length > 0 ? (
+              <PressableScale onPress={() => setChosen([])} style={{ paddingHorizontal: spacing.md, paddingVertical: 11 }}>
+                <Text variant="caption" color={colors.textMuted}>{tx("find.clear")}</Text>
+              </PressableScale>
+            ) : null}
+          </>
+        )}
+      </View>
     </Card>
   );
 }
