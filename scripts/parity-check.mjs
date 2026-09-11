@@ -7275,6 +7275,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 218. ses ayarlari: okuma sesi ve oyun sesleri ayni bolumde mi ───
+   * Android'de "Ses" bolumu ikisini birden tasiyor: okuma sesi (alt etiketi
+   * `settings.reading_voice`, sonra `VoicePicker`), bir ayirici, sonra oyun
+   * sesleri anahtari (`snd.game_sounds`).
+   *
+   * Webde oyun sesleri BILDIRIM AYARLARINDA duruyordu ve gerekcesi yaziliydi:
+   * "oyun sesleri de bir 'ne zaman rahatsiz edilirim' ayari". Savunulabilir
+   * ama sonucu su: sesle ilgili ayar arayan kullanici IKI yere bakmak zorunda
+   * ve iki platform ayni ayari iki ayri ekranda tutuyor. Picker'in alt
+   * etiketi de eksikti - mobil onun ne oldugunu soyluyor, webde basliksiz
+   * duruyordu.
+   *
+   * Kapi ayni anahtarin IKI yerde birden cizilmemesini de okuyor: tasima
+   * sirasinda eskisini silmemek en kolay hata. */
+  {
+    const webForm = sil(read("src/components/profile-form.tsx"));
+    const webBildirim = sil(read("src/components/notification-settings.tsx"));
+    const mobAyar = sil(read("mobile/src/screens/SettingsScreen.tsx"));
+    /* Ses bolumunun govdesi: `settings.sound` etiketinden sonraki blok. */
+    const sesBlogu = (src, ad) => {
+      const i = src.indexOf(ad);
+      return i < 0 ? "" : src.slice(i, i + 1200);
+    };
+    const webSes = sesBlogu(webForm, 'label={t("settings.sound")}');
+    const mobSes = sesBlogu(mobAyar, 'label={t("settings.sound")}');
+    sameList(
+      "ses ayarlari ayni bolumde",
+      [
+        "web okuma sesi etiketi=" + (/settings\.reading_voice/.test(webSes) ? "var" : "YOK"),
+        "web picker=" + (/<VoicePicker\b/.test(webSes) ? "var" : "YOK"),
+        "web oyun sesleri=" + (/<SoundSettings bare \/>/.test(webSes) ? "ayni bolumde" : "BASKA YERDE"),
+        "web bildirimlerde ses=" + (/\bSoundSettings\b/.test(webBildirim) ? "VAR (iki yerde)" : "yok"),
+        "mobil okuma sesi etiketi=" + (/settings\.reading_voice/.test(mobSes) ? "var" : "YOK"),
+        "mobil picker=" + (/<VoicePicker\b/.test(mobSes) ? "var" : "YOK"),
+        "mobil oyun sesleri=" + (/snd\.game_sounds/.test(mobSes) ? "ayni bolumde" : "BASKA YERDE"),
+      ],
+      [
+        "web okuma sesi etiketi=var", "web picker=var", "web oyun sesleri=ayni bolumde",
+        "web bildirimlerde ses=yok",
+        "mobil okuma sesi etiketi=var", "mobil picker=var", "mobil oyun sesleri=ayni bolumde",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 217. kelimenin durumu: kural kac yerde yazili ──────────────────
    * Ayni siniflandirma webde DORT yerde ayri ayri yaziliydi: `/api/words`un
    * govde eslemesi, iki SQL suzgeci (`/words` sayfasi ve ayni uc) ve listenin
