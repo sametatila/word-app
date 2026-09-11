@@ -4759,6 +4759,45 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("zamanli yuzeyler duvar saatinde", sayiciyla.length ? sayiciyla : ["yok"], ["yok"], "sayiciyla isleyen", "beklenen");
 }
 
+/* ── 136. cevrimdisi tur cevaplari ────────────────────────────────────────
+ * Tur cevaplari webde yalniz BELLEKTE bekliyordu (`session-player`
+ * `pending.current`): ag yoksa bir sonraki gonderimde tekrar deneniyor, ama
+ * sekme kapanirsa cevaplar YOK OLUYORDU. SRS aralik ilerlemiyor, XP
+ * verilmiyor, kullanici ayni kelimeleri yeniden goruyor - hem de bunu
+ * bilmeden, cunku ekran "kaydi bekliyor" diyordu ve kayit hic olmayacakti.
+ * Android bunu bastan depolamaya yaziyor (`game/session` `queueAnswers`).
+ *
+ * Olculen: iki tarafta da kalici bir kuyruk var mi, kalici hata ayrimi ayni
+ * mi ve kuyruk ayni uc kurali tutuyor mu. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const kuyruk = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "kalici depolama=" + (/(localStorage|AsyncStorage)\.setItem\(\s*(KEY|ANSWER_QUEUE_KEY)/.test(src) ? "var" : "yok"),
+      /* Sinir: eski turlar SRS icin degerini yitiriyor. */
+      /* Sinir `queueAnswers`in KENDI govdesinden okunuyor: dosyanin ilk
+         `slice(-N)`ine bakmak mobilde alakasiz bir kirpmayi (-200) buluyordu
+         ve kapi "sinir 200'e 20" diye ayrisiyordu - olcunun komsusunu
+         olcmenin on besinci bicimi. */
+      "sinir=" + ((src.match(/queueAnswers\([^)]*\)[^{]*\{(.*?)\n?\s*\}\s*(?:export|const|\/\*|$)/s)?.[1] ?? src).match(/slice\(-(\d+)\)/)?.[1] ?? "yok"),
+      /* Bir kayit dusunce sonrakiler DENENMIYOR (ag yoksa bosuna istek). */
+      "dus-durdur=" + (/remaining\.push\(\.\.\.list\.slice\(i\)\); break;/.test(src) ? "var" : "yok"),
+      /* Kalici hata ayrimi: 401/403/408/429 GECICI sayiliyor mu. */
+      "gecici sayilanlar=" + [...new Set([...src.matchAll(/status === (401|403|408|429)/g)].map((m) => m[1]))].sort().join("/"),
+    ];
+  };
+  sameList("cevrimdisi cevap kuyrugu", kuyruk("mobile/src/game/session.ts"), kuyruk("src/lib/answer-queue.ts"));
+
+  /* Kuyrugu KIMSE cagirmazsa yazilmis olmasi bir sey ifade etmiyor (§90'in
+     dersi): iki oynaticinin da hem yazan hem bosaltan tarafi olmali. */
+  const cagri = (yol) => {
+    const src = strip(read(yol));
+    return ["yazan=" + (/queueAnswers\(/.test(src) ? "var" : "yok"), "bosaltan=" + (/flushPendingAnswers\(/.test(src) ? "var" : "yok")];
+  };
+  sameList("kuyrugu cagiran", cagri("mobile/src/game/session.ts"), cagri("src/components/session-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

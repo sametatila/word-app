@@ -7693,3 +7693,36 @@ Bu turda değişmeyen üç şey de ölçüldü ve kayda geçiyor: hayatta kalma 
 (iki tarafta birebir aynı `deadline` kalıbı, aynı 100 ms tık, aynı tehlike
 eşiği), yerel gün sınırı (`todayStr` / `localDay` — aynı hesap) ve deneme
 kâğıdının görev bütçesi (bilerek sayıcı, kalan saniye kaydediliyor).
+
+### 11.229 Sekme kapanınca tur cevapları yok oluyordu
+
+Tur cevapları web'de ağ yoksa **yalnız bellekte** bekliyordu
+(`session-player` `pending.current`): bir sonraki gönderimde tekrar
+deneniyordu, ama **sekme kapanırsa o cevaplar yok oluyordu.** SRS aralıkları
+ilerlemiyor, XP verilmiyor, kullanıcı aynı kelimeleri yeniden görüyordu — hem
+de bunu bilmeden, çünkü ekran "kaydı bekliyor" diyordu ve kayıt hiç
+olmayacaktı.
+
+Android bu boşluğu baştan kapatmış (`game/session` `queueAnswers` /
+`flushPendingAnswers`, AsyncStorage). Web'e aynı kuyruk kondu
+(`lib/answer-queue`, `lesson-queue` ile aynı kalıpta) ve aynı üç kuralı
+tutuyor: kayıt kendi `day`ini taşıyor, kuyruk son yirmi turla sınırlı, biri
+düşerse sıradakiler denenmiyor. `progress` ve `wager` kuyrukta **taşınmıyor**
+— ikisi de o turun kendi hâli; yarım kalan turu ertesi gün yeniden açmak ya da
+geçmiş bir bahsi o gün çözmek yanlış olurdu ve Android kuyruğu da yalnız
+cevapları taşıyor.
+
+Kalıcı hata ayrımı da birebir eşleşti: **401/403/408/429 geçici sayılıyor.**
+Oturum düşmüşken atılan bir tur, kullanıcı yeniden girince gönderilebilir;
+onu "sunucu reddetti" sayıp silmek tam da korumaya çalıştığımız veriyi atardı.
+Web'de eşik `status >= 400 && < 500` diye yazılıydı, yani **oturumu düşen
+kullanıcının turu siliniyordu.**
+
+**§136** kuyruğun dört özelliğini ve **kuyruğu çağıranı** ayrı ölçüyor —
+§90'ın dersi: yazılmış olması, çağrılıyor olması demek değil. Dört
+enjeksiyonun dördü de yakalandı.
+
+Kapı bir kez daha komşusunu ölçtü: kuyruk sınırını dosyanın **ilk**
+`slice(-N)`inden okuyordu ve mobilde alakasız bir kırpmayı (-200) buluyordu,
+yani "sınır 200'e 20" diye ayrışıyordu. Sınır artık `queueAnswers`in kendi
+gövdesinden okunuyor — **on beşinci biçim.**

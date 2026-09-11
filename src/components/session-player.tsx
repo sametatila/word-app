@@ -39,6 +39,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { flushPendingAnswers, isPermanentStatus, queueAnswers } from "@/lib/answer-queue";
 
 /**
  * Turun durumları.
@@ -125,7 +126,7 @@ export function SessionPlayer() {
    * taşıyordu: bir kez reddedilen tur, oturumun geri kalanında HER kaydı
    * batırıyordu. Tek bir turun bedeli tek bir tur olmalı.
    */
-  const [saveWarning, setSaveWarning] = useState<null | "retry" | "dropped">(null);
+  const [saveWarning, setSaveWarning] = useState<null | "queued" | "dropped">(null);
   const startedAt = useRef(Date.now());
   /** Ekrandaki tur sunucudan mı geldi (önbellekten değil). */
   const fresh = useRef(false);
@@ -220,6 +221,14 @@ export function SessionPlayer() {
     // aynı sinyali kendileri atıyor (bkz. components/learn/mode-screen).
     window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: status === "playing" } }));
   }, [status]);
+
+  /* ÖNCEKİ OTURUMDAN KALAN CEVAPLAR. Sekme çevrimdışı kapandıysa kuyrukta
+     bekliyorlar; tur ekranı açılınca ilk iş onları göndermek. Android aynı
+     şeyi her başarılı gönderimden sonra yapıyor (`flushPendingAnswers`) ve
+     burada da her başarılı gönderimde çağrılıyor. */
+  useEffect(() => {
+    void flushPendingAnswers();
+  }, []);
 
   const load = useCallback(
     async (opts: {
@@ -494,18 +503,24 @@ export function SessionPlayer() {
           }),
         });
         if (!res.ok) {
-          if (res.status >= 400 && res.status < 500) {
-            // Sunucunun ASLA kabul etmeyeceği bir istek. Kuyruğa geri koymak
+          if (isPermanentStatus(res.status)) {
+            // Sunucunun ASLA kabul etmeyeceği bir istek. Kuyruğa koymak
             // oturumun kalanındaki bütün kayıtları da batırır.
             console.error("[answers] istek reddedildi", res.status, batch);
             setSaveWarning("dropped");
             return null;
           }
-          pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
-          setSaveWarning("retry");
+          /* KUYRUK DEPOLAMADA, yalnız bellekte değil. Önce `pending.current`e
+             geri konuyordu ve sekme kapanınca o cevaplar yok oluyordu: SRS
+             ilerlemiyor, XP verilmiyor, kullanıcı aynı kelimeleri yeniden
+             görüyordu — hem de ekran "kaydı bekliyor" dediği için bunu
+             bilmeden. Android baştan beri depolamaya yazıyor. */
+          queueAnswers({ answers: batch, day: localDay(), seconds });
+          setSaveWarning("queued");
           return null;
         }
         setSaveWarning(null);
+        void flushPendingAnswers(); // bağlantı var: bekleyenler de gitsin
         const data = (await res.json()) as AnswerResult;
         sessionXp.current += data.xpGained;
         if (wager) setWagerResult(data.wagerXp ?? 0);
@@ -517,8 +532,8 @@ export function SessionPlayer() {
         );
         return data;
       } catch {
-        pending.current = [...batch, ...pending.current];
-        setSaveWarning("retry");
+        queueAnswers({ answers: batch, day: localDay(), seconds });
+        setSaveWarning("queued");
         return null;
       }
     },
