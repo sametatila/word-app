@@ -7759,3 +7759,32 @@ sayfa da yok. Web listesi bir gün istemciye taşınırsa satır düşer.
 
 Dört enjeksiyonun dördü de sonunda yakalandı. **§137** satırın üç hâlini ve
 yerel kopya muafiyetini ölçüyor.
+
+### 11.231 Kapıların kendi denetimi: önek eşleşmesi sınıf olarak kapandı
+
+Aynı hatayı iki turda üst üste yaptım: bir **bileşen ya da fonksiyon adını**
+sınırsız bir desenle aradım (`/ConfirmDialog/` §11.226'da, `/pushLocalResult/`
+§11.230'da) ve enjeksiyonda yeniden adlandırılan adı (`ConfirmDialog2`,
+`pushLocalResult2`) kapı hâlâ "var" saydı. Yani kapı, ölçmesi gereken şeyin
+**önekini** ölçüyordu ve gerçek bir gerilemeyi kaçırırdı.
+
+Bu turda üçüncü örneği tek tek aramak yerine **sınıfı kapattım.** Önce bütün
+`parity-check.mjs` tarandı: `.test()` içinde kullanılan 106 sınırsız desen
+var, ama bunların hemen hepsi zararsız (`node_modules` yol süzgeci, `dialogue`
+gibi tür adları, i18n anahtarları). Yakalanan iki hatanın biçimi dar: **sade
+bir bileşen/fonksiyon adı** — büyük harfle başlayan ya da `<` ile yazılan, hiç
+metakarakter taşımayan desen. O biçimde iki tane daha vardı (§82'nin
+`EmptyCard` ve `TrophyIcon`'u) ve ikisi de sınırlandı.
+
+**§138** artık kapının kendi kaynağını okuyor ve o biçimde sınırsız bir desen
+bulursa ihlal veriyor — §118/§119'un kalıbı, bu kez ölçünün kendisine
+uygulanmış. Üç enjeksiyonun üçü de yakalandı: eski deseni geri koymak,
+`<Ad` biçimini sınırsız yazmak ve yeni bir ad deseni eklemek.
+
+Küçük harfli sade adlar (`premium`, `leech`, `dialogue`) **bilerek dışarıda**:
+onlarda önek eşleşmesi pratikte zararsız ve hepsini sınırlamak yüz desen
+değiştirmek olurdu — kural, yakalanan gerçek hataların biçimine kapalı
+tutuluyor.
+
+Öteki sekiz kapı betiği de aynı taramadan geçirildi: hiçbirinde bu biçimde
+sınırsız desen yok.

@@ -3068,8 +3068,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const kabuk = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "kart=" + (/EmptyCard/.test(src) ? "var" : "yok"),
-      "kupa=" + (/TrophyIcon/.test(src) ? "var" : "yok"),
+      /* Desenler AD SINIRINA kapali (bkz. dosyanin sonundaki oz-denetim):
+         `/EmptyCard/` oneki `EmptyCard2`yi de eslesirdi ve yeniden
+         adlandirilmis bir bileseni hâlâ "var" sayardi. `icon={Ad}` bicimi
+         ikisinde de ayni. */
+      "kart=" + (/<EmptyCard[\s/>]/.test(src) ? "var" : "yok"),
+      "kupa=" + (/icon=\{TrophyIcon\}/.test(src) ? "var" : "yok"),
       "baslik=" + (src.includes('achievements.achievements') ? "var" : "yok"),
       "sebep=" + (src.includes("achievements.couldn_t_load_achievements") ? "var" : "yok"),
       "tekrar dene=" + (src.includes("common.try_again") ? "var" : "yok"),
@@ -4848,6 +4852,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ? "muaf: mobil yerel kopya tutuyor, web listesi sunucuda ciziliyor"
       : "mobilde yerel kopya YOK";
   sameList("bolum durumu yerel kopya", [hal], ["muaf: mobil yerel kopya tutuyor, web listesi sunucuda ciziliyor"], "bulunan", "beklenen");
+}
+
+/* ── 138. KAPILARIN KENDI DENETIMI: onek eslesmesi ────────────────────────
+ * Bu dosya iki turda ust uste ayni hatayi yapti: bir BILESEN ya da FONKSIYON
+ * adini sinirsiz bir desenle aradi (`/ConfirmDialog/`, `/pushLocalResult/`)
+ * ve enjeksiyonda yeniden adlandirilan adi (`ConfirmDialog2`,
+ * `pushLocalResult2`) hâlâ "var" saydi. Yani kapi, olcmesi gereken seyin
+ * ONEKINI olcuyordu ve gercek bir gerilemeyi kacirirdi.
+ *
+ * Iki ornegi tek tek duzeltmek yerine SINIF kapatiliyor: kapi kendi kaynagini
+ * okuyor ve `.test()` icinde kullanilan SADE bir bilesen/fonksiyon adi
+ * (buyuk harfle baslayan ya da `<` ile yazilan, hic metakarakter tasimayan
+ * desen) bulursa ihlal veriyor. §118/§119'un kalibi: listeyi degil, listenin
+ * KENDISINI olcmek.
+ *
+ * Kucuk harfli sade adlar (`premium`, `leech`, `dialogue` gibi alan/tur
+ * adlari) DISARIDA: onlarda onek eslesmesi pratikte zararsiz ve hepsini
+ * sinirlamak yuz desen degistirmek olurdu. Kural, yakalanan iki gercek
+ * hatanin bicimine kapali tutuluyor. */
+{
+  const kendi = read("scripts/parity-check.mjs").split("\n");
+  const sinirsiz = [];
+  kendi.forEach((satir, i) => {
+    for (const m of satir.matchAll(/\/((?:\\.|\[[^\]]*\]|[^/\n\\])+)\/[a-z]*\.test\(/g)) {
+      const govde = m[1];
+      if (!/^<?[A-Za-z_][A-Za-z0-9_]*$/.test(govde)) continue; // metakarakter var: bu kural degil
+      const ad = govde.replace(/^</, "");
+      if (govde.startsWith("<") || /^[A-Z]/.test(ad)) sinirsiz.push(`${i + 1}: /${govde}/`);
+    }
+  });
+  sameList("kapilarda onek eslesmesi", sinirsiz.length ? sinirsiz : ["yok"], ["yok"], "sinirsiz ad deseni", "beklenen");
 }
 
 console.log(
