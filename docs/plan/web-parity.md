@@ -8080,3 +8080,28 @@ karşılığı dururken kodda yazılmış dil, iki ayrı yerde ve iki ayrı dild
 yalnız `cover` VARKEN kullanılıyor ve orada doğru. Ölçülen şey dizginin
 **varlığı** değil, **yedek dalın ne kullandığı** olmalıydı; üç enjeksiyonun
 üçü de düzeltilmiş hâlde yakalandı.
+
+### 11.244 Geçme notu dört yerde elle kopyalanmıştı
+
+Deneme kâğıdının geçme notu tek yerde yazılı (`MOCK_PASS_PCT = 60`) ama **renk
+eşikleri dört yerde "60" diye elle kopyalanmıştı** — ikisi webde, ikisi
+mobilde. Bugün tutuyorlar; sorun şu: geçme notu **admin panelinden
+değiştirilebiliyor** (`premium/gates` `unlockPct` yorumu bunu açıkça söylüyor)
+ve değiştiğinde renk "geçti" demeye devam ederdi. Puan kırmızı olması
+gerekirken yeşil görünür, kullanıcı kâğıdı geçtiğini sanırdı.
+
+Dördü de sabite bağlandı. **§150** eşiğin **adını** ölçüyor, sayısını değil:
+iki platformun sabiti ayrı dosyalarda (`lib/mock-exams/types` ve
+`data/exams`), yani karşılaştırılması gereken şey "60 mı" değil "sabitten mi".
+Üç enjeksiyonun üçü de yakalandı.
+
+Bu turda iki şey de ölçülüp **dokunulmadı**:
+
+- **Bildirim metinleri.** Web push'ları tamamen sözlükten besleniyor ve
+  kişiselleştirilmiş (seri sayısı, biriken kelime, rakip farkı, ortak seri
+  partneri); Android'inkiler cihazda kurulan üç genel hatırlatma. Fark
+  mimari ve yazılı: mobilde uzak push henüz yok (AGENTS.md ve
+  `social-layer-deploy` notu). Uydurulacak bir şey yok, ertelenmiş bir iş var.
+- **Sertifika.** İki taraf da aynı koşulda açıyor (`passed && !trial`); mobil
+  ek olarak bir hata durumu taşıyor çünkü sayfayı kendi içinde çiziyor,
+  web yeni sekmede açıyor ve hatayı tarayıcı gösteriyor.

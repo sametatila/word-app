@@ -787,7 +787,11 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
   }
   return (
     <View style={{ marginTop: spacing.md }}>
-      <Text variant="h3" color={score.score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score.score)}</Text>
+      {/* GEÇME NOTU SABİTTEN. Renk eşiği "60" diye elle yazılıydı ve
+          `MOCK_PASS_PCT`in kopyasıydı: geçme notu değişirse (admin panelinden
+          değiştirilebiliyor, bkz. `premium/gates` `unlockPct`) renk "geçti"
+          demeye devam ederdi. Dört yerde aynı kopya vardı. */}
+      <Text variant="h3" color={score.score >= MOCK_PASS_PCT ? colors.successText : colors.dangerText}>{formatPercent(score.score)}</Text>
       {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.praise}</Text> : null}
       {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.tip}</Text> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (

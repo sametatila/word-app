@@ -5310,6 +5310,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 150. gecme notu sabitten mi ──────────────────────────────────────────
+ * Deneme kagidinin gecme notu TEK yerde yazili (`MOCK_PASS_PCT = 60`) ama
+ * renk esikleri dort yerde "60" diye ELLE kopyalanmisti - ikisi webde, ikisi
+ * mobilde. Bugun tutuyorlar; sorun sunun: gecme notu admin panelinden
+ * degistirilebiliyor (`premium/gates` `unlockPct` yorumuna bak) ve
+ * degistiginde renk "gecti" demeye devam ederdi. Yani puan kirmizi olmasi
+ * gerekirken yesil gorunurdu - kullanicinin kagidi gectigini sanmasi.
+ *
+ * Olculen: dort yuzeyde de esigin SABITTEN gelmesi. Sayi karsilastirilmiyor
+ * (iki platformun sabiti ayri dosyalarda), esigin ADI araniyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const esik = (yol, desenler) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return desenler.map((d) => {
+      const m = src.match(new RegExp(d + "\\s*>=\\s*([\\w.]+)"));
+      return (m?.[1] ?? "yok") === "MOCK_PASS_PCT" ? "sabitten" : "elle: " + (m?.[1] ?? "yok");
+    });
+  };
+  const mob = [
+    ...esik("mobile/src/screens/MockExamScreen.tsx", ["score\\.score"]),
+    ...esik("mobile/src/screens/MockStatsScreen.tsx", ["s\\.pct"]),
+  ];
+  const web = [
+    ...esik("src/components/mock-exam-player.tsx", ["score\\.score"]),
+    ...esik("src/app/(app)/mock-exams/stats/page.tsx", ["s\\.pct"]),
+  ];
+  sameList("gecme notu esigi", mob, web);
+  const elle = [...mob, ...web].filter((x) => x !== "sabitten");
+  sameList("gecme notu hepsi sabitten", elle.length ? elle : ["yok"], ["yok"], "elle yazilmis", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

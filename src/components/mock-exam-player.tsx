@@ -858,7 +858,7 @@ function OpenResult({ score }: { score: OpenScore }) {
   }
   return (
     <div className="mt-3">
-      <p className="text-lg font-bold" style={{ color: score.score >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
+      <p className="text-lg font-bold" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
       {score.praise ? <p className="muted mt-1 text-sm leading-relaxed">{score.praise}</p> : null}
       {score.tip ? <p className="mt-1 text-sm leading-relaxed">{score.tip}</p> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (

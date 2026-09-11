@@ -4,7 +4,7 @@ import { PageBack } from "@/components/page-back";
 import { getUserId } from "@/lib/auth/server";
 import { mockStats } from "@/lib/mock-exams/stats";
 import { mockPaperById } from "@/lib/mock-exams";
-import { mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
+import { MOCK_PASS_PCT, mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
 import { ChevronRightIcon } from "@/components/icons";
 import { getT } from "@/lib/i18n/server";
 
@@ -69,7 +69,9 @@ export default async function MockStatsPage() {
           <section className="card p-4">
             <p className="muted text-micro">{t("mockstats.by_skill")}</p>
             {data.bySkill.map((s) => {
-              const ok = s.pct >= 60;
+              /* Geçme notu sabitten: "60" elle yazılıydı ve
+                 `MOCK_PASS_PCT`in kopyasıydı (bkz. web-parity §11.244). */
+              const ok = s.pct >= MOCK_PASS_PCT;
               const tone = ok ? "var(--color-mint)" : "var(--color-rose)";
               return (
                 <div key={s.skill} className="mt-2">
