@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 2 yarıda, 115/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-2 bitti, 120/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -246,6 +246,22 @@ Referans dili burada bir kez yeniden ölçüldü: «açıklayıcı ilgi cümlesi
 virgülle ayrılıyor» Almanca anadilli için YETERSİZ bir ipucu, çünkü Almancada
 HER ilgi cümlesi virgül alıyor. Almanca metin bunu söylüyor: virgül İngilizcede
 bir ayırt edici, Almancada değil.
+
+**B2 modül 2 — Müzakere ve şikâyet (2026-09-11).** On ders: iddia, sorun
+tam olarak ne, ne konuşulmuştu, resmî şikâyet, ödün vermek, anlaşsaydık,
+sert mektup, olayın özeti, taraflar, bunu okuduğunuzda.
+
+Modül 1'in on kuralı burada ikinci kez geçiyor ama başka bir dünyada —
+spiral müfredat. Aynı yarık cümle modül 1'de vurguyu yerleştiriyordu,
+burada şikâyetin SINIRINI çiziyor: «itiraz ettiğimiz şey fiyat» demek, geri
+kalanına itiraz etmediğini de söylemek demek. Aynı devrik yapı modül 1'de
+resmî açılış yapıyordu, burada sesini yükseltmeden sertleşmenin yolu.
+
+Kelime tuzağı bu kez yazarken görüldü: `violate` için «The violation of the
+term» diye bir tekrar yazılsaydı kapı reddederdi, çünkü «violation» içinde
+«violate» geçmiyor. Buna karşılık `enforce`/«enforcement», `reimburse`/
+«reimbursement» ve `perform`/«performance» geçiyor — isimleştirme dersinin
+üç kalıbı o üç fiille kuruldu, `violate` ayrı bir tekrar hedefine kondu.
 
 ## Tamamlanma ölçütü
 

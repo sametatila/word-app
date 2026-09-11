@@ -1,0 +1,882 @@
+[
+ {
+  "tr": "Taraflar",
+  "kind": "titleTr",
+  "de": "Die Parteien"
+ },
+ {
+  "tr": "Anlaşsaydık",
+  "kind": "titleTr",
+  "de": "Hätten wir uns geeinigt"
+ },
+ {
+  "tr": "Sert mektup",
+  "kind": "titleTr",
+  "de": "Ein deutlicher Brief"
+ },
+ {
+  "tr": "Olayın özeti",
+  "kind": "titleTr",
+  "de": "Der Vorfall in Kürze"
+ },
+ {
+  "tr": "Bunu okuduğunuzda",
+  "kind": "titleTr",
+  "de": "Wenn Sie das lesen"
+ },
+ {
+  "tr": "Olayı kısa anlatmayı öğretir; ortaç öbeği iki cümleyi tek cümleye indirip sırayı korur.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen Vorfall kurz erzählt; die Partizipialkonstruktion macht aus zwei Sätzen einen und hält die Reihenfolge."
+ },
+ {
+  "tr": "Bir dosyadaki tarafları tanıtmayı öğretir; açıklayıcı ilgi cümlesi tarif etmez, ek bilgi taşır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Parteien einer Akte vorstellt; der erklärende Relativsatz beschreibt nicht, er trägt eine Zusatzinformation."
+ },
+ {
+  "tr": "Sert ama resmî bir mektup yazmayı öğretir; olumsuz zarf başa geldiğinde devrik yapı tonu yükseltir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen deutlichen, aber formellen Brief schreibt; steht ein negatives Adverb am Anfang, hebt die Inversion den Ton."
+ },
+ {
+  "tr": "Kaçırılmış bir anlaşmayı konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über eine verpasste Einigung spricht; bleibt die Folge in der Vergangenheit, steht would have, reicht sie bis heute, steht would."
+ },
+ {
+  "tr": "Son tarih baskısını yazmayı öğretir; gelecekteki bir ana kadar bitmiş olan ile o an sürüyor olan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Termindruck schreibt; was bis zu einem Punkt in der Zukunft fertig ist und was dann gerade läuft, stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "mektubun tonunu fazla sert bulan bir meslektaş",
+  "kind": "partner",
+  "de": "ein Kollege, dem der Ton des Briefes zu scharf ist"
+ },
+ {
+  "tr": "özeti dinleyip sırayı doğrulamak isteyen bir yönetici",
+  "kind": "partner",
+  "de": "eine Vorgesetzte, die die Zusammenfassung hört und die Reihenfolge bestätigt haben will"
+ },
+ {
+  "tr": "dosyayı ilk kez açan, kimin kim olduğunu soran bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die die Akte zum ersten Mal öffnet und fragt, wer wer ist"
+ },
+ {
+  "tr": "tarihleri erteletmeye çalışan ama tamamen reddetmeyen bir muhatap",
+  "kind": "partner",
+  "de": "ein Gegenüber, das die Termine schieben will, aber nicht ganz ablehnt"
+ },
+ {
+  "tr": "fırsatın kaçtığını kabul eden ama sorumluluğu paylaşmak isteyen bir muhatap",
+  "kind": "partner",
+  "de": "ein Gegenüber, das die verpasste Gelegenheit einräumt, aber die Verantwortung teilen will"
+ },
+ {
+  "tr": "Bunu martta bağlayabilir miydik?",
+  "kind": "openingTr",
+  "de": "Hätten wir das im März abschließen können?"
+ },
+ {
+  "tr": "Bana kısa hâlini ver. Önce ne oldu?",
+  "kind": "openingTr",
+  "de": "Gib mir die kurze Fassung. Was war zuerst?"
+ },
+ {
+  "tr": "Bunu gelecek aya bırakabilir miyiz?",
+  "kind": "openingTr",
+  "de": "Können wir das auf nächsten Monat schieben?"
+ },
+ {
+  "tr": "Onların tarafında bunu kim imzalamış?",
+  "kind": "openingTr",
+  "de": "Wer hat das auf ihrer Seite unterschrieben?"
+ },
+ {
+  "tr": "Bu göndermek için fazla sert değil mi?",
+  "kind": "openingTr",
+  "de": "Ist das zum Verschicken nicht zu scharf?"
+ },
+ {
+  "tr": "Bir anlaşma fırsatı kaçtı ve karşı tarafla bunu konuşuyorsunuz. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "Eine Gelegenheit zur Einigung ist verstrichen und ihr sprecht darüber. Nenn getrennt eine Folge in der Vergangenheit und eine Folge, die bis heute reicht."
+ },
+ {
+  "tr": "Bir aksaklığın özetini sözlü olarak veriyorsun. Önce ne bittiğini, neyin sebep olduğunu ve neyin geciktirildiğini kısa cümlelerle anlat.",
+  "kind": "scene",
+  "de": "Du gibst die Zusammenfassung einer Panne mündlich. Erzähl in kurzen Sätzen, was zuerst fertig war, was der Grund war und was verzögert wurde."
+ },
+ {
+  "tr": "Cevapsız kalan bir talebi hatırlatıyorsun. Hangi işin ne zamana kadar bitmiş olacağını, o an neyin sürüyor olacağını ve neyin gönderilmiş olacağını söyle.",
+  "kind": "scene",
+  "de": "Du erinnerst an eine unbeantwortete Forderung. Sag, welche Arbeit bis wann fertig sein wird, was dann gerade laufen wird und was verschickt sein wird."
+ },
+ {
+  "tr": "Cevapsız kalan iki yazıdan sonra sert bir mektup yazıyorsun. Kesin reddini, cevabın ne zaman geldiğini ve yükümlülüğün ne zaman doğacağını devrik cümlelerle söyle.",
+  "kind": "scene",
+  "de": "Nach zwei unbeantworteten Schreiben verfasst du einen deutlichen Brief. Sag mit Inversionen, was du klar ablehnst, wann die Antwort kam und ab wann die Pflicht entsteht."
+ },
+ {
+  "tr": "Bir dosyayı devralan meslektaşına tarafları tanıtıyorsun. Kimin ne imzaladığını, hangi usulün işlediğini ve kime bağlı çalışıldığını açıklayıcı ilgi cümleleriyle anlat.",
+  "kind": "scene",
+  "de": "Du stellst der Kollegin, die die Akte übernimmt, die Parteien vor. Erzähl mit erklärenden Relativsätzen, wer was unterschrieben hat, welches Verfahren läuft und wem zugearbeitet wird."
+ },
+ {
+  "tr": "Kesin reddi, zamanı ve sınırı üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die klare Ablehnung, den Zeitpunkt und die Grenze in drei verschiedenen Inversionen gesagt hast."
+ },
+ {
+  "tr": "olay",
+  "kind": "vocab.tr",
+  "de": "Vorfall"
+ },
+ {
+  "tr": "özlü",
+  "kind": "vocab.tr",
+  "de": "knapp"
+ },
+ {
+  "tr": "usul",
+  "kind": "vocab.tr",
+  "de": "Verfahren"
+ },
+ {
+  "tr": "alıcı",
+  "kind": "vocab.tr",
+  "de": "Empfänger"
+ },
+ {
+  "tr": "ihale",
+  "kind": "vocab.tr",
+  "de": "Ausschreibung"
+ },
+ {
+  "tr": "müdür",
+  "kind": "vocab.tr",
+  "de": "Direktor"
+ },
+ {
+  "tr": "ölçüt",
+  "kind": "vocab.tr",
+  "de": "Kriterium"
+ },
+ {
+  "tr": "örtük",
+  "kind": "vocab.tr",
+  "de": "implizit"
+ },
+ {
+  "tr": "muğlak",
+  "kind": "vocab.tr",
+  "de": "mehrdeutig"
+ },
+ {
+  "tr": "anlatım",
+  "kind": "vocab.tr",
+  "de": "Darstellung"
+ },
+ {
+  "tr": "sorumlu",
+  "kind": "vocab.tr",
+  "de": "haftbar"
+ },
+ {
+  "tr": "teminat",
+  "kind": "vocab.tr",
+  "de": "Sicherheit"
+ },
+ {
+  "tr": "yükümlü",
+  "kind": "vocab.tr",
+  "de": "verpflichtet"
+ },
+ {
+  "tr": "gönderen",
+  "kind": "vocab.tr",
+  "de": "Absender"
+ },
+ {
+  "tr": "hükümsüz",
+  "kind": "vocab.tr",
+  "de": "nichtig"
+ },
+ {
+  "tr": "yürütmek",
+  "kind": "vocab.tr",
+  "de": "ausführen"
+ },
+ {
+  "tr": "ayrıntılı",
+  "kind": "vocab.tr",
+  "de": "ausführlich"
+ },
+ {
+  "tr": "bağlanmış",
+  "kind": "vocab.tr",
+  "de": "beigelegt"
+ },
+ {
+  "tr": "bağlayıcı",
+  "kind": "vocab.tr",
+  "de": "bindend"
+ },
+ {
+  "tr": "dondurmak",
+  "kind": "vocab.tr",
+  "de": "einfrieren"
+ },
+ {
+  "tr": "feshetmek",
+  "kind": "vocab.tr",
+  "de": "kündigen"
+ },
+ {
+  "tr": "gayriresmî",
+  "kind": "vocab.tr",
+  "de": "informell"
+ },
+ {
+  "tr": "hak vermek",
+  "kind": "vocab.tr",
+  "de": "berechtigen"
+ },
+ {
+  "tr": "karşılıklı",
+  "kind": "vocab.tr",
+  "de": "gegenseitig"
+ },
+ {
+  "tr": "karşı taraf",
+  "kind": "vocab.tr",
+  "de": "Gegenseite"
+ },
+ {
+  "tr": "askıya almak",
+  "kind": "vocab.tr",
+  "de": "aussetzen"
+ },
+ {
+  "tr": "güvenilirlik",
+  "kind": "vocab.tr",
+  "de": "Glaubwürdigkeit"
+ },
+ {
+  "tr": "kabul beyanı",
+  "kind": "vocab.tr",
+  "de": "Eingeständnis"
+ },
+ {
+  "tr": "süre uzatımı",
+  "kind": "vocab.tr",
+  "de": "Fristverlängerung"
+ },
+ {
+  "tr": "üst yönetici",
+  "kind": "vocab.tr",
+  "de": "Führungskraft"
+ },
+ {
+  "tr": "yerleşik kural",
+  "kind": "vocab.tr",
+  "de": "gängige Regel"
+ },
+ {
+  "tr": "tazminat ödemesi",
+  "kind": "vocab.tr",
+  "de": "Entschädigung"
+ },
+ {
+  "tr": "üst mercie taşıma",
+  "kind": "vocab.tr",
+  "de": "Eskalation"
+ },
+ {
+  "tr": "sonucu bugüne taşır",
+  "kind": "pattern.tr",
+  "de": "holt die Folge in die Gegenwart"
+ },
+ {
+  "tr": "sonucu geçmişte bırakır",
+  "kind": "pattern.tr",
+  "de": "lässt die Folge in der Vergangenheit"
+ },
+ {
+  "tr": "kesin reddi devrikle söyler",
+  "kind": "pattern.tr",
+  "de": "sagt die klare Ablehnung mit Inversion"
+ },
+ {
+  "tr": "önce biteni öne alıp bağlar",
+  "kind": "pattern.tr",
+  "de": "stellt das früher Beendete nach vorn und bindet es an"
+ },
+ {
+  "tr": "ne zaman olduğunu devrikle vurgular",
+  "kind": "pattern.tr",
+  "de": "hebt mit Inversion hervor, wann es geschah"
+ },
+ {
+  "tr": "koşulun ancak o zaman doğduğunu söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, dass die Pflicht erst dann entsteht"
+ },
+ {
+  "tr": "Doğru. Her iki yarının öznesi de aynı; özne değişseydi bu öbek kurulamazdı.",
+  "kind": "why.tr",
+  "de": "Richtig. Beide Hälften haben dasselbe Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
+ },
+ {
+  "tr": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil, koşulun sınırını çizen bir vurgu.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Hilfsverb steht vor dem Subjekt, und das ist keine Frage, sondern eine Betonung, die die Grenze der Bedingung zieht."
+ },
+ {
+  "tr": "Önce biteni bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um das früher Beendete anzubinden"
+ },
+ {
+  "tr": "Zamanı devrikle vurgulamak için",
+  "kind": "hint.tr",
+  "de": "Um den Zeitpunkt mit Inversion hervorzuheben"
+ },
+ {
+  "tr": "Kesin reddi devrikle söylemek için",
+  "kind": "hint.tr",
+  "de": "Um die klare Ablehnung mit Inversion zu sagen"
+ },
+ {
+  "tr": "Koşulun ancak o zaman doğduğunu söylemek için",
+  "kind": "hint.tr",
+  "de": "Um zu sagen, dass die Pflicht erst dann entsteht"
+ },
+ {
+  "tr": "zaman",
+  "kind": "say.tr",
+  "de": "Zeitpunkt"
+ },
+ {
+  "tr": "Ek verilen süreye",
+  "kind": "say.tr",
+  "de": "Die zusätzlich gewährte Frist heißt"
+ },
+ {
+  "tr": "Sertliği az olana",
+  "kind": "say.tr",
+  "de": "Was wenig scharf ist, heißt"
+ },
+ {
+  "tr": "Daha önce gelen için",
+  "kind": "say.tr",
+  "de": "Für das, was vorher kam, sagen wir"
+ },
+ {
+  "tr": "Gecikmeden davranana",
+  "kind": "say.tr",
+  "de": "Wer ohne Verzug handelt, heißt"
+ },
+ {
+  "tr": "yazıyı yollayana ise",
+  "kind": "say.tr",
+  "de": "und wer das Schreiben schickt, heißt"
+ },
+ {
+  "tr": "İki anlama gelebilene",
+  "kind": "say.tr",
+  "de": "Was zwei Bedeutungen haben kann, heißt"
+ },
+ {
+  "tr": "Hukuken geçersiz olana",
+  "kind": "say.tr",
+  "de": "Was rechtlich ungültig ist, heißt"
+ },
+ {
+  "tr": "Özetleyelim: kesin ret",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: klare Ablehnung"
+ },
+ {
+  "tr": "Yazının gittiği kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, an die das Schreiben geht, heißt"
+ },
+ {
+  "tr": "bir hakkı doğurmaya ise",
+  "kind": "say.tr",
+  "de": "und ein Recht entstehen lassen heißt"
+ },
+ {
+  "tr": "Kabul beyanı geç geldi.",
+  "kind": "say.tr",
+  "de": "Das Eingeständnis kam spät."
+ },
+ {
+  "tr": "malı yola çıkarmaya ise",
+  "kind": "say.tr",
+  "de": "und die Ware auf den Weg bringen heißt"
+ },
+ {
+  "tr": "Olayı çevreleyen duruma",
+  "kind": "say.tr",
+  "de": "Die Lage rund um den Vorfall heißt"
+ },
+ {
+  "tr": "Resmî olmayan yazışmaya",
+  "kind": "say.tr",
+  "de": "Der nicht amtliche Schriftwechsel heißt"
+ },
+ {
+  "tr": "Tarafları bağlayan hükme",
+  "kind": "say.tr",
+  "de": "Die Bestimmung, die die Parteien bindet, heißt"
+ },
+ {
+  "tr": "az sözle çok anlatana ise",
+  "kind": "say.tr",
+  "de": "und wer mit wenig Worten viel sagt, heißt"
+ },
+ {
+  "tr": "Bir işi geçici durdurmaya",
+  "kind": "say.tr",
+  "de": "Eine Arbeit vorübergehend anhalten heißt"
+ },
+ {
+  "tr": "Gayriresmî not önce geldi.",
+  "kind": "say.tr",
+  "de": "Die informelle Notiz kam zuerst."
+ },
+ {
+  "tr": "söylenmeden anlaşılana ise",
+  "kind": "say.tr",
+  "de": "und was ohne Worte verstanden wird, heißt"
+ },
+ {
+  "tr": "zarardan sorumlu olana ise",
+  "kind": "say.tr",
+  "de": "und wer für den Schaden einsteht, heißt"
+ },
+ {
+  "tr": "İki tarafı birden bağlayana",
+  "kind": "say.tr",
+  "de": "Was beide Seiten zugleich bindet, heißt"
+ },
+ {
+  "tr": "müzakerenin öbür yanına ise",
+  "kind": "say.tr",
+  "de": "und die andere Seite der Verhandlung heißt"
+ },
+ {
+  "tr": "İzlenmesi gereken resmî yola",
+  "kind": "say.tr",
+  "de": "Der amtliche Weg, dem man folgen muss, heißt"
+ },
+ {
+  "tr": "Sözüne güvenilir olma hâline",
+  "kind": "say.tr",
+  "de": "Dass man seinem Wort trauen kann, heißt"
+ },
+ {
+  "tr": "Bütün noktaları içeren yazıya",
+  "kind": "say.tr",
+  "de": "Ein Schreiben, das alle Punkte enthält, heißt"
+ },
+ {
+  "tr": "Karar verirken bakılan ölçüye",
+  "kind": "say.tr",
+  "de": "Das Maß, auf das man beim Entscheiden schaut, heißt"
+ },
+ {
+  "tr": "Bir kusuru üstlenen açıklamaya",
+  "kind": "say.tr",
+  "de": "Die Erklärung, die einen Fehler übernimmt, heißt"
+ },
+ {
+  "tr": "Hesabı bir hafta donduruyoruz.",
+  "kind": "say.tr",
+  "de": "Wir frieren das Konto eine Woche ein."
+ },
+ {
+  "tr": "Tazminat ödemesi martta geldi.",
+  "kind": "say.tr",
+  "de": "Die Entschädigung kam im März."
+ },
+ {
+  "tr": "Her koşulun kendi anlatımı var.",
+  "kind": "say.tr",
+  "de": "Jede Lage hat ihre eigene Darstellung."
+ },
+ {
+  "tr": "Zarara karşılık yapılan ödemeye",
+  "kind": "say.tr",
+  "de": "Die Zahlung für einen Schaden heißt"
+ },
+ {
+  "tr": "Konuyu bir üst kademeye taşımaya",
+  "kind": "say.tr",
+  "de": "Eine Sache eine Ebene höher tragen heißt"
+ },
+ {
+  "tr": "Madde hükümsüz olsaydı dururduk.",
+  "kind": "say.tr",
+  "de": "Wäre die Klausel nichtig gewesen, hätten wir aufgehört."
+ },
+ {
+  "tr": "Yumuşak üslup gönderenden geldi.",
+  "kind": "say.tr",
+  "de": "Der milde Ton kam vom Absender."
+ },
+ {
+  "tr": "Alıcı ancak o zaman yükümlü olur.",
+  "kind": "say.tr",
+  "de": "Erst dann wird der Empfänger verpflichtet."
+ },
+ {
+  "tr": "bir şeyi yapmak zorunda olana ise",
+  "kind": "say.tr",
+  "de": "und wer etwas tun muss, heißt"
+ },
+ {
+  "tr": "Yükümlülüğü güvenceye alan paraya",
+  "kind": "say.tr",
+  "de": "Das Geld, das eine Verpflichtung absichert, heißt"
+ },
+ {
+  "tr": "Bir hesabı geçici olarak kapatmaya",
+  "kind": "say.tr",
+  "de": "Ein Konto vorübergehend sperren heißt"
+ },
+ {
+  "tr": "Önceki teklif karşı taraftan geldi.",
+  "kind": "say.tr",
+  "de": "Das frühere Angebot kam von der Gegenseite."
+ },
+ {
+  "tr": "Rapor verdiğimiz üst yönetici yeni.",
+  "kind": "say.tr",
+  "de": "Die Führungskraft, an die wir berichten, ist neu."
+ },
+ {
+  "tr": "Usul, ki bu yüzden bekledik, yavaş.",
+  "kind": "say.tr",
+  "de": "Das Verfahren, weshalb wir gewartet haben, ist langsam."
+ },
+ {
+  "tr": "bir sözleşmeyi tamamen bitirmeye ise",
+  "kind": "say.tr",
+  "de": "und einen Vertrag ganz beenden heißt"
+ },
+ {
+  "tr": "Güvenilirlik özlü bir cevapla artar.",
+  "kind": "say.tr",
+  "de": "Glaubwürdigkeit wächst mit einer knappen Antwort."
+ },
+ {
+  "tr": "Bağlayıcı madde bizi sorumlu kılıyor.",
+  "kind": "say.tr",
+  "de": "Die bindende Klausel macht uns haftbar."
+ },
+ {
+  "tr": "Durdurulmuş bir işi tekrar başlatmaya",
+  "kind": "say.tr",
+  "de": "Eine angehaltene Arbeit wieder aufnehmen heißt"
+ },
+ {
+  "tr": "En üst düzeyde karar veren yöneticiye",
+  "kind": "say.tr",
+  "de": "Wer auf oberster Ebene entscheidet, heißt"
+ },
+ {
+  "tr": "Önce askıya alırız, sonra feshederiz.",
+  "kind": "say.tr",
+  "de": "Zuerst setzen wir aus, dann kündigen wir."
+ },
+ {
+  "tr": "Bir ölçüt yerleşik kural hâline geldi.",
+  "kind": "say.tr",
+  "de": "Ein Kriterium ist zur gängigen Regel geworden."
+ },
+ {
+  "tr": "Bir tane daha: Yazdığımız kişi ayrıldı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Person, an die wir geschrieben haben, ist gegangen."
+ },
+ {
+  "tr": "Şimdi dosyadaki tarafları tanıtacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt stellst du die Parteien der Akte vor."
+ },
+ {
+  "tr": "zamanla yerleşmiş olağan uygulamaya ise",
+  "kind": "say.tr",
+  "de": "und die mit der Zeit übliche Handhabung heißt"
+ },
+ {
+  "tr": "Muğlak bir madde örtük bir risk bırakır.",
+  "kind": "say.tr",
+  "de": "Eine mehrdeutige Klausel lässt ein implizites Risiko zurück."
+ },
+ {
+  "tr": "Şimdi bir hatırlatma mektubu kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt formulierst du ein Erinnerungsschreiben."
+ },
+ {
+  "tr": "Hızlı davrandığı için ekip malı sevk etti.",
+  "kind": "say.tr",
+  "de": "Weil das Team ohne Verzug handelte, hat es die Ware verschickt."
+ },
+ {
+  "tr": "Karşılıklı madde iki tarafa da hak veriyor.",
+  "kind": "say.tr",
+  "de": "Die gegenseitige Klausel berechtigt beide Seiten."
+ },
+ {
+  "tr": "aynı olayın bir kişiden çıkan anlatısına ise",
+  "kind": "say.tr",
+  "de": "und die Erzählung desselben Vorfalls aus einem Mund heißt"
+ },
+ {
+  "tr": "Şimdi kaçırılmış bir anlaşmayı konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du über eine verpasste Einigung."
+ },
+ {
+  "tr": "Bir tane daha: Madde açık olsaydı imzalardık.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wäre die Klausel klar gewesen, hätten wir unterschrieben."
+ },
+ {
+  "tr": "Şimdi olayın özetini sözlü olarak vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du die Zusammenfassung des Vorfalls mündlich."
+ },
+ {
+  "tr": "İkinci kalıbımız zamanı vurguluyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung hebt den Zeitpunkt hervor. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sert bir mektubu sözlü olarak kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt formulierst du einen deutlichen Brief mündlich."
+ },
+ {
+  "tr": "Şimdi sıra sende: Ana, ki mektubu yazdı, müdür.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ana, die den Brief geschrieben hat, ist die Direktorin."
+ },
+ {
+  "tr": "Şimdi sen kur: Ancak son tarihte cevap verdiler.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Erst zum Termin haben sie geantwortet."
+ },
+ {
+  "tr": "Pazartesi geciken hesap sonra yeniden başlatıldı.",
+  "kind": "say.tr",
+  "de": "Das am Montag verzögerte Konto wurde später wieder aufgenommen."
+ },
+ {
+  "tr": "Süre uzatımı isteseydik bugün daha sakin olurduk.",
+  "kind": "say.tr",
+  "de": "Hätten wir eine Fristverlängerung verlangt, wären wir heute ruhiger."
+ },
+ {
+  "tr": "Ayrıntılı cevap o zamana kadar gönderilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Die ausführliche Antwort wird bis dahin verschickt worden sein."
+ },
+ {
+  "tr": "İkinci kalıbımız sonucu bugüne taşıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung holt die Folge in die Gegenwart. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Gönderen ancak o zaman sorumlu olur.",
+  "kind": "say.tr",
+  "de": "Noch eins: Erst dann wird der Absender haftbar."
+ },
+ {
+  "tr": "Şimdi sen kur: Madde, ki bu yüzden imzaladık, kısa.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Klausel, weshalb wir unterschrieben haben, ist kurz."
+ },
+ {
+  "tr": "Ancak konu üst kademeye taşındığında cevap verdiler.",
+  "kind": "say.tr",
+  "de": "Erst als die Sache eskaliert wurde, haben sie geantwortet."
+ },
+ {
+  "tr": "burada kullanılamaz. Edat öne geçtiğinde ilgi zamiri",
+  "kind": "say.tr",
+  "de": "kann hier nicht stehen. Rückt die Präposition nach vorn, wird das Relativpronomen"
+ },
+ {
+  "tr": "Şimdi sıra sende: Anlaşsaydık dosya kapanmış olurdu.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Hätten wir uns geeinigt, wäre die Akte geschlossen worden."
+ },
+ {
+  "tr": "Bir tane daha: Cevap cumaya kadar gönderilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Antwort wird bis Freitag verschickt worden sein."
+ },
+ {
+  "tr": "Haftaya bu saatlerde teminatı kontrol ediyor olacağız.",
+  "kind": "say.tr",
+  "de": "Nächste Woche um diese Zeit werden wir die Sicherheit prüfen."
+ },
+ {
+  "tr": "Bir tane daha: Cuma günü gönderilen not herkese ulaştı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die am Freitag verschickte Notiz hat alle erreicht."
+ },
+ {
+  "tr": "Karara bağlanmış demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt zur Entscheidung gebracht. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Sonucu ağır olan demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt mit schweren Folgen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Dosyayı okuduktan sonra cevabı yazdık.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nachdem wir die Akte gelesen hatten, schrieben wir die Antwort."
+ },
+ {
+  "tr": "Şimdi sen kur: Geç kaldığı için sürücü randevuyu kaçırdı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Weil er zu spät war, hat der Fahrer den Termin verpasst."
+ },
+ {
+  "tr": "Şimdi sen kur: Yarın bu saatlerde dosyayı okuyor olacağız.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Morgen um diese Zeit werden wir die Akte lesen."
+ },
+ {
+  "tr": "Beklenmedik bir olay demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein unerwartetes Geschehen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "olur ve düşürülemez. Resmî dosyada tarafları bu yapı sıralar.",
+  "kind": "say.tr",
+  "de": "und kann nicht wegfallen. In einer amtlichen Akte ordnet diese Konstruktion die Parteien."
+ },
+ {
+  "tr": "Şimdi sen kur: Daha erken yazsaydık dosya bugün kapalı olurdu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Hätten wir früher geschrieben, wäre die Akte heute geschlossen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Pazartesiye kadar dosyayı göndermiş olacağız.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bis Montag werden wir die Akte verschickt haben."
+ },
+ {
+  "tr": "Teklif toplayarak yapılan alım demek. Kurumu yöneten kişiye ise",
+  "kind": "say.tr",
+  "de": "Das heißt eine Beschaffung über eingeholte Angebote. Und wer die Stelle leitet, heißt"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und"
+ },
+ {
+  "tr": "Son kalıbımız yükümlülüğün ne zaman doğduğunu söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung sagt, ab wann die Pflicht entsteht. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Geç bir cevabı hiçbir koşulda kabul etmeyeceğiz.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Unter keinen Umständen werden wir eine späte Antwort annehmen."
+ },
+ {
+  "tr": "Bir kararı ya da işi yürütmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine Entscheidung oder Arbeit ausführen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Steht ein negatives Adverb am Anfang, geht der Satz in die FRAGESTELLUNG:"
+ },
+ {
+  "tr": "Merhaba! Bugün olayı kısa anlatmayı öğreneceğiz: ne oldu, neden oldu, sonra ne yapıldı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, einen Vorfall kurz zu erzählen: was geschah, warum es geschah, was danach getan wurde."
+ },
+ {
+  "tr": "ise bugüne taşır. Müzakerede ikincisi daha ağırdır, çünkü zararın hâlâ sürdüğünü söyler.",
+  "kind": "say.tr",
+  "de": "holt sie in die Gegenwart. In der Verhandlung wiegt die zweite schwerer, denn sie sagt, dass der Schaden noch andauert."
+ },
+ {
+  "tr": "o an SÜRÜYOR olanı anlatır. Hatırlatma mektubunda ilki bir taahhüt, ikincisi bir uyarıdır.",
+  "kind": "say.tr",
+  "de": "was dann gerade LÄUFT. Im Erinnerungsschreiben ist das erste eine Zusage, das zweite eine Warnung."
+ },
+ {
+  "tr": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Özet yazarken sıra bu yapıyla korunur.",
+  "kind": "say.tr",
+  "de": "den Grund, und die Konstruktion mit der dritten Form bindet das Passiv an. Beim Zusammenfassen hält diese Konstruktion die Reihenfolge."
+ },
+ {
+  "tr": "Merhaba! Bugün bir dosyadaki tarafları tanıtmayı öğreneceğiz: kim imzaladı, hangi usul, kime bağlı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Parteien einer Akte vorzustellen: wer unterschrieben hat, welches Verfahren läuft, wem zugearbeitet wird."
+ },
+ {
+  "tr": "Müzakerede bu cümleler suçlama değil ders çıkarma aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In der Verhandlung sind diese Sätze keine Schuldzuweisung, sondern ein Mittel, daraus zu lernen; den Unterschied baut die Folgehälfte. Bist du bereit?"
+ },
+ {
+  "tr": "Olay özeti kısa olmak zorunda ama sırayı da kaybetmemeli; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Zusammenfassung muss kurz sein, darf aber die Reihenfolge nicht verlieren; die Partizipialkonstruktion leistet beides. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün kaçırılmış bir anlaşmayı konuşmayı öğreneceğiz: anlaşsaydık ne olurdu, bugün ne farklı olurdu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über eine verpasste Einigung zu sprechen: was wäre gewesen, was wäre heute anders."
+ },
+ {
+  "tr": "hepsi özneyle yardımcı fiili yer değiştirtir. Resmî mektupta bu yapı sesini yükseltmeden sertleşmenin yoludur.",
+  "kind": "say.tr",
+  "de": "sie alle tauschen Subjekt und Hilfsverb. Im formellen Brief ist das der Weg, deutlich zu werden, ohne die Stimme zu heben."
+ },
+ {
+  "tr": "Merhaba! Bugün son tarih baskısını yazmayı öğreneceğiz: o güne kadar ne bitmiş olacak, o an ne sürüyor olacak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Termindruck zu schreiben: was bis dahin fertig sein wird und was dann gerade laufen wird."
+ },
+ {
+  "tr": "Sertliği kelime değil YAPI taşıyor: olumsuz zarf başa gelince cümle devriliyor ve ton yükseliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Schärfe trägt nicht das Wort, sondern der BAU: steht ein negatives Adverb am Anfang, kippt der Satz und der Ton steigt. Bist du bereit?"
+ },
+ {
+  "tr": "Hatırlatma mektubunun sertliği tarihten değil biçimden geliyor: bitmiş olacak demek, olmazsa sonucu var demektir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Schärfe eines Erinnerungsschreibens kommt nicht vom Datum, sondern von der Form: fertig sein wird heißt, dass es sonst Folgen gibt. Bist du bereit?"
+ },
+ {
+  "tr": "Burada ilgi cümlesi tarif etmiyor, ek bilgi veriyor; virgüller bunun işareti ve çıkarılsa cümle yine ayakta kalıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hier beschreibt der Relativsatz nicht, er ergänzt; die Kommas sind das Zeichen, und ohne ihn bleibt der Satz stehen. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün sert ama resmî bir mektup yazmayı öğreneceğiz: neyi reddediyorsun, ne zaman cevap geldi, ne zaman yükümlülük doğar.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, einen deutlichen, aber formellen Brief zu schreiben: was du ablehnst, wann die Antwort kam, ab wann die Pflicht entsteht."
+ }
+]
