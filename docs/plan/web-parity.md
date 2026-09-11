@@ -6919,3 +6919,36 @@ kelimeyi yerleştiren bir ipucu veriyor ve bedelini `hintUsed` ile kaydediyor;
 Androidde düğme hiç yoktu, tıkanan öğrencinin tek çıkışı turu yanlış
 bitirmekti. Sınavda görünmüyor (§107'nin bağlamı).
 
+
+### 11.198 Dinleme egzersizi metnin tamamını tek seferde okuyordu
+
+`listenp.` uzayı (9 web-özel anahtar). Mobil kart tek bir hoparlör düğmesiydi:
+bütün replikler arka arkaya okunuyor, hangi replikte olunduğu görünmüyor,
+yavaşlatma yolu yok ve **"önce yalnızca dinleyerek dene" uyarısı hiç
+yazılmıyordu** — üstelik metni açan düğme hemen yanındaydı, yani dinleme
+egzersizi sessizce bir okuma egzersizine dönüşebiliyordu.
+
+Taşındı: bölüm sayacı, başlat/bitti hâlleri, çalan repliğin transkriptte
+işaretlenmesi, yavaş mod, "önce dinle" notu, satıra dokunma satırı ve
+durdurma. `speakAndWait` artık hızı da alıyor.
+
+İki satır ölçüm dışı ve **ikisi de doğru muafiyet**: gerçek lehçe kaydı
+(`segment.audio`) iki tarafta da uykuda — ölçtüm, 2265 replikte tek bir `audio`
+alanı yok; ve "bu tarayıcıda konuşma sentezi yok" (Android kendi TTS'iyle
+geliyor).
+
+### 11.199 Görevsiz bir konuşma alıştırması ekranı çökertirdi
+
+`SpeakingDrill` çizimde `task.de`ye doğrudan dokunuyordu; liste boş gelirse
+`task` undefined ve ekran kırmızıya dönüyordu. Web aynı yerde tek satırlık bir
+not gösteriyor.
+
+Bugün içerikte tetikleyen bir egzersiz **yok** (50 egzersizin hepsinde ya
+monolog ya görev var) — yani bu, bulunmuş bir hata değil, kapatılmış bir
+delik. Ama içerik her turda yeniden üretiliyor: bu oturumda başka bir yerde
+tam olarak bu olmuştu (§11.189'daki `minWords` eksikliği, 356 egzersizin 190'ı
+bitirilemez).
+
+`speakp.` uzayının kalan altı satırı temiz: üçü webin ses yükleme yoluna ait
+(§11.136), üçünün mobilde `item.*` altında karşılığı var.
+
