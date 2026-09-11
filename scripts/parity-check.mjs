@@ -3886,6 +3886,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ders adiminda atlama", atla("mobile/src/screens/LessonScreen.tsx"), atla("src/components/lessons/lesson-player.tsx"));
 }
 
+/* ── 116. sohbet servisi kapaliyken ve yarim kalan konusma ────────────────
+ * Iki yanlis mesaj:
+ *
+ * "BIRAZDAN TEKRAR DENE" derken ders DEVAM EDIYORDU. Saglayici kapaliysa
+ * mobil cevrimdisi rol yapmaya dusuyor (`game/offlineRoleplay`) ama mesaj
+ * "yapay zeka sohbeti kullanilamiyor, birazdan tekrar dene" diyordu: calisan
+ * bir sey bozuk sanilyordu. Web hangi yedege dusuldugunu adlandiriyor
+ * (senaryolu konusma / kaliplar).
+ *
+ * "KONUSMA BITTI" yarim birakildiginda da yaziliyordu. Sunucu `passed`
+ * donduruyor (asgari tur doldu mu) ve mobil yaniti okumuyordu. */
+{
+  const sohbet = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "yedegin adi=" + (/chat_off_scripted/.test(src) && /chat_off_patterns/.test(src) ? "var" : "yok"),
+      "yarim kaldi basligi=" + (/lessonp\.conversation_unfinished/.test(src) ? "var" : "yok"),
+      /* SUNUCU YANITINDAN okunuyor mu: özet bileşeninin kendi `passed`
+         alanı da dosyada geçtiği için gevşek desen yanıt okumasını hiç
+         ölçmüyordu (enjeksiyonda kırmızı olmadı). */
+      "passed okunuyor=" + (/d\?\.passed|setSaved\(data\)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("sohbet yedegi ve yarim konusma", sohbet("mobile/src/screens/LessonScreen.tsx"), sohbet("src/components/lessons/lesson-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

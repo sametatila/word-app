@@ -125,6 +125,8 @@ export function LessonScreen() {
    */
   /** Dersin bir sonraki tekrarı kaç gün sonra — kayıt yanıtından. */
   const [nextDays, setNextDays] = useState<number | null>(null);
+  /** Sunucunun hükmü: konuşma sayıldı mı (asgari tur doldu mu). */
+  const [passed, setPassed] = useState<boolean | null>(null);
   const [handsFree, setHandsFree] = useState(true);
   const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
@@ -196,11 +198,20 @@ export function LessonScreen() {
       .then((ok) => {
         if (alive && !ok) {
           offlineRef.current = true;
-          push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.ai_off") }], tone: "hint" });
+          /* HANGİ YEDEĞE DÜŞTÜĞÜ SÖYLENİYOR. Mesaj "birazdan tekrar dene"
+             diyordu ama ders DURMUYOR: çevrimdışı rol yapma devralıyor
+             (`game/offlineRoleplay`) - senaryosu olan derste senaryo, olmayanda
+             kalıplar. Yani kullanıcı çalışan bir şeyi bozuk sanıyordu. Web iki
+             yedeği ayrı ayrı adlandırıyor. */
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx(lesson?.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns") }], tone: "hint" });
         }
       })
       .catch(() => {});
     return () => { alive = false; stopListening(); };
+    /* Efekt yalnız MOUNT içindir (ders kimliği değişmiyor, ekran yeniden
+       kuruluyor); `lesson` bağımlılığa eklenirse sohbet uyarısı her çizimde
+       yeniden basılır. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Anlatımı başlat: yarım kalan kayıt varsa devam teklif et, yoksa baştan.
@@ -559,8 +570,12 @@ export function LessonScreen() {
          geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
          yazmıyordu. Web özetin altında söylüyor. */
       if (res.ok) {
-        const d = (await res.json()) as { nextDays?: number };
+        const d = (await res.json()) as { nextDays?: number; passed?: boolean };
         if (typeof d?.nextDays === "number") setNextDays(d.nextDays);
+        /* `passed` OKUNUYOR. Özet başlığı her hâlde "Konuşma bitti" diyordu;
+           konuşma yarım bırakılmışsa bu yanlış bir tamamlandı damgası. Web
+           iki başlığı ayırıyor. */
+        if (typeof d?.passed === "boolean") setPassed(d.passed);
       }
     } catch {
       /* ÇEVRİMDIŞI: yerel işaret Patika'yı bitmiş gösteriyor ama sunucu dersi
@@ -650,6 +665,7 @@ export function LessonScreen() {
         <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined}
+          passed={passed}
           onExam={() => nav.navigate("RoleplayExam", { id: lesson.id })} />
       ) : resumeOffer ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
@@ -913,8 +929,9 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, insets, onBack, onNext, onExam }: {
+function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, colors, insets, onBack, onNext, onExam }: {
   lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
+  passed: boolean | null;
   insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -926,7 +943,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, ins
     <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
       <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
-      <Text variant="display" style={{ marginTop: spacing.md }}>{tx("lesson.lesson_complete")}</Text>
+      <Text variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
       <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
 
       <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>
