@@ -56,7 +56,7 @@ export type Lesson = {
  */
 const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
   de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
-  // İngilizce: A1, A2, B1 ve B2 tam (100'er ders); C1 yazılıyor.
+  // İngilizce: A1'den C1'e beş seviye de tam (100'er ders).
   // Sayılar burada TEK TEK YAZILMIYOR — güncel sayı `npm run dump:lessons en`
   // çıktısında, yorumda bayatlıyor.
   // Seviye anahtarı olmayan seviyeler boş döner — Patika o ünitelerde

@@ -650,6 +650,31 @@ okumak adlandırılmayanı aramak oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 10 — Kapanış: seçimin kendisi (2026-09-11).** On ders: aynı
+savın üç kaydı, savın sırası, özgürlüğü istemek, görecelik tartışması,
+kanıt sözlüğü, savı aktarmak, kendini ne kadar tanıyorsun, ölçülü tabii,
+uzun bir savı bağlamak, seçimin kendisi.
+
+Modül dokuz modülün konularını bırakıp ARACIN KENDİSİNE dönüyor: üslup,
+sıra, hak dili, ahlak, kanıt, aktarma, kendini bilme, alay, zincir ve
+son olarak seçim. Kapanış dersinin kalıbı savı kendi yapısıyla söylüyor —
+«Serenity we learn; sincerity, we choose.» cümlesinde öğrenilen ile
+seçilen aynı cümlede ayrılıyor. Kuralı A1'de öğrendi; C1'de hangisini ne
+zaman kullanacağını seçiyor.
+
+Üç ders C1'in araçlarını bir DÜRÜSTLÜK ölçüsüne bağlıyor. Kip dersi:
+kendine dair kesin cümle doğrulanamadığı için en tehlikeli cümle. Aktarma
+dersi: hangi fiili seçtiğin, savın sorumluluğunu paylaşıp paylaşmadığın.
+Alay dersi ise aracın bedelini söylüyor — hükmü sen vermemiş olursun ama
+hüküm kurulmuş olur, ve bu yüzden alay hem en zor çürütülen hem de en
+kolay yanlış anlaşılan araç.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
+**WP-74 KAPANDI.** İngilizce kurs A1'den C1'e 500 ders; C1'in 800
+sözlükçe maddesi benzersiz, Almanca eksen l-112…l-121 paketleriyle tam,
+`check:native-de` ders 500/500.
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders
