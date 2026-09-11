@@ -11000,3 +11000,43 @@ avatar, iki metin satırı, iki düğme — yükseklik varsayılmıyor.
 parçanın hepsi, sırası, ve **gerçek** dizilimin sırası (yükleme dalı ona
 benzemek zorunda, yani gate iki listeyi birbirine bağlıyor). İki enjeksiyon
 (bir parçayı silmek, sırayı bozmak) yakalandı.
+
+## §11.335 — On dört rota yedeği sessizdi
+
+§11.334'ten sonra aynı soruyu **tek yüzey yerine sistematik** sordum: web'in
+bütün yükleme dalları gerçek düzenin şeklini çiziyor mu, ve kendini duyuruyor
+mu?
+
+**Şekil tarafı temiz çıktı.** On dört `loading.tsx` dosyasının hepsi gelecek
+düzenin şeklini çiziyor (profil kimlik + beş satır, Öğren'in üç bloğu,
+Kelimeler'in başlık + şerit + arama + çipler + satırları…) ve iki bileşen
+içindeki `return null` de yükleme değil **hata** dalı — ikisi de öncesinde
+iskelet çiziyor. Yani taranan hipotezin yarısı yanlıştı.
+
+**Duyuru tarafı tamamen eksikti.** On dördünün **hiçbiri** `aria-busy`
+taşımıyordu ve on dördünün kökü `aria-hidden`dı. Yani sesli okuyucu kullanan
+biri bir sekmeye geçtiğinde hiçbir şey duymuyor: ekran sessizce boş kalıyor,
+sonra içerik bir anda ortaya çıkıyor. Mobil bunu **kökte** çözmüştü
+(`ui/Skeleton` `SkeletonCard`: `accessibilityRole="progressbar"`, gerekçesi
+orada yazılı) ve web'in `SkeletonCard`ı da `role="status" aria-busy` taşıyor —
+eksik olan **rota** seviyesindeki yedeklerdi. §11.329'da aynı sınıf tek bir
+bileşende çıkmıştı; burada on dördü birden.
+
+`LoadingRegion` tek yerde: `role="status" aria-busy="true"` ve etiket
+`social.loading`. İki ayrıntı kayda değer:
+
+- **`aria-hidden` kökten içeri taşındı.** Kökte kalırsa etiketin kendisi de
+  gizlenir ve bölge hiç duyurulmaz — düzeltmenin en kolay yanlışı, o yüzden
+  kapı bunu ayrıca ölçüyor.
+- **İstemci bileşeni**, çünkü etiket çeviriden geliyor ve `loading.tsx` bir
+  Suspense yedeği: orada `await` etmek yedeğin kendisini askıya alırdı.
+
+§221 dört ölçüt okuyor ve dosyaları **sayarak** buluyor (yeni bir
+`loading.tsx` eklendiği anda kapıya giriyor). İki enjeksiyon yakalandı.
+
+**Kendi kuralımı yine ihlal ettim.** Enjeksiyonu geri almak için
+`git checkout -- <dosya>` kullandım ve o dosyanın **bu turdaki kendi
+düzeltmesini** sildi — §11.285'te yazdığım "enjeksiyonlar yedekten geri
+alınır, `git checkout` ile değil" kuralının aynısı. Kapı yeşile dönmeyince
+fark edildi ve düzeltme yeniden uygulandı; kuralı ihlal etmenin bedeli bu kez
+yalnız bir dosya oldu çünkü kapı bekliyordu.
