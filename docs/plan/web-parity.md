@@ -6477,3 +6477,74 @@ toplanıyor), davet bağlantısı (mobilde derin bağlantı o adresi karşılam�
 **Üç turdur aynı kalıp:** listelerin kendisi denetlenmezse, içindeki gerekçeler
 sessizce eskiyor. "Kayıtlı istisna" bir karar değil, bir **borç**; ödenip
 ödenmediğine bakmak da ölçümün parçası.
+
+
+### 11.180 Çağıransız uçların listesi: iki timer hiç kurulmamış
+
+`check:endpoints`in dokuz "belgelenmiş çağıransız uç" satırını tek tek ölçtüm.
+Yedisi doğruydu. İkisi bir muafiyet değil, **kurulmamış bir işti**.
+
+`/api/cron/streak-alert` ve `/api/cron/weekly-reminder` deploy edilmişti -
+`curl` ikisinden de 401 alıyor, yani yayındalar ve gizli anahtar bekliyorlar.
+Ama `systemctl list-timers "lernomi-*"` dört timer gösteriyordu: onları çağıran
+yoktu. AGENTS.md'de sebep de yazılıydı ("timer'lar deploy'dan SONRA kurulacak")
+ve kurulmamıştı.
+
+Görünen yüzü: iki uygulamanın ayarlarında "seri koruma" ve "haftalık sınav"
+anahtarları açılabiliyor, karşılığında **hiçbir bildirim gitmiyordu**. Kapı
+"çağıransız ama belgeli" diyerek bunu sessizce onaylıyordu.
+
+İki systemd timer kuruldu (git dışı işletim işi): `lernomi-cron-streak` her
+saat 17-21 UTC, `lernomi-cron-weekly` pazar 15-19 UTC - saatler `vercel.json`
+daki eski cron'larla aynı. Uçlar kullanıcının KENDİ saatine bakıyor ve
+`last_reminder_day` günde tek bildirim garantisi veriyor, o yüzden sık
+çalışmaları sakıncasız. Elle tetiklemedim: gerçek bildirim giderdi.
+
+`/api/premium/consume` yeniden ölçüldü, §11.24'teki teşhis geçerli: bugün
+zarar yok, bağlamak ücretsiz kullanıcının yürüyüş modunu kapatırdı. Ürün
+kararına bağlı, kayıt olduğu gibi duruyor.
+
+### 11.181 Koyu temada kart gölgesi yoktu - ve o alan kapının kapsam dışıydı
+
+`check:colors`ın dokuz mobil istisnasını tek tek ölçtüm. Sekizi doğruydu
+(konfeti kimlik listesi webinkiyle birebir, avatar zemini webdeki satırla aynı
+değer, varsayılan şapka rengi kullanıcı aksesuarı). Dokuzuncusu -
+`#5a3418`, "gölge tinti, **iki temada da aynı olması bilinçli**" - yanlıştı.
+
+Web bu ayrımı baştan yapıyor: `.dark` bloğunda gölge siyaha dönüyor ve 0.16'dan
+0.45'e derinleşiyor, çünkü sıcak kahve bir gölge koyu zeminde görünmüyor.
+Mobilde yedi kart çağrısı da sabit `#5a3418` geçiyordu. Sonuç: koyu temada
+kartlar, sekme çubuğu, tur kartları ve ayarlardaki seçili tema düğmesi
+yükseltilerini kaybediyordu - gölge vardı ama görünmüyordu.
+
+Üstelik webin yanındaki yorum yanlış bir varsayım taşıyordu: "Android'in
+`elevation`'ı koyu temada aynı şeyi zaten yapar". Yapmıyor - `elevation`
+gölgeyi `shadowColor` ile boyuyor ve oraya sabit kahve geçiliyordu.
+
+Palete iki jeton eklendi (`shadowTint`, `shadowStrength`) ve nötr gölge için
+`cardShadow(colors, elevation)` yazıldı. Renkli gölgeler (`softShadow(
+colors.primary, 8)`) bir vurgu, dokunulmadı.
+
+**Kapının kör noktası tam da buydu:** `check:tokens` gölgenin y/bulanıklık/
+opaklık formülünü ölçüyordu ama RENGİNİ ölçmüyordu ve koyu temayı "webe özgü"
+diye kapsam dışı bırakmıştı. Artık iki temanın da tintini ve gücünü ölçüyor.
+Dört enjeksiyonla denendi.
+
+### 11.182 Ders sınavındaki iki düğme tıpatıp aynıydı
+
+`i18n-hardcoded` tabanını denetlerken çıktı: web `lesson-player`da doğru/yanlış
+düğmeleri ikisi de nötr `option` sınıfıydı. Android'de ikisi dolu ve anlamının
+rengini taşıyor - yeşil onay, kırmızı çarpı. Ders akışında en hızlı okunması
+gereken yer orası; web onu iki tıpatıp aynı düğmeyle soruyordu. Eşitlendi
+(yazı `on-fill` jetonundan, çünkü dolgu koyu temada açılıyor).
+
+Tabanların kendisi temiz çıktı: mobildeki on yedi dizginin ve webdeki 163'ün
+hepsi meşru (kurs adları zaten üç dilde yazılı, içerik çözücünün desenleri,
+Goethe'nin Almanca bölüm adları, model istemleri, konsol kayıtları, dil adının
+kendi dilinde kalması). Gerekçeleri artık taban dosyasında yazılı - **sayı da
+bir muafiyet listesi ve sebebi yazılmazsa eskiyor**, bu turun dört kaydının
+ortak dersi bu.
+
+Denetimi pahalı yapan şey webdeki tarayıcının `--hits` bayrağının olmamasıydı;
+mobilde vardı, eklendi.
+
