@@ -24600,5 +24600,4719 @@
    "goal": "Üç cümlede birer öğe düşürdüysen ve düşeni kimin tamamlayabildiğini söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-three-names-for-one-measure",
+  "level": "C1",
+  "course": "en",
+  "icon": "office",
+  "title": "Three names for one measure",
+  "titleTr": "Tek kararın üç adı",
+  "summary": "Aynı kararın raporda ve atölyede başka ad aldığını öğretir; adı seçmek kimin yanında durduğunu seçmektir.",
+  "minutes": 12,
+  "focusId": "Register shift in naming the same measure",
+  "vocab": [
+   {
+    "de": "efficiency gain",
+    "tr": "verimlilik artışı"
+   },
+   {
+    "de": "work intensification",
+    "tr": "iş yoğunlaşması"
+   },
+   {
+    "de": "flexibilization",
+    "tr": "esnekleştirme"
+   },
+   {
+    "de": "precarization",
+    "tr": "güvencesizleşme"
+   },
+   {
+    "de": "standardization",
+    "tr": "standartlaştırma"
+   },
+   {
+    "de": "rationalization",
+    "tr": "rasyonelleştirme"
+   },
+   {
+    "de": "staff turnover",
+    "tr": "personel devir hızı"
+   },
+   {
+    "de": "employee retention",
+    "tr": "çalışanı elde tutma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "In the report it is an efficiency gain; on the floor, work intensification.",
+    "tr": "aynı kararı iki kayıtta söyler"
+   },
+   {
+    "de": "What management calls flexibilization, the union calls precarization.",
+    "tr": "iki adı karşı karşıya koyar"
+   },
+   {
+    "de": "Standardization is a method; rationalization is a programme.",
+    "tr": "yöntemi programdan ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı kararın raporda ve atölyede başka ad aldığını öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Adı seçmek kimin yanında durduğunu seçmektir; bu yüzden iş dünyasında sözcük hiç tarafsız değil. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "efficiency gain"
+     },
+     {
+      "lang": "tr",
+      "text": "Aynı işi daha az kaynakla yapma kazancı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the report it is an efficiency gain; on the floor, work intensification."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the report it is an efficiency gain; on the floor, work intensification."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı sürede daha çok iş yapılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "work intensification"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışma koşullarının gevşetilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "flexibilization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What management calls flexibilization, the union calls precarization."
+     },
+     {
+      "lang": "tr",
+      "text": "Yönetimin esnekleştirme dediğine sendika güvencesizleşme diyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What management calls flexibilization, the union calls precarization."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin güvencesinin azalmasına"
+     },
+     {
+      "lang": "en",
+      "text": "precarization"
+     },
+     {
+      "lang": "tr",
+      "text": "işlerin tek bir ölçüye bağlanmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "standardization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yöntemi programdan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Standardization is a method; rationalization is a programme."
+     },
+     {
+      "lang": "tr",
+      "text": "Standartlaştırma bir yöntemdir, rasyonelleştirme bir programdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Standardization is a method; rationalization is a programme."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aynı karar iki kayıtta iki ayrı olgu gibi görünür:"
+     },
+     {
+      "lang": "en",
+      "text": "efficiency gain"
+     },
+     {
+      "lang": "tr",
+      "text": "kazancı öne alır ve bedeli görünmez kılar,"
+     },
+     {
+      "lang": "en",
+      "text": "work intensification"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bedeli öne alır. Kimse yalan söylemiyor; yalnız hangi yarısının söylendiği değişiyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Raporda tasarruf, atölyede iş yoğunlaşması."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In the report it is a saving; on the floor, work intensification.",
+     "accept": [
+      "In the report it is a gain; on the floor, work intensification.",
+      "In the report it is an efficiency gain; on the floor, work intensification."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı kararı iki kayıtta söylemek için iki yer adı yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "In the report it is a saving; on the floor, work intensification."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Standardization is a method; rationalization is a programme."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Standardization is a method; rationalization is a programme.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri tek bir adımı adlandırıyor, öteki bütün bir dönüşümü."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin bütününü akla uygun biçimde yeniden düzenlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "rationalization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "High staff turnover is the price of weak employee retention."
+     },
+     {
+      "lang": "tr",
+      "text": "Yüksek personel devir hızı zayıf çalışanı elde tutmanın bedelidir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "High staff turnover is the price of weak employee retention."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışanların ne sıklıkla değiştiğine"
+     },
+     {
+      "lang": "en",
+      "text": "staff turnover"
+     },
+     {
+      "lang": "tr",
+      "text": "onları şirkette tutabilmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "employee retention"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Şirketin esnekleştirme dediğine çalışanlar güvencesizleşme diyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the firm calls flexibilization, the staff calls precarization.",
+     "accept": [
+      "What the boss calls flexibilization, the staff calls precarization.",
+      "What management calls flexibilization, the union calls precarization."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … calls … calls"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the firm calls flexibilization, the staff calls precarization."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hangi adı seçtiğin, kimin yanında durduğunu söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The word takes a side."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözcük taraf tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The word takes a side."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Standartlaştırma bir yöntemdir, birleşme bir programdır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Standardization is a method; the merger is a programme.",
+     "accept": [
+      "Standardization is a method; the plan is a programme.",
+      "Standardization is a method; rationalization is a programme."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yöntemi programdan ayırmak için iki yarı kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "Standardization is a method; the merger is a programme."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kazanç"
+     },
+     {
+      "lang": "en",
+      "text": "efficiency gain"
+     },
+     {
+      "lang": "tr",
+      "text": "bedel"
+     },
+     {
+      "lang": "en",
+      "text": "work intensification"
+     },
+     {
+      "lang": "tr",
+      "text": "program"
+     },
+     {
+      "lang": "en",
+      "text": "rationalization"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı kararı iki kayıtta anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşyerinde alınan bir kararı önce yönetimin, sonra çalışanların diliyle anlatıyorsun. İki adı da kur ve her adın neyi görünmez kıldığını söyle.",
+   "partner": "kararın adının önemsiz olduğunu düşünen, «rakam aynı ya» diyen bir iş arkadaşı",
+   "opening": "The numbers are the same either way, aren't they?",
+   "openingTr": "Nasıl adlandırsan rakam aynı, değil mi?",
+   "goal": "Aynı kararı iki kayıtta adlandırdıysan ve her adın neyi görünmez kıldığını söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-who-gives-the-orders",
+  "level": "C1",
+  "course": "en",
+  "icon": "job",
+  "title": "Who gives the orders",
+  "titleTr": "Emri kim veriyor",
+  "summary": "Yetkiden söz ederken kimi başa aldığını seçmeyi öğretir; yapıyı başa almak kişiyi gizler, kişiyi başa almak yapıyı.",
+  "minutes": 12,
+  "focusId": "Fronting in talk about authority",
+  "vocab": [
+   {
+    "de": "power structure",
+    "tr": "güç yapısı"
+   },
+   {
+    "de": "power imbalance",
+    "tr": "güç dengesizliği"
+   },
+   {
+    "de": "delegation",
+    "tr": "yetki devri"
+   },
+   {
+    "de": "authority to give orders",
+    "tr": "talimat verme yetkisi"
+   },
+   {
+    "de": "subordination",
+    "tr": "boyun eğme"
+   },
+   {
+    "de": "room to maneuver",
+    "tr": "hareket alanı"
+   },
+   {
+    "de": "subordinate oneself",
+    "tr": "boyun eğmek"
+   },
+   {
+    "de": "externally determined",
+    "tr": "başkalarınca belirlenen"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What the power structure does is hide the power imbalance.",
+    "tr": "eylemi başa taşır"
+   },
+   {
+    "de": "Behind the delegation stands the authority to give orders.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "Subordination we notice; room to maneuver we do not.",
+    "tr": "iki nesneyi başa alıp ikiye böler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yetkiden söz ederken kimi başa aldığını seçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Yapıyı başa almak kişiyi gizler, kişiyi başa almak yapıyı; ikisi de doğru cümle kurar ve ikisi ayrı şey söyler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "power structure"
+     },
+     {
+      "lang": "tr",
+      "text": "Kimin kime karşı güçlü olduğunun düzeni demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the power structure does is hide the power imbalance."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the power structure does is hide the power imbalance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki taraf arasındaki güç farkına"
+     },
+     {
+      "lang": "en",
+      "text": "power imbalance"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yetkinin başkasına aktarılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "delegation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yer öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the delegation stands the authority to give orders."
+     },
+     {
+      "lang": "tr",
+      "text": "Yetki devrinin arkasında talimat verme yetkisi duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Behind the delegation stands the authority to give orders."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne yapılacağını söyleme hakkına"
+     },
+     {
+      "lang": "en",
+      "text": "authority to give orders"
+     },
+     {
+      "lang": "tr",
+      "text": "bu hakka uyma hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "subordination"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki nesneyi başa alıp ikiye bölüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Subordination we notice; room to maneuver we do not."
+     },
+     {
+      "lang": "tr",
+      "text": "Boyun eğmeyi fark ediyoruz, hareket alanını fark etmiyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Subordination we notice; room to maneuver we do not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Başa aldığın şey sorumluluğu da taşır:"
+     },
+     {
+      "lang": "en",
+      "text": "What the power structure does"
+     },
+     {
+      "lang": "tr",
+      "text": "faili bir düzen yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the delegation"
+     },
+     {
+      "lang": "tr",
+      "text": "onu bir yere gizler,"
+     },
+     {
+      "lang": "en",
+      "text": "Subordination we notice"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bizi fail hâline getirir. Üç cümle, tek olay ve üç ayrı sorumlu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Hiyerarşinin yaptığı şey güç dengesizliğini gizlemek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the hierarchy does is hide the power imbalance.",
+     "accept": [
+      "What the system does is hide the power imbalance.",
+      "What the power structure does is hide the power imbalance."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eylemi başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the hierarchy does is hide the power imbalance."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the delegation stands the authority to give orders."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Behind the delegation stands the authority to give orders.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yer öbeği başa alınmış; yetki sona düşünce daha ağır duyuluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kişinin kendi kararını verebildiği alana"
+     },
+     {
+      "lang": "en",
+      "text": "room to maneuver"
+     },
+     {
+      "lang": "tr",
+      "text": "kendi isteğiyle boyun eğmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "subordinate oneself"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody wants to subordinate oneself to an externally determined pace."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse başkalarınca belirlenen bir tempoya boyun eğmek istemiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody wants to subordinate oneself to an externally determined pace."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kararı başkasının verdiği işe"
+     },
+     {
+      "lang": "en",
+      "text": "externally determined"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Reformun arkasında talimat verme yetkisi duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Behind the reform stands the authority to give orders.",
+     "accept": [
+      "Behind the rule stands the authority to give orders.",
+      "Behind the delegation stands the authority to give orders."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Behind"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Behind the reform stands the authority to give orders."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işyerinde kimin sorumlu göründüğü, çoğu zaman cümlenin başında belli olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The subject carries the blame."
+     },
+     {
+      "lang": "tr",
+      "text": "Suçu özne taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The subject carries the blame."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hareket alanını fark ediyoruz, boyun eğmeyi fark etmiyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Room to maneuver we notice; subordination we do not.",
+     "accept": [
+      "Room to maneuver we notice; the pressure we do not.",
+      "Subordination we notice; room to maneuver we do not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki nesneyi başa alıp ikiye bölmek için noktalı virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Room to maneuver we notice; subordination we do not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: düzen"
+     },
+     {
+      "lang": "en",
+      "text": "What the power structure does"
+     },
+     {
+      "lang": "tr",
+      "text": "gizleme"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the delegation"
+     },
+     {
+      "lang": "tr",
+      "text": "biz"
+     },
+     {
+      "lang": "en",
+      "text": "Subordination we notice"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir yetki olayını üç ayrı sorumluyla anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşyerinde yetkiyle ilgili bir olayı anlatıyorsun ve her cümlede sorumluyu bilerek değiştiriyorsun. Düzeni, gizlenen yetkiyi ve bizi başa alan üç cümle kur.",
+   "partner": "her olayı «kurallar böyle» diye kapatan bir yönetici",
+   "opening": "Those are just the rules, aren't they?",
+   "openingTr": "Kurallar böyle, değil mi?",
+   "goal": "Düzeni, gizlenen yetkiyi ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-at-the-bargaining-table",
+  "level": "C1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "At the bargaining table",
+  "titleTr": "Sözleşme masasında",
+  "summary": "Toplu sözleşme dilinin kalıplaşmış biçimini öğretir; masada istek kişisel olduğu anda pazarlık konusu olur.",
+  "minutes": 12,
+  "focusId": "Subjunctive in collective bargaining",
+  "vocab": [
+   {
+    "de": "collective bargaining autonomy",
+    "tr": "toplu sözleşme özerkliği"
+   },
+   {
+    "de": "conduct of negotiations",
+    "tr": "müzakere yönetimi"
+   },
+   {
+    "de": "consensus building",
+    "tr": "uzlaşı sağlama"
+   },
+   {
+    "de": "code of conduct",
+    "tr": "davranış kuralları"
+   },
+   {
+    "de": "female works council member",
+    "tr": "kadın işçi temsilcisi"
+   },
+   {
+    "de": "make permanent",
+    "tr": "kalıcı hale getirmek"
+   },
+   {
+    "de": "apprenticeship contract",
+    "tr": "çıraklık sözleşmesi"
+   },
+   {
+    "de": "legitimization",
+    "tr": "meşrulaştırma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The collective bargaining autonomy demands that the conduct of negotiations be free.",
+    "tr": "isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for consensus building, no code of conduct would hold.",
+    "tr": "olmasaydıyı masada kurar"
+   },
+   {
+    "de": "The female works council member asks that the firm make permanent every apprenticeship contract.",
+    "tr": "talebi kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün toplu sözleşme dilinin kalıplaşmış biçimini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Masada istek kişisel olduğu anda pazarlık konusu olur; kalıp onu bir ölçü hâline getirir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "collective bargaining autonomy"
+     },
+     {
+      "lang": "tr",
+      "text": "Tarafların devlete karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The collective bargaining autonomy demands that the conduct of negotiations be free."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collective bargaining autonomy demands that the conduct of negotiations be free."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görüşmelerin nasıl yürütüldüğüne"
+     },
+     {
+      "lang": "en",
+      "text": "conduct of negotiations"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak bir noktada buluşma çabasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "consensus building"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı masada kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for consensus building, no code of conduct would hold."
+     },
+     {
+      "lang": "tr",
+      "text": "Uzlaşı sağlama olmasaydı hiçbir davranış kuralı tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for consensus building, no code of conduct would hold."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kurumda uyulması beklenen yazılı ilkelere"
+     },
+     {
+      "lang": "en",
+      "text": "code of conduct"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışanları kurulda temsil eden kadına ise"
+     },
+     {
+      "lang": "en",
+      "text": "female works council member"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The female works council member asks that the firm make permanent every apprenticeship contract."
+     },
+     {
+      "lang": "tr",
+      "text": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The female works council member asks that the firm make permanent every apprenticeship contract."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:"
+     },
+     {
+      "lang": "en",
+      "text": "that the conduct of negotiations be free"
+     },
+     {
+      "lang": "tr",
+      "text": "dersen istek senin değil tarafların ortak ölçüsü olur. «Ben istiyorum» dersen karşı taraf seninle pazarlık eder, ölçüyle değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Toplu sözleşme özerkliği masanın serbest olmasını istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The collective bargaining autonomy demands that the table be free.",
+     "accept": [
+      "The collective bargaining autonomy demands that the talks be free.",
+      "The collective bargaining autonomy demands that the conduct of negotiations be free."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İsteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "demands that … be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The collective bargaining autonomy demands that the table be free."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for consensus building, no code of conduct would hold."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Were it not for consensus building, no code of conduct would hold.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Olmasaydı kuruluşu masada da işliyor; koşul kişiye değil sürece bağlanmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçici bir şeyi sürekli kılmaya"
+     },
+     {
+      "lang": "en",
+      "text": "make permanent"
+     },
+     {
+      "lang": "tr",
+      "text": "mesleği işyerinde öğrenme sözleşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "apprenticeship contract"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The legitimization comes after the fact."
+     },
+     {
+      "lang": "tr",
+      "text": "Meşrulaştırma olup bittikten sonra geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The legitimization comes after the fact."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kararı sonradan haklı gösterme işine"
+     },
+     {
+      "lang": "en",
+      "text": "legitimization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Güven olmasaydı hiçbir davranış kuralı tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for trust, no code of conduct would hold.",
+     "accept": [
+      "Were it not for goodwill, no code of conduct would hold.",
+      "Were it not for consensus building, no code of conduct would hold."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı masada kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for trust, no code of conduct would hold."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Masada biçim bir nezaket değil; isteği kimin taşıdığını belirler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The form protects the claim."
+     },
+     {
+      "lang": "tr",
+      "text": "Biçim talebi koruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The form protects the claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hale getirmesini istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The council asks that the firm make permanent every contract.",
+     "accept": [
+      "The union asks that the firm make permanent every contract.",
+      "The female works council member asks that the firm make permanent every apprenticeship contract."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Talebi kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "asks that … make"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The council asks that the firm make permanent every contract."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: hak"
+     },
+     {
+      "lang": "en",
+      "text": "demands that … be"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "talep"
+     },
+     {
+      "lang": "en",
+      "text": "asks that … make"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sözleşme masasında konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve talebi kalıplaşmış biçimlerle kur.",
+   "partner": "her talebi kişiselleştiren, «sen istiyorsun demek ki» diyen bir işveren temsilcisi",
+   "opening": "So this is what you personally want?",
+   "openingTr": "Yani bu senin kişisel isteğin mi?",
+   "goal": "İsteği, olmasaydıyı ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-flexibility-bargain",
+  "level": "C1",
+  "course": "en",
+  "icon": "clock",
+  "title": "The flexibility bargain",
+  "titleTr": "Esnekliğin pazarlığı",
+  "summary": "Esneklik tartışmasında ödün vererek karşı çıkmayı öğretir; esnekliğin iyi yanını teslim etmeyen itiraz duyulmuyor.",
+  "minutes": 12,
+  "focusId": "Concessive clauses in the flexibility debate",
+  "vocab": [
+   {
+    "de": "spin off",
+    "tr": "bünyeden ayırmak"
+   },
+   {
+    "de": "in-house",
+    "tr": "şirket içi"
+   },
+   {
+    "de": "permeable",
+    "tr": "geçirgen"
+   },
+   {
+    "de": "status insecurity",
+    "tr": "statü güvencesizliği"
+   },
+   {
+    "de": "gainfully employed",
+    "tr": "iş sahibi"
+   },
+   {
+    "de": "as a sideline",
+    "tr": "yan iş olarak"
+   },
+   {
+    "de": "offload",
+    "tr": "üstüne yıkmak"
+   },
+   {
+    "de": "gainful employment",
+    "tr": "gelir getiren iş"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Much as they spin off the unit, the work stays in-house.",
+    "tr": "ödünü başa alıp gerçeği söyler"
+   },
+   {
+    "de": "The border, albeit permeable, does not remove the status insecurity.",
+    "tr": "ödünü araya sıkıştırır"
+   },
+   {
+    "de": "Albeit gainfully employed, many still work as a sideline.",
+    "tr": "ödünü başa çekip eksiği gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün esneklik tartışmasında ödün vererek karşı çıkmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Esnekliğin iyi yanını teslim etmeyen itiraz duyulmuyor; ödün itirazı zayıflatmıyor, taşınabilir kılıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "spin off"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir birimi şirketten ayırıp bağımsızlaştırmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as they spin off the unit, the work stays in-house."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as they spin off the unit, the work stays in-house."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şirketin kendi içinde yapılana"
+     },
+     {
+      "lang": "en",
+      "text": "in-house"
+     },
+     {
+      "lang": "tr",
+      "text": "sınırı kolayca geçilebilene ise"
+     },
+     {
+      "lang": "en",
+      "text": "permeable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ödünü araya sıkıştırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The border, albeit permeable, does not remove the status insecurity."
+     },
+     {
+      "lang": "tr",
+      "text": "Sınır, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The border, albeit permeable, does not remove the status insecurity."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konumun ne kadar süreceğini bilememeye"
+     },
+     {
+      "lang": "en",
+      "text": "status insecurity"
+     },
+     {
+      "lang": "tr",
+      "text": "düzenli geliri olan kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "gainfully employed"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ödünü başa çekip eksiği gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit gainfully employed, many still work as a sideline."
+     },
+     {
+      "lang": "tr",
+      "text": "İş sahibi olsalar da, çoğu hâlâ yan iş olarak çalışıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Albeit gainfully employed, many still work as a sideline."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:"
+     },
+     {
+      "lang": "en",
+      "text": "albeit permeable"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde karşındaki seni kendi kampından biri sayar ve asıl cümleyi duyar. Ödünsüz itiraz ise daha ilk cümlede reddedilir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ekibi bünyeden ayırsalar da iş şirket içinde kalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as they spin off the team, the work stays in-house.",
+     "accept": [
+      "Much as they spin off the branch, the work stays in-house.",
+      "Much as they spin off the unit, the work stays in-house."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa alıp gerçeği söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "Much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as they spin off the team, the work stays in-house."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit gainfully employed, many still work as a sideline."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Albeit gainfully employed, many still work as a sideline.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ödün başa çekilmiş ve asıl cümle ondan sonra daha ağır duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Asıl işin yanında yapılana"
+     },
+     {
+      "lang": "en",
+      "text": "as a sideline"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yükü başkasına devretmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "offload"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They offload the risk and call it gainful employment."
+     },
+     {
+      "lang": "tr",
+      "text": "Riski üstüne yıkıyorlar ve buna gelir getiren iş diyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They offload the risk and call it gainful employment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçimini sağlayan çalışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "gainful employment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kural, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The rule, albeit permeable, does not remove the status insecurity.",
+     "accept": [
+      "The line, albeit permeable, does not remove the status insecurity.",
+      "The border, albeit permeable, does not remove the status insecurity."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü araya sıkıştırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "The rule, albeit permeable, does not remove the status insecurity."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ödün karşındakini kazanmak için değil, itirazını taşıyabilmek için verilir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The concession carries the objection."
+     },
+     {
+      "lang": "tr",
+      "text": "İtirazı ödün taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The concession carries the objection."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İyi kazansalar da, çoğu hâlâ yan iş olarak çalışıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Albeit well paid, many still work as a sideline.",
+     "accept": [
+      "Albeit well placed, many still work as a sideline.",
+      "Albeit gainfully employed, many still work as a sideline."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa çekip eksiği göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit well paid, many still work as a sideline."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gerçeği söyleme"
+     },
+     {
+      "lang": "en",
+      "text": "Much as"
+     },
+     {
+      "lang": "tr",
+      "text": "araya çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "eksiği gösterme"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit gainfully employed"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi esneklik pazarlığını sürdüreceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Esnek çalışma üstüne bir tartışmadasın ve karşındakini kaybetmeden itiraz etmek istiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+   "partner": "esnekliği tamamen bir özgürlük sayan, «kimse kimseyi zorlamıyor» diyen biri",
+   "opening": "Nobody is forcing anyone, are they?",
+   "openingTr": "Kimse kimseyi zorlamıyor, değil mi?",
+   "goal": "Ödünü üç ayrı yerde verip her seferinde asıl savını sonra söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-vocabulary-of-qualification",
+  "level": "C1",
+  "course": "en",
+  "icon": "school",
+  "title": "The vocabulary of qualification",
+  "titleTr": "Nitelik sözlüğü",
+  "summary": "Nitelik konuşmasının yerleşik eşdizimlerini öğretir; eksikliği anlatan söz ile insanı anlatan söz aynı değildir.",
+  "minutes": 12,
+  "focusId": "Collocation in the vocabulary of qualification",
+  "vocab": [
+   {
+    "de": "deskilling",
+    "tr": "vasıfsızlaşma"
+   },
+   {
+    "de": "professionalization",
+    "tr": "profesyonelleşme"
+   },
+   {
+    "de": "skilled labor shortage",
+    "tr": "nitelikli eleman açığı"
+   },
+   {
+    "de": "labor reserve",
+    "tr": "işgücü rezervi"
+   },
+   {
+    "de": "lateral entry",
+    "tr": "alan dışından geçiş"
+   },
+   {
+    "de": "competence orientation",
+    "tr": "yetkinlik odaklılık"
+   },
+   {
+    "de": "staff development",
+    "tr": "personel gelişimi"
+   },
+   {
+    "de": "upward mobility through education",
+    "tr": "eğitimle yükselme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Deskilling is not the opposite of professionalization.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "A skilled labor shortage is announced; a labor reserve is counted.",
+    "tr": "duyuru ile sayımı ayırır"
+   },
+   {
+    "de": "Lateral entry and competence orientation arrive together.",
+    "tr": "iki eşdizimi birlikte getirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün nitelik konuşmasının yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksikliği anlatan söz ile insanı anlatan söz aynı değil; ikisini karıştıran cümle çalışanı bir stok kalemine çevirir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "deskilling"
+     },
+     {
+      "lang": "tr",
+      "text": "İşin gerektirdiği becerinin azalması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Deskilling is not the opposite of professionalization."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Deskilling is not the opposite of professionalization."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işin meslek hâline gelmesine"
+     },
+     {
+      "lang": "en",
+      "text": "professionalization"
+     },
+     {
+      "lang": "tr",
+      "text": "aranan nitelikte çalışan bulunamamasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "skilled labor shortage"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız duyuru ile sayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A skilled labor shortage is announced; a labor reserve is counted."
+     },
+     {
+      "lang": "tr",
+      "text": "Nitelikli eleman açığı duyurulur, işgücü rezervi sayılır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A skilled labor shortage is announced; a labor reserve is counted."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışabilecek ama çalışmayan kesime"
+     },
+     {
+      "lang": "en",
+      "text": "labor reserve"
+     },
+     {
+      "lang": "tr",
+      "text": "başka bir alandan gelip o işi yapmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "lateral entry"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki eşdizimi birlikte getiriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Lateral entry and competence orientation arrive together."
+     },
+     {
+      "lang": "tr",
+      "text": "Alan dışından geçiş ve yetkinlik odaklılık birlikte geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Lateral entry and competence orientation arrive together."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "skilled labor shortage"
+     },
+     {
+      "lang": "tr",
+      "text": "eksikliği işverenin sorunu yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "labor reserve"
+     },
+     {
+      "lang": "tr",
+      "text": "ise insanları bekleyen bir stok gibi gösterir. Sözcük seçimi burada bir siyaset seçimidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Vasıfsızlaşma eğitimin karşıtı değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Deskilling is not the opposite of training.",
+     "accept": [
+      "Deskilling is not the opposite of learning.",
+      "Deskilling is not the opposite of professionalization."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not the opposite of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Deskilling is not the opposite of training."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "A skilled labor shortage is announced; a labor reserve is counted."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A skilled labor shortage is announced; a labor reserve is counted.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri duyurunun, öteki sayımın eşdizimi; fiiller de o yüzden ayrı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyi bildiğinden çok neyi yapabildiğine bakan yaklaşıma"
+     },
+     {
+      "lang": "en",
+      "text": "competence orientation"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışanları yetiştirme işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "staff development"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Staff development is not upward mobility through education."
+     },
+     {
+      "lang": "tr",
+      "text": "Personel gelişimi eğitimle yükselme değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Staff development is not upward mobility through education."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Okulla toplumsal basamak çıkmaya"
+     },
+     {
+      "lang": "en",
+      "text": "upward mobility through education"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Alan dışından geçiş ve personel gelişimi birlikte geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Lateral entry and staff development arrive together.",
+     "accept": [
+      "Lateral entry and training arrive together.",
+      "Lateral entry and competence orientation arrive together."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi birlikte getirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "arrive together"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Lateral entry and staff development arrive together."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşdizim seçmek eksiği kimin sırtına yazdığını seçmektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collocation assigns the fault."
+     },
+     {
+      "lang": "tr",
+      "text": "Kusuru eşdizim dağıtıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collocation assigns the fault."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Nitelikli eleman açığı duyurulur, havuz sayılır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A skilled labor shortage is announced; a pool is counted.",
+     "accept": [
+      "A skilled labor shortage is announced; a number is counted.",
+      "A skilled labor shortage is announced; a labor reserve is counted."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Duyuru ile sayımı ayırmak için iki edilgen fiil kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "A skilled labor shortage is announced; a pool is counted."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksik"
+     },
+     {
+      "lang": "en",
+      "text": "skilled labor shortage"
+     },
+     {
+      "lang": "tr",
+      "text": "stok"
+     },
+     {
+      "lang": "en",
+      "text": "labor reserve"
+     },
+     {
+      "lang": "tr",
+      "text": "yetiştirme"
+     },
+     {
+      "lang": "en",
+      "text": "staff development"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi nitelik sözlüğünü kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir işe alım tartışmasındasın ve insanları stok gibi anlatmak istemiyorsun. Eksikliği, bekleyenleri ve yetiştirmeyi üç ayrı eşdizimle adlandır.",
+   "partner": "eksikliği tamamen okulların suçu sayan bir işveren",
+   "opening": "Isn't that the schools' fault?",
+   "openingTr": "Bu okulların suçu değil mi?",
+   "goal": "Eksikliği, bekleyenleri ve yetiştirmeyi üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-reporting-the-meeting",
+  "level": "C1",
+  "course": "en",
+  "icon": "media",
+  "title": "Reporting the meeting",
+  "titleTr": "Toplantıyı aktarmak",
+  "summary": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili katılanların niyetini de yazar.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in an account of a meeting",
+  "vocab": [
+   {
+    "de": "obscure",
+    "tr": "perdelemek"
+   },
+   {
+    "de": "segmentation",
+    "tr": "segmentasyon"
+   },
+   {
+    "de": "undermine",
+    "tr": "baltalamak"
+   },
+   {
+    "de": "professional ethic",
+    "tr": "meslek ahlakı"
+   },
+   {
+    "de": "action pattern",
+    "tr": "eylem kalıbı"
+   },
+   {
+    "de": "everyday practice",
+    "tr": "gündelik uygulama"
+   },
+   {
+    "de": "disciplining",
+    "tr": "hizaya sokma"
+   },
+   {
+    "de": "platitude",
+    "tr": "klişe"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "One obscures the segmentation; another undermines the professional ethic.",
+    "tr": "iki aktarmayı karşı karşıya koyar"
+   },
+   {
+    "de": "The action pattern claims what the everyday practice assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To call it disciplining is not to call it a platitude.",
+    "tr": "iki adlandırmayı ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir toplantıyı aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Tutanağın fiili katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "obscure"
+     },
+     {
+      "lang": "tr",
+      "text": "Görünmesi gerekeni örtmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One obscures the segmentation; another undermines the professional ethic."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One obscures the segmentation; another undermines the professional ethic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşgücünün ayrı ayrı bölümlere bölünmesine"
+     },
+     {
+      "lang": "en",
+      "text": "segmentation"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyi alttan alta zayıflatmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "undermine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The action pattern claims what the everyday practice assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Eylem kalıbı, gündelik uygulamanın varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The action pattern claims what the everyday practice assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir meslekte uyulan ahlak ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "professional ethic"
+     },
+     {
+      "lang": "tr",
+      "text": "yinelenen davranış biçimine ise"
+     },
+     {
+      "lang": "en",
+      "text": "action pattern"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki adlandırmayı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To call it disciplining is not to call it a platitude."
+     },
+     {
+      "lang": "tr",
+      "text": "Ona hizaya sokma demek klişe demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To call it disciplining is not to call it a platitude."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tutanakta fiil sessiz bir hükümdür:"
+     },
+     {
+      "lang": "en",
+      "text": "obscures"
+     },
+     {
+      "lang": "tr",
+      "text": "konuşanı gizleyen biri sayar,"
+     },
+     {
+      "lang": "en",
+      "text": "undermines"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu bilerek zarar veren biri. Aynı konuşma, iki fiil ve iki ayrı kişi çıkar ortaya."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Biri bölünmeyi perdeliyor, öteki meslek ahlakını baltalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One obscures the split; another undermines the professional ethic.",
+     "accept": [
+      "One obscures the plan; another undermines the professional ethic.",
+      "One obscures the segmentation; another undermines the professional ethic."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki aktarmayı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "obscures … undermines"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One obscures the split; another undermines the professional ethic."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To call it disciplining is not to call it a platitude."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To call it disciplining is not to call it a platitude.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri bir güç işlemini adlandırıyor, öteki yalnız içi boş bir sözü."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gün içinde fiilen yapılana"
+     },
+     {
+      "lang": "en",
+      "text": "everyday practice"
+     },
+     {
+      "lang": "tr",
+      "text": "insanları kurala uydurma işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "disciplining"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The platitude survived the meeting."
+     },
+     {
+      "lang": "tr",
+      "text": "Klişe toplantıdan sağ çıktı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The platitude survived the meeting."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Herkesin söylediği, hiçbir şey söylemeyen söze"
+     },
+     {
+      "lang": "en",
+      "text": "platitude"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kalıp, gündelik uygulamanın varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The pattern claims what the everyday practice assumes.",
+     "accept": [
+      "The rule claims what the everyday practice assumes.",
+      "The action pattern claims what the everyday practice assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The pattern claims what the everyday practice assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toplantıyı aktaran kişi, farkında olmadan kimin haklı olduğunu da yazar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The minutes decide who was right."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimin haklı olduğuna tutanak karar veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The minutes decide who was right."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ona kural demek klişe demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To call it a rule is not to call it a platitude.",
+     "accept": [
+      "To call it an order is not to call it a platitude.",
+      "To call it disciplining is not to call it a platitude."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adlandırmayı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not to call it"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To call it a rule is not to call it a platitude."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gizleme"
+     },
+     {
+      "lang": "en",
+      "text": "obscures"
+     },
+     {
+      "lang": "tr",
+      "text": "zarar"
+     },
+     {
+      "lang": "en",
+      "text": "undermines"
+     },
+     {
+      "lang": "tr",
+      "text": "güç işlemi"
+     },
+     {
+      "lang": "en",
+      "text": "disciplining"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir toplantıyı iki ayrı fiille aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Katıldığın bir toplantıyı iki ayrı biçimde aktarıyorsun ve kimseyi haksız yere suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve farkı adlandır.",
+   "partner": "tutanağı tarafsız bir kayıt sayan, «orada ne yazıyorsa o» diyen bir iş arkadaşı",
+   "opening": "The minutes are neutral, aren't they?",
+   "openingTr": "Tutanak tarafsız, değil mi?",
+   "goal": "İki aktarmayı iki ayrı fiille söylediysen ve aradaki farkı adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-voluntary-is-it",
+  "level": "C1",
+  "course": "en",
+  "icon": "feelings",
+  "title": "How voluntary is it",
+  "titleTr": "Ne kadar kendi isteğiyle",
+  "summary": "Fazla çalışmayı anlatırken kipin koyduğu mesafeyi öğretir; kendi isteğiyle çalışmakla mecbur kalmak arasındaki sınır kipten okunur.",
+  "minutes": 12,
+  "focusId": "Modal nuance in describing overwork",
+  "vocab": [
+   {
+    "de": "knowledge work",
+    "tr": "bilgi emeği"
+   },
+   {
+    "de": "self-exploitation",
+    "tr": "kendini sömürme"
+   },
+   {
+    "de": "role conflict",
+    "tr": "rol çatışması"
+   },
+   {
+    "de": "pacing",
+    "tr": "ritim"
+   },
+   {
+    "de": "piecework",
+    "tr": "parça başı iş"
+   },
+   {
+    "de": "collegiality",
+    "tr": "meslektaş dayanışması"
+   },
+   {
+    "de": "interpersonal",
+    "tr": "kişiler arası"
+   },
+   {
+    "de": "reproductive labor",
+    "tr": "yeniden üretim emeği"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Knowledge work may well end in self-exploitation.",
+    "tr": "kabul edilebilir okumayı işaretler"
+   },
+   {
+    "de": "A role conflict might look like a pacing problem.",
+    "tr": "olasılığı uzak tutar"
+   },
+   {
+    "de": "Piecework may weaken collegiality and strain the interpersonal side.",
+    "tr": "iki sonucu tek kipin altına koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün fazla çalışmayı anlatırken kipin koyduğu mesafeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kendi isteğiyle çalışmakla mecbur kalmak arasındaki sınır kipten okunur; kesin cümle o sınırı siler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "knowledge work"
+     },
+     {
+      "lang": "tr",
+      "text": "Bilgiyle yapılan iş demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Knowledge work may well end in self-exploitation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Knowledge work may well end in self-exploitation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanın kendi kendini fazla çalıştırmasına"
+     },
+     {
+      "lang": "en",
+      "text": "self-exploitation"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı kişiden birbiriyle çelişen şeyler beklenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "role conflict"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olasılığı uzak tutuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A role conflict might look like a pacing problem."
+     },
+     {
+      "lang": "tr",
+      "text": "Rol çatışması bir ritim sorunu gibi görünebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A role conflict might look like a pacing problem."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin hangi hızda yapıldığına"
+     },
+     {
+      "lang": "en",
+      "text": "pacing"
+     },
+     {
+      "lang": "tr",
+      "text": "üretilen parça sayısına göre ödemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "piecework"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Piecework may weaken collegiality and strain the interpersonal side."
+     },
+     {
+      "lang": "tr",
+      "text": "Parça başı iş meslektaş dayanışmasını zayıflatabilir ve kişiler arası tarafı zorlayabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Piecework may weaken collegiality and strain the interpersonal side."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kip burada bir suçlama ölçüsüdür:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "gördüğün örüntüye güvendiğini,"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bunun bir ihtimal olduğunu söyler. Birinin fazla çalışmasını «kendi isteği» diye kesin söylemek, kipin sildiği bir hükümdür."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bilgi emeği tükenmişlikle bitebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Knowledge work may well end in burnout.",
+     "accept": [
+      "Knowledge work may well end in exhaustion.",
+      "Knowledge work may well end in self-exploitation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kabul edilebilir okumayı işaretlemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Knowledge work may well end in burnout."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "A role conflict might look like a pacing problem."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A role conflict might look like a pacing problem.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir gözlem kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Meslektaşların birbirini kollamasına"
+     },
+     {
+      "lang": "en",
+      "text": "collegiality"
+     },
+     {
+      "lang": "tr",
+      "text": "insanlar arasında geçene ise"
+     },
+     {
+      "lang": "en",
+      "text": "interpersonal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Reproductive labor might never be counted."
+     },
+     {
+      "lang": "tr",
+      "text": "Yeniden üretim emeği hiç sayılmayabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Reproductive labor might never be counted."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hayatı sürdüren bakım ve ev işine"
+     },
+     {
+      "lang": "en",
+      "text": "reproductive labor"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Rol çatışması bir zaman sorunu gibi görünebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A role conflict might look like a time problem.",
+     "accept": [
+      "A role conflict might look like a planning problem.",
+      "A role conflict might look like a pacing problem."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olasılığı uzak tutmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "A role conflict might look like a time problem."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kip burada bir çekingenlik değil; başkasının iradesi hakkında hüküm vermemektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The modal leaves the will alone."
+     },
+     {
+      "lang": "tr",
+      "text": "Kip iradeye dokunmuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The modal leaves the will alone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Parça başı iş güveni zayıflatabilir ve kişiler arası tarafı zorlayabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Piecework may weaken trust and strain the interpersonal side.",
+     "accept": [
+      "Piecework may weaken teams and strain the interpersonal side.",
+      "Piecework may weaken collegiality and strain the interpersonal side."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki sonucu tek kipin altına koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "may"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "Piecework may weaken trust and strain the interpersonal side."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: güven"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "mesafe"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak kip"
+     },
+     {
+      "lang": "en",
+      "text": "may"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir fazla çalışma durumunu anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iş arkadaşının çok fazla çalıştığını anlatıyorsun ve onun iradesi hakkında hüküm vermek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde neyi bilmediğini söyle.",
+   "partner": "her fazla mesaiyi kişisel tercih sayan, «kimse zorlamıyor ki» diyen biri",
+   "opening": "Nobody made them stay late, did they?",
+   "openingTr": "Kimse geç kalmaya zorlamadı, değil mi?",
+   "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinde neyi bilmediğini söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-excellence-initiative",
+  "level": "C1",
+  "course": "en",
+  "icon": "star",
+  "title": "The excellence initiative",
+  "titleTr": "Mükemmeliyet girişimi",
+  "summary": "Kurumsal övgü dilini alayla eleştirmeyi öğretir; övgü sözcüğünün kendisi eleştirinin malzemesi olur.",
+  "minutes": 12,
+  "focusId": "Irony and understatement in academic life",
+  "vocab": [
+   {
+    "de": "excellence initiative",
+    "tr": "mükemmeliyet girişimi"
+   },
+   {
+    "de": "transition rate",
+    "tr": "geçiş oranı"
+   },
+   {
+    "de": "formation of elites",
+    "tr": "elit yetiştirme"
+   },
+   {
+    "de": "competitive logic",
+    "tr": "rekabet mantığı"
+   },
+   {
+    "de": "publication pressure",
+    "tr": "yayın baskısı"
+   },
+   {
+    "de": "plagiarism",
+    "tr": "intihal"
+   },
+   {
+    "de": "bureaucratization",
+    "tr": "bürokratikleşme"
+   },
+   {
+    "de": "circular reasoning",
+    "tr": "döngüsel akıl yürütme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The excellence initiative was funded; the transition rate, less so.",
+    "tr": "eksik söyleyip çok kasteder"
+   },
+   {
+    "de": "We have no formation of elites here; we have a competitive logic.",
+    "tr": "yalanlayıp aynı şeyi doğrular"
+   },
+   {
+    "de": "Publication pressure, they said, and rather good against plagiarism.",
+    "tr": "övgüyü aktarıp tersine çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kurumsal övgü dilini alayla eleştirmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Övgü sözcüğünün kendisi eleştirinin malzemesi olur; yeter ki cümle yarım bırakılsın. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "excellence initiative"
+     },
+     {
+      "lang": "tr",
+      "text": "Seçkin araştırmaya ayrılan destek programı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The excellence initiative was funded; the transition rate, less so."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The excellence initiative was funded; the transition rate, less so."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir basamaktan ötekine geçenlerin oranına"
+     },
+     {
+      "lang": "en",
+      "text": "transition rate"
+     },
+     {
+      "lang": "tr",
+      "text": "seçkin bir kesim yetiştirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "formation of elites"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no formation of elites here; we have a competitive logic."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada elit yetiştirme yok, rekabet mantığı var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no formation of elites here; we have a competitive logic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Her şeyin yarışa göre düzenlenmesine"
+     },
+     {
+      "lang": "en",
+      "text": "competitive logic"
+     },
+     {
+      "lang": "tr",
+      "text": "sürekli yayın yapma zorunluluğuna ise"
+     },
+     {
+      "lang": "en",
+      "text": "publication pressure"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övgüyü aktarıp tersine çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Publication pressure, they said, and rather good against plagiarism."
+     },
+     {
+      "lang": "tr",
+      "text": "Yayın baskısı, dediler, üstelik intihale karşı iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Publication pressure, they said, and rather good against plagiarism."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:"
+     },
+     {
+      "lang": "en",
+      "text": "excellence initiative"
+     },
+     {
+      "lang": "tr",
+      "text": "kurumun kendi adıdır; onu bir eksiltmenin yanına koymak hiçbir suçlama gerektirmez. Dinleyen boşluğu kendi doldurur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Program desteklendi, geçiş oranı pek değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The programme was funded; the transition rate, less so.",
+     "accept": [
+      "The centre was funded; the transition rate, less so.",
+      "The excellence initiative was funded; the transition rate, less so."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik söyleyip çok kastetmek için ikinci yarıda fiil düşürülür:"
+      },
+      {
+       "lang": "en",
+       "text": "The programme was funded; the transition rate, less so."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We have no formation of elites here; we have a competitive logic."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have no formation of elites here; we have a competitive logic.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi başka adla doğruluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başkasının metnini kendi adıyla vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "plagiarism"
+     },
+     {
+      "lang": "tr",
+      "text": "her işin kural ve forma bağlanmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "bureaucratization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Bureaucratization cures itself, by circular reasoning."
+     },
+     {
+      "lang": "tr",
+      "text": "Bürokratikleşme kendini iyileştiriyor, döngüsel akıl yürütmeyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Bureaucratization cures itself, by circular reasoning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kanıtı sonucun kendisi olan akıl yürütmeye"
+     },
+     {
+      "lang": "en",
+      "text": "circular reasoning"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada sıralama yok, rekabet mantığı var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have no ranking here; we have a competitive logic.",
+     "accept": [
+      "We have no contest here; we have a competitive logic.",
+      "We have no formation of elites here; we have a competitive logic."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yalanlayıp aynı şeyi doğrulamak için"
+      },
+      {
+       "lang": "en",
+       "text": "We have no … we have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no ranking here; we have a competitive logic."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alay kurumun kendi diline yaslandığında en zor çürütülen eleştiridir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The praise did the criticism."
+     },
+     {
+      "lang": "tr",
+      "text": "Eleştiriyi övgü yaptı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The praise did the criticism."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yayın baskısı, dediler, üstelik kariyere iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Publication pressure, they said, and rather good for the career.",
+     "accept": [
+      "Publication pressure, they said, and rather good for the field.",
+      "Publication pressure, they said, and rather good against plagiarism."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övgüyü aktarıp tersine çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "they said, and rather"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Publication pressure, they said, and rather good for the career."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksiltme"
+     },
+     {
+      "lang": "en",
+      "text": "the transition rate, less so"
+     },
+     {
+      "lang": "tr",
+      "text": "yalanlayıp doğrulama"
+     },
+     {
+      "lang": "en",
+      "text": "We have no … we have"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "they said, and rather"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kurumsal övgüyü alayla eleştireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kurumun tanıtım diliyle gerçeği arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve kurumun kendi sözcüklerini kullan.",
+   "partner": "tanıtım dilini olduğu gibi tekrarlayan, «hepsi belgelerde yazıyor» diyen biri",
+   "opening": "It's all in the brochure, isn't it?",
+   "openingTr": "Hepsi broşürde yazıyor, değil mi?",
+   "goal": "Üç cümlede eksilterek eleştirdiysen ve kurumun kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-holding-a-long-report-together",
+  "level": "C1",
+  "course": "en",
+  "icon": "chart",
+  "title": "Holding a long report together",
+  "titleTr": "Uzun bir raporu bağlamak",
+  "summary": "Uzun bir kurum raporunu bağlayan geri göndermeleri öğretir; okuyan karar verecekse ipi hiç kaybetmemeli.",
+  "minutes": 13,
+  "focusId": "Cohesion across a long report",
+  "vocab": [
+   {
+    "de": "structural change",
+    "tr": "yapısal değişim"
+   },
+   {
+    "de": "core business",
+    "tr": "ana iş kolu"
+   },
+   {
+    "de": "distortion of competition",
+    "tr": "rekabetin bozulması"
+   },
+   {
+    "de": "feasibility study",
+    "tr": "fizibilite çalışması"
+   },
+   {
+    "de": "operating responsibility",
+    "tr": "işletme sorumluluğu"
+   },
+   {
+    "de": "performance indicator",
+    "tr": "performans göstergesi"
+   },
+   {
+    "de": "instrumentally rational",
+    "tr": "araçsal akılcı"
+   },
+   {
+    "de": "functionalism",
+    "tr": "işlevselcilik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The structural change above becomes a core business below.",
+    "tr": "yukarıyı aşağıya bağlar"
+   },
+   {
+    "de": "That distortion of competition, as noted, is the feasibility study of an earlier page.",
+    "tr": "geri göndermeyi araya koyar"
+   },
+   {
+    "de": "Where the operating responsibility is unclear, the performance indicator does not help.",
+    "tr": "iki bölümü tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uzun bir kurum raporunu bağlayan geri göndermeleri öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Okuyan karar verecekse ipi hiç kaybetmemeli; kaybederse kararı raporun değil hatırladığı son sayfanın verir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "structural change"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir sektörün yapısının kökten dönüşmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The structural change above becomes a core business below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The structural change above becomes a core business below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şirketin asıl para kazandığı alana"
+     },
+     {
+      "lang": "en",
+      "text": "core business"
+     },
+     {
+      "lang": "tr",
+      "text": "yarışın haksız biçimde bozulmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "distortion of competition"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geri göndermeyi araya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That distortion of competition, as noted, is the feasibility study of an earlier page."
+     },
+     {
+      "lang": "tr",
+      "text": "O rekabetin bozulması, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That distortion of competition, as noted, is the feasibility study of an earlier page."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işin yapılabilir olup olmadığını ölçen incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "feasibility study"
+     },
+     {
+      "lang": "tr",
+      "text": "günlük işleyişten sorumlu olmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "operating responsibility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki bölümü tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Where the operating responsibility is unclear, the performance indicator does not help."
+     },
+     {
+      "lang": "tr",
+      "text": "İşletme sorumluluğu belirsizse performans göstergesi işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Where the operating responsibility is unclear, the performance indicator does not help."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "kararın nereden çıktığını,"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise kimin daha önce ne dediğini işaretler. Adres yoksa hiçbir karar kimseye bağlanamaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yukarıdaki yapısal değişim aşağıda bir riske dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The structural change above becomes a risk below.",
+     "accept": [
+      "The structural change above becomes a cost below.",
+      "The structural change above becomes a core business below."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yukarıyı aşağıya bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "above … below"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The structural change above becomes a risk below."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Where the operating responsibility is unclear, the performance indicator does not help."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Where the operating responsibility is unclear, the performance indicator does not help.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki bölüm tek cümlede bağlanmış; ölçüt ile sorumlu aynı yerde duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başarıyı ölçen sayıya"
+     },
+     {
+      "lang": "en",
+      "text": "performance indicator"
+     },
+     {
+      "lang": "tr",
+      "text": "yalnız amaca ulaşmayı düşünen akla ise"
+     },
+     {
+      "lang": "en",
+      "text": "instrumentally rational"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The instrumentally rational report ends in functionalism."
+     },
+     {
+      "lang": "tr",
+      "text": "Araçsal akılcı rapor işlevselcilikle bitiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The instrumentally rational report ends in functionalism."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Her şeyi işlevine indirgeyen görüşe"
+     },
+     {
+      "lang": "en",
+      "text": "functionalism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: O gecikme, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That delay, as noted, is the feasibility study of an earlier page.",
+     "accept": [
+      "That cost, as noted, is the feasibility study of an earlier page.",
+      "That distortion of competition, as noted, is the feasibility study of an earlier page."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geri göndermeyi araya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "as noted"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "That delay, as noted, is the feasibility study of an earlier page."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uzun raporda her adres bir sorumluluk bağıdır; adres düşerse sorumluluk da düşer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The address keeps the responsibility."
+     },
+     {
+      "lang": "tr",
+      "text": "Sorumluluğu adres tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The address keeps the responsibility."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sorumluluk belirsizse performans göstergesi işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Where the responsibility is unclear, the performance indicator does not help.",
+     "accept": [
+      "Where the owner is unclear, the performance indicator does not help.",
+      "Where the operating responsibility is unclear, the performance indicator does not help."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki bölümü tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "Where … does not"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Where the responsibility is unclear, the performance indicator does not help."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "geri gönderme"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "bağlama"
+     },
+     {
+      "lang": "en",
+      "text": "Where … does not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi uzun bir raporu bağlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Uzun bir kurum raporunu sözlü olarak özetliyorsun ve dinleyen buna dayanarak karar verecek. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+   "partner": "her bölümde «bu hangi karara bağlanıyordu» diye soran bir yönetici",
+   "opening": "Which decision did that part support?",
+   "openingTr": "O bölüm hangi kararı destekliyordu?",
+   "goal": "Üç bölümü yukarı, aşağı ve geri gönderme adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-work-leaves-unsaid",
+  "level": "C1",
+  "course": "en",
+  "icon": "bed",
+  "title": "What work leaves unsaid",
+  "titleTr": "İşin söylemediği",
+  "summary": "Çalışma hayatının sonu üstüne konuşurken düşen öğeyi öğretir; eksiltilen yarı çoğu zaman kimsenin söz vermediği yarıdır.",
+  "minutes": 13,
+  "focusId": "Ellipsis in talk about the end of work",
+  "vocab": [
+   {
+    "de": "pension level",
+    "tr": "emekli aylığı düzeyi"
+   },
+   {
+    "de": "standard retirement age",
+    "tr": "yasal emeklilik yaşı"
+   },
+   {
+    "de": "generational contract",
+    "tr": "kuşaklar arası sözleşme"
+   },
+   {
+    "de": "twilight years",
+    "tr": "yaşlılık günleri"
+   },
+   {
+    "de": "self-fulfillment",
+    "tr": "kendini gerçekleştirme"
+   },
+   {
+    "de": "labor force participation rate",
+    "tr": "işgücüne katılım oranı"
+   },
+   {
+    "de": "earmarked",
+    "tr": "tahsis edilmiş"
+   },
+   {
+    "de": "thrive",
+    "tr": "gelişmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The pension level fell; the standard retirement age did not.",
+    "tr": "yüklemi yardımcı fiile indirir"
+   },
+   {
+    "de": "The generational contract promises twilight years, the job self-fulfillment.",
+    "tr": "ikinci yarıda fiili düşürür"
+   },
+   {
+    "de": "The labor force participation rate rose; the earmarked money, not at all.",
+    "tr": "ikinci yarıyı büsbütün eksiltir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çalışma hayatının sonu üstüne konuşurken düşen öğeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksiltilen yarı çoğu zaman kimsenin söz vermediği yarıdır; bu yüzden eksiltme burada bir uyarı. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "pension level"
+     },
+     {
+      "lang": "tr",
+      "text": "Emekli aylığının ne kadar olduğu demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The pension level fell; the standard retirement age did not."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The pension level fell; the standard retirement age did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kanunun emeklilik için koyduğu yaşa"
+     },
+     {
+      "lang": "en",
+      "text": "standard retirement age"
+     },
+     {
+      "lang": "tr",
+      "text": "kuşakların birbirini taşıma anlaşmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "generational contract"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda fiili düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The generational contract promises twilight years, the job self-fulfillment."
+     },
+     {
+      "lang": "tr",
+      "text": "Kuşaklar arası sözleşme yaşlılık günleri vadediyor, iş de kendini gerçekleştirme."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The generational contract promises twilight years, the job self-fulfillment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışma sonrası döneme"
+     },
+     {
+      "lang": "en",
+      "text": "twilight years"
+     },
+     {
+      "lang": "tr",
+      "text": "insanın kendi olabilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "self-fulfillment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ikinci yarıyı büsbütün eksiltiyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The labor force participation rate rose; the earmarked money, not at all."
+     },
+     {
+      "lang": "tr",
+      "text": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The labor force participation rate rose; the earmarked money, not at all."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Söz verilmeyen şey eksiltilir:"
+     },
+     {
+      "lang": "en",
+      "text": "the earmarked money, not at all"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde kimse bir söz vermemiş olur ama dinleyen sözü duyar. Bu yüzden bu modülün son dersinde eksiltme bir üslup değil, okumayı öğrenme işidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Emekli aylığı düzeyi düştü, prim düşmedi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The pension level fell; the contribution did not.",
+     "accept": [
+      "The pension level fell; the tax did not.",
+      "The pension level fell; the standard retirement age did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yüklemi yardımcı fiile indirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "did not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "The pension level fell; the contribution did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The generational contract promises twilight years, the job self-fulfillment."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The generational contract promises twilight years, the job self-fulfillment.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda fiil düşmüş ve okur onu kendi koyuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışabilecek yaştakilerin ne kadarının çalıştığına"
+     },
+     {
+      "lang": "en",
+      "text": "labor force participation rate"
+     },
+     {
+      "lang": "tr",
+      "text": "belli bir amaca ayrılmış olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "earmarked"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Few thrive on the last day."
+     },
+     {
+      "lang": "tr",
+      "text": "Son günde pek az kişi gelişiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Few thrive on the last day."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İyi koşullarda serpilip büyümeye"
+     },
+     {
+      "lang": "en",
+      "text": "thrive"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sözleşme yaşlılık günleri vadediyor, iş de kendini gerçekleştirme."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The contract promises twilight years, the job self-fulfillment.",
+     "accept": [
+      "The state promises twilight years, the job self-fulfillment.",
+      "The generational contract promises twilight years, the job self-fulfillment."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda fiili düşürmek için virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The contract promises twilight years, the job self-fulfillment."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The missing half was never promised."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksik yarı hiç vadedilmemişti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The missing half was never promised."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The participation rate rose; the earmarked money, not at all.",
+     "accept": [
+      "The number rose; the earmarked money, not at all.",
+      "The labor force participation rate rose; the earmarked money, not at all."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıyı büsbütün eksiltmek için"
+      },
+      {
+       "lang": "en",
+       "text": "not at all"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The participation rate rose; the earmarked money, not at all."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yardımcı kalır"
+     },
+     {
+      "lang": "en",
+      "text": "the standard retirement age did not"
+     },
+     {
+      "lang": "tr",
+      "text": "fiil düşer"
+     },
+     {
+      "lang": "en",
+      "text": "the job self-fulfillment"
+     },
+     {
+      "lang": "tr",
+      "text": "büsbütün eksilme"
+     },
+     {
+      "lang": "en",
+      "text": "the earmarked money, not at all"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi eksiltilen yarıyı okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Emeklilikle ilgili bir açıklamayı arkadaşına anlatıyorsun ve hangi yarının söz verilmediğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksik yarıyı adlandır.",
+   "partner": "açıklamayı olduğu gibi aktaran, «böyle diyorlar işte» diyen bir arkadaş",
+   "opening": "That's what they announced, isn't it?",
+   "openingTr": "Böyle açıklandı, değil mi?",
+   "goal": "Üç cümlede birer öğe düşürdüysen ve eksik kalan yarıyı adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]

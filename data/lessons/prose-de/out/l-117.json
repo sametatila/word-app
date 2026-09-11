@@ -1,0 +1,2042 @@
+[
+ {
+  "tr": "eksikliği tamamen okulların suçu sayan bir işveren",
+  "kind": "partner",
+  "de": "eine Arbeitgeberin, die den Mangel ganz den Schulen anlastet"
+ },
+ {
+  "tr": "her olayı «kurallar böyle» diye kapatan bir yönetici",
+  "kind": "partner",
+  "de": "ein Vorgesetzter, der jeden Vorfall mit «so sind die Regeln» abschließt"
+ },
+ {
+  "tr": "her bölümde «bu hangi karara bağlanıyordu» diye soran bir yönetici",
+  "kind": "partner",
+  "de": "eine Vorgesetzte, die bei jedem Abschnitt fragt «an welche Entscheidung war das gebunden»"
+ },
+ {
+  "tr": "açıklamayı olduğu gibi aktaran, «böyle diyorlar işte» diyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der die Mitteilung so weitergibt, wie sie ist, und sagt «so sagen sie es eben»"
+ },
+ {
+  "tr": "her fazla mesaiyi kişisel tercih sayan, «kimse zorlamıyor ki» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der jede Überstunde für eine persönliche Wahl hält und sagt «es zwingt doch niemand»"
+ },
+ {
+  "tr": "esnekliği tamamen bir özgürlük sayan, «kimse kimseyi zorlamıyor» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der Flexibilität ganz für Freiheit hält und sagt «niemand zwingt jemanden»"
+ },
+ {
+  "tr": "tanıtım dilini olduğu gibi tekrarlayan, «hepsi belgelerde yazıyor» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der die Werbesprache wörtlich wiederholt und sagt «es steht alles in den Unterlagen»"
+ },
+ {
+  "tr": "kararın adının önemsiz olduğunu düşünen, «rakam aynı ya» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der den Namen der Entscheidung für unwichtig hält und sagt «die Zahl bleibt gleich»"
+ },
+ {
+  "tr": "tutanağı tarafsız bir kayıt sayan, «orada ne yazıyorsa o» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "eine Kollegin, die das Protokoll für eine neutrale Aufzeichnung hält und sagt «es gilt, was dort steht»"
+ },
+ {
+  "tr": "her talebi kişiselleştiren, «sen istiyorsun demek ki» diyen bir işveren temsilcisi",
+  "kind": "partner",
+  "de": "ein Arbeitgebervertreter, der jede Forderung persönlich nimmt und sagt «du willst es also»"
+ },
+ {
+  "tr": "Kurallar böyle, değil mi?",
+  "kind": "openingTr",
+  "de": "So sind die Regeln, oder?"
+ },
+ {
+  "tr": "Böyle açıklandı, değil mi?",
+  "kind": "openingTr",
+  "de": "So wurde es mitgeteilt, oder?"
+ },
+ {
+  "tr": "Bu okulların suçu değil mi?",
+  "kind": "openingTr",
+  "de": "Ist das nicht die Schuld der Schulen?"
+ },
+ {
+  "tr": "Tutanak tarafsız, değil mi?",
+  "kind": "openingTr",
+  "de": "Das Protokoll ist neutral, oder?"
+ },
+ {
+  "tr": "Hepsi broşürde yazıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Es steht alles im Prospekt, oder?"
+ },
+ {
+  "tr": "Yani bu senin kişisel isteğin mi?",
+  "kind": "openingTr",
+  "de": "Das ist also dein persönlicher Wunsch?"
+ },
+ {
+  "tr": "Kimse kimseyi zorlamıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Niemand zwingt jemanden, oder?"
+ },
+ {
+  "tr": "O bölüm hangi kararı destekliyordu?",
+  "kind": "openingTr",
+  "de": "Welche Entscheidung stützte dieser Abschnitt?"
+ },
+ {
+  "tr": "Kimse geç kalmaya zorlamadı, değil mi?",
+  "kind": "openingTr",
+  "de": "Niemand hat sie zum Bleiben gezwungen, oder?"
+ },
+ {
+  "tr": "Nasıl adlandırsan rakam aynı, değil mi?",
+  "kind": "openingTr",
+  "de": "Wie du es auch nennst, die Zahl bleibt gleich, oder?"
+ },
+ {
+  "tr": "Nitelik sözlüğü",
+  "kind": "titleTr",
+  "de": "Das Wörterbuch der Qualifikation"
+ },
+ {
+  "tr": "Emri kim veriyor",
+  "kind": "titleTr",
+  "de": "Wer die Anweisungen gibt"
+ },
+ {
+  "tr": "İşin söylemediği",
+  "kind": "titleTr",
+  "de": "Was die Arbeit verschweigt"
+ },
+ {
+  "tr": "Sözleşme masasında",
+  "kind": "titleTr",
+  "de": "Am Verhandlungstisch"
+ },
+ {
+  "tr": "Tek kararın üç adı",
+  "kind": "titleTr",
+  "de": "Drei Namen für eine Entscheidung"
+ },
+ {
+  "tr": "Toplantıyı aktarmak",
+  "kind": "titleTr",
+  "de": "Eine Sitzung wiedergeben"
+ },
+ {
+  "tr": "Esnekliğin pazarlığı",
+  "kind": "titleTr",
+  "de": "Der Handel um Flexibilität"
+ },
+ {
+  "tr": "Mükemmeliyet girişimi",
+  "kind": "titleTr",
+  "de": "Die Exzellenzinitiative"
+ },
+ {
+  "tr": "Ne kadar kendi isteğiyle",
+  "kind": "titleTr",
+  "de": "Wie freiwillig ist das"
+ },
+ {
+  "tr": "Uzun bir raporu bağlamak",
+  "kind": "titleTr",
+  "de": "Einen langen Bericht zusammenhalten"
+ },
+ {
+  "tr": "Kurumsal övgü dilini alayla eleştirmeyi öğretir; övgü sözcüğünün kendisi eleştirinin malzemesi olur.",
+  "kind": "summary",
+  "de": "Lehrt, die Sprache des Eigenlobs mit Spott zu kritisieren; das Lobwort selbst wird zum Material der Kritik."
+ },
+ {
+  "tr": "Bir toplantıyı aktarırken hükmü fiile yüklemeyi öğretir; tutanağın fiili katılanların niyetini de yazar.",
+  "kind": "summary",
+  "de": "Lehrt, beim Wiedergeben einer Sitzung das Urteil ins Verb zu legen; das Verb des Protokolls schreibt auch die Absicht der Beteiligten mit."
+ },
+ {
+  "tr": "Uzun bir kurum raporunu bağlayan geri göndermeleri öğretir; okuyan karar verecekse ipi hiç kaybetmemeli.",
+  "kind": "summary",
+  "de": "Lehrt die Rückverweise, die einen langen Unternehmensbericht zusammenhalten; wer lesend entscheiden soll, darf den Faden nie verlieren."
+ },
+ {
+  "tr": "Aynı kararın raporda ve atölyede başka ad aldığını öğretir; adı seçmek kimin yanında durduğunu seçmektir.",
+  "kind": "summary",
+  "de": "Lehrt, dass dieselbe Entscheidung im Bericht und in der Werkstatt anders heißt; den Namen zu wählen heißt zu wählen, auf wessen Seite man steht."
+ },
+ {
+  "tr": "Toplu sözleşme dilinin kalıplaşmış biçimini öğretir; masada istek kişisel olduğu anda pazarlık konusu olur.",
+  "kind": "summary",
+  "de": "Lehrt die feste Form der Tarifsprache; am Tisch wird eine Forderung verhandelbar, sobald sie persönlich ist."
+ },
+ {
+  "tr": "Nitelik konuşmasının yerleşik eşdizimlerini öğretir; eksikliği anlatan söz ile insanı anlatan söz aynı değildir.",
+  "kind": "summary",
+  "de": "Lehrt die festen Wortverbindungen des Redens über Qualifikation; das Wort für den Mangel und das Wort für den Menschen sind nicht dasselbe."
+ },
+ {
+  "tr": "Esneklik tartışmasında ödün vererek karşı çıkmayı öğretir; esnekliğin iyi yanını teslim etmeyen itiraz duyulmuyor.",
+  "kind": "summary",
+  "de": "Lehrt, in der Flexibilitätsdebatte mit Zugeständnis zu widersprechen; ein Einwand, der die gute Seite nicht einräumt, wird nicht gehört."
+ },
+ {
+  "tr": "Yetkiden söz ederken kimi başa aldığını seçmeyi öğretir; yapıyı başa almak kişiyi gizler, kişiyi başa almak yapıyı.",
+  "kind": "summary",
+  "de": "Lehrt, beim Reden über Befugnis zu wählen, wen man voranstellt; die Struktur voranzustellen verbirgt die Person, die Person voranzustellen die Struktur."
+ },
+ {
+  "tr": "Çalışma hayatının sonu üstüne konuşurken düşen öğeyi öğretir; eksiltilen yarı çoğu zaman kimsenin söz vermediği yarıdır.",
+  "kind": "summary",
+  "de": "Lehrt das weggelassene Glied im Reden über das Ende des Arbeitslebens; die weggelassene Hälfte ist meist die, die niemand versprochen hat."
+ },
+ {
+  "tr": "Fazla çalışmayı anlatırken kipin koyduğu mesafeyi öğretir; kendi isteğiyle çalışmakla mecbur kalmak arasındaki sınır kipten okunur.",
+  "kind": "summary",
+  "de": "Lehrt den Abstand, den das Modalverb beim Erzählen von Überarbeitung setzt; die Grenze zwischen freiwilliger Arbeit und Zwang liest man am Modalverb."
+ },
+ {
+  "tr": "İşyerinde alınan bir kararı önce yönetimin, sonra çalışanların diliyle anlatıyorsun. İki adı da kur ve her adın neyi görünmez kıldığını söyle.",
+  "kind": "scene",
+  "de": "Du beschreibst eine Entscheidung im Betrieb erst in der Sprache der Leitung, dann in der der Beschäftigten. Bilde beide Namen und sag, was jeder Name unsichtbar macht."
+ },
+ {
+  "tr": "Bir işe alım tartışmasındasın ve insanları stok gibi anlatmak istemiyorsun. Eksikliği, bekleyenleri ve yetiştirmeyi üç ayrı eşdizimle adlandır.",
+  "kind": "scene",
+  "de": "Du bist in einer Debatte über Einstellungen und willst Menschen nicht wie einen Vorrat beschreiben. Benenne den Mangel, die Wartenden und die Ausbildung mit drei verschiedenen Wortverbindungen."
+ },
+ {
+  "tr": "Bir sözleşme görüşmesindesin ve talebini kişisel bir istek gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve talebi kalıplaşmış biçimlerle kur.",
+  "kind": "scene",
+  "de": "Du bist in einer Tarifverhandlung und willst deine Forderung nicht als persönlichen Wunsch sagen. Bilde die Forderung, das Wäre-nicht und das Verlangen in festen Formen."
+ },
+ {
+  "tr": "İşyerinde yetkiyle ilgili bir olayı anlatıyorsun ve her cümlede sorumluyu bilerek değiştiriyorsun. Düzeni, gizlenen yetkiyi ve bizi başa alan üç cümle kur.",
+  "kind": "scene",
+  "de": "Du erzählst von einem Vorfall um Befugnis im Betrieb und wechselst in jedem Satz bewusst die verantwortliche Seite. Bilde drei Sätze, die die Ordnung, die verborgene Befugnis und uns voranstellen."
+ },
+ {
+  "tr": "Katıldığın bir toplantıyı iki ayrı biçimde aktarıyorsun ve kimseyi haksız yere suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve farkı adlandır.",
+  "kind": "scene",
+  "de": "Du gibst eine Sitzung, an der du teilgenommen hast, auf zwei Weisen wieder und willst niemanden zu Unrecht beschuldigen. Sag die beiden Wiedergaben mit zwei verschiedenen Verben und benenne den Unterschied."
+ },
+ {
+  "tr": "Esnek çalışma üstüne bir tartışmadasın ve karşındakini kaybetmeden itiraz etmek istiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+  "kind": "scene",
+  "de": "Du bist in einer Debatte über flexible Arbeit und willst widersprechen, ohne dein Gegenüber zu verlieren. Setze das Zugeständnis an drei verschiedene Stellen und sag deine eigentliche These jedes Mal danach."
+ },
+ {
+  "tr": "Uzun bir kurum raporunu sözlü olarak özetliyorsun ve dinleyen buna dayanarak karar verecek. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+  "kind": "scene",
+  "de": "Du fasst einen langen Unternehmensbericht mündlich zusammen, und die Zuhörerin entscheidet danach. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
+ },
+ {
+  "tr": "Bir kurumun tanıtım diliyle gerçeği arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve kurumun kendi sözcüklerini kullan.",
+  "kind": "scene",
+  "de": "Du beschreibst den Unterschied zwischen der Werbesprache einer Einrichtung und der Wirklichkeit und willst nicht offen beschuldigen. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Einrichtung selbst."
+ },
+ {
+  "tr": "Emeklilikle ilgili bir açıklamayı arkadaşına anlatıyorsun ve hangi yarının söz verilmediğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksik yarıyı adlandır.",
+  "kind": "scene",
+  "de": "Du erzählst einer Freundin von einer Mitteilung zur Rente und willst zeigen, welche Hälfte nicht versprochen wurde. Lass in drei Sätzen je ein Glied weg und benenne die fehlende Hälfte."
+ },
+ {
+  "tr": "Bir iş arkadaşının çok fazla çalıştığını anlatıyorsun ve onun iradesi hakkında hüküm vermek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde neyi bilmediğini söyle.",
+  "kind": "scene",
+  "de": "Du erzählst, dass eine Kollegin zu viel arbeitet, und willst über ihren Willen nicht urteilen. Bilde drei Modalstufen und sag bei jeder, was du nicht weißt."
+ },
+ {
+  "tr": "Düzeni, gizlenen yetkiyi ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die die Ordnung, die verborgene Befugnis und uns voranstellen."
+ },
+ {
+  "tr": "İsteği, olmasaydıyı ve talebi üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die Forderung, das Wäre-nicht und das Verlangen in drei festen Formen gebaut hast."
+ },
+ {
+  "tr": "Üç cümlede birer öğe düşürdüysen ve eksik kalan yarıyı adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und die fehlende Hälfte benannt hast."
+ },
+ {
+  "tr": "Eksikliği, bekleyenleri ve yetiştirmeyi üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du den Mangel, die Wartenden und die Ausbildung mit drei Wortverbindungen benannt hast."
+ },
+ {
+  "tr": "İki aktarmayı iki ayrı fiille söylediysen ve aradaki farkı adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die beiden Wiedergaben mit zwei Verben gesagt und den Unterschied benannt hast."
+ },
+ {
+  "tr": "Üç cümlede eksilterek eleştirdiysen ve kurumun kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen mit Auslassung kritisiert und die Wörter der Einrichtung selbst benutzt hast."
+ },
+ {
+  "tr": "Üç ayrı kip derecesiyle anlattıysan ve her birinde neyi bilmediğini söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder gesagt hast, was du nicht weißt."
+ },
+ {
+  "tr": "Aynı kararı iki kayıtta adlandırdıysan ve her adın neyi görünmez kıldığını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du dieselbe Entscheidung in zwei Registern benannt und gesagt hast, was jeder Name unsichtbar macht."
+ },
+ {
+  "tr": "Doğru. İkinci yarıda fiil düşmüş ve okur onu kendi koyuyor.",
+  "kind": "why.tr",
+  "de": "Richtig. In der zweiten Hälfte fällt das Verb weg und die Leserin setzt es selbst ein."
+ },
+ {
+  "tr": "Doğru. Biri tek bir adımı adlandırıyor, öteki bütün bir dönüşümü.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt einen einzelnen Schritt, das andere einen ganzen Umbau."
+ },
+ {
+  "tr": "Doğru. Yer öbeği başa alınmış; yetki sona düşünce daha ağır duyuluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Ortsangabe steht vorn; fällt die Befugnis ans Ende, klingt sie schwerer."
+ },
+ {
+  "tr": "Doğru. Biri duyurunun, öteki sayımın eşdizimi; fiiller de o yüzden ayrı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine ist die Wortverbindung der Ankündigung, das andere die der Zählung; darum sind auch die Verben verschieden."
+ },
+ {
+  "tr": "Doğru. Biri bir güç işlemini adlandırıyor, öteki yalnız içi boş bir sözü.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt einen Machtakt, das andere nur einen leeren Satz."
+ },
+ {
+  "tr": "Doğru. İki bölüm tek cümlede bağlanmış; ölçüt ile sorumlu aynı yerde duruyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Zwei Abschnitte sind in einem Satz gebunden; Maßstab und Verantwortliche stehen an derselben Stelle."
+ },
+ {
+  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir tanı değil bir gözlem kalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Beobachtung, keine Diagnose."
+ },
+ {
+  "tr": "Doğru. Olmasaydı kuruluşu masada da işliyor; koşul kişiye değil sürece bağlanmış.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Wäre-nicht wirkt auch am Tisch; die Bedingung hängt nicht an einer Person, sondern am Verfahren."
+ },
+ {
+  "tr": "talebi kalıpla kurar",
+  "kind": "pattern.tr",
+  "de": "baut das Verlangen mit der Formel"
+ },
+ {
+  "tr": "iki adlandırmayı ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt zwei Benennungen"
+ },
+ {
+  "tr": "duyuru ile sayımı ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Ankündigung und Zählung"
+ },
+ {
+  "tr": "olmasaydıyı masada kurar",
+  "kind": "pattern.tr",
+  "de": "baut das Wäre-nicht am Tisch"
+ },
+ {
+  "tr": "yöntemi programdan ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Methode und Programm"
+ },
+ {
+  "tr": "iki eşdizimi birlikte getirir",
+  "kind": "pattern.tr",
+  "de": "bringt zwei Wortverbindungen zusammen"
+ },
+ {
+  "tr": "aynı kararı iki kayıtta söyler",
+  "kind": "pattern.tr",
+  "de": "sagt dieselbe Entscheidung in zwei Registern"
+ },
+ {
+  "tr": "ödünü başa alıp gerçeği söyler",
+  "kind": "pattern.tr",
+  "de": "stellt das Zugeständnis voran und sagt die Wahrheit"
+ },
+ {
+  "tr": "ikinci yarıyı büsbütün eksiltir",
+  "kind": "pattern.tr",
+  "de": "lässt die zweite Hälfte ganz weg"
+ },
+ {
+  "tr": "iki sonucu tek kipin altına koyar",
+  "kind": "pattern.tr",
+  "de": "stellt zwei Folgen unter ein Modalverb"
+ },
+ {
+  "tr": "klişe",
+  "kind": "vocab.tr",
+  "de": "Gemeinplatz"
+ },
+ {
+  "tr": "ritim",
+  "kind": "vocab.tr",
+  "de": "Taktung"
+ },
+ {
+  "tr": "intihal",
+  "kind": "vocab.tr",
+  "de": "Plagiat"
+ },
+ {
+  "tr": "geçirgen",
+  "kind": "vocab.tr",
+  "de": "durchlässig"
+ },
+ {
+  "tr": "gelişmek",
+  "kind": "vocab.tr",
+  "de": "gedeihen"
+ },
+ {
+  "tr": "iş sahibi",
+  "kind": "vocab.tr",
+  "de": "erwerbstätig"
+ },
+ {
+  "tr": "baltalamak",
+  "kind": "vocab.tr",
+  "de": "untergraben"
+ },
+ {
+  "tr": "boyun eğme",
+  "kind": "vocab.tr",
+  "de": "Unterordnung"
+ },
+ {
+  "tr": "güç yapısı",
+  "kind": "vocab.tr",
+  "de": "Machtstruktur"
+ },
+ {
+  "tr": "perdelemek",
+  "kind": "vocab.tr",
+  "de": "verschleiern"
+ },
+ {
+  "tr": "şirket içi",
+  "kind": "vocab.tr",
+  "de": "hausintern"
+ },
+ {
+  "tr": "ana iş kolu",
+  "kind": "vocab.tr",
+  "de": "Kerngeschäft"
+ },
+ {
+  "tr": "bilgi emeği",
+  "kind": "vocab.tr",
+  "de": "Wissensarbeit"
+ },
+ {
+  "tr": "geçiş oranı",
+  "kind": "vocab.tr",
+  "de": "Übergangsquote"
+ },
+ {
+  "tr": "yetki devri",
+  "kind": "vocab.tr",
+  "de": "Delegation"
+ },
+ {
+  "tr": "eylem kalıbı",
+  "kind": "vocab.tr",
+  "de": "Handlungsmuster"
+ },
+ {
+  "tr": "hizaya sokma",
+  "kind": "vocab.tr",
+  "de": "Disziplinierung"
+ },
+ {
+  "tr": "segmentasyon",
+  "kind": "vocab.tr",
+  "de": "Segmentierung"
+ },
+ {
+  "tr": "esnekleştirme",
+  "kind": "vocab.tr",
+  "de": "Flexibilisierung"
+ },
+ {
+  "tr": "hareket alanı",
+  "kind": "vocab.tr",
+  "de": "Handlungsspielraum"
+ },
+ {
+  "tr": "işlevselcilik",
+  "kind": "vocab.tr",
+  "de": "Funktionalismus"
+ },
+ {
+  "tr": "kişiler arası",
+  "kind": "vocab.tr",
+  "de": "zwischenmenschlich"
+ },
+ {
+  "tr": "meslek ahlakı",
+  "kind": "vocab.tr",
+  "de": "Berufsethos"
+ },
+ {
+  "tr": "meşrulaştırma",
+  "kind": "vocab.tr",
+  "de": "Legitimierung"
+ },
+ {
+  "tr": "parça başı iş",
+  "kind": "vocab.tr",
+  "de": "Akkordarbeit"
+ },
+ {
+  "tr": "rol çatışması",
+  "kind": "vocab.tr",
+  "de": "Rollenkonflikt"
+ },
+ {
+  "tr": "üstüne yıkmak",
+  "kind": "vocab.tr",
+  "de": "abwälzen"
+ },
+ {
+  "tr": "vasıfsızlaşma",
+  "kind": "vocab.tr",
+  "de": "Dequalifizierung"
+ },
+ {
+  "tr": "yan iş olarak",
+  "kind": "vocab.tr",
+  "de": "nebenberuflich"
+ },
+ {
+  "tr": "yayın baskısı",
+  "kind": "vocab.tr",
+  "de": "Publikationsdruck"
+ },
+ {
+  "tr": "araçsal akılcı",
+  "kind": "vocab.tr",
+  "de": "zweckrational"
+ },
+ {
+  "tr": "işgücü rezervi",
+  "kind": "vocab.tr",
+  "de": "Arbeitskräftereserve"
+ },
+ {
+  "tr": "tahsis edilmiş",
+  "kind": "vocab.tr",
+  "de": "zweckgebunden"
+ },
+ {
+  "tr": "uzlaşı sağlama",
+  "kind": "vocab.tr",
+  "de": "Konsensfindung"
+ },
+ {
+  "tr": "bürokratikleşme",
+  "kind": "vocab.tr",
+  "de": "Bürokratisierung"
+ },
+ {
+  "tr": "elit yetiştirme",
+  "kind": "vocab.tr",
+  "de": "Elitenbildung"
+ },
+ {
+  "tr": "güvencesizleşme",
+  "kind": "vocab.tr",
+  "de": "Prekarisierung"
+ },
+ {
+  "tr": "iş yoğunlaşması",
+  "kind": "vocab.tr",
+  "de": "Arbeitsverdichtung"
+ },
+ {
+  "tr": "kendini sömürme",
+  "kind": "vocab.tr",
+  "de": "Selbstausbeutung"
+ },
+ {
+  "tr": "rekabet mantığı",
+  "kind": "vocab.tr",
+  "de": "Wettbewerbslogik"
+ },
+ {
+  "tr": "yapısal değişim",
+  "kind": "vocab.tr",
+  "de": "Strukturwandel"
+ },
+ {
+  "tr": "bünyeden ayırmak",
+  "kind": "vocab.tr",
+  "de": "ausgliedern"
+ },
+ {
+  "tr": "gelir getiren iş",
+  "kind": "vocab.tr",
+  "de": "Erwerbstätigkeit"
+ },
+ {
+  "tr": "güç dengesizliği",
+  "kind": "vocab.tr",
+  "de": "Machtgefälle"
+ },
+ {
+  "tr": "profesyonelleşme",
+  "kind": "vocab.tr",
+  "de": "Professionalisierung"
+ },
+ {
+  "tr": "rasyonelleştirme",
+  "kind": "vocab.tr",
+  "de": "Rationalisierung"
+ },
+ {
+  "tr": "standartlaştırma",
+  "kind": "vocab.tr",
+  "de": "Standardisierung"
+ },
+ {
+  "tr": "yaşlılık günleri",
+  "kind": "vocab.tr",
+  "de": "Lebensabend"
+ },
+ {
+  "tr": "eğitimle yükselme",
+  "kind": "vocab.tr",
+  "de": "Bildungsaufstieg"
+ },
+ {
+  "tr": "gündelik uygulama",
+  "kind": "vocab.tr",
+  "de": "Alltagspraxis"
+ },
+ {
+  "tr": "müzakere yönetimi",
+  "kind": "vocab.tr",
+  "de": "Verhandlungsführung"
+ },
+ {
+  "tr": "personel gelişimi",
+  "kind": "vocab.tr",
+  "de": "Personalentwicklung"
+ },
+ {
+  "tr": "verimlilik artışı",
+  "kind": "vocab.tr",
+  "de": "Effizienzgewinn"
+ },
+ {
+  "tr": "davranış kuralları",
+  "kind": "vocab.tr",
+  "de": "Verhaltenskodex"
+ },
+ {
+  "tr": "alan dışından geçiş",
+  "kind": "vocab.tr",
+  "de": "Quereinstieg"
+ },
+ {
+  "tr": "çalışanı elde tutma",
+  "kind": "vocab.tr",
+  "de": "Mitarbeiterbindung"
+ },
+ {
+  "tr": "çıraklık sözleşmesi",
+  "kind": "vocab.tr",
+  "de": "Ausbildungsvertrag"
+ },
+ {
+  "tr": "işletme sorumluluğu",
+  "kind": "vocab.tr",
+  "de": "Betriebsverantwortung"
+ },
+ {
+  "tr": "personel devir hızı",
+  "kind": "vocab.tr",
+  "de": "Personalfluktuation"
+ },
+ {
+  "tr": "rekabetin bozulması",
+  "kind": "vocab.tr",
+  "de": "Wettbewerbsverzerrung"
+ },
+ {
+  "tr": "yetkinlik odaklılık",
+  "kind": "vocab.tr",
+  "de": "Kompetenzorientierung"
+ },
+ {
+  "tr": "emekli aylığı düzeyi",
+  "kind": "vocab.tr",
+  "de": "Rentenniveau"
+ },
+ {
+  "tr": "fizibilite çalışması",
+  "kind": "vocab.tr",
+  "de": "Machbarkeitsstudie"
+ },
+ {
+  "tr": "kalıcı hale getirmek",
+  "kind": "vocab.tr",
+  "de": "entfristen"
+ },
+ {
+  "tr": "statü güvencesizliği",
+  "kind": "vocab.tr",
+  "de": "Statusunsicherheit"
+ },
+ {
+  "tr": "yasal emeklilik yaşı",
+  "kind": "vocab.tr",
+  "de": "Regelaltersgrenze"
+ },
+ {
+  "tr": "yeniden üretim emeği",
+  "kind": "vocab.tr",
+  "de": "Reproduktionsarbeit"
+ },
+ {
+  "tr": "döngüsel akıl yürütme",
+  "kind": "vocab.tr",
+  "de": "Zirkelschluss"
+ },
+ {
+  "tr": "kadın işçi temsilcisi",
+  "kind": "vocab.tr",
+  "de": "Betriebsrätin"
+ },
+ {
+  "tr": "meslektaş dayanışması",
+  "kind": "vocab.tr",
+  "de": "Kollegialität"
+ },
+ {
+  "tr": "mükemmeliyet girişimi",
+  "kind": "vocab.tr",
+  "de": "Exzellenzinitiative"
+ },
+ {
+  "tr": "performans göstergesi",
+  "kind": "vocab.tr",
+  "de": "Leistungskennzahl"
+ },
+ {
+  "tr": "talimat verme yetkisi",
+  "kind": "vocab.tr",
+  "de": "Weisungsbefugnis"
+ },
+ {
+  "tr": "işgücüne katılım oranı",
+  "kind": "vocab.tr",
+  "de": "Erwerbsquote"
+ },
+ {
+  "tr": "kendini gerçekleştirme",
+  "kind": "vocab.tr",
+  "de": "Selbstverwirklichung"
+ },
+ {
+  "tr": "nitelikli eleman açığı",
+  "kind": "vocab.tr",
+  "de": "Fachkräftemangel"
+ },
+ {
+  "tr": "başkalarınca belirlenen",
+  "kind": "vocab.tr",
+  "de": "fremdbestimmt"
+ },
+ {
+  "tr": "kuşaklar arası sözleşme",
+  "kind": "vocab.tr",
+  "de": "Generationenvertrag"
+ },
+ {
+  "tr": "toplu sözleşme özerkliği",
+  "kind": "vocab.tr",
+  "de": "Tarifautonomie"
+ },
+ {
+  "tr": "Talebi kalıpla kurmak için",
+  "kind": "hint.tr",
+  "de": "Um das Verlangen mit der Formel zu bauen"
+ },
+ {
+  "tr": "İki adlandırmayı ayırmak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Benennungen zu trennen"
+ },
+ {
+  "tr": "Olmasaydıyı masada kurmak için",
+  "kind": "hint.tr",
+  "de": "Um das Wäre-nicht am Tisch zu bauen"
+ },
+ {
+  "tr": "İki eşdizimi birlikte getirmek için",
+  "kind": "hint.tr",
+  "de": "Um zwei Wortverbindungen zusammenzubringen"
+ },
+ {
+  "tr": "İkinci yarıyı büsbütün eksiltmek için",
+  "kind": "hint.tr",
+  "de": "Um die zweite Hälfte ganz wegzulassen"
+ },
+ {
+  "tr": "Ödünü başa alıp gerçeği söylemek için",
+  "kind": "hint.tr",
+  "de": "Um das Zugeständnis voranzustellen und die Wahrheit zu sagen"
+ },
+ {
+  "tr": "İki sonucu tek kipin altına koymak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Folgen unter ein Modalverb zu stellen"
+ },
+ {
+  "tr": "Yöntemi programdan ayırmak için iki yarı kurulur:",
+  "kind": "hint.tr",
+  "de": "Um Methode und Programm zu trennen, werden zwei Hälften gebaut:"
+ },
+ {
+  "tr": "Aynı kararı iki kayıtta söylemek için iki yer adı yeter:",
+  "kind": "hint.tr",
+  "de": "Um dieselbe Entscheidung in zwei Registern zu sagen, genügen zwei Ortsangaben:"
+ },
+ {
+  "tr": "Duyuru ile sayımı ayırmak için iki edilgen fiil kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um Ankündigung und Zählung zu trennen, werden zwei Passivformen verwendet:"
+ },
+ {
+  "tr": "biz",
+  "kind": "say.tr",
+  "de": "wir"
+ },
+ {
+  "tr": "stok",
+  "kind": "say.tr",
+  "de": "Vorrat"
+ },
+ {
+  "tr": "bedel",
+  "kind": "say.tr",
+  "de": "Preis"
+ },
+ {
+  "tr": "talep",
+  "kind": "say.tr",
+  "de": "Forderung"
+ },
+ {
+  "tr": "zarar",
+  "kind": "say.tr",
+  "de": "Schaden"
+ },
+ {
+  "tr": "gizleme",
+  "kind": "say.tr",
+  "de": "Verbergen"
+ },
+ {
+  "tr": "program",
+  "kind": "say.tr",
+  "de": "Programm"
+ },
+ {
+  "tr": "fiil düşer",
+  "kind": "say.tr",
+  "de": "das Verb fällt weg"
+ },
+ {
+  "tr": "güç işlemi",
+  "kind": "say.tr",
+  "de": "Machtakt"
+ },
+ {
+  "tr": "yetiştirme",
+  "kind": "say.tr",
+  "de": "Ausbildung"
+ },
+ {
+  "tr": "büsbütün eksilme",
+  "kind": "say.tr",
+  "de": "vollständige Auslassung"
+ },
+ {
+  "tr": "Özetleyelim: hak",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Recht"
+ },
+ {
+  "tr": "Özetleyelim: düzen",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Ordnung"
+ },
+ {
+  "tr": "Özetleyelim: eksik",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Mangel"
+ },
+ {
+  "tr": "Suçu özne taşıyor.",
+  "kind": "say.tr",
+  "de": "Die Schuld trägt das Subjekt."
+ },
+ {
+  "tr": "Özetleyelim: kazanç",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Gewinn"
+ },
+ {
+  "tr": "onu bir yere gizler,",
+  "kind": "say.tr",
+  "de": "verbirgt sie an einem Ort,"
+ },
+ {
+  "tr": "Özetleyelim: gizleme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Verbergen"
+ },
+ {
+  "tr": "Başarıyı ölçen sayıya",
+  "kind": "say.tr",
+  "de": "Die Zahl, die den Erfolg misst, heißt"
+ },
+ {
+  "tr": "Biçim talebi koruyor.",
+  "kind": "say.tr",
+  "de": "Die Form schützt die Forderung."
+ },
+ {
+  "tr": "İtirazı ödün taşıyor.",
+  "kind": "say.tr",
+  "de": "Den Einwand trägt das Zugeständnis."
+ },
+ {
+  "tr": "Sözcük taraf tutuyor.",
+  "kind": "say.tr",
+  "de": "Das Wort ergreift Partei."
+ },
+ {
+  "tr": "Çalışma sonrası döneme",
+  "kind": "say.tr",
+  "de": "Die Zeit nach der Arbeit heißt"
+ },
+ {
+  "tr": "Eleştiriyi övgü yaptı.",
+  "kind": "say.tr",
+  "de": "Die Kritik machte das Lob."
+ },
+ {
+  "tr": "faili bir düzen yapar,",
+  "kind": "say.tr",
+  "de": "macht eine Ordnung zum Täter,"
+ },
+ {
+  "tr": "Kip iradeye dokunmuyor.",
+  "kind": "say.tr",
+  "de": "Das Modalverb rührt den Willen nicht an."
+ },
+ {
+  "tr": "bu hakka uyma hâline ise",
+  "kind": "say.tr",
+  "de": "und sich diesem Recht zu fügen heißt"
+ },
+ {
+  "tr": "Kusuru eşdizim dağıtıyor.",
+  "kind": "say.tr",
+  "de": "Den Fehler verteilt die Wortverbindung."
+ },
+ {
+  "tr": "Asıl işin yanında yapılana",
+  "kind": "say.tr",
+  "de": "Was neben der Hauptarbeit getan wird, heißt"
+ },
+ {
+  "tr": "Gün içinde fiilen yapılana",
+  "kind": "say.tr",
+  "de": "Was im Lauf des Tages tatsächlich getan wird, heißt"
+ },
+ {
+  "tr": "kararın nereden çıktığını,",
+  "kind": "say.tr",
+  "de": "woher die Entscheidung kommt,"
+ },
+ {
+  "tr": "Sorumluluğu adres tutuyor.",
+  "kind": "say.tr",
+  "de": "Die Verantwortung hält die Adresse."
+ },
+ {
+  "tr": "Geçimini sağlayan çalışmaya",
+  "kind": "say.tr",
+  "de": "Die Arbeit, die den Lebensunterhalt sichert, heißt"
+ },
+ {
+  "tr": "Özetleyelim: yardımcı kalır",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: das Hilfsverb bleibt"
+ },
+ {
+  "tr": "insanlar arasında geçene ise",
+  "kind": "say.tr",
+  "de": "und was zwischen Menschen geschieht, heißt"
+ },
+ {
+  "tr": "İşin güvencesinin azalmasına",
+  "kind": "say.tr",
+  "de": "Dass die Sicherheit der Arbeit abnimmt, heißt"
+ },
+ {
+  "tr": "İşin hangi hızda yapıldığına",
+  "kind": "say.tr",
+  "de": "In welchem Tempo gearbeitet wird, heißt"
+ },
+ {
+  "tr": "Klişe toplantıdan sağ çıktı.",
+  "kind": "say.tr",
+  "de": "Der Gemeinplatz überstand die Sitzung."
+ },
+ {
+  "tr": "Özetleyelim: gerçeği söyleme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: die Wahrheit sagen"
+ },
+ {
+  "tr": "Kararı başkasının verdiği işe",
+  "kind": "say.tr",
+  "de": "Arbeit, über die ein anderer entscheidet, heißt"
+ },
+ {
+  "tr": "konuşanı gizleyen biri sayar,",
+  "kind": "say.tr",
+  "de": "hält die sprechende Person für jemanden, der verbirgt,"
+ },
+ {
+  "tr": "düzenli geliri olan kişiye ise",
+  "kind": "say.tr",
+  "de": "und wer ein festes Einkommen hat, heißt"
+ },
+ {
+  "tr": "Eksik yarı hiç vadedilmemişti.",
+  "kind": "say.tr",
+  "de": "Die fehlende Hälfte war nie versprochen."
+ },
+ {
+  "tr": "gördüğün örüntüye güvendiğini,",
+  "kind": "say.tr",
+  "de": "dass du dem Muster traust, das du siehst,"
+ },
+ {
+  "tr": "insanın kendi olabilmesine ise",
+  "kind": "say.tr",
+  "de": "und dass ein Mensch er selbst werden kann, heißt"
+ },
+ {
+  "tr": "Şirketin kendi içinde yapılana",
+  "kind": "say.tr",
+  "de": "Was innerhalb der Firma getan wird, heißt"
+ },
+ {
+  "tr": "Geçici bir şeyi sürekli kılmaya",
+  "kind": "say.tr",
+  "de": "Etwas Befristetes dauerhaft zu machen heißt"
+ },
+ {
+  "tr": "Ne yapılacağını söyleme hakkına",
+  "kind": "say.tr",
+  "de": "Das Recht zu sagen, was zu tun ist, heißt"
+ },
+ {
+  "tr": "onları şirkette tutabilmeye ise",
+  "kind": "say.tr",
+  "de": "und sie in der Firma halten zu können heißt"
+ },
+ {
+  "tr": "sınırı kolayca geçilebilene ise",
+  "kind": "say.tr",
+  "de": "und was sich leicht überschreiten lässt, heißt"
+ },
+ {
+  "tr": "yinelenen davranış biçimine ise",
+  "kind": "say.tr",
+  "de": "und die wiederkehrende Form des Handelns heißt"
+ },
+ {
+  "tr": "Bir işin meslek hâline gelmesine",
+  "kind": "say.tr",
+  "de": "Dass eine Tätigkeit zum Beruf wird, heißt"
+ },
+ {
+  "tr": "çalışanları yetiştirme işine ise",
+  "kind": "say.tr",
+  "de": "und die Ausbildung der Beschäftigten heißt"
+ },
+ {
+  "tr": "Görüşmelerin nasıl yürütüldüğüne",
+  "kind": "say.tr",
+  "de": "Wie die Verhandlungen geführt werden, heißt"
+ },
+ {
+  "tr": "İki taraf arasındaki güç farkına",
+  "kind": "say.tr",
+  "de": "Der Machtunterschied zwischen zwei Seiten heißt"
+ },
+ {
+  "tr": "İyi koşullarda serpilip büyümeye",
+  "kind": "say.tr",
+  "de": "Unter guten Bedingungen aufzublühen heißt"
+ },
+ {
+  "tr": "kendi isteğiyle boyun eğmeye ise",
+  "kind": "say.tr",
+  "de": "und sich aus eigenem Willen unterzuordnen heißt"
+ },
+ {
+  "tr": "Okulla toplumsal basamak çıkmaya",
+  "kind": "say.tr",
+  "de": "Über die Schule gesellschaftlich aufzusteigen heißt"
+ },
+ {
+  "tr": "Son günde pek az kişi gelişiyor.",
+  "kind": "say.tr",
+  "de": "Am letzten Tag gedeihen nur wenige."
+ },
+ {
+  "tr": "bir yükü başkasına devretmeye ise",
+  "kind": "say.tr",
+  "de": "und eine Last auf andere zu übertragen heißt"
+ },
+ {
+  "tr": "eksikliği işverenin sorunu yapar,",
+  "kind": "say.tr",
+  "de": "macht den Mangel zum Problem der Arbeitgeber,"
+ },
+ {
+  "tr": "Hayatı sürdüren bakım ve ev işine",
+  "kind": "say.tr",
+  "de": "Die Sorge- und Hausarbeit, die das Leben trägt, heißt"
+ },
+ {
+  "tr": "seçkin bir kesim yetiştirmeye ise",
+  "kind": "say.tr",
+  "de": "und eine ausgewählte Schicht heranzuziehen heißt"
+ },
+ {
+  "tr": "belli bir amaca ayrılmış olana ise",
+  "kind": "say.tr",
+  "de": "und was einem bestimmten Zweck vorbehalten ist, heißt"
+ },
+ {
+  "tr": "Bir meslekte uyulan ahlak ölçüsüne",
+  "kind": "say.tr",
+  "de": "Der sittliche Maßstab eines Berufs heißt"
+ },
+ {
+  "tr": "insanları kurala uydurma işine ise",
+  "kind": "say.tr",
+  "de": "und Menschen der Regel anzupassen heißt"
+ },
+ {
+  "tr": "Şirketin asıl para kazandığı alana",
+  "kind": "say.tr",
+  "de": "Das Feld, in dem die Firma wirklich verdient, heißt"
+ },
+ {
+  "tr": "Aynı sürede daha çok iş yapılmasına",
+  "kind": "say.tr",
+  "de": "Dass in derselben Zeit mehr Arbeit anfällt, heißt"
+ },
+ {
+  "tr": "Çalışabilecek ama çalışmayan kesime",
+  "kind": "say.tr",
+  "de": "Der Teil, der arbeiten könnte, aber nicht arbeitet, heißt"
+ },
+ {
+  "tr": "Her şeyi işlevine indirgeyen görüşe",
+  "kind": "say.tr",
+  "de": "Die Ansicht, alles auf seine Funktion zu reduzieren, heißt"
+ },
+ {
+  "tr": "Kanunun emeklilik için koyduğu yaşa",
+  "kind": "say.tr",
+  "de": "Das Alter, das das Gesetz für die Rente setzt, heißt"
+ },
+ {
+  "tr": "Çalışanların ne sıklıkla değiştiğine",
+  "kind": "say.tr",
+  "de": "Wie oft die Beschäftigten wechseln, heißt"
+ },
+ {
+  "tr": "günlük işleyişten sorumlu olmaya ise",
+  "kind": "say.tr",
+  "de": "und für den täglichen Betrieb zu haften heißt"
+ },
+ {
+  "tr": "Her şeyin yarışa göre düzenlenmesine",
+  "kind": "say.tr",
+  "de": "Dass alles nach dem Wettbewerb geordnet wird, heißt"
+ },
+ {
+  "tr": "Meslektaşların birbirini kollamasına",
+  "kind": "say.tr",
+  "de": "Dass Kolleginnen einander schützen, heißt"
+ },
+ {
+  "tr": "Şimdi eksiltilen yarıyı okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du die weggelassene Hälfte."
+ },
+ {
+  "tr": "Şimdi uzun bir raporu bağlayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt hältst du einen langen Bericht zusammen."
+ },
+ {
+  "tr": "bir şeyi alttan alta zayıflatmaya ise",
+  "kind": "say.tr",
+  "de": "und etwas von unten her zu schwächen heißt"
+ },
+ {
+  "tr": "sürekli yayın yapma zorunluluğuna ise",
+  "kind": "say.tr",
+  "de": "und der Zwang, ständig zu veröffentlichen, heißt"
+ },
+ {
+  "tr": "Konumun ne kadar süreceğini bilememeye",
+  "kind": "say.tr",
+  "de": "Nicht zu wissen, wie lange die Stellung hält, heißt"
+ },
+ {
+  "tr": "ortak bir noktada buluşma çabasına ise",
+  "kind": "say.tr",
+  "de": "und das Bemühen, einen gemeinsamen Punkt zu finden, heißt"
+ },
+ {
+  "tr": "Şimdi nitelik sözlüğünü kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt benutzt du das Wörterbuch der Qualifikation."
+ },
+ {
+  "tr": "Şimdi sözleşme masasında konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du am Verhandlungstisch."
+ },
+ {
+  "tr": "yalnız amaca ulaşmayı düşünen akla ise",
+  "kind": "say.tr",
+  "de": "und der Verstand, der nur an den Zweck denkt, heißt"
+ },
+ {
+  "tr": "yarışın haksız biçimde bozulmasına ise",
+  "kind": "say.tr",
+  "de": "und die unlautere Störung des Wettbewerbs heißt"
+ },
+ {
+  "tr": "Başkasının metnini kendi adıyla vermeye",
+  "kind": "say.tr",
+  "de": "Den Text eines anderen unter eigenem Namen abzugeben heißt"
+ },
+ {
+  "tr": "çalışma koşullarının gevşetilmesine ise",
+  "kind": "say.tr",
+  "de": "und die Lockerung der Arbeitsbedingungen heißt"
+ },
+ {
+  "tr": "işlerin tek bir ölçüye bağlanmasına ise",
+  "kind": "say.tr",
+  "de": "und die Bindung der Arbeiten an ein einziges Maß heißt"
+ },
+ {
+  "tr": "Bir kararı sonradan haklı gösterme işine",
+  "kind": "say.tr",
+  "de": "Eine Entscheidung nachträglich zu rechtfertigen heißt"
+ },
+ {
+  "tr": "bir yetkinin başkasına aktarılmasına ise",
+  "kind": "say.tr",
+  "de": "und die Übertragung einer Befugnis auf andere heißt"
+ },
+ {
+  "tr": "her işin kural ve forma bağlanmasına ise",
+  "kind": "say.tr",
+  "de": "und die Bindung jeder Arbeit an Regel und Formular heißt"
+ },
+ {
+  "tr": "Kişinin kendi kararını verebildiği alana",
+  "kind": "say.tr",
+  "de": "Der Raum, in dem eine Person selbst entscheidet, heißt"
+ },
+ {
+  "tr": "üretilen parça sayısına göre ödemeye ise",
+  "kind": "say.tr",
+  "de": "und die Bezahlung nach der Zahl der Stücke heißt"
+ },
+ {
+  "tr": "Yeniden üretim emeği hiç sayılmayabilir.",
+  "kind": "say.tr",
+  "de": "Reproduktionsarbeit wird womöglich nie gezählt."
+ },
+ {
+  "tr": "başka bir alandan gelip o işi yapmaya ise",
+  "kind": "say.tr",
+  "de": "und aus einem anderen Feld zu kommen und die Arbeit zu tun heißt"
+ },
+ {
+  "tr": "Bir basamaktan ötekine geçenlerin oranına",
+  "kind": "say.tr",
+  "de": "Der Anteil derer, die von einer Stufe zur nächsten gehen, heißt"
+ },
+ {
+  "tr": "İşgücünün ayrı ayrı bölümlere bölünmesine",
+  "kind": "say.tr",
+  "de": "Die Aufteilung der Arbeitskraft in getrennte Teile heißt"
+ },
+ {
+  "tr": "Şimdi esneklik pazarlığını sürdüreceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt führst du den Handel um Flexibilität weiter."
+ },
+ {
+  "tr": "çalışanları kurulda temsil eden kadına ise",
+  "kind": "say.tr",
+  "de": "und die Frau, die die Beschäftigten im Rat vertritt, heißt"
+ },
+ {
+  "tr": "İnsanın kendi kendini fazla çalıştırmasına",
+  "kind": "say.tr",
+  "de": "Dass ein Mensch sich selbst überarbeitet, heißt"
+ },
+ {
+  "tr": "Kanıtı sonucun kendisi olan akıl yürütmeye",
+  "kind": "say.tr",
+  "de": "Ein Schluss, dessen Beweis das Ergebnis selbst ist, heißt"
+ },
+ {
+  "tr": "kazancı öne alır ve bedeli görünmez kılar,",
+  "kind": "say.tr",
+  "de": "stellt den Gewinn voran und macht den Preis unsichtbar,"
+ },
+ {
+  "tr": "mesleği işyerinde öğrenme sözleşmesine ise",
+  "kind": "say.tr",
+  "de": "und der Vertrag, den Beruf im Betrieb zu lernen, heißt"
+ },
+ {
+  "tr": "aranan nitelikte çalışan bulunamamasına ise",
+  "kind": "say.tr",
+  "de": "und dass keine Beschäftigten der gesuchten Art zu finden sind, heißt"
+ },
+ {
+  "tr": "Kimin haklı olduğuna tutanak karar veriyor.",
+  "kind": "say.tr",
+  "de": "Wer recht hatte, entscheidet das Protokoll."
+ },
+ {
+  "tr": "kuşakların birbirini taşıma anlaşmasına ise",
+  "kind": "say.tr",
+  "de": "und die Abrede, dass die Generationen einander tragen, heißt"
+ },
+ {
+  "tr": "Meşrulaştırma olup bittikten sonra geliyor.",
+  "kind": "say.tr",
+  "de": "Die Legitimierung kommt, wenn alles vorbei ist."
+ },
+ {
+  "tr": "Şimdi aynı kararı iki kayıtta anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du dieselbe Entscheidung in zwei Registern."
+ },
+ {
+  "tr": "Ona hizaya sokma demek klişe demek değildir.",
+  "kind": "say.tr",
+  "de": "Es Disziplinierung zu nennen heißt nicht, es einen Gemeinplatz zu nennen."
+ },
+ {
+  "tr": "Şimdi kurumsal övgüyü alayla eleştireceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt kritisierst du das Eigenlob der Einrichtung mit Spott."
+ },
+ {
+  "tr": "Araçsal akılcı rapor işlevselcilikle bitiyor.",
+  "kind": "say.tr",
+  "de": "Der zweckrationale Bericht endet im Funktionalismus."
+ },
+ {
+  "tr": "Bir kurumda uyulması beklenen yazılı ilkelere",
+  "kind": "say.tr",
+  "de": "Die schriftlichen Grundsätze, die in einer Einrichtung gelten sollen, heißen"
+ },
+ {
+  "tr": "Personel gelişimi eğitimle yükselme değildir.",
+  "kind": "say.tr",
+  "de": "Personalentwicklung ist kein Bildungsaufstieg."
+ },
+ {
+  "tr": "Herkesin söylediği, hiçbir şey söylemeyen söze",
+  "kind": "say.tr",
+  "de": "Ein Satz, den alle sagen und der nichts sagt, heißt"
+ },
+ {
+  "tr": "Şimdi bir fazla çalışma durumunu anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von einem Fall von Überarbeitung."
+ },
+ {
+  "tr": "Burada elit yetiştirme yok, rekabet mantığı var.",
+  "kind": "say.tr",
+  "de": "Hier gibt es keine Elitenbildung, hier gibt es eine Wettbewerbslogik."
+ },
+ {
+  "tr": "Rol çatışması bir ritim sorunu gibi görünebilir.",
+  "kind": "say.tr",
+  "de": "Ein Rollenkonflikt könnte wie ein Problem der Taktung aussehen."
+ },
+ {
+  "tr": "Son kalıbımız talebi kalıpla kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung baut das Verlangen mit der Formel. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir toplantıyı iki ayrı fiille aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Sitzung mit zwei verschiedenen Verben wieder."
+ },
+ {
+  "tr": "Çalışabilecek yaştakilerin ne kadarının çalıştığına",
+  "kind": "say.tr",
+  "de": "Wie viele der Erwerbsfähigen arbeiten, heißt"
+ },
+ {
+  "tr": "Hangi adı seçtiğin, kimin yanında durduğunu söyler.",
+  "kind": "say.tr",
+  "de": "Welchen Namen du wählst, sagt, auf wessen Seite du stehst."
+ },
+ {
+  "tr": "Son kalıbımız iki adlandırmayı ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung trennt zwei Benennungen. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Söz verilmeyen şey eksiltilir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was nicht versprochen wird, wird weggelassen:"
+ },
+ {
+  "tr": "Bir tane daha: Ona kural demek klişe demek değildir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Es Regel zu nennen heißt nicht, es einen Gemeinplatz zu nennen."
+ },
+ {
+  "tr": "İşin bütününü akla uygun biçimde yeniden düzenlemeye",
+  "kind": "say.tr",
+  "de": "Die ganze Arbeit vernunftgemäß neu zu ordnen heißt"
+ },
+ {
+  "tr": "Bir işin yapılabilir olup olmadığını ölçen incelemeye",
+  "kind": "say.tr",
+  "de": "Die Untersuchung, ob etwas machbar ist, heißt"
+ },
+ {
+  "tr": "Son kalıbımız yöntemi programdan ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung trennt Methode und Programm. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kip burada bir suçlama ölçüsüdür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Modalverb ist hier ein Maß des Vorwurfs:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Bilgi emeği tükenmişlikle bitebilir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wissensarbeit kann durchaus im Burn-out enden."
+ },
+ {
+  "tr": "aynı kişiden birbiriyle çelişen şeyler beklenmesine ise",
+  "kind": "say.tr",
+  "de": "und dass von derselben Person Widersprüchliches erwartet wird, heißt"
+ },
+ {
+  "tr": "İkinci kalıbımız duyuru ile sayımı ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Ankündigung und Zählung. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız olmasaydıyı masada kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung baut das Wäre-nicht am Tisch. Sprich nach:"
+ },
+ {
+  "tr": "Neyi bildiğinden çok neyi yapabildiğine bakan yaklaşıma",
+  "kind": "say.tr",
+  "de": "Der Ansatz, der weniger auf das Wissen als auf das Können sieht, heißt"
+ },
+ {
+  "tr": "Yetki devrinin arkasında talimat verme yetkisi duruyor.",
+  "kind": "say.tr",
+  "de": "Hinter der Delegation steht die Weisungsbefugnis."
+ },
+ {
+  "tr": "Eşdizim seçmek eksiği kimin sırtına yazdığını seçmektir.",
+  "kind": "say.tr",
+  "de": "Die Wortverbindung zu wählen heißt zu wählen, wem der Mangel zugeschrieben wird."
+ },
+ {
+  "tr": "İş sahibi olsalar da, çoğu hâlâ yan iş olarak çalışıyor.",
+  "kind": "say.tr",
+  "de": "Wenn auch erwerbstätig, arbeiten viele noch nebenberuflich."
+ },
+ {
+  "tr": "Şimdi bir yetki olayını üç ayrı sorumluyla anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einen Vorfall um Befugnis mit drei Verantwortlichen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tutanakta fiil sessiz bir hükümdür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Protokoll ist das Verb ein stilles Urteil:"
+ },
+ {
+  "tr": "Şimdi sen kur: Burada sıralama yok, rekabet mantığı var.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hier gibt es keine Rangliste, hier gibt es eine Wettbewerbslogik."
+ },
+ {
+  "tr": "Nitelikli eleman açığı duyurulur, işgücü rezervi sayılır.",
+  "kind": "say.tr",
+  "de": "Der Fachkräftemangel wird verkündet, die Arbeitskräftereserve wird gezählt."
+ },
+ {
+  "tr": "Son kalıbımız iki eşdizimi birlikte getiriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bringt zwei Wortverbindungen zusammen. Sprich nach:"
+ },
+ {
+  "tr": "Uzlaşı sağlama olmasaydı hiçbir davranış kuralı tutmazdı.",
+  "kind": "say.tr",
+  "de": "Ohne Konsensfindung würde kein Verhaltenskodex halten."
+ },
+ {
+  "tr": "Bilgiyle yapılan iş demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Arbeit, die mit Wissen getan wird. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız ikinci yarıda fiili düşürüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung lässt in der zweiten Hälfte das Verb weg. Sprich nach:"
+ },
+ {
+  "tr": "Riski üstüne yıkıyorlar ve buna gelir getiren iş diyorlar.",
+  "kind": "say.tr",
+  "de": "Sie wälzen das Risiko ab und nennen es Erwerbstätigkeit."
+ },
+ {
+  "tr": "Şimdi sıra sende: Vasıfsızlaşma eğitimin karşıtı değildir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Dequalifizierung ist nicht das Gegenteil von Ausbildung."
+ },
+ {
+  "tr": "Boyun eğmeyi fark ediyoruz, hareket alanını fark etmiyoruz.",
+  "kind": "say.tr",
+  "de": "Die Unterordnung bemerken wir, den Handlungsspielraum nicht."
+ },
+ {
+  "tr": "Son kalıbımız ikinci yarıyı büsbütün eksiltiyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung lässt die zweite Hälfte ganz weg. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Başa aldığın şey sorumluluğu da taşır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was du voranstellst, trägt auch die Verantwortung:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Emekli aylığı düzeyi düştü, prim düşmedi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Rentenniveau fiel, der Beitrag nicht."
+ },
+ {
+  "tr": "Yayın baskısı, dediler, üstelik intihale karşı iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Publikationsdruck, sagten sie, und dazu gut gegen Plagiate."
+ },
+ {
+  "tr": "Alan dışından geçiş ve yetkinlik odaklılık birlikte geliyor.",
+  "kind": "say.tr",
+  "de": "Quereinstieg und Kompetenzorientierung kommen zusammen."
+ },
+ {
+  "tr": "Eylem kalıbı, gündelik uygulamanın varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Das Handlungsmuster behauptet, was die Alltagspraxis voraussetzt."
+ },
+ {
+  "tr": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung stellt zwei Folgen unter ein Modalverb. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Program desteklendi, geçiş oranı pek değil.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Programm wurde gefördert, die Übergangsquote weniger."
+ },
+ {
+  "tr": "Şimdi sıra sende: Raporda tasarruf, atölyede iş yoğunlaşması.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Im Bericht Einsparung, in der Werkstatt Arbeitsverdichtung."
+ },
+ {
+  "tr": "Bir tane daha: Nitelikli eleman açığı duyurulur, havuz sayılır.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Fachkräftemangel wird verkündet, der Pool wird gezählt."
+ },
+ {
+  "tr": "Şimdi sen kur: Güven olmasaydı hiçbir davranış kuralı tutmazdı.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ohne Vertrauen würde kein Verhaltenskodex halten."
+ },
+ {
+  "tr": "Şimdi sen kur: Rol çatışması bir zaman sorunu gibi görünebilir.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ein Rollenkonflikt könnte wie ein Zeitproblem aussehen."
+ },
+ {
+  "tr": "Yönetimin esnekleştirme dediğine sendika güvencesizleşme diyor.",
+  "kind": "say.tr",
+  "de": "Was die Leitung Flexibilisierung nennt, nennt die Gewerkschaft Prekarisierung."
+ },
+ {
+  "tr": "Bürokratikleşme kendini iyileştiriyor, döngüsel akıl yürütmeyle.",
+  "kind": "say.tr",
+  "de": "Die Bürokratisierung heilt sich selbst, durch einen Zirkelschluss."
+ },
+ {
+  "tr": "Görünmesi gerekeni örtmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, zu verdecken, was sichtbar sein sollte. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Kimse başkalarınca belirlenen bir tempoya boyun eğmek istemiyor.",
+  "kind": "say.tr",
+  "de": "Niemand will sich einem fremdbestimmten Takt unterordnen."
+ },
+ {
+  "tr": "Standartlaştırma bir yöntemdir, rasyonelleştirme bir programdır.",
+  "kind": "say.tr",
+  "de": "Standardisierung ist eine Methode, Rationalisierung ein Programm."
+ },
+ {
+  "tr": "Şimdi sen kur: Reformun arkasında talimat verme yetkisi duruyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hinter der Reform steht die Weisungsbefugnis."
+ },
+ {
+  "tr": "İşletme sorumluluğu belirsizse performans göstergesi işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Ist die Betriebsverantwortung unklar, hilft die Leistungskennzahl nicht."
+ },
+ {
+  "tr": "Masada biçim bir nezaket değil; isteği kimin taşıdığını belirler.",
+  "kind": "say.tr",
+  "de": "Am Tisch ist die Form keine Höflichkeit; sie bestimmt, wer die Forderung trägt."
+ },
+ {
+  "tr": "Yüksek personel devir hızı zayıf çalışanı elde tutmanın bedelidir.",
+  "kind": "say.tr",
+  "de": "Hohe Personalfluktuation ist der Preis schwacher Mitarbeiterbindung."
+ },
+ {
+  "tr": "Merhaba! Bugün kurumsal övgü dilini alayla eleştirmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Sprache des Eigenlobs mit Spott zu kritisieren."
+ },
+ {
+  "tr": "Bir tane daha: İyi kazansalar da, çoğu hâlâ yan iş olarak çalışıyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn auch gut bezahlt, arbeiten viele noch nebenberuflich."
+ },
+ {
+  "tr": "Bir tane daha: Yayın baskısı, dediler, üstelik kariyere iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Publikationsdruck, sagten sie, und dazu gut für die Laufbahn."
+ },
+ {
+  "tr": "ise bizi fail hâline getirir. Üç cümle, tek olay ve üç ayrı sorumlu.",
+  "kind": "say.tr",
+  "de": "dagegen macht uns zu Tätern. Drei Sätze, ein Vorfall und drei Verantwortliche."
+ },
+ {
+  "tr": "İşgücüne katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi.",
+  "kind": "say.tr",
+  "de": "Die Erwerbsquote stieg, das zweckgebundene Geld überhaupt nicht."
+ },
+ {
+  "tr": "Sınır, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor.",
+  "kind": "say.tr",
+  "de": "Die Grenze, wenn auch durchlässig, beseitigt die Statusunsicherheit nicht."
+ },
+ {
+  "tr": "Alay kurumun kendi diline yaslandığında en zor çürütülen eleştiridir.",
+  "kind": "say.tr",
+  "de": "Stützt sich der Spott auf die Sprache der Einrichtung selbst, ist er die am schwersten zu widerlegende Kritik."
+ },
+ {
+  "tr": "Şimdi sen kur: Kalıp, gündelik uygulamanın varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Das Muster behauptet, was die Alltagspraxis voraussetzt."
+ },
+ {
+  "tr": "Bir tane daha: Sorumluluk belirsizse performans göstergesi işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ist die Verantwortung unklar, hilft die Leistungskennzahl nicht."
+ },
+ {
+  "tr": "Bir tane daha: Standartlaştırma bir yöntemdir, birleşme bir programdır.",
+  "kind": "say.tr",
+  "de": "Noch eins: Standardisierung ist eine Methode, die Fusion ein Programm."
+ },
+ {
+  "tr": "Emekli aylığının ne kadar olduğu demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, wie hoch die Rente ist. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün nitelik konuşmasının yerleşik eşdizimlerini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Qualifikation."
+ },
+ {
+  "tr": "Merhaba! Bugün toplu sözleşme dilinin kalıplaşmış biçimini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die feste Form der Tarifsprache."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aynı karar iki kayıtta iki ayrı olgu gibi görünür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Dieselbe Entscheidung sieht in zwei Registern wie zwei Tatsachen aus:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Ekibi bünyeden ayırsalar da iş şirket içinde kalıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Sooft sie das Team ausgliedern, bleibt die Arbeit hausintern."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hiyerarşinin yaptığı şey güç dengesizliğini gizlemek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was die Hierarchie tut, ist das Machtgefälle zu verbergen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Masada çekimsiz fiil bir üslup değil bir korumadır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Am Tisch ist das ungebeugte Verb kein Stil, sondern ein Schutz:"
+ },
+ {
+  "tr": "Toplantıyı aktaran kişi, farkında olmadan kimin haklı olduğunu da yazar.",
+  "kind": "say.tr",
+  "de": "Wer die Sitzung wiedergibt, schreibt ungewollt auch auf, wer recht hatte."
+ },
+ {
+  "tr": "Şimdi sen kur: Alan dışından geçiş ve personel gelişimi birlikte geliyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Quereinstieg und Personalentwicklung kommen zusammen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yukarıdaki yapısal değişim aşağıda bir riske dönüşüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Strukturwandel oben wird unten zu einem Risiko."
+ },
+ {
+  "tr": "Bir tane daha: Hareket alanını fark ediyoruz, boyun eğmeyi fark etmiyoruz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Den Handlungsspielraum bemerken wir, die Unterordnung nicht."
+ },
+ {
+  "tr": "Bir tane daha: Katılım oranı yükseldi, tahsis edilmiş para hiç yükselmedi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Quote stieg, das zweckgebundene Geld überhaupt nicht."
+ },
+ {
+  "tr": "İşin gerektirdiği becerinin azalması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass die von der Arbeit verlangte Fertigkeit abnimmt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün bir toplantıyı aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Wiedergeben einer Sitzung das Urteil ins Verb zu legen."
+ },
+ {
+  "tr": "Merhaba! Bugün yetkiden söz ederken kimi başa aldığını seçmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Reden über Befugnis zu wählen, wen wir voranstellen."
+ },
+ {
+  "tr": "Ödün karşındakini kazanmak için değil, itirazını taşıyabilmek için verilir.",
+  "kind": "say.tr",
+  "de": "Das Zugeständnis gibt man nicht, um das Gegenüber zu gewinnen, sondern um den Einwand tragen zu können."
+ },
+ {
+  "tr": "Şimdi sıra sende: Toplu sözleşme özerkliği masanın serbest olmasını istiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Tarifautonomie verlangt, dass der Tisch frei sei."
+ },
+ {
+  "tr": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hale getirmesini istiyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Rat verlangt, dass die Firma jeden Vertrag entfriste."
+ },
+ {
+  "tr": "Merhaba! Bugün esneklik tartışmasında ödün vererek karşı çıkmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der Flexibilitätsdebatte mit Zugeständnis zu widersprechen."
+ },
+ {
+  "tr": "Merhaba! Bugün fazla çalışmayı anlatırken kipin koyduğu mesafeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir den Abstand, den das Modalverb beim Erzählen von Überarbeitung setzt."
+ },
+ {
+  "tr": "Aynı işi daha az kaynakla yapma kazancı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Gewinn, dieselbe Arbeit mit weniger Mitteln zu tun. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir işyerinde kimin sorumlu göründüğü, çoğu zaman cümlenin başında belli olur.",
+  "kind": "say.tr",
+  "de": "Wer in einem Betrieb als verantwortlich erscheint, zeigt sich meist am Satzanfang."
+ },
+ {
+  "tr": "Bir sektörün yapısının kökten dönüşmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass sich der Aufbau einer Branche von Grund auf wandelt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Kimin kime karşı güçlü olduğunun düzeni demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Ordnung, wer gegenüber wem stark ist. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün aynı kararın raporda ve atölyede başka ad aldığını öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, dass dieselbe Entscheidung im Bericht und in der Werkstatt anders heißt."
+ },
+ {
+  "tr": "Merhaba! Bugün uzun bir kurum raporunu bağlayan geri göndermeleri öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Rückverweise, die einen langen Unternehmensbericht zusammenhalten."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Esneklik tartışmasında ödün bir kabul değil bir GİRİŞTİR:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Flexibilitätsdebatte ist das Zugeständnis kein Nachgeben, sondern ein EINTRITT:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Biri bölünmeyi perdeliyor, öteki meslek ahlakını baltalıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der eine verschleiert die Spaltung, der andere untergräbt das Berufsethos."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Nitelik sözlüğünde eşdizim KİMİN EKSİK olduğunu da söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Qualifikation sagt die Wortverbindung auch, WEM etwas fehlt:"
+ },
+ {
+  "tr": "Kip burada bir çekingenlik değil; başkasının iradesi hakkında hüküm vermemektir.",
+  "kind": "say.tr",
+  "de": "Das Modalverb ist hier keine Scheu; es heißt, über den Willen anderer nicht zu urteilen."
+ },
+ {
+  "tr": "Merhaba! Bugün çalışma hayatının sonu üstüne konuşurken düşen öğeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das weggelassene Glied im Reden über das Ende des Arbeitslebens."
+ },
+ {
+  "tr": "Şimdi sen kur: Şirketin esnekleştirme dediğine çalışanlar güvencesizleşme diyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Was die Firma Flexibilisierung nennt, nennt die Belegschaft Prekarisierung."
+ },
+ {
+  "tr": "Kuşaklar arası sözleşme yaşlılık günleri vadediyor, iş de kendini gerçekleştirme.",
+  "kind": "say.tr",
+  "de": "Der Generationenvertrag verspricht den Lebensabend, die Arbeit die Selbstverwirklichung."
+ },
+ {
+  "tr": "Seçkin araştırmaya ayrılan destek programı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein Förderprogramm für Spitzenforschung. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Sözleşme yaşlılık günleri vadediyor, iş de kendini gerçekleştirme.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Der Vertrag verspricht den Lebensabend, die Arbeit die Selbstverwirklichung."
+ },
+ {
+  "tr": "Uzun raporda her adres bir sorumluluk bağıdır; adres düşerse sorumluluk da düşer.",
+  "kind": "say.tr",
+  "de": "Im langen Bericht ist jede Adresse ein Band der Verantwortung; fällt die Adresse, fällt auch die Verantwortung."
+ },
+ {
+  "tr": "Tarafların devlete karışmadan anlaşma hakkı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Recht der Parteien, sich ohne den Staat zu einigen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Kural, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Die Regel, wenn auch durchlässig, beseitigt die Statusunsicherheit nicht."
+ },
+ {
+  "tr": "Bir birimi şirketten ayırıp bağımsızlaştırmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, eine Einheit aus der Firma zu lösen und selbständig zu machen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kurumsal övgüde alay, övgünün kendi sözcüğünü kullanınca doğar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Eigenlob entsteht der Spott, wenn man das Lobwort selbst benutzt:"
+ },
+ {
+  "tr": "O rekabetin bozulması, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır.",
+  "kind": "say.tr",
+  "de": "Jene Wettbewerbsverzerrung ist, wie angemerkt, die Machbarkeitsstudie einer früheren Seite."
+ },
+ {
+  "tr": "ise kimin daha önce ne dediğini işaretler. Adres yoksa hiçbir karar kimseye bağlanamaz.",
+  "kind": "say.tr",
+  "de": "dagegen markiert, wer vorher was gesagt hat. Ohne Adresse lässt sich keine Entscheidung jemandem zuordnen."
+ },
+ {
+  "tr": "ise onu bilerek zarar veren biri. Aynı konuşma, iki fiil ve iki ayrı kişi çıkar ortaya.",
+  "kind": "say.tr",
+  "de": "dagegen für jemanden, der absichtlich schadet. Dieselbe Rede, zwei Verben und zwei verschiedene Personen kommen heraus."
+ },
+ {
+  "tr": "Bir tane daha: Parça başı iş güveni zayıflatabilir ve kişiler arası tarafı zorlayabilir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Akkordarbeit kann das Vertrauen schwächen und die zwischenmenschliche Seite belasten."
+ },
+ {
+  "tr": "ise bedeli öne alır. Kimse yalan söylemiyor; yalnız hangi yarısının söylendiği değişiyor.",
+  "kind": "say.tr",
+  "de": "dagegen stellt den Preis voran. Niemand lügt; es ändert sich nur, welche Hälfte gesagt wird."
+ },
+ {
+  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
+  "kind": "say.tr",
+  "de": "Die Betriebsrätin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
+ },
+ {
+  "tr": "Şimdi sen kur: O gecikme, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Jene Verzögerung ist, wie angemerkt, die Machbarkeitsstudie einer früheren Seite."
+ },
+ {
+  "tr": "ise insanları bekleyen bir stok gibi gösterir. Sözcük seçimi burada bir siyaset seçimidir.",
+  "kind": "say.tr",
+  "de": "dagegen zeigt die Menschen wie einen wartenden Vorrat. Die Wortwahl ist hier eine politische Wahl."
+ },
+ {
+  "tr": "Parça başı iş meslektaş dayanışmasını zayıflatabilir ve kişiler arası tarafı zorlayabilir.",
+  "kind": "say.tr",
+  "de": "Akkordarbeit kann die Kollegialität schwächen und die zwischenmenschliche Seite belasten."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kurum raporunda bağlantı bir nezaket değil bir SORUMLULUK zinciridir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Unternehmensbericht ist die Verbindung keine Höflichkeit, sondern eine Kette der VERANTWORTUNG:"
+ },
+ {
+  "tr": "Övgü sözcüğünün kendisi eleştirinin malzemesi olur; yeter ki cümle yarım bırakılsın. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Lobwort selbst wird zum Material der Kritik; man muss den Satz nur halb lassen. Bist du bereit?"
+ },
+ {
+  "tr": "Masada istek kişisel olduğu anda pazarlık konusu olur; kalıp onu bir ölçü hâline getirir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Am Tisch wird eine Forderung verhandelbar, sobald sie persönlich ist; die Formel macht sie zum Maßstab. Bist du bereit?"
+ },
+ {
+  "tr": "Eksiltilen yarı çoğu zaman kimsenin söz vermediği yarıdır; bu yüzden eksiltme burada bir uyarı. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die weggelassene Hälfte ist meist die, die niemand versprochen hat; darum ist die Auslassung hier eine Warnung. Bist du bereit?"
+ },
+ {
+  "tr": "Adı seçmek kimin yanında durduğunu seçmektir; bu yüzden iş dünyasında sözcük hiç tarafsız değil. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Den Namen zu wählen heißt zu wählen, auf wessen Seite man steht; darum ist das Wort in der Arbeitswelt nie neutral. Bist du bereit?"
+ },
+ {
+  "tr": "Kendi isteğiyle çalışmakla mecbur kalmak arasındaki sınır kipten okunur; kesin cümle o sınırı siler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Grenze zwischen freiwilliger Arbeit und Zwang liest man am Modalverb; ein bestimmter Satz löscht diese Grenze. Bist du bereit?"
+ },
+ {
+  "tr": "Tutanağın fiili katılanların niyetini de yazar; kimse itiraz etmez çünkü kimse fiili bir iddia saymaz. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Verb des Protokolls schreibt auch die Absicht der Beteiligten mit; niemand widerspricht, weil niemand ein Verb für eine Behauptung hält. Bist du bereit?"
+ },
+ {
+  "tr": "kurumun kendi adıdır; onu bir eksiltmenin yanına koymak hiçbir suçlama gerektirmez. Dinleyen boşluğu kendi doldurur.",
+  "kind": "say.tr",
+  "de": "ist der eigene Name der Einrichtung; ihn neben eine Auslassung zu stellen verlangt keinen Vorwurf. Die Zuhörerin füllt die Lücke selbst."
+ },
+ {
+  "tr": "Esnekliğin iyi yanını teslim etmeyen itiraz duyulmuyor; ödün itirazı zayıflatmıyor, taşınabilir kılıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Einwand, der die gute Seite der Flexibilität nicht einräumt, wird nicht gehört; das Zugeständnis schwächt den Einwand nicht, es macht ihn tragbar. Bist du bereit?"
+ },
+ {
+  "tr": "Okuyan karar verecekse ipi hiç kaybetmemeli; kaybederse kararı raporun değil hatırladığı son sayfanın verir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Wer lesend entscheiden soll, darf den Faden nie verlieren; verliert er ihn, entscheidet nicht der Bericht, sondern die letzte erinnerte Seite. Bist du bereit?"
+ },
+ {
+  "tr": "dediğinde karşındaki seni kendi kampından biri sayar ve asıl cümleyi duyar. Ödünsüz itiraz ise daha ilk cümlede reddedilir.",
+  "kind": "say.tr",
+  "de": "hält dich dein Gegenüber für jemanden aus dem eigenen Lager und hört den Hauptsatz. Ein Einwand ohne Zugeständnis wird schon im ersten Satz abgelehnt."
+ },
+ {
+  "tr": "Yapıyı başa almak kişiyi gizler, kişiyi başa almak yapıyı; ikisi de doğru cümle kurar ve ikisi ayrı şey söyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Struktur voranzustellen verbirgt die Person, die Person voranzustellen die Struktur; beide bilden richtige Sätze und beide sagen etwas anderes. Bist du bereit?"
+ },
+ {
+  "tr": "dersen istek senin değil tarafların ortak ölçüsü olur. «Ben istiyorum» dersen karşı taraf seninle pazarlık eder, ölçüyle değil.",
+  "kind": "say.tr",
+  "de": "sagst, ist die Forderung nicht deine, sondern der gemeinsame Maßstab der Parteien. Sagst du «ich will», verhandelt die Gegenseite mit dir und nicht mit dem Maßstab."
+ },
+ {
+  "tr": "ise bunun bir ihtimal olduğunu söyler. Birinin fazla çalışmasını «kendi isteği» diye kesin söylemek, kipin sildiği bir hükümdür.",
+  "kind": "say.tr",
+  "de": "dagegen sagt, dass dies eine Möglichkeit ist. Die Überarbeitung eines Menschen bestimmt «sein eigener Wille» zu nennen ist ein Urteil, das das Modalverb löscht."
+ },
+ {
+  "tr": "Eksikliği anlatan söz ile insanı anlatan söz aynı değil; ikisini karıştıran cümle çalışanı bir stok kalemine çevirir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Wort für den Mangel und das Wort für den Menschen sind nicht dasselbe; ein Satz, der beide verwechselt, macht aus der Beschäftigten einen Lagerposten. Bist du bereit?"
+ },
+ {
+  "tr": "dediğinde kimse bir söz vermemiş olur ama dinleyen sözü duyar. Bu yüzden bu modülün son dersinde eksiltme bir üslup değil, okumayı öğrenme işidir.",
+  "kind": "say.tr",
+  "de": "hat niemand etwas versprochen, aber die Zuhörerin hört das Versprechen. Darum ist die Auslassung in der letzten Lektion dieses Moduls kein Stil, sondern das Erlernen des Lesens."
+ }
+]

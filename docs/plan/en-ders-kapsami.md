@@ -553,6 +553,30 @@ düşen öğeyi yalnız içeriden biri tamamlayabiliyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 6 — Emek ve güç (2026-09-11).** On ders: tek kararın üç adı,
+emri kim veriyor, sözleşme masasında, esnekliğin pazarlığı, nitelik
+sözlüğü, toplantıyı aktarmak, ne kadar kendi isteğiyle, mükemmeliyet
+girişimi, uzun bir raporu bağlamak, işin söylemediği.
+
+Modül 5'in ekseni (ad bir hükümdür) burada işyerine iniyor ve SORUMLULUK
+sorusuna dönüşüyor. Raporda verimlilik artışı olan şey atölyede iş
+yoğunlaşması; kimse yalan söylemiyor, yalnız hangi yarısının söylendiği
+değişiyor. Öne alma dersi aynı soruyu dilbilgisiyle soruyor: yapıyı başa
+almak kişiyi gizliyor, kişiyi başa almak yapıyı, ve bir işyerinde kimin
+sorumlu göründüğü çoğu zaman cümlenin başında belli oluyor.
+
+Kip dersi C1'in en ince ayrımını iş hayatına taşıyor: birinin fazla
+çalışmasını «kendi isteği» diye KESİN söylemek, kipin sildiği bir
+hükümdür — burada kip bir çekingenlik değil, başkasının iradesi hakkında
+hüküm vermemektir. Sözleşme dersi ise çekimsiz fiili bir koruma sayıyor:
+«ben istiyorum» dersen karşı taraf seninle pazarlık eder, ölçüyle değil.
+
+Kapanış dersi eksiltmeyi okuma işi hâline getiriyor: eksiltilen yarı
+çoğu zaman kimsenin söz vermediği yarıdır — «işgücüne katılım oranı
+yükseldi, tahsis edilmiş para hiç yükselmedi».
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders
