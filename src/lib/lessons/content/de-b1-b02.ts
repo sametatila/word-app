@@ -530,6 +530,15 @@ export const deB1B02: Lesson[] = [
       word("Son", { de: "aufmerksam", tr: "dikkatli" }),
       {
         say: [
+          tr("Şimdi kural. Şikâyeti yumuşatan şey ton değil, fiilin biçimi:"),
+          de("wäre"),
+          tr("ve"),
+          de("wären"),
+          tr("cümleyi ricaya çevirir. Aynı cümle düz biçimiyle suçlama gibi duyulur."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız en kibar rica:"),
           de("Wären Sie so nett, etwas leiser zu sein?"),
           tr("'Biraz daha sessiz olur muydunuz acaba?' demek. Lütfen"),
@@ -581,6 +590,18 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Der Lärm stört mich sehr" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Gürültü beni geceleri rahatsız ediyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Lärm stört mich nachts",
+          hint: [
+            tr("Zaman zarfı nesneden sonra geliyor:"),
+            de("Der Lärm stört mich nachts."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -667,6 +688,15 @@ export const deB1B02: Lesson[] = [
       word("Son", { de: "das Zeug", tr: "eşya" }),
       {
         say: [
+          tr("Şimdi kural."),
+          de("dass"),
+          tr(
+            "bir yan cümle açar ve çekimli fiili sona atar. Ayrılabilen fiillerde önek de fiile yapışır ve sona birlikte giderler — ana cümlede ayrı duran o önek burada birleşiyor.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız:"),
           de("Uns ist wichtig, dass alle mithelfen."),
           tr("'Herkesin yardım etmesi bizim için önemli' demek; bağlaçtan sonra fiil sonda. Lütfen"),
@@ -718,6 +748,18 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Wer putzt wann" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Banyoyu kim temizliyor?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wer reinigt das Bad",
+          hint: [
+            tr("Soru kelimesi öznenin yerini tutunca fiil hemen arkasından geliyor:"),
+            de("Wer reinigt das Bad?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -947,6 +989,15 @@ export const deB1B02: Lesson[] = [
       word("Son", { de: "der Grund", tr: "sebep" }),
       {
         say: [
+          tr("Şimdi kural. Edilgenin geçmiş biçimi iki parçadan kuruluyor:"),
+          de("wurde"),
+          tr(
+            "çekimli olarak ikinci sırada, ortaç ise cümlenin sonunda. Kimin yaptığı söylenmiyor — hesap yazışmasında zaten önemli olan o değil.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız geçmişte yapılan bir işlemi anlatır:"),
           de("Es wurde zu viel berechnet."),
           tr("'Fazla hesaplanmış' demek. Yardımcı fiil geçmiş biçiminde, asıl fiil sonda. Lütfen"),
@@ -998,6 +1049,18 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Ich lege Widerspruch ein" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Tutarı kontrol ettim.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich habe den Betrag geprüft",
+          hint: [
+            tr("Geçmiş zamanda yardımcı fiil ikinci sırada, ortaç sonda:"),
+            de("Ich habe den Betrag geprüft."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1227,6 +1290,17 @@ export const deB1B02: Lesson[] = [
       word("Son", { de: "schließlich", tr: "en sonunda" }),
       {
         say: [
+          tr("Şimdi kural. Zaman bağlaçları"),
+          de("bevor"),
+          tr("ve"),
+          de("während"),
+          tr(
+            "yan cümle kurar; çekimli fiil sona gider. Yan cümle başta olursa ana cümle doğrudan fiille başlar — iki cümlenin sırası olayların sırasını anlatıyor.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız öncesini anlatır:"),
           de("Bevor wir anfangen, trinken wir einen Kaffee."),
           tr("'Başlamadan önce bir kahve içelim' demek. Lütfen"),
@@ -1281,6 +1355,18 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Wir brauchen noch zwei Helfer" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Kutuları çoktan hazırladık.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wir haben die Kisten bereits gepackt",
+          hint: [
+            tr("Zaman zarfı nesneden sonra, ortaçtan önce duruyor:"),
+            de("Wir haben die Kisten bereits gepackt."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1367,6 +1453,17 @@ export const deB1B02: Lesson[] = [
       word("Son", { de: "die Decke", tr: "battaniye; tavan" }),
       {
         say: [
+          tr("Şimdi kural."),
+          de("obwohl"),
+          tr(
+            "çekince bildiren bir yan cümle kurar ve çekimli fiili sona atar. Aynı çekince ana cümlede söylenecekse",
+          ),
+          de("trotzdem"),
+          tr("kullanılır ve o cümlede fiil yine ikinci sırada kalır."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız çekince belirtir:"),
           de("Obwohl es klein ist, gefällt mir das Zimmer."),
           tr("'Küçük olmasına rağmen odayı beğendim' demek. Lütfen"),
@@ -1421,6 +1518,20 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Wir vermieten nur auf Zeit" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Oda küçük ama yine de hoşuma gidiyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Das Zimmer ist klein, trotzdem gefällt es mir",
+          hint: [
+            tr("Çekince ana cümlede söylenince"),
+            de("trotzdem"),
+            tr("başa geçer ve fiil hemen arkasından gelir:"),
+            de("Das Zimmer ist klein, trotzdem gefällt es mir."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

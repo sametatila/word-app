@@ -826,6 +826,15 @@ export const deB1B01: Lesson[] = [
       word("Son", { de: "regelmäßig", tr: "düzenli" }),
       {
         say: [
+          tr("Şimdi kural."),
+          de("wenn"),
+          tr(
+            "bir yan cümle kurar ve çekimli fiili o cümlenin sonuna atar. Yan cümle başta gelirse ana cümle doğrudan fiille başlar — Türkçede '-sa' ekinin yaptığı işi burada kelimenin yeri yapıyor.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız koşul kurar. Örnek: 'Erken başlarsam erken çıkabilirim.'"),
           de("Wenn ich früher anfange, kann ich früher gehen."),
           tr("Koşul bölümünde fiil sonda, ana bölümde hemen virgülden sonra. Lütfen"),
@@ -880,6 +889,20 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Die Kernzeit ist von neun bis fünfzehn Uhr" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Zorunlu saatler ondan dörde kadar.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Die Kernzeit ist von zehn bis sechzehn Uhr",
+          hint: [
+            tr("Aralık iki edatla kuruluyor:"),
+            de("von … bis …"),
+            tr("ve saat sözcüğü sona kalıyor:"),
+            de("Die Kernzeit ist von zehn bis sechzehn Uhr."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -966,6 +989,19 @@ export const deB1B01: Lesson[] = [
       word("Son", { de: "die Rente", tr: "emekli maaşı" }),
       {
         say: [
+          tr("Şimdi kural. Nezaketi kuran şey fiilin ayrı bir biçimi:"),
+          de("hätte"),
+          tr("ve"),
+          de("wäre"),
+          tr("cümleyi ricaya çevirir. Düz biçimleri"),
+          de("habe"),
+          tr("ve"),
+          de("ist"),
+          tr("aynı cümleyi talep değil dayatma gibi duyurur."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız kibar talep:"),
           de("Ich hätte gern ein höheres Gehalt."),
           tr("'Daha yüksek bir maaş isterim' demek. Fiilin yumuşak biçimi kullanılıyor. Lütfen"),
@@ -1017,6 +1053,20 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Können wir darüber verhandeln" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Vergiden sonra ne kadar kalıyor?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wie viel bleibt nach der Steuer",
+          hint: [
+            tr("Soru kelimesi başta, fiil hemen arkasında;"),
+            de("nach"),
+            tr("ise ardındaki ismi yönelme hâline sokuyor:"),
+            de("Wie viel bleibt nach der Steuer?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1102,6 +1152,17 @@ export const deB1B01: Lesson[] = [
       word("Son", { de: "das Pech", tr: "şanssızlık" }),
       {
         say: [
+          tr("Şimdi kural. İki geçmiş olayı sıralarken önce olan olay"),
+          de("hatte"),
+          tr("ya da"),
+          de("war"),
+          tr(
+            "ile kurulur ve ortaç sona gider; sonra olan olay normal geçmişte kalır. Türkçede bu sırayı '-mıştı' eki taşıyor.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk örneğimiz. 'Başvuruyu gönderdikten sonra üç hafta bekledim.' Almancası:"),
           de("Nachdem ich die Bewerbung geschickt hatte, wartete ich drei Wochen."),
           tr("Önceki olayda yardımcı fiil de geçmişe girdi. Lütfen"),
@@ -1156,6 +1217,18 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Die Firma hat sich nicht mehr gemeldet" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Ne yazık ki bu sefer de olmadı.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Leider hat es diesmal auch nicht geklappt",
+          hint: [
+            tr("Kalıp aynı kalıyor, zaman zarfı yardımcı fiille ortacın arasına giriyor:"),
+            de("Leider hat es diesmal auch nicht geklappt."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1242,6 +1315,15 @@ export const deB1B01: Lesson[] = [
       word("Son", { de: "das Verhältnis", tr: "ilişki" }),
       {
         say: [
+          tr("Şimdi kural."),
+          de("weil"),
+          tr(
+            "gerekçe cümlesi kurar ve çekimli fiili sona atar. Türkçede gerekçeyi '-dığı için' eki taşır; Almancada o ekin işini kelimenin yeri görüyor.",
+          ),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız gerekçeyi söyler:"),
           de("Ich kündige, weil ich eine neue Stelle habe."),
           tr("'İstifa ediyorum çünkü yeni bir işim var' demek; gerekçede fiil sonda. Lütfen"),
@@ -1293,6 +1375,18 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Die Kündigung muss schriftlich sein" },
+      },
+      {
+        say: [tr("Bir tane daha: 'İstifa yazılı olmak zorunda mı?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Muss die Kündigung schriftlich sein",
+          hint: [
+            tr("Soruya çevirince kip fiili başa geçiyor, geri kalan sıra değişmiyor:"),
+            de("Muss die Kündigung schriftlich sein?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

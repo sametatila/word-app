@@ -795,6 +795,17 @@ export const deA1B07: Lesson[] = [
       },
       {
         say: [
+          tr(
+            "Şimdi kural. Kendini tanıtırken fiil ikinci sırada kalır: önce kim olduğunu söyleyen kelime, hemen ardından fiil. Çoğulda",
+          ),
+          de("wir sind"),
+          tr("tekil kişide"),
+          de("ich bin"),
+          tr("— değişen yalnız fiilin biçimi, yeri değil."),
+        ],
+      },
+      {
+        say: [
           tr("İlk kalıbımız kapıyı çaldığında söyleyeceğin cümle:"),
           de("Wir sind neu hier."),
           tr("'Buraya yeni taşındık' demek. Lütfen"),
@@ -843,6 +854,20 @@ export const deA1B07: Lesson[] = [
           hint: [
             tr("Önce komşu, sonra fiil, sonra özelliği:"),
             de("Mein Nachbar ist sehr ruhig."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Asansör üçüncü katta.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Aufzug ist im dritten Stock",
+          hint: [
+            tr("Kat söylerken"),
+            de("im"),
+            tr("kullanılır ve kat sıra sayısına döner:"),
+            de("Der Aufzug ist im dritten Stock."),
             tr("Tekrar dene."),
           ],
         },
