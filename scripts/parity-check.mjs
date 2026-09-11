@@ -3311,10 +3311,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "rounds.nice_sentence": "serbest yazma turu",
     "rounds.score": "serbest yazma turu",
     "rounds.write_a_sentence_ph": "serbest yazma turu",
-    "rounds.empty_letter_slot": "ekran okuyucu etiketi: bos harf yuvasi (mobilde yuva bir View, okunmuyor)",
-    "rounds.empty_word_slot": "ekran okuyucu etiketi: bos kelime yuvasi",
-    "rounds.undo_letter": "ekran okuyucu etiketi: harfi geri al",
-    "rounds.undo_word": "ekran okuyucu etiketi: kelimeyi geri al",
+    /* Bos yuvanin etiketi: webde yuva bir div ve aria-label gerekiyor;
+       mobilde ayni yerde GERCEK metin duruyor ("Harflere dokun") ve ekran
+       okuyucu onu zaten okuyor. Geri alma etiketleri (`undo_*`) ortak
+       sozluge tasindi - orada iki taraf da ayni seyi soyluyor. */
+    "rounds.empty_letter_slot": "bos harf yuvasinin aria etiketi; mobilde yerinde gercek metin var (rounds.tap_letters)",
+    "rounds.empty_word_slot": "bos kelime yuvasinin aria etiketi; mobilde rounds.tap_words",
     "rounds.great": "yazma turu geri bildirim basligi; mobilde FeedbackFooter kendi basligini kuruyor",
     "rounds.means": "dogru/yanlis kartindaki ayrac sozcugu; mobilde anlam tek satirda birlesiyor",
     "rounds.no_tts": "tarayicida konusma sentezi olmayabilir; Android'de sistem TTS her zaman var",
@@ -3910,6 +3912,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
   };
   sameList("sohbet yedegi ve yarim konusma", sohbet("mobile/src/screens/LessonScreen.tsx"), sohbet("src/components/lessons/lesson-player.tsx"));
+}
+
+/* ── 117. yerlestirilmis karonun ekran okuyucu etiketi ────────────────────
+ * Havuzdaki karo ile YERLESTIRILMIS karo mobilde ayni seyi soyluyordu ("S"):
+ * dokunmanin ne yapacagi ayirt edilemiyordu. Web yerlestirilmis karoya "S
+ * harfini geri al" diyor. §93'un kayitli gerekcesi de yanlisti ("mobilde
+ * yuva bir View, okunmuyor") - yuva bir Pressable ve etiketi vardi, yalnizca
+ * EYLEMI soylemiyordu. */
+{
+  /* Harf webde `scramble-game`de, kelime `order-game`de: iki dosya birlikte
+     okunuyor (mobilde ikisi de `rounds.tsx` icinde). */
+  const karo = (yollar, re) => {
+    const src = yollar.map((p) => read(p)).join("\n");
+    return [
+      "harfi geri al=" + (re.letter.test(src) ? "var" : "yok"),
+      "kelimeyi geri al=" + (re.word.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "yerlestirilmis karo etiketi",
+    karo(["mobile/src/game/rounds.tsx"], { letter: /undoKey="rounds\.undo_letter"/, word: /undoKey="rounds\.undo_word"/ }),
+    karo(["src/components/games/scramble-game.tsx", "src/components/games/order-game.tsx"], { letter: /rounds\.undo_letter/, word: /rounds\.undo_word/ }),
+  );
 }
 
 console.log(

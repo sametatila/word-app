@@ -966,7 +966,9 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         <TextInput value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
           placeholder={t("exam.write_text")} placeholderTextColor={colors.textFaint}
           style={{ minHeight: 140, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
-        <Text variant="caption" color={colors.textMuted}>{wordCount} / {w.task.minWords}</Text>
+        {/* BİRİMİ YAZILI: sayaç "12 / 40" diyordu ve neyin sayıldığı
+            (kelime mi, karakter mi) hiçbir yerde geçmiyordu. */}
+        <Text variant="caption" color={colors.textMuted}>{t("exam.word_count", { n: wordCount, min: w.task.minWords })}</Text>
         {gateNote ? (
           // Kapı notu puanın YERİNE geçiyor: sahte bir yüzde göstermek,
           // değerlendirmenin yapıldığını sanmaya yol açardı.

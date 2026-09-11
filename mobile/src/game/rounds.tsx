@@ -702,9 +702,15 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
 }
 
 /** Küçük harf/kelime karosu — scramble ve order. */
-function Tile({ label, onPress, dim, colors }: { label: string; onPress?: () => void; dim?: boolean; colors: Palette }) {
+/**
+ * Karo. YERLEŞTİRİLMİŞ karo ekran okuyucuya ne yaptığını da söylüyor:
+ * havuzdaki karo "S", yerleştirilmiş karo "S harfini geri al". İkisi de
+ * yalnız "S" derken dokunmanın ne yapacağı ayırt edilemiyordu - web ikisini
+ * baştan beri ayırıyor (`scramble-game` / `order-game` aria etiketleri).
+ */
+function Tile({ label, undoKey, onPress, dim, colors }: { label: string; undoKey?: "rounds.undo_letter" | "rounds.undo_word"; onPress?: () => void; dim?: boolean; colors: Palette }) {
   return (
-    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border, opacity: dim ? 0.4 : 1 }}>
+    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border, opacity: dim ? 0.4 : 1 }}>
       <Text variant="bodyStrong" color={colors.text}>{label}</Text>
     </PressableScale>
   );
@@ -801,7 +807,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} />)}
@@ -866,7 +872,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
