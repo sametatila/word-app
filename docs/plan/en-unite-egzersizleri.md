@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–15 | **yazıldı** (2026-09-11) |
-| A1 | 16–25 | bekliyor |
+| A1 | 1–18 | **yazıldı** (2026-09-11/12) |
+| A1 | 19–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -192,6 +192,29 @@ dile karşı. Almanca karşılık karşılaştırmayı Almancayla yeniden kuruyo
 Parite tarafı da sürdü: „could you help me“ Almanca „könnten Sie mir
 helfen“le bire bir aynı nezaket aracı, „wait for“ ile „warten auf“ aynı
 edat zorunluluğu, „can visit“ ile „kann besichtigen“ aynı eksiz mastar.
+
+**A1 ünite 16–18 (2026-09-12).** Ünite 16 Showing your home · Rooms ·
+Where things are · Neighbours; ünite 17 House rules · Rent and bills ·
+Housework · Moving house; ünite 18 Balcony and garden ·
+Reporting a problem · Hobbies · Sports. On sekiz egzersiz; ünite dışı
+ölçüm %0,0. Patika'nın EN A1 yuvalarının 108'i dolu.
+
+Almanca eksende iki satır YASAK ile GEREKSİZLİK arasındaki farkı açtı.
+Türkçe ipucu "„mustn't“ yasak demek" diyor ve Türkçe okuyan için bu
+yeterli. Almanca okuyan için değil: „mustn't“ Almancada „musst nicht“
+sanılıyor, oysa o "gerek yok" demek. Almanca karşılık doğru fiili veriyor
+— „darfst nicht“.
+
+İkinci satır varoluş cümlesinde: „there is“ / „there are“ sayıya göre
+değişiyor, Almanca „es gibt“ ise HİÇ değişmiyor („es gibt ein Zimmer“,
+„es gibt drei Zimmer“). Türkçe ipucu "Türkçede „var“ değişmezdi" diyor;
+Almanca karşılık aynı gözlemi Almancaya taşıyor ve öğrenciye kendi
+dilinden bir dayanak veriyor.
+
+Parite tarafında bu ünite cömert çıktı: „go swimming“ ile „schwimmen
+gehen“, „play football“ ile „Fußball spielen“ (artikelsiz), „es gibt“ ile
+„there is“in ikisi de boş özne taşıması. Almanca karşılıklar bunları
+„genau wie im Deutschen“ diye söylüyor.
 
 ## Tamamlanma ölçütü
 

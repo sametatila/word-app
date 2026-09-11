@@ -1,0 +1,327 @@
+[
+ {
+  "tr": "Ev kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Wohnungskarte aus."
+ },
+ {
+  "tr": "Kira formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Mietformular aus."
+ },
+ {
+  "tr": "Arıza formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Schadensformular aus."
+ },
+ {
+  "tr": "Daire; birinci kat; üç oda; kiler var.",
+  "kind": "form.facts",
+  "de": "Wohnung; erster Stock; drei Zimmer; Keller vorhanden."
+ },
+ {
+  "tr": "Mutfak musluğu; bozuk; yerde su var; bugün tamir.",
+  "kind": "form.facts",
+  "de": "Wasserhahn in der Küche; kaputt; Wasser am Boden; Reparatur heute."
+ },
+ {
+  "tr": "Altı yüz euro; her ay ödenir; su dâhil; elektrik ayrı.",
+  "kind": "form.facts",
+  "de": "Sechshundert Euro; monatlich zu zahlen; Wasser inbegriffen; Strom extra."
+ },
+ {
+  "tr": "İki sandalye olsun.",
+  "kind": "rewrite.prompt",
+  "de": "Mach zwei Stühle daraus."
+ },
+ {
+  "tr": "İki şey birden değişir: „there is“ → „there are“ ve chair → chairs.",
+  "kind": "rewrite.why",
+  "de": "Zwei Dinge ändern sich zugleich: „there is“ → „there are“ und chair → chairs. Das deutsche „es gibt“ bleibt in beiden Fällen gleich."
+ },
+ {
+  "tr": "Bozuk.",
+  "kind": "build.tr",
+  "de": "Es ist kaputt."
+ },
+ {
+  "tr": "Çalışmıyor.",
+  "kind": "build.tr",
+  "de": "Es funktioniert nicht."
+ },
+ {
+  "tr": "Üç oda var.",
+  "kind": "build.tr",
+  "de": "Es gibt drei Zimmer."
+ },
+ {
+  "tr": "Bir oda var.",
+  "kind": "build.tr",
+  "de": "Es gibt ein Zimmer."
+ },
+ {
+  "tr": "İzin var mı?",
+  "kind": "build.tr",
+  "de": "Ist das erlaubt?"
+ },
+ {
+  "tr": "Kapı var mı?",
+  "kind": "build.tr",
+  "de": "Gibt es eine Tür?"
+ },
+ {
+  "tr": "Bir ağaç var.",
+  "kind": "build.tr",
+  "de": "Es gibt einen Baum."
+ },
+ {
+  "tr": "Kira ne kadar?",
+  "kind": "build.tr",
+  "de": "Wie hoch ist die Miete?"
+ },
+ {
+  "tr": "Bu kutu çok ağır.",
+  "kind": "build.tr",
+  "de": "Dieser Karton ist sehr schwer."
+ },
+ {
+  "tr": "Çöpü çıkarıyorum.",
+  "kind": "build.tr",
+  "de": "Ich bringe den Müll raus."
+ },
+ {
+  "tr": "Futbol oynuyorum.",
+  "kind": "build.tr",
+  "de": "Ich spiele Fußball."
+ },
+ {
+  "tr": "Odamı topluyorum.",
+  "kind": "build.tr",
+  "de": "Ich räume mein Zimmer auf."
+ },
+ {
+  "tr": "Sessiz olmalısın.",
+  "kind": "build.tr",
+  "de": "Du musst leise sein."
+ },
+ {
+  "tr": "Telefonum nerede?",
+  "kind": "build.tr",
+  "de": "Wo ist mein Handy?"
+ },
+ {
+  "tr": "Onu taşıyabilirim.",
+  "kind": "build.tr",
+  "de": "Ich kann es tragen."
+ },
+ {
+  "tr": "Yüzmeye gidiyorum.",
+  "kind": "build.tr",
+  "de": "Ich gehe schwimmen."
+ },
+ {
+  "tr": "Sandalyenin yanında.",
+  "kind": "build.tr",
+  "de": "Es ist neben dem Stuhl."
+ },
+ {
+  "tr": "Tenis oynuyor musun?",
+  "kind": "build.tr",
+  "de": "Spielst du Tennis?"
+ },
+ {
+  "tr": "Gürültü yapmamalısın.",
+  "kind": "build.tr",
+  "de": "Du darfst keinen Lärm machen."
+ },
+ {
+  "tr": "Yan dairede oturuyor.",
+  "kind": "build.tr",
+  "de": "Sie wohnt nebenan."
+ },
+ {
+  "tr": "Kitap masanın üstünde.",
+  "kind": "build.tr",
+  "de": "Das Buch liegt auf dem Tisch."
+ },
+ {
+  "tr": "Onu tamir edebilir misin?",
+  "kind": "build.tr",
+  "de": "Kannst du es reparieren?"
+ },
+ {
+  "tr": "Bana yardım edebilir misin?",
+  "kind": "build.tr",
+  "de": "Kannst du mir helfen?"
+ },
+ {
+  "tr": "Komşum çok arkadaş canlısı.",
+  "kind": "build.tr",
+  "de": "Meine Nachbarin ist sehr freundlich."
+ },
+ {
+  "tr": "Resim yapmaktan keyif alıyorum.",
+  "kind": "build.tr",
+  "de": "Ich male gern."
+ },
+ {
+  "tr": "Bir şeyler biriktirmeyi sever misin?",
+  "kind": "build.tr",
+  "de": "Sammelst du gern Dinge?"
+ },
+ {
+  "tr": "„can“ sonrası fiil eksiz; nesne „it“ zorunlu.",
+  "kind": "build.hint",
+  "de": "Nach „can“ steht das Verb ohne Endung; das Objekt „it“ ist Pflicht."
+ },
+ {
+  "tr": "Soruda „is“ öne geçiyor: there is → is there.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „is“ nach vorn: there is → is there, wie deutsch „gibt es“."
+ },
+ {
+  "tr": "Edilgen bir kalıp: izin veren kim, söylenmiyor.",
+  "kind": "build.hint",
+  "de": "Eine passive Wendung: wer erlaubt, wird nicht genannt — wie deutsch „ist das erlaubt“."
+ },
+ {
+  "tr": "„broken“ sıfat ve „be“ ile geliyor; özne „it“ zorunlu.",
+  "kind": "build.hint",
+  "de": "„broken“ ist ein Adjektiv und steht mit „be“; das Subjekt „it“ ist Pflicht."
+ },
+ {
+  "tr": "Tenis de top oyunu: „play“. „go tennis“ yanlış olurdu.",
+  "kind": "build.hint",
+  "de": "Tennis ist auch ein Ballspiel: „play“, wie deutsch „Tennis spielen“. „go tennis“ wäre falsch."
+ },
+ {
+  "tr": "Yakındaki tek şey için „this“; sıfat „be“ ile geliyor.",
+  "kind": "build.hint",
+  "de": "Für ein einzelnes Ding in der Nähe „this“; das Adjektiv steht mit „be“."
+ },
+ {
+  "tr": "„enjoy“ sonrası hep „-ing“; „enjoy to paint“ hiç olmaz.",
+  "kind": "build.hint",
+  "de": "Nach „enjoy“ immer „-ing“; „enjoy to paint“ gibt es nicht. Das Deutsche nimmt dort den Infinitiv: gern malen."
+ },
+ {
+  "tr": "„must“ sonrası fiil eksiz: must be, „must to be“ değil.",
+  "kind": "build.hint",
+  "de": "Nach „must“ steht das Verb ohne Endung: must be, nicht „must to be“ — wie deutsch „musst sein“."
+ },
+ {
+  "tr": "„rent“ sayılamaz ve tekil: „how much“, „how many“ değil.",
+  "kind": "build.hint",
+  "de": "„rent“ ist nicht zählbar und steht im Singular: „how much“, nicht „how many“ — wie die Miete."
+ },
+ {
+  "tr": "„mustn't“ yasak demek. „noise“ sayılamaz, önünde „a“ yok.",
+  "kind": "build.hint",
+  "de": "„mustn't“ heißt VERBOTEN, nicht „muss nicht“ — deutsch „darfst nicht“. „noise“ ist nicht zählbar, kein „a“ davor."
+ },
+ {
+  "tr": "Özne „it“ zorunlu: Türkçedeki gibi öznesiz cümle olmuyor.",
+  "kind": "build.hint",
+  "de": "Das Subjekt „it“ ist Pflicht: einen Satz ohne Subjekt gibt es nicht, genauso wenig wie im Deutschen."
+ },
+ {
+  "tr": "„help“ nesnesini edatsız alır: help me, „help to me“ değil.",
+  "kind": "build.hint",
+  "de": "„help“ nimmt sein Objekt ohne Präposition: help me, nicht „help to me“. Deutsch steht dort der Dativ: mir helfen."
+ },
+ {
+  "tr": "Belli bir kitap ve belli bir masa: iki „the“. Üstünde „on“.",
+  "kind": "build.hint",
+  "de": "Ein bestimmtes Buch und ein bestimmter Tisch: zweimal „the“. Darauf mit „on“."
+ },
+ {
+  "tr": "„friendly“ sonu „-ly“ ama zarf değil sıfat; „be“ ile geliyor.",
+  "kind": "build.hint",
+  "de": "„friendly“ endet auf „-ly“, ist aber kein Adverb, sondern ein Adjektiv, und steht mit „be“. Diese Falle gibt es nur im Englischen."
+ },
+ {
+  "tr": "Soru „do“ ile, ikinci fiil „-ing“ ile. İki kural aynı cümlede.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „do“, das zweite Verb mit „-ing“. Zwei Regeln in einem Satz, und das Deutsche kennt keine davon."
+ },
+ {
+  "tr": "Tek başına yapılanlarda „go“ + „-ing“: go swimming, go running.",
+  "kind": "build.hint",
+  "de": "Bei allein Ausgeübtem „go“ + „-ing“: go swimming, go running — genau wie deutsch „schwimmen gehen“."
+ },
+ {
+  "tr": "Tekilde „there is“; iki ağaç olsa „there are two trees“ olurdu.",
+  "kind": "build.hint",
+  "de": "Im Singular „there is“; bei zwei Bäumen hieße es „there are two trees“. Das deutsche „es gibt“ ändert sich dabei nicht."
+ },
+ {
+  "tr": "„rubbish“ sayılamaz ve tekil: the rubbish, „the rubbishes“ olmaz.",
+  "kind": "build.hint",
+  "de": "„rubbish“ ist nicht zählbar und steht im Singular: the rubbish, „the rubbishes“ gibt es nicht — wie der Müll."
+ },
+ {
+  "tr": "Çoğulda „there are“ ve isim „-s“ alır. Türkçede „var“ değişmezdi.",
+  "kind": "build.hint",
+  "de": "Im Plural „there are“, und das Substantiv bekommt ein „-s“. Das deutsche „es gibt“ bleibt dagegen unverändert."
+ },
+ {
+  "tr": "Makine için „work“ çalışmak demek. Üçüncü tekil kişide „doesn't“.",
+  "kind": "build.hint",
+  "de": "Bei einem Gerät heißt „work“ funktionieren, nicht arbeiten. In der dritten Person Singular „doesn't“."
+ },
+ {
+  "tr": "Üçüncü tekil kişide „-s“: she lives. „next door“ edatsız duruyor.",
+  "kind": "build.hint",
+  "de": "In der dritten Person Singular ein „-s“: she lives. „next door“ steht ohne Präposition."
+ },
+ {
+  "tr": "„fix“ tamir etmek; „repair“ de doğru ama konuşmada bu kullanılıyor.",
+  "kind": "build.hint",
+  "de": "„fix“ heißt reparieren; „repair“ ist auch richtig, aber im Gespräch nimmt man dieses."
+ },
+ {
+  "tr": "„there“ burada „orada“ demek değil; yapının parçası ve çevrilmiyor.",
+  "kind": "build.hint",
+  "de": "„there“ heißt hier nicht „dort“; es ist Teil der Konstruktion und wird nicht übersetzt — genau wie das „es“ in „es gibt“."
+ },
+ {
+  "tr": "Tek bir şey arandığı için „is“; birden çok olsa „where are“ olurdu.",
+  "kind": "build.hint",
+  "de": "Weil ein einzelnes Ding gesucht wird, steht „is“; bei mehreren hieße es „where are“."
+ },
+ {
+  "tr": "Top oyunlarında „play“ ve sporun önünde artikel yok: play football, play tennis.",
+  "kind": "build.hint",
+  "de": "Bei Ballspielen „play“, und vor der Sportart steht kein Artikel: play football, play tennis — wie deutsch „Fußball spielen“."
+ },
+ {
+  "tr": "Nesne isim olduğu için sona gelebiliyor: tidy up my room. Zamir olsa araya girerdi.",
+  "kind": "build.hint",
+  "de": "Weil das Objekt ein Substantiv ist, darf es dahinter stehen: tidy up my room. Ein Pronomen käme dazwischen; das deutsche „aufräumen“ trennt sich immer."
+ },
+ {
+  "tr": "Ali'nin saydığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge, in der Ali aufzählt: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Deniz'in saydığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge, in der Deniz aufzählt: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Aranan yerlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der abgesuchten Orte: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Sorulan komşuların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der erfragten Nachbarn: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Bildirilen arızaların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der gemeldeten Schäden: bring sie in die richtige Ordnung."
+ }
+]

@@ -1,0 +1,437 @@
+[
+ {
+  "tr": "Arıza bildiriliyor. Hangi arıza kimin işi?",
+  "kind": "intro",
+  "de": "Ein Schaden wird gemeldet. Wer ist für welchen Schaden zuständig?"
+ },
+ {
+  "tr": "Bahçe ve balkon anlatılıyor. Ne var, ne bozuk?",
+  "kind": "intro",
+  "de": "Garten und Balkon werden beschrieben. Was gibt es, was ist kaputt?"
+ },
+ {
+  "tr": "Apartman kuralları. Ne yasak, ne serbest, ne zaman?",
+  "kind": "intro",
+  "de": "Die Hausordnung. Was ist verboten, was erlaubt, und wann?"
+ },
+ {
+  "tr": "Arıza cümlelerini yaz. Sonunda arıza formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zu einem Schaden. Am Ende füllst du das Schadensformular aus."
+ },
+ {
+  "tr": "Ev işleri paylaşılıyor. Hangi iş önce, hangisi sonra?",
+  "kind": "intro",
+  "de": "Die Hausarbeit wird verteilt. Welche Arbeit kommt zuerst, welche danach?"
+ },
+ {
+  "tr": "Zorunluluk ve yasak yaz. Sonunda kira formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe Pflicht und Verbot. Am Ende füllst du das Mietformular aus."
+ },
+ {
+  "tr": "Bir daire tanıtılıyor. Hangi oda nerede, içinde ne var?",
+  "kind": "intro",
+  "de": "Eine Wohnung wird gezeigt. Welches Zimmer liegt wo, und was steht darin?"
+ },
+ {
+  "tr": "Taşınma günü. Kutu ağır, asansör çalışmıyor — kim ne yapıyor?",
+  "kind": "intro",
+  "de": "Umzugstag. Der Karton ist schwer, der Aufzug geht nicht — wer macht was?"
+ },
+ {
+  "tr": "Apartmandaki komşular anlatılıyor. Kim hangi katta, nasıl biri?",
+  "kind": "intro",
+  "de": "Die Nachbarn im Haus werden beschrieben. Wer wohnt in welchem Stock, und wie ist er?"
+ },
+ {
+  "tr": "Kira ve faturalar anlatılıyor. Hangi fatura ne zaman, ne kadar?",
+  "kind": "intro",
+  "de": "Miete und Rechnungen werden erklärt. Welche Rechnung wann, und wie hoch?"
+ },
+ {
+  "tr": "Nil dairesini gezdiriyor. Odaların sırasını ve sayısını yakala.",
+  "kind": "intro",
+  "de": "Nil führt durch ihre Wohnung. Merke dir die Reihenfolge und die Zahl der Zimmer."
+ },
+ {
+  "tr": "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
+  "kind": "intro",
+  "de": "Ali erzählt von seinem Sport. Welche Sportart kommt mit „play“, welche mit „go“?"
+ },
+ {
+  "tr": "Kayıp telefon aranıyor. Konum edatlarını takip et: on, under, next to, in.",
+  "kind": "intro",
+  "de": "Ein verlorenes Handy wird gesucht. Verfolge die Ortspräpositionen: on, under, next to, in."
+ },
+ {
+  "tr": "İki kişi hobilerini anlatıyor. „enjoy“ ve „like“ sonrası fiil nasıl geliyor?",
+  "kind": "intro",
+  "de": "Zwei Personen erzählen von ihren Hobbys. Wie steht das Verb nach „enjoy“ und „like“?"
+ },
+ {
+  "tr": "Konum ve komşu cümlelerini yaz. „live“ fiili üçüncü tekil kişide „-s“ alıyor.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zu Ort und Nachbarn. Das Verb „live“ bekommt in der dritten Person Singular ein „-s“."
+ },
+ {
+  "tr": "Yardım ve ev işi cümlelerini yaz. İki parçalı fiillerde nesnenin yeri önemli.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zu Hilfe und Hausarbeit. Bei zweiteiligen Verben zählt der Platz des Objekts."
+ },
+ {
+  "tr": "Varoluş cümlesini yaz. Yapı iki parçalı ve arkadaki isme göre tekil/çoğul seçiyor.",
+  "kind": "intro",
+  "de": "Schreibe den Existenzsatz. Die Konstruktion hat zwei Teile und richtet sich nach dem folgenden Substantiv."
+ },
+ {
+  "tr": "Hobi ve spor yaz. Top oyunları „play“ ile, tek başına yapılanlar „go“ + „-ing“ ile geliyor.",
+  "kind": "intro",
+  "de": "Schreibe über Hobby und Sport. Ballspiele kommen mit „play“, allein Ausgeübtes mit „go“ + „-ing“."
+ },
+ {
+  "tr": "„I don't like the bathroom!“",
+  "kind": "explain",
+  "de": "„I don't like the bathroom!“"
+ },
+ {
+  "tr": "„But the tap is broken — it doesn't work.“",
+  "kind": "explain",
+  "de": "„But the tap is broken — it doesn't work.“"
+ },
+ {
+  "tr": "„It is on the first floor.“ — kiler alt katta.",
+  "kind": "explain",
+  "de": "„It is on the first floor.“ — der Keller liegt unten."
+ },
+ {
+  "tr": "„I can't draw. My hobby is music…“ — çizen Can.",
+  "kind": "explain",
+  "de": "„I can't draw. My hobby is music…“ — zeichnen tut Can."
+ },
+ {
+  "tr": "„In a fire: don't take the lift. Go down the stairs.“",
+  "kind": "explain",
+  "de": "„In a fire: don't take the lift. Go down the stairs.“"
+ },
+ {
+  "tr": "„it is on the fourth floor and the lift doesn't work“",
+  "kind": "explain",
+  "de": "„it is on the fourth floor and the lift doesn't work“"
+ },
+ {
+  "tr": "Önce yardım, sonra taşıma, sonra uzaklık, en son kira.",
+  "kind": "explain",
+  "de": "Zuerst die Hilfe, dann das Tragen, dann die Entfernung, zuletzt die Miete."
+ },
+ {
+  "tr": "„I play football every Saturday.“ — pazartesi yüzme günü.",
+  "kind": "explain",
+  "de": "„I play football every Saturday.“ — der Montag ist der Schwimmtag."
+ },
+ {
+  "tr": "Önce futbol, sonra yüzme, sonra koşu, en son kız kardeşi.",
+  "kind": "explain",
+  "de": "Zuerst Fußball, dann Schwimmen, dann Laufen, zuletzt seine Schwester."
+ },
+ {
+  "tr": "„But it is on the fourth floor and the lift doesn't work.“",
+  "kind": "explain",
+  "de": "„But it is on the fourth floor and the lift doesn't work.“"
+ },
+ {
+  "tr": "„I water the plants every morning.“ — „water“ burada fiil.",
+  "kind": "explain",
+  "de": "„I water the plants every morning.“ — „water“ ist hier ein Verb."
+ },
+ {
+  "tr": "„My sister plays tennis and basketball.“ — futbol Ali'nin.",
+  "kind": "explain",
+  "de": "„My sister plays tennis and basketball.“ — Fußball spielt Ali."
+ },
+ {
+  "tr": "„I hear the television through the wall.“ — yani adam evde.",
+  "kind": "explain",
+  "de": "„I hear the television through the wall.“ — der Mann ist also zu Hause."
+ },
+ {
+  "tr": "„No. And not under the bed.“ — telefon sandalyenin altında.",
+  "kind": "explain",
+  "de": "„No. And not under the bed.“ — das Handy liegt unter dem Stuhl."
+ },
+ {
+  "tr": "„Yes, the bathroom is fine.“ — yerdeki su mutfaktan geliyor.",
+  "kind": "explain",
+  "de": "„Yes, the bathroom is fine.“ — das Wasser am Boden kommt aus der Küche."
+ },
+ {
+  "tr": "Önce yan daire, sonra alt kat, sonra zil, en son üçüncü kat.",
+  "kind": "explain",
+  "de": "Zuerst die Nachbarwohnung, dann das Untergeschoss, dann die Klingel, zuletzt der dritte Stock."
+ },
+ {
+  "tr": "„six hundred euros for two rooms“ — doksan elektrik, on merdiven.",
+  "kind": "explain",
+  "de": "„six hundred euros for two rooms“ — neunzig der Strom, zehn das Treppenhaus."
+ },
+ {
+  "tr": "„A party has to end at eleven.“ — „has to“ da zorunluluk söylüyor.",
+  "kind": "explain",
+  "de": "„A party has to end at eleven.“ — auch „has to“ drückt eine Pflicht aus."
+ },
+ {
+  "tr": "„I enjoy painting. I paint every weekend.“ — müzik ve video Nil'in.",
+  "kind": "explain",
+  "de": "„I enjoy painting. I paint every weekend.“ — Musik und Videos gehören Nil."
+ },
+ {
+  "tr": "„The electricity bill comes every three months.“ — her ay gelen kira.",
+  "kind": "explain",
+  "de": "„The electricity bill comes every three months.“ — jeden Monat kommt die Miete."
+ },
+ {
+  "tr": "„Water is included, electricity is not.“ — ikisi ayrı ayrı söyleniyor.",
+  "kind": "explain",
+  "de": "„Water is included, electricity is not.“ — beides wird einzeln genannt."
+ },
+ {
+  "tr": "„I enjoy painting.“ — „enjoy“ sonrası fiil hep „-ing“ alır, „to“ almaz.",
+  "kind": "explain",
+  "de": "„I enjoy painting.“ — nach „enjoy“ steht das Verb immer mit „-ing“, nie mit „to“."
+ },
+ {
+  "tr": "Önce musluk, sonra yazıcı, sonra telefon; en son ilk arızaya dönülüyor.",
+  "kind": "explain",
+  "de": "Zuerst der Wasserhahn, dann der Drucker, dann das Telefon; zuletzt geht es zurück zum ersten Schaden."
+ },
+ {
+  "tr": "„Wash them and then dry them, please.“ — „dry“ burada fiil, sıfat değil.",
+  "kind": "explain",
+  "de": "„Wash them and then dry them, please.“ — „dry“ ist hier ein Verb, kein Adjektiv."
+ },
+ {
+  "tr": "Önce masa, sonra kanepe, sonra mutfak; en son oturma odasında bulunuyor.",
+  "kind": "explain",
+  "de": "Zuerst der Tisch, dann das Sofa, dann die Küche; gefunden wird es zuletzt im Wohnzimmer."
+ },
+ {
+  "tr": "„First, tidy up your room.“ — „tidy up“ iki parçalı ve nesne sona geliyor.",
+  "kind": "explain",
+  "de": "„First, tidy up your room.“ — „tidy up“ hat zwei Teile, und das Objekt steht dahinter."
+ },
+ {
+  "tr": "„This is my apartment.“ — tanıtırken „this is“, var demek için „there is“.",
+  "kind": "explain",
+  "de": "„This is my apartment.“ — beim Vorstellen „this is“, für das bloße Vorhandensein „there is“."
+ },
+ {
+  "tr": "Önce kira, sonra dâhil olan ve olmayan, sonra ödeme yeri, en son ortak gider.",
+  "kind": "explain",
+  "de": "Zuerst die Miete, dann was enthalten ist und was nicht, dann der Zahlungsort, zuletzt die gemeinsamen Kosten."
+ },
+ {
+  "tr": "„In my bedroom there is a bed under the window.“ — mutfağın yanında olan banyo.",
+  "kind": "explain",
+  "de": "„In my bedroom there is a bed under the window.“ — neben der Küche liegt das Bad."
+ },
+ {
+  "tr": "„There is a tree and there are many flowers.“ — tarla komşunun ve şehrin dışında.",
+  "kind": "explain",
+  "de": "„There is a tree and there are many flowers.“ — das Feld gehört dem Nachbarn und liegt außerhalb der Stadt."
+ },
+ {
+  "tr": "„I hear something. It is in the living room!“ — mutfak ve banyo bakılıp geçiliyor.",
+  "kind": "explain",
+  "de": "„I hear something. It is in the living room!“ — Küche und Bad werden geprüft und übergangen."
+ },
+ {
+  "tr": "„First, tidy up your room. Then take out the rubbish.“ — ama başlarken çöpü seçiyor.",
+  "kind": "explain",
+  "de": "„First, tidy up your room. Then take out the rubbish.“ — anfangen will er aber mit dem Müll."
+ },
+ {
+  "tr": "„Yes, there is one next to the kitchen.“ — „one“ burada „a bathroom“ yerine geçiyor.",
+  "kind": "explain",
+  "de": "„Yes, there is one next to the kitchen.“ — „one“ steht hier für „a bathroom“."
+ },
+ {
+  "tr": "„You must be quiet from ten at night to seven in the morning.“ Pazar ayrı bir kural.",
+  "kind": "explain",
+  "de": "„You must be quiet from ten at night to seven in the morning.“ Der Sonntag ist eine eigene Regel."
+ },
+ {
+  "tr": "„The kitchen is small, but there is a fridge and a table…“ — büyük olan oturma odası.",
+  "kind": "explain",
+  "de": "„The kitchen is small, but there is a fridge and a table…“ — groß ist das Wohnzimmer."
+ },
+ {
+  "tr": "„The tap in the kitchen is broken. It doesn't work.“ — yazıcı kilerde, telefon koridorda.",
+  "kind": "explain",
+  "de": "„The tap in the kitchen is broken. It doesn't work.“ — der Drucker steht im Keller, das Telefon im Flur."
+ },
+ {
+  "tr": "„she lives next door with her two children. She is very friendly.“ — yaşlı adam alt katta.",
+  "kind": "explain",
+  "de": "„she lives next door with her two children. She is very friendly.“ — der alte Mann wohnt unten."
+ },
+ {
+  "tr": "„an apartment on the second floor, with three rooms“ — iki yatak odasının sayısı, dört sandalyenin.",
+  "kind": "explain",
+  "de": "„an apartment on the second floor, with three rooms“ — zwei ist die Zahl der Schlafzimmer, vier die der Stühle."
+ },
+ {
+  "tr": "dâhil",
+  "kind": "gloss.tr",
+  "de": "inbegriffen"
+ },
+ {
+  "tr": "yaz",
+  "kind": "gloss.tr",
+  "de": "Sommer"
+ },
+ {
+  "tr": "ayda",
+  "kind": "gloss.tr",
+  "de": "im Monat"
+ },
+ {
+  "tr": "duymak",
+  "kind": "gloss.tr",
+  "de": "hören"
+ },
+ {
+  "tr": "top",
+  "kind": "gloss.tr",
+  "de": "Ball"
+ },
+ {
+  "tr": "… var",
+  "kind": "gloss.tr",
+  "de": "es gibt …"
+ },
+ {
+  "tr": "duvar",
+  "kind": "gloss.tr",
+  "de": "Wand"
+ },
+ {
+  "tr": "kiler",
+  "kind": "gloss.tr",
+  "de": "Keller"
+ },
+ {
+  "tr": "bitmek",
+  "kind": "gloss.tr",
+  "de": "enden"
+ },
+ {
+  "tr": "içinden",
+  "kind": "gloss.tr",
+  "de": "durch"
+ },
+ {
+  "tr": "mobilya",
+  "kind": "gloss.tr",
+  "de": "Möbel"
+ },
+ {
+  "tr": "… var mı",
+  "kind": "gloss.tr",
+  "de": "gibt es …"
+ },
+ {
+  "tr": "sorun ne",
+  "kind": "gloss.tr",
+  "de": "was ist los"
+ },
+ {
+  "tr": "alt katta",
+  "kind": "gloss.tr",
+  "de": "unten"
+ },
+ {
+  "tr": "bir … var",
+  "kind": "gloss.tr",
+  "de": "es gibt ein …"
+ },
+ {
+  "tr": "çalışmıyor",
+  "kind": "gloss.tr",
+  "de": "es geht nicht"
+ },
+ {
+  "tr": "… memelisin",
+  "kind": "gloss.tr",
+  "de": "du darfst nicht …"
+ },
+ {
+  "tr": "izin var mı",
+  "kind": "gloss.tr",
+  "de": "ist das erlaubt"
+ },
+ {
+  "tr": "birkaç … var",
+  "kind": "gloss.tr",
+  "de": "es gibt mehrere …"
+ },
+ {
+  "tr": "… meli/malısın",
+  "kind": "gloss.tr",
+  "de": "du musst …"
+ },
+ {
+  "tr": "yüzmeye gitmek",
+  "kind": "gloss.tr",
+  "de": "schwimmen gehen"
+ },
+ {
+  "tr": "çöpü çıkarıyorum",
+  "kind": "gloss.tr",
+  "de": "ich bringe den Müll raus"
+ },
+ {
+  "tr": "futbol oynuyorum",
+  "kind": "gloss.tr",
+  "de": "ich spiele Fußball"
+ },
+ {
+  "tr": "odamı topluyorum",
+  "kind": "gloss.tr",
+  "de": "ich räume mein Zimmer auf"
+ },
+ {
+  "tr": "telefonum nerede",
+  "kind": "gloss.tr",
+  "de": "wo ist mein Handy"
+ },
+ {
+  "tr": "yüzmeye gidiyorum",
+  "kind": "gloss.tr",
+  "de": "ich gehe schwimmen"
+ },
+ {
+  "tr": "sandalyenin yanında",
+  "kind": "gloss.tr",
+  "de": "neben dem Stuhl"
+ },
+ {
+  "tr": "yan dairede oturuyor",
+  "kind": "gloss.tr",
+  "de": "sie wohnt nebenan"
+ },
+ {
+  "tr": "onu tamir edebilir misin",
+  "kind": "gloss.tr",
+  "de": "kannst du es reparieren"
+ },
+ {
+  "tr": "bana yardım edebilir misin",
+  "kind": "gloss.tr",
+  "de": "kannst du mir helfen"
+ },
+ {
+  "tr": "resim yapmaktan keyif alıyorum",
+  "kind": "gloss.tr",
+  "de": "ich male gern"
+ }
+]
