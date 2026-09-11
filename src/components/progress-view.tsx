@@ -212,17 +212,24 @@ export function ActivityProgress({
         Başarımlar taşınmadı — rozet sayısı herkese açık profilde görünüyor,
         yani kimliğin parçası. Mobil Gelişim ekranıyla aynı bölünme.
       */}
-      <nav className="card px-4" aria-label={t("progw.my_progress")}>
+      <nav className="card px-4" aria-label={t("progress.progress")}>
         <ProgressRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
         <ProgressRow href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} last />
       </nav>
 
-      {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit. */}
-      <section className="card p-4">
+      {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit.
+          KART BİR HEDEF: Android'de şeridin kendisi Kelimeler'e götürüyor
+          (`ProgressScreen`, gerekçesi orada: "Kart hedefsiz duruyordu, satır
+          da bağlamsızdı; ikisi birleşti"). Web'de şerit tıklanamıyordu —
+          hedef sekme çubuğunda var ama karttan yol yoktu. */}
+      <Link href="/words" aria-label={t("profile.my_words")} className="pressable card block p-4">
         <div className="mb-2 flex items-center justify-between gap-3">
           <span className="text-strong">{t("progress.word_mastery")}</span>
-          <span className="muted text-caption tabular-nums">
+          <span className="muted flex items-center gap-1.5 text-caption tabular-nums">
             {formatNumber(mastered, lang)}/{totalWords ? formatNumber(totalWords, lang) : "—"}
+            {/* Kartin dokunulabilir oldugunu soyleyen isaret - Android'de de
+                sayinin yaninda duruyor. */}
+            <ChevronRightIcon size={18} className="shrink-0" />
           </span>
         </div>
         <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
@@ -231,7 +238,7 @@ export function ActivityProgress({
             style={{ width: `${Math.max(3, pct)}%`, background: "var(--color-mint-500)" }}
           />
         </div>
-      </section>
+      </Link>
 
       {/*
         BAŞARIMLAR SATIRI BURADAN KALDIRILDI. Yorumu "mobilde de ilerlemenin

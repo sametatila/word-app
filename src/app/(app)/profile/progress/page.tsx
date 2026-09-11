@@ -7,7 +7,7 @@ import { ProgressPanel } from "@/components/progress-panel";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const generateMetadata = titleMeta("progw.my_progress");
+export const generateMetadata = titleMeta("progress.progress");
 /**
  * İlerleme — iki haftalık ritim + yetkinlik paneli.
  *
@@ -52,7 +52,7 @@ export default async function ProgressPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
-      <PageBack fallback="/profile" title={t("progw.my_progress")} />
+      <PageBack fallback="/profile" title={t("progress.progress")} />
       {content}
       {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım. */}
       <ProgressPanel />

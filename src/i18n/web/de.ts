@@ -495,7 +495,6 @@ export const deWeb: Record<string, string> = {
   "theme.to_light": "Zum hellen Design wechseln",
   "theme.to_dark": "Zum dunklen Design wechseln",
   "lang.app_language_sub": "Oberfläche, Erklärungen und Wortbedeutungen sind in dieser Sprache; sie bestimmt auch, welche Kurse zur Auswahl stehen.",
-  "progw.my_progress": "Mein Fortschritt",
   "lb.weekly": "Wochenrangliste",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Tagesrunde · {level}",

@@ -495,7 +495,6 @@ export const enWeb: Record<string, string> = {
   "theme.to_light": "Switch to the light theme",
   "theme.to_dark": "Switch to the dark theme",
   "lang.app_language_sub": "The interface, explanations and word meanings use this language; it also decides which courses you can take.",
-  "progw.my_progress": "My progress",
   "lb.weekly": "Weekly leaderboard",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Daily round · {level}",

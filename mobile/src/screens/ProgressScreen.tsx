@@ -225,7 +225,10 @@ export function ProgressScreen() {
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
                 <Text variant="bodyStrong">{t("progress.word_mastery")}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-                  <Text variant="caption" color={colors.textMuted}>{mastered}/{totalWords || "—"}</Text>
+                  {/* Sayilar yerelden: bin ayraci Turkcede nokta, Ingilizcede virgul.
+                      Ayni dosyada baska alti yerde `formatNumber` geciyor, yalniz
+                      bu satir atlanmisti; web karti bastan beri bicimliyor. */}
+                  <Text variant="caption" color={colors.textMuted}>{formatNumber(mastered)}/{totalWords ? formatNumber(totalWords) : "—"}</Text>
                   <ChevronRightIcon color={colors.textFaint} size={18} />
                 </View>
               </View>

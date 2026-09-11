@@ -521,7 +521,6 @@ export const trWeb: Record<string, string> = {
   "theme.to_light": "Açık temaya geç",
   "theme.to_dark": "Koyu temaya geç",
   "lang.app_language_sub": "Arayüz, anlatım ve kelime anlamları bu dilde olur; öğrenilecek dil listesi de buna göre değişir.",
-  "progw.my_progress": "İlerlemem",
   "lb.weekly": "Haftalık sıralama",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Günün turu · {level}",
