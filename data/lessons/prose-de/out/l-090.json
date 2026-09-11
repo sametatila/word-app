@@ -1,0 +1,1077 @@
+[
+ {
+  "tr": "Acil serviste",
+  "kind": "titleTr",
+  "de": "In der Notaufnahme"
+ },
+ {
+  "tr": "Reçete ve kutu",
+  "kind": "titleTr",
+  "de": "Rezept und Packung"
+ },
+ {
+  "tr": "Tahlil sonuçları",
+  "kind": "titleTr",
+  "de": "Die Testergebnisse"
+ },
+ {
+  "tr": "Belirtileri anlatmak",
+  "kind": "titleTr",
+  "de": "Symptome beschreiben"
+ },
+ {
+  "tr": "Aile hekimine kaydolmak",
+  "kind": "titleTr",
+  "de": "Sich bei einer Praxis anmelden"
+ },
+ {
+  "tr": "İlaç kutusundaki yazıyı anlamayı öğretir; kimin yaptığı değil ne yapıldığı söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Text auf der Packung versteht; genannt wird nicht, wer etwas tut, sondern was getan wird."
+ },
+ {
+  "tr": "Acilde olup biteni anlatmayı öğretir; sen varmadan önce olan iş bir kat daha geriye çekilir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erzählt, was in der Notaufnahme geschah; was vor deiner Ankunft war, wird eine Stufe weiter zurückgeschoben."
+ },
+ {
+  "tr": "Belirtileri anlatmayı öğretir: süren şikâyet ile başlangıç noktası ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Symptome beschreibt: andauernde Beschwerde und Anfangspunkt stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "Hekimin söylediklerini başkasına aktarmayı öğretir; aktarırken zaman bir basamak geriye gider.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man weitergibt, was die Ärztin gesagt hat; beim Wiedergeben rückt die Zeit eine Stufe zurück."
+ },
+ {
+  "tr": "Bir muayenehaneye kaydolmayı öğretir; neyi yapmak zorundasın, neyi yapmana gerek yok, neyi hiç yapmamalısın.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man sich bei einer Praxis anmeldet: was du tun musst, was du nicht tun musst, was du gar nicht tun darfst."
+ },
+ {
+  "tr": "kutuyu eline alıp satır satır okuyan bir eczacı",
+  "kind": "partner",
+  "de": "ein Apotheker, der die Packung nimmt und Zeile für Zeile liest"
+ },
+ {
+  "tr": "sonuçları merak eden, tek tek soran bir yakının",
+  "kind": "partner",
+  "de": "eine Angehörige, die die Ergebnisse wissen will und einzeln nachfragt"
+ },
+ {
+  "tr": "acile gelememiş, sırayı merak eden bir aile üyesi",
+  "kind": "partner",
+  "de": "ein Familienmitglied, das nicht in die Notaufnahme kommen konnte und die Reihenfolge wissen will"
+ },
+ {
+  "tr": "kısa kısa soran, her cevaptan sonra not alan bir hekim",
+  "kind": "partner",
+  "de": "eine Ärztin, die knapp fragt und nach jeder Antwort etwas notiert"
+ },
+ {
+  "tr": "sabırlı ama kuralları tek tek soran bir kayıt görevlisi",
+  "kind": "partner",
+  "de": "eine geduldige Mitarbeiterin am Empfang, die die Regeln einzeln abfragt"
+ },
+ {
+  "tr": "Bu ne zamandır var?",
+  "kind": "openingTr",
+  "de": "Wie lange haben Sie das schon?"
+ },
+ {
+  "tr": "Bu size mi yazıldı?",
+  "kind": "openingTr",
+  "de": "Wurde Ihnen das verschrieben?"
+ },
+ {
+  "tr": "Sen varmadan önce ne olmuştu?",
+  "kind": "openingTr",
+  "de": "Was war passiert, bevor du ankamst?"
+ },
+ {
+  "tr": "Daha önce bize kaydoldunuz mu?",
+  "kind": "openingTr",
+  "de": "Waren Sie schon einmal bei uns angemeldet?"
+ },
+ {
+  "tr": "Peki hekim tam olarak ne dedi?",
+  "kind": "openingTr",
+  "de": "Und was hat die Ärztin genau gesagt?"
+ },
+ {
+  "tr": "Muayenede hekim şikâyetini soruyor. Ne zamandır sürdüğünü, ne zaman başladığını ve daha önce yaşayıp yaşamadığını anlat.",
+  "kind": "scene",
+  "de": "In der Sprechstunde fragt die Ärztin nach deiner Beschwerde. Erzähl, wie lange sie schon dauert, wann sie angefangen hat und ob du das früher schon hattest."
+ },
+ {
+  "tr": "Eczanede yeni bir ilaç aldın ve kutunun üstünü anlamadın. Nasıl alınacağını, neyle alınmayacağını ve nasıl saklanacağını sor.",
+  "kind": "scene",
+  "de": "In der Apotheke hast du ein neues Medikament bekommen und den Text auf der Packung nicht verstanden. Frag, wie es genommen wird, womit es nicht genommen wird und wie es aufbewahrt wird."
+ },
+ {
+  "tr": "Bir yakının acile gitti ve sen sonradan vardın. Sen varmadan önce nelerin olduğunu, kimin ne yaptığını ve şu anki durumu anlat.",
+  "kind": "scene",
+  "de": "Eine Angehörige kam in die Notaufnahme und du bist später angekommen. Erzähl, was vor deiner Ankunft passiert war, wer was gemacht hat und wie es jetzt steht."
+ },
+ {
+  "tr": "Tahlil sonuçlarını aldın ve merak eden bir yakınına anlatıyorsun. Hekimin ne dediğini, ne yapmamanı söylediğini ve ne sorduğunu aktar.",
+  "kind": "scene",
+  "de": "Du hast die Testergebnisse bekommen und erzählst sie einer Angehörigen, die es wissen will. Gib weiter, was die Ärztin gesagt hat, was du nicht tun sollst und was sie gefragt hat."
+ },
+ {
+  "tr": "Yeni taşındığın mahalledeki muayenehaneye kaydolmak için kayıt masasındasın. Neyi getirmen gerektiğini sor, neyi getirmediğini söyle ve ilk randevuyu al.",
+  "kind": "scene",
+  "de": "Du stehst am Empfang der Praxis in deinem neuen Viertel, um dich anzumelden. Frag, was du mitbringen musst, sag, was du nicht dabeihast, und mach den ersten Termin."
+ },
+ {
+  "tr": "Bir bilgiyi, bir yönergeyi ve bir soruyu aktardıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Information, eine Anweisung und eine Frage wiedergegeben hast."
+ },
+ {
+  "tr": "Alınışı, yan etkiyi ve saklamayı üç ayrı edilgen cümleyle sorduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Einnahme, Nebenwirkung und Aufbewahrung in drei verschiedenen Passivsätzen erfragt hast."
+ },
+ {
+  "tr": "Süreni, başlangıcı ve daha önceki deneyimi üç ayrı zamanla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Dauer, Anfang und frühere Erfahrung in drei verschiedenen Zeiten erzählt hast."
+ },
+ {
+  "tr": "Bir zorunluluğu, bir serbestliği ve bir yasağı üç ayrı kalıpla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Pflicht, eine Freiheit und ein Verbot in drei verschiedenen Wendungen gesagt hast."
+ },
+ {
+  "tr": "Varışından önce olanları bir kat geriye çekip varışını olağan geçmişte anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das vor deiner Ankunft Geschehene eine Stufe zurückgeschoben und deine Ankunft im einfachen Präteritum erzählt hast."
+ },
+ {
+  "tr": "aşı",
+  "kind": "vocab.tr",
+  "de": "Impfung"
+ },
+ {
+  "tr": "ateş",
+  "kind": "vocab.tr",
+  "de": "Fieber"
+ },
+ {
+  "tr": "yara",
+  "kind": "vocab.tr",
+  "de": "Wunde"
+ },
+ {
+  "tr": "göğüs",
+  "kind": "vocab.tr",
+  "de": "Brustkorb"
+ },
+ {
+  "tr": "koğuş",
+  "kind": "vocab.tr",
+  "de": "Station"
+ },
+ {
+  "tr": "nefes",
+  "kind": "vocab.tr",
+  "de": "Atem"
+ },
+ {
+  "tr": "uyarı",
+  "kind": "vocab.tr",
+  "de": "Warnung"
+ },
+ {
+  "tr": "virüs",
+  "kind": "vocab.tr",
+  "de": "Virus"
+ },
+ {
+  "tr": "ağrılı",
+  "kind": "vocab.tr",
+  "de": "wund"
+ },
+ {
+  "tr": "hâlsiz",
+  "kind": "vocab.tr",
+  "de": "schwach"
+ },
+ {
+  "tr": "numune",
+  "kind": "vocab.tr",
+  "de": "Probe"
+ },
+ {
+  "tr": "tahlil",
+  "kind": "vocab.tr",
+  "de": "Test"
+ },
+ {
+  "tr": "belirti",
+  "kind": "vocab.tr",
+  "de": "Symptom"
+ },
+ {
+  "tr": "iltihap",
+  "kind": "vocab.tr",
+  "de": "Entzündung"
+ },
+ {
+  "tr": "kanamak",
+  "kind": "vocab.tr",
+  "de": "bluten"
+ },
+ {
+  "tr": "öksürük",
+  "kind": "vocab.tr",
+  "de": "Husten"
+ },
+ {
+  "tr": "süregelen",
+  "kind": "vocab.tr",
+  "de": "chronisch"
+ },
+ {
+  "tr": "acil durum",
+  "kind": "vocab.tr",
+  "de": "Notfall"
+ },
+ {
+  "tr": "ağrı kesici",
+  "kind": "vocab.tr",
+  "de": "Schmerzmittel"
+ },
+ {
+  "tr": "görüntüleme",
+  "kind": "vocab.tr",
+  "de": "Aufnahme"
+ },
+ {
+  "tr": "ilaç kutusu",
+  "kind": "vocab.tr",
+  "de": "Packung"
+ },
+ {
+  "tr": "muayenehane",
+  "kind": "vocab.tr",
+  "de": "Praxis"
+ },
+ {
+  "tr": "kayıt masası",
+  "kind": "vocab.tr",
+  "de": "Empfang"
+ },
+ {
+  "tr": "hasta dosyası",
+  "kind": "vocab.tr",
+  "de": "Krankenakte"
+ },
+ {
+  "tr": "bir yasağı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt ein Verbot"
+ },
+ {
+  "tr": "işi yapanı sona bırakır",
+  "kind": "pattern.tr",
+  "de": "stellt den Handelnden ans Ende"
+ },
+ {
+  "tr": "başlangıç noktasını söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den Anfangspunkt"
+ },
+ {
+  "tr": "sorulan bir soruyu aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine gestellte Frage wieder"
+ },
+ {
+  "tr": "zorunluluğu edilgen söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Pflicht im Passiv"
+ },
+ {
+  "tr": "hâlâ süren şikâyeti anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einer noch andauernden Beschwerde"
+ },
+ {
+  "tr": "söylenen bir bilgiyi aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine gesagte Information wieder"
+ },
+ {
+  "tr": "varmadan önce biteni anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt, was vor der Ankunft zu Ende war"
+ },
+ {
+  "tr": "olumsuz bir yönergeyi aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine verneinte Anweisung wieder"
+ },
+ {
+  "tr": "hiç yaşanmamış bir şeyi söyler",
+  "kind": "pattern.tr",
+  "de": "nennt etwas nie Erlebtes"
+ },
+ {
+  "tr": "zorunluluğun olmadığını söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, dass keine Pflicht besteht"
+ },
+ {
+  "tr": "önceden yapılmış bir işi söyler",
+  "kind": "pattern.tr",
+  "de": "nennt eine schon vorher erledigte Handlung"
+ },
+ {
+  "tr": "yapılan işi kim yaptığını söylemeden anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt die Handlung, ohne zu sagen, wer sie gemacht hat"
+ },
+ {
+  "tr": "Doğru. Başlangıç anı bitmiş bir noktadır, o yüzden olağan geçmiş zamanda duruyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Moment des Beginns ist ein abgeschlossener Punkt, deshalb steht er im einfachen Präteritum."
+ },
+ {
+  "tr": "Doğru. Kanama varıştan önce durmuş, o yüzden bir kat geride; varış ise olağan geçmişte.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Blutung hörte vor der Ankunft auf, deshalb steht sie eine Stufe zurück; die Ankunft bleibt im einfachen Präteritum."
+ },
+ {
+  "tr": "Doğru. Hapı kimin aldığı söylenmiyor ve prospektüs dilinde bu olağan; önemli olan ne yapıldığı.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer die Pille nimmt, wird nicht genannt, und in der Sprache des Beipackzettels ist das normal; wichtig ist, was gemacht wird."
+ },
+ {
+  "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: hemşireye görünebilirsin de görünmeyebilirsin de.",
+  "kind": "why.tr",
+  "de": "Richtig. Diese Wendung nennt kein Verbot, sondern Freiheit: du kannst zur Pflegerin gehen oder auch nicht."
+ },
+ {
+  "tr": "Doğru. Hekim 'is normal' demişti; aktarırken zaman bir basamak geriye gitti ve cümle doğru kuruldu.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Ärztin hatte 'is normal' gesagt; beim Wiedergeben rückte die Zeit eine Stufe zurück und der Satz ist richtig gebaut."
+ },
+ {
+  "tr": "Soru aktarımı için",
+  "kind": "hint.tr",
+  "de": "Für die Wiedergabe einer Frage"
+ },
+ {
+  "tr": "Edilgen zorunluluk için",
+  "kind": "hint.tr",
+  "de": "Für eine Pflicht im Passiv"
+ },
+ {
+  "tr": "Zorunluluğun yokluğu için",
+  "kind": "hint.tr",
+  "de": "Für das Fehlen der Pflicht"
+ },
+ {
+  "tr": "Önce olan iş bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Die frühere Handlung steht eine Stufe zurück:"
+ },
+ {
+  "tr": "İşi yapan gerçekten önemliyse",
+  "kind": "hint.tr",
+  "de": "Für den wirklich wichtigen Handelnden"
+ },
+ {
+  "tr": "Olumsuz yönerge aktarımı için",
+  "kind": "hint.tr",
+  "de": "Für die Wiedergabe einer verneinten Anweisung"
+ },
+ {
+  "tr": "Dışarıdan gelen zorunluluk için",
+  "kind": "hint.tr",
+  "de": "Für eine Pflicht von außen"
+ },
+ {
+  "tr": "Edilgen cümlede nesne başa geçer:",
+  "kind": "hint.tr",
+  "de": "Im Passivsatz rückt das Objekt nach vorn:"
+ },
+ {
+  "tr": "Aktarırken zaman bir basamak geriye gider:",
+  "kind": "hint.tr",
+  "de": "Beim Wiedergeben rückt die Zeit eine Stufe zurück:"
+ },
+ {
+  "tr": "Süren şikâyet için present perfect kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für eine andauernde Beschwerde steht Present Perfect:"
+ },
+ {
+  "tr": "Bitmiş bir başlangıç için past simple kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für einen abgeschlossenen Anfang steht Past Simple:"
+ },
+ {
+  "tr": "Hiç yaşanmamış bir şey için present perfect kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für etwas nie Erlebtes steht Present Perfect:"
+ },
+ {
+  "tr": "Nakil senin varışından önce bittiği için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil die Verlegung vor deiner Ankunft fertig war, steht sie eine Stufe zurück:"
+ },
+ {
+  "tr": "Temizlik hekimin gelişinden önce bittiği için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil die Reinigung vor dem Eintreffen des Arztes fertig war, steht sie eine Stufe zurück:"
+ },
+ {
+  "tr": "deneyim",
+  "kind": "say.tr",
+  "de": "Erfahrung"
+ },
+ {
+  "tr": "başlangıç",
+  "kind": "say.tr",
+  "de": "Anfang"
+ },
+ {
+  "tr": "işi yapan",
+  "kind": "say.tr",
+  "de": "der Handelnde"
+ },
+ {
+  "tr": "serbestlik",
+  "kind": "say.tr",
+  "de": "Freiheit"
+ },
+ {
+  "tr": "zorunluluk",
+  "kind": "say.tr",
+  "de": "Pflicht"
+ },
+ {
+  "tr": "ile, soru ise",
+  "kind": "say.tr",
+  "de": "wieder, eine Frage mit"
+ },
+ {
+  "tr": "Şunu da söyle:",
+  "kind": "say.tr",
+  "de": "Sag auch das:"
+ },
+ {
+  "tr": "Başın dönüyorsa",
+  "kind": "say.tr",
+  "de": "Wenn dir schwindelig ist, sagst du"
+ },
+ {
+  "tr": "gücün kalmadıysa",
+  "kind": "say.tr",
+  "de": "und wenn dir die Kraft fehlt"
+ },
+ {
+  "tr": "İyi olmayan kişiye",
+  "kind": "say.tr",
+  "de": "Wer es nicht gut geht, heißt"
+ },
+ {
+  "tr": "Özetleyelim: bilgi",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Information"
+ },
+ {
+  "tr": "Özetleyelim: süren",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: andauernd"
+ },
+ {
+  "tr": "satıldığı yere ise",
+  "kind": "say.tr",
+  "de": "und der Ort, wo es verkauft wird, heißt"
+ },
+ {
+  "tr": "Özetleyelim: edilgen",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Passiv"
+ },
+ {
+  "tr": "Bedende oluşan hasara",
+  "kind": "say.tr",
+  "de": "Der Schaden im Körper heißt"
+ },
+ {
+  "tr": "zorunluluğun yokluğu,",
+  "kind": "say.tr",
+  "de": "das Fehlen der Pflicht,"
+ },
+ {
+  "tr": "Hekimin çalıştığı yere",
+  "kind": "say.tr",
+  "de": "Der Ort, an dem die Ärztin arbeitet, heißt"
+ },
+ {
+  "tr": "İlacı bir hekim yazdı.",
+  "kind": "say.tr",
+  "de": "Das Medikament wurde von einem Arzt verschrieben."
+ },
+ {
+  "tr": "Yemeğin gittiği organa",
+  "kind": "say.tr",
+  "de": "Das Organ, in das das Essen geht, heißt"
+ },
+ {
+  "tr": "Ağrı salı günü başladı.",
+  "kind": "say.tr",
+  "de": "Der Schmerz hat am Dienstag angefangen."
+ },
+ {
+  "tr": "ciğere giren havaya ise",
+  "kind": "say.tr",
+  "de": "und die Luft, die in die Lunge geht, heißt"
+ },
+ {
+  "tr": "dikkat çeken yazıya ise",
+  "kind": "say.tr",
+  "de": "und der Text, der aufmerksam macht, heißt"
+ },
+ {
+  "tr": "Dosyayı kaybetmemelisin.",
+  "kind": "say.tr",
+  "de": "Du darfst die Krankenakte nicht verlieren."
+ },
+ {
+  "tr": "Duyulan acının kendisine",
+  "kind": "say.tr",
+  "de": "Der gespürte Schmerz selbst heißt"
+ },
+ {
+  "tr": "Hastaların yattığı odaya",
+  "kind": "say.tr",
+  "de": "Der Raum, in dem die Kranken liegen, heißt"
+ },
+ {
+  "tr": "Kalbin bulunduğu bölgeye",
+  "kind": "say.tr",
+  "de": "Der Bereich, in dem das Herz sitzt, heißt"
+ },
+ {
+  "tr": "Tedavi haftaya başlıyor.",
+  "kind": "say.tr",
+  "de": "Die Behandlung fängt nächste Woche an."
+ },
+ {
+  "tr": "derinin açılan yerine ise",
+  "kind": "say.tr",
+  "de": "und die offene Stelle der Haut heißt"
+ },
+ {
+  "tr": "dokununca acıyan yere ise",
+  "kind": "say.tr",
+  "de": "und eine Stelle, die beim Berühren wehtut, ist"
+ },
+ {
+  "tr": "hastayı taşıyan araca ise",
+  "kind": "say.tr",
+  "de": "und das Fahrzeug, das Kranke transportiert, heißt"
+ },
+ {
+  "tr": "İlacın istenmeyen sonucuna",
+  "kind": "say.tr",
+  "de": "Die unerwünschte Folge eines Medikaments heißt"
+ },
+ {
+  "tr": "Acil servis o gece doluydu.",
+  "kind": "say.tr",
+  "de": "Die Notaufnahme war in dieser Nacht voll."
+ },
+ {
+  "tr": "Ağrı süregelen, yeni değil.",
+  "kind": "say.tr",
+  "de": "Der Schmerz ist chronisch, nicht neu."
+ },
+ {
+  "tr": "dışarıdan gelen zorunluluk,",
+  "kind": "say.tr",
+  "de": "die Pflicht von außen,"
+ },
+ {
+  "tr": "Hastalığa karşı alınan şeye",
+  "kind": "say.tr",
+  "de": "Was man gegen eine Krankheit nimmt, heißt"
+ },
+ {
+  "tr": "Beklemeye gelmeyen durumlara",
+  "kind": "say.tr",
+  "de": "Lagen, die nicht warten können, heißen"
+ },
+ {
+  "tr": "Bir seferde alınacak miktara",
+  "kind": "say.tr",
+  "de": "Die Menge für eine Einnahme heißt"
+ },
+ {
+  "tr": "Doz kutunun üstünde yazıyor.",
+  "kind": "say.tr",
+  "de": "Die Dosis steht auf der Packung."
+ },
+ {
+  "tr": "Yalnız ağrıyı dindiren ilaca",
+  "kind": "say.tr",
+  "de": "Ein Medikament, das nur den Schmerz stillt, heißt"
+ },
+ {
+  "tr": "Kutu buzdolabında saklanmalı.",
+  "kind": "say.tr",
+  "de": "Die Packung muss im Kühlschrank aufbewahrt werden."
+ },
+ {
+  "tr": "Mikrobun yaptığı şişkin acıya",
+  "kind": "say.tr",
+  "de": "Der geschwollene Schmerz durch Keime heißt"
+ },
+ {
+  "tr": "Çoktan ambulans çağırmışlardı.",
+  "kind": "say.tr",
+  "de": "Sie hatten schon einen Krankenwagen gerufen."
+ },
+ {
+  "tr": "hastalıktan koruyan iğneye ise",
+  "kind": "say.tr",
+  "de": "und die Spritze, die vor Krankheit schützt, heißt"
+ },
+ {
+  "tr": "ilacın içinde durduğu kaba ise",
+  "kind": "say.tr",
+  "de": "und der Behälter, in dem das Medikament steckt, heißt"
+ },
+ {
+  "tr": "Onu sessiz bir koğuşa aldılar.",
+  "kind": "say.tr",
+  "de": "Sie haben ihn auf eine ruhige Station verlegt."
+ },
+ {
+  "tr": "hastalık yapan küçük etkene ise",
+  "kind": "say.tr",
+  "de": "und der kleine Erreger, der krank macht, heißt"
+ },
+ {
+  "tr": "İncelenmek üzere alınan parçaya",
+  "kind": "say.tr",
+  "de": "Das Stück, das zur Untersuchung genommen wird, heißt"
+ },
+ {
+  "tr": "Ağrı kesici reçetesiz satılıyor.",
+  "kind": "say.tr",
+  "de": "Ein Schmerzmittel wird ohne Rezept verkauft."
+ },
+ {
+  "tr": "iç organları gösteren çekime ise",
+  "kind": "say.tr",
+  "de": "und die Aufnahme, die die inneren Organe zeigt, heißt"
+ },
+ {
+  "tr": "uzun süredir devam eden hâle ise",
+  "kind": "say.tr",
+  "de": "und ein Zustand, der lange andauert, ist"
+ },
+ {
+  "tr": "Alerjim olup olmadığını sordular.",
+  "kind": "say.tr",
+  "de": "Sie haben gefragt, ob ich eine Allergie hatte."
+ },
+ {
+  "tr": "Boğazdan gelen sesli rahatsızlığa",
+  "kind": "say.tr",
+  "de": "Die laute Beschwerde aus dem Hals heißt"
+ },
+ {
+  "tr": "iyileştirmek için yapılan işe ise",
+  "kind": "say.tr",
+  "de": "und was man tut, um gesund zu machen, heißt"
+ },
+ {
+  "tr": "Bedenin aşırı tepki verdiği duruma",
+  "kind": "say.tr",
+  "de": "Wenn der Körper zu stark reagiert, heißt das"
+ },
+ {
+  "tr": "Muayenehanenin bu ay listesi uzun.",
+  "kind": "say.tr",
+  "de": "Die Praxis hat diesen Monat eine lange Liste."
+ },
+ {
+  "tr": "Öksürük artıyor ve boğazım ağrılı.",
+  "kind": "say.tr",
+  "de": "Der Husten wird stärker und mein Hals ist wund."
+ },
+ {
+  "tr": "Bir yan etki uyarı olarak basılmış.",
+  "kind": "say.tr",
+  "de": "Eine Nebenwirkung ist als Warnung aufgedruckt."
+ },
+ {
+  "tr": "Hemşire aşı kartını kontrol ediyor.",
+  "kind": "say.tr",
+  "de": "Die Pflegerin prüft deinen Impfpass."
+ },
+ {
+  "tr": "Öğle yemeğinden sonra midem ağrıdı.",
+  "kind": "say.tr",
+  "de": "Nach dem Mittagessen tat mir der Magen weh."
+ },
+ {
+  "tr": "Son kalıbımız bir yasak. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist ein Verbot. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Üç derece var:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Es gibt drei Stufen:"
+ },
+ {
+  "tr": "Şimdi sen kur: İlacı hemşire verdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Pflegerin hat das Medikament gegeben."
+ },
+ {
+  "tr": "Hastanın kayıtlarının tutulduğu şeye",
+  "kind": "say.tr",
+  "de": "Das, worin die Aufzeichnungen der Kranken stehen, heißt"
+ },
+ {
+  "tr": "Eczane cuma günleri yedide kapanıyor.",
+  "kind": "say.tr",
+  "de": "Die Apotheke schließt freitags um sieben."
+ },
+ {
+  "tr": "hastalığın dışarı vuran işaretine ise",
+  "kind": "say.tr",
+  "de": "und das nach außen sichtbare Zeichen der Krankheit heißt"
+ },
+ {
+  "tr": "Şimdi bir muayenehaneye kaydolacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt meldest du dich bei einer Praxis an."
+ },
+ {
+  "tr": "Şimdi sen kur: Ağrı cuma günü başladı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Der Schmerz hat am Freitag angefangen."
+ },
+ {
+  "tr": "Yaralanma olduğundan kötü görünüyordu.",
+  "kind": "say.tr",
+  "de": "Die Verletzung sah schlimmer aus, als sie war."
+ },
+ {
+  "tr": "İltihap geçmişti ve sadece bir virüstü.",
+  "kind": "say.tr",
+  "de": "Die Entzündung war weg und es war nur ein Virus."
+ },
+ {
+  "tr": "Daha önce hiç böyle bir belirtim olmadı.",
+  "kind": "say.tr",
+  "de": "So ein Symptom hatte ich noch nie."
+ },
+ {
+  "tr": "ile sona eklenir, değilse hiç söylenmez.",
+  "kind": "say.tr",
+  "de": "am Ende angehängt, sonst wird er gar nicht genannt."
+ },
+ {
+  "tr": "sıradaki hastaların yazıldığı sıraya ise",
+  "kind": "say.tr",
+  "de": "und die Reihe, in die die wartenden Kranken eingetragen werden, heißt"
+ },
+ {
+  "tr": "Şimdi hekime belirtilerini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt beschreibst du der Ärztin deine Symptome."
+ },
+ {
+  "tr": "Görüntüleme için endişelenmememi söyledi.",
+  "kind": "say.tr",
+  "de": "Sie hat mir gesagt, ich soll mir wegen der Aufnahme keine Sorgen machen."
+ },
+ {
+  "tr": "Ben konuşmadan önce hekim yarayı görmüştü.",
+  "kind": "say.tr",
+  "de": "Bevor ich sprach, hatte der Arzt die Wunde gesehen."
+ },
+ {
+  "tr": "Hekimin yanında çalışan sağlık görevlisine",
+  "kind": "say.tr",
+  "de": "Die Fachkraft, die neben der Ärztin arbeitet, heißt"
+ },
+ {
+  "tr": "Şimdi sonuçları bir yakınına aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du die Ergebnisse an eine Angehörige weiter."
+ },
+ {
+  "tr": "Bir tane daha: İlk tedaviyi kaçırmamalısın.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du darfst die erste Behandlung nicht verpassen."
+ },
+ {
+  "tr": "Son kalıbımız deneyimi söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Erfahrung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi acilde geçen bir geceyi anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von einer Nacht in der Notaufnahme."
+ },
+ {
+  "tr": "Şimdi sen kur: Tedaviyi bırakmamamı söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll die Behandlung nicht abbrechen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hap yemekten sonra alınır.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Pille wird nach dem Essen genommen."
+ },
+ {
+  "tr": "Bir tane daha: Hapı alıp almadığımı sordular.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie haben gefragt, ob ich die Pille genommen hatte."
+ },
+ {
+  "tr": "Önce bir hemşireye görünmek zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Du musst nicht zuerst zu einer Pflegerin."
+ },
+ {
+  "tr": "Başım dönüyor ve bütün hafta hâlsiz hissettim.",
+  "kind": "say.tr",
+  "de": "Mir ist schwindelig und die ganze Woche habe ich mich schwach gefühlt."
+ },
+ {
+  "tr": "Görüntülemeden önce ikinci bir numune aldılar.",
+  "kind": "say.tr",
+  "de": "Vor der Aufnahme haben sie eine zweite Probe genommen."
+ },
+ {
+  "tr": "Kendini hasta hissettiğinde muayenehaneyi ara.",
+  "kind": "say.tr",
+  "de": "Ruf die Praxis an, wenn du dich krank fühlst."
+ },
+ {
+  "tr": "Son kalıbımız bir soruyu aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt eine Frage wieder. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Sen varmadan ÖNCE olan iş",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was VOR deiner Ankunft geschah, wird mit"
+ },
+ {
+  "tr": "Bir tane daha: Kutu serin bir yerde saklanmalı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Packung muss an einem kühlen Ort aufbewahrt werden."
+ },
+ {
+  "tr": "ile aktarılır ve soru sırası düz cümleye döner.",
+  "kind": "say.tr",
+  "de": "und die Fragestellung wird zur Aussagestellung."
+ },
+ {
+  "tr": "Şimdi eczanede bir kutuyu birlikte okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du in der Apotheke gemeinsam eine Packung."
+ },
+ {
+  "tr": "İkinci kalıbımız başlangıcı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt den Anfang. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız iki işi sıraya koyuyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bringt zwei Handlungen in eine Reihenfolge. Wiederhole:"
+ },
+ {
+  "tr": "Kan akması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Blut verlieren. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Biz vardığımızda ağrı geçmişti.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Als wir ankamen, war der Schmerz weg."
+ },
+ {
+  "tr": "Şimdi sıra sende: Pazartesiden beri öksürüğüm var.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Seit Montag habe ich Husten."
+ },
+ {
+  "tr": "İkinci kalıbımız zorunluluğu kaldırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nimmt die Pflicht weg. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Daha önce hiç böyle bir ağrım olmadı.",
+  "kind": "say.tr",
+  "de": "Noch eins: So einen Schmerz hatte ich noch nie."
+ },
+ {
+  "tr": "Göğsümdeki ağrı geçmişti ve nefesim yerine gelmişti.",
+  "kind": "say.tr",
+  "de": "Der Schmerz im Brustkorb war weg und ich hatte meinen Atem wieder."
+ },
+ {
+  "tr": "İkinci kalıbımız bir yönergeyi aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung gibt eine Anweisung wieder. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız işi yapanı sona bırakıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung stellt den Handelnden ans Ende. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız zorunluluğu edilgen söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Pflicht im Passiv. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Eski dosyayı getirmek zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Du musst die alte Krankenakte nicht mitbringen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hekim sonucun normal olduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Ärztin hat gesagt, dass das Ergebnis normal war."
+ },
+ {
+  "tr": "Yutulan sert ilaç demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das harte Medikament, das man schluckt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Ben varmadan önce onu çoktan taşımışlardı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Bevor ich ankam, hatten sie ihn schon verlegt."
+ },
+ {
+  "tr": "Damarda akan sıvı demek. Ölçüm için yapılan incelemeye ise",
+  "kind": "say.tr",
+  "de": "Das heißt die Flüssigkeit in den Adern. Und die Untersuchung zur Messung heißt"
+ },
+ {
+  "tr": "Şimdi sıra sende: Kartını kayıt masasına getirmek zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst deine Karte zum Empfang mitbringen."
+ },
+ {
+  "tr": "İkinci kalıbımız önceden yapılmış bir işi söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt eine schon vorher erledigte Handlung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Hekim gelmeden önce hemşire yarayı temizlemişti.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Bevor der Arzt kam, hatte die Pflegerin die Wunde gereinigt."
+ },
+ {
+  "tr": "Girişte kayıt yapılan yer demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Ort am Eingang, wo man aufgenommen wird. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Vücut sıcaklığının yükselmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Anstieg der Körpertemperatur. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Şikâyet HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Dauert die Beschwerde NOCH AN, steht Present Perfect, und mit"
+ },
+ {
+  "tr": "Hekimin ilk sorduğu şey bu üçü ve üçü ayrı zamanlarla söyleniyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das sind die drei ersten Fragen der Ärztin, und alle drei stehen in verschiedenen Zeiten. Bist du bereit?"
+ },
+ {
+  "tr": "ise yasak. Ortadaki ikisi birbirine benziyor ama biri serbestlik, öteki yasak.",
+  "kind": "say.tr",
+  "de": "und das Verbot. Die mittleren beiden ähneln sich, aber das eine ist Freiheit, das andere Verbot."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider; olumsuz yönerge",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Wiedergeben rückt die Zeit eine Stufe zurück; eine verneinte Anweisung gibst du mit"
+ },
+ {
+  "tr": "ile başlangıç eklenir; şikâyetin BAŞLADIĞI AN anlatılıyorsa past simple kullanılır.",
+  "kind": "say.tr",
+  "de": "wird der Anfang angehängt; erzählst du den MOMENT DES BEGINNS, steht Past Simple."
+ },
+ {
+  "tr": "Merhaba! Bugün acilde olup biteni anlatmayı öğreneceğiz: sen varmadan önce neler olmuştu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erzählen, was in der Notaufnahme geschah: was passiert war, bevor du ankamst."
+ },
+ {
+  "tr": "Prospektüs dili baştan sona edilgen: kimin yaptığı değil ne yapıldığı yazıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache des Beipackzettels ist durchgehend Passiv: dort steht nicht, wer etwas tut, sondern was getan wird. Bist du bereit?"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen cümlede özne düşer ve nesne başa geçer; işi yapan gerçekten önemliyse",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Passivsatz fällt das Subjekt weg und das Objekt rückt nach vorn; ist der Handelnde wirklich wichtig, wird er mit"
+ },
+ {
+  "tr": "Merhaba! Bugün tahlil sonuçlarını aktarmayı öğreneceğiz: hekim ne dedi, ne yapmamanı söyledi, ne sordu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Testergebnisse weiterzugeben: was die Ärztin gesagt hat, was du nicht tun sollst, was sie gefragt hat."
+ },
+ {
+  "tr": "Merhaba! Bugün ilaç kutusundaki yazıyı okumayı öğreneceğiz: nasıl alınır, kim yazdı, neye dikkat edilir.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Text auf der Packung zu lesen: wie es genommen wird, wer es verschrieben hat, worauf man achtet."
+ },
+ {
+  "tr": "ile bir kat geriye çekilir; senin varışın olağan geçmiş zamanda kalır ve iki zaman birlikte sırayı kurar.",
+  "kind": "say.tr",
+  "de": "eine Stufe zurückgeschoben; deine Ankunft bleibt im einfachen Präteritum, und beide Zeiten zusammen bauen die Reihenfolge."
+ },
+ {
+  "tr": "Acilde anlatılan her şey geriye dönük oluyor ve hangi işin önce olduğu tedaviyi değiştiriyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In der Notaufnahme wird alles rückblickend erzählt, und welche Handlung zuerst kam, ändert die Behandlung. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün belirtileri anlatmayı öğreneceğiz: ne zamandır sürüyor, ne zaman başladı, daha önce oldu mu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Symptome zu beschreiben: wie lange es schon dauert, wann es angefangen hat, ob es früher schon da war."
+ },
+ {
+  "tr": "Merhaba! Bugün bir muayenehaneye kaydolmayı öğreneceğiz: neyi getirmek zorundasın, neyi getirmene gerek yok.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, sich bei einer Praxis anzumelden: was du mitbringen musst, was du nicht mitbringen musst."
+ },
+ {
+  "tr": "Aktarırken en sık yapılan hata zamanı olduğu gibi bırakmak; İngilizcede zaman bir basamak geriye gidiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der häufigste Fehler beim Wiedergeben ist, die Zeit gleich zu lassen; im Englischen rückt sie eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Zorunluluğun üç derecesi var ve ikisini karıştırmak burada pahalıya patlıyor: gereksiz iş ya da kaçırılmış randevu. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Pflicht hat drei Stufen, und zwei davon zu verwechseln wird hier teuer: unnötige Arbeit oder ein verpasster Termin. Bist du bereit?"
+ }
+]
