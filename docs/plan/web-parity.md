@@ -7130,3 +7130,26 @@ yazmak bir kapı değil; gerekçeyi ÖLÇMEK kapı.
 Küçük bir ek: sınav yazma sayacı "12 / 40" diyordu ve neyin sayıldığı hiçbir
 yerde geçmiyordu; birim yazıldı.
 
+
+### 11.208 Muafiyetin kapısı var mı: yazılan artık ölçülüyor
+
+§11.207'de kayıtlı bir gerekçenin yanlış çıkması üzerine, aynı testi mobil
+tarafın kendi muafiyet listesine uyguladım: `i18n-scan`in SKIP_CONTENT
+listesi on bir dosyayı ham metin sayımından muaf tutuyor ve her satırın
+yanında hangi kapının onu ölçtüğü yazılı.
+
+**On bir iddianın hepsi doğru çıktı.** İlk bakışta üçü yokmuş gibi göründü
+(`modul temalari`, `sabit COMMON`, `sabit MIN_PASSWORD_LENGTH`) ama o kapıların
+adı dinamik kuruluyor (`"modul temalari " + level`, `"sabit " + name`).
+
+Artık §118 bunu **kendisi ölçüyor**: listedeki her `check:parity "X"` adı
+parity-check'te gerçekten üretiliyor mu. Yani "gerekçe yaz" kuralının yanına
+"gerekçeyi ölç" kuralı geldi.
+
+**Kapının kendi hatası, altıncı kez.** İlk yazımda SKIP_CONTENT bloğunun
+kapanış işareti dosyanın BAŞINDAN aranıyordu; aynı satır yukarıda SKIP_ASCII
+için de geçtiği için pencere boş kalıyor ve kapı sessizce hiçbir şey
+ölçmüyordu. Bu oturumda listeye eklenen altıncı örnek (§73, §78, §98, §103,
+§114, §116 ve şimdi §118): **bir ölçüm penceresi, ölçmek istediği yerin
+komşusunu yakalıyor.** Altısı da yalnız enjeksiyonla görüldü.
+
