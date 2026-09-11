@@ -100,9 +100,9 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-bold">
+        <p className="truncate text-strong">
           {href ? <Link href={href} prefetch={false}>{f.name ?? t("social.unnamed")}</Link> : (f.name ?? t("social.unnamed"))}
-          {f.username ? <span className="muted ml-1.5 text-xs font-normal">@{f.username}</span> : null}
+          {f.username ? <span className="muted ml-1.5 text-caption">@{f.username}</span> : null}
         </p>
         <p className="muted mt-0.5 flex flex-wrap items-center gap-x-3 text-micro">
           <span className="font-semibold" style={{ color: "var(--color-brand)" }}>
@@ -144,7 +144,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       </div>
       <div className="flex shrink-0 items-center gap-1">
         <button
-          className="btn btn-ghost h-8 px-2.5 text-xs"
+          className="btn btn-ghost h-8 px-2.5 text-caption"
           disabled={busy || sent}
           onClick={() => void nudge()}
           title={t(cheer ? "socialw.cheer_hint" : "socialw.nudge_hint")}
@@ -156,7 +156,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             ekranda ise hiç öğrenilemiyordu. Android aynı düğmeyi simge + metin
             olarak veriyor (`FriendRows` `ActionTile`) ve satırdaki öteki iki
             düğme webde de zaten metinli — tek sessiz olan buydu. */}
-        <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")}>
+        <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-caption" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")}>
           <TargetIcon size={15} />
           {t("friendrows.quest")}
         </button>

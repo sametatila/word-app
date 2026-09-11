@@ -120,10 +120,10 @@ export function TwoFactorForm() {
             maxLength={TWO_FACTOR_CODE_DIGITS}
             placeholder={t("twofa.code")}
             autoFocus
-            className={`${authInputClass} text-center text-2xl tracking-[0.4em]`}
+            className={`${authInputClass} text-center text-h1 tracking-[0.4em]`}
           />
 
-          <label className="flex items-start gap-2 text-sm">
+          <label className="flex items-start gap-2 text-body">
             <input
               type="checkbox"
               checked={trust}
@@ -132,7 +132,7 @@ export function TwoFactorForm() {
             />
             <span>
               {t("twofa.trust")}
-              <span className="muted block text-xs leading-snug">{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</span>
+              <span className="muted block text-caption leading-snug">{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</span>
             </span>
           </label>
 
@@ -147,7 +147,7 @@ export function TwoFactorForm() {
             type="button"
             onClick={tekrar}
             disabled={busy || cooldown > 0}
-            className="muted w-full text-center text-sm underline-offset-4 hover:underline disabled:no-underline disabled:opacity-60"
+            className="muted w-full text-center text-body underline-offset-4 hover:underline disabled:no-underline disabled:opacity-60"
           >
             {cooldown > 0 ? `${t("twofa.resend")} (${cooldown})` : t("twofa.resend")}
           </button>

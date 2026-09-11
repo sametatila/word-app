@@ -77,17 +77,17 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         </span>
         {word.artikel ? (
           <span
-            className="mb-2 inline-block rounded-full px-3 py-1 text-sm font-bold text-white"
+            className="mb-2 inline-block rounded-full px-3 py-1 text-strong text-white"
             style={{ background: ARTIKEL_TONE[word.artikel] ?? "var(--color-brand-700)" }}
           >
             {word.artikel}
           </span>
         ) : null}
         <div className="flex items-center justify-center gap-2">
-          <h2 className="text-3xl font-bold sm:text-4xl">{word.de}</h2>
+          <h2 className="text-display sm:text-display">{word.de}</h2>
           <SpeakButton text={withArtikel(word)} />
         </div>
-        <p className="muted mt-1 text-sm">
+        <p className="muted mt-1 text-body">
           {typLabel(word.typ, meaningOf(word, lang), lang)}
           {grammarNote(word, lang) ? ` · ${grammarNote(word, lang)}` : ""}
         </p>
@@ -96,13 +96,13 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           initial={{ opacity: 0 }}
           animate={{ opacity: revealed ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="mt-4 text-xl font-semibold text-[color:var(--color-brand)]"
+          className="mt-4 text-h2 text-[color:var(--color-brand)]"
         >
           {meaningOf(word, lang)}
           {/* İngilizce Türkçenin altında, bir kademe küçük: kartın merkezinde
               hâlâ tek bir karşılık var, ikincisi onu doğrulayan satır. */}
           {word.en ? (
-            <span className="mt-0.5 block text-base font-normal opacity-70" lang="en">
+            <span className="mt-0.5 block text-body opacity-70" lang="en">
               {word.en}
             </span>
           ) : null}
@@ -113,7 +113,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             initial={{ opacity: 0 }}
             animate={{ opacity: revealed ? 1 : 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="muted mt-3 border-t pt-3 text-sm italic"
+            className="muted mt-3 border-t pt-3 text-body italic"
             style={{ borderColor: "var(--border)" }}
           >
             <span className="inline-flex items-center gap-1">
@@ -141,7 +141,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
               },
             ])
           }
-          className="btn btn-primary w-full px-6 py-3 text-base"
+          className="btn btn-primary w-full px-6 py-3 text-h3"
         >
           {tx("rounds.understood", { word: withArtikel(word) })}
         </button>
@@ -160,7 +160,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             onDone([]); // cevap kaydedilmez, kelime pekişmiş sayılır
           }}
           disabled={skipping}
-          className="btn btn-ghost w-full px-6 py-2.5 text-sm disabled:opacity-50"
+          className="btn btn-ghost w-full px-6 py-2.5 text-body disabled:opacity-50"
         >
           {tx(skipping ? "rounds.saving" : "rounds.already_known")}
         </button>

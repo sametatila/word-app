@@ -218,7 +218,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
       {/* Monolog metni sunucuda rubrikle puanlanıyor (ses gitmiyor); puanı
           kimin verdiği konuşmadan önce söyleniyor — mobilde de öyle. */}
       <AiNotice variant="output" className="mt-3" />
@@ -226,13 +226,13 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "prep" ? (
         <section className="card mt-3 p-5">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
-            <span className="tabular-nums text-sm font-bold">{mm(Math.max(0, prepLeft))}</span>
+            <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
+            <span className="tabular-nums text-strong">{mm(Math.max(0, prepLeft))}</span>
           </div>
-          <p className="mt-2 text-sm font-semibold leading-relaxed">{mono.promptTr}</p>
+          <p className="mt-2 text-strong leading-relaxed">{mono.promptTr}</p>
           <ul className="mt-3 space-y-1.5">
             {mono.bulletsTr.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-sm">
+              <li key={b} className="flex items-start gap-2 text-body">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--color-brand)" }} />
                 {b}
               </li>
@@ -240,12 +240,12 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           </ul>
           <div className="mt-3 flex flex-wrap gap-1.5">
             {mono.targets.map((t) => (
-              <span key={t.de} className="chip px-2.5 py-1 text-xs" title={t.tr} lang={lang}>
+              <span key={t.de} className="chip px-2.5 py-1 text-caption" title={t.tr} lang={lang}>
                 {t.de}
               </span>
             ))}
           </div>
-          <p className="muted mt-3 text-xs">
+          <p className="muted mt-3 text-caption">
             {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })}{" "}
             {asr === false
               ? t("item.mono_no_stt")
@@ -254,7 +254,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <button
             type="button"
             onClick={() => void startRecording()}
-            className="btn btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 px-4 text-sm"
+            className="btn btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 px-4 text-body"
           >
             <MicIcon size={18} /> {t("item.mono_start")}
           </button>
@@ -264,19 +264,19 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "record" ? (
         <section className="card mt-3 p-5">
           <div className="flex items-center justify-between">
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide" style={{ color: "var(--color-rose)" }}>
+            <p className="flex items-center gap-2 text-micro uppercase tracking-wide" style={{ color: "var(--color-rose)" }}>
               <span className="h-2 w-2 animate-pulse rounded-full" style={{ background: "var(--color-rose)" }} /> {t("item.mono_recording")}
             </p>
-            <span className="tabular-nums text-sm font-bold">
+            <span className="tabular-nums text-strong">
               {mm(seconds)} / {mm(mono.maxSeconds)}
             </span>
           </div>
-          <ul className="muted mt-2 space-y-1 text-xs">
+          <ul className="muted mt-2 space-y-1 text-caption">
             {mono.bulletsTr.map((b) => (
               <li key={b}>· {b}</li>
             ))}
           </ul>
-          <p className="mt-3 min-h-12 rounded-panel px-3 py-2 text-sm surface-2" lang={lang} aria-live="polite">
+          <p className="mt-3 min-h-12 rounded-panel px-3 py-2 text-body surface-2" lang={lang} aria-live="polite">
             {transcript} <span className="muted">{interim}</span>
             {!transcript && !interim ? <span className="muted">{t(asr ? "item.mono_listening" : "item.mono_recording")}</span> : null}
           </p>
@@ -284,7 +284,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             type="button"
             onClick={stopRecording}
             disabled={seconds < mono.minSeconds}
-            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
+            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
           >
             {seconds < mono.minSeconds ? t("item.mono_stop_in", { n: mono.minSeconds - seconds }) : t("item.mono_stop")}
           </button>
@@ -293,8 +293,8 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "review" ? (
         <section className="card mt-3 p-5">
-          <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_review")}</p>
-          <p className="muted mt-1 text-xs">{t("item.mono_spoke", { time: mm(seconds) })}</p>
+          <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_review")}</p>
+          <p className="muted mt-1 text-caption">{t("item.mono_spoke", { time: mm(seconds) })}</p>
           {audioUrl ? (
             <audio controls src={audioUrl} className="mt-2 w-full">
               <track kind="captions" />
@@ -302,20 +302,20 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           ) : null}
           {asr ? (
             <>
-              <p className="muted mt-3 text-xs">{t("item.mono_transcript_hint")}</p>
+              <p className="muted mt-3 text-caption">{t("item.mono_transcript_hint")}</p>
               <textarea
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
                 rows={4}
                 lang={lang}
                 spellCheck={false}
-                className="card mt-1.5 w-full resize-none px-3 py-2 text-sm outline-none"
+                className="card mt-1.5 w-full resize-none px-3 py-2 text-body outline-none"
               />
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {usedTargets.map((t) => (
                   <span
                     key={t.de}
-                    className="chip px-2.5 py-1 text-xs"
+                    className="chip px-2.5 py-1 text-caption"
                     style={t.used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
                     lang={lang}
                   >
@@ -328,18 +328,18 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                 type="button"
                 onClick={() => void evaluate()}
                 disabled={!transcript.trim()}
-                className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
+                className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
               >
                 {t("item.mono_score")}
               </button>
             </>
           ) : (
             <>
-              <p className="muted mt-3 text-xs">{t("item.mono_self")}</p>
+              <p className="muted mt-3 text-caption">{t("item.mono_self")}</p>
               <ul className="mt-2 space-y-1.5">
                 {mono.bulletsTr.map((b, i) => (
                   <li key={b}>
-                    <label className="flex items-center gap-2 text-sm">
+                    <label className="flex items-center gap-2 text-body">
                       <input
                         type="checkbox"
                         checked={checks[i]}
@@ -350,7 +350,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                   </li>
                 ))}
               </ul>
-              <button type="button" onClick={selfFinish} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
+              <button type="button" onClick={selfFinish} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
                 {t("item.mono_finish")}
               </button>
             </>
@@ -361,7 +361,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "scoring" ? (
         <section className="card mt-3 p-5 text-center" aria-busy>
           <Mascot mood="think" size={72} className="mx-auto" />
-          <p className="mt-2 text-sm font-semibold">{t("item.mono_scoring")}</p>
+          <p className="mt-2 text-strong">{t("item.mono_scoring")}</p>
         </section>
       ) : null}
 
@@ -374,7 +374,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           {result ? (
             <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
           ) : (
-            <p className="text-sm">
+            <p className="text-body">
               {t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
             </p>
           )}
@@ -383,7 +383,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
               {usedTargets.map((t) => (
                 <span
                   key={t.de}
-                  className="chip flex items-center gap-1 px-2.5 py-1 text-xs"
+                  className="chip flex items-center gap-1 px-2.5 py-1 text-caption"
                   style={t.used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
                   lang={lang}
                 >
@@ -396,12 +396,12 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <button
             type="button"
             onClick={() => setShowSample((v) => !v)}
-            className="muted mt-3 text-xs font-semibold underline-offset-2 hover:underline"
+            className="muted mt-3 text-caption underline-offset-2 hover:underline"
           >
             {showSample ? t("item.mono_hide_sample") : t("item.mono_sample")}
           </button>
           {showSample ? (
-            <p className="mt-2 rounded-panel px-3 py-2 text-sm leading-relaxed surface-2" lang={lang}>
+            <p className="mt-2 rounded-panel px-3 py-2 text-body leading-relaxed surface-2" lang={lang}>
               {mono.sampleDe}
             </p>
           ) : null}

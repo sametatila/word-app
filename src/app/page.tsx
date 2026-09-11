@@ -87,7 +87,7 @@ export default async function Home() {
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <div className="flex items-center gap-2">
           <LogoMark size={36} />
-          <span className="text-lg font-bold">Lernomi</span>
+          <span className="text-h3">Lernomi</span>
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
@@ -106,11 +106,11 @@ export default async function Home() {
               onboarding'i, bilinçli), yani hesabı olan kullanıcının kendi
               hesabına dönecek hiçbir kapısı kalmıyordu.
             */
-            <Link href="/login" className="btn btn-ghost px-3 py-2.5 text-sm">
+            <Link href="/login" className="btn btn-ghost px-3 py-2.5 text-body">
               {t("auth.sign_in")}
             </Link>
           )}
-          <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
+          <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-body">
             {t(signedIn ? "land.cta_continue" : "common.start")}
           </Link>
         </div>
@@ -119,7 +119,7 @@ export default async function Home() {
       <main className="relative mx-auto w-full max-w-6xl px-5 pb-24">
         <section className="py-14 text-center sm:py-20">
           <Reveal>
-            <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
+            <span className="muted inline-block rounded-full border px-3 py-1 text-caption" style={{ borderColor: "var(--border)" }}>
               {t("land.badge")}
             </span>
           </Reveal>
@@ -142,7 +142,7 @@ export default async function Home() {
                 verir") aşağıdaki özellik kartlarında zaten anlatılıyordu;
                 başlığın hemen altında sistemin çalışma mantığını anlatmak,
                 daha ne olduğu söylenmeden nasıl çalıştığını anlatmak oluyor. */}
-            <p className="muted mx-auto mt-5 max-w-xl text-base sm:text-lg">
+            <p className="muted mx-auto mt-5 max-w-xl text-body sm:text-h3">
               {t("land.hero_sub")}
             </p>
           </Reveal>
@@ -154,10 +154,10 @@ export default async function Home() {
                 durumla ayrışması, dönen kullanıcının kendi içeri kapısını
                 tanıyamamasına yol açıyordu.
               */}
-              <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
+              <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-h3 sm:w-auto">
                 {t(signedIn ? "land.cta_continue" : "land.cta_free")}
               </Link>
-              <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
+              <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-h3 sm:w-auto">
                 {t("land.cta_skills")}
               </Link>
             </div>
@@ -175,12 +175,12 @@ export default async function Home() {
             <Reveal key={c.id} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
-                  <h3 className="text-lg font-bold">{courseName(c.id, lang)}</h3>
-                  <span className="text-xs font-semibold text-[color:var(--color-brand)]">
+                  <h3 className="text-h3">{courseName(c.id, lang)}</h3>
+                  <span className="text-caption text-[color:var(--color-brand)]">
                     {courseSub(c.id, lang)}
                   </span>
                 </div>
-                <p className="muted mt-2 text-sm leading-relaxed">{t(COURSE_BODY[c.id] ?? "land.course_de")}</p>
+                <p className="muted mt-2 text-body leading-relaxed">{t(COURSE_BODY[c.id] ?? "land.course_de")}</p>
               </div>
             </Reveal>
           ))}
@@ -192,7 +192,7 @@ export default async function Home() {
               <div className="card h-full p-6">
                 <div className="brand-gradient mb-4 h-1.5 w-10 rounded-full" />
                 <h3 className="font-bold">{t(f.title)}</h3>
-                <p className="muted mt-2 text-sm leading-relaxed">{t(f.body)}</p>
+                <p className="muted mt-2 text-body leading-relaxed">{t(f.body)}</p>
               </div>
             </Reveal>
           ))}
@@ -200,8 +200,8 @@ export default async function Home() {
 
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t("land.games_title")}</h2>
-            <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
+            <h2 className="text-center text-h1 sm:text-display">{t("land.games_title")}</h2>
+            <p className="muted mx-auto mt-3 max-w-lg text-center text-body">
               {t("land.games_sub")}
             </p>
           </Reveal>
@@ -214,7 +214,7 @@ export default async function Home() {
                   </span>
                   <div>
                     <h3 className="font-semibold">{t(g.name)}</h3>
-                    <p className="muted mt-1 text-sm">{t(g.desc)}</p>
+                    <p className="muted mt-1 text-body">{t(g.desc)}</p>
                   </div>
                 </div>
               </Reveal>
@@ -228,8 +228,8 @@ export default async function Home() {
             hesap açması gerekmemeli. */}
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t("land.install_title")}</h2>
-            <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
+            <h2 className="text-center text-h1 sm:text-display">{t("land.install_title")}</h2>
+            <p className="muted mx-auto mt-3 max-w-lg text-center text-body">
               {t("land.install_sub")}
             </p>
           </Reveal>
@@ -243,13 +243,13 @@ export default async function Home() {
         <section className="mt-20">
           <Reveal>
             <div className="card brand-gradient-deep p-8 text-center text-white sm:p-12">
-              <h2 className="text-2xl font-bold sm:text-3xl">{t("land.cta_title")}</h2>
-              <p className="mx-auto mt-3 max-w-md text-sm opacity-90">
+              <h2 className="text-h1 sm:text-display">{t("land.cta_title")}</h2>
+              <p className="mx-auto mt-3 max-w-md text-body opacity-90">
                 {t("land.cta_body")}
               </p>
               <Link
                 href={startHref}
-                className="btn mt-6 bg-white px-7 py-3.5 text-base text-[color:var(--color-brand-600)]"
+                className="btn mt-6 bg-white px-7 py-3.5 text-h3 text-[color:var(--color-brand-600)]"
               >
                 {t("land.cta_button")}
               </Link>
@@ -258,7 +258,7 @@ export default async function Home() {
         </section>
       </main>
 
-      <footer className="muted border-t px-5 py-8 text-center text-xs" style={{ borderColor: "var(--border)" }}>
+      <footer className="muted border-t px-5 py-8 text-center text-caption" style={{ borderColor: "var(--border)" }}>
         {t("land.footer_source")}
         <br />
         {t("land.footer_gsw")}

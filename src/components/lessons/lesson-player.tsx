@@ -1088,7 +1088,7 @@ export function LessonPlayer({
 
       {resumed && phase !== "summary" ? (
         <div
-          className="flex items-center gap-2 rounded-panel px-3 py-2 text-xs"
+          className="flex items-center gap-2 rounded-panel px-3 py-2 text-caption"
           style={{ background: "color-mix(in srgb, var(--color-brand) 10%, transparent)" }}
         >
           <span className="flex-1" style={{ color: "var(--color-brand)" }}>
@@ -1118,7 +1118,7 @@ export function LessonPlayer({
               setPhase("lecture");
               runStep(0);
             }}
-            className="btn btn-ghost shrink-0 px-2 py-0.5 text-xs"
+            className="btn btn-ghost shrink-0 px-2 py-0.5 text-caption"
           >
             {t("lesson.start_over")}
           </button>
@@ -1137,15 +1137,15 @@ export function LessonPlayer({
             <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
               <div className="flex items-center justify-between gap-2">
                 <div className="min-w-0">
-                  <p className="truncate text-sm font-bold">{lesson.title}</p>
-                  <p className="muted truncate text-xs">{lesson.titleTr}</p>
+                  <p className="truncate text-strong">{lesson.title}</p>
+                  <p className="muted truncate text-caption">{lesson.titleTr}</p>
                 </div>
                 {ttsAvailable || asrAvailable ? (
                   <button
                     type="button"
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
-                    className="btn btn-ghost flex shrink-0 items-center gap-1.5 px-2 py-1 text-xs"
+                    className="btn btn-ghost flex shrink-0 items-center gap-1.5 px-2 py-1 text-caption"
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
@@ -1168,7 +1168,7 @@ export function LessonPlayer({
             </div>
 
             {error ? (
-              <p className="shrink-0 px-4 pb-2 text-xs" style={{ color: "var(--color-flame)" }}>
+              <p className="shrink-0 px-4 pb-2 text-caption" style={{ color: "var(--color-flame)" }}>
                 {error}
               </p>
             ) : null}
@@ -1188,12 +1188,12 @@ export function LessonPlayer({
                       if (handsFree) void requestMicrophone();
                       runStep(stepIndex + 1);
                     }}
-                    className="btn btn-primary w-full py-3 text-sm"
+                    className="btn btn-primary w-full py-3 text-body"
                   >
                     {t("lessonp.ready_lets_start")}
                   </button>
                   {asrAvailable ? (
-                    <p className="muted text-center text-xs">{t("lessonp.or_answer_aloud")}</p>
+                    <p className="muted text-center text-caption">{t("lessonp.or_answer_aloud")}</p>
                   ) : null}
                 </div>
               ) : null}
@@ -1212,7 +1212,7 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([TRUE_WORD[lang]]);
                     }}
-                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-sm font-bold on-fill shadow-soft-sm"
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill shadow-soft-sm"
                     style={{ background: "var(--color-success)" }}
                   >
                     <CheckIcon size={18} />
@@ -1225,7 +1225,7 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([FALSE_WORD[lang]]);
                     }}
-                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-sm font-bold on-fill shadow-soft-sm"
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill shadow-soft-sm"
                     style={{ background: "var(--color-danger)" }}
                   >
                     <XIcon size={18} />
@@ -1268,7 +1268,7 @@ export function LessonPlayer({
                     </motion.span>
                   </motion.button>
                   <p
-                    className="text-center text-xs"
+                    className="text-center text-caption"
                     style={{
                       color:
                         hint && !listening ? "var(--color-flame)" : "var(--text-muted)",
@@ -1287,7 +1287,7 @@ export function LessonPlayer({
                       <button
                         type="button"
                         onClick={() => setTyping((v) => !v)}
-                        className="btn btn-ghost px-3 py-1 text-xs"
+                        className="btn btn-ghost px-3 py-1 text-caption"
                       >
                         {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
                       </button>
@@ -1295,7 +1295,7 @@ export function LessonPlayer({
                     <button
                       type="button"
                       onClick={skipStep}
-                      className="btn btn-ghost px-3 py-1 text-xs"
+                      className="btn btn-ghost px-3 py-1 text-caption"
                     >
                       {t("lessonp.skip_step")}
                     </button>
@@ -1304,7 +1304,7 @@ export function LessonPlayer({
               ) : null}
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (
-                <p className="muted mb-2 text-center text-xs">
+                <p className="muted mb-2 text-center text-caption">
                   {t("lessonp.no_asr")}
                 </p>
               ) : null}
@@ -1324,13 +1324,13 @@ export function LessonPlayer({
                     }}
                     rows={1}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    className="input max-h-28 flex-1 resize-none py-2 text-sm"
+                    className="input max-h-28 flex-1 resize-none py-2 text-body"
                   />
                   <button
                     type="button"
                     onClick={submitTyped}
                     disabled={!draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
+                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-50"
                   >
                     {t("common.send")}
                   </button>
@@ -1341,7 +1341,7 @@ export function LessonPlayer({
                 <button
                   type="button"
                   onClick={startRoleplay}
-                  className="btn btn-primary w-full py-3 text-sm"
+                  className="btn btn-primary w-full py-3 text-body"
                 >
                   {t("lessonp.to_roleplay")}
                 </button>
@@ -1359,11 +1359,11 @@ export function LessonPlayer({
             className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
             <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-              <p className="text-sm font-bold">
+              <p className="text-strong">
                 {character.name}
                 <span className="muted ml-1.5 font-semibold">· {lesson.roleplay.partner}</span>
               </p>
-              <p className="muted mt-0.5 text-xs leading-relaxed">{lesson.roleplay.scene}</p>
+              <p className="muted mt-0.5 text-caption leading-relaxed">{lesson.roleplay.scene}</p>
               {/* Sohbetin başlığında ve KALICI: akışta yukarı kayan bir
                   baloncuk, konuşmanın ortasına giren kullanıcı için yok
                   hükmünde olurdu (mobil `AiNotice` ile aynı gerekçe). */}
@@ -1382,7 +1382,7 @@ export function LessonPlayer({
                 </p>
               ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
-                <span className="muted text-xs tabular-nums">
+                <span className="muted text-caption tabular-nums">
                   {t("lessonw.turns", { n: userTurns, total: lesson.roleplay.minTurns })}
                 </span>
                 {ttsAvailable || asrAvailable ? (
@@ -1390,7 +1390,7 @@ export function LessonPlayer({
                     type="button"
                     onClick={() => void toggleHandsFree()}
                     aria-pressed={handsFree}
-                    className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-xs"
+                    className="btn btn-ghost flex items-center gap-1.5 px-2 py-1 text-caption"
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
@@ -1418,7 +1418,7 @@ export function LessonPlayer({
                   geleceği yerde durmalı. */}
               {error ? (
                 <div
-                  className="flex max-w-[85%] items-start gap-1.5 rounded-panel rounded-bl-chip px-3 py-2.5 text-sm"
+                  className="flex max-w-[85%] items-start gap-1.5 rounded-panel rounded-bl-chip px-3 py-2.5 text-body"
                   style={{
                     background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
                     color: "var(--color-flame)",
@@ -1437,7 +1437,7 @@ export function LessonPlayer({
                     key={s}
                     type="button"
                     onClick={() => void send(s)}
-                    className="chip px-3 py-1.5 text-xs"
+                    className="chip px-3 py-1.5 text-caption"
                   >
                     {s}
                   </button>
@@ -1475,7 +1475,7 @@ export function LessonPlayer({
                     </motion.span>
                   </motion.button>
                   <p
-                    className="text-center text-xs"
+                    className="text-center text-caption"
                     style={{
                       color:
                         hint && !listening && !busy
@@ -1488,13 +1488,13 @@ export function LessonPlayer({
                   <button
                     type="button"
                     onClick={() => setTyping((v) => !v)}
-                    className="btn btn-ghost px-3 py-1 text-xs"
+                    className="btn btn-ghost px-3 py-1 text-caption"
                   >
                     {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
                   </button>
                 </div>
               ) : (
-                <p className="muted mb-2 text-center text-xs">
+                <p className="muted mb-2 text-center text-caption">
                   {t("lessonp.no_asr")}
                 </p>
               )}
@@ -1512,13 +1512,13 @@ export function LessonPlayer({
                     }}
                     rows={1}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    className="input max-h-28 flex-1 resize-none py-2 text-sm"
+                    className="input max-h-28 flex-1 resize-none py-2 text-body"
                   />
                   <button
                     type="button"
                     onClick={() => void send(draft)}
                     disabled={busy || !draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
+                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-50"
                   >
                     {t("common.send")}
                   </button>
@@ -1530,7 +1530,7 @@ export function LessonPlayer({
               <button
                 type="button"
                 onClick={() => void finish()}
-                className="btn btn-ghost w-full py-2.5 text-sm"
+                className="btn btn-ghost w-full py-2.5 text-body"
               >
                 {t(roleplayDone ? "lessonp.end_conversation" : "lessonp.leave_for_now")}
               </button>
@@ -1556,10 +1556,10 @@ export function LessonPlayer({
             <div className="flex items-center gap-2">
               <Mascot mood={saved?.passed ? "cheer" : "think"} size={54} className="-my-2 shrink-0" />
               <div>
-                <h2 className="text-base font-bold">
+                <h2 className="text-h3">
                   {t(saved?.passed ? "lesson.lesson_complete" : "lessonp.conversation_unfinished")}
                 </h2>
-                <p className="muted text-xs">
+                <p className="muted text-caption">
                   {lesson.title} · {lesson.titleTr}
                 </p>
               </div>
@@ -1583,10 +1583,10 @@ export function LessonPlayer({
             {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta
                 toplu görünmeli — Learna bunu yapmıyor, biz yapıyoruz. */}
             <div className="mt-4">
-              <p className="muted text-xs font-semibold">{t("lessonp.words_of_lesson")}</p>
+              <p className="muted text-caption">{t("lessonp.words_of_lesson")}</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {lesson.vocab.map((v) => (
-                  <span key={v.de} className="chip px-2 py-1 text-xs">
+                  <span key={v.de} className="chip px-2 py-1 text-caption">
                     <b>{v.de}</b> · {v.tr}
                   </span>
                 ))}
@@ -1597,14 +1597,14 @@ export function LessonPlayer({
                 geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. */}
             {lesson.patterns.length && turns.length > 1 ? (
               <div className="mt-4">
-                <p className="muted text-xs font-semibold">{t("lessonp.patterns")}</p>
+                <p className="muted text-caption">{t("lessonp.patterns")}</p>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {lesson.patterns.map((pt) => {
                     const used = patternUsed(pt.de, turns);
                     return (
                       <span
                         key={pt.de}
-                        className="chip px-2 py-1 text-xs"
+                        className="chip px-2 py-1 text-caption"
                         style={used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
                         title={pt.tr}
                       >
@@ -1618,34 +1618,34 @@ export function LessonPlayer({
             ) : null}
 
             {extras.cando.length ? (
-              <p className="muted mt-4 text-xs leading-relaxed">
+              <p className="muted mt-4 text-caption leading-relaxed">
                 <span className="font-semibold">{t("lessonp.i_can")}</span> {extras.cando.join(" · ")}
               </p>
             ) : null}
 
             {corrections.length ? (
               <div className="mt-4">
-                <p className="muted text-xs font-semibold">{t("lessonp.corrections")}</p>
+                <p className="muted text-caption">{t("lessonp.corrections")}</p>
                 <ul className="mt-1.5 space-y-1">
                   {corrections.map((c, i) => (
-                    <li key={i} className="text-xs leading-relaxed">
+                    <li key={i} className="text-caption leading-relaxed">
                       {c}
                     </li>
                   ))}
                 </ul>
               </div>
             ) : turns.length > 1 ? (
-              <p className="mt-4 text-xs" style={{ color: "var(--color-mint)" }}>
+              <p className="mt-4 text-caption" style={{ color: "var(--color-mint)" }}>
                 {t("lessonp.no_corrections")}
               </p>
             ) : null}
 
             {!roleplayDone ? (
-              <p className="muted mt-4 text-xs leading-relaxed">
+              <p className="muted mt-4 text-caption leading-relaxed">
                 {t("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
               </p>
             ) : saved ? (
-              <p className="muted mt-4 text-xs leading-relaxed">
+              <p className="muted mt-4 text-caption leading-relaxed">
                 {t("lessonp.next_in_days", { n: saved.nextDays })}
               </p>
             ) : null}
@@ -1655,7 +1655,7 @@ export function LessonPlayer({
                 <button
                   type="button"
                   onClick={() => setPhase("roleplay")}
-                  className="btn btn-primary flex-1 py-3 text-sm"
+                  className="btn btn-primary flex-1 py-3 text-body"
                 >
                   {t("lessonp.back_to_conversation")}
                 </button>
@@ -1664,7 +1664,7 @@ export function LessonPlayer({
                 <button
                   type="button"
                   onClick={() => router.push(`/lessons/${lesson.id}/exam`)}
-                  className="btn btn-ghost flex-1 py-3 text-sm"
+                  className="btn btn-ghost flex-1 py-3 text-body"
                   title={t("lessonp.exam_hint")}
                 >
                   {t("lessonp.try_as_exam")}
@@ -1674,7 +1674,7 @@ export function LessonPlayer({
                 <button
                   type="button"
                   onClick={() => router.push(`/lessons/${extras.next!.id}`)}
-                  className="btn btn-primary flex-1 py-3 text-sm"
+                  className="btn btn-primary flex-1 py-3 text-body"
                   title={`${extras.next.title} · ${extras.next.titleTr}`}
                 >
                   {t("lesson.next_speaking", { title: extras.next.title })}
@@ -1683,7 +1683,7 @@ export function LessonPlayer({
               <button
                 type="button"
                 onClick={() => router.push("/immersion")}
-                className={`btn flex-1 py-3 text-sm ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
+                className={`btn flex-1 py-3 text-body ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
               >
                 {t("lesson.back_to_path")}
               </button>
@@ -1771,9 +1771,9 @@ function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectat
 function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok" | "warn" }) {
   return (
     <div className="rounded-panel px-3 py-2.5" style={{ background: "var(--surface-2)" }}>
-      <dt className="muted text-xs">{label}</dt>
+      <dt className="muted text-caption">{label}</dt>
       <dd
-        className="mt-0.5 text-sm font-bold tabular-nums"
+        className="mt-0.5 text-strong tabular-nums"
         style={{
           color:
             tone === "warn"
@@ -1876,7 +1876,7 @@ function LectureBubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-sm text-white"
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body text-white"
           style={{ background: "var(--color-brand-600)" }}
         >
           {item.text}
@@ -1888,7 +1888,7 @@ function LectureBubble({
   return (
     <motion.div {...bubbleEntrance(still)} className="flex items-end gap-1.5">
       <div
-        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-sm leading-relaxed"
+        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body leading-relaxed"
         style={{
           background: hint
             ? "color-mix(in srgb, var(--color-flame) 10%, transparent)"
@@ -1961,7 +1961,7 @@ function Bubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-sm text-white"
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body text-white"
           style={{ background: "var(--color-brand-600)" }}
         >
           {turn.content}
@@ -1974,7 +1974,7 @@ function Bubble({
   return (
     <motion.div {...bubbleEntrance(still)} className="flex flex-col items-start gap-1.5">
       <div
-        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-sm"
+        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-body"
         style={{ background: "var(--surface-2)" }}
       >
         {body.trim() ? body : pending ? <TypingDots /> : ""}
@@ -1997,7 +1997,7 @@ function Bubble({
       {corrections.map((c, i) => (
         <p
           key={i}
-          className="flex max-w-[85%] items-start gap-1.5 rounded-panel px-3 py-1.5 text-xs"
+          className="flex max-w-[85%] items-start gap-1.5 rounded-panel px-3 py-1.5 text-caption"
           style={{
             background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
             color: "var(--color-flame)",
@@ -2032,7 +2032,7 @@ function AsrNote({ visible }: { visible: boolean }) {
   if (!visible) return null;
   return (
     <div
-      className="flex items-start gap-2 rounded-panel px-3 py-2.5 text-xs"
+      className="flex items-start gap-2 rounded-panel px-3 py-2.5 text-caption"
       style={{
         background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
         color: "var(--color-flame)",

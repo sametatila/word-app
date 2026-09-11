@@ -69,14 +69,14 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       {bare ? null : (
         <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
           <h2 className="font-bold">{t("socialsettings.social_and_privacy")}</h2>
-          <p className="muted text-xs">{t("socialw.settings_sub")}</p>
+          <p className="muted text-caption">{t("socialw.settings_sub")}</p>
         </div>
       )}
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <label className="text-sm font-bold" htmlFor="username">{t("socialsettings.username")}</label>
+        <label className="text-strong" htmlFor="username">{t("socialsettings.username")}</label>
         <div className="mt-1.5 flex items-center gap-2">
-          <span className="muted text-sm">@</span>
+          <span className="muted text-body">@</span>
           <input
             id="username"
             value={username}
@@ -86,10 +86,10 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             autoCorrect="off"
             spellCheck={false}
             placeholder={t("socialsettings.username_2")}
-            className="min-w-0 flex-1 rounded-tile border px-3 py-2 text-sm"
+            className="min-w-0 flex-1 rounded-tile border px-3 py-2 text-body"
             style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
           />
-          <button className="btn btn-primary h-9 px-3 text-xs" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
+          <button className="btn btn-primary h-9 px-3 text-caption" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
             {t("common.save")}
           </button>
         </div>
@@ -103,26 +103,26 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       </div>
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <label className="text-sm font-bold" htmlFor="bio">{t("socialsettings.short_bio")}</label>
+        <label className="text-strong" htmlFor="bio">{t("socialsettings.short_bio")}</label>
         <textarea
           id="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value.slice(0, BIO_MAX))}
           rows={2}
           placeholder={t("socialsettings.why_one_sentence_is_enough", { lang: courseName(course, lang) })}
-          className="mt-1.5 w-full rounded-tile border px-3 py-2 text-sm"
+          className="mt-1.5 w-full rounded-tile border px-3 py-2 text-body"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <div className="mt-1 flex items-center justify-between">
           <span className="muted text-micro tabular-nums">{bio.length}/140</span>
-          <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy || !dirtyBio} onClick={() => void save({ bio: bio.trim() || null })}>
+          <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy || !dirtyBio} onClick={() => void save({ bio: bio.trim() || null })}>
             {t("common.save")}
           </button>
         </div>
       </div>
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <p className="text-sm font-bold">{t("socialsettings.visibility")}</p>
+        <p className="text-strong">{t("socialsettings.visibility")}</p>
         <div className="mt-2 flex flex-col gap-1.5">
           {VIS.map((v) => (
             <button
@@ -132,7 +132,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
               disabled={busy}
               onClick={() => void save({ visibility: v.key })}
             >
-              <span className="block text-xs font-bold">{t(v.label)}</span>
+              <span className="block text-caption">{t(v.label)}</span>
               <span className="muted block text-micro">{t(v.sub)}</span>
             </button>
           ))}
@@ -142,7 +142,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       {/* İZİNLER başlığı Android'de var: "Görünürlük"ün başlığı olduğu hâlde
           altındaki üç anahtarın başlığı yoktu ve üçü serbestçe asılı
           duruyordu. Başlık, neyin neye ait olduğunu bir bakışta söylüyor. */}
-      <p className="border-b px-4 pb-1.5 pt-3 text-sm font-bold" style={{ borderColor: "var(--border)" }}>
+      <p className="border-b px-4 pb-1.5 pt-3 text-strong" style={{ borderColor: "var(--border)" }}>
         {t("socialsettings.permissions")}
       </p>
 
@@ -159,13 +159,13 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       </SettingRow>
 
       {msg ? (
-        <p role="status" className="px-4 pb-3 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+        <p role="status" className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
           {msg.text}
         </p>
       ) : null}
 
       <div className="border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <p className="text-sm font-bold">{t("socialsettings.blocked_title")}</p>
+        <p className="text-strong">{t("socialsettings.blocked_title")}</p>
         {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince başlığın
             altı yerinden oynamıyor. Android aynı yerde iskelet satırı
             çiziyor (`SocialSettingsScreen`). */}
@@ -176,11 +176,11 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             {blocked.map((b) => (
               <li key={b.userId} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--border)" }}>
                 <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={28} />
-                <span className="min-w-0 flex-1 truncate text-sm">
-                  {b.name ?? t("social.unnamed_short")} {b.username ? <span className="muted text-xs">@{b.username}</span> : null}
+                <span className="min-w-0 flex-1 truncate text-body">
+                  {b.name ?? t("social.unnamed_short")} {b.username ? <span className="muted text-caption">@{b.username}</span> : null}
                 </span>
                 <button
-                  className="btn btn-ghost h-8 px-3 text-xs"
+                  className="btn btn-ghost h-8 px-3 text-caption"
                   disabled={busy}
                   onClick={() => {
                     setBusy(true);
@@ -197,7 +197,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             ))}
           </ol>
         ) : (
-          <p className="muted mt-1 text-xs">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
+          <p className="muted mt-1 text-caption">{t("socialsettings.you_haven_t_blocked_anyone")}</p>
         )}
       </div>
     </section>

@@ -178,7 +178,7 @@ export function WordList({
           >
             <span className="min-w-0 flex-1">
               <span className="block text-strong">{tx("appheader.progress")}</span>
-              {progressSummary ? <span className="muted block text-xs">{progressSummary}</span> : null}
+              {progressSummary ? <span className="muted block text-caption">{progressSummary}</span> : null}
             </span>
             <motion.span
               animate={{ rotate: showProgress ? 180 : 0 }}
@@ -214,7 +214,7 @@ export function WordList({
           /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
              İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
           autoCapitalize="none"
-          className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+          className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
         />
         {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince
             bir çizgiyle duruyorlardı ve iki grup tek bir süzgeç gibi
@@ -225,7 +225,7 @@ export function WordList({
               key={l.id || "all"}
               onClick={() => setFilter("level", l.id)}
               aria-pressed={query.level === l.id}
-              className={`chip chip-filter px-3 py-1.5 text-xs ${query.level === l.id ? "chip-active" : ""}`}
+              className={`chip chip-filter px-3 py-1.5 text-caption ${query.level === l.id ? "chip-active" : ""}`}
             >
               {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
@@ -237,7 +237,7 @@ export function WordList({
               key={s.id || "any"}
               onClick={() => setFilter("status", s.id)}
               aria-pressed={query.status === s.id}
-              className={`chip chip-filter px-3 py-1.5 text-xs ${query.status === s.id ? "chip-active" : ""}`}
+              className={`chip chip-filter px-3 py-1.5 text-caption ${query.status === s.id ? "chip-active" : ""}`}
             >
               {tx(s.labelKey)}
             </button>
@@ -247,7 +247,7 @@ export function WordList({
 
       {rows.length === 0 ? (
         <div className="card p-8 text-center">
-          <p className="muted text-sm">{tx("words.no_words_found")}</p>
+          <p className="muted text-body">{tx("words.no_words_found")}</p>
         </div>
       ) : (
         <ul className="space-y-2">
@@ -277,7 +277,7 @@ export function WordList({
                       ) : null}
                       {r.de}
                     </p>
-                    <p className="muted truncate text-sm">
+                    <p className="muted truncate text-body">
                       {r.tr}
                       {/* İngilizce aynı satırda, ayraçla: liste satırı zaten
                           iki satır (Almanca + karşılık); üçüncü satır listeyi
@@ -290,17 +290,17 @@ export function WordList({
                       ) : null}
                     </p>
                   </div>
-                  <span className="shrink-0 text-xs font-semibold" style={{ color: st.tone }}>
+                  <span className="shrink-0 text-caption" style={{ color: st.tone }}>
                     {tx(st.labelKey)}
                   </span>
-                  <span className="muted shrink-0 text-xs">{r.niveau}</span>
+                  <span className="muted shrink-0 text-caption">{r.niveau}</span>
                 </button>
 
                 {isOpen ? (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
-                    className="border-t px-4 py-3 text-sm"
+                    className="border-t px-4 py-3 text-body"
                     style={{ borderColor: "var(--border)" }}
                   >
                     <div className="flex items-center gap-2">
@@ -316,11 +316,11 @@ export function WordList({
                         <SentenceTranslation
                           tr={exampleTr}
                           en={exampleEn}
-                          className="muted mt-0.5 text-sm"
+                          className="muted mt-0.5 text-body"
                         />
                       </>
                     ) : null}
-                    <p className="muted mt-2 text-xs">
+                    <p className="muted mt-2 text-caption">
                       {dueLabel(r.dueAt, tx) ?? tx("words.not_studied")}
                       {r.lapses ? ` · ${tx("words.n_lapses", { n: r.lapses })}` : ""}
                     </p>
@@ -337,15 +337,15 @@ export function WordList({
           <button
             onClick={() => goPage(page - 1)}
             disabled={page === 0}
-            className="btn btn-ghost px-4 py-2 text-sm disabled:opacity-40"
+            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-40"
           >
             {tx("wordsw.prev")}
           </button>
-          <span className="muted text-xs">{tx("wordsw.page", { n: page + 1 })}</span>
+          <span className="muted text-caption">{tx("wordsw.page", { n: page + 1 })}</span>
           <button
             onClick={() => goPage(page + 1)}
             disabled={!hasMore}
-            className="btn btn-ghost px-4 py-2 text-sm disabled:opacity-40"
+            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-40"
           >
             {tx("wordsw.next")}
           </button>

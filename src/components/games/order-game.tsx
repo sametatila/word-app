@@ -158,10 +158,10 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
         </span>
       }
       prompt={
-        <span className="brand-text text-xl font-bold sm:text-2xl">
+        <span className="brand-text text-h2 sm:text-h1">
           {word.tr}
           {word.en ? (
-            <span className="block text-sm font-normal opacity-60" lang="en">
+            <span className="block text-body opacity-60" lang="en">
               {word.en}
             </span>
           ) : null}
@@ -192,7 +192,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
                 aria-label={token ? tx("rounds.undo_word", { word: token.text }) : tx("rounds.empty_word_slot")}
                 className={
                   token
-                    ? "option px-2.5 py-1.5 text-base font-semibold"
+                    ? "option px-2.5 py-1.5 text-strong"
                     : "rounded-chip px-2.5 py-1.5"
                 }
                 style={
@@ -206,7 +206,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             );
           })}
           {placed.length === answer.length ? (
-            <span className="px-0.5 text-base font-semibold">{tail}</span>
+            <span className="px-0.5 text-strong">{tail}</span>
           ) : null}
         </div>
 
@@ -223,7 +223,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
                 whileTap={{ scale: 0.94 }}
                 animate={{ opacity: used ? 0.25 : 1 }}
                 transition={{ duration: 0.15 }}
-                className="option px-3 py-2 text-base font-semibold disabled:cursor-default"
+                className="option px-3 py-2 text-strong disabled:cursor-default"
               >
                 {token.text}
               </motion.button>
@@ -236,7 +236,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             type="button"
             onClick={() => setPlaced((prev) => prev.slice(0, -1))}
             disabled={status !== "playing" || placed.length === 0}
-            className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+            className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
           >
             {tx("common.delete")}
           </button>
@@ -245,7 +245,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
               type="button"
               onClick={useHint}
               disabled={status !== "playing" || placed.length >= answer.length}
-              className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+              className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
             >
               {tx("rounds.hint")}
             </button>

@@ -171,7 +171,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           <Link
             key={l}
             href={`/mock-exams?level=${l}`}
-            className="rounded-full px-3 py-1.5 text-sm font-semibold"
+            className="rounded-full px-3 py-1.5 text-strong"
             style={{
               background: l === level ? "var(--brand-soft)" : "var(--surface-2)",
               color: l === level ? "var(--color-brand)" : undefined,
@@ -204,10 +204,10 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockstats.running")}</p>
+          <p className="muted text-caption tracking-wide">{t("mockstats.running")}</p>
           {running.filter((r) => mine(r.paperId)).map((r) => (
             <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-panel p-3" style={{ background: "var(--surface-2)" }}>
-              <span className="text-sm font-semibold">
+              <span className="text-strong">
                 {r.paperId.toUpperCase().replace(/^(DE|EN)-/, "")} · {mockSkillLabel(course, r.skill as MockSkill)}
                 <span className="muted ml-2 font-normal">{t("mockstats.at_task", { n: r.taskIx + 1 })}</span>
               </span>
@@ -219,19 +219,19 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {bySkill.size ? (
         <section className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockstats.by_skill")}</p>
+          <p className="muted text-caption tracking-wide">{t("mockstats.by_skill")}</p>
           {[...bySkill.entries()].map(([skill, v]) => {
             const avg = Math.round(v.sum / v.n);
             return (
               <div key={skill} className="mt-3">
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-body">
                   <span lang={course}>{mockSkillLabel(course, skill as MockSkill)}</span>
                   <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: avg })}</span>
                 </div>
                 <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
                   <div className="h-1 rounded-full" style={{ width: `${avg}%`, background: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }} />
                 </div>
-                <p className="muted mt-1 text-xs">{t("mockstats.attempts_best", { n: v.n, best: v.best })}</p>
+                <p className="muted mt-1 text-caption">{t("mockstats.attempts_best", { n: v.n, best: v.best })}</p>
               </div>
             );
           })}
@@ -244,21 +244,21 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           return (
           <section key={p.id} className="card p-4">
             <div className="flex items-center justify-between gap-3">
-              <p className="muted text-xs font-bold tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
+              <p className="muted text-caption tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
               {locked ? (
                 <span className="chip flex items-center gap-1 px-2 py-0.5 text-micro font-bold">
                   <LockIcon className="size-3.5" /> {t("mockpack.locked")}
                 </span>
               ) : null}
             </div>
-            <h2 className="mt-0.5 text-lg font-bold" lang={course}>{p.theme}</h2>
-            <p className="muted text-sm">{mockText("themeTr", p.themeTr)} · {t("mockexams.minutes", { n: p.minutes })}</p>
+            <h2 className="mt-0.5 text-h3" lang={course}>{p.theme}</h2>
+            <p className="muted text-body">{mockText("themeTr", p.themeTr)} · {t("mockexams.minutes", { n: p.minutes })}</p>
             <div className={`mt-3 space-y-2${locked ? " opacity-60" : ""}`}>
               {p.parts.map((part) => {
                 const pts = partPoints(part);
                 const inner = (
                   <>
-                    <span className="text-sm">
+                    <span className="text-body">
                       <span className="font-semibold" lang={course}>{mockSkillLabel(course, part.skill)}</span>
                       <span className="muted ml-2">
                         {pts
@@ -308,7 +308,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
               })}
             </div>
             {locked && !access?.premium ? (
-              <Link href="/premium" prefetch={false} className="btn btn-primary mt-3 w-full px-4 py-2.5 text-sm">
+              <Link href="/premium" prefetch={false} className="btn btn-primary mt-3 w-full px-4 py-2.5 text-body">
                 {t("gate.see_plans")}
               </Link>
             ) : null}
@@ -316,7 +316,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           );
         })
       ) : (
-        <p className="card p-4 text-sm">{t("mockexams.none_for_level", { level })}</p>
+        <p className="card p-4 text-body">{t("mockexams.none_for_level", { level })}</p>
       )}
     </div>
   );

@@ -86,13 +86,13 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
       {/* Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
           değerlendirdiği yazmaya başlamadan önce söyleniyor (mobilde de öyle). */}
       <AiNotice variant="output" className="mt-3" />
 
       <div className="mt-3 px-1">
-        <div className="mb-1.5 flex justify-between text-xs font-semibold">
+        <div className="mb-1.5 flex justify-between text-caption">
           <span className="muted">{t("writew.task_n", { n: Math.min(step + 1, total), total })}</span>
           <span className="text-[color:var(--color-brand)]">
             {t("common.n_correct", { correct: correctCount, total })}
@@ -213,12 +213,12 @@ function BuildTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
+      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">
         {t("writp.build_sentence")}
       </p>
       <p className="mt-1.5 font-semibold">{task.tr}</p>
       {fails > 0 && task.hint && phase === "editing" ? (
-        <p className="muted mt-1.5 text-xs">{t("rounds.hint")}: {task.hint}</p>
+        <p className="muted mt-1.5 text-caption">{t("rounds.hint")}: {task.hint}</p>
       ) : null}
 
       <div
@@ -227,7 +227,7 @@ function BuildTask({
         } ${phase === "correct" ? "option-correct" : ""} ${phase === "revealed" ? "option-wrong" : ""}`}
       >
         {chosen.length === 0 ? (
-          <span className="muted text-sm">{t("exam.tap_chunks")}</span>
+          <span className="muted text-body">{t("exam.tap_chunks")}</span>
         ) : (
           chosen.map((ti, pos) => (
             <button
@@ -235,7 +235,7 @@ function BuildTask({
               type="button"
               disabled={locked}
               onClick={() => setChosen(chosen.filter((_, p) => p !== pos))}
-              className="chip px-2.5 py-1 text-sm"
+              className="chip px-2.5 py-1 text-body"
               style={{ color: "var(--text)" }}
             >
               {tokens[ti]}
@@ -252,7 +252,7 @@ function BuildTask({
                 key={i}
                 type="button"
                 onClick={() => setChosen([...chosen, i])}
-                className="option px-3 py-1.5 text-sm font-semibold"
+                className="option px-3 py-1.5 text-strong"
               >
                 {t}
               </button>
@@ -262,13 +262,13 @@ function BuildTask({
       ) : null}
 
       {phase === "correct" ? (
-        <p className="mt-3 flex items-start gap-2 text-sm font-semibold text-[color:var(--color-mint)]">
+        <p className="mt-3 flex items-start gap-2 text-strong text-[color:var(--color-mint)]">
           <CheckIcon size={17} className="mt-0.5 shrink-0" />
           <span lang={lang}>{task.answer}</span>
         </p>
       ) : null}
       {phase === "revealed" ? (
-        <p className="mt-3 text-sm">
+        <p className="mt-3 text-body">
           <span className="muted">{t("rounds.answer_is")}</span>{" "}
           <strong lang={lang}>{task.answer}</strong>
         </p>
@@ -297,7 +297,7 @@ function BuildTask({
               <button
                 type="button"
                 onClick={() => setChosen([])}
-                className="btn btn-ghost px-4 py-2.5 text-sm"
+                className="btn btn-ghost px-4 py-2.5 text-body"
               >
                 {t("find.clear")}
               </button>
@@ -436,15 +436,15 @@ function FreeTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
+      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">
         {task.title ?? t("writp.free_writing")}
       </p>
-      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
+      <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
 
       {task.stimulus ? (
         <blockquote
           lang={lang}
-          className="mt-3 rounded-panel border-l-4 px-3.5 py-2.5 text-sm leading-relaxed surface-2"
+          className="mt-3 rounded-panel border-l-4 px-3.5 py-2.5 text-body leading-relaxed surface-2"
           style={{ borderColor: "var(--color-brand)" }}
         >
           {task.stimulus.split("\n\n").map((p, i) => (
@@ -457,7 +457,7 @@ function FreeTask({
 
       {task.phrases.length ? (
         <div className="mt-3">
-          <p className="muted mb-1.5 text-xs font-semibold">
+          <p className="muted mb-1.5 text-caption">
             {t("writp.useful_phrases")}
           </p>
           <div className="flex flex-wrap gap-1.5">
@@ -467,7 +467,7 @@ function FreeTask({
                 type="button"
                 onClick={() => insert(p.de + " ")}
                 title={glossTitle(p)}
-                className="chip px-2.5 py-1 text-xs"
+                className="chip px-2.5 py-1 text-caption"
               >
                 {p.de}
               </button>
@@ -494,14 +494,14 @@ function FreeTask({
               key={ch}
               type="button"
               onClick={() => insert(ch)}
-              className="chip h-7 w-7 px-0 text-sm"
+              className="chip h-7 w-7 px-0 text-body"
             >
               {ch}
             </button>
           ))}
         </div>
         <span
-          className="text-xs font-bold"
+          className="text-caption"
           style={{ color: enough ? "var(--color-mint)" : "var(--text-muted)" }}
         >
           {t("skillquiz.n_words", { n: words, min: task.minWords })}
@@ -516,7 +516,7 @@ function FreeTask({
             role="checkbox"
             aria-checked={checks[i]}
             onClick={() => setChecks(checks.map((c, ci) => (ci === i ? !c : c)))}
-            className="flex w-full items-start gap-2.5 text-left text-sm"
+            className="flex w-full items-start gap-2.5 text-left text-body"
           >
             <span
               className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border on-fill"
@@ -536,12 +536,12 @@ function FreeTask({
         <button
           type="button"
           onClick={() => setShowSample((v) => !v)}
-          className="muted text-xs font-semibold underline-offset-2 hover:underline"
+          className="muted text-caption underline-offset-2 hover:underline"
         >
           {t(showSample ? "writp.hide_sample" : "mockexam.show_model")}
         </button>
         {showSample ? (
-          <div lang={lang} className="mt-2 rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={lang} className="mt-2 rounded-panel px-3.5 py-3 text-body leading-relaxed surface-2">
             {task.sample.split("\n\n").map((p, i) => (
               <p key={i} className={`whitespace-pre-line ${i > 0 ? "mt-2" : ""}`}>
                 {p}
@@ -555,10 +555,10 @@ function FreeTask({
         <div className="mt-4 flex flex-col gap-3">
           <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample} />
           {queued ? (
-            <p className="muted text-xs">{t("writp.queued")}</p>
+            <p className="muted text-caption">{t("writp.queued")}</p>
           ) : null}
           {aiScore !== null && aiScore < RUBRIC_PASS_PCT ? (
-            <p className="text-xs" style={{ color: "var(--color-flame)" }}>
+            <p className="text-caption" style={{ color: "var(--color-flame)" }}>
               {t(aiScore >= 40 ? "writp.improve" : "writp.retry_suggest")}
             </p>
           ) : null}
@@ -573,7 +573,7 @@ function FreeTask({
                 setFailure(null);
                 setQueued(false);
               }}
-              className="btn btn-ghost px-4 py-2.5 text-sm"
+              className="btn btn-ghost px-4 py-2.5 text-body"
             >
               {t("writp.try_once_more")}
             </button>
@@ -585,12 +585,12 @@ function FreeTask({
             <button type="button" disabled={busy || words < 5} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
               {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
             </button>
-            <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-sm">
+            <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-body">
               {t("writp.skip_task")}
             </button>
           </div>
           {!enough ? (
-            <p className="muted mt-2 text-xs">
+            <p className="muted mt-2 text-caption">
               {t("writp.min_words_note", { min: task.minWords, n: words })}
             </p>
           ) : null}
@@ -653,20 +653,20 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("games.free_sentence")}</p>
-      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt ?? t("rounds.build_sentence")}</p>
+      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("games.free_sentence")}</p>
+      <p className="mt-1.5 text-strong leading-relaxed">{task.prompt ?? t("rounds.build_sentence")}</p>
       <div className="mt-2 flex flex-wrap gap-2">
         {task.words.map((w) => (
-          <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-sm" title={w.tr}>
+          <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-body" title={w.tr}>
             <strong lang={lang}>{w.de}</strong>
-            <span className="muted ml-1.5 text-xs">{w.tr}</span>
+            <span className="muted ml-1.5 text-caption">{w.tr}</span>
           </button>
         ))}
       </div>
       {result ? (
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} />
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-sm">
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-body">
             {t("common.continue")}
           </button>
         </div>
@@ -680,16 +680,16 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             lang={lang}
             spellCheck={false}
             placeholder={t("rounds.write_a_sentence_ph")}
-            className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-base outline-none"
+            className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-body outline-none"
           />
           <div className="mt-2 flex flex-wrap gap-2">
             {(["ä", "ö", "ü", "ß"] as const).map((ch) => (
-              <button key={ch} type="button" onClick={() => insert(ch)} className="btn btn-ghost min-h-9 min-w-9 px-3 text-base">
+              <button key={ch} type="button" onClick={() => insert(ch)} className="btn btn-ghost min-h-9 min-w-9 px-3 text-body">
                 {ch}
               </button>
             ))}
           </div>
-          <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
+          <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
             {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
           </button>
         </>
@@ -728,13 +728,13 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
   const ok = okCount >= Math.ceil(task.fields.length * 0.7);
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Formu doldur</p>
-      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
-      <p className="muted mt-1 rounded-panel px-3 py-2 text-xs leading-relaxed surface-2">{task.facts}</p>
+      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">Formu doldur</p>
+      <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
+      <p className="muted mt-1 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.facts}</p>
       <div className="mt-3 space-y-2">
         {task.fields.map((f, i) => (
           <label key={f.label} className="block">
-            <span className="muted text-xs font-semibold" lang={lang}>{f.label}</span>
+            <span className="muted text-caption" lang={lang}>{f.label}</span>
             <div className="mt-0.5 flex items-center gap-2">
               <input
                 type="text"
@@ -743,14 +743,14 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
                 disabled={checked}
                 lang={lang}
                 spellCheck={false}
-                className="input flex-1 py-2 text-sm"
+                className="input flex-1 py-2 text-body"
                 style={checked ? { borderColor: results[i] ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
               />
               {checked ? (
                 results[i] ? (
                   <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
                 ) : (
-                  <span className="shrink-0 text-xs" lang={lang}>
+                  <span className="shrink-0 text-caption" lang={lang}>
                     <span className="muted">{t("rounds.answer_is")}</span>
                     <strong>{f.answer}</strong>
                   </span>
@@ -762,15 +762,15 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
       </div>
       {checked ? (
         <div className="mt-3 flex items-center justify-between gap-3">
-          <p className="text-sm font-semibold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p className="text-strong" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {t("writew.fields_ok", { n: okCount, total: task.fields.length })}
           </p>
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-11 px-4 text-sm">
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-11 px-4 text-body">
             {t("common.continue")}
           </button>
         </div>
       ) : (
-        <button type="button" onClick={() => setChecked(true)} disabled={values.every((v) => !v.trim())} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
+        <button type="button" onClick={() => setChecked(true)} disabled={values.every((v) => !v.trim())} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
           {t("skillquiz.check")}
         </button>
       )}
@@ -793,26 +793,26 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
-      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
-      <p className="mt-2 rounded-panel px-3 py-2 text-base font-semibold surface-2" lang={lang}>
+      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
+      <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
+      <p className="mt-2 rounded-panel px-3 py-2 text-strong surface-2" lang={lang}>
         {task.source}
       </p>
       {match ? (
         <div className="mt-3 space-y-2">
-          <p className="text-sm font-bold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p className="text-strong" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {t(match.verdict === "exact" ? "writp.exact" : match.verdict === "spelling" ? "writp.spelling_only" : match.verdict === "order" ? "writp.order_only" : "lessonp.not_quite")}
           </p>
           {match.verdict !== "exact" ? (
-            <div className="rounded-panel px-3 py-2 text-sm surface-2">
+            <div className="rounded-panel px-3 py-2 text-body surface-2">
               <p className="muted text-micro">{t("mockexam.your_answer")}</p>
               <TypedTokens tokens={match.typed} />
               <p className="muted mt-1.5 text-micro">{t("mockexam.correct_answer")}</p>
               <TokenDiff tokens={match.target} />
             </div>
           ) : null}
-          {task.why ? <p className="muted text-xs leading-relaxed">{task.why}</p> : null}
-          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 w-full px-4 text-sm">
+          {task.why ? <p className="muted text-caption leading-relaxed">{task.why}</p> : null}
+          <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 w-full px-4 text-body">
             {t("common.continue")}
           </button>
         </div>
@@ -831,13 +831,13 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             lang={lang}
             spellCheck={false}
             placeholder={t("writp.rewrite_ph")}
-            className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-base outline-none"
+            className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-body outline-none"
           />
           <button
             type="button"
             onClick={() => text.trim() && setMatch(matchSentence(text, task.answer, task.alternatives ?? []))}
             disabled={!text.trim()}
-            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
+            className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
           >
             {t("skillquiz.check")}
           </button>

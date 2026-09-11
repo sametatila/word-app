@@ -36,8 +36,8 @@ export function Requests({
           {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
               olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
           <div className="mb-2 flex items-baseline justify-between px-1">
-            <h3 className="muted text-xs font-bold uppercase tracking-wide">{t("requests.incoming")}</h3>
-            <span className="muted text-xs font-bold tabular-nums">{incoming.length}</span>
+            <h3 className="muted text-micro uppercase tracking-wide">{t("requests.incoming")}</h3>
+            <span className="muted text-caption tabular-nums">{incoming.length}</span>
           </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {incoming.map((r) => (
@@ -51,8 +51,8 @@ export function Requests({
           {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
               olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
           <div className="mb-2 flex items-baseline justify-between px-1">
-            <h3 className="muted text-xs font-bold uppercase tracking-wide">{t("requests.sent")}</h3>
-            <span className="muted text-xs font-bold tabular-nums">{outgoing.length}</span>
+            <h3 className="muted text-micro uppercase tracking-wide">{t("requests.sent")}</h3>
+            <span className="muted text-caption tabular-nums">{outgoing.length}</span>
           </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {outgoing.map((r) => (
@@ -99,9 +99,9 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
         <Avatar userId={r.user.userId} name={r.user.name} avatar={r.user.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-bold">
+        <p className="truncate text-strong">
           {name}
-          {r.user.username ? <span className="muted ml-1.5 text-xs font-normal">@{r.user.username}</span> : null}
+          {r.user.username ? <span className="muted ml-1.5 text-caption">@{r.user.username}</span> : null}
         </p>
         <p className="muted text-micro">
           {r.user.level} · {timeAgo(r.createdAt, lang)}
@@ -110,10 +110,10 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
       </div>
       {incoming ? (
         <div className="flex shrink-0 gap-1.5">
-          <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "accept"))}>
+          <button className="btn btn-primary h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "accept"))}>
             {t("requests.accept")}
           </button>
-          <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "decline"))}>
+          <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "decline"))}>
             {t("requests.decline")}
           </button>
         </div>
@@ -121,7 +121,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
         /* Etiket "Vazgeç" idi ve gönderilmiş istekler listesinde neyden
            vazgeçildiğini söylemiyordu. Android aynı düğmeye "İsteği iptal et"
            diyor; anahtar taban sözlükte hazırdı. */
-        <button className="btn btn-ghost h-8 shrink-0 whitespace-nowrap px-3 text-xs" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
+        <button className="btn btn-ghost h-8 shrink-0 whitespace-nowrap px-3 text-caption" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
           {t("requests.cancel_request")}
         </button>
       )}

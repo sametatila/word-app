@@ -98,12 +98,12 @@ export function PushOptIn({ streak }: { streak: number }) {
     return (
       <Card tone="mint">
         <span
-          className="flex items-center gap-2 text-sm font-bold"
+          className="flex items-center gap-2 text-strong"
           style={{ color: "var(--color-mint)" }}
         >
           <CheckIcon size={16} /> {t("pushw.reminders_on")}
         </span>
-        <p className="muted mt-1 text-xs">
+        <p className="muted mt-1 text-caption">
           {t("pushw.optin_done")}
         </p>
       </Card>
@@ -113,8 +113,8 @@ export function PushOptIn({ streak }: { streak: number }) {
   if (state === "ios") {
     return (
       <Card tone="brand" onClose={dismiss}>
-        <p className="text-sm font-bold">{t("pushw.want_reminders")}</p>
-        <p className="muted mt-1 text-xs">
+        <p className="text-strong">{t("pushw.want_reminders")}</p>
+        <p className="muted mt-1 text-caption">
           {t("pushw.ios_note")}
         </p>
       </Card>
@@ -135,16 +135,16 @@ export function PushOptIn({ streak }: { streak: number }) {
       onClose={state === "ask" ? close : undefined}
       icon={<Mascot mood="sleep" size={34} />}
     >
-      <p className="text-sm font-bold">
+      <p className="text-strong">
         {streak > 0 ? t("pushw.keep_streak", { n: streak }) : t("pushw.remind_tomorrow")}
       </p>
-      <p className="muted mt-1 text-xs">
+      <p className="muted mt-1 text-caption">
         {t(streak > 0 ? "pushw.remind_body" : "pushw.remind_note")}
       </p>
       <button
         onClick={() => void enable()}
         disabled={state === "busy"}
-        className="btn btn-primary mt-3 w-full px-4 py-2.5 text-sm disabled:opacity-60"
+        className="btn btn-primary mt-3 w-full px-4 py-2.5 text-body disabled:opacity-60"
       >
         {t(state === "busy" ? "authw.wait" : "pushw.enable")}
       </button>

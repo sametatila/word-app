@@ -127,7 +127,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
       {/* Liste ve altındaki abonelik notu mobil ekranın sırasıyla aynı:
           silinecekler madde madde, mağaza uyarısı ayrı. "Geri alınamaz"
           cümlesi listeden çıktı — başlığın altındaki cümle zaten söylüyor. */}
-      <ul className="muted mb-3 list-disc space-y-1 pl-5 text-sm">
+      <ul className="muted mb-3 list-disc space-y-1 pl-5 text-body">
         <li>{t("deleteaccount.your_word_progress_streaks_xp")}</li>
         <li>{t("deleteaccount.your_writing_speaking_records")}</li>
         <li>{t("deleteaccount.your_friendships_and_your_inbox")}</li>
@@ -138,7 +138,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
           hesabını webden silebiliyor ve ona yanlış mağazayı söylemek onu hiç
           var olmayan bir ekrana yolluyor. Mobil tarafta mağaza belli, orada
           adıyla söyleniyor (`DeleteAccountScreen`, `Platform.OS`). */}
-      <p className="muted mb-4 text-xs">{t("deleteaccount.subscription_cancel_store")}</p>
+      <p className="muted mb-4 text-caption">{t("deleteaccount.subscription_cancel_store")}</p>
 
       <ConfirmDialog
         open={confirm}
@@ -163,12 +163,12 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
             className={authInputClass}
           />
         ) : hasPassword === null ? (
-          <p className="muted text-sm">{t("del.loading_account")}</p>
+          <p className="muted text-body">{t("del.loading_account")}</p>
         ) : (
-          <p className="muted text-sm">{t("deleteaccount.you_signed_in_with_google_so_no")}</p>
+          <p className="muted text-body">{t("deleteaccount.you_signed_in_with_google_so_no")}</p>
         )}
 
-        <label className="flex items-start gap-2 text-sm">
+        <label className="flex items-start gap-2 text-body">
           <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-1" />
           <span>{t("deleteaccount.i_understand_my_data_will_be")}</span>
         </label>

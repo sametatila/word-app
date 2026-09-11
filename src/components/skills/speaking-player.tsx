@@ -137,16 +137,16 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
       <GlossPanel gloss={exercise.gloss} />
 
       <section className="card mt-3 p-5">
-        <p className="muted text-xs font-semibold">
+        <p className="muted text-caption">
           {idx + 1}/{tasks.length}
         </p>
 
         <div className="mt-2 flex items-start gap-2">
-          <p className="flex-1 text-lg font-bold leading-snug" lang={lang}>
+          <p className="flex-1 text-h3 leading-snug" lang={lang}>
             {task.de}
           </p>
           <button
@@ -158,7 +158,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             <SpeakerIcon size={18} />
           </button>
         </div>
-        <p className="muted text-sm">{task.tr}</p>
+        <p className="muted text-body">{task.tr}</p>
 
         {task.hint ? (
           <p className="mt-3 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.hint}</p>
@@ -174,10 +174,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             {t("common.finish")}
           </button>
         ) : null}
-        {phase === "scoring" ? <p className="muted mt-4 text-sm">{t("exam.evaluating")}</p> : null}
+        {phase === "scoring" ? <p className="muted mt-4 text-body">{t("exam.evaluating")}</p> : null}
         {reason ? (
           <>
-            <p className="mt-3 text-sm" style={{ color: "var(--color-rose)" }}>
+            <p className="mt-3 text-body" style={{ color: "var(--color-rose)" }}>
               {reason}
             </p>
             <button type="button" className="btn btn-ghost mt-2 w-full" onClick={skip}>
@@ -198,7 +198,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
               <span className="font-bold">{t("common.pct", { n: score.overall })}</span>
-              <span className="muted text-xs">{t("item.heard", { text: score.transcript || "—" })}</span>
+              <span className="muted text-caption">{t("item.heard", { text: score.transcript || "—" })}</span>
             </div>
 
             {/* Puan düşükse önce KARIŞMA uyarısı: sayı değil, düzeltme öğretir. */}

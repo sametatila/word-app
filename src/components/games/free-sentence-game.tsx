@@ -152,7 +152,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
           </span>
         ) : null
       }
-      prompt={<span className="text-xl font-bold sm:text-2xl">{tx("rounds.build_sentence")}</span>}
+      prompt={<span className="text-h2 sm:text-h1">{tx("rounds.build_sentence")}</span>}
       hint={
         <div className="flex flex-wrap items-center justify-center gap-2">
           {targets.map((t) => (
@@ -161,11 +161,11 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               type="button"
               onClick={() => insertChar((value && !value.endsWith(" ") ? " " : "") + t.de + " ")}
               disabled={status !== "idle"}
-              className="chip px-3 py-1.5 text-sm"
+              className="chip px-3 py-1.5 text-body"
               title={t.tr}
             >
               <strong lang={course}>{withArtikel(t)}</strong>
-              <span className="muted ml-1.5 text-xs">{t.tr}</span>
+              <span className="muted ml-1.5 text-caption">{t.tr}</span>
             </button>
           ))}
         </div>
@@ -201,12 +201,12 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
           />
           <div className="flex flex-wrap justify-center gap-2">
             {SPECIAL_CHARS.map((char) => (
-              <button key={char} type="button" onClick={() => insertChar(char)} disabled={status !== "idle"} className="btn btn-ghost min-h-9 min-w-9 px-3 text-base">
+              <button key={char} type="button" onClick={() => insertChar(char)} disabled={status !== "idle"} className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3">
                 {char}
               </button>
             ))}
           </div>
-          <button type="submit" disabled={status !== "idle" || value.trim().split(/\s+/).length < 2} className="btn btn-primary min-h-12 px-4 text-sm">
+          <button type="submit" disabled={status !== "idle" || value.trim().split(/\s+/).length < 2} className="btn btn-primary min-h-12 px-4 text-body">
             {tx(status === "checking" ? "mockexam.evaluating" : "mockexam.evaluate")}
           </button>
         </form>

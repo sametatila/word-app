@@ -146,7 +146,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   if (status === "loading" || status === "submitting") {
     return (
       <Card>
-        <p className="muted py-8 text-center text-sm">{t("daily.preparing")}</p>
+        <p className="muted py-8 text-center text-body">{t("daily.preparing")}</p>
       </Card>
     );
   }
@@ -156,18 +156,18 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       <Card>
         <div className="p-6 text-center">
           <AlertIcon size={22} />
-          <p className="mt-2 text-sm font-bold">{t("daily.couldn_t_load_daily_round")}</p>
+          <p className="mt-2 text-strong">{t("daily.couldn_t_load_daily_round")}</p>
           {/* YERİNDE TEKRAR DENEME. Web yalnız "geri dön" diyordu: geçici bir
               ağ hatası kullanıcıyı ekrandan çıkarıp geri getirmeye zorluyordu.
               Android birincil düğme olarak tekrar denetiyor, çıkış ikincil. */}
           <button
             type="button"
             onClick={() => setAttempt((n) => n + 1)}
-            className="btn btn-primary mt-4 w-full px-5 py-2.5 text-sm"
+            className="btn btn-primary mt-4 w-full px-5 py-2.5 text-body"
           >
             {t("daily.try_again")}
           </button>
-          <button onClick={onExit} className="btn btn-ghost mt-2 px-5 py-2.5 text-sm">
+          <button onClick={onExit} className="btn btn-ghost mt-2 px-5 py-2.5 text-body">
             {t("common.close")}
           </button>
         </div>
@@ -179,9 +179,9 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Card>
         <div className="p-6 text-center">
-          <p className="text-sm font-bold">{t("daily.none_title")}</p>
-          <p className="muted mt-1 text-xs">{t("daily.none_sub")}</p>
-          <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-sm">
+          <p className="text-strong">{t("daily.none_title")}</p>
+          <p className="muted mt-1 text-caption">{t("daily.none_sub")}</p>
+          <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-body">
             {t("common.go_back")}
           </button>
         </div>
@@ -193,9 +193,9 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Card>
         <div className="brand-gradient-deep px-6 py-6 text-center text-white">
-          <p className="text-sm opacity-90">{t("daily.daily_round")} · {data.level}</p>
-          <h2 className="mt-1 text-2xl font-bold">{t("daily.same_words")}</h2>
-          <p className="mx-auto mt-2 max-w-xs text-sm opacity-90">
+          <p className="text-body opacity-90">{t("daily.daily_round")} · {data.level}</p>
+          <h2 className="mt-1 text-h1">{t("daily.same_words")}</h2>
+          <p className="mx-auto mt-2 max-w-xs text-body opacity-90">
             {t("daily.pitch", { n: data.rounds.length })}
           </p>
         </div>
@@ -212,7 +212,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
               track("session_start", 0, "daily");
               setStatus("playing");
             }}
-            className="btn btn-primary w-full px-5 py-3.5 text-base"
+            className="btn btn-primary w-full px-5 py-3.5 text-h3"
           >
             {t("common.start")}
           </button>
@@ -230,7 +230,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <div className="flex min-h-0 flex-1 flex-col">
         <div className="mb-3 shrink-0">
-          <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
+          <div className="mb-1.5 flex items-center justify-between text-caption">
             <span className="muted">
               {index + 1} / {data.rounds.length}
             </span>
@@ -296,21 +296,21 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
               şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.
               Kupa simgesi bunun dışında kalan tek yerdi. */}
           <Mascot mood="cheer" size={88} className="mx-auto" />
-          <h2 className="mt-1 text-2xl font-bold">
+          <h2 className="mt-1 text-h1">
             <CountUp value={finalScore} /> {t("common.points")}
           </h2>
-          <p className="mt-1 text-sm opacity-90">
+          <p className="mt-1 text-body opacity-90">
             {t("common.n_correct", { correct: finalCorrect, total: finalTotal })}
             {me ? ` · ${t("daily.your_rank_today", { rank: me.rank })}` : ""}
           </p>
           {/* En iyi seri Android'in sonuç başlığında ayrı bir kutu; web'de
               yalnız paylaşım görselinin içindeydi, ekranda hiç görünmüyordu —
               oysa turun asıl anlattığı şey art arda kaç doğru yaptığın. */}
-          <p className="mt-1 flex items-center justify-center gap-1 text-sm opacity-90">
+          <p className="mt-1 flex items-center justify-center gap-1 text-body opacity-90">
             <FlameIcon size={14} />
             {bestCombo.current} {t("daily.best_streak")}
           </p>
-          {xpGained > 0 ? <p className="mt-1 text-sm opacity-90">+{xpGained} XP</p> : null}
+          {xpGained > 0 ? <p className="mt-1 text-body opacity-90">+{xpGained} XP</p> : null}
         </div>
 
         {/* Tablo tek satırken de gösteriliyor: "Tabloyu gör" deyip tablo
@@ -320,11 +320,11 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
             ekran bozuk görünüyordu. Android aynı koşulda "ilk oynayan sen ol"
             diyor (`DailyScreen` `Board`). */}
         {board.length === 0 ? (
-          <p className="muted px-5 py-3 text-center text-xs">{t("daily.be_first_to_play_today")}</p>
+          <p className="muted px-5 py-3 text-center text-caption">{t("daily.be_first_to_play_today")}</p>
         ) : null}
         {board.length > 0 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
         {board.length === 1 ? (
-          <p className="muted border-t px-5 py-3 text-xs" style={{ borderColor: "var(--border)" }}>
+          <p className="muted border-t px-5 py-3 text-caption" style={{ borderColor: "var(--border)" }}>
             {t("daily.first_today")}
           </p>
         ) : null}
@@ -344,7 +344,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
           <button onClick={onExit} className="btn btn-primary w-full px-5 py-3.5">
             {t("common.back_to_learn")}
           </button>
-          <p className="muted pt-1 text-center text-xs">
+          <p className="muted pt-1 text-center text-caption">
             {t("daily.once_a_day")}
           </p>
         </div>
@@ -376,14 +376,14 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
           web'de yalnız başlık vardı ve kullanıcı kendini bütün oyuncularla
           karşılaştırdığını sanıyordu. */}
       <div className="px-5 pt-2.5 pb-1">
-        <p className="muted text-xs font-semibold uppercase tracking-wide">{title}</p>
+        <p className="muted text-micro uppercase tracking-wide">{title}</p>
         <p className="muted text-micro">{t("daily.players_at_your_level")}</p>
       </div>
       <ol>
         {rows.map((r) => (
           <li
             key={`${r.rank}-${r.name ?? "x"}`}
-            className="flex items-center gap-3 border-t px-5 py-2.5 text-sm"
+            className="flex items-center gap-3 border-t px-5 py-2.5 text-body"
             style={{
               borderColor: "var(--border)",
               background: r.isMe
@@ -403,7 +403,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
             <span className="flex w-6 shrink-0 justify-center">
               {medalColor(r.rank) ? (
                 <span
-                  className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-black tabular-nums text-white"
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-caption tabular-nums text-white"
                   style={{ background: medalColor(r.rank)! }}
                 >
                   {r.rank}
@@ -416,7 +416,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
               {r.name ?? t("social.unnamed")}
               {r.isMe ? <span className="muted ml-1.5 text-micro uppercase">{t("social.you")}</span> : null}
             </span>
-            <span className="muted shrink-0 text-xs tabular-nums">
+            <span className="muted shrink-0 text-caption tabular-nums">
               {r.correct}/{r.total}
             </span>
             <span

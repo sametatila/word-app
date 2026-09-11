@@ -195,7 +195,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
         <div className="flex items-center gap-4">
@@ -210,12 +210,12 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             {playing ? <XIcon size={26} /> : <SpeakerIcon size={28} />}
           </motion.button>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-bold">
+            <p className="text-strong">
               {playing
                 ? t("listenp.playing", { n: segIdx + 1, total: exercise.segments.length })
                 : t(playCount > 0 ? "listenp.done" : "listenp.start")}
             </p>
-            <p className="muted mt-0.5 text-xs">
+            <p className="muted mt-0.5 text-caption">
               {t(hasAudio ? "listenp.real_audio" : "listenp.replay_note")}
             </p>
             <div className="mt-2 flex items-center gap-1.5">
@@ -241,7 +241,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             type="button"
             onClick={toggleSlow}
             aria-pressed={slow}
-            className={`chip px-3 py-1.5 text-xs ${slow ? "chip-active" : ""}`}
+            className={`chip px-3 py-1.5 text-caption ${slow ? "chip-active" : ""}`}
           >
             {t("listenp.slow")}
           </button>
@@ -249,18 +249,18 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             type="button"
             onClick={() => setShowText((v) => !v)}
             aria-pressed={showText}
-            className={`chip px-3 py-1.5 text-xs ${showText ? "chip-active" : ""}`}
+            className={`chip px-3 py-1.5 text-caption ${showText ? "chip-active" : ""}`}
           >
             {t(showText ? "item.hide_text" : "item.show_text")}
           </button>
           {!showText ? (
-            <span className="muted text-xs">{t("listenp.hint_listen_first")}</span>
+            <span className="muted text-caption">{t("listenp.hint_listen_first")}</span>
           ) : null}
         </div>
 
         {available === false && !hasAudio ? (
           <p
-            className="mt-3 rounded-panel px-3 py-2 text-xs"
+            className="mt-3 rounded-panel px-3 py-2 text-caption"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
               color: "var(--color-flame)",

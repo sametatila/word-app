@@ -62,11 +62,11 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         <div className="flex items-start gap-4">
           <Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={64} ring={friends ? "var(--color-mint)" : null} />
           <div className="min-w-0 flex-1">
-            <h1 className="truncate text-lg font-bold">{u.name ?? t("social.unnamed")}</h1>
-            <p className="muted text-sm">
+            <h1 className="truncate text-h3">{u.name ?? t("social.unnamed")}</h1>
+            <p className="muted text-body">
               @{u.username} · {u.level}
             </p>
-            {data.bio ? <p className="mt-2 text-sm leading-snug">{data.bio}</p> : null}
+            {data.bio ? <p className="mt-2 text-body leading-snug">{data.bio}</p> : null}
             <p className="muted mt-2 flex flex-wrap gap-x-3 text-micro">
               {data.mutual > 0 ? <span>{t("social.mutual", { n: data.mutual })}</span> : null}
               {data.friendStreak > 0 ? (
@@ -83,10 +83,10 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             <UserAction userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} />
             {friends ? (
               <>
-                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))}>
+                <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))}>
                   {t("user.nudge")}
                 </button>
-                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
+                <button className="btn btn-ghost h-9 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
                   <TargetIcon size={14} />
                   <span className="ml-1">{t("user.task")}</span>
                 </button>
@@ -103,16 +103,16 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         {/* Ton mesajın metninden değil kendi alanından: Türkçe sözcük aramak
             çeviriyle birlikte her başarı iletisini kırmızıya çeviriyordu. */}
         {msg ? (
-          <p role="status" className="mt-2 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role="status" className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}
         {more && !isSelf ? (
           <div className="mt-3 flex flex-wrap gap-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
-            <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void block()}>
+            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void block()}>
               {t("user.block")}
             </button>
-            <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => setReporting((r) => !r)}>
+            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => setReporting((r) => !r)}>
               {t("user.report")}
             </button>
             {reporting ? (
@@ -157,7 +157,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 
       {data.recent.length ? (
         <section>
-          <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("user.recent_milestones")}</h2>
+          <h2 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("user.recent_milestones")}</h2>
           <div className="flex flex-col gap-2">
             {data.recent.map((it) => (
               <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />
@@ -173,7 +173,7 @@ function Stat({ label, value, text, suffix = "", icon, tone }: { label: string; 
   const lang = useLang();
   return (
     <div className="card px-3 py-2.5 text-center">
-      <p className="flex items-center justify-center gap-1 text-base font-black tabular-nums" style={{ color: tone }}>
+      <p className="flex items-center justify-center gap-1 text-strong tabular-nums" style={{ color: tone }}>
         {icon}
         {text ?? `${formatNumber(value ?? 0, lang)}${suffix}`}
       </p>

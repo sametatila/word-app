@@ -65,9 +65,9 @@ export function WordProgress({
             const masteredPct = l.total ? (l.mastered / l.total) * 100 : 0;
             return (
               <div key={l.niveau}>
-                <div className="mb-1.5 flex items-baseline justify-between text-sm">
+                <div className="mb-1.5 flex items-baseline justify-between text-body">
                   <span className="font-semibold">{l.niveau}</span>
-                  <span className="muted text-xs">
+                  <span className="muted text-caption">
                     {t("progress.seen_of_total", { seen: l.seen, total: l.total, mastered: l.mastered })}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export function WordProgress({
             );
           })}
         </div>
-        <p className="muted mt-4 text-xs">
+        <p className="muted mt-4 text-caption">
           {t("progress.bar_note", { seen: totalSeen, total: totalWords, days: MASTERED_DAYS })}
         </p>
       </section>
@@ -100,7 +100,7 @@ export function WordProgress({
           <h2 className="mb-3 font-bold">{t("progress.review_queue")}</h2>
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
-            <div className="text-sm">
+            <div className="text-body">
               <p>{t("progress.due_now", { n: dueNow })}</p>
               <p className="muted mt-1">{t("progress.upcoming", { n: upcoming })}</p>
               {leeches > 0 ? (
@@ -298,8 +298,8 @@ function KpiCard({
           </span>
         ) : null}
       </div>
-      <div className="mt-1 text-xl font-bold tabular-nums">{value}</div>
-      <div className="muted text-xs">{label}</div>
+      <div className="mt-1 text-h2 tabular-nums">{value}</div>
+      <div className="muted text-caption">{label}</div>
     </>
   );
 
@@ -390,8 +390,8 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
   return (
     <section className="card px-4 py-3.5">
       <div className="mb-2.5 flex items-baseline justify-between gap-3">
-        <h2 className="text-sm font-bold">{t("progress.last_two_weeks")}</h2>
-        <p className="muted text-xs font-semibold tabular-nums">
+        <h2 className="text-strong">{t("progress.last_two_weeks")}</h2>
+        <p className="muted text-caption tabular-nums">
           {t("social.days", { n: active })} · {t("progress.n_reviews", { n: formatNumber(total, lang) })}
         </p>
       </div>
@@ -458,7 +458,7 @@ function Donut({ value, total }: { value: number; total: number }) {
       }}
     >
       <div
-        className="absolute inset-2 flex items-center justify-center rounded-full text-sm font-bold"
+        className="absolute inset-2 flex items-center justify-center rounded-full text-strong"
         style={{ background: "var(--surface)" }}
       >
         {value}

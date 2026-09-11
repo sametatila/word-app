@@ -223,7 +223,7 @@ export function BossPlayer({
     return (
       <Frame>
         <AlertIcon size={26} />
-        <h2 className="mt-2 text-lg font-bold">{t("exam.could_not_load")}</h2>
+        <h2 className="mt-2 text-h3">{t("exam.could_not_load")}</h2>
         <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
@@ -231,8 +231,8 @@ export function BossPlayer({
   if (status === "empty")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">{t("boss.not_ready")}</h2>
-        <p className="muted mt-2 text-sm">{t("boss.not_ready_sub")}</p>
+        <h2 className="text-h3">{t("boss.not_ready")}</h2>
+        <p className="muted mt-2 text-body">{t("boss.not_ready_sub")}</p>
         <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
@@ -244,11 +244,11 @@ export function BossPlayer({
         <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
           <TrophyIcon size={26} />
         </div>
-        <p className="muted text-xs font-bold uppercase tracking-wide">
+        <p className="muted text-micro uppercase tracking-wide">
           {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
         </p>
-        <h2 className="mt-1 text-xl font-bold">{t("bossw.title_exam", { title: data.meta.title })}</h2>
-        <ul className="mt-4 space-y-1.5 text-left text-sm">
+        <h2 className="mt-1 text-h2">{t("bossw.title_exam", { title: data.meta.title })}</h2>
+        <ul className="mt-4 space-y-1.5 text-left text-body">
           <li>· {t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}</li>
           <li>· {t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}</li>
           <li>· {t("bossw.rule_crown")}</li>
@@ -257,7 +257,7 @@ export function BossPlayer({
 
         {!ready ? (
           <p
-            className="mt-4 rounded-panel px-3 py-2.5 text-sm"
+            className="mt-4 rounded-panel px-3 py-2.5 text-body"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",
@@ -268,10 +268,10 @@ export function BossPlayer({
         ) : null}
 
         {best !== null ? (
-          <p className="muted mt-3 text-sm">{t("bossw.best_left", { n: best })}</p>
+          <p className="muted mt-3 text-body">{t("bossw.best_left", { n: best })}</p>
         ) : null}
 
-        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-base">
+        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-h3">
           {t(best !== null ? "boss.beat_record" : "boss.enter")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
@@ -296,19 +296,19 @@ export function BossPlayer({
         >
           {won ? <TrophyIcon size={26} /> : <ClockIcon size={26} />}
         </div>
-        <h2 className="text-2xl font-black">{t(won ? "boss.passed" : "boss.time_up")}</h2>
-        <p className="muted mt-1 text-sm">
+        <h2 className="text-h1">{t(won ? "boss.passed" : "boss.time_up")}</h2>
+        <p className="muted mt-1 text-body">
           {won
             ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
             : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
         </p>
         {won && isRecord ? (
-          <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-mint)" }}>
+          <p className="mt-1 text-strong" style={{ color: "var(--color-mint)" }}>
             {t("bossw.record_prefix")} <CountUp value={secondsLeft} /> {t("bossw.record_suffix")}
           </p>
         ) : null}
         {!won ? (
-          <p className="muted mt-3 text-sm">{t("bossw.still_counted")}</p>
+          <p className="muted mt-3 text-body">{t("bossw.still_counted")}</p>
         ) : null}
         <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5">
           {t(won ? "bossw.play_again" : "common.try_again")}
@@ -328,13 +328,13 @@ export function BossPlayer({
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
       <div className="mb-3 flex items-center justify-between px-1">
-        <span className="text-sm font-bold tabular-nums">
+        <span className="text-strong tabular-nums">
           {index + 1} / {data!.rounds.length}
         </span>
         <motion.span
           key={`${urgent}-${Math.ceil(left)}`}
           animate={urgent ? { scale: [1, 1.12, 1] } : {}}
-          className="text-sm font-black tabular-nums"
+          className="text-strong tabular-nums"
           style={{ color: urgent ? "var(--color-flame)" : "var(--text)" }}
         >
           {/* Meydan okuma sayacıyla aynı anahtar: iki sayaç da "{n} sn"

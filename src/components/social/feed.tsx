@@ -111,13 +111,13 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
         text={t("feedlist.empty_text")}
         action={
           onFindFriends ? (
-            <button className="btn btn-primary h-9 px-4 text-xs" onClick={onFindFriends}>
+            <button className="btn btn-primary h-9 px-4 text-caption" onClick={onFindFriends}>
               {t("friends.find_friends")}
             </button>
           ) : null
         }
       />
-      {err ? <p className="mt-3 text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      {err ? <p className="mt-3 text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
       </>
     );
   }
@@ -128,11 +128,11 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
         <FeedCard key={it.id} item={it} />
       ))}
       {cursor ? (
-        <button className="btn btn-ghost h-9 text-xs" disabled={busy} onClick={() => void load(cursor)}>
+        <button className="btn btn-ghost h-9 text-caption" disabled={busy} onClick={() => void load(cursor)}>
           {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
-      {err ? <p className="text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
     </div>
   );
 }

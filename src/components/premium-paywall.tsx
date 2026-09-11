@@ -111,7 +111,7 @@ export function PremiumPaywall({
         >
           <CrownIcon size={42} />
         </div>
-        <h1 className="mt-4 text-3xl font-extrabold">{t("paywall.nomi_premium")}</h1>
+        <h1 className="mt-4 text-display">{t("paywall.nomi_premium")}</h1>
         {/* Sloganı mobil başlığın hemen altında gösteriyor; web'de hiç yoktu.
             Premium'u olana pazarlama yapılmıyor. */}
         {!premium && <p className="muted mt-1 text-body">{t("paywall.unlimited_learning_full_exam")}</p>}
@@ -119,11 +119,11 @@ export function PremiumPaywall({
         {/* Bekleyen hediye her durumda gösteriliyor: kullanıcı kazandığı ama
             henüz başlamamış süreyi göremezse kazandığını bilmez. */}
         {!!status?.bonusDaysPending && (
-          <p className="mt-1 text-sm font-semibold" style={{ color: "var(--color-mint)" }}>
+          <p className="mt-1 text-strong" style={{ color: "var(--color-mint)" }}>
             {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
           </p>
         )}
-        {manageLine() && <p className="mt-1 text-xs muted">{manageLine()}</p>}
+        {manageLine() && <p className="mt-1 text-caption muted">{manageLine()}</p>}
       </header>
 
       {!premium && (
@@ -141,17 +141,17 @@ export function PremiumPaywall({
                 <PlanCard label={t("paywall.yearly")} price={price.yearly} savePct={price.yearlySavePct} highlight />
               </div>
               {plans.trialDays > 0 && (
-                <p className="muted mt-3 text-center text-xs">{t("paywall.trial_note", { days: plans.trialDays })}</p>
+                <p className="muted mt-3 text-center text-caption">{t("paywall.trial_note", { days: plans.trialDays })}</p>
               )}
             </section>
           )}
 
           {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
           <div className="brand-gradient mt-4 rounded-panel px-4 py-4 text-center on-fill">
-            <p className="text-base font-extrabold">{t("paywall.upgrade_in_app")}</p>
+            <p className="text-strong">{t("paywall.upgrade_in_app")}</p>
             {/* Vitrin fiyatının bağlayıcı olmadığı burada yazıyor: App Store
                 3.1.2 ve Play, fiyatın yanıltıcı olmamasını istiyor. */}
-            <p className="mt-1 text-xs opacity-90">{t("paywall.price_note_store")}</p>
+            <p className="mt-1 text-caption opacity-90">{t("paywall.price_note_store")}</p>
           </div>
 
           {/*
@@ -225,7 +225,7 @@ function PlanCard({
       }
     >
       <p className="muted text-caption tracking-wide">{label}</p>
-      <p className="mt-1 text-xl font-extrabold">{price}</p>
+      <p className="mt-1 text-h2">{price}</p>
       {savePct > 0 && (
         /* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik yazı için
            eşik 4.5. 600'de 5.30. */
@@ -322,14 +322,14 @@ function PromoBox({ prefill }: { prefill: string }) {
           placeholder={t("promo.placeholder")}
           autoCapitalize="characters"
           spellCheck={false}
-          className="min-w-0 flex-1 rounded-tile border px-3 py-2 font-mono text-sm tracking-widest"
+          className="min-w-0 flex-1 rounded-tile border px-3 py-2 font-mono text-body tracking-widest"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <button
           type="button"
           onClick={apply}
           disabled={busy || !code.trim()}
-          className="rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+          className="rounded-panel px-4 py-2 text-strong on-fill disabled:opacity-60"
           style={{ background: "var(--color-brand)" }}
         >
           {t("promo.apply")}
@@ -351,7 +351,7 @@ function PromoBox({ prefill }: { prefill: string }) {
       {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta
           kendisi. */}
       {msg && (
-        <p role="status" className="mt-2 text-sm font-semibold" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
+        <p role="status" className="mt-2 text-strong" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
           {msg.text}
         </p>
       )}
@@ -377,12 +377,12 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
 
   return (
     <Section title={t("referral.title")}>
-      <p className="text-sm">{t("referral.explain", { days: referral.rewardDays })}</p>
-      <p className="mt-1 text-xs muted">{t("referral.reward_note")}</p>
+      <p className="text-body">{t("referral.explain", { days: referral.rewardDays })}</p>
+      <p className="mt-1 text-caption muted">{t("referral.reward_note")}</p>
 
       <div className="mt-3 flex items-center gap-2">
         <code
-          className="flex-1 rounded-tile border px-3 py-2 text-center font-mono text-lg font-bold tracking-[0.3em]"
+          className="flex-1 rounded-tile border px-3 py-2 text-center font-mono text-h3 tracking-[0.3em]"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         >
           {referral.code}
@@ -390,14 +390,14 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
         <button
           type="button"
           onClick={copy}
-          className="rounded-panel px-4 py-2 text-sm font-bold"
+          className="rounded-panel px-4 py-2 text-strong"
           style={{ background: "var(--surface-2)" }}
         >
           {copied ? t("referral.copied") : t("referral.copy_link")}
         </button>
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-2 text-xs">
+      <div className="mt-3 flex flex-wrap gap-2 text-caption">
         {referral.invited === 0 ? (
           <span className="muted">{t("referral.none_yet")}</span>
         ) : (

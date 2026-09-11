@@ -54,25 +54,25 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
   return (
     <div className="flex flex-col gap-4">
       <label className="card flex items-center gap-2 px-4 py-2.5">
-        <span className="muted text-xs font-bold">@</span>
+        <span className="muted text-caption">@</span>
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={t("find.username_or_name")}
-          className="min-w-0 flex-1 bg-transparent text-sm outline-none"
+          className="min-w-0 flex-1 bg-transparent text-body outline-none"
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
           aria-label={t("find.search_users")}
         />
         {q ? (
-          <button className="muted text-xs" onClick={() => setQ("")} aria-label={t("find.clear")}>
+          <button className="muted text-caption" onClick={() => setQ("")} aria-label={t("find.clear")}>
             {t("find.clear")}
           </button>
         ) : null}
       </label>
 
-      {err ? <p className="px-1 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      {err ? <p className="px-1 text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
 
       {q.trim().length >= 2 ? (
         hits === null ? (
@@ -86,11 +86,11 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             ))}
           </ol>
         ) : (
-          <p className="muted px-1 text-sm">{t("find.no_results_private_profiles_only")}</p>
+          <p className="muted px-1 text-body">{t("find.no_results_private_profiles_only")}</p>
         )
       ) : (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("find.you_may_know")}</h3>
+          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("find.you_may_know")}</h3>
           {sugg === null ? (
             <PersonRowSkeleton rows={3} />
           ) : sugg.length ? (
@@ -107,7 +107,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
               ))}
             </ol>
           ) : (
-            <p className="muted px-1 text-sm">{t("find.no_suggestions_yet_search_by")}</p>
+            <p className="muted px-1 text-body">{t("find.no_suggestions_yet_search_by")}</p>
           )}
         </section>
       )}
@@ -143,9 +143,9 @@ function PersonRow({
         <Avatar userId={user.userId} name={user.name} avatar={user.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-bold">
+        <p className="truncate text-strong">
           {href ? <Link href={href} prefetch={false}>{user.name ?? t("social.unnamed")}</Link> : (user.name ?? t("social.unnamed"))}
-          {user.username ? <span className="muted ml-1.5 text-xs font-normal">@{user.username}</span> : null}
+          {user.username ? <span className="muted ml-1.5 text-caption">@{user.username}</span> : null}
         </p>
         <p className="muted flex items-center gap-2 text-micro">
           {note}

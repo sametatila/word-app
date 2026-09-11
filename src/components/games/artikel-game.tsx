@@ -77,7 +77,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
           ) : null}
         </span>
       }
-      prompt={<span className="text-display sm:text-4xl">{word.de}</span>}
+      prompt={<span className="text-display sm:text-display">{word.de}</span>}
     >
       <div className="grid grid-cols-3 gap-3">
         {options.map((opt, i) => {

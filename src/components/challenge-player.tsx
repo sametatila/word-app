@@ -224,7 +224,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   if (status === "loading")
     return (
       <Frame>
-        <p className="muted text-center text-sm">{t("challenge.preparing")}</p>
+        <p className="muted text-center text-body">{t("challenge.preparing")}</p>
       </Frame>
     );
 
@@ -233,7 +233,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       <Frame>
         <div className="text-center">
           <AlertIcon size={22} />
-          <p className="mt-2 text-sm">{t("challenge.load_failed")}</p>
+          <p className="mt-2 text-body">{t("challenge.load_failed")}</p>
           <button onClick={onExit} className="btn btn-ghost mt-4 w-full px-5 py-3">
             {t("common.go_back")}
           </button>
@@ -245,8 +245,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <div className="text-center">
-          <h2 className="text-lg font-bold">{t("challenge.none_title")}</h2>
-          <p className="muted mt-2 text-sm">
+          <h2 className="text-h3">{t("challenge.none_title")}</h2>
+          <p className="muted mt-2 text-body">
             {t("challenge.none_sub")}
           </p>
           <button onClick={onExit} className="btn btn-primary mt-5 w-full px-5 py-3.5">
@@ -263,12 +263,12 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
             <FlameIcon size={26} />
           </div>
-          <h2 className="text-xl font-bold">{t("challenge.title")}</h2>
-          <p className="muted mt-2 text-sm">
+          <h2 className="text-h2">{t("challenge.title")}</h2>
+          <p className="muted mt-2 text-body">
             {t("challenge.pitch", { n: START_SECONDS })}
           </p>
 
-          <ul className="mt-4 space-y-1.5 text-left text-sm">
+          <ul className="mt-4 space-y-1.5 text-left text-body">
             <Rule tone="mint">{t("challenge.rule_correct")}</Rule>
             <Rule tone="rose">{t("challenge.rule_wrong")}</Rule>
             <Rule tone="flame">
@@ -279,11 +279,11 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           </ul>
 
           {record > 0 ? (
-            <p className="muted mt-4 text-sm">
+            <p className="muted mt-4 text-body">
               {t("challenge.your_record")} <strong>{record}</strong> {t("common.points")}
             </p>
           ) : null}
-          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-base">
+          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-h3">
             {t("common.start")}
           </button>
           <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
@@ -307,15 +307,15 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
           <Mascot mood={isRecord ? "cheer" : "happy"} size={96} className="mx-auto" />
-          <h2 className="text-3xl font-black">
-            <CountUp value={score} /> <span className="text-lg font-bold">{t("common.points")}</span>
+          <h2 className="text-display">
+            <CountUp value={score} /> <span className="text-h3">{t("common.points")}</span>
           </h2>
           {isRecord ? (
-            <p className="mt-1 text-sm font-bold text-[color:var(--color-mint)]">
+            <p className="mt-1 text-strong text-[color:var(--color-mint)]">
               {t("challenge.new_record", { previous })}
             </p>
           ) : (
-            <p className="muted mt-1 text-sm">{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</p>
+            <p className="muted mt-1 text-body">{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</p>
           )}
 
           <div className="mt-5 grid grid-cols-3 gap-2 text-center">
@@ -346,7 +346,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       <AchievementFlash fire={flash.fire} message={flash.text} tone={flash.tone} />
 
       <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
+        <div className="mb-1.5 flex items-center justify-between text-caption">
           <span className="flex items-center gap-2">
             <span
               className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
@@ -391,16 +391,16 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                className="flex items-center gap-1 text-xs font-black"
+                className="flex items-center gap-1 text-caption"
                 style={{ color: "var(--color-violet)" }}
               >
                 <SparkIcon size={13} /> {t("challenge.combo", { n: combo, mult })}
               </motion.span>
             ) : (
-              <span className="muted text-xs font-semibold">{t("challenge.build_streak")}</span>
+              <span className="muted text-caption">{t("challenge.build_streak")}</span>
             )}
           </AnimatePresence>
-          <span className="muted text-xs font-semibold">
+          <span className="muted text-caption">
             {index + 1}/{data!.rounds.length}
           </span>
         </div>
@@ -437,7 +437,7 @@ function Rule({ tone, children }: { tone: "mint" | "rose" | "flame"; children: R
 function Box({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-panel px-2 py-3 surface-2">
-      <div className="text-base font-bold">{value}</div>
+      <div className="text-strong">{value}</div>
       <div className="muted text-micro">{label}</div>
     </div>
   );
@@ -452,7 +452,7 @@ function Frame({ children }: { children: React.ReactNode }) {
       className="relative mx-auto w-full max-w-md"
     >
       <div className="card p-6">{children}</div>
-      <p className="muted mt-4 text-center text-xs">
+      <p className="muted mt-4 text-center text-caption">
         <Link href="/learn" className="underline-offset-4 hover:underline">
           {t("challenge.back_to_normal")}
         </Link>

@@ -354,7 +354,7 @@ export function CourseOnboarding({
               <Mascot mood={step.mood} size={72} stage="onboarding" />
               <div>
                 <h1 className="text-h3">{step.title}</h1>
-                <p className="muted mt-1 text-sm leading-relaxed">{step.subtitle}</p>
+                <p className="muted mt-1 text-body leading-relaxed">{step.subtitle}</p>
               </div>
             </div>
 
@@ -380,7 +380,7 @@ export function CourseOnboarding({
                       </span>
                       <span className="min-w-0">
                         <span className="block font-bold">{o.label}</span>
-                        {o.sub ? <span className="muted block text-xs leading-relaxed">{o.sub}</span> : null}
+                        {o.sub ? <span className="muted block text-caption leading-relaxed">{o.sub}</span> : null}
                       </span>
                     </button>
                   );
@@ -396,7 +396,7 @@ export function CourseOnboarding({
                           type="button"
                           aria-pressed={pickedLevel === l.id}
                           onClick={() => setPickedLevel(l.id)}
-                          className={`option px-2 py-3 text-sm font-bold ${pickedLevel === l.id ? "option-picked" : ""}`}
+                          className={`option px-2 py-3 text-strong ${pickedLevel === l.id ? "option-picked" : ""}`}
                         >
                           {l.id}
                         </button>
@@ -407,7 +407,7 @@ export function CourseOnboarding({
                         şıkkın alt satırının aynısı. Düğme zaten seçim
                         yapılana kadar kapalı — söylenecek bir şey yok. */}
                     {pickedLevel ? (
-                      <p className="muted mt-2 text-xs leading-relaxed">{t(LEVELS.find((l) => l.id === pickedLevel)!.desc)}.</p>
+                      <p className="muted mt-2 text-caption leading-relaxed">{t(LEVELS.find((l) => l.id === pickedLevel)!.desc)}.</p>
                     ) : null}
                   </div>
                 ) : null}
@@ -416,7 +416,7 @@ export function CourseOnboarding({
 
             {error ? (
               <p
-                className="mt-4 flex items-center gap-2 rounded-panel px-3 py-2 text-sm"
+                className="mt-4 flex items-center gap-2 rounded-panel px-3 py-2 text-body"
                 style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}
               >
                 <AlertIcon size={16} /> {error}
@@ -428,7 +428,7 @@ export function CourseOnboarding({
 
       <div className="mt-8 flex gap-2">
         {i > 0 ? (
-          <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-3 text-sm">
+          <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-3 text-body">
             {t("common.back")}
           </button>
         ) : null}
@@ -436,7 +436,7 @@ export function CourseOnboarding({
           type="button"
           disabled={!canNext || saving}
           onClick={next}
-          className="btn btn-primary flex-1 px-6 py-3.5 text-base disabled:opacity-60"
+          className="btn btn-primary flex-1 px-6 py-3.5 text-h3 disabled:opacity-60"
         >
           {saving ? t("rounds.saving") : t("common.continue_2")}
         </button>
@@ -450,7 +450,7 @@ export function CourseOnboarding({
         (bkz. app/setup/page.tsx `SignOutLink`).
       */}
       {!signedIn ? (
-        <p className="muted mt-5 text-center text-sm">
+        <p className="muted mt-5 text-center text-body">
           {t("auth.already_have_account")}
           {/* ÇIKIŞ ÖLÇÜLÜYOR (value = kaçıncı adım, kind = adım anahtarı).
               Mobil bunu baştan beri yazıyordu (`OnboardingScreen`

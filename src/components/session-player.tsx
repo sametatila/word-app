@@ -867,7 +867,7 @@ export function SessionPlayer() {
         onCancel={() => setConfirmExit(false)}
       />
       <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
+        <div className="mb-1.5 flex items-center justify-between text-caption">
           <span className="muted flex items-center gap-2">
             {index + 1} / {session!.rounds.length}
             {(() => {
@@ -928,7 +928,7 @@ export function SessionPlayer() {
 
       {saveWarning ? (
         <div
-          className="mb-3 flex shrink-0 items-center gap-2 rounded-panel px-3 py-2 text-sm"
+          className="mb-3 flex shrink-0 items-center gap-2 rounded-panel px-3 py-2 text-body"
           style={{
             background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
             color: "var(--color-flame)",
@@ -1003,7 +1003,7 @@ function LoadingCard() {
           animate={{ rotate: [0, 90, 180, 270, 360], borderRadius: ["30%", "50%", "30%"] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         />
-        <p className="muted text-sm">{t("session.preparing")}</p>
+        <p className="muted text-body">{t("session.preparing")}</p>
       </div>
     </div>
   );
@@ -1045,8 +1045,8 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
     <div className="mx-auto w-full max-w-md">
       <div className="card p-6 text-center">
         <Mascot mood="sad" size={96} className="mx-auto" />
-        <h2 className="mt-1 text-lg font-bold">{content.title}</h2>
-        <p className="muted mt-2 text-sm">{content.body}</p>
+        <h2 className="mt-1 text-h3">{content.title}</h2>
+        <p className="muted mt-2 text-body">{content.body}</p>
         {content.action}
       </div>
     </div>
@@ -1080,10 +1080,10 @@ function EmptyCard({
       >
         <div className="card p-8 text-center">
           <Mascot mood="think" size={104} className="mx-auto" />
-          <h2 className="mt-1 text-xl font-bold">{t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })}</h2>
+          <h2 className="mt-1 text-h2">{t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })}</h2>
           {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
               çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
-          <p className="muted mt-2 text-sm">{t("session.review_only_mode")}</p>
+          <p className="muted mt-2 text-body">{t("session.review_only_mode")}</p>
           <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
             {t("session.back_to_mixed")}
           </button>
@@ -1100,10 +1100,10 @@ function EmptyCard({
     >
       <div className="card p-8 text-center">
         <Mascot mood="cheer" size={112} className="mx-auto" />
-        <h2 className="mt-1 text-xl font-bold">{t("session.goal_done")}</h2>
-        <p className="muted mt-2 text-sm">{t("session.goal_done_sub")}</p>
+        <h2 className="mt-1 text-h2">{t("session.goal_done")}</h2>
+        <p className="muted mt-2 text-body">{t("session.goal_done_sub")}</p>
         {meta ? (
-          <p className="muted mt-4 text-sm">
+          <p className="muted mt-4 text-body">
             {t("session.today_summary", {
               reviews: meta.reviewsToday,
               news: meta.newToday,
@@ -1181,8 +1181,8 @@ function StageCard({
           >
             <Mascot mood={perfect ? "cheer" : "happy"} size={72} />
           </motion.div>
-          <p className="mt-1 text-sm opacity-90">{t("stage.counter", { n: stage, total: stages })}</p>
-          <h2 className="mt-0.5 text-xl font-bold">
+          <p className="mt-1 text-body opacity-90">{t("stage.counter", { n: stage, total: stages })}</p>
+          <h2 className="mt-0.5 text-h2">
             {perfect ? t("stage.clean") : t("stage.done")}
           </h2>
           <div className="mt-3 flex items-center justify-center gap-1.5">
@@ -1209,7 +1209,7 @@ function StageCard({
             bahsi bir mekanik olmaktan çıkarıp gürültüye çevirirdi. */}
         {wagerResult !== null ? (
           <div
-            className="px-6 pt-4 text-center text-sm font-bold"
+            className="px-6 pt-4 text-center text-strong"
             style={{
               color:
                 wagerResult > 0
@@ -1258,21 +1258,21 @@ function StageCard({
               />
             </span>
             <span className="min-w-0">
-              <span className="block text-sm font-bold">{t("wager.next_stage")}</span>
-              <span className="muted block text-xs">{t("wager.rules")}</span>
+              <span className="block text-strong">{t("wager.next_stage")}</span>
+              <span className="muted block text-caption">{t("wager.rules")}</span>
             </span>
           </button>
 
           <button
             onClick={() => onContinue(bet)}
-            className="btn btn-primary w-full px-5 py-3.5 text-base"
+            className="btn btn-primary w-full px-5 py-3.5 text-h3"
           >
             {t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}
           </button>
           <button onClick={onStop} className="btn btn-ghost w-full px-5 py-3">
             {t("stage.enough")}
           </button>
-          <p className="muted pt-1 text-center text-xs">
+          <p className="muted pt-1 text-center text-caption">
             {t("stage.stop_note")}
           </p>
         </div>
@@ -1375,17 +1375,17 @@ function SummaryCard({
               style={{ background: `conic-gradient(#fff ${accuracy}%, rgb(255 255 255 / 0.28) ${accuracy}% 100%)` }}
             >
               <div className="brand-gradient-deep absolute inset-[7px] flex flex-col items-center justify-center rounded-full">
-                <span className="text-xl font-black tabular-nums">
+                <span className="text-h2 tabular-nums">
                   {tally.correct}/{tally.total}
                 </span>
                 <span className="text-micro opacity-80">{t("game.correct")}</span>
               </div>
             </div>
           ) : null}
-          <h2 className="mt-2 text-2xl font-bold">
+          <h2 className="mt-2 text-h1">
             {partial ? t("summary.stopped") : t("summary.round_done")}
           </h2>
-          <p className="mt-1 text-sm opacity-90">
+          <p className="mt-1 text-body opacity-90">
             +<CountUp value={xp} /> XP
           </p>
         </div>
@@ -1405,7 +1405,7 @@ function SummaryCard({
             gösterilmeden tur bittiği için başka söylenecek yer yok. */}
         {result?.wagerXp ? (
           <div
-            className="border-b px-6 py-2.5 text-center text-sm font-bold"
+            className="border-b px-6 py-2.5 text-center text-strong"
             style={{
               borderColor: "var(--border)",
               color: result.wagerXp > 0 ? "var(--color-mint)" : "var(--color-flame)",
@@ -1419,7 +1419,7 @@ function SummaryCard({
 
         {result ? (
           <div className="px-6 pb-2">
-            <div className="mb-2 flex items-center justify-between text-xs font-semibold">
+            <div className="mb-2 flex items-center justify-between text-caption">
               <span className="muted">{t("learn.daily_goal")}</span>
               <span className="muted">
                 {result.reviewsToday} / {result.dailyGoal}
@@ -1437,7 +1437,7 @@ function SummaryCard({
               />
             </div>
             {result.goalReached ? (
-              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-sm font-semibold text-[color:var(--color-mint)]">
+              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-strong text-[color:var(--color-mint)]">
                 <FlameIcon size={16} /> {t("session.goal_reached")}
               </p>
             ) : null}
@@ -1451,7 +1451,7 @@ function SummaryCard({
             className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
             style={{ background: "color-mix(in srgb, var(--color-mint) 14%, transparent)" }}
           >
-            <p className="text-sm font-bold" style={{ color: "var(--color-mint)" }}>
+            <p className="text-strong" style={{ color: "var(--color-mint)" }}>
               {t("sessionw.n_mastered", { n: mastered })}
             </p>
 
@@ -1467,12 +1467,12 @@ function SummaryCard({
             style={{ background: "color-mix(in srgb, var(--color-flame) 14%, transparent)" }}
           >
             <p
-              className="flex items-center justify-center gap-1.5 text-sm font-bold"
+              className="flex items-center justify-center gap-1.5 text-strong"
               style={{ color: "var(--color-flame)" }}
             >
               <FlameIcon size={16} /> {t("game.streak_saved")}
             </p>
-            <p className="muted mt-1 text-xs">{t("game.streak_saved_sub", { n: result.currentStreak })}</p>
+            <p className="muted mt-1 text-caption">{t("game.streak_saved_sub", { n: result.currentStreak })}</p>
           </div>
         ) : null}
 
@@ -1480,7 +1480,7 @@ function SummaryCard({
             ama tarihsizdi; kullanıcıya yarın uygulamayı açmak için bir sebep
             vermiyordu. */}
         {result && result.dueTomorrow > 0 ? (
-          <p className="px-6 pt-2 text-center text-sm font-semibold">
+          <p className="px-6 pt-2 text-center text-strong">
             {t("sessionw.due_tomorrow", { n: result.dueTomorrow })}
           </p>
         ) : null}
@@ -1490,20 +1490,20 @@ function SummaryCard({
             {/* Başlık KODA GÖMÜLÜ Türkçeydi: Almanca ve İngilizce arayüzde de
                 "Zorlandıkların" yazıyordu. Sözlüğe alındı ve Android de aynı
                 anahtarı kullanıyor. */}
-            <p className="muted mb-2 text-xs font-semibold uppercase tracking-wide">
+            <p className="muted mb-2 text-micro uppercase tracking-wide">
               {t("session.missed_title", { n: missed.length })}
             </p>
             <ul className="space-y-1.5">
               {missed.slice(0, 6).map((w) => (
                 <li
                   key={w.id}
-                  className="flex items-baseline justify-between gap-3 rounded-panel px-3 py-2 text-sm surface-2"
+                  className="flex items-baseline justify-between gap-3 rounded-panel px-3 py-2 text-body surface-2"
                 >
                   <span className="font-semibold">{w.de}</span>
                   <span className="muted min-w-0 text-right">
                     <span className="block truncate">{w.tr}</span>
                     {w.en ? (
-                      <span className="block truncate text-xs opacity-70" lang="en">
+                      <span className="block truncate text-caption opacity-70" lang="en">
                         {w.en}
                       </span>
                     ) : null}
@@ -1512,7 +1512,7 @@ function SummaryCard({
               ))}
             </ul>
             {missed.length > 6 ? (
-              <p className="muted mt-2 text-center text-xs">{t("session.n_more_words", { n: missed.length - 6 })}</p>
+              <p className="muted mt-2 text-center text-caption">{t("session.n_more_words", { n: missed.length - 6 })}</p>
             ) : null}
             {/*
               Kelime listesinin GİRİŞİ burası.
@@ -1522,7 +1522,7 @@ function SummaryCard({
               zorlandığı kelimeyi merak ettiğinde bakıyor. Merakın doğduğu an tam
               olarak bu ekran — bağlantı da o yüzden burada.
             */}
-            <p className="muted mt-2 text-center text-xs">
+            <p className="muted mt-2 text-center text-caption">
               {t("session.missed_note")}{" "}
               <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
                 {t("words.my_words")}
@@ -1576,8 +1576,8 @@ function SummaryCard({
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="px-2 py-4 text-center">
-      <div className="text-xl font-bold">{value}</div>
-      <div className="muted text-xs">{label}</div>
+      <div className="text-h2">{value}</div>
+      <div className="muted text-caption">{label}</div>
     </div>
   );
 }

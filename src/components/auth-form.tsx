@@ -167,8 +167,8 @@ export function AuthForm({
         <>
           {/* Mobildeki gibi: önce tek satır giriş, sonra iki bağlantı. Cümlenin
               içine bağlantı gömmek çeviride ek uyumuna takılıyordu. */}
-          <p className="mb-1 text-xs leading-relaxed">{t("auth.legal_notice")}</p>
-          <p className="mb-3 text-xs leading-relaxed">
+          <p className="mb-1 text-caption leading-relaxed">{t("auth.legal_notice")}</p>
+          <p className="mb-3 text-caption leading-relaxed">
             <Link href={legalPath("terms", lang)} prefetch={false} className="underline underline-offset-4">
               {t("auth.terms_of_use")}
             </Link>{" "}
@@ -198,7 +198,7 @@ export function AuthForm({
           type="button"
           onClick={() => startSocial("apple")}
           disabled={busy}
-          className="mb-2.5 flex w-full items-center justify-center gap-2.5 rounded-panel px-4 py-3 text-base font-bold disabled:opacity-60"
+          className="mb-2.5 flex w-full items-center justify-center gap-2.5 rounded-panel px-4 py-3 text-strong disabled:opacity-60"
           style={{ background: "var(--text)", color: "var(--surface)" }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden fill="currentColor">
@@ -213,7 +213,7 @@ export function AuthForm({
         type="button"
         onClick={() => startSocial("google")}
         disabled={busy}
-        className="flex w-full items-center justify-center gap-2.5 rounded-panel border px-4 py-3 text-base font-bold disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2.5 rounded-panel border px-4 py-3 text-strong disabled:opacity-60"
         style={{ borderColor: "var(--border)", background: "var(--surface)" }}
       >
         <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden>
@@ -231,7 +231,7 @@ export function AuthForm({
       {providers.apple || providers.google ? (
         <div className="my-4 flex items-center gap-3">
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-          <span className="muted text-xs font-semibold">{t("authw.or_with_email")}</span>
+          <span className="muted text-caption">{t("authw.or_with_email")}</span>
           <div className="h-px flex-1" style={{ background: "var(--border)" }} />
         </div>
       ) : null}
@@ -310,7 +310,7 @@ export function AuthForm({
               onToken={setCaptchaToken}
             />
             {captchaToken ? null : (
-              <p className="muted text-center text-xs" aria-live="polite">
+              <p className="muted text-center text-caption" aria-live="polite">
                 {t("auth.captcha_wait")}
               </p>
             )}
@@ -329,7 +329,7 @@ export function AuthForm({
       {mode === "signin" ? (
         <Link
           href="/forgot-password"
-          className="muted mt-3 block text-center text-sm underline-offset-4 hover:underline"
+          className="muted mt-3 block text-center text-body underline-offset-4 hover:underline"
         >
           {t("auth.forgot_your_password")}
         </Link>
@@ -340,7 +340,7 @@ export function AuthForm({
           setMode(mode === "signin" ? "signup" : "signin");
           setError(null);
         }}
-        className="muted mt-4 w-full text-center text-sm underline-offset-4 hover:underline"
+        className="muted mt-4 w-full text-center text-body underline-offset-4 hover:underline"
       >
         {mode === "signin"
           ? `${t("auth.no_account_yet")}${t("auth.sign_up")}`

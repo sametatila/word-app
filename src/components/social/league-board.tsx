@@ -94,9 +94,9 @@ export function LeagueBoard() {
         <div className="flex items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
           <div className="min-w-0">
             <h2 className="truncate font-bold">{t(tierKey(view.tier))}</h2>
-            <p className="muted text-xs">{t("lbw.league_sub")}</p>
+            <p className="muted text-caption">{t("lbw.league_sub")}</p>
           </div>
-          <span className="muted shrink-0 text-xs">
+          <span className="muted shrink-0 text-caption">
             {view.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: view.daysLeft })}
           </span>
         </div>
@@ -141,7 +141,7 @@ export function LeagueBoard() {
           </ol>
         )}
 
-        <p className="border-t px-5 py-2.5 text-center text-xs font-semibold" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+        <p className="border-t px-5 py-2.5 text-center text-caption" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
           {view.promote > 0
             ? t("league.explain_up", { n: view.promote })
             : view.rows.length >= 2 && view.demote === 0
@@ -194,11 +194,11 @@ function LeagueRow({
           background: row.isMe ? "color-mix(in srgb, var(--color-brand) 8%, transparent)" : undefined,
         }}
       >
-        <span className="w-6 shrink-0 text-center text-sm font-black tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
+        <span className="w-6 shrink-0 text-center text-strong tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
           {row.rank}
         </span>
         <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={32} ring={tint} />
-        <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+        <span className="min-w-0 flex-1 truncate text-strong">
           {row.username && !row.isMe ? (
             <Link href={`/u/${row.username}`} prefetch={false}>
               {row.name ?? t("social.unnamed")}
@@ -216,12 +216,12 @@ function LeagueRow({
           ) : null}
         </span>
         {row.streak > 0 ? (
-          <span className="flex shrink-0 items-center gap-1 text-xs font-semibold tabular-nums" style={{ color: "var(--color-flame)" }} title={t("social.days_streak", { n: row.streak })}>
+          <span className="flex shrink-0 items-center gap-1 text-caption tabular-nums" style={{ color: "var(--color-flame)" }} title={t("social.days_streak", { n: row.streak })}>
             <FlameIcon size={13} />
             {row.streak}
           </span>
         ) : null}
-        <span className="w-16 shrink-0 text-right text-sm font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
+        <span className="w-16 shrink-0 text-right text-strong tabular-nums" style={{ color: "var(--color-brand)" }}>
           {formatNumber(row.xp, lang)}
         </span>
         {row.isMe ? null : (

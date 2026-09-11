@@ -241,11 +241,11 @@ export function AchievementUnlock() {
                 "9 rozet açıldı" deyip sekiz tane göstermek, sayının yanlış
                 olduğunu düşündürür. */}
             {view.items.length > BATCH_SHOWN ? (
-              <p className="muted -mt-2 mb-3 text-xs font-semibold">
+              <p className="muted -mt-2 mb-3 text-caption">
                 {tt("achu.and_n_more", { n: view.items.length - BATCH_SHOWN })}
               </p>
             ) : null}
-            <p className="muted text-sm">{tt("achu.batch_note")}</p>
+            <p className="muted text-body">{tt("achu.batch_note")}</p>
             <Hint />
           </Card>
         ) : (
@@ -259,9 +259,9 @@ export function AchievementUnlock() {
             <div className="my-4 flex justify-center">
               <AchievementBadge row={{ ...view.queue[0], unlocked: true }} size={92} />
             </div>
-            <p className="muted text-sm">{view.queue[0].hint}</p>
+            <p className="muted text-body">{view.queue[0].hint}</p>
             {view.queue.length > 1 ? (
-              <p className="muted mt-3 text-xs font-semibold">{tt("achu.n_more", { n: view.queue.length - 1 })}</p>
+              <p className="muted mt-3 text-caption">{tt("achu.n_more", { n: view.queue.length - 1 })}</p>
             ) : null}
             <Hint />
           </Card>

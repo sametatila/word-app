@@ -19,8 +19,8 @@ function Stat({ label, value, sub, tone }: { label: string; value: string; sub?:
   const color = tone === "good" ? "var(--color-success)" : tone === "warn" ? "var(--color-flame)" : tone === "bad" ? "var(--color-danger)" : "var(--text)";
   return (
     <div className="card px-4 py-3">
-      <div className="text-2xl font-extrabold" style={{ color }}>{value}</div>
-      <div className="muted text-xs font-semibold uppercase tracking-wide">{label}</div>
+      <div className="text-h1" style={{ color }}>{value}</div>
+      <div className="muted text-micro uppercase tracking-wide">{label}</div>
       {sub ? <div className="muted mt-0.5 text-micro">{sub}</div> : null}
     </div>
   );
@@ -46,12 +46,12 @@ export default async function AnalyticsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6 pb-10">
       <div>
-        <h1 className="text-2xl font-extrabold">Dönüşüm hunisi</h1>
-        <p className="muted text-sm">Aktivasyon · retention · gelir — canlı olaylardan (web + mobil).</p>
+        <h1 className="text-h1">Dönüşüm hunisi</h1>
+        <p className="muted text-body">Aktivasyon · retention · gelir — canlı olaylardan (web + mobil).</p>
       </div>
 
       <section>
-        <h2 className="mb-2 text-xs font-bold uppercase tracking-wide muted">Genel</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Genel</h2>
         <div className="grid grid-cols-3 gap-3">
           <Stat label="Toplam kullanıcı" value={String(f.totalUsers)} />
           <Stat label="Aktive olan" value={String(f.activated)} sub="ilk turu bitirdi" tone="good" />
@@ -60,7 +60,7 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-xs font-bold uppercase tracking-wide muted">Retention (kohort {f.retentionBase})</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Retention (kohort {f.retentionBase})</h2>
         <div className="grid grid-cols-3 gap-3">
           <Stat label="D1" value={`%${f.d1}`} sub="1. gün döndü" />
           <Stat label="D7" value={`%${f.d7}`} sub="7. gün döndü" />
@@ -69,7 +69,7 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-xs font-bold uppercase tracking-wide muted">Paywall hunisi</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Paywall hunisi</h2>
         <div className="card divide-y" style={{ borderColor: "var(--border)" }}>
           {[
             { k: "Paywall görüntüleme", v: f.paywallView, base: f.totalUsers },
@@ -77,9 +77,9 @@ export default async function AnalyticsPage() {
             { k: "Satın alma tamamladı", v: f.purchaseDone, base: f.purchaseStart },
           ].map((row) => (
             <div key={row.k} className="flex items-center justify-between px-4 py-2.5" style={{ borderColor: "var(--border)" }}>
-              <span className="text-sm font-semibold">{row.k}</span>
-              <span className="text-sm">
-                <b>{row.v}</b> <span className="muted text-xs">({pct(row.v, row.base)} önceki adımdan)</span>
+              <span className="text-strong">{row.k}</span>
+              <span className="text-body">
+                <b>{row.v}</b> <span className="muted text-caption">({pct(row.v, row.base)} önceki adımdan)</span>
               </span>
             </div>
           ))}
@@ -87,25 +87,25 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-xs font-bold uppercase tracking-wide muted">En çok olay</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-wide muted">En çok olay</h2>
         <div className="space-y-1.5">
           {f.topEvents.length === 0 ? (
-            <p className="muted text-sm">Henüz olay yok.</p>
+            <p className="muted text-body">Henüz olay yok.</p>
           ) : (
             f.topEvents.map((e) => (
               <div key={e.name} className="flex items-center gap-3">
-                <code className="w-40 shrink-0 text-xs">{e.name}</code>
+                <code className="w-40 shrink-0 text-caption">{e.name}</code>
                 <div className="h-4 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
                   <div className="h-full rounded-full" style={{ width: `${Math.max(3, Math.round((e.count / maxEvent) * 100))}%`, background: "var(--color-brand)" }} />
                 </div>
-                <span className="w-12 text-right text-xs font-bold">{e.count}</span>
+                <span className="w-12 text-right text-caption">{e.count}</span>
               </div>
             ))
           )}
         </div>
       </section>
 
-      <p className="muted text-center text-xs">
+      <p className="muted text-center text-caption">
         Kaynak: <code>events</code> tablosu · huni ham olaylardan hesaplanır (§4 ölçüm katmanı).
       </p>
     </div>

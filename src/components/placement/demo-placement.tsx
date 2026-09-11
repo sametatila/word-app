@@ -125,7 +125,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
             transition={{ type: "spring", stiffness: 160, damping: 24 }}
           />
         </div>
-        <span className="muted shrink-0 text-sm font-bold tabular-nums">
+        <span className="muted shrink-0 text-strong tabular-nums">
           {index + 1}/{total}
         </span>
       </div>
@@ -138,8 +138,8 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
       </p>
 
       <div className="card p-5">
-        <p className="muted mb-2 text-xs font-semibold">{t(q.promptKey)}</p>
-        <p className="mb-4 text-2xl font-bold" lang={course}>
+        <p className="muted mb-2 text-caption">{t(q.promptKey)}</p>
+        <p className="mb-4 text-h1" lang={course}>
           {q.question}
         </p>
         <div className="grid gap-2">
@@ -152,7 +152,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
               transition={{ delay: i * 0.04 }}
               disabled={picked !== null}
               onClick={() => pick(o)}
-              className={`option px-3.5 py-3 text-left text-sm font-semibold ${
+              className={`option px-3.5 py-3 text-left text-strong ${
                 picked === null ? "" : o === q.answer ? "option-correct" : picked === o ? "option-wrong" : ""
               }`}
             >

@@ -137,14 +137,22 @@
    * eski sınıflar olduğu gibi çalışmaya devam ediyor; ekranlar şerit şerit
    * buraya taşınıyor.
    *
-   * O TAŞIMA ARTIK SAYILIYOR (2026-09-11). Ölçüm: jetonlar 237 yerde, Tailwind
-   * varsayılanları ve serbest puntolar 1243 yerde kullanılıyordu. `check:type`
-   * dosya başına taban tutuyor — artış hata, azalma serbest. Jeton puntoyu VE
-   * ağırlığı birlikte taşıdığı için çevirme mekanik değil: `text-sm font-bold`
-   * → `strong` (15/700), yalnız `text-sm` → `body` (15/500), `text-xs`
-   * büyük harfle → `micro` (11/700), ağırlıklı `text-xs` → `caption`
-   * (12.5/600). Ölçekte 18 px (`text-lg`) ve 24 px (`text-2xl`) YOK; onlar
-   * role göre h2 ya da h1'e gidiyor.
+   * O TAŞIMA BİTTİ (2026-09-11). Ölçüm başlangıçta şöyleydi: jetonlar 237
+   * yerde, Tailwind varsayılanları ve serbest puntolar 1243 yerde. Hepsi
+   * çevrildi ve `check:type` artık ölçek dışı tek bir puntoyu hata sayıyor
+   * (sekiz kayıtlı istisna var, sebepleriyle).
+   *
+   * Jeton puntoyu VE ağırlığı birlikte taşıdığı için çevirme mekanik değildi:
+   * `text-sm font-bold` → `strong` (15/700), yalnız `text-sm` → `body`
+   * (15/500), `text-xs` büyük harfle → `micro` (11/700), ağırlıklı `text-xs`
+   * → `caption` (12.5/600), düğme etiketi → `h3` (mobil düğme etiketi de h3),
+   * kart/ekran başlığı → `h3`, bölüm kapağı → `h2`, büyük sayaç → `h1` ya da
+   * `display`. Ölçekte 18 px ve 24 px YOK.
+   *
+   * Sınav, ders ve beceri oynatıcılarının başlıkları tek tek mobil
+   * karşılığındaki `<Text variant>`e bakılarak eşlendi — o ekranlarda mobil
+   * neredeyse yalnız `micro/caption/body/bodyStrong` kullanıyor, yani soru
+   * metni bir BAŞLIK değil `bodyStrong`.
    *
    * Satır yükseklikleri web'e ait: React Native punto başına kendi satır
    * yüksekliğini hesaplıyor, tarayıcı hesaplamıyor. Değerler mobildeki görsel

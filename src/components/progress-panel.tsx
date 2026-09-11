@@ -85,19 +85,19 @@ export function ProgressPanel() {
     <section className="card p-4">
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="font-bold">{t("progress.progress")} · {data.level}</h2>
-        <span className="muted shrink-0 text-xs font-semibold">
+        <span className="muted shrink-0 text-caption">
           {t("progp.window", { n: data.evidenceCount, days: DECAY_DAYS })}
         </span>
       </div>
 
-      {data.summary.text ? <p className="mt-1.5 text-sm">{data.summary.text}</p> : null}
+      {data.summary.text ? <p className="mt-1.5 text-body">{data.summary.text}</p> : null}
 
       <dl className="mt-3 grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
         {data.proficiency.map((p) => {
           const delta = p.now !== null && p.before !== null ? p.now - p.before : null;
           return (
             <div key={p.skill}>
-              <dt className="flex items-baseline justify-between gap-2 text-xs">
+              <dt className="flex items-baseline justify-between gap-2 text-caption">
                 <span className="font-semibold">{p.label}</span>
                 <span className="muted shrink-0 tabular-nums">
                   {p.now === null ? (
@@ -144,12 +144,12 @@ export function ProgressPanel() {
           className="mt-3 flex items-center justify-between gap-3 rounded-panel px-3 py-2.5 surface-2"
         >
           <span className="min-w-0">
-            <span className="block text-sm font-semibold">{t("skills.next")}: {data.next.title}</span>
-            <span className="muted block truncate text-xs">
+            <span className="block text-strong">{t("skills.next")}: {data.next.title}</span>
+            <span className="muted block truncate text-caption">
               {data.next.reason} · {data.next.minutes} dk
             </span>
           </span>
-          <span className="btn btn-primary shrink-0 px-3 py-1.5 text-xs">{t("common.start")}</span>
+          <span className="btn btn-primary shrink-0 px-3 py-1.5 text-caption">{t("common.start")}</span>
         </Link>
       ) : null}
 
@@ -171,7 +171,7 @@ export function ProgressPanel() {
             {data.milestones.length ? (
               <div>
                 <p className="muted text-micro uppercase tracking-wide">{t("progw.milestones")}</p>
-                <ul className="mt-1.5 space-y-1 text-sm">
+                <ul className="mt-1.5 space-y-1 text-body">
                   {data.milestones.map((m) => (
                     <li key={`${m.at}-${m.text}`} className="flex items-baseline gap-2">
                       {/* TARİH ARAYÜZ DİLİNDE. Kilometre taşları "2026-09-11" diye yazıyordu:
@@ -180,7 +180,7 @@ export function ProgressPanel() {
                           kayması tarihi bir gün geriye alıyor (aynı yol
                           `public-profile` içinde de kullanılıyor). Android'de de
                           aynı ham dizgi vardı, ikisi birlikte düzeltildi. */}
-                      <span className="muted shrink-0 text-xs tabular-nums">
+                      <span className="muted shrink-0 text-caption tabular-nums">
                         {new Date(`${m.at}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" })}
                       </span>
                       <span>{m.text}</span>
@@ -243,7 +243,7 @@ function Spark({
   const label = points.map((p, i) => `${p.week}: ${values[i] ?? "—"}`).join(", ");
   return (
     <figure className="rounded-panel px-2.5 py-2 surface-2">
-      <figcaption className="flex items-baseline justify-between text-xs">
+      <figcaption className="flex items-baseline justify-between text-caption">
         <span className="font-semibold">{title}</span>
         <span className="muted tabular-nums">{last ?? "—"}</span>
       </figcaption>

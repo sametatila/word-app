@@ -310,7 +310,7 @@ export function AppShell({
             ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
           */}
           <Image src="/logo-mark.png" alt="" width={36} height={36} className="rounded-tile" />
-          <span className="text-lg font-bold">Lernomi</span>
+          <span className="text-h3">Lernomi</span>
         </Link>
 
         <nav className="flex flex-col gap-1">
@@ -320,7 +320,7 @@ export function AppShell({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative flex items-center gap-3 rounded-panel px-3 py-2.5 text-sm font-semibold transition-colors ${
+                className={`relative flex items-center gap-3 rounded-panel px-3 py-2.5 text-strong transition-colors ${
                   active ? "text-white" : "muted hover:text-[color:var(--text)]"
                 }`}
               >
@@ -352,7 +352,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 prefetch={false}
-                className={`flex items-center gap-3 rounded-panel px-3 py-2 text-sm font-semibold transition-colors ${
+                className={`flex items-center gap-3 rounded-panel px-3 py-2 text-strong transition-colors ${
                   active ? "text-[color:var(--text)]" : "muted hover:text-[color:var(--text)]"
                 }`}
               >
@@ -498,7 +498,7 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
    */
   const lang = useLang();
   return (
-    <div className="flex items-center gap-2 text-sm font-bold">
+    <div className="flex items-center gap-2 text-strong">
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
         style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}

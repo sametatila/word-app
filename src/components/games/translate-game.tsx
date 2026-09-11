@@ -165,7 +165,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
               <TokenDiff tokens={result.target} />
             </span>
             {status === "wrong" && result.typed.some((t) => t.mark !== "same") ? (
-              <span className="block text-xs font-normal opacity-80">
+              <span className="block text-caption opacity-80">
                 {tx("rounds.you_wrote")} <TypedTokens tokens={result.typed} />
               </span>
             ) : null}
@@ -173,10 +173,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         ) : null
       }
       prompt={
-        <span className="text-xl font-bold sm:text-2xl">
+        <span className="text-h2 sm:text-h1">
           {sentence.tr}
           {sentence.en ? (
-            <span className="block text-sm font-normal opacity-60" lang="en">
+            <span className="block text-body opacity-60" lang="en">
               {sentence.en}
             </span>
           ) : null}
@@ -220,7 +220,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
               type="button"
               onClick={() => insertChar(char)}
               disabled={status !== "idle"}
-              className="btn btn-ghost min-h-9 min-w-9 px-3 text-base"
+              className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3"
             >
               {char}
             </button>
@@ -233,7 +233,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
               type="button"
               onClick={() => status === "idle" && setHintShown(true)}
               disabled={status !== "idle" || hintShown}
-              className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
+              className="btn btn-ghost min-h-12 flex-1 px-4 text-body"
             >
               {tx("rounds.hint")}
             </button>
@@ -241,7 +241,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           <button
             type="submit"
             disabled={status !== "idle" || value.trim() === ""}
-            className="btn btn-primary min-h-12 flex-[2] px-4 text-sm"
+            className="btn btn-primary min-h-12 flex-[2] px-4 text-body"
           >
             {tx(status === "checking" ? "rounds.checking" : "common.check")}
           </button>
@@ -251,7 +251,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
       {hintShown ? (
         /* İskelet: her kelimenin ilk harfi. Cümleyi vermez, omurgasını verir;
            kelime sayısı zaten üstte. Kalite 3'e düşer (hintUsed). */
-        <p className="mt-3 text-center font-mono text-base font-semibold tracking-wide" style={{ color: "var(--text)" }}>
+        <p className="mt-3 text-center font-mono text-strong tracking-wide" style={{ color: "var(--text)" }}>
           {targetWords.map((w) => `${w[0]}${"_".repeat(Math.max(1, Math.min(6, w.length - 1)))}`).join("  ")}
         </p>
       ) : null}

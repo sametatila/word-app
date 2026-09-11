@@ -43,7 +43,7 @@ export default function DemoFeedback() {
   return (
     <div className="mx-auto max-w-2xl space-y-8 p-6">
       <section className="card p-5">
-        <h2 className="muted mb-3 text-xs font-bold uppercase">FeedbackLine — her hata tipi</h2>
+        <h2 className="muted mb-3 text-micro uppercase">FeedbackLine — her hata tipi</h2>
         <ul className="space-y-2">
           {ERROR_TYPES.map((type) => (
             <li key={type} className="rounded-panel px-3 py-2 surface-2">
@@ -62,24 +62,24 @@ export default function DemoFeedback() {
       </section>
 
       <section className="card p-5">
-        <h2 className="muted mb-3 text-xs font-bold uppercase">CharDiff — harf farkı</h2>
-        <p className="text-sm">
+        <h2 className="muted mb-3 text-micro uppercase">CharDiff — harf farkı</h2>
+        <p className="text-body">
           <CharDiff diff={charDiff("Katse", "Katze")} /> · <CharDiff diff={charDiff("Strase", "Straße")} /> ·{" "}
           <CharDiff diff={charDiff("arbaiten", "arbeiten")} />
         </p>
       </section>
 
       <section className="card p-5">
-        <h2 className="muted mb-3 text-xs font-bold uppercase">TokenDiff — cümle farkı</h2>
+        <h2 className="muted mb-3 text-micro uppercase">TokenDiff — cümle farkı</h2>
         <DiffLegend />
-        <ul className="mt-3 space-y-3 text-sm">
+        <ul className="mt-3 space-y-3 text-body">
           {["Heute ich gehe ins Kino", "Ich gehe heute ins Kinno", "Ich gehe ins Kino", "Ich gehe heute abend ins Kino", "Ich bin heute müde"].map((typed) => {
             const m = matchSentence(typed, T);
             return (
               <li key={typed} className="rounded-panel px-3 py-2 surface-2">
-                <span className="muted mr-2 text-xs uppercase">{m.verdict} · kalite {m.quality}</span>
+                <span className="muted mr-2 text-micro uppercase">{m.verdict} · kalite {m.quality}</span>
                 <TokenDiff tokens={m.target} />
-                <span className="muted block text-xs">
+                <span className="muted block text-caption">
                   Yazdığın: <TypedTokens tokens={m.typed} />
                 </span>
               </li>
@@ -89,12 +89,12 @@ export default function DemoFeedback() {
       </section>
 
       <section className="card p-5">
-        <h2 className="muted mb-3 text-xs font-bold uppercase">AssessmentCard — AI sonucu</h2>
+        <h2 className="muted mb-3 text-micro uppercase">AssessmentCard — AI sonucu</h2>
         <AssessmentCard answer={SAMPLE_ANSWER} result={SAMPLE} example="Ich trinke jeden Morgen einen Kaffee." />
       </section>
 
       <section className="card p-5">
-        <h2 className="muted mb-3 text-xs font-bold uppercase">AssessmentCard — sağlayıcı kapalı (yedek)</h2>
+        <h2 className="muted mb-3 text-micro uppercase">AssessmentCard — sağlayıcı kapalı (yedek)</h2>
         <AssessmentCard answer="Ich trinke Kaffee." result={fb} failure="not_configured" />
       </section>
     

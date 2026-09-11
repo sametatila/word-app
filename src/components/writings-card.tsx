@@ -113,7 +113,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
         title={t("writings.my_writing")}
         text={t("writings.couldn_t_load_writings")}
         action={
-          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-sm">
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-body">
             {t("common.try_again")}
           </button>
         }
@@ -124,7 +124,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   return (
     <section id="writings" className="card p-5">
       <h2 className="font-bold">{t("writings.my_writing")}</h2>
-      <p className="muted mt-1 text-xs">{t("writ.sub")}</p>
+      <p className="muted mt-1 text-caption">{t("writ.sub")}</p>
       <AiNotice variant="output" className="mt-3" />
       {/* Kayıtlar geniş ekranda sütunlara bölünüyor (mobil de öyle yapıyor).
           Sütunlara ayrılan bir listede yatay ayraç çizgisi anlamını yitirdiği
@@ -150,19 +150,19 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
           return (
             <li key={it.id} className="rounded-panel px-3 py-2.5 surface-2">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-black text-white" style={{ background: tone }}>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-caption text-white" style={{ background: tone }}>
                   {score ?? "…"}
                 </span>
                 <button type="button" onClick={() => setOpen(open === it.id ? null : it.id)} className="min-w-0 flex-1 text-left">
-                  <span className="block truncate text-sm font-semibold" lang={course}>
+                  <span className="block truncate text-strong" lang={course}>
                     {it.answer}
                   </span>
-                  <span className="muted block text-xs">
+                  <span className="muted block text-caption">
                     {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {it.day}
                     {score === null ? ` · ${t("writings.to_be_graded")}` : ""}
                   </span>
                 </button>
-                <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost shrink-0 px-2 py-1 text-xs">
+                <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost shrink-0 px-2 py-1 text-caption">
                   {t("common.delete")}
                 </button>
               </div>
@@ -183,7 +183,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                   </button>
                 </div>
               ) : open === it.id ? (
-                <p className="muted mt-2 text-xs" lang={course}>
+                <p className="muted mt-2 text-caption" lang={course}>
                   {it.answer}
                 </p>
               ) : null}
@@ -223,10 +223,10 @@ function WritingsEmpty() {
         <PenIcon size={22} />
       </span>
       <h2 className="mt-3 font-bold">{t("writ.empty_title")}</h2>
-      <p className="muted mx-auto mt-2 max-w-sm text-sm">
+      <p className="muted mx-auto mt-2 max-w-sm text-body">
         {t("writ.empty_sub")}
       </p>
-      <Link href="/immersion" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-sm">
+      <Link href="/immersion" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-body">
         {t("writ.go_to_writing")}
       </Link>
     </section>

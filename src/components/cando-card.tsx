@@ -93,10 +93,10 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       {bare ? null : (
         <div className="flex items-baseline justify-between">
           <h2 className="font-bold">{t("lessonp.i_can").replace(":", "")}</h2>
-          <span className="muted text-xs font-semibold">{t("cando.n_proven", { n: provenTotal })}</span>
+          <span className="muted text-caption">{t("cando.n_proven", { n: provenTotal })}</span>
         </div>
       )}
-      <p className="muted text-xs">
+      <p className="muted text-caption">
         {t("cando.rule")}
         {bare ? ` ${t("cando.n_proven", { n: provenTotal })}.` : ""}
       </p>
@@ -109,7 +109,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
             key={l}
             type="button"
             onClick={() => setLevel(l)}
-            className={`chip shrink-0 px-3 py-1 text-xs font-bold ${l === level ? "chip-active" : ""}`}
+            className={`chip shrink-0 px-3 py-1 text-caption ${l === level ? "chip-active" : ""}`}
             aria-pressed={l === level}
           >
             {l}
@@ -130,7 +130,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
             {shown
               .filter((i) => i.cando.skill === sk)
               .map((i) => (
-                <li key={i.cando.id} className="flex items-start gap-2 text-sm">
+                <li key={i.cando.id} className="flex items-start gap-2 text-body">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro"
                     style={{
@@ -144,7 +144,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
                   </span>
                   <span className={i.state === "none" ? "opacity-60" : ""}>
                     {i.cando.tr}
-                    {i.total ? <span className="muted ml-1 text-xs">({i.done}/{i.total})</span> : null}
+                    {i.total ? <span className="muted ml-1 text-caption">({i.done}/{i.total})</span> : null}
                   </span>
                 </li>
               ))}

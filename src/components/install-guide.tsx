@@ -106,8 +106,8 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
           <CheckIcon size={16} />
         </span>
         <div className="min-w-0">
-          <p className="text-sm font-bold">{t("install.installed")}</p>
-          <p className="muted text-xs">{t("install.installed_sub")}</p>
+          <p className="text-strong">{t("install.installed")}</p>
+          <p className="muted text-caption">{t("install.installed_sub")}</p>
         </div>
       </div>
     );
@@ -130,7 +130,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
         <div className="min-w-0 flex-1">
           {/* Başlık yok: rehber her iki yerde de kendi başlığı olan bir bölümün
               içinde duruyor, buraya bir tane daha koymak onu tekrarlıyordu. */}
-          <p className="text-sm">
+          <p className="text-body">
             {t("install.pitch")}
           </p>
           {deferred ? (
@@ -138,7 +138,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
               onClick={() => {
                 void deferred.prompt().then(() => deferred.userChoice.catch(() => null));
               }}
-              className="btn btn-primary mt-3 px-5 py-2.5 text-sm"
+              className="btn btn-primary mt-3 px-5 py-2.5 text-body"
             >
               {t("install.now")}
             </button>
@@ -149,12 +149,12 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       <div className="mt-4 space-y-4">
         {shown.map((p) => (
           <div key={p}>
-            <p className="text-xs font-bold" style={{ color: "var(--color-brand)" }}>
+            <p className="text-caption" style={{ color: "var(--color-brand)" }}>
               {t(STEPS[p].title)}
             </p>
             <ol className="mt-1.5 space-y-1.5">
               {STEPS[p].steps.map((step, i) => (
-                <li key={step} className="flex gap-2.5 text-sm">
+                <li key={step} className="flex gap-2.5 text-body">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro tabular-nums"
                     style={{ background: "var(--surface-2)" }}
@@ -165,14 +165,14 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
                 </li>
               ))}
             </ol>
-            {STEPS[p].note ? <p className="muted mt-1.5 text-xs">{t(STEPS[p].note)}</p> : null}
+            {STEPS[p].note ? <p className="muted mt-1.5 text-caption">{t(STEPS[p].note)}</p> : null}
           </div>
         ))}
       </div>
 
       <button
         onClick={() => setShowAll((v) => !v)}
-        className="muted mt-3 text-xs font-semibold underline underline-offset-2"
+        className="muted mt-3 text-caption underline underline-offset-2"
       >
         {t(showAll ? "install.show_this_device" : "install.show_other_device")}
       </button>

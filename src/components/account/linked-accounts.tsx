@@ -166,14 +166,14 @@ export function LinkedAccounts({
               <SettingRow key={p} title={ad} sub={bagli && etiket.alt ? t(etiket.alt) : t("links.not_linked")}>
                 {bagli ? (
                     sonYontem ? (
-                      <span className="muted text-xs">{t("links.only_method")}</span>
+                      <span className="muted text-caption">{t("links.only_method")}</span>
                     ) : (
-                      <button className="btn-ghost text-xs" disabled={busy === p} onClick={() => void kaldir(p)}>
+                      <button className="btn-ghost text-caption" disabled={busy === p} onClick={() => void kaldir(p)}>
                         {busy === p ? "…" : t("links.unlink")}
                       </button>
                     )
                 ) : (
-                    <button className="btn text-xs" disabled={busy === p} onClick={() => void bagla(p)}>
+                    <button className="btn text-caption" disabled={busy === p} onClick={() => void bagla(p)}>
                       {busy === p ? "…" : t("links.link")}
                     </button>
                 )}
@@ -181,7 +181,7 @@ export function LinkedAccounts({
             );
           })}
           </div>
-          {msg ? <p role="status" className="mt-2 text-xs font-semibold">{msg}</p> : null}
+          {msg ? <p role="status" className="mt-2 text-caption">{msg}</p> : null}
         </Row>
       </Group>
 

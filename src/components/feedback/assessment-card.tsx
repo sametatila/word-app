@@ -46,20 +46,20 @@ export function AssessmentCard({
   return (
     <section className="card p-4">
       {failure && failure !== "aborted" ? (
-        <p className="mb-3 rounded-panel px-3 py-2 text-xs font-semibold" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
+        <p className="mb-3 rounded-panel px-3 py-2 text-caption" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
           {t(ASSESS_FAILURE_KEYS[failure])}
         </p>
       ) : null}
 
       <div className="flex items-center gap-4">
         <div
-          className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-xl font-black text-white"
+          className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-h2 text-white"
           style={{ background: tone }}
           aria-label={t("assess.overall_score", { n: s.overall })}
         >
           {s.overall}
         </div>
-        <dl className="grid flex-1 grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+        <dl className="grid flex-1 grid-cols-2 gap-x-3 gap-y-1.5 text-caption">
           <Bar label={t("assess.task")} value={s.task} />
           <Bar label={t("assess.structure")} value={s.structure} />
           <Bar label={t("assess.grammar")} value={s.grammar} muted={offline} />
@@ -68,7 +68,7 @@ export function AssessmentCard({
       </div>
 
       {offline ? (
-        <ul className="mt-3 space-y-1 text-xs">
+        <ul className="mt-3 space-y-1 text-caption">
           {(result as FallbackAssessment).checks.map((c, i) => (
             <li key={i} className="flex items-center gap-2">
               <span aria-hidden style={{ color: c.ok ? "var(--color-mint)" : "var(--color-rose)" }}>{c.ok ? "✓" : "✗"}</span>
@@ -78,13 +78,13 @@ export function AssessmentCard({
         </ul>
       ) : (
         <>
-          <p className="mt-3 text-sm leading-relaxed" lang={course}>
+          <p className="mt-3 text-body leading-relaxed" lang={course}>
             <Highlighted answer={answer} errors={result.errors} />
           </p>
           {result.errors.length ? (
             <ul className="mt-2 space-y-1.5">
               {result.errors.map((e, i) => (
-                <li key={i} className="text-xs">
+                <li key={i} className="text-caption">
                   <FeedbackLine
                     why={{
                       type: e.type,
@@ -98,8 +98,8 @@ export function AssessmentCard({
             </ul>
           ) : null}
           {result.corrected && result.corrected.trim() !== answer.trim() ? (
-            <p className="mt-3 rounded-panel px-3 py-2 text-sm surface-2" lang={course}>
-              <span className="muted mr-1 text-xs font-semibold">{t("assess.corrected")}</span>
+            <p className="mt-3 rounded-panel px-3 py-2 text-body surface-2" lang={course}>
+              <span className="muted mr-1 text-caption">{t("assess.corrected")}</span>
               <strong>{result.corrected}</strong>
             </p>
           ) : null}
@@ -107,13 +107,13 @@ export function AssessmentCard({
       )}
 
       {result.praise_tr ? (
-        <p className="mt-3 text-sm" style={{ color: "var(--color-mint)" }}>
+        <p className="mt-3 text-body" style={{ color: "var(--color-mint)" }}>
           {result.praise_tr}
         </p>
       ) : null}
-      {result.next_tip_tr ? <p className="muted mt-1 text-sm">{result.next_tip_tr}</p> : null}
+      {result.next_tip_tr ? <p className="muted mt-1 text-body">{result.next_tip_tr}</p> : null}
       {example ? (
-        <p className="mt-3 text-xs" lang={course}>
+        <p className="mt-3 text-caption" lang={course}>
           <span className="muted mr-1 font-semibold">{t("assess.example")}</span>
           {example}
         </p>

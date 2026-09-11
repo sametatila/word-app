@@ -97,12 +97,12 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         }}
       >
         <div className="flex items-center justify-center gap-2">
-          <span className="text-2xl font-bold sm:text-3xl">{withArtikel(word)}</span>
+          <span className="text-h1 sm:text-display">{withArtikel(word)}</span>
           <SpeakButton text={withArtikel(word)} size="sm" />
         </div>
         <div className="my-3 flex items-center justify-center gap-3">
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
-          <span className="muted text-xs uppercase tracking-wide">{tx("rounds.means")}</span>
+          <span className="muted text-micro uppercase tracking-wide">{tx("rounds.means")}</span>
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
         </div>
         <div className="flex justify-center font-semibold">
@@ -116,7 +116,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           whileTap={{ scale: 0.96 }}
           disabled={settled}
           onClick={() => decide(true)}
-          className={`option flex min-h-16 items-center justify-center gap-2 text-lg font-bold ${
+          className={`option flex min-h-16 items-center justify-center gap-2 text-h3 ${
             settled && isTrue ? "option-correct" : settled && answered === true ? "option-wrong" : ""
           }`}
         >
@@ -128,7 +128,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           whileTap={{ scale: 0.96 }}
           disabled={settled}
           onClick={() => decide(false)}
-          className={`option flex min-h-16 items-center justify-center gap-2 text-lg font-bold ${
+          className={`option flex min-h-16 items-center justify-center gap-2 text-h3 ${
             settled && !isTrue ? "option-correct" : settled && answered === false ? "option-wrong" : ""
           }`}
         >

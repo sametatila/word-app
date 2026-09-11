@@ -159,7 +159,7 @@ export function ProfileForm({
         /* Ad alanı Android ile aynı: kelime başlarını büyütüyor (bkz.
            `screens/SettingsScreen`). */
         autoCapitalize="words"
-        className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+        className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
         />
       </label>
       {nameError ? (
@@ -209,7 +209,7 @@ export function ProfileForm({
         {saveError ? (
           <p
             role="alert"
-            className="flex items-center gap-2 rounded-panel px-3 py-2 text-sm"
+            className="flex items-center gap-2 rounded-panel px-3 py-2 text-body"
             style={{
               background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
               color: "var(--color-rose)",
@@ -250,7 +250,7 @@ export function ProfileForm({
             </div>
             {course !== initial.course ? (
               <p
-                className="mt-2 rounded-panel px-3 py-2 text-xs"
+                className="mt-2 rounded-panel px-3 py-2 text-caption"
                 style={{
                   background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
                   color: "var(--color-brand)",
@@ -274,7 +274,7 @@ export function ProfileForm({
                   key={l.id}
                   aria-pressed={level === l.id}
                   onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
-                  className={`option px-1 py-2.5 text-sm font-bold ${
+                  className={`option px-1 py-2.5 text-strong ${
                     level === l.id ? "option-correct" : ""
                   }`}
                   title={t(l.descKey)}
@@ -287,7 +287,7 @@ export function ProfileForm({
                 bitince üst seviye) bir kez öğrenilen şeydi ve her ayar açılışında
                 dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
                 ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
-            <p className="muted mt-1.5 text-xs">
+            <p className="muted mt-1.5 text-caption">
               {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}
             </p>
             {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
@@ -433,8 +433,8 @@ export function ProfileForm({
         */}
         <Row label={t("settings.about")}>
           <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
-            <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
-            <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
+            <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.privacy_policy")}</Link>
+            <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.terms_of_use")}</Link>
           </SettingRow>
           {/*
             İLETİŞİM YÜZEYİ. Apple Guidelines 1.2 kullanıcı içeriği taşıyan
@@ -443,7 +443,7 @@ export function ProfileForm({
             Mobil ayarlarda da aynı satır duruyor — iki taraf ayrışmasın.
           */}
           <SettingRow title={t("settings.support_contact")} sub={t("settings.support_contact_sub")}>
-            <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.support_contact")}</Link>
+            <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-caption">{t("settings.support_contact")}</Link>
           </SettingRow>
         </Row>
       </Group>
@@ -485,7 +485,7 @@ function Slider({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 flex items-baseline justify-between text-sm font-semibold">
+      <span className="mb-1.5 flex items-baseline justify-between text-strong">
         <span className="muted">{label}</span>
         <span className="text-[color:var(--color-brand)]">
           {value} {suffix}
@@ -527,7 +527,7 @@ function MicConsentRow() {
           setMicConsent(false);
           setOn(false);
         }}
-        className="btn btn-ghost h-9 px-3 text-xs"
+        className="btn btn-ghost h-9 px-3 text-caption"
       >
         {t("common.discard")}
       </button>

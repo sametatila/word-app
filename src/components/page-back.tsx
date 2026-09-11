@@ -11,7 +11,7 @@ import { useT } from "@/lib/i18n/client";
  * `WordsScreen.tsx`… hepsi aynı üç parçadan kurulu).
  *
  * Ölçüler oradan: 44×44 kare düğme, `radius tile` (14), `surface-2` zemin ve
- * `h2` başlık. Önceki hali 40×40 çip ve `text-xl` başlıktı; fark küçük
+ * `h2` başlık. Önceki hali 40×40 çip ve `text-h2` başlıktı; fark küçük
  * görünüyor ama iki uygulamayı yan yana koyunca başlık satırının yüksekliği
  * ve düğmenin ağırlığı tutmuyordu. 44 ayrıca dokunma hedefi alt sınırı.
  */

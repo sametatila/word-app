@@ -31,17 +31,17 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
         <p className="text-micro uppercase tracking-wide" style={{ color: "var(--color-flame)" }}>
           {t("item.grammar_rule")}
         </p>
-        <h2 className="mt-1 text-base font-bold">{exercise.focus}</h2>
+        <h2 className="mt-1 text-h3">{exercise.focus}</h2>
 
         {exercise.explanation.map((block, i) => (
           <div key={i} className={i > 0 ? "mt-4" : "mt-3"}>
-            {block.heading ? <h3 className="text-sm font-bold">{block.heading}</h3> : null}
+            {block.heading ? <h3 className="text-strong">{block.heading}</h3> : null}
             <p className="mt-1 text-body leading-relaxed">{block.tr}</p>
             {block.examples?.length ? (
               <ul className="mt-2 space-y-1.5">
@@ -58,9 +58,9 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                         <span className="block text-strong" lang={lang}>
                           {x.de}
                         </span>
-                        <span className="muted block text-sm">{x.tr}</span>
+                        <span className="muted block text-body">{x.tr}</span>
                         {x.note ? (
-                          <span className="block text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
+                          <span className="block text-caption" style={{ color: "var(--color-flame)" }}>
                             {x.note}
                           </span>
                         ) : null}

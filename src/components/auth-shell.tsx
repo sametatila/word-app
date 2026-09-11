@@ -21,16 +21,16 @@ export function AuthShell({
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col justify-center px-5 py-10">
       <Link href="/" className="mb-8 flex items-center justify-center gap-2">
         <LogoMark size={40} />
-        <span className="text-lg font-bold">Lernomi</span>
+        <span className="text-h3">Lernomi</span>
       </Link>
 
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="card p-6">
-        <h1 className="text-xl font-bold">{title}</h1>
-        {subtitle ? <p className="muted mt-1 text-sm">{subtitle}</p> : null}
+        <h1 className="text-h2">{title}</h1>
+        {subtitle ? <p className="muted mt-1 text-body">{subtitle}</p> : null}
         <div className="mt-5">{children}</div>
       </motion.div>
 
-      <div className="muted mt-6 text-center text-sm">{footer}</div>
+      <div className="muted mt-6 text-center text-body">{footer}</div>
     </div>
   );
 }
@@ -45,7 +45,7 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
          KÖKTE — bu bileşenden geçen her bildirim kazanıyor. Hata `alert`,
          başarı `status`: ilki sözü keser, ikincisi sırasını bekler. */
       role={tone === "error" ? "alert" : "status"}
-      className="rounded-panel px-3 py-2 text-sm"
+      className="rounded-panel px-3 py-2 text-body"
       style={{ background: `color-mix(in srgb, ${color} 12%, transparent)`, color }}
     >
       {children}
@@ -54,4 +54,4 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
 }
 
 export const authInputClass =
-  "option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]";
+  "option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]";

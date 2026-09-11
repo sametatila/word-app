@@ -1593,8 +1593,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "error")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">{t("walk.error_title")}</h2>
-        <p className="muted mt-2 text-sm">{t("walk.error_sub")}</p>
+        <h2 className="text-h3">{t("walk.error_title")}</h2>
+        <p className="muted mt-2 text-body">{t("walk.error_sub")}</p>
         {/* YERİNDE TEKRAR DENEME. Tek çıkış "Geri dön"dü: geçici bir ağ
             hatası kullanıcıyı yürüyüş modundan tamamen atıyordu -- oysa
             metnin kendisi "bağlantını kontrol edip tekrar dene" diyor ve
@@ -1615,8 +1615,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "empty")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">{t("walk.empty_title")}</h2>
-        <p className="muted mt-2 text-sm">{t("walk.empty_sub")}</p>
+        <h2 className="text-h3">{t("walk.empty_title")}</h2>
+        <p className="muted mt-2 text-body">{t("walk.empty_sub")}</p>
         <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
@@ -1624,8 +1624,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "unsupported")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">{t("walk.unsupported_title")}</h2>
-        <p className="muted mt-2 text-sm">{t("walk.unsupported_sub")}</p>
+        <h2 className="text-h3">{t("walk.unsupported_title")}</h2>
+        <p className="muted mt-2 text-body">{t("walk.unsupported_sub")}</p>
         <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
@@ -1633,8 +1633,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "denied")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">{t("walk.denied_title")}</h2>
-        <p className="muted mt-2 text-sm">{t("walk.denied_sub")}</p>
+        <h2 className="text-h3">{t("walk.denied_title")}</h2>
+        <p className="muted mt-2 text-body">{t("walk.denied_sub")}</p>
         <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
@@ -1642,16 +1642,16 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "ready" || status === "paused")
     return (
       <Frame>
-        <h2 className="text-xl font-bold">
+        <h2 className="text-h2">
           {t(status === "paused" ? "walk.paused" : "walk.title")}
         </h2>
-        <p className="muted mt-2 text-sm leading-relaxed">
+        <p className="muted mt-2 text-body leading-relaxed">
           {t("walk.intro_1", { target: courseName(course, lang) })}
         </p>
-        <p className="muted mt-2 text-sm leading-relaxed">{t("walk.intro_2")}</p>
+        <p className="muted mt-2 text-body leading-relaxed">{t("walk.intro_2")}</p>
         {pocketReady === false ? (
           <p
-            className="mt-3 rounded-panel px-3 py-2.5 text-sm leading-relaxed"
+            className="mt-3 rounded-panel px-3 py-2.5 text-body leading-relaxed"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",
@@ -1662,7 +1662,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         ) : null}
         {status === "paused" ? (
           <p
-            className="mt-3 rounded-panel px-3 py-2.5 text-sm"
+            className="mt-3 rounded-panel px-3 py-2.5 text-body"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",
@@ -1671,7 +1671,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             {t("walk.paused_note")}
           </p>
         ) : null}
-        <div className="mt-4 rounded-panel px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
+        <div className="mt-4 rounded-panel px-3 py-2.5 text-center text-body" style={{ background: "var(--surface-2)" }}>
           <span className="muted">{t("walk.where_you_left")} </span>
           <strong>{Math.max(1, step)}</strong>
           <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
@@ -1683,13 +1683,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         */}
         <button
           onClick={() => begin("pocket")}
-          className="btn btn-primary mt-5 w-full px-5 py-4 text-base"
+          className="btn btn-primary mt-5 w-full px-5 py-4 text-h3"
         >
           {t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start")}
         </button>
         <button
           onClick={() => begin("screen")}
-          className="btn btn-ghost mt-2 w-full px-5 py-4 text-base"
+          className="btn btn-ghost mt-2 w-full px-5 py-4 text-h3"
         >
           {t(status === "paused" ? "walk.screen_continue" : "walk.screen_start")}
         </button>
@@ -1715,14 +1715,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "done")
     return (
       <Frame>
-        <h2 className="text-2xl font-bold">{t("walk.done_title")}</h2>
-        <p className="mt-2 text-sm" style={{ color: "var(--color-mint)" }}>
+        <h2 className="text-h1">{t("walk.done_title")}</h2>
+        <p className="mt-2 text-body" style={{ color: "var(--color-mint)" }}>
           {t("common.n_correct", { correct: tally.correct, total: tally.total })}
           {walkRef.current.sessions > 1
             ? ` · ${t("walk.n_rounds", { n: walkRef.current.sessions })}`
             : ""}
         </p>
-        <p className="muted mt-2 text-sm">{t("walk.done_sub")}</p>
+        <p className="muted mt-2 text-body">{t("walk.done_sub")}</p>
         <button onClick={leave} className="btn btn-primary mt-5 w-full px-5 py-3.5">{t("common.finish")}</button>
       </Frame>
     );
@@ -1741,7 +1741,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           className="fixed inset-0 z-[120] flex flex-col items-center justify-end"
           style={{ background: "#000", touchAction: "none" }}
         >
-          <p className="mb-24 px-8 text-center text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
+          <p className="mb-24 px-8 text-center text-caption leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
             {t("walk.dark_listening")}
             <br />
             {t("walk.dark_exit")}
@@ -1749,7 +1749,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         </div>
       ) : null}
 
-      <div className="mb-4 flex items-baseline justify-between text-xs font-semibold">
+      <div className="mb-4 flex items-baseline justify-between text-caption">
         <span className="muted">{Math.max(1, step)} / {total}</span>
         <span className="flex items-center gap-2">
           {/* Kip ekranda yazıyor: cepte kipinde cevaplar ölçülmüyor ve bunu
@@ -1792,8 +1792,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             >
               <MicIcon size={28} />
             </motion.span>
-            <p className="mt-3 text-lg font-bold">{t("walk.continue_q")}</p>
-            <p className="muted mt-1 text-sm">
+            <p className="mt-3 text-h3">{t("walk.continue_q")}</p>
+            <p className="muted mt-1 text-body">
               {phase === "listening" ? t("walk.say_yes_no") : "…"}
             </p>
           </>
@@ -1810,8 +1810,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             >
               <MicIcon size={28} />
             </motion.span>
-            <p className="mt-3 text-lg font-bold">{prompt?.tr}</p>
-            <p className="muted mt-1 text-sm">{t("walk.say_target", { target: courseName(course, lang) })}</p>
+            <p className="mt-3 text-h3">{prompt?.tr}</p>
+            <p className="muted mt-1 text-body">{t("walk.say_target", { target: courseName(course, lang) })}</p>
           </>
         ) : verdict ? (
           <>
@@ -1829,8 +1829,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             >
               {verdict === "correct" ? <CheckIcon size={28} /> : verdict === "wrong" ? <XIcon size={28} /> : <MicIcon size={28} />}
             </span>
-            <p className="mt-3 text-lg font-bold">{prompt?.de}</p>
-            <p className="muted mt-1 text-sm">
+            <p className="mt-3 text-h3">{prompt?.de}</p>
+            <p className="muted mt-1 text-body">
               {verdict === "correct"
                 ? t("common.correct")
                 : verdict === "unheard"
@@ -1840,15 +1840,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
                     : prompt?.tr}
             </p>
             {verdict === "wrong" && heardText ? (
-              <p className="muted mt-2 text-xs">
+              <p className="muted mt-2 text-caption">
                 {t("walk.i_heard")} <span className="font-semibold">“{heardText}”</span>
               </p>
             ) : null}
           </>
         ) : (
           <>
-            <p className="text-lg font-bold">{prompt?.tr ?? "…"}</p>
-            <p className="muted mt-1 text-sm">{t("walk.speaking")}</p>
+            <p className="text-h3">{prompt?.tr ?? "…"}</p>
+            <p className="muted mt-1 text-body">{t("walk.speaking")}</p>
           </>
         )}
       </motion.div>
@@ -1871,11 +1871,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         gerekmiyor çünkü ekran açık kipin kendi tanıyıcısı kullanılıyor.
       */}
       {browserRef.current ? (
-        <button onClick={darken} className="btn btn-primary mt-6 w-full px-5 py-4 text-base">
+        <button onClick={darken} className="btn btn-primary mt-6 w-full px-5 py-4 text-h3">
           {t("walk.pocket_darken")}
         </button>
       ) : null}
-      <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-base`}>
+      <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-h3`}>
         {t("walk.pause")}
       </button>
       {/* TUR ORTASINDA SORULUYOR. "Bitir" tek dokunuşta turu kapatıyordu;

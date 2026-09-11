@@ -126,11 +126,11 @@ export function PlayerShell({
             >
               {exercise.level}
             </span>
-            <span className="muted text-xs font-semibold">
+            <span className="muted text-caption">
               {t(SKILL_LABEL_KEYS[exercise.skill])} · {t(`genre.${exercise.genre}`)} · {t("skills.dk", { n: exercise.minutes })}
             </span>
           </div>
-          <h1 className="truncate text-lg font-bold">{exercise.title}</h1>
+          <h1 className="truncate text-h3">{exercise.title}</h1>
         </div>
       </div>
       {children}
@@ -187,14 +187,14 @@ export function ResultCard({
       {/* `cheer` klibi mobildeki `celebrate` ile aynı dosya (bkz. mascot CLIP). */}
       <Confetti fire={band === "good" ? 1 : 0} count={34} />
       <Mascot mood={band === "good" ? "cheer" : band === "mid" ? "happy" : "idle"} size={84} className="mx-auto" />
-      <h2 className="mt-1 text-lg font-bold">
+      <h2 className="mt-1 text-h3">
         {perfect
           ? t("skillp.perfect")
           : t(noun === "task" ? "skillp.n_of_tasks" : "skillp.n_of_questions", { correct, total })}
       </h2>
       {state.phase === "saved" ? (
         <>
-          <p className="mt-2 flex items-center justify-center gap-3 text-sm font-bold">
+          <p className="mt-2 flex items-center justify-center gap-3 text-strong">
             <span className="flex items-center gap-1" style={{ color: "var(--color-brand)" }}>
               <SparkIcon size={16} /> +{state.xpGained} XP
             </span>
@@ -203,17 +203,17 @@ export function ResultCard({
             </span>
           </p>
           {state.repeat && state.xpGained === 0 ? (
-            <p className="muted mt-1.5 text-xs">
+            <p className="muted mt-1.5 text-caption">
               {t("item.repeat_note")}
             </p>
           ) : null}
         </>
       ) : state.phase === "offline" ? (
-        <p className="muted mt-2 text-sm">
+        <p className="muted mt-2 text-body">
           {t("skillp.saved_offline")}
         </p>
       ) : (
-        <p className="muted mt-2 text-sm">{t("rounds.saving")}</p>
+        <p className="muted mt-2 text-body">{t("rounds.saving")}</p>
       )}
       {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
           becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
@@ -225,9 +225,9 @@ export function ResultCard({
         >
           <span className="min-w-0">
             <span className="muted block text-micro uppercase tracking-wide">{t("skills.next")}</span>
-            <span className="block truncate text-sm font-semibold">{frame.next.title}</span>
+            <span className="block truncate text-strong">{frame.next.title}</span>
           </span>
-          <span className="shrink-0 text-lg" aria-hidden>
+          <span className="shrink-0 text-h3" aria-hidden>
             →
           </span>
         </Link>

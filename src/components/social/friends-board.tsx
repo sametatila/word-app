@@ -60,8 +60,8 @@ export function FriendsBoard() {
   return (
     <section className="card overflow-hidden">
       <div className="flex items-baseline justify-between border-b px-5 py-3" style={{ borderColor: "var(--border)" }}>
-        <h2 className="text-sm font-bold">{t("friendsboard.among_friends_this_week")}</h2>
-        <span className="muted text-xs">{board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })}</span>
+        <h2 className="text-strong">{t("friendsboard.among_friends_this_week")}</h2>
+        <span className="muted text-caption">{board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })}</span>
       </div>
       <ol>
         {board.rows.map((r) => (
@@ -70,31 +70,31 @@ export function FriendsBoard() {
             className="flex items-center gap-3 border-t px-5 py-2.5 first:border-t-0"
             style={{ borderColor: "var(--border)", background: r.isMe ? "color-mix(in srgb, var(--color-brand) 8%, transparent)" : undefined }}
           >
-            <span className="w-6 shrink-0 text-center text-sm font-black tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
+            <span className="w-6 shrink-0 text-center text-strong tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
               {r.rank}
             </span>
             <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={32} ring={MEDAL[r.rank] ?? null} />
-            <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+            <span className="min-w-0 flex-1 truncate text-strong">
               {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.unnamed")}</Link> : (r.name ?? t("social.unnamed"))}
               {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de
                   "sen" yazıyordu. Anahtar taban sözlükte hazırdı ve Android
                   aynı satırda onu kullanıyor. */}
-              {r.isMe ? <span className="muted ml-1 text-xs font-normal">{t("social.you_paren")}</span> : null}
+              {r.isMe ? <span className="muted ml-1 text-caption">{t("social.you_paren")}</span> : null}
             </span>
             {r.streak > 0 ? (
-              <span className="flex shrink-0 items-center gap-1 text-xs font-semibold tabular-nums" style={{ color: "var(--color-flame)" }}>
+              <span className="flex shrink-0 items-center gap-1 text-caption tabular-nums" style={{ color: "var(--color-flame)" }}>
                 <FlameIcon size={13} />
                 {r.streak}
               </span>
             ) : null}
-            <span className="w-16 shrink-0 text-right text-sm font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
+            <span className="w-16 shrink-0 text-right text-strong tabular-nums" style={{ color: "var(--color-brand)" }}>
               {formatNumber(r.xp, lang)}
             </span>
           </li>
         ))}
       </ol>
       {me && gap > 0 ? (
-        <p className="border-t px-5 py-2.5 text-center text-xs font-semibold" style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}>
+        <p className="border-t px-5 py-2.5 text-center text-caption" style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}>
           {t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatNumber(gap, lang) })}
         </p>
       ) : null}

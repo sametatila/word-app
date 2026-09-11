@@ -62,9 +62,9 @@ export function DocHeader({ locale = "tr" }: { locale?: LegalLocale }) {
     <>
       <Link href="/" className="mb-8 flex items-center gap-2">
         <LogoMark size={32} />
-        <span className="text-base font-bold">Lernomi</span>
+        <span className="text-strong">Lernomi</span>
       </Link>
-      <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+      <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-body">
         <Link href={legalPath("privacy", locale)} className="underline-offset-4 hover:underline">{c.privacy}</Link>
         <Link href={legalPath("terms", locale)} className="underline-offset-4 hover:underline">{c.terms}</Link>
         <Link href={legalPath("support", locale)} className="underline-offset-4 hover:underline">{c.support}</Link>
@@ -90,13 +90,13 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
   return (
     <div className="mx-auto w-full max-w-3xl px-5 py-10">
       <DocHeader locale={locale} />
-      <h1 className="text-3xl font-extrabold tracking-tight">{page.title}</h1>
+      <h1 className="text-display tracking-tight">{page.title}</h1>
       {isContract ? (
-        <p className="muted mt-2 text-sm">
+        <p className="muted mt-2 text-body">
           {c.effective}: {cfg.effectiveDate} · {c.version} {cfg.version}
         </p>
       ) : null}
-      <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+      <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-body">
         <span>{c.languageLabel}:</span>
         {LEGAL_LOCALES.map((l) =>
           l === locale ? (
@@ -108,12 +108,12 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
           ),
         )}
       </p>
-      {isContract && c.binding ? <p className="muted mt-2 text-xs">{c.binding}</p> : null}
+      {isContract && c.binding ? <p className="muted mt-2 text-caption">{c.binding}</p> : null}
 
       {page.summary.length ? (
         <div className="card mt-6 p-5">
-          <p className="text-sm font-semibold">{c.inBrief}</p>
-          <ul className="muted mt-2 flex flex-col gap-1.5 text-sm leading-relaxed">
+          <p className="text-strong">{c.inBrief}</p>
+          <ul className="muted mt-2 flex flex-col gap-1.5 text-body leading-relaxed">
             {page.summary.map((point) => (
               <li key={point} className="flex gap-2"><span aria-hidden="true">·</span><span>{point}</span></li>
             ))}

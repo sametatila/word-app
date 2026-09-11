@@ -77,7 +77,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
             text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")}
             action={
               friends.length ? (
-                <button className="btn btn-primary h-9 px-4 text-xs" onClick={() => setPick((p) => !p)} disabled={!canStart}>
+                <button className="btn btn-primary h-9 px-4 text-caption" onClick={() => setPick((p) => !p)} disabled={!canStart}>
                   {t(pick ? "common.discard" : "quests.choose_friend")}
                 </button>
               ) : undefined
@@ -96,10 +96,10 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                         gösteriyor (`social/Quests`); webde yalnız ad vardı,
                         yani seçim kör yapılıyordu. */}
                     <span className="min-w-0 flex-1 truncate">
-                      <span className="block truncate text-sm font-semibold">{f.name ?? t("social.unnamed")}</span>
+                      <span className="block truncate text-strong">{f.name ?? t("social.unnamed")}</span>
                       <span className="muted block text-caption">{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}</span>
                     </span>
-                    <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
+                    <button className="btn btn-primary h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
                       {t("quests.invite")}
                     </button>
                   </li>
@@ -109,13 +109,13 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
           ) : null}
         </div>
       ) : null}
-      {err ? <p className="text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
       {past.length ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("quests.past_weeks")}</h3>
+          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("quests.past_weeks")}</h3>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {past.map((q) => (
-              <li key={q.id} className="flex items-center gap-3 px-4 py-2.5 text-sm" style={{ borderColor: "var(--border)" }}>
+              <li key={q.id} className="flex items-center gap-3 px-4 py-2.5 text-body" style={{ borderColor: "var(--border)" }}>
                 <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={28} />
                 <span className="min-w-0 flex-1 truncate">
                   {t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp, lang) })}
@@ -124,7 +124,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                     "hedefin ne kadarına yaklaştık" sorusunu yarım cevaplıyor -
                     yüzdenin paydası hedef ve o satırın solunda duruyor, payı
                     ise hiçbir yerde yoktu. Android ikisini birden yazıyor. */}
-                <span className="shrink-0 text-xs font-bold tabular-nums" style={{ color: q.status === "completed" ? "var(--color-mint)" : "var(--text-muted)" }}>
+                <span className="shrink-0 text-caption tabular-nums" style={{ color: q.status === "completed" ? "var(--color-mint)" : "var(--text-muted)" }}>
                   {q.status === "completed"
                     ? t("quests.completed")
                     : `${formatPercent(q.pct, lang)} · ${formatNumber(q.totalXp, lang)} XP`}
@@ -193,10 +193,10 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={36} ring="var(--color-sky)" />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-bold">
+          <p className="text-strong">
             {t(invited ? "quests.invite_title" : "quests.week_title")}
           </p>
-          <p className="muted text-xs">
+          <p className="muted text-caption">
             {t("quests.with_partner", {
               name: q.partner.name ?? t("social.your_friend"),
               remaining: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }),
@@ -216,17 +216,17 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
         <div className="mt-3 flex gap-2">
           {q.invitedByMe ? (
             <>
-              <span className="muted flex-1 self-center text-xs">{t("quests.awaiting_reply")}</span>
-              <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "cancel"))}>
+              <span className="muted flex-1 self-center text-caption">{t("quests.awaiting_reply")}</span>
+              <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "cancel"))}>
                 {t("common.cancel")}
               </button>
             </>
           ) : (
             <>
-              <button className="btn btn-primary h-8 flex-1 text-xs" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "accept"))}>
+              <button className="btn btn-primary h-8 flex-1 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "accept"))}>
                 {t("quests.accept")}
               </button>
-              <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "decline"))}>
+              <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void onAct(() => social.questAction(q.id, "decline"))}>
                 {t("quests.decline")}
               </button>
             </>

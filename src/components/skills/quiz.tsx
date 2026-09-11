@@ -49,7 +49,7 @@ export function QuestionList({
         const wasCorrect = results[qi] === true;
         return (
           <section key={qi} className="card p-4">
-            <p className="text-sm font-semibold leading-relaxed">
+            <p className="text-strong leading-relaxed">
               <span className="muted mr-1.5">{qi + 1}.</span>
               {q.text}
             </p>
@@ -64,7 +64,7 @@ export function QuestionList({
               <motion.p
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-3 rounded-panel px-3 py-2 text-xs leading-relaxed"
+                className="mt-3 rounded-panel px-3 py-2 text-caption leading-relaxed"
                 style={{
                   background: wasCorrect
                     ? "color-mix(in srgb, var(--color-mint) 10%, transparent)"
@@ -104,7 +104,7 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
             aria-pressed={pick === oi}
             disabled={done}
             onClick={() => choose(oi)}
-            className={`option flex items-center justify-between gap-2 px-3.5 py-2.5 text-left text-sm font-semibold ${cls}`}
+            className={`option flex items-center justify-between gap-2 px-3.5 py-2.5 text-left text-strong ${cls}`}
           >
             <span>{opt}</span>
             {done && oi === q.answer ? (
@@ -173,7 +173,7 @@ function WrittenInput({
         <button
           type="button"
           onClick={() => speakGerman(accept[0] ?? "")}
-          className="btn btn-ghost mb-2 flex items-center gap-1.5 px-3 py-1.5 text-xs"
+          className="btn btn-ghost mb-2 flex items-center gap-1.5 px-3 py-1.5 text-caption"
         >
           <SpeakerIcon size={14} /> Cümleyi dinle
         </button>
@@ -193,17 +193,17 @@ function WrittenInput({
           lang={lang}
           spellCheck={false}
           placeholder={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
-          className="input flex-1 py-2 text-sm"
+          className="input flex-1 py-2 text-body"
           style={done ? { borderColor: ok ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
         />
         {!done ? (
-          <button type="button" onClick={check} disabled={!typed.trim()} className="btn btn-primary px-3.5 py-2 text-sm">
+          <button type="button" onClick={check} disabled={!typed.trim()} className="btn btn-primary px-3.5 py-2 text-body">
             {t("skillquiz.check")}
           </button>
         ) : null}
       </div>
       {done && !ok ? (
-        <p className="mt-2 text-xs">
+        <p className="mt-2 text-caption">
           <span className="muted">{t("rounds.answer_is")}</span>
           <strong lang={lang}>{accept[0]}</strong>
         </p>
@@ -238,7 +238,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
 
   return (
     <div className="mt-3">
-      <p className="muted text-xs">{t("skillquiz.put_these_in_right_order_tap_two")}</p>
+      <p className="muted text-caption">{t("skillquiz.put_these_in_right_order_tap_two")}</p>
       <ol className="mt-2 space-y-1.5">
         {order.map((v, pos) => (
           <li key={v}>
@@ -249,16 +249,16 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
               aria-pressed={picked === pos}
               disabled={done}
               onClick={() => tap(pos)}
-              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-sm ${picked === pos ? "option-correct" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
+              className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-body ${picked === pos ? "option-correct" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
             >
-              <span className="muted w-5 shrink-0 text-xs font-bold">{pos + 1}.</span>
+              <span className="muted w-5 shrink-0 text-caption">{pos + 1}.</span>
               <span lang={lang}>{items[v]}</span>
             </button>
           </li>
         ))}
       </ol>
       {!done ? (
-        <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 px-3.5 py-2 text-sm">
+        <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 px-3.5 py-2 text-body">
           {t("skillquiz.check")}
         </button>
       ) : null}
@@ -278,12 +278,12 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between text-left"
       >
-        <span className="flex items-center gap-2 text-sm font-bold">
+        <span className="flex items-center gap-2 text-strong">
           <InfoIcon size={16} className="text-[color:var(--color-brand)]" />
           {t("skillquiz.glossary")}
           <span className="muted font-semibold">{t("skillquiz.word_count", { n: gloss.length })}</span>
         </span>
-        <span className="muted text-xs font-semibold">{t(open ? "skillq.hide" : "common.show")}</span>
+        <span className="muted text-caption">{t(open ? "skillq.hide" : "common.show")}</span>
       </button>
       {open ? (
         <>
@@ -294,7 +294,7 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                 type="button"
                 onClick={() => speakGerman(g.de)}
                 title={t("common.listen_pronunciation")}
-                className="chip px-3 py-1.5 text-xs"
+                className="chip px-3 py-1.5 text-caption"
               >
                 <GlossEntry g={g} />
               </button>

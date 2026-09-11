@@ -88,7 +88,7 @@ export function VoicePicker({
                 aria-pressed={active}
                 className="min-w-0 flex-1 text-left"
               >
-                <span className="block truncate text-sm font-bold">{v.label}</span>
+                <span className="block truncate text-strong">{v.label}</span>
                 <span className="muted block truncate text-micro">{t(v.gender === "female" ? "voices.female" : "voices.male")}</span>
               </button>
               {active ? (
@@ -139,15 +139,15 @@ export function VoicePicker({
                 </span>
               ) : null}
               <p className="font-bold">
-                {v.label} <span className="muted text-xs font-normal">{t(v.gender === "female" ? "voices.female" : "voices.male")}</span>
+                {v.label} <span className="muted text-caption">{t(v.gender === "female" ? "voices.female" : "voices.male")}</span>
               </p>
-              <p className="muted mt-1.5 text-xs leading-relaxed">{t(v.noteKey)}</p>
+              <p className="muted mt-1.5 text-caption leading-relaxed">{t(v.noteKey)}</p>
             </button>
 
             <button
               type="button"
               onClick={() => preview(v.id)}
-              className="btn btn-ghost mt-3 h-8 px-3 text-xs"
+              className="btn btn-ghost mt-3 h-8 px-3 text-caption"
               aria-label={t("voice.listen_to", { name: v.label })}
             >
               <SpeakerIcon size={13} />

@@ -180,13 +180,13 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
                   setDraft((v) => v + ch);
                   inputRef.current?.focus();
                 }}
-                className="btn btn-ghost min-h-9 min-w-9 px-3 text-base"
+                className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3"
               >
                 {ch}
               </button>
             ))}
           </div>
-          <button type="submit" disabled={picked != null || !draft.trim()} className="btn btn-primary min-h-12 px-4 text-sm">
+          <button type="submit" disabled={picked != null || !draft.trim()} className="btn btn-primary min-h-12 px-4 text-body">
             {tx("common.check")}
           </button>
         </form>
@@ -204,7 +204,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
-              className={`option flex min-h-14 items-center justify-center px-4 py-3 text-center text-base font-medium ${state} ${
+              className={`option flex min-h-14 items-center justify-center px-4 py-3 text-center text-body ${state} ${
                 picked === opt && !isAnswer ? "animate-shake" : ""
               }`}
             >

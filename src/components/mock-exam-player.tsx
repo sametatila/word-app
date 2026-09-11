@@ -267,35 +267,35 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
     return (
       <section className="card mx-auto w-full max-w-2xl p-5">
-        <p className="muted text-xs font-bold tracking-wide">{paper.level} · {t("mockexams.paper", { n: paper.no })}</p>
-        <h1 className="mt-1 text-2xl font-bold" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
-        <p className="muted mt-1 text-sm">{paper.theme} — {paper.themeTr}</p>
+        <p className="muted text-caption tracking-wide">{paper.level} · {t("mockexams.paper", { n: paper.no })}</p>
+        <h1 className="mt-1 text-h3" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
+        <p className="muted mt-1 text-body">{paper.theme} — {paper.themeTr}</p>
 
         {/* İki başlık Android'in kapağında var: yönergenin nerede bittiği ve
             kuralların nerede başladığı yalnız aralıktan okunuyordu. */}
         <div className="mt-4 flex items-start gap-2">
           <SpeakerIcon className="mt-1 size-4 shrink-0" />
           <div>
-            <p className="muted text-xs font-bold tracking-wide">{t("mockexam.instructions")}</p>
-            <p className="mt-1 text-sm leading-relaxed" lang={paper.course}>{part.instruction}</p>
-            <p className="muted mt-2 text-sm leading-relaxed">{part.instructionTr}</p>
+            <p className="muted text-caption tracking-wide">{t("mockexam.instructions")}</p>
+            <p className="mt-1 text-body leading-relaxed" lang={paper.course}>{part.instruction}</p>
+            <p className="muted mt-2 text-body leading-relaxed">{part.instructionTr}</p>
           </div>
         </div>
 
         {/* Aynı olgu iki ekranda tek cümle: bölüm listesi ve kapak aynı
             anahtarları kullanıyor (Android `Cover` ve `MockExamsScreen` de
             öyle). Üç ayrı web anahtarı aynı şeyi ikinci kez yazıyordu. */}
-        <p className="muted mt-4 text-xs">
+        <p className="muted mt-4 text-caption">
           {points
             ? t("mockexams.part_summary", { minutes: part.minutes, n: points })
             : t("mockexams.part_open", { minutes: part.minutes })}
         </p>
-        <p className="muted mt-4 text-xs font-bold tracking-wide">{t("mockexam.rules_title")}</p>
-        <p className="muted mt-1 text-xs leading-relaxed">{t("mockexam.rules_body")}</p>
+        <p className="muted mt-4 text-caption tracking-wide">{t("mockexam.rules_title")}</p>
+        <p className="muted mt-1 text-caption leading-relaxed">{t("mockexam.rules_body")}</p>
 
         <button
           type="button"
-          className="btn btn-primary mt-5 w-full py-3 text-sm"
+          className="btn btn-primary mt-5 w-full py-3 text-body"
           disabled={busy}
           onClick={() => { announce(`part:${part.skill}`, part.instruction); void begin(); }}
         >
@@ -309,7 +309,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     if (busy || !result) {
       return (
         <section className="card mx-auto w-full max-w-2xl p-5" aria-busy>
-          <p className="muted text-sm">{t("mockexam.scoring")}</p>
+          <p className="muted text-body">{t("mockexam.scoring")}</p>
           <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
         </section>
       );
@@ -327,15 +327,15 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     <section className="mx-auto w-full max-w-2xl">
       <header className="card flex items-center justify-between gap-3 p-4">
         <div>
-          <p className="muted text-xs font-bold tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
-          <p className="text-sm font-semibold">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
+          <p className="muted text-caption tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
+          <p className="text-strong">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
         </div>
         <div className="flex items-center gap-3">
           {/* Sayaç GÖREV başına; etiketsiz bir geri sayım "sınavın tamamı bu
               kadar" diye okunabiliyordu. Android etiketi yazıyor. */}
           <div className="text-right">
             <p className="muted text-micro tracking-wide">{t("mockexam.task_time")}</p>
-            <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
+            <p className="text-strong tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
           </div>
           {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar
               kapana kısılıyordu, tek çıkış tarayıcının geri düğmesiydi.
@@ -375,8 +375,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         ))}
       </div>
 
-      {autoNext ? <p className="mt-2 text-xs" style={{ color: "var(--color-danger)" }}>{t("mockexam.auto_next")}</p> : null}
-      {resumed && ix === (attempt?.taskIx ?? 0) ? <p className="muted mt-2 text-xs">{t("mockexam.resumed")}</p> : null}
+      {autoNext ? <p className="mt-2 text-caption" style={{ color: "var(--color-danger)" }}>{t("mockexam.auto_next")}</p> : null}
+      {resumed && ix === (attempt?.taskIx ?? 0) ? <p className="muted mt-2 text-caption">{t("mockexam.resumed")}</p> : null}
 
       <TaskView
         key={task.id}
@@ -400,8 +400,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       />
 
       <div className="card mt-3 p-4">
-        <p className="muted text-xs">{t("mockexam.no_back")}</p>
-        <button type="button" className="btn btn-primary mt-2 w-full py-3 text-sm" onClick={() => advance(false)}>
+        <p className="muted text-caption">{t("mockexam.no_back")}</p>
+        <button type="button" className="btn btn-primary mt-2 w-full py-3 text-body" onClick={() => advance(false)}>
           {t(ix < part.tasks.length - 1 ? "mockexam.next_task" : "mockexam.submit")}
         </button>
       </div>
@@ -464,16 +464,16 @@ function TaskView({
   return (
     <div className="mt-3 space-y-3">
       <div className="card p-4">
-        <p className="text-sm leading-relaxed" lang={course}>{task.prompt}</p>
-        <p className="muted mt-2 text-sm leading-relaxed">{task.promptTr}</p>
+        <p className="text-body leading-relaxed" lang={course}>{task.prompt}</p>
+        <p className="muted mt-2 text-body leading-relaxed">{task.promptTr}</p>
       </div>
 
       {task.options?.length ? (
         <div className="card p-4">
           {task.options.map((o) => (
             <div key={o.key} className="mt-2 first:mt-0">
-              <p className="text-sm font-semibold" lang={course}>{o.key}) {o.label}</p>
-              {o.body ? <p className="muted text-sm leading-relaxed" lang={course}>{o.body}</p> : null}
+              <p className="text-strong" lang={course}>{o.key}) {o.label}</p>
+              {o.body ? <p className="muted text-body leading-relaxed" lang={course}>{o.body}</p> : null}
             </div>
           ))}
         </div>
@@ -502,23 +502,23 @@ function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockS
   if (st.kind === "text") {
     return (
       <div className="card p-4">
-        <p className="muted text-xs font-bold tracking-wide">{st.genre} · {st.genreTr}</p>
-        {st.title ? <p className="mt-1 text-sm font-semibold" lang={course}>{st.title}</p> : null}
-        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed" lang={course}>{withBlanks(st.body)}</p>
+        <p className="muted text-caption tracking-wide">{st.genre} · {st.genreTr}</p>
+        {st.title ? <p className="mt-1 text-strong" lang={course}>{st.title}</p> : null}
+        <p className="mt-2 whitespace-pre-line text-body leading-relaxed" lang={course}>{withBlanks(st.body)}</p>
       </div>
     );
   }
   const rest = st.plays - (plays[st.id] ?? 0);
   return (
     <div className="card p-4">
-      <p className="muted text-xs font-bold tracking-wide">{st.genre} · {st.genreTr}</p>
-      {st.title ? <p className="mt-1 text-sm font-semibold" lang={course}>{st.title}</p> : null}
-      <p className="muted mt-1 text-sm leading-relaxed">{st.situation}</p>
-      <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={rest <= 0} onClick={() => onPlay(st)}>
+      <p className="muted text-caption tracking-wide">{st.genre} · {st.genreTr}</p>
+      {st.title ? <p className="mt-1 text-strong" lang={course}>{st.title}</p> : null}
+      <p className="muted mt-1 text-body leading-relaxed">{st.situation}</p>
+      <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={rest <= 0} onClick={() => onPlay(st)}>
         <SpeakerIcon className="size-4" />{" "}
         {t(rest <= 0 ? "mockexam.plays_done" : rest === st.plays ? "mockexam.listen" : "mockexam.listen_again")}
       </button>
-      {rest > 0 ? <p className="muted mt-1 text-xs">{t("mockexam.plays_left", { n: rest })}</p> : null}
+      {rest > 0 ? <p className="muted mt-1 text-caption">{t("mockexam.plays_left", { n: rest })}</p> : null}
     </div>
   );
 }
@@ -550,7 +550,7 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
          Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
       aria-pressed={active}
-      className="rounded-panel px-3 py-2 text-left text-sm"
+      className="rounded-panel px-3 py-2 text-left text-body"
       style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >
       {label}
@@ -561,9 +561,9 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
   // okunmuyor. Öteki biçimlerde metin tek satır olduğu için etkisi yok.
   return (
     <div className="card p-4">
-      <p className="whitespace-pre-line text-sm font-semibold leading-relaxed" lang={course}>{item.no}. {item.text}</p>
+      <p className="whitespace-pre-line text-strong leading-relaxed" lang={course}>{item.no}. {item.text}</p>
       {item.kind === "gap" && item.cue ? (
-        <p className="mt-2 text-sm font-bold tracking-wide" lang={course} style={{ color: "var(--color-brand)" }}>{item.cue}</p>
+        <p className="mt-2 text-strong tracking-wide" lang={course} style={{ color: "var(--color-brand)" }}>{item.cue}</p>
       ) : null}
       <div className="mt-2 flex flex-col gap-2">
         {item.kind === "mcq"
@@ -635,11 +635,11 @@ function OpenTask({
 
   return (
     <div className="card p-4">
-      <p className="muted text-xs font-bold tracking-wide">{t("mockexam.content_points")}</p>
+      <p className="muted text-caption tracking-wide">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
-          <p className="text-sm" lang={course}>• {p.de}</p>
-          <p className="muted text-sm">{p.tr}</p>
+          <p className="text-body" lang={course}>• {p.de}</p>
+          <p className="muted text-body">{p.tr}</p>
         </div>
       ))}
 
@@ -651,7 +651,7 @@ function OpenTask({
         placeholder={t("mockexam.write_here")}
         lang={course}
       />
-      <p className="muted mt-1 text-xs">
+      <p className="muted mt-1 text-caption">
         {need
           ? `${n} / ${need} ${t("mockexam.words_unit")}`
           : `${n} ${t("mockexam.words_unit")}`}
@@ -660,11 +660,11 @@ function OpenTask({
       {score ? (
         <OpenResult score={score} />
       ) : (
-        <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={busy || !attemptId || n < 5} onClick={() => void evaluate()}>
+        <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || n < 5} onClick={() => void evaluate()}>
           {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
         </button>
       )}
-      {!attemptId ? <p className="muted mt-2 text-xs">{t("mockexam.ai_needs_server")}</p> : null}
+      {!attemptId ? <p className="muted mt-2 text-caption">{t("mockexam.ai_needs_server")}</p> : null}
     </div>
   );
 }
@@ -793,53 +793,53 @@ function SpeakingTask({
   const current = exchange[turn];
   return (
     <div className="card p-4">
-      <p className="muted text-xs font-bold tracking-wide">{t("mockexam.content_points")}</p>
+      <p className="muted text-caption tracking-wide">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
-          <p className="text-sm" lang={course}>• {p.de}</p>
-          <p className="muted text-sm">{p.tr}</p>
+          <p className="text-body" lang={course}>• {p.de}</p>
+          <p className="muted text-body">{p.tr}</p>
         </div>
       ))}
 
       {step === "waiting" ? (
         <>
-          <p className="muted mt-4 text-sm leading-relaxed">
+          <p className="muted mt-4 text-body leading-relaxed">
             {exchange.length
               ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
               : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
           </p>
-          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => { setCount(prep); setStep("prep"); }}>
+          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => { setCount(prep); setStep("prep"); }}>
             <MicIcon className="size-4" /> {t("mockexam.speak_start")}
           </button>
-          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-sm" onClick={() => setStep("done")}>
+          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-body" onClick={() => setStep("done")}>
             {t("mockexam.write_without_mic")}
           </button>
         </>
       ) : step === "prep" ? (
         <div className="mt-4 text-center">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.prep")}</p>
-          <p className="text-3xl font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
-          <p className="muted mt-1 text-sm">{t("mockexam.prep_hint")}</p>
+          <p className="muted text-caption tracking-wide">{t("mockexam.prep")}</p>
+          <p className="text-h1 tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
+          <p className="muted mt-1 text-body">{t("mockexam.prep_hint")}</p>
         </div>
       ) : step === "speaking" ? (
         <div className="mt-4">
           {current?.who === "partner" ? (
             <>
-              <p className="muted text-xs font-bold tracking-wide">{t("mockexam.partner")}</p>
-              <p className="mt-1 text-sm leading-relaxed" lang={course}>{current.de}</p>
-              <p className="muted mt-1 text-sm">{current.tr}</p>
+              <p className="muted text-caption tracking-wide">{t("mockexam.partner")}</p>
+              <p className="mt-1 text-body leading-relaxed" lang={course}>{current.de}</p>
+              <p className="muted mt-1 text-body">{current.tr}</p>
             </>
           ) : (
             <div className="text-center">
               <MicIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
-              <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-danger)" }}>{t("mockexam.speak_now")} · {mmss(count)}</p>
-              <p className="muted mt-1 text-sm">{current?.who === "you" ? current.hint : t("mockexam.solo_hint")}</p>
+              <p className="mt-1 text-strong" style={{ color: "var(--color-danger)" }}>{t("mockexam.speak_now")} · {mmss(count)}</p>
+              <p className="muted mt-1 text-body">{current?.who === "you" ? current.hint : t("mockexam.solo_hint")}</p>
             </div>
           )}
         </div>
       ) : (
         <>
-          <p className="muted mt-4 text-xs font-bold tracking-wide">{t("mockexam.transcript_you")}</p>
+          <p className="muted mt-4 text-caption tracking-wide">{t("mockexam.transcript_you")}</p>
           <textarea
             value={value}
             onChange={(e) => onOpen(task.id, e.target.value)}
@@ -848,17 +848,17 @@ function SpeakingTask({
             placeholder={t("mockexam.transcript_placeholder")}
             lang={course}
           />
-          <p className="muted mt-1 text-xs leading-relaxed">
+          <p className="muted mt-1 text-caption leading-relaxed">
             {t(micErr ? "mockexam.mic_failed" : "mockexam.transcript_note")}
           </p>
           {score ? (
             <OpenResult score={score} />
           ) : (
-            <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={busy || !attemptId || value.trim().length < 5} onClick={() => void evaluate()}>
+            <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || value.trim().length < 5} onClick={() => void evaluate()}>
               {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
             </button>
           )}
-          {!attemptId ? <p className="muted mt-2 text-xs">{t("mockexam.ai_needs_server")}</p> : null}
+          {!attemptId ? <p className="muted mt-2 text-caption">{t("mockexam.ai_needs_server")}</p> : null}
         </>
       )}
     </div>
@@ -868,15 +868,15 @@ function SpeakingTask({
 function OpenResult({ score }: { score: OpenScore }) {
   const t = useT();
   if (score.score == null) {
-    return <p className="muted mt-3 text-sm leading-relaxed">{t("mockexam.ai_off")}</p>;
+    return <p className="muted mt-3 text-body leading-relaxed">{t("mockexam.ai_off")}</p>;
   }
   return (
     <div className="mt-3">
-      <p className="text-lg font-bold" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
-      {score.praise ? <p className="muted mt-1 text-sm leading-relaxed">{score.praise}</p> : null}
-      {score.tip ? <p className="mt-1 text-sm leading-relaxed">{score.tip}</p> : null}
+      <p className="text-h3" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
+      {score.praise ? <p className="muted mt-1 text-body leading-relaxed">{score.praise}</p> : null}
+      {score.tip ? <p className="mt-1 text-body leading-relaxed">{score.tip}</p> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
-        <p key={i} className="muted mt-1 text-sm">{e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}</p>
+        <p key={i} className="muted mt-1 text-body">{e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}</p>
       ))}
     </div>
   );
@@ -902,35 +902,35 @@ function Result({
     <section className="mx-auto w-full max-w-2xl space-y-3">
       {offline ? (
         <div className="card p-4">
-          <p className="text-sm" style={{ color: "var(--color-danger)" }}>{t(FAIL_KEYS[offline])}</p>
-          <p className="muted mt-1 text-xs">{t("mockexam.saved_locally")}</p>
+          <p className="text-body" style={{ color: "var(--color-danger)" }}>{t(FAIL_KEYS[offline])}</p>
+          <p className="muted mt-1 text-caption">{t("mockexam.saved_locally")}</p>
         </div>
       ) : null}
 
       {score.total > 0 ? (
         <div className="card p-5">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.result")}</p>
+          <p className="muted text-caption tracking-wide">{t("mockexam.result")}</p>
           <div className="mt-1 flex items-end justify-between">
-            <p className="text-3xl font-bold" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.pct })}</p>
-            <p className="text-sm font-semibold">{t("mockexam.score", { correct: score.correct, total: score.total })}</p>
+            <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.pct })}</p>
+            <p className="text-strong">{t("mockexam.score", { correct: score.correct, total: score.total })}</p>
           </div>
-          <p className="mt-2 text-sm font-semibold" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>
+          <p className="mt-2 text-strong" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>
             {t(score.passed ? "mockexam.passed" : "mockexam.failed")}
           </p>
-          <p className="muted text-xs">{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</p>
+          <p className="muted text-caption">{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</p>
         </div>
       ) : (
-        <p className="card p-4 text-sm leading-relaxed">{t("mockexam.not_scored")}</p>
+        <p className="card p-4 text-body leading-relaxed">{t("mockexam.not_scored")}</p>
       )}
 
       {score.byGoal.length ? (
         <div className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.by_goal")}</p>
+          <p className="muted text-caption tracking-wide">{t("mockexam.by_goal")}</p>
           {score.byGoal.map((g) => {
             const pct = g.total ? Math.round((100 * g.correct) / g.total) : 0;
             return (
               <div key={g.goal} className="mt-3">
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-body">
                   <span>{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</span>
                   <span className="font-semibold">{g.correct}/{g.total}</span>
                 </div>
@@ -945,47 +945,47 @@ function Result({
 
       {ai ? (
         <div className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.todo")}</p>
-          <p className="mt-1 text-sm leading-relaxed">{ai.summary}</p>
+          <p className="muted text-caption tracking-wide">{t("mockexam.todo")}</p>
+          <p className="mt-1 text-body leading-relaxed">{ai.summary}</p>
           {ai.strengths.length ? (
-            <p className="mt-2 text-sm" style={{ color: "var(--color-success)" }}>
+            <p className="mt-2 text-body" style={{ color: "var(--color-success)" }}>
               {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
             </p>
           ) : null}
           {ai.todo.map((td, i) => (
             <div key={i} className="mt-3 border-l-2 pl-3" style={{ borderColor: "var(--color-brand)" }}>
-              <p className="text-sm font-semibold">{i + 1}. {td.title}</p>
-              <p className="muted mt-0.5 text-sm">{td.why}</p>
-              <p className="mt-1 text-sm leading-relaxed">{td.how}</p>
+              <p className="text-strong">{i + 1}. {td.title}</p>
+              <p className="muted mt-0.5 text-body">{td.why}</p>
+              <p className="mt-1 text-body leading-relaxed">{td.how}</p>
             </div>
           ))}
-          {ai.source === "rules" ? <p className="muted mt-3 text-xs">{t("mockexam.source_rules")}</p> : null}
+          {ai.source === "rules" ? <p className="muted mt-3 text-caption">{t("mockexam.source_rules")}</p> : null}
         </div>
       ) : null}
 
-      <h2 className="pt-2 text-lg font-bold">{t("mockexam.review")}</h2>
+      <h2 className="pt-2 text-h3">{t("mockexam.review")}</h2>
 
       {part.tasks.map((task) => (
         <div key={task.id} className="space-y-2">
-          <p className="muted text-xs font-bold tracking-wide">Teil {task.no}</p>
+          <p className="muted text-caption tracking-wide">Teil {task.no}</p>
           {isOpenTask(task) && task.rubric ? (
             <div className="card p-4">
               {(open[task.id] ?? "").trim() ? (
                 <>
-                  <p className="muted text-xs font-bold tracking-wide">{t("mockexam.your_answer")}</p>
-                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{open[task.id]}</p>
+                  <p className="muted text-caption tracking-wide">{t("mockexam.your_answer")}</p>
+                  <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{open[task.id]}</p>
                 </>
               ) : null}
               {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
-              <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.criteria")}</p>
-              {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-sm leading-relaxed">• {c}</p>)}
+              <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.criteria")}</p>
+              {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-body leading-relaxed">• {c}</p>)}
               {reveal[task.id] ? (
                 <>
-                  <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.model_answer")}</p>
-                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
+                  <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.model_answer")}</p>
+                  <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
                 </>
               ) : (
-                <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => onReveal(task.id)}>{t("mockexam.show_model")}</button>
+                <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => onReveal(task.id)}>{t("mockexam.show_model")}</button>
               )}
             </div>
           ) : (
@@ -995,26 +995,26 @@ function Result({
               return (
                 <div key={it.id} className="card flex gap-3 p-4">
                   <span
-                    className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                    className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
                     style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
                   >
                     {ok ? <CheckIcon className="size-3.5" /> : "×"}
                   </span>
                   <div className="min-w-0">
-                    <p className="whitespace-pre-line text-sm font-semibold leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
+                    <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
                     {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                     {it.kind === "gap" && it.cue ? (
-                      <p className="mt-1 text-sm font-bold tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
+                      <p className="mt-1 text-strong tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
                     ) : null}
                     {!ok ? (
-                      <p className="muted mt-1 text-sm">
+                      <p className="muted mt-1 text-body">
                         {t("mockexam.your_answer")}: {s?.given || t("mockexam.blank")}
                       </p>
                     ) : null}
-                    <p className="mt-1 text-sm" style={{ color: ok ? "var(--color-success)" : undefined }}>
+                    <p className="mt-1 text-body" style={{ color: ok ? "var(--color-success)" : undefined }}>
                       {t("mockexam.correct_answer")}: {s?.expected ?? expected(it, task)}
                     </p>
-                    <p className="muted mt-1 text-sm leading-relaxed">{it.explain}</p>
+                    <p className="muted mt-1 text-body leading-relaxed">{it.explain}</p>
                   </div>
                 </div>
               );
@@ -1029,9 +1029,9 @@ function Result({
           {(task.texts ?? []).map((st) =>
             st.kind === "audio" ? (
               <div key={st.id} className="card p-4">
-                <p className="muted text-xs font-bold tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
+                <p className="muted text-caption tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
                 {st.segments.map((sg, i) => (
-                  <p key={i} className="mt-1 text-sm leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
+                  <p key={i} className="mt-1 text-body leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
                 ))}
                 <Glossary gloss={st.gloss} course={paper.course} t={t} />
               </div>
@@ -1044,7 +1044,7 @@ function Result({
         </div>
       ))}
 
-      <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-sm">{t("mockexam.back_to_list")}</Link>
+      <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-body">{t("mockexam.back_to_list")}</Link>
     </section>
   );
 }
@@ -1066,10 +1066,10 @@ function Glossary({
   if (!gloss?.length) return null;
   return (
     <>
-      <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.glossary")}</p>
+      <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.glossary")}</p>
       <dl className="mt-1">
         {gloss.map((g) => (
-          <div key={g.de} className="muted flex gap-1.5 text-xs leading-relaxed">
+          <div key={g.de} className="muted flex gap-1.5 text-caption leading-relaxed">
             <dt lang={course}>{g.de}</dt>
             <dd>— {g.tr}</dd>
           </div>

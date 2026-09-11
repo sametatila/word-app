@@ -159,10 +159,10 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
         </span>
       }
       prompt={
-        <span className="text-2xl font-bold sm:text-3xl">
+        <span className="text-h1 sm:text-display">
           {meaningOf(word, lang)}
           {word.en ? (
-            <span className="block text-base font-normal opacity-60" lang="en">
+            <span className="block text-body opacity-60" lang="en">
               {word.en}
             </span>
           ) : null}
@@ -176,7 +176,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
          arkasında ve orası ceza kaydediyor. */
       hint={
         <div className="flex items-center justify-center gap-2">
-          <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
+          <span className="surface-2 rounded-full px-2.5 py-0.5 text-micro uppercase tracking-wide">
             {typLabel(word.typ, meaningOf(word, lang), lang)}
           </span>
         </div>
@@ -211,7 +211,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
               type="button"
               onClick={() => insertChar(char)}
               disabled={status !== "idle"}
-              className="btn btn-ghost min-h-9 min-w-9 px-3 text-base"
+              className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3"
             >
               {char}
             </button>
@@ -224,7 +224,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
               type="button"
               onClick={showHint}
               disabled={status !== "idle" || hintShown}
-              className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
+              className="btn btn-ghost min-h-12 flex-1 px-4 text-body"
             >
               {tx("rounds.hint")}
             </button>
@@ -232,7 +232,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           <button
             type="submit"
             disabled={status !== "idle" || value.trim() === ""}
-            className="btn btn-primary min-h-12 flex-[2] px-4 text-sm"
+            className="btn btn-primary min-h-12 flex-[2] px-4 text-body"
           >
             {tx("common.check")}
           </button>
@@ -241,7 +241,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
       {hintShown ? (
         <p
-          className="mt-3 text-center font-mono text-base font-semibold tracking-wide"
+          className="mt-3 text-center font-mono text-strong tracking-wide"
           style={{ color: "var(--text)" }}
         >
           {skeleton(word.de)}

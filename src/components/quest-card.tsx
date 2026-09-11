@@ -167,7 +167,7 @@ export function QuestCard() {
             {t("dailyquests.rewards_ready", { n: claimable })}
           </span>
         ) : (
-          <span className="muted text-xs">{t("dailyquests.resets_midnight")}</span>
+          <span className="muted text-caption">{t("dailyquests.resets_midnight")}</span>
         )}
       </div>
 
@@ -197,9 +197,9 @@ export function QuestCard() {
                 {/* Tamamlanmamış görev bir bağlantı: dokununca o bölüme
                     götürüyor. Yönlendirme işi asıl burada yapılıyor. */}
                 {done ? (
-                  <p className="truncate text-sm font-semibold">{q.label}</p>
+                  <p className="truncate text-strong">{q.label}</p>
                 ) : (
-                  <Link href={q.href} className="block truncate text-sm font-semibold hover:underline">
+                  <Link href={q.href} className="block truncate text-strong hover:underline">
                     {q.label}
                   </Link>
                 )}
@@ -224,7 +224,7 @@ export function QuestCard() {
                 <button
                   onClick={() => void claim(q.id)}
                   disabled={busy === q.id}
-                  className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
+                  className="btn btn-primary shrink-0 px-3 py-1.5 text-caption disabled:opacity-60"
                 >
                   {busy === q.id ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}
                 </button>
@@ -257,7 +257,7 @@ export function QuestCard() {
           }}
         >
           <GiftIcon size={22} />
-          <p className="min-w-0 flex-1 text-sm font-semibold">
+          <p className="min-w-0 flex-1 text-strong">
             {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
           </p>
           {board.allClaimed ? (
@@ -266,7 +266,7 @@ export function QuestCard() {
             <button
               onClick={() => void claim(ALL_DONE_ID)}
               disabled={busy === ALL_DONE_ID}
-              className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
+              className="btn btn-primary shrink-0 px-3 py-1.5 text-caption disabled:opacity-60"
             >
               {busy === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}
             </button>
@@ -279,7 +279,7 @@ export function QuestCard() {
           role="status"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-2 py-2 text-center text-sm font-bold"
+          className="mt-2 py-2 text-center text-strong"
           style={{ color: "var(--color-mint)" }}
         >
           {t("dailyquests.xp_earned", { xp: flash })}

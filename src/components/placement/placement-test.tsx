@@ -184,24 +184,24 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "intro") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-xl font-bold">{t("onboarding.kisa_yerlestirme_sinavi")}</h1>
-        <p className="muted mt-2 text-sm leading-relaxed">
+        <h1 className="text-h2">{t("onboarding.kisa_yerlestirme_sinavi")}</h1>
+        <p className="muted mt-2 text-body leading-relaxed">
           {t("plc.intro")}
         </p>
         {initialLast ? (
-          <p className="mt-3 rounded-panel px-3 py-2 text-xs surface-2">
+          <p className="mt-3 rounded-panel px-3 py-2 text-caption surface-2">
             {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
             {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
           </p>
         ) : null}
         {canRetake ? (
-          <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
+          <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
             {t("common.start")}
           </button>
         ) : (
-          <p className="muted mt-4 text-sm">{t("placement.retake_in", { n: retakeDays })}</p>
+          <p className="muted mt-4 text-body">{t("placement.retake_in", { n: retakeDays })}</p>
         )}
-        <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
+        <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
           {t("common.discard")}
         </Link>
       </section>
@@ -210,7 +210,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "loading" || phase === "finishing") {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
-        <p className="muted text-sm">{t(phase === "loading" ? "plc.preparing" : "placement.calculating_your_level")}</p>
+        <p className="muted text-body">{t(phase === "loading" ? "plc.preparing" : "placement.calculating_your_level")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );
@@ -218,14 +218,14 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">{t("placement.couldn_t_load_test")}</p>
+        <p className="text-body">{t("placement.couldn_t_load_test")}</p>
         {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici
             bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
-        <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-sm">
+        <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
           {t("common.try_again")}
         </button>
-        <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-2 w-full px-4 py-2 text-sm">
+        <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-2 w-full px-4 py-2 text-body">
           {t("common.back")}
         </button>
       </section>
@@ -234,23 +234,23 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "result" && result) {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-xl font-bold">{t("placew.suggestion", { level: result.suggested })}</h1>
-        <p className="muted mt-1 text-sm">
+        <h1 className="text-h2">{t("placew.suggestion", { level: result.suggested })}</h1>
+        <p className="muted mt-1 text-body">
           {describePerSkill(result.perSkill, t)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
         </p>
         {notSaved ? (
-          <p className="mt-3 text-sm font-semibold" style={{ color: "var(--color-danger)" }}>{t("placement.not_saved")}</p>
+          <p className="mt-3 text-strong" style={{ color: "var(--color-danger)" }}>{t("placement.not_saved")}</p>
         ) : null}
-        <p className="mt-3 text-sm leading-relaxed">{t("placew.median_note")}</p>
+        <p className="mt-3 text-body leading-relaxed">{t("placew.median_note")}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {PLACEMENT_LEVELS.map((l) => (
-            <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-sm font-bold ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>
+            <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>
               {l}
-              {l === result.suggested ? <span className="muted ml-1 text-xs font-semibold">{t("placement.suggested")}</span> : null}
+              {l === result.suggested ? <span className="muted ml-1 text-caption">{t("placement.suggested")}</span> : null}
             </button>
           ))}
         </div>
-        <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
+        <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
           {chosen === result.suggested
             ? t("placement.continue_with", { level: chosen ?? "" })
             : t("placement.pick_and_continue", { level: chosen ?? "" })}
@@ -262,7 +262,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   // Aşama ekranları
   const stage = phase as PlacementStage;
   const header = (
-    <div className="mb-3 flex items-center justify-between text-xs font-semibold">
+    <div className="mb-3 flex items-center justify-between text-caption">
       <span>
         {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
@@ -299,7 +299,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     />
   );
   const dontKnow = (onPick: () => void) => (
-    <button type="button" onClick={onPick} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-sm">
+    <button type="button" onClick={onPick} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-body">
       {t("plc.dont_know")}
     </button>
   );
@@ -317,7 +317,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             setPicked(i);
             setTimeout(() => onPick(i === answer), 180);
           }}
-          className={`option px-3.5 py-3 text-left text-sm font-semibold ${picked === i ? "option-correct" : ""}`}
+          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-correct" : ""}`}
         >
           {o}
         </motion.button>
@@ -333,22 +333,22 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       <section className="card mx-auto w-full max-w-md p-5">
         {quitDialog}
         {header}
-        <p className="muted mb-3 text-xs">{t(STAGE_HINT[stage])}</p>
+        <p className="muted mb-3 text-caption">{t(STAGE_HINT[stage])}</p>
         {"de" in item ? (
-          <p className="brand-text mb-4 text-2xl font-bold" lang={course}>
+          <p className="brand-text mb-4 text-h1" lang={course}>
             {item.artikel ? `${item.artikel} ` : ""}
             {item.de}
           </p>
         ) : (
-          <p className="mb-4 text-base" lang={course}>
-            <span className="muted text-xs">{item.sheet} · {item.label}</span>
+          <p className="mb-4 text-body" lang={course}>
+            <span className="muted text-caption">{item.sheet} · {item.label}</span>
             <br />
             <strong>{item.key}</strong> → ?
           </p>
         )}
         {options(item.options, item.answer, (c) => answerLeveled(stage, c, item.id))}
         {dontKnow(() => answerLeveled(stage, false, item.id))}
-        <p className="muted mt-3 text-center text-xs">
+        <p className="muted mt-3 text-center text-caption">
           {index + 1} / {items.length}
         </p>
       </section>
@@ -363,9 +363,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     <section className="card mx-auto w-full max-w-md p-5">
       {quitDialog}
       {header}
-      <p className="muted mb-2 text-xs">{t(STAGE_HINT[stage])} · {item.level}</p>
+      <p className="muted mb-2 text-caption">{t(STAGE_HINT[stage])} · {item.level}</p>
       {item.text ? (
-        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-panel px-3.5 py-3 text-body leading-relaxed surface-2">
           {item.text.split("\n\n").map((p, i) => (
             <p key={i} className={i > 0 ? "mt-2" : ""}>
               {p}
@@ -376,19 +376,19 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       {item.segments ? (
         <div className="mb-3 flex flex-wrap gap-2">
           {item.segments.map((s, i) => (
-            <button key={i} type="button" onClick={() => speakGerman(s.text)} className="chip flex items-center gap-1.5 px-3 py-1.5 text-xs">
+            <button key={i} type="button" onClick={() => speakGerman(s.text)} className="chip flex items-center gap-1.5 px-3 py-1.5 text-caption">
               <SpeakerIcon size={13} />
               {s.speaker ? `${s.speaker} · ` : ""}{t("placement.section_n", { n: i + 1 })}
             </button>
           ))}
         </div>
       ) : null}
-      <p className="mb-3 text-sm font-semibold" lang={course}>
+      <p className="mb-3 text-strong" lang={course}>
         {q.text}
       </p>
       {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c))}
       {dontKnow(() => answerText(stage, item, qIndex, false))}
-      <p className="muted mt-3 text-center text-xs">
+      <p className="muted mt-3 text-center text-caption">
         {t("plc.text_of", { n: textIndex + 1, total: list.length })} ·{" "}
         {t("exam.question_of", { n: qIndex + 1, total: item.questions.length })}
       </p>

@@ -144,8 +144,8 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   // Uzun kelimelerde kutular küçülür ki tek satıra sığsın (7+1 kırılması olmasın).
   const compact = targetLetters.length > 7;
-  const slotSize = compact ? "h-11 w-9 text-lg" : "h-12 w-10 text-xl sm:h-14 sm:w-11";
-  const tileSize = compact ? "h-11 w-10 text-lg" : "h-12 w-11 text-xl sm:h-13 sm:w-12";
+  const slotSize = compact ? "h-11 w-9 text-h3" : "h-12 w-10 text-h2 sm:h-14 sm:w-11";
+  const tileSize = compact ? "h-11 w-10 text-h3" : "h-12 w-11 text-h2 sm:h-13 sm:w-12";
 
   const slotTone =
     status === "correct"
@@ -168,12 +168,12 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
         </span>
       }
       prompt={
-        <span className="brand-text text-2xl font-bold sm:text-3xl">
+        <span className="brand-text text-h1 sm:text-display">
           {meaningOf(word, lang)}
           {/* Karıştırılmış harflerden kelimeyi kuran şey anlam; anlam Türkçede
               başka bir kelimeyle çakışıyorsa İngilizce satır ayırıyor. */}
           {word.en ? (
-            <span className="block text-base font-normal opacity-60" lang="en">
+            <span className="block text-body opacity-60" lang="en">
               {word.en}
             </span>
           ) : null}
@@ -233,7 +233,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
             type="button"
             onClick={backspace}
             disabled={status !== "playing" || placed.length === 0}
-            className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+            className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
           >
             {tx("common.delete")}
           </button>
@@ -242,7 +242,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
               type="button"
               onClick={useHint}
               disabled={status !== "playing" || placed.length >= targetLetters.length}
-              className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+              className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
             >
               {tx("rounds.hint")}
             </button>

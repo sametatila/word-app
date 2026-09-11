@@ -203,21 +203,21 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-        <h1 className="text-xl font-bold">{t("rpexam.title")}</h1>
-        <p className="muted mt-1 text-sm">
+        <h1 className="text-h2">{t("rpexam.title")}</h1>
+        <p className="muted mt-1 text-body">
           {lesson.title} · {lesson.titleTr}
         </p>
-        <p className="mt-3 text-sm leading-relaxed">{lesson.roleplay.scene}</p>
-        <ul className="muted mt-3 space-y-1 text-xs">
+        <p className="mt-3 text-body leading-relaxed">{lesson.roleplay.scene}</p>
+        <ul className="muted mt-3 space-y-1 text-caption">
           <li>· {t("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })}</li>
           <li>· {t("rpexam.rule_partner")}</li>
           <li>· {t("rpexam.rule_scoring")}</li>
           <li>· {t("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })}</li>
         </ul>
-        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
+        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
           {t("exam.start")}
         </button>
-        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-2 w-full px-5 py-3 text-center text-sm">
+        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-2 w-full px-5 py-3 text-center text-body">
           {t("common.discard")}
         </Link>
       </section>
@@ -228,8 +228,8 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5 text-center" aria-busy>
         <Mascot mood="think" size={80} className="mx-auto" />
-        <p className="mt-2 text-sm font-semibold">{t("item.mono_scoring")}</p>
-        <p className="muted text-xs">{t("rpexam.scoring_note", { n: userTurns })}</p>
+        <p className="mt-2 text-strong">{t("item.mono_scoring")}</p>
+        <p className="muted text-caption">{t("rpexam.scoring_note", { n: userTurns })}</p>
       </section>
     );
   }
@@ -237,8 +237,8 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">{t("rpexam.service_down")}</p>
-        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-sm">
+        <p className="text-body">{t("rpexam.service_down")}</p>
+        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-body">
           {t("lessonp.back_to_conversation")}
         </Link>
       </section>
@@ -259,10 +259,10 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "cheer" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
-        <h1 className="text-xl font-bold">
+        <h1 className="text-h2">
           {t("rpexam.title")} · {t("common.pct", { n: result.score.overall })}
         </h1>
-        <p className="muted mt-1 text-xs">
+        <p className="muted mt-1 text-caption">
           {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
           {passed ? t("rpexam.passed") : t("rpexam.below_threshold", { n: EXAM_PASS_SCORE })}
         </p>
@@ -274,7 +274,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             <p className="muted text-micro uppercase tracking-wide">{t("rpexam.best_sentences")}</p>
             <ul className="mt-1 space-y-1">
               {best.map((s) => (
-                <li key={s} className="rounded-panel px-3 py-2 text-sm surface-2" lang={lesson.course}>
+                <li key={s} className="rounded-panel px-3 py-2 text-body surface-2" lang={lesson.course}>
                   {s}
                 </li>
               ))}
@@ -282,26 +282,26 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           </div>
         ) : null}
         {topErrors.length ? (
-          <p className="muted mt-3 text-xs">
+          <p className="muted mt-3 text-caption">
             {t("rpexam.most_common")}{" "}
             {topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}
           </p>
         ) : (
-          <p className="mt-3 text-xs" style={{ color: "var(--color-mint)" }}>
+          <p className="mt-3 text-caption" style={{ color: "var(--color-mint)" }}>
             {t("rpexam.no_errors")}
           </p>
         )}
         {cando.length ? (
-          <p className="muted mt-3 text-xs">
+          <p className="muted mt-3 text-caption">
             <span className="font-semibold">{passed ? `✓ ${t("lessonp.i_can")} ` : `${t("rpexam.goal")} `}</span>
             {cando.join(" · ")}
           </p>
         ) : null}
         <div className="mt-4 flex gap-2">
-          <button type="button" onClick={() => location.reload()} className="btn btn-ghost flex-1 py-3 text-sm">
+          <button type="button" onClick={() => location.reload()} className="btn btn-ghost flex-1 py-3 text-body">
             {t("common.try_again")}
           </button>
-          <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-sm">
+          <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-body">
             {t("lessonp.back_to_conversation")}
           </Link>
         </div>
@@ -311,7 +311,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
 
   return (
     <section className="card mx-auto flex w-full max-w-md flex-col p-4">
-      <div className="flex items-center justify-between text-xs font-semibold">
+      <div className="flex items-center justify-between text-caption">
         <span className="muted">
           {t("rpexam.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}
         </span>
@@ -326,13 +326,13 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             key={i}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`max-w-[88%] rounded-panel px-3 py-2.5 text-sm leading-relaxed ${t.role === "user" ? "ml-auto rounded-br-chip brand-gradient text-white" : "rounded-bl-chip surface-2"}`}
+            className={`max-w-[88%] rounded-panel px-3 py-2.5 text-body leading-relaxed ${t.role === "user" ? "ml-auto rounded-br-chip brand-gradient text-white" : "rounded-bl-chip surface-2"}`}
             lang={lesson.course}
           >
             {t.content}
           </motion.p>
         ))}
-        {busy ? <p className="muted text-xs">…</p> : null}
+        {busy ? <p className="muted text-caption">…</p> : null}
         <div ref={endRef} />
       </div>
       <div className="mt-4 flex items-end gap-2">
@@ -366,9 +366,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
                 : t("lesson.type_in", { lang: targetName })
           }
           disabled={busy}
-          className="input max-h-24 flex-1 resize-none py-2 text-sm"
+          className="input max-h-24 flex-1 resize-none py-2 text-body"
         />
-        <button type="button" onClick={() => void send(draft)} disabled={busy || !draft.trim()} className="btn btn-primary px-3.5 py-2.5 text-sm">
+        <button type="button" onClick={() => void send(draft)} disabled={busy || !draft.trim()} className="btn btn-primary px-3.5 py-2.5 text-body">
           {t("common.send")}
         </button>
       </div>

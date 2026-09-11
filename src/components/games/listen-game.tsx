@@ -95,7 +95,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
         // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.
         // Ses varken yönerge YAZILMIYOR: etiket ("Dinle - anlamını seç") zaten
         // aynı cümle ve Android'de ikinci bir satır yok.
-        speechAvailable ? undefined : <span className="text-2xl font-bold sm:text-3xl">{spoken}</span>
+        speechAvailable ? undefined : <span className="text-h1 sm:text-display">{spoken}</span>
       }
       hint={
         speechAvailable ? undefined : (
@@ -151,17 +151,17 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
       </div>
 
       {/* Yazılı biçim yalnızca cevaptan sonra: sesle yazımı burada eşleştiriyoruz. */}
-      <div className="mt-4 min-h-12 text-center text-sm">
+      <div className="mt-4 min-h-12 text-center text-body">
         {picked ? (
           <>
-            <p className="brand-text text-lg font-bold">{spoken}</p>
-            {example ? <p className="muted mt-1 text-xs italic">{example}</p> : null}
+            <p className="brand-text text-h3">{spoken}</p>
+            {example ? <p className="muted mt-1 text-caption italic">{example}</p> : null}
             {/* Cümlenin çevirisi ancak cevaptan sonra: önce gösterilseydi
                 sorunun cevabını ele verirdi. */}
             <SentenceTranslation
               tr={exampleTr}
               en={exampleEn}
-              className="muted mt-0.5 text-xs"
+              className="muted mt-0.5 text-caption"
             />
           </>
         ) : null}

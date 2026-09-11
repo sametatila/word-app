@@ -327,7 +327,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "loading" || phase === "finishing") {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
-        <p className="muted text-sm">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
+        <p className="muted text-body">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );
@@ -338,8 +338,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <section className="card mx-auto w-full max-w-md p-5">
         {offline ? (
           <>
-            <p className="text-3xl font-extrabold tabular-nums">{t("common.pct", { n: offline.pct })}</p>
-            <p className="muted mt-1 text-sm font-semibold">{t("exam.saved_offline")}</p>
+            <p className="text-h1 tabular-nums">{t("common.pct", { n: offline.pct })}</p>
+            <p className="muted mt-1 text-strong">{t("exam.saved_offline")}</p>
             {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
                 iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
                 gitmemiş olması. Ağırlık yok - onu sunucu veriyor. Android bu
@@ -347,7 +347,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <ul className="mt-3 space-y-2">
               {offline.sections.map((x) => (
                 <li key={x.id}>
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex items-center justify-between text-body">
                     <span>
                       <span lang="de" className="font-semibold">{SECTION_TITLE_DE[x.id]}</span>
                       <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
@@ -364,9 +364,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             </ul>
           </>
         ) : (
-          <p className="text-sm">{t("exam.load_or_save_failed")}</p>
+          <p className="text-body">{t("exam.load_or_save_failed")}</p>
         )}
-        <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
+        <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-body">
           {t("exam.back_to_path")}
         </Link>
       </section>
@@ -397,20 +397,20 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {/* uppercase YOK: Türkçe yerelde text-transform "Teil"i "TEİL" yapıyor. */}
-        <p className="muted text-xs font-bold tracking-wide" lang={course}>
+        <p className="muted text-caption tracking-wide" lang={course}>
           Teil {teil} / {list.length}
         </p>
-        <h2 className="mt-1 text-2xl font-bold" lang={course}>
+        <h2 className="mt-1 text-h1" lang={course}>
           {SECTION_TITLE_DE[section]}
         </h2>
-        <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>
+        <p className="text-h3" style={{ color: "var(--color-brand)" }}>
           {t(SECTION_TITLE_KEYS[section])}
         </p>
-        <p className="muted mt-3 text-sm leading-relaxed">{t(SECTION_BRIEF_KEYS[section])}</p>
-        <p className="muted mt-3 text-xs">
+        <p className="muted mt-3 text-body leading-relaxed">{t(SECTION_BRIEF_KEYS[section])}</p>
+        <p className="muted mt-3 text-caption">
           {t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
         </p>
-        <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
+        <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-body">
           {t("exam.start_section")}
         </button>
       </section>
@@ -436,7 +436,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         onConfirm={() => { setQuit(false); router.push("/immersion"); }}
         onCancel={() => setQuit(false)}
       />
-      <div className="flex items-center justify-between gap-3 text-xs font-semibold">
+      <div className="flex items-center justify-between gap-3 text-caption">
         <span>
           Teil {teil}/{list.length} · <span lang="de">{SECTION_TITLE_DE[section]}</span>
         </span>
@@ -477,7 +477,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             setPicked(i);
             setTimeout(() => onPick(i), 140);
           }}
-          className={`option px-3.5 py-3 text-left text-sm font-semibold ${picked === i ? "option-correct" : ""}`}
+          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-correct" : ""}`}
         >
           {o}
         </button>
@@ -511,24 +511,24 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         {header}
         {g.kind === "cell" ? (
           <>
-            <p className="muted text-xs">
+            <p className="muted text-caption">
               {g.sheet} · {g.label}
             </p>
-            <p className="mb-4 mt-1 text-xl font-bold" lang={course}>
+            <p className="mb-4 mt-1 text-strong" lang={course}>
               {g.key} <span className="muted">→ ?</span>
             </p>
             {options(g.options, pickGrammar)}
           </>
         ) : (
           <>
-            <p className="muted text-xs">Richtig oder falsch? · {t("exam.is_sentence_right")}</p>
-            <p className="mb-4 mt-1 text-xl font-bold leading-snug" lang={course}>
+            <p className="muted text-caption">Richtig oder falsch? · {t("exam.is_sentence_right")}</p>
+            <p className="mb-4 mt-1 text-strong leading-snug" lang={course}>
               {g.statement}
             </p>
             {options([`Richtig · ${t("common.correct")}`, `Falsch · ${t("common.wrong")}`], pickGrammar)}
           </>
         )}
-        <p className="muted mt-3 text-center text-xs">
+        <p className="muted mt-3 text-center text-caption">
           {idx + 1} / {paper!.sections.grammar.length}
         </p>
       </section>
@@ -559,24 +559,24 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {header}
-        <p className="muted text-xs">
+        <p className="muted text-caption">
           {item.genre ?? item.situation ?? ""} {item.titleTr ? `· ${item.titleTr}` : ""}
         </p>
-        <p className="mb-2 text-sm font-bold" lang={course}>
+        <p className="mb-2 text-strong" lang={course}>
           {item.title}
         </p>
         {item.text ? (
-          <div lang={course} className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={course} className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-panel px-3.5 py-3 text-body leading-relaxed surface-2">
             {item.text}
           </div>
         ) : null}
         {item.segments ? <DialogPlayer segments={item.segments} /> : null}
-        <p className="mt-3 text-sm font-semibold" lang={course}>
+        <p className="mt-3 text-strong" lang={course}>
           {q.text}
         </p>
-        {q.textTr ? <p className="muted mb-3 text-xs">{q.textTr}</p> : <div className="mb-3" />}
+        {q.textTr ? <p className="muted mb-3 text-caption">{q.textTr}</p> : <div className="mb-3" />}
         {options(q.options, (i) => pickText(section, i))}
-        <p className="muted mt-3 text-center text-xs">
+        <p className="muted mt-3 text-center text-caption">
           {t("exam.question_of", { n: qIdx + 1, total: item.questions.length })}
         </p>
       </section>
@@ -626,13 +626,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {header}
-        <p className="muted text-xs">
+        <p className="muted text-caption">
           {idx + 1}/{paper!.sections.speaking.length} · {item.situation ?? t("exam.read_aloud")}
         </p>
-        <p className="mt-3 text-lg font-bold leading-snug" lang={course}>
+        <p className="mt-3 text-strong leading-snug" lang={course}>
           {item.de}
         </p>
-        <p className="muted text-sm">{item.tr}</p>
+        <p className="muted text-body">{item.tr}</p>
         {spk === "idle" || spk === "rec" ? (
           <div className="mt-5 flex flex-col items-center gap-2">
             <button
@@ -644,10 +644,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             >
               <MicIcon size={30} />
             </button>
-            <span className="muted text-xs">{t(spk === "rec" ? "exam.recording_tap_done" : "exam.tap_mic_read")}</span>
+            <span className="muted text-caption">{t(spk === "rec" ? "exam.recording_tap_done" : "exam.tap_mic_read")}</span>
           </div>
         ) : null}
-        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">{t("item.mono_scoring")}</p> : null}
+        {spk === "scoring" ? <p className="muted mt-5 text-center text-body">{t("item.mono_scoring")}</p> : null}
         {spk === "done" && spkResult ? (
           <div className="mt-4">
             <PronounceCard score={spkResult} compact />
@@ -657,17 +657,17 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           /* Ses alınamadı satırı YERİNDE çıkıyor (ekran değişmiyor): mikrofon
              düğmesine basan kullanıcı odağı düğmede tutuyor ve kutunun geldiğini
              ekran okuyucu söylemiyordu. Hata olduğu için `alert`. */
-          <p role="alert" className="mt-4 rounded-panel px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
+          <p role="alert" className="mt-4 rounded-panel px-3 py-2 text-body" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
             {t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}
         {spk === "failed" && spkTries < 2 ? (
-          <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-sm">
+          <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-body">
             {t("common.try_again")}
           </button>
         ) : null}
         {spk === "done" || spk === "failed" ? (
-          <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-3 text-sm">
+          <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-3 text-body">
             {t(last ? "exam.finish_section" : "exam.next_sentence")}
           </button>
         ) : null}
@@ -680,13 +680,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   return (
     <section className="card mx-auto w-full max-w-md p-5">
       {header}
-      <p className="text-sm font-semibold leading-relaxed">{w.task.prompt}</p>
+      <p className="text-strong leading-relaxed">{w.task.prompt}</p>
       {w.task.stimulus ? (
-        <div lang={course} className="mt-2 whitespace-pre-line rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mt-2 whitespace-pre-line rounded-panel px-3.5 py-3 text-body leading-relaxed surface-2">
           {w.task.stimulus}
         </div>
       ) : null}
-      <ul className="muted mt-2 list-disc pl-5 text-xs">
+      <ul className="muted mt-2 list-disc pl-5 text-caption">
         {w.task.checklist.map((c, i) => (
           <li key={i}>{c}</li>
         ))}
@@ -695,7 +695,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       {writingResult ? (
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={writingText.trim()} result={writingResult} />
-          <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-sm">
+          <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-body">
             {t("exam.finish_exam")}
           </button>
         </div>
@@ -710,9 +710,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             /* Sabit Almanca yazıyordu; kurs İngilizce olabiliyor ve arayüzün
                üç dili var. Android aynı yerde `exam.write_text` kullanıyor. */
             placeholder={t("exam.write_text")}
-            className="card mt-3 w-full resize-none px-4 py-3 text-base outline-none"
+            className="card mt-3 w-full resize-none px-4 py-3 text-body outline-none"
           />
-          <p className="muted mt-1 text-right text-xs tabular-nums">
+          <p className="muted mt-1 text-right text-caption tabular-nums">
             {t("exam.word_count", {
               n: writingText.trim() ? writingText.trim().split(/\s+/).length : 0,
               min: w.task.minWords,
@@ -722,7 +722,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             type="button"
             disabled={busy || writingText.trim().split(/\s+/).length < 5}
             onClick={() => void evaluateWriting()}
-            className="btn btn-primary mt-2 w-full px-5 py-3 text-sm disabled:opacity-50"
+            className="btn btn-primary mt-2 w-full px-5 py-3 text-body disabled:opacity-50"
           >
             {t(busy ? "exam.evaluating" : "exam.submit_and_score")}
           </button>
@@ -774,7 +774,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           mu": seviye sinavinin kapagi da geliyor ama plani yok, basligi yok.
           Olcutu degistirmeden birakmak, seviye sinavinda sozlukteki basligin
           yerine Almanca "Niveauprüfung" yazdirirdi. */}
-      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={cover?.titleDe ? course : undefined}>
+      <p className="muted text-micro uppercase tracking-wide" lang={cover?.titleDe ? course : undefined}>
         {cover?.titleDe
           ? module === null
             ? `${level} · Niveauprüfung`
@@ -783,10 +783,10 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
             ? t("exam.level_exam", { level })
             : t("exam.module_exam", { level, n: module + 1 })}
       </p>
-      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={cover?.titleDe ? course : undefined}>
+      <h1 className="mt-1 text-h2 leading-tight" lang={cover?.titleDe ? course : undefined}>
         {cover?.titleDe ?? (module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 }))}
       </h1>
-      {cover?.titleTr ? <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
+      {cover?.titleTr ? <p className="text-h3" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
 
       {/*
         BÖLÜMLER VE SÜRE. "Ne kadar sürecek, neler sorulacak" sorusu sınava
@@ -796,27 +796,27 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
       */}
       {cover?.counts ? (
         <div className="mt-4 rounded-panel px-4 py-3 surface-2">
-          <p className="text-sm font-semibold">{t("exam.sections")}</p>
+          <p className="text-strong">{t("exam.sections")}</p>
           <ul className="mt-1 space-y-0.5">
             {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
-              <li key={id} className="muted text-xs">
+              <li key={id} className="muted text-caption">
                 <span lang="de" className="font-semibold">{SECTION_TITLE_DE[id]}</span> · {t(SECTION_TITLE_KEYS[id])}{" "}
                 ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
               </li>
             ))}
           </ul>
           {cover.seconds ? (
-            <p className="muted mt-1.5 text-xs">{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</p>
+            <p className="muted mt-1.5 text-caption">{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</p>
           ) : null}
         </div>
       ) : null}
 
       {cover?.focus.length ? (
         <div className="mt-4">
-          <p className="muted text-xs font-semibold">{t("exam.measures_these")}</p>
+          <p className="muted text-caption">{t("exam.measures_these")}</p>
           <ul className="mt-1.5 space-y-1">
             {cover.focus.map((f, i) => (
-              <li key={i} className="text-sm">
+              <li key={i} className="text-body">
                 <span className="font-semibold" lang={course}>
                   {f.de}
                 </span>
@@ -832,24 +832,24 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           SONRA öğreniyordu. Android kapakta uyarıyor. */}
       {cover?.trial ? (
         <p
-          className="mt-4 rounded-panel px-3.5 py-3 text-xs leading-relaxed"
+          className="mt-4 rounded-panel px-3.5 py-3 text-caption leading-relaxed"
           style={{ background: "var(--color-danger-soft)", color: "var(--color-danger)" }}
         >
           {t("exam.trial_notice")}
         </p>
       ) : null}
 
-      <div className="mt-4 rounded-panel px-3.5 py-3 text-xs leading-relaxed surface-2">
+      <div className="mt-4 rounded-panel px-3.5 py-3 text-caption leading-relaxed surface-2">
         <p className="font-semibold">{t("exam.rules")}</p>
         <p className="muted mt-1">
           {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
         </p>
       </div>
 
-      <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
+      <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-body">
         {t("exam.start")}
       </button>
-      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
+      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
         {t("common.discard")}
       </Link>
     </section>
@@ -882,7 +882,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
       <button
         type="button"
         onClick={() => (at === null ? playFrom(0) : (stopSpeaking(), setAt(null)))}
-        className="btn btn-primary flex items-center justify-center gap-2 px-4 py-2.5 text-sm"
+        className="btn btn-primary flex items-center justify-center gap-2 px-4 py-2.5 text-body"
       >
         <SpeakerIcon size={16} />
         {at === null ? `Dialog abspielen · ${t("exam.listen_dialog")}` : t("exam.stop")}
@@ -893,7 +893,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
             key={i}
             type="button"
             onClick={() => playFrom(i)}
-            className="chip px-2.5 py-1 text-xs"
+            className="chip px-2.5 py-1 text-caption"
             style={at === i ? { borderColor: "var(--color-brand)", color: "var(--color-brand)" } : undefined}
           >
             {s.speaker ?? `Teil ${i + 1}`}
@@ -938,32 +938,32 @@ function ProduceCard({
   return (
     <section className="card mx-auto w-full max-w-md p-5">
       {header}
-      <p className="muted text-xs">
+      <p className="muted text-caption">
         {item.mode === "order"
           ? `Bringen Sie den Satz in die richtige Reihenfolge · ${t("exam.order_the_sentence")}`
           : `Schreiben Sie den Satz auf Deutsch · ${t("exam.write_in_target")}`}
       </p>
-      <p className="mt-2 text-lg font-bold leading-snug">{item.prompt}</p>
+      <p className="mt-2 text-strong leading-snug">{item.prompt}</p>
 
       {item.mode === "order" ? (
         <>
-          <div className="mt-4 min-h-[3.25rem] rounded-panel px-3 py-2.5 text-base font-semibold surface-2" lang={course}>
+          <div className="mt-4 min-h-[3.25rem] rounded-panel px-3 py-2.5 text-h3 surface-2" lang={course}>
             {chunks.length ? (
               <span className="flex flex-wrap gap-1.5">
                 {chunks.map((c, i) => (
-                  <button key={`${c}-${i}`} type="button" onClick={() => onChunks(chunks.filter((_, k) => k !== i))} className="chip px-2.5 py-1 text-sm">
+                  <button key={`${c}-${i}`} type="button" onClick={() => onChunks(chunks.filter((_, k) => k !== i))} className="chip px-2.5 py-1 text-body">
                     {item.chunks![c]}
                   </button>
                 ))}
               </span>
             ) : (
-              <span className="muted text-sm font-normal">{t("exam.tap_chunks")}</span>
+              <span className="muted text-body">{t("exam.tap_chunks")}</span>
             )}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {item.chunks!.map((c, i) =>
               chunks.includes(i) ? null : (
-                <button key={`${c}-${i}`} type="button" onClick={() => onChunks([...chunks, i])} className="option px-3 py-2 text-sm font-semibold" lang={course}>
+                <button key={`${c}-${i}`} type="button" onClick={() => onChunks([...chunks, i])} className="option px-3 py-2 text-strong" lang={course}>
                   {c}
                 </button>
               ),
@@ -980,14 +980,14 @@ function ProduceCard({
           spellCheck={false}
           /* Android: `exam.write_sentence`. */
           placeholder={t("exam.write_sentence")}
-          className="card mt-3 w-full resize-none px-4 py-3 text-base outline-none"
+          className="card mt-3 w-full resize-none px-4 py-3 text-body outline-none"
         />
       )}
 
-      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-sm disabled:opacity-50">
+      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-body disabled:opacity-50">
         {t(index + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
       </button>
-      <p className="muted mt-2 text-center text-xs">
+      <p className="muted mt-2 text-center text-caption">
         {index + 1} / {total} · {t("exam.answers_at_end")}
       </p>
     </section>
@@ -1030,11 +1030,11 @@ function Result({
         size={56}
         className="mb-3"
       />
-      <p className="muted text-xs font-semibold uppercase tracking-wide">{title}</p>
-      <h1 className="text-xl font-bold">
+      <p className="muted text-micro uppercase tracking-wide">{title}</p>
+      <h1 className="text-h2">
         {result.passed ? `Bestanden — ${t("exam.passed")}` : `Nicht bestanden — ${t("exam.not_passed")}`}
       </h1>
-      <p className="muted mt-1 text-sm">
+      <p className="muted mt-1 text-body">
         {t("exam.total")} <strong>{t("common.pct", { n: result.total })}</strong>
         {result.trial ? ` · ${t("exam.trial_note")}` : ""}
       </p>
@@ -1042,13 +1042,13 @@ function Result({
       <ul className="mt-3 space-y-1.5">
         {result.sections.map((s) => (
           <li key={s.id}>
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center justify-between text-body">
               <span>
                 <span lang={course} className="font-semibold">
                   {SECTION_TITLE_DE[s.id]}
                 </span>
                 <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
-                <span className="muted text-xs"> {t("exam.weight", { pct: t("common.pct", { n: s.weight }) })}</span>
+                <span className="muted text-caption"> {t("exam.weight", { pct: t("common.pct", { n: s.weight }) })}</span>
               </span>
               {/* Geçen bölüm YEŞİL: nötr metin rengi, geçen ve kalan bölümü
                   yalnız kırmızının varlığıyla ayırıyordu - tarama sırasında
@@ -1067,10 +1067,10 @@ function Result({
 
       {cando.length ? (
         <div className="mt-4 rounded-panel px-3.5 py-3 surface-2">
-          <p className="text-sm font-bold">{t(result.passed ? "exam.now_you_can" : "exam.this_measured")}</p>
+          <p className="text-strong">{t(result.passed ? "exam.now_you_can" : "exam.this_measured")}</p>
           <ul className="mt-2 space-y-2">
             {cando.map((c, i) => (
-              <li key={i} className="flex gap-2 text-sm">
+              <li key={i} className="flex gap-2 text-body">
                 <span className="mt-0.5 shrink-0" style={{ color: result.passed ? "var(--color-mint)" : "var(--text-muted)" }}>
                   <CheckIcon size={14} />
                 </span>
@@ -1078,8 +1078,8 @@ function Result({
                   <span className="block font-semibold" lang={course}>
                     {c.de}
                   </span>
-                  <span className="muted block text-xs">{c.tr}</span>
-                  <span className="muted block text-xs opacity-70" lang="en">
+                  <span className="muted block text-caption">{c.tr}</span>
+                  <span className="muted block text-caption opacity-70" lang="en">
                     {c.en}
                   </span>
                 </span>
@@ -1088,19 +1088,19 @@ function Result({
           </ul>
         </div>
       ) : focus.length ? (
-        <p className="muted mt-3 text-xs">{t("exam.structures_measured", { list: focus.map((f) => f.de).join(", ") })}</p>
+        <p className="muted mt-3 text-caption">{t("exam.structures_measured", { list: focus.map((f) => f.de).join(", ") })}</p>
       ) : null}
 
       {misses.length ? (
         <div className="mt-3">
-          <button type="button" onClick={onToggleMisses} className="btn btn-ghost w-full px-4 py-2.5 text-sm">
+          <button type="button" onClick={onToggleMisses} className="btn btn-ghost w-full px-4 py-2.5 text-body">
             {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.length })}
           </button>
           {showMisses ? (
             <ul className="mt-2 space-y-2.5">
               {misses.map((m, i) => (
-                <li key={i} className="rounded-panel px-3 py-2.5 text-sm surface-2">
-                  <p className="muted text-xs font-semibold">
+                <li key={i} className="rounded-panel px-3 py-2.5 text-body surface-2">
+                  <p className="muted text-caption">
                     <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
                   <p className="mt-0.5">{m.prompt}</p>
@@ -1108,16 +1108,16 @@ function Result({
                     {m.answer}
                   </p>
                   {m.given ? (
-                    <p className="muted text-xs">
+                    <p className="muted text-caption">
                       {t("exam.your_answer")} <span lang={course}>{m.given}</span>
                     </p>
                   ) : null}
                   {m.section === "produce" && m.given ? (
-                    <p className="mt-1 text-xs">
+                    <p className="mt-1 text-caption">
                       <TokenDiff tokens={matchSentence(m.given, m.answer, [], targetLangOf(course)).target} />
                     </p>
                   ) : null}
-                  {m.why ? <p className="muted mt-1 text-xs">{m.why}</p> : null}
+                  {m.why ? <p className="muted mt-1 text-caption">{m.why}</p> : null}
                 </li>
               ))}
             </ul>
@@ -1126,22 +1126,22 @@ function Result({
       ) : null}
 
       {showMisses && writingSample ? (
-        <div className="mt-2 rounded-panel px-3 py-2.5 text-sm surface-2">
-          <p className="muted text-xs font-semibold">{t("exam.writing_sample")}</p>
-          <p className="mt-1 whitespace-pre-line text-xs" lang={course}>
+        <div className="mt-2 rounded-panel px-3 py-2.5 text-body surface-2">
+          <p className="muted text-caption">{t("exam.writing_sample")}</p>
+          <p className="mt-1 whitespace-pre-line text-caption" lang={course}>
             {writingSample}
           </p>
         </div>
       ) : null}
 
       {result.passed && !result.trial ? (
-        <a href={`/api/certificate/${result.id}`} target="_blank" rel="noreferrer" className="btn btn-primary mt-4 w-full px-5 py-3 text-sm">
+        <a href={`/api/certificate/${result.id}`} target="_blank" rel="noreferrer" className="btn btn-primary mt-4 w-full px-5 py-3 text-body">
           {t("exam.open_certificate")}
         </a>
       ) : (
-        <p className="muted mt-3 text-xs">{t("exam.weak_section_hint")}</p>
+        <p className="muted mt-3 text-caption">{t("exam.weak_section_hint")}</p>
       )}
-      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
+      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
         {t("exam.back_to_path")}
       </Link>
       {/*
@@ -1154,7 +1154,7 @@ function Result({
       {moduleIndex !== null ? (
         <Link
           href={`/lessons/boss/${level}/${moduleIndex}`}
-          className="muted mt-2 block text-center text-xs font-semibold underline-offset-2 hover:underline"
+          className="muted mt-2 block text-center text-caption underline-offset-2 hover:underline"
         >
           {t("exam.speed_round_link", { n: BOSS_SECONDS })}
         </Link>
