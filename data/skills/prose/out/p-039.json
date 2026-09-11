@@ -1,0 +1,202 @@
+[
+ {
+  "tr": "Kırık ekran. Tamir mi, yenisi mi?",
+  "kind": "intro",
+  "en": "A broken screen. Repair it or buy a new one?"
+ },
+ {
+  "tr": "İlk iş günü. Hangi an günü çeviriyor?",
+  "kind": "intro",
+  "en": "A first day at work. Which moment turns the day?"
+ },
+ {
+  "tr": "„problem“ kendi edatını taşıyor: with.",
+  "kind": "explain",
+  "en": "„problem“ carries its own preposition: with."
+ },
+ {
+  "tr": "Kayıp paket için forum. Önce ne yapmalı?",
+  "kind": "intro",
+  "en": "A forum about a lost package. What do you do first?"
+ },
+ {
+  "tr": "Belirli ve kapanmış bir gün: simple past.",
+  "kind": "explain",
+  "en": "One definite, closed day: simple past."
+ },
+ {
+  "tr": "„I'd like a haircut, please. Not too short.“",
+  "kind": "explain",
+  "en": "„I'd like a haircut, please. Not too short.“"
+ },
+ {
+  "tr": "Hesap açılıyor. Neyin ücreti var, neyin yok?",
+  "kind": "intro",
+  "en": "An account is opened. What has a charge and what does not?"
+ },
+ {
+  "tr": "„cancel“ sonrası doğrudan nesne; edat almıyor.",
+  "kind": "explain",
+  "en": "After „cancel“ the object follows directly; no preposition."
+ },
+ {
+  "tr": "„For a refund I need the manager's signature.“",
+  "kind": "explain",
+  "en": "„For a refund I need the manager's signature.“"
+ },
+ {
+  "tr": "Hasarlı bir ürün. Nerede kırıldı, ne veriliyor?",
+  "kind": "intro",
+  "en": "A damaged product. Where did it break, and what is given for it?"
+ },
+ {
+  "tr": "„Fourteen euros for six days.“ — on bir artı üç.",
+  "kind": "explain",
+  "en": "„Fourteen euros for six days.“ — eleven plus three."
+ },
+ {
+  "tr": "İade konuşması. Fişle ne oluyor, fişsiz ne oluyor?",
+  "kind": "intro",
+  "en": "A talk about a return. What works with the receipt, and what without it?"
+ },
+ {
+  "tr": "Bir iş e-postası. Hangi iş bitti, hangisi bekliyor?",
+  "kind": "intro",
+  "en": "A work email. Which job is done and which one is waiting?"
+ },
+ {
+  "tr": "İki dükkân, bir makine. Ucuz olan gerçekten ucuz mu?",
+  "kind": "intro",
+  "en": "Two shops, one machine. Is the cheap one really cheap?"
+ },
+ {
+  "tr": "„broken“ sıfat gibi çalışıyor; „break“in üçüncü hâli.",
+  "kind": "explain",
+  "en": "„broken“ works like an adjective; it is the third form of „break“."
+ },
+ {
+  "tr": "Şikâyet ve ilk gün. Her fiil kendi edatını getiriyor.",
+  "kind": "intro",
+  "en": "A complaint and a first day. Every verb brings its own preposition."
+ },
+ {
+  "tr": "„The package was at my neighbour's door for six days.“",
+  "kind": "explain",
+  "en": "„The package was at my neighbour's door for six days.“"
+ },
+ {
+  "tr": "Adın yerini „one“ tutuyor: „which one“, „which“ değil.",
+  "kind": "explain",
+  "en": "„one“ stands in for the noun: „which one“, not „which“."
+ },
+ {
+  "tr": "Postanede bir koli. Normal mi, hızlı mı, sigortalı mı?",
+  "kind": "intro",
+  "en": "A parcel at the post office. Normal, express or insured?"
+ },
+ {
+  "tr": "Kuaförde kısa bir konuşma. Hangi fotoğraf, hangi tarak?",
+  "kind": "intro",
+  "en": "A short talk at the hairdresser. Which photo, which comb?"
+ },
+ {
+  "tr": "İki zaman, tek kural: zaman belirteci varsa simple past.",
+  "kind": "intro",
+  "en": "Two tenses, one rule: if there is a time expression, use the simple past."
+ },
+ {
+  "tr": "Kurumda „I want“ yerine „I'd like“; sonrası „to“ + fiil.",
+  "kind": "explain",
+  "en": "At an institution „I'd like“ instead of „I want“; then „to“ + verb."
+ },
+ {
+  "tr": "Fiyat karşılaştırması. Ad düşmüyor, yerine „one“ giriyor.",
+  "kind": "intro",
+  "en": "Comparing prices. The noun does not drop out; „one“ takes its place."
+ },
+ {
+  "tr": "Önce sorun, sonra fiş, sonra karar, en son ödünç telefon.",
+  "kind": "explain",
+  "en": "First the problem, then the receipt, then the decision, and the loan phone last."
+ },
+ {
+  "tr": "Önce tartı, sonra gönderi türü, sonra sigorta, en son form.",
+  "kind": "explain",
+  "en": "First the weighing, then the kind of post, then the insurance, and the form last."
+ },
+ {
+  "tr": "Önce istek, sonra fiş, sonra para iadesi, en son süre sorusu.",
+  "kind": "explain",
+  "en": "First the wish, then the receipt, then the refund, and the question about the time limit last."
+ },
+ {
+  "tr": "„A hundred and twenty with the spare part.“ — yenisi yüz altmış.",
+  "kind": "explain",
+  "en": "„A hundred and twenty with the spare part.“ — a new one costs a hundred and sixty."
+ },
+ {
+  "tr": "„I'd like to give you a new one, but this lamp is the last one.“",
+  "kind": "explain",
+  "en": "„I'd like to give you a new one, but this lamp is the last one.“"
+ },
+ {
+  "tr": "Banka ve sipariş cümleleri. Zaman belirteci yine zamanı seçiyor.",
+  "kind": "intro",
+  "en": "Sentences about the bank and an order. The time expression picks the tense again."
+ },
+ {
+  "tr": "„I haven't answered them yet. I would like to talk to you first.“",
+  "kind": "explain",
+  "en": "„I haven't answered them yet. I would like to talk to you first.“"
+ },
+ {
+  "tr": "Garanti ve hizmet cümleleri. Zaman belirteci yine zamanı seçiyor.",
+  "kind": "intro",
+  "en": "Sentences about warranty and service. The time expression picks the tense again."
+ },
+ {
+  "tr": "Garanti konuşması. Hangi durumda garanti geçerli, hangisinde değil?",
+  "kind": "intro",
+  "en": "A talk about the warranty. When is it valid and when is it not?"
+ },
+ {
+  "tr": "Sözleşme iptali. Hangi teklif hangisinden ucuz, hangisi daha pahalı?",
+  "kind": "intro",
+  "en": "Cancelling a contract. Which offer is cheaper than which, and which is more expensive?"
+ },
+ {
+  "tr": "„It's still under guarantee, but the guarantee does not pay for that.“",
+  "kind": "explain",
+  "en": "„It's still under guarantee, but the guarantee does not pay for that.“"
+ },
+ {
+  "tr": "Tek cümlede iki karşılaştırma biçimi. Hangisi kısa, hangisi uzun sıfat?",
+  "kind": "intro",
+  "en": "Two comparative forms in one sentence. Which adjective is short and which is long?"
+ },
+ {
+  "tr": "Bugünkü yirmi dokuz, yenisi yirmi dört: „cheaper than now and more data“.",
+  "kind": "explain",
+  "en": "Today twenty-nine, the new one twenty-four: „cheaper than now and more data“."
+ },
+ {
+  "tr": "„I opened the box at home and it was already broken.“ — kutudan kırık çıktı.",
+  "kind": "explain",
+  "en": "„I opened the box at home and it was already broken.“ — it came out of the box broken."
+ },
+ {
+  "tr": "„And put everything in one email.“ — dört e-posta bir haftada bir cevap getirdi.",
+  "kind": "explain",
+  "en": "„And put everything in one email.“ — four emails brought one answer in a week."
+ },
+ {
+  "tr": "„That one is cheaper, yes, but it's slower. Six gigabytes and not in every city.“",
+  "kind": "explain",
+  "en": "„That one is cheaper, yes, but it's slower. Six gigabytes and not in every city.“"
+ },
+ {
+  "tr": "„Could you confirm the time of the meeting on Friday?“ — takvimde iki, e-postada üç yazıyor.",
+  "kind": "explain",
+  "en": "„Could you confirm the time of the meeting on Friday?“ — the calendar says two, the email says three."
+ }
+]

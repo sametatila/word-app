@@ -1,0 +1,287 @@
+[
+ {
+  "tr": "Kargo formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Versandformular aus."
+ },
+ {
+  "tr": "İki kilo; İtalya'ya; normal gönderi; sigortalı; toplam on dört euro.",
+  "kind": "form.facts",
+  "de": "Zwei Kilo; nach Italien; normaler Versand; versichert; insgesamt vierzehn Euro."
+ },
+ {
+  "tr": "Ürün iki gün önce alındı; fiş var; beden yanlış; para iadesi isteniyor.",
+  "kind": "form.facts",
+  "de": "Vor zwei Tagen gekauft; Kassenbon vorhanden; falsche Größe; Erstattung erwünscht."
+ },
+ {
+  "tr": "Birinci dükkân iki yüz on; ikinci iki yüz elli; ucuzda bir yıl garanti; pahalıda üç yıl.",
+  "kind": "form.facts",
+  "de": "Erster Laden zweihundertzehn; zweiter zweihundertfünfzig; beim billigen ein Jahr Garantie, beim teuren drei."
+ },
+ {
+  "tr": "Ekranım kırık.",
+  "kind": "build.tr",
+  "de": "Mein Display ist kaputt."
+ },
+ {
+  "tr": "İndirim var mı?",
+  "kind": "build.tr",
+  "de": "Gibt es einen Rabatt?"
+ },
+ {
+  "tr": "Dosyayı ekledim.",
+  "kind": "build.tr",
+  "de": "Ich habe die Datei angehängt."
+ },
+ {
+  "tr": "Ne kadar sürecek?",
+  "kind": "build.tr",
+  "de": "Wie lange wird es dauern?"
+ },
+ {
+  "tr": "Paketim geldi mi?",
+  "kind": "build.tr",
+  "de": "Ist mein Paket schon da?"
+ },
+ {
+  "tr": "Ondan daha pahalı.",
+  "kind": "build.tr",
+  "de": "Es ist teurer als jenes."
+ },
+ {
+  "tr": "Bu şundan daha ucuz.",
+  "kind": "build.tr",
+  "de": "Dieses ist billiger als jenes."
+ },
+ {
+  "tr": "Bunda bir sorun var.",
+  "kind": "build.tr",
+  "de": "Damit gibt es ein Problem."
+ },
+ {
+  "tr": "Hâlâ garanti altında.",
+  "kind": "build.tr",
+  "de": "Es ist noch in der Garantie."
+ },
+ {
+  "tr": "Onu iki gün önce aldım.",
+  "kind": "build.tr",
+  "de": "Ich habe es vor zwei Tagen gekauft."
+ },
+ {
+  "tr": "Bir hesap açmak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte ein Konto eröffnen."
+ },
+ {
+  "tr": "Bunu iade etmek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte das zurückgeben."
+ },
+ {
+  "tr": "Bu teklif şundan daha ucuz.",
+  "kind": "build.tr",
+  "de": "Dieses Angebot ist billiger als jenes."
+ },
+ {
+  "tr": "Bunun için bir ücret var mı?",
+  "kind": "build.tr",
+  "de": "Gibt es dafür eine Gebühr?"
+ },
+ {
+  "tr": "İlk günümde çok tedirgindim.",
+  "kind": "build.tr",
+  "de": "An meinem ersten Tag war ich sehr nervös."
+ },
+ {
+  "tr": "Saati teyit edebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Könnten Sie die Uhrzeit bestätigen?"
+ },
+ {
+  "tr": "Onu iki gün önce sipariş ettim.",
+  "kind": "build.tr",
+  "de": "Ich habe es vor zwei Tagen bestellt."
+ },
+ {
+  "tr": "Bir saç kesimi istiyorum, lütfen.",
+  "kind": "build.tr",
+  "de": "Ich hätte gern einen Haarschnitt, bitte."
+ },
+ {
+  "tr": "Bunu iki hafta önce buradan aldım.",
+  "kind": "build.tr",
+  "de": "Ich habe das vor zwei Wochen hier gekauft."
+ },
+ {
+  "tr": "Onu değiştirebilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie es ersetzen, bitte?"
+ },
+ {
+  "tr": "Para iadesi alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnte ich eine Erstattung bekommen, bitte?"
+ },
+ {
+  "tr": "Günün sonunda çok daha iyi hissettim.",
+  "kind": "build.tr",
+  "de": "Am Ende des Tages ging es mir viel besser."
+ },
+ {
+  "tr": "Hızlı gönderi daha çabuk ama daha pahalı.",
+  "kind": "build.tr",
+  "de": "Express ist schneller, aber teurer."
+ },
+ {
+  "tr": "Bunu yurt dışına göndermek ne kadara mal olur?",
+  "kind": "build.tr",
+  "de": "Was kostet es, das ins Ausland zu schicken?"
+ },
+ {
+  "tr": "Onu daha büyük bir bedenle değiştirebilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich es gegen eine größere Größe umtauschen?"
+ },
+ {
+  "tr": "Bu parayı hesabıma havale edebilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie dieses Geld auf mein Konto überweisen, bitte?"
+ },
+ {
+  "tr": "„ago“ zamanı çiviliyor: simple past.",
+  "kind": "build.hint",
+  "de": "„ago“ nagelt die Zeit fest: simple past."
+ },
+ {
+  "tr": "„broken“ burada sıfat gibi çalışıyor.",
+  "kind": "build.hint",
+  "de": "„broken“ wirkt hier wie ein Adjektiv."
+ },
+ {
+  "tr": "„problem“ kendi edatını taşıyor: with.",
+  "kind": "build.hint",
+  "de": "„problem“ trägt seine eigene Präposition: with — deutsch „Problem mit“."
+ },
+ {
+  "tr": "„transfer … to …“ hedefi „to“ ile alıyor.",
+  "kind": "build.hint",
+  "de": "„transfer … to …“ nimmt das Ziel mit „to“, deutsch „überweisen auf“."
+ },
+ {
+  "tr": "„get“ burada „almak“ demek; „please“ en sonda.",
+  "kind": "build.hint",
+  "de": "„get“ heißt hier „bekommen“; „please“ steht ganz hinten."
+ },
+ {
+  "tr": "Varlık sorusu; tekil olduğu için „a discount“.",
+  "kind": "build.hint",
+  "de": "Eine Existenzfrage; Singular, deshalb „a discount“."
+ },
+ {
+  "tr": "Kurumda „I want“ yerine „I'd like“ kullanılıyor.",
+  "kind": "build.hint",
+  "de": "In der Behörde steht „I'd like“ statt „I want“."
+ },
+ {
+  "tr": "Mağazada „I want“ yerine „I'd like“: kibar ve kısa.",
+  "kind": "build.hint",
+  "de": "Im Laden „I'd like“ statt „I want“: höflich und kurz."
+ },
+ {
+  "tr": "Hizmet isteğinde „I'd like“ + isim; fiil gerekmiyor.",
+  "kind": "build.hint",
+  "de": "Beim Wunsch nach einer Leistung „I'd like“ + Nomen; ein Verb braucht es nicht."
+ },
+ {
+  "tr": "Varlık sorusu; neyin ücreti olduğunu „for“ bağlıyor.",
+  "kind": "build.hint",
+  "de": "Eine Existenzfrage; wofür die Gebühr gilt, hängt „for“ an."
+ },
+ {
+  "tr": "„under warranty“ kalıp; „still“ „be“ fiilinden sonra.",
+  "kind": "build.hint",
+  "de": "„under warranty“ ist eine Formel; „still“ steht nach dem Verb „be“."
+ },
+ {
+  "tr": "Gelecek „will“ ile; yine boş özneli „it takes“ kalıbı.",
+  "kind": "build.hint",
+  "de": "Die Zukunft mit „will“; wieder das Muster „it takes“ mit leerem Subjekt."
+ },
+ {
+  "tr": "Türkçede ad düşüyor, İngilizcede yerine „one“ konuyor.",
+  "kind": "build.hint",
+  "de": "Türkisch lässt das Nomen weg, Englisch setzt „one“ ein. Deutsch braucht dort kein Wort: dieses ist billiger."
+ },
+ {
+  "tr": "Belirli ve kapanmış bir gün: simple past. Gün „on“ ile.",
+  "kind": "build.hint",
+  "de": "Ein bestimmter, abgeschlossener Tag: simple past. Der Tag mit „on“."
+ },
+ {
+  "tr": "„cheap“ kısa: „-er“. Karşıdaki adın yerini „one“ tutuyor.",
+  "kind": "build.hint",
+  "de": "„cheap“ ist kurz: „-er“. Das Nomen gegenüber vertritt „one“."
+ },
+ {
+  "tr": "Baştaki „it“ boş bir özne; asıl özne sondaki „to send …“.",
+  "kind": "build.hint",
+  "de": "Das „it“ vorn ist ein leeres Subjekt wie deutsch „es“; das echte Subjekt ist „to send …“."
+ },
+ {
+  "tr": "Karşılaştırmayı „much“ güçlendiriyor; „very better“ olmaz.",
+  "kind": "build.hint",
+  "de": "„much“ verstärkt den Vergleich wie deutsch „viel“; „very better“ gibt es nicht."
+ },
+ {
+  "tr": "Süre sorusu „how long“; „it takes“ kalıbı yine boş özneli.",
+  "kind": "build.hint",
+  "de": "Die Dauerfrage „how long“; das Muster „it takes“ hat wieder ein leeres Subjekt."
+ },
+ {
+  "tr": "Zaman söylenmiyor ve sonucu şimdi önemli: present perfect.",
+  "kind": "build.hint",
+  "de": "Kein Zeitpunkt genannt und das Ergebnis zählt jetzt: present perfect."
+ },
+ {
+  "tr": "Sonuç şimdi önemli: present perfect. Soruda „yet“ en sonda.",
+  "kind": "build.hint",
+  "de": "Das Ergebnis zählt jetzt: present perfect. In der Frage steht „yet“ ganz hinten."
+ },
+ {
+  "tr": "„expensive“ uzun: „more“ istiyor. Karşılaştırılan yine „one“.",
+  "kind": "build.hint",
+  "de": "„expensive“ ist lang: es verlangt „more“. Verglichen wird wieder mit „one“."
+ },
+ {
+  "tr": "İş yazışmasının olağan ricası; „Can you“ biraz daha kısa durur.",
+  "kind": "build.hint",
+  "de": "Die übliche Bitte im Schriftverkehr; „Can you“ klingt etwas knapper."
+ },
+ {
+  "tr": "„exchange“in edatı „for“: neyle değişeceğin ondan sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Die Präposition von „exchange“ ist „for“: wogegen getauscht wird, kommt danach."
+ },
+ {
+  "tr": "„replace“ yerine yenisini koymak demek; „change“ başka iş görür.",
+  "kind": "build.hint",
+  "de": "„replace“ heißt ersetzen; „change“ tut etwas anderes."
+ },
+ {
+  "tr": "Aynı cümlede iki biçim: kısa sıfat „-er“ alıyor, uzun sıfat „more“ istiyor.",
+  "kind": "build.hint",
+  "de": "Zwei Formen in einem Satz: das kurze Adjektiv nimmt „-er“, das lange verlangt „more“. Deutsch hängt in beiden Fällen „-er“ an."
+ },
+ {
+  "tr": "„ago“ zamanı çiviliyor, o yüzden simple past. „have bought … ago“ diye bir cümle yok.",
+  "kind": "build.hint",
+  "de": "„ago“ nagelt die Zeit fest, deshalb simple past. „have bought … ago“ gibt es nicht — Deutsch dagegen sagt genau das: ich habe es vor zwei Tagen gekauft."
+ },
+ {
+  "tr": "Postanedeki sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge auf der Post: bring sie in die richtige Ordnung."
+ }
+]

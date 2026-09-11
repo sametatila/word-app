@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
-| A2 | 13–25 | bekliyor |
+| A2 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
+| A2 | 16–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -417,6 +417,43 @@ the team“ ile değiştirildi, ve bir dinleme bölümünün içindeki seslenme
 („Ela, do you have two minutes?“) kaldırıldı — konuşmacı etiketi satır
 başındayken ölçümden düşüyor ama cümle İÇİNDEKİ ad düşmüyor, bu da
 makinenin bilinen ve kabul edilmiş sınırı.
+
+**A2 ünite 13–15 (2026-09-12).** Ünite 13 A work email · My first day ·
+Returns and exchanges · Complaining about a product; ünite 14 Online orders ·
+At the bank · Sending a parcel · A phone contract; ünite 15 At the hairdresser ·
+Repair service · Comparing prices · Warranty and receipts. On sekiz egzersiz;
+ünite dışı ölçüm %0,0. A2 yuvalarının 90'ı dolu.
+
+Ünite 13 ünite 11'in bıraktığı yerden devam ediyor. Orada present perfect
+ile simple past'ın FARKI öğretilmişti; burada SEÇİM KURALI geliyor: zaman
+belirteci zamanı seçer. „ago“, „yesterday“, „last week“ varsa simple past
+zorunludur ve „I have bought it two days ago“ diye bir cümle yoktur.
+
+Almanca eksende bu, ünite 11'deki gözlemin sonucu ve tam olarak hatanın
+doğduğu yer: Almanca „vor zwei Tagen“ ile Perfekt'i sorunsuz birleştiriyor
+(„ich habe es vor zwei Tagen gekauft“), yani Almanca okuyan öğrenci kendi
+cümlesini birebir çevirdiğinde yasak biçimi üretiyor. Karşılık bunu adıyla
+söylüyor: „Deutsch dagegen sagt genau das“. Uyarıyı sessiz bırakmak burada
+en pahalı seçenek olurdu, çünkü hata kaçınılmaz.
+
+Ünite 14 karşılaştırmanın iki biçimini TEK cümlede buluşturuyor: „Express
+is faster, but it's more expensive.“ Ünite 5 kuralı ayrı ayrı vermişti;
+burada seçim aynı cümlenin içinde iki kez yapılıyor. Almanca eksende bu,
+ünite 5'te açılan uyarının en keskin hâli — Almanca iki yarıda da „-er“
+takıyor („schneller, aber teurer“), yani cümlenin ortasında strateji
+değiştirmiyor. Karşılık bunu da yazıyor.
+
+Ünite 15'in noktası ADIN YERİNİ TUTAN „one“. Türkçe hiçbir şey koymuyor
+("bu daha ucuz"), Almanca da koymuyor („dieses ist billiger“) — yani
+burada Türkçe ile Almanca AYNI tarafta ve İngilizce yalnız, tıpkı A2 ünite
+4'ün süre cümlesinde olduğu gibi. Bu, hattın üçüncü kez gördüğü hizalanma
+ve karşılık her seferinde aynı biçimde kuruluyor: önce İngilizcenin ne
+yaptığı, sonra iki dilin ortak davranışı.
+
+Ölçüm bu turda altı sözlükçe maddesi ekletti ve bir egzersizin BAŞLIĞINI
+değiştirtti: „Repair service“ başlığındaki „service“ ünite havuzunda yok ve
+başlık da ölçüm yüzeyinin parçası. Aynı sözcük dinleme egzersizinin
+konuşmacı etiketinde de duruyordu; etiket bir kişi adına çevrildi.
 
 ## Tamamlanma ölçütü
 
