@@ -76,20 +76,20 @@ export function buildShareText(input: {
   const tr = (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
   const daily = input.kind === "daily";
   const head = daily
-    ? tr("sharew.head_daily", { level: input.level })
-    : tr("sharew.head", { level: input.level });
+    ? tr("share.head_daily", { level: input.level })
+    : tr("share.head", { level: input.level });
   const lines = [head, marksToGrid(input.marks)];
 
   const pct = formatPercent(input.accuracy, lang);
   const stats = daily
-    ? [tr("sharew.points", { n: formatNumber(input.score ?? 0, lang) }), tr("sharew.of_questions", { n: input.total, pct })]
-    : [tr("sharew.n_words", { n: input.total }), tr("sharew.pct_correct", { pct })];
+    ? [tr("share.points", { n: formatNumber(input.score ?? 0, lang) }), tr("share.of_questions", { n: input.total, pct })]
+    : [tr("share.n_words", { n: input.total }), tr("share.pct_correct", { pct })];
   if (input.streak > 0) {
-    stats.push(daily ? tr("sharew.streak_short", { n: input.streak }) : tr("social.days_streak", { n: input.streak }));
+    stats.push(daily ? tr("share.streak_short", { n: input.streak }) : tr("social.days_streak", { n: input.streak }));
   }
   lines.push(stats.join(" · "));
 
-  if (daily) lines.push("", tr("sharew.daily_cta", { level: input.level }));
+  if (daily) lines.push("", tr("share.daily_cta", { level: input.level }));
   else lines.push("");
   lines.push(input.origin);
   return lines.join("\n");
