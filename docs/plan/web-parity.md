@@ -6548,3 +6548,40 @@ ortak dersi bu.
 Denetimi pahalı yapan şey webdeki tarayıcının `--hits` bayrağının olmamasıydı;
 mobilde vardı, eklendi.
 
+
+### 11.183 Aynı kelime webde daha kolaydı: kayıtsız bedava ipuçları
+
+Web-özel sözlükteki (`src/i18n/web/*`) yirmi dört `rounds.*` anahtarını tek tek
+ölçtüm. Her biri Android'de OLMAYAN bir satırın ekrana çıkması demek.
+
+**Üçü bedava ipucuydu** ve üçü de `hintUsed` göndermiyordu:
+
+| tur | webin fazladan verdiği |
+|---|---|
+| yazma | "12 harf · S ile başlıyor" (başlıkta, her zaman açık) |
+| çeviri | odak kelimesinin chip'i + "{n} kelime" |
+| boşluk doldurma | yer tutucunun içinde kelimenin ANLAMI |
+
+Android'de üçü de yok: harf sayısı ancak ipucu düğmesine basınca (iskelet)
+görülüyor ve o düğme `hintUsed` gönderip SRS kalitesini 3'e kırpıyor. Yani
+**aynı kelime iki platformda farklı zorlukta soruluyordu ve sunucu iki cevabı
+aynı kalitede sayıyordu**. Bir ipucunun kaydedilmemesi yalnız adaletsizlik
+değil, ölçüm hatası: tekrar aralığı yanlış hesaplanıyor.
+
+**Dördü etiketin tekrarıydı** - aynı soru üst üste iki kez: "DOĞRU MU?" +
+"Bu eşleşme doğru mu?", "DİNLE · ANLAMINI SEÇ" + "Duyduğun kelime ne demek?",
+"ÇOĞUL" + "— çoğulu hangisi?", hoparlör düğmesi + "Tekrar dinlemek için dokun".
+
+**Biri ters yöndeydi.** `rounds.ai_accepted`: modelin kurtardığı çeviride web
+"Anlamca doğru — başka bir kuruluş" yazıyor. Android hükmü `exact`e çevirip
+"tam doğru" diyordu - kullanıcının kuruluşu hedefle aynı değilken aynıymış gibi.
+Kalite 4 vermek doğru, BAŞLIK yanlıştı. Anahtar ortak sözlüğe taşındı.
+
+Kapı: parity-check **§92** (yazma turu ipucu yüzeyi: bedava harf ipucu var mı,
+iskelet düğmenin arkasında mı, düğme cezayı yazıyor mu) ve **§93** (tur
+ekranlarındaki web-özel metinlerin gerekçeli listesi - kalan on beşi serbest
+yazma turu, ekran okuyucu etiketleri ve tarayıcıda TTS olmama ihtimali).
+
+**Kalıp:** "webin kendi sözlüğü" bir muafiyet listesi ve denetlenmeyen her
+muafiyet listesi gibi sessizce büyümüş. Bu turun üçüncü örneği.
+
