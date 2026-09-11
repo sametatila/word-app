@@ -488,7 +488,7 @@ export const enWeb: Record<string, string> = {
   "del.in_app_path": "In the app: Profile › Settings › Account › Delete account",
   "linked.credential_sub": "The method you signed up with",
   "linked.google": "Google",
-  "linked.google_sub": "One-tap sign-in with your Google account",
+  "linked.google_sub": "Sign in with Google",
   "linked.apple": "Apple",
   "linked.apple_sub": "Sign in with Apple (iOS app)",
   "linked.link_failed": "Couldn't link. Try again in a moment.",

@@ -488,7 +488,7 @@ export const deWeb: Record<string, string> = {
   "del.in_app_path": "In der App: Profil › Einstellungen › Konto › Konto löschen",
   "linked.credential_sub": "Die Methode, mit der du dich registriert hast",
   "linked.google": "Google",
-  "linked.google_sub": "Anmeldung mit einem Tipp über dein Google-Konto",
+  "linked.google_sub": "Anmeldung mit Google",
   "linked.apple": "Apple",
   "linked.apple_sub": "Anmeldung mit Apple (iOS-App)",
   "linked.link_failed": "Verknüpfen fehlgeschlagen. Versuch es gleich noch mal.",

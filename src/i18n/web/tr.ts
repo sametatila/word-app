@@ -514,7 +514,7 @@ export const trWeb: Record<string, string> = {
   "del.in_app_path": "Uygulamada: Profil › Ayarlar › Hesap › Hesabı sil",
   "linked.credential_sub": "Kayıt olurken kullandığın yöntem",
   "linked.google": "Google",
-  "linked.google_sub": "Google hesabınla tek dokunuşta giriş",
+  "linked.google_sub": "Google hesabıyla giriş",
   "linked.apple": "Apple",
   "linked.apple_sub": "Apple ile giriş (iOS uygulaması)",
   "linked.link_failed": "Bağlanamadı. Biraz sonra tekrar dene.",
