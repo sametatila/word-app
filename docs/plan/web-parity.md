@@ -10694,3 +10694,64 @@ Belgelenmiş bir ikon ölçeği **yok** — yarıçap ve puntoda olan (beş/seki
 basamak, `check:tokens`ın doğruladığı) burada hiç yazılmamış. Bir kapı "yakın
 değerleri" ihlal sayardı; §11.323'ün boşluk kararıyla aynı sınıf. Ayrışma
 varsa yüzey yüzey bulunur.
+
+## §11.326 — Modül sınavı: kurs kontrolü iki yolda vardı, üçüncüde yoktu
+
+Modül sınavı planları Almanca yazılmış ve kurs boyutu yok; gerekçesi kendi
+dosyasında duruyor (`hasModuleExams`): "İngilizce öğrenen birinin Patika'sında
+Almanca başlıklı modül sınavları çıkıyor ve açtığında Almanca kâğıt geliyordu."
+Varsayımın adı var — ama **üç yol** var ve üçünde de uygulanması gerekiyor:
+
+| Yol | Kontrol |
+|---|---|
+| Kapak ucu (`/api/exam?level&module`) | vardı |
+| Modül listesi (`/api/exam?level`) | vardı |
+| **Kâğıt üretimi** (`POST {action:"start", module}`) | **yoktu** |
+
+`/api/exam`a doğrudan `{action:"start", module: 3}` gönderen bir İngilizce kurs
+kullanıcısı Almanca kâğıt alıyordu. Arayüzden erişilmiyordu — iki istemci de
+listeyi boş alıyor, yani kusur görünmüyordu — ama adı olan bir varsayımın en
+önemli yerde, kâğıdın üretildiği yerde, uygulanmaması tam bu turlarda tekrar
+eden sınıf. §213 üç yolu birlikte okuyor; enjeksiyon (kontrolü `if (false)`
+yapmak) yakalandı.
+
+Mobil tarafta ayrı bir kapı **gerekmiyor** ve bu da ölçüldü: `PathScreen` modül
+listesini sunucudan çekiyor (`/api/exam?level=`), yani kural tek yerde. Kapı
+bunu da doğruluyor — mobil kendi kopyasını yazmaya başlarsa haber verir.
+
+## §11.327 — 161 ham dizginin ayıklaması: hepsi meşru, biri hariç (o da düzeltildi)
+
+`i18n-hardcoded` tabanı bir borç listesi ve içinde gerçek arayüz metni olup
+olmadığı hiç ayıklanmamıştı. Yuva yuva bakıldı; **altı meşru sınıf** çıktı ve
+bundan sonra yeniden ayıklanmaması için buraya yazılıyor:
+
+1. **Geliştirici günlüğü** — `console.error("[learn] profil okunamadı")` gibi.
+   `src/app/(app)` altındaki on beş hitin **hepsi** bu. Ekrana çıkmıyor.
+2. **Yapay zekâya giden istem** — `task.prompt: \`Çevir: ${sentence.tr}\``
+   (`translate-game`), rol yapma sınavının sahne tarifi. Model okuyor, kullanıcı
+   okumuyor.
+3. **Hedef dilin kendi harfleri** — umlaut ekleme düğmeleri (`ö ü Ö Ü`) beş
+   oyunda ve yazma oynatıcısında. Çevrilecek metin değil, karakter.
+4. **Hedef dilin kendi içeriği** — `voice-picker`ın Zürih Almancası / standart
+   Almanca örnek cümlesi, `exam-types`in `Hören` bölüm adı, sınav kapağının
+   `Niveauprüfung`/`Modulprüfung` üst satırı (o da yalnız kâğıt Almanca başlık
+   taşıyorsa; İngilizce kursta modül sınavı hiç yok — §11.326).
+5. **Anadile göre eşlenmiş tablolar** — `TRUE_WORD`/`FALSE_WORD`
+   (`lesson-player`, tanıyıcı arayüz dilindeki kelimeyi dinliyor), `UNIT_WORD`
+   (`brief.ts`, sunucu tarafı yedek ad). Üç dilin üçü de yazılı.
+6. **Pazarlama / paylaşım meta verisi** — `layout.tsx` kök başlığı ve
+   açıklaması, `manifest.ts`, `opengraph-image.tsx`. Tek dilli ve bilerek:
+   uygulamanın satış noktası "Türkçe anlatımıyla" ve OG görseli zaten Türkçe
+   bir PNG. Sayfa başlıkları **ayrı** ve çoktan çevrilmiş durumda — 82 sayfa
+   `titleMeta()` kullanıyor ve kalan sabit başlıklar yalnız yönetim panoları.
+
+Tek gerçek kusur geçen turda çıkan `skills/quiz`in "Cümleyi dinle"siydi ve
+düzeltildi (§11.325). Bugün başka bir arayüz metni yok.
+
+**Bir tuzak bulundu ve adı yazıldı:** `PREMIUM_GATES` haritasının değerleri
+Türkçe cümleler ("Deneme sınavları", "Cepte yürüyüş (ekran kapalı)") ve
+**hiçbir bileşen onları okumuyor** — paywall'ın her satırı anahtar + parametre
+olarak dönüyor. Bugün zararsız; biri bu değerleri ekrana basarsa arayüzü
+Almanca olan kullanıcı Türkçe görür. Dosyanın yorumu artık bunu söylüyor:
+anahtarlar sözleşme, değerler yalnız insan için okunabilir etiket, yeni bir
+kapının metni sözlüğe yazılır.
