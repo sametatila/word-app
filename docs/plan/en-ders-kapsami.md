@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-5 TAM, 150/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-6 TAM, 160/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -317,6 +317,30 @@ konuşmak rol yapmanın kendi işi.
 Modül 5 kapandığında B2.GR.11-20'nin onu da modül içinde tam bir kez
 kullanılmış oldu (`candoForLesson` ile ölçüldü, 10/10) ve B2'nin elli
 dersinin hepsi bir ifadeye düşüyor.
+
+**B2 modül 6 — Toplum ve ekonomi (2026-09-11).** On ders: eşitsizlik raporu,
+rakamlara göre, fiyatı ne sürüklüyor, kiralar artınca, etkilenen kesim,
+katılım hiç bu kadar düşmedi, on yılın sonuna kadar, tutmayan kanun, fabrika
+kalsaydı, bir kesim hakkında konuşmak.
+
+Modülün kendi ekseni TOPLULUK HAKKINDA KONUŞMAK. Bir kesim hakkındaki cümle
+farkında olmadan herkes hakkında bir cümleye dönüşür; modülün her dersi bu
+kaymayı başka bir yerden tutuyor. İsimleştirme faili düşürüyor (rapor dili
+bunu bilerek yapar), edilgen aktarım kaynağı düşürüyor, virgüllü ilgi cümlesi
+bilgi ekliyor ama kimliği DARALTMIYOR — virgülsüzü daraltır ve bir kesimi
+ayırır. Son ders bunu doğrudan söylüyor: yumuşatıcılar hükmü verir ama onu
+herkes hakkında bir cümleye çevirmez.
+
+Kelime seçimi bu modülde ilk kez doğru sırayla yapıldı: önce havuzdaki boş B2
+kelimeleri listelendi, konu ona göre dizildi. Seksen maddenin sekseni de tek
+sorguda doğrulandı (havuz dışı 0, yinelenen 0, seviye dışı 0) — modül 3'te
+altı sorgu gerektiren iş bir sorguya indi.
+
+Almanca eksende bir yapı sınırı daha göründü: Türkçe iki tokenin ortak
+fiilini sona atabiliyor («… olanı, … olanı, … ise … bağlar»), Almanca
+atamıyor. Segment sırası dersten geldiği için çözüm her tokene kendi
+fiilini vermek: «bindet das Gleichzeitige an, … bindet das Gebaute an, …
+bindet dagegen das vorher Beendete an». Beş satır böyle düzeltildi.
 
 ## Tamamlanma ölçütü
 
