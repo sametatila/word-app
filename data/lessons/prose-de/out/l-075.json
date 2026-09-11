@@ -1,0 +1,8 @@
+[
+ { "tr": "çok", "kind": "vocab.tr", "de": "sehr" },
+ { "tr": "hoşça kalın", "kind": "vocab.tr", "de": "Auf Wiedersehen" },
+ { "tr": "affedersiniz", "kind": "vocab.tr", "de": "Entschuldigung" },
+ { "tr": "Türkçesi \"çok\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch heißt das „sehr“. Bitte sprich nach:" },
+ { "tr": "Türkçesi \"hoşça kalın\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch heißt das „Auf Wiedersehen“. Bitte sprich nach:" },
+ { "tr": "Türkçesi \"affedersiniz\" demek. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch heißt das „Entschuldigung“. Bitte sprich nach:" }
+]

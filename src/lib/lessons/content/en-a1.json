@@ -29,6 +29,18 @@
    {
     "de": "meet",
     "tr": "buluşmak"
+   },
+   {
+    "de": "goodbye",
+    "tr": "hoşça kalın"
+   },
+   {
+    "de": "excuse me",
+    "tr": "affedersiniz"
+   },
+   {
+    "de": "very",
+    "tr": "çok"
    }
   ],
   "patterns": [
@@ -470,6 +482,78 @@
     "expect": {
      "kind": "repeat",
      "target": "Nice to meet you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "goodbye"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hoşça kalın\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "goodbye"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "goodbye"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "excuse me"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"affedersiniz\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "excuse me"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "excuse me"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "very"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"çok\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "very"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "very"
     }
    },
    {
