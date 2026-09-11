@@ -1398,17 +1398,26 @@ export function LessonPlayer({
                   hükmünde olurdu (mobil `AiNotice` ile aynı gerekçe). */}
               <AiNotice variant="character" className="mt-2" />
               {offline ? (
-                <p
-                  className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-micro"
-                  style={{
-                    background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
-                    color: "var(--color-flame)",
-                  }}
-                  title={t("lessonp.chat_offline_note")}
-                >
-                  <AlertIcon size={12} />
-                  {t(lesson.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns")}
-                </p>
+                <>
+                  <p
+                    className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-micro"
+                    style={{
+                      background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+                      color: "var(--color-flame)",
+                    }}
+                  >
+                    <AlertIcon size={12} />
+                    {t(lesson.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns")}
+                  </p>
+                  {/* "KONUŞMA YİNE SAYILIR" GÖRÜNÜR OLDU. Cümle `title=` ile
+                      bir ipucu balonunda duruyordu: dokunmatikte hiç
+                      açılmıyor, klavyeyle de erişilmiyor - yani en çok
+                      güven veren kısım (servis kapalı ama konuşman sayılıyor)
+                      kullanıcıların bir bölümüne hiç ulaşmıyordu. Android'de
+                      bu cümle hiç yoktu; aynı turda ortak anahtara alınıp iki
+                      tarafta da yazılır oldu. */}
+                  <p className="muted mt-1 text-caption leading-relaxed">{t("lesson.chat_offline_note")}</p>
+                </>
               ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-caption tabular-nums">

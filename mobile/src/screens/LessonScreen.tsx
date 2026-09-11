@@ -236,7 +236,19 @@ export function LessonScreen() {
              (`game/offlineRoleplay`) - senaryosu olan derste senaryo, olmayanda
              kalıplar. Yani kullanıcı çalışan bir şeyi bozuk sanıyordu. Web iki
              yedeği ayrı ayrı adlandırıyor. */
-          push({ role: "teacher", segments: [{ lang: "tr", text: tx(lesson?.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns") }], tone: "hint" });
+          /* "KONUŞMA YİNE SAYILIR" da söyleniyor. Balon yalnız "servis kapalı"
+             diyordu; kullanıcı konuşmasının sayılmayacağını sanıp dersi
+             bırakabilirdi. Web'de bu cümle vardı ama `title=` ipucu balonunda
+             duruyordu (dokunmatikte hiç açılmıyor) - aynı turda ortak anahtara
+             alındı ve iki tarafta da yazılır oldu. */
+          push({
+            role: "teacher",
+            segments: [
+              { lang: "tr", text: tx(lesson?.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns") },
+              { lang: "tr", text: tx("lesson.chat_offline_note") },
+            ],
+            tone: "hint",
+          });
         }
       })
       .catch(() => {});
@@ -566,7 +578,10 @@ export function LessonScreen() {
     }
   }
 
-  const minTurns = lesson?.roleplay.minTurns ?? 6;
+  /* `lesson` henüz yüklenmemişken de okunuyor, o yüzden `??` kalıyor - ama
+     uydurulmuş bir eşik değil sıfır: ders gelmeden "yeter" demesin. Eşiğin
+     kendisi içerikten, artık zorunlu alandan geliyor. */
+  const minTurns = lesson?.roleplay.minTurns ?? 0;
   const roleplayReady = roleTurns >= minTurns;
 
   // ---- Özet + kayıt ----
@@ -1125,7 +1140,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
       */}
       {passed === false ? (
         <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
-          {tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns ?? 6 })}
+          {tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
         </Text>
       ) : nextDays !== null ? (
         <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
