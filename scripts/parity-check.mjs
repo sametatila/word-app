@@ -5403,6 +5403,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("iskelet erisilebilirligi", mob, web);
 }
 
+/* ── 153. modal arka plani erisilebilirlik agacindan cikiyor mu ───────────
+ * Webde onay diyalogu `<dialog>` uzerine kurulu ve bunu BEDAVA aliyor: odak
+ * tuzagi, Esc ve arka planin inert olmasi tarayicinin isi (bileşenin kendi
+ * yorumu da bunu soyluyor). RN `Modal` ise yalniz GORSEL olarak one geliyor;
+ * erisilebilirlik agacinda arka plan ERISILEBILIR kaliyor, yani VoiceOver
+ * kart bitince arkadaki ekrani okumaya devam ediyor ve kullanici hangi soruyu
+ * cevapladigini kaybediyor. `accessibilityViewIsModal` onun karsiligi.
+ *
+ * Olculen: mobilde modal cizen HER bilesen bunu tasiyor mu. Kural yuzey
+ * tariyor - yeni bir modal ayni seyi unutursa da yakalanir. Webde karsilik
+ * `<dialog>`in kendisi; orada ayrica isaret aranmiyor, `<dialog>` kullanildigi
+ * denetleniyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const walkTsx3 = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx3(p, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const isaretsiz = [];
+  for (const f of walkTsx3("mobile/src")) {
+    const src = strip(read(f));
+    if (!/<Modal\b/.test(src)) continue;
+    if (!/accessibilityViewIsModal/.test(src)) isaretsiz.push(f.split("/").pop());
+  }
+  sameList("modal arka plani", isaretsiz.length ? isaretsiz : ["yok"], ["yok"], "isaretsiz modal", "beklenen");
+
+  /* Webin karsiligi: onay diyalogu `<dialog>` uzerinde mi. */
+  const webDialog = /<dialog\b/.test(strip(read("src/components/confirm-dialog.tsx"))) ? "dialog uzerinde" : "elle modal";
+  sameList("web onay diyalogu", [webDialog], ["dialog uzerinde"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

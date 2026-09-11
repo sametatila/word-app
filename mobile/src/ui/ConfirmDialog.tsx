@@ -35,7 +35,13 @@ export function ConfirmDialog({
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onCancel}>
       <Pressable onPress={onCancel} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
-        <Pressable onPress={() => {}} style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
+        {/* EKRAN OKUYUCU İÇİN DE BİR DİYALOG. RN `Modal`i görsel olarak
+            öne geliyor ama erişilebilirlik ağacında arka plan ERİŞİLEBİLİR
+            kalıyordu: VoiceOver kart bitince arkadaki ekranı okumaya devam
+            ediyor, kullanıcı hangi soruyu cevapladığını kaybediyordu. Webde
+            bu bedava geliyor (`<dialog>` arka planı inert yapıyor);
+            `accessibilityViewIsModal` onun karşılığı. */}
+        <Pressable onPress={() => {}} accessibilityViewIsModal accessibilityRole="alert" style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
           <Text variant="h2">{title}</Text>
           {message ? <Text variant="body" color={colors.textMuted} style={{ marginTop: 2 }}>{message}</Text> : null}
           <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.lg }}>

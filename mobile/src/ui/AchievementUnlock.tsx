@@ -181,7 +181,9 @@ export function AchievementUnlock() {
     <Modal transparent visible animationType="fade" onRequestClose={advance} statusBarTranslucent>
       <Pressable onPress={advance} style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, backgroundColor: "rgba(0,0,0,0.55)" }}>
         <Celebrate show />
-        <View style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
+        {/* Arka plan erişilebilirlik ağacından çıkıyor — bkz. `ConfirmDialog`
+            içindeki not. */}
+        <View accessibilityViewIsModal style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
           {batch && view.kind === "batch" ? (
             <>
               <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1.5 }}>

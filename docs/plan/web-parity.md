@@ -8157,3 +8157,26 @@ Bileşen bazına inince **hemen bir şey buldu** — ve bulduğu şey benim yeni
 eklediğim hataydı: `SkeletonRows`a da "duyur" demiştim, oysa web orayı
 gizliyor. Yani kapı, düzeltmenin kendisini düzeltti. Dört enjeksiyonun dördü
 de son hâlde yakalandı.
+
+### 11.247 Modal öne geliyordu ama arkası okunmaya devam ediyordu
+
+Kök yaklaşımını (§11.246) ortak bileşenlerin geri kalanına uyguladım. Onay
+diyaloğunda web'in bir avantajı var ve bileşenin kendi yorumu bunu zaten
+yazmış: `<dialog>` üstünde kurulduğu için **odak tuzağı, Esc ile kapanma ve
+arka planın inert olması** tarayıcının işi.
+
+RN `Modal` ise yalnız **görsel** olarak öne geliyor: erişilebilirlik ağacında
+arka plan erişilebilir kalıyor, yani VoiceOver kart bitince arkadaki ekranı
+okumaya devam ediyor ve kullanıcı hangi soruyu cevapladığını kaybediyor.
+`accessibilityViewIsModal` bunun karşılığı ve **beş modalin hiçbirinde yoktu**:
+onay diyaloğu, şikâyet formu, sertifika sayfası, mikrofon açıklaması ve başarım
+kutlaması. Beşine de kondu; onay ve şikâyet kartları ayrıca
+`accessibilityRole="alert"` alıyor.
+
+**§153** mobilde `<Modal>` çizen **her** bileşende işareti arıyor — yüzey
+tarıyor, yeni bir modal aynı şeyi unutursa da yakalanır — ve webin karşılığını
+`<dialog>`in kullanıldığını denetleyerek ölçüyor.
+
+İkinci enjeksiyonum yine yorumu vurdu: `<dialog` dosyada üç kez geçiyor,
+ikisi yorumda. Kapı doğru davranıyordu (yorumları atıyor); yanlış olan
+enjeksiyondu — §11.227'de aynı hatayı yapmıştım. Kodu hedefleyince yakalandı.

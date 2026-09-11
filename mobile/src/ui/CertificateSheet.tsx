@@ -52,7 +52,9 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
 
   return (
     <Modal visible={visible} animationType="slide" statusBarTranslucent onRequestClose={onClose}>
-      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
+      {/* Tam ekran sayfa: arka plandaki ekran erişilebilirlik ağacında
+          kalmasın — bkz. `ConfirmDialog` içindeki not. */}
+      <View accessibilityViewIsModal style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
           <Text variant="h3" style={{ flex: 1 }}>{t("exam.open_certificate")}</Text>
           <PressableScale hitSlop={4} onPress={onClose} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>

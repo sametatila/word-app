@@ -31,7 +31,9 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onClose}>
       <Pressable onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
-        <Pressable onPress={() => {}} style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
+        {/* Arka plan erişilebilirlik ağacından çıkıyor — bkz. `ConfirmDialog`
+            içindeki not. */}
+        <Pressable onPress={() => {}} accessibilityViewIsModal accessibilityRole="alert" style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
           {state === "done" ? (
             <View style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
               <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
