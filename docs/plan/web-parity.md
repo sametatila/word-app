@@ -10275,3 +10275,124 @@ düzeltildi; üç enjeksiyonun üçü şimdi yakalanıyor.
 Not: ilk turda enjeksiyonun yakalanmamasını "kapı sağlam" diye okumadım, önce
 enjeksiyonun gerçekten uygulandığını doğruladım (§11.285'in kuralı) — uygulanmış,
 kusur kapıdaydı.
+
+## §11.313 — Android %10 alan egzersizi "bitti" sayıyordu
+
+Sunucu bir beceri egzersizini **yalnız son puanı 70'i geçince** bitmiş sayıyor
+ve Patika'nın beceri yuvasındaki kapıyı da bununla açıyor
+(`lib/immersion/progress`). Web aynı eşiği üç yerde ayrı ayrı yazmıştı
+(`immersion/progress.ts`, `skills/page.tsx`, `immersion/skill/[id]/page.tsx`).
+
+**Mobilde eşik hiç yoktu.** İki yerden birden:
+
+- `ItemScreen.recordAndFinish` egzersiz biter bitmez `markItemDone` çağırıyordu
+  — sıfır doğru yapan da yeşil onay alıyordu.
+- `syncItemProgress` sunucudan gelen **her** satırı puanına bakmadan yerel
+  "bitti" kümesine katıyordu; satırın varlığını bitmiş olmak sanıyordu.
+
+Kullanıcının gördüğü: %10 alan bir egzersiz Android'de yeşil onaylı, "3/5
+tamamlandı" sayacının içinde ve Patika'nın yuvasında bitmiş; aynı hesapla
+web'de aynı egzersiz hâlâ "sıradaki". İki uygulama **aynı ilerlemeyi farklı
+okuyordu.**
+
+Sayı artık tek kaynakta (`lib/score-bands.ts` `SKILL_DONE_PCT`, mobil
+karşılığı `learningRules.ts`), beş çağrı yeri de oradan okuyor. Sunucu otorite
+kabul edildi: yerelde bitmiş işaretli ama puanı yetmeyen bir egzersiz
+(çevrimdışı bitirilip yukarı taşınmış bir deneme) senkronda işaretini
+kaybediyor.
+
+Kapı: §210 "beceri bitti esigi cagri yerleri" — sabitin değerini **ve** kararı
+veren karşılaştırmanın sabiti kullandığını okuyor. Eşitlik tek başına yetmez;
+ikisi birlikte aynı sayıya getirilip bağlantı yine kopuk bırakılabilir.
+
+## §11.314 — Aynı iki sayı dört yerde bant çiziyordu
+
+"70 üstü iyi, 40 üstü orta, altı zayıf" ayrımı uygulamanın dört ayrı yerinde
+elle yazılıydı: yazma kartının puan tonu (web + mobil), değerlendirme kartının
+tonu, ve egzersiz sonucundaki maskotun ruh hâli.
+
+Bantlar toplandı (`scoreBand`, iki platformda aynı ad), ve toplarken bir
+**tasarım ayrışması** çıktı: Android sonuç kartında üç bant + konfeti
+kullanıyor (`pct >= 70` kutlama, `>= 40` gülümseme, altı nötr), web ise yalnız
+"hepsi doğruysa kutlama, değilse gülümseme" biliyordu ve konfeti hiç yoktu.
+%30 alan öğrenci de gülümseyen bir Erdi görüyordu — sonuç bir geri bildirim
+taşımıyordu. Web Android'in davranışına bağlandı (`cheer` klibi mobildeki
+`celebrate` ile aynı dosya).
+
+`scoreOf` (puanı 0–100'e kilitleyen formül) `lib/skills/record`ten
+`lib/score-bands`e taşındı: eski yerinde `server-only` var ve sonuç kartı bir
+istemci bileşeni. Ad ve çağrı yerleri değişmedi.
+
+Kapı: §210'un ikinci yarısı "puan bandi cagri yerleri" — bandı **hesaplayan**
+çağrıyı arıyor; sabiti içe alıp yine `>= 70` yazmak "kaynaktan" saymıyor.
+
+## §11.315 — Beceriler sayfasında dört tasarım sapması
+
+Android referans alınıp web satır satır karşılaştırıldı:
+
+1. **Boş durum kartı sayfanın en altındaydı.** İçeriği olmayan bir seviyeye
+   geçen kullanıcı boş sayfa görüyor, sebebini ancak aşağı kaydırınca
+   okuyordu. Mobilde sıra baştan beri çipler → boş durum.
+2. **Öneri kartının simge karosu** %18 tint zeminliydi (mobilde nötr
+   `surface2`; uygulamanın tint kalıbı da %13–14), yarıçapı ise projenin
+   ölçeğinde **olmayan** Tailwind `rounded-xl`iydi (12 px; ölçekte 14 =
+   `rounded-tile`).
+3. **Öneri kartının alt satırı** gerekçenin ardına **ayırıcısız** tür + süre
+   ekliyordu: "Okuma'da %40 ilerledin Kısa hikâye · 5 dk". İkisi zaten
+   listede yazıyor; mobil yalnız gerekçeyi söylüyor.
+4. **"Seviye bitti" kartında** açıklama kalın ve koyu yazılmıştı; mobilde
+   vurgu üst satırda, açıklama sönük. Üç yerdeki `text-[11px] font-bold` de
+   jetona bağlandı (`text-micro`), puan rozetinin `rounded-md`si ölçeğe
+   (`rounded-chip` = mobil `radii.sm`).
+
+**Mobilde bir jeton yanlış seçilmişti:** puan rozeti eşiğin altında
+`dangerSoft`/`dangerText` (kırmızı) çiziyordu. Rozet web'den alınmıştı ve web
+orada alev (kehribar) kullanıyor — "%50 aldım" bir hata değil, henüz eşiği
+geçmemiş bir deneme; kırmızı tehlikeye ayrılmış. Mobil kehribara geçti.
+
+**Kayda değer ölçüm:** projenin yarıçap ölçeği belgelenmiş ve mobil ona birebir
+uyuyor (chip 10 / tile 14 / panel 20 / card 26 / float 34), ama web'de
+ölçek dışı Tailwind varsayılanları **124 yerde** kullanılıyor (`rounded-xl` 90,
+`rounded-2xl` 34). Bu turda yalnız bu sayfadakiler düzeltildi; geri kalanı
+yuva yuva karar gerektiriyor.
+
+## §11.316 — Arma paleti: zorunluluğu yazan cümle, ölçen yoktu
+
+Arma rengi bir **kimlik**: "aynı kişi telefonda ve tarayıcıda aynı renkte
+görünmeli, yoksa listede tanıdığın kişiyi renginden bulamazsın" — bunu iki
+dosyanın yorumu da söylüyor. Ölçen bir şey yoktu, ve renkler bilerek jetona
+bağlı **değil** (tema kimliği değiştirmesin), yani `check:colors` iki dosyayı
+da atlıyor: ham hex'leri karşılaştıran bir kapı olmadan ayrışma hiçbir yerden
+görünmüyordu. Sıra da önemli — seçim kimliğin hash'inden indeksle yapılıyor,
+çift yerleri değişirse aynı kişi iki platformda ayrı renge düşer.
+
+§209 on iki çifti sırasıyla karşılaştırıyor. Aynı turda `check:colors` yeni
+`mobile/src/ui/Avatar.tsx` yüzünden 24 ihlalle kırmızıydı; dosya gerekçesiyle
+atlananlar listesine girdi. Bunun yan etkisi öğreticiydi: `#FA7C13`
+istisnası **karşılıksız** kaldı ve kapı bunu ayrı bir ihlal olarak bildirdi —
+ölü istisnayı yakalayan bir kapı, kapının kendisi kadar değerli.
+
+## §11.317 — İngilizce kursta Patika'nın altı yuvası boş (içerik, kod değil)
+
+§11.312'nin dersi genelleştirildi: her kurs/seviye için gereken yuva sayısı ile
+havuzdaki egzersiz sayısı ayrı ayrı sayıldı.
+
+| Kurs | Üniteli egzersiz | Gereken (okuma/dinleme/yazma) |
+|---|---|---|
+| de | 870 (A1 50+50+50, A2 aynı, B1 90+90+90, B2 ve C1 50+50+50) | tam tamına yetiyor |
+| en | **0** | seviye başına 50+50+50 |
+
+İngilizce paketteki 189 egzersizin **tamamı** ünitesiz, yani Beceriler
+kütüphanesinin. Patika'nın ünite başına 2 okuma + 2 dinleme + 2 yazma yuvası
+İngilizce kursta hiç dolmuyor.
+
+**Kod ayrışması yok:** iki istemci de oynanamaz yuvayı listede hiç
+göstermiyor (`unit-pane` ve `UnitScreen` aynı süzgeç) ve §11.312'den sonra
+ilerleme de yalnız dört dersi sayıyor. Eksik olan içerik: 5 seviye × 3 beceri
+× 50 yuva. Deneme sınavları bu durumda değil — iki kursta da seviye başına 12
+kâğıt tam (120 kâğıt).
+
+Mobil katalog dosyasının yorumları bu ölçümle düzeltildi; eski sayıları
+söylüyorlardı (kütüphane "160 tane: 60 okuma, 60 dinleme, 40 yazma" yazıyordu,
+gerçek 125 = beş becerinin her biri 25; İngilizce "A1/A2'nin 64 egzersizi"
+yazıyordu, gerçek 94).

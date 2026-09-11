@@ -1,9 +1,19 @@
 /**
- * Beceri egzersizi kataloğu — mobil paket (scripts/dump-skills-mobile ile
- * data/skills/.exercises.json'dan; de kursu, okuma/dinleme/yazma). İçerik
- * statik ve derlemeye gömülü (web'de de öyle: "veritabanı gerektirmez, PWA'da
- * çevrimdışı çalışır"). Egzersiz sayısı slot sayısından az; erken üniteler
- * dolu, sonrakiler "Yakında" (web gerçekliğiyle aynı).
+ * Beceri egzersizi kataloğu — mobil paket (`scripts/dump-skills-mobile`,
+ * web'deki tek kaynaktan: `src/lib/skills/content/`). İçerik statik ve
+ * derlemeye gömülü (web'de de öyle: "veritabanı gerektirmez, PWA'da
+ * çevrimdışı çalışır").
+ *
+ * İki kurs, iki dosya ve İKİSİ AYNI ŞEY DEĞİL (ölçüm, 2026-09-11):
+ * Almanca paket 995 egzersiz taşıyor, 870'i bir Patika ünitesine bağlı ve
+ * 125'i kütüphanenin; İngilizce paket 189 egzersizin TAMAMI kütüphane,
+ * ünitesi olan tek egzersiz yok. Yani İngilizce kursta Patika'nın
+ * okuma/dinleme/yazma yuvaları boş kalıyor (`ref: null`) ve listede hiç
+ * görünmüyor - eksik olan kod değil içerik, üç beceri × beş seviye ×
+ * 50 yuva. Web'de de aynısı; iki platform ayrışmıyor.
+ *
+ * Beş beceri var: okuma, dinleme, yazma (Patika + kütüphane), konuşma ve
+ * dil bilgisi (yalnız kütüphane).
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import { nativeExercise } from "../../lib/nativeContent";
@@ -44,7 +54,7 @@ const ALL_EN = allEn as SkillExercise[];
  * birbirine karıştırırdı. Dersler zaten kurs önekli, beceriler de öyle kalmalı.
  *
  * İngilizce paketi 2026-09'dan beri web'den dökülüyor (tek kaynak
- * `src/lib/skills/content/library/`): A1/A2'nin 64 egzersizi ve her seviyenin
+ * `src/lib/skills/content/library/`): A1/A2'nin 94 egzersizi ve her seviyenin
  * kütüphane egzersizleri orada.
  */
 const BY_COURSE: Record<string, SkillExercise[]> = { de: ALL, en: ALL_EN };
@@ -95,9 +105,10 @@ export function itemCount(ex: SkillExercise): number {
  *
  * Ayrımı veri zaten taşıyordu: `unit` alanı dolu olan egzersiz bir Patika
  * ünitesine aittir (Almanca havuzda 870 tane), boş olan yalnız Beceriler
- * sekmesinindir (160 tane: 60 okuma, 60 dinleme, 40 yazma). Bu alan bugüne
- * kadar mobilde hiç okunmuyordu: Beceriler havuzun TAMAMINI listeliyordu, yani
- * Patika'daki her egzersiz orada bir kez daha görünüyordu.
+ * sekmesinindir (Almanca 125: beş becerinin her biri için 25; İngilizce 189).
+ * Bu alan bir süre mobilde hiç okunmuyordu: Beceriler havuzun TAMAMINI
+ * listeliyordu, yani Patika'daki her egzersiz orada bir kez daha
+ * görünüyordu.
  *
  * Patika tarafı sırayla tüketiyor (ünite başına 2). Bugün fark yaratmıyor —
  * havuz zaten ünite sırasına dizili ve bağsızlar sonda — ama süzgeç yine de
