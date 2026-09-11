@@ -7275,6 +7275,74 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 219. gelen kutusu: "ne kadar once", hedefler ve rozetin tavani ──
+   * Gelen kutusu iki platformda satir satir eslesiyor (avatar/karo,
+   * okunmamis KALIN + nokta, tepki simgesi, chevron, imlecli sayfalama,
+   * ilk yuklemede `markRead("all")`). Olculmeyen uc sey vardi:
+   *
+   * 1. `timeAgo` iki yerde ayri ayri yazili ve SATIR SATIR ayni: saniye
+   *    hesabi, dort esik (60 sn / 60 dk / 24 sa / 7 gun) ve sonunda yerel
+   *    kisa tarih. Ikisinden biri degistirilirse ayni bildirim iki
+   *    platformda baska yas gosterir.
+   * 2. Bildirim hedefleri. Android'de "gelen istekler" ve "ortak gorev"
+   *    kendi sekmelerinde degil, arkadas listesinin basinda; web bu
+   *    satirlarda kaldirilmis sekme adlarini yaziyordu ve yalniz
+   *    `hub-tab`daki ALIAS sayesinde calisiyordu.
+   * 3. Rozetin tavani: iki platform da 9'dan sonra "9+" yaziyor - rozet
+   *    genisleyip basligi itmesin. Sayi tek yerde degil, iki yerde. */
+  {
+    const webZaman = sil(read("src/lib/social/client.ts"));
+    const mobZaman = sil(read("mobile/src/api/social.ts"));
+    const webKutu = sil(read("src/components/social/inbox.tsx"));
+    const mobKutu = sil(read("mobile/src/screens/InboxScreen.tsx"));
+    const webZil = sil(read("src/components/social/notification-bell.tsx"));
+    const mobZil = sil(read("mobile/src/social/InboxBell.tsx"));
+    /** `timeAgo` govdesi: imzadan kapanis suslu parantezine kadar. */
+    const yas = (src) => {
+      const i = src.indexOf("export function timeAgo");
+      if (i < 0) return "timeAgo yok";
+      const g = src.slice(i, src.indexOf("\n}", i));
+      const esik = [
+        /s < 60/.test(g) ? "60sn" : "YOK",
+        /m < 60/.test(g) ? "60dk" : "YOK",
+        /h < 24/.test(g) ? "24sa" : "YOK",
+        /d < 7/.test(g) ? "7gun" : "YOK",
+        /* DESEN `[^)]*` ILE YAZILMISTI ve hicbir seyi olcmuyordu: cagri
+           `toLocaleDateString(localeOf(lang), {...})` bicimindeyken ilk `)`
+           `localeOf(lang)`in kapanisi, yani sinif orada duruyor. Iki taraf
+           da "YOK" dedi - iki tarafin AYNI sekilde basarisiz olmasi kusurun
+           kodda degil olcumde oldugunun isareti. */
+        /toLocaleDateString\([\s\S]{0,40}day: "numeric", month: "short"/.test(g) ? "kisa tarih" : "YOK",
+      ];
+      return esik.join("+");
+    };
+    sameList(
+      "gelen kutusu: yas, hedefler ve rozet tavani",
+      [
+        "web yas=" + yas(webZaman),
+        "mobil yas=" + yas(mobZaman),
+        "web istek hedefi=" + (/case "friend_request":[\s\S]{0,80}tab=friends/.test(webKutu) ? "friends" : "KALDIRILMIS SEKME"),
+        "web gorev hedefi=" + (/case "quest_completed":[\s\S]{0,80}tab=friends/.test(webKutu) ? "friends" : "KALDIRILMIS SEKME"),
+        "mobil istek hedefi=" + (/case "friend_request": goFriends\(nav, "friends"\)/.test(mobKutu) ? "friends" : "BASKA"),
+        "mobil gorev hedefi=" + (/case "quest_completed": goFriends\(nav, "friends"\)/.test(mobKutu) ? "friends" : "BASKA"),
+        "web rozet tavani=" + (/unread > 9 \? "9\+"/.test(webZil) ? "9+" : "YOK"),
+        "mobil rozet tavani=" + (/unread > 9 \? "9\+"/.test(mobZil) ? "9+" : "YOK"),
+        "web ilk yuklemede okundu=" + (/markRead\("all"\)/.test(webKutu) ? "var" : "YOK"),
+        "mobil ilk yuklemede okundu=" + (/markRead\("all"\)/.test(mobKutu) ? "var" : "YOK"),
+      ],
+      [
+        "web yas=60sn+60dk+24sa+7gun+kisa tarih",
+        "mobil yas=60sn+60dk+24sa+7gun+kisa tarih",
+        "web istek hedefi=friends", "web gorev hedefi=friends",
+        "mobil istek hedefi=friends", "mobil gorev hedefi=friends",
+        "web rozet tavani=9+", "mobil rozet tavani=9+",
+        "web ilk yuklemede okundu=var", "mobil ilk yuklemede okundu=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 218. ses ayarlari: okuma sesi ve oyun sesleri ayni bolumde mi ───
    * Android'de "Ses" bolumu ikisini birden tasiyor: okuma sesi (alt etiketi
    * `settings.reading_voice`, sonra `VoicePicker`), bir ayirici, sonra oyun
