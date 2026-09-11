@@ -1076,6 +1076,7 @@ export const enBase: Record<string, string> = {
   "quiz.review": "REVIEW",
   "quiz.try_again": "Try again",
   "quiz.try_more": "{pct}% — a bit more practice",
+  "quiz.from_earlier": "(review from earlier units)",
   "quiz.what_means": "What does «{word}» mean?",
   "reactionbar.react": "React",
   "report.degrading_or_discriminatory": "Degrading or discriminatory wording",

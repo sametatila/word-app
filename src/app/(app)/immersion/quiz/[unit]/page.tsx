@@ -69,7 +69,7 @@ export default async function ImmersionQuizPage({
     questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8, review, {
       whatMeans: (word) => t("quiz.what_means", { word }),
       howToSay: (pattern) => t("quiz.how_to_say", { pattern, target: courseName(course, lang) }),
-      fromEarlier: t("quizw.from_earlier"),
+      fromEarlier: t("quiz.from_earlier"),
     },
     /* İngilizce kursun kalıplarında `tr` bir kullanım notu, çeviri değil —
        soru o yüzden ters yönde sorulur (bkz. `PatternAsk`). */

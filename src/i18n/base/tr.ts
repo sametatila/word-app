@@ -1076,6 +1076,7 @@ export const trBase: Record<string, string> = {
   "quiz.review": "TEKRAR",
   "quiz.try_again": "Tekrar dene",
   "quiz.try_more": "%{pct} — biraz daha çalış",
+  "quiz.from_earlier": "(önceki ünitelerden tekrar)",
   "quiz.what_means": "«{word}» ne demek?",
   "reactionbar.react": "Tepki ver",
   "report.degrading_or_discriminatory": "Aşağılayıcı, ayrımcı ifade",

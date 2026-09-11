@@ -9647,3 +9647,39 @@ aynı yazmaya zorlardı — her tarafı **mutlak ölçüte** bağlıyor: iki kat
 hem harf hem sayı katlamasından geçmeli, ve umlaut çifti iki tarafta aynı
 olmalı (biri "oe" öteki "o" yazsaydı "schön" ile "schon" karışırdı — webin
 kendi yorumunun uyardığı şey). Dört enjeksiyonun dördü yakalandı.
+
+## §11.294 — Ünite quizinde tekrar soruları Android'de hiç yoktu
+
+`deriveQuiz` ayrışmasının (24'e 48 satır) sebebi bir sayı ya da bir metin
+değildi: **webde olan bir mekanizma mobilde hiç yoktu.** Web soruların üçte
+birini önceki ünitelerden seçip kendi sorularının arasına serpiyor
+(`pickReview` + `interleave`); Android öğrencisi ünite quizinde yalnız o
+ünitenin kelimelerini görüyordu. Aynı ekran, aynı içerik, **farklı öğretim** —
+ve aralıklı tekrar bu uygulamanın bütün öğrenme tasarımının dayanağı.
+
+Hiçbir kapı bakmıyordu, çünkü kapılar sayı ve metin karşılaştırıyor;
+**olmayan bir şeyi hiçbiri aramıyordu.** §11.292'nin dersinin devamı: sabitleri
+karşılaştırmak o sabitleri kullanan hesabı korumuyor — ve hesap bir tarafta
+hiç yoksa karşılaştırılacak sayı da yok.
+
+Seçim mantığı birebir taşındı: asal çarpan 37, `take` çarpanı 13, adım ve
+guard dahil. İkisi de aynı gerekçeyi taşıyor — düz `index % pool` her ünitede
+tek kayma verir ve yirmi beş ünite havuzun aynı dar bandına düşer; `take`
+başlangıca girmezse aynı ünitenin quiz'i (2 tekrar) ile checkpoint'i (4
+tekrar) aynı yerden başlar. Örneklerle doğruladım: ünite 1 quiz `rw23,rw3`,
+checkpoint `rw9,rw19,rw29,rw39` — ayrı setler.
+
+Açıklamanın "(önceki ünitelerden tekrar)" satırı webde `quizw.` önekliydi,
+yani **web-only sözlükte**. Ortak sözlüğe `quiz.from_earlier` olarak taşındı
+ve web de artık oradan okuyor.
+
+**§200 üç şey ölçüyor** ve dördüncüsü enjeksiyonla ortaya çıktı: `pickReview`
+ve `interleave` gövdeleri satır satır aynı mı, iki çağrı yeri havuzu
+kuruyor/geçiriyor mu — **ve oran.** İlk yazımda oran yoktu: "soruların kaçı
+tekrar" kararı `deriveQuiz` içinde, iki gövdenin de dışında. Webde `count / 3`
+yerine `count / 4` yazmak bütün kapıları yeşil bırakıyordu. Beş enjeksiyonun
+beşi artık yakalanıyor.
+
+Gövde karşılaştırmasının tutması için mobile `QuizPool` tipi de eklendi —
+imzalar ayrı yazıldığında (`{ vocab: VocabItem[] }` ile `QuizPool`) kapı
+gövdeyi ayrışık görüyordu. İki taraf artık aynı adı kullanıyor.

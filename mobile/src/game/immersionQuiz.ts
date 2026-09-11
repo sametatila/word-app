@@ -25,7 +25,17 @@ function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
   return out;
 }
 
-export type UnitBrief = { vocab: VocabItem[]; patterns: PatternItem[]; theme: string; lessonTitles: string[] };
+/** Soru havuzu — web `lib/immersion/quiz` `QuizPool` ile aynı. */
+export type QuizPool = { vocab: VocabItem[]; patterns: PatternItem[] };
+
+export type UnitBrief = {
+  /** Ünitenin sırası (1-tabanlı) — tekrar havuzunun başlangıcı buna bağlı. */
+  index: number;
+  vocab: VocabItem[];
+  patterns: PatternItem[];
+  theme: string;
+  lessonTitles: string[];
+};
 
 export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
   const lessons = lessonsForLevel(level);
@@ -33,6 +43,7 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
   const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
   const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || t("path.unit_fallback", { level: level, n: unitIndex });
   return {
+    index: unitIndex,
     vocab: dedupeBy(unitLessons.flatMap((l) => l.vocab), (v) => v.de),
     patterns: dedupeBy(unitLessons.flatMap((l) => l.patterns), (p) => p.de),
     theme,
@@ -40,7 +51,19 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
   };
 }
 
-export function levelPool(level: string): { vocab: VocabItem[]; patterns: PatternItem[] } {
+/**
+ * BU üniteden ÖNCEKİ ünitelerin havuzu — quiz'in üçte biri buradan gelir.
+ *
+ * Web bunu çağrı yerinde kuruyor (`app/(app)/immersion/quiz/[unit]/page`);
+ * mobilde ekran ders listesine erişmediği için burada kuruluyor. Ünite 1'de
+ * boş döner ve `deriveQuiz` tekrar sorusu üretmez.
+ */
+export function earlierPool(level: string, unitIndex: number): QuizPool {
+  const lessons = lessonsForLevel(level).slice(0, Math.max(0, unitIndex - 1) * UNIT_LESSONS);
+  return { vocab: lessons.flatMap((l) => l.vocab), patterns: lessons.flatMap((l) => l.patterns) };
+}
+
+export function levelPool(level: string): QuizPool {
   const lessons = lessonsForLevel(level);
   return { vocab: lessons.flatMap((l) => l.vocab), patterns: lessons.flatMap((l) => l.patterns) };
 }
@@ -67,19 +90,85 @@ function placeAnswer(correct: string, distractors: string[], i: number): { optio
   return { options, answer };
 }
 
+/**
+ * Tekrar kelimeleri — ÖNCEKİ ünitelerden seçim.
+ *
+ * Web `lib/immersion/quiz` `pickReview` ile aynı mantık; mobilde hiç yoktu,
+ * yani Android öğrencisi ünite quizinde yalnız o ünitenin kelimelerini
+ * görüyordu. Seçim başlangıcı ASAL bir çarpanla kayıyor: düz `index % pool`
+ * her ünitede yalnız bir kayma verir ve yirmi beş ünite havuzun hep aynı dar
+ * bandına düşer. `take` de başlangıca giriyor, yoksa aynı ünitenin quiz'i (2
+ * tekrar) ile checkpoint'i (4 tekrar) aynı yerden başlar ve büyük ölçüde aynı
+ * kelimeleri sorardı.
+ */
+function pickReview(brief: UnitBrief, review: QuizPool | undefined, n: number): VocabItem[] {
+  if (!review || n <= 0) return [];
+  const own = new Set(brief.vocab.map((v) => v.de));
+  const seen = new Set<string>();
+  const pool = review.vocab.filter((v) => {
+    if (!v.de || !v.tr || own.has(v.de) || seen.has(v.de)) return false;
+    seen.add(v.de);
+    return true;
+  });
+  if (!pool.length) return [];
+  const take = Math.min(n, pool.length);
+  const step = Math.max(1, Math.floor(pool.length / take));
+  const out: VocabItem[] = [];
+  let idx = (brief.index * 37 + take * 13) % pool.length;
+  for (let guard = 0; out.length < take && guard < pool.length * 2; guard++) {
+    const cand = pool[idx % pool.length];
+    if (!out.includes(cand)) out.push(cand);
+    idx += step;
+  }
+  return out;
+}
+
+/** Tekrar soruları kendi sorularının ARASINA serpilir — sona yığılmaz. */
+function interleave(own: SkillQuestion[], back: SkillQuestion[]): SkillQuestion[] {
+  if (!back.length) return own;
+  const out: SkillQuestion[] = [];
+  const gap = Math.max(1, Math.ceil(own.length / (back.length + 1)));
+  let b = 0;
+  for (let i = 0; i < own.length; i++) {
+    out.push(own[i]);
+    if (b < back.length && (i + 1) % gap === 0) out.push(back[b++]);
+  }
+  while (b < back.length) out.push(back[b++]);
+  return out;
+}
+
 /** count: quiz ~8, checkpoint ~12. Kelime hatırlama çoğunluk + birkaç kalıp. */
-export function deriveQuiz(brief: UnitBrief, pool: { vocab: VocabItem[]; patterns: PatternItem[] }, count = 8): SkillQuestion[] {
+export function deriveQuiz(
+  brief: UnitBrief,
+  pool: QuizPool,
+  count = 8,
+  review?: QuizPool,
+): SkillQuestion[] {
   const qs: SkillQuestion[] = [];
   const trPool = pool.vocab.map((v) => v.tr);
   const dePatternPool = pool.patterns.map((p) => p.de);
   const patTarget = brief.patterns.length ? Math.min(2, brief.patterns.length) : 0;
-  const vocabTarget = Math.min(brief.vocab.length, count - patTarget);
+  const reviewWords = pickReview(brief, review, Math.floor(count / 3));
+  const vocabTarget = Math.min(brief.vocab.length, count - patTarget - reviewWords.length);
 
+  const own: SkillQuestion[] = [];
   for (let i = 0; i < vocabTarget; i++) {
     const v = brief.vocab[i];
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
-    qs.push({ kind: "mcq", text: t("quiz.what_means", { word: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
+    own.push({ kind: "mcq", text: t("quiz.what_means", { word: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
+  const back: SkillQuestion[] = reviewWords.map((v, i) => {
+    const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i + 101), i + 101);
+    /* Soru metni ipucu vermez; açıklama nereden geldiğini söyler. */
+    return {
+      kind: "mcq" as const,
+      text: t("quiz.what_means", { word: v.de }),
+      options,
+      answer,
+      explain: `${v.de} = ${v.tr}. ${t("quiz.from_earlier")}`.trim(),
+    };
+  });
+  qs.push(...interleave(own, back));
   /* KALIP SORUSUNUN YÖNÜ KURSA BAĞLI. Almanca kursta kalıbın `tr` alanı
      çeviri ("Ich heiße …" → "adım …"), yani "nasıl denir?" doğru bir üretim
      sorusu. İngilizce kursta `tr` bir KULLANIM NOTU ("adını söylerken

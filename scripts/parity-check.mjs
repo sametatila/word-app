@@ -7226,6 +7226,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 200. unite quizinde tekrar sorulari ─────────────────────────────
+   * Webin `deriveQuiz`i sorularin ucte birini ONCEKI unitelerden secip kendi
+   * sorularinin arasina serpiyor (`pickReview` + `interleave`); mobilde bu
+   * mekanizma HIC yoktu. Android ogrencisi unite quizinde yalniz o unitenin
+   * kelimelerini goruyordu - ayni ekran, ayni icerik, farkli ogretim.
+   *
+   * Ayrisma bir sayida ya da bir metinde degil, bir MEKANIZMANIN yoklugunda
+   * duruyordu; hicbir kapi "orada olmayan seyi" aramiyordu. §11.292'nin
+   * dersinin devami: sabitleri karsilastirmak, o sabitleri kullanan hesabi
+   * korumuyor - ve hesabin KENDISI bir tarafta hic yoksa karsilastirilacak
+   * sayi da yok.
+   *
+   * Secim mantigi birebir ayni tasindi (asal carpan 37, `take` carpani 13,
+   * adim ve guard dahil), o yuzden govdeler satir satir karsilastirilabiliyor.
+   * Cagri yerleri ayri olcut: havuz gecilmezse islev sessizce eski davranisa
+   * duser ve govde karsilastirmasi yesil kalir. */
+  {
+    const govde = (p, ad) => {
+      const src = sil(read(p));
+      const i = src.indexOf("function " + ad);
+      if (i < 0) return ["bulunamadi: " + ad + " @ " + p];
+      return src
+        .slice(i, src.indexOf("\n}", i))
+        .split("\n")
+        .map((l) => l.trim().replace(/\s+/g, " "))
+        .filter(Boolean);
+    };
+    sameList("tekrar secimi govdesi", govde("mobile/src/game/immersionQuiz.ts", "pickReview"), govde("src/lib/immersion/quiz.ts", "pickReview"));
+    sameList("tekrar serpistirme govdesi", govde("mobile/src/game/immersionQuiz.ts", "interleave"), govde("src/lib/immersion/quiz.ts", "interleave"));
+
+    const mobEkran = sil(read("mobile/src/screens/QuizScreen.tsx"));
+    const webSayfa = sil(read("src/app/(app)/immersion/quiz/[unit]/page.tsx"));
+    const mobQuiz = sil(read("mobile/src/game/immersionQuiz.ts"));
+    sameList(
+      "tekrar havuzu cagri yerleri",
+      [
+        "mobil havuz=" + (/earlierPool\(params\.level, params\.unitIndex\)/.test(mobEkran) ? "geciyor" : "GECMIYOR"),
+        "web havuz=" + (/const earlier = briefs\.filter\(\(b\) => b\.index < brief\.index\)/.test(webSayfa) ? "kuruyor" : "KURMUYOR"),
+        "mobil karistirma=" + (/interleave\(own, back\)/.test(mobQuiz) ? "var" : "YOK"),
+        /* Aciklama nereden geldigini soyluyor; anahtar ORTAK sozlukte olmali
+           (once yalniz webde `quizw.` onekiyle duruyordu). */
+        "ortak anahtar=" + (/quiz\.from_earlier/.test(mobQuiz) && /quiz\.from_earlier/.test(webSayfa) ? "iki tarafta" : "AYRISIK"),
+        /* ORAN da olculmeli. Ilk yazimda yalniz `pickReview` ve `interleave`
+           govdeleri karsilastiriliyordu; oysa "sorularin kaci tekrar" karari
+           `deriveQuiz` icinde ve iki govdenin de disinda. Enjeksiyon bunu
+           gosterdi: webde `count / 3` yerine `count / 4` yazmak butun kapilari
+           yesil birakiyordu. Mutlak olcut, cunku iki taraf birlikte
+           degistirilebilir. */
+        "mobil oran=" + ((sil(read("mobile/src/game/immersionQuiz.ts")).match(/pickReview\(brief, review, Math\.floor\(count \/ (\d+)\)\)/) ?? [])[1] ?? "yok"),
+        "web oran=" + ((sil(read("src/lib/immersion/quiz.ts")).match(/pickReview\(brief, review, Math\.floor\(count \/ (\d+)\)\)/) ?? [])[1] ?? "yok"),
+      ],
+      ["mobil havuz=geciyor", "web havuz=kuruyor", "mobil karistirma=var", "ortak anahtar=iki tarafta", "mobil oran=3", "web oran=3"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 199. bosluksuz katlama: "karsiligidir" diyen yorum yanlisti ─────
    * Webin `foldTight`i basinda "mobil `lib/textFold` `foldTight`" yaziyordu
    * ama KARSILIGI DEGILDI: mobil tarafta `foldTight` `foldCompare` uzerine

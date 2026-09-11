@@ -549,7 +549,6 @@ export const deWeb: Record<string, string> = {
   "settings.privacy_policy_short": "Richtlinie",
   "voicew.playing": "Läuft…",
   "walkw.album": "Gehmodus",
-  "quizw.from_earlier": "(Wiederholung aus früheren Einheiten)",
   "appw.offline_body": "Du bist weiterhin angemeldet, aber der Server ist gerade nicht erreichbar. Versuch es in ein paar Sekunden noch einmal — abmelden musst du dich nicht.",
   "candow.sub": "Die Fähigkeiten, die du nachgewiesen hast — Niveau für Niveau",
   "lesson.module_exam": "Modultest",

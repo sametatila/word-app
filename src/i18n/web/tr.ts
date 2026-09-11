@@ -575,7 +575,6 @@ export const trWeb: Record<string, string> = {
   "settings.privacy_policy_short": "Politika",
   "voicew.playing": "Çalıyor…",
   "walkw.album": "Yürürken",
-  "quizw.from_earlier": "(önceki ünitelerden tekrar)",
   "appw.offline_body": "Hesabın açık, ama şu anda sunucuya ulaşılamıyor. Birkaç saniye sonra tekrar dene — çıkış yapmana gerek yok.",
   "candow.sub": "Kanıtladığın beceriler, seviye seviye",
   "lesson.module_exam": "Modül sınavı",

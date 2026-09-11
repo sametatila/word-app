@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
-import { buildUnitBrief, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
+import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { QuestionList } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -36,7 +36,14 @@ export function QuizScreen() {
   const questions = useMemo(
     () => (isGrammar
       ? deriveGrammar(params.level, params.unitIndex)
-      : deriveQuiz(buildUnitBrief(params.level, params.unitIndex), levelPool(params.level), isCheckpoint ? 12 : 8)),
+      /* Tekrar havuzu = BU üniteden ÖNCEKİ üniteler; soruların üçte biri
+         oradan gelir (web `immersion/quiz/[unit]` ile aynı). */
+      : deriveQuiz(
+          buildUnitBrief(params.level, params.unitIndex),
+          levelPool(params.level),
+          isCheckpoint ? 12 : 8,
+          earlierPool(params.level, params.unitIndex),
+        )),
     [params.level, params.unitIndex, isCheckpoint, isGrammar],
   );
 

@@ -1076,6 +1076,7 @@ export const deBase: Record<string, string> = {
   "quiz.review": "WIEDERHOLUNG",
   "quiz.try_again": "Nochmal versuchen",
   "quiz.try_more": "{pct} % — übe noch etwas",
+  "quiz.from_earlier": "(Wiederholung aus früheren Einheiten)",
   "quiz.what_means": "Was bedeutet «{word}»?",
   "reactionbar.react": "Reagieren",
   "report.degrading_or_discriminatory": "Herabwürdigende, diskriminierende Ausdrucksweise",
