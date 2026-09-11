@@ -7275,6 +7275,66 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 217. kelimenin durumu: kural kac yerde yazili ──────────────────
+   * Ayni siniflandirma webde DORT yerde ayri ayri yaziliydi: `/api/words`un
+   * govde eslemesi, iki SQL suzgeci (`/words` sayfasi ve ayni uc) ve listenin
+   * etiket islevi (`word-list` `statusOf`). Dordu de ayni esikleri kullaniyordu
+   * (`MASTERED_DAYS` ucunde de `lib/srs`ten geliyor), ama kural dort kez
+   * yazildigi icin biri duzeltilip otekilerin eski kalmasi icin dort yol vardi.
+   *
+   * Mobilde kural TEK yerde (`data/words` `statusOf`) ve yorumu "web
+   * `word-list` `statusOf` ile AYNI esikler" DIYOR - olcen bir sey yoktu.
+   * Zorunlulugu yazan cumle, bu turlarda tekrar eden sinif.
+   *
+   * Artik iki yer var ve ikisi de tek kaynaktan okuyor: `lib/word-status`
+   * `coarseStatus` (ucun uc degeri) ve `wordStatus` (listenin bes bandi).
+   * `FAMILIAR_DAYS` iki platformda ayni adla; sayinin kendisi "ortak sayisal
+   * sabitler" kapisina dusuyor.
+   *
+   * "Tekrar zamani" etiketi de ayni sinif: mobil `dueLabelKey`in yorumu web
+   * `dueLabel` ile ayni esikleri iddia ediyor, o yuzden ikisinin GOVDESI
+   * karsilastiriliyor. */
+  {
+    const kaynak = sil(read("src/lib/word-status.ts"));
+    const uc = sil(read("src/app/api/words/route.ts"));
+    const liste = sil(read("src/components/word-list.tsx"));
+    const mobVeri = sil(read("mobile/src/data/words.ts"));
+    /* "Tekrar zamani" esikleri: iki taraftan da ayni uc karar okunuyor. */
+    const dueEsik = (src) => {
+      const g = src.slice(src.indexOf("86400000") - 400, src.indexOf("86400000") + 400);
+      return [
+        /days <= 0/.test(g) ? "bugun" : "YOK",
+        /days === 1/.test(g) ? "yarin" : "YOK",
+        /due_in_days/.test(g) ? "gun" : "YOK",
+      ].join("+");
+    };
+    sameList(
+      "kelimenin durumu ve tekrar zamani",
+      [
+        "kaynak bant sayisi=" + ((kaynak.match(/"(?:new|learning|familiar|mastered|leech)"/g) ?? []).length ? "bes" : "EKSIK"),
+        "uc govdesi=" + (/status: coarseStatus\(r\.intervalDays\)/.test(uc) ? "kaynaktan" : "elle yazili"),
+        "liste etiketi=" + (/STATUS_TONE\[wordStatus\(r\)\]/.test(liste) ? "kaynaktan" : "elle yazili"),
+        "listede elle esik=" + (/intervalDays >= MASTERED_DAYS|intervalDays >= 3/.test(liste) ? "VAR" : "yok"),
+        "web familiar sabiti=" + ((kaynak.match(/FAMILIAR_DAYS = (\d+)/) ?? [])[1] ?? "yok"),
+        "mobil familiar sabiti=" + ((mobVeri.match(/FAMILIAR_DAYS = (\d+)/) ?? [])[1] ?? "yok"),
+        "web tekrar esigi=" + dueEsik(liste),
+        "mobil tekrar esigi=" + dueEsik(mobVeri),
+      ],
+      [
+        "kaynak bant sayisi=bes",
+        "uc govdesi=kaynaktan",
+        "liste etiketi=kaynaktan",
+        "listede elle esik=yok",
+        "web familiar sabiti=3",
+        "mobil familiar sabiti=3",
+        "web tekrar esigi=bugun+yarin+gun",
+        "mobil tekrar esigi=bugun+yarin+gun",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 216. Gelisim ekrani: ad, ustalik kartinin hedefi ve sayi bicimi ──
    * Uc ayrisma birden:
    *
