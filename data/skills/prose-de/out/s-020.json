@@ -1,0 +1,597 @@
+[
+ {
+  "tr": "Saati yaz. Sonunda günlük programı doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Uhrzeit. Am Ende füllst du den Tagesplan aus."
+ },
+ {
+  "tr": "Hesap ödeniyor. Nakit mi, kart mı, birlikte mi?",
+  "kind": "intro",
+  "de": "Die Rechnung wird bezahlt. Bar, mit Karte oder zusammen?"
+ },
+ {
+  "tr": "Üç kişi içecek söylüyor. Kim ne alıyor, toplam kaç para?",
+  "kind": "intro",
+  "de": "Drei Personen bestellen Getränke. Wer nimmt was, wie viel macht das zusammen?"
+ },
+ {
+  "tr": "Ela pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
+  "kind": "intro",
+  "de": "Ela erzählt von ihrem Einkauf auf dem Markt. Was hat sie gekauft, was hat sie bezahlt?"
+ },
+ {
+  "tr": "Bir günün tamamı saatleriyle anlatılıyor. Hangi iş hangi saatte?",
+  "kind": "intro",
+  "de": "Ein ganzer Tag wird mit seinen Uhrzeiten erzählt. Was passiert wann?"
+ },
+ {
+  "tr": "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
+  "kind": "intro",
+  "de": "Schreibe ein Rezept. Im Imperativ steht kein Subjekt, der Satz beginnt mit dem Verb."
+ },
+ {
+  "tr": "Bir haftanın düzeni. Hangi iş her zaman, hangisi bazen yapılıyor?",
+  "kind": "intro",
+  "de": "Der Ablauf einer Woche. Was passiert immer, was nur manchmal?"
+ },
+ {
+  "tr": "İki kişi birlikte yemek pişiriyor. Hangi adım önce, hangisi sonra?",
+  "kind": "intro",
+  "de": "Zwei Personen kochen zusammen. Welcher Schritt kommt zuerst, welcher danach?"
+ },
+ {
+  "tr": "Saatler ve günlük akış. „past“ geçe, „to“ kala — ikisine de dikkat.",
+  "kind": "intro",
+  "de": "Uhrzeiten und Tagesablauf. „past“ heißt nach, „to“ heißt vor — achte auf beides."
+ },
+ {
+  "tr": "Sabahın adımları sırayla. First, then, after that, before, finally.",
+  "kind": "intro",
+  "de": "Die Schritte des Morgens der Reihe nach. First, then, after that, before, finally."
+ },
+ {
+  "tr": "Hafta sonu ne yapılıyor? Sıklık zarflarını ve gün edatlarını yakala.",
+  "kind": "intro",
+  "de": "Was passiert am Wochenende? Achte auf die Häufigkeitsadverbien und die Präpositionen der Tage."
+ },
+ {
+  "tr": "Biri sevdiği ve sevmediği yemekleri anlatıyor. Kim neyi tercih ediyor?",
+  "kind": "intro",
+  "de": "Jemand erzählt, welche Speisen er mag und welche nicht. Wer bevorzugt was?"
+ },
+ {
+  "tr": "Sıklık zarfının yeri kurala bağlı: ana fiilden ÖNCE, „be“ fiilinden SONRA.",
+  "kind": "intro",
+  "de": "Der Platz des Häufigkeitsadverbs folgt einer Regel: VOR dem Vollverb, NACH dem Verb „be“."
+ },
+ {
+  "tr": "Pazarda pazarlık. Kilo, gram ve fiyat art arda geliyor — sayıları takip et.",
+  "kind": "intro",
+  "de": "Handeln auf dem Markt. Kilo, Gramm und Preis kommen nacheinander — verfolge die Zahlen."
+ },
+ {
+  "tr": "Ödeme ve alışveriş isteklerini yaz. Sayılabilen çoğulda „are“, tekilde „is“.",
+  "kind": "intro",
+  "de": "Schreibe Bitten zum Zahlen und Einkaufen. Im zählbaren Plural „are“, im Singular „is“."
+ },
+ {
+  "tr": "Zaman edatlarını yaz: günde „on“, hafta sonunda „at“, sabahta „in“. Üçü üç ayrı sözcük.",
+  "kind": "intro",
+  "de": "Schreibe die Zeitpräpositionen: beim Tag „on“, beim Wochenende „at“, beim Morgen „in“. Drei Fälle, drei verschiedene Wörter."
+ },
+ {
+  "tr": "Sevdiğini ve tercih ettiğini yaz. Dikkat: sevmek fiilinden sonra ikinci fiil „-ing“ alıyor.",
+  "kind": "intro",
+  "de": "Schreibe, was du magst und was du bevorzugst. Achtung: nach dem Verb des Mögens bekommt das zweite Verb ein „-ing“."
+ },
+ {
+  "tr": "Geç kalan bir öğrenci. Phrasal verb'lerin hepsi bir arada: come in, sit down, turn on, look for.",
+  "kind": "intro",
+  "de": "Ein Schüler kommt zu spät. Alle Phrasal Verbs auf einmal: come in, sit down, turn on, look for."
+ },
+ {
+  "tr": "„I don't work on Monday.“",
+  "kind": "explain",
+  "de": "„I don't work on Monday.“"
+ },
+ {
+  "tr": "„At half past six. Don't be late!“",
+  "kind": "explain",
+  "de": "„At half past six. Don't be late!“"
+ },
+ {
+  "tr": "„Rice with vegetables. It's easy and cheap.“",
+  "kind": "explain",
+  "de": "„Rice with vegetables. It's easy and cheap.“"
+ },
+ {
+  "tr": "„I often work on Saturday morning.“ — akşamları boş.",
+  "kind": "explain",
+  "de": "„I often work on Saturday morning.“ — abends ist sie frei."
+ },
+ {
+  "tr": "„No, thank you. Beer is enough.“ — şarabı reddediyor.",
+  "kind": "explain",
+  "de": "„No, thank you. Beer is enough.“ — er lehnt den Wein ab."
+ },
+ {
+  "tr": "„Eight euros together, then.“ — üç artı dört artı bir.",
+  "kind": "explain",
+  "de": "„Eight euros together, then.“ — drei plus vier plus eins."
+ },
+ {
+  "tr": "„First … after that … finally“ üç adımı sırayla bağlıyor.",
+  "kind": "explain",
+  "de": "„First … after that … finally“ verbindet die drei Schritte der Reihe nach."
+ },
+ {
+  "tr": "„On Sunday I usually cook.“ — ona kadar uyumak cumartesi.",
+  "kind": "explain",
+  "de": "„On Sunday I usually cook.“ — bis zehn schlafen gehört zum Samstag."
+ },
+ {
+  "tr": "Önce davet, sonra özür, sonra soru, en son başlama saati.",
+  "kind": "explain",
+  "de": "Zuerst die Einladung, dann die Entschuldigung, dann die Frage, zuletzt die Anfangszeit."
+ },
+ {
+  "tr": "„I don't work on Sunday.“ — gün adından önce „on“ geliyor.",
+  "kind": "explain",
+  "de": "„I don't work on Sunday.“ — vor dem Tagesnamen steht „on“."
+ },
+ {
+  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8:45.",
+  "kind": "explain",
+  "de": "„It's a quarter to nine.“ — viertel vor neun, also 8:45."
+ },
+ {
+  "tr": "„The beer is four euros“ — üç euro meyve suyu, bir euro su.",
+  "kind": "explain",
+  "de": "„The beer is four euros“ — drei Euro der Saft, ein Euro das Wasser."
+ },
+ {
+  "tr": "Önce pazara gidiş, sonra sipariş, sonra fiyat, en son ödeme.",
+  "kind": "explain",
+  "de": "Zuerst der Gang zum Markt, dann die Bestellung, dann der Preis, zuletzt das Zahlen."
+ },
+ {
+  "tr": "„I usually wake up at seven, but today my clock doesn't work.“",
+  "kind": "explain",
+  "de": "„I usually wake up at seven, but today my clock doesn't work.“"
+ },
+ {
+  "tr": "„I usually walk to work.“ — üçüncü tekil kişide „-s“: he walks.",
+  "kind": "explain",
+  "de": "„I usually walk to work.“ — in der dritten Person Singular ein „-s“: he walks."
+ },
+ {
+  "tr": "„I'd like a juice… Apple, please.“ — bira Kaan'ın, su Deniz'in.",
+  "kind": "explain",
+  "de": "„I'd like a juice… Apple, please.“ — das Bier ist von Kaan, das Wasser von Deniz."
+ },
+ {
+  "tr": "„Tomatoes are cheap this week — it's a sale.“ — pahalı olan et.",
+  "kind": "explain",
+  "de": "„Tomatoes are cheap this week — it's a sale.“ — teuer ist das Fleisch."
+ },
+ {
+  "tr": "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
+  "kind": "explain",
+  "de": "„Never! I work from Monday to Friday.“ — am Wochenende arbeitet Nil."
+ },
+ {
+  "tr": "„Then we close in one hour, at ten.“ — bir saat sonra, yani onda.",
+  "kind": "explain",
+  "de": "„Then we close in one hour, at ten.“ — in einer Stunde, also um zehn."
+ },
+ {
+  "tr": "„Two euros a kilo.“ — yarım euro muzun fiyatı, dokuz euro toplam.",
+  "kind": "explain",
+  "de": "„Two euros a kilo.“ — ein halber Euro ist der Preis der Banane, neun Euro die Summe."
+ },
+ {
+  "tr": "„First, I wake up at six.“ — kalkmak ikinci adım, kahvaltı üçüncü.",
+  "kind": "explain",
+  "de": "„First, I wake up at six.“ — Aufstehen ist der zweite Schritt, das Frühstück der dritte."
+ },
+ {
+  "tr": "„Here is the bill. Twenty-four euros, please.“ — on, kapanış saati.",
+  "kind": "explain",
+  "de": "„Here is the bill. Twenty-four euros, please.“ — zehn ist die Schließzeit."
+ },
+ {
+  "tr": "„It's half past eight.“ — „half past“ dokuzun değil sekizin buçuğu.",
+  "kind": "explain",
+  "de": "„It's half past eight.“ — Vorsicht: „half past eight“ ist deutsch „halb neun“, nicht „halb acht“; das Englische zählt von der vergangenen Stunde."
+ },
+ {
+  "tr": "„Yes, it's very hot. Don't touch it!“ — ılık olan çay, su çok sıcak.",
+  "kind": "explain",
+  "de": "„Yes, it's very hot. Don't touch it!“ — lauwarm ist der Tee, das Wasser ist sehr heiß."
+ },
+ {
+  "tr": "Önce Ela, sonra Kaan, sonra Deniz söylüyor; toplam en sonda çıkıyor.",
+  "kind": "explain",
+  "de": "Zuerst bestellt Ela, dann Kaan, dann Deniz; die Summe kommt zuletzt."
+ },
+ {
+  "tr": "„I work from nine until five.“ — „from … until …“ başlangıç ve bitiş.",
+  "kind": "explain",
+  "de": "„I work from nine until five.“ — „from … until …“ nennt Anfang und Ende."
+ },
+ {
+  "tr": "„I prefer tea to coffee.“ — tercih edilen önce, ötekisi „to“dan sonra.",
+  "kind": "explain",
+  "de": "„I prefer tea to coffee.“ — das Bevorzugte steht vorn, das andere nach „to“."
+ },
+ {
+  "tr": "„First, wash the rice.“ — emir kipinde özne yok, fiil doğrudan geliyor.",
+  "kind": "explain",
+  "de": "„First, wash the rice.“ — im Imperativ steht kein Subjekt, das Verb kommt direkt."
+ },
+ {
+  "tr": "„In the evening I turn off the radio.“ — sabah açıyor, akşam kapatıyor.",
+  "kind": "explain",
+  "de": "„In the evening I turn off the radio.“ — morgens schaltet er es an, abends aus."
+ },
+ {
+  "tr": "„It's half past eight.“ — sekiz buçuk; on bir çeyrek Nil'in uyku saati.",
+  "kind": "explain",
+  "de": "„It's half past eight.“ — halb neun; viertel nach elf ist die Schlafenszeit von Nil."
+ },
+ {
+  "tr": "„The meat is expensive: nine euros a kilo.“ İndirimde daha ucuz oluyor.",
+  "kind": "explain",
+  "de": "„The meat is expensive: nine euros a kilo.“ Im Angebot wird es billiger."
+ },
+ {
+  "tr": "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by cheque.",
+  "kind": "explain",
+  "de": "„At the end I pay by card.“ — die Zahlungsart mit „by“: by card, by cheque."
+ },
+ {
+  "tr": "„I don't work on Monday. I wake up at nine…“ — yedi Can'ın kalkma saati.",
+  "kind": "explain",
+  "de": "„I don't work on Monday. I wake up at nine…“ — sieben ist die Aufstehzeit von Can."
+ },
+ {
+  "tr": "„I usually walk to work.“ — „usually“ „always“ değil; her zaman demiyor.",
+  "kind": "explain",
+  "de": "„I usually walk to work.“ — „usually“ ist nicht „always“; es heißt nicht immer."
+ },
+ {
+  "tr": "„…I look for my keys.“ — „look for“ aramak demek; „look“ tek başına bakmak.",
+  "kind": "explain",
+  "de": "„…I look for my keys.“ — „look for“ heißt suchen; „look“ allein heißt schauen."
+ },
+ {
+  "tr": "„I always drink tea, never coffee.“ — iki zarf aynı cümlede karşıt duruyor.",
+  "kind": "explain",
+  "de": "„I always drink tea, never coffee.“ — zwei Adverbien stehen im selben Satz gegeneinander."
+ },
+ {
+  "tr": "„I hate cutting onions.“ — „hate“ fiilinden sonra ikinci fiil „-ing“ alıyor.",
+  "kind": "explain",
+  "de": "„I hate cutting onions.“ — nach „hate“ bekommt das zweite Verb ein „-ing“."
+ },
+ {
+  "tr": "„Nine euros! That's too expensive for me.“ — daha az alınca beş euro oluyor.",
+  "kind": "explain",
+  "de": "„Nine euros! That's too expensive for me.“ — bei weniger sind es fünf Euro."
+ },
+ {
+  "tr": "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Ali geç değil.",
+  "kind": "explain",
+  "de": "„We begin at half past nine.“ — viertel nach ist die jetzige Zeit, Ali ist also nicht zu spät."
+ },
+ {
+  "tr": "„I usually wake up at seven“ — „wake up“ iki parçalı bir fiil, parçası düşmez.",
+  "kind": "explain",
+  "de": "„I usually wake up at seven“ — „wake up“ ist ein zweiteiliges Verb, kein Teil fällt weg."
+ },
+ {
+  "tr": "„Before work, I turn off the TV.“ — açmak sabahın başında, kapatmak işten önce.",
+  "kind": "explain",
+  "de": "„Before work, I turn off the TV.“ — angeschaltet wird am Anfang des Morgens, ausgeschaltet vor der Arbeit."
+ },
+ {
+  "tr": "„Four euros. Tomatoes are cheap this week.“ — dokuz ve beş euro etin fiyatları.",
+  "kind": "explain",
+  "de": "„Four euros. Tomatoes are cheap this week.“ — neun und fünf Euro sind die Preise des Fleisches."
+ },
+ {
+  "tr": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ en güçlü olumsuz.",
+  "kind": "explain",
+  "de": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ ist die stärkste Ablehnung."
+ },
+ {
+  "tr": "Önce hesap gelir, sonra birlikte ödeme sorulur, sonra ödeme biçimi, en son saat.",
+  "kind": "explain",
+  "de": "Zuerst kommt die Rechnung, dann die Frage nach dem gemeinsamen Zahlen, dann die Zahlungsart, zuletzt die Uhrzeit."
+ },
+ {
+  "tr": "„First, wash the rice. Then cut the onions.“ — soğan ikinci, domates üçüncü adım.",
+  "kind": "explain",
+  "de": "„First, wash the rice. Then cut the onions.“ — die Zwiebel ist der zweite, die Tomate der dritte Schritt."
+ },
+ {
+  "tr": "„I always drink tea, never coffee.“ — sıklık zarfı ana fiilden önce: always drink.",
+  "kind": "explain",
+  "de": "„I always drink tea, never coffee.“ — das Häufigkeitsadverb steht vor dem Vollverb: always drink."
+ },
+ {
+  "tr": "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
+  "kind": "explain",
+  "de": "„I'd like to pay by card… I only have a card too.“ Der Scheck ist ein Beleg für die Arbeit von Eda."
+ },
+ {
+  "tr": "„After work I buy fruit and vegetables at the market.“ — ekmek ve peynir kahvaltıda.",
+  "kind": "explain",
+  "de": "„After work I buy fruit and vegetables at the market.“ — Brot und Käse gehören zum Frühstück."
+ },
+ {
+  "tr": "„Here you are. Eleven euros, please.“ — dört euro domates, beş euro et, iki euro su.",
+  "kind": "explain",
+  "de": "„Here you are. Eleven euros, please.“ — vier Euro Tomaten, fünf Euro Fleisch, zwei Euro Wasser."
+ },
+ {
+  "tr": "„Sometimes I am late, but my teacher is never angry.“ — „never“ „be“ fiilinden SONRA.",
+  "kind": "explain",
+  "de": "„Sometimes I am late, but my teacher is never angry.“ — „never“ steht NACH dem Verb „be“."
+ },
+ {
+  "tr": "„Then look for a new clock at the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+  "kind": "explain",
+  "de": "„Then look for a new clock at the weekend!“ — Ali stimmt mit „On Saturday I have time“ zu."
+ },
+ {
+  "tr": "„I have dinner at half past seven.“ — „half past seven“ yedi buçuk, sekiz buçuk değil.",
+  "kind": "explain",
+  "de": "„I have dinner at half past seven.“ — „half past seven“ ist deutsch „halb acht“, nicht „halb sieben“."
+ },
+ {
+  "tr": "„I always get up at seven, also at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
+  "kind": "explain",
+  "de": "„I always get up at seven, also at the weekend.“ — „also“ schließt das Wochenende mit ein."
+ },
+ {
+  "tr": "„I always turn it off before I sleep.“ — nesne zamir olunca ARAYA giriyor: turn it off.",
+  "kind": "explain",
+  "de": "„I always turn it off before I sleep.“ — ist das Objekt ein Pronomen, steht es DAZWISCHEN: turn it off."
+ },
+ {
+  "tr": "„The food I love most is pizza with meat and onion.“ — pirinci kız kardeş tercih ediyor.",
+  "kind": "explain",
+  "de": "„The food I love most is pizza with meat and onion.“ — den Reis bevorzugt die Schwester."
+ },
+ {
+  "tr": "„I wake up at six and I get up at a quarter past six.“ — uyanmak ile kalkmak ayrı iki iş.",
+  "kind": "explain",
+  "de": "„I wake up at six and I get up at a quarter past six.“ — Aufwachen und Aufstehen sind zwei verschiedene Dinge."
+ },
+ {
+  "tr": "Önce miktar, sonra sipariş, sonra itiraz, en son toplam. Pazarlık hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "de": "Zuerst die Menge, dann die Bestellung, dann der Einwand, zuletzt die Summe. Handeln läuft immer in dieser Reihenfolge."
+ },
+ {
+  "tr": "içmek",
+  "kind": "gloss.tr",
+  "de": "trinken"
+ },
+ {
+  "tr": "taze",
+  "kind": "gloss.tr",
+  "de": "frisch"
+ },
+ {
+  "tr": "giysi",
+  "kind": "gloss.tr",
+  "de": "Kleidung"
+ },
+ {
+  "tr": "sebzeler",
+  "kind": "gloss.tr",
+  "de": "Gemüse"
+ },
+ {
+  "tr": "çok pahalı",
+  "kind": "gloss.tr",
+  "de": "zu teuer"
+ },
+ {
+  "tr": "çeyrek kala",
+  "kind": "gloss.tr",
+  "de": "viertel vor"
+ },
+ {
+  "tr": "an",
+  "kind": "gloss.tr",
+  "de": "Moment"
+ },
+ {
+  "tr": "asla",
+  "kind": "gloss.tr",
+  "de": "nie"
+ },
+ {
+  "tr": "aynı",
+  "kind": "gloss.tr",
+  "de": "gleich"
+ },
+ {
+  "tr": "elma",
+  "kind": "gloss.tr",
+  "de": "Apfel"
+ },
+ {
+  "tr": "yeni",
+  "kind": "gloss.tr",
+  "de": "neu"
+ },
+ {
+  "tr": "buçuk",
+  "kind": "gloss.tr",
+  "de": "halb"
+ },
+ {
+  "tr": "meyve",
+  "kind": "gloss.tr",
+  "de": "Obst"
+ },
+ {
+  "tr": "radyo",
+  "kind": "gloss.tr",
+  "de": "Radio"
+ },
+ {
+  "tr": "soğuk",
+  "kind": "gloss.tr",
+  "de": "kalt"
+ },
+ {
+  "tr": "elimde",
+  "kind": "gloss.tr",
+  "de": "in meiner Hand"
+ },
+ {
+  "tr": "gitmek",
+  "kind": "gloss.tr",
+  "de": "gehen zu"
+ },
+ {
+  "tr": "okumak",
+  "kind": "gloss.tr",
+  "de": "lesen"
+ },
+ {
+  "tr": "şanslı",
+  "kind": "gloss.tr",
+  "de": "Glück haben"
+ },
+ {
+  "tr": "açılmak",
+  "kind": "gloss.tr",
+  "de": "öffnen"
+ },
+ {
+  "tr": "bir şey",
+  "kind": "gloss.tr",
+  "de": "etwas"
+ },
+ {
+  "tr": "sonunda",
+  "kind": "gloss.tr",
+  "de": "am Ende"
+ },
+ {
+  "tr": "çıkarmak",
+  "kind": "gloss.tr",
+  "de": "ausziehen"
+ },
+ {
+  "tr": "daha iyi",
+  "kind": "gloss.tr",
+  "de": "besser"
+ },
+ {
+  "tr": "portakal",
+  "kind": "gloss.tr",
+  "de": "Orange"
+ },
+ {
+  "tr": "saat kaç",
+  "kind": "gloss.tr",
+  "de": "wie spät ist es"
+ },
+ {
+  "tr": "her zaman",
+  "kind": "gloss.tr",
+  "de": "immer"
+ },
+ {
+  "tr": "indirimde",
+  "kind": "gloss.tr",
+  "de": "im Angebot"
+ },
+ {
+  "tr": "sabahları",
+  "kind": "gloss.tr",
+  "de": "morgens"
+ },
+ {
+  "tr": "anahtarlar",
+  "kind": "gloss.tr",
+  "de": "Schlüssel"
+ },
+ {
+  "tr": "çeyrek geçe",
+  "kind": "gloss.tr",
+  "de": "viertel nach"
+ },
+ {
+  "tr": "henüz değil",
+  "kind": "gloss.tr",
+  "de": "noch nicht"
+ },
+ {
+  "tr": "ona dokunma",
+  "kind": "gloss.tr",
+  "de": "fass es nicht an"
+ },
+ {
+  "tr": "önemli değil",
+  "kind": "gloss.tr",
+  "de": "macht nichts"
+ },
+ {
+  "tr": "bir kilo elma",
+  "kind": "gloss.tr",
+  "de": "ein Kilo Äpfel"
+ },
+ {
+  "tr": "hafta sonunda",
+  "kind": "gloss.tr",
+  "de": "am Wochenende"
+ },
+ {
+  "tr": "pazartesi günü",
+  "kind": "gloss.tr",
+  "de": "am Montag"
+ },
+ {
+  "tr": "domatesleri kes",
+  "kind": "gloss.tr",
+  "de": "schneide die Tomaten"
+ },
+ {
+  "tr": "önce …, sonra …",
+  "kind": "gloss.tr",
+  "de": "zuerst …, dann …"
+ },
+ {
+  "tr": "… yemeyi seviyorum",
+  "kind": "gloss.tr",
+  "de": "ich esse gern …"
+ },
+ {
+  "tr": "kartla ödeyebilir miyim",
+  "kind": "gloss.tr",
+  "de": "kann ich mit Karte zahlen"
+ },
+ {
+  "tr": "… yerine …'i tercih etmek",
+  "kind": "gloss.tr",
+  "de": "… lieber als …"
+ },
+ {
+  "tr": "birlikte ödeyebilir miyiz",
+  "kind": "gloss.tr",
+  "de": "können wir zusammen zahlen"
+ },
+ {
+  "tr": "… yerine …'i tercih ederim",
+  "kind": "gloss.tr",
+  "de": "ich mag … lieber als …"
+ }
+]

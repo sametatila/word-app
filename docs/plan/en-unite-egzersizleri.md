@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–6 | **yazıldı** (2026-09-11) |
-| A1 | 7–25 | bekliyor |
+| A1 | 1–9 | **yazıldı** (2026-09-11) |
+| A1 | 10–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -131,6 +131,26 @@ satır satır veriliyor.
 karşılık bunu DOĞRULUYOR — Almanca da bu ayrımı yapmıyor. Yeniden ölçüm
 her zaman farkı büyütmüyor; bazen iki dilin aynı yerde eksik olduğunu
 söylüyor.
+
+**A1 ünite 7–9 (2026-09-11).** Ünite 7 Favourite food · At the market ·
+Cooking together · Drinks; ünite 8 Fruit and vegetables ·
+Paying the bill · Daily routine · Telling the time; ünite 9
+Days of the week · get up, wake up · Always, usually, never ·
+My morning. On sekiz egzersiz; ünite dışı ölçüm %0,0.
+
+Ünite 8 Almanca eksende bu hattın EN SERT yeniden ölçümünü üretti. Türkçe
+açıklama "„half past seven“ yedi buçuk, sekiz buçuk değil" diyor ve bu
+Türkçe okuyan için doğru. Almanca okuyan için TERSİ geçerli: Almanca
+„halb acht“ 7:30 demek, yani Almanca sayım gelecek saate doğru, İngilizce
+sayım geçmiş saatten uzağa. Satırı çevirmek Almanca okuyana yanlış bilgi
+verirdi; Almanca karşılık „half past seven“in „halb acht“ olduğunu ve iki
+sayımın ters yönde çalıştığını söylüyor.
+
+Aynı yönde üç satır daha açıldı: „prefer … to …“de Almanca „lieber als“
+tam da yasak olan „than“a itiyor; „a kilo of apples“taki „of“un Almancada
+karşılığı hiç yok („ein Kilo Äpfel“); sıklık zarfı İngilizcede ana
+fiilden önce, Almancada sonra geliyor („I always drink“ / „ich trinke
+immer“). Dördü de çeviri değil, Almancaya karşı yeniden ölçüm.
 
 ## Tamamlanma ölçütü
 

@@ -1,0 +1,312 @@
+[
+ {
+  "tr": "Günlük programı doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Tagesplan aus."
+ },
+ {
+  "tr": "Market listesini doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Einkaufsliste aus."
+ },
+ {
+  "tr": "Haftalık programı doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Wochenplan aus."
+ },
+ {
+  "tr": "İki kilo domates; beş yüz gram et; bir şişe su; bir kilo pirinç.",
+  "kind": "form.facts",
+  "de": "Zwei Kilo Tomaten; fünfhundert Gramm Fleisch; eine Flasche Wasser; ein Kilo Reis."
+ },
+ {
+  "tr": "Pazartesi ve cuma işte; cumartesi pazarda; pazar günü boş; her sabah yürüyüş.",
+  "kind": "form.facts",
+  "de": "Montag und Freitag Arbeit; Samstag auf dem Markt; Sonntag frei; jeden Morgen ein Spaziergang."
+ },
+ {
+  "tr": "Yedide kalkar; sekiz buçukta kahvaltı; dokuzdan beşe çalışır; gece yarısı uyur.",
+  "kind": "form.facts",
+  "de": "Steht um sieben auf; um halb neun Frühstück; arbeitet von neun bis fünf; schläft um Mitternacht."
+ },
+ {
+  "tr": "Sıklık zarfını doğru yere koy: never.",
+  "kind": "rewrite.prompt",
+  "de": "Setze das Häufigkeitsadverb an die richtige Stelle: never."
+ },
+ {
+  "tr": "Sıklık zarfını doğru yere koy: usually.",
+  "kind": "rewrite.prompt",
+  "de": "Setze das Häufigkeitsadverb an die richtige Stelle: usually."
+ },
+ {
+  "tr": "Ana fiilden önce: usually get up. Cümle sonuna konmaz.",
+  "kind": "rewrite.why",
+  "de": "Vor dem Vollverb: usually get up. Anders als im Deutschen, wo das Adverb hinter dem Verb steht. Ans Satzende kommt es nicht."
+ },
+ {
+  "tr": "Fiil „be“ olduğu için zarf ondan sonra: is never. Öteki fiillerde önce: never walks.",
+  "kind": "rewrite.why",
+  "de": "Weil das Verb „be“ ist, steht das Adverb danach: is never — wie deutsch „ist nie“. Bei anderen Verben steht es davor: never walks."
+ },
+ {
+  "tr": "Saat kaç?",
+  "kind": "build.tr",
+  "de": "Wie spät ist es?"
+ },
+ {
+  "tr": "Çok pahalı.",
+  "kind": "build.tr",
+  "de": "Das ist zu teuer."
+ },
+ {
+  "tr": "Ona dokunma.",
+  "kind": "build.tr",
+  "de": "Fass es nicht an."
+ },
+ {
+  "tr": "Domatesleri kes.",
+  "kind": "build.tr",
+  "de": "Schneide die Tomaten."
+ },
+ {
+  "tr": "Saat yedi buçuk.",
+  "kind": "build.tr",
+  "de": "Es ist halb acht."
+ },
+ {
+  "tr": "Yedide kalkarım.",
+  "kind": "build.tr",
+  "de": "Ich stehe um sieben auf."
+ },
+ {
+  "tr": "Elmalar ne kadar?",
+  "kind": "build.tr",
+  "de": "Was kosten die Äpfel?"
+ },
+ {
+  "tr": "Bazen işe yürürüm.",
+  "kind": "build.tr",
+  "de": "Manchmal gehe ich zu Fuß zur Arbeit."
+ },
+ {
+  "tr": "Dokuza çeyrek var.",
+  "kind": "build.tr",
+  "de": "Es ist viertel vor neun."
+ },
+ {
+  "tr": "O asla geç kalmaz.",
+  "kind": "build.tr",
+  "de": "Sie kommt nie zu spät."
+ },
+ {
+  "tr": "Sabahları yürürüm.",
+  "kind": "build.tr",
+  "de": "Morgens gehe ich zu Fuß."
+ },
+ {
+  "tr": "Domatesler taze mi?",
+  "kind": "build.tr",
+  "de": "Sind die Tomaten frisch?"
+ },
+ {
+  "tr": "Kaç elma istiyorsun?",
+  "kind": "build.tr",
+  "de": "Wie viele Äpfel möchtest du?"
+ },
+ {
+  "tr": "Her zaman çay içerim.",
+  "kind": "build.tr",
+  "de": "Ich trinke immer Tee."
+ },
+ {
+  "tr": "Saat kaçta kalkarsın?",
+  "kind": "build.tr",
+  "de": "Um wie viel Uhr stehst du auf?"
+ },
+ {
+  "tr": "Biraz çay ister misin?",
+  "kind": "build.tr",
+  "de": "Möchtest du etwas Tee?"
+ },
+ {
+  "tr": "Pizza yemeyi seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich esse gern Pizza."
+ },
+ {
+  "tr": "Bir kilo elma istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich hätte gern ein Kilo Äpfel."
+ },
+ {
+  "tr": "Hafta sonu çalışmıyorum.",
+  "kind": "build.tr",
+  "de": "Am Wochenende arbeite ich nicht."
+ },
+ {
+  "tr": "Kartla ödeyebilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich mit Karte zahlen?"
+ },
+ {
+  "tr": "Birlikte ödeyebilir miyiz?",
+  "kind": "build.tr",
+  "de": "Können wir zusammen zahlen?"
+ },
+ {
+  "tr": "Çayı kahveye tercih ederim.",
+  "kind": "build.tr",
+  "de": "Ich mag Tee lieber als Kaffee."
+ },
+ {
+  "tr": "Pazartesi günü çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Am Montag arbeite ich."
+ },
+ {
+  "tr": "Yemek pişirmeyi sever misin?",
+  "kind": "build.tr",
+  "de": "Kochst du gern?"
+ },
+ {
+  "tr": "Önce pirinci yıka, sonra soğanları kes.",
+  "kind": "build.tr",
+  "de": "Wasch zuerst den Reis, dann schneide die Zwiebeln."
+ },
+ {
+  "tr": "„together“ cümlenin sonunda duruyor.",
+  "kind": "build.hint",
+  "de": "„together“ steht am Satzende, wie deutsch „zusammen“."
+ },
+ {
+  "tr": "Emirde özne yok: „Cut“, „You cut“ değil.",
+  "kind": "build.hint",
+  "de": "Im Imperativ kein Subjekt: „Cut“, nicht „You cut“."
+ },
+ {
+  "tr": "Sıklık zarfı ana fiilden önce: always drink.",
+  "kind": "build.hint",
+  "de": "Das Häufigkeitsadverb steht VOR dem Vollverb: always drink. Deutsch stellt es dahinter."
+ },
+ {
+  "tr": "Olumsuz emir „Don't“ ile, sonra fiil olduğu gibi.",
+  "kind": "build.hint",
+  "de": "Der verneinte Imperativ mit „Don't“, danach das Verb unverändert."
+ },
+ {
+  "tr": "Sayılabilen şeyde „how many“, sayılamayanda „how much“.",
+  "kind": "build.hint",
+  "de": "Bei Zählbarem „how many“, bei Unzählbarem „how much“ — wie „wie viele“ und „wie viel“."
+ },
+ {
+  "tr": "Burada fiil „be“, o yüzden zarf SONRA geliyor: is never.",
+  "kind": "build.hint",
+  "de": "Hier ist das Verb „be“, deshalb steht das Adverb DANACH: is never — wie deutsch „ist nie“."
+ },
+ {
+  "tr": "Ödeme biçimi „by“ ile: by card, by cheque. „with“ değil.",
+  "kind": "build.hint",
+  "de": "Die Zahlungsart mit „by“: by card, by cheque. Nicht „with“, obwohl das Deutsche „mit“ sagt."
+ },
+ {
+  "tr": "Gün adından önce „on“ ve gün adı büyük harfle: on Monday.",
+  "kind": "build.hint",
+  "de": "Vor dem Tagesnamen steht „on“: on Monday, deutsch „am Montag“."
+ },
+ {
+  "tr": "Hafta sonunda „at“: at the weekend. Günde „on“, ayda „in“.",
+  "kind": "build.hint",
+  "de": "Beim Wochenende „at“: at the weekend. Deutsch sagt hier dasselbe „am“ wie beim Tag, Englisch nicht: beim Tag „on“, beim Monat „in“."
+ },
+ {
+  "tr": "Saatte „at“: at seven, at midnight. Günde „on“, ayda „in“.",
+  "kind": "build.hint",
+  "de": "Bei der Uhrzeit „at“: at seven, at midnight — wie deutsch „um“. Beim Tag „on“, beim Monat „in“."
+ },
+ {
+  "tr": "„time“ burada süre değil, saatin kendisi. Özne „it“ zorunlu.",
+  "kind": "build.hint",
+  "de": "„time“ meint hier nicht die Dauer, sondern die Uhrzeit. Das Subjekt „it“ ist Pflicht."
+ },
+ {
+  "tr": "Çoğul özne „are“ ister. Sıfat sonda: are the tomatoes fresh.",
+  "kind": "build.hint",
+  "de": "Ein Subjekt im Plural verlangt „are“. Das Adjektiv steht hinten: are the tomatoes fresh."
+ },
+ {
+  "tr": "Soru „do“ ile, ikinci fiil yine „-ing“: Do you like cooking?",
+  "kind": "build.hint",
+  "de": "Die Frage mit „do“, das zweite Verb wieder mit „-ing“: Do you like cooking?"
+ },
+ {
+  "tr": "Soru „do“ ile, phrasal verb bölünmeden sonda: do you get up.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „do“, das Phrasal Verb bleibt ungeteilt am Ende: do you get up."
+ },
+ {
+  "tr": "Tercih edilen ÖNCE, ötekisi „to“dan sonra. „than“ değil „to“.",
+  "kind": "build.hint",
+  "de": "Das Bevorzugte steht VORN, das andere nach „to“. Achtung: nicht „than“ — deutsch „lieber als“ verführt genau dazu."
+ },
+ {
+  "tr": "İkramda „some“ kullanılır, „any“ değil — soru olmasına rağmen.",
+  "kind": "build.hint",
+  "de": "Beim Anbieten steht „some“, nicht „any“ — obwohl es eine Frage ist."
+ },
+ {
+  "tr": "„First“ ve „then“ virgülle ayrılıyor; iki emir art arda geliyor.",
+  "kind": "build.hint",
+  "de": "„First“ und „then“ werden mit Komma abgetrennt; zwei Imperative folgen aufeinander."
+ },
+ {
+  "tr": "Fiyat sorusunda çoğulsa „are“: how much ARE the apples, is değil.",
+  "kind": "build.hint",
+  "de": "Geht der Preis um Mehreres, steht „are“: how much ARE the apples, nicht is."
+ },
+ {
+  "tr": "„sometimes“ cümlenin başına da gelebilir — tek gezebilen zarf odur.",
+  "kind": "build.hint",
+  "de": "„sometimes“ darf auch am Satzanfang stehen — es ist das einzige Adverb, das wandern darf."
+ },
+ {
+  "tr": "„too“ burada „çok“ değil „gereğinden fazla“ demek; şikâyet taşıyor.",
+  "kind": "build.hint",
+  "de": "„too“ heißt hier nicht „sehr“, sondern „zu viel“ — wie deutsch „zu teuer“; es trägt eine Beschwerde."
+ },
+ {
+  "tr": "„to“ kala demek ve gelecek saati söyler: a quarter to nine, yani 8:45.",
+  "kind": "build.hint",
+  "de": "„to“ heißt vor und nennt die kommende Stunde: a quarter to nine, also 8:45."
+ },
+ {
+  "tr": "Miktar ile isim arasında „of“ var: a kilo of apples, a bottle of water.",
+  "kind": "build.hint",
+  "de": "Zwischen Menge und Substantiv steht „of“: a kilo of apples, a bottle of water. Das Deutsche setzt dort gar nichts: ein Kilo Äpfel."
+ },
+ {
+  "tr": "„like“ fiilinden sonra ikinci fiil „-ing“ alır: like eating, like cooking.",
+  "kind": "build.hint",
+  "de": "Nach „like“ bekommt das zweite Verb ein „-ing“: like eating, like cooking. Das Deutsche nimmt dort den Infinitiv: gern essen."
+ },
+ {
+  "tr": "Günün bölümünde „in“: in the morning, in the evening. Ama „at night“ istisna.",
+  "kind": "build.hint",
+  "de": "Bei einem Tagesabschnitt „in“: in the morning, in the evening. Aber „at night“ ist die Ausnahme."
+ },
+ {
+  "tr": "„half past seven“ yediyi yarım geçiyor. Türkçedeki gibi yedi buçuk, sekizin yarısı değil.",
+  "kind": "build.hint",
+  "de": "„half past seven“ ist eine halbe Stunde NACH sieben, deutsch also „halb acht“. Die deutsche Zählung geht auf die kommende Stunde zu, die englische von der vergangenen weg."
+ },
+ {
+  "tr": "Pişirmenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge beim Kochen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Siparişlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Bestellungen: bring sie in die richtige Ordnung."
+ }
+]

@@ -1,0 +1,377 @@
+[
+ {
+  "tr": "„I don't work on Monday.“",
+  "kind": "explain",
+  "en": "„I don't work on Monday.“"
+ },
+ {
+  "tr": "„At half past six. Don't be late!“",
+  "kind": "explain",
+  "en": "„At half past six. Don't be late!“"
+ },
+ {
+  "tr": "Saati yaz. Sonunda günlük programı doldur.",
+  "kind": "intro",
+  "en": "Write the time. At the end, fill in the daily plan."
+ },
+ {
+  "tr": "„Rice with vegetables. It's easy and cheap.“",
+  "kind": "explain",
+  "en": "„Rice with vegetables. It's easy and cheap.“"
+ },
+ {
+  "tr": "Hesap ödeniyor. Nakit mi, kart mı, birlikte mi?",
+  "kind": "intro",
+  "en": "The bill is being paid. Cash, card or together?"
+ },
+ {
+  "tr": "„I often work on Saturday morning.“ — akşamları boş.",
+  "kind": "explain",
+  "en": "„I often work on Saturday morning.“ — in the evening she is free."
+ },
+ {
+  "tr": "„No, thank you. Beer is enough.“ — şarabı reddediyor.",
+  "kind": "explain",
+  "en": "„No, thank you. Beer is enough.“ — he turns the wine down."
+ },
+ {
+  "tr": "„Eight euros together, then.“ — üç artı dört artı bir.",
+  "kind": "explain",
+  "en": "„Eight euros together, then.“ — three plus four plus one."
+ },
+ {
+  "tr": "Üç kişi içecek söylüyor. Kim ne alıyor, toplam kaç para?",
+  "kind": "intro",
+  "en": "Three people order drinks. Who takes what, how much is it all together?"
+ },
+ {
+  "tr": "„First … after that … finally“ üç adımı sırayla bağlıyor.",
+  "kind": "explain",
+  "en": "„First … after that … finally“ links the three steps in order."
+ },
+ {
+  "tr": "„On Sunday I usually cook.“ — ona kadar uyumak cumartesi.",
+  "kind": "explain",
+  "en": "„On Sunday I usually cook.“ — sleeping until ten belongs to Saturday."
+ },
+ {
+  "tr": "Önce davet, sonra özür, sonra soru, en son başlama saati.",
+  "kind": "explain",
+  "en": "First the invitation, then the apology, then the question, last the starting time."
+ },
+ {
+  "tr": "„I don't work on Sunday.“ — gün adından önce „on“ geliyor.",
+  "kind": "explain",
+  "en": "„I don't work on Sunday.“ — „on“ comes before the name of a day."
+ },
+ {
+  "tr": "„It's a quarter to nine.“ — dokuza çeyrek kala, yani 8:45.",
+  "kind": "explain",
+  "en": "„It's a quarter to nine.“ — a quarter before nine, that is 8:45."
+ },
+ {
+  "tr": "Ela pazar alışverişini anlatıyor. Ne aldı, ne kadar ödedi?",
+  "kind": "intro",
+  "en": "Ela talks about her shopping at the market. What did she buy, what did she pay?"
+ },
+ {
+  "tr": "„The beer is four euros“ — üç euro meyve suyu, bir euro su.",
+  "kind": "explain",
+  "en": "„The beer is four euros“ — three euros is the juice, one euro the water."
+ },
+ {
+  "tr": "Önce pazara gidiş, sonra sipariş, sonra fiyat, en son ödeme.",
+  "kind": "explain",
+  "en": "First going to the market, then the order, then the price, last the payment."
+ },
+ {
+  "tr": "„I usually wake up at seven, but today my clock doesn't work.“",
+  "kind": "explain",
+  "en": "„I usually wake up at seven, but today my clock doesn't work.“"
+ },
+ {
+  "tr": "„I usually walk to work.“ — üçüncü tekil kişide „-s“: he walks.",
+  "kind": "explain",
+  "en": "„I usually walk to work.“ — in the third person singular a „-s“: he walks."
+ },
+ {
+  "tr": "„I'd like a juice… Apple, please.“ — bira Kaan'ın, su Deniz'in.",
+  "kind": "explain",
+  "en": "„I'd like a juice… Apple, please.“ — the beer is Kaan's, the water is Deniz's."
+ },
+ {
+  "tr": "„Tomatoes are cheap this week — it's a sale.“ — pahalı olan et.",
+  "kind": "explain",
+  "en": "„Tomatoes are cheap this week — it's a sale.“ — the expensive one is the meat."
+ },
+ {
+  "tr": "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
+  "kind": "explain",
+  "en": "„Never! I work from Monday to Friday.“ — the one who works at the weekend is Nil."
+ },
+ {
+  "tr": "Bir günün tamamı saatleriyle anlatılıyor. Hangi iş hangi saatte?",
+  "kind": "intro",
+  "en": "A whole day is told with its times. What happens when?"
+ },
+ {
+  "tr": "Tarif yaz. Emir kipinde özne yazılmıyor, fiil doğrudan başlıyor.",
+  "kind": "intro",
+  "en": "Write a recipe. The imperative has no subject, the sentence starts with the verb."
+ },
+ {
+  "tr": "„Then we close in one hour, at ten.“ — bir saat sonra, yani onda.",
+  "kind": "explain",
+  "en": "„Then we close in one hour, at ten.“ — in one hour, that is at ten."
+ },
+ {
+  "tr": "„Two euros a kilo.“ — yarım euro muzun fiyatı, dokuz euro toplam.",
+  "kind": "explain",
+  "en": "„Two euros a kilo.“ — half a euro is the price of a banana, nine euros the total."
+ },
+ {
+  "tr": "Bir haftanın düzeni. Hangi iş her zaman, hangisi bazen yapılıyor?",
+  "kind": "intro",
+  "en": "The shape of one week. What happens always, what only sometimes?"
+ },
+ {
+  "tr": "„First, I wake up at six.“ — kalkmak ikinci adım, kahvaltı üçüncü.",
+  "kind": "explain",
+  "en": "„First, I wake up at six.“ — getting up is the second step, breakfast the third."
+ },
+ {
+  "tr": "İki kişi birlikte yemek pişiriyor. Hangi adım önce, hangisi sonra?",
+  "kind": "intro",
+  "en": "Two people cook together. Which step comes first, which comes after?"
+ },
+ {
+  "tr": "„Here is the bill. Twenty-four euros, please.“ — on, kapanış saati.",
+  "kind": "explain",
+  "en": "„Here is the bill. Twenty-four euros, please.“ — ten is the closing time."
+ },
+ {
+  "tr": "„It's half past eight.“ — „half past“ dokuzun değil sekizin buçuğu.",
+  "kind": "explain",
+  "en": "„It's half past eight.“ — „half past“ counts from the hour that has gone, so it is half an hour after eight."
+ },
+ {
+  "tr": "Saatler ve günlük akış. „past“ geçe, „to“ kala — ikisine de dikkat.",
+  "kind": "intro",
+  "en": "Times and a daily routine. „past“ means after, „to“ means before — watch both."
+ },
+ {
+  "tr": "Sabahın adımları sırayla. First, then, after that, before, finally.",
+  "kind": "intro",
+  "en": "The steps of a morning in order. First, then, after that, before, finally."
+ },
+ {
+  "tr": "„Yes, it's very hot. Don't touch it!“ — ılık olan çay, su çok sıcak.",
+  "kind": "explain",
+  "en": "„Yes, it's very hot. Don't touch it!“ — the tea is warm, the water is very hot."
+ },
+ {
+  "tr": "Hafta sonu ne yapılıyor? Sıklık zarflarını ve gün edatlarını yakala.",
+  "kind": "intro",
+  "en": "What happens at the weekend? Catch the adverbs of frequency and the prepositions of days."
+ },
+ {
+  "tr": "Önce Ela, sonra Kaan, sonra Deniz söylüyor; toplam en sonda çıkıyor.",
+  "kind": "explain",
+  "en": "First Ela orders, then Kaan, then Deniz; the total comes last."
+ },
+ {
+  "tr": "„I work from nine until five.“ — „from … until …“ başlangıç ve bitiş.",
+  "kind": "explain",
+  "en": "„I work from nine until five.“ — „from … until …“ gives a start and an end."
+ },
+ {
+  "tr": "„I prefer tea to coffee.“ — tercih edilen önce, ötekisi „to“dan sonra.",
+  "kind": "explain",
+  "en": "„I prefer tea to coffee.“ — what is preferred comes first, the other after „to“."
+ },
+ {
+  "tr": "Biri sevdiği ve sevmediği yemekleri anlatıyor. Kim neyi tercih ediyor?",
+  "kind": "intro",
+  "en": "Someone talks about the food they love and the food they hate. Who prefers what?"
+ },
+ {
+  "tr": "„First, wash the rice.“ — emir kipinde özne yok, fiil doğrudan geliyor.",
+  "kind": "explain",
+  "en": "„First, wash the rice.“ — the imperative has no subject, the verb comes straight away."
+ },
+ {
+  "tr": "„In the evening I turn off the radio.“ — sabah açıyor, akşam kapatıyor.",
+  "kind": "explain",
+  "en": "„In the evening I turn off the radio.“ — he turns it on in the morning and off in the evening."
+ },
+ {
+  "tr": "„It's half past eight.“ — sekiz buçuk; on bir çeyrek Nil'in uyku saati.",
+  "kind": "explain",
+  "en": "„It's half past eight.“ — half an hour after eight; a quarter past eleven is when Nil sleeps."
+ },
+ {
+  "tr": "„The meat is expensive: nine euros a kilo.“ İndirimde daha ucuz oluyor.",
+  "kind": "explain",
+  "en": "„The meat is expensive: nine euros a kilo.“ In a sale it gets cheaper."
+ },
+ {
+  "tr": "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by cheque.",
+  "kind": "explain",
+  "en": "„At the end I pay by card.“ — the way of paying takes „by“: by card, by cheque."
+ },
+ {
+  "tr": "„I don't work on Monday. I wake up at nine…“ — yedi Can'ın kalkma saati.",
+  "kind": "explain",
+  "en": "„I don't work on Monday. I wake up at nine…“ — seven is when Can gets up."
+ },
+ {
+  "tr": "„I usually walk to work.“ — „usually“ „always“ değil; her zaman demiyor.",
+  "kind": "explain",
+  "en": "„I usually walk to work.“ — „usually“ is not „always“; it does not mean every time."
+ },
+ {
+  "tr": "Sıklık zarfının yeri kurala bağlı: ana fiilden ÖNCE, „be“ fiilinden SONRA.",
+  "kind": "intro",
+  "en": "The place of the frequency adverb follows a rule: BEFORE the main verb, AFTER the verb „be“."
+ },
+ {
+  "tr": "„…I look for my keys.“ — „look for“ aramak demek; „look“ tek başına bakmak.",
+  "kind": "explain",
+  "en": "„…I look for my keys.“ — „look for“ means to search; „look“ on its own means to see."
+ },
+ {
+  "tr": "„I always drink tea, never coffee.“ — iki zarf aynı cümlede karşıt duruyor.",
+  "kind": "explain",
+  "en": "„I always drink tea, never coffee.“ — two adverbs stand against each other in one sentence."
+ },
+ {
+  "tr": "Pazarda pazarlık. Kilo, gram ve fiyat art arda geliyor — sayıları takip et.",
+  "kind": "intro",
+  "en": "Bargaining at the market. Kilos, grams and prices come one after the other — follow the numbers."
+ },
+ {
+  "tr": "„I hate cutting onions.“ — „hate“ fiilinden sonra ikinci fiil „-ing“ alıyor.",
+  "kind": "explain",
+  "en": "„I hate cutting onions.“ — after „hate“ the second verb takes „-ing“."
+ },
+ {
+  "tr": "„Nine euros! That's too expensive for me.“ — daha az alınca beş euro oluyor.",
+  "kind": "explain",
+  "en": "„Nine euros! That's too expensive for me.“ — with less it comes to five euros."
+ },
+ {
+  "tr": "Ödeme ve alışveriş isteklerini yaz. Sayılabilen çoğulda „are“, tekilde „is“.",
+  "kind": "intro",
+  "en": "Write requests for paying and shopping. A countable plural takes „are“, a singular takes „is“."
+ },
+ {
+  "tr": "„We begin at half past nine.“ — çeyrek geçe şimdiki saat, yani Ali geç değil.",
+  "kind": "explain",
+  "en": "„We begin at half past nine.“ — a quarter past is the time now, so Ali is not late."
+ },
+ {
+  "tr": "„I usually wake up at seven“ — „wake up“ iki parçalı bir fiil, parçası düşmez.",
+  "kind": "explain",
+  "en": "„I usually wake up at seven“ — „wake up“ is a two-part verb and no part may be dropped."
+ },
+ {
+  "tr": "„Before work, I turn off the TV.“ — açmak sabahın başında, kapatmak işten önce.",
+  "kind": "explain",
+  "en": "„Before work, I turn off the TV.“ — it goes on at the start of the morning and off before work."
+ },
+ {
+  "tr": "„Four euros. Tomatoes are cheap this week.“ — dokuz ve beş euro etin fiyatları.",
+  "kind": "explain",
+  "en": "„Four euros. Tomatoes are cheap this week.“ — nine and five euros are the prices of the meat."
+ },
+ {
+  "tr": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ en güçlü olumsuz.",
+  "kind": "explain",
+  "en": "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ is the strongest refusal."
+ },
+ {
+  "tr": "Önce hesap gelir, sonra birlikte ödeme sorulur, sonra ödeme biçimi, en son saat.",
+  "kind": "explain",
+  "en": "First the bill comes, then the question about paying together, then the way of paying, last the time."
+ },
+ {
+  "tr": "„First, wash the rice. Then cut the onions.“ — soğan ikinci, domates üçüncü adım.",
+  "kind": "explain",
+  "en": "„First, wash the rice. Then cut the onions.“ — the onion is the second step, the tomato the third."
+ },
+ {
+  "tr": "„I always drink tea, never coffee.“ — sıklık zarfı ana fiilden önce: always drink.",
+  "kind": "explain",
+  "en": "„I always drink tea, never coffee.“ — the frequency adverb comes before the main verb: always drink."
+ },
+ {
+  "tr": "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
+  "kind": "explain",
+  "en": "„I'd like to pay by card… I only have a card too.“ The cheque is a record for Eda's work."
+ },
+ {
+  "tr": "„After work I buy fruit and vegetables at the market.“ — ekmek ve peynir kahvaltıda.",
+  "kind": "explain",
+  "en": "„After work I buy fruit and vegetables at the market.“ — bread and cheese belong to breakfast."
+ },
+ {
+  "tr": "„Here you are. Eleven euros, please.“ — dört euro domates, beş euro et, iki euro su.",
+  "kind": "explain",
+  "en": "„Here you are. Eleven euros, please.“ — four euros of tomatoes, five of meat, two of water."
+ },
+ {
+  "tr": "„Sometimes I am late, but my teacher is never angry.“ — „never“ „be“ fiilinden SONRA.",
+  "kind": "explain",
+  "en": "„Sometimes I am late, but my teacher is never angry.“ — „never“ comes AFTER the verb „be“."
+ },
+ {
+  "tr": "„Then look for a new clock at the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+  "kind": "explain",
+  "en": "„Then look for a new clock at the weekend!“ — Ali agrees with „On Saturday I have time“."
+ },
+ {
+  "tr": "„I have dinner at half past seven.“ — „half past seven“ yedi buçuk, sekiz buçuk değil.",
+  "kind": "explain",
+  "en": "„I have dinner at half past seven.“ — „half past seven“ is half an hour after seven, not after eight."
+ },
+ {
+  "tr": "„I always get up at seven, also at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
+  "kind": "explain",
+  "en": "„I always get up at seven, also at the weekend.“ — „also“ takes the weekend in as well."
+ },
+ {
+  "tr": "„I always turn it off before I sleep.“ — nesne zamir olunca ARAYA giriyor: turn it off.",
+  "kind": "explain",
+  "en": "„I always turn it off before I sleep.“ — when the object is a pronoun it goes IN BETWEEN: turn it off."
+ },
+ {
+  "tr": "Zaman edatlarını yaz: günde „on“, hafta sonunda „at“, sabahta „in“. Üçü üç ayrı sözcük.",
+  "kind": "intro",
+  "en": "Write the prepositions of time: „on“ with a day, „at“ with the weekend, „in“ with the morning. Three cases, three different words."
+ },
+ {
+  "tr": "„The food I love most is pizza with meat and onion.“ — pirinci kız kardeş tercih ediyor.",
+  "kind": "explain",
+  "en": "„The food I love most is pizza with meat and onion.“ — the rice is what the sister prefers."
+ },
+ {
+  "tr": "„I wake up at six and I get up at a quarter past six.“ — uyanmak ile kalkmak ayrı iki iş.",
+  "kind": "explain",
+  "en": "„I wake up at six and I get up at a quarter past six.“ — waking up and getting up are two different things."
+ },
+ {
+  "tr": "Önce miktar, sonra sipariş, sonra itiraz, en son toplam. Pazarlık hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "en": "First the amount, then the order, then the objection, last the total. Bargaining always runs in this order."
+ },
+ {
+  "tr": "Sevdiğini ve tercih ettiğini yaz. Dikkat: sevmek fiilinden sonra ikinci fiil „-ing“ alıyor.",
+  "kind": "intro",
+  "en": "Write what you like and what you prefer. Careful: after a verb of liking the second verb takes „-ing“."
+ },
+ {
+  "tr": "Geç kalan bir öğrenci. Phrasal verb'lerin hepsi bir arada: come in, sit down, turn on, look for.",
+  "kind": "intro",
+  "en": "A student who is late. All the phrasal verbs at once: come in, sit down, turn on, look for."
+ }
+]
