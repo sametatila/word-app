@@ -10224,3 +10224,24 @@ olay eklenirse kapıya bir satır gerekiyor.
 (`FriendsScreen`, `InboxScreen` → `avatar` alanı henüz tipte yok) ve
 `check:parity` `/api/me` için "mobilde eksik: avatar" diyor. Üçü de başka bir
 oturumun kaydedilmemiş işi; dosyalarına dokunulmadı.
+
+## §11.311 — `value` aralıkları tutuyor; kapı yazılmadı ve sebebi kayıtlı
+
+Olayların `value` alanını ölçtüm: `lib/events` 29 olayın yanında değerin ne
+anlattığını yazıyor (puan 0–100, ağırlık×100, saniye, sayılı durumlar). Düz
+sayı geçen her çağrı yeri belgelenen kümenin içinde — **aykırı tek değer yok.**
+
+İlk tarama üç aykırı gösterdi (`install_prompt` ve `push_optin` için `2`) ve
+**üçü de benim taramamın hatasıydı**: kalıp yalnız `value = 1 ` arıyordu, oysa
+belge üç değerli — "1 verildi / 0 reddedildi / **2 sonra dedi**". Numaralandırma
+tam okunduğunda aykırı kalmadı.
+
+Bu, bu oturumda kendi ölçümümün üçüncü kez fazla dar çıkışı (§11.308 koşullu
+`t()`, §11.309 önek çakışması, bu). Kuralı yazıyorum: **belgeyi bir ÖNEKLE
+sınıflandıran tarama, belge önekten zenginse yanlış sınıflandırır.**
+
+**Kapı bilerek yazılmadı.** Aralıklar serbest biçimli Türkçe cümlelerde
+duruyor ("kalan saniye", "ekran genişliği px", "puanlı adımlarda doğru
+yüzdesi"); bunları yorumlayan bir kapı ya gürültü ya kalıcı yeşil üretir —
+§11.305'te aynı sebeple bir kapı reddedilmişti. Ölçüm yapıldı, sonuç temiz,
+kayıt burada: bir sonraki tur aynı taramayı yeniden yazmasın.
