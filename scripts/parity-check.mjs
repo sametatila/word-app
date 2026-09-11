@@ -228,7 +228,6 @@ console.log("\n" + C.b + "9. TUR TURLERI" + C.off);
    * yeni bir ad eklemek gerekiyorsa o ad için de bir cümle yazılmalı.
    */
   const KNOWN_GAPS = {
-    free_sentence: "AI puanlı yazma turu; mobilde oynatıcısı yok. Haftalık sınav `?skipGames` ile susturuyor, normal oturum yolu §11.13'te açık.",
     speak: "Yalnız yürüyüş modunda üretiliyor ve orada kendi oynatıcısı var; genel dağıtıcıya hiç düşmüyor.",
   };
   const web = [...(read("src/lib/types.ts").match(/export type GameId =(.*?);/s)?.[1] ?? "").matchAll(/"(\w+)"/g)].map((x) => x[1]);
@@ -641,26 +640,15 @@ console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
     Object.keys(IPUCLU).sort().map((g) => `${g}:${ipucu(read(`src/components/games/${g}-game.tsx`))}`),
   );
 
-  /*
-   * Oynanamayan tur turu susturuluyor mu. Sunucu `free_sentence`i karisik
-   * oturuma koyuyor ve mobilde onu cizen bir bilesen yok; istemci ucun
-   * `?skipGames=` suzgecini kullanmiyorsa tur oraya gidiyor (§11.13).
-   */
   const susturma = (src, re) => (re.test(src) ? "susturuluyor" : "SUSTURULMUYOR");
-  sameList(
-    "free_sentence susturmasi",
-    [susturma(read("mobile/src/game/session.ts"), /skipGames=/)],
-    ["susturuluyor"],
-    "mobil oturum cagrisi",
-    "beklenen",
-  );
-  sameList(
-    "free_sentence susturmasi (haftalik)",
-    [susturma(read("mobile/src/game/weekly.ts"), /skipGames=/)],
-    ["susturuluyor"],
-    "mobil haftalik cagrisi",
-    "beklenen",
-  );
+  /* Oynanamayan tur turu susturuluyor mu diye soran iki kapi BURADAYDI ve
+     ikisi de "mobil susturmali" diyordu. Bosluk kapandi: tur artik mobilde de
+     oynaniyor, susturma kalkti ve olcum tersine dondu (§171 "tur susturmasi").
+     Kapiyi guncellemek yerine birakmak, kapanan bir boslugu kurum gibi
+     korumak olurdu. */
+  /* Ucun suzgeci DURUYOR ve durmali: istemci bir turu cizemiyorsa ona
+     soyleyebilmeli. Bugun kullanan yok; yarin yeni bir tur turu geldiginde
+     ilk carkta o kullanilacak. */
   sameList(
     "uc skipGames suzgeci",
     [susturma(read("src/app/api/session/route.ts"), /skipGames/)],
@@ -725,7 +713,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     )]
       .filter((a) => !["id", "game"].includes(a))
       .sort();
-  const webRound = alanlar(seg(web, "export type Round =", "\nexport type Answer = {")).filter((a) => !["partners", "level"].includes(a));
+  /* `partners` ve `level` BURADAN ELENIYORDU: webin `free_sentence` uyesine
+     ait bu iki alani mobil tanimiyordu ve suzgec o boslugu "fazla degil"
+     diye gecistiriyordu. Tur mobile geldi (§171), alanlar da geldi; suzgec
+     kalkti. */
+  const webRound = alanlar(seg(web, "export type Round =", "\nexport type Answer = {"));
   const mobRound = alanlar(seg(mob, "export type Round = {", "\n};"));
   const yok = (l) => (l.length ? l : ["eksik yok"]);
   /*
@@ -1746,13 +1738,21 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      yazili. Tabanlardaki muafiyetin kapisi bu olcum: istem, esikler ve dil
      ayrisirsa ayni cevap bir uygulamada kabul edilir, otekinde edilmez. */
   const ikinciSans = (p) => {
-    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const tam = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    /* YALNIZ CEVIRI TURUNUN GOVDESI. Mobil dosyasi butun turlari tasiyor ve
+       olcum "dosyadaki ilk `prompt:`" diyordu: serbest cumle turu eklenince
+       kapi onun istemini ceviri turunun istemi sandi. Dilim turun kendi
+       fonksiyonundan basliyor; webin dosyasi zaten tek tur. */
+    const bas = tam.indexOf("function TranslateRound");
+    const src = bas < 0 ? tam : tam.slice(bas);
     const istem = (src.match(/prompt:\s*(`[^`]*`)/) ?? [])[1];
+    /* Sayilar DOSYANIN TAMAMINDAN: sabitler modulun tepesinde, turun
+       fonksiyonundan once duruyor - dilim onlari kesiyordu. */
     return [
       "istem=" + (istem ? istem.replace(/\$\{[^}]*\}/g, "${}") : "yok"),
-      "bekleme=" + ((src.match(/ASSESS_WAIT_MS\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
-      "esik=" + ((src.match(/ASSESS_ACCEPT\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
-      "soz=" + ((src.match(/split\(\/\\s\+\/\)\.length\s*>=\s*(\d+)/) ?? [])[1] ?? "yok"),
+      "bekleme=" + ((tam.match(/ASSESS_WAIT_MS\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
+      "esik=" + ((tam.match(/ASSESS_ACCEPT\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
+      "soz=" + ((tam.match(/split\(\/\\s\+\/\)\.length\s*>=\s*(\d+)/) ?? [])[1] ?? "yok"),
     ];
   };
   sameList("ceviri ikinci sansi", ikinciSans("mobile/src/game/rounds.tsx"), ikinciSans("src/components/games/translate-game.tsx"));
@@ -3342,12 +3342,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * yeni bir satir eklemek gerekcesini yazmayi gerektiriyor. */
 {
   const SEBEP = {
-    "rounds.basic_check": "serbest yazma turu - mobilde oynaticisi yok (§11.13)",
-    "rounds.build_sentence": "serbest yazma turu",
-    "rounds.look_again": "serbest yazma turu",
-    "rounds.nice_sentence": "serbest yazma turu",
-    "rounds.score": "serbest yazma turu",
-    "rounds.write_a_sentence_ph": "serbest yazma turu",
+    /* SERBEST YAZMA TURUNUN ALTI ANAHTARI BURADAYDI ("mobilde oynaticisi
+       yok"). Tur mobile geldi (§171) ve altisi da ortak sozluge tasindi:
+       artik ikisi de ayni cumleyi soyluyor. */
     /* Bos yuvanin etiketi: webde yuva bir div ve aria-label gerekiyor;
        mobilde ayni yerde GERCEK metin duruyor ("Harflere dokun") ve ekran
        okuyucu onu zaten okuyor. Geri alma etiketleri (`undo_*`) ortak
@@ -6413,6 +6410,54 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ],
     "mobil",
     "web",
+  );
+}
+
+/* ── 171. serbest cumle turu ──────────────────────────────────────────────
+ * Kelime turunun tek gercek SERBEST URETIM adimi: hedef yok, sik yok, yalniz
+ * kelimeler. Mobilde hic yoktu ve tur sunucudan `skipGames=free_sentence`
+ * ile SUSTURULUYORDU - yani Android kullanicisi o adimi hic gormuyordu,
+ * haftalik sinav da orada sunucunun daha kolay `typing` yedegine dusuyordu
+ * (§11.13).
+ *
+ * Portun uc parcasi var ve ucu birden olculuyor: turun kendisi, kural tabanli
+ * YEDEK puanlama (saglayici kapaliyken web puan verir, mobil vermezse ayni
+ * turda iki farkli urun olur) ve SRS KALITE ESLEMESI. Sonuncusu en sessiz
+ * olani: iki uygulamanin ayni cevaba farkli kalite vermesi, ayni kelimenin
+ * telefonda ve tarayicida farkli zamanda tekrara dusmesi demek. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const mob = strip(read("mobile/src/game/rounds.tsx")).replace(/\s+/g, " ");
+  const web = strip(read("src/components/games/free-sentence-game.tsx")).replace(/\s+/g, " ");
+
+  /* Kalite esigi tablosu: 90/70/40 -> 5/4/3/2. Iki tarafta da AYNI. */
+  const esik = (src) => {
+    const m = src.match(/(\w+) >= 90 \? 5 : \1 >= 70 \? 4 : \1 >= 40 \? 3 : 2/);
+    return m ? "90/70/40" : "baska";
+  };
+  const yedekKalite = (src) => (/quality: correct \? 3 : 2/.test(src) ? "en fazla 3" : "baska");
+  const durum = (src) => [
+    "kalite esikleri=" + esik(src),
+    "dogru esigi=" + (/>= 70/.test(src) ? "70" : "baska"),
+    "yedek kalitesi=" + yedekKalite(src),
+    "yedek puanlama=" + (/fallbackAssessment\(/.test(src) ? "var" : "yok"),
+  ];
+  const beklenen = ["kalite esikleri=90/70/40", "dogru esigi=70", "yedek kalitesi=en fazla 3", "yedek puanlama=var"];
+  sameList("serbest cumle turu", durum(mob), durum(web));
+  sameList("mobil serbest cumle", durum(mob), beklenen, "bulunan", "beklenen");
+  sameList("web serbest cumle", durum(web), beklenen, "bulunan", "beklenen");
+
+  /* Susturma kalkti mi: iki cagri da `skipGames` tasimamali. */
+  const susturma = (yol) => (/skipGames/.test(strip(read(yol))) ? "susturuyor" : "yok");
+  sameList(
+    "tur susturmasi",
+    [
+      "oturum=" + susturma("mobile/src/game/session.ts"),
+      "haftalik=" + susturma("mobile/src/game/weekly.ts"),
+    ],
+    ["oturum=yok", "haftalik=yok"],
+    "bulunan",
+    "beklenen",
   );
 }
 

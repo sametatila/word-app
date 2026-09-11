@@ -22,12 +22,11 @@ export type WeeklyResult = { week: string; score: number; correct: number; total
 
 /** Durum + (yapılmadıysa) sınav turları. */
 export function fetchWeekly(day = todayStr()): Promise<WeeklyPayload> {
-  /* `free_sentence` MOBİLDE ÇİZİLEMİYOR: tur dağıtıcısında karşılığı yok ve
-     öz-değerlendirme kartına düşüyordu - görev söylenmiyor, cevabı yanlış
-     türle kaydediliyordu. Sunucu bu bayrakla kendi `typing` yedeğine düşüyor
-     (sağlayıcı kapalıyken uyguladığı ikamenin aynısı). Oyun eklendiğinde bu
-     parametre kaldırılır. */
-  return api<WeeklyPayload>(`/api/weekly?day=${day}&skipGames=free_sentence`);
+  /* Süzgeç kalktı: `free_sentence` turu artık mobilde de oynanıyor
+     (`game/rounds` `FreeSentenceRound`). Sunucu bu bayrakla kendi `typing`
+     yedeğine düşüyordu, yani haftalık sınav Android'de hep daha kolay bir
+     kâğıtla yapılıyordu. */
+  return api<WeeklyPayload>(`/api/weekly?day=${day}`);
 }
 
 /** Cevapları yazar; hafta içinde ikinci gönderim kaydedilmez (tek hak). */

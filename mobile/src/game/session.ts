@@ -43,6 +43,10 @@ export type Round = {
   game: string;
   word?: RoundWord;
   words?: RoundWord[];
+  /** `free_sentence`: cümlede birlikte kullanılacak 1-2 kelime daha. */
+  partners?: RoundWord[];
+  /** `free_sentence`: rubriğin seviyesi — kelimenin seviyesi. */
+  level?: string;
   /**
    * ŞIKLAR İKİ BİÇİMDE GELİYOR ve tip ikisini de söylemek zorunda.
    *
@@ -210,21 +214,20 @@ export function todayStr(): string {
     `game`: tek-oyun pratiği (web'deki oyun seçici — ör. yalnız "artikel").
     `fresh`: "yeni tura başla" — önce kayıtlı turu atar, sonra yenisini kurar. */
 /**
- * OYNAYAMADIĞIMIZ TUR TÜRLERİ SUNUCUYA SÖYLENİYOR.
+ * SÜZGEÇ KALKTI: artık oynayamadığımız tur türü yok.
  *
- * `free_sentence` (AI hakemli serbest cümle) turunun mobilde oynatıcısı yok:
- * `pickRound` onu tanımıyor ve tur bilinmeyen oyun dalına düşüp kendini
- * anlatmayan bir "cevabı gör" kartı olarak çiziliyordu. Sunucu bu turu sağlam
- * kelimelerde ve AI açıkken karışık oturuma koyuyor, yani gerçekten geliyordu.
- * Haftalık sınav çağrısı aynı süzgeci baştan beri taşıyor (bkz. `game/weekly`).
+ * `free_sentence` (AI hakemli serbest cümle) mobilde HİÇ YOKTU ve bu bayrakla
+ * sunucudan susturuluyordu — yani Android kullanıcısı kelime turunun tek
+ * gerçek serbest üretim adımını hiç görmüyordu (§11.13). Tur artık
+ * `game/rounds` içinde (`FreeSentenceRound`), rubrik ve kural tabanlı yedek
+ * dahil; süzgece gerek kalmadı.
  */
-const SKIP_GAMES = "free_sentence";
 
 export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean; game?: string; fresh?: boolean; skip?: number[] }): Promise<SessionPayload> {
   if (opts?.fresh) { try { await api("/api/session", { method: "DELETE" }); } catch { /* yut */ } }
   // walk devam turları: sorulan kelimeleri hariç tut (sunucu en fazla 200 alır).
   const skip = opts?.skip && opts.skip.length ? `&skip=${opts.skip.slice(-200).join(",")}` : "";
-  const q = `&skipGames=${SKIP_GAMES}${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}${skip}`;
+  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}${skip}`;
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 

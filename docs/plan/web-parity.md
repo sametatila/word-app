@@ -8796,3 +8796,48 @@ yedek puanlama (`fallbackAssessment`) ve SRS kalite eşlemesi. Üçünden birini
 eksik bırakmak yeni bir ayrışma üretir (AI kapalıyken web puan verir, mobil
 vermez), o yüzden yarım başlanmadı. Değerlendirme kartı artık mobilde olduğu
 için portun en büyük parçası hazır.
+
+## §11.267 — Serbest cümle turu Android'e geldi (§11.13 kapandı)
+
+Kelime turunun tek gerçek **serbest üretim** adımı: hedef yok, şık yok, yalnız
+iki-üç kelime ve "bunlarla bir cümle kur". Mobilde hiç yoktu ve tur sunucudan
+`skipGames=free_sentence` ile **susturuluyordu** — yani Android kullanıcısı o
+adımı hiç görmüyordu. Haftalık sınavda da aynı süzgeç vardı, orada sunucu
+kendi `typing` yedeğine düşüyordu: **Android'in haftalık sınavı sistematik
+olarak daha kolay bir kâğıttı.**
+
+Port üç parça istedi ve üçü de yapıldı:
+
+1. **Değerlendirme kartı** (§11.266, önceki tur) — rubrik, hata gerekçeleri,
+   düzeltilmiş cümle.
+2. **Kural tabanlı yedek puanlama** (`lib/assessFallback`). Yapay zekâ
+   kapalıyken web puan verir, mobil vermezse aynı turda iki farklı ürün olur.
+   Doğrulama elle yazılmış "doğru cevap"la değil, **web'in gerçek çıktısıyla**:
+   dört girdi `npx tsx` ile web `fallbackAssessment`ten geçirildi ve sayılar
+   teste gömüldü (`__tests__/assessFallback.test.ts`, yedi test). İki taraf
+   ayrışırsa test düşer.
+3. **Turun kendisi** (`FreeSentenceRound`). SRS kalite eşlemesi web ile
+   birebir: 90/70/40 → 5/4/3/2, yedekte kalite 3'ü aşmaz. Bu eşleme en sessiz
+   parça — iki uygulamanın aynı cevaba farklı kalite vermesi, aynı kelimenin
+   telefonda ve tarayıcıda **farklı zamanda tekrara düşmesi** demek.
+
+Almanca özel harfler (ä ö ü ß) kod noktasından kuruluyor: düz dizgi olarak
+yazılınca çeviri tarayıcısı onları "çevrilmemiş Türkçe metin" sanıyor — ö ve ü
+iki dilde de var — oysa bunlar klavye yardımı, arayüz metni değil.
+
+**Boşluk kapanınca beş kayıt bayatladı ve beşini de var olan kapılar yakaladı:**
+
+- `KNOWN_GAPS` içindeki "mobilde oynatıcısı yok" satırı,
+- iki ayrı "mobil `skipGames` göndermeli" kapısı (ölçüm tersine döndü),
+- tur tipindeki `partners`/`level` alanlarını eleyen süzgeç,
+- web'e özel sayılan altı `rounds.*` anahtarı,
+- ve çeviri turunun "ikinci şans" kapısı: dosyadaki **ilk** `prompt:` dizgisini
+  okuyordu, yeni tur eklenince onun istemini çeviri turunun istemi sandı.
+  Ölçüm artık turun kendi gövdesinden okuyor, sabitler dosyanın tamamından.
+
+Kapanan bir boşluğun kaydını silmek, kapanmayı tamamlamanın parçası: kayıt
+kalsaydı bir sonraki okuyan "mobilde bu tur yok" diye bilirdi.
+
+**§171** turu üç eksende ölçüyor (kalite eşikleri, yedek puanlama, susturmanın
+kalkmış olması) ve iki tarafı da beklenene karşılaştırıyor. Dört enjeksiyonun
+dördü yakalandı.

@@ -21,6 +21,9 @@ import { sfx } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyFor } from "./why";
+import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
+import { assessFailKey } from "../lib/assessFail";
+import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
@@ -533,6 +536,158 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
           artikeli olan bir ismi yazarken çoğulunu bilmek işin parçası. */}
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{grammarLine(word, word.tr)}</Text>
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
+    </RoundShell>
+  );
+}
+
+/**
+ * "Cümle Kur" — verilen 2-3 kelimeyle özgün cümle. Web `free-sentence-game`
+ * karşılığı; mobilde HİÇ YOKTU ve sunucudan gelen tur `skipGames` ile
+ * susturuluyordu (bkz. `game/session` SKIP_GAMES, §11.13).
+ *
+ * Kelime turunun tek gerçek serbest üretimi: hedef yok, şık yok, yalnız
+ * kelimeler. Hakem `/api/assess` rubriği; sağlayıcı yoksa kural tabanlı yedek
+ * (`lib/assessFallback`) ve kartın üstünde "AI kapalı" satırı.
+ *
+ * SRS EŞLEMESİ WEB İLE BİREBİR: overall >= 90 → 5, >= 70 → 4 (doğru),
+ * 40-69 → 3 (yanlış ama lapse yok), < 40 → 2. Yedekte kalite 3'ü aşmaz,
+ * çünkü yedek dilbilgisini ölçemiyor. İki uygulamanın aynı cevaba farklı
+ * kalite vermesi, aynı kelimenin telefonda ve tarayıcıda farklı zamanda
+ * tekrara düşmesi demek olurdu.
+ */
+/* Harfler KOD NOKTASINDAN kuruluyor: düz dizgi olarak yazılınca çeviri
+   tarayıcısı onları "çevrilmemiş Türkçe metin" sanıyor (ö ve ü iki dilde de
+   var) — oysa bunlar Almanca klavye yardımı, arayüz metni değil. */
+const SPECIAL_CHARS = ["\u00e4", "\u00f6", "\u00fc", "\u00df"] as const;
+
+function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
+  const partners = round.partners ?? [];
+  const targets = [word, ...partners];
+  const [value, setValue] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<AssessmentResult | FallbackResult | null>(null);
+  const [failNote, setFailNote] = useState<string | null>(null);
+  const [outcome, setOutcome] = useState<{ correct: boolean; quality: number } | null>(null);
+  const started = useRef(Date.now());
+
+  useEffect(() => {
+    setValue("");
+    setResult(null);
+    setFailNote(null);
+    setOutcome(null);
+    started.current = Date.now();
+  }, [round.id]);
+
+  async function evaluate() {
+    if (busy || result) return;
+    const typed = value.trim();
+    if (!typed) return;
+    setBusy(true);
+    Keyboard.dismiss();
+    const req = {
+      kind: "sentence" as const,
+      level: round.level ?? word.niveau,
+      task: {
+        prompt: `Bu kelimelerle bir cümle kur: ${targets.map((x) => withArtikel(x)).join(", ")}`,
+        targets: targets.map((x) => x.de),
+      },
+      answer: { text: typed },
+    };
+    try {
+      const d = await api<{ result: AssessmentResult }>("/api/assess", {
+        method: "POST",
+        body: JSON.stringify({ ...req, day: todayStr() }),
+      });
+      const overall = d.result?.score?.overall ?? 0;
+      const quality = overall >= 90 ? 5 : overall >= 70 ? 4 : overall >= 40 ? 3 : 2;
+      setResult(d.result);
+      setOutcome({ correct: overall >= 70, quality });
+      markAnswer(overall >= 70);
+    } catch (e) {
+      /* Sebebi SÖYLENİYOR (premium kapısı, kota, kapalı servis, zaman aşımı) ve
+         yanına yedeğin yedek olduğu yazılıyor — web `AssessmentCard` `failure`
+         satırıyla aynı iş. */
+      const fb = fallbackAssessment(req);
+      const targetsOk = fb.checks.filter((c) => c.kind === "target").every((c) => c.ok);
+      const correct = targetsOk && fb.words >= 3;
+      setResult(fb);
+      setFailNote(`${tx(assessFailKey(e))} ${tx("assess.fail_offline")}`);
+      setOutcome({ correct, quality: correct ? 3 : 2 });
+      markAnswer(correct);
+    }
+    setBusy(false);
+  }
+
+  function finish() {
+    if (!outcome || !result) return;
+    const typed = value.trim();
+    const firstError = result.errors?.length ? result.errors[0] : null;
+    onDone(outcome.correct, {
+      quality: outcome.quality,
+      ...miss(outcome.correct, firstError?.type ?? "meaning", firstError?.wrong || typed),
+    });
+  }
+
+  function insert(chunk: string) {
+    if (result) return;
+    setValue((v) => v + chunk);
+  }
+
+  const canCheck = !busy && !result && value.trim().split(/\s+/).filter(Boolean).length >= 2;
+  const footer = result && outcome ? (
+    <PressableScale onPress={finish} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      <Text variant="h3" color={colors.onPrimary}>{tx("common.continue_2")}</Text>
+    </PressableScale>
+  ) : (
+    <View>
+      <TextInput
+        value={value}
+        onChangeText={setValue}
+        editable={!result}
+        multiline
+        autoCapitalize="sentences"
+        autoCorrect={false}
+        placeholder={tx("rounds.write_a_sentence_ph")}
+        placeholderTextColor={colors.textFaint}
+        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 17 }}
+      />
+      {/* Almanca özel harfler: telefon klavyesinde uzun basmak gerekiyor ve
+          bir tur ortasında kimse onu aramıyor. Web de aynı dört harfi
+          düğme olarak veriyor. */}
+      <View style={{ flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.sm }}>
+        {SPECIAL_CHARS.map((ch) => (
+          <PressableScale key={ch} onPress={() => insert(ch)} style={{ minWidth: 44, minHeight: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <Text variant="bodyStrong">{ch}</Text>
+          </PressableScale>
+        ))}
+      </View>
+      <PressableScale disabled={!canCheck} onPress={() => void evaluate()} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: canCheck ? colors.primary : colors.surface2, paddingVertical: 15, alignItems: "center" }, canCheck ? softShadow(colors.primary, 8) : {}]}>
+        <Text variant="h3" color={canCheck ? colors.onPrimary : colors.textFaint}>{tx(busy ? "mockexam.evaluating" : "mockexam.evaluate")}</Text>
+      </PressableScale>
+    </View>
+  );
+
+  return (
+    <RoundShell footer={footer}>
+      <Prompt label={tx("games.free_sentence")} big={tx("rounds.build_sentence")} colors={colors} />
+      {/* Hedef kelimeler: dokununca metne ekleniyor — web de öyle. */}
+      <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginBottom: spacing.md }}>
+        {targets.map((x) => (
+          <PressableScale key={x.id} onPress={() => insert((value && !value.endsWith(" ") ? " " : "") + x.de + " ")} style={{ borderRadius: radii.pill, backgroundColor: colors.surface2, paddingHorizontal: 14, paddingVertical: 9 }}>
+            <Text variant="bodyStrong">{withArtikel(x)}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{x.tr}</Text>
+          </PressableScale>
+        ))}
+      </View>
+      {result && outcome ? (
+        <View style={{ paddingHorizontal: spacing.lg, gap: spacing.sm }}>
+          <Text variant="bodyStrong" color={outcome.correct ? colors.successText : colors.dangerText}>
+            {tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again")} — {tx("rounds.score")} {result.score.overall}
+            {"offline" in result && result.offline ? ` · ${tx("rounds.basic_check")}` : ""}
+          </Text>
+          <AssessmentCard answer={value.trim()} result={result} failNote={failNote} example={firstExample(word.beispiel)} />
+        </View>
+      ) : null}
     </RoundShell>
   );
 }
@@ -1133,6 +1288,7 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
     if (round.game === "scramble") return <ScrambleRound round={round} word={word} onDone={onDone} colors={colors} />;
     if (round.game === "order" && round.tokens?.length && Array.isArray(round.answer) && round.answer.length) return <OrderRound round={round} word={word} onDone={onDone} colors={colors} />;
   }
+  if (round.game === "free_sentence" && word) return <FreeSentenceRound round={round} word={word} onDone={onDone} colors={colors} />;
   if (round.game === "cloze" && optionTexts(round).length) return <ClozeRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "translate" && typeof round.sentence === "object" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "match" && (round.words?.length ?? 0) >= 2) return <MatchRound round={round} onDone={onDone} colors={colors} />;
