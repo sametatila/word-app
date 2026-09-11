@@ -11741,3 +11741,39 @@ denetimi **yorumları da okuyor**, yani anahtarın adını gerekçe yorumunda
 anmak onu "çağrılıyor" sayıyor. Yorum, anahtarı anmadan aynı şeyi
 söyleyecek biçimde yazıldı — yoksa silinmesi gereken anahtar sessizce
 kalırdı.
+
+## §11.350 — Derste mikrofon yolu kapanınca sebebi söylenmiyordu
+
+Android `sttOk === false` olunca ekranı kalıcı olarak **yazma yoluna**
+geçiriyordu ve **hiçbir şey söylemiyordu**: kullanıcı konuş düğmesinin
+kaybolduğunu görüyor, sebebini bilmiyor. Üstüne iki sebep tek duruma
+katlanmıştı — dosyanın kendi yorumu bunu yazıyordu ("mikrofon yok ya da
+izin…") — oysa ikisi ayrı şey söylüyor:
+
+| sebep | kullanıcının yapabileceği |
+|---|---|
+| izin reddedildi | var: "Mikrofon izni gerekiyor. Ayarlardan açabilirsin." |
+| tanıyıcı yok | yok: "Konuşma tanıma yok — yazarak devam et." |
+
+Web ikisini baştan beri ayrı yazıyor. Android'e sebep durumu (`sttSebep`)
+eklendi; `sttAvailable()` düşerse "unavailable", `ensureMicPermission()`
+düşerse "denied" işaretleniyor ve not **iki yüzeyde de** çiziliyor: ders
+adımları ve rol yapma.
+
+"Tanıyıcı yok" metni webde `lessonp.no_asr` diye **yalnız webde** duruyordu;
+`lesson.no_asr` olarak ortak kümeye taşındı (mobile yazılıp `i18n-pull` ile
+çekildi) ve webin kopyası silindi. İzin metni zaten ortaktı
+(`speak.mic_needed`).
+
+### Kapı: sayım değil yüzey
+
+İlk ölçüm `{sttNotu}` **sayısını** sayıyordu ve mobil 3, web 2 çıkıyordu —
+kapı kırmızıydı ama **ayrışma yoktu**: mobilin ders adımları iki ayrı dal
+(tekrarla / kur ve söyle), webin tek bir yeri o ikisini birden kapsıyor.
+Ölçü **yüzeye** çevrildi: not ders adımlarında ve rol yapmada çiziliyor mu.
+
+Sınırın kendisi de bir düzeltme gerektirdi: web tarafını `phase ===
+"roleplay"` ile bölmek ders adımlarını rol yapma tarafına atıyordu, çünkü aynı
+koşul yukarıda iki kez daha geçiyor (bir etkide, bir dinleme çağrısında).
+Sınır artık dalın **çizim** yeri (`phase === "roleplay" ? (`) — yine bir
+düğüm, bir mesafe ya da ilk eşleşme değil.

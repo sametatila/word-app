@@ -7292,6 +7292,72 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 234. DERSTE MIKROFON YOLU KAPANIRSA SEBEBI SOYLENIYOR MU ---------
+   *
+   * Android `sttOk === false` olunca ekrani kalici olarak YAZMA yoluna
+   * geciriyordu ve HICBIR SEY soylemiyordu: kullanici konus dugmesinin
+   * kayboldugunu goruyor, sebebini bilmiyor. Uzerine iki sebep tek duruma
+   * katlanmisti - dosyanin kendi yorumu bunu yaziyordu ("mikrofon yok ya da
+   * izin...") - oysa ikisi AYRI sey soyluyor:
+   *
+   *   izin reddedildi  -> yapilacak bir sey var: "Ayarlardan acabilirsin"
+   *   taniyici yok     -> yapilacak bir sey yok: yazarak devam
+   *
+   * Web ikisini bastan beri ayri yaziyor (`lessonp.mic_denied` ve kisa
+   * "taniyici yok" notu). Android'e sebep durumu (`sttSebep`) eklendi ve not
+   * iki denetim bileseninde de ciziliyor.
+   *
+   * "Taniyici yok" metni webde `lessonp.no_asr` diye YALNIZ webde duruyordu;
+   * `lesson.no_asr` olarak ortak kumeye tasindi (mobile yazilip cekildi) ve
+   * webin kopyasi silindi. Izin metni zaten ortakti (`speak.mic_needed`). */
+  {
+    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    const MOB_SOZLUK = ["mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"];
+    sameList(
+      "derste mikrofon yolunun kapanma sebebi",
+      [
+        "sebep ayirt ediliyor=" + (/sttSebep, setSttSebep\] = useState<"denied" \| "unavailable" \| null>/.test(dm) ? "iki sebep" : "TEK"),
+        "izin reddi isaretleniyor=" + (/setSttSebep\("denied"\)/.test(dm) ? "evet" : "HAYIR"),
+        "taniyici yok isaretleniyor=" + (/setSttSebep\("unavailable"\)/.test(dm) ? "evet" : "HAYIR"),
+        "izin metni=" + (/speak\.mic_needed/.test(dm) ? "ortak" : "YOK"),
+        "taniyici metni=" + (/lesson\.no_asr/.test(dm) ? "ortak" : "YOK"),
+        /* SAYIM DEGIL YUZEY. Ilk yazim `{sttNotu}` sayisini sayiyordu ve
+           mobil 3, web 2 cikiyordu - oysa ayrim SAYIDA degil YAPIDA: mobilin
+           ders adimlari iki ayri dal (tekrarla / kur ve soyle), webin tek bir
+           yeri o ikisini birden kapsiyor. Olculen sey, notun IKI YUZEYDE de
+           cizilmesi: ders adimlari ve rol yapma. */
+        "ders adimlarinda=" + (dm.slice(dm.indexOf("function LectureControls"), dm.indexOf("function RoleplayControls")).includes("{sttNotu}") ? "var" : "YOK"),
+        "rol yapmada=" + (dm.slice(dm.indexOf("function RoleplayControls")).includes("{sttNotu}") ? "var" : "YOK"),
+      ],
+      [
+        "sebep ayirt ediliyor=" + (/lessonp\.mic_denied/.test(dw) && /lesson\.no_asr/.test(dw) ? "iki sebep" : "TEK"),
+        "izin reddi isaretleniyor=" + (/setError\(t\("lessonp\.mic_denied"\)\)/.test(dw) ? "evet" : "HAYIR"),
+        "taniyici yok isaretleniyor=" + (/!asrAvailable/.test(dw) ? "evet" : "HAYIR"),
+        "izin metni=" + (/lessonp\.mic_denied/.test(dw) ? "ortak" : "YOK"),
+        "taniyici metni=" + (/lesson\.no_asr/.test(dw) ? "ortak" : "YOK"),
+        /* Sinir, rol yapma dalinin CIZIM yeri (`? (`) - ayni kosul yukarida
+           iki kez daha geciyor (etki ve dinleme) ve ilk gecise gore bolmek
+           ders adimlarini rol yapma tarafina atiyordu. */
+        "ders adimlarinda=" + (dw.slice(0, dw.indexOf('phase === "roleplay" ? (')).includes('t("lesson.no_asr")') ? "var" : "YOK"),
+        "rol yapmada=" + (dw.slice(dw.indexOf('phase === "roleplay" ? (')).includes('t("lesson.no_asr")') ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "taniyici yok metni ortak kumede",
+      [
+        "webde kalan lessonp.no_asr=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.no_asr":') ? 1 : 0), 0),
+        "mobil sozlukte lesson.no_asr=" + MOB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lesson.no_asr"') ? 1 : 0), 0),
+      ],
+      ["webde kalan lessonp.no_asr=0", "mobil sozlukte lesson.no_asr=3"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 233. DERS KAPANISI: kutlamanin olcutu ve bilinmeyen hukum ---------
    *
    * Uc ayrisma cikti ve ikisi ayni koke bagli - web ozeti SUNUCUNUN HUKMUNE
