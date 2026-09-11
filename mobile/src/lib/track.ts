@@ -35,6 +35,19 @@ export type EventName =
      6 elle duraklatıldı / çıkıldı. 4 (mikrofona ulaşılamadı) ve 5 (ekran
      kapandı, kayıt yolu yok) webin tarayıcı yollarına özgü. */
   | "walk_end"
+  /* Yürüyüş turunun ARASI — web `lib/events` ile aynı iki ad ve aynı dilbilgisi.
+     `walk_listen` kind "kaynak:sonuç" (native|azure|stt : ok|silence|cut|manual|
+     premium), value gönderilen saniye × 10 (ücretsiz native yolda 0);
+     `walk_switch` value 1 cebe alındı / 0 ekrana dönüldü, kind armed|visible|
+     arm-failed. Android'de turun yalnız BAŞI ve SONU yazılıyordu: hangi
+     kaynağın kaç kez boş döndüğü ve Azure'un kaç saniye ses aldığı — yani
+     faturayı yazan şey — yalnız webden görülüyordu. */
+  | "walk_listen"
+  | "walk_switch"
+  /* Hayatta kalma turuna GİRİLDİ — web `session-player` ile aynı ad. Mod
+     mobilde vardı ama tur özetinden girilemiyordu; şimdi iki kapı da var ve
+     ikisi de sayılıyor. */
+  | "challenge_play"
   /* Hangi ayar değişti (web `lib/events` ile aynı kind tablosu):
      name · daily_goal · new_per_day · level · course · voice · theme · lang ·
      remind_daily · remind_streak · remind_weekly. Sayısal ayarlarda value yeni

@@ -34,6 +34,10 @@ import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
+/* Azure'a gönderilen kayıt penceresi. Sabit yazılıydı ve iki yerde ayrı ayrı
+   duruyordu; ölçüm (`walk_listen` değeri = gönderilen saniye) buna baktığı için
+   tek ada bağlandı — pencere değişirse ölçü kendiliğinden onunla değişir. */
+const AZURE_WINDOW_MS = 3000;
 
 type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied" | "error";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
@@ -238,6 +242,11 @@ export function WalkModeScreen() {
   useEffect(() => {
     const unsub = onScreenState((off) => {
       screenOffRef.current = off;
+      /* CEBE GEÇİŞ ÖLÇÜLÜYOR — webin `walk_switch`iyle aynı sözlük: 1 = cebe
+         alındı ("armed"), 0 = ekrana dönüldü ("visible"). Web bu geçişi baştan
+         sayıyordu, Android saymıyordu: turun kaçının cepte geçtiği, yani Azure
+         faturasını hangi kipin yazdığı yalnız webden görülüyordu. */
+      track("walk_switch", off ? 1 : 0, off ? "armed" : "visible");
       setSfxScreenOff(off); // köprü susar → SFX native ton sentezi
       // Kesinti native dinleme SIRASINDA geldiyse tanıyıcı ölür: 8 sn zaman aşımını bekleme,
       // hemen kes ve kelimeyi bir kez daha sor (bkz. judgeSpeak).
@@ -263,6 +272,7 @@ export function WalkModeScreen() {
         // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
         // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
         sfx("premium");
+        track("walk_listen", 0, "stt:premium"); // web `walk-player` ile aynı ad
         notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
         void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
       }
@@ -341,6 +351,16 @@ export function WalkModeScreen() {
     // Kaynak: ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama arka planda —
     // yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
     const useAzure = screenOffRef.current;
+    /* DİNLEMENİN SONUCU ÖLÇÜLÜYOR — web `walk-player` ile aynı biçim:
+       `kaynak:sonuç`, value = gönderilen saniye × 10 (ücretsiz native yolda
+       sunucuya bir şey gitmiyor, 0). Android'de tek ölçülen şey turun başı ve
+       sonuydu; ARADA tanıyıcının ne yaptığı hiç yazılmıyordu — hangi kaynağın
+       kaç kez boş döndüğü, kesintinin ne sıklıkta turu böldüğü ve Azure'un
+       kaç saniye ses aldığı yalnız webden görülebiliyordu. */
+    const noteHeard = (kaynak: "native" | "azure", r: { k: "v"; heard: string[] } | { k: "m" }, saniye = 0) => {
+      const sonuc = r.k === "m" ? "manual" : r.heard.length ? "ok" : listenCut.current ? "cut" : "silence";
+      track("walk_listen", Math.round(saniye * 10), `${kaynak}:${sonuc}`);
+    };
     let res: { k: "v"; heard: string[] } | { k: "m" };
     if (useAzure && pocketGateClosed()) {
       // Kapı kapalıysa Azure'u HİÇ ÇAĞIRMIYORUZ: her deneme 3 saniyelik kayıt,
@@ -353,11 +373,13 @@ export function WalkModeScreen() {
       // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
       sfx("micon");
       res = await Promise.race([
-        azureListenOnce(withArtikel(w), 3000, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+        azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
         waitManual().then(() => ({ k: "m" as const })),
       ]);
+      noteHeard("azure", res, AZURE_WINDOW_MS / 1000);
     } else {
       res = await listenNative();
+      noteHeard("native", res);
       // Boş sonuç iki ayrı şey olabilir: kullanıcı susmuştur, ya da dinlemeyi biz kesmişizdir
       // (araya kesinti girdi, tanıyıcı öldü). İkincisini "duyamadım" saymak haksız — üç
       // duyamadım turu bitiriyor. Kelimeyi bir kez daha sor: hâlâ arka plandaysak Azure ile,
@@ -368,8 +390,9 @@ export function WalkModeScreen() {
       if (res.k === "v" && res.heard.length === 0 && (listenCut.current || screenOffRef.current) && alive()) {
         await sayNative(w.tr);
         res = screenOffRef.current
-          ? { k: "v" as const, heard: (await azureListenOnce(withArtikel(w), 3000, () => sfx("micoff"))) ?? [] }
+          ? { k: "v" as const, heard: (await azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff"))) ?? [] }
           : await listenNative();
+        noteHeard(screenOffRef.current ? "azure" : "native", res, screenOffRef.current ? AZURE_WINDOW_MS / 1000 : 0);
       }
     }
     manualResolve.current = null;
@@ -614,7 +637,7 @@ export function WalkModeScreen() {
    * dinlemeye devam etmek. Sessiz kalmak, kullanıcının telefonu cebine koyup turun
    * neden bittiğini anlamaması demekti.
    */
-  useEffect(() => onWalkServiceFailed(() => setBgUnavailable(true)), []);
+  useEffect(() => onWalkServiceFailed(() => { track("walk_switch", 1, "arm-failed"); setBgUnavailable(true); }), []);
   // Tur sürerken çıkış onaylı (donanım geri + X): mikrofon açık ve tur yarım.
   const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "stopped";
   const back = useBackConfirm(inSession);

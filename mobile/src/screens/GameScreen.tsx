@@ -578,6 +578,19 @@ export function GameScreen() {
               <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
             </PressableScale>
           )}
+          {/*
+            HAYATTA KALMA TURU — web özetin düğme grubunda aynı yerde duruyor
+            (devam · hayatta kalma · bitir). Mobilde mod vardı ama YALNIZ
+            Öğren sekmesindeki satırdan giriliyordu: kullanıcının en ısındığı
+            an (tur az önce bitti, XP ekranda) boş geçiyordu. `challenge_play`
+            de webin kendi adı — hangi kapıdan girildiği ölçülüyor.
+          */}
+          <PressableScale
+            onPress={() => { track("challenge_play"); nav.navigate("Challenge"); }}
+            style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}
+          >
+            <FlameIcon color={colors.dangerText} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("challenge.title")}</Text>
+          </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.finish")}</Text></PressableScale>
         </View>
       </View>

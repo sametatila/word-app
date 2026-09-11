@@ -1972,17 +1972,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      hangi ekran acildi, ne kadar kalindi, hangi hata yakalanmadi. Mobil
      bunlari yazmayinca panodaki ekran tablosu yalniz web kullanicilarini
      gosteriyordu, yani veri yanliydi (bkz. §11.178). */
+  /* UCU DAHA DUSTU (challenge_play, walk_listen, walk_switch): ikisi
+     "tarayici mikrofon yolu tanilamasi" diye yazilmisti ama olculen sey
+     tarayiciya ait degildi - dinleme kac kez bos dondu, tur kac kez cebe
+     gecti. Androidde de ikisi de oluyordu ve hicbiri yazilmiyordu, yani
+     Azure faturasini yazan kip yalniz web kullanicilarindan gorulebiliyordu
+     (bkz. §11.212). `challenge_play`in gerekcesi ise artik dogru degildi:
+     hayatta kalma modu mobile geldi (§11.199) ve tur ozetinden girisi de
+     eklendi. */
   const WEB_OZEL = [
-    "challenge_play", //        sure-kazanma modu mobilde yok
-    "feedback_why_opened", //   mobil "neden"i her zaman gosteriyor, acma eylemi yok
+    "feedback_why_opened", //   kural bagi (`why.href`) IKI TARAFTA da hep null; asagida denetleniyor
     "install_prompt", //        PWA kurulum onerisi
     "invite_open", //           tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
-    "push_optin", //            tarayici bildirim istemi
-    "walk_capture", //          tarayici mikrofon yolu tanilamasi
-    "walk_listen", //           tarayici mikrofon yolu tanilamasi
-    "walk_switch", //           tarayici mikrofon yolu tanilamasi
+    "push_optin", //            tarayici bildirim istemi (mobil karsiligi `notif_prime`)
+    "walk_capture", //          tarayicinin getUserMedia kisiti; native kaydedicide karsiligi yok
   ];
+  /* `feedback_why_opened` MUAF cunku webde de HIC yazilmiyor: olay kural
+     bagina dokunuldugunda yaziliyor, bag ise iki tarafta da her zaman null
+     (`lib/why` ve `game/why`: `const href = null`). Gerekce once "mobil
+     neden'i her zaman gosteriyor" diye yaziliydi ve bu yanlisti - fark
+     gosterme degil, olmayan bir bag. Bag gercek bir adres uretmeye baslarsa
+     olay mobilde de gerekli olur ve bu satir duser. */
+  const bagVar = ["src/lib/why.ts", "mobile/src/game/why.ts"].some((f) => {
+    const src = strip(read(f));
+    /* `href` yalnizca `const href = null` uzerinden geliyor mu: baska bir
+       deger atanirsa (`href: "/grammar/..."`) bag gercek olmus demektir. */
+    return !/const href = null;/.test(src) || /\bhref\s*[:=]\s*[`"']/.test(src);
+  });
+  if (bagVar) WEB_OZEL.splice(WEB_OZEL.indexOf("feedback_why_opened"), 1);
   const eksik = [...web].filter((n) => !mob.has(n) && !sunucu.has(n)).sort();
   sameSet("olcum paritesi (yalniz web istemcisinde)", eksik, WEB_OZEL, "bulunan", "kayitli");
 }
@@ -4069,6 +4087,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const MUAF = cagiran.length === 2 ? ["weekly_exam"] : [];
   const olculmeyen = gecerli.filter((g) => !mob.includes(g) && !MUAF.includes(g));
   sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
+}
+
+/* ── 121. yuruyus turunun ARASI olculuyor mu ──────────────────────────────
+ * Android turun BASINI (`walk_start`) ve SONUNU (`walk_end`) yaziyordu, arasini
+ * hic yazmiyordu. Web ise her dinlemeyi (`walk_listen`) ve cebe her gecisi
+ * (`walk_switch`) sayiyordu - yani "hangi kaynak kac kez bos donuyor",
+ * "kesinti turu ne siklikta boluyor" ve "Azure kac saniye ses aliyor"
+ * sorulari YALNIZ web kullanicilari icin cevaplanabiliyordu. Uygulamanin en
+ * pahali ozelliginin faturasini yazan sey tam olarak bu.
+ *
+ * Olculen: yuruyus olay adlari iki tarafta ayni mi ve `walk_listen` /
+ * `walk_switch` ayni dilbilgisiyle mi yaziliyor. */
+{
+  const yuruyus = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+    const adlar = [...new Set([...src.matchAll(/track\("(walk_\w+)"/g)].map((m) => m[1]))];
+    /* `kaynak:sonuc` bicimi: iki tarafta kaynak adlari farkli (tarayici/sunucu
+       - native/azure) ama BICIM ayni olmali, yoksa panoda iki ayri sutun
+       gerekir ve karsilastirma yapilamaz. */
+    /* HER cagri "kaynak:sonuc" tasimali. Once "en az biri" diye olculuyordu ve
+       enjeksiyon bunu YAKALAMADI: duzlestirilen cagrinin yanindaki sabit
+       ("stt:premium") kurali tek basina saglıyordu - olcunun komsusunu olcmenin
+       bir ornegi daha. */
+    const kindler = [...src.matchAll(/track\("walk_listen",\s*[^,]+,\s*([^)]+)\)/g)].map((m) => m[1]);
+    const bicim = kindler.length && kindler.every((k) => k.includes(":")) ? "kaynak:sonuc" : "duz";
+    /* Gecisin KIND'i degil DEGERI karsilastiriliyor: tarayicinin gecis
+       sebepleri (dark · hidden · dark-exit) ile Androidinkiler (ekran durumu,
+       servis) gercekten farkli ve olmalari da gerekiyor. Ortak olan dilbilgisi:
+       1 = cebe alindi, 0 = ekrana donuldu. Deger kaymasi panoyu sessizce
+       tersine cevirirdi. */
+    const gecis = [...new Set([...src.matchAll(/track\("walk_switch", ([^,]+),/g)].flatMap((m) => m[1].match(/\d/g) ?? []))].sort();
+    return [...adlar.sort(), "bicim=" + bicim, "gecis degerleri=" + gecis.join("/")];
+  };
+  /* MUAF: `walk_capture` tarayicinin getUserMedia kisitini (echoCancellation)
+     yaziyor - native kaydedicide boyle bir dugme YOK, karsiligi olmayan bir
+     olay. Muafiyet kendini denetliyor: web o cagriyi `micSettings` disinda bir
+     seyden besler hâle gelirse gerekce duser. */
+  const webSrc = read("src/components/walk-player.tsx");
+  const MUAF = /track\("walk_capture", micSettings\(\)/.test(webSrc) ? ["walk_capture"] : [];
+  const web = yuruyus(["src/components/walk-player.tsx"]).filter((x) => !MUAF.includes(x));
+  const mob = yuruyus(["mobile/src/screens/WalkModeScreen.tsx"]);
+  sameList("yuruyus turu olcumu", mob, web);
 }
 
 console.log(

@@ -7240,3 +7240,55 @@ biri susmuş mu.** Dördüncüsü turun içinde kendini kanıtladı: bir enjeksi
 denemesinden sonra `RoleplayExamScreen`in yayını geri alınmıştı ve ilk üç
 kontrol de yeşil kalmıştı — aynı türü başka bir ekran hâlâ gönderiyordu.
 Beş enjeksiyonun beşi de yakalandı.
+
+### 11.212 Turun başı ve sonu yazılıyordu, arası yazılmıyordu
+
+§11.211'in ardından aynı soruyu ters yönden sordum: **web istemcisinin yazıp
+Android'in yazmadığı olaylar.** §44 bunu zaten ölçüyordu ve dokuz adlık bir
+muafiyet listesi tutuyordu — üçünün gerekçesi artık doğru değildi.
+
+| olay | yazılı gerekçe | gerçek |
+|---|---|---|
+| `walk_listen` | "tarayıcı mikrofon yolu tanılaması" | ölçülen şey tarayıcıya ait değil: dinleme kaç kez boş döndü, kaynak neydi, Azure kaç saniye ses aldı |
+| `walk_switch` | aynı | cebe geçiş Android'de de oluyor, hiç sayılmıyordu |
+| `challenge_play` | "süre-kazanma modu mobilde yok" | mod §11.199'da mobile geldi |
+
+Yani uygulamanın **en pahalı özelliğinin faturasını yazan şey** yalnız web
+kullanıcılarından görülebiliyordu: Android'de `walk_start` ve `walk_end`
+vardı, arada geçen hiçbir şey yoktu.
+
+Eklenenler, webin kendi dilbilgisiyle:
+
+- `walk_listen` — kind `kaynak:sonuç` (`native|azure|stt` : `ok|silence|cut|
+  manual|premium`), value gönderilen saniye × 10. Ücretsiz native yolda 0:
+  sunucuya bir şey gitmiyor. Azure penceresi iki yerde ayrı ayrı sabit
+  yazılıydı, tek ada bağlandı (`AZURE_WINDOW_MS`) — ölçü ona bakıyor.
+- `walk_switch` — 1 cebe alındı / 0 ekrana dönüldü; servis kurulamazsa
+  `arm-failed`. Geçiş SEBEPLERİ iki tarafta farklı ve olmalı da (tarayıcının
+  `dark`/`hidden`'ı ile ekran durumu aynı şey değil); ortak olan **değer
+  dilbilgisi** ve §121 onu ölçüyor.
+- `challenge_play` — hayatta kalma turuna tur özetinden giriş. Mobilde mod
+  vardı ama yalnız Öğren sekmesindeki satırdan giriliyordu: kullanıcının en
+  ısındığı an (tur bitti, XP ekranda) boş geçiyordu. Web özetin düğme
+  grubunda bu kapıyı baştan beri tutuyordu; mobil özete de aynı yere kondu.
+
+İki yan düzeltme:
+
+- Web `walk_listen`in bir kind'ı tek parçalıydı (`"deadline"`) ve panoda
+  kaynaksız kalıyordu; `record:failed` ile aynı kurala getirildi
+  (`hear:deadline`).
+- `feedback_why_opened`in gerekçesi ("mobil neden'i her zaman gösteriyor")
+  **yanlıştı**: olay kural BAĞINA dokunulunca yazılıyor, bağ ise iki tarafta
+  da her zaman `null` — yani webde de hiç yazılmıyor. Gerekçe düzeltildi ve
+  muafiyet kendini denetliyor: iki `why` dosyasından biri gerçek bir adres
+  üretmeye başlarsa satır düşer (iki enjeksiyonun ikisi de yakalandı).
+
+**§121** yürüyüş olay adlarını, `walk_listen`in `kaynak:sonuç` biçimini ve
+`walk_switch`in değer dilbilgisini ölçüyor; `walk_capture` muaf (tarayıcının
+`getUserMedia` kısıtı, native kaydedicide karşılığı yok) ve muafiyet o
+çağrının `micSettings`ten beslendiğine bağlı.
+
+Biçim kontrolü ilk yazılışında **"en az bir çağrıda `kaynak:sonuç` var mı"**
+diye soruyordu ve enjeksiyonu yakalamadı: düzleştirilen çağrının yanındaki
+sabit (`"stt:premium"`) kuralı tek başına sağlıyordu. Ölçünün komşusunu
+ölçmenin sekizinci örneği — şimdi **her** çağrı sınanıyor.

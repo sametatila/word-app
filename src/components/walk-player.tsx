@@ -875,7 +875,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       walkCue("micoff");
       if (heard === null) {
         ctl.abort();
-        track("walk_listen", 0, "deadline");
+        /* Kind'ın biçimi ötekilerle aynı olmalı: `walk_listen` panosu adı
+           iki parçaya ayırıyor (`kaynak:sonuç`) ve tek parçalı bir ad orada
+           kaynaksız kalıyordu. Bekçi hangi kaynağın takıldığını bilmiyor,
+           aşama adı veriliyor — `record:failed` ile aynı kural. */
+        track("walk_listen", 0, "hear:deadline");
         return [];
       }
       return heard;
