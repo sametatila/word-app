@@ -7275,6 +7275,43 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 222. sosyal eylemin hatasi duyuruluyor mu ──────────────────────
+   * Istek kabul etmek, durtmek, tepki vermek, ortak gorev kurmak: hepsi
+   * basarisiz olabilir ve hepsi ayni satiri ciziyor. O satir IKI PLATFORMDA
+   * DA sessizdi - webde on bir yerde elle yazilmis kirmizi metin (`role`
+   * yok), mobilde `social/common` `ErrorText` (`accessibilityLiveRegion`
+   * yok). Yani sesli okuyucu kullanan biri eyleminin basarisiz oldugunu
+   * hic ogrenmiyordu.
+   *
+   * IKI TARAF DA YANLIS OLDUGU ICIN karsilastirmali bir kapi bunu goremezdi
+   * (11.228'in sinifi: "her iki taraf da ayni yanlisi yapiyorsa esitlik
+   * kontrolu gecer"). Olcut mutlak: bir eylem basarisiz olduysa duyurulur.
+   *
+   * Kapi ayrica webde ELLE YAZILMIS hata satiri kalmadigini okuyor - on bir
+   * yuvayi tek bilesende toplamanin en kolay yanlisi birini atlamak. */
+  {
+    const webHata = sil(read("src/components/social/error-text.tsx"));
+    const mobHata = sil(read("mobile/src/social/common.tsx"));
+    /* Sosyal bilesenlerde `{err}` ciziminin elle yazilmis hali kaldi mi. */
+    const elle = [];
+    for (const e of readdirSync(new URL("../src/components/social", import.meta.url), { withFileTypes: true })) {
+      if (!/\.tsx$/.test(e.name) || e.name === "error-text.tsx") continue;
+      const src = sil(read("src/components/social/" + e.name));
+      if (/\{err\}<\/(?:p|span)>/.test(src)) elle.push(e.name);
+    }
+    sameList(
+      "sosyal eylemin hatasi duyuruluyor",
+      [
+        "web ortak bilesen=" + (/role="alert"/.test(webHata) ? "duyuruyor" : "SESSIZ"),
+        "web elle yazilmis kalan=" + (elle.length ? elle.join(", ") : "yok"),
+        "mobil ortak bilesen=" + (/accessibilityLiveRegion="polite"[\s\S]{0,120}dangerText/.test(mobHata) ? "duyuruyor" : "SESSIZ"),
+      ],
+      ["web ortak bilesen=duyuruyor", "web elle yazilmis kalan=yok", "mobil ortak bilesen=duyuruyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 221. rota yedekleri kendini DUYURUYOR mu ───────────────────────
    * On dort `loading.tsx` dosyasi da gelecek duzenin seklini dogru ciziyordu
    * (11.334'te sosyal merkezde eksik olan buydu ve duzeltildi) - ama
