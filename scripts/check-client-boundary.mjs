@@ -66,6 +66,7 @@ function resolve(from, spec) {
 }
 
 const files = walk("src");
+const isServerOnly = (f) => /import\s+["']server-only["']/.test(read(f));
 const ENTRY = /^src\/app\/.*\/(page|layout|route|template|error|loading|not-found)\.tsx?$/;
 const entries = files.filter((f) => ENTRY.test(f) && !isClient(f));
 
@@ -99,6 +100,53 @@ function scan(file, entry, depth) {
 
 for (const e of entries) scan(e, e, 0);
 
+/**
+ * İKİNCİ SINIR: istemciden görünen gizli env.
+ *
+ * `"use client"` taşıyan bir modül (ya da ondan ulaşılan herhangi bir modül)
+ * `process.env.GIZLI` okursa, değer derleme sırasında paketin İÇİNE gömülür
+ * ve her ziyaretçiye gider. `NEXT_PUBLIC_` öneki tam da "bu değer herkese
+ * açık" demek; öneksiz olan her ad bir sırdır.
+ *
+ * Bunu NE KORUYOR: yalnız `server-only` işareti, o da modül işaretliyse.
+ * İşaretsiz bir yardımcıya sızan tek bir okuma sessizce yayına çıkar —
+ * derleme geçer, tip geçer, lint geçer. Bugün temiz; kapı temiz KALMASI için.
+ */
+const clientEntries = files.filter(isClient);
+const leaks = new Set();
+const leakSeen = new Set();
+
+function scanEnv(file, entry, depth) {
+  if (depth > 6 || leakSeen.has(entry + "|" + file)) return;
+  leakSeen.add(entry + "|" + file);
+  const src = read(file);
+  for (const m of src.matchAll(/process\.env\.([A-Z][A-Z0-9_]*)/g)) {
+    /* `NODE_ENV` istisna: Next onu zaten herkese açık sayıyor ve değeri sır
+       değil ("production"/"development"). */
+    if (m[1].startsWith("NEXT_PUBLIC_") || m[1] === "NODE_ENV") continue;
+    leaks.add(`${entry}\n      ${file}: process.env.${m[1]}`);
+  }
+  for (const m of src.matchAll(/import\s*(?:\{[^}]*\}|[\w*]+)?\s*from\s*["']([^"']+)["']/g)) {
+    const target = resolve(file, m[1]);
+    /* `server-only` modülüne dalmıyoruz: oraya bir istemci dalından gelinmesi
+       zaten Next'in derleme hatası ve bu kapının işi değil. */
+    if (!target || isServerOnly(target) || !target.startsWith("src/")) continue;
+    scanEnv(target, entry, depth + 1);
+  }
+}
+
+for (const e of clientEntries) scanEnv(e, e, 0);
+
+if (leaks.size) {
+  console.error("\nİSTEMCİDEN GİZLİ ENV OKUNUYOR:\n");
+  for (const l of leaks) console.error("  " + l + "\n");
+  console.error(
+    "Bu değer derleme sırasında pakete gömülür ve her ziyaretçiye gider.\n" +
+    "Okumayı sunucu tarafına taşıyın; istemciye yalnız sonucu geçirin.\n",
+  );
+  process.exit(1);
+}
+
 if (found.size) {
   console.error("\nSUNUCUDAN İSTEMCİ İŞLEVİ ÇAĞRILIYOR:\n");
   for (const f of found) console.error("  " + f + "\n");
@@ -109,4 +157,6 @@ if (found.size) {
   process.exit(1);
 }
 
-console.log(`check:client-boundary — ${entries.length} sunucu giriş noktası, sınır ihlali yok`);
+console.log(
+  `check:client-boundary — ${entries.length} sunucu girişi, ${clientEntries.length} istemci girişi: sınır ihlali yok`,
+);
