@@ -7226,6 +7226,43 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 203. gunun turu siralamasinda madalya ───────────────────────────
+   * Mobil ilk uce dolu daire + beyaz rakam veriyor ve rengi ORTAK kademe
+   * olceginden (`TIER_COLOR`) okuyor; webde madalya HIC yoktu, ilk uc
+   * dorduncuden ayirt edilemiyordu.
+   *
+   * Bu, defterde ikinci kez ayni yonde cikan bir fark: mobil tarafta
+   * duzeltilmis (orada yorumda "ayni cakisma rozet ekraninda duzeltilmisti
+   * ama burasi gozden kacmisti" yaziyor) ama webe hic ulasmamis. Renk
+   * secimi de rastgele degil, mobil tarafta OLCULMUS: madalya rengini yaziya
+   * vermek acik temada okunmuyor (altin 2.88, gumus 2.56, bronz 3.09; esik
+   * 4.5), dolu zemin + beyaz icerik ucunde de esigi geciyor.
+   *
+   * Kapi ucunu de mutlak olcutle tutuyor: iki tarafta da kural var mi, ikisi
+   * de ortak olcekten mi okuyor, ve kural AYNI mi (ilk uc, sonrasi yok). */
+  {
+    const webGun = sil(read("src/components/daily-player.tsx"));
+    const mobGun = sil(read("mobile/src/screens/DailyScreen.tsx"));
+    const kural = (src) => {
+      const i = src.indexOf("function medalColor");
+      return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ").trim();
+    };
+    const beklenen = "function medalColor(rank: number): string | null { return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;";
+    sameList(
+      "siralama madalyasi",
+      [
+        "web kural=" + (kural(webGun) === beklenen ? "ayni" : kural(webGun) ? "FARKLI" : "YOK"),
+        "mobil kural=" + (kural(mobGun) === beklenen ? "ayni" : kural(mobGun) ? "FARKLI" : "YOK"),
+        /* Dolu zemin + beyaz icerik: rengi yaziya vermek okunmuyor. */
+        "web dolu zemin=" + (/rounded-full[^"]*text-white/.test(webGun) ? "var" : "YOK"),
+        "mobil dolu zemin=" + (/borderRadius: 13[\s\S]{0,120}backgroundColor: mc/.test(mobGun) ? "var" : "YOK"),
+      ],
+      ["web kural=ayni", "mobil kural=ayni", "web dolu zemin=var", "mobil dolu zemin=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 202. tohumlu mu, rastgele mi ────────────────────────────────────
    * §201'den cikan soru: KALAN secimler hangi tarafta tohumlu, hangi tarafta
    * rastgele? Tarama uc sonuc verdi.

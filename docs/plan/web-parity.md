@@ -9789,3 +9789,37 @@ gövdesinde harf/sayı katlaması arıyordu; `foldTight` tabana delege edince ik
 satır birden "YOK" dedi — **kapı doğru şeyi ölçüyordu ama yanlış yerde.**
 Ölçüm tabana taşındı, üstüne "boşluksuz katlama tabandan mı besleniyor"
 satırı eklendi. Dört enjeksiyonun dördü yakalanıyor.
+
+## §11.298 — Günün turu sıralamasında madalya webde hiç yoktu
+
+Mobilde yapılıp webe ulaşmamış düzeltmeleri aradım: mobil yorumlarındaki
+"sabit yazılıydı", "koşulsuz", "ayrışmıştı" izlerini taradım.
+
+**Bir yanlış alarmı ölçerek eledim.** `lib/dialogue` `normalizeSpoken`i
+`lang` vermeden çağırıyor, yani niyet eşleştirmesi hep Almanca sayı katlaması
+yapıyor — ilk bakışta İngilizce kursta bir kayıp gibi duruyor. Veriyi saydım:
+**577 diyalog kökünün 58'i sayı içeriyor ve hepsi Almanca**; İngilizce
+derslerde sayısal kök hiç yok. Üstelik iki platform da aynı varsayılanı
+kullanıyor. Yani ne ayrışma ne kayıp — değiştirmedim.
+
+**Gerçek bulgu tasarım tarafındaydı.** Mobil günün turu sıralamasında ilk üçe
+dolu daire + beyaz rakam veriyor ve rengi ortak kademe ölçeğinden
+(`TIER_COLOR`) okuyor; **webde madalya hiç yoktu**, ilk üç dördüncüden ayırt
+edilemiyordu. Mobilin kendi yorumu bu işin geçmişini de yazıyor: "aynı çakışma
+rozet ekranında düzeltilmişti ama burası gözden kaçmıştı" — yani düzeltme
+mobilde iki kez dolaşmış, webe hiç gitmemiş.
+
+Renk seçimi keyfî değil, mobil tarafta ölçülmüş: madalya rengini **yazıya**
+vermek açık temada okunmuyor (altın 2.88, gümüş 2.56, bronz 3.09; normal yazı
+eşiği 4.5), uygulamanın kendi dili olan dolu zemin + beyaz içerik ise üçünde de
+eşiği geçiyor. Webe aynı kural, aynı ölçek ve aynı gerekçeyle taşındı.
+
+Web satırının geri kalanı (tek satır yoğunluk, baş harf dairesi yok) bilerek
+olduğu gibi bırakıldı: liste web'de tablo gibi dar, mobilde kart gibi geniş —
+bu ikisi platformun kendi yoğunluk dili.
+
+**§203** üç şeyi mutlak ölçütle tutuyor: iki tarafta da kural var mı ve
+**birebir aynı mı** (ilk üç, sonrası yok), ikisi de ortak ölçekten mi okuyor,
+ve madalya dolu zemin + beyaz içerik olarak mı çiziliyor. Üç enjeksiyonun üçü
+yakalandı — üçüncüsü tam da mobil tarafta ölçülüp elenmiş olan hatayı
+(rengi yazıya vermek) webde tekrar yapmaya karşı.

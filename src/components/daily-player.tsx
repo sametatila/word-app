@@ -8,6 +8,7 @@ import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
+import { TIER_COLOR } from "@/components/achievement-badge";
 import { track } from "@/lib/track";
 import { ShareResult } from "@/components/share-result";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
@@ -356,6 +357,16 @@ function Card({ children }: { children: React.ReactNode }) {
   return <div className="card mx-auto w-full max-w-md overflow-hidden">{children}</div>;
 }
 
+/**
+ * İlk üçün madalya rengi — ortak kademe ölçeğinden (`TIER_COLOR`).
+ *
+ * Mobil `screens/DailyScreen` `medalColor` ile aynı: dördüncü ve sonrası
+ * madalyasız, `null` dönüyor ve çizim düz soluk numaraya düşüyor.
+ */
+function medalColor(rank: number): string | null {
+  return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;
+}
+
 function BoardList({ rows, title }: { rows: Board; title: string }) {
   const t = useT();
   const lang = useLang();
@@ -380,7 +391,27 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
                 : undefined,
             }}
           >
-            <span className="w-5 shrink-0 text-center font-black tabular-nums">{r.rank}</span>
+            {/*
+              İLK ÜÇ DOLU DAİRE, GERİSİ DÜZ NUMARA — mobil `DailyScreen` ile
+              aynı kural ve aynı ölçek (`TIER_COLOR`).
+              Burada madalya HİÇ yoktu: web sıralamasında ilk üç, dördüncüden
+              ayırt edilemiyordu. Rengi yazıya vermek çözüm değil (mobil
+              tarafta ölçülmüş: beyaz kart üstünde altın 2.88, gümüş 2.56,
+              bronz 3.09 — normal yazı eşiği 4.5); uygulamanın kendi dili dolu
+              zemin + beyaz içerik ve o ölçekte üçü de eşiği geçiyor.
+            */}
+            <span className="flex w-6 shrink-0 justify-center">
+              {medalColor(r.rank) ? (
+                <span
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-black tabular-nums text-white"
+                  style={{ background: medalColor(r.rank)! }}
+                >
+                  {r.rank}
+                </span>
+              ) : (
+                <span className="muted text-center font-black tabular-nums">{r.rank}</span>
+              )}
+            </span>
             <span className="min-w-0 flex-1 truncate font-semibold">
               {r.name ?? t("social.unnamed")}
               {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">{t("social.you")}</span> : null}
