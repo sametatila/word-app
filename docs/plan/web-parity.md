@@ -7038,3 +7038,27 @@ bağlantı kopmasında düz `Error`).
 Web-özel anahtar sayısı bu turlarda **913'ten 648'e** indi; kalanların büyük
 bölümü artık ölçülmüş ve gerekçesi yazılı.
 
+
+### 11.204 Yürüyüş modunda "atla" iki taraftan da eksikti
+
+`walk.` uzayının (43 web-özel / 15 mobil) denetimi. İki yönlü bir ayrışma
+çıktı — bu turlarda ilk kez **web de eksik** taraftaydı.
+
+**Android söylemiyordu.** Atlama baştan beri tanınıyordu (`parseSkip`: weiter,
+überspringen, keine Ahnung / skip, pass, don't know) ama varlığı hiçbir yerde
+yazmıyor ve söylenmiyordu. Bilmediği kelimede tıkanan kullanıcının bildiği tek
+şey susmaktı — o da "duyulmadı" sayılıyor ve üst üste olunca tur duruyordu.
+**Uygulanmış ama duyurulmamış bir yetenek**, §11.24'ün (`/api/premium/consume`)
+ve §11.196'nın (bahis) akrabası.
+
+**Web yalnız Almanca tanıyordu.** Ayrıştırıcının adı da bunu söylüyordu
+(`parseSkipDe`): İngilizce kursta "skip" demek turu atlatmıyordu. Mobil bu
+düzeltmeyi almıştı, web almamıştı — ve girişte okunan sözcük sabit "weiter"di,
+yani İngilizce kursta öğrenciye Almanca bir sözcük okunuyordu.
+
+**Kapının kendi hatası:** §114'ün "İngilizce tanınıyor" ölçümü ilk yazımda
+yalnız `en: [` arıyordu ve dosyadaki başka bir tablo (evet/hayır kalıpları) onu
+karşılıyordu; atlama tablosundan İngilizce silindiğinde kapı yeşil kaldı. Bu
+oturumda dördüncü kez aynı sınıf: **desen, ölçmek istediği şeyin komşusunu
+yakalıyor** (§73, §78, §98, §103).
+
