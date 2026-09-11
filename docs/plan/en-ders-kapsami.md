@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-9 TAM, 190/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM, B2 TAM; 200/300 ders — kalan yalnız C1) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -398,6 +398,26 @@ Kip bileşimi dersi modülün ahlaki merkezi: `can't have` ilişkide en
 cömert kiptir, çünkü karşındakine yapmayacağı şeyi yakıştırmaz. Son ders
 ise yumuşatıcıların işini ilişkiye taşıyor: üçü de duyguyu verir ama onu
 karşındaki hakkında bir hükme çevirmez.
+
+**B2 modül 10 — Resmî yazışma ve kapanış (2026-09-11). B2 KAPANDI.** On
+ders: resmî yazı, dosyada yazana göre, gecikmeye yol açan, işin yürüyüşü,
+sorumlu kişi, hiç bu kadar çabuk olmadı, sözleşme kapanırken, şikâyete
+verilen cevap, teklif tutsaydı, kapanış cümlesi.
+
+Modülün kendi ekseni KAYIT. Resmî yazı işlemi kişiden ayırır, çünkü
+kayıt yıllar sonra da okunacak ve kimin yaptığı değişecek; edilgen aktarım
+bilgiyi verir ama imzayı vermez, imzayı dosyada aramak okuyanın işi;
+devrik yapı sitem etmeden durumu söyler. Şikâyet dersi seviyenin en ince
+ayrımını taşıyor: `can't have` iyi niyeti kabul edip yine de hakkını
+istemektir — haklıyken haksız duruma düşmemenin dilbilgisi.
+
+Son ders hem modülü hem seviyeyi kapatıyor: bir yazışmayı bitirirken
+kapıyı açık bırakmak. Sonucu vermek kolay, karşı tarafa cevap hakkı
+bırakarak vermek zor; B2'nin bütün yükü bu cümlede.
+
+**B2 sayıları:** 100 ders, 800 sözlükçe maddesi, 800'ü de benzersiz,
+B2.GR.11-20 her modülde bir kez (on modülün onunda da ölçüldü), Almanca
+eksende l-105…l-110 paketleri.
 
 ## Tamamlanma ölçütü
 
