@@ -181,6 +181,17 @@ export function LessonScreen() {
   // Konuşma tanıma durumu. `sttOk === false` tek yer: mikrofon yok ya da izin
   // verilmedi — o zaman yazma alanı açılır, yoksa ders tamamlanamaz hâle gelir.
   const [sttOk, setSttOk] = useState<boolean | null>(null);
+  /*
+   * MİKROFON YOLUNUN NEDEN KAPANDIĞI SÖYLENİYOR.
+   *
+   * `sttOk === false` olunca ekran kalıcı olarak yazma yoluna geçiyordu ve
+   * HİÇBİR ŞEY söylemiyordu: kullanıcı konuş düğmesinin kaybolduğunu görüyor,
+   * sebebini bilmiyor. İki sebep de var ve ayrı şeyler söylüyor — izin
+   * reddedildiyse yapılacak bir şey var ("Ayarlardan açabilirsin"), tanıyıcı
+   * yoksa yok. Web ikisini ayrı ayrı yazıyor (`lessonp.mic_denied` ve
+   * `lesson.no_asr`); mobil ikisini tek duruma katlayıp susuyordu.
+   */
+  const [sttSebep, setSttSebep] = useState<"denied" | "unavailable" | null>(null);
   /* Eller serbest dinlemesi bir söz bitince tetikleniyor: o ana kadar izin
      düşmüş olabilir, o yüzden durum ref üzerinden okunuyor. */
   const sttOkRef = useRef<boolean | null>(null);
@@ -201,7 +212,7 @@ export function LessonScreen() {
   // "mikrofon meşgul" hatası veriyor.
   useEffect(() => {
     let alive = true;
-    sttAvailable().then((v) => { if (alive) { setSttOk(v); sttOkRef.current = v; } }).catch(() => { if (alive) { setSttOk(false); sttOkRef.current = false; } });
+    sttAvailable().then((v) => { if (alive) { setSttOk(v); sttOkRef.current = v; if (!v) setSttSebep("unavailable"); } }).catch(() => { if (alive) { setSttOk(false); sttOkRef.current = false; setSttSebep("unavailable"); } });
     /*
      * YAPAY ZEKÂ KAPALIYSA BUNU BAŞTA SÖYLE.
      *
@@ -342,7 +353,7 @@ export function LessonScreen() {
   async function dinle(): Promise<string[] | null> {
     if (listening) return null;
     const izin = await ensureMicPermission();
-    if (!izin) { setSttOk(false); sttOkRef.current = false; return null; }
+    if (!izin) { setSttOk(false); sttOkRef.current = false; setSttSebep("denied"); return null; }
     setListening(true);
     try {
       return await listenOnce(currentTargetLocale(), LISTEN_CEILING_MS);
@@ -720,14 +731,14 @@ export function LessonScreen() {
               <LectureControls expect={expect} tries={tries} input={input} setInput={setInput}
                 onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat()} onTypedRepeat={submitRepeatTyped}
                 onSpeakProduce={() => void speakProduce()} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
-                sttOk={sttOk} listening={listening} typing={typing} setTyping={setTyping}
+                sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping}
                 onSkip={skipStep} colors={colors} />
             ) : (
               <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
                 onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
                 ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)}
-                sttOk={sttOk} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
+                sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
         </>
@@ -845,15 +856,24 @@ function TypeToggle({ onPress, colors }: { onPress: () => void; colors: Palette 
   );
 }
 
-function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, listening, typing, setTyping, onSkip, colors }: {
+function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, sttSebep, listening, typing, setTyping, onSkip, colors }: {
   expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
   onConfirm: () => void; onSpeakRepeat: () => void; onTypedRepeat: () => void; onSpeakProduce: () => void;
   onProduce: () => void; onTrueFalse: (b: boolean) => void;
-  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void;
+  sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void;
   onSkip: () => void; colors: Palette;
 }) {
   // Mikrofon yoksa/izin verilmediyse yazma tek yol — ders tamamlanabilir kalmalı.
   const yaziYolu = sttOk === false || typing;
+  /* Yazma yoluna GEÇİLDİYSE sebebi yazılıyor (bkz. `sttSebep`). Yalnız
+     mikrofon düştüğünde: kullanıcı kendi isteğiyle yazmaya geçtiyse
+     (`typing`) açıklamaya gerek yok. */
+  const sttNotu =
+    sttOk === false ? (
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
+        {tx(sttSebep === "denied" ? "speak.mic_needed" : "lesson.no_asr")}
+      </Text>
+    ) : null;
   /* Beklentili her adımda atlama yolu: tıkanan öğrenci dersi bırakmak zorunda
      kalmasın (web `lesson-player` aynı bağlantıyı veriyor). "Devam" ve
      "hazırım" adımlarında anlamsız - orada beklenti yok. */
@@ -867,6 +887,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
+        {sttNotu}
         {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primaryText} size={20} /><Text variant="bodyStrong" color={colors.primaryText}>{expect.target}</Text>
@@ -907,6 +928,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   // produce — cümleyi kurup SÖYLEMESİ bekleniyor; yazmak yedek yol.
   return (
     <View style={{ gap: spacing.sm }}>
+      {sttNotu}
       {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
       {yaziYolu ? (
         <TypedRow value={input} onChange={setInput} onSubmit={onProduce} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} colors={colors} />
@@ -921,15 +943,25 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   );
 }
 
-function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, sttOk, listening, typing, setTyping, colors }: {
+function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, sttOk, sttSebep, listening, typing, setTyping, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
   ready: boolean; turns: number; minTurns: number; onFinish: () => void;
-  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
+  sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
 }) {
   const yaziYolu = sttOk === false || typing;
+  /* Yazma yoluna GEÇİLDİYSE sebebi yazılıyor (bkz. `sttSebep`). Yalnız
+     mikrofon düştüğünde: kullanıcı kendi isteğiyle yazmaya geçtiyse
+     (`typing`) açıklamaya gerek yok. */
+  const sttNotu =
+    sttOk === false ? (
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
+        {tx(sttSebep === "denied" ? "speak.mic_needed" : "lesson.no_asr")}
+      </Text>
+    ) : null;
   return (
     <View style={{ gap: spacing.sm }}>
+      {sttNotu}
       {!busy && suggestions.length > 0 && (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
           {suggestions.map((s, i) => (
