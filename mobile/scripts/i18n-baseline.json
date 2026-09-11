@@ -1,5 +1,5 @@
 {
-  "total": 17,
+  "total": 19,
   "files": {
     "src/data/exams/index.ts": 1,
     "src/game/rounds.tsx": 1,
@@ -8,6 +8,7 @@
     "src/lib/native.ts": 2,
     "src/screens/ExamScreen.tsx": 1,
     "src/screens/OnboardingScreen.tsx": 1,
+    "src/screens/RoleplayExamScreen.tsx": 2,
     "src/screens/SettingsScreen.tsx": 1,
     "src/ui/VoicePicker.tsx": 2
   },
@@ -21,6 +22,7 @@
     "src/game/rounds.tsx": "modele giden istem (`Çevir: ...`); web `translate-game.tsx` ile birebir aynı dize",
     "src/lib/i18n.ts": "dil adı kendi dilinde (Türkçe) - çevrilmemesi gereken tek metin türü",
     "src/screens/OnboardingScreen.tsx": "aynı dil adı",
-    "src/screens/SettingsScreen.tsx": "aynı dil adı"
+    "src/screens/SettingsScreen.tsx": "aynı dil adı",
+    "src/screens/RoleplayExamScreen.tsx": "modele giden istem ve kısıt (`... (Sınav: ... ile konuşma)`, `yardım yok`); web `roleplay-exam.tsx` ile birebir aynı iki dize ve onun tabanında da yazılı"
   }
 }

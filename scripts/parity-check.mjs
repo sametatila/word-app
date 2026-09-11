@@ -3392,6 +3392,66 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 98. rol yapma sinavi ─────────────────────────────────────────────────
+ * WP-22 webde vardi, Androidde YOKTU: ders ozetindeki "Sinav olarak dene"
+ * dugmesi ve `/lessons/[id]/exam` yuzeyi yalniz webdeydi, yani ayni dersi
+ * bitiren iki kullanicidan yalniz biri olculebiliyordu.
+ *
+ * Olculen sey sinavin SOZLESMESI: iki sabit (kac tur, kac saniye), modele
+ * giden istegin anahtarlari (`mode: "exam"`, rubrik turu, hedef kaliplar,
+ * kisitlar, gun) ve sonuc kartinin parcalari (rubrik, en iyi cumleler, en sik
+ * hata, yapabilirlik). Yedek puan olcum disi: saglayici kapaliyken web kural
+ * tabanli bir puan gosteriyor, mobil hic puan vermiyor - bu ayrim mobilde
+ * zaten yerlesik (bkz. `ExamScreen` yazma adimi). */
+{
+  /* `gun` her tarafta KENDI istegi kuran dosyadan okunuyor: mobilde sinav
+     ekrani, webde `assess-client` (orada `day` istemci yardimcisinin icinde
+     ekleniyor). Ilk yazimda birlesik govdeye bakiyordu ve ders oynaticisinin
+     kendi `day:` satirini gorup yesil kaliyordu - sinavdan `day` silindiginde
+     kirmizi OLMADI. */
+  const sinav = (yollar, tek) => {
+    const kirp = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const src = kirp(yollar.map((p) => read(p)).join("\n"));
+    const solo = kirp(read(tek));
+    const sabit = (ad) => new RegExp(ad + " = (\\d+)").exec(src)?.[1] ?? "?";
+    return [
+      "tur=" + sabit("EXAM_TURNS"),
+      "saniye=" + sabit("EXAM_SECONDS"),
+      "istem modu=" + (/mode: "exam"|mode\b[^\n]*"exam"/.test(src) ? "var" : "yok"),
+      "rubrik turu=" + (/kind: "roleplay"/.test(src) ? "var" : "yok"),
+      "hedef kaliplar=" + (/targets: lesson\.patterns/.test(src) ? "var" : "yok"),
+      "kisitlar=" + (/constraints: \[`\$\{EXAM_TURNS\} tur`/.test(src) ? "var" : "yok"),
+      "gun=" + (/day:/.test(solo) ? "var" : "yok"),
+      "en iyi cumleler=" + (/rpexam\.best_sentences/.test(src) ? "var" : "yok"),
+      "en sik hata=" + (/rpexam\.most_common/.test(src) ? "var" : "yok"),
+      "yapabilirlik=" + (/lessonp\.i_can/.test(src) ? "var" : "yok"),
+      "esik 60=" + (/>= 60/.test(src) ? "var" : "yok"),
+      "giris dugmesi=" + (/lessonp\.try_as_exam/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "rol yapma sinavi",
+    sinav(["mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/LessonScreen.tsx", "mobile/src/game/roleplay.ts"], "mobile/src/screens/RoleplayExamScreen.tsx"),
+    sinav(["src/components/lessons/roleplay-exam.tsx", "src/components/lessons/lesson-player.tsx", "src/lib/lessons/roleplay-const.ts"], "src/lib/assess-client.ts"),
+  );
+}
+
+/* ── 99. ders yapabilirlik eslemesi ───────────────────────────────────────
+ * Sinavin sonuc kartindaki "Yapabildiklerim" satiri dersin simgesi + seviyesi
+ * (konusma ifadesi) ve dilbilgisi odagi (gramer ifadesi) ile secilyor. Iki
+ * kopyanin tablolari birebir ayni kalmali; mobil metni `/api/cando`dan
+ * okuyor, web 213 satirlik veri dosyasindan - secim AYNI. */
+{
+  const esleme = (p) => {
+    const src = read(p);
+    const tema = [...src.matchAll(/(\w+): "(social|service|work)"/g)].map((m) => m[1] + "=" + m[2]);
+    const spk = [...src.matchAll(/(A1|A2|B1|B2|C1): \{ social: (\d+), service: (\d+), work: (\d+) \}/g)].map((m) => m.slice(1).join(":"));
+    const gr = [...src.matchAll(/\[(\/[^/]+\/i), \{ A1: (\d+), A2: (\d+), B1: (\d+), B2: (\d+), C1: (\d+) \}\]/g)].map((m) => m.slice(1).join(":"));
+    return [...tema, ...spk, ...gr];
+  };
+  sameList("ders yapabilirlik eslemesi", esleme("mobile/src/game/candoMap.ts"), esleme("src/lib/cando-map.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -635,7 +635,8 @@ export function LessonScreen() {
       ) : phase === "summary" ? (
         <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
-          onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined} />
+          onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined}
+          onExam={() => nav.navigate("RoleplayExam", { id: lesson.id })} />
       ) : resumeOffer ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <Mascot mood="wave" size={90} />
@@ -886,9 +887,9 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, insets, onBack, onNext }: {
+function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, insets, onBack, onNext, onExam }: {
   lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
-  insets: { bottom: number }; onBack: () => void; onNext?: () => void;
+  insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
   /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
@@ -984,6 +985,19 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, ins
 
       <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
         {onNext && next ? <BigButton label={tx("lesson.next_speaking", { title: next.title })} onPress={onNext} colors={colors} /> : null}
+        {/* SINAV OLARAK DENE. Konuşma yapıldıysa aynı sahne bir de ölçüm
+            olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı.
+            Web özeti bu düğmeyi baştan beri gösteriyordu; Androidde yüzeyin
+            kendisi yoktu, yani aynı dersi bitiren iki kullanıcıdan yalnız
+            biri ölçülebiliyordu. */}
+        {onExam && roleMsgs.length > 1 ? (
+          <PressableScale onPress={onExam}>
+            <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 15, alignItems: "center" }}>
+              <Text variant="h3" color={colors.text}>{tx("lessonp.try_as_exam")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{tx("lessonp.exam_hint")}</Text>
+            </View>
+          </PressableScale>
+        ) : null}
         <PressableScale onPress={onBack}>
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
             <Text variant="h3" color={colors.text}>{tx("lesson.back_to_path")}</Text>

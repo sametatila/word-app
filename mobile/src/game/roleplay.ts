@@ -12,14 +12,14 @@ export async function roleplayConfigured(): Promise<boolean> {
   try { const r = await api<{ configured: boolean }>("/api/roleplay"); return !!r.configured; } catch { return false; }
 }
 
-export async function sendRoleplay(lessonId: string, messages: ChatMsg[]): Promise<string> {
+export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan. */
   const res = await fetchWithTimeout(`${API_BASE}/api/roleplay`, {
     timeoutMs: 45_000,
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ lessonId, messages, mode: "practice" }),
+    body: JSON.stringify({ lessonId, messages, mode }),
   });
   if (!res.ok) throw new Error(`roleplay ${res.status}`);
   return (await res.text()).trim();

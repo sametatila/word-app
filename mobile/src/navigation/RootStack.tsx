@@ -36,6 +36,7 @@ import { BossScreen } from "../screens/BossScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
 import { CandoScreen } from "../screens/CandoScreen";
 import { WritingsScreen } from "../screens/WritingsScreen";
+import { RoleplayExamScreen } from "../screens/RoleplayExamScreen";
 import { LessonScreen } from "../screens/LessonScreen";
 import { QuizScreen } from "../screens/QuizScreen";
 
@@ -62,6 +63,8 @@ export type RootStackParams = {
   Paywall: undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Lesson: { id: string };
+  /** Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */
+  RoleplayExam: { id: string };
   Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
   Auth: undefined;
   /** E-postadaki sıfırlama bağlantısı uygulamada açıldığında (bkz. lib/deepLink). */
@@ -115,6 +118,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="RoleplayExam" component={RoleplayExamScreen} options={{ animation: "slide_from_bottom" }} layout={contentColumnLayout} />
       <Stack.Screen name="Quiz" component={QuizScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ animation: "slide_from_bottom" }} />
