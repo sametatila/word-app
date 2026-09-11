@@ -1031,7 +1031,10 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
             <Text variant="micro" color={colors.textFaint} style={{ lineHeight: 17 }}>{t("exam.speak_text_note")}</Text>
           </>
         ) : null}
-        {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
+        {/* İpucu/hata satırı YERİNDE çıkıyor — web `exam-player` ile aynı yer,
+            aynı gerekçe: odak mikrofon düğmesinde kalıyor ve satırın geldiğini
+            ekran okuyucu söylemiyordu. */}
+        {tip ? <Text accessibilityLiveRegion="polite" variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
         {phase === "err" ? (
           <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t(tries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}</Text>
         ) : null}

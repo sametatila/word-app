@@ -68,7 +68,12 @@ export function ReportDialog({
       style={{ color: "var(--text)" }}
     >
       {state === "done" ? (
-        <div className="flex flex-col items-center gap-2 py-4 text-center">
+        /* SONUÇ DUYURULUYOR. Diyalog AÇIK kalıyor ve içeriği yerinde
+           değişiyor: "Bildirildi" kartı gelince ekran okuyucu hiçbir şey
+           söylemiyordu, çünkü ne odak taşınıyor ne de canlı bir bölge var.
+           Ekran DEĞİŞSE gerek olmazdı (yeni ekran kendiliğinden okunur) —
+           burada değişen şey açık bir kutunun içi. */
+        <div role="status" className="flex flex-col items-center gap-2 py-4 text-center">
           <span
             className="flex h-12 w-12 items-center justify-center rounded-full"
             style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
@@ -112,7 +117,7 @@ export function ReportDialog({
           </ul>
 
           {state === "error" ? (
-            <p className="mt-2 text-caption" style={{ color: "var(--color-rose)" }}>
+            <p role="alert" className="mt-2 text-caption" style={{ color: "var(--color-rose)" }}>
               {t("reportsheet.couldn_t_send_try_again")}
             </p>
           ) : null}

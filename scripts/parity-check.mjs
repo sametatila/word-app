@@ -6777,6 +6777,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web puan duyurusu", web, beklenen, "bulunan", "beklenen");
 }
 
+/* ── 178. YERINDE degisen sonuc (dizge durum makinesi kalibi) ─────────────
+ * Sinifin dorduncu kalibi: `phase`/`status` gibi DIZGE durum makineleriyle
+ * cizilen sonuc dallari. Iki platformda altmis bes dal bulundu ve cogu
+ * SESSIZ - ama o dogru: onlar TAM EKRAN sonuclar, ekran degisince ekran
+ * okuyucu yeni ekrani kendiliginden okuyor ve bir de canli bolge eklemek ayni
+ * seyi iki kez soyletirdi.
+ *
+ * Olcut bu yuzden "sonuc dali mi" degil, "ekran mi degisiyor yoksa ACIK bir
+ * kutunun/ekranin ICI mi". Iki cift yerinde degisiyordu ve ikisi de iki
+ * platformda birden sessizdi:
+ *
+ *   - bildirim kutusunun sonucu ("Bildirildi" / "Gonderilemedi"): diyalog
+ *     acik kaliyor, ici degisiyor,
+ *   - sinavin konusma bolumundeki ses hatasi/ipucu satiri: mikrofon
+ *     dugmesinin altinda beliriyor, odak dugmede kaliyor.
+ *
+ * Bu ayrim kapinin kendisinde de yazili duruyor ki bir sonraki tarama
+ * "butun sonuc dallari duyurmali" diye yanlis bir kural cikarmasin. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const d = (yol) => strip(read(yol)).replace(/\s+/g, " ");
+  const CIFT = [
+    [
+      "bildirim kutusu sonucu",
+      () => (/state === "done" \? \( <View accessibilityLiveRegion="polite"/.test(d("mobile/src/ui/ReportSheet.tsx")) ? "duyuruyor" : "sessiz"),
+      () => (/state === "done" \? \( <div role="status"/.test(d("src/components/report-dialog.tsx")) ? "duyuruyor" : "sessiz"),
+    ],
+    [
+      "bildirim kutusu hatasi",
+      () => (/state === "error" \? <Text accessibilityLiveRegion="polite"/.test(d("mobile/src/ui/ReportSheet.tsx")) ? "duyuruyor" : "sessiz"),
+      () => (/state === "error" \? \( <p role="alert"/.test(d("src/components/report-dialog.tsx")) ? "duyuruyor" : "sessiz"),
+    ],
+    [
+      "sinav ses hatasi",
+      () => (/\{tip \? <Text accessibilityLiveRegion="polite"/.test(d("mobile/src/screens/ExamScreen.tsx")) ? "duyuruyor" : "sessiz"),
+      () => (/spk === "failed" \? \( <p role="alert"/.test(d("src/components/exam-player.tsx")) ? "duyuruyor" : "sessiz"),
+    ],
+  ];
+  const mob = CIFT.map(([ad, m]) => ad + "=" + m());
+  const web = CIFT.map(([ad, , w]) => ad + "=" + w());
+  const beklenen = CIFT.map(([ad]) => ad + "=duyuruyor");
+  sameList("yerinde degisen sonuc", mob, web);
+  sameList("mobil yerinde sonuc", mob, beklenen, "bulunan", "beklenen");
+  sameList("web yerinde sonuc", web, beklenen, "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

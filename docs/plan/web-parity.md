@@ -9025,3 +9025,37 @@ açıyor; kalıbı değiştirince aynı sınıf yeniden bulgu veriyor.
 
 **§177** üç yüzeyi de çift olarak ve mutlak ölçütle denetliyor. Beş
 enjeksiyonun beşi doğru tarafta yakalandı.
+
+## §11.274 — Yerinde değişen sonuç (dördüncü kalıp) ve ölçütün kendisi
+
+Sınıfın dördüncü kalıbı: `phase`/`status` gibi **dizge durum makineleriyle**
+çizilen sonuç dalları. İki platformda altmış beş dal çıktı ve çoğu sessiz —
+**ama o doğru.** Onlar tam ekran sonuçlar: ekran değişince ekran okuyucu yeni
+ekranı kendiliğinden okuyor, üstüne bir canlı bölge eklemek aynı şeyi iki kez
+söyletir.
+
+Bu turun asıl kazancı ölçütün kendisi oldu. Doğru soru "sonuç dalı mı" değil:
+
+> **Ekran mı değişiyor, yoksa açık bir kutunun/ekranın İÇİ mi?**
+
+Ekran değişiyorsa duyuru gereksiz; yerinde değişiyorsa zorunlu. Bu ayrımı
+kapının içine yazdım ki bir sonraki tarama "bütün sonuç dalları duyurmalı"
+diye yanlış bir kural çıkarmasın — o kural, uygulamayı iki kez konuşan bir
+şeye çevirirdi.
+
+Ölçüte göre iki çift yerinde değişiyordu ve **ikisi de iki platformda birden
+sessizdi**:
+
+- **Bildirim kutusunun sonucu** ("Bildirildi · Teşekkürler, bakacağız" ve
+  "Gönderilemedi"): diyalog açık kalıyor, içi değişiyor. Kullanıcı "Bildir"e
+  basıyor ve bildirimin gittiğini hiç duymuyordu.
+- **Sınavın konuşma bölümündeki ses hatası / ipucu satırı**: mikrofon
+  düğmesinin altında beliriyor, odak düğmede kalıyor.
+
+**§178** üç ölçümü çift olarak ve mutlak ölçütle denetliyor; dört enjeksiyonun
+dördü yakalandı.
+
+Dört kalıp, tek sınıf: `setMsg` (§157) · `Feedback` nesnesi (§11.272) · durum
+nesnesi (§11.273) · dizge durum makinesi (bu madde). Dördüncüsü aynı zamanda
+sınıfın **sınırını** verdi: her sonuç duyurulmaz, yerinde değişen sonuç
+duyurulur.

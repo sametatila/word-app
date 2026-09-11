@@ -644,7 +644,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           </div>
         ) : null}
         {spk === "failed" ? (
-          <p className="mt-4 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
+          /* Ses alınamadı satırı YERİNDE çıkıyor (ekran değişmiyor): mikrofon
+             düğmesine basan kullanıcı odağı düğmede tutuyor ve kutunun geldiğini
+             ekran okuyucu söylemiyordu. Hata olduğu için `alert`. */
+          <p role="alert" className="mt-4 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
             {t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}

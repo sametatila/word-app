@@ -35,7 +35,9 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
             içindeki not. */}
         <Pressable onPress={() => {}} accessibilityViewIsModal accessibilityRole="alert" style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
           {state === "done" ? (
-            <View style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
+            /* Sonuç duyuruluyor — web `report-dialog` içindeki nota bak:
+               kutu açık kalıyor, içi yerinde değişiyor. */
+            <View accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
               <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                 <CheckIcon color={colors.successText} size={28} />
               </View>
@@ -62,7 +64,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                   );
                 })}
               </View>
-              {state === "error" ? <Text variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
+              {state === "error" ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
               <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
                 <PressableScale onPress={onClose} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
                   <Text variant="bodyStrong" color={colors.text}>{t("common.discard")}</Text>
