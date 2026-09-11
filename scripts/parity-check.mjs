@@ -5467,21 +5467,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * engellenmemeli (iki oynaticinin da kendi notu bunu soyluyor), o yuzden
  * cozum `disabled` degil bir IPUCU.
  *
- * Olculen: solma kuralinin varligi ve ipucunun ayni kosula bagli olmasi. */
+ * Olculen: solma kuralinin varligi ve ipucunun ayni kosula bagli olmasi.
+ *
+ * IPUCUNUN TASIYICISI DEGISTI (§11.356). Web notu sarmalayici `<span>`in
+ * `title=`inde tutuyordu: span odaklanamaz, yani ekran okuyucu oraya hic
+ * ugramiyor ve `title` dokunmatikte hic acilmiyor - yani duzeltme yarim
+ * kalmisti. Not artik DUGMENIN kendi erisilebilir adinda (`chip`in `hint`
+ * parametresi), Android'in `accessibilityHint`i ile ayni yerde. */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* `ipucu` bir DESEN DIZISI: hepsi geçmeli. Tek bir pencereli desen
+     kullanmak burada yanlış olurdu - webde `chip` yardımcısı ile çağrı yeri
+     arasında 1300 karakter var (ölçüldü) ve pencere tahmin etmek pencere
+     tuzağının aynısı. İki OLGU ayrı ayrı sorulıyor: yardımcı erişilebilir adı
+     `hint`ten kuruyor mu, ve çağrı yeri o metni geçiriyor mu. */
   const solma = (yol, ipucu) => {
     const src = strip(read(yol)).replace(/\s+/g, " ");
     return [
       "solma=" + (/opacity: (?:dim \? 0\.45|usedKeys\?\.has\(o\.key\) && value !== o\.key \? 0\.45)/.test(src) ? "var" : "yok"),
-      "ipucu=" + (ipucu.test(src) ? "var" : "yok"),
+      "ipucu=" + (ipucu.every((re) => re.test(src)) ? "var" : "yok"),
       "hâlâ basilabilir=" + (/disabled=\{dim\}|disabled=\{usedKeys/.test(src) ? "hayir" : "evet"),
     ];
   };
   sameList(
     "eslestirmede kullanilmis sik",
-    solma("mobile/src/screens/MockExamScreen.tsx", /accessibilityHint=\{dim \? t\("mockexam\.option_used"\)/),
-    solma("src/components/mock-exam-player.tsx", /title=\{usedKeys\?\.has\(o\.key\) && value !== o\.key \? t\("mockexam\.option_used"\)/),
+    solma("mobile/src/screens/MockExamScreen.tsx", [/accessibilityHint=\{dim \? t\("mockexam\.option_used"\)/]),
+    solma("src/components/mock-exam-player.tsx", [
+      /aria-label=\{hint \? `\$\{label\} — \$\{hint\}` : undefined\}/,
+      /usedKeys\?\.has\(o\.key\) && value !== o\.key \? t\("mockexam\.option_used"\) : undefined/,
+    ]),
   );
 }
 

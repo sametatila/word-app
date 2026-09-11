@@ -11989,3 +11989,47 @@ döner — sayı sessizce şişemez.
 Tabanın ikisi gerekçeli istisna (yönetim panosu: kullanıcı yüzeyi değil;
 ilerleme grafiği: değer eksende ve satırda da var). Kalan on altısı **gerçek
 borç** ve sıradaki turlarda görünür metne çevrilecek.
+
+## §11.356 — İpucu borcu bir turda kapandı: 18 → 4
+
+Önceki tur `check:title`ı bir **borç tabanı** olarak kurmuştu (18 site). Bu
+tur borcun **on altısını** kapattı; kalan dört site iki gerekçeli istisna
+(yönetim panosu, ilerleme grafiği).
+
+Her site için uygulanan kural, Android'in o yerde ne yaptığına bakılarak
+seçildi — üç ayrı çözüm çıktı:
+
+**Android görünür yazıyor → görünür yazıldı.**
+`lesson-player` sınav düğmesinin ipucu (`lessonp.exam_hint`): Android aynı
+düğmenin altına ikinci satır olarak yazıyor (`LessonScreen`), web `title=`
+balonunda tutuyordu.
+
+**Android erişilebilir ad/ipucu veriyor → `aria-label` eklendi.**
+`grammar-player` ve `skills/quiz` dinleme düğmeleri (Android
+`accessibilityLabel`), `mock-exam-player`in "bu şık başka maddede kullanıldı"
+notu (Android `accessibilityHint`), `pronounce-card`in kelime hükmü,
+`league-board`un seri sayısı (çıplak "5" okunuyordu), `profile-form`un seviye
+açıklaması.
+
+`mock-exam-player`de düzeltme **yarım kalmıştı**: not sarmalayıcı `<span>`in
+`title=`inde duruyordu ve span **odaklanamaz**, yani ekran okuyucu oraya hiç
+uğramıyor. Not düğmenin kendi adına taşındı (`chip`in `hint` parametresi),
+Android'in ipucuyla aynı yere.
+
+**Bilgi zaten başka yerde → balon silindi.**
+`assessment-card`in işaret balonu (hatalar altta „yanlış" → „doğru" — neden
+diye görünür listelenmiş, Android aynı listeyi çiziyor), `diff-text`
+(üst öge tam metni `aria-label`da veriyor), `weak-spots-card`in kaçıncı kez
+sayısı (Android hiç göstermiyor), `friend-list`in üç ipucu ve
+`lesson-player`in sonraki ders adı (düğmede zaten yazılı). Beş ölü
+`socialw.*_hint` anahtarı silindi.
+
+### Kapı §155 yine pencereye kaçmıştı
+
+"Kullanılmış şık" kapısı webin ipucunu `title=`de ölçüyordu; taşıyıcı
+değişince kırmızıya döndü — haklıydı. İlk düzeltmem **tek bir pencereli
+desen** yazdı (`aria-label={hint ?` ile `option_used` arasında 60 karakter) ve
+gerçek mesafe **1306** çıktı: `chip` yardımcısı çağrı yerinden çok uzakta.
+Ölçü **iki ayrı olguya** çevrildi — yardımcı erişilebilir adı `hint`ten kuruyor
+mu, ve çağrı yeri o metni geçiriyor mu. Pencere tahmin etmek, pencere
+tuzağının aynısı.

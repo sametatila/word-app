@@ -36,21 +36,9 @@ const TABAN = {
   /* Yönetim panosu: kullanıcı yüzeyi değil, Android karşılığı da yok.
      Grafik çubuğunun günü/değeri orada tabloda da yazıyor. */
   "src/app/admin/dashboard.tsx": 2,
-  /* Grafik çubuğu: değer eksende ve altındaki satırda da var; ipucu
-     yalnızca kolaylık. */
+  /* İlerleme grafiği: gün ve değer eksende ve altındaki satırda da var;
+     ipucu yalnızca kolaylık, tek taşıyıcı değil. */
   "src/components/progress-view.tsx": 2,
-  /* Aşağıdakiler GERÇEK borç — sıradaki turlarda görünür metne çevrilecek. */
-  "src/components/mock-exam-player.tsx": 1,
-  "src/components/weak-spots-card.tsx": 1,
-  "src/components/profile-form.tsx": 1,
-  "src/components/lessons/lesson-player.tsx": 2,
-  "src/components/skills/quiz.tsx": 1,
-  "src/components/skills/grammar-player.tsx": 1,
-  "src/components/feedback/diff-text.tsx": 1,
-  "src/components/feedback/pronounce-card.tsx": 1,
-  "src/components/feedback/assessment-card.tsx": 1,
-  "src/components/social/friend-list.tsx": 3,
-  "src/components/social/league-board.tsx": 1,
 };
 
 function stripComments(src) {
