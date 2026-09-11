@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-7 TAM, 170/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-8 TAM, 180/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -363,6 +363,23 @@ metne iki kez Kiril harf kaçmış (`ismе`, `savа`). Latin karşılığıyla a
 görünüyor, arama-değiştirme ıskalıyor, `check:lessons` ve `test:content`
 umursamıyor. `scratchpad/charcheck.py` bütün Türkçe alanları tarayıp
 beklenmeyen harfleri döküyor; dört İngilizce dosyanın tamamı temizlendi.
+
+**B2 modül 8 — Para ve kariyer stratejisi (2026-09-11).** On ders: maliyet
+raporu, şirket haberi, kariyeri belirleyen şey, işe alım zinciri,
+sözleşmedeki kişi, hiç bu kadar zor bulunmadı, aralığa kadar, tutmayan
+kredi, sözleşme kapsasaydı, maaş konuşması.
+
+Modülün kendi ekseni SAVUNMAYA GEÇMEMEK. Para ve kariyer konuşmaları
+kolayca kişiselleşir: rakam savunulacak bir şeye, kanun bir memurun
+hatasına, kredi bir aile üyesinin suçuna dönüşür. Modülün her dersi bunu
+başka bir yapıyla engelliyor — isimleştirme işi kişiden ayırıyor, kip
+bileşimi çıkarımı suçlamadan ayırıyor, yumuşatıcı talebi verirken
+pazarlığı açık bırakıyor. Son ders bunu doğrudan söylüyor: kesin cümle
+karşıdakini tek bir cevaba mahkûm eder.
+
+İki Türkçe kusur yazarken düzeldi, ikisini de hiçbir kapı görmüyor:
+ünsüz uyumu («teklifden» → «tekliften») ve anlamca tutmayan bir üretim
+hedefi (bir mektup kadrolu iş olamaz; «teklif» yapıldı).
 
 ## Tamamlanma ölçütü
 

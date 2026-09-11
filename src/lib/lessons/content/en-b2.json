@@ -34424,5 +34424,4915 @@
    "goal": "Bir gözlemi, bir duyumu ve bir tartıp ölçmeyi üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-the-cost-report",
+  "level": "B2",
+  "course": "en",
+  "icon": "chart",
+  "title": "The cost report",
+  "titleTr": "Maliyet raporu",
+  "summary": "Bir maliyet raporunun dilini öğretir; isimleştirme işi kişiden ayırır ve rakamı tartışılır kılar.",
+  "minutes": 11,
+  "focusId": "Nominalisation and formal register",
+  "vocab": [
+   {
+    "de": "cost estimate",
+    "tr": "maliyet tahmini"
+   },
+   {
+    "de": "bookkeeping",
+    "tr": "defter tutma"
+   },
+   {
+    "de": "budget plan",
+    "tr": "bütçe planı"
+   },
+   {
+    "de": "account balance",
+    "tr": "hesap bakiyesi"
+   },
+   {
+    "de": "credit balance",
+    "tr": "bakiye"
+   },
+   {
+    "de": "income tax",
+    "tr": "gelir vergisi"
+   },
+   {
+    "de": "tax allowance",
+    "tr": "vergi muafiyet tutarı"
+   },
+   {
+    "de": "contract term",
+    "tr": "sözleşme süresi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The preparation of the cost estimate took a week.",
+    "tr": "hazırlamayı bir işe çevirir"
+   },
+   {
+    "de": "The checking of the bookkeeping is monthly.",
+    "tr": "denetlemeyi bir düzene çevirir"
+   },
+   {
+    "de": "The approval of the budget plan is pending.",
+    "tr": "onaylamayı bir sürece çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir maliyet raporunun dilini öğreneceğiz: ne hazırlandı, ne denetleniyor, ne onay bekliyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Rapor dili işi kişiden ayırır; böylece rakam savunulacak bir şey değil tartışılacak bir şey olur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "cost estimate"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir işin kaça mal olacağına dair hesap demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The preparation of the cost estimate took a week."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The preparation of the cost estimate took a week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelir gideri düzenli kaydetmeye"
+     },
+     {
+      "lang": "en",
+      "text": "bookkeeping"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız denetlemeyi bir düzene çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The checking of the bookkeeping is monthly."
+     },
+     {
+      "lang": "tr",
+      "text": "Defter tutmanın denetimi aylıktır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The checking of the bookkeeping is monthly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Paranın nereye gideceğini gösteren plana"
+     },
+     {
+      "lang": "en",
+      "text": "budget plan"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız onaylamayı bir sürece çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The approval of the budget plan is pending."
+     },
+     {
+      "lang": "tr",
+      "text": "Bütçe planının onayı beklemede."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The approval of the budget plan is pending."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Rapor dilinde fiil isme döner:"
+     },
+     {
+      "lang": "en",
+      "text": "we prepared"
+     },
+     {
+      "lang": "tr",
+      "text": "bir kişiyi işaret eder,"
+     },
+     {
+      "lang": "en",
+      "text": "the preparation of"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işi işaret eder. Maliyet tartışmasında ikincisi işe yarar, çünkü rakamı savunmak yerine incelemeye açar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Raporun hazırlanması bir hafta sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The preparation of the report took a week.",
+     "accept": [
+      "The preparation of that report took a week.",
+      "The preparation of the cost estimate took a week."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hazırlamayı bir işe çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the preparation of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The preparation of the report took a week."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The checking of the bookkeeping is monthly."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The checking of the bookkeeping is monthly.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle kimin denetlediğini söylemiyor, yalnız denetimin düzenini söylüyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hesaptaki paranın son durumuna"
+     },
+     {
+      "lang": "en",
+      "text": "account balance"
+     },
+     {
+      "lang": "tr",
+      "text": "artıda kalan tutara ise"
+     },
+     {
+      "lang": "en",
+      "text": "credit balance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The account balance shows a credit balance."
+     },
+     {
+      "lang": "tr",
+      "text": "Hesap bakiyesi artı bakiye gösteriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The account balance shows a credit balance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Planın onayı beklemede."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The approval of the plan is pending.",
+     "accept": [
+      "The approval of that plan is pending.",
+      "The approval of the budget plan is pending."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Onaylamayı bir sürece çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the approval of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The approval of the plan is pending."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kazanç üzerinden alınan vergiye"
+     },
+     {
+      "lang": "en",
+      "text": "income tax"
+     },
+     {
+      "lang": "tr",
+      "text": "vergiden düşülen tutara ise"
+     },
+     {
+      "lang": "en",
+      "text": "tax allowance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The income tax falls with a tax allowance."
+     },
+     {
+      "lang": "tr",
+      "text": "Gelir vergisi, vergi muafiyet tutarıyla düşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The income tax falls with a tax allowance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anlaşmanın geçerli olduğu süreye"
+     },
+     {
+      "lang": "en",
+      "text": "contract term"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The contract term ends in June."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşme süresi haziranda bitiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The contract term ends in June."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hesabın denetimi aylıktır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The checking of the account is monthly.",
+     "accept": [
+      "The checking of that account is monthly.",
+      "The checking of the bookkeeping is monthly."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Denetlemeyi bir düzene çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the checking of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The checking of the account is monthly."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: hazırlama"
+     },
+     {
+      "lang": "en",
+      "text": "the preparation of"
+     },
+     {
+      "lang": "tr",
+      "text": "denetim"
+     },
+     {
+      "lang": "en",
+      "text": "the checking of"
+     },
+     {
+      "lang": "tr",
+      "text": "onay"
+     },
+     {
+      "lang": "en",
+      "text": "the approval of"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir maliyet raporu sunacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir maliyet raporunu yöneticine sunuyorsun ve rakamı savunmak değil tartışmaya açmak istiyorsun. Hazırlamayı, denetimi ve onayı rapor diliyle söyle.",
+   "partner": "her rakamın arkasında bir sorumlu arayan, «bunu kim yaptı» diye soran bir yönetici",
+   "opening": "Who signed off on this number?",
+   "openingTr": "Bu rakamı kim onayladı?",
+   "goal": "Hazırlamayı, denetimi ve onayı üç ayrı isimleştirmeyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-company-report",
+  "level": "B2",
+  "course": "en",
+  "icon": "office",
+  "title": "The company report",
+  "titleTr": "Şirket haberi",
+  "summary": "Şirketle ilgili bir söylentiyi aktarmayı öğretir; edilgen aktarım haberi verir ama sorumluluğu üstlenmez.",
+  "minutes": 11,
+  "focusId": "Passive report structures",
+  "vocab": [
+   {
+    "de": "expansion",
+    "tr": "genişleme"
+   },
+   {
+    "de": "profitability",
+    "tr": "kârlılık"
+   },
+   {
+    "de": "business model",
+    "tr": "iş modeli"
+   },
+   {
+    "de": "speculation",
+    "tr": "spekülasyon"
+   },
+   {
+    "de": "stock exchange",
+    "tr": "borsa"
+   },
+   {
+    "de": "competitive advantage",
+    "tr": "rekabet avantajı"
+   },
+   {
+    "de": "pricing",
+    "tr": "fiyatlandırma"
+   },
+   {
+    "de": "restructure",
+    "tr": "yeniden yapılandırmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The expansion is said to be paused.",
+    "tr": "bugünü kaynak vermeden aktarır"
+   },
+   {
+    "de": "The profitability is expected to fall.",
+    "tr": "beklentiyi kaynak vermeden aktarır"
+   },
+   {
+    "de": "The business model is thought to have changed.",
+    "tr": "geçmiş bir değişimi aktarır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün şirketle ilgili bir söylentiyi aktarmayı öğreneceğiz: büyüme ne durumda, kârlılık ne olacak, model ne oldu."
+     },
+     {
+      "lang": "tr",
+      "text": "İş dünyasında bu kalıp kaynağı gizler ve bir söylenti böylece haber gibi dolaşır; okurken bunu görmek gerekiyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "expansion"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir şirketin büyümesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The expansion is said to be paused."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The expansion is said to be paused."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kazanç getirme gücüne"
+     },
+     {
+      "lang": "en",
+      "text": "profitability"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bir beklentiyi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The profitability is expected to fall."
+     },
+     {
+      "lang": "tr",
+      "text": "Kârlılığın düşmesi bekleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The profitability is expected to fall."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şirketin para kazanma düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "business model"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız geçmiş bir değişimi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The business model is thought to have changed."
+     },
+     {
+      "lang": "tr",
+      "text": "İş modelinin değiştiği düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The business model is thought to have changed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarım kalıbının iki zamanı var:"
+     },
+     {
+      "lang": "en",
+      "text": "is said to be"
+     },
+     {
+      "lang": "tr",
+      "text": "bugünü aktarır,"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have"
+     },
+     {
+      "lang": "tr",
+      "text": "ise geçmişi. İş haberinde bu kalıp sorumluluğu üstlenmez; kaynağı sormak okuyana kalır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Genişlemenin bittiği söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The expansion is said to be over.",
+     "accept": [
+      "The expansion is said to be finished.",
+      "The expansion is said to be paused."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bugünü kaynak vermeden aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is said to be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The expansion is said to be over."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The business model is thought to have changed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The business model is thought to have changed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kalıp geçmişe bakıyor ve kimin düşündüğünü söylemiyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyat artacak diye alıp satmaya"
+     },
+     {
+      "lang": "en",
+      "text": "speculation"
+     },
+     {
+      "lang": "tr",
+      "text": "payların alınıp satıldığı yere ise"
+     },
+     {
+      "lang": "en",
+      "text": "stock exchange"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The speculation moved the stock exchange."
+     },
+     {
+      "lang": "tr",
+      "text": "Spekülasyon borsayı hareketlendirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The speculation moved the stock exchange."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kârlılığın yükselmesi bekleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The profitability is expected to rise.",
+     "accept": [
+      "The profitability is expected to grow.",
+      "The profitability is expected to fall."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bir beklentiyi aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is expected to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The profitability is expected to rise."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Rakiplerin önüne geçiren şeye"
+     },
+     {
+      "lang": "en",
+      "text": "competitive advantage"
+     },
+     {
+      "lang": "tr",
+      "text": "fiyatı belirleme işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "pricing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Their pricing is a competitive advantage."
+     },
+     {
+      "lang": "tr",
+      "text": "Onların fiyatlandırması bir rekabet avantajı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Their pricing is a competitive advantage."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yapıyı yeni baştan kurmaya"
+     },
+     {
+      "lang": "en",
+      "text": "restructure"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They plan to restructure the team."
+     },
+     {
+      "lang": "tr",
+      "text": "Ekibi yeniden yapılandırmayı planlıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They plan to restructure the team."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Planın değiştiği düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The plan is thought to have changed.",
+     "accept": [
+      "That plan is thought to have changed.",
+      "The business model is thought to have changed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş bir değişimi aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is thought to have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The plan is thought to have changed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: bugün"
+     },
+     {
+      "lang": "en",
+      "text": "is said to be"
+     },
+     {
+      "lang": "tr",
+      "text": "beklenti"
+     },
+     {
+      "lang": "en",
+      "text": "is expected to"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir şirket haberini aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Şirketle ilgili duyduklarını bir iş arkadaşına aktarıyorsun ama kaynağı yok. Bugünü, beklentiyi ve geçmişi aktarım kalıbıyla söyle.",
+   "partner": "duyduğunu hemen kendi ekibine kesin bilgi diye iletecek bir iş arkadaşı",
+   "opening": "Should I tell my team today?",
+   "openingTr": "Bugün ekibime söyleyeyim mi?",
+   "goal": "Bugünü, beklentiyi ve geçmişi üç ayrı aktarım kalıbıyla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-what-decides-a-career",
+  "level": "B2",
+  "course": "en",
+  "icon": "idea",
+  "title": "What decides a career",
+  "titleTr": "Kariyeri belirleyen şey",
+  "summary": "Bir kariyer kararının asıl nedenini söylemeyi öğretir; yarık cümle birçok etken içinden birini seçer.",
+  "minutes": 11,
+  "focusId": "Cleft sentences for emphasis",
+  "vocab": [
+   {
+    "de": "strategy",
+    "tr": "strateji"
+   },
+   {
+    "de": "leadership style",
+    "tr": "liderlik tarzı"
+   },
+   {
+    "de": "aim for",
+    "tr": "hedeflemek"
+   },
+   {
+    "de": "dead end",
+    "tr": "çıkmaz"
+   },
+   {
+    "de": "forward-looking",
+    "tr": "geleceğe dönük"
+   },
+   {
+    "de": "networking",
+    "tr": "ağ oluşturma"
+   },
+   {
+    "de": "workplace atmosphere",
+    "tr": "işyeri atmosferi"
+   },
+   {
+    "de": "conflict of interest",
+    "tr": "çıkar çatışması"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What decides a career is strategy.",
+    "tr": "asıl nedeni başa taşır"
+   },
+   {
+    "de": "It was the leadership style that drove her out.",
+    "tr": "tek etkeni öne çıkarır"
+   },
+   {
+    "de": "What we aim for is not a dead end.",
+    "tr": "hedefi başa alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir kariyer kararının asıl nedenini söylemeyi öğreneceğiz: kariyeri ne belirliyor, onu ne gönderdi, ne hedefliyoruz."
+     },
+     {
+      "lang": "tr",
+      "text": "İşten ayrılmanın onlarca nedeni olur; yarık cümle birini seçmektir ve seçmek bir iddiadır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "strategy"
+     },
+     {
+      "lang": "tr",
+      "text": "Uzun vadeli yol planı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What decides a career is strategy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What decides a career is strategy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yöneticinin insanları yönetme biçimine"
+     },
+     {
+      "lang": "en",
+      "text": "leadership style"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tek etkeni öne çıkarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It was the leadership style that drove her out."
+     },
+     {
+      "lang": "tr",
+      "text": "Onu gönderen şey liderlik tarzıydı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was the leadership style that drove her out."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi amaç edinmeye"
+     },
+     {
+      "lang": "en",
+      "text": "aim for"
+     },
+     {
+      "lang": "tr",
+      "text": "ilerlemenin durduğu yola ise"
+     },
+     {
+      "lang": "en",
+      "text": "dead end"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız hedefi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What we aim for is not a dead end."
+     },
+     {
+      "lang": "tr",
+      "text": "Hedeflediğimiz şey bir çıkmaz değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What we aim for is not a dead end."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Yarık cümlenin iki biçimi var:"
+     },
+     {
+      "lang": "en",
+      "text": "What … is"
+     },
+     {
+      "lang": "tr",
+      "text": "bir bütünü öne alır,"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tek bir parçayı seçer. Kariyer konuşmasında ikincisi bir karar açıklamasıdır: asıl neden buydu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kariyeri belirleyen şey zamanlama."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What decides a career is timing.",
+     "accept": [
+      "What decides a career is the timing.",
+      "What decides a career is strategy."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Asıl nedeni başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What decides"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What decides a career is timing."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It was the leadership style that drove her out."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It was the leadership style that drove her out.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tek bir etken seçilmiş ve ötekilerin yeterli olmadığı aynı cümleyle söylenmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İleriyi hesaba katana"
+     },
+     {
+      "lang": "en",
+      "text": "forward-looking"
+     },
+     {
+      "lang": "tr",
+      "text": "iş bağlantıları kurmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "networking"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A forward-looking plan needs networking."
+     },
+     {
+      "lang": "tr",
+      "text": "Geleceğe dönük bir plan ağ oluşturmaya ihtiyaç duyar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A forward-looking plan needs networking."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Onu gönderen şey maaştı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It was the pay that drove her out.",
+     "accept": [
+      "It was the salary that drove her out.",
+      "It was the leadership style that drove her out."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek etkeni öne çıkarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "It was … that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the pay that drove her out."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşyerindeki genel havaya"
+     },
+     {
+      "lang": "en",
+      "text": "workplace atmosphere"
+     },
+     {
+      "lang": "tr",
+      "text": "kişisel çıkarla görevin çarpışmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "conflict of interest"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The workplace atmosphere hides a conflict of interest."
+     },
+     {
+      "lang": "tr",
+      "text": "İşyeri atmosferi bir çıkar çatışmasını gizliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The workplace atmosphere hides a conflict of interest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hedeflediğimiz şey bir unvan değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What we aim for is not a title.",
+     "accept": [
+      "What we aim for is not the title.",
+      "What we aim for is not a dead end."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hedefi başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "What we aim for is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What we aim for is not a title."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: asıl neden"
+     },
+     {
+      "lang": "en",
+      "text": "What decides a career is"
+     },
+     {
+      "lang": "tr",
+      "text": "tek etken"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "hedef"
+     },
+     {
+      "lang": "en",
+      "text": "What we aim for is"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kariyer kararını anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşten ayrılma kararını bir arkadaşına anlatıyorsun ve tek bir nedeni öne almak istiyorsun. Asıl nedeni, tek etkeni ve hedefini ayrı ayrı söyle.",
+   "partner": "kararı yalnız parayla açıklayan, başka neden olmadığını düşünen bir arkadaş",
+   "opening": "It's about money, isn't it?",
+   "openingTr": "Mesele para, değil mi?",
+   "goal": "Asıl nedeni, tek etkeni ve hedefi üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-hiring-chain",
+  "level": "B2",
+  "course": "en",
+  "icon": "handshake",
+  "title": "The hiring chain",
+  "titleTr": "İşe alım zinciri",
+  "summary": "Bir işe alım sürecini zincir hâlinde anlatmayı öğretir; ortaç öbeği adımları bağlaçsız birbirine bağlar.",
+  "minutes": 11,
+  "focusId": "Participle clauses",
+  "vocab": [
+   {
+    "de": "personnel file",
+    "tr": "özlük dosyası"
+   },
+   {
+    "de": "supervise",
+    "tr": "denetlemek"
+   },
+   {
+    "de": "recruit",
+    "tr": "işe almak"
+   },
+   {
+    "de": "selection process",
+    "tr": "seçim süreci"
+   },
+   {
+    "de": "onboard",
+    "tr": "işe alıştırmak"
+   },
+   {
+    "de": "train on the job",
+    "tr": "iş başında yetiştirmek"
+   },
+   {
+    "de": "aptitude test",
+    "tr": "yetenek testi"
+   },
+   {
+    "de": "job requirements",
+    "tr": "aranan nitelikler"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Having read the personnel file, they decided.",
+    "tr": "önce bitmiş olanı sonuca bağlar"
+   },
+   {
+    "de": "Asked to supervise, she agreed.",
+    "tr": "geçmişte olanı sonuca bağlar"
+   },
+   {
+    "de": "Wanting to recruit fast, they cut the selection process.",
+    "tr": "aynı anda olanı sonuca bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir işe alım sürecini zincir hâlinde anlatmayı öğreneceğiz: ne okunduktan sonra, ne istendikten sonra, ne isteyerek."
+     },
+     {
+      "lang": "tr",
+      "text": "Ortaç öbeği adımları bağlaçsız bağlar; böylece uzun bir süreç tek cümlede toparlanır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "personnel file"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir çalışanın belgelerini tutan dosya demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Having read the personnel file, they decided."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having read the personnel file, they decided."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin doğru yapıldığını gözlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "supervise"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geçmişte olanı sonuca bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Asked to supervise, she agreed."
+     },
+     {
+      "lang": "tr",
+      "text": "Denetlemesi istenince kabul etti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Asked to supervise, she agreed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni birini işe katmaya"
+     },
+     {
+      "lang": "en",
+      "text": "recruit"
+     },
+     {
+      "lang": "tr",
+      "text": "adaylar arasından seçme işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "selection process"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız aynı anda olanı sonuca bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Wanting to recruit fast, they cut the selection process."
+     },
+     {
+      "lang": "tr",
+      "text": "Hızla işe almak isteyerek seçim sürecini kısalttılar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Wanting to recruit fast, they cut the selection process."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ortaç öbeğinin üç zamanı var:"
+     },
+     {
+      "lang": "en",
+      "text": "having read"
+     },
+     {
+      "lang": "tr",
+      "text": "önce bitmiş olanı bağlar,"
+     },
+     {
+      "lang": "en",
+      "text": "asked"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmişte olanı bağlar,"
+     },
+     {
+      "lang": "en",
+      "text": "wanting"
+     },
+     {
+      "lang": "tr",
+      "text": "ise aynı anda olanı bağlar. Üçü de özneyi ana cümleyle paylaşır; paylaşmazsa cümle yanlış yere bağlanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Raporu okuduktan sonra karar verdiler."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Having read the report, they decided.",
+     "accept": [
+      "Having read that report, they decided.",
+      "Having read the personnel file, they decided."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce bitmiş olanı sonuca bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "having read"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Having read the report, they decided."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Asked to supervise, she agreed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Asked to supervise, she agreed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İstenen kişi o, yani ortaç ana cümlenin öznesine bağlanıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni geleni işe ısındırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "onboard"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışırken öğretmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "train on the job"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We onboard and train on the job."
+     },
+     {
+      "lang": "tr",
+      "text": "İşe alıştırıyor ve iş başında yetiştiriyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We onboard and train on the job."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Hızla eleman almak isteyerek seçim sürecini kısalttılar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Wanting to hire fast, they cut the selection process.",
+     "accept": [
+      "Wanting to hire quickly, they cut the selection process.",
+      "Wanting to recruit fast, they cut the selection process."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı anda olanı sonuca bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "wanting"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Wanting to hire fast, they cut the selection process."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Adayın işe yatkınlığını ölçen sınava"
+     },
+     {
+      "lang": "en",
+      "text": "aptitude test"
+     },
+     {
+      "lang": "tr",
+      "text": "ilandaki koşullara ise"
+     },
+     {
+      "lang": "en",
+      "text": "job requirements"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The aptitude test follows the job requirements."
+     },
+     {
+      "lang": "tr",
+      "text": "Yetenek testi aranan nitelikleri izliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The aptitude test follows the job requirements."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yönetmesi istenince kabul etti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Asked to lead, she agreed.",
+     "accept": [
+      "Asked to manage, she agreed.",
+      "Asked to supervise, she agreed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmişte olanı sonuca bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "asked"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Asked to lead, she agreed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "having read"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmişte olan"
+     },
+     {
+      "lang": "en",
+      "text": "asked"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı anda"
+     },
+     {
+      "lang": "en",
+      "text": "wanting"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir işe alım sürecini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ekibindeki bir işe alım sürecini yöneticine anlatıyorsun. Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı ortaç öbekleriyle bağla.",
+   "partner": "süreci tek bir görüşmeye indirgeyen, adımları merak etmeyen bir yönetici",
+   "opening": "Wasn't it just one interview?",
+   "openingTr": "Tek bir görüşme değil miydi?",
+   "goal": "Önce bitmiş olanı, geçmişte olanı ve aynı anda olanı üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-person-in-the-contract",
+  "level": "B2",
+  "course": "en",
+  "icon": "mail",
+  "title": "The person in the contract",
+  "titleTr": "Sözleşmedeki kişi",
+  "summary": "İki iş teklifini karşılaştırırken bilgi eklemeyi öğretir; virgüllü ilgi cümlesi anlatır ama seçeneği daraltmaz.",
+  "minutes": 11,
+  "focusId": "Non-defining relative clauses",
+  "vocab": [
+   {
+    "de": "permanent position",
+    "tr": "kadrolu iş"
+   },
+   {
+    "de": "fixed term",
+    "tr": "belirli süre"
+   },
+   {
+    "de": "notice period",
+    "tr": "ihbar süresi"
+   },
+   {
+    "de": "hourly wage",
+    "tr": "saat ücreti"
+   },
+   {
+    "de": "flextime",
+    "tr": "esnek mesai"
+   },
+   {
+    "de": "shift work",
+    "tr": "vardiyalı çalışma"
+   },
+   {
+    "de": "employment reference",
+    "tr": "iş referansı"
+   },
+   {
+    "de": "chance of promotion",
+    "tr": "yükselme fırsatı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The offer, which is a permanent position, arrived today.",
+    "tr": "teklife bilgi ekler"
+   },
+   {
+    "de": "The other job, which has a fixed term, pays more.",
+    "tr": "ikinci seçeneğe bilgi ekler"
+   },
+   {
+    "de": "My colleague, whose notice period is short, leaves in May.",
+    "tr": "kişiye ait bir bilgi ekler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün iki iş teklifini karşılaştırırken bilgi eklemeyi öğreneceğiz: teklif ne, öteki iş nasıl, meslektaşın durumu ne."
+     },
+     {
+      "lang": "tr",
+      "text": "Virgüllü ilgi cümlesi bilgi ekler ama seçeneği daraltmaz; daraltırsa cümle senin yerine karar vermiş olur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "permanent position"
+     },
+     {
+      "lang": "tr",
+      "text": "Süresi belirsiz, sürekli iş demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The offer, which is a permanent position, arrived today."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The offer, which is a permanent position, arrived today."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Baştan sonu belli olan çalışma süresine"
+     },
+     {
+      "lang": "en",
+      "text": "fixed term"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci seçeneğe bilgi ekliyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The other job, which has a fixed term, pays more."
+     },
+     {
+      "lang": "tr",
+      "text": "Belirli süresi olan öteki iş daha çok ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The other job, which has a fixed term, pays more."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ayrılmadan önce haber verme süresine"
+     },
+     {
+      "lang": "en",
+      "text": "notice period"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız kişiye ait bir bilgi ekliyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My colleague, whose notice period is short, leaves in May."
+     },
+     {
+      "lang": "tr",
+      "text": "İhbar süresi kısa olan meslektaşım mayısta ayrılıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My colleague, whose notice period is short, leaves in May."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Virgüllü ilgi cümlesi bilgi EKLER, virgülsüz olan ise DARALTIR:"
+     },
+     {
+      "lang": "en",
+      "text": "the offer, which is a permanent position,"
+     },
+     {
+      "lang": "tr",
+      "text": "tek bir tekliften söz eder,"
+     },
+     {
+      "lang": "en",
+      "text": "the offer which is a permanent position"
+     },
+     {
+      "lang": "tr",
+      "text": "ise teklifler arasından birini seçer. Karar verirken bu fark bilgi almakla karar verilmiş olmak arasındaki farktır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kadrolu iş olan teklif dün geldi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The offer, which is a permanent position, arrived yesterday.",
+     "accept": [
+      "The offer, which is a permanent position, came yesterday.",
+      "The offer, which is a permanent position, arrived today."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Teklife bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The offer, which is a permanent position, arrived yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The other job, which has a fixed term, pays more."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The other job, which has a fixed term, pays more.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Virgüller bilgi ekliyor, yani ortada tek bir öteki iş var ve cümle onu daraltmıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Saat başına ödenen paraya"
+     },
+     {
+      "lang": "en",
+      "text": "hourly wage"
+     },
+     {
+      "lang": "tr",
+      "text": "başlama saatini seçebilmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "flextime"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The hourly wage rises with flextime."
+     },
+     {
+      "lang": "tr",
+      "text": "Saat ücreti esnek mesaiyle yükseliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The hourly wage rises with flextime."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: İhbar süresi kısa olan arkadaşım mayısta ayrılıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My friend, whose notice period is short, leaves in May.",
+     "accept": [
+      "My friend, whose notice period is brief, leaves in May.",
+      "My colleague, whose notice period is short, leaves in May."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişiye ait bir bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "whose"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "My friend, whose notice period is short, leaves in May."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dönüşümlü saatlerde çalışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "shift work"
+     },
+     {
+      "lang": "tr",
+      "text": "eski işverenin verdiği belgeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "employment reference"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The employment reference mentions shift work."
+     },
+     {
+      "lang": "tr",
+      "text": "İş referansı vardiyalı çalışmadan söz ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The employment reference mentions shift work."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üst göreve geçme ihtimaline"
+     },
+     {
+      "lang": "en",
+      "text": "chance of promotion"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a chance of promotion."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yükselme fırsatı var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There is a chance of promotion."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Belirli süresi olan teklif daha çok ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The offer, which has a fixed term, pays more.",
+     "accept": [
+      "That offer, which has a fixed term, pays more.",
+      "The other job, which has a fixed term, pays more."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci seçeneğe bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The offer, which has a fixed term, pays more."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: teklif"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "kişi"
+     },
+     {
+      "lang": "en",
+      "text": "whose"
+     },
+     {
+      "lang": "tr",
+      "text": "daraltmayan virgül"
+     },
+     {
+      "lang": "en",
+      "text": "the offer, which …,"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi iki iş teklifini karşılaştıracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İki iş teklifini bir arkadaşınla karşılaştırıyorsun. Teklife, ikinci seçeneğe ve bir kişiye ait bilgileri virgüllü ilgi cümleleriyle ekle.",
+   "partner": "senin yerine karar vermeye hazır, hangisini seçeceğini söyleyen bir arkadaş",
+   "opening": "Just take the permanent one, right?",
+   "openingTr": "Kadrolu olanı al, değil mi?",
+   "goal": "Teklife, ikinci seçeneğe ve bir kişiye ait bilgiyi üç ayrı virgüllü ilgi cümlesiyle eklediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-never-so-hard-to-find",
+  "level": "B2",
+  "course": "en",
+  "icon": "flag",
+  "title": "Never so hard to find",
+  "titleTr": "Hiç bu kadar zor bulunmadı",
+  "summary": "İş piyasasındaki bir ilki duyurmayı öğretir; olumsuz zarf başa gelince devrik yapı durumun ağırlığını taşır.",
+  "minutes": 11,
+  "focusId": "Inversion after negative adverbials",
+  "vocab": [
+   {
+    "de": "skilled worker",
+    "tr": "nitelikli eleman"
+   },
+   {
+    "de": "human resources",
+    "tr": "insan kaynakları"
+   },
+   {
+    "de": "overqualified",
+    "tr": "fazla nitelikli"
+   },
+   {
+    "de": "self-employment",
+    "tr": "serbest çalışma"
+   },
+   {
+    "de": "assertive",
+    "tr": "atılgan"
+   },
+   {
+    "de": "conscientious",
+    "tr": "özenli"
+   },
+   {
+    "de": "dedicated",
+    "tr": "özverili"
+   },
+   {
+    "de": "resilient",
+    "tr": "dirençli"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Never has a skilled worker been so hard to find.",
+    "tr": "ilk kez olanı devrikle söyler"
+   },
+   {
+    "de": "Rarely does human resources answer so fast.",
+    "tr": "nadirliği devrikle söyler"
+   },
+   {
+    "de": "Only after the test do they call the overqualified.",
+    "tr": "tek anı devrikle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün iş piyasasındaki bir ilki duyurmayı öğreneceğiz: eleman bulmak ne oldu, insan kaynakları nadiren ne yapar, ne zaman ararlar."
+     },
+     {
+      "lang": "tr",
+      "text": "Durumun ağırlığını kelime değil yapı taşıyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "skilled worker"
+     },
+     {
+      "lang": "tr",
+      "text": "Eğitimli ve deneyimli çalışan demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Never has a skilled worker been so hard to find."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Never has a skilled worker been so hard to find."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şirketin çalışan işlerine bakan birimine"
+     },
+     {
+      "lang": "en",
+      "text": "human resources"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız nadirliği söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Rarely does human resources answer so fast."
+     },
+     {
+      "lang": "tr",
+      "text": "İnsan kaynakları nadiren bu kadar hızlı cevap verir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Rarely does human resources answer so fast."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin gerektirdiğinden fazla niteliği olana"
+     },
+     {
+      "lang": "en",
+      "text": "overqualified"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tek anı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Only after the test do they call the overqualified."
+     },
+     {
+      "lang": "tr",
+      "text": "Fazla nitelikli olanları ancak sınavdan sonra arıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Only after the test do they call the overqualified."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:"
+     },
+     {
+      "lang": "en",
+      "text": "never"
+     },
+     {
+      "lang": "tr",
+      "text": ","
+     },
+     {
+      "lang": "en",
+      "text": "rarely"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "only after"
+     },
+     {
+      "lang": "tr",
+      "text": "hepsi özneyle yardımcı fiili yer değiştirtir. İş dilinde bu yapı durumun görülmemişliğini taşır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bir iş hiç bu kadar zor bulunmadı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Never has a job been so hard to find.",
+     "accept": [
+      "Never has work been so hard to find.",
+      "Never has a skilled worker been so hard to find."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İlk kez olanı devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "never has"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Never has a job been so hard to find."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Rarely does human resources answer so fast."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Rarely does human resources answer so fast.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendi işini kurup çalışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "self-employment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "She chose self-employment."
+     },
+     {
+      "lang": "tr",
+      "text": "Serbest çalışmayı seçti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She chose self-employment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Fazla nitelikli olanları ancak aramadan sonra görüyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Only after the call do they see the overqualified.",
+     "accept": [
+      "Only after the call do they meet the overqualified.",
+      "Only after the test do they call the overqualified."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek anı devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "only after"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Only after the call do they see the overqualified."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çekinmeden isteyene"
+     },
+     {
+      "lang": "en",
+      "text": "assertive"
+     },
+     {
+      "lang": "tr",
+      "text": "işini titizlikle yapana ise"
+     },
+     {
+      "lang": "en",
+      "text": "conscientious"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "He is assertive and conscientious."
+     },
+     {
+      "lang": "tr",
+      "text": "O atılgan ve özenli."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He is assertive and conscientious."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendini işine adamışa"
+     },
+     {
+      "lang": "en",
+      "text": "dedicated"
+     },
+     {
+      "lang": "tr",
+      "text": "zorluğa dayanabilene ise"
+     },
+     {
+      "lang": "en",
+      "text": "resilient"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A dedicated team is resilient."
+     },
+     {
+      "lang": "tr",
+      "text": "Özverili bir ekip dirençlidir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A dedicated team is resilient."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir yönetici nadiren bu kadar hızlı cevap verir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Rarely does a manager answer so fast.",
+     "accept": [
+      "Rarely does a boss answer so fast.",
+      "Rarely does human resources answer so fast."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nadirliği devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "rarely does"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Rarely does a manager answer so fast."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ilk kez"
+     },
+     {
+      "lang": "en",
+      "text": "never has"
+     },
+     {
+      "lang": "tr",
+      "text": "nadirlik"
+     },
+     {
+      "lang": "en",
+      "text": "rarely does"
+     },
+     {
+      "lang": "tr",
+      "text": "tek an"
+     },
+     {
+      "lang": "en",
+      "text": "only after"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi iş piyasasındaki bir ilki duyuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ekibine eleman bulmakta zorlanıyorsun ve durumu yöneticine anlatıyorsun. İlk kez olanı, nadiren olanı ve tek anı devrik cümlelerle söyle.",
+   "partner": "zorluğu abartılı bulan, her yıl aynı olduğunu söyleyen bir yönetici",
+   "opening": "Isn't hiring always this slow?",
+   "openingTr": "İşe alım hep bu kadar yavaş değil mi?",
+   "goal": "İlk kez olanı, nadirliği ve tek anı üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-by-december",
+  "level": "B2",
+  "course": "en",
+  "icon": "money",
+  "title": "By December",
+  "titleTr": "Aralığa kadar",
+  "summary": "Bir borç takvimini anlatmayı öğretir; bir tarihe kadar bitmiş olan ile o sırada sürüyor olan ayrı yapılarla söylenir.",
+  "minutes": 11,
+  "focusId": "Future perfect and future continuous",
+  "vocab": [
+   {
+    "de": "pay off",
+    "tr": "ödeyip bitirmek"
+   },
+   {
+    "de": "due date",
+    "tr": "vade tarihi"
+   },
+   {
+    "de": "payment deadline",
+    "tr": "son ödeme tarihi"
+   },
+   {
+    "de": "use up",
+    "tr": "bitirmek"
+   },
+   {
+    "de": "set aside",
+    "tr": "kenara ayırmak"
+   },
+   {
+    "de": "late fee",
+    "tr": "gecikme ücreti"
+   },
+   {
+    "de": "installment payment",
+    "tr": "taksitli ödeme"
+   },
+   {
+    "de": "retroactive",
+    "tr": "geriye dönük"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "By December we will have saved enough to pay off the loan.",
+    "tr": "bir tarihe kadar bitmiş olanı söyler"
+   },
+   {
+    "de": "Next month we will be watching the due date.",
+    "tr": "o sırada sürüyor olanı söyler"
+   },
+   {
+    "de": "By the payment deadline we will have decided how to use up the rest.",
+    "tr": "bir tarihe kadar verilmiş kararı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir borç takvimini anlatmayı öğreneceğiz: aralığa kadar ne bitmiş olacak, gelecek ay neyi izliyor olacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Borçta iki ayrı zaman var: bir tarihe kadar TAMAMLANAN ile o sırada SÜREN. İkisi karışırsa gecikme ücreti çıkar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "pay off"
+     },
+     {
+      "lang": "tr",
+      "text": "Borcu tamamen kapatmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By December we will have saved enough to pay off the loan."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By December we will have saved enough to pay off the loan."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ödemenin yapılması gereken güne"
+     },
+     {
+      "lang": "en",
+      "text": "due date"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız o sırada sürüyor olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Next month we will be watching the due date."
+     },
+     {
+      "lang": "tr",
+      "text": "Gelecek ay vade tarihini izliyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Next month we will be watching the due date."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gecikmeden ödenebilecek son güne"
+     },
+     {
+      "lang": "en",
+      "text": "payment deadline"
+     },
+     {
+      "lang": "tr",
+      "text": "kalanı tüketmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "use up"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir tarihe kadar verilmiş kararı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By the payment deadline we will have decided how to use up the rest."
+     },
+     {
+      "lang": "tr",
+      "text": "Son ödeme tarihine kadar kalanı nasıl bitireceğimize karar vermiş olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By the payment deadline we will have decided how to use up the rest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İki yapı iki ayrı soruya cevap verir:"
+     },
+     {
+      "lang": "en",
+      "text": "will have saved"
+     },
+     {
+      "lang": "tr",
+      "text": "o tarihe kadar bitmiş olanı söyler,"
+     },
+     {
+      "lang": "en",
+      "text": "will be watching"
+     },
+     {
+      "lang": "tr",
+      "text": "ise o sırada sürüyor olanı söyler. Borç konuşmasında birincisi bir taahhüt, ikincisi bir takip sözüdür."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bahara kadar krediyi ödeyip bitirecek kadar biriktirmiş olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By spring we will have saved enough to pay off the loan.",
+     "accept": [
+      "By spring we will have saved enough to pay off the debt.",
+      "By December we will have saved enough to pay off the loan."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bir tarihe kadar bitmiş olanı söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "will have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "By spring we will have saved enough to pay off the loan."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Next month we will be watching the due date."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Next month we will be watching the due date.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yapı o sırada sürecek olanı söylüyor, bitmiş olanı değil."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir parayı harcamayıp saklamaya"
+     },
+     {
+      "lang": "en",
+      "text": "set aside"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We set aside a little each month."
+     },
+     {
+      "lang": "tr",
+      "text": "Her ay biraz kenara ayırıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We set aside a little each month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Gelecek ay piyasayı izliyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Next month we will be watching the market.",
+     "accept": [
+      "Next month we will be following the market.",
+      "Next month we will be watching the due date."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O sırada sürüyor olanı söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "will be watching"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Next month we will be watching the market."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geç ödemede alınan ek paraya"
+     },
+     {
+      "lang": "en",
+      "text": "late fee"
+     },
+     {
+      "lang": "tr",
+      "text": "parçalara bölünmüş ödemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "installment payment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A late fee raises the installment payment."
+     },
+     {
+      "lang": "tr",
+      "text": "Gecikme ücreti taksitli ödemeyi yükseltiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A late fee raises the installment payment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmişe de işleyen karara"
+     },
+     {
+      "lang": "en",
+      "text": "retroactive"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The change is retroactive."
+     },
+     {
+      "lang": "tr",
+      "text": "Değişiklik geriye dönük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The change is retroactive."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Son ödeme tarihine kadar bütçeyi nasıl bitireceğimize karar vermiş olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By the payment deadline we will have decided how to use up the budget.",
+     "accept": [
+      "By the payment deadline we will have decided how to use up the money.",
+      "By the payment deadline we will have decided how to use up the rest."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bir tarihe kadar verilmiş kararı söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "will have decided"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "By the payment deadline we will have decided how to use up the budget."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: bitmiş olacak"
+     },
+     {
+      "lang": "en",
+      "text": "will have saved"
+     },
+     {
+      "lang": "tr",
+      "text": "sürüyor olacak"
+     },
+     {
+      "lang": "en",
+      "text": "will be watching"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir borç takvimini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir borcun ödeme takvimini eşinle ya da ortağınla konuşuyorsun. Bir tarihe kadar bitmiş olacak olanı ve o sırada sürüyor olacak olanı ayrı ayrı söyle.",
+   "partner": "borcun kendiliğinden biteceğini varsayan, takvimi merak etmeyen biri",
+   "opening": "It'll sort itself out, won't it?",
+   "openingTr": "Kendiliğinden düzelir, değil mi?",
+   "goal": "Bitmiş olacak olanı ve sürüyor olacak olanı iki ayrı gelecek yapısıyla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-loan-that-failed",
+  "level": "B2",
+  "course": "en",
+  "icon": "law",
+  "title": "The loan that failed",
+  "titleTr": "Tutmayan kredi",
+  "summary": "Kötü giden bir borcu sonradan değerlendirmeyi öğretir: eminsen must have, imkânsız görüyorsan can't have, atlanmışsa should have.",
+  "minutes": 11,
+  "focusId": "Perfect modals",
+  "vocab": [
+   {
+    "de": "creditor",
+    "tr": "alacaklı"
+   },
+   {
+    "de": "mortgage",
+    "tr": "ipotek"
+   },
+   {
+    "de": "interest-free",
+    "tr": "faizsiz"
+   },
+   {
+    "de": "debtor",
+    "tr": "borçlu"
+   },
+   {
+    "de": "seizure",
+    "tr": "el koyma"
+   },
+   {
+    "de": "tax evasion",
+    "tr": "vergi kaçırma"
+   },
+   {
+    "de": "costly",
+    "tr": "masraflı"
+   },
+   {
+    "de": "uncovered",
+    "tr": "karşılıksız"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The creditor must have warned them.",
+    "tr": "geçmişe dair emin bir çıkarımı söyler"
+   },
+   {
+    "de": "They can't have signed the mortgage alone.",
+    "tr": "geçmişe dair imkânsız gördüğünü söyler"
+   },
+   {
+    "de": "We should have asked for an interest-free plan.",
+    "tr": "istenmemiş olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kötü giden bir borcu sonradan değerlendirmeyi öğreneceğiz: alacaklı uyardı mı, imza tek başına mı atıldı, ne istenmeliydi."
+     },
+     {
+      "lang": "tr",
+      "text": "Para konuşmasında bu üç kip suçlamayı çözümlemeden ayırır; ayrımı kaybetmek aileyi böler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "creditor"
+     },
+     {
+      "lang": "tr",
+      "text": "Parayı alacak olan taraf demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The creditor must have warned them."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The creditor must have warned them."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borca karşılık konan ev teminatına"
+     },
+     {
+      "lang": "en",
+      "text": "mortgage"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız imkânsız gördüğünü söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They can't have signed the mortgage alone."
+     },
+     {
+      "lang": "tr",
+      "text": "İpoteği tek başlarına imzalamış olamazlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They can't have signed the mortgage alone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Faiz alınmayan ödemeye"
+     },
+     {
+      "lang": "en",
+      "text": "interest-free"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız istenmemiş olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We should have asked for an interest-free plan."
+     },
+     {
+      "lang": "tr",
+      "text": "Faizsiz bir plan istememiz gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We should have asked for an interest-free plan."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir çıkarımdır,"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir reddir,"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir eksik tespitidir. Para tartışmasında bu ayrım kararı konuşmayı sağlar, kişiyi değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Banka onları uyarmış olmalı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The bank must have warned them.",
+     "accept": [
+      "The bank must have told them.",
+      "The creditor must have warned them."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Emin bir çıkarım için"
+      },
+      {
+       "lang": "en",
+       "text": "must have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The bank must have warned them."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We should have asked for an interest-free plan."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We should have asked for an interest-free plan.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borcu ödemesi gereken tarafa"
+     },
+     {
+      "lang": "en",
+      "text": "debtor"
+     },
+     {
+      "lang": "tr",
+      "text": "mala resmen el konmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "seizure"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The debtor faced a seizure."
+     },
+     {
+      "lang": "tr",
+      "text": "Borçlu bir el koymayla karşılaştı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The debtor faced a seizure."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kâğıdı tek başlarına imzalamış olamazlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They can't have signed the paper alone.",
+     "accept": [
+      "They cannot have signed the paper alone.",
+      "They can't have signed the mortgage alone."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İmkânsız gördüğün için"
+      },
+      {
+       "lang": "en",
+       "text": "can't have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They can't have signed the paper alone."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vergiyi gizleyerek ödememeye"
+     },
+     {
+      "lang": "en",
+      "text": "tax evasion"
+     },
+     {
+      "lang": "tr",
+      "text": "çok paraya mal olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "costly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The audit found tax evasion and it was costly."
+     },
+     {
+      "lang": "tr",
+      "text": "Denetim vergi kaçırma buldu ve bu masraflı oldu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The audit found tax evasion and it was costly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hesapta karşılığı olmayana"
+     },
+     {
+      "lang": "en",
+      "text": "uncovered"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The cheque was uncovered."
+     },
+     {
+      "lang": "tr",
+      "text": "Çek karşılıksızdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The cheque was uncovered."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Daha uzun bir plan istememiz gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We should have asked for a longer plan.",
+     "accept": [
+      "We should have asked for a longer schedule.",
+      "We should have asked for an interest-free plan."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İstenmemiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "should have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We should have asked for a longer plan."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: çıkarım"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "ret"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "eksik"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kötü giden bir borcu değerlendireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ailece alınan bir kredi kötü gitti ve nedenini konuşuyorsunuz. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin istenmediğini kararı konuşarak söyle.",
+   "partner": "kararın tek bir kişinin hatası olduğunu düşünen bir aile üyesi",
+   "opening": "So this is all my fault?",
+   "openingTr": "Yani bunların hepsi benim suçum mu?",
+   "goal": "Bir çıkarımı, bir reddi ve bir eksiği üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-if-the-contract-had-covered",
+  "level": "B2",
+  "course": "en",
+  "icon": "key",
+  "title": "If the contract had covered it",
+  "titleTr": "Sözleşme kapsasaydı",
+  "summary": "Bir sözleşmenin kaçırdığı yolu konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "minutes": 11,
+  "focusId": "Third and mixed conditionals",
+  "vocab": [
+   {
+    "de": "liability insurance",
+    "tr": "sorumluluk sigortası"
+   },
+   {
+    "de": "pension insurance",
+    "tr": "emeklilik sigortası"
+   },
+   {
+    "de": "company pension",
+    "tr": "şirket emekli maaşı"
+   },
+   {
+    "de": "retirement savings",
+    "tr": "emeklilik birikimi"
+   },
+   {
+    "de": "parental leave",
+    "tr": "ebeveyn izni"
+   },
+   {
+    "de": "maternity leave",
+    "tr": "doğum izni"
+   },
+   {
+    "de": "vacation entitlement",
+    "tr": "izin hakkı"
+   },
+   {
+    "de": "occupational safety",
+    "tr": "iş güvenliği"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If the liability insurance had covered it, we would have paid nothing.",
+    "tr": "sonucu geçmişte bırakır"
+   },
+   {
+    "de": "If the pension insurance had started earlier, the company pension would be higher now.",
+    "tr": "sonucu bugüne taşır"
+   },
+   {
+    "de": "If the retirement savings had grown, we would have stopped working.",
+    "tr": "gerçekleşmemiş bir geçmişi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir sözleşmenin kaçırdığı yolu konuşmayı öğreneceğiz: sigorta kapsasaydı ne olurdu, bugün ne farklı olurdu."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşme konuşmasında bu cümleler pişmanlık değil bir sınama aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "liability insurance"
+     },
+     {
+      "lang": "tr",
+      "text": "Verdiğin zararı karşılayan sigorta demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the liability insurance had covered it, we would have paid nothing."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the liability insurance had covered it, we would have paid nothing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Emeklilik için ödenen sigortaya"
+     },
+     {
+      "lang": "en",
+      "text": "pension insurance"
+     },
+     {
+      "lang": "tr",
+      "text": "şirketin ödediği emekli maaşına ise"
+     },
+     {
+      "lang": "en",
+      "text": "company pension"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sonucu bugüne taşıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the pension insurance had started earlier, the company pension would be higher now."
+     },
+     {
+      "lang": "tr",
+      "text": "Emeklilik sigortası daha erken başlasaydı şirket emekli maaşı bugün daha yüksek olurdu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the pension insurance had started earlier, the company pension would be higher now."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Emeklilik için biriktirilen paraya"
+     },
+     {
+      "lang": "en",
+      "text": "retirement savings"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tamamen geçmişte kalıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the retirement savings had grown, we would have stopped working."
+     },
+     {
+      "lang": "tr",
+      "text": "Emeklilik birikimi büyüseydi çalışmayı bırakırdık."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the retirement savings had grown, we would have stopped working."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Şart yarısı ikisinde de aynı:"
+     },
+     {
+      "lang": "en",
+      "text": "if + had"
+     },
+     {
+      "lang": "tr",
+      "text": "Fark sonuç yarısında:"
+     },
+     {
+      "lang": "en",
+      "text": "would have"
+     },
+     {
+      "lang": "tr",
+      "text": "sonucu geçmişte bırakır,"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bugüne taşır. Sözleşme konuşmasında ikincisi daha ağırdır, çünkü eksiğin hâlâ sürdüğünü söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sorumluluk sigortası kapsasaydı daha az öderdik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the liability insurance had covered it, we would have paid less.",
+     "accept": [
+      "If the liability insurance had covered it, we would have paid little.",
+      "If the liability insurance had covered it, we would have paid nothing."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu geçmişte bırakmak için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the liability insurance had covered it, we would have paid less."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If the pension insurance had started earlier, the company pension would be higher now."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If the pension insurance had started earlier, the company pension would be higher now.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çocuk için alınan uzun izne"
+     },
+     {
+      "lang": "en",
+      "text": "parental leave"
+     },
+     {
+      "lang": "tr",
+      "text": "doğum çevresindeki izne ise"
+     },
+     {
+      "lang": "en",
+      "text": "maternity leave"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The parental leave follows the maternity leave."
+     },
+     {
+      "lang": "tr",
+      "text": "Ebeveyn izni doğum iznini izliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The parental leave follows the maternity leave."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Plan daha erken başlasaydı emekli maaşı bugün daha yüksek olurdu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the plan had started earlier, the pension would be higher now.",
+     "accept": [
+      "If the plan had started earlier, the payment would be higher now.",
+      "If the pension insurance had started earlier, the company pension would be higher now."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu bugüne taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the plan had started earlier, the pension would be higher now."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yılda hak edilen izin süresine"
+     },
+     {
+      "lang": "en",
+      "text": "vacation entitlement"
+     },
+     {
+      "lang": "tr",
+      "text": "işyerinde kazayı önleme düzenine ise"
+     },
+     {
+      "lang": "en",
+      "text": "occupational safety"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The vacation entitlement and occupational safety are in the contract."
+     },
+     {
+      "lang": "tr",
+      "text": "İzin hakkı ve iş güvenliği sözleşmede."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The vacation entitlement and occupational safety are in the contract."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Birikim büyüseydi daha erken bırakırdık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the savings had grown, we would have stopped earlier.",
+     "accept": [
+      "If the savings had grown, we would have stopped sooner.",
+      "If the retirement savings had grown, we would have stopped working."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tamamen geçmişte kalan koşul için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the savings had grown, we would have stopped earlier."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: geçmişte kalan"
+     },
+     {
+      "lang": "en",
+      "text": "would have paid nothing"
+     },
+     {
+      "lang": "tr",
+      "text": "bugüne uzanan"
+     },
+     {
+      "lang": "en",
+      "text": "would be higher now"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir sözleşmenin kaçırdığı yolu konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yıllar önce imzalanmış bir iş sözleşmesinin eksiklerini bir arkadaşınla konuşuyorsun. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+   "partner": "o zaman başka seçenek olmadığını düşünen bir arkadaş",
+   "opening": "Did you even have a choice then?",
+   "openingTr": "O zaman seçeneğin var mıydı ki?",
+   "goal": "Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu iki ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-salary-conversation",
+  "level": "B2",
+  "course": "en",
+  "icon": "question",
+  "title": "The salary conversation",
+  "titleTr": "Maaş konuşması",
+  "summary": "Zam istemeyi kapıyı kapatmadan öğretir; yumuşatıcılar talebi verir ama pazarlığı bitirmez.",
+  "minutes": 11,
+  "focusId": "Hedging and discourse markers",
+  "vocab": [
+   {
+    "de": "proportional",
+    "tr": "orantılı"
+   },
+   {
+    "de": "for operational reasons",
+    "tr": "operasyonel nedenlerle"
+   },
+   {
+    "de": "work-life balance",
+    "tr": "iş-yaşam dengesi"
+   },
+   {
+    "de": "have a say",
+    "tr": "söz sahibi olmak"
+   },
+   {
+    "de": "comply with",
+    "tr": "riayet etmek"
+   },
+   {
+    "de": "training initiative",
+    "tr": "eğitim girişimi"
+   },
+   {
+    "de": "give time off",
+    "tr": "işten izin vermek"
+   },
+   {
+    "de": "take up a post",
+    "tr": "göreve başlamak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It seems to be proportional.",
+    "tr": "talebi gözlem olarak sunar"
+   },
+   {
+    "de": "Apparently the raise was refused for operational reasons.",
+    "tr": "bilgiyi kaynağa yaslar"
+   },
+   {
+    "de": "On balance the work-life balance is arguably the point.",
+    "tr": "tartıp ölçerek yumuşatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün zam istemeyi kapıyı kapatmadan öğreneceğiz: talep orantılı mı, ret neden geldi, asıl mesele ne."
+     },
+     {
+      "lang": "tr",
+      "text": "Maaş konuşmasında talebi söylemek kolay, konuşmayı açık tutmak zor; yumuşatıcıların işi tam bu. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "proportional"
+     },
+     {
+      "lang": "tr",
+      "text": "İki şeyin birlikte artıp azalması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It seems to be proportional."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It seems to be proportional."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşleyişten kaynaklanan gerekçeye"
+     },
+     {
+      "lang": "en",
+      "text": "for operational reasons"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bilgiyi kaynağa yaslıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the raise was refused for operational reasons."
+     },
+     {
+      "lang": "tr",
+      "text": "Görünüşe göre zam operasyonel nedenlerle reddedildi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Apparently the raise was refused for operational reasons."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşle hayatın dengede durmasına"
+     },
+     {
+      "lang": "en",
+      "text": "work-life balance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tartıp ölçerek yumuşatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "On balance the work-life balance is arguably the point."
+     },
+     {
+      "lang": "tr",
+      "text": "Her şey tartıldığında asıl mesele tartışmalı biçimde iş-yaşam dengesi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "On balance the work-life balance is arguably the point."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Zam konuşmasında üç yumuşatıcı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to be"
+     },
+     {
+      "lang": "tr",
+      "text": "gözlem,"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum,"
+     },
+     {
+      "lang": "en",
+      "text": "on balance"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tartıp ölçmedir. Üçü de talebi verir ama pazarlığı bitirmez; kesin cümle ise tek bir cevaba mahkûm eder."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Adil gibi görünüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It seems to be fair.",
+     "accept": [
+      "It seems to be reasonable.",
+      "It seems to be proportional."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Talebi gözlem olarak sunmak için"
+      },
+      {
+       "lang": "en",
+       "text": "it seems to be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to be fair."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the raise was refused for operational reasons."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Apparently the raise was refused for operational reasons.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi hükmü gibi sunmuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karara ortak olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "have a say"
+     },
+     {
+      "lang": "tr",
+      "text": "kurala uymaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "comply with"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to have a say and I comply with the rules."
+     },
+     {
+      "lang": "tr",
+      "text": "Söz sahibi olmak istiyorum ve kurallara riayet ediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I want to have a say and I comply with the rules."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Görünüşe göre cevap operasyonel nedenlerle geldi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Apparently the answer came for operational reasons.",
+     "accept": [
+      "Apparently the reply came for operational reasons.",
+      "Apparently the raise was refused for operational reasons."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bilgiyi kaynağa yaslamak için"
+      },
+      {
+       "lang": "en",
+       "text": "apparently"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Apparently the answer came for operational reasons."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışanı yetiştirmek için açılan programa"
+     },
+     {
+      "lang": "en",
+      "text": "training initiative"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışmadan izinli saymaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "give time off"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The training initiative would give time off."
+     },
+     {
+      "lang": "tr",
+      "text": "Eğitim girişimi işten izin verecekti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The training initiative would give time off."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni bir görevi devralmaya"
+     },
+     {
+      "lang": "en",
+      "text": "take up a post"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "She will take up a post in June."
+     },
+     {
+      "lang": "tr",
+      "text": "Haziranda bir göreve başlayacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She will take up a post in June."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her şey tartıldığında asıl mesele tartışmalı biçimde eğitim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "On balance the training is arguably the point.",
+     "accept": [
+      "On balance the training is arguably the issue.",
+      "On balance the work-life balance is arguably the point."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tartıp ölçerek yumuşatmak için"
+      },
+      {
+       "lang": "en",
+       "text": "on balance"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "On balance the training is arguably the point."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gözlem"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to be"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "tartıp ölçme"
+     },
+     {
+      "lang": "en",
+      "text": "on balance"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir maaş konuşması yapacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yöneticinden zam istiyorsun ve konuşmayı tek bir cevapla bitirmek istemiyorsun. Gözlemini, duyduğunu ve tartıp ölçtüğünü yumuşatıcılarla söyle.",
+   "partner": "bütçenin kapalı olduğunu söyleyip konuyu kapatmak isteyen bir yönetici",
+   "opening": "The budget is closed, you know that?",
+   "openingTr": "Bütçe kapalı, biliyorsun değil mi?",
+   "goal": "Bir gözlemi, bir duyumu ve bir tartıp ölçmeyi üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
