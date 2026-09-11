@@ -233,18 +233,18 @@ export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; w
  * Etiket ANAHTAR tutuyor: sabit dizi modül yüklenirken kurulur ve o an dil tercihi
  * (loadLang) henüz okunmamış olur — t() burada çağrılsaydı adlar Türkçe donardı.
  */
-export const PRACTICE_GAMES: { game: string; label: string }[] = [
-  { game: "choice", label: "games.choice" },
-  { game: "artikel", label: "games.article_race" },
-  { game: "cloze", label: "games.cloze" },
-  { game: "typing", label: "games.typing" },
-  { game: "listen", label: "games.listen" },
-  { game: "truefalse", label: "games.truefalse" },
-  { game: "match", label: "games.match" },
-  { game: "scramble", label: "games.scramble" },
-  { game: "order", label: "games.order" },
-  { game: "plural", label: "games.plural" },
-  { game: "translate", label: "games.translate" },
+export const PRACTICE_GAMES: { game: string; label: string; hint: string }[] = [
+  { game: "choice", label: "games.choice", hint: "prac.choice" },
+  { game: "artikel", label: "games.article_race", hint: "prac.artikel" },
+  { game: "cloze", label: "games.cloze", hint: "prac.cloze" },
+  { game: "typing", label: "games.typing", hint: "prac.typing" },
+  { game: "listen", label: "games.listen", hint: "prac.listen" },
+  { game: "truefalse", label: "games.truefalse", hint: "prac.truefalse" },
+  { game: "match", label: "games.match", hint: "prac.match" },
+  { game: "scramble", label: "games.scramble", hint: "prac.scramble" },
+  { game: "order", label: "games.order", hint: "prac.order" },
+  { game: "plural", label: "games.plural", hint: "prac.plural" },
+  { game: "translate", label: "games.translate", hint: "prac.translate" },
 ];
 
 /**

@@ -99,7 +99,15 @@ export function PracticeScreen() {
                       liste modül yüklenirken kuruluyor, dil tercihi o an okunmamış
                       oluyor. Çeviri bu yüzden burada, çizim anında yapılır — ham
                       basılınca ekranda "games.choice" görünüyordu. */}
-                  <Text variant="bodyStrong" style={{ marginTop: spacing.md }}>{t(g.label)}</Text>
+                  <View style={{ marginTop: spacing.md }}>
+                    <Text variant="bodyStrong">{t(g.label)}</Text>
+                    {/* NE YAPTIRDIĞINI SÖYLEYEN SATIR. Kart yalnız adı
+                        gösteriyordu: "Cümleyi Diz" ile "Cümleyi Çevir"
+                        arasındaki farkı bilmeyen kullanıcı oyunu açmadan
+                        seçemiyordu. Web kartın altında bu satırı baştan beri
+                        yazıyor (`learn/practice`). */}
+                    <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2, lineHeight: 16 }}>{t(g.hint)}</Text>
+                  </View>
                 </Card>
               </PressableScale>
             );
