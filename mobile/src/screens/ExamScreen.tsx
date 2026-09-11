@@ -88,6 +88,17 @@ type Paper = {
  */
 type Miss = { section: SectionId; prompt: string; answer: string; given?: string; why?: string };
 
+/** Kapak — `GET /api/exam?level=..&module=..` ya da `&kind=level`. */
+type Cover = {
+  code: string | null;
+  titleDe: string | null;
+  titleTr: string | null;
+  focus: { de: string; tr: string }[];
+  trial?: boolean;
+  seconds?: number;
+  counts?: Record<string, number>;
+};
+
 type Result = { id: number; total: number; passed: boolean; trial: boolean; sections: { id: SectionId; pct: number; weight: number }[] };
 
 /**
@@ -122,6 +133,18 @@ export function ExamScreen() {
   const moduleIx = route.params?.module ?? null;
 
   const [paper, setPaper] = useState<Paper | null>(null);
+  /**
+   * KAPAK KAĞITTAN AYRI GELİYOR.
+   *
+   * Ekran açılır açılmaz `POST {action:"start"}` atıyordu: kâğıt üretiliyor ve
+   * sunucu `exam_start` yazıyordu. Yani kapağı açıp vazgeçen kullanıcı
+   * "sınava başlamış" sayılıyordu — başlama/bitirme hunisi Android'de şişik
+   * çıkıyordu. Web hiçbir zaman böyle yapmadı: kapağı ayrı uçtan (`GET`)
+   * okuyup `start`ı ancak düğmeye basılınca atıyor. Sayılar kâğıt
+   * üretilmeden biliniyor, o yüzden kapak hiçbir şey harcamıyor.
+   */
+  const [cover, setCover] = useState<Cover | null>(null);
+  const [starting, setStarting] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   /* Yükleme hatası GEÇİCİ olabilir; bkz. hata ekranındaki "tekrar dene". */
   const [attempt, setAttempt] = useState(0);
@@ -175,12 +198,27 @@ export function ExamScreen() {
   useEffect(() => {
     let cancelled = false;
     setErr(null);
+    const adres = moduleIx === null
+      ? `/api/exam?level=${level}&kind=level`
+      : `/api/exam?level=${level}&module=${moduleIx}`;
+    api<{ cover: Cover | null }>(adres)
+      .then((d) => {
+        if (cancelled) return;
+        setCover(d.cover);
+        setPhase("kapak");
+      })
+      .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
+    return () => { cancelled = true; };
+  }, [level, moduleIx, attempt]);
+
+  /** Kâğıdı ÜRETİR ve sınavı başlatır — yalnız "Başla"ya basılınca. */
+  const startExam = useCallback(() => {
+    setStarting(true);
     api<{ paper: Paper }>("/api/exam", {
       method: "POST",
       body: JSON.stringify({ action: "start", level, module: moduleIx, day: todayStr() }),
     })
       .then((d) => {
-        if (cancelled) return;
         // Bölüm TOPLAMLARI kâğıt gelince yazılır, bölüm bitince değil. Yoksa
         // süre dolduğunda ulaşılmamış bölüm total=0 gider, sunucu onu atlar ve
         // ağırlığını kalanlara dağıtır — yani sınavı yarıda bırakmak puanı
@@ -190,11 +228,12 @@ export function ExamScreen() {
         score.current.listening.total = d.paper.sections.listening.reduce((a, x) => a + x.questions.length, 0);
         setPaper(d.paper);
         setLeft(d.paper.seconds);
-        setPhase("kapak");
+        startedAt.current = Date.now();
+        setStarting(false);
+        setPhase("bolumGiris");
       })
-      .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
-    return () => { cancelled = true; };
-  }, [level, moduleIx, attempt]);
+      .catch((e: Error) => { setStarting(false); setErr(e.message || t("exam.could_not_load")); });
+  }, [level, moduleIx]);
 
   /**
    * Sınavı kapatır. `sent` koruması yüzünden birden çok kez çağrılması
@@ -332,7 +371,8 @@ export function ExamScreen() {
     );
   }
 
-  if (phase === "yukleniyor" || !paper) {
+  /* Kapak kâğıt OLMADAN çiziliyor; kâğıt yalnız bölümler için gerekli. */
+  if (phase === "yukleniyor" || (!paper && phase !== "kapak")) {
     return (
       /*
         SPINNER YERİNE İSKELET — kâğıdın KAPAK yapısında.
@@ -371,30 +411,45 @@ export function ExamScreen() {
           {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
               aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
           <CoachBubble moment="exam_intro" mood="idle" size={48} />
-          {paper.cover ? (
+          {cover?.titleDe ? (
             <Card padded style={{ gap: spacing.sm }}>
-              <Text variant="h2" style={{ lineHeight: 30 }}>{paper.cover.titleDe}</Text>
-              <Text variant="body" color={colors.textMuted}>{paper.cover.titleTr}</Text>
+              <Text variant="h2" style={{ lineHeight: 30 }}>{cover.titleDe}</Text>
+              <Text variant="body" color={colors.textMuted}>{cover.titleTr}</Text>
               {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
                   çiftler, ne oldukları söylenmeden duruyordu. */}
-              {paper.cover.focus.length ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("exam.measures_these")}</Text> : null}
-              {paper.cover.focus.map((f, i) => (
+              {cover.focus.length ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("exam.measures_these")}</Text> : null}
+              {cover.focus.map((f, i) => (
                 <Text key={i} variant="caption" color={colors.textMuted}>· {f.de} — {f.tr}</Text>
               ))}
             </Card>
-          ) : null}
-          <Card padded style={{ gap: spacing.xs }}>
-            <Text variant="bodyStrong">{t("exam.sections")}</Text>
-            {filledSections().map((s) => (
-              <Text key={s} variant="caption" color={colors.textMuted}>
-                {SECTION_DE[s]} · {t(SECTION_KEY[s])} ({paper.sections[s].length})
+          ) : (
+            /* Kâğıdın kendi Almancası yoksa başlık SÖZLÜKTEN — web de burada
+               sözlüğe düşüyor (`exam-player` `Cover`). */
+            <Card padded style={{ gap: spacing.sm }}>
+              <Text variant="h2" style={{ lineHeight: 30 }}>
+                {moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
               </Text>
-            ))}
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
-              {t("exam.minutes", { n: Math.round(paper.seconds / 60) })}
-            </Text>
-          </Card>
-          {paper.trial ? (
+            </Card>
+          )}
+          {/* BÖLÜMLER VE SÜRE KAĞITTAN DEĞİL KAPAKTAN. Madde sayıları ve süre
+              sabit; kâğıdı üretmeden biliniyorlar. Eskiden bu kart kâğıdı
+              okuyordu, yani görmek için sınavı başlatmak gerekiyordu. */}
+          {cover?.counts ? (
+            <Card padded style={{ gap: spacing.xs }}>
+              <Text variant="bodyStrong">{t("exam.sections")}</Text>
+              {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
+                <Text key={id} variant="caption" color={colors.textMuted}>
+                  {SECTION_DE[id]} · {t(SECTION_KEY[id])} ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
+                </Text>
+              ))}
+              {cover.seconds ? (
+                <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
+                  {t("exam.minutes", { n: Math.round(cover.seconds / 60) })}
+                </Text>
+              ) : null}
+            </Card>
+          ) : null}
+          {cover?.trial ? (
             <Card padded><Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text></Card>
           ) : null}
           {/*
@@ -409,8 +464,9 @@ export function ExamScreen() {
               {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
             </Text>
           </Card>
-          <PressableScale onPress={() => { startedAt.current = Date.now(); setPhase("bolumGiris"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t("exam.start")}</Text>
+          {/* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */}
+          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ opacity: starting ? 0.6 : 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{t(starting ? "common.loading" : "exam.start")}</Text>
           </PressableScale>
         </ScrollView>
       </View>
@@ -567,6 +623,9 @@ export function ExamScreen() {
     koyuyor (`exam-player`): Teil sırası, Almanca ve kendi dilindeki adı,
     bölümün ne yaptıracağı, kaç madde ve kalan süre.
   */
+  /* Buradan sonrası kâğıda bağlı: kapak ve sonuç yukarıda döndü. */
+  if (!paper) return null;
+
   if (phase === "bolumGiris" && active) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>

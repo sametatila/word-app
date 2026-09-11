@@ -725,11 +725,14 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 function Cover({ level, module, onStart }: { level: CefrLevel; module: number | null; onStart: () => void }) {
   const course = useCourse();
   const t = useT();
-  const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; trial?: boolean; seconds?: number; counts?: Record<string, number> } | null>(null);
+  const [cover, setCover] = useState<{ code: string | null; titleDe: string | null; titleTr: string | null; focus: { de: string; tr: string }[]; trial?: boolean; seconds?: number; counts?: Record<string, number> } | null>(null);
   useEffect(() => {
-    if (module === null) return;
     let alive = true;
-    void fetch(`/api/exam?level=${level}&module=${module}`)
+    /* SEVIYE SINAVININ DA KAPAGI VAR. Bolumler ve sure modul sinavinda
+       yaziyordu, seviye sinavinda hic yazmiyordu: ayni soru ("kac dakika,
+       neler sorulacak") iki sinav turunde iki farkli cevap aliyordu. Uc
+       seviye icin de sabitlerden kapak donduruyor -- kagit uretilmiyor. */
+    void fetch(module === null ? `/api/exam?level=${level}&kind=level` : `/api/exam?level=${level}&module=${module}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d: { cover?: typeof cover } | null) => {
         if (alive && d?.cover) setCover(d.cover);
@@ -753,8 +756,13 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         dururken (`exam.level_exam`, `exam.module_exam`) Almanca bir başlık
         görüyordu. Android bu durumda sözlüğü kullanıyor (`ExamScreen`).
       */}
-      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={cover ? course : undefined}>
-        {cover
+      {/* ALMANCA BASLIK YALNIZ KAGIDIN KENDI ALMANCASI VARSA. Olcut artik
+          "kapak geldi mi" degil, "kapak gercekten Almanca bir baslik tasiyor
+          mu": seviye sinavinin kapagi da geliyor ama plani yok, basligi yok.
+          Olcutu degistirmeden birakmak, seviye sinavinda sozlukteki basligin
+          yerine Almanca "Niveauprüfung" yazdirirdi. */}
+      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={cover?.titleDe ? course : undefined}>
+        {cover?.titleDe
           ? module === null
             ? `${level} · Niveauprüfung`
             : `Modulprüfung ${cover.code}`
@@ -762,7 +770,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
             ? t("exam.level_exam", { level })
             : t("exam.module_exam", { level, n: module + 1 })}
       </p>
-      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={cover ? course : undefined}>
+      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={cover?.titleDe ? course : undefined}>
         {cover?.titleDe ?? (module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 }))}
       </h1>
       {cover?.titleTr ? <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}

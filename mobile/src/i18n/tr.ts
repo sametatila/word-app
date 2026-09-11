@@ -648,6 +648,7 @@ export const tr: Record<string, string> = {
   "learn.mock_exams_pitch": "Süreli, tam kâğıt",
   "exam.title": "Sınav",
   "exam.level_exam": "{level} seviye sınavı",
+  "exam.module_exam": "{level} · Modül {n} Sınavı",
   "exam.could_not_load": "Sınav yüklenemedi.",
   "exam.trial_notice": "Bu bir deneme: modül konuşmalarının %80'i geçilmediği için sonuç sayılmaz.",
   "exam.passed": "Geçtin",

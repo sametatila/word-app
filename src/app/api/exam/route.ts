@@ -5,7 +5,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { buildExam, COUNTS as EXAM_COUNTS, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
-import { MODULE_SECONDS } from "@/lib/exam-types";
+import { LEVEL_SECONDS, MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
 import { nativeOf } from "@/lib/courses";
 import { track } from "@/lib/events";
@@ -36,6 +36,25 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const level = url.searchParams.get("level");
   const mod = url.searchParams.get("module");
+  /*
+   * SEVIYE SINAVININ DA KAPAGI VAR (`?level=A1&kind=level`).
+   *
+   * Modul sinavinin kapagi bastan beri buradaydi ama seviye sinavinin yoktu:
+   * "kac dakika surecek, hangi bolumler var" sorusu yalnizca modul sinavinda
+   * cevaplaniyordu. Android bu bilgiyi KAGITTAN okuyordu, yani kapagi acmak
+   * icin once kagidi uretmek ve `exam_start` yazmak gerekiyordu — vazgecen
+   * kullanici baslamis sayiliyordu. Sayilar sabit (`COUNTS.level`,
+   * `LEVEL_SECONDS`), kagit gerekmiyor.
+   *
+   * Seviye sinavinin plani yok: baslik, odak listesi ve deneme bayragi
+   * modulun kendine ait. Burada yalniz bolumler ve sure donuyor.
+   */
+  if (level && url.searchParams.get("kind") === "level") {
+    return NextResponse.json(
+      { cover: { code: null, titleDe: null, titleTr: null, focus: [], trial: false, seconds: LEVEL_SECONDS, counts: EXAM_COUNTS.level } },
+      { headers: { "cache-control": "private, max-age=3600" } },
+    );
+  }
   if (level && mod !== null) {
     const profile = await ensureProfile(userId);
     /* Modül sınavı planları Almanca yazılmış ve kurs boyutu yok (bkz.

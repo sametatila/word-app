@@ -292,7 +292,6 @@ export const trWeb: Record<string, string> = {
   "notfound.title": "Sayfa bulunamadı",
   "notfound.sub": "Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.",
   "common.home": "Ana sayfa",
-  "exam.module_exam": "{level} · Modül {n} Sınavı",
   "exam.load_or_save_failed": "Sınav şu an yüklenemedi ya da kaydedilemedi.",
   "exam.back_to_path": "Konuşmalara dön",
   "exam.is_sentence_right": "Bu cümle doğru mu?",

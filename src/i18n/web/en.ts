@@ -266,7 +266,6 @@ export const enWeb: Record<string, string> = {
   "notfound.title": "Page not found",
   "notfound.sub": "The page you're looking for may have moved, or never existed.",
   "common.home": "Home",
-  "exam.module_exam": "{level} · Module {n} exam",
   "exam.load_or_save_failed": "The exam couldn't be loaded or saved right now.",
   "exam.back_to_path": "Back to the conversations",
   "exam.is_sentence_right": "Is this sentence right?",

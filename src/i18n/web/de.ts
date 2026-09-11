@@ -266,7 +266,6 @@ export const deWeb: Record<string, string> = {
   "notfound.title": "Seite nicht gefunden",
   "notfound.sub": "Die gesuchte Seite ist vielleicht umgezogen — oder hat es nie gegeben.",
   "common.home": "Startseite",
-  "exam.module_exam": "{level} · Modulprüfung {n}",
   "exam.load_or_save_failed": "Die Prüfung ließ sich gerade nicht laden oder speichern.",
   "exam.back_to_path": "Zurück zu den Gesprächen",
   "exam.is_sentence_right": "Stimmt dieser Satz?",

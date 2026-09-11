@@ -6080,6 +6080,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 165. sinav kapagi kagidi uretmiyor ───────────────────────────────────
+ * `POST {action:"start"}` kagidi uretiyor ve sunucu `exam_start` yaziyor.
+ * Android bunu ekran acilir acilmaz atiyordu: kapagi acip vazgecen kullanici
+ * "sinava baslamis" sayiliyor, baslama/bitirme hunisi sisiyordu. Web hicbir
+ * zaman oyle yapmadi - kapagi ayri uctan (GET) okuyup `start`i ancak dugmeye
+ * basilinca atiyor. Sayilar (madde sayisi, sure) sabit, kagit gerekmiyor.
+ *
+ * Ayni turda ucun eksigi de kapatildi: kapak yalnizca MODUL sinavi icin
+ * vardi, seviye sinavinin "kac dakika, hangi bolumler" sorusu cevapsizdi.
+ * `?kind=level` iki istemcide de ayni cevabi veriyor.
+ *
+ * Olculen: (1) iki istemci de kapagi GET ile okuyor, (2) `start` POSTu bir
+ * DUGMEYE bagli, mount etkisinde degil. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const mob = strip(read("mobile/src/screens/ExamScreen.tsx"));
+  const web = strip(read("src/components/exam-player.tsx"));
+  const uc = strip(read("src/app/api/exam/route.ts"));
+
+  /* `start` POSTunun govdesi: hangi fonksiyonun icinde? */
+  const govde = (src, ad) => {
+    const i = src.indexOf(ad);
+    if (i < 0) return "";
+    let d = 0, bas = -1;
+    for (let j = i; j < src.length; j++) {
+      if (src[j] === "{") { if (bas < 0) bas = j; d++; }
+      else if (src[j] === "}") { if (--d === 0) return src.slice(bas, j + 1); }
+    }
+    return "";
+  };
+  const mobStart = govde(mob, "const startExam = useCallback(");
+  const webStart = govde(web, "async function start()");
+  /* Iki tarafi da BEKLENENE olcuyoruz: iki taraf birden mount etkisinde
+     olsaydi karsilastirma yesil kalirdi (§157 dersi). Dugmeye baglilik iki
+     sey birden istiyor - POSTun dogru fonksiyonda olmasi ve o fonksiyonun
+     baslatma dugmesine bagli olmasi; yalniz birine bakmak, fonksiyonu
+     mount etkisinden cagirinca kapiyi kandirirdi. */
+  sameList(
+    "sinav baslatma dugmede",
+    [
+      "mobil=" + (/action: "start"/.test(mobStart) && /onPress=\{startExam\}/.test(mob.replace(/\s+/g, " ")) ? "dugmede" : "mount etkisinde"),
+      "web=" + (/action: "start"/.test(webStart) && /onStart=\{\(\) => void start\(\)\}/.test(web.replace(/\s+/g, " ")) ? "dugmede" : "mount etkisinde"),
+    ],
+    ["mobil=dugmede", "web=dugmede"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Kapak iki istemcide de GET ile ve iki sinav turu icin de okunuyor. */
+  const kapak = (src) => {
+    const d = src.replace(/\s+/g, " ");
+    return (/kind=level/.test(d) ? "seviye" : "-") + "+" + (/[?&]module=\$\{/.test(d) ? "modul" : "-");
+  };
+  sameList(
+    "kapak okuma",
+    ["mobil=" + kapak(mob), "web=" + kapak(web), "uc=" + (/kind"\) === "level"/.test(uc) ? "seviye kapagi var" : "yok")],
+    ["mobil=seviye+modul", "web=seviye+modul", "uc=seviye kapagi var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

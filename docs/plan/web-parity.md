@@ -8572,3 +8572,46 @@ nesneleri kapsam dışı, ve her dosyada **en az bir çizim** bulunması ayrıca
 (§11.259'daki boş liste dersi).
 
 Altı enjeksiyonun altısı da doğru tarafta yakalandı.
+
+## §11.261 — Sınav kapağını açmak sınavı başlatıyordu
+
+`POST /api/exam {action:"start"}` iki iş yapıyor: kâğıdı üretiyor ve sunucuda
+`exam_start` olayını yazıyor. **Android bunu ekran açılır açılmaz atıyordu.**
+Yani kapağı açıp vazgeçen kullanıcı "sınava başlamış" sayılıyordu; başlama →
+bitirme hunisi Android'de şişik çıkıyordu. Web hiçbir zaman öyle yapmadı:
+kapağı ayrı uçtan (`GET`) okuyup `start`ı ancak düğmeye basılınca atıyor.
+
+Bulgu, ucun kendi yorumundan çıktı — orada "kapağı görmek için soruları
+hazırlamak, vazgeçen kullanıcıya o haftanın kâğıdını harcatırdı" yazıyor ve
+Android tam olarak onu yapıyordu.
+
+Ölçüm nasıl bulundu: **iki istemcinin aynı uca hangi parametrelerle gittiği**
+karşılaştırıldı. Kırk iki ortak adresin beşinde fark vardı; dördü yanlış
+alarm çıktı (parametre değişkenle kuruluyor), biri gerçekti —
+`GET /api/exam?level&module` yalnız web'de vardı.
+
+Aynı turda ucun kendi eksiği de kapatıldı: **kapak yalnızca modül sınavı için
+vardı.** Seviye sınavında "kaç dakika sürecek, hangi bölümler var" sorusu
+cevapsızdı — oysa sayılar sabit (`COUNTS.level`, `LEVEL_SECONDS`) ve kâğıt
+gerektirmiyor. `?kind=level` artık iki istemciye de aynı cevabı veriyor; web
+seviye sınavında da bölümleri ve süreyi gösteriyor.
+
+Bir tuzak: kapak gelmeye başlayınca web'in "Almanca başlık" ölçütü bozuluyordu.
+Ölçüt "kapak geldi mi" idi; seviye sınavının kapağı da geliyor ama **planı
+yok, başlığı yok** — ölçüt değişmeseydi sözlükteki başlığın yerine Almanca
+"Niveauprüfung" yazardı. Ölçüt artık "kapak gerçekten Almanca bir başlık
+taşıyor mu".
+
+Not: mobil sınav ekranına şu an uygulamadan **ulaşılamıyor** (ekranın kendi
+başında yazılı, 2026-09-07). Yani şişik huni bugün üretimde oluşmuyor; sıra
+ekran yeniden bağlandığında doğru olsun diye düzeltildi.
+
+**§165** iki şeyi ölçüyor: `start` POSTunun bir düğmeye bağlı olması (hem
+doğru fonksiyonda olması hem o fonksiyonun düğmeye bağlı olması — yalnız
+birine bakmak, fonksiyonu mount etkisinden çağırınca kapıyı kandırırdı) ve
+kapağın iki istemcide de iki sınav türü için GET ile okunması. Beş
+enjeksiyonun beşi yakalandı; altıncı denemem yanlıştı — değişikliği koda değil
+**yoruma** uygulamıştım, kapı yorumları zaten ayıklıyor.
+
+Ayrıca `exam.module_exam` web'e özel sözlükte duruyordu ama mobil de çağırmaya
+başladı; ortak sözlüğe taşındı (§11.259'daki aynı sınıf).

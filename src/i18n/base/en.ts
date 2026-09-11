@@ -645,6 +645,7 @@ export const enBase: Record<string, string> = {
   "learn.mock_exams_pitch": "Timed, full papers",
   "exam.title": "Exam",
   "exam.level_exam": "{level} level exam",
+  "exam.module_exam": "{level} · Module {n} exam",
   "exam.could_not_load": "The exam could not be loaded.",
   "exam.trial_notice": "This is a trial: results don't count until 80% of the module's speaking practices are passed.",
   "exam.passed": "You passed",

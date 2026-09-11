@@ -645,6 +645,7 @@ export const deBase: Record<string, string> = {
   "learn.mock_exams_pitch": "Auf Zeit, vollständige Bögen",
   "exam.title": "Prüfung",
   "exam.level_exam": "Prüfung Niveau {level}",
+  "exam.module_exam": "{level} · Modulprüfung {n}",
   "exam.could_not_load": "Die Prüfung konnte nicht geladen werden.",
   "exam.trial_notice": "Das ist ein Probelauf: Das Ergebnis zählt erst, wenn 80 % der Sprechübungen des Moduls bestanden sind.",
   "exam.passed": "Bestanden",
