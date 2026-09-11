@@ -25,7 +25,27 @@ export function inviteText(lang: NativeLang, course: string | null | undefined, 
  * "kopyalandı" diyebilsin diye; yerli paylaşım açıldığında bir şey demiyor.
  */
 export async function shareInvite(text: string): Promise<"shared" | "copied" | "failed"> {
-  track("share", 0, "invite");
+  return shareText(text, "invite");
+}
+
+/**
+ * TUR SONUCU METNİ — mobil `shareResult`ın karşılığı.
+ *
+ * Mobil aynı anahtarı (`share.result`) kullanıyor ve bağlantıya `?ref=sonuc`
+ * ekliyor; web'de aynı işaret kalıyor ki iki platformdan gelen paylaşımlar
+ * tek yerde sayılabilsin.
+ */
+export function resultText(lang: NativeLang, correct: number, total: number): string {
+  const origin = typeof window === "undefined" ? "https://www.lernomi.app" : window.location.origin;
+  return translate(lang, "share.result", { total, correct, link: `${origin}?ref=sonuc` });
+}
+
+/**
+ * Paylaşım sayfası, yoksa pano. `kind` olay etiketine gidiyor: davet ile tur
+ * sonucu ayrı sayılıyor (mobil de öyle yapıyor - `track("share", …, "result")`).
+ */
+export async function shareText(text: string, kind: "invite" | "result"): Promise<"shared" | "copied" | "failed"> {
+  track("share", 0, kind);
   try {
     if (navigator.share) {
       await navigator.share({ text });

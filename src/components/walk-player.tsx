@@ -15,6 +15,10 @@ import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
 import { parseConfirm, parseSkip, skipWord } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
+import { Mascot } from "@/components/mascot";
+import { Confetti } from "@/components/celebrate";
+import { resultText, shareText } from "@/lib/share";
+import { ShareIcon } from "@/components/icons";
 import { sharedAudioContext } from "@/lib/audio-context";
 import {
   pocketCue,
@@ -403,6 +407,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    */
   const pauseRef = useRef<() => void>(() => {});
   const [tally, setTally] = useState({ correct: 0, total: 0 });
+  /* Bitis ekraninin kutlama esigi - Android ile ayni hesap
+     (`WalkModeScreen` `donePct`). */
+  const donePct = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
 
   const { listen, cancel } = useListen();
   /** Çalışan döngünün jetonu — duraklat/çık geç gelen adımları geçersiz kılar. */
@@ -1674,7 +1681,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "ready" || status === "paused")
     return (
       <Frame>
-        <h2 className="text-h2">
+        {/* MASKOT. Android'in yürüyüş ekranı DÖRT yerde maskot çiziyor
+            (giriş, duraklama, bitiş, başlangıç); webde hiç yoktu - aynı kip
+            bir platformda karakterli, diğerinde çıplak metindi. Giriş
+            "el sallayan", duraklama "bekleyen" maskot. */}
+        <Mascot mood={status === "paused" ? "idle" : "wave"} size={status === "paused" ? 100 : 120} className="mx-auto" />
+        <h2 className="mt-1 text-h2">
           {t(status === "paused" ? "walk.paused" : "walk.title")}
         </h2>
         <p className="muted mt-2 text-body leading-relaxed">
@@ -1748,7 +1760,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     return (
       /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */
       <Frame role="status">
-        <h2 className="text-h1">{t("walk.done_title")}</h2>
+        {/* BITIS EKRANI ANDROID'DEKI GIBI: konfeti, maskot, sonuc, sonra
+            DEVAM ve PAYLAS. Web yalnız "bitir" sunuyordu - yeni bir tura
+            devam etmek için kipten çıkıp yeniden girmek gerekiyordu ve
+            sonucu paylaşmanın hiçbir yolu yoktu; Android ikisini de
+            veriyor (`WalkModeScreen`: `newTour`, `shareResult`).
+            Konfeti ve maskotun eşiği de oradan: %60. */}
+        <Confetti fire={tally.total > 0 && donePct >= 60 ? 1 : 0} count={34} />
+        <Mascot
+          mood={tally.total > 0 ? (donePct >= 60 ? "cheer" : "happy") : "idle"}
+          size={104}
+          className="mx-auto"
+        />
+        <h2 className="mt-1 text-h1">{t("walk.done_title")}</h2>
         <p className="mt-2 text-body" style={{ color: "var(--color-mint)" }}>
           {t("common.n_correct", { correct: tally.correct, total: tally.total })}
           {walkRef.current.sessions > 1
@@ -1756,7 +1780,21 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             : ""}
         </p>
         <p className="muted mt-2 text-body">{t("walk.done_sub")}</p>
-        <button onClick={leave} className="btn btn-primary mt-5 w-full px-5 py-3.5">{t("common.finish")}</button>
+        <button
+          onClick={() => { setStatus("loading"); void load(); }}
+          className="btn btn-primary mt-5 w-full px-5 py-3.5"
+        >
+          {t("common.continue")}
+        </button>
+        {tally.total > 0 ? (
+          <button
+            onClick={() => void shareText(resultText(lang, tally.correct, tally.total), "result")}
+            className="btn btn-ghost mt-2 flex w-full items-center justify-center gap-2 px-5 py-3"
+          >
+            <ShareIcon size={19} /> {t("common.share")}
+          </button>
+        ) : null}
+        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.finish")}</button>
       </Frame>
     );
 
