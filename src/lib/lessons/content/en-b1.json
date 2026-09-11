@@ -14111,5 +14111,2294 @@
    "goal": "Süren bir deneyimini, bitmiş bir olayını ve hiç yapmadığın bir şeyi doğru zamanlarla anlattıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b1-people-desc",
+  "level": "B1",
+  "course": "en",
+  "icon": "family",
+  "title": "The one with the glasses",
+  "titleTr": "Birini tarif etmek",
+  "summary": "Bir kişiyi kalabalıktan ayırmayı öğretir: görünüş ve huy yan cümleyle bağlanır.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "appearance",
+    "tr": "görünüş"
+   },
+   {
+    "de": "tall",
+    "tr": "uzun boylu"
+   },
+   {
+    "de": "beard",
+    "tr": "sakal"
+   },
+   {
+    "de": "glasses",
+    "tr": "gözlük"
+   },
+   {
+    "de": "friendly",
+    "tr": "cana yakın"
+   },
+   {
+    "de": "quiet",
+    "tr": "sessiz"
+   },
+   {
+    "de": "personality",
+    "tr": "kişilik"
+   },
+   {
+    "de": "wear",
+    "tr": "giymek / takmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "He is the man who wears glasses.",
+    "tr": "kişiyi görünüşüyle ayırır"
+   },
+   {
+    "de": "She is the one I met yesterday.",
+    "tr": "nesne durumunda ilgi zamirini düşürür"
+   },
+   {
+    "de": "That is the woman whose car is outside.",
+    "tr": "aidiyeti yan cümleyle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir kişiyi tarif etmeyi öğreneceğiz: hangisi, nasıl görünüyor, nasıl biri."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir odada beş kişi varsa hepsinin adı 'the man' ya da 'the woman'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "tall"
+     },
+     {
+      "lang": "tr",
+      "text": "uzun boylu,"
+     },
+     {
+      "lang": "en",
+      "text": "beard"
+     },
+     {
+      "lang": "tr",
+      "text": "sakal. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He is tall and has a beard."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He is tall and has a beard."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Genel görünüş için"
+     },
+     {
+      "lang": "en",
+      "text": "appearance"
+     },
+     {
+      "lang": "tr",
+      "text": "huy için ise"
+     },
+     {
+      "lang": "en",
+      "text": "personality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkisi ayrı şeylerdir ve İngilizcede karıştırılmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "His appearance is simple but his personality is strong."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "His appearance is simple but his personality is strong."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kişiyi tanımlayan yan cümle"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "ile başlar ve ismin HEMEN arkasına gelir."
+     },
+     {
+      "lang": "tr",
+      "text": "Takmak ve giymek için tek bir fiil var:"
+     },
+     {
+      "lang": "en",
+      "text": "wear"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Gözlük için"
+     },
+     {
+      "lang": "en",
+      "text": "glasses"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz ve bu kelime hep çoğuldur. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He is the man who wears glasses."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He is the man who wears glasses."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Üst katta çalışan kadın."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She is the woman who works upstairs.",
+     "accept": [
+      "She is the woman who works on the top floor.",
+      "She's the woman who works upstairs."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişi tanımlanıyor, o yüzden who:"
+      },
+      {
+       "lang": "en",
+       "text": "She is the woman who works upstairs."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "She is the one I met yesterday."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "She is the one I met yesterday.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; kişi hâlâ tanımlı, cümle yalnız kısaldı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cana yakın için"
+     },
+     {
+      "lang": "en",
+      "text": "friendly"
+     },
+     {
+      "lang": "tr",
+      "text": "sessiz için ise"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi olumsuz bir şey değildir; sakin, az konuşan demektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "She is friendly but very quiet."
+     },
+     {
+      "lang": "tr",
+      "text": "Cana yakın ama çok sessiz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She is friendly but very quiet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız zamirsiz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She is the one I met yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Dün tanıştığım kişi o."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She is the one I met yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kapıda gördüğüm adam o."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He is the man I saw at the door.",
+     "accept": [
+      "He's the man I saw at the door.",
+      "He is the person I saw at the door."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesne durumunda zamir düşebilir:"
+      },
+      {
+       "lang": "en",
+       "text": "He is the man I saw at the door."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü bir zamir daha var:"
+     },
+     {
+      "lang": "en",
+      "text": "whose"
+     },
+     {
+      "lang": "tr",
+      "text": "Aidiyet bildirir ve ardından doğrudan isim gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That is the woman whose car is outside."
+     },
+     {
+      "lang": "tr",
+      "text": "Arabası dışarıda olan kadın o."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That is the woman whose car is outside."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Oğlu burada oynayan adam o."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That is the man whose son plays here.",
+     "accept": [
+      "That is the man whose son plays here every day.",
+      "That's the man whose son plays here."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aidiyet zamiri ve ardından isim:"
+      },
+      {
+       "lang": "en",
+       "text": "That is the man whose son plays here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kişi"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "aidiyet"
+     },
+     {
+      "lang": "en",
+      "text": "whose"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne durumunda zamir düşebilir."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi birini kalabalıkta tarif edeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla kalabalık bir yerdesiniz ve ona birini göstermeye çalışıyorsun. Kişiyi görünüşü, yaptığı iş ve huyuyla tarif et.",
+   "partner": "kalabalıkta kimi gösterdiğini bir türlü bulamayan bir arkadaş",
+   "opening": "Which one? There are so many people here.",
+   "openingTr": "Hangisi? Burada bir sürü insan var.",
+   "goal": "Kişiyi en az üç ayrı yan cümleyle tarif ettiysen ve arkadaşın sonunda doğru kişiyi bulduysa konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-places-desc",
+  "level": "B1",
+  "course": "en",
+  "icon": "camera",
+  "title": "The place where I grew up",
+  "titleTr": "Yeri tarif etmek",
+  "summary": "Bir yeri tarif etmeyi öğretir: yer bildiren yan cümle where ile kurulur.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "village",
+    "tr": "köy"
+   },
+   {
+    "de": "coast",
+    "tr": "kıyı"
+   },
+   {
+    "de": "valley",
+    "tr": "vadi"
+   },
+   {
+    "de": "crowded",
+    "tr": "kalabalık"
+   },
+   {
+    "de": "peaceful",
+    "tr": "huzurlu"
+   },
+   {
+    "de": "tourist",
+    "tr": "turist"
+   },
+   {
+    "de": "scenery",
+    "tr": "manzara / doğa görünümü"
+   },
+   {
+    "de": "hill",
+    "tr": "tepe"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "This is the village where I grew up.",
+    "tr": "yeri yan cümleyle tanımlar"
+   },
+   {
+    "de": "It is a place that tourists love.",
+    "tr": "yeri özelliğiyle tanımlar"
+   },
+   {
+    "de": "The town, which is on the coast, is small.",
+    "tr": "ek bilgi veren yan cümle kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir yeri tarif etmeyi öğreneceğiz: nerede büyüdün, orası nasıl bir yer."
+     },
+     {
+      "lang": "tr",
+      "text": "Yer tarif ederken İngilizcenin ayrı bir zamiri var ve bu zamir cümleye 'orada' anlamını kendisi katıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "village"
+     },
+     {
+      "lang": "tr",
+      "text": "Köy demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I grew up in a small village."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I grew up in a small village."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Denizin kenarına"
+     },
+     {
+      "lang": "en",
+      "text": "coast"
+     },
+     {
+      "lang": "tr",
+      "text": "iki tepe arasındaki düzlüğe ise"
+     },
+     {
+      "lang": "en",
+      "text": "valley"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The valley is near the coast."
+     },
+     {
+      "lang": "tr",
+      "text": "Vadi kıyıya yakın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The valley is near the coast."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Yer tanımlanıyorsa"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır ve 'orada' anlamını kendi taşır;"
+     },
+     {
+      "lang": "tr",
+      "text": "o yüzden arkasından ayrıca"
+     },
+     {
+      "lang": "en",
+      "text": "in it"
+     },
+     {
+      "lang": "tr",
+      "text": "demek gerekmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This is the village where I grew up."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, büyüdüğüm köy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This is the village where I grew up."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Okula gittiğim kasaba orası."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That is the town where I went to school.",
+     "accept": [
+      "That is the city where I went to school.",
+      "That's the town where I went to school."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer tanımlanıyor, o yüzden where:"
+      },
+      {
+       "lang": "en",
+       "text": "That is the town where I went to school."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "This is the village where I grew up in it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "This is the village where I grew up in it.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer eki gelmez:"
+      },
+      {
+       "lang": "en",
+       "text": "This is the village where I grew up."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok insan varsa"
+     },
+     {
+      "lang": "en",
+      "text": "crowded"
+     },
+     {
+      "lang": "tr",
+      "text": "sakin ve huzurluysa ise"
+     },
+     {
+      "lang": "en",
+      "text": "peaceful"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "In summer it is crowded, in winter it is peaceful."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In summer it is crowded, in winter it is peaceful."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yeri özelliğiyle tanımlıyor. Turist için"
+     },
+     {
+      "lang": "en",
+      "text": "tourist"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is a place that tourists love."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is a place that tourists love."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ailelerin seçtiği bir yer."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is a place that families choose.",
+     "accept": [
+      "It is a place that families like.",
+      "It's a place that families choose."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şey tanımlanıyor, o yüzden that:"
+      },
+      {
+       "lang": "en",
+       "text": "It is a place that families choose."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğanın görünümüne"
+     },
+     {
+      "lang": "en",
+      "text": "scenery"
+     },
+     {
+      "lang": "tr",
+      "text": "yüksek ama dağ olmayan yere ise"
+     },
+     {
+      "lang": "en",
+      "text": "hill"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The scenery from the hill is beautiful."
+     },
+     {
+      "lang": "tr",
+      "text": "Tepeden görünen manzara güzel."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The scenery from the hill is beautiful."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir incelik. Yan cümle zorunlu bilgi değil EK bilgi veriyorsa iki virgül arasına alınır ve"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. O virgüller olmadan anlam değişir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The town, which is on the coast, is small."
+     },
+     {
+      "lang": "tr",
+      "text": "Kıyıda olan kasaba küçük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The town, which is on the coast, is small."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Çok eski olan ev boş."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The house, which is very old, is empty.",
+     "accept": [
+      "The house, which is very old, is now empty.",
+      "The building, which is very old, is empty."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ek bilgi iki virgül arasına alınır:"
+      },
+      {
+       "lang": "en",
+       "text": "The house, which is very old, is empty."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "şey"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "ek bilgi"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi büyüdüğün yeri anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın nereli olduğunu ve orasının nasıl bir yer olduğunu soruyor. Büyüdüğün yeri tarif et: doğası, insanları, mevsimlere göre nasıl değiştiği.",
+   "partner": "oraya gitmeyi düşünen, ayrıntı soran bir arkadaş",
+   "opening": "So where exactly did you grow up?",
+   "openingTr": "Peki tam olarak nerede büyüdün?",
+   "goal": "Yeri en az üç yan cümleyle tarif ettiysen ve mevsimlere göre nasıl değiştiğini anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-recommend",
+  "level": "B1",
+  "course": "en",
+  "icon": "film",
+  "title": "You should see it",
+  "titleTr": "Tavsiye etmek",
+  "summary": "Bir film ya da kitabı tavsiye etmeyi öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "minutes": 10,
+  "focusId": "Gerund or infinitive",
+  "vocab": [
+   {
+    "de": "recommend",
+    "tr": "tavsiye etmek"
+   },
+   {
+    "de": "worth",
+    "tr": "değer"
+   },
+   {
+    "de": "boring",
+    "tr": "sıkıcı"
+   },
+   {
+    "de": "exciting",
+    "tr": "heyecan verici"
+   },
+   {
+    "de": "plot",
+    "tr": "konu / olay örgüsü"
+   },
+   {
+    "de": "actor",
+    "tr": "oyuncu"
+   },
+   {
+    "de": "novel",
+    "tr": "roman"
+   },
+   {
+    "de": "taste",
+    "tr": "zevk"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I recommend watching it twice.",
+    "tr": "tavsiyeyi -ing ile söyler"
+   },
+   {
+    "de": "It is worth reading the novel first.",
+    "tr": "bir şeyin değdiğini söyler"
+   },
+   {
+    "de": "I decided to read the book again.",
+    "tr": "kararı to ile söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir film ya da kitabı tavsiye etmeyi öğreneceğiz: konusu ne, kim oynuyor, değer mi."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmanın tuzağı küçük: tavsiye fiilinden sonra -ing, karar fiilinden sonra to geliyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "recommend"
+     },
+     {
+      "lang": "tr",
+      "text": "Tavsiye etmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I recommend watching it twice."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I recommend watching it twice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Filmin ya da kitabın konusuna"
+     },
+     {
+      "lang": "en",
+      "text": "plot"
+     },
+     {
+      "lang": "tr",
+      "text": "oynayan kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "actor"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The plot is simple but the actor is great."
+     },
+     {
+      "lang": "tr",
+      "text": "Konu basit ama oyuncu harika."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The plot is simple but the actor is great."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tavsiye fiilinden sonra -ing gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "recommend watching"
+     },
+     {
+      "lang": "tr",
+      "text": "Karar ve niyet fiillerinden sonra to gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "decide to read"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir de değer bildiren kalıp var ve ondan sonra hep -ing gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "worth reading"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Önce romanı okumanı tavsiye ederim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I recommend reading the novel first.",
+     "accept": [
+      "I recommend reading the book first.",
+      "I would recommend reading the novel first."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tavsiye fiilinden sonra -ing gelir. Roman için"
+      },
+      {
+       "lang": "en",
+       "text": "novel"
+      },
+      {
+       "lang": "tr",
+       "text": "deriz:"
+      },
+      {
+       "lang": "en",
+       "text": "I recommend reading the novel first."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I recommend to watch it twice."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I recommend to watch it twice.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Bu fiilden sonra mastar değil -ing gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I recommend watching it twice."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıkıcı için"
+     },
+     {
+      "lang": "en",
+      "text": "boring"
+     },
+     {
+      "lang": "tr",
+      "text": "heyecan verici için ise"
+     },
+     {
+      "lang": "en",
+      "text": "exciting"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Dikkat: bu sıfatlar ŞEYİ anlatır, kişiyi değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The first hour is boring but the end is exciting."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk saat sıkıcı ama sonu heyecan verici."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The first hour is boring but the end is exciting."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Değer için"
+     },
+     {
+      "lang": "en",
+      "text": "worth"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is worth reading the novel first."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is worth reading the novel first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sinemada izlemeye değer."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is worth seeing it at the cinema.",
+     "accept": [
+      "It's worth seeing it at the cinema.",
+      "It is worth watching it at the cinema."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu kalıptan sonra hep -ing gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "It is worth seeing it at the cinema."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kimin neden hoşlandığına"
+     },
+     {
+      "lang": "en",
+      "text": "taste"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve bu kelime hem yemek hem sanat için kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It depends on your taste."
+     },
+     {
+      "lang": "tr",
+      "text": "Zevkine bağlı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It depends on your taste."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız to ile. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I decided to read the book again."
+     },
+     {
+      "lang": "tr",
+      "text": "Kitabı tekrar okumaya karar verdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I decided to read the book again."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İkinci bölümü izlemeye karar verdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I decided to watch the second part.",
+     "accept": [
+      "I decided to see the second part.",
+      "I decided to watch part two."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Karar fiilinden sonra to gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I decided to watch the second part."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: tavsiye"
+     },
+     {
+      "lang": "en",
+      "text": "recommend doing"
+     },
+     {
+      "lang": "tr",
+      "text": "değer"
+     },
+     {
+      "lang": "en",
+      "text": "worth doing"
+     },
+     {
+      "lang": "tr",
+      "text": "karar"
+     },
+     {
+      "lang": "en",
+      "text": "decide to do"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşına bir şey tavsiye edeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın hafta sonu için film ya da kitap tavsiyesi istiyor. Bir şey öner, konusunu anlat, neden değdiğini söyle ve onun zevkini de sor.",
+   "partner": "seçici, kolay ikna olmayan bir arkadaş",
+   "opening": "I need something for the weekend. Any ideas?",
+   "openingTr": "Hafta sonu için bir şey lazım. Fikrin var mı?",
+   "goal": "Bir tavsiyede bulunduysan, konusunu anlattıysan ve neden değdiğini doğru kalıpla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-choosing",
+  "level": "B1",
+  "course": "en",
+  "icon": "shopping",
+  "title": "This one or that one",
+  "titleTr": "Seçim yapmak",
+  "summary": "İki seçeneği karşılaştırıp seçmeyi öğretir: karşıtlık bağlaçları kararı taşır.",
+  "minutes": 10,
+  "focusId": "Linking words",
+  "vocab": [
+   {
+    "de": "option",
+    "tr": "seçenek"
+   },
+   {
+    "de": "compare",
+    "tr": "karşılaştırmak"
+   },
+   {
+    "de": "cheaper",
+    "tr": "daha ucuz"
+   },
+   {
+    "de": "quality",
+    "tr": "kalite"
+   },
+   {
+    "de": "prefer",
+    "tr": "tercih etmek"
+   },
+   {
+    "de": "decide",
+    "tr": "karar vermek"
+   },
+   {
+    "de": "whereas",
+    "tr": "oysa"
+   },
+   {
+    "de": "both",
+    "tr": "her ikisi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Although it is cheaper, the quality is worse.",
+    "tr": "çekinceyi cümleyle bağlar"
+   },
+   {
+    "de": "This one is small, whereas that one is big.",
+    "tr": "iki şeyi doğrudan karşılaştırır"
+   },
+   {
+    "de": "I prefer the first one.",
+    "tr": "tercihi söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün iki seçenek arasından seçim yapmayı öğreneceğiz: hangisi daha ucuz, hangisi daha iyi."
+     },
+     {
+      "lang": "tr",
+      "text": "Karşılaştırmanın dili bağlaçtır: hangi bağlacı seçtiğin kararın hangi tarafta olduğunu söyler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "compare"
+     },
+     {
+      "lang": "tr",
+      "text": "karşılaştırmak,"
+     },
+     {
+      "lang": "en",
+      "text": "option"
+     },
+     {
+      "lang": "tr",
+      "text": "seçenek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Let me compare the two options."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Let me compare the two options."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha ucuz için"
+     },
+     {
+      "lang": "en",
+      "text": "cheaper"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyin ne kadar iyi yapıldığına ise"
+     },
+     {
+      "lang": "en",
+      "text": "quality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "This one is cheaper but the quality is lower."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu daha ucuz ama kalitesi düşük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This one is cheaper but the quality is lower."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Çekince bildiren bağlaç"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "bir CÜMLE alır."
+     },
+     {
+      "lang": "tr",
+      "text": "İki şeyi doğrudan karşılaştıran bağlaç ise"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "ve o da bir cümle alır ama karşıtlık kurar,"
+     },
+     {
+      "lang": "tr",
+      "text": "çekince değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Although it is cheaper, the quality is worse."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha ucuz olmasına rağmen kalitesi daha kötü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Although it is cheaper, the quality is worse."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Küçük olmasına rağmen hoşuma gidiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Although it is small, I like it.",
+     "accept": [
+      "Although it is small, I really like it.",
+      "Although it's small, I like it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaçtan sonra tam bir cümle gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Although it is small, I like it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "This one is small, whereas that one is big."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "This one is small, whereas that one is big.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu bağlaç iki şeyi yan yana koyup karşılaştırıyor; çekince bildirmiyor, fark gösteriyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This one is small, whereas that one is big."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu küçük, oysa şu büyük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This one is small, whereas that one is big."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Birincisi hızlı, oysa ikincisi ucuz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The first is fast, whereas the second is cheap.",
+     "accept": [
+      "The first one is fast, whereas the second is cheap.",
+      "The first is quick, whereas the second is cheap."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaç doğrudan karşılaştırır:"
+      },
+      {
+       "lang": "en",
+       "text": "The first is fast, whereas the second is cheap."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tercih etmek"
+     },
+     {
+      "lang": "en",
+      "text": "prefer"
+     },
+     {
+      "lang": "tr",
+      "text": "karar vermek ise"
+     },
+     {
+      "lang": "en",
+      "text": "decide"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I prefer the first one."
+     },
+     {
+      "lang": "tr",
+      "text": "Birincisini tercih ederim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I prefer the first one."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Her ikisi için"
+     },
+     {
+      "lang": "en",
+      "text": "both"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I cannot decide, so I like both."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I cannot decide, so I like both."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Daha ucuz seçeneği tercih ederim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I prefer the cheaper option.",
+     "accept": [
+      "I prefer the cheapest option.",
+      "I would prefer the cheaper option."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tercih kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "I prefer the cheaper option."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: çekince"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "karşılaştırma"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "tercih"
+     },
+     {
+      "lang": "en",
+      "text": "I prefer"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir mağazada iki ürün arasında seçim yapacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir mağazada iki ürün arasında kaldın ve görevliyle konuşuyorsun. İkisini karşılaştır, çekinceni söyle ve sonunda bir tercih yap.",
+   "partner": "iki ürünü de iyi bilen, yönlendirmeye çalışan bir satış görevlisi",
+   "opening": "They are both good. What matters most to you?",
+   "openingTr": "İkisi de iyi. Sizin için en önemlisi ne?",
+   "goal": "İki seçeneği en az iki bağlaçla karşılaştırdıysan ve gerekçeli bir tercih yaptıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-how-it-works",
+  "level": "B1",
+  "course": "en",
+  "icon": "tech",
+  "title": "How it works",
+  "titleTr": "Nasıl çalışır",
+  "summary": "Bir aletin nasıl çalıştığını anlatmayı öğretir: kim yaptığı değil, ne yapıldığı söylenir.",
+  "minutes": 10,
+  "focusId": "Passive voice",
+  "vocab": [
+   {
+    "de": "device",
+    "tr": "cihaz"
+   },
+   {
+    "de": "button",
+    "tr": "düğme"
+   },
+   {
+    "de": "screen",
+    "tr": "ekran"
+   },
+   {
+    "de": "plug",
+    "tr": "fiş"
+   },
+   {
+    "de": "connect",
+    "tr": "bağlamak"
+   },
+   {
+    "de": "switch",
+    "tr": "anahtar / çevirmek"
+   },
+   {
+    "de": "setting",
+    "tr": "ayar"
+   },
+   {
+    "de": "repair",
+    "tr": "onarmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The device is switched on here.",
+    "tr": "işlemi kim yaptığını söylemeden anlatır"
+   },
+   {
+    "de": "The settings are changed on the screen.",
+    "tr": "nerede yapıldığını söyler"
+   },
+   {
+    "de": "It was repaired last month.",
+    "tr": "geçmişte yapılan işlemi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir cihazın nasıl çalıştığını anlatmayı öğreneceğiz: hangi düğme, hangi ayar, nereye takılıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Kullanma kılavuzlarının dili edilgendir; kimin bastığı değil, neye basıldığı yazar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "device"
+     },
+     {
+      "lang": "tr",
+      "text": "cihaz,"
+     },
+     {
+      "lang": "en",
+      "text": "switch"
+     },
+     {
+      "lang": "tr",
+      "text": "çevirmek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The device is switched on here."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The device is switched on here."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Basılan yere"
+     },
+     {
+      "lang": "en",
+      "text": "button"
+     },
+     {
+      "lang": "tr",
+      "text": "görüntünün çıktığı yere ise"
+     },
+     {
+      "lang": "en",
+      "text": "screen"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Press the button and look at the screen."
+     },
+     {
+      "lang": "tr",
+      "text": "Düğmeye bas ve ekrana bak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Press the button and look at the screen."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "is switched, is changed"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu bir üslup tercihi değil: kılavuz herkese yazılır, o yüzden kimin yaptığı söylenmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ekran yumuşak bir bezle temizlenir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The screen is cleaned with a soft cloth.",
+     "accept": [
+      "The screen is cleaned with a soft cloth only.",
+      "The screen is wiped with a soft cloth."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kim temizlediği söylenmiyor, o yüzden edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The screen is cleaned with a soft cloth."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Prize takılan parçaya"
+     },
+     {
+      "lang": "en",
+      "text": "plug"
+     },
+     {
+      "lang": "tr",
+      "text": "iki şeyi birbirine bağlamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "connect"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The plug is connected at the back."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiş arkadan bağlanıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The plug is connected at the back."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The device is switch on here."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The device is switch on here.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Edilgende fiilin üçüncü hâli gerekir:"
+      },
+      {
+       "lang": "en",
+       "text": "The device is switched on here."
+      },
+      {
+       "lang": "tr",
+       "text": "Yalın biçim kalırsa cümle emir gibi duyulur."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Ayar için"
+     },
+     {
+      "lang": "en",
+      "text": "setting"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The settings are changed on the screen."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The settings are changed on the screen."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dil ayarlardan değiştirilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The language is changed in the settings.",
+     "accept": [
+      "The language is changed in the setting.",
+      "The language can be changed in the settings."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ve yer bildiren tümleç:"
+      },
+      {
+       "lang": "en",
+       "text": "The language is changed in the settings."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bozulan bir şeyi onarmak"
+     },
+     {
+      "lang": "en",
+      "text": "repair"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir; bu kelime hem isim hem fiildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız geçmişte. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It was repaired last month."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen ay onarıldı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was repaired last month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir cümle daha:"
+     },
+     {
+      "lang": "en",
+      "text": "The old device was connected with a cable."
+     },
+     {
+      "lang": "tr",
+      "text": "Eski cihaz bir kabloyla bağlanmıştı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The old device was connected with a cable."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Düğme iki hafta önce değiştirildi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The button was replaced two weeks ago.",
+     "accept": [
+      "The button was changed two weeks ago.",
+      "The button was replaced a fortnight ago."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The button was replaced two weeks ago."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: şimdi"
+     },
+     {
+      "lang": "en",
+      "text": "is switched"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş"
+     },
+     {
+      "lang": "en",
+      "text": "was repaired"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşına cihazın nasıl çalıştığını anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın yeni aldığı cihazı nasıl kullanacağını soruyor. Nasıl açıldığını, ayarların nereden değiştirildiğini ve bozulursa ne yapılacağını anlat.",
+   "partner": "cihazı yeni almış, kılavuzu okumamış bir arkadaş",
+   "opening": "I can't even turn it on. How does this work?",
+   "openingTr": "Açamıyorum bile. Bu nasıl çalışıyor?",
+   "goal": "Açılışını, bir ayarı ve onarım durumunu edilgen kalıplarla anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

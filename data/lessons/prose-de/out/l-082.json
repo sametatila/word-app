@@ -1,0 +1,1022 @@
+[
+ {
+  "tr": "Seçim yapmak",
+  "kind": "titleTr",
+  "de": "Sich entscheiden"
+ },
+ {
+  "tr": "Nasıl çalışır",
+  "kind": "titleTr",
+  "de": "Wie es funktioniert"
+ },
+ {
+  "tr": "Tavsiye etmek",
+  "kind": "titleTr",
+  "de": "Etwas empfehlen"
+ },
+ {
+  "tr": "Yeri tarif etmek",
+  "kind": "titleTr",
+  "de": "Einen Ort beschreiben"
+ },
+ {
+  "tr": "Birini tarif etmek",
+  "kind": "titleTr",
+  "de": "Eine Person beschreiben"
+ },
+ {
+  "tr": "Bir yeri tarif etmeyi öğretir: yer bildiren yan cümle where ile kurulur.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen Ort beschreibt: der Ortsnebensatz wird mit where gebaut."
+ },
+ {
+  "tr": "İki seçeneği karşılaştırıp seçmeyi öğretir: karşıtlık bağlaçları kararı taşır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man zwei Optionen vergleicht und wählt: die Gegensatzkonnektoren tragen die Entscheidung."
+ },
+ {
+  "tr": "Bir kişiyi kalabalıktan ayırmayı öğretir: görünüş ve huy yan cümleyle bağlanır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Person aus der Menge heraushebt: Aussehen und Wesen werden mit einem Nebensatz angehängt."
+ },
+ {
+  "tr": "Bir aletin nasıl çalıştığını anlatmayı öğretir: kim yaptığı değil, ne yapıldığı söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erklärt, wie ein Gerät funktioniert: es wird nicht gesagt, wer etwas tut, sondern was getan wird."
+ },
+ {
+  "tr": "Bir film ya da kitabı tavsiye etmeyi öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen Film oder ein Buch empfiehlt, und lässt wählen, ob nach dem Verb -ing oder to steht."
+ },
+ {
+  "tr": "seçici, kolay ikna olmayan bir arkadaş",
+  "kind": "partner",
+  "de": "eine wählerische Freundin, die sich nicht leicht überzeugen lässt"
+ },
+ {
+  "tr": "cihazı yeni almış, kılavuzu okumamış bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der das Gerät neu hat und die Anleitung nicht gelesen hat"
+ },
+ {
+  "tr": "oraya gitmeyi düşünen, ayrıntı soran bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die hinfahren will und nach Details fragt"
+ },
+ {
+  "tr": "kalabalıkta kimi gösterdiğini bir türlü bulamayan bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der in der Menge einfach nicht findet, wen du meinst"
+ },
+ {
+  "tr": "iki ürünü de iyi bilen, yönlendirmeye çalışan bir satış görevlisi",
+  "kind": "partner",
+  "de": "ein Verkäufer, der beide Produkte gut kennt und dich lenken will"
+ },
+ {
+  "tr": "Peki tam olarak nerede büyüdün?",
+  "kind": "openingTr",
+  "de": "Und wo genau bist du aufgewachsen?"
+ },
+ {
+  "tr": "Hangisi? Burada bir sürü insan var.",
+  "kind": "openingTr",
+  "de": "Welcher denn? Hier sind so viele Leute."
+ },
+ {
+  "tr": "Açamıyorum bile. Bu nasıl çalışıyor?",
+  "kind": "openingTr",
+  "de": "Ich kriege es nicht mal an. Wie funktioniert das?"
+ },
+ {
+  "tr": "İkisi de iyi. Sizin için en önemlisi ne?",
+  "kind": "openingTr",
+  "de": "Beide sind gut. Was ist Ihnen am wichtigsten?"
+ },
+ {
+  "tr": "Hafta sonu için bir şey lazım. Fikrin var mı?",
+  "kind": "openingTr",
+  "de": "Ich brauche etwas fürs Wochenende. Hast du eine Idee?"
+ },
+ {
+  "tr": "Bir arkadaşınla kalabalık bir yerdesiniz ve ona birini göstermeye çalışıyorsun. Kişiyi görünüşü, yaptığı iş ve huyuyla tarif et.",
+  "kind": "scene",
+  "de": "Du bist mit einem Freund an einem vollen Ort und willst ihm jemanden zeigen. Beschreib die Person mit Aussehen, Beruf und Wesen."
+ },
+ {
+  "tr": "Bir mağazada iki ürün arasında kaldın ve görevliyle konuşuyorsun. İkisini karşılaştır, çekinceni söyle ve sonunda bir tercih yap.",
+  "kind": "scene",
+  "de": "Im Laden schwankst du zwischen zwei Produkten und sprichst mit dem Verkäufer. Vergleich beide, nenne deinen Vorbehalt und triff am Ende eine Wahl."
+ },
+ {
+  "tr": "Bir arkadaşın hafta sonu için film ya da kitap tavsiyesi istiyor. Bir şey öner, konusunu anlat, neden değdiğini söyle ve onun zevkini de sor.",
+  "kind": "scene",
+  "de": "Eine Freundin will für das Wochenende einen Film- oder Buchtipp. Schlag etwas vor, erzähl die Handlung, sag, warum es sich lohnt, und frag nach ihrem Geschmack."
+ },
+ {
+  "tr": "Bir arkadaşın nereli olduğunu ve orasının nasıl bir yer olduğunu soruyor. Büyüdüğün yeri tarif et: doğası, insanları, mevsimlere göre nasıl değiştiği.",
+  "kind": "scene",
+  "de": "Eine Freundin fragt, woher du kommst und wie es dort ist. Beschreib den Ort, an dem du aufgewachsen bist: Natur, Menschen und wie er sich mit den Jahreszeiten ändert."
+ },
+ {
+  "tr": "Bir arkadaşın yeni aldığı cihazı nasıl kullanacağını soruyor. Nasıl açıldığını, ayarların nereden değiştirildiğini ve bozulursa ne yapılacağını anlat.",
+  "kind": "scene",
+  "de": "Ein Freund fragt, wie er sein neues Gerät benutzt. Erklär, wie es eingeschaltet wird, wo die Einstellungen geändert werden und was bei einem Defekt zu tun ist."
+ },
+ {
+  "tr": "Açılışını, bir ayarı ve onarım durumunu edilgen kalıplarla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das Einschalten, eine Einstellung und den Reparaturfall im Passiv erklärt hast."
+ },
+ {
+  "tr": "İki seçeneği en az iki bağlaçla karşılaştırdıysan ve gerekçeli bir tercih yaptıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die zwei Optionen mit mindestens zwei Konnektoren verglichen und begründet gewählt hast."
+ },
+ {
+  "tr": "Yeri en az üç yan cümleyle tarif ettiysen ve mevsimlere göre nasıl değiştiğini anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du den Ort mit mindestens drei Nebensätzen beschrieben und erzählt hast, wie er sich mit den Jahreszeiten ändert."
+ },
+ {
+  "tr": "Kişiyi en az üç ayrı yan cümleyle tarif ettiysen ve arkadaşın sonunda doğru kişiyi bulduysa konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Person mit mindestens drei Nebensätzen beschrieben hast und dein Freund am Ende die richtige gefunden hat."
+ },
+ {
+  "tr": "Bir tavsiyede bulunduysan, konusunu anlattıysan ve neden değdiğini doğru kalıpla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du etwas empfohlen, die Handlung erzählt und mit der richtigen Wendung gesagt hast, warum es sich lohnt."
+ },
+ {
+  "tr": "ayar",
+  "kind": "vocab.tr",
+  "de": "Einstellung"
+ },
+ {
+  "tr": "kıyı",
+  "kind": "vocab.tr",
+  "de": "Küste"
+ },
+ {
+  "tr": "oysa",
+  "kind": "vocab.tr",
+  "de": "wohingegen"
+ },
+ {
+  "tr": "tepe",
+  "kind": "vocab.tr",
+  "de": "Hügel"
+ },
+ {
+  "tr": "vadi",
+  "kind": "vocab.tr",
+  "de": "Tal"
+ },
+ {
+  "tr": "zevk",
+  "kind": "vocab.tr",
+  "de": "Geschmack"
+ },
+ {
+  "tr": "cihaz",
+  "kind": "vocab.tr",
+  "de": "Gerät"
+ },
+ {
+  "tr": "roman",
+  "kind": "vocab.tr",
+  "de": "Roman"
+ },
+ {
+  "tr": "gözlük",
+  "kind": "vocab.tr",
+  "de": "Brille"
+ },
+ {
+  "tr": "oyuncu",
+  "kind": "vocab.tr",
+  "de": "Schauspieler"
+ },
+ {
+  "tr": "turist",
+  "kind": "vocab.tr",
+  "de": "Tourist"
+ },
+ {
+  "tr": "görünüş",
+  "kind": "vocab.tr",
+  "de": "Aussehen"
+ },
+ {
+  "tr": "huzurlu",
+  "kind": "vocab.tr",
+  "de": "friedlich"
+ },
+ {
+  "tr": "kişilik",
+  "kind": "vocab.tr",
+  "de": "Persönlichkeit"
+ },
+ {
+  "tr": "onarmak",
+  "kind": "vocab.tr",
+  "de": "reparieren"
+ },
+ {
+  "tr": "seçenek",
+  "kind": "vocab.tr",
+  "de": "Option"
+ },
+ {
+  "tr": "bağlamak",
+  "kind": "vocab.tr",
+  "de": "verbinden"
+ },
+ {
+  "tr": "her ikisi",
+  "kind": "vocab.tr",
+  "de": "beide"
+ },
+ {
+  "tr": "giymek / takmak",
+  "kind": "vocab.tr",
+  "de": "tragen"
+ },
+ {
+  "tr": "anahtar / çevirmek",
+  "kind": "vocab.tr",
+  "de": "Schalter / schalten"
+ },
+ {
+  "tr": "konu / olay örgüsü",
+  "kind": "vocab.tr",
+  "de": "Handlung"
+ },
+ {
+  "tr": "manzara / doğa görünümü",
+  "kind": "vocab.tr",
+  "de": "Landschaft"
+ },
+ {
+  "tr": "tercihi söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Vorliebe"
+ },
+ {
+  "tr": "kararı to ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Entscheidung mit to"
+ },
+ {
+  "tr": "kişiyi görünüşüyle ayırır",
+  "kind": "pattern.tr",
+  "de": "hebt die Person über ihr Aussehen heraus"
+ },
+ {
+  "tr": "nerede yapıldığını söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, wo es gemacht wird"
+ },
+ {
+  "tr": "tavsiyeyi -ing ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Empfehlung mit -ing"
+ },
+ {
+  "tr": "yeri özelliğiyle tanımlar",
+  "kind": "pattern.tr",
+  "de": "beschreibt den Ort über seine Eigenschaft"
+ },
+ {
+  "tr": "yeri yan cümleyle tanımlar",
+  "kind": "pattern.tr",
+  "de": "beschreibt den Ort mit einem Nebensatz"
+ },
+ {
+  "tr": "aidiyeti yan cümleyle söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Zugehörigkeit mit einem Nebensatz"
+ },
+ {
+  "tr": "ek bilgi veren yan cümle kurar",
+  "kind": "pattern.tr",
+  "de": "baut einen Nebensatz mit Zusatzinformation"
+ },
+ {
+  "tr": "iki şeyi doğrudan karşılaştırır",
+  "kind": "pattern.tr",
+  "de": "vergleicht zwei Dinge direkt"
+ },
+ {
+  "tr": "işlemi kim yaptığını söylemeden anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt den Vorgang, ohne zu sagen, wer ihn ausführt"
+ },
+ {
+  "tr": "Yalın biçim kalırsa cümle emir gibi duyulur.",
+  "kind": "why.tr",
+  "de": "Bleibt die Grundform stehen, klingt der Satz wie ein Befehl."
+ },
+ {
+  "tr": "Yanlış. Edilgende fiilin üçüncü hâli gerekir:",
+  "kind": "why.tr",
+  "de": "Falsch. Im Passiv braucht es die dritte Form des Verbs:"
+ },
+ {
+  "tr": "Yanlış. Bu zamir 'orada' anlamını zaten taşıyor; sona ikinci bir yer eki gelmez:",
+  "kind": "why.tr",
+  "de": "Falsch. Dieses Pronomen trägt «dort» schon in sich; am Ende kommt keine zweite Ortsangabe:"
+ },
+ {
+  "tr": "Doğru. Bu bağlaç iki şeyi yan yana koyup karşılaştırıyor; çekince bildirmiyor, fark gösteriyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieser Konnektor stellt zwei Dinge nebeneinander und vergleicht; er nennt keinen Vorbehalt, sondern einen Unterschied."
+ },
+ {
+  "tr": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; kişi hâlâ tanımlı, cümle yalnız kısaldı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Pronomen ist Objekt des Nebensatzes und darf wegfallen; die Person bleibt bestimmt, der Satz wurde nur kürzer."
+ },
+ {
+  "tr": "deriz:",
+  "kind": "hint.tr",
+  "de": "sagen wir:"
+ },
+ {
+  "tr": "Tercih kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für die Vorliebe:"
+ },
+ {
+  "tr": "Edilgen ve yer bildiren tümleç:",
+  "kind": "hint.tr",
+  "de": "Passiv mit einer Ortsangabe:"
+ },
+ {
+  "tr": "Karar fiilinden sonra to gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dem Verb der Entscheidung steht to:"
+ },
+ {
+  "tr": "Aidiyet zamiri ve ardından isim:",
+  "kind": "hint.tr",
+  "de": "Das Zugehörigkeitspronomen und danach ein Nomen:"
+ },
+ {
+  "tr": "Bu bağlaç doğrudan karşılaştırır:",
+  "kind": "hint.tr",
+  "de": "Dieser Konnektor vergleicht direkt:"
+ },
+ {
+  "tr": "Yer tanımlanıyor, o yüzden where:",
+  "kind": "hint.tr",
+  "de": "Ein Ort wird beschrieben, deshalb where:"
+ },
+ {
+  "tr": "Ek bilgi iki virgül arasına alınır:",
+  "kind": "hint.tr",
+  "de": "Zusatzinformation steht zwischen zwei Kommas:"
+ },
+ {
+  "tr": "Kim temizlediği söylenmiyor, o yüzden edilgen:",
+  "kind": "hint.tr",
+  "de": "Wer putzt, wird nicht genannt, deshalb Passiv:"
+ },
+ {
+  "tr": "Tavsiye fiilinden sonra -ing gelir. Roman için",
+  "kind": "hint.tr",
+  "de": "Nach dem Empfehlungsverb steht -ing. Für den Roman sagen wir"
+ },
+ {
+  "tr": "değer",
+  "kind": "say.tr",
+  "de": "lohnt sich"
+ },
+ {
+  "tr": "karar",
+  "kind": "say.tr",
+  "de": "Entscheidung"
+ },
+ {
+  "tr": "cihaz,",
+  "kind": "say.tr",
+  "de": "Gerät,"
+ },
+ {
+  "tr": "geçmiş",
+  "kind": "say.tr",
+  "de": "Vergangenheit"
+ },
+ {
+  "tr": "tercih",
+  "kind": "say.tr",
+  "de": "Vorliebe"
+ },
+ {
+  "tr": "aidiyet",
+  "kind": "say.tr",
+  "de": "Zugehörigkeit"
+ },
+ {
+  "tr": "ek bilgi",
+  "kind": "say.tr",
+  "de": "Zusatzinformation"
+ },
+ {
+  "tr": "Sıkıcı için",
+  "kind": "say.tr",
+  "de": "Für langweilig sagen wir"
+ },
+ {
+  "tr": "uzun boylu,",
+  "kind": "say.tr",
+  "de": "groß,"
+ },
+ {
+  "tr": "Basılan yere",
+  "kind": "say.tr",
+  "de": "Die Stelle, auf die man drückt, heißt"
+ },
+ {
+  "tr": "huy için ise",
+  "kind": "say.tr",
+  "de": "und für das Wesen"
+ },
+ {
+  "tr": "Tercih etmek",
+  "kind": "say.tr",
+  "de": "Bevorzugen wird mit"
+ },
+ {
+  "tr": "karşılaştırma",
+  "kind": "say.tr",
+  "de": "Vergleich"
+ },
+ {
+  "tr": "çekince değil.",
+  "kind": "say.tr",
+  "de": "keinen Vorbehalt."
+ },
+ {
+  "tr": "Daha ucuz için",
+  "kind": "say.tr",
+  "de": "Für billiger sagen wir"
+ },
+ {
+  "tr": "Her ikisi için",
+  "kind": "say.tr",
+  "de": "Für beide sagen wir"
+ },
+ {
+  "tr": "Zevkine bağlı.",
+  "kind": "say.tr",
+  "de": "Das hängt von deinem Geschmack ab."
+ },
+ {
+  "tr": "bir CÜMLE alır.",
+  "kind": "say.tr",
+  "de": "nimmt einen SATZ."
+ },
+ {
+  "tr": "Cana yakın için",
+  "kind": "say.tr",
+  "de": "Für freundlich sagen wir"
+ },
+ {
+  "tr": "Çok insan varsa",
+  "kind": "say.tr",
+  "de": "Sind viele Leute da, sagt man"
+ },
+ {
+  "tr": "demek gerekmez.",
+  "kind": "say.tr",
+  "de": "zu sagen ist nicht nötig."
+ },
+ {
+  "tr": "karşılaştırmak,",
+  "kind": "say.tr",
+  "de": "vergleichen,"
+ },
+ {
+  "tr": "sessiz için ise",
+  "kind": "say.tr",
+  "de": "und für still"
+ },
+ {
+  "tr": "Denizin kenarına",
+  "kind": "say.tr",
+  "de": "Der Rand des Meeres heißt"
+ },
+ {
+  "tr": "karar vermek ise",
+  "kind": "say.tr",
+  "de": "und sich entscheiden mit"
+ },
+ {
+  "tr": "Özetleyelim: yer",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Ort"
+ },
+ {
+  "tr": "sakal. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Bart. Sprich nach:"
+ },
+ {
+  "tr": "Bu, büyüdüğüm köy.",
+  "kind": "say.tr",
+  "de": "Das ist das Dorf, in dem ich aufgewachsen bin."
+ },
+ {
+  "tr": "Doğanın görünümüne",
+  "kind": "say.tr",
+  "de": "Das Bild der Natur heißt"
+ },
+ {
+  "tr": "Geçen ay onarıldı.",
+  "kind": "say.tr",
+  "de": "Es wurde letzten Monat repariert."
+ },
+ {
+  "tr": "Genel görünüş için",
+  "kind": "say.tr",
+  "de": "Für das gesamte Aussehen sagen wir"
+ },
+ {
+  "tr": "oynayan kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die spielt, heißt"
+ },
+ {
+  "tr": "Özetleyelim: şimdi",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Gegenwart"
+ },
+ {
+  "tr": "Vadi kıyıya yakın.",
+  "kind": "say.tr",
+  "de": "Das Tal liegt nah an der Küste."
+ },
+ {
+  "tr": "seçenek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Option. Sprich nach:"
+ },
+ {
+  "tr": "Özetleyelim: çekince",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vorbehalt"
+ },
+ {
+  "tr": "Özetleyelim: tavsiye",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Empfehlung"
+ },
+ {
+  "tr": "Köy demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Dorf. Sprich nach:"
+ },
+ {
+  "tr": "Prize takılan parçaya",
+  "kind": "say.tr",
+  "de": "Das Teil, das in die Steckdose kommt, heißt"
+ },
+ {
+  "tr": "Dün tanıştığım kişi o.",
+  "kind": "say.tr",
+  "de": "Sie ist die, die ich gestern kennengelernt habe."
+ },
+ {
+  "tr": "Fiş arkadan bağlanıyor.",
+  "kind": "say.tr",
+  "de": "Der Stecker wird hinten angeschlossen."
+ },
+ {
+  "tr": "heyecan verici için ise",
+  "kind": "say.tr",
+  "de": "und für spannend"
+ },
+ {
+  "tr": "sakin ve huzurluysa ise",
+  "kind": "say.tr",
+  "de": "und wenn es ruhig und friedlich ist"
+ },
+ {
+  "tr": "Bozulan bir şeyi onarmak",
+  "kind": "say.tr",
+  "de": "Etwas Kaputtes reparieren wird mit"
+ },
+ {
+  "tr": "Bu küçük, oysa şu büyük.",
+  "kind": "say.tr",
+  "de": "Dieses ist klein, wohingegen jenes groß ist."
+ },
+ {
+  "tr": "Kimin neden hoşlandığına",
+  "kind": "say.tr",
+  "de": "Was jemandem gefällt, heißt"
+ },
+ {
+  "tr": "Kıyıda olan kasaba küçük.",
+  "kind": "say.tr",
+  "de": "Die Stadt, die an der Küste liegt, ist klein."
+ },
+ {
+  "tr": "Birincisini tercih ederim.",
+  "kind": "say.tr",
+  "de": "Ich bevorzuge das erste."
+ },
+ {
+  "tr": "Cana yakın ama çok sessiz.",
+  "kind": "say.tr",
+  "de": "Sie ist freundlich, aber sehr still."
+ },
+ {
+  "tr": "Düğmeye bas ve ekrana bak.",
+  "kind": "say.tr",
+  "de": "Drück den Knopf und schau auf den Bildschirm."
+ },
+ {
+  "tr": "İlk kalıbımız. Gözlük için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für die Brille sagen wir"
+ },
+ {
+  "tr": "o yüzden arkasından ayrıca",
+  "kind": "say.tr",
+  "de": "deshalb danach zusätzlich"
+ },
+ {
+  "tr": "Üçüncü bir zamir daha var:",
+  "kind": "say.tr",
+  "de": "Es gibt noch ein drittes Pronomen:"
+ },
+ {
+  "tr": "görüntünün çıktığı yere ise",
+  "kind": "say.tr",
+  "de": "und die Fläche, auf der das Bild erscheint, heißt"
+ },
+ {
+  "tr": "İkinci kalıbımız. Ayar için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung. Für die Einstellung sagen wir"
+ },
+ {
+  "tr": "İkinci kalıbımız. Değer için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung. Für lohnen sagen wir"
+ },
+ {
+  "tr": "Filmin ya da kitabın konusuna",
+  "kind": "say.tr",
+  "de": "Die Handlung des Films oder Buches heißt"
+ },
+ {
+  "tr": "Konu basit ama oyuncu harika.",
+  "kind": "say.tr",
+  "de": "Die Handlung ist einfach, aber der Schauspieler ist großartig."
+ },
+ {
+  "tr": "Arabası dışarıda olan kadın o.",
+  "kind": "say.tr",
+  "de": "Das ist die Frau, deren Auto draußen steht."
+ },
+ {
+  "tr": "Tepeden görünen manzara güzel.",
+  "kind": "say.tr",
+  "de": "Die Landschaft vom Hügel aus ist schön."
+ },
+ {
+  "tr": "iki tepe arasındaki düzlüğe ise",
+  "kind": "say.tr",
+  "de": "und die Ebene zwischen zwei Hügeln heißt"
+ },
+ {
+  "tr": "yüksek ama dağ olmayan yere ise",
+  "kind": "say.tr",
+  "de": "und eine Erhebung, die kein Berg ist, heißt"
+ },
+ {
+  "tr": "Bu daha ucuz ama kalitesi düşük.",
+  "kind": "say.tr",
+  "de": "Dieses ist billiger, aber die Qualität ist niedriger."
+ },
+ {
+  "tr": "iki şeyi birbirine bağlamaya ise",
+  "kind": "say.tr",
+  "de": "und zwei Dinge miteinander verbinden heißt"
+ },
+ {
+  "tr": "Son kalıbımız to ile. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung mit to. Sprich nach:"
+ },
+ {
+  "tr": "Son kalıbımız geçmişte. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung steht in der Vergangenheit. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi büyüdüğün yeri anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von dem Ort, an dem du aufgewachsen bist."
+ },
+ {
+  "tr": "Kitabı tekrar okumaya karar verdim.",
+  "kind": "say.tr",
+  "de": "Ich habe mich entschieden, das Buch noch einmal zu lesen."
+ },
+ {
+  "tr": "Bir tane daha: Çok eski olan ev boş.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das Haus, das sehr alt ist, steht leer."
+ },
+ {
+  "tr": "Eski cihaz bir kabloyla bağlanmıştı.",
+  "kind": "say.tr",
+  "de": "Das alte Gerät war mit einem Kabel verbunden."
+ },
+ {
+  "tr": "bir şeyin ne kadar iyi yapıldığına ise",
+  "kind": "say.tr",
+  "de": "und wie gut etwas gemacht ist, heißt"
+ },
+ {
+  "tr": "Şimdi sen kur: Kapıda gördüğüm adam o.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Er ist der Mann, den ich an der Tür gesehen habe."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Yer tanımlanıyorsa",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Wird ein Ort beschrieben, steht"
+ },
+ {
+  "tr": "Şimdi sen kur: Sinemada izlemeye değer.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es lohnt sich, ihn im Kino zu sehen."
+ },
+ {
+  "tr": "Takmak ve giymek için tek bir fiil var:",
+  "kind": "say.tr",
+  "de": "Für anziehen und tragen gibt es ein einziges Verb:"
+ },
+ {
+  "tr": "İlk saat sıkıcı ama sonu heyecan verici.",
+  "kind": "say.tr",
+  "de": "Die erste Stunde ist langweilig, aber das Ende ist spannend."
+ },
+ {
+  "tr": "çevirmek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "schalten. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "ile başlar ve ismin HEMEN arkasına gelir.",
+  "kind": "say.tr",
+  "de": "beginnt und kommt DIREKT hinter das Nomen."
+ },
+ {
+  "tr": "Şimdi birini kalabalıkta tarif edeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt beschreibst du jemanden in der Menge."
+ },
+ {
+  "tr": "Şimdi sen kur: Ailelerin seçtiği bir yer.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ein Ort, den Familien wählen."
+ },
+ {
+  "tr": "Bir tane daha: Oğlu burada oynayan adam o.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das ist der Mann, dessen Sohn hier spielt."
+ },
+ {
+  "tr": "İki şeyi doğrudan karşılaştıran bağlaç ise",
+  "kind": "say.tr",
+  "de": "Und der Konnektor, der zwei Dinge direkt vergleicht, ist"
+ },
+ {
+  "tr": "Şimdi sıra sende: Üst katta çalışan kadın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Frau, die oben arbeitet."
+ },
+ {
+  "tr": "deriz ve bu kelime hep çoğuldur. Tekrar et:",
+  "kind": "say.tr",
+  "de": "sagen wir, und das Wort steht immer im Plural. Sprich nach:"
+ },
+ {
+  "tr": "Karar ve niyet fiillerinden sonra to gelir:",
+  "kind": "say.tr",
+  "de": "Nach Verben der Entscheidung und Absicht steht to:"
+ },
+ {
+  "tr": "kullanılır ve 'orada' anlamını kendi taşır;",
+  "kind": "say.tr",
+  "de": "benutzt und trägt «dort» selbst in sich;"
+ },
+ {
+  "tr": "Şimdi sen kur: Dil ayarlardan değiştirilir.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Sprache wird in den Einstellungen geändert."
+ },
+ {
+  "tr": "ve o da bir cümle alır ama karşıtlık kurar,",
+  "kind": "say.tr",
+  "de": "und auch er nimmt einen Satz, stellt aber einen Gegensatz her,"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Çekince bildiren bağlaç",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Konnektor für den Vorbehalt"
+ },
+ {
+  "tr": "Daha ucuz olmasına rağmen kalitesi daha kötü.",
+  "kind": "say.tr",
+  "de": "Obwohl es billiger ist, ist die Qualität schlechter."
+ },
+ {
+  "tr": "ile söylenir; bu kelime hem isim hem fiildir.",
+  "kind": "say.tr",
+  "de": "gesagt; das Wort ist Nomen und Verb zugleich."
+ },
+ {
+  "tr": "kullanılır. O virgüller olmadan anlam değişir.",
+  "kind": "say.tr",
+  "de": "benutzt. Ohne diese Kommas ändert sich die Bedeutung."
+ },
+ {
+  "tr": "Şimdi sıra sende: Okula gittiğim kasaba orası.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das ist die Stadt, in der ich zur Schule gegangen bin."
+ },
+ {
+  "tr": "Şimdi bir arkadaşına bir şey tavsiye edeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt empfiehlst du einer Freundin etwas."
+ },
+ {
+  "tr": "Bir tane daha: Daha ucuz seçeneği tercih ederim.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich bevorzuge die billigere Option."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kişiyi tanımlayan yan cümle",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Nebensatz, der eine Person beschreibt, mit"
+ },
+ {
+  "tr": "Aidiyet bildirir ve ardından doğrudan isim gelir.",
+  "kind": "say.tr",
+  "de": "Es nennt die Zugehörigkeit, und danach kommt direkt ein Nomen."
+ },
+ {
+  "tr": "Bir tane daha: Düğme iki hafta önce değiştirildi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Knopf wurde vor zwei Wochen ausgetauscht."
+ },
+ {
+  "tr": "Bir tane daha: İkinci bölümü izlemeye karar verdim.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich habe mich entschieden, den zweiten Teil zu sehen."
+ },
+ {
+  "tr": "Şimdi sen kur: Birincisi hızlı, oysa ikincisi ucuz.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das erste ist schnell, wohingegen das zweite billig ist."
+ },
+ {
+  "tr": "Tavsiye etmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt empfehlen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Ekran yumuşak bir bezle temizlenir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Bildschirm wird mit einem weichen Tuch gereinigt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Önce romanı okumanı tavsiye ederim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich empfehle, zuerst den Roman zu lesen."
+ },
+ {
+  "tr": "denir. Dikkat: bu sıfatlar ŞEYİ anlatır, kişiyi değil.",
+  "kind": "say.tr",
+  "de": "genannt. Achtung: diese Adjektive beschreiben die SACHE, nicht die Person."
+ },
+ {
+  "tr": "Şimdi bir mağazada iki ürün arasında seçim yapacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt wählst du im Laden zwischen zwei Produkten."
+ },
+ {
+  "tr": "denir ve bu kelime hem yemek hem sanat için kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt, und das Wort wird für Essen wie für Kunst benutzt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Küçük olmasına rağmen hoşuma gidiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Obwohl es klein ist, gefällt es mir."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tavsiye fiilinden sonra -ing gelir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Nach dem Empfehlungsverb steht -ing:"
+ },
+ {
+  "tr": "denir. İkisi ayrı şeylerdir ve İngilizcede karıştırılmaz.",
+  "kind": "say.tr",
+  "de": "genannt. Das sind zwei verschiedene Dinge und werden im Englischen nicht vermischt."
+ },
+ {
+  "tr": "İkinci kalıbımız yeri özelliğiyle tanımlıyor. Turist için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung beschreibt den Ort über seine Eigenschaft. Für den Touristen sagen wir"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına cihazın nasıl çalıştığını anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du einem Freund, wie das Gerät funktioniert."
+ },
+ {
+  "tr": "Bir de değer bildiren kalıp var ve ondan sonra hep -ing gelir:",
+  "kind": "say.tr",
+  "de": "Und es gibt eine Wendung für den Wert, und danach steht immer -ing:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kılavuz dilinde özne düşer ve edilgen kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Anleitungssprache fällt das Subjekt weg und das Passiv wird gebaut:"
+ },
+ {
+  "tr": "denir. İkincisi olumsuz bir şey değildir; sakin, az konuşan demektir.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite ist nichts Negatives; es heißt ruhig, wortkarg."
+ },
+ {
+  "tr": "Bu bir üslup tercihi değil: kılavuz herkese yazılır, o yüzden kimin yaptığı söylenmez.",
+  "kind": "say.tr",
+  "de": "Das ist keine Stilfrage: eine Anleitung wird für alle geschrieben, deshalb wird nicht gesagt, wer es tut."
+ },
+ {
+  "tr": "Merhaba! Bugün bir yeri tarif etmeyi öğreneceğiz: nerede büyüdün, orası nasıl bir yer.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, einen Ort zu beschreiben: wo du aufgewachsen bist und wie es dort ist."
+ },
+ {
+  "tr": "Merhaba! Bugün bir kişiyi tarif etmeyi öğreneceğiz: hangisi, nasıl görünüyor, nasıl biri.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Person zu beschreiben: welche, wie sie aussieht, wie sie ist."
+ },
+ {
+  "tr": "Son bir incelik. Yan cümle zorunlu bilgi değil EK bilgi veriyorsa iki virgül arasına alınır ve",
+  "kind": "say.tr",
+  "de": "Eine letzte Feinheit. Gibt der Nebensatz keine nötige, sondern eine ZUSÄTZLICHE Information, steht er zwischen zwei Kommas und wird mit"
+ },
+ {
+  "tr": "Kullanma kılavuzlarının dili edilgendir; kimin bastığı değil, neye basıldığı yazar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache der Anleitungen ist das Passiv; es steht nicht, wer drückt, sondern worauf gedrückt wird. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir film ya da kitabı tavsiye etmeyi öğreneceğiz: konusu ne, kim oynuyor, değer mi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, einen Film oder ein Buch zu empfehlen: worum es geht, wer spielt, ob es sich lohnt."
+ },
+ {
+  "tr": "Merhaba! Bugün iki seçenek arasından seçim yapmayı öğreneceğiz: hangisi daha ucuz, hangisi daha iyi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, zwischen zwei Optionen zu wählen: welche billiger ist und welche besser."
+ },
+ {
+  "tr": "Bu konuşmanın tuzağı küçük: tavsiye fiilinden sonra -ing, karar fiilinden sonra to geliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Falle in diesem Gespräch ist klein: nach dem Empfehlungsverb steht -ing, nach dem Entscheidungsverb to. Bist du bereit?"
+ },
+ {
+  "tr": "Karşılaştırmanın dili bağlaçtır: hangi bağlacı seçtiğin kararın hangi tarafta olduğunu söyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache des Vergleichs sind Konnektoren: deine Wahl sagt, auf welcher Seite deine Entscheidung liegt. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir cihazın nasıl çalıştığını anlatmayı öğreneceğiz: hangi düğme, hangi ayar, nereye takılıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erklären, wie ein Gerät funktioniert: welcher Knopf, welche Einstellung, wo es angeschlossen wird."
+ },
+ {
+  "tr": "Yer tarif ederken İngilizcenin ayrı bir zamiri var ve bu zamir cümleye 'orada' anlamını kendisi katıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Beschreiben von Orten hat das Englische ein eigenes Pronomen, und dieses Pronomen bringt «dort» selbst in den Satz. Bist du bereit?"
+ },
+ {
+  "tr": "Bir odada beş kişi varsa hepsinin adı 'the man' ya da 'the woman'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Sind fünf Leute im Raum, heißen alle 'the man' oder 'the woman'; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
+ }
+]
