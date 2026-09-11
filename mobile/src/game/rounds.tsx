@@ -20,7 +20,7 @@ import { haptic } from "../lib/haptics";
 import { sfx } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
-import { whyMeaning, whyArticle, whyPlural } from "./why";
+import { whyFor } from "./why";
 import { speakTarget, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
@@ -394,7 +394,7 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
     // Almanca CEVAP olduğunda (tr-de) doğru Almanca'yı oku; de-tr'de Almanca zaten
     // soru olarak mount'ta okundu → tekrar okuma.
     markAnswer(ok, deSide ? null : withArtikel(word));
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
+    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
@@ -418,7 +418,7 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
     const ok = a === word.artikel;
     setPicked(a);
     markAnswer(ok, withArtikel(word)); // doğru artikel+kelime (Almanca = cevap)
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyArticle(word) });
+    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "article", word, detail: a }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
@@ -443,7 +443,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
     const ok = v === round.isTrue;
     setAns(v);
     markAnswer(ok, null); // Almanca zaten mount'ta okundu
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
+    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
@@ -498,7 +498,10 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
       || (!!foldTight(val, lang) && foldTight(val, lang) === foldTight(word.de, lang));
     Keyboard.dismiss();
     markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
+    /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
+       hatası ile anlam hatası farklı gerekçe alıyor. */
+    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val }).text;
+    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why });
   }
   const inputBlock = (
     <View>
@@ -552,7 +555,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setPicked(o);
     markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
-    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
+    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
@@ -610,7 +613,7 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o === answer;
     setPicked(o);
     markAnswer(ok, `die ${answer}`); // doğru çoğulu oku
-    setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyPlural(answer) });
+    setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "plural", word, detail: o, correct: answer }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "plural", picked))} colors={colors} /> : undefined}>
@@ -722,7 +725,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o.text === word.tr;
     setPicked(o.text);
     markAnswer(ok, null); // dinleme turu: Almanca zaten çalındı
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
+    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
@@ -771,7 +774,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
-      setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en });
+      setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join("") }).text });
     } else {
       sfx("tap");
     }
@@ -829,7 +832,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
       markAnswer(ok, full); // tamamlanınca tam cümleyi oku
-      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null });
+      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail), word, answer, tail }).text });
     } else {
       sfx("tap");
       speakTarget(t.text); // web: her yerleştirilen kelimeyi oku

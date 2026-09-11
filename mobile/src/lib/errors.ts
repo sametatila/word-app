@@ -25,6 +25,20 @@ export const ERROR_TYPES = [
 
 export type ErrorType = (typeof ERROR_TYPES)[number];
 
+/** Hata türünün sözlük anahtarı - web `lib/errors` ile birebir. */
+export const ERROR_LABEL_KEYS: Record<ErrorType, string> = {
+  article: "err.article",
+  plural: "err.plural",
+  case: "err.case",
+  verb_position: "err.verb_position",
+  conjugation: "err.conjugation",
+  spelling: "err.spelling",
+  meaning: "err.meaning",
+  word_order: "err.word_order",
+  pronunciation: "err.pronunciation",
+  listening: "err.listening",
+};
+
 const VALID = new Set<string>(ERROR_TYPES);
 
 export function isErrorType(v: unknown): v is ErrorType {

@@ -89,6 +89,18 @@ const SKIP_CONTENT = [
   // Umlaut harf tablosu ({ a: "ä", ... }) — arayüz metni değil, biçim kuralı.
   // Kapısı: `check:parity` "umlaut govdesi" (gövde webinkiyle dizge dizge).
   "lib/german.ts",
+  // Karıştırma çiftleri ve ayrım cümleleri — içerik verisi, webde de aynı
+  // dosya aynı biçimde duruyor (`src/lib/confusables.ts`, o da web
+  // tarayıcısının SKIP listesinde). Kapısı: `check:parity` "karistirma ciftleri".
+  "lib/confusables.ts",
+  // Kural parçacıklarının ALMANCA örnekleri ("Ich bin müde.") — kuralın metni
+  // sözlükte (`whyrule.*`), örnek cümle içerik. Webde de `lib/why-rules.ts`
+  // SKIP listesinde. Kapısı: `check:parity` "kural parcaciklari".
+  "game/whyRules.ts",
+  // Kural GÜCÜ ("hep" / "genelde") — ekrana çıkan metin değil, kuralın kendi
+  // etiketi; ekrandaki cümle sözlükten geliyor (`artrule.*`).
+  // Kapısı: `check:parity` "neden kural tablolari".
+  "game/why.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 /**

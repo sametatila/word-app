@@ -3319,6 +3319,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("tur ekranlarinda web-ozel metin", Object.keys(SEBEP).sort(), web);
 }
 
+/* ── 94. "neden" kural tablolari ──────────────────────────────────────────
+ * Yanlis cevabin gerekcesi. Mobilde yirmi dokuz satirlik bir sadelestirme
+ * vardi ("tam gramer tablolari tasinmadi") ve bedeli olculebilirdi: web
+ * yanlis cevapta KURALI soyluyordu ("-ung ile bitenler disil", "yan cumlede
+ * fiil sona gider", "Kirche ch, Kirsche sch"), Android yalniz dogru cevabi
+ * tekrar ediyordu. Ayni hatayi yapan iki kullanicidan biri kurali ogreniyor,
+ * oteki kelimeyi ezberliyordu.
+ *
+ * Olculen sey motorun ICERIGI: artikel kurallari (sira onemli - ilk uyan
+ * kazaniyor), cogul desenleri, yazim ipuclari ve hangi hata tiplerinin
+ * gerekce aldigi. Plumbing ayri (web `translate(lang, ...)` ile cagriliyor,
+ * cunku sunucuda da calisiyor; mobilde `t()` dili zaten biliyor). */
+{
+  const tablolar = (p) => {
+    const src = read(p);
+    const art = [...src.matchAll(/artikel: "(der|die|das)", rule: "([a-z.]+)"/g)].map((m) => m[2] + "=" + m[1]);
+    const plural = [...src.matchAll(/^\s{2}(\w*): "(plrule\.[a-z]+)",?$/gm)].map((m) => m[1] + "=" + m[2]);
+    const sp = [...src.matchAll(/"(sphint\.[a-z]+)"/g)].map((m) => m[1]);
+    const kapsam = [...src.matchAll(/^\s{4}case "(\w+)":?$/gm)].map((m) => m[1]);
+    return [...art, ...plural, ...new Set(sp), ...kapsam];
+  };
+  sameList("neden kural tablolari", tablolar("mobile/src/game/why.ts"), tablolar("src/lib/why.ts"));
+}
+
+/* ── 95. kural parcaciklari ───────────────────────────────────────────────
+ * `RULES` dizisi iki tarafta da BIREBIR ayni olmali: kural kimligi, seviyesi,
+ * hata tipi, sozluk anahtari ve Almanca ornek. Mobil kopyasi `i18n-scan`
+ * sayimindan muaf (ornekler Almanca icerik) - muafiyetin kapisi burasi. */
+{
+  const kurallar = (p) => [...read(p).matchAll(/^  r\("([^"]+)", "([^"]+)", "([^"]+)", "([^"]+)", "([^"]*)"/gm)].map((m) => m.slice(1, 6).join("/"));
+  sameList("kural parcaciklari", kurallar("mobile/src/game/whyRules.ts"), kurallar("src/lib/why-rules.ts"));
+}
+
+/* ── 96. karistirma ciftleri ──────────────────────────────────────────────
+ * Ayrim cumleleri (schon/schon, Kirche/Kirsche) elle secilmis icerik; iki
+ * kopyanin kelimesi kelimesine ayni kalmasi olculuyor. */
+{
+  const ciftler = (p) => [...read(p).matchAll(/^  c\("([^"]+)", "([^"]+)", "([^"]+)", "([^"]+)", "([^"]+)", "([^"]+)"\),$/gm)].map((m) => m.slice(1, 7).join("/"));
+  sameList("karistirma ciftleri", ciftler("mobile/src/lib/confusables.ts"), ciftler("src/lib/confusables.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
