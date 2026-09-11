@@ -1310,7 +1310,7 @@ export function LessonPlayer({
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (
                 <p className="muted mb-2 text-center text-caption">
-                  {t("lessonp.no_asr")}
+                  {t("lesson.no_asr")}
                 </p>
               ) : null}
 
@@ -1500,7 +1500,7 @@ export function LessonPlayer({
                 </div>
               ) : (
                 <p className="muted mb-2 text-center text-caption">
-                  {t("lessonp.no_asr")}
+                  {t("lesson.no_asr")}
                 </p>
               )}
 

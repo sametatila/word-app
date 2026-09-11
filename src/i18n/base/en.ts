@@ -807,6 +807,7 @@ export const enBase: Record<string, string> = {
   "lesson.try_again": "Try again ({n}/3)",
   "lesson.wrong": "Wrong",
   "lesson.typing": "typing…",
+  "lesson.no_asr": "No speech recognition — carry on by typing.",
   "micdisclosure.while_screen_is_off_what_you_say": "While the screen is off, what you say is sent as short audio clips to our server and to our speech recognition providers (Microsoft Azure and similar) to be transcribed.",
   "micdisclosure.it_keeps_listening_while_screen": "It keeps listening while the screen is off or the phone is in your pocket; to end it, return to the app and stop it.",
   "micdisclosure.read_privacy_policy": "Read the privacy policy",

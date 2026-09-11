@@ -334,7 +334,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.or_answer_aloud": "…ya da sesli cevap ver.",
   "lessonp.start_speaking": "Konuşmaya başla",
   "lessonp.close_typing": "Yazmayı kapat",
-  "lessonp.no_asr": "Konuşma tanıma yok — yazarak devam et.",
   "lessonp.no_asr_long": "Konuşma tanıma yok — yazarak devam edebilirsin.",
   "lessonp.to_roleplay": "Konuşmaya geç",
   "lessonp.chat_offline_note": "Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır.",

@@ -807,6 +807,7 @@ export const trBase: Record<string, string> = {
   "lesson.try_again": "Tekrar dene ({n}/3)",
   "lesson.wrong": "Yanlış",
   "lesson.typing": "yazıyor…",
+  "lesson.no_asr": "Konuşma tanıma yok — yazarak devam et.",
   "micdisclosure.while_screen_is_off_what_you_say": "Ekran kapalıyken söylediklerin, yazıya çevrilmek için kısa ses kayıtları olarak sunucumuza ve konuşma tanıma sağlayıcılarımıza (Microsoft Azure ve benzeri) gönderilir.",
   "micdisclosure.it_keeps_listening_while_screen": "Ekran kapalıyken ya da telefon cebindeyken de dinlemeye devam eder; bitirmek için uygulamaya dönüp durdurursun.",
   "micdisclosure.read_privacy_policy": "Gizlilik politikasını oku",
