@@ -3,7 +3,8 @@ import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { WrenchIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
-import { FriendsHub, hubTab } from "@/components/social/friends-hub";
+import { FriendsHub } from "@/components/social/friends-hub";
+import { hubTab } from "@/lib/social/hub-tab";
 import { getT } from "@/lib/i18n/server";
 import { RetryButton } from "@/components/retry-button";
 

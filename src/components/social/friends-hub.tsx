@@ -17,21 +17,11 @@ import { Requests } from "./requests";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { useShell } from "@/components/app-shell";
+import { HUB_TABS, type HubTab } from "@/lib/social/hub-tab";
 
-export type HubTab = "friends" | "feed" | "find";
-const TABS: { key: HubTab; label: string }[] = [
-  { key: "friends", label: "social.tab_friends" },
-  { key: "feed", label: "friends.tab_feed" },
-  { key: "find", label: "friends.tab_find" },
-];
-
-/** Eski adresler (bildirimler, kayıtlı bağlantılar) hâlâ çalışsın. */
-const ALIAS: Record<string, HubTab> = { quests: "friends", requests: "friends" };
-export function hubTab(raw: string | undefined): HubTab {
-  if (!raw) return "friends";
-  if (TABS.some((t) => t.key === raw)) return raw as HubTab;
-  return ALIAS[raw] ?? "friends";
-}
+/* Sekme kimliği ve adres çözümü `lib/social/hub-tab`te: sunucu sayfası da
+   okuyor ve buradan (istemci modülünden) okumak Next'te fırlatıyordu. */
+const TABS = HUB_TABS;
 
 /**
  * Sosyal merkez — tek sayfa, ÜÇ sekme. Üstte kimlik kartı: kullanıcı adı ilk
