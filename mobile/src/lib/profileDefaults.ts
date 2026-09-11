@@ -19,3 +19,16 @@ export const PROFILE_DEFAULTS = {
   /** Hatırlatma saati — `lib/notifications` de aynı sayıyı kullanıyor. */
   reminderHour: 12,
 } as const;
+
+/**
+ * SOSYAL PROFİLİN SINIRLARI — sunucudaki `lib/social/username` ile aynı
+ * sayılar. Kullanıcı adı 20, biyografi 140 karakterdi ve ikisi de ekranın
+ * içinde yazılıydı; sunucu aynı sayıları kendi kuralında tutuyor. Üç yerde
+ * yazılı bir sınır, biri değişince sessizce ayrışır: kullanıcı yazabildiği
+ * bir adın reddedildiğini görür. `check:parity` bu sayıları sunucuyla
+ * karşılaştırıyor.
+ */
+export const SOCIAL_LIMITS = {
+  usernameMax: 20,
+  bioMax: 140,
+} as const;

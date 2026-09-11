@@ -8,6 +8,9 @@ import { errorText, social, type SocialMeView } from "@/lib/social/client";
 import type { PublicUser, Visibility } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
+/* Sınırlar sunucunun kendi kuralından: üç yerde yazılı bir sayı er geç
+   ayrışır (bkz. `lib/social/username`). */
+import { BIO_MAX, USERNAME_MAX } from "@/lib/social/username";
 
 const VIS: { key: Visibility; label: string; sub: string }[] = [
   { key: "public", label: "socialsettings.vis_public", sub: "socialsettings.vis_public_sub" },
@@ -78,7 +81,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value.toLowerCase())}
-            maxLength={20}
+            maxLength={USERNAME_MAX}
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck={false}
@@ -104,7 +107,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
         <textarea
           id="bio"
           value={bio}
-          onChange={(e) => setBio(e.target.value.slice(0, 140))}
+          onChange={(e) => setBio(e.target.value.slice(0, BIO_MAX))}
           rows={2}
           placeholder={t("socialsettings.why_one_sentence_is_enough", { lang: courseName(course, lang) })}
           className="mt-1.5 w-full rounded-lg border px-3 py-2 text-sm"

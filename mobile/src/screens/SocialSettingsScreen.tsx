@@ -12,6 +12,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { useTheme, spacing, radii } from "../theme";
 import type { Palette } from "../theme/colors";
 import { Pill, ScreenHeader } from "../social/common";
+import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 
 /** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
@@ -91,7 +92,7 @@ export function SocialSettingsScreen() {
           <>
             <Section title={tx("socialsettings.username")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
+                <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={SOCIAL_LIMITS.usernameMax} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
                 <Pill label={tx("common.save")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown")}</Text>
@@ -99,7 +100,7 @@ export function SocialSettingsScreen() {
             </Section>
 
             <Section title={tx("socialsettings.short_bio")} colors={colors}>
-              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
+              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, SOCIAL_LIMITS.bioMax))} multiline placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                 <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>
                 <Pill label={tx("common.save")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />

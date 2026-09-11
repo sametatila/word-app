@@ -5156,56 +5156,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gorunen ad sinirlari", yanlis.length ? yanlis : ["yok"], ["yok"], "ucun kirpmasindan farkli", "beklenen");
 }
 
-/* ── 146. sosyal profil alanlarinin sinirlari ─────────────────────────────
- * §145'in ailesinden: kullanici adi ve kisa tanitim yazisi da sunucunun
- * kuralina bagli. Kural TEK yerde yazili (`lib/social/username`:
- * `USERNAME_RE` 3-20 ve `BIO_MAX` 140) ama dort yuzey sayilari KENDI
- * icinde tutuyor - iki kutu, iki sayac. Bugun hepsi tutuyor; kapinin isi
- * kuralin degismesi hâlinde dordunun birden ayrismasini saglamak (mobil
- * `src/lib`ten import edemiyor, o yuzden sayi orada elle duruyor).
+/* ── 146. sosyal profilin sinirlari ───────────────────────────────────────
+ * BU KAPI SAYILARI OKUYORDU ve dogru sorudan bir adim geride kaldi.
  *
- * Olculen: dort yuzeyin sinirlari ile kuralin kendisi. */
-{
-  const kural = read("src/lib/social/username.ts");
-  const adUst = kural.match(/USERNAME_RE = \/\^\[a-z0-9_\]\{(\d+),(\d+)\}\$\//);
-  const bioMax = kural.match(/BIO_MAX = (\d+)/)?.[1] ?? "?";
-  const sinirlar = (yol, alan) => {
-    const src = read(yol).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-    if (alan === "username") return src.match(/maxLength=\{(\d+)\}/)?.[1] ?? "sinirsiz";
-    /* Tanitim yazisi: hem kirpma hem sayac ayni sayiyi kullanmali. */
-    const kirpma = src.match(/setBio\([^)]*slice\(0,\s*(\d+)\)/)?.[1] ?? "sinirsiz";
-    const sayac = src.match(/bio\.length\}\/(\d+)/)?.[1] ?? "yok";
-    return kirpma + "/" + sayac;
-  };
-  sameList(
-    "sosyal profil sinirlari",
-    [
-      "kullanici adi=" + sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "username"),
-      "tanitim=" + sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "bio"),
-    ],
-    [
-      "kullanici adi=" + sinirlar("src/components/social/social-settings.tsx", "username"),
-      "tanitim=" + sinirlar("src/components/social/social-settings.tsx", "bio"),
-    ],
-  );
-  /* Yuzeylerin sayilari KURALIN kendisiyle de tutmali: iki yuzey birlikte
-     kaysaydi ustteki karsilastirma gecerdi (§11.228'in dersi). */
-  const hepsi = [
-    sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "username"),
-    sinirlar("src/components/social/social-settings.tsx", "username"),
-  ];
-  const bio = [
-    sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "bio"),
-    sinirlar("src/components/social/social-settings.tsx", "bio"),
-  ];
-  sameList(
-    "sosyal sinirlar kurala bagli",
-    ["ad ustu=" + [...new Set(hepsi)].join("|"), "tanitim=" + [...new Set(bio)].join("|")],
-    ["ad ustu=" + (adUst?.[2] ?? "?"), "tanitim=" + bioMax + "/" + bioMax],
-    "yuzeyler",
-    "kural",
-  );
-}
+ * Eski olcum dort yuzeydeki SAYIYI (20 ve 140) kuralin sayisiyla
+ * karsilastiriyordu; yani sayinin dort yerde yazili olmasini VERI sayip
+ * yalnizca ayni kalmalarini kolluyordu. Dogru soru "sayilar ayni mi" degil,
+ * "sayi kac yerde yazili": yuzeyler artik siniri KAYNAKTAN aliyor (webde
+ * dogrudan `lib/social/username`, mobilde kendi tek kaynagindan) ve sunucunun
+ * deseni de sinirlardan kuruluyor. Olcum §182'ye tasindi; orada hem mobilin
+ * kaynagi sunucuyla karsilastiriliyor hem de yuzeylerin kendi sabitini
+ * tutmadigi denetleniyor.
+ *
+ * Kapi burada birakilmadi cunku iki kapinin ayni seyi farkli sorularla
+ * olcmesi, biri bayatladiginda otekinin onu ortmesi demek. */
 
 /* ── 147. ortak gorev karti ───────────────────────────────────────────────
  * Iki fark cikti, ikisi de ayni kartta ve zit yonlerde:
@@ -7009,6 +6973,61 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "buyuk harf davranisi yazili",
     CIFT.map(([ad, [wy, wd], [my, md]]) => ad + "=" + (buyuk(etiket(wy, wd)) !== "yok" && buyuk(etiket(my, md)) !== "yok" ? "yazili" : "eksik")),
     CIFT.map(([ad]) => ad + "=yazili"),
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* ── 182. girdi sinirlari tek kaynaktan mi ────────────────────────────────
+ * Uzunluk sinirlari karsilastirildi: gorunen ad (40), iki adimli kod (ortak
+ * sabit), kullanici adi (20) ve biyografi (140) - dordu de iki platformda
+ * AYNI sayiydi. Kusur sayida degil, sayinin KAC YERDE yazili oldugundaydi:
+ * kullanici adi uc yerde (sunucunun deseni + iki istemci), biyografi de uc
+ * yerde. Ucu bugun ayniydi; biri degisse otekiler sessizce eski kalir ve
+ * kullanici YAZABILDIGI bir adin reddedildigini gorurdu - istemci onu kabul
+ * ediyor, sunucu geri ceviriyor.
+ *
+ * Sunucu tarafinda desen artik sinirlardan KURULUYOR (`USERNAME_MIN/MAX`),
+ * web onlari dogrudan ice aktariyor, mobil kendi tek kaynagindan okuyor ve
+ * bu kapi ikisini sunucuyla karsilastiriyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const sunucu = strip(read("src/lib/social/username.ts")).replace(/\s+/g, " ");
+  const mob = strip(read("mobile/src/lib/profileDefaults.ts")).replace(/\s+/g, " ");
+  const websos = strip(read("src/components/social/social-settings.tsx")).replace(/\s+/g, " ");
+  const mobsos = strip(read("mobile/src/screens/SocialSettingsScreen.tsx")).replace(/\s+/g, " ");
+
+  const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
+  const sunucuAd = al(sunucu, /USERNAME_MAX = (\d+)/);
+  const sunucuBio = al(sunucu, /BIO_MAX = (\d+)/);
+  sameList(
+    "sosyal sinirlar",
+    ["kullanici adi=" + al(mob, /usernameMax: (\d+)/), "biyografi=" + al(mob, /bioMax: (\d+)/)],
+    ["kullanici adi=" + sunucuAd, "biyografi=" + sunucuBio],
+    "mobil",
+    "sunucu",
+  );
+
+  /* Ekranlar sayiyi KENDI ICINDE yazmamali. */
+  sameList(
+    "sosyal sinirlar kaynaktan",
+    [
+      "mobil ad=" + (/maxLength=\{SOCIAL_LIMITS\.usernameMax\}/.test(mobsos) ? "kaynaktan" : "kendi sabiti"),
+      "mobil biyografi=" + (/slice\(0, SOCIAL_LIMITS\.bioMax\)/.test(mobsos) ? "kaynaktan" : "kendi sabiti"),
+      "web ad=" + (/maxLength=\{USERNAME_MAX\}/.test(websos) ? "kaynaktan" : "kendi sabiti"),
+      "web biyografi=" + (/slice\(0, BIO_MAX\)/.test(websos) ? "kaynaktan" : "kendi sabiti"),
+    ],
+    ["mobil ad=kaynaktan", "mobil biyografi=kaynaktan", "web ad=kaynaktan", "web biyografi=kaynaktan"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Desen de sinirlardan kuruluyor mu: desende ayri bir sayi kalirsa sinir
+     degistiginde kural degismez ve ayrisma sunucunun ICINDE olur. */
+  sameList(
+    "kullanici adi deseni",
+    ["kaynak=" + (/new RegExp\(`\^\[a-z0-9_\]\{\$\{USERNAME_MIN\},\$\{USERNAME_MAX\}\}\$`\)/.test(sunucu) ? "sinirlardan" : "elle yazili")],
+    ["kaynak=sinirlardan"],
     "bulunan",
     "beklenen",
   );

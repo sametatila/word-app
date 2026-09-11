@@ -6,7 +6,17 @@
  * klavyede bulunamayan ad, ad değildir. Rezerve liste sistem sayfalarıyla ve
  * yetkili gibi görünen adlarla çakışmayı engeller.
  */
-const USERNAME_RE = /^[a-z0-9_]{3,20}$/;
+/**
+ * Kullanıcı adının uzunluk sınırları — DESEN DE buradan kuruluyor.
+ *
+ * Üst sınır (20) iki istemcide `maxLength={20}` diye ayrıca yazılıydı ve
+ * desende üçüncü kez. Üçü bugün aynıydı; biri değişse ötekiler sessizce eski
+ * kalır ve kullanıcı yazabildiği bir adın reddedildiğini görürdü.
+ */
+export const USERNAME_MIN = 3;
+export const USERNAME_MAX = 20;
+
+const USERNAME_RE = new RegExp(`^[a-z0-9_]{${USERNAME_MIN},${USERNAME_MAX}}$`);
 
 const RESERVED = new Set([
   "admin", "administrator", "root", "system", "sistem", "nomi", "support", "destek", "help", "yardim",

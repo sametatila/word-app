@@ -9145,3 +9145,31 @@ Eş çıkanlar: iki adımlı doğrulama kodu (`inputMode="numeric"` + Android'de
 Ölçüm alanın **kendi etiketine** bakıyor — dosyadaki başka bir alanın
 özniteliği ölçülenin yerine geçmesin diye (§180'de iki kez yaşanan hata). Beş
 enjeksiyonun beşi yakalandı.
+
+## §11.278 — Sınır aynıydı ama dört yerde yazılıydı
+
+Girdi uzunluk sınırları karşılaştırıldı: görünen ad (40), iki adımlı kod
+(ortak sabit), kullanıcı adı (20) ve biyografi (140) — **dördü de iki
+platformda aynı sayı.** Kusur sayıda değil, sayının kaç yerde yazılı
+olduğundaydı: kullanıcı adı üç yerde (sunucunun deseni + iki istemci),
+biyografi üç yerde. Biri değişse ötekiler sessizce eski kalır ve kullanıcı
+**yazabildiği** bir adın reddedildiğini görürdü — istemci kabul ediyor, sunucu
+geri çeviriyor.
+
+Sunucuda desen artık sınırlardan **kuruluyor** (`USERNAME_MIN`/`USERNAME_MAX`
+üzerinden `new RegExp`), web sınırları doğrudan içe aktarıyor, mobil kendi tek
+kaynağından okuyor.
+
+**Var olan bir kapı bu değişiklikte düştü ve düşmesi doğruydu** — ama ilginç
+bir sebeple: eski §146 dört yüzeydeki **sayıyı** kuralın sayısıyla
+karşılaştırıyordu, yani sayının dört yerde yazılı olmasını *veri* sayıp
+yalnızca aynı kalmalarını kolluyordu. Yüzeyler sayıyı bırakıp kaynağı
+gösterince kapı "sınırsız" gördü. Doğru soru "sayılar aynı mı" değil, **"sayı
+kaç yerde yazılı"**; ölçüm §182'ye taşındı ve eskisi yerinde bırakılmadı —
+iki kapının aynı şeyi farklı sorularla ölçmesi, biri bayatladığında ötekinin
+onu örtmesi demek.
+
+**§182** üç şeyi denetliyor: mobilin kaynağı sunucuyla aynı mı, dört yüzey de
+sınırı kaynaktan mı alıyor, ve sunucunun deseni sınırlardan mı kuruluyor. Beş
+enjeksiyonun beşi yakalandı — biri sunucunun sayısını değiştirerek, yani ölçüm
+gerçekten tek kaynağa bağlı.
