@@ -7284,11 +7284,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * 11.336'nin sinifi: IKI TARAF DA sessizdi, yani karsilastirmali bir kapi
    * bunu goremezdi. Olcut mutlak.
    *
-   * Bu kapi IKI yuzeyi tutuyor: beceri egzersizinin sonucu (her bes oynatici
-   * `player-shell`den geciyor) ve unite quizinin sonucu. Geri kalan sonuc
-   * yuzeyleri (patron, meydan okuma, gunun turu, haftalik, deneme sinavi,
-   * seviye sinavi, rol yapma, oturum, yuruyus) OLCULDU ve hicbiri
-   * duyurmuyor; defterde 11.337'de adlariyla yazili ve sirayla kapanacak.
+   * Kapi BES yuzeyi tutuyor: beceri egzersizi (bes oynatici da
+   * `player-shell`den geciyor), unite quizi, patron turu, meydan okuma ve
+   * gunun turu. Kalan ALTI yuzey (haftalik, deneme sinavi, seviye sinavi,
+   * rol yapma, oturum, yuruyus) defterde 11.337 ve 11.338'de adlariyla
+   * yazili ve sirayla kapaniyor.
    * Kapiyi yesil tutmak icin degil, her yuzeyin kendi turunda dogru yere
    * konmasi icin boyle: sonuc kabi her ekranda ayri yerde. */
   {
@@ -7296,15 +7296,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const webQuiz = sil(read("src/components/immersion/quiz-player.tsx"));
     const mobBeceri = sil(read("mobile/src/screens/ItemScreen.tsx"));
     const mobQuiz = sil(read("mobile/src/screens/QuizScreen.tsx"));
+    const webPatron = sil(read("src/components/boss-player.tsx"));
+    const webMeydan = sil(read("src/components/challenge-player.tsx"));
+    const webGunun = sil(read("src/components/daily-player.tsx"));
+    const mobPatron = sil(read("mobile/src/screens/BossScreen.tsx"));
+    const mobMeydan = sil(read("mobile/src/screens/ChallengeScreen.tsx"));
+    const mobGunun = sil(read("mobile/src/screens/DailyScreen.tsx"));
+    /* Mobil tarafta canli bolge SONUC METNINDE; hangi metin oldugu ekrana
+       gore degisiyor, o yuzden her biri kendi dizesiyle araniyor. */
+    const mobSonuc = (src, desen) => (desen.test(src) ? "duyuruyor" : "SESSIZ");
     sameList(
       "turun sonucu duyuruluyor",
       [
         "web beceri=" + (/role="status"[\s\S]{0,80}card mt-5 p-5 text-center/.test(webBeceri) ? "duyuruyor" : "SESSIZ"),
         "web quiz=" + (/<div role="status" className="card relative p-6 text-center">/.test(webQuiz) ? "duyuruyor" : "SESSIZ"),
-        "mobil beceri=" + (/accessibilityLiveRegion="polite" variant="h2"/.test(mobBeceri) ? "duyuruyor" : "SESSIZ"),
-        "mobil quiz=" + (/accessibilityLiveRegion="polite" variant="h2"/.test(mobQuiz) ? "duyuruyor" : "SESSIZ"),
+        "web patron=" + (/<Frame role="status">/.test(webPatron) ? "duyuruyor" : "SESSIZ"),
+        "web meydan=" + (/<div role="status" className="text-center">/.test(webMeydan) ? "duyuruyor" : "SESSIZ"),
+        "web gunun=" + (/<div role="status" className="card overflow-hidden">/.test(webGunun) ? "duyuruyor" : "SESSIZ"),
+        "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite" variant="h2"/),
+        "mobil quiz=" + mobSonuc(mobQuiz, /accessibilityLiveRegion="polite" variant="h2"/),
+        "mobil patron=" + mobSonuc(mobPatron, /accessibilityLiveRegion="polite"[\s\S]{0,140}boss\.passed/),
+        "mobil meydan=" + mobSonuc(mobMeydan, /accessibilityLiveRegion="polite" variant="display"/),
+        "mobil gunun=" + mobSonuc(mobGunun, /accessibilityLiveRegion="polite" variant="display"/),
       ],
-      ["web beceri=duyuruyor", "web quiz=duyuruyor", "mobil beceri=duyuruyor", "mobil quiz=duyuruyor"],
+      [
+        "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
+        "web meydan=duyuruyor", "web gunun=duyuruyor",
+        "mobil beceri=duyuruyor", "mobil quiz=duyuruyor", "mobil patron=duyuruyor",
+        "mobil meydan=duyuruyor", "mobil gunun=duyuruyor",
+      ],
       "bulunan",
       "beklenen",
     );
