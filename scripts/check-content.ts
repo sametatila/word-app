@@ -344,7 +344,14 @@ function checkLessons(list: Lesson[]) {
     for (const p of l.patterns) if (!p.de?.trim() || !p.tr?.trim()) E(w, `pattern eksik: ${JSON.stringify(p)}`);
 
     const steps = l.lecture;
-    if (steps.length < 8 || steps.length > 20) W(w, `lecture ${steps.length} adım (8–20)`);
+    /* ÜST SINIR `check-lessons.ts` İLE AYNI. Burada 20 yazılıydı, orada 24:
+       iki kapı aynı şey hakkında iki ayrı sayı söylüyordu. Sözlükçe sekize
+       çıkınca (kullanıcı kararı 2026-09-11, İngilizce kurs Almanca kursun
+       sözleşmesine getirildi) her kelime kendi tekrar adımını da getirdi ve
+       İngilizce dersler 21-24 adıma yerleşti — birinci kapıya göre yasal,
+       ikincisine göre uyarı. Tek görüş: 8-24. Alt sınır olduğu gibi kaldı;
+       sekiz adımdan kısa bir anlatı zaten ders değil. */
+    if (steps.length < 8 || steps.length > 24) W(w, `lecture ${steps.length} adım (8–24)`);
     let scored = 0;
     let repeat = 0;
     steps.forEach((s, i) => {
