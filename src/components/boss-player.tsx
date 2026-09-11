@@ -285,7 +285,9 @@ export function BossPlayer({
     const won = status === "won";
     const secondsLeft = Math.round(left);
     return (
-      <Frame>
+      /* TURUN SONUCU DUYURULUYOR (bkz. 11.337): kart oyunun yerine geliyor ve
+         "gectin" / "sure doldu" yalniz gorsel bir degisiklikti. */
+      <Frame role="status">
         <Confetti fire={won ? 1 : 0} count={won ? 40 : 0} />
         <div
           className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile"
@@ -358,10 +360,15 @@ export function BossPlayer({
   );
 }
 
-function Frame({ children }: { children: React.ReactNode }) {
+/**
+ * `role` DISARIDAN: Frame uc durumu da sariyor (giris, oyun, sonuc) ve
+ * `role="status"`u burada sabitlemek tur oynanirken de canli bolge acmak
+ * olurdu. Sonucu duyuran yalniz sonuc dali.
+ */
+function Frame({ children, role }: { children: React.ReactNode; role?: "status" }) {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="card p-6 text-center">{children}</div>
+      <div role={role} className="card p-6 text-center">{children}</div>
     </div>
   );
 }

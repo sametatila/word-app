@@ -290,7 +290,8 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   return (
     <div className="relative mx-auto w-full max-w-md">
       <Confetti fire={1} />
-      <div className="card overflow-hidden">
+      {/* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */}
+      <div role="status" className="card overflow-hidden">
         <div className="brand-gradient-deep p-8 text-center text-white">
           {/* Günün turu da bir kapanış anı: kelime turu, oyun içindeki sonuç
               şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.

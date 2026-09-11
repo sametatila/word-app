@@ -339,7 +339,8 @@ export function ChallengeScreen() {
           {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
           <View style={{ alignItems: "center" }}><Mascot mood={isRecord ? "celebrate" : "happy"} size={96} /></View>
-          <Text variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
+          {/* TURUN SONUCU DUYURULUYOR - web `challenge-player` ile ayni yer. */}
+          <Text accessibilityLiveRegion="polite" variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
           {isRecord ? (
             <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: 4 }}>{t("challenge.new_record", { previous })}</Text>
           ) : (

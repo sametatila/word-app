@@ -266,7 +266,8 @@ export function DailyScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.xl, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 12)]}>
             <Text variant="micro" color={colors.onPrimaryMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.your_score")}</Text>
-            <Text variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: 4 }}>{formatNumber(scoreRef.current)}</Text>
+            {/* TURUN SONUCU DUYURULUYOR - web `daily-player` ile ayni yer. */}
+            <Text accessibilityLiveRegion="polite" variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: 4 }}>{formatNumber(scoreRef.current)}</Text>
             <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
               <View style={{ alignItems: "center" }}><Text variant="h3" color={colors.onPrimary}>{correctRef.current}/{total}</Text><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.correct")}</Text></View>
               <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>

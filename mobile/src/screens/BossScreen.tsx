@@ -276,7 +276,8 @@ export function BossScreen() {
           <View style={{ width: 56, height: 56, borderRadius: radii.lg, alignSelf: "center", alignItems: "center", justifyContent: "center", backgroundColor: won ? colors.success : colors.surface2 }}>
             {won ? <TrophyIcon color={colors.onFill} size={26} /> : <RepeatIcon color={colors.textMuted} size={26} />}
           </View>
-          <Text variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
+          {/* TURUN SONUCU DUYURULUYOR - web `boss-player` ile ayni yer. */}
+          <Text accessibilityLiveRegion="polite" variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: 4 }}>
             {won
               ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })

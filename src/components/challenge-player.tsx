@@ -303,7 +303,8 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       <Frame>
         <RecordChime fire={isRecord} />
         <Confetti fire={isRecord ? 1 : 0} count={40} />
-        <div className="text-center">
+        {/* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */}
+        <div role="status" className="text-center">
           {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
           <Mascot mood={isRecord ? "cheer" : "happy"} size={96} className="mx-auto" />
