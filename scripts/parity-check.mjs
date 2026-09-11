@@ -7275,6 +7275,46 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 214. karar ile yukleme ayni dili okuyor mu ──────────────────────
+   * Isinma (`first-words`) ve deneme yerlestirme (`placement-demo`) iceriginin
+   * hangi ANA DIL - KURS paritesinde var oldugu veriden geliyor: `hasX(lang,
+   * course)` onboarding'in "bu adimi gosterecek miyim" karari, `xFor(lang,
+   * course, ...)` de yuklemesi. Ikisi AYNI dili okumak zorunda.
+   *
+   * Isinmada okumuyordu: web yuklemeyi `firstWordsFor("tr", ...)` diye SABIT
+   * yaziyordu, karar ise gercek dili veriyordu. Bugun tek parite `tr-de`
+   * oldugu icin fark gorunmuyor - ama `de-de` ya da `en-en` paritesi
+   * yazildigi gun onboarding kullaniciyi isinmaya yollar, sayfa Turkce seti
+   * yukler. Dogrudan `/first-words` adresine giren Almanca arayuzlu kullanici
+   * bugun de Turkce karsilik goruyordu.
+   *
+   * Kardes yuzey (`demo-placement`) bastan beri dogruydu, yani bu bir tasarim
+   * karari degil gozden kacmaydi. */
+  {
+    const dil = (ad, f, desen) => ad + "=" + (desen.test(sil(read(f))) ? "arayuzden" : "SABIT");
+    sameList(
+      "karar ile yukleme ayni dili okuyor",
+      [
+        dil("web isinma karari", "src/components/course-onboarding.tsx", /hasFirstWords\(lang, course\)/),
+        dil("web isinma yuklemesi", "src/components/first-practice.tsx", /firstWordsFor\(lang,/),
+        dil("web yerlestirme karari", "src/components/course-onboarding.tsx", /hasDemoPlacement\(lang, course\)/),
+        dil("web yerlestirme yuklemesi", "src/components/placement/demo-placement.tsx", /demoPlacementFor\(lang,/),
+        dil("mobil isinma karari", "mobile/src/screens/OnboardingScreen.tsx", /hasFirstWords\(currentLang\(\), course\)/),
+        dil("mobil isinma yuklemesi", "mobile/src/screens/FirstPracticeScreen.tsx", /firstWordsFor\(currentLang\(\),/),
+        dil("mobil yerlestirme karari", "mobile/src/screens/OnboardingScreen.tsx", /hasDemoPlacement\(lang, course\)/),
+        dil("mobil yerlestirme yuklemesi", "mobile/src/screens/PlacementScreen.tsx", /demoPlacementFor\(currentLang\(\),/),
+      ],
+      [
+        "web isinma karari=arayuzden", "web isinma yuklemesi=arayuzden",
+        "web yerlestirme karari=arayuzden", "web yerlestirme yuklemesi=arayuzden",
+        "mobil isinma karari=arayuzden", "mobil isinma yuklemesi=arayuzden",
+        "mobil yerlestirme karari=arayuzden", "mobil yerlestirme yuklemesi=arayuzden",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 213. modul sinavinin kurs kontrolu: uc yolun hepsinde ───────────
    * Modul sinavi planlari Almanca yazilmis ve kurs boyutu YOK
    * (`hasModuleExams`, gerekcesi kendi dosyasinda: "Ingilizce ogrenen birinin
