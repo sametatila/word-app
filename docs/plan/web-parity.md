@@ -6801,3 +6801,39 @@ bunu, aynı bölümün yorumunda "olayın tanımlı olması yetmez, bağlı olma
 gerek" diye yazdıktan hemen sonra. Ölçüm ekranlardan ayrıldı ve "var/yok"
 yerine SAYIYLA yapılıyor: iki sınav yüzeyi de kendi balonunu çizmeli.
 
+
+### 11.192 "Servis kapalı" dört ayrı hatanın örtüsüydü
+
+`assess.` uzayını denetlerken çıktı. Mobil değerlendirme isteği düşünce
+premium ve adil kullanım kapıları dışındaki **her** sebebi tek cümleye
+indiriyordu:
+
+| gerçek sebep | mobilin dediği | doğrusu |
+|---|---|---|
+| 413 metin çok uzun | servis kapalı | kısalt ve tekrar dene |
+| 401 oturum yok | servis kapalı | yeniden giriş yap |
+| 400 istek eksik | servis kapalı | tazeleyip tekrar dene |
+| zaman aşımı | servis kapalı | zaman aşımına uğradı |
+
+Kullanıcı ne olduğunu öğrenemediği için ne yapacağını da bilemiyordu. Web
+durum koduna göre dokuz sebep ayırıyor ve 403'ü ikiye bölüyor (premium kapısı
+/ yetkisizlik) — ayırt edilmezse premium reddi "geçersiz istek" diye görünür.
+
+`lib/assessFail` eşlemeyi birebir taşıyor; dört çağrı yeri de sebebi
+söylüyor. Yedi metin ortak sözlüğe geldi; dördünde "temel kontrol
+gösteriliyor" kuyruğu düştü (web yedeği zaten kartla gösteriyor, mobil
+göstermiyor — cümle iki tarafta da doğru olsun diye). `quota` ayrı anahtar
+olarak kaldı: orada metin gerçekten farklı.
+
+### 11.193 Boş tur "Tur bitti · 0/0" diye gösteriliyordu
+
+`session.` uzayının denetimi. Oturum boş dönünce mobil bitiş kartını
+çiziyordu ve iki ayrı durum aynı yanlış cümleye düşüyordu: günlük hedefini
+bitiren kullanıcı kutlama yerine sıfırlı bir skor kartı görüyor, Pratik'ten
+kelimesi olmayan bir oyunu seçen ise neden boş olduğunu hiç öğrenemiyordu.
+İkisinin de çıkış yolu (yeni kelimelerle devam / karışık tura dön) yoktu.
+
+**Aynı sınıf §11.185 ile: bir DURUM bir SONUÇ değil.** Yürüyüş modunda ağ
+hatası "tur bitti" görünüyordu; burada boş kuyruk. Üç turda üçüncü kez aynı
+kalıp çıktı — boş ya da hatalı bir cevabın "başarıyla bitti" ekranına düşmesi.
+
