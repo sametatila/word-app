@@ -92,12 +92,10 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
         </span>
       }
       prompt={
-        speechAvailable ? (
-          <span className="muted text-base">{tx("rounds.what_you_heard")}</span>
-        ) : (
-          // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.
-          <span className="text-2xl font-bold sm:text-3xl">{spoken}</span>
-        )
+        // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.
+        // Ses varken yönerge YAZILMIYOR: etiket ("Dinle - anlamını seç") zaten
+        // aynı cümle ve Android'de ikinci bir satır yok.
+        speechAvailable ? undefined : <span className="text-2xl font-bold sm:text-3xl">{spoken}</span>
       }
       hint={
         speechAvailable ? undefined : (
@@ -119,7 +117,6 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
           >
             <SpeakerIcon size={34} />
           </motion.button>
-          <span className="muted text-xs">{tx("rounds.tap_to_listen")}</span>
         </div>
       ) : null}
 

@@ -941,6 +941,7 @@ export const de: Record<string, string> = {
   "rounds.type": "Schreiben…",
   "rounds.struggled": "Schwer",
   "rounds.match_first_try": "{n}/{total} Wörter beim ersten Versuch",
+  "rounds.ai_accepted": "Sinngemäß richtig — andere Formulierung.",
   "rounds.you_wrote": "Du hast geschrieben:",
   "rounds.already_known": "Das kann ich schon",
   "rounds.saving": "Wird gespeichert…",

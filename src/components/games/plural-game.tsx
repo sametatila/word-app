@@ -92,8 +92,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
               {" "}
               · {word.en}
             </span>
-          ) : null}{" "}
-          — {tx("rounds.which_plural")}
+          ) : null}
         </span>
       }
     >

@@ -883,6 +883,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     /* İKİNCİ ŞANS: yerel hakem "yanlış" dediyse ve cevap üç sözcükten
        uzunsa modele sorulur. Kabul ederse tur doğru sayılır ve kalite 4
        olur - web `translate-game` ile aynı eşikler. */
+    let rescued = false;
     if (!ok && m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
       setChecking(true);
       try {
@@ -908,6 +909,11 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         const sc = d?.result?.score;
         if ((sc?.overall ?? 0) >= ASSESS_ACCEPT && (sc?.task ?? 0) >= 3) {
           ok = true;
+          /* Hüküm "exact"e dönüyor ki kalite 4 olsun, ama BAŞLIK öyle
+             demiyor: kullanıcının kuruluşu hedefle aynı değildi, modelin
+             anlamı kabul ettiği söyleniyor. "Tam doğru" demek yanıltıcıydı -
+             web `translate-game` baştan beri ayrı bir satır yazıyor. */
+          rescued = true;
           m = { ...m, verdict: "exact", quality: 4, errorType: undefined };
         }
       } catch {
@@ -926,7 +932,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       tr: s.tr,
       en: s.en,
       diff: {
-        verdictKey: VERDICT_KEYS[m.verdict],
+        verdictKey: rescued ? "rounds.ai_accepted" : VERDICT_KEYS[m.verdict],
         target: m.target,
         typed: m.typed,
         // Yazdığın satırı yalnız YANLIŞTA ve gerçekten fark varken göster.

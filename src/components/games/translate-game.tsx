@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { targetName, withArtikel, type GameProps, type GameResult } from "./types";
+import { targetName, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -161,7 +161,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         result ? (
           <span>
             <span className="block">
-              {aiAccepted ? tx("rounds.ai_accepted") : `${tx(VERDICT_KEYS[result.verdict])} `}
+              {`${tx(aiAccepted ? "rounds.ai_accepted" : VERDICT_KEYS[result.verdict])} `}
               <TokenDiff tokens={result.target} />
             </span>
             {status === "wrong" && result.typed.some((t) => t.mark !== "same") ? (
@@ -181,14 +181,6 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
             </span>
           ) : null}
         </span>
-      }
-      hint={
-        <div className="flex items-center justify-center gap-2 text-xs">
-          <span className="surface-2 rounded-full px-2.5 py-0.5 font-semibold uppercase tracking-wide">
-            {withArtikel(word)}
-          </span>
-          <span>{tx("rounds.n_words", { n: targetWords.length })}</span>
-        </div>
       }
     >
       <form

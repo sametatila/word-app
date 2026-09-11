@@ -3285,6 +3285,40 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 93. tur ekranlarindaki WEB-OZEL metinler ─────────────────────────────
+ * `src/i18n/web/*` webin kendi anahtarlari icin var ve orasi sessizce
+ * buyuyor. `rounds.` uzayindaki her web-ozel anahtar, Androidde OLMAYAN bir
+ * satirin ekrana ciktigi anlamina geliyor - ve dort tanesi bedava ipucu
+ * cikti: yazma turunda harf sayisi + bas harf, ceviri turunda odak kelimesi
+ * chip'i + kelime sayisi, bosluk doldurmada yer tutucunun icindeki ANLAM.
+ * Ucu de `hintUsed` gondermiyordu, yani ayni cevap webde daha kolay veriliyor
+ * ve SRS ikisini ayni kalitede sayiyordu. Dordu de etiketin tekrariydi
+ * (`is_match_right`, `what_you_heard`, `which_plural`, `tap_to_listen`).
+ *
+ * Kalanlar asagida SEBEBIYLE yazili. Liste bir kabul kaydi, bir bahane degil:
+ * yeni bir satir eklemek gerekcesini yazmayi gerektiriyor. */
+{
+  const SEBEP = {
+    "rounds.basic_check": "serbest yazma turu - mobilde oynaticisi yok (§11.13)",
+    "rounds.build_sentence": "serbest yazma turu",
+    "rounds.look_again": "serbest yazma turu",
+    "rounds.nice_sentence": "serbest yazma turu",
+    "rounds.score": "serbest yazma turu",
+    "rounds.write_a_sentence_ph": "serbest yazma turu",
+    "rounds.empty_letter_slot": "ekran okuyucu etiketi: bos harf yuvasi (mobilde yuva bir View, okunmuyor)",
+    "rounds.empty_word_slot": "ekran okuyucu etiketi: bos kelime yuvasi",
+    "rounds.undo_letter": "ekran okuyucu etiketi: harfi geri al",
+    "rounds.undo_word": "ekran okuyucu etiketi: kelimeyi geri al",
+    "rounds.great": "yazma turu geri bildirim basligi; mobilde FeedbackFooter kendi basligini kuruyor",
+    "rounds.means": "dogru/yanlis kartindaki ayrac sozcugu; mobilde anlam tek satirda birlesiyor",
+    "rounds.no_tts": "tarayicida konusma sentezi olmayabilir; Android'de sistem TTS her zaman var",
+    "rounds.understood": "tanitim turunun ekran okuyucu etiketi",
+    "rounds.write_sentence_ph": "ceviri turu yer tutucusu; mobilde `rounds.write_sentence` hedef dili de yaziyor",
+  };
+  const web = [...read("src/i18n/web/tr.ts").matchAll(/"(rounds\.[a-z_0-9]+)":/g)].map((m) => m[1]).sort();
+  sameList("tur ekranlarinda web-ozel metin", Object.keys(SEBEP).sort(), web);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

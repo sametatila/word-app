@@ -943,6 +943,7 @@ export const enBase: Record<string, string> = {
   "rounds.type": "Type...",
   "rounds.struggled": "Struggled",
   "rounds.match_first_try": "{n}/{total} words on the first try",
+  "rounds.ai_accepted": "Right meaning — a different construction.",
   "rounds.you_wrote": "You wrote:",
   "rounds.already_known": "I already know this",
   "rounds.saving": "Saving…",

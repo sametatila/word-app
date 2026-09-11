@@ -65,7 +65,6 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   return (
     <GameShell
       label={tx("rounds.correct")}
-      prompt={<span className="muted text-base">{tx("rounds.is_match_right")}</span>}
       verdict={!settled ? null : wasRight ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null}

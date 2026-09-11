@@ -943,6 +943,7 @@ export const trBase: Record<string, string> = {
   "rounds.type": "Yaz...",
   "rounds.struggled": "Zorlandım",
   "rounds.match_first_try": "{n}/{total} kelime ilk denemede",
+  "rounds.ai_accepted": "Anlamca doğru — başka bir kuruluş.",
   "rounds.you_wrote": "Yazdığın:",
   "rounds.already_known": "Bunu zaten biliyorum",
   "rounds.saving": "Kaydediliyor…",
