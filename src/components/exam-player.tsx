@@ -341,7 +341,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
   if (phase === "error") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      /* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge degilse
+         ekran okuyucu kullanan biri hicbir sey duymuyor. */
+      <section role="alert" className="card mx-auto w-full max-w-md p-5">
         {offline ? (
           <>
             <p className="text-h1 tabular-nums">{t("common.pct", { n: offline.pct })}</p>
@@ -371,6 +373,17 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           </>
         ) : (
           <p className="text-body">{t("exam.load_or_save_failed")}</p>
+        )}
+        {/* YERINDE TEKRAR DENEME - yalniz kagit ALINAMADIGINDA. Cevaplar
+            cevrimdisi kaydedildiyse tekrar denemek kagidi bastan aciyor ve o
+            kaydi cope atardi; orada tek dogru cikis Patika'ya donmek.
+            Android bu ayrimi zaten yapiyor (`ExamScreen`: `setAttempt`) ve
+            gerekcesi de orada yazili - haftanin kagidi gecici bir ag
+            kesintisiyle harcanabiliyordu. */}
+        {offline ? null : (
+          <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
+            {t("common.try_again")}
+          </button>
         )}
         <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-body">
           {t("exam.back_to_path")}

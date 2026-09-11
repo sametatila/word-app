@@ -79,7 +79,12 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   /** Bitiş geri sayımdan da tetiklenebildiği için puan ref'ten okunur. */
   const scoreRef = useRef(0);
 
+  /* Tekrar deneme sayaci: artinca yukleme etkisi yeniden kosuyor. Kalip
+     `weekly-player`/`placement-test` ile ayni. */
+  const [attempt, setAttempt] = useState(0);
+
   useEffect(() => {
+    setStatus("loading");
     (async () => {
       try {
         const res = await fetch("/api/challenge", { cache: "no-store" });
@@ -95,7 +100,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         setStatus("error");
       }
     })();
-  }, []);
+  }, [attempt]);
 
   const finish = useCallback(async () => {
     if (finished.current) return;
@@ -237,10 +242,22 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   if (status === "error")
     return (
       <Frame>
-        <div className="text-center">
+        {/* YERINDE TEKRAR DENEME. Web yalniz "geri don" diyordu: gecici bir ag
+            hatasi kullaniciyi meydan okumadan tamamen atiyordu. Android'deki
+            sira: birincil "tekrar dene", ikincil cikis (`ChallengeScreen`).
+            Hata ayrica DUYURULUYOR - ekrani kaplayan bir hata metni canli
+            bolge degilse ekran okuyucu kullanan biri hicbir sey duymuyor. */}
+        <div role="alert" className="text-center">
           <AlertIcon size={22} />
           <p className="mt-2 text-body">{t("challenge.load_failed")}</p>
-          <button onClick={onExit} className="btn btn-ghost mt-4 w-full px-5 py-3">
+          <button
+            type="button"
+            onClick={() => setAttempt((n) => n + 1)}
+            className="btn btn-primary mt-4 w-full px-5 py-3"
+          >
+            {t("common.try_again")}
+          </button>
+          <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
             {t("common.go_back")}
           </button>
         </div>
