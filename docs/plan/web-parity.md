@@ -8249,3 +8249,24 @@ bunu söylüyor).
 olması ve şıkkın **hâlâ basılabilir** kalması — sonuncusu olmasa "ipucu
 ekledim" diye gelip erişimi kapatan bir değişiklik sessizce geçerdi. Üç
 enjeksiyonun üçü de yakalandı.
+
+### 11.250 Dört saniye duran cümleyi kimse duymuyordu
+
+"Yalnız göze söylenen bilgi" taramasını canlı bölgelere çevirdim ve iki şey
+çıktı:
+
+- **Erdi'nin cümlesi.** Koç balonu dört saniye durup kayboluyor: ekran okuyucu
+  kullanan biri onu **hiç** duymuyordu — ne odakta ne de canlı bir bölgedeydi.
+  Web aynı cümleyi `role="status"` ile duyuruyor, hem de **iki dalında da**
+  (hareket azaltmada düz metin, normalde balon). Geçici metin, canlı bölgenin
+  tam tanımı; Android'e de kondu.
+- **Dört kartın yükleme hâli sessizdi**: günlük görevler, zayıf noktalar,
+  gelişim paneli, neler yapabilirim. Bu **§152'nin artığı** — kök düzeltme
+  `SkeletonCard`tan geçen ekranları kapsıyordu, bu dördü iskeletini kendi
+  kuruyor. Web'de dördü de `role="status" aria-busy` + etiket taşıyordu; üç
+  etiket anahtarı web-özel sözlükten ortak tabana taşındı, dördüncüsü zaten
+  ortaktı.
+
+**§156** koçun iki dalını ve dört kartın duyurusunu ölçüyor. Üç enjeksiyonun
+üçü de yakalandı — ilki koçun **bir** dalını susturunca düştü, yani sayıyı
+karşılaştırmak ("iki dal" / "bir dal") tek bir "var/yok"tan daha keskin.

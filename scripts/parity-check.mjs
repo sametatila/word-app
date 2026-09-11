@@ -5523,6 +5523,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 156. gecici metin ve yukleme duyurusu ────────────────────────────────
+ * Iki sey cikti:
+ *   - KOCUN CUMLESI dort saniye durup kayboluyor. Ekran okuyucu kullanan biri
+ *     onu HIC duymuyordu: ne odakta ne de canli bir bolgedeydi. Web ayni
+ *     cumleyi `role="status"` ile duyuruyor (iki dalinda da). Gecici metin,
+ *     canli bolgenin tam tanimi.
+ *   - DORT KARTIN YUKLEME HÂLI sessizdi (gunluk gorevler, zayif noktalar,
+ *     gelisim paneli, neler yapabilirim). §152'nin artigi: kok duzeltme
+ *     `SkeletonCard`tan gecen ekranlari kapsiyordu, bu dordu iskeletini KENDI
+ *     kuruyor. Webde dordu de `role="status" aria-busy` + etiket tasiyor.
+ *
+ * Olculen: kocun iki dali ve dort kartin yukleme duyurusu. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const say = (yol, re) => [...strip(read(yol)).matchAll(re)].length;
+  sameList(
+    "kocun cumlesi duyuruluyor",
+    ["canli bolge=" + say("mobile/src/ui/CoachBubble.tsx", /accessibilityLiveRegion="polite"/g)],
+    ["canli bolge=" + say("src/components/coach-bubble.tsx", /role="status"/g)],
+  );
+
+  const CIFT = [
+    ["mobile/src/ui/DailyQuests.tsx", "src/components/quest-card.tsx"],
+    ["mobile/src/ui/WeakSpots.tsx", "src/components/weak-spots-card.tsx"],
+    ["mobile/src/ui/GrowthPanel.tsx", "src/components/progress-panel.tsx"],
+    ["mobile/src/screens/CandoScreen.tsx", "src/components/cando-card.tsx"],
+  ];
+  const mob = CIFT.map(([m]) => m.split("/").pop() + "=" + (/accessibilityState=\{\{ busy: true \}\}|label=\{t\(/.test(strip(read(m))) ? "duyuruyor" : "sessiz"));
+  const web = CIFT.map(([, w]) => w.split("/").pop() + "=" + (/aria-busy="true"/.test(strip(read(w))) ? "duyuruyor" : "sessiz"));
+  sameList("yukleme duyurusu (dort kart)", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

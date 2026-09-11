@@ -90,7 +90,10 @@ export function CandoScreen() {
       {phase === "loading" ? (
         // İçeriğin şekli: seviye özeti kartı + iki grup listesi (spinner değil).
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          <SkeletonCard style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
+          {/* Etiket EN ÜSTTEKİ karta: `SkeletonCard` "meşgul" diyor (§152),
+              neyin yüklendiğini söyleyen etiket burada. Web aynı kartta
+              `aria-label={t("cando.loading")}` taşıyor. */}
+          <SkeletonCard label={t("cando.loading")} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
             {[0, 1].map((i) => (
               <View key={i} style={{ marginBottom: spacing.sm }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>

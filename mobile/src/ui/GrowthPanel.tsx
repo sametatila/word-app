@@ -112,7 +112,10 @@ export function GrowthPanel() {
 
   if (data === undefined) {
     return (
-      <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+      /* YÜKLEME DUYURULUYOR — §152'nin artığı: kök düzeltme `SkeletonCard`tan
+         geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
+         kartta `role="status" aria-busy` + etiket taşıyor. */
+      <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("progp.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
         <SkeletonLine variant="bodyStrong" width={150} />
         <SkeletonLine variant="caption" width="90%" />
         {[0, 1, 2, 3].map((i) => (

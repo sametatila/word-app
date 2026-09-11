@@ -68,7 +68,12 @@ export function CoachBubble({
 
   if (still) {
     return (
-      <Text accessibilityRole="text" variant="body" color={tone === "dark" ? colors.text : colors.textMuted} style={{ lineHeight: 21 }}>
+      /* CÜMLE DUYURULUYOR. Erdi'nin cümlesi dört saniye durup kayboluyor:
+         ekran okuyucu kullanan biri onu HİÇ duymuyordu, çünkü ne odakta ne de
+         canlı bir bölgedeydi. Web aynı cümleyi `role="status"` ile duyuruyor
+         (`coach-bubble`, iki dalda da). Geçici metin, canlı bölgenin tam
+         tanımı. */
+      <Text accessibilityRole="text" accessibilityLiveRegion="polite" variant="body" color={tone === "dark" ? colors.text : colors.textMuted} style={{ lineHeight: 21 }}>
         {line}
       </Text>
     );
@@ -92,7 +97,7 @@ export function CoachBubble({
             paddingHorizontal: spacing.md, paddingVertical: 8,
           }}
         >
-          <Text variant="body" color={fg} style={{ lineHeight: 21 }}>{line}</Text>
+          <Text accessibilityLiveRegion="polite" variant="body" color={fg} style={{ lineHeight: 21 }}>{line}</Text>
         </Animated.View>
       ) : null}
     </View>

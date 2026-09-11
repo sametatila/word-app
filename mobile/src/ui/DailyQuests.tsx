@@ -151,7 +151,10 @@ export function DailyQuests() {
 
   if (board === null) {
     return (
-      <View style={{ marginBottom: spacing.xl }}>
+      /* YÜKLEME DUYURULUYOR — §152'nin artığı: kök düzeltme `SkeletonCard`tan
+         geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
+         kartta `role="status" aria-busy` + etiket taşıyor. */
+      <View accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("dailyquests.daily_quests")} style={{ marginBottom: spacing.xl }}>
         <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", marginBottom: spacing.md }}>
           <SkeletonLine variant="h3" width={140} />
           <SkeletonLine variant="caption" width={58} />

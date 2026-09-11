@@ -55,7 +55,10 @@ export function WeakSpots() {
 
   if (report === undefined) {
     return (
-      <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+      /* YÜKLEME DUYURULUYOR — §152'nin artığı: kök düzeltme `SkeletonCard`tan
+         geçen ekranları kapsıyordu, bu kart iskeletini KENDİ kuruyor. Web aynı
+         kartta `role="status" aria-busy` + etiket taşıyor. */
+      <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("weak.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
         <SkeletonLine variant="micro" width={120} />
         {[0, 1, 2].map((i) => (
           <View key={i} style={{ gap: 4 }}>
