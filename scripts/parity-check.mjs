@@ -7226,6 +7226,51 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 196. konusma pencereleri: hangisi bilincli fark, hangisi ayrisma ──
+   * Iki platformun mikrofon sureleri tek tek eslendi. Cikan tablo:
+   *
+   *   yuruyus cevabi   web ANSWER_WINDOW_MS 8000    mobil ayni ad, ayni sayi
+   *   yuruyus onayi    web CONFIRM_SILENCE_MS 7000  mobil ayni ad, ayni sayi
+   *   ders             web SILENCE_MS 12000         mobil LISTEN_CEILING_MS
+   *   seviye sinavi    web SPEAK_MAX_MS 12000       mobil ayni ad (bkz. 195)
+   *
+   * Yuruyus ikilisi zaten ayniydi ama mobilde ADSIZ birer rakamdi; ad
+   * verilince "ortak sayisal sabitler" kapisi onlari kendiliginden
+   * karsilastiriyor (enjeksiyonla dogrulandi).
+   *
+   * Ders satiri ayri yazildi cunku SAYI ayni olmali, AD olmamali: webde sayac
+   * yalniz kendiliginden acilan mikrofon icin isliyor (kullanici kendi
+   * dokunduysa sinir yok), mobilde ise her durumda ust sinir. Ayni ada
+   * zorlamak yanlis olurdu; esitligi mutlak olcut tutuyor. Mobil 8000'di ve
+   * gerekcesi yaziliydi degil - dort saniyelik fark ogrenciyi cumlesini
+   * kurarken kesiyordu. Gercek bitis karari zaten sayiya bakmiyor:
+   * `listenOnce` konusma durduktan ~800 ms sonra donuyor.
+   *
+   * Rol yapma sinavi BILEREK disarida: webde tarayici tanıyicisi kendi
+   * bitiriyor ve hic ust sinir yok, mobilde 8000 bir emniyet tavani. Ikisi
+   * ayni birimi olcmuyor, karsilastirmak yanlis olurdu. */
+  {
+    const webDers = sil(read("src/components/lessons/lesson-player.tsx"));
+    const mobDers = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const mobYuruyus = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
+    const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
+    sameList(
+      "ders konusma penceresi",
+      [
+        "web=" + al(webDers, /SILENCE_MS = (\d+)/),
+        "mobil=" + al(mobDers, /LISTEN_CEILING_MS = (\d+)/),
+        "mobil sabiti kullaniyor=" + (/listenOnce\(currentTargetLocale\(\), LISTEN_CEILING_MS\)/.test(mobDers) ? "evet" : "HAYIR"),
+        /* Yuruyus ikilisi ADIYLA duruyor mu: rakama donerse ortak sabit
+           taramasi onlari goremez ve sessizce ayrisirlar. */
+        "yuruyus cevabi adiyla=" + (/listenOnce\(currentTargetLocale\(\), ANSWER_WINDOW_MS\)/.test(mobYuruyus) ? "evet" : "HAYIR"),
+        "yuruyus onayi adiyla=" + (/listenOnce\(currentTargetLocale\(\), CONFIRM_SILENCE_MS\)/.test(mobYuruyus) ? "evet" : "HAYIR"),
+      ],
+      ["web=12000", "mobil=12000", "mobil sabiti kullaniyor=evet", "yuruyus cevabi adiyla=evet", "yuruyus onayi adiyla=evet"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 195. yorumun soyledigi ama olculmeyen iki zorunluluk ────────────
    * Tarama yon degistirdi: sayilardan YORUMLARA. Kodun icinde "su su ile ayni
    * olmali" diyen cumleleri dolasip hangisinin kapisi yok diye bakildi. Iki

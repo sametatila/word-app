@@ -76,6 +76,22 @@ const mapRounds = (rs: Round[]): WalkRound[] =>
  *
  * Ekran çerçevesi Kelimelerine çalış ile aynı: sol X, orta ilerleme, sağ sayaç.
  */
+/**
+ * Cevap ve onay pencereleri — web `components/walk-player` ile AYNI SAYILAR.
+ *
+ * İkisi de zaten sekiz ve yedi saniyeydi, yani bugün ayrışma yoktu; kusur
+ * sayının burada düz yazılı olmasıydı. Webde ikisi adıyla duruyor ve
+ * gerekçeleri orada yazılı (kayıt konuşma bitince kapandığı için cömert
+ * olabiliyor); burada adsız birer rakamdı, biri değişse öteki sessizce eski
+ * kalırdı. Ad web'dekiyle birebir aynı, o yüzden ayrışmayı "ortak sayısal
+ * sabitler" kapısı kendiliğinden yakalıyor.
+ *
+ * Ekran KAPALI yolun kendi penceresi var (`azureListenOnce`, 4000): orada VAD
+ * yok, sabit pencere kaydediliyor ve webin böyle bir kipi hiç yok.
+ */
+const ANSWER_WINDOW_MS = 8000;
+const CONFIRM_SILENCE_MS = 7000;
+
 export function WalkModeScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -313,7 +329,7 @@ export function WalkModeScreen() {
     listenCut.current = false;
     nativeListeningRef.current = true;
     const race = Promise.race([
-      listenOnce(currentTargetLocale(), 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+      listenOnce(currentTargetLocale(), ANSWER_WINDOW_MS).then((h) => ({ k: "v" as const, heard: h ?? [] })),
       waitManual().then(() => ({ k: "m" as const })),
     ]);
     const miconTimer = setTimeout(() => sfx("micon"), 180);
@@ -568,7 +584,7 @@ export function WalkModeScreen() {
     if (screenOffRef.current) {
       yanit = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
     } else {
-      yanit = await listenOnce(currentTargetLocale(), 7000);
+      yanit = await listenOnce(currentTargetLocale(), CONFIRM_SILENCE_MS);
       sfx("micoff");
     }
     if (!alive() || !yanit) return null;

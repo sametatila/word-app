@@ -94,6 +94,25 @@ function stepTone(step: LectureStep, colors: Palette): string {
   }
 }
 
+/**
+ * Mikrofonun açık kalacağı en uzun süre (ms) — GÜVENLİK ÜST SINIRI.
+ *
+ * Sekiz saniyeydi ve gerekçesi yazılı değildi. Web aynı adımda on iki saniye
+ * bekliyor (`lessons/lesson-player` `SILENCE_MS`) ve orada gerekçe yazılı:
+ * "bir cümleyi düşünmek birkaç saniye, on saniyeyi geçen sessizlik takılma".
+ * Aynı gerekçe Android için de geçerli; dört saniyelik fark öğrenciyi
+ * cümlesini kurarken kesiyordu.
+ *
+ * İki tarafın SAYISI aynı, ROLÜ değil: webde sayaç yalnız kendiliğinden
+ * açılan mikrofon için işliyor (kullanıcı kendi dokunduysa sınır yok), burada
+ * ise her iki durumda da üst sınır. Bu yüzden ortak bir ada zorlanmadı ve
+ * eşitliği `check:parity` §196 mutlak ölçütle koruyor.
+ *
+ * Gerçek bitiş kararı bu sayıya bakmıyor: `listenOnce` konuşma durduktan
+ * ~800 ms sonra dönüyor, yani süreyi uzatmak kimseyi bekletmiyor.
+ */
+const LISTEN_CEILING_MS = 12000;
+
 export function LessonScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -326,7 +345,7 @@ export function LessonScreen() {
     if (!izin) { setSttOk(false); sttOkRef.current = false; return null; }
     setListening(true);
     try {
-      return await listenOnce(currentTargetLocale(), 8000);
+      return await listenOnce(currentTargetLocale(), LISTEN_CEILING_MS);
     } finally {
       setListening(false);
     }

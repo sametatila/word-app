@@ -9502,3 +9502,41 @@ da (b)'nin davet ettiği yanlış düzeltmeydi (beceri kaydını sınava eşitle
 sürmekte olan işi). Mobil `tsc` tek bu hatayı veriyor ve `App.test.tsx` süiti
 bu yüzden yüklenemiyor (136 test geçiyor, 1 süit yükleme hatası). Benim
 değişikliklerimle ilgisi yok ve onların dosyalarına dokunmadım.
+
+## §11.290 — Konuşma pencereleri: hangisi bilinçli fark, hangisi ayrışma
+
+İki platformun mikrofon süreleri tek tek eşlendi. Tablo:
+
+| Adım | Web | Mobil (önce) | Sonuç |
+|---|---|---|---|
+| Yürüyüş cevabı | `ANSWER_WINDOW_MS` 8000 | adsız `8000` | aynı sayı, **ada bağlandı** |
+| Yürüyüş onayı | `CONFIRM_SILENCE_MS` 7000 | adsız `7000` | aynı sayı, **ada bağlandı** |
+| Ders | `SILENCE_MS` 12000 | adsız `8000` | **ayrışma** → 12000 |
+| Seviye sınavı | `SPEAK_MAX_MS` 12000 | 8000 | §11.289'da düzeltildi |
+| Rol yapma sınavı | üst sınır yok (tarayıcı bitirir) | 8000 emniyet tavanı | **bilinçli fark**, ölçüm dışı |
+
+**Ders adımı gerçek bir ayrışmaydı.** Web on iki saniye bekliyor ve gerekçesi
+yazılı: "bir cümleyi düşünmek birkaç saniye, on saniyeyi geçen sessizlik
+takılma." Mobil sekiz saniyede mikrofonu kapatıyordu ve bir gerekçesi yoktu —
+dört saniyelik fark öğrenciyi cümlesini kurarken kesiyordu. Gevşetme yönü
+güvenli: `listenOnce` konuşma durduktan ~800 ms sonra dönüyor (asıl bitiş
+kararı partial tabanlı), yani süreyi uzatmak hızlı cevap vereni bekletmiyor.
+
+**Yürüyüş ikilisi bugün ayrışmıyordu; kusur sayının mobilde ADSIZ olmasıydı.**
+Ad verilince var olan "ortak sayısal sabitler" kapısı ikisini kendiliğinden
+karşılaştırmaya aldı (ortak sabit sayısı 51'e çıktı) ve enjeksiyon bunu
+doğruladı. Bir sayıyı adlandırmak, burada kapı yazmakla aynı şey.
+
+**Ders satırı ayrı bir kapı olarak yazıldı çünkü sayı aynı olmalı, ad
+olmamalı:** webde sayaç yalnız **kendiliğinden açılan** mikrofon için işliyor
+(kullanıcı kendi dokunduysa sınır yok), mobilde her durumda üst sınır. Aynı
+ada zorlamak iki farklı şeyi aynı sanmak olurdu; §196 eşitliği mutlak ölçütle
+tutuyor.
+
+**Rol yapma sınavı bilerek dışarıda:** webde tarayıcı tanıyıcısı kendi
+bitiriyor ve hiç üst sınır yok; mobildeki 8000 bir emniyet tavanı. İkisi aynı
+birimi ölçmüyor — karşılaştırmak, ölçtüğünü sanıp başka şeyi ölçmenin bu
+defterdeki en sık hatası olurdu.
+
+Dört enjeksiyonun dördü yakalandı. Önceki turda not düştüğüm paralel oturum
+kırığı (`en-b2.json`) giderilmiş: mobil `tsc` temiz, 137 test geçiyor.
