@@ -79,6 +79,11 @@ function demoQuestions(): PQ[] {
 }
 
 /** Okuma metni ya da dinleme düğmesi — sorunun üstündeki bağlam. */
+/** Aşamanın ne yaptıracağı — web `placement-test` `STAGE_TITLE_KEYS`. */
+const STAGE_TITLE_KEY: Record<string, string> = {
+  vocab: "plc.vocab", grammar: "plc.grammar", reading: "plc.reading", listening: "plc.listening",
+};
+
 function StageHead({ head, colors }: { head: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean }; colors: Palette }) {
   const say = () => {
     const parcalar = head.segments?.length ? head.segments.map((sg) => sg.text) : head.text ? [head.text] : [];
@@ -169,24 +174,39 @@ export function PlacementScreen() {
   // Önerilen seviye: gerçek modda sunucudan (result), yoksa yerel tahmin.
   const level = chosen ?? result?.suggested ?? estimateLevel(correct);
 
+  /**
+   * Aşamayı atla: o aşamanın kalan soruları CEVAPSIZ geçiliyor (web
+   * `leaveStage` de öyle - atlanan aşama puanlamada yok sayılıyor).
+   */
+  function skipStage() {
+    const cur = questions[idx]?.stage;
+    let next = idx;
+    while (next < total && questions[next].stage === cur) next += 1;
+    setIdx(next);
+    if (next >= total) finishNow();
+  }
+
+  /** Test bitti: ses, ve gerçek modda cevapları sunucuya ver. */
+  function finishNow() {
+    sfx("finish"); // tamamlanma sesi (sonuç ekranı)
+    if (!usingReal || !user) return;
+    setSubmitting(true);
+    finishPlacement(answers.current)
+      .then((r) => setResult(r))
+      /* Sunucu hata → yerel tahmin gösteriliyor AMA bunun söylenmesi şart:
+         kayıt yok demek, sonraki açılışta "son alma" satırının boş olması ve
+         bekleme süresinin işlememesi demek. Web aynı notu gösteriyor. */
+      .catch(() => setNotSaved(true))
+      .finally(() => setSubmitting(false));
+  }
+
   function onDone(ok: boolean) {
     const q = questions[idx];
     if (q) answers.current.push({ stage: q.stage, level: q.level, itemId: q.itemId, correct: ok });
     if (ok) setCorrect((c) => c + 1);
     const next = idx + 1;
     setIdx(next);
-    if (next >= total) sfx("finish"); // tamamlanma sesi (sonuç ekranı)
-    // Son soru bittiğinde gerçek modda cevapları sunucuya ver.
-    if (next >= total && usingReal && user) {
-      setSubmitting(true);
-      finishPlacement(answers.current)
-        .then((r) => setResult(r))
-        /* Sunucu hata → yerel tahmin gösteriliyor AMA bunun söylenmesi şart:
-           kayıt yok demek, sonraki açılışta "son alma" satırının boş olması ve
-           bekleme süresinin işlememesi demek. Web aynı notu gösteriyor. */
-        .catch(() => setNotSaved(true))
-        .finally(() => setSubmitting(false));
-    }
+    if (next >= total) finishNow();
   }
 
   async function applyLevel() {
@@ -285,8 +305,27 @@ export function PlacementScreen() {
             ölçümünün anlamı bu). Web aynı ayrımı yapıyor (`placement-test`
             okuma metnini yazıyor, dinlemede oynat düğmesi veriyor).
           */}
+          {/*
+            AŞAMA NE SORUYOR + ATLAMA + "BİLMİYORUM". Üçü de mobilde yoktu:
+            ekran doğrudan soruya başlıyordu. Bilmeyen kullanıcının tek yolu
+            TAHMİN etmekti ve tutan bir tahmin yerleştirme seviyesini
+            yükseltiyordu - ölçümün kendisini bozan bir eksiklik. Web üçünü de
+            veriyor (`placement/placement-test`); "bilmiyorum" yanlış cevapla
+            aynı, farkı tahmini ortadan kaldırması.
+          */}
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginBottom: spacing.sm }}>
+            <Text variant="caption" color={colors.textMuted} style={{ flex: 1, lineHeight: 19 }}>
+              {t(STAGE_TITLE_KEY[questions[idx].stage] ?? "plc.vocab")}
+            </Text>
+            <PressableScale onPress={skipStage} hitSlop={6}>
+              <Text variant="caption" color={colors.primaryText}>{t("plc.skip_stage")}</Text>
+            </PressableScale>
+          </View>
           {questions[idx].head ? <StageHead head={questions[idx].head!} colors={colors} /> : null}
           <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} />
+          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: 12, alignItems: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border }}>
+            <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
+          </PressableScale>
         </>
       ) : submitting ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

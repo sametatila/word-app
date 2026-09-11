@@ -111,6 +111,16 @@ console.log("\n" + C.b + "2. OYNANABILIR OYUNLAR" + C.off);
   // Pratik seçicinin SIRASI da eşleşmeli: iki ekran aynı listeyi gösteriyor.
   const wp = [...read("src/app/(app)/learn/practice/page.tsx").matchAll(/\{ game: "(\w+)",/g)].map((x) => x[1]);
   sameList("pratik secici sirasi", m, wp);
+
+  /* Kartın ALTINDAKİ satır da: oyunun ne yaptırdığını söyleyen tek cümle.
+     Mobil kart yalnız adı gösteriyordu, yani "Cümleyi Diz" ile "Cümleyi
+     Çevir" arasındaki farkı bilmeyen kullanıcı oyunu açmadan seçemiyordu. */
+  const ipucu = (p, re) => [...read(p).matchAll(re)].map((x) => x[1]);
+  sameList(
+    "pratik karti aciklamalari",
+    ipucu("mobile/src/game/session.ts", /hint: "(prac\.\w+)"/g),
+    ipucu("src/app/(app)/learn/practice/page.tsx", /hint: "(prac\.\w+)"/g),
+  );
 }
 
 /* basarim gruplari */
@@ -3760,6 +3770,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     bos("mobile/src/game/skillLibrary.tsx", /if \(!task\) \{/),
     bos("src/components/skills/speaking-player.tsx", /speakp\.no_sentences/),
   );
+}
+
+/* ── 111. yerlestirme testinin uc yuzeyi ──────────────────────────────────
+ * Androidde ekran dogrudan soruya basliyordu: asamanin NE SORDUGU yazmiyor,
+ * asamayi atlama yolu yok ve "bilmiyorum" dugmesi yoktu.
+ *
+ * Ucuncusu olcumun kendisini bozuyordu: bilmeyen kullanicinin tek yolu TAHMIN
+ * etmekti ve tutan bir tahmin yerlestirme seviyesini yukseltiyordu. Web ucunu
+ * de veriyor; "bilmiyorum" yanlis cevapla ayni, farki tahmini ortadan
+ * kaldirmasi. */
+{
+  const yer = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const basliklar = [...new Set([...src.matchAll(/"(plc\.(?:vocab|grammar|reading|listening))"/g)].map((m) => m[1]))].sort();
+    return [
+      "asama basligi=" + basliklar.length,
+      ...basliklar,
+      "asamayi atla=" + (/plc\.skip_stage/.test(src) ? "var" : "yok"),
+      "bilmiyorum=" + (/plc\.dont_know/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("yerlestirme yuzeyleri", yer("mobile/src/screens/PlacementScreen.tsx"), yer("src/components/placement/placement-test.tsx"));
 }
 
 console.log(
