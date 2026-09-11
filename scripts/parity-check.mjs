@@ -4289,7 +4289,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["seri onarildi", /game\.streak_saved/, /game\.streak_saved/],
     ["yarinki tekrar", /sessionw\.due_tomorrow/, /sessionw\.due_tomorrow/],
     ["zorlandiklarin", /session\.missed_title/, /session\.missed_title/],
-    ["devam", /t\("game\.continue"\)/, /t\("game\.continue"\)/],
+    /* Mobilde dugmenin adi KOSULLU oldu (erken durdurmada "tura geri don"),
+       o yuzden desen `t("game.continue")` bicimini degil ANAHTARI ariyor. */
+    ["devam", /"game\.continue"/, /"game\.continue"/],
     ["hayatta kalma", /t\("challenge\.title"\)/, /t\("challenge\.title"\)/],
     ["paylas", /<ShareResult/, /t\("common\.share"\)/],
     ["bitir", /t\("common\.finish"\)/, /t\("common\.finish"\)/],
@@ -4420,8 +4422,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * `weekly.score`; cikis webde "Ogren'e don", mobilde "Bitir". */
 {
   const BOLUM = [
-    ["puan halkasi", /weekly\.your_score/, /weekly\.score/],
-    ["dogru sayisi", /common\.n_correct/, /weekly\.done_sub/],
+    /* Web yerlesim Android'e esitlenince anahtarlar da ortaklasti: halkanin
+       altyazisi iki tarafta `weekly.score`, dogru sayisi `weekly.done_sub`.
+       Eskiden web `weekly.your_score` + `common.n_correct` diyordu. */
+    ["puan halkasi", /weekly\.score/, /weekly\.score/],
+    ["dogru sayisi", /weekly\.done_sub/, /weekly\.done_sub/],
     ["gonderilemedi", /weekly\.not_sent/, /weekly\.not_sent/],
     ["kuyruga donenler", /weekly\.back_in_queue/, /weekly\.back_in_queue/],
     ["hepsi dogru", /weekly\.all_correct/, /weekly\.all_correct/],
@@ -7286,6 +7291,84 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 231. SONUC KIRILIMI: ayni kalemler, ayni yerlesim ----------------
+   *
+   * Uc ayrisma cikti:
+   *
+   *  1. ERKEN DURDURMA. Etap kartindaki "simdilik yeter" turu bitiriyor ama
+   *     Android'in ozeti yine "Tur bitti!" yaziyordu - kullanici turu
+   *     BITIRMEDI, durdurdu. Web ayrimi tasiyor (`stoppedEarly` -> `partial`)
+   *     ve birincil dugmenin adi da degisiyor: yeni tur degil, TURA GERI DON.
+   *  2. OZETIN BASLIGI iki farkli cumleydi: web `summary.round_done` ("Tur
+   *     tamamlandi"), Android `common.round_done` ("Tur bitti!") - ve webin
+   *     anahtari yalniz webde duruyordu. Ortak olan kullaniliyor.
+   *  3. HAFTALIK SINAVIN SONUCU iki ayri yerlesimdi: Android buyuk halkayi
+   *     ORTADA gosterip altina basligi ve "{total} sorudan {correct} dogru"
+   *     satirini yaziyor; web 64 px'lik kucuk halkayi yanda tutup "Kullanim
+   *     skorun" diye baska bir baslik ve "hafta {n}" satiri yaziyordu. O
+   *     satir ayrica HATALIYDI: `{n}` sayi bekliyor ama `status.week` bir
+   *     dizge ("2026-W37"), yani ekranda "hafta 2026-W37" yaziyordu. */
+  {
+    const og = sil(read("mobile/src/screens/GameScreen.tsx"));
+    const ow = sil(read("src/components/session-player.tsx"));
+    sameList(
+      "ozette erken durdurma ayrimi",
+      [
+        "bayrak=" + (/stoppedEarly\.current = true/.test(og) ? "var" : "YOK"),
+        "yuklemede sifirlaniyor=" + (/stoppedEarly\.current = false/.test(og) ? "evet" : "HAYIR"),
+        "baslik=" + (/stoppedEarly\.current \? "summary\.stopped" : "common\.round_done"/.test(og) ? "iki dal" : "TEK"),
+        "dugme adi=" + (/stoppedEarly\.current \? "summary\.back_to_round" : "game\.continue"/.test(og) ? "iki dal" : "TEK"),
+      ],
+      [
+        "bayrak=" + (/stoppedEarly\.current = true/.test(ow) ? "var" : "YOK"),
+        "yuklemede sifirlaniyor=" + (/stoppedEarly\.current = false/.test(ow) ? "evet" : "HAYIR"),
+        "baslik=" + (/partial \? t\("summary\.stopped"\) : t\("common\.round_done"\)/.test(ow) ? "iki dal" : "TEK"),
+        "dugme adi=" + (/partial \? t\("summary\.back_to_round"\) : t\("game\.continue"\)/.test(ow) ? "iki dal" : "TEK"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Uc sayi: dogruluk, kelime, seri - ayni anahtarlar, ayni sira. */
+    const uc = (src) => [...src.matchAll(/"(summary\.(?:accuracy|words|streak))"/g)].map((m) => m[1]);
+    sameList("ozetin uc sayisi", uc(og), uc(ow), "mobil", "web");
+
+    /* Haftalik sonuc: halka + baslik + alt satir, ve olu anahtar kalmamasi. */
+    const hm = sil(read("mobile/src/screens/WeeklyScreen.tsx"));
+    const hw = sil(read("src/components/weekly-player.tsx"));
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    sameList(
+      "haftalik sonuc yerlesimi",
+      [
+        "halka=" + (/<ProgressRing size=\{160\}/.test(hm) ? "var" : "YOK"),
+        "halka icinde yuzde=" + (/formatPercent\(score\)/.test(hm) ? "var" : "YOK"),
+        "halka altyazisi=" + (/weekly\.score/.test(hm) ? "var" : "YOK"),
+        "baslik=" + (/weekly\.done_title/.test(hm) ? "done_title" : "?"),
+        "alt satir=" + (/weekly\.done_sub/.test(hm) ? "done_sub" : "?"),
+      ],
+      [
+        "halka=" + (/conic-gradient\(var\(--color-brand-500\) \$\{result\.score\}%/.test(hw) ? "var" : "YOK"),
+        "halka icinde yuzde=" + (/common\.pct", \{ n: result\.score \}/.test(hw) ? "var" : "YOK"),
+        "halka altyazisi=" + (/weekly\.score/.test(hw) ? "var" : "YOK"),
+        "baslik=" + (/weekly\.done_title/.test(hw) ? "done_title" : "?"),
+        "alt satir=" + (/weekly\.done_sub/.test(hw) ? "done_sub" : "?"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "haftalik sonucun olu anahtarlari kalkti",
+      [
+        "your_score=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"weekly.your_score"') ? 1 : 0), 0),
+        "week_n=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"weekly.week_n"') ? 1 : 0), 0),
+        "summary.round_done=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"summary.round_done"') ? 1 : 0), 0),
+      ],
+      ["your_score=0", "week_n=0", "summary.round_done=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 230. PAYLASIM: ayni tur, ayni metin, ayni yerlerde dugme ---------
    *
    * Ayni ozellik iki uygulamada iki ayri seydi:
@@ -8101,7 +8184,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const dalKoku = (src, capa) => {
       const i = src.indexOf(capa);
       if (i < 0) return "";
-      const j = src.indexOf("<", i);
+      /* CAPADAN SONRA ILK `<` DEGIL, `return (`DEN SONRAKI ILK `<`.
+         Haftalik sinavin dalinda ilk `<` bir TIPSCRIPT GENERIGI
+         (`new Map<number, boolean>()`) ve kapi onu acilis etiketi sanip
+         `<number, boolean>` okuyordu - yani dogru koda "SESSIZ" diyordu.
+         `return (` ile JSX arasina generik giremez. */
+      const r = src.indexOf("return", i);
+      const bas = r < 0 ? i : r;
+      const j = src.indexOf("<", bas);
       if (j < 0) return "";
       let derinlik = 0, tirnak = null;
       for (let k = j; k < src.length; k++) {
@@ -8144,7 +8234,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            gercek mesafe 547 cikti ve kapi kendi kendine kirmizi oldu. Pencere
            tahmin etmek yerine SONUCU ISARETLEYEN dizeden GERI gidip ondan
            hemen once acilan kabin etiketine bakiliyor. */
-        "web haftalik=" + dalDuyuruyor(webHaftalik, "weekly.your_score"),
+        /* Isaret `weekly.your_score`ti; yerlesim Android'e esitlenince o
+           anahtar kalkti. Dalin KOK ELEMANI okunuyor (bkz. `dalKoku`). */
+        "web haftalik=" + (/role="status"/.test(dalKoku(webHaftalik, 'if (phase === "done" && result)')) ? "duyuruyor" : "SESSIZ"),
         "web deneme=" + dalDuyuruyor(webDeneme, "mockexam.result"),
         "web rol yapma=" + dalDuyuruyor(webRol, "rpexam.below_threshold"),
         "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite" variant="h1"/),

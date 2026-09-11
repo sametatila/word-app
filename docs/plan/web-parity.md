@@ -11599,3 +11599,65 @@ olduğu için ikisi de okunuyor), metnin gövdesi (başlıklar, iki istatistik
 dalı, seri, günlük çağrı), anahtarların ortak kümede olması (`sharew.`
 hiçbir yerde kalmamalı + sekiz anahtar üç mobil sözlükte tam) ve düğmenin
 bulunduğu turlar.
+
+## §11.347 — Sonuç kırılımı: erken durdurma, başlığın iki cümlesi, haftalık yerleşim
+
+Eksen **sonuç ekranının kalemleri**ydi. Üç ayrışma çıktı; üçü de aynı sınıf —
+aynı sonucu iki farklı biçimde anlatmak.
+
+### 1. Erken durdurma ayrımı Android'de yoktu
+
+Etap kartındaki "şimdilik yeter" turu bitiriyor ama Android'in özeti yine
+**"Tur bitti!"** yazıyordu: kullanıcı turu bitirmedi, **durdurdu**. Web bu
+ayrımı taşıyor (`stoppedEarly` → `partial`) ve birincil düğmenin adı da
+değişiyor: yeni tur değil, **tura geri dön**. Mobilde bayrak eklendi,
+yüklemede sıfırlanıyor, başlık ve düğme adı iki dallı oldu.
+
+### 2. Özetin başlığı iki farklı cümleydi
+
+Web `summary.round_done` ("Tur tamamlandı"), Android `common.round_done`
+("Tur bitti!") — ve webin anahtarı **yalnız webde** duruyordu. Ortak olan
+kullanılıyor; `summary.stopped` ve `summary.back_to_round` da ortak kümeye
+taşındı (mobile yazılıp `i18n-pull` ile çekildi), `summary.round_done`
+silindi.
+
+### 3. Haftalık sınavın sonucu iki ayrı yerleşimdi
+
+| | Android | Web (eski) |
+|---|---|---|
+| halka | **160 px, ortada** | 64 px, yanda |
+| halka rengi | marka | puana göre üç renk |
+| halka içi | yüzde + `weekly.score` | çıplak sayı |
+| başlık | `weekly.done_title` | `weekly.your_score` ("Kullanım skorun") |
+| alt satır | `weekly.done_sub` | `n_correct · weekly.week_n` |
+
+Ve o **"hafta {n}" satırı hatalıydı**: `{n}` sayı bekliyor ama `status.week`
+bir dizge ("2026-W37"), yani ekranda **"hafta 2026-W37"** yazıyordu.
+Android'de bu satır hiç yok — yerleşim eşitlenirken hata da kapandı. Halkanın
+rengi de Android'den: puana göre üç renk değil marka rengi; "yüzde kaç"
+bilgisini halkanın **doluluğu** taşıyor, rengi değil. Ölü kalan iki web
+anahtarı silindi (`i18n:check` onları da yakaladı).
+
+### Kendi değişikliğim üç kapıyı kırdı — üçü de haklıydı
+
+Yerleşim eşitlenince eski markup'ı ölçen üç kapı kırmızıya döndü ve hepsi
+**doğru** davrandı; ölçüler yeni şekle güncellendi:
+
+- "tur özetinin bölüm sırası": mobilde düğmenin adı **koşullu** oldu, desen
+  artık `t("game.continue")` biçimini değil **anahtarı** arıyor.
+- "haftalık sınav sonucu": web artık mobille aynı anahtarları kullanıyor
+  (`weekly.score`, `weekly.done_sub`), desenler ortaklaştı.
+- §223 haftalık duyurusu: işareti `weekly.your_score`tı ve o anahtar kalktı;
+  ölçü dalın **kök elemanına** çevrildi.
+
+### Ve `dalKoku`nun TypeScript generiği tuzağı
+
+Kök elemanı okuyan yardımcı "çapadan sonraki ilk `<`" diyordu. Haftalık
+sınavın dalında ilk `<` bir **generik**: `new Map<number, boolean>()` — kapı
+onu açılış etiketi sanıp `<number, boolean>` okudu ve duyurusu yerinde duran
+koda "SESSİZ" dedi. Artık `return (`den sonraki ilk `<` okunuyor: `return (`
+ile JSX arasına generik giremez.
+
+`parity-check` §231 dört listeyle ölçüyor: erken durdurma ayrımı (4 ölçüt),
+özetin üç sayısı (doğruluk · kelime · seri, aynı sıra), haftalık sonuç
+yerleşimi (5 ölçüt) ve ölü anahtarların kalkmış olması.
