@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SkeletonLine, SkeletonPill } from "@/components/skeleton";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
 import { CheckIcon } from "@/components/icons";
-import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando } from "@/lib/cando";
+import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando, type CandoSkill } from "@/lib/cando";
 import { CardGrid } from "@/components/layout";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
@@ -13,14 +13,27 @@ type Item = { cando: Cando; state: "proven" | "progressing" | "none"; done: numb
 type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven: number; total: number }> };
 
 /**
- * "Yapabildiklerim" (WP-43): seviye sekmesi, beceri başına ifadeler; kanıtlı
- * tik, gelişiyor yarım, henüz yok soluk. Kullanıcının seviyesi açık gelir.
- * İfade dili "…yapabilirim": burası bir ölçek değil, bir ayna.
+ * "Yapabildiklerim" (WP-43) — Android'in `CandoScreen`i ile aynı yerleşim.
+ *
+ * ÖNCEKİ WEB TASARIMI AYRI BİR ÜRÜNDÜ. Beş seviye çipi vardı ve liste
+ * YALNIZ SEÇİLİ SEVİYEYİ gösteriyordu, ifadeler de beceri başlıklarına
+ * (okuma/dinleme/…) bölünüyordu. Android ise hepsini birden gösteriyor:
+ * üstte seviye başına ilerleme çubuklu bir özet kartı, altında her seviye
+ * kendi kartında, ifadenin altında becerinin adı. Yani aynı hesap iki
+ * platformda iki farklı sayfa açıyordu: webde "B1'i görmek için B1'e bas",
+ * Android'de "hepsi burada".
+ *
+ * Kanıt ölçütü ve kanıtlı sayısı tek satırda, listenin üstünde
+ * (`cando.rule` + `cando.n_proven`) — Android'deki cümlenin aynısı.
+ *
+ * Durum dairesi EKRAN OKUYUCUYA da konuşuyor. Eski sürüm daireye
+ * `aria-hidden` veriyor, durumu yalnız `title` ile söylüyordu: `aria-hidden`
+ * `title`ı da susturur, yani "kanıtlı/gelişiyor/henüz yok" ekran okuyucu
+ * kullanıcısına HİÇ ulaşmıyordu. Android karşılığı `accessibilityLabel`.
  */
-export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
+export function CandoCard() {
   const t = useT();
   const [data, setData] = useState<Data | null | undefined>(undefined);
-  const [level, setLevel] = useState<CefrLevel | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -31,7 +44,6 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
         const d = (await res.json()) as Data;
         if (!alive) return;
         setData(d);
-        setLevel((CANDO_LEVELS as string[]).includes(d.level) ? (d.level as CefrLevel) : "A1");
       } catch {
         setData(null);
       }
@@ -41,38 +53,50 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
     };
   }, []);
 
-  /* İskelet kartın gerçek yapısında: başlık satırı, kural cümlesi, beş
-     seviye çipi ve üç ifade satırı. Göz kararı yükseklik (220/180) seviye
-     çiplerinin yerini hiç ayırmıyordu. */
+  /* İskelet İÇERİĞİN ŞEKLİNDE: kural satırı, iki çubuklu özet kartı, iki
+     grup × dört satır. Android'in yükleme dalı birebir bu. */
   if (data === undefined)
     return (
-      <section role="status" aria-busy="true" aria-label={t("cando.loading")} className={bare ? "" : "card p-5"}>
-        {bare ? null : (
-          <div className="flex items-baseline justify-between gap-3">
-            <SkeletonLine variant="strong" width={150} />
-            <SkeletonLine variant="caption" width={72} />
-          </div>
-        )}
-        <SkeletonLine variant="micro" width="80%" className="mt-1" />
-        <div className="mt-3 flex gap-1.5">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <SkeletonPill key={i} width={44} height={28} />
+      <div>
+        <SkeletonLine variant="micro" width="80%" />
+        <SkeletonCard label={t("cando.loading")} className="mt-3">
+          {[0, 1].map((i) => (
+            <div key={i} className="mb-2">
+              <div className="mb-1 flex items-baseline justify-between">
+                <SkeletonLine variant="strong" width={28} />
+                <SkeletonLine variant="caption" width={78} />
+              </div>
+              <SkeletonBar height={7} />
+            </div>
           ))}
-        </div>
-        <div className="mt-3 space-y-2">
-          {[0, 1, 2].map((i) => (
-            <SkeletonLine key={i} variant="body" width={`${88 - i * 10}%`} />
+        </SkeletonCard>
+        <CardGrid min={440} className="mt-4">
+          {[0, 1].map((g) => (
+            <div key={g}>
+              <SkeletonLine variant="caption" width={26} className="mb-1 ml-1" />
+              <div className="card p-4">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="flex items-center gap-3 py-2.5">
+                    <SkeletonTile size={26} />
+                    <div className="flex-1">
+                      <SkeletonLine variant="body" width="80%" />
+                      <SkeletonLine variant="micro" width="30%" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
-        </div>
-      </section>
+        </CardGrid>
+      </div>
     );
-  /* VERİ YOKKEN SESSİZ KALMIYOR. Kart kendi sayfasında da çiziliyor ve orada
-     `null` dönmek, başlığın altında boş bir sayfa bırakıyordu: hiç ders
-     bitirmemiş kullanıcı ekranın bozuk olduğunu sanıyordu. Android sebebi
-     söylüyor. Profilin içine gömülü hâlde (`bare`) eskisi gibi hiç
-     çizilmiyor - orada boş bir bölüm sayfayı uzatmaktan başka işe yaramaz. */
-  if (!data || !level) {
-    if (bare) return null;
+
+  /* VERİ YOKKEN SESSİZ KALMIYOR: hiç ders bitirmemiş kullanıcı boş bir sayfa
+     görüp ekranın bozuk olduğunu sanıyordu. Android sebebi söylüyor — ve
+     Android boş LİSTEYİ de aynı kartla karşılıyor, yalnız istek hatasını
+     değil. Web önceden yalnız `!data` dalını taşıyordu. */
+  const items = data?.items ?? [];
+  if (!data || !items.length)
     return (
       <EmptyCard
         icon={CheckIcon}
@@ -81,77 +105,87 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
         text={t("cando.sign_in_and_finish_lessons_and")}
       />
     );
-  }
-  const shown = data.items.filter((i) => i.cando.level === level);
-  const skills = [...new Set(shown.map((i) => i.cando.skill))];
-  const provenTotal = data.items.filter((i) => i.state === "proven").length;
 
-  /* `bare`: kendi kartını ve başlığını bırakıp açılır kutunun içeriği oluyor —
-     başlığı zaten kutunun kendisi taşıyor, iki kez yazmak gereksiz. */
+  const provenTotal = items.filter((i) => i.state === "proven").length;
+  const byLevel = new Map<string, Item[]>();
+  for (const it of items) {
+    const liste = byLevel.get(it.cando.level) ?? [];
+    liste.push(it);
+    byLevel.set(it.cando.level, liste);
+  }
+
   return (
-    <section id="cando" className={bare ? "" : "card p-5"}>
-      {bare ? null : (
-        <div className="flex items-baseline justify-between">
-          <h2 className="font-bold">{t("lessonp.i_can").replace(":", "")}</h2>
-          <span className="muted text-caption">{t("cando.n_proven", { n: provenTotal })}</span>
-        </div>
-      )}
-      <p className="muted text-caption">
-        {t("cando.rule")}
-        {bare ? ` ${t("cando.n_proven", { n: provenTotal })}.` : ""}
+    <section id="cando">
+      <p className="muted text-micro">
+        {t("cando.rule")} {t("cando.n_proven", { n: provenTotal })}.
       </p>
-      {/* Beş seviye çipi telefonda kartın genişliğini aşıyor ve sonuncusu
-          (C1) kesiliyordu: kaydırma olmadığı için ulaşılamaz bir sekmeydi.
-          Şerit artık kayıyor, kaydırma çubuğu gizli (bkz. globals). */}
-      <div className="no-scrollbar -mx-1 mt-3 flex gap-1.5 overflow-x-auto px-1 pb-0.5">
-        {CANDO_LEVELS.map((l) => (
-          <button
-            key={l}
-            type="button"
-            onClick={() => setLevel(l)}
-            className={`chip shrink-0 px-3 py-1 text-caption ${l === level ? "chip-active" : ""}`}
-            aria-pressed={l === level}
-          >
-            {l}
-            <span className="muted ml-1 font-semibold">
-              {data.byLevel[l].proven}/{data.byLevel[l].total}
-            </span>
-          </button>
-        ))}
+
+      {/* Seviye özeti: ilerleme çubuklu. Eski web bu sayıları ÇİPLERİN
+          İÇİNE sıkıştırıyordu; orada beş sayı yan yana okunmuyordu. */}
+      <div className="card mt-3 p-4">
+        {CANDO_LEVELS.filter((lv) => data.byLevel[lv]?.total).map((lv) => {
+          const b = data.byLevel[lv];
+          const pct = b.total ? Math.round((b.proven / b.total) * 100) : 0;
+          return (
+            <div key={lv} className="mb-2 last:mb-0">
+              <div className="mb-1 flex items-baseline justify-between">
+                <span className="text-strong">{lv}</span>
+                <span className="muted text-caption">
+                  {t("cando.proven_of_total", { proven: b.proven, total: b.total })}
+                </span>
+              </div>
+              <div className="h-[7px] overflow-hidden rounded-[4px]" style={{ background: "var(--surface-2)" }}>
+                <div
+                  className="h-full rounded-[4px]"
+                  style={{ width: `${Math.max(2, pct)}%`, background: "var(--color-mint)" }}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
-      {/* Beceri bölümleri geniş ekranda sütunlara bölünüyor: mobil bu ekranı
-          tablette `CardGrid` ile üçe kadar ayırıyor, web tek sütunda kalıyordu
-          ve C1 listesi kabın altında uzayıp gidiyordu. Dar kapta düzen aynı. */}
-      <CardGrid min={320} className="mt-3">
-        {skills.map((sk) => (
-        <div key={sk}>
-          <p className="muted text-micro uppercase tracking-wide">{t(CANDO_SKILL_LABEL_KEYS[sk])}</p>
-          <ul className="mt-1 space-y-1">
-            {shown
-              .filter((i) => i.cando.skill === sk)
-              .map((i) => (
-                <li key={i.cando.id} className="flex items-start gap-2 text-body">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro"
-                    style={{
-                      background: i.state === "proven" ? "var(--color-mint)" : i.state === "progressing" ? "color-mix(in srgb, var(--color-flame) 25%, transparent)" : "var(--surface-2)",
-                      color: i.state === "proven" ? "white" : "var(--text-muted)",
-                    }}
-                    title={t(i.state === "proven" ? "cando.proven" : i.state === "progressing" ? "cando.progressing" : "cando.not_yet")}
-                    aria-hidden
-                  >
-                    {i.state === "proven" ? <CheckIcon size={12} /> : i.state === "progressing" ? "½" : ""}
-                  </span>
-                  <span className={i.state === "none" ? "opacity-60" : ""}>
-                    {i.cando.tr}
-                    {i.total ? <span className="muted ml-1 text-caption">({i.done}/{i.total})</span> : null}
-                  </span>
-                </li>
+
+      <CardGrid min={440} className="mt-4">
+        {CANDO_LEVELS.filter((lv) => byLevel.get(lv)?.length).map((lv) => (
+          <div key={lv}>
+            <p className="muted mb-1 ml-1 text-caption">{lv}</p>
+            <div className="card p-4">
+              {(byLevel.get(lv) ?? []).map((it, i) => (
+                <div key={it.cando.id}>
+                  {i > 0 ? <div className="h-px" style={{ background: "var(--hairline)" }} /> : null}
+                  <Row it={it} />
+                </div>
               ))}
-          </ul>
-        </div>
+            </div>
+          </div>
         ))}
       </CardGrid>
     </section>
+  );
+}
+
+function Row({ it }: { it: Item }) {
+  const t = useT();
+  const tint =
+    it.state === "proven" ? "var(--color-mint)" : it.state === "progressing" ? "var(--color-brand)" : "var(--text-faint)";
+  return (
+    <div className="flex items-center gap-3 py-2.5">
+      <span
+        aria-label={t(it.state === "proven" ? "cando.proven" : it.state === "progressing" ? "cando.progressing" : "cando.not_yet")}
+        className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full text-micro"
+        style={{
+          background: it.state === "proven" ? "color-mix(in srgb, var(--color-mint) 20%, transparent)" : "var(--surface-2)",
+          color: tint,
+        }}
+      >
+        {it.state === "proven" ? <CheckIcon size={15} /> : it.total ? `${it.done}/${it.total}` : ""}
+      </span>
+      <span className="flex-1">
+        <span className={`block text-body ${it.state === "none" ? "muted" : ""}`}>{it.cando.tr}</span>
+        <span className="block text-micro" style={{ color: "var(--text-faint)" }}>
+          {t(CANDO_SKILL_LABEL_KEYS[it.cando.skill as CandoSkill] ?? "") || it.cando.skill}
+        </span>
+      </span>
+    </div>
   );
 }
