@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { BellIcon } from "@/components/icons";
 import { SettingRow, Switch } from "@/components/setting-row";
 import { PushSettings } from "@/components/push-settings";
-import { SoundSettings } from "@/components/sound-settings";
 import { useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
 
@@ -154,9 +153,6 @@ export function NotificationSettings() {
           </>
         ) : null}
 
-        {/* Oyun sesleri de bir "ne zaman rahatsız edilirim" ayarı; bildirim
-            anahtarlarıyla birlikte geliyor. */}
-        <SoundSettings bare />
       </section>
     </div>
   );

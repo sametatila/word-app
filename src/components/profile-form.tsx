@@ -6,6 +6,7 @@ import { AlertIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
+import { SoundSettings } from "@/components/sound-settings";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
@@ -346,16 +347,25 @@ export function ProfileForm({
 
         {/* SES kendi bölümü ve UYGULAMA grubunda. Okuma sesi "Öğrenme"nin
             içindeydi; sesle ilgili ayar arayan kullanıcı onu orada aramıyor.
-            Mobilde aynı bölüm oyun seslerini de taşıyor — webde o anahtar
-            bildirim ayarlarında (`/notifications`) duruyor. */}
+            OYUN SESLERİ DE BURADA. Bu anahtar bildirim ayarlarındaydı ve
+            gerekçesi "oyun sesleri de bir 'ne zaman rahatsız edilirim'
+            ayarı" diye yazılıydı — ama Android'de ikisi AYNI bölümde
+            (`SettingsScreen`: okuma sesi, ayırıcı, oyun sesleri) ve sesle
+            ilgili ayar arayan kullanıcı iki yere bakmak zorunda kalıyordu.
+            Picker'ın kendi alt etiketi de eksikti: mobil onun ne olduğunu
+            söylüyor (`settings.reading_voice`), webde başlıksız duruyordu. */}
         <Row label={t("settings.sound")}>
           <div>
-              <VoicePicker
+            <p className="muted mb-2 text-caption">{t("settings.reading_voice")}</p>
+            <VoicePicker
               course={course}
               value={voice}
               onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
               compact
             />
+            <div className="mt-3 border-t pt-1" style={{ borderColor: "var(--hairline)" }}>
+              <SoundSettings bare />
+            </div>
           </div>
         </Row>
 
