@@ -187,6 +187,7 @@ export function AchievementsScreen() {
            (`achievement-wall`). */
         <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
           <EmptyCard
+            live="assertive"
             icon={TrophyIcon}
             tint={colors.streak}
             title={t("achievements.achievements")}

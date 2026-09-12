@@ -139,6 +139,7 @@ export function AchievementWall() {
   if (failed)
     return (
       <EmptyCard
+        role="alert"
         icon={TrophyIcon}
         tint="var(--color-flame)"
         title={t("achievements.achievements")}

@@ -121,12 +121,21 @@ export function Pill({ label, onPress, tone = "primary", disabled, icon: Icon, b
    dışa veriliyor ki sosyal ekranların mevcut import'ları kırılmasın. */
 export { Chip } from "../ui/Chip";
 
-/** Boş durum: ikon karosu + başlık + açıklama + isteğe bağlı düğme (Öğren'deki ActionRow gibi). */
-export function EmptyCard({ icon, tint, title, text, action, onAction }: { icon: IconCmp; tint?: string; title: string; text: string; action?: string; onAction?: () => void }) {
+/**
+ * Boş durum: ikon karosu + başlık + açıklama + isteğe bağlı düğme (Öğren'deki
+ * ActionRow gibi).
+ *
+ * `live` HATA HÂLLERİ İÇİN. Bu kart yalnız "liste boş" demekle kalmıyor,
+ * arkadaş tablosu ve lig tablosu yüklenemediğinde de aynı kart çiziliyor —
+ * o durumda ekran okuyucu kullanan biri hiçbir şey duymuyordu. Boş hâlde
+ * duyuru İSTENMİYOR: "henüz arkadaşın yok" bir hata değil, sayfanın normal
+ * içeriği; okuyucu sırası gelince okur.
+ */
+export function EmptyCard({ icon, tint, title, text, action, onAction, live }: { icon: IconCmp; tint?: string; title: string; text: string; action?: string; onAction?: () => void; live?: "polite" | "assertive" }) {
   const { colors } = useTheme();
   const t = tint ?? colors.primary;
   return (
-    <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
+    <Card padded accessibilityLiveRegion={live} style={{ alignItems: "center", gap: spacing.sm }}>
       <IconTile icon={icon} tint={t} size={52} solid />
       <Text variant="h3" style={{ textAlign: "center", marginTop: spacing.xs }}>{title}</Text>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 18 }}>{text}</Text>

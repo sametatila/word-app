@@ -38,6 +38,7 @@ export function FriendsBoard() {
   if (err || !board)
     return (
       <EmptyCard
+        role="alert"
         icon={PodiumIcon}
         tint="var(--color-sky)"
         title={t("leaderboard.couldn_t_load_leaderboard")}

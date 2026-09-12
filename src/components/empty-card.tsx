@@ -18,6 +18,7 @@ export function EmptyCard({
   text,
   action,
   className = "",
+  role,
 }: {
   icon: (p: { size?: number; className?: string }) => ReactNode;
   /** Karo rengi — ekranın konusunu taşıyor (arkadaşlar yeşil, akış mavi…). */
@@ -27,9 +28,17 @@ export function EmptyCard({
   /** İsteğe bağlı eylem düğmesi. */
   action?: ReactNode;
   className?: string;
+  /**
+   * HATA HÂLLERİ İÇİN. Bu kart yalnız "liste boş" demekle kalmıyor: arkadaş
+   * tablosu, lig tablosu ve yazılar yüklenemediğinde de aynı kart çiziliyor —
+   * o durumda ekran okuyucu kullanan biri hiçbir şey duymuyordu. Boş hâlde
+   * duyuru İSTENMİYOR ("henüz arkadaşın yok" bir hata değil, sayfanın normal
+   * içeriği). Mobil karşılığı `accessibilityLiveRegion`.
+   */
+  role?: "alert" | "status";
 }) {
   return (
-    <div className={`card flex flex-col items-center gap-2 p-4 text-center ${className}`}>
+    <div role={role} className={`card flex flex-col items-center gap-2 p-4 text-center ${className}`}>
       <span
         className="flex items-center justify-center rounded-tile"
         style={{ width: 52, height: 52, background: tint, color: "var(--on-fill)" }}

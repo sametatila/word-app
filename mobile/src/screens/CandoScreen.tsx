@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, CheckIcon } from "../ui/icons";
+import { AlertIcon, ArrowBackIcon, CheckIcon } from "../ui/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
@@ -164,12 +164,20 @@ export function CandoScreen() {
           Duyuru da eklendi: ekranı kaplayan bir hata metni canlı bölge
           değilse TalkBack kullanan biri hiçbir şey duymuyor.
         */
-        <View accessibilityLiveRegion="assertive" style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <Text variant="h2" style={{ textAlign: "center" }}>{t("cando.couldn_t_load")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.rule")}</Text>
-          <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-            <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
-          </PressableScale>
+        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+          {/* Kabuk EL YAPIMI DEĞİL: aynı ekranın boş dalı `EmptyCard` çiziyor,
+              hata dalı ise kendi başlığını ve düğmesini kuruyordu — iki hâl
+              yan yana iki farklı kabukta duruyordu. Web de aynı yerde
+              `EmptyCard` çiziyor (`cando-card`). Duyuru karta taşındı. */}
+          <EmptyCard
+            live="assertive"
+            icon={AlertIcon}
+            tint={colors.danger}
+            title={t("cando.couldn_t_load")}
+            text={t("cando.rule")}
+            action={t("common.try_again")}
+            onAction={() => setAttempt((n) => n + 1)}
+          />
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>

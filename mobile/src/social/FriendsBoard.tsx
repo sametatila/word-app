@@ -34,7 +34,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
    * koptuğunda arkadaşlarının kaybolduğunu görüyordu. Lig sekmesi aynı
    * durumu ayrı bir kartla söylüyor (`LeagueBoard`), iki sekme artık aynı.
    */
-  if (err) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
+  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
   // Satır iskeleti gerçek satırla aynı yükseklikte (40 arma + 12+12 dolgu).
   if (!board) {
     return (

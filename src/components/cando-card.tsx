@@ -103,19 +103,18 @@ export function CandoCard() {
      değilse ekran okuyucu kullanan biri hiçbir şey duymuyor. */
   if (!data)
     return (
-      <div role="alert">
-        <EmptyCard
-          icon={AlertIcon}
-          tint="var(--color-rose)"
-          title={t("cando.couldn_t_load")}
-          text={t("cando.rule")}
-          action={
-            <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-primary px-4 py-2 text-body">
-              {t("common.try_again")}
-            </button>
-          }
-        />
-      </div>
+      <EmptyCard
+        role="alert"
+        icon={AlertIcon}
+        tint="var(--color-rose)"
+        title={t("cando.couldn_t_load")}
+        text={t("cando.rule")}
+        action={
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-primary px-4 py-2 text-body">
+            {t("common.try_again")}
+          </button>
+        }
+      />
     );
   const items = data.items;
   if (!items.length)

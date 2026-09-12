@@ -48,7 +48,7 @@ export function LeagueBoard() {
     void social.leagueSeen().catch(() => {});
   }
 
-  if (err) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
+  if (err) return <EmptyCard live="assertive" icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
   if (!view) {
     return (
       <View>
