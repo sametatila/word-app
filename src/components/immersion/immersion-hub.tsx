@@ -249,7 +249,11 @@ function Featured({
           <p className="text-micro uppercase tracking-wider" style={{ color: "var(--color-brand)" }}>
             {t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}
           </p>
-          <p className="truncate text-h2">{unit.theme}</p>
+          {/* İKİ SATIR: Android `PathScreen` `numberOfLines={2}` veriyor ve
+              webin KENDİ ikinci görünümü de (`line-clamp-2`, aşağıda) iki
+              satır. Burası tek satırdı, yani aynı alan aynı uygulamada iki
+              farklı bütçeyle çiziliyordu. */}
+          <p className="line-clamp-2 text-h2">{unit.theme}</p>
           <p className="muted text-caption">
             {unit.complete
               ? t("common.completed")

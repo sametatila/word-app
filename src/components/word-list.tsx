@@ -305,13 +305,18 @@ export function WordList({
                   className="flex w-full items-center gap-3 px-4 py-3 text-left"
                 >
                   <div className="min-w-0 flex-1">
-                    <p className="truncate font-semibold">
+                    {/* SARMALIYOR, kırpmıyor: Android'in satırı iki metne de
+                        satır sınırı vermiyor (`WordsScreen`). Kırpmak burada
+                        İÇERİĞİ saklıyor — bileşik bir Almanca ismin sonu ya da
+                        bir kelimenin ikinci anlamı satırın dışında kalıyordu,
+                        oysa kullanıcı listeye tam onun için bakıyor. */}
+                    <p className="font-semibold">
                       {r.artikel ? (
                         <span style={{ color: ARTIKEL_TONE[r.artikel] }}>{r.artikel} </span>
                       ) : null}
                       {r.de}
                     </p>
-                    <p className="muted truncate text-body">
+                    <p className="muted text-body">
                       {r.tr}
                       {/* İngilizce aynı satırda, ayraçla: liste satırı zaten
                           iki satır (Almanca + karşılık); üçüncü satır listeyi
