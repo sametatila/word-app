@@ -18541,6 +18541,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------- 329. "KARSINDAKI YAPAY ZEKA" BILDIRIMI: BES YUZEY, IKI TARAF
+ *
+ * Bu bildirim bir TAAHHUT: kullanim sartlari §6 "bir yapay zeka ile
+ * etkilestigin uygulamada ACIKCA BELIRTILIR" diyor ve Play'in uretken yapay
+ * zeka politikasi da ayni bildirimi istiyor. Soz tek platformda tutulursa
+ * tutulmamis olur; webde bir zamanlar HIC yoktu (bkz. `components/ai-notice`).
+ *
+ * Bugun bes yuzeyde ve iki tarafta da duruyor; olculmedigi icin yeni bir yapay
+ * zeka yuzeyi tek platforma eklendiginde sessizce ayrisabilirdi. Kapi bu
+ * yuzden KAPSAM olcuyor, varlik degil.
+ *
+ * Iki cesit: "character" konusulan tarafin karakter oldugunu (rol yapma,
+ * ders sohbeti), "output" metni/puani uretenin model oldugunu (yazma, monolog,
+ * yazilar) soyluyor. Cesit de olculuyor - yanlis cesit yanlis beyandir.
+ *
+ * Ucuncu olcu bildirimin KALICI olmasi: kapatma dugmesi ya da gorunurluk
+ * durumu almiyor. Bir kez gorunup kayan baloncuk, uzun bir konusmanin
+ * ortasina giren kullanici icin yok hukmunde. */
+{
+  const silA = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const say = (yol, cesit) => (silA(read(yol)).match(new RegExp('<AiNotice variant="' + cesit + '"', "g")) ?? []).length;
+  /* Android'de beceri yuzeylerinin ikisi de AYNI ekranda (`ItemScreen` dal
+     dal ciziyor), webde iki ayri oynatici dosyasi - o yuzden esleme dosya
+     dosya degil YUZEY yuzey yazili. */
+  const YUZEYLER = [
+    ["yazilar", "output", ["mobile/src/screens/WritingsScreen.tsx"], ["src/components/writings-card.tsx"]],
+    ["beceri", "output", ["mobile/src/screens/ItemScreen.tsx"], ["src/components/skills/writing-player.tsx", "src/components/skills/monologue-player.tsx"]],
+    ["rol-yapma", "character", ["mobile/src/screens/RoleplayExamScreen.tsx"], ["src/components/lessons/roleplay-exam.tsx"]],
+    ["ders-sohbet", "character", ["mobile/src/screens/LessonScreen.tsx"], ["src/components/lessons/lesson-player.tsx"]],
+  ];
+  const topla = (yollar, cesit) => yollar.reduce((a, y) => a + say(y, cesit), 0);
+  sameList(
+    "yapay zeka bildiriminin kapsami",
+    YUZEYLER.map(([ad, cesit, mob]) => ad + "=" + topla(mob, cesit)),
+    YUZEYLER.map(([ad, cesit, , web]) => ad + "=" + topla(web, cesit)),
+    "mobil",
+    "web",
+  );
+  /* Beceri yuzeyi IKI tane olmali (yazma + monolog): tek tarafta birinin
+     dusmesi toplamda "1" verir ve iki taraf birden dusmedikce yukaridaki
+     karsilastirma bunu yakalar, ama IKISI birden duserse (0=0) gecerdi.
+     MUTLAK olcu bu yuzden var. */
+  sameList(
+    "yapay zeka bildirimi kalici ve tam",
+    [
+      "beceri yuzeyi=" + topla(["mobile/src/screens/ItemScreen.tsx"], "output"),
+      "mobil kapatilabilir=" + (/onClose|dismiss|setVisible/.test(silA(read("mobile/src/ui/AiNotice.tsx"))) ? "EVET" : "hayir"),
+      "web kapatilabilir=" + (/onClose|dismiss|setVisible/.test(silA(read("src/components/ai-notice.tsx"))) ? "EVET" : "hayir"),
+      "mobil anahtar=" + (/ai\.notice_character" : "ai\.notice_output/.test(silA(read("mobile/src/ui/AiNotice.tsx"))) ? "ikisi" : "EKSIK"),
+      "web anahtar=" + (/ai\.notice_character" : "ai\.notice_output/.test(silA(read("src/components/ai-notice.tsx"))) ? "ikisi" : "EKSIK"),
+    ],
+    ["beceri yuzeyi=2", "mobil kapatilabilir=hayir", "web kapatilabilir=hayir", "mobil anahtar=ikisi", "web anahtar=ikisi"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

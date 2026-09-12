@@ -16950,3 +16950,26 @@ Kapı **§328** on iki ölçüyü iki dosyadan okuyor. Çubuğun yüksekliği ve
 **ortak bileşenden** (`social/common` `Bar`) çıkarılıyor, kapının içine
 yazılmıyor — enjeksiyon `Bar`ın varsayılan yüksekliğini değiştirince kapı
 kırmızı veriyor, yani ölçü kaynağın kendisine bağlı.
+
+## §11.469 — "Karşındaki yapay zekâ" bildirimi: ölçüldü, beş yüzey iki tarafta da tam
+
+Bu bildirim bir **taahhüt**: kullanım şartları §6 "bir yapay zekâ ile
+etkileştiğin uygulamada AÇIKÇA BELİRTİLİR" diyor, Play'in üretken yapay zekâ
+politikası da aynı bildirimi istiyor. Söz tek platformda tutulursa tutulmamış
+olur — web'de bir zamanlar hiç yoktu (`components/ai-notice`in kendi yorumunda
+yazılı).
+
+Ölçtüm: **beş çağrı yeri, iki tarafta da tam ve çeşitleri doğru.** Düzeltilecek
+bir şey çıkmadı. Eşleme dosya dosya değil **yüzey yüzey**, çünkü Android beceri
+yüzeylerinin ikisini de aynı ekranda dal dal çiziyor (`ItemScreen`), web'de iki
+ayrı oynatıcı dosyası var.
+
+Kapı **§329** üç şey ölçüyor: kapsam (yüzey başına çağrı sayısı, çeşidiyle),
+bildirimin **kalıcı** olması (kapatma düğmesi ya da görünürlük durumu almıyor)
+ve iki tarafın aynı iki anahtarı okuması. İkinci ölçü **mutlak**, çünkü
+karşılaştırmalı ölçü iki taraf birden düşerse (0 = 0) geçerdi — enjeksiyon tam
+bunu doğruladı: web'den birini silmek karşılaştırmayı kırmızıya çevirdi, ikisini
+birden silmek ise yalnız mutlak ölçüyü.
+
+Sıfır XP'li ses (telaffuz) alıştırmasında bildirim **yok** ve bu doğru: orada
+puanı model değil kural/tanıyıcı veriyor. İki platform bu ayrımda da aynı.
