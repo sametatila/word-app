@@ -38,6 +38,27 @@ somebody anybody everybody
 metre metres meter meters km kg cm litre litres liter liters kilo kilos minutes hours euro
 children men women people feet teeth`.split(/\s+/).filter(Boolean));
 
+/**
+ * HAVUZUN TAMAMI — özel ad ayıklaması için, seviye penceresi olmadan.
+ *
+ * Almanca kapıdaki `havuzKok` ile aynı iş: kurs bir sözcüğü HİÇBİR seviyede
+ * öğretmiyorsa ve metinde büyük harfle geçiyorsa, o bir addır (Deniz, Bremen,
+ * Rossi) — "seviye dışı kelime" saymak yanıltıcı olur. Havuzda varsa normal
+ * ölçülür, yani "Behind" cümle başındayken de ünite penceresine sorulur.
+ */
+let kokBellek: Set<string> | null = null;
+export function enCourseRoots(): Set<string> {
+  if (kokBellek) return kokBellek;
+  const set = new Set<string>();
+  for (const l of readFileSync("data/app/words-en.json", "utf8").split("\n")) {
+    if (!l) continue;
+    const r = JSON.parse(l) as { de: string };
+    for (const w of r.de.toLowerCase().replace(/\(.*?\)/g, "").split(/[\s/,-]+/)) if (w) set.add(w);
+  }
+  kokBellek = set;
+  return set;
+}
+
 export function enLevelPool(level: string): Set<string> {
   const rows = readFileSync("data/app/words-en.json", "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l) as { de: string; niveau: string });
   const upto = LEVELS.indexOf(level);
@@ -124,23 +145,53 @@ export function enStems(w: string): string[] {
 export function measureEn(text: string, pool: Set<string>, ek: string[]): { tok: string[]; disi: string[] } {
   pool = new Set(pool);
   for (const w of ek) for (const p of w.toLowerCase().split(/[\s/,-]+/)) if (p) pool.add(p);
-  const raw = text.replace(/[^\p{L}\p{N}'\s-]/gu, " ").split(/\s+/).filter(Boolean);
+  /* NOKTALAMA ÖNCE SİLİNİRSE CÜMLE BAŞI HİÇ BULUNAMAZ.
+     Eski hali metni `[^\p{L}\p{N}'\s-] → boşluk` ile temizleyip SONRA
+     "önceki belirteç nokta/ünlem/soru ile bitiyor mu" diye soruyordu. O nokta
+     bir adım önce boşluğa çevrilmişti, yani koşul BİRİNCİ belirteç dışında
+     hiçbir zaman doğru olmuyordu: cümle başındaki her büyük harfli sözcük
+     "özel ad" sayılıp ölçümden tamamen düşüyordu — belirteç sayısına bile
+     girmiyordu. Ölçüldü: İngilizce kursun 143.606 belirtecinin 17.802'si
+     (%12,4) böyle atılıyordu ve atılanların 935'i havuz dışıydı. Çoğu gerçek
+     özel ad (Deniz, Ela, Izmir) ama 170 geçiş gerçek bulguydu: neither,
+     none, either, whether, whoever, passive, active, verdict, liability,
+     especially, somewhere.
+     Düzeltme: sınır kararı HAM metinden, sözcükler arasında duran gerçek
+     karakterlere bakarak veriliyor. Alan ayracı `|` de cümle başı sayılıyor
+     — çağıranlar egzersizin alanlarını onunla birleştiriyor ve her alan yeni
+     bir cümledir. */
   const tok: string[] = [];
   const disi: string[] = [];
-  raw.forEach((t, i) => {
+  let prevEnd = 0;
+  let ilk = true;
+  for (const m of text.matchAll(/[\p{L}\p{N}'-]+/gu)) {
+    const t = m[0];
+    const ara = text.slice(prevEnd, m.index);
+    const sentenceStart = ilk || /[.!?:;|\n]/.test(ara) || /["„“«(]/.test(ara);
+    prevEnd = m.index + t.length;
+    ilk = false;
     const w = t.toLowerCase().replace(/^'+|'+$/g, "");
-    if (!w || /\d/.test(w)) return;
-    // Özel ad: cümle başında olmayan büyük harfli sözcük.
-    const prev = raw[i - 1] ?? "";
-    const sentenceStart = i === 0 || /[.!?:]$/.test(prev) || /^["„“]/.test(t);
-    if (/^[A-Z]/.test(t) && !sentenceStart) return;
+    if (!w || /\d/.test(w)) continue;
+    if (/^[A-Z]/.test(t)) {
+      // Cümle ORTASINDA büyük harf: İngilizcede tek nedeni özel addır.
+      if (!sentenceStart) continue;
+      /* Cümle BAŞINDA büyük harf hiçbir şey söylemez — "Deniz works" ile
+         "Behind the house" aynı görünür. Ayıran şey havuz: kurs sözcüğü
+         hiçbir seviyede öğretmiyorsa addır. Bedeli ölçüldü ve kabul edildi:
+         kursun hiçbir yerinde öğretilmeyen `none`, `whoever`, `whereby`,
+         `wherein`, `whatever`, `german` cümle başında geçtiklerinde artık
+         ada benziyor ve raporda görünmüyorlar (cümle içinde küçük harfle
+         geçtiklerinde görünmeye devam ediyorlar). */
+      const kok = enCourseRoots();
+      if (!enStems(w).some((st) => kok.has(st))) continue;
+    }
     tok.push(w);
-    if (EN_FREE.has(w)) return;
+    if (EN_FREE.has(w)) continue;
     // Tireli birleşik: parçalarının hepsi biliniyorsa bileşik de bilinir
     // ("twenty-five", "well-known"). Ayrı ayrı bakmak sayıları kurtarıyor.
-    if (w.includes("-") && w.split("-").every((part) => !part || EN_FREE.has(part))) return;
-    if (enStems(w).some((s) => pool.has(s))) return;
+    if (w.includes("-") && w.split("-").every((part) => !part || EN_FREE.has(part))) continue;
+    if (enStems(w).some((st) => pool.has(st))) continue;
     disi.push(w);
-  });
+  }
   return { tok, disi };
 }
