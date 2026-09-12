@@ -40,8 +40,14 @@ machen macht soll sollen heißt bin`.split(/\s+/).filter(Boolean));
 // hiç yoksa ve metinde büyük harfle geçiyorsa büyük olasılıkla bir isim
 // (Emma, Bremen, Türkei). Bunları "seviye dışı kelime" saymak yanıltıcı.
 const pool = require(`${R}/data/app/words.json`);
+// ALMANCA HARF SINIFI — yedi yerde aynısı. `[a-zäöüß]` idi ve ödünç sözcüğün
+// aksanlı harfinde kırılıyordu: havuzda öğretilen "Café" metinde "caf" diye
+// belirteçleniyor, hiçbir izin kümesiyle eşleşmiyor ve raporda "caf×3" diye
+// görünüyordu — okuyan kişi "caf" diye bir Almanca sözcük arayıp bulamayınca
+// satırı eliyordu. Aksanlılar sınıfa girince belirteç kendi adıyla çıkıyor
+// (Café, Touché) ve gerçekten havuz dışıysa öyle raporlanıyor.
 const havuzKok = new Set();
-for (const r of pool) for (const w of String(r.de).toLowerCase().match(/[a-zäöüß]{3,}/g) || []) havuzKok.add(w);
+for (const r of pool) for (const w of String(r.de).toLowerCase().match(/[a-zäöüßéèêáàóúï]{3,}/g) || []) havuzKok.add(w);
 
 // Tireli bileşik ("E-Mail", "Deutsch-Start") metinde parçalanıp geçiyor;
 // izin kümesine parçalarıyla girmeli, yoksa öğretilen sözcük kayma sayılır.
@@ -124,7 +130,7 @@ const dersler = (lv) => JSON.parse(fs.readFileSync(`${R}/mobile/src/data/lessons
 const ekle = (acc, ls) => {
   for (const l of ls) {
     for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);
-    for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüß]+/g) || []) acc.add(w);
+    for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüßéèêáàóúï]+/g) || []) acc.add(w);
   }
   return acc;
 };
@@ -137,7 +143,12 @@ const ekle = (acc, ls) => {
  * ünitesinde "die Wohnung"u kayma saymak yanlış olurdu. O yüzden izin kümesi
  * alt seviyelerin tamamı artı kendi seviyesinin o üniteye kadarki kısmı.
  */
-const ONCEKI = { a1: [], a2: ["A1"], b1: ["A1", "A2"], b2: ["A1", "A2", "B1"], c1: ["A1", "A2", "B1", "C1"] };
+// C1 satırı "B2" yerine "C1" yazıyordu ve bu İKİ YÖNLÜ bir hataydı: B2'nin
+// 2061 sözcüklük katmanı hiç girmiyordu (bir C1 metninin B2 sözcüğü kayma
+// sayılıyordu) ve C1'in kendi 2468 sözcüğü ünite penceresi olmadan baştan
+// serbest bırakılıyordu (C1'in 30. ünitesinde öğretilen sözcük 1. ünitede
+// kabul ediliyordu, yani seviyenin kendi penceresi kapalıydı).
+const ONCEKI = { a1: [], a2: ["A1"], b1: ["A1", "A2"], b2: ["A1", "A2", "B1"], c1: ["A1", "A2", "B1", "B2"] };
 
 /**
  * Alt seviyeler DERS sözlükçesiyle değil HAVUZ KATMANIYLA giriyor.
@@ -186,7 +197,14 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   for (const w of ekIzin) for (const x of parcala(w)) izin.add(x);
   // Türkçe harf taşıyan özel ad ("Yılmaz") Almanca sözcük regexinde parçalanıp
   // sahte gövde bırakıyor ("lmaz"); böyle belirteci bütünüyle atıyoruz.
-  const ham = String(ham0 || "").split(/\s+/).filter((t) => !/[ışğİıŞĞçÇ]/.test(t)).join(" ");
+  /* ŞAPKALI HARF DE TÜRKÇE. Küme `ışğİıŞĞçÇ` idi; "hâlâ", "mekân", "resmî",
+     "dükkân" gibi Türkçe sözcükler süzgeçten geçip Almanca sözcük regexinde
+     parçalanıyordu ("mekân" → "mek") ve o uydurma gövde havuz dışı
+     sayılıyordu. Süzgecin işi sayım değil ALFABE kararı: bugün ölçülen
+     Almanca yüzeyde yalnız iki böyle belirteç var (hâlâ, mekân), ama içerikte
+     3000'den fazlası dolaşıyor ve biri Almanca alana her sızdığında sahte
+     gövde üretiyordu. */
+  const ham = String(ham0 || "").split(/\s+/).filter((t) => !/[ışğİıŞĞçÇâîûÂÎÛ]/.test(t)).join(" ");
   // Türkçe harfli belirteci atmak gövde uydurmasını önlüyor ama ad-soyad
   // KANITINI da siliyor: "Emre Şahin" → "Emre" tek başına kalıyor ve cümle
   // başındaki büyük harf muafiyetsiz olduğu için özel ad sayılmıyordu.
@@ -194,7 +212,7 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // denetimi (aşağıda `ham`) değişmeden kalsın, yoksa sahte Almanca gövde üretir.
   const TR_ASCII = { ı: "i", İ: "I", ş: "s", Ş: "S", ğ: "g", Ğ: "G", ç: "c", Ç: "C" };
   const adMetni = String(ham0 || "").replace(/[ıİşŞğĞçÇ]/g, (c) => TR_ASCII[c]);
-  const ozelAd = new Set((adMetni.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
+  const ozelAd = new Set((adMetni.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüßéèêáàóúï]{2,}\b/g) || [])
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
   // Unvan ZİNCİRLENEBİLİR ("Frau Dr. Weber"); tek unvanlı desen ilk eşleşmede
   // lastIndex'i ilerletip asıl adı yutuyordu.
@@ -205,10 +223,10 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // çift hiç denenmiyordu. Her mektup "Grüßen Nuri Öz" ile bitiyor ve
   // (Grüßen, Nuri) çifti havuz sözcüğü olduğu için elenince (Nuri, Öz) hiç
   // sınanmıyor, yani her imzadaki soyad kayma sayılıyordu.
-  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})(?=\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b)/g)) {
+  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüßéèêáàóúï]{1,})(?=\s+([A-ZÄÖÜ][a-zäöüßéèêáàóúï]{1,})\b)/g)) {
     if (!havuzKok.has(m[1].toLowerCase())) { ozelAd.add(m[1].toLowerCase()); ozelAd.add(m[2].toLowerCase()); }
   }
-  for (const m of adMetni.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+  for (const m of adMetni.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüßéèêáàóúï]+)/g)) {
     // Unvandan SONRA gelen sözcük soyadıdır — havuzda ortak isim olarak da
     // bulunması ("Berg" = dağ) bunu değiştirmez, o yüzden koşulsuz muaf.
     ozelAd.add(m[1].toLowerCase()); ozelAd.add("dr"); ozelAd.add("prof");
@@ -344,7 +362,7 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
     (soyZu(w) && (izin.has(soyZu(w)) || izinCekim.has(soyZu(w)))) ||
     izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2)))) ||
     (w.length >= 3 && izinKok.some((k) => k.startsWith(w)));
-  const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
+  const tok = (ham.toLowerCase().match(/[a-zäöüßéèêáàóúï]{2,}/g) || []);
   const disi = tok.filter((w) => !SERBEST.has(w) && !sayiMi(w) && !DA_RE.test(w) && !bilinir(w));
   return { tok, disi };
 }
