@@ -1,0 +1,327 @@
+[
+ {
+  "tr": "Fail kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zum Handelnden aus."
+ },
+ {
+  "tr": "Ağırlık kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Gewichtskarte aus."
+ },
+ {
+  "tr": "Yer sözcükleri kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zu den Ortswörtern aus."
+ },
+ {
+  "tr": "İngilizce cümlenin sonunu ağırlığa göre sıralıyor; uzun nesne sona gidiyor; adıl asla ağır değil; Almancada sonu fiil parantezi tutuyor.",
+  "kind": "form.facts",
+  "de": "Das Englische ordnet das Satzende nach Gewicht; das lange Objekt rückt ans Ende; ein Pronomen ist nie schwer; im Deutschen hält die Verbklammer das Ende besetzt."
+ },
+ {
+  "tr": "Edilgen bir delik bırakıyor; soyut özne görünür bir isim koyuyor; geçişlilik değiştiren fiil hiç iz bırakmıyor; Almanca ayrı bir fiil türetiyor.",
+  "kind": "form.facts",
+  "de": "Das Passiv lässt eine Lücke; ein abstraktes Subjekt setzt ein sichtbares Nomen ein; das Verb mit wechselnder Transitivität lässt gar keine Spur; das Deutsche leitet ein eigenes Verb ab."
+ },
+ {
+  "tr": "„Where“ burada yer göstermiyor; „whereas“ iki şeyi ayrı tutuyor; Almanca aynı aileyi kurmuş ve parçaları görünür; sökülemeyen sözcük öğretilmek zorunda.",
+  "kind": "form.facts",
+  "de": "„Where“ zeigt hier keinen Ort; „whereas“ hält zwei Dinge auseinander; das Deutsche hat dieselbe Familie gebaut und die Teile bleiben sichtbar; ein Wort, das man nicht zerlegen kann, muss gelehrt werden."
+ },
+ {
+  "tr": "Buna hizaya sokma demek klişe demek değildir.",
+  "kind": "build.tr",
+  "de": "Es Disziplinierung zu nennen heißt nicht, es eine Floskel zu nennen."
+ },
+ {
+  "tr": "Bilgi emeği pekâlâ kendini sömürmeyle bitebilir.",
+  "kind": "build.tr",
+  "de": "Wissensarbeit endet durchaus in Selbstausbeutung."
+ },
+ {
+  "tr": "Burada elit yetiştirme yok; rekabet mantığı var.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine Elitebildung; wir haben eine Wettbewerbslogik."
+ },
+ {
+  "tr": "Diaspora köken dilini saklıyor; enklav, sessizliği.",
+  "kind": "build.tr",
+  "de": "Die Diaspora bewahrt die Herkunftssprache; die Enklave das Schweigen."
+ },
+ {
+  "tr": "Vasıfsızlaşma profesyonelleşmenin karşıtı değildir.",
+  "kind": "build.tr",
+  "de": "Dequalifizierung ist nicht das Gegenteil von Professionalisierung."
+ },
+ {
+  "tr": "Raporda verimlilik artışı, atölyede iş yoğunlaşması.",
+  "kind": "build.tr",
+  "de": "Im Bericht ist es ein Effizienzgewinn, in der Werkhalle Arbeitsverdichtung."
+ },
+ {
+  "tr": "Mükemmeliyet girişimi fonlandı; geçiş oranı, daha az.",
+  "kind": "build.tr",
+  "de": "Die Exzellenzinitiative wurde finanziert; die Übergangsquote weniger."
+ },
+ {
+  "tr": "Yayın baskısı, dediler, ve intihale karşı epeyce iyi.",
+  "kind": "build.tr",
+  "de": "Publikationsdruck, sagten sie, und ziemlich gut gegen Plagiate."
+ },
+ {
+  "tr": "Birimi bünyeden ayırsalar da iş şirket içinde kalıyor.",
+  "kind": "build.tr",
+  "de": "So sehr sie die Einheit ausgliedern, die Arbeit bleibt im Haus."
+ },
+ {
+  "tr": "Uzlaşı sağlama olmasa hiçbir davranış kuralı tutmazdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Konsensbildung, würde kein Verhaltenskodex halten."
+ },
+ {
+  "tr": "Yetki devrinin arkasında talimat verme yetkisi duruyor.",
+  "kind": "build.tr",
+  "de": "Hinter der Delegation steht die Weisungsbefugnis."
+ },
+ {
+  "tr": "Anlam bağlamının eksik olduğu yerde gerçek anlam tutmaz.",
+  "kind": "build.tr",
+  "de": "Wo der Bedeutungskontext fehlt, hält die wörtliche Bedeutung nicht."
+ },
+ {
+  "tr": "Toplumsal katman değişti; değerlerin dönüşümü değişmedi.",
+  "kind": "build.tr",
+  "de": "Die soziale Schicht änderte sich; der Wertewandel nicht."
+ },
+ {
+  "tr": "Emekli aylığı düzeyi düştü; yasal emeklilik yaşı düşmedi.",
+  "kind": "build.tr",
+  "de": "Das Rentenniveau sank; die Regelaltersgrenze nicht."
+ },
+ {
+  "tr": "Güç yapısının yaptığı şey güç dengesizliğini gizlemektir.",
+  "kind": "build.tr",
+  "de": "Was die Machtstruktur tut, ist das Machtgefälle zu verbergen."
+ },
+ {
+  "tr": "Yukarıdaki dil değişimi aşağıda bir dil normuna dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Der oben genannte Sprachwandel wird unten zu einer Sprachnorm."
+ },
+ {
+  "tr": "Nitelikli eleman açığı ilan edilir; işgücü rezervi sayılır.",
+  "kind": "build.tr",
+  "de": "Ein Fachkräftemangel wird ausgerufen; eine Arbeitskräftereserve wird gezählt."
+ },
+ {
+  "tr": "Sınır, geçirgen olsa da, statü güvencesizliğini kaldırmıyor.",
+  "kind": "build.tr",
+  "de": "Die Grenze beseitigt, wenn auch durchlässig, die Statusunsicherheit nicht."
+ },
+ {
+  "tr": "Alan dışından geçiş ile yetkinlik odaklılık birlikte geliyor.",
+  "kind": "build.tr",
+  "de": "Quereinstieg und Kompetenzorientierung kommen zusammen."
+ },
+ {
+  "tr": "Standartlaştırma bir yöntem, rasyonelleştirme bir programdır.",
+  "kind": "build.tr",
+  "de": "Standardisierung ist eine Methode, Rationalisierung ein Programm."
+ },
+ {
+  "tr": "Yönetimin esnekleştirme dediğine sendika güvencesizleşme diyor.",
+  "kind": "build.tr",
+  "de": "Was die Geschäftsleitung Flexibilisierung nennt, nennt die Gewerkschaft Prekarisierung."
+ },
+ {
+  "tr": "Yukarıdaki yapısal değişim aşağıda bir ana iş koluna dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Der oben genannte Strukturwandel wird unten zu einem Kerngeschäft."
+ },
+ {
+  "tr": "İşgücüne katılım oranı yükseldi; tahsis edilmiş para hiç yükselmedi.",
+  "kind": "build.tr",
+  "de": "Die Erwerbsquote stieg; das zweckgebundene Geld überhaupt nicht."
+ },
+ {
+  "tr": "Biri segmentasyonu perdeliyor; bir başkası meslek ahlakını baltalıyor.",
+  "kind": "build.tr",
+  "de": "Der eine verschleiert die Segmentierung; der andere untergräbt die Berufsethik."
+ },
+ {
+  "tr": "Çevrilemezlik maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Unübersetzbarkeit überlebt als Spiritualität, eine Glaubenskrise als Frage."
+ },
+ {
+  "tr": "Toplu sözleşme özerkliği müzakere yönetiminin özgür olmasını talep eder.",
+  "kind": "build.tr",
+  "de": "Die Tarifautonomie verlangt, dass die Verhandlungsführung frei sei."
+ },
+ {
+  "tr": "Kuşaklar arası sözleşme yaşlılık günleri, iş kendini gerçekleştirme vadediyor.",
+  "kind": "build.tr",
+  "de": "Der Generationenvertrag verspricht den Lebensabend, die Arbeit die Selbstverwirklichung."
+ },
+ {
+  "tr": "İşletme sorumluluğunun belirsiz olduğu yerde performans göstergesi işe yaramaz.",
+  "kind": "build.tr",
+  "de": "Wo die Betriebsverantwortung unklar ist, hilft die Leistungskennzahl nicht."
+ },
+ {
+  "tr": "Parça başı iş meslektaş dayanışmasını zayıflatıp kişiler arası tarafı zorlayabilir.",
+  "kind": "build.tr",
+  "de": "Akkordarbeit kann die Kollegialität schwächen und die zwischenmenschliche Seite belasten."
+ },
+ {
+  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
+  "kind": "build.tr",
+  "de": "Die Betriebsrätin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
+ },
+ {
+  "tr": "Fiil başta, bağlaç yok.",
+  "kind": "build.hint",
+  "de": "Das Verb am Anfang, keine Konjunktion."
+ },
+ {
+  "tr": "Hızlı yarı ile yavaş yarı.",
+  "kind": "build.hint",
+  "de": "Die schnelle Hälfte und die langsame."
+ },
+ {
+  "tr": "Biçim eski; değişen yalnız konu.",
+  "kind": "build.hint",
+  "de": "Die Form ist alt; geändert hat sich nur das Thema."
+ },
+ {
+  "tr": "İki ad ve sahipleri aynı cümlede.",
+  "kind": "build.hint",
+  "de": "Zwei Namen und ihre Besitzer im selben Satz."
+ },
+ {
+  "tr": "İkisi aynı eksenin iki ucu değil.",
+  "kind": "build.hint",
+  "de": "Die beiden sind nicht zwei Enden derselben Achse."
+ },
+ {
+  "tr": "İki edilgenin iki ayrı sahibi var.",
+  "kind": "build.hint",
+  "de": "Die zwei Passive haben zwei verschiedene Besitzer."
+ },
+ {
+  "tr": "Sondaki iltifat güvenilmeyecek yer.",
+  "kind": "build.hint",
+  "de": "Das Kompliment am Ende ist die Stelle, der man nicht trauen darf."
+ },
+ {
+  "tr": "„Where“ yer değil, durum gösteriyor.",
+  "kind": "build.hint",
+  "de": "„Where“ zeigt keinen Ort, sondern einen Fall."
+ },
+ {
+  "tr": "İlk yarıda meblağ var, ikincide yok.",
+  "kind": "build.hint",
+  "de": "In der ersten Hälfte steht eine Summe, in der zweiten keine."
+ },
+ {
+  "tr": "Çekince burada gerçek bir iş görüyor.",
+  "kind": "build.hint",
+  "de": "Die Einschränkung leistet hier echte Arbeit."
+ },
+ {
+  "tr": "Devredilen iş, elde tutulan son tarih.",
+  "kind": "build.hint",
+  "de": "Übertragen wurde die Arbeit, einbehalten die Frist."
+ },
+ {
+  "tr": "Ara sözdeki taviz ana iddiayı düşürmüyor.",
+  "kind": "build.hint",
+  "de": "Das Zugeständnis im Einschub bringt die Hauptbehauptung nicht zu Fall."
+ },
+ {
+  "tr": "Zor bir sözcük, zor olduğu için boşalmaz.",
+  "kind": "build.hint",
+  "de": "Ein hartes Wort wird nicht leer, nur weil es hart ist."
+ },
+ {
+  "tr": "Hiçbir şey silinmedi ve yine de kimse yok.",
+  "kind": "build.hint",
+  "de": "Nichts wurde getilgt, und doch ist niemand da."
+ },
+ {
+  "tr": "Tek fiil iki özne ile iki nesneye yetiyor.",
+  "kind": "build.hint",
+  "de": "Ein einziges Verb reicht für zwei Subjekte und zwei Objekte."
+ },
+ {
+  "tr": "Eski kip yeni bir konuda: „be“, „is“ değil.",
+  "kind": "build.hint",
+  "de": "Der alte Modus bei einem neuen Thema: „be“, nicht „is“."
+ },
+ {
+  "tr": "Aynı olay, iki defter; ikinci yarıda fiil yok.",
+  "kind": "build.hint",
+  "de": "Dasselbe Ereignis, zwei Bücher; in der zweiten Hälfte fehlt das Verb."
+ },
+ {
+  "tr": "Taşınamayan şey yok olmuyor, yer değiştiriyor.",
+  "kind": "build.hint",
+  "de": "Was nicht hinübergetragen werden kann, verschwindet nicht, es zieht um."
+ },
+ {
+  "tr": "Fiil aynı olduğu için ikinci yarıda yazılmıyor.",
+  "kind": "build.hint",
+  "de": "Weil das Verb dasselbe ist, wird es in der zweiten Hälfte nicht geschrieben."
+ },
+ {
+  "tr": "„Where“ bir yer değil, „şu durumlarda ki“ demek.",
+  "kind": "build.hint",
+  "de": "„Where“ ist kein Ort, es heißt „in den Fällen, in denen“."
+ },
+ {
+  "tr": "Eksiltilen yarıda fiil yerine bir belirteç kalmış.",
+  "kind": "build.hint",
+  "de": "In der getilgten Hälfte steht statt des Verbs ein Adverb."
+ },
+ {
+  "tr": "Şema herkesin görebildiği şey; anlattığı şey değil.",
+  "kind": "build.hint",
+  "de": "Das Organigramm ist, was alle sehen können; nicht, wovon es handelt."
+ },
+ {
+  "tr": "Ağır nesne sona kaymış; „make something permanent“ değil.",
+  "kind": "build.hint",
+  "de": "Das schwere Objekt ist ans Ende gerückt; nicht „make something permanent“."
+ },
+ {
+  "tr": "Birim ücret parça başına olunca soru sormak para tutuyor.",
+  "kind": "build.hint",
+  "de": "Sobald der Lohn pro Stück gezahlt wird, kostet eine Frage Geld."
+ },
+ {
+  "tr": "Nesne tek sözcük olmadığı için parçacıktan sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Weil das Objekt kein einzelnes Wort ist, steht es nach der Partikel."
+ },
+ {
+  "tr": "Biri görülmesini zorlaştırıyor, öteki alttan parça çekiyor.",
+  "kind": "build.hint",
+  "de": "Der eine erschwert das Sehen, der andere zieht von unten ein Stück heraus."
+ },
+ {
+  "tr": "Biri kapı, öteki kâğıdın hiç önemli olmadığını söyleyen ölçüt.",
+  "kind": "build.hint",
+  "de": "Das eine ist eine Tür, das andere ein Maß, das sagt, die Papiere seien nie der Punkt gewesen."
+ },
+ {
+  "tr": "Gönderme bir sözcüğe mal oluyor, okura bir sayfa kazandırıyor.",
+  "kind": "build.hint",
+  "de": "Ein Verweis kostet ein Wort und spart dem Leser eine Seite."
+ },
+ {
+  "tr": "Yöntem işe yarayıp yaramadığına göre yargılanır; programın bütçesi vardır.",
+  "kind": "build.hint",
+  "de": "Eine Methode wird danach beurteilt, ob sie wirkt; ein Programm hat ein Budget."
+ }
+]

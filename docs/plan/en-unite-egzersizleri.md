@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
-| C1 | 13–25 | bekliyor |
+| C1 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
+| C1 | 16–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1501,6 +1501,79 @@ intro („„Biz“ ile „onlar“…“) İngilizce tarafta „alıntı düşm
 intro İngilizce belirteçleri tırnağa alacak biçimde yeniden yazıldı, ve
 tırnak içi BÜYÜK/küçük harfiyle korunmak zorunda („Less so“, „less so“
 değil).
+
+
+Ünite 13'ün noktası YER SÖZCÜKLERİNİN YERİ BIRAKMASI. „Where the
+semantic context is missing…“ — ilk sözcük hiçbir yeri göstermiyor,
+„şu durumlarda ki“ demek, ve akademik İngilizcenin bu iş için olağan
+bağlacı. Yalnız da değil: „whereas“ (ünite 7'de bir ücret mektubunda
+geçmişti) „where“ ile „as“ın birbirine itilmiş hâli ve hiçbir yer
+adlandırmıyor, iki şeyi ayrı tutuyor; „whereby“ sözleşmelerde yaşıyor;
+„wherein“, „whereof“, „whereupon“ — hepsi bir yer sözcüğü ile bir
+edattan kurulmuş ve hiçbiri artık yerle ilgili değil. Almanca AYNI
+aileyi aynı parçalardan kurmuş: „wobei“, „wodurch“, „wohingegen“,
+„worauf“. Mekanizma birebir aynı, anlamlar neredeyse madde madde
+örtüşüyor — bu kursta o kadar seyrek ki açıkça söylenmeye değer. Ayrım
+ÖĞRENENİN GÖREBİLDİĞİNDE: Almanca parçaları yazıyor, iki yarı da orada
+duruyor ve bilmeyen bir okur sözcüğü söküp aşağı yukarı doğruyu buluyor;
+İngilizce yüzyıllar önce kaynaştırmış ve „whereas“ı sökmek cevabı zaten
+bilmeyen için olanaksız — „where“ artı „as“ iki şeyi ayrı tutmakla ilgili
+hiçbir şey öngörmüyor. Ölçü: **AYNI YAPIM İKİ DİLDE DE VAR; ALMANCADA
+PARÇA GÖRÜNÜR, İNGİLİZCEDE KAYNAŞMIŞ** — sökülebilen sözcük tahmin
+edilebilir, sökülemeyen öğretilmek zorunda, ve İngilizce bunlardan uzun
+bir listeyi tam da tahminin en ayartıcı olduğu kayıtlarda tutuyor.
+Ünitenin ikinci bulgusu kendi yapısından çıkıyor ve okura da söyleniyor:
+buradan sonra BİÇİMLER yenilenmiyor, değişken sözcük dağarcığı oluyor —
+ilk öğrenildiği paragrafın dışında kullanılamayan bir biçim henüz
+öğrenilmemiştir. Bir de „-ization“ ailesi üzerine küçük bir ölçü: isim
+doğru ya da yanlış olamaz, dolayısıyla „precarization“ ancak cümleye geri
+çevrildikten sonra yanıtlanabiliyor — ünite 12'nin onarımı („fiili geri
+koy“) burada ikinci bir kusurda çalışıyor.
+
+Ünite 14'ün noktası AĞIR NESNENİN SONA KAYMASI. „…make permanent every
+apprenticeship contract“ — olağan sıra „make something permanent“ iken
+nesne, ne olacağını söyleyen sözcüğün üstünden atlayıp cümlenin sonuna
+inmiş, ve atlama nedeni anlam değil UZUNLUK. Aynı kural öbeksi fiilde de
+çalışıyor: „spin off the unit“ ama „spin it off“ — tek sözcük asla ağır
+değil, ve adılda kural tersine dönüp kesinleşiyor. Yani İngilizce cümle
+sonunu ağırlığa göre diziyor: hafif önce, ağır sonra, ve okura parçalar
+her biri bir sonraki gelene kadar tutulabilecek kısalıkta veriliyor.
+Almanca bunu ne yapabiliyor ne de yapması gerekiyor: fiil ikiye ayrılıyor
+ve ikinci yarısı cümleciğin sonunu zaten tutuyor, nesne ne kadar uzarsa
+uzasın fiilin önünde kalıyor; uzayan Almanca cümle hiçbir şeyi
+kaydırmıyor, yalnızca okuru parantezi kapatan parça için daha uzun
+bekletiyor. Ölçü: **İKİ DİLİN DE CÜMLE SONU İÇİN BİR SIRA KURALI VAR AMA
+İKİSİ AYRI ŞEYE BAKIYOR — İNGİLİZCE AĞIRLIĞA, ALMANCA FİİL PARANTEZİNE**,
+ve Alman yazarın oynayabildiği şey sonu değil başa neyin konduğu.
+Bu, ünite 10'un bulgusunun öteki yarısı: isim öbeği arkadan büyüyordu,
+burada cümle o büyüyen öbeğe sonda yer açıyor.
+
+Ünite 15'in noktası GEÇİŞLİLİK DEĞİŞTİREN FİİL. „The pension level fell“
+— fiilin öznesi var, nesnesi yok, ve düzey değiştiren değil DEĞİŞEN şey.
+Bu cümleyi kurmak için hiçbir şey silinmemiş: edilgen yok, geri konacak
+bir fail yok, bakanlığın yerini tutan soyut isim yok; fiil yalnızca
+kimseye gerek duymayan okumasında kullanılmış. İngilizce neredeyse her
+değişim fiiline bunu yaptırıyor (a price drops / they dropped the price)
+ve böylece seviyenin failsiz cümle ailesinin ÜÇÜNCÜ ve en sessiz üyesi
+ortaya çıkıyor: edilgen dikkatli okurun bulabileceği bir delik bırakıyor,
+soyut özne hiç değilse görünür bir isim koyuyor, bu ise hiçbir iz
+bırakmıyor — cümle tam, olağan ve kısa, ve içinde adın eksik olduğu bir
+yer yok. Almanca farkı sözcüğün kendisinde işaretliyor: değişen için ayrı,
+değiştiren için ayrı fiil, aynı kökten farklı ekle, dolayısıyla Alman okur
+hangi okumada olduğunu özneyi hiç düşünmeden fiilden öğreniyor. Ölçü:
+**İNGİLİZCEDE FAİL FİİLİN İÇİNDE KAYBOLUYOR; ALMANCADA FİİL HANGİ
+OKUMADA OLUNDUĞUNU SÖYLÜYOR.**
+
+Ölçüm bu turda yüz sözlükçe maddesi ekletti ve otuz dokuz maddeyi
+sildirdi; sekiz soru yüzeyi yeniden yazıldı. Bu turda yeni bir şey
+görüldü: ünite 13'ün okuma metni Almanca sözcükler (wobei, wodurch,
+wohingegen, worauf) içeriyor ve kapı bunları da ölçüyor, yani İngilizce
+kursun bir egzersizinde Almanca maddeler sözlükçeye Türkçe karşılıkla
+girdi — ölçüm doğru davrandı, çünkü metin gerçekten o sözcükleri
+kullanıyor. Bir de budama sırasının önemi bir kez daha çıktı: çok
+sözcüklü kendi maddemi („neither of them“) sildiğimde kapının o güne dek
+kapalı saydığı tek sözcük („neither“) açığa çıktı; budamadan sonra kapı
+mutlaka yeniden koşulmalı.
 
 
 ## Tamamlanma ölçütü

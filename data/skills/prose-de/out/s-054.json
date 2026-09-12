@@ -1,0 +1,892 @@
+[
+ {
+  "tr": "Aidiyetin sakladıkları ve emri veren.",
+  "kind": "intro",
+  "de": "Was die Zugehörigkeit verbirgt, und wer den Befehl gibt."
+ },
+ {
+  "tr": "Ağır nesne sona kayıyor; adıl asla kaymıyor.",
+  "kind": "intro",
+  "de": "Das schwere Objekt rückt ans Ende; das Pronomen nie."
+ },
+ {
+  "tr": "Meblağsız kabul ve raporun gönderme katmanı.",
+  "kind": "intro",
+  "de": "Das Eingeständnis ohne Summe und die Verweisebene des Berichts."
+ },
+ {
+  "tr": "Nitelik sözcükleri ve toplantının iki fiili.",
+  "kind": "intro",
+  "de": "Die Wörter der Qualifikation und die zwei Verben der Sitzung."
+ },
+ {
+  "tr": "Yer bildirmeyen „where“ ve tek ölçünün üç adı.",
+  "kind": "intro",
+  "de": "Das ortlose „where“ und die drei Namen einer Maßnahme."
+ },
+ {
+  "tr": "Toplantı tutanağında hangi fiil kimi ele veriyor?",
+  "kind": "intro",
+  "de": "Welches Verb verrät im Sitzungsprotokoll wen?"
+ },
+ {
+  "tr": "Failin fiilin içinde kaybolması ve çekincenin işi.",
+  "kind": "intro",
+  "de": "Wie der Handelnde im Verb verschwindet, und wozu die Einschränkung dient."
+ },
+ {
+  "tr": "İki sözcük karşıt görünüyor. Peki aynı eksende mi?",
+  "kind": "intro",
+  "de": "Zwei Wörter sehen entgegengesetzt aus. Liegen sie aber auf derselben Achse?"
+ },
+ {
+  "tr": "Birim ayrılıyor ama iş kalıyor. Sınır neyi kaldırmıyor?",
+  "kind": "intro",
+  "de": "Die Einheit wird ausgegliedert, die Arbeit bleibt. Was beseitigt die Grenze nicht?"
+ },
+ {
+  "tr": "İki topluluk, iki ayrı şey saklıyor. Hangisi hangisini?",
+  "kind": "intro",
+  "de": "Zwei Gemeinschaften bewahren zweierlei. Welche was?"
+ },
+ {
+  "tr": "Sıra yanlış görünüyor ama değil. Neye göre sıralanıyor?",
+  "kind": "intro",
+  "de": "Die Reihenfolge sieht falsch aus, ist es aber nicht. Wonach wird geordnet?"
+ },
+ {
+  "tr": "Yetki devrinin arkasında ne duruyor? Ne fark edilmiyor?",
+  "kind": "intro",
+  "de": "Was steht hinter der Delegation? Und was wird nicht bemerkt?"
+ },
+ {
+  "tr": "Kimse zorlamadıysa gönüllü müdür? Çekince nerede duruyor?",
+  "kind": "intro",
+  "de": "Ist es freiwillig, wenn niemand gezwungen hat? Und wo steht die Einschränkung?"
+ },
+ {
+  "tr": "Fonlanan ile fonlanmayan aynı cümlede. Ek neyi ele veriyor?",
+  "kind": "intro",
+  "de": "Das Finanzierte und das Nichtfinanzierte im selben Satz. Was verrät der Zusatz?"
+ },
+ {
+  "tr": "Tek bir önlem, üç ad. Adı koyan tartışmayı nasıl kazanıyor?",
+  "kind": "intro",
+  "de": "Eine Maßnahme, drei Namen. Wie gewinnt die Debatte, wer den Namen setzt?"
+ },
+ {
+  "tr": "Hiçbir şey silinmemiş ve yine de kimse yok. Fail nereye gitti?",
+  "kind": "intro",
+  "de": "Nichts wurde getilgt, und doch ist niemand da. Wohin ist der Handelnde gegangen?"
+ },
+ {
+  "tr": "„Where“ hangi yeri gösteriyor? Sökülebilen sözcük ile sökülemeyen.",
+  "kind": "intro",
+  "de": "Welchen Ort zeigt „Where“? Das zerlegbare Wort und das unzerlegbare."
+ },
+ {
+  "tr": "Uzun raporu ne bir arada tutuyor? Belirsiz sorumluluk neyi bozuyor?",
+  "kind": "intro",
+  "de": "Was hält einen langen Bericht zusammen? Und was verdirbt eine unklare Zuständigkeit?"
+ },
+ {
+  "tr": "„„Less so“ names no number.“",
+  "kind": "explain",
+  "de": "„„Less so“ names no number.“"
+ },
+ {
+  "tr": "Cümle, neden, adıl, öteki dil.",
+  "kind": "explain",
+  "de": "Der Satz, der Grund, das Pronomen, die andere Sprache."
+ },
+ {
+  "tr": "İki katman: iddia ile varsayım.",
+  "kind": "explain",
+  "de": "Zwei Schichten: Behauptung und Annahme."
+ },
+ {
+  "tr": "Ucuz okuma ilk toplantıyı kazanıyor.",
+  "kind": "explain",
+  "de": "Die billigere Lesart gewinnt die erste Sitzung."
+ },
+ {
+  "tr": "Fiilsiz taviz ortada; ana iddia ayakta.",
+  "kind": "explain",
+  "de": "Das verblose Zugeständnis steht in der Mitte; die Hauptbehauptung bleibt stehen."
+ },
+ {
+  "tr": "Hızlı yarı ile yavaş yarı aynı cümlede.",
+  "kind": "explain",
+  "de": "Die schnelle und die langsame Hälfte im selben Satz."
+ },
+ {
+  "tr": "Baştaki yuvayı bir yer almış; özne sonda.",
+  "kind": "explain",
+  "de": "Die vordere Stelle hat ein Ort besetzt; das Subjekt steht am Ende."
+ },
+ {
+  "tr": "Eksen, iki edilgen, çift; en sonda kural.",
+  "kind": "explain",
+  "de": "Die Achse, zwei Passive, das Paar; ganz am Ende die Regel."
+ },
+ {
+  "tr": "İki edat nesnesiz kalmış; gönderme katmanı.",
+  "kind": "explain",
+  "de": "Zwei Präpositionen ohne Objekt; die Verweisebene."
+ },
+ {
+  "tr": "„„Work intensification“ counts what went in.“",
+  "kind": "explain",
+  "de": "„„Work intensification“ counts what went in.“"
+ },
+ {
+  "tr": "Meblağ, ad değişimi, iltifat; en sonda döngü.",
+  "kind": "explain",
+  "de": "Die Summe, der Namenswechsel, das Kompliment; ganz am Ende der Zirkel."
+ },
+ {
+  "tr": "„„spin it off“ is the only order anybody writes…“",
+  "kind": "explain",
+  "de": "„„spin it off“ is the only order anybody writes…“"
+ },
+ {
+  "tr": "„the evening hours are in nobody's figure at all.“",
+  "kind": "explain",
+  "de": "„the evening hours are in nobody's figure at all.“"
+ },
+ {
+  "tr": "Bağlaç, aile, iki dil; en sonda seviyenin geri kalanı.",
+  "kind": "explain",
+  "de": "Konjunktion, Familie, zwei Sprachen; ganz am Ende der Rest des Niveaus."
+ },
+ {
+  "tr": "„„Where“ has been used to mean „in those cases in which“…“",
+  "kind": "explain",
+  "de": "„„Where“ has been used to mean „in those cases in which“…“"
+ },
+ {
+  "tr": "Cümle, tek sözcük iki okuma, izsizlik; en sonda öteki dil.",
+  "kind": "explain",
+  "de": "Der Satz, ein Wort mit zwei Lesarten, die Spurlosigkeit; ganz am Ende die andere Sprache."
+ },
+ {
+  "tr": "„a flat chart can hide more than a tall one.“ — „Far more…“",
+  "kind": "explain",
+  "de": "„a flat chart can hide more than a tall one.“ — „Far more…“"
+ },
+ {
+  "tr": "İki defter, iki sahip, yöntem ile program; en sonda onarım.",
+  "kind": "explain",
+  "de": "Zwei Bücher, zwei Eigentümer, Methode und Programm; ganz am Ende die Reparatur."
+ },
+ {
+  "tr": "„„whereas“ cannot be taken apart by anybody who does not already know the answer.“",
+  "kind": "explain",
+  "de": "„„whereas“ cannot be taken apart by anybody who does not already know the answer.“"
+ },
+ {
+  "tr": "sahipler",
+  "kind": "gloss.tr",
+  "de": "die Eigentümer"
+ },
+ {
+  "tr": "yadsınan",
+  "kind": "gloss.tr",
+  "de": "bestritten"
+ },
+ {
+  "tr": "yok olmak",
+  "kind": "gloss.tr",
+  "de": "verschwinden"
+ },
+ {
+  "tr": "ilk",
+  "kind": "gloss.tr",
+  "de": "zuerst"
+ },
+ {
+  "tr": "emir",
+  "kind": "gloss.tr",
+  "de": "der Befehl"
+ },
+ {
+  "tr": "indi",
+  "kind": "gloss.tr",
+  "de": "landete"
+ },
+ {
+  "tr": "oran",
+  "kind": "gloss.tr",
+  "de": "die Rate"
+ },
+ {
+  "tr": "şema",
+  "kind": "gloss.tr",
+  "de": "das Organigramm"
+ },
+ {
+  "tr": "ulam",
+  "kind": "gloss.tr",
+  "de": "die Kategorie"
+ },
+ {
+  "tr": "ahlak",
+  "kind": "gloss.tr",
+  "de": "die Ethik"
+ },
+ {
+  "tr": "alarm",
+  "kind": "gloss.tr",
+  "de": "der Alarm"
+ },
+ {
+  "tr": "eksen",
+  "kind": "gloss.tr",
+  "de": "die Achse"
+ },
+ {
+  "tr": "giriş",
+  "kind": "gloss.tr",
+  "de": "der Zugang"
+ },
+ {
+  "tr": "kenar",
+  "kind": "gloss.tr",
+  "de": "die Kante"
+ },
+ {
+  "tr": "klişe",
+  "kind": "gloss.tr",
+  "de": "die Floskel"
+ },
+ {
+  "tr": "önlem",
+  "kind": "gloss.tr",
+  "de": "die Maßnahme"
+ },
+ {
+  "tr": "ritim",
+  "kind": "gloss.tr",
+  "de": "der Takt"
+ },
+ {
+  "tr": "sayfa",
+  "kind": "gloss.tr",
+  "de": "die Seite"
+ },
+ {
+  "tr": "sofra",
+  "kind": "gloss.tr",
+  "de": "der Tisch"
+ },
+ {
+  "tr": "sonek",
+  "kind": "gloss.tr",
+  "de": "das Suffix"
+ },
+ {
+  "tr": "yatay",
+  "kind": "gloss.tr",
+  "de": "flach"
+ },
+ {
+  "tr": "açıkça",
+  "kind": "gloss.tr",
+  "de": "deutlich"
+ },
+ {
+  "tr": "bir ad",
+  "kind": "gloss.tr",
+  "de": "ein Name"
+ },
+ {
+  "tr": "çeyrek",
+  "kind": "gloss.tr",
+  "de": "das Quartal"
+ },
+ {
+  "tr": "enklav",
+  "kind": "gloss.tr",
+  "de": "die Enklave"
+ },
+ {
+  "tr": "hiç iz",
+  "kind": "gloss.tr",
+  "de": "keine Spur"
+ },
+ {
+  "tr": "iki iş",
+  "kind": "gloss.tr",
+  "de": "zwei Tätigkeiten"
+ },
+ {
+  "tr": "iyilik",
+  "kind": "gloss.tr",
+  "de": "der Gefallen"
+ },
+ {
+  "tr": "meblağ",
+  "kind": "gloss.tr",
+  "de": "die Summe"
+ },
+ {
+  "tr": "ruhsat",
+  "kind": "gloss.tr",
+  "de": "die Zulassung"
+ },
+ {
+  "tr": "sökmek",
+  "kind": "gloss.tr",
+  "de": "zerlegen"
+ },
+ {
+  "tr": "zanaat",
+  "kind": "gloss.tr",
+  "de": "das Handwerk"
+ },
+ {
+  "tr": "bulanık",
+  "kind": "gloss.tr",
+  "de": "vage"
+ },
+ {
+  "tr": "değişti",
+  "kind": "gloss.tr",
+  "de": "änderte sich"
+ },
+ {
+  "tr": "geçilen",
+  "kind": "gloss.tr",
+  "de": "überschritten"
+ },
+ {
+  "tr": "geçiyor",
+  "kind": "gloss.tr",
+  "de": "überquert"
+ },
+ {
+  "tr": "intihal",
+  "kind": "gloss.tr",
+  "de": "das Plagiat"
+ },
+ {
+  "tr": "kayıyor",
+  "kind": "gloss.tr",
+  "de": "rutscht"
+ },
+ {
+  "tr": "program",
+  "kind": "gloss.tr",
+  "de": "das Programm"
+ },
+ {
+  "tr": "sendika",
+  "kind": "gloss.tr",
+  "de": "die Gewerkschaft"
+ },
+ {
+  "tr": "üzerine",
+  "kind": "gloss.tr",
+  "de": "auf"
+ },
+ {
+  "tr": "verilen",
+  "kind": "gloss.tr",
+  "de": "gereicht"
+ },
+ {
+  "tr": "yönetim",
+  "kind": "gloss.tr",
+  "de": "die Geschäftsleitung"
+ },
+ {
+  "tr": "bölünmüş",
+  "kind": "gloss.tr",
+  "de": "zerlegt"
+ },
+ {
+  "tr": "değişken",
+  "kind": "gloss.tr",
+  "de": "die Variable"
+ },
+ {
+  "tr": "eski kip",
+  "kind": "gloss.tr",
+  "de": "der alte Modus"
+ },
+ {
+  "tr": "geçirgen",
+  "kind": "gloss.tr",
+  "de": "durchlässig"
+ },
+ {
+  "tr": "gizlemek",
+  "kind": "gloss.tr",
+  "de": "verbergen"
+ },
+ {
+  "tr": "gösterge",
+  "kind": "gloss.tr",
+  "de": "der Indikator"
+ },
+ {
+  "tr": "iki fiil",
+  "kind": "gloss.tr",
+  "de": "zwei Verben"
+ },
+ {
+  "tr": "işe alım",
+  "kind": "gloss.tr",
+  "de": "die Einstellung"
+ },
+ {
+  "tr": "ki ondan",
+  "kind": "gloss.tr",
+  "de": "wovon"
+ },
+ {
+  "tr": "parçalar",
+  "kind": "gloss.tr",
+  "de": "die Teile"
+ },
+ {
+  "tr": "sıralama",
+  "kind": "gloss.tr",
+  "de": "der Rang"
+ },
+ {
+  "tr": "aynı masa",
+  "kind": "gloss.tr",
+  "de": "derselbe Schreibtisch"
+ },
+ {
+  "tr": "büyükanne",
+  "kind": "gloss.tr",
+  "de": "die Großmutter"
+ },
+ {
+  "tr": "dil normu",
+  "kind": "gloss.tr",
+  "de": "die Sprachnorm"
+ },
+ {
+  "tr": "fonlanmış",
+  "kind": "gloss.tr",
+  "de": "finanziert"
+ },
+ {
+  "tr": "iki yönde",
+  "kind": "gloss.tr",
+  "de": "in beide Richtungen"
+ },
+ {
+  "tr": "ikinci iş",
+  "kind": "gloss.tr",
+  "de": "der Zweitjob"
+ },
+ {
+  "tr": "işte olan",
+  "kind": "gloss.tr",
+  "de": "erwerbstätig"
+ },
+ {
+  "tr": "katmanlar",
+  "kind": "gloss.tr",
+  "de": "die Schichten"
+ },
+ {
+  "tr": "kaynaşmış",
+  "kind": "gloss.tr",
+  "de": "verschmolzen"
+ },
+ {
+  "tr": "meslektaş",
+  "kind": "gloss.tr",
+  "de": "der Kollege"
+ },
+ {
+  "tr": "öngörüyor",
+  "kind": "gloss.tr",
+  "de": "sagt voraus"
+ },
+ {
+  "tr": "örtüşüyor",
+  "kind": "gloss.tr",
+  "de": "decken sich"
+ },
+ {
+  "tr": "sıralıyor",
+  "kind": "gloss.tr",
+  "de": "ordnet"
+ },
+ {
+  "tr": "son satır",
+  "kind": "gloss.tr",
+  "de": "die letzte Zeile"
+ },
+ {
+  "tr": "yıpranmış",
+  "kind": "gloss.tr",
+  "de": "abgenutzt"
+ },
+ {
+  "tr": "yüzyıllar",
+  "kind": "gloss.tr",
+  "de": "Jahrhunderte"
+ },
+ {
+  "tr": "baltalamak",
+  "kind": "gloss.tr",
+  "de": "untergraben"
+ },
+ {
+  "tr": "boyun eğme",
+  "kind": "gloss.tr",
+  "de": "die Unterordnung"
+ },
+ {
+  "tr": "en sessizi",
+  "kind": "gloss.tr",
+  "de": "das leiseste"
+ },
+ {
+  "tr": "iki defter",
+  "kind": "gloss.tr",
+  "de": "zwei Bücher"
+ },
+ {
+  "tr": "iyileşiyor",
+  "kind": "gloss.tr",
+  "de": "verbessert sich"
+ },
+ {
+  "tr": "ki bununla",
+  "kind": "gloss.tr",
+  "de": "wodurch"
+ },
+ {
+  "tr": "köken dili",
+  "kind": "gloss.tr",
+  "de": "die Herkunftssprache"
+ },
+ {
+  "tr": "perdelemek",
+  "kind": "gloss.tr",
+  "de": "verschleiern"
+ },
+ {
+  "tr": "yargılanan",
+  "kind": "gloss.tr",
+  "de": "beurteilt"
+ },
+ {
+  "tr": "yükseliyor",
+  "kind": "gloss.tr",
+  "de": "steigt"
+ },
+ {
+  "tr": "aynı sözcük",
+  "kind": "gloss.tr",
+  "de": "dasselbe Wort"
+ },
+ {
+  "tr": "bilgi emeği",
+  "kind": "gloss.tr",
+  "de": "die Wissensarbeit"
+ },
+ {
+  "tr": "birim ücret",
+  "kind": "gloss.tr",
+  "de": "der Stücklohn"
+ },
+ {
+  "tr": "devredilmiş",
+  "kind": "gloss.tr",
+  "de": "übertragen"
+ },
+ {
+  "tr": "geçiş oranı",
+  "kind": "gloss.tr",
+  "de": "die Übergangsquote"
+ },
+ {
+  "tr": "ilan edilen",
+  "kind": "gloss.tr",
+  "de": "ausgerufen"
+ },
+ {
+  "tr": "kaldırılmış",
+  "kind": "gloss.tr",
+  "de": "beseitigt"
+ },
+ {
+  "tr": "ki bu arada",
+  "kind": "gloss.tr",
+  "de": "wobei"
+ },
+ {
+  "tr": "yanlış sıra",
+  "kind": "gloss.tr",
+  "de": "die falsche Reihenfolge"
+ },
+ {
+  "tr": "aynı saatler",
+  "kind": "gloss.tr",
+  "de": "dieselben Stunden"
+ },
+ {
+  "tr": "bütçe kalemi",
+  "kind": "gloss.tr",
+  "de": "der Haushaltsposten"
+ },
+ {
+  "tr": "değiştiriyor",
+  "kind": "gloss.tr",
+  "de": "variiert"
+ },
+ {
+  "tr": "dil değişimi",
+  "kind": "gloss.tr",
+  "de": "der Sprachwandel"
+ },
+ {
+  "tr": "elde tutulan",
+  "kind": "gloss.tr",
+  "de": "einbehalten"
+ },
+ {
+  "tr": "iki katlı iş",
+  "kind": "gloss.tr",
+  "de": "doppelte Arbeit"
+ },
+ {
+  "tr": "istatistikçi",
+  "kind": "gloss.tr",
+  "de": "der Statistiker"
+ },
+ {
+  "tr": "kendi evinde",
+  "kind": "gloss.tr",
+  "de": "zu Hause"
+ },
+ {
+  "tr": "olağan kalıp",
+  "kind": "gloss.tr",
+  "de": "das übliche Muster"
+ },
+ {
+  "tr": "anlam bağlamı",
+  "kind": "gloss.tr",
+  "de": "der Bedeutungskontext"
+ },
+ {
+  "tr": "basın bülteni",
+  "kind": "gloss.tr",
+  "de": "die Pressemitteilung"
+ },
+ {
+  "tr": "bir yıl sonra",
+  "kind": "gloss.tr",
+  "de": "ein Jahr später"
+ },
+ {
+  "tr": "bunun üzerine",
+  "kind": "gloss.tr",
+  "de": "woraufhin"
+ },
+ {
+  "tr": "çevrilemezlik",
+  "kind": "gloss.tr",
+  "de": "die Unübersetzbarkeit"
+ },
+ {
+  "tr": "esnekleştirme",
+  "kind": "gloss.tr",
+  "de": "die Flexibilisierung"
+ },
+ {
+  "tr": "parça başı iş",
+  "kind": "gloss.tr",
+  "de": "die Akkordarbeit"
+ },
+ {
+  "tr": "vasıfsızlaşma",
+  "kind": "gloss.tr",
+  "de": "die Dequalifizierung"
+ },
+ {
+  "tr": "hangisi olursa",
+  "kind": "gloss.tr",
+  "de": "welches auch immer"
+ },
+ {
+  "tr": "tahsis edilmiş",
+  "kind": "gloss.tr",
+  "de": "zweckgebunden"
+ },
+ {
+  "tr": "uzlaşı sağlama",
+  "kind": "gloss.tr",
+  "de": "die Konsensbildung"
+ },
+ {
+  "tr": "yeterince kısa",
+  "kind": "gloss.tr",
+  "de": "kurz genug"
+ },
+ {
+  "tr": "dikkate alınmış",
+  "kind": "gloss.tr",
+  "de": "berücksichtigt"
+ },
+ {
+  "tr": "ikiye ayrılıyor",
+  "kind": "gloss.tr",
+  "de": "zerfällt in zwei"
+ },
+ {
+  "tr": "rekabet mantığı",
+  "kind": "gloss.tr",
+  "de": "die Wettbewerbslogik"
+ },
+ {
+  "tr": "tersine dönüyor",
+  "kind": "gloss.tr",
+  "de": "kehrt sich um"
+ },
+ {
+  "tr": "üstünden atladı",
+  "kind": "gloss.tr",
+  "de": "sprang darüber"
+ },
+ {
+  "tr": "yapısal değişim",
+  "kind": "gloss.tr",
+  "de": "der Strukturwandel"
+ },
+ {
+  "tr": "birlikte geliyor",
+  "kind": "gloss.tr",
+  "de": "kommen zusammen"
+ },
+ {
+  "tr": "bünyeden ayırmak",
+  "kind": "gloss.tr",
+  "de": "ausgliedern"
+ },
+ {
+  "tr": "gösterge tablosu",
+  "kind": "gloss.tr",
+  "de": "die Kennzahlentafel"
+ },
+ {
+  "tr": "güç dengesizliği",
+  "kind": "gloss.tr",
+  "de": "das Machtgefälle"
+ },
+ {
+  "tr": "ki bunun üzerine",
+  "kind": "gloss.tr",
+  "de": "worauf"
+ },
+ {
+  "tr": "önceki bir sayfa",
+  "kind": "gloss.tr",
+  "de": "eine frühere Seite"
+ },
+ {
+  "tr": "profesyonelleşme",
+  "kind": "gloss.tr",
+  "de": "die Professionalisierung"
+ },
+ {
+  "tr": "rasyonelleştirme",
+  "kind": "gloss.tr",
+  "de": "die Rationalisierung"
+ },
+ {
+  "tr": "toplumsal katman",
+  "kind": "gloss.tr",
+  "de": "die soziale Schicht"
+ },
+ {
+  "tr": "yaşlılık günleri",
+  "kind": "gloss.tr",
+  "de": "der Lebensabend"
+ },
+ {
+  "tr": "bilinen sayılıyor",
+  "kind": "gloss.tr",
+  "de": "gilt als bekannt"
+ },
+ {
+  "tr": "birbirine itilmiş",
+  "kind": "gloss.tr",
+  "de": "zusammengeschoben"
+ },
+ {
+  "tr": "verimlilik artışı",
+  "kind": "gloss.tr",
+  "de": "der Effizienzgewinn"
+ },
+ {
+  "tr": "aşağı yukarı doğru",
+  "kind": "gloss.tr",
+  "de": "ungefähr richtig"
+ },
+ {
+  "tr": "daha uzun beklemek",
+  "kind": "gloss.tr",
+  "de": "länger warten"
+ },
+ {
+  "tr": "davranış kuralları",
+  "kind": "gloss.tr",
+  "de": "der Verhaltenskodex"
+ },
+ {
+  "tr": "alan dışından geçiş",
+  "kind": "gloss.tr",
+  "de": "der Quereinstieg"
+ },
+ {
+  "tr": "çıraklık sözleşmesi",
+  "kind": "gloss.tr",
+  "de": "der Ausbildungsvertrag"
+ },
+ {
+  "tr": "önceden belirlenmiş",
+  "kind": "gloss.tr",
+  "de": "im Voraus festgelegt"
+ },
+ {
+  "tr": "emekli aylığı düzeyi",
+  "kind": "gloss.tr",
+  "de": "das Rentenniveau"
+ },
+ {
+  "tr": "statü güvencesizliği",
+  "kind": "gloss.tr",
+  "de": "die Statusunsicherheit"
+ },
+ {
+  "tr": "mükemmeliyet girişimi",
+  "kind": "gloss.tr",
+  "de": "die Exzellenzinitiative"
+ },
+ {
+  "tr": "performans göstergesi",
+  "kind": "gloss.tr",
+  "de": "die Leistungskennzahl"
+ },
+ {
+  "tr": "kuşaklar arası sözleşme",
+  "kind": "gloss.tr",
+  "de": "der Generationenvertrag"
+ },
+ {
+  "tr": "ne kadar uzun olursa olsun",
+  "kind": "gloss.tr",
+  "de": "wie lang es auch ist"
+ }
+]
