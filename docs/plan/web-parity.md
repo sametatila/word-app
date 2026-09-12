@@ -12072,3 +12072,41 @@ kalıbı.
 etikette `aria-hidden` ile bir ad/rol/canlı bölge taşımamalı.
 `aria-hidden={false}` bunun dışında — o, simgenin varsayılanını bilinçli
 olarak ezen kalıp.
+
+## §11.358 — Kapı denetimi: "işaret var" ile "işaret işe yarıyor"
+
+§11.357'nin dersi kapıların kendisiyleydi, bu yüzden bu tur **kapıları**
+denetledi: erişilebilirlik işaretini ölçen bütün ölçüler tarandı.
+
+**Sonuç büyük ölçüde iyi.** Ölçülerin neredeyse hepsi düğüm bağlı: bir dal
+gövdesinden (`govde`), bir koşuldan (`state === "done" ? (`) ya da tam
+etiketten okuyor. Ve §239 artık ağaç genelinde `aria-hidden` ile ad/rol
+çakışmasını yasakladığı için, dosya-geneli bir "işaret var mı" ölçüsü artık
+`aria-hidden` ile de kandırılamıyor — o yol kapandı.
+
+**Bir ölçü gerçekten zayıftı:** koçun cümlesi. §156 dosyadaki canlı bölge
+**sayısını** sayıyordu (iki dal → 2 vs 2) ve bu, işaretin **doğru ögede**
+olduğunu söylemiyor: biri sarmalayıcıya kaysa sayı aynı kalır, ama duyuru o
+zaman maskotun da içinde olduğu bir kutuyu okur ve alakasız değişimlerde
+ateşler. Ölçü artık `{line}`i **çizen etiketin kendisine** bakıyor, iki dalda
+da.
+
+### Ve kendi kapımda komşuyu ölçtüm
+
+İlk yazım "`{line}`den hemen önceki `<`" dedi ve web'de **1/2** çıktı: balonun
+kuyruğu `{line}`den hemen önce duran, kendi kendini kapatan bir
+`<span aria-hidden … />`. Yani ata değil **kardeş** ölçülmüştü — bu turda
+üçüncü kez aynı sınıf. Geriye yürürken kendi kendini kapatan ve kapanış
+etiketleri atlanıyor; ilk gerçek açılış ata. Enjeksiyon da bunu doğruluyor:
+rolü sarmalayıcıya kaydırmak kapıyı yeşil bırakmıyor.
+
+### Resim taraması: dokuz resim, dokuzunda `alt`
+
+Ayrı bir eksen ölçüldü ve **temiz çıktı**: web ağacındaki dokuz resmin
+dokuzunda da `alt` var ve hepsi haklı olarak boş — maskot, arma, logo, balon
+kuyruğu; yanlarında kişinin adı ya da uygulamanın adı yazılı. Bir avatarın
+`alt`ı olsaydı ad iki kez okunurdu.
+
+`check:title` bu sıfırı tutuyor: `alt` **yokluğu** ile `alt=""` aynı şey
+değil — boş `alt` "bu resim dekoratiftir" diye bir **beyan**, hiç olmaması ise
+ekran okuyucunun dosya adını okumasına yol açıyor.
