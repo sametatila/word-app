@@ -12110,3 +12110,36 @@ kuyruğu; yanlarında kişinin adı ya da uygulamanın adı yazılı. Bir avatar
 `check:title` bu sıfırı tutuyor: `alt` **yokluğu** ile `alt=""` aynı şey
 değil — boş `alt` "bu resim dekoratiftir" diye bir **beyan**, hiç olmaması ise
 ekran okuyucunun dosya adını okumasına yol açıyor.
+
+## §11.359 — Tepki seçicisi örtü değil satır: fare-özel kapanış kalktı
+
+Eksen **örtü olmayan açılır paneller**di. Tarama önce bir şeyi netleştirdi:
+`setOpen` çağrılarının neredeyse hepsi **yerinde açılan** bölümler (akordeon)
+— onlar örtü değil, Escape ya da odak dönüşü istemiyorlar. Tek gerçek örtü
+tepki seçicisiydi ve orada üç sorun birden vardı:
+
+- **`onMouseLeave` fare-özel.** Panel `absolute z-10 shadow-lg` ile içeriğin
+  üstüne açılıyordu ve yalnız fare paneli terk edince kapanıyordu:
+  dokunmatikte panel içeriği örtüyor ve kendiliğinden kapanmıyor, klavyede de
+  kapanmıyor (Escape yok).
+- **`role="menu"` tutulmayan bir sözdü.** AT'ye "burada ok tuşlarıyla
+  gezinilir" diyor; ok tuşları çalışmıyordu.
+- **Odak** paneline taşınmıyor, dönüşü de yönetilmiyordu.
+
+Android'in çözümü daha basit ve bu üç sorunun **hiçbirini** taşımıyor: panel
+çubuğun **altında** normal bir satır olarak açılıyor, içeriği örtmüyor, tetiğe
+ikinci dokunuş kapatıyor. Web de öyle yapıyor — örtü kalktığı için Escape ve
+odak dönüşü sorusu **kendiliğinden** ortadan kalkıyor. Bir kusuru kapatmanın
+en iyi yolu bazen onu mümkün kılan yapıyı kaldırmak.
+
+Anlambilim de değişti: satır bir menü değil, **tek seçimli bir grup** —
+`radiogroup` + `radio`, Android'in `accessibilityRole="radio"`su ile aynı.
+Düğmeler 44 px'e çıktı (Android'in ölçüsü; webde 36 idi).
+
+§240 iki listeyle ölçüyor: seçicinin satır olarak açılması (örtü, fare-özel
+kapanış, anlambilim, tetiğin ikinci dokunuşta kapatması) ve **ağaç genelinde
+mutlak bir ölçüt** — `onMouseLeave` bir paneli kapatan tek yol olamaz. Bugün
+webde hiç `onMouseLeave` yok; kapı o sıfırı tutuyor.
+
+§225'in tepki seçicisi ölçüsü de yeni şekle güncellendi (`menuitemradio` →
+`radio` + `radiogroup`).

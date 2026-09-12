@@ -7342,6 +7342,66 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 240. ORTU OLMAYAN ACILIR PANEL: fare-ozel kapanis ----------------
+   *
+   * Tepki SECICISI webde `absolute z-10 shadow-lg` ile icerigin USTUNE
+   * aciliyor ve `onMouseLeave` ile kapaniyordu. Uc sorun birden:
+   *
+   *   - `onMouseLeave` FARE-OZEL: dokunmatikte panel icerigi ortuyor ve
+   *     kendiliginden kapanmiyor; klavyede de kapanmiyor (Escape yok).
+   *   - `role="menu"` AT'ye "burada ok tuslariyla gezinilir" diyor ve ok
+   *     tuslari calismiyordu - tutulmayan bir soz.
+   *   - Odak paneline tasinmiyor, donusu de yonetilmiyordu.
+   *
+   * Android'in cozumu daha basit ve bu uc sorunun hicbirini tasimiyor: panel
+   * cubugun ALTINDA normal bir satir olarak aciliyor, icerigi ortmuyor,
+   * tetige ikinci dokunus kapatiyor. Web de oyle yapiyor; ortu kalktigi icin
+   * Escape ve odak donusu sorusu da kendiliginden ortadan kalkiyor. Anlambilim
+   * de degisti: satir bir menu degil, tek secimli bir grup (`radiogroup` +
+   * `radio`), Android'in `accessibilityRole="radio"`su ile ayni.
+   *
+   * Ikinci olcu MUTLAK ve agac genelinde: `onMouseLeave` bir paneli KAPATAN
+   * tek yol olamaz. Bugun webde hic `onMouseLeave` yok; kapi o sifiri
+   * tutuyor. */
+  {
+    const rw = sil(read("src/components/social/reaction-bar.tsx"));
+    const rm = sil(read("mobile/src/social/ReactionBar.tsx"));
+    sameList(
+      "tepki secicisi satir olarak aciliyor",
+      [
+        "ortu=" + (/style=\{\{[^}]*position: "absolute"/.test(rm) ? "VAR" : "yok"),
+        "fare-ozel kapanis=" + (/onMouseLeave/.test(rm) ? "VAR" : "yok"),
+        "anlambilim=" + (/accessibilityRole="radio"/.test(rm) ? "radio" : "?"),
+        "tetik ikinci dokunusta kapatiyor=" + (/setOpen\(\(o\) => !o\)/.test(rm) ? "evet" : "HAYIR"),
+      ],
+      [
+        "ortu=" + (/className="card absolute/.test(rw) ? "VAR" : "yok"),
+        "fare-ozel kapanis=" + (/onMouseLeave=\{/.test(rw) ? "VAR" : "yok"),
+        "anlambilim=" + (/role="radiogroup"/.test(rw) && /role="radio"/.test(rw) ? "radio" : "?"),
+        "tetik ikinci dokunusta kapatiyor=" + (/setOpen\(\(o\) => !o\)/.test(rw) ? "evet" : "HAYIR"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Agac genelinde: fare-ozel kapanis hicbir panelde olmamali. */
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    const fareyle = tsxler("src").filter((y) => /onMouseLeave=\{/.test(sil(read(y))));
+    sameList(
+      "fare-ozel panel kapanisi yok",
+      ["onMouseLeave ile kapanan=" + fareyle.length + (fareyle.length ? " (" + fareyle.join(", ") + ")" : "")],
+      ["onMouseLeave ile kapanan=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 239. `aria-hidden` BILGIYI SAKLIYOR MU ---------------------------
    *
    * Iki sey cikti ve ikisi de ayni sinif: `aria-hidden` bir ogeyi
@@ -8627,16 +8687,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* Web tepki secicisi: `menuitem` durum tasimaz. */
     const wrb = sil(read("src/components/social/reaction-bar.tsx"));
-    const wrbSecici = kapsayanlar(wrb, "void pick(k)", "button").filter((e) => /role="menuitem/.test(e));
+    /* Secici artik bir MENU degil, tek secimli bir SATIR (§11.359): ortu
+       kalkti, `role="radiogroup"` + `role="radio"` oldu ve Android'in
+       `accessibilityRole="radio"`su ile ayni. Desen de ona gore. */
+    const wrbSecici = kapsayanlar(wrb, "void pick(k)", "button").filter((e) => /role="radio"/.test(e));
 
     sameList(
       "web secim durumu renkten baska bir kanalda da",
       [
         "secime bagli bag=" + secili,
         "aria-current tasimayan=" + akimsiz,
-        "tepki secicisi=" + (wrbSecici.length === 1 && /role="menuitemradio"/.test(wrbSecici[0]) && /aria-checked=\{s\.mine === k\}/.test(wrbSecici[0]) ? "menuitemradio+checked" : "EKSIK"),
+        "tepki secicisi=" + (wrbSecici.length === 1 && /aria-checked=\{s\.mine === k\}/.test(wrbSecici[0]) && /role="radiogroup"/.test(wrb) ? "radio+checked" : "EKSIK"),
       ],
-      ["secime bagli bag=5", "aria-current tasimayan=0", "tepki secicisi=menuitemradio+checked"],
+      ["secime bagli bag=5", "aria-current tasimayan=0", "tepki secicisi=radio+checked"],
       "bulunan",
       "beklenen",
     );
