@@ -43,9 +43,28 @@ export function AssessmentCard({
 
   return (
     <section className="card p-4">
+      {/*
+        YEDEĞİN YEDEK OLDUĞU YAZIYOR.
+
+        Buradaki satır yalnız SEBEBİ söylüyordu ("servis yanıt vermedi") ve
+        hemen altında bir PUAN duruyordu — kullanıcı o puanı gerçek bir
+        değerlendirme sanabilir. Android aynı yerde ikinci bir cümle daha
+        yazıyor: "bu puan kelime sayısından çıkarılmış geçici bir tahmin,
+        gerçek değerlendirme değil" (`assess.fail_offline`; `ExamScreen` ve
+        `game/rounds`).
+
+        Koşul PUANIN KENDİSİNDE: `result.offline` yedek hesabın işareti. Sebep
+        satırı olmadan da (kota kapısında olduğu gibi) yedek gösterilebiliyor
+        ve o durumda da söylenmesi gerekiyor.
+      */}
       {failure && failure !== "aborted" ? (
         <p className="mb-3 rounded-panel px-3 py-2 text-caption" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
           {t(ASSESS_FAILURE_KEYS[failure])}
+          {offline ? ` ${t("assess.fail_offline")}` : ""}
+        </p>
+      ) : offline ? (
+        <p className="mb-3 rounded-panel px-3 py-2 text-caption" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
+          {t("assess.fail_offline")}
         </p>
       ) : null}
 
