@@ -262,7 +262,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
           <p
             className="mt-3 rounded-panel px-3 py-2 text-caption"
             style={{
-              background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+              background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
               color: "var(--color-flame)",
             }}
           >

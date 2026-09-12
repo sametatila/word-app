@@ -1423,7 +1423,7 @@ export function LessonPlayer({
                   <p
                     className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-micro"
                     style={{
-                      background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+                      background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
                       color: "var(--color-flame)",
                     }}
                   >
@@ -1479,7 +1479,7 @@ export function LessonPlayer({
                 <div
                   className="flex max-w-[85%] items-start gap-1.5 rounded-panel rounded-bl-chip px-3 py-2.5 text-body"
                   style={{
-                    background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+                    background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
                     color: "var(--color-flame)",
                   }}
                 >
@@ -2092,7 +2092,7 @@ function Bubble({
           key={i}
           className="flex max-w-[85%] items-start gap-1.5 rounded-panel px-3 py-1.5 text-caption"
           style={{
-            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
             color: "var(--color-flame)",
           }}
         >
@@ -2127,7 +2127,7 @@ function AsrNote({ visible }: { visible: boolean }) {
     <div
       className="flex items-start gap-2 rounded-panel px-3 py-2.5 text-caption"
       style={{
-        background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+        background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
         color: "var(--color-flame)",
       }}
     >

@@ -1891,7 +1891,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               background:
                 capture === "stt"
                   ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
-                  : "color-mix(in srgb, var(--color-flame) 14%, transparent)",
+                  : "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
               color: capture === "stt" ? "var(--color-mint)" : "var(--color-flame)",
             }}
           >
@@ -1933,7 +1933,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
               style={{
-                background: "color-mix(in srgb, var(--color-brand) 16%, transparent)",
+                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                 color: "var(--color-brand)",
               }}
             >
@@ -1949,9 +1949,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               style={{
                 background:
                   verdict === "correct"
-                    ? "color-mix(in srgb, var(--color-mint) 18%, transparent)"
+                    ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
                     : verdict === "wrong"
-                      ? "color-mix(in srgb, var(--color-flame) 18%, transparent)"
+                      ? "color-mix(in srgb, var(--color-flame-500) 14%, transparent)"
                       : "var(--surface-2)",
                 color: verdict === "correct" ? "var(--color-mint)" : verdict === "wrong" ? "var(--color-flame)" : "var(--color-brand)",
               }}

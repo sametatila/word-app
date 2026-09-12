@@ -37,7 +37,7 @@ export default function AppError({
       <span
         className="flex h-12 w-12 items-center justify-center rounded-tile"
         style={{
-          background: "color-mix(in srgb, var(--color-rose) 14%, transparent)",
+          background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
           color: "var(--color-rose)",
         }}
       >

@@ -21,27 +21,27 @@ import { ErrorText } from "./error-text";
  * cümlenin içindeydi. Android türü kartın sağ üstünde bir karoyla söylüyor,
  * yani akış göz gezdirilerek de okunuyor.
  */
-function eventTile(type: string): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string } {
+function eventTile(type: string): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string; fill: string } {
   switch (type) {
     case "streak_milestone":
-      return { Icon: FlameIcon, tint: "var(--color-flame)" };
+      return { Icon: FlameIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     case "achievement":
-      return { Icon: TrophyIcon, tint: "var(--color-violet)" };
+      return { Icon: TrophyIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     case "friend_joined":
-      return { Icon: HandshakeIcon, tint: "var(--color-mint)" };
+      return { Icon: HandshakeIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "quest_completed":
-      return { Icon: TargetIcon, tint: "var(--color-brand)" };
+      return { Icon: TargetIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
     case "weekly_top":
-      return { Icon: PodiumIcon, tint: "var(--color-sky)" };
+      return { Icon: PodiumIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
     /* Bu ikisi `ACTIVITY_TYPES`ta var ve iki tarafta da `default`a düşüyordu:
        ortak seri ve lig yükselişi akışta genel bir kıvılcımla çiziliyor,
        yani karo türü söyleme işini tam da bu iki olayda yapmıyordu. */
     case "friend_streak":
-      return { Icon: HeartIcon, tint: "var(--color-mint)" };
+      return { Icon: HeartIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "league_up":
-      return { Icon: CrownIcon, tint: "var(--color-violet)" };
+      return { Icon: CrownIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     default:
-      return { Icon: SparkIcon, tint: "var(--color-brand)" };
+      return { Icon: SparkIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
   }
 }
 
@@ -142,7 +142,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
   const t = useT();
   const lang = useLang();
   const name = item.user.name ?? t("social.unnamed");
-  const { Icon, tint } = eventTile(item.type);
+  const { Icon, tint, fill } = eventTile(item.type);
   /* Kendi olayında profil bağlantısı yok: kendi profilini açmak bir yere
      gitmek değil. Android da yalnız başkasının avatarını basılabilir yapıyor. */
   const linked = Boolean(item.user.username) && !item.isMine;
@@ -164,7 +164,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
         </div>
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center"
-          style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+          style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
         >
           <Icon size={20} />
         </span>

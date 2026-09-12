@@ -193,7 +193,7 @@ export function QuestCard() {
               <span
                 className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile"
                 style={{
-                  background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+                  background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                   color: done ? "#fff" : "var(--color-brand)",
                 }}
               >

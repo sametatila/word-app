@@ -217,7 +217,7 @@ export function ProfileForm({
             role="alert"
             className="flex items-center gap-2 rounded-panel px-3 py-2 text-body"
             style={{
-              background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
+              background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
               color: "var(--color-rose)",
             }}
           >

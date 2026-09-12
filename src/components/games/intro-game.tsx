@@ -70,7 +70,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         <span
           className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-micro tracking-wide"
           style={{
-            background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+            background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
             color: "var(--color-brand)",
           }}
         >

@@ -68,7 +68,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             aria-label={t("appheader.progress")}
             className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"
             style={{
-              background: "color-mix(in srgb, var(--color-flame) 13%, transparent)",
+              background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
               color: "var(--color-flame)",
             }}
           >

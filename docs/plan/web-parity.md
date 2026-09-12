@@ -17458,3 +17458,33 @@ platformda da dolu olması.
 daha var; hepsi dosya dosya sayıyla kayıtlı ve liste **yalnız küçülebilir** —
 yeni bir tane eklenirse kapı söyler. Enjeksiyon bunu da doğruladı: tepki
 çubuğuna eski tinti geri koymak borç defterinde görünüyor.
+
+## §11.483 — Borç ödendi: takma addan kurulu yirmi üç koyu wash
+
+§11.482 borcu kapıya yazmıştı; bu turda ödendi. Kural önce **kesinleşti**:
+kusur "takma addan kurulu wash" değil, **takma ad wash + aynı takma ad
+mürekkep** çiftiydi. Ölçüm o çift için: %12'de en kötü 4.44, %13'te 4.38,
+%14'te 4.32, %16'da 4.20, %18'de 4.09, %26'da 3.65 — hepsi AA 4.5'in altında;
+%10'da 4.56 ile güvenli. Mürekkep `--text` ya da `on-fill` olduğunda ölçüm
+değişiyor, yani oran orada serbest — ilk taramanın "otuz yüzey" dediği
+listenin yedisi tam bu yüzden **suçlu değildi** (kart zemini + normal metin,
+`<mark>` vurgusu, ışıma gölgesi, dolu daire üstündeki beyaz glif).
+
+Kalan **yirmi üç** yüzeyin hepsi 500 tabanlı %14'e çekildi: iki hata sayfası,
+üst bar seri hapı, meydan okuma sayacı, günün turu çipi, tanışma turu rozeti,
+ders oynatıcısının dört uyarısı, profil formu hata satırı, tur şeridinin dört
+yüzeyi, dinleme oynatıcısı, ortak görev düğmesi, akış olay karosu, gelen kutusu
+iki karosu ve yürüyüş modunun üç yüzeyi.
+
+Üç yerde tablo **ikiye ayrıldı** (`tint` + `fill`): akış olay karosu, gelen
+kutusu karosu ve tepki tonları. Mürekkep takma addan, zemin ailenin 500'ünden
+geliyor — mobil tarafın `soft()` + `onTint()` ikilisinin web karşılığı.
+
+Kapı **§341**'in borç ölçüsü artık **mutlak**: suçlu listesi boş olmalı ve
+taranan wash sayısı da yazılıyor (dosya yürümesi bozulursa "suçlu yok"
+kendiliğinden doğru çıkardı). Enjeksiyon iki yönden: tur şeridi çipini takma
+ada döndürmek ve akış karosunu eski `${tint} 13%`ine çevirmek.
+
+Bir eski kapı da güncellendi: "akış olay karosu" satırları `tint`ten sonra
+kapanış süslü parantezi bekliyordu; satırlar artık `fill` kardeşini de
+taşıyor.

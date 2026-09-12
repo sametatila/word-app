@@ -1547,8 +1547,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const w = seg(webSrc, "function eventTile");
   const m = seg(mobSrc, "function eventTile");
   const webRows = [
-    ...[...w.matchAll(/case "(\w+)":\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)" \}/g)].map((x) => [x[1], x[2], ROLE[x[3]] ?? x[3]]),
-    ...[...w.matchAll(/default:\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)" \}/g)].map((x) => ["default", x[1], ROLE[x[2]] ?? x[2]]),
+    /* Satirlar artik `fill` kardesini de tasiyor (yumusak tintin zemini
+       ailenin 500'u, murekkep takma ad - bkz. §341). Desen bu yuzden
+       `tint`ten sonrasini serbest birakiyor. */
+    ...[...w.matchAll(/case "(\w+)":\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)"[^}]*\}/g)].map((x) => [x[1], x[2], ROLE[x[3]] ?? x[3]]),
+    ...[...w.matchAll(/default:\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)"[^}]*\}/g)].map((x) => ["default", x[1], ROLE[x[2]] ?? x[2]]),
   ];
   const mobRows = [
     ...[...m.matchAll(/case "(\w+)":\s*return \{ icon: (\w+Icon), tint: colors\.(\w+) \}/g)].map((x) => [x[1], x[2], x[3]]),
@@ -19566,33 +19569,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
-  /* KALAN BORC. Takma addan kurulan wash %12'den itibaren esigin altina
-     dusuyor (olcum: %12'de en kotu 4.44, %13'te 4.38, %14'te 4.32, %16'da
-     4.20, %18'de 4.09, %26'da 3.65 - hepsi AA 4.5'in altinda; %10'da 4.56
-     ile guvenli). Bugun otuz boyle yuzey daha var ve hepsi kayitli: liste
-     YALNIZ KUCULEBILIR, yeni bir tane eklenirse kapi soyler. Donusum
-     dosya dosya ilerliyor (bkz. docs/plan/web-parity.md §11.482). */
-  const BORC = {
-    "components/session-player.tsx": 5,
-    "lessons/lesson-player.tsx": 4,
-    "components/walk-player.tsx": 4,
-    "skills/speaking-player.tsx": 2,
-    "skills/listening-player.tsx": 1,
-    "games/intro-game.tsx": 1,
-    "feedback/assessment-card.tsx": 1,
-    "components/top-progress.tsx": 1,
-    "components/quest-card.tsx": 1,
-    "components/push-optin.tsx": 1,
-    "components/profile-form.tsx": 1,
-    "components/install-guide.tsx": 1,
-    "components/daily-player.tsx": 1,
-    "components/challenge-player.tsx": 1,
-    "components/auth-shell.tsx": 1,
-    "components/app-header.tsx": 1,
-    "components/achievement-badge.tsx": 1,
-    "(app)/error.tsx": 1,
-    "app/error.tsx": 1,
-  };
+  /* MUTLAK: takma addan kurulan wash, ustundeki murekkep AYNI takma ad
+     oldugunda %12'den itibaren esigin altina dusuyor (olcum: %12'de en kotu
+     4.44, %13'te 4.38, %14'te 4.32, %16'da 4.20, %18'de 4.09, %26'da 3.65;
+     %10'da 4.56 ile guvenli). Kural bu CIFTE bakiyor - wash takma addan ama
+     murekkep `--text` ya da `on-fill` ise oran serbest, cunku olcum degisir.
+     Yirmi uc yuzey boyleydi ve hepsi 500 tabanli %14'e cekildi; liste artik
+     BOS ve boyle kalmali.
+
+     Taranan wash sayisi da yaziliyor: dosya yurumesi bozulursa "suclu yok"
+     kendiliginden dogru cikardi. */
+  const suclular = [];
+  let washSayi = 0;
   const gezT = (d, out = []) => {
     for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
       const yol = d + "/" + e.name;
@@ -19601,25 +19589,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     }
     return out;
   };
-  const bulunan = {};
   for (const f of gezT("src")) {
     const src = silT(read(f));
-    let n = 0;
-    for (const m of src.matchAll(/color-mix\(in srgb, ([^)]*?\)?) (\d+)%/g)) {
+    for (const m of src.matchAll(/color-mix\(in srgb, (var\(--color-[a-z]+\)|\$\{[\w.[\]]+\}) (\d+)%[^)]*\)/g)) {
+      washSayi++;
       if (Number(m[2]) < 12) continue;
-      const kaynak = m[1].trim();
-      if (/^var\(--color-[a-z]+\)$/.test(kaynak)) n++;
-      else if (/^\$\{(?:color|REACTION_TONE\[k\])\}$/.test(kaynak)) n++;
+      const kaynak = m[1];
+      const pencere = src.slice(m.index, m.index + 220);
+      const ink = (pencere.match(/color: ("?[^,}\n]+"?)/) ?? [])[1] ?? "";
+      const ad = kaynak.startsWith("${") ? kaynak.slice(2, -1) : kaynak;
+      if (ink.includes(ad)) suclular.push(f.split("/").slice(-2).join("/") + ":" + src.slice(0, m.index).split("\n").length);
     }
-    if (n) bulunan[f.split("/").slice(-2).join("/")] = n;
   }
-  const anahtarlar = [...new Set([...Object.keys(BORC), ...Object.keys(bulunan)])].sort();
   sameList(
-    "takma addan kurulan koyu wash borcu",
-    anahtarlar.map((k) => k + "=" + (bulunan[k] ?? 0)),
-    anahtarlar.map((k) => k + "=" + (BORC[k] ?? 0)),
+    "takma addan kurulan koyu wash",
+    ["taranan wash=" + (washSayi >= 20 ? "20+" : washSayi), "suclu=" + (suclular.length ? suclular.join("+") : "yok")],
+    ["taranan wash=20+", "suclu=yok"],
     "bulunan",
-    "kayitli borc",
+    "beklenen",
   );
   const mobTepki = silT(read("mobile/src/social/ReactionBar.tsx")).replace(/\s+/g, " ");
   const webTepki = silT(read("src/components/social/reaction-bar.tsx")).replace(/\s+/g, " ");

@@ -907,7 +907,7 @@ export function SessionPlayer() {
               /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
                  iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
               style={{
-                background: "color-mix(in srgb, var(--color-sky) 14%, transparent)",
+                background: "color-mix(in srgb, var(--color-sky-500) 14%, transparent)",
                 color: "var(--color-sky)",
               }}
             >
@@ -937,7 +937,7 @@ export function SessionPlayer() {
         <div
           className="mb-3 flex shrink-0 items-center gap-2 rounded-panel px-3 py-2 text-body"
           style={{
-            background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+            background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
             color: "var(--color-flame)",
           }}
         >
@@ -1253,7 +1253,7 @@ function StageCard({
             className="flex w-full items-center gap-3 rounded-panel px-3.5 py-3 text-left transition-colors"
             style={{
               background: bet
-                ? "color-mix(in srgb, var(--color-flame) 12%, transparent)"
+                ? "color-mix(in srgb, var(--color-flame-500) 14%, transparent)"
                 : "var(--surface-2)",
               boxShadow: bet ? "inset 0 0 0 1.5px var(--color-flame)" : undefined,
             }}
@@ -1475,7 +1475,7 @@ function SummaryCard({
         {mastered > 0 ? (
           <div
             className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-mint) 14%, transparent)" }}
+            style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
           >
             <p className="text-strong" style={{ color: "var(--color-mint)" }}>
               {t("sessionw.n_mastered", { n: mastered })}
@@ -1490,7 +1490,7 @@ function SummaryCard({
         {result?.streakRepaired ? (
           <div
             className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-flame) 14%, transparent)" }}
+            style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" }}
           >
             <p
               className="flex items-center justify-center gap-1.5 text-strong"

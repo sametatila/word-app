@@ -277,7 +277,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
                   animate={{ scale: 1 }}
                   className="flex items-center gap-1 rounded-full px-2 py-0.5 text-micro"
                   style={{
-                    background: "color-mix(in srgb, var(--color-violet) 16%, transparent)",
+                    background: "color-mix(in srgb, var(--color-violet-500) 14%, transparent)",
                     color: "var(--color-violet)",
                   }}
                 >

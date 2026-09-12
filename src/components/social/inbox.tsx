@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
-import { REACTION_TONE, ReactionGlyph } from "./reaction-icons";
+import { REACTION_TONE, REACTION_FILL, ReactionGlyph } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
@@ -51,37 +51,38 @@ function hrefFor(n: NotificationView): string {
  * satır neyle ilgili olduğunu hiç söylemiyordu. Aktörü olan satırda da tür
  * hiç görünmüyordu - avatar kimi gösteriyor, neyi değil.
  */
-function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string } {
+function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string; fill: string } {
   switch (n.type) {
     case "friend_request":
-      return { Icon: UserPlusIcon, tint: "var(--color-sky)" };
+      return { Icon: UserPlusIcon, tint: "var(--color-sky)", fill: "var(--color-sky-500)" };
     case "friend_accepted":
-      return { Icon: HandshakeIcon, tint: "var(--color-mint)" };
+      return { Icon: HandshakeIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "nudge":
-      return { Icon: BellIcon, tint: "var(--color-flame)" };
+      return { Icon: BellIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     case "quest_invite":
     case "quest_accepted":
-      return { Icon: TargetIcon, tint: "var(--color-brand)" };
+      return { Icon: TargetIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
     case "quest_completed":
-      return { Icon: CheckIcon, tint: "var(--color-mint)" };
+      return { Icon: CheckIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     case "friend_milestone":
-      return { Icon: FlameIcon, tint: "var(--color-flame)" };
+      return { Icon: FlameIcon, tint: "var(--color-flame)", fill: "var(--color-flame-500)" };
     /* Lig yükselişi de kendi simgesini hak ediyor: genel gelen kutusu
        simgesi satırın neyle ilgili olduğunu söylemiyordu ve bu satırın
        aktörü de yok, yani başka bir ipucu da yok. */
     case "league_up":
-      return { Icon: PodiumIcon, tint: "var(--color-violet)" };
+      return { Icon: PodiumIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
     default:
-      return { Icon: InboxIcon, tint: "var(--color-brand)" };
+      return { Icon: InboxIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
   }
 }
 
 /** 34'lük yuvarlak tint kabı — satırın sağ ucundaki tür/tepki simgesi. */
-function RowGlyph({ tint, children }: { tint: string; children: React.ReactNode }) {
+function RowGlyph({ tint, fill, children }: { tint: string; fill: string; children: React.ReactNode }) {
   return (
     <span
       className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full"
-      style={{ background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+      /* Zemin ailenin 500'ünden, mürekkep takma addan (bkz. `.tint-soft`). */
+      style={{ background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
     >
       {children}
     </span>
@@ -156,7 +157,7 @@ export function Inbox() {
     <div className="flex flex-col gap-2">
       <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
         {items.map((n) => {
-          const { Icon, tint } = tileFor(n);
+          const { Icon, tint, fill } = tileFor(n);
           const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
           return (
             <li key={n.id} style={{ borderColor: "var(--border)" }}>
@@ -166,7 +167,7 @@ export function Inbox() {
                 ) : (
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center"
-                    style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+                    style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${fill} 14%, transparent)`, color: tint }}
                   >
                     <Icon size={20} />
                   </span>
@@ -178,11 +179,11 @@ export function Inbox() {
                   <span className="block text-micro" style={{ color: "var(--text-faint)" }}>{timeAgo(n.createdAt, lang)}</span>
                 </span>
                 {reaction ? (
-                  <RowGlyph tint={REACTION_TONE[reaction]}>
+                  <RowGlyph tint={REACTION_TONE[reaction]} fill={REACTION_FILL[reaction]}>
                     <ReactionGlyph kind={reaction} size={18} />
                   </RowGlyph>
                 ) : n.actor ? (
-                  <RowGlyph tint={tint}>
+                  <RowGlyph tint={tint} fill={fill}>
                     <Icon size={18} />
                   </RowGlyph>
                 ) : (
