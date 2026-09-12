@@ -13839,3 +13839,50 @@ döndürüyor), ve uçtaki temizleyicinin tavanlı olduğu.
 Beş enjeksiyon denendi (web'de geri yüklemenin kalkması, göçürmenin
 kaybolması, tavanın kalkması, sunucu yolunun silinmesi, bir kayıt yerinin
 `plays`i bırakması), beşi de yakalandı.
+
+## §11.394 — Kural yazılıydı, üç yerden birinde uygulanıyordu
+
+Deneme kâğıdı ucunda üç eylem var — `save`, `assess`, `finish` — ve kural
+deponun kendi yorumunda **yazılıydı**, `save` içinde:
+
+> "`state` koşulu bilerek: bitmiş bir denemenin cevapları değiştirilemez,
+> yoksa puan geçmişe dönük düzeltilebilirdi."
+
+Ötekilerde uygulanmıyordu.
+
+### `finish`: bitmiş kâğıt yeniden bitirilebiliyordu
+
+Güncelleme `state` koşulu taşımıyordu. Bitmiş bir kâğıt yeni cevaplarla
+yeniden bitirilebiliyor, `score`/`passed`/`ai` üzerine yazılabiliyordu — oysa
+o puan **istatistik ekranının ve yönetim panosunun okuduğu kayıt**. Üstelik
+her çağrı yapay zekâ geri bildirimini yeniden üretiyor (kota) ve **ikinci bir
+`mock_exam_finish` olayı** yazıyordu: pano da iki kez sayıyordu.
+
+### `assess`: aynı görev tekrar tekrar puanlanabiliyordu
+
+Bu daha keskin, çünkü açık görevin puanı zaten `openScores` — yani bu uç
+**tam o puanı** yazıyor. Aynı görev farklı metinlerle tekrar tekrar
+değerlendirilip **en iyi puan seçilebiliyordu**. Arayüz vermiyor (puan gelince
+düğme yerini sonuca bırakıyor) ama uç veriyordu; ve her çağrı kotadan
+yiyordu.
+
+### İkisi de idempotent
+
+Koruma "hata ver" değil: bitmiş kâğıt için **kayıtlı sonuç**, puanlanmış görev
+için **mevcut puan** dönüyor. Yanıtı kaybolmuş bir isteğin tekrarı böylece
+hata almıyor — ama yeni bir şeye de yol açmıyor. `finish`te ayrıca yarışı
+kaybeden ikinci istek (arada başka bir çağrı kâğıdı bitirmişse) aynı yoldan
+geçiyor ve ikinci olay yazılmıyor.
+
+Sunucu tek olduğu için bu kusur **iki istemciyi de eşit** etkiliyordu; ölçü
+bu yüzden mutlak.
+
+### §271
+
+Üç ölçü: üç eylemin de korunduğu, korumaların **idempotent** olduğu (hata
+değil kayıtlı sonuç), ve bitirme olayının korumadan **sonra** yazıldığı —
+yoksa pano yine iki kez sayar.
+
+Dört enjeksiyon denendi (`finish` korumasının kalkması, `assess` korumasının
+kalkması, aynı görevin tekrar puanlanabilmesi, olayın korumadan önce
+yazılması), dördü de yakalandı.
