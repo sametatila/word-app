@@ -203,8 +203,11 @@ function Row({ it }: { it: Item }) {
       <span
         aria-label={t(it.state === "proven" ? "cando.proven" : it.state === "progressing" ? "cando.progressing" : "cando.not_yet")}
         className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full text-micro"
+        /* Kanıtlanmış hâlin yumuşak tinti ORTAK oranda (`tint-soft` %14 ve
+           zemin mint-500): burada %20 ve wash takma addan kuruluyordu, aynı
+           mürekkep 4.02 ölçüyordu. */
         style={{
-          background: it.state === "proven" ? "color-mix(in srgb, var(--color-mint) 20%, transparent)" : "var(--surface-2)",
+          background: it.state === "proven" ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" : "var(--surface-2)",
           color: tint,
         }}
       >

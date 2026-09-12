@@ -785,6 +785,24 @@
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;
   }
+  /*
+   * YUMUŞAK TİNT — mobil `theme/colors` `soft()` karşılığı.
+   *
+   * Oran %14 ve kaynağı ailenin 500'ü; mürekkep rol takma adı (açık temada
+   * 600). Ölçüm: bu çiftle flame 4.55, mint 4.53, sky 4.58, brand 4.68,
+   * rose 5.00, violet 5.68 — hepsi AA 4.5'in üstünde. Yazı/ikon taşıyan
+   * yüzeylerde başka bir oran kullanılmaz; kuralın gerekçesi
+   * `immersion/unit-pane` yorumunda yazılı (%18'de 4.34).
+   *
+   * KAYNAK 500 OLMAK ZORUNDA: birkaç yüzey washi rol takma adının kendisinden
+   * (600) kuruyordu ve aynı %14'te 4.32-4.44 veriyordu — eşiğin altı. İki
+   * değişken bu yüzden ayrı: `--tint-fill` zemini (500), `--tint-ink` yazıyı
+   * (takma ad) taşıyor.
+   */
+  .tint-soft {
+    background: color-mix(in srgb, var(--tint-fill) 14%, transparent);
+    color: var(--tint-ink);
+  }
   .hit-8 {
     position: relative;
   }

@@ -272,9 +272,14 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
   const up = result.outcome === "promoted";
   const down = result.outcome === "demoted";
   const tint = up ? "var(--color-mint)" : down ? "var(--color-rose)" : "var(--color-sky)";
+  /* Yumuşak tintin zemini ailenin 500'ü, mürekkebi takma ad (bkz. `tint-soft`). */
+  const fill = up ? "var(--color-mint-500)" : down ? "var(--color-rose-500)" : "var(--color-sky-500)";
   return (
     <section className="card flex items-center gap-3 p-4" style={{ borderColor: tint }}>
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile" style={{ background: `color-mix(in srgb, ${tint} 16%, transparent)`, color: tint }}>
+      <span
+        className="tint-soft flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+        style={{ "--tint-fill": fill, "--tint-ink": tint } as React.CSSProperties}
+      >
         <TrophyIcon size={22} />
       </span>
       <div className="min-w-0 flex-1">

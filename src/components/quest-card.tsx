@@ -168,11 +168,8 @@ export function QuestCard() {
         </h2>
         {claimable > 0 ? (
           <span
-            className="rounded-full px-2 py-0.5 text-micro"
-            style={{
-              background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
-              color: "var(--color-mint)",
-            }}
+            className="tint-soft rounded-full px-2 py-0.5 text-micro"
+            style={{ "--tint-fill": "var(--color-mint-500)", "--tint-ink": "var(--color-mint)" } as React.CSSProperties}
           >
             {t("dailyquests.rewards_ready", { n: claimable })}
           </span>

@@ -713,7 +713,7 @@ export function GameScreen() {
           const isNew = ws.every((w) => w.isNew);
           const tone = isNew ? colors.primary : colors.streak;
           return (
-            <View style={{ backgroundColor: tone + "22", borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 3 }}>
+            <View style={{ backgroundColor: soft(tone), borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 3 }}>
               <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
             </View>
           );

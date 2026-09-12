@@ -42,11 +42,29 @@ export const REACTION_TONE: Record<ReactionKind, string> = {
   wow: "var(--color-sky)",
 };
 
-export function ReactionGlyph({ kind, size = 16 }: { kind: ReactionKind; size?: number }) {
+/**
+ * Aynı tonların YUMUŞAK ZEMİN karşılığı — ailenin 500'ü.
+ *
+ * Yumuşak tintin zemini takma addan (600) kurulunca aynı mürekkep eşiğin
+ * altına düşüyor (bkz. `globals.css` `.tint-soft`). Mürekkep yukarıdaki
+ * tablodan, zemin buradan.
+ */
+export const REACTION_FILL: Record<ReactionKind, string> = {
+  cheer: "var(--color-brand-500)",
+  fire: "var(--color-flame-500)",
+  heart: "var(--color-rose-500)",
+  strong: "var(--color-violet-500)",
+  star: "var(--color-flame-500)",
+  wow: "var(--color-sky-500)",
+};
+
+export function ReactionGlyph({ kind, size = 16, color }: { kind: ReactionKind; size?: number; color?: string }) {
   const t = useT();
   const Icon = REACTION_ICON[kind];
+  /* `color` yalnız DOLU zeminde veriliyor (seçili tepki): orada glif tonun
+     kendisi değil `on-fill` olmalı, yoksa ton tonun üstünde kalıyor. */
   return (
-    <span style={{ color: REACTION_TONE[kind] }} title={t(REACTION_LABEL_KEYS[kind])} aria-label={t(REACTION_LABEL_KEYS[kind])}>
+    <span style={{ color: color ?? REACTION_TONE[kind] }} title={t(REACTION_LABEL_KEYS[kind])} aria-label={t(REACTION_LABEL_KEYS[kind])}>
       <Icon size={size} />
     </span>
   );

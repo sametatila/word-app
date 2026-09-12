@@ -113,11 +113,12 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         {stats.email ? <p className="muted text-caption">{stats.email}</p> : null}
         <div className="mt-3 flex gap-3">
           <span
-            className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-strong"
-            style={{
-              background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
-              color: "var(--color-flame)",
-            }}
+            /* Yumuşak tint ORTAK sınıftan (`tint-soft`, %14 ve zemin ailenin
+               500'ü): burada wash takma adın kendisinden (600) ve %16 ile
+               kuruluyordu, yani aynı mürekkep 4.20 ölçüyordu (eşik 4.5).
+               Android'in aynı rozeti `soft(colors.streak)` kullanıyor. */
+            className="tint-soft flex items-center gap-1.5 rounded-full px-3 py-1.5 text-strong"
+            style={{ "--tint-fill": "var(--color-flame-500)", "--tint-ink": "var(--color-flame)" } as React.CSSProperties}
           >
             <FlameIcon size={16} /> {t("profile.days", { n: stats.streak })}
           </span>

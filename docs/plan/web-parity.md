@@ -17410,3 +17410,51 @@ kalıp gerisi kaymışsa karşılaştırma anlamsız olurdu.
 Bir ad çakışması çıktı: `social/common` `StatPill` zaten `soft` adlı bir prop
 taşıyor (açıkça verilen zemin). Yardımcı o dosyada `softOf` diye alınıyor ve
 kapı iki adı da sayıyor.
+
+## §11.482 — Yumuşak tintin web tarafı: tek sınıf, zemin 500, seçili hâl dolu
+
+§11.481 mobilde beş ayrı oranı tek yardımcıya indirdi. Web'de aynı dağılma
+vardı ve **üçüncü** bir kusur ekliyordu: birkaç yüzey wash'i rol **takma
+adından** (açık temada 600) kuruyordu. Ölçüm — aynı mürekkep, wash kaynağı 600:
+
+| Oran | En kötü kontrast |
+|---|---|
+| %10 | 4.56 |
+| %12 | **4.44** |
+| %14 | **4.32** |
+| %16 | **4.20** |
+| %18 | **4.09** |
+| %26 | **3.65** |
+
+Kaynak ailenin **500**'ü olunca aynı oranda 4.53–5.68 çıkıyor — web'in kendi
+yazılı kuralının ("%14'te 4.54") ölçtüğü şey tam bu. Yani kural doğruydu,
+birkaç çağrı yeri onu yanlış kaynakla uyguluyordu.
+
+`globals.css`e `.tint-soft` geldi (oran %14, zemin `--tint-fill` = ailenin
+500'ü, mürekkep `--tint-ink` = takma ad) ve altı yüzey ona çekildi: profil seri
+rozeti (%16 takma ad), tur şeridi yeni/seri çipi (iki ayrı oran: %14 ve %16),
+ortak görev ödül çipi (%18), lig sonuç karosu (%16), yapabildiklerim kanıtı
+(%20) ve tepki çubuğu.
+
+**Tepki çubuğu ayrıca dolu/boş ayrımını kaybetmişti:** Android seçili çipi
+tonun kendisiyle dolduruyor ve glifi `onFill` yapıyor (`social/ReactionBar`:
+`mine ? tone : soft(tone)`), web %22'lik bir tintle yetiniyordu — "benim
+tepkim" ile "boş" arasındaki fark bir ton koyuluktan ibaretti. Seçici karo da
+aynı kurala geçti (Android'de seçilmemiş karo yumuşak tint taşıyor, web'de
+zeminsizdi).
+
+Mobil tarafta **§340'ın taramasından kaçan üç yer** de bu turda düzeldi:
+`tone + "22"` yazan tepki çipi, tepki seçicisi ve oyun şerit çipi. Kapının
+deseni yalnız `tint` ve `colors.X` arıyordu; artık her tanımlayıcıyı alıyor —
+ölçünün kapsamını ölçmenin bir biçimi daha.
+
+Kapı **§341** üç ölçü: web'de tek bir yumuşak tint sınıfı (oranı %14, zemini
+ayrı bir değişken), dönüştürülen altı yüzeyin **kendi işaretiyle** ölçülmesi
+(ilk yazılışında dosyanın tamamına bakıyordu ve `session-player`ın başka
+wash'leri dönüşmüş yüzeyi de suçlu sayıyordu) ve tepkinin seçili hâlinin iki
+platformda da dolu olması.
+
+**Kalan borç kapıya yazıldı.** Takma addan kurulan ve %12'yi aşan otuz yüzey
+daha var; hepsi dosya dosya sayıyla kayıtlı ve liste **yalnız küçülebilir** —
+yeni bir tane eklenirse kapı söyler. Enjeksiyon bunu da doğruladı: tepki
+çubuğuna eski tinti geri koymak borç defterinde görünüyor.

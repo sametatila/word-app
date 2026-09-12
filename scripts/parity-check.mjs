@@ -19471,7 +19471,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   for (const f of gezA("mobile/src")) {
     const src = silA(read(f));
     if (f.endsWith("theme/colors.ts")) continue; // yardimcinin kendisi
-    for (const m of src.matchAll(/(?:tint|colors\.\w+) \+ "[0-9a-fA-F]{2}"/g)) elle.push(f.split("/").slice(-1)[0] + ":" + m[0]);
+    /* Desen HER tanimlayiciyi aliyor: ilk yazilisinda yalniz `tint` ve
+       `colors.X` araniyordu ve `tone + "22"` yazan uc yer (tepki cubugu ve
+       oyun serit cipi) taramadan KACTI - olcunun kapsamini olcmenin bir
+       bicimi daha. */
+    for (const m of src.matchAll(/[A-Za-z_][A-Za-z0-9_.]* \+ "[0-9a-fA-F]{2}"/g)) elle.push(f.split("/").slice(-1)[0] + ":" + m[0]);
     softCagri += (src.match(/\bsoft(?:Of)?\(/g) ?? []).length;
   }
   const mobRenk = silA(read("mobile/src/theme/colors.ts"));
@@ -19497,6 +19501,145 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ],
     "mobil",
     "web (baskin oran)",
+  );
+}
+
+/* --- 341. YUMUSAK TINTIN WEB TARAFI: TEK SINIF, ZEMIN 500, SECILI HAL DOLU
+ *
+ * §340 mobilde bes ayri orani tek yardimciya indirdi. Webde ayni dagilma
+ * vardi ve UCUNCU bir kusur ekliyordu: birkac yuzey washi rol TAKMA ADINDAN
+ * (acik temada 600) kuruyordu. Olcum - ayni murekkep, wash kaynagi 600:
+ * %14'te flame 4.32, mint 4.38, brand 4.41, sky 4.44; %16'da 4.20-4.31;
+ * %18'de 4.09-4.19; %20'de 3.97-4.07; %26'da 3.65. Hepsi AA 4.5'in altinda.
+ * Kaynak 500 olunca ayni oranda 4.53-5.68 cikiyor - webin kendi yazili
+ * kuralinin ("%14'te 4.54") olctugu sey tam bu.
+ *
+ * Duzeltilen alti yuzey: profil seri rozeti (%16 takma ad), tur seridi
+ * yeni/seri cipi (%14 ve %16, iki oran), ortak gorev odul cipi (%18), lig
+ * sonuc karosu (%16), yapabildiklerim kaniti (%20) ve tepki cubugu.
+ *
+ * TEPKI CUBUGU ayrica DOLU/BOS ayrimini kaybetmisti: Android secili cipi
+ * tonun kendisiyle dolduruyor ve glifi `onFill` yapiyor
+ * (`social/ReactionBar`: `mine ? tone : soft(tone)`), web %22'lik bir tintle
+ * yetiniyordu - "benim tepkim" ile "bos" arasindaki fark bir ton koyuluktan
+ * ibaretti. Seciciyi de ayni kural kapsiyor.
+ *
+ * Olcu: (1) webde tek bir yumusak tint sinifi var, orani %14 ve zemini bir
+ * `-500`, (2) donusturulen yuzeyler o sinifi ya da 500 tabanli %14'u
+ * kullaniyor, (3) tepkinin secili hali iki platformda da DOLU + `onFill`. */
+{
+  const silT = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const css = read("src/app/globals.css");
+  const kural = (() => {
+    const i = css.indexOf(".tint-soft {");
+    return i < 0 ? "" : css.slice(i, css.indexOf("}", i));
+  })();
+  const DONUSEN = [
+    ["profil-seri", "src/components/profile/profile-view.tsx"],
+    ["tur-seridi", "src/components/session-player.tsx"],
+    ["ortak-gorev", "src/components/quest-card.tsx"],
+    ["lig-sonucu", "src/components/social/league-board.tsx"],
+    ["yapabildiklerim", "src/components/cando-card.tsx"],
+    ["tepki", "src/components/social/reaction-bar.tsx"],
+  ];
+  /* Olcu DONUSTURULEN YUZEYIN kendisine bakiyor, dosyanin tamamina degil:
+     ilk yazilisinda dosyada takma addan kurulu BASKA bir wash kalinca
+     (`session-player`in bes yerinde var) kapi donusmus yuzeyi de suclu
+     sayiyordu - olcunun komsusunu olcmek. Her yuzey kendi ISARETIYLE
+     araniyor. */
+  const ISARET = {
+    "profil-seri": /className="tint-soft flex items-center gap-1\.5 rounded-full/,
+    "tur-seridi": /className="tint-soft rounded-full px-2 py-0\.5 text-micro uppercase/,
+    "ortak-gorev": /className="tint-soft rounded-full px-2 py-0\.5 text-micro"/,
+    "lig-sonucu": /className="tint-soft flex h-11 w-11 shrink-0/,
+    yapabildiklerim: /color-mix\(in srgb, var\(--color-mint-500\) 14%, transparent\)/,
+    tepki: /color-mix\(in srgb, \$\{REACTION_FILL\[k\]\} 14%, transparent\)/,
+  };
+  const kullanim = DONUSEN.map(([ad, yol]) => ad + "=" + (ISARET[ad].test(silT(read(yol))) ? "500/%14" : "TAKMA AD"));
+  sameList(
+    "yumusak tintin web tarafi",
+    kullanim.concat([
+      "sinif orani=" + ((kural.match(/var\(--tint-fill\) (\d+)%/) ?? [])[1] ?? "YOK"),
+      "sinif murekkebi=" + (/color: var\(--tint-ink\)/.test(kural) ? "ayri degisken" : "YOK"),
+    ]),
+    DONUSEN.map(([ad]) => ad + "=500/%14").concat(["sinif orani=14", "sinif murekkebi=ayri degisken"]),
+    "bulunan",
+    "beklenen",
+  );
+  /* KALAN BORC. Takma addan kurulan wash %12'den itibaren esigin altina
+     dusuyor (olcum: %12'de en kotu 4.44, %13'te 4.38, %14'te 4.32, %16'da
+     4.20, %18'de 4.09, %26'da 3.65 - hepsi AA 4.5'in altinda; %10'da 4.56
+     ile guvenli). Bugun otuz boyle yuzey daha var ve hepsi kayitli: liste
+     YALNIZ KUCULEBILIR, yeni bir tane eklenirse kapi soyler. Donusum
+     dosya dosya ilerliyor (bkz. docs/plan/web-parity.md §11.482). */
+  const BORC = {
+    "components/session-player.tsx": 5,
+    "lessons/lesson-player.tsx": 4,
+    "components/walk-player.tsx": 4,
+    "skills/speaking-player.tsx": 2,
+    "skills/listening-player.tsx": 1,
+    "games/intro-game.tsx": 1,
+    "feedback/assessment-card.tsx": 1,
+    "components/top-progress.tsx": 1,
+    "components/quest-card.tsx": 1,
+    "components/push-optin.tsx": 1,
+    "components/profile-form.tsx": 1,
+    "components/install-guide.tsx": 1,
+    "components/daily-player.tsx": 1,
+    "components/challenge-player.tsx": 1,
+    "components/auth-shell.tsx": 1,
+    "components/app-header.tsx": 1,
+    "components/achievement-badge.tsx": 1,
+    "(app)/error.tsx": 1,
+    "app/error.tsx": 1,
+  };
+  const gezT = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezT(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const bulunan = {};
+  for (const f of gezT("src")) {
+    const src = silT(read(f));
+    let n = 0;
+    for (const m of src.matchAll(/color-mix\(in srgb, ([^)]*?\)?) (\d+)%/g)) {
+      if (Number(m[2]) < 12) continue;
+      const kaynak = m[1].trim();
+      if (/^var\(--color-[a-z]+\)$/.test(kaynak)) n++;
+      else if (/^\$\{(?:color|REACTION_TONE\[k\])\}$/.test(kaynak)) n++;
+    }
+    if (n) bulunan[f.split("/").slice(-2).join("/")] = n;
+  }
+  const anahtarlar = [...new Set([...Object.keys(BORC), ...Object.keys(bulunan)])].sort();
+  sameList(
+    "takma addan kurulan koyu wash borcu",
+    anahtarlar.map((k) => k + "=" + (bulunan[k] ?? 0)),
+    anahtarlar.map((k) => k + "=" + (BORC[k] ?? 0)),
+    "bulunan",
+    "kayitli borc",
+  );
+  const mobTepki = silT(read("mobile/src/social/ReactionBar.tsx")).replace(/\s+/g, " ");
+  const webTepki = silT(read("src/components/social/reaction-bar.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "tepkinin secili hali dolu",
+    [
+      "cip=" + (/backgroundColor: mine \? tone : soft\(tone\)/.test(mobTepki) ? "dolu/yumusak" : "FARKLI"),
+      "cip murekkebi=" + (/color=\{mine \? colors\.onFill : onTint\(tone, colors\)\}/.test(mobTepki) ? "onFill" : "FARKLI"),
+      "secici=" + ((mobTepki.match(/backgroundColor: mine \? tone : soft\(tone\) \}/g) ?? []).length >= 1 ? "dolu/yumusak" : "FARKLI"),
+    ],
+    [
+      /* Olcu CIPIN KENDI kalibina bakiyor: yalniz `color: "var(--on-fill)"`
+         aramak yetmedi - ayni dizgi dosyada seciciden de geliyor ve cipi
+         eski tinte cevirmek kapiyi yesil biraktı. */
+      "cip=" + (/\? \{ background: REACTION_TONE\[k\], color: "var\(--on-fill\)", borderColor: REACTION_TONE\[k\] \}/.test(webTepki) ? "dolu/yumusak" : "FARKLI"),
+      "cip murekkebi=" + (/background: REACTION_TONE\[k\], color: "var\(--on-fill\)"/.test(webTepki) ? "onFill" : "FARKLI"),
+      "secici=" + (/\{ background: REACTION_TONE\[k\], color: "var\(--on-fill\)" \} : \{ background: `color-mix\(in srgb, \$\{REACTION_FILL\[k\]\} 14%/.test(webTepki) ? "dolu/yumusak" : "FARKLI"),
+    ],
+    "mobil",
+    "web",
   );
 }
 

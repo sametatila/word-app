@@ -882,13 +882,13 @@ export function SessionPlayer() {
               const isNew = ws.every((w) => w.isNew);
               return (
                 <span
-                  className="rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
+                  /* Ortak yumuşak tint (`tint-soft`): iki çipin oranı ayrıydı
+                     (%14 / %16) ve washleri takma addan kuruluyordu. */
+                  className="tint-soft rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
                   style={{
-                    background: isNew
-                      ? "color-mix(in srgb, var(--color-brand) 14%, transparent)"
-                      : "color-mix(in srgb, var(--color-flame) 16%, transparent)",
-                    color: isNew ? "var(--color-brand)" : "var(--color-flame)",
-                  }}
+                    "--tint-fill": isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
+                    "--tint-ink": isNew ? "var(--color-brand)" : "var(--color-flame)",
+                  } as React.CSSProperties}
                 >
                   {t(isNew ? "session.chip_new" : "session.chip_review")}
                 </span>
