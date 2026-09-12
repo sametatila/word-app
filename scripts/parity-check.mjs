@@ -7461,6 +7461,107 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 249. UZUN ICERIK: SATIR BUTCESI VE TASMA ------------------------
+   *
+   * Tarama once iki seyi temiz cikardi: mobilde sabit yuksekliklı bir metin
+   * kabi yok, ve yatay kaydirma iki tarafta tam olarak ayni iki yerde
+   * (avatar duzenleyici, arkadaslar sekmesi). Uc gercek ayrisma cikti.
+   *
+   * YAZILAR SATIRI iki seyde birden ayrisiyordu. Web metni USTE koyup
+   * vurguluyor, "tur · seviye · gun" satirini altta soluk yaziyordu; Android
+   * tam tersi - metadata satiri kimligi tasiyor, metin onun altinda bir
+   * onizleme. Ve metnin butcesi webde TEK satirdi, Android'de iki; ustelik
+   * Android kart acilinca metni TAMAMEN gosteriyor, web hic gostermiyordu.
+   *
+   * UNITE TEMASI webde tek satira kirpiliyordu, Android iki satir veriyor -
+   * ve webin KENDI ikinci gorunumu de iki satir kullaniyordu, yani ayni alan
+   * ayni uygulamada iki farkli butceyle ciziliyordu.
+   *
+   * KELIME SATIRI webde kirpiliyordu: bilesik bir Almanca ismin sonu ya da
+   * bir kelimenin ikinci anlami satirin disinda kaliyordu, oysa kullanici
+   * listeye tam onun icin bakiyor. Android iki metne de satir siniri
+   * vermiyor.
+   *
+   * Dorduncu olcu MUTLAK: her `<table>` KENDI kabinda kaymali. Dort
+   * tablodan ucu `overflow-x-auto` icindeydi, biri disarida kalmisti ve dar
+   * bir pencerede sayfanin kendisini yana kaydiriyordu. */
+  {
+    /* Yazilar satiri: sira ve butce. */
+    const yw = sil(read("src/components/writings-card.tsx"));
+    const ym = sil(read("mobile/src/screens/WritingsScreen.tsx"));
+    sameList(
+      "yazilar satirinin sirasi ve butcesi",
+      [
+        "ilk satir=" + (/variant="bodyStrong">\{t\(KIND_KEY\[w\.kind\]/.test(ym) ? "metadata" : "metin"),
+        "onizleme butcesi=" + (/numberOfLines=\{open \? undefined : 2\}/.test(ym) ? "2 satir, acilinca tam" : "?"),
+      ],
+      [
+        "ilk satir=" + (/block text-strong">\s*\{\(KIND_LABEL_KEYS/.test(yw) ? "metadata" : "metin"),
+        "onizleme butcesi=" + (/open === it\.id \? "" : "line-clamp-2"/.test(yw) ? "2 satir, acilinca tam" : "?"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Unite temasi: iki satir, iki gorunumde de. */
+    const pw = sil(read("src/components/immersion/immersion-hub.tsx"));
+    const pm = sil(read("mobile/src/screens/PathScreen.tsx"));
+    sameList(
+      "unite temasinin satir butcesi",
+      ["butce=" + ((pm.match(/\{u\.theme\}/) && /numberOfLines=\{2\}[^\n]*\{u\.theme\}/.test(pm)) ? "2" : "?")],
+      ["butce=" + (pw.split("{unit.theme}").length - 1 === (pw.match(/line-clamp-2[^\n]*\{unit\.theme\}/g) ?? []).length ? "2" : "?")],
+      "mobil",
+      "web",
+    );
+
+    /* Kelime satiri: iki metin de sarmaliyor. */
+    const kw = sil(read("src/components/word-list.tsx"));
+    const km = sil(read("mobile/src/screens/WordsScreen.tsx"));
+    sameList(
+      "kelime satiri sarmaliyor",
+      [
+        "almanca=" + (/numberOfLines[^\n]*\{say\}/.test(km) ? "KIRPIK" : "sarmaliyor"),
+        "karsilik=" + (/numberOfLines[^\n]*w\.tr/.test(km) ? "KIRPIK" : "sarmaliyor"),
+      ],
+      [
+        "almanca=" + (/<p className="truncate font-semibold">/.test(kw) ? "KIRPIK" : "sarmaliyor"),
+        "karsilik=" + (/<p className="muted truncate text-body">/.test(kw) ? "KIRPIK" : "sarmaliyor"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: her tablo kendi kabinda kayiyor. */
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    const sarmasiz = [];
+    for (const y of tsxler("src")) {
+      const src = sil(read(y));
+      let i = -1;
+      while ((i = src.indexOf("<table", i + 1)) >= 0) {
+        /* Kap ISMEN aranmiyor: isaretin atalarindan biri yatay kaydirma
+           tasiyorsa yeter (`overflow-x-auto` sinifi ya da `tablewrap`). */
+        const sarmali = atalarinda(src, src.slice(i, i + 6) + src.slice(i + 6, i + 7), /overflow-x-auto|tablewrap/);
+        const ust = src.slice(Math.max(0, i - 400), i);
+        if (!/overflow-x-auto|tablewrap/.test(ust) && sarmali !== true) {
+          sarmasiz.push(y.split("/").pop() + ":" + src.slice(0, i).split("\n").length);
+        }
+      }
+    }
+    sameList(
+      "genis icerik kendi kabinda kayiyor",
+      ["sarmasiz tablo=" + sarmasiz.length + (sarmasiz.length ? " (" + sarmasiz.join(", ") + ")" : "")],
+      ["sarmasiz tablo=0"],
+      "web",
+      "beklenen",
+    );
+  }
+
   /* -- 248. ADI OLMAYAN KULLANICI -------------------------------------
    *
    * Ad bos olabiliyor (hesap acilirken ad ISTEMIYOR; bkz. `(app)/layout`) ve

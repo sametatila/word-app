@@ -12723,3 +12723,56 @@ Android'in şekline getirdim — probe'un "atama" kuralı onu zaten atlıyor.
 Üç olgu: sıralama satırının ad yedeği (eşleştirmeli), liste satırının ad
 yedeği (eşleştirmeli) ve günlük sıralama satırının dört parçası. Beş
 enjeksiyon denendi, beşi de yakalandı.
+
+## §11.370 — Uzun içerik: satır bütçesi ve taşma
+
+Eksen **kaydırma ve uzun içerik**ti. Tarama önce iki şeyi temiz çıkardı:
+mobilde sabit yükseklikli bir metin kabı yok (bütün sabit yükseklikler
+iskelet, ikon karosu ya da ilerleme çubuğu), ve yatay kaydırma iki tarafta
+**tam olarak aynı iki yerde** (avatar düzenleyici, arkadaşlar sekmesi). Üç
+gerçek ayrışma çıktı.
+
+### Yazılar satırı: sıra da bütçe de ters
+
+Web metni **üste** koyup vurguluyor, "tür · seviye · gün" satırını altta soluk
+yazıyordu; Android tam tersi — metadata satırı **kimliği** taşıyor, metin
+onun altında bir önizleme. Aynı listeye bakan iki kullanıcı farklı şeyi önce
+okuyordu.
+
+Ve metnin bütçesi webde **tek** satırdı, Android'de iki; üstelik Android kart
+açılınca metni **tamamen** gösteriyor, web hiç göstermiyordu — yani webde bir
+yazının tam metnini görmenin hiçbir yolu yoktu.
+
+### Ünite teması: aynı alan, iki farklı bütçe
+
+Webde tek satıra kırpılıyordu, Android iki satır veriyor — **ve webin kendi
+ikinci görünümü de** iki satır kullanıyordu (`line-clamp-2`). Aynı alan aynı
+uygulamada iki farklı bütçeyle çiziliyordu.
+
+### Kelime satırı: kırpmak içeriği saklıyor
+
+Web hem Almanca kelimeyi hem karşılığı kırpıyordu. Bileşik bir Almanca ismin
+sonu ya da bir kelimenin ikinci anlamı satırın dışında kalıyordu — oysa
+kullanıcı listeye tam onun için bakıyor. Android iki metne de satır sınırı
+vermiyor.
+
+Burada "satır tek satırda kalsın" kuralı **geçerli değil**: o kural sosyal
+listelerin ad satırı için yazılmıştı (§11.xxx), orada kimliği avatar ve rütbe
+taşıyor ve kırpılan şey yalnızca uzun bir ad. Kelime listesinde kırpılan şey
+**içeriğin kendisi**.
+
+### Ölçülüp bırakılan
+
+Sınav istatistiği satırları webde kırpılıyor, Android'de kırpılmıyor — ama
+içerik sınırlı ("Deneme 3 · Okuma"), yani görünür bir etkisi yok. Churn
+etmeye değmez; ölçüldü ve kayda geçti.
+
+### §249
+
+Dört olgu: yazılar satırının sırası ve bütçesi, ünite temasının bütçesi,
+kelime satırının sarmalaması (üçü eşleştirmeli) ve **mutlak** bir ölçüt — her
+`<table>` kendi kabında kaymalı. Dört tablodan üçü `overflow-x-auto`
+içindeydi, biri dışarıda kalmıştı ve dar bir pencerede sayfanın kendisini
+yana kaydırıyordu.
+
+Beş enjeksiyon denendi, beşi de yakalandı.
