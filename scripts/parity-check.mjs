@@ -7480,6 +7480,94 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 274. ZAMANLANMIS ISIN KOSTUGU GORUNUYOR -----------------------
+   *
+   * 272 ve 273'un ucuncusu, ve bu defa kusur DAHA ONCE YASANDI: `vercel.json`
+   * icindeki uc cron, Vercel birakilinca cagiransiz kaldi ve uclar AYLARCA
+   * hic calismadi (bkz. AGENTS.md "Zamanlanmis isler"). Iki uygulamanin
+   * ayarlarindaki "seri koruma" ve "haftalik sinav" anahtarlari
+   * acilabiliyordu, karsiliginda hicbir bildirim gitmiyordu.
+   *
+   * Bes cron ucunun hepsi yalniz `console`a yaziyordu. UC AYRI SESSIZ KIRILMA
+   * var ve ucu de ayni sekilde gorunmezdi:
+   *   1. timer susar (systemd unit bozulur, sunucu yeniden kurulur),
+   *   2. `CRON_SECRET` kayar - uc 401 doner, is HIC BASLAMAZ,
+   *   3. isin icinde hata cikar - uc 500 doner.
+   *
+   * Ucu de artik bir satir birakiyor (`cron_runs`) ve pano son kosuyu, yedi
+   * gunluk tamam/hata sayisini ve "hic kosmadi" halini gosteriyor.
+   *
+   * OZELLIKLE `summary`: gizlilik politikasi §9'daki "konusma kayitlari 30
+   * gun sonra silinir" sozunu tutan tek yer o. Sessizce durursa soz de
+   * sessizce tutulmaz.
+   *
+   * Tablo kullaniciya bagli DEGIL - kisisel veri yok, `check:purge`in konusu
+   * degil. */
+  {
+    const sema = sil(read("src/lib/db/schema.ts"));
+    const kayit = sil(read("src/lib/cron-runs.ts"));
+    const yonetim = sil(read("src/lib/admin.ts"));
+    const pano = sil(read("src/app/admin/dashboard.tsx"));
+    const goc = existsSync(new URL("../drizzle/0051_cron_runs.sql", import.meta.url))
+      ? read("drizzle/0051_cron_runs.sql")
+      : "";
+
+    sameList(
+      "kosu kaydi altyapisi",
+      [
+        "sema=" + (/export const cronRuns = pgTable/.test(sema) ? "var" : "YOK"),
+        "gocurme=" + (/CREATE TABLE IF NOT EXISTS "cron_runs"/.test(goc) ? "var" : "YOK"),
+        "yazici=" + (/export async function recordCronRun/.test(kayit) ? "var" : "YOK"),
+        "supurge=" + (/db\.delete\(cronRuns\)\.where\(lt\(cronRuns\.ranAt/.test(kayit) ? "var" : "YOK"),
+        "yutuyor=" + (/catch \(err\) \{\s*console\.error\("\[cron-runs\]/.test(kayit) ? "var" : "YOK"),
+      ],
+      ["sema=var", "gocurme=var", "yazici=var", "supurge=var", "yutuyor=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* BES ISIN UCU DE UC DALI YAZIYOR: gecen, dusen, kapida reddedilen.
+       "Bir yerde `recordCronRun` var" demek yetmez - kapida dusen dal
+       yazmazsa `CRON_SECRET` kaymasi aynen gorunmez kalir ve tarihte tam o
+       oldu. */
+    const ISLER = ["reminders", "assess", "summary", "streak-alert", "weekly-reminder"];
+    const eksik = [];
+    for (const ad of ISLER) {
+      const src = sil(read(`src/app/api/cron/${ad}/route.ts`));
+      /*
+       * PENCERE `[^)]*` DEGIL. Ilk yazim oyleydi ve hicbir seyi bulamadi:
+       * arada gecen `Date.now() - basladi` bir `)` tasiyor, yani sinif
+       * kendi hedefinden once duruyor. Bu defterde adi konmus bir sinif
+       * ("`[^>]*` oka takiliyor"), bu defa parantezle.
+       */
+      const dallar = [
+        ["gecen", new RegExp(`recordCronRun\\("${ad}", true,`)],
+        ["dusen", new RegExp(`recordCronRun\\("${ad}", false,[\\s\\S]{0,80}?\\(err as Error\\)`)],
+        ["reddedilen", new RegExp(`recordCronRun\\("${ad}", false,[\\s\\S]{0,80}?"denied"\\)`)],
+      ];
+      for (const [dal, d] of dallar) if (!d.test(src)) eksik.push(`${ad}:${dal}`);
+    }
+    sameList(
+      "her cron her dali yaziyor",
+      eksik.length ? eksik : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    sameList(
+      "pano zamanlanmis isleri gosteriyor",
+      [
+        "sorgu=" + (/from cron_runs r/.test(yonetim) ? "var" : "YOK"),
+        "gorunum=" + (/Zamanlanmis isler|Zamanlanmış işler/.test(pano) ? "var" : "YOK"),
+        "hic kosmadi=" + (/Hiçbir iş koşmamış/.test(pano) ? "var" : "YOK"),
+      ],
+      ["sorgu=var", "gorunum=var", "hic kosmadi=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 273. GIDEN E-POSTANIN SONUCU GORUNUR --------------------------
    *
    * 272'nin kardesi: sessizce dusen bir zincir daha.
