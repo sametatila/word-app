@@ -7480,6 +7480,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 271. BITMIS DENEME BIR KAYITTIR --------------------------------
+   *
+   * Kural deponun kendi yorumunda YAZILIYDI - `save` eyleminde: "`state`
+   * kosulu bilerek: bitmis bir denemenin cevaplari degistirilemez, yoksa puan
+   * gecmise donuk duzeltilebilirdi." Ama uc eylemden yalniz BIRINDE
+   * uygulaniyordu.
+   *
+   * `finish` guncellemesi `state` kosulu tasimiyordu: bitmis bir kagit yeni
+   * cevaplarla yeniden bitirilebiliyor, `score`/`passed`/`ai` uzerine
+   * yazilabiliyordu - oysa o puan istatistik ekraninin ve yonetim panosunun
+   * okudugu KAYIT. Ustelik her cagri yapay zeka geri bildirimini yeniden
+   * uretiyor (kota) ve IKINCI bir `mock_exam_finish` olayi yaziyordu, yani
+   * pano da iki kez sayiyordu.
+   *
+   * `assess` de korumasizdi ve o daha keskin: acik gorevin puani zaten
+   * `openScores`, yani bu uc tam o puani yaziyor. Ayni gorev farkli
+   * metinlerle tekrar tekrar degerlendirilip en iyi puan secilebiliyordu -
+   * arayuz vermiyor ama uc veriyordu.
+   *
+   * IKISI DE IDEMPOTENT: bitmis kagit icin KAYITLI sonuc, puanlanmis gorev
+   * icin MEVCUT puan donuyor. Yaniti kaybolmus bir istegin tekrari boylece
+   * hata almiyor ama yeni bir seye de yol acmiyor.
+   *
+   * Sunucu tek, yani bu kusur iki istemciyi de eşit etkiliyordu; olcu MUTLAK. */
+  {
+    const uc = sil(read("src/app/api/mock-exam/route.ts"));
+    /** Bir eylemin govdesi (sonraki `async function`a kadar). */
+    const govde = (ad) => {
+      const bas = uc.indexOf(`async function ${ad}(`);
+      if (bas < 0) return "";
+      const son = uc.indexOf("async function ", bas + 10);
+      return uc.slice(bas, son < 0 ? uc.length : son);
+    };
+    const KORUMA = [
+      ["save", /eq\(mockExamAttempts\.state, "running"\)/],
+      ["finish", /eq\(mockExamAttempts\.state, "running"\)/],
+      ["assessOpen", /row\.state !== "running"/],
+    ];
+    sameList(
+      "bitmis deneme korunuyor",
+      KORUMA.map(([ad, d]) => ad + "=" + (d.test(govde(ad)) ? "korunuyor" : "ACIK")),
+      KORUMA.map(([ad]) => ad + "=korunuyor"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Korumalar IDEMPOTENT: hata yerine kayitli sonucu donduruyor. */
+    sameList(
+      "koruma idempotent",
+      [
+        "finish=" + (/if \(row\.state !== "running"\) \{[\s\S]{0,400}?NextResponse\.json\(\{ attempt: shape\(row\)/.test(govde("finish")) ? "kayitli sonuc" : "HATA"),
+        "finish yaris=" + (/if \(!saved\) \{/.test(govde("finish")) ? "kayitli sonuc" : "YOK"),
+        "assess=" + (/oncekiler\[taskId\] !== undefined\) return NextResponse\.json\(\{ result: oncekiler\[taskId\] \}\)/.test(govde("assessOpen")) ? "mevcut puan" : "YOK"),
+      ],
+      ["finish=kayitli sonuc", "finish yaris=kayitli sonuc", "assess=mevcut puan"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Olay YALNIZ gercekten bitirildiginde yaziliyor - pano iki kez
+       saymasin. */
+    const f = govde("finish");
+    const olayIx = f.indexOf('track(userId, "mock_exam_finish"');
+    const savedIx = f.indexOf("if (!saved) {");
+    sameList(
+      "bitirme olayi bir kez",
+      ["olay=" + (olayIx > savedIx && savedIx > 0 ? "korumadan sonra" : "KORUMASIZ")],
+      ["olay=korumadan sonra"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 270. OYNATMA BUTCESI DE KAYDEDILIYOR --------------------------
    *
    * 269'un kardesi ve ayni sinif: SINAVIN KISITI yarim kalan kosuda
