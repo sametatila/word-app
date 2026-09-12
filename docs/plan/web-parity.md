@@ -16143,3 +16143,28 @@ sessizliğinin aynısı.
 Dört enjeksiyon doğrulandı: ikinci `createChannel`ı geri koymak, manifest
 kanalını değiştirmek, drawable'ı kaldırmak, `CHANNEL_ID`in adını değiştirmek
 (kaynak okunamaz hâle geliyor).
+
+## §11.443 — "dk" koda gömülüydü: iki harf, tarayıcının görmediği delik
+
+`progress-panel`in "önerilen adım" satırı `{data.next.minutes} dk` yazıyordu —
+yani İngilizce ve Almanca arayüzde de **"12 dk"**. Android aynı satırda
+`t("skills.dk")` kullanıyor.
+
+Neden hiçbir kapı görmedi: ham metin tarayıcısı (`i18n-hardcoded`) yalnız
+**üçten uzun** sözcüklere bakıyor (gürültüyü kesmek için) ve birim
+kısaltmaları tam o eşiğin altında duruyor. Aynı kusur bu projede daha önce
+**iki kez** yaşandı ve ikisi de ancak cihazda görüldü: mobilin
+`formatDuration`ı "dk"/"s"yi koda gömüyordu (2026-09-09), webin süre biçimi
+kendi üçüncü anahtarını taşıyordu. Bu üçüncüsü.
+
+### §308
+
+İki ölçü. Birincisi **mutlak**: kullanıcıya dönük web bileşenlerinde bir
+ifadeden hemen sonra gelen Türkçe birim kısaltması (`dk`, `sa`, `sn`) yok.
+Yönetim panosu dışarıda (bilerek tek dilli) ve **tanı satırları** da
+(`note(...)` yürüyüş ekranındaki geliştirici tanısını yazıyor, `console.*`
+kullanıcıya gitmiyor) — ölçünün konusu arayüz metni. İkincisi: iki platform
+aynı satırda aynı anahtarı kullanıyor.
+
+Üç enjeksiyon doğrulandı: webde "dk"yı geri gömmek, mobilin anahtarını
+kaldırmak, başka bir bileşene gömülü "sa" eklemek.

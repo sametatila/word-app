@@ -146,7 +146,12 @@ export function ProgressPanel() {
           <span className="min-w-0">
             <span className="block text-strong">{t("skills.next")}: {data.next.title}</span>
             <span className="muted block truncate text-caption">
-              {data.next.reason} · {data.next.minutes} dk
+              {/* "dk" SOZLUKTEN: burada koda gomuluydu ve Ingilizce/Almanca
+                  arayuzde de "12 dk" yaziyordu. Android ayni satirda
+                  `t("skills.dk")` kullaniyor. Kisaltma iki harf oldugu icin
+                  ham metin tarayicisi (`i18n-hardcoded`, >2 harf) onu hic
+                  gormuyordu. */}
+              {data.next.reason} · {t("skills.dk", { n: data.next.minutes })}
             </span>
           </span>
           <span className="btn btn-primary shrink-0 px-3 py-1.5 text-caption">{t("common.start")}</span>

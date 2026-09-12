@@ -17161,6 +17161,62 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ---------------------------------- 308. BIRIM KISALTMASI KODA GOMULU DEGIL
+   *
+   * "dk" iki harf ve ham metin tarayicisi (`i18n-hardcoded`) yalniz UCTEN
+   * UZUN sozcuklere bakiyor - yani birim kisaltmalari onun goremedigi bir
+   * delikte duruyor. Bugune kadar iki kez ayni kusur yasandi ve ikisi de
+   * cihazda goruldu: mobilin `formatDuration`i "dk"/"s"yi koda gomuyordu ve
+   * webin sure bicimi kendi ucuncu anahtarini tasiyordu. Ucuncusu bu turda
+   * cikti: `progress-panel`in "onerilen adim" satiri `{minutes} dk` yaziyordu,
+   * yani Ingilizce ve Almanca arayuzde de "12 dk". Android ayni satirda
+   * `t("skills.dk")` kullaniyor.
+   *
+   * Iki olcu: (1) MUTLAK - kullaniciya donuk web bilesenlerinde bir sayidan
+   * hemen sonra gelen Turkce birim kisaltmasi YOK (yonetim panosu disarida:
+   * orasi bilerek tek dilli), (2) iki platform ayni satirda AYNI anahtari
+   * kullaniyor. */
+  {
+    const yuruTsx3 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) { if (!/node_modules/.test(e.name)) yuruTsx3(d + "/" + e.name, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    /* `}` ile kapanan bir ifadeden sonra bosluk + kisaltma: `{n} dk`.
+       Yonetim panosu disarida - Turkce tek dilli ve bilerek. */
+    const gomulu = [];
+    for (const f of yuruTsx3("src")) {
+      if (f.startsWith("src/app/admin/")) continue;
+      const src = sil(read(f));
+      for (const m of src.matchAll(/\}\s(dk|sa|sn)\b/g)) {
+        /* TANI SATIRLARI DISARIDA: `note(...)` yuruyus ekranindaki gelistirici
+           tanisini yaziyor (`setDiag`, son alti satir) ve `console.*` da
+           kullaniciya gitmiyor. Orada Turkce kisaltma bir kusur degil;
+           olcunun konusu ARAYUZ metni. Satirin basindan itibaren bakiliyor
+           cunku ifade tek satira sigiyor. */
+        const satirBas = src.lastIndexOf("\n", m.index) + 1;
+        const satir = src.slice(satirBas, src.indexOf("\n", m.index));
+        if (/\bnote\(|console\./.test(satir)) continue;
+        gomulu.push(f.replace(/^src\//, "") + ":" + src.slice(0, m.index).split("\n").length + " (" + m[1] + ")");
+      }
+    }
+    const webAdim = sil(read("src/components/progress-panel.tsx"));
+    const mobAdim = sil(read("mobile/src/ui/GrowthPanel.tsx"));
+    sameList(
+      "birim kisaltmasi sozlukten",
+      [
+        "gomulu=" + (gomulu.join(", ") || "yok"),
+        "web adim satiri=" + (/t\("skills\.dk"/.test(webAdim) ? "sozlukten" : "GOMULU"),
+        "mobil adim satiri=" + (/t\("skills\.dk"/.test(mobAdim) ? "sozlukten" : "GOMULU"),
+      ],
+      ["gomulu=yok", "web adim satiri=sozlukten", "mobil adim satiri=sozlukten"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
