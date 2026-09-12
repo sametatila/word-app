@@ -26,6 +26,18 @@
  * ders oynatıcılarının başlıkları tek tek mobil karşılığındaki
  * `<Text variant>`e bakılarak eşlendi.
  *
+ * MOBIL YARISI (2026-09-12, §11.430). Üstteki gerekçe mobili REFERANS alıyor
+ * ("mobilde her metin `<Text variant>` ile yazılıyor ve SERBEST PUNTO YOK") ama
+ * mobil hiç ölçülmüyordu. Ölçüldüğünde serbest punto orada da vardı: aynı oyun
+ * turunun dört cevap alanından biri 18 değil **17** px yazıyordu — üstelik bu
+ * kapının kendi ALLOW yorumu "mobil aynı alanı `fontSize: 18` ile yazıyor
+ * (dört giriş)" diye iddia ediyordu, yani belgelenen gerekçe yanlıştı. İki
+ * rozet sayacı da 10 px yazıyordu; webde aynı sayaç `text-micro` (11).
+ *
+ * Mobil ölçeğin kaynağı `mobile/src/theme/tokens.ts` — sayılar burada tekrar
+ * yazılmıyor, dosyadan okunuyor; ölçek değişirse kapı kendiliğinden onu
+ * kullanıyor.
+ *
  * Kullanım:
  *   node scripts/check-type-scale.mjs         # ölçek dışı punto varsa hata
  *   node scripts/check-type-scale.mjs --hits  # satır satır döküm
@@ -50,7 +62,9 @@ const ALLOW = new Map([
   ]],
   /* OYUN TURUNUN CEVAP ALANI IKI PLATFORMDA DA 18 px. Mobil ayni alani
      `fontSize: 18` ile yaziyor (`game/rounds.tsx`, dort giris) ve olcekte 18
-     basamagi yok. Burada `body`ye (15) cekmek PARITENIN KENDISINI bozardi -
+     basamagi yok. Bu iddia bir sure YANLISTI - dordunden biri 17 px yaziyordu
+     ve kimse olcmuyordu; kapinin mobil yarisi artik iddiayi TUTUYOR
+     (`MOBIL_ALLOW`, ayni sebep iki tarafta yazili). Burada `body`ye (15) cekmek PARITENIN KENDISINI bozardi -
      olcum yapilmasa "kural geregi" kucultulecekti. Beceri yazma alanlari
      AYRI: mobil onlari 15 px yaziyor (`skillQuiz`) ve web de oyle. */
   ["src/components/games/cloze-game.tsx", [
@@ -128,11 +142,55 @@ for (const abs of walk(path.join(ROOT, "src"))) {
 
 const total = Object.values(counts).reduce((a, b) => a + b, 0);
 
+/* ── MOBİL: SERBEST PUNTO ───────────────────────────────────────────────
+ * Ölçek `theme/tokens.ts`teki `typography` basamaklarından okunuyor. Başka
+ * her yerdeki `fontSize: N` ölçek dışı sayılıyor - `<Text variant>` puntoyu
+ * ve ağırlığı birlikte taşıyor, elle punto yazmak o bağı koparıyor.
+ */
+const TOKENS = "mobile/src/theme/tokens.ts";
+const OLCEK = new Set(
+  [...fs.readFileSync(path.join(ROOT, TOKENS), "utf8").matchAll(/fontSize:\s*([\d.]+)/g)].map((m) => m[1]),
+);
+/** Ölçek dışında kalması KABUL EDİLEN mobil puntolar, sebepleriyle. */
+const MOBIL_ALLOW = new Map([
+  ["mobile/src/game/rounds.tsx", [
+    ["fontSize: 18", "oyun turunun cevap alani: webde de 18 (`text-lg`, bkz. yukaridaki ALLOW)"],
+  ]],
+  ["mobile/src/screens/PlacementScreen.tsx", [
+    ["fontSize: 40", "yerlestirme sonucunun seviye karosu: 110 px'lik dairenin icindeki tek kahraman sayi"],
+  ]],
+  ["mobile/src/screens/DailyScreen.tsx", [
+    ["fontSize: 52", "gunun turunun sonuc puani: kartin tek kahraman sayisi"],
+  ]],
+]);
+const mobilHits = {};
+let mobilOlculen = 0;
+const mobilUsed = new Set();
+for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
+  const rel = path.relative(ROOT, abs).split(path.sep).join("/");
+  if (rel === TOKENS) continue; // olcegin TANIMI, kullanimi degil
+  const lines = stripComments(fs.readFileSync(abs, "utf8")).split("\n");
+  const allow = MOBIL_ALLOW.get(rel) ?? [];
+  for (let i = 0; i < lines.length; i++) {
+    for (const m of lines[i].matchAll(/fontSize:\s*([\d.]+)/g)) {
+      mobilOlculen++;
+      if (OLCEK.has(m[1])) continue;
+      const muaf = allow.find(([parca]) => lines[i].includes(parca));
+      if (muaf) { mobilUsed.add(rel + "|" + muaf[0]); continue; }
+      (mobilHits[rel] ??= []).push({ line: i + 1, what: "fontSize: " + m[1], text: lines[i].trim() });
+    }
+  }
+}
+const mobilTotal = Object.values(mobilHits).reduce((a, l) => a + l.length, 0);
+
 /* Ölü istisna sessizce durmasın - `check:colors` ve `check:radius` aynı
    denetimi yapıyor ve ilkinde bu gerçek bir bulguydu. */
 const dead = [];
 for (const [file, list] of ALLOW) for (const [parca] of list) {
   if (!used.has(file + "|" + parca)) dead.push(`${file}: ${parca}`);
+}
+for (const [file, list] of MOBIL_ALLOW) for (const [parca] of list) {
+  if (!mobilUsed.has(file + "|" + parca)) dead.push(`${file}: ${parca}`);
 }
 
 if (mode === "--hits") {
@@ -141,9 +199,14 @@ if (mode === "--hits") {
     console.log(f);
     for (const h of list) console.log(`  ${h.line}: ${h.what}  ${h.text.slice(0, 120)}`);
   }
-  console.log(`\ntoplam ${total}`);
+  for (const [f, list] of Object.entries(mobilHits)) {
+    if (filter && !f.includes(filter)) continue;
+    console.log(f);
+    for (const h of list) console.log(`  ${h.line}: ${h.what}  ${h.text.slice(0, 120)}`);
+  }
+  console.log(`\ntoplam web ${total} · mobil ${mobilTotal} (${mobilOlculen} punto okundu)`);
 } else {
-  if (total || dead.length) {
+  if (total || mobilTotal || dead.length) {
     if (total) {
       console.error("check:type — ölçek dışı punto:\n");
       for (const [f, list] of Object.entries(hits)) {
@@ -159,9 +222,24 @@ if (mode === "--hits") {
       console.error("  h2      20/700   bölüm kapağı · h1 26/800 büyük sayaç · display 32/800");
       console.error("Meşru bir istisnaysa betikteki ALLOW listesine SEBEBİYLE ekle.");
     }
+    if (mobilTotal) {
+      console.error("\ncheck:type — MOBİLDE ölçek dışı punto:\n");
+      for (const [f, list] of Object.entries(mobilHits)) {
+        console.error(`  ${f}`);
+        for (const h of list) console.error(`      ${h.line}: ${h.what}  ${h.text.slice(0, 100)}`);
+      }
+      console.error(`\nÖlçek (${TOKENS}): ${[...OLCEK].join(", ")} — punto yerine \`<Text variant>\` kullan.`);
+      console.error("Meşru bir istisnaysa betikteki MOBIL_ALLOW listesine SEBEBİYLE ekle.");
+    }
     for (const d of dead) console.error(`  istisna artık karşılıksız (ALLOW): ${d}`);
     process.exit(1);
   }
   const muaf = [...ALLOW.values()].reduce((n, l) => n + l.length, 0);
-  console.log(`check:type — web'in puntoları sekiz basamaklı ölçekte: tamam (${muaf} kayıtlı istisna)`);
+  const muafM = [...MOBIL_ALLOW.values()].reduce((n, l) => n + l.length, 0);
+  /* Mobilde OKUNAN punto sayisi da yaziliyor: tarama bozulup sifira duserse
+     "olcek disi yok" bos bir dogru olur. */
+  console.log(
+    `check:type — web ve mobilin puntoları sekiz basamaklı ölçekte: tamam ` +
+      `(${muaf} web + ${muafM} mobil kayıtlı istisna; mobilde ${mobilOlculen} punto okundu)`,
+  );
 }

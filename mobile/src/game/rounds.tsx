@@ -687,7 +687,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         placeholder={tx("rounds.write_a_sentence_ph")}
         accessibilityLabel={tx("rounds.write_a_sentence_ph")}
         placeholderTextColor={colors.textFaint}
-        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 17 }}
+        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 18 }}
       />
       {/* Almanca özel harfler: telefon klavyesinde uzun basmak gerekiyor ve
           bir tur ortasında kimse onu aramıyor. Web de aynı dört harfi

@@ -20,7 +20,7 @@ export function InboxBell() {
       <InboxIcon color={colors.text} size={20} />
       {unread > 0 ? (
         <View style={{ position: "absolute", top: -3, right: -3, minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 4, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center" }}>
-          <Text variant="micro" color={colors.badgeInk} style={{ fontWeight: "800", fontSize: 10, lineHeight: 12 }}>{unread > 9 ? "9+" : unread}</Text>
+          <Text variant="micro" color={colors.badgeInk} style={{ fontWeight: "800" }}>{unread > 9 ? "9+" : unread}</Text>
         </View>
       ) : null}
     </PressableScale>

@@ -15642,3 +15642,39 @@ kümeler boşalsa "eşiğin altında yok" boş bir doğru olurdu.
 
 Üç enjeksiyon doğrulandı: temizleme kutusunu geri almak, "dinle" düğmesini eski
 `hitSlop`una döndürmek, ve webde bir `hit-8`i silmek (web yarısı da çalışıyor).
+
+## §11.430 — `check:type` de referans aldığı tarafı ölçmüyordu
+
+`check:type`in gerekçesi mobili referans alıyor: "mobilde her metin
+`<Text variant>` ile yazılıyor ve **serbest punto yok**". Mobil hiç ölçülmüyordu
+ve serbest punto orada da vardı.
+
+Üstelik kapının kendi muafiyet yorumu bir **iddia** taşıyordu: "oyun turunun
+cevap alanı iki platformda da 18 px; mobil aynı alanı `fontSize: 18` ile
+yazıyor (`game/rounds.tsx`, **dört giriş**)". Dördünden biri **17** px
+yazıyordu — yani webde bir muafiyeti gerekçelendiren cümle yanlıştı ve kimse
+ölçmediği için yanlış kalmıştı. Aynı oyunun aynı sınıf cevap alanı iki ayrı
+puntoda.
+
+İki rozet sayacı da ölçek dışıydı: `Chip` ve `InboxBell` `fontSize: 10`
+yazıyordu (`variant="micro"`i ezerek). Webde aynı sayaç `text-micro`, yani 11 —
+kutu ölçüleri de aynı (`min-w-[18px]` / `minWidth: 18`). Üçü de düzeltildi:
+dördüncü giriş 18, iki sayaç `micro`.
+
+### Kapının mobil yarısı
+
+Ölçek **dosyadan okunuyor** (`mobile/src/theme/tokens.ts` içindeki
+`typography` basamakları), kapıda tekrar yazılmıyor: basamak değişirse kapı
+kendiliğinden yeni ölçeği kullanıyor. `tokens.ts`in kendisi taramadan düşüyor —
+orası ölçeğin tanımı, kullanımı değil.
+
+Üç muafiyet kaldı ve üçü de yazılı: oyun cevap alanı 18 (webde `text-lg`, aynı
+sebep artık **iki tarafta** yazılı), yerleştirme sonucunun seviye karosu 40
+(110 px'lik dairenin tek kahraman sayısı), günün turunun puanı 52. Ölü muafiyet
+de düşüyor — web yarısındaki kural mobile de uygulandı.
+
+"tamam" satırı mobilde **okunan punto sayısını** yazıyor (25): tarama bozulup
+sıfıra düşerse "ölçek dışı yok" boş bir doğru olurdu.
+
+Dört enjeksiyon doğrulandı: 17'yi geri koymak, rozeti 10'a döndürmek,
+muafiyetten bir kaydı düşürmek, listeye karşılıksız bir kayıt eklemek.
