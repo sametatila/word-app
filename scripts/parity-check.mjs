@@ -7469,6 +7469,105 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 257. IKISINDE DE ROLSUZ KALAN TEK SECIMLIK YUZEYLER ------------
+   *
+   * 256 Android'in ONDE oldugu yuzeyleri esitledi. Geri kalanlarda kusur
+   * PAYLASIKTI: iki taraf da secimi SOYLUYOR ("secili" / `aria-pressed`) ama
+   * ikisi de ROLU vermiyordu. Olcu bu yuzden MUTLAK, esleştirmeli degil:
+   * karsilastirma yesil yaniyordu cunku ikisi de ayni sekilde eksikti.
+   *
+   * Yedi yuzey: kelime turu sikki (bes oyun tek `OptionButton`a karsilik),
+   * deneme sinavi sikki, kurs secimi, seviye secimi, uygulama dili,
+   * yerlestirme sonucu seviyesi ve hatirlatma saati.
+   *
+   * En kotu ornek kurs secimi: Android satirin sagina bir RADYO HALKASI
+   * ciziyor - yani tasarim "burada tek secim var" diyor - ama ekran okuyucuya
+   * ne rol ne de secili durum gidiyordu. Yanlis kursu sessizce secmek butun
+   * ilerlemeyi oteki dile tasiyor.
+   *
+   * MOBILDE CIP TEK BILESEN (`ui/Chip`): rol oraya bir prop olarak eklendi ve
+   * cagri yerleri ayri ayri bildiriyor. Iki cagri yeri SEKME (siralama kipi,
+   * arkadas sekmeleri) ve kasten `button` kaliyor - sekme bir radyo degil ve
+   * webde de ayri anlatimi var (`aria-current`). Istisnanin kendisi de
+   * olculuyor: o iki dosya hala sekme kurmuyorsa kapi kirmizi olur.
+   *
+   * GERCEK AC/KAPA dugmeleri disarida ve oyle kalmali: "eller serbest",
+   * "yavas oku", "metni goster", "bahis", esleme ve siralama. */
+  {
+    /* MUTLAK: yedi yuzey iki tarafta da radyo. */
+    const web257 = (y, desen) => (desen.test(sil(read(y))) ? "radyo" : "ROL YOK");
+    const RADYO_WEB = /role="radio"/;
+    const YUZEY = [
+      ["kelime turu sikki", "src/components/games/choice-game.tsx"],
+      ["artikel sikki", "src/components/games/artikel-game.tsx"],
+      ["bosluk sikki", "src/components/games/cloze-game.tsx"],
+      ["dinleme sikki", "src/components/games/listen-game.tsx"],
+      ["cogul sikki", "src/components/games/plural-game.tsx"],
+      ["deneme sinavi sikki", "src/components/mock-exam-player.tsx"],
+      ["kurs ve seviye", "src/components/profile-form.tsx"],
+      ["uygulama dili", "src/components/lang-setting.tsx"],
+      ["yerlestirme seviyesi", "src/components/placement/placement-test.tsx"],
+    ];
+    sameList(
+      "web: ikisinde de rolsuz kalan yuzeyler",
+      YUZEY.map(([ad, y]) => ad + "=" + web257(y, RADYO_WEB)),
+      YUZEY.map(([ad]) => ad + "=radyo"),
+      "bulunan",
+      "beklenen",
+    );
+    const MOBIL = [
+      ["tur sikki", "mobile/src/game/rounds.tsx"],
+      ["deneme sinavi sikki", "mobile/src/screens/MockExamScreen.tsx"],
+      ["kurs secimi", "mobile/src/screens/SettingsScreen.tsx"],
+      ["cip bileseni", "mobile/src/ui/Chip.tsx"],
+    ];
+    sameList(
+      "mobil: ikisinde de rolsuz kalan yuzeyler",
+      MOBIL.map(([ad, y]) => ad + "=" + (/accessibilityRole=(?:"radio"|\{role \?\? "button"\})/.test(sil(read(y))) ? "radyo" : "ROL YOK")),
+      MOBIL.map(([ad]) => ad + "=radyo"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: her `Chip` cagri yeri rolunu BILDIRIYOR. Cip tek bilesen
+       oldugu icin rol orada bir kez yaziliyor ama hangi cagri yerinin radyo
+       hangisinin sekme oldugunu bilen tek yer cagri yerinin kendisi. */
+    const SEKME = new Map([
+      ["mobile/src/screens/LeaderboardScreen.tsx", /setMode\(/],
+      ["mobile/src/screens/FriendsScreen.tsx", /setTab\(/],
+    ]);
+    const walkTsx257 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx257(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const rolsuzCip = [];
+    for (const f of walkTsx257("mobile/src")) {
+      if (f === "mobile/src/ui/Chip.tsx") continue;
+      const src = sil(read(f));
+      if (!/<Chip\b/.test(src)) continue;
+      if (SEKME.has(f)) continue;
+      for (const m of src.matchAll(/<Chip\b[\s\S]{0,400}?\/>/g)) {
+        if (!/role="radio"/.test(m[0])) rolsuzCip.push(f);
+      }
+    }
+    /* Sekme muafiyetleri karsiliksiz kalmasin. */
+    for (const [f, kanit] of SEKME) {
+      if (!existsSync(new URL("../" + f, import.meta.url))) rolsuzCip.push(f + " (muaf ama dosya yok)");
+      else if (!kanit.test(sil(read(f)))) rolsuzCip.push(f + " (muaf ama artik sekme kurmuyor)");
+    }
+    sameList(
+      "cip cagri yerleri rolunu bildiriyor",
+      rolsuzCip.length ? [...new Set(rolsuzCip)] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 256. TEK SECIMLIK LISTE RADYO GRUBUDUR -------------------------
    *
    * Ayni anda yalniz BIRI secilebilen bir liste (sinav sikki, sebep, ses,
