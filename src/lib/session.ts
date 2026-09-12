@@ -512,9 +512,7 @@ export async function buildSession(
     displayName: profile.displayName,
     level: band.level,
     coverage: { mastered: cov?.mastered ?? 0, total: cov?.total ?? 0 },
-    challengeBest: profile.challengeBest,
     pacing,
-    leeches: health?.leeches ?? 0,
   };
 
   if (metaOnly) return { rounds: [], resume: null, meta };

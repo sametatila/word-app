@@ -17520,3 +17520,42 @@ diye düşüyordu. Kapının görmediği şey kusur değil, kapının kendi kör
 Yeni eklenen ölçüler kasten §30'u tekrar etmiyor: ilk yazılışımda on iki
 istemci görünümünü de eklemiştim, sonra §30'un onları zaten kapsadığını görüp
 çıkardım — aynı şeyi iki kez ölçen kapı, yeşilken de bir şey söylemiyor.
+
+## §11.485 — Oturum meta'sında okunmayan iki alan (üçüncüsü test seamı çıktı)
+
+`/api/session` her istekte bir `meta` nesnesi gönderiyor. Ölçtüm: web
+`session-player` **yedi** alan okuyor (`coverage`, `currentStreak`, `level`,
+`newToday`, `reviewsToday`, `dailyGoal`, `totalXp`), mobil `SessionMeta`
+**dokuzunu** modelliyor (üstüne `displayName` ve `dueCount`). İki alan ise **ikisinde de yoktu** (üçüncüsünün
+hikâyesi aşağıda):
+
+- **`pacing`** — bunu da kaldırmıştım, sonra `typecheck:scripts` gösterdi:
+  `scripts/e2e.ts` onu okuyor ("borç birikince tempo 'review'"). Kuralın üç
+  dalını ayırt eden tek ölçü o; davranış ölçüsü ("tekrar gününde yeni kelime
+  gelmiyor") yalnız `review` dalını görüyor. Yani alan ölü değil, **test
+  seamı** — geri kondu ve okuyanı yorumunda yazılı. Kapı muafiyeti **kendi
+  denetliyor**: e2e onu okumayı bırakırsa alan gerçekten ölü kalır ve ölçü
+  düşer.
+- **`leeches`** — mobilin okuduğu yerde zaten var: `/api/me` gönderiyor ve
+  Gelişim ekranı oradan çiziyor.
+- **`challengeBest`** — yorumunda "başlangıç kartındaki arena kartı için, ayrı
+  bir istek atmak yerine meta'ya bindiriliyor" diyordu; ama o kart iki
+  platformda da rekoru **hiç göstermiyor** ve rekor `/api/challenge`
+  yanıtında (`best`) zaten duruyor — iki oynatıcı da onu okuyor. Yani alan
+  gereksizdi; kart bir gün yapılırsa kaynağı orada.
+
+İkisi kaldırıldı. Bu, §11.462'nin simetriği: orada profil sayfası **hiçbir yerde
+çizilmeyen** iki alan için beş sorgu atıyordu; burada sunucu her oturum
+isteğinde kimsenin okumadığı üç alan taşıyordu.
+
+Kapı **§342** iki yönlü: sunucunun yazdığı alan kümesi ile mobilin
+modellediği küme birebir. Mobil burada daha çok okuyan taraf, yani hem
+"sunucuda olup kimsenin okumadığı alan" hem de "istemcinin beklediği ama
+sunucunun göndermediği alan" görünüyor — ikincisi sessiz `undefined` demek ve
+`coverage` tam böyle düşmüştü (§11.22). Alan sayısı da ölçülüyor: iki taraf
+birden okunamazsa "ayrışma yok" kendiliğinden doğru çıkardı.
+
+**Kapının kendi okuması bir kez yanlıştı:** üst düzey alanları regexle
+bölüyordum ve `coverage: { mastered; total }`ın içindeki iki alanı da üst düzey
+saymıştı (dokuz yerine on bir). Artık derinlik sayarak bölüyor — `typeFields`
+helper'ının zaten yaptığı şey.

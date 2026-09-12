@@ -19669,6 +19669,102 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------- 342. OTURUM META'SI: OKUNMAYAN ALAN TASINMIYOR (IKI YONDE)
+ *
+ * `/api/session` her istekte bir `meta` nesnesi gonderiyor ve iki istemci de
+ * ondan okuyor. Olcum: web `session-player` yedi alan okuyor (coverage,
+ * currentStreak, level, newToday, reviewsToday, dailyGoal, totalXp), mobil
+ * `SessionMeta` dokuzunu modelliyor (ustune displayName ve dueCount). Uc alan
+ * ise IKISINDE DE yoktu: `pacing`, `leeches`, `challengeBest`.
+ *   - `pacing` bir KARAR ve kararı sunucu zaten uyguluyor (yeni kelime
+ *     kontenjani ona gore kisiliyor); raporlanmasi okunmuyordu.
+ *   - `leeches` mobilin okudugu yerde zaten var (`/api/me`).
+ *   - `challengeBest` yorumunda "baslangic kartindaki arena karti icin"
+ *     diyordu ama o kart iki platformda da rekoru hic gostermiyor; rekor
+ *     `/api/challenge` yanitinda (`best`) duruyor ve iki oynatici da onu
+ *     okuyor.
+ * Ucu kaldirildi (§11.485). Simetrigi §11.462'de: profil sayfasi hicbir yerde
+ * cizilmeyen iki alan icin bes sorgu atiyordu.
+ *
+ * Olcu IKI YONLU: sunucunun yazdigi alan kumesi ile mobilin MODELLEDIGI kume
+ * birebir. Mobil burada daha cok okuyan taraf, yani "sunucuda olup kimsenin
+ * okumadigi alan" ve "istemcinin bekleyip sunucunun gondermedigi alan" ikisi
+ * de gorunuyor. Ikinci ihtimal sessiz `undefined` demek - `coverage` tam
+ * boyle dusmustu (§11.22). */
+{
+  const silM = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  /* UST DUZEY alanlar: derinlik sayarak `;` ile boluyor. Regexle bolmek
+     `coverage: { mastered; total }` gibi IC ICE alanlari da ust duzey
+     sanmisti (alan sayisi dokuz yerine on bir cikti) - ic ice her alan
+     "sunucuda fazla" gorunurdu. */
+  const ustDuzey = (govde) => {
+    const out = [];
+    let d = 0, buf = "";
+    for (const c of govde) {
+      if ("{[(".includes(c)) d++;
+      else if ("}])".includes(c)) d--;
+      if (c === ";" && d === 0) { out.push(buf); buf = ""; } else buf += c;
+    }
+    out.push(buf);
+    return [...new Set(out.map((x) => (x.match(/^\s*(\w+)\??\s*:/) ?? [])[1]).filter(Boolean))].sort();
+  };
+  /* Sunucu: `SessionPayload["meta"]` govdesinin UST duzey anahtarlari. */
+  const sunucu = (() => {
+    const src = silM(read("src/lib/types.ts"));
+    const i = src.indexOf("export type SessionPayload");
+    if (i < 0) return ["TIP YOK"];
+    const j = src.indexOf("meta: {", i);
+    if (j < 0) return ["META YOK"];
+    let d = 0;
+    for (let k = src.indexOf("{", j); k < src.length; k++) {
+      if (src[k] === "{") d++;
+      else if (src[k] === "}" && --d === 0) {
+        return ustDuzey(src.slice(src.indexOf("{", j) + 1, k));
+      }
+    }
+    return ["OKUNAMADI"];
+  })();
+  /* Istemci: mobil `SessionMeta` tipinin alanlari. */
+  const istemci = (() => {
+    const src = silM(read("mobile/src/game/session.ts"));
+    const i = src.indexOf("export type SessionMeta =");
+    if (i < 0) return ["TIP YOK"];
+    let d = 0;
+    for (let k = src.indexOf("{", i); k < src.length; k++) {
+      if (src[k] === "{") d++;
+      else if (src[k] === "}" && --d === 0) {
+        return ustDuzey(src.slice(src.indexOf("{", i) + 1, k));
+      }
+    }
+    return ["OKUNAMADI"];
+  })();
+  /* MUAF: `pacing` hicbir istemci CIZMIYOR ve bu bilincli - karar sunucuda
+     uygulaniyor, alan o kararin disaridan gorulebilir hali ve okuyan yer
+     `scripts/e2e.ts`. Muafiyet kendini denetliyor: e2e onu okumayi birakirsa
+     alan gercekten olu kalir ve asagidaki olcu duser. */
+  const MUAF = ["pacing"];
+  sameList(
+    "oturum metasi muafiyeti",
+    ["pacing okuyan=" + (/meta\.pacing/.test(read("scripts/e2e.ts")) ? "e2e" : "YOK")],
+    ["pacing okuyan=e2e"],
+    "bulunan",
+    "beklenen",
+  );
+  const eksik = sunucu.filter((a) => !istemci.includes(a) && !MUAF.includes(a));
+  const fazla = istemci.filter((a) => !sunucu.includes(a));
+  sameList("oturum metasi alan kumesi", eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde okunmayan", "beklenen");
+  sameList("oturum metasi alan kumesi (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "sunucunun gondermedigi", "beklenen");
+  /* Alan SAYISI da yaziliyor: iki taraf birden bosalirsa (tip okunamazsa)
+     "ayrisma yok" kendiliginden dogru cikar. */
+  sameList(
+    "oturum metasi okunuyor",
+    ["alan=" + sunucu.length],
+    ["alan=10"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

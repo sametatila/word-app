@@ -265,19 +265,27 @@ export type SessionPayload = {
      *   review — tekrar borcu birikmiş, bugün yeni kelime yok
      *   light  — takılan kelime oranı yüksek, yeni kelime yarıya iner
      *   normal — her şey yolunda
+     *
+     * HİÇBİR İSTEMCİ ÇİZMİYOR ve bu bilinçli: karar sunucuda uygulanıyor
+     * (yeni kelime kontenjanı `lib/session`de ona göre kısılıyor), alan
+     * yalnızca o kararın DIŞARIDAN GÖRÜLEBİLİR hâli. Okuyan yer
+     * `scripts/e2e.ts` ("borç birikince tempo 'review'"): kuralın üç dalını
+     * ayırt eden tek ölçü bu, davranış ölçüsü ("tekrar gününde yeni kelime
+     * gelmiyor") yalnız `review` dalını görüyor. Kapı bu muafiyeti yazılı
+     * tutuyor (§342).
      */
     pacing: "normal" | "light" | "review";
-    /** Takılan (leech) kelime sayısı — tempo kararının gerekçesi. */
-    leeches: number;
-    /**
-     * Hayatta kalma turundaki rekor.
-     *
-     * Başlangıç kartındaki arena kartı için: tur yalnızca oturum ÖZETİNDEN
-     * ulaşılabiliyordu, yani 20 turu bitirmeden görülemiyordu. Rekoru göstermek
-     * için ayrı bir istek atmak yerine meta'ya bindiriliyor — kart zaten bu
-     * paketle çiziliyor.
-     */
-    challengeBest: number;
+    /*
+      IKI ALAN KALDIRILDI: `leeches` ve `challengeBest`. Ikisi de her oturum
+      isteğinde gidiyordu ve hiçbir yer okumuyordu (ölçüm: web
+      `session-player` yedi alan okuyor, mobil `SessionMeta` dokuzunu).
+        - `leeches` mobilin okuduğu yerde var: `/api/me` onu gönderiyor ve
+          Gelişim ekranı oradan çiziyor.
+        - `challengeBest` yorumunda "başlangıç kartındaki arena kartı için"
+          diyordu ama o kart iki platformda da rekoru hiç göstermiyor; rekor
+          `/api/challenge` yanıtında (`best`) zaten var ve iki oynatıcı da
+          onu okuyor. Kart bir gün yapılırsa kaynağı orada.
+    */
   };
 };
 
