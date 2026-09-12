@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { kindIcon, kindTint } from "../ui/unitKind";
+import { kindIcon, kindFill } from "../ui/unitKind";
 import { MascotFx } from "../ui/MascotFx";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
@@ -176,7 +176,7 @@ export function ItemScreen() {
   const [round, setRound] = useState(0);
 
   const kind = params.kind as ItemKind;
-  const tint = colors[kindTint(kind)] as string;
+  const tint = kindFill(kind);
   const Icon = kindIcon(kind);
 
   /** `score`: monologda rubrik puanı (0–100); verilmezse sunucu doğru/toplam oranını yazar. */

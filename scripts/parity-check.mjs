@@ -19220,6 +19220,73 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------- 337. UNITE KAROSUNUN DOLGUSU: KOYU TEMADA GLIF GORUNMUYORDU
+ *
+ * Unite satirinin ve egzersiz basliginin karosu dolu renk + BEYAZ glif.
+ * Android rol rengini DOGRUDAN kullaniyordu ve koyu temada o roller pastele
+ * donuyor: beyaz glif info ustunde 1.76, success 1.86, streak 1.94, accent ve
+ * danger 2.06, primary 2.32 veriyordu - grafik esigi 3.0'in cok altinda, yani
+ * glif pratikte gorunmuyordu. Web ayni karoyu iki temada da SABIT 500'lerle
+ * ciziyor (`immersion/unit-pane` `KIND_TINT`).
+ *
+ * Android tarafinda deger ACIK PALETTEN okunuyor, ikinci bir tablo
+ * yazilmadi: `light` paletinin rol renkleri webin 500'leriyle birebir. Kapi
+ * da ayni yoldan olcuyor - web tablosunu CSS'ten cozup mobil tablosuyla
+ * karsilastiriyor, kendi icinde renk tasimiyor.
+ *
+ * Uc olcu: (1) tur -> renk eslemesi ayni, (2) iki cizim yeri de TEMAYA
+ * DUYARSIZ dolguyu kullaniyor (`kindFill`), (3) karo ve glif olculeri ayni. */
+{
+  const silU = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const css = read("src/app/globals.css");
+  const cozCss = new Map([...css.matchAll(/--color-([a-z]+-\d+):\s*(#[0-9a-fA-F]{6})/g)].map((m) => [m[1], m[2].toLowerCase()]));
+  const webPane = silU(read("src/components/immersion/unit-pane.tsx"));
+  const webTablo = new Map(
+    [...webPane.matchAll(/^\s{2}(\w+): "var\(--color-([a-z]+-\d+)\)",$/gm)].map((m) => [m[1], cozCss.get(m[2]) ?? "COZULMEDI"]),
+  );
+  const mobKind = silU(read("mobile/src/ui/unitKind.tsx"));
+  const mobRol = new Map([...(mobKind.match(/KIND_TINT: Record<ItemKind, keyof Palette> = \{([\s\S]*?)\};/) ?? ["", ""])[1].matchAll(/(\w+): "(\w+)"/g)].map((m) => [m[1], m[2]]));
+  const mobRenk = silU(read("mobile/src/theme/colors.ts"));
+  const acikGovde = (mobRenk.match(/export const light: Palette = \{([\s\S]*?)\n\};/) ?? ["", ""])[1];
+  const orangeTablo = new Map(
+    [...(mobRenk.match(/export const orange = \{([\s\S]*?)\} as const;/) ?? ["", ""])[1].matchAll(/(\d+): "(#[0-9a-fA-F]{6})"/g)].map((m) => [m[1], m[2].toLowerCase()]),
+  );
+  const acikRol = (ad) => {
+    const m = acikGovde.match(new RegExp("\\b" + ad + ': (?:"(#[0-9a-fA-F]{6})"|orange\\[(\\d+)\\])'));
+    if (!m) return "YOK";
+    return (m[1] ?? orangeTablo.get(m[2]) ?? "YOK").toLowerCase();
+  };
+  const turler = [...webTablo.keys()].sort();
+  sameList(
+    "unite karosunun dolgusu",
+    turler.map((k) => k + "=" + (mobRol.has(k) ? acikRol(mobRol.get(k)) : "TUR YOK")),
+    turler.map((k) => k + "=" + webTablo.get(k)),
+    "mobil (acik palet)",
+    "web (cozulmus)",
+  );
+  const unit = silU(read("mobile/src/screens/UnitScreen.tsx")).replace(/\s+/g, " ");
+  const item = silU(read("mobile/src/screens/ItemScreen.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "unite karosu temadan bagimsiz",
+    [
+      "unite satiri=" + (/const tint = kindFill\(it\.kind\);/.test(unit) ? "kindFill" : "TEMAYA BAGLI"),
+      "egzersiz basligi=" + (/const tint = kindFill\(kind\);/.test(item) ? "kindFill" : "TEMAYA BAGLI"),
+      "kaynak=" + (/return light\[kindTint\(kind\)\] as string;/.test(mobKind) ? "acik palet" : "KOPYA TABLO"),
+      "karo=" + ((unit.match(/width: 46, height: 46, borderRadius: radii\.md/) ) ? "46/md" : "FARKLI"),
+      "glif=" + ((unit.match(/<Icon color="#fff" size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+    ],
+    [
+      "unite satiri=kindFill",
+      "egzersiz basligi=kindFill",
+      "kaynak=acik palet",
+      "karo=46/md",
+      "glif=" + ((webPane.match(/h-\[(46)px\] w-\[46px\] shrink-0 items-center justify-center rounded-tile text-white/) ) ? "22" : "YOK"),
+    ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

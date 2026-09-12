@@ -1,5 +1,5 @@
 import React from "react";
-import { kindIcon, kindTint } from "../ui/unitKind";
+import { kindIcon, kindFill } from "../ui/unitKind";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -107,7 +107,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
-            const tint = colors[kindTint(it.kind)] as string;
+            const tint = kindFill(it.kind);
             const Icon = kindIcon(it.kind) ?? kindIcon("lesson")!;
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>

@@ -2,6 +2,7 @@ import React from "react";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon } from "./icons";
 import type { ItemKind } from "../data/unit";
 import type { Palette } from "../theme";
+import { light } from "../theme/colors";
 
 /**
  * Ünite öğesinin TÜRÜ → ikon ve renk.
@@ -50,4 +51,22 @@ export function kindIcon(kind: string): ((p: { color: string; size: number }) =>
 /** Türün renk anahtarı; tanınmayan tür marka rengine düşer. */
 export function kindTint(kind: string): keyof Palette {
   return KIND_TINT[kind as ItemKind] ?? "primary";
+}
+
+/**
+ * Türün DOLGU rengi — temaya duyarlı DEĞİL.
+ *
+ * Ünite satırının ve egzersiz başlığının karosu dolu renk + BEYAZ glif.
+ * Rol rengi doğrudan kullanılıyordu ve koyu temada o roller pastele dönüyor:
+ * beyaz glif info üstünde 1.76, success 1.86, streak 1.94, accent ve danger
+ * 2.06, primary 2.32 veriyordu — grafik eşiği 3.0'ın çok altında, yani glif
+ * pratikte görünmüyordu. Web aynı karoyu iki temada da SABİT 500'lerle
+ * çiziyor (`components/immersion/unit-pane` `KIND_TINT`) ve açık temadaki rol
+ * renkleri tam o 500'ler.
+ *
+ * Değer AÇIK PALETTEN okunuyor, ikinci bir tablo yazılmadı: `light` paletinin
+ * rol renkleri webin 500'leriyle birebir (bkz. `theme/colors` başlığı).
+ */
+export function kindFill(kind: string): string {
+  return light[kindTint(kind)] as string;
 }

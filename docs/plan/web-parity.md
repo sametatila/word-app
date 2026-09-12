@@ -17264,3 +17264,34 @@ web'in karşılığı kabı `max-w-3xl` ile dar tutmak; aynı sorunun iki doğru
 cevabı, mobil dosyanın yorumunda yazılı) ve `Turnstile` (mobil kayıt, giriş ve
 **şifre sıfırlama** akışlarının üçünde de jeton üretiliyor; web'in üç yüzeyiyle
 birebir).
+
+## §11.478 — Ünite karosunun glifi koyu temada görünmüyordu
+
+Ünite satırının ve egzersiz başlığının karosu **dolu renk + beyaz glif**.
+Android rol rengini doğrudan kullanıyordu ve koyu temada o roller pastele
+dönüyor. Ölçüm (beyaz glif, koyu tema):
+
+| Rol | Koyu dolgu | Beyazla |
+|---|---|---|
+| info | #6fd1e3 | **1.76** |
+| success | #6fd19b | **1.86** |
+| streak | #ddb62c | **1.94** |
+| accent | #cda6e8 | **2.06** |
+| danger | #f79ba6 | **2.06** |
+| primary | #fb8f2a | **2.32** |
+
+Grafik eşiği 3.0; glif pratikte görünmüyordu — okuma/dinleme/yazma satırlarının
+hepsinde. **Web aynı karoyu iki temada da sabit 500'lerle çiziyor**
+(`immersion/unit-pane` `KIND_TINT`) ve açık temadaki rol renkleri tam o
+500'ler: açık temada 2.77–4.91, yani en kötü hâli bile koyu temanınkinin
+yarım katı.
+
+Android tarafında değer **açık paletten okunuyor**, ikinci bir tablo
+yazılmadı: `kindFill(kind)` → `light[kindTint(kind)]`. İki çizim yeri de artık
+onu kullanıyor.
+
+Kapı **§337** üç ölçü: tür → renk eşlemesi (web tablosu **CSS'ten çözülüp**
+mobilin açık paletiyle karşılaştırılıyor — kapı kendi içinde renk taşımıyor),
+iki çizim yerinin de temaya duyarsız dolguyu kullandığı, ve karo/glif ölçüleri.
+Enjeksiyon iki yönden: bir çizim yerini rol rengine döndürmek ve eşleme
+tablosunda bir türün rengini değiştirmek.
