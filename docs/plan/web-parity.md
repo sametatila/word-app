@@ -16228,3 +16228,50 @@ webin okumasını kaldırmak.
 Bulgunun sınıfı kayda değer: **sunucu bir alan döndürüyor, bir istemci onu
 okumuyor.** Tip tanımı iki tarafta da doğru olduğu için ne tsc ne de uç
 denetimi (`check:endpoints` yol/yöntem düzeyinde bakıyor) bunu görebiliyor.
+
+## §11.446 — Ölçüldü, temiz: sunucu alanları, eşleşen ekran çiftleri ve üç "zaten karar verilmiş" madde
+
+§11.445'in sınıfını (sunucu bir alan döndürüyor, bir istemci okumuyor)
+**sistematik** olarak taradım; sonuç bir gerçek bulgu ve üç yanlış alarm.
+
+**Sunucu alanları.** Mobilin açıkça yazdığı yanıt tiplerinin (`*Result`,
+`*Payload`, `*Status`) her alanı için "mobil kodunda hiç okunuyor mu" soruldu:
+iki alan çıktı, ikisi de `WeeklyStatus.week` / `WeeklyResult.week` — ve web de
+onu okumuyor, çünkü "hafta {n}" satırı bilerek kaldırılmış (gerekçesi
+`weekly-player`da yazılı: `{n}` sayı bekliyordu ama `week` bir dizge, ekranda
+"hafta 2026-W37" yazıyordu). Ters yön de tarandı — sunucunun döndürdüğü ve
+**yalnız webin** okuduğu alanlar: `/api/stt`in `confidence`/`provider`/`model`
+(yürüyüş ekranının geliştirici tanısı, `?diag=1`), `/api/assess`in
+`cached`/`provider` (istemci nesnesine konuyor, hiçbir yerde çizilmiyor) ve
+`/api/mock-exam`in `updatedAt` (taramanın yanlış eşleşmesi: webde okunan
+`updatedAt` hukuki metin panelinin alanı).
+
+**Eşleşen ekran çiftleri.** Yirmi iki çift, anahtar kümesi farkıyla tarandı.
+Gerçek bulgu bir tanesiydi (§11.444'teki `student`) ve geri kalan farkların
+hepsi **taramanın kendi kusuru**. Dört sınıf, bir sonraki tarama tekrar
+düşmesin diye:
+
+1. **Kardeş dosyadaki durağan anahtar tablosu** — `CANDO_SKILL_LABEL_KEYS`
+   (`lib/cando`), `TIER_LABEL_KEYS` (`achievement-badge`),
+   `REACTION_LABEL_KEYS`, `FAIL_KEYS`. Anahtar çiftin bir dosyasında değil
+   komşusunda duruyor.
+2. **Şablonla kurulan anahtar** — `t(\`band.${p.band}\`)` (bkz. §305).
+3. **`t()` içinde üçlü koşul** — `t(copied ? "referral.copied" : "profile.invite_friend")`.
+4. **Başka modüle taşınmış yardımcı** — mobilin `formatDuration`ı
+   `lib/useMe`de, webin karşılığı bileşenin içinde.
+
+**Üçü zaten karar verilmişti** ve üçünde de kararın gerekçesi kodda yazılıydı;
+okumadan önce "bulgu" sanmıştım:
+
+- `walk_listen` kaynak adları (`browser`/`native`, `<sağlayıcı>`/`azure`) —
+  §121 bunu açıkça yazıyor: "iki tarafta kaynak adları farklı ama **biçim**
+  aynı olmalı". Tarayıcı tanıyıcısı ile native tanıyıcı gerçekten ayrı şeyler.
+- Rozet kutlamasının "devam et" satırı — webde `achuw.click_to_continue`,
+  Android'de `achu.tap_to_continue`: "dokun" webde yanlış fiil (fare ve klavye
+  de var) ve ayrışma bilerek görünür bırakılmış.
+- `WeeklyStatus.week` — yukarıda.
+
+Dersi yazıyorum çünkü ölçüm zamanının çoğunu bu üçü aldı: **bir fark bulunca
+önce o satırın kendi yorumunu okumak** gerekiyor; bu depoda kararların gerekçesi
+kodun yanında duruyor ve "ayrışma" sanılan şeyin üçte biri belgelenmiş bir
+tercih.
