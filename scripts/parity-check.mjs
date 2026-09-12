@@ -5719,9 +5719,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* Sinav ve yerlestirmede bir de CIKIS DUGMESI olmali: onay kutusu olup onu
      acan dugme olmazsa kullanici yine kapanda kalir. */
+  /* Ad ORTAK BILESENDE de olabilir. Uc kapatma karosu `RoundExit`e tasindi
+     (246) ve ad artik `labelKey` ile geciyor; dugme KALKMADI, adin gectigi
+     yer degisti. Bu sinif bu oturumda dorduncu kez cikti (228 `live`, 243
+     duyuru seviyesi, 245 yuzde): bir olgunun yazimi degisince onu metin
+     olarak arayan her kapi yanlis alarm veriyor. */
   const acan = (yol, anahtar) => {
     const src = strip(read(yol)).replace(/\s+/g, " ");
-    return new RegExp('aria-label=\\{t\\("' + anahtar + '"\\)\\}').test(src) ? "dugme var" : "dugme yok";
+    const kendi = new RegExp('aria-label=\\{t\\("' + anahtar + '"\\)\\}').test(src);
+    /* `[^>]*` OLMAZ: ilk `>` etiketin sonu degil - `onExit={() => ...}`
+       icindeki ok o `>`i tasiyor ve desen orada duruyordu. Sinirli pencere. */
+    const ortak = new RegExp('<RoundExit[\\s\\S]{0,160}?labelKey="' + anahtar + '"').test(src);
+    return kendi || ortak ? "dugme var" : "dugme yok";
   };
   sameList(
     "cikis dugmesi",
@@ -7345,6 +7354,127 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 246. KAPATMA KAROSUNUN OLCUSU VE AYARLAR SIMGESI ----------------
+   *
+   * Android'in basliktaki kare dugmesinin kurali otuz alti cagri yerinde
+   * ayni: 44x44 karo, `radii.md`, `surface2` zemin ve glif GERI OKU ise 24,
+   * CAPRAZ ise 22. Tek istisna `RoleplayExamScreen`in geri oku 22'ydi; o da
+   * duzeltildi.
+   *
+   * Webde AYNI DENETIM dort ayri olcudeydi:
+   *   - modul sinavi  32 px karo / capraz 16   (`hit-8` ile dokunma hedefi
+   *                                             geciyordu ama GORUNEN dugme
+   *                                             kucuktu)
+   *   - yerlestirme   32 px karo / capraz 16
+   *   - deneme kagidi 36 px karo / capraz 18
+   *   - tur           44 px karo / capraz 22   (dogru olan)
+   *   - tanitim testi 44 px `btn-ghost` / capraz 20
+   * Bes kopya, dort olcu. Hepsi `RoundExit`e tasindi; olcu tek kaynakta.
+   *
+   * GLIF de ayrisiyordu: deneme kagidinin basligi LISTEYE DONUYOR, ekrani
+   * kapatmiyor - Android orada geri oku ciziyor (`MockExamScreen`), web
+   * caprazi. Bilesen artik `glyph` aliyor.
+   *
+   * AYARLAR SIMGESI: Android iki basliktaki ayarlar dugmesinde DISLI ciziyor
+   * (`SettingsIcon`), web INGILIZ ANAHTARI (`WrenchIcon`). Ayni denetim iki
+   * uygulamada iki farkli simge tasiyordu; disli "ayarlar"in yerlesik
+   * isareti, anahtar "tamir". Webde `SettingsIcon` HIC YOKTU - mobilin
+   * cizimi karsiligi olarak yazildi (ayni sinif: 245'te `SearchIcon`). */
+  {
+    const sil2 = (s) => s.replace(/\{\/\*[\s\S]*?\*\/\}/g, (m) => m.replace(/[^\n]/g, " "));
+    const kaynaklar = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) kaynaklar(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+
+    /* MOBIL MUTLAK: 44 karonun glifi ok ise 24, capraz ise 22. */
+    const mobilSapma = [];
+    for (const y of kaynaklar("mobile/src")) {
+      const src = sil2(sil(read(y)));
+      for (const m of src.matchAll(/width: 44, height: 44[\s\S]{0,200}?<(XIcon|ArrowBackIcon) color=\{[^}]*\} size=\{(\d+)\}/g)) {
+        const beklenen = m[1] === "ArrowBackIcon" ? "24" : "22";
+        if (m[2] !== beklenen) mobilSapma.push(`${y.split("/").pop()}:${src.slice(0, m.index).split("\n").length} ${m[1]}=${m[2]}`);
+      }
+    }
+    sameList(
+      "basliktaki karonun glif olcusu",
+      ["sapan=" + mobilSapma.length + (mobilSapma.length ? " (" + mobilSapma.join(", ") + ")" : "")],
+      ["sapan=0"],
+      "mobil",
+      "beklenen",
+    );
+
+    /* WEB MUTLAK: kapatma karosu el yapimi olamaz. Olcut `rounded-tile`
+       sinifindan sonra gelen bir CAPRAZ glif: geri oku ayri bir bilesende
+       (`page-back`) ve iki oynatici onun olcusunu tasiyor - o kopyalarin
+       sayilari DOGRU, ayrisan yalniz kapatma karosuydu. */
+    const elYapimi = [];
+    for (const y of kaynaklar("src")) {
+      if (y.endsWith("round-exit.tsx")) continue;
+      const src = sil2(sil(read(y)));
+      for (const m of src.matchAll(/rounded-tile"[\s\S]{0,240}?<XIcon size=\{(\d+)\}/g)) {
+        elYapimi.push(`${y.split("/").pop()}:${src.slice(0, m.index).split("\n").length} capraz=${m[1]}`);
+      }
+    }
+    sameList(
+      "kapatma karosu ortak bilesenden",
+      ["el yapimi=" + elYapimi.length + (elYapimi.length ? " (" + elYapimi.join(", ") + ")" : "")],
+      ["el yapimi=0"],
+      "web",
+      "beklenen",
+    );
+
+    /* Ortak bilesen Android'in SAYILARINI tasiyor mu. */
+    const re = sil(read("src/components/round-exit.tsx"));
+    const ex = sil(read("mobile/src/screens/ExamScreen.tsx"));
+    const mx = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    sameList(
+      "kapatma karosunun olculeri",
+      [
+        "kare=" + (/width: 44, height: 44/.test(ex) ? "44" : "?"),
+        "capraz=" + ((ex.match(/<XIcon color=\{colors\.textMuted\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
+        "ok=" + ((mx.match(/<ArrowBackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "?"),
+        "zemin=" + (/backgroundColor: colors\.surface2/.test(ex) ? "surface-2" : "?"),
+      ],
+      [
+        "kare=" + (/h-11 w-11 shrink-0 items-center justify-center rounded-tile/.test(re) ? "44" : "?"),
+        "capraz=" + ((re.match(/<XIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
+        "ok=" + ((re.match(/<ArrowLeftIcon size=\{(\d+)\} \/>/) ?? [])[1] ?? "?"),
+        "zemin=" + (/background: "var\(--surface-2\)"/.test(re) ? "surface-2" : "?"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Ayarlar simgesi: disli, ve ayni olcude. */
+    const AYAR = [
+      ["profil", "src/components/profile/profile-view.tsx", "mobile/src/screens/ProfileScreen.tsx"],
+      ["arkadaslar", "src/app/(app)/friends/page.tsx", "mobile/src/screens/FriendsScreen.tsx"],
+    ];
+    const webAyar = (y) => {
+      const src = sil2(sil(read(y)));
+      if (/<WrenchIcon\b/.test(src)) return "ANAHTAR";
+      const m = src.match(/<SettingsIcon size=\{(\d+)\}/);
+      return m ? "disli " + m[1] : /\bSettingsIcon\b/.test(src) ? "disli" : "?";
+    };
+    const mobilAyar = (y) => {
+      const src = sil2(sil(read(y)));
+      const m = src.match(/<SettingsIcon color=\{[^}]*\} size=\{(\d+)\}/);
+      if (m) return "disli " + m[1];
+      return /icon=\{SettingsIcon\}/.test(src) ? "disli 22" : "?";
+    };
+    sameList(
+      "ayarlar simgesi disli",
+      AYAR.map(([ad, , ym]) => ad + "=" + mobilAyar(ym)),
+      AYAR.map(([ad, yw]) => ad + "=" + webAyar(yw)),
+      "mobil",
+      "web",
+    );
+  }
 
   /* -- 245. SAYININ VE TARIHIN BICIMI ----------------------------------
    *

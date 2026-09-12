@@ -12560,3 +12560,68 @@ Dört muafiyet çalışma anında kurulan aileler: `genre.${slug}`,
 
 Üç enjeksiyon denendi: yeni ölü anahtar yakalandı, eskiyen borç listesi
 yakalandı, çoğul kaçamağı yakalandı.
+
+## §11.367 — Aynı düğme dört ölçüde: kapatma karosu ve ayarlar dişlisi
+
+Eksen **ikon boyutları**ydı. Tarama önce bir şeyi netleştirdi: iki uygulamada
+da ikon boyutları bir ölçeğe oturmuş değil (11'den 64'e kadar yirmi farklı
+sayı) — ama bu bir ayrışma değil, **rol** farkı: satır içindeki alev 13 px,
+manşetteki alev 34. Bir ölçek dayatmak iki yüz çağrı yerini görsel olarak
+doğrulayamayacağım bir göçe sokardı. Onun yerine **rol başına** karşılaştırdım.
+
+Öğren merkezinin karoları (48 px karo + 24 ikon + 20 ok) ve sayfa geri
+düğmesi (44 + 24) iki tarafta zaten birebirdi — o iş daha önce yapılmış.
+Ayrışan tek rol **başlıktaki kare düğme**ydi.
+
+### Beş kopya, dört ölçü
+
+Android'in kuralı otuz altı çağrı yerinde aynı: **44×44 karo, `radii.md`,
+`surface2` zemin, glif geri oku ise 24, çapraz ise 22.** Tek istisna
+`RoleplayExamScreen`in geri oku 22'ydi; o da düzeltildi.
+
+Webde aynı denetim dört ayrı ölçüdeydi:
+
+| Ekran | Karo | Glif |
+|---|---|---|
+| Modül sınavı | 32 px | çapraz 16 |
+| Yerleştirme | 32 px | çapraz 16 |
+| Deneme kâğıdı | 36 px | çapraz 18 |
+| Tur | 44 px | çapraz 22 (doğru olan) |
+| Tanıtım testi | 44 px `btn-ghost` | çapraz 20 |
+
+İki 32 px'lik düğme `check:hit`ten **geçiyordu** çünkü `hit-8` sınıfı dokunma
+alanını genişletiyor — ama **görünen** düğme küçüktü. Dokunma hedefi ile
+görsel ölçü ayrı iki şey ve kapı yalnız birincisini tutuyordu.
+
+Beşi de `RoundExit`e taşındı; ölçü tek kaynakta. **Glif de ayrışıyordu:**
+deneme kâğıdının başlığı *listeye dönüyor*, ekranı kapatmıyor — Android orada
+geri oku çiziyor, web çaprazı. Bileşen artık `glyph` alıyor.
+
+### Ayarlar dişlisi
+
+Android iki başlıktaki ayarlar düğmesinde **dişli** çiziyor, web **İngiliz
+anahtarı**. Aynı denetim iki uygulamada iki farklı simge taşıyordu; dişli
+"ayarlar"ın yerleşik işareti, anahtar "tamir". Webde `SettingsIcon` **hiç
+yoktu** — mobilin çizimi karşılığı olarak yazıldı. Aynı sınıf iki tur önce
+`SearchIcon`da çıkmıştı.
+
+### §246 ve kapının dördüncü aynı dersi
+
+Dört olgu: başlıktaki karonun glif ölçüsü (mobil, mutlak), kapatma karosunun
+ortak bileşenden gelmesi (web, mutlak), bileşenin Android'in sayılarını
+taşıması (eşleştirmeli) ve ayarlar simgesinin dişli olması (eşleştirmeli).
+
+Mevcut "çıkış düğmesi" kapısı adı `aria-label={t("exam.quit_title")}`
+metniyle arıyordu ve üç ekranda birden "düğme yok" dedi — düğme kalkmamış,
+**adın geçtiği yer** değişmişti (artık `RoundExit`in `labelKey`i).
+**Bu sınıf bu oturumda dördüncü kez çıktı** (§228 `live`, §243 duyuru
+seviyesi, §245 yüzde): bir olgunun yazımı değişince onu metin olarak arayan
+her kapı yanlış alarm veriyor.
+
+Onarımın kendisi de bir tuzağa düştü: `<RoundExit [^>]*labelKey="…"` deseni
+**hiçbir şey bulamadı**, çünkü ilk `>` etiketin sonu değil —
+`onExit={() => …}` içindeki ok o `>`i taşıyor ve desen orada duruyor. Aynı
+hazard için repoda `acilisSonu` yardımcısı var; burada sınırlı bir pencere
+yeterliydi.
+
+Dört enjeksiyon denendi, dördü de yakalandı.
