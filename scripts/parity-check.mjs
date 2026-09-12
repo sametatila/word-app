@@ -7469,6 +7469,71 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 268. UST ETIKETIN HARF ARALIGI --------------------------------
+   *
+   * Kart ve bolum baslarindaki kucuk BUYUK HARFLI etiket ("GUNUN TURU",
+   * "ZAYIF NOKTALAR", "ROZET ACILDI") iki platformda da ayni sey ama araligi
+   * degildi. Android hepsinde `letterSpacing: 1` diyor (on sekiz yer);
+   * webde DORT ayri deger vardi:
+   *   `tracking-wide` 0.025em  -> 11 pikselde 0.28px  (44 yer)
+   *   `tracking-widest` 0.1em  -> 1.1px               (6 yer)
+   *   `tracking-wider` 0.05em  -> 0.55px              (3 yer)
+   *   `[0.18em]`               -> 1.98px              (2 yer)
+   * Yani ayni etiket Android'de 1 piksel, webin cogu yerinde UCTE BIR
+   * pikselden az araliktaydi - "buyuk harfli etiket" hissi webde yoktu.
+   *
+   * Jeton PIKSEL, `em` degil: Android da piksel kullaniyor ve etiket iki
+   * punto arasinda geziyor (micro 11, caption 12.5); `em` olsaydi ikisi
+   * ayrisirdi.
+   *
+   * Android'in KENDI ic tutarsizligi da kapandi: bolum basligi
+   * (`SectionTitle`) 0.5'te kalmisti, o da 1 oldu.
+   *
+   * BUYUK HARFLI OLMAYAN kucuk etiketler bunun disinda ve oyle kaliyor:
+   * onlar bir ust etiket degil, sade bir alt yazi. */
+  {
+    const css = sil(read("src/app/globals.css"));
+    const jeton = (css.match(/--tracking-eyebrow:\s*([\d.]+)px;/) ?? [])[1] ?? "yok";
+    /* Mobil tarafta buyuk harfli etiketlerin araliklari - hepsi tek sayi mi. */
+    const walkTsx268 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx268(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const mobAralik = new Set();
+    for (const f of walkTsx268("mobile/src")) {
+      for (const m of sil(read(f)).matchAll(/textTransform: "uppercase"[^}]{0,80}?letterSpacing: ([\d.]+)|letterSpacing: ([\d.]+)[^}]{0,80}?textTransform: "uppercase"/g)) {
+        mobAralik.add(m[1] ?? m[2]);
+      }
+    }
+    sameList(
+      "ust etiketin harf araligi",
+      ["mobil=" + ([...mobAralik].sort().join("+") || "yok")],
+      ["mobil=" + jeton],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: webde buyuk harfli etiketlerin hepsi jetondan. */
+    const sapan = new Set();
+    for (const f of [...walkTsx268("src/components"), ...walkTsx268("src/app")]) {
+      for (const satir of sil(read(f)).split("\n")) {
+        if (!/\buppercase\b/.test(satir)) continue;
+        for (const m of satir.matchAll(/tracking-(?!eyebrow\b)([\w[\].]+)/g)) sapan.add(f.split("/").pop() + ":" + m[1]);
+      }
+    }
+    sameList(
+      "buyuk harfli etikette sapan aralik",
+      sapan.size ? [...sapan] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 267. DOKUNMATIKTE KLAVYE KENDILIGINDEN ACILMIYOR ---------------
    *
    * Iki olgu, ikisi de 266'nin devami.
