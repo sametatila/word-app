@@ -14921,3 +14921,65 @@ bir doğru olur), **mutlak** olarak hata dalındaki her kartın duyurduğu, iki
 tarafta da gerçekten **hata dalı bulunduğu** (yoksa bir önceki ölçü hiçbir şey
 ölçmez), kâğıt kartının üç metninin iki platformda da olduğu ve kartın
 duyurduğu.
+
+## §11.415 — Parite betiği `mobile/ios` altına hiç bakmıyordu
+
+Bu betik bugüne kadar **web ↔ mobil JS** karşılaştırdı. Oysa mobil JS'in
+altında **iki native uygulama** var — Android'de Kotlin
+(`LernomiSpeechModule.kt`), iOS'ta Swift (`LernomiSpeech.swift` + `.m`
+köprüsü) — ve JS ikisine de aynı adlarla sesleniyor:
+
+```ts
+const Native = NativeModules.LernomiSpeech as SpeechNative | undefined;
+```
+
+Bir yöntem tek platformda eklenirse **JS'te tip hatası olmaz** (tip elle
+yazılı) ve öteki platformda çağrı sessizce `undefined` olur: özellik o
+platformda hiç yoktur ve kimse fark etmez. Olaylar için de aynı, iOS'ta bir
+adım daha kötü — `RCTEventEmitter`in `supportedEvents` listesinde olmayan bir
+ada abone olmak RN hatası bastırıyor.
+
+Ölçüldüğünde sözleşme **temiz** çıktı: 20 ortak yöntem, 10 ortak olay, JS'in
+sekiz aboneliği iki listede de var, `.m` tanıtımı ile Swift gövdesi birebir.
+İki taraflı fazlalığın ikisi de meşru ve artık sebebiyle yazılı:
+
+| Fazlalık | Sebep |
+|---|---|
+| Android `addListener`, `removeListeners` | RN olay yayıcısının kalıbı; iOS'ta `RCTEventEmitter` kendisi sağlıyor |
+| iOS `ensureMicPermission` | Android izni JS'te soruyor (`PermissionsAndroid.RECORD_AUDIO`, kendi başlığıyla); iOS'ta izni native taraf sormak zorunda |
+
+### Sistem diyalogları: yazılı ama ölçülmeyen üç iddia
+
+iOS'ta yürüyüş kilit-ekranı denetimi ve izin diyalogları **cihaz** dilinden
+okunuyor (`*.lproj/*.strings`); Android'de aynı metinler
+`res/values-*` altındaki `strings.xml`de. Dosyaların kendi yorumları
+"birebir aynı" diyor — üç dilde de gerçekten aynı çıktı, ama hiçbir ölçü
+tutmuyordu. Bir dilde cümle değiştirilse iki platform aynı bildirimi iki ayrı
+cümleyle verirdi.
+
+Üçüncü bir tuzak: `Info.plist` izin metinlerini bir kez de **satır içi**
+taşıyor (yerelleştirme bulunamazsa gösterilen yedek). Orası Türkçe ve
+`tr.lproj` ile aynı kalmak zorunda; biri değişip öteki kalırsa Türkçe cihazda
+hangi cümlenin çıkacağı derleme ayrıntısına kalır.
+
+### §290
+
+On bir ölçü: native yöntem listelerinin **okunabildiği**, iOS köprüsü
+(`.m`) ile gövdesinin (Swift) aynı olduğu, tek platformda kalan yöntemin
+belgeli olduğu ve listenin bayatlamadığı, native olay listelerinin eşit
+olduğu, JS'in her aboneliğinin iki listede de bulunduğu (ve abonelik
+sayısının ölçüldüğü — sıfır abonelik "eksik yok"u boş bir doğru yapar), JS
+tipindeki **zorunlu** üyelerin iki native tarafta da olduğu (isteğe bağlı
+`?` üyeler tek taraflı olabilir, `ensureMicPermission` böyle yazılı), yürüyüş
+bildiriminin üç dilde iki platformda aynı cümle olduğu, izin diyaloglarının
+üç dilde de bulunduğu ve plist yedeğinin `tr.lproj` ile aynı olduğu.
+
+Ölçünün kendi kusuru da çıktı ve kayıtlı sınıftan: iOS olay listesi
+`supportedEvents()` ile ilk `[` arası okunuyordu ve **dönüş tipinin** köşeli
+parantezine takıldı (`-> [String]!`) — liste boş göründü. `return [`
+üzerinden okunuyor. Karakter sınıfıyla sınır çizmenin (`[^\[]*`) yanlış yerde
+durması, `[^>]*`/`[^)]*` ile aynı aile.
+
+**Yan bulgu:** `npm run ios:check` sekiz denetimin sekizini geçiyor ve
+**Google iOS istemcisi artık AÇIK** — Samet'in bekleyen maddelerinden biri
+kapanmış görünüyor (`658160017552-8di7u96v77l0f5oiv47201o8jaamqe55`).

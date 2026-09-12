@@ -7488,6 +7488,204 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 290. NATIVE KOPRU IKI PLATFORMDA AYNI SOZLESME ----------------
+   *
+   * Bu betik bugune kadar `mobile/ios` altina HIC BAKMADI: karsilastirdigi
+   * sey web ile mobil JS'ti. Oysa mobil JS'in altinda IKI native uygulama
+   * var - Android'de Kotlin (`LernomiSpeechModule.kt`), iOS'ta Swift
+   * (`LernomiSpeech.swift` + `.m` koprusu) - ve JS ikisine de AYNI adlarla
+   * sesleniyor:
+   *
+   *   const Native = NativeModules.LernomiSpeech as SpeechNative | undefined;
+   *
+   * Bir yontem tek platformda eklenirse JS'te tip hatasi OLMAZ (tip elle
+   * yazili) ve oteki platformda cagri SESSIZCE `undefined` olur: ozellik o
+   * platformda hic yoktur ve kimse fark etmez. Ayni sey olaylar icin de
+   * gecerli ve iOS'ta bir adim daha kotu - `RCTEventEmitter`
+   * `supportedEvents` listesinde olmayan bir ada abone olununca RN hata
+   * basiyor.
+   *
+   * Olculdugunde sozlesme temiz cikti; bu kapi o halin kilidi. Iki tarafli
+   * fazlaliklarin ikisi de mesru ve sebebiyle yazili. */
+  {
+    const kt = sil(read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt"));
+    const objc = sil(read("mobile/ios/Lernomi/LernomiSpeech.m"));
+    const swift = sil(read("mobile/ios/Lernomi/LernomiSpeech.swift"));
+    const stt = sil(read("mobile/src/lib/stt.ts"));
+
+    const androidYontem = new Set([...kt.matchAll(/@ReactMethod[\s\S]{0,80}?fun\s+(\w+)/g)].map((m) => m[1]));
+    const objcYontem = new Set([...objc.matchAll(/RCT_EXTERN_METHOD\(\s*(\w+)/g)].map((m) => m[1]));
+    const swiftYontem = new Set([...swift.matchAll(/@objc[^\n]*\n\s*func\s+(\w+)/g)].map((m) => m[1]));
+
+    /* Once SAYI: listeler okunamazsa kumeler bosalir ve fark "yok" cikar. */
+    sameList(
+      "native yontem listeleri okunuyor",
+      ["android=" + (androidYontem.size >= 15 ? "okundu" : "OKUNAMADI:" + androidYontem.size), "ios=" + (objcYontem.size >= 15 ? "okundu" : "OKUNAMADI:" + objcYontem.size)],
+      ["android=okundu", "ios=okundu"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* iOS'un IKI dosyasi birbirini tutuyor: `.m` RN'e neyi tanitiyorsa Swift
+       onu uygulamis olacak. Biri eksikse cagri calisma aninda dusuyor. */
+    sameList(
+      "ios koprusu ile govdesi ayni",
+      [...objcYontem].sort(),
+      [...swiftYontem].sort(),
+      ".m tanitimi",
+      "swift govdesi",
+    );
+
+    /* Iki platformun yontem listesi - sebepli iki fazlalik disinda ayni. */
+    const SADECE_ANDROID = new Map([
+      ["addListener", "RN olay yayicisinin kalibi; iOS'ta `RCTEventEmitter` kendisi sagliyor"],
+      ["removeListeners", "ayni kalip, ayni sebep"],
+    ]);
+    const SADECE_IOS = new Map([
+      ["ensureMicPermission", "Android izni JS'te soruyor (`PermissionsAndroid.RECORD_AUDIO`, kendi basligiyla); iOS'ta izni native taraf sormak zorunda (Info.plist NSMicrophoneUsageDescription)"],
+    ]);
+    const fazlaAndroid = [...androidYontem].filter((k) => !objcYontem.has(k) && !SADECE_ANDROID.has(k)).sort();
+    const fazlaIos = [...objcYontem].filter((k) => !androidYontem.has(k) && !SADECE_IOS.has(k)).sort();
+    sameList(
+      "tek platformda kalan yontem belgeli",
+      ["android=" + (fazlaAndroid.join("+") || "yok"), "ios=" + (fazlaIos.join("+") || "yok")],
+      ["android=yok", "ios=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    /* Liste bayatlamiyor: belgeli ad artik tek tarafli degilse dusecek. */
+    const bayat = [
+      ...[...SADECE_ANDROID.keys()].filter((k) => objcYontem.has(k) || !androidYontem.has(k)),
+      ...[...SADECE_IOS.keys()].filter((k) => androidYontem.has(k) || !objcYontem.has(k)),
+    ].sort();
+    sameList(
+      "native yontem listesi bayat degil",
+      ["bayat=" + (bayat.join("+") || "yok")],
+      ["bayat=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* OLAYLAR: iOS `supportedEvents` ile Android'in yaydiklari ayni kume. */
+    /* `return [` uzerinden: ilk yazim `supportedEvents()` ile ilk `[`
+       arasini almisti ve DONUS TIPININ koseli parantezine takildi
+       (`-> [String]!`), liste bos okundu. Kaydedilmis sinif: karakter
+       sinifiyla sinir cizmek (`[^\[]*`) yanlis yerde duruyor. */
+    const iosOlay = new Set(
+      [...(swift.match(/supportedEvents\(\)[\s\S]*?return\s*\[([\s\S]*?)\]/) ?? ["", ""])[1].matchAll(/"(\w+)"/g)].map((m) => m[1]),
+    );
+    const androidOlay = new Set([...kt.matchAll(/"(Lernomi(?:Speech|Screen|Walk)\w+)"/g)].map((m) => m[1]));
+    sameList(
+      "native olay listeleri",
+      [...androidOlay].sort(),
+      [...iosOlay].sort(),
+      "android",
+      "ios",
+    );
+
+    /* JS'in ABONE OLDUGU her olay iki listede de olacak: iOS'ta listede
+       olmayan ada abone olmak RN hatasi basiyor, Android'de sessiz. */
+    const jsOlay = [...new Set([...stt.matchAll(/addListener\(\s*"(Lernomi\w+)"/g)].map((m) => m[1]))].sort();
+    sameList(
+      "js abonelikleri iki listede de var",
+      ["abone=" + jsOlay.length, "eksik=" + (jsOlay.filter((e) => !iosOlay.has(e) || !androidOlay.has(e)).join("+") || "yok")],
+      ["abone=" + jsOlay.length, "eksik=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    /* Ve gercekten abone var (0 abone "eksik yok"u bos bir dogru yapar). */
+    sameList(
+      "abonelik sayisi olculdu",
+      ["abone=" + (jsOlay.length >= 5 ? "var" : "YOK:" + jsOlay.length)],
+      ["abone=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* SISTEM DIYALOGLARI UC DILDE VE IKI PLATFORMDA AYNI CUMLE.
+     *
+     * iOS'ta yuruyus kilidi ekranindaki denetim ve izin diyaloglari CIHAZ
+     * dilinden okunuyor (`*.lproj/*.strings`), Android'de ayni metinler
+     * `res/values-*` altindaki `strings.xml`de. Iki dosya ailesinin "birebir ayni" oldugu
+     * dosyalarin kendi yorumlarinda YAZILI ama hicbir olcu tutmuyordu: bir
+     * dilde cumle degistirilse iki platform ayni bildirimi iki ayri cumleyle
+     * verirdi.
+     *
+     * Ucuncu bir tuzak daha var: `Info.plist` izin metinlerini bir kez de
+     * SATIR ICI tasiyor (yerelleştirme bulunamazsa gosterilen yedek). Orasi
+     * Turkce ve `tr.lproj` ile ayni kalmali - biri degisip oteki kalirsa
+     * Turkce cihazda hangi cumlenin cikacagi derleme ayrintisina kalir. */
+    const strings = (yol, desen) => {
+      const url = new URL("../" + yol, import.meta.url);
+      if (!existsSync(url)) return {};
+      const metin = readFileSync(url, "utf8");
+      return Object.fromEntries([...metin.matchAll(desen)].map((m) => [m[1], m[2].trim()]));
+    };
+    const IOS_DESEN = /"(\w+)"\s*=\s*"([^"]*)"/g;
+    const AND_DESEN = /<string name="(\w+)">([^<]*)<\/string>/g;
+    const DILLER = [["tr", "values"], ["en", "values-en"], ["de", "values-de"]];
+    const YURUYUS = ["walk_notification_title", "walk_notification_text"];
+    sameList(
+      "yuruyus bildirimi iki platformda ayni cumle",
+      DILLER.flatMap(([d]) => {
+        const k = strings(`mobile/ios/Lernomi/${d}.lproj/Localizable.strings`, IOS_DESEN);
+        return YURUYUS.map((n) => `${d}/${n}=${k[n] ?? "YOK"}`);
+      }),
+      DILLER.flatMap(([d, v]) => {
+        const k = strings(`mobile/android/app/src/main/res/${v}/strings.xml`, AND_DESEN);
+        return YURUYUS.map((n) => `${d}/${n}=${k[n] ?? "YOK"}`);
+      }),
+      "ios",
+      "android",
+    );
+
+    const IZIN = ["NSMicrophoneUsageDescription", "NSSpeechRecognitionUsageDescription"];
+    sameList(
+      "izin diyaloglari uc dilde de var",
+      DILLER.flatMap(([d]) => {
+        const k = strings(`mobile/ios/Lernomi/${d}.lproj/InfoPlist.strings`, IOS_DESEN);
+        return IZIN.map((n) => `${d}/${n.replace("Usage", "").replace("NS", "").replace("Description", "")}=${k[n] ? "var" : "YOK"}`);
+      }),
+      DILLER.flatMap(([d]) => IZIN.map((n) => `${d}/${n.replace("Usage", "").replace("NS", "").replace("Description", "")}=var`)),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Satir ici yedek = tr yerelleştirmesi. */
+    const plist = read("mobile/ios/Lernomi/Info.plist");
+    const plistDeger = (anahtar) =>
+      (plist.match(new RegExp("<key>" + anahtar + "</key>\\s*<string>([^<]*)</string>")) ?? [])[1]?.trim() ?? "YOK";
+    const trIzin = strings("mobile/ios/Lernomi/tr.lproj/InfoPlist.strings", IOS_DESEN);
+    sameList(
+      "plist satir ici yedegi tr ile ayni",
+      IZIN.map((n) => n.replace("NS", "") + "=" + plistDeger(n)),
+      IZIN.map((n) => n.replace("NS", "") + "=" + (trIzin[n] ?? "YOK")),
+      "plist",
+      "tr.lproj",
+    );
+
+    /* JS TIPI SOZLESMEDIR: zorunlu (soru isaretsiz) her uye iki native
+       tarafta da olacak. Istege bagli uyeler (`?`) tek tarafli olabilir -
+       `ensureMicPermission` boyle yazili. */
+    const tip = (stt.match(/type SpeechNative = \{([\s\S]*?)\n\};/) ?? ["", ""])[1];
+    const zorunlu = [...tip.matchAll(/^\s{2}(\w+)(\??)[(:]/gm)].filter((m) => !m[2]).map((m) => m[1]);
+    const tipEksik = zorunlu.filter((k) => !androidYontem.has(k) || !objcYontem.has(k)).sort();
+    sameList(
+      "js tipindeki zorunlu yontemler iki native tarafta",
+      ["zorunlu=" + zorunlu.length, "eksik=" + (tipEksik.join("+") || "yok")],
+      ["zorunlu=" + zorunlu.length, "eksik=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    sameList(
+      "zorunlu yontem sayisi olculdu",
+      ["zorunlu=" + (zorunlu.length >= 10 ? "var" : "YOK:" + zorunlu.length)],
+      ["zorunlu=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 289. HATA HALI DUYURULUYOR, BOS HAL DUYURULMUYOR ---------------
    *
    * Ayni kart (`EmptyCard`) iki isi birden goruyor: "liste bos" ve
