@@ -47,6 +47,7 @@ export default async function LearnPage({
     streak: 0,
     dailyGoal: 0,
     reviewsToday: 0,
+    hasToday: false,
     dueCount: 0,
     newToday: 0,
     hasMockExams: false,
@@ -73,6 +74,11 @@ export default async function LearnPage({
       streak: profile.currentStreak,
       dailyGoal: profile.dailyGoal,
       reviewsToday: todayStat?.reviews ?? 0,
+      /* Şerit ancak ilerleme gerçekten okunduysa çiziliyor: yoksa "0/20"
+         yazıp çalışmış kullanıcıya çalışmadığını söylüyordu (Android'in
+         `hasToday` ayrımı). Günün satırı hiç yoksa (henüz çalışılmadı) sayı
+         yine sıfır, ama o SAHİCİ bir sıfır. */
+      hasToday: !!progress,
       newToday: todayStat?.newWords ?? 0,
       dueCount: progress?.dueNow ?? 0,
       hasMockExams: supportsMockExams(profile.course),

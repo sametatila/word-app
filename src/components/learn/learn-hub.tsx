@@ -48,6 +48,17 @@ export type LearnHubData = {
   streak: number;
   dailyGoal: number;
   reviewsToday: number;
+  /**
+   * BUGÜNÜN SAYISI GERÇEKTEN OKUNDU MU.
+   *
+   * Hedef şeridi `reviewsToday/dailyGoal` yazıyor ve iki sayı AYRI okumadan
+   * geliyor: hedef profilden, bugünkü tekrar ilerleme okumasından. İlerleme
+   * okuması patladığında `reviewsToday` sıfıra düşüyor ve şerit "0/20"
+   * yazıyordu — on beş tekrar yapmış kullanıcıya "bugün hiç çalışmadın"
+   * demek. Android'de bu ayrım baştan beri var (`LearnScreen` `hasToday =
+   * me?.reviewsToday !== undefined`) ve orada şerit hiç çizilmiyor.
+   */
+  hasToday: boolean;
   dueCount: number;
   newToday: number;
   /** Kursun deneme sınavı kataloğu var mı — yoksa o kama hiç çizilmez. */
@@ -60,7 +71,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
   // `xp` kart kaldırıldıktan sonra da lazım: maskotun uyku hâli "puanı var ama
   // serisi kırık" ayrımını buradan yapıyor (aşağıda).
-  const { xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
+  const { xp, streak, dailyGoal, reviewsToday, hasToday, dueCount, newToday } = data;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 
   return (
@@ -126,7 +137,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           dışarıda olsaydı kart yükleme sonrası uzayıp altındaki her şeyi aşağı
           iterdi.
         */}
-        {dailyGoal > 0 ? (
+        {hasToday && dailyGoal > 0 ? (
           <div className="px-5 pb-4">
             <div className="mb-1.5 flex justify-between text-micro text-white/85">
               <span>{t("learn.daily_goal")}</span>

@@ -16823,3 +16823,21 @@ farklıydı — geniş pencere rozet bloğunu da eşliyordu, yani iki ölçü **
 kapı yeşil kalıyordu, çünkü geriye dogru en yakın `meLoading` açıcısı olarak
 bir üstteki rozet bloğunu buluyordu. Şimdi her yüzeyin kendi işaretinden
 geriye doğru en yakın **koşul açıcısı** aranıyor.
+
+## §11.463 — Günlük hedef şeridi: okunmayan sayı sıfır demek değil
+
+Şerit `bugünkü tekrar / günlük hedef` yazıyor ve iki sayı **ayrı okumadan**
+geliyor: hedef profilden, bugünkü tekrar ilerleme okumasından. Web'de ilerleme
+okuması patladığında `reviewsToday` sıfıra düşüyor, hedef ise profilden
+gelmeye devam ediyordu — şerit **"0/20"** yazıyor, yani on beş tekrar yapmış
+kullanıcıya "bugün hiç çalışmadın" diyordu. Sahici bir sıfırdan (bugün henüz
+çalışılmadı) ayırt edilemez bir yalan.
+
+Android'de ayrım baştan beri var: `hasToday = me?.reviewsToday !== undefined`
+ve şerit `hasToday && dailyGoal > 0` koşuluna bağlı; uç deploy değilse ya da
+okuma patladıysa şerit **hiç çizilmiyor**. Web'e de aynı alan eklendi
+(`hasToday: !!progress`).
+
+Kapı **§323**, mutlak ve üç parçalı: alan var, sayfa onu okumadan doldurmuyor,
+şerit ona bağlı. Yalnız alanın varlığını ölçmek yetmezdi — alanı kullanmayan
+bir şerit doğru görünür.

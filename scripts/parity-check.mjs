@@ -18176,6 +18176,51 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------- 323. GUNLUK HEDEF SERIDI: OKUNMAYAN SAYI SIFIR DEMEK DEGIL
+ *
+ * Serit `bugunku tekrar / gunluk hedef` yaziyor ve iki sayi AYRI okumadan
+ * geliyor: hedef profilden, bugunku tekrar ilerleme okumasindan. Web'de
+ * ilerleme okumasi patlayinca `reviewsToday` sifira dusuyor, hedef ise
+ * profilden gelmeye devam ediyordu - serit "0/20" yaziyor, yani on bes tekrar
+ * yapmis kullaniciya "bugun hic calismadin" diyordu. Sahici bir sifirla
+ * (bugun henuz calisilmadi) ayirt edilemez bir yalan.
+ *
+ * Android'de ayrim BASTAN BERI var: `hasToday = me?.reviewsToday !== undefined`
+ * ve serit `hasToday && dailyGoal > 0` kosuluna bagli - uc henuz deploy
+ * degilse ya da okuma patladiysa serit hic cizilmiyor. Web'e de ayni alan
+ * eklendi (`hasToday: !!progress`).
+ *
+ * Olcu MUTLAK ve uc parcali: alan var, sayfa onu okumadan doldurmuyor, serit
+ * ona bagli. Iki tarafta da kosulun KENDISI okunuyor - yalniz alanin
+ * varligini olcmek yetmez, alani kullanmayan bir serit dogru gorunur. */
+{
+  const silL = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const mobL = silL(read("mobile/src/screens/LearnScreen.tsx"));
+  const webHub = silL(read("src/components/learn/learn-hub.tsx"));
+  const webSayfa = silL(read("src/app/(app)/learn/page.tsx"));
+  sameList(
+    "gunluk hedef seridi okunan sayiya bagli",
+    [
+      "mobil ayrim=" + (/const hasToday = me\?\.reviewsToday !== undefined/.test(mobL) ? "var" : "YOK"),
+      "mobil kosul=" + (/hasToday && dailyGoal > 0 \?/.test(mobL) ? "var" : "YOK"),
+      "web alan=" + (/^\s{2}hasToday: boolean;$/m.test(webHub) ? "var" : "YOK"),
+      "web kosul=" + (/hasToday && dailyGoal > 0 \?/.test(webHub) ? "var" : "YOK"),
+      "web kaynak=" + (/hasToday: !!progress,/.test(webSayfa) ? "okumadan" : "SABIT"),
+      "web yedek=" + (/hasToday: false,/.test(webSayfa) ? "kapali" : "ACIK"),
+    ],
+    [
+      "mobil ayrim=var",
+      "mobil kosul=var",
+      "web alan=var",
+      "web kosul=var",
+      "web kaynak=okumadan",
+      "web yedek=kapali",
+    ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
