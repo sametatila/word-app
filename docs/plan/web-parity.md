@@ -16841,3 +16841,20 @@ okuma patladıysa şerit **hiç çizilmiyor**. Web'e de aynı alan eklendi
 Kapı **§323**, mutlak ve üç parçalı: alan var, sayfa onu okumadan doldurmuyor,
 şerit ona bağlı. Yalnız alanın varlığını ölçmek yetmezdi — alanı kullanmayan
 bir şerit doğru görünür.
+
+## §11.464 — Sunucu okuma hatası kartı: altı yüzey sessizdi
+
+Web'de sunucuda çizilen altı sayfa (profil, profil ayarları, kelimelerim,
+arkadaşlar, arkadaş ayarları, kişi profili) okuma patladığında aynı el yapımı
+kartı veriyor: başlık + "birazdan tekrar deneyin" + `RetryButton`. Altısında da
+`role` **yoktu**: ekran okuyucu kullanan biri istediği ekran yerine bir kart
+geldiğini duymuyordu, sayfa sessizce boş kalıyordu.
+
+Uygulamanın kendi kalıbı zaten duyuruyor — oyuncu kabukları (`weekly-player`,
+`exam-player`, `roleplay-exam`, `placement-test`) aynı kartta `role="alert"`
+yazıyor. Aykırı olan altı **sunucu sayfasıydı**; §241 de aynı kuralı boş durum
+kabuğu için koyuyor (hata hâli duyurulur, boş hâl duyurulmaz).
+
+Kapı **§324** kapsam ölçüyor: `RetryButton` çizen her dosya duyuruyor mu, ve
+dosya sayısı (6) da ölçülüyor — tarama boşalırsa "hepsi duyuruyor"
+kendiliğinden doğru çıkardı.

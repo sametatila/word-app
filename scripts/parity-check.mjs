@@ -18221,6 +18221,56 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ---------------- 324. SUNUCU OKUMASI PATLADI KARTI: ALTI YUZEY SESSIZDI
+ *
+ * Web'de sunucuda cizilen alti sayfa okuma patladiginda ayni el yapimi karti
+ * veriyor: baslik + "birazdan tekrar deneyin" + `RetryButton`. Altisinda da
+ * `role` YOKTU, yani ekran okuyucu kullanan biri icin sayfa sessizce bos
+ * kaliyordu - istedigi ekran yerine bir kart geldigini duymuyordu.
+ *
+ * Uygulamanin kendi kalibi zaten duyuruyor: oyuncu kabuklari (`weekly-player`,
+ * `exam-player`, `roleplay-exam`, `placement-test`) ayni kartta `role="alert"`
+ * yaziyor. Aykiri olan alti SUNUCU SAYFASIYDI. §241 de ayni kurali bos durum
+ * kabugu icin koyuyor (hata hali duyurulur, bos hal duyurulmaz).
+ *
+ * Olcu MUTLAK ve KAPSAM olcuyor: `RetryButton` cizen her dosya duyuruyor mu.
+ * Dosya sayisi da olculuyor - tarama bosalirsa "hepsi duyuruyor" kendiliginden
+ * dogru cikar (0/0 hicbir sey olcmez). */
+{
+  const silR = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gez(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const sessiz = [];
+  let kart = 0;
+  for (const kok of ["src/app", "src/components"]) {
+    for (const f of gez(kok)) {
+      const src = silR(read(f));
+      const i = src.indexOf("<RetryButton");
+      if (i < 0) continue;
+      kart++;
+      /* Karti saran donus: `<RetryButton`dan geriye dogru en yakin `return (`.
+         Pencere degil DUGUM sayilamaz (kart JSX ici JSX), ama donus govdesi
+         tek bir karti tasiyor ve `role` o govdede ariyor. */
+      const bas = src.lastIndexOf("return (", i);
+      const govde = bas < 0 ? src.slice(0, i) : src.slice(bas, i);
+      if (!/role="alert"/.test(govde)) sessiz.push(f.split("/").slice(-2).join("/"));
+    }
+  }
+  sameList(
+    "sunucu okuma hatasi kartlari duyuruyor",
+    ["kart=" + kart, "sessiz=" + (sessiz.length ? sessiz.join("+") : "yok")],
+    ["kart=6", "sessiz=yok"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
