@@ -1,5 +1,5 @@
 import { Platform, PermissionsAndroid } from "react-native";
-import notifee, { AndroidImportance, AuthorizationStatus } from "@notifee/react-native";
+import notifee, { AuthorizationStatus } from "@notifee/react-native";
 import { getApps } from "@react-native-firebase/app";
 import {
   AuthorizationStatus as FcmAuthorizationStatus,
@@ -13,10 +13,9 @@ import {
   type RemoteMessage,
 } from "@react-native-firebase/messaging";
 import { api } from "../api/client";
-import { t } from "./i18n";
 import { navigateFromPush } from "./pushRoute";
 import { setPushDevice } from "./pushState";
-import { cancelLocalReminders } from "./notifications";
+import { cancelLocalReminders, ensureChannel, CHANNEL_ID } from "./notifications";
 
 /**
  * Uzak bildirim (FCM) — uygulamanın geri çağırma kanalı.
@@ -133,7 +132,12 @@ export function attachPushListeners(): () => void {
     hatırlatma hiç açmamış bir kullanıcıya gelen ilk sosyal bildirim
     kayboluyor olurdu.
   */
-  void notifee.createChannel({ id: "reminder", name: t("notif.channel"), importance: AndroidImportance.HIGH }).catch(() => {});
+  /* Kanalin TANIMI tek yerde (`lib/notifications` `ensureChannel`): burada
+     ikinci bir `createChannel` duruyordu ve `name`/`importance` iki yerde
+     yaziliydi. Android kanal ozelliklerini kurulduktan sonra degistirmiyor,
+     yani iki tanim ayrisirsa kanalin gercek onceligi hangi yolun once
+     calistigina baglaniyordu. */
+  void ensureChannel().catch(() => {});
   const fcm = getMessaging();
   const offToken = onTokenRefresh(fcm, (token: string) => {
     current = token;
@@ -151,7 +155,7 @@ export function attachPushListeners(): () => void {
         title,
         body,
         data: { url: String(msg.data?.url ?? "") },
-        android: { channelId: "reminder", smallIcon: "ic_notification", tag: String(msg.data?.tag ?? ""), pressAction: { id: "default" } },
+        android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", tag: String(msg.data?.tag ?? ""), pressAction: { id: "default" } },
         /* iOS'ta ses VERILMEDIGINDE bildirim sessiz düşüyor. Bu dal uygulama
            ÖN PLANDAYKEN geleni yeniden çiziyor; APNs'in kendi yolunda ses
            sunucudan geliyor (`lib/fcm.ts` `aps.sound = "default"`) ve buradaki

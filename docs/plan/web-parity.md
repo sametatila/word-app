@@ -16102,3 +16102,44 @@ yazılı, şablonun dosyada durduğu da ölçülüyor.
 Beş enjeksiyon doğrulandı: bir klip dosyasını kaldırmak, ölü dosya eklemek,
 `CLIP`teki adı değiştirmek (aynı anda hem eksik hem ölü çıkıyor), şablonu
 değiştirmek, mobil tarafa ölü klip koymak.
+
+## §11.442 — Bildirim kanalının tanımı iki yerdeydi: Android'de "ilk kuran kazanır"
+
+Android bildirimleri bir **kanala** gidiyor ve kanalın kimliği dört yerde
+yazılıydı:
+
+- `lib/notifications` `CHANNEL_ID` (kaynak)
+- `lib/pushDevice`in açılışta kurduğu kanal — kimlik dizgi olarak
+- aynı dosyanın ön plan `displayNotification` çağrısı — kimlik dizgi olarak
+- `AndroidManifest` `default_notification_channel_id` — FCM'in **arka plan**
+  yolunda kullandığı kanal (XML, içe aktarılamıyor)
+
+Kimlik tek başına sorun değildi; dördü de `"reminder"` diyordu. Sorun kanalın
+**tanımının** iki yerde ayrı ayrı yazılmasıydı: `ensureChannel` ve
+`pushDevice`in kendi `createChannel`ı, ikisi de `name` + `importance` veriyordu.
+**Android bir kanal kurulduktan sonra özelliklerini değiştirmiyor** — ilk kuran
+kazanır. İki tanım ayrışırsa kanalın gerçek önceliği hangi yolun önce
+çalıştığına bağlanır: aynı sürümde, aynı cihazda, kullanıcının hangi ekrandan
+geçtiğine göre "sessiz bildirim" ya da "yüksek öncelik". Hiçbir yerde
+görünmeyen, tekrar üretilemeyen bir fark.
+
+Tanım tek yere indi: `CHANNEL_ID` ve `ensureChannel` dışa verildi, `pushDevice`
+ikisini içe alıyor. Kanalın **açılışta** kurulması korundu (o davranışın kendi
+gerekçesi yazılı: Android 8+ var olmayan bir kanala gelen bildirimi sessizce
+düşürüyor, yani yerel hatırlatma hiç açmamış bir kullanıcıya gelen ilk sosyal
+bildirim kaybolurdu).
+
+### §307
+
+Altı ölçü: kimlik okunabiliyor, `createChannel` mobil kaynakta **tek** yerde,
+kimlik dizgisi yalnız o kaynakta geçiyor (başka her yer sabiti içe aktarıyor),
+manifestteki kopya sabitle aynı, `smallIcon` ve manifestin işaret ettiği
+drawable **gerçekten duruyor**, ve koddaki ikon adı okunabiliyor.
+
+Son ölçü §306'nın Android hâli: drawable **ada göre** referans veriliyor ve
+dosya yoksa Android boş bir kare gösterip hata vermiyor — webdeki eksik klip
+sessizliğinin aynısı.
+
+Dört enjeksiyon doğrulandı: ikinci `createChannel`ı geri koymak, manifest
+kanalını değiştirmek, drawable'ı kaldırmak, `CHANNEL_ID`in adını değiştirmek
+(kaynak okunamaz hâle geliyor).

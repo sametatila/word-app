@@ -14,7 +14,21 @@ import { api } from "../api/client";
  *  - weekly : haftalık sınav (her Pazar)
  * Tercihler AsyncStorage'da; notifee tekrarlayan TIMESTAMP tetikleyici.
  */
-const CHANNEL_ID = "reminder";
+/**
+ * Bildirim kanalinin kimligi — TEK KAYNAK.
+ *
+ * Dort kopyasi vardi: burasi, `pushDevice`in acilista kurdugu kanal, ayni
+ * dosyadaki on plan `displayNotification` cagrisi ve `AndroidManifest`taki
+ * `default_notification_channel_id` (XML, ice aktarilamiyor - o kopya
+ * `check:parity` ile bu sabite karsi olculuyor).
+ *
+ * Kimlik tek basina da yetmiyordu: kanalin TANIMI (`name`, `importance`) iki
+ * yerde yaziliydi ve Android bir kanal kurulduktan sonra ozelliklerini
+ * DEGISTIRMIYOR - ilk kuran kazaniyor. Iki tanim ayrisirsa kanalin gercek
+ * onceligi hangi yolun once calistigina bagli kaliyordu. Tanim artik yalniz
+ * `ensureChannel`da.
+ */
+export const CHANNEL_ID = "reminder";
 
 /**
  * SUNUCUDAKİ AYNI TERCİH DE YAZILIYOR.
@@ -133,7 +147,8 @@ const STREAK_TIME = "20:30";
 const WEEKLY_DAY = 0; // 0 = Pazar
 const WEEKLY_TIME = "11:00";
 
-async function ensureChannel(): Promise<void> {
+/** Kanali kurar (yinelenebilir). `pushDevice` de acilista bunu cagiriyor. */
+export async function ensureChannel(): Promise<void> {
   await notifee.createChannel({ id: CHANNEL_ID, name: t("notif.channel"), importance: AndroidImportance.HIGH });
 }
 

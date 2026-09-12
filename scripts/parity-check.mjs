@@ -17088,6 +17088,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------------ 307. BILDIRIM KANALI VE IKONU TEK KAYNAK
+   *
+   * Android bildirimleri bir KANALA gidiyor ve kanalin kimligi dort yerde
+   * yaziliydi: `lib/notifications` `CHANNEL_ID`, `lib/pushDevice`in acilista
+   * kurdugu kanal, ayni dosyanin on plan `displayNotification` cagrisi, ve
+   * `AndroidManifest`taki `default_notification_channel_id` (FCM'in arka plan
+   * yolunda kullandigi kanal).
+   *
+   * Kimlik tek basina yetmiyordu: kanalin TANIMI (`name` + `importance`) iki
+   * yerde ayri ayri yaziliydi ve Android bir kanal kurulduktan sonra
+   * ozelliklerini DEGISTIRMIYOR - ilk kuran kazaniyor. Iki tanim ayrisirsa
+   * kanalin gercek onceligi hangi yolun once calistigina baglaniyor; kullanici
+   * icin bu "bazi kurulumda sessiz bildirim" demek ve hicbir yerde gorunmuyor.
+   *
+   * Olculer: (1) kanal tanimi (`createChannel`) mobil kaynakta TEK yerde,
+   * (2) kimlik dizgisi yalniz o tek kaynakta gecıyor - baska her yer sabiti
+   * ice aktariyor, (3) manifestteki kopya sabitle AYNI (XML ice aktarilamaz,
+   * o yuzden olculuyor), (4) `smallIcon` ile manifestin isaret ettigi drawable
+   * GERCEKTEN duruyor (ada gore referans: dosya yoksa Android bos kare
+   * gosterir, hata vermez - webdeki eksik klip sessizliginin Android hali). */
+  {
+    const yuruMobil = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test(e.name)) yuruMobil(d + "/" + e.name, out); }
+        else if (/\.tsx?$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    const mobilDosyalar2 = yuruMobil("mobile/src");
+    const kanalKimlik = (sil(read("mobile/src/lib/notifications.ts")).match(/CHANNEL_ID = "([\w-]+)"/) ?? [])[1] ?? "YOK";
+    let tanimSayisi = 0;
+    const kimlikYerleri = [];
+    for (const f of mobilDosyalar2) {
+      const src = sil(read(f));
+      tanimSayisi += (src.match(/createChannel\(/g) ?? []).length;
+      if (src.includes('"' + kanalKimlik + '"') && kanalKimlik !== "YOK") kimlikYerleri.push(f.split("/").pop());
+    }
+    const manifest = read("mobile/android/app/src/main/AndroidManifest.xml");
+    const manifestKanal =
+      (manifest.match(/default_notification_channel_id"\s*\n?\s*android:value="([\w-]+)"/) ?? [])[1] ?? "YOK";
+    const manifestIkon = (manifest.match(/default_notification_icon"\s*\n?\s*android:resource="@drawable\/([\w-]+)"/) ?? [])[1] ?? "YOK";
+    const kodIkonlar = [...new Set(
+      mobilDosyalar2.flatMap((f) => [...sil(read(f)).matchAll(/smallIcon: "([\w-]+)"/g)].map((m) => m[1])),
+    )];
+    const drawableVar = (ad) =>
+      ["xml", "png", "webp"].some((u) => existsSync(new URL("../mobile/android/app/src/main/res/drawable/" + ad + "." + u, import.meta.url))) ||
+      ["hdpi", "mdpi", "xhdpi", "xxhdpi", "xxxhdpi"].some((d) =>
+        ["png", "webp"].some((u) => existsSync(new URL("../mobile/android/app/src/main/res/drawable-" + d + "/" + ad + "." + u, import.meta.url))),
+      );
+    const eksikIkon = [...new Set([...kodIkonlar, manifestIkon])].filter((a) => a !== "YOK" && !drawableVar(a));
+    sameList(
+      "bildirim kanali ve ikonu tek kaynak",
+      [
+        "kimlik=" + kanalKimlik,
+        "kanal tanimi=" + tanimSayisi,
+        "kimlik dizgisi gecen dosya=" + (kimlikYerleri.join("+") || "yok"),
+        "manifest kanali=" + (manifestKanal === kanalKimlik ? "ayni" : manifestKanal),
+        "eksik drawable=" + (eksikIkon.join(", ") || "yok"),
+        "koddaki ikon=" + (kodIkonlar.length ? kodIkonlar.join("+") : "YOK"),
+      ],
+      [
+        "kimlik=reminder",
+        "kanal tanimi=1",
+        "kimlik dizgisi gecen dosya=notifications.ts",
+        "manifest kanali=ayni",
+        "eksik drawable=yok",
+        "koddaki ikon=ic_notification",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
