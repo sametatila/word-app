@@ -4,6 +4,24 @@ import type { SVGProps } from "react";
 /**
  * Uygulamanın ikon seti — emoji yerine tek çizgi kalınlığında, 24×24 ızgarada
  * tasarlanmış SVG'ler. Renk `currentColor`'dan gelir, boyut `size` ile ayarlanır.
+ *
+ * KONU AİLESİ İKONLARI ÇAĞIRANSIZ — ve bu bilinçli.
+ *
+ * Setin 48 simgesi (`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …)
+ * 500 derslik müfredatla birlikte geldi (66cb70b0) ve o zaman
+ * `lessons/lesson-hub` içindeki konu → ikon haritasından çiziliyordu. Ders
+ * merkezi Patika'ya (Immersion) devredilince o dosya silindi; konu ADLARI
+ * yaşamaya devam ediyor (`lib/cando-map`, mobil `game/candoMap`) ama konu
+ * ikonlarını çizen bir yüzey KALMADI. Mobilde karşılığı hiç olmadı: oradaki
+ * `ui/unitKind` haritası konu değil ADIM TÜRÜ (okuma/dinleme/…) çiziyor, ve
+ * o harita iki platformda birebir.
+ *
+ * Silinmediler çünkü elle çizilmiş bir aile ve konu ikonu Patika kartlarına
+ * geri gelebilir; ama "bir gün gerekir" gerekçesi yazılmadığında bu 460
+ * satır unutulmuş kod gibi görünüyor. `check:endpoints`in `ALLOW` listesiyle
+ * aynı kural: bağlanmamış bir şeyi tutmak, onu SEBEBİYLE belgelemek demek.
+ * Konu ikonu geri gelirse iki platformda birlikte gelecek (bkz. web-parity
+ * §11.411).
  */
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 

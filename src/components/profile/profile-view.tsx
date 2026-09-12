@@ -21,7 +21,7 @@ import {
   MailIcon,
   PodiumIcon,
   ShareIcon,
-  SparkIcon,
+  BoltIcon,
   TrophyIcon,
   SettingsIcon,
 } from "@/components/icons";
@@ -122,7 +122,9 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
               color: "var(--color-brand)",
             }}
           >
-            <SparkIcon size={16} /> {formatNumber(stats.xp, lang)} XP
+            {/* XP glifi Android ile aynı (`ProfileScreen` `BoltIcon`); burada
+                `SparkIcon` çiziliyordu. */}
+            <BoltIcon size={16} /> {formatNumber(stats.xp, lang)} XP
           </span>
         </div>
       </div>

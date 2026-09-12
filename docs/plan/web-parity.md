@@ -14693,3 +14693,74 @@ de aynı sıfırlamayı çağırdığı.
 
 Üçü de enjeksiyonla doğrulandı — `deadline.current = 0` satırı kaldırıldığında
 ölçü gerçek kusuru yeniden gördü.
+
+## §11.411 — "Dört karo mobildekiyle aynı" cümlesi üç ikonda tutmuyordu
+
+`progress-view` kendi yorumunda şunu yazıyordu:
+
+> "Dört karo mobildekiyle **aynı**: öğrenilen kelime, toplam XP, bu hafta
+> süre, seviye."
+
+Etiketler, değerler ve tonlar gerçekten aynıydı. **İkonlar değildi:**
+
+| Karo | Web | Android |
+|---|---|---|
+| öğrenilen kelime | `BookIcon` | `LearnIcon` |
+| toplam XP | `SparkIcon` | `BoltIcon` |
+| toplam süre | `ClockIcon` | **`PodiumIcon`** |
+| seviye | `TrophyIcon` | `TrophyIcon` |
+
+Üçüncüsü yalnız ayrışma değil, **yanlış**: kürsü *sıralama* demek, süre demek
+değil — ve mobil aynı kürsüyü profildeki "haftalık sıralama" satırında da
+çiziyor, yani **aynı glif iki ayrı anlam** taşıyordu. `ClockIcon` mobilde hiç
+yoktu; webin glifiyle birebir eklendi (daire + iki kol, aynı 24×24 ızgara).
+
+Öteki ikisinde Android referans alındı: kelime karosu `LearnIcon`, XP
+`BoltIcon`. XP glifi **profil rozetinde** de ayrışıyordu (web `SparkIcon`,
+Android `BoltIcon`) — o da eşitlendi. Üst başlıktaki XP hapı ölçülmüyor:
+mobilin başlığında XP hapı yok (yalnız seri), yani orada karşılaştırılacak
+bir yüzey de yok.
+
+### §286
+
+Altı ölçü: dört karonun ikon adları, süre karosunun **mutlak** olarak saat
+çizdiği, kürsünün yalnız sıralama satırında kaldığı, profil XP rozetinin
+glifi, ve **ikon envanteri** — webde çizilen ama mobilde olmayan her ikon
+belgeli olacak (yedi satır, her biri sebebiyle: `ArrowLeftIcon` mobilde
+`ArrowBackIcon`, `ChevronIcon` web sayfalaması, `InfoIcon`/`LinkIcon`/
+`ListIcon`/`QuestionIcon`/`UserIcon` web yüzeyleri) ve liste **bayatlamayacak**
+(listede olup mobile gelmiş ya da artık çizilmeyen ad düşer).
+
+Altısı da enjeksiyonla doğrulandı. Ölçünün kendi kusuru da çıktı: `PodiumIcon`
+sınırsız ad deseniyle arandı ve meta-kapı (§138) onu reddetti — `\b` sınırı
+eklendi.
+
+### İkon setinde 48 çağıransız simge — belgelendi
+
+Ölçüm sırasında webin ikon setinde **48 çağıransız** simge çıktı
+(`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …). 500 derslik
+müfredatla geldiler (66cb70b0) ve `lessons/lesson-hub` içindeki konu → ikon
+haritasından çiziliyorlardı; ders merkezi Patika'ya devredilince o dosya
+silindi. Konu **adları** yaşıyor (`lib/cando-map`, mobil `game/candoMap`) ama
+konu ikonlarını çizen yüzey kalmadı; mobilde karşılığı hiç olmadı.
+
+Silinmediler — elle çizilmiş bir aile ve konu ikonu Patika kartlarına geri
+gelebilir. Ama gerekçe yazılmadığında 460 satır unutulmuş kod gibi
+görünüyordu: `icons.tsx`in başına `check:endpoints`in `ALLOW` listesiyle aynı
+kuralla yazıldı — bağlanmamış bir şeyi tutmak, onu **sebebiyle** belgelemek
+demek.
+
+### Yan düzeltme: hız sınırı saniyesi standart başlıkta
+
+`/api/premium/redeem` 429'unda saniye yalnız **gövdede** duruyordu
+(`retryAfter`) ve onu okuyan hiçbir istemci yoktu: sunucu "23 saniye sonra"
+diyor, iki uygulama da "biraz sonra tekrar dene" yazıyordu. Sosyal rotalar
+aynı bilgiyi baştan beri `retry-after` **başlığıyla** veriyor
+(`lib/social/http.ts` `fail`) ve kimlik doğrulama vekili RFC adının neden
+önemli olduğunu yazmış durumda. Başlık eklendi; gövdedeki alan da kaldı.
+
+**Açık kalan:** `quota` dönen altı 429 (`assess`, `pronounce`, `reports`,
+`roleplay`, `stt`, `tts`) başlık taşımıyor. Oradaki doğru değer "kotanın
+sıfırlanmasına kalan saniye" ve o, kullanıcının kendi saatine bağlı
+(`profiles.timezone`) — premium kota metinleri de zaten kayıtlı borç (11
+`gate.*` anahtarı). Altı rotaya birlikte bakılacak, bu turda alınmadı.

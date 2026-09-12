@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
-import { BookIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, PenIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, PenIcon, TrophyIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -191,17 +191,23 @@ export function ActivityProgress({
 
       {/* Dört karo mobildekiyle aynı: öğrenilen kelime, toplam XP, bu hafta
           süre, seviye. Web'de bunların ikisi (güncel/en uzun seri) seriyi iki
-          kez söylüyordu; en uzun seri zaten herkese açık profilde yazıyor. */}
+          kez söylüyordu; en uzun seri zaten herkese açık profilde yazıyor.
+
+          İKONLARI DA AYNI — cümle bunu söylüyordu ama üç karoda tutmuyordu:
+          öğrenilen kelime `BookIcon` ↔ Android `LearnIcon`, XP `SparkIcon` ↔
+          Android `BoltIcon`, süre ise Android'de `PodiumIcon` çiziyordu (kürsü
+          SIRALAMA demek, süre demek değil). Üçü tek glife indirildi; süre
+          ikisinde de saat (bkz. web-parity §11.411). */}
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
         <KpiCard
           label={t("progress.words_learned")}
           value={formatNumber(mastered, lang)}
           tone="var(--color-brand)"
-          Icon={BookIcon}
+          Icon={LearnIcon}
           href="/words"
         />
-        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={SparkIcon} />
+        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={BoltIcon} />
         <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
         <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={TrophyIcon} />
       </div>

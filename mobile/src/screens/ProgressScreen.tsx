@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, FlameIcon, LearnIcon, PodiumIcon, TrophyIcon, WriteIcon } from "../ui/icons";
+import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthPanel } from "../ui/GrowthPanel";
@@ -197,7 +197,7 @@ export function ProgressScreen() {
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
             <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
-            <Stat icon={PodiumIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
+            <Stat icon={ClockIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
             <Stat icon={TrophyIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
           </View>
         ) : (

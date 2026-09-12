@@ -84,6 +84,12 @@ export const BellIcon = ({ color = "#000", size }: P) => (
 export const TrophyIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M7 4h10v4a5 5 0 01-10 0zM7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3M9 15h6M8 20h8M10 15v5M14 15v5" {...stroke(color)} /></S>
 );
+/* Süre — web `icons` `ClockIcon` ile aynı glif (daire + iki kol). İlerleme
+   ekranındaki "toplam süre" karosu `PodiumIcon` çiziyordu: kürsü SIRALAMA
+   demek, süre demek değil (bkz. web-parity §11.411). */
+export const ClockIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="8" {...stroke(color)} /><Path d="M12 7.5V12l3 2" {...stroke(color)} /></S>
+);
 export const LogoutIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M14 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2v-2M10 12h10M17 9l3 3-3 3" {...stroke(color)} /></S>
 );

@@ -24,7 +24,22 @@ export async function POST(req: Request) {
 
   const rl = await consume(`promo:${userId}`, 10, 600);
   if (!rl.ok) {
-    return NextResponse.json({ error: "rate_limited", retryAfter: rl.retryAfterSec }, { status: 429 });
+    /*
+     * SANİYE STANDART BAŞLIKTA DA GİDİYOR.
+     *
+     * Değer gövdede duruyordu (`retryAfter`) ve onu okuyan hiçbir istemci
+     * yoktu: sunucu "23 saniye sonra" diyor, iki uygulama da "biraz sonra
+     * tekrar dene" yazıyordu. Sosyal rotalar aynı bilgiyi baştan beri
+     * `retry-after` başlığıyla veriyor (`lib/social/http.ts` `fail`) ve
+     * kimlik doğrulama vekili RFC adının neden önemli olduğunu yazmış
+     * durumda (`api/auth/[...path]`: "RFC 9110'un adı `Retry-After`").
+     * Burası o iki yerden ayrışıyordu; gövdedeki alan da kalıyor çünkü
+     * istemci ona bakmayı seçebilir.
+     */
+    return NextResponse.json(
+      { error: "rate_limited", retryAfter: rl.retryAfterSec },
+      { status: 429, headers: { "retry-after": String(rl.retryAfterSec) } },
+    );
   }
 
   let code = "";

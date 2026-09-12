@@ -7488,6 +7488,143 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 286. AYNI KARO AYNI GLIFI CIZIYOR -----------------------------
+   *
+   * `progress-view` kendi yorumunda "Dort karo mobildekiyle AYNI" diyordu ve
+   * etiketler, degerler, tonlar gercekten ayniydi - ama UC karonun IKONU
+   * ayrisiyordu:
+   *
+   *   ogrenilen kelime   web `BookIcon`   <-> Android `LearnIcon`
+   *   toplam XP          web `SparkIcon`  <-> Android `BoltIcon`
+   *   toplam sure        web `ClockIcon`  <-> Android `PodiumIcon`
+   *
+   * Ucuncusu yalniz ayrisma degil, YANLIS: kursu SIRALAMA demek, sure demek
+   * degil - ve mobil ayni kursuyu profildeki "haftalik siralama" satirinda da
+   * ciziyor, yani ayni glif iki ayri anlam tasiyordu. `ClockIcon` mobilde hic
+   * yoktu; webin glifiyle birebir eklendi.
+   *
+   * XP glifi profil rozetinde de ayrisiyordu (web `SparkIcon`, Android
+   * `BoltIcon`). Ust basliktaki XP hapi OLCULMUYOR: mobilin basliginda XP
+   * hapi yok (yalniz seri), yani orada karsilastirilacak bir yuzey de yok.
+   *
+   * OLCU IKON ADI: ayni karonun iki platformdaki bileseni ayni ada sahip
+   * olacak. Ad esitligi glif esitligini garanti etmiyor ama setin kurali
+   * "ayni ad = ayni 24x24 glif" ve `check:colors`/`check:tokens` gibi ad
+   * duzeyinde tutulan oteki olculerle ayni sozlesme. */
+  {
+    const webProg = sil(read("src/components/progress-view.tsx"));
+    const mobProg = sil(read("mobile/src/screens/ProgressScreen.tsx"));
+    /* Karo = etiket anahtari; ikon o karonun ifadesinden okunuyor. */
+    const KARO = ["progress.words_learned", "progress.total_xp", "progress.time_total", "progress.level"];
+    const webIkon = (anahtar) => {
+      const i = webProg.indexOf(anahtar);
+      if (i < 0) return "KARO YOK";
+      /* KpiCard cok satirli da yazilabiliyor: ifadenin sonu bir sonraki
+         `<KpiCard` ya da kapanis. Pencere degil, ARAMA SINIRI bu. */
+      const son = webProg.indexOf("<KpiCard", i);
+      const govde = webProg.slice(i, son < 0 ? i + 600 : son);
+      return (govde.match(/Icon=\{(\w+)\}/) ?? [])[1] ?? "IKON YOK";
+    };
+    const mobIkon = (anahtar) => {
+      const i = mobProg.indexOf(anahtar);
+      if (i < 0) return "KARO YOK";
+      const bas = mobProg.lastIndexOf("<Stat ", i);
+      if (bas < 0) return "KARO YOK";
+      return (mobProg.slice(bas, i).match(/icon=\{(\w+)\}/) ?? [])[1] ?? "IKON YOK";
+    };
+    sameList(
+      "ilerleme karolarinin ikonlari",
+      KARO.map((k) => k.split(".")[1] + "=" + mobIkon(k)),
+      KARO.map((k) => k.split(".")[1] + "=" + webIkon(k)),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: sure karosu SAAT cizecek - kursu sure anlamina gelmiyor, ve
+       mobil ayni kursuyu siralama satirinda kullaniyor. */
+    sameList(
+      "sure karosu saat ciziyor",
+      ["web=" + webIkon("progress.time_total"), "mobil=" + mobIkon("progress.time_total")],
+      ["web=ClockIcon", "mobil=ClockIcon"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kursu ANLAMINI koruyor: yalniz siralamayi gosteren satirda. */
+    sameList(
+      "kursu yalniz siralamada",
+      [
+        "mobil profil=" + (/icon=\{PodiumIcon\} label=\{t\("profile\.weekly_leaderboard"\)\}/.test(sil(read("mobile/src/screens/ProfileScreen.tsx"))) ? "siralama" : "BASKA"),
+        "mobil ilerleme=" + (/\bPodiumIcon\b/.test(mobProg) ? "VAR" : "yok"),
+      ],
+      ["mobil profil=siralama", "mobil ilerleme=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* XP rozetinin glifi profil ekranlarinda da ayni. */
+    sameList(
+      "profil XP rozetinin glifi",
+      ["mobil=" + ((sil(read("mobile/src/screens/ProfileScreen.tsx")).match(/<(\w+Icon) color=\{colors\.primaryText\} size=\{16\} \/><Text variant="bodyStrong" color=\{colors\.primaryText\}>\{xpLabel\}/) ?? [])[1] ?? "YOK")],
+      ["mobil=" + ((sil(read("src/components/profile/profile-view.tsx")).match(/<(\w+Icon) size=\{16\} \/> \{formatNumber\(stats\.xp, lang\)\} XP/) ?? [])[1] ?? "YOK")],
+      "mobil",
+      "web",
+    );
+
+    /* IKON ENVANTERI: webde cizilen ama mobilde OLMAYAN bir ikon, ayni
+       yuzeyin iki platformda ayri gorunmesi demek. Liste yalniz KISALABILIR;
+       her satir bir SEBEP tasiyor. */
+    const ikonlar = (yol) => new Set([...sil(read(yol)).matchAll(/export (?:const|function) (\w*Icon)\b/g)].map((m) => m[1]));
+    const webSet = ikonlar("src/components/icons.tsx");
+    const mobSet = ikonlar("mobile/src/ui/icons.tsx");
+    const webKullanim = (() => {
+      const parcalar = [];
+      const walk = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const p = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); }
+          else if (/\.tsx?$/.test(e.name) && !/components\/icons\.tsx$/.test(p)) parcalar.push(sil(read(p)));
+        }
+      };
+      walk("src");
+      return parcalar.join("\n");
+    })();
+    /* Webde CIZILEN (cagrilan) ve mobilde olmayan ikonlar - sebepleriyle. */
+    const MOBILDE_YOK = new Map([
+      ["ArrowLeftIcon", "mobil ayni glifi `ArrowBackIcon` adiyla tasiyor (yerel adlandirma)"],
+      ["ChevronIcon", "web kelime listesinin SAYFALAMASI; mobil sonsuz kaydirma kullaniyor (`words.load_more`)"],
+      ["InfoIcon", "e-posta dogrulama seridi ve beceri sorusu ipucu - ikisi de web yuzeyi"],
+      ["LinkIcon", "acilis sayfasi ve pano metni kopyalama; mobil OS paylasim sayfasini aciyor"],
+      ["ListIcon", "web kabugunun IKINCIL gezinme grubu (Kelimeler); mobil o yollara ekrandan gidiyor"],
+      ["QuestionIcon", "web pratik sayfasinin karo basligi"],
+      ["UserIcon", "web kabugunun ikincil gezinme grubu (Profil)"],
+    ]);
+    const cizilenYok = [...webSet]
+      .filter((n) => !mobSet.has(n))
+      .filter((n) => new RegExp("\\b" + n + "\\b").test(webKullanim))
+      .filter((n) => !MOBILDE_YOK.has(n))
+      .sort();
+    sameList(
+      "webde cizilip mobilde olmayan ikon",
+      ["belgesiz=" + (cizilenYok.join("+") || "yok")],
+      ["belgesiz=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    /* Liste bayatlamasin: listede olup artik ya cizilmeyen ya da mobile
+       gelmis bir ad varsa listeden dusecek. */
+    const bayat = [...MOBILDE_YOK.keys()]
+      .filter((n) => mobSet.has(n) || !new RegExp("\\b" + n + "\\b").test(webKullanim))
+      .sort();
+    sameList(
+      "ikon listesi bayat degil",
+      ["bayat=" + (bayat.join("+") || "yok")],
+      ["bayat=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 285. SINAVI BASTAN KURAN TEK YER -------------------------------
    *
    * 284'un tekrar dugmesi eklenirken ROL YAPMA SINAVINDA duran bir kusur
