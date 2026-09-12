@@ -7469,6 +7469,69 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 265. ENTER TUSUNUN ADI VE ISI ---------------------------------
+   *
+   * Android on alti metin alaninda `returnKeyType` diyor: klavyenin
+   * kosesindeki tusun uzerinde "Git" ya da "Bitti" yaziyor. Webde
+   * `enterKeyHint` HIC KULLANILMAMISTI - telefon tarayicisinda (web
+   * trafiginin cogu) ayni alanda jenerik bir donus oku duruyordu.
+   *
+   * Ve bir yerde tusun ISI de eksikti: PROMO KODU kutusu bir `<form>` icinde
+   * degil ve hicbir tus dinleyicisi yoktu. Kodu yazip Enter'a basan
+   * kullanicida HICBIR SEY olmuyordu - ne uygulaniyor ne bir sey soyleniyor.
+   * Android ayni kutuda `onSubmitEditing` ile uyguluyor (`PaywallScreen`).
+   *
+   * Geri kalan alanlarda Enter'in ISI zaten esitti: webde `<form>` icindeki
+   * alan gonderiyor, `game/rounds` ve `skillQuiz` karsiliklarinda da
+   * gonderiyor; "done" diyen alanlarda iki taraf da yalniz klavyeyi
+   * kapatiyor. Olculen sey o yuzden TUSUN ADI. */
+  {
+    /* Alanin sahibi dosya duzeyinde eslesiyor; deger Android'in kendi
+       `returnKeyType`i. */
+    const ALAN = [
+      ["iki adimli dogrulama", "src/components/account/two-factor.tsx", "mobile/src/ui/TwoFactor.tsx"],
+      ["parola degistirme", "src/components/account/change-password.tsx", "mobile/src/ui/ChangePassword.tsx"],
+      ["parola sifirlama", "src/components/reset-password-form.tsx", "mobile/src/screens/ResetPasswordScreen.tsx"],
+      ["giris", "src/components/auth-form.tsx", "mobile/src/screens/AuthScreen.tsx"],
+      ["kullanici adi", "src/components/social/social-settings.tsx", "mobile/src/screens/SocialSettingsScreen.tsx"],
+      ["gorunen ad", "src/components/profile-form.tsx", "mobile/src/screens/SettingsScreen.tsx"],
+      ["promo kodu", "src/components/premium-paywall.tsx", "mobile/src/screens/PaywallScreen.tsx"],
+      ["kelime aramasi", "src/components/word-list.tsx", "mobile/src/screens/WordsScreen.tsx"],
+      ["hesap silme", "src/components/account-delete-form.tsx", "mobile/src/screens/DeleteAccountScreen.tsx"],
+      ["deneme sinavi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      ["kisi aramasi", "src/components/social/find.tsx", "mobile/src/social/Find.tsx"],
+      ["beceri sorusu", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
+    ];
+    const adlar = (src, desen) => [...new Set([...src.matchAll(desen)].map((m) => m[1]))].sort().join("+") || "YOK";
+    sameList(
+      "enter tusunun adi",
+      ALAN.map(([ad, , m]) => ad + "=" + adlar(sil(read(m)), /returnKeyType="(\w+)"/g)),
+      ALAN.map(([ad, w]) => ad + "=" + adlar(sil(read(w)), /enterKeyHint="(\w+)"/g)),
+      "mobil",
+      "web",
+    );
+
+    /* Promo kutusunda Enter'in ISI de var mi - ad tek basina yetmez. */
+    const promo = sil(read("src/components/premium-paywall.tsx"));
+    sameList(
+      "promo kodunda enter uyguluyor",
+      ["web=" + (/e\.key !== "Enter"/.test(promo) && /apply\(\);/.test(promo) ? "uyguluyor" : "OLU")],
+      ["web=uyguluyor"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: tur cevabi alanlari da adini soyluyor (Android `rounds.tsx`). */
+    const TUR = ["src/components/games/cloze-game.tsx", "src/components/games/typing-game.tsx"];
+    sameList(
+      "tur cevabi alanlarinin enter adi",
+      TUR.map((y) => y.split("/").pop() + "=" + (/enterKeyHint="done"/.test(sil(read(y))) ? "done" : "YOK")),
+      TUR.map((y) => y.split("/").pop() + "=done"),
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 264. HANGI OLAY HANGI PLATFORMDA AKIYOR ------------------------
    *
    * `test:events` her olayin SOZLUKTE oldugunu dogruluyordu ama hangi
