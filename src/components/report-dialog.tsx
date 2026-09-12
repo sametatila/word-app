@@ -115,16 +115,39 @@ export function ReportDialog({
                     onClick={() => setReason(r.key)}
                     role="radio"
                     aria-checked={active}
-                    className="pressable w-full rounded-card p-3 text-left"
+                    /* HALKA DA VAR, YALNIZ RENK DEĞİL. Android aynı listede
+                       satırın sağına gerçek bir radyo halkası çiziyor
+                       (`ui/ReportSheet`: 20 piksel kutu, 2 piksel kenarlık,
+                       seçiliyken 9 piksellik dolu nokta); web yalnız satırın
+                       kenarlığını ve zeminini renklendiriyordu, yani seçim
+                       tek kanaldan - RENKTEN - okunuyordu. Zemin de artık
+                       ortak jetondan (`--brand-soft`, Android `primarySoft`
+                       ile aynı değer). */
+                    className="pressable flex w-full items-center gap-3 rounded-card p-3 text-left"
                     style={{
                       border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
-                      background: active ? "color-mix(in srgb, var(--color-brand-500) 10%, transparent)" : "var(--surface)",
+                      background: active ? "var(--brand-soft)" : "var(--surface)",
                     }}
                   >
-                    <span className="block text-strong" style={active ? { color: "var(--color-brand)" } : undefined}>
-                      {r.label}
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-strong" style={active ? { color: "var(--color-brand)" } : undefined}>
+                        {r.label}
+                      </span>
+                      <span className="muted block text-caption">{r.sub}</span>
                     </span>
-                    <span className="muted block text-caption">{r.sub}</span>
+                    <span
+                      aria-hidden
+                      className="flex shrink-0 items-center justify-center rounded-full"
+                      style={{
+                        width: 20,
+                        height: 20,
+                        border: `2px solid ${active ? "var(--color-brand)" : "var(--border)"}`,
+                      }}
+                    >
+                      {active ? (
+                        <span className="block rounded-full" style={{ width: 9, height: 9, background: "var(--color-brand)" }} />
+                      ) : null}
+                    </span>
                   </button>
                 </li>
               );

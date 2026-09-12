@@ -18201,3 +18201,33 @@ yani göreli olarak daha küçük bir simge. Web'in iki boyu da orana getirildi
 
 Kapı **§352** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): işaretin boyu,
 hoparlörün üç jetonunun rolü (zemin/mürekkep/kenarlık) ve ikon/kutu oranı.
+
+## §11.500 — Kenarlık kalınlıkları ve rapor listesinin eksik halkası
+
+Kenarlık kalınlıklarını taradım: mobilde 1 (59 yer), 1.5 (53), 2 (16), 3 (3).
+Eşli yüzeylerin çoğu zaten tutuyordu — kart 1, oyun şıkkı 1.5, çip 1.5 — ve
+mobildeki 2'lerin neredeyse hepsi **seçim satırları**.
+
+**Rapor listesi gerçek bir fark çıktı.** Android satırın sağına bir radyo
+halkası çiziyor (`ui/ReportSheet`: 20 piksellik kutu, 2 piksel kenarlık,
+seçiliyken 9 piksellik dolu nokta); web yalnız satırın kenarlığını ve zeminini
+renklendiriyordu — yani seçim **tek kanaldan, renkten** okunuyordu. Halka
+eklendi (aynı üç sayı), ve seçili zemin ad hoc bir %10 karışım yerine ortak
+jetona bağlandı (`--brand-soft`, Android `primarySoft` ile aynı değer).
+
+**Ödeme ekranının plan kartı bu ölçünün dışında:** Android'de plan **seçiliyor**
+(radyo halkası + 2 piksel kenarlık), web'de seçilecek bir şey yok — web'in ödeme
+akışı hiç yok, sayfa bilgilendirme (bkz. §11.499). Web'in `border` (1px) fiyat
+kartı ile Android'in 2 pikselli plan satırı aynı denetim değil; ölçü onları
+karşılaştırmıyor ve sebebi kapının içinde yazılı.
+
+Kapı **§353** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): eşli üç yüzeyin
+kenarlık kalınlığı, rapor halkasının üç sayısı, seçili zeminin ortak jetondan
+gelmesi.
+
+**Ölçünün kendi iki hatası** (ikisi de ilk çalıştırmada çıktı): (1) `.option`
+CSS'te **iki** blokta tanımlı (biri yalnız `touch-action`) ve ilk bloğa bakan
+yazım web'de "YOK" okuyordu; artık kenarlık **yazan** blok aranıyor. (2) Mobil
+tarafta şıkkın kenarlığını ararken dosyanın ilk `borderWidth`ini alıyordum ve o
+soru **kartına** aitti (1), şıkka değil (1.5) — şık satırı
+`justifyContent: "space-between"` ile ayrışıyor.

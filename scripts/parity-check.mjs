@@ -20818,6 +20818,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 353. KENARLIK KALINLIKLARI VE RAPOR LISTESININ HALKASI
+ *
+ * Kenarlik kalinliklarini taradim: mobilde 1 (elli dokuz), 1.5 (elli uc),
+ * 2 (on alti), 3 (uc). Esli yuzeylerin cogu zaten tutuyordu - kart 1,
+ * oyun sikki 1.5, cip 1.5 - ve mobildeki 2'lerin cogu SECIM satirlari.
+ *
+ * Bir gercek fark cikti: RAPOR LISTESI. Android satirin sagina gercek bir
+ * radyo halkasi ciziyor (`ui/ReportSheet`: 20 piksellik kutu, 2 piksel
+ * kenarlik, seciliyken 9 piksellik dolu nokta); web yalniz satirin
+ * kenarligini ve zeminini renklendiriyordu, yani secim TEK KANALDAN -
+ * renkten - okunuyordu. Zemin de ad hoc bir %10 karisimdi; Android'in
+ * `primarySoft`u webde zaten `--brand-soft` olarak duruyor.
+ *
+ * ODEME EKRANININ plan karti BU OLCUNUN DISINDA: Android'de plan SECILIYOR
+ * (radyo halkasi + 2 piksel kenarlik), webde secilecek bir sey yok - webin
+ * odeme akisi hic yok, sayfa bilgilendirme. Ayni sebeple `purchase_start`
+ * ve `purchase_done` da yalniz mobilde (bkz. 11.499).
+ *
+ * Olcu: esli uc yuzeyin kenarlik kalinligi + rapor halkasinin uc sayisi. */
+{
+  const silK = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const css = silK(read("src/app/globals.css"));
+  /* BIR SINIFIN BIRDEN COK BLOGU OLABILIR: `.option` iki yerde tanimli
+     (biri yalniz `touch-action`, oteki kenarligi tasiyan). Ilk blogu alan
+     yazim webde "YOK" okuyordu - kapinin kendi okumasi. Kenarlik YAZAN blok
+     araniyor. */
+  const webKal = (ad) => {
+    for (const m of css.matchAll(new RegExp("\\." + ad + " \\{([^}]*)\\}", "g"))) {
+      const k = m[1].match(/border:\s*([\d.]+)px/);
+      if (k) return k[1];
+    }
+    return "YOK";
+  };
+  const mobKal = (yol, desen) => ((silK(read(yol)).match(desen) ?? [])[1] ?? "YOK");
+  sameList(
+    "esli yuzeylerin kenarlik kalinligi",
+    [
+      "kart=" + mobKal("mobile/src/ui/Card.tsx", /borderWidth: ([\d.]+)/),
+      /* SIKKIN kenarligi - KARTIN degil. ChoiceGame'de once soru KARTI
+         geliyor (`borderWidth: 1`) ve ilk eslesmeye bakan yazim onu
+         okuyordu; sik satiri `justifyContent: "space-between"` ile
+         ayrisiyor. */
+      "sik=" + mobKal("mobile/src/game/ChoiceGame.tsx", /justifyContent: "space-between"[^}]*borderWidth: ([\d.]+)/),
+      "cip=" + mobKal("mobile/src/ui/Chip.tsx", /borderWidth: ([\d.]+)/),
+    ],
+    ["kart=" + webKal("card"), "sik=" + webKal("option"), "cip=" + webKal("chip")],
+    "mobil",
+    "web",
+  );
+
+  /* Rapor listesinin halkasi: kutu, kenarlik, nokta - uc sayi da ayni. */
+  const mobRapor = silK(read("mobile/src/ui/ReportSheet.tsx"));
+  const webRapor = silK(read("src/components/report-dialog.tsx"));
+  const mobHalka = mobRapor.match(/width: 20, height: 20, borderRadius: 10, borderWidth: (\d+)[\s\S]{0,200}?width: (\d+), height: \d+, borderRadius: \d+, backgroundColor/);
+  const webHalka = webRapor.match(/width: 20,\s*height: 20,\s*border: `(\d+)px[\s\S]{0,300}?width: (\d+), height: \d+, background/);
+  sameList(
+    "rapor listesinin radyo halkasi",
+    ["kutu=20 kenarlik=" + (mobHalka?.[1] ?? "YOK") + " nokta=" + (mobHalka?.[2] ?? "YOK")],
+    ["kutu=20 kenarlik=" + (webHalka?.[1] ?? "YOK") + " nokta=" + (webHalka?.[2] ?? "YOK")],
+    "mobil",
+    "web",
+  );
+  /* Secili zemin iki tarafta da ORTAK jetondan: Android `primarySoft`,
+     webde onun degerini tasiyan `--brand-soft`. */
+  sameList(
+    "rapor satirinin secili zemini",
+    ["zemin=" + (/backgroundColor: active \? colors\.primarySoft/.test(mobRapor) ? "marka tinti" : "BASKA")],
+    ["zemin=" + (/background: active \? "var\(--brand-soft\)"/.test(webRapor) ? "marka tinti" : "BASKA")],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
