@@ -291,6 +291,16 @@ jobs:
         run: |
           npm run check:unitvocab
           npm run check:en-unitvocab
+      # PATİKA BÜTÇESİ — aynı desen ama İKİ YÖNLÜ. Burada iki ölçü var ve
+      # zıt yönlerde iyi oluyorlar: `bosluk` bir BORÇ (kurs metninde geçip
+      # hiçbir derste öğretilmeyen sözcük sayısı) ve büyüyemez; `kapsam` bir
+      # KAZANÇ (patikanın havuzu öğretme oranı) ve DÜŞEMEZ. Kazancı tavanla
+      # korumak saçma olurdu — "kapsamı artırma" diyen bir kapı. İkisi aynı
+      # taban dosyasında duruyor ki bir seviyenin borcu ile kazancı yan yana
+      # okunsun. Kapı iki yönde de sınandı: tavan düşürülünce `87 > 85`,
+      # zemin yükseltilince `98 < 99 (DÜŞTÜ)`. İki saniye sürüyor.
+      - name: Patika bütçesi
+        run: npm run check:pathgap
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler

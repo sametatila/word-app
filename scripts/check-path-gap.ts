@@ -36,6 +36,8 @@ import { lessonsFor } from "../src/lib/lessons/index";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { germanSurface, englishSurface, type LooseExercise } from "./lib/skill-surface";
 import { enStems, LEVELS } from "./lib/en-gate";
+// Bütçe deseni: iki yön birden — borç büyüyemez, kapsam düşemez. Gerekçe `lib/budget.ts`de.
+import { butceUygula, butceBitir } from "./lib/budget";
 
 const require = createRequire(import.meta.url);
 const { kokAra, SERBEST } = require("./lib/vocab-gate.cjs") as {
@@ -168,8 +170,12 @@ function yuvaMuhasebesi(kurs: Kurs) {
   }
 }
 
-const arg = (process.argv[2] ?? "").toLowerCase();
+const argv = process.argv.slice(2);
+const tabanYaz = argv.includes("--baseline");
+const arg = (argv.find((a) => !a.startsWith("--")) ?? "").toLowerCase();
 const kurslar: Kurs[] = arg === "en" || arg === "de" ? [arg as Kurs] : ["de", "en"];
+const TABAN = "data/content/pathgap-baseline.json";
+const sayim = new Map<string, number>();
 
 for (const kurs of kurslar) {
   const hv = havuz(kurs);
@@ -185,13 +191,24 @@ for (const kurs of kurslar) {
       .map((w) => [w, kul.get(w) ?? 0] as const)
       .filter(([, n]) => n > 0)
       .sort((a, b) => b[1] - a[1]);
+    const kapsam = Math.round((ogretilen.length / seviyeHavuz.length) * 100);
     console.log(
-      `  ${lv.toUpperCase()}  havuz ${String(seviyeHavuz.length).padStart(4)} · patika öğretiyor ${String(ogretilen.length).padStart(4)} (%${((ogretilen.length / seviyeHavuz.length) * 100).toFixed(0)})` +
+      `  ${lv.toUpperCase()}  havuz ${String(seviyeHavuz.length).padStart(4)} · patika öğretiyor ${String(ogretilen.length).padStart(4)} (%${kapsam})` +
       ` · hiç öğretilmeyen ${String(bosluk.length).padStart(4)}, bunların ${kullanilan.length}'i kurs metinlerinde GEÇİYOR`,
     );
+    /* İki ölçü, iki yön. `bosluk` bir BORÇ: metinde geçip hiç öğretilmeyen
+       sözcük sayısı büyüyemez. `kapsam` bir KAZANÇ: patikanın havuzu öğretme
+       oranı düşemez. Yüzde tam sayıya yuvarlanıyor, yoksa bir dersin tek
+       sözcüğü ondalıkta gezinip kapıyı gereksiz yere kırmızı yakardı. */
+    sayim.set(`${kurs} ${lv} bosluk`, kullanilan.length);
+    sayim.set(`${kurs} ${lv} kapsam`, kapsam);
     if (kullanilan.length) {
       console.log(`      önce bunlar (sayım kurs geneli): ${kullanilan.slice(0, 15).map(([w, n]) => `${w}×${n}`).join(" · ")}`);
     }
   }
   yuvaMuhasebesi(kurs);
 }
+/* Kapı yalnız İKİ kurs birden ölçülünce anlamlı: tek kursla taban yazmak
+   ötekinin tavanını sıfırlar, kapsamını da siler. */
+if (arg) process.exit(0);
+process.exit(butceBitir(butceUygula(TABAN, sayim, tabanYaz, (k) => k.endsWith("kapsam")), "npm run check:pathgap"));

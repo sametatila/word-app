@@ -30,8 +30,22 @@ export type Butce = { asildi: string[]; yazildi: boolean };
 /**
  * `sayim` bugünkü etiket→sayı haritası. `yaz` true ise taban dosyasına
  * yazılır; değilse tabana göre AŞANLAR döner (boşsa kapı yeşil).
+ *
+ * `zeminMi` verilirse o etiketler TERS yönde ölçülür: sayı DÜŞEMEZ.
+ * Bazı ölçüler iyi yönde büyüyor — patika kapsamı (%84) bir borç değil bir
+ * kazanç, ve onu tavanla korumak saçma olurdu ("kapsamı artırma" diyen bir
+ * kapı). Aynı dosyada iki yön tutmak, ölçüyü ikiye bölüp iki taban dosyası
+ * açmaktan iyi: bir seviyenin borcu ile kazancı yan yana okunuyor.
+ *
+ * Yeni etiketin tavanı sıfır (yani hiç görünmemeli), zemini ise yok sayılır —
+ * bugün ölçülmeyen bir kapsamı "düşmüş" saymak yanlış olurdu.
  */
-export function butceUygula(dosya: string, sayim: Map<string, number>, yaz: boolean): Butce {
+export function butceUygula(
+  dosya: string,
+  sayim: Map<string, number>,
+  yaz: boolean,
+  zeminMi?: (etiket: string) => boolean,
+): Butce {
   if (yaz) {
     const obj = Object.fromEntries([...sayim].sort(([a], [b]) => a.localeCompare(b)));
     writeFileSync(dosya, JSON.stringify(obj, null, 2) + "\n");
@@ -41,6 +55,11 @@ export function butceUygula(dosya: string, sayim: Map<string, number>, yaz: bool
   const taban = JSON.parse(readFileSync(dosya, "utf8")) as Record<string, number>;
   const asildi: string[] = [];
   for (const [etiket, n] of sayim) {
+    if (zeminMi?.(etiket)) {
+      const zemin = taban[etiket];
+      if (zemin !== undefined && n < zemin) asildi.push(`${etiket}: ${n} < ${zemin} (DÜŞTÜ)`);
+      continue;
+    }
     const tavan = taban[etiket] ?? 0;
     if (n > tavan) asildi.push(`${etiket}: ${n} > ${tavan}`);
   }
