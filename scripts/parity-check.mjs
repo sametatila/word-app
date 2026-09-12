@@ -7469,6 +7469,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 262. BASMA OLCEGI TEK SAYI ------------------------------------
+   *
+   * 261'in kardesi: ayni JEST ekranin her yerinde ayni gucte cevap vermeli.
+   * Mobilde dokunulabilir HER sey basinca 0.96'ya iniyor - kart, liste
+   * satiri, karo, cip, sik, dugme - cunku hepsi tek bir `PressableScale`tan
+   * geciyor. Webde ise ALTI ayri deger vardi:
+   *   CSS: `.btn` 0.97, `.pressable` 0.96, `.option` 0.985, `.chip` 0.95
+   *   framer-motion `whileTap`: 0.9, 0.92, 0.93, 0.94
+   * Ayni parmak hareketi ekranin alti yerinde alti farkli guclu cevap
+   * veriyordu ve hicbiri yaziliydi degildi. Hepsi `--press-scale: 0.96`a
+   * baglandi.
+   *
+   * IKINCI VE DAHA CIDDI OLGU: "hareketi azalt" tercihi bunlardan yalniz
+   * BIRINI kapatiyordu (`.pressable`). Ustteki `transition-duration: 0.01ms`
+   * olcegi KALDIRMIYOR, ANINDA yapiyor - yani dugme, cip ve sik basili
+   * tutuldugu surece sicrayarak kucuk duruyordu. Android'de `PressableScale`
+   * tercihi okuyup yayi hic baslatmiyor ve bu her dokunulabilir sey icin
+   * gecerli. Dordu de bloga alindi. */
+  {
+    const css = sil(read("src/app/globals.css"));
+    /* Jeton var ve degeri Android'inki. */
+    const ps = sil(read("mobile/src/ui/PressableScale.tsx"));
+    const mobDeger = (ps.match(/toValue: (0\.\d+)/) ?? [])[1] ?? "yok";
+    const webDeger = (css.match(/--press-scale:\s*(0\.\d+);/) ?? [])[1] ?? "yok";
+    sameList(
+      "basma olcegi tek sayi",
+      ["deger=" + mobDeger],
+      ["deger=" + webDeger],
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: CSS'te ham basma olcegi kalmadi - hepsi jetondan. */
+    const hamCss = [];
+    for (const m of css.matchAll(/:active[^{]*\{[^}]*transform:\s*scale\(([^)]+)\)/g)) {
+      if (!/--press-scale/.test(m[1])) hamCss.push("css:" + m[1]);
+    }
+    /* MUTLAK: `whileTap` olcekleri de tek sayi. */
+    const walkTsx262 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx262(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const hamTap = [];
+    for (const f of [...walkTsx262("src/app"), ...walkTsx262("src/components")]) {
+      for (const m of sil(read(f)).matchAll(/whileTap=\{\{\s*scale:\s*([\d.]+)/g)) {
+        if (m[1] !== "0.96") hamTap.push(f.split("/").pop() + ":" + m[1]);
+      }
+    }
+    const sapan = [...hamCss, ...new Set(hamTap)];
+    sameList(
+      "basma olceginde sapan deger",
+      sapan.length ? sapan : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: hareketi azalt DORDUNU DE kapatiyor. */
+    const blok = css.slice(css.indexOf("@media (prefers-reduced-motion: reduce)"));
+    const SECICI = [".pressable:active", ".btn:active", ".chip:active", ".option:active:not(:disabled)"];
+    sameList(
+      "hareketi azalt basma olcegini kapatiyor",
+      SECICI.map((x) => x + "=" + (blok.includes(x) ? "kapali" : "ACIK")),
+      SECICI.map((x) => x + "=kapali"),
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 261. DEVRE DISI OLMAK TEK BIR SONUKLUK ------------------------
    *
    * Ayni durum uygulamanin her yerinde ayni gucte okunmali. Olcum bunun
