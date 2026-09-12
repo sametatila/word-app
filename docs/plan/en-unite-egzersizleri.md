@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
-| C1 | 16–25 | bekliyor |
+| C1 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
+| C1 | 19–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1574,6 +1574,68 @@ kullanıyor. Bir de budama sırasının önemi bir kez daha çıktı: çok
 sözcüklü kendi maddemi („neither of them“) sildiğimde kapının o güne dek
 kapalı saydığı tek sözcük („neither“) açığa çıktı; budamadan sonra kapı
 mutlaka yeniden koşulmalı.
+
+
+Ünite 16'nın noktası FİİL + SIFAT YÜKLEMİ. „The barren fields lie
+fallow“ — fiil „be“ değil ve anlamını yitirmemiş: duruşu fiil, durumu
+sıfat taşıyor, ve ikisi ayrı sözcük. İngilizcede bunun bir atölyesi var:
+stand empty, run dry, fall silent, come loose, go hungry, lie idle. Bunlar
+tek tek ezberlenecek kalıplar değil; desen üretken, yazar bu öğleden sonra
+yenisini kurup („stand vacant“, „fall quiet“) ilk okuyuşta anlaşılabiliyor.
+İki küçük sınama iki sözcüğün gerçekten iki olduğunu gösteriyor: araya
+belirteç sokulabiliyor („lie completely fallow“) ve sıfatın önüne derece
+sözcüğü konabiliyor („stand almost empty“) — hiçbiri tek bir sözcüğün
+içinde olamazdı. Yeniden ölçüm bu kursun alışılmış yönünün TERSİ: Almanca
+aynı iki fikri tek fiile kaynaştırıyor — bitişik yazılan, birlikte çekilen,
+sözlükte tek madde olan bir sözcük. Yani burada parçaları ayrı tutan
+İngilizce, bileştiren Almanca, ve bu isimlerde olanın tam tersi. Ölçü:
+**BİLEŞTİRME ALIŞKANLIĞI DİLİN BÜTÜNÜNÜN DEĞİL SINIFIN ÖZELLİĞİ.**
+Öğrenen için sonucu simetrik ve acı: Almanca konuşan „stand vacant“ı
+sözlükte arayamayacağını, İngilizce konuşan ise Almanca karşılığının
+sözlükte DURDUĞUNU ve yenisinin öylece uydurulamayacağını kabul etmek
+zorunda.
+
+Ünite 17'nin noktası „NO“ İLE „NOT“ ARASINDAKİ SEÇİM. „No“ bir
+belirleyici: ismin önüne geçip bütün TÜRÜ yadsıyor. „Not“ cümle
+olumsuzlayıcısı: „have“ gibi bir fiille küçük yardımcı fiile gerek duyuyor
+ve yadsıdığı şey bu ÖRNEĞİN burada olduğu. „We have no factory farming
+here“ böyle bir şeyin türce bulunmadığını söylüyor ve tek bir ahır
+gösterilerek yanıtlanabiliyor; „we do not have factory farming here“ ise
+burada olanın o olmadığını söylüyor ve öyle yanıtlanamıyor. Almancanın tek
+bir olumsuz belirleyicisi var ve ikisini birden karşılıyor, hiçbir seçim
+taşımıyor. Ölçü ters yönlü bir uyarı: **REFLEKS TEK BİÇİM OLDUĞU İÇİN
+ALMANCA KONUŞAN HER SEFERİNDE „NO“YA UZANIYOR VE İNGİLİZCENİN SESSİZ
+OLANINI KULLANACAKKEN VURGULU OLANA DÜŞÜYOR** — yanlış olan eksik bir
+sözcük değil, var olan ve bir beden fazla yüksek bir sözcük, ve hiçbir şeyi
+yanlış olmadığı için kimse düzeltmiyor. Bu ünite ayrıca seviyenin bir
+bilmecesini kapatıyor: „We have no deviance here“ (ünite 12), „We have no
+formation of elites here“ (ünite 15) ve buradaki üçüncüsü hep aynı biçim,
+ve her seferinde cümle devam edip şeyi başka bir adla kabul ediyor — çünkü
+„no“ türü yadsıyor, dolayısıyla ikinci yarı örneği kabul etmekte serbest
+ve iki yarı çelişmiyor.
+
+Ünite 18'in noktası ÖNEKLE FİİL TÜRETME. „They reforest the hillside; the
+plain, they deforest“ — „forest“ bir isim, İngilizce önüne bir hece koyup
+ondan iki kez fiil yapmış, ve iki hece ters yönlere çekiyor: biri geri
+koyuyor, öteki alıp götürüyor, ve sözcüğün başka hiçbir yeri değişmemiş.
+Bu, dilin en üretken makinelerinden biri ve bütün bir alan sözcük
+dağarcığının on yılda kurulabilmesinin nedeni: decouple, decarbonize,
+renaturalize, rewild. Almanca da isimden fiil yapıyor ve önek de
+kullanıyor, ama ÇİFT SAĞ KALMIYOR — ormanı geri koymak ile almak için
+çoğunlukla ayrı kökler kullanılıyor, dolayısıyla Alman okur iki olağan
+fiille karşılaşıyor ve hiçbirinde ötekinin karşıtı olduğunu söyleyen bir iz
+yok. Ölçü: **İNGİLİZCE İLİŞKİYİ SÖZCÜĞÜN İÇİNE KOYUYOR, ORADA
+GÖRÜLEBİLİYOR; ALMANCA DIŞARIDA BIRAKIYOR, ORADA BİLİNMESİ GEREKİYOR** —
+çift dünyada var, sözcükte yok. Kazancın bedeli de burada adlandırıldı:
+böyle kurulan bir sözcük yerleşik bir sürecin adı gibi görünüyor;
+„decarbonization“ bir makalede uydurulmuş bir isim olarak doğdu, şimdi
+yasada geçiyor, ve biçiminde bunu kimsenin yapıp yapmadığını söyleyen
+hiçbir şey yok — sözcüğü sökebilen okur, sözcüğün bir yapısı olduğu için
+şeyin bir yöntemi olduğuna inanmaya ayartılıyor.
+
+Ölçüm bu turda yüz bir sözlükçe maddesi ekletti ve yirmi sekiz maddeyi
+sildirdi; üç soru yüzeyi yeniden yazıldı. Tur boyunca tek bir tireli terim
+bile metne girmedi — kural artık yazarken çalışıyor, ölçerken değil.
 
 
 ## Tamamlanma ölçütü

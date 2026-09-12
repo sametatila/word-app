@@ -1,0 +1,312 @@
+[
+ {
+  "tr": "Önek kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Präfixkarte aus."
+ },
+ {
+  "tr": "Olumsuzlama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Verneinungskarte aus."
+ },
+ {
+  "tr": "Fiil artı sıfat kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zu Verb plus Adjektiv aus."
+ },
+ {
+  "tr": "Duruş fiilde, durum sıfatta; araya belirteç sokulabiliyor; kalıp üretken; Almanca aynı ikiliyi tek fiile kaynaştırıyor.",
+  "kind": "form.facts",
+  "de": "Die Haltung steckt im Verb, der Zustand im Adjektiv; dazwischen lässt sich ein Adverb schieben; das Muster ist produktiv; das Deutsche verschmilzt dasselbe Paar zu einem einzigen Verb."
+ },
+ {
+  "tr": "Tek gövdeye iki önek takılıyor; kalıp üretken; Almancada çift ayrı köklerden geldiği için görünmüyor; bedeli sözcüğün yerleşik bir süreç gibi durması.",
+  "kind": "form.facts",
+  "de": "An einen Stamm werden zwei Präfixe gehängt; das Muster ist produktiv; im Deutschen bleibt das Paar unsichtbar, weil es aus verschiedenen Wurzeln kommt; der Preis dafür ist, dass das Wort wie ein etablierter Vorgang aussieht."
+ },
+ {
+  "tr": "„No“ ismin önünde durup türü yadsıyor; „not“ cümleyi olumsuzluyor ve yardımcı fiile gerek duyuyor; Almanca tek belirleyiciyle geçiyor; hata eksik sözcük değil, bir beden fazla yüksek sözcük.",
+  "kind": "form.facts",
+  "de": "„No“ steht vor dem Nomen und verneint die ganze Art; „not“ verneint den Satz und braucht das Hilfsverb; das Deutsche kommt mit einem einzigen Determinativ aus; der Fehler ist kein fehlendes Wort, sondern ein Wort, das eine Nummer zu laut ist."
+ },
+ {
+  "tr": "Mera gürdü; ahır, daha az.",
+  "kind": "build.tr",
+  "de": "Die Weide war üppig; der Stall weniger."
+ },
+ {
+  "tr": "Yağış düştü; hasat düşmedi.",
+  "kind": "build.tr",
+  "de": "Der Niederschlag fiel; die Ernte nicht."
+ },
+ {
+  "tr": "Planda arazi tüketimi, köyde ekili bir arazi.",
+  "kind": "build.tr",
+  "de": "Im Plan ist es Flächenverbrauch, im Dorf ein Acker."
+ },
+ {
+  "tr": "Dünya piyasa fiyatı bir üretici fiyatı değildir.",
+  "kind": "build.tr",
+  "de": "Ein Weltmarktpreis ist kein Erzeugerpreis."
+ },
+ {
+  "tr": "Yukarıdaki iklime uyum aşağıda iklim adaleti oluyor.",
+  "kind": "build.tr",
+  "de": "Die oben genannte Klimaanpassung wird unten zur Klimagerechtigkeit."
+ },
+ {
+  "tr": "Kıraç tarlalar atıl duruyor; harap ambarlar durmuyor.",
+  "kind": "build.tr",
+  "de": "Die kargen Felder liegen brach; die baufälligen Scheunen nicht."
+ },
+ {
+  "tr": "Tarım sübvansiyonu olmasa tarımsal dönüşüm tıkanırdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Agrarsubvention, würde die Agrarwende stocken."
+ },
+ {
+  "tr": "Broşürde emisyon azaltma, çalışmada karbonsuzlaştırma.",
+  "kind": "build.tr",
+  "de": "In der Broschüre ist es Emissionsminderung, in der Studie Dekarbonisierung."
+ },
+ {
+  "tr": "İklim nötrlüğü bir dengedir; iklim nötr bir etikettir.",
+  "kind": "build.tr",
+  "de": "Klimaneutralität ist eine Bilanz; klimaneutral ist ein Etikett."
+ },
+ {
+  "tr": "Süt kotası, dediler, ve küçük çiftlik için epeyce iyi.",
+  "kind": "build.tr",
+  "de": "Die Milchquote, sagten sie, und ziemlich gut für den kleinen Hof."
+ },
+ {
+  "tr": "Toprak erozyonu tarlayı pekâlâ bir kuşakta tüketebilir.",
+  "kind": "build.tr",
+  "de": "Die Bodenerosion kann das Feld durchaus in einer Generation aufzehren."
+ },
+ {
+  "tr": "Türlerin yok oluşunu sayıyoruz; permafrostu saymıyoruz.",
+  "kind": "build.tr",
+  "de": "Das Artensterben zählen wir; den Permafrost nicht."
+ },
+ {
+  "tr": "Gıda egemenliği tarım reformunun yerel olmasını talep eder.",
+  "kind": "build.tr",
+  "de": "Die Ernährungssouveränität verlangt, dass die Agrarreform örtlich sei."
+ },
+ {
+  "tr": "Burada endüstriyel hayvancılık yok; türüne uygun barınak var.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine Massentierhaltung; wir haben artgerechte Haltung."
+ },
+ {
+  "tr": "Fiyat oynaklığı ölçülür; serbest ticaret anlaşması imzalanır.",
+  "kind": "build.tr",
+  "de": "Preisvolatilität wird gemessen; ein Freihandelsabkommen wird unterzeichnet."
+ },
+ {
+  "tr": "Toprak gaspının yaptığı şey bir toprak talebini giydirmektir.",
+  "kind": "build.tr",
+  "de": "Was das Landgrabbing tut, ist einen Gebietsanspruch einzukleiden."
+ },
+ {
+  "tr": "Bir bölge ithalata bağımlıysa hiçbir önlem her alanda işlemez.",
+  "kind": "build.tr",
+  "de": "Wo eine Region importabhängig ist, wirkt keine Maßnahme auf ganzer Linie."
+ },
+ {
+  "tr": "Yamacı yeniden ağaçlandırıyorlar; ovayı ormansızlaştırıyorlar.",
+  "kind": "build.tr",
+  "de": "Den Hang forsten sie auf; die Ebene holzen sie ab."
+ },
+ {
+  "tr": "Aşırı sömürünün yaptığı şey kirletici madde yükünü gizlemektir.",
+  "kind": "build.tr",
+  "de": "Was die Übernutzung tut, ist die Schadstofffracht zu verbergen."
+ },
+ {
+  "tr": "Buna bilgi aktarımı demek agronomik danışmanlık demek değildir.",
+  "kind": "build.tr",
+  "de": "Es Wissenstransfer zu nennen heißt nicht, es agronomische Beratung zu nennen."
+ },
+ {
+  "tr": "Agroekolojiyi ne kadar övsek de şehri tek ürün tarımı doyuruyor.",
+  "kind": "build.tr",
+  "de": "So sehr wir die Agrarökologie loben, die Monokultur ernährt die Stadt."
+ },
+ {
+  "tr": "Yöntem, toprağı koruyan olsa da, toprak verimliliğini onarmıyor.",
+  "kind": "build.tr",
+  "de": "Die Methode stellt, wenn auch bodenschonend, die Bodenfruchtbarkeit nicht wieder her."
+ },
+ {
+  "tr": "Kırdan kente göçün arkasında başarısız bir çiftlik devri duruyor.",
+  "kind": "build.tr",
+  "de": "Hinter der Landflucht steht eine gescheiterte Hofnachfolge."
+ },
+ {
+  "tr": "Aşırı gübrelemek akıntı aşağısında nitrat kirliliği demek olabilir.",
+  "kind": "build.tr",
+  "de": "Zu überdüngen kann Nitratbelastung flussabwärts bedeuten."
+ },
+ {
+  "tr": "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor.",
+  "kind": "build.tr",
+  "de": "Der Nachhaltigkeitsbericht behauptet, was die Feldforschung voraussetzt."
+ },
+ {
+  "tr": "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "kind": "build.tr",
+  "de": "Jene Umweltverträglichkeit ist, wie erwähnt, die Umweltethik einer früheren Seite."
+ },
+ {
+  "tr": "Arazi kullanım çatışması bir anlaşmazlıktır; toprağın betonlaşması bir olgudur.",
+  "kind": "build.tr",
+  "de": "Ein Flächennutzungskonflikt ist ein Streit; Bodenversiegelung ist eine Tatsache."
+ },
+ {
+  "tr": "Biri menşe etiketlemesini savunuyor; bir başkası izlenebilirlikten kuşku duyuyor.",
+  "kind": "build.tr",
+  "de": "Der eine verteidigt die Herkunftskennzeichnung; der andere zweifelt an der Rückverfolgbarkeit."
+ },
+ {
+  "tr": "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie verlangen, dass jedes Nachhaltigkeitsziel einen Nachhaltigkeitsstandard trage."
+ },
+ {
+  "tr": "Tohumu yeniden ekme hakkı âdet olarak, genetik mühendisliği patent olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Das Nachbaurecht überlebt als Brauch, die Gentechnik als Patent."
+ },
+ {
+  "tr": "Bu alandaki en dürüst cümle.",
+  "kind": "build.hint",
+  "de": "Der ehrlichste Satz in diesem Feld."
+ },
+ {
+  "tr": "Varsayım genellikle örneklemdir.",
+  "kind": "build.hint",
+  "de": "Die Annahme ist meistens die Stichprobe."
+ },
+ {
+  "tr": "Tek gövde, iki önek, ters yönler.",
+  "kind": "build.hint",
+  "de": "Ein Stamm, zwei Präfixe, entgegengesetzte Richtungen."
+ },
+ {
+  "tr": "Korumak ile onarmak iki ayrı fiil.",
+  "kind": "build.hint",
+  "de": "Bewahren und wiederherstellen sind zwei verschiedene Verben."
+ },
+ {
+  "tr": "Yalnız ikincisi sorumluluk taşıyor.",
+  "kind": "build.hint",
+  "de": "Nur das zweite trägt Verantwortung."
+ },
+ {
+  "tr": "Satırın en önemli sözcüğü sonuncusu.",
+  "kind": "build.hint",
+  "de": "Das wichtigste Wort der Zeile ist das letzte."
+ },
+ {
+  "tr": "İki oda, iki sözcük, iki ayrı on yıl.",
+  "kind": "build.hint",
+  "de": "Zwei Räume, zwei Wörter, zwei verschiedene Jahrzehnte."
+ },
+ {
+  "tr": "Biri oylanabilir, öteki yalnız ölçülebilir.",
+  "kind": "build.hint",
+  "de": "Über das eine kann abgestimmt werden, das andere lässt sich nur messen."
+ },
+ {
+  "tr": "Hiçbir şey silinmemiş ve yine de kimse yok.",
+  "kind": "build.hint",
+  "de": "Nichts wurde getilgt, und doch ist niemand da."
+ },
+ {
+  "tr": "İki oda, iki sözcük; ikinci yarıda fiil yok.",
+  "kind": "build.hint",
+  "de": "Zwei Räume, zwei Wörter; in der zweiten Hälfte fehlt das Verb."
+ },
+ {
+  "tr": "İkinci yarı sıfatı da fiili de ödünç alıyor.",
+  "kind": "build.hint",
+  "de": "Die zweite Hälfte leiht sich Adjektiv und Verb."
+ },
+ {
+  "tr": "Yine bir duruş fiili, bu kez baştaki yuvada.",
+  "kind": "build.hint",
+  "de": "Wieder ein Haltungsverb, diesmal an der vorderen Stelle."
+ },
+ {
+  "tr": "„As noted“ önceki bir sayfa hakkında bir söz.",
+  "kind": "build.hint",
+  "de": "„As noted“ ist ein Versprechen über eine frühere Seite."
+ },
+ {
+  "tr": "Düz tarlada tüketmez; çekince yerinde duruyor.",
+  "kind": "build.hint",
+  "de": "Auf einem flachen Feld zehrt sie es nicht auf; die Einschränkung steht zu Recht."
+ },
+ {
+  "tr": "Fiil başta, bağlaç yok; savın dayanağı burada.",
+  "kind": "build.hint",
+  "de": "Das Verb am Anfang, keine Konjunktion; hier liegt der Grund des Arguments."
+ },
+ {
+  "tr": "Tek eksik harf, belgenin dişi olan tek satırı.",
+  "kind": "build.hint",
+  "de": "Ein einziger fehlender Buchstabe, die einzige Zeile mit Zähnen im Dokument."
+ },
+ {
+  "tr": "Duruş fiilde, durum sıfatta; ikisi ayrı sözcük.",
+  "kind": "build.hint",
+  "de": "Die Haltung im Verb, der Zustand im Adjektiv; beide sind eigene Wörter."
+ },
+ {
+  "tr": "Talep eden bir kavram; „be“ olduğu gibi kalıyor.",
+  "kind": "build.hint",
+  "de": "Ein forderndes Konzept; „be“ bleibt, wie es ist."
+ },
+ {
+  "tr": "İki edilgen, iki ayrı tür: biri usul, öteki imza.",
+  "kind": "build.hint",
+  "de": "Zwei Passive, zwei Arten: das eine ein Verfahren, das andere eine Unterschrift."
+ },
+ {
+  "tr": "İki kişi aynı şey hakkında anlaşmazlığa düşmüyor.",
+  "kind": "build.hint",
+  "de": "Die beiden streiten nicht über dasselbe."
+ },
+ {
+  "tr": "Biri sıfıra karşı ölçülüyor, öteki pakete basılıyor.",
+  "kind": "build.hint",
+  "de": "Das eine wird gegen null gemessen, das andere auf die Packung gedruckt."
+ },
+ {
+  "tr": "Liste tutulabilir bir şey; donmuş toprağın listesi yok.",
+  "kind": "build.hint",
+  "de": "Eine Liste ist etwas, das man führen kann; der gefrorene Boden hat keine."
+ },
+ {
+  "tr": "İkinci yarıda fiil yok; iki şey iki ayrı biçimde sürüyor.",
+  "kind": "build.hint",
+  "de": "In der zweiten Hälfte fehlt das Verb; zwei Dinge dauern auf zwei verschiedene Weisen fort."
+ },
+ {
+  "tr": "Ölçülebilen sayı, ölçülemeyen sözcüğün arkasına saklanıyor.",
+  "kind": "build.hint",
+  "de": "Die messbare Zahl versteckt sich hinter dem nicht messbaren Wort."
+ },
+ {
+  "tr": "„No“ türü yadsıyor; ikinci yarı örneği başka adla kabul ediyor.",
+  "kind": "build.hint",
+  "de": "„No“ verneint die Art; die zweite Hälfte gibt den Einzelfall unter einem anderen Namen zu."
+ },
+ {
+  "tr": "Öteki olumsuzlayıcı: iki isim öbeğinin aynı olmadığı söyleniyor.",
+  "kind": "build.hint",
+  "de": "Der andere Negator: es wird gesagt, dass die zwei Nominalphrasen nicht dasselbe sind."
+ }
+]

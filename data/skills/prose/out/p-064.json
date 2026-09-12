@@ -1,0 +1,157 @@
+[
+ {
+  "tr": "Korumak ile onarmak iki ayrı fiil.",
+  "kind": "explain",
+  "en": "Conserving and restoring are two different verbs."
+ },
+ {
+  "tr": "Türü yadsımak ile örneği yadsımak.",
+  "kind": "intro",
+  "en": "Denying the category and denying the instance."
+ },
+ {
+  "tr": "Fiil artı sıfat, ve tarlanın üç adı.",
+  "kind": "intro",
+  "en": "A verb plus an adjective, and three names for a field."
+ },
+ {
+  "tr": "Satırın en önemli sözcüğü sonuncusu.",
+  "kind": "explain",
+  "en": "The most important word in the line is the last one."
+ },
+ {
+  "tr": "Tek gövde, iki önek; ve hedefin üç adı.",
+  "kind": "intro",
+  "en": "One stem, two prefixes; and three names for the target."
+ },
+ {
+  "tr": "Cümle, sınama, öteki dil; en sonda ölçü.",
+  "kind": "explain",
+  "en": "The sentence, the test, the other language; the measure last."
+ },
+ {
+  "tr": "Etiketin iki katmanı ve toprağın süresi.",
+  "kind": "intro",
+  "en": "The two layers of a label, and how long soil lasts."
+ },
+ {
+  "tr": "Talep eden bir kavram; „be“, „is“ değil.",
+  "kind": "explain",
+  "en": "A concept that demands; „be“, not „is“."
+ },
+ {
+  "tr": "Cümle, makine, öteki dil; en sonda bedel.",
+  "kind": "explain",
+  "en": "The sentence, the machine, the other language; the cost last."
+ },
+ {
+  "tr": "Raporun gönderme katmanı ve kirleten kim.",
+  "kind": "intro",
+  "en": "The pointer layer of a report, and who does the polluting."
+ },
+ {
+  "tr": "Soyut isim baştaki yuvada, kendi fiiliyle.",
+  "kind": "explain",
+  "en": "An abstract noun in the front slot, with a verb of its own."
+ },
+ {
+  "tr": "Sayılan ile sayılmayan. Hangisi geri gelmiyor?",
+  "kind": "intro",
+  "en": "What is counted and what is not. Which one does not come back?"
+ },
+ {
+  "tr": "Gönderme katmanı ve her alanda işlemeyen önlem.",
+  "kind": "intro",
+  "en": "The pointer layer, and the measure that does not work everywhere."
+ },
+ {
+  "tr": "Bir hedef, üç ad. Hangisi denge, hangisi etiket?",
+  "kind": "intro",
+  "en": "One target, three names. Which is a balance and which a label?"
+ },
+ {
+  "tr": "Cümle, kural, uyarı; en sonda öteki olumsuzlayıcı.",
+  "kind": "explain",
+  "en": "The sentence, the rule, the warning; the other negator last."
+ },
+ {
+  "tr": "Bir tarla, üç ad. Hangisi olgu, hangisi anlaşmazlık?",
+  "kind": "intro",
+  "en": "One field, three names. Which is a fact and which a dispute?"
+ },
+ {
+  "tr": "İki oda, denge ile etiket, iki sahip; en sonda soru.",
+  "kind": "explain",
+  "en": "Two rooms, a balance and a label, two owners; the question last."
+ },
+ {
+  "tr": "İki oda, iki sahip, oylama ile ölçüm; en sonda soru.",
+  "kind": "explain",
+  "en": "Two rooms, two owners, a vote and a measurement; the question last."
+ },
+ {
+  "tr": "Tek gövde, iki önek. Çift neden ötekinde görünmüyor?",
+  "kind": "intro",
+  "en": "One stem, two prefixes. Why is the pair invisible in the other language?"
+ },
+ {
+  "tr": "Övdüğümüz yöntem ile şehri doyuran yöntem aynı değil.",
+  "kind": "intro",
+  "en": "The method we praise and the method that feeds the city are not the same one."
+ },
+ {
+  "tr": "Talep eden metin ve verim ile çeşit arasındaki takas.",
+  "kind": "intro",
+  "en": "The demanding text, and the trade between yield and variety."
+ },
+ {
+  "tr": "Talep eden metinde kim özne oluyor, hangi sayı eksik?",
+  "kind": "intro",
+  "en": "Who becomes the subject in a demanding text, and which number is missing?"
+ },
+ {
+  "tr": "Ölçülen ile imzalanan aynı satırda. İkisi aynı tür mü?",
+  "kind": "intro",
+  "en": "The measured and the signed in one line. Are they the same kind?"
+ },
+ {
+  "tr": "İki fiyat, iki edilgen, iki yön; en sonda gerçek sorun.",
+  "kind": "explain",
+  "en": "Two prices, two passives, two directions; the real problem last."
+ },
+ {
+  "tr": "Bir kuşakta tükenen şey nedir? Çekince neyi ayakta tutuyor?",
+  "kind": "intro",
+  "en": "What is used up in one generation? And what does the hedge hold up?"
+ },
+ {
+  "tr": "İki olumsuzlama var ve biri bir beden daha yüksek. Hangisi?",
+  "kind": "intro",
+  "en": "There are two negations and one of them is a size louder. Which?"
+ },
+ {
+  "tr": "Etiketi savunan ile izlenebilirlikten kuşku duyan aynı masada.",
+  "kind": "intro",
+  "en": "The one defending the label and the one doubting traceability sit at the same table."
+ },
+ {
+  "tr": "„„Emission reduction“ is a percentage against a baseline year.“",
+  "kind": "explain",
+  "en": "„„Emission reduction“ is a percentage against a baseline year.“"
+ },
+ {
+  "tr": "İki sözcük yan yana duruyor. Tek sözcük olmadıkları nasıl anlaşılıyor?",
+  "kind": "intro",
+  "en": "Two words stand side by side. How can you tell they are not one word?"
+ },
+ {
+  "tr": "„In a well, two years later, in a village whose name is not in anybody's file.“",
+  "kind": "explain",
+  "en": "„In a well, two years later, in a village whose name is not in anybody's file.“"
+ },
+ {
+  "tr": "„A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up…“",
+  "kind": "explain",
+  "en": "„A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up…“"
+ }
+]

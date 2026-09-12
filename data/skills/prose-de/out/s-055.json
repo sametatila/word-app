@@ -1,0 +1,902 @@
+[
+ {
+  "tr": "Türü yadsımak ile örneği yadsımak.",
+  "kind": "intro",
+  "de": "Die Art verneinen und den Einzelfall verneinen."
+ },
+ {
+  "tr": "Fiil artı sıfat, ve tarlanın üç adı.",
+  "kind": "intro",
+  "de": "Verb plus Adjektiv, und die drei Namen des Feldes."
+ },
+ {
+  "tr": "Tek gövde, iki önek; ve hedefin üç adı.",
+  "kind": "intro",
+  "de": "Ein Stamm, zwei Präfixe; und die drei Namen des Ziels."
+ },
+ {
+  "tr": "Etiketin iki katmanı ve toprağın süresi.",
+  "kind": "intro",
+  "de": "Die zwei Schichten des Etiketts und die Dauer des Bodens."
+ },
+ {
+  "tr": "Raporun gönderme katmanı ve kirleten kim.",
+  "kind": "intro",
+  "de": "Die Verweisebene des Berichts, und wer verschmutzt."
+ },
+ {
+  "tr": "Sayılan ile sayılmayan. Hangisi geri gelmiyor?",
+  "kind": "intro",
+  "de": "Das Gezählte und das Ungezählte. Was kommt nicht zurück?"
+ },
+ {
+  "tr": "Gönderme katmanı ve her alanda işlemeyen önlem.",
+  "kind": "intro",
+  "de": "Die Verweisebene und die Maßnahme, die nicht überall wirkt."
+ },
+ {
+  "tr": "Bir hedef, üç ad. Hangisi denge, hangisi etiket?",
+  "kind": "intro",
+  "de": "Ein Ziel, drei Namen. Welcher ist eine Bilanz, welcher ein Etikett?"
+ },
+ {
+  "tr": "Bir tarla, üç ad. Hangisi olgu, hangisi anlaşmazlık?",
+  "kind": "intro",
+  "de": "Ein Feld, drei Namen. Welcher ist eine Tatsache, welcher ein Streit?"
+ },
+ {
+  "tr": "Tek gövde, iki önek. Çift neden ötekinde görünmüyor?",
+  "kind": "intro",
+  "de": "Ein Stamm, zwei Präfixe. Warum ist das Paar in der anderen Sprache unsichtbar?"
+ },
+ {
+  "tr": "Övdüğümüz yöntem ile şehri doyuran yöntem aynı değil.",
+  "kind": "intro",
+  "de": "Die Methode, die wir loben, und die Methode, die die Stadt ernährt, sind nicht dieselbe."
+ },
+ {
+  "tr": "Talep eden metin ve verim ile çeşit arasındaki takas.",
+  "kind": "intro",
+  "de": "Der fordernde Text und der Tausch zwischen Ertrag und Vielfalt."
+ },
+ {
+  "tr": "Talep eden metinde kim özne oluyor, hangi sayı eksik?",
+  "kind": "intro",
+  "de": "Wer wird im fordernden Text zum Subjekt, und welche Zahl fehlt?"
+ },
+ {
+  "tr": "Ölçülen ile imzalanan aynı satırda. İkisi aynı tür mü?",
+  "kind": "intro",
+  "de": "Das Gemessene und das Unterzeichnete in einer Zeile. Sind beide von derselben Art?"
+ },
+ {
+  "tr": "Bir kuşakta tükenen şey nedir? Çekince neyi ayakta tutuyor?",
+  "kind": "intro",
+  "de": "Was ist in einer Generation aufgebraucht? Und was hält die Einschränkung aufrecht?"
+ },
+ {
+  "tr": "İki olumsuzlama var ve biri bir beden daha yüksek. Hangisi?",
+  "kind": "intro",
+  "de": "Es gibt zwei Verneinungen, und eine ist eine Nummer lauter. Welche?"
+ },
+ {
+  "tr": "Etiketi savunan ile izlenebilirlikten kuşku duyan aynı masada.",
+  "kind": "intro",
+  "de": "Wer das Etikett verteidigt und wer an der Rückverfolgbarkeit zweifelt, sitzen am selben Tisch."
+ },
+ {
+  "tr": "İki sözcük yan yana duruyor. Tek sözcük olmadıkları nasıl anlaşılıyor?",
+  "kind": "intro",
+  "de": "Zwei Wörter stehen nebeneinander. Woran erkennt man, dass sie nicht ein Wort sind?"
+ },
+ {
+  "tr": "Korumak ile onarmak iki ayrı fiil.",
+  "kind": "explain",
+  "de": "Bewahren und wiederherstellen sind zwei verschiedene Verben."
+ },
+ {
+  "tr": "Satırın en önemli sözcüğü sonuncusu.",
+  "kind": "explain",
+  "de": "Das wichtigste Wort der Zeile ist das letzte."
+ },
+ {
+  "tr": "Cümle, sınama, öteki dil; en sonda ölçü.",
+  "kind": "explain",
+  "de": "Der Satz, die Probe, die andere Sprache; ganz am Ende das Maß."
+ },
+ {
+  "tr": "Talep eden bir kavram; „be“, „is“ değil.",
+  "kind": "explain",
+  "de": "Ein forderndes Konzept; „be“, nicht „is“."
+ },
+ {
+  "tr": "Cümle, makine, öteki dil; en sonda bedel.",
+  "kind": "explain",
+  "de": "Der Satz, die Maschine, die andere Sprache; ganz am Ende die Kosten."
+ },
+ {
+  "tr": "Soyut isim baştaki yuvada, kendi fiiliyle.",
+  "kind": "explain",
+  "de": "Ein abstraktes Nomen an der vorderen Stelle, mit eigenem Verb."
+ },
+ {
+  "tr": "Cümle, kural, uyarı; en sonda öteki olumsuzlayıcı.",
+  "kind": "explain",
+  "de": "Der Satz, die Regel, die Warnung; ganz am Ende der andere Negator."
+ },
+ {
+  "tr": "İki oda, denge ile etiket, iki sahip; en sonda soru.",
+  "kind": "explain",
+  "de": "Zwei Räume, Bilanz und Etikett, zwei Eigentümer; ganz am Ende die Frage."
+ },
+ {
+  "tr": "İki oda, iki sahip, oylama ile ölçüm; en sonda soru.",
+  "kind": "explain",
+  "de": "Zwei Räume, zwei Eigentümer, Abstimmung und Messung; ganz am Ende die Frage."
+ },
+ {
+  "tr": "İki fiyat, iki edilgen, iki yön; en sonda gerçek sorun.",
+  "kind": "explain",
+  "de": "Zwei Preise, zwei Passive, zwei Richtungen; ganz am Ende das eigentliche Problem."
+ },
+ {
+  "tr": "„„Emission reduction“ is a percentage against a baseline year.“",
+  "kind": "explain",
+  "de": "„„Emission reduction“ is a percentage against a baseline year.“"
+ },
+ {
+  "tr": "„In a well, two years later, in a village whose name is not in anybody's file.“",
+  "kind": "explain",
+  "de": "„In a well, two years later, in a village whose name is not in anybody's file.“"
+ },
+ {
+  "tr": "„A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up…“",
+  "kind": "explain",
+  "de": "„A German speaker meeting „stand vacant“ for the first time has to accept that it cannot be looked up…“"
+ },
+ {
+  "tr": "hektar",
+  "kind": "gloss.tr",
+  "de": "der Hektar"
+ },
+ {
+  "tr": "üretken",
+  "kind": "gloss.tr",
+  "de": "produktiv"
+ },
+ {
+  "tr": "bölge",
+  "kind": "gloss.tr",
+  "de": "die Region"
+ },
+ {
+  "tr": "duruş",
+  "kind": "gloss.tr",
+  "de": "die Haltung"
+ },
+ {
+  "tr": "fonluyor",
+  "kind": "gloss.tr",
+  "de": "stellt Mittel bereit"
+ },
+ {
+  "tr": "çiftlik kapısı",
+  "kind": "gloss.tr",
+  "de": "das Hoftor"
+ },
+ {
+  "tr": "arı",
+  "kind": "gloss.tr",
+  "de": "die Biene"
+ },
+ {
+  "tr": "gür",
+  "kind": "gloss.tr",
+  "de": "üppig"
+ },
+ {
+  "tr": "raf",
+  "kind": "gloss.tr",
+  "de": "das Regal"
+ },
+ {
+  "tr": "afiş",
+  "kind": "gloss.tr",
+  "de": "das Plakat"
+ },
+ {
+  "tr": "ahır",
+  "kind": "gloss.tr",
+  "de": "der Stall"
+ },
+ {
+  "tr": "atıl",
+  "kind": "gloss.tr",
+  "de": "untätig"
+ },
+ {
+  "tr": "cins",
+  "kind": "gloss.tr",
+  "de": "die Art"
+ },
+ {
+  "tr": "ekin",
+  "kind": "gloss.tr",
+  "de": "die Feldfrucht"
+ },
+ {
+  "tr": "kuyu",
+  "kind": "gloss.tr",
+  "de": "der Brunnen"
+ },
+ {
+  "tr": "önek",
+  "kind": "gloss.tr",
+  "de": "das Präfix"
+ },
+ {
+  "tr": "denge",
+  "kind": "gloss.tr",
+  "de": "die Bilanz"
+ },
+ {
+  "tr": "gübre",
+  "kind": "gloss.tr",
+  "de": "der Dünger"
+ },
+ {
+  "tr": "harap",
+  "kind": "gloss.tr",
+  "de": "baufällig"
+ },
+ {
+  "tr": "heyet",
+  "kind": "gloss.tr",
+  "de": "die Delegation"
+ },
+ {
+  "tr": "kıraç",
+  "kind": "gloss.tr",
+  "de": "karg"
+ },
+ {
+  "tr": "ölmek",
+  "kind": "gloss.tr",
+  "de": "sterben"
+ },
+ {
+  "tr": "övmek",
+  "kind": "gloss.tr",
+  "de": "loben"
+ },
+ {
+  "tr": "uyarı",
+  "kind": "gloss.tr",
+  "de": "die Warnung"
+ },
+ {
+  "tr": "yağış",
+  "kind": "gloss.tr",
+  "de": "der Niederschlag"
+ },
+ {
+  "tr": "yakıt",
+  "kind": "gloss.tr",
+  "de": "der Brennstoff"
+ },
+ {
+  "tr": "yakma",
+  "kind": "gloss.tr",
+  "de": "das Verbrennen"
+ },
+ {
+  "tr": "yamaç",
+  "kind": "gloss.tr",
+  "de": "der Hang"
+ },
+ {
+  "tr": "yatan",
+  "kind": "gloss.tr",
+  "de": "liegend"
+ },
+ {
+  "tr": "yerel",
+  "kind": "gloss.tr",
+  "de": "örtlich"
+ },
+ {
+  "tr": "yutak",
+  "kind": "gloss.tr",
+  "de": "die Senke"
+ },
+ {
+  "tr": "çiftçi",
+  "kind": "gloss.tr",
+  "de": "der Landwirt"
+ },
+ {
+  "tr": "donmuş",
+  "kind": "gloss.tr",
+  "de": "gefroren"
+ },
+ {
+  "tr": "kavram",
+  "kind": "gloss.tr",
+  "de": "das Konzept"
+ },
+ {
+  "tr": "mevsim",
+  "kind": "gloss.tr",
+  "de": "die Saison"
+ },
+ {
+  "tr": "oylama",
+  "kind": "gloss.tr",
+  "de": "die Abstimmung"
+ },
+ {
+  "tr": "oynama",
+  "kind": "gloss.tr",
+  "de": "der Ausschlag"
+ },
+ {
+  "tr": "ölüyor",
+  "kind": "gloss.tr",
+  "de": "stirbt"
+ },
+ {
+  "tr": "satıcı",
+  "kind": "gloss.tr",
+  "de": "der Verkäufer"
+ },
+ {
+  "tr": "yağmur",
+  "kind": "gloss.tr",
+  "de": "der Regen"
+ },
+ {
+  "tr": "çalışma",
+  "kind": "gloss.tr",
+  "de": "die Studie"
+ },
+ {
+  "tr": "çekilen",
+  "kind": "gloss.tr",
+  "de": "konjugiert"
+ },
+ {
+  "tr": "denetçi",
+  "kind": "gloss.tr",
+  "de": "der Prüfer"
+ },
+ {
+  "tr": "maliyet",
+  "kind": "gloss.tr",
+  "de": "der Aufwand"
+ },
+ {
+  "tr": "nicelik",
+  "kind": "gloss.tr",
+  "de": "die Menge"
+ },
+ {
+  "tr": "refleks",
+  "kind": "gloss.tr",
+  "de": "der Reflex"
+ },
+ {
+  "tr": "salınan",
+  "kind": "gloss.tr",
+  "de": "ausgestoßen"
+ },
+ {
+  "tr": "veriyor",
+  "kind": "gloss.tr",
+  "de": "bringt"
+ },
+ {
+  "tr": "vurgulu",
+  "kind": "gloss.tr",
+  "de": "betont"
+ },
+ {
+  "tr": "yarışan",
+  "kind": "gloss.tr",
+  "de": "konkurrierend"
+ },
+ {
+  "tr": "aynı şey",
+  "kind": "gloss.tr",
+  "de": "dasselbe"
+ },
+ {
+  "tr": "bataklık",
+  "kind": "gloss.tr",
+  "de": "das Moor"
+ },
+ {
+  "tr": "çelişmek",
+  "kind": "gloss.tr",
+  "de": "sich widersprechen"
+ },
+ {
+  "tr": "değirmen",
+  "kind": "gloss.tr",
+  "de": "die Mühle"
+ },
+ {
+  "tr": "fonlamak",
+  "kind": "gloss.tr",
+  "de": "finanzieren"
+ },
+ {
+  "tr": "kötü yıl",
+  "kind": "gloss.tr",
+  "de": "ein schlechtes Jahr"
+ },
+ {
+  "tr": "standart",
+  "kind": "gloss.tr",
+  "de": "der Standard"
+ },
+ {
+  "tr": "ters yön",
+  "kind": "gloss.tr",
+  "de": "die Gegenrichtung"
+ },
+ {
+  "tr": "yadsıyor",
+  "kind": "gloss.tr",
+  "de": "verneint"
+ },
+ {
+  "tr": "aynı para",
+  "kind": "gloss.tr",
+  "de": "dasselbe Geld"
+ },
+ {
+  "tr": "imzalanan",
+  "kind": "gloss.tr",
+  "de": "unterzeichnet"
+ },
+ {
+  "tr": "kiralanan",
+  "kind": "gloss.tr",
+  "de": "gepachtet"
+ },
+ {
+  "tr": "nakliyeci",
+  "kind": "gloss.tr",
+  "de": "der Spediteur"
+ },
+ {
+  "tr": "savunuyor",
+  "kind": "gloss.tr",
+  "de": "verteidigt"
+ },
+ {
+  "tr": "tek kural",
+  "kind": "gloss.tr",
+  "de": "eine einzige Regel"
+ },
+ {
+  "tr": "temel yıl",
+  "kind": "gloss.tr",
+  "de": "das Basisjahr"
+ },
+ {
+  "tr": "tıkanırdı",
+  "kind": "gloss.tr",
+  "de": "würde stocken"
+ },
+ {
+  "tr": "uydurulan",
+  "kind": "gloss.tr",
+  "de": "erfunden"
+ },
+ {
+  "tr": "algılayıcı",
+  "kind": "gloss.tr",
+  "de": "der Sensor"
+ },
+ {
+  "tr": "ayartılmış",
+  "kind": "gloss.tr",
+  "de": "verlockt"
+ },
+ {
+  "tr": "düzeltiyor",
+  "kind": "gloss.tr",
+  "de": "korrigiert"
+ },
+ {
+  "tr": "ezberlenen",
+  "kind": "gloss.tr",
+  "de": "auswendig gelernt"
+ },
+ {
+  "tr": "göstererek",
+  "kind": "gloss.tr",
+  "de": "indem man darauf zeigt"
+ },
+ {
+  "tr": "kurutulmuş",
+  "kind": "gloss.tr",
+  "de": "trockengelegt"
+ },
+ {
+  "tr": "santimetre",
+  "kind": "gloss.tr",
+  "de": "der Zentimeter"
+ },
+ {
+  "tr": "süt kotası",
+  "kind": "gloss.tr",
+  "de": "die Milchquote"
+ },
+ {
+  "tr": "uydurulmuş",
+  "kind": "gloss.tr",
+  "de": "geprägt"
+ },
+ {
+  "tr": "yavaşlamak",
+  "kind": "gloss.tr",
+  "de": "langsamer werden"
+ },
+ {
+  "tr": "agroekoloji",
+  "kind": "gloss.tr",
+  "de": "die Agrarökologie"
+ },
+ {
+  "tr": "atıl durmak",
+  "kind": "gloss.tr",
+  "de": "brachliegen"
+ },
+ {
+  "tr": "aynı on yıl",
+  "kind": "gloss.tr",
+  "de": "dasselbe Jahrzehnt"
+ },
+ {
+  "tr": "ayrı kökler",
+  "kind": "gloss.tr",
+  "de": "verschiedene Wurzeln"
+ },
+ {
+  "tr": "belirleyici",
+  "kind": "gloss.tr",
+  "de": "das Determinativ"
+ },
+ {
+  "tr": "danışmanlık",
+  "kind": "gloss.tr",
+  "de": "die Beratung"
+ },
+ {
+  "tr": "iklime uyum",
+  "kind": "gloss.tr",
+  "de": "die Klimaanpassung"
+ },
+ {
+  "tr": "taban fiyat",
+  "kind": "gloss.tr",
+  "de": "der Mindestpreis"
+ },
+ {
+  "tr": "ters yönler",
+  "kind": "gloss.tr",
+  "de": "entgegengesetzte Richtungen"
+ },
+ {
+  "tr": "akıp gidiyor",
+  "kind": "gloss.tr",
+  "de": "läuft ab"
+ },
+ {
+  "tr": "aşırı sömürü",
+  "kind": "gloss.tr",
+  "de": "die Übernutzung"
+ },
+ {
+  "tr": "bileştiriyor",
+  "kind": "gloss.tr",
+  "de": "setzt zusammen"
+ },
+ {
+  "tr": "bölge dilimi",
+  "kind": "gloss.tr",
+  "de": "die Zone"
+ },
+ {
+  "tr": "denkleştirme",
+  "kind": "gloss.tr",
+  "de": "die Kompensation"
+ },
+ {
+  "tr": "dürüstsüzlük",
+  "kind": "gloss.tr",
+  "de": "die Unehrlichkeit"
+ },
+ {
+  "tr": "eksik sözcük",
+  "kind": "gloss.tr",
+  "de": "ein fehlendes Wort"
+ },
+ {
+  "tr": "numara yapma",
+  "kind": "gloss.tr",
+  "de": "die Vortäuschung"
+ },
+ {
+  "tr": "otobüs hattı",
+  "kind": "gloss.tr",
+  "de": "die Buslinie"
+ },
+ {
+  "tr": "sessiz olanı",
+  "kind": "gloss.tr",
+  "de": "die leise Variante"
+ },
+ {
+  "tr": "toprak gaspı",
+  "kind": "gloss.tr",
+  "de": "das Landgrabbing"
+ },
+ {
+  "tr": "tozlaştırmak",
+  "kind": "gloss.tr",
+  "de": "bestäuben"
+ },
+ {
+  "tr": "türüne uygun",
+  "kind": "gloss.tr",
+  "de": "artgerecht"
+ },
+ {
+  "tr": "yüksek biçim",
+  "kind": "gloss.tr",
+  "de": "die laute Variante"
+ },
+ {
+  "tr": "hiç görmediği",
+  "kind": "gloss.tr",
+  "de": "nie gesehen"
+ },
+ {
+  "tr": "iklim adaleti",
+  "kind": "gloss.tr",
+  "de": "die Klimagerechtigkeit"
+ },
+ {
+  "tr": "karbon yutağı",
+  "kind": "gloss.tr",
+  "de": "die Kohlenstoffsenke"
+ },
+ {
+  "tr": "kaynaştırıyor",
+  "kind": "gloss.tr",
+  "de": "verschmilzt"
+ },
+ {
+  "tr": "kuşku duyuyor",
+  "kind": "gloss.tr",
+  "de": "zweifelt"
+ },
+ {
+  "tr": "meyve bahçesi",
+  "kind": "gloss.tr",
+  "de": "die Obstwiese"
+ },
+ {
+  "tr": "olumsuzlayıcı",
+  "kind": "gloss.tr",
+  "de": "der Negator"
+ },
+ {
+  "tr": "toprak sahibi",
+  "kind": "gloss.tr",
+  "de": "der Verpächter"
+ },
+ {
+  "tr": "akıntı aşağısı",
+  "kind": "gloss.tr",
+  "de": "flussabwärts"
+ },
+ {
+  "tr": "alıp götürüyor",
+  "kind": "gloss.tr",
+  "de": "nimmt es weg"
+ },
+ {
+  "tr": "araya sokulmuş",
+  "kind": "gloss.tr",
+  "de": "eingeschoben"
+ },
+ {
+  "tr": "arazi tüketimi",
+  "kind": "gloss.tr",
+  "de": "der Flächenverbrauch"
+ },
+ {
+  "tr": "bilgi aktarımı",
+  "kind": "gloss.tr",
+  "de": "der Wissenstransfer"
+ },
+ {
+  "tr": "derece sözcüğü",
+  "kind": "gloss.tr",
+  "de": "ein Gradwort"
+ },
+ {
+  "tr": "iklim nötrlüğü",
+  "kind": "gloss.tr",
+  "de": "die Klimaneutralität"
+ },
+ {
+  "tr": "izlenebilirlik",
+  "kind": "gloss.tr",
+  "de": "die Rückverfolgbarkeit"
+ },
+ {
+  "tr": "sefer tarifesi",
+  "kind": "gloss.tr",
+  "de": "der Fahrplan"
+ },
+ {
+  "tr": "sözlük maddesi",
+  "kind": "gloss.tr",
+  "de": "ein Wörterbucheintrag"
+ },
+ {
+  "tr": "bitişik yazılan",
+  "kind": "gloss.tr",
+  "de": "zusammengeschrieben"
+ },
+ {
+  "tr": "doğaya bırakmak",
+  "kind": "gloss.tr",
+  "de": "verwildern lassen"
+ },
+ {
+  "tr": "emisyon azaltma",
+  "kind": "gloss.tr",
+  "de": "die Emissionsminderung"
+ },
+ {
+  "tr": "fiyat oynaklığı",
+  "kind": "gloss.tr",
+  "de": "die Preisvolatilität"
+ },
+ {
+  "tr": "geri döndürülen",
+  "kind": "gloss.tr",
+  "de": "rückgängig gemacht"
+ },
+ {
+  "tr": "gıda egemenliği",
+  "kind": "gloss.tr",
+  "de": "die Ernährungssouveränität"
+ },
+ {
+  "tr": "karara bağlanan",
+  "kind": "gloss.tr",
+  "de": "entschieden"
+ },
+ {
+  "tr": "tek ürün tarımı",
+  "kind": "gloss.tr",
+  "de": "die Monokultur"
+ },
+ {
+  "tr": "toprak erozyonu",
+  "kind": "gloss.tr",
+  "de": "die Bodenerosion"
+ },
+ {
+  "tr": "yeniden çizilen",
+  "kind": "gloss.tr",
+  "de": "neu gezogen"
+ },
+ {
+  "tr": "aşırı gübrelemek",
+  "kind": "gloss.tr",
+  "de": "überdüngen"
+ },
+ {
+  "tr": "bir kez harcanan",
+  "kind": "gloss.tr",
+  "de": "einmal ausgegeben"
+ },
+ {
+  "tr": "haritadaki çizgi",
+  "kind": "gloss.tr",
+  "de": "eine Linie auf der Karte"
+ },
+ {
+  "tr": "kırdan kente göç",
+  "kind": "gloss.tr",
+  "de": "die Landflucht"
+ },
+ {
+  "tr": "bilinmesi gereken",
+  "kind": "gloss.tr",
+  "de": "was gewusst werden muss"
+ },
+ {
+  "tr": "karbonsuzlaştırma",
+  "kind": "gloss.tr",
+  "de": "die Dekarbonisierung"
+ },
+ {
+  "tr": "ormansızlaştırmak",
+  "kind": "gloss.tr",
+  "de": "abholzen"
+ },
+ {
+  "tr": "çevreyle uyumluluk",
+  "kind": "gloss.tr",
+  "de": "die Umweltverträglichkeit"
+ },
+ {
+  "tr": "karbonsuzlaştırmak",
+  "kind": "gloss.tr",
+  "de": "dekarbonisieren"
+ },
+ {
+  "tr": "menşe etiketlemesi",
+  "kind": "gloss.tr",
+  "de": "die Herkunftskennzeichnung"
+ },
+ {
+  "tr": "tarım sübvansiyonu",
+  "kind": "gloss.tr",
+  "de": "die Agrarsubvention"
+ },
+ {
+  "tr": "toprak verimliliği",
+  "kind": "gloss.tr",
+  "de": "die Bodenfruchtbarkeit"
+ },
+ {
+  "tr": "türlerin yok oluşu",
+  "kind": "gloss.tr",
+  "de": "das Artensterben"
+ },
+ {
+  "tr": "dünya piyasa fiyatı",
+  "kind": "gloss.tr",
+  "de": "der Weltmarktpreis"
+ },
+ {
+  "tr": "kalıplaşmış deyimler",
+  "kind": "gloss.tr",
+  "de": "feste Wendungen"
+ },
+ {
+  "tr": "birbirinden ayrılıyor",
+  "kind": "gloss.tr",
+  "de": "driften auseinander"
+ },
+ {
+  "tr": "yeniden ağaçlandırmak",
+  "kind": "gloss.tr",
+  "de": "aufforsten"
+ },
+ {
+  "tr": "bir beden fazla yüksek",
+  "kind": "gloss.tr",
+  "de": "eine Nummer zu laut"
+ },
+ {
+  "tr": "endüstriyel hayvancılık",
+  "kind": "gloss.tr",
+  "de": "die Massentierhaltung"
+ },
+ {
+  "tr": "sürdürülebilirlik standardı",
+  "kind": "gloss.tr",
+  "de": "der Nachhaltigkeitsstandard"
+ }
+]
