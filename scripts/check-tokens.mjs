@@ -333,7 +333,7 @@ for (const f of await walkDir("src")) {
    `EmptyCard`ı da 16), iki tur sonucu kartı (`p-8` → 16/28, Android
    `rounds` sonuç kartı) ve başarım kartı (24 → 16/20, Android
    `AchievementUnlock`). */
-const TAVAN = { tekPiksel: 74, web24: 104, kartSapan: 23 };
+const TAVAN = { tekPiksel: 74, web24: 103, kartSapan: 23 };
 if (jetonOlmayan.length) {
   problems.push(`boşluk: mobilde ölçek basamağına eşit ${jetonOlmayan.length} ham sayı (ilk üç: ${jetonOlmayan.slice(0, 3).join(" · ")}) — \`spacing.*\` kullan`);
 }

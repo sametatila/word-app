@@ -18454,3 +18454,36 @@ görünümünü değiştirir (dış kartın da kalkması gerekir — Android'in 
 
 Kapı **§360** üç sayıyı iki tabloda da ölçüyor; üçü de enjeksiyonla
 doğrulandı.
+
+## §11.508 — Sıralama tablosunun kabı: liste değil, kart satırları
+
+§11.507 satırın **içini** eşitlemiş, **kabını** açık bırakmıştı. Android'de
+tablo bir kart **değil**: bölüm başlığı (büyük harfli sönük etiket) ve altında
+**ayrı kartlar** — her satır `radii.lg`, 12 dolgu, 1 piksel kenarlık, aralarında
+8 boşluk. Web tek bir kartın içinde çizgiyle ayrılmış bir listeydi
+(`border-t`, 20/10 dolgu). İki tablo da (lig ve arkadaşlar) çevrildi.
+
+Satırın **içi** de üç yerde ayrıydı:
+
+- **seri**: Android adın altında cümleyle (`{n} gün seri`); web'de sağda çıplak
+  bir sayıydı — ekran okuyucuya "5" diye okunuyordu, cümle yalnız
+  `aria-label`daydı.
+- **XP**: Android sayının altına birimi yazıyor; web'de yalnız sayı vardı.
+- **kuşaktaki satır**: Android `softShadow(tint, 4)` ile kuşağın rengini gölgeye
+  taşıyor — web karşılığı §11.492'nin renkli gölgesi.
+
+**Boş hâl kendi kartını aldı:** tablo kart olmaktan çıkınca "ligde teksin"
+bloğu yüzeysiz kalıyordu (`Card padded` = 16, kabukla aynı). Mevcut kapı
+("kabuksuz boş hâl kabuğun ölçüsünde") bunu hemen yakaladı — konumlayıcısı
+sınıfın tam metnine bakıyordu; artık `<div className="` etiketinin kendisine
+bakıyor ve dolguyu da ölçüyor.
+
+`lbw.league_sub` satırı web'de kaldı: Android'de karşılığı yok ama süs değil,
+ligin ne olduğunu söyleyen tek cümle — web'de sekme çubuğu altında bağlam daha
+zayıf. Gerekçesi kodda yazılı.
+
+Kapı **§361** iki tablonun kabını ve satır içindeki üç parçayı ölçüyor; üçü de
+enjeksiyonla doğrulandı. **Ölçünün kendi hatası:** "dış kart taşımıyor" ölçüsü
+`<section className="card` diye bakıyordu ve lig dosyasındaki **sonuç kartını**
+(yükseldin/düştün) yakaladı — o gerçekten bir kart; ölçü artık bölüm başlığını
+taşıyan kabı buluyor.

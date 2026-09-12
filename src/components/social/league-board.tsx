@@ -91,10 +91,19 @@ export function LeagueBoard() {
     <div className="flex flex-col gap-3">
       {result ? <ResultCard result={result} onDismiss={dismiss} /> : null}
 
-      <section className="card overflow-hidden">
-        <div className="flex items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
+      {/*
+        KOMPOZİSYON ANDROID'İN (`social/LeagueBoard`): tablo bir kart DEĞİL.
+        Üstte bölüm başlığı (lig adı, büyük harfli sönük etiket) ve sağında
+        kalan gün; altında ayrı kartlar, aralarında 8 boşluk.
+
+        `lbw.league_sub` satırı WEB'E AİT ve kalıyor: Android'de karşılığı
+        yok ama bir süs değil, ligin ne olduğunu söyleyen tek cümle — web'de
+        sekme çubuğu altında bağlam daha zayıf.
+      */}
+      <section>
+        <div className="mb-2 ml-1 flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <h2 className="truncate font-bold">{t(tierKey(view.tier))}</h2>
+            <h2 className="muted truncate text-caption uppercase tracking-eyebrow">{t(tierKey(view.tier))}</h2>
             <p className="muted text-caption">{t("lbw.league_sub")}</p>
           </div>
           <span className="muted shrink-0 text-caption">
@@ -107,7 +116,7 @@ export function LeagueBoard() {
              metin vardı; tablo başlığı (lig adı, kalan gün) üstte duruyor ve
              altındaki boşluk yükleniyormuş gibi görünüyordu. Kart kendi
              başlığını koruduğu için yalnız karo eklendi. */
-          <div className="flex flex-col items-center gap-2 p-6 text-center">
+          <div className="card flex flex-col items-center gap-2 p-4 text-center">
             <span
               className="flex items-center justify-center rounded-tile on-fill"
               style={{ width: 52, height: 52, background: "var(--color-sky)" }}
@@ -121,7 +130,7 @@ export function LeagueBoard() {
             <p className="muted text-caption">{t("league.alone_sub")}</p>
           </div>
         ) : (
-          <ol>
+          <ol className="space-y-2">
             {view.rows.map((r, i) => (
               <LeagueRow
                 key={r.userId}
@@ -145,7 +154,8 @@ export function LeagueBoard() {
           </ol>
         )}
 
-        <p className="border-t px-5 py-2.5 text-center text-caption" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+        {/* Açıklama Android'de `micro`, sönük, ortalı ve üstünde 12 boşluk. */}
+        <p className="muted mt-3 text-center text-micro">
           {view.promote > 0
             ? t("league.explain_up", { n: view.promote })
             : view.rows.length >= 2 && view.demote === 0
@@ -191,18 +201,25 @@ function LeagueRow({
   const tint = zone === "up" ? ZONE_UP : zone === "down" ? ZONE_DOWN : null;
   return (
     <>
+      {/* SATIR BIR KART (Android `social/LeagueBoard`): `radii.lg`, 12 dolgu,
+          1 piksel kenarlik, aralarinda 8 bosluk. Kendi satirin marka tintli
+          zemin ve marka kenarligi aliyor; kusaktaki satirin kenarligi kusagin
+          rengi (Android orada ayrica `softShadow(tint, 4)` kullaniyor -
+          webin karsiligi renkli golge). */}
       <li
-        className="flex items-center gap-3 border-t px-5 py-2.5 first:border-t-0"
+        className={`flex items-center gap-3 rounded-panel border p-3${tint ? " glow-tint-sm" : ""}`}
         style={{
-          borderColor: "var(--border)",
-          background: row.isMe ? "var(--brand-soft)" : undefined,
+          background: row.isMe ? "var(--brand-soft)" : "var(--surface)",
+          borderColor: row.isMe ? "var(--color-brand-500)" : (tint ?? "var(--hairline)"),
+          ...(tint ? ({ "--tint-fill": tint } as React.CSSProperties) : null),
         }}
       >
         <span className="w-[30px] shrink-0 text-center text-h3 tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
           {row.rank}
         </span>
         <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={40} ring={tint} />
-        <span className="min-w-0 flex-1 truncate text-strong">
+        <span className="min-w-0 flex-1">
+          <span className="block truncate text-strong">
           {row.username && !row.isMe ? (
             <Link href={`/u/${row.username}`} prefetch={false}>
               {/* Yedek `social.student` — bkz. `daily-player`. Aynı kişinin
@@ -220,21 +237,23 @@ function LeagueRow({
               {t("social.you")}
             </span>
           ) : null}
-        </span>
-        {row.streak > 0 ? (
-          <span
-            /* Çıplak sayı + alev simgesi ekran okuyucuya "5" diye okunuyordu;
-               cümle `title=` balonundaydı, yani dokunmatikte de yoktu. */
-            aria-label={t("social.days_streak", { n: row.streak })}
-            className="flex shrink-0 items-center gap-1 text-caption tabular-nums"
-            style={{ color: "var(--color-flame)" }}
-          >
-            <FlameIcon size={13} />
-            {row.streak}
           </span>
-        ) : null}
-        <span className="w-16 shrink-0 text-right text-strong tabular-nums" style={{ color: "var(--color-brand)" }}>
-          {formatNumber(row.xp, lang)}
+          {/* SERİ ADIN ALTINDA, CÜMLEYLE. Web sağda çıplak bir sayı
+              gösteriyordu (ekran okuyucuya "5" diye okunuyordu, cümle yalnız
+              `aria-label`daydı); Android adın altına `{n} gün seri` yazıyor. */}
+          {row.streak > 0 ? (
+            <span className="mt-0.5 flex items-center gap-1">
+              <FlameIcon size={12} style={{ color: "var(--color-flame)" }} />
+              <span className="muted text-micro">{t("social.days_streak", { n: row.streak })}</span>
+            </span>
+          ) : null}
+        </span>
+        {/* XP'NİN BİRİMİ DE YAZILI — Android sayının altına `XP` koyuyor. */}
+        <span className="shrink-0 text-right">
+          <span className="block text-h3 tabular-nums" style={row.isMe ? { color: "var(--color-brand)" } : undefined}>
+            {formatNumber(row.xp, lang)}
+          </span>
+          <span className="muted block text-micro">XP</span>
         </span>
         {row.isMe ? null : (
           <button
@@ -249,7 +268,7 @@ function LeagueRow({
         )}
       </li>
       {edge ? (
-        <li aria-hidden className="flex items-center gap-2 px-5 py-1">
+        <li aria-hidden className="flex items-center gap-2 py-1">
           <span className="h-px flex-1" style={{ background: edge === "up" ? ZONE_UP : ZONE_DOWN }} />
           <span className="text-micro uppercase tracking-eyebrow" style={{ color: edge === "up" ? ZONE_UP : ZONE_DOWN }}>
             {edgeLabel}

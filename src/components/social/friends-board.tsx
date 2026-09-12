@@ -59,43 +59,66 @@ export function FriendsBoard() {
   const above = me && me.rank > 1 ? board.rows.find((r) => r.rank === me.rank - 1) : null;
   const gap = me && above ? Math.max(0, above.xp - me.xp) : 0;
   return (
-    <section className="card overflow-hidden">
-      <div className="flex items-baseline justify-between border-b px-5 py-3" style={{ borderColor: "var(--border)" }}>
-        <h2 className="text-strong">{t("friendsboard.among_friends_this_week")}</h2>
+    /*
+     * KOMPOZİSYON ANDROID'İN (`social/FriendsBoard`).
+     *
+     * Web tek bir kartın içinde çizgiyle ayrılmış bir listeydi; Android'de
+     * tablo bir kart DEĞİL: bölüm başlığı (büyük harfli sönük etiket) ve
+     * altında AYRI kartlar - her satır `radii.lg`, 12 dolgu, 1 piksel
+     * kenarlık, aralarında 8 boşluk. Kendi satırı olan biri (`isMe`) marka
+     * tintli zemin ve marka kenarlığı alıyor.
+     *
+     * Satırın içi de Android'in sırası: sıra · arma · [ad + seri satırı] ·
+     * [XP + "XP" etiketi]. Web serisi sağda çıplak bir sayıydı ve XP'nin
+     * altında birim yazmıyordu.
+     */
+    <section>
+      <div className="mb-2 ml-1 flex items-baseline justify-between">
+        <h2 className="muted text-caption uppercase tracking-eyebrow">{t("friendsboard.among_friends_this_week")}</h2>
         <span className="muted text-caption">{board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })}</span>
       </div>
-      <ol>
+      <ol className="space-y-2">
         {board.rows.map((r) => (
           <li
             key={r.userId}
-            className="flex items-center gap-3 border-t px-5 py-2.5 first:border-t-0"
-            style={{ borderColor: "var(--border)", background: r.isMe ? "var(--brand-soft)" : undefined }}
+            className="flex items-center gap-3 rounded-panel border p-3"
+            style={{
+              background: r.isMe ? "var(--brand-soft)" : "var(--surface)",
+              borderColor: r.isMe ? "var(--color-brand-500)" : "var(--hairline)",
+            }}
           >
             <span className="w-[30px] shrink-0 text-center text-h3 tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
               {r.rank}
             </span>
             <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={40} ring={MEDAL[r.rank] ?? null} />
-            <span className="min-w-0 flex-1 truncate text-strong">
-              {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.student")}</Link> : (r.name ?? t("social.student"))}
-              {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de
-                  "sen" yazıyordu. Anahtar taban sözlükte hazırdı ve Android
-                  aynı satırda onu kullanıyor. */}
-              {r.isMe ? <span className="muted ml-1 text-caption">{t("social.you_paren")}</span> : null}
-            </span>
-            {r.streak > 0 ? (
-              <span className="flex shrink-0 items-center gap-1 text-caption tabular-nums" style={{ color: "var(--color-flame)" }}>
-                <FlameIcon size={13} />
-                {r.streak}
+            <span className="min-w-0 flex-1">
+              <span className="block truncate text-strong" style={r.isMe ? { color: "var(--color-brand)" } : undefined}>
+                {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.student")}</Link> : (r.name ?? t("social.student"))}
+                {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de
+                    "sen" yazıyordu. Anahtar taban sözlükte hazırdı ve Android
+                    aynı satırda onu kullanıyor. */}
+                {r.isMe ? <span className="muted ml-1 text-caption">{t("social.you_paren")}</span> : null}
               </span>
-            ) : null}
-            <span className="w-16 shrink-0 text-right text-strong tabular-nums" style={{ color: "var(--color-brand)" }}>
-              {formatNumber(r.xp, lang)}
+              {r.streak > 0 ? (
+                <span className="mt-0.5 flex items-center gap-1">
+                  <FlameIcon size={12} style={{ color: "var(--color-flame)" }} />
+                  <span className="muted text-micro">{t("social.days_streak", { n: r.streak })}</span>
+                </span>
+              ) : null}
+            </span>
+            <span className="shrink-0 text-right">
+              <span className="block text-h3 tabular-nums" style={r.isMe ? { color: "var(--color-brand)" } : undefined}>
+                {formatNumber(r.xp, lang)}
+              </span>
+              <span className="muted block text-micro">XP</span>
             </span>
           </li>
         ))}
       </ol>
       {me && gap > 0 ? (
-        <p className="border-t px-5 py-2.5 text-center text-caption" style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}>
+        /* FARK SATIRI DA KART: Android `Card padded`, marka tintli zemin,
+           marka kenarlık, `bodyStrong` marka mürekkebi. */
+        <p className="card mt-3 p-4 text-center text-strong" style={{ background: "var(--brand-soft)", borderColor: "var(--color-brand-500)", color: "var(--color-brand)" }}>
           {t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatNumber(gap, lang) })}
         </p>
       ) : null}

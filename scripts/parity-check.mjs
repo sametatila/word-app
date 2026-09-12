@@ -18457,7 +18457,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const blok = (() => {
     const i = lig.indexOf("league.alone");
     if (i < 0) return "";
-    const bas = lig.lastIndexOf("<div className=\"flex flex-col items-center", i);
+    /* Blok artik KENDI KARTINI tasiyor: tablo bir kart olmaktan cikinca
+       (360'in devami) bu bos hal yuzeysiz kaliyordu. Konumlayici sinifin
+       tamamina degil, "flex flex-col items-center" parcasina bakiyor. */
+    const bas = lig.lastIndexOf('<div className="', i);
     return bas < 0 ? "" : lig.slice(bas, lig.indexOf("</div>", i) + 6);
   })();
   const ligKaro = (blok.match(/width: (\d+), height: (\d+)/) ?? []).slice(1, 3).join("x") || "YOK";
@@ -18470,8 +18473,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "yaricap=" + (new RegExp(yaricap.replace(/[^\w-]/g, "")).test(blok) ? yaricap : "FARKLI"),
       "baslik=" + (blok.includes('className="' + baslikSinif + '"') ? "ayni" : "FARKLI"),
       "metin=" + (blok.includes('className="' + metinSinif + '"') ? "ayni" : "FARKLI"),
+      /* Kabuk `Card padded` (16) - elle kurulan blok da oyle olmali. */
+      "dolgu=" + (/\bcard\b[^"]*\bp-4\b/.test(blok) ? "16" : "FARKLI"),
     ],
-    ["karo=" + karoBoy, "ikon=" + ikonBoy, "yaricap=" + yaricap, "baslik=ayni", "metin=ayni"],
+    ["karo=" + karoBoy, "ikon=" + ikonBoy, "yaricap=" + yaricap, "baslik=ayni", "metin=ayni", "dolgu=16"],
     "elle kurulan",
     "kabuk",
   );
@@ -21320,6 +21325,76 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
   sameList("siralama satirinin olculeri", mob, web, "mobil", "web");
+}
+
+/* --------- 361. SIRALAMA TABLOSUNUN KABI: LISTE DEGIL, KART SATIRLARI
+ *
+ * 360 satirin ICINI esitledi (arma, sira hucresi, "ben" zemini) ve KABI acik
+ * birakmisti. Android'de tablo bir kart DEGIL: bolum basligi (buyuk harfli
+ * sonuk etiket) ve altinda AYRI kartlar - her satir `radii.lg`, 12 dolgu,
+ * 1 piksel kenarlik, aralarinda 8 bosluk. Web tek bir kartin icinde cizgiyle
+ * ayrilmis bir listeydi (`border-t`, 20/10 dolgu).
+ *
+ * Satirin ICI de uc yerde ayriydi:
+ *   - seri: Android adin ALTINDA cumleyle (`{n} gun seri`), webde sagda
+ *     ciplak bir sayiydi
+ *   - XP: Android sayinin altina birimi yaziyor (`XP`), webde yalniz sayi
+ *   - kusaktaki satir: Android `softShadow(tint, 4)` ile kusagin rengini
+ *     golgeye tasiyor; webin karsiligi renkli golge (349)
+ *
+ * Bos hal de kendi kartini aldi: tablo kart olmaktan cikinca yuzeysiz
+ * kaliyordu (`Card padded` = 16, kabukla ayni).
+ *
+ * Olcu: iki tablonun da kabi ve satir icindeki uc parca. */
+{
+  const silB = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const ciftler = [
+    ["lig", "mobile/src/social/LeagueBoard.tsx", "src/components/social/league-board.tsx"],
+    ["arkadaslar", "mobile/src/social/FriendsBoard.tsx", "src/components/social/friends-board.tsx"],
+  ];
+  const mob = [];
+  const web = [];
+  for (const [ad, m, w] of ciftler) {
+    const ms = silB(read(m));
+    const ws = silB(read(w));
+    mob.push(
+      ad +
+        ": satir=" + (/borderRadius: radii\.lg, paddingHorizontal: spacing\.md, paddingVertical: spacing\.md/.test(ms) ? "kart 20/12" : "BASKA") +
+        " aralik=" + (/gap: spacing\.sm \}\}>/.test(ms) ? "8" : "BASKA") +
+        " seri=" + (/social\.days_streak/.test(ms) ? "cumle" : "BASKA") +
+        " xp birimi=" + (/>XP<\/Text>/.test(ms) ? "var" : "YOK"),
+    );
+    web.push(
+      ad +
+        ": satir=" + (/rounded-panel border p-3/.test(ws) ? "kart 20/12" : "BASKA") +
+        " aralik=" + (/<ol className="space-y-2">/.test(ws) ? "8" : "BASKA") +
+        " seri=" + (/text-micro">\{t\("social\.days_streak"/.test(ws) ? "cumle" : "BASKA") +
+        " xp birimi=" + (/block text-micro">XP</.test(ws) ? "var" : "YOK"),
+    );
+  }
+  sameList("siralama tablosunun kabi", mob, web, "mobil", "web");
+  /* Tablo artik DIS kart tasimiyor - ic ice kart golgesi ureten sekil. */
+  /* TABLONUN KENDI kabi - sayfadaki baska kartlar degil. Ilk yazimda
+     `<section className="card` diye bakiyordum ve lig dosyasindaki SONUC
+     KARTINI (yukseldin/dustun) yakaladim; o gercekten bir kart. Olcu artik
+     bolum basligini tasiyan kaba bakiyor. */
+  const kap = (yol, baslikDeseni) => {
+    const src = silB(read(yol));
+    const i = src.search(baslikDeseni);
+    if (i < 0) return "OKUNAMADI";
+    const bas = src.lastIndexOf("<section", i);
+    return bas < 0 ? "OKUNAMADI" : /className="card/.test(src.slice(bas, i)) ? "VAR" : "yok";
+  };
+  sameList(
+    "siralama tablosu dis kart tasimiyor",
+    ["lig=yok, arkadaslar=yok"],
+    [
+      "lig=" + kap("src/components/social/league-board.tsx", /tierKey\(view\.tier\)/) +
+        ", arkadaslar=" + kap("src/components/social/friends-board.tsx", /friendsboard\.among_friends_this_week/),
+    ],
+    "beklenen",
+    "web",
+  );
 }
 
 console.log(
