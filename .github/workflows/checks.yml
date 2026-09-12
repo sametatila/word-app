@@ -249,6 +249,7 @@ jobs:
           npm run test:password
           npm run test:award
           npm run test:coach-lines
+          npm run test:cloze
           npm run test:contractions
           npm run test:events
           npm run test:numbers

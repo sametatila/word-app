@@ -1418,7 +1418,7 @@ function phrasalRegex(stem: string): RegExp | null {
   );
 }
 
-function buildCloze(word: RoundWord, pool: (typeof words.$inferSelect)[]): { sentence: string; answer: string } | null {
+export function buildCloze(word: RoundWord, pool: (typeof words.$inferSelect)[]): { sentence: string; answer: string } | null {
   const raw = firstExample(word.beispiel);
   if (!raw || raw.length < 12 || raw.length > 110) return null;
   const stem = word.de.replace(/^sich\s+/, "");
@@ -1434,9 +1434,43 @@ function buildCloze(word: RoundWord, pool: (typeof words.$inferSelect)[]): { sen
   const match = raw.match(re);
   if (match) return { sentence: raw.replace(re, "_____"), answer: match[0] };
 
-  // Hedef dil havuzdan okunuyor (havuz aynı kursun kelimeleri). Almanca ve
-  // Zürih kurslarında bu noktadan sonrası hiç çalışmaz — davranış birebir aynı.
-  if (courseOrDefault(pool[0]?.course).targetLang !== "en") return null;
+  /*
+    ALMANCA FİİL MASTAR YAZILI, CÜMLEDE ÇEKİMLİ. Başlık "arbeiten", örnek
+    "Mein Vater arbeitet …" — tam başlık arandığı için eşleşme hiç olmuyordu
+    ve o kelime hiç boşluk doldurma turu üretmiyordu. Mastar ekini ("-en" /
+    "-n") atıp gövdeyi aramak bunu kapatıyor: 2026-09-12'de ölçüldü, Almanca
+    havuzun 1.607 kelimesi boşluk doldurma kuramıyordu ve 749'u yalnız bu
+    yüzden.
+
+    BÜYÜK HARF GUARD'I: Almanca isimler büyük harfle başlıyor, yani "arbeit"
+    gövdesi cümledeki "Arbeit" ismine de uyar ve boşluk YANLIŞ kelimeye
+    düşerdi. Cümle başı dışında büyük harfle başlayan eşleşme kabul
+    edilmiyor. (Ölçümde bu durum hiç çıkmadı ama kuralın kendisi ucuz.)
+
+    Kalan 858 kelime ölçüldü ve BİLEREK dışarıda: 269'u ayrılabilen fiil
+    ("Der Zug fährt gleich ab") — tek bir boşluk bölünmüş fiili tutamaz;
+    kalanı gövde ünlüsü değişen fiiller (fahren → fährt) ve çoğulda umlaut
+    alan isimler (Baum → Bäume).
+  */
+  // Hedef dil havuzdan okunuyor (havuz aynı kursun kelimeleri).
+  const targetLang = courseOrDefault(pool[0]?.course).targetLang;
+  if (targetLang !== "en" && word.typ === "Verb") {
+    const base = stem.replace(/e?n$/, "");
+    if (base.length >= 3 && base !== stem) {
+      const stemRe = new RegExp(
+        `(?<![\\p{L}\\p{N}])${escapeRegExp(base)}\\p{L}{0,4}(?![\\p{L}\\p{N}])`,
+        "iu",
+      );
+      const sm = raw.match(stemRe);
+      if (sm && !(sm.index !== 0 && /^\p{Lu}/u.test(sm[0]))) {
+        return { sentence: raw.replace(stemRe, "_____"), answer: sm[0] };
+      }
+    }
+  }
+
+  // Almanca ve Zürih kurslarında bu noktadan sonrası hiç çalışmaz — davranış
+  // birebir aynı.
+  if (targetLang !== "en") return null;
   const phrasal = phrasalRegex(stem);
   if (!phrasal) return null;
   const pm = raw.match(phrasal);
