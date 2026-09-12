@@ -7342,6 +7342,150 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 242. YARIM KALAN ISTEN AYRILMAK ---------------------------------
+   *
+   * Iki ayri kusur cikti, ikisi de webde.
+   *
+   * BIRINCISI: DORT EKRAN KAPANDI. Boss turu, meydan okuma, gunun turu ve
+   * haftalik sinav webde tur baslayinca BASLIKTA HIC DUGME TASIMIYORDU; tek
+   * cikis tarayicinin geri dugmesiydi ve ana ekrana eklenmis uygulamada o da
+   * yok. Ayni kapan tur ve deneme sinavinda daha once kapatilmisti
+   * (`session-player`, `mock-exam-player`); bu dordu acik kalmisti.
+   * Android'in dordunde de basligin solunda 44 px'lik bir kapat karosu var.
+   *
+   * IKINCISI: AYRILMANIN OTEKI YOLLARI. Android'de tur, modul sinavi,
+   * yerlestirme ve yuruyus ekranlarinda DONANIM GERI TUSU onay diyalogana
+   * bagli (`lib/useBackConfirm.ts`) ve o ekranlarda hicbir gezinme yuzeyi
+   * yok (yigin sayfasi, sekme cubugu cizilmiyor). Webde ikisi de yoktu:
+   *
+   *   - Sureli bir sinavin ortasinda F5 ya da sekmeyi kapatmak cevaplari
+   *     sessizce birakiyordu; tarayicinin "siteden ayrilinsin mi" kutusu
+   *     ancak `beforeunload` dinleyicisi varsa cikar ve hicbir oyuncuda
+   *     yoktu.
+   *   - Webde KENAR CUBUGU her `(app)` rotasinda ciziliyor, turun ve
+   *     sinavin icinde de. Oyuncunun iki santim otedeki kapatma dugmesi
+   *     "cikilsin mi" diye soruyor, ayni ekranin solundaki "Profil"
+   *     baglantisi ise hicbir sey sormadan cikiyordu.
+   *
+   * `useLeaveGuard` bu iki yolu da ayni diyaloga bagliyor. Tarayici geri
+   * tusu (ayni belge icinde gecmiste geri gitme) BILEREK kapsam disi: onu
+   * durdurmak gecmise sahte kayit eklemekle olur ve o kayit kullanicinin
+   * gecmisinde kalici bir cop birakir.
+   *
+   * UCUNCUSU mobilde: `MockExamScreen` basliktaki kapatma dugmesinde "sinavi
+   * birak?" diye soruyor ve onaylanirsa cevaplari hem yerele hem sunucuya
+   * YAZIP cikiyordu; donanim geri tusu ise hicbir sey sormadan, hicbir sey
+   * yazmadan ekrani kapatiyordu. Ayni ekranda iki farkli cikis davranisi
+   * vardi ve kullanicinin dogal hareketi olan geri tusu, korunmayan olandi.
+   * Oteki dort ekran zaten kancayi kullaniyordu. */
+  {
+    /* Adi "cikis" olan bir denetim var mi. Kosullu ad da sayiliyor
+       (`t(phase === "bolum" ? "exam.quit_title" : "common.back")`), o yuzden
+       olcu ANAHTARIN AD OZNITELIGININ ICINDE gecmesi. */
+    const CIKIS_ANAHTARLARI = "common\\.go_back|common\\.back|common\\.close|game\\.quit_round|exam\\.quit_title|mockexam\\.quit_title|plc\\.quit_title|walkmode\\.exit_walk_mode";
+    const adliCikis = (src, oznitelik) =>
+      new RegExp(oznitelik + "=\\{[^}]*(?:" + CIKIS_ANAHTARLARI + ")[^}]*\\}").test(src);
+    const webCikis = (yol) => {
+      const src = sil(read(yol));
+      /* Ortak karo kendi adini tasiyor (`RoundExit`); adi orada olculuyor. */
+      return /<RoundExit\b/.test(src) || adliCikis(src, "aria-label") ? "var" : "YOK";
+    };
+    const mobilCikis = (yol) => (adliCikis(sil(read(yol)), "accessibilityLabel") ? "var" : "YOK");
+
+    const EKRANLAR = [
+      ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
+      ["meydan-okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
+      ["gunun-turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
+      ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
+      ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["modul-sinavi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["deneme-kagidi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
+      ["yerlestirme", "src/components/placement/placement-test.tsx", "mobile/src/screens/PlacementScreen.tsx"],
+    ];
+    sameList(
+      "tur basliginda cikis yolu var",
+      EKRANLAR.map(([ad, yw]) => ad + "=" + webCikis(yw)),
+      EKRANLAR.map(([ad]) => ad + "=var"),
+      "web",
+      "beklenen",
+    );
+    sameList(
+      "tur basliginda cikis yolu var (mobil)",
+      EKRANLAR.map(([ad, , ym]) => ad + "=" + mobilCikis(ym)),
+      EKRANLAR.map(([ad]) => ad + "=var"),
+      "mobil",
+      "beklenen",
+    );
+
+    /* Ayrilma onaya bagli mi - ve donen isaret GERCEKTEN diyalogu aciyor mu.
+       Yalniz cagriyi aramak yetmez: kanca cagrilip donusu kullanilmazsa
+       dosyada ad geciyor ve hicbir sey degismiyor. */
+    const KORUNAN = [
+      ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["modul-sinavi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["yerlestirme", "src/components/placement/placement-test.tsx", "mobile/src/screens/PlacementScreen.tsx"],
+      ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
+      ["deneme-kagidi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+    ];
+    const webKoruma = (yol) => {
+      const src = sil(read(yol));
+      const cagri = src.match(/useLeaveGuard\(([^)]*)\)/);
+      if (!cagri) return "KANCA YOK";
+      if (/^\s*(?:false|)\s*$/.test(cagri[1])) return "KOSUL YOK";
+      return /ayril\.pending !== null/.test(src) ? "bagli" : "DONUS KULLANILMIYOR";
+    };
+    const mobilKoruma = (yol) => {
+      const src = sil(read(yol));
+      const cagri = src.match(/useBackConfirm\(([^)]*)\)/);
+      if (!cagri) return "KANCA YOK";
+      if (/^\s*(?:false|)\s*$/.test(cagri[1])) return "KOSUL YOK";
+      return /back\.visible/.test(src) ? "bagli" : "DONUS KULLANILMIYOR";
+    };
+    sameList(
+      "ayrilma onaya bagli",
+      KORUNAN.map(([ad, , ym]) => ad + "=" + mobilKoruma(ym)),
+      KORUNAN.map(([ad, yw]) => ad + "=" + webKoruma(yw)),
+      "mobil",
+      "web",
+    );
+
+    /* Kanca GERCEKTEN dinliyor mu (MUTLAK). 241'in dersi: cagri yerlerini
+       olcmek yetmez, kanca dinlemeyi birakirsa her cagri dogru gorunur. */
+    const kw = sil(read("src/lib/use-leave-guard.ts"));
+    const km = sil(read("mobile/src/lib/useBackConfirm.ts"));
+    sameList(
+      "ayrilma kancasi dinliyor",
+      [
+        "web yenileme/sekme=" + (/addEventListener\("beforeunload", onUnload\)/.test(kw) ? "dinliyor" : "DINLEMIYOR"),
+        "web uygulama ici baglanti=" + (/addEventListener\("click", onClick, true\)/.test(kw) ? "dinliyor" : "DINLEMIYOR"),
+        "mobil donanim geri=" + (/addEventListener\("hardwareBackPress"/.test(km) ? "dinliyor" : "DINLEMIYOR"),
+      ],
+      ["web yenileme/sekme=dinliyor", "web uygulama ici baglanti=dinliyor", "mobil donanim geri=dinliyor"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Cikis karosunun OLCUSU: Android 44x44 / 22 px simge. */
+    const re = sil(read("src/components/round-exit.tsx"));
+    const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/DailyScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"];
+    sameList(
+      "cikis karosunun olcusu",
+      [
+        "kare=" + (dortlu.every((y) => /width: 44, height: 44/.test(sil(read(y)))) ? "44" : "?"),
+        "simge=" + (dortlu.every((y) => /<XIcon color=\{colors\.textMuted\} size=\{22\} \/>/.test(sil(read(y)))) ? "22" : "?"),
+        "adi=" + (dortlu.every((y) => adliCikis(sil(read(y)), "accessibilityLabel")) ? "var" : "YOK"),
+      ],
+      [
+        "kare=" + (/className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"/.test(re) ? "44" : "?"),
+        "simge=" + (/<XIcon size=\{22\} \/>/.test(re) ? "22" : "?"),
+        "adi=" + (/aria-label=\{t\(labelKey\)\}/.test(re) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 241. BOS HAL EV KALIBINDA ---------------------------------------
    *
    * Android'in kendi cevabi var: `social/common.tsx` `EmptyCard` - 52 px'lik

@@ -12224,3 +12224,71 @@ dalının doğru sebebi. Ölçü **düğüm**, pencere değil: boş hâl kartlar
 içine düğme ve bağlantı giriyor, karakter mesafesi ölçü olamaz — işaretin
 kendi açılış etiketi derinlik/tırnak farkındaki `acilisSonu` ile okunuyor.
 Beş enjeksiyon denendi, beşi de yakalandı.
+
+## §11.361 — Yarım kalan işten ayrılmak: dört kapalı ekran ve üç kaçak yol
+
+Eksen **çıkış onayı ve yarım kalan işin korunması**ydı. Üç ayrı kusur çıktı.
+
+### Dört ekran kapandı (web)
+
+Boss turu, Meydan Okuma, Günün Turu ve Haftalık Sınav web'de tur başlayınca
+**başlıkta hiçbir düğme taşımıyordu**. Tek çıkış tarayıcının geri düğmesiydi
+— ana ekrana eklenmiş uygulamada o da yok. Aynı kapan tur ve deneme sınavında
+daha önce kapatılmıştı (`session-player`, `mock-exam-player` dosyalarındaki
+"çıkış yolu yoktu" notları); bu dördü açık kalmıştı. Android'in dördünde de
+başlığın solunda 44 px'lik bir kapat karosu var.
+
+Ölçüler Android'den geldi ve ortak bir bileşene alındı (`round-exit.tsx`):
+44×44, `surface-2` zemin, `tile` yarıçap, 22 px `XIcon`, sönük renk, adı
+`common.go_back` ya da `common.back`. Yürüyüş kipinin oynama başlığına da
+eklendi: orada tek çıkış sayfanın **en altındaki** "Bitir" düğmesiydi ve
+kaydırmadan görünmüyordu; Android'in kip başlığında o karo baştan beri var
+(`WalkModeScreen` `topBar`).
+
+### Ayrılmanın öteki yolları (web)
+
+Android'de tur, modül sınavı, yerleştirme ve yürüyüş ekranlarında **donanım
+geri tuşu** onay diyaloğuna bağlı (`lib/useBackConfirm.ts`) ve o ekranlarda
+hiçbir gezinme yüzeyi yok — yığın sayfası, sekme çubuğu çizilmiyor. Web'de
+ikisi de yoktu:
+
+- **Yenileme / sekmeyi kapatma.** Süreli bir sınavın ortasında F5'e basmak
+  cevapları sessizce bırakıyordu; tarayıcının "siteden ayrılınsın mı" kutusu
+  ancak `beforeunload` dinleyicisi varsa çıkar ve hiçbir oyuncuda yoktu.
+- **Uygulamanın kendi gezinmesi.** Web'de kenar çubuğu **her** `(app)`
+  rotasında çiziliyor, turun ve sınavın içinde de. Oyuncunun iki santim
+  ötedeki kapatma düğmesi "çıkılsın mı" diye soruyor, aynı ekranın solundaki
+  "Profil" bağlantısı ise hiçbir şey sormadan çıkıyordu.
+
+`useLeaveGuard` ikisini de aynı diyaloğa bağlıyor: yakalama `capture`
+evresinde, yalnız oturum sürerken; bağlantı tıklanınca varsayılan duruyor,
+hedef `pending`e yazılıyor, onaylanırsa yolculuk sürüyor. Beş oyuncu
+kullanıyor (tur, modül sınavı, yerleştirme, yürüyüş, deneme kâğıdı).
+
+**Tarayıcı geri tuşu bilerek kapsam dışı.** Aynı belge içinde geçmişte geri
+gitmeyi durdurmak, geçmişe sahte bir kayıt eklemekle olur ve o kayıt
+kullanıcının geçmişinde kalıcı bir çöp bırakır. Ayrılmanın öteki üç yolu
+kapandı; bu biri açık ve bunu bilerek bırakıyoruz.
+
+### Aynı ekranda iki farklı çıkış (mobil)
+
+`MockExamScreen` başlıktaki kapatma düğmesinde "sınavı bırak?" diye soruyor
+ve onaylanırsa cevapları hem yerele hem sunucuya **yazıp** çıkıyordu; donanım
+geri tuşu ise hiçbir şey sormadan, hiçbir şey yazmadan ekranı kapatıyordu.
+Kayıp iki saniyeyle sınırlı (`saveLocalRun` her değişiklikten iki saniye
+sonra çalışıyor) ama sorun kayıp değil: **süreli bir sınavdan kazara
+çıkmak** — ve kullanıcının en doğal hareketi olan geri tuşu, korunmayan
+olandı. Öteki dört ekran zaten kancayı kullanıyordu.
+
+### §242
+
+Dört olgu: dokuz ekranın başlığında adı olan bir çıkış denetimi (iki platform
+ayrı listede), ayrılmanın onaya bağlı olması (beş yüzey, **dönüşün gerçekten
+diyaloğu açması** ölçülüyor — kanca çağrılıp dönüşü kullanılmazsa dosyada ad
+geçer ve hiçbir şey değişmez), kancanın gerçekten dinlemesi (mutlak; §241'in
+dersi) ve çıkış karosunun ölçüsü.
+
+Ad ölçüsü **koşullu adı da sayıyor**: `t(phase === "bolum" ? "exam.quit_title"
+: "common.back")` gibi bir ad ilk yazımda görünmüyordu ve iki ekran yanlışlıkla
+"adsız" çıkmıştı — ölçü anahtarın **ad özniteliğinin içinde** geçmesine
+çevrildi. Beş enjeksiyon denendi, beşi de yakalandı.
