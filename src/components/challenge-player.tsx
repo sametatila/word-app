@@ -7,6 +7,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
+import { RoundExit } from "@/components/round-exit";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
 import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
@@ -374,9 +375,13 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     <div className="relative mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <AchievementFlash fire={flash.fire} message={flash.text} tone={flash.tone} />
 
+      {/* ÇIKIŞ YOLU YOKTU: tur başlayınca başlıkta hiçbir düğme yoktu ve tek
+          çıkış tarayıcının geri düğmesiydi. Android'de aynı yerde 44 px'lik
+          kapat karosu var (`ChallengeScreen`). */}
       <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between text-caption">
-          <span className="flex items-center gap-2">
+        <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
+          <RoundExit onExit={onExit} />
+          <span className="flex flex-1 items-center gap-2">
             <span
               className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
               style={{

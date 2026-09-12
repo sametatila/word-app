@@ -8,6 +8,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
+import { RoundExit } from "@/components/round-exit";
 import { Mascot } from "@/components/mascot";
 import { track } from "@/lib/track";
 import type { WeeklyStatus } from "@/lib/weekly";
@@ -254,9 +255,13 @@ export function WeeklyPlayer() {
   const round = data!.rounds[index];
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+      {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca başlıkta hiçbir düğme yoktu ve
+          tek çıkış tarayıcının geri düğmesiydi. Android'de aynı yerde 44
+          px'lik kapat karosu var (`WeeklyScreen`). */}
       <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between text-caption">
-          <span className="muted">
+        <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
+          <RoundExit href="/learn" labelKey="common.back" />
+          <span className="muted flex-1">
             {index + 1} / {data!.rounds.length} · {t("weekly.usage_exam")}
           </span>
           <span className="muted">{t("weekly.no_hints")}</span>

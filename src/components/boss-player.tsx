@@ -7,6 +7,7 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
+import { RoundExit } from "@/components/round-exit";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
@@ -335,10 +336,15 @@ export function BossPlayer({
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
-      <div className="mb-3 flex items-center justify-between px-1">
+      {/* ÇIKIŞ YOLU YOKTU: tur başlayınca başlıkta hiçbir düğme yoktu ve
+          tek çıkış tarayıcının geri düğmesiydi. Android'de aynı yerde 44 px'lik
+          bir kapat karosu var (`BossScreen`) ve sıra sayacının solunda duruyor. */}
+      <div className="mb-3 flex items-center gap-3 px-1">
+        <RoundExit onExit={onExit} />
         <span className="text-strong tabular-nums">
           {index + 1} / {data!.rounds.length}
         </span>
+        <span className="flex-1" />
         <motion.span
           key={`${urgent}-${Math.ceil(left)}`}
           animate={urgent ? { scale: [1, 1.12, 1] } : {}}

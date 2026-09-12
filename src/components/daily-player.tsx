@@ -6,6 +6,7 @@ import type { Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
+import { RoundExit } from "@/components/round-exit";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { TIER_COLOR } from "@/components/achievement-badge";
@@ -235,9 +236,13 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     const round = data.rounds[index];
     return (
       <div className="flex min-h-0 flex-1 flex-col">
+        {/* ÇIKIŞ YOLU YOKTU: tur başlayınca başlıkta hiçbir düğme yoktu ve
+            tek çıkış tarayıcının geri düğmesiydi. Android'de aynı yerde 44
+            px'lik kapat karosu var (`DailyScreen`). */}
         <div className="mb-3 shrink-0">
-          <div className="mb-1.5 flex items-center justify-between text-caption">
-            <span className="muted">
+          <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
+            <RoundExit onExit={onExit} labelKey="common.back" />
+            <span className="muted flex-1">
               {index + 1} / {data.rounds.length}
             </span>
             <span className="flex items-center gap-2">
