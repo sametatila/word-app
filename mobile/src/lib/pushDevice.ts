@@ -152,6 +152,12 @@ export function attachPushListeners(): () => void {
         body,
         data: { url: String(msg.data?.url ?? "") },
         android: { channelId: "reminder", smallIcon: "ic_notification", tag: String(msg.data?.tag ?? ""), pressAction: { id: "default" } },
+        /* iOS'ta ses VERILMEDIGINDE bildirim sessiz düşüyor. Bu dal uygulama
+           ÖN PLANDAYKEN geleni yeniden çiziyor; APNs'in kendi yolunda ses
+           sunucudan geliyor (`lib/fcm.ts` `aps.sound = "default"`) ve buradaki
+           kopya aynı sesi kullanmak zorunda, yoksa aynı bildirim iki yoldan
+           iki farklı şekilde gelir (bkz. `lib/notifications` `IOS_SES`). */
+        ios: { sound: "default" },
       });
     } catch {
       /* çizilemezse gelen kutusu zaten satırı taşıyor */

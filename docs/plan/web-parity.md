@@ -14983,3 +14983,50 @@ durması, `[^>]*`/`[^)]*` ile aynı aile.
 **Yan bulgu:** `npm run ios:check` sekiz denetimin sekizini geçiyor ve
 **Google iOS istemcisi artık AÇIK** — Samet'in bekleyen maddelerinden biri
 kapanmış görünüyor (`658160017552-8di7u96v77l0f5oiv47201o8jaamqe55`).
+
+## §11.416 — iOS'ta her bildirim sessiz düşüyordu
+
+Android'de bildirim kanalı `AndroidImportance.HIGH`: ses çıkarıyor ve
+heads-up geliyor. iOS'ta karşılığı bildirimin kendi `ios.sound` alanı ve
+**verilmediğinde bildirim sessiz düşüyor** — banner geliyor, kullanıcı
+duymuyor. Ölçüldüğünde mobil kaynakta `ios:` bloğu **hiç yoktu**:
+
+| Yol | Android | iOS (önce) |
+|---|---|---|
+| cihazda kurulan hatırlatma (günlük/seri/haftalık) | kanal HIGH → sesli | **sessiz** |
+| ön planda gelen uzak bildirimin yeniden çizimi | kanal HIGH → sesli | **sessiz** |
+| deneme bildirimi (ayarlardaki önizleme) | sesli | **sessiz** |
+
+Yani aynı hatırlatma Android'de duyulup iOS'ta duyulmuyordu — ve hatırlatma,
+deponun kendi notuyla, elde tutmanın **ana** kaldıracı (§4). Cihazda kurulan
+hatırlatma özellikle önemli: `hasPushDevice()` onu yalnız **uzak push
+yokken** kuruyor, yani o dal zaten "tek bildirim yolu bu" durumudur.
+
+Değer yeni bir ürün kararı **değil**: sunucunun APNs yükü baştan beri
+`aps.sound = "default"` yazıyor (`lib/fcm.ts`). Cihazdaki kopya da aynı sesi
+kullanıyor — yoksa aynı bildirim iki yoldan iki farklı şekilde gelirdi.
+
+### Yönelim: ölçüldü, doğru çıktı, kilitlendi
+
+Aynı aileden ikinci bir soru: uygulama hangi ekranda dönüyor. Android telefonu
+dikeye kilitliyor, tableti serbest bırakıyor (`MainActivity.onCreate`,
+`smallestScreenWidthDp >= 600`); iOS aynı ayrımı `Info.plist`te yapıyor
+(iPhone yalnız `Portrait`, `~ipad` dört yön). **Eşik** de `useLayout`un
+telefon/tablet eşiğiyle (600) aynı. Üçü tutuyor.
+
+Tutmayan tek şey bir **yorum** idi: `useLayout` "telefonda dikeye kilitli
+(bkz. manifest)" diyordu, oysa manifestte `screenOrientation` yok — kilit
+`MainActivity`de, çünkü kaynak nitelikleri (sw600dp) manifestte değişemiyor.
+Yorum düzeltildi; kilidin nerede olduğu artık doğru yazıyor.
+
+### §291
+
+Altı ölçü: üç bildirim yolunun iOS sesini taşıdığı, cihazdaki sesin
+**sunucunun** sesiyle aynı olduğu, Android kanalının **HIGH** kaldığı (yoksa
+karşılaştırma "ikisi de sessiz" diye geçerdi — kaydedilmiş kusur sınıfı),
+yönelim ayrımının iki platformda aynı olduğu ve eşiğin düzen eşiğiyle
+uyuştuğu.
+
+Meta-kapı (§138) bu turda da iş gördü: `SCREEN_ORIENTATION_PORTRAIT` sınırsız
+ad deseniyle aranmıştı ve reddedildi — `..._REVERSE_PORTRAIT` ile
+`FULL_USER`/`FULL_SENSOR` karışabilirdi.

@@ -178,13 +178,29 @@ export async function cancelLocalReminders(): Promise<void> {
   }
 }
 
+/*
+ * iOS SESSİZ KALIYORDU.
+ *
+ * Android'de kanal `AndroidImportance.HIGH`: bildirim ses çıkarıyor ve
+ * heads-up geliyor. iOS'ta karşılığı bildirimin kendi `ios.sound` alanı ve
+ * VERİLMEDİĞİNDE bildirim SESSİZ düşüyor (notifee: `sound` tanımsızsa ses
+ * yok) — banner geliyor, kullanıcı duymuyor. Yani aynı hatırlatma Android'de
+ * duyulup iOS'ta duyulmuyordu; hatırlatma da elde tutmanın ana kaldıracı.
+ *
+ * Değer sunucunun kendi seçimi: uzak bildirimde APNs yükü baştan beri
+ * `aps.sound = "default"` yazıyor (`lib/fcm.ts`). Cihazda kurulan kopya da
+ * aynı sesi kullanıyor, yoksa aynı bildirim iki yoldan iki farklı şekilde
+ * gelirdi.
+ */
+const IOS_SES = { sound: "default" } as const;
+
 async function schedule(id: string, body: string, timestamp: number, freq: RepeatFrequency): Promise<void> {
   /* Uzak push varsa yerel kopya kurulmuyor: çağıranların hepsi bu tek
      kapıdan geçiyor, yani yeni bir hatırlatma türü eklendiğinde kural
      kendiliğinden uygulanıyor. */
   if (hasPushDevice()) return;
   await notifee.createTriggerNotification(
-    { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } } },
+    { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } }, ios: IOS_SES },
     { type: TriggerType.TIMESTAMP, timestamp, repeatFrequency: freq },
   );
 }
@@ -317,6 +333,7 @@ export async function showTestNotification(): Promise<boolean> {
     title: "Lernomi",
     body: t("notif.test_body"),
     android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } },
+    ios: IOS_SES,
   });
   return true;
 }

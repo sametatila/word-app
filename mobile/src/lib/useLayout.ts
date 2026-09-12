@@ -82,7 +82,10 @@ export type Layout = {
   wideContentWidth: number;
   /** Geniş ekran mı (sw >= 600dp): tablet ya da açık katlanabilir. */
   wide: boolean;
-  /** Ekran yatay mı — tablette serbest, telefonda dikeye kilitli (bkz. manifest). */
+  /** Ekran yatay mı — tablette serbest, telefonda dikeye kilitli
+   *  (kilit `MainActivity.onCreate` içinde: kaynak nitelikleri manifestte
+   *  değişemediği için beyan orada değil; iOS karşılığı `Info.plist`
+   *  `UISupportedInterfaceOrientations` + `~ipad`). */
   landscape: boolean;
   /** Kart ızgarasının sütun sayısı — GENİŞ kaba göre, ızgaralar orada duruyor. */
   gridColumns: 2 | 3 | 4 | 5;

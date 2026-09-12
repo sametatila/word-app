@@ -7488,6 +7488,118 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 291. BILDIRIM IKI PLATFORMDA DA DUYULUYOR ----------------------
+   *
+   * Android'de bildirim kanali `AndroidImportance.HIGH`: ses cikariyor ve
+   * heads-up geliyor. iOS'ta karsiligi bildirimin kendi `ios.sound` alani ve
+   * VERILMEDIGINDE bildirim SESSIZ dusuyor - banner geliyor, kullanici
+   * duymuyor. Olculdugunde mobil kaynakta `ios:` blogu HIC YOKTU: ne cihazda
+   * kurulan hatirlatmalarda (gunluk/seri/haftalik), ne on plandaki uzak
+   * bildirimin yeniden ciziminde, ne deneme bildiriminde.
+   *
+   * Yani ayni hatirlatma Android'de duyulup iOS'ta duyulmuyordu - ve
+   * hatirlatma, deponun kendi notuyla, elde tutmanin ANA kaldiraci (§4).
+   *
+   * Deger yeni bir urun karari DEGIL: sunucunun APNs yuku bastan beri
+   * `aps.sound = "default"` yaziyor (`lib/fcm.ts`). Cihazdaki kopya da ayni
+   * sesi kullaniyor, yoksa ayni bildirim iki yoldan iki farkli sekilde
+   * gelirdi.
+   *
+   * YONELIM de burada olculuyor cunku ayni aileden: Android telefonda dikeye
+   * kilitliyor, tablette serbest birakiyor (`MainActivity.onCreate`,
+   * sw >= 600dp); iOS ayni ayrimi `Info.plist`te yapiyor (iPhone yalniz
+   * portrait, `~ipad` dort yon). `useLayout` bu ayrima dayaniyor ve yorumu
+   * yanlis yeri gosteriyordu ("bkz. manifest"); kilit manifestte degil. */
+  {
+    const bildirim = sil(read("mobile/src/lib/notifications.ts"));
+    const cihaz = sil(read("mobile/src/lib/pushDevice.ts"));
+    const fcm = sil(read("src/lib/fcm.ts"));
+
+    /* Sunucunun sesi - cihazdaki kopyanin olcutu. */
+    const sunucuSes = (fcm.match(/aps: \{[^}]*sound: "(\w+)"/) ?? [])[1] ?? "YOK";
+
+    /* notifee cagrilarinin GOVDESI: dengeli suslu parantez. */
+    const govde = (metin, anahtar) => {
+      const i = metin.indexOf(anahtar);
+      if (i < 0) return "";
+      const bas = metin.indexOf("{", i);
+      if (bas < 0) return "";
+      let d = 0;
+      for (let j = bas; j < metin.length; j++) {
+        if (metin[j] === "{") d++;
+        else if (metin[j] === "}") { d--; if (d === 0) return metin.slice(bas, j + 1); }
+      }
+      return "";
+    };
+    const sesli = (g) => (/ios: IOS_SES/.test(g) || /ios: \{ sound: "default" \}/.test(g) ? "sesli" : "SESSIZ");
+
+    sameList(
+      "bildirimin iOS sesi",
+      [
+        "zamanlanan=" + sesli(govde(bildirim, "createTriggerNotification")),
+        "deneme=" + sesli(govde(bildirim, "displayNotification")),
+        "on plandaki uzak=" + sesli(govde(cihaz, "displayNotification")),
+      ],
+      ["zamanlanan=sesli", "deneme=sesli", "on plandaki uzak=sesli"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ses degeri sunucunun yaziyla AYNI - iki yol tek ses. */
+    const yerelSes = (bildirim.match(/IOS_SES = \{ sound: "(\w+)" \}/) ?? [])[1] ?? "YOK";
+    sameList(
+      "cihazdaki ses sunucunun sesi",
+      ["cihaz=" + yerelSes],
+      ["cihaz=" + sunucuSes],
+      "cihaz",
+      "sunucu (apns)",
+    );
+
+    /* Android tarafi da olculuyor: kanal YUKSEK onemde kalmali, yoksa
+       karsilastirma "ikisi de sessiz" diye gecerdi. */
+    sameList(
+      "android kanali yuksek onemde",
+      ["kanal=" + (/importance: AndroidImportance\.HIGH/.test(bildirim) ? "HIGH" : "DUSUK")],
+      ["kanal=HIGH"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* YONELIM: iki platformun ayrimi ve esigi ayni. */
+    const kt = sil(read("mobile/android/app/src/main/java/com/lernomi/MainActivity.kt"));
+    const plist = read("mobile/ios/Lernomi/Info.plist");
+    const androidEsik = (kt.match(/smallestScreenWidthDp >= (\d+)/) ?? [])[1] ?? "YOK";
+    /* Ad sinirli: `SCREEN_ORIENTATION_PORTRAIT` ile `..._REVERSE_PORTRAIT`,
+       `FULL_USER` ile `FULL_SENSOR` birbirine karismasin. */
+    const androidTelefon = /\bActivityInfo\.SCREEN_ORIENTATION_PORTRAIT\b/.test(kt) ? "portrait" : "SERBEST";
+    const androidTablet = /\bActivityInfo\.SCREEN_ORIENTATION_FULL_USER\b/.test(kt) ? "serbest" : "KILITLI";
+    const iphoneYon = [...(plist.match(/<key>UISupportedInterfaceOrientations<\/key>\s*<array>([\s\S]*?)<\/array>/) ?? ["", ""])[1].matchAll(/UIInterfaceOrientation(\w+)/g)].map((m) => m[1]);
+    const ipadYon = [...(plist.match(/<key>UISupportedInterfaceOrientations~ipad<\/key>\s*<array>([\s\S]*?)<\/array>/) ?? ["", ""])[1].matchAll(/UIInterfaceOrientation(\w+)/g)].map((m) => m[1]);
+    sameList(
+      "yonelim ayrimi iki platformda ayni",
+      [
+        "telefon=" + androidTelefon,
+        "tablet=" + androidTablet,
+      ],
+      [
+        "telefon=" + (iphoneYon.length === 1 && iphoneYon[0] === "Portrait" ? "portrait" : "SERBEST:" + iphoneYon.join("/")),
+        "tablet=" + (ipadYon.length >= 3 ? "serbest" : "KILITLI:" + ipadYon.length),
+      ],
+      "android",
+      "ios",
+    );
+    /* Esik `useLayout`un kendi esigiyle de ayni olmali - duzen o sayiya gore
+       telefon/tablet diyor. */
+    const layout = sil(read("mobile/src/lib/useLayout.ts"));
+    sameList(
+      "yonelim esigi duzen esigiyle ayni",
+      ["esik=" + androidEsik],
+      ["esik=" + ((layout.match(/windowWidth < (\d+)\) return dar/) ?? [])[1] ?? "YOK")],
+      "android",
+      "duzen",
+    );
+  }
+
   /* -- 290. NATIVE KOPRU IKI PLATFORMDA AYNI SOZLESME ----------------
    *
    * Bu betik bugune kadar `mobile/ios` altina HIC BAKMADI: karsilastirdigi
