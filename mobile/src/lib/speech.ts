@@ -1,4 +1,5 @@
 import { foldContractions } from "./contractions";
+import { foldEnglishSpelling } from "./en-spelling";
 import { foldNumbers } from "./numbers";
 
 
@@ -21,7 +22,10 @@ export function normalizeSpoken(text: string, lang: string = "de"): string {
   // Kısaltmalar önce açılıyor: aşağıdaki noktalama temizliği kesme işaretini
   // boşluğa çeviriyor, yani "I'm" ile "I am" yoksa buluşamaz (web ile aynı).
   return foldNumbers(
-    foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    foldEnglishSpelling(
+      foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+      lang,
+    ),
     lang,
   )
     .replace(PUNCTUATION, " ")

@@ -18,6 +18,7 @@
  */
 
 import { foldContractions } from "@/lib/contractions";
+import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { foldNumbers } from "@/lib/numbers";
 import type { TargetLang } from "@/lib/courses";
 
@@ -80,7 +81,10 @@ export function normalizeSpoken(text: string, lang: TargetLang = "de"): string {
   // çevirdiği için "I'm" ile "I am" bu satırdan sonra buluşamazdı (gerekçe
   // `lib/contractions.ts`).
   return foldNumbers(
-    foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    foldEnglishSpelling(
+      foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+      lang,
+    ),
     lang,
   )
     .replace(PUNCTUATION, " ")

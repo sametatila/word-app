@@ -1,5 +1,6 @@
 import { classifyOrder, levenshtein, type ErrorType } from "./errors";
 import { foldContractions } from "./contractions";
+import { foldEnglishSpelling } from "./en-spelling";
 import { foldNumbers } from "./numbers";
 import { currentTargetLang } from "./courses";
 
@@ -56,7 +57,10 @@ export function foldSentence(s: string, lang: string = currentTargetLang()): str
   // Kısaltma açılıyor (noktalama temizliği kesme işaretini boşluğa çeviriyor;
   // "I'm" ile "I am" yoksa buluşamaz — `lib/contractions.ts`).
   const lower = foldNumbers(
-    foldContractions(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    foldEnglishSpelling(
+      foldContractions(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+      lang,
+    ),
     lang,
   );
   const folded =

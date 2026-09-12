@@ -59,6 +59,24 @@ export function foldContractions(text: string, lang: string = "de"): string {
     .replace(/\bcan't\b/gi, "can not")
     .replace(/\bcannot\b/gi, "can not")
     .replace(/\blet's\b/gi, "let us")
+    /*
+      KONUŞMA İNDİRGEMELERİ. Tanıyıcı bunları DUYDUĞU gibi yazıyor ("I'm
+      gonna call"), içerik ise tam biçimi taşıyor ("I'm going to call") —
+      yani seçim öğrencinin değil tanıyıcının. Ölçüldü: 26 hedef yalnız bu
+      yüzden reddediliyordu (18 "gonna", 8 "wanna").
+    */
+    .replace(/\bgonna\b/gi, "going to")
+    .replace(/\bwanna\b/gi, "want to")
+    .replace(/\bgotta\b/gi, "got to")
+    .replace(/\bkinda\b/gi, "kind of")
+    .replace(/\bgimme\b/gi, "give me")
+    .replace(/\blemme\b/gi, "let me")
+    .replace(/\bdunno\b/gi, "do not know")
+    .replace(/\boutta\b/gi, "out of")
+    .replace(/\b(?:'cause|cuz)\b/gi, "because")
+    // Kesme işareti düşmüş biçim: noktalama temizliği "o'clock"u zaten
+    // "o clock" yapıyor, kesmesiz yazan da aynı yere insin.
+    .replace(/\bo'?clock\b/gi, "o clock")
     .replace(/\b(\w+)n't\b/gi, "$1 not")
     .replace(/\b(\w+)'m\b/gi, "$1 am")
     .replace(/\b(\w+)'re\b/gi, "$1 are")

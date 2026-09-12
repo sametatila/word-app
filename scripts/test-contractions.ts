@@ -60,4 +60,34 @@ assert.notEqual(matchSentence("I'm from Turkey.", "I am from Greece.", [], "en")
 assert.equal(matchSentence("Ich gehe ins Kino.", "Ich gehe ins Kino.", [], "de").verdict, "exact");
 assert.equal(judgeSpeech("Ich bin müde", ["ich bin müde"]).kind, "correct");
 
-console.log("test:contractions — açılım/belirsiz ek/değerlendirici/çeviri/Almanca: tamam");
+// Konuşma indirgemeleri: tanıyıcı duyduğu gibi yazıyor, seçim öğrencinin değil
+eq("I'm gonna call you.", "I am going to call you.", "gonna = going to");
+eq("I wanna buy a gift.", "I want to buy a gift.", "wanna = want to");
+eq("We gotta go.", "We have got to go.".replace("have ", ""), "gotta = got to");
+correct("I'm going to travel tomorrow.", "I'm gonna travel tomorrow");
+correct("I want to buy a gift for my sister.", "I wanna buy a gift for my sister");
+// Kesme işaretsiz saat
+correct("It's three o'clock.", "It's three oclock");
+
+// İngiliz/Amerikan yazım: kursun tanıma yereli en-US, içerik İngiliz yazımı
+eq("My neighbour is nice.", "My neighbor is nice.", "neighbour = neighbor");
+eq("What is your favourite colour?", "What is your favorite color?", "favourite/colour");
+eq("I apologise for the noise.", "I apologize for the noise.", "apologise = apologize");
+eq("I practise every day.", "I practice every day.", "practise = practice");
+correct("I'm sorry, I apologise for the noise.", "I am sorry, I apologize for the noise");
+// Ayrı kelimeler ayrı kalıyor
+assert.notEqual(
+  judgeSpeech("My neighbour is nice.", ["My brother is nice"], [], [], "en").kind,
+  "correct",
+  "yazım katlaması başka kelimeyi doğru yapmamalı",
+);
+
+/*
+  ALMANCADA KARŞILIĞI YOK ve bu ÖLÇÜLDÜ. Almanca kaynaşmalar (ins, zum, am)
+  ZORUNLU biçimler; "zu dem Fest" İngilizcedeki "I am" gibi eşdeğer bir
+  seçenek değil, işaret eden ayrı bir kullanım. Bu yüzden Almanca yola hiçbir
+  açılım eklenmedi — eklenseydi kapı gerçek bir hatayı doğru sayardı.
+*/
+assert.equal(foldContractions("Ich gehe zum Arzt", "de"), "Ich gehe zum Arzt");
+
+console.log("test:contractions — açılım/belirsiz ek/indirgeme/yazım/değerlendirici/çeviri/Almanca: tamam");

@@ -17,6 +17,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
+import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
@@ -74,14 +75,15 @@ const targetText = (segs: Segment[]): string => segs.filter((s) => s.lang !== "t
  * toleranslı. Sabit umlaut katlaması yazılıydı; ortak katlama hedef dile bakıyor.
  */
 /** Kısaltmaları açılmış liste — konuşma karşılaştırmasının iki tarafı da. */
-const fc = (xs: string[]): string[] => xs.map((x) => foldContractions(x, currentTargetLang()));
+const fc = (xs: string[]): string[] =>
+  xs.map((x) => foldEnglishSpelling(foldContractions(x, currentTargetLang()), currentTargetLang()));
 
 function sn(x: string): string {
   const lang = currentTargetLang();
   // Kısaltma açılıyor: "I'm" ile "I am" aynı cevap (web `lib/contractions.ts`).
   // `foldTight` yedeği BİLEREK ham girdiyle çalışıyor — kesmesiz yazan
   // ("dont") oradan geçiyor ve açılım onu bozardı.
-  return foldCompare(foldContractions(x, lang), lang);
+  return foldCompare(foldEnglishSpelling(foldContractions(x, lang), lang), lang);
 }
 function matches(input: string, target: string, accept?: string[]): boolean {
   const cands = [target, ...(accept ?? [])];
