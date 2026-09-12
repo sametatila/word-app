@@ -1538,6 +1538,11 @@ export const trBase: Record<string, string> = {
    * KURALI değil yalnız doğru cevabı söylüyordu. Motor taşındı, metinler
    * de ortak sözlüğe geldi.
    */
+  /* ÇÖKME SINIRI — web `app/error.tsx` ile aynı metin. Yukarıdaki
+     `err.*` ailesi hata ANALİZİ (artikel, çoğul, hâl); bu ikisi
+     uygulamanın kendi çökme kartı. */
+  "crash.title": "Bir şeyler ters gitti",
+  "crash.body": "Beklenmeyen bir hata oluştu. Tekrar denemek genelde yeterli olur; sorun sürerse birkaç dakika sonra tekrar gel.",
   "err.article": "artikel",
   "err.plural": "çoğul",
   "err.case": "hâl (Kasus)",

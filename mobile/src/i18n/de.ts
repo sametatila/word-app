@@ -1536,6 +1536,8 @@ export const de: Record<string, string> = {
    * KURALI değil yalnız doğru cevabı söylüyordu. Motor taşındı, metinler
    * de ortak sözlüğe geldi.
    */
+  "crash.title": "Etwas ist schiefgelaufen",
+  "crash.body": "Ein unerwarteter Fehler ist aufgetreten. Ein zweiter Versuch reicht meist; bleibt es dabei, komm in ein paar Minuten wieder.",
   "err.article": "Artikel",
   "err.plural": "Plural",
   "err.case": "Kasus",

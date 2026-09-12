@@ -471,8 +471,6 @@ export const deWeb: Record<string, string> = {
   "push.reaction_title": "{who} hat reagiert",
   "push.reaction_body": "{reaction} für {event}",
   "react.friend_streak": "deiner {n}-Tage-Freundschaftsserie",
-  "err.title": "Etwas ist schiefgelaufen",
-  "err.body": "Ein unerwarteter Fehler ist aufgetreten. Ein zweiter Versuch reicht meist; bleibt es dabei, komm in ein paar Minuten wieder.",
   "err.code": "Fehlercode:",
   "theme.appearance": "Darstellung",
   "theme.to_light": "Zum hellen Design wechseln",

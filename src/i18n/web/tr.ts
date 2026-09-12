@@ -497,8 +497,6 @@ export const trWeb: Record<string, string> = {
   "push.reaction_title": "{who} tepki gönderdi",
   "push.reaction_body": "{event} için {reaction}",
   "react.friend_streak": "{n} günlük arkadaş serine",
-  "err.title": "Bir şeyler ters gitti",
-  "err.body": "Beklenmeyen bir hata oluştu. Tekrar denemek genelde yeterli olur; sorun sürerse birkaç dakika sonra tekrar gel.",
   "err.code": "Hata kodu:",
   "theme.appearance": "Görünüm",
   "theme.to_light": "Açık temaya geç",

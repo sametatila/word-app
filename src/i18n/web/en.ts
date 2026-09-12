@@ -471,8 +471,6 @@ export const enWeb: Record<string, string> = {
   "push.reaction_title": "{who} reacted",
   "push.reaction_body": "{reaction} for {event}",
   "react.friend_streak": "your {n}-day friend streak",
-  "err.title": "Something went wrong",
-  "err.body": "An unexpected error happened. Trying again usually does it; if it keeps happening, come back in a few minutes.",
   "err.code": "Error code:",
   "theme.appearance": "Appearance",
   "theme.to_light": "Switch to the light theme",

@@ -33,9 +33,9 @@ export default function ErrorPage({
       >
         <AlertIcon size={24} />
       </span>
-      <h1 className="text-h1">{t("err.title")}</h1>
+      <h1 className="text-h1">{t("crash.title")}</h1>
       <p className="muted text-body">
-        {t("err.body")}
+        {t("crash.body")}
       </p>
       {error.digest ? (
         <p className="muted text-caption">

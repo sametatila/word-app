@@ -1538,6 +1538,8 @@ export const enBase: Record<string, string> = {
    * KURALI değil yalnız doğru cevabı söylüyordu. Motor taşındı, metinler
    * de ortak sözlüğe geldi.
    */
+  "crash.title": "Something went wrong",
+  "crash.body": "An unexpected error happened. Trying again usually does it; if it keeps happening, come back in a few minutes.",
   "err.article": "article",
   "err.plural": "plural",
   "err.case": "case (Kasus)",

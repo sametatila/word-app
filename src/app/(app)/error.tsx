@@ -43,8 +43,8 @@ export default function AppError({
       >
         <AlertIcon size={24} />
       </span>
-      <h1 className="text-h2">{t("err.title")}</h1>
-      <p className="muted text-body">{t("err.body")}</p>
+      <h1 className="text-h2">{t("crash.title")}</h1>
+      <p className="muted text-body">{t("crash.body")}</p>
       {error.digest ? (
         <p className="muted text-caption">
           {t("err.code")} <code>{error.digest}</code>
