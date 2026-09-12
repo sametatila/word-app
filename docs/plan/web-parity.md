@@ -15192,3 +15192,47 @@ pbxproj) ve yayın anahtarını doğruluyor — hepsi 1.0.0 (2) ve `keystore.pro
 yerinde. `check:16kb` 32 native kitaplığın 32'sini 16 KB hizasında buluyor.
 `LEGAL_PLATFORMS.ios` hâlâ `false` ve doğrusu bu: iOS yayını Mac'te derleme ve
 App Store adımlarını bekliyor (`ios-parity.md` §6 tablosu).
+
+## §11.420 — iOS envanteri iOS'u olduğundan geride gösteriyordu
+
+`docs/plan/ios-parity.md` iOS'un neyi eksik olduğunu sayan envanter ve
+**2026-09-04 anlık görüntüsüyle** yazılmıştı. Bugün satır satır ölçüldüğünde
+**yirmi üç maddenin yirmi ikisi kapanmış** çıktı:
+
+| Kapanan | Bugünkü kanıt |
+|---|---|
+| P1–P7 (proje bağlantısı) | native dosyalar pbxproj'da, `import React` var, `.lproj` bağlı + `CFBundleLocalizations`, paket kimliği `app.lernomi.ios`, sürüm dörtlüsü 1.0.0 (2), `DEVELOPMENT_TEAM` dolu, şemada `NomiTests` artığı yok |
+| §1.2 (native parite) | 20 ortak yöntem, 10 ortak olay — §290 ölçüyor |
+| R1–R4 (marka kaynakları) | 13 AppIcon PNG, markalı açılış ekranı, `WindowBackground` iki tema, 13 SFX mp3'ü pakette ve pbxproj'da — §292 ölçüyor |
+| C1–C4 (mağaza/uyum) | gizlilik manifesti dolu, `ITSAppUsesNonExemptEncryption`, Apple ile Giriş (`PROVIDERS` + yetki), Google iOS istemcisi açık |
+| E1–E4 (metin/davranış) | abonelik metinleri platforma göre, `app_open` platformu artık dinamik, APK güncelleme şeridi kaldırılmış, README gerçek belge |
+| O1–O2 (süreç) | `ios-archive.sh` var, `.github/workflows/` içinde `checks.yml` + `ios-build.yml` |
+
+Yani belge, iOS'u **olduğundan çok daha geride** gösteriyordu — bu defterin en
+sık tekrar eden sınıfının **tersi**: kapanmış maddenin açık görünmesi.
+Maliyeti de simetrik: okuyan (ya da Samet) bitmiş işi yeniden yapmaya kalkar,
+ya da iOS'u imkânsız sanıp hiç bakmaz.
+
+**Gerçekten açık kalanlar dört tane** ve hepsi ya Mac ya mağaza işi:
+`Podfile.lock` depoda yok (pod çözümü makineden makineye değişebilir;
+Android `gradlew` + wrapper jar'ı sabitliyor), `LernomiUITests.swift` diskte
+var ama pbxproj'da yok (`ios-add-uitest-target.rb` onu eklemek için yazılmış),
+RevenueCat anahtarları boş (**iki platformda da** — ortak eksik), ve
+`LEGAL_PLATFORMS.ios = false` (bilinçli; açılırken `LEGAL_VERSION` artacak).
+
+### §295
+
+Beş ölçü ve bu kapı **iki yönlü**: belgeye yazılan yeniden-ölçüm bloğunun
+iddialarını tutuyor (on madde), APK güncelleme yolunun geri gelmediğini, ve
+**açık listesinin bayatlamadığını** — `Podfile.lock` gelirse ya da UI test
+hedefi eklenirse kapı kırmızı verir ve belge güncellenmeye zorlanır. Beşinci
+ölçü kod ile belgeyi karşılaştırıyor: `LEGAL_PLATFORMS.ios` açılırsa belgedeki
+"bilinçli kapalı" cümlesi de yalan olur.
+
+Blok kendisi de ölçülüyor (var mı, tarihi doğru mu): "ölçüldü" iddiası
+tarihiyle birlikte anlam taşıyor.
+
+Meta-kapı (§138) bu turda **altı** desen reddetti — `CFBundleLocalizations`,
+`NomiTests` (iki kez), `ITSAppUsesNonExemptEncryption`, `CFBundleURLTypes`,
+`LernomiUITests` sınırsız ad desenleriyle aranmıştı. plist anahtarları artık
+`<key>…</key>` olarak tam eşleşiyor.

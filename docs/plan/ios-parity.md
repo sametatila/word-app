@@ -61,6 +61,55 @@ Sonuçları:
 
 Kanıt sütunundaki yollar depo köküne göredir. `M/` = `mobile/`.
 
+> ### YENİDEN ÖLÇÜM — 2026-09-12
+>
+> Aşağıdaki tablolar **2026-09-04 anlık görüntüsü** ve büyük bölümü artık
+> geçersiz: şeritler koşuldu. Envanter bugün satır satır yeniden ölçüldü
+> (`ios:check`, `release:check`, `check:16kb`, `check:parity` §290–294 ve elle
+> okuma). Bu blok **bugünkü** durumu söylüyor; tablolar tarihsel kayıt olarak
+> duruyor.
+>
+> **Kapandı** (ne kapattığıyla):
+>
+> | # | Bugünkü durum |
+> |---|---|
+> | P1 | `LernomiSpeech.swift` + `.m` pbxproj'da; `ios:check` 28 dosya başvurusu sayıyor |
+> | P2 | `import React` ilk satırlarda |
+> | P3 | `tr/en/de.lproj` bağlı, `CFBundleLocalizations` var; `ios:check` "dil beyanı ↔ .lproj: de, en, tr" |
+> | P4 | `PRODUCT_BUNDLE_IDENTIFIER = app.lernomi.ios` |
+> | P5 | Sürüm dörtlüsü 1.0.0 (2) — `release:check` package.json / version.ts / build.gradle / pbxproj'ü birlikte doğruluyor |
+> | P6 | `DEVELOPMENT_TEAM` dolu; `ios-archive.sh` var (O1 de kapandı) |
+> | P7 | Şemanın `<Testables>` listesi boş; `NomiTests` artığı yok |
+> | §1.2 | **Native parite tamam:** iki tarafta 20 ortak yöntem, 10 ortak olay. `check:parity` §290 listeleri karşılaştırıyor, tek taraflı iki yöntem sebebiyle belgeli (`addListener`/`removeListeners` RN kalıbı, `ensureMicPermission` Android'de JS'te) |
+> | R1 | AppIcon 13 PNG (`ios:check` 18 giriş / 13 PNG) |
+> | R2 | Açılış ekranı markalı: `LaunchBackground` #FA7C13 + 160pt ikon; "Powered by React Native" yok. §292 rengi Android ve web ile birlikte ölçüyor |
+> | R3 | `WindowBackground` açık #FBF7F2 / koyu #17120E; `AppDelegate` hem pencereyi hem kök görünümü boyuyor (§292) |
+> | R4 | 13 SFX mp3'ü `ios/Lernomi/sfx/` altında ve pbxproj'a kayıtlı; §292 üç yeri birden ölçüyor |
+> | C1 | `NSPrivacyCollectedDataTypes` dolu |
+> | C2 | `ITSAppUsesNonExemptEncryption = false` |
+> | C3 | Apple ile Giriş: `PROVIDERS` listesinde ilk sırada, yetki dosyasında `applesignin`, `appleAuth.ts` cihaz kapısıyla |
+> | C4 | Google iOS istemcisi AÇIK (`ios:check` doğruluyor), `CFBundleURLTypes` var |
+> | E1 | Abonelik metinleri platforma göre: `premiumstate.manage_ios`, `paywall.renew_cancel_appstore`, `deleteaccount.subscription_cancel_appstore` |
+> | E2 | `track("app_open", …, "${Platform.OS}:standalone")` — platform artık sabit değil |
+> | E3 | Güncelleme şeridi kaldırıldı (`useUpdate.ts` yok) |
+> | E4 | `M/README.md` gerçek belge |
+> | O1 | `ios-archive.sh` var |
+> | O2 | `.github/workflows/`: `checks.yml`, `ios-build.yml` |
+>
+> **Açık kalanlar:**
+>
+> | # | Durum | Kimin |
+> |---|---|---|
+> | P8 | `Podfile.lock` depoda **yok** ve gitignore'da da değil; pod çözümü makineden makineye değişebilir. Android `gradlew` + wrapper jar'ı sabitliyor, iOS'ta karşılığı eksik | Mac'te `pod install` sonrası commit |
+> | C5 | `LEGAL_PLATFORMS.ios = false` — **bilinçli**. Açılırken `LEGAL_VERSION` artacak + changelog kaydı düşecek | yayınla birlikte |
+> | C6 | RevenueCat anahtarları boş — **iki platformda da**; iOS'ta ayrıca IAP yetkisi + App Store Connect ürünleri gerekiyor | Samet |
+> | — | `LernomiUITests.swift` diskte var ama pbxproj'da **yok** (`grep -c LernomiUITests` = 0); eklemek için `scripts/ios-add-uitest-target.rb` yazılmış | Mac'te |
+> | §5 | Cihazda sınanacaklar listesi — Mac gerektiriyor (Şerit S) | Mac'te |
+>
+> Yani iOS'un **kod ve kaynak tarafı bitmiş** görünüyor; kalan her şey ya Mac
+> gerektiriyor ya mağaza/hesap işi. Bu blok da bayatlayabilir: bir sonraki
+> ölçüm tarihini ve neyi ölçtüğünü yazsın.
+
 ### 1.1 Proje bağlantısı — kod var, derlemeye girmiyor (ENGEL)
 
 Bu bölüm diğer her şeyin önündedir: aşağıdakiler düzelmeden iOS'ta native modül

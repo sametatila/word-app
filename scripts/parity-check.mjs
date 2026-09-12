@@ -7488,6 +7488,110 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 295. iOS ENVANTERININ IDDIALARI TUTUYOR ------------------------
+   *
+   * `docs/plan/ios-parity.md` iOS'un neyi eksik oldugunu sayan envanter ve
+   * 2026-09-04 anlik goruntusuyle yazilmisti. Bugun satir satir olculdugunde
+   * yirmi uc maddenin yirmi ikisi KAPANMIS cikti - yani belge iOS'u olduğundan
+   * cok daha geride gosteriyordu. Bu, defterin en sik tekrar eden sinifinin
+   * tersi: kapanmis maddenin acik gorunmesi. Okuyan (ya da Samet) bitmis isi
+   * yeniden yapmaya kalkar.
+   *
+   * Belgeye 2026-09-12 yeniden olcumu yazildi. BU KAPI o blogun kendisini
+   * ayakta tutuyor: blok makineyle dogrulanabilir iddialar kuruyor ve
+   * hepsi burada okunuyor. Iddia bozulursa kapi kirmizi verir; madde
+   * kapanirsa (ornegin `Podfile.lock` gelirse) ACIK listesi bayatlar ve kapi
+   * yine kirmizi verir - iki yonlu.
+   *
+   * Blogun kendisi de olculuyor: silinirse ya da tarihi degisirse kapi bunu
+   * soyler, cunku "olculdu" iddiasi tarihiyle birlikte anlam tasiyor. */
+  {
+    const plan = read("docs/plan/ios-parity.md");
+    const swift = read("mobile/ios/Lernomi/LernomiSpeech.swift");
+    const pbx = read("mobile/ios/Lernomi.xcodeproj/project.pbxproj");
+    const plist = read("mobile/ios/Lernomi/Info.plist");
+    const gizlilik = read("mobile/ios/Lernomi/PrivacyInfo.xcprivacy");
+    const yetki = read("mobile/ios/Lernomi/Lernomi.entitlements");
+    const auth = sil(read("mobile/src/screens/AuthScreen.tsx"));
+    const legal = sil(read("src/lib/legal/index.ts"));
+    const sema = read("mobile/ios/Lernomi.xcodeproj/xcshareddata/xcschemes/Lernomi.xcscheme");
+
+    /* Blok yerinde ve tarihli. */
+    sameList(
+      "yeniden olcum blogu yerinde",
+      ["blok=" + (/### YENIDEN OLCUM|### YENİDEN ÖLÇÜM/.test(plan) ? "var" : "YOK"), "tarih=" + (/YEN[İI]DEN [ÖO]L[ÇC][ÜU]M — 2026-09-12/.test(plan) ? "var" : "YOK")],
+      ["blok=var", "tarih=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* KAPANDI diye yazilan maddeler gercekten kapali. */
+    sameList(
+      "kapandi denilen maddeler kapali",
+      [
+        "P1 native dosyalar pbxproj'da=" + (/LernomiSpeech\.swift/.test(pbx) && /LernomiSpeech\.m/.test(pbx) ? "var" : "YOK"),
+        "P2 import React=" + (/^import React$/m.test(swift) ? "var" : "YOK"),
+        "P3 dil beyani=" + (/<key>CFBundleLocalizations<\/key>/.test(plist) ? "var" : "YOK"),
+        "P4 paket kimligi=" + (/PRODUCT_BUNDLE_IDENTIFIER = app\.lernomi\.ios;/.test(pbx) ? "gercek" : "SABLON"),
+        "P6 takim=" + (/DEVELOPMENT_TEAM = \w+;/.test(pbx) ? "dolu" : "BOS"),
+        "P7 bayat test artigi=" + (/\bNomiTests\b/.test(sema) || /\bNomiTests\b/.test(pbx) ? "VAR" : "yok"),
+        "C1 toplanan veri=" + (/<key>NSPrivacyCollectedDataTypes<\/key>\s*<array>\s*<dict>/.test(gizlilik) ? "dolu" : "BOS"),
+        "C2 sifreleme beyani=" + (/<key>ITSAppUsesNonExemptEncryption<\/key>/.test(plist) ? "var" : "YOK"),
+        "C3 apple girisi=" + (/\{ id: "apple", label: "Apple" \}/.test(auth) && /applesignin/.test(yetki) ? "var" : "YOK"),
+        "C4 google url tipi=" + (/<key>CFBundleURLTypes<\/key>/.test(plist) ? "var" : "YOK"),
+      ],
+      [
+        "P1 native dosyalar pbxproj'da=var",
+        "P2 import React=var",
+        "P3 dil beyani=var",
+        "P4 paket kimligi=gercek",
+        "P6 takim=dolu",
+        "P7 bayat test artigi=yok",
+        "C1 toplanan veri=dolu",
+        "C2 sifreleme beyani=var",
+        "C3 apple girisi=var",
+        "C4 google url tipi=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* E3: APK guncelleme yolu geri gelmeyecek. */
+    const guncelleme = existsSync(new URL("../mobile/src/lib/useUpdate.ts", import.meta.url));
+    sameList(
+      "apk guncelleme yolu yok",
+      ["useUpdate=" + (guncelleme ? "GERI GELDI" : "yok")],
+      ["useUpdate=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* ACIK listesi de bayatlamiyor: madde kapanirsa belge guncellenecek. */
+    const podKilidi = existsSync(new URL("../mobile/ios/Podfile.lock", import.meta.url));
+    const uiTest = /\bLernomiUITests\b/.test(pbx);
+    const iosYayinda = /LEGAL_PLATFORMS = \{ android: true, ios: false \}/.test(legal);
+    sameList(
+      "acik listesi bayat degil",
+      [
+        "P8 podfile kilidi=" + (podKilidi ? "GELDI (belge guncellensin)" : "yok"),
+        "ui test hedefi=" + (uiTest ? "GELDI (belge guncellensin)" : "yok"),
+        "C5 ios yayinda=" + (iosYayinda ? "hayir" : "ACILDI (belge ve LEGAL_VERSION)"),
+      ],
+      ["P8 podfile kilidi=yok", "ui test hedefi=yok", "C5 ios yayinda=hayir"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Belge ile KOD ayni seyi soyluyor: yayin bayragi iki yerde de kapali. */
+    sameList(
+      "yayin bayragi belge ile ayni",
+      ["kod=" + (iosYayinda ? "kapali" : "acik")],
+      ["kod=" + (/LEGAL_PLATFORMS\.ios = false` — \*\*bilinçli\*\*/.test(plan) ? "kapali" : "acik")],
+      "kod",
+      "belge",
+    );
+  }
+
   /* -- 294. YURUYUS MODUNUN NATIVE SOZLESMESI ------------------------
    *
    * Yuruyus modu iki platformda da NATIVE tarafa dayaniyor ve sozlesmenin
