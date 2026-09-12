@@ -239,6 +239,10 @@ export function PremiumAdmin({
         {referrers.length === 0 ? (
           <p className="text-body" style={{ color: "var(--text-muted)" }}>Henüz davet yok.</p>
         ) : (
+          /* Geniş içerik KENDİ kabında kayıyor: öteki üç tablo zaten
+             `overflow-x-auto` içinde, bu biri dışarıda kalmıştı ve dar bir
+             pencerede sayfanın kendisini yana kaydırıyordu. */
+          <div className="overflow-x-auto">
           <table className="w-full text-body">
             <thead>
               <tr className="text-left" style={{ color: "var(--text-muted)" }}>
@@ -257,6 +261,7 @@ export function PremiumAdmin({
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </Card>
     </div>
