@@ -233,7 +233,9 @@ for (const file of walk("src/app")) {
  * AÇIK OLANLAR BURADA, GEREKÇESİYLE. Liste bir istisna torbası değil, bir
  * BEYAN: yeni bir uç eklendiğinde ya kapıdan geçecek ya da buraya gerekçesini
  * yazacak. Sessizce üçüncü bir yol yok. Kayıtlı bir yol silinirse o da
- * bildiriliyor — liste bayatlamasın.
+ * bildiriliyor — liste bayatlamasın. Kayıtlı bir yol SONRADAN bir kapı
+ * edindiyse de bildiriliyor: beyan artık doğru değildir ve muaf uç hiç
+ * ölçülmediği için kapı ileride kaldırılsa kimse görmez.
  */
 const PUBLIC_ROUTES = new Map([
   ["src/app/api/auth/[...path]/route.ts", "better-auth'un kendi yolu: giriş, kayıt, doğrulama hepsi burada"],
@@ -250,7 +252,9 @@ for (const file of apiFiles) {
   if (!GATES.test(src)) ungated.add(file);
 }
 for (const [file] of PUBLIC_ROUTES) {
-  if (!apiFiles.includes(file)) ungated.add(`${file} (kayıtlı ama dosya yok)`);
+  if (!apiFiles.includes(file)) { ungated.add(`${file} (kayıtlı ama dosya yok)`); continue; }
+  const src = read(file).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  if (GATES.test(src)) ungated.add(`${file} (açık diye kayıtlı ama artık kapıdan geçiyor: beyanı kaldırın)`);
 }
 
 if (ungated.size) {

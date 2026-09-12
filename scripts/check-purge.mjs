@@ -52,14 +52,37 @@ const missing = userTables.filter((t) => !covered.has(t.variable));
  * göremeyeceği yerde.
  */
 const KEYED_BY_TEXT = new Map([
-  ["rateLimits", "kullanıcıya `key` içindeki \"<kapsam>:<userId>\" ile bağlı, sütunla değil"],
+  [
+    "rateLimits",
+    {
+      sebep: "kullanıcıya `key` içindeki \"<kapsam>:<userId>\" ile bağlı, sütunla değil",
+      /* Gerekçenin kendisi: bağ metin anahtarıyla kuruluyorsa silme de öyle
+         kurulmak zorunda. `like` kalkarsa istisna bir şeyi değil hiçbir şeyi
+         korur. */
+      kanit: /like\(\s*rateLimits\.key/,
+    },
+  ],
 ]);
 const known = new Set(userTables.map((t) => t.variable));
+
+/*
+ * İSTİSNANIN KENDİSİ DE ÖLÇÜLÜYOR. Muaf tablo `extra` taramasından çıkarıldığı
+ * için hiç sorgulanmıyor; gerekçesi bayatlarsa geriye sessiz bir delik kalır.
+ * Üç ölüm biçimi var ve üçü de burada: tablo silinmiş, tabloya gerçek bir
+ * kullanıcı sütunu gelmiş (istisna artık gereksiz), ya da purge'deki metin
+ * anahtarlı silme kalkmış (istisna artık yanlış).
+ */
+const oluIstisna = [];
+for (const [v, { kanit }] of KEYED_BY_TEXT) {
+  if (!tables.some((t) => t.variable === v)) oluIstisna.push(`${v}: şemada böyle bir tablo yok`);
+  else if (known.has(v)) oluIstisna.push(`${v}: artık kullanıcı sütunu var, istisna gereksiz`);
+  else if (!kanit.test(purge)) oluIstisna.push(`${v}: purge'de metin anahtarlı silme yok, gerekçe geçersiz`);
+}
 const extra = [...covered].filter(
   (v) => !known.has(v) && !KEYED_BY_TEXT.has(v) && tables.some((t) => t.variable === v),
 );
 
-if (missing.length || extra.length) {
+if (missing.length || extra.length || oluIstisna.length) {
   if (missing.length) {
     console.error("\nHESAP SİLMEDE ARKADA KALAN TABLO:\n");
     for (const t of missing) console.error(`  ${t.name}  (${t.variable})`);
@@ -72,6 +95,11 @@ if (missing.length || extra.length) {
     console.error("\nPURGE'DE GEÇEN AMA KULLANICIYA BAĞLI GÖRÜNMEYEN TABLO:\n");
     for (const v of extra) console.error("  " + v);
     console.error("\nSütun adı mı değişti, yoksa silme gereksiz mi?\n");
+  }
+  if (oluIstisna.length) {
+    console.error("\nKARŞILIKSIZ İSTİSNA (tablo muaf tutuluyor ama gerekçesi yok):\n");
+    for (const x of oluIstisna) console.error("  " + x);
+    console.error("\nİstisnayı `KEYED_BY_TEXT` listesinden kaldırın: muaf tablo hiç ölçülmüyor.\n");
   }
   process.exit(1);
 }

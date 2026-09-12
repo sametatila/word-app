@@ -81,14 +81,38 @@ function acilisSonu(blok) {
  */
 const SECIM_DEGISKENI = /\bconst\s+(?:isPicked|isActive|isSelected|active|selected|mine|chosen)\s*=\s*[^;\n]*(?:===|!==|\.has\(|\.includes\()/;
 const BASILABILIR = /<(?:button|Link|motion\.button|PressableScale|Pressable|TouchableOpacity)\b/;
-/** Dosya düzeyi ölçütün MEŞRU istisnaları, sebepleriyle. */
+/**
+ * Dosya düzeyi ölçütün MEŞRU istisnaları, sebepleriyle — ve her birinin
+ * GEREKÇESİNİ ARAYAN bir desen.
+ *
+ * İstisna listesi kontrol edilmezse sessiz bir delik açar: muaf dosya hiç
+ * ÖLÇÜLMÜYOR (`continue`), yani o dosyaya sonradan girecek gerçek bir kusur
+ * da görünmez olur. Dosya yeniden adlandırılırsa ya da gerekçedeki kalıp
+ * kalkarsa istisna artık bir şeyi değil HİÇBİR ŞEYİ koruyor.
+ *
+ * `check:colors`, `check:type` ve `check:radius` ölü istisnayı baştan beri
+ * arıyordu; bu liste aramıyordu.
+ */
 const DOSYA_ALLOW = new Map([
   [
     "mobile/src/screens/WalkModeScreen.tsx",
-    "`const active = phase === \"listening\"` bir ANIMASYON bayrağı (nabız efekti), " +
-      "bir denetimin seçimi değil: yürüyüş kipinde seçilebilir şık yok.",
+    {
+      sebep:
+        "`const active = phase === \"listening\"` bir ANIMASYON bayrağı (nabız efekti), " +
+        "bir denetimin seçimi değil: yürüyüş kipinde seçilebilir şık yok.",
+      /* Gerekçenin kendisi: bu satır kalkarsa istisna da kalkmalı. */
+      kanit: /const active = phase === "listening"/,
+    },
   ],
 ]);
+
+/** Karşılıksız kalan istisnalar — yolu yok ya da gerekçesi artık yok. */
+const oluIstisna = [];
+for (const [rel, { kanit }] of DOSYA_ALLOW) {
+  const abs = path.join(ROOT, rel);
+  if (!fs.existsSync(abs)) { oluIstisna.push(`${rel}: yol yok`); continue; }
+  if (!kanit.test(stripComments(fs.readFileSync(abs, "utf8")))) oluIstisna.push(`${rel}: gerekçe artık geçerli değil`);
+}
 
 const bulgular = [];
 const dosyaBulgulari = [];
@@ -121,7 +145,7 @@ for (const { kok, adlar, durum, ad } of YUZEYLER) {
   }
 }
 
-if (bulgular.length || dosyaBulgulari.length) {
+if (bulgular.length || dosyaBulgulari.length || oluIstisna.length) {
   if (bulgular.length) {
     console.error("check:selection — secime gore stil kuran ama durumu SOYLEMEYEN denetimler:\n");
     for (const b of bulgular) {
@@ -133,6 +157,11 @@ if (bulgular.length || dosyaBulgulari.length) {
     console.error("\ncheck:selection — secim degiskeni tanimlayan ama hic durum ozniteligi tasimayan dosyalar:\n");
     for (const b of dosyaBulgulari) console.error(`  ${b.rel}  (${b.ad})`);
     console.error("\nMesru bir istisnaysa betikteki DOSYA_ALLOW listesine SEBEBIYLE ekle.");
+  }
+  if (oluIstisna.length) {
+    console.error("\ncheck:selection — KARSILIKSIZ istisna (dosya muaf tutuluyor ama gerekcesi yok):\n");
+    for (const x of oluIstisna) console.error(`  ${x}`);
+    console.error("\nIstisnayi listeden kaldir: muaf dosya HIC olculmuyor, yani bos bir istisna delik demek.");
   }
   console.error('\nWebde `aria-pressed` / `aria-current` / `aria-checked`; Android\'de `accessibilityState={{ selected }}`.');
   process.exit(1);
