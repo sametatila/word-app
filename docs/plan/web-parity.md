@@ -14081,3 +14081,49 @@ düşerse olay yine iki anlam taşır), ve panonun CTR'yi **ulaşana** böldüğ
 
 Üç enjeksiyon denendi (bir döngüde teslimatın yazılmaması, sosyalde denemenin
 yine koşullu olması, CTR'nin yine denenene bölünmesi), üçü de yakalandı.
+
+## §11.399 — Defterin kendisi bayatlamış: dört madde açık sanılıyordu
+
+Bu turda kod değil **defter** denetlendi. İlk şeritlerde "Karar Samet'in" /
+"karar gerekiyor" diye bırakılmış maddeler var; hepsi tek tek ölçüldü ve
+**dördü zaten kapanmış** çıktı — sonraki turlarda yapılmışlar, ama defter
+onları açık göstermeye devam ediyordu.
+
+Bedeli somut: açık sanılan bir madde ya **ikinci kez yapılır** ya da Samet'ten
+**boşa karar beklenir**. Bu turda ben de tam o tuzağa düştüm — §6'daki G4
+notunu okuyup "web kendiliğinden ilerliyor" diye işe başladım, sonra ölçüm
+webde de düğme olduğunu gösterdi.
+
+| Madde | Nerede açık duruyordu | Ölçüm |
+|---|---|---|
+| **Kelime satırı ayrıntısı** | §11.14 civarı — "PORT EDİLMEDİ… uç genişletilmeli" | Uç `beispiel`i taşıyor, `WordRow` büyütülmüş, **iki satır da açılıp örneği gösteriyor** |
+| **Rozet ikon haritası** | §11.14 — "webde 60, Androidde yok" | İki harita **birebir aynı 29 ad**; mobilin kendi yorumu düzeltmeyi anlatıyor |
+| **Rozet kutlaması + `unlock` sesi** | §11.15 — "webde var, Androidde yok" | `ui/AchievementUnlock` var ve `sfx("unlock")` çalıyor |
+| **"Devam" düğmesi (G4)** | §5 sonu — "Karar gerekiyor, bu belge kapanmadan" | İkisinde de açık düğme var, **hiçbiri zamanlayıcıyla ilerlemiyor** |
+
+### Gerçekten açık kalanlar
+
+Bunlar ölçüldü ve **hâlâ açık** — ikisi de gerçekten Samet'in:
+
+- **sfx not tablolarının native kopyaları.** Tablo yalnız TS'te
+  (`lib/sfxNotes`); native dosyalara yapıştırılmadı. Gerekçe duruyor: üretilen
+  sesi burada dinleyemem ve iş iki platformun ses yolunu değiştiriyor.
+- **Premium kota dizgileri** (11 hazır `gate.*` anahtarı, `i18n-check`te
+  kayıtlı borç). Ürün kararı.
+
+Bir de içerik tarafı değişmiş: `repeat`/`produce` maddesi (§11.18) o gün "beş
+adım" diyordu, bugün bir tane kaldı — kapandı mı, başka yere mi taşındı,
+içerik oturumunun ölçmesi gerek.
+
+### §276 — kapanan şey kilitlenmezse yeniden açılır
+
+Dört maddenin dördü de kapıya bağlandı. Rozet ikonlarında ölçü **sayım değil
+ad kümesi**: sayılar eşit kalıp bir ad değişse fark görünmezdi.
+
+Dört enjeksiyon denendi, dördü de yakalandı — **ama ikinci deneme iki kez
+yapıldı ve bu kendi başına bir ders.** İlk denemem `MountainIcon` adını
+dosyada aradı; o ad **iki yerde** geçiyor (içe alım listesi ve `ICONS`
+haritası) ve `replace(…, 1)` içe alımı vurdu, haritaya dokunmadı. Yani kapı
+kör değildi, **enjeksiyon** kördü. Doğru yere uygulandığında kapı anında
+kırmızıya döndü. Enjeksiyonun kendisi de ölçülmeli: bir şeyi bozduğumu
+varsaymak, bozduğumu doğrulamakla aynı şey değil.
