@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { MyAvatar } from "@/components/avatar";
+import { MenuRow } from "@/components/menu-row";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { BackButton } from "@/components/page-back";
 import { authApi } from "@/lib/auth/api";
@@ -196,10 +197,10 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           (avatarın kendisi zaten o sayfayı açıyor) ve "Bildirimler" (içeriği
           ayar; Ayarlar → Uygulama'ya taşındı).
         */}
-        <Row href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.achievements")} />
-        <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.weekly_leaderboard")} />
-        <Row href="/friends" icon={<HandshakeIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.friends")} />
-        <Row href="/inbox" icon={<MailIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.inbox")} />
+        <MenuRow href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="flame" label={t("profile.achievements")} />
+        <MenuRow href="/leaderboard" icon={<PodiumIcon size={20} />} tone="sky" label={t("profile.weekly_leaderboard")} />
+        <MenuRow href="/friends" icon={<HandshakeIcon size={20} />} tone="mint" label={t("profile.friends")} />
+        <MenuRow href="/inbox" icon={<MailIcon size={20} />} tone="flame" label={t("profile.inbox")} />
         <InviteRow last />
       </nav>
 
@@ -252,40 +253,6 @@ function Stat({ value, label, tone }: { value: string; label: string; tone: stri
   );
 }
 
-function Row({
-  href,
-  icon,
-  tone,
-  label,
-  last,
-}: {
-  href: string;
-  icon: ReactNode;
-  tone: string;
-  label: string;
-  last?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      className="pressable flex items-center gap-3 py-3"
-      style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
-    >
-      {/* Karo ve şevron mobil `ui/MenuRow.tsx` ile aynı: 38 px karo, tonun
-          %13'ü (mobilde `tint + "22"`) ve en sönük katmandaki şevron. */}
-      <span
-        className="flex shrink-0 items-center justify-center rounded-tile"
-        style={{ width: 38, height: 38, background: `color-mix(in srgb, ${tone} 13%, transparent)`, color: tone }}
-      >
-        {icon}
-      </span>
-      <span className="flex-1 text-strong">{label}</span>
-      <ChevronRightIcon size={20} className="faint shrink-0" />
-    </Link>
-  );
-}
-
 /**
  * Davet satırı — menünün tek DÜĞMESİ, bağlantısı değil.
  *
@@ -315,23 +282,15 @@ function InviteRow({ last }: { last?: boolean }) {
     }
   }
 
+  /* Karo/şevron/mürekkep kararı ortak satırda (`components/menu-row`): bu
+     satır onu ilk taşıyan yerdi, kardeşleri 500 ile kalmıştı. */
   return (
-    <button
-      type="button"
+    <MenuRow
+      icon={<ShareIcon size={20} />}
+      tone="mint"
+      label={t(copied ? "referral.copied" : "profile.invite_friend")}
+      last={last}
       onClick={() => void invite()}
-      className="pressable flex w-full items-center gap-3 py-3 text-left"
-      style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
-    >
-      <span
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-        /* Yazı tema duyarlı tokenden: sabit 500 kendi %16 tinti üstünde açık temada
-           2.97 veriyordu, grafik eşiği 3.0 bile değil. Zemin 500 kalıyor. */
-        style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
-      >
-        <ShareIcon size={20} />
-      </span>
-      <span className="flex-1 text-strong">{t(copied ? "referral.copied" : "profile.invite_friend")}</span>
-      <ChevronRightIcon size={20} className="muted shrink-0" />
-    </button>
+    />
   );
 }

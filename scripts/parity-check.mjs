@@ -18941,6 +18941,81 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------------- 333. MENU SATIRI: TEK BILESEN VE IKONUN MUREKKEBI 600
+ *
+ * Ayni satir webde UC ayri yerde elle kuruluydu ve ucu de baska olcudeydi:
+ * profil menusu 38 px karo / %13 tint / 20 sevron, davet satiri 40 / %14 / 20,
+ * Gelisim sayfasinin satiri 40 / %16 / 18. Mobilde BIR tane var (`ui/MenuRow`)
+ * ve dosyasindaki yorum sebebini yaziyor: iki listenin satir yuksekligi, ayrac
+ * cizgisi ve dokunma alani tek yerden gelsin, biri degisince oteki geride
+ * kalmasin. Olculer Android'den alindi ve web de artik tek bilesen kullaniyor.
+ *
+ * IKON MUREKKEBI: zemin tonun %13'u, ikon ise tonun 600'u. Sabit 500 kendi
+ * tinti ustunde (acik tema) mint 3.07, sky 3.11, violet 4.14, rose 3.60 ve
+ * FLAME 2.55, BRAND 2.43 veriyor - grafik esigi 3.0'in altinda. Rol takma adi
+ * (`--color-x`, acik temada 600) ayni zeminde 4.59-5.77. Android bunu `onTint`
+ * ile yapiyor: zemin rol rengi, ikon o rengin `*Text` (600) turevi. Davet
+ * satiri bu karari ZATEN tasiyordu ve olcumu yorumunda yaziliydi; kardes
+ * satirlar 500 ile kalmisti - ayni listede iki ayri karar.
+ *
+ * Olcu: (1) iki taraftaki satirin sayilari, (2) ikon murekkebinin rol takma
+ * adindan gelmesi (500 DEGIL), (3) MUTLAK: webde elle kurulmus ikinci bir
+ * menu satiri kalmadigi - `onTint`un web karsiligi tek yerde. */
+{
+  const silM = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const m = silM(read("mobile/src/ui/MenuRow.tsx")).replace(/\s+/g, " ");
+  const w = silM(read("src/components/menu-row.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "menu satirinin olculeri",
+    [
+      "karo=" + ((m.match(/width: (\d+), height: (\d+), borderRadius: radii\.md/) ?? []).slice(1, 3).join("x") || "YOK"),
+      "yaricap=" + (/borderRadius: radii\.md/.test(m) ? "md" : "FARKLI"),
+      "ikon=" + ((m.match(/<Icon color=\{onTint\(tint, colors\)\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "murekkep=" + (/onTint\(tint, colors\)/.test(m) ? "rol turevi" : "HAM TON"),
+      "etiket=" + (/<Text variant="bodyStrong"/.test(m) ? "bodyStrong" : "FARKLI"),
+      "sevron=" + ((m.match(/<ChevronRightIcon color=\{colors\.textFaint\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "dikey pay=" + (/paddingVertical: spacing\.md/.test(m) ? "md" : "FARKLI"),
+      "ayrac=" + (/borderBottomWidth: last \? 0 : 1/.test(m) ? "sonda yok" : "FARKLI"),
+    ],
+    [
+      "karo=" + ((w.match(/width: (\d+), height: (\d+),/) ?? []).slice(1, 3).join("x") || "YOK"),
+      "yaricap=" + (/rounded-tile/.test(w) ? "md" : "FARKLI"),
+      "ikon=" + ((silM(read("src/components/profile/profile-view.tsx")).match(/<MenuRow [^>]*icon=\{<\w+ size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "murekkep=" + (/color: `var\(--color-\$\{tone\}\)`/.test(w) ? "rol turevi" : "HAM TON"),
+      "etiket=" + (/className="flex-1 text-strong"/.test(w) ? "bodyStrong" : "FARKLI"),
+      "sevron=" + ((w.match(/<ChevronRightIcon size=\{(\d+)\} className="shrink-0" style=\{\{ color: "var\(--text-faint\)" \}\}/) ?? [])[1] ?? "YOK"),
+      "dikey pay=" + (/gap-3 py-3/.test(w) ? "md" : "FARKLI"),
+      "ayrac=" + (/last \? undefined : \{ borderBottom: "1px solid var\(--hairline\)" \}/.test(w) ? "sonda yok" : "FARKLI"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* MUTLAK iki olcu:
+       1) Ton bir AILE ADI (`MenuTone` birligi), ham bir CSS degeri degil -
+          boylece bir cagri yeri `var(--color-x-500)` gecirip murekkebi
+          yeniden 500'e dusuremiyor; kural TIPLE tutuluyor.
+       2) Eski el yapimi satirlar kalmadi: profil ve Gelisim dosyalarinda
+          "karo + esnek etiket + sevron" kalibi artik yok.
+     Ilk yazilisinda bunun yerine "hicbir yerde `color: var(--color-x-500)`
+     yazmasin" deniyordu; o olcu KUSURUN SEKLINI olcmuyordu - kusur
+     `color: tone` seklindeydi ve degeri cagri yerinden geliyordu. */
+  const sayfa = (yol) => silM(read(yol)).replace(/\s+/g, " ");
+  const eskiKalip = /rounded-tile"[^>]*>[\s\S]{0,80}<\/span> <span className="flex-1 text-strong">/;
+  sameList(
+    "menu satiri tek bilesen",
+    [
+      "ton tipi=" + (/export type MenuTone = "brand" \| "mint" \| "sky" \| "violet" \| "flame" \| "rose";/.test(w) ? "aile adi (6)" : "HAM DEGER"),
+      "prop tipi=" + (/tone: MenuTone;/.test(w) ? "MenuTone" : "FARKLI"),
+      "profil el yapimi=" + (eskiKalip.test(sayfa("src/components/profile/profile-view.tsx")) ? "VAR" : "yok"),
+      "gelisim el yapimi=" + (eskiKalip.test(sayfa("src/components/progress-view.tsx")) ? "VAR" : "yok"),
+      "cagri yeri=" + [...sayfa("src/components/profile/profile-view.tsx").matchAll(/<MenuRow /g)].length + "+" + [...sayfa("src/components/progress-view.tsx").matchAll(/<MenuRow /g)].length,
+    ],
+    ["ton tipi=aile adi (6)", "prop tipi=MenuTone", "profil el yapimi=yok", "gelisim el yapimi=yok", "cagri yeri=5+2"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

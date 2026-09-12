@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
+import { MenuRow } from "@/components/menu-row";
 import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
@@ -219,8 +220,8 @@ export function ActivityProgress({
         yani kimliğin parçası. Mobil Gelişim ekranıyla aynı bölünme.
       */}
       <nav className="card px-4" aria-label={t("progress.progress")}>
-        <ProgressRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
-        <ProgressRow href="/profile/writings" icon={<WriteIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} last />
+        <MenuRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="mint" label={t("profile.what_can_i_do")} />
+        <MenuRow href="/profile/writings" icon={<WriteIcon size={20} />} tone="sky" label={t("profile.my_posts")} last />
       </nav>
 
       {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit.
@@ -491,35 +492,3 @@ function Donut({ value, total }: { value: number; total: number }) {
   );
 }
 
-/** Gelişim sayfasının satırı — profil menüsündeki satırla aynı ölçü ve davranış. */
-function ProgressRow({
-  href,
-  icon,
-  tone,
-  label,
-  last,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  tone: string;
-  label: string;
-  last?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      className="pressable flex items-center gap-3 py-3"
-      style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
-    >
-      <span
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-        style={{ background: `color-mix(in srgb, ${tone} 16%, transparent)`, color: tone }}
-      >
-        {icon}
-      </span>
-      <span className="flex-1 text-strong">{label}</span>
-      <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
-    </Link>
-  );
-}

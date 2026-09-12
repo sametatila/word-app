@@ -17123,3 +17123,55 @@ formülü) ve webde **elle kurulmuş halka kalmadığı** — muafiyeti
 İki eski kapı da güncellendi (tur özeti ve haftalık sonuç yerleşimi): ikisi de
 webin halkasını `conic-gradient` deseniyle arıyordu, artık `<ScoreRing>` ve
 Android'in ölçüsüyle arıyorlar.
+
+## §11.474 — Menü satırı: bir satır, üç kopya, üç ayrı ölçü (ve ikonun mürekkebi)
+
+Aynı satır (renkli ikon karosu + etiket + şevron) web'de **üç ayrı yerde elle
+kuruluydu** ve üçü de başka ölçüdeydi:
+
+| Yer | Karo | Tint | Şevron |
+|---|---|---|---|
+| Profil menüsü (`Row`) | 38 | %13 | 20 |
+| Davet satırı (`InviteRow`) | 40 | %14 | 20 |
+| Gelişim sayfası (`ProgressRow`) | 40 | **%16** | **18** |
+
+Mobilde **bir tane** var (`ui/MenuRow`) ve dosyasındaki yorum sebebini zaten
+yazıyor: "iki listenin satır yüksekliği, ayraç çizgisi ve dokunma alanı tek
+yerden geliyor, biri değişince öteki geride kalmıyor." Web artık tek bileşen
+kullanıyor (`components/menu-row`) ve ölçüleri Android'den: 38 karo, %13 tint,
+`rounded-tile`, `text-strong` etiket, 20 şevron `--text-faint`, `py-3`, sonda
+ayraçsız. Bileşen hem bağlantı hem düğme olabiliyor (davet satırı düğme).
+
+**İkonun mürekkebi ayrı bir kusurdu.** Karo zemini tonun %13'ü; ikon rengi de
+aynı 500 değeriydi. Ölçtüm (açık tema, ikon kendi tinti üstünde):
+
+| | 500 ile | 600 ile |
+|---|---|---|
+| mint | 3.07 | 4.59 |
+| sky | 3.11 | 4.64 |
+| violet | 4.14 | 5.77 |
+| rose | 3.60 | 5.08 |
+| **flame** | **2.55** | 4.60 |
+| **brand** | **2.43** | 4.73 |
+
+Grafik eşiği 3.0; flame ve brand onu bile tutmuyordu — ve profil menüsünün dört
+satırının ikisi flame. Android bunu `onTint` ile çözüyor: zemin rol rengi, ikon
+o rengin `*Text` (600) türevi. **Davet satırı bu kararı zaten taşıyordu** ve
+ölçümü yorumunda yazılıydı ("sabit 500 … 2.97 veriyordu, grafik eşiği 3.0 bile
+değil"); kardeş satırlar 500 ile kalmıştı — aynı listede iki ayrı karar.
+
+Ton artık bir **aile adı** (`MenuTone` birliği: brand/mint/sky/violet/flame/
+rose), ham bir CSS değeri değil: zemini ailenin 500'ünden, mürekkebi rol takma
+adından (açık temada 600) kuruyor ve bir çağrı yeri ham değer geçiremiyor —
+kural tiple tutuluyor.
+
+Kapı **§333** iki ölçü: satırın sekiz sayısı iki platformda (karo, yarıçap,
+ikon, mürekkebin rol türevi olması, etiket, şevron, dikey pay, ayraç) ve
+mutlak olarak tek bileşen (ton tipi aile adı, eski el yapımı kalıp iki dosyada
+da yok, çağrı yeri sayısı 5+2).
+
+**Kapının ilk hâli yanlış şeyi ölçüyordu:** "hiçbir yerde `color:
+var(--color-x-500)` yazmasın" diyordu, oysa kusur `color: tone` şeklindeydi ve
+değer çağrı yerinden geliyordu — ölçü kusurun şeklini hiç görmüyordu. Yerine
+tipe ve kalıba bakan bir ölçü kondu; enjeksiyon (Gelişim satırını elle geri
+kurmak) artık kırmızı veriyor.
