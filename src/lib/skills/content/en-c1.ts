@@ -20,6 +20,10 @@ import { enC1U18 } from "./en-c1-u18";
 import { enC1U19 } from "./en-c1-u19";
 import { enC1U20 } from "./en-c1-u20";
 import { enC1U21 } from "./en-c1-u21";
+import { enC1U22 } from "./en-c1-u22";
+import { enC1U23 } from "./en-c1-u23";
+import { enC1U24 } from "./en-c1-u24";
+import { enC1U25 } from "./en-c1-u25";
 
 /**
  * EN · C1 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
@@ -51,4 +55,8 @@ export const enC1: SkillExercise[] = [
   ...enC1U19,
   ...enC1U20,
   ...enC1U21,
+  ...enC1U22,
+  ...enC1U23,
+  ...enC1U24,
+  ...enC1U25,
 ];

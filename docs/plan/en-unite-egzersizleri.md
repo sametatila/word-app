@@ -64,8 +64,7 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
-| C1 | 22–25 | bekliyor |
+| **C1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1691,6 +1690,70 @@ kapılardan değil okumaktan çıktı: ünite 21'in girişi „dört sözcük“
 diyordu, metin ise „three words“ — giriş düzeltildi ve paketler ondan
 sonra yazıldı. Kapılar sayı tutarlılığını ölçmüyor; bu sınıf yalnız
 yazarken yakalanıyor.
+
+
+Ünite 22'nin noktası SAYILABİLİRLİK. „Cost“ sayılabiliyor ama
+„follow-up costs“ kimsenin tekilini kullanmadığı bir çoğul: raporda „a
+follow-up cost“ yazılmıyor ve çoğul şeyin ADI olmuş. Asıl kural daha
+geniş: advice, information, evidence, research, equipment, machinery,
+capital İngilizcede ne çoğul ne tanımlık alıyor; Almancadaki karşılıkları
+sorunsuz çoğul yapan sıradan sayılabilir isimler, üstelik adlandırdıkları
+şeyler aynı şeyler. Ölçü: **SAYILABİLİRLİK DÜNYANIN DEĞİL DİLİN KARARI**
+— hiçbir şey öğüdün parçalanamaz, uyarının parçalanabilir olduğunu
+söylemiyor. İngilizce birini saymak gerektiğinde bir SAYAÇ ödünç alıyor
+(a piece of advice, an item of equipment, a body of evidence); Almanca
+yalnızca ek koyuyor, ve bu alışkanlığı taşıyan yazar „an advice“ ve
+„informations“ üretiyor — ikisi de sayfada hata değil YABANCI AKSAN
+olarak duyuluyor, ve tam bu yüzden yıllarca düzeltilmiyor.
+
+Ünite 23'ün noktası TANIMLIKSIZ SOYUT İSİM. İngilizce soyut ismi genel
+anlamda kullanırken önüne hiçbir şey koymuyor: rhetoric, pathos,
+competitiveness, doubt, freedom, work. Komşu dil her birinin önüne
+tanımlık koyuyor ve orada tutuyor, dolayısıyla o taraftan gelen konuşucu
+İngilizcenin istemediği bir tanımlık ekliyor ve ortaya kimsenin yanlış
+diyemeyeceği ama ÇEVRİLMİŞ gibi okunan bir cümle çıkıyor. Asıl incelik
+şu: tanımlık, ismi DARALTAN bir şey belirir belirmez geri geliyor („the
+rhetoric of the pamphlet“, „the doubt that stopped the project“) ve
+daraltma çoğunlukla ismin önünde değil ARDINDA duruyor. Ölçü: **KURAL
+„SOYUT İSİM TANIMLIK ALMAZ“ DEĞİL, „DARALTAN BİR ŞEY GELENE KADAR
+TANIMLIK YOK“** — yani kural ismin değil BÜTÜN ÖBEĞİN kuralı, ve onu tek
+başına isme ait sanan yazar iki yönde birden yanılıyor.
+
+Ünite 24'ün noktası ORTA KONUM BELİRTECİ. „Another merely affirms it“ —
+„merely“ özne ile fiilin arasında duruyor ve o aralıkta başka hiçbir şey
+yok. İngilizce orada bir YUVA tutuyor: küçük, bir iki sözcük alıyor, ve
+içine konan hemen her şey betimleme değil HÜKÜM (merely, probably,
+clearly, knowingly, rarely, hardly). Komşu dilde böyle bir yuva yok,
+çünkü çekimli fiil cümleciğin ikinci öğesi olmak zorunda; belirteç
+fiilden sonraya, orta alana gitmek zorunda. Ölçü: **İNGİLİZCEDE HÜKÜM
+FİİLDEN ÖNCE GELİYOR — OKUR HABERİ ALMADAN ÖNCE ONU NASIL ALACAĞINI
+ÖĞRENİYOR; ÖTEKİ SIRADA HABER ÖNCE GELİYOR VE HÜKÜM ONA ÇOKTAN İNANMAYA
+BAŞLAMIŞ BİR OKURA İNİYOR.** Aynı yuva hukuk cümlesinin en güçlü
+sözcüğünün yeri: „She knowingly misrepresented the study“ başka bir
+suçlamadır ve bütün fark tek bir sözcüğün tek bir konumdaki varlığıdır.
+
+Ünite 25 seviyenin KAPANIŞI. „Serenity we learn; sincerity, we choose“ —
+dokuz sözcük, ve bu seviyenin ölçtüğü neredeyse her şey içinde. Orada
+OLMAYANLARI say: iki ismin de önünde tanımlık yok (ünite 23); hangi
+sözcüğün nesne olduğunu söyleyen hiçbir ek yok (ünite 12'nin çözümsüz
+belirsizliği); ikinci yarıda fiil yok, çünkü ilk yarı onu çoktan verdi ve
+yerini virgül tutuyor (ünite 7); iki cümlecikte de başta özne yok, çünkü
+nesne oraya taşınmış (ünite 4). Dört karar ve hiçbiri bir şey EKLENEREK
+verilmiş değil; her biri bir KONUM ya da bir YOKLUK. Seviyenin kapanış
+ölçüsü bu ve yirmi dört ünitelik kanıtla hak edilmiş: **KOMŞU DİL AYNI
+İŞİ EKLERLE GÖRÜYOR — isimde hâl, fiile ayrılmış konum, görünür tanımlık,
+her sınıf değişimi için türetilmiş biçim; dil bilgisini YAZIYA DÖKÜYOR.
+İNGİLİZCE ŞEYLERİ YERİNDEN OYNATIYOR VE DELİK BIRAKIYOR, VE OKURDAN
+DELİĞİN NE DEMEK OLDUĞUNU BİLMESİNİ İSTİYOR.** İkisi genel olarak
+birbirinden zor değil, her biri ayrı bir yerde zor: ek öğrenilmek zorunda
+ve tahmin edilemez; delik hiç öğrenilemez, çünkü öğrenilecek bir şey yok
+— biçimi tanıdık gelene kadar yeterince sık karşılaşmak gerekiyor.
+
+**WP-75 KAPANDI.** Beş seviye, 125 ünite, 750 egzersiz, 750/750 yuva.
+Açılışta İngilizce Patika'nın hiçbir seviyesinde tek bir ünite egzersizi
+yoktu. Ölçüm bu son turda yüz üç sözlükçe maddesi ekletti ve otuz yedi
+maddeyi sildirdi; dört soru yüzeyi yeniden yazıldı. Son paketler:
+prose-de s-057 (218 dize), prose p-066 (38), task-de t-050 (84).
 
 
 ## Tamamlanma ölçütü

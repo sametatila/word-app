@@ -1,0 +1,422 @@
+[
+ {
+  "tr": "Tanımlık kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Artikelkarte aus."
+ },
+ {
+  "tr": "Orta konum kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zur Mittelstellung aus."
+ },
+ {
+  "tr": "Sayılabilirlik kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Zählbarkeitskarte aus."
+ },
+ {
+  "tr": "Yuva özne ile fiilin arasında; içine hüküm konuyor; Almancada yuva yok çünkü fiil ikinci öğe; İngilizcede hüküm haberden önce geliyor.",
+  "kind": "form.facts",
+  "de": "Die Stelle liegt zwischen Subjekt und Verb; hinein kommt ein Urteil; im Deutschen gibt es sie nicht, weil das Verb das zweite Element ist; im Englischen kommt das Urteil vor der Nachricht."
+ },
+ {
+  "tr": "Advice ve information çoğul almıyor; Almanca karşılıkları sayılabilir; sayılabilirlik dilin kararı; İngilizce saymak için sayaç ödünç alıyor.",
+  "kind": "form.facts",
+  "de": "Advice und information bilden keinen Plural; ihre deutschen Entsprechungen sind zählbar; die Zählbarkeit ist eine Entscheidung der Sprache; zum Zählen borgt sich das Englische ein Zähleinheitswort."
+ },
+ {
+  "tr": "Genel anlamda soyut isim çıplak; daraltan bir şey gelince tanımlık dönüyor; daraltma çoğunlukla ismin ardında; kural ismin değil öbeğin kuralı.",
+  "kind": "form.facts",
+  "de": "Im allgemeinen Sinn steht das abstrakte Nomen nackt; sobald etwas es einengt, kehrt der Artikel zurück; die Einengung steht meist hinter dem Nomen; die Regel gilt nicht dem Nomen, sondern der ganzen Phrase."
+ },
+ {
+  "tr": "İngilizce kararı konum ve yoklukla veriyor; Almanca ekle veriyor; ek öğrenilmek zorunda ve tahmin edilemez; delik öğrenilemez, tanıdık gelene kadar karşılaşmak gerekir.",
+  "kind": "form.facts",
+  "de": "Das Englische entscheidet über Stellung und Abwesenheit; das Deutsche über Endungen; eine Endung muss gelernt werden und lässt sich nicht erraten; ein Loch lässt sich gar nicht lernen — man muss ihm oft genug begegnen, bis seine Form geläufig wird."
+ },
+ {
+  "tr": "Cevap ölçülüydü; ton, daha az.",
+  "kind": "build.tr",
+  "de": "Die Antwort war maßvoll; der Ton weniger."
+ },
+ {
+  "tr": "Geçicilik kaldı; sükûnet kalmadı.",
+  "kind": "build.tr",
+  "de": "Die Vergänglichkeit blieb; der Gleichmut nicht."
+ },
+ {
+  "tr": "Dinginliği öğreniriz; içtenliği, seçeriz.",
+  "kind": "build.tr",
+  "de": "Die Gelassenheit lernen wir; die Aufrichtigkeit wählen wir."
+ },
+ {
+  "tr": "Referans değer bir kılavuz değer değildir.",
+  "kind": "build.tr",
+  "de": "Ein Referenzwert ist kein Richtwert."
+ },
+ {
+  "tr": "Ölçek ekonomisi sermaye ihtiyacını düşürür.",
+  "kind": "build.tr",
+  "de": "Ein Skaleneffekt senkt den Kapitalbedarf."
+ },
+ {
+  "tr": "Burada kayırmacılık yok; kayırma ağımız var.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine Vetternwirtschaft; wir haben ein Netzwerk alter Bekannter."
+ },
+ {
+  "tr": "Gri alan, kılıfın varsaydığını iddia ediyor.",
+  "kind": "build.tr",
+  "de": "Die Grauzone behauptet, was der Vorwand voraussetzt."
+ },
+ {
+  "tr": "Bir buyruk, kadim olsa da, bir erdem değildir.",
+  "kind": "build.tr",
+  "de": "Ein Gebot ist, wenn auch uralt, keine Tugend."
+ },
+ {
+  "tr": "Hedef çatışması kaldı; külfetli ifade kalmadı.",
+  "kind": "build.tr",
+  "de": "Der Zielkonflikt blieb; die umständliche Formulierung nicht."
+ },
+ {
+  "tr": "Marjinal maliyet bir fırsat maliyeti değildir.",
+  "kind": "build.tr",
+  "de": "Grenzkosten sind keine Opportunitätskosten."
+ },
+ {
+  "tr": "Yeşil aklama baştan aşağıydı; denetim, daha az.",
+  "kind": "build.tr",
+  "de": "Das Greenwashing war gründlich; die Prüfung weniger."
+ },
+ {
+  "tr": "Anlamlılık düzeyi seçilir; aykırı değer bulunur.",
+  "kind": "build.tr",
+  "de": "Ein Signifikanzniveau wird gewählt; ein Ausreißer wird gefunden."
+ },
+ {
+  "tr": "Denemede retorik, broşürde abartılı duygusallık.",
+  "kind": "build.tr",
+  "de": "Im Essay ist es Rhetorik, in der Streitschrift Pathos."
+ },
+ {
+  "tr": "İkna gücü savunulabilir olmakla aynı şey değildir.",
+  "kind": "build.tr",
+  "de": "Überzeugungskraft ist nicht dasselbe wie Rechtfertigbarkeit."
+ },
+ {
+  "tr": "Yerleşik görüşün arkasında bir düşünce okulu duruyor.",
+  "kind": "build.tr",
+  "de": "Hinter der herrschenden Lehre steht eine Denkschule."
+ },
+ {
+  "tr": "Üslup aracı bir seçimdir; üslup kopukluğu bir hatadır.",
+  "kind": "build.tr",
+  "de": "Ein Stilmittel ist eine Wahl; ein Stilbruch ist ein Fehler."
+ },
+ {
+  "tr": "Burada ters cevaplar yok; manidar sessizliklerimiz var.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine schroffen Antworten; wir haben vielsagende Pausen."
+ },
+ {
+  "tr": "Kendini kandırma bir savunma mekanizmasına benzeyebilir.",
+  "kind": "build.tr",
+  "de": "Selbsttäuschung sieht vielleicht wie ein Abwehrmechanismus aus."
+ },
+ {
+  "tr": "Konsorsiyum inşa ediyor; işletme modelini adlandırmıyor.",
+  "kind": "build.tr",
+  "de": "Das Konsortium baut; das Betreibermodell benennt es nicht."
+ },
+ {
+  "tr": "Eleştirmenin üslup akımı dediğine okur üslup düzeyi diyor.",
+  "kind": "build.tr",
+  "de": "Was der Kritiker eine Stilrichtung nennt, nennt der Leser eine Stilebene."
+ },
+ {
+  "tr": "Benlik algısı kendini bilmeden pekâlâ daha uzun yaşayabilir.",
+  "kind": "build.tr",
+  "de": "Ein Selbstbild überdauert durchaus die Selbsterkenntnis."
+ },
+ {
+  "tr": "Biri iddiayı savunuyor; bir başkası onu yalnızca doğruluyor.",
+  "kind": "build.tr",
+  "de": "Der eine vertritt die Behauptung; ein anderer bestätigt sie bloß."
+ },
+ {
+  "tr": "Yukarıdaki pazara nüfuz aşağıda pazar doygunluğuna dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Die oben genannte Marktdurchdringung wird unten zur Marktsättigung."
+ },
+ {
+  "tr": "İrade serbestisinin yargısal denetimle sınanmasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie verlangen, dass die Privatautonomie richterlich überprüft werde."
+ },
+ {
+  "tr": "Sanat özgürlüğü olmasa hiçbir bilgi edinme özgürlüğü tutmazdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Kunstfreiheit, würde keine Informationsfreiheit halten."
+ },
+ {
+  "tr": "Vicdan özgürlüğü akademik özgürlüğe el değmemesini talep eder.",
+  "kind": "build.tr",
+  "de": "Die Gewissensfreiheit verlangt, dass die Wissenschaftsfreiheit unangetastet bleibe."
+ },
+ {
+  "tr": "Yatırım döngüsü tasarruf oranı düşmeden önce pekâlâ dönebilir.",
+  "kind": "build.tr",
+  "de": "Der Investitionszyklus dreht durchaus, bevor die Sparquote fällt."
+ },
+ {
+  "tr": "Geri dönülmezliğin gerçek olduğu yerde tutarlı bir plan yetmez.",
+  "kind": "build.tr",
+  "de": "Wo die Unumkehrbarkeit real ist, reicht ein kohärenter Plan nicht."
+ },
+ {
+  "tr": "Yüksek bir tasarruf potansiyeli ödeme gücü anlamına gelmeyebilir.",
+  "kind": "build.tr",
+  "de": "Ein hohes Sparpotenzial bedeutet vielleicht keine Zahlungsfähigkeit."
+ },
+ {
+  "tr": "Akıl yürütmenin yaptığı şey bir akıl yürütme hatasını gizlemektir.",
+  "kind": "build.tr",
+  "de": "Was die Argumentationslinie tut, ist einen Denkfehler zu verbergen."
+ },
+ {
+  "tr": "Sonradan çıkan maliyetler tahmin edilir; maliyet aşımı ilan edilir.",
+  "kind": "build.tr",
+  "de": "Folgekosten werden geschätzt; eine Kostenüberschreitung wird verkündet."
+ },
+ {
+  "tr": "Bir başa çıkma stratejisi duygu aktarımını gizleyip gizil kalabilir.",
+  "kind": "build.tr",
+  "de": "Eine Bewältigungsstrategie kann Übertragung verbergen und latent bleiben."
+ },
+ {
+  "tr": "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "kind": "build.tr",
+  "de": "Jene Wettbewerbsfähigkeit ist, wie erwähnt, die Monopolstellung einer früheren Seite."
+ },
+ {
+  "tr": "İhale süreci bir form olarak, onay süreci bir gecikme olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Das Vergabeverfahren überlebt als Formular, das Genehmigungsverfahren als Verzögerung."
+ },
+ {
+  "tr": "Arayış bir alışkanlık olarak, kendi başına amaç bir anı olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Das Streben überlebt als Gewohnheit, der Selbstzweck als Andenken."
+ },
+ {
+  "tr": "Görecelik bizi ne kadar huzursuz etse de hiçbir ilke kuşkusuz ayakta kalmaz.",
+  "kind": "build.tr",
+  "de": "So sehr der Relativismus uns verunsichert, keine Maxime überlebt ohne Zweifel."
+ },
+ {
+  "tr": "Yukarıdaki etki değerlendirmesi aşağıda bir fayda değerlendirmesine dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Die oben genannte Folgenabschätzung wird unten zu einer Nutzenbewertung."
+ },
+ {
+  "tr": "Bir çalışmayı yanlış aktarmak bir çarpıtmadır, herkesin bildiği bir gerçek değil.",
+  "kind": "build.tr",
+  "de": "Eine Studie falsch wiederzugeben ist eine Verzerrung, keine Binsenweisheit."
+ },
+ {
+  "tr": "Biri muhasebe sahtekarlığı ileri sürüyor; bir başkası zimmete geçirmeyi kanıtlıyor.",
+  "kind": "build.tr",
+  "de": "Der eine behauptet Bilanzbetrug; ein anderer beweist Unterschlagung."
+ },
+ {
+  "tr": "Ödeme gücü olan bir şirket yine de temerrüt riski taşıyıp risk iştahını yitirebilir.",
+  "kind": "build.tr",
+  "de": "Eine zahlungsfähige Firma kann trotzdem ein Ausfallrisiko tragen und ihren Risikoappetit verlieren."
+ },
+ {
+  "tr": "Yaş bir sav değil.",
+  "kind": "build.hint",
+  "de": "Alter ist kein Argument."
+ },
+ {
+  "tr": "İkisi tek bir zincir.",
+  "kind": "build.hint",
+  "de": "Die beiden sind eine einzige Kette."
+ },
+ {
+  "tr": "Dikkatli sözcük „look“.",
+  "kind": "build.hint",
+  "de": "Das vorsichtige Wort ist „look“."
+ },
+ {
+  "tr": "Biri ölçüm, öteki karar.",
+  "kind": "build.hint",
+  "de": "Das eine ist eine Messung, das andere eine Entscheidung."
+ },
+ {
+  "tr": "Aynı sayı, iki bölüm, iki ad.",
+  "kind": "build.hint",
+  "de": "Dieselbe Zahl, zwei Kapitel, zwei Namen."
+ },
+ {
+  "tr": "Pürüzsüz olduğu için gizliyor.",
+  "kind": "build.hint",
+  "de": "Es verbirgt, weil es glatt ist."
+ },
+ {
+  "tr": "İki soyut isim, ortada tanımlık yok.",
+  "kind": "build.hint",
+  "de": "Zwei abstrakte Nomen, weit und breit kein Artikel."
+ },
+ {
+  "tr": "Bir yanda isim, öteki yanda eylemlik.",
+  "kind": "build.hint",
+  "de": "Auf der einen Seite ein Nomen, auf der anderen ein Gerundium."
+ },
+ {
+  "tr": "Biri çalışmadan önce seçilmiş olmalı.",
+  "kind": "build.hint",
+  "de": "Das eine muss vor der Studie gewählt worden sein."
+ },
+ {
+  "tr": "İkinci yarı fiili ilk yarıdan alıyor.",
+  "kind": "build.hint",
+  "de": "Die zweite Hälfte nimmt das Verb aus der ersten."
+ },
+ {
+  "tr": "Kimsenin güncellemediği bir fotoğraf.",
+  "kind": "build.hint",
+  "de": "Eine Fotografie, die niemand aktualisiert hat."
+ },
+ {
+  "tr": "Belirteç özne ile fiilin arasında duruyor.",
+  "kind": "build.hint",
+  "de": "Das Adverb steht zwischen Subjekt und Verb."
+ },
+ {
+  "tr": "Birlikte hareket etmesi beklenen iki sayı.",
+  "kind": "build.hint",
+  "de": "Zwei Zahlen, von denen man erwartet, dass sie sich zusammen bewegen."
+ },
+ {
+  "tr": "İki edat nesnesiz kalmış; gönderme katmanı.",
+  "kind": "build.hint",
+  "de": "Zwei Präpositionen ohne Objekt; die Verweisebene."
+ },
+ {
+  "tr": "Üç şey var; kimse üçüncüsüne plan yapmıyor.",
+  "kind": "build.hint",
+  "de": "Es sind drei Dinge; für das dritte plant niemand."
+ },
+ {
+  "tr": "Kırk sayfa ile dört sayfa; oran bütün hikâye.",
+  "kind": "build.hint",
+  "de": "Vierzig Seiten gegen vier; das Verhältnis ist die ganze Geschichte."
+ },
+ {
+  "tr": "Kuralın yanına sessizce oturmuş bir varsayım.",
+  "kind": "build.hint",
+  "de": "Eine Annahme, die sich still neben die Regel gesetzt hat."
+ },
+ {
+  "tr": "„Capital“ çoğul almıyor, „requirement“ alıyor.",
+  "kind": "build.hint",
+  "de": "„Capital“ bildet keinen Plural, „requirement“ schon."
+ },
+ {
+  "tr": "En zor davalar önce sanatta karara bağlanıyor.",
+  "kind": "build.hint",
+  "de": "Die schwersten Fälle werden zuerst in der Kunst entschieden."
+ },
+ {
+  "tr": "Biri hiçbir yük taşımıyor, öteki belge taşıyor.",
+  "kind": "build.hint",
+  "de": "Das eine trägt keine Last, das andere trägt ein Dokument."
+ },
+ {
+  "tr": "Çoğul şeyin adı; öteki tarihi olan tek bir olay.",
+  "kind": "build.hint",
+  "de": "Der Plural ist der Name der Sache; das andere ein einzelnes Ereignis mit Datum."
+ },
+ {
+  "tr": "Okulun arkasında da bir kurucu ve bir bölüm var.",
+  "kind": "build.hint",
+  "de": "Hinter der Schule stehen ein Gründer und ein Institut."
+ },
+ {
+  "tr": "Taraflar neredeyse hiçbir zaman eşit özgür değil.",
+  "kind": "build.hint",
+  "de": "Die Seiten sind fast nie gleich frei."
+ },
+ {
+  "tr": "İfade kesildi, çatışma ertesi sabah hâlâ oradaydı.",
+  "kind": "build.hint",
+  "de": "Die Formulierung wurde gestrichen, der Konflikt war am nächsten Morgen noch da."
+ },
+ {
+  "tr": "Biri yüz yazara olmuş, öteki tek sayfada duyuluyor.",
+  "kind": "build.hint",
+  "de": "Das eine ist hundert Autoren widerfahren, das andere hört man auf einer Seite."
+ },
+ {
+  "tr": "Burada tanımlık var ve olmalı: iki sayılabilir şey.",
+  "kind": "build.hint",
+  "de": "Hier steht ein Artikel und das zu Recht: zwei zählbare Dinge."
+ },
+ {
+  "tr": "Hem fiil hem sıfat ödünç alınmış; hiçbir iddia yok.",
+  "kind": "build.hint",
+  "de": "Verb und Adjektiv sind beide geliehen; behauptet wird nichts."
+ },
+ {
+  "tr": "Ters cevap alıntılanabilir, sessizlik alıntılanamaz.",
+  "kind": "build.hint",
+  "de": "Eine schroffe Antwort lässt sich zitieren, ein Schweigen nicht."
+ },
+ {
+  "tr": "Üç uzun sözcük, altlarında küçük ve sıradan bir şey.",
+  "kind": "build.hint",
+  "de": "Drei lange Wörter, darunter etwas Kleines und Gewöhnliches."
+ },
+ {
+  "tr": "İkinci yarı olguyu değil yanlış savunmayı reddediyor.",
+  "kind": "build.hint",
+  "de": "Die zweite Hälfte weist nicht die Tatsache zurück, sondern die falsche Verteidigung."
+ },
+ {
+  "tr": "Nesne öne alınmış; adlandırılmayan şey başta duruyor.",
+  "kind": "build.hint",
+  "de": "Das Objekt ist vorangestellt; das Unbenannte steht am Anfang."
+ },
+ {
+  "tr": "Biri bilançonun söylediği, öteki on beşinde ödenebilen.",
+  "kind": "build.hint",
+  "de": "Das eine sagt die Vermögensaufstellung, das andere ist das, was am Fünfzehnten gezahlt werden kann."
+ },
+ {
+  "tr": "Tür yadsınıyor, örnek daha dost bir adla kabul ediliyor.",
+  "kind": "build.hint",
+  "de": "Die Art wird verneint, der Einzelfall unter einem freundlicheren Namen zugegeben."
+ },
+ {
+  "tr": "İkinci yarıda fiil yok; iki usul iki ayrı biçimde sürüyor.",
+  "kind": "build.hint",
+  "de": "In der zweiten Hälfte fehlt das Verb; zwei Verfahren dauern auf zwei Weisen fort."
+ },
+ {
+  "tr": "Kuşkudan sağ çıkan ilke, hiç sorgulanmamış olandan değerli.",
+  "kind": "build.hint",
+  "de": "Eine Maxime, die den Zweifel überstanden hat, ist mehr wert als eine nie befragte."
+ },
+ {
+  "tr": "Tanımlık yok, ek yok, ikinci yarıda fiil yok, özne başta değil.",
+  "kind": "build.hint",
+  "de": "Kein Artikel, keine Endung, kein Verb in der zweiten Hälfte, kein Subjekt am Anfang."
+ },
+ {
+  "tr": "İkisinin de önünde tanımlık var; bir satır sonra aynı sözcük tanımlıksız.",
+  "kind": "build.hint",
+  "de": "Vor beiden steht ein Artikel; eine Zeile später steht dasselbe Wort ohne."
+ }
+]
