@@ -7488,6 +7488,136 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 292. UC PLATFORMUN ZEMINI TEK ZINCIR --------------------------
+   *
+   * 282 acilis ekraninin ve tarayici cubugunun rengini webden Android'e
+   * baglamisti (`manifest.background_color` = `ic_launcher_background`,
+   * `themeColor` = `--bg` = `window_bg`). Zincirin UCUNCU halkasi - iOS -
+   * o turda olculmedi, cunku bu betik `mobile/ios` altina 290'a kadar hic
+   * bakmadi.
+   *
+   * iOS ayni iki rengi KATALOGDA tutuyor:
+   *   `LaunchBackground.colorset`  -> acilis ekraninin zemini
+   *   `WindowBackground.colorset`  -> pencere ve kok gorunumun zemini (acik/koyu)
+   *
+   * Degerler bugun dogru; olculmeyen sey bunlarin AYNI KALMASI. Bir platformda
+   * marka turuncusu ya da zemin degistirilse otekiler sessizce eski degerde
+   * kalir: kullanici acilista bir renk, uygulamada baskasini gorur - ve bu
+   * fark yalnizca CIHAZDA fark edilir, hicbir derleme onu soylemez.
+   *
+   * Katalogun KULLANILDIGI da olculuyor: renk dosyasi var olup kimse okumazsa
+   * iOS penceresi beyaz kalir ve acilis/tema gecisinde flas olur - Android'in
+   * `window_bg` notunun onlemek icin var oldugu sey tam bu. */
+  {
+    const jsonRenk = (yol) => {
+      const url = new URL("../" + yol, import.meta.url);
+      if (!existsSync(url)) return { acik: "DOSYA YOK", koyu: "DOSYA YOK" };
+      const veri = JSON.parse(readFileSync(url, "utf8"));
+      const oku = (giris) => {
+        const c = giris?.color?.components;
+        if (!c) return "YOK";
+        const h = (v) => String(v).replace(/^0x/i, "").toLowerCase().padStart(2, "0");
+        return `#${h(c.red)}${h(c.green)}${h(c.blue)}`;
+      };
+      const hepsi = veri.colors ?? [];
+      const koyuGiris = hepsi.find((g) => (g.appearances ?? []).some((a) => a.value === "dark"));
+      const acikGiris = hepsi.find((g) => !(g.appearances ?? []).some((a) => a.value === "dark"));
+      return { acik: oku(acikGiris), koyu: koyuGiris ? oku(koyuGiris) : "TEK" };
+    };
+    const xmlRenk = (dosya, ad) =>
+      (read(dosya).match(new RegExp('<color name="' + ad + '">(#[0-9a-fA-F]{6})')) ?? [])[1]?.toLowerCase() ?? "YOK";
+    const css = read("src/app/globals.css");
+    const cssJeton = (ad, blok) => {
+      const kaynak = blok === "dark" ? css.slice(css.indexOf("\n.dark {")) : css;
+      return (kaynak.match(new RegExp("--" + ad + ":\\s*(#[0-9a-fA-F]{3,8})")) ?? [])[1]?.toLowerCase() ?? "YOK";
+    };
+
+    const iosAcilis = jsonRenk("mobile/ios/Lernomi/Images.xcassets/LaunchBackground.colorset/Contents.json");
+    const iosPencere = jsonRenk("mobile/ios/Lernomi/Images.xcassets/WindowBackground.colorset/Contents.json");
+    const androidAcilis = xmlRenk("mobile/android/app/src/main/res/values/colors.xml", "ic_launcher_background");
+    const androidAcik = xmlRenk("mobile/android/app/src/main/res/values/colors.xml", "window_bg");
+    const androidKoyu = xmlRenk("mobile/android/app/src/main/res/values-night/colors.xml", "window_bg");
+    const man = sil(read("src/app/manifest.ts"));
+    const webAcilis = (man.match(/background_color: "(#[0-9a-fA-F]{6})"/) ?? [])[1]?.toLowerCase() ?? "YOK";
+
+    /* Acilis zemini: uc platform tek deger. */
+    sameList(
+      "acilis zemini uc platformda ayni",
+      ["ios=" + iosAcilis.acik, "android=" + androidAcilis, "web=" + webAcilis],
+      ["ios=" + androidAcilis, "android=" + androidAcilis, "web=" + androidAcilis],
+      "bulunan",
+      "beklenen (android)",
+    );
+
+    /* Pencere zemini: iki tema, uc platform. */
+    sameList(
+      "pencere zemini uc platformda ayni",
+      ["ios acik=" + iosPencere.acik, "ios koyu=" + iosPencere.koyu, "web acik=" + cssJeton("bg", "light"), "web koyu=" + cssJeton("bg", "dark")],
+      ["ios acik=" + androidAcik, "ios koyu=" + androidKoyu, "web acik=" + androidAcik, "web koyu=" + androidKoyu],
+      "bulunan",
+      "beklenen (android)",
+    );
+
+    /* Katalog OKUNUYOR: renk dosyasinin varligi yetmez. */
+    const appDelegate = read("mobile/ios/Lernomi/AppDelegate.swift");
+    const storyboard = read("mobile/ios/Lernomi/LaunchScreen.storyboard");
+    sameList(
+      "ios zemin kaynaklari okunuyor",
+      [
+        "pencere=" + (/window\?\.backgroundColor = UIColor\(named: "WindowBackground"\)/.test(appDelegate) ? "var" : "YOK"),
+        "kok gorunum=" + (/rootView\.backgroundColor = UIColor\(named: "WindowBackground"\)/.test(appDelegate) ? "var" : "YOK"),
+        "acilis ekrani=" + (/backgroundColor" name="LaunchBackground"/.test(storyboard) ? "var" : "YOK"),
+      ],
+      ["pencere=var", "kok gorunum=var", "acilis ekrani=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* SES DOSYALARI IKI PAKETTE DE VAR.
+     *
+     * `lib/sfx` ekran kapaliyken native sentez, kopru hazirsa WebView, ikisi
+     * de olmazsa PAKETTEKI mp3 ile caliyor - ve dosya adini platforma gore
+     * kuruyor (`Platform.OS === "android" ? name : name + ".mp3"`). Yani ayni
+     * ses Android'de `res/raw`dan, iOS'ta uygulama paketinden okunuyor. Nota
+     * tablosuna yeni bir ses eklenip mp3 yalniz bir pakete konursa oteki
+     * platformda yedek yol SESSIZ kalir; `render-sfx.py` ikisine birden
+     * yaziyor ama kimse bunu olcmuyordu.
+     *
+     * iOS'ta bir adim daha var: dosyanin diskte olmasi yetmez, Xcode
+     * projesine KAYITLI olmali (`Resources` fazi) yoksa pakete girmez. */
+    const notaAdlari = [...new Set([...sil(read("mobile/src/lib/sfxNotes.ts")).matchAll(/^\s{2}(\w+):\s*\[/gm)].map((m) => m[1]))].sort();
+    const androidRaw = readdirSync(new URL("../mobile/android/app/src/main/res/raw", import.meta.url))
+      .filter((f) => f.endsWith(".mp3")).map((f) => f.replace(/\.mp3$/, "")).sort();
+    const iosRaw = readdirSync(new URL("../mobile/ios/Lernomi/sfx", import.meta.url))
+      .filter((f) => f.endsWith(".mp3")).map((f) => f.replace(/\.mp3$/, "")).sort();
+    sameList("ses dosyalari android paketinde", androidRaw, notaAdlari, "res/raw", "nota tablosu");
+    sameList("ses dosyalari ios paketinde", iosRaw, notaAdlari, "ios klasoru", "nota tablosu");
+    const pbx = read("mobile/ios/Lernomi.xcodeproj/project.pbxproj");
+    const kayitsiz = notaAdlari.filter((n) => !new RegExp("\\b" + n + "\\.mp3\\b").test(pbx));
+    sameList(
+      "ses dosyalari xcode projesine kayitli",
+      ["kayitsiz=" + (kayitsiz.join("+") || "yok")],
+      ["kayitsiz=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Storyboard'un ONBELLEKLI kopyasi katalogla ayni. Xcode katalogu
+       okuyor, yani sapma yalnizca depodaki onizlemeyi yanlis yapar - ama
+       depoya bakan insan da o sayiyi dogru sanar. */
+    const sb = storyboard.match(/<namedColor name="LaunchBackground">\s*<color red="([\d.]+)" green="([\d.]+)" blue="([\d.]+)"/);
+    const sbHex = sb
+      ? "#" + [sb[1], sb[2], sb[3]].map((v) => Math.round(Number(v) * 255).toString(16).padStart(2, "0")).join("")
+      : "YOK";
+    sameList(
+      "storyboard onbellegi katalogla ayni",
+      ["storyboard=" + sbHex],
+      ["storyboard=" + iosAcilis.acik],
+      "storyboard",
+      "katalog",
+    );
+  }
+
   /* -- 291. BILDIRIM IKI PLATFORMDA DA DUYULUYOR ----------------------
    *
    * Android'de bildirim kanali `AndroidImportance.HIGH`: ses cikariyor ve

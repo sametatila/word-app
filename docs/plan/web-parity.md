@@ -15030,3 +15030,55 @@ uyuştuğu.
 Meta-kapı (§138) bu turda da iş gördü: `SCREEN_ORIENTATION_PORTRAIT` sınırsız
 ad deseniyle aranmıştı ve reddedildi — `..._REVERSE_PORTRAIT` ile
 `FULL_USER`/`FULL_SENSOR` karışabilirdi.
+
+## §11.417 — Üç platformun zemini ve ses paketleri ölçüye bağlandı
+
+§11.406 açılış ekranının ve tarayıcı çubuğunun rengini **webden Android'e**
+bağlamıştı. Zincirin üçüncü halkası — iOS — o turda ölçülmedi, çünkü bu betik
+`mobile/ios` altına §290'a kadar **hiç bakmadı**.
+
+iOS aynı iki rengi katalogda tutuyor ve değerler bugün **doğru**:
+
+| Renk | iOS | Android | web |
+|---|---|---|---|
+| açılış zemini | `LaunchBackground` #FA7C13 | `ic_launcher_background` | `manifest.background_color` |
+| pencere zemini (açık) | `WindowBackground` #FBF7F2 | `values/window_bg` | `--bg` / `themeColor` |
+| pencere zemini (koyu) | `WindowBackground` #17120E | `values-night/window_bg` | `--bg` (dark) |
+
+Ölçülmeyen şey bunların **aynı kalması**: bir platformda marka turuncusu ya da
+zemin değiştirilse ötekiler sessizce eski değerde kalır — kullanıcı açılışta
+bir renk, uygulamada başkasını görür ve bu fark **yalnızca cihazda** fark
+edilir; hiçbir derleme onu söylemez.
+
+Katalogun **okunduğu** da ölçülüyor: renk dosyası var olup kimse okumazsa iOS
+penceresi beyaz kalır ve açılış/tema geçişinde flaş olur — Android'in
+`window_bg` notunun önlemek için var olduğu şey tam bu. `AppDelegate` hem
+pencereyi hem kök görünümü boyuyor, storyboard da zemini katalogdan alıyor.
+
+Dördüncü ölçü storyboard'un **önbellekli** kopyası: Xcode katalogu okuyor,
+yani sapma yalnızca depodaki önizlemeyi yanlış yapar — ama depoya bakan insan
+da o sayıyı doğru sanar.
+
+### Ses paketleri: iki paket, üç kayıt yeri
+
+`lib/sfx` sesi üç yoldan çalıyor (ekran kapalıyken native sentez, köprü
+hazırsa WebView, ikisi de olmazsa **paketteki mp3**) ve dosya adını platforma
+göre kuruyor. Yani aynı ses Android'de `res/raw`dan, iOS'ta uygulama
+paketinden okunuyor. Nota tablosuna yeni bir ses eklenip mp3 yalnız bir pakete
+konursa öteki platformda yedek yol **sessiz** kalır; `render-sfx.py` ikisine
+birden yazıyor ama kimse bunu ölçmüyordu.
+
+iOS'ta bir adım daha var: dosyanın diskte olması yetmez, Xcode projesine
+**kayıtlı** olmalı (`Resources` fazı) yoksa pakete girmez. Üç ölçü de buna
+bakıyor: 13 nota adı = 13 Android mp3 = 13 iOS mp3 = 13 pbxproj kaydı.
+
+### §292
+
+Yedi ölçü, hepsi enjeksiyonla doğrulandı: açılış zemini üç platformda aynı,
+pencere zemini iki temada üç platformda aynı, iOS zemin kaynaklarının
+okunduğu, storyboard önbelleğinin katalogla aynı olduğu, ses dosyalarının iki
+pakette de bulunduğu ve Xcode projesine kayıtlı olduğu.
+
+Enjeksiyonlardan biri ölçünün **zincir** olduğunu gösterdi: katalogdaki tek
+bir bayt değiştirildiğinde hem "açılış zemini" hem "storyboard önbelleği"
+kırmızıya döndü — biri platformlar arası, öteki dosya içi tutarlılık.
