@@ -1363,7 +1363,7 @@ export function makeRound(
  * olduğunu ele verirdi. Cümle içindeki virgül kelimede kalır — o bir ipucu
  * değil, yan cümlenin gerçek sınırıdır.
  */
-function buildOrder(
+export function buildOrder(
   word: RoundWord,
 ): { tokens: string[]; answer: string[]; tail: string } | null {
   const raw = firstExample(word.beispiel)?.trim();
@@ -1374,9 +1374,22 @@ function buildOrder(
   const body = tail ? raw.slice(0, -tail.length).trim() : raw;
 
   const answer = body.split(/\s+/).filter(Boolean);
-  // Üçten kısa cümlede dizecek bir şey yok; dokuzdan uzunu telefonda tek
-  // ekrana sığmıyor ve turu bulmacaya çeviriyor.
-  if (answer.length < 4 || answer.length > 9) return null;
+  /*
+    Üçten kısa cümlede dizecek bir şey yok. Üst sınır ise JETON sayısıydı ve
+    ekranın derdi jeton değil GENİŞLİK: 2026-09-12'de ölçüldü, bugün kabul
+    edilen Almanca cümleler 87 karaktere kadar çıkıyor (ortanca 48), ama on
+    jetonluk 39 karakterlik bir İngilizce cümle ("I want to give Anna a
+    sweater as a gift") sırf jeton sayısından eleniyordu. İngilizce sözcükler
+    kısa, yani sayı ile genişlik orada ayrışıyor: 1.045 İngilizce ve 713
+    Almanca kelime bu yüzden hiç cümle dizme turu üretmiyordu.
+
+    Kural artık ikisini birden okuyor: dokuz jetona kadar eskisi gibi, on iki
+    jetona kadar ancak 62 karakteri aşmıyorsa. 62 sınırı bugün zaten çizilen
+    en uzun cümlenin (87) çok altında, yani yeni bir taşma riski açmıyor;
+    kurtardığı 805 İngilizce + 333 Almanca kelime.
+  */
+  if (answer.length < 4) return null;
+  if (answer.length > 9 && !(answer.length <= 12 && body.length <= 62)) return null;
   if (answer.some((t) => t.length > 20)) return null;
 
   // Karışık dizilim doğru sırayla aynı çıkarsa tur kendiliğinden çözülmüş

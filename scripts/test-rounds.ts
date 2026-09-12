@@ -1,5 +1,5 @@
 /**
- * Boşluk doldurma turu kurulabiliyor mu: npm run test:cloze
+ * Tur kurucuları: npm run test:rounds
  *
  * Tur, kelimenin ÖRNEK CÜMLESİNDEN kuruluyor: başlık cümlede bulunup
  * boşluğa çevriliyor. Bulunamazsa o kelime hiç boşluk doldurma turu
@@ -9,7 +9,7 @@
  * ("arbeitet"). Gövde kuralı 749'unu kurtardı.
  */
 import assert from "node:assert/strict";
-import { buildCloze } from "../src/lib/session";
+import { buildCloze, buildOrder } from "../src/lib/session";
 import type { RoundWord } from "../src/lib/types";
 
 type Pool = Parameters<typeof buildCloze>[1];
@@ -53,4 +53,26 @@ assert.equal(g?.answer, "water");
 assert.equal(buildCloze(w("gehen", "Verb", "Kurz."), poolOf("de")), null, "çok kısa cümle");
 assert.equal(buildCloze(w("ab", "Sonstiges", "Der Zug fährt gleich ab."), poolOf("de")), null, "üç harften kısa başlık");
 
-console.log("test:cloze — mastar/gövde, büyük harf guard'ı, öbek fiil, sınırlar: tamam");
+/* ── cümle dizme ──
+   Üst sınır JETON sayısıydı ve ekranın derdi genişlik: on jetonluk 39
+   karakterlik bir İngilizce cümle eleniyor, seksen yedi karakterlik bir
+   Almanca cümle geçiyordu. Kural artık ikisini birden okuyor. */
+const o1 = buildOrder(w("gift", "Nomen", "I want to give Anna a sweater as a gift."));
+assert.ok(o1, "on jeton / 39 karakter kabul edilmeli");
+assert.equal(o1?.answer.length, 10);
+assert.equal(o1?.tail, ".");
+const o2 = buildOrder(w("Pizza", "Nomen", "Heute gibt es bei uns Pizza mit Tomaten und Käse."));
+assert.ok(o2, "on jetonluk Almanca cümle de");
+// Uzun VE geniş olan hâlâ dışarıda (telefonda tek ekrana sığmıyor)
+assert.equal(
+  buildOrder(w("Stipendium", "Nomen", "Wenn ich in diesem Jahr ein wirklich gutes Zeugnis bekomme, dann bekomme ich auch ein Stipendium.")),
+  null,
+);
+// On iki jetondan uzun: karakter sınırını geçse de hayır
+assert.equal(buildOrder(w("a", "Sonstiges", "one two three four five six seven eight nine ten one two three.")), null);
+// Dört jetondan kısa
+assert.equal(buildOrder(w("Haus", "Nomen", "Das ist Haus.")), null);
+// Tek kelimesi çok uzun olan cümle (jeton ekrana sığmaz)
+assert.equal(buildOrder(w("Test", "Nomen", "Das ist ein Donaudampfschiffahrtsgesellschaftskapitaen Test.")), null);
+
+console.log("test:rounds — boşluk doldurma (mastar/gövde, guard, öbek fiil) ve cümle dizme (jeton + genişlik): tamam");
