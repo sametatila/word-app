@@ -5167,7 +5167,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   for (const kok of ["src/components", "src/app", "mobile/src"]) {
     for (const f of walkTsx(kok)) {
       if (f.startsWith("src/app/admin")) continue; // yukaridaki muafiyet
-      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ");
+      /* DUZENLI IFADE NICELEYICISI SUSTURULUYOR (`{3}` -> `Q`): asagidaki
+         pencere kume parantezsiz (`[^{}]*`) ve elle binlik ayrac koyan bir
+         ifade (`.replace(/\B(?=(\d{3})+(?!\d))/g, ".")`) tam da o
+         parantezler yuzunden HIC eslesmiyordu - kapi yesildi, kusur duruyordu
+         (Android profil karosu, §11.459). Niceleyici JSX cocugu olarak
+         gecmiyor, yani susturmanin bedeli yok. */
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\{\d+(?:,\d*)?\}/g, "Q");
       /* IKI GOSTERIM YERI: JSX cocugu (webin kalibi) ve `value=`/`label=`
          nitelikleri (mobilin kalibi - toplamlar `Stat`/`StatTile` icine prop
          olarak giriyor). Ilk yazilisinda yalniz cocuk pozisyonu araniyordu ve
@@ -5175,8 +5181,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          Olcunun komsusunu olcmenin on altinci bicimi. */
       for (const m of src.matchAll(/(?:>|\}|\s|(?:value|label|title)=)\{([^{}]*\b(?:totalXp|weeklyXp|\w*\.xp|xp)\b[^{}]*)\}/g)) {
         const ifade = m[1].trim();
-        /* `format*` bicimli; `,` cozme kalibi; `:` nesne; `=>` islev. */
-        if (/format|=>|:|,/.test(ifade)) continue;
+        /* `format*` bicimli, `=>` islev. Virgul ve iki nokta CAGRI YOKSA
+           muaf: `{a, xp, b}` cozme kalibi, `{ xp: me.xp }` nesne alani. Eskiden
+           ikisi kosulsuz muaftı ve elle bicimleyen bir CAGRI (virgullu ikinci
+           argumani var) o yuzden gorunmuyordu; bicimlemeyi kendi yazan ifade
+           tam olculmesi gereken sey. */
+        if (/\bformat\w*\(/.test(ifade) || /=>/.test(ifade)) continue;
+        if (!/\(/.test(ifade) && /[,:]/.test(ifade)) continue;
+        /* Noktali virgul ifadeyi degil GOVDEYI isaretliyor: `{ ... }` bir
+           deyim blogu (ornegin `layout.tsx`in `try` govdesi) ve icindeki
+           `xp = ...` atamasi gosterim degil. Gosterim ifadesi tek deyimdir. */
+        if (/;/.test(ifade)) continue;
         /* NITELIK pozisyonunda bicimleme BIR KATMAN ASAGIDA olabiliyor.
            Iki cift muaf ve ikisi de dosya+etiket olarak yazili (etiket adi tek
            basina yetmez: webin `Stat`i icinde bicimliyor, mobilin `Stat`i

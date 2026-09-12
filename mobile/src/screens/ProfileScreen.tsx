@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -95,11 +95,17 @@ export function ProfileScreen() {
           tekrar ediyorlardı. Kalan ikisi kimliğin parçası — seri "ne kadar
           düzenlisin", XP "ne kadar biriktirdin" der ve ikisi herkese açık
           profilde de görünür (bkz. lib/social/profile publicProfile).
+
+          Binlik ayracı SÖZLÜKTEN (`formatNumber`). Burada elle yazılmış bir
+          düzenli ifade vardı ve ayracı "." olarak KODA GÖMÜYORDU: İngilizce
+          arayüzde de "1.240" çıkıyordu. Aynı karo kişi profilinde
+          (UserScreen `StatTile`) ve webin iki profil karosunda zaten
+          `formatNumber` kullanıyor.
         */}
         {me ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
-            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
+            <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
           </View>
         ) : (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo

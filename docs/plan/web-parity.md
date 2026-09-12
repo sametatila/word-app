@@ -16704,3 +16704,39 @@ başka bir değer bırakırdı, yani "gördüğün şey gönderilen şey" bağı
 Kapı da yazmadım: bugünkü davranışı sabitleyen bir ölçü, onu **düzeltmeye**
 çalışan kişiye kırmızı verirdi — yanlış yöne bakan bir kapı. Kayıt bu yüzden
 burada duruyor.
+
+## §11.459 — XP karosunun binlik ayracı: elle yazılmış bir düzenli ifade kapının önünden geçiyordu
+
+Android profil ekranındaki "Toplam XP" karosu ayracı **koda gömüyordu**:
+
+```tsx
+<StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} … />
+```
+
+Nokta Türkçe ve Almanca için doğru, **İngilizce arayüzde yanlış**: "1.240"
+İngilizce okuyan için bin iki yüz kırk değil, virgülle bir tam iki yüz kırk.
+Aynı karo iki adım ötede doğru yazılıydı — kişi profilinde (`UserScreen`,
+birebir aynı `StatTile`) ve webin iki profil karosunda `formatNumber` var.
+Satır artık `formatNumber(me.xp)`.
+
+Kısaltan kardeşi (`formatXp`, "1,2k") **ayrı bir karar** ve gerekçesi
+`lib/useMe`de yazılı: dar karoda tam sayı sığmıyor, webin aynı karosu geniş
+ızgarada tam sayıyı yazıyor. O ayrım yerinde duruyor; düzeltilen şey ayracın
+kendisi.
+
+**Kapı yeşildi ve kusur duruyordu.** §140 ("birikmiş toplam sayılar biçimli
+mi") tam bu satırı aramak için yazılmıştı ve iki ayrı nedenle göremiyordu:
+
+1. **Pencere küme parantezsizdi** (`[^{}]*`). Düzenli ifadenin niceleyicisi
+   (`{3}`) bir küme parantezi; ifade eşleşmiyordu bile. Niceleyici artık
+   taramadan önce susturuluyor (`{3}` → `Q`), JSX çocuğu olarak geçmediği
+   için bedeli yok.
+2. **Virgül koşulsuz muaftı.** Muafiyetin gerekçesi `{a, xp, b}` gibi çözme
+   kalıplarıydı, ama elle biçimleyen bir **çağrının** ikinci argümanı da
+   virgullu. Virgül ve iki nokta artık yalnız **çağrı yoksa** muaf; noktalı
+   virgül ise ifadeyi değil gövdeyi işaretlediği için (bir `try` bloğu) ayrıca
+   düşüyor.
+
+Enjeksiyon: eski satır geri konduğunda kapı `ProfileScreen.tsx: {String(me.xp)
+.replace(…)}` diyerek kalıyor, düzeltilmiş hâlde geçiyor. Yani kapı artık
+yazıldığı işi görüyor.
