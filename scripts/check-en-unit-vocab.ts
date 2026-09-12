@@ -23,52 +23,11 @@
  */
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import type { SkillExercise } from "../src/lib/skills/types";
+// Ölçülecek yüzey üç denetleyicide ORTAK; gerekçe `lib/skill-surface.ts`de.
+import { englishSurface } from "./lib/skill-surface";
 import { lessonsFor } from "../src/lib/lessons/index";
 import { UNIT_LESSONS } from "../src/lib/immersion/build";
 import { EN_FREE, LEVELS, measureEn, enNerede } from "./lib/en-gate";
-
-/** Egzersizin öğrencinin gördüğü İNGİLİZCE yüzeyi; Türkçe alanlar dışarıda. */
-function surface(e: SkillExercise): string {
-  const out: string[] = [];
-  const tr = (s: string) => /[ığşĞİŞ]|iyor|mek\b|mak\b/.test(s);
-  if (e.skill === "reading") out.push(...e.text.split("\n"));
-  if (e.skill === "listening") for (const s of e.segments) out.push(s.text);
-  if (e.skill === "reading" || e.skill === "listening") {
-    for (const q of e.questions) {
-      if (!tr(q.text)) out.push(q.text);
-      for (const o of q.options ?? []) if (!tr(o)) out.push(o);
-      for (const a of q.accept ?? []) out.push(a);
-      for (const i of q.items ?? []) if (!tr(i)) out.push(i);
-    }
-  }
-  if (e.skill === "writing") {
-    for (const t of e.tasks) {
-      if ("answer" in t && t.answer) out.push(t.answer);
-      if ("alternatives" in t) out.push(...(t.alternatives ?? []));
-      if ("sample" in t && t.sample) out.push(t.sample);
-      if ("stimulus" in t && t.stimulus) out.push(t.stimulus);
-      if ("source" in t && t.source) out.push(t.source);
-      if ("fields" in t) for (const f of t.fields) out.push(f.answer, ...(f.accept ?? []));
-      if ("phrases" in t) for (const p of t.phrases) out.push(p.de);
-      if ("words" in t) for (const p of t.words) out.push(p.de);
-    }
-  }
-  /* KONUŞMACI ETİKETİ DE SÖZCÜK DEĞİL. Dinleme egzersizinde konuşmacı
-     kendi alanında duruyor (`segments[].speaker`) ve ölçüme hiç girmiyor;
-     okuma diyaloğunda ise tek metin bloğunun içinde, satır başında
-     "Mert: " olarak yazılıyor. Ölçüm ikisine aynı gözle bakmalı, yoksa
-     yalnızca biçim yüzünden aynı ad bir egzersizde sayılıyor ötekinde
-     sayılmıyordu. Üstelik satır başındaki ad, ortak makinenin özel-ad
-     kuralının TEK kör noktası: cümle başı sayıldığı için büyük harf onu
-     kurtarmıyor. */
-  const clean = out.join(" | ").replace(/(^|\| )\s*[A-Z][\w.']*(?: [A-Z][\w.']*)?:\s/g, "$1");
-  /* E-POSTA VE AĞ ADRESİ SÖZCÜK DEĞİL. Form egzersizinde
-     "deniz.yalin@mail.com" geçiyor; ölçüm onu noktalarından bölüp dört
-     ayrı "kelime" sayıyor ve hiçbiri havuzda olmadığı için egzersizi
-     %10 dışı gösteriyordu. Adres bir dizedir, öğrencinin öğreneceği bir
-     sözcük değil. */
-  return clean.replace(/\S+@\S+/g, " ").replace(/https?:\/\/\S+/g, " ");
-}
 
 /** Egzersizin kendi sözlükçesi öğrenciye verilmiştir — havuza eklenir. */
 function allowed(e: SkillExercise): string[] {
@@ -155,7 +114,7 @@ for (const level of levels) {
   let tokT = 0;
   let disiT = 0;
   for (const e of list) {
-    const r = measureEn(surface(e), unitPool(level, e.unit ?? 1), allowed(e));
+    const r = measureEn(englishSurface(e), unitPool(level, e.unit ?? 1), allowed(e));
     tokT += r.tok.length;
     disiT += r.disi.length;
     const oran = r.tok.length ? ((r.disi.length / r.tok.length) * 100).toFixed(1) : "0";

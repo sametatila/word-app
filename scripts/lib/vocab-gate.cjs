@@ -468,11 +468,17 @@ for (const [mastar, formlar] of Object.entries(DUZENSIZ)) for (const f of formla
    sınıflandırmada çözülmeden kalıyor ve böyle bir ortaç "havuzda yok"
    kutusuna düşüyor — eksik ama yanıltmayan etiket. */
 const ara = (m, w) => {
-  const dene = (x) => {
+  /* SIRA ÖNEMLİ — en dar kural önce. `dene` sorguyu dört harfe kadar
+     kısaltıyor ve bu EN GEVŞEK adım; başta çalışınca `passiert`i `Pass`a
+     bağlıyordu (ön ek "pass"), oysa `passieren` çekim-sonu takasıyla bir
+     adım sonra bulunacaktı ve doğrusu oydu. Ölçüldü: sıra düzeltilmeden A1
+     boşluk listesinin ikinci sırası `pass×166` diye yalan söylüyordu. */
+  const kisalt = (x) => {
     if (m.has(x)) return m.get(x);
     for (let n = x.length; n >= 4; n--) { const k = x.slice(0, n); if (m.has(k)) return m.get(k); }
     return undefined;
   };
+  const dene = (x) => (m.has(x) ? m.get(x) : sonTakas(m, x));
   let r = dene(w);
   if (r !== undefined) return r;
   const mastar = DUZENSIZ_TERS.get(w);
@@ -486,7 +492,11 @@ const ara = (m, w) => {
     govde.push(cur);
   }
   for (const g of govde) { r = dene(g); if (r !== undefined) return r; }
-  /* ÇEKİM SONU TAKASI — anahtar tarafından tek güvenli eşleşme.
+  // En gevşek adım en sonda: sorguyu dört harfe kadar kısaltmak.
+  for (const g of [w, ...govde]) { r = kisalt(g); if (r !== undefined) return r; }
+  return undefined;
+};
+/* ÇEKİM SONU TAKASI — anahtar tarafından tek güvenli eşleşme.
      `ändert` ile `ändern`i buluşturmak lazım ama "beş harf paylaşan her şey
      eşleşsin" demek felaket: ilk denemede `geschwommen` `Geschäft`e,
      `sondern` bir `sonde…` anahtarına bağlandı ve ikisi de "A2'nin şu
@@ -495,6 +505,7 @@ const ara = (m, w) => {
      uzunluğu − 2, ve en az 5 harf). `ändern`/`ändert` geçer, `Geschäft`
      (8 harf, paylaşılan 5) geçmez. Yanlış sınıf yazarı yanlış işe gönderir;
      eksik sınıf yalnız "havuzda yok" der. */
+function sonTakas(m, w) {
   if (!m.__son) {
     const idx = new Map();
     for (const [k, v] of m) {
@@ -506,11 +517,9 @@ const ara = (m, w) => {
     }
     Object.defineProperty(m, "__son", { value: idx, enumerable: false });
   }
-  for (const g of [w, ...govde]) {
-    for (let n = g.length; n >= 5; n--) { const v = m.__son.get(g.slice(0, n)); if (v !== undefined) return v; }
-  }
+  for (let n = w.length; n >= 5; n--) { const v = m.__son.get(w.slice(0, n)); if (v !== undefined) return v; }
   return undefined;
-};
+}
 /** Kapı dışı bir sözcüğü sınıflandır: {sinif, detay}. */
 function nerede(w, seviye, unit) {
   const lv = String(seviye).toLowerCase();
@@ -531,4 +540,4 @@ function nerede(w, seviye, unit) {
     : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede ders yok` };
 }
 
-module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi, nerede };
+module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi, nerede, kokAra: ara };
