@@ -16071,3 +16071,34 @@ sırayla koşturuyor (betiğin kendi yorumu tam bu sorunu anlatıyor: "kapılar�
 hangisinin var olduğunu bilmek için iş akışını okumak gerekiyor"). Koşturuldu:
 **26 adım, hepsi yeşil** (`npm ci`, `next build` ve veritabanı adımı varsayılan
 olarak atlanıyor). Bundan sonra süit bu — elle liste kurmuyorum.
+
+## §11.441 — Mirket klipleri: webde eksik dosya sessiz, ölü dosya ise indiriliyor
+
+Mobil klipleri `require("../assets/mascot/x.webp")` ile alıyor — dosya yoksa
+Metro derlemede duruyor, yani orada bir ağ zaten var. Webde klip
+`fetch("/anim/" + ad + ".webp")` ile alınıyor (`lib/mascot-clips`, Safari'nin
+URL başına oynatma durumu yüzünden blob'a çevirerek) ve dosya yoksa istek 404
+dönüp **sessizce statik çizime düşüyor**: ne hata ne uyarı, yalnızca
+animasyonu olmayan bir mirket. Hiçbir kapı bunu ölçmüyordu.
+
+Ters yön de ölçülüyor: `public/anim` içinde kodda hiç geçmeyen bir dosya
+kullanıcıya boşuna inen ağırlık (klipler 100-200 kB). Bugün 28 dosya, 28
+referans — sıfır eksik, sıfır ölü.
+
+Adların **üç kaynağı** var ve üçü de taranıyor: `CLIP` tablosunun `file:`
+değerleri, `IDLE_CLIPS` dizisi (on iki boşta klibi), ve `useClipUrl("…")`a
+doğrudan verilen dizgiler. Dördüncüsü şablon: `mascot-fx` gezinen mirketin
+adını `${walk.kind}-${dir}` ile kuruyor; o sebebiyle ve dört genişlemesiyle
+yazılı, şablonun dosyada durduğu da ölçülüyor.
+
+İki tuzağa ilk yazımda düştüm ve ikisi de kayda değer:
+
+- Şablonlu `useClipUrl` çağrısını da tarıyordum ve şablonun **karşılaştırma
+  operandını** (`"ltr"`) klip adı sanmıştı.
+- Aynı şey ternary koşullarında: `side === "right" ? "peek" : "peek-mirror"`
+  ifadesinde `"right"` bir klip adı değil. Eşitlik karşılaştırmaları artık
+  taramadan önce düşürülüyor.
+
+Beş enjeksiyon doğrulandı: bir klip dosyasını kaldırmak, ölü dosya eklemek,
+`CLIP`teki adı değiştirmek (aynı anda hem eksik hem ölü çıkıyor), şablonu
+değiştirmek, mobil tarafa ölü klip koymak.

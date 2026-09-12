@@ -17009,6 +17009,85 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* --------------------------------------------- 306. MIRKET KLIPLERI YERINDE
+   *
+   * Mobil klipleri `require("../assets/mascot/x.webp")` ile aliyor: dosya
+   * yoksa Metro derlemede duruyor, yani orada bir ag zaten var. Webde ise klip
+   * `fetch("/anim/" + ad + ".webp")` ile aliniyor (`lib/mascot-clips`) ve
+   * dosya yoksa istek 404 donup SESSIZCE statik cizime dusuyor - ne hata ne
+   * uyari, yalnizca animasyonu olmayan bir mirket.
+   *
+   * Ters yon de olculuyor: `public/anim` icinde kodda hic gecmeyen bir dosya
+   * kullaniciya bosuna inen agirliktir (klipler 100-200 kB).
+   *
+   * ADLARIN UC KAYNAGI var: `mascot.tsx` `CLIP` tablosunun `file:` degerleri,
+   * ayni dosyadaki `IDLE_CLIPS` dizisi, ve `useClipUrl("...")`a dogrudan
+   * verilen dizgiler. Bir de SABLONLA kurulan dort ad var (`mascot-fx`:
+   * `${walk.kind}-${dir}`); onlar asagida sebebiyle ve genislemesiyle yazili,
+   * ve sablonun dosyada durdugu da olculuyor. */
+  {
+    const yuruWeb2 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) { if (!/node_modules/.test(e.name)) yuruWeb2(d + "/" + e.name, out); }
+        else if (/\.tsx?$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    const mascot = sil(read("src/components/mascot.tsx"));
+    const adlar = new Set();
+    for (const m of mascot.matchAll(/file:\s*"([\w-]+)"/g)) adlar.add(m[1]);
+    const idleBlok = mascot.slice(mascot.indexOf("const IDLE_CLIPS"), mascot.indexOf("]", mascot.indexOf("const IDLE_CLIPS")));
+    for (const m of idleBlok.matchAll(/"([\w-]+)"/g)) adlar.add(m[1]);
+    for (const f of yuruWeb2("src")) {
+      for (const m of sil(read(f)).matchAll(/useClipUrl\(([^)]*)\)/g)) {
+        /* SABLONLU CAGRI ATLANIYOR: adi calisma aninda kuruluyor ve
+           genislemesi asagidaki `SABLON` listesinde yazili. Ilk yazim onu da
+           tariyordu ve sablonun KARSILASTIRMA operandlarini ("ltr") klip adi
+           sanmisti. */
+        if (m[1].includes("`")) continue;
+        /* Karsilastirma operandlari da ad degil: `side === "right" ? "peek" :
+           "peek-mirror"` ifadesinde "right" bir klip adi degil, bir kosul.
+           Once esitlik karsilastirmalari dusuruluyor. */
+        const arg = m[1].replace(/[!=]==?\s*"[\w-]+"/g, " ");
+        for (const x of arg.matchAll(/"([\w-]+)"/g)) adlar.add(x[1]);
+      }
+    }
+    /* Sablonla kurulan adlar: sebebi + genislemesi. */
+    const SABLON = [
+      {
+        yer: "src/components/mascot-fx.tsx",
+        kalip: "`${walk.kind}-${walk.dir === \"ltr\" ? \"right\" : \"left\"}`",
+        genisleme: ["walk-left", "walk-right", "stroll-left", "stroll-right"],
+        sebep: "gezinen mirketin yonu ve yurume bicimi calisma aninda seciliyor",
+      },
+    ];
+    const bayatSablon = [];
+    for (const t of SABLON) {
+      if (!sil(read(t.yer)).includes(t.kalip)) bayatSablon.push(t.yer);
+      for (const g of t.genisleme) adlar.add(g);
+    }
+    const dosyalar2 = readdirSync(new URL("../public/anim", import.meta.url)).filter((x) => x.endsWith(".webp")).map((x) => x.replace(/\.webp$/, ""));
+    const eksikDosya = [...adlar].filter((a) => !dosyalar2.includes(a)).sort();
+    const oluDosya = dosyalar2.filter((d) => !adlar.has(d)).sort();
+    /* Mobil tarafta da olu klip olmasin (Metro eksigi zaten yakaliyor). */
+    const mobKlip = new Set([...sil(read("mobile/src/ui/Mascot.tsx")).matchAll(/mascot\/([\w-]+)\.webp/g)].map((m) => m[1]));
+    const mobDosya = readdirSync(new URL("../mobile/src/assets/mascot", import.meta.url)).filter((x) => x.endsWith(".webp")).map((x) => x.replace(/\.webp$/, ""));
+    const mobOlu = mobDosya.filter((d) => !mobKlip.has(d)).sort();
+    sameList(
+      "mirket klipleri yerinde",
+      [
+        "web eksik dosya=" + (eksikDosya.join(", ") || "yok"),
+        "web olu dosya=" + (oluDosya.join(", ") || "yok"),
+        "mobil olu dosya=" + (mobOlu.join(", ") || "yok"),
+        "bayat sablon=" + (bayatSablon.join(", ") || "yok"),
+        "web ad=" + (adlar.size >= 25 ? "25+" : adlar.size),
+      ],
+      ["web eksik dosya=yok", "web olu dosya=yok", "mobil olu dosya=yok", "bayat sablon=yok", "web ad=25+"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
