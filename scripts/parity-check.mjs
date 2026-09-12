@@ -8834,6 +8834,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "beklenen",
       );
       sameList("koc balonlarinin ani ve boyu", mobListe, webListe, "mobil", "web");
+
+      /* AYNI CIFTTE ORTAK IKONUN BOYU DA AYNI.
+       *
+       * Ikon boyu genel olarak BAGLAMA gore degisiyor (aynı `SpeakerIcon`
+       * webde 13'ten 34'e kadar yedi ayri boyda) - yani "ayni ikon ayni boy"
+       * diye bir kural YOK ve yazilsa yanlis olurdu. Ama ESLESEN dosya
+       * ciftinde aynı ikon IKI TARAFTA DA BIR KEZ geciyorsa o ayni denetimdir
+       * ve boyu da ayni olmak zorunda.
+       *
+       * Kapi bir mutasyon taramasinda bulundu: webin sinav oynaticisindaki
+       * `CheckIcon`i 14'ten 16'ya cekmek HICBIR kapiyi dusurmuyordu. Bugun uc
+       * cift olculuyor (14/14, 20/20, 16/16); birden fazla gecen ikonlar
+       * bilerek ATLANIYOR - orada hangisi hangisiyle eslesir sorusunun
+       * cevabi yok ve tahmin etmek kapiyi yanlis yapar. */
+      const ikonBoylari = (yol) => {
+        const src = sil(read(yol));
+        const m = new Map();
+        for (const x of src.matchAll(/<([A-Z][A-Za-z]*Icon)\b[^>]*?size=\{(\d+)\}/g)) {
+          if (!m.has(x[1])) m.set(x[1], []);
+          m.get(x[1]).push(x[2]);
+        }
+        return m;
+      };
+      const ikonMob = [];
+      const ikonWeb = [];
+      for (const [ad, w, mo] of CIFT) {
+        const W = ikonBoylari(w);
+        const M = ikonBoylari(mo);
+        for (const [k, wv] of [...W].sort()) {
+          const mv = M.get(k);
+          if (!mv || wv.length !== 1 || mv.length !== 1) continue;
+          ikonWeb.push(ad + ":" + k + "=" + wv[0]);
+          ikonMob.push(ad + ":" + k + "=" + mv[0]);
+        }
+      }
+      sameList(
+        "eslesen ciftte ortak ikonun boyu",
+        ikonMob.length ? ikonMob : ["OLCULEN YOK"],
+        ikonWeb.length ? ikonWeb : ["OLCULEN YOK"],
+        "mobil",
+        "web",
+      );
+      sameList(
+        "ortak ikon olcumu calisiyor",
+        ["olculen=" + (ikonMob.length >= 3 ? "3+" : ikonMob.length)],
+        ["olculen=3+"],
+        "bulunan",
+        "beklenen",
+      );
     }
 
     /* Eslesen yuzeyler ayni kipi geciyor. */

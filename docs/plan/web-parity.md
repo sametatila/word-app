@@ -15861,3 +15861,37 @@ ilk yazım numarayı kaydırıyordu (enjeksiyon 110 dedi, gerçek 163).
 
 Üç enjeksiyon doğrulandı: mobil çiftlemeyi geri koymak, web çiftlemeyi geri
 koymak, sarmalayıcıyı hiç kullanılmaz yapmak (sayı ölçüsü düşüyor).
+
+## §11.436 — Mutasyon taraması: tasarım ağının iki deliği
+
+§11.435'ten sonra soruyu tersine çevirdim: "kapılar yeşilken hangi değişiklik
+fark edilmiyor?" Altı tasarım değeri tek tek bozuldu ve altı kapı
+(`check:parity`, `colors`, `tokens`, `type`, `radius`, `hit`) koşturuldu.
+
+| bozulan | yakalayan |
+|---|---|
+| mobil `spacing.md` 12→13 | `check:tokens` |
+| mobil `radii.lg` 20→22 | `check:tokens` |
+| web `--radius-card` 26→28 | `check:tokens` |
+| mobil `typography.body` 15→14 | `check:tokens` |
+| mobil `softShadow` varsayılan yükselti 8→9 | **hiçbiri** |
+| web sınav oynatıcısında `CheckIcon` 14→16 | **hiçbiri** |
+
+**İkinci delik kapatıldı.** İkon boyu genel olarak bağlama göre değişiyor (aynı
+`SpeakerIcon` webde 13'ten 34'e yedi ayrı boyda), yani "aynı ikon aynı boy" diye
+bir kural yok ve yazılsa yanlış olurdu. Ama **eşleşen dosya çiftinde** aynı ikon
+iki tarafta da **bir kez** geçiyorsa o aynı denetimdir ve boyu da aynı olmak
+zorunda. Bugün üç çift ölçülüyor (`CheckIcon` 14/14, `MicIcon` 20/20,
+`AlertIcon` 16/16) ve hepsi eşit; birden fazla geçen ikonlar bilerek atlanıyor —
+orada hangisi hangisiyle eşleşir sorusunun cevabı yok ve tahmin etmek kapıyı
+yanlış yapar (`SpeakerIcon` webde bir, mobilde iki yerde). İkinci ölçü ölçülen
+çift sayısı.
+
+**Birinci delik kapatılmadı, sebebi şu:** `softShadow(color, elevation = 8)` ve
+`cardShadow(colors, elevation = 10)` varsayılanlarını **hiçbir çağrı yeri
+kullanmıyor** — her çağrı yükseltiyi açıkça veriyor (ölçüldü: sıfır tek-argümanlı
+çağrı). Yani mutasyon ölü koda dokundu; onu ölçen bir kapı, hiçbir kullanıcının
+göremediği bir sayıyı koruyor olurdu. Gölge basamaklarının kendisi (`6/10/16` ↔
+`--shadow-soft-sm/soft/lg`) `check:tokens` tarafından zaten karşılaştırılıyor.
+
+Bir enjeksiyon daha doğrulandı (mobil `MicIcon` 20→22): kapı iki yönlü.
