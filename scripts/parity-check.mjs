@@ -7461,6 +7461,148 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 252. KLAVYE DAVRANISI -------------------------------------------
+   *
+   * Her metin alaninin klavyeye soyledigi uc sey var: cumle basi buyutme,
+   * otomatik duzeltme ve klavye tipi. Uygulamanin kendi kurali zaten belli
+   * ve Android'in cogu alani ona uyuyor:
+   *
+   *   - HEDEF DILDE CUMLE  → `sentences` + duzeltme KAPALI
+   *   - HEDEF DILDE KISA CEVAP → `none` + duzeltme kapali
+   *   - AD → `words`
+   *   - E-POSTA / KULLANICI ADI / ARAMA → `none` + duzeltme kapali
+   *   - ANA DILDE serbest metin (biyografi) → `sentences`, duzeltme ACIK
+   *
+   * Kural yazilmamis olan yerlerde tarayici/isletim sistemi VARSAYILANI
+   * geciyor: cumle basi buyuk VE otomatik duzeltme acik. Yani Ingilizce
+   * klavyeyle Almanca yazan biri "Haus"u "House"a cevrilmis buluyor ve her
+   * kisa cevabin ilk harfi buyuyor.
+   *
+   * On bir web alani ve alti Android alani bu kurali hic soylemiyordu.
+   * Ozellikle sohbet alanlari (ders, rol yapma) ve deneme kagidinin acik
+   * gorevleri - hepsi hedef dilde cumle yazilan yerler.
+   *
+   * SIFRE ve KOD alanlari MUAF: `type="password"` zaten buyutmuyor, sayi
+   * tus takiminda kucuk/buyuk yok. Iki tarafta da ayni on bes alan boyle. */
+  {
+    const acilisOku = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /* Her yuzey kendi ISARETIYLE araniyor, dosya adiyla degil: `skillQuiz`
+       hem `none` hem `sentences` tasiyan alanlara sahip ve dosya duzeyinde
+       bakan bir olcu orada HER ZAMAN yesil kalirdi - "yuzeyi degil dosyayi
+       olcmek". Isaretten sonraki acilis etiketi okunuyor. */
+    const ALANLAR = [
+      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", '"lesson.type_in"', "mobile/src/screens/LessonScreen.tsx", "placeholder={placeholder}", "sentences"],
+      ["rol yapma sohbeti", "src/components/lessons/roleplay-exam.tsx", "value={draft}", "mobile/src/screens/RoleplayExamScreen.tsx", "value={draft}", "sentences"],
+      ["sinav yazma", "src/components/exam-player.tsx", "value={writingText}", "mobile/src/screens/ExamScreen.tsx", '"exam.write_text"', "sentences"],
+      ["deneme acik gorev", "src/components/mock-exam-player.tsx", '"mockexam.write_here"', "mobile/src/screens/MockExamScreen.tsx", '"mockexam.write_here"', "sentences"],
+      ["beceri yazma", "src/components/skills/writing-player.tsx", '"skillquiz.write_your_answer_in"', "mobile/src/game/skillQuiz.tsx", '"skillquiz.write_your_answer_in"', "sentences"],
+      ["monolog dokumu", "src/components/skills/monologue-player.tsx", "value={transcript}", "mobile/src/game/skillLibrary.tsx", "value={transcript}", "sentences"],
+      ["biyografi", "src/components/social/social-settings.tsx", "value={bio}", "mobile/src/screens/SocialSettingsScreen.tsx", "value={bio}", "sentences"],
+      ["kisa cevap", "src/components/skills/quiz.tsx", "value={typed}", "mobile/src/game/skillQuiz.tsx", '"skillquiz.ph_dictation"', "none"],
+    ];
+    /**
+     * Isareti tasiyan acilis etiketinin `autoCapitalize` degeri.
+     *
+     * Beklenen deger DONDURULMUYOR, okunan deger donduruluyor: iki taraf da
+     * yanlis ama AYNI yanlis olsaydi "beklenen"i yazan bir olcu ikisini de
+     * dogru gosterirdi. Liste iki platformu karsilastiriyor, ustelik mutlak
+     * olcut ayri duruyor.
+     */
+    const kip = (yol, isaret) => {
+      const src = sil(read(yol));
+      const j = src.indexOf(isaret);
+      if (j < 0) return "ISARET YOK";
+      const bas = Math.max(src.lastIndexOf("<input", j), src.lastIndexOf("<textarea", j), src.lastIndexOf("<TextInput", j));
+      if (bas < 0) return "ALAN YOK";
+      const son = acilisOku(src.slice(bas));
+      const tag = son < 0 ? "" : src.slice(bas, bas + son + 1);
+      const m = tag.match(/autoCapitalize="(\w+)"/);
+      return m ? m[1] : "YOK";
+    };
+    sameList(
+      "alanlarin klavye kipi",
+      ALANLAR.map(([ad, , , m, im]) => ad + "=" + kip(m, im)),
+      ALANLAR.map(([ad, w, iw]) => ad + "=" + kip(w, iw)),
+      "mobil",
+      "web",
+    );
+
+    /* Ad alani `words` (iki taraf). */
+    sameList(
+      "ad alani kelime baslarini buyutuyor",
+      [
+        "profil=" + kip("mobile/src/screens/SettingsScreen.tsx", "value={name}"),
+        "kayit=" + kip("mobile/src/screens/AuthScreen.tsx", '"auth.your_name_optional"'),
+      ],
+      [
+        "profil=" + kip("src/components/profile-form.tsx", "value={displayName}"),
+        "kayit=" + kip("src/components/auth-form.tsx", "value={name}"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: sifre/kod dışında her metin alani kipini soyluyor.
+       Etiketin sonu `acilisSonu` ile okunuyor ve yorumlar ONCE dusuyor:
+       `sil` iki yorum bicimini de atiyor. Ad hoc bir tarama yalniz `/* *\/`
+       atiyordu ve bir alanin icindeki `// ... 40'a ...` satirindaki KESME
+       ISARETI tirnak acti - etiketin sonu bulunamadi, alan "kipsiz"
+       goruldu ve o yanlisa gore ikinci bir oznitelik yazildim. `tsc`
+       yakaladi. Ayni hazard 243'te de cikmisti. */
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    /* Sifre ve kod alanlari: buyutme kavramı yok. */
+    /* `secureTextEntry` de muafiyet isareti: React Native'de sifre alanini
+       soyleyen sey o. Ilk yazim yalniz `autoComplete="new-password"` gibi DUZ
+       dizgileri ariyordu ve `AuthScreen`in parola alani onu KOSULLU yaziyor
+       (`mode === "signup" ? "new-password" : "current-password"`) - alan
+       muafiyetin disinda kaldi. Ayni sinif 243 ve 245'te de cikmisti:
+       bir olguyu duz metin olarak aramak. */
+    const MUAF = /type="password"|secureTextEntry|textContentType="(?:password|newPassword|oneTimeCode)"|autoComplete="(?:current-password|new-password|one-time-code)"|keyboardType="number-pad"|inputMode="numeric"/;
+    const kipsiz = [];
+    for (const [kok, etiketler] of [["src", ["<input", "<textarea"]], ["mobile/src", ["<TextInput"]]]) {
+      for (const y of tsxler(kok)) {
+        if (/\/admin\//.test(y)) continue;
+        const src = sil(read(y));
+        for (const etiket of etiketler) {
+          let i = -1;
+          while ((i = src.indexOf(etiket, i + 1)) >= 0) {
+            const son = acilisOku(src.slice(i));
+            if (son < 0) { kipsiz.push(y.split("/").pop() + ":" + src.slice(0, i).split("\n").length + " ETIKET OKUNAMADI"); continue; }
+            const tag = src.slice(i, i + son + 1);
+            if (/type="(?:hidden|checkbox|radio|range|file)"/.test(tag)) continue;
+            if (MUAF.test(tag)) continue;
+            if (/\bautoCapitalize=/.test(tag)) continue;
+            kipsiz.push(y.split("/").pop() + ":" + src.slice(0, i).split("\n").length);
+          }
+        }
+      }
+    }
+    sameList(
+      "her metin alani klavye kipini soyluyor",
+      ["kipsiz=" + kipsiz.length + (kipsiz.length ? " (" + kipsiz.join(", ") + ")" : "")],
+      ["kipsiz=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 251. "HAREKETI AZALT" TERCIHI ----------------------------------
    *
    * Android bu tercihi TAM tutuyor: `Animated` ile animasyon baslatan dokuz

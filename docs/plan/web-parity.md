@@ -12874,3 +12874,58 @@ Dört olgu: animasyon başlatan her mobil dosyanın tercihi okuması (mutlak),
 web bloğunun beş kuralı (mutlak), yumuşak kaydırmanın tercihe bağlı olması
 (mutlak, iki ağaç) ve sohbet kaydırmasının iki tarafta da kayması. Beş
 enjeksiyon denendi, beşi de yakalandı.
+
+## §11.373 — Klavye davranışı: on bir alan kipini hiç söylemiyordu
+
+Eksen **klavye davranışı ve giriş kipleri**ydi. Her metin alanının klavyeye
+söylediği üç şey var: cümle başı büyütme, otomatik düzeltme ve klavye tipi.
+Uygulamanın kendi kuralı zaten belli ve Android'in çoğu alanı ona uyuyor:
+
+| Alan türü | Kip |
+|---|---|
+| Hedef dilde **cümle** | `sentences` + düzeltme kapalı |
+| Hedef dilde **kısa cevap** | `none` + düzeltme kapalı |
+| Ad | `words` |
+| E-posta / kullanıcı adı / arama | `none` + düzeltme kapalı |
+| **Ana dilde** serbest metin (biyografi) | `sentences`, düzeltme **açık** |
+
+Kuralın yazılmadığı yerde işletim sisteminin **varsayılanı** geçiyor: cümle
+başı büyük **ve** otomatik düzeltme açık. Yani İngilizce klavyeyle Almanca
+yazan biri "Haus"u "House"a çevrilmiş buluyor, her kısa cevabın ilk harfi
+büyüyor.
+
+**On bir web alanı ve altı Android alanı** bu kuralı hiç söylemiyordu —
+özellikle sohbet alanları (ders, rol yapma) ve deneme kâğıdının açık
+görevleri, yani hedef dilde cümle yazılan yerlerin tamamı. Rol yapma sohbeti
+ve biyografi **iki tarafta da** açıktı.
+
+Şifre ve kod alanları muaf ve öyle kaldı: `type="password"` zaten büyütmüyor,
+sayı tuş takımında küçük/büyük yok.
+
+### Üç ölçüm hatası, üçü de aynı kökten
+
+**(1) Kesme işareti tırnak sanıldı — yine.** Ad hoc tarayıcım yalnız `/* */`
+yorumlarını düşürüyordu; `SettingsScreen`in ad alanının içindeki
+`// Sınır yoktu: … 40'a kırpıyordu` satırındaki **kesme işareti** tırnak açtı,
+etiketin sonu bulunamadı ve alan "kipsiz" göründü. O yanlışa göre ikinci bir
+`autoCapitalize` yazdım; **`tsc` yakaladı** ("JSX elements cannot have
+multiple attributes with the same name"). Aynı hazard §11.362'de de çıkmıştı.
+Kapı `sil()` kullanıyor ve o iki yorum biçimini de atıyor.
+
+**(2) Dosyayı ölçmek, yüzeyi değil.** İlk yazımda kip ölçüsü "bu dosyada
+`autoCapitalize="none"` geçiyor mu" diye soruyordu. `skillQuiz` hem `none` hem
+`sentences` taşıyan alanlara sahip — o dosya için ölçü **her zaman** yeşil
+kalırdı. Ölçü işaretten geriye gidip o alanın kendi açılış etiketini okuyor
+artık.
+
+**(3) Koşullu değer düz metinle arandı.** Şifre muafiyeti
+`autoComplete="new-password"` gibi düz dizgiler arıyordu; `AuthScreen`in
+parola alanı onu **koşullu** yazıyor
+(`mode === "signup" ? "new-password" : "current-password"`) ve muafiyetin
+dışında kaldı. Doğru işaret zaten oradaydı: `secureTextEntry`.
+
+### §252
+
+Üç olgu: sekiz yüzeyin klavye kipi (eşleştirmeli, alan bazında), ad alanının
+`words` demesi ve **mutlak** bir ölçüt — şifre/kod dışında her metin alanı
+kipini söylemeli. Beş enjeksiyon denendi, beşi de yakalandı.
