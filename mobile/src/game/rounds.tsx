@@ -155,8 +155,12 @@ type Feedback = {
  * mount'ta okunduğundan burada tekrar okunmaz (speak=null).
  */
 function markAnswer(ok: boolean, speak?: string | null): void {
+  /* SES `haptic`IN ICINDEN GIDIYOR. Burada ikisi birden yaziliydi ve ses iki
+     kez isteniyordu; tek duyulmasini `sfx`in 120 ms yineleme penceresine
+     borcluyduk. `lib/haptics` bu ciftlemenin dort yerde temizlendigini
+     yaziyordu - en cok gecilen yol olan burasi atlanmis. Webde ayni artik
+     `walk-player`da duruyordu (bkz. web-parity 11.435). */
   haptic(ok ? "correct" : "wrong");
-  sfx(ok ? "correct" : "wrong");
   if (speak) speakTarget(speak);
 }
 

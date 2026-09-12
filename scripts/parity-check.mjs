@@ -3230,29 +3230,70 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * `vibrate` → `play`). Ikisini birden yazmak sesi iki kez tetikliyor; mobilde
  * dort cagri yeri boyleydi ve ses yalnizca `sfx` icindeki 120 ms yineleme
  * penceresi sayesinde tek duyuluyordu - pencereye bagli, gorunmez bir denge.
- * Iki tarafta da SIFIR cift cagri olmali. */
+ * Iki tarafta da SIFIR cift cagri olmali.
+ *
+ * KAPI BIR SURE HICBIR SEY OLCMEDI (2026-09-12'de bulundu). Ilk yazim iki sey
+ * birden istiyordu: kip DIZGI OLARAK yazili olsun (`haptic("correct")`) ve iki
+ * cagri AYNI SATIRDA olsun. Gercekte kalan iki artik da ucluk kosul
+ * kullaniyordu (`haptic(ok ? "correct" : "wrong")`) ve cagrilar ALT ALTAYDI:
+ *   mobil  `game/rounds` `markAnswer` - HER oyun cevabinin gectigi yol
+ *   web    `walk-player` - yurumede kararin bildirildigi yer
+ * Yani kapi yesilken kusur iki platformda da duruyordu. Olcu artik kipe
+ * bakmiyor ve DUGUM degil PENCERE kullaniyor: sarmalayiciyi ceken satirdan
+ * sonraki iki DOLU satirda ses cagrisi varsa cift sayiliyor.
+ *
+ * Ikinci olcu sarmalayicinin gercekten kullanildigi: cagri sayisi sifira
+ * duserse "cift yok" bos bir dogru olur. */
 {
-  const cift = (kokler, re) => {
+  const cift = (kokler, sarmal, ses) => {
     const bulunan = [];
+    let cagri = 0;
     const gez = (d) => {
       for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
         const p = d + "/" + e.name;
         if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) gez(p); }
         else if (/\.tsx?$/.test(e.name)) {
-          /* Yorumlar ONCE atiliyor: sarmalayicinin kendi aciklamasi kaliba
-             ornek olarak `haptic("correct"); sfx("correct")` yaziyor ve kapi
-             onu gercek bir cagri sanmisti. */
-          const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-          for (const satir of src.split("\n")) if (re.test(satir)) bulunan.push(p.split("/").pop());
+          /* Sarmalayicinin KENDI tanimi cagri yeri degil; yorumlar da atiliyor
+             cunku `lib/haptics` kaliba ornek olarak `haptic("correct");
+             sfx("correct")` yaziyor. */
+          if (/\/(fx|sfx|haptics)\.ts$/.test(p)) continue;
+          /* Blok yorum silinirken SATIR SAYISI KORUNUYOR: rapor satir
+             numarasi veriyor ve `" "` ile silmek satirlari birlestirip
+             numarayi kaydiriyordu (enjeksiyon 110 dedi, gercek 158). */
+          const src = read(p)
+            .replace(/\/\*[\s\S]*?\*\//g, (x) => x.replace(/[^\n]/g, " "))
+            .replace(/\/\/[^\n]*/g, " ");
+          const satirlar = src.split("\n");
+          for (let i = 0; i < satirlar.length; i++) {
+            if (!new RegExp("\\b" + sarmal + "\\(").test(satirlar[i])) continue;
+            cagri++;
+            const komsu = satirlar.slice(i + 1, i + 5).filter((x) => x.trim()).slice(0, 2);
+            if (komsu.some((x) => new RegExp("\\b" + ses + "\\(").test(x))) {
+              bulunan.push(p.split("/").pop() + ":" + (i + 1));
+            }
+          }
         }
       }
     };
     for (const k of kokler) gez(k);
-    return bulunan.sort();
+    return { cift: bulunan.sort(), cagri };
   };
-  const m = cift(["mobile/src"], /haptic\("([a-z]+)"\)[\s\S]*sfx\("\1"\)/);
-  const w = cift(["src/components"], /vibrate\("([a-z]+)"\)[\s\S]*play\("\1"\)/);
-  sameList("cift geri bildirim cagrisi", m.length ? m : ["yok"], w.length ? w : ["yok"]);
+  const m = cift(["mobile/src"], "haptic", "sfx");
+  const w = cift(["src"], "vibrate", "play");
+  /* Iki taraf BIRBIRIYLE degil BEKLENENLE karsilastiriliyor: olcu mutlak
+     ("cift yok"), yani iki listeyi esitlemek dogru soru degil. */
+  sameList(
+    "cift geri bildirim cagrisi",
+    [
+      "mobil cift=" + (m.cift.join(" ") || "yok"),
+      "web cift=" + (w.cift.join(" ") || "yok"),
+      "mobil cagri=" + (m.cagri >= 3 ? "3+" : m.cagri),
+      "web cagri=" + (w.cagri >= 10 ? "10+" : w.cagri),
+    ],
+    ["mobil cift=yok", "web cift=yok", "mobil cagri=3+", "web cagri=10+"],
+    "bulunan",
+    "beklenen",
+  );
 }
 
 /* ── 85. kelime listesi satirinin alanlari ────────────────────────────────
@@ -16664,6 +16705,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
 }
 
 console.log(

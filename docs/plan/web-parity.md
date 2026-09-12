@@ -15821,3 +15821,43 @@ mobilde 37 dosyada; iskeleti olmayıp veri bekleyen yedi ekran tek tek okundu:
 
 Yani mobilde boş ekran bırakan bir yükleme yolu bulunmadı; `check:loading`in
 mobil yarısı **yazılmıyor** ve sebebi bu.
+
+## §11.435 — Çift geri bildirim: kapı yeşildi, kusur iki platformda da duruyordu
+
+İki platformda da haptik sarmalayıcı **sesi de** çalıyor: web `lib/fx`
+`vibrate()` önce `play(kind)` diyor, mobil `lib/haptics` `haptic()` sonunda
+`sfx(kind)` diyor. Yani çağıran tek satır yazıyor; ikisini birden yazmak ses
+efektini **iki kez** istiyor ve tek duyulması `sfx` içindeki 120 ms yineleme
+penceresine kalıyor — pencere kısalsa ya da kalksa aynı ses üst üste iki kez
+çalar.
+
+Bu kuralın kapısı **vardı** (`check:parity` §84) ve yeşildi. Ama iki artık
+çağrı da duruyordu:
+
+- **mobil** `game/rounds` `markAnswer` — her oyun cevabının geçtiği yol
+- **web** `walk-player` — yürümede kararın bildirildiği yer
+
+Kapı neden görmedi: ölçüsü iki şeyi birden istiyordu — kip **dizgi olarak**
+yazılı olsun (`haptic("correct")`) ve iki çağrı **aynı satırda** olsun.
+Gerçekteki iki artık da üçlü koşul kullanıyordu
+(`haptic(ok ? "correct" : "wrong")`) ve çağrılar **alt altaydı**. Dosyanın
+kendi defterindeki iki dersin ikisi birden: *olguyu tam metin olarak aramak* ve
+*düğüm yerine pencere gerektiği yerde satıra bakmak*.
+
+Üstelik `lib/haptics`in docblock'u "dört çağrı yeri böyleydi" diye **temizlendi**
+diyordu; beşincisi — en çok geçilen yol — atlanmıştı. Yorum da düzeltildi.
+
+### Kapı
+
+Ölçü artık kipe hiç bakmıyor ve pencere kullanıyor: sarmalayıcıyı çeken satırdan
+sonraki **iki dolu satırda** ses çağrısı varsa çift sayılıyor. Sarmalayıcının
+kendi tanım dosyaları (`fx.ts`, `sfx.ts`, `haptics.ts`) taramadan düşüyor.
+İkinci ölçü çağrı sayısı: sarmalayıcı hiç kullanılmaz hâle gelirse "çift yok"
+boş bir doğru olurdu. Ölçü **mutlak** — iki taraf birbiriyle değil beklenenle
+karşılaştırılıyor, çünkü doğru soru "ikisi eşit mi" değil "çift var mı".
+
+Blok yorum silinirken satır sayısı korunuyor: rapor satır numarası veriyor ve
+ilk yazım numarayı kaydırıyordu (enjeksiyon 110 dedi, gerçek 163).
+
+Üç enjeksiyon doğrulandı: mobil çiftlemeyi geri koymak, web çiftlemeyi geri
+koymak, sarmalayıcıyı hiç kullanılmaz yapmak (sayı ölçüsü düşüyor).

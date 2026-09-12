@@ -1286,8 +1286,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               bildiren tek kanal ses ve titresim. Android bunu baştan beri
               veriyor (`WalkModeScreen`), web vermiyordu. */
           setVerdict(ok ? "correct" : "wrong");
+          /* SESI `vibrate` CALIYOR (`lib/fx`: once `play`, sonra titresim).
+             Buraya `vibrate` eklenirken var olan `play` cagrisi kalmis ve ses
+             iki kez isteniyordu; tek duyulmasi `sfx`in yineleme penceresine
+             kalmisti. Mobilde ayni artik `game/rounds`ta duruyordu. */
           vibrate(ok ? "correct" : "wrong");
-          play(ok ? "correct" : "wrong");
           results.push({
             wordId: word.id,
             game: "speak",

@@ -8,6 +8,12 @@ import { sfx } from "./sfx";
  * yineleme penceresi sayesinde tek duyuluyordu — pencere kısalsa ya da kalksa
  * aynı ses üst üste iki kez çalardı. Web de tek çağrı kullanıyor (`vibrate`
  * içeriden `play` ediyor).
+ *
+ * BEŞİNCİ ÇAĞRI YERİ ATLANMIŞTI: `game/rounds` `markAnswer`, yani HER oyun
+ * cevabının geçtiği yol. Kapı (`check:parity` 84) yeşildi çünkü ölçüsü kipi
+ * DİZGİ olarak ve iki çağrıyı AYNI SATIRDA arıyordu; buradaki çift üçlü koşul
+ * kullanıyor ve alt alta yazılıydı. Webde de aynı artık `walk-player`da
+ * duruyordu. İkisi de temizlendi ve kapı artık kipe bakmıyor.
  * react-native-haptic-feedback
  * iOS'ta gerçek Taptic desenleri verir (eski `Vibration` iOS'ta süreyi/deseni yok
  * sayıyordu; doğru/yanlış aynı hissediliyordu). Android'de titreşim; sistem
