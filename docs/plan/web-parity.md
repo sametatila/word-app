@@ -13510,3 +13510,57 @@ adı olup işi olmayan bir sarmalayıcı en kötüsü olurdu.
 
 Üç enjeksiyon denendi (çıplak bir `fetch`in geri gelmesi, kapının sınırı
 bırakması, mobil değerin kayması), üçü de yakalandı.
+
+## §11.387 — Pano yerel uygulamaları hiç görmüyordu
+
+`test:events` her olayın **sözlükte** olduğunu doğruluyordu; hangi
+platformdan **aktığını** kimse sormuyordu. Ölçüm bir tanesinde gerçek bir
+delik buldu.
+
+`app_open` web'de baştan beri yazılıyordu, **mobilde hiç**. Yönetim
+panosundaki **platform tablosu** yalnız bu olaydan doluyor
+(`lib/admin.ts`) — yani tabloyu okuyan biri **yerel uygulamaların hiç
+kullanıcısı olmadığını** sanıyordu. Oradaki `ios` ve `android` satırları da
+uygulamalar değil, **mobil tarayıcılardı**.
+
+Mobil artık günde bir kez yazıyor, web'dekiyle aynı kural ve aynı anahtar adı
+(`lernomi-app-open`). `kind` üçüncü bir görünüm değeri aldı: web'in
+`standalone` (ana ekrana eklenmiş) ve `browser`ının yanına **`native`**.
+Tablo üçünü ayrı satırlarda gösteriyor.
+
+### Geri kalan sekiz fark meşru — ve gerekçeleri artık ölçülüyor
+
+| Olay | Taraf | Gerekçe |
+|---|---|---|
+| `install_prompt` | web | PWA kurulum istemi tarayıcıya ait |
+| `panel_open` | web | katlanan bölüm web'e özel bir yüzey |
+| `invite_open` | web | davet bağlantısı web profiline açılıyor; mobil derin bağlantı yalnız sıfırlama ve doğrulama tanır |
+| `feedback_why_opened` · `walk_capture` | web | §118 / §119'da yazılı |
+| `notif_prime` | mobil | hatırlatma izni ekranı yalnız mobilde |
+| `purchase_start` · `purchase_done` | mobil | mağaza satın alımı yalnız mobilde |
+
+"Şu ekran yok" ya da "şu yetenek yok" doğrulanabilir bir iddia: her gerekçe
+bir dosyanın ya da bir kalıbın varlığına bağlandı.
+
+### Kapının kendi deliği
+
+İlk yazımda ölçü `track("app_open"` arıyordu ve **çağrıyı silen enjeksiyonu
+kaçırdı**: işlev dosyada duruyordu, çağıran yoktu. Bu, bu defterde adı konmuş
+bir sınıf — **varlık değil kullanım**. Ölçü çağırana da bakacak biçimde
+düzeltildi ve aynı enjeksiyon yakalandı.
+
+### Bir de küçük bir sabit kaçağı
+
+Kısa biyografi sayacı iki platformda da `140`ı **düz yazıyordu**
+(`{bio.length}/140`) — `BIO_MAX` değişse sayaç yalan söylerdi. İkisi de
+sabitten okuyor artık.
+
+### §264
+
+İki ölçü: gerekçesiz tek taraflı olay kalmaması (mutlak; hem eksik gerekçe
+hem **ölü** muafiyet — artık tek taraflı olmayan bir kayıt — yakalanıyor), ve
+açılış olayının mobilde hem yazılması hem çağrılması.
+
+Dört enjeksiyon denendi (çağrının silinmesi, muaf olayın iki tarafta da
+akması, bir muafiyetin kanıtının bozulması, gerekçesiz yeni bir olay), dördü
+de yakalandı.
