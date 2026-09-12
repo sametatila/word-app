@@ -6,6 +6,7 @@ import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSu
 import { ReactionGlyph, REACTION_TONE } from "./reaction-icons";
 import { useT } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
+import { vibrate } from "@/lib/fx";
 
 /**
  * Tepki çubuğu: mevcut tepkiler sayılarıyla, "+" ile altı seçenek. Kendi
@@ -35,6 +36,9 @@ export function ReactionBar({
     setBusy(true);
     setErr(null);
     try {
+      /* Dokunus geri bildirimi — Android ayni yerde veriyor
+         (`social/ReactionBar`). */
+      vibrate("tap");
       const next = s.mine === kind ? await social.unreact(eventId) : await social.react(eventId, kind);
       setS(next);
       onChange?.(next);

@@ -15,6 +15,7 @@ import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { SPEAK_CLIP_MS } from "@/lib/pronounce-const";
 import { formatPercent } from "@/lib/i18n/dict";
+import { vibrate } from "@/lib/fx";
 
 /* Tek kaydın üst sınırı artık ortak sabitten (`SPEAK_CLIP_MS`): sayı burada
    `MAX_MS = 8000` diye duruyordu ve Android satır içinde adsız bir 9000
@@ -79,6 +80,9 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
       ? await askPronounce(blob, task.de, { exerciseId: exercise.id, confusions: task.confusions, language: lang })
       : ({ ok: false, reason: "failed" } as const);
     if (res.ok) {
+      /* Titresim — Android telaffuz kararında veriyor (`game/skillLibrary`);
+         webde hiç yoktu. Eşik `PASS_SCORE`, ekrandaki onay/çarpı ile aynı. */
+      vibrate(res.score.overall >= PASS_SCORE ? "correct" : "wrong");
       setScore(res.score);
       scores.current[idx] = res.score.overall;
       setPhase("done");

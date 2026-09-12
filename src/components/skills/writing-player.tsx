@@ -19,6 +19,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
+import { vibrate } from "@/lib/fx";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -205,6 +206,9 @@ function BuildTask({
     }
     const n = fails + 1;
     setFails(n);
+    /* Titresim — Android ayni yerde veriyor (`game/skillQuiz` `check`).
+       Sarsilma GORSEL bir geri bildirim; dokunsal olani yoktu. */
+    vibrate("wrong");
     setShaking(true);
     setTimeout(() => setShaking(false), 400);
     if (n >= 2) setPhase("revealed");

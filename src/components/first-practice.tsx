@@ -10,6 +10,7 @@ import { firstWordsFor, type FirstWord } from "@/lib/first-words";
 import { readOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { vibrate } from "@/lib/fx";
 
 /**
  * Hesap açmadan önce kısa bir ISINMA — beş kelime, sesli, örnekli.
@@ -86,6 +87,9 @@ export function FirstPractice() {
   const label = t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word");
 
   function primary() {
+    /* Dokunus geri bildirimi — Android ayni dugmede veriyor
+       (`FirstPracticeScreen`). */
+    vibrate("tap");
     if (!seen) {
       setSeen(true);
       return;

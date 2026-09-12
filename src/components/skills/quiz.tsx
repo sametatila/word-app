@@ -10,6 +10,7 @@ import { speakGerman } from "@/components/speak-button";
 import { CheckIcon, InfoIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
 import { useT } from "@/lib/i18n/client";
+import { vibrate } from "@/lib/fx";
 
 /**
  * Anlama soruları — sınav kâğıdı gibi hepsi alt alta. Şık seçilince kilitlenir,
@@ -34,6 +35,8 @@ export function QuestionList({
 
   function settle(qi: number, ok: boolean) {
     if (results[qi] !== null) return;
+    /* Titresim — Android ayni yerde veriyor (`game/skillQuiz` `settle`). */
+    vibrate(ok ? "correct" : "wrong");
     const next = [...results];
     next[qi] = ok;
     setResults(next);

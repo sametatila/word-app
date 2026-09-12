@@ -46,6 +46,7 @@ import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
 import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "@/lib/types";
 import { localDay } from "@/lib/day";
+import { vibrate } from "@/lib/fx";
 
 /**
  * Yürürken modu — ekransız kelime turu.
@@ -1280,7 +1281,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             continue;
           }
 
+          /* Titresim de var: ekran kapaliyken ya da cepteyken KARARI
+              bildiren tek kanal ses ve titresim. Android bunu baştan beri
+              veriyor (`WalkModeScreen`), web vermiyordu. */
           setVerdict(ok ? "correct" : "wrong");
+          vibrate(ok ? "correct" : "wrong");
           play(ok ? "correct" : "wrong");
           results.push({
             wordId: word.id,
