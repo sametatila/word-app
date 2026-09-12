@@ -1,3 +1,4 @@
+import { foldContractions } from "./contractions";
 import { foldNumbers } from "./numbers";
 
 
@@ -17,7 +18,12 @@ const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…]/g;
 
 /** `lang`: hedef dilin kodu ("de" | "en"); mobil kurs kaydı düz dizge tutuyor. */
 export function normalizeSpoken(text: string, lang: string = "de"): string {
-  return foldNumbers(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang)
+  // Kısaltmalar önce açılıyor: aşağıdaki noktalama temizliği kesme işaretini
+  // boşluğa çeviriyor, yani "I'm" ile "I am" yoksa buluşamaz (web ile aynı).
+  return foldNumbers(
+    foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    lang,
+  )
     .replace(PUNCTUATION, " ")
     .replace(/\s+/g, " ")
     .trim();

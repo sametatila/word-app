@@ -35149,8 +35149,8 @@
     "tr": "sigortalamak"
    },
    {
-    "de": "form",
-    "tr": "form"
+    "de": "mailman",
+    "tr": "postacı"
    },
    {
     "de": "post office",
@@ -35527,20 +35527,20 @@
      },
      {
       "lang": "en",
-      "text": "form"
+      "text": "mailman"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: form. Lütfen tekrar et:"
+      "text": "Türkçesi: postacı. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "form"
+      "text": "mailman"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "form"
+     "target": "mailman"
     }
    },
    {
@@ -44447,8 +44447,8 @@
     "tr": "hediye"
    },
    {
-    "de": "choose",
-    "tr": "seçim yapmak"
+    "de": "vase",
+    "tr": "vazo"
    },
    {
     "de": "cheaper",
@@ -45055,20 +45055,20 @@
      },
      {
       "lang": "en",
-      "text": "choose"
+      "text": "vase"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: seçim yapmak. Lütfen tekrar et:"
+      "text": "Türkçesi: vazo. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "choose"
+      "text": "vase"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "choose"
+     "target": "vase"
     }
    },
    {

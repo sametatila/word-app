@@ -16,6 +16,7 @@ import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
+import { foldContractions } from "../lib/contractions";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
@@ -72,8 +73,15 @@ const targetText = (segs: Segment[]): string => segs.filter((s) => s.lang !== "t
  * Cevap karşılaştırması — noktalama, büyük/küçük, (Almancada) umlaut/ß ve sayı
  * toleranslı. Sabit umlaut katlaması yazılıydı; ortak katlama hedef dile bakıyor.
  */
+/** Kısaltmaları açılmış liste — konuşma karşılaştırmasının iki tarafı da. */
+const fc = (xs: string[]): string[] => xs.map((x) => foldContractions(x, currentTargetLang()));
+
 function sn(x: string): string {
-  return foldCompare(x, currentTargetLang());
+  const lang = currentTargetLang();
+  // Kısaltma açılıyor: "I'm" ile "I am" aynı cevap (web `lib/contractions.ts`).
+  // `foldTight` yedeği BİLEREK ham girdiyle çalışıyor — kesmesiz yazan
+  // ("dont") oradan geçiyor ve açılım onu bozardı.
+  return foldCompare(foldContractions(x, lang), lang);
 }
 function matches(input: string, target: string, accept?: string[]): boolean {
   const cands = [target, ...(accept ?? [])];
@@ -418,7 +426,7 @@ export function LessonScreen() {
     if (expect?.kind !== "repeat") return;
     const duyulan = await dinle();
     if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
-    gradeRepeat(duyulan[0], spokenMatches(duyulan, [expect.target]), "mic");
+    gradeRepeat(duyulan[0], spokenMatches(fc(duyulan), fc([expect.target])), "mic");
   }
 
   /** Mikrofonsuz yedek: tekrar adımı yazarak da geçilebilir. */
@@ -436,7 +444,7 @@ export function LessonScreen() {
     if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
     // Söylenen cevap tanıyıcı çıktısıyla karşılaştırılıyor (sayı/noktalama
     // katlaması dahil); yazılan cevap düz karşılaştırmadan geçiyor.
-    gradeProduce(duyulan[0], spokenMatches(duyulan, [expect.target, ...(expect.accept ?? [])]), "mic");
+    gradeProduce(duyulan[0], spokenMatches(fc(duyulan), fc([expect.target, ...(expect.accept ?? [])])), "mic");
   }
 
   function submitProduce() {

@@ -29,7 +29,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
 import { LESSON_TRY_CEILING } from "@/lib/lessons/roleplay-const";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
-import { courseName, speechLocaleOf } from "@/lib/courses";
+import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
 import { localDay } from "@/lib/day";
 import { flushPendingLessons, queueLessonResult } from "@/lib/lesson-queue";
@@ -725,9 +725,13 @@ export function LessonPlayer({
         return;
       }
 
-      // repeat | produce — Almanca hedefle karşılaştırma.
+      // repeat | produce — hedef dille karşılaştırma. Dil PARAMETRE olarak
+      // gidiyor: `judgeSpeech` varsayılanı "de" ve İngilizce ders Almanca
+      // kuralıyla yargılanıyordu (sayı katlaması ve kısaltma açma çalışmıyordu).
       const targets = [e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])];
-      const verdicts = targets.map((t) => judgeSpeech(t, alternatives));
+      const verdicts = targets.map((t) =>
+        judgeSpeech(t, alternatives, [], [], targetLangOf(lesson.course)),
+      );
       const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
 
       if (best.kind === "correct") {

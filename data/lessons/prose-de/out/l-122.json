@@ -184,5 +184,9 @@
  { "tr": "haline gelmek", "kind": "vocab.tr", "de": "werden" },
  { "tr": "Türkçesi: ilgi duymak. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: sich interessieren. Bitte sprich nach:" },
  { "tr": "Türkçesi: portakal. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Orange. Bitte sprich nach:" },
- { "tr": "Türkçesi: eş. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Ehefrau. Bitte sprich nach:" }
+ { "tr": "Türkçesi: eş. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Ehefrau. Bitte sprich nach:" },
+ { "tr": "postacı", "kind": "vocab.tr", "de": "Briefträger" },
+ { "tr": "Türkçesi: postacı. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Briefträger. Bitte sprich nach:" },
+ { "tr": "Türkçesi: vazo. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: Vase. Bitte sprich nach:" },
+ { "tr": "vazo", "kind": "vocab.tr", "de": "Vase" }
 ]

@@ -17,6 +17,7 @@
  * için bu liste kısa ve tahmin edilebilir.
  */
 
+import { foldContractions } from "@/lib/contractions";
 import { foldNumbers } from "@/lib/numbers";
 import type { TargetLang } from "@/lib/courses";
 
@@ -75,14 +76,20 @@ export function normalizeSpoken(text: string, lang: TargetLang = "de"): string {
   // Sayı sözcükleri rakama: tanıyıcı "fünf"ü "5" yazıyor, içerik "fünf".
   // Umlaut BİLEREK korunuyor (schön/schon farkı bu turun konusu), o yüzden
   // foldNumbers'ın umlaut'lu biçimleri (fünf) de tanıması gerekiyor — tanıyor.
-  return foldNumbers(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang)
+  // Kısaltmalar önce açılıyor: noktalama temizliği kesme işaretini boşluğa
+  // çevirdiği için "I'm" ile "I am" bu satırdan sonra buluşamazdı (gerekçe
+  // `lib/contractions.ts`).
+  return foldNumbers(
+    foldContractions(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    lang,
+  )
     .replace(PUNCTUATION, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function wordsOf(text: string): string[] {
-  const normalized = normalizeSpoken(text);
+function wordsOf(text: string, lang: TargetLang = "de"): string[] {
+  const normalized = normalizeSpoken(text, lang);
   return normalized ? normalized.split(" ") : [];
 }
 
@@ -128,17 +135,26 @@ export function judgeSpeech(
   alternatives: string[],
   confusions: SpeechConfusion[] = [],
   confidences: number[] = [],
+  lang: TargetLang = "de",
 ): SpeechVerdict {
-  const heardList = alternatives.map((a) => normalizeSpoken(a)).filter(Boolean);
+  /*
+    HEDEF DİL PARAMETRESİ SONRADAN GELDİ ve eksikliği sessiz bir kusurdu:
+    `normalizeSpoken` dili bilmediği için varsayılan "de" ile çalışıyordu,
+    yani İNGİLİZCE dersler Almanca kuralıyla yargılanıyordu. Somut sonucu
+    sayı katlamasıydı — tanıyıcı "at 5 o'clock" yazdığında hedef "at five
+    o'clock" ile eşleşmiyordu, çünkü `foldNumbers` Almanca sözcük listesine
+    bakıyordu. Aynı yoldan kısaltma açma da hiç çalışmıyordu.
+  */
+  const heardList = alternatives.map((a) => normalizeSpoken(a, lang)).filter(Boolean);
   if (!heardList.length) return { kind: "unheard" };
 
-  const goal = normalizeSpoken(target);
-  const goalWords = wordsOf(target);
+  const goal = normalizeSpoken(target, lang);
+  const goalWords = wordsOf(target, lang);
 
   // 1) Doğruluk yalnızca en iyi adaydan kabul edilir.
   const best = heardList[0];
   const bestConfidence = confidences[0];
-  if (matchesGoal(best, goal, goalWords)) {
+  if (matchesGoal(best, goal, goalWords, lang)) {
     // Tanıyıcı güvenini bildirdiyse ve düşükse onaylamıyoruz. Bildirmeyen
     // tarayıcılar var (Safari) ve orada eskisi gibi davranılıyor: güven
     // yokluğu bir suçlama sebebi değil.
@@ -150,17 +166,17 @@ export function judgeSpeech(
 
   // Hedef yalnızca alt sıralarda geçiyorsa: tanıyıcı bunu ilk tahmini yapmadı.
   // Söylenen muhtemelen hedefe yakın ama net değil — dürüst cevap "emin değilim".
-  const lowerHit = heardList.slice(1).find((heard) => matchesGoal(heard, goal, goalWords));
+  const lowerHit = heardList.slice(1).find((heard) => matchesGoal(heard, goal, goalWords, lang));
   if (lowerHit) return { kind: "uncertain", heard: heardList[0] };
 
   // 2) Bilinen sapmalar. "Farklı bir şey söyledin"den ÖNCE bakılır: elimizde
   //    hedefli bir açıklama varsa genel bir uyarı vermek onu israf etmek olur.
   for (const confusion of confusions) {
-    const expected = confusion.expected ? normalizeSpoken(confusion.expected) : "";
+    const expected = confusion.expected ? normalizeSpoken(confusion.expected, lang) : "";
     for (const heard of heardList) {
-      const heardWords = new Set(wordsOf(heard));
+      const heardWords = new Set(wordsOf(heard, lang));
       const hit = confusion.heard
-        .map((x) => normalizeSpoken(x))
+        .map((x) => normalizeSpoken(x, lang))
         .some((variant) => variant && (heard === variant || heardWords.has(variant)));
       if (!hit) continue;
       // Doğru biçim de duyulmuşsa bu bir hata değil, tanıyıcının fazladan
@@ -172,9 +188,9 @@ export function judgeSpeech(
 
   // 3) Ne kadarı tuttu? En çok kelimeyi yakalayan aday üzerinden konuşulur.
   let closest = heardList[0];
-  let missing = missingFrom(goalWords, wordsOf(closest));
+  let missing = missingFrom(goalWords, wordsOf(closest, lang));
   for (const heard of heardList.slice(1)) {
-    const candidate = missingFrom(goalWords, wordsOf(heard));
+    const candidate = missingFrom(goalWords, wordsOf(heard, lang));
     if (candidate.length < missing.length) {
       closest = heard;
       missing = candidate;
@@ -188,11 +204,11 @@ export function judgeSpeech(
 }
 
 /** Bir adayın hedefi karşılayıp karşılamadığı — metin ve kelime kümesi. */
-function matchesGoal(heard: string, goal: string, goalWords: string[]): boolean {
+function matchesGoal(heard: string, goal: string, goalWords: string[], lang: TargetLang = "de"): boolean {
   if (heard === goal) return true;
   // Tanıyıcı noktalamayı ve büyük harfi kendi kurallarıyla yazdığı için
   // kelime kümesi karşılaştırması metin eşitliğinden daha güvenilir.
-  return missingFrom(goalWords, wordsOf(heard)).length === 0;
+  return missingFrom(goalWords, wordsOf(heard, lang)).length === 0;
 }
 
 /** Görev sayılırken yalnızca tam tanınma "doğru" kabul edilir. */

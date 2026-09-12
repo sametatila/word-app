@@ -1,4 +1,5 @@
 import { classifyOrder, levenshtein, type ErrorType } from "@/lib/errors";
+import { foldContractions } from "@/lib/contractions";
 import { foldNumbers } from "@/lib/numbers";
 import type { TargetLang } from "@/lib/courses";
 
@@ -52,7 +53,12 @@ export type SentenceMatch = {
 export function foldSentence(s: string, lang: TargetLang = "de"): string {
   // Sayı sözcükleri rakama: tanıyıcı/yazan "fünf"ü "5" verebiliyor, hedef
   // "fünf". Cümlede "um fünf Uhr" ↔ "um 5 Uhr" eşleşsin.
-  const lower = foldNumbers(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang);
+  // Kısaltma açılıyor (aşağıdaki noktalama temizliği kesme işaretini boşluğa
+  // çeviriyor; "I'm" ile "I am" yoksa buluşamaz — `lib/contractions.ts`).
+  const lower = foldNumbers(
+    foldContractions(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
+    lang,
+  );
   const folded =
     lang === "de"
       ? lower.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
