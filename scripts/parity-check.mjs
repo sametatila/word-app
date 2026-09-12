@@ -7466,6 +7466,88 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 255. YIKICI EYLEMIN ONAYI --------------------------------------
+   *
+   * Geri alinamaz bes eylem var ve ikisi de ONAY soruyor: yazi silme, gorev
+   * birakma, arkadaslıktan cikarma (iki ayri yuzey) ve engelleme. Ayrisma
+   * onayin VARLIGINDA degil, KIMIN KUTUSU oldugundaydi.
+   *
+   * Android hepsini kendi sozlugu ve kendi tasarimiyla soruyor: bir BASLIK,
+   * ayri bir ACIKLAMA satiri ve adi konmus bir `destructive` dugme ("Sil",
+   * "Birak", "Cikar", "Engelle"). Web bunlarin hepsini `window.confirm` ile
+   * soruyordu. Sistem kutusunun uc somut sorunu var, ucu de bu urunde
+   * gerceklesiyor:
+   *   - dugmeleri TARAYICININ dilinde ("OK"/"Cancel"), uygulamanin degil;
+   *   - iOS'ta onay/iptal sirasi bizim duzenimizin TERSI - kas hafizasi
+   *     yanlis dugmeye basiyor;
+   *   - baslik ile aciklama tek metne sikisiyor (`quests` bunu `\n\n` ile
+   *     yapistiriyordu), yani hiyerarsi kayboluyor.
+   * `confirm-dialog`in kendi yorumu bunlari zaten yaziyordu - bilinen bir
+   * kusurdu, yalnizca bes cagri yeri geride kalmisti.
+   *
+   * Olcu MUTLAK ve iki parcali: (1) her yuzey kendi kutusunu kullaniyor,
+   * (2) kullaniciya acik hicbir yerde sistem kutusu KALMADI. Ikincisi
+   * gerekli: birincisi yalniz bilinen bes dosyaya bakar, altincisi yarin
+   * eklenebilir.
+   *
+   * TEK ISTISNA yonetici sayfasi: kullaniciya acik bir yuzey degil, tek
+   * kullanicisi Samet ve metni zaten sozlukte degil. Istisnanin kendisi de
+   * olculuyor - yolu `src/app/admin/` altinda kalmazsa kapi kirmizi olur. */
+  {
+    const YUZEY = [
+      ["yazi silme", "src/components/writings-card.tsx", "mobile/src/screens/WritingsScreen.tsx"],
+      ["gorev birakma", "src/components/social/quests.tsx", "mobile/src/social/Quests.tsx"],
+      ["arkadas cikarma (satir)", "src/components/social/friend-list.tsx", "mobile/src/social/FriendRows.tsx"],
+      ["arkadas cikarma (rozet)", "src/components/social/user-action.tsx", "mobile/src/social/UserActionButton.tsx"],
+      ["engelleme", "src/components/social/public-profile.tsx", "mobile/src/screens/UserScreen.tsx"],
+    ];
+    /* Webde "kendi kutusu" = `ConfirmDialog` VE `destructive` isareti; yikici
+       olmayan bir onay kutusu (ornegin "kaydet?") bu olcunun konusu degil. */
+    const webKutu = (y) => {
+      const src = sil(read(y));
+      if (/\bconfirm\(/.test(src)) return "SISTEM KUTUSU";
+      return /<ConfirmDialog\b[\s\S]{0,400}?destructive/.test(src) ? "kendi kutusu" : "ONAY YOK";
+    };
+    const mobKutu = (y) => {
+      const src = sil(read(y));
+      return /style: "destructive"/.test(src) || /<ConfirmDialog\b/.test(src) ? "kendi kutusu" : "ONAY YOK";
+    };
+    sameList(
+      "yikici eylem kendi onay kutusuyla soruluyor",
+      YUZEY.map(([ad, , m]) => ad + "=" + mobKutu(m)),
+      YUZEY.map(([ad, w]) => ad + "=" + webKutu(w)),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK SUPURGE: kullaniciya acik hicbir istemci dosyasinda sistem
+       kutusu kalmadi. */
+    const ADMIN = "src/app/admin/premium/premium-admin.tsx";
+    if (!/^src\/app\/admin\//.test(ADMIN) || !existsSync(new URL("../" + ADMIN, import.meta.url))) {
+      fail("sistem onay kutusu istisnasi", [`karsiliksiz istisna: ${ADMIN} artik yonetici yuzeyi degil`]);
+    }
+    const walkTsx255 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx255(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const sistemKutusu = [];
+    for (const f of [...walkTsx255("src/app"), ...walkTsx255("src/components")]) {
+      if (f === ADMIN) continue;
+      if (/(?:^|[^.\w])(?:window\.)?confirm\(/.test(sil(read(f)))) sistemKutusu.push(f);
+    }
+    sameList(
+      "kullaniciya acik yuzeyde sistem onay kutusu",
+      sistemKutusu.length ? sistemKutusu : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 254. OTURUM KENAR DURUMLARI ------------------------------------
    *
    * Iki ayrisma cikti.
