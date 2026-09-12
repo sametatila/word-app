@@ -330,12 +330,21 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             )}
           </Section>
 
+          {/* HUNİ ÜÇ BASAMAK. "Denendi" ile "ulaştı" arasındaki fark tam
+              olarak görmek istediğimiz şey: abonelik ölmüş, jeton geçersiz,
+              sağlayıcı reddetmiş. CTR de artık açılan/ULAŞAN. */}
           <Section title="Bildirim hunisi (30g)" full>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
               <Kpi label="İzin verildi" value={fmt(d.notifications.optinYes)} tone="ok" />
               <Kpi label="İzin reddedildi" value={fmt(d.notifications.optinNo)} tone={d.notifications.optinNo > d.notifications.optinYes ? "warn" : undefined} />
-              <Kpi label="Bildirim gönderildi" value={fmt(d.notifications.sent)} />
-              <Kpi label="Bildirimden açıldı" value={fmt(d.notifications.opened)} sub={d.notifications.sent ? pct(d.notifications.opened / d.notifications.sent) + " CTR" : undefined} />
+              <Kpi label="Denendi" value={fmt(d.notifications.sent)} />
+              <Kpi
+                label="Ulaştı"
+                value={fmt(d.notifications.delivered)}
+                sub={d.notifications.sent ? pct(d.notifications.delivered / d.notifications.sent) + " teslim" : undefined}
+                tone={d.notifications.sent > 0 && d.notifications.delivered < d.notifications.sent / 2 ? "warn" : undefined}
+              />
+              <Kpi label="Bildirimden açıldı" value={fmt(d.notifications.opened)} sub={d.notifications.delivered ? pct(d.notifications.opened / d.notifications.delivered) + " CTR" : undefined} />
             </div>
           </Section>
 

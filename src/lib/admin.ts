@@ -67,7 +67,13 @@ export type AdminData = {
   clientErrors: { screen: string; count: number }[];
   premium: { views: number; gates: number; starts: number; done: number };
   premiumGates: { feature: string; count: number }[];
-  notifications: { optinYes: number; optinNo: number; sent: number; opened: number };
+  /**
+   * Bildirim hunisi ÜÇ basamak: denendi → ulaştı → açıldı.
+   *
+   * "CTR" eskiden açılan/DENENEN oranıydı; teslim edilmeyen bildirim oranı
+   * haksız yere düşürüyordu. Artık açılan/ULAŞAN.
+   */
+  notifications: { optinYes: number; optinNo: number; sent: number; delivered: number; opened: number };
   /**
    * Giden e-posta (30g). `fail` SMTP reddi, `cap` alıcı başına saatlik tavan.
    *
@@ -173,7 +179,7 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`select coalesce(kind,'?') screen, count(*)::int c from events where name='client_error' and day >= current_date - 29 group by kind order by c desc limit 12`),
     rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - 29`),
     rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - 29 group by kind order by c desc limit 8`),
-    rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
+    rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, coalesce(sum(value) filter (where name='push_deliver'),0)::int delivered, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
     rows(sql`select r.name,
         max(r.ran_at)::text last_at,
         (array_agg(r.ok order by r.ran_at desc))[1] last_ok,
@@ -222,7 +228,7 @@ export async function getAdminData(): Promise<AdminData> {
     clientErrors: clientErrors.map((r) => ({ screen: str(r.screen), count: num(r.c) })),
     premium: { views: num(prem[0]?.views), gates: num(prem[0]?.gates), starts: num(prem[0]?.starts), done: num(prem[0]?.done) },
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
-    notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), opened: num(notif[0]?.opened) },
+    notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), delivered: num(notif[0]?.delivered), opened: num(notif[0]?.opened) },
     mail: mail.map((r) => ({ kind: str(r.kind), ok: num(r.ok), fail: num(r.fail), cap: num(r.cap) })),
     cron: cron.map((r) => ({ name: str(r.name), lastAt: r.last_at ? str(r.last_at) : null, lastOk: Boolean(r.last_ok), ok: num(r.ok), fail: num(r.fail), detail: r.detail ? str(r.detail) : null })),
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
