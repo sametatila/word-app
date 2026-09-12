@@ -17,7 +17,6 @@ import { CheckIcon } from "@/components/icons";
 import { seededShuffle } from "@/lib/shuffle";
 import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
-import { levenshtein } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-bands";
