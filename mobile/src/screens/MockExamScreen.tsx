@@ -8,6 +8,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
+import { EmptyCard } from "../social/common";
 import { speakAndWaitVoiced } from "../lib/tts";
 import { voicesFor } from "../lib/voices";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -297,10 +298,29 @@ export function MockExamScreen() {
     [plays, speaking],
   );
 
+  /*
+    YANLIŞ SEBEP SÖYLENİYORDU. Bağlantıdaki kâğıt ya da bölüm bulunamadığında
+    ekran "{level} seviyesi için henüz deneme sınavı yok" yazıyordu — hem
+    sebep yanlış (kâğıtlar var, bu bağlantı bozuk), hem `paper` da bulunamadığı
+    için seviye BOŞ basılıyordu: "  seviyesi için henüz deneme sınavı yok".
+    Üstelik geri dönüş yolu yoktu; tek çıkış cihazın geri hareketiydi.
+
+    Web bu yolda `notFound()` çağırıp 404 sayfasını çiziyor. Android'in kendi
+    kalıbı `UserScreen`in "kullanıcı bulunamadı" kartı: X ikonu, tehlike
+    tinti, sebep ve bir çıkış. Burada da o kullanılıyor.
+  */
   if (!paper || !part) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, padding: spacing.lg, paddingTop: insets.top + spacing.xl }}>
-        <Text variant="body">{t("mockexams.none_for_level", { level: paper?.level ?? "" })}</Text>
+        <EmptyCard
+          live="assertive"
+          icon={XIcon}
+          tint={colors.danger}
+          title={t("mockexam.paper_missing")}
+          text={t("mockexam.paper_missing_sub")}
+          action={t("mockexam.back_to_list")}
+          onAction={() => nav.goBack()}
+        />
       </View>
     );
   }
