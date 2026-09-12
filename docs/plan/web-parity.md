@@ -14271,3 +14271,57 @@ anlamına gelmiyordu, o ucun **başka çağıranları** olduğu anlamına geliyo
 §276'nın dersinin aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
 ateşlemiyorsa önce enjeksiyonun okunan şeyi gerçekten değiştirdiği
 doğrulanmalı.
+
+## §11.403 — Dönüş tuşu aradaki alanlarda hiçbir şey yapmıyordu
+
+§265 klavyenin köşesindeki tuşun **adını** ölçtü ve webde o adın hiç
+olmadığını buldu. Ama ölçü dosya başına **adların kümesine** bakıyordu:
+
+```
+adlar(...) = [...new Set(eşleşmeler)].sort().join("+")
+```
+
+`ChangePassword`in **tek** alanında `returnKeyType="go"` yazması bütün dosyayı
+geçirdi. Kapsam sorulmadı — kaydedilmiş kusur sınıflarından **"varlık, kapsam
+değil"**, ve altında gerçek bir davranış farkı duruyordu.
+
+**Webde alanlar bir `<form onSubmit>` içinde:** hangisinde Enter'a basılırsa
+form gönderiliyor. **Mobilde form yok**; her alan kendi `onSubmitEditing`ini
+taşımak zorunda, taşımayan alanda tuş yalnız klavyeyi kapatıyordu:
+
+| Yüzey | Alan | Tuşu işleyen |
+|---|---|---|
+| parola değiştirme | 3 | 1 (yalnız "tekrar") |
+| parola sıfırlama | 2 | 1 |
+| giriş / kayıt | ad, e-posta, parola | 1 (yalnız parola) |
+
+Yani Android'de e-postasını yazıp dönüş tuşuna basan kullanıcının klavyesi
+kapanıyor ve **hiçbir şey olmuyordu**; webde aynı tuş giriş yapıyor. En sık
+hâl: telefonda giriş.
+
+Çözüm Android'in kendi kalıbı — **zincir**: aradaki alanlar "İleri" deyip
+sonraki alana odaklanıyor (`submitBehavior="submit"`, klavye açık kalıyor),
+son alan "Git" ile gönderiyor. Webde de bir eksik çıktı: kayıttaki **ad**
+alanı adsızdı (form onu da gönderiyor), `enterKeyHint="go"` eklendi.
+
+### §279
+
+Dört ölçü, hepsi **oran** — eşik değil: mobilde alanların kaçının tuşu hem
+adlandırılmış hem işliyor (3/3, 2/2, 5/5), "İleri" diyen alanın gerçekten
+sonrakine odaklandığı, webde her alanın adı olduğu **ve** `<form onSubmit>`
+bulunduğu, ve **zincirin son halkasının adının** iki tarafta aynı olduğu
+("git"). Zincirin ortası ayrışıyor (webde form gönderir, mobilde odak geçer)
+ama sonu ayrışamaz.
+
+### Kapının kendi kusuru: eleman ile tip
+
+İlk yazım `indexOf("<TextInput")` ile alan sayıyordu ve **`useRef<TextInput>(null)`
+da o dizgiyle başlıyor**. Oran sahte bir eksikle kırmızı verdi (2/3). Aynı
+körlük **iki eski kapıda da** vardı: zincir refsleri eklenince §250 ("her metin
+alanı klavye kipini söylüyor") ve alan adı ölçüsü beş ref satırını kusur
+olarak listeledi. Üçünde de ayrım aynı: elemanın adından sonra **boşluk**
+gelir, tip parametresinden sonra `>`.
+
+§265'in ad kümesinden `next` düşürüldü: webde "next" **yanlış** olurdu (Enter
+formu gönderir, sonraki alana geçmez). Zincirin kendisi ve son halkanın adı
+§279'da ölçülüyor.

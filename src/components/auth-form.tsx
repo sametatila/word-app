@@ -250,6 +250,12 @@ export function AuthForm({
             aria-label={t("auth.your_name_optional")}
             /* Sınır profil formuyla aynı KAYNAKTAN: uç da onu okuyor. */
             maxLength={PROFILE_LIMITS.displayNameMax}
+            /* Bu alanda Enter da formu GÖNDERİYOR (üç alan tek `<form>`
+               içinde), o yüzden tuşun adı da "git". Adsız bırakıldığında
+               telefon tarayıcısında jenerik dönüş oku duruyordu; Android
+               karşılığında alan zincirin ilk halkası ve "İleri" diyor
+               (`AuthScreen`). */
+            enterKeyHint="go"
             /* KLAVYE DAVRANIŞI ANDROID İLE AYNI. Telefonda web de kullanılıyor
                (PWA) ve alanlar orada başka davranıyordu: ad ilk harfi büyük
                yazmıyor, e-posta ilk harfi BÜYÜK yazıyor ve düzeltmeye

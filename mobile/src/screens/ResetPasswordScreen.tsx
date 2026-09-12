@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { View, TextInput, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -36,6 +36,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const tekrarRef = useRef<React.ComponentRef<typeof TextInput>>(null);
 
   // Sunucudaki kuralın kopyası; kimlik verilmiyor çünkü sıfırlama gövdesi
   // yalnız jetonu ve yeni parolayı taşıyor (web formuyla aynı karar).
@@ -95,13 +96,17 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
         ) : (
           <View style={{ gap: spacing.md }}>
             {/* Yeni parola ipucu — bkz. `screens/AuthScreen` içindeki not. */}
+            {/* Dönüş tuşu zinciri — bkz. `ui/ChangePassword`. Webde iki alan
+                bir `<form>` içinde: ilkinde Enter da gönderiyor. */}
             <TextInput
               autoComplete="new-password" textContentType="newPassword"
               value={password} onChangeText={setPassword} secureTextEntry autoFocus
+              returnKeyType="next" submitBehavior="submit" onSubmitEditing={() => tekrarRef.current?.focus()}
               placeholder={t("changepw.new")}
               accessibilityLabel={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
             />
             <TextInput
+              ref={tekrarRef}
               autoComplete="new-password" textContentType="newPassword"
               value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
               onSubmitEditing={() => { if (!busy) void kaydet(); }}

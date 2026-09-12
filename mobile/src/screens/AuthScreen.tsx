@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, TextInput, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -83,6 +83,8 @@ export function AuthScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const epostaRef = useRef<React.ComponentRef<typeof TextInput>>(null);
+  const parolaRef = useRef<React.ComponentRef<typeof TextInput>>(null);
   /*
     Sunucudaki kuralın kopyası (lib/passwordPolicy) — burada yalnız anında geri
     bildirim için, kapı sunucuda. Web ile aynı listeyi taşıdığı `check:parity`
@@ -512,11 +514,19 @@ export function AuthScreen() {
                 önerir. */}
             {mode === "signup" && (
               <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")}
+              returnKeyType="next" submitBehavior="submit" onSubmitEditing={() => epostaRef.current?.focus()}
               accessibilityLabel={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={PROFILE_LIMITS.displayNameMax} autoComplete="name" textContentType="name" style={input} />
             )}
-            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")}
+            {/* DÖNÜŞ TUŞU ZİNCİRİ. Webde bu alanların hepsi bir `<form>`
+                içinde: e-postada Enter'a basmak da formu gönderiyor. Mobilde
+                form yok — ad ve e-posta alanlarında tuş hiçbir şey yapmıyor,
+                yalnız klavyeyi kapatıyordu. Karşılığı Android zinciri:
+                "İleri" sonraki alana odaklanıyor (`submitBehavior="submit"`
+                klavyeyi açık tutuyor), parola alanı "Git" ile gönderiyor. */}
+            <TextInput ref={epostaRef} value={email} onChangeText={setEmail} placeholder={t("auth.email")}
+            returnKeyType="next" submitBehavior="submit" onSubmitEditing={() => parolaRef.current?.focus()}
             accessibilityLabel={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
-            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
+            <TextInput ref={parolaRef} returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
             accessibilityLabel={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
             {/* Canlı geri bildirim YALNIZ kayıtta: girişte var olan bir parolayı
                 yargılamak anlamsız ve "parolan zayıf" demek orada yanlış mesaj.

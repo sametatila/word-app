@@ -7480,6 +7480,122 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 279. DONUS TUSU HER ALANDA IS YAPIYOR --------------------------
+   *
+   * 265 klavyenin kosesindeki tusun ADINI olctu ve webde o adin HIC
+   * olmadigini buldu. Ama olcu her dosyada ADLARIN KUMESINE bakiyordu:
+   * `ChangePassword`in tek bir alaninda "go" yazmasi butun dosyayi gecirdi.
+   * Kapsam sorulmadi - KLASIK "varlik, kapsam degil" kusuru, ve altinda
+   * gercek bir davranis farki duruyordu.
+   *
+   * WEBDE UC ALAN BIR `<form onSubmit>` ICINDE: hangisinde Enter'a basilirsa
+   * form gonderiliyor. MOBILDE FORM YOK; her alan kendi `onSubmitEditing`ini
+   * tasimak zorunda, ve tasimayan alanda tus YALNIZ KLAVYEYI KAPATIYORDU:
+   *
+   *   - parola degistirme: 3 alandan 1'i (yalniz "tekrar")
+   *   - parola sifirlama:  2 alandan 1'i
+   *   - giris/kayit:       ad ve e-posta alanlari bos, yalniz parola gonderiyor
+   *
+   * Yani Android'de e-postayi yazip donus tusuna basan kullanicinin klavyesi
+   * kapaniyor ve hicbir sey olmuyor; webde ayni tus giris yapiyor. Android
+   * karsiligi ZINCIR: aradaki alanlar "İleri" deyip sonraki alana odaklaniyor
+   * (`submitBehavior="submit"` klavyeyi acik tutuyor), son alan "Git" ile
+   * gonderiyor.
+   *
+   * OLCU ORAN, esik degil: alanlarin KACININ tusu hem adlandirilmis hem
+   * isliyor. Ve iki tarafta da tam olmasi isteniyor (MUTLAK) - webin "form
+   * gonderiyor" ayricaligi adin eksik kalmasini mesru kilmiyor: telefon
+   * tarayicisinda adsiz alanda jenerik donus oku duruyor. */
+  {
+    /* ELEMAN, TIP DEGIL. `useRef<TextInput>(null)` de `<TextInput` ile
+       basliyor; ilk yazimda ikisi de alan sayildi ve oran sahte bir eksikle
+       (2/3) kirmizi verdi. Eleman etiketinden sonra BOSLUK gelir. */
+    const blok = (metin, etiket) => {
+      const out = [];
+      const desen = new RegExp(etiket + "\\s", "g");
+      for (const m of metin.matchAll(desen)) {
+        const son = metin.indexOf("/>", m.index);
+        out.push(son < 0 ? metin.slice(m.index) : metin.slice(m.index, son + 2));
+      }
+      return out;
+    };
+    /* Cok satirli alan sayilmiyor: orada donus tusu SATIR ATLIYOR ve bu iki
+       platformda da dogru davranis. */
+    const tekSatir = (b) => !/multiline|type="checkbox"/.test(b);
+
+    const FORM = [
+      ["parola degistirme", "src/components/account/change-password.tsx", "mobile/src/ui/ChangePassword.tsx"],
+      ["parola sifirlama", "src/components/reset-password-form.tsx", "mobile/src/screens/ResetPasswordScreen.tsx"],
+      ["giris", "src/components/auth-form.tsx", "mobile/src/screens/AuthScreen.tsx"],
+    ];
+
+    /* MOBIL: alan hem tusu adlandiracak hem isini yapacak. */
+    const mobilOran = FORM.map(([ad, , m]) => {
+      const alanlar = blok(sil(read(m)), "<TextInput").filter(tekSatir);
+      const tam = alanlar.filter((b) => /returnKeyType="/.test(b) && /onSubmitEditing=/.test(b));
+      return `${ad}=${tam.length}/${alanlar.length}`;
+    });
+    sameList(
+      "mobilde donus tusu adlandirilmis ve isliyor",
+      mobilOran,
+      FORM.map(([ad, , m]) => `${ad}=${blok(sil(read(m)), "<TextInput").filter(tekSatir).length}/${blok(sil(read(m)), "<TextInput").filter(tekSatir).length}`),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* ZINCIR GERCEKTEN ZINCIR MI. "İleri" diyen alan sonraki alana
+       ODAKLANMAK zorunda; `focus()` yoksa tusun adi yaniltiyor. */
+    const zincir = FORM.map(([ad, , m]) => {
+      const ileri = blok(sil(read(m)), "<TextInput").filter((b) => /returnKeyType="next"/.test(b));
+      const odakli = ileri.filter((b) => /\.current\?\.focus\(\)/.test(b) && /submitBehavior="submit"/.test(b));
+      return `${ad}=${odakli.length}/${ileri.length}`;
+    });
+    sameList(
+      "ileri diyen alan sonrakine odaklaniyor",
+      zincir,
+      FORM.map(([ad, , m]) => {
+        const n = blok(sil(read(m)), "<TextInput").filter((b) => /returnKeyType="next"/.test(b)).length;
+        return `${ad}=${n}/${n}`;
+      }),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* WEB: her alan tusu adlandiracak, ve isi `<form onSubmit>` yapacak. */
+    const webOran = FORM.map(([ad, w]) => {
+      const metin = sil(read(w));
+      const alanlar = blok(metin, "<input").filter(tekSatir);
+      const adli = alanlar.filter((b) => /enterKeyHint="/.test(b));
+      return `${ad}=${adli.length}/${alanlar.length}+${/<form onSubmit=/.test(metin) ? "form" : "FORM YOK"}`;
+    });
+    sameList(
+      "webde her alanin tusu adli ve form gonderiyor",
+      webOran,
+      FORM.map(([ad, w]) => {
+        const n = blok(sil(read(w)), "<input").filter(tekSatir).length;
+        return `${ad}=${n}/${n}+form`;
+      }),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Son halka iki tarafta da AYNI SEYI soyluyor: "git". Zincirin ortasi
+       ayrisiyor (webde form gonderiyor, mobilde odak geciyor) ama SONU
+       ayrisamaz - orada is ikisinde de gondermek. */
+    const sonAd = (metin, etiket, desen) => {
+      const b = blok(metin, etiket).filter(tekSatir);
+      const son = b.filter((x) => desen.test(x)).pop() ?? "";
+      return son.match(desen)?.[1] ?? "YOK";
+    };
+    sameList(
+      "zincirin son halkasinin adi",
+      FORM.map(([ad, , m]) => ad + "=" + sonAd(sil(read(m)), "<TextInput", /returnKeyType="(\w+)"/)),
+      FORM.map(([ad, w]) => ad + "=" + sonAd(sil(read(w)), "<input", /enterKeyHint="(\w+)"/)),
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 278. SOGUK ACILISTA BILDIRIM DOKUNUSU DUSMUYOR -----------------
    *
    * 277'nin hemen yanindaki kusur, ve ayni ders: DERIN BAGLANTI yolu soguk
@@ -8540,7 +8656,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["kisi aramasi", "src/components/social/find.tsx", "mobile/src/social/Find.tsx"],
       ["beceri sorusu", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
     ];
-    const adlar = (src, desen) => [...new Set([...src.matchAll(desen)].map((m) => m[1]))].sort().join("+") || "YOK";
+    /* ZINCIR HALKASI BU KUMEDE YOK. 279 mobilde aradaki alanlari
+       `returnKeyType="next"` ile sonraki alana bagladi; webde ayni isi
+       `<form onSubmit>` yapiyor ve orada "next" YANLIS olur (Enter formu
+       gonderir, sonraki alana gecmez). Bu olcu tusun ADINI karsilastiriyor,
+       zinciri degil - zincirin kendisi ve son halkasinin adi 279'da
+       olculuyor. */
+    const adlar = (src, desen) =>
+      [...new Set([...src.matchAll(desen)].map((m) => m[1]).filter((a) => a !== "next"))].sort().join("+") || "YOK";
     sameList(
       "enter tusunun adi",
       ALAN.map(([ad, , m]) => ad + "=" + adlar(sil(read(m)), /returnKeyType="(\w+)"/g)),
@@ -9728,6 +9851,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         for (const etiket of etiketler) {
           let i = -1;
           while ((i = src.indexOf(etiket, i + 1)) >= 0) {
+            /* ELEMAN, TIP DEGIL. `useRef<TextInput>(null)` de bu etiketle
+               basliyor ve 279 zincir refslerini ekleyince bes tanesi "kipsiz
+               alan" olarak listelendi - olmayan bir kusur. Elemanin adindan
+               sonra BOSLUK gelir, tip parametresinden sonra ">" . */
+            if (!/\s/.test(src[i + etiket.length] ?? "")) continue;
             const son = acilisOku(src.slice(i));
             if (son < 0) { kipsiz.push(y.split("/").pop() + ":" + src.slice(0, i).split("\n").length + " ETIKET OKUNAMADI"); continue; }
             const tag = src.slice(i, i + son + 1);
@@ -10534,6 +10662,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       for (const etiket of ["<input", "<textarea"]) {
         let i = -1;
         while ((i = src.indexOf(etiket, i + 1)) >= 0) {
+          if (!/\s/.test(src[i + etiket.length] ?? "")) continue;
           const tag = src.slice(i, i + acilisSonu(src.slice(i)) + 1);
           if (/type="(?:hidden|checkbox|radio|range|file|submit|button)"/.test(tag)) continue;
           if (/aria-label|aria-labelledby/.test(tag)) continue;
@@ -10552,6 +10681,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const src = sil(read(y));
       let i = -1;
       while ((i = src.indexOf("<TextInput", i + 1)) >= 0) {
+        /* Eleman, tip degil - bkz. 250'deki ayni not. */
+        if (!/\s/.test(src[i + "<TextInput".length] ?? "")) continue;
         const tag = src.slice(i, i + acilisSonu(src.slice(i)) + 1);
         if (/accessibilityLabel/.test(tag)) continue;
         mobilAdsiz.push(y + ":" + src.slice(0, i).split("\n").length);

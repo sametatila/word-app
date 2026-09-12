@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { View, TextInput } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
@@ -30,6 +30,8 @@ export function ChangePassword({ colors }: { colors: Palette }) {
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const yeniRef = useRef<React.ComponentRef<typeof TextInput>>(null);
+  const tekrarRef = useRef<React.ComponentRef<typeof TextInput>>(null);
 
   // Sunucudaki kuralın kopyası, yalnız anında geri bildirim için (kapı sunucuda).
   const problem = checkPassword(next);
@@ -90,19 +92,29 @@ export function ChangePassword({ colors }: { colors: Palette }) {
           Mevcut parola `current-password`, yeni parola `new-password`: iki
           farklı ipucu, yoksa yönetici yeni parolayı eskisinin üstüne yazmayı
           önerir. */}
+      {/* ARADAKİ ALANLARIN DÖNÜŞ TUŞU DA İŞ YAPIYOR. Webde üç alan bir
+          `<form>` içinde: hangisinde Enter'a basılırsa form gönderiliyor.
+          Mobilde form yok; ilk iki alanda tuş hiçbir şey yapmıyor, yalnız
+          klavyeyi kapatıyordu. Android karşılığı ZİNCİR: "İleri" sonraki
+          alana odaklanıyor (`submitBehavior="submit"` klavyeyi açık tutuyor),
+          son alan "Git" ile gönderiyor. */}
       <TextInput
         autoComplete="current-password" textContentType="password"
         value={current} onChangeText={setCurrent} secureTextEntry
+        returnKeyType="next" submitBehavior="submit" onSubmitEditing={() => yeniRef.current?.focus()}
         placeholder={t("changepw.current")}
         accessibilityLabel={t("changepw.current")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
+        ref={yeniRef}
         autoComplete="new-password" textContentType="newPassword"
         value={next} onChangeText={setNext} secureTextEntry
+        returnKeyType="next" submitBehavior="submit" onSubmitEditing={() => tekrarRef.current?.focus()}
         placeholder={t("changepw.new")}
         accessibilityLabel={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
+        ref={tekrarRef}
         autoComplete="new-password" textContentType="newPassword"
         value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
         onSubmitEditing={() => { if (!busy) void kaydet(); }}
