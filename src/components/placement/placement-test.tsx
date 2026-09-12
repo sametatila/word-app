@@ -254,9 +254,11 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           <p className="mt-3 text-strong" style={{ color: "var(--color-danger)" }}>{t("placement.not_saved")}</p>
         ) : null}
         <p className="mt-3 text-body leading-relaxed">{t("placew.median_note")}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android'in `Chip`i de artık
+            `accessibilityRole="radio"` (bkz. parity 257). */}
+        <div role="radiogroup" aria-label={t("settings.level")} className="mt-4 flex flex-wrap gap-2">
           {PLACEMENT_LEVELS.map((l) => (
-            <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>
+            <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} role="radio" aria-checked={chosen === l}>
               {l}
               {l === result.suggested ? <span className="muted ml-1 text-caption">{t("placement.suggested")}</span> : null}
             </button>

@@ -229,13 +229,16 @@ export function ProfileForm({
           <div>
             {/* Kurslar telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
                 sütuna düşüyordu ve kısa etiketler için tam satır harcıyordu. */}
-            <div className="grid grid-cols-2 gap-2">
+            {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR. `aria-pressed` bir aç/kapa
+                düğmesi anlatıyor; Android satırın sağına bir radyo halkası
+                ÇİZİYOR ama onu da söylemiyordu. İkisi birlikte kapatıldı
+                (bkz. parity 257). */}
+            <div role="radiogroup" aria-label={t("settings.language_to_learn")} className="grid grid-cols-2 gap-2">
               {coursesForNative(lang).map((c) => (
                 <button
                   key={c.id}
-                  /* Seçili durum renkten başka bir şeyle de söyleniyor
-                     (bkz. parity §154). */
-                  aria-pressed={course === c.id}
+                  role="radio"
+                  aria-checked={course === c.id}
                   onClick={() => {
                     if (c.id === course) return;
                     setCourse(c.id);
@@ -272,11 +275,12 @@ export function ProfileForm({
                 düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
                 satır, yaklaşık 230 piksel harcıyordu — ayarların tek en uzun
                 parçasıydı. */}
-            <div className="grid grid-cols-5 gap-1.5">
+            <div role="radiogroup" aria-label={t("settings.level")} className="grid grid-cols-5 gap-1.5">
               {LEVELS.map((l) => (
                 <button
                   key={l.id}
-                  aria-pressed={level === l.id}
+                  role="radio"
+                  aria-checked={level === l.id}
                   onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
                   className={`option px-1 py-2.5 text-strong ${
                     level === l.id ? "option-correct" : ""

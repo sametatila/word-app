@@ -193,7 +193,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
           </button>
         </form>
       ) : (
-      <div className="grid grid-cols-2 gap-3">
+      <div role="radiogroup" aria-label={tx("rounds.fill_blank")} className="grid grid-cols-2 gap-3">
         {options.map((opt, i) => {
           const isAnswer = opt === answer;
           const state =
@@ -203,11 +203,15 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
               key={`${opt}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              /* SECTIGIN SIK: `aria-pressed`. Cevaptan sonra dogru/yanlis
-                 `OptionMark`in erisilebilir adiyla soyleniyor, ama HANGISINI
-                 sectigin yalnizca zemin renginden okunuyordu. Android
-                 karsiligi `OptionButton` `chosen` (bkz. game/rounds). */
-              aria-pressed={picked === opt}
+              /* SECTIGIN SIK: `role="radio"` + `aria-checked`. Cevaptan sonra
+                 dogru/yanlis `OptionMark`in erisilebilir adiyla soyleniyor;
+                 HANGISINI sectigin once yalniz zemin renginden okunuyordu,
+                 sonra `aria-pressed` ile soylendi - ama o bir AC/KAPA dugmesi
+                 anlatiyor. Tek secimlik sik listesi radyo grubudur (bkz.
+                 parity 257); Android karsiligi `OptionButton`
+                 `accessibilityRole="radio"` (bkz. game/rounds). */
+              role="radio"
+              aria-checked={picked === opt}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}

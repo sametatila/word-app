@@ -96,7 +96,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
         </span>
       }
     >
-      <div className="grid grid-cols-2 gap-3">
+      <div role="radiogroup" aria-label={tx("rounds.plural")} className="grid grid-cols-2 gap-3">
         {options.map((option, i) => {
           const isAnswer = option === answer;
           const state =
@@ -106,11 +106,15 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
               key={`${option}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              /* SECTIGIN SIK: `aria-pressed`. Cevaptan sonra dogru/yanlis
-                 `OptionMark`in erisilebilir adiyla soyleniyor, ama HANGISINI
-                 sectigin yalnizca zemin renginden okunuyordu. Android
-                 karsiligi `OptionButton` `chosen` (bkz. game/rounds). */
-              aria-pressed={picked === option}
+              /* SECTIGIN SIK: `role="radio"` + `aria-checked`. Cevaptan sonra
+                 dogru/yanlis `OptionMark`in erisilebilir adiyla soyleniyor;
+                 HANGISINI sectigin once yalniz zemin renginden okunuyordu,
+                 sonra `aria-pressed` ile soylendi - ama o bir AC/KAPA dugmesi
+                 anlatiyor. Tek secimlik sik listesi radyo grubudur (bkz.
+                 parity 257); Android karsiligi `OptionButton`
+                 `accessibilityRole="radio"` (bkz. game/rounds). */
+              role="radio"
+              aria-checked={picked === option}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(option)}

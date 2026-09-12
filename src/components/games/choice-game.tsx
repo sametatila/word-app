@@ -109,7 +109,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
         </span>
       }
     >
-      <div className="grid gap-3">
+      <div role="radiogroup" aria-label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName(lang) }) : tx("rounds.ask_target", { target: targetName(lang) })} className="grid gap-3">
         {options.map((opt, i) => {
           const isAnswer = opt.text === answer;
           const state =
@@ -125,11 +125,15 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               key={`${opt.text}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              /* SECTIGIN SIK: `aria-pressed`. Cevaptan sonra dogru/yanlis
-                 `OptionMark`in erisilebilir adiyla soyleniyor, ama HANGISINI
-                 sectigin yalnizca zemin renginden okunuyordu. Android
-                 karsiligi `OptionButton` `chosen` (bkz. game/rounds). */
-              aria-pressed={picked === opt.text}
+              /* SECTIGIN SIK: `role="radio"` + `aria-checked`. Cevaptan sonra
+                 dogru/yanlis `OptionMark`in erisilebilir adiyla soyleniyor;
+                 HANGISINI sectigin once yalniz zemin renginden okunuyordu,
+                 sonra `aria-pressed` ile soylendi - ama o bir AC/KAPA dugmesi
+                 anlatiyor. Tek secimlik sik listesi radyo grubudur (bkz.
+                 parity 257); Android karsiligi `OptionButton`
+                 `accessibilityRole="radio"` (bkz. game/rounds). */
+              role="radio"
+              aria-checked={picked === opt.text}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}

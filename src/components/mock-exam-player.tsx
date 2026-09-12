@@ -559,8 +559,13 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
       /* SEÇİLİ DURUMU DUYURULUYOR. Şık seçilince yalnız zemin ve kenarlık
          değişiyordu: ekran okuyucu kullanan öğrenci hangi şıkkı işaretlediğini
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
-         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
-      aria-pressed={active}
+         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı.
+
+         ROLÜ DE RADYO: "düğme, seçili" kaç şık olduğunu ve birini seçmenin
+         ötekini bıraktığını söylemiyordu. Bu da iki platformda birden
+         eksikti (bkz. parity 257) ve ikisi yine birlikte kapatıldı. */
+      role="radio"
+      aria-checked={active}
       className="rounded-panel px-3 py-2 text-left text-body"
       style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >
@@ -576,7 +581,8 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
       {item.kind === "gap" && item.cue ? (
         <p className="mt-2 text-strong tracking-wide" lang={course} style={{ color: "var(--color-brand)" }}>{item.cue}</p>
       ) : null}
-      <div className="mt-2 flex flex-col gap-2">
+      {/* Maddenin ŞIKLARI tek seçimlik: grup da adıyla duruyor (madde metni). */}
+      <div role="radiogroup" aria-label={item.text} className="mt-2 flex flex-col gap-2">
         {item.kind === "mcq"
           ? item.options.map((o, i) => chip(`${"abcd"[i] ?? i + 1}) ${o}`, value === String(i), () => onAnswer(item.id, String(i)), String(i)))
           : item.kind === "bool"

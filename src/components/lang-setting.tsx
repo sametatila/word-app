@@ -65,14 +65,17 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
   */
   const offered = offeredNativeLangs();
   const chips = (
-    <div className="flex gap-1.5">
+    /* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android'in `Chip`i de artık
+       `accessibilityRole="radio"` (bkz. parity 257). */
+    <div role="radiogroup" aria-label={t("settings.app_language")} className="flex gap-1.5">
       {offered.map((l) => (
         <button
           key={l}
           type="button"
           disabled={busy}
           onClick={() => void pick(l)}
-          aria-pressed={current === l}
+          role="radio"
+          aria-checked={current === l}
           lang={l}
           className={`chip px-3 py-1.5 text-caption disabled:opacity-60 ${current === l ? "chip-active" : ""}`}
         >
