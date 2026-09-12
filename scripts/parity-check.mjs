@@ -20891,6 +20891,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 354. GORUNUM AYARI: SEGMENT, UC AYRI CIP DEGIL
+ *
+ * Ayni ayar iki platformda iki ayri DENETIM seklindeydi. Android segmentli
+ * bir denetim ciziyor (`SettingsScreen`: `surface2` zeminli bir ray, icinde
+ * esit genislikte uc bolum; secili bolum `surface` zemin + kucuk golge +
+ * marka murekkebi aliyor, sonuk olanlar saydam ve `textMuted`). Web yan yana
+ * uc BORDURLU cip gosteriyordu. Davranis ve erisilebilirlik zaten esitti
+ * (uc secenek, `radiogroup`/`radio`, `aria-checked`) - ayrisan sey
+ * gorunustu.
+ *
+ * Web'in secili murekkebi Android'in `primaryText`i ile AYNI deger tasiyan
+ * jeton: `--color-brand` (acikta 700, koyuda 400 - mobil palette de oyle).
+ *
+ * Olcu: rayin uc olcusu ve secili bolumun uc ozelligi, iki tarafta da. */
+{
+  const silG = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const mobAyar = silG(read("mobile/src/screens/SettingsScreen.tsx"));
+  const webAyar = silG(read("src/components/theme-toggle.tsx"));
+
+  /* Ray: mobilde `THEME_OPTIONS` bloğunun hemen ustundeki kap. */
+  const i = mobAyar.indexOf("THEME_OPTIONS.map");
+  const mobRay = mobAyar.slice(Math.max(0, i - 400), i);
+  const mobSegment = mobAyar.slice(i, i + 900);
+  sameList(
+    "gorunum ayarinin rayi",
+    [
+      "zemin=" + (/backgroundColor: colors\.surface2/.test(mobRay) ? "surface2" : "BASKA"),
+      "yaricap=" + (/borderRadius: radii\.md/.test(mobRay) ? "md" : "BASKA"),
+      "ic bosluk=" + (/padding: spacing\.xs/.test(mobRay) ? "xs" : "BASKA"),
+    ],
+    [
+      "zemin=" + (/background: "var\(--surface-2\)"/.test(webAyar) ? "surface2" : "BASKA"),
+      "yaricap=" + (/borderRadius: "var\(--radius-tile\)"/.test(webAyar) ? "md" : "BASKA"),
+      "ic bosluk=" + (/padding: 4/.test(webAyar) ? "xs" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+  sameList(
+    "gorunum ayarinin secili bolumu",
+    [
+      "zemin=" + (/backgroundColor: active \? colors\.surface/.test(mobSegment) ? "surface" : "BASKA"),
+      "golge=" + (/cardShadow\(colors, \d+\)/.test(mobSegment) ? "var" : "YOK"),
+      "murekkep=" + (/color=\{active \? colors\.primaryText/.test(mobSegment) ? "marka" : "BASKA"),
+      "bolum yaricapi=" + (/borderRadius: radii\.sm/.test(mobSegment) ? "sm" : "BASKA"),
+    ],
+    [
+      "zemin=" + (/background: "var\(--surface\)"/.test(webAyar) ? "surface" : "BASKA"),
+      "golge=" + (/boxShadow: "var\(--shadow-soft-sm\)"/.test(webAyar) ? "var" : "YOK"),
+      "murekkep=" + (/color: "var\(--color-brand\)"/.test(webAyar) ? "marka" : "BASKA"),
+      "bolum yaricapi=" + (/borderRadius: "var\(--radius-chip\)"/.test(webAyar) ? "sm" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

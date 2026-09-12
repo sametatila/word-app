@@ -79,12 +79,32 @@ export function ThemeSetting({ bare = false }: { bare?: boolean } = {}) {
     { key: "dark", label: t("settings.theme_dark") },
   ];
 
-  {/* Segment: üçü de aynı ağırlıkta, seçili olan dolu. Mobildeki üçlü
-      segmentin aynısı. */}
+  /*
+   * SEGMENT, ÜÇ AYRI ÇİP DEĞİL.
+   *
+   * Aynı ayar iki platformda iki ayrı DENETİM şeklindeydi: Android bunu
+   * segmentli bir denetim olarak çiziyor (`SettingsScreen`: `surface2`
+   * zeminli bir ray, içinde eşit genişlikte üç bölüm; seçili bölüm `surface`
+   * zemin + küçük gölge + marka mürekkebi alıyor), web ise yan yana üç
+   * bordürlü çip gösteriyordu. Davranış ve erişilebilirlik zaten aynıydı —
+   * ayrışan şey görünüştü.
+   *
+   * Ölçüler Android'inkiler: ray `radii.md` (14) ve 4 piksel iç boşluk,
+   * bölüm `radii.sm` (10; webdeki adı `--radius-chip`) ve 10 piksel dikey
+   * dolgu, seçili mürekkep
+   * `primaryText` (webde aynı değeri taşıyan `--color-brand`), sönük
+   * `textMuted`. Gölge Android'de `cardShadow(colors, 4)`; webin en küçük
+   * jetonu 6'nın karşılığı ve ölçekte dördüncü bir basamak yok.
+   */
   const segment = (
     /* TEK SEÇİMLİK SEGMENT RADYO GRUBUDUR — Android aynı üçlüyü
        `accessibilityRole="radio"` ile veriyor (`SettingsScreen`). */
-    <div role="radiogroup" aria-label={t("theme.appearance")} className="flex gap-1.5">
+    <div
+      role="radiogroup"
+      aria-label={t("theme.appearance")}
+      className="flex"
+      style={{ background: "var(--surface-2)", borderRadius: "var(--radius-tile)", padding: 4 }}
+    >
       {OPTIONS.map((o) => (
         <button
           key={o.key}
@@ -92,7 +112,17 @@ export function ThemeSetting({ bare = false }: { bare?: boolean } = {}) {
           onClick={() => pick(o.key)}
           role="radio"
           aria-checked={mode === o.key}
-          className={`chip px-3 py-1.5 text-caption ${mode === o.key ? "chip-active" : ""}`}
+          className="pressable flex-1 py-2.5 text-center text-strong"
+          style={
+            mode === o.key
+              ? {
+                  borderRadius: "var(--radius-chip)",
+                  background: "var(--surface)",
+                  boxShadow: "var(--shadow-soft-sm)",
+                  color: "var(--color-brand)",
+                }
+              : { borderRadius: "var(--radius-chip)", color: "var(--text-muted)" }
+          }
         >
           {o.label}
         </button>

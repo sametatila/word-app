@@ -18231,3 +18231,40 @@ yazım web'de "YOK" okuyordu; artık kenarlık **yazan** blok aranıyor. (2) Mob
 tarafta şıkkın kenarlığını ararken dosyanın ilk `borderWidth`ini alıyordum ve o
 soru **kartına** aitti (1), şıkka değil (1.5) — şık satırı
 `justifyContent: "space-between"` ile ayrışıyor.
+
+## §11.501 — Görünüm ayarı segment oldu; ve sessizce hiçbir şey yapmayan jeton
+
+Mobildeki 2 piksellik seçim satırlarının web karşılıklarını arıyordum;
+görünüm (tema) ayarında **denetimin kendisi** farklı çıktı.
+
+Android bunu segmentli bir denetim olarak çiziyor (`SettingsScreen`):
+`surface2` zeminli bir ray (`radii.md`, 4 piksel iç boşluk), içinde eşit
+genişlikte üç bölüm; seçili bölüm `surface` zemin + küçük gölge + marka
+mürekkebi alıyor, sönükler saydam ve `textMuted`. Web ise yan yana **üç
+bordürlü çip** gösteriyordu. Davranış ve erişilebilirlik zaten eşitti (üç
+seçenek, `radiogroup`/`radio`, `aria-checked`) — ayrışan şey görünüştü. Web
+artık aynı segmenti çiziyor, ölçüler Android'inkiler; seçili mürekkep de
+Android'in `primaryText`i ile **aynı değeri** taşıyan jetondan
+(`--color-brand`: açıkta 700, koyuda 400).
+
+**Bu turda kendi yazdığım bir hata bütün bir kusur sınıfını açtı.** Segmenti
+yazarken `var(--radius-sm)` kullandım — ölçeğin `sm` basamağının web'deki adı
+`--radius-chip`, öyle bir jeton **yok**. CSS tanımsız bir özel değişkeni
+görünce özelliği başlangıç değerine bırakıyor: köşe hiç yuvarlanmıyor ve
+hiçbir yerde hata çıkmıyor. Derleyici sustu, linter sustu, `check:radius`
+sustu (o yalnız beş basamağın **tanımını** karşılaştırıyor, kullanımını
+değil).
+
+`check:tokens` artık bunu ölçüyor: `var(--x)` ile okunan her jeton bir yerde
+tanımlı olmalı — CSS bloğu, React stil nesnesi ya da çalışma anında
+`setProperty`. Adı çalışma anında kurulanlar (`var(--color-${tone})`) kapsam
+dışı. Ölçü 45 kullanımı 122 tanıma karşı denetliyor ve enjeksiyonla
+doğrulandı (kendi hatamı geri koyduğumda kapı düşüyor).
+
+**Ölçünün kendi hatası:** ilk yazımda tanımları `walkDir("src")` ile
+topluyordum ve o yalnız `.ts/.tsx` döndürüyor — jetonların **asıl** tanım yeri
+olan `globals.css` hiç okunmadı, kapı yirmi jetonu "tanımsız" saydı. Stil
+sayfası ayrıca ekleniyor.
+
+Kapı **§354** görünüm ayarının altı ölçüsünü taşıyor (rayın üç ölçüsü, seçili
+bölümün dört özelliği); ikisi enjeksiyonla doğrulandı.

@@ -199,6 +199,42 @@ for (const f of await walkDir("mobile/src")) {
     else if (px % 2 === 1) tekPiksel += 1;
   }
 }
+/* ── TANIMSIZ JETON ────────────────────────────────────────────────────────
+ *
+ * `var(--radius-sm)` yazmak SESSİZCE hiçbir şey yapmıyor: CSS tanımsız bir
+ * özel değişkeni görünce özelliği başlangıç değerine bırakıyor, yani köşe
+ * yuvarlanmıyor ve hiçbir yerde hata çıkmıyor. Tam bu hata bu turda yazıldı:
+ * ölçeğin `sm` basamağının web'deki adı `--radius-chip`, `--radius-sm` diye
+ * bir jeton yok. Derleyici de, linter da, `check:radius` de sustu.
+ *
+ * Kural: `var(--x)` ile okunan her jeton bir yerde TANIMLI olmalı. Tanım üç
+ * yerden gelebilir - CSS bloğu (`--x: …`), React stil nesnesi
+ * (`"--x": …`) ve çalışma anında `setProperty("--x", …)`. Adı çalışma anında
+ * kurulan jetonlar (`var(--color-${tone})`) kapsam dışı: adın kendisi sabit
+ * değil. */
+const cssVarTanim = new Set();
+const cssVarKullanim = new Map();
+/* `walkDir` YALNIZ .ts/.tsx doneruyor - CSS dosyalari disarida kaliyor ve ilk
+   yazimda jetonlarin ASIL tanim yeri (globals.css) hic okunmadi: kapi yirmi
+   jetonu "tanimsiz" saydi. Stil sayfasi ayrica ekleniyor. */
+for (const m of css.matchAll(/(?:^|[\s;{])(--[\w-]+)\s*:/gm)) cssVarTanim.add(m[1]);
+for (const f of [...(await walkDir("src"))]) {
+  const src = await readFile(new URL("../" + f, import.meta.url), "utf8");
+  for (const m of src.matchAll(/(?:^|[\s;{])(--[\w-]+)\s*:/gm)) cssVarTanim.add(m[1]);
+  for (const m of src.matchAll(/["'](--[\w-]+)["']\s*[:,]/g)) cssVarTanim.add(m[1]);
+  for (const m of src.matchAll(/setProperty\(\s*["'](--[\w-]+)["']/g)) cssVarTanim.add(m[1]);
+  for (const m of src.matchAll(/var\((--[\w-]+)\s*[,)]/g)) {
+    if (!cssVarKullanim.has(m[1])) cssVarKullanim.set(m[1], []);
+    cssVarKullanim.get(m[1]).push(f);
+  }
+}
+const tanimsiz = [...cssVarKullanim.entries()].filter(([v]) => !cssVarTanim.has(v));
+if (tanimsiz.length) {
+  for (const [v, yer] of tanimsiz) {
+    problems.push(`tanımsız jeton: ${v} okunuyor ama hiçbir yerde tanımlı değil (${[...new Set(yer)].slice(0, 2).join(", ")})`);
+  }
+}
+
 /* ── BİRİNCİL DÜĞMENİN DİKEY DOLGUSU ───────────────────────────────────────
  *
  * Aynı düğme iki platformda bir piksel farkla duruyordu: Android'in tam
@@ -317,6 +353,7 @@ if (problems.length) {
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
   console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — ${cssVarKullanim.size} jeton okunuyor, hepsi tanımlı (${cssVarTanim.size} tanım)`);
   console.log(`check:tokens — birincil düğmenin dikey dolgusu iki platformda da 16 (ölçek dışına dönen yok)`);
   console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24} · kart dolgusu ${kartSapan}/${TAVAN.kartSapan}`);
 }
