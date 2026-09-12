@@ -128,6 +128,46 @@ function kokSayimi(kurs: Kurs, kul: Map<string, number>, hv: Map<string, string>
   return out;
 }
 
+/**
+ * DERS YUVASI MUHASEBESİ — boşluğun öteki yarısı.
+ *
+ * Yukarısı "hangi sözcük öğretilmiyor" diyor; buradaki soru "yer var mı".
+ * Ders başına sözlükçe SEKİZ ve bu sayı sözleşmede sabit (`check-lessons`:
+ * "tam 8 kelime"), yani yeni bir sözcük ancak bir yuvayı devralarak girer.
+ * Devralınacak yuva da belli: aynı sözcüğü ikinci kez öğreten satır.
+ *
+ * TEKRAR MUTLAKA İSRAF DEĞİL — ölçüm bunu iddia etmiyor. `help` altı derste
+ * geçiyor ve acil durum dersinin onu sözlükçeye alması makul. Ama sözlükçe
+ * dersin ANLATIM betiğine bağlı (`check-lessons` her kelimenin sesli tekrar
+ * ettirildiğini ve rol yapma isteminde geçtiğini arıyor), yani her yuvanın
+ * bir bedeli var. Sayı, "yer yok" ile "yer var ama başka işi görüyor"
+ * arasındaki farkı görünür kılmak için.
+ */
+function yuvaMuhasebesi(kurs: Kurs) {
+  console.log(`\n=== ${kurs.toUpperCase()} kursu — ders sözlükçesi yuvaları ===`);
+  for (const lv of LEVELS) {
+    const dersler = lessonsFor(kurs).filter((l) => l.level.toLowerCase() === lv);
+    if (!dersler.length) continue;
+    const gor = new Map<string, string[]>();
+    for (const l of dersler) for (const v of l.vocab) {
+      const k = v.de.toLowerCase().trim();
+      if (!gor.has(k)) gor.set(k, []);
+      gor.get(k)!.push(l.id);
+    }
+    const yuva = dersler.reduce((n, l) => n + l.vocab.length, 0);
+    const tekrar = [...gor].filter(([, a]) => a.length > 1);
+    const fazla = tekrar.reduce((n, [, a]) => n + a.length - 1, 0);
+    console.log(
+      `  ${lv.toUpperCase()}  ders ${String(dersler.length).padStart(3)} · yuva ${String(yuva).padStart(4)}` +
+      ` · benzersiz ${String(gor.size).padStart(4)} · İKİNCİ KEZ öğretilen yuva ${String(fazla).padStart(4)} (%${((fazla / yuva) * 100).toFixed(0)})`,
+    );
+    if (tekrar.length) {
+      const ust = tekrar.sort((a, b) => b[1].length - a[1].length).slice(0, 8);
+      console.log(`      en çok yinelenen: ${ust.map(([w, a]) => `${w}×${a.length}`).join(" · ")}`);
+    }
+  }
+}
+
 const arg = (process.argv[2] ?? "").toLowerCase();
 const kurslar: Kurs[] = arg === "en" || arg === "de" ? [arg as Kurs] : ["de", "en"];
 
@@ -153,4 +193,5 @@ for (const kurs of kurslar) {
       console.log(`      önce bunlar (sayım kurs geneli): ${kullanilan.slice(0, 15).map(([w, n]) => `${w}×${n}`).join(" · ")}`);
     }
   }
+  yuvaMuhasebesi(kurs);
 }

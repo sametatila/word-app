@@ -506,18 +506,32 @@ const ara = (m, w) => {
      (8 harf, paylaşılan 5) geçmez. Yanlış sınıf yazarı yanlış işe gönderir;
      eksik sınıf yalnız "havuzda yok" der. */
 function sonTakas(m, w) {
+  /* İKİ ÖLÇÜ BİRDEN, ve ikisi de ölçülerek bulundu.
+     (a) ortak ön ek ≥ anahtar uzunluğu − 2 — çekim sonunun takası,
+     (b) |sorgu − anahtar| ≤ 1 — ikisi AYNI BOYDA sözcük olmalı.
+     Yalnız (a) vardı ve tek yönlüydü: `braucht` (7) `Brauchtum`a (9) bağlandı,
+     C1 boşluk listesinin başına `brauchtum×87` yazıldı — oysa o `brauchen`
+     fiilinin çekimi. (a)'yı bir harfe indirmek onu düzeltti ama `passiert`
+     (8) ile `passieren`ı (9) ayırdı ve bu sefer A1'in başına `pass×166`
+     yazıldı. İkisi birlikte doğru ayrımı yapıyor: passiert/passieren Δ=1 ve
+     ortak 7 ≥ 9−2 geçiyor, braucht/brauchtum Δ=2 geçmiyor. */
   if (!m.__son) {
     const idx = new Map();
     for (const [k, v] of m) {
       if (k.length < 5) continue;
       for (let n = Math.max(5, k.length - 2); n <= k.length; n++) {
         const pk = k.slice(0, n);
-        if (!idx.has(pk)) idx.set(pk, v);
+        if (!idx.has(pk)) idx.set(pk, []);
+        idx.get(pk).push([v, k.length]);
       }
     }
     Object.defineProperty(m, "__son", { value: idx, enumerable: false });
   }
-  for (let n = w.length; n >= 5; n--) { const v = m.__son.get(w.slice(0, n)); if (v !== undefined) return v; }
+  for (let n = w.length; n >= 5; n--) {
+    const aday = m.__son.get(w.slice(0, n));
+    if (!aday) continue;
+    for (const [v, klen] of aday) if (Math.abs(w.length - klen) <= 1) return v;
+  }
   return undefined;
 }
 /** Kapı dışı bir sözcüğü sınıflandır: {sinif, detay}. */
