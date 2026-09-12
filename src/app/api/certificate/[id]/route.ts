@@ -4,7 +4,7 @@ import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { examById, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, type ExamSectionId } from "@/lib/exam";
 import { localiseExam } from "@/lib/lessons/native-server";
-import { translate, formatPercent, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { translate, formatPercent, localeOf, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 
 export const dynamic = "force-dynamic";
@@ -67,7 +67,18 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     : `${face.moduleExam} ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
   const title = plan ? plan.titleDe : exam.kind === "level" ? `${face.exam} ${exam.level}` : `${face.module} ${(exam.module ?? 0) + 1}`;
   const subtitle = plan ? plan.titleTr : "";
-  const date = exam.at.slice(0, 10);
+  /*
+    BİÇİM ÖĞRENCİNİN DİLİNDE. Yüzde ve tarih ham yazılıyordu: bölüm satırları
+    "%85" (Türkçe yazım) ve tarih "2026-09-12" (ISO). Uygulamanın her yerinde
+    `formatPercent`/`toLocaleDateString` kullanılıyor — toplam puan zaten
+    öyleydi, bölüm satırları ve tarih geride kalmıştı. Sertifika paylaşılan
+    bir belge; İngilizce arayüzde "85%", Almancada "85 %" doğru olan.
+  */
+  const date = new Date(`${exam.at.slice(0, 10)}T00:00:00`).toLocaleDateString(localeOf(lang), {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
   const cando = (plan?.canDo ?? []).slice(0, 5);
 
   const rowTop = 330;
@@ -75,7 +86,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     .map(
       (s, i) =>
         `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_TARGET[target][s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
-        `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#5b4636" text-anchor="end">%${s.pct}</text>`,
+        `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#5b4636" text-anchor="end">${esc(formatPercent(s.pct, lang))}</text>`,
     )
     .join("");
   const candoRows = cando
