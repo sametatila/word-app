@@ -154,13 +154,22 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-caption text-white" style={{ background: tone }}>
                   {score ?? "…"}
                 </span>
+                {/*
+                  SIRA VE SATIR BÜTÇESİ ANDROID'DEN (`WritingsScreen`).
+                  İki şey ayrışıyordu: web metni ÜSTE koyup vurguluyor ve
+                  metadatayı altta soluk yazıyordu, Android tam tersi —
+                  "tür · seviye · gün" satırı kimliği taşıyor, metin onun
+                  altında bir önizleme. Ve metnin bütçesi webde TEK satırdı,
+                  Android'de iki; üstelik Android kart açılınca metni TAMAMEN
+                  gösteriyor, web hiç göstermiyordu.
+                */}
                 <button type="button" onClick={() => setOpen(open === it.id ? null : it.id)} className="min-w-0 flex-1 text-left">
-                  <span className="block truncate text-strong" lang={course}>
-                    {it.answer}
-                  </span>
-                  <span className="muted block text-caption">
+                  <span className="block text-strong">
                     {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {it.day}
                     {score === null ? ` · ${t("writings.to_be_graded")}` : ""}
+                  </span>
+                  <span className={`muted block text-caption ${open === it.id ? "" : "line-clamp-2"}`} lang={course}>
+                    {it.answer}
                   </span>
                 </button>
                 <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost hit-8 shrink-0 px-2 py-1 text-caption">
