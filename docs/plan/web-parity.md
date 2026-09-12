@@ -13042,3 +13042,92 @@ koşusu) baştan beri aynı kuralla siliniyor.
 Üç olgu: 401'in ayrı bir dal olması (üç oyuncu, eşleştirmeli), bekleyen
 kuyrukların çıkışta silinmesi (mutlak, iki ağaç) ve mobilin kendi iki beceri
 kuyruğu. Beş enjeksiyon denendi, beşi de yakalandı.
+
+## §11.377 — Kapıların kendi muafiyetleri: dördü ölçülmüyordu
+
+Bu tur bir kapıya değil, **kapıların istisna listelerine** bakıyor. Bir
+muafiyet sessiz bir deliktir: muaf tutulan dosya ya da satır çoğu kapıda
+**hiç ölçülmüyor** (`continue`), yani gerekçe bayatladığında geriye kalan
+yalnız boşluktur. Yolu değişen bir dosya, kalkan bir kalıp, sonradan kapanan
+bir açık — hiçbiri görünmez.
+
+`check:colors`, `check:type` ve `check:radius` ölü istisnayı baştan beri
+arıyordu. Üç kapı aramıyordu ve dördüncüsünde bir gerekçe **gerçekten
+çürümüştü**.
+
+### Çürümüş gerekçe: ilerleme çubuğunun adı
+
+`check:title`in borç tabanında `progress-view.tsx: 2` satırı vardı ve
+gerekçesi şuydu: "gün ve değer eksende ve altındaki satırda da var". Ölçüm
+bunu yalanladı — eksende yalnız **günün harfi** ve altında yalnız **toplam**
+duruyor; o günün **değeri** metin olarak hiçbir yerde yok. Yani sayı
+gerçekten yalnız `title` ipucu balonundaydı: fareyle üstünde beklemeyi
+gerektiren, dokunmatikte hiç açılmayan, ekran okuyucunun bulmadığı bir bilgi.
+
+Android aynı çubuğa `accessibilityLabel={`${d.day}: ${label}`}` koyuyor
+(`ProgressScreen`, iki çubuk türünde de). Web'in iki çubuğu da artık
+`role="img"` + aynı metinli `aria-label` taşıyor; taban satırı gerekçesiyle
+birlikte kaldırıldı. `check:title` artık 4 değil **2 kayıtlı borç**
+bildiriyor.
+
+### Ölü muafiyet araması eklenen üç kapı
+
+| Kapı | Liste | Aranan ölüm biçimleri |
+|---|---|---|
+| `check:selection` | `DOSYA_ALLOW` | yol yok · gerekçedeki kalıp (`phase === "listening"`) artık yok |
+| `check:purge` | `KEYED_BY_TEXT` | tablo yok · tabloya gerçek kullanıcı sütunu gelmiş (istisna gereksiz) · `purge`de metin anahtarlı silme kalkmış |
+| `check:client-boundary` | `PUBLIC_ROUTES` | *(zaten vardı: dosya yok)* · **uç sonradan bir kapı edinmiş** (beyan artık yanlış) |
+
+Üçüncüsü ilk bakışta zararsız görünüyor — uç kapandıysa iyi. Ama beyan orada
+kaldığı sürece o uç **hiç ölçülmüyor**; kapı yarın kaldırılsa kimse görmez.
+
+Altı enjeksiyon denendi (her kapıya iki ya da üç), altısı da yakalandı.
+
+## §11.378 — Yıkıcı eylemin onayı: kimin kutusu?
+
+Geri alınamaz beş eylem var ve **iki platform da onay soruyor**. Ayrışma
+onayın varlığında değil, **kimin kutusu** olduğundaydı: web beşini de
+`window.confirm` ile soruyordu.
+
+| Yüzey | Android | Web (eskiden) |
+|---|---|---|
+| Yazı silme | başlık + "Vazgeç" / **Sil** (`destructive`) | tarayıcı kutusu |
+| Görev bırakma | başlık + açıklama + **Bırak** | başlık ve açıklama `\n\n` ile yapıştırılmış tek metin |
+| Arkadaşlıktan çıkarma (satır) | başlık + açıklama + **Çıkar** | tarayıcı kutusu |
+| Arkadaşlıktan çıkarma (rozet) | başlık + açıklama + **Çıkar** | tarayıcı kutusu, ayrı bir web anahtarıyla |
+| Engelleme | başlık + açıklama + **Engelle** | tarayıcı kutusu |
+
+Sistem kutusunun üç somut sorunu var ve üçü de bu üründe gerçekleşiyor:
+düğmeleri **tarayıcının** dilinde ("OK"/"Cancel"), uygulamanın değil;
+iOS'ta onay/iptal sırası bizim düzenimizin **tersi**, yani kas hafızası
+yanlış düğmeye basıyor; başlık ile açıklama tek metne sıkışıyor.
+
+Bu bilinen bir kusurdu — `confirm-dialog.tsx`in kendi yorumu üçünü de
+yazıyor. Yalnızca beş çağrı yeri geride kalmıştı. Hepsi `ConfirmDialog`a
+geçti (`destructive`, Android'in başlık/açıklama/düğme adlarıyla birebir).
+
+İki yan sonuç:
+
+- **`socialw.unfriend_confirm` öldü.** Rozetteki onay kendi web anahtarını
+  kullanıyordu; Android `social.unfriend` + `useractionbutton.no_notice`
+  ikilisini kullanıyor. Ortak anahtarlara geçince web anahtarı karşılıksız
+  kaldı ve üç dilden de silindi.
+- **Yazı silme artık Android'in sırasında.** Satır ÖNCE gidiyor, sunucu
+  sonra. Web yanıtı bekliyordu ve iki ucu da kaçırıyordu: istek başarısızsa
+  **hiçbir şey** olmuyordu (kullanıcı boşuna bekliyor), istek fırlatırsa
+  **bütün liste** "yüklenemedi" kartına dönüyordu — silinmeyen yazılar da
+  gözden kayboluyordu. İkisi de silmenin kendisinden büyük bir ceza.
+
+### §255
+
+İki parçalı ve **mutlak**: (1) beş yüzeyin her biri kendi kutusunu kullanıyor
+mu (eşleştirmeli), (2) kullanıcıya açık **hiçbir** istemci dosyasında sistem
+kutusu kaldı mı (süpürge, `src/app` + `src/components` ağacı). İkincisi
+gerekli — birincisi yalnız bilinen beş dosyaya bakar, altıncısı yarın
+eklenebilir.
+
+Tek istisna yönetici sayfası (`premium-admin`): kullanıcıya açık bir yüzey
+değil, tek kullanıcısı Samet ve metni zaten sözlükte değil. **İstisnanın
+kendisi de ölçülüyor** — yolu `src/app/admin/` altında kalmazsa kapı kırmızı
+olur. Üç enjeksiyon denendi (işaretin kalkması, başka bir dosyaya sistem
+kutusu, istisnanın yer değiştirmesi), üçü de yakalandı.
