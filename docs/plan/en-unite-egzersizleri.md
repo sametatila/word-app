@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
-| B2 | 4–25 | bekliyor |
+| B2 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
+| B2 | 7–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -945,6 +945,52 @@ dersinde geçtiği için ünite 2'nin metninden çıkarıldı (ünite sırası
 sözcüğün hangi üniteye ait olduğunu belirliyor), ve „post-mortem“ tek
 belirteç olarak kapanmadığı için „a review after the event“ diye
 yazıldı — tireli terim de çok sözcüklü terim gibi davranıyor.
+
+
+**B2 ünite 4–6 (2026-09-12).** Ünite 4 What was agreed ·
+The formal complaint · Meeting halfway · If we had agreed; ünite 5
+A firm letter · What happened, briefly · Who is who ·
+By the time you read this; ünite 6 As it is reported · Once completed ·
+The treatment of the surface · It will have been done. On sekiz egzersiz;
+ünite dışı ölçüm %0,0. B2 yuvalarının 36'sı dolu.
+
+Ünite 4'ün noktası FİİLDEN İSİM YAPMANIN KURALI YOK, LİSTESİ VAR:
+„enforce“ → „enforcement“, „reimburse“ → „reimbursement“, ama „perform“ →
+„performance“; „violate“ → „violation“, „dismiss“ → „dismissal“. Ek
+fiilden türetilemiyor. Almanca eksende bu bir **ALMANCANIN DÜZENLİ,
+İNGİLİZCENİN LİSTELİ OLDUĞU** satır ve hattın yeni bir türü: Almanca
+fiilden isim yapmayı ÜRETKEN bir kuralla yapıyor — mastarı büyük harfle
+yazmak („das Durchsetzen“) ya da „-ung“ eklemek („die Durchsetzung“)
+neredeyse her fiilde çalışıyor. Yani Almanca okuyanın elinde bir kural
+var, İngilizcede ise yalnızca bir liste, ve kuralın alışkanlığı burada
+yanlış biçim üretiyor („performment“ tam olarak bu hatanın adı).
+
+Ünite 5'in noktası DEVRİLEN ANA CÜMLE, ÖNE ÇIKAN ÖĞE DEĞİL. Ünite 3
+kapının dar olduğunu göstermişti; burada öne çıkan öğe bir sözcük değil
+bir öbek ya da bütün bir cümlecik oluyor ve devrilme yine arkadan gelende
+gerçekleşiyor: „Not until they had escalated it did they reply“ —
+ilk yarı olduğu gibi duruyor, „did“ ana cümlede. Almanca eksende bu,
+ünite 3'teki ters yönlü uyarının devamı: Almanca yan cümlede fiili SONA
+attığı için iki dilin biçimleri burada büsbütün ayrışıyor, yani Almanca
+okuyanın „öne çıkan her şey devirir“ alışkanlığı bu cümlede iki kez
+yanlış sonuç veriyor.
+
+Ünite 6'nın noktası TALİMATTA ORTACIN YAZILMAYAN ÖZNESİ. „Having filtered
+the liquid, mix the powder“ — ikinci yarı emir kipi, yani gizli öznesi
+„sen“; ortaç öznesini ana cümleden aldığı için o da „sen“. Kural bozulmuş
+gibi görünürken tam tersine korunuyor. Almanca eksende bu turun en güzel
+bağlantısı burada: Almanca aynı işi ortaçla DEĞİL, isimle çözüyor —
+„Nach dem Filtern der Flüssigkeit mische das Pulver“. Yani ünite 4'te
+Almancanın üretken bulduğumuz adlaştırması, ünite 6'da İngilizcenin
+ortacının yerini tutuyor; iki ünitenin bulgusu tek bir gözlemin iki yüzü.
+
+Ölçüm bu turda doksan üç sözlükçe maddesi ekletti, altı maddeyi sildirdi
+ve iki yeni kusur sınıfı gösterdi. Birincisi: `tr` alanı PARANTEZLE
+başlayamıyor — „performment“ ve „deviatement“ için yazılan
+„(yanlış biçim)“ reddedildi, parantezsiz yazıldı. İkincisi: bir soru
+şıkkına konan uydurma biçim („performation“) havuzda olmadığı için
+ölçümü bozuyor ve sözlükçeyle kapatılamıyor (metinde geçmiyor) — şık
+gerçek bir sözcükle değiştirildi.
 
 
 ## Tamamlanma ölçütü

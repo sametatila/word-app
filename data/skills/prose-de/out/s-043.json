@@ -1,0 +1,817 @@
+[
+ {
+  "tr": "Talimatta üç ortaç. Özne nerede duruyor?",
+  "kind": "intro",
+  "de": "Drei Partizipien in einer Anleitung. Wo steht das Subjekt?"
+ },
+ {
+  "tr": "Kapalı koşul, karışık koşul, iki çıkarım.",
+  "kind": "intro",
+  "de": "Geschlossene Bedingung, gemischte Bedingung, zwei Schlüsse."
+ },
+ {
+  "tr": "Kaynaksız üç cümle ve bitmiş bir gelecek.",
+  "kind": "intro",
+  "de": "Drei Sätze ohne Quelle und eine abgeschlossene Zukunft."
+ },
+ {
+  "tr": "Kaynaksız cümlenin iki saniyelik sınaması.",
+  "kind": "intro",
+  "de": "Die Zwei-Sekunden-Probe für einen Satz ohne Quelle."
+ },
+ {
+  "tr": "Dört sözcüklük fiil. Kim yapacağı yazmıyor.",
+  "kind": "intro",
+  "de": "Ein Verb aus vier Wörtern. Wer es tut, steht nicht da."
+ },
+ {
+  "tr": "Öne çıkan öbek uzuyor. Devrilen hangi yarı?",
+  "kind": "intro",
+  "de": "Das vorangestellte Glied wird länger. Welche Hälfte kippt?"
+ },
+ {
+  "tr": "Özet ortaçla yazılıyor. Özne hangi yarıya ait?",
+  "kind": "intro",
+  "de": "Die Zusammenfassung wird mit Partizipien geschrieben. Zu welcher Hälfte gehört das Subjekt?"
+ },
+ {
+  "tr": "Üç isim, üç ayrı ek. Hangisi listeden geliyor?",
+  "kind": "intro",
+  "de": "Drei Substantive, drei Endungen. Welche kommt aus der Liste?"
+ },
+ {
+  "tr": "Üç kapı: olumsuzluk, „not until“, „only then“.",
+  "kind": "intro",
+  "de": "Drei Türen: die Verneinung, „not until“, „only then“."
+ },
+ {
+  "tr": "Tarafları sayan paragraf. Virgüller ne yapıyor?",
+  "kind": "intro",
+  "de": "Der Absatz, der die Parteien nennt. Was tun die Kommas?"
+ },
+ {
+  "tr": "Uyuşmazlıkta iki koşul. Hangisi bugüne dokunuyor?",
+  "kind": "intro",
+  "de": "Zwei Bedingungen im Streitfall. Welche berührt das Heute?"
+ },
+ {
+  "tr": "İki yarının da öznesi yazılmıyor. Yine de aynı mı?",
+  "kind": "intro",
+  "de": "Keine der beiden Hälften nennt ein Subjekt. Ist es trotzdem dasselbe?"
+ },
+ {
+  "tr": "Süreç notu isimlerle yazılıyor. Ek nereden geliyor?",
+  "kind": "intro",
+  "de": "Die Prozessnotiz wird in Substantiven geschrieben. Woher kommt die Endung?"
+ },
+ {
+  "tr": "Üç kip, üç ayrı ağırlık. Hangisi özür davet ediyor?",
+  "kind": "intro",
+  "de": "Drei Modalverben, drei Gewichte. Welches lädt zu einer Entschuldigung ein?"
+ },
+ {
+  "tr": "Özette ortaç, takvimde gelecek. Hangi özne kime ait?",
+  "kind": "intro",
+  "de": "Partizip in der Zusammenfassung, Zukunft im Zeitplan. Welches Subjekt gehört wem?"
+ },
+ {
+  "tr": "Söz veren iki biçim. Hangisi denetlenecek bir tarih?",
+  "kind": "intro",
+  "de": "Zwei Formen, die etwas versprechen. Welche ist ein Datum, das geprüft wird?"
+ },
+ {
+  "tr": "Ödün vermek ve yine de durmak. İkisi aynı paragrafta.",
+  "kind": "intro",
+  "de": "Einräumen und trotzdem stehen bleiben. Beides im selben Absatz."
+ },
+ {
+  "tr": "Üç fiil, üç ayrı ek. Hangisi kuraldan çıkarılabiliyor?",
+  "kind": "intro",
+  "de": "Drei Verben, drei Endungen. Welche lässt sich aus einer Regel ableiten?"
+ },
+ {
+  "tr": "Edilgen ve gelecek bitmiş: will, have, been, üçüncü hâl.",
+  "kind": "explain",
+  "de": "Passiv und abgeschlossene Zukunft: will, have, been, dritte Form."
+ },
+ {
+  "tr": "Üç biçim, en sonda tek kural.",
+  "kind": "explain",
+  "de": "Drei Formen, am Ende eine einzige Regel."
+ },
+ {
+  "tr": "Kimse almadan önce verilen ödün.",
+  "kind": "explain",
+  "de": "Ein Zugeständnis, gegeben, bevor es jemand nimmt."
+ },
+ {
+  "tr": "„We can't have made that concession.“",
+  "kind": "explain",
+  "de": "„We can't have made that concession.“"
+ },
+ {
+  "tr": "Yargı: olanı değil, olmayanı anlatıyor.",
+  "kind": "explain",
+  "de": "Ein Urteil: es spricht nicht vom Geschehenen, sondern vom Fehlenden."
+ },
+ {
+  "tr": "Kapalı, karışık, yine kapalı, en sonda bedeli.",
+  "kind": "explain",
+  "de": "Geschlossen, gemischt, wieder geschlossen, am Ende der Preis."
+ },
+ {
+  "tr": "„„Must have“ says the evidence leaves one reading.“",
+  "kind": "explain",
+  "de": "„„Must have“ says the evidence leaves one reading.“"
+ },
+ {
+  "tr": "Uzun yol, kısa yol, saklanan cümle, en sonda sınama.",
+  "kind": "explain",
+  "de": "Langer Weg, kurzer Weg, der versteckte Satz, am Ende die Probe."
+ },
+ {
+  "tr": "„„Which“ is pointing at the whole of the first half…“",
+  "kind": "explain",
+  "de": "„„Which“ is pointing at the whole of the first half…“"
+ },
+ {
+  "tr": "Hüküm bir şey olarak yazılıyor, talimat olarak değil.",
+  "kind": "explain",
+  "de": "Die Bestimmung wird als Sache geschrieben, nicht als Anweisung."
+ },
+ {
+  "tr": "Kişi, bütün bir düşünce, resmî biçim, en sonda ölçüt.",
+  "kind": "explain",
+  "de": "Person, ein ganzer Gedanke, die förmliche Form, am Ende das Kriterium."
+ },
+ {
+  "tr": "Öbek, zaman öbeği, bütün bir cümlecik, en sonda sınırlama.",
+  "kind": "explain",
+  "de": "Wortgruppe, Zeitangabe, ein ganzer Teilsatz, am Ende die Einschränkung."
+ },
+ {
+  "tr": "İki düzenli örnek, sonra kırılma, en sonda kuralın kendisi.",
+  "kind": "explain",
+  "de": "Zwei regelmäßige Beispiele, dann der Bruch, am Ende die Regel selbst."
+ },
+ {
+  "tr": "„the informal version I send to the team says „Friday, probably“.“",
+  "kind": "explain",
+  "de": "„the informal version I send to the team says „Friday, probably“.“"
+ },
+ {
+  "tr": "„In speech it is „the executive we report to“, and both are correct…“",
+  "kind": "explain",
+  "de": "„In speech it is „the executive we report to“, and both are correct…“"
+ },
+ {
+  "tr": "„„Presumably“ is the weakest word in the letter and it is there on purpose…“",
+  "kind": "explain",
+  "de": "„„Presumably“ is the weakest word in the letter and it is there on purpose…“"
+ },
+ {
+  "tr": "„„Should have“ invites an apology, and an apology is cheaper than a resolution.“",
+  "kind": "explain",
+  "de": "„„Should have“ invites an apology, and an apology is cheaper than a resolution.“"
+ },
+ {
+  "tr": "ek",
+  "kind": "gloss.tr",
+  "de": "Endung"
+ },
+ {
+  "tr": "suçlama",
+  "kind": "gloss.tr",
+  "de": "Vorwurf"
+ },
+ {
+  "tr": "isabetli",
+  "kind": "gloss.tr",
+  "de": "genau"
+ },
+ {
+  "tr": "yanlış biçim",
+  "kind": "gloss.tr",
+  "de": "falsche Form"
+ },
+ {
+  "tr": "alt",
+  "kind": "gloss.tr",
+  "de": "unten"
+ },
+ {
+  "tr": "hız",
+  "kind": "gloss.tr",
+  "de": "Schnelligkeit"
+ },
+ {
+  "tr": "ifa",
+  "kind": "gloss.tr",
+  "de": "Erfüllung"
+ },
+ {
+  "tr": "öğe",
+  "kind": "gloss.tr",
+  "de": "Glied"
+ },
+ {
+  "tr": "alan",
+  "kind": "gloss.tr",
+  "de": "Feld"
+ },
+ {
+  "tr": "olgu",
+  "kind": "gloss.tr",
+  "de": "Tatsache"
+ },
+ {
+  "tr": "öbek",
+  "kind": "gloss.tr",
+  "de": "Wortgruppe"
+ },
+ {
+  "tr": "ölçü",
+  "kind": "gloss.tr",
+  "de": "Maß"
+ },
+ {
+  "tr": "özet",
+  "kind": "gloss.tr",
+  "de": "Zusammenfassung"
+ },
+ {
+  "tr": "plan",
+  "kind": "gloss.tr",
+  "de": "Plan"
+ },
+ {
+  "tr": "umut",
+  "kind": "gloss.tr",
+  "de": "Hoffnung"
+ },
+ {
+  "tr": "altta",
+  "kind": "gloss.tr",
+  "de": "darunter"
+ },
+ {
+  "tr": "aşama",
+  "kind": "gloss.tr",
+  "de": "Stufe"
+ },
+ {
+  "tr": "çizim",
+  "kind": "gloss.tr",
+  "de": "Skizze"
+ },
+ {
+  "tr": "dönüş",
+  "kind": "gloss.tr",
+  "de": "Wende"
+ },
+ {
+  "tr": "gizli",
+  "kind": "gloss.tr",
+  "de": "verborgen"
+ },
+ {
+  "tr": "ifası",
+  "kind": "gloss.tr",
+  "de": "Erfüllung"
+ },
+ {
+  "tr": "ihale",
+  "kind": "gloss.tr",
+  "de": "Ausschreibung"
+ },
+ {
+  "tr": "ihlal",
+  "kind": "gloss.tr",
+  "de": "Verstoß"
+ },
+ {
+  "tr": "kusur",
+  "kind": "gloss.tr",
+  "de": "Mangel"
+ },
+ {
+  "tr": "nefes",
+  "kind": "gloss.tr",
+  "de": "Atemzug"
+ },
+ {
+  "tr": "okuma",
+  "kind": "gloss.tr",
+  "de": "Lesart"
+ },
+ {
+  "tr": "sabit",
+  "kind": "gloss.tr",
+  "de": "fest"
+ },
+ {
+  "tr": "yazım",
+  "kind": "gloss.tr",
+  "de": "Schreibweise"
+ },
+ {
+  "tr": "atladı",
+  "kind": "gloss.tr",
+  "de": "sprang"
+ },
+ {
+  "tr": "birkaç",
+  "kind": "gloss.tr",
+  "de": "mehrere"
+ },
+ {
+  "tr": "her ne",
+  "kind": "gloss.tr",
+  "de": "was auch immer"
+ },
+ {
+  "tr": "sapmak",
+  "kind": "gloss.tr",
+  "de": "abweichen"
+ },
+ {
+  "tr": "yerler",
+  "kind": "gloss.tr",
+  "de": "Plätze"
+ },
+ {
+  "tr": "anlatım",
+  "kind": "gloss.tr",
+  "de": "Darstellung"
+ },
+ {
+  "tr": "bağıran",
+  "kind": "gloss.tr",
+  "de": "schreiend"
+ },
+ {
+  "tr": "görünen",
+  "kind": "gloss.tr",
+  "de": "erscheinend"
+ },
+ {
+  "tr": "her kim",
+  "kind": "gloss.tr",
+  "de": "wer auch immer"
+ },
+ {
+  "tr": "izlenim",
+  "kind": "gloss.tr",
+  "de": "Eindruck"
+ },
+ {
+  "tr": "talimat",
+  "kind": "gloss.tr",
+  "de": "Anweisung"
+ },
+ {
+  "tr": "yazıyor",
+  "kind": "gloss.tr",
+  "de": "schreibt"
+ },
+ {
+  "tr": "bekleyen",
+  "kind": "gloss.tr",
+  "de": "wartend"
+ },
+ {
+  "tr": "çevirmek",
+  "kind": "gloss.tr",
+  "de": "umwandeln"
+ },
+ {
+  "tr": "daha zor",
+  "kind": "gloss.tr",
+  "de": "schwieriger"
+ },
+ {
+  "tr": "etkiledi",
+  "kind": "gloss.tr",
+  "de": "bewegte"
+ },
+ {
+  "tr": "gizliyor",
+  "kind": "gloss.tr",
+  "de": "verbirgt"
+ },
+ {
+  "tr": "güvenmek",
+  "kind": "gloss.tr",
+  "de": "vertrauen"
+ },
+ {
+  "tr": "korunmuş",
+  "kind": "gloss.tr",
+  "de": "eingehalten"
+ },
+ {
+  "tr": "numaralı",
+  "kind": "gloss.tr",
+  "de": "nummeriert"
+ },
+ {
+  "tr": "sakinlik",
+  "kind": "gloss.tr",
+  "de": "Ruhe"
+ },
+ {
+  "tr": "taraflar",
+  "kind": "gloss.tr",
+  "de": "die Parteien"
+ },
+ {
+  "tr": "uzanıyor",
+  "kind": "gloss.tr",
+  "de": "reicht"
+ },
+ {
+  "tr": "üst yazı",
+  "kind": "gloss.tr",
+  "de": "Anschreiben"
+ },
+ {
+  "tr": "yazarlar",
+  "kind": "gloss.tr",
+  "de": "Autoren"
+ },
+ {
+  "tr": "betimledi",
+  "kind": "gloss.tr",
+  "de": "beschrieb"
+ },
+ {
+  "tr": "emir kipi",
+  "kind": "gloss.tr",
+  "de": "Imperativ"
+ },
+ {
+  "tr": "en yaygın",
+  "kind": "gloss.tr",
+  "de": "am häufigsten"
+ },
+ {
+  "tr": "karşısına",
+  "kind": "gloss.tr",
+  "de": "daneben"
+ },
+ {
+  "tr": "olanaksız",
+  "kind": "gloss.tr",
+  "de": "unmöglich"
+ },
+ {
+  "tr": "rastlantı",
+  "kind": "gloss.tr",
+  "de": "Zufall"
+ },
+ {
+  "tr": "sınırlama",
+  "kind": "gloss.tr",
+  "de": "Einschränkung"
+ },
+ {
+  "tr": "süregelen",
+  "kind": "gloss.tr",
+  "de": "laufend"
+ },
+ {
+  "tr": "uygulatma",
+  "kind": "gloss.tr",
+  "de": "Durchsetzung"
+ },
+ {
+  "tr": "boşa giden",
+  "kind": "gloss.tr",
+  "de": "vergeudet"
+ },
+ {
+  "tr": "daha güçlü",
+  "kind": "gloss.tr",
+  "de": "stärker"
+ },
+ {
+  "tr": "daha sakin",
+  "kind": "gloss.tr",
+  "de": "ruhiger"
+ },
+ {
+  "tr": "devrediyor",
+  "kind": "gloss.tr",
+  "de": "gibt weiter"
+ },
+ {
+  "tr": "dil düzeyi",
+  "kind": "gloss.tr",
+  "de": "Sprachebene"
+ },
+ {
+  "tr": "geri ödeme",
+  "kind": "gloss.tr",
+  "de": "Erstattung"
+ },
+ {
+  "tr": "hak ediyor",
+  "kind": "gloss.tr",
+  "de": "verdient"
+ },
+ {
+  "tr": "hiçbir yer",
+  "kind": "gloss.tr",
+  "de": "kein Ort"
+ },
+ {
+  "tr": "kapatılmış",
+  "kind": "gloss.tr",
+  "de": "ausgeschlossen"
+ },
+ {
+  "tr": "kazanılmış",
+  "kind": "gloss.tr",
+  "de": "errungen"
+ },
+ {
+  "tr": "mal oluyor",
+  "kind": "gloss.tr",
+  "de": "kostet"
+ },
+ {
+  "tr": "müteşekkir",
+  "kind": "gloss.tr",
+  "de": "dankbar"
+ },
+ {
+  "tr": "sağ kalmak",
+  "kind": "gloss.tr",
+  "de": "überleben"
+ },
+ {
+  "tr": "tartışılan",
+  "kind": "gloss.tr",
+  "de": "umstritten"
+ },
+ {
+  "tr": "yer tutucu",
+  "kind": "gloss.tr",
+  "de": "Platzhalter"
+ },
+ {
+  "tr": "adı verilen",
+  "kind": "gloss.tr",
+  "de": "genannt"
+ },
+ {
+  "tr": "belirsizlik",
+  "kind": "gloss.tr",
+  "de": "Mehrdeutigkeit"
+ },
+ {
+  "tr": "davet etmek",
+  "kind": "gloss.tr",
+  "de": "einladen"
+ },
+ {
+  "tr": "denetlenmiş",
+  "kind": "gloss.tr",
+  "de": "geprüft"
+ },
+ {
+  "tr": "laboratuvar",
+  "kind": "gloss.tr",
+  "de": "Labor"
+ },
+ {
+  "tr": "söz varlığı",
+  "kind": "gloss.tr",
+  "de": "Wortschatz"
+ },
+ {
+  "tr": "tarihlenmiş",
+  "kind": "gloss.tr",
+  "de": "datiert"
+ },
+ {
+  "tr": "daha güvenli",
+  "kind": "gloss.tr",
+  "de": "sicherer"
+ },
+ {
+  "tr": "geciktirilen",
+  "kind": "gloss.tr",
+  "de": "verzögert"
+ },
+ {
+  "tr": "geri ödemesi",
+  "kind": "gloss.tr",
+  "de": "Erstattung"
+ },
+ {
+  "tr": "göz gezdiren",
+  "kind": "gloss.tr",
+  "de": "überfliegend"
+ },
+ {
+  "tr": "iliştirilmiş",
+  "kind": "gloss.tr",
+  "de": "angehängt"
+ },
+ {
+  "tr": "kuşku duymak",
+  "kind": "gloss.tr",
+  "de": "zweifeln"
+ },
+ {
+  "tr": "ödün veriyor",
+  "kind": "gloss.tr",
+  "de": "räumt ein"
+ },
+ {
+  "tr": "süre aralığı",
+  "kind": "gloss.tr",
+  "de": "Zeitspanne"
+ },
+ {
+  "tr": "yapıştırılan",
+  "kind": "gloss.tr",
+  "de": "geklebt"
+ },
+ {
+  "tr": "ancak … sonra",
+  "kind": "gloss.tr",
+  "de": "erst nach"
+ },
+ {
+  "tr": "ancak o zaman",
+  "kind": "gloss.tr",
+  "de": "erst dann"
+ },
+ {
+  "tr": "bana mal oldu",
+  "kind": "gloss.tr",
+  "de": "kostete mich"
+ },
+ {
+  "tr": "hissettiriyor",
+  "kind": "gloss.tr",
+  "de": "fühlt sich an"
+ },
+ {
+  "tr": "itiraz edilen",
+  "kind": "gloss.tr",
+  "de": "bestritten"
+ },
+ {
+  "tr": "uygulatılması",
+  "kind": "gloss.tr",
+  "de": "Durchsetzung"
+ },
+ {
+  "tr": "vermiş olamaz",
+  "kind": "gloss.tr",
+  "de": "kann nicht gemacht haben"
+ },
+ {
+  "tr": "yanlış okumak",
+  "kind": "gloss.tr",
+  "de": "falsch lesen"
+ },
+ {
+  "tr": "başarısız oldu",
+  "kind": "gloss.tr",
+  "de": "ist gescheitert"
+ },
+ {
+  "tr": "geçersiz sayma",
+  "kind": "gloss.tr",
+  "de": "Abweisung"
+ },
+ {
+  "tr": "gözden geçirme",
+  "kind": "gloss.tr",
+  "de": "Durchsicht"
+ },
+ {
+  "tr": "hiç takılmadan",
+  "kind": "gloss.tr",
+  "de": "ohne zu stocken"
+ },
+ {
+  "tr": "hiçbir koşulda",
+  "kind": "gloss.tr",
+  "de": "unter keinen Umständen"
+ },
+ {
+  "tr": "öne çıkarılmış",
+  "kind": "gloss.tr",
+  "de": "vorangestellt"
+ },
+ {
+  "tr": "bildiriliyor ki",
+  "kind": "gloss.tr",
+  "de": "es wird gemeldet, dass"
+ },
+ {
+  "tr": "kabul bildirimi",
+  "kind": "gloss.tr",
+  "de": "Bestätigung"
+ },
+ {
+  "tr": "süzdükten sonra",
+  "kind": "gloss.tr",
+  "de": "nach dem Filtern"
+ },
+ {
+  "tr": "yüklendiği için",
+  "kind": "gloss.tr",
+  "de": "weil sie geladen wurde"
+ },
+ {
+  "tr": "yürütmüş olacak",
+  "kind": "gloss.tr",
+  "de": "wird ausgeführt haben"
+ },
+ {
+  "tr": "arkasında durmak",
+  "kind": "gloss.tr",
+  "de": "dahinterstehen"
+ },
+ {
+  "tr": "büyük olasılıkla",
+  "kind": "gloss.tr",
+  "de": "höchstwahrscheinlich"
+ },
+ {
+  "tr": "hızlı davranarak",
+  "kind": "gloss.tr",
+  "de": "schnell handelnd"
+ },
+ {
+  "tr": "iki kez görülmüş",
+  "kind": "gloss.tr",
+  "de": "zweimal gesehen"
+ },
+ {
+  "tr": "bitirilmiş olacak",
+  "kind": "gloss.tr",
+  "de": "wird beendet sein"
+ },
+ {
+  "tr": "yanında götürüyor",
+  "kind": "gloss.tr",
+  "de": "nimmt mit"
+ },
+ {
+  "tr": "daha sakin olurduk",
+  "kind": "gloss.tr",
+  "de": "wären wir ruhiger"
+ },
+ {
+  "tr": "ekmeğini çıkarıyor",
+  "kind": "gloss.tr",
+  "de": "macht sich bezahlt"
+ },
+ {
+  "tr": "inceledikten sonra",
+  "kind": "gloss.tr",
+  "de": "nach der Durchsicht"
+ },
+ {
+  "tr": "ortadan kaldırırdı",
+  "kind": "gloss.tr",
+  "de": "hätte beseitigt"
+ },
+ {
+  "tr": "işlemden geçirilmesi",
+  "kind": "gloss.tr",
+  "de": "Behandlung"
+ },
+ {
+  "tr": "yanlış okumuş olmalı",
+  "kind": "gloss.tr",
+  "de": "muss falsch gelesen haben"
+ },
+ {
+  "tr": "sonradan ileri sürmek",
+  "kind": "gloss.tr",
+  "de": "später behaupten"
+ },
+ {
+  "tr": "doğruladığı söyleniyor",
+  "kind": "gloss.tr",
+  "de": "sollen bestätigen"
+ },
+ {
+  "tr": "çözüme bağlanmış olurdu",
+  "kind": "gloss.tr",
+  "de": "wäre beigelegt worden"
+ },
+ {
+  "tr": "kabul ettiğini bildirdi",
+  "kind": "gloss.tr",
+  "de": "bestätigte den Empfang"
+ }
+]

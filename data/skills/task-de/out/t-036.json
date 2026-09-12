@@ -1,0 +1,292 @@
+[
+ {
+  "tr": "Talimat kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Anleitungskarte aus."
+ },
+ {
+  "tr": "Adlaştırma kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Nominalisierungskarte aus."
+ },
+ {
+  "tr": "Devrik sıra kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Umstellungskarte aus."
+ },
+ {
+  "tr": "Emir kipinin gizli öznesi „sen“; ortaç öznesini ana cümleden alıyor; ikisi de aynı; toz süzmüyor.",
+  "kind": "form.facts",
+  "de": "Das verborgene Subjekt des Imperativs ist „du“; das Partizip holt seins aus dem Hauptsatz; beide sind gleich; das Pulver filtert nicht."
+ },
+ {
+  "tr": "„enforce“ „-ment“ alıyor; „reimburse“ de „-ment“ alıyor; „perform“ „-ance“ alıyor; kural yok, liste var.",
+  "kind": "form.facts",
+  "de": "„enforce“ nimmt „-ment“; „reimburse“ nimmt auch „-ment“; „perform“ nimmt „-ance“; es gibt keine Regel, nur eine Liste."
+ },
+ {
+  "tr": "Öne çıkan öbek devrilmiyor; devrilen arkasından gelen; „only“ da bir sınırlama; bir mektupta bir tane yeter.",
+  "kind": "form.facts",
+  "de": "Das vorangestellte Glied kippt nicht; es kippt der Teil danach; „only“ ist auch eine Einschränkung; eines pro Brief genügt."
+ },
+ {
+  "tr": "O ödünü vermiş olamayız.",
+  "kind": "build.tr",
+  "de": "Wir können dieses Zugeständnis nicht gemacht haben."
+ },
+ {
+  "tr": "Sözleşmenin ifası gecikti.",
+  "kind": "build.tr",
+  "de": "Die Erfüllung des Vertrags kam zu spät."
+ },
+ {
+  "tr": "İhaleyi imzalayan Ana müdür.",
+  "kind": "build.tr",
+  "de": "Ana, die die Ausschreibung unterschrieb, ist die Direktorin."
+ },
+ {
+  "tr": "Hüküm hükümsüz olsaydı dururduk.",
+  "kind": "build.tr",
+  "de": "Wäre die Klausel nichtig gewesen, hätten wir aufgehört."
+ },
+ {
+  "tr": "Kuralın uygulatılması aylar sürdü.",
+  "kind": "build.tr",
+  "de": "Die Durchsetzung der Regel dauerte Monate."
+ },
+ {
+  "tr": "Ancak o zaman alıcı yükümlü olacak.",
+  "kind": "build.tr",
+  "de": "Erst dann wird der Empfänger verpflichtet sein."
+ },
+ {
+  "tr": "Yükümlülüğü yanlış okumuş olmalısın.",
+  "kind": "build.tr",
+  "de": "Du musst die Verpflichtung falsch gelesen haben."
+ },
+ {
+  "tr": "Doğruluğun yüksek olduğu düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Die Genauigkeit soll hoch sein."
+ },
+ {
+  "tr": "Kökenin belirsiz olduğu bildiriliyor.",
+  "kind": "build.tr",
+  "de": "Es wird gemeldet, dass die Herkunft unklar ist."
+ },
+ {
+  "tr": "Masrafın geri ödemesi gelmiş durumda.",
+  "kind": "build.tr",
+  "de": "Die Erstattung der Kosten ist fällig."
+ },
+ {
+  "tr": "Olayı inceledikten sonra notu yazdık.",
+  "kind": "build.tr",
+  "de": "Nach der Durchsicht des Vorfalls schrieben wir die Notiz."
+ },
+ {
+  "tr": "Sıvıyı süzdükten sonra tozu karıştır.",
+  "kind": "build.tr",
+  "de": "Nach dem Filtern der Flüssigkeit mische das Pulver."
+ },
+ {
+  "tr": "Pazartesi yapıştırılan bileşen sınandı.",
+  "kind": "build.tr",
+  "de": "Am Montag geklebt, wurde das Bauteil geprüft."
+ },
+ {
+  "tr": "Miktar o zamana kadar denetlenmiş olacak.",
+  "kind": "build.tr",
+  "de": "Die Menge wird bis dahin geprüft worden sein."
+ },
+ {
+  "tr": "Hızlı davrandığı için ekip malı sevk etti.",
+  "kind": "build.tr",
+  "de": "Da das Team schnell war, versandte es die Ware."
+ },
+ {
+  "tr": "Rakamların iddiayı doğruladığı söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Zahlen sollen die Behauptung bestätigen."
+ },
+ {
+  "tr": "Anlaşsaydık mesele çözüme bağlanmış olurdu.",
+  "kind": "build.tr",
+  "de": "Hätten wir zugestimmt, wäre die Sache beigelegt worden."
+ },
+ {
+  "tr": "Haziranda pilot uygulama bitirilmiş olacak.",
+  "kind": "build.tr",
+  "de": "Bis Juni wird das Pilotprojekt beendet worden sein."
+ },
+ {
+  "tr": "Önce yüklendiği için sandık en son varıyor.",
+  "kind": "build.tr",
+  "de": "Da sie zuerst geladen wurde, kommt die Kiste zuletzt an."
+ },
+ {
+  "tr": "Yüzeyin işlemden geçirilmesi iki saat sürdü.",
+  "kind": "build.tr",
+  "de": "Die Behandlung der Oberfläche dauerte zwei Stunden."
+ },
+ {
+  "tr": "Cuma gününe kadar siparişi yürütmüş olacağız.",
+  "kind": "build.tr",
+  "de": "Bis Freitag werden wir den Auftrag ausgeführt haben."
+ },
+ {
+  "tr": "Hiçbir koşulda ağır bir gecikmeyi kabul etmeyiz.",
+  "kind": "build.tr",
+  "de": "Unter keinen Umständen nehmen wir eine schwere Verzögerung hin."
+ },
+ {
+  "tr": "Mektubu kabul ettiklerini bildirmeleri gerekirdi.",
+  "kind": "build.tr",
+  "de": "Sie hätten den Empfang des Briefes bestätigen sollen."
+ },
+ {
+  "tr": "Süre uzatımı isteseydik şimdi daha sakin olurduk.",
+  "kind": "build.tr",
+  "de": "Hätten wir eine Fristverlängerung verlangt, wären wir jetzt ruhiger."
+ },
+ {
+  "tr": "Ancak üst mercie taşındıktan sonra yanıt verdiler.",
+  "kind": "build.tr",
+  "de": "Erst nach der Eskalation antworteten sie."
+ },
+ {
+  "tr": "Ayrıntılı yanıt o zamana kadar gönderilmiş olacak.",
+  "kind": "build.tr",
+  "de": "Die ausführliche Antwort wird bis dahin gesendet worden sein."
+ },
+ {
+  "tr": "Pazartesi geciktirilen hesap sonra yeniden başlatıldı.",
+  "kind": "build.tr",
+  "de": "Am Montag verzögert, wurde das Konto später wieder aufgenommen."
+ },
+ {
+  "tr": "Edilgen ve gelecek bitmiş: will, have, been, üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Passiv und abgeschlossene Zukunft: will, have, been, dritte Form."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bugüne ait.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge gehört dem Heute."
+ },
+ {
+  "tr": "Gelecekte bir tarihten geriye bakış.",
+  "kind": "build.hint",
+  "de": "Rückblick von einem künftigen Datum aus."
+ },
+ {
+  "tr": "Çıkarım: kanıt tek bir okuma bırakıyor.",
+  "kind": "build.hint",
+  "de": "Ein Schluss: der Beleg lässt nur eine Lesart."
+ },
+ {
+  "tr": "Kanıt kapatıyor: olumsuzu „can't have“.",
+  "kind": "build.hint",
+  "de": "Der Beleg schließt es aus: die Verneinung ist „can't have“."
+ },
+ {
+  "tr": "Yine kapalı: durma kararı o haftaya aitti.",
+  "kind": "build.hint",
+  "de": "Wieder geschlossen: die Entscheidung gehörte jener Woche."
+ },
+ {
+  "tr": "„only“ da bir sınırlama; kapıyı o da açıyor.",
+  "kind": "build.hint",
+  "de": "Auch „only“ ist eine Einschränkung; auch sie öffnet die Tür."
+ },
+ {
+  "tr": "Yine „-ment“; ama bu bir kural değil, liste.",
+  "kind": "build.hint",
+  "de": "Wieder „-ment“; aber das ist keine Regel, sondern eine Liste."
+ },
+ {
+  "tr": "İki yarının da öznesi aynı: yazılmayan „sen“.",
+  "kind": "build.hint",
+  "de": "Beide Hälften haben dasselbe Subjekt: das ungeschriebene „du“."
+ },
+ {
+  "tr": "İsim bir sayı taşıyabiliyor; fiil taşıyamıyor.",
+  "kind": "build.hint",
+  "de": "Ein Substantiv kann eine Zahl tragen; ein Verb nicht."
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: geciktiren söylenmiyor.",
+  "kind": "build.hint",
+  "de": "Beginnt mit der dritten Form: wer verzögerte, wird nicht genannt."
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: yapıştıran söylenmiyor.",
+  "kind": "build.hint",
+  "de": "Beginnt mit der dritten Form: wer klebte, wird nicht genannt."
+ },
+ {
+  "tr": "Devrilen ana cümle: „will“ özneden öne geçiyor.",
+  "kind": "build.hint",
+  "de": "Es kippt der Hauptsatz: „will“ rückt vor das Subjekt."
+ },
+ {
+  "tr": "Uzun yol: „it“ özne, rapor „that“ cümleciğinde.",
+  "kind": "build.hint",
+  "de": "Langer Weg: „it“ ist Subjekt, der Bericht steht im „that“-Satz."
+ },
+ {
+  "tr": "Fiil isme dönüyor; eki ezberden geliyor: „-ment“.",
+  "kind": "build.hint",
+  "de": "Das Verb wird zum Substantiv; die Endung kommt aus dem Gedächtnis: „-ment“."
+ },
+ {
+  "tr": "Aynı dört sözcük; kimin denetleyeceği belli değil.",
+  "kind": "build.hint",
+  "de": "Dieselben vier Wörter; wer prüfen wird, steht nicht fest."
+ },
+ {
+  "tr": "Sınama: fiilin önüne bir ad koy, cümle hâlâ doğru mu?",
+  "kind": "build.hint",
+  "de": "Die Probe: setz einen Namen vor das Verb — stimmt der Satz noch?"
+ },
+ {
+  "tr": "Öne çıkan öbek devrilmiyor; devrilen arkasından gelen.",
+  "kind": "build.hint",
+  "de": "Das vorangestellte Glied kippt nicht; es kippt der Teil danach."
+ },
+ {
+  "tr": "Burada „-ance“ geliyor; „performment“ diye bir şey yok.",
+  "kind": "build.hint",
+  "de": "Hier kommt „-ance“; „performment“ gibt es nicht."
+ },
+ {
+  "tr": "Notun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Notiz: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Eklerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Endungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Sertliğin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Schärfe: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Talimatın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Anleitung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Tarafların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Parteien: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Uyuşmazlığın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Streitfalls: bring sie in die richtige Ordnung."
+ }
+]
