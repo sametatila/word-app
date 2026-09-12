@@ -18295,3 +18295,39 @@ Bu düzeltme kart dolgusu borcunu da bir düşürdü (105 → 104).
 Kapı **§355** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): Android'in dört
 anahtarının **tek bir** ray şekli kullanması, iki platformun açık/kapalı ray
 rolleri, ve grubun üç ölçüsü.
+
+## §11.503 — Ses seçici: çağıranı olmayan bir kip, eksik bir satır ve fazladan bir rozet
+
+Ayarlardaki ses seçicisi iki platformda iki ayrı şekildeydi — ve web tarafında
+**iki** şekil vardı.
+
+**Geniş kipin hiçbir çağıranı yoktu.** Bileşen "ayarlar" (dar) ve "ilk kurulum"
+(geniş, açıklamalı iki kart) diye ikiye ayrılmıştı; ölçüm geniş kipi kimsenin
+render etmediğini gösterdi — ilk kurulum ekranı ses seçtirmiyor, Android'de de
+`VoicePicker` yalnız `SettingsScreen`de. Ölü dal kaldırıldı, `compact` anahtarı
+da (tek şekil kalınca anlamı yok).
+
+**Kalan şekil Android'inkine getirildi:**
+
+| | Android | web (önce) |
+|---|---|---|
+| yerleşim | yan yana, eşit genişlik, aralık 8 | 2 sütunlu ızgara, aralık 8 |
+| dolgu | 12 | 8/12 karışık |
+| kenarlık | seçiliyken **2**, değilken **1** | sabit 1.5 |
+| hoparlör simgesi | **20** | 14 |
+| satırlar | etiket + hoparlör · cinsiyet · **ses notu** | etiket · cinsiyet |
+| seçim göstergesi | dolgu + marka mürekkebi | + **onay rozeti** |
+
+İki şey öne çıkıyor: **ses notu satırı web'de hiç görünmüyordu** — iki sesin
+farkını anlatan cümle yalnızca kaldırılan geniş kipte vardı, yani ayarlarda
+kullanıcı "Katja" ile "Amala" arasındaki farkı okuyamıyordu. Ve seçimi anlatan
+onay rozeti Android'de yok; orada seçimi dolgu ile mürekkep söylüyor (web'de de
+artık `option-picked` ikisini birden veriyor).
+
+"Çalıyor…" göstergesi de kaldırıldı: o da geniş kipe aitti, Android'in hoparlör
+düğmesinde böyle bir durum yok.
+
+Kapı **§356** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): şekil
+(kenarlık/dolgu/ikon), üç satırın varlığı + rozetin yokluğu, ve ölü kipin geri
+gelmemesi. Deponun **kendi meta-kapısı** yine iş gördü: ilk yazımda rozeti sade
+`/CheckIcon/` ile arıyordum, "kapılarda önek eşleşmesi" bunu reddetti.

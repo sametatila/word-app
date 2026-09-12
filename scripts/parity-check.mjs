@@ -21007,6 +21007,70 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 356. SES SECICI: UC SATIR, ROZET YOK
+ *
+ * Webde IKI kip vardi (ayarlar icin dar, ilk kurulum icin genis) ve GENIS
+ * KIPIN hicbir cagirani yoktu - ilk kurulum ekrani ses sectirmiyor, Android'de
+ * de `VoicePicker` yalniz `SettingsScreen`de. Olu dal kalkti; kalan tek sekil
+ * Android'inkiyle eslestirildi:
+ *
+ *   - secenekler yan yana ve esit genislikte (Android `flex: 1`, aralik 8)
+ *   - dolgu 12, yaricap `radii.lg` (20)
+ *   - kenarlik seciliyken 2, degilken 1 (web sabit 1.5 kullaniyordu)
+ *   - UC SATIR: etiket + hoparlor, cinsiyet, ses notu. Web'de NOT SATIRI HIC
+ *     YOKTU - iki sesin farkini anlatan cumle yalnizca kaldirilan genis
+ *     kipte vardi, yani ayarlarda hic gorunmuyordu.
+ *   - hoparlor simgesi 20 (web 14 idi) ve secimi ONAY ROZETI degil dolgu ile
+ *     murekkep soyluyor (Android'de rozet yok)
+ *
+ * Olcu: sekil (kenarlik, dolgu, ikon boyu), uc satirin varligi, rozetin
+ * kalmadigi ve olu kipin geri gelmedigi. */
+{
+  const silV = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const web = silV(read("src/components/voice-picker.tsx"));
+  const mob = silV(read("mobile/src/ui/VoicePicker.tsx"));
+  sameList(
+    "ses secicinin sekli",
+    [
+      "kenarlik=" + (/borderWidth: on \? 2 : 1/.test(mob) ? "2/1" : "BASKA"),
+      "dolgu=" + (/padding: spacing\.md/.test(mob) ? "12" : "BASKA"),
+      "ikon=" + ((mob.match(/SpeakerIcon color=\{colors\.primaryText\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+    ],
+    [
+      "kenarlik=" + (/borderWidth: active \? 2 : 1/.test(web) ? "2/1" : "BASKA"),
+      "dolgu=" + (/option flex-1 p-3/.test(web) ? "12" : "BASKA"),
+      "ikon=" + ((web.match(/SpeakerIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+    ],
+    "mobil",
+    "web",
+  );
+  sameList(
+    "ses secicinin satirlari",
+    [
+      "cinsiyet=" + (/voices\.female/.test(mob) ? "var" : "YOK"),
+      "not=" + (/t\(v\.noteKey\)/.test(mob) ? "var" : "YOK"),
+      /* `\b` ZORUNLU: sade ad deseni `CheckIconX`i de yakalar ve deponun kendi
+         meta-kapisi ("kapilarda onek eslesmesi") bunu reddediyor. */
+      "onay rozeti=" + (/\bCheckIcon\b/.test(mob) ? "VAR" : "yok"),
+    ],
+    [
+      "cinsiyet=" + (/voices\.female/.test(web) ? "var" : "YOK"),
+      "not=" + (/t\(v\.noteKey\)/.test(web) ? "var" : "YOK"),
+      "onay rozeti=" + (/\bCheckIcon\b/.test(web) ? "VAR" : "yok"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* Olu kip geri gelmesin: tek sekil, tek cagri yeri. */
+  sameList(
+    "ses secicinin tek sekli",
+    ["kip anahtari=" + (/compact/.test(web) ? "VAR" : "yok")],
+    ["kip anahtari=yok"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

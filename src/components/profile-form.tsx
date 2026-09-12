@@ -378,7 +378,6 @@ export function ProfileForm({
               course={course}
               value={voice}
               onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
-              compact
             />
             <div className="mt-3 border-t pt-1" style={{ borderColor: "var(--hairline)" }}>
               <SoundSettings bare />
