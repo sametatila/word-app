@@ -13886,3 +13886,51 @@ yoksa pano yine iki kez sayar.
 Dört enjeksiyon denendi (`finish` korumasının kalkması, `assess` korumasının
 kalkması, aynı görevin tekrar puanlanabilmesi, olayın korumadan önce
 yazılması), dördü de yakalandı.
+
+## §11.395 — Seslendirme zinciri sessizce yedeğe düşüyordu
+
+`ai-usage`ın kendi gerekçesi kuralı yazıyor:
+
+> "**Başarısız** çağrılar da yazılıyor, çünkü zincir düşen sağlayıcıyı
+> sessizce atladığı için kaydedilmeyen bir hata **hiç olmamış** gibi duruyor."
+
+Ama **seslendirme zinciri hiçbir şey yazmıyordu**. Üç katmanlı bir zincir var
+(Edge → Azure → tarayıcının kendi sentezi) ve sonucu şuydu: Edge kırıldığı gün
+— Microsoft o resmî olmayan ucu değiştirdiğinde — Azure devreye girip uygulama
+sessizleşmiyor, **ama bunu kimse görmüyor**. Azure'un aylık 500.000
+karakterlik ücretsiz katmanının erimesi de ancak fatura gelince anlaşılırdı.
+
+Tek iz teşhis için konmuş bir yanıt başlığıydı (`x-tts-source`) — yani
+kimsenin bakmadığı yer.
+
+### Her deneme ayrı yazılıyor
+
+Yedeğe düşen bir çağrı artık **iki satır** bırakıyor: düşen Edge + geçen
+Azure. Zincirin gerçek hâli ancak böyle görünüyor; yalnız sonuç yazılsaydı
+"Azure çalışıyor" görünür, Edge'in kırıldığı görünmezdi.
+
+### Ölçü karakterde, ve ayrı bir kolonda
+
+Metin modelleri **jetonla**, yazıya çevirme **saniyeyle**, seslendirme
+**karakterle** ücretlendiriliyor. Jeton alanına yazmak üç birimi tek sütunda
+karıştırırdı; `chars` ayrı bir kolon (`0050_ai_usage_chars`). Pano da onu
+gösteriyor — yazılıp gösterilmeyen bir sayı yine kimsenin bakmadığı yerde
+durur.
+
+> **Samet:** bu turda da bir göçürme var (`0050`). `0049` ile birlikte
+> deploy'dan **önce** uygulanmalı.
+
+Not: maliyet kontrolü zaten vardı (`DAILY_TTS_CEILING = 2000`, hesap başına
+günlük) — eksik olan **görünürlüktü**, sınır değil.
+
+### §272
+
+Üç ölçü, hepsi mutlak: muhasebenin beş parçası (tür · kolon · göçürme · zincir
+yazıyor · uç kullanıcıyı geçiriyor), **zincirin dört dalının da** yazdığı
+(geçen ve düşen, iki sağlayıcı için), ve panonun karakteri gösterdiği.
+
+İkinci ölçü asıl olan: "bir yerde `recordAiUsage` var" demek yetmez — düşen
+dal yazmazsa zincirin görünmez yarısı aynen kalır. Enjeksiyonla doğrulandı.
+
+Dört enjeksiyon denendi (düşen dalın sessizleşmesi, göçürmenin kaybolması,
+uçta kullanıcının geçmemesi, panonun göstermemesi), dördü de yakalandı.
