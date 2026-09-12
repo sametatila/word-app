@@ -191,10 +191,11 @@ function checkSkills(list: SkillExercise[]) {
      seçmeliyi sayıyordu ve iki şıklı sorular karıştırmadan da muaf
      (`bundled.ts`), yani hiçbir ölçüm bu türü görmüyordu. Bant geniş
      tutuldu (%35–65): amaç dengeyi dayatmak değil, tek yöne çökmeyi
-     yakalamak. */
+     yakalamak. Kütüphane egzersizleri de sayılıyor (ayrı grup): bugün
+     dengeliler ve kapı onu kilitliyor. */
   const df = new Map<string, [number, number]>();
   for (const e of list) {
-    if (e.unit == null || !("questions" in e) || !Array.isArray(e.questions)) continue;
+    if (!("questions" in e) || !Array.isArray(e.questions)) continue;
     for (const q of e.questions) {
       /* Tür etiketi yetmiyor: Almanca kurs aynı soruyu `kind: "mcq"` ve
          „Richtig/Falsch“ şıklarıyla yazıyor. Kutup sorusunu ŞIKLARINDAN
@@ -202,7 +203,7 @@ function checkSkills(list: SkillExercise[]) {
          bunun dışında kalsın. */
       const et = (q.options ?? []).join("/");
       if (et !== "True/False" && et !== "Richtig/Falsch") continue;
-      const k = `${e.course ?? "de"} ${e.level}`;
+      const k = `${e.course ?? "de"} ${e.level}${e.unit == null ? " kütüphane" : ""}`;
       const v = df.get(k) ?? [0, 0];
       v[q.answer === 0 ? 0 : 1]++; df.set(k, v);
     }
@@ -623,7 +624,7 @@ const YANLILIK_ESIK = 45;
   if (kagitT)
     console.log(`  modül sınavı kâğıtları: ${kagitT} soru · ` +
       kagitDag.map((n, i) => `idx${i} %${(((n ?? 0) / kagitT) * 100).toFixed(0)}`).join(" · ") +
-      "  (exam.ts kendi karıştırmasını yapıyor, zararsız)");
+      "  (exam.ts şıkları tohumlu karıştırıyor; 2026-09-12'de 310 soru × 200 tohumla benzetildi ve sonuç %25/%25/%25/%25 çıktı — muafiyet ÖLÇÜLDÜ, varsayılmadı)");
 }
 
 /** Uyarı etiketi: tür + mesajın sayısız hâli ("dinleme bölümü N kelime"). */
