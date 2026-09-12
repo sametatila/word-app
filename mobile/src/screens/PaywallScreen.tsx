@@ -436,6 +436,7 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           value={code}
           onChangeText={(v) => setCode(v.toUpperCase())}
           placeholder={t("promo.placeholder")}
+          accessibilityLabel={t("promo.placeholder")}
           placeholderTextColor={colors.textFaint}
           autoCapitalize="characters"
           autoCorrect={false}
@@ -448,7 +449,12 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
         </PressableScale>
       </View>
       {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta kendisi. */}
-      {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
+      {/* HATA `assertive`, BASARI `polite`. Tek oge iki durumu tasiyordu ve
+          hep `polite` diyordu: TalkBack kullanan biri basarisiz bir promo
+          kodunu, sirasi gelince - yani belki hic - duyuyordu. Ayni ekranin
+          odeme hatasi (yukarida) baştan beri `assertive`. Web karsiligi
+          `role="alert"`. */}
+      {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
     </Section>
   );
 }

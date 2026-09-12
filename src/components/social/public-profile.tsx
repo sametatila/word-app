@@ -102,8 +102,9 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         ) : null}
         {/* Ton mesajın metninden değil kendi alanından: Türkçe sözcük aramak
             çeviriyle birlikte her başarı iletisini kırmızıya çeviriyordu. */}
+        {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
         {msg ? (
-          <p role="status" className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role={msg.ok ? "status" : "alert"} className="mt-2 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}

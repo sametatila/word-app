@@ -140,8 +140,9 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         ) : null}
         {/* Ton mesajın METNİNDEN değil kendi alanından okunuyor: metni Türkçe
             sözcüklere göre sınamak çeviriyle birlikte bozuluyordu. */}
+        {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
         {msg ? (
-          <p role="status" className="mt-1 text-micro" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role={msg.ok ? "status" : "alert"} className="mt-1 text-micro" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}

@@ -121,7 +121,8 @@ export function UserScreen() {
               ) : null}
             </View>
           ) : null}
-          {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
+          {/* HATA `assertive`, BASARI `polite` (bkz. `PaywallScreen`). */}
+          {msg ? <Text accessibilityLiveRegion={ok ? "polite" : "assertive"} variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
         </Card>
 
         {data.stats ? (

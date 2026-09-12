@@ -320,6 +320,7 @@ function PromoBox({ prefill }: { prefill: string }) {
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
           placeholder={t("promo.placeholder")}
+          aria-label={t("promo.placeholder")}
           autoCapitalize="characters"
           spellCheck={false}
           className="min-w-0 flex-1 rounded-tile border px-3 py-2 font-mono text-body tracking-widest"
@@ -350,8 +351,13 @@ function PromoBox({ prefill }: { prefill: string }) {
       */}
       {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta
           kendisi. */}
+      {/* HATA `alert`, BASARI `status`. Tek oge iki durumu tasiyordu ve hep
+          `status` diyordu: ekran okuyucu kullanan biri basarisiz bir promo
+          kodunu, sirasi gelince - yani belki hic - duyuyordu. Ev kurali bu
+          ayrimi baska her yerde tutuyor; mobil karsiligi
+          `accessibilityLiveRegion`in seviyesi. */}
       {msg && (
-        <p role="status" className="mt-2 text-strong" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
+        <p role={msg.ok ? "status" : "alert"} className="mt-2 text-strong" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
           {msg.text}
         </p>
       )}

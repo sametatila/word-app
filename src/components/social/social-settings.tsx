@@ -158,8 +158,9 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
         <Switch on={me.showActivity} disabled={busy} label={t("socialsettings.perm_activity")} onChange={(v) => void save({ showActivity: v })} />
       </SettingRow>
 
+      {/* HATA `alert`, BASARI `status` (bkz. `premium-paywall`). */}
       {msg ? (
-        <p role="status" className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+        <p role={msg.ok ? "status" : "alert"} className="px-4 pb-3 text-caption" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
           {msg.text}
         </p>
       ) : null}
