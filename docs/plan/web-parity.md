@@ -15679,28 +15679,38 @@ sıfıra düşerse "ölçek dışı yok" boş bir doğru olurdu.
 Dört enjeksiyon doğrulandı: 17'yi geri koymak, rozeti 10'a döndürmek,
 muafiyetten bir kaydı düşürmek, listeye karşılıksız bir kayıt eklemek.
 
-## §11.431 — `check:radius`in mobil yarısı: ölçüldü, kapı YAZILMADI
+## §11.431 — Hangi kapı iki taraflı, hangisi değil (ayna taramasının kendi hatası)
 
-Aynı ayna sorusu yarıçap kapısına da sorulunca cevap farklı çıktı ve bunu
-yazmak gerekiyor — çünkü "neden bu da yapılmadı" sorusunun cevabı kodda
-görünmüyor.
+§11.428-430 aynı merceği kullandı: "bu kapı referans aldığı tarafı ölçüyor mu?"
+Üç yerde gerçek kör nokta çıktı. Dördüncü olarak yarıçap kapısına bakıldığında
+**ölçüm hatası bendeydi**: `check:radius`in mobil yarısı BAŞTAN BERİ var ve
+tam olarak doğru işi yapıyor (2-9 px'lik ilerleme çubuklarını ve daireleri
+saymıyor, kalanı jeton olmaya zorluyor, onay kutusunun 6'sı sebebiyle yazılı).
+Tarama onu kaçırdı çünkü yolu `path.join(ROOT, "mobile", "src")` ile kuruluyor
+ve ben `"mobile/src"` dizgisini aramıştım — kapının kendi dersinin tekrarı:
+**bir olguyu tam metin olarak aramak**.
 
-Mobilde ölçek dışı **35** ham `borderRadius` var (ölçek
-`radii = 10/14/20/26/34/pill`). Tek tek bakıldığında neredeyse hepsi aynı şey:
-bir ilerleme çubuğunun **dolgusu**. Dolgu `height: "100%"` ile kendi
-yüksekliğini dış kaptan alıyor ve yarıçapı da o kabın yarısı (5 px'lik rayda 3,
-7 px'likte 4, 10 px'likte 5) — yani yarıçap ölçek basamağı değil **geometri**,
-tıpkı webin `rounded-full`ü gibi. Kendi satırında bir boyut yazmadıkları için
-"yarıçap = boyutun yarısı" ölçüsü onları göremiyor; dış kabı bulmak için
-ağaç yürümek gerekirdi.
+Doğru envanter, bir daha yanlış yerden başlanmasın diye:
 
-Böyle bir kapının bugünkü hâli 35 meşru kullanımı listeleyip muafiyet listesine
-yazmak olurdu: ölçen değil, yalnızca büyüyen bir liste. Ölçüm yapmayan bir kapı
-yazmak, yazmamaktan kötü (kapının kendi kuralı).
+| kapı | kapsam |
+|---|---|
+| `check:colors` | iki taraflı |
+| `check:endpoints` | iki taraflı (§11.428'de tamamlandı) |
+| `check:hit` | iki taraflı (§11.429'da tamamlandı) |
+| `check:type` | iki taraflı (§11.430'da tamamlandı) |
+| `check:radius` | iki taraflı (baştan beri) |
+| `check:tokens` | iki taraflı |
+| `check:selection` | iki taraflı |
+| `check:keyfam` | iki taraflı |
+| `check:loading` | **yalnız web** — `loading.tsx` bir Next kavramı; mobil karşılığı ekranın kendi iskelet dalı ve o dal ölçülmedi |
+| `check:title` | yalnız web — rota başlığı web kavramı |
+| `check:purge` | yalnız web — Tailwind sınıf budaması |
+| `check:client` | yalnız web — `"use client"` sınırı |
 
-Ölçümde geriye üç gerçek aykırı kaldı ve üçü de küçük: `Slider` tutamağının 11,
-`MockExamScreen`in 2, ve onay kutularının 6 (22×22 kutu; webde aynı kutu 20×20
-`rounded-md`). Üçü de geometrik ve hiçbiri bir kart/panel yarıçapı değil —
-ölçeğin koruduğu şey o. Karar: bu kapı yazılmıyor; yarıçap paritesi kart ve
-panel düzeyinde `check:tokens` tarafından zaten iki platformda karşılaştırılıyor
-(`radii` ↔ `--radius-*`, birebir aynı beş basamak).
+`check:loading` tek gerçek açık kalan: mobilde veri bekleyen ekranların iskelet
+dalı ölçülmüyor. Bu turda elle bakıldı — `Skeleton` 37 dosyada ve bakılan
+ekranlarda (bildirimler, lider tablosu, deneme sınavı) boş ekran değil ya
+iskelet ya da varsayılan değerlerle çizilmiş bir arayüz çıkıyor; `RoleplayExam`
+dönen çark kullanıyor (web orada iskelet çiziyor). Kapıya dönüştürülmesi
+"ekran veri bekliyor mu" sorusunun mobilde `page.tsx` kadar kesin bir cevabı
+olmadığı için ayrı bir iş.
