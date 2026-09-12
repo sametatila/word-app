@@ -7480,6 +7480,84 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 272. SESLENDIRME ZINCIRI GORUNUR ------------------------------
+   *
+   * `ai-usage`in kendi gerekcesi kurali yaziyor: "BASARISIZ cagrilar da
+   * yaziliyor, cunku zincir dusen saglayiciyi sessizce atladigi icin
+   * kaydedilmeyen bir hata HIC OLMAMIS gibi duruyor."
+   *
+   * Ama SESLENDIRME zinciri hicbir sey yazmiyordu. Uc saglayici zinciri var
+   * (Edge -> Azure -> tarayicinin kendi sentezi) ve sonucu suydu: Edge
+   * kirildigi gun (Microsoft o resmi olmayan ucu degistirdiginde) Azure
+   * devreye girip uygulama sessizlesmiyor, AMA BUNU KIMSE GORMUYOR. Azure'un
+   * aylik 500.000 karakterlik ucretsiz katmaninin erimesi de ancak fatura
+   * gelince anlasilirdi. Tek iz teshis icin konmus bir yanit basligiydi
+   * (`x-tts-source`) - yani kimsenin bakmadigi yer.
+   *
+   * HER DENEME AYRI YAZILIYOR: yedege dusen bir cagri iki satir birakiyor
+   * (dusen Edge + gecen Azure) ve zincirin gercek hali ancak boyle gorunuyor.
+   *
+   * OLCU KARAKTERDE ve ayri bir kolonda: metin modelleri JETONLA, yaziya
+   * cevirme SANIYEYLE, seslendirme KARAKTERLE ucretlendiriliyor. Jeton
+   * alanina yazmak uc birimi tek sutunda karistirirdi.
+   *
+   * Sunucu tek, yani zincir iki istemciyi de besliyor (mobil de `/api/tts`
+   * cagiriyor); olcu MUTLAK. */
+  {
+    const synth = sil(read("src/lib/tts/synth.ts"));
+    const kind = sil(read("src/lib/ai-usage.ts"));
+    const sema = sil(read("src/lib/db/schema.ts"));
+    const uc = sil(read("src/app/api/tts/route.ts"));
+    const goc = existsSync(new URL("../drizzle/0050_ai_usage_chars.sql", import.meta.url))
+      ? read("drizzle/0050_ai_usage_chars.sql")
+      : "";
+    sameList(
+      "seslendirme muhasebeye yaziyor",
+      [
+        "tur=" + (/"tts"/.test(kind) ? "var" : "YOK"),
+        "kolon=" + (/chars: integer\("chars"\)/.test(sema) ? "var" : "YOK"),
+        "gocurme=" + (/ADD COLUMN IF NOT EXISTS "chars"/.test(goc) ? "var" : "YOK"),
+        "zincir yaziyor=" + (/kind: "tts"/.test(synth) ? "var" : "YOK"),
+        "kullanici geciyor=" + (/synthesizeSpeech\(text, voice as VoiceId, slow, userId\)/.test(uc) ? "var" : "YOK"),
+      ],
+      ["tur=var", "kolon=var", "gocurme=var", "zincir yaziyor=var", "kullanici geciyor=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* HER DENEME: iki saglayicinin da hem gecen hem dusen dali yaziyor.
+       "Bir yerde `recordAiUsage` var" demek yetmez - dusen dal yazmazsa
+       zincirin gorunmez yari aynen kalir. */
+    const dallar = [
+      ["edge gecen", /yaz\("edge", true, edgeBas\)/],
+      ["edge dusen", /yaz\("edge", false, edgeBas, err\)/],
+      ["azure gecen", /yaz\("azure", true, azureBas\)/],
+      ["azure dusen", /yaz\("azure", false, azureBas, err\)/],
+    ];
+    sameList(
+      "zincirin her dali yaziyor",
+      dallar.map(([ad, d]) => ad + "=" + (d.test(synth) ? "yaziyor" : "SESSIZ")),
+      dallar.map(([ad]) => ad + "=yaziyor"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Pano karakteri de gosteriyor - yazilip gosterilmeyen bir sayi, yine
+       kimsenin bakmadigi yerde durur. */
+    const yonetim = sil(read("src/lib/admin.ts"));
+    const pano = sil(read("src/app/admin/dashboard.tsx"));
+    sameList(
+      "pano karakteri gosteriyor",
+      [
+        "sorgu=" + (/sum\(chars\),0\)::bigint chars/.test(yonetim) ? "var" : "YOK"),
+        "gorunum=" + (/a\.chars > 0 && /.test(pano) ? "var" : "YOK"),
+      ],
+      ["sorgu=var", "gorunum=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 271. BITMIS DENEME BIR KAYITTIR --------------------------------
    *
    * Kural deponun kendi yorumunda YAZILIYDI - `save` eyleminde: "`state`
