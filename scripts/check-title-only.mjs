@@ -36,9 +36,12 @@ const TABAN = {
   /* Yönetim panosu: kullanıcı yüzeyi değil, Android karşılığı da yok.
      Grafik çubuğunun günü/değeri orada tabloda da yazıyor. */
   "src/app/admin/dashboard.tsx": 2,
-  /* İlerleme grafiği: gün ve değer eksende ve altındaki satırda da var;
-     ipucu yalnızca kolaylık, tek taşıyıcı değil. */
-  "src/components/progress-view.tsx": 2,
+  /* BORÇ ÖDENDİ (§11.377). Gerekçesi "gün ve değer eksende ve altındaki
+     satırda da var" diye yazılıydı ve ÖLÇÜNCE YANLIŞ ÇIKTI: alttaki satır
+     yalnız GÜN HARFİNİ yazıyor, başlıktaki özet de toplamı — günlük değer
+     hiçbir yerde metin değildi. Android aynı çubuğa baştan beri
+     `accessibilityLabel` koyuyor; web çubukları artık `role="img"` +
+     `aria-label` taşıyor ve satır listeden düştü. */
 };
 
 function stripComments(src) {

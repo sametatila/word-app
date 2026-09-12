@@ -415,12 +415,23 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
                   initial={{ height: 0 }}
                   animate={{ height: `${pct}%` }}
                   transition={{ delay: i * 0.02, type: "spring", stiffness: 180, damping: 22 }}
+                  /* ÇUBUĞUN ADI VAR. Buradaki sayı yalnız `title`da duruyordu —
+                     fareyle üstüne gelmeyi gerektiren, dokunmatikte ve ekran
+                     okuyucuda hiç bulunmayan bir bilgi. Grafiğin altındaki
+                     satır yalnız GÜN HARFİNİ yazıyor, değeri değil; başlıktaki
+                     özet de toplamı veriyor, günlük dağılımı değil. Android
+                     aynı çubuğa `accessibilityLabel` koyuyor (`ProgressScreen`)
+                     ve metin birebir aynı. */
+                  role="img"
+                  aria-label={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
                   title={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
                   className={`w-full rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
                   style={isToday ? undefined : { background: heatColor(d.reviews) }}
                 />
               ) : (
                 <div
+                  role="img"
+                  aria-label={`${d.day}: ${t("progress.no_study")}`}
                   title={`${d.day}: ${t("progress.no_study")}`}
                   className="w-full rounded-full surface-2"
                   style={{ height: 3 }}
