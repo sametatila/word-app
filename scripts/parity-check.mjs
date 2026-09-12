@@ -18271,6 +18271,94 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------- 325. XP GLIFI BOLT, KAZANILMAYAN SAYI HIC YAZILMIYOR
+ *
+ * Uygulamanin iki ayri glifi var ve ikisi ayri sey soyluyor: `SparkIcon`
+ * kombo / yapay zeka / akis isareti, `BoltIcon` XP. Web'de UST BAR ve beceri
+ * sonuc karti XP'yi Spark ile yaziyordu - ayni sayi ayni uygulamada iki ayri
+ * glifle. Profil rozeti ayni nedenle daha once duzeltilmisti; ustelik ust bar
+ * her ekranda duruyor, yani en cok gorulen yanlis glifti.
+ *
+ * Ikinci kusur SIFIRIN GOSTERILMESI:
+ *   ust bar   web seri rozetini her zaman ciziyordu ("alev 0"), Android
+ *             rozeti `streak > 0` kosuluna bagliyor (`ui/AppHeader`).
+ *   beceri    web sonuc karti iki satiri da kosulsuz yaziyordu: tekrar edilen
+ *             egzersizde "+0 XP", serisi olmayan ogrenciye "0 gun seri".
+ *             Android'in ayni karti ikisini de sifirda hic cizmiyor
+ *             (`ItemScreen`: `earnedXp > 0`, icinde `streak > 0`).
+ * Kazanilmamis bir odulun bos cercevesi bir sayi degil; sifir XP'nin sebebi
+ * de zaten kartin altindaki not (`item.repeat_note`).
+ *
+ * Olcu: (1) MUTLAK kapsam - hicbir XP yuzeyi Spark cizmiyor, taranan Spark
+ * sayisi da yaziliyor (tarama bosalirsa "hepsi dogru" kendiliginden cikardi),
+ * (2) iki rozetin sifir kosulu iki platformda da var. */
+{
+  const silX = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gezX = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezX(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const yanlisGlif = [];
+  let sparkSayi = 0;
+  for (const kok of ["src/app", "src/components", "mobile/src"]) {
+    for (const f of gezX(kok)) {
+      const src = silX(read(f));
+      for (const m of src.matchAll(/<SparkIcon\b/g)) {
+        sparkSayi++;
+        /* Pencere: glifin SAGINDAKI 140 karakter - rozetin metni glifin hemen
+           ardindan geliyor (`<SparkIcon … /> +{xp} XP`). Solu bakilmiyor,
+           cunku orada saran elemanin sinifi var, sayi degil. */
+        if (/\bXP\b|\{[^{}]*\bxp\b[^{}]*\}/.test(src.slice(m.index, m.index + 140))) {
+          yanlisGlif.push(f.split("/").slice(-1)[0]);
+        }
+      }
+    }
+  }
+  sameList(
+    "xp glifi bolt",
+    /* Tarama DOLU mu: Spark mesru bir glif (kombo, akis, yapay zeka notu) ve
+       yeni bir yerde kullanilmasi kapinin isi degil - o yuzden TAM SAYI degil
+       esik olculuyor. Olculen sey taramanin bosalmamasi: dosya yurumesi
+       bozulursa "hicbir XP yuzeyi Spark cizmiyor" kendiliginden dogru cikar. */
+    ["tarama=" + (sparkSayi >= 5 ? "dolu" : "BOS"), "xp yuzeyinde spark=" + (yanlisGlif.length ? yanlisGlif.join("+") : "yok")],
+    ["tarama=dolu", "xp yuzeyinde spark=yok"],
+    "bulunan",
+    "beklenen",
+  );
+
+  const ubM = silX(read("mobile/src/ui/AppHeader.tsx"));
+  const ubW = silX(read("src/components/app-shell.tsx"));
+  const bcM = silX(read("mobile/src/screens/ItemScreen.tsx"));
+  const bcW = silX(read("src/components/skills/player-shell.tsx"));
+  sameList(
+    "sifir odul rozeti cizilmiyor",
+    [
+      "ust bar mobil=" + (/\{streak > 0 && \(/.test(ubM) ? "kosullu" : "KOSULSUZ"),
+      "ust bar web=" + (/\{streak > 0 \? \(/.test(ubW) ? "kosullu" : "KOSULSUZ"),
+      "ust bar web glif=" + (/<BoltIcon size=\{15\} \/> \{formatNumber\(xp, lang\)\}/.test(ubW) ? "bolt" : "SPARK"),
+      "beceri mobil xp=" + (/\{earnedXp > 0 \? \(/.test(bcM) ? "kosullu" : "KOSULSUZ"),
+      "beceri mobil seri=" + (/\{streak > 0 \? <Text/.test(bcM) ? "kosullu" : "KOSULSUZ"),
+      "beceri web xp=" + (/\{state\.xpGained > 0 \? \(/.test(bcW) ? "kosullu" : "KOSULSUZ"),
+      "beceri web seri=" + (/\{state\.currentStreak > 0 \? \(/.test(bcW) ? "kosullu" : "KOSULSUZ"),
+    ],
+    [
+      "ust bar mobil=kosullu",
+      "ust bar web=kosullu",
+      "ust bar web glif=bolt",
+      "beceri mobil xp=kosullu",
+      "beceri mobil seri=kosullu",
+      "beceri web xp=kosullu",
+      "beceri web seri=kosullu",
+    ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -8,7 +8,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
-import { ArrowLeftIcon, FlameIcon, SparkIcon } from "@/components/icons";
+import { ArrowLeftIcon, BoltIcon, FlameIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { Confetti } from "@/components/celebrate";
 import { scoreBand, scoreOf } from "@/lib/score-bands";
@@ -203,14 +203,32 @@ export function ResultCard({
       </h2>
       {state.phase === "saved" ? (
         <>
-          <p className="mt-2 flex items-center justify-center gap-3 text-strong">
-            <span className="flex items-center gap-1" style={{ color: "var(--color-brand)" }}>
-              <SparkIcon size={16} /> +{state.xpGained} XP
-            </span>
-            <span className="flex items-center gap-1" style={{ color: "var(--color-flame)" }}>
-              <FlameIcon size={16} /> {t("social.days_streak", { n: state.currentStreak })}
-            </span>
-          </p>
+          {/*
+            KAZANILMAYAN SAYI YAZILMAZ. İki satır da koşulsuzdu: tekrar
+            edilen bir egzersizde "+0 XP", serisi olmayan öğrenciye de
+            "0 gün seri" yazıyordu — kazanılmamış iki ödülün boş çerçevesi.
+            Android'in aynı sonuç kartı ikisini de sıfırda hiç çizmiyor
+            (`ItemScreen`: `earnedXp > 0`, içinde `streak > 0`); sıfır XP'nin
+            sebebi zaten hemen altındaki not (`item.repeat_note`).
+
+            XP glifi de `SparkIcon`dan `BoltIcon`a geçti: Spark bu uygulamada
+            kombo/yapay zekâ/akış işareti, XP'nin glifi Bolt (üst bar ve
+            profil rozeti de aynı nedenle düzeltildi).
+          */}
+          {state.xpGained > 0 || state.currentStreak > 0 ? (
+            <p className="mt-2 flex items-center justify-center gap-3 text-strong">
+              {state.xpGained > 0 ? (
+                <span className="flex items-center gap-1" style={{ color: "var(--color-brand)" }}>
+                  <BoltIcon size={16} /> +{state.xpGained} XP
+                </span>
+              ) : null}
+              {state.currentStreak > 0 ? (
+                <span className="flex items-center gap-1" style={{ color: "var(--color-flame)" }}>
+                  <FlameIcon size={16} /> {t("social.days_streak", { n: state.currentStreak })}
+                </span>
+              ) : null}
+            </p>
+          ) : null}
           {state.repeat && state.xpGained === 0 ? (
             <p className="muted mt-1.5 text-caption">
               {t("item.repeat_note")}

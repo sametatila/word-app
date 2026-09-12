@@ -17,7 +17,7 @@ import { flushPendingAnswers } from "@/lib/answer-queue";
 import { flushPendingLessons } from "@/lib/lesson-queue";
 import { useLang, useT } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
-import { FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
+import { BoltIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, UserIcon } from "./icons";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -528,17 +528,30 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
   const lang = useLang();
   return (
     <div className="flex items-center gap-2 text-strong">
-      <span
-        className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
-      >
-        <FlameIcon size={15} /> {streak}
-      </span>
+      {/*
+        SERİ SIFIRSA ROZET HİÇ ÇİZİLMEZ. "0" yazan bir alev rozeti bir sayı
+        değil, bir ödül işareti — henüz serisi olmayan kullanıcıya her ekranda
+        sıfır göstermek kazanılmamış bir madalyanın boş çerçevesi gibi duruyor.
+        Android'in aynı rozeti baştan beri `streak > 0` koşuluna bağlı
+        (`ui/AppHeader`), web her zaman çiziyordu.
+      */}
+      {streak > 0 ? (
+        <span
+          className="flex items-center gap-1 rounded-full px-2.5 py-1"
+          style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
+        >
+          <FlameIcon size={15} /> {streak}
+        </span>
+      ) : null}
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
         style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
       >
-        <SparkIcon size={15} /> {formatNumber(xp, lang)}
+        {/* XP GLİFİ BOLT. Burada `SparkIcon` çiziliyordu; Spark bu uygulamada
+            kombo/yapay zeka/akış işareti, XP'nin glifi `BoltIcon` — profil
+            rozeti de aynı nedenle düzeltilmişti (bkz. "profil XP rozetinin
+            glifi" kapısı) ve Android XP'yi her yerde Bolt ile yazıyor. */}
+        <BoltIcon size={15} /> {formatNumber(xp, lang)}
       </span>
     </div>
   );

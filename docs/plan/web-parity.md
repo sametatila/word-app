@@ -16858,3 +16858,28 @@ kabuğu için koyuyor (hata hâli duyurulur, boş hâl duyurulmaz).
 Kapı **§324** kapsam ölçüyor: `RetryButton` çizen her dosya duyuruyor mu, ve
 dosya sayısı (6) da ölçülüyor — tarama boşalırsa "hepsi duyuruyor"
 kendiliğinden doğru çıkardı.
+
+## §11.465 — XP glifi Bolt, kazanılmayan sayı hiç yazılmıyor
+
+Uygulamanın iki ayrı glifi var ve ikisi ayrı şey söylüyor: `SparkIcon` kombo /
+yapay zekâ / akış işareti, `BoltIcon` XP. Web'de **üst bar** ve **beceri sonuç
+kartı** XP'yi Spark ile yazıyordu — aynı sayı aynı uygulamada iki ayrı glifle.
+Profil rozeti aynı nedenle daha önce düzeltilmişti; üst bar ise her ekranda
+duruyor, yani en çok görülen yanlış glifti. Android XP'yi her yerde Bolt ile
+yazıyor.
+
+İkinci kusur **sıfırın gösterilmesi**:
+
+- **Üst bar:** web seri rozetini her zaman çiziyordu ("alev 0"). Android rozeti
+  `streak > 0` koşuluna bağlıyor (`ui/AppHeader`) — "0" yazan bir alev rozeti
+  bir sayı değil, kazanılmamış bir ödülün boş çerçevesi.
+- **Beceri sonuç kartı:** web iki satırı da koşulsuz yazıyordu; tekrar edilen
+  egzersizde "+0 XP", serisi olmayan öğrenciye "0 gün seri". Android'in aynı
+  kartı ikisini de sıfırda hiç çizmiyor (`ItemScreen`: `earnedXp > 0`, içinde
+  `streak > 0`) ve sıfır XP'nin sebebi zaten hemen altındaki not
+  (`item.repeat_note`).
+
+Kapı **§325** iki ölçü: (1) hiçbir XP yüzeyi Spark çizmiyor — kapsam taraması,
+(2) iki rozetin sıfır koşulu iki platformda da var. Tarama **eşikle**
+ölçülüyor (tam sayıyla değil): Spark meşru bir glif ve yeni bir yerde
+kullanılması kapının işi değil; ölçülen şey taramanın boşalmaması.
