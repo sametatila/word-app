@@ -13319,3 +13319,55 @@ variant="X"` diye **bitişik** iki özniteliği arıyordu. Aralarına üçüncü
 öznitelik girer girmez (bu turda `accessibilityRole="header"`) susuyorlardı —
 §247'nin yasakladığı kırılgan kalıbın ta kendisi. İkisi bu turda gerçekten
 sustu; onu da "arada başka öznitelik olabilir" biçimine getirildi.
+
+## §11.383 — Çökme sınırı: mobilde hiç yoktu
+
+Yine **önde olan web**. Bir ekranın çiziminde yakalanmamış bir hata olursa
+React bütün ağacı söküyor. Web'de bu baştan beri çözülmüştü — iki `error.tsx`
+bir kart çizip "tekrar dene" veriyor. **Mobilde hiç sınır yoktu**:
+geliştirmede kırmızı ekran, **üretimde bomboş bir pencere** ve kullanıcının
+elinde uygulamayı öldürüp yeniden açmaktan başka bir şey yok.
+
+En sinsi tarafı ölçümdü. Telemetri hatayı **sayıyordu** (`lib/telemetry`,
+`ErrorUtils` kancası) — ama **çizim hataları o kancaya hiç uğramıyor**: React
+onları sınıra veriyor, sınır yoksa ağacı söküyor. Yani çöken ekranların bir
+bölümü hem görünmüyor hem sayılmıyordu; panodaki `client_error` tablosu
+Android için eksikti ve bunu kimse fark edemezdi.
+
+### İki düzey, web'deki gibi
+
+| Düzey | Web | Mobil |
+|---|---|---|
+| Ekran başına (kabuk ayakta kalır) | `app/(app)/error.tsx` | düzen sarmalayıcıları (`contentColumnLayout` / `wideColumnLayout`) |
+| Kök (kabuk da patlarsa) | `app/error.tsx` | `App.tsx`, tema sağlayıcısının içinde |
+
+Sınırın **düzen sarmalayıcılarına** konmasının sebebi teknik ve yazılı: React
+Navigation'da `Screen.layout`, `Group.screenLayout` ve gezginin
+`screenLayout`u arasından yalnız **biri** uygulanıyor. Sınır ayrı bir
+`screenLayout` olsaydı sütun düzenini ezerdi — yatay tablette bütün ekranlar
+dar sütuna düşerdi. İkisi birlikte sarmalanınca her ekran hem sütununu hem
+sınırını alıyor.
+
+Kart web'in kartının aynısı: gül tintli 48'lik ikon karosu, başlık, gövde,
+`RefreshIcon` + "tekrar dene". Başlık `accessibilityRole="header"`
+(§11.382) ve `assertive` canlı bölge — çökme sessizce olmaz.
+
+### Metin ortaklaştı
+
+`err.title` / `err.body` **web'e özel** anahtarlardı. İkisi mobile taşındı ve
+adları `crash.title` / `crash.body` oldu — `err.*` ailesi hata **analizi**
+(artikel, çoğul, hâl), bu ikisi uygulamanın **çökme kartı**; aynı önekte
+durmaları iki ayrı şeyi tek aile gibi gösteriyordu. Taban sözlük mobilden
+üretildiği için artık iki platform aynı cümleyi yazıyor. `err.code` web'de
+kaldı: `digest` Next'in kavramı.
+
+### §260
+
+Üç ölçü: iki katman eşleştirmeli, kartın altı parçası eşleştirmeli, ve
+**mutlak** olarak hiçbir yığın ekranının düzen sarmalayıcısız kalmaması
+(sekmeleri barındıran ekranın muafiyeti ile sekme gezgininin kendi
+sarmalayıcısı ayrıca ölçülüyor).
+
+Dört enjeksiyon denendi (ekran başına sınırın kalkması, ölçümün kalkması,
+grubun sarmalayıcısını kaybetmesi, sekme ekranlarının sarmalanmaması), dördü
+de yakalandı.
