@@ -13261,3 +13261,61 @@ panelin adı seçili sekmeden geliyor (`aria-labelledby`). Mobilde karşılığ�
 
 Üç enjeksiyon denendi (panelin rolünü kaybetmesi, yönetici şeridinin rolsüz
 kalması, bağlantısız bir dosyaya `aria-current` girmesi), üçü de yakalandı.
+
+## §11.382 — Başlık başlık olarak okunuyor (bu kez önde olan web)
+
+Ekran okuyucu kullanan biri uzun bir ekranı **başlıklara göre gezerek** okur —
+bir oynatıcıda ya da ayar ekranında tek pratik gezinme yolu budur. Web'de
+başlıklar `<h1>`/`<h2>`/`<h3>`; mobilde `accessibilityRole="header"` **hiç
+kullanılmamıştı**. Ölçüm sıfır çıktı: TalkBack'in aynı kipi hiçbir şey
+bulamıyordu, yani her Android ekranı dümdüz bir metin duvarıydı.
+
+Bu, dizinin ilk **web'in önde olduğu** turu. Yön değişti ama ölçü aynı: iki
+platform aynı şeyi söylemeli.
+
+### Nasıl yapıldı
+
+Dört **ortak başlık bileşeni** tek dokunuşla çoğu ekranı kapsıyor
+(`AppHeader`, `ScreenHeader`, `TabHeader`, `SectionTitle`) ve ayarların `Group`
+başlığı. Geri kalan ekranlar başlığını kendi yazıyor; onlar tek tek
+işaretlendi ve **hangi metnin başlık olduğu web'in kendi `<h*>`
+etiketlerinden okundu** — aynı i18n anahtarı, aynı başlık. Böylece "hangisi
+başlık" sorusu göz kararına bırakılmadı.
+
+Toplam: 5 paylaşılan bileşen + 33 ekran.
+
+**Tek muaf ekran `FirstPractice`**: web'de de (`first-practice.tsx`) hiçbir
+başlık yok ve doğrusu o — ekranda duran şey bir başlık değil, öğrenilen
+**kelimenin kendisi**.
+
+Bir de gerçek kusur çıktı: meydan okuma turunun puan satırı web'de
+`<h2 className="text-display">`, mobilde rolsüz bir `Text`ti.
+
+### §259
+
+Dört ölçü:
+
+1. Ortak başlık bileşenleri rolü veriyor.
+2. Hiçbir ekran rolsüz kalmadı (muafiyetin gerekçesi de ölçülüyor: web o
+   dosyaya bir başlık koyarsa kapı kırmızı olur).
+3. On bir akış oynatıcısı eşleştirmeli.
+4. **Dosya değil yüzey**: webde bir `<h*>` içinde geçen her i18n anahtarı,
+   mobil kardeşinde başlık boyunda bir metinde geçiyorsa o metin rolü söylemek
+   zorunda. Rol **atada** da olabilir — webde de dış etiket `<h2>`, iç etiket
+   yalnız `<span>`.
+
+Üçüncü ölçü tek başına yetmiyordu ve bunu **enjeksiyon gösterdi**: bir dalın
+rolünü sildiğimde dosyada başka başlıklar durduğu için kapı susuyordu.
+Dördüncü ölçü eklendikten sonra aynı enjeksiyon yakalandı.
+
+Beş enjeksiyon denendi (ekranın rolü kaybetmesi, ortak bileşenin rolü
+kaybetmesi, muaf ekranın web kardeşinin başlık edinmesi, tek bir dalın rolü
+kaybetmesi), hepsi yakalandı.
+
+### Kapının kendi kırılganlığı: on desen
+
+Tur sonucu duyurularını ölçen on desen `accessibilityLiveRegion="polite"
+variant="X"` diye **bitişik** iki özniteliği arıyordu. Aralarına üçüncü bir
+öznitelik girer girmez (bu turda `accessibilityRole="header"`) susuyorlardı —
+§247'nin yasakladığı kırılgan kalıbın ta kendisi. İkisi bu turda gerçekten
+sustu; onu da "arada başka öznitelik olabilir" biçimine getirildi.
