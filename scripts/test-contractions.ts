@@ -11,7 +11,7 @@ import { foldContractions } from "../src/lib/contractions";
 import { judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { matchSentence } from "../src/lib/sentence-match";
 import { foldEnglishSpelling } from "../src/lib/en-spelling";
-import { foldCompare } from "../src/components/games/types";
+import { foldCompare, matchesAnswer } from "../src/components/games/types";
 import { levenshtein } from "../src/lib/errors";
 
 const eq = (a: string, b: string, why: string) =>
@@ -84,6 +84,20 @@ assert.notEqual(
   "correct",
   "yazım katlaması başka kelimeyi doğru yapmamalı",
 );
+
+/*
+  KELİME TURU: havuz Amerikan yazımıyla, dersler İngiliz yazımıyla yazılmış —
+  dersin öğrettiği yazımı yazan öğrenci reddediliyordu (61 havuz kelimesi).
+  Katlama `normalize`da, yani kelime turu ile beceri egzersizi aynı kuralı
+  paylaşıyor.
+*/
+assert.ok(matchesAnswer("colour", ["color"], "en"), "dersin yazımı kabul edilmeli");
+assert.ok(matchesAnswer("color", ["colour"], "en"), "ters yön de");
+assert.ok(matchesAnswer("neighbour", ["neighbor"], "en"));
+assert.ok(matchesAnswer("programme", ["program"], "en"));
+assert.ok(!matchesAnswer("neighbour", ["brother"], "en"), "başka kelime yine yanlış");
+assert.ok(matchesAnswer("die Farbe", ["Farbe"], "de"), "Almanca yol değişmedi");
+assert.ok(!matchesAnswer("Farbe", ["Tisch"], "de"));
 
 /*
   BECERİ EGZERSİZİNİN YAZILI CEVABI da aynı katlamayı kullanıyor

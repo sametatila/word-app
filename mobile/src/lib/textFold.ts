@@ -14,6 +14,7 @@
  * geçtiği için katlamanın "doğru" olması değil TUTARLI olması önemli.
  */
 import { foldNumbers } from "./numbers";
+import { foldEnglishSpelling } from "./en-spelling";
 
 /**
  * Kesme işaretleri SİLİNİR, boşluğa çevrilmez.
@@ -62,7 +63,10 @@ export function foldCase(s: string, lang: string): string {
  */
 export function foldCompare(s: string, lang: string): string {
   const tablo = SYMBOLS[lang];
-  const açık = tablo ? foldCase(s, lang).replace(SYMBOL_RE, (c) => tablo[c] ?? " ") : foldCase(s, lang);
+  // İngiliz/Amerikan yazım farkı da bir yazım toleransı: havuz Amerikan,
+  // dersler İngiliz yazımıyla (web `games/types` `normalize` ile aynı yer).
+  const yazım = foldEnglishSpelling(s, lang);
+  const açık = tablo ? foldCase(yazım, lang).replace(SYMBOL_RE, (c) => tablo[c] ?? " ") : foldCase(yazım, lang);
   const sade = açık.replace(APOSTROF, "").replace(PUNCT, " ");
   return foldNumbers(sade, lang).replace(/\s+/g, " ").trim();
 }

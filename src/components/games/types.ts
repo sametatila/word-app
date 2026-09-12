@@ -5,6 +5,7 @@ import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
 import { foldNumbers } from "@/lib/numbers";
+import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 
 export type GameResult = {
@@ -128,7 +129,21 @@ const SYMBOL_RE = /[%€$£&°]/g;
 /** Yazım karşılaştırması: büyük/küçük harf, noktalama ve boşluk toleranslı. */
 export function normalize(s: string, lang: TargetLang = currentTargetLang()): string {
   const table = SYMBOLS[lang] ?? SYMBOLS.de;
-  return (s || "")
+  /*
+    İNGİLİZ/AMERİKAN YAZIM da yazım toleransının parçası ve ölçüldü: havuz
+    Amerikan yazımıyla yazılmış ("color", "neighbor", "center", "program"),
+    dersler İngiliz yazımıyla ("colour", "neighbour", "centre", "programme")
+    — yani DERSİN ÖĞRETTİĞİ yazımı yazan öğrenci kelime turunda
+    reddediliyordu; 61 havuz kelimesi bu durumda.
+
+    Katlama burada, çünkü `normalize` hem `foldCompare` hem `foldSpelling`in
+    tabanı: tek yerde yazılınca kelime turu, beceri egzersizi ve yazılı
+    cevap aynı kuralı paylaşıyor. Havuzda on çift birleşiyor; dokuzu zaten
+    aynı kelimenin iki yazımı, onuncusu "cheque/check" ve Amerikan
+    İngilizcesinde banka çeki de "check" yazıldığı için o da yanlış kabul
+    değil. Almancaya dokunmuyor.
+  */
+  return foldEnglishSpelling(s || "", lang)
     .toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US")
     .replace(SYMBOL_RE, (c) => table[c] ?? " ")
     .replace(APOSTROPHE, "")
