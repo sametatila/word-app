@@ -7,11 +7,13 @@ import { SettingRow, Switch } from "@/components/setting-row";
 import { PushSettings } from "@/components/push-settings";
 import { useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
+import { REMINDER_HOURS } from "@/lib/profile-limits";
 
 type Prefs = { daily: boolean; hour: number; streak: boolean; weekly: boolean };
 
-/** Mobildeki saat çipleriyle aynı beş seçenek (`NotificationsScreen` TIMES). */
-const HOURS = [9, 12, 15, 19, 21];
+/* Saatler tek kaynaktan: mobil `NotificationsScreen` ve bildirim izni ekranı
+   da aynı listeyi okuyor (bkz. `lib/profile-limits` `REMINDER_HOURS`). */
+const HOURS = REMINDER_HOURS;
 
 /**
  * Hatırlatma ayarları — mobil `NotificationsScreen`in web karşılığı.

@@ -15,9 +15,14 @@ import {
 } from "../lib/notifications";
 import { pushPermissionDenied } from "../lib/pushDevice";
 import { track } from "../lib/track";
+import { PROFILE_DEFAULTS, REMINDER_HOURS } from "../lib/profileDefaults";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
-const TIMES = ["09:00", "12:00", "15:00", "19:00", "21:00"];
+const hhmmOf = (h: number) => `${String(h).padStart(2, "0")}:00`;
+
+/* Saatler tek kaynaktan: izin ekranı da aynı listeyi okuyor (bkz.
+   `lib/profileDefaults` `REMINDER_HOURS`, web `lib/profile-limits`). */
+const TIMES = REMINDER_HOURS.map(hhmmOf);
 
 
 /** Tek bir bildirim kategorisi — başlık + açıklama + aç/kapa; açıkken ek içerik. */
@@ -44,8 +49,10 @@ export function NotificationsScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const [dailyOn, setDailyOn] = useState(false);
   /* Başlangıç değeri yalnız ilk çizim için; gerçek saat `loadPrefs`ten
-     geliyor (sunucunun kayıtlı saati — bkz. `ReminderPrefs.hour`). */
-  const [dailyTime, setDailyTime] = useState("12:00");
+     geliyor (sunucunun kayıtlı saati — bkz. `ReminderPrefs.hour`). Sayı
+     şemanın varsayılanından (`PROFILE_DEFAULTS.reminderHour`), elle
+     yazılmıyor: "12:00" burada sabitti ve şema değişse sessizce eskirdi. */
+  const [dailyTime, setDailyTime] = useState(hhmmOf(PROFILE_DEFAULTS.reminderHour));
   const [streakOn, setStreakOn] = useState(false);
   const [weeklyOn, setWeeklyOn] = useState(false);
   const [denied, setDenied] = useState(false);

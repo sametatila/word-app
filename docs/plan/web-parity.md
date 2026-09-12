@@ -14479,3 +14479,44 @@ kimsenin kalmadığı** (yorumda geçmesi serbest — tarih orada yazıyor).
 
 Yedisi de enjeksiyonla doğrulandı; Android XML'inin kendisi kaydırıldığında da
 ölçü kırmızıya döndü, yani karşılaştırma tek yönlü değil.
+
+## §11.407 — İzin ekranının sunduğu saat, ayarlarda hiç yoktu
+
+Aynı liste üç yerde ayrı yazılıydı ve **üçü aynı değildi**:
+
+| Yer | Liste |
+|---|---|
+| web `notification-settings` | `[9, 12, 15, 19, 21]` |
+| mobil `NotificationsScreen` | `["09:00","12:00","15:00","19:00","21:00"]` |
+| mobil `NotifPrimeScreen` | `["09:00","13:00","20:00"]` ← ikisi listede **yok** |
+
+İlk girişten sonra bir kez gösterilen bildirim izni ekranında "Öğle" (13:00)
+ya da "Akşam" (20:00) seçen kullanıcı, sonra ayarları açtığında günlük
+hatırlatmayı **açık** ama saat çiplerinin **hiçbirini seçili** görmüyordu:
+kendi seçtiği saat orada teklif bile edilmiyordu. Web de aynı listeyi
+taşıdığı için aynı sonuç, ve orada üstüne bir erişilebilirlik kusuru biniyor
+— değeri olan bir `radiogroup` içinde hiçbir seçenek `aria-checked` değil,
+yani ekran okuyucu "hiçbiri seçili değil" diyor.
+
+Ve kusur tam da **en kritik anda** görünüyor: izin ekranı, elde tutmanın en
+güçlü kaldıracı ve kullanıcının hatırlatma saatini seçtiği tek yer.
+
+Liste tek kaynağa taşındı (`lib/profile-limits` `REMINDER_HOURS`, mobil
+karşılığı `lib/profileDefaults`), izin ekranının üç seçeneği artık o listenin
+**kendi elemanları** (`PRIME_HOURS`: sabah 9, öğle 12, akşam 19 — 21:00
+seçilmedi, seri koruma bildirimi 20:30'da gidiyor ve ikisi üst üste
+binerdi). `NotificationsScreen`de ayrıca kapalı anahtarın başlangıç saati
+`"12:00"` olarak sabitti; şemanın varsayılanından okunuyor.
+
+### §283 ve §173
+
+§173 zaten iki listeyi karşılaştırıyordu ama **tüketicilerin** dizilerini
+okuyordu; liste tek kaynağa taşınınca ölçü kaynağı okuyor. Yeni ölçüler
+§283'te: izin ekranının üç saatinin iki platformda aynı olduğu, üçünün de
+listenin **geçerli bir elemanı** olduğu (mutlak), üç tüketicide **ham saat
+kalmadığı** ve üçünün de ortak kaynağı okuduğu.
+
+Beş ölçü de enjeksiyonla doğrulandı: indeks listenin dışına taşırıldığında,
+iki platformun seçenekleri ayrıştırıldığında, izin ekranına ham saat geri
+yazıldığında, tüketici kaynağı okumayı bıraktığında ve iki ortak liste
+ayrıştırıldığında ayrı ayrı kırmızıya döndü.

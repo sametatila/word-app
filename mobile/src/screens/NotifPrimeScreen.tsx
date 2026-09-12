@@ -9,6 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { BellIcon, FlameIcon } from "../ui/icons";
 import { enableDailyReminder, markNotifPrimed } from "../lib/notifications";
 import { track } from "../lib/track";
+import { PRIME_HOURS } from "../lib/profileDefaults";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -17,12 +18,24 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
  * diyaloğundan ÖNCE nazikçe konumlar (priming) — elde tutmanın en güçlü kaldıracı.
  * Bir hatırlatma saati seçtirir; "Hatırlat" izin ister + günlük tetikleyici kurar.
  */
-/** Hatırlatma saatleri — etiket t() ile, çağrı anında (dil modül yüklenirken hazır değil). */
+/**
+ * Hatırlatma saatleri — etiket t() ile, çağrı anında (dil modül yüklenirken
+ * hazır değil).
+ *
+ * SAATLER AYARLAR EKRANININ LİSTESİNDEN. Burada 13:00 ve 20:00 yazılıydı ve
+ * ikisi de `NotificationsScreen`in çiplerinde YOKTU: "Öğle" ya da "Akşam"
+ * seçen kullanıcı ayarları açtığında günlük hatırlatmayı AÇIK, çiplerin
+ * hiçbirini seçili görmüyordu — kendi seçtiği saat orada teklif bile
+ * edilmiyordu (webde de aynı liste, aynı sonuç). Üç seçenek artık listenin
+ * kendi elemanları (bkz. `lib/profileDefaults` `PRIME_HOURS`).
+ */
+const hhmm = (h: number) => `${String(h).padStart(2, "0")}:00`;
+
 function times(): { label: string; value: string }[] {
   return [
-    { label: tx("notifprime.morning"), value: "09:00" },
-    { label: tx("notifprime.midday"), value: "13:00" },
-    { label: tx("notifprime.evening"), value: "20:00" },
+    { label: tx("notifprime.morning"), value: hhmm(PRIME_HOURS.morning) },
+    { label: tx("notifprime.midday"), value: hhmm(PRIME_HOURS.midday) },
+    { label: tx("notifprime.evening"), value: hhmm(PRIME_HOURS.evening) },
   ];
 }
 
@@ -30,7 +43,7 @@ export function NotifPrimeScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const [time, setTime] = useState("20:00");
+  const [time, setTime] = useState(hhmm(PRIME_HOURS.evening));
   const [busy, setBusy] = useState(false);
   /* İzin REDDEDİLDİYSE söylenmesi gerekiyor; bkz. `enable`. */
   const [denied, setDenied] = useState(false);

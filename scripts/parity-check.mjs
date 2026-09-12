@@ -6691,13 +6691,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * SEMADAN alması, ve ucun kabul araligi. */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-  const web = strip(read("src/components/notification-settings.tsx"));
   const mob = strip(read("mobile/src/screens/NotificationsScreen.tsx"));
   const sema = strip(read("src/lib/db/schema.ts"));
   const bildirim = strip(read("mobile/src/lib/notifications.ts"));
 
-  const webSaatler = (web.match(/const HOURS = \[([^\]]*)\]/) ?? [])[1] ?? "";
-  const mobSaatler = (mob.match(/const TIMES = \[([^\]]*)\]/) ?? [])[1] ?? "";
+  /* LISTE ARTIK TUKETICIDE DEGIL, ORTAK KAYNAKTA. Iki ekran kendi dizisini
+     yaziyordu ve bu olcu onlari karsilastiriyordu; 283 listeyi tek kaynaga
+     tasidi (web `lib/profile-limits` `REMINDER_HOURS`, mobil
+     `lib/profileDefaults` ayni ad) cunku UCUNCU bir tuketici (bildirim izni
+     ekrani) listede OLMAYAN saatler sunuyordu. Bu olcu kaynagi okuyor; hangi
+     tuketicinin kaynagi okudugunu 283 ayrica olcuyor. */
+  const webSaatler = (strip(read("src/lib/profile-limits.ts")).match(/REMINDER_HOURS = \[([^\]]*)\]/) ?? [])[1] ?? "";
+  const mobSaatler = (strip(read("mobile/src/lib/profileDefaults.ts")).match(/REMINDER_HOURS = \[([^\]]*)\]/) ?? [])[1] ?? "";
   /* Mobil listede saat "HH:MM" biciminde: DAKIKA da bir sayi ve ilk surum
      "09:00"in sifirini ayri bir saat sandi. Iki taraftan da yalniz SAAT
      okunuyor. */
@@ -7479,6 +7484,93 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 283. HATIRLATMA SAATLERI TEK KAYNAKTAN --------------------------
+   *
+   * Ayni liste UC yerde ayri yaziliydi ve ucu ayni DEGILDI:
+   *
+   *   web `notification-settings`       [9, 12, 15, 19, 21]
+   *   mobil `NotificationsScreen`       ["09:00","12:00","15:00","19:00","21:00"]
+   *   mobil `NotifPrimeScreen`          ["09:00","13:00","20:00"]   <- ikisi listede YOK
+   *
+   * Bildirim izni ekraninda "Ogle" (13:00) ya da "Aksam" (20:00) secen
+   * kullanici sonra ayarlari actiginda gunluk hatirlatmayi ACIK, saat
+   * ciplerinin hicbirini secili gormuyordu: kendi sectigi saat orada TEKLIF
+   * BILE EDILMIYORDU. Webde ayni liste oldugu icin ayni sonuc, ve orada
+   * ustune bir erisilebilirlik kusuru biniyor - degeri olan bir `radiogroup`
+   * icinde hicbir secenek `aria-checked` degil.
+   *
+   * Uc dosya da artik tek kaynagi okuyor; izin ekraninin uc secenegi o
+   * listenin KENDI elemanlari. */
+  {
+    /* Listenin KENDISI 173'te karsilastiriliyor (ortak kaynaktan); burasi
+       listeyi kimin okudugunu ve izin ekraninin saatlerini olcuyor. */
+    const dizi = (metin) => {
+      const m = metin.match(/REMINDER_HOURS = \[([^\]]*)\]/);
+      return m ? m[1].match(/\d+/g)?.map(Number) ?? [] : [];
+    };
+    const web = sil(read("src/lib/profile-limits.ts"));
+    const mob = sil(read("mobile/src/lib/profileDefaults.ts"));
+    const webSaat = dizi(web);
+
+    /* Izin ekraninin uc secenegi: iki platformda ayni VE listenin elemani. */
+    const prime = (metin) => {
+      const m = metin.match(/PRIME_HOURS = \{([^}]*)\}/);
+      if (!m) return [];
+      return ["morning", "midday", "evening"].map((k) => {
+        const v = m[1].match(new RegExp(k + ":\\s*REMINDER_HOURS\\[(\\d+)\\]"));
+        return v ? Number(v[1]) : -1;
+      });
+    };
+    const webPrime = prime(web);
+    const mobPrime = prime(mob);
+    sameList(
+      "izin ekraninin saatleri",
+      ["mobil=" + mobPrime.join("/")],
+      ["mobil=" + webPrime.join("/")],
+      "mobil",
+      "web",
+    );
+    /* MUTLAK: uc secenek de listenin gecerli bir indeksi (yani listede VAR). */
+    sameList(
+      "izin saatleri listenin elemani",
+      ["liste disi=" + (webPrime.filter((i) => i < 0 || i >= webSaat.length).length || "yok")],
+      ["liste disi=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Tuketiciler kendi listesini YAZMIYOR: uc dosyada da ham saat kalmadi. */
+    const hamSaat = (yol, desen) => {
+      const g = sil(read(yol));
+      const bulunan = [...new Set([...g.matchAll(desen)].map((m) => m[0]))];
+      return bulunan.join("+") || "yok";
+    };
+    sameList(
+      "tuketicilerde ham saat kalmadi",
+      [
+        "web ayarlar=" + hamSaat("src/components/notification-settings.tsx", /\[\s*9\s*,\s*12\s*,/g),
+        "mobil ayarlar=" + hamSaat("mobile/src/screens/NotificationsScreen.tsx", /"\d\d:00"/g),
+        "mobil izin=" + hamSaat("mobile/src/screens/NotifPrimeScreen.tsx", /"\d\d:00"/g),
+      ],
+      ["web ayarlar=yok", "mobil ayarlar=yok", "mobil izin=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ve gercekten ORTAK kaynaktan okuyorlar. */
+    sameList(
+      "tuketiciler ortak kaynagi okuyor",
+      [
+        "web ayarlar=" + (/\bREMINDER_HOURS\b/.test(sil(read("src/components/notification-settings.tsx"))) ? "okuyor" : "OKUMUYOR"),
+        "mobil ayarlar=" + (/\bREMINDER_HOURS\b/.test(sil(read("mobile/src/screens/NotificationsScreen.tsx"))) ? "okuyor" : "OKUMUYOR"),
+        "mobil izin=" + (/\bPRIME_HOURS\b/.test(sil(read("mobile/src/screens/NotifPrimeScreen.tsx"))) ? "okuyor" : "OKUMUYOR"),
+      ],
+      ["web ayarlar=okuyor", "mobil ayarlar=okuyor", "mobil izin=okuyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* -- 282. UYGULAMANIN DISINDAKI YUZEYLER DE MARKANIN ----------------
    *
