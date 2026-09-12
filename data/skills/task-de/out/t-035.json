@@ -1,0 +1,312 @@
+[
+ {
+  "tr": "Koşul kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Bedingungskarte aus."
+ },
+ {
+  "tr": "Açılış kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Eröffnungskarte aus."
+ },
+ {
+  "tr": "Bilgi notu kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Briefingkarte aus."
+ },
+ {
+  "tr": "Öngörü değişecek; paydaşlar hazır; bulgular açık; kaynak söylenmiyor.",
+  "kind": "form.facts",
+  "de": "Die Prognose wird sich ändern; die Beteiligten sind bereit; die Ergebnisse sind klar; die Quelle wird nicht genannt."
+ },
+ {
+  "tr": "Olumsuz zarf devirir; yardımcı fiil yoksa „do“ gelir; başka öğe devirmez; bir konuşmada bir tane yeter.",
+  "kind": "form.facts",
+  "de": "Ein verneinendes Adverb stellt um; fehlt ein Hilfsverb, kommt „do“; andere Glieder stellen nichts um; eines pro Rede genügt."
+ },
+ {
+  "tr": "Bilseydik senaryo değişirdi; daha iyi planlasaydık kayıp şimdi küçük olurdu; masraf açık olsaydı beklerdik; sınama sonucun nerede yaşadığı.",
+  "kind": "form.facts",
+  "de": "Hätten wir es gewusst, wäre das Szenario anders; hätten wir besser geplant, wäre der Verlust jetzt kleiner; wären die Kosten klar gewesen, hätten wir gewartet; die Probe ist, wo die Folge lebt."
+ },
+ {
+  "tr": "Değişen eşikti.",
+  "kind": "build.tr",
+  "de": "Es war die Schwelle, die sich änderte."
+ },
+ {
+  "tr": "Çöküşü önlemiş olamayız.",
+  "kind": "build.tr",
+  "de": "Wir können den Ausfall nicht verhindert haben."
+ },
+ {
+  "tr": "İtiraz ettiğimiz şey gecikme.",
+  "kind": "build.tr",
+  "de": "Wogegen wir uns wenden, ist die Verzögerung."
+ },
+ {
+  "tr": "Kabul edilemez olan sessizlik.",
+  "kind": "build.tr",
+  "de": "Was nicht hinnehmbar ist, ist das Schweigen."
+ },
+ {
+  "tr": "Masraf açık olsaydı beklerdik.",
+  "kind": "build.tr",
+  "de": "Wären die Kosten klar gewesen, hätten wir gewartet."
+ },
+ {
+  "tr": "Görünüşe göre rakamlar değişti.",
+  "kind": "build.tr",
+  "de": "Anscheinend haben sich die Zahlen geändert."
+ },
+ {
+  "tr": "Her şeyi değiştiren genelgeydi.",
+  "kind": "build.tr",
+  "de": "Es war das Rundschreiben, das alles änderte."
+ },
+ {
+  "tr": "Kusur haftalardır orada olmalı.",
+  "kind": "build.tr",
+  "de": "Der Fehler muss seit Wochen da gewesen sein."
+ },
+ {
+  "tr": "Birinin uyarı vermesi gerekirdi.",
+  "kind": "build.tr",
+  "de": "Jemand hätte Alarm geben sollen."
+ },
+ {
+  "tr": "Öngörünün değişeceği söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Prognose soll sich ändern."
+ },
+ {
+  "tr": "Görevin dağıtımı on dakika sürdü.",
+  "kind": "build.tr",
+  "de": "Die Zuweisung der Aufgabe dauerte zehn Minuten."
+ },
+ {
+  "tr": "Bilseydik senaryoyu değiştirirdik.",
+  "kind": "build.tr",
+  "de": "Hätten wir es gewusst, hätten wir das Szenario geändert."
+ },
+ {
+  "tr": "Taslağı bitirdikten sonra ayrıldı.",
+  "kind": "build.tr",
+  "de": "Nachdem sie den Entwurf fertig hatte, ging sie."
+ },
+ {
+  "tr": "Öne çıkarmak istediğim şey maliyet.",
+  "kind": "build.tr",
+  "de": "Was ich hervorheben will, sind die Kosten."
+ },
+ {
+  "tr": "Tazminatın küçük olduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Der Schadenersatz soll gering sein."
+ },
+ {
+  "tr": "Yetki devrettiğimiz meslektaş yeni.",
+  "kind": "build.tr",
+  "de": "Der Kollege, an den wir delegieren, ist neu."
+ },
+ {
+  "tr": "Bulguların açık olduğu bildiriliyor.",
+  "kind": "build.tr",
+  "de": "Die Ergebnisse werden als klar gemeldet."
+ },
+ {
+  "tr": "Paydaşların hazır olduğu düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Man hält die Beteiligten für bereit."
+ },
+ {
+  "tr": "Sorumluluğun bizde olduğu düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Man geht davon aus, dass die Haftung bei uns liegt."
+ },
+ {
+  "tr": "Ekibi eşgüdümleyen Ana mayısta katıldı.",
+  "kind": "build.tr",
+  "de": "Ana, die das Team koordiniert, kam im Mai dazu."
+ },
+ {
+  "tr": "Tedarikçinin geciktiği ileri sürülüyor.",
+  "kind": "build.tr",
+  "de": "Es wird behauptet, dass der Lieferant zu spät war."
+ },
+ {
+  "tr": "Böylesi bir memnuniyeti nadiren yaşadım.",
+  "kind": "build.tr",
+  "de": "Selten habe ich eine solche Freude gehabt."
+ },
+ {
+  "tr": "Bütün hafta gelmediği için iç yazıyı kaçırdı.",
+  "kind": "build.tr",
+  "de": "Da er die ganze Woche fehlte, verpasste er das Schreiben."
+ },
+ {
+  "tr": "Yalnızca oturumu yönetmedi, konuşma da yaptı.",
+  "kind": "build.tr",
+  "de": "Sie leitete nicht nur, sie sprach auch."
+ },
+ {
+  "tr": "Cuma günü dolaştırılan ana hat herkese ulaştı.",
+  "kind": "build.tr",
+  "de": "Am Freitag in Umlauf gebracht, erreichte die Übersicht alle."
+ },
+ {
+  "tr": "Bu grup daha önce hiç burada bir araya gelmedi.",
+  "kind": "build.tr",
+  "de": "Nie zuvor hat sich diese Gruppe hier versammelt."
+ },
+ {
+  "tr": "Daha iyi planlasaydık kayıp şimdi daha küçük olurdu.",
+  "kind": "build.tr",
+  "de": "Hätten wir besser geplant, wäre der Verlust jetzt kleiner."
+ },
+ {
+  "tr": "Aynı anda olan iş: yalın „-ing“.",
+  "kind": "build.hint",
+  "de": "Gleichzeitig: das schlichte „-ing“."
+ },
+ {
+  "tr": "Kapalı kutu: iki yarı da geçmişte.",
+  "kind": "build.hint",
+  "de": "Geschlossene Schachtel: beide Hälften in der Vergangenheit."
+ },
+ {
+  "tr": "Önce olan iş: „having“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Das Frühere: „having“ + dritte Form."
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: edilgen ortaç.",
+  "kind": "build.hint",
+  "de": "Beginnt mit der dritten Form: ein passives Partizip."
+ },
+ {
+  "tr": "İkinci yarık biçim: ışık isme düşüyor.",
+  "kind": "build.hint",
+  "de": "Die zweite Spaltform: das Licht fällt auf das Substantiv."
+ },
+ {
+  "tr": "Yargı: olanı değil, olmayanı anlatıyor.",
+  "kind": "build.hint",
+  "de": "Ein Urteil: es spricht nicht vom Geschehenen, sondern vom Fehlenden."
+ },
+ {
+  "tr": "Çıkarım: kanıt okunuyor, emir verilmiyor.",
+  "kind": "build.hint",
+  "de": "Ein Schluss: der Beleg wird gelesen, kein Befehl gegeben."
+ },
+ {
+  "tr": "Resmî biçim: edat „whom“un önüne geçiyor.",
+  "kind": "build.hint",
+  "de": "Die förmliche Form: die Präposition rückt vor „whom“."
+ },
+ {
+  "tr": "Kaynak söylenmiyor; söyleyen fiil edilgen.",
+  "kind": "build.hint",
+  "de": "Die Quelle wird nicht genannt; das Sageverb steht im Passiv."
+ },
+ {
+  "tr": "Aynı kısa yol, bu kez kendi konumumuz için.",
+  "kind": "build.hint",
+  "de": "Derselbe kurze Weg, diesmal für die eigene Position."
+ },
+ {
+  "tr": "Aynı kalıp, bu kez bir yokluğu adlandırıyor.",
+  "kind": "build.hint",
+  "de": "Dasselbe Muster, diesmal benennt es ein Fehlen."
+ },
+ {
+  "tr": "Yarık cümle: önce boşluk, sonra tek bir şey.",
+  "kind": "build.hint",
+  "de": "Spaltsatz: zuerst die Lücke, dann eine einzige Sache."
+ },
+ {
+  "tr": "Yine kapalı: bekleme kararı o haftaya aitti.",
+  "kind": "build.hint",
+  "de": "Wieder geschlossen: die Entscheidung gehörte jener Woche."
+ },
+ {
+  "tr": "Mesafe: söylenen şey henüz doğrulanmış değil.",
+  "kind": "build.hint",
+  "de": "Abstand: das Gesagte ist noch nicht bestätigt."
+ },
+ {
+  "tr": "„Never before“ da olumsuz zarf; sıra bozuluyor.",
+  "kind": "build.hint",
+  "de": "Auch „Never before“ ist verneinend; die Stellung kippt."
+ },
+ {
+  "tr": "Fiil isme dönüyor; tutanak dili böyle kuruluyor.",
+  "kind": "build.hint",
+  "de": "Das Verb wird zum Substantiv; so ist Protokollsprache gebaut."
+ },
+ {
+  "tr": "Kısa yol: özne öne çıkıyor, geriye mastar kalıyor.",
+  "kind": "build.hint",
+  "de": "Kurzer Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+ },
+ {
+  "tr": "Işık isme düşüyor, gerisi „that“ın arkasına gidiyor.",
+  "kind": "build.hint",
+  "de": "Das Licht fällt auf das Substantiv, der Rest geht hinter „that“."
+ },
+ {
+  "tr": "İkinci yol: özne öne çıkıyor, geriye mastar kalıyor.",
+  "kind": "build.hint",
+  "de": "Zweiter Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+ },
+ {
+  "tr": "Yarık cümle: önce boşluk açılıyor, sonra şey geliyor.",
+  "kind": "build.hint",
+  "de": "Spaltsatz: zuerst wird die Lücke geöffnet, dann kommt die Sache."
+ },
+ {
+  "tr": "Taşınacak yardımcı fiil yoksa „do“ bunun için geliyor.",
+  "kind": "build.hint",
+  "de": "Fehlt ein Hilfsverb zum Umstellen, kommt „do“ genau dafür."
+ },
+ {
+  "tr": "Olumsuzu „can't have“; „mustn't have“ diye bir şey yok.",
+  "kind": "build.hint",
+  "de": "Die Verneinung ist „can't have“; „mustn't have“ gibt es nicht."
+ },
+ {
+  "tr": "Bildiriyor ve aynı anda geri çekiliyor; sıra bozulmuyor.",
+  "kind": "build.hint",
+  "de": "Es berichtet und tritt zugleich zurück; die Stellung bleibt."
+ },
+ {
+  "tr": "Birinci yol: „it“ özne, rapor „that“ cümleciğine giriyor.",
+  "kind": "build.hint",
+  "de": "Erster Weg: „it“ ist Subjekt, der Bericht kommt in den „that“-Satz."
+ },
+ {
+  "tr": "Virgüller cümleciği fazladan yapıyor; ad seçim istemiyor.",
+  "kind": "build.hint",
+  "de": "Die Kommas machen den Satz zur Zugabe; ein Name braucht keine Auswahl."
+ },
+ {
+  "tr": "Karışık koşul: sonuç hâlâ sürüyor, ikinci yarı öne geliyor.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge dauert an, die zweite Hälfte rückt vor."
+ },
+ {
+  "tr": "Olumsuz zarf başa geçince yardımcı fiil özneden ÖNE geliyor.",
+  "kind": "build.hint",
+  "de": "Steht ein verneinendes Adverb vorn, rückt das Hilfsverb VOR das Subjekt."
+ },
+ {
+  "tr": "Açılışın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Eröffnung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Tutanağın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Protokolls: bring sie in die richtige Ordnung."
+ }
+]

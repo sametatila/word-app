@@ -63,7 +63,9 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 · C1 | 1–25 | bekliyor |
+| B2 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
+| B2 | 4–25 | bekliyor |
+| C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -892,6 +894,57 @@ choice away?“ → „Which one takes the choice away?“). Bu turda ayrıca ik
 çok sözcüklü sözlükçe maddesi düştü („turns over“, „goes away“): metinde
 öğeler ayrık duruyordu, yani kural bir kez daha doğrulandı — çok sözcüklü
 terim ancak metinde bitişikse kapanıyor.
+
+
+**B2 AÇILDI (ünite 1–3, 2026-09-12).** Ünite 1 The morning briefing ·
+The handover note · Introducing a colleague · By the end of the quarter;
+ünite 2 Writing the minutes · What went wrong · If we had known ·
+Making the point land; ünite 3 Opening a formal talk · Saying it
+carefully · The claim · What the issue is. On sekiz egzersiz; ünite dışı
+ölçüm %0,0. B2 yuvalarının 18'i dolu. Seviyenin ölçüsü bir basamak daha
+yukarıda: okuma metni 200–350 kelime (B1'de 150–260).
+
+Ünite 1'in noktası KİŞİSİZ AKTARMANIN İKİ YOLU: „It is said that the
+forecast will change“ öznesine „it“ koyup raporu bir „that“ cümleciğine
+itiyor, „Stakeholders are thought to be ready“ ise özneyi cümlecikten
+çıkarıp geriye mastar bırakıyor. Almanca eksende bu hattın yeni bir
+türü: iş BAŞKA BİR KATMANDA yapılıyor. Almanca aynı şeyi edilgen bir
+söyleme fiiliyle değil, bir KİP FİİLİYLE kuruyor — „Die Prognose soll
+sich ändern“, „Der Schadenersatz soll gering sein“. İngilizce sözdizimini
+kullanıyor, Almanca kipliği; ikisi de kaynağı gizliyor ve öğrenci
+Almancadan birebir çevirdiğinde „should“a düşüyor, çünkü „sollen“in ders
+kitabındaki karşılığı o.
+
+Ünite 2'nin noktası KARIŞIK KOŞUL: koşul geçmişte, sonuç ŞİMDİDE.
+„If we had known, we would have changed the scenario“ kapalı bir kutu;
+„If we had planned better, the loss would be smaller now“ ikinci yarısını
+öne çekiyor, çünkü kayıp bugünün sayfasındaki bir sayı. Sınama hangi
+yarının geçmişte olduğu değil, sonucun nerede yaşadığı. Almanca eksende
+bu bir İNGİLİZCE FAZLASI: Almanca iki yarıda da aynı Konjunktiv II
+biçimini kullandığı için („hätten wir besser geplant, wäre der Verlust
+jetzt kleiner“) karışımı GÖRÜNÜR biçimde işaretlemiyor — Almanca okuyan
+ayrımı duyuyor ama yazarken göstermek zorunda kalmıyor, İngilizcede ise
+ikinci yarının biçimi değişmek zorunda.
+
+Ünite 3'ün noktası DEVRİK SIRA ÇOK DAR BİR KAPI: yalnız olumsuz ya da
+sınırlayıcı bir zarf öne geçtiğinde yardımcı fiil özneden öne geliyor
+(„Rarely have I …“), başka hiçbir öğe bunu yapmıyor („Yesterday I spoke
+to her“ olduğu gibi kalıyor). Almanca eksende bu turun asıl uyarısı
+burada ve YÖNÜ TERS: Almancada ana cümle zaten fiil-ikinci kuralıyla
+çalışıyor, yani ÖNE ÇIKAN HER ÖĞE devriyor („Gestern habe ich …“). Yani
+Almanca okuyanın refleksi burada eksik değil FAZLA çalışıyor; tehlike
+kuralı uygulamamak değil, her yerde uygulamak. Hattın bugüne kadar
+gördüğü uyarıların çoğu bir eksikliği kapatıyordu; bu, bir fazlalığı
+kısıtlıyor.
+
+Ölçüm B2'de ilk kez çalıştı ve havuz büyüdüğü için ilk taslakta %4,7
+çıktı; yüz bir sözlükçe maddesiyle %0,0'a indi. Beş madde silindi (soru
+kökünde ya da kabul listesinde geçip metinde geçmeyenler), bir dikte
+bölümü ayrıldı ve iki içerik düzeltmesi geldi: „supplier“ ünite 3'ün
+dersinde geçtiği için ünite 2'nin metninden çıkarıldı (ünite sırası
+sözcüğün hangi üniteye ait olduğunu belirliyor), ve „post-mortem“ tek
+belirteç olarak kapanmadığı için „a review after the event“ diye
+yazıldı — tireli terim de çok sözcüklü terim gibi davranıyor.
 
 
 ## Tamamlanma ölçütü
