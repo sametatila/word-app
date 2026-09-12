@@ -15469,3 +15469,49 @@ Beş enjeksiyon doğrulandı: web listesinden `lernomi:mock-run:` çıkarmak, bi
 depo modülüne belgesiz yeni anahtar eklemek, önek listesinin adını değiştirmek
 (sayı ölçüsü düşüyor), belgeli listeden canlı bir adı düşürmek, belgeli listeye
 artık var olmayan bir ad eklemek.
+
+## §11.426 — Olmayan ders webde uygulamanın dışına düşüyordu
+
+Android'de bulunamayan içerik ekranın **kendi kabuğunun içinde** ve neyin
+bulunamadığını **adıyla** söyleniyor: olmayan ders üzgün mirket + "Bu konuşma
+bulunamadı" (`LessonScreen` `!lesson` dalı, aynı anahtarı `RoleplayExamScreen`
+de kullanıyor), olmayan kâğıt kırmızı kart (`MockExamScreen`), kapalı profil
+boş kart (`UserScreen`).
+
+Webde aynı adresler `notFound()` atıyor ve Next en **yakın** `not-found.tsx`'i
+çiziyor. Üç durumdan yalnız ikisinin kendi 404'ü vardı (kâğıt §11.419'da,
+profil daha önce). Tanınmayan bir ders kimliği (`/lessons/<id>` ve
+`/lessons/<id>/exam`) kökteki genel 404'e düşüyordu — iki kayıpla birlikte:
+
+- Cümle genel: "Sayfa bulunamadı". Bulunamayan şey bir sayfa değil bir
+  **konuşma**; Android'in cümlesi (`lesson.this_lesson_wasn_t_found`) üç dilde
+  zaten tabanda duruyordu ve webde **hiçbir yerden çağrılmıyordu**.
+- Kökteki 404 kök düzeninde çiziliyor, yani **uygulama kabuğunun dışında**:
+  gezinme çubuğu kayboluyor, çıkış yolu iki bağlantıdan ibaret kalıyor.
+
+İki dosya eklendi:
+
+- `(app)/lessons/[id]/not-found.tsx` — üzgün mirket, Android'in cümlesi, tek
+  "Geri dön". Sınır `[id]` altında olduğu için `exam` alt yolunu da kapsıyor.
+- `(app)/not-found.tsx` — grup düzeyinde, kabuğun **içinde** kart. Geri kalan
+  dinamik adresler (sınav seviyesi, ünite indeksi, modül patronu) artık
+  gezinmeyi kaybetmiyor. Android'de adres yazılamadığı için böyle bir an yok;
+  kabuğun hiç kaybolmaması o davranışın webdeki karşılığı. Bölümüne özel 404'ü
+  olan üç yer bu sınırdan önce bulunuyor.
+
+### §301
+
+Yedi ölçü. Dördü dosya varlığı (grup + üç bölüm 404'ü). Beşinci ve altıncı
+harvest'in çalıştığı — kümeler boşalırsa "eksik yok" boş bir doğru olurdu.
+Yedincisi asıl ölçü: Android'in bulunamadı cümlelerinin kümesi ile webin
+kümesi **birebir** eşit. İki yönlü: yeni bir Android durumu webde karşılıksız
+kalırsa "yalnız mobil" olarak düşüyor, webde kalıp Android'de kalkan bir cümle
+"yalnız web" olarak.
+
+`pron.word_missing` desene uyuyor ama bir bulunamadı durumu değil (telaffuz
+kartındaki "duyulmadı" etiketi) — muafiyet kapıda belgeli ve liste yalnızca
+küçülebilir.
+
+Üç enjeksiyon doğrulandı: ders 404'ünü kaldırmak (hem dosya ölçüsü hem küme
+ölçüsü düşüyor — yani kapı kusurun kendisini yakalıyor), grup 404'ünü
+kaldırmak, muafiyeti boşaltmak.

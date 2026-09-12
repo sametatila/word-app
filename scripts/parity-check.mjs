@@ -16406,6 +16406,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameSet("web hesap disi anahtarlar belgeli", kapsamsiz(webAnahtar, webOnek), WEB_CIHAZ, "kapsanmayan", "belgeli");
     sameSet("mobil hesap disi anahtarlar belgeli", kapsamsiz(mobAnahtar, mobOnek), MOBIL_CIHAZ, "kapsanmayan", "belgeli");
   }
+  /* ------------------------------------------- 301. BULUNAMAYAN ICERIK EKRANI
+   *
+   * Android'de olmayan icerik ekranin KENDI kabugunun icinde soyleniyor ve
+   * neyin bulunamadigini ADIYLA soyluyor: olmayan ders uzgun mirket + "Bu
+   * konusma bulunamadi" (`LessonScreen`, `RoleplayExamScreen`), olmayan kagit
+   * kirmizi kart (`MockExamScreen`), kapali profil (`UserScreen`).
+   *
+   * Webde ayni adresler `notFound()` atiyor ve en YAKIN `not-found.tsx`
+   * ciziliyor. Ucunden yalnizca ikisinin kendi 404'u vardi; ders kimligi
+   * tanınmayan adres kokteki genel 404'e dusuyordu - hem "Sayfa bulunamadi"
+   * gibi genel bir cumle, hem de uygulama kabugunun DISINDA: kullanici
+   * gezinmeyi de kaybediyordu.
+   *
+   * Olculer: (1) grup duzeyinde bir `not-found.tsx` var - yani hicbir
+   * uygulama adresi kabugun disina dusmuyor, (2) Android'in bulunamadi
+   * cumlelerinin hepsi webde de bir yerden cagriliyor (iki yonlu kume
+   * karsilastirmasi: yeni bir Android durumu webde karsiliksiz kalirsa da,
+   * webde kalip Android'de kalkan bir cumle de dusuyor), (3) kumeler bos
+   * degil - harvest bozulursa "eksik yok" bos bir dogru olurdu.
+   *
+   * `pron.word_missing` desene uyuyor ama bir bulunamadi durumu DEGIL: telaffuz
+   * kartinda "duyulmadi" etiketi (`feedback/pronounce-card`). Muafiyet
+   * belgeli ve liste yalnizca kuculebilir. */
+  {
+    const yuruKod = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) yuruKod(d + "/" + e.name, out);
+        else if (/\.(ts|tsx)$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    const desen = /\bt[x]?\("([A-Za-z0-9_.]*(?:not_found|wasn_t_found|_missing)[A-Za-z0-9_.]*)"/g;
+    const anahtarlar = (kok) => {
+      const out = new Set();
+      for (const f of yuruKod(kok)) {
+        if (/\/i18n\//.test(f)) continue; // sozluk dosyalari tanim, kullanim degil
+        const src = read(f);
+        for (const m of src.matchAll(desen)) out.add(m[1]);
+      }
+      return [...out];
+    };
+    /* Desene uyan ama bulunamadi durumu OLMAYAN webe ozgu anahtarlar. */
+    const WEB_MUAF = ["pron.word_missing"];
+    const mob = anahtarlar("mobile/src");
+    const web = anahtarlar("src").filter((k) => !WEB_MUAF.includes(k));
+    const varMi = (p) => existsSync(new URL("../" + p, import.meta.url));
+    sameList(
+      "bulunamayan icerik ekrani",
+      [
+        "grup 404=" + (varMi("src/app/(app)/not-found.tsx") ? "var" : "YOK"),
+        "ders 404=" + (varMi("src/app/(app)/lessons/[id]/not-found.tsx") ? "var" : "YOK"),
+        "kagit 404=" + (varMi("src/app/(app)/mock-exams/[paper]/[skill]/not-found.tsx") ? "var" : "YOK"),
+        "profil 404=" + (varMi("src/app/(app)/u/[username]/not-found.tsx") ? "var" : "YOK"),
+        "mobil cumle=" + (mob.length > 2 ? "var" : "YOK(" + mob.length + ")"),
+        "web cumle=" + (web.length > 2 ? "var" : "YOK(" + web.length + ")"),
+      ],
+      ["grup 404=var", "ders 404=var", "kagit 404=var", "profil 404=var", "mobil cumle=var", "web cumle=var"],
+      "bulunan",
+      "beklenen",
+    );
+    sameSet("bulunamadi cumleleri iki platformda", mob, web, "mobil", "web");
+  }
 }
 
 console.log(
