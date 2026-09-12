@@ -14520,3 +14520,58 @@ Beş ölçü de enjeksiyonla doğrulandı: indeks listenin dışına taşırıld
 iki platformun seçenekleri ayrıştırıldığında, izin ekranına ham saat geri
 yazıldığında, tüketici kaynağı okumayı bıraktığında ve iki ortak liste
 ayrıştırıldığında ayrı ayrı kırmızıya döndü.
+
+## §11.408 — Ölçüldü, kapatılmadı: izin kartının ikinci şansı ve ölü paylaşım
+
+Bu turda iki şey ölçüldü ve **bilerek** kapatılmadı; ikisinin de sebebi
+yazılı.
+
+### 1. "Belki sonra" Android'de kalıcı, webde 21 günlük
+
+İki platform bildirim iznini **ayrı anlarda** soruyor ve bu ayrım meşru,
+gerekçesi de web tarafında yazılı:
+
+> "Girişte ya da ilk açılışta sorulan izin, henüz hiçbir şey yaşamamış birine
+> 'seni rahatsız edebilir miyim' demektir ve reddedilir; reddedilen izin
+> tarayıcıda kalıcıdır — ikinci bir şans yoktur." (`push-optin.tsx`)
+
+Web bu yüzden **tur özetinde** soruyor ve kapatılırsa **21 gün** susuyor
+(`DISMISS_DAYS`). Android ilk girişten sonra bir kez soruyor
+(`NotifPrimeScreen`) — orada reddin bedeli daha düşük, çünkü Android izni
+yeniden istenebilir. Buraya kadar ayrım gerekçeli.
+
+**Ayrışan şey ikinci şans:** Android'de `skip()` (`"Belki sonra"`)
+`markNotifPrimed()` yazıyor ve işaret **kalıcı** — kullanıcı bir daha hiç
+sorulmuyor. Webde aynı dokunuş 21 gün sonra geri geliyor. Hatırlatma elde
+tutmanın en güçlü kaldıracı olduğu için bu, Android'de kalıcı bir kayıp.
+
+Doğru kapatma **tek başına bir erteleme değil**: mobilde `NotifPrime` yalnız
+giriş akışından ulaşılabiliyor (`AuthScreen` `nav.reset`), yani oturumu açık
+kalan kullanıcıda erteleme hiç tetiklenmez. Gerçek eş, webdeki gibi **tur
+özetinde** bir kart — ve o kart `pushw.*` anahtarlarını istiyor, o anahtarlar
+şu an yalnız `src/i18n/web/*` içinde. Mobile taşımak altı sözlük dosyasına
+dokunmak demek (`mobile/src/i18n/*` + `i18n-pull` ile `src/i18n/base/*`) ve o
+dosyalar **şu anda paralel oturumun elinde**. Kayıtlı kurala göre (ortak
+sözlüklerde eşzamanlı düzenleme iki kez anahtar kaybettirdi) bu iş onların
+turu bitince yapılacak.
+
+### 2. `shareStreak` — çağıranı olmayan paylaşım
+
+`mobile/src/lib/share.ts` içinde `shareStreak(days)` var, **hiçbir yerden
+çağrılmıyor**, ve webde karşılığı hiç yok. `share.streak` metni ise üç dilde
+çevrilmiş ve iki sözlükte duruyor. Yani uçlardaki "yazıldı, bağlanmadı"
+sınıfının sözlük/işlev karşılığı (`check:endpoints`in varlık sebebi).
+
+Bağlamak yerine **not edilmesinin** sebebi: seri **zaten** tur sonucu
+paylaşım metninin içinde gidiyor (`buildShareText` → `social.days_streak`
+satırı). Ayrı bir "serini paylaş" düğmesi aynı bilgiyi ikinci bir yüzeyden
+sunardı; muhtemelen hiç bağlanmamasının sebebi de bu. Silmek ise altı sözlük
+dosyasında bir anahtar silmek demek — yine paralel oturumun dosyaları.
+
+**Not:** mobil sözlükte hiç kullanılmayan anahtarları arayan bir ölçü
+denendi ve gürültülü çıktı: 1798 anahtarın 140'ı "kaynakta yok" göründü, ama
+çoğu çoğul varyantı (`.one`) ya da dinamik kurulan anahtar
+(`` `league.tier_${t}` ``, `` `genre.${kind}` ``). Kalan 49'un çoğu da öyle.
+Böyle bir kapı ancak dinamik kurulumu tanıyan bir çözümlemeyle yazılabilir;
+şimdilik `i18n:check`in **web** tarafındaki ölü anahtar denetimi tek yönlü
+kalıyor ve bu burada yazılı.
