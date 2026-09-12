@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
-| B1 | 4–25 | bekliyor |
+| B1 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
+| B1 | 7–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -607,6 +607,43 @@ indi. Bir de içerik düzeltmesi geldi: `en-b1-u1-r2` metninde „agency“
 kullanılmıştı, oysa o sözcük ünite 3'ün dersinde geçiyor — beş yerde
 „company“ ile değiştirildi. Ünite sırası sözcüğün hangi üniteye ait
 olduğunu belirliyor ve kapı bunu sayıyor.
+
+**B1 ünite 4–6 (2026-09-12).** Ünite 4 The lease · Moving day ·
+Living with flatmates · Getting it fixed; ünite 5 The bills ·
+The noise problem · Moving out · The neighbourhood; ünite 6
+Reason and result · When I arrive · Why I signed up · Only if.
+On sekiz egzersiz; ünite dışı ölçüm %0,0. B1 yuvalarının 36'sı dolu.
+
+Ünite 4 üç geleceği AYNI SAHNEDE buluşturuyor: „The van is coming at
+nine“ (ayarlanmış), „I am going to unpack the kitchen first“ (plan),
+„I will carry that one“ (o anki karar). A2 ünite 4 ikisini ayırmıştı,
+B1 ünite 2 üçüncüsünü getirmişti; taşınma günü üçünü bir arada
+kullanmadan anlatılamıyor. Almanca eksende bu, A2'de açılan notun en
+keskin hâli: Almancada ÜÇÜ İÇİN DE tek bir biçim var („ich werde“) ve
+zaman zarfı varsa çoğu zaman şimdiki zaman yetiyor.
+
+Ünite 5'in noktası ÖDÜN VERMENİN ÜÇ SÖZDİZİMİ. Anlamları aynı, yapıları
+değil: „although“ bir cümle, „despite“ bir isim, „however“ yeni bir cümle
+istiyor. Almanca eksende üçünün de karşılığı var („obwohl“, „trotz“,
+„jedoch“) ve bölüşüm BİREBİR aynı — yani satır büyümüyor. Bu, öğrenci
+için iyi haber ve karşılık bunu üç satırda da Almanca eşiyle söylüyor,
+çünkü burada eşleşmenin kendisi öğretici.
+
+Ünite 6 seviyenin en çok hata alan noktasını alıyor: ZAMAN VE KOŞUL YAN
+CÜMLESİNDE GELECEK ŞİMDİKİ ZAMANLA kuruluyor. „When I arrive, I will call
+you.“ İngilizce burada ASİMETRİK — yan cümle şimdiki zaman, ana cümle
+„will“. Almanca eksende fark tam olarak bu asimetride: Almanca İKİ
+tarafta da şimdiki zaman kuruyor („wenn ich ankomme, rufe ich dich an“),
+yani Almanca okuyan yan cümleyi doğru yapıp ana cümledeki „will“i
+düşürmeye yatkın. Karşılık bunu adıyla söylüyor.
+
+Ölçüm bu turda otuz sözlükçe maddesi ekletti — B1'de en yüksek sayı — ve
+iki yapısal düzeltme getirdi. Birincisi: „per cent“ sözlükçeyle
+kapatılamıyor, çünkü havuz sözlükçenin HAM dizesini alıyor ve metin
+„per“ ile „cent“i ayrı belirteç sayıyor; iki yerde „six in a hundred“
+yazıldı. İkincisi `prose` hattından geldi: „meter“ Amerikan yazımı diye
+uyarıldı (hat ölçülmüş İngiliz İngilizcesi yazıyor) — sayaç anlamında
+doğru olsa da satır „the reading“ ile yeniden yazıldı, kapı gevşetilmedi.
 
 ## Tamamlanma ölçütü
 

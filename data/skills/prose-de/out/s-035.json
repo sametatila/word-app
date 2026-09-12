@@ -1,0 +1,447 @@
+[
+ {
+  "tr": "Bir yıl daha mı? Karar neye dayanıyor?",
+  "kind": "intro",
+  "de": "Noch ein Jahr? Worauf stützt sich die Entscheidung?"
+ },
+ {
+  "tr": "Yüksek bir fatura. Asıl sorun hangisi?",
+  "kind": "intro",
+  "de": "Eine hohe Rechnung. Wo liegt das eigentliche Problem?"
+ },
+ {
+  "tr": "Taşınma günü. Ne plana uydu, ne uymadı?",
+  "kind": "intro",
+  "de": "Der Umzugstag. Was lief nach Plan, was nicht?"
+ },
+ {
+  "tr": "Beş gündür sıcak su yok. Ne işe yarıyor?",
+  "kind": "intro",
+  "de": "Seit fünf Tagen kein warmes Wasser. Was hilft?"
+ },
+ {
+  "tr": "Üç kural değil, üç gerekçe. Hangisi neden var?",
+  "kind": "intro",
+  "de": "Keine drei Regeln, drei Gründe. Warum gibt es welchen?"
+ },
+ {
+  "tr": "Çıkış kontrolü. Depozito neden tam geri geliyor?",
+  "kind": "intro",
+  "de": "Die Abnahme. Warum kommt die Kaution vollständig zurück?"
+ },
+ {
+  "tr": "Sözleşme üç kez okunmuş. En önemli kısım hangisi?",
+  "kind": "intro",
+  "de": "Der Mietvertrag wurde dreimal gelesen. Welcher Teil zählt am meisten?"
+ },
+ {
+  "tr": "Üst kattaki çamaşır makinesi. Sorun nasıl çözülüyor?",
+  "kind": "intro",
+  "de": "Die Waschmaschine über uns. Wie wird das Problem gelöst?"
+ },
+ {
+  "tr": "Sözleşmeye tek satır eklenmiş. Cevap nasıl yazılıyor?",
+  "kind": "intro",
+  "de": "Eine einzige neue Zeile im Vertrag. Wie wird geantwortet?"
+ },
+ {
+  "tr": "Sebep, sonuç ve amaç. Hangi sözcük nereye konabiliyor?",
+  "kind": "intro",
+  "de": "Grund, Folge und Zweck. Welches Wort darf wohin?"
+ },
+ {
+  "tr": "Dört sözcük, tek fikir. Hangisi cümleye başlayabiliyor?",
+  "kind": "intro",
+  "de": "Vier Wörter, ein Gedanke. Welches darf den Satz beginnen?"
+ },
+ {
+  "tr": "Kursa neden kaydolunmuş? Kısa cevap gerçek cevap değil.",
+  "kind": "intro",
+  "de": "Warum wurde der Kurs gebucht? Die kurze Antwort ist nicht die echte."
+ },
+ {
+  "tr": "Yan cümlede gelecek nasıl kuruluyor? Dört bağlaç, tek kural.",
+  "kind": "intro",
+  "de": "Wie steht die Zukunft im Nebensatz? Vier Bindewörter, eine Regel."
+ },
+ {
+  "tr": "İstasyonda son dakikalar. Hangi cümlede „will“ var, hangisinde yok?",
+  "kind": "intro",
+  "de": "Die letzten Minuten am Bahnhof. In welchem Satz steht „will“, in welchem nicht?"
+ },
+ {
+  "tr": "Ev kuralları ve aktarılan sözler. Hangi fiil kişiyi doğrudan alıyor?",
+  "kind": "intro",
+  "de": "Hausregeln und wiedergegebene Sätze. Welches Verb nimmt die Person direkt?"
+ },
+ {
+  "tr": "Çıkış ve mahalle cümleleri. Hangi fiil mastar, hangisi „-ing“ alıyor?",
+  "kind": "intro",
+  "de": "Sätze zu Abnahme und Viertel. Welches Verb nimmt den Infinitiv, welches „-ing“?"
+ },
+ {
+  "tr": "Üç ödün sözcüğü. Hangisi cümle, hangisi isim, hangisi yeni cümle istiyor?",
+  "kind": "intro",
+  "de": "Drei Wörter für den Einwand. Welches verlangt einen Satz, welches ein Nomen, welches einen Neuanfang?"
+ },
+ {
+  "tr": "Üç gelecek, üç anlam. Hangisi ayarlanmış, hangisi plan, hangisi o anki karar?",
+  "kind": "intro",
+  "de": "Drei Zukunftsformen, drei Bedeutungen. Welche ist verabredet, welche geplant, welche im Moment entschieden?"
+ },
+ {
+  "tr": "„decide“ sonrası mastar geliyor.",
+  "kind": "explain",
+  "de": "Nach „decide“ kommt der Infinitiv."
+ },
+ {
+  "tr": "Kapı, not, komşunun sözü, çözüm.",
+  "kind": "explain",
+  "de": "Die Tür, der Zettel, das Wort der Nachbarin, die Lösung."
+ },
+ {
+  "tr": "Kamyonet, sayaç, dolap, akşamüstü mutfak.",
+  "kind": "explain",
+  "de": "Der Transporter, der Zähler, der Schrank, am Nachmittag die Küche."
+ },
+ {
+  "tr": "„in full“ eksiksiz demek; kalıp olarak öğreniliyor.",
+  "kind": "explain",
+  "de": "„in full“ heißt vollständig; das lernt man als feste Wendung."
+ },
+ {
+  "tr": "„unless“ sonrası şimdiki zaman; „will change“ olmaz.",
+  "kind": "explain",
+  "de": "Nach „unless“ steht das Präsens; „will change“ geht nicht. Deutsch macht es mit „es sei denn“ genauso."
+ },
+ {
+  "tr": "„„So“ introduces the result and it cannot start a sentence.“",
+  "kind": "explain",
+  "de": "„„So“ introduces the result and it cannot start a sentence.“"
+ },
+ {
+  "tr": "„You don't have to ask about guests. This is your flat too.“",
+  "kind": "explain",
+  "de": "„You don't have to ask about guests. This is your flat too.“"
+ },
+ {
+  "tr": "Dolaylı anlatımda „will“ bir basamak geriye kayıp „would“ oluyor.",
+  "kind": "explain",
+  "de": "In der indirekten Rede rückt „will“ eine Stufe zurück und wird „would“. Deutsch nimmt dafür den Konjunktiv."
+ },
+ {
+  "tr": "Kısa cevap, iş için söylenen cevap, sınıftaki alışkanlık, gelecek.",
+  "kind": "explain",
+  "de": "Die kurze Antwort, die Antwort für die Arbeit, die Gewohnheit im Kurs, die Zukunft."
+ },
+ {
+  "tr": "„Two months, into an account that is not the landlord's normal one.“",
+  "kind": "explain",
+  "de": "„Two months, into an account that is not the landlord's normal one.“"
+ },
+ {
+  "tr": "Edilgen: ödeyen kim, söylenmiyor, çünkü kuralın kendisi anlatılıyor.",
+  "kind": "explain",
+  "de": "Passiv: wer zahlt, wird nicht genannt, weil es um die Regel selbst geht."
+ },
+ {
+  "tr": "„„Because“ introduces the reason and it can also start the sentence…“",
+  "kind": "explain",
+  "de": "„„Because“ introduces the reason and it can also start the sentence…“"
+ },
+ {
+  "tr": "Yan cümlede şimdiki zaman, ana cümlede „will“ — İngilizce burada asimetrik.",
+  "kind": "explain",
+  "de": "Im Nebensatz Präsens, im Hauptsatz „will“ — Englisch ist hier ungleich gebaut. Deutsch nimmt in beiden Teilen das Präsens."
+ },
+ {
+  "tr": "„He said that he would come on Monday.“ — aktarılınca „will“ „would“ oluyor.",
+  "kind": "explain",
+  "de": "„He said that he would come on Monday.“ — wiedergegeben wird aus „will“ ein „would“."
+ },
+ {
+  "tr": "bütün",
+  "kind": "gloss.tr",
+  "de": "ganz"
+ },
+ {
+  "tr": "rağmen",
+  "kind": "gloss.tr",
+  "de": "trotz"
+ },
+ {
+  "tr": "hâline geliyor",
+  "kind": "gloss.tr",
+  "de": "wird zu"
+ },
+ {
+  "tr": "iz",
+  "kind": "gloss.tr",
+  "de": "Spur"
+ },
+ {
+  "tr": "için",
+  "kind": "gloss.tr",
+  "de": "um zu"
+ },
+ {
+  "tr": "pano",
+  "kind": "gloss.tr",
+  "de": "Anzeigetafel"
+ },
+ {
+  "tr": "ancak",
+  "kind": "gloss.tr",
+  "de": "jedoch"
+ },
+ {
+  "tr": "bıçak",
+  "kind": "gloss.tr",
+  "de": "Messer"
+ },
+ {
+  "tr": "çünkü",
+  "kind": "gloss.tr",
+  "de": "weil"
+ },
+ {
+  "tr": "sıfır",
+  "kind": "gloss.tr",
+  "de": "null"
+ },
+ {
+  "tr": "sürdü",
+  "kind": "gloss.tr",
+  "de": "hielt"
+ },
+ {
+  "tr": "sütun",
+  "kind": "gloss.tr",
+  "de": "Spalte"
+ },
+ {
+  "tr": "kendim",
+  "kind": "gloss.tr",
+  "de": "selbst"
+ },
+ {
+  "tr": "yöntem",
+  "kind": "gloss.tr",
+  "de": "Methode"
+ },
+ {
+  "tr": "kibarca",
+  "kind": "gloss.tr",
+  "de": "höflich"
+ },
+ {
+  "tr": "malzeme",
+  "kind": "gloss.tr",
+  "de": "Material"
+ },
+ {
+  "tr": "özgüven",
+  "kind": "gloss.tr",
+  "de": "Selbstvertrauen"
+ },
+ {
+  "tr": "tahminî",
+  "kind": "gloss.tr",
+  "de": "geschätzt"
+ },
+ {
+  "tr": "temenni",
+  "kind": "gloss.tr",
+  "de": "ein Wunsch"
+ },
+ {
+  "tr": "-medikçe",
+  "kind": "gloss.tr",
+  "de": "es sei denn"
+ },
+ {
+  "tr": "anlaşmak",
+  "kind": "gloss.tr",
+  "de": "sich einigen auf"
+ },
+ {
+  "tr": "eksiksiz",
+  "kind": "gloss.tr",
+  "de": "vollständig"
+ },
+ {
+  "tr": "herhâlde",
+  "kind": "gloss.tr",
+  "de": "wahrscheinlich"
+ },
+ {
+  "tr": "mesaj at",
+  "kind": "gloss.tr",
+  "de": "schreib mir"
+ },
+ {
+  "tr": "ruh hâli",
+  "kind": "gloss.tr",
+  "de": "Stimmung"
+ },
+ {
+  "tr": "topladım",
+  "kind": "gloss.tr",
+  "de": "hatte gepackt"
+ },
+ {
+  "tr": "alkışladı",
+  "kind": "gloss.tr",
+  "de": "klatschte"
+ },
+ {
+  "tr": "asıl risk",
+  "kind": "gloss.tr",
+  "de": "das eigentliche Risiko"
+ },
+ {
+  "tr": "getiriyor",
+  "kind": "gloss.tr",
+  "de": "leitet ein"
+ },
+ {
+  "tr": "yapacağım",
+  "kind": "gloss.tr",
+  "de": "ich werde"
+ },
+ {
+  "tr": "asıl sebep",
+  "kind": "gloss.tr",
+  "de": "der eigentliche Grund"
+ },
+ {
+  "tr": "fark etmek",
+  "kind": "gloss.tr",
+  "de": "es merken"
+ },
+ {
+  "tr": "geleceğini",
+  "kind": "gloss.tr",
+  "de": "dass er kommt"
+ },
+ {
+  "tr": "plana uydu",
+  "kind": "gloss.tr",
+  "de": "lief nach Plan"
+ },
+ {
+  "tr": "tek başına",
+  "kind": "gloss.tr",
+  "de": "für sich allein"
+ },
+ {
+  "tr": "vardığımda",
+  "kind": "gloss.tr",
+  "de": "wenn ich ankomme"
+ },
+ {
+  "tr": "ben taşırım",
+  "kind": "gloss.tr",
+  "de": "ich trage"
+ },
+ {
+  "tr": "bir aktarma",
+  "kind": "gloss.tr",
+  "de": "ein Umstieg"
+ },
+ {
+  "tr": "işaret etti",
+  "kind": "gloss.tr",
+  "de": "zeigte auf"
+ },
+ {
+  "tr": "tartışmalar",
+  "kind": "gloss.tr",
+  "de": "Streitfälle"
+ },
+ {
+  "tr": "üst kattaki",
+  "kind": "gloss.tr",
+  "de": "über uns"
+ },
+ {
+  "tr": "yenileniyor",
+  "kind": "gloss.tr",
+  "de": "wird verlängert"
+ },
+ {
+  "tr": "gerçek okuma",
+  "kind": "gloss.tr",
+  "de": "der echte Zählerstand"
+ },
+ {
+  "tr": "iptal edildi",
+  "kind": "gloss.tr",
+  "de": "wurde gestrichen"
+ },
+ {
+  "tr": "kural kitabı",
+  "kind": "gloss.tr",
+  "de": "Regelbuch"
+ },
+ {
+  "tr": "zaman biçimi",
+  "kind": "gloss.tr",
+  "de": "die Zeitform"
+ },
+ {
+  "tr": "iki sırada da",
+  "kind": "gloss.tr",
+  "de": "in beiden Reihenfolgen"
+ },
+ {
+  "tr": "kendiliğinden",
+  "kind": "gloss.tr",
+  "de": "automatisch"
+ },
+ {
+  "tr": "şimdiye kadar",
+  "kind": "gloss.tr",
+  "de": "bisher"
+ },
+ {
+  "tr": "yazılı olarak",
+  "kind": "gloss.tr",
+  "de": "schriftlich"
+ },
+ {
+  "tr": "yerini bulmak",
+  "kind": "gloss.tr",
+  "de": "ankommen"
+ },
+ {
+  "tr": "çıkış kontrolü",
+  "kind": "gloss.tr",
+  "de": "die Abnahme"
+ },
+ {
+  "tr": "kulağa geliyor",
+  "kind": "gloss.tr",
+  "de": "klingt"
+ },
+ {
+  "tr": "tahmin ettiler",
+  "kind": "gloss.tr",
+  "de": "sie haben geschätzt"
+ },
+ {
+  "tr": "yürümeye değer",
+  "kind": "gloss.tr",
+  "de": "den Weg wert"
+ },
+ {
+  "tr": "şu kadardan fazla",
+  "kind": "gloss.tr",
+  "de": "um mehr als"
+ },
+ {
+  "tr": "kendi konuşmalarım",
+  "kind": "gloss.tr",
+  "de": "meine eigenen Telefonate"
+ }
+]

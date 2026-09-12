@@ -1,0 +1,302 @@
+[
+ {
+  "tr": "Fatura kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Rechnungskarte aus."
+ },
+ {
+  "tr": "Taşınma kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Umzugskarte aus."
+ },
+ {
+  "tr": "Yolculuk kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Reisekarte aus."
+ },
+ {
+  "tr": "Tren yedi onda; peron dört yazıyor ama üç; yolculuk altı saat; bir aktarma var.",
+  "kind": "form.facts",
+  "de": "Zug um zehn nach sieben; Gleis vier steht da, es ist aber drei; Reise sechs Stunden; ein Umstieg."
+ },
+ {
+  "tr": "Elektrik iki yüz kırk; üç aylık; son okuma tahminî; gerçek okuma bugün gönderilecek.",
+  "kind": "form.facts",
+  "de": "Strom zweihundertvierzig; für drei Monate; letzter Zählerstand geschätzt; der echte wird heute geschickt."
+ },
+ {
+  "tr": "Kamyonet dokuzda; önce mutfak; kırılacak kutu elde taşındı; sayaç fotoğrafı dokuz onda.",
+  "kind": "form.facts",
+  "de": "Transporter um neun; zuerst die Küche; die zerbrechliche Kiste von Hand getragen; Foto vom Zähler um zehn nach neun."
+ },
+ {
+  "tr": "Onu ben taşırım.",
+  "kind": "build.tr",
+  "de": "Die trage ich."
+ },
+ {
+  "tr": "Parka yürümeye değer.",
+  "kind": "build.tr",
+  "de": "Der Weg zum Park lohnt sich."
+ },
+ {
+  "tr": "Kamyonet dokuzda geliyor.",
+  "kind": "build.tr",
+  "de": "Der Transporter kommt um neun."
+ },
+ {
+  "tr": "Önce mutfağı boşaltacağım.",
+  "kind": "build.tr",
+  "de": "Ich packe zuerst die Küche aus."
+ },
+ {
+  "tr": "Bir çizelgede anlaşmalıyız.",
+  "kind": "build.tr",
+  "de": "Wir sollten uns auf einen Plan einigen."
+ },
+ {
+  "tr": "Vardığımda seni arayacağım.",
+  "kind": "build.tr",
+  "de": "Wenn ich ankomme, rufe ich dich an."
+ },
+ {
+  "tr": "Kontrolden önce ne yapmıştın?",
+  "kind": "build.tr",
+  "de": "Was hattest du vor der Abnahme gemacht?"
+ },
+ {
+  "tr": "Pazartesi geleceğini söyledi.",
+  "kind": "build.tr",
+  "de": "Er sagte, er komme am Montag."
+ },
+ {
+  "tr": "Tren durduğu için geç kaldım.",
+  "kind": "build.tr",
+  "de": "Ich kam zu spät, weil der Zug stehen blieb."
+ },
+ {
+  "tr": "Bu bölgede yaşamayı seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich lebe gern in dieser Gegend."
+ },
+ {
+  "tr": "Gürültüye rağmen sakin kaldım.",
+  "kind": "build.tr",
+  "de": "Trotz des Lärms blieb ich ruhig."
+ },
+ {
+  "tr": "Misafirleri sormana gerek yok.",
+  "kind": "build.tr",
+  "de": "Du musst wegen Gästen nicht fragen."
+ },
+ {
+  "tr": "Sertifika almak için kaydoldum.",
+  "kind": "build.tr",
+  "de": "Ich habe mich angemeldet, um ein Zertifikat zu bekommen."
+ },
+ {
+  "tr": "Tren kalkana kadar bekleyeceğim.",
+  "kind": "build.tr",
+  "de": "Ich warte, bis der Zug abfährt."
+ },
+ {
+  "tr": "Tren durdu, bu yüzden geç kaldım.",
+  "kind": "build.tr",
+  "de": "Der Zug blieb stehen, also kam ich zu spät."
+ },
+ {
+  "tr": "Depozito taşınmadan önce ödeniyor.",
+  "kind": "build.tr",
+  "de": "Die Kaution wird vor dem Einzug gezahlt."
+ },
+ {
+  "tr": "Depozitoyu eksiksiz geri verdiler.",
+  "kind": "build.tr",
+  "de": "Sie haben die Kaution vollständig zurückgegeben."
+ },
+ {
+  "tr": "Fiyat değişmedikçe kabul edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich nehme an, es sei denn, der Preis ändert sich."
+ },
+ {
+  "tr": "Bana tesisatçıyı beklememi söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte mir, ich solle auf den Klempner warten."
+ },
+ {
+  "tr": "Sözü tuttuğun sürece imzalayacağım.",
+  "kind": "build.tr",
+  "de": "Ich unterschreibe, solange du dein Wort hältst."
+ },
+ {
+  "tr": "İki kez sormama rağmen gürültü sürdü.",
+  "kind": "build.tr",
+  "de": "Obwohl ich zweimal fragte, ging der Lärm weiter."
+ },
+ {
+  "tr": "Duvarlar ince. Ancak bunu konuşabiliriz.",
+  "kind": "build.tr",
+  "de": "Die Wände sind dünn. Wir können jedoch darüber reden."
+ },
+ {
+  "tr": "İngilizcemi pratik etmek için kaydoldum.",
+  "kind": "build.tr",
+  "de": "Ich habe mich angemeldet, um mein Englisch zu üben."
+ },
+ {
+  "tr": "Daha iyi duyabilmek için önde oturuyorum.",
+  "kind": "build.tr",
+  "de": "Ich sitze vorn, damit ich besser hören kann."
+ },
+ {
+  "tr": "Yemekten sonra mutfağı toplaman gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst die Küche nach dem Kochen aufräumen."
+ },
+ {
+  "tr": "Onlar gelmeden önce her şeyi temizlemiştim.",
+  "kind": "build.tr",
+  "de": "Ich hatte alles geputzt, bevor sie kamen."
+ },
+ {
+  "tr": "Daha az ısıtma kullansaydık fatura daha düşük olurdu.",
+  "kind": "build.tr",
+  "de": "Wenn wir weniger heizten, wäre die Rechnung niedriger."
+ },
+ {
+  "tr": "Yasak değil, gerek yok.",
+  "kind": "build.hint",
+  "de": "Kein Verbot, sondern keine Pflicht."
+ },
+ {
+  "tr": "„in full“ kalıp: tamamı demek.",
+  "kind": "build.hint",
+  "de": "„in full“ ist eine feste Wendung: vollständig."
+ },
+ {
+  "tr": "„enjoy“ sonrası „-ing“ istiyor.",
+  "kind": "build.hint",
+  "de": "Nach „enjoy“ steht „-ing“. Deutsch sagt dafür einfach „gern“."
+ },
+ {
+  "tr": "Soruda „had“ özneden önce geçiyor.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „had“ vor das Subjekt."
+ },
+ {
+  "tr": "„in order to“ aynı amacı daha resmî söylüyor.",
+  "kind": "build.hint",
+  "de": "„in order to“ sagt denselben Zweck förmlicher."
+ },
+ {
+  "tr": "„so“ sonucu getiriyor ve cümleye BAŞLAYAMIYOR.",
+  "kind": "build.hint",
+  "de": "„so“ leitet die Folge ein und darf den Satz NICHT beginnen — anders als deutsch „also“."
+ },
+ {
+  "tr": "„tell“ kişiyi doğrudan alıyor ve sonrası mastar.",
+  "kind": "build.hint",
+  "de": "„tell“ nimmt die Person direkt, danach ein Infinitiv. Deutsch braucht dafür einen Nebensatz."
+ },
+ {
+  "tr": "„agree“ konuda „on“ alıyor; kişide „with“ alırdı.",
+  "kind": "build.hint",
+  "de": "„agree“ nimmt bei einer Sache „on“, bei einer Person „with“ — deutsch „sich einigen auf“."
+ },
+ {
+  "tr": "„worth“ da „-ing“ istiyor; „worth to walk“ olmaz.",
+  "kind": "build.hint",
+  "de": "Auch „worth“ verlangt „-ing“; „worth to walk“ gibt es nicht."
+ },
+ {
+  "tr": "Edilgen: ödeyen kim, söylenmiyor; kural anlatılıyor.",
+  "kind": "build.hint",
+  "de": "Passiv: wer zahlt, wird nicht genannt; es geht um die Regel."
+ },
+ {
+  "tr": "„although“ bir CÜMLE bağlıyor; virgül iki yarıyı ayırıyor.",
+  "kind": "build.hint",
+  "de": "„although“ verbindet einen SATZ, wie „obwohl“; das Komma trennt die beiden Hälften."
+ },
+ {
+  "tr": "Aktarılınca „will“ bir basamak geriye kayıp „would“ oluyor.",
+  "kind": "build.hint",
+  "de": "Wiedergegeben rückt „will“ eine Stufe zurück und wird „would“; Deutsch nimmt den Konjunktiv."
+ },
+ {
+  "tr": "„as long as“ da aynı kurala giriyor: yan cümlede „will“ yok.",
+  "kind": "build.hint",
+  "de": "„as long as“ folgt derselben Regel: im Nebensatz steht kein „will“."
+ },
+ {
+  "tr": "„unless“ „eğer … değilse“ demek ve yine şimdiki zaman alıyor.",
+  "kind": "build.hint",
+  "de": "„unless“ heißt „es sei denn“ und nimmt ebenfalls das Präsens."
+ },
+ {
+  "tr": "O anda verilen karar: „will“. Üç biçim üç ayrı anlam taşıyor.",
+  "kind": "build.hint",
+  "de": "Ein Entschluss im Moment: „will“. Drei Formen tragen drei Bedeutungen; Deutsch hat dafür nur eine."
+ },
+ {
+  "tr": "Önceden kurulmuş plan: „going to“. Kimseyle ayarlanmış değil.",
+  "kind": "build.hint",
+  "de": "Ein vorher gefasster Plan: „going to“. Mit niemandem verabredet."
+ },
+ {
+  "tr": "„because“ sebebi getiriyor ve cümlenin başında da durabiliyor.",
+  "kind": "build.hint",
+  "de": "„because“ leitet den Grund ein und darf auch am Satzanfang stehen, wie „weil“."
+ },
+ {
+  "tr": "Kuraldan gelen zorunluluk; „after“ sonrası fiil „-ing“ alıyor.",
+  "kind": "build.hint",
+  "de": "Pflicht aus einer Regel; nach „after“ steht das Verb auf „-ing“."
+ },
+ {
+  "tr": "„until“ sonrası da şimdiki zaman; „until it will depart“ olmaz.",
+  "kind": "build.hint",
+  "de": "Auch nach „until“ steht das Präsens; „until it will depart“ gibt es nicht."
+ },
+ {
+  "tr": "„despite“ bir İSİM istiyor; cümle gelseydi „although“ gerekirdi.",
+  "kind": "build.hint",
+  "de": "„despite“ verlangt ein NOMEN, wie „trotz“; bei einem Satz bräuchte man „although“."
+ },
+ {
+  "tr": "„however“ YENİ bir cümle başlatıyor ve kendi virgülüyle geliyor.",
+  "kind": "build.hint",
+  "de": "„however“ beginnt einen NEUEN Satz und bringt sein eigenes Komma mit, wie „jedoch“."
+ },
+ {
+  "tr": "Amaç sade mastarla kuruluyor; „for practise“ diye bir kuruluş yok.",
+  "kind": "build.hint",
+  "de": "Der Zweck steht mit dem einfachen Infinitiv; „for practise“ gibt es nicht. Deutsch nimmt „um … zu“."
+ },
+ {
+  "tr": "Amaçta bir kip varsa („can“) mastar yetmiyor, „so that“ gerekiyor.",
+  "kind": "build.hint",
+  "de": "Steht im Zweck ein Modalverb („can“), reicht der Infinitiv nicht; dann braucht es „so that“, deutsch „damit“."
+ },
+ {
+  "tr": "Önce olan iş „had“ + üçüncü hâl alıyor; sonraki sade geçmişte kalıyor.",
+  "kind": "build.hint",
+  "de": "Das frühere Geschehen nimmt „had“ + dritte Form; das spätere bleibt einfach. Deutsch hat dafür das Plusquamperfekt."
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim burada olmayan bir şimdiyi anlatıyor.",
+  "kind": "build.hint",
+  "de": "Irreale Bedingung: die Vergangenheitsform meint hier eine Gegenwart, die es nicht gibt."
+ },
+ {
+  "tr": "Ayarlanmış: saat belli ve karşı taraf da biliyor. Şimdiki zamanın sürerli biçimi.",
+  "kind": "build.hint",
+  "de": "Verabredet: die Uhrzeit steht fest und die andere Seite weiß es. Die Verlaufsform der Gegenwart."
+ },
+ {
+  "tr": "Zaman yan cümlesinde gelecek ŞİMDİKİ zamanla kuruluyor; „will“ ana cümlede kalıyor.",
+  "kind": "build.hint",
+  "de": "Im Zeitnebensatz steht die Zukunft im PRÄSENS; „will“ bleibt im Hauptsatz. Deutsch nimmt in beiden Teilen das Präsens."
+ }
+]
