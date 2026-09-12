@@ -18088,6 +18088,94 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------- 322. PROFIL KAROLARI: OLU ALAN VE OLU SORGU BIRAKMIYOR
+ *
+ * Profil karo izgarasi dortten IKIYE indirilmisti (ogrenilen kelime ve sure
+ * Gelisim ekraninda zaten duruyor, orada birebir tekrar ediyorlardi). Ekrandan
+ * kalktilar ama `ProfileStats` ALANLARI kaldi ve sayfa onlari doldurmak icin
+ * `getProgress` cagiriyordu: seviye kirilimi, gunluk serit, kuyruk sayilari -
+ * BES ayri sorgu, sonucu hicbir yerde cizilmiyor. Her profil acilisinda
+ * bedava bir okuma. Android'in ayni ekrani o iki sayiyi gostermiyor ve
+ * fazladan istek de atmiyor.
+ *
+ * Ucu birlikte olculuyor, cunku biri digerini geri getirir:
+ *   1) MUTLAK: `ProfileStats`in her alani govdede gercekten okunuyor
+ *      (`stats.<alan>`). Olu bir alan yeniden eklenirse kapi soyler.
+ *   2) MUTLAK: sayfa `getProgress` cagirmiyor.
+ *   3) Iki platform ayni IKI karoyu ciziyor (etiket anahtarlariyla).
+ *
+ * Dorduncusu ayni ekranin UC HAL kalibi: izgara yalniz `me`ye bakiyordu ve
+ * okuma patlayinca (me null, loading bitmis) iki karo SONSUZA KADAR iskelet
+ * ciziyordu. On bes satir yukarisindaki rozetler `meLoading ? iskelet : me ?
+ * rozet : null` ile dogru yazilmisti - ayni ekranda iki ayri kalip. */
+{
+  const silP = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gorunum = silP(read("src/components/profile/profile-view.tsx"));
+  const sayfa = silP(read("src/app/(app)/profile/page.tsx"));
+  const mobEkran = silP(read("mobile/src/screens/ProfileScreen.tsx"));
+
+  /* Tip govdesi: `export type ProfileStats = {` ile ilk `};` arasi. */
+  const tipGovde = (() => {
+    const i = gorunum.indexOf("export type ProfileStats = {");
+    if (i < 0) return "";
+    const j = gorunum.indexOf("};", i);
+    return j < 0 ? "" : gorunum.slice(i, j);
+  })();
+  const alanlar = [...tipGovde.matchAll(/^\s{2}(\w+)[?]?:/gm)].map((m) => m[1]).sort();
+  const okunan = [...gorunum.matchAll(/\bstats\.(\w+)/g)].map((m) => m[1]);
+  const oluAlan = alanlar.filter((a) => !okunan.includes(a));
+  /* Alan SAYISI da olculuyor: tip okunamazsa liste bosalir ve "olu alan yok"
+     kendiliginden dogru cikar (0/0 hicbir sey olcmez). */
+  sameList(
+    "profil karolarinin alanlari olu degil",
+    ["alan=" + alanlar.length, "olu=" + (oluAlan.length ? oluAlan.join("+") : "yok")],
+    ["alan=5", "olu=yok"],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "profil sayfasi olu sorgu atmiyor",
+    ["getProgress=" + (/getProgress\(/.test(sayfa) ? "CAGIRIYOR" : "yok")],
+    ["getProgress=yok"],
+    "bulunan",
+    "beklenen",
+  );
+  /* Izgaradaki karolar: etiket anahtarlari iki tarafta ayni ve ayni sirada. */
+  const karolar = (src, desen) => [...src.matchAll(desen)].map((m) => m[1]);
+  sameSet(
+    "profil karo izgarasi",
+    karolar(mobEkran, /<StatTile value=\{[^}]*\} label=\{t\("([\w.]+)"\)\}/g),
+    karolar(gorunum, /<Stat value=\{[^}]*\} label=\{t\("([\w.]+)"\)\}/g),
+  );
+  /* Uc hal kalibi: iskelet YALNIZ yukleniyorken.
+     Olcu IKI YUZEYI ayri ayri okuyor. Ilk yazilisinda iki olcu de
+     `{meLoading ? (...) : me ? (` deseniydi, yalniz pencere boyu farkliydi -
+     genis pencere rozet blogunu da eslesiyordu, yani iki olcu AYNI seyi
+     soyluyordu (ayni sentineli uretmenin bir bicimi). Simdi her yuzeyin KENDI
+     isaretinden geriye dogru en yakin `{meLoading ? (` bulunuyor. */
+  const ucHal = (ad, isaret) => {
+    const i = mobEkran.indexOf(isaret);
+    if (i < 0) return ad + "=ISARET YOK";
+    /* Yuzeyi saran kosul: geriye dogru en yakin `{meLoading ? (` DEGIL, en
+       yakin KOSUL ACICISI. Ilk yazilisinda yalniz `meLoading` acicisi
+       araniyordu; izgara `{!me ? (`e cevrilince olcu bir ustteki rozet
+       blogunun acicisini buluyor ve "uc halli" demeye devam ediyordu -
+       pencerenin komsu bloga tasmasi. */
+    const acicilar = [...mobEkran.slice(0, i).matchAll(/\{(?:meLoading \? \(|!me \? \(|me \? \()/g)];
+    if (!acicilar.length) return ad + "=KOSUL YOK";
+    const son = acicilar[acicilar.length - 1];
+    if (!son[0].startsWith("{meLoading")) return ad + "=IKI HALLI";
+    return ad + "=" + (/\) : me \? \(/.test(mobEkran.slice(son.index, i)) ? "uc halli" : "IKI HALLI");
+  };
+  sameList(
+    "profil izgarasi uc halli",
+    [ucHal("izgara", "<StatTile value="), ucHal("rozetler", "<FlameIcon color={colors.streakText}")],
+    ["izgara=uc halli", "rozetler=uc halli"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

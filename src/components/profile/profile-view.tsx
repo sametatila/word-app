@@ -50,9 +50,14 @@ export type ProfileStats = {
   email: string | null;
   streak: number;
   xp: number;
-  mastered: number;
-  /** Bu haftaki çalışma süresi (saniye). */
-  seconds: number;
+  /*
+    ÖĞRENİLEN KELİME VE SÜRE BURADA YOK. Karo ızgarası ikiye indirilirken
+    (aşağıdaki "İKİ SAYI, DÖRT DEĞİL") iki sayı ekrandan kalktı ama ALANLAR
+    kaldı: sayfa onları doldurmak için `getProgress` çağırıyordu — seviye
+    kırılımı, günlük şerit, kuyruk sayıları, beş ayrı sorgu — ve sonuç hiçbir
+    yerde çizilmiyordu. Android profil ekranı da bu iki sayıyı göstermiyor
+    ve fazladan istek atmıyor. Alanlar kaldırıldı, çağrı da.
+  */
   premium: boolean;
 };
 

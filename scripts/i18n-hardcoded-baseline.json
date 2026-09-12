@@ -8,7 +8,6 @@
   "src/app/(app)/lessons/[id]/page.tsx": 1,
   "src/app/(app)/mock-exams/page.tsx": 1,
   "src/app/(app)/mock-exams/stats/page.tsx": 1,
-  "src/app/(app)/profile/page.tsx": 1,
   "src/app/(app)/profile/progress/page.tsx": 1,
   "src/app/(app)/skills/page.tsx": 2,
   "src/app/(app)/words/page.tsx": 1,

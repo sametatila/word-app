@@ -16792,3 +16792,34 @@ anahtar arayüzde anahtarın kendisini yazdırır.
 Kapı **§321**, mutlak. Enjeksiyon üç yönden: mobilin duyurusunu `polite`e
 çekmek, webin başlığını başka bir anahtara çevirmek ve İngilizce sözlükten
 satırı silmek — üçü de ayrı ayrı kırmızı veriyor.
+
+## §11.462 — Profil karoları: ölü alan, ölü sorgu ve iki hâlli ızgara
+
+Profil karo ızgarası dörtten ikiye indirilmişti (öğrenilen kelime ve süre
+Gelişim'de zaten var, burada birebir tekrar ediyorlardı). Ekrandan kalktılar
+ama **alanlar kaldı**: `ProfileStats` hâlâ `mastered` ve `seconds` istiyordu ve
+sayfa onları doldurmak için `getProgress` çağırıyordu — seviye kırılımı, günlük
+şerit, kuyruk sayıları, **beş ayrı sorgu** — ve sonuç hiçbir yerde çizilmiyordu.
+Her profil açılışında bedava bir okuma. Android'in aynı ekranı o iki sayıyı
+göstermiyor ve fazladan istek de atmıyor. Alanlar ve çağrı kaldırıldı.
+
+İkinci kusur aynı ekranın **mobil** tarafındaydı: karo ızgarası yalnız `me`ye
+bakıyordu, yani okuma patlayınca (me null, loading bitmiş) iki karo **sonsuza
+kadar iskelet** çiziyordu. On beş satır yukarısındaki rozetler
+`meLoading ? iskelet : me ? rozet : null` ile doğru yazılmıştı — aynı ekranda
+iki ayrı kalıp. Izgara da ona çekildi; sayı yoksa karo hiç çizilmiyor, kimlik
+kartı ve menü satırları yerinde kalıyor. (Gelişim ekranında ekranın tamamı
+sayıya bağlı olduğu için orada hata kartı çiziliyor, §11.461.)
+
+Kapı **§322** dört şeyi birlikte ölçüyor, çünkü biri diğerini geri getirir:
+`ProfileStats`in her alanı gövdede gerçekten okunuyor (ölü alan = kırmızı),
+sayfa `getProgress` çağırmıyor, iki platform aynı iki karoyu çiziyor, ızgara ve
+rozetler üç hâlli.
+
+**Kapının kendi hatası da düzeltildi:** üç hâl ölçüsünün ilk yazılışında iki
+ölçü de `{meLoading ? (…) : me ? (` desenini arıyordu ve yalnız pencere boyu
+farklıydı — geniş pencere rozet bloğunu da eşliyordu, yani iki ölçü **aynı
+şeyi** söylüyordu. Enjeksiyon bunu gösterdi: ızgara `{!me ? (`e çevrildiğinde
+kapı yeşil kalıyordu, çünkü geriye dogru en yakın `meLoading` açıcısı olarak
+bir üstteki rozet bloğunu buluyordu. Şimdi her yüzeyin kendi işaretinden
+geriye doğru en yakın **koşul açıcısı** aranıyor.

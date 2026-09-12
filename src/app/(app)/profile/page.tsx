@@ -1,6 +1,6 @@
 import { getUserInfo } from "@/lib/auth/server";
 import { getT } from "@/lib/i18n/server";
-import { ensureProfile, getProgress } from "@/lib/session";
+import { ensureProfile } from "@/lib/session";
 import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
@@ -26,13 +26,6 @@ export default async function ProfilePage() {
 
   try {
     const profile = await ensureProfile(user.id, user.name);
-    const today = new Date().toISOString().slice(0, 10);
-    // İstatistikler okunamazsa sayfa yine açılıyor: kimlik ve bağlantılar
-    // ilerlemeye bağlı değil, yalnız sayılar sıfır görünür.
-    const data = await getProgress(user.id, today).catch((err) => {
-      console.error("[profile] ilerleme okunamadı", err);
-      return null;
-    });
 
     return (
       <ProfileView
@@ -52,8 +45,6 @@ export default async function ProfilePage() {
           email: user.email ?? null,
           streak: profile.currentStreak,
           xp: profile.totalXp,
-          mastered: data ? data.levels.reduce((s, l) => s + l.mastered, 0) : 0,
-          seconds: data?.seconds ?? 0,
           premium: await isPremium(user.id),
         }}
       />

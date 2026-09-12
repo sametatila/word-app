@@ -102,14 +102,19 @@ export function ProfileScreen() {
           (UserScreen `StatTile`) ve webin iki profil karosunda zaten
           `formatNumber` kullanıyor.
         */}
-        {me ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
-            <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
-          </View>
-        ) : (
-          // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo
-          // gelince ekran iki satır boyu uzamıyor.
+        {/*
+          ÜÇ HÂL, İKİ DEĞİL. Izgara yalnız `me`ye bakıyordu: okuma patlayınca
+          (`me` null, `loading` bitmiş) iki karo SONSUZA KADAR iskelet
+          çiziyordu. Aynı dosyanın on beş satır yukarısındaki rozetleri
+          `meLoading ? iskelet : me ? rozet : null` ile doğru yazılmıştı —
+          aynı ekranda iki ayrı kalıp. Izgara da ona çekildi: sayı yoksa karo
+          hiç çizilmiyor, kimlik kartı ve menü satırları yerinde kalıyor
+          (bkz. Gelişim ekranı, §321 — orada ekranın TAMAMI sayıya bağlı
+          olduğu için hata kartı çiziliyor).
+        */}
+        {meLoading ? (
+          // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: iki karo
+          // gelince ekran bir satır boyu uzamıyor.
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             {[0, 1].map((i) => (
               <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
@@ -118,7 +123,12 @@ export function ProfileScreen() {
               </SkeletonCard>
             ))}
           </View>
-        )}
+        ) : me ? (
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
+            <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
+          </View>
+        ) : null}
 
         {/*
           Premium bandı MAĞAZADAN BAĞIMSIZ görünüyor.
