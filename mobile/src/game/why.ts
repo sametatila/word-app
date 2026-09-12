@@ -236,13 +236,40 @@ const SPELLING_HINTS: [RegExp, string][] = [
   [/h/, "sphint.h"],
 ];
 
-function whySpelling(word: WhyWord, typed?: string | null): Why {
+/**
+ * İNGİLİZCE YAZIM İPUÇLARI — yukarıdaki tablo Almanca imlasının kuralları.
+ *
+ * Paylaşıldığında öğrenciye yanlış kural gidiyordu ve en görüneni tam
+ * tersiydi: Almancada "isimler her zaman büyük harfle başlar", İngilizcede
+ * yalnız özel adlar ve „I“ büyük yazılır. Sessiz „h“ kuralı da öyle —
+ * İngilizce yazımında „h“ geçen her sapmada Almanca uzatma kuralı
+ * çıkıyordu (2026-09-12 ölçüldü).
+ *
+ * Sıra önemli: önce ayırt edici örüntü, en sonda genel karşılaştırma.
+ */
+const SPELLING_HINTS_EN: [RegExp, string][] = [
+  [/(kn|wr|gh|mb|bt|ps)/i, "sphint.en-silent"],
+  [/ph/i, "sphint.en-ph"],
+  [/th/i, "sphint.en-th"],
+  [/ie|ei/i, "sphint.en-ie"],
+  [/(.)\1/i, "sphint.en-double"],
+  [/(ou|au|ea|oo|ow)/i, "sphint.en-vowel"],
+  [/[A-Z]/, "sphint.en-caps"],
+];
+
+function whySpelling(word: WhyWord, typed?: string | null, targetLang: string = "de"): Why {
   const target = word.de;
   const diff = charDiff(typed ?? "", target);
   const changed = [...diff.typed.filter((s) => s.kind !== "same"), ...diff.target.filter((s) => s.kind !== "same")]
     .map((s) => s.text)
     .join("");
-  const hint = SPELLING_HINTS.find(([re]) => re.test(changed))?.[1];
+  const table = targetLang === "en" ? SPELLING_HINTS_EN : SPELLING_HINTS;
+  // İkinci geçiş İngilizcede HEDEF kelimeye bakıyor (web `lib/why.ts` ile aynı
+  // gerekçe): "know" yerine "now" yazanın farkı yalnız "k" ve tek başına bir
+  // şey söylemiyor.
+  const hint =
+    table.find(([re]) => re.test(changed))?.[1] ??
+    (targetLang === "en" ? SPELLING_HINTS_EN.find(([re]) => re.test(target))?.[1] : undefined);
   // Fark şeritte harf harf çiziliyor (FeedbackLine); metin yalnız ipucu.
   const text = tx(hint ?? "sphint.compare");
   return { type: "spelling", text, href: null, diff: typed ? diff : undefined };
@@ -332,7 +359,7 @@ export function whyFor(input: WhyInput): Why {
         : { type: "plural", text: tx("why.plural_learn"), href: null };
     case "spelling":
       return w
-        ? whySpelling(w, input.detail)
+        ? whySpelling(w, input.detail, input.targetLang)
         : { type: "spelling", text: tx("sphint.compare"), href: null };
     case "verb_position":
       return whyVerbPosition(input.answer, input.tail, input.targetLang);
@@ -375,10 +402,12 @@ export function whyFor(input: WhyInput): Why {
         href: null,
       };
     case "pronunciation":
+      // Telaffuz ipucu dile bağlı: Almanca metin "z = ts, w = v" diyor ve bu
+      // İngilizce öğrenene yanlış bilgi (web `lib/why.ts` ile aynı).
       return {
         type: "pronunciation",
         text: w
-          ? tx("why.pronunciation", { word: w.de })
+          ? tx(input.targetLang === "en" ? "why.pronunciation_en" : "why.pronunciation", { word: w.de })
           : tx("why.pronunciation_general"),
         href: null,
       };

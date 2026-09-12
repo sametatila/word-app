@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { currentTargetLang } from "@/components/games/types";
 import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
@@ -142,6 +143,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
         status === "wrong"
           ? whyFor({
               type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
+              targetLang: currentTargetLang(),
               word,
               detail: value,
             }, lang)

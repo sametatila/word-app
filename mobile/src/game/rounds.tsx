@@ -540,7 +540,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
-    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val }).text;
+    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() }).text;
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why });
   }
   const inputBlock = (
@@ -757,7 +757,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setPicked(o);
     markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
-    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o }).text });
+    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }).text });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
@@ -989,7 +989,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
-      setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join("") }).text });
+      setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }).text });
     } else {
       sfx("tap");
     }

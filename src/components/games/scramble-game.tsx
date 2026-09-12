@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { currentTargetLang } from "@/components/games/types";
 import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
@@ -166,7 +167,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
       label={tx("rounds.order_letters")}
       verdict={status === "playing" ? null : status}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
-      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }, lang) : null}
+      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join(""), targetLang: currentTargetLang() }, lang) : null}
       feedback={
         <span className="inline-flex items-center">
           {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}

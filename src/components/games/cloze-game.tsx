@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { currentTargetLang } from "@/components/games/types";
 import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
@@ -96,7 +97,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={
         picked != null && !correct
-          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked }, lang)
+          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked, targetLang: currentTargetLang() }, lang)
           : null
       }
       feedback={

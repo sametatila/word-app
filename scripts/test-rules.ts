@@ -92,6 +92,23 @@ assert.ok(/sıklık zarfı/i.test(e2.text), `İngilizce sıra gerekçesi: ${e2.t
 const e3 = whyFor({ type: "verb_position", answer: ["Heute", "gehe", "ich", "ins", "Kino"], tail: "." });
 assert.ok(/ikinci sırada|fiilden SONRA/i.test(e3.text), `Almanca gerekçe korunmalı: ${e3.text}`);
 
+/*
+  YAZIM ve TELAFFUZ ipuçları da dile bağlı. Almanca tablo İngilizce öğrenene
+  yanlış kural veriyordu — en görüneni tersiydi: Almancada "isimler her zaman
+  büyük harfle başlar", İngilizcede yalnız özel adlar ve „I“.
+*/
+const sp = (de: string, typed: string, targetLang?: "en") =>
+  whyFor({ type: "spelling", word: { de, tr: "—", artikel: "" }, detail: typed, targetLang }).text;
+assert.ok(/yazılır ama okunmaz/.test(sp("know", "now", "en")), `İngilizce sessiz harf ipucu: ${sp("know", "now", "en")}`);
+assert.ok(/çift harf/.test(sp("address", "adress", "en")));
+assert.ok(/ph/.test(sp("photo", "foto", "en")));
+assert.ok(/özel adlar/.test(sp("Monday", "monday", "en")));
+assert.ok(/ünlüden sonraki h|harfleri tek tek/.test(sp("Uhr", "ur")), "Almanca yol değişmedi");
+const pr = (targetLang?: "en") =>
+  whyFor({ type: "pronunciation", word: { de: "sheep", tr: "koyun", artikel: "" }, targetLang }).text;
+assert.ok(/ünlü uzunluğu/.test(pr("en")), `İngilizce telaffuz ipucu: ${pr("en")}`);
+assert.ok(/z = ts/.test(pr()), "Almanca telaffuz ipucu korunmalı");
+
 // Sıra sınıflandırması dile bağlı
 assert.equal(classifyOrder(["I", "get", "usually", "up"], ["I", "usually", "get", "up"], ".", "en"), "word_order",
   "İngilizce düz cümlede fiilin yeri ölçülemez");

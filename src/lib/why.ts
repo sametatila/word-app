@@ -224,13 +224,50 @@ const SPELLING_HINTS: [RegExp, string][] = [
   [/h/, "sphint.h"],
 ];
 
-function whySpelling(word: WhyWord, lang: NativeLang, typed?: string | null): Why {
+/**
+ * İNGİLİZCE YAZIM İPUÇLARI — yukarıdaki tablo Almanca imlasının kuralları.
+ *
+ * Paylaşıldığında öğrenciye yanlış kural gidiyordu ve en görüneni tam
+ * tersiydi: Almancada "isimler her zaman büyük harfle başlar", İngilizcede
+ * yalnız özel adlar ve „I“ büyük yazılır. Sessiz „h“ kuralı da öyle —
+ * İngilizce yazımında „h“ geçen her sapmada Almanca uzatma kuralı
+ * çıkıyordu (2026-09-12 ölçüldü).
+ *
+ * Sıra önemli: önce ayırt edici örüntü, en sonda genel karşılaştırma.
+ */
+const SPELLING_HINTS_EN: [RegExp, string][] = [
+  [/(kn|wr|gh|mb|bt|ps)/i, "sphint.en-silent"],
+  [/ph/i, "sphint.en-ph"],
+  [/th/i, "sphint.en-th"],
+  [/ie|ei/i, "sphint.en-ie"],
+  [/(.)\1/i, "sphint.en-double"],
+  [/(ou|au|ea|oo|ow)/i, "sphint.en-vowel"],
+  [/[A-Z]/, "sphint.en-caps"],
+];
+
+function whySpelling(
+  word: WhyWord,
+  lang: NativeLang,
+  typed?: string | null,
+  targetLang: TargetLang = "de",
+): Why {
   const target = word.de;
   const diff = charDiff(typed ?? "", target);
   const changed = [...diff.typed.filter((s) => s.kind !== "same"), ...diff.target.filter((s) => s.kind !== "same")]
     .map((s) => s.text)
     .join("");
-  const hint = SPELLING_HINTS.find(([re]) => re.test(changed))?.[1];
+  const table = targetLang === "en" ? SPELLING_HINTS_EN : SPELLING_HINTS;
+  /*
+    İngilizcede DEĞİŞEN harf çoğu zaman kuralı taşımıyor: "know" yerine "now"
+    yazan öğrencinin farkı yalnız "k" ve tek başına "k" hiçbir şey söylemiyor.
+    O yüzden fark boş çıkarsa HEDEF kelimeye bakılıyor — kelimenin bilinen zor
+    yeri (sessiz harf, ph, çift harf) hatanın tam yerinde olmasa da öğrenciye
+    o kelimede neye dikkat edeceğini söylüyor. Almanca tabloda bu ikinci geçiş
+    YOK: oradaki kurallar (z, v, ie/ei, sch) farkın kendisinde okunuyor.
+  */
+  const hint =
+    table.find(([re]) => re.test(changed))?.[1] ??
+    (targetLang === "en" ? SPELLING_HINTS_EN.find(([re]) => re.test(target))?.[1] : undefined);
   // Fark şeritte harf harf çiziliyor (FeedbackLine); metin yalnız ipucu.
   const text = translate(lang, hint ?? "sphint.compare");
   return { type: "spelling", text, href: null, diff: typed ? diff : undefined };
@@ -333,7 +370,7 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         : { type: "plural", text: translate(lang, "why.plural_learn"), href: null };
     case "spelling":
       return w
-        ? whySpelling(w, lang, input.detail)
+        ? whySpelling(w, lang, input.detail, input.targetLang)
         : { type: "spelling", text: translate(lang, "sphint.compare"), href: null };
     case "verb_position":
       return whyVerbPosition(lang, input.answer, input.tail, input.targetLang);
@@ -376,10 +413,12 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         href: null,
       };
     case "pronunciation":
+      /* Telaffuz ipucu da dile bağlı: Almanca metin "z = ts, w = v" diyor ve
+         bu İngilizce öğrenene yanlış bilgi. */
       return {
         type: "pronunciation",
         text: w
-          ? translate(lang, "why.pronunciation", { word: w.de })
+          ? translate(lang, input.targetLang === "en" ? "why.pronunciation_en" : "why.pronunciation", { word: w.de })
           : translate(lang, "why.pronunciation_general"),
         href: null,
       };
