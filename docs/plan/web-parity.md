@@ -13934,3 +13934,48 @@ dal yazmazsa zincirin görünmez yarısı aynen kalır. Enjeksiyonla doğruland�
 
 Dört enjeksiyon denendi (düşen dalın sessizleşmesi, göçürmenin kaybolması,
 uçta kullanıcının geçmemesi, panonun göstermemesi), dördü de yakalandı.
+
+## §11.396 — Giden e-posta sessizce düşüyordu
+
+§11.395'in kardeşi: sessizce düşen bir zincir daha, bu kez sonucu daha ağır.
+
+E-posta gönderimi **üç** yoldan biriyle bitiyor — gitti, SMTP reddetti, alıcı
+başına saatlik tavan düşürdü — ve üçü de yalnız `console`a yazılıyordu.
+
+Oysa **doğrulama postası zorunlu bir kapı**: SMTP bağlıyken e-posta
+doğrulaması şart (`lib/auth/server`), yani sağlayıcı reddetmeye başladığında
+**her yeni kayıt kalıcı olarak kilitli kalıyor** ve tek iz kimsenin
+grep'lemediği bir sunucu log satırı oluyordu. `cap` de sessizdi: posta
+düşüyor, kullanıcı hiç gelmeyecek bir postayı bekliyor.
+
+Bu, §11.395'te olduğu gibi bir maliyet görünürlüğü değil — **kullanıcının
+uygulamaya girip girememesi**.
+
+### Ölçüm
+
+Olay `mail_sent`: `value` 1 gitti / 0 gitmedi, `kind` `<tür>:<sonuç>`.
+
+| tür | ne zaman |
+|---|---|
+`verify` | kayıt doğrulaması (zorunlu kapı)
+`reset` | parola sıfırlama bağlantısı
+`pw_changed` | parola değişti uyarısı (hesap ele geçirmede tek erken uyarı)
+`exists` | var olan e-postayla kayıt denemesi
+`twofa` | iki adımlı doğrulama kodu
+
+**Beşi de** ölçümü geçiriyor; biri geçirmezse o akışın sessizliği aynen
+kalır. Kapı bunu iki ayrı yoldan ölçüyor: tür listesiyle **ve** `sendEmail`
+çağrılarının kaçının `meta` taşımadığını sayarak (0 olmalı).
+
+Pano da gösteriyor, hata kırmızı: yazılıp gösterilmeyen bir sayı yine
+kimsenin bakmadığı yerde durur — §11.395'in aynı dersi.
+
+### §273
+
+Dört ölçü, hepsi mutlak: üç sonuç dalının da yazdığı, beş türün ölçümü
+geçirdiği, `meta`sız `sendEmail` çağrısı kalmadığı, ve panonun gösterdiği
+(hata kırmızı dahil).
+
+Üç enjeksiyon denendi (tavan dalının sessizleşmesi, bir türün `meta`
+vermemesi, panonun hatayı kırmızı göstermemesi), üçü de yakalandı — ikincisi
+iki ölçüyü birden düşürdü.
