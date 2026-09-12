@@ -16667,3 +16667,40 @@ taraftaki yorumda yazılı — biri kayarsa kapı söyler.
 Dört enjeksiyon doğrulandı: mobili 11:00'e döndürmek (düzeltilen kusurun
 kendisi), sunucu eşiğini 19 yapmak, mobilin gününü pazartesiye çekmek, seri
 saatini kaydırmak.
+
+## §11.458 — Ölçüldü, KARAR SAMET'TE: hatırlatma ayarında hangi taraf kazanıyor
+
+§11.457'yi ararken aynı ailede ikinci bir asimetri çıktı. Bunu **düzeltmedim**;
+sebebi aşağıda ve karar Samet'te.
+
+Mobil hatırlatma ayarının önceliği açıkça yazılı (`lib/notifications`
+`loadPrefs`): **yerel karar → sunucunun kayıtlı saati → şemanın varsayılanı.**
+Kullanıcı o cihazda bir kez seçim yaptıysa (`decided(KEY_DAILY)`), ekran her
+açılışında `syncPrefs(patch)` ile **sunucuyu kendi değerine çekiyor**. Gerekçe
+de yazılı: yerel tetikleyiciyi cihaz kuruyor, ama push'u sunucu gönderiyor —
+ikisinin aynı şeyi söylemesi gerekiyor ve ağ yokken gönderilemeyen ayar bir
+sonraki açılışta tekrar gönderiliyor.
+
+Web tarafı ise yalnız sunucuya yazıyor (`notification-settings` `patch`),
+yerelde bir şey tutmuyor.
+
+Sonuç: kullanıcı **webde** saati 09:00 yapar, sonra mobilin bildirim ekranını
+açar — mobilin eski yerel kararı (ör. 21:00) sunucuya geri yazılır ve webdeki
+değişiklik **sessizce geri alınır**. Tersi olmuyor: web hiçbir zaman mobilin
+değerini ezmiyor.
+
+**Neden düzeltmedim.** Doğru çözüm "son değişen kazanır" ve bunun için
+değişiklik ZAMANI gerekiyor; `/api/notifications/prefs` hiçbir damga
+döndürmüyor ve `profiles.updatedAt` her profil yazımında (seviye, hedef, ad)
+değiştiği için hatırlatma alanlarına atfedilemez. Yani doğru düzeltme **yeni
+bir kolon + migration** demek. Bekleyen üç migration (`0049`–`0051`) zaten
+deploy sırası bekliyor; ayar önceliği için dördüncüyü eklemek, bir kolaylık
+uğruna deploy kuyruğunu büyütmek olurdu.
+
+Daha küçük bir düzeltme **daha kötü** çıkıyor: `loadPrefs`ten `syncPrefs`i
+kaldırmak ekranı yalancı yapardı — mobil kendi yerel değerini gösterip sunucuda
+başka bir değer bırakırdı, yani "gördüğün şey gönderilen şey" bağı kopardı.
+
+Kapı da yazmadım: bugünkü davranışı sabitleyen bir ölçü, onu **düzeltmeye**
+çalışan kişiye kırmızı verirdi — yanlış yöne bakan bir kapı. Kayıt bu yüzden
+burada duruyor.
