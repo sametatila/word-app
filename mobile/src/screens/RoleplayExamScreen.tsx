@@ -280,7 +280,11 @@ export function RoleplayExamScreen() {
     return (
       /* Puanlama beklemesi ekranin tamami ve sessizdi. */
       <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Mascot mood="idle" size={92} />
+        {/* DUSUNEN MIRKET, 80 — web ile ayni kip ve ayni boy.
+            `idle` neseli bosta-bekleme ve puanlama anini anlatmiyordu; web
+            ayni dalda `think` ciziyor (`lessons/roleplay-exam`) ve eslesen
+            her maskot yuzeyinde kip de boy da ayni (bkz. check:parity). */}
+        <Mascot mood="think" size={80} />
         <ActivityIndicator color={colors.primary} />
         <Text variant="h3">{tx("item.mono_scoring")}</Text>
         <Text variant="caption" color={colors.textMuted}>{tx("rpexam.scoring_note", { n: userTurns })}</Text>
@@ -291,7 +295,7 @@ export function RoleplayExamScreen() {
   if (phase === "error") {
     return (
       <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
-        <Mascot mood="sad" size={92} />
+        <Mascot mood="sad" size={80} />
         <Text variant="body" style={{ textAlign: "center", lineHeight: 22 }}>{tx("rpexam.service_down")}</Text>
         {/* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
             düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani

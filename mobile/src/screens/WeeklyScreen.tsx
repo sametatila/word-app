@@ -10,6 +10,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon } from "../ui/icons";
 import { ProgressRing } from "../ui/ProgressRing";
+import { Mascot } from "../ui/Mascot";
 import { RoundView } from "../game/rounds";
 import { fetchWeekly, submitWeekly, type WeeklyStatus } from "../game/weekly";
 import { todayStr, type DoneExtra } from "../game/session";
@@ -148,6 +149,12 @@ export function WeeklyScreen() {
   if (phase === "ready") {
     return (
       <View style={[pad, { justifyContent: "center" }]}>
+        {/* DUSUNEN MIRKET — web ayni kapakta ayni kipi ve ayni boyu ciziyor
+            (`weekly-player`, `mood="think" size={64}`); mobilde hic maskot
+            yoktu. Web satiri sola yatirip maskotu basligin soluna koyuyor,
+            mobil kapak ortali oldugu icin maskot basligin USTUNDE - ayni
+            secim `GameScreen`in "kelime yok" dalinda da yapili. */}
+        <View style={{ alignItems: "center", marginBottom: spacing.md }}><Mascot mood="think" size={64} /></View>
         <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>
           {t("weekly.pitch", { n: rounds.length })}{" "}

@@ -15714,3 +15714,44 @@ iskelet ya da varsayılan değerlerle çizilmiş bir arayüz çıkıyor; `Rolepl
 dönen çark kullanıyor (web orada iskelet çiziyor). Kapıya dönüştürülmesi
 "ekran veri bekliyor mu" sorusunun mobilde `page.tsx` kadar kesin bir cevabı
 olmadığı için ayrı bir iş.
+
+## §11.432 — Eşleşen maskot yüzeyleri elle sayılıyordu; ikisi ayrışıktı, biri hiç yoktu
+
+Maskotun kipi iki yerde karşılaştırılıyordu: sınav girişi (iki ekran) ve
+"bu oyuna kelime yok" dalı. Geri kalan yüzeyler **hiç bakılmamış** durumdaydı.
+
+Yüzeyleri eşleştiren şeyin ne olduğu zaten belli: `<Mascot>`ın hemen ardındaki
+ilk sözlük anahtarı. Onunla hesaplandığında yedi ortak yüzey çıktı ve **ikisi
+ayrışıktı** — ikisi de rol yapma sınavında:
+
+| yüzey | web | mobil |
+|---|---|---|
+| `item.mono_scoring` (puanlama beklemesi) | `think` / 80 | **`idle` / 92** |
+| `rpexam.service_down` (servis kapalı) | `sad` / 80 | `sad` / **92** |
+
+`idle` neşeli boşta-bekleme klibi ve puanlama anını anlatmıyor; web aynı dalda
+`think` çiziyor. Üstelik `think` klibi mobile bu turlarda eklenmişti (§11.417)
+ve üç yüzey çevrilirken bu dal atlanmıştı.
+
+Boyut da ölçüye giriyor, çünkü eşleşen dört yüzey **baştan beri** aynı boyu
+taşıyordu (96/96, 90/90, 112/112, 104/104) — yani kural yazılı değildi ama
+uygulanıyordu. Rol yapma sınavının iki dalı tek aykırıydı.
+
+**Haftalık sınavın kapağında mobilde maskot hiç yoktu.** Web aynı kapakta
+`think` / 64 çiziyor ve üç metin ile iki düğme birebir aynı. Mobil kapak ortalı
+olduğu için maskot başlığın üstünde (web satırı sola yatırıp maskotu başlığın
+soluna koyuyor) — aynı seçim `GameScreen`in "kelime yok" dalında da yapılı.
+Ortak yüzey sayısı böylece 6'dan 7'ye çıktı.
+
+### Kapı
+
+Elle liste yerine **hesaplanan** küme: iki taraftaki `<Mascot>` kullanımları
+anahtarlarıyla eşleştiriliyor ve ortak her anahtarda `kip/boy` çifti birebir
+eşit olmak zorunda. İkinci ölçü sayı: eşleştirme bozulup küme boşalırsa "fark
+yok" boş bir doğru olurdu, o yüzden ortak yüzey sayısı 7'nin altına düşemez.
+
+Elle yazılmış iki eski ölçü kalıyor: onlar `CoachBubble moment="exam_intro"`
+üzerinden eşleşiyor, yani `<Mascot>` taramasının göremediği bir yüzey.
+
+Üç enjeksiyon doğrulandı: puanlama kipini `idle`a döndürmek, haftalık maskotunu
+kaldırmak (sayı ölçüsü düşüyor), webin bir boyunu değiştirmek (kapı iki yönlü).

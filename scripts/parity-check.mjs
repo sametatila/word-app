@@ -8767,6 +8767,70 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
+    /* ESLESEN HER MASKOT YUZEYI — elle liste degil, HESAPLANAN kume.
+     *
+     * Yukaridaki iki olcu yuzeyleri ELLE sayiyordu (sinav girisi, "kelime
+     * yok") ve geri kalani hic bakilmamis kaliyordu. Olculdugunde yedi ortak
+     * yuzeyden IKISI ayrisikti, ikisi de rol yapma sinavinda: puanlama
+     * beklemesi webde `think`/80, mobilde `idle`/92 - yani hem kip hem boy.
+     * `idle` neseli bosta-bekleme klibi ve puanlama anini anlatmiyor; ustelik
+     * `think` klibi mobile bu turlarda eklenmisti ve bu dal atlanmisti.
+     * Servis kapali dali da 92 yaziyordu (webde 80).
+     *
+     * Haftalik sinavin kapaginda ise mobilde maskot HIC YOKTU: web ayni
+     * kapakta `think`/64 ciziyor ve metinler birebir ayni.
+     *
+     * YUZEYLERI ESLESTIREN SEY ANAHTAR. `<Mascot>`in hemen ardindaki ilk
+     * sozluk anahtari o yuzeyin kimligi; iki tarafta ayni anahtar varsa ayni
+     * yuzeydir ve ayni kipi VE ayni boyu tasimak zorunda (dortlu ortak yuzey
+     * bunu baştan beri boyle yapiyordu - 96/96, 90/90, 112/112, 104/104).
+     *
+     * Sayi olcusu de var: eslestirme bozulup kume bosalirsa "fark yok" bos
+     * bir dogru olurdu. */
+    {
+      const yuruTsx = (d, out = []) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          if (e.isDirectory()) { if (!/node_modules|__tests__/.test(e.name)) yuruTsx(d + "/" + e.name, out); }
+          else if (/\.tsx$/.test(e.name)) out.push(d + "/" + e.name);
+        }
+        return out;
+      };
+      const tablo = (kok) => {
+        const out = new Map();
+        for (const f of yuruTsx(kok)) {
+          const src = sil(read(f));
+          for (const m of src.matchAll(/<Mascot\b[^>]*?\/>/g)) {
+            const kip = (m[0].match(/mood="(\w+)"/) ?? [])[1];
+            if (!kip) continue;
+            const boy = (m[0].match(/size=\{(\d+)\}/) ?? [])[1] ?? "?";
+            /* Yuzeyin kimligi: etiketten SONRAKI ilk sozluk anahtari. */
+            const pencere = src.slice(m.index, m.index + 700);
+            const k = (pencere.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
+            if (!k || out.has(k)) continue;
+            out.set(k, kip + "/" + boy);
+          }
+        }
+        return out;
+      };
+      const webY = tablo("src");
+      const mobY = tablo("mobile/src");
+      const ortak = [...webY.keys()].filter((k) => mobY.has(k)).sort();
+      sameList(
+        "eslesen maskot yuzeyi sayisi",
+        ["ortak=" + (ortak.length >= 7 ? "7+" : ortak.length)],
+        ["ortak=7+"],
+        "bulunan",
+        "beklenen",
+      );
+      sameList(
+        "eslesen maskot yuzeylerinde kip ve boy",
+        ortak.map((k) => k + "=" + mobY.get(k)),
+        ortak.map((k) => k + "=" + webY.get(k)),
+        "mobil",
+        "web",
+      );
+    }
+
     /* MUTLAK: webde "cheer" adi kalmadi - ayni klibin iki adi olmayacak. */
     const webKaynak = (() => {
       const parcalar = [];
