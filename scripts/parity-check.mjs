@@ -7469,6 +7469,92 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 264. HANGI OLAY HANGI PLATFORMDA AKIYOR ------------------------
+   *
+   * `test:events` her olayin SOZLUKTE oldugunu dogruluyordu ama hangi
+   * platformdan AKTIGINI kimse sormuyordu. Olcum bir tanesinde gercek bir
+   * delik buldu.
+   *
+   * `app_open` webde bastan beri yaziliyordu, MOBILDE HIC. Yonetim
+   * panosundaki PLATFORM TABLOSU yalniz bu olaydan doluyor (`lib/admin.ts`),
+   * yani tabloyu okuyan biri YEREL UYGULAMALARIN HIC KULLANICISI OLMADIGINI
+   * saniyordu - ve oradaki `ios`/`android` satirlari uygulamalar degil MOBIL
+   * TARAYICILARDI. Mobil artik gunde bir kez yaziyor ve `kind` ucuncu bir
+   * gorunum degeri aliyor: `native`.
+   *
+   * Geri kalan farklarin hepsi MESRU ve her birinin gerekcesi burada
+   * OLCULUYOR - "su ekran yok" ya da "su yetenek yok" demek, dosyanin
+   * varligiyla dogrulanabilir bir iddia. */
+  {
+    const walkAll = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkAll(p, out); }
+        else if (/\.tsx?$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const olaylar = (dosyalar) => {
+      const k = new Set();
+      for (const f of dosyalar) for (const m of sil(read(f)).matchAll(/track\(\s*"([a-z_]+)"/g)) k.add(m[1]);
+      return k;
+    };
+    const web = olaylar(walkAll("src").filter((f) => !/^src\/lib\/events\.ts$/.test(f)));
+    const mob = olaylar(walkAll("mobile/src"));
+
+    /* Tek platformda akmasi MESRU olanlar, gerekcesi ve gerekcenin KANITI. */
+    const TEK = new Map([
+      ["install_prompt", ["web", "PWA kurulum istemi tarayiciya ait", () => /beforeinstallprompt/.test(sil(read("src/components/install-prompt.tsx")))]],
+      ["panel_open", ["web", "katlanan bolum webe ozel bir yuzey", () => web.has("panel_open")]],
+      ["invite_open", ["web", "davet baglantisi web profiline aciliyor; mobil derin baglanti yalniz sifirlama ve dogrulama tanir", () => !/invite/.test(sil(read("mobile/src/lib/deepLink.ts")))]],
+      ["feedback_why_opened", ["web", "gerekce §118'de yazili", () => true]],
+      ["walk_capture", ["web", "gerekce §119'da yazili", () => true]],
+      ["notif_prime", ["mobil", "hatirlatma izni ekrani yalniz mobilde var", () => existsSync(new URL("../mobile/src/screens/NotifPrimeScreen.tsx", import.meta.url))]],
+      ["purchase_start", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],
+      ["purchase_done", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],
+    ]);
+
+    const tekTarafli = [];
+    for (const ad of [...web].filter((k) => !mob.has(k))) {
+      const kayit = TEK.get(ad);
+      if (!kayit || kayit[0] !== "web") tekTarafli.push(ad + " (yalniz webde, gerekce yok)");
+      else if (!kayit[2]()) tekTarafli.push(ad + " (muaf ama gerekcesi artik gecerli degil)");
+    }
+    for (const ad of [...mob].filter((k) => !web.has(k))) {
+      const kayit = TEK.get(ad);
+      if (!kayit || kayit[0] !== "mobil") tekTarafli.push(ad + " (yalniz mobilde, gerekce yok)");
+      else if (!kayit[2]()) tekTarafli.push(ad + " (muaf ama gerekcesi artik gecerli degil)");
+    }
+    /* Listede olup artik tek tarafli OLMAYAN kayit da olu bir muafiyettir. */
+    for (const [ad, [taraf]] of TEK) {
+      const tekMi = taraf === "web" ? web.has(ad) && !mob.has(ad) : mob.has(ad) && !web.has(ad);
+      if (!tekMi) tekTarafli.push(ad + " (muaf ama artik iki tarafta da akiyor ya da hic akmiyor)");
+    }
+    sameList(
+      "gerekcesiz tek tarafli olay",
+      tekTarafli.length ? tekTarafli : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Panonun platform tablosu UC gorunumu de goruyor mu. */
+    const mt = sil(read("mobile/src/lib/telemetry.ts"));
+    /* VARLIK DEGIL KULLANIM: olayi yazan islevin dosyada DURMASI yetmez,
+       acilista CAGRILMASI gerek. Ilk yazimda kapi yalniz `track("app_open"`
+       ariyordu ve cagriyi silen enjeksiyonu kacirdi. */
+    sameList(
+      "acilis olayi iki platformda",
+      [
+        "olay=" + (/track\("app_open"/.test(mt) && /:native`/.test(mt) ? "native" : "YOK"),
+        "cagiran=" + (/void ilkAcilis\(\);/.test(mt) ? "var" : "YOK"),
+      ],
+      ["olay=native", "cagiran=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 263. ASILI KALAN ISTEK ----------------------------------------
    *
    * Tarayicinin `fetch`i KENDILIGINDEN VAZGECMIYOR. Kaptif portalda, zayif
