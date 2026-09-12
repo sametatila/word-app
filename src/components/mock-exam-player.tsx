@@ -160,6 +160,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const ayril = useLeaveGuard(phase === "run");
   const [ix, setIx] = useState(0);
   const [left, setLeft] = useState(0);
+  /** Görevin bitiş damgası — bkz. aşağıdaki sayaç notu. */
+  const deadline = useRef(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [open, setOpen] = useState<Record<string, string>>({});
   const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
@@ -180,9 +182,34 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     sayIn(paper.course, text);
   }, [paper.course]);
 
+  /*
+   * SAYAÇ DUVAR SAATİNDEN, SAYICIDAN DEĞİL.
+   *
+   * Görev süresi her saniye bir sayıcıyı bir azaltarak işliyordu ve o sayıcı
+   * sekme arka plana alınınca DURUYOR (tarayıcılar arka plandaki
+   * `setInterval`i dakikada bire kadar kısıyor; mobil uygulamada tamamen
+   * duruyor). Yani her göreve ayrılmış süre istenildiği kadar
+   * uzatılabiliyordu - üstelik yarım kalan koşu `secondsLeft` ile
+   * kaydedildiği için kazanılan süre kalıcıydı.
+   *
+   * Süre sınavın KISITI; sınav kâğıdının kendisi kadar kuralın parçası.
+   * Aynı kusur `ExamScreen`de bulunup düzeltilmişti ve patron/meydan okuma
+   * sayaçları baştan beri bir ZAMAN DAMGASINDAN okuyor - bu üçüncüsü geride
+   * kalmıştı, üstelik İKİ PLATFORMDA BİRDEN.
+   *
+   * `sureVer` hem kalan saniyeyi hem de bitiş damgasını kuruyor; sayaç
+   * yalnız damgadan okuyor.
+   */
+  const sureVer = useCallback((saniye: number) => {
+    deadline.current = Date.now() + saniye * 1000;
+    setLeft(saniye);
+  }, []);
+
   useEffect(() => {
     if (phase !== "run") return;
-    const id = setInterval(() => setLeft((s) => (s <= 1 ? 0 : s - 1)), 1000);
+    const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
+    tick(); // arka plandan dönüşte ilk saniyeyi beklemeden düzeltilir
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, [phase]);
 
@@ -192,10 +219,10 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     if (ix >= part.tasks.length - 1) { setPhase("result"); return; }
     const next = ix + 1;
     setIx(next);
-    setLeft(budgets[next] ?? 60);
+    sureVer(budgets[next] ?? 60);
     writeLocalRun(paper.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
     if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 }).catch(() => {});
-  }, [ix, part.tasks.length, part.skill, paper.id, budgets, attempt, answers, open]);
+  }, [ix, part.tasks.length, part.skill, paper.id, budgets, attempt, answers, open, sureVer]);
 
   useEffect(() => {
     if (phase === "run" && left === 0) advance(true);
@@ -222,7 +249,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       setOpenScores(d.attempt.openScores ?? {});
       const start = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(start);
-      setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[start] ?? 60);
+      sureVer(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[start] ?? 60);
     } catch (e) {
       setAttempt(null);
       const why = failOf(e);
@@ -238,10 +265,10 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         setOpen(local.open ?? {});
         const start = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
         setIx(start);
-        setLeft(local.secondsLeft > 0 ? local.secondsLeft : budgets[start] ?? 60);
+        sureVer(local.secondsLeft > 0 ? local.secondsLeft : budgets[start] ?? 60);
       } else {
         setIx(0);
-        setLeft(budgets[0] ?? 60);
+        sureVer(budgets[0] ?? 60);
       }
     }
     setBusy(false);

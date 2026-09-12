@@ -135,6 +135,8 @@ export function MockExamScreen() {
   const [phase, setPhase] = useState<"kapak" | "gorev" | "sonuc">("kapak");
   const [ix, setIx] = useState(0);
   const [left, setLeft] = useState(0);
+  /** Görevin bitiş damgası — bkz. aşağıdaki sayaç notu. */
+  const deadline = useRef(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [open, setOpen] = useState<Record<string, string>>({});
   const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
@@ -184,10 +186,33 @@ export function MockExamScreen() {
     try { await speakAndWaitVoiced(text, v.id); } catch { /* ses yoksa sınav durmaz */ }
   }, [voiced]);
 
-  /* ── saat: görev başına ─────────────────────────────────────────────── */
+  /* ── saat: görev başına ───────────────────────────────────────────────
+   *
+   * SAYAÇ DUVAR SAATİNDEN, SAYICIDAN DEĞİL.
+   *
+   * Görev süresi her saniye bir sayıcıyı bir azaltarak işliyordu ve o sayıcı
+   * uygulama arka plana alınınca DURUYOR. Yani her göreve ayrılmış süre
+   * istenildiği kadar uzatılabiliyordu - üstelik yarım kalan koşu
+   * `secondsLeft` ile kaydedildiği için kazanılan süre kalıcıydı.
+   *
+   * Süre sınavın KISITI; kâğıdın kendisi kadar kuralın parçası. Aynı kusur
+   * `ExamScreen`de bulunup düzeltilmişti ve patron/meydan okuma sayaçları
+   * baştan beri bir ZAMAN DAMGASINDAN okuyor - bu üçüncüsü geride kalmıştı,
+   * üstelik iki platformda birden (web `mock-exam-player` aynı satırı
+   * taşıyordu).
+   *
+   * `sureVer` hem kalan saniyeyi hem de bitiş damgasını kuruyor.
+   */
+  const sureVer = useCallback((saniye: number) => {
+    deadline.current = Date.now() + saniye * 1000;
+    setLeft(saniye);
+  }, []);
+
   useEffect(() => {
     if (phase !== "gorev") return;
-    const id = setInterval(() => setLeft((s) => (s <= 1 ? 0 : s - 1)), 1000);
+    const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
+    tick(); // arka plandan dönüşte ilk saniyeyi beklemeden düzeltilir
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, [phase]);
 
@@ -197,11 +222,11 @@ export function MockExamScreen() {
     if (ix >= part.tasks.length - 1) { setPhase("sonuc"); return; }
     const next = ix + 1;
     setIx(next);
-    setLeft(budgets[next] ?? 60);
+    sureVer(budgets[next] ?? 60);
     scroller.current?.scrollTo({ y: 0, animated: false });
     void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
     if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
-  }, [ix, part, paper, budgets, attempt, answers, open]);
+  }, [ix, part, paper, budgets, attempt, answers, open, sureVer]);
 
   useEffect(() => {
     if (phase === "gorev" && left === 0) advance(true);
@@ -235,7 +260,7 @@ export function MockExamScreen() {
       setOpenScores(d.attempt.openScores ?? {});
       const startIx = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(startIx);
-      setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[startIx] ?? 60);
+      sureVer(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[startIx] ?? 60);
     } catch (err) {
       // Sunucuya ulaşılamadı. Sınav durmuyor ve YARIM KALAN cihazdaki kayıttan
       // sürüyor: bir sunucu koşulu yüzünden kırk beş dakika kaybedilmemeli.
@@ -251,11 +276,11 @@ export function MockExamScreen() {
         setOpen(local.open ?? {});
         const startIx = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
         setIx(startIx);
-        setLeft(local.secondsLeft > 0 ? local.secondsLeft : budgets[startIx] ?? 60);
+        sureVer(local.secondsLeft > 0 ? local.secondsLeft : budgets[startIx] ?? 60);
       } else {
         setResumed(false);
         setIx(0);
-        setLeft(budgets[0] ?? 60);
+        sureVer(budgets[0] ?? 60);
       }
     }
     setBusy(false);
