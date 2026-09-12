@@ -494,8 +494,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     </div>
   );
 
-  const options = (opts: string[], onPick: (i: number) => void) => (
-    <div className="grid gap-2">
+  const options = (opts: string[], onPick: (i: number) => void, soru?: string) => (
+    /* TEK SEÇİMLİK ŞIK LİSTESİ RADYO GRUBUDUR. `aria-pressed` bir aç/kapa
+       düğmesi anlatıyor; Android aynı şıkları `accessibilityRole="radio"` ile
+       veriyor (`ExamScreen`) ve TalkBack "radyo düğmesi, 4 ögeden 2., seçili"
+       diyor. */
+    <div role="radiogroup" aria-label={soru} className="grid gap-2">
       {opts.map((o, i) => (
         <button
           key={`${o}-${i}`}
@@ -503,7 +507,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           /* Seçili durum RENKTEN başka bir şeyle de söyleniyor: ekran okuyucu
          kullanan kişi hangi seçeneğin işaretli olduğunu yalnız zeminden
          anlayamaz (bkz. parity §154). */
-          aria-pressed={picked === i}
+          role="radio"
+          aria-checked={picked === i}
           disabled={picked !== null}
           onClick={() => {
             setPicked(i);
@@ -549,7 +554,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <p className="mb-4 mt-1 text-strong" lang={course}>
               {g.key} <span className="muted">→ ?</span>
             </p>
-            {options(g.options, pickGrammar)}
+            {options(g.options, pickGrammar, g.key)}
           </>
         ) : (
           <>
@@ -557,7 +562,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <p className="mb-4 mt-1 text-strong leading-snug" lang={course}>
               {g.statement}
             </p>
-            {options([`Richtig · ${t("common.correct")}`, `Falsch · ${t("common.wrong")}`], pickGrammar)}
+            {options([`Richtig · ${t("common.correct")}`, `Falsch · ${t("common.wrong")}`], pickGrammar, g.statement)}
           </>
         )}
         <p className="muted mt-3 text-center text-caption">
@@ -607,7 +612,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           {q.text}
         </p>
         {q.textTr ? <p className="muted mb-3 text-caption">{q.textTr}</p> : <div className="mb-3" />}
-        {options(q.options, (i) => pickText(section, i))}
+        {options(q.options, (i) => pickText(section, i), q.text)}
         <p className="muted mt-3 text-center text-caption">
           {t("exam.question_of", { n: qIdx + 1, total: item.questions.length })}
         </p>

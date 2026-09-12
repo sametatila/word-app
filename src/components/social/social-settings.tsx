@@ -128,12 +128,15 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
         <p className="text-strong">{t("socialsettings.visibility")}</p>
-        <div className="mt-2 flex flex-col gap-1.5">
+        {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR — Android aynı üçlüyü
+            `accessibilityRole="radio"` ile veriyor (`SocialSettingsScreen`). */}
+        <div role="radiogroup" aria-label={t("socialsettings.visibility")} className="mt-2 flex flex-col gap-1.5">
           {VIS.map((v) => (
             <button
               key={v.key}
               className={`chip justify-start px-3.5 py-2.5 text-left text-caption ${me.visibility === v.key ? "chip-active" : ""}`}
-              aria-pressed={me.visibility === v.key}
+              role="radio"
+              aria-checked={me.visibility === v.key}
               disabled={busy}
               onClick={() => void save({ visibility: v.key })}
             >

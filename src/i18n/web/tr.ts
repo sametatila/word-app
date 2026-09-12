@@ -559,6 +559,9 @@ export const trWeb: Record<string, string> = {
   "wordsw.prev": "← Önceki",
   "wordsw.next": "Sonraki →",
   "wordsw.page": "sayfa {n}",
+  /* Süzgeç şeridinin RADYO GRUBU adı. Android'de böyle bir yapı yok (RN'in
+     radyo grubu rolü yok), o yüzden web'e ait. */
+  "wordsw.filter_status": "Durum",
   "instw.ios_hint": "Paylaş düğmesine dokun, ardından “Ana Ekrana Ekle”yi seç.",
   "instw.why": "Uygulama gibi tam ekran açılır, tek dokunuşla girersin.",
   "instw.full_steps": "Adımların tamamı Profil → “Uygulama olarak kur” altında duruyor.",

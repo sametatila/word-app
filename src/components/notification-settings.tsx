@@ -106,13 +106,17 @@ export function NotificationSettings() {
               {prefs.daily ? (
                 <div className="px-4 pb-3">
                   <p className="muted mb-2 text-caption tracking-wide">{t("notifications.hour")}</p>
-                  <div className="flex flex-wrap gap-1.5">
+                  {/* TEK SEÇİMLİK SAAT ŞERİDİ RADYO GRUBUDUR — Android aynı
+                      üçlüyü `accessibilityRole="radio"` ile veriyor
+                      (`NotifPrimeScreen`). */}
+                  <div role="radiogroup" aria-label={t("notifications.hour")} className="flex flex-wrap gap-1.5">
                     {HOURS.map((h) => (
                       <button
                         key={h}
                         type="button"
                         onClick={() => void patch({ hour: h })}
-                        aria-pressed={prefs.hour === h}
+                        role="radio"
+                        aria-checked={prefs.hour === h}
                         className={`chip px-3 py-1.5 text-caption ${prefs.hour === h ? "chip-active" : ""}`}
                       >
                         {String(h).padStart(2, "0")}:00

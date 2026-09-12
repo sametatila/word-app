@@ -532,6 +532,7 @@ export const enWeb: Record<string, string> = {
   "sessionw.combo": "{n} in a row",
   "wordsw.prev": "← Previous",
   "wordsw.next": "Next →",
+  "wordsw.filter_status": "Status",
   "wordsw.page": "page {n}",
   "instw.ios_hint": "Tap the Share button, then choose “Add to Home Screen”.",
   "instw.why": "Opens full screen like an app, one tap to get in.",

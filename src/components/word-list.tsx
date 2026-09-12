@@ -240,24 +240,31 @@ export function WordList({
         {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince
             bir çizgiyle duruyorlardı ve iki grup tek bir süzgeç gibi
             okunuyordu; sarılma olduğunda çizgi de satır ortasında kalıyordu. */}
-        <div className="flex flex-wrap items-center gap-2">
+        {/* TEK SEÇİMLİK SÜZGEÇ RADYO GRUBUDUR. `aria-pressed` bir aç/kapa
+            düğmesi anlatıyor - ekran okuyucu "düğme, basılı" diyor ve
+            kullanıcı birini seçmenin ötekini bıraktığını öğrenemiyor.
+            Android iki şeridi de `accessibilityRole="radio"` ile veriyor
+            (`WordsScreen`). */}
+        <div role="radiogroup" aria-label={tx("words.filter_level")} className="flex flex-wrap items-center gap-2">
           {LEVELS.map((l) => (
             <button
               key={l.id || "all"}
               onClick={() => setFilter("level", l.id)}
-              aria-pressed={query.level === l.id}
+              role="radio"
+              aria-checked={query.level === l.id}
               className={`chip chip-filter px-3 py-1.5 text-caption ${query.level === l.id ? "chip-active" : ""}`}
             >
               {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div role="radiogroup" aria-label={tx("wordsw.filter_status")} className="flex flex-wrap items-center gap-2">
           {STATUSES.map((s) => (
             <button
               key={s.id || "any"}
               onClick={() => setFilter("status", s.id)}
-              aria-pressed={query.status === s.id}
+              role="radio"
+              aria-checked={query.status === s.id}
               className={`chip chip-filter px-3 py-1.5 text-caption ${query.status === s.id ? "chip-active" : ""}`}
             >
               {tx(s.labelKey)}

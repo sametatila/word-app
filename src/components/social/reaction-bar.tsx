@@ -58,7 +58,11 @@ export function ReactionBar({
        duruyor (`social/ReactionBar`), webde aynı satıra karışıyordu ve ancak
        yer kalmayınca alta düşüyordu. Üst boşluk da 8'den 12'ye (spacing.md). */
     <div className="mt-3">
-      <div className="flex flex-wrap items-center gap-1.5">
+      {/* TEK SEÇİMLİK TEPKİ ŞERİDİ RADYO GRUBUDUR. Aynı dosyanın SEÇİCİ
+          şeridi (aşağıda) zaten öyleydi; okunan şerit `aria-pressed` ile
+          kalmıştı. Android ikisini de `accessibilityRole="radio"` ile veriyor
+          (`social/ReactionBar`). */}
+      <div role="radiogroup" aria-label={t("reactionbar.react")} className="flex flex-wrap items-center gap-1.5">
       {present.map((k) => (
         <button
           key={k}
@@ -81,7 +85,8 @@ export function ReactionBar({
               ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 22%, transparent)`, color: REACTION_TONE[k], borderColor: REACTION_TONE[k] }
               : { background: `color-mix(in srgb, ${REACTION_TONE[k]} 13%, transparent)`, color: REACTION_TONE[k], borderColor: "transparent" }
           }
-          aria-pressed={s.mine === k}
+          role="radio"
+          aria-checked={s.mine === k}
           aria-label={`${t(REACTION_LABEL_KEYS[k])} ${s.counts[k]}`}
         >
           <ReactionGlyph kind={k} size={14} />

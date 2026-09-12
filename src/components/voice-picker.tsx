@@ -72,7 +72,9 @@ export function VoicePicker({
 
   if (compact) {
     return (
-      <div className="grid grid-cols-2 gap-2">
+      /* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR — Android aynı listeyi
+         `accessibilityRole="radio"` ile veriyor (`ui/VoicePicker`). */
+      <div role="radiogroup" aria-label={t("settings.reading_voice")} className="grid grid-cols-2 gap-2">
         {options.map((v) => {
           const active = selected === v.id;
           return (
@@ -85,7 +87,8 @@ export function VoicePicker({
               <button
                 type="button"
                 onClick={() => onChange(v.id)}
-                aria-pressed={active}
+                role="radio"
+                aria-checked={active}
                 className="min-w-0 flex-1 text-left"
               >
                 <span className="block truncate text-strong">{v.label}</span>
@@ -116,7 +119,7 @@ export function VoicePicker({
   }
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div role="radiogroup" aria-label={t("settings.reading_voice")} className="grid gap-3 sm:grid-cols-2">
       {options.map((v) => {
         const active = selected === v.id;
         return (
@@ -127,7 +130,8 @@ export function VoicePicker({
             <button
               type="button"
               onClick={() => onChange(v.id)}
-              aria-pressed={active}
+              role="radio"
+              aria-checked={active}
               className="block w-full text-left"
             >
               {active ? (

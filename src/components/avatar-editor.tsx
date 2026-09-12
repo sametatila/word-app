@@ -76,13 +76,16 @@ export function AvatarEditor() {
       {cfg.hat ? (
         <div className="mt-4">
           <p className="muted mb-2 ml-1 text-caption">{t("avatar.hat_color")}</p>
-          <div className="flex flex-wrap gap-2">
+          {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android aynı şeritleri
+              `accessibilityRole="radio"` ile veriyor (`AvatarScreen`). */}
+          <div role="radiogroup" aria-label={t("avatar.hat_color")} className="flex flex-wrap gap-2">
             {HAT_COLORS.map((col) => (
               <button
                 key={col}
                 type="button"
                 aria-label={`${t("avatar.hat_color")} ${col}`}
-                aria-pressed={cfg.hatColor === col}
+                role="radio"
+                aria-checked={cfg.hatColor === col}
                 onClick={() => setCfg({ hatColor: col })}
                 className="pressable h-11 w-11 rounded-full"
                 style={{
@@ -135,7 +138,8 @@ function Group({ title, children }: { title: string; children: React.ReactNode }
       {/* Yatay şerit: seçenek sayısı büyüyünce (Replicate sanatı geldiğinde)
           satır sarmalayıp ekranı yemesin. Çubuk gizli — kesilme zaten
           kaydırılabildiğini söylüyor (bkz. globals.css .no-scrollbar). */}
-      <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1">{children}</div>
+      {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR (bkz. şapka rengi notu). */}
+      <div role="radiogroup" aria-label={title} className="no-scrollbar flex gap-2 overflow-x-auto pb-1">{children}</div>
     </div>
   );
 }
@@ -156,7 +160,8 @@ function Opt({
       type="button"
       onClick={onPick}
       aria-label={label}
-      aria-pressed={selected}
+      role="radio"
+      aria-checked={selected}
       className="pressable shrink-0 rounded-panel p-1"
       style={{ border: `2px solid ${selected ? "var(--color-brand-500)" : "transparent"}` }}
     >

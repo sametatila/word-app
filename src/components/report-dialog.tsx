@@ -98,15 +98,23 @@ export function ReportDialog({
           <h2 id={basligId} className="text-h2">{t("reportsheet.report_this_content")}</h2>
           <p className="muted mt-1 text-caption">{t("reportsheet.if_ai_reply_felt_inappropriate")}</p>
 
-          <ul className="mt-3 space-y-2">
+          {/* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR. `aria-pressed` bir AÇ/KAPA
+              düğmesi anlatıyor: ekran okuyucu "düğme, basılı" diyor ve
+              kullanıcı ne kaç sebep olduğunu ne de birini seçmenin ötekini
+              bıraktığını öğreniyor. Android aynı listeyi
+              `accessibilityRole="radio"` ile veriyor (`ui/ReportSheet`) ve
+              TalkBack "radyo düğmesi, 4 ögeden 2., seçili" diyor. Sarmalayan
+              `<li>` gruba ait olmadığı için `role="none"`. */}
+          <ul role="radiogroup" aria-labelledby={basligId} className="mt-3 space-y-2">
             {reasonsFor(kind, lang).map((r) => {
               const active = reason === r.key;
               return (
-                <li key={r.key}>
+                <li key={r.key} role="none">
                   <button
                     type="button"
                     onClick={() => setReason(r.key)}
-                    aria-pressed={active}
+                    role="radio"
+                    aria-checked={active}
                     className="pressable w-full rounded-card p-3 text-left"
                     style={{
                       border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,

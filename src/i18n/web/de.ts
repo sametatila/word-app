@@ -532,6 +532,7 @@ export const deWeb: Record<string, string> = {
   "sessionw.combo": "{n} in Folge",
   "wordsw.prev": "← Zurück",
   "wordsw.next": "Weiter →",
+  "wordsw.filter_status": "Status",
   "wordsw.page": "Seite {n}",
   "instw.ios_hint": "Tippe auf Teilen und wähle dann „Zum Home-Bildschirm“.",
   "instw.why": "Öffnet sich wie eine App im Vollbild, ein Tipp genügt.",

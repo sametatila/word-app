@@ -95,7 +95,9 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
     onSettle(oi === q.answer);
   }
   return (
-    <div className="mt-3 grid gap-2">
+    /* TEK SEÇİMLİK ŞIK LİSTESİ RADYO GRUBUDUR — Android aynı şıkları
+       `accessibilityRole="radio"` ile veriyor (`game/skillQuiz`). */
+    <div role="radiogroup" aria-label={q.text} className="mt-3 grid gap-2">
       {q.options.map((opt, oi) => {
         const cls = !done ? "" : oi === q.answer ? "option-correct" : pick === oi ? "option-wrong animate-shake" : "opacity-55";
         return (
@@ -104,7 +106,8 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
             type="button"
             /* Seçili durum renkten başka bir şeyle de söyleniyor: alıştırma
                şıkkı seçilince yalnız zemin değişiyordu (bkz. parity §154). */
-            aria-pressed={pick === oi}
+            role="radio"
+            aria-checked={pick === oi}
             disabled={done}
             onClick={() => choose(oi)}
             className={`option flex items-center justify-between gap-2 px-3.5 py-2.5 text-left text-strong ${cls}`}

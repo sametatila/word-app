@@ -308,8 +308,10 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       {t("plc.dont_know")}
     </button>
   );
-  const options = (opts: string[], answer: number, onPick: (correct: boolean) => void) => (
-    <div className="grid gap-2">
+  const options = (opts: string[], answer: number, onPick: (correct: boolean) => void, soru?: string) => (
+    /* TEK SEÇİMLİK ŞIK LİSTESİ RADYO GRUBUDUR — Android karşılığı `ChoiceGame`
+       şıkları `accessibilityRole="radio"` ile veriyor. */
+    <div role="radiogroup" aria-label={soru} className="grid gap-2">
       {opts.map((o, i) => (
         <motion.button
           key={`${o}-${i}`}
@@ -319,7 +321,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           /* OLCUM KIPI: dogruluk aciklanmaz, bu yuzden tek bilgi SECIM ve o da
              yalnizca zemin renginden okunuyordu. Android karsiligi
              `ChoiceGame` `reveal={false}` dali. */
-          aria-pressed={picked === i}
+          role="radio"
+          aria-checked={picked === i}
           transition={{ delay: i * 0.04 }}
           disabled={picked !== null}
           onClick={() => {
@@ -355,7 +358,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             <strong>{item.key}</strong> → ?
           </p>
         )}
-        {options(item.options, item.answer, (c) => answerLeveled(stage, c, item.id))}
+        {options(item.options, item.answer, (c) => answerLeveled(stage, c, item.id), "de" in item ? item.de : item.key)}
         {dontKnow(() => answerLeveled(stage, false, item.id))}
         <p className="muted mt-3 text-center text-caption">
           {index + 1} / {items.length}
@@ -395,7 +398,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       <p className="mb-3 text-strong" lang={course}>
         {q.text}
       </p>
-      {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c))}
+      {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c), q.text)}
       {dontKnow(() => answerText(stage, item, qIndex, false))}
       <p className="muted mt-3 text-center text-caption">
         {t("plc.text_of", { n: textIndex + 1, total: list.length })} ·{" "}

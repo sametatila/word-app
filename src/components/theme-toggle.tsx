@@ -82,13 +82,16 @@ export function ThemeSetting({ bare = false }: { bare?: boolean } = {}) {
   {/* Segment: üçü de aynı ağırlıkta, seçili olan dolu. Mobildeki üçlü
       segmentin aynısı. */}
   const segment = (
-    <div className="flex gap-1.5">
+    /* TEK SEÇİMLİK SEGMENT RADYO GRUBUDUR — Android aynı üçlüyü
+       `accessibilityRole="radio"` ile veriyor (`SettingsScreen`). */
+    <div role="radiogroup" aria-label={t("theme.appearance")} className="flex gap-1.5">
       {OPTIONS.map((o) => (
         <button
           key={o.key}
           type="button"
           onClick={() => pick(o.key)}
-          aria-pressed={mode === o.key}
+          role="radio"
+          aria-checked={mode === o.key}
           className={`chip px-3 py-1.5 text-caption ${mode === o.key ? "chip-active" : ""}`}
         >
           {o.label}

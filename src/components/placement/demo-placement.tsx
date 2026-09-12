@@ -144,7 +144,9 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
         <p className="mb-4 text-h1" lang={course}>
           {q.question}
         </p>
-        <div className="grid gap-2">
+        {/* TEK SEÇİMLİK ŞIK LİSTESİ RADYO GRUBUDUR — Android karşılığı
+            `ChoiceGame` şıkları `accessibilityRole="radio"` ile veriyor. */}
+        <div role="radiogroup" aria-label={q.question} className="grid gap-2">
           {q.options.map((o, i) => (
             <motion.button
               key={`${q.id}-${o}`}
@@ -154,7 +156,8 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
               /* Hangisini sectigin ve hukmun kendisi yalnizca ZEMIN
                  RENGINDEN okunuyordu. Android'in ornek yerlestirmesi
                  (`ChoiceGame` `reveal`) simgeyi de ciziyor. */
-              aria-pressed={picked === o}
+              role="radio"
+              aria-checked={picked === o}
               transition={{ delay: i * 0.04 }}
               disabled={picked !== null}
               onClick={() => pick(o)}

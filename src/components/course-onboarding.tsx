@@ -359,14 +359,20 @@ export function CourseOnboarding({
             </div>
 
             {step.options ? (
-              <div className="mt-6 grid gap-3">
+              /* TEK SEÇİMLİK LİSTE RADYO GRUBUDUR. Aşağıdaki halka zaten bir
+                 radyo işareti ÇİZİYOR ama ekran okuyucu onu görmüyordu:
+                 `aria-pressed` "düğme, basılı" diye okunuyor. Android aynı
+                 satırı `accessibilityRole="radio"` ile veriyor
+                 (`OnboardingScreen`). */
+              <div role="radiogroup" aria-label={step.title} className="mt-6 grid gap-3">
                 {step.options.map((o) => {
                   const active = chosen === o.key;
                   return (
                     <button
                       key={o.key}
                       type="button"
-                      aria-pressed={active}
+                      role="radio"
+                      aria-checked={active}
                       onClick={() => pick(step.key, o.key)}
                       className={`option flex items-center gap-3 p-4 text-left ${active ? "option-picked" : ""}`}
                     >
@@ -389,12 +395,13 @@ export function CourseOnboarding({
                 {/* "Seviyeni seç" için satır içi seviye seçici (A1–C1) */}
                 {step.key === "level" && chosen === "pick" ? (
                   <div>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div role="radiogroup" aria-label={t("onboarding.pick_your_level")} className="grid grid-cols-5 gap-2">
                       {LEVELS.map((l) => (
                         <button
                           key={l.id}
                           type="button"
-                          aria-pressed={pickedLevel === l.id}
+                          role="radio"
+                          aria-checked={pickedLevel === l.id}
                           onClick={() => setPickedLevel(l.id)}
                           className={`option px-2 py-3 text-strong ${pickedLevel === l.id ? "option-picked" : ""}`}
                         >
