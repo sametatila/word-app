@@ -19,7 +19,7 @@ import { AlertIcon, CheckIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/
 import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
 import { Confetti } from "@/components/celebrate";
-import { vibrate } from "@/lib/fx";
+import { reducedMotion, vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
@@ -392,7 +392,13 @@ export function LessonPlayer({
     const el = scroller.current;
     if (!el) return;
     const id = requestAnimationFrame(() => {
-      el.scrollTop = el.scrollHeight;
+      /* KAYARAK iniyor, zıplayarak değil: Android'in sohbeti
+         `scrollToEnd({ animated })` ile kayıyor (`LessonScreen`) ve web
+         `scrollTop`u doğrudan yazıp anında atlıyordu — aynı sohbet iki
+         uygulamada iki ayrı his veriyordu. Hedef hâlâ KABIN DİBİ (yukarıdaki
+         not), yalnız atlama yerine `scrollTo`. "Hareketi azalt" açıkken
+         atlama geri geliyor: kaydırmanın kendisi gerekli, animasyonu değil. */
+      el.scrollTo({ top: el.scrollHeight, behavior: reducedMotion() ? "auto" : "smooth" });
     });
     return () => cancelAnimationFrame(id);
   }, [feed, turns, phase, awaiting, error, typing]);
