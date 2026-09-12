@@ -3022,7 +3022,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const src = read(f);
     const cip = (src.match(/chip-active/g) ?? []).length;
     if (!cip) continue;
-    const durum = (src.match(/aria-(?:pressed|current|selected)/g) ?? []).length;
+    /* `aria-checked` de bir durum kanali - hatta tek secimlik bir cip
+       seridinde DOGRU olani (bkz. 256). Desen onu saymiyordu ve radyo
+       grubuna gecen dort serit "durum yok" diye okunuyordu. */
+    const durum = (src.match(/aria-(?:pressed|current|selected|checked)/g) ?? []).length;
     if (durum < cip) eksik.push(f.split("/").pop() + " (" + cip + " cip, " + durum + " durum)");
   }
   /* Mobil tarafta cip TEK bilesen: durum orada bir kez yaziliyor, cagri yeri
@@ -7466,6 +7469,81 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 256. TEK SECIMLIK LISTE RADYO GRUBUDUR -------------------------
+   *
+   * Ayni anda yalniz BIRI secilebilen bir liste (sinav sikki, sebep, ses,
+   * tema, gorunurluk, saat, seviye, avatar parcasi, tepki) ekran okuyucuya
+   * NE OLDUGUNU soylemek zorunda. Iki ayri anlatim var ve ikisi ayni sey
+   * degil:
+   *   - `aria-pressed` bir AC/KAPA dugmesi anlatir: "dugme, basili". Kac
+   *     secenek oldugu, birini secmenin otekini biraktigi soylenmez.
+   *   - `role="radio"` + `aria-checked`, `role="radiogroup"` icinde: "radyo
+   *     dugmesi, 4 ogeden 2., secili".
+   *
+   * Android on bir yuzeyde `accessibilityRole="radio"` diyor - TalkBack
+   * orada dogru cumleyi kuruyor. Web ayni yuzeylerin HEPSINDE `aria-pressed`
+   * ile kalmisti; tek istisna tepki seridinin SECICI yarisiydi (ayni dosyada
+   * okunan yarisi `aria-pressed`ti, yani dosya kendi icinde de ayrisiyordu).
+   *
+   * MUAF KALAN AC/KAPA dugmeleri kasten disarida: "eller serbest", "yavas
+   * oku", "metni goster", "bahis" gercekten birer anahtar ve `aria-pressed`
+   * onlarin dogru anlatimi. Olcu bu yuzden dosya degil YUZEY sayiyor.
+   *
+   * Ikinci ve MUTLAK olcu: `role="radio"` tasiyan her dosya bir
+   * `role="radiogroup"` da tasimali. Gruptan kopmus bir radyo "2 ogeden 1."
+   * diyemez, yani yarim is. */
+  {
+    const RADYO = [
+      ["sebep listesi", "src/components/report-dialog.tsx", "mobile/src/ui/ReportSheet.tsx"],
+      ["ses secici", "src/components/voice-picker.tsx", "mobile/src/ui/VoicePicker.tsx"],
+      ["ilk kurulum", "src/components/course-onboarding.tsx", "mobile/src/screens/OnboardingScreen.tsx"],
+      ["kelime suzgeci", "src/components/word-list.tsx", "mobile/src/screens/WordsScreen.tsx"],
+      ["gorunurluk", "src/components/social/social-settings.tsx", "mobile/src/screens/SocialSettingsScreen.tsx"],
+      ["hatirlatma saati", "src/components/notification-settings.tsx", "mobile/src/screens/NotifPrimeScreen.tsx"],
+      ["tema segmenti", "src/components/theme-toggle.tsx", "mobile/src/screens/SettingsScreen.tsx"],
+      ["avatar parcalari", "src/components/avatar-editor.tsx", "mobile/src/screens/AvatarScreen.tsx"],
+      ["sinav sikki", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["beceri sorusu", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
+      ["yerlestirme sikki", "src/components/placement/placement-test.tsx", "mobile/src/game/ChoiceGame.tsx"],
+      ["ornek yerlestirme", "src/components/placement/demo-placement.tsx", "mobile/src/game/ChoiceGame.tsx"],
+      ["tepki seridi", "src/components/social/reaction-bar.tsx", "mobile/src/social/ReactionBar.tsx"],
+    ];
+    const webRadyo = (y) => {
+      const src = sil(read(y));
+      return /role="radio"/.test(src) && /aria-checked=/.test(src) ? "radyo" : "AC/KAPA";
+    };
+    const mobRadyo = (y) => (/accessibilityRole="radio"/.test(sil(read(y))) ? "radyo" : "ROL YOK");
+    sameList(
+      "tek secimlik liste radyo grubu",
+      RADYO.map(([ad, , m]) => ad + "=" + mobRadyo(m)),
+      RADYO.map(([ad, w]) => ad + "=" + webRadyo(w)),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: gruptan kopmus radyo yok. */
+    const walkTsx256 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx256(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const gruptanKopuk = [];
+    for (const f of walkTsx256("src/components")) {
+      const src = sil(read(f));
+      if (/role="radio"/.test(src) && !/role="radiogroup"/.test(src)) gruptanKopuk.push(f);
+    }
+    sameList(
+      "gruptan kopmus radyo",
+      gruptanKopuk.length ? gruptanKopuk : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 255. YIKICI EYLEMIN ONAYI --------------------------------------
    *
    * Geri alinamaz bes eylem var ve ikisi de ONAY soruyor: yazi silme, gorev
@@ -10394,7 +10472,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const wrb = sil(read("src/components/social/reaction-bar.tsx"));
     /* Secici artik bir MENU degil, tek secimli bir SATIR (§11.359): ortu
        kalkti, `role="radiogroup"` + `role="radio"` oldu ve Android'in
-       `accessibilityRole="radio"`su ile ayni. Desen de ona gore. */
+       `accessibilityRole="radio"`su ile ayni. Desen de ona gore.
+       IKI yuzey var (§11.379): OKUNAN serit ve SECICI serit. Once yalniz
+       secici radyoydu, okunan serit `aria-pressed` ile kalmisti - ayni
+       dosya kendi icinde ayrisiyordu. Ikisi de sayiliyor. */
     const wrbSecici = kapsayanlar(wrb, "void pick(k)", "button").filter((e) => /role="radio"/.test(e));
 
     sameList(
@@ -10402,9 +10483,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "secime bagli bag=" + secili,
         "aria-current tasimayan=" + akimsiz,
-        "tepki secicisi=" + (wrbSecici.length === 1 && /aria-checked=\{s\.mine === k\}/.test(wrbSecici[0]) && /role="radiogroup"/.test(wrb) ? "radio+checked" : "EKSIK"),
+        "tepki serleri=" + (wrbSecici.length === 2 && wrbSecici.every((e) => /aria-checked=\{s\.mine === k\}/.test(e)) && (wrb.match(/role="radiogroup"/g) ?? []).length === 2 ? "2 radyo grubu" : "EKSIK"),
       ],
-      ["secime bagli bag=5", "aria-current tasimayan=0", "tepki secicisi=radio+checked"],
+      ["secime bagli bag=5", "aria-current tasimayan=0", "tepki serleri=2 radyo grubu"],
       "bulunan",
       "beklenen",
     );
