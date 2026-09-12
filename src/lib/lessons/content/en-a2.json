@@ -3872,8 +3872,8 @@
   "focusId": "Past habits",
   "vocab": [
    {
-    "de": "grow up",
-    "tr": "büyümek / bir yerde yetişmek"
+    "de": "pocket money",
+    "tr": "harçlık"
    },
    {
     "de": "village",
@@ -4346,20 +4346,20 @@
      },
      {
       "lang": "en",
-      "text": "grow up"
+      "text": "pocket money"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: büyümek, bir yerde yetişmek. Lütfen tekrar et:"
+      "text": "Türkçesi: harçlık. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "grow up"
+      "text": "pocket money"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "grow up"
+     "target": "pocket money"
     }
    },
    {
@@ -8941,8 +8941,8 @@
     "tr": "taşınmak"
    },
    {
-    "de": "study",
-    "tr": "ders çalışmak / okumak"
+    "de": "high school",
+    "tr": "lise"
    },
    {
     "de": "start",
@@ -9458,20 +9458,20 @@
      },
      {
       "lang": "en",
-      "text": "study"
+      "text": "high school"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: ders çalışmak, okumak. Lütfen tekrar et:"
+      "text": "Türkçesi: lise. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "study"
+      "text": "high school"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "study"
+     "target": "high school"
     }
    },
    {
@@ -9558,8 +9558,8 @@
     "tr": "karar vermek"
    },
    {
-    "de": "probably",
-    "tr": "büyük ihtimalle"
+    "de": "someday",
+    "tr": "bir gün"
    },
    {
     "de": "sure",
@@ -10028,20 +10028,20 @@
      },
      {
       "lang": "en",
-      "text": "probably"
+      "text": "someday"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: büyük ihtimalle. Lütfen tekrar et:"
+      "text": "Türkçesi: bir gün. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "probably"
+      "text": "someday"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "probably"
+     "target": "someday"
     }
    },
    {
@@ -12758,8 +12758,8 @@
     "tr": "başı dönen"
    },
    {
-    "de": "tired",
-    "tr": "yorgun"
+    "de": "thermometer",
+    "tr": "termometre"
    },
    {
     "de": "illness",
@@ -13265,20 +13265,20 @@
      },
      {
       "lang": "en",
-      "text": "tired"
+      "text": "thermometer"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: yorgun. Lütfen tekrar et:"
+      "text": "Türkçesi: termometre. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "tired"
+      "text": "thermometer"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "tired"
+     "target": "thermometer"
     }
    },
    {
@@ -20996,8 +20996,8 @@
   "focusId": "There is / there are",
   "vocab": [
    {
-    "de": "furniture",
-    "tr": "mobilya"
+    "de": "couch",
+    "tr": "divan"
    },
    {
     "de": "shelf",
@@ -21586,20 +21586,20 @@
      },
      {
       "lang": "en",
-      "text": "furniture"
+      "text": "couch"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: mobilya. Lütfen tekrar et:"
+      "text": "Türkçesi: divan. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "furniture"
+      "text": "couch"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "furniture"
+     "target": "couch"
     }
    },
    {
@@ -31191,8 +31191,8 @@
   "focusId": "Written register",
   "vocab": [
    {
-    "de": "send",
-    "tr": "göndermek"
+    "de": "receive",
+    "tr": "teslim almak"
    },
    {
     "de": "attach",
@@ -31710,20 +31710,20 @@
      },
      {
       "lang": "en",
-      "text": "send"
+      "text": "receive"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: göndermek. Lütfen tekrar et:"
+      "text": "Türkçesi: teslim almak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "send"
+      "text": "receive"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "send"
+     "target": "receive"
     }
    },
    {
@@ -31864,8 +31864,8 @@
     "tr": "son"
    },
    {
-    "de": "lunch break",
-    "tr": "öğle molası"
+    "de": "cafeteria",
+    "tr": "kafeterya"
    },
    {
     "de": "shy",
@@ -32376,20 +32376,20 @@
      },
      {
       "lang": "en",
-      "text": "lunch break"
+      "text": "cafeteria"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: öğle molası. Lütfen tekrar et:"
+      "text": "Türkçesi: kafeterya. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "lunch break"
+      "text": "cafeteria"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "lunch break"
+     "target": "cafeteria"
     }
    },
    {
@@ -40754,8 +40754,8 @@
     "tr": "kahvaltı"
    },
    {
-    "de": "floor",
-    "tr": "kat"
+    "de": "elevator",
+    "tr": "asansör"
    },
    {
     "de": "towel",
@@ -41195,20 +41195,20 @@
      },
      {
       "lang": "en",
-      "text": "floor"
+      "text": "elevator"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kat. Lütfen tekrar et:"
+      "text": "Türkçesi: asansör. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "floor"
+      "text": "elevator"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "floor"
+     "target": "elevator"
     }
    },
    {
@@ -45833,8 +45833,8 @@
     "tr": "katılmak"
    },
    {
-    "de": "free",
-    "tr": "boş / müsait"
+    "de": "have fun",
+    "tr": "eğlenmek"
    },
    {
     "de": "sorry",
@@ -46242,20 +46242,20 @@
      },
      {
       "lang": "en",
-      "text": "free"
+      "text": "have fun"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: boş, müsait. Lütfen tekrar et:"
+      "text": "Türkçesi: eğlenmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "free"
+      "text": "have fun"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "free"
+     "target": "have fun"
     }
    },
    {
@@ -50729,8 +50729,8 @@
     "tr": "nişanlı"
    },
    {
-    "de": "marry",
-    "tr": "evlenmek"
+    "de": "twin",
+    "tr": "ikiz"
    },
    {
     "de": "divorce",
@@ -51205,20 +51205,20 @@
      },
      {
       "lang": "en",
-      "text": "marry"
+      "text": "twin"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: evlenmek. Lütfen tekrar et:"
+      "text": "Türkçesi: ikiz. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "marry"
+      "text": "twin"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "marry"
+     "target": "twin"
     }
    },
    {
@@ -51466,8 +51466,8 @@
     "tr": "bilmek / tanımak"
    },
    {
-    "de": "enjoy",
-    "tr": "tadını çıkarmak"
+    "de": "concert",
+    "tr": "konser"
    },
    {
     "de": "drink",
@@ -52037,20 +52037,20 @@
      },
      {
       "lang": "en",
-      "text": "enjoy"
+      "text": "concert"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: tadını çıkarmak. Lütfen tekrar et:"
+      "text": "Türkçesi: konser. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "enjoy"
+      "text": "concert"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "enjoy"
+     "target": "concert"
     }
    },
    {
@@ -55819,8 +55819,8 @@
     "tr": "indirmek"
    },
    {
-    "de": "install",
-    "tr": "kurmak"
+    "de": "podcast",
+    "tr": "podcast"
    },
    {
     "de": "useful",
@@ -56227,20 +56227,20 @@
      },
      {
       "lang": "en",
-      "text": "install"
+      "text": "podcast"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kurmak. Lütfen tekrar et:"
+      "text": "Türkçesi: podcast. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "install"
+      "text": "podcast"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "install"
+     "target": "podcast"
     }
    },
    {
@@ -56414,8 +56414,8 @@
     "tr": "şahsi"
    },
    {
-    "de": "secret",
-    "tr": "sır"
+    "de": "create",
+    "tr": "oluşturmak"
    },
    {
     "de": "careful",
@@ -56956,20 +56956,20 @@
      },
      {
       "lang": "en",
-      "text": "secret"
+      "text": "create"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sır. Lütfen tekrar et:"
+      "text": "Türkçesi: oluşturmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "secret"
+      "text": "create"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "secret"
+     "target": "create"
     }
    },
    {
@@ -65579,8 +65579,8 @@
     "tr": "su"
    },
    {
-    "de": "bill",
-    "tr": "fatura"
+    "de": "fire department",
+    "tr": "itfaiye"
    },
    {
     "de": "trash can",
@@ -66120,20 +66120,20 @@
      },
      {
       "lang": "en",
-      "text": "bill"
+      "text": "fire department"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: fatura. Lütfen tekrar et:"
+      "text": "Türkçesi: itfaiye. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "bill"
+      "text": "fire department"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "bill"
+     "target": "fire department"
     }
    },
    {

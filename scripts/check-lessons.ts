@@ -139,6 +139,38 @@ for (const l of LESSONS) {
   ok(leakage.length === 0, "Türkçe parçada alıntılanmış hedef dil cümlesi yok",
     `(${leakage.slice(0, 2).map((s) => s.text.slice(0, 40)).join(" | ")})`);
 
+  /*
+    AYNI DERSTE İKİ KEZ ÖĞRETİLEN KELİME. Ders kelimeyi bir adımda açıklıyor
+    ("floor … demek"), sonra ilerideki bir adımda sıfırdan tanıtıyor:
+    "Bir kelime daha: floor · Türkçesi: kat. Lütfen tekrar et:". Öğrenci
+    aynı kelimeyi iki kez "yeni" diye alıyor ve dersin sekiz yuvasından biri
+    boşa gidiyor — havuz A1'de zaten dar (aşağıdaki yineleme ölçümüne bak).
+
+    Kaynağı ölçüldü: sözlükçeyi 5'ten 8'e çıkaran iş (2026-09-11) yeni
+    kelimeleri dersin SONUNA şablon adımıyla ekledi ve dersin gövdesinde
+    hâlihazırda açıklanmış kelimeyi göremedi. 2026-09-12'de 38 vakaydı;
+    14'ü havuzdaki boş kelimelerle değiştirildi.
+
+    Ölçüt DAR tutuldu: yalnız şablon adımı ("Bir kelime daha:" ile açılan,
+    dört parçalık) ve yalnız kelimenin TEK BAŞINA geçtiği önceki bir adım
+    sayılıyor. Cümle içinde geçmek sayılmıyor — ders örnek cümleyi önce
+    duyurup sonra kelimeyi öğretebilir, o kusur değil.
+  */
+  const TEMPLATE_OPEN = /^(Bir kelime daha|Sıradaki|İlk kelimemiz|İkinci kelimemiz|Kelimemiz|Son kelimemiz)\b/;
+  const twiceTaught = l.lecture.filter((s, i) => {
+    const e = s.expect as { kind?: string; target?: string } | undefined;
+    if (e?.kind !== "repeat" || !e.target) return false;
+    if (!TEMPLATE_OPEN.test(s.say[0]?.text ?? "") || s.say.length > 4) return false;
+    const w = e.target.trim().toLowerCase();
+    return l.lecture.slice(0, i).some(
+      (st) =>
+        st.say.some((x) => x.lang !== "tr" && x.text.trim().toLowerCase() === w) &&
+        st.say.some((x) => x.lang === "tr" && /demek/.test(x.text)),
+    );
+  });
+  warn(`${id}: kelime aynı derste iki kez öğretiliyor`, twiceTaught.length === 0,
+    `(${twiceTaught.map((s) => (s.expect as { target: string }).target).join(", ")})`);
+
   // Her kelime sesli tekrar ettiriliyor
   const reps = repeatsOf(l);
   const missing = l.vocab.filter((v) => !reps.some((t) => t.includes(v.de.toLowerCase())));
@@ -247,6 +279,19 @@ warn("doğru/yanlış dengesi (hedef %25-60 doğru)",
   `(doğru oranı ${(trueRatio * 100).toFixed(0)}%)`);
 
 // Aynı kelime iki derste "yeni" diye öğretilmemeli (seviye içinde).
+//
+// UYARI SAYISI BİR YAPILACAKLAR LİSTESİ DEĞİL — aritmetiği 2026-09-12'de
+// ölçüldü ve İngilizce kursun A1'inde tabanı HAVUZ belirliyor:
+//
+//   en A1  yuva 800 · havuz 692 → en az 108 yineleme ZORUNLU (ölçülen 128)
+//   en A2  yuva 800 · havuz 1108 → zorunlu yineleme yok (ölçülen 92)
+//   en B1/B2/C1  yineleme yok (havuz 1516/2225/1634)
+//
+// Yani A1'deki 128 uyarının 108'i kapatılamaz; kapatmaya çalışmak dersten
+// temasına ait kelimeyi söküp havuzun artığını ("kral", "önlük") koymak
+// demek olurdu. A2'nin 92'si ise gerçekten açık: 484 kelime boşta duruyor.
+// Yinelemenin 71'i şablon adımıyla öğretiliyor (ucuz takas), kalanı dersin
+// gövdesine dokunmuş durumda (takas dersi bozar).
 //
 // Anahtar SEVİYE + HEDEF DİL: kurs değil, çünkü aynı dili öğreten iki kurs
 // (de ve gsw-zh) aynı kelimeyi iki kez öğretmemeli. Ama AYRI dil öğreten iki
