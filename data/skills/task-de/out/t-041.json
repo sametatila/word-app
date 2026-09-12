@@ -1,0 +1,252 @@
+[
+ {
+  "tr": "Katlama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Faltungskarte aus."
+ },
+ {
+  "tr": "Katlanan cümlecikte özne yok; zaman da yok; ikisini ana cümle veriyor; her fiil soru tutamıyor.",
+  "kind": "form.facts",
+  "de": "Im gefalteten Teilsatz gibt es kein Subjekt; auch keine Zeitstufe; beides liefert der Hauptsatz; nicht jedes Verb kann eine Frage tragen."
+ },
+ {
+  "tr": "„measure“ listeden geliyor; „build“ ve „name“ kuraldan; „-ing“ her fiilde çalışıyor; ama daha ağır duruyor.",
+  "kind": "form.facts",
+  "de": "„measure“ kommt aus der Liste; „build“ und „name“ aus der Regel; „-ing“ geht bei jedem Verb; wirkt aber schwerer."
+ },
+ {
+  "tr": "„Asked“ edilgen ve „having been“ düşmüş; „Having read“ önceki işi veriyor; „Wanting“ etken ve neden veriyor; özne ana cümleden geliyor.",
+  "kind": "form.facts",
+  "de": "„Asked“ ist passiv und „having been“ ist weggefallen; „Having read“ gibt das Frühere; „Wanting“ ist aktiv und gibt den Grund; das Subjekt kommt aus dem Hauptsatz."
+ },
+ {
+  "tr": "Kalan şey pişmanlık.",
+  "kind": "build.tr",
+  "de": "Was bleibt, ist die Reue."
+ },
+ {
+  "tr": "Özgüvenin inşası yavaş.",
+  "kind": "build.tr",
+  "de": "Der Aufbau von Selbstvertrauen ist langsam."
+ },
+ {
+  "tr": "Asıl acıtan öfke değildi.",
+  "kind": "build.tr",
+  "de": "Was wirklich wehtat, war nicht die Wut."
+ },
+ {
+  "tr": "Onu bitiren kıskançlıktı.",
+  "kind": "build.tr",
+  "de": "Es war die Eifersucht, die es beendete."
+ },
+ {
+  "tr": "Orantılı olduğu anlaşılıyor.",
+  "kind": "build.tr",
+  "de": "Es scheint verhältnismäßig zu sein."
+ },
+ {
+  "tr": "Alacaklı onları uyarmış olmalı.",
+  "kind": "build.tr",
+  "de": "Der Gläubiger muss sie gewarnt haben."
+ },
+ {
+  "tr": "Barışması istenince reddettiler.",
+  "kind": "build.tr",
+  "de": "Um Versöhnung gebeten, lehnten sie ab."
+ },
+ {
+  "tr": "Denetlemesi istenince kabul etti.",
+  "kind": "build.tr",
+  "de": "Um Aufsicht gebeten, stimmte sie zu."
+ },
+ {
+  "tr": "Algının ölçülmesi bir saat sürüyor.",
+  "kind": "build.tr",
+  "de": "Die Messung der Wahrnehmung dauert eine Stunde."
+ },
+ {
+  "tr": "Kadrolu iş olan teklif bugün geldi.",
+  "kind": "build.tr",
+  "de": "Das Angebot, das eine feste Stelle ist, kam heute."
+ },
+ {
+  "tr": "Ona güvensizlik duyduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Sie soll Misstrauen empfinden."
+ },
+ {
+  "tr": "Onu gitmeye iten liderlik tarzıydı.",
+  "kind": "build.tr",
+  "de": "Es war der Führungsstil, der sie vertrieb."
+ },
+ {
+  "tr": "Hedeflediğimiz şey bir çıkmaz değil.",
+  "kind": "build.tr",
+  "de": "Worauf wir zielen, ist keine Sackgasse."
+ },
+ {
+  "tr": "Bir kariyeri belirleyen şey strateji.",
+  "kind": "build.tr",
+  "de": "Was eine Laufbahn entscheidet, ist die Strategie."
+ },
+ {
+  "tr": "Faizsiz bir plan istememiz gerekirdi.",
+  "kind": "build.tr",
+  "de": "Wir hätten einen zinsfreien Plan verlangen sollen."
+ },
+ {
+  "tr": "Gelecek ay vade tarihini izliyor olacağız.",
+  "kind": "build.tr",
+  "de": "Nächsten Monat werden wir das Fälligkeitsdatum beobachten."
+ },
+ {
+  "tr": "İpoteği tek başlarına imzalamış olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können die Hypothek nicht allein unterschrieben haben."
+ },
+ {
+  "tr": "Bir örüntünün adlandırılması yardımcı oluyor.",
+  "kind": "build.tr",
+  "de": "Die Benennung eines Musters hilft."
+ },
+ {
+  "tr": "Arabuluculuk yapmayı denedikten sonra vazgeçti.",
+  "kind": "build.tr",
+  "de": "Nachdem sie versucht hatte zu vermitteln, hörte sie auf."
+ },
+ {
+  "tr": "Özlük dosyasını okuduktan sonra karar verdiler.",
+  "kind": "build.tr",
+  "de": "Nachdem sie die Personalakte gelesen hatten, entschieden sie."
+ },
+ {
+  "tr": "Nitelikli bir eleman hiç bu kadar zor bulunmadı.",
+  "kind": "build.tr",
+  "de": "Nie war eine Fachkraft so schwer zu finden."
+ },
+ {
+  "tr": "İnsan kaynakları nadiren bu kadar hızlı yanıt verir.",
+  "kind": "build.tr",
+  "de": "Selten antwortet die Personalabteilung so schnell."
+ },
+ {
+  "tr": "Hızlı işe almak istediği için seçim sürecini kıstılar.",
+  "kind": "build.tr",
+  "de": "Da sie schnell einstellen wollten, kürzten sie das Auswahlverfahren."
+ },
+ {
+  "tr": "Sorumluluk sigortası karşılasaydı hiçbir şey ödemezdik.",
+  "kind": "build.tr",
+  "de": "Hätte die Haftpflicht es gedeckt, hätten wir nichts gezahlt."
+ },
+ {
+  "tr": "Aralığa kadar krediyi ödeyecek kadar birikim yapmış olacağız.",
+  "kind": "build.tr",
+  "de": "Bis Dezember werden wir genug gespart haben, um den Kredit abzuzahlen."
+ },
+ {
+  "tr": "Son ödeme tarihine kadar gerisini nasıl kullanacağımıza karar vermiş olacağız.",
+  "kind": "build.tr",
+  "de": "Bis zum Zahlungstermin werden wir entschieden haben, wie wir den Rest aufbrauchen."
+ },
+ {
+  "tr": "Emeklilik sigortası daha erken başlasaydı şirket emekli maaşı şimdi daha yüksek olurdu.",
+  "kind": "build.tr",
+  "de": "Hätte die Rentenversicherung früher begonnen, wäre die Betriebsrente jetzt höher."
+ },
+ {
+  "tr": "Edilgen ortaç: „having been“ düşüyor.",
+  "kind": "build.hint",
+  "de": "Passives Partizip: „having been“ fällt weg."
+ },
+ {
+  "tr": "Işık isme düşüyor.",
+  "kind": "build.hint",
+  "de": "Das Licht fällt auf das Substantiv."
+ },
+ {
+  "tr": "Tek çekince yeter.",
+  "kind": "build.hint",
+  "de": "Eine Absicherung genügt."
+ },
+ {
+  "tr": "Katlama yok; sürerli biçim.",
+  "kind": "build.hint",
+  "de": "Keine Faltung; Verlaufsform."
+ },
+ {
+  "tr": "„which is“ buradan silinebilir.",
+  "kind": "build.hint",
+  "de": "„which is“ kann hier wegfallen."
+ },
+ {
+  "tr": "İki yarı karşı karşıya konuyor.",
+  "kind": "build.hint",
+  "de": "Die zwei Hälften werden einander gegenübergestellt."
+ },
+ {
+  "tr": "Yine „-ing“; liste değil, kural.",
+  "kind": "build.hint",
+  "de": "Wieder „-ing“; keine Liste, sondern eine Regel."
+ },
+ {
+  "tr": "Etken ortaç: bir durum ve bir neden.",
+  "kind": "build.hint",
+  "de": "Aktives Partizip: ein Zustand und ein Grund."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bu ayın ekstresinde.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge steht auf dem Auszug dieses Monats."
+ },
+ {
+  "tr": "Yarık cümle bir adayı listeden çıkarıyor.",
+  "kind": "build.hint",
+  "de": "Der Spaltsatz streicht einen Kandidaten von der Liste."
+ },
+ {
+  "tr": "Listeden gelen ek: „measure“ → „measurement“.",
+  "kind": "build.hint",
+  "de": "Eine Endung aus der Liste: „measure“ → „measurement“."
+ },
+ {
+  "tr": "Üretken kapı: her fiile „-ing“ takılabiliyor.",
+  "kind": "build.hint",
+  "de": "Die produktive Tür: an jedes Verb lässt sich „-ing“ hängen."
+ },
+ {
+  "tr": "Soru sözcüğü + mastar: özne de zaman da düşüyor.",
+  "kind": "build.hint",
+  "de": "Fragewort + Infinitiv: Subjekt und Zeitstufe fallen beide weg."
+ },
+ {
+  "tr": "„enough to“ da bir katlama; öznesi ana cümleden geliyor.",
+  "kind": "build.hint",
+  "de": "Auch „enough to“ ist eine Faltung; das Subjekt kommt aus dem Hauptsatz."
+ },
+ {
+  "tr": "İlanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Anzeige: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "İki yolun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der zwei Wege: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Katlamanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Faltung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç çatının sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Genera: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç aktarmanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Wiedergaben: bring sie in die richtige Ordnung."
+ }
+]

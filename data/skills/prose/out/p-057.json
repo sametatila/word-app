@@ -1,0 +1,187 @@
+[
+ {
+  "tr": "Üç örnek, en sonda kural.",
+  "kind": "explain",
+  "en": "Three examples, the rule last."
+ },
+ {
+  "tr": "Üç yarık cümle ve iki ortaç.",
+  "kind": "intro",
+  "en": "Three cleft sentences and two participles."
+ },
+ {
+  "tr": "İki yarık cümle ve iki devrik sıra.",
+  "kind": "intro",
+  "en": "Two cleft sentences and two inversions."
+ },
+ {
+  "tr": "İki katlama ve bir katlamasız cümle.",
+  "kind": "intro",
+  "en": "Two folds and one sentence with no fold in it."
+ },
+ {
+  "tr": "„it is short for „having been asked“…“",
+  "kind": "explain",
+  "en": "„it is short for „having been asked“…“"
+ },
+ {
+  "tr": "Çıkarım: kanıt tek bir okuma bırakıyor.",
+  "kind": "explain",
+  "en": "A conclusion: the evidence leaves one reading."
+ },
+ {
+  "tr": "Devrik sıra bir ilanda. Kaç tane fazla?",
+  "kind": "intro",
+  "en": "Inversion in an advertisement. How many are too many?"
+ },
+ {
+  "tr": "Üç ortaç. Yanlış giden hep hangi parça?",
+  "kind": "intro",
+  "en": "Three participles. Which part always goes wrong?"
+ },
+ {
+  "tr": "„„She is said to feel distrust“ cannot.“",
+  "kind": "explain",
+  "en": "„„She is said to feel distrust“ cannot.“"
+ },
+ {
+  "tr": "Çekince nereye konuyor, nereye konmuyor?",
+  "kind": "intro",
+  "en": "Where does the hedge go, and where does it not?"
+ },
+ {
+  "tr": "Üç ortaç, üç ses. Ortadaki neyin kısası?",
+  "kind": "intro",
+  "en": "Three participles, three voices. What is the middle one short for?"
+ },
+ {
+  "tr": "Sayı üstüne çekince: bir tane bile fazla.",
+  "kind": "explain",
+  "en": "A hedge on a number: even one is too many."
+ },
+ {
+  "tr": "Yarık cümle bir adayı listeden çıkarıyor.",
+  "kind": "explain",
+  "en": "The cleft takes a candidate off the list."
+ },
+ {
+  "tr": "Önceki iş, edilgen, etken; en sonda kural.",
+  "kind": "explain",
+  "en": "The earlier action, the passive, the active; the rule last."
+ },
+ {
+  "tr": "„They can't have signed the mortgage alone.“",
+  "kind": "explain",
+  "en": "„They can't have signed the mortgage alone.“"
+ },
+ {
+  "tr": "Kapalı, karışık, yine kapalı; en sonda sınama.",
+  "kind": "explain",
+  "en": "Closed, mixed, closed again; the test last."
+ },
+ {
+  "tr": "Üç kip, bir dosya. Hangisi geri alıntılanıyor?",
+  "kind": "intro",
+  "en": "Three modals, one file. Which one gets quoted back?"
+ },
+ {
+  "tr": "Dört sözcük iki sözcüğe katlanıyor. Ne düşüyor?",
+  "kind": "intro",
+  "en": "Four words fold into two. What drops out?"
+ },
+ {
+  "tr": "Söylenen, beklenen, düşünülen; en sonda sınama.",
+  "kind": "explain",
+  "en": "Said, expected, thought; the test last."
+ },
+ {
+  "tr": "Üç koşul, aynı başlangıç. Fark nerede başlıyor?",
+  "kind": "intro",
+  "en": "Three conditionals, the same opening. Where does the difference start?"
+ },
+ {
+  "tr": "Bir kişi hakkında üç kaynaksız cümle. Sınama ne?",
+  "kind": "intro",
+  "en": "Three sentences about a person with no source. What is the test?"
+ },
+ {
+  "tr": "Üç ortaç, üç çatı. Hangisinde iki sözcük düşmüş?",
+  "kind": "intro",
+  "en": "Three participles, three voices. In which one have two words dropped?"
+ },
+ {
+  "tr": "İki kip ve iki koşul. Hangisi bu ayın ekstresinde?",
+  "kind": "intro",
+  "en": "Two modals and two conditionals. Which one is on this month's statement?"
+ },
+ {
+  "tr": "İki yarı karşı karşıya; bir aday listeden çıkıyor.",
+  "kind": "explain",
+  "en": "Two halves against each other; a candidate comes off the list."
+ },
+ {
+  "tr": "Üç adlaştırma. Hangisi listeden, hangisi kuraldan?",
+  "kind": "intro",
+  "en": "Three nominalisations. Which comes from the list and which from the rule?"
+ },
+ {
+  "tr": "İki yol var: listeden geçen ve her zaman açık olan.",
+  "kind": "intro",
+  "en": "There are two routes: the one through the list and the one that is always open."
+ },
+ {
+  "tr": "„The full form is „Having been asked to supervise“…“",
+  "kind": "explain",
+  "en": "„The full form is „Having been asked to supervise“…“"
+ },
+ {
+  "tr": "„has“ „is“ değil; silme yalnız „be“ye kadar uzanıyor.",
+  "kind": "explain",
+  "en": "„has“ is not „is“; the deletion only reaches as far as „be“."
+ },
+ {
+  "tr": "Üç yarık cümle. Hangisi bir adayı listeden çıkarıyor?",
+  "kind": "intro",
+  "en": "Three cleft sentences. Which one takes a candidate off the list?"
+ },
+ {
+  "tr": "Üç ilgi cümlesi bir karşılaştırmada. Kısaltmak iyi mi?",
+  "kind": "intro",
+  "en": "Three relative clauses in a comparison. Is shortening a good idea?"
+ },
+ {
+  "tr": "„„How to use up the rest“ has no subject and no tense.“",
+  "kind": "explain",
+  "en": "„„How to use up the rest“ has no subject and no tense.“"
+ },
+ {
+  "tr": "Üç yarık cümle. Hangisi adı konmamış olanı adlandırıyor?",
+  "kind": "intro",
+  "en": "Three cleft sentences. Which one names the thing usually left unnamed?"
+ },
+ {
+  "tr": "„„Arguably“ says nothing and I take it out every time I find it.“",
+  "kind": "explain",
+  "en": "„„Arguably“ says nothing and I take it out every time I find it.“"
+ },
+ {
+  "tr": "„„hope“ cannot hold a question, and neither can „want“ or „like“.“",
+  "kind": "explain",
+  "en": "„„hope“ cannot hold a question, and neither can „want“ or „like“.“"
+ },
+ {
+  "tr": "„That one earns its hedge: I am reporting somebody else's phrase…“",
+  "kind": "explain",
+  "en": "„That one earns its hedge: I am reporting somebody else's phrase…“"
+ },
+ {
+  "tr": "Listeden gelen, üretken olan, yine üretken; en sonda iki yolun adı.",
+  "kind": "explain",
+  "en": "The one from the list, the productive one, the productive one again; the names of the two routes last."
+ },
+ {
+  "tr": "Soru katlaması, „enough to“ katlaması, katlamasız cümle, en sonda sınır.",
+  "kind": "explain",
+  "en": "The question fold, the „enough to“ fold, the sentence with no fold, the limit last."
+ }
+]

@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
-| B2 | 19–25 | bekliyor |
+| B2 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
+| B2 | 22–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -1165,6 +1165,49 @@ sildirdi. İki tireli örnek daha metinden çıkarıldı („three-day“,
 „right-hand“) — kural dördüncü kez çalıştı ve bu kez örnekler bileşik
 anlatan paragrafın kendi içindeydi, yani metnin konusu ile ölçümün sınırı
 aynı yerde çakıştı.
+
+
+**B2 ünite 19–21 (2026-09-12).** Ünite 19 What decides a career ·
+The hiring chain · The person in the contract · Never so hard to find;
+ünite 20 By December · The loan that failed ·
+If the contract had covered it · The salary conversation; ünite 21
+The assessment · What is said about her · What really hurt ·
+How we fell out. On sekiz egzersiz; ünite dışı ölçüm %0,0. B2 yuvalarının
+126'sı dolu.
+
+Ünite 19'un noktası EDİLGEN ORTAÇTA „HAVING BEEN“ DÜŞÜYOR. „Asked to
+supervise, she agreed“ cümlesi „Having been asked to supervise“ın kısası,
+ve kısa biçim NORMAL olan; uzun biçim dilbilgisel ama ağır. Üstelik
+„ask“ın aldığı mastar yerinde kalıyor, yani iki sözcük bütün bir cümleyi
+taşıyor. Almanca eksende bu kısaltma YOK: Almanca Partizip II'yi bu işte
+zarf gibi kullanmıyor („Gebeten, …“ eskimiş duruyor) ve tam bir yan cümle
+kuruyor („Als sie gebeten wurde, …“). Yani Almanca okuyanın refleksi uzun
+biçimi yazmak ve ürettiği şey dilbilgisel ama hep bir tık ağır.
+
+Ünite 20'nin noktası SORU SÖZCÜĞÜ + MASTAR: „decided how to use up the
+rest“ — bütün bir cümlecik iki sözcüğe katlanıyor, özne de zaman da
+düşüyor ve ikisini ana cümle veriyor. Aynı kalıp „what to say“, „where to
+go“, „whether to pay“ ile de çalışıyor, ama yalnız soru tutabilen
+fiillerden sonra. Almanca eksende bu, ünite 19'un devamı ve turun ipini
+adıyla söylüyor: **İNGİLİZCE CÜMLECİĞİ ERİTEREK KÜÇÜLTÜYOR, ALMANCA
+AÇIYOR.** Almancada „wie zu machen“ diye bir yol yok; „wie man den Rest
+aufbraucht“ tam bir cümle, öznesiyle ve çekimli fiiliyle.
+
+Ünite 21'in noktası „-ING“ ADLAŞTIRMASI: ÜRETKEN KAPI. Ünite 4, 10 ve 16
+ekin fiilden türetilemediğini göstermişti — liste var, kural yok. Burada
+listenin yanındaki ikinci yol açılıyor: fiile „-ing“ takmak istisnasız
+her fiilde çalışıyor („the building of“, „the naming of“). Yani
+İngilizcede biri KURALSIZ BİR LİSTE, öteki LİSTESİZ BİR KURAL olan iki
+yol var ve ikincisi her zaman açık. Almanca eksende bu tam bir PARİTE ve
+hattın en temiz kapanışlarından biri: Almancanın üretken yolu da aynı
+yerde duruyor — mastarı büyük harfle yazmak („das Aufbauen“) — yani ünite
+4'te „Almanca düzenli, İngilizce listeli“ diye açılan iplik burada
+İngilizcenin de bir düzenli yolu olduğu söylenerek kapanıyor.
+
+Ölçüm bu turda yetmiş sekiz sözlükçe maddesi ekletti, on beş maddeyi
+sildirdi ve bir dinleme bölümünü ikiye ayırttırdı. Yeni kusur: soru
+şıkkına konan TİRELİ BİR EK („-ment“) tek belirteç olarak kapanmıyor —
+tireli terim kuralının beşinci görünüşü, bu kez terim değil bir ekti.
 
 
 ## Tamamlanma ölçütü
