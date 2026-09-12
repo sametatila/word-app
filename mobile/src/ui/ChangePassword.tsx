@@ -93,18 +93,21 @@ export function ChangePassword({ colors }: { colors: Palette }) {
       <TextInput
         autoComplete="current-password" textContentType="password"
         value={current} onChangeText={setCurrent} secureTextEntry
-        placeholder={t("changepw.current")} placeholderTextColor={colors.textFaint} style={input}
+        placeholder={t("changepw.current")}
+        accessibilityLabel={t("changepw.current")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
         autoComplete="new-password" textContentType="newPassword"
         value={next} onChangeText={setNext} secureTextEntry
-        placeholder={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
+        placeholder={t("changepw.new")}
+        accessibilityLabel={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
         autoComplete="new-password" textContentType="newPassword"
         value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
         onSubmitEditing={() => { if (!busy) void kaydet(); }}
-        placeholder={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}
+        placeholder={t("changepw.again")}
+        accessibilityLabel={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}
       />
 
       {next.length > 0 && (

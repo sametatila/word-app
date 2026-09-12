@@ -151,6 +151,7 @@ export function WordsScreen() {
           value={q}
           onChangeText={setQ}
           placeholder={t("words.search", { target: targetLangName(), nativeLang: nativeLangName() })}
+          accessibilityLabel={t("words.search", { target: targetLangName(), nativeLang: nativeLangName() })}
           placeholderTextColor={colors.textFaint}
           autoCapitalize="none"
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 15 }}

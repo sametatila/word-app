@@ -98,13 +98,15 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
             <TextInput
               autoComplete="new-password" textContentType="newPassword"
               value={password} onChangeText={setPassword} secureTextEntry autoFocus
-              placeholder={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
+              placeholder={t("changepw.new")}
+              accessibilityLabel={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
             />
             <TextInput
               autoComplete="new-password" textContentType="newPassword"
               value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
               onSubmitEditing={() => { if (!busy) void kaydet(); }}
-              placeholder={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}
+              placeholder={t("changepw.again")}
+              accessibilityLabel={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}
             />
 
             {password.length > 0 && (

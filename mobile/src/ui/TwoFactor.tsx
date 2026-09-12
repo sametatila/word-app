@@ -100,7 +100,8 @@ export function TwoFactor({ colors }: { colors: Palette }) {
         autoComplete="current-password" textContentType="password"
         value={password} onChangeText={setPassword} secureTextEntry returnKeyType="go"
         onSubmitEditing={() => { if (!busy) void kaydet(); }}
-        placeholder={t("twofa.password_label")} placeholderTextColor={colors.textFaint} style={input}
+        placeholder={t("twofa.password_label")}
+        accessibilityLabel={t("twofa.password_label")} placeholderTextColor={colors.textFaint} style={input}
       />
       {error ? (
         <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>

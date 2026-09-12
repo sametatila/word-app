@@ -853,7 +853,8 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
   const dolu = !!value.trim() && !disabled;
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-      <TextInput value={value} onChangeText={onChange} placeholder={placeholder} placeholderTextColor={colors.textFaint}
+      <TextInput value={value} onChangeText={onChange} placeholder={placeholder}
+      accessibilityLabel={placeholder} placeholderTextColor={colors.textFaint}
         editable={!disabled} multiline autoCapitalize="sentences" onSubmitEditing={onSubmit}
         style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
       <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>

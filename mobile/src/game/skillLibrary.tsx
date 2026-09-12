@@ -388,7 +388,10 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           {sttOk !== false ? (
             <>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("item.mono_transcript_hint")}</Text>
-              <TextInput value={transcript} onChangeText={setTranscript} multiline
+              {/* Alanin ADI: yertutucu yok, ad hemen ustundeki ipucu
+                  satirindan geliyor (web `monologue-player` de ayni ipucunu
+                  yaziyor). */}
+              <TextInput value={transcript} onChangeText={setTranscript} multiline accessibilityLabel={t("item.mono_transcript_hint")}
                 style={{ marginTop: spacing.sm, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.sm }}>
                 {used.map((x) => (

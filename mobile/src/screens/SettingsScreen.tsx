@@ -401,6 +401,7 @@ export function SettingsScreen() {
               */
               onBlur={() => { const v = name.trim(); if (v !== (me?.name ?? "")) void patch({ displayName: v || undefined }, () => track("setting_change", 0, "name")); }}
               placeholder={t("settings.display_name")}
+              accessibilityLabel={t("settings.display_name")}
               placeholderTextColor={colors.textFaint}
               returnKeyType="done"
               autoCapitalize="words"

@@ -752,6 +752,7 @@ function ItemView({
                   value={value ?? ""}
                   onChangeText={(v) => onAnswer(item.id, v)}
                   placeholder={task.format === "transform" ? t("mockexam.write_transform") : t("mockexam.write_here")}
+                  accessibilityLabel={task.format === "transform" ? t("mockexam.write_transform") : t("mockexam.write_here")}
                   placeholderTextColor={colors.textFaint}
                   returnKeyType="done"
                   autoCapitalize="none"
@@ -807,6 +808,7 @@ function WritingTask({
         onChangeText={(v) => onOpen(task.id, v)}
         multiline
         placeholder={t("mockexam.write_here")}
+        accessibilityLabel={t("mockexam.write_here")}
         placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 180, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
       />
@@ -1018,6 +1020,7 @@ function SpeakingTask({
             onChangeText={(v) => onOpen(task.id, v)}
             multiline
             placeholder={t("mockexam.transcript_placeholder")}
+            accessibilityLabel={t("mockexam.transcript_placeholder")}
             placeholderTextColor={colors.textFaint}
             style={{ marginTop: spacing.xs, minHeight: 120, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
           />

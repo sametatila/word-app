@@ -362,7 +362,8 @@ export function AuthScreen() {
               </View>
             ) : (
               <>
-                <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
+                <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")}
+                accessibilityLabel={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
                 {captchaOn && (
                   <>
@@ -401,6 +402,7 @@ export function AuthScreen() {
               returnKeyType="go"
               onSubmitEditing={() => { void doVerifyCode(); }}
               placeholder={t("twofa.code")}
+              accessibilityLabel={t("twofa.code")}
               placeholderTextColor={colors.textFaint}
               style={[input, { textAlign: "center", fontSize: 26, letterSpacing: 10 }]}
             />
@@ -509,10 +511,13 @@ export function AuthScreen() {
                 mevcut parola — yanlışını vermek yöneticiye yanlış kayıt
                 önerir. */}
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={PROFILE_LIMITS.displayNameMax} autoComplete="name" textContentType="name" style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")}
+              accessibilityLabel={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={PROFILE_LIMITS.displayNameMax} autoComplete="name" textContentType="name" style={input} />
             )}
-            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
-            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
+            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")}
+            accessibilityLabel={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
+            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
+            accessibilityLabel={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
             {/* Canlı geri bildirim YALNIZ kayıtta: girişte var olan bir parolayı
                 yargılamak anlamsız ve "parolan zayıf" demek orada yanlış mesaj.
                 Aynı ayrım webde de var. `accessibilityLiveRegion` ekran

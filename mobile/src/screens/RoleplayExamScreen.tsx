@@ -413,6 +413,7 @@ export function RoleplayExamScreen() {
           editable={!busy}
           multiline
           placeholder={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
+          accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
           style={{ flex: 1, maxHeight: 96, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 12, color: colors.text, fontSize: 15 }}
         />

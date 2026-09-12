@@ -154,7 +154,8 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
             basmak zorundaydi. Handler dugmenin ta kendisi. */}
         <TextInput value={typed} onChangeText={setTyped} editable={!done} autoCapitalize="none" spellCheck={false}
           returnKeyType="done" onSubmitEditing={() => { if (typed.trim()) onSettle(written(typed, accept)); }}
-          placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
+          placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
+          accessibilityLabel={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
@@ -400,7 +401,8 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
       </View>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-          placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
+          placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })}
+          accessibilityLabel={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (!typed.trim()) return; const m = matchSentence(typed, t.answer, t.alternatives ?? []); setMatch(m); onSettle(isPass(m)); }} disabled={!typed.trim()}
@@ -446,7 +448,8 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
             <View key={f.label}>
               <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 3 }}>{f.label}</Text>
               <TextInput value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done}
-                placeholder={f.label} placeholderTextColor={colors.textFaint}
+                placeholder={f.label}
+                accessibilityLabel={f.label} placeholderTextColor={colors.textFaint}
                 style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
               {done && !ok ? (
                 <Text variant="caption" color={colors.textMuted} style={{ marginTop: 3 }}>
@@ -590,7 +593,8 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
         </View>
       ) : null}
       <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-        placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
+        placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })}
+        accessibilityLabel={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>

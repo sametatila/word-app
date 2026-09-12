@@ -539,6 +539,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         autoCapitalize="none"
         autoCorrect={false}
         placeholder={tx("rounds.type")}
+        accessibilityLabel={tx("rounds.type")}
         placeholderTextColor={colors.textFaint}
         onSubmitEditing={check}
         returnKeyType="done"
@@ -671,6 +672,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         autoCapitalize="sentences"
         autoCorrect={false}
         placeholder={tx("rounds.write_a_sentence_ph")}
+        accessibilityLabel={tx("rounds.write_a_sentence_ph")}
         placeholderTextColor={colors.textFaint}
         style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 17 }}
       />
@@ -761,6 +763,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
             autoCorrect={false}
             editable={!picked}
             placeholder={tx("rounds.type")}
+            accessibilityLabel={tx("rounds.type")}
             placeholderTextColor={colors.textFaint}
             onSubmitEditing={() => { if (val.trim()) choose(val.trim()); }}
             returnKeyType="done"
@@ -1180,6 +1183,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         autoCapitalize="sentences"
         autoCorrect={false}
         placeholder={tx("rounds.write_sentence", { lang: targetLangName() })}
+        accessibilityLabel={tx("rounds.write_sentence", { lang: targetLangName() })}
         placeholderTextColor={colors.textFaint}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />

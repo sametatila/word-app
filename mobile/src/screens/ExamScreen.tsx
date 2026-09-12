@@ -908,7 +908,8 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
           </>
         ) : (
           <TextInput value={typed} onChangeText={setTyped} multiline autoCapitalize="sentences"
-            placeholder={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
+            placeholder={t("exam.write_sentence")}
+            accessibilityLabel={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
             style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         )}
         <PressableScale
@@ -1142,7 +1143,8 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           <Text key={i} variant="caption" color={colors.textMuted}>· {c}</Text>
         ))}
         <TextInput value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
-          placeholder={t("exam.write_text")} placeholderTextColor={colors.textFaint}
+          placeholder={t("exam.write_text")}
+          accessibilityLabel={t("exam.write_text")} placeholderTextColor={colors.textFaint}
           style={{ minHeight: 140, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {/* BİRİMİ YAZILI: sayaç "12 / 40" diyordu ve neyin sayıldığı
             (kelime mi, karakter mi) hiçbir yerde geçmiyordu. */}
