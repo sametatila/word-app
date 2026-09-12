@@ -301,6 +301,26 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
     .limit(1);
   if (!row) return NextResponse.json({ error: "not_found" }, { status: 404 });
 
+  /*
+   * BITMIS DENEME DEGERLENDIRILMEZ, VE AYNI GOREV IKI KEZ DEGERLENDIRILMEZ.
+   *
+   * Kural `save` icinde zaten yaziliydi ("bitmis bir denemenin cevaplari
+   * degistirilemez, yoksa puan gecmise donuk duzeltilebilirdi") ama UC
+   * eylemden yalniz birinde uygulaniyordu. Acik gorevin puani `openScores`;
+   * yani bu uc tam o puani yaziyor. Korumasiz birakildiginda:
+   *   - bitmis bir kagidin acik gorev puani sonradan degistirilebiliyordu,
+   *   - ayni gorev farkli metinlerle tekrar tekrar degerlendirilip en iyi
+   *     puan secilebiliyordu (arayuz vermiyor ama uc veriyordu),
+   *   - her cagri yapay zeka kotasindan yiyordu.
+   *
+   * Zaten puanlanmis gorevde MEVCUT PUAN donuyor: yanit kaybolmus bir
+   * istegin tekrari boylece hata almiyor (idempotent), ama yeni bir puan da
+   * uretilmiyor.
+   */
+  if (row.state !== "running") return NextResponse.json({ error: "attempt_done" }, { status: 409 });
+  const oncekiler = (row.openScores ?? {}) as Record<string, unknown>;
+  if (oncekiler[taskId] !== undefined) return NextResponse.json({ result: oncekiler[taskId] });
+
   const paper = mockPaperById(row.paperId);
   const part = paper ? findPart(paper, row.skill as MockSkill) : null;
   const task = part?.tasks.find((t) => t.id === taskId);
@@ -355,6 +375,25 @@ async function finish(userId: string, body: Record<string, unknown>) {
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   /*
+   * BITMIS DENEME BIR KAYITTIR, YENIDEN BITIRILEMEZ.
+   *
+   * Guncelleme `state` kosulu tasimiyordu: bitmis bir kagit yeni cevaplarla
+   * yeniden bitirilebiliyor, `score`/`passed`/`ai` uzerine yazilabiliyordu -
+   * oysa o puan istatistik ekraninin ve yonetim panosunun okudugu KAYIT.
+   * Ustelik her cagri yapay zeka geri bildirimini yeniden uretiyor (kota) ve
+   * ikinci bir `mock_exam_finish` olayi yaziyordu, yani pano da iki kez
+   * sayiyordu.
+   *
+   * BITMIS KAGIT ICIN KAYITLI SONUC DONUYOR: yaniti kaybolmus bir bitirme
+   * isteginin tekrari hata almiyor (idempotent) ve yeni bir seye de yol
+   * acmiyor.
+   */
+  if (row.state !== "running") {
+    const kayitli = scorePart(row.paperId, row.skill as MockSkill, (row.answers ?? {}) as Record<string, string>);
+    return NextResponse.json({ attempt: shape(row), score: kayitli ?? score, ai: row.ai ?? null });
+  }
+
+  /*
     Geri bildirim doğrudan ekrana çıkıyor, o yüzden kullanıcının dilinde
     üretiliyor. Dil ÇEREZDEN değil profilden: bu ucu mobil de çağırıyor ve
     orada web çerezimiz yok.
@@ -393,8 +432,16 @@ async function finish(userId: string, body: Record<string, unknown>) {
       finishedAt: new Date(),
       updatedAt: new Date(),
     })
-    .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId)))
+    .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running")))
     .returning();
+  /* Yarista kaybeden ikinci istek: arada baska bir cagri kagidi bitirmis.
+     Yine kayitli sonuc donuyor, ikinci bir olay yazilmiyor. */
+  if (!saved) {
+    const [son] = await db.select().from(mockExamAttempts).where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId))).limit(1);
+    if (!son) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    const kayitli = scorePart(son.paperId, son.skill as MockSkill, (son.answers ?? {}) as Record<string, string>);
+    return NextResponse.json({ attempt: shape(son), score: kayitli ?? score, ai: son.ai ?? null });
+  }
 
   await track(userId, "mock_exam_finish", day, score.pct, `${score.level}:${score.skill}`);
   return NextResponse.json({ attempt: shape(saved), score, ai });
