@@ -37,7 +37,22 @@ export const dynamic = "force-dynamic";
  * Liste `check:parity`de manifesto ve `parseDeepLink` ile karşılaştırılıyor:
  * üçü birlikte değişmeli.
  */
-export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app"] as const;
+/**
+ * DÖRDÜNCÜ YOL: DAVET BAĞLANTISI. `/u/<kullanıcıadı>` paylaşılan profil
+ * adresi - büyüme döngüsünün kendisi. Uygulaması kurulu bir Android
+ * kullanıcısı arkadaşının bağlantısına dokunduğunda uygulama değil TARAYICI
+ * açılıyordu.
+ *
+ * Yukarıdaki kural ("yalnız karşılanabilen yol iddia edilir") burada da
+ * tutuyor ve ölçüldü: web'in `/u/[username]` sayfası da oturum istiyor
+ * (oturumsuz ziyaretçi girişe yollanıyor), mobil `UserScreen` ise adı konmuş
+ * bir kart ve "Giriş yap" düğmesi gösteriyor. Yani iki taraf eşit ve
+ * uygulamanın cevabı daha açık.
+ *
+ * Yol ÖNEK: kullanıcı adı değişken. Apple'ın bileşen biçiminde bu `*` ile
+ * yazılıyor, Android'de `pathPrefix`, `parseDeepLink`te `startsWith`.
+ */
+export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/"] as const;
 
 export async function GET() {
   const team = process.env.APPLE_TEAM_ID;
@@ -49,7 +64,13 @@ export async function GET() {
       details: [
         {
           appIDs: [`${team}.${bundle}`],
-          components: APP_LINK_PATHS.map((path) => ({ "/": path, comment: `Lernomi ${path}` })),
+          /* Önek yolları `*` ile: `/u/` altındaki her kullanıcı adı. Tam
+             eşleşen yollar olduğu gibi kalıyor - joker bir yol, iddia
+             edilmemesi gereken adresleri de içine alabilir. */
+          components: APP_LINK_PATHS.map((path) => ({
+            "/": path.endsWith("/") ? `${path}*` : path,
+            comment: `Lernomi ${path}`,
+          })),
         },
       ],
     },

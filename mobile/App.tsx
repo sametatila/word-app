@@ -71,11 +71,22 @@ function Nav() {
       } catch { /* gezgin bir şekilde hazır değilse bağlantı uygulamayı açmakla kalır */ }
     };
 
+    /* Paylaşılan profil — aynı soğuk açılış yarışına tabi, o yüzden aynı
+       bekletme yolundan geçiyor. */
+    const goProfile = (username: string) => {
+      if (!navigationRef.isReady()) { pending.current = { kind: "profile", username }; return; }
+      try {
+        (navigationRef.navigate as (n: string, p?: object) => void)("User", { username });
+      } catch { /* yut */ }
+    };
+
     const handle = async (raw: string | null | undefined) => {
       const action = parseDeepLink(raw);
       if (!action || !alive) return;
 
       if (action.kind === "reset-password") { goReset(action.token); return; }
+
+      if (action.kind === "profile") { goProfile(action.username); return; }
 
       /*
         TARAYICIDAN DEVİR. Android'de Apple girişi sistem tarayıcısında
@@ -184,6 +195,11 @@ function Nav() {
         if (p?.kind === "reset-password") {
           try {
             (navigationRef.navigate as (n: string, o?: object) => void)("ResetPassword", { token: p.token });
+          } catch { /* yut */ }
+        }
+        if (p?.kind === "profile") {
+          try {
+            (navigationRef.navigate as (n: string, o?: object) => void)("User", { username: p.username });
           } catch { /* yut */ }
         }
       }}

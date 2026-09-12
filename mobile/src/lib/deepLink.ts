@@ -3,12 +3,13 @@ import { API_BASE } from "../api/client";
 /**
  * Gelen bağlantıyı uygulamanın anladığı bir eyleme çevirir.
  *
- * Üç bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
+ * Dört bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
  *   - `/reset-password?token=…`     → uygulama içinde yeni parola ekranı
  *   - `/api/auth/verify-email?token=…` → doğrulamayı uygulama tamamlasın
  *   - `/auth/app?ott=…`             → tarayıcıda açılan girişi devral
+ *   - `/u/<kullanıcıadı>`           → paylaşılan profil (davet bağlantısı)
  *
- * NEDEN SADECE İKİSİ: iddia edilen her yolu uygulamanın KARŞILAMASI gerekiyor.
+ * NEDEN SADECE BUNLAR: iddia edilen her yolu uygulamanın KARŞILAMASI gerekiyor.
  * Karşılanmayan bir yol, bağlantının tarayıcıda açılmasından kötü — uygulama
  * açılır ve kullanıcı boş bir ekranda kalır. `/api/auth/callback/*` bu yüzden
  * hiç iddia edilmiyor: Google girişi oraya dönüyor ve uygulamaya sıçrarsa
@@ -29,6 +30,15 @@ export type DeepLinkAction =
    * kullanımlık ve 3 dakika yaşıyor, uygulama onu oturuma çeviriyor.
    */
   | { kind: "auth-handoff"; token: string }
+  /**
+   * Paylaşılan profil — davet bağlantısının kendisi.
+   *
+   * Uygulaması kurulu bir kullanıcı arkadaşının bağlantısına dokunduğunda
+   * TARAYICI açılıyordu; büyüme döngüsünün tam ortasında bir sızıntı.
+   * Adresten ekrana çevirme bilgisi zaten vardı (`pushRoute` bildirimler için
+   * `/u/…` eşliyor), eksik olan tek şey yolun iddia edilip karşılanmasıydı.
+   */
+  | { kind: "profile"; username: string }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -60,6 +70,14 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
     */
     const ott = url.searchParams.get("ott");
     return ott ? { kind: "auth-handoff", token: ott } : null;
+  }
+
+  if (url.pathname.startsWith("/u/")) {
+    /* Kullanıcı adı ÇÖZÜLÜYOR: bağlantı paylaşıldığında yüzde kodlanmış
+       olabiliyor. Boşsa içeri alınmıyor - uygulama boş bir profil ekranı
+       açmasın. */
+    const username = decodeURIComponent(url.pathname.slice(3)).trim();
+    return username ? { kind: "profile", username } : null;
   }
 
   if (url.pathname === "/api/auth/verify-email") {

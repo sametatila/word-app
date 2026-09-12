@@ -78,6 +78,13 @@
                  (bkz. lib/deepLink, App.tsx). Uygulama kurulu değilse aynı
                  adres tarayıcıda bir sayfa çiziyor, kullanıcı çıkmazda kalmıyor. -->
             <data android:scheme="https" android:host="www.lernomi.app" android:path="/auth/app" />
+            <!-- DAVET BAĞLANTISI: paylaşılan profil adresi. Kullanıcı adı
+                 değişken olduğu için `pathPrefix`. Uygulaması kurulu bir
+                 kullanıcı arkadaşının bağlantısına dokunduğunda uygulama
+                 açılıyor; oturumsuzsa `UserScreen` adı konmuş bir kart ve
+                 "Giriş yap" düğmesi gösteriyor (web de oturum istiyor, yani
+                 iki taraf eşit). -->
+            <data android:scheme="https" android:host="www.lernomi.app" android:pathPrefix="/u/" />
         </intent-filter>
       </activity>
       <service
