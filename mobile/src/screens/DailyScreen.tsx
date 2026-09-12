@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, dateLocale, formatNumber } from "../lib/i18n";
+import { t, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -84,7 +84,10 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               <Text numberOfLines={1} variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
               <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { correct: r.correct, total: r.total })}</Text>
             </View>
-            <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>
+            {/* Sayi BICIMLEYICIDEN: burada `toLocaleString` dogrudan cagriliyordu,
+                yani ortak `formatNumber`in yuvarlamasini atliyordu. Uygulamada
+                sayi bicimleyen tek yer o (web karsiligi `formatNumber`). */}
+            <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatNumber(r.score)}</Text>
           </View>
         );
       })}

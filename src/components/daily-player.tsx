@@ -392,7 +392,13 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
         <p className="muted text-micro">{t("daily.players_at_your_level")}</p>
       </div>
       <ol>
-        {rows.map((r) => (
+        {rows.map((r) => {
+          /* Baş harf JSX'İN DIŞINDA, Android'de olduğu gibi
+             (`DailyScreen`: `const initial = …`). Satırın içinde hesaplanırsa
+             "ad çizimi" sayan ölçüler onu bir ad sanıyor — oysa tek karakter,
+             satıra sığmama sorunu yok. */
+          const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
+          return (
           <li
             key={`${r.rank}-${r.name ?? "x"}`}
             className="flex items-center gap-3 border-t px-5 py-2.5 text-body"
@@ -424,12 +430,40 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
                 <span className="muted text-center font-black tabular-nums">{r.rank}</span>
               )}
             </span>
-            <span className="min-w-0 flex-1 truncate font-semibold">
-              {r.name ?? t("social.unnamed")}
-              {r.isMe ? <span className="muted ml-1.5 text-micro uppercase">{t("social.you")}</span> : null}
+            {/*
+              BAŞ HARF DAİRESİ. Android'in satırında rütbeden sonra 36 px'lik
+              bir daire var ve içinde adın ilk harfi (`DailyScreen`); webde
+              yalnız sıra numarası ve ad vardı, yani aynı liste iki
+              uygulamada iki farklı ağırlıkta okunuyordu. Kendi satırı da
+              işaretleniyor: dolu zemin + `onFill`.
+            */}
+            <span
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-body font-bold"
+              style={{
+                background: r.isMe ? "var(--color-brand)" : "var(--surface-2)",
+                color: r.isMe ? "var(--on-fill)" : "var(--text-muted)",
+              }}
+              aria-hidden
+            >
+              {initial}
             </span>
-            <span className="muted shrink-0 text-caption tabular-nums">
-              {r.correct}/{r.total}
+            <span className="min-w-0 flex-1">
+              {/* AD YEDEĞİ `social.student`: sıralama satırında birine
+                  "isimsiz öğrenci" demek, eksik bir alanı herkese
+                  duyurmaktır. Android üç tablosunun hepsinde "Öğrenci"
+                  diyor; webin lig tablosu kendi içinde bile tutmuyordu
+                  (satır "isimsiz öğrenci", aynı kişinin bildirme düğmesi
+                  "öğrenci"). */}
+              <span className="block truncate font-semibold">
+                {r.name ?? t("social.student")}
+                {r.isMe ? t("social.you_paren") : ""}
+              </span>
+              {/* DOĞRU SAYISI ADIN ALTINDA ve ortak anahtardan: web ham bir
+                  kesir basıyordu (`3/8`), Android "8 soruda 3 doğru" diyor
+                  (`common.n_correct`). */}
+              <span className="muted block text-micro">
+                {t("common.n_correct", { correct: r.correct, total: r.total })}
+              </span>
             </span>
             <span
               className="w-16 shrink-0 text-right font-bold tabular-nums"
@@ -438,7 +472,8 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
               {formatNumber(r.score, lang)}
             </span>
           </li>
-        ))}
+          );
+        })}
       </ol>
     </div>
   );
