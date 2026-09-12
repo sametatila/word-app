@@ -17290,6 +17290,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* -------------------------------------- 311. AVATAR PARCALARININ GEOMETRISI
+   *
+   * `avatar-parts.tsx`in kendi yorumu su iddiayi tasiyor: "Yollar mobil
+   * `M/src/ui/avatarParts.tsx` ile BIREBIR: ayni secenek ayni gorunmeli,
+   * yoksa 'ayni avatar' iki platformda iki sey olur." Iddiayi tutan HICBIR
+   * sey yoktu: katalog listeleri (`HATS`/`GLASSES`/`MUSTACHES`/`HAT_COLORS`)
+   * karsilastiriliyor ve avatar cozumlemesi de olculuyor, ama CIZIMIN kendisi
+   * olculmuyordu.
+   *
+   * Sonucu sessiz ve veriye bagli: kullanicinin kaydettigi yapilandirma
+   * (`hat: "cap"`) iki platformda ayni, cizim farkli olur - ayni hesap iki
+   * uygulamada iki avatar. Derleyici gormez (iki dosya ayri agac, biri SVG
+   * biri react-native-svg), goz de gormez cunku fark bir yol dizgisinin
+   * icinde.
+   *
+   * OLCU PARCA PARCA: her `id === "<parca>"` dalindan cizim nitelikleri
+   * (`d`, `cx`, `rx`, `fill`, `strokeWidth`, …) SIRAYLA cikariliyor ve iki
+   * tarafta ayni olmasi bekleniyor. Parca duzeyinde olculmesi dosyadaki dal
+   * SIRASINI serbest birakiyor (siralama cizimi degistirmiyor) ama bir dalin
+   * ICINDEKI katman sirasini korumak zorunda - orada sira gercekten onemli.
+   *
+   * Sayi olcusu de var: parca bulunamazsa (yapinin degismesi) kumeler bosalir
+   * ve "fark yok" bos bir dogru olurdu. */
+  {
+    const parcalar = (yol) => {
+      const src = read(yol);
+      const out = new Map();
+      const idx = [...src.matchAll(/id === "([a-z]+)"/g)];
+      idx.forEach((m, i) => {
+        const son = i + 1 < idx.length ? idx[i + 1].index : src.length;
+        const blok = src.slice(m.index, son);
+        const nitelik = [
+          ...blok.matchAll(
+            /(?:d|cx|cy|r|x|y|x1|y1|x2|y2|width|height|rx|ry|fill|stroke|strokeWidth|points)=[{"]([^"}]*)["}]/g,
+          ),
+        ].map((x) => x[0].replace(/\s+/g, " "));
+        out.set(m[1], nitelik);
+      });
+      return out;
+    };
+    const webP = parcalar("src/components/avatar-parts.tsx");
+    const mobP = parcalar("mobile/src/ui/avatarParts.tsx");
+    const ortakP = [...webP.keys()].filter((k) => mobP.has(k)).sort();
+    sameList(
+      "avatar parcasi sayisi",
+      ["ortak=" + (ortakP.length >= 7 ? "7+" : ortakP.length), "web=" + webP.size, "mobil=" + mobP.size],
+      ["ortak=7+", "web=" + mobP.size, "mobil=" + mobP.size],
+      "bulunan",
+      "beklenen",
+    );
+    /* CIKTI KISA TUTULUYOR: ilk yazim iki tarafin BUTUN nitelik dizgisini
+       basiyordu ve tek bir piksel farkinda ekrana iki paragraf dokuluyordu -
+       okunmayan bir hata mesaji, hata mesaji degildir. Parca basina "ayni /
+       FARKLI", ayrica ILK farkin kendisi yaziliyor. */
+    const ilkFark = (() => {
+      for (const k of ortakP) {
+        const a = mobP.get(k) ?? [];
+        const b = webP.get(k) ?? [];
+        for (let i = 0; i < Math.max(a.length, b.length); i++) {
+          if (a[i] !== b[i]) return k + "[" + i + "] mobil=" + (a[i] ?? "-") + " web=" + (b[i] ?? "-");
+        }
+      }
+      return "yok";
+    })();
+    sameList(
+      "avatar parcalarinin cizimi",
+      [...ortakP.map((k) => k + "=" + ((mobP.get(k) ?? []).join("|") === (webP.get(k) ?? []).join("|") ? "ayni" : "FARKLI")), "ilk fark=" + ilkFark],
+      [...ortakP.map((k) => k + "=ayni"), "ilk fark=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

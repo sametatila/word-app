@@ -16275,3 +16275,40 @@ Dersi yazıyorum çünkü ölçüm zamanının çoğunu bu üçü aldı: **bir f
 önce o satırın kendi yorumunu okumak** gerekiyor; bu depoda kararların gerekçesi
 kodun yanında duruyor ve "ayrışma" sanılan şeyin üçte biri belgelenmiş bir
 tercih.
+
+## §11.447 — "Yollar birebir" iddiasını tutan hiçbir şey yoktu
+
+`avatar-parts.tsx`in kendi yorumu şunu söylüyor: *"Yollar mobil
+`M/src/ui/avatarParts.tsx` ile **BİREBİR**: aynı seçenek aynı görünmeli, yoksa
+'aynı avatar' iki platformda iki şey olur."* İddiayı tutan hiçbir şey yoktu.
+
+Katalog listeleri (`HATS`/`GLASSES`/`MUSTACHES`/`HAT_COLORS`) karşılaştırılıyor
+ve avatar çözümlemesi de ölçülüyor — ama **çizimin kendisi** ölçülmüyordu.
+Sonucu sessiz ve veriye bağlı: kullanıcının kaydettiği yapılandırma
+(`hat: "cap"`) iki platformda aynı, çizim farklı olur; aynı hesap iki uygulamada
+iki avatar. Derleyici görmez (iki ayrı ağaç, biri SVG biri `react-native-svg`),
+göz de görmez çünkü fark bir yol dizgisinin içinde.
+
+Ölçüldü: bugün **birebir** (yedi parça, 75 nitelik, sıfır fark). Yani iddia
+doğruydu — ama tesadüfen doğru kalmaya devam etmesi için bir sebep yoktu.
+
+### §311
+
+Ölçü **parça parça**: her `id === "<parça>"` dalından çizim nitelikleri (`d`,
+`cx`, `rx`, `fill`, `strokeWidth`, …) **sırayla** çıkarılıyor ve iki tarafta
+aynı olması bekleniyor. Parça düzeyinde ölçmek dosyadaki dal **sırasını**
+serbest bırakıyor (sıralama çizimi değiştirmiyor) ama bir dalın **içindeki
+katman sırasını** korumak zorunda — orada sıra gerçekten önemli (gölge
+katmanının altta mı üstte mi olduğu). Enjeksiyon bunu da doğruladı.
+
+Sayı ölçüsü de var: parça bulunamazsa (yapının değişmesi) kümeler boşalır ve
+"fark yok" boş bir doğru olurdu.
+
+Çıktı kısa tutuluyor: ilk yazım iki tarafın **bütün** nitelik dizgisini
+basıyordu ve tek bir piksel farkında ekrana iki paragraf döküyordu. Okunmayan
+bir hata mesajı, hata mesajı değildir — artık parça başına "aynı/FARKLI" ve
+**ilk farkın kendisi** yazılıyor.
+
+Dört enjeksiyon doğrulandı: webde bir yolu 1 px kaydırmak, mobilde bir katmanı
+silmek, bir parçayı yeniden adlandırmak (sayı ölçüsü düşüyor), iki katmanın
+sırasını değiştirmek.
