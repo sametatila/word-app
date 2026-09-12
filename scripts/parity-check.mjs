@@ -18359,6 +18359,53 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ---------- 326. KABUGU KULLANAMAYAN BOS HAL, KABUGUN OLCUSUNU TASIYOR
+ *
+ * Lig tablosunda "ligde tek basinasin" hali kabugu (`EmptyCard`)
+ * KULLANAMIYOR: kabuk kendi kart cercevesini ciziyor ve bu hal lig kartinin
+ * ICINDE duruyor (baslik satiri - lig adi ve kalan gun - ustte kaliyor).
+ * O yuzden web tarafi karoyu elle kuruyor. Elle kurulan her kopya kaymaya
+ * acik ve kaymisti da: aciklama satiri `text-body` yaziyordu, kabuk ve
+ * Android `EmptyCard` ise sonuk `caption` - ayni bos hal iki platformda iki
+ * ayri puntoyla okunuyordu.
+ *
+ * Olcu KABUKTAN okunuyor, kapinin icine kopyalanmiyor: karo boyu, ikon boyu,
+ * yaricap sinifi, baslik ve aciklama siniflari `empty-card.tsx`ten cikariliyor
+ * ve elle kurulan blokta ayni degerler aranıyor. Kabuk degisirse kapi elle
+ * kurulan kopyayi da degistirmeye zorlar. */
+{
+  const silK = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const kabuk = silK(read("src/components/empty-card.tsx"));
+  const lig = silK(read("src/components/social/league-board.tsx"));
+  const karoBoy = (kabuk.match(/width: (\d+), height: (\d+)/) ?? []).slice(1, 3).join("x") || "YOK";
+  const ikonBoy = (kabuk.match(/<Icon size=\{(\d+)\} \/>/) ?? [])[1] ?? "YOK";
+  const yaricap = /rounded-tile/.test(kabuk) ? "rounded-tile" : "YOK";
+  const baslikSinif = (kabuk.match(/<p className="([^"]*)">\{title\}<\/p>/) ?? [])[1] ?? "YOK";
+  const metinSinif = (kabuk.match(/<p className="([^"]*)">\{text\}<\/p>/) ?? [])[1] ?? "YOK";
+  /* Elle kurulan blok: "ligde teksin" halinin kendisi. */
+  const blok = (() => {
+    const i = lig.indexOf("league.alone");
+    if (i < 0) return "";
+    const bas = lig.lastIndexOf("<div className=\"flex flex-col items-center", i);
+    return bas < 0 ? "" : lig.slice(bas, lig.indexOf("</div>", i) + 6);
+  })();
+  const ligKaro = (blok.match(/width: (\d+), height: (\d+)/) ?? []).slice(1, 3).join("x") || "YOK";
+  const ligIkon = (blok.match(/size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
+  sameList(
+    "kabuksuz bos hal kabugun olcusunde",
+    [
+      "karo=" + ligKaro,
+      "ikon=" + ligIkon,
+      "yaricap=" + (new RegExp(yaricap.replace(/[^\w-]/g, "")).test(blok) ? yaricap : "FARKLI"),
+      "baslik=" + (blok.includes('className="' + baslikSinif + '"') ? "ayni" : "FARKLI"),
+      "metin=" + (blok.includes('className="' + metinSinif + '"') ? "ayni" : "FARKLI"),
+    ],
+    ["karo=" + karoBoy, "ikon=" + ikonBoy, "yaricap=" + yaricap, "baslik=ayni", "metin=ayni"],
+    "elle kurulan",
+    "kabuk",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

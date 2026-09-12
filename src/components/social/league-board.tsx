@@ -115,7 +115,10 @@ export function LeagueBoard() {
               <PodiumIcon size={26} />
             </span>
             <p className="mt-1 text-h3">{t("league.alone")}</p>
-            <p className="muted text-body">{t("league.alone_sub")}</p>
+            {/* Açıklama satırı KABUĞUN ölçüsünde: `EmptyCard` sönük `caption`
+                yazıyor, burada `body` vardı — aynı boş hâl iki platformda iki
+                ayrı puntoyla okunuyordu (Android `EmptyCard` da caption). */}
+            <p className="muted text-caption">{t("league.alone_sub")}</p>
           </div>
         ) : (
           <ol>

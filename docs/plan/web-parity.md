@@ -16883,3 +16883,21 @@ Kapı **§325** iki ölçü: (1) hiçbir XP yüzeyi Spark çizmiyor — kapsam t
 (2) iki rozetin sıfır koşulu iki platformda da var. Tarama **eşikle**
 ölçülüyor (tam sayıyla değil): Spark meşru bir glif ve yeni bir yerde
 kullanılması kapının işi değil; ölçülen şey taramanın boşalmaması.
+
+## §11.466 — Kabuğu kullanamayan boş hâl, kabuğun ölçüsünü taşıyor
+
+Lig tablosundaki "ligde tek başınasın" hâli boş durum kabuğunu (`EmptyCard`)
+**kullanamıyor**: kabuk kendi kart çerçevesini çiziyor, bu hâl ise lig kartının
+içinde duruyor (başlık satırı — lig adı ve kalan gün — üstte kalıyor). Web o
+yüzden karoyu elle kuruyor ve gerekçesi dosyada yazılı.
+
+Elle kurulan her kopya kaymaya açık ve **kaymıştı**: açıklama satırı
+`text-body` yazıyordu, kabuk (ve Android `EmptyCard`) sönük `caption` —
+aynı boş hâl iki platformda iki ayrı puntoyla okunuyordu.
+
+Kapı **§326** ölçüleri **kabuktan okuyor**, kendi içine kopyalamıyor: karo
+boyu, ikon boyu, yarıçap sınıfı, başlık ve açıklama sınıfları
+`empty-card.tsx`ten çıkarılıyor ve elle kurulan blokta aynı değerler aranıyor.
+Enjeksiyon iki yönden: elle kurulan puntoyu bozmak **ve** kabuğun karo boyunu
+değiştirmek — ikincisi kapının bir kopya taşımadığını gösteriyor, çünkü kabuk
+değişince kapı elle kurulan bloğu da değişmeye zorluyor.
