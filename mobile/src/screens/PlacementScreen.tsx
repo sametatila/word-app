@@ -309,6 +309,12 @@ export function PlacementScreen() {
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>
             {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
+            {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
+                yaziyor (`placement-test`: `· describePerSkill(...)`); mobilde
+                yalnizca TAZE sonuc kartinda vardi, "en son ne zaman girdin"
+                satirinda yoktu - oysa veri (`perSkill`) o kayitta duruyor ve
+                yardimci da bu dosyada. */}
+            {describePerSkill(last.perSkill) ? ` · ${describePerSkill(last.perSkill)}` : ""}
           </Text>
         ) : null}
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
@@ -332,6 +338,12 @@ export function PlacementScreen() {
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
             {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
+            {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
+                yaziyor (`placement-test`: `· describePerSkill(...)`); mobilde
+                yalnizca TAZE sonuc kartinda vardi, "en son ne zaman girdin"
+                satirinda yoktu - oysa veri (`perSkill`) o kayitta duruyor ve
+                yardimci da bu dosyada. */}
+            {describePerSkill(last.perSkill) ? ` · ${describePerSkill(last.perSkill)}` : ""}
           </Text>
         ) : null}
         <PressableScale

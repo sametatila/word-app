@@ -796,7 +796,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* Oturum meta alanlari. `pacing`, `leeches` ve `challengeBest` hicbir
      istemcide okunmuyor (web dahil) - ayri bir konu, bkz. §11.22. */
-  const metaWeb = alanlar(seg(web, "  meta: {", "\n  };")).filter((a) => !["meta", "pacing", "leeches", "challengeBest"].includes(a));
+  const metaWeb = alanlar(seg(web, "  meta: {", "\n  };"))    /* `leeches` ve `challengeBest` ARTIK GONDERILMIYOR (§342): ikisi de
+       hicbir istemcinin okumadigi alanlardi ve kaldirildi, o yuzden
+       muafiyet listesinden de dustu. `pacing` duruyor - onu `scripts/e2e`
+       okuyor (tempo kuralinin uc dalini ayirt eden tek olcu) ve §342 o
+       muafiyeti kendi denetliyor. */
+    .filter((a) => !["meta", "pacing"].includes(a));
   const metaMob = alanlar(seg(mob, "export type SessionMeta = {", "\n};"));
   ciftYon("meta alanlari", metaWeb, metaMob);
   /* Cevap yaniti: web `AnswerResult` ile mobil `SubmitResult`. */
@@ -19762,6 +19767,124 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["alan=10"],
     "bulunan",
     "beklenen",
+  );
+}
+
+/* -------- 343. OGRENME UCLARININ ALAN KUMELERI VE "EN SON GIRDIGIN" SATIRI
+ *
+ * §342 oturum meta'sini kapatti; bu kapi ogrenme uclarinin geri kalanini
+ * olcuyor. Alti cift ve hepsi bugun esit - olcunun isi esitligi SABITLEMEK,
+ * cunku ayrisma TIP HATASI olarak cikmiyor: arada JSON var ve istemci
+ * olmayan bir alani okuyunca sessizce `undefined` aliyor.
+ * (`/api/answers` cifti BURADA DEGIL: eski bir kapi onu zaten olcuyor -
+ * "cevap yaniti alanlari". Ayni seyi iki kez olcen kapi yesilken de bir sey
+ * soylemiyor.)
+ *   `/api/weekly`     web `WeeklyStatus`      <-> mobil `WeeklyStatus`
+ *   `/api/weekly`     web `WeeklyResult`      <-> mobil `WeeklyResult`
+ *   `/api/placement`  web `PlacementTest`     <-> mobil `PlacementTest`
+ *   `/api/quests`     web `QuestProgress`     <-> mobil `Quest`
+ *   `/api/immersion`  uc govdesi              <-> mobil `LearningPath`
+ *
+ * Ikinci olcu ayni ekranin ICERIGI: "en son ne zaman girdin" satiri. Web dort
+ * parca yaziyor (tarih, onerilen seviye, kabul edilen seviye, BECERI
+ * KIRILIMI); mobilde kirilim yalnizca TAZE sonuc kartinda vardi, o satirda
+ * yoktu - oysa veri (`perSkill`) kayitta duruyor ve yardimci (`describePerSkill`)
+ * o dosyada. Mobilde satir IKI yerde ciziliyor (giris ve "henuz tekrar
+ * giremezsin"), ikisi de olculuyor. */
+{
+  const silO = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const ustDuzeyO = (govde) => {
+    const out = [];
+    let d = 0, buf = "";
+    for (const c of govde) {
+      if ("{[(".includes(c)) d++;
+      else if ("}])".includes(c)) d--;
+      if ((c === ";" || c === ",") && d === 0) { out.push(buf); buf = ""; } else buf += c;
+    }
+    out.push(buf);
+    /* KISA YAZIM da sayiliyor (`level,` `units,`): uc govdesi alanlari kisa
+       yazimla gonderiyor ve iki nokta arananinca ikisi "sunucunun
+       gondermedigi" cikmisti - kapinin kendi okumasi. */
+    return [...new Set(out.map((x) => (x.match(/^\s*(\w+)\??\s*(?::|$)/) ?? [])[1]).filter(Boolean))].sort();
+  };
+  const tipAlan = (yol, ad) => {
+    const x = silO(read(yol));
+    let i = x.indexOf("export type " + ad + " =");
+    if (i < 0) i = x.search(new RegExp("(?:^|\\n)type " + ad + " ="));
+    if (i < 0) return ["TIP YOK: " + ad];
+    const k = x.indexOf("{", i);
+    let d = 0;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) return ustDuzeyO(x.slice(k + 1, j));
+    }
+    return ["OKUNAMADI: " + ad];
+  };
+  const CIFT = [
+    ["haftalik durum", "src/lib/weekly.ts", "WeeklyStatus", "mobile/src/game/weekly.ts", "WeeklyStatus"],
+    ["haftalik sonuc", "src/lib/weekly.ts", "WeeklyResult", "mobile/src/game/weekly.ts", "WeeklyResult"],
+    ["seviye testi", "src/lib/placement.ts", "PlacementTest", "mobile/src/game/placement.ts", "PlacementTest"],
+    ["gunun gorevi", "src/lib/quests.ts", "QuestProgress", "mobile/src/game/quests.ts", "Quest"],
+  ];
+  for (const [ad, wy, wt, my, mt] of CIFT) {
+    const w = tipAlan(wy, wt);
+    const m = tipAlan(my, mt);
+    const eksik = w.filter((a) => !m.includes(a));
+    const fazla = m.filter((a) => !w.includes(a));
+    sameList(ad + " alanlari", eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde okunmayan", "beklenen");
+    sameList(ad + " alanlari (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "sunucunun gondermedigi", "beklenen");
+  }
+  /* Patika: uc govdesi satir ici yazili, o yuzden TIP degil GOVDE okunuyor. */
+  const patikaSunucu = (() => {
+    const src = silO(read("src/app/api/immersion/route.ts"));
+    const i = src.indexOf("currentIndex: state.currentIndex");
+    if (i < 0) return ["ISARET YOK"];
+    const k = src.lastIndexOf("{", i);
+    let d = 0;
+    for (let j = k; j < src.length; j++) {
+      if ("{[(".includes(src[j])) d++;
+      else if ("}])".includes(src[j])) { d--; if (d === 0) return ustDuzeyO(src.slice(k + 1, j)); }
+    }
+    return ["OKUNAMADI"];
+  })();
+  const patikaMobil = tipAlan("mobile/src/lib/useLearningPath.ts", "LearningPath");
+  sameList(
+    "patika alanlari",
+    patikaSunucu.filter((a) => !patikaMobil.includes(a)).length ? patikaSunucu.filter((a) => !patikaMobil.includes(a)) : ["ayrisma yok"],
+    ["ayrisma yok"],
+    "mobilde okunmayan",
+    "beklenen",
+  );
+  sameList(
+    "patika alanlari (ters)",
+    patikaMobil.filter((a) => !patikaSunucu.includes(a)).length ? patikaMobil.filter((a) => !patikaSunucu.includes(a)) : ["ayrisma yok"],
+    ["ayrisma yok"],
+    "sunucunun gondermedigi",
+    "beklenen",
+  );
+
+  /* "En son girdigin" satiri: dort parca, iki tarafta. */
+  const webPlc = silO(read("src/components/placement/placement-test.tsx")).replace(/\s+/g, " ");
+  const mobPlc = silO(read("mobile/src/screens/PlacementScreen.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "en son girdigin satiri",
+    [
+      "tarih=" + (/placement\.last_taken", \{ date: new Date\(last\.at\)/.test(mobPlc) ? "var" : "YOK"),
+      "onerilen=" + (/\{last\.suggested\}/.test(mobPlc) ? "var" : "YOK"),
+      "kabul edilen=" + (/placement\.you_chose", \{ level: last\.accepted \}/.test(mobPlc) ? "var" : "YOK"),
+      /* SATIR sayiliyor, CAGRI degil: her satir yardimciyi iki kez
+         cagiriyor (kosul + sablon), yani "cagri >= 2" bir satir icin de
+         dogru cikiyordu ve bir blogu silen enjeksiyon yesil geciyordu. */
+      "beceri kirilimi=" + ((mobPlc.match(/\? ` · \$\{describePerSkill\(last\.perSkill\)\}`/g) ?? []).length === 2 ? "iki yerde" : "EKSIK"),
+    ],
+    [
+      "tarih=" + (/placement\.last_taken", \{ date: new Date\(initialLast\.at\)/.test(webPlc) ? "var" : "YOK"),
+      "onerilen=" + (/\{initialLast\.suggested\}/.test(webPlc) ? "var" : "YOK"),
+      "kabul edilen=" + (/placement\.you_chose", \{ level: initialLast\.accepted \}/.test(webPlc) ? "var" : "YOK"),
+      "beceri kirilimi=" + (/describePerSkill\(initialLast\.perSkill, t\)/.test(webPlc) ? "iki yerde" : "EKSIK"),
+    ],
+    "mobil",
+    "web",
   );
 }
 

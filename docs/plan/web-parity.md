@@ -17559,3 +17559,32 @@ birden okunamazsa "ayrışma yok" kendiliğinden doğru çıkardı.
 bölüyordum ve `coverage: { mastered; total }`ın içindeki iki alanı da üst düzey
 saymıştı (dokuz yerine on bir). Artık derinlik sayarak bölüyor — `typeFields`
 helper'ının zaten yaptığı şey.
+
+## §11.486 — Öğrenme uçlarının alan kümeleri, ve "en son girdiğin" satırındaki eksik kırılım
+
+§11.485 oturum meta'sını kapattı; bu tur geri kalan öğrenme uçlarını ölçtüm.
+**Beş çift ve hepsi eşit** çıktı: haftalık durum (7 alan), haftalık sonuç (5),
+seviye testi (4 aşama), günün görevi (7), patika (5). `/api/answers` çiftini
+**ölçmedim** — eski bir kapı onu zaten ölçüyor ("cevap yanıtı alanları"); ilk
+yazılışımda ekleyip sonra çıkardım, çünkü aynı şeyi iki kez ölçen kapı yeşilken
+de bir şey söylemiyor.
+
+**Bulunan tek ayrışma içerikte:** seviye testinin "en son ne zaman girdin"
+satırı. Web dört parça yazıyor — tarih, önerilen seviye, kabul edilen seviye ve
+**beceri kırılımı** (`· Kelime B1 · Dilbilgisi A2 …`). Mobilde kırılım yalnızca
+**taze sonuç kartında** vardı, o satırda yoktu; oysa veri (`perSkill`) kayıtta
+duruyor ve yardımcı (`describePerSkill`) aynı dosyada — yorumunda "web
+`describePerSkill`" diye de yazılı. Mobilde satır **iki yerde** çiziliyor
+(giriş ekranı ve "henüz tekrar giremezsin"), ikisine de eklendi.
+
+Kapı **§343** beş çifti iki yönde ölçüyor + satırın dört parçasını iki
+platformda. Eski bir kapının muafiyet listesi de güncellendi: `meta alanları`
+ölçüsü `leeches` ve `challengeBest`i muaf tutuyordu, o iki alan artık
+gönderilmiyor (§11.485) — listede yalnız `pacing` kaldı.
+
+**Kapının kendi okuması iki kez yanlıştı.** (1) Üst düzey alanları ayıklarken
+**kısa yazımı** saymıyordum (`level,` `units,`): uç gövdesi alanları öyle
+gönderiyor ve ikisi "sunucunun göndermediği" diye düşmüştü. (2) Beceri
+kırılımı ölçüsü **çağrı** sayıyordu, satır değil — her satır yardımcıyı iki kez
+çağırıyor (koşul + şablon), yani bir bloğu silen enjeksiyon yeşil geçiyordu.
+İkisi de düzeltildi; enjeksiyon artık kırmızı veriyor.
