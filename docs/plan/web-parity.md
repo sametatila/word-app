@@ -15947,3 +15947,56 @@ yapmıyor ve ben çıktısızlığı "geçti" diye okuyordum. Doğru yerden koş
 **8 denetimin hepsi geçiyor** (AppIcon, `.strings`, dil beyanı, Swift/ObjC
 sözdizimi, cihaz ailesi, Google iOS istemcisi…). Yani durum iyiydi, raporum
 dayanaksızdı.
+
+## §11.438 — Mutasyon taramasının üçüncü turu: CSS jetonu ve alan adı listeleri
+
+On bozma daha denendi (derin bağlantı host listesi, push rota tablosu, sfx ipucu
+adı, anlamsal renk jetonu, `MIN_MASTERED`, paket açılış yüzdesi, avatar parçası,
+AASA yolu, sekme anahtarı). İkisi `check:parity`den yakalandı; kalanların çoğu
+**tsc**'nin ağına düşüyor (yeniden adlandırılan bir sabit, bir `Palette` alanı,
+bir avatar parçası derlemede kırılıyor) — yani "hiçbiri" demek korumasız demek
+değil. Tsc'nin göremediği ikisi gerçek delikti ve ikisi de kapatıldı.
+
+### §303 — CSS jetonu tanımsız kalmıyor
+
+Mobil renk jetonları **tipli** (`theme/colors` `Palette`): bir adı değiştirirsen
+derleyici her kullanım yerini gösterir. Webin CSS değişkenlerinde böyle bir ağ
+**yok**: `var(--color-danger)` tanımsız bir ada bakarsa tarayıcı sessizce boş
+değer kullanır — yazı kalıtılan renge düşer, arka plan hiç boyanmaz, ne hata ne
+uyarı. Mutasyon bunu gösterdi: `globals.css`te `--color-danger`ı yeniden
+adlandırmak hiçbir kapıyı düşürmüyordu (`check:colors` jetonun
+**kullanıldığını** ölçüyor, **var olduğunu** ölçmüyor).
+
+Kapı üç tanım kaynağını da sayıyor: `globals.css`, çalışma anında
+`style.setProperty("--x", …)` (kabuk `--nav-h`/`--app-h`/`--safe-b`yi **ölçerek**
+yazıyor) ve satır içi stil nesnesi. Dinamik adlar (`var(--color-${tone}-500)`)
+ayrı: sebebiyle ve **alabileceği değerlerle** yazılı, kapı her değeri tek tek
+doğruluyor ve şablonun dosyada hâlâ durduğunu da ölçüyor. Bugün 112 tanım, 64
+kullanım, sıfır tanımsız.
+
+Dört enjeksiyon doğrulandı: jetonu yeniden adlandırmak, dinamik değerlerden
+birini kaldırmak, şablonu değiştirmek (liste bayatlıyor), `setProperty`
+tanımını kaldırmak.
+
+### §304 — İki alan adı listesi aynı dört adı sayıyor
+
+İki yerde bir alan adı listesi var ve ikisi de **aynı sebebi** yazıyor: eski
+alan adı (`exfe.me`) listede kalmak zorunda, çünkü yayımlanmış APK'lerde API
+adresi gömülü ve o kurulumlar ömür boyu oraya istek atıyor.
+
+- sunucu `lib/auth/server` `trustedOrigins` — better-auth hangi kökenden gelen
+  isteği kabul edecek
+- mobil `lib/deepLink` `HOSTS` — derin bağlantı hangi alan adından gelirse
+  jetonu kabul edecek
+
+Birinden bir ad düşerse kimse fark etmiyordu ve sonucu sessiz: eski kurulumda ya
+derin bağlantı çalışmayı bırakır ya da sunucu eski kökeni reddedip girişi kırar —
+ama iki taraf ayrı ayrı "doğru" görünür. Ölçü **küme eşitliği** ve iki yönlü:
+birine yeni bir ad eklenip ötekine eklenmezse de kırmızı verir.
+
+Sunucu dosyası **ham** okunuyor: `sil()` `//`yi koşulsuz attığı için `https://`
+bozuluyor ve liste boş çıkıyordu (defterin tekrar eden tuzağı, ilk yazımda yine
+tuzağa düştüm).
+
+Dört enjeksiyon doğrulandı: her iki listeden bir ad düşürmek, yalnız birine yeni
+ad eklemek, listenin adını değiştirip okunamaz yapmak.

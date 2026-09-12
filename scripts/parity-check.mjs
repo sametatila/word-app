@@ -10119,7 +10119,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   {
     const aasa = read("src/app/.well-known/apple-app-site-association/route.ts");
     const manifest = read("mobile/android/app/src/main/AndroidManifest.xml");
-    const derin = sil(read("mobile/src/lib/deepLink.ts"));
+    const derin = read("mobile/src/lib/deepLink.ts");
     const app = sil(read("mobile/App.tsx"));
     const push = sil(read("mobile/src/lib/pushRoute.ts"));
 
@@ -16793,6 +16793,123 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
+
+  /* -------------------------------------- 303. CSS JETONU TANIMSIZ KALMIYOR
+   *
+   * Mobil renk jetonlari TIPLI (`theme/colors` `Palette`): bir jetonun adi
+   * degisirse derleyici her kullanim yerini gosteriyor. Webin CSS
+   * degiskenlerinde boyle bir ag YOK - `var(--color-danger)` tanimsiz bir ada
+   * bakarsa tarayici SESSIZCE bos deger kullanir: yazi rengi kalitilan renge
+   * duser, arka plan hic boyanmaz. Hata da uyari da yok.
+   *
+   * Mutasyon taramasi bunu gosterdi: `globals.css`te `--color-danger`i yeniden
+   * adlandirmak HICBIR kapiyi dusurmuyordu (`check:colors` jetonun
+   * KULLANILDIGINI olcuyor, VAR OLDUGUNU olcmuyor).
+   *
+   * UC TANIM KAYNAGI var ve ucu de sayiliyor: `globals.css`, calisma aninda
+   * `style.setProperty("--x", …)` (kabuk `--nav-h`/`--app-h`/`--safe-b`yi
+   * OLCEREK yaziyor) ve satir ici stil nesnesi (`{"--x": …}`).
+   *
+   * DINAMIK ADLAR ayri ele aliniyor: `var(--color-${tone}-500)` gibi bir
+   * sablonun adi metinden okunamaz. Onlar asagida SEBEBIYLE ve
+   * ALABILECEGI DEGERLERLE yazili; kapi her degeri tek tek dogruluyor ve
+   * sablonun dosyada hala durdugunu da olcuyor (liste bayatlamiyor). */
+  {
+    const yuruWeb = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) { if (!/node_modules/.test(e.name)) yuruWeb(d + "/" + e.name, out); }
+        else if (/\.(tsx?|css)$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    const dosyalar = yuruWeb("src");
+    const tanim = new Set();
+    for (const f of dosyalar) {
+      const src = read(f);
+      if (f.endsWith(".css")) {
+        for (const m of src.matchAll(/(?:^|[\s;{])(--[a-zA-Z0-9-]+)\s*:/g)) tanim.add(m[1]);
+      }
+      for (const m of src.matchAll(/setProperty\(\s*"(--[a-zA-Z0-9-]+)"/g)) tanim.add(m[1]);
+      for (const m of src.matchAll(/"(--[a-zA-Z0-9-]+)"\s*:/g)) tanim.add(m[1]);
+    }
+    /* Sablonla kurulan adlar: sebebi ve alabilecegi degerler. */
+    const DINAMIK = [
+      {
+        yer: "src/components/challenge-player.tsx",
+        kalip: "var(--color-${tone}-500)",
+        degerler: ["mint", "rose", "flame"],
+        ad: (v) => "--color-" + v + "-500",
+        sebep: "kural satirinin tonu prop olarak geliyor (`Rule` `tone`)",
+      },
+    ];
+    const kullanim = new Map();
+    for (const f of dosyalar) {
+      const src = read(f);
+      for (const m of src.matchAll(/var\(\s*(--[a-zA-Z0-9-]+)\s*[,)]/g)) {
+        if (!kullanim.has(m[1])) kullanim.set(m[1], f);
+      }
+    }
+    const tanimsiz = [...kullanim.keys()].filter((k) => !tanim.has(k)).sort();
+    const dinamikEksik = [];
+    const dinamikBayat = [];
+    for (const d of DINAMIK) {
+      if (!read(d.yer).includes(d.kalip)) dinamikBayat.push(d.kalip);
+      for (const v of d.degerler) if (!tanim.has(d.ad(v))) dinamikEksik.push(d.ad(v));
+    }
+    sameList(
+      "css jetonu tanimsiz kalmiyor",
+      [
+        "tanimsiz=" + (tanimsiz.map((k) => k + " (" + kullanim.get(k).replace(/^src\//, "") + ")").join(", ") || "yok"),
+        "dinamik eksik=" + (dinamikEksik.join(", ") || "yok"),
+        "dinamik bayat=" + (dinamikBayat.join(", ") || "yok"),
+        "tanim=" + (tanim.size >= 100 ? "100+" : tanim.size),
+        "kullanim=" + (kullanim.size >= 50 ? "50+" : kullanim.size),
+      ],
+      ["tanimsiz=yok", "dinamik eksik=yok", "dinamik bayat=yok", "tanim=100+", "kullanim=50+"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+  /* ------------------------------ 304. ALAN ADI LISTELERI AYNI DORT ADI SAYIYOR
+   *
+   * Iki yerde bir alan adi listesi var ve ikisi de AYNI sebebi yaziyor: eski
+   * alan adi (`exfe.me`) listede KALMAK zorunda, cunku yayimlanmis APK'lerde
+   * API adresi gomulu ve o kurulumlar omur boyu oraya istek atiyor.
+   *
+   *   sunucu  `lib/auth/server` `trustedOrigins` - better-auth hangi kokenden
+   *           gelen istegi kabul edecek
+   *   mobil   `lib/deepLink` `HOSTS` - derin baglanti hangi alan adindan
+   *           gelirse jetonu kabul edecek
+   *
+   * Ikisinden BIRINDEN bir ad dusurulurse kimse fark etmiyordu: mutasyon
+   * taramasi mobil listeden `exfe.me`yi cikardi ve hicbir kapi kirmizi
+   * vermedi. Sonucu da sessiz - eski kurulumda derin baglanti calismayi
+   * birakir (ya da tersi yonde: sunucu eski kokeni reddeder ve giris kirilir),
+   * ama iki taraf ayri ayri "dogru" gorunur.
+   *
+   * Olcu KUME ESITLIGI ve iki yonlu: birine yeni bir alan adi eklenip otekine
+   * eklenmezse de kapi kirmizi verir. `BASE_URL` sayilmiyor - o bir env
+   * degeri ve dizgi olarak okunamaz. */
+  {
+    /* HAM OKUNUYOR: `sil()` `//`yi kosulsuz atiyor ve `https://` bozuluyor
+       (defterin tekrar eden tuzagi). Yorumlarda `"https://host"` biciminde
+       bir dizgi yok, yani ham okumak yanlis pozitif uretmiyor. */
+    const sunucu = read("src/lib/auth/server.ts");
+    const blok = sunucu.slice(sunucu.indexOf("trustedOrigins:"), sunucu.indexOf("]", sunucu.indexOf("trustedOrigins:")));
+    const sunucuAdlar = [...blok.matchAll(/"https:\/\/([a-z0-9.-]+)"/g)].map((m) => m[1]).sort();
+    const derin = sil(read("mobile/src/lib/deepLink.ts"));
+    const hostBlok = derin.slice(derin.indexOf("const HOSTS"), derin.indexOf("]", derin.indexOf("const HOSTS")));
+    const mobilAdlar = [...hostBlok.matchAll(/"([a-z0-9.-]+)"/g)].map((m) => m[1]).sort();
+    sameList(
+      "alan adi listesi okunabildi",
+      ["sunucu=" + (sunucuAdlar.length >= 4 ? "4+" : sunucuAdlar.length), "mobil=" + (mobilAdlar.length >= 4 ? "4+" : mobilAdlar.length)],
+      ["sunucu=4+", "mobil=4+"],
+      "bulunan",
+      "beklenen",
+    );
+    sameSet("derin baglanti ve guvenilen koken ayni alan adlari", mobilAdlar, sunucuAdlar, "mobil", "sunucu");
+  }
 }
 
 console.log(
