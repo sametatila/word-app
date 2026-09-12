@@ -7469,6 +7469,89 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 258. SEKME SERIDI, BAGLANTI SERIDI DEGIL -----------------------
+   *
+   * 257'nin kasten disarida biraktigi eksen. Iki yuzey aynı ekranin
+   * GORUNUMLERI arasinda geciyor: siralama (lig / arkadaslar) ve arkadas
+   * merkezi (dort sekme). Ucuncu bir kume de yonetici panosunda.
+   *
+   * Web bunlari `aria-current="page"` ile isaretliyordu ve o oznitelik "bir
+   * BAGLANTI kumesindeki gecerli SAYFA" demek. Burada ne baglanti var ne de
+   * sayfa degisiyor (adres yalniz `?tab=` ile tazeleniyor): ekran okuyucu
+   * "gecerli sayfa" diyerek yanlis bir zihin haritasi kuruyordu. Ustelik
+   * serit `<nav>` icindeydi, yani gereksiz bir gezinme donum noktasi da
+   * aciliyordu. Yonetici panosunun iki seridinde ise HICBIR durum bildirimi
+   * yoktu - secili sekme yalniz renkten (ve kalin yazidan) okunuyordu.
+   *
+   * Android tarafi da rolsuzdu: `Chip` "button" diyordu. Yani kusur yine
+   * PAYLASIK ve olcu MUTLAK.
+   *
+   * Dogrusu `tablist` / `tab` / `tabpanel`: "sekme, 2 ogeden 1., secili" ve
+   * panelin adi secili sekmeden geliyor.
+   *
+   * GERCEK BAGLANTI SERITLERI bunun disinda ve `aria-current` ORADA dogru:
+   * `/skills` ve `/mock-exams` seviye seritleri ile kabuk gezinmesi gercek
+   * `<Link href>` tasiyor, sayfa gercekten degisiyor. Kapi ikisini
+   * ayirabilmek icin `aria-current` tasiyan her dosyanin `<Link` de
+   * tasidigini dogruluyor - buton uzerinde kalan bir `aria-current` yine
+   * yakalanir. */
+  {
+    const SEKME = [
+      ["siralama", "src/components/social/leaderboard-tabs.tsx", "mobile/src/screens/LeaderboardScreen.tsx"],
+      ["arkadas merkezi", "src/components/social/friends-hub.tsx", "mobile/src/screens/FriendsScreen.tsx"],
+    ];
+    const webSekme = (y) => {
+      const src = sil(read(y));
+      return /role="tablist"/.test(src) && /role="tab"/.test(src) && /aria-selected=/.test(src) && /role="tabpanel"/.test(src)
+        ? "sekme"
+        : "SEKME DEGIL";
+    };
+    const mobSekme = (y) => {
+      const src = sil(read(y));
+      return /accessibilityRole="tablist"/.test(src) && /role="tab"/.test(src) ? "sekme" : "SEKME DEGIL";
+    };
+    sameList(
+      "sekme seridi rolunu soyluyor",
+      SEKME.map(([ad, , m]) => ad + "=" + mobSekme(m)),
+      SEKME.map(([ad, w]) => ad + "=" + webSekme(w)),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: yonetici panosunun iki seridi de sekme. */
+    const YONETICI = ["src/app/admin/dashboard.tsx", "src/app/admin/legal/legal-admin.tsx"];
+    sameList(
+      "yonetici seritleri sekme",
+      YONETICI.map((y) => y.split("/").pop() + "=" + (/role="tablist"/.test(sil(read(y))) && /role="tab"/.test(sil(read(y))) ? "sekme" : "ROL YOK")),
+      YONETICI.map((y) => y.split("/").pop() + "=sekme"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: `aria-current` yalniz GERCEK baglanti seritlerinde. */
+    const walkTsx258 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx258(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const baglantisiz = [];
+    for (const f of [...walkTsx258("src/app"), ...walkTsx258("src/components")]) {
+      const src = sil(read(f));
+      if (!/\baria-current=/.test(src)) continue;
+      if (!/<Link\b/.test(src)) baglantisiz.push(f);
+    }
+    sameList(
+      "aria-current baglantisiz dosyada",
+      baglantisiz.length ? baglantisiz : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 257. IKISINDE DE ROLSUZ KALAN TEK SECIMLIK YUZEYLER ------------
    *
    * 256 Android'in ONDE oldugu yuzeyleri esitledi. Geri kalanlarda kusur
