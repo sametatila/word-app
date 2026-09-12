@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { useTargetLang } from "./player-context";
+import { written } from "./quiz";
+import type { TargetLang } from "@/lib/courses";
 import { motion } from "framer-motion";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
@@ -740,16 +742,17 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
 
 /* ───────────── form (WP-31) ───────────── */
 
-function foldShort(s: string): string {
-  return s.toLocaleLowerCase("de-DE").replace(/[.,!?;:]/g, "").replace(/\s+/g, " ").trim().replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
-}
-function fieldOk(typed: string, answer: string, accept: string[] = []): boolean {
-  const t = foldShort(typed);
-  if (!t) return false;
-  return [answer, ...accept].some((a) => {
-    const f = foldShort(a);
-    return f === t || (f.length >= 5 && levenshtein(f, t) <= 1);
-  });
+/**
+ * Form alanı kabulü — beceri egzersizinin yazılı cevabıyla AYNI hakem.
+ *
+ * Kendi katlaması vardı: sabit `de-DE` küçültme, koşulsuz umlaut katlaması,
+ * sayı katlaması YOK. Mobil aynı görevi `written()` ile yargılıyordu, yani
+ * iki uygulama aynı cevaba farklı not veriyordu — "Table for: two" alanına
+ * "2" yazan öğrenci Android'de geçiyor, webde kalıyordu. 2026-09-12'de
+ * ölçüldü: İngilizce form alanlarının 105'i sayı taşıyor.
+ */
+function fieldOk(typed: string, answer: string, accept: string[] = [], lang: TargetLang = "de"): boolean {
+  return written(typed, [answer, ...accept], lang);
 }
 
 /**
@@ -762,7 +765,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
   const lang = useTargetLang();
   const [values, setValues] = useState<string[]>(() => task.fields.map(() => ""));
   const [checked, setChecked] = useState(false);
-  const results = task.fields.map((f, i) => fieldOk(values[i], f.answer, f.accept));
+  const results = task.fields.map((f, i) => fieldOk(values[i], f.answer, f.accept, lang));
   const okCount = results.filter(Boolean).length;
   const ok = okCount >= Math.ceil(task.fields.length * 0.7);
   return (

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { foldCompare, currentTargetLang } from "@/components/games/types";
+import type { TargetLang } from "@/lib/courses";
 import { foldContractions } from "@/lib/contractions";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { useTargetLang } from "./player-context";
@@ -135,8 +136,7 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
  * ("two" ↔ "2" mobilde kabul ediliyor, burada edilmiyordu). Ortak katlama
  * hedef dile bakıyor — mobil `game/skillQuiz` aynı düzeltmeyi taşıyor.
  */
-function fold(s: string): string {
-  const lang = currentTargetLang();
+function fold(s: string, lang: TargetLang = currentTargetLang()): string {
   /*
     Kısaltma ve İngiliz/Amerikan yazım da eşitleniyor — gerekçe
     `lib/contractions.ts` ve `lib/en-spelling.ts`. Ders katmanında ölçülen
@@ -154,11 +154,11 @@ function fold(s: string): string {
  * yazım sapması da kabul — soru anlamayı ölçüyor, yazımı değil (yazım
  * kelime oyunlarının işi).
  */
-export function written(typed: string, accept: string[]): boolean {
-  const t = fold(typed);
+export function written(typed: string, accept: string[], lang: TargetLang = currentTargetLang()): boolean {
+  const t = fold(typed, lang);
   if (!t) return false;
   return accept.some((a) => {
-    const f = fold(a);
+    const f = fold(a, lang);
     if (f === t) return true;
     return f.length >= 5 && levenshtein(f, t) <= 1;
   });

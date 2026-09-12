@@ -12,6 +12,7 @@ import { judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { matchSentence } from "../src/lib/sentence-match";
 import { foldEnglishSpelling } from "../src/lib/en-spelling";
 import { foldCompare, matchesAnswer } from "../src/components/games/types";
+import { written } from "../src/components/skills/quiz";
 import { levenshtein } from "../src/lib/errors";
 
 const eq = (a: string, b: string, why: string) =>
@@ -118,6 +119,17 @@ assert.ok(!matchesAnswer("Farbe", ["Tisch"], "de"));
   assert.ok(!written("seventy-three", "seventy-two"), "yanlış sayı yine yanlış");
   assert.ok(!written("it is thinner", "it is thicker"), "yanlış sıfat yine yanlış");
 }
+
+/*
+  YAZMA GÖREVİNİN FORM ALANI aynı hakeme bağlandı (`writing-player` `fieldOk`
+  → `skills/quiz` `written`). Kendi katlaması vardı ve sayı katlaması yoktu:
+  "Table for: two" alanına "2" yazan öğrenci Android'de geçiyor, webde
+  kalıyordu. Ölçüldü — iki kursta 50 alan bu yüzden reddediliyordu.
+*/
+assert.ok(written("2", ["two"], "en"), "rakam sözcüğün yerine geçmeli");
+assert.ok(written("half past 8", ["half past eight"], "en"));
+assert.ok(written("morgens um 7", ["morgens um sieben"], "de"), "Almanca tarafta da");
+assert.ok(!written("three", ["two"], "en"), "yanlış sayı yine yanlış");
 
 /*
   ALMANCADA KARŞILIĞI YOK ve bu ÖLÇÜLDÜ. Almanca kaynaşmalar (ins, zum, am)
