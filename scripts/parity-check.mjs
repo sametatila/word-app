@@ -17604,6 +17604,88 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
   }
+
+  /* ------------------------------ 315. SES IPUCU NOTALARI UC KAYNAKTA DA AYNI
+   *
+   * Ses ipuclari SENTEZLENIYOR, dosyadan calinmiyor: nota tablosu
+   * `mobile/src/lib/sfxNotes.ts`te ve UC yerde kodda duruyor -
+   *   JS      `SFX_NOTES`                (WebView koprusu / ekran acik)
+   *   Kotlin  `playSfx` `when (kind)`     (Android ekran-kapali native sentez)
+   *   Swift   `sfxNotes(_:)` `switch`     (iOS native sentez)
+   * Kotlin ve Swift bloklari `mobile/scripts/render-sfx.py --kotlin|--swift`
+   * ile URETILIYOR ve iki dosyanin yorumu da "tek kaynak orasi ... BIREBIR"
+   * diye iddia ediyor.
+   *
+   * Iddiayi tutan hicbir sey yoktu ve kusurun bicimi belli: tabloyu duzeltip
+   * ureteci TEK platform icin kosturmak. O zaman ayni cihazda ayni ipucu
+   * ekran acikken yeni, ekran kapaliyken ESKI sesi calar - kimse fark etmez,
+   * cunku iki yol hic yan yana duymuyor.
+   *
+   * Olcu SAYISAL: uc kaynakta da sayi biciminde fark var (`2` / `2.0`,
+   * `2400` / `2400.0`) ve dizgi karsilastirmasi bunu "fark" sayardi. Satirlar
+   * sayiya cevrilip karsilastiriliyor.
+   *
+   * Ureteci calistirmak daha guclu bir olcu olurdu (uretilen ciktinin
+   * commit'lenenle ayni oldugu) ama betik `numpy` istiyor; kapinin CI'da
+   * numpy'siz de calismasi gerekiyor, o yuzden tablolar dogrudan
+   * karsilastiriliyor. */
+  {
+    const sayiSatir = (govde) =>
+      [...govde.matchAll(/\[([^\]]*)\]/g)].map((x) =>
+        x[1].split(",").map((v) => Number(v.trim())).filter((v) => !Number.isNaN(v)).join(" "),
+      );
+    const jsTablo = () => {
+      const src = read("mobile/src/lib/sfxNotes.ts");
+      const blok = src.slice(src.indexOf("SFX_NOTES"));
+      const out = new Map();
+      for (const m of blok.matchAll(/^\s{2}(\w+): \[([\s\S]*?)\n\s{2}\],/gm)) out.set(m[1], sayiSatir(m[2]));
+      return out;
+    };
+    const ktTablo = () => {
+      const src = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
+      const i = src.indexOf("fun playSfx");
+      const blok = i < 0 ? "" : src.slice(i, src.indexOf("\n  }", i));
+      const out = new Map();
+      for (const m of blok.matchAll(/"(\w+)" -> listOf\(([\s\S]*?)\n\s+\)/g)) {
+        out.set(m[1], [...m[2].matchAll(/doubleArrayOf\(([^)]*)\)/g)].map((x) =>
+          x[1].split(",").map((v) => Number(v.trim())).filter((v) => !Number.isNaN(v)).join(" "),
+        ));
+      }
+      return out;
+    };
+    const swTablo = () => {
+      const src = read("mobile/ios/Lernomi/LernomiSpeech.swift");
+      const i = src.indexOf("private static func sfxNotes");
+      const blok = i < 0 ? "" : src.slice(i, src.indexOf("\n  }\n", i));
+      const out = new Map();
+      for (const m of blok.matchAll(/case "(\w+)":\s*\n\s*return \[([\s\S]*?)\n\s*\]/g)) out.set(m[1], sayiSatir(m[2]));
+      return out;
+    };
+    const J = jsTablo();
+    const K = ktTablo();
+    const W = swTablo();
+    const ilk = (A, B) => {
+      for (const k of J.keys()) {
+        const a = (A.get(k) ?? []).join("|");
+        const b = (B.get(k) ?? []).join("|");
+        if (a !== b) return k;
+      }
+      return "yok";
+    };
+    sameList(
+      "ses ipucu notalari uc kaynakta",
+      [
+        "js ipucu=" + J.size,
+        "kotlin ipucu=" + K.size,
+        "swift ipucu=" + W.size,
+        "js-kotlin ilk fark=" + ilk(J, K),
+        "js-swift ilk fark=" + ilk(J, W),
+      ],
+      ["js ipucu=13", "kotlin ipucu=13", "swift ipucu=13", "js-kotlin ilk fark=yok", "js-swift ilk fark=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

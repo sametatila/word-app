@@ -16481,3 +16481,44 @@ kapı **duruyor**: sessizce boş bir ölçekle çalışmıyor.
 eksiltmek (kapı duruyor), ve `radii.lg`yi değiştirmek — sonuncusu **geçiyor** ve
 bu doğru: `check:radius` yalnız **ham sayıları** polisliyor, mobil kodda ham
 sayı yok; web↔mobil ölçek eşitliği `check:tokens`in işi.
+
+## §11.453 — Ses ipucu notaları üç kaynakta: üreteci tek platform için koşturmak
+
+Ses ipuçları dosyadan çalınmıyor, **sentezleniyor**; nota tablosu **üç yerde**
+kodda duruyor:
+
+| kaynak | nerede çalıyor |
+|---|---|
+| JS `SFX_NOTES` (`mobile/src/lib/sfxNotes.ts`) | WebView köprüsü / ekran açık |
+| Kotlin `playSfx` `when (kind)` | Android, ekran kapalı native sentez |
+| Swift `sfxNotes(_:)` `switch` | iOS native sentez |
+
+Kotlin ve Swift blokları `mobile/scripts/render-sfx.py --kotlin|--swift` ile
+**üretiliyor** ve iki dosyanın yorumu da "tek kaynak orası … BİREBİR" diye
+iddia ediyor. İddiayı tutan hiçbir şey yoktu.
+
+Kusurun biçimi belli: tabloyu düzeltip üreteci **tek platform** için
+koşturmak. O zaman aynı cihazda aynı ipucu ekran açıkken yeni, ekran kapalıyken
+**eski** sesi çalar — ve kimse fark etmez, çünkü iki yol hiç yan yana
+duyulmuyor. İlk enjeksiyon tam bu senaryoyu kuruyor (JS + Kotlin yeni, Swift
+eski) ve kapı yakalıyor.
+
+Ölçüldü: bugün birebir — üç kaynakta da 13 ipucu, sıfır sayısal fark.
+
+### §315
+
+Ölçü **sayısal**: üç kaynakta sayı biçimi farklı (`2` / `2.0`, `2400` /
+`2400.0`) ve dizgi karşılaştırması bunu "fark" sayardı. Satırlar sayıya
+çevrilip karşılaştırılıyor.
+
+Sayılar da ölçülüyor (13/13/13): bir blok okunamaz hâle gelirse (yeniden
+adlandırma, biçim değişikliği) o kaynak boşalır ve kapı söyler — üçüncü
+enjeksiyon bunu doğruluyor.
+
+Üreteci **çalıştırmak** daha güçlü bir ölçü olurdu ("üretilen çıktı
+commit'lenenle aynı mı") ama betik `numpy` istiyor ve kapının CI'da numpy'siz
+de çalışması gerekiyor; o yüzden tablolar doğrudan karşılaştırılıyor.
+
+Dört enjeksiyon doğrulandı: üreteci tek platform için koşturmak, Swift'te bir
+notayı değiştirmek, Swift bloğunu okunamaz yapmak, Kotlin'den bir ipucunu
+tamamen kaldırmak.
