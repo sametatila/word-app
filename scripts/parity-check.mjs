@@ -5513,11 +5513,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Olculen: kocun iki dali ve dort kartin yukleme duyurusu. */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-  const say = (yol, re) => [...strip(read(yol)).matchAll(re)].length;
+  /*
+   * SAYIM DEGIL, CUMLENIN KENDI ETIKETI (§11.358).
+   *
+   * Ilk surum dosyadaki canli bolge SAYISINI sayiyordu (iki dal -> 2 vs 2) ve
+   * bu, isaretin DOGRU OGEDE oldugunu soylemiyor: biri sarmalayiciya kaysa
+   * sayi ayni kalir, ama duyuru o zaman maskotun da icinde oldugu bir kutuyu
+   * okur ve alakasiz degisimlerde atesler. Olculen sey artik `{line}`i cizen
+   * etiketin kendisi - iki dalda da.
+   */
+  const cumleDuyuruyor = (yol, desen) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    /* `{line}` her iki dalda da gecer; her gecis icin onu ICEREN en yakin
+       acilis etiketine bakiliyor. */
+    /* En yakin `<` ATA DEGIL: webde balonun kuyrugu `{line}`den hemen once
+       duran kendi kendini kapatan bir `<span aria-hidden ... />` ve ilk
+       yazimda olculen o oldu (1/2 cikti) - komsuyu olcmenin bir baska
+       bicimi, bu kez kendi kapimda. Geriye dogru yurunurken kendi kendini
+       kapatan ve KAPANIS etiketleri atlaniyor; ilk gercek acilis ata. */
+    const ata = (i) => {
+      for (let a = src.lastIndexOf("<", i); a >= 0; a = src.lastIndexOf("<", a - 1)) {
+        const kapanis = src.indexOf(">", a);
+        if (kapanis < 0 || kapanis > i) continue;
+        const etiket = src.slice(a, kapanis + 1);
+        if (etiket.startsWith("</") || /\/>$/.test(etiket)) continue;
+        return etiket;
+      }
+      return "";
+    };
+    let toplam = 0, duyuran = 0;
+    for (let i = src.indexOf("{line}"); i >= 0; i = src.indexOf("{line}", i + 1)) {
+      const etiket = ata(i);
+      if (!etiket) continue;
+      toplam++;
+      if (desen.test(etiket)) duyuran++;
+    }
+    return `${duyuran}/${toplam}`;
+  };
   sameList(
     "kocun cumlesi duyuruluyor",
-    ["canli bolge=" + say("mobile/src/ui/CoachBubble.tsx", /accessibilityLiveRegion="polite"/g)],
-    ["canli bolge=" + say("src/components/coach-bubble.tsx", /role="status"/g)],
+    ["cumleyi cizen etiket=" + cumleDuyuruyor("mobile/src/ui/CoachBubble.tsx", /accessibilityLiveRegion="polite"/)],
+    ["cumleyi cizen etiket=" + cumleDuyuruyor("src/components/coach-bubble.tsx", /role="status"/)],
   );
 
   const CIFT = [
