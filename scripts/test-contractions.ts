@@ -10,6 +10,9 @@ import assert from "node:assert/strict";
 import { foldContractions } from "../src/lib/contractions";
 import { judgeSpeech, normalizeSpoken } from "../src/lib/speech";
 import { matchSentence } from "../src/lib/sentence-match";
+import { foldEnglishSpelling } from "../src/lib/en-spelling";
+import { foldCompare } from "../src/components/games/types";
+import { levenshtein } from "../src/lib/errors";
 
 const eq = (a: string, b: string, why: string) =>
   assert.equal(normalizeSpoken(a, "en"), normalizeSpoken(b, "en"), why);
@@ -81,6 +84,26 @@ assert.notEqual(
   "correct",
   "yazım katlaması başka kelimeyi doğru yapmamalı",
 );
+
+/*
+  BECERİ EGZERSİZİNİN YAZILI CEVABI da aynı katlamayı kullanıyor
+  (`skills/quiz` `fold`). Orada `foldTight` yoluna DOKUNULMADI: o yol kesme
+  işaretini atıyor ve "dont" yazan öğrenci oradan geçiyor; açılım eklenseydi
+  "do not" ile "dont" ayrışırdı.
+*/
+{
+  const ff = (x: string) => foldCompare(foldEnglishSpelling(foldContractions(x, "en"), "en"), "en");
+  const written = (typed: string, accept: string) => {
+    const t = ff(typed), f = ff(accept);
+    return !!t && (f === t || (f.length >= 5 && levenshtein(f, t) <= 1));
+  };
+  assert.ok(written("I've worked here for two years.", "I have worked here for two years."));
+  assert.ok(written("it's thicker", "it is thicker"));
+  assert.ok(written("my neighbor", "my neighbour"));
+  assert.ok(written("72", "seventy-two"));
+  assert.ok(!written("seventy-three", "seventy-two"), "yanlış sayı yine yanlış");
+  assert.ok(!written("it is thinner", "it is thicker"), "yanlış sıfat yine yanlış");
+}
 
 /*
   ALMANCADA KARŞILIĞI YOK ve bu ÖLÇÜLDÜ. Almanca kaynaşmalar (ins, zum, am)

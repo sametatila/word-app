@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { foldCompare } from "@/components/games/types";
+import { foldCompare, currentTargetLang } from "@/components/games/types";
+import { foldContractions } from "@/lib/contractions";
+import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
@@ -134,7 +136,16 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
  * hedef dile bakıyor — mobil `game/skillQuiz` aynı düzeltmeyi taşıyor.
  */
 function fold(s: string): string {
-  return foldCompare(s);
+  const lang = currentTargetLang();
+  /*
+    Kısaltma ve İngiliz/Amerikan yazım da eşitleniyor — gerekçe
+    `lib/contractions.ts` ve `lib/en-spelling.ts`. Ders katmanında ölçülen
+    aynı kusur burada da vardı: "I've worked…" yazan öğrenci "I have
+    worked…" cevabını tutturamıyordu. `foldTight` yoluna DOKUNULMUYOR
+    (bu yüzden katlama `written`in kendi `fold`unda, `foldCompare`da değil):
+    orada kesme işareti atılıyor ve "dont" yazan öğrenci oradan geçiyor.
+  */
+  return foldCompare(foldEnglishSpelling(foldContractions(s, lang), lang), lang);
 }
 
 /**

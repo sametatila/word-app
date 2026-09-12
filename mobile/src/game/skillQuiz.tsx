@@ -9,6 +9,8 @@ import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
+import { foldContractions } from "../lib/contractions";
+import { foldEnglishSpelling } from "../lib/en-spelling";
 import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
@@ -33,7 +35,10 @@ import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learnin
  * bakıyor ve sayıları da indiriyor ("two" ↔ "2").
  */
 function fold(s: string): string {
-  return foldCompare(s, currentTargetLang());
+  const lang = currentTargetLang();
+  // Kısaltma ve İngiliz/Amerikan yazım da eşitleniyor (web `skills/quiz` ile
+  // aynı; gerekçe `lib/contractions.ts`). `foldTight` yoluna dokunulmuyor.
+  return foldCompare(foldEnglishSpelling(foldContractions(s, lang), lang), lang);
 }
 export function written(typed: string, accept: string[]): boolean {
   const t = fold(typed);

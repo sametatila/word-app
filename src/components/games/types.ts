@@ -203,7 +203,7 @@ export function foldTight(s: string, lang: TargetLang = currentTargetLang()): st
  * çağıranın dili ayrıca taşımasına gerek yok; kurs seçimi zaten yerelde
  * duruyor (`COURSE_KEY`) ve sunucuda okunamazsa varsayılan kursa düşüyor.
  */
-function currentTargetLang(): TargetLang {
+export function currentTargetLang(): TargetLang {
   return courseOrDefault(readLocal(COURSE_KEY)).targetLang;
 }
 
