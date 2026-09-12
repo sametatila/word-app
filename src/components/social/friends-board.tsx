@@ -69,12 +69,12 @@ export function FriendsBoard() {
           <li
             key={r.userId}
             className="flex items-center gap-3 border-t px-5 py-2.5 first:border-t-0"
-            style={{ borderColor: "var(--border)", background: r.isMe ? "color-mix(in srgb, var(--color-brand) 8%, transparent)" : undefined }}
+            style={{ borderColor: "var(--border)", background: r.isMe ? "var(--brand-soft)" : undefined }}
           >
-            <span className="w-6 shrink-0 text-center text-strong tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
+            <span className="w-[30px] shrink-0 text-center text-h3 tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
               {r.rank}
             </span>
-            <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={32} ring={MEDAL[r.rank] ?? null} />
+            <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={40} ring={MEDAL[r.rank] ?? null} />
             <span className="min-w-0 flex-1 truncate text-strong">
               {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.student")}</Link> : (r.name ?? t("social.student"))}
               {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de

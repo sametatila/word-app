@@ -18424,3 +18424,33 @@ doğrulandı). **Ölçünün kendi hatası:** karoyu ararken dosyadaki ilk
 "width/height/borderRadius/backgroundColor" dizisini alıyordum ve o, başlığın
 **geri düğmesiydi** (44/md/surface2) — ölçü artık zil ikonunun kendi kabına
 bakıyor.
+
+## §11.507 — Sıralama satırı: arma, sıra hücresi ve "ben" zemini
+
+Sosyal boş hâlleri karşılaştırırken (hepsi eşit çıktı — arkadaş listesinin
+"kimse yok" kartı iki tarafta da aynı ikon, aynı anahtarlar ve **aynı eylem
+düğmesiyle**; Android'inkini eksik sanıp eklemeye kalkmıştım, `grep` çıktısı
+140 karakterde kesildiği için) asıl fark satırın kendisinde çıktı.
+
+İki tablo da (lig ve arkadaşlar) aynı satırı kullanıyor ve **her platform kendi
+içinde tutarlı**, ama ikisi birbirinden ayrıydı:
+
+| | Android | web |
+|---|---|---|
+| arma | **40** | 32 |
+| sıra hücresi | **30 piksel geniş + `h3`** | 24 + `strong` |
+| "ben" zemini | `primarySoft` | ad hoc `%8 karışım` |
+
+Üçü de Android'e getirildi; zemin ortak jetona (`--brand-soft`, Android'in
+`primarySoft`uyla aynı değer — aynı ad hoc karışım düzeltmesi bu turda ikinci
+kez çıktı, ilki rapor listesiydi).
+
+**Açık kalan, kayda geçti:** satırın **kabı**. Android'de her satır ayrı bir
+kart (`radii.lg`, 12/12 dolgu, 1 piksel kenarlık, aralarında 8 boşluk); web'de
+tek bir kartın içinde çizgiyle ayrılmış liste (`border-t`, 20/10 dolgu). İkisi
+de kendi içinde tutarlı ve iki tabloda da aynı; çevirmek listenin bütün
+görünümünü değiştirir (dış kartın da kalkması gerekir — Android'in tablosu bir
+`Card` içinde değil) ve ayrı bir tur ister.
+
+Kapı **§360** üç sayıyı iki tabloda da ölçüyor; üçü de enjeksiyonla
+doğrulandı.

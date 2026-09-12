@@ -21280,6 +21280,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 360. SIRALAMA SATIRI: ARMA, SIRA HUCRESI VE "BEN" ZEMINI
+ *
+ * Iki tablo da (lig ve arkadaslar) ayni satiri kullaniyor ve her platform
+ * kendi icinde tutarli, ama ikisi birbirinden ayriydi:
+ *   arma       Android 40, web 32
+ *   sira hucresi Android 30 piksel genis + `h3`, web 24 + `strong`
+ *   "ben" zemini Android `primarySoft`, web ad hoc bir %8 karisim
+ * Ucu de Android'e getirildi; zemin ortak jetona (`--brand-soft`, Android
+ * `primarySoft` ile ayni deger).
+ *
+ * ACIK KALAN (kayitli): satirin KABI. Android'de her satir ayri bir kart
+ * (`radii.lg`, 12/12 dolgu, 1 piksel kenarlik, aralarinda 8 bosluk); webde
+ * tek bir kartin icinde cizgiyle ayrilmis liste. Ikisi de kendi icinde
+ * tutarli ve iki tabloda da ayni; cevirmek listenin butun gorunumunu
+ * degistirir ve ayri bir tur ister.
+ *
+ * Olcu: uc sayi, iki tabloda da. */
+{
+  const silL = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const ciftler = [
+    ["lig", "mobile/src/social/LeagueBoard.tsx", "src/components/social/league-board.tsx"],
+    ["arkadaslar", "mobile/src/social/FriendsBoard.tsx", "src/components/social/friends-board.tsx"],
+  ];
+  const mob = [];
+  const web = [];
+  for (const [ad, m, w] of ciftler) {
+    const ms = silL(read(m));
+    const ws = silL(read(w));
+    mob.push(
+      ad + ": arma=" + ((ms.match(/<Avatar[^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK") +
+        " sira=" + ((ms.match(/width: (\d+), alignItems: "center" \}\}><Text variant="(\w+)"/) ?? []).slice(1).join("/") || (/width: 30, alignItems: "center" \}\}>\s*<Text variant="h3"/.test(ms) ? "30/h3" : "YOK")) +
+        " ben=" + (/isMe \? colors\.primarySoft/.test(ms) ? "marka tinti" : "BASKA"),
+    );
+    web.push(
+      ad + ": arma=" + ((ws.match(/<Avatar[^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK") +
+        " sira=" + (/w-\[30px\] shrink-0 text-center text-h3/.test(ws) ? "30/h3" : "BASKA") +
+        " ben=" + (/isMe \? "var\(--brand-soft\)"/.test(ws) ? "marka tinti" : "BASKA"),
+    );
+  }
+  sameList("siralama satirinin olculeri", mob, web, "mobil", "web");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

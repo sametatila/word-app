@@ -195,13 +195,13 @@ function LeagueRow({
         className="flex items-center gap-3 border-t px-5 py-2.5 first:border-t-0"
         style={{
           borderColor: "var(--border)",
-          background: row.isMe ? "color-mix(in srgb, var(--color-brand) 8%, transparent)" : undefined,
+          background: row.isMe ? "var(--brand-soft)" : undefined,
         }}
       >
-        <span className="w-6 shrink-0 text-center text-strong tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
+        <span className="w-[30px] shrink-0 text-center text-h3 tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
           {row.rank}
         </span>
-        <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={32} ring={tint} />
+        <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={40} ring={tint} />
         <span className="min-w-0 flex-1 truncate text-strong">
           {row.username && !row.isMe ? (
             <Link href={`/u/${row.username}`} prefetch={false}>
