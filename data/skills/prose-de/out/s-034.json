@@ -1,0 +1,497 @@
+[
+ {
+  "tr": "Beş daire, hiç imza yok. Neden?",
+  "kind": "intro",
+  "de": "Fünf Wohnungen, keine Unterschrift. Warum?"
+ },
+ {
+  "tr": "İlk haftanın üç parçası. Hangisi kimin işi?",
+  "kind": "intro",
+  "de": "Die drei Teile der ersten Woche. Wessen Aufgabe ist welcher?"
+ },
+ {
+  "tr": "Sıfat cümleleri. „that“ ne zaman düşebiliyor?",
+  "kind": "intro",
+  "de": "Relativsätze. Wann darf „that“ wegfallen?"
+ },
+ {
+  "tr": "İki koşul cümlesi. Biri olabilir, öteki olmuyor.",
+  "kind": "intro",
+  "de": "Zwei Bedingungssätze. Der eine kann eintreten, der andere nicht."
+ },
+ {
+  "tr": "Zam görüşmesi. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Ein Gehaltsgespräch. Welche Bedingung ist real, welche nicht?"
+ },
+ {
+  "tr": "Daire geziliyor. Hangi iki soru her şeyi söylüyor?",
+  "kind": "intro",
+  "de": "Eine Wohnungsbesichtigung. Welche zwei Fragen sagen alles?"
+ },
+ {
+  "tr": "Beş haftalık devir teslim. Hangi sayı neden önemli?",
+  "kind": "intro",
+  "de": "Eine Übergabe von fünf Wochen. Welche Zahl zählt warum?"
+ },
+ {
+  "tr": "Bir ekip anlatılıyor. Hangi cümlede „that“ düşüyor?",
+  "kind": "intro",
+  "de": "Ein Team wird beschrieben. In welchem Satz fällt „that“ weg?"
+ },
+ {
+  "tr": "Ön yazı düzeltiliyor. İlk satır neden bu kadar önemli?",
+  "kind": "intro",
+  "de": "Ein Anschreiben wird überarbeitet. Warum zählt die erste Zeile so viel?"
+ },
+ {
+  "tr": "Altı yıllık bir yol. Hangi adım hangisinden önce geldi?",
+  "kind": "intro",
+  "de": "Ein Weg von sechs Jahren. Welcher Schritt kam vor welchem?"
+ },
+ {
+  "tr": "Bir mülakat baştan sona. Hangi cevap neden işe yarıyor?",
+  "kind": "intro",
+  "de": "Ein Vorstellungsgespräch von Anfang bis Ende. Welche Antwort wirkt warum?"
+ },
+ {
+  "tr": "Bir değerlendirme görüşmesi. Zor olan kısım hangisiymiş?",
+  "kind": "intro",
+  "de": "Ein Mitarbeitergespräch. Welcher Teil war der schwere?"
+ },
+ {
+  "tr": "Yirmi saniyede karar veren üç şey. Hangisi neden önemli?",
+  "kind": "intro",
+  "de": "Drei Dinge, die in zwanzig Sekunden entscheiden. Welches zählt warum?"
+ },
+ {
+  "tr": "Cuma öncesi üç bilgi. Hangisi değişti, hangisi acil değil?",
+  "kind": "intro",
+  "de": "Drei Hinweise vor Freitag. Was hat sich geändert, was ist nicht dringend?"
+ },
+ {
+  "tr": "Edilgen cümleler. Fail ne zaman söyleniyor, ne zaman düşüyor?",
+  "kind": "intro",
+  "de": "Passivsätze. Wann wird der Urheber genannt, wann fällt er weg?"
+ },
+ {
+  "tr": "İki geçmiş olay. Önce olan „had“ alıyor, sonraki sade kalıyor.",
+  "kind": "intro",
+  "de": "Zwei Ereignisse in der Vergangenheit. Das frühere nimmt „had“, das spätere bleibt einfach."
+ },
+ {
+  "tr": "Ön yazı ve mülakat cümleleri. Hangi fiil mastar, hangisi „-ing“ istiyor?",
+  "kind": "intro",
+  "de": "Sätze aus Anschreiben und Gespräch. Welches Verb verlangt den Infinitiv, welches „-ing“?"
+ },
+ {
+  "tr": "Dolaylı anlatımın üç biçimi. Hangisi bildirme, hangisi buyruk, hangisi soru?",
+  "kind": "intro",
+  "de": "Drei Formen der indirekten Rede. Welche meldet, welche befiehlt, welche fragt?"
+ },
+ {
+  "tr": "Özne konumundaki „who“ düşemez.",
+  "kind": "explain",
+  "de": "Ein „who“ in Subjektstellung darf nicht wegfallen."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „for“ ile present perfect.",
+  "kind": "explain",
+  "de": "Es dauert an: „for“ mit present perfect. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "Üç başlık sırayla, sonra referans uyarısı.",
+  "kind": "explain",
+  "de": "Drei Überschriften der Reihe nach, dann der Hinweis zum Zeugnis."
+ },
+ {
+  "tr": "Ön yazının işi süslemek değil, kanıt vermek.",
+  "kind": "explain",
+  "de": "Ein Anschreiben soll nicht schmücken, sondern belegen."
+ },
+ {
+  "tr": "Üç madde sırayla, en sonda acil olmayan not.",
+  "kind": "explain",
+  "de": "Drei Punkte der Reihe nach, zuletzt der nicht dringende Hinweis."
+ },
+ {
+  "tr": "Edilgen: işi kimin yaptığı söylenmiyor, çünkü önemsiz.",
+  "kind": "explain",
+  "de": "Passiv: wer es tut, wird nicht genannt, weil es gleich ist. Deutsch baut es mit „werden“ genauso."
+ },
+ {
+  "tr": "„The photos were taken in November.“ — kasımda ışık az.",
+  "kind": "explain",
+  "de": "„The photos were taken in November.“ — im November ist wenig Licht."
+ },
+ {
+  "tr": "„although“ bir CÜMLE bağlıyor; „despite“ ise isim isterdi.",
+  "kind": "explain",
+  "de": "„although“ verbindet einen SATZ; „despite“ verlangt ein Nomen — wie „obwohl“ gegen „trotz“."
+ },
+ {
+  "tr": "„You don't have to wear a suit here, by the way. Nobody does.“",
+  "kind": "explain",
+  "de": "„You don't have to wear a suit here, by the way. Nobody does.“"
+ },
+ {
+  "tr": "„My badge was arranged by the office…“ — fail „by“ ile geliyor.",
+  "kind": "explain",
+  "de": "„My badge was arranged by the office…“ — der Urheber kommt mit „by“, deutsch mit „von“."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile aktarılıyor ve sıra düz cümleye dönüyor.",
+  "kind": "explain",
+  "de": "Die Ja-Nein-Frage wird mit „if“ wiedergegeben und die Stellung wird gerade — deutsch „ob“ und Verb ans Ende."
+ },
+ {
+  "tr": "Bildirme, buyruk, soru, karar — dolaylı anlatımın üç biçimi sırayla.",
+  "kind": "explain",
+  "de": "Aussage, Aufforderung, Frage, Entschluss — die drei Formen der indirekten Rede nacheinander."
+ },
+ {
+  "tr": "„I am seeing the client on Friday at two, not on Thursday.“ — ayarlanmış gelecek.",
+  "kind": "explain",
+  "de": "„I am seeing the client on Friday at two, not on Thursday.“ — ein fest verabredeter Termin."
+ },
+ {
+  "tr": "„You have to give one month's notice, yes? — One month, from the first of the month.“",
+  "kind": "explain",
+  "de": "„You have to give one month's notice, yes? — One month, from the first of the month.“"
+ },
+ {
+  "tr": "„Before that I had worked in a bigger one for three years…“ — önceki geçmiş „had worked“ ile.",
+  "kind": "explain",
+  "de": "„Before that I had worked in a bigger one for three years…“ — das frühere Ereignis mit „had worked“, deutsch Plusquamperfekt."
+ },
+ {
+  "tr": "„The landlord said that everybody pays three months here.“ — Nil bunun doğru olmadığını söylüyor.",
+  "kind": "explain",
+  "de": "„The landlord said that everybody pays three months here.“ — Nil sagt, dass das nicht stimmt."
+ },
+ {
+  "tr": "sistem",
+  "kind": "gloss.tr",
+  "de": "System"
+ },
+ {
+  "tr": "bir yerde",
+  "kind": "gloss.tr",
+  "de": "irgendwo"
+ },
+ {
+  "tr": "kuru",
+  "kind": "gloss.tr",
+  "de": "trocken"
+ },
+ {
+  "tr": "şiir",
+  "kind": "gloss.tr",
+  "de": "Gedicht"
+ },
+ {
+  "tr": "baskı",
+  "kind": "gloss.tr",
+  "de": "Druck"
+ },
+ {
+  "tr": "doğru",
+  "kind": "gloss.tr",
+  "de": "richtig"
+ },
+ {
+  "tr": "ender",
+  "kind": "gloss.tr",
+  "de": "selten"
+ },
+ {
+  "tr": "görev",
+  "kind": "gloss.tr",
+  "de": "Stelle"
+ },
+ {
+  "tr": "satır",
+  "kind": "gloss.tr",
+  "de": "Zeile"
+ },
+ {
+  "tr": "sordu",
+  "kind": "gloss.tr",
+  "de": "fragte"
+ },
+ {
+  "tr": "unvan",
+  "kind": "gloss.tr",
+  "de": "Titel"
+ },
+ {
+  "tr": "yüzde",
+  "kind": "gloss.tr",
+  "de": "Prozent"
+ },
+ {
+  "tr": "zaten",
+  "kind": "gloss.tr",
+  "de": "ohnehin"
+ },
+ {
+  "tr": "baktım",
+  "kind": "gloss.tr",
+  "de": "habe gepflegt"
+ },
+ {
+  "tr": "boşluk",
+  "kind": "gloss.tr",
+  "de": "Lücke"
+ },
+ {
+  "tr": "şablon",
+  "kind": "gloss.tr",
+  "de": "Vorlage"
+ },
+ {
+  "tr": "alırsam",
+  "kind": "gloss.tr",
+  "de": "wenn ich bekomme"
+ },
+ {
+  "tr": "atlatan",
+  "kind": "gloss.tr",
+  "de": "die übersteht"
+ },
+ {
+  "tr": "bilerek",
+  "kind": "gloss.tr",
+  "de": "mit Absicht"
+ },
+ {
+  "tr": "dedi ki",
+  "kind": "gloss.tr",
+  "de": "sagte, dass"
+ },
+ {
+  "tr": "dikildi",
+  "kind": "gloss.tr",
+  "de": "stand"
+ },
+ {
+  "tr": "emlakçı",
+  "kind": "gloss.tr",
+  "de": "Makler"
+ },
+ {
+  "tr": "kabahat",
+  "kind": "gloss.tr",
+  "de": "Schuld"
+ },
+ {
+  "tr": "kendisi",
+  "kind": "gloss.tr",
+  "de": "selbst"
+ },
+ {
+  "tr": "kolayca",
+  "kind": "gloss.tr",
+  "de": "leicht"
+ },
+ {
+  "tr": "yerinde",
+  "kind": "gloss.tr",
+  "de": "berechtigt"
+ },
+ {
+  "tr": "bir yere",
+  "kind": "gloss.tr",
+  "de": "irgendwohin"
+ },
+ {
+  "tr": "gördüğüm",
+  "kind": "gloss.tr",
+  "de": "die ich sah"
+ },
+ {
+  "tr": "görüşmek",
+  "kind": "gloss.tr",
+  "de": "besprechen"
+ },
+ {
+  "tr": "gösteren",
+  "kind": "gloss.tr",
+  "de": "die zeigte"
+ },
+ {
+  "tr": "kastetti",
+  "kind": "gloss.tr",
+  "de": "meinte"
+ },
+ {
+  "tr": "suçlanan",
+  "kind": "gloss.tr",
+  "de": "beschuldigt"
+ },
+ {
+  "tr": "ayarlandı",
+  "kind": "gloss.tr",
+  "de": "wurde besorgt"
+ },
+ {
+  "tr": "üst katta",
+  "kind": "gloss.tr",
+  "de": "über mir"
+ },
+ {
+  "tr": "veriliyor",
+  "kind": "gloss.tr",
+  "de": "wird ausgegeben"
+ },
+ {
+  "tr": "yana adım",
+  "kind": "gloss.tr",
+  "de": "Schritt zur Seite"
+ },
+ {
+  "tr": "daha ender",
+  "kind": "gloss.tr",
+  "de": "seltener"
+ },
+ {
+  "tr": "fark ettim",
+  "kind": "gloss.tr",
+  "de": "ist mir aufgefallen"
+ },
+ {
+  "tr": "kalkma anı",
+  "kind": "gloss.tr",
+  "de": "der Moment zu gehen"
+ },
+ {
+  "tr": "bitirmiştim",
+  "kind": "gloss.tr",
+  "de": "hatte abgeschlossen"
+ },
+ {
+  "tr": "hâlâ müsait",
+  "kind": "gloss.tr",
+  "de": "noch frei"
+ },
+ {
+  "tr": "hiçbir yere",
+  "kind": "gloss.tr",
+  "de": "nirgendwohin"
+ },
+ {
+  "tr": "sorun değil",
+  "kind": "gloss.tr",
+  "de": "kein Problem"
+ },
+ {
+  "tr": "bana söyledi",
+  "kind": "gloss.tr",
+  "de": "sagte mir, ich solle"
+ },
+ {
+  "tr": "bana verildi",
+  "kind": "gloss.tr",
+  "de": "mir wurde gegeben"
+ },
+ {
+  "tr": "bir ay ihbar",
+  "kind": "gloss.tr",
+  "de": "ein Monat Kündigungsfrist"
+ },
+ {
+  "tr": "devir teslim",
+  "kind": "gloss.tr",
+  "de": "Übergabe"
+ },
+ {
+  "tr": "ilgili olmak",
+  "kind": "gloss.tr",
+  "de": "zu tun haben mit"
+ },
+ {
+  "tr": "önemli olmak",
+  "kind": "gloss.tr",
+  "de": "zählen"
+ },
+ {
+  "tr": "şundan farklı",
+  "kind": "gloss.tr",
+  "de": "etwas anderes als"
+ },
+ {
+  "tr": "yangın kapısı",
+  "kind": "gloss.tr",
+  "de": "Brandschutztür"
+ },
+ {
+  "tr": "başka bir bina",
+  "kind": "gloss.tr",
+  "de": "ein anderes Gebäude"
+ },
+ {
+  "tr": "değerlendirmek",
+  "kind": "gloss.tr",
+  "de": "in Betracht ziehen"
+ },
+ {
+  "tr": "fazla dolaysız",
+  "kind": "gloss.tr",
+  "de": "zu direkt"
+ },
+ {
+  "tr": "onların tarafı",
+  "kind": "gloss.tr",
+  "de": "ihre Seite"
+ },
+ {
+  "tr": "önceki işveren",
+  "kind": "gloss.tr",
+  "de": "früherer Arbeitgeber"
+ },
+ {
+  "tr": "ikimiz de değil",
+  "kind": "gloss.tr",
+  "de": "keiner von uns beiden"
+ },
+ {
+  "tr": "maaş bordroları",
+  "kind": "gloss.tr",
+  "de": "Gehaltsabrechnungen"
+ },
+ {
+  "tr": "takılıp kalıyor",
+  "kind": "gloss.tr",
+  "de": "steht dort fest"
+ },
+ {
+  "tr": "yerime bakmıştı",
+  "kind": "gloss.tr",
+  "de": "hatte mich vertreten"
+ },
+ {
+  "tr": "çalışmayı sevmek",
+  "kind": "gloss.tr",
+  "de": "gern arbeiten"
+ },
+ {
+  "tr": "gerçek bir cevap",
+  "kind": "gloss.tr",
+  "de": "eine echte Antwort"
+ },
+ {
+  "tr": "teklif etselerdi",
+  "kind": "gloss.tr",
+  "de": "wenn sie böten"
+ },
+ {
+  "tr": "sonradan anlaşıldı",
+  "kind": "gloss.tr",
+  "de": "stellte sich heraus"
+ },
+ {
+  "tr": "başvurmaya karar verdim",
+  "kind": "gloss.tr",
+  "de": "habe mich entschlossen, mich zu bewerben"
+ }
+]

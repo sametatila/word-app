@@ -62,7 +62,9 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 · B2 · C1 | 1–25 | bekliyor |
+| B1 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
+| B1 | 4–25 | bekliyor |
+| B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -563,6 +565,48 @@ gözlemin parçaları.
 Ölçüm bu turda yirmi bir sözlükçe maddesi ekletti ve beş soruyu yeniden
 yazdırdı; hepsi soru kökünde ya da şıkta geçip metinde geçmeyen
 sözcüklerdi („forever“, „repeat“, „real“, „matter“, „own“).
+
+**B1 AÇILDI · ünite 1–3 (2026-09-12).** Ünite 1 My career so far ·
+Writing a CV · The cover letter · The job interview; ünite 2 The first week ·
+Meetings and deadlines · Talking about salary · The people I work with;
+ünite 3 The appraisal · Resigning and handing over · Looking for a flat ·
+The viewing. On sekiz egzersiz; ünite dışı ölçüm %0,0. B1 yuvalarının
+18'i dolu.
+
+Seviyenin ölçüsü bir basamak yukarıda: okuma metni **150–260 kelime**
+(A2'de 100–180, `check-content.ts` içindeki `READING_WORDS`). İlk üç
+ünite bunu doldurdu ve sayılar 200–260 arasında oturdu.
+
+Ünite 1'in noktası PAST PERFECT. A2 present perfect ile simple past'ı
+ayırmıştı; B1 üçüncü katmanı ekliyor ve özgeçmiş anlatısı bunun doğal
+yuvası. Almanca eksende bu satır BÜYÜMÜYOR — Almanca Plusquamperfekt'i
+aynı işte kullanıyor — ama karşılık biçimi adıyla anıyor, çünkü Almanca
+okuyan için tanıdık olduğunu bilmek de bir bilgi.
+
+Ünite 2'nin noktası EDİLGEN ve burada hattın en keskin yapısal farkı
+çıktı: „I was given a badge.“ İngilizce DOLAYLI nesneyi özne yapabiliyor.
+Almanca bunu yapamıyor — „mir wurde ein Ausweis gegeben“, kişi datifte
+kalıyor ve cümlenin öznesi olamıyor. Türkçe de yapamıyor. Yani bu, iki
+dilin de erişemediği bir İngilizce imkânı; karşılık bunu "Deutsch kann
+das nicht" diye açıkça yazıyor.
+
+Ünite 3'ün noktası DOLAYLI ANLATIM. Üç biçim yan yana duruyor („said
+that“, „told me to“, „asked if“) ve seçim aktarılan cümlenin türüne bağlı.
+Almanca eksende iki ayrım daha açıldı: (1) İngilizce zamanı bir basamak
+geriye kaydırıyor („improved“ → „had improved“), Almanca ise bunun yerine
+Konjunktiv kullanıyor; (2) „told me to“nun Almancada mastarlı karşılığı
+yok, „sagte mir, ich solle“ diye yan cümle gerekiyor.
+
+Nesne konumundaki ilgi adılının düşebilmesi de ayrı bir satır oldu: „the
+report I sent“ İngilizcede olağan, Almancada İMKÂNSIZ — „der Bericht, den
+ich geschickt habe“ içinde „den“ hiçbir koşulda düşmüyor.
+
+Ölçüm B1'de ilk kez çalıştı ve beklendiği gibi davrandı: havuz büyüdüğü
+için ilk taslakta oran %2,2 çıktı ve on dokuz sözlükçe maddesiyle %0,0'a
+indi. Bir de içerik düzeltmesi geldi: `en-b1-u1-r2` metninde „agency“
+kullanılmıştı, oysa o sözcük ünite 3'ün dersinde geçiyor — beş yerde
+„company“ ile değiştirildi. Ünite sırası sözcüğün hangi üniteye ait
+olduğunu belirliyor ve kapı bunu sayıyor.
 
 ## Tamamlanma ölçütü
 

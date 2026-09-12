@@ -1,0 +1,172 @@
+[
+ {
+  "tr": "Beş daire, hiç imza yok. Neden?",
+  "kind": "intro",
+  "en": "Five flats, no signature. Why?"
+ },
+ {
+  "tr": "Özne konumundaki „who“ düşemez.",
+  "kind": "explain",
+  "en": "A „who“ in subject position cannot drop out."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „for“ ile present perfect.",
+  "kind": "explain",
+  "en": "It is still going on: „for“ with the present perfect."
+ },
+ {
+  "tr": "Üç başlık sırayla, sonra referans uyarısı.",
+  "kind": "explain",
+  "en": "Three headings in order, then the warning about the reference."
+ },
+ {
+  "tr": "İlk haftanın üç parçası. Hangisi kimin işi?",
+  "kind": "intro",
+  "en": "The three parts of a first week. Whose job is each?"
+ },
+ {
+  "tr": "Ön yazının işi süslemek değil, kanıt vermek.",
+  "kind": "explain",
+  "en": "A cover letter is not there to decorate but to prove."
+ },
+ {
+  "tr": "Üç madde sırayla, en sonda acil olmayan not.",
+  "kind": "explain",
+  "en": "Three points in order, and the note that is not urgent last."
+ },
+ {
+  "tr": "Sıfat cümleleri. „that“ ne zaman düşebiliyor?",
+  "kind": "intro",
+  "en": "Relative clauses. When can „that“ drop out?"
+ },
+ {
+  "tr": "İki koşul cümlesi. Biri olabilir, öteki olmuyor.",
+  "kind": "intro",
+  "en": "Two conditional sentences. One can happen, the other does not."
+ },
+ {
+  "tr": "Zam görüşmesi. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "en": "A talk about a raise. Which condition is real and which is not?"
+ },
+ {
+  "tr": "Daire geziliyor. Hangi iki soru her şeyi söylüyor?",
+  "kind": "intro",
+  "en": "A flat viewing. Which two questions tell you everything?"
+ },
+ {
+  "tr": "Beş haftalık devir teslim. Hangi sayı neden önemli?",
+  "kind": "intro",
+  "en": "A handover of five weeks. Which number matters and why?"
+ },
+ {
+  "tr": "Bir ekip anlatılıyor. Hangi cümlede „that“ düşüyor?",
+  "kind": "intro",
+  "en": "A team is described. In which sentence does „that“ drop out?"
+ },
+ {
+  "tr": "Edilgen: işi kimin yaptığı söylenmiyor, çünkü önemsiz.",
+  "kind": "explain",
+  "en": "Passive: who does it is not named, because it does not matter."
+ },
+ {
+  "tr": "Ön yazı düzeltiliyor. İlk satır neden bu kadar önemli?",
+  "kind": "intro",
+  "en": "A cover letter is being fixed. Why does the first line count so much?"
+ },
+ {
+  "tr": "„The photos were taken in November.“ — kasımda ışık az.",
+  "kind": "explain",
+  "en": "„The photos were taken in November.“ — there is little light in November."
+ },
+ {
+  "tr": "Altı yıllık bir yol. Hangi adım hangisinden önce geldi?",
+  "kind": "intro",
+  "en": "Six years of a career. Which step came before which?"
+ },
+ {
+  "tr": "Bir mülakat baştan sona. Hangi cevap neden işe yarıyor?",
+  "kind": "intro",
+  "en": "An interview from start to end. Which answer works and why?"
+ },
+ {
+  "tr": "Bir değerlendirme görüşmesi. Zor olan kısım hangisiymiş?",
+  "kind": "intro",
+  "en": "An appraisal meeting. Which part turned out to be the hard one?"
+ },
+ {
+  "tr": "Yirmi saniyede karar veren üç şey. Hangisi neden önemli?",
+  "kind": "intro",
+  "en": "Three things that decide in twenty seconds. Which one matters why?"
+ },
+ {
+  "tr": "„although“ bir CÜMLE bağlıyor; „despite“ ise isim isterdi.",
+  "kind": "explain",
+  "en": "„although“ joins a CLAUSE; „despite“ would want a noun."
+ },
+ {
+  "tr": "Cuma öncesi üç bilgi. Hangisi değişti, hangisi acil değil?",
+  "kind": "intro",
+  "en": "Three notes before Friday. What changed and what is not urgent?"
+ },
+ {
+  "tr": "Edilgen cümleler. Fail ne zaman söyleniyor, ne zaman düşüyor?",
+  "kind": "intro",
+  "en": "Passive sentences. When is the agent named and when does it drop out?"
+ },
+ {
+  "tr": "„You don't have to wear a suit here, by the way. Nobody does.“",
+  "kind": "explain",
+  "en": "„You don't have to wear a suit here, by the way. Nobody does.“"
+ },
+ {
+  "tr": "İki geçmiş olay. Önce olan „had“ alıyor, sonraki sade kalıyor.",
+  "kind": "intro",
+  "en": "Two past events. The earlier one takes „had“; the later one stays simple."
+ },
+ {
+  "tr": "„My badge was arranged by the office…“ — fail „by“ ile geliyor.",
+  "kind": "explain",
+  "en": "„My badge was arranged by the office…“ — the agent comes with „by“."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile aktarılıyor ve sıra düz cümleye dönüyor.",
+  "kind": "explain",
+  "en": "A yes-no question is reported with „if“ and the order goes back to a statement."
+ },
+ {
+  "tr": "Bildirme, buyruk, soru, karar — dolaylı anlatımın üç biçimi sırayla.",
+  "kind": "explain",
+  "en": "A statement, an order, a question, a decision — the three shapes of reported speech in order."
+ },
+ {
+  "tr": "Ön yazı ve mülakat cümleleri. Hangi fiil mastar, hangisi „-ing“ istiyor?",
+  "kind": "intro",
+  "en": "Sentences from a letter and an interview. Which verb wants the infinitive and which „-ing“?"
+ },
+ {
+  "tr": "Dolaylı anlatımın üç biçimi. Hangisi bildirme, hangisi buyruk, hangisi soru?",
+  "kind": "intro",
+  "en": "Three shapes of reported speech. Which one reports, which orders, which asks?"
+ },
+ {
+  "tr": "„I am seeing the client on Friday at two, not on Thursday.“ — ayarlanmış gelecek.",
+  "kind": "explain",
+  "en": "„I am seeing the client on Friday at two, not on Thursday.“ — a fixed arrangement."
+ },
+ {
+  "tr": "„You have to give one month's notice, yes? — One month, from the first of the month.“",
+  "kind": "explain",
+  "en": "„You have to give one month's notice, yes? — One month, from the first of the month.“"
+ },
+ {
+  "tr": "„Before that I had worked in a bigger one for three years…“ — önceki geçmiş „had worked“ ile.",
+  "kind": "explain",
+  "en": "„Before that I had worked in a bigger one for three years…“ — the earlier past with „had worked“."
+ },
+ {
+  "tr": "„The landlord said that everybody pays three months here.“ — Nil bunun doğru olmadığını söylüyor.",
+  "kind": "explain",
+  "en": "„The landlord said that everybody pays three months here.“ — Nil says that is not true."
+ }
+]

@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "CV kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Lebenslaufkarte aus."
+ },
+ {
+  "tr": "İlk hafta kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zur ersten Woche aus."
+ },
+ {
+  "tr": "Değerlendirme kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zum Mitarbeitergespräch aus."
+ },
+ {
+  "tr": "Gelişme gerçek; dışarıdan görünmüyor; üç satır yazılacak; yeni hedef tarihli.",
+  "kind": "form.facts",
+  "de": "Der Fortschritt ist da; von außen sieht ihn niemand; drei Zeilen sind zu schreiben; das neue Ziel hat ein Datum."
+ },
+ {
+  "tr": "Altı yıl sektörde; diploma işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
+  "kind": "form.facts",
+  "de": "Sechs Jahre in der Branche; Abschluss vor der Stelle beendet; Zeugnis vom früheren Arbeitgeber; zwei Kurse."
+ },
+ {
+  "tr": "Oryantasyon pazartesi; ekipman ilk gün kuralı; giriş kartı ofis tarafından; addaki hata çarşambaya kadar.",
+  "kind": "form.facts",
+  "de": "Einführung am Montag; Ausstattung am ersten Tag als Regel; Ausweis vom Büro; der Namensfehler bis Mittwoch."
+ },
+ {
+  "tr": "Geliştiğimi söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, ich hätte mich verbessert."
+ },
+ {
+  "tr": "Daire hâlâ müsait mi?",
+  "kind": "build.tr",
+  "de": "Ist die Wohnung noch frei?"
+ },
+ {
+  "tr": "Bu ay beş daire gördüm.",
+  "kind": "build.tr",
+  "de": "Ich habe diesen Monat fünf Wohnungen gesehen."
+ },
+ {
+  "tr": "İki soru hazırlamalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest zwei Fragen vorbereiten."
+ },
+ {
+  "tr": "Primi alırsam kalacağım.",
+  "kind": "build.tr",
+  "de": "Wenn ich die Prämie bekomme, bleibe ich."
+ },
+ {
+  "tr": "Bütçeyi görüşebilir miyiz?",
+  "kind": "build.tr",
+  "de": "Könnten wir über das Budget sprechen?"
+ },
+ {
+  "tr": "Ekipman ilk gün veriliyor.",
+  "kind": "build.tr",
+  "de": "Die Ausstattung wird am ersten Tag ausgegeben."
+ },
+ {
+  "tr": "O işten önce ne yapmıştın?",
+  "kind": "build.tr",
+  "de": "Was hattest du vor dieser Stelle gemacht?"
+ },
+ {
+  "tr": "Gönderdiğim rapor geç kaldı.",
+  "kind": "build.tr",
+  "de": "Der Bericht, den ich geschickt habe, kam zu spät."
+ },
+ {
+  "tr": "Mutlu olup olmadığımı sordu.",
+  "kind": "build.tr",
+  "de": "Sie fragte, ob ich zufrieden sei."
+ },
+ {
+  "tr": "Onu bu gece teslim edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich werde es heute Abend abgeben."
+ },
+ {
+  "tr": "Bana bir giriş kartı verildi.",
+  "kind": "build.tr",
+  "de": "Mir wurde ein Ausweis gegeben."
+ },
+ {
+  "tr": "Dün gördüğüm daire aydınlıktı.",
+  "kind": "build.tr",
+  "de": "Die Wohnung, die ich gestern sah, war hell."
+ },
+ {
+  "tr": "Takım elbise giymen gerekmiyor.",
+  "kind": "build.tr",
+  "de": "Du musst keinen Anzug tragen."
+ },
+ {
+  "tr": "Cuma günü müşteriyle görüşüyorum.",
+  "kind": "build.tr",
+  "de": "Am Freitag treffe ich die Kundin."
+ },
+ {
+  "tr": "Oryantasyon ne zaman ayarlanıyor?",
+  "kind": "build.tr",
+  "de": "Wann wird die Einführung angesetzt?"
+ },
+ {
+  "tr": "Bu fırsata başvurmaya karar verdim.",
+  "kind": "build.tr",
+  "de": "Ich habe beschlossen, mich auf diese Stelle zu bewerben."
+ },
+ {
+  "tr": "Ayrılıyor olmama rağmen minnettarım.",
+  "kind": "build.tr",
+  "de": "Obwohl ich gehe, bin ich dankbar."
+ },
+ {
+  "tr": "Bana daireyi gösteren kadın nazikti.",
+  "kind": "build.tr",
+  "de": "Die Frau, die mir die Wohnung zeigte, war freundlich."
+ },
+ {
+  "tr": "Bana yeni bir hedef koymamı söyledi.",
+  "kind": "build.tr",
+  "de": "Er sagte mir, ich solle ein neues Ziel setzen."
+ },
+ {
+  "tr": "Bu sektörde altı yıldır çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite seit sechs Jahren in dieser Branche."
+ },
+ {
+  "tr": "Küçük ekiplerle çalışmayı seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite gern in kleinen Teams."
+ },
+ {
+  "tr": "Bir ay ihbar süresi vermen gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst einen Monat Kündigungsfrist einhalten."
+ },
+ {
+  "tr": "Önceki işverenim bana referans verdi.",
+  "kind": "build.tr",
+  "de": "Mein früherer Arbeitgeber gab mir ein Zeugnis."
+ },
+ {
+  "tr": "Giriş kartım ofis tarafından ayarlandı.",
+  "kind": "build.tr",
+  "de": "Mein Ausweis wurde vom Büro besorgt."
+ },
+ {
+  "tr": "Daha fazla teklif etselerdi kabul ederdim.",
+  "kind": "build.tr",
+  "de": "Wenn sie mehr böten, würde ich annehmen."
+ },
+ {
+  "tr": "Oraya başlamadan önce diplomamı bitirmiştim.",
+  "kind": "build.tr",
+  "de": "Ich hatte meinen Abschluss beendet, bevor ich dort anfing."
+ },
+ {
+  "tr": "„still“ „be“ fiilinden sonra geliyor.",
+  "kind": "build.hint",
+  "de": "„still“ steht nach dem Verb „be“."
+ },
+ {
+  "tr": "Edilgen soruda „be“ özneden önce geçiyor.",
+  "kind": "build.hint",
+  "de": "In der Passivfrage rückt „be“ vor das Subjekt."
+ },
+ {
+  "tr": "Öğüt „should“ ile; zorunluluk değil tavsiye.",
+  "kind": "build.hint",
+  "de": "Der Rat mit „should“; keine Pflicht, sondern eine Empfehlung."
+ },
+ {
+  "tr": "„enjoy“ sonrası „-ing“ istiyor; mastar almaz.",
+  "kind": "build.hint",
+  "de": "Nach „enjoy“ steht „-ing“; ein Infinitiv geht nicht. Deutsch sagt einfach „gern“."
+ },
+ {
+  "tr": "„who“ burada ÖZNE konumunda ve bu yüzden düşemez.",
+  "kind": "build.hint",
+  "de": "„who“ steht hier in der SUBJEKTSTELLUNG und darf deshalb nicht wegfallen."
+ },
+ {
+  "tr": "Soruda „had“ özneden önce geçiyor; „done“ üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „had“ vor das Subjekt; „done“ ist die dritte Form."
+ },
+ {
+  "tr": "„decide“ sonrası mastar geliyor — „enjoy“un tam tersi.",
+  "kind": "build.hint",
+  "de": "Nach „decide“ kommt der Infinitiv — genau umgekehrt wie bei „enjoy“."
+ },
+ {
+  "tr": "Yasak değil, gerek yok. „mustn't“ olsaydı yasak olurdu.",
+  "kind": "build.hint",
+  "de": "Kein Verbot, sondern keine Pflicht: genau das deutsche „du musst nicht“."
+ },
+ {
+  "tr": "„although“ bir cümle bağlıyor; „despite“ ise isim ister.",
+  "kind": "build.hint",
+  "de": "„although“ verbindet einen Satz, „despite“ verlangt ein Nomen — wie „obwohl“ und „trotz“."
+ },
+ {
+  "tr": "Gerçek koşul: „if“ yanında geniş zaman, öteki yanda „will“.",
+  "kind": "build.hint",
+  "de": "Reale Bedingung: im „if“-Teil Präsens, im anderen Teil „will“. Deutsch nimmt zweimal das Präsens."
+ },
+ {
+  "tr": "„one month's“ iyelik eki alıyor: süre de iyelik kurabiliyor.",
+  "kind": "build.hint",
+  "de": "„one month's“ nimmt den Genitiv: auch eine Zeitspanne kann besitzen."
+ },
+ {
+  "tr": "Edilgen: işi kimin yaptığı önemsiz, o yüzden fail hiç geçmiyor.",
+  "kind": "build.hint",
+  "de": "Passiv: wer es tut, ist gleich, deshalb kommt der Urheber gar nicht vor."
+ },
+ {
+  "tr": "Tek bir geçmiş olay: sade geçmiş yetiyor, „had“ gereksiz olurdu.",
+  "kind": "build.hint",
+  "de": "Nur ein Ereignis in der Vergangenheit: das einfache Präteritum reicht, „had“ wäre überflüssig."
+ },
+ {
+  "tr": "Ayarlanmış gelecek, şimdiki zamanın sürerli biçimiyle anlatılıyor.",
+  "kind": "build.hint",
+  "de": "Ein fest verabredeter Termin steht in der Verlaufsform der Gegenwart. Deutsch nimmt einfach das Präsens."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile aktarılıyor ve sıra düz cümleye dönüyor.",
+  "kind": "build.hint",
+  "de": "Die Ja-Nein-Frage wird mit „if“ wiedergegeben und die Stellung wird gerade — deutsch „ob“ mit Verb am Ende."
+ },
+ {
+  "tr": "Fail söylenecekse „by“ ile geliyor; söylenmese de cümle tam olurdu.",
+  "kind": "build.hint",
+  "de": "Wird der Urheber genannt, steht er mit „by“, deutsch mit „von“; ohne ihn wäre der Satz auch vollständig."
+ },
+ {
+  "tr": "„tell“ kişiyi doğrudan alıyor ve sonrası mastar; „say“ bunu yapamaz.",
+  "kind": "build.hint",
+  "de": "„tell“ nimmt die Person direkt und danach einen Infinitiv; „say“ kann das nicht. Deutsch braucht dafür einen Nebensatz."
+ },
+ {
+  "tr": "„discuss“ doğrudan nesne alıyor; „discuss about“ diye bir kuruluş yok.",
+  "kind": "build.hint",
+  "de": "„discuss“ nimmt das Objekt direkt; „discuss about“ gibt es nicht — anders als deutsch „sprechen über“."
+ },
+ {
+  "tr": "Önceden kurulmuş plan: „going to“. „will“ olsaydı o anki karar olurdu.",
+  "kind": "build.hint",
+  "de": "Ein vorher gefasster Plan: „going to“. Mit „will“ wäre es ein Entschluss im Moment; Deutsch trennt das nicht."
+ },
+ {
+  "tr": "„that“ burada NESNE konumunda; ismi arkadan tamlayan bir cümle kuruyor.",
+  "kind": "build.hint",
+  "de": "„that“ steht hier in der OBJEKTSTELLUNG und baut einen Relativsatz hinter dem Nomen."
+ },
+ {
+  "tr": "Aktarılınca zaman bir basamak geriye kayıyor: „improved“ → „had improved“.",
+  "kind": "build.hint",
+  "de": "Bei der Wiedergabe rückt die Zeit eine Stufe zurück: „improved“ → „had improved“. Deutsch nimmt stattdessen den Konjunktiv."
+ },
+ {
+  "tr": "Nesne konumundaki bağlaç düşebiliyor: „the report that I sent“ ile aynı şey.",
+  "kind": "build.hint",
+  "de": "Das Relativpronomen in der Objektstellung darf wegfallen — im Deutschen niemals."
+ },
+ {
+  "tr": "Ay bitmedi, o yüzden present perfect; „last week“ olsaydı sade geçmiş olurdu.",
+  "kind": "build.hint",
+  "de": "Der Monat ist nicht vorbei, deshalb present perfect; mit „last week“ wäre es simple past."
+ },
+ {
+  "tr": "İki geçmişten ÖNCE olanı „had“ + üçüncü hâl taşıyor; sonraki sade geçmişte kalıyor.",
+  "kind": "build.hint",
+  "de": "Von zwei Ereignissen trägt das FRÜHERE „had“ + dritte Form; das spätere bleibt einfach. Deutsch hat dafür das Plusquamperfekt."
+ },
+ {
+  "tr": "İngilizce KİŞİYİ özne yapabiliyor; Almanca ve Türkçe bunu yapamaz, kişi ortada kalır.",
+  "kind": "build.hint",
+  "de": "Englisch kann die PERSON zum Subjekt machen; Deutsch kann das nicht, dort bleibt sie im Dativ: mir wurde ein Ausweis gegeben."
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim burada geçmişi değil, olmayan bir şimdiyi anlatıyor.",
+  "kind": "build.hint",
+  "de": "Irreale Bedingung: die Vergangenheitsform meint hier keine Vergangenheit, sondern eine Gegenwart, die es nicht gibt."
+ },
+ {
+  "tr": "E-postanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der E-Mail: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Görüşmenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Gesprächs: bring sie in die richtige Ordnung."
+ }
+]
