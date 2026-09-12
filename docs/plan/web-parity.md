@@ -12625,3 +12625,53 @@ hazard için repoda `acilisSonu` yardımcısı var; burada sınırlı bir pencer
 yeterliydi.
 
 Dört enjeksiyon denendi, dördü de yakalandı.
+
+## §11.368 — Kapının kendi kusuru: tam metin deseni
+
+Bu oturumda aynı şey **dört kez** oldu ve dördünde de gerçek bir gerileme
+yoktu: bir olgunun **yazımı** değişti, onu düz metin olarak arayan kapı
+yanlış alarm verdi.
+
+| Kapı | Aradığı metin | Ne oldu |
+|---|---|---|
+| §228 hata dalı duyuruluyor | `accessibilityLiveRegion="assertive"` | duyuru ortak kabuğun `live` prop'una taşındı |
+| §11.331 sonuç duyurusu | `role="status"` / `"polite"` düz dizgi | seviye koşullu biçime geçti |
+| Üç sonuç kapısı | `t("common.pct"` | yüzde biçimleyiciye geçti |
+| Çıkış düğmesi | `aria-label={t("…")}` | ad `RoundExit`in `labelKey`ine taşındı |
+
+Yanlış alarm bedelsiz değil: her biri bir tur harcıyor ve "kapıyı susturmak"
+refleksini besliyor. Bu turda **sınıfı** kapattım, örnekleri değil.
+
+### Doğru ölçü düğüm
+
+`atalarinda(src, işaret, desen)` modül kapsamına eklendi: işaretin
+**atalarını** gezip özniteliği orada arıyor — etiket adına, sınıf adına ve
+karakter mesafesine bakmadan. Parçalar (`<>`) da yığına giriyor; girmezlerse
+`</>` bir üstteki gerçek etiketi düşürüyor (bu hata §227'de bir kez çıkmıştı).
+`acilisSonu` da modül kapsamına çıktı — ilk `>` etiketin sonu değil, çünkü
+`icon={<X />}` ya da `onExit={() => f()}` o `>`i taşıyor.
+
+Sekiz ölçü bu tura çevrildi ve çevrim **doğrulandı**: beş yüzeyden
+`role="status"` kaldırılınca beşi de düştü, `p-6` → `p-5` biçim
+değişikliğinde hiçbiri kırılmadı — eski desen kırılırdı.
+
+### §247: iki kırılgan kalıp yasak
+
+Kapı kendi kaynağını okuyor (§138'in kalıbı) ve erişilebilirlik özniteliği
+ölçen bir desende iki şey arıyor:
+
+- **(A) `className="…"` sabitliyor.** Biçimlendirme ölçülen olgunun dışında:
+  `role="status" className="mt-4"` deseni `mt-4`ü `mt-3` yapan birine "duyuru
+  kalktı" der. Sınıfın **kendisi** ölçülen olgu olduğunda (`RoundExit`in 44
+  px'i, `text-h1`) desende erişilebilirlik özniteliği olmaz ve ölçüt onları
+  görmez — muafiyet listesi gerekmedi.
+- **(B) Öznitelikten hemen sonra `>` var.** Bu, etiketin **başka hiç
+  öznitelik taşımamasını** şartlıyor: bir `style` eklemek kapıyı kırar.
+
+İki enjeksiyon denendi (eski iki deseni geri koydum), ikisi de yakalandı.
+
+Ölçüm bir şeyi de netleştirdi: kapı betiğinde erişilebilirlik özniteliği geçen
+115 kod satırı var ve kırılgan olan yalnız **12**'siydi. Geri kalanı ya zaten
+düğüm ölçüsü kullanıyor (`dalKoku`, `dalGovdesi`, `atalar`) ya da bir
+bileşenin **kendi** tanımını okuyor — orada tam metin doğru ölçü, çünkü
+ölçülen şey o metnin kendisi.

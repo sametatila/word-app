@@ -29,6 +29,56 @@ let fails = 0;
 
 const read = (p) => readFileSync(new URL("../" + p, import.meta.url), "utf8");
 
+/**
+ * ACILIS ETIKETININ SONU — ilk `>` degil.
+ *
+ * `icon={<X />}` ya da `onExit={() => f()}` gibi bir prop `>` tasiyor ve ilk
+ * `>`e bakan her olcu orada duruyor. Suslu parantez derinligi ve tirnak
+ * takip ediliyor. Bu dosyada bu dongunun bes yerel kopyasi var (tarihsel);
+ * yeni olculer bunu kullaniyor.
+ */
+export const acilisSonu = (blok) => {
+  let derinlik = 0, tirnak = null;
+  for (let i = 0; i < blok.length; i++) {
+    const c = blok[i];
+    if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+    if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+    if (c === "{") derinlik++;
+    else if (c === "}") derinlik--;
+    else if (c === ">" && derinlik === 0) return i;
+  }
+  return -1;
+};
+
+/**
+ * ISARETIN ATALARI arasinda `desen`e uyan bir acilis etiketi var mi.
+ *
+ * DUGUM OLCUSU: etiket adina, sinif adina ve karakter mesafesine bakmiyor.
+ * Bu dosyanin tekrar eden en pahali hatasi bir olguyu TAM METIN olarak
+ * aramakti - `<div role="status" className="mt-4">` gibi bir desen duyuruyu
+ * degil BICIMLENDIRMEYI de sabitliyor ve `mt-4`u `mt-3` yapan biri kapiyi
+ * kirmizi yapiyor. Parcalar (`<>`) da yigina giriyor: girmezlerse `</>` bir
+ * ustteki gercek etiketi dusuruyor.
+ */
+export const atalarinda = (src, isaret, desen) => {
+  const hedef = src.indexOf(isaret);
+  if (hedef < 0) return null;
+  const yigin = [];
+  const re = /<(\/?)(>|[A-Za-z][A-Za-z0-9.]*)/g;
+  let m;
+  while ((m = re.exec(src)) !== null && m.index < hedef) {
+    if (m[1] === "/") { yigin.pop(); continue; }
+    if (m[2] === ">") { yigin.push("<>"); continue; }
+    const son = acilisSonu(src.slice(m.index));
+    if (son < 0) continue;
+    const etiket = src.slice(m.index, m.index + son + 1);
+    re.lastIndex = m.index + son;
+    if (/\/>$/.test(etiket)) continue;
+    yigin.push(etiket);
+  }
+  return yigin.some((e) => desen.test(e));
+};
+
 function fail(title, detail) {
   fails++;
   console.log("  " + C.bad + "KALIR" + C.off + "  " + title);
@@ -4939,6 +4989,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kapilarda onek eslesmesi", sinirsiz.length ? sinirsiz : ["yok"], ["yok"], "sinirsiz ad deseni", "beklenen");
 }
 
+/* ── 247. KAPILARIN KENDI DENETIMI: TAM METIN DESENI ─────────────────────
+ * Bu oturumda ayni sey DORT kez oldu: bir olgunun yazimi degisti ve onu DUZ
+ * METIN olarak arayan kapi yanlis alarm verdi.
+ *
+ *   - §228 duyuruyu `accessibilityLiveRegion="assertive"` diye ariyordu;
+ *     duyuru ortak bir kabugun `live` prop'una tasinunca "SESSIZ" dedi.
+ *   - §11.331 seviyeyi duz dizgi olarak ariyordu; kosullu bicime
+ *     (`msg.ok ? "polite" : "assertive"`) gecen bes yuzeyi sessiz saydi.
+ *   - Uc sonuc kapisi yuzdeyi `t("common.pct"` metniyle ariyordu; bicimleyiciye
+ *     gecince "yuzde YOK" dedi.
+ *   - "cikis dugmesi" kapisi adi `aria-label={t("…")}` metniyle ariyordu;
+ *     ad ortak bilesenin `labelKey`ine tasininca "dugme yok" dedi.
+ *
+ * Hicbirinde GERCEK bir gerileme yoktu. Kapinin yanlis alarmi bedelsiz degil:
+ * her biri bir tur harciyor ve "kapiyi susturmak" refleksini besliyor.
+ *
+ * SINIF kapatiliyor, ornekler degil. Kapi kendi kaynagini okuyor ve
+ * erisilebilirlik OZNITELIGI olcen bir desende iki kirilgan kalip ariyor:
+ *
+ *   (A) Desen bir `className="…"` dizgisi de sabitliyor. Bicimlendirme
+ *       olculen olgunun disinda: `role="status" className="mt-4"` deseni
+ *       `mt-4`u `mt-3` yapan birine "duyuru kalkti" der. (Sinifin KENDISI
+ *       olculen olgu oldugunda - `RoundExit`in 44 px'i, `text-h1` - desende
+ *       erisilebilirlik oznitelgi olmaz ve olcut onlari gormez.)
+ *   (B) Oznitelikten hemen sonra `>` var. Bu, etiketin BASKA HIC OZNITELIK
+ *       TASIMAMASINI sartliyor: bir `style` eklemek kapiyi kirar.
+ *
+ * Dogru olcu dugum: `atalarinda(src, isaret, desen)` isaretin atalarini
+ * gezip oznitelgi orada arar - etiket adina, sinif adina ve karakter
+ * mesafesine bakmadan. Sekiz olcu bu tura cevrildi ve cevrim DOGRULANDI:
+ * `role="status"` kaldirilinca besi de dustu, `p-6` → `p-5` degisikliginde
+ * hicbiri kirilmadi (eski desen kirilirdi). */
+{
+  const kendi = read("scripts/parity-check.mjs").split("\n");
+  const OZN = /(?:aria-[a-z]+|accessibilityLiveRegion|accessibilityRole|accessibilityState|role)=/;
+  const kirilgan = [];
+  kendi.forEach((satir, i) => {
+    const t = satir.trim();
+    if (t.startsWith("*") || t.startsWith("//") || t.startsWith("/*")) return;
+    for (const m of satir.matchAll(/\/((?:\\.|\[[^\]]*\]|[^/\n\\])+)\/[a-z]*/g)) {
+      const govde = m[1];
+      if (!OZN.test(govde)) continue;
+      if (/className=\\?"/.test(govde)) kirilgan.push(`${i + 1}: (A) className sabitliyor`);
+      if (/(?:aria-[a-z]+|accessibility[A-Za-z]+|role)=\\?"[^"]*\\?">/.test(govde)) kirilgan.push(`${i + 1}: (B) tek oznitelik varsayiyor`);
+    }
+  });
+  sameList("kapilarda tam metin deseni", kirilgan.length ? kirilgan : ["yok"], ["yok"], "kirilgan desen", "beklenen");
+}
+
 /* ── 139. calisma suresi karosu ───────────────────────────────────────────
  * Ayni karo iki platformda iki ayri BICIMDE yaziliyordu: web `prog.hours` +
  * `skills.dk` ile "11 sa 20 dk", Android tek anahtarla "11s 20dk". Almanca
@@ -6767,23 +6866,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * satirini kapatmisti ama bu ikisi `msg` degil, durum nesnesinin alani. */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-  const govde = (yol, imza, bitis = "\n}") => {
-    const src = strip(read(yol));
-    const i = src.indexOf(imza);
-    if (i < 0) return "";
-    const j = src.indexOf(bitis, i + imza.length);
-    return src.slice(i, j < 0 ? src.length : j).replace(/\s+/g, " ");
+  /* `govde` yardimcisi KALKTI: iki olcu de artik dugum olcusu kullaniyor ve
+     fonksiyon govdesini metin olarak kesmeye gerek kalmadi. */
+  /* DUGUM OLCUSU, tam metin degil (bkz. `atalarinda`). Ilk yazimlar
+     `<View accessibilityLiveRegion="polite">` ve `<div role="status"
+     className="mt-4">` ariyordu: birincisi oznitelige BASKA HIC PROP
+     EKLENMEMESINI, ikincisi bosluk sinifinin `mt-4` KALMASINI sartliyordu.
+     Ikisi de olculen olgunun disinda kalan seyler. */
+  const kapDuyuruyorM = (yol, isaret) => {
+    const v = atalarinda(strip(read(yol)), isaret, /accessibilityLiveRegion="polite"/);
+    return v === null ? "ISARET YOK" : v ? "duyuruyor" : "sessiz";
+  };
+  const kapDuyuruyorW = (yol, isaret) => {
+    const v = atalarinda(strip(read(yol)), isaret, /role="status"/);
+    return v === null ? "ISARET YOK" : v ? "duyuruyor" : "sessiz";
   };
   const CIFT = [
     [
       "beceri konusma puani",
-      () => (/<View accessibilityLiveRegion="polite">/.test(govde("mobile/src/game/skillLibrary.tsx", 'phase === "result" ?')) ? "duyuruyor" : "sessiz"),
-      () => (/<div role="status" className="mt-4">/.test(strip(read("src/components/skills/speaking-player.tsx"))) ? "duyuruyor" : "sessiz"),
+      () => kapDuyuruyorM("mobile/src/game/skillLibrary.tsx", "formatPercent(result.overall)"),
+      () => kapDuyuruyorW("src/components/skills/speaking-player.tsx", 't("item.heard"'),
     ],
     [
       "monolog puani",
-      () => (/<View accessibilityLiveRegion="polite">/.test(govde("mobile/src/game/skillLibrary.tsx", 'phase === "result" ?')) ? "duyuruyor" : "sessiz"),
-      () => (/<motion\.section role="status"/.test(strip(read("src/components/skills/monologue-player.tsx"))) ? "duyuruyor" : "sessiz"),
+      () => kapDuyuruyorM("mobile/src/game/skillLibrary.tsx", "formatPercent(result.overall)"),
+      () => kapDuyuruyorW("src/components/skills/monologue-player.tsx", 't("item.mono_self_done"'),
     ],
     [
       "oturum durum satiri",
@@ -9673,6 +9780,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * pencere tuzaginin ALTINCI vakasi. Dogrusu mesafe degil dugum: dalin
      * kok elemanini okumak.
      */
+    /** Acilis etiketinin sonu: ilk `>` degil, suslu parantez ve tirnak farkinda. */
+    const dalKokuSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
     const dalKoku = (src, capa) => {
       const i = src.indexOf(capa);
       if (i < 0) return "";
@@ -9696,6 +9816,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       }
       return "";
     };
+    /**
+     * Isaretin ATALARI arasinda `role="status"` tasiyan bir etiket var mi.
+     *
+     * DUGUM OLCUSU: etiket adina, sinif adina ve mesafeye bakmiyor. Bes
+     * yuzeyin olcusu once `<div role="status" className="card relative p-6
+     * text-center">` gibi TAM METINdi ve o desen duyuruyu degil BICIMLENDIRMEYI
+     * de sabitliyordu: `p-6`yi `p-5` yapan biri kapiyi kirmizi yapardi, oysa
+     * duyuru yerinde duruyor. Bu oturumda ayni sinif dort kez cikti
+     * (228 `live`, 243 duyuru seviyesi, 245 yuzde, 246 `labelKey`) ve hepsi
+     * ayni kokten: bir olguyu METIN olarak aramak.
+     *
+     * Parcalar (`<>` / `</>`) da yigina giriyor: ilk yazimda girmiyordu ve
+     * `</>` bir ustteki gercek etiketi yiginda dusuruyordu.
+     */
+    const kapDuyuruyor = (src, isaret) => {
+      const hedef = src.indexOf(isaret);
+      if (hedef < 0) return "ISARET YOK";
+      const yigin = [];
+      const re = /<(\/?)(>|[A-Za-z][A-Za-z0-9.]*)/g;
+      let m;
+      while ((m = re.exec(src)) !== null && m.index < hedef) {
+        if (m[1] === "/") { yigin.pop(); continue; }
+        if (m[2] === ">") { yigin.push("<>"); continue; }
+        const son = dalKokuSonu(src.slice(m.index));
+        if (son < 0) continue;
+        const etiket = src.slice(m.index, m.index + son + 1);
+        if (/\/>$/.test(etiket)) continue;
+        yigin.push(etiket);
+        re.lastIndex = m.index + son;
+      }
+      return yigin.some((e) => /role="status"/.test(e)) ? "duyuruyor" : "SESSIZ";
+    };
     const dalDuyuruyor = (src, isaret) => {
       const j = src.indexOf(isaret);
       if (j < 0) return "ISARET YOK";
@@ -9708,11 +9860,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "turun sonucu duyuruluyor",
       [
-        "web beceri=" + (/role="status"[\s\S]{0,80}card mt-5 p-5 text-center/.test(webBeceri) ? "duyuruyor" : "SESSIZ"),
-        "web quiz=" + (/<div role="status" className="card relative p-6 text-center">/.test(webQuiz) ? "duyuruyor" : "SESSIZ"),
+        "web beceri=" + kapDuyuruyor(webBeceri, 't("item.repeat_note")'),
+        "web quiz=" + kapDuyuruyor(webQuiz, 't("common.n_correct"'),
         "web patron=" + (/role="status"/.test(dalKoku(webPatron, 'if (status === "won" || status === "lost")')) ? "duyuruyor" : "SESSIZ"),
-        "web meydan=" + (/<div role="status" className="text-center">/.test(webMeydan) ? "duyuruyor" : "SESSIZ"),
-        "web gunun=" + (/<div role="status" className="card overflow-hidden">/.test(webGunun) ? "duyuruyor" : "SESSIZ"),
+        "web meydan=" + kapDuyuruyor(webMeydan, 't("challenge.hit_rate")'),
+        "web gunun=" + kapDuyuruyor(webGunun, 't("daily.best_streak")'),
         "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite" variant="h2"/),
         "mobil quiz=" + mobSonuc(mobQuiz, /accessibilityLiveRegion="polite" variant="h2"/),
         "mobil patron=" + mobSonuc(mobPatron, /accessibilityLiveRegion="polite"[\s\S]{0,140}boss\.passed/),
@@ -9740,7 +9892,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            ayri sonuc) ve yuruyus (bitis). */
         "web sinav=" + dalDuyuruyor(webSinav, "exam.not_passed"),
         "web oturum etap=" + dalDuyuruyor(webOturum, "stage.clean"),
-        "web oturum bitis=" + (/<Stagger role="status" className="card overflow-hidden">/.test(webOturum) ? "duyuruyor" : "SESSIZ"),
+        "web oturum bitis=" + kapDuyuruyor(webOturum, 't("summary.accuracy")'),
         "web yuruyus=" + (/role="status"/.test(dalKoku(webYuruyus, 'if (status === "done")')) ? "duyuruyor" : "SESSIZ"),
         "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite" variant="h1">\{formatPercent\(pct\)\}/),
         "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h2"[\s\S]{0,80}stage\.clean/),
