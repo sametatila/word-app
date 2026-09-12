@@ -60,7 +60,7 @@ export async function GET(req: Request) {
     /* Modül sınavı planları Almanca yazılmış ve kurs boyutu yok (bkz.
        `hasModuleExams`): kursu olmayan kullanıcıya kapak da gösterilmiyor. */
     const plan = await localiseExam(
-      hasModuleExams(profile.course ?? "de") ? moduleExamPlan(level, Number(mod)) : undefined,
+      hasModuleExams(profile.course ?? "de") ? moduleExamPlan(profile.course ?? "de", level, Number(mod)) : undefined,
       nativeOf(profile.nativeLang),
     );
     /*
@@ -103,7 +103,7 @@ export async function GET(req: Request) {
     const listProfile = await ensureProfile(userId);
     const t = await nativeExamText(nativeOf(listProfile.nativeLang));
     const modules = (hasModuleExams(listProfile.course ?? "de") ? [...Array(21).keys()] : [])
-      .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
+      .map((i) => ({ index: i, plan: moduleExamPlan(listProfile.course ?? "de", level, i) }))
       .filter((m) => m.plan)
       .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: t(plan!.titleTr) }));
     return NextResponse.json({ modules }, { headers: { "cache-control": "private, max-age=3600" } });

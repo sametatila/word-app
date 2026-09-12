@@ -30,6 +30,30 @@ function chain(rows: () => Row[]) {
   return self;
 }
 
+/**
+ * Yazma zinciri — SONUÇ YOK, yalnız çağrılabilir olsun diye.
+ *
+ * `buildExam` artık ilk iş olarak profili okuyor (`ensureProfile`, anadili
+ * oradan geliyor) ve o yol profil yoksa INSERT ediyor. Sahte veritabanında
+ * `insert` hiç yoktu, yani kuru prova `db.insert is not a function` ile
+ * düşüyordu — betik CI'da koşmadığı için sessizce bozuk kalmıştı (2026-09-12
+ * ölçüldü; kırılma `ensureProfile` çağrısının eklendiği commit'e kadar
+ * gidiyor). Boş dizi dönmek doğru taklit: profil bulunamayınca çağıran
+ * `undefined` görüyor ve anadil varsayılana düşüyor, kâğıdın şekli
+ * değişmiyor.
+ */
+function writeChain() {
+  const self: Record<string, unknown> = {};
+  const pass = () => self;
+  for (const k of ["values", "set", "where", "onConflictDoNothing", "onConflictDoUpdate", "returning"]) self[k] = pass;
+  self.then = (res: (v: Row[]) => unknown, rej?: (e: unknown) => unknown) =>
+    Promise.resolve([] as Row[]).then(res, rej);
+  return self;
+}
+
 export const db = {
   select: () => chain(() => FAKE_WORDS),
+  insert: () => writeChain(),
+  update: () => writeChain(),
+  delete: () => writeChain(),
 };

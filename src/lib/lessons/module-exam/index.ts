@@ -15,12 +15,33 @@ export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types"
  * duruyor. Modül eklendiğinde buraya bir plan eklemek zorunlu —
  * `scripts/check-exams.ts` plansız modülü hata sayıyor.
  */
-export const MODULE_EXAMS: ModuleExamPlan[] = [...A1_EXAMS, ...A2_EXAMS, ...B1_EXAMS, ...B2_EXAMS, ...C1_EXAMS];
+/**
+ * Kâğıtlar KURSA göre duruyor.
+ *
+ * Anahtar eskiden `level:index` idi, yani kurs boyutu yoktu: planların
+ * başlıkları, soruları ve `canDo` maddeleri Almanca yazılmış olduğu hâlde
+ * her kurs aynı kâğıda düşüyordu. İngilizce kursta bu, Patika'da Almanca
+ * başlıklı sınavlar demekti ve tek çare kursu adıyla dışarıda bırakmaktı
+ * (`hasModuleExams` içinde `course !== "en"`). Artık ayrım VERİDE: bir kursun
+ * kâğıdı yoksa o kursta modül sınavı da yok, kod kurs adı saymıyor.
+ *
+ * İngilizce kâğıtlar yazıldığında buraya `en:` anahtarı eklenecek; Patika
+ * zaten planı olmayan modülü elemeye hazır (`immersion/page.tsx`).
+ */
+const COURSE_PLANS: Record<string, ModuleExamPlan[]> = {
+  de: [...A1_EXAMS, ...A2_EXAMS, ...B1_EXAMS, ...B2_EXAMS, ...C1_EXAMS],
+};
 
-const BY_KEY = new Map(MODULE_EXAMS.map((p) => [`${p.level}:${p.index}`, p]));
+export const MODULE_EXAMS: ModuleExamPlan[] = Object.values(COURSE_PLANS).flat();
 
-export function moduleExamPlan(level: string, index: number): ModuleExamPlan | undefined {
-  return BY_KEY.get(`${level}:${index}`);
+const BY_KEY = new Map<string, ModuleExamPlan>(
+  Object.entries(COURSE_PLANS).flatMap(([course, plans]) =>
+    plans.map((p) => [`${course}:${p.level}:${p.index}`, p] as [string, ModuleExamPlan]),
+  ),
+);
+
+export function moduleExamPlan(course: string, level: string, index: number): ModuleExamPlan | undefined {
+  return BY_KEY.get(`${course}:${level}:${index}`);
 }
 
 /**
@@ -32,10 +53,10 @@ export function moduleExamPlan(level: string, index: number): ModuleExamPlan | u
  * eklenince görünür oldu: İngilizce öğrenen birinin Patika'sında Almanca
  * başlıklı modül sınavları çıkıyor ve açtığında Almanca kâğıt geliyordu.
  *
- * Varsayım artık TEK YERDE ve adı var. İngilizce planlar yazıldığında burası
- * plan verisine bakan bir kontrole dönüşür; o zamana kadar yanlış kâğıdı
- * göstermek yerine hiç göstermiyoruz.
+ * Kontrol artık PLAN VERİSİNE bakıyor (2026-09-12): kurs adı saymıyor, o
+ * kursun kâğıdı var mı diye soruyor. İngilizce kâğıtlar yazıldığı gün bu
+ * işlev kendiliğinden doğruyu söyleyecek.
  */
 export function hasModuleExams(course: string): boolean {
-  return course !== "en";
+  return (COURSE_PLANS[course]?.length ?? 0) > 0;
 }

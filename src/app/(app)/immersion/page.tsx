@@ -63,7 +63,7 @@ export default async function ImmersionPage() {
   // olarak veriyor ve bunu kendisi söylüyor; kapıyı iki kez kapatmak,
   // hazır olup olmadığını merak eden öğrenciyi bilgisiz bırakırdı.
   const moduleExams = (hasModuleExams(course) ? [...Array(21).keys()] : [])
-    .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
+    .map((i) => ({ index: i, plan: moduleExamPlan(course, level, i) }))
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan))
     .map(({ index, plan }) => ({ index, code: plan.code, titleTr: examText(plan.titleTr), titleDe: plan.titleDe }));
 

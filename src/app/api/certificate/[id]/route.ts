@@ -39,7 +39,9 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
      `canDo` kâğıdın kendisinden okunuyor — `examCando` ayrı bir çağrı olsaydı
      çevrilmemiş bir ikinci kopya döndürürdü. */
   const plan = await localiseExam(
-    exam.module === null ? undefined : moduleExamPlan(exam.level, exam.module),
+    /* Sertifika kâğıdı öğrencinin KURSUNDAN geliyor: planlar kursa göre
+       anahtarlı ve kurs adı koda yazılmıyor. */
+    exam.module === null ? undefined : moduleExamPlan(profile.course ?? "de", exam.level, exam.module),
     lang,
   );
   const kicker = exam.kind === "level" ? `${exam.level} · Niveauprüfung` : `Modulprüfung ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;

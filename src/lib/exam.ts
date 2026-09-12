@@ -226,7 +226,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   const trial = kind === "module" ? !(await modulePrereq(userId, course, level, module!)) : false;
   /* Kâğıdın Türkçe yarısı öğrencinin ana dilinde: yönerge, durum, replik
      karşılığı ve soru kökünün altı. Almanca yarısı — ölçülen şey — sabit. */
-  const plan = await localiseExam(kind === "module" ? moduleExamPlan(level, module!) : undefined, native);
+  const plan = await localiseExam(kind === "module" ? moduleExamPlan(course, level, module!) : undefined, native);
   const content = kind === "module" ? moduleContent(course, level, module!) : null;
 
   // Kelime: modül kelimeleri (ders başlıkları) ya da seviyenin sık kelimeleri.
@@ -324,7 +324,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
          kâğıtlık çeviri buraya ulaşmıyor. */
       const havuz = (
         await Promise.all(
-          Array.from({ length: moduleCount(level) }, (_, i) => localiseExam(moduleExamPlan(level, i + 1), native)),
+          Array.from({ length: moduleCount(level) }, (_, i) => localiseExam(moduleExamPlan(course, level, i + 1), native)),
         )
       ).flatMap((p) => (p ? p.speaking.map((sp, i) => ({ ...sp, code: p.code, i })) : []));
       for (const sp of seededShuffle(havuz, `${seed}|speaking`)) {
@@ -410,7 +410,7 @@ export async function passedModuleExams(userId: string): Promise<Map<string, num
 }
 
 /** Sınavı geçilmiş modülün yapabilirlik satırları — sertifika ve profil için. */
-export function examCando(level: string, module: number | null): ExamCando[] {
+export function examCando(course: string, level: string, module: number | null): ExamCando[] {
   if (module === null) return [];
-  return moduleExamPlan(level, module)?.canDo ?? [];
+  return moduleExamPlan(course, level, module)?.canDo ?? [];
 }

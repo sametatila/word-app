@@ -94,7 +94,7 @@ console.log(`Kurs "${COURSE}": ${modules.length} modül, ${MODULE_EXAMS.length} 
 for (const m of modules) {
   const where = `${m.level}.${m.index + 1}`;
   const content = moduleContent(COURSE, m.level, m.index);
-  const plan = moduleExamPlan(m.level, m.index);
+  const plan = moduleExamPlan(COURSE, m.level, m.index);
 
   if (!plan) {
     fail(where, "modülün sınav planı yok (src/lib/lessons/module-exam)");
