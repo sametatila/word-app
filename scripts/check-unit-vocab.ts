@@ -13,10 +13,11 @@ import { createRequire } from "node:module";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 const require = createRequire(import.meta.url);
-const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
+const { olc, ozet, türkçeMi, nerede } = require("./lib/vocab-gate.cjs") as {
   olc: (ham: string, unit: number, ek?: string[], seviye?: string) => { tok: string[]; disi: string[] };
   ozet: (d: string[]) => string[];
   türkçeMi: (s: string) => boolean;
+  nerede: (w: string, seviye: string, unit: number) => { sinif: string; detay: string };
 };
 /**
  * Egzersizin GEVŞEK görünümü — yalnız burada okunan alanlar.
@@ -92,6 +93,10 @@ const seviye = (process.argv[2] || "a1").toLowerCase();
 const hedef = ex.filter((e) => new RegExp(`^${seviye}-u\\d+-`).test(e.id));
 console.log(`${seviye.toUpperCase()} · ünite hizalı egzersiz: ${hedef.length}`);
 const genelDisi = new Map();
+/* Bulguyu SINIFLANDIRARAK say: "kapı dışı" dört ayrı iş demek ve yazarın
+   yapacağı şey her birinde başka (gerekçe `lib/vocab-gate.cjs`, `nerede`). */
+const sinifSay = new Map<string, number>();
+const sinifKelime = new Map<string, Map<string, string>>();
 for (const e of hedef) {
   // egzersizin kendi sözlükçesi ve yazma görevlerinin kalıpları serbest
   const ek: string[] = [];
@@ -103,9 +108,37 @@ for (const e of hedef) {
   const oran = tok.length ? (disi.length / tok.length * 100).toFixed(1) : "0";
   if (disi.length) {
     console.log(`  ${e.id.padEnd(12)} %${oran.padStart(4)} dışı (${disi.length}/${tok.length}): ${ozet(disi).slice(0, 8).join(", ")}`);
-    for (const w of disi) genelDisi.set(w, (genelDisi.get(w) || 0) + 1);
+    for (const w of disi) {
+      genelDisi.set(w, (genelDisi.get(w) || 0) + 1);
+      const n = nerede(w, seviye, e.unit ?? 0);
+      sinifSay.set(n.sinif, (sinifSay.get(n.sinif) || 0) + 1);
+      const t = sinifKelime.get(n.sinif) || new Map<string, string>();
+      if (!t.has(w)) t.set(w, n.detay);
+      sinifKelime.set(n.sinif, t);
+    }
   } else {
     console.log(`  ${e.id.padEnd(12)} temiz`);
   }
 }
 console.log("\nen sık dışarıda kalanlar:", [...genelDisi].sort((a, b) => b[1] - a[1]).slice(0, 20).map(([w, n]) => `${w}×${n}`).join(" · "));
+
+const BASLIK: Record<string, string> = {
+  ustu: "SEVİYE ÜSTÜ   — havuzda var ama üst seviyede; metin sadeleşmeli ya da sözlükçeye girmeli",
+  erken: "ERKEN         — bu seviyenin dersi öğretiyor, ama daha sonraki ünitede",
+  derssiz: "DERSSİZ       — havuzda bu seviyede ama hiçbir ders öğretmiyor (patika boşluğu)",
+  turev: "TÜREV         — kök bu üniteye kadar öğretilmiş; kapı yüzey biçimini tanımadı (içerik kusuru DEĞİL)",
+  // Bilinen eksik: ünlüsü değişen güçlü fiil ortacı (geschwommen ← schwimmen)
+  // de buraya düşüyor; sınıflandırma o değişimi çözemiyor (gerekçe `ara`da).
+  yabanci: "HAVUZDA YOK   — ödünç sözcük, kısaltma, özel ad, yazım hatası ya da ünlüsü değişen ortaç",
+};
+const toplam = [...sinifSay.values()].reduce((a, b) => a + b, 0);
+if (toplam) {
+  console.log("\nbulgu sınıfları:");
+  for (const k of ["ustu", "erken", "derssiz", "turev", "yabanci"]) {
+    const n = sinifSay.get(k) || 0;
+    if (!n) continue;
+    const ornek = [...(sinifKelime.get(k) || new Map())].slice(0, 6).map(([w, d]) => `${w} (${d})`).join(" · ");
+    console.log(`  ${BASLIK[k]}`);
+    console.log(`    ${String(n).padStart(4)} geçiş · %${(n / toplam * 100).toFixed(0)} — ${ornek}`);
+  }
+}

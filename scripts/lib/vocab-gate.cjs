@@ -398,4 +398,137 @@ const ozet = (disi) => {
   return Object.entries(say).sort((a, b) => b[1] - a[1]).map(([w, n]) => `${w}×${n}`);
 };
 
-module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi };
+/* ── bulguyu SINIFLANDIRMA ───────────────────────────────────────────────
+ *
+ * Rapor üç turdur yanlış bulguları atıyor; geriye kalanlar gerçek ama hepsi
+ * aynı görünüyordu. Oysa "kapı dışı" dört ayrı şey demek ve yazarın yapacağı
+ * iş her birinde başka:
+ *
+ *   ustu     — sözcük havuzda AMA ÜST seviyede. A2 metninde B1 sözcüğü:
+ *              ya metin sadeleşmeli ya sözcük sözlükçeye girmeli.
+ *   erken    — bu seviyenin dersleri öğretiyor ama DAHA SONRAKİ ünitede.
+ *              Ya egzersiz ileri taşınır ya ders öne alınır; kaç ünite
+ *              erken olduğu da yazılıyor, çünkü bir ünite erken ile on
+ *              ünite erken aynı şey değil.
+ *   derssiz  — havuzda BU seviyede ama hiçbir ders öğretmiyor. Patika
+ *              boşluğu: öğrenci sözcüğü yalnız kart motorundan görmüş
+ *              olabilir (A1 patikası havuzun A1 katmanının ancak %75'ini
+ *              öğretiyor — bkz. `havuzKatman` gerekçesi).
+ *   yabanci  — havuzda hiç yok. Ödünç sözcük, kısaltma, özel ad ya da
+ *              yazım hatası; içerik kararı.
+ *
+ * Eşleştirme önce birebir, sonra ÖN EK ile: "ganzen" havuzda yok ama "ganz"
+ * var ve ders onu öğretiyor — bunu "yabanci" saymak yazarı yanlış yere
+ * gönderir. Ön ek en az dört harf, yoksa "ab" her şeye uyar. */
+const havuzSeviye = new Map();
+for (const r of pool) {
+  const lv = String(r.niveau || "").toLowerCase();
+  for (const w of parcala(r.de)) if (w.length >= 2 && !havuzSeviye.has(w)) havuzSeviye.set(w, lv);
+}
+const dersUniteBellek = new Map();
+function dersUnite(lv) {
+  if (dersUniteBellek.has(lv)) return dersUniteBellek.get(lv);
+  const m = new Map();
+  let L = [];
+  try { L = dersler(lv); } catch { L = []; }
+  L.forEach((l, i) => {
+    const u = Math.ceil((i + 1) / 4);
+    const koy = (w) => { if (w && !m.has(w)) m.set(w, u); };
+    for (const v of l.vocab || []) for (const w of parcala(v.de)) koy(w);
+    for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüßéèêáàóúï]+/g) || []) koy(w);
+  });
+  dersUniteBellek.set(lv, m);
+  return m;
+}
+const SIRA = ["a1", "a2", "b1", "b2", "c1"];
+/**
+ * Bir kökü haritada ara: birebir → sondan kısaltarak → ÖNDEN soyarak.
+ *
+ * Önden soymak şart: ilk sürüm yalnız sondan kısaltıyordu ve `geschwommen`,
+ * `geklingelt`, `aufgewacht`, `geregnet` gibi ORTAÇLARIN hepsini "havuzda
+ * yok" diye etiketliyordu — oysa hepsi öğretilen bir fiilin biçimi. Yazarı
+ * "bu sözcük havuza eklenmeli" diye yanlış yere gönderen bir etiket, hiç
+ * etiket olmamasından kötü. `ge-` ile ayrılabilen önekler (an-, auf-, aus-,
+ * …) soyuluyor, ikisi birlikte de deneniyor (`aufgewacht` → `wacht`).
+ */
+/* Türetme ve ayrılabilen önekler. `AYRILABILIR`den geniş, çünkü burada iş
+   izin vermek değil KÖKÜ BULMAK: `unnötig` → `nötig`, `umgesetzt` → `gesetzt`,
+   `erbracht` → `bracht`. Yanlış soyulan bir gövde (beste → ste) hiçbir şeye
+   uymaz, yani bedeli eksik etiket; eşleşme kuralı aşağıda zaten dar. */
+const ON_EK = /^(ge|un|ver|er|be|ent|zer|miss|um|über|unter|durch|wieder|weiter|her|hin|an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
+/** Düzensiz biçim → mastar; `DUZENSIZ` tablosunun tersi. */
+const DUZENSIZ_TERS = new Map();
+for (const [mastar, formlar] of Object.entries(DUZENSIZ)) for (const f of formlar) if (!DUZENSIZ_TERS.has(f)) DUZENSIZ_TERS.set(f, mastar);
+/* ÜNSÜZ İSKELETİ DENENDİ VE ATILDI. Güçlü fiilin ünlü değişimini aşmak için
+   (`schwimmen` ↔ `geschwommen`) sözcüğü ünsüzlerine indirip ilk dördünü
+   karşılaştırmayı denedim. Bir sözcük kazandırdı, ama `sondern`i A2'nin 13.
+   ünitesinde ÖĞRETİLİYOR gibi etiketledi — oysa A2 dersleri `sondern`i hiç
+   öğretmiyor, o bir B1 sözcüğü. Yanlış sınıf yazarı yanlış işe gönderir:
+   "egzersizi ileri taşı" ile "metni sadeleştir" aynı şey değil. Ünlü değişimi
+   sınıflandırmada çözülmeden kalıyor ve böyle bir ortaç "havuzda yok"
+   kutusuna düşüyor — eksik ama yanıltmayan etiket. */
+const ara = (m, w) => {
+  const dene = (x) => {
+    if (m.has(x)) return m.get(x);
+    for (let n = x.length; n >= 4; n--) { const k = x.slice(0, n); if (m.has(k)) return m.get(k); }
+    return undefined;
+  };
+  let r = dene(w);
+  if (r !== undefined) return r;
+  const mastar = DUZENSIZ_TERS.get(w);
+  if (mastar) { r = dene(mastar); if (r !== undefined) return r; }
+  const govde = [];
+  let cur = w;
+  for (let i = 0; i < 2; i++) {
+    const mm = cur.match(ON_EK);
+    if (!mm || cur.length - mm[0].length < 4) break;
+    cur = cur.slice(mm[0].length);
+    govde.push(cur);
+  }
+  for (const g of govde) { r = dene(g); if (r !== undefined) return r; }
+  /* ÇEKİM SONU TAKASI — anahtar tarafından tek güvenli eşleşme.
+     `ändert` ile `ändern`i buluşturmak lazım ama "beş harf paylaşan her şey
+     eşleşsin" demek felaket: ilk denemede `geschwommen` `Geschäft`e,
+     `sondern` bir `sonde…` anahtarına bağlandı ve ikisi de "A2'nin şu
+     ünitesinde öğretiliyor" diye etiketlendi. Kural daraltıldı: anahtar,
+     sorgunun yalnız SON İKİ harfinde ayrılabilir (paylaşılan ön ek ≥ anahtar
+     uzunluğu − 2, ve en az 5 harf). `ändern`/`ändert` geçer, `Geschäft`
+     (8 harf, paylaşılan 5) geçmez. Yanlış sınıf yazarı yanlış işe gönderir;
+     eksik sınıf yalnız "havuzda yok" der. */
+  if (!m.__son) {
+    const idx = new Map();
+    for (const [k, v] of m) {
+      if (k.length < 5) continue;
+      for (let n = Math.max(5, k.length - 2); n <= k.length; n++) {
+        const pk = k.slice(0, n);
+        if (!idx.has(pk)) idx.set(pk, v);
+      }
+    }
+    Object.defineProperty(m, "__son", { value: idx, enumerable: false });
+  }
+  for (const g of [w, ...govde]) {
+    for (let n = g.length; n >= 5; n--) { const v = m.__son.get(g.slice(0, n)); if (v !== undefined) return v; }
+  }
+  return undefined;
+};
+/** Kapı dışı bir sözcüğü sınıflandır: {sinif, detay}. */
+function nerede(w, seviye, unit) {
+  const lv = String(seviye).toLowerCase();
+  const u = dersUnite(lv);
+  const du = ara(u, w);
+  if (du !== undefined) return du > unit
+    ? { sinif: "erken", detay: `u${du} (${du - unit} ünite sonra)` }
+    /* Kök bu üniteye kadar ÖĞRETİLMİŞ ama kapı yüzey biçimini tanımamış.
+       Sebebi sınıflandırmanın kapıdan daha gevşek soyması: `ungern`in kökü
+       `gern` u6'da öğretiliyor, ama kapının `soyPrefix`i yalnız AYRILABILIR
+       önekleri tanıyor, `un-` orada yok. Bu bir içerik kusuru DEĞİL, kapının
+       biçimbilim eksiği — yazarın metne dokunması gerekmiyor. */
+    : { sinif: "turev", detay: `kök u${du}'de öğretiliyor` };
+  const hv = ara(havuzSeviye, w);
+  if (hv === undefined) return { sinif: "yabanci", detay: "havuzda yok" };
+  return SIRA.indexOf(hv) > SIRA.indexOf(lv)
+    ? { sinif: "ustu", detay: hv.toUpperCase() }
+    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, ders yok` };
+}
+
+module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi, nerede };
