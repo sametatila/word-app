@@ -21,7 +21,12 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
-type Phase = "loading" | "auth" | "error" | "ready" | "play" | "submitting" | "done";
+/* AYNI DURUMUN TEK ADI. Bu ekran "play" yazıyordu, web karşılığı ve mobilin
+   kendi öteki oynatıcıları (`BossScreen`, `ChallengeScreen`) "playing" —
+   aynı durumun iki adı, aynı uygulamanın içinde. Sürtünme görünmezdi ama
+   maliyeti gerçek: platformlar arası ölçüler aşama adını okuyor ve bu turda
+   biri tam bu yüzden kırıldı (§106). */
+type Phase = "loading" | "auth" | "error" | "ready" | "playing" | "submitting" | "done";
 
 export function WeeklyScreen() {
   const { colors } = useTheme();
@@ -150,7 +155,7 @@ export function WeeklyScreen() {
         </Text>
         <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 19 }}>{t("weekly.honest_note")}</Text>
         <PressableScale
-          onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("play"); }}
+          onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("playing"); }}
           style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
         >
           <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>

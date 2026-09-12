@@ -29,7 +29,12 @@ import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
-type Phase = "loading" | "auth" | "error" | "play" | "stage" | "done" | "goal_done" | "no_words";
+/* AYNI DURUMUN TEK ADI. Bu ekran "play" yazıyordu, web karşılığı ve mobilin
+   kendi öteki oynatıcıları (`BossScreen`, `ChallengeScreen`) "playing" —
+   aynı durumun iki adı, aynı uygulamanın içinde. Sürtünme görünmezdi ama
+   maliyeti gerçek: platformlar arası ölçüler aşama adını okuyor ve bu turda
+   biri tam bu yüzden kırıldı (§106). */
+type Phase = "loading" | "auth" | "error" | "playing" | "stage" | "done" | "goal_done" | "no_words";
 
 /**
  * ETAP BOYU — web `session-player` `STAGE_SIZE` ile aynı beş.
@@ -111,7 +116,7 @@ export function GameScreen() {
   const roundsRight = useRef(0);
   // Yarım turdan çıkış onaylı (donanım geri + X): cevaplar unmount'ta zaten yazılıyor,
   // ama kullanıcı yanlışlıkla çıkıp turu bölmesin.
-  const back = useBackConfirm(phase === "play");
+  const back = useBackConfirm(phase === "playing");
 
   /**
    * Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir.
@@ -204,7 +209,7 @@ export function GameScreen() {
         setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null);
         setPhase(onlyGame ? "no_words" : "goal_done");
       }
-      else { sfx("start"); setPhase("play"); } // turun açılışı — web `session-player` aynı yerde çalıyor
+      else { sfx("start"); setPhase("playing"); } // turun açılışı — web `session-player` aynı yerde çalıyor
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
     }
@@ -442,7 +447,7 @@ export function GameScreen() {
           wagerOn.current = bet;
           setWagerResult(null);
           stageStart.current = { index: idx, correct: roundsRight.current, total: roundsSeen.current, xp: xpEstimate.current };
-          setPhase("play");
+          setPhase("playing");
         }}
         onStop={() => { track("session_stop", idx); stoppedEarly.current = true; void finish(); }}
       />

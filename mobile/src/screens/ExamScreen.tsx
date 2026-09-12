@@ -161,7 +161,14 @@ export function ExamScreen() {
   const [err, setErr] = useState<string | null>(null);
   /* Yükleme hatası GEÇİCİ olabilir; bkz. hata ekranındaki "tekrar dene". */
   const [attempt, setAttempt] = useState(0);
-  const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolumGiris" | "bolum" | "sonuc">("yukleniyor");
+  /* AŞAMA ADLARI WEB'İN SÖZLÜĞÜ. Buradaki beş aşama Türkçe yazılıydı
+     ("yukleniyor" | "kapak" | "bolumGiris" | "bolum" | "sonuc") — depo kuralı
+     tanımlayıcıların İngilizce olmasını istiyor (Türkçe yalnız arayüz metni ve
+     yorumda) ve web karşılığı (`exam-player` `Phase`) baştan beri
+     "cover" | "loading" | "intro" | "run" | "result". İki uygulamanın aynı
+     ekranı aynı durumları iki ayrı sözlükle anıyordu; karşılaştıran hiçbir
+     ölçü de o yüzden tutmuyordu. */
+  const [phase, setPhase] = useState<"cover" | "loading" | "intro" | "run" | "result">("loading");
   /*
    * ÇIKIŞ ONAYA BAĞLI.
    *
@@ -172,7 +179,7 @@ export function ExamScreen() {
    * (`MockExamScreen` `ConfirmDialog`) baştan beri soruyor; en pahalı yüzey
    * atlanmıştı. Web sınav SÜRERKEN hiç çıkış düğmesi vermiyor.
    */
-  const back = useBackConfirm(phase === "bolum" || phase === "bolumGiris");
+  const back = useBackConfirm(phase === "run" || phase === "intro");
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
@@ -218,7 +225,7 @@ export function ExamScreen() {
       .then((d) => {
         if (cancelled) return;
         setCover(d.cover);
-        setPhase("kapak");
+        setPhase("cover");
       })
       .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
     return () => { cancelled = true; };
@@ -243,7 +250,7 @@ export function ExamScreen() {
         setLeft(d.paper.seconds);
         startedAt.current = Date.now();
         setStarting(false);
-        setPhase("bolumGiris");
+        setPhase("intro");
       })
       .catch((e: Error) => { setStarting(false); setErr(e.message || t("exam.could_not_load")); });
   }, [level, moduleIx]);
@@ -285,7 +292,7 @@ export function ExamScreen() {
         sections: sections.map((x) => ({ id: x.id, pct: x.total ? Math.round((100 * x.correct) / x.total) : 0 })),
       });
     }
-    setPhase("sonuc");
+    setPhase("result");
   }, [paper, level, moduleIx]);
 
   /* Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur. BÖLÜM ARASI
@@ -305,7 +312,7 @@ export function ExamScreen() {
    * damgalanıyor.
    */
   useEffect(() => {
-    if (phase !== "bolum" && phase !== "bolumGiris") return;
+    if (phase !== "run" && phase !== "intro") return;
     const tick = () => setLeft(Math.max(0, (paper?.seconds ?? 0) - Math.floor((Date.now() - startedAt.current) / 1000)));
     tick(); // arka plandan dönüşte ilk saniyeyi beklemeden düzeltilir
     const id = setInterval(tick, 1000);
@@ -313,7 +320,7 @@ export function ExamScreen() {
   }, [phase, paper]);
 
   useEffect(() => {
-    if ((phase === "bolum" || phase === "bolumGiris") && left === 0) void finishExam();
+    if ((phase === "run" || phase === "intro") && left === 0) void finishExam();
   }, [left, phase, finishExam]);
 
   const filledSections = (): SectionId[] =>
@@ -324,7 +331,7 @@ export function ExamScreen() {
     score.current[id].correct = correct;
     const list = filledSections();
     const i = list.indexOf(id);
-    if (i + 1 < list.length) { setSecIdx(i + 1); setPhase("bolumGiris"); }
+    if (i + 1 < list.length) { setSecIdx(i + 1); setPhase("intro"); }
     else void finishExam();
   }
 
@@ -333,7 +340,7 @@ export function ExamScreen() {
 
   const header = (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-      <PressableScale hitSlop={4} onPress={phase === "bolum" || phase === "bolumGiris" ? back.ask : () => nav.goBack()} accessibilityLabel={t(phase === "bolum" || phase === "bolumGiris" ? "exam.quit_title" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <PressableScale hitSlop={4} onPress={phase === "run" || phase === "intro" ? back.ask : () => nav.goBack()} accessibilityLabel={t(phase === "run" || phase === "intro" ? "exam.quit_title" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
       <View style={{ flex: 1 }}>
@@ -343,7 +350,7 @@ export function ExamScreen() {
         {/* Son iki dakika KIRMIZI — web sayacı aynı eşikte renklendiriyor
             (`exam-player`: `left < 120`). Androidde sayaç sonuna kadar aynı
             renkteydi, yani "süre bitiyor" uyarısı hiç verilmiyordu. */}
-        <Text variant="h3" color={phase === "bolum" && left < 120 ? colors.dangerText : undefined}>{phase === "bolum" ? `${mm}:${ss}` : t("exam.title")}</Text>
+        <Text variant="h3" color={phase === "run" && left < 120 ? colors.dangerText : undefined}>{phase === "run" ? `${mm}:${ss}` : t("exam.title")}</Text>
       </View>
     </View>
   );
@@ -385,7 +392,7 @@ export function ExamScreen() {
   }
 
   /* Kapak kâğıt OLMADAN çiziliyor; kâğıt yalnız bölümler için gerekli. */
-  if (phase === "yukleniyor" || (!paper && phase !== "kapak")) {
+  if (phase === "loading" || (!paper && phase !== "cover")) {
     return (
       /*
         SPINNER YERİNE İSKELET — kâğıdın KAPAK yapısında.
@@ -416,7 +423,7 @@ export function ExamScreen() {
     );
   }
 
-  if (phase === "kapak") {
+  if (phase === "cover") {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
@@ -486,7 +493,7 @@ export function ExamScreen() {
     );
   }
 
-  if (phase === "sonuc") {
+  if (phase === "result") {
     const pct = result?.total ?? offline?.pct ?? 0;
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -640,7 +647,7 @@ export function ExamScreen() {
   /* Buradan sonrası kâğıda bağlı: kapak ve sonuç yukarıda döndü. */
   if (!paper) return null;
 
-  if (phase === "bolumGiris" && active) {
+  if (phase === "intro" && active) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
@@ -654,7 +661,7 @@ export function ExamScreen() {
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
               {t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
             </Text>
-            <PressableScale onPress={() => setPhase("bolum")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <PressableScale onPress={() => setPhase("run")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
               <Text variant="h3" color={colors.onPrimary}>{t("exam.start_section")}</Text>
             </PressableScale>
           </Card>

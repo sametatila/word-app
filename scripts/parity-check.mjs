@@ -3800,7 +3800,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList(
     "bolum arasi karti",
-    kart("mobile/src/screens/ExamScreen.tsx", /phase !== "bolum" && phase !== "bolumGiris"/),
+    /* Asama adlari 284'te web'in sozlugune gecti (once Turkce yaziliydi:
+       "bolum" / "bolumGiris"); bu olcu onlari elle yaziyordu ve yeniden
+       adlandirma onu kirmiziya cevirdi. */
+    kart("mobile/src/screens/ExamScreen.tsx", /phase !== "run" && phase !== "intro"/),
     kart("src/components/exam-player.tsx", /phase === "cover" \|\| phase === "loading"/),
   );
 }
@@ -11194,7 +11197,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * Oteki dort ekran zaten kancayi kullaniyordu. */
   {
     /* Adi "cikis" olan bir denetim var mi. Kosullu ad da sayiliyor
-       (`t(phase === "bolum" ? "exam.quit_title" : "common.back")`), o yuzden
+       (`t(phase === "run" ? "exam.quit_title" : "common.back")`), o yuzden
        olcu ANAHTARIN AD OZNITELIGININ ICINDE gecmesi. */
     const CIKIS_ANAHTARLARI = "common\\.go_back|common\\.back|common\\.close|game\\.quit_round|exam\\.quit_title|mockexam\\.quit_title|plc\\.quit_title|walkmode\\.exit_walk_mode";
     const adliCikis = (src, oznitelik) =>

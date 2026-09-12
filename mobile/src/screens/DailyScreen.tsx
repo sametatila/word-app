@@ -20,7 +20,12 @@ import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { shareRoundResult } from "../lib/share";
 
-type Phase = "loading" | "auth" | "error" | "ready" | "play" | "submitting" | "done" | "empty";
+/* AYNI DURUMUN TEK ADI. Bu ekran "play" yazıyordu, web karşılığı ve mobilin
+   kendi öteki oynatıcıları (`BossScreen`, `ChallengeScreen`) "playing" —
+   aynı durumun iki adı, aynı uygulamanın içinde. Sürtünme görünmezdi ama
+   maliyeti gerçek: platformlar arası ölçüler aşama adını okuyor ve bu turda
+   biri tam bu yüzden kırıldı (§106). */
+type Phase = "loading" | "auth" | "error" | "ready" | "playing" | "submitting" | "done" | "empty";
 
 /**
  * İlk üçün madalya rengi — ortak kademe ölçeğinden (`TIER_COLOR`).
@@ -225,7 +230,7 @@ export function DailyScreen() {
           <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("daily.pitch", { n: rounds.length })}</Text>
           <PressableScale
-            onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("play"); }}
+            onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("playing"); }}
             style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
           >
             <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>

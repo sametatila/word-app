@@ -21,7 +21,9 @@ import { formatPercent } from "@/lib/i18n/dict";
 type Payload = { status: WeeklyStatus; rounds: Round[] };
 /* `auth` AYRI BIR HAL (bkz. `daily-player`): 401 "tekrar dene" ile
    cozulmez. Android `WeeklyScreen` da bunu ayiriyor. */
-type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "error" | "auth";
+/* "submitting" — `daily-player` ve mobilin iki karşılığı baştan beri o adı
+   kullanıyor; burada "saving" yazılıydı, yani aynı durumun dördüncü bir adı. */
+type Phase = "loading" | "ready" | "playing" | "submitting" | "done" | "empty" | "error" | "auth";
 
 /**
  * Haftalık kullanım sınavı oynatıcısı (WP-42): tek hak, ipuçsuz, yalnız
@@ -91,7 +93,7 @@ export function WeeklyPlayer() {
   async function handleDone(round: Round, results: GameResult[]) {
     answers.current.push(...results.map((r) => ({ ...r, game: round.game })));
     if (index + 1 < data!.rounds.length) return setIndex(index + 1);
-    setPhase("saving");
+    setPhase("submitting");
     try {
       const res = await apiFetch("/api/weekly", {
         method: "POST",
@@ -126,7 +128,7 @@ export function WeeklyPlayer() {
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
-  if (phase === "loading" || phase === "saving") {
+  if (phase === "loading" || phase === "submitting") {
     return (
       <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-5">
         <p className="muted text-body">{t(phase === "loading" ? "weekly.preparing" : "weekly.saving")}</p>
