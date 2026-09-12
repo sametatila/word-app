@@ -15895,3 +15895,55 @@ göremediği bir sayıyı koruyor olurdu. Gölge basamaklarının kendisi (`6/10
 `--shadow-soft-sm/soft/lg`) `check:tokens` tarafından zaten karşılaştırılıyor.
 
 Bir enjeksiyon daha doğrulandı (mobil `MicIcon` 20→22): kapı iki yönlü.
+
+## §11.437 — Klavye boşluğu ölçüsü dosya düzeyindeydi (mutasyon taramasının ikinci turu)
+
+Mutasyon taraması mobil tarafa ve erişilebilirlik özniteliklerine de uygulandı.
+Yedi bozmadan beşi yakalandı (`gestureEnabled`, `maxFontSizeMultiplier`, iOS
+bildirim sesi, `REMINDER_HOURS`, sınav sonucu duyurusu — hepsi
+`check:parity`'den). İkisi kaçtı ve biri düzeltildi.
+
+**Kaçan 1 — klavye boşluğu ölçüsü kapsam ölçmüyordu.** §296'nın A ölçüsü
+**dosya düzeyindeydi**: "metin kutusu ve kaydırma alanı olan dosyada öznitelik
+geçiyor mu". Gerekçesi yazılıydı ("kutu çocuk bileşende de olabiliyor, hangi
+`ScrollView` sorusu metinden güvenilir sorulamıyor") ama sonuç, defterin en sık
+tekrar eden kusuru: **varlık ölçmek, kapsam ölçmemek.** `ExamScreen`'de sekiz
+kaydırma alanı var; ikisi öznitelikli. Biri özniteliği kaybetse dosya düzeyindeki
+ölçü hiçbir şey söylemiyordu.
+
+Ölçü **düğüm düzeyine** çekildi: her `<ScrollView>`un gövdesi eşleşen kapanışa
+kadar çıkarılıyor (iç içe olanlar sayılarak) ve gövdesinde `<TextInput` varsa
+açılış etiketi özniteliği taşımak zorunda. Bugün 53 kaydırma alanından
+**7**'sinin içinde metin kutusu var ve 7'sinde de öznitelik duruyor — yani kusur
+yok, ama artık ölçülüyor.
+
+İki yan kazanç: (1) muafiyet listesi A ölçüsünde **gereksiz kaldı** — alt çubuk
+düzenindeki iki dosyanın metin kutuları kaydırma alanının dışında, yani düğüm
+ölçüsü onları kendiliğinden saymıyor; liste yalnız B ölçüsü için duruyor.
+(2) Öznitelik adı artık **sınırlı** aranıyor: enjeksiyon
+`automaticallyAdjustKeyboardInsetsX` yazımını öznitelik saydığını gösterdi
+(§250'deki `useRef<TextInput>` tuzağının aynısı).
+
+Üç enjeksiyon doğrulandı: özniteliği tamamen silmek, `ExamScreen`'in **iki**
+özniteliğinden birini silmek (dosya düzeyindeki ölçünün göremediği durum),
+öznitelik adını uzatmak.
+
+**Kaçan 2 — ölçülmedi, yazılıyor.** Webin tepki haplarından `aria-label`ı
+kaldırmak hiçbir kapıyı düşürmüyor. Hap ikon + **sayı** taşıyor; `check:hit`in
+"ikonlu düğme" ölçüsü içeriğinde etiket dışı bir şey görünce ölçmeyi bırakıyor,
+yani sayı taşıyan hap kapsama girmiyor — oysa **sayı bir ad değil**. Ölçüyü
+"içeriği yalnız ikon + sayısal ifade olan düğme ad taşımak zorunda" diye kurmayı
+denedim; ayırt etme (sayısal ifade ↔ metin ifadesi) bugün güvenilir çıkmadı ve
+ölçmeyen bir kapı yazmaktansa **açık bırakıldı**. Mobil tarafta aynı hap
+`accessibilityLabel` taşıyor (`social/ReactionBar`), web tarafında da duruyor;
+kayıt, koruması olmadığını söylemek için.
+
+### Düzeltme: `ios:check` üç turdur hiç koşmamış
+
+Bu turun süitinde `npm run -s ios:check` kök dizinden çağrılıyordu; o betik
+**`mobile/package.json`**'da (`python3 scripts/check-ios.py`, yani
+`mobile/scripts/`). Kökte öyle bir betik olmadığı için komut sessizce hiçbir şey
+yapmıyor ve ben çıktısızlığı "geçti" diye okuyordum. Doğru yerden koşturuldu:
+**8 denetimin hepsi geçiyor** (AppIcon, `.strings`, dil beyanı, Swift/ObjC
+sözdizimi, cihaz ailesi, Google iOS istemcisi…). Yani durum iyiydi, raporum
+dayanaksızdı.

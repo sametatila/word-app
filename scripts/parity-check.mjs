@@ -7734,20 +7734,61 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       return out;
     })();
 
-    /* A DUZENI: metin kutusu olan her dosyanin kaydirma alanlari oznitelikli
-       olacak. Olcu dosya duzeyinde: kutu cocuk bilesende de olabiliyor
-       (`MockExamScreen` gorevleri, `PaywallScreen` promo karti), yani
-       "hangi ScrollView" sorusu metinden guvenilir sekilde sorulamiyor. */
     const ALT_CUBUK = new Set([
       "mobile/src/game/rounds.tsx",
       "mobile/src/screens/RoleplayExamScreen.tsx",
     ]);
+
+    /* A DUZENI: METIN KUTUSU ICEREN her kaydirma alani oznitelikli olacak.
+     *
+     * OLCU DUGUM DUZEYINE CEKILDI. Ilk yazim DOSYA duzeyindeydi ("kutu cocuk
+     * bilesende de olabiliyor, hangi ScrollView sorusu metinden guvenilir
+     * sorulamiyor") ve bu, defterin en sik tekrar eden kusuru: VARLIK olcmek,
+     * KAPSAM olcmemek. Iki metin kutulu kaydirma alani olan bir dosyada biri
+     * ozniteligi kaybederse dosya duzeyindeki olcu hicbir sey soylemiyordu -
+     * ve mobilde boyle dosyalar var (`ExamScreen`de sekiz kaydirma alani).
+     *
+     * Dugum duzeyi soru olarak da daha dogru: her `<ScrollView>`un GOVDESI
+     * eslesen kapanisa kadar cikariliyor (ic ice olanlar sayilarak) ve
+     * govdesinde `<TextInput` varsa acilis etiketi oznitelik tasimak zorunda.
+     * Bugun 53 kaydirma alanindan 7'sinin icinde metin kutusu var ve 7'sinde
+     * de oznitelik duruyor.
+     *
+     * MUAFIYET LISTESI DE GEREKSIZ KALDI: B duzenindeki iki dosyanin metin
+     * kutulari kaydirma alaninin DISINDA (sabit alt cubukta), yani dugum
+     * olcusu onlari kendiliginde saymiyor. Liste yalniz B olcusu icin duruyor. */
+    const govdeAl = (g, i, kes) => {
+      let j = i + kes + 1;
+      let derin = 1;
+      while (derin > 0) {
+        const a = g.indexOf("<ScrollView", j);
+        const b = g.indexOf("</ScrollView>", j);
+        if (b < 0) return "";
+        if (a >= 0 && a < b) { derin++; j = a + 11; } else { derin--; if (derin === 0) return g.slice(i + kes + 1, b); j = b + 13; }
+      }
+      return "";
+    };
     const eksik = [];
+    let kutulu = 0;
     for (const y of dosyalar) {
       const g = sil(read(y));
-      if (!/<TextInput\s/.test(g) || !/<ScrollView\b/.test(g)) continue;
-      if (ALT_CUBUK.has(y)) continue;
-      if (!/automaticallyAdjustKeyboardInsets/.test(g)) eksik.push(y.split("/").pop());
+      let i = 0;
+      while ((i = g.indexOf("<ScrollView", i)) >= 0) {
+        const kes = acilisSonu(g.slice(i));
+        if (kes < 0) break;
+        const etiket = g.slice(i, i + kes + 1);
+        const govde = govdeAl(g, i, kes);
+        if (/<TextInput\s/.test(govde)) {
+          kutulu++;
+          /* Ad SINIRI: `automaticallyAdjustKeyboardInsetsX` gibi bir yazim
+               ilk yazimda oznitelik SAYILIYORDU (enjeksiyon gosterdi) - dizgi
+               icinde gecmek yetmez, oznitelik ADI orada bitmek zorunda. */
+            if (!/automaticallyAdjustKeyboardInsets(?![A-Za-z0-9_])/.test(etiket)) {
+            eksik.push(y.split("/").pop() + ":" + g.slice(0, i).split("\n").length);
+          }
+        }
+        i = i + kes + 1;
+      }
     }
     sameList(
       "kaydirma alani klavyeye bosluk aciyor",
@@ -7757,15 +7798,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* Ve gercekten OLCULUYOR: en az birkac dosya taraniyor. */
-    const taranan = dosyalar.filter((y) => {
-      const g = sil(read(y));
-      return /<TextInput\s/.test(g) && /<ScrollView\b/.test(g) && !ALT_CUBUK.has(y);
-    }).length;
+    /* Ve gercekten OLCULUYOR: metin kutulu kaydirma alani sayisi sifira
+       duserse "eksik yok" bos bir dogru olur. */
     sameList(
       "taranan ekran sayisi",
-      ["taranan=" + (taranan >= 8 ? "var" : "AZ:" + taranan)],
-      ["taranan=var"],
+      ["metin kutulu kaydirma alani=" + (kutulu >= 7 ? "7+" : kutulu)],
+      ["metin kutulu kaydirma alani=7+"],
       "bulunan",
       "beklenen",
     );
