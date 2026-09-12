@@ -119,7 +119,9 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <div className="mt-1 flex items-center justify-between">
-          <span className="muted text-micro tabular-nums">{bio.length}/140</span>
+          {/* Sınır SABİTTEN: sayaç 140'ı yazıyordu ve `BIO_MAX` değişse
+              sayaç yalan söylerdi. Mobilde de aynı kaçak vardı. */}
+          <span className="muted text-micro tabular-nums">{bio.length}/{BIO_MAX}</span>
           <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy || !dirtyBio} onClick={() => void save({ bio: bio.trim() || null })}>
             {t("common.save")}
           </button>

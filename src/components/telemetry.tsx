@@ -16,7 +16,9 @@ import { screenKey } from "@/lib/screens";
  *               açmıyor mu" sorusu ancak böyle cevaplanır)
  *   time_spent  ekranda GÖRÜNÜR geçen saniye; sekme arkaya atılınca sayaç durur,
  *               ekran değişince ya da sayfa kapanırken yazılır (keepalive)
- *   app_open    günün ilk açılışı: platform ve görünüm (ana ekrana eklenmiş mi)
+ *   app_open    günün ilk açılışı: platform ve görünüm (ana ekrana eklenmiş mi).
+ *               Mobil karşılığı `M/src/lib/telemetry.ts`; oradaki görünüm
+ *               `native` ve pano üçünü ayrı satırlarda gösteriyor.
  *   client_error yakalanmamış hata / reddedilmiş promise — dakikada en çok bir
  *
  * Üç saniyeden kısa kalışlar yazılmıyor: yanlışlıkla dokunulan sekme veri

@@ -107,7 +107,8 @@ export function SocialSettingsScreen() {
                 <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, SOCIAL_LIMITS.bioMax))} multiline autoCapitalize="sentences" placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })}
               accessibilityLabel={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
-                <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>
+                {/* Sınır SABİTTEN (bkz. web `social-settings`). */}
+                <Text variant="caption" color={colors.textMuted}>{bio.length}/{SOCIAL_LIMITS.bioMax}</Text>
                 <Pill label={tx("common.save")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
               </View>
             </Section>

@@ -122,7 +122,20 @@ export const EVENT_NAMES = [
   */
   "page_view", // ekran açıldı (kind = ekran anahtarı)
   "time_spent", // ekranda görünür geçen süre (kind = ekran anahtarı, value = saniye; ayrılırken yazılır)
-  "app_open", // günün ilk açılışı (kind = platform:görünüm → ios|android|desktop : standalone|browser, value = ekran genişliği px)
+  /*
+   * Günün ilk açılışı. `kind` = platform:görünüm.
+   *   platform: ios | android | desktop
+   *   görünüm:  standalone (ana ekrana eklenmiş web) | browser | native
+   *
+   * `native` YEREL UYGULAMA ve sonradan eklendi: olay mobilde hiç
+   * yazılmıyordu, oysa yönetim panosundaki PLATFORM TABLOSU yalnız bundan
+   * doluyor (`lib/admin.ts`). Tabloyu okuyan biri yerel uygulamaların hiç
+   * kullanıcısı olmadığını sanıyordu ve oradaki `ios`/`android` satırları
+   * uygulamalar değil MOBİL TARAYICILARDI.
+   *
+   * value = ekran genişliği px.
+   */
+  "app_open",
   "client_error", // yakalanmamış istemci hatası (kind = ekran anahtarı, value = 1 hata sınırı / 0 pencere olayı; dakikada en çok bir)
   "panel_open", // katlı bölüm açıldı/kapandı (kind = bölüm: weak_detail | sheet:<tablo> | words_progress | single_game, value = 1 açık / 0 kapalı)
   "lesson_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
