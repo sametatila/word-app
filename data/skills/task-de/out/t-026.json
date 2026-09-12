@@ -1,0 +1,397 @@
+[
+ {
+  "tr": "Arıza kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Störungskarte aus."
+ },
+ {
+  "tr": "Kayıt formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Anmeldeformular aus."
+ },
+ {
+  "tr": "Kayıp bildirimini doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Verlustanzeige aus."
+ },
+ {
+  "tr": "Çöp toplanmıyor; Garden Street; on iki ağustostan beri; iki kez arandı.",
+  "kind": "form.facts",
+  "de": "Müll wird nicht abgeholt; Garden Street; seit dem zwölften August; zweimal angerufen."
+ },
+ {
+  "tr": "Dizüstü yavaş; pazartesiden beri; iki kez yeniden başlatıldı; diskte altı boş.",
+  "kind": "form.facts",
+  "de": "Laptop langsam; seit Montag; zweimal neu gestartet; sechs frei auf der Festplatte."
+ },
+ {
+  "tr": "Kayıp cüzdan; iki numaralı tramvay; saat altı civarı; içinde kimlik ve yirmi euro.",
+  "kind": "form.facts",
+  "de": "Geldbörse verloren; Straßenbahn Linie zwei; gegen sechs Uhr; darin Ausweis und zwanzig Euro."
+ },
+ {
+  "tr": "Soyadı Yılmaz; doğum tarihi üç haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
+  "kind": "form.facts",
+  "de": "Nachname Yılmaz; Geburtsdatum dritter Juni; Geburtsort Bursa; Adresse Garden Street einundvierzig."
+ },
+ {
+  "tr": "Sonra dilini seç.",
+  "kind": "build.tr",
+  "de": "Wähle dann deine Sprache."
+ },
+ {
+  "tr": "Uygulamaya bağlı.",
+  "kind": "build.tr",
+  "de": "Es kommt auf die App an."
+ },
+ {
+  "tr": "Burada yiyemezsin.",
+  "kind": "build.tr",
+  "de": "Hier darfst du nicht essen."
+ },
+ {
+  "tr": "Ona iki kez basma.",
+  "kind": "build.tr",
+  "de": "Drück nicht zweimal darauf."
+ },
+ {
+  "tr": "Cüzdanımı kaybettim.",
+  "kind": "build.tr",
+  "de": "Ich habe meine Geldbörse verloren."
+ },
+ {
+  "tr": "Telefonumu biri çaldı.",
+  "kind": "build.tr",
+  "de": "Jemand hat mein Handy gestohlen."
+ },
+ {
+  "tr": "Beni duyabiliyor musun?",
+  "kind": "build.tr",
+  "de": "Kannst du mich hören?"
+ },
+ {
+  "tr": "Onu henüz iade etmedim.",
+  "kind": "build.tr",
+  "de": "Ich habe es noch nicht zurückgebracht."
+ },
+ {
+  "tr": "Otobüs bulmaya yarıyor.",
+  "kind": "build.tr",
+  "de": "Sie ist zum Finden eines Busses da."
+ },
+ {
+  "tr": "Üç haftadır bekliyorum.",
+  "kind": "build.tr",
+  "de": "Ich warte seit drei Wochen."
+ },
+ {
+  "tr": "Sessiz olmak zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst leise sein."
+ },
+ {
+  "tr": "Yanımda ne getirmeliyim?",
+  "kind": "build.tr",
+  "de": "Was soll ich mitbringen?"
+ },
+ {
+  "tr": "Bence telefonlar faydalı.",
+  "kind": "build.tr",
+  "de": "Ich finde, Handys sind nützlich."
+ },
+ {
+  "tr": "Kâğıdı ayırman gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst das Papier trennen."
+ },
+ {
+  "tr": "Kartı yüklemen gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst die Karte aufladen."
+ },
+ {
+  "tr": "Önce soldaki düğmeye bas.",
+  "kind": "build.tr",
+  "de": "Drück zuerst den Knopf links."
+ },
+ {
+  "tr": "Parolanı değiştirmelisin.",
+  "kind": "build.tr",
+  "de": "Du solltest dein Passwort ändern."
+ },
+ {
+  "tr": "Parolanı paylaşmamalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest dein Passwort nicht weitergeben."
+ },
+ {
+  "tr": "Saat altı civarında oldu.",
+  "kind": "build.tr",
+  "de": "Es ist gegen sechs Uhr passiert."
+ },
+ {
+  "tr": "Çöpü ne sıklıkta topluyorlar?",
+  "kind": "build.tr",
+  "de": "Wie oft wird der Müll abgeholt?"
+ },
+ {
+  "tr": "Çöpü pazartesileri topluyorlar.",
+  "kind": "build.tr",
+  "de": "Der Müll wird montags abgeholt."
+ },
+ {
+  "tr": "Bu kitabı ödünç almak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte dieses Buch ausleihen."
+ },
+ {
+  "tr": "Salı için müsait bir şey var mı?",
+  "kind": "build.tr",
+  "de": "Haben Sie am Dienstag etwas frei?"
+ },
+ {
+  "tr": "Bir şikâyette bulunmak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte eine Beschwerde einreichen."
+ },
+ {
+  "tr": "Kayıt yaptırmak istiyorum, lütfen.",
+  "kind": "build.tr",
+  "de": "Ich möchte mich bitte anmelden."
+ },
+ {
+  "tr": "Bir kopya alabilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie bitte eine Kopie machen?"
+ },
+ {
+  "tr": "Bunu heceleyebilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie das bitte buchstabieren?"
+ },
+ {
+  "tr": "Onu haberleri okumak için indirdim.",
+  "kind": "build.tr",
+  "de": "Ich habe sie heruntergeladen, um die Nachrichten zu lesen."
+ },
+ {
+  "tr": "Pardon, tekrar söyleyebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Entschuldigung, könnten Sie das noch einmal sagen?"
+ },
+ {
+  "tr": "Oturma izni için başvurmak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte eine Aufenthaltserlaubnis beantragen."
+ },
+ {
+  "tr": "Halka açık wifi konusunda dikkatli ol.",
+  "kind": "build.tr",
+  "de": "Sei vorsichtig mit öffentlichem WLAN."
+ },
+ {
+  "tr": "Pazartesi için randevu alabilir miyim?",
+  "kind": "build.tr",
+  "de": "Könnte ich einen Termin für Montag bekommen?"
+ },
+ {
+  "tr": "Gişenin nerede olduğunu söyleyebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Könnten Sie mir sagen, wo der Schalter ist?"
+ },
+ {
+  "tr": "Otobüsü görmek için bu uygulamayı kullanıyorum.",
+  "kind": "build.tr",
+  "de": "Ich benutze diese App, um den Bus zu sehen."
+ },
+ {
+  "tr": "„apply“ kendi edatını taşıyor: „for“.",
+  "kind": "build.hint",
+  "de": "„apply“ trägt seine eigene Präposition: „for“."
+ },
+ {
+  "tr": "„depend“ kendi edatını taşıyor: „on“.",
+  "kind": "build.hint",
+  "de": "„depend“ trägt seine eigene Präposition: „on“ — deutsch „ankommen auf“."
+ },
+ {
+  "tr": "Amaç „to“ + fiil ile geliyor; edat yok.",
+  "kind": "build.hint",
+  "de": "Der Zweck steht mit „to“ + Verb; keine Präposition. Deutsch nimmt „um … zu“."
+ },
+ {
+  "tr": "Buradaki „you“ da belirsiz: herkes demek.",
+  "kind": "build.hint",
+  "de": "Auch dieses „you“ ist unbestimmt: es meint alle, wie deutsch „man“."
+ },
+ {
+  "tr": "„can't“ burada beceri değil, izin yok demek.",
+  "kind": "build.hint",
+  "de": "„can't“ heißt hier nicht Unfähigkeit, sondern keine Erlaubnis."
+ },
+ {
+  "tr": "Emir cümlesi öznesiz; sırayı „first“ açıyor.",
+  "kind": "build.hint",
+  "de": "Der Imperativ steht ohne Subjekt; „first“ eröffnet die Reihe."
+ },
+ {
+  "tr": "Öğüt „should“ ile; sonrası fiil eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "Der Rat steht mit „should“; danach bleibt das Verb endungslos."
+ },
+ {
+  "tr": "Sıklık sorusu „how often“; soruda „do“ zorunlu.",
+  "kind": "build.hint",
+  "de": "Die Häufigkeitsfrage „how often“; in der Frage ist „do“ Pflicht."
+ },
+ {
+  "tr": "„agree“ın edatı „with“; kişi ondan sonra geliyor.",
+  "kind": "build.hint",
+  "de": "„agree“ nimmt „with“; die Person kommt danach."
+ },
+ {
+  "tr": "„book“ burada ayırtmak; gün „for“ ile bağlanıyor.",
+  "kind": "build.hint",
+  "de": "„book“ heißt hier buchen; der Tag hängt an „for“."
+ },
+ {
+  "tr": "„borrow“ ödünç ALMAK; ödünç vermek „lend“ olurdu.",
+  "kind": "build.hint",
+  "de": "„borrow“ heißt ausleihen im Sinne von nehmen; verleihen wäre „lend“."
+ },
+ {
+  "tr": "„then“ bir sonraki adımı bağlıyor; fiil yine eksiz.",
+  "kind": "build.hint",
+  "de": "„then“ hängt den nächsten Schritt an; das Verb bleibt wieder endungslos."
+ },
+ {
+  "tr": "„top up“ ayrılabiliyor: „top the card up“ da doğru.",
+  "kind": "build.hint",
+  "de": "„top up“ ist trennbar: „top the card up“ geht auch, wie deutsch „aufladen“."
+ },
+ {
+  "tr": "Olumsuz öğüt „shouldn't“ ile; yasak değil, tavsiye.",
+  "kind": "build.hint",
+  "de": "Der verneinte Rat mit „shouldn't“; kein Verbot, sondern ein Rat."
+ },
+ {
+  "tr": "„hear“ istemsiz duymak; „listen“ ise dinlemek demek.",
+  "kind": "build.hint",
+  "de": "„hear“ heißt hören ohne Absicht; „listen“ heißt zuhören."
+ },
+ {
+  "tr": "Kurumda „I'd like“; „register“ kayıt yaptırmak demek.",
+  "kind": "build.hint",
+  "de": "In der Behörde „I'd like“; „register“ heißt sich anmelden."
+ },
+ {
+  "tr": "Şikâyet „make“ ile kuruluyor; „do a complaint“ olmaz.",
+  "kind": "build.hint",
+  "de": "Die Beschwerde wird mit „make“ gebildet; „do a complaint“ gibt es nicht."
+ },
+ {
+  "tr": "Yine „to“ + fiil; „for to read“ diye bir kuruluş yok.",
+  "kind": "build.hint",
+  "de": "Wieder „to“ + Verb; „for to read“ gibt es nicht."
+ },
+ {
+  "tr": "Kaybeden ben: özne „I“, fiil „lost“. „lose“un geçmişi.",
+  "kind": "build.hint",
+  "de": "Verloren habe ich: Subjekt „I“, Verb „lost“ — die Vergangenheit von „lose“."
+ },
+ {
+  "tr": "„careful“ın edatı „with“; emir cümlesi „be“ ile başlıyor.",
+  "kind": "build.hint",
+  "de": "„careful“ nimmt „with“; der Imperativ beginnt mit „be“."
+ },
+ {
+  "tr": "Aynı amaç, başka biçim: „for“ sonrası fiil „-ing“ alıyor.",
+  "kind": "build.hint",
+  "de": "Derselbe Zweck, andere Form: nach „for“ steht das Verb auf „-ing“ — deutsch „zum Finden“."
+ },
+ {
+  "tr": "Alet için „work“ çalışmak demek; üçüncü tekilde „doesn't“.",
+  "kind": "build.hint",
+  "de": "Bei Geräten heißt „work“ funktionieren; in der dritten Person „doesn't“."
+ },
+ {
+  "tr": "Kuraldan gelen zorunluluk „have to“ ile; „be“ eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "Die Pflicht aus einer Regel mit „have to“; „be“ bleibt endungslos."
+ },
+ {
+  "tr": "„again“ en sonda; „repeat“ ile de olurdu ama bu daha yumuşak.",
+  "kind": "build.hint",
+  "de": "„again“ steht ganz hinten; mit „repeat“ ginge es auch, aber das hier klingt weicher."
+ },
+ {
+  "tr": "„I think“ sonrası „that“ düşebiliyor; cümle doğrudan geliyor.",
+  "kind": "build.hint",
+  "de": "Nach „I think“ kann „that“ wegfallen — anders als deutsch, wo „dass“ bleibt."
+ },
+ {
+  "tr": "„spell“ harf harf söylemek demek; ad ya da sokak için sorulur.",
+  "kind": "build.hint",
+  "de": "„spell“ heißt buchstabieren; man fragt es bei Namen oder Straßen."
+ },
+ {
+  "tr": "„bring“ buraya getirmek; „take“ olsaydı buradan götürmek olurdu.",
+  "kind": "build.hint",
+  "de": "„bring“ heißt herbringen; „take“ wäre von hier wegbringen."
+ },
+ {
+  "tr": "Dolaylı soruda sıra düz cümleye dönüyor: „where the counter is“.",
+  "kind": "build.hint",
+  "de": "In der indirekten Frage wird die Stellung gerade: „where the counter is“. Deutsch schiebt das Verb ans Ende."
+ },
+ {
+  "tr": "„at about“ yaklaşık saat demek; „about“ tek başına „hakkında“ olurdu.",
+  "kind": "build.hint",
+  "de": "„at about“ heißt ungefähr um; „about“ allein hieße „über“."
+ },
+ {
+  "tr": "Kopya „make“ ile alınıyor; „take a copy“ İngilizcede alışılmış değil.",
+  "kind": "build.hint",
+  "de": "Die Kopie wird mit „make“ gemacht; „take a copy“ ist im Englischen unüblich."
+ },
+ {
+  "tr": "Olumsuz emir „don't“ ile; İngilizcede tek emir biçimi var, kibarlık ayrımı yok.",
+  "kind": "build.hint",
+  "de": "Verneinter Imperativ mit „don't“. Englisch hat nur EINE Imperativform; Deutsch trennt „drück“ und „drücken Sie“."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „for“ ile present perfect. A2 boyunca dönen kalıp, kapanışta bir kez daha.",
+  "kind": "build.hint",
+  "de": "Es dauert an: „for“ mit present perfect. Das Muster der ganzen Stufe, zum Abschluss noch einmal."
+ },
+ {
+  "tr": "İngilizce burada edilgen yerine „someone“ koyuyor; Türkçe \"çalındı\" der ve faili hiç anmaz.",
+  "kind": "build.hint",
+  "de": "Englisch setzt hier „someone“ statt eines Passivs. Deutsch macht es wie das Türkische: mein Handy wurde gestohlen."
+ },
+ {
+  "tr": "Buradaki „they“ belirsiz: belediye. Türkçe edilgen kurardı, İngilizce özneyi boş bırakmıyor.",
+  "kind": "build.hint",
+  "de": "Dieses „they“ ist unbestimmt: die Stadt. Deutsch nimmt hier Passiv oder „man“, Englisch lässt die Subjektstelle nicht leer."
+ },
+ {
+  "tr": "Metnin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Textes: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Yazının sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Beitrags: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Kuralların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Regeln: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Uygulamaların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Apps: bring sie in die richtige Ordnung."
+ }
+]

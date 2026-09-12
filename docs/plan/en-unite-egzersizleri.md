@@ -61,8 +61,7 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
-| A2 | 22–25 | bekliyor |
+| **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -527,6 +526,43 @@ kurtarmıyor („chapters“ yazılmıştı, metindeki „chapter“ dışarıda
 çalışıyor. Sözlükçeye kök biçim yazmak iki yönü birden kapatıyor. Ayrıca
 bir sözlükçe maddesi düştü: „instead“ yalnız soru kökünde geçiyordu,
 metinde değil — sözlükçe metnin sözlükçesi.
+
+**EN A2 SEVİYESİ KAPANDI (2026-09-12).** Son dört ünite: 22 A computer
+problem · Useful apps · Passwords and safety · A video call; 23 What I
+think about technology · Explaining how to do it · At the city hall ·
+Filling in a form; 24 Residence permit · Reporting a loss · At the library ·
+Transport card; 25 Booking an appointment · Documents and copies ·
+Making a complaint · City services. Yirmi dört egzersiz; ünite dışı ölçüm
+%0,0. **A2: 25 ünite, 150 egzersiz, 150/150 yuva dolu, 0 boş.**
+
+Kapanış turu iki yeni satır ve BİR İPİN ADINI verdi.
+
+Ünite 22 amacın iki biçimini yan yana koyuyor: „I use this app TO find a
+bus“ ve „It's FOR finding a bus“. Ünite 17 ile 20 „-ing“i ayrı ayrı
+göstermişti; ancak mastarla yan yana konunca kural görünür oluyor.
+Almanca eksende ikisinin de karşılığı var („um … zu“ ve „zum Finden“),
+yani bu satır büyümüyor — ama „zum Finden“de fiilin İSİM gibi büyük
+harfle yazılması Almanca okuyan için ayrı bir hatırlatma.
+
+Ünite 23'ün emir zincirinde İngilizcenin SÖYLEMEDİĞİ şey önemli: tek bir
+emir biçimi var, kibarlık ayrımı yok. Almanca aynı yerde „drück“ ile
+„drücken Sie“yi ayırıyor. Yani burada eksiklik bir güçlük — öğrenci hangi
+biçimi seçeceğini soruyor ve cevap "seçim yok".
+
+Asıl bulgu ünite 24 ile 25'in AYNI eğilimin iki görünüşü olması:
+İNGİLİZCE ÖZNE YERİNİ BOŞ BIRAKMIYOR. „Someone stole my phone“ (ünite 24)
+ve „They collect the rubbish on Mondays“ (ünite 25) — ikisinde de fail
+bilinmiyor ve İngilizce yine de bir özne koyuyor. Türkçe ikisinde de
+edilgen kuruyor ("telefonum çalındı", "çöpler pazartesi toplanıyor).
+Almanca da edilgen ya da „man“ kullanıyor, yani burada Türkçe ile Almanca
+aynı tarafta ve İngilizce yalnız. Seviye bu ipi adıyla söyleyerek
+kapanıyor: A2 boyunca dağınık görünen üç satır (ünite 4 süre, ünite 9
+olumsuz present perfect, ünite 24–25 özne ısrarı) aslında tek bir
+gözlemin parçaları.
+
+Ölçüm bu turda yirmi bir sözlükçe maddesi ekletti ve beş soruyu yeniden
+yazdırdı; hepsi soru kökünde ya da şıkta geçip metinde geçmeyen
+sözcüklerdi („forever“, „repeat“, „real“, „matter“, „own“).
 
 ## Tamamlanma ölçütü
 

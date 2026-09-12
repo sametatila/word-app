@@ -1,0 +1,527 @@
+[
+ {
+  "tr": "Şehrin takvimi. Ne zaman ne oluyor?",
+  "kind": "intro",
+  "de": "Der Kalender der Stadt. Was passiert wann?"
+ },
+ {
+  "tr": "Kayıp mı, hırsızlık mı? Fark öznede.",
+  "kind": "intro",
+  "de": "Verloren oder gestohlen? Der Unterschied liegt im Subjekt."
+ },
+ {
+  "tr": "Parola tartışması. Hangi öğüt tutuyor?",
+  "kind": "intro",
+  "de": "Ein Streit über Passwörter. Welcher Rat hält?"
+ },
+ {
+  "tr": "Kart ve makine. Hangi düğme, hangi para?",
+  "kind": "intro",
+  "de": "Karte und Automat. Welcher Knopf, welches Geld?"
+ },
+ {
+  "tr": "İyi mi kötü mü? Yazar soruyu değiştiriyor.",
+  "kind": "intro",
+  "de": "Gut oder schlecht? Der Autor ändert die Frage."
+ },
+ {
+  "tr": "Kütüphane kuralları. Ne serbest, ne değil?",
+  "kind": "intro",
+  "de": "Die Bibliotheksordnung. Was ist erlaubt, was nicht?"
+ },
+ {
+  "tr": "Ekran ekran talimat. Hangi adımda ne oluyor?",
+  "kind": "intro",
+  "de": "Eine Anleitung Bildschirm für Bildschirm. Was passiert in welchem Schritt?"
+ },
+ {
+  "tr": "Form doldurma. Hangi bilgi nereye yazılıyor?",
+  "kind": "intro",
+  "de": "Ein Formular wird ausgefüllt. Welche Angabe kommt wohin?"
+ },
+ {
+  "tr": "Yavaşlayan bir dizüstü. Sorun nerede çıkıyor?",
+  "kind": "intro",
+  "de": "Ein langsamer Laptop. Wo liegt das Problem?"
+ },
+ {
+  "tr": "Karakolda bildirim. Kaybolmuş mu, çalınmış mı?",
+  "kind": "intro",
+  "de": "Eine Anzeige auf der Wache. Verloren oder gestohlen?"
+ },
+ {
+  "tr": "Emir zinciri. Özne yok, sırayı zarflar kuruyor.",
+  "kind": "intro",
+  "de": "Eine Kette von Imperativen. Kein Subjekt, die Reihenfolge bauen die Adverbien."
+ },
+ {
+  "tr": "Kopya mı, resmî kopya mı? Fark neye mal oluyor?",
+  "kind": "intro",
+  "de": "Kopie oder beglaubigte Kopie? Was kostet der Unterschied?"
+ },
+ {
+  "tr": "İzin yenileme. Hangi belge gerekli, hangisi değil?",
+  "kind": "intro",
+  "de": "Verlängerung der Aufenthaltserlaubnis. Welches Papier ist nötig, welches nicht?"
+ },
+ {
+  "tr": "Görüntülü aramanın ilk iki dakikası. Ne çalışmıyor?",
+  "kind": "intro",
+  "de": "Die ersten zwei Minuten eines Videoanrufs. Was geht nicht?"
+ },
+ {
+  "tr": "Kütüphane ve kart. Zorunluluk, izin ve bitmemiş iş.",
+  "kind": "intro",
+  "de": "Bibliothek und Karte. Pflicht, Erlaubnis und eine unerledigte Sache."
+ },
+ {
+  "tr": "Üç haftalık bir şikâyet. Ne istendi, ne bekleniyor?",
+  "kind": "intro",
+  "de": "Eine Beschwerde nach drei Wochen. Was wurde verlangt, was wird erwartet?"
+ },
+ {
+  "tr": "Belediyede kayıt. Hangi sıra, hangi form, hangi renk?",
+  "kind": "intro",
+  "de": "Anmeldung im Rathaus. Welche Nummer, welches Formular, welche Farbe?"
+ },
+ {
+  "tr": "Öğüt ve arama cümleleri. „should“ emir değil, tavsiye.",
+  "kind": "intro",
+  "de": "Sätze für Rat und Anruf. „should“ ist kein Befehl, sondern ein Rat."
+ },
+ {
+  "tr": "Aynı amaç, iki biçim. Mastar ne zaman, „-ing“ ne zaman?",
+  "kind": "intro",
+  "de": "Derselbe Zweck, zwei Formen. Wann Infinitiv, wann „-ing“?"
+ },
+ {
+  "tr": "Üç uygulama ve silinen bir tanesi. Hangisi neye yarıyor?",
+  "kind": "intro",
+  "de": "Drei Apps und eine gelöschte. Wofür ist welche gut?"
+ },
+ {
+  "tr": "Görüş bildirme ve kurum dili. Her fiil kendi edatını taşıyor.",
+  "kind": "intro",
+  "de": "Meinung sagen und Behördensprache. Jedes Verb trägt seine eigene Präposition."
+ },
+ {
+  "tr": "Randevu ve belge listesi. Ne getirilecek, ne zaman gelinecek?",
+  "kind": "intro",
+  "de": "Termin und Papierliste. Was wird mitgebracht, wann kommt man?"
+ },
+ {
+  "tr": "Kim toplar? Adı geçmiyor ama İngilizce yine de bir özne koyuyor.",
+  "kind": "intro",
+  "de": "Wer holt den Müll? Der Name fällt nicht, und doch setzt Englisch ein Subjekt."
+ },
+ {
+  "tr": "A2'nin son egzersizi. Randevu, belge ve seviyenin en çok dönen kalıbı.",
+  "kind": "intro",
+  "de": "Die letzte Übung von A2. Termin, Papiere und das häufigste Muster der Stufe."
+ },
+ {
+  "tr": "„spell“ harf harf söylemek demek.",
+  "kind": "explain",
+  "de": "„spell“ heißt buchstabieren."
+ },
+ {
+  "tr": "„I've already restarted it. Twice.“",
+  "kind": "explain",
+  "de": "„I've already restarted it. Twice.“"
+ },
+ {
+  "tr": "Öğüt „should“ ile; sonrası fiil eksiz.",
+  "kind": "explain",
+  "de": "Der Rat steht mit „should“; danach bleibt das Verb endungslos."
+ },
+ {
+  "tr": "„We don't require the letter this year.“",
+  "kind": "explain",
+  "de": "„We don't require the letter this year.“"
+ },
+ {
+  "tr": "Üç kullanılan sırayla, en sonda silinen.",
+  "kind": "explain",
+  "de": "Die drei benutzten der Reihe nach, zuletzt die gelöschte."
+ },
+ {
+  "tr": "Kopya „make“ ile alınıyor, „take“ ile değil.",
+  "kind": "explain",
+  "de": "Die Kopie wird mit „make“ gemacht, nicht mit „take“ — wie deutsch „eine Kopie machen“."
+ },
+ {
+  "tr": "„…the next screen looks finished but it isn't.“",
+  "kind": "explain",
+  "de": "„…the next screen looks finished but it isn't.“"
+ },
+ {
+  "tr": "Olumsuz emir „don't“ ile; özne yine görünmüyor.",
+  "kind": "explain",
+  "de": "Der verneinte Imperativ mit „don't“; das Subjekt bleibt wieder unsichtbar."
+ },
+ {
+  "tr": "„hear“ istemsiz duymak demek; „listen“ dinlemek.",
+  "kind": "explain",
+  "de": "„hear“ heißt hören ohne Absicht; „listen“ heißt zuhören."
+ },
+ {
+  "tr": "„bring“ buraya getirmek demek; „with me“ yanında.",
+  "kind": "explain",
+  "de": "„bring“ heißt herbringen; „with me“ heißt bei sich."
+ },
+ {
+  "tr": "Yer sorusu „where“ ile; „can“ sonrası fiil eksiz.",
+  "kind": "explain",
+  "de": "Die Ortsfrage mit „where“; nach „can“ bleibt das Verb endungslos."
+ },
+ {
+  "tr": "Çöp, cam, fatura, vergi dairesi — metnin kendi sırası.",
+  "kind": "explain",
+  "de": "Müll, Glas, Rechnungen, Finanzamt — die Reihenfolge des Textes selbst."
+ },
+ {
+  "tr": "„…with a document from the university you don't need it.“",
+  "kind": "explain",
+  "de": "„…with a document from the university you don't need it.“"
+ },
+ {
+  "tr": "„apply“ın edatı „for“; başvurulan şey ondan sonra geliyor.",
+  "kind": "explain",
+  "de": "„apply“ nimmt „for“; wofür man sich bewirbt, kommt danach."
+ },
+ {
+  "tr": "„don't sign it here. You sign at the counter, in front of us.“",
+  "kind": "explain",
+  "de": "„don't sign it here. You sign at the counter, in front of us.“"
+ },
+ {
+  "tr": "Önce ödünç alma, sonra davranış, sonra ceza, en son sessiz oda.",
+  "kind": "explain",
+  "de": "Zuerst das Ausleihen, dann das Verhalten, dann die Gebühr, zuletzt der stille Raum."
+ },
+ {
+  "tr": "„Don't press it twice. Then it starts again from the beginning.“",
+  "kind": "explain",
+  "de": "„Don't press it twice. Then it starts again from the beginning.“"
+ },
+ {
+  "tr": "„How much is free on the disk? … Six.“ — onun altı sorun demekti.",
+  "kind": "explain",
+  "de": "„How much is free on the disk? … Six.“ — unter zehn hieß: das ist das Problem."
+ },
+ {
+  "tr": "„We don't require the letter this year. But the address paper, yes.“",
+  "kind": "explain",
+  "de": "„We don't require the letter this year. But the address paper, yes.“"
+ },
+ {
+  "tr": "Önce soru, sonra iyi yanı, sonra koşul, en son yazarın kendi sorusu.",
+  "kind": "explain",
+  "de": "Zuerst die Frage, dann die gute Seite, dann die Bedingung, zuletzt die eigene Frage des Autors."
+ },
+ {
+  "tr": "„I have already taken a number. Sixty-four.“ — elli dokuz şu anki sıra.",
+  "kind": "explain",
+  "de": "„I have already taken a number. Sixty-four.“ — neunundfünfzig ist die aktuelle Nummer."
+ },
+ {
+  "tr": "„Renew. The old one is valid until November.“ — 2030 pasaportun tarihi.",
+  "kind": "explain",
+  "de": "„Renew. The old one is valid until November.“ — 2030 gehört zum Pass."
+ },
+ {
+  "tr": "„It happened at about six o'clock.“ — beş buçukta hâlâ ödeme yapılmıştı.",
+  "kind": "explain",
+  "de": "„It happened at about six o'clock.“ — um halb sechs wurde noch bezahlt."
+ },
+ {
+  "tr": "„I agree with you about the games“ — yalnız oyunlar için, hepsi için değil.",
+  "kind": "explain",
+  "de": "„I agree with you about the games“ — nur für die Spiele, nicht für alles."
+ },
+ {
+  "tr": "„They collect the rubbish on Mondays.“ — perşembe sözü verilen arabanın günü.",
+  "kind": "explain",
+  "de": "„They collect the rubbish on Mondays.“ — der Donnerstag gehört zum versprochenen Wagen."
+ },
+ {
+  "tr": "nokta",
+  "kind": "gloss.tr",
+  "de": "Stelle"
+ },
+ {
+  "tr": "on ikisi",
+  "kind": "gloss.tr",
+  "de": "der Zwölfte"
+ },
+ {
+  "tr": "net",
+  "kind": "gloss.tr",
+  "de": "klar"
+ },
+ {
+  "tr": "disk",
+  "kind": "gloss.tr",
+  "de": "Festplatte"
+ },
+ {
+  "tr": "gişe",
+  "kind": "gloss.tr",
+  "de": "Schalter"
+ },
+ {
+  "tr": "bağlı",
+  "kind": "gloss.tr",
+  "de": "kommt darauf an"
+ },
+ {
+  "tr": "basit",
+  "kind": "gloss.tr",
+  "de": "schlicht"
+ },
+ {
+  "tr": "bitki",
+  "kind": "gloss.tr",
+  "de": "Pflanze"
+ },
+ {
+  "tr": "buyur",
+  "kind": "gloss.tr",
+  "de": "sprich weiter"
+ },
+ {
+  "tr": "damga",
+  "kind": "gloss.tr",
+  "de": "Stempel"
+ },
+ {
+  "tr": "durdu",
+  "kind": "gloss.tr",
+  "de": "stand"
+ },
+ {
+  "tr": "düğme",
+  "kind": "gloss.tr",
+  "de": "Knopf"
+ },
+ {
+  "tr": "içeri",
+  "kind": "gloss.tr",
+  "de": "hinein"
+ },
+ {
+  "tr": "limon",
+  "kind": "gloss.tr",
+  "de": "Zitrone"
+ },
+ {
+  "tr": "akıllı",
+  "kind": "gloss.tr",
+  "de": "clever"
+ },
+ {
+  "tr": "anlamı",
+  "kind": "gloss.tr",
+  "de": "die Bedeutung"
+ },
+ {
+  "tr": "baştan",
+  "kind": "gloss.tr",
+  "de": "von vorn"
+ },
+ {
+  "tr": "en çok",
+  "kind": "gloss.tr",
+  "de": "höchstens"
+ },
+ {
+  "tr": "okuyor",
+  "kind": "gloss.tr",
+  "de": "liest es"
+ },
+ {
+  "tr": "seçmek",
+  "kind": "gloss.tr",
+  "de": "wählen"
+ },
+ {
+  "tr": "listede",
+  "kind": "gloss.tr",
+  "de": "auf der Liste"
+ },
+ {
+  "tr": "oyunlar",
+  "kind": "gloss.tr",
+  "de": "Spiele"
+ },
+ {
+  "tr": "yutuyor",
+  "kind": "gloss.tr",
+  "de": "schluckt es"
+ },
+ {
+  "tr": "aşağı in",
+  "kind": "gloss.tr",
+  "de": "scroll nach unten"
+ },
+ {
+  "tr": "belediye",
+  "kind": "gloss.tr",
+  "de": "Rathaus"
+ },
+ {
+  "tr": "en fazla",
+  "kind": "gloss.tr",
+  "de": "nicht älter als"
+ },
+ {
+  "tr": "indirdim",
+  "kind": "gloss.tr",
+  "de": "habe heruntergeladen"
+ },
+ {
+  "tr": "civarında",
+  "kind": "gloss.tr",
+  "de": "gegen"
+ },
+ {
+  "tr": "kaybettim",
+  "kind": "gloss.tr",
+  "de": "habe verloren"
+ },
+ {
+  "tr": "paylaşmak",
+  "kind": "gloss.tr",
+  "de": "teilen"
+ },
+ {
+  "tr": "uyandırdı",
+  "kind": "gloss.tr",
+  "de": "hat mich geweckt"
+ },
+ {
+  "tr": "yok olmuş",
+  "kind": "gloss.tr",
+  "de": "weg"
+ },
+ {
+  "tr": "bozuk para",
+  "kind": "gloss.tr",
+  "de": "Münzen"
+ },
+ {
+  "tr": "iade ettim",
+  "kind": "gloss.tr",
+  "de": "zurückgebracht"
+ },
+ {
+  "tr": "üniversite",
+  "kind": "gloss.tr",
+  "de": "Universität"
+ },
+ {
+  "tr": "yeşil olan",
+  "kind": "gloss.tr",
+  "de": "das grüne"
+ },
+ {
+  "tr": "geri gelmek",
+  "kind": "gloss.tr",
+  "de": "wiederkommen"
+ },
+ {
+  "tr": "görmek için",
+  "kind": "gloss.tr",
+  "de": "um zu sehen"
+ },
+ {
+  "tr": "kırık düğme",
+  "kind": "gloss.tr",
+  "de": "kaputter Knopf"
+ },
+ {
+  "tr": "kopya almak",
+  "kind": "gloss.tr",
+  "de": "eine Kopie machen"
+ },
+ {
+  "tr": "tahmin eder",
+  "kind": "gloss.tr",
+  "de": "errät"
+ },
+ {
+  "tr": "adres kanıtı",
+  "kind": "gloss.tr",
+  "de": "Adressnachweis"
+ },
+ {
+  "tr": "üçüncü vagon",
+  "kind": "gloss.tr",
+  "de": "der dritte Wagen"
+ },
+ {
+  "tr": "adres belgesi",
+  "kind": "gloss.tr",
+  "de": "die Meldebescheinigung"
+ },
+ {
+  "tr": "o satır benim",
+  "kind": "gloss.tr",
+  "de": "diese Zeile ist meine"
+ },
+ {
+  "tr": "orada kalıyor",
+  "kind": "gloss.tr",
+  "de": "bleibt stehen"
+ },
+ {
+  "tr": "randevu almak",
+  "kind": "gloss.tr",
+  "de": "einen Termin buchen"
+ },
+ {
+  "tr": "sayın yetkili",
+  "kind": "gloss.tr",
+  "de": "sehr geehrte Damen und Herren"
+ },
+ {
+  "tr": "birbirine uyar",
+  "kind": "gloss.tr",
+  "de": "passen zusammen"
+ },
+ {
+  "tr": "nasıl yürüdüğü",
+  "kind": "gloss.tr",
+  "de": "wie es hier läuft"
+ },
+ {
+  "tr": "bulmaya yarayan",
+  "kind": "gloss.tr",
+  "de": "zum Finden da"
+ },
+ {
+  "tr": "kayıt yaptırmak",
+  "kind": "gloss.tr",
+  "de": "sich anmelden"
+ },
+ {
+  "tr": "tekrar söylemek",
+  "kind": "gloss.tr",
+  "de": "noch einmal sagen"
+ },
+ {
+  "tr": "gözümüzün önünde",
+  "kind": "gloss.tr",
+  "de": "vor unseren Augen"
+ },
+ {
+  "tr": "kim kimi tutuyor",
+  "kind": "gloss.tr",
+  "de": "wer wen hält"
+ },
+ {
+  "tr": "harf harf söylemek",
+  "kind": "gloss.tr",
+  "de": "buchstabieren"
+ }
+]
