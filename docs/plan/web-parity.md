@@ -14325,3 +14325,46 @@ gelir, tip parametresinden sonra `>`.
 §265'in ad kümesinden `next` düşürüldü: webde "next" **yanlış** olurdu (Enter
 formu gönderir, sonraki alana geçmez). Zincirin kendisi ve son halkanın adı
 §279'da ölçülüyor.
+
+## §11.404 — Çevrimdışı kuyruklar webde yalnız oynatıcı içinde boşalıyordu
+
+İki kuyruk da Android'den alınmıştı ve **kuralları** birebir kopyalanmıştı:
+kayıt kendi `day`ini taşıyor, kuyruk en son yirmi turla sınırlı, kalıcı hata
+düşürülüyor, biri düşerse sıradakiler denenmiyor. Kopyalanmayan şey
+**boşaltıldıkları yer** oldu.
+
+```
+Android (App.tsx)         : useEffect(() => { if (user) { flushPendingAnswers(); flushPendingLessons(); } }, [user])
+Web (session-player: 240) : useEffect(() => { void flushPendingAnswers(); }, [])
+Web (lesson-player:  283) : useEffect(() => { void flushPendingLessons(); }, [])
+```
+
+Yani webde kuyruk **yalnız oynatıcı monte edilirken** boşalıyordu. Ağı gidip
+gelen kullanıcı turu bitirip profile, kelimelere ya da patikaya geçtiğinde
+kayıtlar kuyrukta bekliyordu: SRS aralıkları ilerlemiyor, XP verilmiyor ve
+kullanıcı bunu ancak **bir sonraki tura girdiğinde** (belki günler sonra)
+telafi ediyordu. Kuyruğun kendisi çalışıyordu; boşaltan yoktu.
+
+Çözüm Android'in kalıbı: `app-shell` kullanıcı bilinir bilinmez ikisini de
+boşaltıyor. Kuyruk boşsa ikisi de hiçbir şey yapmıyor — açılışa maliyeti yok.
+
+### §280
+
+Beş ölçü: web açılış etkisinde iki kuyruğun ikisi de var mı, **mutlak** olarak
+iki platformda da var mı (ikisinin birden boş olması karşılaştırmayı geçirirdi
+— kaydedilmiş kusur sınıfı), oynatıcı içindeki boşaltmanın yerinde durduğu
+(açılış onu ikame etmiyor: tur bitince ağ geri geldiyse hemen gitmeli), ve iki
+platformda kuyruk sınırının yirmi kaldığı.
+
+Boşaltma çağrısının **varlığı** yetmiyor, ölçü onu kullanıcıyı bekleyen
+etkinin **gövdesinde** arıyor: modül kapsamında duran bir çağrı açılışta bir
+kez de çalışmaz. Enjeksiyonla doğrulandı — `if (!userId) return;` satırı
+kalkınca ölçü ikisini de "YOK" gördü.
+
+### Üçüncü kuyruk — ölçülmedi
+
+Mobilde bir **üçüncü** kuyruk var: `lernomi-items-pending`, çevrimdışı
+bitirilen patika egzersizleri (`PUT /api/skills`, `syncItemProgress` içinde
+boşalıyor). Web karşılığı `syncSkillProgress` ve oradaki dosyalar şu anda
+**paralel oturumun elinde** (`src/lib/skills/*`); ölçüm o iş bitince
+yapılacak. Buraya not olarak yazılıyor ki kaybolmasın.

@@ -13,6 +13,8 @@ import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
+import { flushPendingAnswers } from "@/lib/answer-queue";
+import { flushPendingLessons } from "@/lib/lesson-queue";
 import { useLang, useT } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
@@ -149,6 +151,26 @@ export function AppShell({
 
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
   useEffect(() => setStats({ streak, xp }), [streak, xp]);
+
+  /**
+   * ÇEVRİMDIŞI KUYRUKLAR UYGULAMA AÇILIŞINDA BOŞALIYOR.
+   *
+   * İki kuyruk da (tur cevapları, ders sonuçları) Android'den alınmıştı ama
+   * BOŞALTILDIKLARI YER alınmamıştı: web yalnız oynatıcı monte edilirken
+   * boşaltıyordu (`session-player`, `lesson-player`). Ağı gidip gelen
+   * kullanıcı turu bitirip profile ya da kelimelere geçtiğinde kayıtlar
+   * kuyrukta bekliyordu — SRS ilerlemiyor, XP verilmiyor ve kullanıcı bunu
+   * ancak bir sonraki tura girdiğinde (belki günler sonra) telafi ediyordu.
+   * Android kullanıcı bilinir bilinmez ikisini de boşaltıyor
+   * (`App.tsx`: `if (user) { flushPendingAnswers(); flushPendingLessons(); }`).
+   *
+   * Kuyruk boşsa ikisi de hiçbir şey yapmıyor: açılışa maliyeti yok.
+   */
+  useEffect(() => {
+    if (!userId) return;
+    void flushPendingAnswers();
+    void flushPendingLessons();
+  }, [userId]);
 
   // Telaffuz doğru sesi seçebilsin diye kurs ve ses cihazda tutulur.
   // Kaynak yine veritabanı; buradaki yalnızca bir ayna. Gerekçesi zamanlama:

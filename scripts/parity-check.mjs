@@ -7480,6 +7480,94 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 280. CEVRIMDISI KUYRUKLAR ACILISTA BOSALIYOR -------------------
+   *
+   * Iki kuyruk da (tur cevaplari, ders sonuclari) Android'den alindi ve
+   * KURALLARI birebir kopyalandi: kayit kendi `day`ini tasiyor, kuyruk en son
+   * yirmi turla sinirli, kalici hata dusuruluyor. Ama BOSALTILDIKLARI YER
+   * kopyalanmadi.
+   *
+   * Android kullanici bilinir bilinmez ikisini de bosaltiyor (`App.tsx`,
+   * `if (user) { flushPendingAnswers(); flushPendingLessons(); }`). Webde
+   * bosaltma yalniz OYNATICI monte edilirken oluyordu (`session-player`,
+   * `lesson-player`): agi gidip gelen kullanici turu bitirip profile ya da
+   * kelimelere gectiginde kayitlar kuyrukta bekliyordu - SRS ilerlemiyor, XP
+   * verilmiyor, ve bunu ancak bir sonraki tura girdiginde (belki gunler
+   * sonra) telafi ediyordu. Kuyrugun kendisi calisiyordu; bosaltan yoktu.
+   *
+   * Bu 270'in dersinin baska bir yuzu: PARCAYI degil KAPSAMI olc. "Kuyruk var
+   * mi" sorusu iki platformda da "var" diyordu. */
+  {
+    const kabuk = sil(read("src/components/app-shell.tsx"));
+    const app = sil(read("mobile/App.tsx"));
+    /* Cagri OLMASI yetmez: kullaniciyi bekleyen bir etkinin ICINDE olacak.
+       Modul kapsaminda duran bir cagri acilista bir kez de calismaz. */
+    const etki = (metin, kosul) => {
+      const i = metin.indexOf(kosul);
+      if (i < 0) return "";
+      const son = metin.indexOf("}, [", i);
+      return son < 0 ? metin.slice(i, i + 400) : metin.slice(i, son);
+    };
+    const webEtki = etki(kabuk, "if (!userId) return;");
+    const mobEtki = etki(app, "if (user) {");
+    sameList(
+      "kuyruklar acilista bosaliyor",
+      [
+        "web cevap=" + (/flushPendingAnswers\(\)/.test(webEtki) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingLessons\(\)/.test(webEtki) ? "var" : "YOK"),
+      ],
+      [
+        "web cevap=" + (/flushPendingAnswers\(\)/.test(mobEtki) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingLessons\(\)/.test(mobEtki) ? "var" : "YOK"),
+      ],
+      "web",
+      "mobil",
+    );
+    /* MUTLAK: ikisi de "var" olacak - iki tarafin birden bos olmasi
+       karsilastirmayi gecirir (kaydedilmis kusur sinifi). */
+    sameList(
+      "acilis bosaltmasi iki platformda da var",
+      [
+        "web=" + (/flushPendingAnswers\(\)/.test(webEtki) && /flushPendingLessons\(\)/.test(webEtki) ? "iki kuyruk" : "EKSIK"),
+        "mobil=" + (/flushPendingAnswers\(\)/.test(mobEtki) && /flushPendingLessons\(\)/.test(mobEtki) ? "iki kuyruk" : "EKSIK"),
+      ],
+      ["web=iki kuyruk", "mobil=iki kuyruk"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Oynatici icindeki bosaltma da yerinde dursun: acilis onu ikame etmiyor
+       (tur bitince ag geri geldiyse hemen gitmeli). */
+    sameList(
+      "oynatici icindeki bosaltma duruyor",
+      [
+        "web tur=" + (/flushPendingAnswers\(\)/.test(sil(read("src/components/session-player.tsx"))) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingLessons\(\)/.test(sil(read("src/components/lessons/lesson-player.tsx"))) ? "var" : "YOK"),
+        "mobil tur=" + (/flushPendingAnswers\(\)/.test(sil(read("mobile/src/game/session.ts"))) ? "var" : "YOK"),
+      ],
+      ["web tur=var", "web ders=var", "mobil tur=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kuyruk sinirlari da esit kalsin - dort dosyada da yirmi. */
+    const sinir = (y) => (sil(read(y)).match(/slice\(-(\d+)\)/) ?? [])[1] ?? "YOK";
+    sameList(
+      "kuyruk siniri",
+      ["cevap=" + sinir("src/lib/answer-queue.ts"), "ders=" + sinir("src/lib/lesson-queue.ts")],
+      ["cevap=20", "ders=20"],
+      "web",
+      "beklenen",
+    );
+    sameList(
+      "kuyruk siniri (mobil)",
+      ["ders=" + (sil(read("mobile/src/game/lessonProgress.ts")).match(/slice\(-(\d+)\)/) ?? [])[1]],
+      ["ders=20"],
+      "mobil",
+      "beklenen",
+    );
+  }
+
   /* -- 279. DONUS TUSU HER ALANDA IS YAPIYOR --------------------------
    *
    * 265 klavyenin kosesindeki tusun ADINI olctu ve webde o adin HIC
