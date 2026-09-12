@@ -7469,6 +7469,147 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 259. BASLIK BASLIK OLARAK OKUNUYOR -----------------------------
+   *
+   * Bu kez ONDE OLAN WEB. Web'de basliklar `<h1>`/`<h2>`/`<h3>`: ekran
+   * okuyucu kullanan biri "basliklara gore gez" ile ekrani atlaya atlaya
+   * okuyabiliyor - uzun bir oynatici ya da ayar ekraninda tek pratik gezinme
+   * yolu budur. Mobilde `accessibilityRole="header"` HIC KULLANILMAMISTI:
+   * olcum sifir cikti. TalkBack'in ayni kipi hicbir sey bulamiyordu, yani
+   * her ekran dumduz bir metin duvariydi.
+   *
+   * Dort ORTAK BASLIK BILESENI tek dokunusla butun ekranlari kapsiyor
+   * (`AppHeader`, `ScreenHeader`, `TabHeader`, `SectionTitle`) ve ayarlarin
+   * `Group` basligi. Geri kalan ekranlar basligini kendi yaziyor; onlar tek
+   * tek isaretlendi ve hangi metnin baslik oldugu WEB'IN KENDI `<h*>`
+   * ETIKETLERINDEN okundu - ayni i18n anahtari, ayni baslik.
+   *
+   * TEK MUAF EKRAN `FirstPractice`: webde de (`first-practice.tsx`) hicbir
+   * baslik yok ve dogrusu o - ekranda duran sey bir baslik degil, ogrenilen
+   * KELIMENIN kendisi. Muafiyetin kendisi de olculuyor: web o dosyaya bir
+   * baslik koyarsa kapi kirmizi olur. */
+  {
+    const walkTsx259 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx259(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    /* Ortak basliklar rolu VERIYOR - bunlar olmadan asagidaki sayim yaniltir. */
+    const ORTAK = [
+      ["uygulama basligi", "mobile/src/ui/AppHeader.tsx"],
+      ["ekran basligi", "mobile/src/social/common.tsx"],
+      ["ayar grubu", "mobile/src/screens/SettingsScreen.tsx"],
+    ];
+    sameList(
+      "ortak baslik bilesenleri rol veriyor",
+      ORTAK.map(([ad, y]) => ad + "=" + (/accessibilityRole="header"/.test(sil(read(y))) ? "baslik" : "ROL YOK")),
+      ORTAK.map(([ad]) => ad + "=baslik"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUAF: webde de basliksiz olan tek ekran. */
+    const MUAF = new Map([
+      ["mobile/src/screens/FirstPracticeScreen.tsx", "src/components/first-practice.tsx"],
+    ]);
+    const basliksiz = [];
+    for (const f of walkTsx259("mobile/src/screens")) {
+      const src = sil(read(f));
+      if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader)\b/.test(src)) continue;
+      if (MUAF.has(f)) continue;
+      basliksiz.push(f.split("/").pop());
+    }
+    /* Muafiyetin gerekcesi: web karsiliginda da baslik olmamali. */
+    for (const [m, w] of MUAF) {
+      if (!existsSync(new URL("../" + m, import.meta.url))) basliksiz.push(m + " (muaf ama dosya yok)");
+      else if (/<h[123]\b/.test(sil(read(w)))) basliksiz.push(m + " (muaf ama web artik baslik tasiyor)");
+    }
+    sameList(
+      "baslik rolu tasimayan ekran",
+      basliksiz.length ? basliksiz : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Esleştirmeli: webde baslik tasiyan her akis oynaticisinin mobil
+       kardesi de tasiyor. */
+    const AKIS = [
+      ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
+      ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
+      ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["deneme sinavi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
+      ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
+      ["patron", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
+      ["ders", "src/components/lessons/lesson-player.tsx", "mobile/src/screens/LessonScreen.tsx"],
+      ["beceri", "src/components/skills/player-shell.tsx", "mobile/src/screens/ItemScreen.tsx"],
+      ["birim sinavi", "src/components/immersion/quiz-player.tsx", "mobile/src/screens/QuizScreen.tsx"],
+    ];
+    sameList(
+      "akis oynaticilarinda baslik",
+      AKIS.map(([ad, , m]) => ad + "=" + (/accessibilityRole="header"/.test(sil(read(m))) ? "baslik" : "ROL YOK")),
+      AKIS.map(([ad, w]) => ad + "=" + (/<h[123]\b/.test(sil(read(w))) ? "baslik" : "ROL YOK")),
+      "mobil",
+      "web",
+    );
+
+    /*
+     * VE DOSYA DEGIL YUZEY. Ustteki olcu "bu oynaticida HIC baslik var mi"
+     * diye soruyor; bir dalin basligi rolunu kaybetse dosyada baskalari
+     * durdugu icin susardi (enjeksiyonla dogrulandi). Asagidaki olcu tek tek
+     * BASLIKLARI esliyor ve esleme WEB'IN KENDI `<h*>` ETIKETLERINDEN
+     * geliyor: webde bir `<h1|h2|h3>` icinde gecen her i18n anahtari, mobil
+     * kardesinde de BASLIK BOYUNDA bir metinde geciyorsa (`display`/`h1`/
+     * `h2`/`h3`) o metin `accessibilityRole="header"` demek zorunda.
+     *
+     * Baslik boyu sarti kasitli: ayni anahtar bir dugme etiketinde ya da
+     * yardim cumlesinde de gecebilir ve orada baslik olmasi YANLIS olurdu.
+     */
+    const webBaslikAnahtarlari = (y) => {
+      const src = sil(read(y));
+      const kume = new Set();
+      for (const m of src.matchAll(/<h[123][^>]*>([\s\S]{0,260}?)<\/h[123]>/g)) {
+        for (const k of m[1].matchAll(/"([a-z][\w]*(?:\.[\w]+)+)"/g)) kume.add(k[1]);
+      }
+      return kume;
+    };
+    const rolsuzBaslik = [];
+    for (const [ad, w, m] of AKIS) {
+      const mob = sil(read(m));
+      for (const anahtar of webBaslikAnahtarlari(w)) {
+        const isaret = '"' + anahtar + '"';
+        for (let j = mob.indexOf(isaret); j >= 0; j = mob.indexOf(isaret, j + 1)) {
+          const a2 = mob.lastIndexOf("<Text", j);
+          if (a2 < 0) continue;
+          const son = acilisSonu(mob.slice(a2));
+          if (son < 0) continue;
+          const etiket = mob.slice(a2, a2 + son + 1);
+          if (!/variant="(?:display|h1|h2|h3)"/.test(etiket)) continue;
+          if (/accessibilityRole="header"/.test(etiket)) continue;
+          /* Rol ATADA da olabilir: webde de dis etiket `<h2>`, ic etiket
+             yalniz `<span>`. Ic metnin kendi basina baslik olmasi YANLIS
+             olurdu. `atalarinda` ilk gecisi arar; onceki gecisler ayni
+             uzunlukta bir dolguyla susturuluyor ki konumlar kaymasin. */
+          const hazir = mob.slice(0, j).split(isaret).join("\u0000".repeat(isaret.length)) + mob.slice(j);
+          if (atalarinda(hazir, isaret, /accessibilityRole="header"/)) continue;
+          rolsuzBaslik.push(ad + ":" + anahtar);
+        }
+      }
+    }
+    sameList(
+      "web basligi mobilde de baslik",
+      rolsuzBaslik.length ? [...new Set(rolsuzBaslik)] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 258. SEKME SERIDI, BAGLANTI SERIDI DEGIL -----------------------
    *
    * 257'nin kasten disarida biraktigi eksen. Iki yuzey aynı ekranin
@@ -10879,11 +11020,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web patron=" + (/role="status"/.test(dalKoku(webPatron, 'if (status === "won" || status === "lost")')) ? "duyuruyor" : "SESSIZ"),
         "web meydan=" + kapDuyuruyor(webMeydan, 't("challenge.hit_rate")'),
         "web gunun=" + kapDuyuruyor(webGunun, 't("daily.best_streak")'),
-        "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite" variant="h2"/),
-        "mobil quiz=" + mobSonuc(mobQuiz, /accessibilityLiveRegion="polite" variant="h2"/),
+        /* DESENLER BITISIK IKI OZNITELIGI ARIYORDU ve aralarina ucuncu bir
+           oznitelik girince (bu turda `accessibilityRole="header"`) susuyordu -
+           §247'nin yasakladigi kirilgan kalibin ta kendisi. Hepsi "arada baska
+           oznitelik olabilir" bicimine getirildi (§11.382). */
+        "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"/),
+        "mobil quiz=" + mobSonuc(mobQuiz, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"/),
         "mobil patron=" + mobSonuc(mobPatron, /accessibilityLiveRegion="polite"[\s\S]{0,140}boss\.passed/),
-        "mobil meydan=" + mobSonuc(mobMeydan, /accessibilityLiveRegion="polite" variant="display"/),
-        "mobil gunun=" + mobSonuc(mobGunun, /accessibilityLiveRegion="polite" variant="display"/),
+        "mobil meydan=" + mobSonuc(mobMeydan, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="display"/),
+        "mobil gunun=" + mobSonuc(mobGunun, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="display"/),
         /* SONUC DALINDA MI, DOSYANIN HERHANGI BIR YERINDE MI? Bu dosyalarda
            ayni kart sinifi uc-bes kez geciyor (giris, hata, sonuc) ve yalniz
            "dosyada bir yerde role=status var" demek komsuyu olcmek olurdu:
@@ -10897,9 +11042,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web haftalik=" + (/role="status"/.test(dalKoku(webHaftalik, 'if (phase === "done" && result)')) ? "duyuruyor" : "SESSIZ"),
         "web deneme=" + dalDuyuruyor(webDeneme, "mockexam.result"),
         "web rol yapma=" + dalDuyuruyor(webRol, "rpexam.below_threshold"),
-        "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite" variant="h1"/),
-        "mobil deneme=" + mobSonuc(mobDeneme, /accessibilityLiveRegion="polite" variant="bodyStrong"/),
-        "mobil rol yapma=" + mobSonuc(mobRol, /accessibilityLiveRegion="polite" variant="h1"/),
+        "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"/),
+        "mobil deneme=" + mobSonuc(mobDeneme, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="bodyStrong"/),
+        /* Desen BITISIK iki ozniteligi ariyordu; aralarina `accessibilityRole="header"`
+           girince sustu (§11.382). Bicim degisikligi, gerileme degil - §247'nin
+           tanimladigi sinif. Arada baska oznitelik olabilir. */
+        "mobil rol yapma=" + mobSonuc(mobRol, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"/),
         /* SON UC YUZEY COK DURUMLU: sinav (tek sonuc; bolum gecisleri calisan
            fazin icinde bir KAPAK, ayri bir sonuc degil - ilk varsayim
            yanlisti ve olcum duzeltti), oturum (ETAP karti + BITIS karti, iki
@@ -10908,10 +11056,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web oturum etap=" + dalDuyuruyor(webOturum, "stage.clean"),
         "web oturum bitis=" + kapDuyuruyor(webOturum, 't("summary.accuracy")'),
         "web yuruyus=" + (/role="status"/.test(dalKoku(webYuruyus, 'if (status === "done")')) ? "duyuruyor" : "SESSIZ"),
-        "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite" variant="h1">\{formatPercent\(pct\)\}/),
-        "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h2"[\s\S]{0,80}stage\.clean/),
-        "mobil oturum bitis=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h1"[\s\S]{0,120}common\.round_done/),
-        "mobil yuruyus=" + mobSonuc(mobYuruyus, /accessibilityLiveRegion="polite" variant="h1"[\s\S]{0,140}walkmode\.done_title/),
+        "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1">\{formatPercent\(pct\)\}/),
+        "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"[\s\S]{0,80}stage\.clean/),
+        "mobil oturum bitis=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"[\s\S]{0,120}common\.round_done/),
+        "mobil yuruyus=" + mobSonuc(mobYuruyus, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"[\s\S]{0,140}walkmode\.done_title/),
       ],
       [
         "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
