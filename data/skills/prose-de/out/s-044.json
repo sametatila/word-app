@@ -1,0 +1,712 @@
+[
+ {
+  "tr": "İki yarık cümle ve iki ortaç.",
+  "kind": "intro",
+  "de": "Zwei Spaltsätze und zwei Partizipien."
+ },
+ {
+  "tr": "Mastarın zamanı ve iki çıkarım.",
+  "kind": "intro",
+  "de": "Die Zeitstufe des Infinitivs und zwei Schlüsse."
+ },
+ {
+  "tr": "„if“ düşüyor, yerine ne geliyor?",
+  "kind": "intro",
+  "de": "„if“ fällt weg — was tritt an seine Stelle?"
+ },
+ {
+  "tr": "Üç tetikleyici ve iki yarık cümle.",
+  "kind": "intro",
+  "de": "Drei Auslöser und zwei Spaltsätze."
+ },
+ {
+  "tr": "„if“siz koşul ve mastarın kendi zamanı.",
+  "kind": "intro",
+  "de": "Die Bedingung ohne „if“ und die eigene Zeitstufe des Infinitivs."
+ },
+ {
+  "tr": "Yarık cümle bir memoda. Kaç tane yeter?",
+  "kind": "intro",
+  "de": "Der Spaltsatz in einer Notiz. Wie viele genügen?"
+ },
+ {
+  "tr": "İki sözcük işi geriye taşıyor. Hangileri?",
+  "kind": "intro",
+  "de": "Zwei Wörter schieben die Handlung zurück. Welche?"
+ },
+ {
+  "tr": "Kaynağı söylemeyen üç manşet ve bir çekince.",
+  "kind": "intro",
+  "de": "Drei Schlagzeilen ohne Quelle und eine Absicherung."
+ },
+ {
+  "tr": "On bir satırlık özet. Ortaç ne kazandırıyor?",
+  "kind": "intro",
+  "de": "Eine Zusammenfassung aus elf Zeilen. Was bringt das Partizip?"
+ },
+ {
+  "tr": "Dört sözcüklük fiil. Başka bir sırası var mı?",
+  "kind": "intro",
+  "de": "Ein Verb aus vier Wörtern. Gibt es eine andere Reihenfolge?"
+ },
+ {
+  "tr": "Düzeltmenin üç işi. Hangisini kimse atlamıyor?",
+  "kind": "intro",
+  "de": "Die drei Aufgaben einer Richtigstellung. Welche überliest niemand?"
+ },
+ {
+  "tr": "Bir bulgu cümlesi. Virgüller neyi değiştiriyor?",
+  "kind": "intro",
+  "de": "Ein Satz mit einem Befund. Was ändern die Kommas?"
+ },
+ {
+  "tr": "Aynı paragrafta iki tür ilgi cümlesi. Ayıran ne?",
+  "kind": "intro",
+  "de": "Zwei Arten von Relativsätzen im selben Absatz. Was trennt sie?"
+ },
+ {
+  "tr": "Üç manşet. Üçüncüsü ötekilerden nerede ayrılıyor?",
+  "kind": "intro",
+  "de": "Drei Schlagzeilen. Worin unterscheidet sich die dritte?"
+ },
+ {
+  "tr": "Üç tetikleyici, tek kural. Olumsuz nerede duruyor?",
+  "kind": "intro",
+  "de": "Drei Auslöser, eine Regel. Wo steht die Verneinung?"
+ },
+ {
+  "tr": "Zamanı hangi sözcük taşıyor? Ve ne zaman söylüyor?",
+  "kind": "intro",
+  "de": "Welches Wort trägt die Zeitstufe? Und wann sagt es sie?"
+ },
+ {
+  "tr": "Başyazıda kaç yarık cümle? Ve neden anma yazısında hiç?",
+  "kind": "intro",
+  "de": "Wie viele Spaltsätze im Leitartikel? Und warum keiner im Nachruf?"
+ },
+ {
+  "tr": "Üç örnek, en sonda tek kural.",
+  "kind": "explain",
+  "de": "Drei Beispiele, am Ende eine einzige Regel."
+ },
+ {
+  "tr": "„It means „if it happens to“…“",
+  "kind": "explain",
+  "de": "„It means „if it happens to“…“"
+ },
+ {
+  "tr": "„„only“ makes it a restriction…“",
+  "kind": "explain",
+  "de": "„„only“ makes it a restriction…“"
+ },
+ {
+  "tr": "„buries the „not“ in the middle…“",
+  "kind": "explain",
+  "de": "„buries the „not“ in the middle…“"
+ },
+ {
+  "tr": "„The myth can't have started here.“",
+  "kind": "explain",
+  "de": "„The myth can't have started here.“"
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: edilgen ortaç.",
+  "kind": "explain",
+  "de": "Beginnt mit der dritten Form: ein passives Partizip."
+ },
+ {
+  "tr": "„„It is claimed that“ is the long route…“",
+  "kind": "explain",
+  "de": "„„It is claimed that“ is the long route…“"
+ },
+ {
+  "tr": "„The finished part is carried by „have“.“",
+  "kind": "explain",
+  "de": "„The finished part is carried by „have“.“"
+ },
+ {
+  "tr": "Kip, „have“, „been“, üçüncü hâl. Tek sıra.",
+  "kind": "explain",
+  "de": "Modalverb, „have“, „been“, dritte Form. Nur eine Reihenfolge."
+ },
+ {
+  "tr": "„„The rule we refer to“, and it is correct.“",
+  "kind": "explain",
+  "de": "„„The rule we refer to“, and it is correct.“"
+ },
+ {
+  "tr": "Yarık cümle bir yokluğu da adlandırabiliyor.",
+  "kind": "explain",
+  "de": "Der Spaltsatz kann auch ein Fehlen benennen."
+ },
+ {
+  "tr": "„The preposition has gone in front of „which“…“",
+  "kind": "explain",
+  "de": "„The preposition has gone in front of „which“…“"
+ },
+ {
+  "tr": "„„to have been“ puts the calibrating before it.“",
+  "kind": "explain",
+  "de": "„„to have been“ puts the calibrating before it.“"
+ },
+ {
+  "tr": "„The maintenance can't have been done last week.“",
+  "kind": "explain",
+  "de": "„The maintenance can't have been done last week.“"
+ },
+ {
+  "tr": "Mastar, tek sözcük, iki çekince, en sonda bedeli.",
+  "kind": "explain",
+  "de": "Infinitiv, ein einzelnes Wort, zwei Absicherungen, am Ende der Preis."
+ },
+ {
+  "tr": "„had“, „were“, „should“, en sonda sınırın kendisi.",
+  "kind": "explain",
+  "de": "„had“, „were“, „should“, am Ende die Grenze selbst."
+ },
+ {
+  "tr": "Işık isme düşüyor, gerisi „that“ın arkasına gidiyor.",
+  "kind": "explain",
+  "de": "Das Licht fällt auf das Substantiv, der Rest geht hinter „that“."
+ },
+ {
+  "tr": "Mastarın kendi zamanı var: iş görünmeden önce olmuş.",
+  "kind": "explain",
+  "de": "Der Infinitiv hat eine eigene Zeitstufe: die Handlung liegt vor dem Anschein."
+ },
+ {
+  "tr": "„„The update caused the disruption“ claims to know who.“",
+  "kind": "explain",
+  "de": "„„The update caused the disruption“ claims to know who.“"
+ },
+ {
+  "tr": "„„Must have been“ is the conclusion, not the accusation.“",
+  "kind": "explain",
+  "de": "„„Must have been“ is the conclusion, not the accusation.“"
+ },
+ {
+  "tr": "Kanıt, dışarıda bıraktığı, kendi payımız, en sonda yargı.",
+  "kind": "explain",
+  "de": "Der Beleg, das Ausgeschlossene, der eigene Anteil, am Ende das Urteil."
+ },
+ {
+  "tr": "Uzun yol, kısa yol, geçmişe bakan mastar, en sonda kural.",
+  "kind": "explain",
+  "de": "Langer Weg, kurzer Weg, der rückblickende Infinitiv, am Ende die Regel."
+ },
+ {
+  "tr": "Virgüller cümleciği fazladan yapıyor; tek bir muhabir var.",
+  "kind": "explain",
+  "de": "Die Kommas machen den Teilsatz zur Zugabe; es gibt nur eine Reporterin."
+ },
+ {
+  "tr": "„„From one angle“ names a standpoint and can be argued with.“",
+  "kind": "explain",
+  "de": "„„From one angle“ names a standpoint and can be argued with.“"
+ },
+ {
+  "tr": "Virgüller cümleciği fazladan yapıyor; tek bir algılayıcı var.",
+  "kind": "explain",
+  "de": "Die Kommas machen den Teilsatz zur Zugabe; es gibt nur einen Sensor."
+ },
+ {
+  "tr": "„„Arguably“. „From one perspective“ names the standpoint, which is information.“",
+  "kind": "explain",
+  "de": "„„Arguably“. „From one perspective“ names the standpoint, which is information.“"
+ },
+ {
+  "tr": "„There is no negative short form: „hadn't the factor been known“ is not written.“",
+  "kind": "explain",
+  "de": "„There is no negative short form: „hadn't the factor been known“ is not written.“"
+ },
+ {
+  "tr": "„English decides at „have“ and lets the rest of the sentence arrive on top of a settled frame.“",
+  "kind": "explain",
+  "de": "„English decides at „have“ and lets the rest of the sentence arrive on top of a settled frame.“"
+ },
+ {
+  "tr": "çekince",
+  "kind": "gloss.tr",
+  "de": "Absicherung"
+ },
+ {
+  "tr": "duruş noktası",
+  "kind": "gloss.tr",
+  "de": "Standpunkt"
+ },
+ {
+  "tr": "kötü",
+  "kind": "gloss.tr",
+  "de": "schlecht"
+ },
+ {
+  "tr": "kule",
+  "kind": "gloss.tr",
+  "de": "Turm"
+ },
+ {
+  "tr": "özen",
+  "kind": "gloss.tr",
+  "de": "Sorgfalt"
+ },
+ {
+  "tr": "site",
+  "kind": "gloss.tr",
+  "de": "Website"
+ },
+ {
+  "tr": "yazı",
+  "kind": "gloss.tr",
+  "de": "Beitrag"
+ },
+ {
+  "tr": "ayrım",
+  "kind": "gloss.tr",
+  "de": "Unterscheidung"
+ },
+ {
+  "tr": "bölen",
+  "kind": "gloss.tr",
+  "de": "teilend"
+ },
+ {
+  "tr": "etken",
+  "kind": "gloss.tr",
+  "de": "Faktor"
+ },
+ {
+  "tr": "titiz",
+  "kind": "gloss.tr",
+  "de": "gründlich"
+ },
+ {
+  "tr": "arayla",
+  "kind": "gloss.tr",
+  "de": "Abstand"
+ },
+ {
+  "tr": "birden",
+  "kind": "gloss.tr",
+  "de": "plötzlich"
+ },
+ {
+  "tr": "kurmak",
+  "kind": "gloss.tr",
+  "de": "bauen"
+ },
+ {
+  "tr": "meslek",
+  "kind": "gloss.tr",
+  "de": "Branche"
+ },
+ {
+  "tr": "saymak",
+  "kind": "gloss.tr",
+  "de": "zählen"
+ },
+ {
+  "tr": "alınmış",
+  "kind": "gloss.tr",
+  "de": "entnommen"
+ },
+ {
+  "tr": "çerçeve",
+  "kind": "gloss.tr",
+  "de": "Rahmen"
+ },
+ {
+  "tr": "çökerdi",
+  "kind": "gloss.tr",
+  "de": "wäre gescheitert"
+ },
+ {
+  "tr": "diziliş",
+  "kind": "gloss.tr",
+  "de": "Anordnung"
+ },
+ {
+  "tr": "düzenek",
+  "kind": "gloss.tr",
+  "de": "Apparat"
+ },
+ {
+  "tr": "istisna",
+  "kind": "gloss.tr",
+  "de": "Ausnahme"
+ },
+ {
+  "tr": "kısalık",
+  "kind": "gloss.tr",
+  "de": "Kürze"
+ },
+ {
+  "tr": "olur da",
+  "kind": "gloss.tr",
+  "de": "falls es dazu kommt"
+ },
+ {
+  "tr": "özensiz",
+  "kind": "gloss.tr",
+  "de": "nachlässig"
+ },
+ {
+  "tr": "savunma",
+  "kind": "gloss.tr",
+  "de": "Rechtfertigung"
+ },
+ {
+  "tr": "serbest",
+  "kind": "gloss.tr",
+  "de": "frei"
+ },
+ {
+  "tr": "ulaşmak",
+  "kind": "gloss.tr",
+  "de": "gelangen"
+ },
+ {
+  "tr": "en kibar",
+  "kind": "gloss.tr",
+  "de": "am höflichsten"
+ },
+ {
+  "tr": "erkenden",
+  "kind": "gloss.tr",
+  "de": "früh"
+ },
+ {
+  "tr": "fotokopi",
+  "kind": "gloss.tr",
+  "de": "Fotokopie"
+ },
+ {
+  "tr": "harcamak",
+  "kind": "gloss.tr",
+  "de": "aufwenden"
+ },
+ {
+  "tr": "inanıyor",
+  "kind": "gloss.tr",
+  "de": "glaubt"
+ },
+ {
+  "tr": "üretiyor",
+  "kind": "gloss.tr",
+  "de": "bringt hervor"
+ },
+ {
+  "tr": "yapışmak",
+  "kind": "gloss.tr",
+  "de": "haften"
+ },
+ {
+  "tr": "bir yaşam",
+  "kind": "gloss.tr",
+  "de": "ein Leben"
+ },
+ {
+  "tr": "bitiriyor",
+  "kind": "gloss.tr",
+  "de": "liest zu Ende"
+ },
+ {
+  "tr": "diretiyor",
+  "kind": "gloss.tr",
+  "de": "beharrt"
+ },
+ {
+  "tr": "gerekirdi",
+  "kind": "gloss.tr",
+  "de": "hätten sollen"
+ },
+ {
+  "tr": "hayli çok",
+  "kind": "gloss.tr",
+  "de": "ziemlich viel"
+ },
+ {
+  "tr": "indiriyor",
+  "kind": "gloss.tr",
+  "de": "senkt"
+ },
+ {
+  "tr": "noktalama",
+  "kind": "gloss.tr",
+  "de": "Zeichensetzung"
+ },
+ {
+  "tr": "tartılmış",
+  "kind": "gloss.tr",
+  "de": "abgewogen"
+ },
+ {
+  "tr": "virgüller",
+  "kind": "gloss.tr",
+  "de": "Kommas"
+ },
+ {
+  "tr": "yerleşmiş",
+  "kind": "gloss.tr",
+  "de": "gefestigt"
+ },
+ {
+  "tr": "yükseklik",
+  "kind": "gloss.tr",
+  "de": "Lautstärke"
+ },
+ {
+  "tr": "acele eden",
+  "kind": "gloss.tr",
+  "de": "in Eile"
+ },
+ {
+  "tr": "aralarında",
+  "kind": "gloss.tr",
+  "de": "dazwischen"
+ },
+ {
+  "tr": "ayrı tutan",
+  "kind": "gloss.tr",
+  "de": "auseinanderhaltend"
+ },
+ {
+  "tr": "betimleyen",
+  "kind": "gloss.tr",
+  "de": "beschreibend"
+ },
+ {
+  "tr": "çıkarılmış",
+  "kind": "gloss.tr",
+  "de": "gezogen"
+ },
+ {
+  "tr": "daha zayıf",
+  "kind": "gloss.tr",
+  "de": "schwächer"
+ },
+ {
+  "tr": "denetlenen",
+  "kind": "gloss.tr",
+  "de": "geprüft"
+ },
+ {
+  "tr": "düzenlenen",
+  "kind": "gloss.tr",
+  "de": "geregelt"
+ },
+ {
+  "tr": "ekonomiydi",
+  "kind": "gloss.tr",
+  "de": "war die Wirtschaft"
+ },
+ {
+  "tr": "ele alınan",
+  "kind": "gloss.tr",
+  "de": "behandelt"
+ },
+ {
+  "tr": "kısa biçim",
+  "kind": "gloss.tr",
+  "de": "Kurzform"
+ },
+ {
+  "tr": "savunulmuş",
+  "kind": "gloss.tr",
+  "de": "erstritten"
+ },
+ {
+  "tr": "soruşturma",
+  "kind": "gloss.tr",
+  "de": "Untersuchung"
+ },
+ {
+  "tr": "değişen şey",
+  "kind": "gloss.tr",
+  "de": "was geändert wurde"
+ },
+ {
+  "tr": "hoşlanmamak",
+  "kind": "gloss.tr",
+  "de": "nicht mögen"
+ },
+ {
+  "tr": "işaretleyen",
+  "kind": "gloss.tr",
+  "de": "markierend"
+ },
+ {
+  "tr": "izin vermek",
+  "kind": "gloss.tr",
+  "de": "zulassen"
+ },
+ {
+  "tr": "olduğu gibi",
+  "kind": "gloss.tr",
+  "de": "für bare Münze"
+ },
+ {
+  "tr": "sahiplenmek",
+  "kind": "gloss.tr",
+  "de": "sich zu eigen machen"
+ },
+ {
+  "tr": "sıkıştırmak",
+  "kind": "gloss.tr",
+  "de": "verdichten"
+ },
+ {
+  "tr": "tetikleyici",
+  "kind": "gloss.tr",
+  "de": "Auslöser"
+ },
+ {
+  "tr": "alıntılanmış",
+  "kind": "gloss.tr",
+  "de": "zitiert"
+ },
+ {
+  "tr": "gözden kaçma",
+  "kind": "gloss.tr",
+  "de": "Versehen"
+ },
+ {
+  "tr": "izi sürülmüş",
+  "kind": "gloss.tr",
+  "de": "zurückverfolgt"
+ },
+ {
+  "tr": "karşı koymak",
+  "kind": "gloss.tr",
+  "de": "sich sträuben"
+ },
+ {
+  "tr": "kötü biçimde",
+  "kind": "gloss.tr",
+  "de": "schlecht"
+ },
+ {
+  "tr": "yayımlandığı",
+  "kind": "gloss.tr",
+  "de": "gesendet worden"
+ },
+ {
+  "tr": "birinci tekil",
+  "kind": "gloss.tr",
+  "de": "erste Person"
+ },
+ {
+  "tr": "doğrulanmamış",
+  "kind": "gloss.tr",
+  "de": "unbestätigt"
+ },
+ {
+  "tr": "gözle görülür",
+  "kind": "gloss.tr",
+  "de": "sichtbar"
+ },
+ {
+  "tr": "haber merkezi",
+  "kind": "gloss.tr",
+  "de": "Redaktion"
+ },
+ {
+  "tr": "öteki seçenek",
+  "kind": "gloss.tr",
+  "de": "die andere Möglichkeit"
+ },
+ {
+  "tr": "yerini alıyor",
+  "kind": "gloss.tr",
+  "de": "ersetzt"
+ },
+ {
+  "tr": "zaman aralığı",
+  "kind": "gloss.tr",
+  "de": "Zeitabstand"
+ },
+ {
+  "tr": "bozulma biçimi",
+  "kind": "gloss.tr",
+  "de": "Fehlerbild"
+ },
+ {
+  "tr": "geri çeviriyor",
+  "kind": "gloss.tr",
+  "de": "lehnt ab"
+ },
+ {
+  "tr": "güven derecesi",
+  "kind": "gloss.tr",
+  "de": "Sicherheitsgrad"
+ },
+ {
+  "tr": "ortaya çıkıyor",
+  "kind": "gloss.tr",
+  "de": "taucht auf"
+ },
+ {
+  "tr": "başlamış olamaz",
+  "kind": "gloss.tr",
+  "de": "kann nicht angefangen haben"
+ },
+ {
+  "tr": "karşılık gelmek",
+  "kind": "gloss.tr",
+  "de": "entsprechen"
+ },
+ {
+  "tr": "okuduktan sonra",
+  "kind": "gloss.tr",
+  "de": "nach dem Lesen"
+ },
+ {
+  "tr": "yapılmış olamaz",
+  "kind": "gloss.tr",
+  "de": "kann nicht gemacht worden sein"
+ },
+ {
+  "tr": "etken bilinseydi",
+  "kind": "gloss.tr",
+  "de": "wäre der Faktor bekannt gewesen"
+ },
+ {
+  "tr": "kısa olduğu için",
+  "kind": "gloss.tr",
+  "de": "weil er kurz war"
+ },
+ {
+  "tr": "yol açmış olmalı",
+  "kind": "gloss.tr",
+  "de": "muss verursacht worden sein"
+ },
+ {
+  "tr": "dışarıda bırakıyor",
+  "kind": "gloss.tr",
+  "de": "schließt aus"
+ },
+ {
+  "tr": "gazetenin savunduğu",
+  "kind": "gloss.tr",
+  "de": "wofür die Zeitung eintritt"
+ },
+ {
+  "tr": "indirmesi gerekirdi",
+  "kind": "gloss.tr",
+  "de": "hätte senken sollen"
+ },
+ {
+  "tr": "üst üste bindirilmiş",
+  "kind": "gloss.tr",
+  "de": "übereinandergelegt"
+ },
+ {
+  "tr": "gösterdiği söyleniyor",
+  "kind": "gloss.tr",
+  "de": "sollen zeigen"
+ },
+ {
+  "tr": "değişken sabitlenseydi",
+  "kind": "gloss.tr",
+  "de": "wäre die Variable festgelegt gewesen"
+ }
+]

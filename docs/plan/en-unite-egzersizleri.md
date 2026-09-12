@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
-| B2 | 7–25 | bekliyor |
+| B2 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
+| B2 | 10–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -991,6 +991,50 @@ başlayamıyor — „performment“ ve „deviatement“ için yazılan
 şıkkına konan uydurma biçim („performation“) havuzda olmadığı için
 ölçümü bozuyor ve sözlükçeyle kapatılamıyor (metinde geçmiyor) — şık
 gerçek bir sözcükle değiştirildi.
+
+
+**B2 ünite 7–9 (2026-09-12).** Ünite 7 Which was checked in May ·
+What was changed · Nowhere is it written · It must have been moved;
+ünite 8 Had it been checked · It seems to have been · Reading a headline ·
+Quoting a source; ünite 9 The correction · A press summary ·
+What the paper argues · Checking a claim. On sekiz egzersiz; ünite dışı
+ölçüm %0,0. B2 yuvalarının 54'ü dolu.
+
+Ünite 7'nin noktası KİPLİ EDİLGENİN GEÇMİŞE DÖNÜK HÂLİ: „The disruption
+must have been caused by the update“ — dört sözcük, tek sıra, hiçbir
+öğesi yerinden oynamıyor. Almanca eksende bu satır AYNI ÖĞELERİ TERS
+SIRADA diziyor: „muss verursacht worden sein“ — kip başta kalıyor ama
+„worden“ ile „sein“ sona gidiyor ve aralarındaki sıra İngilizcenin tam
+tersi. Yani sözcük sözcük çeviren Almanca okuyan doğru parçaları yanlış
+dizilişte üretiyor; hattın bugüne kadar gördüğü „aynı şey ama başka
+biçimde“ satırlarından farkı, burada biçimlerin AYNI olması ve yalnız
+sıranın ayrılması.
+
+Ünite 8'in noktası „IF“SİZ KOŞUL: devrik sıra burada olumsuzluk ya da
+sınırlama değil, KOŞUL işaretliyor („Had the factor been known, …“).
+Yalnız üç fiil bunu yapabiliyor — „had“, „were“, „should“ — ve olumsuzun
+kısa biçimi yok. Almanca eksende bu bir PARİTE, ama DİL DÜZEYİ farklı:
+Almanca „Wäre der Faktor bekannt gewesen, …“ biçimini günlük dilde de
+kuruyor, İngilizcede ise bu kalıp resmî ve seyrek. Yani Almanca okuyanın
+refleksi doğru biçimi üretiyor ama yanlış sıklıkta — ünite 3'teki „fazla
+çalışan refleks“ uyarısının ikinci örneği, bu kez dilbilgisinde değil
+kullanım sıklığında.
+
+Ünite 9'un noktası MASTARIN KENDİ ZAMANI VAR: „It seems to have been
+taken from a database“ — zamanı ne „seems“ ne „taken“ taşıyor, iki
+sözcük („have been“) işi görmenin önüne atıyor. Almanca eksende buradaki
+fark bir YAPIŞMA farkı değil, ZAMANLAMA farkı: İngilizce zaman
+çerçevesini cümlenin ERKENİNDE kuruyor („have“de), Almanca ise ortacı ve
+yardımcı fiili SONA sakladığı için okur çerçeveyi ancak son sözcükte
+tamamlıyor („scheint … entnommen worden zu sein“). İki dil de aynı şeyi
+söylüyor; ayrıldıkları yer bilginin ne zaman geldiği.
+
+Ölçüm bu turda doksan sözlükçe maddesi ekletti, dokuz maddeyi sildirdi ve
+bir dinleme bölümünü ikiye ayırttırdı (40 kelime sınırı). İki içerik
+düzeltmesi de geldi: „movement“ ünite 9'un dersinde geçtiği için ünite
+7'nin metninden çıkarıldı, ve „fact-check“ tireli terim olarak
+kapanmadığı için „a check of this kind“ diye yazıldı — ünite 4'te
+„post-mortem“le konan kural ikinci kez çalıştı.
 
 
 ## Tamamlanma ölçütü

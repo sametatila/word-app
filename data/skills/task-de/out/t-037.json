@@ -1,0 +1,277 @@
+[
+ {
+  "tr": "Aksama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Störungskarte aus."
+ },
+ {
+  "tr": "Doğrulama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Prüfkarte aus."
+ },
+ {
+  "tr": "Aksamanın nedeni güncelleme; bakım geçen hafta yapılmadı; basınç indirilmeliydi; sıra hiç değişmiyor.",
+  "kind": "form.facts",
+  "de": "Ursache der Störung ist das Update; die Wartung wurde letzte Woche nicht gemacht; der Druck hätte gesenkt werden sollen; die Reihenfolge ändert sich nie."
+ },
+ {
+  "tr": "„if“ düşünce „had“ öne geçiyor; üç fiil bunu yapabiliyor; olumsuzun kısa biçimi yok; dil düzeyi resmî.",
+  "kind": "form.facts",
+  "de": "Fällt „if“ weg, rückt „had“ nach vorn; drei Verben können das; für die Verneinung gibt es keine Kurzform; die Sprachebene ist förmlich."
+ },
+ {
+  "tr": "Zamanı „have“ taşıyor; „apparently“ kaynağı başka yere koyuyor; yanlılık baştan vardı; efsane burada başlamadı.",
+  "kind": "form.facts",
+  "de": "Die Zeitstufe trägt „have“; „apparently“ legt die Quelle woandershin; die Voreingenommenheit war von Anfang an da; der Mythos begann nicht hier."
+ },
+ {
+  "tr": "Değişen şey kayıt satırı.",
+  "kind": "build.tr",
+  "de": "Was geändert wurde, ist der Eintrag."
+ },
+ {
+  "tr": "Başarısız olan envanterdi.",
+  "kind": "build.tr",
+  "de": "Es war die Bestandsliste, die versagte."
+ },
+ {
+  "tr": "Etken bilinseydi dururduk.",
+  "kind": "build.tr",
+  "de": "Wäre der Faktor bekannt gewesen, hätten wir aufgehört."
+ },
+ {
+  "tr": "Oyu belirleyen ekonomiydi.",
+  "kind": "build.tr",
+  "de": "Es war die Wirtschaft, die die Abstimmung entschied."
+ },
+ {
+  "tr": "Efsane burada başlamış olamaz.",
+  "kind": "build.tr",
+  "de": "Der Mythos kann hier nicht angefangen haben."
+ },
+ {
+  "tr": "Geçen ay ayarlanmış görünüyor.",
+  "kind": "build.tr",
+  "de": "Es scheint letzten Monat kalibriert worden zu sein."
+ },
+ {
+  "tr": "Eksik olan mağdurun kendi sesi.",
+  "kind": "build.tr",
+  "de": "Was fehlt, ist die eigene Stimme des Opfers."
+ },
+ {
+  "tr": "Bakım geçen hafta yapılmış olamaz.",
+  "kind": "build.tr",
+  "de": "Die Wartung kann letzte Woche nicht gemacht worden sein."
+ },
+ {
+  "tr": "Alıntıyı denetleyen muhabir yeniydi.",
+  "kind": "build.tr",
+  "de": "Die Reporterin, die das Zitat prüfte, war neu."
+ },
+ {
+  "tr": "Birinin basıncı indirmesi gerekirdi.",
+  "kind": "build.tr",
+  "de": "Jemand hätte den Druck senken sollen."
+ },
+ {
+  "tr": "Aksamaya güncelleme yol açmış olmalı.",
+  "kind": "build.tr",
+  "de": "Die Störung muss durch das Update verursacht worden sein."
+ },
+ {
+  "tr": "Öncül yanlış olsaydı çıkarım çökerdi.",
+  "kind": "build.tr",
+  "de": "Wäre die Prämisse falsch gewesen, wäre der Schluss gescheitert."
+ },
+ {
+  "tr": "Yanlılık en baştan beri orada olmalı.",
+  "kind": "build.tr",
+  "de": "Die Voreingenommenheit muss von Anfang an da gewesen sein."
+ },
+ {
+  "tr": "Bir veri tabanından alınmış görünüyor.",
+  "kind": "build.tr",
+  "de": "Es scheint einer Datenbank entnommen worden zu sein."
+ },
+ {
+  "tr": "Başyazıyı okuduktan sonra özeti yazdık.",
+  "kind": "build.tr",
+  "de": "Nach dem Lesen des Leitartikels schrieben wir die Zusammenfassung."
+ },
+ {
+  "tr": "Cıvatanın iki kez sıkıldığı anlaşılıyor.",
+  "kind": "build.tr",
+  "de": "Anscheinend wurde die Schraube zweimal angezogen."
+ },
+ {
+  "tr": "Ancak kesintiden sonra harekete geçtiler.",
+  "kind": "build.tr",
+  "de": "Erst nach dem Ausfall handelten sie."
+ },
+ {
+  "tr": "Bir tedbir nadiren bu kadar yararlı oldu.",
+  "kind": "build.tr",
+  "de": "Selten war eine Vorsichtsmaßnahme so nützlich."
+ },
+ {
+  "tr": "Haberin iki kez yayımlandığı düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Die Meldung soll zweimal gesendet worden sein."
+ },
+ {
+  "tr": "Mayısta denetlenen algılayıcı arızalandı.",
+  "kind": "build.tr",
+  "de": "Der Sensor, der im Mai geprüft wurde, fiel aus."
+ },
+ {
+  "tr": "Yayın organının yanıldığı ileri sürülüyor.",
+  "kind": "build.tr",
+  "de": "Es wird behauptet, dass das Medium im Unrecht war."
+ },
+ {
+  "tr": "Gazetenin savunduğu şey hesap verebilirlik.",
+  "kind": "build.tr",
+  "de": "Wofür die Zeitung eintritt, ist Rechenschaft."
+ },
+ {
+  "tr": "Kısa olduğu için protestoya az yer verildi.",
+  "kind": "build.tr",
+  "de": "Da er kurz war, bekam der Protest wenig Platz."
+ },
+ {
+  "tr": "Değişken sabitlenseydi sonuç şimdi açık olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre die Variable festgelegt gewesen, wäre das Ergebnis jetzt klar."
+ },
+ {
+  "tr": "Yöntem düzeninin hiç yayımlanmadığı anlaşılıyor.",
+  "kind": "build.tr",
+  "de": "Anscheinend wurde die Methodik nie veröffentlicht."
+ },
+ {
+  "tr": "Rakamların tirajda bir düşüş gösterdiği söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Zahlen sollen einen Rückgang der Auflage zeigen."
+ },
+ {
+  "tr": "Güvence önleminin isteğe bağlı olduğu hiçbir yerde yazmıyor.",
+  "kind": "build.tr",
+  "de": "Nirgends steht geschrieben, dass eine Absicherung freiwillig ist."
+ },
+ {
+  "tr": "Virgüller cümleciği fazladan yapıyor.",
+  "kind": "build.hint",
+  "de": "Die Kommas machen den Teilsatz zur Zugabe."
+ },
+ {
+  "tr": "Karışık koşul, üstelik „if“siz.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung, und dazu ohne „if“."
+ },
+ {
+  "tr": "Tam biçim; kısa biçimin olumsuzu yok.",
+  "kind": "build.hint",
+  "de": "Die volle Form; die Kurzform hat keine Verneinung."
+ },
+ {
+  "tr": "Bildiriyor ve aynı anda geri çekiliyor.",
+  "kind": "build.hint",
+  "de": "Es berichtet und tritt zugleich zurück."
+ },
+ {
+  "tr": "„if“ düşüyor, „had“ öznenin önüne geçiyor.",
+  "kind": "build.hint",
+  "de": "„if“ fällt weg, „had“ rückt vor das Subjekt."
+ },
+ {
+  "tr": "Etken ve kısa: yargı, kanıt okuması değil.",
+  "kind": "build.hint",
+  "de": "Aktiv und kurz: ein Urteil, keine Lesart des Belegs."
+ },
+ {
+  "tr": "Mastarın kendi zamanı var: „to have been“.",
+  "kind": "build.hint",
+  "de": "Der Infinitiv hat eine eigene Zeitstufe: „to have been“."
+ },
+ {
+  "tr": "Taşınacak yardımcı fiil yoksa „did“ geliyor.",
+  "kind": "build.hint",
+  "de": "Fehlt ein Hilfsverb zum Umstellen, kommt „did“."
+ },
+ {
+  "tr": "Yarık cümle bir yokluğu da adlandırabiliyor.",
+  "kind": "build.hint",
+  "de": "Der Spaltsatz kann auch ein Fehlen benennen."
+ },
+ {
+  "tr": "Olumsuz zarf başta; „is“ özneden öne geçiyor.",
+  "kind": "build.hint",
+  "de": "Verneinendes Adverb vorn; „is“ rückt vor das Subjekt."
+ },
+ {
+  "tr": "Tek sözcük hem bildiriyor hem geri çekiliyor.",
+  "kind": "build.hint",
+  "de": "Ein einziges Wort berichtet und tritt zugleich zurück."
+ },
+ {
+  "tr": "Mastar geçmişe bakıyor: iş düşünmeden önce olmuş.",
+  "kind": "build.hint",
+  "de": "Der Infinitiv blickt zurück: die Handlung liegt vor dem Denken."
+ },
+ {
+  "tr": "Kısa yol: özne öne çıkıyor, mastar geriye kalıyor.",
+  "kind": "build.hint",
+  "de": "Kurzer Weg: das Subjekt tritt vor, der Infinitiv bleibt zurück."
+ },
+ {
+  "tr": "„has“ özneyi atlıyor, fiilin gerisi yerinde kalıyor.",
+  "kind": "build.hint",
+  "de": "„has“ überspringt das Subjekt, der Rest des Verbs bleibt stehen."
+ },
+ {
+  "tr": "Dört sözcük, tek sıra: must, have, been, üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Vier Wörter, eine Reihenfolge: must, have, been, dritte Form."
+ },
+ {
+  "tr": "Mastarın kendi zamanı var: iş görünmeden önce olmuş.",
+  "kind": "build.hint",
+  "de": "Der Infinitiv hat eine eigene Zeitstufe: die Handlung liegt vor dem Anschein."
+ },
+ {
+  "tr": "Olumsuz çıkarım ve edilgen üst üste; sıra yine aynı.",
+  "kind": "build.hint",
+  "de": "Verneinter Schluss und Passiv übereinander; die Reihenfolge bleibt."
+ },
+ {
+  "tr": "Fiilin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Verbs: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç fiilin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Verben: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Düzeltmenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Richtigstellung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Manşetlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Schlagzeilen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Denetlemenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç tetikleyicinin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Auslöser: bring sie in die richtige Ordnung."
+ }
+]

@@ -5,6 +5,9 @@ import { enB2U03 } from "./en-b2-u03";
 import { enB2U04 } from "./en-b2-u04";
 import { enB2U05 } from "./en-b2-u05";
 import { enB2U06 } from "./en-b2-u06";
+import { enB2U07 } from "./en-b2-u07";
+import { enB2U08 } from "./en-b2-u08";
+import { enB2U09 } from "./en-b2-u09";
 
 /**
  * EN · B2 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
@@ -21,4 +24,7 @@ export const enB2: SkillExercise[] = [
   ...enB2U04,
   ...enB2U05,
   ...enB2U06,
+  ...enB2U07,
+  ...enB2U08,
+  ...enB2U09,
 ];
