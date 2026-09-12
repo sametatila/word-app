@@ -7480,6 +7480,89 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 270. OYNATMA BUTCESI DE KAYDEDILIYOR --------------------------
+   *
+   * 269'un kardesi ve ayni sinif: SINAVIN KISITI yarim kalan kosuda
+   * korunmali.
+   *
+   * Dinleme gorevinin kagitta yazili bir oynatma butcesi var (`st.plays`,
+   * cogu maddede bir ya da iki) ve iki taraf da onu dogru uyguluyordu -
+   * AMA butce yalniz EKRANIN BELLEGINDE tutuluyordu. Ogrenci butceyi
+   * tuketip uygulamayi kapatip yeniden acinca (ya da sekmeyi kapatip
+   * donunce) butce SIFIRDAN basliyordu. Yani sinirsiz dinleme, hem webde hem
+   * mobilde.
+   *
+   * `taskIx` ve `secondsLeft` ayni sebeple zaten kaydediliyordu; bu ucuncusu
+   * geride kalmisti. Sunucuya da gidiyor (yeni `plays` sutunu) ki cihaz
+   * degistiren ogrenci de butcesini yaninda tasisin.
+   *
+   * Olcu MUTLAK: iki tarafta da ayni kusur vardi. */
+  {
+    const KAT = [
+      ["web", "src/components/mock-exam-player.tsx"],
+      ["mobil", "mobile/src/screens/MockExamScreen.tsx"],
+    ];
+    sameList(
+      "oynatma butcesi kaydediliyor",
+      KAT.map(([ad, y]) => {
+        const src = sil(read(y));
+        /*
+         * ORAN, SAYI DEGIL. "En az uc yerde yaziliyor" demek yetmiyordu:
+         * mobilde alti kayit yeri var, webde dort - esik koymak bir yerin
+         * eksik kalmasini gizliyordu (enjeksiyonla gorundu) ve nitekim webde
+         * CIKIS ONAYINDAKI iki kayit yeri `plays` tasimiyordu. Olcu artik
+         * `secondsLeft` yazan HER yuk `plays` de tasiyor mu diye soruyor.
+         */
+        const tum = (src.match(/secondsLeft: (?:left|budgets\[(?:next|0)\] \?\? 60)/g) ?? []).length;
+        const yazan = (src.match(/secondsLeft: (?:left|budgets\[(?:next|0)\] \?\? 60)[^}]*plays/g) ?? []).length;
+        /*
+         * IKI GERI YUKLEME YOLU VAR ve ikisi de gerekli: sunucudan devam
+         * (`d.attempt`) ve cevrimdisi yerel kayittan devam (`local`). Ilk
+         * yazimda olcu "biri varsa yeter" diyordu ve sunucu yolunu silen
+         * enjeksiyonu KACIRDI - yerel yol duruyordu. Varlik degil KAPSAM.
+         */
+        const okuyan = ["d.attempt", "local"].filter((k) => src.includes(`setPlays(${k}.plays ?? {})`));
+        return ad + "=" + (tum > 0 && yazan === tum && okuyan.length === 2 ? "kaydediliyor" : `EKSIK(${yazan}/${tum} kayit, okuyan=${okuyan.join("+") || "yok"})`);
+      }),
+      KAT.map(([ad]) => ad + "=kaydediliyor"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Sunucu da tasiyor mu: sema, gocurme ve ucun kendisi. */
+    const sema = sil(read("src/lib/db/schema.ts"));
+    const uc = sil(read("src/app/api/mock-exam/route.ts"));
+    const goc = existsSync(new URL("../drizzle/0049_mock_attempt_plays.sql", import.meta.url))
+      ? read("drizzle/0049_mock_attempt_plays.sql")
+      : "";
+    sameList(
+      "oynatma butcesi sunucuda",
+      [
+        "sema=" + (/plays: jsonb\("plays"\)/.test(sema) ? "var" : "YOK"),
+        "gocurme=" + (/ADD COLUMN IF NOT EXISTS "plays"/.test(goc) ? "var" : "YOK"),
+        "uc yaziyor=" + (/patch\.plays = temiz;/.test(uc) ? "var" : "YOK"),
+        "uc donduruyor=" + (/plays: \(a\.plays \?\? \{\}\)/.test(uc) ? "var" : "YOK"),
+      ],
+      ["sema=var", "gocurme=var", "uc yaziyor=var", "uc donduruyor=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ucun temizleyicisi TAVANLI olmali - istemciden gelen nesne sinirsiz
+       buyuyemez ve sayi olmayan deger yazilamaz. */
+    sameList(
+      "oynatma sayaci ucta temizleniyor",
+      [
+        "sayi suzgeci=" + (/typeof v === "number" && Number\.isFinite\(v\)/.test(uc) ? "var" : "YOK"),
+        "tavan=" + (/Math\.min\(20, Math\.floor\(v\)\)/.test(uc) ? "var" : "YOK"),
+        "anahtar sayisi=" + (/\.slice\(0, 60\)/.test(uc) ? "sinirli" : "SINIRSIZ"),
+      ],
+      ["sayi suzgeci=var", "tavan=var", "anahtar sayisi=sinirli"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 269. SAYAC DUVAR SAATINDEN --------------------------------------
    *
    * Sureli her yuzeyin sayaci bir ZAMAN DAMGASINDAN okumali, bir sayiciyi
