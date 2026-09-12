@@ -85,49 +85,59 @@ export function ReactionBar({
         </button>
       ))}
       {!disabled ? (
-        <div className="relative">
-          <button
-            type="button"
-            className="chip h-7 px-2.5 text-caption"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            data-panel="reactions"
-            aria-label={t("reactionbar.react")}
-            disabled={busy}
-          >
-            {t(s.mine ? "social.reaction_change" : "social.reaction_add")}
-          </button>
-          {open ? (
-            <div
-              className="card absolute left-0 z-10 mt-1 flex gap-1 p-1.5 shadow-lg"
-              role="menu"
-              onMouseLeave={() => setOpen(false)}
-            >
-              {REACTION_KINDS.map((k) => (
-                <button
-                  key={k}
-                  type="button"
-                  /* Secicide DE hangi tepkinin benim oldugu yalnizca zemin
-                     tintinden okunuyordu. Menude secilebilir oge
-                     `menuitemradio` + `aria-checked` ister; `menuitem`
-                     durum tasimaz. Mobil karsiligi da ayni turda
-                     `accessibilityRole="radio"` aldi. */
-                  role="menuitemradio"
-                  aria-checked={s.mine === k}
-                  title={t(REACTION_LABEL_KEYS[k])}
-                  aria-label={t(REACTION_LABEL_KEYS[k])}
-                  onClick={() => void pick(k)}
-                  className="flex h-9 w-9 items-center justify-center rounded-tile transition-transform hover:scale-110"
-                  style={s.mine === k ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 18%, transparent)` } : undefined}
-                >
-                  <ReactionGlyph kind={k} size={20} />
-                </button>
-              ))}
-            </div>
-          ) : null}
-        </div>
+        <button
+          type="button"
+          className="chip h-7 px-2.5 text-caption"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          data-panel="reactions"
+          aria-label={t("reactionbar.react")}
+          disabled={busy}
+        >
+          {t(s.mine ? "social.reaction_change" : "social.reaction_add")}
+        </button>
       ) : null}
       </div>
+      {/*
+        SEÇİCİ ARTIK ÖRTÜ DEĞİL, SATIR — Android'deki gibi.
+
+        Web panelini `absolute z-10 shadow-lg` ile içeriğin ÜSTÜNE açıyor ve
+        `onMouseLeave` ile kapatıyordu. Üç sorun birden:
+
+          - `onMouseLeave` FARE-ÖZEL. Dokunmatikte panel içeriği örtüyor ve
+            kendiliğinden kapanmıyor; klavyede de kapanmıyor (Escape yok).
+          - `role="menu"` AT'ye "burada ok tuşlarıyla gezinilir" diyor ve ok
+            tuşları çalışmıyordu — tutulmayan bir söz.
+          - Odak paneline taşınmıyor, dönüşü de yönetilmiyordu.
+
+        Android'in çözümü daha basit ve bu üç sorunun hiçbirini taşımıyor:
+        panel çubuğun ALTINDA normal bir satır olarak açılıyor, içeriği
+        örtmüyor, tetiğe ikinci dokunuş kapatıyor (`ReactionBar`). Web de
+        öyle yapıyor; örtü kalktığı için Escape ve odak dönüşü sorusu da
+        kendiliğinden ortadan kalkıyor.
+
+        Anlambilim de buna göre: satır bir menü değil, tek seçimli bir grup —
+        `radiogroup` + `radio`, Android'in `accessibilityRole="radio"`su ile
+        aynı.
+      */}
+      {open && !disabled ? (
+        <div className="mt-2 flex justify-between gap-1" role="radiogroup" aria-label={t("reactionbar.react")}>
+          {REACTION_KINDS.map((k) => (
+            <button
+              key={k}
+              type="button"
+              role="radio"
+              aria-checked={s.mine === k}
+              aria-label={t(REACTION_LABEL_KEYS[k])}
+              onClick={() => void pick(k)}
+              className="flex h-11 w-11 items-center justify-center rounded-tile transition-transform hover:scale-110"
+              style={s.mine === k ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 18%, transparent)` } : undefined}
+            >
+              <ReactionGlyph kind={k} size={22} />
+            </button>
+          ))}
+        </div>
+      ) : null}
       {who ? <p className="mt-1.5 text-micro" style={{ color: "var(--text-faint)" }}>{who}</p> : null}
       <ErrorText text={err} className="mt-1.5 text-micro" />
     </div>
