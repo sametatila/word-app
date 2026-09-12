@@ -4988,7 +4988,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   });
   sameList("kapilarda onek eslesmesi", sinirsiz.length ? sinirsiz : ["yok"], ["yok"], "sinirsiz ad deseni", "beklenen");
 }
-
 /* ── 247. KAPILARIN KENDI DENETIMI: TAM METIN DESENI ─────────────────────
  * Bu oturumda ayni sey DORT kez oldu: bir olgunun yazimi degisti ve onu DUZ
  * METIN olarak arayan kapi yanlis alarm verdi.
@@ -7461,6 +7460,85 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 248. ADI OLMAYAN KULLANICI -------------------------------------
+   *
+   * Ad bos olabiliyor (hesap acilirken ad ISTEMIYOR; bkz. `(app)/layout`) ve
+   * on bir yuzey onu yedekliyor. Ayrisma UC TABLODAYDI:
+   *
+   *   Android'in siralama satirlari `social.student` ("Ogrenci" / "Learner")
+   *   diyor, web `social.unnamed` ("Isimsiz ogrenci" / "Unnamed learner").
+   *   Ayrim Android'de BILINCLI gorunuyor: bir siralama satirinda birine
+   *   "isimsiz" demek, eksik bir alani herkese duyurmaktir - akista ya da
+   *   arkadas isteginde ayni sey degil, orada iki taraf da "isimsiz" diyor.
+   *
+   * Webin lig tablosu KENDI ICINDE bile tutmuyordu: satir "isimsiz ogrenci",
+   * ayni kisinin bildirme dugmesinin adi "ogrenci".
+   *
+   * GUNLUK SIRALAMA SATIRI ayrica dort parcada ayrisiyordu:
+   *   - BAS HARF DAIRESI: Android rutbeden sonra 36 px'lik bir daire ciziyor
+   *     ve icine adin ilk harfini koyuyor; webde yoktu.
+   *   - "(sen)" isareti: Android adin devamina " (sen)" ekliyor
+   *     (`social.you_paren`), web ayri bir kucuk buyuk-harfli etiket
+   *     ciziyordu (`social.you`).
+   *   - DOGRU SAYISI: Android adin ALTINDA ve ortak anahtardan
+   *     (`common.n_correct`), web sagda ham bir kesir basiyordu ("3/8").
+   *   - Puan: Android `toLocaleString`i DOGRUDAN cagiriyordu, yani kendi
+   *     `formatNumber`inin yuvarlamasini atliyordu; artik bicimleyiciden. */
+  {
+    const TABLOLAR = [
+      ["gunluk", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
+      ["lig", "src/components/social/league-board.tsx", "mobile/src/social/LeagueBoard.tsx"],
+      ["arkadas", "src/components/social/friends-board.tsx", "mobile/src/social/FriendsBoard.tsx"],
+    ];
+    const yedek = (yol) => {
+      const src = sil(read(yol));
+      if (/name \?\? t\("social\.unnamed"\)/.test(src)) return "isimsiz";
+      return /name \?\? t\("social\.student"\)/.test(src) ? "ogrenci" : "?";
+    };
+    sameList(
+      "siralama satirinda ad yedegi",
+      TABLOLAR.map(([ad, , m]) => ad + "=" + yedek(m)),
+      TABLOLAR.map(([ad, w]) => ad + "=" + yedek(w)),
+      "mobil",
+      "web",
+    );
+    /* Tablo DISINDA iki taraf da "isimsiz" diyor; olcut mutlak. */
+    const LISTELER = [
+      ["akis", "src/components/social/feed.tsx", "mobile/src/social/FeedList.tsx"],
+      ["bul", "src/components/social/find.tsx", "mobile/src/social/Find.tsx"],
+      ["istekler", "src/components/social/requests.tsx", "mobile/src/social/Requests.tsx"],
+      ["arkadas satiri", "src/components/social/friend-list.tsx", "mobile/src/social/FriendRows.tsx"],
+    ];
+    sameList(
+      "liste satirinda ad yedegi",
+      LISTELER.map(([ad, , m]) => ad + "=" + yedek(m)),
+      LISTELER.map(([ad, w]) => ad + "=" + yedek(w)),
+      "mobil",
+      "web",
+    );
+
+    /* Gunluk siralama satirinin parcalari. */
+    const gw = sil(read("src/components/daily-player.tsx"));
+    const gm = sil(read("mobile/src/screens/DailyScreen.tsx"));
+    sameList(
+      "gunluk siralama satirinin parcalari",
+      [
+        "bas harf=" + (/const initial = \(\(r\.name \?\? "\?"\)\.trim\(\)\[0\] \?\? "\?"\)\.toUpperCase\(\)/.test(gm) ? "var" : "YOK"),
+        "kendi isareti=" + (/t\("social\.you_paren"\)/.test(gm) ? "adin devaminda" : "?"),
+        "dogru sayisi=" + (/t\("common\.n_correct", \{ correct: r\.correct, total: r\.total \}\)/.test(gm) ? "ortak anahtar" : "HAM KESIR"),
+        "puan=" + (/formatNumber\(r\.score\)/.test(gm) ? "bicimleyiciden" : "DOGRUDAN"),
+      ],
+      [
+        "bas harf=" + (/const initial = \(\(r\.name \?\? "\?"\)\.trim\(\)\[0\] \?\? "\?"\)\.toUpperCase\(\)/.test(gw) ? "var" : "YOK"),
+        "kendi isareti=" + (/t\("social\.you_paren"\)/.test(gw) ? "adin devaminda" : "?"),
+        "dogru sayisi=" + (/t\("common\.n_correct", \{ correct: r\.correct, total: r\.total \}\)/.test(gw) ? "ortak anahtar" : "HAM KESIR"),
+        "puan=" + (/formatNumber\(r\.score, lang\)/.test(gw) ? "bicimleyiciden" : "DOGRUDAN"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
 
   /* -- 246. KAPATMA KAROSUNUN OLCUSU VE AYARLAR SIMGESI ----------------
    *

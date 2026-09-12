@@ -12675,3 +12675,51 @@ Kapı kendi kaynağını okuyor (§138'in kalıbı) ve erişilebilirlik öznitel
 düğüm ölçüsü kullanıyor (`dalKoku`, `dalGovdesi`, `atalar`) ya da bir
 bileşenin **kendi** tanımını okuyor — orada tam metin doğru ölçü, çünkü
 ölçülen şey o metnin kendisi.
+
+## §11.369 — Adı olmayan kullanıcı: sıralamada "isimsiz" demek
+
+Eksen **boş/yarım veriye dayanıklılık**tı. Bölme-sıfıra ve dizi indeksi
+taramaları temiz çıktı (hepsi zaten dolu bir dizi gerektiren dalların içinde);
+gerçek ayrışma **adı olmayan kullanıcı**da bulundu. Ad boş olabiliyor — hesap
+açarken ad istemiyor — ve on bir yüzey onu yedekliyor.
+
+### Tablolar "öğrenci", listeler "isimsiz"
+
+Android'in sıralama satırları `social.student` ("Öğrenci" / "Learner") diyor,
+web `social.unnamed` ("İsimsiz öğrenci" / "Unnamed learner"). Ayrım Android'de
+**bilinçli** görünüyor: bir sıralama satırında birine "isimsiz" demek, eksik
+bir alanı **herkese** duyurmaktır. Akışta ya da arkadaş isteğinde aynı şey
+değil — orada iki taraf da "isimsiz" diyor ve o doğru.
+
+Webin lig tablosu **kendi içinde bile tutmuyordu**: satır "isimsiz öğrenci",
+aynı kişinin bildirme düğmesinin adı "öğrenci". Üç tablo (günlük, lig,
+arkadaş) Android'in sözcüğüne çevrildi; dört liste olduğu gibi kaldı.
+
+### Günlük sıralama satırı dört parçada ayrışıyordu
+
+- **Baş harf dairesi**: Android rütbeden sonra 36 px'lik bir daire çiziyor ve
+  içine adın ilk harfini koyuyor; webde yoktu — aynı liste iki uygulamada iki
+  farklı ağırlıkta okunuyordu.
+- **"(sen)" işareti**: Android adın devamına " (sen)" ekliyor
+  (`social.you_paren`), web ayrı bir küçük büyük-harfli etiket çiziyordu.
+- **Doğru sayısı**: Android adın **altında** ve ortak anahtardan
+  (`common.n_correct` → "8 soruda 3 doğru"), web sağda **ham bir kesir**
+  basıyordu ("3/8").
+- **Puan**: Android `toLocaleString`i **doğrudan** çağırıyordu, yani kendi
+  `formatNumber`inin yuvarlamasını atlıyordu. Bir önceki turda web'i
+  biçimleyiciye bağlamıştım; Android'in kendi kaçağı buydu.
+
+### Ölçüm dersi: bir ölçü "ad çizimi" sayınca
+
+Baş harf dairesini eklediğimde mevcut "liste satırında ad" kapısı düştü:
+probe ad çizimlerini sayıp her birinin bir `truncate` atası olmasını istiyor,
+ve `(r.name ?? "?").trim()[0]` de bir ad çizimi sayıldı — oysa **tek
+karakter**, satıra sığmama sorunu yok. Doğrusu baş harfi JSX'in dışına almak;
+Android da öyle yapıyor (`const initial = …`). Ölçüyü esnetmek yerine kodu
+Android'in şekline getirdim — probe'un "atama" kuralı onu zaten atlıyor.
+
+### §248
+
+Üç olgu: sıralama satırının ad yedeği (eşleştirmeli), liste satırının ad
+yedeği (eşleştirmeli) ve günlük sıralama satırının dört parçası. Beş
+enjeksiyon denendi, beşi de yakalandı.
