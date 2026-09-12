@@ -16901,3 +16901,26 @@ boyu, ikon boyu, yarıçap sınıfı, başlık ve açıklama sınıfları
 Enjeksiyon iki yönden: elle kurulan puntoyu bozmak **ve** kabuğun karo boyunu
 değiştirmek — ikincisi kapının bir kopya taşımadığını gösteriyor, çünkü kabuk
 değişince kapı elle kurulan bloğu da değişmeye zorluyor.
+
+## §11.467 — Boş hâl karosunun rengi: ölçüldü, iki platform da eşit (kapı yazıldı)
+
+Boş durum karosunun rengi ekranın **konusunu** taşıyor: arkadaşlar yeşil,
+sıralama mavi, başarımlar kehribar, hata kırmızı. §241 kabuğun
+**kullanıldığını** ölçüyordu, rengini değil — iki platform aynı ekranı ayrı
+renkle boyasa kapı görmezdi ve renk bir bilgi taşımaktan çıkardı.
+
+Ölçtüm: **yirmi eşleşen yüzeyin yirmisi de aynı rolde.** Düzeltilecek bir şey
+çıkmadı; kapı yine de yazıldı, çünkü ölçülmeyen bir eşitlik yarın ayrışır.
+
+Kapı **§327** renk **değeri** değil **rol** karşılaştırıyor (webin
+`--color-mint`i ↔ mobilin `colors.success`i); değerler zaten palet
+kapılarında ölçülü. Renk verilmeyen çağrı varsayılana düşüyor
+(`brand`/`primary`) ve o da bir rol olarak sayılıyor — "yok" diye geçilse iki
+taraftaki ayrı varsayılan sessizce ayrışırdı. Çift sayısı (20) da ölçülüyor:
+yeni bir boş hâl iki platforma birden eklendiğinde sayı değişir ve renk kararı
+bilinçli verilmek zorunda kalır; tarama bozulursa da 0/0 ile kendiliğinden
+geçmez.
+
+`--color-danger` ile `--color-rose` aynı rengin iki adı (`globals.css`te biri
+diğerine takma ad), ikisi de `danger` rolüne eşleniyor — kapı bu yüzden isim
+değil rol okuyor.

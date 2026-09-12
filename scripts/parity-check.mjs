@@ -18406,6 +18406,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------------- 327. BOS HAL KAROSUNUN RENGI IKI PLATFORMDA AYNI ROL
+ *
+ * Bos durum karosunun rengi ekranin KONUSUNU tasiyor: arkadaslar yesil,
+ * siralama mavi, basarimlar kehribar, hata kirmizi. Iki platform ayni ekrani
+ * ayri renkle boyarsa "ayni ekran" hissi gidiyor ve renk bir bilgi
+ * tasimaktan cikiyor. §241 kabugun KULLANILDIGINI olcuyor, rengini degil.
+ *
+ * Esleme paletin rolleri uzerinden (webin `--color-mint`i mobilin
+ * `colors.success`i): kapi renk DEGERI karsilastirmiyor, ROL
+ * karsilastiriyor - degerler zaten palet kapilarinda olculu.
+ *
+ * Renk verilmeyen cagri varsayilana dusuyor (kabukta `brand`/`primary`), o da
+ * bir rol; "yok" diye gecilmiyor, yoksa iki tarafta ayri varsayilan ayrisirdi.
+ *
+ * Cift SAYISI da olculuyor: yeni bir bos hal iki platforma birden eklendiginde
+ * sayi degisir ve renk karari bilincli verilmek zorunda kalir (tarama
+ * bozulursa da 0/0 ile kendiliginden gecmez). */
+{
+  const ROLE = { brand: "primary", mint: "success", rose: "danger", danger: "danger", flame: "streak", sky: "info", violet: "accent" };
+  const silT = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gezT = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezT(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  /* Acilis etiketinin sonu: ilk `>` DEGIL - `icon={X}` gibi suslu parantezler
+     ve tirnak icindeki `>` etiketi bitirmez (§241'in ayni sorunu). */
+  const etiketSonu = (blok) => {
+    let derinlik = 0, tirnak = null;
+    for (let i = 0; i < blok.length; i++) {
+      const c = blok[i];
+      if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+      if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+      if (c === "{") derinlik++;
+      else if (c === "}") derinlik--;
+      else if (c === ">" && derinlik === 0) return i;
+    }
+    return -1;
+  };
+  const topla = (kok, web) => {
+    const cikti = {};
+    for (const f of gezT(kok)) {
+      const src = silT(read(f));
+      for (const m of src.matchAll(/<EmptyCard\b/g)) {
+        const son = etiketSonu(src.slice(m.index));
+        if (son < 0) continue;
+        const et = src.slice(m.index, m.index + son + 1).replace(/\s+/g, " ");
+        const baslik = (et.match(/title=\{t\("([\w.]+)"\)\}/) ?? et.match(/title=\{tx\("([\w.]+)"\)\}/) ?? [])[1];
+        if (!baslik) continue;
+        const ton = web
+          ? (et.match(/tint="var\(--color-([\w-]+)\)"/) ?? [])[1] ?? (/tint="var\(--text-muted\)"/.test(et) ? "muted" : "brand")
+          : (et.match(/tint=\{colors\.(\w+)\}/) ?? [])[1] ?? "primary";
+        cikti[baslik] = ton === "muted" || ton === "textMuted" ? "muted" : (ROLE[ton] ?? ton);
+      }
+    }
+    return cikti;
+  };
+  const w = topla("src", true);
+  const m = topla("mobile/src", false);
+  const cift = Object.keys(w).filter((k) => k in m).sort();
+  const ayri = cift.filter((k) => w[k] !== m[k]).map((k) => k + "(web:" + w[k] + "/mobil:" + m[k] + ")");
+  sameList(
+    "bos hal karosunun rengi ayni rol",
+    ["cift=" + cift.length, "ayrisan=" + (ayri.length ? ayri.join("+") : "yok")],
+    ["cift=20", "ayrisan=yok"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
