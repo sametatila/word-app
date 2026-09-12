@@ -1,0 +1,287 @@
+[
+ {
+  "tr": "Kaynak kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Quellenkarte aus."
+ },
+ {
+  "tr": "Belirti kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Symptomkarte aus."
+ },
+ {
+  "tr": "Anket 2019'da; dört yüz kişi; tek şehir; dergi yazısı 2021'den.",
+  "kind": "form.facts",
+  "de": "Umfrage 2019; vierhundert Personen; eine Stadt; der Zeitschriftenartikel von 2021."
+ },
+ {
+  "tr": "Ateş pazartesiden beri; ağrı salı başladı; baş dönmesi çarşamba; öksürük iki haftadır.",
+  "kind": "form.facts",
+  "de": "Fieber seit Montag; der Schmerz begann am Dienstag; Schwindel am Mittwoch; Husten seit zwei Wochen."
+ },
+ {
+  "tr": "Makale bu sabah yayımlandı; dört sitede üç başlık; öğleden önce kırk bin okur; başlığı gazeteci yazmadı.",
+  "kind": "form.facts",
+  "de": "Der Artikel erschien heute Morgen; drei Überschriften auf vier Seiten; vierzigtausend Leser vor Mittag; die Überschrift stammt nicht von der Journalistin."
+ },
+ {
+  "tr": "Düzen değişecek.",
+  "kind": "build.tr",
+  "de": "Das System wird sich ändern."
+ },
+ {
+  "tr": "Ağrı salı günü başladı.",
+  "kind": "build.tr",
+  "de": "Der Schmerz begann am Dienstag."
+ },
+ {
+  "tr": "Gerçeği biliyor olmalı.",
+  "kind": "build.tr",
+  "de": "Er muss die Wahrheit kennen."
+ },
+ {
+  "tr": "Onu okuduğum dergi eski.",
+  "kind": "build.tr",
+  "de": "Die Zeitschrift, in der ich es gelesen habe, ist alt."
+ },
+ {
+  "tr": "Fiyatlar yakında artacak.",
+  "kind": "build.tr",
+  "de": "Die Preise werden bald steigen."
+ },
+ {
+  "tr": "Emin olsaydım evet derdim.",
+  "kind": "build.tr",
+  "de": "Wenn ich sicher wäre, würde ich ja sagen."
+ },
+ {
+  "tr": "Ne demek istediğine bağlı.",
+  "kind": "build.tr",
+  "de": "Es kommt darauf an, was du meinst."
+ },
+ {
+  "tr": "Onu yazan yazar bir uzman.",
+  "kind": "build.tr",
+  "de": "Der Autor, der es geschrieben hat, ist ein Fachmann."
+ },
+ {
+  "tr": "Makale bu sabah yayımlandı.",
+  "kind": "build.tr",
+  "de": "Der Artikel wurde heute Morgen veröffentlicht."
+ },
+ {
+  "tr": "Başlığı şaşırtıcı buluyorum.",
+  "kind": "build.tr",
+  "de": "Ich finde die Überschrift schockierend."
+ },
+ {
+  "tr": "Haber her yerde paylaşılıyor.",
+  "kind": "build.tr",
+  "de": "Die Geschichte wird überall geteilt."
+ },
+ {
+  "tr": "Pazartesiden beri ateşim var.",
+  "kind": "build.tr",
+  "de": "Ich habe seit Montag Fieber."
+ },
+ {
+  "tr": "Onun izlenimi farklı olabilir.",
+  "kind": "build.tr",
+  "de": "Sie könnte einen anderen Eindruck haben."
+ },
+ {
+  "tr": "Cuma günü toplumu ele alıyoruz.",
+  "kind": "build.tr",
+  "de": "Am Freitag besprechen wir die Gesellschaft."
+ },
+ {
+  "tr": "Yalan olamaz, çünkü onu gördüm.",
+  "kind": "build.tr",
+  "de": "Es kann keine Lüge sein, denn ich habe es gesehen."
+ },
+ {
+  "tr": "Bu hafta hiçbir şey paylaşmadım.",
+  "kind": "build.tr",
+  "de": "Ich habe diese Woche nichts gepostet."
+ },
+ {
+  "tr": "Fiyatı kastediyorsan katılıyorum.",
+  "kind": "build.tr",
+  "de": "Wenn du den Preis meinst, stimme ich zu."
+ },
+ {
+  "tr": "Güçlü bir fikir. Ancak çok pahalı.",
+  "kind": "build.tr",
+  "de": "Eine starke Idee. Sie kostet jedoch viel."
+ },
+ {
+  "tr": "Onu tarihi değiştirmeye ikna ettim.",
+  "kind": "build.tr",
+  "de": "Ich habe ihn überzeugt, den Termin zu ändern."
+ },
+ {
+  "tr": "Bu belirtiyi daha önce hiç yaşamadım.",
+  "kind": "build.tr",
+  "de": "Dieses Symptom hatte ich noch nie."
+ },
+ {
+  "tr": "Apaçık olmasına rağmen kimse söylemiyor.",
+  "kind": "build.tr",
+  "de": "Obwohl es offensichtlich ist, sagt es niemand."
+ },
+ {
+  "tr": "Biz buluşmadan önce durum ciddileşmişti.",
+  "kind": "build.tr",
+  "de": "Die Lage war ernst geworden, bevor wir uns trafen."
+ },
+ {
+  "tr": "İşe yaradığına inanıyorum, çünkü denedim.",
+  "kind": "build.tr",
+  "de": "Ich glaube, es funktioniert, denn ich habe es ausprobiert."
+ },
+ {
+  "tr": "Kuralı değiştirdiklerini inkâr ediyorlar.",
+  "kind": "build.tr",
+  "de": "Sie bestreiten, die Regel geändert zu haben."
+ },
+ {
+  "tr": "Bir gün daha beklemenizin sakıncası var mı?",
+  "kind": "build.tr",
+  "de": "Wäre es Ihnen recht, noch einen Tag zu warten?"
+ },
+ {
+  "tr": "Kimliğini kayıt masasına getirmek zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst deinen Ausweis zur Anmeldung mitbringen."
+ },
+ {
+  "tr": "Ben konuştuğumda onlar çoktan karar vermişlerdi.",
+  "kind": "build.tr",
+  "de": "Als ich sprach, hatten sie schon entschieden."
+ },
+ {
+  "tr": "Hafta bitmedi: present perfect.",
+  "kind": "build.hint",
+  "de": "Die Woche ist nicht vorbei: present perfect."
+ },
+ {
+  "tr": "Öngörü: „will“. Kanıt değil, kanaat.",
+  "kind": "build.hint",
+  "de": "Eine Prognose: „will“. Keine Belege, eine Einschätzung."
+ },
+ {
+  "tr": "„where“ yer için; burada yer bir yayın.",
+  "kind": "build.hint",
+  "de": "„where“ steht für den Ort; hier ist der Ort eine Zeitschrift."
+ },
+ {
+  "tr": "Kuraldan gelen zorunluluk; istisna yok.",
+  "kind": "build.hint",
+  "de": "Pflicht aus einer Regel; keine Ausnahme."
+ },
+ {
+  "tr": "Ayarlanmış: gün belli ve herkes biliyor.",
+  "kind": "build.hint",
+  "de": "Verabredet: der Tag steht fest und alle wissen es."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „since“ ile present perfect.",
+  "kind": "build.hint",
+  "de": "Es dauert an: „since“ mit present perfect. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "Şu anda sürüyor: edilgenin sürerli biçimi.",
+  "kind": "build.hint",
+  "de": "Es läuft gerade: die Verlaufsform des Passivs. Deutsch kennt diese Unterscheidung nicht."
+ },
+ {
+  "tr": "„mind“ da „-ing“ istiyor; kalıp bir ricadır.",
+  "kind": "build.hint",
+  "de": "Auch „mind“ verlangt „-ing“; die Wendung ist eine Bitte."
+ },
+ {
+  "tr": "„deny“ sonrası „-ing“; „deny to change“ olmaz.",
+  "kind": "build.hint",
+  "de": "Nach „deny“ steht „-ing“; „deny to change“ gibt es nicht."
+ },
+ {
+  "tr": "„might“ ortadaki derece: mümkün ama kesin değil.",
+  "kind": "build.hint",
+  "de": "„might“ ist die mittlere Stufe: möglich, aber nicht sicher."
+ },
+ {
+  "tr": "„already“ „had“ ile üçüncü hâlin arasına giriyor.",
+  "kind": "build.hint",
+  "de": "„already“ tritt zwischen „had“ und die dritte Form — wie deutsch „schon“."
+ },
+ {
+  "tr": "Kanıta dayalı: karar alınmış, o yüzden „going to“.",
+  "kind": "build.hint",
+  "de": "Auf Belegen gestützt: die Entscheidung ist gefallen, deshalb „going to“."
+ },
+ {
+  "tr": "Deneyim: „never“ yardımcı ile asıl fiilin arasında.",
+  "kind": "build.hint",
+  "de": "Erfahrung: „never“ steht zwischen Hilfsverb und Vollverb."
+ },
+ {
+  "tr": "Fiil, nesne, sıfat: arada „to be“ de „that“ de yok.",
+  "kind": "build.hint",
+  "de": "Verb, Objekt, Adjektiv: dazwischen weder „to be“ noch „that“ — Deutsch macht es genauso."
+ },
+ {
+  "tr": "„persuade“ kişiyi doğrudan alıyor ve sonrası MASTAR.",
+  "kind": "build.hint",
+  "de": "„persuade“ nimmt die Person direkt und danach den INFINITIV."
+ },
+ {
+  "tr": "Başlangıç ANI: sade geçmiş. Aynı hastalık, başka soru.",
+  "kind": "build.hint",
+  "de": "Der MOMENT des Beginns: simple past. Dieselbe Krankheit, andere Frage."
+ },
+ {
+  "tr": "Gerçek olmayan koşulda „I“ yanında bile „were“ geliyor.",
+  "kind": "build.hint",
+  "de": "In der irrealen Bedingung steht auch nach „I“ ein „were“ — wie der Konjunktiv „wäre“."
+ },
+ {
+  "tr": "Önce olan iş „had“ + üçüncü hâl; buluşma sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Das Frühere nimmt „had“ + dritte Form; das Treffen kommt danach."
+ },
+ {
+  "tr": "„although“ bir cümle bağlıyor; virgül iki yarıyı ayırıyor.",
+  "kind": "build.hint",
+  "de": "„although“ verbindet einen Satz wie „obwohl“; das Komma trennt die Hälften."
+ },
+ {
+  "tr": "Çıkarımın olumsuzu „can't“; „mustn't“ olsaydı yasak olurdu.",
+  "kind": "build.hint",
+  "de": "Die Verneinung des Schlusses ist „can't“; „mustn't“ wäre ein Verbot. Deutsch sagt „kann nicht sein“."
+ },
+ {
+  "tr": "Burada „must“ zorunluluk değil KESİNLİK: başka açıklama yok.",
+  "kind": "build.hint",
+  "de": "Hier ist „must“ keine Pflicht, sondern SICHERHEIT: es gibt keine andere Erklärung. Deutsch nimmt dafür auch „muss“."
+ },
+ {
+  "tr": "„depend“ edatı „on“; edattan sonra bütün bir yan cümle gelebiliyor.",
+  "kind": "build.hint",
+  "de": "„depend“ nimmt „on“; nach der Präposition kann ein ganzer Nebensatz stehen."
+ },
+ {
+  "tr": "„because“ gerekçeyi bağlıyor; „have tried“ deneyimi şimdiye taşıyor.",
+  "kind": "build.hint",
+  "de": "„because“ hängt den Grund an; „have tried“ holt die Erfahrung in die Gegenwart."
+ },
+ {
+  "tr": "Rakamın yolu: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Der Weg der Zahl: bring ihn in die richtige Ordnung."
+ },
+ {
+  "tr": "Belirtilerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Symptome: bring sie in die richtige Ordnung."
+ }
+]

@@ -1,0 +1,462 @@
+[
+ {
+  "tr": "Fiil, nesne, sıfat. Arada hiçbir şey yok.",
+  "kind": "intro",
+  "de": "Verb, Objekt, Adjektiv. Dazwischen nichts."
+ },
+ {
+  "tr": "Geç kalınan bir karar. Ne zaman ciddileşmiş?",
+  "kind": "intro",
+  "de": "Eine zu spät gekommene Entscheidung. Wann wurde es ernst?"
+ },
+ {
+  "tr": "Geçmişin iki katmanı ve geleceğin üç biçimi.",
+  "kind": "intro",
+  "de": "Zwei Schichten der Vergangenheit und drei Formen der Zukunft."
+ },
+ {
+  "tr": "Bir tarih değiştiriliyor. İkna nasıl işliyor?",
+  "kind": "intro",
+  "de": "Ein Termin wird verschoben. Wie funktioniert das Überzeugen?"
+ },
+ {
+  "tr": "Bir başlık ve iki gün. Neden bu kadar yayıldı?",
+  "kind": "intro",
+  "de": "Eine Überschrift und zwei Tage. Warum verbreitet sie sich so?"
+ },
+ {
+  "tr": "Bir fikir savunuluyor. Gerekçe nerede duruyor?",
+  "kind": "intro",
+  "de": "Eine Meinung wird verteidigt. Wo steht der Grund?"
+ },
+ {
+  "tr": "Kayıp bir anahtar ve üç çıkarım. Hangisi kesin?",
+  "kind": "intro",
+  "de": "Ein verlorener Schlüssel und drei Schlüsse. Welcher ist sicher?"
+ },
+ {
+  "tr": "Tartışma sonrası değerlendirme. Kim ne söyledi?",
+  "kind": "intro",
+  "de": "Die Nachbesprechung der Debatte. Wer sagte was?"
+ },
+ {
+  "tr": "Bir hesabın silinmesi. Ne değişti, ne değişmedi?",
+  "kind": "intro",
+  "de": "Ein Konto wird gelöscht. Was hat sich geändert, was nicht?"
+ },
+ {
+  "tr": "Kayıt kuralları. Hangisi zorunlu, hangisi değil?",
+  "kind": "intro",
+  "de": "Die Anmelderegeln. Was ist Pflicht, was nicht?"
+ },
+ {
+  "tr": "Bir rakamın izi sürülüyor. Kaynak nerede bitiyor?",
+  "kind": "intro",
+  "de": "Eine Zahl wird zurückverfolgt. Wo endet die Quelle?"
+ },
+ {
+  "tr": "Aynı hastalık, iki zaman. Hangisi süre, hangisi an?",
+  "kind": "intro",
+  "de": "Dieselbe Krankheit, zwei Zeitformen. Welche meint die Dauer, welche den Moment?"
+ },
+ {
+  "tr": "Muayenede iki zaman. Hangisi süre, hangisi başlangıç?",
+  "kind": "intro",
+  "de": "Zwei Zeitformen beim Arzt. Welche meint die Dauer, welche den Beginn?"
+ },
+ {
+  "tr": "Gelecek konuşuluyor. Hangi cümle öngörü, hangisi plan?",
+  "kind": "intro",
+  "de": "Über die Zukunft wird gesprochen. Welcher Satz ist Prognose, welcher Plan?"
+ },
+ {
+  "tr": "Katılmanın dereceleri. Neden düz „hayır“ az duyuluyor?",
+  "kind": "intro",
+  "de": "Die Abstufungen der Zustimmung. Warum hört man selten ein glattes Nein?"
+ },
+ {
+  "tr": "Katılmanın dereceleri. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Die Abstufungen der Zustimmung. Welche Bedingung ist real, welche nicht?"
+ },
+ {
+  "tr": "Üç kip, üç kesinlik derecesi. Burada „must“ zorunluluk değil.",
+  "kind": "intro",
+  "de": "Drei Modalverben, drei Grade der Sicherheit. „must“ ist hier keine Pflicht."
+ },
+ {
+  "tr": "İkna ve kaynak cümleleri. Hangi fiil mastar, hangisi „-ing“ alıyor?",
+  "kind": "intro",
+  "de": "Sätze zu Überzeugen und Quelle. Welches Verb nimmt den Infinitiv, welches „-ing“?"
+ },
+ {
+  "tr": "„persuade“ kişiyi alıyor ve sonrası mastar.",
+  "kind": "explain",
+  "de": "„persuade“ nimmt die Person und danach einen Infinitiv."
+ },
+ {
+  "tr": "Yayım, tepki, yayılma, en sonda sorumluluk.",
+  "kind": "explain",
+  "de": "Veröffentlichung, Reaktion, Verbreitung, zuletzt die Verantwortung."
+ },
+ {
+  "tr": "„already“ „had“ ile üçüncü hâlin arasına giriyor.",
+  "kind": "explain",
+  "de": "„already“ tritt zwischen „had“ und die dritte Form — wie deutsch „schon“."
+ },
+ {
+  "tr": "„Ten days before.“ — öksürük ateşten önce başlamış.",
+  "kind": "explain",
+  "de": "„Ten days before.“ — der Husten begann vor dem Fieber."
+ },
+ {
+  "tr": "Öksürük en eskisi; sonra ateş, ağrı ve baş dönmesi.",
+  "kind": "explain",
+  "de": "Der Husten ist der älteste; dann Fieber, Schmerz und Schwindel."
+ },
+ {
+  "tr": "Araştırma, başlık, ilk paylaşım, paylaşımın paylaşımı.",
+  "kind": "explain",
+  "de": "Die Studie, die Überschrift, der erste Beitrag, der Beitrag über den Beitrag."
+ },
+ {
+  "tr": "„going to“ kanıta dayalı: karar alınmış, kâğıtlar imzalı.",
+  "kind": "explain",
+  "de": "„going to“ stützt sich auf Belege: die Entscheidung ist gefallen, die Papiere sind unterschrieben."
+ },
+ {
+  "tr": "„Now I say „might“ first and „must“ last, in that order…“",
+  "kind": "explain",
+  "de": "„Now I say „might“ first and „must“ last, in that order…“"
+ },
+ {
+  "tr": "Aktarılınca „was“ bir basamak geriye kayıp „had been“ oluyor.",
+  "kind": "explain",
+  "de": "Wiedergegeben rückt „was“ eine Stufe zurück zu „had been“; Deutsch nimmt den Konjunktiv."
+ },
+ {
+  "tr": "„because“ gerekçeyi bağlıyor ve cümlenin ikinci yarısında duruyor.",
+  "kind": "explain",
+  "de": "„because“ hängt den Grund an und steht in der zweiten Hälfte des Satzes."
+ },
+ {
+  "tr": "Hafta bitmedi: present perfect. „last week“ olsaydı sade geçmiş olurdu.",
+  "kind": "explain",
+  "de": "Die Woche ist nicht vorbei: present perfect. Mit „last week“ wäre es simple past."
+ },
+ {
+  "tr": "„It is the opposite of the first sentence — not „mustn't“, which would be a rule.“",
+  "kind": "explain",
+  "de": "„It is the opposite of the first sentence — not „mustn't“, which would be a rule.“"
+ },
+ {
+  "tr": "inkâr etmek",
+  "kind": "gloss.tr",
+  "de": "abstreiten"
+ },
+ {
+  "tr": "kulağa geliyordu",
+  "kind": "gloss.tr",
+  "de": "klang"
+ },
+ {
+  "tr": "düz",
+  "kind": "gloss.tr",
+  "de": "glatt"
+ },
+ {
+  "tr": "kip",
+  "kind": "gloss.tr",
+  "de": "Modalverb"
+ },
+ {
+  "tr": "emin",
+  "kind": "gloss.tr",
+  "de": "sicher"
+ },
+ {
+  "tr": "fiil",
+  "kind": "gloss.tr",
+  "de": "Verb"
+ },
+ {
+  "tr": "hane",
+  "kind": "gloss.tr",
+  "de": "Stellen"
+ },
+ {
+  "tr": "oldu",
+  "kind": "gloss.tr",
+  "de": "wurde"
+ },
+ {
+  "tr": "arama",
+  "kind": "gloss.tr",
+  "de": "die Suche"
+ },
+ {
+  "tr": "kesin",
+  "kind": "gloss.tr",
+  "de": "sicher"
+ },
+ {
+  "tr": "sebep",
+  "kind": "gloss.tr",
+  "de": "der Grund"
+ },
+ {
+  "tr": "apaçık",
+  "kind": "gloss.tr",
+  "de": "offensichtlich"
+ },
+ {
+  "tr": "artmak",
+  "kind": "gloss.tr",
+  "de": "steigen"
+ },
+ {
+  "tr": "başlık",
+  "kind": "gloss.tr",
+  "de": "Überschrift"
+ },
+ {
+  "tr": "beceri",
+  "kind": "gloss.tr",
+  "de": "Fähigkeit"
+ },
+ {
+  "tr": "editör",
+  "kind": "gloss.tr",
+  "de": "Redaktion"
+ },
+ {
+  "tr": "gündem",
+  "kind": "gloss.tr",
+  "de": "der Trend"
+ },
+ {
+  "tr": "olamaz",
+  "kind": "gloss.tr",
+  "de": "kann nicht sein"
+ },
+ {
+  "tr": "ortası",
+  "kind": "gloss.tr",
+  "de": "die Mitte"
+ },
+ {
+  "tr": "öngörü",
+  "kind": "gloss.tr",
+  "de": "Prognose"
+ },
+ {
+  "tr": "toplum",
+  "kind": "gloss.tr",
+  "de": "Gesellschaft"
+ },
+ {
+  "tr": "altında",
+  "kind": "gloss.tr",
+  "de": "darunter"
+ },
+ {
+  "tr": "atlıyor",
+  "kind": "gloss.tr",
+  "de": "überspringt"
+ },
+ {
+  "tr": "okurdum",
+  "kind": "gloss.tr",
+  "de": "ich las früher"
+ },
+ {
+  "tr": "okurlar",
+  "kind": "gloss.tr",
+  "de": "Leser"
+ },
+ {
+  "tr": "uzanmak",
+  "kind": "gloss.tr",
+  "de": "greifen nach"
+ },
+ {
+  "tr": "zinciri",
+  "kind": "gloss.tr",
+  "de": "die Kette"
+ },
+ {
+  "tr": "dönüşmüş",
+  "kind": "gloss.tr",
+  "de": "war geworden"
+ },
+ {
+  "tr": "harcadım",
+  "kind": "gloss.tr",
+  "de": "habe verbracht"
+ },
+ {
+  "tr": "kesinlik",
+  "kind": "gloss.tr",
+  "de": "Sicherheit"
+ },
+ {
+  "tr": "olabilir",
+  "kind": "gloss.tr",
+  "de": "könnte haben"
+ },
+ {
+  "tr": "öngörmek",
+  "kind": "gloss.tr",
+  "de": "vorhersagen"
+ },
+ {
+  "tr": "buluyorum",
+  "kind": "gloss.tr",
+  "de": "ich finde"
+ },
+ {
+  "tr": "dağılıyor",
+  "kind": "gloss.tr",
+  "de": "fällt auseinander"
+ },
+ {
+  "tr": "daha kötü",
+  "kind": "gloss.tr",
+  "de": "schlimmer"
+ },
+ {
+  "tr": "daha önce",
+  "kind": "gloss.tr",
+  "de": "früher"
+ },
+ {
+  "tr": "evrak işi",
+  "kind": "gloss.tr",
+  "de": "Papierkram"
+ },
+ {
+  "tr": "kendileri",
+  "kind": "gloss.tr",
+  "de": "sich selbst"
+ },
+ {
+  "tr": "söz kesme",
+  "kind": "gloss.tr",
+  "de": "Unterbrechung"
+ },
+ {
+  "tr": "şaşırtıcı",
+  "kind": "gloss.tr",
+  "de": "schockierend"
+ },
+ {
+  "tr": "bu belirti",
+  "kind": "gloss.tr",
+  "de": "dieses Symptom"
+ },
+ {
+  "tr": "ikna etmek",
+  "kind": "gloss.tr",
+  "de": "überzeugen"
+ },
+ {
+  "tr": "ikna ettim",
+  "kind": "gloss.tr",
+  "de": "habe überzeugt"
+ },
+ {
+  "tr": "takipçiler",
+  "kind": "gloss.tr",
+  "de": "Follower"
+ },
+ {
+  "tr": "yumuşatıcı",
+  "kind": "gloss.tr",
+  "de": "Weichmacher"
+ },
+ {
+  "tr": "en yumuşağı",
+  "kind": "gloss.tr",
+  "de": "das sanfteste"
+ },
+ {
+  "tr": "işe yaramaz",
+  "kind": "gloss.tr",
+  "de": "nutzlos"
+ },
+ {
+  "tr": "kastettiğin",
+  "kind": "gloss.tr",
+  "de": "wenn du meinst"
+ },
+ {
+  "tr": "muayenehane",
+  "kind": "gloss.tr",
+  "de": "Praxis"
+ },
+ {
+  "tr": "bir gün daha",
+  "kind": "gloss.tr",
+  "de": "noch einen Tag"
+ },
+ {
+  "tr": "ele alıyoruz",
+  "kind": "gloss.tr",
+  "de": "wir besprechen"
+ },
+ {
+  "tr": "izini sürmek",
+  "kind": "gloss.tr",
+  "de": "zurückverfolgen"
+ },
+ {
+  "tr": "ayağa kalkmak",
+  "kind": "gloss.tr",
+  "de": "aufstehen"
+ },
+ {
+  "tr": "sözcük seçimi",
+  "kind": "gloss.tr",
+  "de": "die Wortwahl"
+ },
+ {
+  "tr": "sözünü kesmek",
+  "kind": "gloss.tr",
+  "de": "unterbrechen"
+ },
+ {
+  "tr": "biliyor olmalı",
+  "kind": "gloss.tr",
+  "de": "muss wissen"
+ },
+ {
+  "tr": "demek istediğim",
+  "kind": "gloss.tr",
+  "de": "ich meine"
+ },
+ {
+  "tr": "işin püf noktası",
+  "kind": "gloss.tr",
+  "de": "der Haken"
+ },
+ {
+  "tr": "sakıncası var mı",
+  "kind": "gloss.tr",
+  "de": "wäre es Ihnen recht"
+ },
+ {
+  "tr": "pazartesiden beri",
+  "kind": "gloss.tr",
+  "de": "seit Montag"
+ },
+ {
+  "tr": "çoktan karar vermişlerdi",
+  "kind": "gloss.tr",
+  "de": "hatten schon entschieden"
+ },
+ {
+  "tr": "hakkını vermek gerekirse",
+  "kind": "gloss.tr",
+  "de": "fairerweise"
+ }
+]

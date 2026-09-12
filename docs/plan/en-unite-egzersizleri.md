@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
-| B1 | 16–25 | bekliyor |
+| B1 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
+| B1 | 19–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -754,6 +754,40 @@ sınıftan: sözcük soru kökünde ya da konuşmacı etiketinde geçiyor, metin
 geçmiyor. Bu turda yeni olan, `Tutor:` konuşmacı etiketinin sözlükçeye
 dayanak olamaması — etiket ölçümden düşüyor ama içerik kapısı sözcüğü
 METİNDE arıyor, iki kapı aynı belirteci iki ayrı yerde bekliyor.
+
+**B1 ünite 16–18 (2026-09-12).** Ünite 16 In my view ·
+Agreeing and disagreeing · The debate · Reacting to the news; ünite 17
+Online and offline · Talking someone round · It must be true ·
+Where did you read that?; ünite 18 By the time we decided ·
+What happens next · Joining a practice · Describing symptoms.
+On sekiz egzersiz; ünite dışı ölçüm %0,0. B1 yuvalarının 108'i dolu.
+
+Ünite 17'nin noktası ÇIKARIM KİPLERİ ve seviyenin en büyük yeniden
+anlamlandırması burada: „He must know the truth“ cümlesinde „must“
+zorunluluk DEĞİL, kesinlik. Aynı biçim A1'den beri yasak ve zorunluluk
+taşıyordu; burada kanıta dayalı bir sonuç taşıyor. Olumsuzu da başka
+yerden geliyor: „can't be“, „mustn't be“ değil — çünkü „mustn't“ yasak
+demek. Almanca eksende bu bir PARİTE („muss wissen“ / „kann nicht sein“),
+yani Almanca okuyanın kip tablosu zaten doğru kurulmuş; karşılık bunu
+söylüyor, çünkü öğrenci burada kendi diline güvenebilir.
+
+Ünite 16'nın noktası NESNE + SIFAT: „I find the headline shocking.“ Arada
+„to be“ yok, „that“ yok. Almanca aynı yapıyı kuruyor („ich finde die
+Überschrift schockierend“), yani satır büyümüyor — ama Türkçe orada bir
+yapı istediği için uyarı Türkçe okuyan için yerinde kalıyor. Bu, aynı
+satırın iki anadile göre farklı AĞIRLIK taşıdığı bir yer.
+
+Ünite 18 A2 ünite 4'ün süre/an ayrımını klinik dile taşıyor: „I have had
+a fever since Monday“ süreyi, „The pain started on Tuesday“ ANI söylüyor.
+Hekim iki ayrı şey soruyor ve İngilizce bunları iki zamanla ayırıyor;
+yanlış seçim yanlış bilgi veriyor. İçerik bunu metnin içinde hekimin
+ağzından açıklıyor.
+
+Ölçüm bu turda seksen sekiz sözlükçe maddesi ekletti, DOKUZ maddeyi
+sildirdi ve „per cent“i ikinci kez metinden çıkarttı. İkinci kez çıkması
+kuralın yerleştiğini gösteriyor: çok sözcüklü bir terim sözlükçeyle
+kapatılamıyor, çünkü havuz ham dizeyi alıyor ve metin belirteçleri ayrı
+sayıyor — o terim ya tek sözcüğe indirilecek ya hiç kullanılmayacak.
 
 ## Tamamlanma ölçütü
 
