@@ -15678,3 +15678,29 @@ sıfıra düşerse "ölçek dışı yok" boş bir doğru olurdu.
 
 Dört enjeksiyon doğrulandı: 17'yi geri koymak, rozeti 10'a döndürmek,
 muafiyetten bir kaydı düşürmek, listeye karşılıksız bir kayıt eklemek.
+
+## §11.431 — `check:radius`in mobil yarısı: ölçüldü, kapı YAZILMADI
+
+Aynı ayna sorusu yarıçap kapısına da sorulunca cevap farklı çıktı ve bunu
+yazmak gerekiyor — çünkü "neden bu da yapılmadı" sorusunun cevabı kodda
+görünmüyor.
+
+Mobilde ölçek dışı **35** ham `borderRadius` var (ölçek
+`radii = 10/14/20/26/34/pill`). Tek tek bakıldığında neredeyse hepsi aynı şey:
+bir ilerleme çubuğunun **dolgusu**. Dolgu `height: "100%"` ile kendi
+yüksekliğini dış kaptan alıyor ve yarıçapı da o kabın yarısı (5 px'lik rayda 3,
+7 px'likte 4, 10 px'likte 5) — yani yarıçap ölçek basamağı değil **geometri**,
+tıpkı webin `rounded-full`ü gibi. Kendi satırında bir boyut yazmadıkları için
+"yarıçap = boyutun yarısı" ölçüsü onları göremiyor; dış kabı bulmak için
+ağaç yürümek gerekirdi.
+
+Böyle bir kapının bugünkü hâli 35 meşru kullanımı listeleyip muafiyet listesine
+yazmak olurdu: ölçen değil, yalnızca büyüyen bir liste. Ölçüm yapmayan bir kapı
+yazmak, yazmamaktan kötü (kapının kendi kuralı).
+
+Ölçümde geriye üç gerçek aykırı kaldı ve üçü de küçük: `Slider` tutamağının 11,
+`MockExamScreen`in 2, ve onay kutularının 6 (22×22 kutu; webde aynı kutu 20×20
+`rounded-md`). Üçü de geometrik ve hiçbiri bir kart/panel yarıçapı değil —
+ölçeğin koruduğu şey o. Karar: bu kapı yazılmıyor; yarıçap paritesi kart ve
+panel düzeyinde `check:tokens` tarafından zaten iki platformda karşılaştırılıyor
+(`radii` ↔ `--radius-*`, birebir aynı beş basamak).
