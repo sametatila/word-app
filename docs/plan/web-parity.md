@@ -14127,3 +14127,60 @@ haritası) ve `replace(…, 1)` içe alımı vurdu, haritaya dokunmadı. Yani ka
 kör değildi, **enjeksiyon** kördü. Doğru yere uygulandığında kapı anında
 kırmızıya döndü. Enjeksiyonun kendisi de ölçülmeli: bir şeyi bozduğumu
 varsaymak, bozduğumu doğrulamakla aynı şey değil.
+
+## §11.400 — Davet bağlantısı Android'de tarayıcıyı açıyordu
+
+§11.399'un devamı: bayat bir not, doğru ölçüldüğünde **gerçek bir boşluğa**
+çıktı.
+
+§169'un yan notu **"mobilde derin bağlantı hiç yok"** diyordu. O cümle
+bayatlamıştı — bugün üç yol iddia ediliyor, karşılanıyor ve kapıyla ölçülüyor
+(sıfırlama, doğrulama, tarayıcıdan devir). Ama **doğru cümle daha dardı**:
+*auth* yolları var, **davet yolu yok**.
+
+Sonucu büyüme döngüsünün tam ortasında: bir kullanıcı `lernomi.app/u/ahmet`
+paylaşıyor, arkadaşı uygulaması **kurulu** bir Android'de dokunuyor ve
+**tarayıcı** açılıyordu.
+
+### İddia etme kuralı ölçüldü, sonra iddia edildi
+
+Beyan dosyasının kendi kuralı şu: *"yalnız uygulamanın karşılayabildiği yol
+iddia edilir, çünkü karşılanmayan bir yol tarayıcıda açılmaktan **kötü**"*.
+Bu yüzden önce ölçtüm:
+
+- Web'in `/u/[username]` sayfası **da oturum istiyor** — oturumsuz ziyaretçi
+  girişe yollanıyor (`if (!userId) return null`).
+- Mobil `UserScreen` oturumsuzda adı konmuş bir kart ve **"Giriş yap"**
+  düğmesi gösteriyor.
+
+Yani iki taraf eşit ve uygulamanın cevabı daha açık. Kural tutuyor, yol
+iddia edilebilir.
+
+**Çevirme bilgisi zaten vardı**: `pushRoute` bildirimler için `/u/…`yi ekrana
+eşliyordu. Eksik olan tek şey yolun iddia edilip `parseDeepLink`te
+karşılanmasıydı — dört yer birlikte değişti (iOS beyanı · Android manifestosu
+· `parseDeepLink` · `App.tsx`).
+
+Soğuk açılışta eylem **bekletiliyor** ve `NavigationContainer.onReady`
+işliyor: sıfırlama yolunun öğrendiği ders (ilk yazımı bağlantıyı sessizce
+düşürüyor ve uygulama giriş ekranında kalıyordu).
+
+### Kapı bir kez haklı çıktı, bir kez güncellendi
+
+Yolu ekleyince kapı **kırmızı yandı**: manifesto taraması yalnız
+`android:path`i okuyordu, `android:pathPrefix`i görmüyordu — ve davet yolu
+önek olmak zorunda (kullanıcı adı değişken). Ölçü iki biçimi birden okuyacak
+şekilde genişletildi. Bu bir gevşetme değil: yol hâlâ **üç kaynakta birden**
+görünmek zorunda.
+
+### §277
+
+Üç ölçü: davet yolunun beş parçası (beyan · joker · manifesto · karşılanan ·
+eylem), eylemin gezgine bağlı olduğu (handle · gezinme · **bekletme**), ve
+bildirim yolu ile derin bağlantının **aynı ekranı** açtığı — ikisi ayrışırsa
+aynı adres iki farklı yere götürür.
+
+Dört enjeksiyon denendi (manifesto önekinin kalkması, karşılamanın kalkıp
+iddianın kalması, bekletmenin kalkması, jokerin kalkması), dördü de
+yakalandı. İkincisi tam olarak beyan dosyasının uyardığı hâli kuruyor: iddia
+edilmiş ama karşılanmayan yol.
