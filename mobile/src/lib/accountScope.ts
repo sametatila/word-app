@@ -32,6 +32,23 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-lesson-resume:", //     yarım kalmış ders
   "lernomi:mock-done", //          bitirilen deneme kâğıtları
   "lernomi:mock-run:", //          yarım kalmış deneme koşusu
+  /*
+    GONDERILMEYI BEKLEYEN KAYITLAR DA HESABA AIT.
+
+    Bu uc kuyruk ag yokken biriken cevaplari, ders ilerlemesini ve beceri
+    ogesi sonuclarini tutuyor ve bir sonraki acilista gonderiliyorlar.
+    Ucu de listede yoktu: A cikip B girdiginde A'nin bekleyen cevaplari
+    B'nin hesabina yaziliyordu. Ayni bosluk webde de vardi
+    (`session-keeper`).
+
+    Silmenin bedeli: A'nin o kayitlari KAYBOLUYOR. Yanlis hesaba yazmaktan
+    iyi, ve listedeki oteki yarim isler de ayni kuralla siliniyor.
+  */
+  "lernomi-answer-queue", //       gonderilmeyi bekleyen tur cevaplari
+  "lernomi-lessons-pending", //    gonderilmeyi bekleyen ders ilerlemesi
+  "lernomi-items-pending", //      gonderilmeyi bekleyen beceri ogeleri
+  "lernomi-item-scores", //        oge puanlari
+  "lernomi-coach-seen", //         gosterilen koc cumleleri
 ];
 
 /** Çıkışta çağrılır. Hata yutulur: temizlik çıkışı engellememeli. */

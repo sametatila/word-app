@@ -66,6 +66,23 @@ const ACCOUNT_SCOPED_PREFIXES = [
   // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
   // kişiye ait, ortak cihazda diğer hesaba görünmemeli.
   "lernomi:cache:",
+  /*
+    GÖNDERİLMEYİ BEKLEYEN KAYITLAR DA HESABA AİT.
+
+    `lernomi-answer-queue` ve `lernomi-lessons-pending` ağ yokken biriken
+    cevapları/ilerlemeyi tutuyor ve bir sonraki AÇILIŞTA gönderiliyorlar.
+    İkisi de listede yoktu: A çıkıp B girdiğinde A'nın bekleyen cevapları
+    B'nin hesabına yazılıyordu — B'nin SRS aralıkları yabancı cevaplarla
+    ilerliyor, XP'si şişiyordu. Aynı boşluk Android'de de vardı.
+
+    Silmenin bedeli: A'nın o kayıtları KAYBOLUYOR. Yanlış hesaba yazmaktan
+    iyi, ve listedeki öteki yarım işler de (yarım tur `lernomi-game`, yarım
+    deneme koşusu) baştan beri aynı kuralla siliniyor.
+  */
+  "lernomi-answer-queue",
+  "lernomi-lessons-pending",
+  // Hangi koç cümlesinin gösterildiği: öğrenene ait, cihaza değil.
+  "lernomi-coach-seen",
 ];
 
 /**
