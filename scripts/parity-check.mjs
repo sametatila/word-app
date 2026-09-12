@@ -20649,6 +20649,113 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 351. HAREKETIN SAYILARI II: BASMA EGRISI VE SAHNE SURELERI
+ *
+ * 350 sarsintiyi, nabzi ve popu olctu. Bu tur GERI KALAN sureler:
+ *
+ * BASMA OLCEGININ ZAMANI. Olcek 389'da birlestirilmisti (`--press-scale`
+ * 0.96) ama SURE dort yuzeyde uc ayri egriydi: `.pressable` 0.12s
+ * cubic-bezier, `.btn` 0.15s ease, `.option` ve `.chip` 0.12s ease. Ayni
+ * jest ayni olcege uc ayri hizda gidiyordu. Android'de dordunun de altinda
+ * TEK yay var (`PressableScale`). Tek jeton: `--press-motion`.
+ *
+ * MASKOTUN EKRANDA KALMA SURESI. Android 1900 ms (`MascotPop` `HOLD_MS`),
+ * web 2600 yaziyordu - ayni kutlama webde yedi yuz milisaniye daha uzun
+ * kaliyor ve tur bitisini geciktiriyordu. Sahne protokolu de ayni sayidan
+ * besleniyor (`claimStage("pop", hold + 400)`), yani sayi kaydigi anda
+ * sahne kilidi de kayiyor.
+ *
+ * BASARIM ACILISININ DORT SURESI iki tarafta da ayni sayilar tasiyordu ama
+ * webde IKISI ciplak sayiydi (1600, 1200): kayarlarsa kimse gormezdi. Adlar
+ * mobildekiyle ayni yazildi ve olcu adlarin uzerinden gidiyor.
+ *
+ * KOC BALONU (220 ms) ve MEYDAN OKUMA PARLAMASI (160 + 780 + 160 = 1100 ms)
+ * olculdu ve zaten esitti - "eksik" saymadan once olcmek, bu turda iki
+ * yuzeyi bosuna degistirmekten kurtardi. Ikisi de kapiya girdi ki kayarsa
+ * gorunsun. */
+{
+  const silM = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const css = silM(read("src/app/globals.css"));
+
+  /* (1) Dort basma yuzeyi tek egriyi kullaniyor mu. Olcu iki yanli: jetonun
+     KENDISI tanimli, ve `transform` gecisi yazan her yer onu okuyor (ham
+     sure yazan bir yer kalirsa liste buyur). */
+  const hamTransform = [...css.matchAll(/transition:[^;]*transform\s+(?!var\()([^,;]+)/g)].map((m) => m[1].trim());
+  const jetonlu = (css.match(/transform var\(--press-motion\)/g) ?? []).length;
+  sameList(
+    "basma egrisi tek yerden",
+    ["ham sure=" + (hamTransform.join(" | ") || "yok") + " jeton kullanan=" + jetonlu],
+    ["ham sure=yok jeton kullanan=4"],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "basma egrisi tanimli",
+    ["--press-motion=" + ((css.match(/--press-motion:\s*([^;]+);/) ?? [])[1]?.trim() ?? "YOK")],
+    ["--press-motion=0.12s cubic-bezier(0.2, 0, 0.2, 1)"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* (2) Maskotun bekleme suresi ve sahne kilidinin ayni sayidan beslenmesi. */
+  const mobPop = silM(read("mobile/src/ui/MascotPop.tsx"));
+  const webPop = silM(read("src/components/mascot-pop.tsx"));
+  const mobBekle = (mobPop.match(/HOLD_MS = (\d+)/) ?? [])[1] ?? "YOK";
+  const webBekle = (webPop.match(/hold = (\d+)/) ?? [])[1] ?? "YOK";
+  const kilit = (x) => (/claimStage\("pop", (?:HOLD_MS|hold) \+ 400\)/.test(x) ? "hold+400" : "BASKA");
+  sameList(
+    "maskot sahnesinin suresi",
+    ["bekleme=" + mobBekle, "sahne kilidi=" + kilit(mobPop)],
+    ["bekleme=" + webBekle, "sahne kilidi=" + kilit(webPop)],
+    "mobil",
+    "web",
+  );
+  /* Maskotun GIRIS YONU: Android alt kenardan yukari kaldiriyor
+     (`translateY` 240 -> 0), web yandan kaydirip 12 derece egiyordu. Olcu
+     mesafenin kendisi + webde yatay/donme bileseninin kalmamis olmasi. */
+  const mobMesafe = (mobPop.match(/toValue: (\d+), duration/) ?? [])[1] ?? "YOK";
+  const webMesafe = (webPop.match(/lift = still \? 0 : (\d+)/) ?? [])[1] ?? "YOK";
+  const yatay = (webPop.match(/rotate:|x: from|x: [-\d]/g) ?? []).length;
+  sameList(
+    "maskotun giris yonu",
+    ["mesafe=" + mobMesafe + " yatay/donme=0"],
+    ["mesafe=" + webMesafe + " yatay/donme=" + yatay],
+    "mobil",
+    "web",
+  );
+
+  /* (3) Basarim acilisinin dort suresi - ADIYLA, iki tarafta da. */
+  const sure = (src, ad) => ((silM(src).match(new RegExp("(?<![A-Z_])" + ad + " = (\\d+)")) ?? [])[1] ?? "YOK");
+  const ADLAR = ["SOLO_MS", "BATCH_MS", "FIRST_MS", "DEBOUNCE_MS"];
+  const mobBas = read("mobile/src/ui/AchievementUnlock.tsx");
+  const webBas = read("src/components/achievement-unlock.tsx");
+  sameList(
+    "basarim acilisinin sureleri",
+    ADLAR.map((a) => a + "=" + sure(mobBas, a)),
+    ADLAR.map((a) => a + "=" + sure(webBas, a)),
+    "mobil",
+    "web",
+  );
+
+  /* (4) Koc balonu ve meydan okuma parlamasi - olculdu, esitti; kayarsa
+     gorunsun diye kapidalar. Mobil parlama uc parcadan olusuyor
+     (160 + 780 + 160), web tek sayidan (1100): toplam karsilastiriliyor. */
+  const mobKoc = (silM(read("mobile/src/ui/CoachBubble.tsx")).match(/duration: (\d+)/) ?? [])[1] ?? "YOK";
+  const webKoc = (silM(read("src/components/coach-bubble.tsx")).match(/duration: ([\d.]+) \}/) ?? [])[1] ?? "YOK";
+  const mobFlash = silM(read("mobile/src/screens/ChallengeScreen.tsx"));
+  const parcalar = [...mobFlash.matchAll(/duration: (\d+), easing|Animated\.delay\((\d+)\)|toValue: 0, duration: (\d+)/g)]
+    .map((m) => Number(m[1] ?? m[2] ?? m[3] ?? 0));
+  const mobToplam = parcalar.slice(0, 3).reduce((a, b) => a + b, 0);
+  const webFlash = (silM(read("src/components/celebrate.tsx")).match(/setShown\(null\), (\d+)\)/) ?? [])[1] ?? "YOK";
+  sameList(
+    "koc balonu ve parlama sureleri",
+    ["koc=" + mobKoc, "parlama=" + mobToplam],
+    ["koc=" + Math.round(Number(webKoc) * 1000), "parlama=" + webFlash],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

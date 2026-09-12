@@ -30,7 +30,11 @@ export function MascotPop({
   mood = "celebrate",
   side = "right",
   /** Ekranda kalma süresi (ms). */
-  hold = 2600,
+  /* MASKOT NE KADAR DURUYOR. Android 1900 ms (`ui/MascotPop` `HOLD_MS`);
+     web 2600 yazıyordu, yani aynı kutlama web'de yedi yüz milisaniye daha
+     uzun kalıyor ve tur bitişini geciktiriyordu. Sahne protokolü de aynı
+     sayıdan besleniyor (`claimStage("pop", hold + 400)`). */
+  hold = 1900,
 }: {
   trigger: number;
   mood?: Mood;
@@ -88,8 +92,19 @@ export function MascotPop({
     hiç çıkmıyordu ve bu yanlıştı — "hareketi azalt" hareketi azaltmayı ister,
     içeriği gizlemeyi değil; o kullanıcı kutlamayı hiç görmüyordu.
   */
-  const from = still ? 0 : side === "right" ? 120 : -120;
-  const lift = still ? 0 : 30;
+  /*
+   * GİRİŞ YÖNÜ ANDROID'İNKİ: AŞAĞIDAN YUKARI.
+   *
+   * Web maskotu yandan kaydırıyordu (x ±120) ve 12 derece eğiyordu; Android
+   * aynı kutlamada onu ekranın ALT kenarından yukarı kaldırıyor
+   * (`ui/MascotPop`: `translateY` 240 → 0, çıkışta geri 240) ve hiç
+   * eğmiyor. Aynı olay iki uygulamada iki ayrı yönden geliyordu.
+   *
+   * Yay da Android'inki: `speed: 12, bounciness: 10` RN'de tension 40 /
+   * friction 7 demek, framer'ın karşılığı `stiffness` 40 / `damping` 7 -
+   * eskisi (260/20) yaklaşık iki buçuk kat hızlıydı.
+   */
+  const lift = still ? 0 : 240;
 
   return (
     <AnimatePresence>
@@ -97,11 +112,11 @@ export function MascotPop({
         <motion.div
           key={trigger}
           aria-hidden
-          initial={{ x: from, y: lift, opacity: 0, rotate: still ? 0 : side === "right" ? 12 : -12 }}
-          animate={{ x: 0, y: 0, opacity: 1, rotate: 0 }}
-          exit={{ x: from, y: lift, opacity: 0 }}
+          initial={{ y: lift, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: lift, opacity: 0 }}
           transition={
-            still ? { duration: 0.15 } : { type: "spring", stiffness: 260, damping: 20 }
+            still ? { duration: 0.15 } : { type: "spring", stiffness: 40, damping: 7 }
           }
           className="pointer-events-none fixed z-40"
           /*
@@ -113,7 +128,8 @@ export function MascotPop({
           */
           style={{
             bottom: "calc(var(--nav-h, 6rem) + 1rem)",
-            ...(side === "right" ? { right: 8 } : { left: 8 }),
+            /* Sağ kenar boşluğu Android'le aynı (`right: 10`). */
+            ...(side === "right" ? { right: 10 } : { left: 10 }),
           }}
         >
           {/* Hepsi aynı boy: dans geniş tuvalde diye büyütülmüştü, ekranda iri kaçıyordu. */}

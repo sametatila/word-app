@@ -44,6 +44,13 @@ const SOLO_MS = 2600;
 const BATCH_MS = 5000;
 /** Toplu kartta gösterilen rozet sayısı; gerisi sayı olarak söyleniyor. */
 const BATCH_SHOWN = 8;
+/* İlk bakış gecikmeli: açılışta ağ zaten oturum ve tur isteğiyle meşgul.
+   Mobil karşılıkları ADLARIYLA aynı (`ui/AchievementUnlock` FIRST_MS,
+   DEBOUNCE_MS); burada çıplak sayı olarak duruyorlardı, yani iki taraf
+   kayarsa kimse görmezdi. */
+const FIRST_MS = 1600;
+/** Bir turda birden çok `stats` olayı atılabiliyor; son olayın üstüne bir kez bakılır. */
+const DEBOUNCE_MS = 1200;
 
 type View =
   | { kind: "solo"; queue: Fresh[] }
@@ -134,13 +141,10 @@ export function AchievementUnlock() {
   }, [busy, present]);
 
   useEffect(() => {
-    // İlk bakış gecikmeli: açılışta ağ zaten oturum ve tur isteğiyle meşgul.
-    const first = setTimeout(() => void check(), 1600);
+    const first = setTimeout(() => void check(), FIRST_MS);
     const onStats = () => {
       if (timer.current) clearTimeout(timer.current);
-      // Bir turda birden çok `stats` olayı atılabiliyor; son olayın üstüne
-      // bir kez bakmak yeterli.
-      timer.current = setTimeout(() => void check(), 1200);
+      timer.current = setTimeout(() => void check(), DEBOUNCE_MS);
     };
     window.addEventListener("lernomi:stats", onStats);
     return () => {

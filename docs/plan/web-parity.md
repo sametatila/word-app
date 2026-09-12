@@ -17943,3 +17943,50 @@ yazmıştım (`mobil=0` ile `web=0`), iki sıfır eşit sayılmadı — kapı ke
 etiketine takıldı; (3) kaldırılan halkanın adı `choice-game`in yorumunda
 geçiyor ve ham metni sayan ölçü onu bir kullanım sandı (yorumlar artık
 soyuluyor).
+
+## §11.494 — Hareketin sayıları II: basma eğrisi tek yerden, maskot aşağıdan giriyor
+
+§11.493 sarsıntıyı, nabzı ve pop'u ölçtü; bu tur geri kalan süreler.
+
+**Basma ölçeğinin zamanı üç ayrı eğriydi.** Ölçeğin kendisi §11.389'da
+birleştirilmişti (`--press-scale: 0.96`) ama **süre** dört yüzeyde üç ayrı
+değerdi: `.pressable` 0.12s cubic-bezier, `.btn` 0.15s ease, `.option` ve
+`.chip` 0.12s ease. Yani aynı jest aynı ölçeğe üç ayrı hızda gidiyordu.
+Android'de dördünün de altında **tek yay** var (`ui/PressableScale`). Tek
+jeton: `--press-motion`. CSS bir geçişi iki yönde de aynı eğriyle uyguladığı
+için Android'in bırakma sekmesi (yay `bounciness: 6`) web'e taşınmadı ve
+gerekçesi jetonun yanında yazılı: sekmeli bir eğri basma **anında** da seker,
+öge 0.96'nın altına inip geri çıkardı.
+
+**Maskot web'de yedi yüz milisaniye fazla duruyordu.** Android 1900 ms
+(`MascotPop` `HOLD_MS`), web 2600. Sahne protokolü de aynı sayıdan besleniyor
+(`claimStage("pop", hold + 400)`), yani sayı kaydığı anda sahne kilidi de
+kayıyordu.
+
+**Maskot yanlış yönden giriyordu.** Web onu yandan kaydırıp 12 derece
+eğiyordu (x ±120, `rotate`); Android aynı kutlamada ekranın **alt
+kenarından** yukarı kaldırıyor (`translateY` 240 → 0, çıkışta geri 240) ve hiç
+eğmiyor. Yay da ayrıydı: Android'in `speed: 12, bounciness: 10`u RN'de
+tension 40 / friction 7 demek — framer'ın karşılığı `stiffness: 40,
+damping: 7`; web'deki 260/20 yaklaşık iki buçuk kat hızlıydı. Sağ kenar
+boşluğu da 8'den Android'in 10'una geldi.
+
+**Başarım açılışının dört süresi** iki tarafta da aynı sayıları taşıyordu ama
+web'de ikisi (1600, 1200) çıplak sayıydı — kayarlarsa kimse görmezdi. Adlar
+mobildekiyle aynı yazıldı ve kapı adların üzerinden gidiyor.
+
+**Ölçüp dokunmadıklarım:** koç balonu (220 ms) ve meydan okuma parlaması
+(160 + 780 + 160 = 1100 ms) zaten eşitti; ikisi de kapıya girdi ki kayarsa
+görünsün. Ekrandan ayrılma koruması da tamdı — Android beş ekranda geri
+hareketini kapatıyor, web'in `lib/use-leave-guard`ı aynı yerleri koruyor ve
+§297 ikisini zaten karşılaştırıyor. Rota geçişlerinin kendisi (Android
+`slide_from_bottom`) web'de yok ve bu yapısal: web'de gezinme tarayıcının,
+bir geçiş katmanı eklemek kaydırma konumu ve hydration'la birlikte ayrı bir
+karar.
+
+**Kapı §351** altı ölçü taşıyor, hepsi enjeksiyonla doğrulandı: basma
+eğrisinin tek jetondan gelmesi (ham süre yazan bir yüzey kalırsa liste
+büyüyor) ve jetonun değeri, maskotun bekleme süresi + sahne kilidinin aynı
+sayıdan beslenmesi, maskotun giriş mesafesi ve web'de yatay/dönme bileşeninin
+kalmamış olması, başarım açılışının dört süresi (adlarıyla), koç balonu ve
+parlama süreleri.

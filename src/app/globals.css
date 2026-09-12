@@ -271,6 +271,23 @@
    */
   --press-scale: 0.96;
 
+  /*
+   * Basma ölçeğinin ZAMANI da tek yerden.
+   *
+   * Ölçek `--press-scale` ile birleştirilmişti (§11.389) ama SÜRE dört
+   * yüzeyde üç ayrı eğriydi: `.pressable` 0.12s cubic-bezier(0.2,0,0.2,1),
+   * `.btn` 0.15s ease, `.option` ve `.chip` 0.12s ease. Yani aynı jest aynı
+   * ölçeğe üç ayrı hızda gidiyordu. Android'de dördünün de altında TEK yay
+   * var (`ui/PressableScale`: basarken speed 50 / sekme yok, bırakırken
+   * speed 40 / hafif sekme), yani orada tek bir his.
+   *
+   * CSS bir geçişi iki yönde de aynı eğriyle uyguluyor, o yüzden Android'in
+   * bırakma sekmesi burada yok: sekmeli bir eğri basma ANINDA da sekerdi ve
+   * öge 0.96'nın altına inip geri çıkardı. Seçilen değer yayın basma
+   * yarısına en yakın olanı ve zaten dosyada duran (`.pressable`) eğri.
+   */
+  --press-motion: 0.12s cubic-bezier(0.2, 0, 0.2, 1);
+
 }
 
 /*
@@ -652,7 +669,7 @@
     border-radius: var(--radius-panel);
     font-size: var(--text-h3);
     font-weight: 700;
-    transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+    transition: transform var(--press-motion), filter 0.15s ease, background-color 0.15s ease;
   }
   .btn:active {
     transform: scale(var(--press-scale));
@@ -673,7 +690,7 @@
    * Hareket azaltma tercihinde ölçek tamamen kapanıyor (aşağıdaki blok).
    */
   .pressable {
-    transition: transform 0.12s cubic-bezier(0.2, 0, 0.2, 1);
+    transition: transform var(--press-motion);
     touch-action: manipulation;
   }
   /*
@@ -860,7 +877,7 @@
     border: 1.5px solid var(--border);
     background: var(--surface);
     border-radius: var(--radius-panel);
-    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease,
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform var(--press-motion),
       box-shadow 0.15s ease;
   }
   @media (hover: hover) and (pointer: fine) {
@@ -908,7 +925,7 @@
     border-radius: var(--radius-tile);
     font-weight: 600;
     transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease,
-      transform 0.12s ease;
+      transform var(--press-motion);
   }
   @media (hover: hover) and (pointer: fine) {
     .chip:hover:not(.chip-active) {
