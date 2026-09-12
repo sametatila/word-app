@@ -3,6 +3,7 @@ import nodemailer, { type Transporter } from "nodemailer";
 import { LEGAL_ENTITY } from "@/lib/legal";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { redisClient, warnRedisOnce } from "@/lib/auth/redis";
+import { track } from "@/lib/events";
 
 /**
  * Giden e-posta — sağlayıcı **Resend**, taşıma **SMTP**.
@@ -77,7 +78,35 @@ async function overMailCap(to: string): Promise<boolean> {
   }
 }
 
-export async function sendEmail(to: string, subject: string, html: string, text: string): Promise<void> {
+/** Gönderilen postanın türü — olayın `kind` etiketinde geçiyor. */
+export type MailKind = "verify" | "reset" | "pw_changed" | "exists" | "twofa";
+
+/**
+ * SONUÇ ÖLÇÜLÜYOR, YALNIZ LOG'LANMIYOR.
+ *
+ * Gönderim üç yoldan biriyle bitiyor ve üçü de sessizdi: gitti, SMTP
+ * reddetti, saatlik tavan düşürdü. Doğrulama postası ZORUNLU bir kapı (SMTP
+ * bağlıyken e-posta doğrulaması şart, bkz. yukarıdaki not) - yani sağlayıcı
+ * reddetmeye başladığında her yeni kayıt kalıcı olarak kilitli kalıyor ve tek
+ * iz kimsenin grep'lemediği bir sunucu log satırı oluyordu.
+ *
+ * Olay `mail_sent`: `value` 1 gitti / 0 gitmedi, `kind` `<tür>:<sonuç>`.
+ * Kullanıcı kimliği olmayan çağrıda olay yazılmıyor (olay tablosu kullanıcıya
+ * bağlı) - bugün bütün çağrı yerlerinde kimlik var.
+ */
+async function yaz(userId: string | null, kind: MailKind | null, sonuc: "ok" | "fail" | "cap"): Promise<void> {
+  if (!userId || !kind) return;
+  await track(userId, "mail_sent", new Date().toISOString().slice(0, 10), sonuc === "ok" ? 1 : 0, `${kind}:${sonuc}`);
+}
+
+export async function sendEmail(
+  to: string,
+  subject: string,
+  html: string,
+  text: string,
+  /** Ölçüm için: kim ve hangi tür. Verilmezse olay yazılmıyor. */
+  meta?: { userId: string | null; kind: MailKind },
+): Promise<void> {
   if (!emailConfigured) {
     console.log(`[email] SMTP tanımsız — gönderilmedi: ${to} · ${subject}`);
     return;
@@ -85,6 +114,7 @@ export async function sendEmail(to: string, subject: string, html: string, text:
   if (await overMailCap(to)) {
     // İngilizce: sunucu log'u, arayüz dizgisi değil.
     console.warn(`[email] hourly cap reached for ${to}, not sent: ${subject}`);
+    await yaz(meta?.userId ?? null, meta?.kind ?? null, "cap");
     return;
   }
   try {
@@ -92,9 +122,11 @@ export async function sendEmail(to: string, subject: string, html: string, text:
     // Kullanıcı doğrulama postasına cevap yazarsa mesajı sessizce kaybederdik;
     // cevaplar okunan kutuya, destek adresine gider.
     await transport().sendMail({ from: FROM, replyTo: LEGAL_ENTITY.supportEmail, to, subject, html, text });
+    await yaz(meta?.userId ?? null, meta?.kind ?? null, "ok");
   } catch (err) {
     // Kayıt/sıfırlama akışı e-posta yüzünden 500 vermesin; hata log'lanır.
     console.error("[email] gönderim başarısız", err);
+    await yaz(meta?.userId ?? null, meta?.kind ?? null, "fail");
   }
 }
 

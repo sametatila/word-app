@@ -175,6 +175,19 @@ export const EVENT_NAMES = [
   "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)
   "install_prompt", // ana ekrana ekleme (value = 1 eklendi / 0 reddedildi / 2 iOS ipucu gösterildi)
   "push_sent", // sunucu bildirim gönderdi (kind = reminder|summary) — push_open ile huni
+  /*
+   * Giden e-postanın sonucu (kind = `<tür>:<sonuç>`, value = 1 gitti / 0 gitmedi).
+   *   tür:   verify | reset | pw_changed | exists | twofa
+   *   sonuç: ok | fail | cap
+   *
+   * NEDEN OLAY: e-posta gönderimi yalnız `console.error`a düşüyordu. Oysa
+   * doğrulama postası ZORUNLU bir kapı - SMTP sağlayıcısı reddetmeye
+   * başladığında (kota, alan adı, kimlik) her yeni kayıt kalıcı olarak
+   * kilitli kalıyor ve tek iz kimsenin grep'lemediği bir sunucu log satırı
+   * oluyordu. `cap` de sessizdi: alıcı başına saatlik tavan postayı düşürüyor
+   * ve kullanıcı hiç gelmeyen bir postayı bekliyordu.
+   */
+  "mail_sent",
 
   /*
     Dönüşüm hunisi — premium (WP-90, dönüşüm planı §4).

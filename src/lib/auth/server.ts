@@ -159,7 +159,7 @@ export const auth = betterAuth({
      */
     onPasswordReset: async ({ user: u }) => {
       const { subject, html, text } = passwordChangedEmail(`${BASE_URL}/forgot-password`, await getLang());
-      await sendEmail(u.email, subject, html, text);
+      await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "pw_changed" });
     },
     /**
      * Var olan bir e-postayla kayıt denendi.
@@ -173,14 +173,14 @@ export const auth = betterAuth({
      */
     onExistingUserSignUp: async ({ user: u }) => {
       const { subject, html, text } = accountExistsEmail(`${BASE_URL}/forgot-password`, await getLang());
-      await sendEmail(u.email, subject, html, text);
+      await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "exists" });
     },
     sendResetPassword: async ({ user: u, url }) => {
       // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
       // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
       // isteği çoğu zaman oturumsuz geliyor.
       const { subject, html, text } = resetEmail(url, await getLang());
-      await sendEmail(u.email, subject, html, text);
+      await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "reset" });
     },
   },
   emailVerification: {
@@ -204,7 +204,7 @@ export const auth = betterAuth({
     sendVerificationEmail: async ({ user: u, url }) => {
       // Kayıt anında profil henüz yok; dilin tek güvenilir kaynağı istek.
       const { subject, html, text } = verificationEmail(url, await getLang());
-      await sendEmail(u.email, subject, html, text);
+      await sendEmail(u.email, subject, html, text, { userId: u.id, kind: "verify" });
     },
   },
   socialProviders: {
@@ -469,7 +469,7 @@ export const auth = betterAuth({
         storeOTP: "hashed",
         sendOTP: async ({ user, otp }) => {
           const { subject, html, text } = twoFactorCodeEmail(otp, await getLang());
-          await sendEmail(user.email, subject, html, text);
+          await sendEmail(user.email, subject, html, text, { userId: user.id, kind: "twofa" });
         },
       },
     }),
