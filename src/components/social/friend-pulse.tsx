@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
+import { ArrowRightIcon } from "@/components/icons";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
@@ -30,25 +31,50 @@ export function FriendPulse() {
      (`FriendPulse`), akış ve gelen kutusu da öyle. */
   if (q === undefined)
     return (
-      <div aria-hidden className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3">
-        <SkeletonTile size={32} className="rounded-full" />
+      <div
+        aria-hidden
+        className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
+        style={{ borderWidth: 1.5, borderColor: "var(--hairline)" }}
+      >
+        <SkeletonTile size={44} className="rounded-full" />
         <div className="min-w-0 flex-1">
-          <SkeletonLine variant="strong" width="72%" />
-          <SkeletonBar height={8} className="mt-1" />
+          <SkeletonLine variant="h3" width="72%" />
+          <SkeletonBar height={6} className="mt-1.5" />
           <SkeletonLine variant="micro" width="45%" className="mt-1" />
         </div>
-        <SkeletonLine variant="strong" width={34} />
+        <SkeletonLine variant="h3" width={34} />
       </div>
     );
   if (!q) return null;
   const invited = q.status === "invited";
   return (
-    <Link href="/friends?tab=quests" prefetch={false} className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3">
+    /*
+      DURUM KARTIN KENDİSİNDE. Android kartı 1.5 px'lik renkli bir çerçeveyle
+      çiziyor ve rengi duruma göre değişiyor: davet mavi (`info`), kabul
+      edilmiş ortak görev marka rengi (`primary`). Halka da aynı rengi
+      alıyor. Web'de çerçeve HİÇ yoktu ve halka duruma bakmadan her zaman
+      maviydi — kabul edilmiş bir görev davet gibi görünüyordu.
+    */
+    <Link
+      href="/friends?tab=quests"
+      prefetch={false}
+      className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3"
+      style={{ borderWidth: 1.5, borderColor: invited ? "var(--color-sky)" : "var(--color-brand)" }}
+    >
       <div className="flex -space-x-2">
-        <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={32} ring="var(--color-sky)" />
+        {/* Avatar 44: Android ile aynı. Web'de 32'ydi ve satır aynı kartın
+            içinde bir gömlek küçük duruyordu (iskelet karosu da öyle). */}
+        <Avatar
+          userId={q.partner.userId}
+          name={q.partner.name}
+          avatar={q.partner.avatar}
+          size={44}
+          ring={invited ? "var(--color-sky)" : "var(--color-brand)"}
+        />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-strong">
+        {/* Başlık `h3` (16): Android `variant="h3"`. Web `strong` (15) idi. */}
+        <p className="truncate text-h3">
           {invited
             ? q.invitedByMe
               ? t("friendpulse.waiting")
@@ -66,8 +92,11 @@ export function FriendPulse() {
           </p>
         ) : (
           <>
-            <div className="mt-1 h-2 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-              <div className="h-full" style={{ width: `${q.pct}%`, background: "var(--color-brand)" }} />
+            {/* Çubuk Android `Bar` ile aynı: 6 px yükseklik ve yüzde SIFIRDA
+                bile üç birimlik bir dilim — sıfır ile "hiç çubuk yok" aynı
+                görünmesin (mobil `Math.max(3, …)`). Web 8 px ve tabansızdı. */}
+            <div className="mt-1.5 w-full overflow-hidden rounded-full" style={{ height: 6, background: "var(--surface-2)" }}>
+              <div className="h-full rounded-full" style={{ width: `${Math.max(3, Math.min(100, q.pct))}%`, background: "var(--color-brand)" }} />
             </div>
             {/* ÇUBUĞUN ALTINDAKİ SAYILAR. Web yalnız çubuğu çiziyordu: kaç XP
                 toplandığı, hedefin ne olduğu ve kaç gün kaldığı hiçbir yerde
@@ -83,11 +112,17 @@ export function FriendPulse() {
           </>
         )}
       </div>
+      {/* Sağ uç: yüzde `h3` (Android `variant="h3"`, web `caption` idi — aynı
+          satırın en önemli sayısı en küçük puntoydu). Davet hâlinde sayı
+          yerine ok: kart "cevapla" diyor ve gidilecek bir yer olduğunu
+          Android orada okla söylüyor, web hiçbir şey koymuyordu. */}
       {!invited ? (
-        <span className="shrink-0 text-caption tabular-nums" style={{ color: "var(--color-brand)" }}>
+        <span className="shrink-0 text-h3 tabular-nums" style={{ color: "var(--color-brand)" }}>
           {formatPercent(q.pct, lang)}
         </span>
-      ) : null}
+      ) : (
+        <ArrowRightIcon size={20} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+      )}
     </Link>
   );
 }

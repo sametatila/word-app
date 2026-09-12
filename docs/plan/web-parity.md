@@ -16924,3 +16924,29 @@ geçmez.
 `--color-danger` ile `--color-rose` aynı rengin iki adı (`globals.css`te biri
 diğerine takma ad), ikisi de `danger` rolüne eşleniyor — kapı bu yüzden isim
 değil rol okuyor.
+
+## §11.468 — Ortak görev nabzı: aynı satır, yedi ayrı ölçü
+
+Öğren ekranındaki tek satırlık nabız (bu haftanın ortak görevi / daveti) iki
+platformda **aynı verinin ayrı tasarımıydı**. Android referans; web'de bulunan
+farklar:
+
+- **Avatar 32** (Android 44), iskelet karosu da 32 — satır aynı kartın içinde
+  bir gömlek küçük duruyordu.
+- **Kartın durum çerçevesi hiç yoktu.** Android 1.5 px çerçeve çiziyor ve rengi
+  duruma göre değişiyor: davet mavi (`info`), kabul edilmiş ortak görev marka
+  rengi (`primary`).
+- **Halka duruma bakmadan her zaman maviydi** — kabul edilmiş bir görev davet
+  gibi görünüyordu.
+- Başlık `strong` (15), Android `h3` (16).
+- **Çubuk 8 px ve tabansız:** yüzde sıfırda hiç çubuk görünmüyor, yani "sıfır"
+  ile "çubuk yok" aynı. Android `Bar` 6 px ve `Math.max(3, …)` ile sıfırda bile
+  bir dilim bırakıyor.
+- Sağdaki **yüzde `caption`** (12.5) — satırın en önemli sayısı en küçük
+  puntoydu. Android `h3`.
+- **Davet hâlinde Android ok koyuyor** (gidilecek bir yer var), web hiçbir şey.
+
+Kapı **§328** on iki ölçüyü iki dosyadan okuyor. Çubuğun yüksekliği ve tabanı
+**ortak bileşenden** (`social/common` `Bar`) çıkarılıyor, kapının içine
+yazılmıyor — enjeksiyon `Bar`ın varsayılan yüksekliğini değiştirince kapı
+kırmızı veriyor, yani ölçü kaynağın kendisine bağlı.

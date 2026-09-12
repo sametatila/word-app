@@ -18479,6 +18479,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------------- 328. ORTAK GOREV NABZI: SATIRIN OLCULERI VE DURUMU
+ *
+ * Ogren ekranindaki tek satirlik nabiz iki platformda AYNI verinin ayri
+ * tasarimiydi. Android referans; webde bulunan farklar:
+ *   - avatar 32 (Android 44), iskelet karosu da 32
+ *   - kartin DURUM CERCEVESI hic yoktu: Android 1.5 px cerceve ciziyor ve
+ *     rengi duruma gore degisiyor (davet mavi, kabul edilmis gorev marka)
+ *   - halka duruma bakmadan HER ZAMAN maviydi: kabul edilmis bir gorev davet
+ *     gibi gorunuyordu
+ *   - baslik `strong` (15), Android `h3` (16)
+ *   - cubuk 8 px ve TABANSIZ: yuzde sifirda hic cubuk gorunmuyor, Android
+ *     `Bar` 6 px ve `Math.max(3, …)` ile sifirda bile bir dilim birakiyor
+ *   - sagdaki yuzde `caption` (12.5) - satirin en onemli sayisi en kucuk
+ *     puntoydu; Android `h3`
+ *   - davet halinde Android ok koyuyor (gidilecek bir yer var), web hicbir sey
+ *
+ * Olcu iki tarafi ayni dosyadan okuyor ve DEGER karsilastiriyor; yaricap ve
+ * punto adlari ise rol uzerinden (webin `text-h3`u Android `variant="h3"`). */
+{
+  const silN = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const m = silN(read("mobile/src/social/FriendPulse.tsx")).replace(/\s+/g, " ");
+  const w = silN(read("src/components/social/friend-pulse.tsx")).replace(/\s+/g, " ");
+  const bar = silN(read("mobile/src/social/common.tsx"));
+  /* Cubugun yuksekligi ve tabani ORTAK bilesende (`Bar`), nabzin icinde degil:
+     kapi oradan okuyor, kendi icine sayi yazmiyor. */
+  const barBoy = (bar.match(/export function Bar\(\{ pct, tint, height = (\d+) \}/) ?? [])[1] ?? "YOK";
+  const barTaban = (bar.match(/width: `\$\{Math\.max\((\d+), Math\.min\(100, pct\)\)\}%`/) ?? [])[1] ?? "YOK";
+  sameList(
+    "ortak gorev nabzinin olculeri",
+    [
+      "avatar=" + ((m.match(/<Avatar [^>]*size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet karo=" + ((m.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(m) ? "h3" : "FARKLI"),
+      "iskelet cubuk=" + ((m.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet cerceve=" + (/borderWidth: 1\.5, borderColor: colors\.hairline/.test(m) ? "1.5" : "YOK"),
+      "kart cercevesi=" + (/borderColor: invited \? colors\.info : colors\.primary, borderWidth: 1\.5/.test(m) ? "1.5 durumlu" : "YOK"),
+      "halka=" + (/ring=\{invited \? colors\.info : colors\.primary\}/.test(m) ? "durumlu" : "SABIT"),
+      "baslik=" + (/<Text variant="h3" numberOfLines=\{1\}>/.test(m) ? "h3" : "FARKLI"),
+      "cubuk boy=" + barBoy,
+      "cubuk taban=" + barTaban,
+      "yuzde=" + (/<Text variant="h3" color=\{colors\.primaryText\}>\{formatPercent/.test(m) ? "h3" : "FARKLI"),
+      "davet oku=" + (/<ArrowRightIcon color=\{colors\.textFaint\} size=\{(20)\}/.test(m) ? "20" : "YOK"),
+    ],
+    [
+      "avatar=" + ((w.match(/<Avatar [\s\S]{0,200}?size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet karo=" + ((w.match(/<SkeletonTile size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet baslik=" + (/<SkeletonLine variant="h3" width="72%"/.test(w) ? "h3" : "FARKLI"),
+      "iskelet cubuk=" + ((w.match(/<SkeletonBar height=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "iskelet cerceve=" + (/borderWidth: 1\.5, borderColor: "var\(--hairline\)"/.test(w) ? "1.5" : "YOK"),
+      "kart cercevesi=" + (/borderWidth: 1\.5, borderColor: invited \? "var\(--color-sky\)" : "var\(--color-brand\)"/.test(w) ? "1.5 durumlu" : "YOK"),
+      "halka=" + (/ring=\{invited \? "var\(--color-sky\)" : "var\(--color-brand\)"\}/.test(w) ? "durumlu" : "SABIT"),
+      "baslik=" + (/<p className="truncate text-h3">/.test(w) ? "h3" : "FARKLI"),
+      "cubuk boy=" + ((w.match(/style=\{\{ height: (\d+), background: "var\(--surface-2\)" \}\}/) ?? [])[1] ?? "YOK"),
+      "cubuk taban=" + ((w.match(/width: `\$\{Math\.max\((\d+), Math\.min\(100, q\.pct\)\)\}%`/) ?? [])[1] ?? "YOK"),
+      "yuzde=" + (/className="shrink-0 text-h3 tabular-nums"/.test(w) ? "h3" : "FARKLI"),
+      "davet oku=" + ((w.match(/<ArrowRightIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
