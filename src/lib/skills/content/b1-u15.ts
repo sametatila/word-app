@@ -165,7 +165,7 @@ export const b1U15: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 15,
-    title: "Das war mein Fehler",
+    title: "Zwei Zahlen sind falsch",
     genre: "report",
     intro: "Bir hata konuşuluyor. Ton nasıl, sonuç ne?",
     minutes: 4,

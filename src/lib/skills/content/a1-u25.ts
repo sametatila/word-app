@@ -234,7 +234,7 @@ export const a1U25: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 25,
-    title: "Mein Wochenende",
+    title: "Ein Wochenende in Hamburg",
     genre: "dialogue",
     intro: "Bir hafta sonu gezisi. Nereye, kiminle, nerede kalmış?",
     gloss: [

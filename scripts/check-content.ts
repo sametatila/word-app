@@ -171,6 +171,20 @@ const GENRES = new Set([
 ]);
 
 function checkSkills(list: SkillExercise[]) {
+  /* Patika kartı başlığı gösteriyor. Aynı seviyede AYRI ÜNİTELERDE aynı
+     başlık iki kart üretir ve öğrenci hangisini açtığını ayırt edemez.
+     Aynı ünite içinde yineleme kural DIŞI: yazma egzersizi bilerek okuma
+     ya da dinlemenin başlığını taşıyor, çünkü onu çalıştırıyor. */
+  const baslik = new Map<string, Set<number>>();
+  for (const e of list) {
+    if (e.unit == null) continue;
+    const k = `${e.course ?? "de"} ${e.level} ${e.title}`;
+    const u = baslik.get(k) ?? new Set<number>();
+    u.add(e.unit); baslik.set(k, u);
+  }
+  for (const [k, u] of baslik)
+    if (u.size > 1) E("[skills]", `başlık iki ünitede birden: "${k}" → ünite ${[...u].sort((a, b) => a - b).join(", ")}`);
+
   const ids = new Set<string>();
   for (const e of list) {
     const w = `[skills] ${e.id}`;

@@ -1841,6 +1841,28 @@ Five euros.“). Bir kapı bunların çerçevesini anlayamaz; gürültülü kap�
 kapısızlıktan kötüdür.
 
 
+**Sayı taraması Almanca kursta: temiz çıktı (2026-09-12).** Aynı tarama 145
+Almanca ünitesine (870 egzersiz) koşuldu. Sonuç ÖLÇÜLMÜŞ BİR NEGATİF: gerçek
+sayı uyuşmazlığı YOK. Kalan 33 işaretin hepsi meşru ve beş desende toplanıyor —
+(a) yapısal sayım („Ortaç sıfatı, als ob, öznel kip ve edilgen Perfekt — B2'nin
+dört sütunu“), (b) ödev yönergesi („6-9 cümle“, „(1) … (2) …“), (c) yazma
+görevinin veri kartı („Gün: pazar; sonuç: 1-1; seyirci: 4000“ — öğrenciye
+verilen veri, metnin iddiası değil), (d) deyim („dört gözle bekliyorum“),
+(e) ünite göndermesi („ünite 43'ün kalıbı“). Betik (a)–(e)'yi eleyecek
+süzgeçlerle çalıştı. Bir de dil özgü ders: Almanca sayıyı BİLEŞİK yazıyor
+(„neunundzwanzig“, „viermal“, „zehnfach“), bu yüzden belirteci tam eşleştirmek
+işe yaramıyor — kök araması gerekiyor; İngilizce tarafta bu sorun yoktu.
+
+**Aynı seviyede yinelenen başlık (2026-09-12).** Patika kartı başlığı gösteriyor;
+ayrı ünitelerde aynı başlık iki ayırt edilemez kart üretiyor. İki gerçek çakışma
+vardı, ikisi de Almanca kursta: `a1-u25-l2` („Mein Wochenende“, u24'ün yazma
+egzersiziyle aynı) → „Ein Wochenende in Hamburg“, ve `b1-u15-l1` („Das war mein
+Fehler“, u9'un dinlemesiyle aynı) → „Zwei Zahlen sind falsch“. Kalıcı kapı
+eklendi ve ateşlendiği doğrulandı. Kural AYNI ÜNİTE İÇİNDE bilerek gevşek:
+yazma egzersizi çalıştırdığı okuma ya da dinlemenin başlığını taşıyor ve bu on
+yerde tasarım gereği.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma
