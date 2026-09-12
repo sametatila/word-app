@@ -432,7 +432,9 @@ export function RoleplayExamScreen() {
 function Back({ nav, colors }: { nav: NativeStackNavigationProp<RootStackParams>; colors: Palette }) {
   return (
     <PressableScale onPress={() => nav.goBack()} hitSlop={6} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-      <ArrowBackIcon color={colors.text} size={22} />
+      {/* GERI OKU 24, capraz 22 — uygulamanin kurali bu ve otuz alti karonun
+          hepsi ona uyuyor; yalniz burada 22 yaziliydi. */}
+      <ArrowBackIcon color={colors.text} size={24} />
     </PressableScale>
   );
 }

@@ -34,9 +34,10 @@ import { MascotFx } from "@/components/mascot-fx";
 import { Stagger } from "@/components/reveal";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
-import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
+import { RoundExit } from "@/components/round-exit";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
@@ -837,15 +838,10 @@ export function SessionPlayer() {
           turdan çıkmanın hiçbir yolu kalmıyordu. Mobilde aynı yerde, aynı
           ölçüde (`GameScreen`: 44x44, `surface-2`). */}
       <div className="mb-2 flex shrink-0 items-center gap-3">
-        <button
-          type="button"
-          onClick={() => setConfirmExit(true)}
-          aria-label={t("game.quit_round")}
-          className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
-        >
-          <XIcon size={22} />
-        </button>
+        {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
+            kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
+            kaynak. */}
+        <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
         <div className="min-w-0 flex-1">
           <LevelBadge
             level={session!.meta.level}

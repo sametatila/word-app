@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { XIcon } from "@/components/icons";
+import { ArrowLeftIcon, XIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -21,14 +21,33 @@ export function RoundExit({
   onExit,
   href,
   labelKey = "common.go_back",
+  glyph = "close",
 }: {
   /** Geri çağrıyla çıkış (boss, meydan okuma, günün turu). */
   onExit?: () => void;
   /** Bağlantıyla çıkış (haftalık sınav: `onExit` taşımıyor). */
   href?: string;
-  labelKey?: "common.go_back" | "common.back" | "walkmode.exit_walk_mode";
+  labelKey?:
+    | "common.go_back"
+    | "common.back"
+    | "walkmode.exit_walk_mode"
+    | "exam.quit_title"
+    | "plc.quit_title"
+    | "mockexam.quit_title"
+    | "game.quit_round"
+    | "common.close";
+  /**
+   * Simge: `close` çarpı (22 px), `back` geri oku (24 px).
+   *
+   * Ayrım Android'den: bir ekranı KAPATAN düğme çarpı taşıyor
+   * (`ExamScreen`, `GameScreen`, `PlacementScreen`, `WalkModeScreen`), listeye
+   * GERİ DÖNEN düğme ok taşıyor (`MockExamScreen`). Web üçünde de çarpı
+   * çiziyordu.
+   */
+  glyph?: "close" | "back";
 }) {
   const t = useT();
+  const ic = glyph === "back" ? <ArrowLeftIcon size={24} /> : <XIcon size={22} />;
   /* Sınıf DEĞİŞKENDEN GELMİYOR, iki dalda da elle yazılı: `check:hit`
      kapısı dokunma hedefini sınıf adından okuyor ve bir değişkene konulan
      sınıf o kapı için ölçülemez oluyor - kapıya kör nokta açmamak için iki
@@ -43,7 +62,7 @@ export function RoundExit({
         className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
         style={stil}
       >
-        <XIcon size={22} />
+        {ic}
       </Link>
     );
   }
@@ -55,7 +74,7 @@ export function RoundExit({
       className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
       style={stil}
     >
-      <XIcon size={22} />
+      {ic}
     </button>
   );
 }

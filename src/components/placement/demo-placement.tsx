@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { XIcon } from "@/components/icons";
+import { RoundExit } from "@/components/round-exit";
 import { OptionMark } from "@/components/games/option-mark";
 import { demoPlacementFor, estimateLevel } from "@/lib/placement-demo";
 import { courseOrDefault } from "@/lib/courses";
@@ -116,9 +116,10 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
   return (
     <section className="mx-auto w-full max-w-md px-4 py-4">
       <div className="mb-6 flex items-center gap-3">
-        <button type="button" onClick={leave} aria-label={t("common.close")} className="btn btn-ghost h-11 w-11 shrink-0">
-          <XIcon size={20} />
-        </button>
+        {/* Ölçü ortak bileşenden: 44 px karo, 22 px simge, `surface-2`
+            zemin. Burada `btn-ghost` ve 20 px simge vardı — aynı uygulamada
+            dördüncü bir kapatma karosu ölçüsü. */}
+        <RoundExit onExit={leave} labelKey="common.close" />
         <div className="h-2.5 flex-1 overflow-hidden rounded-full surface-2">
           <motion.div
             className="brand-gradient h-full rounded-full"

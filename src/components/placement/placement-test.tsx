@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { speakGerman } from "@/components/speak-button";
-import { SpeakerIcon, XIcon } from "@/components/icons";
+import { SpeakerIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
+import { RoundExit } from "@/components/round-exit";
 import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
@@ -286,15 +287,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             Android'de başlıkta bir kapat düğmesi var ve "cevapların
             kaydedilmiyor" diye sorup çıkıyor; metin zaten sözlükte duruyordu,
             web'de onu kullanan hiçbir şey yoktu. */}
-        <button
-          type="button"
-          onClick={() => setQuit(true)}
-          aria-label={t("plc.quit_title")}
-          className="pressable hit-8 flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "var(--surface-2)" }}
-        >
-          <XIcon size={16} />
-        </button>
+        {/* Ölçü Android'den (bkz. `exam-player`): 44 px karo, 22 px simge. */}
+        <RoundExit onExit={() => setQuit(true)} labelKey="plc.quit_title" />
       </div>
     </div>
   );

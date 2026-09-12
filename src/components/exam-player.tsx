@@ -12,9 +12,10 @@ import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
+import { RoundExit } from "@/components/round-exit";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
 import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/assess-client";
@@ -477,15 +478,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <span className="tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
         </span>
-        <button
-          type="button"
-          onClick={() => setQuit(true)}
-          aria-label={t("exam.quit_title")}
-          className="pressable hit-8 flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "var(--surface-2)" }}
-        >
-          <XIcon size={16} />
-        </button>
+        {/* ÖLÇÜ ANDROID'DEN. Karo 32 px, simge 16 idi; Android'in yedi
+            kapatma karosu da 44 px ve simgesi 22 (`ExamScreen`). Dokunma
+            hedefi `hit-8` ile ölçüde geçiyordu ama GÖRÜNEN düğme küçüktü ve
+            aynı uygulamada üç farklı kapatma karosu vardı (32 / 36 / 44).
+            Ortak bileşen Android'in ölçüsünü taşıyor. */}
+        <RoundExit onExit={() => setQuit(true)} labelKey="exam.quit_title" />
       </div>
       <div className="mt-1.5 h-1 overflow-hidden rounded-full surface-2">
         <div

@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
+import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
@@ -349,15 +350,11 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
               Android'de başlıkta bir kapat düğmesi var ve cevapların
               kaydedildiğini söyleyip çıkıyor - web zaten iki saniyede bir
               kaydediyor, yani söz tutuluyor. */}
-          <button
-            type="button"
-            onClick={() => setQuit(true)}
-            aria-label={t("mockexam.quit_title")}
-            className="pressable flex h-9 w-9 shrink-0 items-center justify-center rounded-tile"
-            style={{ background: "var(--surface-2)" }}
-          >
-            <XIcon size={18} />
-          </button>
+          {/* Ölçü ve SİMGE Android'den: 44 px karo, ve burada ÇARPI DEĞİL
+              GERİ OKU — bu başlık listeye dönüyor, ekranı kapatmıyor
+              (`MockExamScreen`: `ArrowBackIcon size={24}`). Web üç ekranda da
+              çarpı çiziyordu. */}
+          <RoundExit onExit={() => setQuit(true)} labelKey="mockexam.quit_title" glyph="back" />
         </div>
       </header>
 
