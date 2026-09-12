@@ -16939,6 +16939,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       if (son < 0) return [];
       return [...src.slice(i, son).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]);
     };
+    /* Satir ici dizi: `const known = ["a", "b"]` gibi bir ifadeden degerler. */
+    const diziDeger = (yol, bas) => {
+      const src = sil(read(yol));
+      const i = src.indexOf(bas);
+      if (i < 0) return [];
+      const son = src.indexOf("]", i);
+      if (son < 0) return [];
+      return [...src.slice(i, son).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]);
+    };
     const dizi = (yol, ad) => {
       const src = sil(read(yol));
       const i = src.indexOf("const " + ad + " =");
@@ -16953,6 +16962,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       { onek: "band.", degerler: birlik("src/lib/proficiency.ts", "Band"), cagri: ["mobile/src/ui/GrowthPanel.tsx", "band.${p.band}"] },
       { onek: "mockexam.fail_", degerler: birlik("mobile/src/game/mockExam.ts", "FailReason"), cagri: ["mobile/src/screens/MockExamScreen.tsx", "mockexam.fail_${offline}"] },
       { onek: "mockexam.goal_", degerler: birlik("src/lib/mock-exams/types.ts", "MockGoal"), cagri: ["mobile/src/screens/MockExamScreen.tsx", "mockexam.goal_${"] },
+      /* Promo sebepleri: kaynak webin TANIDIGI sebep listesi. Sunucu sebebi
+         dogrudan anahtar adi olarak donduruyor; tanimadigi sebep genel
+         mesaja dusuyor (`promo.failed`). */
+      { onek: "promo.", degerler: diziDeger("src/components/premium-paywall.tsx", "const known ="), cagri: ["src/components/premium-paywall.tsx", "promo.${data.error}"] },
     ];
     const tabanSozluk = read("src/i18n/base/tr.ts");
     const mobilSozluk = read("mobile/src/i18n/tr.ts");
@@ -16968,6 +16981,21 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         if (!mobilSozluk.includes(k)) eksik.push("mobil:" + a.onek + v);
       }
     }
+    /* PROMO SEBEP LISTESI IKI PLATFORMDA AYNI.
+     *
+     * Sunucu sebebi dogrudan anahtar adi olarak donduruyor ve her istemci
+     * kendi TANIDIK listesini tutuyor (web `known`, mobil `PROMO_ERRORS`).
+     * Biri bir sebebi tanimazsa o sebep o platformda "daha sonra tekrar dene"
+     * diye gorunuyor - ayni sunucu cevabi iki ayri cumle. Bir sebep eklenirken
+     * ikisine de eklenmesi gerekiyor; olcu kume esitligi. */
+    sameSet(
+      "promo sebep listesi iki platformda",
+      diziDeger("mobile/src/screens/PaywallScreen.tsx", "const PROMO_ERRORS ="),
+      diziDeger("src/components/premium-paywall.tsx", "const known ="),
+      "mobil",
+      "web",
+    );
+
     sameList(
       "sablonla kurulan anahtarlar sozlukte",
       [

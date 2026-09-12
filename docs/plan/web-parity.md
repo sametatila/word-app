@@ -16032,3 +16032,42 @@ bitince tek satır.
 Beş enjeksiyon doğrulandı: tabandan bir anahtar düşürmek, mobil sözlükten bir
 anahtar düşürmek, kaynak kümeye sözlüksüz yeni bir değer eklemek, kaynak kümenin
 adını değiştirmek, çağrı yerindeki şablonu sabit anahtara çevirmek.
+
+## §11.440 — Promo sebep listesi ve `promo.*` ailesi; ve süiti elle kurmayı bıraktım
+
+§11.439'un ailesine bir altıncı eklendi ve yanına bir küme eşitliği ölçüsü
+kondu.
+
+**`promo.*`** — Kod kullanma sonucu: sunucu sebebi doğrudan anahtar adı olarak
+döndürüyor (`not_found`, `already`, `used_up`, `expired`, `disabled`,
+`rate_limited`, `self`) ve her istemci kendi **tanıdık listesini** tutuyor (web
+`known`, mobil `PROMO_ERRORS`). Biri bir sebebi tanımazsa o sebep o platformda
+"daha sonra tekrar dene" diye görünüyor — aynı sunucu cevabı iki ayrı cümle.
+Bugün iki liste birebir aynı (7 değer) ve yedi anahtarın hepsi sözlükte; ölçü
+küme eşitliği, yani bir sebep tek tarafa eklenirse kapı söylüyor.
+
+Bu aile `i18n-check`in `DINAMIK_ORTAK` muafiyet listesinde de var — orada
+"çalışma anında kuruluyor" diye **ölü anahtar denetiminden çıkarılmış**. Yani o
+yedi anahtarın varlığını bugüne kadar hiçbir şey ölçmüyordu; §305 artık ölçüyor.
+İki kapı birbirinin tersini yapıyor ve ikisi birlikte aileyi kapatıyor:
+`i18n-check` "sözlükte olup çağrılmayan" tarafı, `check:parity` §305 "çağrılıp
+sözlükte olmayan" tarafı.
+
+Üç enjeksiyon doğrulandı: web listesine sözlüksüz yeni sebep eklemek (iki ölçü
+birden düşüyor), mobil listesinden bir sebep düşürmek, `promo.self`i sözlükten
+düşürmek.
+
+### Düzeltme: projenin kendi süiti varmış
+
+Bu turlarda süiti elle kuruyordum (`npm run -s lint`, iki `tsc`, jest, birkaç
+`check:*`) ve iki komutu yanlış adla çağırdım: `ios:check` (o betik
+`mobile/package.json`'da — §11.437) ve **`check:i18n`** (doğrusu `i18n:check`).
+İkisi de kökte yok, yani `npm run -s` sessizce hiçbir şey yapmıyor ve ben
+çıktısızlığı "geçti" diye okuyordum.
+
+Oysa proje bunu zaten çözmüş: **`npm run ci:local`** komut listesini
+`.github/workflows/checks.yml`den **okuyarak** CI'yi yerelde iş akışındaki
+sırayla koşturuyor (betiğin kendi yorumu tam bu sorunu anlatıyor: "kapıların
+hangisinin var olduğunu bilmek için iş akışını okumak gerekiyor"). Koşturuldu:
+**26 adım, hepsi yeşil** (`npm ci`, `next build` ve veritabanı adımı varsayılan
+olarak atlanıyor). Bundan sonra süit bu — elle liste kurmuyorum.
