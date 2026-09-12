@@ -143,6 +143,18 @@ export function formatPercent(pct: number): string {
   }
 }
 
+/**
+ * Ondalıklı sayı — sayaçlar için ("8,3 sn").
+ *
+ * `toFixed` SABİT NOKTA yazıyor: meydan okuma ve boss sayaçları Türkçe ve
+ * Almanca arayüzde de "8.3" diyordu, oysa iki dilde de ayraç virgül. Web'de
+ * de aynı kusur vardı (`challenge-player`, `boss-player`) ve ikisi birlikte
+ * düzeltildi. Web karşılığı `lib/i18n/dict` `formatDecimal`.
+ */
+export function formatDecimal(n: number, digits = 1): string {
+  return n.toLocaleString(dateLocale(), { minimumFractionDigits: digits, maximumFractionDigits: digits });
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }

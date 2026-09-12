@@ -12,7 +12,8 @@ import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { AlertIcon, ClockIcon, TrophyIcon } from "@/components/icons";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatDecimal } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 
 /**
@@ -67,6 +68,7 @@ export function BossPlayer({
   onExitHref: string;
 }) {
   const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const onExit = useCallback(() => router.push(onExitHref), [router, onExitHref]);
   const [status, setStatus] = useState<Status>("loading");
@@ -353,7 +355,7 @@ export function BossPlayer({
         >
           {/* Meydan okuma sayacıyla aynı anahtar: iki sayaç da "{n} sn"
               yazıyor ve ikinci bir anahtar aynı metnin ikinci kopyası olurdu. */}
-          {t("challenge.seconds", { n: left.toFixed(1) })}
+          {t("challenge.seconds", { n: formatDecimal(left, lang) })}
         </motion.span>
       </div>
       <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>

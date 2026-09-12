@@ -13,8 +13,9 @@ import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { formatDecimal, formatPercent } from "@/lib/i18n/dict";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
 const START_SECONDS = 40;
@@ -60,6 +61,7 @@ type Outcome = { best: number; previous: number };
  */
 export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   const t = useT();
+  const lang = useLang();
   const [status, setStatus] = useState<Status>("loading");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
@@ -350,7 +352,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
 
           <div className="mt-5 grid grid-cols-3 gap-2 text-center">
             <Box label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
-            <Box label={t("challenge.hit_rate")} value={t("common.pct", { n: accuracy })} />
+            <Box label={t("challenge.hit_rate")} value={formatPercent(accuracy, lang)} />
             <Box label={t("challenge.longest_streak")} value={String(bestCombo)} />
           </div>
 
@@ -402,7 +404,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             className="font-bold tabular-nums"
             style={{ color: urgent ? "var(--color-rose)" : "var(--color-flame)" }}
           >
-            {t("challenge.seconds", { n: left.toFixed(1) })}
+            {/* Ondalık ayraç DİLDEN: `toFixed` sabit nokta yazıyor ve
+                Türkçe/Almanca arayüzde de "8.3" çıkıyordu. Aynı kusur
+                Android'de de vardı (`ChallengeScreen`). */}
+            {t("challenge.seconds", { n: formatDecimal(left, lang) })}
           </motion.span>
         </div>
 

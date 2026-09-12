@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { t } from "../lib/i18n";
+import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { Card } from "../ui/Card";
@@ -316,7 +316,7 @@ export function BossScreen() {
         </PressableScale>
         <Text variant="bodyStrong" color={colors.textMuted}>{`${index + 1} / ${data!.rounds.length}`}</Text>
         <View style={{ flex: 1 }} />
-        <Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text}>{t("challenge.seconds", { n: left.toFixed(1) })}</Text>
+        <Text variant="bodyStrong" color={urgent ? colors.dangerText : colors.text}>{t("challenge.seconds", { n: formatDecimal(left) })}</Text>
       </View>
       <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: spacing.lg }}>
         <View style={{ height: "100%", width: `${pct}%`, backgroundColor: urgent ? colors.danger : colors.primary, borderRadius: 3 }} />
