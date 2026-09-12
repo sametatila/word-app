@@ -1863,6 +1863,34 @@ yazma egzersizi çalıştırdığı okuma ya da dinlemenin başlığını taşı
 yerde tasarım gereği.
 
 
+**Sözlükçe katmanı ve sıralama sözleşmesi (2026-09-12).** Dört ölçüm, iki
+kursun 1 620 ünite egzersizinde.
+
+*Yinelenen sözlükçe maddesi.* Aynı sözlükçede aynı sözcüğün iki kez durması
+öğrenciye iki özdeş satır gösteriyor. İki gerçek durum vardı, her kursta bir
+tane ve ikisi de birebir kopya: `b1-u1-r2` („die Leistung“) ve `en-b2-u19-r1`
+(„receiving“). Silindi ve **kalıcı kapı** eklendi, ateşlendiği doğrulandı.
+
+*„tr“ ile „de“ aynı.* Yedi madde bulundu: modern, park, terminal, CD, tablet,
+model, disk. Hiçbiri kusur değil — sözcük Türkçede gerçekten aynı ve A1–A2'de
+bunu SÖYLEMEK öğrenciye bilgi veriyor. Ölçüldü, kabul edildi, kapı yazılmadı.
+
+*Havuz çelişkisi.* Aynı sözcüğün ayrı egzersizlerde farklı Türkçesi: 372 durum.
+Ezici çoğunluğu bağlam kaynaklı çok anlamlılık („stehen“ → ayakta durmak /
+yakışmak; „leihen“ → kiralamak / ödünç vermek; „die Sendung“ → program /
+gönderi) ve hat zaten bunu UYARI olarak sayıyor. Kapıya çevrilmez.
+
+*Sıralama sorusunun sözleşmesi.* „Doğru sıraya koy“ diyen 205 sorunun maddeleri
+metinde hangi sırada geçiyor diye bakıldı: 135'i metin sırasında, 63'ünde bir
+madde metinde hiç geçmiyor (C1'in dördüncü maddesi ünitenin ÖLÇÜSÜ — tasarım
+gereği metinden değil), 7'si metin sırasına aykırı. Yedisi de tek tek okundu ve
+hepsi BİLEREK öyle: her birinin `explain`i sıralama ölçütünü adıyla söylüyor —
+„Anlatım sırası olayların sırası değil“ (kronolojik sıralama isteniyor),
+„Önce kuralı taşıyan cümle, sonra takvim sırası“, „Söylenen, düşünülen,
+beklenen; en sonda kuralın adı“. Sözleşme sağlam ve kendini belgeliyor;
+bu sınıf da kapıya çevrilmedi.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

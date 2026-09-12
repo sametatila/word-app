@@ -109,7 +109,6 @@ export const b1U01: SkillExercise[] = [
       { de: "die Leistung", tr: "performans", en: "performance" },
       { de: "der Abschluss", tr: "diploma / mezuniyet", en: "degree" },
       { de: "die Karriere", tr: "kariyer", en: "career" },
-      { de: "die Leistung", tr: "performans", en: "performance" },
       { de: "die Herausforderung", tr: "zorlu görev", en: "challenge" },
     ],
     text:

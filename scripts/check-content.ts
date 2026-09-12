@@ -236,6 +236,14 @@ function checkSkills(list: SkillExercise[]) {
       if (!parts.length) return true;
       return new RegExp("\\b" + parts.map(enStem).join("\\s+"), "i").test(text);
     };
+    /* Aynı sözlükçede aynı sözcük iki kez: öğrenciye iki özdeş satır
+       gösteriliyor ve liste daha uzun görünüyor. 2026-09-12'de iki
+       egzersizde bulundu (her kursta bir tane), ikisi de birebir kopya. */
+    const gorulen = new Set<string>();
+    for (const g of e.gloss ?? []) {
+      if (g.de && gorulen.has(g.de)) E(w, `sözlükçede yinelenen madde: "${g.de}"`);
+      if (g.de) gorulen.add(g.de);
+    }
     for (const g of e.gloss ?? []) {
       if (!g.de?.trim() || !g.tr?.trim()) E(w, `gloss eksik: ${JSON.stringify(g)}`);
       if (multi(g.tr)) W(w, `çok anlamlı tr: ${g.de} → "${g.tr}"`);

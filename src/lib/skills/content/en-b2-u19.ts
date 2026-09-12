@@ -63,7 +63,6 @@ export const enB2U19: SkillExercise[] = [
       { de: "an active pair", tr: "etken eşi" },
       { de: "a voice", tr: "çatı" },
       { de: "a signal", tr: "işaret" },
-      { de: "receiving", tr: "alan" },
       { de: "whoever", tr: "her kim" },
       { de: "underneath", tr: "altta" },
       { de: "a note", tr: "not" },
