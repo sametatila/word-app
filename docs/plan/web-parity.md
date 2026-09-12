@@ -17199,3 +17199,29 @@ dokunulmadı.
 Kapı **§334**: iki tarafın okuduğu anahtar, ölü anahtarın üç web sözlüğünden de
 düşmüş olması, çipin adı ezmemesi ve dikte dinleme düğmesinin zaten ortak olan
 anahtarında kalması.
+
+## §11.476 — Kaydırıcının tutamacı web'de hiç çizilmiyordu
+
+Günlük hedef ve "günde yeni kelime" kaydırıcıları. Web `appearance: none`
+yazıyordu ama **tutamaç hiç tanımlanmamıştı**: WebKit ve Blink
+`appearance: none` gördüğü anda tutamacı da kaldırıyor ve
+`::-webkit-slider-thumb` kuralı olmadan hiç çizmiyor. Dolu kısım da yoktu,
+çünkü `accent-color` da `appearance: none` ile birlikte düşüyor. Yani kullanıcı
+**8 px'lik boş bir çizgi** görüyordu: ne tutamaç, ne ilerleme — ayarın değeri
+yalnız satırın sağındaki sayıdan okunuyordu.
+
+Android'in aynı denetimi çubuğu 6 px ve `sm` yarıçapında çiziyor, tutamacı
+22 px daire + 3 px yüzey halkası yapıyor ve dokunma alanını 22 px'e
+tamamlıyor — yorumu da orada duruyor: "6 piksellik bir çizgiyi parmakla
+yakalamak zor". Web'in dokunma alanı çubuğun kendisiydi (8 px).
+
+`globals.css`e `.range` geldi: çubuk, tutamaç (WebKit + Gecko), dolu kısım ve
+odak halkası. Dolu kısım `--pct` değişkeninden sürülüyor — WebKit'in
+`::-webkit-slider-progress`i yok, o yüzden çubuğun zemini iki duraklı bir
+gradyan. Etiket satırı da düzeltildi: Android iki yanı da `bodyStrong` yazıyor,
+web soldakini sönük basıyordu.
+
+Kapı **§335** iki ölçü: dört sayı (çubuk, tutamaç, halka, dokunma alanı) iki
+tarafta ve dolu kısmın gerçekten değere bağlı olması; ayrıca **mutlak** olarak
+`appearance: none` ile tutamaç tanımının **birlikte** bulunması — biri olup
+öteki olmayınca denetim görünmez oluyor ve bu kusur tam böyle doğmuştu.

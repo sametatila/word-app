@@ -723,6 +723,68 @@
    * yerleşimi hiç değiştirmiyor, yalnız düğmenin kendi tıklama alanını
    * genişletiyor.
    */
+  /*
+   * KAYDIRICI — mobil `ui/Slider.tsx`in karşılığı.
+   *
+   * `appearance: none` yazılıydı ama TUTAMAÇ HİÇ TANIMLANMAMIŞTI: WebKit ve
+   * Blink `appearance: none` gördüğü anda tutamacı da kaldırıyor ve
+   * `::-webkit-slider-thumb` kuralı olmadan hiç çizmiyor. Yani günlük hedef ve
+   * "günde yeni kelime" kaydırıcılarında kullanıcı tutamacı GÖRMÜYORDU —
+   * yalnız 8 px'lik boş bir çizgi vardı; dolu kısım da yoktu, çünkü
+   * `accent-color` da `appearance: none` ile birlikte düşüyor.
+   *
+   * Ölçüler Android'den: çubuk 6 px ve `chip` yarıçapında, tutamaç 22 px
+   * daire + 3 px yüzey rengi halka, dokunma alanı 22 px (Android'in yorumu:
+   * "6 piksellik bir çizgiyi parmakla yakalamak zor"). Dolu kısım `--pct`
+   * değişkeninden: WebKit'in `::-webkit-slider-progress`i yok, o yüzden
+   * çubuğun kendi zemini iki duraklı bir gradyan.
+   */
+  .range {
+    appearance: none;
+    width: 100%;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .range::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: var(--radius-chip);
+    background: linear-gradient(
+      to right,
+      var(--color-brand) var(--pct, 0%),
+      var(--surface-2) var(--pct, 0%)
+    );
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    margin-top: -8px;
+    border-radius: 999px;
+    background: var(--color-brand);
+    border: 3px solid var(--surface);
+  }
+  .range::-moz-range-track {
+    height: 6px;
+    border-radius: var(--radius-chip);
+    background: var(--surface-2);
+  }
+  .range::-moz-range-progress {
+    height: 6px;
+    border-radius: var(--radius-chip);
+    background: var(--color-brand);
+  }
+  .range::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: var(--color-brand);
+    border: 3px solid var(--surface);
+  }
+  .range:focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
   .hit-8 {
     position: relative;
   }

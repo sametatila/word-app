@@ -19075,6 +19075,76 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------------- 335. KAYDIRICININ TUTAMACI: WEBDE HIC CIZILMIYORDU
+ *
+ * Gunluk hedef ve "gunde yeni kelime" kaydiricilari. Web `appearance: none`
+ * yaziyordu ama TUTAMAC HIC TANIMLANMAMISTI: WebKit ve Blink `appearance:
+ * none` gordugu anda tutamaci da kaldiriyor ve `::-webkit-slider-thumb`
+ * kurali olmadan hic cizmiyor. Dolu kisim da yoktu, cunku `accent-color` da
+ * `appearance: none` ile birlikte dusuyor. Yani kullanici 8 px'lik bos bir
+ * cizgi goruyordu: ne tutamac, ne ilerleme.
+ *
+ * Android'in ayni denetimi (`ui/Slider`) cubugu 6 px ve `sm` yariçapinda
+ * ciziyor, tutamaci 22 px daire + 3 px yuzey halkasi yapiyor ve dokunma
+ * alanini 22 px'e tamamliyor - yorumu da orada: "6 piksellik bir cizgiyi
+ * parmakla yakalamak zor". Webin dokunma alani cubugun kendisiydi (8 px).
+ *
+ * Etiket satiri da ayriydi: Android iki yani da `bodyStrong` yaziyor, web
+ * soldakini SONUK basiyordu.
+ *
+ * Olcu: cubuk/tutamac/halka/alan sayilari iki tarafta, dolu kismin gercekten
+ * degere baglandigi (`--pct`) ve iki tarafin da tutamaci TANIMLADIGI. */
+{
+  const silR = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const mob = silR(read("mobile/src/ui/Slider.tsx")).replace(/\s+/g, " ");
+  const css = silR(read("src/app/globals.css"));
+  const form = silR(read("src/components/profile-form.tsx"));
+  const kural = (ad) => {
+    const i = css.indexOf(ad);
+    return i < 0 ? "" : css.slice(i, css.indexOf("}", i));
+  };
+  const izTrack = kural(".range::-webkit-slider-runnable-track");
+  const izThumb = kural(".range::-webkit-slider-thumb");
+  const izAlan = kural(".range {");
+  sameList(
+    "kaydiricinin olculeri",
+    [
+      "cubuk=" + ((mob.match(/height: 6, borderRadius: radii\.sm, backgroundColor: colors\.surface2/) ) ? "6" : "YOK"),
+      "tutamac=" + ((mob.match(/width: 22, height: 22, borderRadius: 11/) ) ? "22" : "YOK"),
+      "halka=" + ((mob.match(/borderWidth: 3, borderColor: colors\.surface/) ) ? "3" : "YOK"),
+      "dokunma alani=" + ((mob.match(/style=\{\{ height: (22), justifyContent: "center" \}\}/) ?? [])[1] ?? "YOK"),
+      "dolu kisim=" + (/width: `\$\{oran \* 100\}%`/.test(mob) ? "degerden" : "YOK"),
+      "etiket sonuk=" + (/<Text variant="bodyStrong">\{label\}<\/Text>/.test(mob) ? "hayir" : "EVET"),
+    ],
+    [
+      "cubuk=" + ((izTrack.match(/height: (\d+)px/) ?? [])[1] ?? "YOK"),
+      "tutamac=" + ((izThumb.match(/width: (\d+)px/) ?? [])[1] ?? "YOK"),
+      "halka=" + ((izThumb.match(/border: (\d+)px solid var\(--surface\)/) ?? [])[1] ?? "YOK"),
+      "dokunma alani=" + ((izAlan.match(/height: (\d+)px/) ?? [])[1] ?? "YOK"),
+      "dolu kisim=" + (/--pct/.test(izTrack) && /"--pct": `\$\{\(\(value - min\) \/ \(max - min\)\) \* 100\}%`/.test(form) ? "degerden" : "YOK"),
+      "etiket sonuk=" + (/<span>\{label\}<\/span>/.test(form) ? "hayir" : "EVET"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* MUTLAK: iki tarafin da tutamaci var. Webde `appearance: none` yazip
+     tutamaci tanimlamamak onu YOK ediyor; kural bu yuzden `appearance`
+     ile tutamac tanimini BIRLIKTE olcuyor. */
+  sameList(
+    "kaydirici tutamaci tanimli",
+    [
+      "web appearance=" + (/appearance: none;/.test(izAlan) ? "none" : "YOK"),
+      "web webkit tutamac=" + (izThumb ? "tanimli" : "TANIMSIZ"),
+      "web moz tutamac=" + (kural(".range::-moz-range-thumb") ? "tanimli" : "TANIMSIZ"),
+      "web moz ilerleme=" + (kural(".range::-moz-range-progress") ? "tanimli" : "TANIMSIZ"),
+      "web odak halkasi=" + (kural(".range:focus-visible") ? "var" : "YOK"),
+    ],
+    ["web appearance=none", "web webkit tutamac=tanimli", "web moz tutamac=tanimli", "web moz ilerleme=tanimli", "web odak halkasi=var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

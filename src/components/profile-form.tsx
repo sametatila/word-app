@@ -512,8 +512,10 @@ function Slider({
 }) {
   return (
     <label className="block">
+      {/* Etiket SÖNÜK DEĞİL: Android aynı satırda iki yanı da `bodyStrong`
+          yazıyor (`ui/Slider.tsx`), sağdaki sayı marka renginde. */}
       <span className="mb-1.5 flex items-baseline justify-between text-strong">
-        <span className="muted">{label}</span>
+        <span>{label}</span>
         <span className="text-[color:var(--color-brand)]">
           {value} {suffix}
         </span>
@@ -528,7 +530,10 @@ function Slider({
         onPointerUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
         onKeyUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
         onBlur={(e) => onCommit(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[color:var(--color-brand)] surface-2"
+        /* Görünüm `globals.css` `.range`te: çubuk, tutamaç ve dolu kısım
+           Android'in ölçüsünde. `--pct` dolu kısmı sürüyor. */
+        className="range"
+        style={{ "--pct": `${((value - min) / (max - min)) * 100}%` } as React.CSSProperties}
       />
     </label>
   );
