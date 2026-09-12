@@ -64,7 +64,14 @@ const PARTIAL_TOLERANCE = 1 / 3;
  */
 const MIN_CONFIDENCE = 0.6;
 
-const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…]/g;
+/*
+  TİRE DE NOKTALAMA. Tanıyıcı tireli başlığı boşlukla yazıyor ("T-Shirt" →
+  "t shirt", "U-Bahn" → "U Bahn"); tire burada kalınca hedef tek jeton,
+  duyulan iki jeton oluyordu ve doğru cevap reddediliyordu. Ders hedeflerinin
+  74'ü tire taşıyor; kelime katlaması (`lib/textFold` PUNCT) bunu zaten
+  yapıyordu, konuşma katlaması geride kalmıştı.
+*/
+const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…\-–—]/g;
 
 /**
  * Karşılaştırma için sadeleştirme.

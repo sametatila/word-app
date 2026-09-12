@@ -121,6 +121,15 @@ assert.ok(!matchesAnswer("Farbe", ["Tisch"], "de"));
 }
 
 /*
+  KONUŞMA YOLUNDA DA TİRE: tanıyıcı "T-Shirt"i "t shirt" yazıyor; tire
+  noktalama sayılmayınca hedef tek jeton, duyulan iki jeton oluyor ve doğru
+  cevap reddediliyordu (74 ders hedefi tire taşıyor).
+*/
+assert.equal(judgeSpeech("T-Shirt", ["t shirt"]).kind, "correct", "tanıyıcının tiresiz yazımı kabul edilmeli");
+assert.equal(judgeSpeech("die U-Bahn", ["die u bahn"]).kind, "correct");
+assert.notEqual(judgeSpeech("die U-Bahn", ["die s bahn"]).kind, "correct", "başka hat yine yanlış");
+
+/*
   TİRELİ BAŞLIK: katlama tireyi boşluğa çeviriyor ("t-shirt" → "t shirt");
   bitişik yazan öğrenci webde reddediliyor, Android'de geçiyordu. Boşluksuz
   yedek artık webde de var (havuzda 142 İngilizce + 14 Almanca tireli başlık).
