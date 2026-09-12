@@ -250,6 +250,27 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             )}
           </Section>
 
+          {/* ZAMANLANMIŞ İŞLER. Cron'lar bir kez çağıransız kalıp aylarca hiç
+              çalışmadı; "dün çalıştı mı" sorusu artık burada cevaplanıyor.
+              Hiç koşmamış iş en kötü hâl, o yüzden ayrıca yazılıyor. */}
+          <Section title="Zamanlanmış işler (7g)" hint="denied = CRON_SECRET uyuşmadı · boş = hiç koşmadı" full>
+            {d.cron.length === 0 ? (
+              <div className="text-body" style={{ color: "#dc2626" }}>Hiçbir iş koşmamış — timer&apos;lar susmuş olabilir.</div>
+            ) : (
+              <div className="space-y-1">
+                {d.cron.map((c) => (
+                  <div key={c.name} className="flex items-center gap-2 text-caption">
+                    <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: c.lastOk ? "#16a34a" : "#dc2626" }} />
+                    <span className="w-36 shrink-0 font-mono">{c.name}</span>
+                    <span className="w-44 shrink-0 font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{c.lastAt?.slice(0, 16) ?? "hiç"}</span>
+                    <span className="shrink-0">{fmt(c.ok)} tamam{c.fail > 0 && <span style={{ color: "#dc2626" }}> · {fmt(c.fail)} hata</span>}</span>
+                    <span className="truncate" style={{ color: "var(--text-muted)" }}>{c.detail}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </Section>
+
           <Section title="Deploy geçmişi" hint="GitHub push → webhook → sıfır-kesinti deploy." full>
             {s.deploys.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Kayıt yok.</div> : (
               <div className="space-y-1">
