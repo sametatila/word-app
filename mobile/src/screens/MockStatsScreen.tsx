@@ -149,7 +149,13 @@ export function MockStatsScreen() {
         ) : (
           <>
             {local ? (
-              <Card padded style={{ marginBottom: spacing.md }}>
+              /* Kart veri GELDIKTEN sonra çiziliyor, yani ekran okuyucu
+                 kullanan biri sayıların sunucudan değil cihazdan geldiğini
+                 hiç duymuyordu. "Dikkat" değil "bilgi": içeriğin yerini
+                 almıyor, başına ekleniyor — o yüzden `polite`. Web'de aynı
+                 okuma patladığında yedek YOK, orada kart içeriğin yerine
+                 geçiyor ve `role="alert"` ile duyuruluyor (§320). */
+              <Card padded accessibilityLiveRegion="polite" style={{ marginBottom: spacing.md }}>
                 <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
                   {t(`mockexam.fail_${err ?? "unreachable"}`)}
                 </Text>

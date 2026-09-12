@@ -54,9 +54,33 @@ export default async function MockStatsPage() {
     <div className="mx-auto w-full max-w-3xl space-y-3">
       <PageBack fallback="/mock-exams" title={t("mockstats.title")} />
 
-      {!data || data.attempts === 0 ? (
+      {/*
+        AĞ HATASI "SONUÇ YOK" DEĞİL.
+
+        Okuma patladığında (`data === null`) sayfa "henüz tamamlanmış bir
+        deneme sınavın yok" kartına düşüyordu: denemesi olan kullanıcı,
+        sunucu okunamadığında geçmişinin silindiğini görüyordu. Arkadaş ve
+        lig tabloları aynı kusuru ayrı bir kartla çözmüş durumda
+        (`social/friends-board`, `social/league-board`); Android tarafında
+        `MockStatsScreen` de hatayı ayrı söylüyor — orada cihazdaki yedeğe
+        düşülüyor, web'de yedek yok, o yüzden yalnız hata kartı.
+      */}
+      {!data ? (
+        <EmptyCard
+          role="alert"
+          icon={PodiumIcon}
+          tint="var(--color-sky)"
+          title={t("common.connection_failed")}
+          text={t("session.load_failed_sub")}
+          action={
+            <Link href="/mock-exams/stats" prefetch={false} className="btn btn-primary px-4 py-2 text-body">
+              {t("common.try_again")}
+            </Link>
+          }
+        />
+      ) : data.attempts === 0 ? (
         <>
-          {data?.running.length ? (
+          {data.running.length ? (
             <Running rows={data.running} paperLabel={paperLabel} skillLabel={skillLabel} t={t} />
           ) : null}
           {/* Boş hâl EV KALIBINDA (Android `EmptyCard`) ve bir ÇIKIŞ YOLU

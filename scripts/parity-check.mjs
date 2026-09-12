@@ -17945,6 +17945,71 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
+/* ----------------------- 320. OKUMA HATASI "SONUC YOK" DEMEK DEGIL
+ *
+ * Sinav istatistigi sayfasi sunucudan okuyor ve okuma patladiginda WEB
+ * tarafinda "henuz tamamlanmis bir deneme sinavin yok" kartina dusuyordu:
+ * `data = null` ile `data.attempts === 0` ayni dala giriyordu. Denemesi olan
+ * kullanici, veritabani okunamadiginda gecmisinin silindigini goruyordu -
+ * hem yanlis bilgi hem de yapacak bir sey birakmiyor (cikis yolu "deneme
+ * sinavi listesi", oysa sorun listede degil).
+ *
+ * Ayni kusur arkadas ve lig tablolarinda BULUNUP duzeltilmis durumda
+ * (§241'in HATALAR listesi) ve iki dosyada da "AG HATASI KIMSE YOK DEGIL"
+ * diye yazili. Bu sayfa o listeye girmiyordu cunku iki platform AYNI
+ * ISARETLE olculuyor ve burada isaretler ayri: Android'de okuma patlayinca
+ * cihazdaki yedege dusuluyor (`localStats()`) ve kart "sayilar cihazdan"
+ * diyor; web'de yedek YOK, orada kart icerigin YERINE geciyor.
+ *
+ * Olcu bu yuzden MUTLAK ve taraf basina ayri:
+ *   web    `!data` dali `attempts === 0` dalindan AYRI ve karti duyuruyor
+ *   mobil  `local` dali var, sebebi yaziyor ve kart duyuruyor (`polite` -
+ *          icerigin yerini almiyor, basina ekleniyor)
+ * Ucuncu olcu: iki tarafta da BOS hal dali hala duruyor, yani ayirma bos
+ * hali yok etmemis. */
+{
+  /* `sil` yukaridaki blogun kapsaminda kaldi; burada kendi kopyasi duruyor
+     (yorumlari siliyor, satir sayisini bozmuyor). */
+  const silY = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const w = silY(read("src/app/(app)/mock-exams/stats/page.tsx"));
+  const m = silY(read("mobile/src/screens/MockStatsScreen.tsx"));
+  /* Hata dali web'de `{!data ? (` ile aciliyor ve bos hal dali ondan SONRA
+     `data.attempts === 0` olarak geliyor. Pencere degil dal: iki dalin
+     metnini kendi araliklarindan kesiyoruz. */
+  const hataBasi = w.indexOf("{!data ? (");
+  const bosBasi = w.indexOf("data.attempts === 0 ? (");
+  const hataDali = hataBasi >= 0 && bosBasi > hataBasi ? w.slice(hataBasi, bosBasi) : "";
+  const mLocal = (() => {
+    const i = m.indexOf("{local ? (");
+    return i < 0 ? "" : m.slice(i, i + 900);
+  })();
+  sameList(
+    "okuma hatasi bos halden ayri",
+    [
+      "web hata dali=" + (hataDali ? "var" : "YOK"),
+      "web duyuruyor=" + (/role="alert"/.test(hataDali) ? "evet" : "HAYIR"),
+      "web hata metni=" + (/common\.connection_failed/.test(hataDali) ? "var" : "YOK"),
+      "web bos dali=" + (bosBasi >= 0 ? "var" : "YOK"),
+      "mobil yedek dali=" + (mLocal ? "var" : "YOK"),
+      "mobil sebep=" + (/mockexam\.fail_/.test(mLocal) ? "var" : "YOK"),
+      "mobil duyuruyor=" + (/accessibilityLiveRegion="polite"/.test(mLocal) ? "evet" : "HAYIR"),
+      "mobil bos dali=" + (/data\.attempts === 0/.test(m) ? "var" : "YOK"),
+    ],
+    [
+      "web hata dali=var",
+      "web duyuruyor=evet",
+      "web hata metni=var",
+      "web bos dali=var",
+      "mobil yedek dali=var",
+      "mobil sebep=var",
+      "mobil duyuruyor=evet",
+      "mobil bos dali=var",
+    ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

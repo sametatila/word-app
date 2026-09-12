@@ -16740,3 +16740,29 @@ mi") tam bu satırı aramak için yazılmıştı ve iki ayrı nedenle göremiyor
 Enjeksiyon: eski satır geri konduğunda kapı `ProfileScreen.tsx: {String(me.xp)
 .replace(…)}` diyerek kalıyor, düzeltilmiş hâlde geçiyor. Yani kapı artık
 yazıldığı işi görüyor.
+
+## §11.460 — Okuma hatası "sonuç yok" demek değil: sınav istatistiği (web)
+
+Web'in sınav istatistiği sayfası okuma patladığında `data = null` ile
+`data.attempts === 0`ı **aynı dala** sokuyordu: denemesi olan kullanıcı,
+veritabanı okunamadığında "henüz tamamlanmış bir deneme sınavın yok" kartını
+görüyordu. Yanlış bilgi ve çıkışsız: kartın düğmesi deneme sınavı listesine
+götürüyor, oysa sorun listede değil.
+
+Aynı kusur arkadaş ve lig tablolarında bulunup düzeltilmişti ve iki dosyada da
+büyük harflerle yazılı: "AĞ HATASI KİMSE YOK DEĞİL". Bu sayfa §241'in
+`HATALAR` listesine girmiyordu, çünkü o liste **iki platformu aynı işaretle**
+ölçüyor ve burada işaretler ayrı: Android okuma patlayınca cihazdaki yedeğe
+düşüyor (`localStats()`) ve kart "sayılar bu cihazdan" diyor; webde yedek yok,
+orada kart içeriğin **yerine** geçiyor.
+
+Düzeltme: `{!data ? …}` ayrı bir dal, `EmptyCard role="alert"`,
+`common.connection_failed` + `session.load_failed_sub`, düğme sayfanın
+kendisine (`force-dynamic`, yeniden istek yeniden okuyor). Android tarafında
+yedek kartı da artık duyuruluyor (`accessibilityLiveRegion="polite"` —
+içeriğin yerini almıyor, başına ekleniyor; `alert` değil `polite` bu yüzden).
+
+Kapı **§320**, ölçü mutlak ve taraf başına ayrı: webde hata dalı boş hal
+dalından ayrı ve duyuruyor, mobilde yedek dalı var, sebebini yazıyor ve
+duyuruyor; üçüncü ölçü iki tarafta da **boş hal dalının hâlâ durduğu** — ayırma
+boş hali yok etmiş olmasın.
