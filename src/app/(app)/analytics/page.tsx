@@ -20,7 +20,7 @@ function Stat({ label, value, sub, tone }: { label: string; value: string; sub?:
   return (
     <div className="card px-4 py-3">
       <div className="text-h1" style={{ color }}>{value}</div>
-      <div className="muted text-micro uppercase tracking-wide">{label}</div>
+      <div className="muted text-micro uppercase tracking-eyebrow">{label}</div>
       {sub ? <div className="muted mt-0.5 text-micro">{sub}</div> : null}
     </div>
   );
@@ -51,7 +51,7 @@ export default async function AnalyticsPage() {
       </div>
 
       <section>
-        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Genel</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">Genel</h2>
         <div className="grid grid-cols-3 gap-3">
           <Stat label="Toplam kullanıcı" value={String(f.totalUsers)} />
           <Stat label="Aktive olan" value={String(f.activated)} sub="ilk turu bitirdi" tone="good" />
@@ -60,7 +60,7 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Retention (kohort {f.retentionBase})</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">Retention (kohort {f.retentionBase})</h2>
         <div className="grid grid-cols-3 gap-3">
           <Stat label="D1" value={`%${f.d1}`} sub="1. gün döndü" />
           <Stat label="D7" value={`%${f.d7}`} sub="7. gün döndü" />
@@ -69,7 +69,7 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-micro uppercase tracking-wide muted">Paywall hunisi</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">Paywall hunisi</h2>
         <div className="card divide-y" style={{ borderColor: "var(--border)" }}>
           {[
             { k: "Paywall görüntüleme", v: f.paywallView, base: f.totalUsers },
@@ -87,7 +87,7 @@ export default async function AnalyticsPage() {
       </section>
 
       <section>
-        <h2 className="mb-2 text-micro uppercase tracking-wide muted">En çok olay</h2>
+        <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">En çok olay</h2>
         <div className="space-y-1.5">
           {f.topEvents.length === 0 ? (
             <p className="muted text-body">Henüz olay yok.</p>

@@ -226,7 +226,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "prep" ? (
         <section className="card mt-3 p-5">
-          <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
+          <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
           <p className="mt-2 text-strong leading-relaxed">{mono.promptTr}</p>
           <ul className="mt-3 space-y-1.5">
             {mono.bulletsTr.map((b) => (
@@ -274,7 +274,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "record" ? (
         <section className="card mt-3 p-5">
           <div className="flex items-center justify-between">
-            <p className="flex items-center gap-2 text-micro uppercase tracking-wide" style={{ color: "var(--color-rose)" }}>
+            <p className="flex items-center gap-2 text-micro uppercase tracking-eyebrow" style={{ color: "var(--color-rose)" }}>
               <span className="h-2 w-2 animate-pulse rounded-full" style={{ background: "var(--color-rose)" }} /> {t("item.mono_recording")}
             </p>
             <span className="tabular-nums text-strong">
@@ -303,7 +303,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "review" ? (
         <section className="card mt-3 p-5">
-          <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_review")}</p>
+          <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("item.mono_review")}</p>
           <p className="muted mt-1 text-caption">{t("item.mono_spoke", { time: mm(seconds) })}</p>
           {audioUrl ? (
             <audio controls src={audioUrl} className="mt-2 w-full">

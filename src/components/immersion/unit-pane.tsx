@@ -152,7 +152,7 @@ export function UnitPane({
   return (
     <div className={embedded ? "" : "mx-auto w-full max-w-2xl"}>
       {!embedded ? (
-        <p className="muted text-micro uppercase tracking-wider">
+        <p className="muted text-micro uppercase tracking-eyebrow">
           {level} · {t("common.unit")} {unit.index}
         </p>
       ) : null}

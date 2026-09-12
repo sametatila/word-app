@@ -412,7 +412,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
           web'de yalnız başlık vardı ve kullanıcı kendini bütün oyuncularla
           karşılaştırdığını sanıyordu. */}
       <div className="px-5 pt-2.5 pb-1">
-        <p className="muted text-micro uppercase tracking-wide">{title}</p>
+        <p className="muted text-micro uppercase tracking-eyebrow">{title}</p>
         <p className="muted text-micro">{t("daily.players_at_your_level")}</p>
       </div>
       <ol>

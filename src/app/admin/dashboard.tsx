@@ -24,7 +24,7 @@ function Kpi({ label, value, sub, tone }: { label: string; value: string; sub?: 
   const color = tone === "bad" ? "#dc2626" : tone === "warn" ? "#d97706" : tone === "ok" ? "#16a34a" : "var(--text)";
   return (
     <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-      <div className="text-micro uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>{label}</div>
+      <div className="text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>{label}</div>
       <div className="mt-1 text-h1" style={{ color }}>{value}</div>
       {sub && <div className="text-caption" style={{ color: "var(--text-muted)" }}>{sub}</div>}
     </div>
@@ -57,7 +57,7 @@ function BarList({ items, max, unit }: { items: { label: string; value: number; 
 function Section({ title, hint, children, full }: { title: string; hint?: string; children: React.ReactNode; full?: boolean }) {
   return (
     <section className={`rounded-card border p-5 ${full ? "lg:col-span-2" : ""}`} style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-      <h2 className="text-micro uppercase tracking-wide">{title}</h2>
+      <h2 className="text-micro uppercase tracking-eyebrow">{title}</h2>
       {hint && <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>{hint}</p>}
       <div className={hint ? "" : "mt-3"}>{children}</div>
     </section>

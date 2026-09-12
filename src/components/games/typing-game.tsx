@@ -177,7 +177,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
          arkasında ve orası ceza kaydediyor. */
       hint={
         <div className="flex items-center justify-center gap-2">
-          <span className="surface-2 rounded-full px-2.5 py-0.5 text-micro uppercase tracking-wide">
+          <span className="surface-2 rounded-full px-2.5 py-0.5 text-micro uppercase tracking-eyebrow">
             {typLabel(word.typ, meaningOf(word, lang), lang)}
           </span>
         </div>

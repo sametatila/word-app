@@ -233,7 +233,7 @@ export function ResultCard({
           className="mt-4 flex items-center justify-between gap-3 rounded-panel px-4 py-3 text-left surface-2"
         >
           <span className="min-w-0">
-            <span className="muted block text-micro uppercase tracking-wide">{t("skills.next")}</span>
+            <span className="muted block text-micro uppercase tracking-eyebrow">{t("skills.next")}</span>
             <span className="block truncate text-strong">{frame.next.title}</span>
           </span>
           <span className="shrink-0 text-h3" aria-hidden>

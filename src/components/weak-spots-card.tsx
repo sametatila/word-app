@@ -77,7 +77,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
   return (
     <section id="weak-spots" className={bare ? "" : "card p-5"}>
       <div className="flex items-baseline justify-between">
-        <h2 className={bare ? "text-micro uppercase tracking-wide muted" : "font-bold"}>
+        <h2 className={bare ? "text-micro uppercase tracking-eyebrow muted" : "font-bold"}>
           {tx("weak.title")}
         </h2>
         <span className="muted text-caption">{tx("weak.window", { days: report.days, wrong: report.totalWrong })}</span>
@@ -112,7 +112,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
       ) : null}
       {report.confusions.length ? (
         <div className="mt-4">
-          <p className="text-micro uppercase tracking-wide muted">{tx("weak.confusions")}</p>
+          <p className="text-micro uppercase tracking-eyebrow muted">{tx("weak.confusions")}</p>
           <ul className="mt-1.5 flex flex-wrap gap-2">
             {report.confusions.slice(0, 5).map((c) => (
               <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-caption">
@@ -130,7 +130,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
       ) : null}
       {report.weakRules.length ? (
         <div className="mt-4">
-          <p className="text-micro uppercase tracking-wide muted">{tx("weak.rules")}</p>
+          <p className="text-micro uppercase tracking-eyebrow muted">{tx("weak.rules")}</p>
           <ul className="mt-1.5 space-y-1">
             {report.weakRules.slice(0, 3).map((r) => (
               <li key={r} className="flex items-center justify-between text-body">

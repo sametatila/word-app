@@ -827,7 +827,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           mu": seviye sinavinin kapagi da geliyor ama plani yok, basligi yok.
           Olcutu degistirmeden birakmak, seviye sinavinda sozlukteki basligin
           yerine Almanca "Niveauprüfung" yazdirirdi. */}
-      <p className="muted text-micro uppercase tracking-wide" lang={cover?.titleDe ? course : undefined}>
+      <p className="muted text-micro uppercase tracking-eyebrow" lang={cover?.titleDe ? course : undefined}>
         {cover?.titleDe
           ? module === null
             ? `${level} · Niveauprüfung`
@@ -1101,7 +1101,7 @@ function Result({
           oynaticisinin hicbir yerinde kutlama yoktu - gecmek en cok kutlanmasi
           gereken an ve iki platformda iki ayri duyguydu. */}
       <Confetti fire={result.passed ? 1 : 0} count={40} />
-      <p className="muted text-micro uppercase tracking-wide">{title}</p>
+      <p className="muted text-micro uppercase tracking-eyebrow">{title}</p>
       {/* SIRA ANDROID'DEKI GIBI: once BUYUK YUZDE, sonra hukum, sonra deneme
           cumlesi. Web once hukmu yazip yuzdeyi "Toplam %78" diye kucuk bir
           satira gomuyordu - ayni ekranda once okunan sey farkliydi. */}

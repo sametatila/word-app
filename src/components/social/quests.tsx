@@ -87,7 +87,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
           />
           {pick ? (
             <div className="mt-3">
-              <p className="muted mb-1.5 px-1 text-caption font-semibold uppercase tracking-wide">{t("quests.with")}</p>
+              <p className="muted mb-1.5 px-1 text-caption font-semibold uppercase tracking-eyebrow">{t("quests.with")}</p>
               <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
                 {friends.map((f) => (
                   <li key={f.userId} className="flex items-center gap-3 px-4 py-2.5">
@@ -114,7 +114,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
       <ErrorText text={err} className="text-center text-caption" />
       {past.length ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("quests.past_weeks")}</h3>
+          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-eyebrow">{t("quests.past_weeks")}</h3>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {past.map((q) => (
               <li key={q.id} className="flex items-center gap-3 px-4 py-2.5 text-body" style={{ borderColor: "var(--border)" }}>

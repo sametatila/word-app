@@ -122,7 +122,7 @@ export function GameShell({
           sayfa zemininde duruyordu; okuma bölgesinin nerede bittiği yalnızca
           boşluktan anlaşılıyordu. */}
       <div className="card px-4 py-6 text-center">
-        <span className="muted text-micro uppercase tracking-widest">{label}</span>
+        <span className="muted text-micro uppercase tracking-eyebrow">{label}</span>
         {prompt ? <div className="mt-1.5 text-h3 sm:text-h2">{prompt}</div> : null}
         {hint ? <div className="muted mt-1 text-body">{hint}</div> : null}
       </div>

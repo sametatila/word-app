@@ -74,7 +74,11 @@ export function SectionTitle({ title, right }: { title: string; right?: string }
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }}>
       {/* Bölüm başlığı da bir başlık: web karşılığı `<h2>`. */}
-      <Text accessibilityRole="header" variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase(dateLocale())}</Text>
+      {/* BÜYÜK HARFLİ ETİKETİN ARALIĞI TEK SAYI. Uygulamadaki on sekiz üst
+          etiket `letterSpacing: 1` diyor; bu bölüm başlığı 0.5'te kalmıştı ve
+          aynı dilin iki farklı tonu gibi duruyordu. Web karşılığı
+          `--tracking-eyebrow` (bkz. parity 268). */}
+      <Text accessibilityRole="header" variant="caption" color={colors.textMuted} style={{ letterSpacing: 1 }}>{title.toLocaleUpperCase(dateLocale())}</Text>
       {right ? <Text variant="caption" color={colors.textMuted}>{right}</Text> : null}
     </View>
   );

@@ -178,7 +178,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 
       {data.recent.length ? (
         <section>
-          <h2 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("user.recent_milestones")}</h2>
+          <h2 className="muted mb-2 px-1 text-micro uppercase tracking-eyebrow">{t("user.recent_milestones")}</h2>
           <div className="flex flex-col gap-2">
             {data.recent.map((it) => (
               <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />

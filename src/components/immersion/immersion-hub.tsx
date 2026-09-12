@@ -246,7 +246,7 @@ function Featured({
           {unit.complete ? <CheckIcon size={26} /> : <span className="text-h1">{unit.index}</span>}
         </span>
         <div className="min-w-0 flex-1">
-          <p className="text-micro uppercase tracking-wider" style={{ color: "var(--color-brand)" }}>
+          <p className="text-micro uppercase tracking-eyebrow" style={{ color: "var(--color-brand)" }}>
             {t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}
           </p>
           {/* İKİ SATIR: Android `PathScreen` `numberOfLines={2}` veriyor ve
@@ -298,7 +298,7 @@ function Featured({
             <KindIconFor kind={next.kind} size={20} />
           </span>
           <div className="min-w-0">
-            <p className="muted text-micro uppercase tracking-wider">
+            <p className="muted text-micro uppercase tracking-eyebrow">
               {t("path.next", { kind: (t(KIND_KEY[next.kind] ?? "") || next.kind).toLocaleUpperCase(localeOf(lang)) })}
             </p>
             <p className="truncate text-strong">{next.title}</p>

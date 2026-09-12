@@ -193,7 +193,7 @@ export function AchievementUnlock() {
           style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
           {batch && view.kind === "batch" ? (
             <>
-              <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1.5 }}>
+              <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>
                 {t("achu.n_unlocked", { n: view.items.length })}
               </Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, marginBottom: spacing.md }}>
@@ -211,7 +211,7 @@ export function AchievementUnlock() {
             </>
           ) : solo ? (
             <>
-              <Text variant="micro" color={TIER_COLOR[solo.tier] ?? TIER_COLOR.legend} style={{ textTransform: "uppercase", letterSpacing: 1.5 }}>
+              <Text variant="micro" color={TIER_COLOR[solo.tier] ?? TIER_COLOR.legend} style={{ textTransform: "uppercase", letterSpacing: 1 }}>
                 {t("achu.tier_unlocked", { tier: t(TIER_LABEL_KEY[solo.tier] ?? "tier.bronze") })}
               </Text>
               <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}><Badge a={solo} size={92} /></View>

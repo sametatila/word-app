@@ -1872,7 +1872,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           {/* Yakalama yöntemi ekranda: tarayıcı tanıyıcısıyla çalışılıyorsa
               ekranın açık kalması gerektiğini bilmek gerekiyor. */}
           <span
-            className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
+            className="rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
             style={{
               background:
                 capture === "stt"

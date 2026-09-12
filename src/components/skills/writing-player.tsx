@@ -219,7 +219,7 @@ function BuildTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">
         {t("writp.build_sentence")}
       </p>
       <p className="mt-1.5 font-semibold">{task.tr}</p>
@@ -442,7 +442,7 @@ function FreeTask({
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">
         {task.title ?? t("writp.free_writing")}
       </p>
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
@@ -683,7 +683,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("games.free_sentence")}</p>
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("games.free_sentence")}</p>
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt ?? t("rounds.build_sentence")}</p>
       <div className="mt-2 flex flex-wrap gap-2">
         {task.words.map((w) => (
@@ -767,7 +767,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
   const ok = okCount >= Math.ceil(task.fields.length * 0.7);
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">Formu doldur</p>
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">Formu doldur</p>
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
       <p className="muted mt-1 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.facts}</p>
       <div className="mt-3 space-y-2">
@@ -836,7 +836,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
       <p className="mt-2 rounded-panel px-3 py-2 text-strong surface-2" lang={lang}>
         {task.source}

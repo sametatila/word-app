@@ -24,7 +24,7 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
   return (
     <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="rounded-panel px-4 py-3 surface-2" role="status">
       <div className="flex items-center justify-between gap-3">
-        <span className="text-micro uppercase tracking-wide" style={{ color: score.passed ? "var(--color-mint)" : "var(--color-flame)" }}>
+        <span className="text-micro uppercase tracking-eyebrow" style={{ color: score.passed ? "var(--color-mint)" : "var(--color-flame)" }}>
           {t("pron.headline", { pct: formatPercent(score.overall, lang) })}{" "}
           {score.passed ? t("pron.passed") : t("pron.target", { n: PASS_SCORE })}
         </span>

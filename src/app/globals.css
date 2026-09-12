@@ -229,6 +229,23 @@
   --radius-float: 2.125rem;
 
   /*
+   * ── ÜST ETİKET HARF ARALIĞI ────────────────────────────────────────────
+   *
+   * Kart ve bölüm başlarındaki küçük BÜYÜK HARFLİ etiket ("GÜNÜN TURU",
+   * "ZAYIF NOKTALAR", "ROZET AÇILDI") iki platformda da aynı şey ama aralığı
+   * değildi: Android hepsinde `letterSpacing: 1` diyor, web'de DÖRT ayrı
+   * değer vardı — `tracking-wide` (0.025em, 11 pikselde 0.28px),
+   * `tracking-wider`, `tracking-widest` ve `[0.18em]`. Yani aynı etiket
+   * Android'de 1 piksel, web'in çoğu yerinde ÜÇTE BİR pikselden az
+   * aralıklıydı; "büyük harfli etiket" hissi web'de yoktu.
+   *
+   * Piksel, `em` değil: Android da piksel kullanıyor ve etiket iki punto
+   * (micro 11, caption 12.5) arasında geziyor - `em` olsaydı ikisi
+   * ayrışırdı.
+   */
+  --tracking-eyebrow: 1px;
+
+  /*
    * ── BASMA ÖLÇEĞİ ───────────────────────────────────────────────────────
    *
    * Mobilde dokunulabilir HER şey basınca aynı orana iniyor (`PressableScale`

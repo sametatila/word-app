@@ -123,7 +123,7 @@ export default async function PracticePage() {
       </Link>
 
       <section className="space-y-3">
-        <h2 className="muted text-micro uppercase tracking-widest">{t("practice.single_game")}</h2>
+        <h2 className="muted text-micro uppercase tracking-eyebrow">{t("practice.single_game")}</h2>
         <CardGrid min={150}>
           {list.map(({ game, hint, Icon, tone }) => (
             <Link

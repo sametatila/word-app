@@ -244,7 +244,7 @@ function PlanCard({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-6">
-      <h2 className="mb-2 text-micro uppercase tracking-wide muted">{title}</h2>
+      <h2 className="mb-2 text-micro uppercase tracking-eyebrow muted">{title}</h2>
       <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
         {children}
       </div>

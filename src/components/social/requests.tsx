@@ -38,7 +38,7 @@ export function Requests({
           {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
               olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
           <div className="mb-2 flex items-baseline justify-between px-1">
-            <h3 className="muted text-micro uppercase tracking-wide">{t("requests.incoming")}</h3>
+            <h3 className="muted text-micro uppercase tracking-eyebrow">{t("requests.incoming")}</h3>
             <span className="muted text-caption tabular-nums">{incoming.length}</span>
           </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
@@ -53,7 +53,7 @@ export function Requests({
           {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
               olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
           <div className="mb-2 flex items-baseline justify-between px-1">
-            <h3 className="muted text-micro uppercase tracking-wide">{t("requests.sent")}</h3>
+            <h3 className="muted text-micro uppercase tracking-eyebrow">{t("requests.sent")}</h3>
             <span className="muted text-caption tabular-nums">{outgoing.length}</span>
           </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">

@@ -254,7 +254,7 @@ export function BossPlayer({
         <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
           <TrophyIcon size={26} />
         </div>
-        <p className="muted text-micro uppercase tracking-wide">
+        <p className="muted text-micro uppercase tracking-eyebrow">
           {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
         </p>
         <h2 className="mt-1 text-h2">{t("bossw.title_exam", { title: data.meta.title })}</h2>

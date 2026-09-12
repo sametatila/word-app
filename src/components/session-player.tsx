@@ -854,7 +854,7 @@ export function SessionPlayer() {
       {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
           bunu söyleyen tek yer buydu, mobilde de öyle. */}
       {onlyGame ? (
-        <p className="muted mb-2 shrink-0 text-center text-micro uppercase tracking-widest">
+        <p className="muted mb-2 shrink-0 text-center text-micro uppercase tracking-eyebrow">
           {t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) })}
         </p>
       ) : null}
@@ -881,7 +881,7 @@ export function SessionPlayer() {
               const isNew = ws.every((w) => w.isNew);
               return (
                 <span
-                  className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
+                  className="rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
                   style={{
                     background: isNew
                       ? "color-mix(in srgb, var(--color-brand) 14%, transparent)"
@@ -1508,7 +1508,7 @@ function SummaryCard({
             {/* Başlık KODA GÖMÜLÜ Türkçeydi: Almanca ve İngilizce arayüzde de
                 "Zorlandıkların" yazıyordu. Sözlüğe alındı ve Android de aynı
                 anahtarı kullanıyor. */}
-            <p className="muted mb-2 text-micro uppercase tracking-wide">
+            <p className="muted mb-2 text-micro uppercase tracking-eyebrow">
               {t("session.missed_title", { n: missed.length })}
             </p>
             <ul className="space-y-1.5">

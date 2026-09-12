@@ -102,7 +102,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-tile bg-white/20 text-white">
                 <BoltIcon size={22} />
               </span>
-              <span className="text-micro uppercase tracking-widest text-white/80">{t("learn.daily_round")}</span>
+              <span className="text-micro uppercase tracking-eyebrow text-white/80">{t("learn.daily_round")}</span>
             </div>
             <p className="text-h1 text-white">{t("learn.practice_your_words")}</p>
 <p className="mt-1 text-body text-white/90">{t("learn.daily_pitch")}</p>

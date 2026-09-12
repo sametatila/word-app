@@ -114,7 +114,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         )
       ) : (
         <section>
-          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("find.you_may_know")}</h3>
+          <h3 className="muted mb-2 px-1 text-micro uppercase tracking-eyebrow">{t("find.you_may_know")}</h3>
           {sugg === null ? (
             <PersonRowSkeleton rows={3} />
           ) : sugg.length ? (

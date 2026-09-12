@@ -102,7 +102,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         </div>
         <div className="my-3 flex items-center justify-center gap-3">
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
-          <span className="muted text-micro uppercase tracking-wide">{tx("rounds.means")}</span>
+          <span className="muted text-micro uppercase tracking-eyebrow">{tx("rounds.means")}</span>
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
         </div>
         <div className="flex justify-center font-semibold">

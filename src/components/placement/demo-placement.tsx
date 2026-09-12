@@ -134,7 +134,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
 
       {/* Başlıktaki "örnek" eki Android'de de var: bu tur giriş öncesi kısa
           set, oturum açıkken çalışan dört aşamalı testin yerine geçmiyor. */}
-      <p className="muted mb-4 text-center text-micro uppercase tracking-widest">
+      <p className="muted mb-4 text-center text-micro uppercase tracking-eyebrow">
         {t("placement.title")}
         {t("placement.sample")}
       </p>
