@@ -14,6 +14,7 @@ import {
   subscribeToPush,
   vapidKey,
 } from "@/lib/push-client";
+import { PUSH_PRIME_SNOOZE_DAYS } from "@/lib/profile-limits";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -30,8 +31,6 @@ import { useT } from "@/lib/i18n/client";
  */
 
 const DISMISS_KEY = "lernomi:push-dismissed";
-/** Kapatan kullanıcıya bir sonraki soru üç hafta sonra. */
-const DISMISS_DAYS = 21;
 
 type State = "hidden" | "ask" | "busy" | "done" | "ios";
 
@@ -45,7 +44,7 @@ export function PushOptIn({ streak }: { streak: number }) {
     let dismissed = false;
     try {
       const at = Number(localStorage.getItem(DISMISS_KEY) ?? 0);
-      dismissed = at > Date.now() - DISMISS_DAYS * 86400000;
+      dismissed = at > Date.now() - PUSH_PRIME_SNOOZE_DAYS * 86400000;
     } catch {
       /* depolama kapalı olabilir */
     }

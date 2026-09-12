@@ -2,7 +2,7 @@ import notifee, { TriggerType, RepeatFrequency, AndroidImportance, Authorization
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t } from "./i18n";
 import { hasPushDevice } from "./pushState";
-import { PROFILE_DEFAULTS } from "./profileDefaults";
+import { PROFILE_DEFAULTS, PUSH_PRIME_SNOOZE_DAYS } from "./profileDefaults";
 import { api } from "../api/client";
 
 /**
@@ -339,20 +339,38 @@ export async function showTestNotification(): Promise<boolean> {
 }
 
 /**
- * İlk giriş sonrası bildirim izni "priming"i (§4 — elde tutmanın #1 kaldıracı).
- * Bir kez gösterilir; hatırlatma zaten kuruluysa ya da daha önce sorulduysa atlanır.
+ * Bildirim izni "priming"i (§4 — elde tutmanın #1 kaldıracı).
+ *
+ * KALICI DEĞİL, ERTELENİR. Bayrak eskiden `"1"` yazılıyordu ve bir daha hiç
+ * silinmiyordu: "Belki sonra"ya basan kullanıcıya günlük hatırlatma bir daha
+ * HİÇ teklif edilmiyordu — oysa webde aynı kullanıcıya kart üç hafta sonra
+ * yeniden geliyor (`components/push-optin` `DISMISS_KEY`). Elde tutmanın en
+ * güçlü kaldıracı tek bir dokunuşla kalıcı olarak kapanıyordu.
+ *
+ * Bayrak artık bir ZAMAN DAMGASI ve pencere `PUSH_PRIME_SNOOZE_DAYS`
+ * (web ile aynı sayı, tek kaynak `lib/profileDefaults`). Eski `"1"` de bir
+ * sayıya çözülüyor (1 ms, yani 1970) — o kurulumlarda pencere dolmuş
+ * sayılıyor ve soru bir kez daha geliyor; kaybedilen teklif geri veriliyor.
+ *
+ * İzin VERİLDİYSE soru zaten gelmiyor: hatırlatma kurulu olduğu sürece
+ * `getReminder()` dolu döner ve pencere hiç okunmaz.
  */
 const PRIMED_KEY = "lernomi:notif-primed";
 
 export async function notifPrimeNeeded(): Promise<boolean> {
   try {
-    if ((await AsyncStorage.getItem(PRIMED_KEY)) === "1") return false;
-    return !(await getReminder()); // hatırlatma zaten varsa gerekmez
+    if (await getReminder()) return false; // hatırlatma zaten varsa gerekmez
+    const raw = await AsyncStorage.getItem(PRIMED_KEY);
+    if (!raw) return true; // hiç sorulmamış
+    const at = Number(raw);
+    if (!Number.isFinite(at)) return true; // bozuk kayıt: sorulmamış say
+    return at <= Date.now() - PUSH_PRIME_SNOOZE_DAYS * 86400000;
   } catch {
     return false;
   }
 }
 
+/** Soru soruldu — pencere bugünden başlıyor (kalıcı bayrak DEĞİL). */
 export async function markNotifPrimed(): Promise<void> {
-  try { await AsyncStorage.setItem(PRIMED_KEY, "1"); } catch { /* yut */ }
+  try { await AsyncStorage.setItem(PRIMED_KEY, String(Date.now())); } catch { /* yut */ }
 }

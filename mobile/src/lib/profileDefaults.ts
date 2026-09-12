@@ -36,6 +36,18 @@ export const REMINDER_HOURS = [9, 12, 15, 19, 21] as const;
 export const PRIME_HOURS = { morning: REMINDER_HOURS[0], midday: REMINDER_HOURS[1], evening: REMINDER_HOURS[3] } as const;
 
 /**
+ * BİLDİRİM İZNİ ERTELEME PENCERESİ — gün. Web karşılığı
+ * `lib/profile-limits` `PUSH_PRIME_SNOOZE_DAYS`; `check:parity` karşılaştırıyor.
+ *
+ * İzin ekranı KALICI bir bayrakla kapanıyordu ("lernomi:notif-primed" = "1"):
+ * "Belki sonra"ya basan kullanıcıya hatırlatma bir daha HİÇ teklif
+ * edilmiyordu. Webde aynı kullanıcıya üç hafta sonra yeniden soruluyor
+ * (`components/push-optin`). Bayrak artık bir ZAMAN DAMGASI ve pencere
+ * dolunca soru yeniden geliyor (bkz. `lib/notifications` notifPrimeNeeded).
+ */
+export const PUSH_PRIME_SNOOZE_DAYS = 21;
+
+/**
  * PROFİL ALANLARININ SINIRLARI — sunucudaki `lib/profile-limits` ile aynı
  * sayılar. Uç bu sınırlarla kırpıyor (`api/profile`); arayüz onları kendi
  * içinde tutarsa kullanıcı SEÇEBİLDİĞİ bir değerin kaydedilmediğini görür.

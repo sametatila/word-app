@@ -8,7 +8,7 @@ import { AuthProvider, useAuth } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
 import { migrateLegacyKeys } from "./src/lib/storageMigration";
-import { migrateReminderIds } from "./src/lib/notifications";
+import { migrateReminderIds, notifPrimeNeeded } from "./src/lib/notifications";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
@@ -36,6 +36,20 @@ function Nav() {
   /** Gezgin hazır olmadan gelen derin bağlantı (bkz. onReady). */
   const pending = useRef<DeepLinkAction>(null);
   const [onboarded, setOnboarded] = useState<boolean | null>(null);
+  /*
+    BİLDİRİM İZNİ SORUSU AÇILIŞTA DA SORULUYOR.
+
+    Ekran yalnız `AuthScreen`in girişten sonraki yönlendirmesinden
+    açılabiliyordu; oturum cihazda kaldığı için o yol yılda bir kez bile
+    geçilmiyor. "Belki sonra" diyen kullanıcı soruyu bir daha HİÇ görmüyordu
+    (bayrak da kalıcıydı, bkz. `lib/notifications`). Webde kart her oturum
+    özetinde yeniden çıkıyor ve kapatıldığında üç hafta erteleniyor.
+
+    Artık erteleme penceresi dolmuşsa soru soğuk açılışta da geliyor —
+    hatırlatma kuruluysa `notifPrimeNeeded` zaten `false` döndüğü için izin
+    vermiş kullanıcı bunu hiç görmez.
+  */
+  const [prime, setPrime] = useState(false);
   // Arayüz dili: değiştiğinde tüm ağaç yeniden render edilsin diye tepede
   // dinleniyor (t() modül düzeyinde okuduğu için tek başına tetiklemez).
   useLang();
@@ -163,6 +177,10 @@ function Nav() {
       // Platform sabit yazılıydı; iOS açılışları Android sayılıyordu.
       // Analitik tercihi yüklendikten SONRA: kullanıcı kapattıysa bu olay da gitmez.
       .then(() => track("app_open", Math.round(Dimensions.get("window").width), `${Platform.OS}:standalone`))
+      /* Bildirim izni sorusu gerekiyor mu — `onboarded`DAN ÖNCE: ilk çizimi
+         açan bayrak o, yani rota hesaplanırken bu yanıt hazır olmak zorunda. */
+      .then(() => notifPrimeNeeded().catch(() => false))
+      .then((v) => setPrime(v))
       .then(() => AsyncStorage.getItem(ONBOARDED_KEY))
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));
@@ -179,7 +197,7 @@ function Nav() {
   // Sıra tersken bayrağı silinmiş (depolama temizliği, geri yükleme) ama oturumu
   // duran kullanıcı ilk açılış akışına düşüyor, kendi ayarı olmayan sorulara
   // yanıt veriyordu. Oturum yoksa: akış görülmemişse ilk akış, görülmüşse giriş.
-  const initialRoute = user ? "Tabs" : !onboarded ? "Onboarding" : "Auth";
+  const initialRoute = user ? (prime ? "NotifPrime" : "Tabs") : !onboarded ? "Onboarding" : "Auth";
 
   return (
     /* Gezgin başvurusu bileşen ağacının dışından gezinmek için: bildirime

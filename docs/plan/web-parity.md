@@ -15368,3 +15368,52 @@ sonraki `ToastAndroid` ya da `ActionSheetIOS` kendiliğinden yakalanır.
 
 İki enjeksiyon doğrulandı (kapısız `ToastAndroid` eklemek; muaf dosyaya kapı
 kazandırmak).
+
+## §11.424 — "Belki sonra" mobilde kalıcıydı: bildirim izni bir daha hiç sorulmuyordu
+
+Aynı soru iki platformda da var — "günlük hatırlatmayı açalım mı" — ama
+**kapatıldığında** iki ayrı şey oluyordu.
+
+Web (`components/push-optin`): kart oturum özetinin içinde, kullanıcı turu
+bitirip XP'sini gördükten hemen sonra çıkıyor. Kapatılınca `localStorage`'a bir
+**zaman damgası** yazılıyor ve soru **21 gün** sonra yeniden geliyor.
+
+Mobil (`screens/NotifPrimeScreen`): aynı soru tam ekran, ama iki kusurla.
+
+1. **Bayrak kalıcıydı.** `markNotifPrimed()` `"lernomi:notif-primed"` anahtarına
+   `"1"` yazıyordu ve `notifPrimeNeeded()` yalnız `=== "1"` diye bakıyordu —
+   yani "Belki sonra"ya **bir kez** basan kullanıcıya günlük hatırlatma bir
+   daha **hiç** teklif edilmiyordu. Elde tutmanın en güçlü kaldıracı tek
+   dokunuşla ve kalıcı olarak kapanıyordu.
+2. **Ekranın tek girişi girişin hemen sonrasıydı.** Rota yalnız
+   `AuthScreen`in `toApp()` yönlendirmesinden açılabiliyor; `App.tsx`'te soğuk
+   açılış rotası `user ? "Tabs" : ...` idi. Oturum cihazda kaldığı için o yol
+   yeniden neredeyse hiç geçilmiyor — yani birinci kusur düzeltilse bile
+   sorunun geri gelebileceği bir **an** yoktu.
+
+Üçü birlikte düzeltildi:
+
+- Pencere iki platformun ortak sayısı: `PUSH_PRIME_SNOOZE_DAYS = 21`
+  (`lib/profile-limits` ve `mobile/src/lib/profileDefaults`, `REMINDER_HOURS`
+  ile aynı ayna düzeni). Web kartındaki yerel `DISMISS_DAYS` kaldırıldı.
+- `markNotifPrimed()` artık `String(Date.now())` yazıyor; `notifPrimeNeeded()`
+  pencereyi okuyor. Eski `"1"` kayıtları `Number("1") = 1`, yani 1970 —
+  pencere dolmuş sayılıyor ve o kurulumlarda soru bir kez daha geliyor:
+  kaybedilen teklif geri veriliyor.
+- Soğuk açılış rotası bayrağı okuyor (`prime ? "NotifPrime" : "Tabs"`).
+  Karar `onboarded`DAN ÖNCE çözülüyor, çünkü ilk çizimi açan bayrak o.
+  İzin **verilmiş** kullanıcı bunu hiç görmüyor: hatırlatma kurulu olduğu
+  sürece `getReminder()` dolu döner ve pencere hiç okunmaz.
+
+### §299
+
+Sekiz ölçü: pencere iki tarafta da aynı sayı **ve** iki tarafta da sabitten
+okunuyor (eşitlik tek başına yetmez — ikisi birlikte değiştirilip aynı sayıya
+getirilebilir ve bağlantı yine kopuk kalır), bayrak iki tarafta da zaman
+damgası (kalıcı `"1"` değil), ve soru gerçekten yeniden **sorulabiliyor**:
+webde kartın çizildiği yer **sayılıyor** (sıfır çağıran boş bir doğru olurdu),
+mobilde soğuk açılış rotası bayrağı okuyor.
+
+Dört enjeksiyon doğrulandı: mobil pencereyi 14 yapmak, `markNotifPrimed`i eski
+kalıcı bayrağa döndürmek, açılış rotasından bayrağı çıkarmak, `<PushOptIn`
+çağrısını kaldırmak.

@@ -16237,6 +16237,66 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* ------------------------------------------- 299. BILDIRIM IZNI ERTELEMESI
+   *
+   * Iki platform da ayni soruyu soruyor ("gunluk hatirlatmayi acalim mi") ama
+   * KAPATILDIGINDA ayni seyi yapmiyordu: web damgayi yaziyor ve uc hafta
+   * sonra yeniden soruyor, mobil ise KALICI bir bayrak ("1") yaziyordu -
+   * "Belki sonra"ya basan kullanici gunluk hatirlatmayi bir daha HIC teklif
+   * edilmeden kullaniyordu. Ustune mobilde ekranin tek girisi girisin hemen
+   * sonrasiydi; oturum cihazda kaldigi icin o yol yeniden hic gecilmiyor,
+   * yani erteleme eklenmis olsa bile sorunun geri gelecegi bir an yoktu.
+   *
+   * Uc olcu: (1) pencere ayni sayi ve iki tarafta da SABITTEN okunuyor,
+   * (2) bayrak iki tarafta da ZAMAN DAMGASI (kalici "1" degil),
+   * (3) soru gercekten yeniden SORULABILIYOR - webde kart bir yerde
+   * ciziliyor (cagirani sayilarak; sifir cagiran bos bir dogru olurdu),
+   * mobilde soguk acilis rotasi bayragi okuyor. */
+  {
+    const webSabit = (read("src/lib/profile-limits.ts").match(/PUSH_PRIME_SNOOZE_DAYS = (\d+)/) ?? [])[1] ?? "yok";
+    const mobSabit = (read("mobile/src/lib/profileDefaults.ts").match(/PUSH_PRIME_SNOOZE_DAYS = (\d+)/) ?? [])[1] ?? "yok";
+    const webKart = sil(read("src/components/push-optin.tsx"));
+    const mobBildirim = sil(read("mobile/src/lib/notifications.ts"));
+    const app = sil(read("mobile/App.tsx"));
+    /* Cagiran sayisi: `<PushOptIn` isaretini ceken dosyalar. Kart kendi
+       dosyasinda tanimli oldugu icin o dosya sayilmaz. */
+    const yuru = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) yuru(d + "/" + e.name, out);
+        else if (e.name.endsWith(".tsx")) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    const cagiran = yuru("src").filter(
+      (f) => f !== "src/components/push-optin.tsx" && /<PushOptIn\b/.test(read(f)),
+    ).length;
+    sameList(
+      "bildirim izni ertelemesi",
+      [
+        "pencere web=" + webSabit,
+        "pencere mobil=" + mobSabit,
+        "web sabitten=" + (/PUSH_PRIME_SNOOZE_DAYS \* 86400000/.test(webKart) ? "evet" : "HAYIR"),
+        "mobil sabitten=" + (/PUSH_PRIME_SNOOZE_DAYS \* 86400000/.test(mobBildirim) ? "evet" : "HAYIR"),
+        "web damga=" + (/setItem\(DISMISS_KEY, String\(Date\.now\(\)\)\)/.test(webKart) ? "evet" : "HAYIR"),
+        "mobil damga=" + (/setItem\(PRIMED_KEY, String\(Date\.now\(\)\)\)/.test(mobBildirim) ? "evet" : "HAYIR"),
+        "web kart cagirani=" + cagiran,
+        "mobil acilista=" + (/notifPrimeNeeded\(\)/.test(app) && /prime \? "NotifPrime"/.test(app) ? "okuyor" : "OKUMUYOR"),
+      ],
+      [
+        "pencere web=21",
+        "pencere mobil=21",
+        "web sabitten=evet",
+        "mobil sabitten=evet",
+        "web damga=evet",
+        "mobil damga=evet",
+        "web kart cagirani=1",
+        "mobil acilista=okuyor",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

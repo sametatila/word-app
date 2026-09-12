@@ -38,5 +38,20 @@ export const PROFILE_LIMITS = {
  */
 export const REMINDER_HOURS = [9, 12, 15, 19, 21] as const;
 
+/**
+ * BİLDİRİM İZNİ ERTELEME PENCERESİ — gün.
+ *
+ * Kartı kapatan ("sonra") kullanıcıya soru üç hafta sonra yeniden geliyor:
+ * izin bir kere reddedilirse tarayıcıda kalıcıdır, o yüzden soru ısrarla
+ * değil ARALIKLA sorulmak zorunda.
+ *
+ * Sayı burada, çünkü mobil AYNI kararı veriyor ve orada KALICI bir bayrakla
+ * veriliyordu: "Belki sonra"ya basan biri bildirim iznini bir daha HİÇ
+ * teklif edilmeden kullanıyordu — webde aynı kullanıcıya 21 gün sonra
+ * yeniden soruluyor. Mobil karşılığı `mobile/src/lib/profileDefaults`
+ * `PUSH_PRIME_SNOOZE_DAYS`; `check:parity` ikisini karşılaştırıyor.
+ */
+export const PUSH_PRIME_SNOOZE_DAYS = 21;
+
 /** İzin ekranının sabah / öğle / akşam seçenekleri — listenin kendi elemanları. */
 export const PRIME_HOURS = { morning: REMINDER_HOURS[0], midday: REMINDER_HOURS[1], evening: REMINDER_HOURS[3] } as const;
