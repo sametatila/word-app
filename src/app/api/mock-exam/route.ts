@@ -132,30 +132,17 @@ export async function GET(req: Request) {
     }
   }
 
-  const paperId = url.searchParams.get("paper") ?? "";
-  const skill = url.searchParams.get("skill") ?? "";
-  if (!mockPaperById(paperId) || !SKILLS.has(skill as MockSkill)) {
-    return NextResponse.json({ error: "bad_request" }, { status: 400 });
-  }
-  try {
-    const [row] = await db
-      .select()
-      .from(mockExamAttempts)
-      .where(
-        and(
-          eq(mockExamAttempts.userId, userId),
-          eq(mockExamAttempts.paperId, paperId),
-          eq(mockExamAttempts.skill, skill),
-          eq(mockExamAttempts.state, "running"),
-        ),
-      )
-      .orderBy(desc(mockExamAttempts.startedAt))
-      .limit(1);
-    return NextResponse.json({ attempt: row ? shape(row) : null }, { headers: { "cache-control": "no-store" } });
-  } catch (err) {
-    console.error("[mock-exam]", err);
-    return NextResponse.json({ error: "database" }, { status: 500 });
-  }
+  /*
+    YARIM KALAN DENEMEYİ VEREN DAL KALDIRILDI (`?paper=&skill=`).
+
+    Aynı satırı `action:"start"` zaten döndürüyor: açık bir deneme varsa onu
+    `resumed: true` ile geri veriyor (aşağıdaki `start`), yani iki ayrı yol
+    aynı şeyi yapıyordu. Ölçüm (2026-09-12): hiçbir istemci ve hiçbir betik o
+    parametreleri göndermiyordu; iki platform da devam etmeyi `start`
+    üzerinden yapıyor. Uç artık yalnız iki soruyu cevaplıyor: `?stats=1` ve
+    `?access=1&level=`.
+  */
+  return NextResponse.json({ error: "bad_request" }, { status: 400 });
 }
 
 export async function POST(req: Request) {

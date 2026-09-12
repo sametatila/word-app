@@ -424,9 +424,15 @@ export async function buildSession(
   /**
    * İSTEMCİNİN oynayamadığı oyunlar (bkz. `pickRound` `skipGames`).
    *
-   * Uç `?skipGames=` ile alıyor ve mobil `free_sentence` gönderiyor: o turun
-   * mobilde oynatıcısı yok. Haftalık sınav aynı şeyi kendi ucunda zaten
-   * yapıyor (`lib/weekly` `WeeklyOpts`).
+   * Uç `?skipGames=` ile alıyor. ŞU AN HİÇBİR İSTEMCİ GÖNDERMİYOR
+   * (2026-09-12 ölçüldü): mobil bir dönem `free_sentence` gönderiyordu
+   * çünkü o turun oynatıcısı yoktu, artık var ve süzgeç kalktı — sunucu o
+   * bayrakla kendi `typing` yedeğine düşüyordu, yani haftalık sınav
+   * Android'de hep daha kolay bir kâğıtla yapılıyordu.
+   *
+   * Yetenek DURUYOR ve bilerek: "istemci bu turu oynayamıyor" gerçek bir
+   * kısıt (yeni bir istemci, kısıtlı bir yapı) ve süzgeç `pickRound`da
+   * çalışıyor. Yorum bu yüzden bir GÖNDEREN iddia etmiyor.
    */
   skipGames: readonly string[] = [],
 ): Promise<SessionPayload> {
@@ -709,9 +715,15 @@ export async function loadSession(
   /**
    * İSTEMCİNİN oynayamadığı oyunlar (bkz. `pickRound` `skipGames`).
    *
-   * Uç `?skipGames=` ile alıyor ve mobil `free_sentence` gönderiyor: o turun
-   * mobilde oynatıcısı yok. Haftalık sınav aynı şeyi kendi ucunda zaten
-   * yapıyor (`lib/weekly` `WeeklyOpts`).
+   * Uç `?skipGames=` ile alıyor. ŞU AN HİÇBİR İSTEMCİ GÖNDERMİYOR
+   * (2026-09-12 ölçüldü): mobil bir dönem `free_sentence` gönderiyordu
+   * çünkü o turun oynatıcısı yoktu, artık var ve süzgeç kalktı — sunucu o
+   * bayrakla kendi `typing` yedeğine düşüyordu, yani haftalık sınav
+   * Android'de hep daha kolay bir kâğıtla yapılıyordu.
+   *
+   * Yetenek DURUYOR ve bilerek: "istemci bu turu oynayamıyor" gerçek bir
+   * kısıt (yeni bir istemci, kısıtlı bir yapı) ve süzgeç `pickRound`da
+   * çalışıyor. Yorum bu yüzden bir GÖNDEREN iddia etmiyor.
    */
   skipGames: readonly string[] = [],
 ): Promise<SessionPayload> {

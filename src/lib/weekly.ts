@@ -100,6 +100,14 @@ async function recentlyExamined(userId: string, week: string): Promise<Set<numbe
  * (sağlayıcı kapalıyken uygulanan `typing` ikamesi). Sınav on beş tur kalıyor.
  * Oyun mobile eklendiğinde istemci bu bayrağı göndermeyi bırakır.
  */
+/**
+ * Haftalık sınavın seçenekleri.
+ *
+ * `skipGames`: istemcinin oynayamadığı tur tipleri. Uç `?skipGames=` ile
+ * alıyor ama ŞU AN HİÇBİR İSTEMCİ GÖNDERMİYOR (2026-09-12 ölçüldü) —
+ * mobil bir dönem `free_sentence` gönderiyordu, artık o turu da oynuyor.
+ * Yetenek duruyor (bkz. `lib/session` aynı parametre).
+ */
 export type WeeklyOpts = { skipGames?: readonly string[] };
 
 export async function buildWeeklyExam(userId: string, course: string, level: string, day: string, opts?: WeeklyOpts): Promise<WeeklyExam> {

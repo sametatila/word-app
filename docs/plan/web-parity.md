@@ -17622,3 +17622,38 @@ görünüyordu. Pencere artık geriye de bakıyor.
 okumaması doğru — geri bildirimin dili kullanıcının profilinden türüyor
 (`lib/assess` `native: await langOf(userId)`), yani istemcinin göndermesine
 gerek yok.
+
+## §11.488 — Sorgu parametreleri: okunan ama gönderilmeyen üç parametre
+
+İstek yönünün ikinci yarısı. **Elli ortak uç** taradım; iki istemcinin
+gönderdiği parametre kümeleri eşit çıktı. Üç görünür fark da açıklandı:
+
+- `/api/auth/get-session?disableCookieCache` — **web'e özel**: çerez önbelleği
+  mobilde yok, mobil jetonla çalışıyor.
+- `/api/mock-exam?access|stats|level` — web'de **aynı veri sunucu
+  bileşeninden** okunuyor (`mockAccess`, `mockStats` doğrudan çağrılıyor),
+  mobil ucu kullanmak zorunda. Mimari fark, kayıtlı.
+- `/api/social/notifications?cursor` — ikisi de gönderiyor; mobilde iç içe
+  şablonda olduğu için ilk tarama görmedi (tarayıcı artefaktı).
+
+**Asıl bulgu ters yönde:** sunucunun **okuduğu** ama kimsenin
+**göndermediği** parametreler. Üç tane vardı:
+
+1. **`/api/mock-exam?paper=&skill=`** — yarım kalan denemeyi veren GET dalı.
+   `action:"start"` aynı satırı `resumed: true` ile zaten döndürüyor (açık
+   deneme varsa onu veriyor, yenisini açmıyor), yani **iki yol aynı işi
+   yapıyordu** ve hiçbir istemci GET dalını çağırmıyordu. Dal kaldırıldı; uç
+   artık yalnız `?stats=1` ve `?access=1&level=` sorularını cevaplıyor.
+2. **`?skipGames=`** (`/api/session` ve `/api/weekly`) — yetenek duruyor ama
+   göndereni yok. Yorumlar "mobil `free_sentence` gönderiyor" diyordu ve bu
+   **artık doğru değil**: mobil o turu oynuyor ve süzgeci kaldırdı (sunucu o
+   bayrakla kendi `typing` yedeğine düşüyordu, yani haftalık sınav Android'de
+   hep daha kolay bir kâğıtla yapılıyordu). Yorumlar düzeltildi — **yetenek
+   kaldı**, çünkü "istemci bu turu oynayamıyor" gerçek bir kısıt ve süzgeç
+   `pickRound`da çalışıyor.
+
+Kapı **§345** mutlak: sunucunun okuduğu her parametre ya bir
+istemci/betik tarafından gönderiliyor ya da muaf listesinde **gerekçesiyle**
+yazılı. Muafiyet kendini denetliyor — süzgecin `composeRounds`a gerçekten
+geçtiği ve yorumun bir gönderen iddia etmediği ölçülüyor. Taranan parametre
+sayısı da yazılı (0/0 hiçbir şey ölçmez).

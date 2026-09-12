@@ -19960,6 +19960,84 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ------------ 345. SORGU PARAMETRELERI: OKUNAN AMA GONDERILMEYEN KALMADI
+ *
+ * Istek yonunun ikinci yarisi: GET sorgu parametreleri. Elli ortak uc
+ * tarandi ve iki istemcinin gonderdigi kumeler esit cikti; uc gorunur fark
+ * da acikland:
+ *   `/api/auth/get-session?disableCookieCache`  webe ozel (cerez onbellegi
+ *       mobilde yok; mobil jetonla calisiyor)
+ *   `/api/mock-exam?access|stats|level`         webde AYNI VERI sunucu
+ *       bileseninden okunuyor (`mockAccess`, `mockStats` dogrudan cagriliyor),
+ *       mobil ucu kullanmak ZORUNDA - mimari fark, kayitli
+ *   `/api/social/notifications?cursor`          ikisi de gonderiyor (mobilde
+ *       ic ice sablonda: tarama artefakti)
+ *
+ * ASIL BULGU ters yonde: sunucunun OKUDUGU ama kimsenin GONDERMEDIGI
+ * parametreler. Uc tane vardi:
+ *   `/api/mock-exam?paper=&skill=`  yarim kalan denemeyi veren GET dali.
+ *       `action:"start"` ayni satiri `resumed: true` ile zaten donduruyor,
+ *       yani iki yol ayni isi yapiyordu. DAL KALDIRILDI.
+ *   `?skipGames=` (session + weekly)  yetenek duruyor ama gonderen yok;
+ *       yorumlar "mobil `free_sentence` gonderiyor" diyordu ve bu ARTIK
+ *       DOGRU DEGIL (mobil o turu oynuyor). Yorumlar duzeltildi, yetenek
+ *       kaldi - "istemci bu turu oynayamiyor" gercek bir kisit.
+ *
+ * Olcu MUTLAK: sunucunun okudugu her parametre ya bir istemci/betik
+ * tarafindan gonderiliyor ya da MUAF listesinde gerekcesiyle yazili.
+ * Taranan parametre sayisi da yaziliyor (0/0 hicbir sey olcmez). */
+{
+  const silQ = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const gezQ = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezQ(yol, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  /* MUAF: yetenek olarak duran, gonderen istemcisi olmayan parametreler.
+     Gerekcesi `lib/session` ve `lib/weekly` yorumlarinda yazili. */
+  const MUAF = new Set(["skipGames"]);
+  const okunan = new Map();
+  let okunanSayi = 0;
+  for (const f of gezQ("src/app/api")) {
+    const src = silQ(read(f));
+    for (const m of src.matchAll(/searchParams\.get\("(\w+)"\)/g)) {
+      okunanSayi++;
+      if (!okunan.has(m[1])) okunan.set(m[1], f.replace(/^src\/app\//, "").replace(/\/route\.tsx?$/, ""));
+    }
+  }
+  const gonderilen = new Set();
+  for (const kok of ["src", "mobile/src", "scripts"]) {
+    for (const f of gezQ(kok)) {
+      if (f.startsWith("src/app/api")) continue;
+      for (const m of silQ(read(f)).matchAll(/[?&](\w+)=/g)) gonderilen.add(m[1]);
+    }
+  }
+  const olu = [...okunan.entries()].filter(([p]) => !gonderilen.has(p) && !MUAF.has(p)).map(([p, y]) => y + "?" + p);
+  sameList(
+    "sorgu parametreleri okunuyor ve gonderiliyor",
+    ["okunan=" + (okunanSayi >= 25 ? "25+" : okunanSayi), "gonderen yok=" + (olu.length ? olu.join("+") : "yok")],
+    ["okunan=25+", "gonderen yok=yok"],
+    "bulunan",
+    "beklenen",
+  );
+  /* Muafiyet kendini denetliyor: yetenek `pickRound`da gercekten duruyor mu
+     ve yorum bir GONDEREN iddia etmiyor mu. */
+  const sess = silQ(read("src/lib/session.ts"));
+  sameList(
+    "skipGames muafiyeti",
+    [
+      "suzgec duruyor=" + (/skipGames/.test(silQ(read("src/lib/session.ts"))) && /composeRounds\(dueWords, newWords, pool, native, only, skipGames\)/.test(sess) ? "evet" : "HAYIR"),
+      "yorum gonderen iddia etmiyor=" + (/HIC BIR ISTEMCI|HİÇBİR İSTEMCİ GÖNDERMİYOR/.test(read("src/lib/session.ts")) ? "evet" : "HAYIR"),
+    ],
+    ["suzgec duruyor=evet", "yorum gonderen iddia etmiyor=evet"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
