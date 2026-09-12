@@ -1756,6 +1756,33 @@ maddeyi sildirdi; dört soru yüzeyi yeniden yazıldı. Son paketler:
 prose-de s-057 (218 dize), prose p-066 (38), task-de t-050 (84).
 
 
+**Sayı tutarlılığı taraması (2026-09-12, WP-75 sonrası).** Bir önceki turda
+kapılardan değil okumaktan çıkan bir hata („dört sözcük“ derken metnin „three
+words“ demesi) bütün bir SINIFA işaret ediyordu: Türkçe yüzeyin verdiği sayı
+ile İngilizce içeriğin tuttuğu sayı arasındaki uyuşmazlıkları hiçbir kapı
+görmüyor. 750 ünite egzersizi tarandı ve sınıfın en somut üyesi bulundu:
+**sıralama sorusunun kökü bir sayı veriyor ama listede başka sayıda madde var**
+— „Üç satırın sırası: doğru sıraya koy.“ yazıp dört madde göstermek. 41 soruda
+çıktı (B1 4, B2 10, C1 27); öğrenciye üç şey sıralamasını söyleyip dört şey
+gösteriyordu. Kökler sayısız biçime çevrildi („Dersin sırası: doğru sıraya
+koy.“ — hattın yarısında zaten kullanılan biçim).
+
+Asıl kazanç tarama değil KAPI: `scripts/check-content.ts` artık sıralama
+sorusunun kökündeki Türkçe sayı sözcüğünü madde sayısıyla karşılaştırıyor ve
+tutmuyorsa hata veriyor. Kapının gerçekten ateşlendiği tek bir kökü geri alarak
+doğrulandı. Bir de araç dersi: Türkçe sözcük sınırı ASCII `\b` ile
+çalışmıyor — „üç“ün önündeki „ü“ sözcük karakteri sayılmadığı için `\büç\b`
+hem „Üç satır“ın başında EŞLEŞMİYOR hem de „güçlüye“nin ortasında EŞLEŞİYOR;
+ilk taramada 40 gerçek hatanın hepsi bu yüzden kaçmıştı. Desen harf-dışı
+ayırıcıyla bölmeye çevrildi.
+
+Aynı turda bir yanlış alarm da kaydedilmeye değer: Almanca kursun Patika
+yuvalarını ölçen elde yazma bir betik „0/870 dolu“ dedi. Nedeni üründe değil
+betikteydi — `course` alanı SEÇİMLİ ve Almanca kursun egzersizleri onu
+yazmıyor (`targetLangOf` yokluğu „de“ sayıyor), dolayısıyla `course === "de"`
+süzgeci hiçbirini tutmuyor. Doğru süzgeçle Almanca kurs **870/870 dolu**.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

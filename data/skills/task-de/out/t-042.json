@@ -330,11 +330,6 @@
   "de": "Die Reihenfolge der Akte: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Üç kipin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Modalverben: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Kapanışın sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge des Schlusses: bring sie in die richtige Ordnung."
@@ -343,10 +338,5 @@
   "tr": "Şikâyetin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Beschwerde: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "İki biçimin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der zwei Formen: bring sie in die richtige Ordnung."
  }
 ]

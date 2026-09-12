@@ -106,7 +106,7 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Üç fiilin sırası: doğru sıraya koy.",
+        text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

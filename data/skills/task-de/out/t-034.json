@@ -380,28 +380,8 @@
   "de": "Die Reihenfolge der Kleinstadt: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Üç adılın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Pronomen: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Koşulların sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Bedingungen: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç biçimin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Formen: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç bağlacın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Bindewörter: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç edilgenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Passivsätze: bring sie in die richtige Ordnung."
  }
 ]

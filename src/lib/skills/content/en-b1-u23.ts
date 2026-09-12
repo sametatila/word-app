@@ -188,7 +188,7 @@ export const enB1U23: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Üç biçimin sırası: doğru sıraya koy.",
+        text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

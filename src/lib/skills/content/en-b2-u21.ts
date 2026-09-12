@@ -104,7 +104,7 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "İki yolun sırası: doğru sıraya koy.",
+        text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [
@@ -194,7 +194,7 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Üç aktarmanın sırası: doğru sıraya koy.",
+        text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

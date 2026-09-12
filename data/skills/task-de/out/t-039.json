@@ -265,11 +265,6 @@
   "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Üç derecenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Grade: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Ölçeğin sırası: en sertten en yumuşağa koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Skala: vom Schärfsten zum Weichsten."

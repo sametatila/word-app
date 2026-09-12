@@ -289,6 +289,16 @@ function checkSkills(list: SkillExercise[]) {
           if (kind === "dictation" && e.skill === "listening" && !e.segments.some((s) => s.text.includes(q.accept![0]))) W(qw, "dictation: cümle bölümlerde geçmiyor");
         } else if (kind === "order") {
           if (!q.items || q.items.length < 3 || q.items.length > 6) E(qw, `order: ${q.items?.length ?? 0} madde (3–6)`);
+          /* Soru kökü bir SAYI veriyorsa madde sayısıyla tutmak zorunda.
+             "Üç satırın sırası" yazıp dört madde göstermek öğrenciye yanlış
+             söylüyor ve hiçbir şema kuralı bunu görmüyordu; 2026-09-12'de
+             41 soruda bulundu. Türkçe sözcük sınırı ASCII `\b` ile
+             çalışmıyor (ü, ı, ş sözcük karakteri sayılmaz), o yüzden
+             harf-dışı ayırıcıyla bölünüyor. */
+          const SAYI: Record<string, number> = { bir: 1, iki: 2, üç: 3, dört: 4, beş: 5, altı: 6 };
+          const kok = q.text.toLocaleLowerCase("tr").split(/[^\p{L}]+/u).find((w) => SAYI[w] != null);
+          if (kok && q.items && SAYI[kok] !== q.items.length)
+            E(qw, `order kökü "${kok}" diyor, ${q.items.length} madde var`);
         } else {
           if (!q.options || q.options.length < 2 || q.options.length > 4) E(qw, `şık sayısı ${q.options?.length ?? 0}`);
           if (!Number.isInteger(q.answer) || q.answer < 0 || q.answer >= (q.options?.length ?? 0)) E(qw, `answer indeksi aralık dışı: ${q.answer}`);

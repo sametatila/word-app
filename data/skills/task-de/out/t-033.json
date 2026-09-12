@@ -280,11 +280,6 @@
   "de": "Die Reihenfolge des Beipackzettels: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Dört bağlacın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der vier Bindewörter: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Kanıt sırası: en zayıftan en güçlüye koy.",
   "kind": "question.text",
   "de": "Reihenfolge der Belege: vom schwächsten zum stärksten."

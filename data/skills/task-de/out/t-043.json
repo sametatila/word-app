@@ -305,11 +305,6 @@
   "de": "Die Reihenfolge des Modus: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Üç aracın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Mittel: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Katmanların sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Schichten: bring sie in die richtige Ordnung."
@@ -318,10 +313,5 @@
   "tr": "Eksiltili söyleyişin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Untertreibung: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç bağlayıcının sırası: en gevşekten en dara koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Verknüpfungen: vom Lockersten zum Engsten."
  }
 ]

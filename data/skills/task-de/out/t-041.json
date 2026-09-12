@@ -230,23 +230,8 @@
   "de": "Die Reihenfolge der Anzeige: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "İki yolun sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der zwei Wege: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Katlamanın sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Faltung: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç çatının sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Genera: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç aktarmanın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Wiedergaben: bring sie in die richtige Ordnung."
  }
 ]

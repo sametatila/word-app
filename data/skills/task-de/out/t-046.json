@@ -323,15 +323,5 @@
   "tr": "Aynı sözcük cümlenin başında ve fiilsiz bir isim öbeği alıyor.",
   "kind": "build.hint",
   "de": "Dasselbe Wort am Satzanfang, und es nimmt eine verblose Nominalphrase."
- },
- {
-  "tr": "Üç cümlenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Sätze: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç göndermenin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Verweise: bring sie in die richtige Ordnung."
  }
 ]

@@ -328,25 +328,5 @@
   "tr": "Dersin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Lektion: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç deliğin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Löcher: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç satırın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Zeilen: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Dört satırın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der vier Zeilen: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Yazılı üç satırın sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei geschriebenen Zeilen: bring sie in die richtige Ordnung."
  }
 ]

@@ -99,7 +99,7 @@ export const enB2U22: SkillExercise[] = [
       },
       {
         kind: "order",
-        text: "Üç kipin sırası: doğru sıraya koy.",
+        text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
         items: [

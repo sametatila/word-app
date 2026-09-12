@@ -250,11 +250,6 @@
   "de": "Die Reihenfolge des Verbs: bring sie in die richtige Ordnung."
  },
  {
-  "tr": "Üç fiilin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Verben: bring sie in die richtige Ordnung."
- },
- {
   "tr": "Düzeltmenin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Richtigstellung: bring sie in die richtige Ordnung."
@@ -268,10 +263,5 @@
   "tr": "Denetlemenin sırası: doğru sıraya koy.",
   "kind": "question.text",
   "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
- },
- {
-  "tr": "Üç tetikleyicinin sırası: doğru sıraya koy.",
-  "kind": "question.text",
-  "de": "Die Reihenfolge der drei Auslöser: bring sie in die richtige Ordnung."
  }
 ]
