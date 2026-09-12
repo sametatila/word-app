@@ -23,7 +23,7 @@ import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/as
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
-import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_DE } from "@/lib/exam-types";
+import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, SECTION_WORD_TARGET } from "@/lib/exam-types";
 import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
@@ -376,7 +376,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
                 <li key={x.id}>
                   <div className="flex items-center justify-between text-body">
                     <span>
-                      <span lang="de" className="font-semibold">{SECTION_TITLE_DE[x.id]}</span>
+                      <span lang={course} className="font-semibold">{SECTION_TITLE_TARGET[targetLangOf(course)][x.id]}</span>
                       <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
                     </span>
                     <span className="tabular-nums" style={{ color: x.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
@@ -435,11 +435,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {/* uppercase YOK: Türkçe yerelde text-transform "Teil"i "TEİL" yapıyor. */}
+        {/* Kâğıdın kendi dili: "Teil" Almanca kursta, "Part" İngilizcede —
+            sabit yazılıyken İngilizce öğrenci kâğıdında Almanca görüyordu. */}
         <p className="muted text-caption tracking-wide" lang={course}>
-          Teil {teil} / {list.length}
+          {SECTION_WORD_TARGET[targetLangOf(course)]} {teil} / {list.length}
         </p>
         <h2 className="mt-1 text-h1" lang={course}>
-          {SECTION_TITLE_DE[section]}
+          {SECTION_TITLE_TARGET[targetLangOf(course)][section]}
         </h2>
         <p className="text-h3" style={{ color: "var(--color-brand)" }}>
           {t(SECTION_TITLE_KEYS[section])}
@@ -476,7 +478,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       />
       <div className="flex items-center justify-between gap-3 text-caption">
         <span>
-          Teil {teil}/{list.length} · <span lang="de">{SECTION_TITLE_DE[section]}</span>
+          {SECTION_WORD_TARGET[targetLangOf(course)]} {teil}/{list.length} · <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>
         </span>
         <span className="tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
@@ -855,7 +857,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           <ul className="mt-1 space-y-0.5">
             {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
               <li key={id} className="muted text-caption">
-                <span lang="de" className="font-semibold">{SECTION_TITLE_DE[id]}</span> · {t(SECTION_TITLE_KEYS[id])}{" "}
+                <span lang={course} className="font-semibold">{SECTION_TITLE_TARGET[targetLangOf(course)][id]}</span> · {t(SECTION_TITLE_KEYS[id])}{" "}
                 ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
               </li>
             ))}
@@ -1123,7 +1125,7 @@ function Result({
             <div className="flex items-center justify-between text-body">
               <span>
                 <span lang={course} className="font-semibold">
-                  {SECTION_TITLE_DE[s.id]}
+                  {SECTION_TITLE_TARGET[targetLangOf(course)][s.id]}
                 </span>
                 <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
                 <span className="muted text-caption"> {t("exam.weight", { pct: formatPercent(s.weight, lang) })}</span>
@@ -1179,7 +1181,7 @@ function Result({
               {misses.map((m, i) => (
                 <li key={i} className="rounded-panel px-3 py-2.5 text-body surface-2">
                   <p className="muted text-caption">
-                    <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
+                    <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
                   <p className="mt-0.5">{m.prompt}</p>
                   <p className="mt-1 font-semibold" lang={course} style={{ color: "var(--color-mint)" }}>

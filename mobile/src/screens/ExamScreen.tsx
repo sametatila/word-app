@@ -22,7 +22,7 @@ import { written } from "../game/skillQuiz";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
-import { currentTargetLocale } from "../lib/courses";
+import { currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
@@ -35,10 +35,25 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 type SectionId = "vocab" | "grammar" | "produce" | "reading" | "listening" | "speaking" | "writing";
 const SECTION_ORDER: SectionId[] = ["vocab", "grammar", "produce", "reading", "listening", "speaking", "writing"];
-const SECTION_DE: Record<SectionId, string> = {
-  vocab: "Wortschatz", grammar: "Grammatik", produce: "Satzbau",
-  reading: "Lesen", listening: "Hören", speaking: "Sprechen", writing: "Schreiben",
+/**
+ * Bölümün HEDEF DİLDEKİ adı — kâğıdın kendi yüzü (web `exam-types`
+ * `SECTION_TITLE_TARGET` ile aynı tablo). Tek tablo Almancaydı ve seviye
+ * sınavı iki kursta da çalıştığı için İngilizce öğrenci "Wortschatz"
+ * görüyordu. Arayüz karşılığı zaten `SECTION_KEY` ile altında duruyor.
+ */
+const SECTION_TARGET: Record<string, Record<SectionId, string>> = {
+  de: {
+    vocab: "Wortschatz", grammar: "Grammatik", produce: "Satzbau",
+    reading: "Lesen", listening: "Hören", speaking: "Sprechen", writing: "Schreiben",
+  },
+  en: {
+    vocab: "Vocabulary", grammar: "Grammar", produce: "Sentence building",
+    reading: "Reading", listening: "Listening", speaking: "Speaking", writing: "Writing",
+  },
 };
+/** Kâğıdın kendi dilindeki "bölüm" sözcüğü. */
+const SECTION_WORD: Record<string, string> = { de: "Teil", en: "Part" };
+const sectionFace = (): Record<SectionId, string> => SECTION_TARGET[currentTargetLang()] ?? SECTION_TARGET.de;
 /** Bölümün öğrenciye ne yaptıracağı — bölüm arası kartında okunur. */
 const SECTION_BRIEF_KEY: Record<SectionId, string> = {
   vocab: "exam.brief_vocab", grammar: "exam.brief_grammar", produce: "exam.brief_produce",
@@ -459,7 +474,7 @@ export function ExamScreen() {
               <Text variant="bodyStrong">{t("exam.sections")}</Text>
               {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
                 <Text key={id} variant="caption" color={colors.textMuted}>
-                  {SECTION_DE[id]} · {t(SECTION_KEY[id])} ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
+                  {sectionFace()[id]} · {t(SECTION_KEY[id])} ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
                 </Text>
               ))}
               {cover.seconds ? (
@@ -532,7 +547,7 @@ export function ExamScreen() {
               </PressableScale>
               {showMisses ? misses.current.map((m, i) => (
                 <Card key={i} padded style={{ gap: 4 }}>
-                  <Text variant="micro" color={colors.textMuted}>{SECTION_DE[m.section]} · {t(SECTION_KEY[m.section])}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
                   <Text variant="body" style={{ lineHeight: 21 }}>{m.prompt}</Text>
                   <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
                   {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
@@ -566,7 +581,7 @@ export function ExamScreen() {
                     toplamı hangi bölümün taşıdığı ağırlıktan okunuyor ve alan
                     sunucudan zaten geliyordu (`weight`). */}
                 <Text variant="body" style={{ flex: 1 }}>
-                  {SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}
+                  {sectionFace()[s.id]} · {t(SECTION_KEY[s.id])}
                   {/* Yüzde biçimi koda gömülüydü ("%40"): Almanca "40 %", İngilizce "40%"
                       ister ve ortak biçimleyici bunu zaten biliyor. Web aynı satırda
                       sözlükten alıyor. */}
@@ -583,7 +598,7 @@ export function ExamScreen() {
           {!result && offline ? offline.sections.map((s) => (
             <Card key={s.id} padded style={{ gap: 6 }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
-                <Text variant="body" style={{ flex: 1 }}>{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>
+                <Text variant="body" style={{ flex: 1 }}>{sectionFace()[s.id]} · {t(SECTION_KEY[s.id])}</Text>
                 <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
@@ -654,8 +669,8 @@ export function ExamScreen() {
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
           <Card padded style={{ gap: spacing.xs }}>
             {/* Büyük harfe çevrilmiyor: Türkçe yerelde "Teil" → "TEİL" oluyor. */}
-            <Text variant="micro" color={colors.textMuted}>Teil {secIdx + 1} / {list.length}</Text>
-            <Text accessibilityRole="header" variant="h1">{SECTION_DE[active]}</Text>
+            <Text variant="micro" color={colors.textMuted}>{SECTION_WORD[currentTargetLang()] ?? "Teil"} {secIdx + 1} / {list.length}</Text>
+            <Text accessibilityRole="header" variant="h1">{sectionFace()[active]}</Text>
             <Text variant="bodyStrong" color={colors.primaryText}>{t(SECTION_KEY[active])}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>{t(SECTION_BRIEF_KEY[active])}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
@@ -676,7 +691,7 @@ export function ExamScreen() {
       {header}
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>
-          {secIdx + 1}/{list.length} · {SECTION_DE[active]} · {t(SECTION_KEY[active])}
+          {secIdx + 1}/{list.length} · {sectionFace()[active]} · {t(SECTION_KEY[active])}
         </Text>
       </View>
       <SectionBody

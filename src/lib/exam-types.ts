@@ -35,16 +35,45 @@ export const SECTION_TITLE_KEYS: Record<ExamSectionId, string> = {
   writing: "exam.sec_writing",
 };
 
-/** Bölümlerin Almanca adı — sınav havası kâğıdın dilinden başlıyor. */
-export const SECTION_TITLE_DE: Record<ExamSectionId, string> = {
-  vocab: "Wortschatz",
-  grammar: "Grammatik",
-  produce: "Satzbau",
-  reading: "Lesen",
-  listening: "Hören",
-  speaking: "Sprechen",
-  writing: "Schreiben",
+/**
+ * Bölümlerin HEDEF DİLDEKİ adı — sınav havası kâğıdın dilinden başlıyor.
+ *
+ * Tek tablo vardı ve Almancaydı; İngilizce kursun sınavında da "Wortschatz"
+ * yazıyordu. Kâğıdın yüzü öğrenilen dilin yüzüdür, o yüzden tablo artık kursa
+ * göre. Bunlar ARAYÜZ metni değil: arayüz karşılığı `SECTION_TITLE_KEYS` ile
+ * öğrencinin kendi dilinde, altında duruyor.
+ */
+export const SECTION_TITLE_TARGET: Record<"de" | "en", Record<ExamSectionId, string>> = {
+  de: {
+    vocab: "Wortschatz",
+    grammar: "Grammatik",
+    produce: "Satzbau",
+    reading: "Lesen",
+    listening: "Hören",
+    speaking: "Sprechen",
+    writing: "Schreiben",
+  },
+  en: {
+    vocab: "Vocabulary",
+    grammar: "Grammar",
+    produce: "Sentence building",
+    reading: "Reading",
+    listening: "Listening",
+    speaking: "Speaking",
+    writing: "Writing",
+  },
 };
+
+/** Geriye dönük ad — Almanca tablo. */
+export const SECTION_TITLE_DE = SECTION_TITLE_TARGET.de;
+
+/**
+ * Kâğıdın kendi dilindeki "bölüm" sözcüğü ("Teil 1 / 5").
+ *
+ * Almanca sabitti ve seviye sınavı iki kursta da çalıştığı için İngilizce
+ * öğrenci kâğıdında "Teil" görüyordu.
+ */
+export const SECTION_WORD_TARGET: Record<"de" | "en", string> = { de: "Teil", en: "Part" };
 
 /**
  * Bölümün toplam puandaki payı (yüzde).

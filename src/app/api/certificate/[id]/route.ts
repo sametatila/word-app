@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
+import { targetLangOf } from "@/lib/courses";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { examById, SECTION_TITLE_KEYS, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
+import { examById, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, type ExamSectionId } from "@/lib/exam";
 import { localiseExam } from "@/lib/lessons/native-server";
 import { translate, formatPercent, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
@@ -22,6 +23,12 @@ export const dynamic = "force-dynamic";
 function esc(s: string): string {
   return s.replace(/[<>&"']/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;", "'": "&#39;" })[c] ?? c);
 }
+
+/** Belgenin hedef dildeki yüzü — arayüz metni DEĞİL, kâğıdın kendi dili. */
+const CERT_FACE: Record<"de" | "en", { levelExam: string; moduleExam: string; exam: string; module: string; canDo: string }> = {
+  de: { levelExam: "Niveauprüfung", moduleExam: "Modulprüfung", exam: "Prüfung", module: "Modul", canDo: "DAS KANN ICH JETZT" },
+  en: { levelExam: "Level exam", moduleExam: "Module exam", exam: "Exam", module: "Module", canDo: "THIS IS WHAT I CAN DO NOW" },
+};
 
 export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> }) {
   const userId = await getUserId();
@@ -44,8 +51,21 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     exam.module === null ? undefined : moduleExamPlan(profile.course ?? "de", exam.level, exam.module),
     lang,
   );
-  const kicker = exam.kind === "level" ? `${exam.level} · Niveauprüfung` : `Modulprüfung ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
-  const title = plan ? plan.titleDe : exam.kind === "level" ? `Prüfung ${exam.level}` : `Modul ${(exam.module ?? 0) + 1}`;
+  /*
+    SERTİFİKANIN YÜZÜ ÖĞRENİLEN DİLİN YÜZÜ.
+    Almanca sabitti ("Niveauprüfung", "Modul", "DAS KANN ICH JETZT") ve bu iki
+    kurs varken görünmez bir varsayımdı: İngilizce kursu bitiren öğrenci
+    paylaşacağı belgede Almanca başlıklar görüyordu. Altındaki karşılık zaten
+    öğrencinin kendi dilinde (`translate(lang, …)`) — değişen yalnız hedef dil
+    yüzü. 2026-09-12'de ölçüldü: seviye sınavı iki kursta da çalışıyor, yani
+    bu belge İngilizce kursta bugün üretilebiliyor.
+  */
+  const target = targetLangOf(profile.course);
+  const face = CERT_FACE[target];
+  const kicker = exam.kind === "level"
+    ? `${exam.level} · ${face.levelExam}`
+    : `${face.moduleExam} ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
+  const title = plan ? plan.titleDe : exam.kind === "level" ? `${face.exam} ${exam.level}` : `${face.module} ${(exam.module ?? 0) + 1}`;
   const subtitle = plan ? plan.titleTr : "";
   const date = exam.at.slice(0, 10);
   const cando = (plan?.canDo ?? []).slice(0, 5);
@@ -54,7 +74,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   const rows = exam.sections
     .map(
       (s, i) =>
-        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_DE[s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
+        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_TARGET[target][s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
         `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#5b4636" text-anchor="end">%${s.pct}</text>`,
     )
     .join("");
@@ -79,7 +99,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     <text x="400" y="278" text-anchor="middle" font-size="28" font-weight="700" fill="#c8792d">${name}</text>
     <text x="400" y="306" text-anchor="middle" font-size="16" fill="#5b4636">${esc(translate(lang, "certw.awarded_to", { pct: formatPercent(exam.total, lang) }))}</text>
     <text x="72" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(translate(lang, "certw.sections"))}</text>
-    ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">DAS KANN ICH JETZT</text>` : ""}
+    ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(face.canDo)}</text>` : ""}
     ${rows}
     ${candoRows}
     <text x="72" y="${height - 44}" font-size="14" fill="#8a6a4f">${date}</text>
