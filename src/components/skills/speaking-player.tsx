@@ -14,6 +14,7 @@ import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { SPEAK_CLIP_MS } from "@/lib/pronounce-const";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /* Tek kaydın üst sınırı artık ortak sabitten (`SPEAK_CLIP_MS`): sayı burada
    `MAX_MS = 8000` diye duruyordu ve Android satır içinde adsız bir 9000
@@ -193,7 +194,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
               ) : (
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
-              <span className="font-bold">{t("common.pct", { n: score.overall })}</span>
+              <span className="font-bold">{formatPercent(score.overall, lang)}</span>
               <span className="muted text-caption">{t("item.heard", { text: score.transcript || "—" })}</span>
             </div>
 

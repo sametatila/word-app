@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import type { PronounceScore } from "@/lib/pronounce";
 import { PASS_SCORE } from "@/lib/pronounce";
 import { speakGerman } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Telaffuz kartı (WP-20): hedef cümle kelime ısı haritası — yeşil tam,
@@ -16,6 +17,7 @@ import { useCourse } from "@/components/app-shell";
 export function PronounceCard({ score, audioUrl, compact = false }: { score: PronounceScore; audioUrl?: string | null; compact?: boolean }) {
   const course = useCourse();
   const t = useT();
+  const lang = useLang();
   const tone = (s: PronounceScore["words"][number]["status"]) =>
     s === "ok" ? "var(--color-mint)" : s === "near" ? "var(--color-flame)" : "var(--color-rose)";
   const hint = score.words.find((w) => w.hint)?.hint;
@@ -23,15 +25,15 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
     <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="rounded-panel px-4 py-3 surface-2" role="status">
       <div className="flex items-center justify-between gap-3">
         <span className="text-micro uppercase tracking-wide" style={{ color: score.passed ? "var(--color-mint)" : "var(--color-flame)" }}>
-          {t("pron.headline", { pct: t("common.pct", { n: score.overall }) })}{" "}
+          {t("pron.headline", { pct: formatPercent(score.overall, lang) })}{" "}
           {score.passed ? t("pron.passed") : t("pron.target", { n: PASS_SCORE })}
         </span>
         {!compact ? (
           <span className="muted text-micro tabular-nums">
             {t("pron.breakdown", {
-              words: t("common.pct", { n: score.wordAccuracy }),
-              completeness: t("common.pct", { n: score.completeness }),
-              fluency: t("common.pct", { n: score.fluency }),
+              words: formatPercent(score.wordAccuracy, lang),
+              completeness: formatPercent(score.completeness, lang),
+              fluency: formatPercent(score.fluency, lang),
             })}
           </span>
         ) : null}

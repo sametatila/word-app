@@ -13,9 +13,8 @@ import { mockAccess } from "@/lib/premium/access";
 import { ChevronRightIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { getT, getLang } from "@/lib/i18n/server";
-import { isNativeLang } from "@/lib/i18n/dict";
+import { formatPercent, isNativeLang } from "@/lib/i18n/dict";
 import { nativeMockText } from "@/lib/lessons/native-server";
-import { formatPercent } from "@/lib/i18n/dict";
 
 export const generateMetadata = titleMeta("mockexams.title");
 export const dynamic = "force-dynamic";
@@ -231,7 +230,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
               <div key={skill} className="mt-3">
                 <div className="flex justify-between text-body">
                   <span lang={course}>{mockSkillLabel(course, skill as MockSkill)}</span>
-                  <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: avg })}</span>
+                  <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(avg, lang)}</span>
                 </div>
                 <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
                   <div className="h-1 rounded-full" style={{ width: `${avg}%`, background: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }} />

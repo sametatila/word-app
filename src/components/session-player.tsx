@@ -38,9 +38,10 @@ import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/component
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { readCache, writeCache } from "@/lib/use-cached";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { flushPendingAnswers, isPermanentStatus, queueAnswers } from "@/lib/answer-queue";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Turun durumları.
@@ -107,6 +108,7 @@ function sessionKey(game: PlayableGame | null): string {
  */
 export function SessionPlayer() {
   const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -917,7 +919,7 @@ export function SessionPlayer() {
             <span className="muted">
               {tally.total > 0
                 ? t("session.accuracy", {
-                    pct: t("common.pct", { n: Math.round((tally.correct / tally.total) * 100) }),
+                    pct: formatPercent(Math.round((tally.correct / tally.total) * 100), lang),
                   })
                 : t("session.lets_go")}
             </span>
@@ -1321,6 +1323,7 @@ function SummaryCard({
   onFinish: () => void;
 }) {
   const t = useT();
+  const lang = useLang();
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
   const mastered = result?.newlyMastered ?? 0;
@@ -1414,7 +1417,7 @@ function SummaryCard({
               demek, yani Almanca ve İngilizce arayüzde anlamsız bir harf.
               İkisi de sözlükteki ortak biçimlere alındı; Android ikisini de
               baştan beri sözlükten alıyor (`formatPercent`, `profile.days`). */}
-          <Stat label={t("summary.accuracy")} value={t("common.pct", { n: accuracy })} />
+          <Stat label={t("summary.accuracy")} value={formatPercent(accuracy, lang)} />
           <Stat label={t("summary.words")} value={String(tally.total)} />
           <Stat label={t("summary.streak")} value={t("profile.days", { n: result?.currentStreak ?? 0 })} />
         </div>

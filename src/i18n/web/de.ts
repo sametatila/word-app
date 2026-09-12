@@ -175,7 +175,6 @@ export const deWeb: Record<string, string> = {
   "rounds.empty_word_slot": "leeres Feld",
   "rounds.empty_letter_slot": "leeres Feld",
   "rounds.means": "bedeutet",
-  "common.pct": "{n} %",
   "diff.typed_vs_answer": "Geschrieben: {typed}. Richtig: {answer}.",
   "common.listen_pronunciation": "Aussprache anhören",
   "assessw.fail_quota": "Deine KI-Bewertungen für heute sind aufgebraucht — es wird die Basisprüfung gezeigt.",

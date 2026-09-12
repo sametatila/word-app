@@ -27,7 +27,7 @@ import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
 import { LESSON_TRY_CEILING } from "@/lib/lessons/roleplay-const";
-import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
 import { localDay } from "@/lib/day";
@@ -1631,7 +1631,7 @@ export function LessonPlayer({
                   kendi web-özel anahtarını kullanıyordu, Android "doğru
                   üretim" - aynı sayının iki adı vardı. */}
               <Stat label={t("lesson.correct_production")} value={`${correctCount} / ${scoredTotal}`} />
-              <Stat label={t("lesson.accuracy")} value={t("common.pct", { n: pct })} />
+              <Stat label={t("lesson.accuracy")} value={formatPercent(pct, lang)} />
               <Stat
                 label={t("lesson.phase_roleplay")}
                 value={t("lessonp.n_turns", { n: userTurns })}

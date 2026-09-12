@@ -2,7 +2,7 @@ import "server-only";
 import { completeChat, chatConfigured, type CallReport } from "@/lib/chat-providers";
 import type { MockScore } from "./scoring";
 import type { MockCourse } from "./types";
-import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { translate, formatPercent, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Deneme sınavından sonra yapılacaklar listesi.
@@ -121,25 +121,25 @@ export function rulesFeedback(
           translate(lang, "mockfb.summary", {
             correct: score.correct,
             total: score.total,
-            pct: translate(lang, "common.pct", { n: score.pct }),
+            pct: formatPercent(score.pct, lang),
           }) +
           " " +
           (picked.length
             ? translate(lang, "mockfb.hardest", {
                 goal: goalName(picked[0].goal, lang),
-                pct: translate(lang, "common.pct", { n: picked[0].pct }),
+                pct: formatPercent(picked[0].pct, lang),
               })
             : translate(lang, "mockfb.balanced"))
         : translate(lang, "mockfb.not_machine_scored"),
     strengths: strong.map(
-      (g) => `${goalName(g.goal, lang)} (${translate(lang, "common.pct", { n: g.pct })})`,
+      (g) => `${goalName(g.goal, lang)} (${formatPercent(g.pct, lang)})`,
     ),
     todo: picked.map((g) => ({
       title: translate(lang, "mockfb.work_on", { goal: goalName(g.goal, lang) }),
       why: translate(lang, "mockfb.wrong_of", {
         wrong: g.total - g.correct,
         total: g.total,
-        pct: translate(lang, "common.pct", { n: g.pct }),
+        pct: formatPercent(g.pct, lang),
       }),
       how: how[g.goal] ? translate(lang, how[g.goal]) : translate(lang, "mockfb.how_fallback"),
     })),

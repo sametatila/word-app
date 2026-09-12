@@ -22,7 +22,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
 import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_DE } from "@/lib/exam-types";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
 import { matchSentence } from "@/lib/sentence-match";
@@ -34,6 +34,7 @@ import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client"
 import type { PronounceScore } from "@/lib/pronounce";
 import { localDay } from "@/lib/day";
 import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Sınav oynatıcısı (WP-41 v3).
@@ -105,6 +106,7 @@ const empty = () => ({ correct: 0, total: 0 });
 export function ExamPlayer({ level, module }: { level: CefrLevel; module: number | null }) {
   const course = useCourse();
   const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("cover");
   const [paper, setPaper] = useState<ExamPaper | null>(null);
@@ -359,7 +361,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         {offline ? null : <Mascot mood="sad" size={80} className="mx-auto" />}
         {offline ? (
           <>
-            <p className="text-h1 tabular-nums">{t("common.pct", { n: offline.pct })}</p>
+            <p className="text-h1 tabular-nums">{formatPercent(offline.pct, lang)}</p>
             <p className="muted mt-1 text-strong">{t("exam.saved_offline")}</p>
             {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
                 iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
@@ -374,7 +376,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
                       <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
                     </span>
                     <span className="tabular-nums" style={{ color: x.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
-                      {t("common.pct", { n: x.pct })}
+                      {formatPercent(x.pct, lang)}
                     </span>
                   </div>
                   <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
@@ -1069,6 +1071,7 @@ function Result({
 }) {
   const course = useCourse();
   const t = useT();
+  const lang = useLang();
   return (
     /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). Sinavin TEK sonucu bu: bolum
        gecisleri ayri bir "sonuc" degil, calisan fazin icinde bir kapak. */
@@ -1089,7 +1092,7 @@ function Result({
       {/* SIRA ANDROID'DEKI GIBI: once BUYUK YUZDE, sonra hukum, sonra deneme
           cumlesi. Web once hukmu yazip yuzdeyi "Toplam %78" diye kucuk bir
           satira gomuyordu - ayni ekranda once okunan sey farkliydi. */}
-      <h1 className="text-h1 tabular-nums">{t("common.pct", { n: result.total })}</h1>
+      <h1 className="text-h1 tabular-nums">{formatPercent(result.total, lang)}</h1>
       <p className="mt-1 text-strong" style={{ color: result.passed ? "var(--color-success)" : "var(--text-muted)" }}>
         {result.passed ? t("exam.passed") : t("exam.not_passed")}
       </p>
@@ -1108,14 +1111,14 @@ function Result({
                   {SECTION_TITLE_DE[s.id]}
                 </span>
                 <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
-                <span className="muted text-caption"> {t("exam.weight", { pct: t("common.pct", { n: s.weight }) })}</span>
+                <span className="muted text-caption"> {t("exam.weight", { pct: formatPercent(s.weight, lang) })}</span>
               </span>
               {/* Geçen bölüm YEŞİL: nötr metin rengi, geçen ve kalan bölümü
                   yalnız kırmızının varlığıyla ayırıyordu - tarama sırasında
                   "hangi bölümü geçtim" sorusu ancak tek tek yüzde okuyarak
                   cevaplanıyordu. Android burada iki rengi de kullanıyor. */}
               <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
-                {t("common.pct", { n: s.pct })}
+                {formatPercent(s.pct, lang)}
               </span>
             </div>
             <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">

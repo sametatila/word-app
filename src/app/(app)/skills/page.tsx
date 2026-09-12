@@ -12,7 +12,7 @@ import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { CardGrid } from "@/components/layout";
 import { CheckIcon, ChevronRightIcon } from "@/components/icons";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
-import { localeOf } from "@/lib/i18n/dict";
+import { formatPercent, localeOf } from "@/lib/i18n/dict";
 
 export const generateMetadata = titleMeta("skills.skills");
 export const dynamic = "force-dynamic";
@@ -314,7 +314,7 @@ async function Row({
             color: done ? "var(--color-mint)" : "var(--color-flame)",
           }}
         >
-          {t("common.pct", { n: score })}
+          {formatPercent(score, lang)}
         </span>
       ) : null}
       {/* "BİTTİ" DURUMU EKRAN OKUYUCUYA DA SÖYLENİYOR. Durumu taşıyan üç şey

@@ -7,7 +7,8 @@ import { mockPaperById } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
 import { ChevronRightIcon, PodiumIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
+import { formatPercent } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("mockstats.title");
@@ -24,6 +25,7 @@ export const generateMetadata = titleMeta("mockstats.title");
  */
 export default async function MockStatsPage() {
   const t = await getT();
+  const lang = await getLang();
   const userId = await getUserId();
   if (!userId) return null;
 
@@ -89,7 +91,7 @@ export default async function MockStatsPage() {
                 <div key={s.skill} className="mt-2">
                   <div className="flex items-baseline justify-between">
                     <span className="text-body">{skillLabel(s.skill)}</span>
-                    <span className="text-strong" style={{ color: tone }}>{t("common.pct", { n: s.pct })}</span>
+                    <span className="text-strong" style={{ color: tone }}>{formatPercent(s.pct, lang)}</span>
                   </div>
                   <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
                     <div className="h-1 rounded-full" style={{ width: `${s.pct}%`, background: tone }} />
@@ -130,7 +132,7 @@ export default async function MockStatsPage() {
                   className="shrink-0 text-strong"
                   style={{ color: r.passed ? "var(--color-mint)" : "var(--color-rose)" }}
                 >
-                  {t("common.pct", { n: r.score })}
+                  {formatPercent(r.score, lang)}
                 </span>
               </div>
             ))}

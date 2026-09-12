@@ -92,15 +92,46 @@ export function localeOf(lang: NativeLang): string {
   return LOCALE[lang] ?? LOCALE[DEFAULT_NATIVE];
 }
 
-/** Binlik ayraçlı sayı, arayüz dilinde. */
+/**
+ * Binlik ayraçlı sayı, arayüz dilinde.
+ *
+ * `Math.round` Android ile aynı (`lib/i18n` `formatNumber`): iki taraf da
+ * tam sayı yazıyor. Web'de yuvarlama yoktu ve bir kesirli değer geçtiği gün
+ * iki platform aynı sayıyı farklı yazardı.
+ */
 export function formatNumber(n: number, lang: NativeLang): string {
-  return n.toLocaleString(localeOf(lang));
+  return Math.round(n).toLocaleString(localeOf(lang));
 }
 
 /**
- * Yüzde — işaretin YERİ dile göre değişiyor (%45 / 45% / 45 %), o yüzden
- * biçim sözlükten geliyor, koda gömülmüyor.
+ * Yüzde — işaretin YERİ dile göre değişiyor: Türkçe "%45", İngilizce "45%",
+ * Almanca "45 %" (ve Almanca'daki boşluk BÖLÜNMEZ).
+ *
+ * Bu üç biçim `Intl`in zaten bildiği bir şey ve Android onu okuyor
+ * (`lib/i18n` `formatPercent`). Web'de aynı bilgi ÜÇ ELLE YAZILMIŞ DİZGİDE
+ * duruyordu (`common.pct`) ve iki sorunu vardı: aynı olgunun iki kaynağı
+ * oluyor (biri değişirse diğeri sessizce ayrışır) ve Almanca kopyada normal
+ * boşluk yazılıydı, yani sayı ile işaret satır sonunda ayrılabiliyordu.
+ *
+ * Ayrıca web'de yüzde yazmanın İKİ yolu vardı: bu işlev ve doğrudan
+ * `t("common.pct")`. Sözlük anahtarı kalktı, tek yol bu.
  */
 export function formatPercent(n: number, lang: NativeLang): string {
-  return translate(lang, "common.pct", { n });
+  try {
+    return new Intl.NumberFormat(localeOf(lang), { style: "percent", maximumFractionDigits: 0 }).format(n / 100);
+  } catch {
+    return `${Math.round(n)}%`;
+  }
+}
+
+/**
+ * Ondalıklı sayı — sayaçlar için (`8,3 sn`).
+ *
+ * `toFixed` SABİT NOKTA yazıyor: meydan okuma ve boss sayaçları Türkçe ve
+ * Almanca arayüzde de "8.3" diyordu, oysa iki dilde de ayraç virgül. Aynı
+ * kusur Android'de de vardı (`ChallengeScreen`, `BossScreen`) ve ikisi
+ * birlikte düzeltildi.
+ */
+export function formatDecimal(n: number, lang: NativeLang, digits = 1): string {
+  return n.toLocaleString(localeOf(lang), { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }

@@ -12,8 +12,9 @@ import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Deneme sınavı oynatıcısı — web.
@@ -908,12 +909,13 @@ function SpeakingTask({
 
 function OpenResult({ score }: { score: OpenScore }) {
   const t = useT();
+  const lang = useLang();
   if (score.score == null) {
     return <p className="muted mt-3 text-body leading-relaxed">{t("mockexam.ai_off")}</p>;
   }
   return (
     <div className="mt-3">
-      <p className="text-h3" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
+      <p className="text-h3" style={{ color: score.score >= MOCK_PASS_PCT ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(score.score, lang)}</p>
       {score.praise ? <p className="muted mt-1 text-body leading-relaxed">{score.praise}</p> : null}
       {score.tip ? <p className="mt-1 text-body leading-relaxed">{score.tip}</p> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
@@ -938,6 +940,7 @@ function Result({
   onReveal: (id: string) => void;
 }) {
   const t = useT();
+  const lang = useLang();
   const { score, ai, offline } = result;
   return (
     <section className="mx-auto w-full max-w-2xl space-y-3">
@@ -952,7 +955,7 @@ function Result({
         <div role="status" className="card p-5">
           <p className="muted text-caption tracking-wide">{t("mockexam.result")}</p>
           <div className="mt-1 flex items-end justify-between">
-            <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.pct })}</p>
+            <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(score.pct, lang)}</p>
             <p className="text-strong">{t("mockexam.score", { correct: score.correct, total: score.total })}</p>
           </div>
           <p className="mt-2 text-strong" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>

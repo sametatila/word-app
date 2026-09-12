@@ -12,9 +12,10 @@ import { RoundExit } from "@/components/round-exit";
 import { Mascot } from "@/components/mascot";
 import { track } from "@/lib/track";
 import type { WeeklyStatus } from "@/lib/weekly";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { localDay } from "@/lib/day";
+import { formatPercent } from "@/lib/i18n/dict";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
 type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "error";
@@ -29,6 +30,7 @@ type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "er
 export function WeeklyPlayer() {
   const course = useCourse();
   const t = useT();
+  const lang = useLang();
   const [phase, setPhase] = useState<Phase>("loading");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
@@ -212,7 +214,7 @@ export function WeeklyPlayer() {
           >
             <div className="absolute inset-[15px] flex flex-col items-center justify-center rounded-full" style={{ background: "var(--surface)" }}>
               <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
-                {t("common.pct", { n: result.score })}
+                {formatPercent(result.score, lang)}
               </span>
               <span className="muted text-micro">{t("weekly.score")}</span>
             </div>

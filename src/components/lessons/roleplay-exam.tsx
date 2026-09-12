@@ -19,6 +19,7 @@ import { MicIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { CoachBubble } from "@/components/coach-bubble";
 import { track } from "@/lib/track";
+import { formatPercent } from "@/lib/i18n/dict";
 
 type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error";
@@ -263,7 +264,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       <section role="status" className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "cheer" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
         <h1 className="text-h2">
-          {t("rpexam.title")} · {t("common.pct", { n: result.score.overall })}
+          {t("rpexam.title")} · {formatPercent(result.score.overall, lang)}
         </h1>
         <p className="muted mt-1 text-caption">
           {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
