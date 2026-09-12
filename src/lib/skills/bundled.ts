@@ -9,6 +9,7 @@ import { enA1 } from "./content/en-a1";
 import { enA2 } from "./content/en-a2";
 import { enB1 } from "./content/en-b1";
 import { enB2 } from "./content/en-b2";
+import { enC1 } from "./content/en-c1";
 import { library } from "./content/library";
 
 /**
@@ -50,6 +51,7 @@ const BASE: SkillExercise[] = [
   ...enA2,
   ...enB1,
   ...enB2,
+  ...enC1,
   // Beceriler kütüphanesi (ünitesiz, iki kurs): Patika bu egzersizleri
   // görmez (build.ts `pathMetas`), Beceriler yalnız bunları gösterir.
   ...library,

@@ -1,0 +1,327 @@
+[
+ {
+  "tr": "Fiil kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Verbkarte aus."
+ },
+ {
+  "tr": "İstek kipi kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Konjunktivkarte aus."
+ },
+ {
+  "tr": "Eksiltili söyleyiş kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Untertreibungskarte aus."
+ },
+ {
+  "tr": "Üçüncü kişide ek yok; olumsuzu „do“ olmadan kuruluyor; „be“ „be“ kalıyor; „should“lu biçim daha resmî değil.",
+  "kind": "form.facts",
+  "de": "In der dritten Person fehlt die Endung; die Verneinung kommt ohne „do“; „be“ bleibt „be“; die Form mit „should“ ist nicht förmlicher."
+ },
+ {
+  "tr": "„claimed“ kuşku koyuyor; „conceded“ doğruluğu artırıyor; „alleged“ kanıtlanmamış diyor; yansız olan yalnız „said“.",
+  "kind": "form.facts",
+  "de": "„claimed“ sät Zweifel; „conceded“ erhöht die Glaubwürdigkeit; „alleged“ sagt unbewiesen; neutral ist nur „said“."
+ },
+ {
+  "tr": "„not exactly cheap“ pahalı demek; „wouldn't say no“ evet demek; „hardly“ kendi olumsuzunu taşıyor; anlamı bağlam çözüyor.",
+  "kind": "form.facts",
+  "de": "„not exactly cheap“ heißt teuer; „wouldn't say no“ heißt ja; „hardly“ trägt seine Verneinung in sich; die Bedeutung klärt der Zusammenhang."
+ },
+ {
+  "tr": "Tam da ucuz sayılmaz, o.",
+  "kind": "build.tr",
+  "de": "Nicht gerade billig, das."
+ },
+ {
+  "tr": "Cümleye bir yan anlam sızıyor.",
+  "kind": "build.tr",
+  "de": "In den Satz schleicht sich eine Konnotation."
+ },
+ {
+  "tr": "Yapabilseydim yapardım, o da öyle.",
+  "kind": "build.tr",
+  "de": "Ich würde, wenn ich könnte, und sie auch."
+ },
+ {
+  "tr": "Rakam pekâlâ varsayılıyor olabilir.",
+  "kind": "build.tr",
+  "de": "Die Zahl wird durchaus angenommen werden."
+ },
+ {
+  "tr": "Oturum başkanlığı olmasa ara verirdik.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht der Vorsitz, würden wir unterbrechen."
+ },
+ {
+  "tr": "İkinci okuma bir huzursuzluk bırakıyor.",
+  "kind": "build.tr",
+  "de": "Die letztere Lesart hinterlässt ein Unbehagen."
+ },
+ {
+  "tr": "Güvencesiz kalması beklenmiş olabilirdi.",
+  "kind": "build.tr",
+  "de": "Man hätte erwarten können, dass es prekär bleibt."
+ },
+ {
+  "tr": "Hitap tek başına dil düzeyini belirliyor.",
+  "kind": "build.tr",
+  "de": "Schon die Anrede bestimmt die Sprachebene."
+ },
+ {
+  "tr": "Kimsenin baskı uygulamamasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie bitten darum, dass niemand Druck ausübt."
+ },
+ {
+  "tr": "Risk hesaplanamaz olma eğiliminde olurdu.",
+  "kind": "build.tr",
+  "de": "Das Risiko wäre eher unkalkulierbar."
+ },
+ {
+  "tr": "Kurulun yarın toplanmasında ısrar ediyorum.",
+  "kind": "build.tr",
+  "de": "Ich bestehe darauf, dass der Vorstand morgen zusammentritt."
+ },
+ {
+  "tr": "Daha az küçümseyici bir tona hayır demezdim.",
+  "kind": "build.tr",
+  "de": "Zu einem weniger herablassenden Ton würde ich nicht nein sagen."
+ },
+ {
+  "tr": "Düz anlamı biliriz; alt metni tahmin ederiz.",
+  "kind": "build.tr",
+  "de": "Die Denotation kennen wir; den Subtext erraten wir."
+ },
+ {
+  "tr": "Kimi buna söylem der; kimi, gerekçelendirme.",
+  "kind": "build.tr",
+  "de": "Die einen nennen es Diskurs; die anderen, Argumentation."
+ },
+ {
+  "tr": "O öne sürüyor; o çürütüyor; onlar belgeliyor.",
+  "kind": "build.tr",
+  "de": "Sie postuliert es; er widerlegt es; sie belegen es."
+ },
+ {
+  "tr": "O ileri sürdü; o kabul etti; onlar iddia etti.",
+  "kind": "build.tr",
+  "de": "Er behauptete es; sie räumte es ein; sie gaben es als Vorwurf an."
+ },
+ {
+  "tr": "Bir iddiayı aktarmak onu tahrif etmek değildir.",
+  "kind": "build.tr",
+  "de": "Eine Behauptung wiederzugeben heißt nicht, sie zu verfälschen."
+ },
+ {
+  "tr": "Pek de kendini haklı gören biri değil, öyle mi?",
+  "kind": "build.tr",
+  "de": "Kaum selbstgerecht, oder?"
+ },
+ {
+  "tr": "Adım geri döndürülemez, oysa gecikme öyle değil.",
+  "kind": "build.tr",
+  "de": "Der Schritt ist unumkehrbar, wohingegen die Verzögerung es nicht ist."
+ },
+ {
+  "tr": "O noktayı kabul ederdi, oysa öteki geçiştirirdi.",
+  "kind": "build.tr",
+  "de": "Sie würde den Punkt einräumen, wohingegen er ihn beschönigen würde."
+ },
+ {
+  "tr": "Bir sözcünün maskesini adını anmadan düşürüyorlar.",
+  "kind": "build.tr",
+  "de": "Sie entlarven ein Sprachrohr, ohne eines zu nennen."
+ },
+ {
+  "tr": "Manifesto, ideolojinin varsaydığını ileri sürüyor.",
+  "kind": "build.tr",
+  "de": "Das Manifest behauptet, was die Ideologie voraussetzt."
+ },
+ {
+  "tr": "Kabul, manevra alanı az, her ne kadar biraz olsa da.",
+  "kind": "build.tr",
+  "de": "Zugegeben, der Spielraum ist klein, wenn auch vorhanden."
+ },
+ {
+  "tr": "Her ne kadar iki tarafı da tartsam da biri daha güçlü.",
+  "kind": "build.tr",
+  "de": "So sehr ich beide Seiten abwäge, eine ist stärker."
+ },
+ {
+  "tr": "Deneme yazarının bundan sonra yaptığı şey bir gönderme.",
+  "kind": "build.tr",
+  "de": "Was der Essayist als Nächstes tut, ist eine Anspielung."
+ },
+ {
+  "tr": "Karşı açıklama, onu taşıyan fiilden daha azını söyledi.",
+  "kind": "build.tr",
+  "de": "Die Gegendarstellung sagte weniger als das Verb, das sie trug."
+ },
+ {
+  "tr": "Kabul, rakam yüksek, her ne kadar açıklanabilir olsa da.",
+  "kind": "build.tr",
+  "de": "Zugegeben, die Zahl ist hoch, wenn auch erklärbar."
+ },
+ {
+  "tr": "İki olumsuz bir rica ediyor.",
+  "kind": "build.hint",
+  "de": "Zwei Verneinungen ergeben eine Bitte."
+ },
+ {
+  "tr": "Ödün yok; iki olgu yan yana.",
+  "kind": "build.hint",
+  "de": "Keine Einräumung; zwei Tatsachen nebeneinander."
+ },
+ {
+  "tr": "Virgül fiilin yerini tutuyor.",
+  "kind": "build.hint",
+  "de": "Das Komma vertritt das Verb."
+ },
+ {
+  "tr": "„albeit“ soruyu açık bırakıyor.",
+  "kind": "build.hint",
+  "de": "„albeit“ lässt die Frage offen."
+ },
+ {
+  "tr": "Üç ayrı yargı, tek fark fiilde.",
+  "kind": "build.hint",
+  "de": "Drei verschiedene Urteile, der einzige Unterschied liegt im Verb."
+ },
+ {
+  "tr": "İstek kipi: üçüncü kişide ek yok.",
+  "kind": "build.hint",
+  "de": "Konjunktiv: in der dritten Person fehlt die Endung."
+ },
+ {
+  "tr": "Yarık cümle: ağırlık sona kayıyor.",
+  "kind": "build.hint",
+  "de": "Spaltsatz: das Gewicht rutscht ans Ende."
+ },
+ {
+  "tr": "„would“ varsayım, „tend to“ eğilim.",
+  "kind": "build.hint",
+  "de": "„would“ ist Annahme, „tend to“ ist Tendenz."
+ },
+ {
+  "tr": "Eski bilgi başta, yeni bilgi sonda.",
+  "kind": "build.hint",
+  "de": "Altes vorn, Neues hinten."
+ },
+ {
+  "tr": "Nesne öne çıkıyor ama devrilme yok.",
+  "kind": "build.hint",
+  "de": "Das Objekt rückt nach vorn, aber nichts kippt."
+ },
+ {
+  "tr": "Üç fiil, aynı ölçekte üç ayrı konum.",
+  "kind": "build.hint",
+  "de": "Drei Verben, drei Stellen auf derselben Skala."
+ },
+ {
+  "tr": "„whereas“ iki kişiyi yan yana koyuyor.",
+  "kind": "build.hint",
+  "de": "„whereas“ stellt zwei Personen nebeneinander."
+ },
+ {
+  "tr": "İçinde bir kişi olan ödün: tartan ben.",
+  "kind": "build.hint",
+  "de": "Eine Einräumung mit einer Person darin: ich, der abwägt."
+ },
+ {
+  "tr": "Mastarlı iki yarı karşı karşıya konuyor.",
+  "kind": "build.hint",
+  "de": "Zwei Infinitivhälften werden einander gegenübergestellt."
+ },
+ {
+  "tr": "Olumsuzla söylenen olumlu: pahalı demek.",
+  "kind": "build.hint",
+  "de": "Das Positive, verneint gesagt: es heißt teuer."
+ },
+ {
+  "tr": "Tek sözcük bütün mektubun tonunu kuruyor.",
+  "kind": "build.hint",
+  "de": "Ein einziges Wort setzt den Ton des ganzen Briefes."
+ },
+ {
+  "tr": "Aynı kipin öteki kalıntısı: „if“siz koşul.",
+  "kind": "build.hint",
+  "de": "Der andere Überrest desselben Modus: die Bedingung ohne „if“."
+ },
+ {
+  "tr": "İki belge hakkında bir cümle ve bir hüküm.",
+  "kind": "build.hint",
+  "de": "Ein Satz über zwei Dokumente und ein Urteil."
+ },
+ {
+  "tr": "Eksiltme: okur eksik olanı geri koyabiliyor.",
+  "kind": "build.hint",
+  "de": "Ellipse: der Leser kann das Fehlende wieder einsetzen."
+ },
+ {
+  "tr": "„the latter“ tam olarak ikiden ikincisi demek.",
+  "kind": "build.hint",
+  "de": "„the latter“ heißt genau das zweite von zweien."
+ },
+ {
+  "tr": "„well“ kipi güçlendiriyor; edilgende fail yok.",
+  "kind": "build.hint",
+  "de": "„well“ verstärkt das Modalverb; im Passiv fehlt der Urheber."
+ },
+ {
+  "tr": "Yine ek yok; aynı küçük fiil listesinden sonra.",
+  "kind": "build.hint",
+  "de": "Wieder keine Endung; nach derselben kleinen Verbliste."
+ },
+ {
+  "tr": "„albeit“ sıfat ya da öbek alıyor, cümle almıyor.",
+  "kind": "build.hint",
+  "de": "„albeit“ nimmt ein Adjektiv oder eine Wortgruppe, keinen Satz."
+ },
+ {
+  "tr": "Tam alıntılanan bir yanıt yine de kaybedebiliyor.",
+  "kind": "build.hint",
+  "de": "Eine vollständig zitierte Antwort kann trotzdem verlieren."
+ },
+ {
+  "tr": "Fiil, nesneye „alleged“ın yaptığını özneye yapıyor.",
+  "kind": "build.hint",
+  "de": "Das Verb tut dem Subjekt an, was „alleged“ dem Objekt antut."
+ },
+ {
+  "tr": "„hardly“ kendi olumsuzunu taşıyor; ikinci „not“ olmaz.",
+  "kind": "build.hint",
+  "de": "„hardly“ trägt seine Verneinung in sich; ein zweites „not“ geht nicht."
+ },
+ {
+  "tr": "Dört katman: „might“, „have been“, „expected“, mastar.",
+  "kind": "build.hint",
+  "de": "Vier Schichten: „might“, „have been“, „expected“, Infinitiv."
+ },
+ {
+  "tr": "Kipin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Modus: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç aracın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Mittel: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Katmanların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Schichten: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Eksiltili söyleyişin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Untertreibung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç bağlayıcının sırası: en gevşekten en dara koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Verknüpfungen: vom Lockersten zum Engsten."
+ }
+]

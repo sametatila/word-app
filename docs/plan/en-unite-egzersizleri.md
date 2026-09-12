@@ -64,7 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–25 | bekliyor |
+| C1 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
+| C1 | 4–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1264,6 +1265,51 @@ büyük olması bir araç değişikliğinden: maddeler tek tek değil, kapının
 kendi çıktısından okunarak toplu silindi, ve sonuç her turda elle
 yapılanla aynı oldu. Bir kısa cevap da beş kelimeyi aştığı için yeniden
 yazıldı.
+
+
+**C1 AÇILDI (ünite 1–3, 2026-09-12).** Ünite 1
+The same thing in three registers · Leaving it out · Weight at the end ·
+The formal request; ünite 2 The tone of concession · The settled pairing ·
+The verb carries the verdict · The nuance of may well; ünite 3
+Not exactly cheap · Holding the text together · Dissent without rupture ·
+Quoting the opponent. On sekiz egzersiz; ünite dışı ölçüm %0,0. C1
+yuvalarının 18'i dolu. Okuma metni artık 250–450 kelime (B2'de 200–350),
+ve seviyenin konusu yapı değil ÜSLUP.
+
+Ünite 1'in noktası İSTEK KİPİ: „I insist that the board convene tomorrow“
+— üçüncü kişide ek yok, „should“ yok, olumsuzu „do“ olmadan kuruluyor,
+„be“ „be“ kalıyor. Almanca eksende bu hattın en zarif bulgularından biri:
+Almancanın Konjunktiv I'i de bir kalıntı, ama BAŞKA BİR İŞ için
+saklanmış — Almanca onu aktarma için tutuyor, İngilizce talep için. İki
+dil, aynı kipin iki kalıntısı, ters işler. Üstelik İngilizcenin ikinci
+kalıntısı („Were it not for …“) B2 ünite 8'de öğrenilmişti, yani öğrenci
+kipin iki yarısını iki seviyede ve farklı adlarla tanıyor.
+
+Ünite 2'nin noktası AKTARMA FİİLİ HÜKMÜ TAŞIYOR: „He claimed it; she
+conceded it; they alleged it“ — tek fark fiilde ve üç ayrı yargı çıkıyor.
+B2 ünite 13 „said / thought / expected“ ile üç KANIT derecesi
+göstermişti; burada ölçek yargıya dönüyor ve yansız kalmak diye bir
+seçenek kalmıyor: yansız tek fiil „said“ ve o da sıkıcı. Almanca eksende
+İngilizce burada MECBUR, Almanca değil — Almanca aynı işi „sollen“ ve
+Konjunktiv I ile dilbilgisinden çözebildiği için yazar fiil seçmeden de
+mesafe koyabiliyor. Yani İngilizcede her aktarma bir imza taşıyor.
+
+Ünite 3'ün noktası OLUMSUZLA SÖYLENEN OLUMLU (litotes): „Not exactly
+cheap“ pahalı, „I wouldn't say no“ evet demek. Asıl bulgu bunun ne işe
+yaradığı: iddia kuruluyor ama İNKÂR EDİLEBİLİR bırakılıyor, böylece oda
+yanıt vermek zorunda kalmadan ilerleyebiliyor. „Hardly“ ayrıca kendi
+olumsuzunu taşıyor — A2'deki „unless“ ve B2'deki „by no means“ ile aynı
+tuzak, üçüncü kez. Ve hattın ilk kez söylediği şey şu: bu figür CÜMLEDEN
+ÖĞRETİLEMİYOR. „Hardly self-righteous“ övgü de olabilir hakaret de, ayıran
+şey ton değil önceki cümle; yani kapı burada tek cümleyi değil paragrafı
+ölçmek zorunda.
+
+Ölçüm C1'de ilk kez çalıştı ve havuz en genişi olmasına rağmen ilk
+taslakta %4,7 çıktı — B2'nin açılışıyla aynı düzey. Yüz kırk yedi
+sözlükçe maddesiyle %0,0'a indi, otuz yedi madde silindi ve bir dinleme
+bölümü ayrıldı. İki tireli terim daha metinden çıkarıldı („third-person“,
+„near-miss“) ve bu kez bir soru şıkkındaki tireli EK de düştü — kural
+altıncı kez çalıştı.
 
 
 ## Tamamlanma ölçütü

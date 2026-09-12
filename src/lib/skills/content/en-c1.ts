@@ -1,0 +1,18 @@
+import type { SkillExercise } from "../types";
+import { enC1U01 } from "./en-c1-u01";
+import { enC1U02 } from "./en-c1-u02";
+import { enC1U03 } from "./en-c1-u03";
+
+/**
+ * EN · C1 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
+ *
+ * Sıra önemli: yapıcı yuvaları listedeki sıraya göre dolduruyor.
+ * Okuma metni C1'de 250–450 kelime (B2'de 200–350). Seviyenin konusu
+ * yapı değil ÜSLUP: dil düzeyi, eksiltme, ağırlık dağılımı, aktarma
+ * fiilinin taşıdığı hüküm, eksiltili söyleyiş.
+ */
+export const enC1: SkillExercise[] = [
+  ...enC1U01,
+  ...enC1U02,
+  ...enC1U03,
+];
