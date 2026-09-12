@@ -192,6 +192,7 @@ function WrittenInput({
              `autoCapitalize="none"` diyor (`game/skillQuiz`). */
           autoCapitalize="none"
           autoCorrect="off"
+          enterKeyHint="done"
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
           onKeyDown={(e) => {

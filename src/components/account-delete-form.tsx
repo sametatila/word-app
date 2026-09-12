@@ -157,6 +157,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
+            enterKeyHint="done"
             required
             placeholder={t("deleteaccount.your_password")}
             aria-label={t("deleteaccount.your_password")}

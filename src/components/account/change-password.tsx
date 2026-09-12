@@ -80,6 +80,7 @@ export function ChangePassword() {
               value={current}
               onChange={(e) => setCurrent(e.target.value)}
               type="password"
+              enterKeyHint="go"
               required
               placeholder={t("changepw.current")}
               aria-label={t("changepw.current")}
@@ -90,6 +91,7 @@ export function ChangePassword() {
               value={next}
               onChange={(e) => setNext(e.target.value)}
               type="password"
+              enterKeyHint="go"
               required
               minLength={MIN_PASSWORD_LENGTH}
               placeholder={t("changepw.new")}
@@ -103,6 +105,7 @@ export function ChangePassword() {
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
               type="password"
+              enterKeyHint="go"
               required
               minLength={MIN_PASSWORD_LENGTH}
               placeholder={t("changepw.again")}

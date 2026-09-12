@@ -84,6 +84,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
+            enterKeyHint="go"
             required
             minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("changepw.new")}
@@ -98,6 +99,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
             type="password"
+            enterKeyHint="go"
             required
             minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("changepw.again")}

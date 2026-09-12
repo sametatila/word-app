@@ -82,6 +82,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             value={username}
             onChange={(e) => setUsername(e.target.value.toLowerCase())}
             maxLength={USERNAME_MAX}
+            enterKeyHint="done"
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck={false}

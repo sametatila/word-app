@@ -69,6 +69,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
+          enterKeyHint="done"
           aria-label={t("find.search_users")}
         />
         {/* Temizleme de Android'de olduğu gibi X İKONU: kutunun içindeki

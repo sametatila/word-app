@@ -621,7 +621,10 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
                   aria-label={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
                   lang={course}
                   /* KISA CEVAP (boşluk doldurma, dönüştürme): cümle başı
-                     büyütme yok, düzeltme kapalı. */
+                     büyütme yok, düzeltme kapalı. Enter tuşunun adı da
+                     Android'inki (`MockExamScreen` `returnKeyType="done"`);
+                     kâğıt tek düğmeyle gönderiliyor, Enter göndermiyor. */
+                  enterKeyHint="done"
                   autoCapitalize="none"
                   autoCorrect="off"
                   spellCheck={false}

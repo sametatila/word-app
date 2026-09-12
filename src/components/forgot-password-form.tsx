@@ -71,6 +71,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
+            enterKeyHint="go"
             required
             placeholder={t("auth.email")}
             aria-label={t("auth.email")}

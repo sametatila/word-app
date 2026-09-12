@@ -116,6 +116,7 @@ export function TwoFactorForm() {
             type="text"
             inputMode="numeric"
             autoComplete="one-time-code"
+            enterKeyHint="go"
             required
             maxLength={TWO_FACTOR_CODE_DIGITS}
             placeholder={t("twofa.code")}

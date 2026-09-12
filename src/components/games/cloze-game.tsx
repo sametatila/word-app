@@ -165,6 +165,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
+            enterKeyHint="done"
             lang={course}
             placeholder={tx("rounds.type")}
             aria-label={tx("rounds.type")}

@@ -264,6 +264,7 @@ export function AuthForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
+          enterKeyHint="go"
           required
           placeholder={t("auth.email")}
           aria-label={t("auth.email")}
@@ -276,6 +277,7 @@ export function AuthForm({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
+          enterKeyHint="go"
           required
           minLength={MIN_PASSWORD_LENGTH}
           placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}

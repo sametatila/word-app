@@ -235,6 +235,7 @@ export function WordList({
           /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
              İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
           autoCapitalize="none"
+          enterKeyHint="done"
           className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
         />
         {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince

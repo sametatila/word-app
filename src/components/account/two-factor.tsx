@@ -90,6 +90,7 @@ export function TwoFactor() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
+              enterKeyHint="go"
               required
               placeholder={t("twofa.password_label")}
               aria-label={t("twofa.password_label")}

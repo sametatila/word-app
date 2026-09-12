@@ -137,6 +137,7 @@ export function ProfileForm({
       <label className="block">
         <input
         value={displayName}
+        enterKeyHint="done"
         onChange={(e) => setDisplayName(e.target.value)}
         /*
           ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir istek

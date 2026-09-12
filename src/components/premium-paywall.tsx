@@ -324,6 +324,19 @@ function PromoBox({ prefill }: { prefill: string }) {
           aria-label={t("promo.placeholder")}
           autoCapitalize="characters"
           spellCheck={false}
+          /*
+           * ENTER KODU UYGULUYOR. Kutu bir `<form>` içinde değil ve hiçbir
+           * tuş dinleyicisi yoktu: kodu yazıp Enter'a basan kullanıcıda
+           * HİÇBİR ŞEY olmuyordu — ne uygulanıyor ne de bir şey söyleniyor.
+           * Android aynı kutuda `onSubmitEditing` ile uyguluyor
+           * (`PaywallScreen`).
+           */
+          enterKeyHint="done"
+          onKeyDown={(e) => {
+            if (e.key !== "Enter") return;
+            e.preventDefault();
+            if (!busy && code.trim()) apply();
+          }}
           className="min-w-0 flex-1 rounded-tile border px-3 py-2 font-mono text-body tracking-widest"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
