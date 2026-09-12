@@ -52,10 +52,16 @@ export function LinkedAccounts({
       return;
     }
     if (r.code === "CANCELLED") return; // sessiz
-    /* Ağ hatasının kendi cümlesi var ve `signInGoogleNative` onu zaten
-       çevrilmiş olarak döndürüyordu; burada atılıp "biraz sonra tekrar dene"ye
-       düşüyordu. Web ikisini ayırıyor (`links.link_offline`). */
-    setMsg(r.code === "EMAIL_MISMATCH" || r.code === "NETWORK" ? r.message : t("links.failed"));
+    /*
+      AĞ HATASI ORTAK ANAHTARDAN. `signInGoogleNative` ağ hatasında genel bir
+      cümle döndürüyor ("Bağlantı kurulamadı") ve burada o basılıyordu; web
+      aynı yerde `links.link_offline` diyor ve o cümle NE YAPILACAĞINI da
+      söylüyor ("İnternet bağlantını kontrol et"). Anahtar zaten ortak
+      sözlükte ve kaldırma yolu (`unlinkAccount`) onun kardeşini
+      (`links.unlink_offline`) baştan beri kullanıyordu — yalnız bağlama yolu
+      dışarıda kalmıştı.
+    */
+    setMsg(r.code === "EMAIL_MISMATCH" ? r.message : r.code === "NETWORK" ? t("links.link_offline") : t("links.failed"));
   }
 
   async function kaldir(provider: string) {
