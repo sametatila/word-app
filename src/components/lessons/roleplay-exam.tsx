@@ -368,6 +368,13 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
                 ? t("rpexam.speak_or_type")
                 : t("lesson.type_in", { lang: targetName })
           }
+          aria-label={
+            listening
+              ? t("speak.listening")
+              : asr
+                ? t("rpexam.speak_or_type")
+                : t("lesson.type_in", { lang: targetName })
+          }
           disabled={busy}
           className="input max-h-24 flex-1 resize-none py-2 text-body"
         />

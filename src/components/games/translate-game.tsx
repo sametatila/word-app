@@ -208,6 +208,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           spellCheck={false}
           lang={course}
           placeholder={tx("rounds.write_sentence_ph")}
+          aria-label={tx("rounds.write_sentence_ph")}
           className={`card min-h-16 w-full resize-none px-4 py-3 text-lg outline-none ${
             status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
           } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}

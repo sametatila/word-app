@@ -66,6 +66,7 @@ export function UsersTable({ users }: { users: U[] }) {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ara: ad, kimlik, seviye, kurs…"
+        aria-label="Ara: ad, kimlik, seviye, kurs…"
         className="mb-3 w-full rounded-tile border px-3 py-2 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
       />

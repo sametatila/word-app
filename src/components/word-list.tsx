@@ -230,6 +230,7 @@ export function WordList({
           value={term}
           onChange={(e) => setTerm(e.target.value)}
           placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
+          aria-label={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
           /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
              İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
           autoCapitalize="none"

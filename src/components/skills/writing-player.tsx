@@ -495,6 +495,7 @@ function FreeTask({
         /* Sabit Almanca yazıyordu. Android hedef dili SÖYLÜYOR
            (`skillquiz.write_your_answer_in`, {lang} = kursun adı); web de öyle. */
         placeholder={t("skillquiz.write_your_answer_in", { lang: courseName(lang, uiLang) })}
+        aria-label={t("skillquiz.write_your_answer_in", { lang: courseName(lang, uiLang) })}
         className="option mt-3 w-full px-3.5 py-3 text-body leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
       />
       <div className="mt-1.5 flex items-center justify-between">
@@ -697,6 +698,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             lang={lang}
             spellCheck={false}
             placeholder={t("rounds.write_a_sentence_ph")}
+            aria-label={t("rounds.write_a_sentence_ph")}
             className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-body outline-none"
           />
           <div className="mt-2 flex flex-wrap gap-2">
@@ -848,6 +850,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             lang={lang}
             spellCheck={false}
             placeholder={t("writp.rewrite_ph")}
+            aria-label={t("writp.rewrite_ph")}
             className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-body outline-none"
           />
           <button

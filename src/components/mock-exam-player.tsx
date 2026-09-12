@@ -612,6 +612,7 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
                   onChange={(e) => onAnswer(item.id, e.target.value)}
                   className="input w-full"
                   placeholder={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
+                  aria-label={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
                   lang={course}
                   autoComplete="off"
                 />
@@ -666,6 +667,7 @@ function OpenTask({
         rows={8}
         className="input mt-4 w-full"
         placeholder={t("mockexam.write_here")}
+        aria-label={t("mockexam.write_here")}
         lang={course}
       />
       <p className="muted mt-1 text-caption">
@@ -863,6 +865,7 @@ function SpeakingTask({
             rows={8}
             className="input mt-1 w-full"
             placeholder={t("mockexam.transcript_placeholder")}
+            aria-label={t("mockexam.transcript_placeholder")}
             lang={course}
           />
           <p className="muted mt-1 text-caption leading-relaxed">

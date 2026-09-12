@@ -167,6 +167,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             spellCheck={false}
             lang={course}
             placeholder={tx("rounds.type")}
+            aria-label={tx("rounds.type")}
             className={`card min-h-14 w-full px-4 text-lg outline-none ${
               picked != null && !correct ? "animate-shake border-[color:var(--color-rose)]" : ""
             } ${picked != null && correct ? "border-[color:var(--color-mint)]" : ""}`}

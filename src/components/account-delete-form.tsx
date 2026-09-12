@@ -159,6 +159,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
             type="password"
             required
             placeholder={t("deleteaccount.your_password")}
+            aria-label={t("deleteaccount.your_password")}
             autoComplete="current-password"
             className={authInputClass}
           />

@@ -312,6 +312,7 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
         <textarea
           value={cur.body}
           onChange={(e) => patch({ body: e.target.value })}
+          aria-label="Gövde (markdown)"
           spellCheck={false}
           className="w-full rounded-tile border p-3 font-mono text-caption leading-relaxed"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)", minHeight: "32rem" }}

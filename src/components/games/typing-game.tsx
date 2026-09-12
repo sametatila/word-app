@@ -199,6 +199,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           autoCorrect="off"
           spellCheck={false}
           placeholder={tx("rounds.type")}
+          aria-label={tx("rounds.type")}
           className={`card min-h-14 w-full px-4 text-lg outline-none ${
             status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
           } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}

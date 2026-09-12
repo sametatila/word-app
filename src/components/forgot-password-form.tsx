@@ -73,6 +73,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
             type="email"
             required
             placeholder={t("auth.email")}
+            aria-label={t("auth.email")}
             autoComplete="email"
             autoFocus
             autoCapitalize="none"

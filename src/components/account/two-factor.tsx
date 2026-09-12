@@ -91,6 +91,7 @@ export function TwoFactor() {
               type="password"
               required
               placeholder={t("twofa.password_label")}
+              aria-label={t("twofa.password_label")}
               autoComplete="current-password"
               className={authInputClass}
             />

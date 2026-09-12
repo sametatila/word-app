@@ -196,6 +196,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             spellCheck={false}
             lang={course}
             placeholder={tx("rounds.write_a_sentence_ph")}
+            aria-label={tx("rounds.write_a_sentence_ph")}
             className="card min-h-20 w-full resize-none px-4 py-3 text-lg outline-none"
           />
           <div className="flex flex-wrap justify-center gap-2">

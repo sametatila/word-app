@@ -193,6 +193,7 @@ function WrittenInput({
           lang={lang}
           spellCheck={false}
           placeholder={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
+          aria-label={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
           className="input flex-1 py-2 text-body"
           style={done ? { borderColor: ok ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
         />

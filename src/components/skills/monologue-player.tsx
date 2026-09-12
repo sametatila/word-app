@@ -316,6 +316,10 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
               <textarea
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
+                /* Alanin ADI: yertutucu yok, ad hemen ustundeki ipucu
+                   satirindan geliyor (Android `skillLibrary` de ayni
+                   ipucunu yaziyor). */
+                aria-label={t("item.mono_transcript_hint")}
                 rows={4}
                 lang={lang}
                 spellCheck={false}

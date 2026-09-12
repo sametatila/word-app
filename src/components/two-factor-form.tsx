@@ -119,6 +119,7 @@ export function TwoFactorForm() {
             required
             maxLength={TWO_FACTOR_CODE_DIGITS}
             placeholder={t("twofa.code")}
+            aria-label={t("twofa.code")}
             autoFocus
             className={`${authInputClass} text-center text-h1 tracking-[0.4em]`}
           />

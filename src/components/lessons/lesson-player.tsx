@@ -1353,6 +1353,7 @@ export function LessonPlayer({
                     }}
                     rows={1}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
+                    aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-body"
                   />
                   <button
@@ -1550,6 +1551,7 @@ export function LessonPlayer({
                     }}
                     rows={1}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
+                    aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-body"
                   />
                   <button
