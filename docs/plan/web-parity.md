@@ -14368,3 +14368,56 @@ bitirilen patika egzersizleri (`PUT /api/skills`, `syncItemProgress` içinde
 boşalıyor). Web karşılığı `syncSkillProgress` ve oradaki dosyalar şu anda
 **paralel oturumun elinde** (`src/lib/skills/*`); ölçüm o iş bitince
 yapılacak. Buraya not olarak yazılıyor ki kaybolmasın.
+
+## §11.405 — Sekme açıkken bildirime dokunma huniye hiç girmiyordu
+
+§278 Android'deki soğuk açılış kusurunu kapattı ve orada ölçünün yerini de
+kilitledi: `push_open` **dokunuşta** yazılıyor, gezginin hâli onu
+değiştirmiyor. Aynı soru webde sorulmamıştı.
+
+Webde `push_open` sayfanın adresindeki `src=push`tan yazılıyor
+(`components/telemetry`) ve o parametreyi `sw.js` **gezinirken** ekliyor. Ama
+`notificationclick` iki dal:
+
+```js
+for (const client of list) {
+  if (client.url.includes(target) && "focus" in client) return client.focus();   // 1 — gezinme YOK
+}
+for (const client of list) {
+  return client.navigate(url)...                                                 // 2 — src=push burada
+}
+```
+
+**Birinci dalda hiç gezinme olmadığı için `src=push` da yoktu:** kullanıcı
+bildirime dokunuyor, doğru yere geliyor ve huni onu **hiç saymıyordu**. Dal
+nadir değil — uygulaması zaten açık olan kullanıcı en sadık kullanıcı, ve
+`push_open` oranı tam onun üzerinden eksik okunuyordu.
+
+Adrese parametre eklemek çözüm değildi: yeniden gezinme yarım kalan turu
+baştan yüklerdi. Dokunuş sekmeye **mesaj** olarak bildiriliyor
+(`client.postMessage({ type: "push-open" })`), sayan yer telemetride o mesajı
+dinliyor.
+
+### İkinci kusur, aynı dosya: bildirimin dili
+
+```
+lang: "tr",
+```
+
+Metin alıcının dilinde gidiyor (`translate(lang, …)`) ama bildirim kendini
+**Türkçe ilan ediyordu**; ekran okuyucu Almanca cümleyi Türkçe sesletiyordu.
+Dili artık metni kuran yer taşıyor: `PushPayload.lang` eklendi ve zorunlu —
+`tsc` altı çağrı yerinin hepsini dili geçirmeye zorladı (hatırlatma turu,
+haftalık özet, değerlendirme, abonelik denemesi, sosyal bildirimler, seri ve
+haftalık sınav hatırlatmaları). Android'de karşılığı yok: bildirimi sistem
+kendi yerelinde okur.
+
+### §281
+
+Üç ölçü: dokunuşun **üç yolda da** sayıldığı (web gezinme, web odak, mobil),
+mesajı **dinleyen** olduğu (gönderen tek başına sayıyı yazmaz) ve bildirimin
+dilinin yükten geldiği.
+
+Odak ölçüsü **dalın gövdesini** okuyor, dosyayı değil: "dosyada `postMessage`
+var mı" sorusu ikinci dala yazılmış bir çağrıyı da kabul ederdi — kaydedilmiş
+"pencere değil düğüm" kuralı. Enjeksiyonla doğrulandı.

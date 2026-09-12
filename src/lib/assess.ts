@@ -249,6 +249,7 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
           body: translate(lang, "push.assess_body", { score: result.score.overall }),
           url: "/profile#writings",
           tag: "assess",
+          lang,
         });
       } catch {
         /* bildirim yoksa sessiz */

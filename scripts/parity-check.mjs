@@ -7480,6 +7480,83 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 281. BILDIRIM DOKUNUSU UC YOLDA DA SAYILIYOR -------------------
+   *
+   * 278 Android'deki soguk acilis kusurunu kapatti ve orada olcunun yerini de
+   * kilitledi: `push_open` DOKUNUSTA yaziliyor, gezginin hali onu
+   * degistirmiyor. Ayni soru webde sorulmamisti.
+   *
+   * Webde `push_open` sayfanin adresindeki `src=push`tan yaziliyor ve o
+   * parametreyi `sw.js` GEZINIRKEN ekliyor. Ama `notificationclick` iki dal:
+   *
+   *   1. hedef adreste acik bir sekme VARSA  -> yalniz `focus()`, gezinme YOK
+   *   2. yoksa                                -> `navigate(url)` / `openWindow(url)`
+   *
+   * Birinci dalda hic gezinme olmadigi icin `src=push` da yok: kullanici
+   * bildirime dokunuyor, dogru yere geliyor ve huni onu HIC saymiyor. Ve bu
+   * dal nadir degil - uygulamasi zaten acik olan kullanici en sadik
+   * kullanici. Adrese parametre eklemek cozum degildi: yeniden gezinme yarim
+   * kalan turu bastan yuklerdi. Dokunus sekmeye MESAJ olarak bildiriliyor.
+   *
+   * Ikinci kusur ayni dosyada: bildirimin `lang` ozniteligi SABIT "tr"
+   * yaziliydi. Metin alicinin dilinde gidiyor (`translate(lang, ...)`) ama
+   * bildirim kendini Turkce ilan ediyordu; ekran okuyucu Almanca cumleyi
+   * Turkce sesletiyordu. Dili artik metni kuran yer tasiyor. */
+  {
+    const sw = read("public/sw.js");
+    /* DAL, PENCERE DEGIL. Olcu `focus()` dalinin GOVDESINI aliyor; "dosyada
+       postMessage var mi" sorusu ikinci dala yazilmis bir cagriyi da kabul
+       ederdi. */
+    const odakDali = (() => {
+      const i = sw.indexOf('client.url.includes(target)');
+      if (i < 0) return "";
+      const bas = sw.indexOf("{", i);
+      if (bas < 0) return "";
+      let d = 0;
+      for (let j = bas; j < sw.length; j++) {
+        if (sw[j] === "{") d++;
+        else if (sw[j] === "}") { d--; if (d === 0) return sw.slice(bas, j + 1); }
+      }
+      return "";
+    })();
+    const tel = sil(read("src/components/telemetry.tsx"));
+    sameList(
+      "bildirim dokunusu uc yolda da sayiliyor",
+      [
+        "web gezinme=" + (/src=push/.test(sw) && /q\.get\("src"\) === "push"/.test(tel) ? "sayiyor" : "SAYMIYOR"),
+        "web odak=" + (/postMessage\(\{ type: "push-open" \}\)/.test(odakDali) ? "sayiyor" : "SAYMIYOR"),
+        "mobil=" + (/track\("push_open"\)/.test(sil(read("mobile/src/lib/pushRoute.ts"))) ? "sayiyor" : "SAYMIYOR"),
+      ],
+      ["web gezinme=sayiyor", "web odak=sayiyor", "mobil=sayiyor"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Mesaji DINLEYEN de olacak: gonderen tek basina sayiyi yazmaz. */
+    sameList(
+      "odak mesajini dinleyen var",
+      [
+        "dinleyici=" + (/serviceWorker/.test(tel) && /"push-open"/.test(tel) ? "var" : "YOK"),
+        "olcum=" + (/=== "push-open"\) track\("push_open"\)/.test(tel) ? "push_open" : "YOK"),
+      ],
+      ["dinleyici=var", "olcum=push_open"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Bildirimin dili metinle birlikte gidiyor. */
+    sameList(
+      "bildirimin dili metinle geliyor",
+      [
+        "yuk=" + (/lang: NativeLang;/.test(sil(read("src/lib/push.ts"))) ? "tasiyor" : "TASIMIYOR"),
+        "sw=" + (/lang: data\.lang \|\| "tr"/.test(sw) ? "yukten" : /lang: "tr"/.test(sw) ? "SABIT" : "YOK"),
+      ],
+      ["yuk=tasiyor", "sw=yukten"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 280. CEVRIMDISI KUYRUKLAR ACILISTA BOSALIYOR -------------------
    *
    * Iki kuyruk da (tur cevaplari, ders sonuclari) Android'den alindi ve

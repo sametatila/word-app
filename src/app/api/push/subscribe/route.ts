@@ -140,6 +140,7 @@ export async function PUT(req: Request) {
       body: translate(lang, first ? "push.reminders_on_body_named" : "push.reminders_on_body", { name: first ?? "" }),
       url: "/learn",
       tag: "reminder-test",
+      lang,
     });
     return NextResponse.json({ ok: true, sent });
   } catch (err) {

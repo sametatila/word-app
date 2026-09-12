@@ -43,6 +43,16 @@ export type PushPayload = {
    * yeterli.
    */
   tag: string;
+  /**
+   * Metnin dili — bildirimin `lang` özniteliği.
+   *
+   * `sw.js` içinde SABİT "tr" yazılıydı: metin alıcının dilinde gidiyordu ama
+   * bildirim kendini Türkçe ilan ediyordu ve ekran okuyucu Almanca cümleyi
+   * Türkçe sesletiyordu. Metni kuran yer dili zaten biliyor, taşıması da
+   * onun işi (Android'de karşılığı yok: bildirimi sistem kendi yerelinde
+   * okur).
+   */
+  lang: NativeLang;
 };
 
 /**
@@ -118,6 +128,7 @@ export function composeReminder(input: {
       body: translate(lang, key("push.rem_costreak_body"), vars({ who: input.coStreak.name })),
       url: "/friends",
       tag: "reminder",
+      lang,
     };
   }
 
@@ -128,6 +139,7 @@ export function composeReminder(input: {
       body: translate(lang, key(base), vars({ n: input.dueCount })),
       url: "/learn",
       tag: "reminder",
+      lang,
     };
   }
 
@@ -145,6 +157,7 @@ export function composeReminder(input: {
       body: translate(lang, key("push.rem_rival_body"), vars({ gap: formatNumber(input.rival.gap, lang) })),
       url: "/learn",
       tag: "reminder",
+      lang,
     };
   }
 
@@ -154,6 +167,7 @@ export function composeReminder(input: {
       body: translate(lang, key("push.rem_due_body"), vars()),
       url: "/learn",
       tag: "reminder",
+      lang,
     };
   }
 
@@ -164,6 +178,7 @@ export function composeReminder(input: {
     body: translate(lang, key("push.rem_idle_body"), vars({ level: input.level })),
     url: "/learn",
     tag: "reminder",
+    lang,
   };
 }
 
@@ -662,12 +677,14 @@ async function deliverRound(
             body: translate(lang, named("push.rem_streak_idle"), { name: first ?? "" }),
             url: "/learn",
             tag: "reminder",
+            lang,
           }
         : {
             title: translate(lang, "push.rem_weekly_title"),
             body: translate(lang, named("push.rem_weekly_body"), { name: first ?? "", level: t.level }),
             url: "/learn/weekly",
             tag: "reminder",
+            lang,
           };
     /* Huninin üç basamağı — bkz. `runReminders` içindeki not. */
     const benim: Promise<number>[] = [];

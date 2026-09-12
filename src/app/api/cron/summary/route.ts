@@ -45,7 +45,7 @@ export async function GET(req: Request) {
         // Başlık da gövde gibi alıcının dilinde: gövde çevriliydi, başlık değil.
         /* Deneme ve teslimat ayrı: `sendToUser` kaç kanala ulaştığını
            döndürüyor (bkz. lib/events `push_deliver`). */
-        const ulasan = await sendToUser(r.userId, { title: translate(lang, "push.weekly_summary_title"), body: s.text, url: "/profile", tag: "weekly-summary" });
+        const ulasan = await sendToUser(r.userId, { title: translate(lang, "push.weekly_summary_title"), body: s.text, url: "/profile", tag: "weekly-summary", lang });
         sent++;
         await track(r.userId, "push_sent", today, 0, "summary");
         if (ulasan > 0) await track(r.userId, "push_deliver", today, ulasan, "summary");

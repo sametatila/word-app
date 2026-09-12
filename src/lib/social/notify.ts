@@ -37,7 +37,7 @@ export type NotifyInput = {
  * profilinden okunuyor — bildirim bir isteğin içinde değil, arka planda da
  * gönderilebiliyor, orada çerez yok.
  */
-export type PushKeyed = Omit<PushPayload, "title" | "body"> & {
+export type PushKeyed = Omit<PushPayload, "title" | "body" | "lang"> & {
   titleKey: string;
   bodyKey: string;
   vars?: Record<string, string | number>;
@@ -70,6 +70,7 @@ export async function notify(
         ...rest,
         title: translate(lang, titleKey, vars),
         body: translate(lang, bodyKey, vars),
+        lang,
       });
       /*
        * DENEME ve TESLİMAT ayrı yazılıyor. Burada `push_sent` yalnız

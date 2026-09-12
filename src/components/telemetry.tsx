@@ -92,6 +92,26 @@ export function Telemetry() {
     }
   }, []);
 
+  /**
+   * SEKME ZATEN AÇIKKEN BİLDİRİME DOKUNMA.
+   *
+   * `src=push` yalnız gezinme olduğunda adrese giriyor. Uygulama hedef
+   * adreste açıkken bildirime dokunulduğunda `sw.js` yeni pencere açmıyor,
+   * var olanı öne getiriyor — ve o dalda hiç gezinme yok, yani `push_open`
+   * HİÇ yazılmıyordu. Kullanıcı doğru yere geliyor, huni onu saymıyor.
+   * Android dokunuşun kendisini sayıyor (`lib/pushRoute`, ölçüm hazır olma
+   * denetiminden önce). Servis çalışanı artık dokunuşu mesajla bildiriyor.
+   */
+  useEffect(() => {
+    const sw = navigator.serviceWorker;
+    if (!sw) return undefined;
+    const onMessage = (e: MessageEvent) => {
+      if ((e.data as { type?: string } | null)?.type === "push-open") track("push_open");
+    };
+    sw.addEventListener("message", onMessage);
+    return () => sw.removeEventListener("message", onMessage);
+  }, []);
+
   // Günün ilk açılışı — cihaz karışımı.
   useEffect(() => {
     try {

@@ -36,7 +36,10 @@ self.addEventListener("push", (event) => {
       // ekranında üst üste yığılmasın.
       tag: data.tag || "lernomi",
       renotify: true,
-      lang: "tr",
+      // Bildirim metni ALICININ dilinde geliyor; `lang` sabit "tr" yazılıydı
+      // ve ekran okuyucu Almanca cümleyi Türkçe sesletiyordu. Dili metni
+      // kuran yer taşıyor (bkz. lib/push `PushPayload.lang`).
+      lang: data.lang || "tr",
       data: { url: data.url || "/learn" },
     }),
   );
@@ -53,8 +56,19 @@ self.addEventListener("notificationclick", (event) => {
     self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((list) => {
       // Uygulama zaten açıksa yeni pencere açmak yerine ona odaklanılıyor:
       // ikinci bir kopya, yarım kalan turu iki yerden oynatırdı.
+      //
+      // ÖLÇÜM BU DALDA DÜŞÜYORDU. `push_open` sayfanın adresindeki
+      // `src=push`tan yazılıyor (bkz. components/telemetry) ve bu dal
+      // gezinmiyor — sekme zaten hedefteydi, yalnız öne geliyor. Yani
+      // bildirime dokunan kullanıcı doğru yere geliyordu ama huni onu hiç
+      // saymıyordu. Adrese parametre eklemek de olmazdı: yeniden gezinme
+      // yarım kalan turu baştan yüklerdi. Dokunuş sekmeye MESAJ olarak
+      // bildiriliyor, sayan yer orada.
       for (const client of list) {
-        if (client.url.includes(target) && "focus" in client) return client.focus();
+        if (client.url.includes(target) && "focus" in client) {
+          if ("postMessage" in client) client.postMessage({ type: "push-open" });
+          return client.focus();
+        }
       }
       for (const client of list) {
         if ("navigate" in client && "focus" in client) {
