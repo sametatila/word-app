@@ -15082,3 +15082,57 @@ pakette de bulunduğu ve Xcode projesine kayıtlı olduğu.
 Enjeksiyonlardan biri ölçünün **zincir** olduğunu gösterdi: katalogdaki tek
 bir bayt değiştirildiğinde hem "açılış zemini" hem "storyboard önbelleği"
 kırmızıya döndü — biri platformlar arası, öteki dosya içi tutarlılık.
+
+## §11.418 — Derin bağlantının altı dayanağı ölçülmüyordu
+
+Derin bağlantının çalışması **altı dosyanın** aynı iki değeri taşımasına
+bağlı ve hiçbiri ölçülmüyordu:
+
+| Değer | Nerede |
+|---|---|
+| alan adı | Android manifestosu `android:host` · iOS yetkileri `applinks:` · mobil `API_BASE` · web `lib/site` · web `lib/share` sunucu yedeği |
+| paket adı | `build.gradle` `applicationId` · `assetlinks.json` rotasının `PACKAGE`i |
+
+Bir tanesinde harf değişse bağlantı **o platformda sessizce tarayıcıya
+düşer**: Apple beyanı bulamaz, Android doğrulamayı geçemez, ya da uygulama
+başka bir sunucuya konuşur. Hiçbir derleme bunu söylemez çünkü her dosya kendi
+içinde geçerli. Paket adı ayrıca kritik: `assetlinks.json` yanlış paketi ilan
+ederse Android bağlantıyı **hiç** doğrulamaz ve e-postadaki iki bağlantı
+uygulamayı açmaz — ama web tarafı 200 döner, yani izleme "çalışıyor" der.
+
+Apple takım/paket kimliği env'de ve burada ölçülemez; ölçülen şey rotanın
+onları **env'den okuduğu** — elle yazılmış bir kimlik Xcode projesinden
+sessizce ayrışırdı. Değerler ayrıca elle doğrulandı: `.env`in
+`APPLE_TEAM_ID`/`APPLE_BUNDLE_ID`'si pbxproj'nin `DEVELOPMENT_TEAM` /
+`PRODUCT_BUNDLE_IDENTIFIER` değerleriyle birebir.
+
+### §293
+
+Beş ölçü, hepsi enjeksiyonla doğrulandı: her kaynağın **tek** alan adı
+söylediği (iki alan beyan eden bir yetki dosyası karşılaştırmayı anlamsız
+kılar), alan adının beş yerde aynı olduğu, paket adının `assetlinks` ile
+`build.gradle` arasında aynı olduğu, Apple kimliğinin env'den okunduğu ve
+eksikse dosyanın **hiç yayımlanmadığı**, ve üç derin bağlantı anahtarının
+`.env.example`de durduğu.
+
+Ölçünün kendi kusuru yine kayıtlı bir sınıftan: yorum temizleyici `//`yi
+koşulsuz siliyor ve `"https://www…"` dizgisini `"https:` diye bırakıyor — üç
+ölçü ilk yazımda tam bunun yüzünden "YOK" dedi. URL taşıyan dosyalar **ham**
+okunuyor; desenler kod biçimine çakılı olduğu için güvenli.
+
+### Canlı durum: iki bekleyen madde kapanmış, üretim yerelin gerisinde
+
+Bu tur canlı sunucu da okundu (okuma serbest):
+
+- `ANDROID_CERT_SHA256` **üç env dosyasında da** var ve sunucuda **dolu** →
+  `https://www.lernomi.app/.well-known/assetlinks.json` **200** dönüyor,
+  paket `com.lernomi.learn`, bir parmak izi. Yani "Play imza SHA-256 Samet'ten
+  gelecek" maddesi **kapanmış**.
+- `npm run ios:check` Google iOS istemcisini **AÇIK** gösteriyor — o madde de
+  kapanmış.
+- Canlı **AASA üç yol** ilan ediyor (`/reset-password`,
+  `/api/auth/verify-email`, `/auth/app`); depodaki liste **dört** (`/u/` davet
+  bağlantısı, §11.400). Yani üretim bugünün commit'lerinin gerisinde ve davet
+  bağlantısı iOS'ta ancak **push + deploy** sonrası evrensel bağlantı olur.
+  Bu bir kusur değil, beklenen durum — ama deploy sonrası doğrulanacak bir
+  madde.

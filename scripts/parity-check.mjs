@@ -7488,6 +7488,116 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 293. UYGULAMA KIMLIGI VE ALAN ADI TEK ZINCIR -------------------
+   *
+   * Derin baglantinin calismasi ALTI dosyanin ayni iki degeri tasimasina
+   * bagli ve hicbiri olculmuyordu:
+   *
+   *   alan adi   Android manifestosu `android:host`
+   *              iOS yetkileri `applinks:`
+   *              mobil `API_BASE`
+   *              web `lib/site` ve `lib/share` sunucu yedegi
+   *   paket adi  `build.gradle` `applicationId`
+   *              `assetlinks.json` rotasinin `PACKAGE`i
+   *
+   * Bir tanesinde harf degisse baglanti O PLATFORMDA sessizce tarayiciya
+   * duser: Apple beyani bulamaz, Android dogrulamayi gecemez, ya da uygulama
+   * baska bir sunucuya konusur. Hicbir derleme bunu soylemez cunku her dosya
+   * kendi icinde gecerli.
+   *
+   * Paket adi ayri onemli: `assetlinks.json` yanlis paketi ilan ederse Android
+   * baglantiyi HIC dogrulamaz ve e-postadaki iki baglanti (sifirlama,
+   * dogrulama) uygulamayi acmaz - ama web tarafi 200 doner, yani izleme de
+   * "calisiyor" der.
+   *
+   * Takim/paket kimliginin kendisi env'de (`APPLE_TEAM_ID`, `APPLE_BUNDLE_ID`)
+   * ve burada olculemez; olculen sey rotanin onlari ENV'DEN okudugu - elle
+   * yazilmis bir kimlik Xcode projesinden sessizce ayrisirdi. */
+  {
+    const manifest = read("mobile/android/app/src/main/AndroidManifest.xml");
+    const yetki = read("mobile/ios/Lernomi/Lernomi.entitlements");
+    /* URL TASIYAN DOSYALAR HAM OKUNUYOR. Yorum temizleyici `//...`yi
+       kosulsuz siliyor ve `"https://www..."` dizgisini `"https:` diye
+       birakiyor - olcu ilk yazimda tam bunun yuzunden "YOK" dedi. Desenler
+       kod bicimine cakili (`API_BASE = "https://..."`, `|| "https://..."`),
+       o yuzden ham metin guvenli. */
+    const istemci = read("mobile/src/api/client.ts");
+    const site = read("src/lib/site.ts");
+    const paylas = read("src/lib/share.ts");
+    const gradle = read("mobile/android/app/build.gradle");
+    const assetlinks = sil(read("src/app/.well-known/assetlinks.json/route.ts"));
+    const aasa = sil(read("src/app/.well-known/apple-app-site-association/route.ts"));
+
+    const hostlar = [...new Set([...manifest.matchAll(/android:host="([^"]+)"/g)].map((m) => m[1]))];
+    const alan = [...new Set([...yetki.matchAll(/applinks:([\w.]+)/g)].map((m) => m[1]))];
+    const apiHost = (istemci.match(/API_BASE = "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
+    const siteHost = (site.match(/\|\| "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
+    const paylasHost = [...new Set([...paylas.matchAll(/"https:\/\/([\w.]+)"/g)].map((m) => m[1]))];
+
+    /* Once: her kaynak TEK bir alan adi soyluyor. Iki host beyan eden bir
+       manifesto ya da yetki dosyasi, karsilastirmayi anlamsiz kilar. */
+    sameList(
+      "her kaynak tek alan adi soyluyor",
+      [
+        "android=" + hostlar.length,
+        "ios=" + alan.length,
+        "web paylas=" + paylasHost.length,
+      ],
+      ["android=1", "ios=1", "web paylas=1"],
+      "bulunan",
+      "beklenen",
+    );
+
+    sameList(
+      "alan adi alti yerde ayni",
+      [
+        "android manifesto=" + (hostlar[0] ?? "YOK"),
+        "ios yetkileri=" + (alan[0] ?? "YOK"),
+        "mobil API_BASE=" + apiHost,
+        "web site=" + siteHost,
+        "web paylas=" + (paylasHost[0] ?? "YOK"),
+      ],
+      ["android manifesto=" + apiHost, "ios yetkileri=" + apiHost, "mobil API_BASE=" + apiHost, "web site=" + apiHost, "web paylas=" + apiHost],
+      "bulunan",
+      "beklenen (API_BASE)",
+    );
+
+    const appId = (gradle.match(/applicationId\s+"([\w.]+)"/) ?? [])[1] ?? "YOK";
+    const paket = (assetlinks.match(/PACKAGE\s*=\s*"([\w.]+)"/) ?? [])[1] ?? "YOK";
+    sameList(
+      "android paket adi assetlinks ile ayni",
+      ["assetlinks=" + paket],
+      ["assetlinks=" + appId],
+      "assetlinks",
+      "build.gradle",
+    );
+
+    /* Apple kimligi ENV'DEN okunuyor - elle yazilmis olmayacak. */
+    sameList(
+      "apple kimligi env'den",
+      [
+        "takim=" + (/process\.env\.APPLE_TEAM_ID/.test(aasa) ? "env" : "ELLE"),
+        "paket=" + (/process\.env\.APPLE_BUNDLE_ID/.test(aasa) ? "env" : "ELLE"),
+        "eksikse yayinlanmiyor=" + (/if \(!team \|\| !bundle\) return/.test(aasa) ? "var" : "YOK"),
+      ],
+      ["takim=env", "paket=env", "eksikse yayinlanmiyor=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Uc env dosyasinda da anahtarlar duruyor (deger degil, ANAHTAR). */
+    const ornek = read(".env.example");
+    sameList(
+      "derin baglanti anahtarlari ornekte",
+      ["APPLE_TEAM_ID", "APPLE_BUNDLE_ID", "ANDROID_CERT_SHA256"].map(
+        (k) => k + "=" + (new RegExp("^" + k + "=", "m").test(ornek) ? "var" : "YOK"),
+      ),
+      ["APPLE_TEAM_ID=var", "APPLE_BUNDLE_ID=var", "ANDROID_CERT_SHA256=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 292. UC PLATFORMUN ZEMINI TEK ZINCIR --------------------------
    *
    * 282 acilis ekraninin ve tarayici cubugunun rengini webden Android'e
