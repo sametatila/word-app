@@ -7480,6 +7480,72 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 275. BILDIRIM HUNISI UC BASAMAK -------------------------------
+   *
+   * Ayni olay iki yerde "denendi", bir yerde "ulasti" anlamina geliyordu.
+   *
+   * `lib/push` iki dongude de `push_sent`i KOSULSUZ yaziyor ve kendi
+   * yorumunda bunu soyluyor ("Sayima girmiyor - `sent` yalniz teslimati
+   * sayar"). `social/notify` ise ayni olayi YALNIZ TESLIMAT OLUNCA
+   * yaziyordu. Pano ucunu topluyordu, yani sayi ne denemeyi ne teslimati
+   * soyluyordu.
+   *
+   * Ustelik "CTR" etiketi acilan/DENENEN oraniydi: olmus bir abonelige ya da
+   * gecersiz bir jetona yapilan deneme, CTR'yi haksiz yere dusuruyordu -
+   * teslim edilmemis bir bildirim acilamaz.
+   *
+   * Huni artik UC BASAMAK: `push_sent` denendi, `push_deliver` ulasti (value
+   * = kanal sayisi), `push_open` acildi. Aradaki fark tam olarak gormek
+   * istedigimiz sey - abonelik olmus, jeton gecersiz, saglayici reddetmis.
+   *
+   * TESLIMAT KULLANICI BASINA toplaniyor: hatirlatma dongusu butun
+   * gonderimleri tek havuzda bekletiyordu, oradan "kime ulasti" cikmaz. */
+  {
+    const olay = sil(read("src/lib/events.ts"));
+    const push = sil(read("src/lib/push.ts"));
+    const notify = sil(read("src/lib/social/notify.ts"));
+    const ozet = sil(read("src/app/api/cron/summary/route.ts"));
+    const yonetim = sil(read("src/lib/admin.ts"));
+    const pano = sil(read("src/app/admin/dashboard.tsx"));
+
+    sameList(
+      "huninin ucuncu basamagi",
+      [
+        "olay=" + (/"push_deliver"/.test(olay) ? "var" : "YOK"),
+        "hatirlatma=" + ((push.match(/track\(kisi, "push_deliver"/g) ?? []).length === 2 ? "iki dongu" : "EKSIK"),
+        "sosyal=" + (/track\(userId, "push_deliver", gun, sent,/.test(notify) ? "var" : "YOK"),
+        "ozet=" + (/track\(r\.userId, "push_deliver", today, ulasan,/.test(ozet) ? "var" : "YOK"),
+      ],
+      ["olay=var", "hatirlatma=iki dongu", "sosyal=var", "ozet=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* DENEME HER YERDE KOSULSUZ: `social/notify`de `if (sent)` altinda
+       kalirsa olay yine iki anlam tasir. */
+    const kosulluDeneme = /if \(sent\)[\s\S]{0,80}?track\([^;]*"push_sent"/.test(notify);
+    sameList(
+      "deneme kosulsuz yaziliyor",
+      ["sosyal=" + (kosulluDeneme ? "KOSULLU" : "kosulsuz")],
+      ["sosyal=kosulsuz"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* CTR artik ULASANA bolunuyor. */
+    sameList(
+      "pano huniyi uc basamak gosteriyor",
+      [
+        "sorgu=" + (/push_deliver'\),0\)::int delivered/.test(yonetim) ? "var" : "YOK"),
+        "ulasti=" + (/label="Ulaştı"/.test(pano) ? "var" : "YOK"),
+        "ctr tabani=" + (/d\.notifications\.opened \/ d\.notifications\.delivered/.test(pano) ? "ulasan" : "DENENEN"),
+      ],
+      ["sorgu=var", "ulasti=var", "ctr tabani=ulasan"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 274. ZAMANLANMIS ISIN KOSTUGU GORUNUYOR -----------------------
    *
    * 272 ve 273'un ucuncusu, ve bu defa kusur DAHA ONCE YASANDI: `vercel.json`
