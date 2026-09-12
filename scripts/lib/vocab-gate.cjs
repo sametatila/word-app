@@ -15,7 +15,22 @@
 const fs = require("fs");
 const R = process.cwd();
 
-// çok sık işlev sözcükleri + sayı + selam: her ünitede serbest
+/* Çok sık işlev sözcükleri + sayı + selam: her ünitede serbest.
+ *
+ * SON ON İKİ SATIR: yarım kalmış ÇEKİM TABLOLARININ tamamlanması. Liste elle
+ * yazılmıştı ve paradigmalar yarım doluydu — `darfst`, `durfte`, `durften`,
+ * `gedurft`, `dürfte` serbestti ama `darf` ile `dürfen` yoktu; `bin bist ist
+ * sind` vardı, `seid` yoktu; `war waren` vardı, `warst` yoktu. Kapının
+ * biçimbilimi (`izinCekim`) DÜZENLİ çekimi zaten türetiyor, o yüzden `habt`,
+ * `wirst`, `könnt`, `müsst` gibi biçimler hiç sorun çıkarmadı; sızanlar tam
+ * olarak türetilemeyen iki sınıftı: (a) gövdesi değişen kipler (darf, mag,
+ * seid, warst, mochte), (b) hiçbir türetme kuralı olmayan KAPALI ZAMİR
+ * TABLOLARI (dieser/diese/dieses, denen/dessen/deren, derselbe/denselben,
+ * wen/wem/wessen). Ölçüldü: raporun 1.498 kapı dışı geçişinin 83'ü (%5,5)
+ * yalnızca bu boşluktandı — `darf×28`, `denselben×13`, `denen×8`, `diese×6`,
+ * `wem×6`, `seid×6`, `warst×5`. Hiçbiri öğretilecek bir SÖZCÜK değil, dilbilgisi.
+ * Tek bilinçli bedel: `wissen` artık serbest, yani "das Wissen" adı da kapıya
+ * takılmıyor — çekimli biçimleri (wisst, weiß, wusste) zaten serbestti. */
 const SERBEST = new Set(`der die das den dem des ein eine einen einem einer eines kein keine keinen
 ich du er sie es wir ihr mich dich sich uns euch mir dir ihm ihn ihnen mein meine meinen meinem meiner
 dein deine deinen deinem deiner sein seine seinen seinem ihre ihren ihrem unser unsere euer eure und oder aber denn dass weil wenn als ob wie wo woher wohin
@@ -34,7 +49,18 @@ oh ok ach na so
 richtig falsch wer welche welcher welches warum wann
 problem moment zusammen jeden monat
 im am zum zur beim vom ins aufs
-machen macht soll sollen heißt bin`.split(/\s+/).filter(Boolean));
+machen macht soll sollen heißt bin
+seid wart warst sei seien wärst habt hattest hattet gehabt hättest
+werde wirst werdet wurdest wurdet würdest
+darf dürfen dürft durftest durftet dürftest dürften
+könnt konntest konntet könntest müsst musstest musstet müsstest
+sollt solltest solltet wollen wollt wolltest wolltet
+mag mögen mögt mochte mochten gemocht möchtest möchtet
+wissen wusstest gewusst
+dieser diese dieses diesen diesem
+denen dessen deren welchem welchen
+derselbe dieselbe dasselbe denselben demselben derselben dieselben desselben
+wen wem wessen`.split(/\s+/).filter(Boolean));
 
 // Havuzun TAMAMI (her seviye): özel ad ayıklaması için — bir sözcük havuzda
 // hiç yoksa ve metinde büyük harfle geçiyorsa büyük olasılıkla bir isim

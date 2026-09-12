@@ -19,6 +19,26 @@ import { readFileSync } from "node:fs";
 
 export const LEVELS = ["a1", "a2", "b1", "b2", "c1"];
 
+/**
+ * SON ÜÇ SATIR: yarım kalmış KAPALI SINIFLARIN tamamlanması — Almanca kapıda
+ * `SERBEST`in çekim tablolarına yapılanın İngilizce karşılığı.
+ *
+ * Tablonun kendi ölçüsü "havuzda öğretiliyor mu" DEĞİL: `near` C1 havuz
+ * sözcüğü, `around` B2, `within` B1 — üçü de her ünitede serbest, çünkü temel
+ * edat listesi dilbilgisidir, öğretilecek sözcük değil. O ölçüye göre listede
+ * delikler vardı ve rapor onları bulgu diye basıyordu: `behind` (A1 havuz
+ * sözcüğü!) kursun EN SIK kapı dışı bulgusuydu — beş seviyede toplam 44 geçiş.
+ * Aynı sınıftan `against`, `above`, `below`; bağlaç/belirteç tarafında
+ * `neither` (C1'de ×8), `either`, `nor`, `whether` — hepsinin kardeşleri
+ * (`both`, `all`, `any`, `if`, `that`, `because`) zaten serbestti. `-ever`
+ * dizisi de öyle: `who`, `what`, `where`, `when` serbest ama `whoever`,
+ * `whatever` değildi.
+ *
+ * BİLEREK DIŞARIDA: `however`, `nevertheless`, `moreover`, `whereas`,
+ * `whereby`, `therefore` — bunlar söylem bağlayıcısı, yani B2/C1'de
+ * ÖĞRETİLEN sözcükler; Almanca tarafın `trotzdem`/`sondern`/`sogar`
+ * bulgularının karşılığı ve raporda görünmeleri doğru.
+ */
 export const EN_FREE = new Set(`a an the and or but so because if when while as than that this these those there here
 i you he she it we they me him her us them my your his its our their mine yours
 am is are was were be been being have has had do does did will would can could should may might must shall
@@ -36,7 +56,10 @@ september october november december euro euros pound pounds dollar dollars perce
 true false right wrong cannot mine yours hers ours theirs anything everything anyone everyone someone nobody
 somebody anybody everybody
 metre metres meter meters km kg cm litre litres liter liters kilo kilos minutes hours euro
-children men women people feet teeth`.split(/\s+/).filter(Boolean));
+children men women people feet teeth
+behind against above below beside onto toward towards
+neither either none nor whether
+whoever whatever wherever whenever whichever`.split(/\s+/).filter(Boolean));
 
 /**
  * HAVUZUN TAMAMI — özel ad ayıklaması için, seviye penceresi olmadan.
