@@ -38,11 +38,12 @@ export function Chip({
    * "radyo düğmesi, 5 ögeden 2., seçili" oluyor. Web karşılığı
    * `role="radio"` + `aria-checked` (bkz. parity 256).
    *
-   * SEKME olarak kullanılan iki çağrı yeri (sıralama kipi, arkadaş
-   * sekmeleri) bunu VERMİYOR: sekme bir radyo değil ve web'de de ayrı bir
-   * anlatımı var (`aria-current`). Onlar `button` olarak kalıyor.
+   * SEKME BAŞKA BİR ŞEY. Sıralama kipi ve arkadaş sekmeleri bir seçenek
+   * listesi değil, aynı ekranın iki GÖRÜNÜMÜ; onlar `tab` diyor ve
+   * sarmalayıcıları `tablist`. Web karşılığı `role="tab"` +
+   * `aria-selected`, `role="tablist"` içinde (bkz. parity 258).
    */
-  role?: "radio";
+  role?: "radio" | "tab";
 }) {
   const { colors } = useTheme();
   return (

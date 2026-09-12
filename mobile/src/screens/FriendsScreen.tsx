@@ -134,8 +134,9 @@ export function FriendsScreen() {
           <ChevronRightIcon color="#fff" size={22} />
         </PressableScale>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingBottom: spacing.lg }}>
-          {TAB_KEYS.map((it) => <Chip key={it.key} label={tx(it.label)} active={tab === it.key} onPress={() => setTab(it.key)} badge={it.key === "friends" ? incoming : undefined} />)}
+        {/* SEKME ŞERİDİ — aynı ekranın dört görünümü (bkz. parity 258). */}
+        <ScrollView accessibilityRole="tablist" horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingBottom: spacing.lg }}>
+          {TAB_KEYS.map((it) => <Chip key={it.key} role="tab" label={tx(it.label)} active={tab === it.key} onPress={() => setTab(it.key)} badge={it.key === "friends" ? incoming : undefined} />)}
         </ScrollView>
 
         {tab === "friends" ? (

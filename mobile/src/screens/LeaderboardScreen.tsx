@@ -28,10 +28,15 @@ export function LeaderboardScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={t("leaderboard.leaderboard")} subtitle={t("leaderboard.this_week")} />
 
-      {/* Ayarlar'daki Chip dili: kenarlıklı, radius md; pill değil. */}
-      <View style={{ flexDirection: "row", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+      {/* Ayarlar'daki Chip dili: kenarlıklı, radius md; pill değil.
+
+          SEKME ŞERİDİ: aynı haftanın iki GÖRÜNÜMÜ arasında geçiş, bir
+          seçenek listesi değil. Rol `tablist` + `tab` deyince TalkBack
+          "sekme, 2 ögeden 1., seçili" diyor; önce ikisi de düz "düğme"ydi.
+          Web karşılığı `role="tablist"` + `role="tab"` (bkz. parity 258). */}
+      <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         {([["league", "leaderboard.league"], ["friends", "social.tab_friends"]] as const).map(([k, label]) => (
-          <Chip key={k} label={t(label)} active={mode === k} onPress={() => setMode(k)} />
+          <Chip key={k} role="tab" label={t(label)} active={mode === k} onPress={() => setMode(k)} />
         ))}
       </View>
 
