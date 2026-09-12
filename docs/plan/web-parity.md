@@ -13596,3 +13596,44 @@ cevabı alanlarının adını söylemesi.
 Dört enjeksiyon denendi (bir alanın adını kaybetmesi, promoda tuşun adı olup
 işi olmaması, tur alanının adını kaybetmesi, mobil değerin kayması), dördü de
 yakalandı.
+
+## §11.389 — Telefonda yakınlaştırma: iki kusur, aynı satırdan
+
+`viewport` içindeki `maximumScale: 1` iki ayrı şeyi birden bozuyordu.
+
+**Bir: yakınlaştırma herkese kapalıydı.** Az gören bir kullanıcı sayfayı
+parmakla büyütemiyordu (WCAG 1.4.4 "Resize text"). Android uygulaması bunun
+**tersini** yapıyor — sistem yazı ölçeğini **okuyor** ve 1.5 katına kadar
+büyütüyor (`ui/Text` `maxFontSizeMultiplier`). Yani aynı kullanıcı telefonda
+uygulamada büyütebiliyor, tarayıcıda büyütemiyordu.
+
+**İki: kilit zaten işe yaramıyordu.** iOS Safari `maximum-scale`i iOS 10'dan
+beri yok sayıyor. Odak yakınlaştırmasını durduran şey o değil, alanın
+yazısının **16 pikselin altına inmemesi**. Uygulamanın gövde puntosu 15
+(`--text-body`, mobil `typography.body` ile birebir) ve **bütün metin
+alanları** onu kullanıyordu — yani iPhone'da her alana dokunuşta sayfa
+zıplayıp büyüyordu: giriş, arama, promo kodu, sınav cevabı, yazma görevi.
+Geri dönmek için parmakla küçültmek gerekiyordu.
+
+Kilit hem zarar veriyor hem bir şey çözmüyordu.
+
+### Çözüm alanın kendisinde
+
+`@media (pointer: coarse)` — dokunmatikte metin alanları 16px, masaüstünde
+ölçek 15'te kalıyor ve tasarım değişmiyor. Onay kutusu ve radyo dışarıda.
+
+**Kuralın katmansız olması bir gereklilik, tercih değil**: Tailwind'in
+`text-body` gibi yardımcı sınıfları `@layer utilities` içinde ve katmanlı
+stiller katmansız olanlara **yenilir**. Blok bir `@layer`in içine konsaydı
+her alandaki `text-body` onu ezerdi ve kural hiçbir şey yapmayan bir süs
+olurdu. Kapı bunu **ölçüyor** — enjeksiyonla doğrulandı.
+
+### §266
+
+Üç ölçü: yakınlaştırma kilidinin yokluğu (mutlak), odak kuralının dört
+özelliği (var · 16px · katmansız · bütün alanlar), ve Android'in sistem yazı
+ölçeğini okuduğu.
+
+Dört enjeksiyon denendi (kilidin geri gelmesi, puntonun 15'te kalması,
+kuralın bir katmana girmesi, mobilin ölçeği okumayı bırakması), dördü de
+yakalandı.
