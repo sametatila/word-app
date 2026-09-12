@@ -1891,6 +1891,31 @@ beklenen; en sonda kuralın adı“. Sözleşme sağlam ve kendini belgeliyor;
 bu sınıf da kapıya çevrilmedi.
 
 
+**Yazma görevi katmanı: altı ölçüm, altısı da temiz (2026-09-12).** 1 681 build
+ve 210 rewrite görevi tarandı; hiçbirinde kusur çıkmadı, ama üç „bulgu“ın neden
+bulgu OLMADIĞI kaydedilmeye değer, çünkü ilk bakışta öyle görünüyorlar.
+
+- *Aynı cevabın iki kez istenmesi* (6 durum): hepsi bir `build` ile bir
+  `rewrite` çifti — önce kur, sonra bozuğunu onar. Aynı türde yinelenen cevap
+  sıfır.
+- *İpucunun cevabı vermesi* (20 durum): oynatıcı ipucunu YALNIZ yanlış bir
+  denemeden sonra gösteriyor (`writing-player.tsx`: `fails > 0 && task.hint`),
+  yani cevabı içeren ipucu tam da olması gereken şey.
+- *Rewrite kaynağının cevaptan uzak olması* (36 durum): bunlar dönüştürme
+  değil kısa cevap alıştırmaları („Do you speak English?“ → „Yes, I do.“) ve
+  `prompt` ne isteneceğini söylüyor.
+- *`form` kartının `facts`i ile alan cevaplarının örtüşmemesi* (167/171):
+  ölçüm yanlıştı — `facts` TÜRKÇE, alan cevapları hedef dilde; örtüşmemesi
+  tasarımın kendisi.
+- `build.answer` içinde Türkçe harf: sıfır (kapı zaten var).
+- `build.tr` yinelemesi: sıfır.
+
+Turun ürünü iki REGRESYON KAPISI: her `build` görevinde `hint`, her `rewrite`
+görevinde `why` zorunlu oldu. İkisi de bugün %100 doluydu; kapı onu kilitliyor.
+Gerekçesi oynatıcıdan geliyor: yardım yalnız yanlış denemeden sonra çıkıyor,
+dolayısıyla ipucusuz bir görev yanılan öğrenciye hiçbir şey vermiyor.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

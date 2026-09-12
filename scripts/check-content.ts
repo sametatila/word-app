@@ -365,6 +365,11 @@ function checkSkills(list: SkillExercise[]) {
         } else if (t.kind === "build") {
           if (!t.tr?.trim() || !t.answer?.trim()) E(tw, "build: tr/answer boş");
           if (trLetters(t.answer)) E(tw, "build: answer içinde Türkçe harf");
+          /* Oynatıcı ipucunu YALNIZ yanlış bir denemeden sonra gösteriyor
+             (writing-player.tsx: `fails > 0 && task.hint`). İpucusuz bir
+             görev, yanılan öğrenciye hiçbir şey vermiyor. 2026-09-12'de
+             1 681 görevin hepsinde ipucu vardı; bu kapı onu kilitliyor. */
+          if (!t.hint?.trim()) E(tw, "build: ipucu yok (yanlış denemeden sonra gösterilecek yardım)");
         } else if (t.kind === "form") {
           if (!t.prompt?.trim() || !t.facts?.trim()) E(tw, "form: prompt/facts boş");
           if (!t.fields || t.fields.length < 3 || t.fields.length > 8) E(tw, `form: ${t.fields?.length ?? 0} alan (3–8)`);
@@ -373,6 +378,7 @@ function checkSkills(list: SkillExercise[]) {
           if (!t.prompt?.trim() || !t.source?.trim() || !t.answer?.trim()) E(tw, "rewrite: prompt/source/answer boş");
           if (trLetters(t.answer)) E(tw, "rewrite: answer içinde Türkçe harf");
           if (t.source.trim() === t.answer.trim()) E(tw, "rewrite: source ile answer aynı");
+          if (!t.why?.trim()) E(tw, "rewrite: why yok (düzeltmenin gerekçesi)");
         } else if (t.kind === "summary") {
           if (!t.prompt?.trim() || !t.source?.trim() || !t.sample?.trim()) E(tw, "summary: prompt/source/sample boş");
           if (t.maxSentences < 1 || t.maxSentences > 4) W(tw, `summary: maxSentences ${t.maxSentences}`);
