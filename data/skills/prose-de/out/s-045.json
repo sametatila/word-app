@@ -1,0 +1,662 @@
+[
+ {
+  "tr": "Üç adlaştırma ve iki aktarma.",
+  "kind": "intro",
+  "de": "Drei Nominalisierungen und zwei Wiedergaben."
+ },
+ {
+  "tr": "Planda kaç söz var, kaç boşluk var?",
+  "kind": "intro",
+  "de": "Wie viele Versprechen stehen im Plan, wie viele Lücken?"
+ },
+ {
+  "tr": "Taşınacak yardımcı fiil yoksa ne oluyor?",
+  "kind": "intro",
+  "de": "Was passiert, wenn kein Hilfsverb zum Umstellen da ist?"
+ },
+ {
+  "tr": "Takvimde iki biçim. Hangisi benim elimde?",
+  "kind": "intro",
+  "de": "Zwei Formen im Zeitplan. Welche liegt in meiner Hand?"
+ },
+ {
+  "tr": "Bir hata kaydı. Virgüller neyi belirliyor?",
+  "kind": "intro",
+  "de": "Ein Fehlerbericht. Was entscheiden die Kommas?"
+ },
+ {
+  "tr": "Özette isimler, teşekkürde fiiller. Neden?",
+  "kind": "intro",
+  "de": "Substantive im Abstract, Verben in der Danksagung. Warum?"
+ },
+ {
+  "tr": "Üç ortaç. İkincisi hangi ilişkiyi taşıyor?",
+  "kind": "intro",
+  "de": "Drei Partizipien. Welche Beziehung trägt das zweite?"
+ },
+ {
+  "tr": "Üç aktarma. Üçüncüsü zamanı nereye koyuyor?",
+  "kind": "intro",
+  "de": "Drei Wiedergaben. Wohin legt die dritte die Zeitstufe?"
+ },
+ {
+  "tr": "Üç devrik cümle. İkisinde „does“ neden var?",
+  "kind": "intro",
+  "de": "Drei umgestellte Sätze. Warum steht in zweien „does“?"
+ },
+ {
+  "tr": "İki yarık cümle, bir karşıtlık, iki çıkarım.",
+  "kind": "intro",
+  "de": "Zwei Spaltsätze, ein Gegensatz, zwei Schlüsse."
+ },
+ {
+  "tr": "Üç isim, üç edat. Hangisi „between“ almıyor?",
+  "kind": "intro",
+  "de": "Drei Substantive, drei Präpositionen. Welches nimmt kein „between“?"
+ },
+ {
+  "tr": "Üç kip, üç iş. Hangisi birinci tekil şahısta?",
+  "kind": "intro",
+  "de": "Drei Modalverben, drei Aufgaben. Welches steht in der ersten Person?"
+ },
+ {
+  "tr": "Üç tetikleyici, bir takvim, bir karışık koşul.",
+  "kind": "intro",
+  "de": "Drei Auslöser, ein Zeitplan, eine gemischte Bedingung."
+ },
+ {
+  "tr": "Üçüncü yarık cümle ötekilerden ne yapıyor fazla?",
+  "kind": "intro",
+  "de": "Was macht der dritte Spaltsatz mehr als die anderen?"
+ },
+ {
+  "tr": "İsim kendi edatını getiriyor. Fiilinkiyle aynı mı?",
+  "kind": "intro",
+  "de": "Das Substantiv bringt seine eigene Präposition mit. Ist es dieselbe wie beim Verb?"
+ },
+ {
+  "tr": "Yalın ortaç ne söylüyor: „aynı anda“ mı, „çünkü“ mü?",
+  "kind": "intro",
+  "de": "Was sagt das schlichte Partizip: „gleichzeitig“ oder „weil“?"
+ },
+ {
+  "tr": "İki kapalı, bir karışık. Hangisine kimse dokunamıyor?",
+  "kind": "intro",
+  "de": "Zwei geschlossene, eine gemischte. An welche kommt niemand mehr heran?"
+ },
+ {
+  "tr": "Üç tetikleyici. Hangisinde ana fiil yalın hâline dönüyor?",
+  "kind": "intro",
+  "de": "Drei Auslöser. Bei welchem kehrt das Hauptverb in die Grundform zurück?"
+ },
+ {
+  "tr": "„„Comparison“ takes „of“.“",
+  "kind": "explain",
+  "de": "„„Comparison“ takes „of“.“"
+ },
+ {
+  "tr": "Üç biçim, en sonda yazma kuralı.",
+  "kind": "explain",
+  "de": "Drei Formen, am Ende die Regel fürs Schreiben."
+ },
+ {
+  "tr": "Kapalı kutu: iki yarı da geçmişte.",
+  "kind": "explain",
+  "de": "Geschlossene Schachtel: beide Hälften in der Vergangenheit."
+ },
+ {
+  "tr": "Üç örnek, en sonda yazarın kendi kuralı.",
+  "kind": "explain",
+  "de": "Drei Beispiele, am Ende die eigene Regel des Autors."
+ },
+ {
+  "tr": "Üç isim, üç edat, en sonda kuralın kendisi.",
+  "kind": "explain",
+  "de": "Drei Substantive, drei Präpositionen, am Ende die Regel selbst."
+ },
+ {
+  "tr": "„„Arise“, not „arises“. The ending has gone…“",
+  "kind": "explain",
+  "de": "„„Arise“, not „arises“. The ending has gone…“"
+ },
+ {
+  "tr": "„„Parallel“ takes „with“ and never „between“…“",
+  "kind": "explain",
+  "de": "„„Parallel“ takes „with“ and never „between“…“"
+ },
+ {
+  "tr": "Kanıt kapıyı kapatıyor: olumsuzu „can't have“.",
+  "kind": "explain",
+  "de": "Der Beleg schließt die Tür: die Verneinung ist „can't have“."
+ },
+ {
+  "tr": "„The cleft is a sentence about the word „limit“…“",
+  "kind": "explain",
+  "de": "„The cleft is a sentence about the word „limit“…“"
+ },
+ {
+  "tr": "Fiil isme dönüyor; ek de edat da ezberden geliyor.",
+  "kind": "explain",
+  "de": "Das Verb wird zum Substantiv; Endung und Präposition kommen beide aus dem Gedächtnis."
+ },
+ {
+  "tr": "„The distinction between two things takes „between“…“",
+  "kind": "explain",
+  "de": "„The distinction between two things takes „between“…“"
+ },
+ {
+  "tr": "Yardımcı fiilli, „does“lu, sınırlamalı, en sonda kural.",
+  "kind": "explain",
+  "de": "Mit Hilfsverb, mit „does“, mit Einschränkung, am Ende die Regel."
+ },
+ {
+  "tr": "„„only“ makes it a restriction, and what moves is „is“.“",
+  "kind": "explain",
+  "de": "„„only“ makes it a restriction, and what moves is „is“.“"
+ },
+ {
+  "tr": "Uzun yol, kısa yol, geçmişe bakan mastar, en sonda sınama.",
+  "kind": "explain",
+  "de": "Langer Weg, kurzer Weg, der rückblickende Infinitiv, am Ende die Probe."
+ },
+ {
+  "tr": "Virgüller cümleciği fazladan yapıyor; tek bir yazılım var.",
+  "kind": "explain",
+  "de": "Die Kommas machen den Teilsatz zur Zugabe; es gibt nur eine Software."
+ },
+ {
+  "tr": "„„We imply something we do not say“ sounds like an accusation.“",
+  "kind": "explain",
+  "de": "„„We imply something we do not say“ sounds like an accusation.“"
+ },
+ {
+  "tr": "Birinci biçim, ikinci biçim, karşı karşıya koyan, en sonda yargı.",
+  "kind": "explain",
+  "de": "Erste Form, zweite Form, die gegenüberstellende, am Ende das Urteil."
+ },
+ {
+  "tr": "„„does“ appears for the sole purpose of being the thing that moves.“",
+  "kind": "explain",
+  "de": "„„does“ appears for the sole purpose of being the thing that moves.“"
+ },
+ {
+  "tr": "„has borrowed the paper's authority without borrowing its evidence.“",
+  "kind": "explain",
+  "de": "„has borrowed the paper's authority without borrowing its evidence.“"
+ },
+ {
+  "tr": "„Both halves are „what“ clauses, and the sentence is putting them against each other.“",
+  "kind": "explain",
+  "de": "„Both halves are „what“ clauses, and the sentence is putting them against each other.“"
+ },
+ {
+  "tr": "„The preposition is in front of „which“, which is the only place it goes in a specification.“",
+  "kind": "explain",
+  "de": "„The preposition is in front of „which“, which is the only place it goes in a specification.“"
+ },
+ {
+  "tr": "„the writer inserts „does“ and leaves the ending on, which is worse because it looks deliberate.“",
+  "kind": "explain",
+  "de": "„the writer inserts „does“ and leaves the ending on, which is worse because it looks deliberate.“"
+ },
+ {
+  "tr": "belirmek",
+  "kind": "gloss.tr",
+  "de": "erscheinen"
+ },
+ {
+  "tr": "etki",
+  "kind": "gloss.tr",
+  "de": "Wirkung"
+ },
+ {
+  "tr": "rıza",
+  "kind": "gloss.tr",
+  "de": "Einwilligung"
+ },
+ {
+  "tr": "sayı",
+  "kind": "gloss.tr",
+  "de": "Zahl"
+ },
+ {
+  "tr": "icadı",
+  "kind": "gloss.tr",
+  "de": "Erfindung"
+ },
+ {
+  "tr": "kimya",
+  "kind": "gloss.tr",
+  "de": "Chemie"
+ },
+ {
+  "tr": "koşum",
+  "kind": "gloss.tr",
+  "de": "Durchlauf"
+ },
+ {
+  "tr": "sayım",
+  "kind": "gloss.tr",
+  "de": "Zählung"
+ },
+ {
+  "tr": "sınıf",
+  "kind": "gloss.tr",
+  "de": "Klasse"
+ },
+ {
+  "tr": "yetke",
+  "kind": "gloss.tr",
+  "de": "Autorität"
+ },
+ {
+  "tr": "atlama",
+  "kind": "gloss.tr",
+  "de": "Auslassung"
+ },
+ {
+  "tr": "ayakta",
+  "kind": "gloss.tr",
+  "de": "bestehen bleibend"
+ },
+ {
+  "tr": "bildik",
+  "kind": "gloss.tr",
+  "de": "vertraut"
+ },
+ {
+  "tr": "ilişki",
+  "kind": "gloss.tr",
+  "de": "Beziehung"
+ },
+ {
+  "tr": "ip ucu",
+  "kind": "gloss.tr",
+  "de": "Faden"
+ },
+ {
+  "tr": "kaymak",
+  "kind": "gloss.tr",
+  "de": "verrutschen"
+ },
+ {
+  "tr": "kaymış",
+  "kind": "gloss.tr",
+  "de": "verrutscht"
+ },
+ {
+  "tr": "kurulu",
+  "kind": "gloss.tr",
+  "de": "installiert"
+ },
+ {
+  "tr": "olduğu",
+  "kind": "gloss.tr",
+  "de": "gewesen zu sein"
+ },
+ {
+  "tr": "oluşan",
+  "kind": "gloss.tr",
+  "de": "gebildet"
+ },
+ {
+  "tr": "belirli",
+  "kind": "gloss.tr",
+  "de": "bestimmt"
+ },
+ {
+  "tr": "çıkarma",
+  "kind": "gloss.tr",
+  "de": "Entfernung"
+ },
+ {
+  "tr": "işleyiş",
+  "kind": "gloss.tr",
+  "de": "Mechanismus"
+ },
+ {
+  "tr": "kararlı",
+  "kind": "gloss.tr",
+  "de": "stabil"
+ },
+ {
+  "tr": "kasıtlı",
+  "kind": "gloss.tr",
+  "de": "absichtlich"
+ },
+ {
+  "tr": "katalog",
+  "kind": "gloss.tr",
+  "de": "Katalog"
+ },
+ {
+  "tr": "yönerge",
+  "kind": "gloss.tr",
+  "de": "Vorschrift"
+ },
+ {
+  "tr": "ayartıcı",
+  "kind": "gloss.tr",
+  "de": "verlockend"
+ },
+ {
+  "tr": "basılmış",
+  "kind": "gloss.tr",
+  "de": "gedruckt"
+ },
+ {
+  "tr": "daha dar",
+  "kind": "gloss.tr",
+  "de": "enger"
+ },
+ {
+  "tr": "destekçi",
+  "kind": "gloss.tr",
+  "de": "Geldgeber"
+ },
+ {
+  "tr": "devirmek",
+  "kind": "gloss.tr",
+  "de": "umstellen"
+ },
+ {
+  "tr": "doğrudan",
+  "kind": "gloss.tr",
+  "de": "unmittelbar"
+ },
+ {
+  "tr": "götürmek",
+  "kind": "gloss.tr",
+  "de": "führen"
+ },
+ {
+  "tr": "muktedir",
+  "kind": "gloss.tr",
+  "de": "imstande"
+ },
+ {
+  "tr": "tek amaç",
+  "kind": "gloss.tr",
+  "de": "einziger Zweck"
+ },
+ {
+  "tr": "zariflik",
+  "kind": "gloss.tr",
+  "de": "Eleganz"
+ },
+ {
+  "tr": "deviriyor",
+  "kind": "gloss.tr",
+  "de": "stellt um"
+ },
+ {
+  "tr": "karşıtlık",
+  "kind": "gloss.tr",
+  "de": "Gegensatz"
+ },
+ {
+  "tr": "olay notu",
+  "kind": "gloss.tr",
+  "de": "Vorfallnotiz"
+ },
+ {
+  "tr": "söylenmiş",
+  "kind": "gloss.tr",
+  "de": "formuliert"
+ },
+ {
+  "tr": "yakalıyor",
+  "kind": "gloss.tr",
+  "de": "erwischt"
+ },
+ {
+  "tr": "yinelenen",
+  "kind": "gloss.tr",
+  "de": "wiederholt"
+ },
+ {
+  "tr": "hata kaydı",
+  "kind": "gloss.tr",
+  "de": "Fehlerbericht"
+ },
+ {
+  "tr": "hiç olmadı",
+  "kind": "gloss.tr",
+  "de": "nie gewesen"
+ },
+ {
+  "tr": "ilke metni",
+  "kind": "gloss.tr",
+  "de": "Richtlinie"
+ },
+ {
+  "tr": "imzalanmış",
+  "kind": "gloss.tr",
+  "de": "unterschrieben"
+ },
+ {
+  "tr": "kabul eden",
+  "kind": "gloss.tr",
+  "de": "einräumend"
+ },
+ {
+  "tr": "otomasyonu",
+  "kind": "gloss.tr",
+  "de": "Automatisierung"
+ },
+ {
+  "tr": "belirtilmiş",
+  "kind": "gloss.tr",
+  "de": "präzisiert"
+ },
+ {
+  "tr": "ihmal etmiş",
+  "kind": "gloss.tr",
+  "de": "hat ausgelassen"
+ },
+ {
+  "tr": "yalanlanmış",
+  "kind": "gloss.tr",
+  "de": "widerlegt"
+ },
+ {
+  "tr": "yardımı yok",
+  "kind": "gloss.tr",
+  "de": "hilft nicht"
+ },
+ {
+  "tr": "yorumlanmış",
+  "kind": "gloss.tr",
+  "de": "gedeutet"
+ },
+ {
+  "tr": "bakıp bulmak",
+  "kind": "gloss.tr",
+  "de": "nachschlagen"
+ },
+ {
+  "tr": "işaretlenmiş",
+  "kind": "gloss.tr",
+  "de": "markiert"
+ },
+ {
+  "tr": "kendi dosyam",
+  "kind": "gloss.tr",
+  "de": "meine eigene Akte"
+ },
+ {
+  "tr": "ölçüm aygıtı",
+  "kind": "gloss.tr",
+  "de": "Messgerät"
+ },
+ {
+  "tr": "söz verilmiş",
+  "kind": "gloss.tr",
+  "de": "zugesagt"
+ },
+ {
+  "tr": "teknik belge",
+  "kind": "gloss.tr",
+  "de": "Spezifikation"
+ },
+ {
+  "tr": "araya sokuyor",
+  "kind": "gloss.tr",
+  "de": "schiebt ein"
+ },
+ {
+  "tr": "bir kez olsun",
+  "kind": "gloss.tr",
+  "de": "kein einziges Mal"
+ },
+ {
+  "tr": "ima ettiğimiz",
+  "kind": "gloss.tr",
+  "de": "was wir andeuten"
+ },
+ {
+  "tr": "işlem yordamı",
+  "kind": "gloss.tr",
+  "de": "Verfahren"
+ },
+ {
+  "tr": "itiraz ediyor",
+  "kind": "gloss.tr",
+  "de": "bestreitet"
+ },
+ {
+  "tr": "karşı karşıya",
+  "kind": "gloss.tr",
+  "de": "einander gegenüber"
+ },
+ {
+  "tr": "karşılaştırma",
+  "kind": "gloss.tr",
+  "de": "Vergleich"
+ },
+ {
+  "tr": "ödünç alınmış",
+  "kind": "gloss.tr",
+  "de": "geliehen"
+ },
+ {
+  "tr": "savunulabilir",
+  "kind": "gloss.tr",
+  "de": "vertretbar"
+ },
+ {
+  "tr": "tahmin ediyor",
+  "kind": "gloss.tr",
+  "de": "rät"
+ },
+ {
+  "tr": "yöntem bölümü",
+  "kind": "gloss.tr",
+  "de": "Methodenteil"
+ },
+ {
+  "tr": "iyileştirilmiş",
+  "kind": "gloss.tr",
+  "de": "verbessert"
+ },
+ {
+  "tr": "yanlış biçimde",
+  "kind": "gloss.tr",
+  "de": "falsch"
+ },
+ {
+  "tr": "yönetim kurulu",
+  "kind": "gloss.tr",
+  "de": "Vorstand"
+ },
+ {
+  "tr": "bulgular bölümü",
+  "kind": "gloss.tr",
+  "de": "Ergebnisteil"
+ },
+ {
+  "tr": "çiftler hâlinde",
+  "kind": "gloss.tr",
+  "de": "paarweise"
+ },
+ {
+  "tr": "gereğini yapmak",
+  "kind": "gloss.tr",
+  "de": "danach handeln"
+ },
+ {
+  "tr": "haberini yapmak",
+  "kind": "gloss.tr",
+  "de": "berichten über"
+ },
+ {
+  "tr": "tartışma bölümü",
+  "kind": "gloss.tr",
+  "de": "Diskussionsteil"
+ },
+ {
+  "tr": "teşekkür bölümü",
+  "kind": "gloss.tr",
+  "de": "Danksagung"
+ },
+ {
+  "tr": "yalnızca anıtta",
+  "kind": "gloss.tr",
+  "de": "nur im Denkmal"
+ },
+ {
+  "tr": "bilgilendirilmiş",
+  "kind": "gloss.tr",
+  "de": "informiert"
+ },
+ {
+  "tr": "devreye alınması",
+  "kind": "gloss.tr",
+  "de": "Einführung"
+ },
+ {
+  "tr": "ısıttıktan sonra",
+  "kind": "gloss.tr",
+  "de": "nach dem Erhitzen"
+ },
+ {
+  "tr": "duyurulmuş olacak",
+  "kind": "gloss.tr",
+  "de": "wird bekannt gegeben worden sein"
+ },
+ {
+  "tr": "karşılaştırılması",
+  "kind": "gloss.tr",
+  "de": "Vergleich"
+ },
+ {
+  "tr": "otomatikleştirdik",
+  "kind": "gloss.tr",
+  "de": "wir haben automatisiert"
+ },
+ {
+  "tr": "yavaş olduğu için",
+  "kind": "gloss.tr",
+  "de": "weil sie langsam war"
+ },
+ {
+  "tr": "yanlış değerlendirmiş",
+  "kind": "gloss.tr",
+  "de": "falsch eingeschätzt"
+ },
+ {
+  "tr": "çalışmanın belirlediği",
+  "kind": "gloss.tr",
+  "de": "was die Studie bestimmt"
+ },
+ {
+  "tr": "yalnızca aşırı sıcakta",
+  "kind": "gloss.tr",
+  "de": "nur bei extremer Hitze"
+ },
+ {
+  "tr": "istatistiksel sınamaydı",
+  "kind": "gloss.tr",
+  "de": "war der statistische Test"
+ }
+]

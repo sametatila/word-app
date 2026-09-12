@@ -1,0 +1,277 @@
+[
+ {
+  "tr": "Yöntem kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Methodenkarte aus."
+ },
+ {
+  "tr": "„comparison“ „of“ alıyor; „distinction“ „between“ alıyor; „contrast“ da „between“ alıyor; „parallel“ „with“ alıyor.",
+  "kind": "form.facts",
+  "de": "„comparison“ nimmt „of“; „distinction“ nimmt „between“; „contrast“ nimmt auch „between“; „parallel“ nimmt „with“."
+ },
+ {
+  "tr": "„never“ yardımcı fiili taşıyor; „rarely“ şimdiki zamanda „does“ istiyor; ana fiil eki kaybediyor; iki yaygın yanlış var.",
+  "kind": "form.facts",
+  "de": "„never“ trägt das Hilfsverb; „rarely“ verlangt im Präsens „does“; das Hauptverb verliert die Endung; es gibt zwei häufige Fehler."
+ },
+ {
+  "tr": "Önce ısıtma sonra katalizör; tepkime yavaş olduğu için ısı istedi; kristal pazartesi oluştu; iki okuma ayrılıyorsa bağlaç yaz.",
+  "kind": "form.facts",
+  "de": "Zuerst erhitzen, dann der Katalysator; die Reaktion brauchte Hitze, weil sie langsam war; der Kristall bildete sich am Montag; gehen die zwei Lesarten auseinander, schreib das Bindewort."
+ },
+ {
+  "tr": "Ad yalnızca anıtta yazılı.",
+  "kind": "build.tr",
+  "de": "Nur im Denkmal steht der Name geschrieben."
+ },
+ {
+  "tr": "Davalar arasındaki ayrım açık.",
+  "kind": "build.tr",
+  "de": "Der Unterschied zwischen den Fällen ist klar."
+ },
+ {
+  "tr": "Rıza isteselerdi kabul ederdik.",
+  "kind": "build.tr",
+  "de": "Hätten sie um Einwilligung gebeten, hätten wir zugestimmt."
+ },
+ {
+  "tr": "Çalışmanın belirlediği şey sınır.",
+  "kind": "build.tr",
+  "de": "Was die Studie bestimmt, ist die Grenze."
+ },
+ {
+  "tr": "Deneyin yinelendiği bildiriliyor.",
+  "kind": "build.tr",
+  "de": "Es wird gemeldet, dass der Versuch wiederholt wurde."
+ },
+ {
+  "tr": "Pazartesi oluşan kristal ölçüldü.",
+  "kind": "build.tr",
+  "de": "Am Montag gebildet, wurde der Kristall gemessen."
+ },
+ {
+  "tr": "Sürecin otomasyonu bir yıl sürdü.",
+  "kind": "build.tr",
+  "de": "Die Automatisierung des Prozesses dauerte ein Jahr."
+ },
+ {
+  "tr": "Yamanın devreye alınması gecikti.",
+  "kind": "build.tr",
+  "de": "Die Einführung des Patches verzögerte sich."
+ },
+ {
+  "tr": "Aracın icadı enstitüyü değiştirdi.",
+  "kind": "build.tr",
+  "de": "Die Erfindung des Werkzeugs veränderte das Institut."
+ },
+ {
+  "tr": "Ekip bir adımı ihmal etmiş olmalı.",
+  "kind": "build.tr",
+  "de": "Das Team muss einen Schritt ausgelassen haben."
+ },
+ {
+  "tr": "Mayısta güncellenen yazılım çöktü.",
+  "kind": "build.tr",
+  "de": "Die Software, die im Mai aktualisiert wurde, fiel aus."
+ },
+ {
+  "tr": "Miras bir kez olsun kamuya ulaşmadı.",
+  "kind": "build.tr",
+  "de": "Kein einziges Mal erreichte das Erbe die Öffentlichkeit."
+ },
+ {
+  "tr": "Ölçümlerin kararlı olduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Messwerte sollen stabil sein."
+ },
+ {
+  "tr": "Sürümler arasındaki karşıtlık keskin.",
+  "kind": "build.tr",
+  "de": "Der Gegensatz zwischen den Fassungen ist scharf."
+ },
+ {
+  "tr": "Yalnızca aşırı sıcakta meydana gelir.",
+  "kind": "build.tr",
+  "de": "Nur bei extremer Hitze tritt es auf."
+ },
+ {
+  "tr": "Bir soru bu kadar erken nadiren doğar.",
+  "kind": "build.tr",
+  "de": "Selten stellt sich eine Frage so früh."
+ },
+ {
+  "tr": "Başarısız olan istatistiksel sınamaydı.",
+  "kind": "build.tr",
+  "de": "Es war der statistische Test, der versagte."
+ },
+ {
+  "tr": "Ölçeği yanlış değerlendirmiş olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können den Maßstab nicht falsch eingeschätzt haben."
+ },
+ {
+  "tr": "Sıvıyı ısıttıktan sonra katalizörü ekle.",
+  "kind": "build.tr",
+  "de": "Nach dem Erhitzen der Flüssigkeit gib den Katalysator dazu."
+ },
+ {
+  "tr": "İma ettiğimiz şey söylediğimiz şey değil.",
+  "kind": "build.tr",
+  "de": "Was wir andeuten, ist nicht das, was wir sagen."
+ },
+ {
+  "tr": "Cuma gününe kadar birleşme duyurulmuş olacak.",
+  "kind": "build.tr",
+  "de": "Bis Freitag wird die Fusion bekannt gegeben worden sein."
+ },
+ {
+  "tr": "Böyle bir örüntü daha önce hiç ortaya çıkmadı.",
+  "kind": "build.tr",
+  "de": "Nie ist ein solches Muster aufgetaucht."
+ },
+ {
+  "tr": "İki raporun karşılaştırılması bir hafta sürdü.",
+  "kind": "build.tr",
+  "de": "Der Vergleich der zwei Berichte dauerte eine Woche."
+ },
+ {
+  "tr": "İzlem grubunun fazla küçük olduğu düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Die Kohorte soll zu klein gewesen sein."
+ },
+ {
+  "tr": "Yavaş olduğu için tepkime daha çok ısı istedi.",
+  "kind": "build.tr",
+  "de": "Da sie langsam war, brauchte die Reaktion mehr Hitze."
+ },
+ {
+  "tr": "Böyle bir dönüm noktası daha önce hiç gösterilmedi.",
+  "kind": "build.tr",
+  "de": "Nie zuvor wurde ein solcher Meilenstein gezeigt."
+ },
+ {
+  "tr": "Telif hakkı açık olsaydı dava şimdi kapanmış olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre das Urheberrecht klar gewesen, wäre der Fall jetzt abgeschlossen."
+ },
+ {
+  "tr": "Başka bir ek: „-ion“.",
+  "kind": "build.hint",
+  "de": "Eine andere Endung: „-ion“."
+ },
+ {
+  "tr": "Yine „-ion“, yine „of“.",
+  "kind": "build.hint",
+  "de": "Wieder „-ion“, wieder „of“."
+ },
+ {
+  "tr": "„distinction“ „between“ istiyor.",
+  "kind": "build.hint",
+  "de": "„distinction“ verlangt „between“."
+ },
+ {
+  "tr": "„only“ sınırlama; yine „does“ taşıyor.",
+  "kind": "build.hint",
+  "de": "„only“ ist eine Einschränkung; auch hier trägt „does“."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bugünün masasında.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge liegt auf dem heutigen Tisch."
+ },
+ {
+  "tr": "Çıkarım: kanıt tek bir açıklama bırakıyor.",
+  "kind": "build.hint",
+  "de": "Ein Schluss: der Beleg lässt nur eine Erklärung übrig."
+ },
+ {
+  "tr": "Olumsuzu „can't have“; „mustn't have“ yok.",
+  "kind": "build.hint",
+  "de": "Die Verneinung ist „can't have“; „mustn't have“ gibt es nicht."
+ },
+ {
+  "tr": "İki „what“ cümleciği karşı karşıya konuyor.",
+  "kind": "build.hint",
+  "de": "Zwei „what“-Sätze werden einander gegenübergestellt."
+ },
+ {
+  "tr": "„has“ özneyi atlıyor; fiilin gerisi yerinde.",
+  "kind": "build.hint",
+  "de": "„has“ überspringt das Subjekt; der Rest des Verbs bleibt stehen."
+ },
+ {
+  "tr": "„did“ geliyor, ana fiil yalın hâline dönüyor.",
+  "kind": "build.hint",
+  "de": "„did“ kommt, das Hauptverb kehrt in die Grundform zurück."
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: oluşturan söylenmiyor.",
+  "kind": "build.hint",
+  "de": "Beginnt mit der dritten Form: wer es bildete, wird nicht genannt."
+ },
+ {
+  "tr": "Mastar geçmişe bakıyor: iş düşünmeden önceye ait.",
+  "kind": "build.hint",
+  "de": "Der Infinitiv blickt zurück: die Handlung liegt vor dem Denken."
+ },
+ {
+  "tr": "Fiil isme dönüyor; ek de edat da ezberden geliyor.",
+  "kind": "build.hint",
+  "de": "Das Verb wird zum Substantiv; Endung und Präposition kommen aus dem Gedächtnis."
+ },
+ {
+  "tr": "„contrast“ da „between“ alıyor; „parallel“ almıyor.",
+  "kind": "build.hint",
+  "de": "Auch „contrast“ nimmt „between“; „parallel“ nicht."
+ },
+ {
+  "tr": "„comparison“ „of“ istiyor; edat da ezberden geliyor.",
+  "kind": "build.hint",
+  "de": "„comparison“ verlangt „of“; auch die Präposition kommt aus dem Gedächtnis."
+ },
+ {
+  "tr": "Öne çıkan bir yer; „only“ onu sınırlamaya çeviriyor.",
+  "kind": "build.hint",
+  "de": "Ein vorangestellter Ort; „only“ macht daraus eine Einschränkung."
+ },
+ {
+  "tr": "Yalın „-ing“ burada NEDEN taşıyor, eşzamanlılık değil.",
+  "kind": "build.hint",
+  "de": "Das schlichte „-ing“ trägt hier einen GRUND, keine Gleichzeitigkeit."
+ },
+ {
+  "tr": "Şimdiki zamanda „does“ giriyor; ana fiil çekimini kaybediyor.",
+  "kind": "build.hint",
+  "de": "Im Präsens kommt „does“ dazu; das Hauptverb verliert seine Endung."
+ },
+ {
+  "tr": "Yöntemin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Methode: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Edatların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Präpositionen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Katalogun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Katalogs: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Çalışmanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Studie: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Tartışmanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Diskussion: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Bulgular bölümünün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Ergebnisteils: bring sie in die richtige Ordnung."
+ }
+]

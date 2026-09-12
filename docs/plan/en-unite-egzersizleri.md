@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
-| B2 | 10–25 | bekliyor |
+| B2 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
+| B2 | 13–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -1035,6 +1035,49 @@ düzeltmesi de geldi: „movement“ ünite 9'un dersinde geçtiği için ünite
 7'nin metninden çıkarıldı, ve „fact-check“ tireli terim olarak
 kapanmadığı için „a check of this kind“ diye yazıldı — ünite 4'te
 „post-mortem“le konan kural ikinci kez çalıştı.
+
+
+**B2 ünite 10–12 (2026-09-12).** Ünite 10 If they had printed it ·
+Never before published · By the time it airs ·
+The comparison of the reports; ünite 11 How the study works · In the lab ·
+The automation of the process · When the data lands; ünite 12
+The software, which was updated · What the study shows ·
+Never has a pattern emerged · It must have failed. On sekiz egzersiz;
+ünite dışı ölçüm %0,0. B2 yuvalarının 72'si dolu.
+
+Ünite 10'un noktası ADLAŞTIRMA KENDİ EDATINI DA GETİRİYOR: „comparison
+OF“, „distinction BETWEEN“, „contrast BETWEEN“, „parallel WITH“. Ünite 4
+ekin fiilden türetilemediğini göstermişti; bu ikinci fatura, ve üstelik
+fiilin aldığı edatla hiç ilgisi yok („compare one thing WITH another“ ama
+„the comparison OF two things“). Almanca eksende bu ünite 4'teki bulgunun
+devamı: Almanca bu bağı çoğu kez EDATSIZ kuruyor, tamlayan hâliyle
+(„der Vergleich der zwei Berichte“), yani Almanca okuyanın seçeceği bir
+edat bile yok — İngilizcede iki ayrı ezber gerekirken Almancada sıfır.
+
+Ünite 11'in noktası YALIN ORTAÇ İKİ İLİŞKİYİ BİRDEN TAŞIYOR: „Being slow,
+the reaction needed more heat“ eşzamanlılık değil NEDEN veriyor, ve
+İngilizce hangisi olduğunu söylemiyor. Almanca eksende bu hattın yeni bir
+türü — **bir dilde belirsizlik serbest, ötekinde seçim zorunlu**. Almanca
+bir bağlaç koymak zorunda („da sie langsam war“ mı, „während …“ mi) ve
+bu yüzden Almanca okuyan İngilizce cümleyi çevirirken kendi dilinin
+istediği kararı vermek zorunda kalıyor; İngilizce ise kararı okura
+bırakıyor. Yazma kuralı bu yüzden okuma kuralından dar: iki okuma aynı
+eyleme çıkmıyorsa bağlacı yaz.
+
+Ünite 12'nin noktası ŞİMDİKİ ZAMANDA DEVRİK SIRA „DOES“ İSTİYOR:
+„Rarely does a question arise so early“ — devrilecek yardımcı fiil yok,
+o yüzden „does“ yalnızca taşınacak şey olmak için geliyor ve ana fiil
+çekimini kaybediyor. Almanca eksende ÖNGÖRÜLEN HATA burada: Almanca
+doğrudan asıl fiili deviriyor („Selten stellt sich eine Frage so früh“),
+yardımcı fiile hiç ihtiyaç duymuyor — yani Almanca okuyanın üreteceği şey
+tam olarak „Rarely arises a question“. Ünite 3 ve 5'teki „fazla çalışan
+refleks“ uyarısının üçüncü ve en somut hâli.
+
+Ölçüm bu turda seksen bir sözlükçe maddesi ekletti, yedi maddeyi sildirdi
+ve bir dikteyi değiştirtti — dikte cümlesi bir listenin ortasında
+duruyordu („the automation of the process, the invention of the tool,
+the introduction of the patch“), o yüzden bölüm başındaki tam cümleye
+çevrildi.
 
 
 ## Tamamlanma ölçütü
