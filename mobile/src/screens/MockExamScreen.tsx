@@ -291,7 +291,7 @@ export function MockExamScreen() {
     }
     setBusy(false);
     setPhase("gorev");
-  }, [paper, part, busy, budgets]);
+  }, [paper, part, busy, budgets, sureVer]);
 
   /* ── bitir ──────────────────────────────────────────────────────────── */
   useEffect(() => {

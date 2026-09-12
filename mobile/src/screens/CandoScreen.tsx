@@ -76,6 +76,13 @@ export function CandoScreen() {
       setPhase("loading");
       fetchCando().then((d) => { if (alive) { setData(d); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
       return () => { alive = false; };
+      /* `attempt` gövdede GEÇMİYOR ve kural bunu "gereksiz bağımlılık"
+         sayıyor; oysa tek işi bu: hata kartındaki "tekrar dene" düğmesi
+         `setAttempt`i artırıyor, callback yeniden kuruluyor ve
+         `useFocusEffect` isteği baştan atıyor. Bağımlılığı silmek düğmeyi
+         sessizce ölü bırakırdı — ekranda çekerek yenileme de yok, yani tek
+         çıkış ekrandan çıkmak olurdu. */
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, attempt]),
   );
 
