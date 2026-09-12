@@ -15570,3 +15570,36 @@ hesaplanamaz.
 
 Dört enjeksiyon doğrulandı: her iki bağlantıdan işareti kaldırmak, mobil olayı
 kaldırmak, mobil koşulun yarısını kaldırmak.
+
+## §11.428 — `check:endpoints` yalnız bir yöne bakıyordu
+
+`check:endpoints` üç şey soruyordu: her ucun bir çağıranı var mı (`ALLOW`), bir
+uç yalnız **webden** mi çağrılıyor (`WEB_ONLY`), ve aynı sorunun yöntem hâli
+(`WEB_ONLY_METHOD`). Bu listenin kendi yorumu onu "`ALLOW`un parite hâli" diye
+tanımlıyor — ama **paritenin öteki yarısı hiç yoktu**: mobilin çağırdığı ve
+webin çağırmadığı uçlar ölçülmüyordu.
+
+Asimetrinin pahalı yönü tam olarak bu. Android bu projede en ileride olan
+taraf; yani "mobilde bir yüzey var, webde hiç yok" durumu "webde var, mobilde
+yok"tan **daha sık** ve aynı derecede sessiz. Web-only tarafı ölçüldüğünde iki
+gerçek örnek çıkmıştı (`/api/errors`, `/api/growth`); ters yön hiç ölçülmemişti.
+
+Ölçüm eklendi ve bugünkü durum yazıldı: **7 uç, 11 yöntem** yalnız mobilden
+çağrılıyor. Hepsinin sebebi aynı ailenin türevi — web sayfayı **sunucuda**
+çiziyor ve veriyi kendi sunucu modülünden doğrudan okuyor
+(`lib/immersion/build`, `lib/session`, `lib/premium/access`, `lib/mock-exams`),
+mobil aynı veriyi HTTP ile almak zorunda. Geri kalanı taşımaya özgü
+(`/api/account/apple-code`, `/api/push/device`, `/api/turnstile`). Yani bugün
+**webde eksik bir yüzey yok**; ama bundan sonra biri eksik kalırsa kapı
+söyleyecek.
+
+İki yön de artık bayatlamaya karşı korunuyor: listede olup **artık webde de**
+çağrılan bir kayıt da düşüyor.
+
+`--check` özet satırı sayıları da yazıyor (`5 yalnız web (9 yöntem), 7 yalnız
+mobil (11 yöntem)`): "tamam" tek başına taramanın **çalıştığını** söylemiyordu —
+kümeler boşalsa da "belgesiz yok" doğru çıkardı.
+
+Dört enjeksiyon doğrulandı: kayıttan bir uç düşürmek, listeye artık iki tarafın
+da çağırdığı bir uç eklemek, yöntem kaydını düşürmek, ve webin gerçek bir
+çağrısını kaldırmak (`POST /api/quests` yalnız mobile düştü ve kapı söyledi).

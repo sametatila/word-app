@@ -142,6 +142,46 @@ const WEB_ONLY = {
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
 };
 
+/**
+ * MOBIL CAGIRIYOR AMA WEB CAGIRMIYOR — sebebiyle.
+ *
+ * `WEB_ONLY`in AYNA YARISI ve BASTAN BERI EKSIKTI: olcum yalnizca bir yone
+ * bakiyordu. Oysa sorunun ters yonu de aynı derecede sessiz - mobilde bir
+ * yuzey var, webde hic yok ve kimse fark etmiyor. Android bu projede en
+ * ileride olan taraf, yani asimetrinin PAHALI yonu tam olarak bu.
+ *
+ * Bugunku kayitlarin hepsi ayni sebebin turevi: web sayfayi SUNUCUDA ciziyor
+ * ve veriyi kendi sunucu modulunden dogrudan okuyor (`lib/immersion/build`,
+ * `lib/session`, `lib/premium/access` gibi); mobil ayni veriyi HTTP ile
+ * almak zorunda. Yani bunlar "webde eksik yuzey" degil, tasima farki.
+ *
+ * Liste yalniz KISALABILIR: bir ucu buraya eklemek, webde karsiligi
+ * olmadigini BELGELEMEKTIR.
+ */
+const MOBIL_ONLY = {
+  "/api/account/apple-code": "Apple girisinin native kod takasi; webde akis tarayicida tamamlaniyor",
+  "/api/immersion": "unite verisi; web sayfayi sunucuda cizip `lib/immersion/build`i dogrudan cagiriyor",
+  "/api/config": "uzak yapilandirma; web ayni degerleri sunucuda okuyor (env + lib/config)",
+  "/api/me": "oturum ozeti; web sunucu tarafinda `lib/session` ile okuyor",
+  "/api/premium/status": "premium durumu; web sunucu tarafinda `lib/premium/access` ile okuyor",
+  "/api/push/device": "FCM cihaz jetonu; tarayicida karsiligi /api/push/subscribe",
+  "/api/turnstile": "site anahtari; web onu sunucuda cizilen sayfaya gomuyor",
+};
+
+const MOBIL_ONLY_METHOD = {
+  "POST /api/account/apple-code": "native Apple kod takasi",
+  "GET /api/config": "web ayni degerleri sunucuda okuyor",
+  "GET /api/immersion": "web `lib/immersion/build`i sunucuda cagiriyor",
+  "GET /api/me": "web `lib/session`i sunucuda cagiriyor",
+  "GET /api/premium/status": "web `lib/premium/access`i sunucuda cagiriyor",
+  "POST /api/push/device": "FCM cihaz jetonu",
+  "DELETE /api/push/device": "FCM cihaz jetonu",
+  "GET /api/turnstile": "site anahtari sunucuda gomuluyor",
+  "GET /api/mock-exam": "kagit katalogu; web paketi sunucuda ice aliyor (`lib/mock-exams`)",
+  "GET /api/placement": "yerlestirme sorulari; web paketi sunucuda ice aliyor",
+  "GET /api/words": "kelime listesi; web sayfayi sunucuda ciziyor",
+};
+
 const all = routes().sort();
 const src = sources(["src", "scripts", "mobile/src", "mobile/scripts"]);
 /* Dinamik parça (`[id]`) çağıranda değişken olarak duruyor: önek aranıyor. */
@@ -160,6 +200,9 @@ const calledIn = (list, api) => list.some((t) => t.includes(prefix(api)));
 const webOnly = all.filter((a) => calledIn(webSrc, a) && !calledIn(mobSrc, a));
 const webOnlyUndoc = webOnly.filter((a) => !WEB_ONLY[prefix(a)] && !WEB_ONLY[a]);
 const webOnlyStale = Object.keys(WEB_ONLY).filter((a) => !webOnly.some((x) => prefix(x) === a || x === a));
+const mobOnly = all.filter((a) => calledIn(mobSrc, a) && !calledIn(webSrc, a));
+const mobOnlyUndoc = mobOnly.filter((a) => !MOBIL_ONLY[prefix(a)] && !MOBIL_ONLY[a]);
+const mobOnlyStale = Object.keys(MOBIL_ONLY).filter((a) => !mobOnly.some((x) => prefix(x) === a || x === a));
 
 /* Cagri yerindeki YONTEM: `method: "X"` varsa o, yoksa GET. Pencere cagri
    ifadesinin sonunda kesiliyor - iki komsu cagri (once GET, sonra POST) ayni
@@ -181,6 +224,7 @@ const routeMethods = (f) =>
   [...fs.readFileSync(f, "utf8").matchAll(/export async function (GET|POST|PATCH|PUT|DELETE)/g)].map((m) => m[1]);
 
 const yontemSatirlari = [];
+const yontemSatirlariMobil = [];
 for (const ep of all) {
   const dosya = path.join(ROOT, "src", "app", ep, "route.ts");
   if (!fs.existsSync(dosya)) continue;
@@ -189,10 +233,15 @@ for (const ep of all) {
     if (yontemler(webSrc.join("\n"), p).has(m) && !yontemler(mobSrc.join("\n"), p).has(m)) {
       yontemSatirlari.push(`${m} ${p}`);
     }
+    if (yontemler(mobSrc.join("\n"), p).has(m) && !yontemler(webSrc.join("\n"), p).has(m)) {
+      yontemSatirlariMobil.push(`${m} ${p}`);
+    }
   }
 }
 const yontemUndoc = yontemSatirlari.filter((r) => !WEB_ONLY_METHOD[r]);
 const yontemStale = Object.keys(WEB_ONLY_METHOD).filter((r) => !yontemSatirlari.includes(r));
+const yontemMobUndoc = yontemSatirlariMobil.filter((r) => !MOBIL_ONLY_METHOD[r]);
+const yontemMobStale = Object.keys(MOBIL_ONLY_METHOD).filter((r) => !yontemSatirlariMobil.includes(r));
 
 const check = process.argv.includes("--check");
 if (!check) {
@@ -234,5 +283,36 @@ if (webOnlyStale.length) {
   console.error("\nWEB_ONLY LİSTESİNDE OLUP ARTIK MOBİLDE DE ÇAĞRILAN UÇ (listeden çıkar):");
   for (const a of webOnlyStale) console.error(`  ${a}`);
 }
-if (!bad) console.log(check ? `tamam: ${all.length} uç, ${orphans.length} belgelenmiş çağıransız` : "\nHEPSİ YAZILI\n");
+if (mobOnlyUndoc.length) {
+  bad++;
+  console.error("\nYALNIZ MOBİLİN ÇAĞIRDIĞI UÇ (webde karşılığı yok):");
+  for (const a of mobOnlyUndoc) console.error(`  ${a}`);
+  console.error("\nWeb istemciye bağla ya da `MOBIL_ONLY` listesine SEBEBİYLE ekle.");
+}
+if (mobOnlyStale.length) {
+  bad++;
+  console.error("\nMOBIL_ONLY LİSTESİNDE OLUP ARTIK WEBDE DE ÇAĞRILAN UÇ (listeden çıkar):");
+  for (const a of mobOnlyStale) console.error(`  ${a}`);
+}
+if (yontemMobUndoc.length) {
+  bad++;
+  console.error("\nYALNIZ MOBİLİN ÇAĞIRDIĞI YÖNTEM (webde o yöntem yok):");
+  for (const r of yontemMobUndoc) console.error(`  ${r}`);
+  console.error("\nWeb istemciye bağla ya da `MOBIL_ONLY_METHOD` listesine SEBEBİYLE ekle.");
+}
+if (yontemMobStale.length) {
+  bad++;
+  console.error("\nMOBIL_ONLY_METHOD LİSTESİNDE OLUP ARTIK WEBDE DE ÇAĞRILAN YÖNTEM (listeden çıkar):");
+  for (const r of yontemMobStale) console.error(`  ${r}`);
+}
+/* Sayilar cikisa yaziliyor: "tamam" tek basina taramanin CALISTIGINI
+   soylemiyor - kumeler bosalsa da "belgesiz yok" dogru cikardi. */
+if (!bad)
+  console.log(
+    check
+      ? `tamam: ${all.length} uç, ${orphans.length} belgelenmiş çağıransız, ` +
+        `${webOnly.length} yalnız web (${yontemSatirlari.length} yöntem), ` +
+        `${mobOnly.length} yalnız mobil (${yontemSatirlariMobil.length} yöntem)`
+      : "\nHEPSİ YAZILI\n",
+  );
 process.exit(bad ? 1 : 0);
