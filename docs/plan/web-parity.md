@@ -13743,3 +13743,52 @@ tur aynı yolu yeniden yürümesin:
 Bir de çevre notu: `check:pairs`, `test:mix`, `test:entitlement` yerel
 PostgreSQL, `test:walk` Playwright tarayıcısı istiyor. Bu makinede ikisi de
 yok; kırmızılıkları koddan değil ortamdan geliyor.
+
+## §11.392 — Deneme kâğıdının süresi arka planda duruyordu
+
+Süreli her yüzeyin sayacı bir **zaman damgasından** okumalı, bir sayıcıyı
+azaltarak değil. Sebep basit: `setInterval` uygulama ya da sekme arka plana
+alınınca **duruyor** (tarayıcılar dakikada bire kadar kısıyor, mobil
+uygulamada tamamen duruyor). Sayıcı kullanılırsa süre **istenildiği kadar
+uzatılabilir** — ve süre sınavın kısıtı, kâğıdın kendisi kadar kuralın
+parçası.
+
+Ölçüm dört süreli yüzey buldu; üçü zaten doğruydu:
+
+| Yüzey | Durum |
+|---|---|
+| Sınav | duvar saati (bir turda düzeltilmişti) |
+| Patron · Meydan okuma | duvar saati (baştan beri `deadline` damgası) |
+| **Deneme sınavı** | **sayıcı — iki platformda birden** |
+
+Deneme kâğıdı görev başına bütçe işletiyor ve aynı satırı taşıyordu:
+`setInterval(() => setLeft((s) => s - 1), 1000)`. Üstelik yarım kalan koşu
+`secondsLeft` ile kaydedildiği için **kazanılan süre kalıcıydı**: uygulamayı
+arka plana atıp dönen öğrenci bir sonraki oturuma da o süreyle giriyordu.
+
+`sureVer` artık hem kalan saniyeyi hem bitiş damgasını kuruyor; sayaç yalnız
+damgadan okuyor ve arka plandan dönüşte ilk saniyeyi beklemeden düzeltiyor.
+
+### Kapı kusuru beklenen hâl sanıyordu
+
+En öğretici tarafı bu. Mevcut bir ölçü zaten tam bu şeye bakıyordu ve
+**yorumunda kusuru kural olarak yazıyordu**:
+
+> "Deneme kağıdında iki taraf da GOREV butcesini **sayıcıyla** işletiyor ve
+> kalan saniyeyi kaydediyor; kalıp birebir aynı olmalı."
+
+Ölçü eşitliği doğruluyordu — çünkü karşılaştırma **eşitliğe** bakar,
+**doğruluğa** değil. İki taraf da aynı şekilde yanlış olduğu için kapı yeşil
+yanıyordu. Bu defterde adı konmuş bir sınıf: **"ikisi de yanlış olduğu için
+karşılaştırma geçiyor"**. O yorum düzeltildi ve §269'a bağlandı.
+
+### §269
+
+Dört ölçü, hepsi mutlak: dört süreli yüzeyin mobil tarafı damgadan okuyor,
+web tarafı damgadan okuyor, ve deneme sınavında süreyi kuran **tek kapı**
+olduğu (çıplak `setLeft` sayısı iki platformda da iki: tik işlevi ve
+`sureVer`in kendisi) — doğrudan bir `setLeft` damgayı güncellemez ve sayaç
+eski damgadan okumaya devam eder.
+
+Üç enjeksiyon denendi (web'in sayıcıya dönmesi, mobilde çıplak bir `setLeft`,
+kapının kaybolması), üçü de yakalandı.
