@@ -1,0 +1,442 @@
+[
+ {
+  "tr": "Üç özür, tek öğüt. Sorun neymiş?",
+  "kind": "intro",
+  "de": "Drei Entschuldigungen, ein Rat. Worin liegt das Problem?"
+ },
+ {
+  "tr": "Bir fotoğraf, bir aile. Kim kimin nesi?",
+  "kind": "intro",
+  "de": "Ein Foto, eine Familie. Wer ist wer?"
+ },
+ {
+  "tr": "Bir fotoğraf dolaşıyor. Ne kadarı doğru?",
+  "kind": "intro",
+  "de": "Ein Foto macht die Runde. Wie viel davon stimmt?"
+ },
+ {
+  "tr": "Yeni bir dizi. Kaç bölüm izlendi, konusu ne?",
+  "kind": "intro",
+  "de": "Eine neue Serie. Wie viele Folgen sind gesehen, worum geht es?"
+ },
+ {
+  "tr": "Dört sözcüğün işi. Neden kâğıt, neden ayrıntı?",
+  "kind": "intro",
+  "de": "Was vier Wörter bewirken. Warum auf Papier, warum mit Detail?"
+ },
+ {
+  "tr": "Partide ilk konuşma. Kim kimi nereden tanıyor?",
+  "kind": "intro",
+  "de": "Das erste Gespräch auf der Party. Wer kennt wen woher?"
+ },
+ {
+  "tr": "Bahçede bir düğün. Kim ne yapıyor, kim ne diyor?",
+  "kind": "intro",
+  "de": "Eine Hochzeit im Garten. Wer tut was, wer sagt was?"
+ },
+ {
+  "tr": "On yıllık bir arkadaşlık. Ne zaman yakın oldular?",
+  "kind": "intro",
+  "de": "Eine Freundschaft von zehn Jahren. Wann wurden sie eng?"
+ },
+ {
+  "tr": "Bir aile geleneği. Ne zaman, kaç kişi, hangi kural?",
+  "kind": "intro",
+  "de": "Eine Familientradition. Wann, wie viele Leute, welche Regel?"
+ },
+ {
+  "tr": "Olumsuz nereye takılıyor? İngilizce onu öne çekiyor.",
+  "kind": "intro",
+  "de": "Wo hängt die Verneinung? Englisch zieht sie nach vorn."
+ },
+ {
+  "tr": "İki haber, iki dilek. Hangi kalıp hangi edatı alıyor?",
+  "kind": "intro",
+  "de": "Zwei Nachrichten, zwei Wünsche. Welche Formel nimmt welche Präposition?"
+ },
+ {
+  "tr": "On üç yaşında bir hesap sorusu. Dört cevap, tek karar.",
+  "kind": "intro",
+  "de": "Ein Konto mit dreizehn: die Frage. Vier Antworten, eine Entscheidung."
+ },
+ {
+  "tr": "Üç sık soru, üç kısa cevap. Hangisi hangi sorunu çözüyor?",
+  "kind": "intro",
+  "de": "Drei häufige Fragen, drei kurze Antworten. Welche löst welches Problem?"
+ },
+ {
+  "tr": "Dört kutlama kalıbı, dört ayrı edat. Hiçbiri tahmin edilemez.",
+  "kind": "intro",
+  "de": "Vier Glückwunschformeln, vier verschiedene Präpositionen. Keine lässt sich erraten."
+ },
+ {
+  "tr": "Özür ve deneyim cümleleri. „about“ iki kalıbı birden taşıyor.",
+  "kind": "intro",
+  "de": "Sätze zu Entschuldigung und Erfahrung. „about“ trägt gleich zwei Formeln."
+ },
+ {
+  "tr": "Aynı edat, iki ayrı devam. İsim de olur, „-ing“ de — mastar olmaz.",
+  "kind": "intro",
+  "de": "Dieselbe Präposition, zwei Fortsetzungen. Ein Nomen geht, „-ing“ geht — ein Infinitiv nicht."
+ },
+ {
+  "tr": "Aynı fiil, iki ayrı iş: „got married“ o an, „have been married“ bugün.",
+  "kind": "intro",
+  "de": "Dasselbe Verb, zwei Aufgaben: „got married“ der Moment, „have been married“ der heutige Stand."
+ },
+ {
+  "tr": "Telefon ve hesap cümleleri. Ayrılabilen fiiller burada nesneyi araya alıyor.",
+  "kind": "intro",
+  "de": "Sätze zu Handy und Konto. Trennbare Verben nehmen das Objekt hier in die Mitte."
+ },
+ {
+  "tr": "„I don't think that is luck.“",
+  "kind": "explain",
+  "de": "„I don't think that is luck.“"
+ },
+ {
+  "tr": "Deneyim sorusu; „before“ en sonda.",
+  "kind": "explain",
+  "de": "Eine Erfahrungsfrage; „before“ steht ganz hinten."
+ },
+ {
+  "tr": "„Don't promise. Just write it down.“",
+  "kind": "explain",
+  "de": "„Don't promise. Just write it down.“"
+ },
+ {
+  "tr": "„…the answer is two words: You're welcome.“",
+  "kind": "explain",
+  "de": "„…the answer is two words: You're welcome.“"
+ },
+ {
+  "tr": "„Done. Tuesday, ten o'clock, with a sound.“",
+  "kind": "explain",
+  "de": "„Done. Tuesday, ten o'clock, with a sound.“"
+ },
+ {
+  "tr": "Deneyim sorusu: „see“nin üçüncü hâli „seen“.",
+  "kind": "explain",
+  "de": "Eine Erfahrungsfrage: die dritte Form von „see“ ist „seen“."
+ },
+ {
+  "tr": "„But I don't believe you can stop it either.“",
+  "kind": "explain",
+  "de": "„But I don't believe you can stop it either.“"
+ },
+ {
+  "tr": "„I'm not ready. Three chapters and two days.“",
+  "kind": "explain",
+  "de": "„I'm not ready. Three chapters and two days.“"
+ },
+ {
+  "tr": "„It's a tradition to“ sonrası mastar geliyor.",
+  "kind": "explain",
+  "de": "Nach „It's a tradition to“ folgt der Infinitiv."
+ },
+ {
+  "tr": "Burada edat yok: „sorry“ doğrudan cümle alıyor.",
+  "kind": "explain",
+  "de": "Hier steht keine Präposition: „sorry“ nimmt direkt einen Satz."
+ },
+ {
+  "tr": "Dört cevap sırayla; en sonda evin kuralı geliyor.",
+  "kind": "explain",
+  "de": "Vier Antworten der Reihe nach; zuletzt kommt die Hausregel."
+ },
+ {
+  "tr": "Önce tebrik, sonra dilek, sonra kaygı, en son gurur.",
+  "kind": "explain",
+  "de": "Zuerst der Glückwunsch, dann der Wunsch, dann die Sorge, zuletzt der Stolz."
+ },
+ {
+  "tr": "„I don't think phones are hard. I think the menus are.“",
+  "kind": "explain",
+  "de": "„I don't think phones are hard. I think the menus are.“"
+ },
+ {
+  "tr": "„We work together. Four years now.“ — okul Can'ın yolu.",
+  "kind": "explain",
+  "de": "„We work together. Four years now.“ — die Schule ist Cans Weg."
+ },
+ {
+  "tr": "„for“ sonrası isim geliyor; fiil gelseydi „-ing“ olurdu.",
+  "kind": "explain",
+  "de": "Nach „for“ steht ein Nomen; stünde dort ein Verb, wäre es „-ing“."
+ },
+ {
+  "tr": "„I'm sorry I'm late. The bus stopped for twenty minutes.“",
+  "kind": "explain",
+  "de": "„I'm sorry I'm late. The bus stopped for twenty minutes.“"
+ },
+ {
+  "tr": "„news“ tekil sayılıyor: „the news is“, „the news are“ değil.",
+  "kind": "explain",
+  "de": "„news“ gilt als Singular: „the news is“, nicht „the news are“ — anders als deutsch „die Nachrichten“."
+ },
+ {
+  "tr": "„Three episodes. I don't think it is as good as people say.“",
+  "kind": "explain",
+  "de": "„Three episodes. I don't think it is as good as people say.“"
+ },
+ {
+  "tr": "„Thank you! On the first of October. I still can't believe it.“",
+  "kind": "explain",
+  "de": "„Thank you! On the first of October. I still can't believe it.“"
+ },
+ {
+  "tr": "„I asked. Izmir until Sunday.“ — sınav cuma, Mert pazara kadar yok.",
+  "kind": "explain",
+  "de": "„I asked. Izmir until Sunday.“ — die Prüfung ist Freitag, Mert bis Sonntag weg."
+ },
+ {
+  "tr": "„We celebrate the end of the summer in September.“ — 1980 başladığı yıl.",
+  "kind": "explain",
+  "de": "„We celebrate the end of the summer in September.“ — 1980 ist das Anfangsjahr."
+ },
+ {
+  "tr": "„I don't think it is as good as people say.“ — olumsuz „think“e takılıyor.",
+  "kind": "explain",
+  "de": "„I don't think it is as good as people say.“ — die Verneinung hängt an „think“, wie deutsch „ich glaube nicht, dass …“."
+ },
+ {
+  "tr": "„But I worry about the last chapter. It's about things I never understood.“",
+  "kind": "explain",
+  "de": "„But I worry about the last chapter. It's about things I never understood.“"
+ },
+ {
+  "tr": "Önce fotoğraf, sonra kuzenin evliliği, sonra Mert'in ailesi, en son Mert'in haberi.",
+  "kind": "explain",
+  "de": "Zuerst das Foto, dann die Ehe der Cousine, dann Merts Familie, zuletzt Merts eigene Neuigkeit."
+ },
+ {
+  "tr": "„Three. You forgot the meeting on Tuesday.“ — Can iki diyor, Sena üçüncüsünü hatırlatıyor.",
+  "kind": "explain",
+  "de": "„Three. You forgot the meeting on Tuesday.“ — Can sagt zwei, Sena erinnert an den dritten."
+ },
+ {
+  "tr": "şerit",
+  "kind": "gloss.tr",
+  "de": "Spur"
+ },
+ {
+  "tr": "ses",
+  "kind": "gloss.tr",
+  "de": "Ton"
+ },
+ {
+  "tr": "benim",
+  "kind": "gloss.tr",
+  "de": "von mir"
+ },
+ {
+  "tr": "cümle",
+  "kind": "gloss.tr",
+  "de": "Satz"
+ },
+ {
+  "tr": "salon",
+  "kind": "gloss.tr",
+  "de": "Saal"
+ },
+ {
+  "tr": "ağladı",
+  "kind": "gloss.tr",
+  "de": "weinte"
+ },
+ {
+  "tr": "gazete",
+  "kind": "gloss.tr",
+  "de": "Zeitung"
+ },
+ {
+  "tr": "kalanı",
+  "kind": "gloss.tr",
+  "de": "der Rest"
+ },
+ {
+  "tr": "o kişi",
+  "kind": "gloss.tr",
+  "de": "diese Person"
+ },
+ {
+  "tr": "dışında",
+  "kind": "gloss.tr",
+  "de": "außer"
+ },
+ {
+  "tr": "evliler",
+  "kind": "gloss.tr",
+  "de": "sind verheiratet"
+ },
+ {
+  "tr": "içeride",
+  "kind": "gloss.tr",
+  "de": "innen"
+ },
+ {
+  "tr": "inanmak",
+  "kind": "gloss.tr",
+  "de": "glauben"
+ },
+ {
+  "tr": "dokunmak",
+  "kind": "gloss.tr",
+  "de": "tippen"
+ },
+ {
+  "tr": "iyi olan",
+  "kind": "gloss.tr",
+  "de": "gut darin"
+ },
+ {
+  "tr": "şimdiden",
+  "kind": "gloss.tr",
+  "de": "im Voraus"
+ },
+ {
+  "tr": "torunlar",
+  "kind": "gloss.tr",
+  "de": "Enkelkinder"
+ },
+ {
+  "tr": "gitmişlik",
+  "kind": "gloss.tr",
+  "de": "schon mal da gewesen"
+ },
+ {
+  "tr": "ilk başta",
+  "kind": "gloss.tr",
+  "de": "anfangs"
+ },
+ {
+  "tr": "kadar iyi",
+  "kind": "gloss.tr",
+  "de": "so gut wie"
+ },
+ {
+  "tr": "tehlikeli",
+  "kind": "gloss.tr",
+  "de": "gefährlich"
+ },
+ {
+  "tr": "dert etmek",
+  "kind": "gloss.tr",
+  "de": "sich sorgen"
+ },
+ {
+  "tr": "dördüncüsü",
+  "kind": "gloss.tr",
+  "de": "die vierte"
+ },
+ {
+  "tr": "evlendiler",
+  "kind": "gloss.tr",
+  "de": "haben geheiratet"
+ },
+ {
+  "tr": "için üzgün",
+  "kind": "gloss.tr",
+  "de": "tut mir leid wegen"
+ },
+ {
+  "tr": "o yaş için",
+  "kind": "gloss.tr",
+  "de": "für dieses Alter"
+ },
+ {
+  "tr": "bence değil",
+  "kind": "gloss.tr",
+  "de": "ich glaube nicht"
+ },
+ {
+  "tr": "gece yarısı",
+  "kind": "gloss.tr",
+  "de": "Mitternacht"
+ },
+ {
+  "tr": "güncelledin",
+  "kind": "gloss.tr",
+  "de": "hast aktualisiert"
+ },
+ {
+  "tr": "inanmıyorum",
+  "kind": "gloss.tr",
+  "de": "ich glaube nicht"
+ },
+ {
+  "tr": "onun yerine",
+  "kind": "gloss.tr",
+  "de": "stattdessen"
+ },
+ {
+  "tr": "gurur duymak",
+  "kind": "gloss.tr",
+  "de": "stolz sein auf"
+ },
+ {
+  "tr": "için bol şans",
+  "kind": "gloss.tr",
+  "de": "viel Glück bei"
+ },
+ {
+  "tr": "iki ayrı yolu",
+  "kind": "gloss.tr",
+  "de": "zwei Arten zu"
+ },
+ {
+  "tr": "kâğıt üstünde",
+  "kind": "gloss.tr",
+  "de": "auf Papier"
+ },
+ {
+  "tr": "gözümün önünde",
+  "kind": "gloss.tr",
+  "de": "vor meinen Augen"
+ },
+ {
+  "tr": "için tebrikler",
+  "kind": "gloss.tr",
+  "de": "Glückwunsch zu"
+ },
+ {
+  "tr": "daha önce burada",
+  "kind": "gloss.tr",
+  "de": "schon mal hier"
+ },
+ {
+  "tr": "için teşekkürler",
+  "kind": "gloss.tr",
+  "de": "danke für"
+ },
+ {
+  "tr": "kimse söylemiyor",
+  "kind": "gloss.tr",
+  "de": "keiner sagt es"
+ },
+ {
+  "tr": "bana yardım etmen",
+  "kind": "gloss.tr",
+  "de": "dass du mir hilfst"
+ },
+ {
+  "tr": "dörde kadar sabret",
+  "kind": "gloss.tr",
+  "de": "warte bis zur vierten"
+ },
+ {
+  "tr": "düşünmeyi bırakmak",
+  "kind": "gloss.tr",
+  "de": "aufhören zu denken"
+ },
+ {
+  "tr": "kulağa nasıl geldiği",
+  "kind": "gloss.tr",
+  "de": "wie das klingt"
+ },
+ {
+  "tr": "arkadaşlığın ne olduğu",
+  "kind": "gloss.tr",
+  "de": "was Freundschaft ist"
+ }
+]

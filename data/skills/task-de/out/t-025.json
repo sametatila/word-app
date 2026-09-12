@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "Haber kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Nachrichtenkarte aus."
+ },
+ {
+  "tr": "Kutlama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Glückwunschkarte aus."
+ },
+ {
+  "tr": "Arkadaşlık kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Freundschaftskarte aus."
+ },
+ {
+  "tr": "Yeni iş için tebrik; başlangıç bir ekim; cuma sınav var; bol şans dileniyor.",
+  "kind": "form.facts",
+  "de": "Glückwunsch zur neuen Stelle; Beginn am ersten Oktober; Freitag ist die Prüfung; viel Glück gewünscht."
+ },
+ {
+  "tr": "Köprüyle ilgili haber; dün saat dörtte; bir şerit kapalı; kaynak sabahki makale.",
+  "kind": "form.facts",
+  "de": "Nachricht über die Brücke; gestern um vier; eine Spur gesperrt; Quelle der Artikel von heute Morgen."
+ },
+ {
+  "tr": "On yıldır arkadaşlar; okulda tanıştılar; şimdi iki ayrı şehirde; yılda dört kez görüşüyorlar.",
+  "kind": "form.facts",
+  "de": "Seit zehn Jahren befreundet; in der Schule kennengelernt; jetzt in zwei Städten; sehen sich viermal im Jahr."
+ },
+ {
+  "tr": "Dün oldu.",
+  "kind": "build.tr",
+  "de": "Es ist gestern passiert."
+ },
+ {
+  "tr": "Rica ederim.",
+  "kind": "build.tr",
+  "de": "Gern geschehen."
+ },
+ {
+  "tr": "Okulda tanıştık.",
+  "kind": "build.tr",
+  "de": "Wir haben uns in der Schule kennengelernt."
+ },
+ {
+  "tr": "Haberi duydun mu?",
+  "kind": "build.tr",
+  "de": "Hast du die Nachricht gehört?"
+ },
+ {
+  "tr": "Üç düğüne gittim.",
+  "kind": "build.tr",
+  "de": "Ich war auf drei Hochzeiten."
+ },
+ {
+  "tr": "On yıldır evliler.",
+  "kind": "build.tr",
+  "de": "Sie sind seit zehn Jahren verheiratet."
+ },
+ {
+  "tr": "2015'te evlendiler.",
+  "kind": "build.tr",
+  "de": "Sie haben 2015 geheiratet."
+ },
+ {
+  "tr": "Kapat ve tekrar aç.",
+  "kind": "build.tr",
+  "de": "Schalt es aus und wieder ein."
+ },
+ {
+  "tr": "Onu tavsiye ederim.",
+  "kind": "build.tr",
+  "de": "Ich empfehle es."
+ },
+ {
+  "tr": "Sınavında bol şans!",
+  "kind": "build.tr",
+  "de": "Viel Glück bei deiner Prüfung!"
+ },
+ {
+  "tr": "On yıldır arkadaşız.",
+  "kind": "build.tr",
+  "de": "Wir sind seit zehn Jahren befreundet."
+ },
+ {
+  "tr": "Dosya için özür dilerim.",
+  "kind": "build.tr",
+  "de": "Entschuldigung wegen der Datei."
+ },
+ {
+  "tr": "Yeni işin için tebrikler!",
+  "kind": "build.tr",
+  "de": "Glückwunsch zu deiner neuen Stelle!"
+ },
+ {
+  "tr": "Bu hesabım iki yıldır var.",
+  "kind": "build.tr",
+  "de": "Ich habe dieses Konto seit zwei Jahren."
+ },
+ {
+  "tr": "Telefonunu güncelledin mi?",
+  "kind": "build.tr",
+  "de": "Hast du dein Handy schon aktualisiert?"
+ },
+ {
+  "tr": "Yardımın için teşekkürler.",
+  "kind": "build.tr",
+  "de": "Danke für deine Hilfe."
+ },
+ {
+  "tr": "Doğru olduğuna inanmıyorum.",
+  "kind": "build.tr",
+  "de": "Ich glaube nicht, dass das stimmt."
+ },
+ {
+  "tr": "Sorun değil, onu dert etme.",
+  "kind": "build.tr",
+  "de": "Kein Problem, mach dir keine Sorgen."
+ },
+ {
+  "tr": "Hiç bir festivale gittin mi?",
+  "kind": "build.tr",
+  "de": "Warst du schon einmal auf einem Fest?"
+ },
+ {
+  "tr": "O benim yakın bir arkadaşım.",
+  "kind": "build.tr",
+  "de": "Sie ist eine enge Freundin von mir."
+ },
+ {
+  "tr": "Seninle çok gurur duyuyorum.",
+  "kind": "build.tr",
+  "de": "Ich bin so stolz auf dich."
+ },
+ {
+  "tr": "Bence sosyal medya iyi değil.",
+  "kind": "build.tr",
+  "de": "Ich glaube nicht, dass soziale Medien gut sind."
+ },
+ {
+  "tr": "Daha önce burada bulundun mu?",
+  "kind": "build.tr",
+  "de": "Warst du schon einmal hier?"
+ },
+ {
+  "tr": "Geç kaldığım için özür dilerim.",
+  "kind": "build.tr",
+  "de": "Entschuldigung, dass ich zu spät bin."
+ },
+ {
+  "tr": "Gelin uzun beyaz bir elbise giydi.",
+  "kind": "build.tr",
+  "de": "Die Braut trug ein langes weißes Kleid."
+ },
+ {
+  "tr": "Bana yardım ettiğin için teşekkürler.",
+  "kind": "build.tr",
+  "de": "Danke, dass du mir geholfen hast."
+ },
+ {
+  "tr": "Önce Ayarlar'ı aç, sonra Güncelle'ye dokun.",
+  "kind": "build.tr",
+  "de": "Öffne zuerst die Einstellungen, tippe dann auf Aktualisieren."
+ },
+ {
+  "tr": "„proud“ kendi edatını taşıyor: „of“.",
+  "kind": "build.hint",
+  "de": "„proud“ trägt seine eigene Präposition: „of“ — deutsch „stolz auf“."
+ },
+ {
+  "tr": "„for“ sonrası isim geliyor: „your help“.",
+  "kind": "build.hint",
+  "de": "Nach „for“ steht ein Nomen: „your help“."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „for“ ile present perfect.",
+  "kind": "build.hint",
+  "de": "Es dauert noch an: „for“ mit present perfect. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "„yesterday“ zamanı çiviliyor: simple past.",
+  "kind": "build.hint",
+  "de": "„yesterday“ nagelt die Zeit fest: simple past."
+ },
+ {
+  "tr": "Deneyim sorusu; „before“ en sonda duruyor.",
+  "kind": "build.hint",
+  "de": "Eine Erfahrungsfrage; „before“ steht ganz hinten."
+ },
+ {
+  "tr": "Soruda „yet“ en sonda; iş bitti mi diye soruyor.",
+  "kind": "build.hint",
+  "de": "In der Frage steht „yet“ hinten; es fragt, ob es erledigt ist."
+ },
+ {
+  "tr": "Deneyim: „have been to“ gidip dönmüş olmak demek.",
+  "kind": "build.hint",
+  "de": "Erfahrung: „have been to“ heißt hingefahren und zurück."
+ },
+ {
+  "tr": "Burada edat yok: „sorry“ doğrudan bir cümle alıyor.",
+  "kind": "build.hint",
+  "de": "Hier keine Präposition: „sorry“ nimmt direkt einen Satz."
+ },
+ {
+  "tr": "İki emir cümlesi; sırayı „first“ ve „then“ kuruyor.",
+  "kind": "build.hint",
+  "de": "Zwei Imperative; die Reihenfolge bauen „first“ und „then“."
+ },
+ {
+  "tr": "Kapanmış bir an: simple past. „meet“in geçmişi „met“.",
+  "kind": "build.hint",
+  "de": "Ein abgeschlossener Moment: simple past. Die Vergangenheit von „meet“ ist „met“."
+ },
+ {
+  "tr": "„recommend“ doğrudan nesne alıyor; araya edat girmiyor.",
+  "kind": "build.hint",
+  "de": "„recommend“ nimmt das Objekt direkt; keine Präposition dazwischen."
+ },
+ {
+  "tr": "„get married“ evlenme ANI; yıl verildiği için simple past.",
+  "kind": "build.hint",
+  "de": "„get married“ ist der MOMENT der Heirat; weil ein Jahr dasteht, simple past."
+ },
+ {
+  "tr": "„turn off“ ve „turn on“ ayrılabiliyor: nesne araya giriyor.",
+  "kind": "build.hint",
+  "de": "„turn off“ und „turn on“ sind trennbar: das Objekt steht dazwischen, wie deutsch „schalt es aus“."
+ },
+ {
+  "tr": "„worry“ da „about“ alıyor; iki kalıp aynı edatı paylaşıyor.",
+  "kind": "build.hint",
+  "de": "Auch „worry“ nimmt „about“; beide Formeln teilen dieselbe Präposition."
+ },
+ {
+  "tr": "„ever“ deneyim sorusunda, yardımcı ile asıl fiilin arasında.",
+  "kind": "build.hint",
+  "de": "„ever“ steht in der Erfahrungsfrage zwischen Hilfsverb und Vollverb."
+ },
+ {
+  "tr": "„of mine“ kalıbı: „arkadaşlarımdan biri“ demek; „of me“ olmaz.",
+  "kind": "build.hint",
+  "de": "Die Formel „of mine“ heißt „einer meiner Freunde“, wie deutsch „von mir“; „of me“ gibt es nicht."
+ },
+ {
+  "tr": "Yeni ve şimdi önemli: present perfect. „news“ tekil sayılıyor.",
+  "kind": "build.hint",
+  "de": "Neu und jetzt wichtig: present perfect. „news“ gilt als Singular."
+ },
+ {
+  "tr": "„good luck“ın edatı „with“, „on“ değil. Aynı ailede başka edat.",
+  "kind": "build.hint",
+  "de": "„good luck“ nimmt „with“, nicht „on“ — deutsch „viel Glück bei“."
+ },
+ {
+  "tr": "„wear“in geçmişi „wore“; sıfat sırası önce uzunluk, sonra renk.",
+  "kind": "build.hint",
+  "de": "Die Vergangenheit von „wear“ ist „wore“; erst die Länge, dann die Farbe."
+ },
+ {
+  "tr": "İki sözcük; „it was nothing“ İngilizcede alışılmış cevap değil.",
+  "kind": "build.hint",
+  "de": "Zwei Wörter; „it was nothing“ ist im Englischen nicht die übliche Antwort."
+ },
+ {
+  "tr": "Bir ŞEY için özür „about“ ile geliyor; cümle gelseydi edat düşerdi.",
+  "kind": "build.hint",
+  "de": "Die Entschuldigung für eine SACHE steht mit „about“; bei einem Satz fiele die Präposition weg."
+ },
+ {
+  "tr": "„congratulations“ın edatı „on“; anlamdan türetilemez, kalıpla öğrenilir.",
+  "kind": "build.hint",
+  "de": "„congratulations“ nimmt „on“ — deutsch „Glückwunsch zu“. Aus dem Sinn folgt das nicht."
+ },
+ {
+  "tr": "Aynı çekme burada da var: olumsuz „believe“e takılıyor, iç cümleye değil.",
+  "kind": "build.hint",
+  "de": "Dieselbe Verschiebung: die Verneinung hängt an „believe“, nicht am Nebensatz — genau wie deutsch „ich glaube nicht, dass …“."
+ },
+ {
+  "tr": "Burada durum anlatılıyor, o yüzden „been“; „got“ olsaydı o günü söylerdi.",
+  "kind": "build.hint",
+  "de": "Hier wird der Zustand genannt, deshalb „been“; mit „got“ wäre der Tag gemeint."
+ },
+ {
+  "tr": "İngilizce olumsuzu ÖNE alıyor: „don't think … is“, „think … isn't“ değil.",
+  "kind": "build.hint",
+  "de": "Englisch zieht die Verneinung nach VORN: „don't think … is“. Deutsch macht es genauso: ich glaube nicht, dass das so ist."
+ },
+ {
+  "tr": "Aynı „for“ bu kez fiil alıyor ve fiil „-ing“ biçimine giriyor; mastar olmaz.",
+  "kind": "build.hint",
+  "de": "Dasselbe „for“ nimmt hier ein Verb, und das steht auf „-ing“; ein Infinitiv geht nicht."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „for“ ile present perfect. İlk „have“ yardımcı, ikincisi asıl fiil.",
+  "kind": "build.hint",
+  "de": "Es dauert an: „for“ mit present perfect. Das erste „have“ ist Hilfsverb, das zweite Vollverb."
+ },
+ {
+  "tr": "Cevapların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Antworten: bring sie in die richtige Ordnung."
+ }
+]

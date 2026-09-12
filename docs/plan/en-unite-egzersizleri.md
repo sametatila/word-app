@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
-| A2 | 19–25 | bekliyor |
+| A2 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
+| A2 | 22–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -490,6 +490,43 @@ necessary“ metinde geçmeyen sözcüklerdi ve kabul listesi de ölçüm
 yüzeyinin parçası; biri soru şıkkındaydı („the hotel has none“); sonuncusu
 bir dikte cümlesiydi: „Could you help me, please?“ bölümün ortasında
 küçük harfle başlıyordu, bölüm iki cümleye ayrıldı.
+
+**A2 ünite 19–21 (2026-09-12).** Ünite 19 A wedding · Festivals and holidays ·
+Congratulations! · Saying sorry; ünite 20 Close friends ·
+Family and relationships · Small talk at a party · Saying thank you;
+ünite 21 Using a smartphone · Social media · Series and films ·
+Following the news. On sekiz egzersiz; ünite dışı ölçüm %0,0.
+A2 yuvalarının 126'sı dolu.
+
+Ünite 19 edat işinin ÜÇÜNCÜ turu: ünite 8 sıfatlarda („worried about“),
+ünite 13 fiillerde („exchange for“), burada toplumsal kalıplarda —
+„congratulations ON“, „good luck WITH“, „proud OF“, „sorry ABOUT“.
+Almanca eksende dördü de ayrılıyor ve hiçbiri İngilizceyle eşleşmiyor:
+„Glückwunsch ZU“, „viel Glück BEI“, „stolz AUF“, „Entschuldigung WEGEN“.
+Yani bu dörtlü, iki dilin edat haritalarının birbirinden tam bağımsız
+olduğunu tek bakışta gösteriyor; karşılıklar Almanca eşleri adıyla
+yazıyor, çünkü öğrencinin tek dayanağı ezber.
+
+Ünite 20 ünite 17'nin „-ing“ini genelleştiriyor: orada „How about“ ve
+„worth“ sonrası çıkmıştı, burada bir EDATTAN sonra çıkıyor („thanks for
+helping me“). Kural artık tek cümlede söylenebiliyor: edattan sonra fiil
+hep „-ing“ olur, mastar asla gelmez.
+
+Ünite 21'in noktası OLUMSUZLUĞUN ÖNE ÇEKİLMESİ ve bu, hattın şimdiye
+kadarki en net TÜRKÇE-YALNIZ satırı. İngilizce „I don't think social
+media is good“ diyor, Almanca da aynı şeyi yapıyor („ich glaube nicht,
+dass …“) — Türkçe ise olumsuzu iç cümlede tutuyor ("bence sosyal medya iyi
+değil"). Yani Türkçe ipucu bir GÜÇLÜK anlatıyor ama o güçlük Almanca
+okuyan için yok; karşılık bunu "Deutsch macht es genauso" diye söylüyor.
+A2 ünite 4 ve 9'da İngilizce yalnızdı, burada Türkçe yalnız.
+
+Ölçüm bu turda on yedi sözlükçe maddesi ekletti ve makinenin bir
+inceliğini görünür kıldı: sözlükçeye ÇOĞUL biçim yazmak tekili
+kurtarmıyor („chapters“ yazılmıştı, metindeki „chapter“ dışarıda kaldı),
+çünkü havuz sözlükçenin ham dizesini alıyor ve gövdeleme metin tarafında
+çalışıyor. Sözlükçeye kök biçim yazmak iki yönü birden kapatıyor. Ayrıca
+bir sözlükçe maddesi düştü: „instead“ yalnız soru kökünde geçiyordu,
+metinde değil — sözlükçe metnin sözlükçesi.
 
 ## Tamamlanma ölçütü
 
