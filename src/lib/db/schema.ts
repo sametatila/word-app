@@ -912,6 +912,14 @@ export const mockExamAttempts = pgTable(
     taskIx: integer("task_ix").notNull().default(0),
     /** O görevde kalan saniye. */
     secondsLeft: integer("seconds_left").notNull().default(0),
+    /**
+     * Uyaran kimliği → kaç kez oynatıldı.
+     *
+     * Dinleme görevinin oynatma bütçesi kâğıtta yazılı (`st.plays`) ve
+     * SINAVIN KISITI. Bütçe yalnız ekranın belleğinde tutuluyordu: arka plana
+     * atıp dönen ya da sekmeyi kapatıp açan öğrenci sıfırdan başlıyordu.
+     */
+    plays: jsonb("plays").notNull().default({}),
     correct: integer("correct").notNull().default(0),
     total: integer("total").notNull().default(0),
     /** 0–100. */

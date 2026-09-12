@@ -1,0 +1,11 @@
+-- DENEME KÂĞIDINDA KAÇ KEZ DİNLENDİĞİ DE KAYDEDİLİYOR.
+--
+-- Dinleme görevinin kâğıtta yazılı bir oynatma bütçesi var (`st.plays`, çoğu
+-- maddede bir ya da iki). Bütçe yalnız ekranın belleğinde tutuluyordu: öğrenci
+-- bütçeyi tüketip uygulamayı arka plana atıp dönünce ya da sekmeyi kapatıp
+-- yeniden açınca bütçe SIFIRDAN başlıyordu. Yani sınırsız dinleme, hem webde
+-- hem mobilde.
+--
+-- `taskIx` ve `seconds_left` aynı sebeple zaten burada duruyor; bu üçüncüsü
+-- geride kalmıştı.
+ALTER TABLE "mock_exam_attempts" ADD COLUMN IF NOT EXISTS "plays" jsonb DEFAULT '{}'::jsonb NOT NULL;

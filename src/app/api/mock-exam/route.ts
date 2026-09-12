@@ -29,13 +29,14 @@ export const dynamic = "force-dynamic";
  *   GET  ?stats=1                        → istatistik
  *   GET  ?access=1&level=B1              → hangi kâğıtlar açık
  *   POST {action:"start",  paper, skill}
- *   POST {action:"save",   id, answers?, open?, taskIx?, secondsLeft?}
+ *   POST {action:"save",   id, answers?, open?, taskIx?, secondsLeft?, plays?}
  *   POST {action:"assess", id, taskId, text, day?}
  *   POST {action:"finish", id, day?}
  *
  * ANLIK KAYIT. `save` her cevapta çağrılıyor. Uygulamanın kapanması, telefonun
  * kilitlenmesi ya da ağın kopması sınavı kaybettirmiyor: satır zaten açılmış
- * durumda ve `taskIx` + `secondsLeft` ile kaldığı yerden devam ediliyor.
+ * durumda ve `taskIx` + `secondsLeft` + `plays` ile kaldığı yerden devam
+ * ediliyor (oynatma bütçesi de sınavın kısıtı, bkz. şema `plays`).
  *
  * PUAN SUNUCUDA. İstemci puan göndermiyor, cevap gönderiyor; `finish`
  * kâğıdın kendisiyle (aynı depodaki `src/lib/mock-exams`) yeniden puanlıyor.
@@ -68,6 +69,7 @@ function shape(a: Attempt) {
     openScores: (a.openScores ?? {}) as Record<string, { score: number | null; tip?: string; corrected?: string }>,
     taskIx: a.taskIx,
     secondsLeft: a.secondsLeft,
+    plays: (a.plays ?? {}) as Record<string, number>,
     correct: a.correct,
     total: a.total,
     score: a.score,
@@ -244,6 +246,17 @@ async function save(userId: string, body: Record<string, unknown>) {
   if (body.open !== undefined) patch.open = open;
   if (Number.isInteger(body.taskIx)) patch.taskIx = Math.max(0, Math.min(20, Number(body.taskIx)));
   if (Number.isInteger(body.secondsLeft)) patch.secondsLeft = Math.max(0, Math.min(60 * 60 * 3, Number(body.secondsLeft)));
+  /* Oynatma sayacı: yalnız SAYI kabul ediliyor ve tavanı var - istemciden
+     gelen bir nesne sınırsız büyüyemesin. */
+  if (body.plays !== undefined) {
+    const ham = body.plays as Record<string, unknown> | null;
+    if (!ham || typeof ham !== "object" || Array.isArray(ham)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    const temiz: Record<string, number> = {};
+    for (const [k, v] of Object.entries(ham).slice(0, 60)) {
+      if (typeof v === "number" && Number.isFinite(v)) temiz[k.slice(0, 64)] = Math.max(0, Math.min(20, Math.floor(v)));
+    }
+    patch.plays = temiz;
+  }
 
   const [row] = await db
     .update(mockExamAttempts)
