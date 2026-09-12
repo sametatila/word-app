@@ -79,10 +79,11 @@ export async function POST(req: Request) {
     /**
      * Emniyet tavanı — KELİME başına.
      *
-     * Adil kullanım tavanı TUR cinsinden sayılıyor (`/api/premium/consume`,
-     * tur başında bir kez) ve kullanıcıya öyle duyuruluyor. Ama tur sayacını
-     * hiç çağırmayan değiştirilmiş bir istemci o tavanı atlar; burada kelime
-     * başına ikinci bir tavan var ki bir hesap günlük bütçeyi yakamasın.
+     * Adil kullanım tavanı TUR cinsinden duyuruluyor ve tasarımda tur başında
+     * bir kez sayılıyor (`/api/premium/consume`). O ucu bugün HİÇBİR İSTEMCİ
+     * ÇAĞIRMIYOR (2026-09-12 ölçüldü), yani tur sayacı hiç artmıyor ve
+     * aşağıdaki kelime başına tavan tek gerçek sınır. Değiştirilmiş bir
+     * istemci için düşünülmüştü; bugün NORMAL istemci için de o.
      * Tur başına kelime sayısı cömert tutuldu: normal kullanıcı bunu görmez.
      */
     const cfg = await premiumConfig();

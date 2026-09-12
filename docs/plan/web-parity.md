@@ -17657,3 +17657,40 @@ istemci/betik tarafından gönderiliyor ya da muaf listesinde **gerekçesiyle**
 yazılı. Muafiyet kendini denetliyor — süzgecin `composeRounds`a gerçekten
 geçtiği ve yorumun bir gönderen iddia etmediği ölçülüyor. Taranan parametre
 sayısı da yazılı (0/0 hiçbir şey ölçmez).
+
+## §11.489 — Gövde alanları: ölü `goal` kabulü, ve harcanmayan kota
+
+§11.488 sorgu parametrelerini kapattı; bu tur POST **gövdelerini** ölçtüm:
+sunucunun okuduğu her alan bir istemci tarafından gönderiliyor mu. Sekiz uçta
+aday çıktı, altısı tarayıcı artefaktıydı (istemciler gövdeyi bir nesne
+değişkeninden ya da `...patch` yayılımıyla gönderiyor). İkisi gerçekti:
+
+**1. `/api/profile` `goal`** ("neden Almanca?"). Uç kabul ediyordu; ama hiçbir
+istemci göndermiyor ve `profiles.goal` **hiçbir yerde okunmuyor** — web
+onboarding'i soruyu kaldırmış ve kendi yorumunda bunu yazıyor ("dört seçenekli
+bir ekran, hiçbir şeyi değiştirmeyen bir cevap için"), mobil hiç sormadı. Yani
+uç, kimsenin göndermediği bir alanı kimsenin okumadığı bir sütuna yazıyordu.
+Kabul kaldırıldı; sütun eski kayıtlar için duruyor.
+
+**2. `/api/premium/consume` ucunun hiç çağıranı yok.** Tasarım şu: gated bir
+etkinliğin **başında** istemci bu ucu çağırıp bir hak harcıyor; özellik uçları
+(`/api/assess`, `/api/stt`, `/api/tts`) yalnız "hakkı var mı" diye bakıyor ve
+kendi emniyet tavanlarını sayıyor. Ölçüm: **ne web ne mobil** onu çağırıyor.
+Sonuç: tur/alıştırma başına haklar (`ai_practice_*`, `weekly_exam`,
+`pocket_walk`) **hiç harcanmıyor**; sayılan tek şey özellik uçlarındaki
+tavanlar (`ai_assess_calls`, `pocket_walk_words`, `tts_calls`). `/api/weekly`
+ise hiç kapı çağırmıyor — haftalık sınav kotası yalnız `/api/premium/status`
+raporunda görünüyor.
+
+**Uç silinmedi ve kotayı işletmeye de başlamadım:** ikisi de ürün kararı —
+kotayı işletmek bugün ücretsiz kullanılan yüzeyleri kilitler ve premium hâlâ
+pasif; ucu silmek de kararın kendisini silmek olurdu. Yaptığım şey **kodun
+yanlış iddiasını düzeltmek**: `assess` ve `stt` yorumları "hak tur başında
+sayılıyor" diyordu, artık "o ucu bugün hiçbir istemci çağırmıyor" diyor ve
+`consume` dosyasının başında durumun tamamı yazılı. §11.458'in kalıbı: ölçüldü,
+kayıt düşüldü, karar Samet'te.
+
+Kapı **§346** üç şey ölçüyor: `goal` kabulünün geri gelmediği, `consume`un
+çağıranının hâlâ **sıfır** olduğu **ve** bunu söyleyen üç yorumun yerinde
+durduğu (kayıt sessizce bayatlamasın), ve gerçekten sayılan üç tavanın kendi
+uçlarında arttığı — biri düşerse kotanın tek gerçek sınırı da kalkmış olur.

@@ -58,8 +58,15 @@ export async function POST(req: Request) {
    *
    * KOTA BURADA ARTMIYOR. Bir alıştırma birden çok değerlendirme üretebiliyor
    * (yaz, düzelt, yeniden gönder) ve her birini hak saymak kullanıcının iki
-   * hakkını tek alıştırmada yakardı. Hak alıştırma BAŞINDA bir kez sayılıyor
-   * (`/api/premium/consume`); burası yalnız "hakkı var mı" diye bakıyor.
+   * hakkını tek alıştırmada yakardı. Tasarım şu: hak alıştırma BAŞINDA bir kez
+   * sayılıyor (`/api/premium/consume`), burası yalnız "hakkı var mı" diye
+   * bakıyor.
+   *
+   * AMA O UCU BUGÜN HİÇBİR İSTEMCİ ÇAĞIRMIYOR (2026-09-12 ölçüldü): ne web ne
+   * mobil. Yani tur/alıştırma başına hak HİÇ HARCANMIYOR; sayılan tek şey
+   * aşağıdaki `ai_assess_calls` emniyet tavanı. Kotayı gerçekten işletmek bir
+   * ÜRÜN kararı (bugün ücretsiz kullanılan bir yüzeyi kilitler) ve premium
+   * hâlâ pasif; kayıt `docs/plan/web-parity.md` §11.489'da.
    */
   const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "roleplay";
   if (gated) {

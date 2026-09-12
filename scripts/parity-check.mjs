@@ -20038,6 +20038,76 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ----- 346. GOVDE ALANLARI: OKUNAN AMA GONDERILMEYEN, VE HARCANMAYAN KOTA
+ *
+ * §345 sorgu parametrelerini kapatti; bu kapi POST GOVDELERINI olcuyor:
+ * sunucunun okudugu her alan bir istemci tarafindan gonderiliyor mu.
+ *
+ * Iki bulgu vardi:
+ *   1) `/api/profile` `goal` ("neden Almanca?") KABUL EDIYORDU ama hicbir
+ *      istemci gondermiyor ve `profiles.goal` HICBIR YERDE okunmuyor - web
+ *      onboarding'i soruyu kaldirmis (kendi yorumunda yazili), mobil hic
+ *      sormadi. Kabul kalkti; sutun eski kayitlar icin duruyor.
+ *   2) `/api/premium/consume` ucunun HIC CAGIRANI YOK. Tasarim: gated bir
+ *      etkinligin basinda istemci bir hak harciyor, ozellik uclari yalniz
+ *      "hakki var mi" diye bakiyor. Bugun tur/alistirma basina haklar
+ *      (`ai_practice_*`, `weekly_exam`, `pocket_walk`) HIC harcanmiyor;
+ *      sayilan tek sey ozellik uclarindaki emniyet tavanlari. Uc SILINMEDI -
+ *      kotayi isletmek bir urun karari (bugun ucretsiz kullanilan yuzeyleri
+ *      kilitler, premium hala pasif). Kayit §11.489'da.
+ *
+ * Olcu: (1) `goal` kabulu geri gelmedi, (2) `consume`un cagirani hala yok VE
+ * bunu soyleyen yorumlar yerinde (kayit bayatlamasin), (3) gercekten sayilan
+ * uc tavan kendi uclarinda artiyor - biri dususe kotanin TEK gercek siniri
+ * da kalkmis olur. */
+{
+  const silB = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const gezB = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezB(yol, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const cagiran = (() => {
+    let n = 0;
+    for (const kok of ["src", "mobile/src", "scripts"]) {
+      for (const f of gezB(kok)) {
+        if (f.startsWith("src/app/api")) continue;
+        if (/premium\/consume/.test(silB(read(f)))) n++;
+      }
+    }
+    return n;
+  })();
+  const consumeSrc = read("src/app/api/premium/consume/route.ts");
+  sameList(
+    "govde alanlari ve harcanmayan kota",
+    [
+      "profile goal kabulu=" + (/body\.goal/.test(silB(read("src/app/api/profile/route.ts"))) ? "VAR" : "yok"),
+      "consume cagirani=" + cagiran,
+      "consume kaydi=" + (/ÇAĞIRANI OLMAYAN UÇ/.test(consumeSrc) ? "yazili" : "YOK"),
+      "assess kaydi=" + (/HİÇBİR İSTEMCİ ÇAĞIRMIYOR/.test(read("src/app/api/assess/route.ts")) ? "yazili" : "YOK"),
+      "stt kaydi=" + (/HİÇBİR İSTEMCİ\s*\n?\s*\*?\s*ÇAĞIRMIYOR/.test(read("src/app/api/stt/route.ts")) ? "yazili" : "YOK"),
+    ],
+    ["profile goal kabulu=yok", "consume cagirani=0", "consume kaydi=yazili", "assess kaydi=yazili", "stt kaydi=yazili"],
+    "bulunan",
+    "beklenen",
+  );
+  /* Gercekten sayilan tavanlar kendi uclarinda artiyor mu. */
+  sameList(
+    "sayilan emniyet tavanlari",
+    [
+      "assess=" + (/bumpUsage\(userId, "ai_assess_calls", "day"\)/.test(silB(read("src/app/api/assess/route.ts"))) ? "artiyor" : "ARTMIYOR"),
+      "stt=" + (/bumpUsage\(userId, "pocket_walk_words", "day"\)/.test(silB(read("src/app/api/stt/route.ts"))) ? "artiyor" : "ARTMIYOR"),
+      "tts=" + (/bumpUsage\(userId, "tts_calls", "day"\)/.test(silB(read("src/app/api/tts/route.ts"))) ? "artiyor" : "ARTMIYOR"),
+    ],
+    ["assess=artiyor", "stt=artiyor", "tts=artiyor"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

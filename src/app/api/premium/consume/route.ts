@@ -6,6 +6,25 @@ import { canAiPractice, canPocketWalk, canWeeklyExam } from "@/lib/premium/acces
 
 export const dynamic = "force-dynamic";
 
+/*
+  ÇAĞIRANI OLMAYAN UÇ — bilerek duruyor, kaydı burada.
+
+  Tasarım: gated bir etkinliğin BAŞINDA istemci bu ucu çağırıp bir hak
+  harcıyor; özellik uçları (`/api/assess`, `/api/stt`, `/api/tts`) yalnız
+  "hakkı var mı" diye bakıyor ve kendi emniyet tavanlarını sayıyor.
+
+  ÖLÇÜM (2026-09-12): ne web ne mobil bu ucu çağırıyor. Yani tur/alıştırma
+  başına haklar (`ai_practice_*`, `weekly_exam`, `pocket_walk`) HİÇ
+  harcanmıyor; sayılan tek şey özellik uçlarındaki tavanlar
+  (`ai_assess_calls`, `pocket_walk_words`, `tts_calls`). Paywall metni
+  kotaları yine duyuruyor (`describeLimits`), çünkü metin yapılandırmadan
+  üretiliyor.
+
+  SİLİNMEDİ: kotayı gerçekten işletmek bir ÜRÜN kararı — bugün ücretsiz
+  kullanılan yüzeyleri kilitler ve premium hâlâ pasif. Karar verildiğinde
+  çağıran taraf burayı kullanacak; ucu silmek o kararı da silmek olurdu.
+  Kapı bu durumu ölçüyor (§346) ki kayıt sessizce bayatlamasın.
+*/
 /**
  * Kotalı bir eylemin BAŞLANGICI — kontrol eder ve sayar.
  *

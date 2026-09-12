@@ -69,7 +69,14 @@ export async function POST(req: Request) {
     patch.avatar = cfg ? serializeAvatar(cfg) : null;
   }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, PROFILE_LIMITS.dailyGoal.min, PROFILE_LIMITS.dailyGoal.max);
-  if (typeof body.goal === "string" && ["work", "daily", "exam", "swiss"].includes(body.goal)) patch.goal = body.goal;
+  /*
+    GÜDÜ ALANI ("neden Almanca?") ARTIK KABUL EDİLMİYOR.
+    `profiles.goal` sütunu duruyor (eski kayıtlar) ama HİÇBİR YERDE
+    okunmuyor - ne görev seçiminde ne içerik önerisinde; web onboarding'i
+    soruyu kaldırdı (bkz. `components/course-onboarding` yorumu) ve mobil hiç
+    sormadı. Yani uç, kimsenin göndermediği bir alanı kimsenin okumadığı bir
+    sütuna yazıyordu. Ölçüm 2026-09-12: gönderen istemci yok.
+  */
   if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, PROFILE_LIMITS.newPerDay.min, PROFILE_LIMITS.newPerDay.max);
   if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
     patch.level = body.level;
