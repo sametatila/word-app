@@ -13686,3 +13686,60 @@ odağı geri veren şey kullanıcının kendi dokunuşu. **Dosya değil yüzey**
 Dört enjeksiyon denendi (bir seçicinin kapsam dışı kalması, `autoFocus`un
 geri gelmesi, tur başı koşulsuz odak, yardımcının işaretçiye bakmayı
 bırakması), dördü de yakalandı.
+
+## §11.391 — Üst etiketin harf aralığı: bir sayıya karşı dört
+
+Kart ve bölüm başlarındaki küçük **büyük harfli** etiket ("GÜNÜN TURU",
+"ZAYIF NOKTALAR", "ROZET AÇILDI") iki platformda da aynı şey ama aralığı
+değildi.
+
+| | Değer | 11 pikselde |
+|---|---|---|
+| Android (18 yer) | `letterSpacing: 1` | **1 px** |
+| Web `tracking-wide` (44 yer) | 0.025em | 0.28 px |
+| Web `tracking-widest` (6) | 0.1em | 1.1 px |
+| Web `tracking-wider` (3) | 0.05em | 0.55 px |
+| Web `[0.18em]` (2) | 0.18em | 1.98 px |
+
+Yani aynı etiket Android'de 1 piksel, web'in çoğu yerinde **üçte bir
+pikselden az** aralıktaydı — "büyük harfli etiket" hissi web'de yoktu, ve
+kalan üç değer aynı ekranda yan yana gelebiliyordu.
+
+Elli beş çağrı yeri `--tracking-eyebrow` jetonuna bağlandı. Jeton **piksel**,
+`em` değil: Android da piksel kullanıyor ve etiket iki punto arasında
+geziyor (micro 11, caption 12.5); `em` olsaydı ikisi ayrışırdı.
+
+**Android'in kendi iç tutarsızlığı da kapandı**: rozet açılış kartının iki
+etiketi 1.5, bölüm başlığı (`SectionTitle`) 0.5'te kalmıştı; üçü de 1 oldu.
+
+**Büyük harfli olmayan küçük etiketler bunun dışında** ve öyle kalıyor —
+onlar bir üst etiket değil, sade bir alt yazı. (Ölçüldü: web'de 36
+`tracking-wide`, mobilde dört `letterSpacing: 0.5`; kendi içlerinde tutarlı,
+ayrı bir eksen.)
+
+### §268
+
+İki ölçü: Android'in büyük harfli etiketlerinin **tek** bir aralıkta olması ve
+o sayının jetonla eşleşmesi, ve web'de büyük harfli hiçbir etikette sapan
+aralık kalmaması (mutlak).
+
+Üç enjeksiyon denendi (web'de sapan bir sınıf, mobilde farklı bir aralık,
+jetonun kayması), üçü de yakalandı.
+
+### Bu turda ölçülüp DEĞİŞTİRİLMEYENLER
+
+Üçü de kusur sanılıp ölçümde temiz çıktı — defterde duruyorlar ki bir sonraki
+tur aynı yolu yeniden yürümesin:
+
+- **Donanım geri tuşu.** Web'de beş oynatıcıda `useLeaveGuard` var; Android'de
+  `useBackConfirm` **aynı beş ekranda** (`GameScreen`, `ExamScreen`,
+  `MockExamScreen`, `PlacementScreen`, `WalkModeScreen`). İlk arama
+  `BackHandler`ı `*.tsx` içinde aradığı için kancayı (`.ts`) görmemişti.
+- **Rota başlıkları.** 61 sayfanın 57'si `generateMetadata` taşıyor; kalan
+  dördü iki demo sayfası, açılış sayfası (kabuğun başlığını kullanıyor) ve
+  `/lessons` — o da bir `redirect`, hiç çizilmiyor.
+- **Sekme kümesi.** Dört sekme, aynı sıra, aynı anahtarlar.
+
+Bir de çevre notu: `check:pairs`, `test:mix`, `test:entitlement` yerel
+PostgreSQL, `test:walk` Playwright tarayıcısı istiyor. Bu makinede ikisi de
+yok; kırmızılıkları koddan değil ortamdan geliyor.
