@@ -20,7 +20,7 @@ import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
 import { flushPendingLessons } from "./src/game/lessonProgress";
-import { navigationRef } from "./src/lib/pushRoute";
+import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { t } from "./src/lib/i18n";
@@ -202,6 +202,11 @@ function Nav() {
             (navigationRef.navigate as (n: string, o?: object) => void)("User", { username: p.username });
           } catch { /* yut */ }
         }
+        /* BİLDİRİM DOKUNUŞU DA BEKLİYOR OLABİLİR. Uygulama kapalıyken
+           bildirime dokunulup açıldığında gezgin henüz kurulmamış oluyordu ve
+           rota sessizce düşüyordu (bkz. pushRoute `bekleyen`). Derin bağlantı
+           ile aynı yerden boşaltılıyor. */
+        flushPendingPush();
       }}
     >
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />

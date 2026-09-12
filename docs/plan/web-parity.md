@@ -14184,3 +14184,51 @@ Dört enjeksiyon denendi (manifesto önekinin kalkması, karşılamanın kalkıp
 iddianın kalması, bekletmenin kalkması, jokerin kalkması), dördü de
 yakalandı. İkincisi tam olarak beyan dosyasının uyardığı hâli kuruyor: iddia
 edilmiş ama karşılanmayan yol.
+
+## §11.401 — Soğuk açılışta bildirim dokunuşu düşüyordu
+
+§11.400'ün hemen yanındaki kusur, ve **aynı ders**: derin bağlantı yolu soğuk
+açılış yarışını öğrenmiş ve çözmüştü —
+
+> "SOĞUK AÇILIŞ YARIŞI. `getInitialURL` gezgin daha kurulmadan çözülüyor; ilk
+> yazımda `isReady()` koruması bağlantıyı sessizce düşürüyordu ve uygulama
+> giriş ekranında kalıyordu (**cihazda görüldü**)."
+
+**Bildirim yolu aynı korumayı bekletme olmadan taşıyordu:**
+
+```
+if (!route || !navigationRef.isReady()) return;
+```
+
+Uygulama **kapalıyken** bildirime dokunulup açıldığında
+(`getInitialNotification`) gezgin henüz kurulmamış oluyor ve rota **sessizce
+düşüyordu**: kullanıcı bildirime dokunuyor, uygulama açılıyor ve ana ekranda
+kalıyor — bildirimin çağırdığı yer bir dokunuş daha uzakta. Ve bu,
+bildirimden açılışın **en sık hâli**; bildirim genellikle uygulama kapalıyken
+gelir.
+
+**Ölçüm ise düşmüyordu.** `push_open` hazır olma denetiminden **önce**
+yazılıyor — yani pano "bildirimden açıldı" diyor ama kullanıcı istediği yere
+gitmiyordu. Görünmez bir kusur: sayı doğru, sonuç yanlış.
+
+Çözüm derin bağlantıdaki kalıbın aynısı — bekleyen rota ve
+`NavigationContainer.onReady` içinde boşaltma. İkisi **aynı yerden**
+boşaltılıyor ki kalıp tek olsun.
+
+### §278
+
+Dört ölçü: bekletmenin üç parçası (bildirim bekletiyor · boşaltıcı · `onReady`
+çağırıyor), **iki yolun da** `onReady`de boşaldığı (biri kalıptan çıkarsa
+soğuk açılış kusuru o tarafta geri döner), `push_open`ın denetimden **önce**
+yazıldığı, ve derin bağlantı kalıbının yerinde durduğu.
+
+### Paralel oturumun açık işi — dokunulmadı
+
+Bu turda `check:parity` **bir kırmızı** veriyor ve o benim değil: "hakem
+gövdesi" ölçüsü cümle hakeminin iki kopyasını karşılaştırıyor, ve paralel
+oturum şu anda ikisine de `foldContractions` ekliyor. İki kopyanın yorumu tek
+kelimeyle ayrışmış ("aşağıdaki"), ölçü de yorumları dahil karşılaştırıyor.
+
+Dosyalara **dokunulmadı** ve commit'e **alınmadı** (`src/lib/sentence-match.ts`,
+`mobile/src/lib/sentenceMatch.ts`). Kapı işini yapıyor: onlar iki kopyayı
+hizalayınca yeşile dönecek. Kendi turumun bütün ölçüleri yeşil.

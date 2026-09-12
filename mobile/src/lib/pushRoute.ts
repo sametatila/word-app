@@ -97,18 +97,46 @@ export function routeFromHref(href: string): PushRoute | null {
   return null;
 }
 
-export function navigateFromPush(url: string): void {
-  /* Bildirimden açılış ölçülüyor: "kaç kişi bildirimden dönüyor" sorusu
-     web tarafında baştan beri cevaplı, Androidde hiç sayılmıyordu. */
-  track("push_open");
-  const route = routeFromPush(url);
-  if (!route || !navigationRef.isReady()) return;
+/**
+ * Gezgin hazır olmadan gelen bildirim dokunuşu.
+ *
+ * SOĞUK AÇILIŞ YARIŞI - derin bağlantı yolunun ÖĞRENDİĞİ ama buraya
+ * taşınmayan ders. Uygulama KAPALIYKEN bildirime dokunulup açıldığında
+ * (`getInitialNotification`) gezgin henüz kurulmamış oluyor ve `isReady()`
+ * koruması rotayı SESSİZCE DÜŞÜRÜYORDU: kullanıcı bildirime dokunuyor,
+ * uygulama açılıyor ve ana ekranda kalıyor - yani bildirimin çağırdığı yer
+ * bir dokunuş daha uzakta. Bildirimden açılışın en sık hâli tam bu.
+ *
+ * `App.tsx` `NavigationContainer.onReady` içinde boşaltılıyor
+ * (`flushPendingPush`), derin bağlantıdaki `pending` ile aynı kalıp.
+ */
+let bekleyen: PushRoute | null = null;
+
+function git(route: PushRoute): void {
   try {
     /* Ekran adı çalışma zamanında seçiliyor; `navigate`in aşırı yüklemeleri
        sabit ada bağlı, o yüzden tek bir gevşek imzayla çağrılıyor. Adlar
        `LEARN_SUB`ta `keyof RootStackParams` ile zaten sınanıyor. */
     (navigationRef.navigate as (name: string, params?: object) => void)(route.name, route.params);
   } catch {
-    /* gezgin hazır değilse dokunuş uygulamayı açmakla kalır */
+    /* gezgin bir şekilde hazır değilse dokunuş uygulamayı açmakla kalır */
   }
+}
+
+export function navigateFromPush(url: string): void {
+  /* Bildirimden açılış ölçülüyor: "kaç kişi bildirimden dönüyor" sorusu
+     web tarafında baştan beri cevaplı, Androidde hiç sayılmıyordu. Ölçüm
+     gezginin hazır olmasını BEKLEMİYOR: dokunuş olmuştur. */
+  track("push_open");
+  const route = routeFromPush(url);
+  if (!route) return;
+  if (!navigationRef.isReady()) { bekleyen = route; return; }
+  git(route);
+}
+
+/** Gezgin hazır olduğunda bekleyen dokunuşu işler (bkz. `bekleyen`). */
+export function flushPendingPush(): void {
+  const route = bekleyen;
+  bekleyen = null;
+  if (route && navigationRef.isReady()) git(route);
 }

@@ -7480,6 +7480,91 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 278. SOGUK ACILISTA BILDIRIM DOKUNUSU DUSMUYOR -----------------
+   *
+   * 277'nin hemen yanindaki kusur, ve ayni ders: DERIN BAGLANTI yolu soguk
+   * acilis yarisini ogrenmis ve cozmustu ("ilk yazimda `isReady()` korumasi
+   * baglantiyi sessizce dusuruyordu ve uygulama giris ekraninda kaliyordu -
+   * cihazda goruldu"), ama BILDIRIM yolu ayni korumayi bekletme olmadan
+   * tasiyordu.
+   *
+   * Uygulama KAPALIYKEN bildirime dokunulup acildiginda
+   * (`getInitialNotification`) gezgin henuz kurulmamis oluyor ve rota
+   * SESSIZCE DUSUYORDU: kullanici bildirime dokunuyor, uygulama aciliyor ve
+   * ana ekranda kaliyor. Bildirimden acilisin en sik hali tam bu - bildirim
+   * genellikle uygulama kapaliyken gelir.
+   *
+   * Olcum ise dusmuyordu: `push_open` hazir olma denetiminden ONCE yaziliyor,
+   * yani pano "bildirimden acildi" diyor ama kullanici istedigi yere
+   * gitmiyordu - gorunmez bir kusur.
+   *
+   * Cozum derin baglantidaki kalibin aynisi: bekleyen rota ve
+   * `NavigationContainer.onReady` icinde bosaltma. Ikisi ayni yerden
+   * bosaltiliyor ki kalip tek olsun. */
+  {
+    const pr = sil(read("mobile/src/lib/pushRoute.ts"));
+    const app = sil(read("mobile/App.tsx"));
+    const dl = sil(read("mobile/src/lib/deepLink.ts"));
+
+    sameList(
+      "soguk acilista bekletme",
+      [
+        "bildirim bekletiyor=" + (/if \(!navigationRef\.isReady\(\)\) \{ bekleyen = route; return; \}/.test(pr) ? "var" : "YOK"),
+        "bosaltici=" + (/export function flushPendingPush/.test(pr) ? "var" : "YOK"),
+        "onReady cagiriyor=" + (/flushPendingPush\(\);/.test(app) ? "var" : "YOK"),
+      ],
+      ["bildirim bekletiyor=var", "bosaltici=var", "onReady cagiriyor=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* IKI YOL AYNI KALIBI KULLANIYOR: derin baglanti `pending`, bildirim
+       `bekleyen`, ikisi de `onReady`de bosaliyor. Biri kaliptan cikarsa
+       soguk acilis kusuru o tarafta geri doner. */
+    const onReady = (() => {
+      const i = app.indexOf("onReady={() => {");
+      if (i < 0) return "";
+      let d = 0;
+      for (let j = app.indexOf("{", i); j < app.length; j++) {
+        if (app[j] === "{") d++;
+        else if (app[j] === "}") { d--; if (d === 0) return app.slice(i, j + 1); }
+      }
+      return "";
+    })();
+    sameList(
+      "iki yol da onReady'de bosaliyor",
+      [
+        "derin baglanti=" + (/pending\.current/.test(onReady) ? "var" : "YOK"),
+        "bildirim=" + (/flushPendingPush\(\)/.test(onReady) ? "var" : "YOK"),
+      ],
+      ["derin baglanti=var", "bildirim=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Olcum hazir olma denetiminden ONCE: dokunus olmustur, gezginin hali
+       onu degistirmez. */
+    const olcumIx = pr.indexOf('track("push_open")');
+    const denetimIx = pr.indexOf("navigationRef.isReady()", olcumIx);
+    sameList(
+      "push_open dokunusta yaziliyor",
+      ["sira=" + (olcumIx > 0 && denetimIx > olcumIx ? "olcum once" : "DENETIM ONCE")],
+      ["sira=olcum once"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Derin baglanti tarafi da yerinde dursun - 277 onu kurdu, burasi onu
+       kilitliyor. */
+    sameList(
+      "derin baglanti kalibi duruyor",
+      ["profil eylemi=" + (/kind: "profile"/.test(dl) ? "var" : "YOK")],
+      ["profil eylemi=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 277. DAVET BAGLANTISI UYGULAMAYI ACIYOR -----------------------
    *
    * §169'un yan notu "mobilde derin baglanti HIC YOK" diyordu ve o cumle
