@@ -7469,6 +7469,97 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 261. DEVRE DISI OLMAK TEK BIR SONUKLUK ------------------------
+   *
+   * Ayni durum uygulamanin her yerinde ayni gucte okunmali. Olcum bunun
+   * tersini buldu: webde UC deger (`disabled:opacity-40` 8 kez, `-50` 10 kez,
+   * `-60` 24 kez), mobilde BES ayri anlatim (0.4, 0.45, 0.5, 0.6 ve renk
+   * takasi). Yani "kapali" kelimesi kirk iki yerde uc farkli tonda
+   * soyleniyordu ve hicbir yerde yazili bir kural yoktu.
+   *
+   * Degeri SECMEDIK, VARDI: `globals.css` icindeki `.input:disabled` baştan
+   * beri 0.6 diyor. Olcek ona getirildi.
+   *
+   * MOBILDE TEK YER `PressableScale`: `Pressable` kapaliyken hicbir sey
+   * degistirmiyor (dokunma calismiyor ama dugme CANLI gorunuyor), o yuzden
+   * her cagri yeri kendi cozuyordu. Sonukluk bilesene tasindi ve on alti
+   * cagri yerindeki elle sonukluk silindi.
+   *
+   * RENK TAKASI DA KALKTI (`MockExamScreen` `Primary`, `LessonScreen`
+   * `BigButton`): takas + sonukluk ust uste binince dugme okunmaz oluyordu
+   * ve web zaten takas yapmiyor. `BigButton` ayrica `disabled` PROP'unu hic
+   * vermiyordu - `onPress`i bos bir islevle degistiriyordu, yani basilamayan
+   * dugme ekran okuyucuya "basilabilir" diye okunuyordu.
+   *
+   * IKI SEY BUNUN DISINDA ve ikisi de iki platformda ESIT:
+   *   - "baska maddede kullanilmis" sik (0.45): devre disi degil, yine
+   *     basilabiliyor (bkz. `MockExamScreen` / `mock-exam-player`).
+   *   - cevaptan sonra sonen YANLIS siklar (0.55) ve kilitli icerik (0.6):
+   *     bir denetimin durumu degil, icerigin durumu. */
+  {
+    /* MUTLAK (web): tek bir devre disi sonuklugu. */
+    const walkTsx261 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx261(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const sapan = new Set();
+    for (const f of [...walkTsx261("src/app"), ...walkTsx261("src/components")]) {
+      for (const m of sil(read(f)).matchAll(/disabled:opacity-(\d+)/g)) {
+        if (m[1] !== "60") sapan.add(f.split("/").pop() + ":" + m[1]);
+      }
+    }
+    sameList(
+      "web devre disi sonuklugu tek deger",
+      sapan.size ? [...sapan] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kaynak: CSS'teki `.input:disabled` ile Tailwind olcegi ayni sayiyi
+       soylemeli - biri degisip oteki kalirsa yine iki deger olur. */
+    const css = read("src/app/globals.css");
+    sameList(
+      "girdi ve dugme ayni sonuklukte",
+      ["css=" + (/\.input:disabled\s*\{\s*opacity:\s*0\.6;/.test(css) ? "0.6" : "BASKA")],
+      ["css=0.6"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK (mobil): sonukluk TEK YERDE ve cagri yerlerinde elle yok. */
+    const ps = sil(read("mobile/src/ui/PressableScale.tsx"));
+    sameList(
+      "mobil sonukluk bilesende",
+      ["PressableScale=" + (/disabled \? \{ opacity: 0\.6 \} : null/.test(ps) ? "0.6" : "YOK")],
+      ["PressableScale=0.6"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Elle sonukluk kalmadi - `disabled` PROP'u verilen bir dugmede ayrica
+       opacity yazmak sonuklugu ikiye katlar (0.6 x 0.6 = 0.36). */
+    const ikiKat = [];
+    for (const f of walkTsx261("mobile/src")) {
+      const src = sil(read(f));
+      for (const m of src.matchAll(/<PressableScale\b[\s\S]{0,700}?>/g)) {
+        if (!/\bdisabled=\{/.test(m[0])) continue;
+        if (/opacity: [^,}]*\?/.test(m[0])) ikiKat.push(f.split("/").pop());
+      }
+    }
+    sameList(
+      "mobilde elle sonukluk kalmadi",
+      ikiKat.length ? [...new Set(ikiKat)] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 260. COKME SINIRI -----------------------------------------------
    *
    * Yine ONDE OLAN WEB. Bir ekranin ciziminde yakalanmamis bir hata olursa
