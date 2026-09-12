@@ -12292,3 +12292,68 @@ Ad ölçüsü **koşullu adı da sayıyor**: `t(phase === "bolum" ? "exam.quit_t
 : "common.back")` gibi bir ad ilk yazımda görünmüyordu ve iki ekran yanlışlıkla
 "adsız" çıkmıştı — ölçü anahtarın **ad özniteliğinin içinde** geçmesine
 çevrildi. Beş enjeksiyon denendi, beşi de yakalandı.
+
+## §11.362 — Yertutucu ad değildir: 72 metin alanı adsızdı
+
+Eksen **girdi doğrulama ve alanların erişilebilirliği**ydi. Üç kusur çıktı;
+ilki en büyüğü.
+
+### Yertutucu ad değildir
+
+İki uygulamadaki metin alanlarının **neredeyse hepsi** adını yalnızca
+yertutucudan alıyordu: webde 41 alan (`input` + `textarea`), mobilde 31
+`TextInput`. Yertutucu yazmaya başlayınca kaybolur, bazı ekran okuyucuları
+onu hiç okumaz ve alana geri dönen kullanıcıya alanın ne istediğini söyleyen
+hiçbir şey kalmaz — parola kutusuyla "parolayı yine yaz" kutusu ayırt
+edilemez oluyordu. Giriş, kayıt, şifre sıfırlama, şifre değiştirme, iki
+adımlı doğrulama, hesap silme, profil, sosyal ayarlar, promo kodu, kelime
+arama, bütün tur ve sınav cevap alanları.
+
+**İki taraf da yanlıştı**, ölçü bu yüzden mutlak ve ağaç genelinde. Yeni
+dizgi yok: her alanın adı kendi yertutucusunun anahtarı; yertutucusu olmayan
+iki yerde (yazı dökümü alanları) hemen üstündeki ipucu satırı.
+
+### Başarı ile hata aynı seviyede duyuruluyordu
+
+Beş yüzeyde tek bir öge hem "kaydedildi"yi hem "olmadı"yı taşıyor ve seviye
+sabitti — webde hep `role="status"`, mobilde hep
+`accessibilityLiveRegion="polite"`. Yani başarısız bir promo kodu,
+reddedilen bir kullanıcı adı ya da düşen bir arkadaşlık isteği ekran
+okuyucuya **sırası gelince — yani belki hiç** — söyleniyordu. Ev kuralı bu
+ayrımı başka her yerde tutuyor (`role="alert"` / `assertive`); aynı ekranın
+ödeme hatası bile baştan beri `assertive`. Seviye artık duruma bağlı.
+
+### Geçersizlik alanın kendisinde değildi (web)
+
+Parola kuralı ihlali ya da boş ad yalnızca altta bir kutuda yazıyordu; alan
+"geçerli" görünüyor ve alana geri dönen ekran okuyucu kullanıcısına sorunun
+sürdüğünü söyleyen hiçbir şey olmuyordu. Dört form artık `aria-invalid` ile
+"bir sorun var"ı, `aria-describedby` ile **hangi sorun** olduğunu alana
+bağlıyor. React Native'de `aria-invalid` yok; mobil karşılık hatanın canlı
+bölgede duyurulması ve o başka kapılarda ölçülüyor.
+
+### İki ölçüm dersi
+
+**Örtülü etiket de bir addır.** İlk ölçüm `<label>` ile *saran* bağlantıyı
+saymıyordu ve doğru yazılmış beş yönetici alanını "adsız" gösteriyordu —
+komşuyu değil **yanlış şeyi** ölçmek. Ölçü üç yolu da kabul ediyor:
+`aria-label`/`aria-labelledby`, `id`↔`htmlFor`, ve alanı saran `<label>`
+içindeki metin.
+
+**Kesme işareti tırnak sanılıyor.** Ölçümü ilk yazdığımda ham kaynak
+üzerinde çalıştırmıştım ve `"Android'de karşılığı…"` gibi bir **yorum**
+içindeki kesme işareti tırnak açıyor sayıldı: etiketin sonu bulunamadı ve
+`AuthScreen`in iki adımlı kod alanı taramadan kaçtı. Kapı `sil()` ile
+yorumları düşürüp ölçtüğü için onu buldu — kapı ad hoc taramadan daha
+doğruydu.
+
+### §243
+
+Altı olgu: alanların adı (iki platform ayrı listede, mutlak), başarı/hata
+duyuru seviyesinin ayrı olması (dört yüzey, eşleştirmeli), geçersizliğin
+alana bağlı olması ve hata metninin alana bağlı olması. Altı enjeksiyon
+denendi, altısı da yakalandı.
+
+Mevcut bir kapı da onarıldı: "sonuç duyurusu" (§11.331) seviyeyi düz dizgi
+olarak arıyordu ve koşullu biçime geçen beş yüzeyi "sessiz" saydı — duyuru
+kalkmamış, **biçimi değişmişti**. Desen ikisini de kabul ediyor.

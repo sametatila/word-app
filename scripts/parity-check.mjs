@@ -5623,9 +5623,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     if (bloklar.length === 0) return "cizim-yok";
     return bloklar.every((x) => isaret.test(x)) ? "duyuruyor" : "sessiz";
   };
-  const MOB = /accessibilityLiveRegion="polite"/;
+  /* SEVIYE KOSULLU OLABILIR. Bes yuzeyde tek oge hem basariyi hem hatayi
+     tasiyor ve seviye ona gore secilliyor (`msg.ok ? "polite" : "assertive"`);
+     ilk yazim yalniz duz `"polite"` dizgisini ariyordu ve o bes yuzeyi
+     "sessiz" sayiyordu - duyuru KALKMAMIS, bicimi degismisti. Bkz. 243. */
+  const MOB = /accessibilityLiveRegion=(?:"polite"|\{[^}]*(?:"polite"|"assertive")[^}]*\})/;
   /* Webde ya dogrudan rol var ya da ortak kutudan geciyor. */
-  const WEB = /role="(status|alert)"|<AuthNotice[\s/>]/;
+  const WEB = /role=(?:"(?:status|alert)"|\{[^}]*"(?:status|alert)"[^}]*\})|<AuthNotice[\s/>]/;
   const CIFT = [
     /* Iki tarafta da yalniz BASARISIZLIK yaziliyor: kayit dokunusta oldugu
        icin basari ayrica soylenmiyor, kontrolun kendisi yeni durumu gosterir. */
@@ -7341,6 +7345,162 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 243. METIN ALANININ ADI VE HATANIN SEVIYESI ---------------------
+   *
+   * BIRINCISI: YERTUTUCU AD DEGILDIR. Iki uygulamadaki metin alanlarinin
+   * neredeyse hepsi adini yalnizca yertutucudan aliyordu - webde 41 alan
+   * (`input` + `textarea`), mobilde 31 `TextInput`. Yertutucu yazmaya
+   * baslayinca kayboluyor, bazi ekran okuyuculari onu hic okumuyor ve
+   * geri donen kullaniciya alanin ne istedigini soyleyen hicbir sey
+   * kalmiyor: parola kutusuyla "parolayi yine yaz" kutusu ayirt edilemez
+   * oluyordu. IKI TARAF DA YANLISTI, olcu bu yuzden MUTLAK ve agac
+   * genelinde.
+   *
+   * Yeni dizgi yok: her alanin adi kendi yertutucusunun anahtari (ya da
+   * yertutucusu olmayan iki yerde hemen ustundeki ipucu satiri).
+   *
+   * IKINCISI: BASARI ILE HATA AYNI SEVIYEDE DUYURULUYORDU. Bes yuzeyde tek
+   * bir oge hem "kaydedildi"yi hem "olmadi"yi tasiyor ve seviye sabitti -
+   * webde hep `role="status"`, mobilde hep `accessibilityLiveRegion="polite"`.
+   * Yani basarisiz bir promo kodu, reddedilen bir kullanici adi ya da
+   * dusen bir arkadaslik istegi ekran okuyucuya SIRASI GELINCE - yani belki
+   * hic - soyleniyordu. Ev kurali bu ayrimi baska her yerde tutuyor
+   * (`role="alert"` / `assertive`); ayni ekranin odeme hatasi bile baştan
+   * beri `assertive`. Seviye artik duruma bagli.
+   *
+   * UCUNCUSU webde: GECERSIZLIK ALANIN KENDISINDE DEGILDI. Parola kurali
+   * ihlali ya da bos ad yalnizca altta bir kutuda yaziyordu; alan
+   * "gecerli" gorunuyor ve alana geri donen ekran okuyucu kullanicisina
+   * sorunun surdugunu soyleyen hicbir sey olmuyordu. Dort form artik
+   * `aria-invalid` + `aria-describedby` ile hatayi alana BAGLIYOR. */
+  {
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+
+    /* Webde ad UC yoldan gelebilir: `aria-label`/`aria-labelledby`, `id` ile
+       eslesen bir `htmlFor`, ya da alani SARAN `<label>` icindeki metin
+       (ortulu baglanti). Ucuncusunu saymayan bir olcu, dogru yazilmis bes
+       yonetici alanini "adsiz" gosteriyordu - komsuyu degil YANLIS SEYI
+       olcmek. */
+    const webAdsiz = [];
+    for (const y of tsxler("src")) {
+      const src = sil(read(y));
+      const forlar = new Set([...src.matchAll(/htmlFor="([^"]+)"/g)].map((m) => m[1]));
+      for (const etiket of ["<input", "<textarea"]) {
+        let i = -1;
+        while ((i = src.indexOf(etiket, i + 1)) >= 0) {
+          const tag = src.slice(i, i + acilisSonu(src.slice(i)) + 1);
+          if (/type="(?:hidden|checkbox|radio|range|file|submit|button)"/.test(tag)) continue;
+          if (/aria-label|aria-labelledby/.test(tag)) continue;
+          const id = (tag.match(/\bid="([^"]+)"/) ?? [])[1];
+          if (id && forlar.has(id)) continue;
+          const etiketBasi = src.lastIndexOf("<label", i);
+          const kapanis = etiketBasi >= 0 ? src.indexOf("</label>", etiketBasi) : -1;
+          const sarili = etiketBasi >= 0 && (kapanis < 0 || kapanis > i) && /<span[\s>]/.test(src.slice(etiketBasi, i));
+          if (sarili) continue;
+          webAdsiz.push(y + ":" + src.slice(0, i).split("\n").length);
+        }
+      }
+    }
+    const mobilAdsiz = [];
+    for (const y of tsxler("mobile/src")) {
+      const src = sil(read(y));
+      let i = -1;
+      while ((i = src.indexOf("<TextInput", i + 1)) >= 0) {
+        const tag = src.slice(i, i + acilisSonu(src.slice(i)) + 1);
+        if (/accessibilityLabel/.test(tag)) continue;
+        mobilAdsiz.push(y + ":" + src.slice(0, i).split("\n").length);
+      }
+    }
+    sameList(
+      "metin alanlarinin adi var",
+      ["adsiz=" + mobilAdsiz.length + (mobilAdsiz.length ? " (" + mobilAdsiz.join(", ") + ")" : "")],
+      ["adsiz=0"],
+      "mobil",
+      "beklenen",
+    );
+    sameList(
+      "metin alanlarinin adi var (web)",
+      ["adsiz=" + webAdsiz.length + (webAdsiz.length ? " (" + webAdsiz.join(", ") + ")" : "")],
+      ["adsiz=0"],
+      "web",
+      "beklenen",
+    );
+
+    /* Basari ile hatanin SEVIYESI ayni olamaz. */
+    const SEVIYE = [
+      ["promo-kodu", "src/components/premium-paywall.tsx", "mobile/src/screens/PaywallScreen.tsx"],
+      ["arkadas-satiri", "src/components/social/friend-list.tsx", "mobile/src/social/FriendRows.tsx"],
+      ["sosyal-ayarlar", "src/components/social/social-settings.tsx", "mobile/src/screens/SocialSettingsScreen.tsx"],
+      ["baskasinin-profili", "src/components/social/public-profile.tsx", "mobile/src/screens/UserScreen.tsx"],
+    ];
+    const webSeviye = (y) => {
+      const src = sil(read(y));
+      if (/role="status"[^>]*msg\.ok/.test(src) || /msg\.ok[^>]*role="status"/.test(src)) return "SABIT";
+      return /role=\{(?:msg\.)?ok \? "status" : "alert"\}/.test(src) ? "duruma bagli" : "?";
+    };
+    const mobilSeviye = (y) => {
+      const src = sil(read(y));
+      return /accessibilityLiveRegion=\{(?:msg\.)?ok \? "polite" : "assertive"\}/.test(src) ? "duruma bagli" : "SABIT";
+    };
+    sameList(
+      "basari ile hatanin duyuru seviyesi ayri",
+      SEVIYE.map(([ad, , ym]) => ad + "=" + mobilSeviye(ym)),
+      SEVIYE.map(([ad, yw]) => ad + "=" + webSeviye(yw)),
+      "mobil",
+      "web",
+    );
+
+    /* Gecersizlik ALANIN KENDISINDE (webe ozel: React Native'de `aria-invalid`
+       yok, mobil karsilik hatanin canli bolgede duyurulmasi ve o baska
+       kapilarda olculuyor). */
+    const GECERSIZ = [
+      ["kayit-parolasi", "src/components/auth-form.tsx", /aria-invalid=\{mode === "signup" && password && passwordProblem/],
+      ["sifre-sifirlama", "src/components/reset-password-form.tsx", /aria-invalid=\{password && passwordProblem/],
+      ["sifre-degistirme", "src/components/account/change-password.tsx", /aria-invalid=\{next && problem/],
+      ["profil-adi", "src/components/profile-form.tsx", /aria-invalid=\{nameError/],
+    ];
+    sameList(
+      "gecersizlik alanin kendisinde",
+      GECERSIZ.map(([ad, y, d]) => ad + "=" + (d.test(sil(read(y))) ? "bagli" : "BAGLI DEGIL")),
+      GECERSIZ.map(([ad]) => ad + "=bagli"),
+      "bulunan",
+      "beklenen",
+    );
+    /* Hata METNI de alana bagli: `aria-invalid` "bir sorun var" der, hangi
+       sorun oldugunu `aria-describedby` soyler. */
+    const TARIF = [
+      ["kayit-parolasi", "src/components/auth-form.tsx", 'aria-describedby={mode === "signup" && password ? "password-hint" : undefined}'],
+      ["sifre-sifirlama", "src/components/reset-password-form.tsx", 'aria-describedby={password ? "reset-password-hint" : undefined}'],
+      ["sifre-degistirme", "src/components/account/change-password.tsx", 'aria-describedby={next ? "changepw-hint" : undefined}'],
+      ["profil-adi", "src/components/profile-form.tsx", 'aria-describedby={nameError ? "profile-name-error" : undefined}'],
+    ];
+    sameList(
+      "hata metni alana bagli",
+      TARIF.map(([ad, y, d]) => ad + "=" + (sil(read(y)).includes(d) ? "bagli" : "BAGLI DEGIL")),
+      TARIF.map(([ad]) => ad + "=bagli"),
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* -- 242. YARIM KALAN ISTEN AYRILMAK ---------------------------------
    *
