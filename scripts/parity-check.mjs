@@ -17217,6 +17217,49 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------------------ 309. PROFIL KARTININ AD YEDEGI
+   *
+   * Adi olmayan kullaniciya profil kartinda ne yazilacagi iki platformda iki
+   * ayri zincirdi:
+   *   Android  ad → E-POSTANIN yerel parcasi → `profile.student`
+   *   web      ad → `social.student`
+   * Iki fark birden: yanlis ANAHTAR ve eksik bir ADIM.
+   *
+   * Anahtar farki tek basina gorunmez - iki anahtarin degeri de "Ogrenci".
+   * Ama `social.student` LISTE satirlarinin yedegi (lider tablosu, gunun
+   * turu; iki platformda da oyle) ve `profile.student` profil kartinin kendi
+   * yedegi. Ayni yuzeyin iki anahtari olunca biri duzeltilip otekinin eski
+   * kalmasi icin bir yol aciliyor - defterin `cheer`/`celebrate` dersi.
+   *
+   * Olcu dort parca: iki platform kartta ayni anahtari kullaniyor, web e-posta
+   * adimini tasiyor, ve `social.student` LISTE yuzeylerinde iki tarafta da
+   * duruyor (yani iki anahtar birbirine karismadi). */
+  {
+    const webSayfa = sil(read("src/app/(app)/profile/page.tsx"));
+    const mobEkran = sil(read("mobile/src/screens/ProfileScreen.tsx"));
+    sameList(
+      "profil kartinin ad yedegi",
+      [
+        "web anahtar=" + (/t\("profile\.student"\)/.test(webSayfa) ? "profile.student" : /t\("social\.student"\)/.test(webSayfa) ? "social.student" : "YOK"),
+        "mobil anahtar=" + (/t\("profile\.student"\)/.test(mobEkran) ? "profile.student" : "YOK"),
+        "web e-posta adimi=" + (/email\?\.split\("@"\)\[0\]/.test(webSayfa) ? "var" : "YOK"),
+        "mobil e-posta adimi=" + (/email\?\.split\("@"\)\[0\]/.test(mobEkran) ? "var" : "YOK"),
+        "liste yedegi web=" + (/t\("social\.student"\)/.test(sil(read("src/components/social/league-board.tsx"))) ? "social.student" : "YOK"),
+        "liste yedegi mobil=" + (/t\("social\.student"\)/.test(sil(read("mobile/src/social/LeagueBoard.tsx"))) ? "social.student" : "YOK"),
+      ],
+      [
+        "web anahtar=profile.student",
+        "mobil anahtar=profile.student",
+        "web e-posta adimi=var",
+        "mobil e-posta adimi=var",
+        "liste yedegi web=social.student",
+        "liste yedegi mobil=social.student",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

@@ -37,7 +37,18 @@ export default async function ProfilePage() {
     return (
       <ProfileView
         stats={{
-          name: profile.displayName || user.name || t("social.student"),
+          /*
+            AD YEDEGI ANDROID'IN ZINCIRI. Iki fark vardi:
+            - Anahtar `social.student` idi; o anahtar LISTE satirlarinin
+              yedegi (lider tablosu, gunun turu - iki platformda da oyle).
+              Profil kartinin kendi yedegi `profile.student` ve Android orada
+              onu kullaniyor. Ayni yuzey, iki ayri anahtar: biri duzeltilirse
+              oteki eski kaliyor.
+            - Android adi bulamazsa E-POSTANIN yerel parcasini kullaniyor
+              ("samet@..." → "samet") ve ancak o da yoksa sozluge dusuyor;
+              web dogrudan "Ogrenci" yaziyordu.
+          */
+          name: profile.displayName || user.name || user.email?.split("@")[0] || t("profile.student"),
           email: user.email ?? null,
           streak: profile.currentStreak,
           xp: profile.totalXp,

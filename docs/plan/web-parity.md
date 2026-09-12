@@ -16168,3 +16168,35 @@ aynı satırda aynı anahtarı kullanıyor.
 
 Üç enjeksiyon doğrulandı: webde "dk"yı geri gömmek, mobilin anahtarını
 kaldırmak, başka bir bileşene gömülü "sa" eklemek.
+
+## §11.444 — Profil kartının ad yedeği: yanlış anahtar ve eksik bir adım
+
+Adı olmayan kullanıcıya profil kartında ne yazılacağı iki platformda iki ayrı
+zincirdi:
+
+| | zincir |
+|---|---|
+| Android | ad → **e-postanın yerel parçası** → `profile.student` |
+| web | ad → `social.student` |
+
+İki fark birden. **Anahtar** farkı tek başına görünmez — iki anahtarın değeri de
+"Öğrenci". Ama `social.student` **liste satırlarının** yedeği (lider tablosu,
+günün turu; iki platformda da öyle) ve `profile.student` profil kartının kendi
+yedeği. Aynı yüzeyin iki anahtarı olunca biri düzeltilip ötekinin eski kalması
+için bir yol açılıyor — defterin `cheer`/`celebrate` dersi.
+
+**Eksik adım** ise görünür: adı olmayan bir kullanıcı Android'de e-posta
+adresinin yerel parçasını görüyor ("samet@…" → "samet"), webde doğrudan
+"Öğrenci". Aynı hesap, iki üründe iki kimlik.
+
+İkisi de webde düzeltildi (Android referans).
+
+### §309
+
+Altı ölçü: iki platform kartta aynı anahtarı kullanıyor, ikisi de e-posta
+adımını taşıyor, ve `social.student` **liste** yüzeylerinde iki tarafta da
+duruyor — sonuncusu iki anahtarın birbirine karışmadığını ölçüyor (yanlış
+düzeltme yönü: kart anahtarını listeye taşımak).
+
+Üç enjeksiyon doğrulandı: webi eski anahtara döndürmek, yalnız e-posta adımını
+kaldırmak, liste yedeğini kart anahtarıyla değiştirmek.
