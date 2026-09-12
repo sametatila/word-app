@@ -1012,3 +1012,35 @@
  * gerektiriyordu.
  */
 
+/*
+ * ── iOS ODAK YAKINLAŞTIRMASI ──────────────────────────────────────────────
+ *
+ * iOS Safari, odaklanan bir alanın yazısı 16 pikselden KÜÇÜKSE sayfayı
+ * kendiliğinden yakınlaştırıyor. Uygulamanın gövde puntosu 15 (`--text-body`,
+ * mobil `typography.body` ile birebir) ve bütün metin alanları onu
+ * kullanıyordu — yani iPhone'da her alana dokunuşta sayfa zıplayıp
+ * büyüyordu: giriş, arama, promo kodu, sınav cevabı, yazma görevi. Geri
+ * dönmek için parmakla küçültmek gerekiyordu.
+ *
+ * Android uygulamasında böyle bir şey yok; bu yüzden aynı kişi aynı formu
+ * tarayıcıda açtığında başka bir uygulama kullanıyor gibi hissediyordu.
+ *
+ * ÇÖZÜM ALANIN KENDİSİNDE, viewport'ta değil: `maximum-scale=1` hem iOS'ta
+ * yok sayılıyor hem de yakınlaştırmayı herkese kapatıyordu (bkz. layout.tsx).
+ *
+ * YALNIZ KABA İŞARETÇİDE (dokunmatik): masaüstünde ölçek 15'te kalıyor ve
+ * tasarım değişmiyor. Onay kutusu ve radyo dışarıda — onlarda punto zaten
+ * bir şey anlatmıyor.
+ *
+ * KATMANSIZ ve bilerek: Tailwind'in `text-body` gibi yardımcı sınıfları
+ * `@layer utilities` içinde ve katmanlı stiller katmansız olanlara YENİLİR.
+ * Bu blok `@layer`ın içine konsaydı her alandaki `text-body` onu ezer, kural
+ * hiçbir şey ölçmeyen bir süs olurdu.
+ */
+@media (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    font-size: 1rem;
+  }
+}

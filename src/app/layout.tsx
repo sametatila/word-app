@@ -58,7 +58,20 @@ export const viewport: Viewport = {
   ],
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  /*
+   * YAKINLAŞTIRMA KİLİDİ KALKTI (`maximumScale: 1`).
+   *
+   * İki sebeple yanlıştı. Birincisi erişilebilirlik: az gören bir kullanıcı
+   * sayfayı parmakla büyütemiyordu (WCAG 1.4.4). Android uygulaması bunun
+   * tersini yapıyor - sistem yazı ölçeğini OKUYOR ve 1.5 katına kadar
+   * büyütüyor (`ui/Text` `maxFontSizeMultiplier`). Yani aynı kullanıcı
+   * telefonda uygulamada büyütebiliyor, tarayıcıda büyütemiyordu.
+   *
+   * İkincisi işe yaramıyordu: iOS Safari `maximum-scale`i iOS 10'dan beri
+   * yok sayıyor. Odak yakınlaştırmasını da durdurmuyordu - onu durduran şey
+   * alanın 16 pikselden küçük OLMAMASI (bkz. globals.css sonundaki blok).
+   * Yani kilit hem zarar veriyor hem bir şey çözmüyordu.
+   */
   viewportFit: "cover",
 };
 
