@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cronGate } from "@/lib/cron-auth";
+import { recordCronRun } from "@/lib/cron-runs";
 import { and, gte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
@@ -22,8 +23,10 @@ export const maxDuration = 60;
  * yetki kuralı.
  */
 export async function GET(req: Request) {
+  const basladi = Date.now();
   const denied = cronGate(req, "summary");
-  if (denied) return denied;
+  /* KAPIDA DÜŞEN ÇAĞRI DA YAZILIYOR (bkz. lib/cron-runs). */
+  if (denied) { void recordCronRun("summary", false, Date.now() - basladi, "denied"); return denied; }
   const today = new Date().toISOString().slice(0, 10);
   try {
     const rows = await db
@@ -51,10 +54,13 @@ export async function GET(req: Request) {
     // Özet turuna asılı çünkü zaten günlük çalışıyor; ayrı bir zamanlayıcı
     // kurmak yerine tek yerden yürütülüyor. Hatası özeti düşürmez.
     const purged = await purgeExpiredRoleplayLogs();
-    console.log(`[cron/summary] hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged}`);
+    const ozet = `hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged}`;
+    console.log(`[cron/summary] ${ozet}`);
+    void recordCronRun("summary", true, Date.now() - basladi, ozet);
     return NextResponse.json({ targets: rows.length, sent, purged });
   } catch (err) {
     console.error("[cron/summary]", err);
+    void recordCronRun("summary", false, Date.now() - basladi, String((err as Error).message ?? err));
     return NextResponse.json({ error: "failed" }, { status: 500 });
   }
 }

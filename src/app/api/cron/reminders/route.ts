@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cronGate } from "@/lib/cron-auth";
+import { recordCronRun } from "@/lib/cron-runs";
 import { runReminders } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
@@ -21,15 +22,23 @@ export const maxDuration = 60;
  * yetki ve raporlama var.
  */
 export async function GET(req: Request) {
+  const basladi = Date.now();
   const denied = cronGate(req, "reminders");
-  if (denied) return denied;
+  /* KAPIDA DÜŞEN ÇAĞRI DA YAZILIYOR: `CRON_SECRET` kayarsa iş hiç başlamaz
+     ve eski hâlde bunun tek izi 401'lik bir yanıt olurdu (bkz. lib/cron-runs). */
+  if (denied) { void recordCronRun("reminders", false, Date.now() - basladi, "denied"); return denied; }
 
   try {
     const result = await runReminders();
-    console.log(`[cron/reminders] hedef ${result.targets} · gönderilen ${result.sent}`);
+    /* Cümle TEK YERDE kuruluyor: hem log hem koşu kaydı aynı metni
+       kullanıyor, iki kopya iki yerde bakım demekti. */
+    const ozet = `hedef ${result.targets} · gönderilen ${result.sent}`;
+    console.log(`[cron/reminders] ${ozet}`);
+    void recordCronRun("reminders", true, Date.now() - basladi, ozet);
     return NextResponse.json(result);
   } catch (err) {
     console.error("[cron/reminders]", err);
+    void recordCronRun("reminders", false, Date.now() - basladi, String((err as Error).message ?? err));
     return NextResponse.json({ error: "failed" }, { status: 500 });
   }
 }

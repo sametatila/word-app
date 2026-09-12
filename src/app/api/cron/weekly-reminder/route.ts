@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cronGate } from "@/lib/cron-auth";
+import { recordCronRun } from "@/lib/cron-runs";
 import { runWeeklyReminders } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
@@ -15,15 +16,19 @@ export const maxDuration = 60;
  * yazıyor, bu sınava çağırıyor.
  */
 export async function GET(req: Request) {
+  const basladi = Date.now();
   const denied = cronGate(req, "weekly-reminder");
-  if (denied) return denied;
+  if (denied) { void recordCronRun("weekly-reminder", false, Date.now() - basladi, "denied"); return denied; }
 
   try {
     const result = await runWeeklyReminders();
-    console.log(`[cron/weekly-reminder] hedef ${result.targets} · gönderilen ${result.sent}`);
+    const ozet = `hedef ${result.targets} · gönderilen ${result.sent}`;
+    console.log(`[cron/weekly-reminder] ${ozet}`);
+    void recordCronRun("weekly-reminder", true, Date.now() - basladi, ozet);
     return NextResponse.json(result);
   } catch (err) {
     console.error("[cron/weekly-reminder]", err);
+    void recordCronRun("weekly-reminder", false, Date.now() - basladi, String((err as Error).message ?? err));
     return NextResponse.json({ error: "failed" }, { status: 500 });
   }
 }

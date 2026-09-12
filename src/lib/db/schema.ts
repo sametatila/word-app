@@ -558,6 +558,38 @@ export const achievements = pgTable(
  * çöplüğe dönüşmesin. Kişisel veri de yok: olay adları sabit bir listeden
  * geliyor.
  */
+/**
+ * ZAMANLANMIŞ İŞİN KOŞU KAYDI.
+ *
+ * Beş cron ucu yalnız `console`a yazıyordu ve bu tam olarak bir kez başımıza
+ * geldi: `vercel.json`daki üç cron, Vercel bırakılınca çağıransız kaldı ve
+ * uçlar AYLARCA hiç çalışmadı (bkz. AGENTS.md "Zamanlanmış işler"). Üç ayrı
+ * sessiz kırılma var - timer susar, `CRON_SECRET` kayar, işin içinde hata
+ * çıkar - ve üçünün de tek izi kimsenin grep'lemediği bir log satırıydı.
+ *
+ * Özellikle `summary`: gizlilik politikası §9'daki "konuşma kayıtları 30 gün
+ * sonra silinir" sözünü tutan tek yer o. Sessizce durursa söz de sessizce
+ * tutulmaz.
+ *
+ * Kullanıcıya bağlı DEĞİL: kişisel veri yok, hesap silmede silinecek bir şey
+ * yok (bkz. `check:purge`).
+ */
+export const cronRuns = pgTable(
+  "cron_runs",
+  {
+    id: serial("id").primaryKey(),
+    /** reminders · assess · summary · streak-alert · weekly-reminder */
+    name: text("name").notNull(),
+    ok: boolean("ok").notNull(),
+    /** İşin sürdüğü süre (ms). */
+    ms: integer("ms").notNull().default(0),
+    /** Kısa sonuç ya da hata: "hedef 12 · gönderilen 9" / "denied". */
+    detail: text("detail"),
+    ranAt: timestamp("ran_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("cron_runs_name_idx").on(t.name, t.ranAt)],
+);
+
 export const events = pgTable(
   "events",
   {

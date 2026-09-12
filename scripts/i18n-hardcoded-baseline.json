@@ -57,6 +57,7 @@
   "src/lib/chat-providers.ts": 7,
   "src/lib/courses.ts": 7,
   "src/lib/cron-auth.ts": 1,
+  "src/lib/cron-runs.ts": 1,
   "src/lib/db/index.ts": 1,
   "src/lib/email.ts": 2,
   "src/lib/events.ts": 1,
