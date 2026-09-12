@@ -13979,3 +13979,67 @@ geçirdiği, `meta`sız `sendEmail` çağrısı kalmadığı, ve panonun göster
 Üç enjeksiyon denendi (tavan dalının sessizleşmesi, bir türün `meta`
 vermemesi, panonun hatayı kırmızı göstermemesi), üçü de yakalandı — ikincisi
 iki ölçüyü birden düşürdü.
+
+## §11.397 — Zamanlanmış işin koştuğu görünmüyordu (ve bu bir kez yaşandı)
+
+§11.395 ve §11.396'nın üçüncüsü, ama bu kez kusur **daha önce gerçekleşti**:
+`vercel.json` içindeki üç cron, Vercel bırakılınca **çağıransız kaldı** ve
+uçlar **aylarca hiç çalışmadı** (AGENTS.md "Zamanlanmış işler"). İki
+uygulamanın ayarlarındaki "seri koruma" ve "haftalık sınav" anahtarları
+açılabiliyor, karşılığında hiçbir bildirim gitmiyordu.
+
+Beş cron ucunun hepsi yalnız `console`a yazıyordu. **Üç ayrı sessiz kırılma**
+var ve üçü de aynı şekilde görünmezdi:
+
+1. **Timer susar** — systemd unit bozulur, sunucu yeniden kurulur.
+2. **`CRON_SECRET` kayar** — uç 401 döner, iş **hiç başlamaz**. Tarihte tam
+   bu sınıf gerçekleşti.
+3. **İşin içinde hata çıkar** — uç 500 döner.
+
+Üçü de artık bir satır bırakıyor (`cron_runs`, `0051`) ve pano son koşuyu,
+yedi günlük tamam/hata sayısını ve **"hiç koşmadı"** hâlini gösteriyor — o
+son hâl en kötüsü, çünkü en sessizi.
+
+Özellikle **`summary`**: gizlilik politikası §9'daki "konuşma kayıtları 30 gün
+sonra silinir" sözünü tutan tek yer o. Sessizce durursa söz de sessizce
+tutulmaz.
+
+Tablo kullanıcıya bağlı **değil** — kişisel veri yok, `check:purge`ın konusu
+değil. Kendi kendini süpürüyor (30 gün, yedek penceresiyle aynı sayı).
+
+> **Samet:** üçüncü göçürme (`0051`). `0049` ve `0050` ile birlikte deploy'dan
+> **önce** uygulanmalı.
+
+### Kapı yine kendi kusuruyla başladı
+
+İlk yazımda dal ölçüsü `recordCronRun\("<ad>", false,[^)]*"denied"\)` idi ve
+**hiçbir şeyi bulamadı**: arada geçen `Date.now() - basladi` bir `)` taşıyor,
+yani karakter sınıfı hedefinden önce duruyor. Bu defterde adı konmuş bir
+sınıf — *"`[^>]*` oka takılıyor"* — bu defa parantezle. Sınırlı bir
+`[\s\S]{0,80}?` penceresiyle düzeltildi.
+
+### §274
+
+Üç ölçü, hepsi mutlak: altyapının beş parçası (şema · göçürme · yazıcı ·
+süpürge · hatayı yutması), **beş işin üçer dalını da** yazdığı (geçen · düşen
+· kapıda reddedilen), ve panonun gösterdiği ("hiç koşmadı" dahil).
+
+İkinci ölçü asıl olan: "bir yerde `recordCronRun` var" demek yetmez — kapıda
+düşen dal yazmazsa `CRON_SECRET` kayması aynen görünmez kalır, ve tarihte tam
+o oldu.
+
+Dört enjeksiyon denendi (bir işin reddedilen dalının sessizleşmesi,
+süpürgenin kalkması, göçürmenin kaybolması, panonun "hiç koşmadı" hâlini
+göstermemesi), dördü de yakalandı.
+
+### Ve ham metin kapısı bir kopyayı yakaladı
+
+`i18n:check`in ham-metin ölçüsü beş dosyada "1 → 2" dedi: özet cümlesini hem
+`console.log`a hem koşu kaydına yazınca **aynı Türkçe metin iki kopya**
+olmuştu. Kapı haklıydı — cümle artık tek yerde kuruluyor (`const ozet`) ve iki
+yer onu kullanıyor; bakım noktası da tek.
+
+Geriye yalnız yeni dosyanın kendi log satırı kaldı
+(`[cron-runs] yazılamadı`), o da `ai-usage.ts: 1` ile aynı yerleşik kalıp.
+Tabana **tek satır** eklendi — `--baseline` ile toptan yeniden yazmak başka
+bir kaymayı da sessizce içine alırdı.
