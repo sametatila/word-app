@@ -317,7 +317,7 @@ export const enB2U13: SkillExercise[] = [
     unit: 13,
     title: "A tentative conclusion",
     genre: "monologue",
-    intro: "Beş çekince, bir cümle. Hangisi yanlış olabilir?",
+    intro: "Çekince üstüne çekince. Hangisi yanlış olabilir?",
     gloss: [
       { de: "either", tr: "ikisinden biri" },
       { de: "sentence", tr: "cümle" },

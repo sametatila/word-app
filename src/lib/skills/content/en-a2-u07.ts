@@ -183,7 +183,7 @@ export const enA2U07: SkillExercise[] = [
     unit: 7,
     title: "Could you tell me where the ward is?",
     genre: "dialogue",
-    intro: "Hastane danışmasında dört soru. Hepsi kibar, hepsi dolaylı.",
+    intro: "Hastane danışmasında üç dolaylı soru. Hepsi kibar.",
     gloss: [
       { de: "patients", tr: "hastalar" },
       { de: "go through", tr: "içinden geçmek" },

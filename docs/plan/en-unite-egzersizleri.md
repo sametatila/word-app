@@ -1783,6 +1783,32 @@ yazmıyor (`targetLangOf` yokluğu „de“ sayıyor), dolayısıyla `course ===
 süzgeci hiçbirini tutmuyor. Doğru süzgeçle Almanca kurs **870/870 dolu**.
 
 
+**Sayı taramasının ikinci turu: içerik sayıları (2026-09-12).** Sıralama
+köklerinden sonra sınıfın geri kalanı tarandı — bu kez ÜNİTE kapsamında,
+çünkü yazma egzersizinin ipucu aynı ünitenin okuma/dinlemesindeki olguya
+gönderme yapıyor ve egzersiz kapsamında bakmak 200'ün üzerinde yanlış alarm
+üretiyor. Tarama Türkçe yüzeydeki sayı sözcüklerini ünitenin bütün İngilizce
+içeriğiyle karşılaştırıyor. Üç düzeltme gerekti:
+
+- **`en-b1-u4-l1`** girişi „Beş gündür sıcak su yok“ diyordu; diyalog
+  „The boiler stopped on Saturday“ ve „today is Wednesday“ diyor — dört gün.
+- **`en-a2-u7-l1`** girişi „dört soru. Hepsi kibar, hepsi dolaylı“ diyordu;
+  diyalogda beş soru var ve yalnız üçü dolaylı („do I have to show my card?“
+  ve „where can I buy water?“ düz soru). Giriş „üç dolaylı soru“ya çevrildi.
+- **`en-b2-u13-l2`** girişi „Beş çekince, bir cümle“ diyordu; çekinceler üç
+  ayrı cümleye yayılmış. Sayısız biçime çevrildi.
+- **`en-b1-u22-r2`** girişi „on beş yılda“ diyordu; metin yalnız „since 2010“
+  diyor ve bugünün yılını vermiyor, yani sayı metinden çıkarılamıyor.
+  „2010'dan beri“ye çevrildi — metnin söylediği kadarı.
+
+Kalan 32 işaret elden geçirildi ve hepsi MEŞRU çıktı; bir kapıya çevrilmemesinin
+nedeni de bu. Üç sınıf: (a) Türkçe üstdilin bir BİÇİMİN parçalarını sayması
+(„üç parça: am + going to + fiil“) — İngilizcede sayı geçmesi gerekmiyor;
+(b) İngilizce edat „on“un Türkçe „on“ (10) sanılması, alıntı dışı listelerde;
+(c) „yüz yüze“, „In the bin“ gibi eş yazımlılar. Tarama betiği bunları
+ayıklamak için „…“ alıntılarını atıyor ve yüz/bin'i hiç saymıyor.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

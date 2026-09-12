@@ -130,7 +130,7 @@ export const enB1U22: SkillExercise[] = [
     unit: 22,
     title: "How the city changed",
     genre: "info",
-    intro: "Bir kasaba on beş yılda değişti. Hangi cümlede tarih var?",
+    intro: "Bir kasaba 2010'dan beri değişti. Hangi cümlede tarih var?",
     gloss: [
       { de: "sentence", tr: "cümle" },
       { de: "reaches", tr: "ulaşıyor" },

@@ -186,7 +186,7 @@ export const enB1U04: SkillExercise[] = [
     unit: 4,
     title: "Getting it fixed",
     genre: "dialogue",
-    intro: "Beş gündür sıcak su yok. Ne işe yarıyor?",
+    intro: "Dört gündür sıcak su yok. Ne işe yarıyor?",
     gloss: [
       { de: "Probably", tr: "herhâlde" },
       { de: "in writing", tr: "yazılı olarak" },
