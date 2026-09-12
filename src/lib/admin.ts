@@ -68,7 +68,7 @@ export type AdminData = {
   premium: { views: number; gates: number; starts: number; done: number };
   premiumGates: { feature: string; count: number }[];
   notifications: { optinYes: number; optinNo: number; sent: number; opened: number };
-  ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number }[];
+  ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number }[];
   /** İçerik bildirimleri (yapay zekâ yanıtı / değerlendirme): açık olanlar, en yeni önce. */
   reports: { id: number; day: string; kind: string; ref: string; reason: string; content: string; userId: string }[];
   generatedAt: string;
@@ -158,7 +158,7 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - 29`),
     rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - 29 group by kind order by c desc limit 8`),
     rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
-    rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
+    rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens, coalesce(sum(chars),0)::bigint chars from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
   ]);
 
   const k = kpiRows[0] ?? {};
@@ -193,7 +193,7 @@ export async function getAdminData(): Promise<AdminData> {
     premium: { views: num(prem[0]?.views), gates: num(prem[0]?.gates), starts: num(prem[0]?.starts), done: num(prem[0]?.done) },
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
     notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), opened: num(notif[0]?.opened) },
-    ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens) })),
+    ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
     reports: reports.map((r) => ({ id: num(r.id), day: str(r.day), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason), content: str(r.content), userId: str(r.user_id) })),
     generatedAt: new Date().toISOString(),
   };

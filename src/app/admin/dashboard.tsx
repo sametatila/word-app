@@ -242,7 +242,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
                       <span className="text-caption" style={{ color: a.okPct >= 95 ? "#16a34a" : a.okPct >= 80 ? "#d97706" : "#dc2626" }}>%{a.okPct} başarı</span>
                     </div>
                     <div className="mt-0.5 flex flex-wrap gap-x-3 text-caption tabular-nums" style={{ color: "var(--text-muted)" }}>
-                      <span>{fmt(a.calls)} çağrı</span><span>{fmt(a.avgMs)} ms ort.</span>{a.errors > 0 && <span style={{ color: "#dc2626" }}>{a.errors} hata</span>}<span>{fmt(a.tokens)} token</span>
+                      <span>{fmt(a.calls)} çağrı</span><span>{fmt(a.avgMs)} ms ort.</span>{a.errors > 0 && <span style={{ color: "#dc2626" }}>{a.errors} hata</span>}{a.tokens > 0 && <span>{fmt(a.tokens)} token</span>}{a.chars > 0 && <span>{fmt(a.chars)} karakter</span>}
                     </div>
                   </div>
                 ))}
