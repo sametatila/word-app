@@ -7488,6 +7488,138 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 294. YURUYUS MODUNUN NATIVE SOZLESMESI ------------------------
+   *
+   * Yuruyus modu iki platformda da NATIVE tarafa dayaniyor ve sozlesmenin
+   * parcalari uc dosyaya yayilmis: ekran durumu olaylari, kilit ekrani /
+   * bildirim denetimi, ve kullaniciya gorunen metinler.
+   *
+   * EN PAHALI PARCA: `LernomiScreenOff`. JS o bayrakla UCRETLI yola geciyor
+   * (`WalkModeScreen` `useAzure`), yani olayin hangi durumda yayildigi
+   * dogrudan FATURA demek. Android'de olay guc tusudur
+   * (`ACTION_SCREEN_OFF`); iOS'ta guc tusunu haber veren genel bir API YOK ve
+   * en yakin karsilik uygulamanin arka plana gecmesi. Iki fark bilerek kabul
+   * edildi ve gerekcesi Swift dosyasinin kendi yorumunda yazili: sorulan sey
+   * "ekran kapali mi" degil, "hangi taniyici guvenilir" - uygulama arka
+   * plandayken yerel taniyici zaten guvenilmez.
+   *
+   * Bu kapi o kararin KILIDI: olayin hangi bildirimlerden yayildigi
+   * degistirilirse ucretli yolun tetigi de sessizce degisir.
+   *
+   * TEKRAR BASTIRMA da sozlesmenin parcasi: Android gecis basina BIR KEZ
+   * yayiyor, iOS'ta iki bildirim pes pese gelebildigi icin bayrak tutuluyor.
+   * Bastirma kalkarsa JS iki kez yol degistirir.
+   *
+   * METINLER: Android bildirimi bes dizgiyi KAYNAKTAN okuyor, iOS kilit
+   * ekrani kaydi ikisini `NSLocalizedString` ile. Ucu yalniz Android'de ve
+   * sebebi var - kanal adi/aciklamasi ve "Durdur" etiketi iOS'ta sistemin
+   * kendi denetiminden geliyor. */
+  {
+    const modul = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
+    const servis = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiWalkService.kt");
+    const swift = read("mobile/ios/Lernomi/LernomiSpeech.swift");
+    const sttJs = sil(read("mobile/src/lib/stt.ts"));
+    const yuruyus = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
+
+    /* Olayin KAYNAGI: hangi sistem bildiriminden yayiliyor. */
+    sameList(
+      "ekran durumu olaylarinin kaynagi",
+      [
+        "android off=" + (/Intent\.ACTION_SCREEN_OFF -> emit\("LernomiScreenOff"/.test(modul) ? "guc tusu" : "BASKA"),
+        "android on=" + (/Intent\.ACTION_SCREEN_ON -> emit\("LernomiScreenOn"/.test(modul) ? "guc tusu" : "BASKA"),
+        "ios off=" + (/didEnterBackgroundNotification/.test(swift) && /protectedDataWillBecomeUnavailableNotification/.test(swift) ? "arka plan+kilit" : "EKSIK"),
+        "ios on=" + (/willEnterForegroundNotification/.test(swift) ? "on plan" : "EKSIK"),
+      ],
+      ["android off=guc tusu", "android on=guc tusu", "ios off=arka plan+kilit", "ios on=on plan"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* GECIS BASINA BIR KEZ: iOS'ta bayrak, Android'de yayin zaten tek. */
+    sameList(
+      "gecis basina bir kez yayiliyor",
+      ["ios bastirma=" + (/guard let self = self, !self\.screenOff else \{ return \}/.test(swift) && /guard let self = self, self\.screenOff else \{ return \}/.test(swift) ? "var" : "YOK")],
+      ["ios bastirma=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* JS iki olayi TEK yerde karsiliyor ve ucretli yolun tetigi o. */
+    sameList(
+      "ucretli yolun tetigi tek yerde",
+      [
+        "abonelik=" + (/addListener\("LernomiScreenOff"/.test(sttJs) && /addListener\("LernomiScreenOn"/.test(sttJs) ? "tek yer" : "DAGINIK"),
+        "tetik=" + (/const useAzure = screenOffRef\.current/.test(yuruyus) ? "screenOff" : "BASKA"),
+      ],
+      ["abonelik=tek yer", "tetik=screenOff"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Durdurma denetimi: iki platformda da ayni olayi yayiyor. */
+    sameList(
+      "durdurma denetimi ayni olayi yayiyor",
+      [
+        "android=" + (/LernomiWalkService\.onStop = \{ emit\("LernomiWalkStop"/.test(modul) ? "bildirim eylemi" : "YOK"),
+        /* Ad sinirli: `MPRemoteCommand` ile `MPRemoteCommandCenter` ayri
+           tipler, onek eslesmesi ikisini karistirirdi. */
+        "ios=" + (/\bMPRemoteCommand\b/.test(swift) && /send\("LernomiWalkStop"/.test(swift) ? "kilit ekrani" : "YOK"),
+      ],
+      ["android=bildirim eylemi", "ios=kilit ekrani"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* METINLER KAYNAKTAN. Android bes dizgiyi `R.string` ile okuyor. */
+    const ANDROID_DIZGI = ["walk_channel_name", "walk_channel_description", "walk_notification_title", "walk_notification_text", "walk_stop"];
+    sameList(
+      "yuruyus metinleri kaynaktan okunuyor",
+      ANDROID_DIZGI.map((k) => k + "=" + (new RegExp("R\\.string\\." + k + "\\b").test(servis) ? "var" : "YOK")),
+      ANDROID_DIZGI.map((k) => k + "=var"),
+      "bulunan",
+      "beklenen",
+    );
+    sameList(
+      "ios kilit ekrani metinleri yerelden",
+      ["baslik=" + (/NSLocalizedString\("walk_notification_title"/.test(swift) ? "var" : "YOK"), "alt=" + (/NSLocalizedString\("walk_notification_text"/.test(swift) ? "var" : "YOK")],
+      ["baslik=var", "alt=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ucu yalniz Android'de: sebep sistemin kendi denetimi. Liste
+       KISALABILIR; bir dizgi iOS'a gecerse buradan dusecek. */
+    const iosLoc = read("mobile/ios/Lernomi/tr.lproj/Localizable.strings");
+    const SADECE_ANDROID = new Map([
+      ["walk_channel_name", "bildirim KANALININ adi; iOS'ta kanal kavrami yok"],
+      ["walk_channel_description", "ayni sebep"],
+      ["walk_stop", "iOS'ta durdurma etiketi sistemin kilit ekrani denetiminden geliyor"],
+    ]);
+    const belgesiz = ANDROID_DIZGI.filter((k) => !iosLoc.includes(`"${k}"`) && !SADECE_ANDROID.has(k)).sort();
+    const bayat = [...SADECE_ANDROID.keys()].filter((k) => iosLoc.includes(`"${k}"`)).sort();
+    sameList(
+      "tek platformda kalan yuruyus metni belgeli",
+      ["belgesiz=" + (belgesiz.join("+") || "yok"), "bayat=" + (bayat.join("+") || "yok")],
+      ["belgesiz=yok", "bayat=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* KANAL ONEMI: yuruyus DUSUK, hatirlatma YUKSEK. Ikisi bilerek ayri -
+       cepte suren bir tur her turda bildirim sesi cikarmamali; hatirlatma
+       ise duyulmali (bkz. 291). */
+    sameList(
+      "kanal onemleri bilerek ayri",
+      [
+        "yuruyus=" + (/\bIMPORTANCE_LOW\b/.test(servis) ? "LOW" : "BASKA"),
+        "hatirlatma=" + (/importance: AndroidImportance\.HIGH/.test(sil(read("mobile/src/lib/notifications.ts"))) ? "HIGH" : "BASKA"),
+      ],
+      ["yuruyus=LOW", "hatirlatma=HIGH"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 293. UYGULAMA KIMLIGI VE ALAN ADI TEK ZINCIR -------------------
    *
    * Derin baglantinin calismasi ALTI dosyanin ayni iki degeri tasimasina

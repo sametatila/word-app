@@ -373,13 +373,24 @@ Açık ürün kararları:
   karşılığı aynı deseni izleyecek (`Localizable.strings`). Sözleşmeyi JS'ten metin
   geçirecek şekilde değiştirmek ikisini de düzeltir ama Android'e dokunmayı gerektirir;
   bu şeritlerin kapsamı dışında, ayrı iş.
-- **Ekran-kapalı modun maliyeti — sebebi artık somut.** İki platform farklı olayı
-  ölçüyor: Android `ACTION_SCREEN_OFF` (yalnız güç tuşu), iOS
-  `didEnterBackgroundNotification` (uygulama değiştirme, gelen çağrı ve kilit).
-  Yani iOS'ta bildirime dokunmak `WalkModeScreen.tsx:212`'deki `useAzure`'u açıyor
-  (ücretli yol) ve `:158-163` çalışan tanımayı kesiyor. Ön plana dönünce geri
-  geliyor, dolayısıyla maliyet kesinti başına — oturum boyu değil. Karar ve varsa
-  düzeltme Şerit T'de.
+- **Ekran-kapalı modun maliyeti — KARAR VERİLDİ, fark bilerek kabul edildi
+  (2026-09-12).** İki platform farklı olayı ölçüyor: Android `ACTION_SCREEN_OFF`
+  (yalnız güç tuşu), iOS `didEnterBackgroundNotification` +
+  `protectedDataWillBecomeUnavailableNotification` (uygulama değiştirme, gelen çağrı
+  ve kilit). Yani iOS'ta bildirime dokunmak `useAzure`'u açıyor (ücretli yol) ve
+  çalışan tanımayı kesiyor; ön plana dönünce geri geliyor, dolayısıyla maliyet
+  kesinti başına — oturum boyu değil.
+
+  Gerekçe `LernomiSpeech.swift`in kendi yorumunda yazılı ve özü şu: sorulan soru
+  "ekran kapalı mı" **değil**, "hangi tanıyıcı güvenilir" — uygulama arka plandayken
+  yerel `SFSpeechRecognizer` zaten güvenilmez, yani ücretli yola geçmek doğru
+  davranış. İkinci fark (kullanıcı telefonu açıp başka uygulamada kalırsa Android
+  `ScreenOn` derdi, iOS demez) aynı sebeple doğru: uygulama hâlâ arka planda.
+
+  Sözleşme artık `check:parity` §294'te kilitli — olayın hangi sistem
+  bildirimlerinden yayıldığı, geçiş başına bir kez yayıldığı (iOS'ta iki bildirim
+  peş peşe gelebiliyor) ve ücretli yolun tetiğinin o bayrak olduğu ölçülüyor. Bu
+  üçünden biri değişirse fatura da sessizce değişirdi.
 
 - **Apple ile Giriş'te nonce yok — ölçüldü, engel değil.** `appleAuth.ts` nonce
   göndermiyor: kütüphane ham nonce'u SHA-256'layıp Apple'a özeti yolluyor ama JS'e

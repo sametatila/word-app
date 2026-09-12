@@ -15136,3 +15136,59 @@ Bu tur canlı sunucu da okundu (okuma serbest):
   bağlantısı iOS'ta ancak **push + deploy** sonrası evrensel bağlantı olur.
   Bu bir kusur değil, beklenen durum — ama deploy sonrası doğrulanacak bir
   madde.
+
+## §11.419 — Yürüyüş modunun native sözleşmesi kilitlendi; iOS planındaki açık madde kapandı
+
+Yürüyüş modu iki platformda da native tarafa dayanıyor ve sözleşmenin
+parçaları üç dosyaya yayılmış: ekran durumu olayları, kilit ekranı / bildirim
+denetimi, ve kullanıcıya görünen metinler. Hiçbiri ölçülmüyordu.
+
+**En pahalı parça `LernomiScreenOff`.** JS o bayrakla **ücretli** yola geçiyor
+(`WalkModeScreen` `useAzure` → Azure STT), yani olayın hangi durumda yayıldığı
+doğrudan **fatura** demek:
+
+| | Android | iOS |
+|---|---|---|
+| ScreenOff | `ACTION_SCREEN_OFF` (yalnız güç tuşu) | `didEnterBackground` + `protectedDataWillBecomeUnavailable` |
+| ScreenOn | `ACTION_SCREEN_ON` | `willEnterForeground` |
+
+`docs/plan/ios-parity.md` bu farkı **açık ürün kararı** olarak listeliyordu
+("Karar ve varsa düzeltme Şerit T'de"). Ölçüldüğünde karar **koda çoktan
+verilmiş**: `LernomiSpeech.swift`in kendi yorumu iki farkı da gerekçesiyle
+kabul ediyor ve gerekçe sağlam — sorulan soru "ekran kapalı mı" **değil**,
+"hangi tanıyıcı güvenilir": uygulama arka plandayken yerel `SFSpeechRecognizer`
+zaten güvenilmez, yani ücretli yola geçmek **doğru** davranış. İkinci fark
+(kullanıcı telefonu açıp başka uygulamada kalırsa Android `ScreenOn` derdi, iOS
+demez) aynı sebeple doğru.
+
+Plan belgesi güncellendi: madde artık "KARAR VERİLDİ" olarak yazılı ve
+gerekçenin nerede yaşadığını gösteriyor. Bu, defterin en sık tekrar eden
+sınıfının tersi — **kapanmış bir maddenin açık görünmesi**.
+
+### §294
+
+Sekiz ölçü: olayların hangi sistem bildirimlerinden yayıldığı, **geçiş başına
+bir kez** yayıldığı (iOS'ta iki bildirim peş peşe gelebiliyor; bastırma
+kalkarsa JS iki kez yol değiştirir), ücretli yolun tetiğinin o bayrak olduğu,
+durdurma denetiminin iki platformda da aynı olayı yaydığı (Android bildirim
+eylemi ↔ iOS kilit ekranı), Android'in beş metni **kaynaktan** okuduğu, iOS'un
+iki metni `NSLocalizedString` ile aldığı, yalnız Android'de kalan üç metnin
+sebebiyle belgeli ve listenin bayatlamadığı, ve **kanal önemlerinin bilerek
+ayrı** olduğu.
+
+O son ölçü §291'in tamamlayıcısı: hatırlatma kanalı **HIGH** (duyulmalı),
+yürüyüş kanalı **LOW** (cepte süren bir tur her turda ses çıkarmamalı). İkisini
+birlikte ölçmek, "bütün kanalları yükseğe çek" gibi bir düzeltmenin yürüyüşü
+bozmasını engelliyor.
+
+Altı enjeksiyonun altısı da ayrı ayrı kırmızıya döndü. Meta-kapı (§138) yine
+iş gördü: `MPRemoteCommand` ve `IMPORTANCE_LOW` sınırsız ad desenleriyle
+aranmıştı (`MPRemoteCommandCenter` ve `IMPORTANCE_LOW`/`_HIGH` karışabilirdi).
+
+### Yan ölçümler: yayın denetimleri temiz
+
+`release:check` sürüm dörtlüsünü (package.json, version.ts, build.gradle,
+pbxproj) ve yayın anahtarını doğruluyor — hepsi 1.0.0 (2) ve `keystore.properties`
+yerinde. `check:16kb` 32 native kitaplığın 32'sini 16 KB hizasında buluyor.
+`LEGAL_PLATFORMS.ios` hâlâ `false` ve doğrusu bu: iOS yayını Mac'te derleme ve
+App Store adımlarını bekliyor (`ios-parity.md` §6 tablosu).
