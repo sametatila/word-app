@@ -13564,3 +13564,35 @@ açılış olayının mobilde hem yazılması hem çağrılması.
 Dört enjeksiyon denendi (çağrının silinmesi, muaf olayın iki tarafta da
 akması, bir muafiyetin kanıtının bozulması, gerekçesiz yeni bir olay), dördü
 de yakalandı.
+
+## §11.388 — Enter tuşunun adı, ve bir yerde işi
+
+Android on altı metin alanında `returnKeyType` diyor: klavyenin köşesindeki
+tuşun üzerinde **"Git"** ya da **"Bitti"** yazıyor. Web'de `enterKeyHint`
+**hiç kullanılmamıştı** — telefon tarayıcısında (web trafiğinin çoğu) aynı
+alanda jenerik bir dönüş oku duruyordu.
+
+Bu, "iOS'ta da eşle" tarafının doğrudan konusu: aynı kişi aynı formu Safari'de
+açtığında Android'dekiyle aynı tuşu görmeli.
+
+### Ve bir yerde tuşun işi de eksikti
+
+**Promo kodu** kutusu bir `<form>` içinde değil ve hiçbir tuş dinleyicisi
+yoktu. Kodu yazıp Enter'a basan kullanıcıda **hiçbir şey olmuyordu** — ne
+uygulanıyor ne de bir şey söyleniyor. Android aynı kutuda `onSubmitEditing`
+ile uyguluyor.
+
+Geri kalan alanlarda Enter'in **işi** zaten eşitti ve bunu ölçüm doğruladı:
+web'de `<form>` içindeki alan gönderiyor, `game/rounds` ve `skillQuiz`
+karşılıklarında da gönderiyor; "done" diyen alanlarda iki taraf da yalnız
+klavyeyi kapatıyor. Ölçülen şey o yüzden **tuşun adı**.
+
+### §265
+
+Üç ölçü: on iki alan eşleştirmeli (değer Android'in kendi `returnKeyType`i),
+promo kutusunda Enter'in gerçekten uyguladığı (ad tek başına yetmez), ve tur
+cevabı alanlarının adını söylemesi.
+
+Dört enjeksiyon denendi (bir alanın adını kaybetmesi, promoda tuşun adı olup
+işi olmaması, tur alanının adını kaybetmesi, mobil değerin kayması), dördü de
+yakalandı.
