@@ -14043,3 +14043,41 @@ Geriye yalnız yeni dosyanın kendi log satırı kaldı
 (`[cron-runs] yazılamadı`), o da `ai-usage.ts: 1` ile aynı yerleşik kalıp.
 Tabana **tek satır** eklendi — `--baseline` ile toptan yeniden yazmak başka
 bir kaymayı da sessizce içine alırdı.
+
+## §11.398 — Aynı olay iki yerde "denendi", bir yerde "ulaştı"
+
+Bildirim hunisi iki basamaktı (`push_sent` → `push_open`) ve ortadaki basamak
+eksikti. Daha kötüsü: **aynı olay iki anlama geliyordu.**
+
+`lib/push` iki döngüde de `push_sent`i **koşulsuz** yazıyor ve kendi yorumunda
+bunu söylüyor ("Sayıma girmiyor — `sent` yalnız teslimatı sayar").
+`social/notify` ise aynı olayı **yalnız teslimat olunca** yazıyordu. Pano
+üçünü topluyordu, yani sayı ne denemeyi ne teslimatı söylüyordu.
+
+Üstelik **"CTR" etiketi açılan/denenen oranıydı**. Ölmüş bir aboneliğe ya da
+geçersiz bir jetona yapılan deneme CTR'yi haksız yere düşürüyordu — teslim
+edilmemiş bir bildirim açılamaz.
+
+### Huni artık üç basamak
+
+| Olay | Anlamı |
+|---|---|
+`push_sent` | **denendi** — sunucu göndermeye çalıştı
+`push_deliver` | **ulaştı** — `value` = kaç kanala teslim edildi
+`push_open` | **açıldı**
+
+Aradaki fark tam olarak görmek istediğimiz şey: abonelik ölmüş, jeton
+geçersiz, sağlayıcı reddetmiş. Pano teslim oranını da gösteriyor ve yarıdan
+düşükse uyarı rengine geçiyor; CTR artık **açılan/ulaşan**.
+
+Teslimat **kullanıcı başına** toplanıyor: hatırlatma döngüsü bütün
+gönderimleri tek havuzda bekletiyordu, oradan "kime ulaştı" çıkmaz.
+
+### §275
+
+Üç ölçü: üçüncü basamağın dört yazan yeri (olay · iki hatırlatma döngüsü ·
+sosyal · özet), denemenin **koşulsuz** yazıldığı (sosyalde `if (sent)` altına
+düşerse olay yine iki anlam taşır), ve panonun CTR'yi **ulaşana** böldüğü.
+
+Üç enjeksiyon denendi (bir döngüde teslimatın yazılmaması, sosyalde denemenin
+yine koşullu olması, CTR'nin yine denenene bölünmesi), üçü de yakalandı.
