@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { speakGerman } from "@/components/speak-button";
 import { SpeakerIcon, XIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
@@ -56,6 +57,10 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   const [result, setResult] = useState<PlacementRecord | null>(null);
   /** Testten çıkış onayı açık mı. */
   const [quit, setQuit] = useState(false);
+  /* Ayrilmanin oteki yollari da ayni onaya bagli (yenileme, sekme, kenar
+     cubugu bagalantilari). Android'de kosul `started && !done`; burada
+     testin dort asamasi. */
+  const ayril = useLeaveGuard(phase === "vocab" || phase === "grammar" || phase === "reading" || phase === "listening");
   const [chosen, setChosen] = useState<CefrLevel | null>(null);
   const startedAt = useRef(Date.now());
 
@@ -295,13 +300,13 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   );
   const quitDialog = (
     <ConfirmDialog
-      open={quit}
+      open={quit || ayril.pending !== null}
       title={t("plc.quit_title")}
       message={t("plc.quit_body")}
       confirmLabel={t("common.exit")}
       destructive
-      onConfirm={() => { setQuit(false); router.push("/profile"); }}
-      onCancel={() => setQuit(false)}
+      onConfirm={() => { setQuit(false); if (ayril.pending) ayril.leave(); else router.push("/profile"); }}
+      onCancel={() => { setQuit(false); ayril.stay(); }}
     />
   );
   const dontKnow = (onPick: () => void) => (

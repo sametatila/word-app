@@ -14,6 +14,7 @@ import { FitBox } from "@/components/fit-box";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
 import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/assess-client";
@@ -112,6 +113,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const [quit, setQuit] = useState(false);
   const [idx, setIdx] = useState(0);
   const [qIdx, setQIdx] = useState(0);
+  /* Ayrilmanin oteki yollari da ayni onaya bagli (yenileme, sekme, kenar
+     cubugu bagalantilari). Android'de kosul `phase === "bolum" ||
+     phase === "bolumGiris"`; burada karsiliklari. */
+  const ayril = useLeaveGuard(phase === "run" || phase === "intro");
   const [picked, setPicked] = useState<number | null>(null);
   // Cümle kurma bölümü
   const [typed, setTyped] = useState("");
@@ -454,13 +459,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           Burada uyarı DOĞRU: deneme sınavının tersine bu sınav ara kayıt
           tutmuyor, çıkan baştan başlar. */}
       <ConfirmDialog
-        open={quit}
+        open={quit || ayril.pending !== null}
         title={t("exam.quit_title")}
         message={t("exam.quit_body")}
         confirmLabel={t("common.exit")}
         destructive
-        onConfirm={() => { setQuit(false); router.push("/immersion"); }}
-        onCancel={() => setQuit(false)}
+        onConfirm={() => { setQuit(false); if (ayril.pending) ayril.leave(); else router.push("/immersion"); }}
+        onCancel={() => { setQuit(false); ayril.stay(); }}
       />
       <div className="flex items-center justify-between gap-3 text-caption">
         <span>

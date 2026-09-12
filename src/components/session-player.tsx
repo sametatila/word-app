@@ -36,6 +36,7 @@ import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
@@ -151,6 +152,10 @@ export function SessionPlayer() {
     aynı kural, orada donanım geri tuşu da buraya bağlı (`useBackConfirm`).
   */
   const [confirmExit, setConfirmExit] = useState(false);
+  /* Ayrilmanin OTEKI yollari da ayni onaya bagli: yenileme, sekmeyi kapatma
+     ve uygulamanin kendi bagalantilari (kenar cubugu turun icinde de
+     duruyor). Android'de o yuzeyler ekranda yok, donanim geri tusu da bu
+     diyaloga bagli (`useBackConfirm`). */
 
   /**
    * Turdan çıkış — Öğren merkezine döner.
@@ -162,6 +167,7 @@ export function SessionPlayer() {
     router.push("/learn");
     router.refresh();
   }, [router]);
+  const ayril = useLeaveGuard(status === "stage");
   /**
    * Seçimin `load` tarafından okunabilen kopyası.
    *
@@ -854,7 +860,7 @@ export function SessionPlayer() {
         </p>
       ) : null}
       <ConfirmDialog
-        open={confirmExit}
+        open={confirmExit || ayril.pending !== null}
         title={t("game.quit_round_2")}
         message={t(onlyGame ? "game.exit_message_practice" : "game.exit_message")}
         confirmLabel={t("common.exit")}
@@ -862,9 +868,10 @@ export function SessionPlayer() {
         destructive
         onConfirm={() => {
           setConfirmExit(false);
-          exit();
+          if (ayril.pending) ayril.leave();
+          else exit();
         }}
-        onCancel={() => setConfirmExit(false)}
+        onCancel={() => { setConfirmExit(false); ayril.stay(); }}
       />
       <div className="mb-3 shrink-0">
         <div className="mb-1.5 flex items-center justify-between text-caption">

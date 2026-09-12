@@ -8,6 +8,8 @@ import { COURSE_KEY, readLocal, speakSegments, stopSpeaking, type SpeechSegment 
 import { useT, useLang } from "@/lib/i18n/client";
 import { MicDisclosure } from "@/components/mic-disclosure";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { RoundExit } from "@/components/round-exit";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import type { NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
@@ -358,6 +360,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const darkOverlay = useRef<HTMLDivElement | null>(null);
   /** Tur ortasında "Bitir" onayı açık mı. */
   const [quit, setQuit] = useState(false);
+  /* Ayrilmanin oteki yollari da ayni onaya bagli (yenileme, sekme, kenar
+     cubugu bagalantilari). Android'de kosul `inSession`; burada karsiligi
+     "oynuyor ya da duraklatildi". */
+  const ayril = useLeaveGuard(status === "playing" || status === "paused");
   /** Karanlık katmandan çıkış: kısa sürede üç dokunuş (cepte kazara açılmasın). */
   const darkTaps = useRef<number[]>([]);
   /**
@@ -1533,7 +1539,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     pauseRef.current = pause;
   });
 
-  function leave() {
+  /* Turu KAPATMAK ile ekrandan CIKMAK ayri: kenar cubugundan bir bagantiya
+     gidildiginde turun sesi, mikrofonu ve tam ekrani kapanmali ama gidilecek
+     yer `onExit`in yeri degil, tiklanan bagantidir. */
+  function teardown() {
     if (!ended.current && status === "playing") track("walk_end", 6);
     ended.current = true;
     stopAll();
@@ -1541,6 +1550,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     stopPocketAudio();
     closeMic();
     exitFullscreen();
+  }
+
+  function leave() {
+    teardown();
     onExit();
   }
 
@@ -1840,8 +1853,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         </div>
       ) : null}
 
-      <div className="mb-4 flex items-baseline justify-between text-caption">
-        <span className="muted">{Math.max(1, step)} / {total}</span>
+      {/* ÇIKIŞ BAŞLIKTA DA: tur sürerken tek çıkış sayfanın en altındaki
+          "Bitir" düğmesiydi ve ekran kaydırılmadan görünmüyordu. Android'in
+          kip başlığında 44 px'lik bir kapat karosu var (`WalkModeScreen`
+          `topBar`) ve o da bu onayı açıyor. */}
+      <div className="mb-4 flex items-baseline justify-between gap-3 text-caption">
+        <RoundExit onExit={() => setQuit(true)} labelKey="walkmode.exit_walk_mode" />
+        <span className="muted flex-1">{Math.max(1, step)} / {total}</span>
         <span className="flex items-center gap-2">
           {/* Kip ekranda yazıyor: cepte kipinde cevaplar ölçülmüyor ve bunu
               bilmeyen kullanıcı "neden sayı artmıyor" diye sorardı. */}
@@ -1976,13 +1994,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           sorulmuyor: orada bitirecek bir şey kalmadı -- Android'de de
           koşul `inSession`. */}
       <ConfirmDialog
-        open={quit}
+        open={quit || ayril.pending !== null}
         title={t("walkmode.end_walk")}
         message={t("walkmode.back_message")}
         confirmLabel={t("common.finish")}
         destructive
-        onConfirm={() => { setQuit(false); leave(); }}
-        onCancel={() => setQuit(false)}
+        onConfirm={() => { setQuit(false); if (ayril.pending) { teardown(); ayril.leave(); } else leave(); }}
+        onCancel={() => { setQuit(false); ayril.stay(); }}
       />
       <button onClick={() => setQuit(true)} className="btn btn-ghost mt-2 w-full px-5 py-3">
         {t("common.finish")}

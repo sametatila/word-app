@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
@@ -149,6 +150,10 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const [phase, setPhase] = useState<"cover" | "run" | "result">("cover");
   /** Sınavı bırakma onayı — mobil `MockExamScreen`deki ConfirmDialog ile aynı. */
   const [quit, setQuit] = useState(false);
+  /* Ayrilmanin oteki yollari da ayni onaya bagli: SURELI bir sinavin
+     ortasinda yenileme ya da kenar cubugundan bir tiklama, kaydi iki saniye
+     geriden birakip kagidi terk ediyordu. */
+  const ayril = useLeaveGuard(phase === "run");
   const [ix, setIx] = useState(0);
   const [left, setLeft] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
@@ -355,7 +360,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       </header>
 
       <ConfirmDialog
-        open={quit}
+        open={quit || ayril.pending !== null}
         title={t("mockexam.quit_title")}
         message={`${t("mockexam.quit_body_saved")} ${blanks ? t("mockexam.unanswered", { n: blanks }) : ""}`.trim()}
         confirmLabel={t("mockexam.quit_ok")}
@@ -364,9 +369,10 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           setQuit(false);
           writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
           if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {});
-          router.push("/mock-exams");
+          if (ayril.pending) ayril.leave();
+          else router.push("/mock-exams");
         }}
-        onCancel={() => setQuit(false)}
+        onCancel={() => { setQuit(false); ayril.stay(); }}
       />
 
       <div className="mt-2 flex gap-1" aria-hidden>
