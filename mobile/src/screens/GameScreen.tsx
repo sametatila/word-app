@@ -476,7 +476,9 @@ export function GameScreen() {
   if (phase === "no_words") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Mascot mood="idle" size={104} />
+        {/* Web aynı dalda düşünen maskotu çiziyor (`session-player`, aynı
+            anahtar ve aynı boy); burada klip yokken `idle`a düşüyordu. */}
+        <Mascot mood="think" size={104} />
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
         {/* Tek cümle: boş ekranda okunacak son şey modun nasıl çalıştığı. */}
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.review_only_mode")}</Text>

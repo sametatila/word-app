@@ -1632,7 +1632,7 @@ export function LessonPlayer({
                 bölümde başka bir simgeyle karşılamak, aynı uygulamada birkaç
                 ayrı dil konuşmak olurdu. */}
             <div className="flex items-center gap-2">
-              <Mascot mood={pct >= 80 ? "cheer" : pct >= 50 ? "happy" : "idle"} size={54} className="-my-2 shrink-0" />
+              <Mascot mood={pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle"} size={54} className="-my-2 shrink-0" />
               <div>
                 {/* BAŞLIĞIN BİLİNMEYEN HÂLİ. Web `saved?.passed` truthy
                     değilse "konuşma bitmedi" diyordu, yani kayıt isteği

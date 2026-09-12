@@ -1110,7 +1110,7 @@ function EmptyCard({
       className="mx-auto w-full max-w-md"
     >
       <div className="card p-8 text-center">
-        <Mascot mood="cheer" size={112} className="mx-auto" />
+        <Mascot mood="celebrate" size={112} className="mx-auto" />
         <h2 className="mt-1 text-h2">{t("session.goal_done")}</h2>
         <p className="muted mt-2 text-body">{t("session.goal_done_sub")}</p>
         {meta ? (
@@ -1190,7 +1190,7 @@ function StageCard({
             transition={{ type: "spring", stiffness: 250, damping: 16 }}
             className="mx-auto w-fit"
           >
-            <Mascot mood={perfect ? "cheer" : "happy"} size={72} />
+            <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
           </motion.div>
           <p className="mt-1 text-body opacity-90">{t("stage.counter", { n: stage, total: stages })}</p>
           <h2 className="mt-0.5 text-h2">
@@ -1370,7 +1370,7 @@ function SummaryCard({
                 className="mx-auto w-fit text-left"
               />
             ) : (
-              <Mascot mood={deserved ? "cheer" : accuracy >= 60 ? "happy" : "sad"} size={92} />
+              <Mascot mood={deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad"} size={92} />
             )}
           </motion.div>
           {/*

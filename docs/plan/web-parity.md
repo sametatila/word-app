@@ -14811,3 +14811,58 @@ Sayı ölçüsü ayrı duruyor çünkü listeden bir karo **okunamazsa** liste k
 ve kalanlar eşit görünür — hiçbir şey ölçmeyen kapı. Enjeksiyonla doğrulandı:
 bir karo silindiğinde glif ölçüsü 11→10 düşüp **geçmeye devam etti**, sayı
 ölçüsü kırmızıya döndü.
+
+## §11.413 — `think` klibi mobilde yoktu; aynı klibin iki adı vardı
+
+Maskot iki uygulamada da aynı kliplerle oynuyor ve kip **adıyla** seçiliyor.
+Ölçüldüğünde iki şey çıktı.
+
+### 1. Düşünen maskot Android'de hiç oynamıyordu
+
+Mobil klip listesini şöyle okuyor:
+
+```ts
+<Image source={CLIP[mood] ?? CLIP.idle} ... />
+```
+
+Yani **olmayan bir kip sessizce `idle`a düşüyor** — hata yok, uyarı yok,
+yalnız yanlış klip. `think` klibi mobilin varlıklarında **yoktu** ve üç yüzey
+bundan etkileniyordu:
+
+| Yüzey | web | Android (önce) |
+|---|---|---|
+| sınav girişi (`exam_intro`) | `think` | `idle` |
+| rol yapma sınavı girişi | `think` | `idle` |
+| "bu oyuna kelime yok" | `think` | `idle` |
+
+Üçü de birebir eşleşen yüzeyler: aynı `moment`, aynı i18n anahtarı, aynı boy.
+Dosya webin `public/anim/think.webp`si ve mobile **birebir** kopyalandı (md5
+aynı; ölçü bayt sayısını karşılaştırıyor). Bu, "maskot `think`/`wow` klipleri"
+diye açık tutulan maddenin `think` yarısını kapatıyor — `wow` tarafı zaten
+klip istemiyor, o bir **takma ad**: web onu `lookaround`a bağlıyor ve çağıranı
+da yok.
+
+### 2. Aynı klibin iki adı
+
+Web kipe `cheer` diyordu; gösterdiği dosya ise `celebrate` ve Android baştan
+beri kipe `celebrate` diyor. Ad Android'in adına geçti (dokuz çağrı yeri, bir
+tip, bir klip anahtarı). Bu tam da §11.409'da görülen sürtünmenin aynısı:
+aynı durumun iki adı olması platformlar arası ölçüleri kırıyor — ve nitekim
+§12522 (ders kapanışının maskot kademeleri) adı elle yazdığı için yeniden
+adlandırmayla kırmızıya döndü; ölçü de güncellendi.
+
+### §288
+
+Dokuz ölçü: kip listelerinin **okunabildiği** (okunamazsa kümeler boş kalır ve
+eşit görünür), mobilin her kipinin webde de olduğu, **aynı kipin aynı klip
+dosyasını** gösterdiği (ad eşitliği yetmez — `idle` bilerek ayrışıyor: web beş
+boşta klibini rastgele zincirliyor, mobilde tek klip var), webde fazla duran üç kipin
+(`wow`, `dance`, `peek`) sebebiyle belgeli olduğu ve listenin
+bayatlamadığı, `think.webp`nin mobilde **var olduğu ve webinkiyle aynı
+boyutta** olduğu, sınav girişi ile "kelime yok" dalında kipin aynı olduğu, ve
+**mutlak** olarak webde `cheer` adının kalmadığı.
+
+Enjeksiyonların ikisi birlikte önemli: `think` klibi silinip kaynak `think`
+demeye devam ettiğinde "kelime yok" ölçüsü **geçmeye devam etti** (kaynak
+doğru kipi yazıyor) ama "webdeki fazla kip belgeli" ölçüsü kırmızıya döndü —
+sessiz düşüşü yakalayan ikinci yarı o.

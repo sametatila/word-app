@@ -5,7 +5,13 @@ import { Image, View } from "react-native";
  * Erdi (maskot) — web ile aynı klipler (animasyonlu WebP). Android'de Fresco
  * animated-webp eklentisiyle oynar. Klipler 2:3 oranında; boy = en × 1.5.
  * Duruma göre ruh hâli: idle / happy / thumbsup (doğru) / sad (yanlış) /
- * celebrate (kutlama) / wave (selam).
+ * celebrate (kutlama) / wave (selam) / sleep (hatırlatma) / think (düşünme).
+ *
+ * `think` SONRADAN GELDİ ve gelene kadar üç yüzey yanlış klip oynatıyordu.
+ * Klip listesi `CLIP[mood] ?? CLIP.idle` ile okunuyor, yani olmayan bir kip
+ * sessizce `idle`a düşüyor — sınav girişinde ve "bu oyuna kelime yok"
+ * ekranında web düşünen maskotu çiziyor, Android etrafı tarayanı çiziyordu.
+ * Dosya webin `public/anim/think.webp`si ile birebir (md5 aynı).
  */
 const CLIP = {
   idle: require("../assets/mascot/idle-sit.webp"),
@@ -15,6 +21,7 @@ const CLIP = {
   celebrate: require("../assets/mascot/celebrate.webp"),
   wave: require("../assets/mascot/wave.webp"),
   sleep: require("../assets/mascot/sleep.webp"),
+  think: require("../assets/mascot/think.webp"),
 } as const;
 
 export type Mood = keyof typeof CLIP;

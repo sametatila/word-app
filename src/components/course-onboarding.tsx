@@ -177,7 +177,7 @@ export function CourseOnboarding({
     },
     {
       key: "goal",
-      mood: "cheer",
+      mood: "celebrate",
       title: t("onboarding.what_s_your_daily_goal"),
       subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
       options: PACES.map((p) => ({

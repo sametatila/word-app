@@ -253,7 +253,7 @@ export function RoleplayExamScreen() {
       <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
         <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, padding: spacing.xl, marginTop: spacing.md }, cardShadow(colors, 10)]}>
-          <CoachBubble moment="exam_intro" mood="idle" size={56} />
+          <CoachBubble moment="exam_intro" mood="think" size={56} />
           <Text accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
           <Text variant="body" style={{ marginTop: spacing.md, lineHeight: 22 }}>{lesson.roleplay.scene}</Text>

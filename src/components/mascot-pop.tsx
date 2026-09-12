@@ -7,7 +7,7 @@ import { useStill } from "@/lib/use-still";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
 
 /** Kutlama çeşitleri — hep aynı klip kutlamayı ezberletiyor, aralarında dönüyor. */
-const CHEERS: Mood[] = ["cheer", "dance", "happy"];
+const CHEERS: Mood[] = ["celebrate", "dance", "happy"];
 
 /**
  * Ekranın kenarından girip kaybolan Erdi.
@@ -27,7 +27,7 @@ const CHEERS: Mood[] = ["cheer", "dance", "happy"];
  */
 export function MascotPop({
   trigger,
-  mood = "cheer",
+  mood = "celebrate",
   side = "right",
   /** Ekranda kalma süresi (ms). */
   hold = 2600,
@@ -42,7 +42,7 @@ export function MascotPop({
   /* Varsayılan kutlamada her tetikte rastgele bir kutlama klibi seçilir;
      çağıran açıkça başka bir duygu istediyse ona dokunulmaz. */
   const shown = useMemo<Mood>(
-    () => (mood === "cheer" ? CHEERS[Math.floor(Math.random() * CHEERS.length)] : mood),
+    () => (mood === "celebrate" ? CHEERS[Math.floor(Math.random() * CHEERS.length)] : mood),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [trigger, mood]
   );

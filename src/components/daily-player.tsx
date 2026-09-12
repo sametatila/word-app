@@ -331,7 +331,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
           {/* Günün turu da bir kapanış anı: kelime turu, oyun içindeki sonuç
               şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.
               Kupa simgesi bunun dışında kalan tek yerdi. */}
-          <Mascot mood="cheer" size={88} className="mx-auto" />
+          <Mascot mood="celebrate" size={88} className="mx-auto" />
           <h2 className="mt-1 text-h1">
             <CountUp value={finalScore} /> {t("common.points")}
           </h2>

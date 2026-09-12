@@ -343,7 +343,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         <div role="status" className="text-center">
           {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
-          <Mascot mood={isRecord ? "cheer" : "happy"} size={96} className="mx-auto" />
+          <Mascot mood={isRecord ? "celebrate" : "happy"} size={96} className="mx-auto" />
           <h2 className="text-display">
             <CountUp value={score} /> <span className="text-h3">{t("common.points")}</span>
           </h2>

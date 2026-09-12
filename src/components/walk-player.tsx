@@ -1787,7 +1787,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             Konfeti ve maskotun eşiği de oradan: %60. */}
         <Confetti fire={tally.total > 0 && donePct >= 60 ? 1 : 0} count={34} />
         <Mascot
-          mood={tally.total > 0 ? (donePct >= 60 ? "cheer" : "happy") : "idle"}
+          mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"}
           size={104}
           className="mx-auto"
         />

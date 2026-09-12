@@ -1095,7 +1095,7 @@ function Result({
     <section role="status" className="card mx-auto w-full max-w-md p-5">
       <CoachBubble
         moment={result.passed ? "exam_pass" : "exam_fail"}
-        mood={result.passed ? "cheer" : "sad"}
+        mood={result.passed ? "celebrate" : "sad"}
         vars={{ pct: result.total, level }}
         size={56}
         className="mb-3"

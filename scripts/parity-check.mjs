@@ -7488,6 +7488,155 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 288. MASKOTUN KIPI IKI PLATFORMDA AYNI ------------------------
+   *
+   * Maskot iki uygulamada da ayni kliplerle oynuyor ve kip ADIYLA seciliyor.
+   * Olculdugunde iki sey cikti:
+   *
+   * 1. `think` KLIBI MOBILDE YOKTU. Mobil klip listesini `CLIP[mood] ??
+   *    CLIP.idle` ile okuyor, yani olmayan bir kip SESSIZCE `idle`a dusuyor
+   *    - hata yok, uyari yok, yalniz yanlis klip. Uc yuzey bundan
+   *    etkileniyordu: sinav girisi (`exam_intro`, iki yerde) ve "bu oyuna
+   *    kelime yok" ekrani. Webde ucunde de dusunen maskot, Androidde etrafi
+   *    tarayan maskot oynuyordu. Dosya webin `public/anim/think.webp`si;
+   *    mobile birebir kopyalandi (ayni bayt sayisi olculuyor).
+   *
+   * 2. AYNI KLIBIN IKI ADI vardi: web kipe "cheer" diyordu, gosterdigi dosya
+   *    ise `celebrate` ve Android baştan beri kipe `celebrate` diyor. Ad
+   *    Android'in adina gecti (dokuz cagri yeri).
+   *
+   * Webde fazladan duran kipler belgeli: `wow` klipsiz bir TAKMA AD
+   * (lookaround'u gosteriyor, cagrilani da yok), `dance` ve `peek` ise webin
+   * kendi serbest yuzeylerinde (maskot patlamasi, kenardan dikizleme). */
+  {
+    const webMood = sil(read("src/components/mascot.tsx"));
+    const mobMood = sil(read("mobile/src/ui/Mascot.tsx"));
+    const webKipler = new Set([...webMood.matchAll(/^\s*\|\s*"(\w+)"/gm)].map((m) => m[1]));
+    const webClip = new Map(
+      [...webMood.matchAll(/^\s*(\w+): \{ file: "([\w-]+)"/gm)].map((m) => [m[1], m[2]]),
+    );
+    const mobClip = new Map(
+      [...mobMood.matchAll(/^\s*(\w+): require\("\.\.\/assets\/mascot\/([\w-]+)\.webp"\)/gm)].map((m) => [m[1], m[2]]),
+    );
+    /* Once SAYI: kip listesi okunamazsa kumeler bos kalir ve esit gorunur. */
+    sameList(
+      "maskot kip listesi okunuyor",
+      ["web=" + (webKipler.size >= 8 ? "okundu" : "OKUNAMADI:" + webKipler.size), "mobil=" + (mobClip.size >= 7 ? "okundu" : "OKUNAMADI:" + mobClip.size)],
+      ["web=okundu", "mobil=okundu"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* AYNI KIP AYNI DOSYAYI gosteriyor - ad esitligi yetmez, ilk yazim
+       yalniz adlara bakiyordu. `idle` bilerek ayrisiyor: web bes bosta
+       klibini rastgele zincirliyor (`lookaround` ilki), mobilde tek klip var
+       (`idle-sit`). */
+    const ortak = [...mobClip.keys()].filter((k) => webClip.has(k));
+    sameList(
+      "ayni kip ayni klip dosyasi",
+      ortak.map((k) => k + "=" + (k === "idle" ? "zincir/tek" : mobClip.get(k))),
+      ortak.map((k) => k + "=" + (k === "idle" ? "zincir/tek" : webClip.get(k))),
+      "mobil",
+      "web",
+    );
+
+    /* Mobilin her kipi webde de var (ad duzeyinde). */
+    sameList(
+      "mobilin kipleri webde de var",
+      ["eksik=" + ([...mobClip.keys()].filter((k) => !webKipler.has(k)).sort().join("+") || "yok")],
+      ["eksik=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Webde fazla duran kipler SEBEBIYLE yazili; liste bayatlamiyor. */
+    const WEBDE_FAZLA = new Map([
+      ["wow", "klipsiz TAKMA AD: lookaround'u gosteriyor, cagrilani da yok"],
+      ["dance", "maskot patlamasinin rastgele kiplerinden (`mascot-pop`) - mobilde o yuzey yok"],
+      ["peek", "kenardan dikizleme (`mascot-fx`, WP-66) - mobilde karsiligi `AmbientPeek` ve kendi klibi yok"],
+    ]);
+    const fazla = [...webKipler].filter((k) => !mobClip.has(k) && !WEBDE_FAZLA.has(k)).sort();
+    sameList(
+      "webdeki fazla kip belgeli",
+      ["belgesiz=" + (fazla.join("+") || "yok")],
+      ["belgesiz=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    const bayat = [...WEBDE_FAZLA.keys()].filter((k) => mobClip.has(k) || !webKipler.has(k)).sort();
+    sameList(
+      "kip listesi bayat degil",
+      ["bayat=" + (bayat.join("+") || "yok")],
+      ["bayat=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* `think` DOSYASI GERCEKTEN ORADA ve webinkiyle ayni boyutta. */
+    const boy = (yol) => {
+      const url = new URL("../" + yol, import.meta.url);
+      return existsSync(url) ? readFileSync(url).length : -1;
+    };
+    sameList(
+      "dusunme klibi mobilde de var",
+      ["mobil=" + boy("mobile/src/assets/mascot/think.webp")],
+      ["mobil=" + boy("public/anim/think.webp")],
+      "mobil",
+      "web",
+    );
+
+    /* Eslesen yuzeyler ayni kipi geciyor. */
+    const YUZEY = [
+      ["sinav girisi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx", /moment="exam_intro" mood="(\w+)"/],
+      ["rol yapma girisi", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", /moment="exam_intro" mood="(\w+)"/],
+    ];
+    sameList(
+      "sinav girisinde maskotun kipi",
+      YUZEY.map(([ad, , m, d]) => ad + "=" + ((sil(read(m)).match(d) ?? [])[1] ?? "YOK")),
+      YUZEY.map(([ad, w, , d]) => ad + "=" + ((sil(read(w)).match(d) ?? [])[1] ?? "YOK")),
+      "mobil",
+      "web",
+    );
+    /* "Bu oyuna kelime yok" dali: ayni anahtar, ayni boy, ayni kip. */
+    const bosDal = (metin, anahtar) => {
+      const i = metin.indexOf(anahtar);
+      if (i < 0) return "DAL YOK";
+      const bas = metin.lastIndexOf("<Mascot", i);
+      return bas < 0 ? "MASKOT YOK" : ((metin.slice(bas, i).match(/mood="(\w+)"/) ?? [])[1] ?? "KIP YOK");
+    };
+    sameList(
+      "kelime yok ekraninda maskotun kipi",
+      ["mobil=" + bosDal(sil(read("mobile/src/screens/GameScreen.tsx")), "session.no_words_for_game")],
+      ["mobil=" + bosDal(sil(read("src/components/session-player.tsx")), "session.no_words_for_game")],
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: webde "cheer" adi kalmadi - ayni klibin iki adi olmayacak. */
+    const webKaynak = (() => {
+      const parcalar = [];
+      const walk = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const p = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); }
+          else if (/\.tsx?$/.test(e.name)) parcalar.push(sil(read(p)));
+        }
+      };
+      walk("src");
+      return parcalar.join("\n");
+    })();
+    /* Sosyal TEPKI ve DURTME turleri de "cheer" adini tasiyor (baska alan,
+       iki platformda da ayni); olcu yalniz KIP baglamina bakiyor. */
+    const kipCheer = [...webKaynak.matchAll(/mood[=:]\s*\{?[^};\n]{0,60}"cheer"/g)].length;
+    sameList(
+      "ayni klibin iki adi yok",
+      ["web kip cheer=" + kipCheer, "mobil celebrate=" + (mobClip.has("celebrate") ? "var" : "YOK")],
+      ["web kip cheer=0", "mobil celebrate=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 287. OYUNUN GLIFI UC YUZEYDE DE AYNI --------------------------
    *
    * Ayni on bir oyun UC yerde ikonla anlatiliyor: pratik ekraninin karolari
@@ -12411,7 +12560,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ],
       [
         "isabet hesabi=" + (/const pct = scoredTotal \? Math\.round\(\(correctCount \/ scoredTotal\) \* 100\) : 100/.test(dw) ? "correct/total" : (/const pct = /.test(dw) ? "BASKA" : "YOK")),
-        "maskot=" + (/pct >= 80 \? "cheer" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
+        /* Kip adi 288'de Android'in adina gecti ("cheer" -> "celebrate");
+           bu olcu adi elle yaziyordu ve yeniden adlandirma onu kirmiziya
+           cevirdi. */
+        "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
         "konfeti=" + (/<Confetti fire=\{pct >= 80 \? 1 : 0\}/.test(dw) ? "80 esigi" : "BASKA"),
         "baslik bilinmeyende=" + (/saved\?\.passed === false \? "lessonp\.conversation_unfinished" : "lesson\.lesson_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
         "ilk karo etiketi=" + (/lesson\.correct_production/.test(dw) ? "ortak" : "?"),

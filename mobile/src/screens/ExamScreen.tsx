@@ -445,7 +445,7 @@ export function ExamScreen() {
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
               aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
-          <CoachBubble moment="exam_intro" mood="idle" size={48} />
+          <CoachBubble moment="exam_intro" mood="think" size={48} />
           {cover?.titleDe ? (
             <Card padded style={{ gap: spacing.sm }}>
               <Text accessibilityRole="header" variant="h2" style={{ lineHeight: 30 }}>{cover.titleDe}</Text>

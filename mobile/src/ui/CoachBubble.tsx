@@ -30,7 +30,7 @@ export function CoachBubble({
   tone = "card",
 }: {
   moment: CoachMoment;
-  mood: "idle" | "happy" | "thumbsup" | "sad" | "celebrate" | "wave" | "sleep";
+  mood: "idle" | "happy" | "thumbsup" | "sad" | "celebrate" | "wave" | "sleep" | "think";
   vars?: CoachVars;
   /** Verilirse listeden seçim yapılmaz, bu cümle söylenir. */
   text?: string;

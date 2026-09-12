@@ -45,7 +45,11 @@ import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
 export type Mood =
   | "idle"
   | "happy"
-  | "cheer"
+  /* ADI ANDROID'IN ADI. Burada "cheer" yazıyordu ama gösterdiği dosya
+     `celebrate` ve Android aynı kipe baştan beri `celebrate` diyor
+     (`ui/Mascot` `CLIP`): aynı klibin iki adı vardı ve platformlar arası
+     ölçüler kip adını okuyor. */
+  | "celebrate"
   | "sad"
   | "think"
   | "wow"
@@ -64,7 +68,7 @@ export type Mood =
 const CLIP: Record<Mood, { file: string; aspect: number }> = {
   idle: { file: "lookaround", aspect: 2 / 3 },
   happy: { file: "happy", aspect: 2 / 3 },
-  cheer: { file: "celebrate", aspect: 2 / 3 },
+  celebrate: { file: "celebrate", aspect: 2 / 3 },
   sad: { file: "sad", aspect: 2 / 3 },
   think: { file: "think", aspect: 2 / 3 },
   wow: { file: "lookaround", aspect: 2 / 3 },

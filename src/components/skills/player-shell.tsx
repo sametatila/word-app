@@ -195,7 +195,7 @@ export function ResultCard({
           konuşmak olurdu. */}
       {/* `cheer` klibi mobildeki `celebrate` ile aynı dosya (bkz. mascot CLIP). */}
       <Confetti fire={band === "good" ? 1 : 0} count={34} />
-      <Mascot mood={band === "good" ? "cheer" : band === "mid" ? "happy" : "idle"} size={84} className="mx-auto" />
+      <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} className="mx-auto" />
       <h2 className="mt-1 text-h3">
         {perfect
           ? t("skillp.perfect")
