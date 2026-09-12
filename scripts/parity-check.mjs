@@ -4827,8 +4827,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList("sinav sayaci", [kaynak(mobSinav), uyari(mobSinav)], [kaynak(webSinav), uyari(webSinav)]);
 
-  /* Deneme kagidinda iki taraf da GOREV butcesini sayiciyla isletiyor ve
-     kalan saniyeyi kaydediyor; kalip birebir ayni olmali. */
+  /*
+   * Deneme kagidinda gorev butcesi ve kalan saniyenin kaydi; kalip birebir
+   * ayni olmali.
+   *
+   * BU YORUM BIR ZAMANLAR KUSURU BEKLENEN HAL SANIYORDU: "iki taraf da gorev
+   * butcesini SAYICIYLA isletiyor" diyordu ve olcu de onu dogruluyordu -
+   * cunku karsilastirma esitlige bakiyor, DOGRULUGA degil. Iki taraf da ayni
+   * sekilde yanlis oldugu icin kapi yesil yaniyordu; sayici arka planda
+   * durdugundan gorev suresi istenildigi kadar uzatilabiliyordu.
+   *
+   * Ikisi de duvar saatine gecti (§11.392) ve o kusuru MUTLAK olcen kapi 269.
+   * Buradaki olcu esitligi korumaya devam ediyor.
+   */
   const mobKagit = strip(read("mobile/src/screens/MockExamScreen.tsx"));
   const webKagit = strip(read("src/components/mock-exam-player.tsx"));
   const kagit = (src) => [
@@ -7468,6 +7479,69 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 269. SAYAC DUVAR SAATINDEN --------------------------------------
+   *
+   * Sureli her yuzeyin sayaci bir ZAMAN DAMGASINDAN okumali, bir sayiciyi
+   * azaltarak degil. Sebep basit: `setInterval` uygulama ya da sekme arka
+   * plana alininca duruyor (tarayicilar dakikada bire kadar kisiyor, mobil
+   * uygulamada tamamen duruyor). Sayici kullanilirsa sure ISTENILDIGI KADAR
+   * uzatilabilir - ve sure sinavin KISITI, kagidin kendisi kadar kuralin
+   * parcasi.
+   *
+   * Olcum dort yuzey buldu ve ucu zaten dogruydu: `Exam` (bir turda
+   * duzeltilmisti), `Boss` ve `Challenge` (bastan beri damgadan okuyor).
+   * DENEME SINAVI geride kalmisti - hem webde hem mobilde, ayni satirla:
+   * `setInterval(() => setLeft((s) => s - 1), 1000)`. Ustelik yarim kalan
+   * kosu `secondsLeft` ile kaydedildigi icin kazanilan sure KALICIYDI.
+   *
+   * Olcu MUTLAK: iki tarafta da ayni kusur vardi, karsilastirma yesil
+   * yanardi. */
+  {
+    const SAYAC = [
+      ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["deneme sinavi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      ["patron", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
+      ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
+    ];
+    /* Damgadan okuyan sayac: tik islevinde `Date.now()` gecer. Azaltan
+       sayac: `setLeft((s) => ... s - 1)`. */
+    const bicim = (y) => {
+      const src = sil(read(y));
+      if (/setLeft\(\(s\) =>[^)]*s - 1\)/.test(src)) return "SAYICI";
+      return /Date\.now\(\)/.test(src) ? "damga" : "BILINMEYEN";
+    };
+    sameList(
+      "sayac duvar saatinden (mobil)",
+      SAYAC.map(([ad, , m]) => ad + "=" + bicim(m)),
+      SAYAC.map(([ad]) => ad + "=damga"),
+      "bulunan",
+      "beklenen",
+    );
+    sameList(
+      "sayac duvar saatinden (web)",
+      SAYAC.map(([ad, w]) => ad + "=" + bicim(w)),
+      SAYAC.map(([ad]) => ad + "=damga"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Deneme sinavinda sureyi kuran TEK KAPI var mi - dogrudan `setLeft`
+       cagrisi damgayi guncellemez ve sayac eski damgadan okumaya devam
+       eder. */
+    for (const [ad, y] of [["web", "src/components/mock-exam-player.tsx"], ["mobil", "mobile/src/screens/MockExamScreen.tsx"]]) {
+      const src = sil(read(y));
+      const ciplak = [...src.matchAll(/(?<![\w.])setLeft\(/g)].length;
+      /* Bir tanesi tik islevinin kendisi, biri de `sureVer`in icindeki. */
+      sameList(
+        "deneme sinavinda sureyi kuran kapi (" + ad + ")",
+        ["sureVer=" + (/const sureVer = useCallback/.test(src) ? "var" : "YOK"), "ciplak setLeft=" + ciplak],
+        ["sureVer=var", "ciplak setLeft=2"],
+        "bulunan",
+        "beklenen",
+      );
+    }
+  }
 
   /* -- 268. UST ETIKETIN HARF ARALIGI --------------------------------
    *
