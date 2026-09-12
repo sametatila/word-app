@@ -161,7 +161,7 @@ export function WordsScreen() {
           {LEVELS.map((lv) => {
             const active = level === lv;
             return (
-              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: spacing.md, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
+              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
                 <Text variant="caption" color={active ? colors.onFill : colors.textMuted}>{lv || t("words.filter_level")}</Text>
               </PressableScale>
             );

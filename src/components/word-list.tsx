@@ -253,7 +253,9 @@ export function WordList({
               onClick={() => setFilter("level", l.id)}
               role="radio"
               aria-checked={query.level === l.id}
-              className={`chip chip-filter px-3 py-1.5 text-caption ${query.level === l.id ? "chip-active" : ""}`}
+              /* Seviye satırı TEAL (Android `WordsScreen` `colors.info`),
+                 durum satırı marka turuncusu; dolgu iki satırda da 14/8. */
+              className={`chip chip-filter chip-info px-3.5 py-2 text-caption ${query.level === l.id ? "chip-active" : ""}`}
             >
               {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
@@ -266,7 +268,7 @@ export function WordList({
               onClick={() => setFilter("status", s.id)}
               role="radio"
               aria-checked={query.status === s.id}
-              className={`chip chip-filter px-3 py-1.5 text-caption ${query.status === s.id ? "chip-active" : ""}`}
+              className={`chip chip-filter px-3.5 py-2 text-caption ${query.status === s.id ? "chip-active" : ""}`}
             >
               {tx(s.labelKey)}
             </button>

@@ -965,10 +965,34 @@
     color: var(--text-muted);
     font-weight: 600;
   }
+  /*
+   * KOYU TEMADA OKUNMUYORDU. Seçili süzgeç habı sabit `--color-brand-500`
+   * zemin + beyaz yazı taşıyordu; beyaz/#f87612 ölçümü 2.77, AA'nın küçük
+   * yazı eşiği 4.5'in çok altında. Aynı hata birincil düğmede ölçülüp
+   * düzeltilmişti: Android koyu temada 400 dolgu + koyu mürekkep kullanıyor
+   * (8.27). Jetonlar zaten var (`--brand-fill` = Android `primary`,
+   * `--on-brand` = `onPrimary`).
+   *
+   * GÖLGE DE KALKTI: Android'in süzgeç hapında gölge yok (`WordsScreen`),
+   * bu web'e ait bir eklemeydi.
+   */
   .chip-filter.chip-active {
-    background-color: var(--color-brand-500);
-    color: #ffffff;
-    box-shadow: 0 6px 16px -8px var(--color-brand-700);
+    background-color: var(--brand-fill);
+    color: var(--on-brand);
+  }
+  /*
+   * SEVİYE SÜZGECİ BAŞKA RENK. Android iki süzgeç satırını renkle ayırıyor:
+   * durum hapı marka turuncusu, seviye hapı `colors.info` (teal). Web ikisini
+   * de turuncu çiziyordu, yani iki ayrı süzme boyutu tek bir renk konuşuyordu.
+   * Teal'in web karşılığı ailenin 500/300'ü — Android paletindeki `info` ile
+   * BİREBİR aynı iki hex.
+   */
+  .chip-filter.chip-info.chip-active {
+    background-color: var(--color-sky-500);
+    color: var(--on-fill);
+  }
+  .dark .chip-filter.chip-info.chip-active {
+    background-color: var(--color-sky-300);
   }
   /*
    * Seçili çipin içindeki ikincil metin.

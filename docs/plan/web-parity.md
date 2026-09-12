@@ -18331,3 +18331,29 @@ Kapı **§356** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): ş
 (kenarlık/dolgu/ikon), üç satırın varlığı + rozetin yokluğu, ve ölü kipin geri
 gelmemesi. Deponun **kendi meta-kapısı** yine iş gördü: ilk yazımda rozeti sade
 `/CheckIcon/` ile arıyordum, "kapılarda önek eşleşmesi" bunu reddetti.
+
+## §11.504 — Süzgeç hapı: koyu temada okunmuyordu, iki süzgeç satırı tek renkti
+
+Kelime listesinin iki süzgeç satırı var (seviye ve durum). **Android ikisini
+renkle ayırıyor**: durum hapı marka turuncusu (`colors.primary`), seviye hapı
+teal (`colors.info`). Web ikisini de turuncu çiziyordu — iki ayrı süzme boyutu
+tek bir renk konuşuyordu, yani "hangi süzgeci açtım" bir bakışta okunmuyordu.
+Teal'in web karşılığı ailenin 500/300'ü: `--color-sky-500` = **#1b93ac** ve
+`--color-sky-300` = **#6fd1e3** — Android paletindeki `info`nun iki hex'iyle
+birebir aynı.
+
+**Daha ağırı: seçili hap koyu temada okunmuyordu.** Sabit `--color-brand-500`
+zemin + **beyaz** yazı taşıyordu; beyaz/#f87612 ölçümü **2.77**, AA'nın küçük
+yazı eşiği 4.5'in çok altında. Aynı hata birincil düğmede ölçülüp
+düzeltilmişti (Android koyu temada 400 dolgu + koyu mürekkep, **8.27**) ama
+süzgeç hapı eski hâlinde kalmıştı — jetonlar zaten vardı: `--brand-fill`
+Android'in `primary`sinin, `--on-brand` `onPrimary`nin karşılığı.
+
+Gölge de kalktı (Android'in süzgeç hapında gölge yok; web'e ait bir eklemeydi)
+ve iki satırın dolgusu 14/8'e eşitlendi — Android'in seviye hapı 12/7, durum
+hapı 14/8 yazıyordu, yani referans platform kendi içinde de ayrışıktı. Bu tek
+sayılı boşluk borcunu da bir düşürdü (75 → 74).
+
+Kapı **§357** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): seçili hapın
+zemin/mürekkep jetonları ve gölgesizliği, seviye satırının iki temadaki ayrı
+rengi, iki platformun dolgusu.

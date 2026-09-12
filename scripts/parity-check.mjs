@@ -21071,6 +21071,74 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 357. SUZGEC HAPI: KOYU TEMADA OKUNMUYORDU, IKI SATIR AYNI RENKTI
+ *
+ * Kelime listesinin iki suzgec satiri var (seviye ve durum). Android ikisini
+ * RENKLE ayiriyor: durum hapi marka turuncusu (`colors.primary`), seviye hapi
+ * teal (`colors.info`). Web ikisini de turuncu ciziyordu - iki ayri suzme
+ * boyutu tek bir renk konusuyordu.
+ *
+ * Daha agiri: secili hap sabit `--color-brand-500` zemin + BEYAZ yazi
+ * tasiyordu. Beyaz/#f87612 olcumu 2.77; AA'nin kucuk yazi esigi 4.5. Ayni
+ * hata birincil dugmede olculup duzeltilmisti (Android koyu temada 400 dolgu
+ * + koyu murekkep, 8.27) ama suzgec hapi eski halinde kalmisti. Jetonlar
+ * zaten vardi: `--brand-fill` Android `primary`nin, `--on-brand` `onPrimary`in
+ * karsiligi.
+ *
+ * Golge de kalkti (Android'in suzgec hapinda golge yok) ve iki satirin dolgusu
+ * 14/8'e esitlendi - Android'in seviye hapi 12/7 yaziyordu, durum hapi 14/8.
+ *
+ * Olcu: secili hapin zemin/murekkep jetonlari, seviye satirinin ayri rengi ve
+ * iki platformun dolgusu. */
+{
+  const silS = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const css = silS(read("src/app/globals.css"));
+  const aktif = (css.match(/\.chip-filter\.chip-active \{([^}]*)\}/) ?? ["", ""])[1];
+  const info = (css.match(/\.chip-filter\.chip-info\.chip-active \{([^}]*)\}/) ?? ["", ""])[1];
+  const koyuInfo = (css.match(/\.dark \.chip-filter\.chip-info\.chip-active \{([^}]*)\}/) ?? ["", ""])[1];
+  const mobKelime = silS(read("mobile/src/screens/WordsScreen.tsx"));
+  const webKelime = silS(read("src/components/word-list.tsx"));
+
+  sameList(
+    "suzgec hapinin secili hali",
+    [
+      "zemin=" + (/backgroundColor: active \? colors\.primary :/.test(mobKelime) ? "marka dolgusu" : "BASKA"),
+      "murekkep=" + (/color=\{active \? colors\.onPrimary/.test(mobKelime) ? "onPrimary" : "BASKA"),
+      "golge=yok",
+    ],
+    [
+      "zemin=" + (/background-color: var\(--brand-fill\)/.test(aktif) ? "marka dolgusu" : "BASKA"),
+      "murekkep=" + (/color: var\(--on-brand\)/.test(aktif) ? "onPrimary" : "BASKA"),
+      "golge=" + (/box-shadow/.test(aktif) ? "VAR" : "yok"),
+    ],
+    "mobil",
+    "web",
+  );
+  sameList(
+    "seviye suzgecinin rengi",
+    [
+      "acik=" + (/backgroundColor: active \? colors\.info :/.test(mobKelime) ? "teal" : "BASKA"),
+      "koyu=teal",
+    ],
+    [
+      "acik=" + (/background-color: var\(--color-sky-500\)/.test(info) ? "teal" : "BASKA"),
+      "koyu=" + (/background-color: var\(--color-sky-300\)/.test(koyuInfo) ? "teal" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* Iki satirin dolgusu: mobilde 14/8 (iki yerde de), webde px-3.5 py-2. */
+  const mobDolgu = [...mobKelime.matchAll(/paddingHorizontal: 14, paddingVertical: spacing\.sm, borderRadius: radii\.pill/g)].length;
+  const webDolgu = [...webKelime.matchAll(/chip-filter[^`"]*px-3\.5 py-2/g)].length;
+  sameList(
+    "suzgec hapinin dolgusu",
+    ["14/8 sayisi=" + mobDolgu],
+    ["14/8 sayisi=" + webDolgu],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
