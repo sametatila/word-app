@@ -16630,3 +16630,40 @@ istemcinin de **iki** bölümü (premium + ücretsiz) çizdiği.
 
 Üç enjeksiyon doğrulandı: bir daldan `copy`yi düşürmek, `copy`siz yeni bir dal
 eklemek, mobilin ücretsiz bölümünü kaldırmak.
+
+## §11.457 — Haftalık sınav hatırlatması iki yoldan yedi saat arayla geliyordu
+
+Seri koruma ve haftalık sınav hatırlatması **iki yoldan** gidiyor ve ikisi
+birden gitmiyor (`hasPushDevice()` kapısı):
+
+- **uzak push** — sunucu, kullanıcının **kendi saatine** göre
+  (`lib/push` `runStreakAlerts` / `runWeeklyReminders`)
+- **yerel** — mobil, cihazda kurulu tetikleyici (`lib/notifications`)
+
+Seri çifti baştan beri eşitti ve sunucu tarafında bunu söyleyen bir yorum da
+vardı: *"Akşam: mobilde 20:30, burada kullanıcının kendi saatiyle 20'den
+sonra."*
+
+**Haftalık çift eşitlenmemişti**: mobil Pazar **11:00**, sunucu Pazar yerel
+saat **18'den sonra** — aynı hatırlatma, **yedi saat arayla**. Hangi saatte
+geldiği yalnızca push'un çalışıp çalışmamasına bağlıydı; web kullanıcısı
+yalnız push aldığı için onlar hep 18:00+, yerel yedeğe düşen Android
+kullanıcısı 11:00 alıyordu. Kanıt asimetride: seri çiftinin yanında karşılıklı
+yorum varken haftalık çiftinin yanında yoktu — yani bu bir tercih değil,
+uzlaştırılmamış bir çiftti.
+
+Mobil **18:00**'e çekildi. Yön şöyle seçildi: sunucunun değeri **her
+platforma** ulaşan yol ve sunucudaki systemd timer penceresi de ona göre kurulu
+(Pazar 15–19 UTC; İstanbul için yerel 18:00 = 15:00 UTC). Karşılıklı yorum iki
+tarafa da yazıldı — seri çiftinde olduğu gibi.
+
+### §319
+
+Altı ölçü: haftalık yerel saat ↔ sunucu eşiği, haftalık **gün** iki tarafta
+(`WEEKLY_DAY = 0` ↔ `dow = 0`), ve seri çifti. Seri değerleri **mutlak**
+bekleniyor (20:30 / 20) çünkü oradaki yarım saatlik kayma bilerek ve iki
+taraftaki yorumda yazılı — biri kayarsa kapı söyler.
+
+Dört enjeksiyon doğrulandı: mobili 11:00'e döndürmek (düzeltilen kusurun
+kendisi), sunucu eşiğini 19 yapmak, mobilin gününü pazartesiye çekmek, seri
+saatini kaydırmak.

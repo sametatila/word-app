@@ -142,10 +142,29 @@ const KEY_DAILY = "lernomi:reminder"; // "HH:MM" açık, "" kapalı (geri uyumlu
 const KEY_STREAK = "lernomi:notif:streak"; // "1" | ""
 const KEY_WEEKLY = "lernomi:notif:weekly"; // "1" | ""
 
-// Seri koruma akşam, haftalık sınav Pazar öğlen — sabit, sade tutuldu.
+/*
+ * YEREL HATIRLATMA SAATLERİ — sunucunun push kuralıyla AYNI ANI anlatmalı.
+ *
+ * Bu iki bildirim İKİ yoldan gidiyor: uzak push varsa sunucudan
+ * (`lib/push` `runStreakAlerts` / `runWeeklyReminders`, kullanıcının kendi
+ * saatine göre), yoksa buradan yerel olarak (`hasPushDevice()` kapısı —
+ * ikisi birden gitmiyor). Aynı hatırlatmanın hangi yoldan gittiğine göre
+ * BAŞKA bir saatte gelmesi, aynı ürünün iki ayrı davranışı demek.
+ *
+ * Seri koruması baştan beri eşleşiyordu ve sunucu tarafında bunu söyleyen bir
+ * yorum da vardı ("Akşam: mobilde 20:30, burada … 20'den sonra"). HAFTALIK
+ * SINAV EŞLEŞMİYORDU: burası Pazar **11:00**, sunucu ise Pazar yerel saat
+ * **18'den sonra** diyordu — aynı hatırlatma, yedi saat arayla. Kimse
+ * uzlaştırmamıştı: seri çiftinin yanında karşılıklı yorum varken haftalık
+ * çiftinin yanında yoktu.
+ *
+ * 18:00'e çekildi, çünkü sunucunun değeri HER platforma ulaşan yol
+ * (web yalnız push alıyor) ve sunucudaki systemd timer penceresi de ona göre
+ * kurulu (Pazar 15-19 UTC; İstanbul için yerel 18:00 = 15:00 UTC).
+ */
 const STREAK_TIME = "20:30";
 const WEEKLY_DAY = 0; // 0 = Pazar
-const WEEKLY_TIME = "11:00";
+const WEEKLY_TIME = "18:00";
 
 /** Kanali kurar (yinelenebilir). `pushDevice` de acilista bunu cagiriyor. */
 export async function ensureChannel(): Promise<void> {

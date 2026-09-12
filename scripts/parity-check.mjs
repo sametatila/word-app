@@ -17867,6 +17867,67 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------- 319. HATIRLATMA SAATLERI IKI YOLDA DA AYNI ANI
+   *
+   * Seri koruma ve haftalik sinav hatirlatmasi IKI yoldan gidiyor ve ikisi
+   * birden gitmiyor (`hasPushDevice()` kapisi):
+   *   uzak push  sunucu, kullanicinin KENDI saatine gore (`lib/push`)
+   *   yerel      mobil, cihazda kurulu tetikleyici (`lib/notifications`)
+   *
+   * Ayni hatirlatmanin hangi yoldan gittigine gore BASKA bir saatte gelmesi,
+   * ayni urunun iki ayri davranisi demek. Seri cifti bastan beri esitti ve
+   * sunucu tarafinda bunu soyleyen bir yorum da vardi; HAFTALIK cift
+   * esitlenmemisti - mobil Pazar 11:00, sunucu Pazar yerel 18'den sonra: ayni
+   * hatirlatma, YEDI SAAT arayla. Kimse uzlastirmamisti ve hicbir sey
+   * olcmuyordu.
+   *
+   * Olcu: mobilin yerel saati ile sunucunun esik saati AYNI. Eşik "18'den
+   * sonra" ve yerel tetik tam 18:00 - ikisi ayni ani anlatiyor (sunucu saatlik
+   * cron ile ilk 18 tiginde gonderiyor).
+   *
+   * Gun de olculuyor: sunucu `dow = 0` (pazar), mobil `WEEKLY_DAY = 0`. */
+  {
+    const mob = sil(read("mobile/src/lib/notifications.ts"));
+    const srv = sil(read("src/lib/push.ts"));
+    const mobSaat = (ad) => ((mob.match(new RegExp(ad + ' = "(\\d+):(\\d+)"')) ?? []).slice(1, 3).join(":")) || "YOK";
+    const srvEsik = (fn) => {
+      const i = srv.indexOf("export async function " + fn);
+      if (i < 0) return "YOK";
+      const blok = srv.slice(i, i + 2500);
+      return (blok.match(/localHour\} >= (\d+)/) ?? [])[1] ?? "YOK";
+    };
+    const mobGun = (mob.match(/WEEKLY_DAY = (\d+)/) ?? [])[1] ?? "YOK";
+    const srvGun = (() => {
+      const i = srv.indexOf("export async function runWeeklyReminders");
+      const blok = i < 0 ? "" : srv.slice(i, i + 2500);
+      return (blok.match(/extract\(dow from \$\{localDay\}\) = (\d+)/) ?? [])[1] ?? "YOK";
+    })();
+    sameList(
+      "hatirlatma saatleri iki yolda",
+      [
+        "haftalik yerel=" + mobSaat("WEEKLY_TIME"),
+        "haftalik sunucu esigi=" + srvEsik("runWeeklyReminders"),
+        "haftalik gun yerel=" + mobGun,
+        "haftalik gun sunucu=" + srvGun,
+        "seri yerel=" + mobSaat("STREAK_TIME"),
+        "seri sunucu esigi=" + srvEsik("runStreakAlerts"),
+      ],
+      [
+        "haftalik yerel=18:00",
+        "haftalik sunucu esigi=18",
+        "haftalik gun yerel=0",
+        "haftalik gun sunucu=0",
+        /* Seri cifti bilerek yarim saat kayik: sunucu "20'den sonra" diyor,
+           yerel tetik 20:30. Iki taraftaki yorum da bunu yaziyor; degerler
+           burada MUTLAK bekleniyor, yani biri kayarsa kapi soyler. */
+        "seri yerel=20:30",
+        "seri sunucu esigi=20",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

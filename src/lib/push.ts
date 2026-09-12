@@ -622,6 +622,9 @@ export async function runWeeklyReminders(limit = 500) {
       and(
         eq(profiles.weeklyReminder, true),
         sql`extract(dow from ${localDay}) = 0`, // pazar
+        // Pazar akşamı: mobildeki yerel yedekle AYNI an (`lib/notifications`
+        // `WEEKLY_TIME = "18:00"`). Bir süre orada 11:00 yazıyordu ve aynı
+        // hatırlatma, hangi yoldan gittiğine göre yedi saat arayla geliyordu.
         sql`${localHour} >= 18`,
         sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
         // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
