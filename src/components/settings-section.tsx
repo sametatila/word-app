@@ -20,9 +20,13 @@ export function Group({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto mt-8 w-full max-w-3xl first:mt-0">
+    /* ÖLÇÜLER ANDROID'İN (`SettingsScreen` `Group`): grubun üst payı
+       `spacing.xxl` (28, web'de 32 idi), kart `Card padded` yani her yandan
+       16 (web'de yatay 20, dikey 20 idi). Başlık zaten eşti: `h3`, altında 8,
+       solda 4. */
+    <section id={id} className="mx-auto mt-7 w-full max-w-3xl first:mt-0">
       <h2 className="mb-2 ml-1 text-h3">{title}</h2>
-      <div className="card divide-y divide-[color:var(--hairline)] px-5">{children}</div>
+      <div className="card divide-y divide-[color:var(--hairline)] px-4">{children}</div>
     </section>
   );
 }
@@ -36,8 +40,11 @@ export function Row({
   children: React.ReactNode;
 }) {
   return (
-    <div className="py-5 first:pt-5 last:pb-5">
-      {label ? <p className="muted mb-2 text-caption tracking-wide">{label}</p> : null}
+    /* Bölümün dikey payı Android'de `spacing.lg` (16): ayıracın iki yanında
+       16 var, webde 20 idi. Etiketin harf aralığı da Android'in 0.5
+       pikseli - `tracking-wide` 0.025em, yani 12.5 puntoda 0.31 px. */
+    <div className="py-4 first:pt-4 last:pb-4">
+      {label ? <p className="muted mb-2 text-caption tracking-[0.5px]">{label}</p> : null}
       {children}
     </div>
   );

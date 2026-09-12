@@ -18268,3 +18268,30 @@ sayfası ayrıca ekleniyor.
 
 Kapı **§354** görünüm ayarının altı ölçüsünü taşıyor (rayın üç ölçüsü, seçili
 bölümün dört özelliği); ikisi enjeksiyonla doğrulandı.
+
+## §11.502 — Anahtarın rayı ve ayar grubunun üç ölçüsü
+
+**Anahtarın açık rayı ayrı renkteydi.** Web `--color-brand-600` kullanıyordu;
+Android `colors.primary` (açıkta 500, koyuda 400) ve web'de aynı değeri taşıyan
+jeton `--brand-fill`. Kapalı ray iki tarafta da `surface2` — **ama Android'in
+dört anahtarından biri `border` yazıyordu**, yani referans platform kendi içinde
+de ayrışıktı; o da öbür üçe getirildi.
+
+**Ayar grubunun üç ölçüsü ayrıydı:** grubun üst payı (Android `spacing.xxl` 28,
+web 32), kartın dolgusu (Android `Card padded` yani 16, web yatay 20) ve
+bölümün dikey payı (Android `spacing.lg` 16, web 20). Etiketin harf aralığı da
+Android'de 0.5 piksel, web'de `tracking-wide` yani 12.5 puntoda 0.31 px.
+
+**Ölçüp dokunmadıklarım** — ikisi de zaten eşti:
+
+- **Ayar satırının kendisi**: iki tarafta da solda `bodyStrong` başlık +
+  `caption` alt satır (`flex-1`), sağda denetim, aralık 12. Android'in `Row`u
+  bir *bölüm* başlığı (üstte küçük etiket), web'in `Row`u da aynı — adları,
+  şekilleri ve gerekçe yorumları birebir.
+- **Grup başlığı**: `h3`, altında 8, solda 4 — iki tarafta aynı.
+
+Bu düzeltme kart dolgusu borcunu da bir düşürdü (105 → 104).
+
+Kapı **§355** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): Android'in dört
+anahtarının **tek bir** ray şekli kullanması, iki platformun açık/kapalı ray
+rolleri, ve grubun üç ölçüsü.

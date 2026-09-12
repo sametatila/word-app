@@ -20948,6 +20948,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 355. ANAHTAR VE AYAR GRUBU
+ *
+ * ANAHTARIN RAYI. Web acik rayi `--color-brand-600` ile ciziyordu; Android
+ * `colors.primary` kullaniyor (acikta 500, koyuda 400) ve webde ayni degeri
+ * tasiyan jeton `--brand-fill`. Kapali ray iki tarafta da `surface2` - ama
+ * Android'in DORT anahtarindan biri `border` yaziyordu, yani referans
+ * platform kendi icinde de ayrisiktı; o da obur uce getirildi.
+ *
+ * AYAR GRUBU. Uc olcu ayriydi: grubun ust payi (Android `spacing.xxl` 28,
+ * web 32), kartin dolgusu (Android `Card padded` yani 16, web yatay 20) ve
+ * bolumun dikey payi (Android `spacing.lg` 16, web 20). Baslik zaten esti
+ * (`h3`, altinda 8, solda 4) ve SATIRIN kendisi de esti: iki tarafta da
+ * solda `bodyStrong` baslik + `caption` alt satir, sagda denetim, aralik 12.
+ *
+ * Olcu: anahtarin iki rayi ve grubun uc olcusu. */
+{
+  const silA = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const webAnahtar = silA(read("src/components/setting-row.tsx"));
+  const mobAnahtarlar = ["mobile/src/screens/SettingsScreen.tsx", "mobile/src/screens/NotificationsScreen.tsx", "mobile/src/screens/SocialSettingsScreen.tsx"]
+    .flatMap((f) => [...silA(read(f)).matchAll(/trackColor=\{\{ true: colors\.(\w+), false: colors\.(\w+) \}\}/g)].map((m) => m[1] + "/" + m[2]));
+  const tekSekil = [...new Set(mobAnahtarlar)];
+  sameList(
+    "anahtarin rayi (mobil kendi icinde)",
+    ["sekil=" + tekSekil.join(" | ") + " sayi=" + mobAnahtarlar.length],
+    ["sekil=primary/surface2 sayi=" + mobAnahtarlar.length],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "anahtarin rayi (iki platform)",
+    ["acik=marka dolgusu", "kapali=surface2"],
+    [
+      "acik=" + (/background: on \? "var\(--brand-fill\)"/.test(webAnahtar) ? "marka dolgusu" : "BASKA"),
+      "kapali=" + (/: "var\(--surface-2\)"/.test(webAnahtar) ? "surface2" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+
+  const webGrup = silA(read("src/components/settings-section.tsx"));
+  const mobGrup = silA(read("mobile/src/screens/SettingsScreen.tsx"));
+  const mobGrupBlok = mobGrup.slice(mobGrup.indexOf("function Group"), mobGrup.indexOf("function Group") + 1200);
+  sameList(
+    "ayar grubunun olculeri",
+    [
+      "ust pay=" + (/marginTop: spacing\.xxl/.test(mobGrupBlok) ? "28" : "BASKA"),
+      "kart dolgusu=" + (/<Card padded>/.test(mobGrupBlok) ? "16" : "BASKA"),
+      "bolum payi=" + (/paddingTop: spacing\.lg/.test(mobGrupBlok) ? "16" : "BASKA"),
+    ],
+    [
+      "ust pay=" + (/\bmt-7\b/.test(webGrup) ? "28" : "BASKA"),
+      "kart dolgusu=" + (/card divide-y[^"]*\bpx-4\b/.test(webGrup) ? "16" : "BASKA"),
+      "bolum payi=" + (/\bpy-4 first:pt-4 last:pb-4\b/.test(webGrup) ? "16" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -67,7 +67,7 @@ export function SocialSettingsScreen() {
       {/* Anahtarın ADI satırın başlığı: ekran okuyucu onu yanındaki metinle
           kendiliğinden ilişkilendirmiyor, "açık/kapalı anahtar" diye okuyup
           neyin anahtarı olduğunu söylemiyordu. */}
-      <Switch value={value} onValueChange={onChange} disabled={busy} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.border }} thumbColor="#fff" />
+      <Switch value={value} onValueChange={onChange} disabled={busy} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
     </View>
   );
 

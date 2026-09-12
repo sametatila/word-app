@@ -68,7 +68,12 @@ export function Switch({
       disabled={disabled}
       onClick={() => onChange(!on)}
       className="relative h-7 w-12 shrink-0 rounded-full transition-opacity disabled:opacity-60"
-      style={{ background: on ? "var(--color-brand-600)" : "var(--surface-2)" }}
+      /* AÇIK RAY ANDROID'İN `primary`Sİ. Web 600'ü kullanıyordu, Android
+         `colors.primary` (açıkta 500, koyuda 400) - webde aynı değeri
+         taşıyan jeton `--brand-fill`. Kapalı ray iki tarafta da `surface2`
+         (Android'in dört anahtarından biri `border` yazıyordu, o da bu turda
+         öbür üçe getirildi). */
+      style={{ background: on ? "var(--brand-fill)" : "var(--surface-2)" }}
     >
       <motion.span
         layout
