@@ -12776,3 +12776,51 @@ içindeydi, biri dışarıda kalmıştı ve dar bir pencerede sayfanın kendisin
 yana kaydırıyordu.
 
 Beş enjeksiyon denendi, beşi de yakalandı.
+
+## §11.371 — Ses ve titreşim: altı sessiz yüzey ve ters bir titreşim
+
+Eksen **ses ve titreşim**di. İki kanal da ölçüldü; ikisinde de ayrışma çıktı.
+
+### Titreşim: altı yüzey sessizdi
+
+Android altı yerde dokunsal geri bildirim veriyor, web hiçbirinde
+vermiyordu:
+
+| Yüzey | An |
+|---|---|
+| Yürüyüş | doğru/yanlış kararı |
+| İlk pratik | birincil düğme |
+| Tepki seçimi | tepkiye dokunma |
+| Beceri sınavı | cevabın kapanması |
+| Cümle kurma | yanlış deneme |
+| Telaffuz | puanın gelmesi |
+
+Cepte ya da ekran kapalı yürüyüşte bu özellikle ağır: **kararı bildiren tek
+kanal** ses ve titreşim, ekrana bakılmıyor.
+
+### Ve bir titreşim tersti
+
+Meydan okumada dalga yükselince web `vibrate("wrong")` diyordu. İki sorun
+birden: **mükerrer** — aynı anı `AchievementFlash` zaten `correct` ile
+titretiyor (`celebrate.tsx`) — ve **yanlış kalıp**: `wrong` hata titreşimi
+(`[0,34,60,34]`), oysa dalga yükselmesi olumlu bir an. Olumlu bir an hata gibi
+titriyordu. Android aynı anı bir kez ve `correct` ile veriyor.
+
+### Ses: yüklü ama çalınmayan
+
+On üç ses dosyasının hepsi webde de yüklü, ama `tap.mp3` yalnızca **ses
+anahtarının önizlemesinde** çalınıyordu. Android onu kelime dizme, harf dizme
+ve eşleştirmede her dokunuşta çalıyor; webde karo hareketi **sessizdi**.
+
+İlk tarama `micon`/`micoff`/`premium`i de "webde çalınmıyor" saymıştı ve
+**yanlıştı**: onlar `walkCue` yardımcısı üzerinden çalıyor, `play()` diye
+değil. Ölçüyü düzeltince üçü de yerinde çıktı — bir helper'ın arkasına geçen
+çağrıyı düz metinle aramanın maliyeti.
+
+### §250
+
+Dört olgu: dokunsal geri bildirim (altı yüzey, eşleştirmeli), olumlu anın
+hata kalıbıyla titrememesi (mutlak), karo hareketinin sesi (üç oyun,
+eşleştirmeli) ve **yüklü her sesin bir çalan yeri olması** (mutlak, web).
+
+Dört enjeksiyon denendi, dördü de yakalandı.

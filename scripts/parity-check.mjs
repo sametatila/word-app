@@ -7461,6 +7461,91 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 250. SES VE TITRESIM -------------------------------------------
+   *
+   * Iki kanal da olcuduldu ve ikisinde de ayrisma cikti.
+   *
+   * TITRESIM. Android alti yuzeyde dokunsal geri bildirim veriyor ve web
+   * hicbirinde vermiyordu: yuruyus karari, ilk pratik dugmesi, tepki secimi,
+   * beceri sinavinin cevabi, cumle kurma gorevinin yanlisi ve telaffuz
+   * karari. Cepte/ekran kapali yuruyusta bu ozellikle agir: KARARI bildiren
+   * tek kanal ses ve titresim.
+   *
+   * Ve bir tanesi TERSTI: meydan okumada dalga yukselince web
+   * `vibrate("wrong")` diyordu - hem MUKERRER (ayni ani `AchievementFlash`
+   * zaten `correct` ile titretiyor) hem YANLIS KALIP (hata titresimi
+   * [0,34,60,34]). Olumlu bir an hata gibi titriyordu.
+   *
+   * SES. On uc ses dosyasinin hepsi webde de yuklu ama `tap.mp3` yalnizca
+   * ses anahtarinin onizlemesinde caliniyordu. Android onu kelime dizme,
+   * harf dizme ve eslestirmede her dokunusta caliyor; webde karo hareketi
+   * SESSIZDI. `micon`/`micoff`/`premium` webde de caliniyor (`walkCue`
+   * uzerinden) - ilk tarama onlari kacirmisti, cunku `play()` degil bir
+   * yardimciyla cagriliyorlar. */
+  {
+    const TITRESIM = [
+      ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
+      ["ilk pratik", "src/components/first-practice.tsx", "mobile/src/screens/FirstPracticeScreen.tsx"],
+      ["tepki secimi", "src/components/social/reaction-bar.tsx", "mobile/src/social/ReactionBar.tsx"],
+      ["beceri sinavi", "src/components/skills/quiz.tsx", "mobile/src/game/skillQuiz.tsx"],
+      ["telaffuz", "src/components/skills/speaking-player.tsx", "mobile/src/game/skillLibrary.tsx"],
+      ["cumle kurma", "src/components/skills/writing-player.tsx", "mobile/src/game/skillQuiz.tsx"],
+    ];
+    const varMi = (yol, desen) => (desen.test(sil(read(yol))) ? "var" : "YOK");
+    sameList(
+      "dokunsal geri bildirim",
+      TITRESIM.map(([ad, , m]) => ad + "=" + varMi(m, /\bhaptic\(/)),
+      TITRESIM.map(([ad, w]) => ad + "=" + varMi(w, /\bvibrate\(/)),
+      "mobil",
+      "web",
+    );
+
+    /* Olumlu an hata kalibiyla titremiyor (MUTLAK). Meydan okumanin dalga
+       yukselmesi bunu yapiyordu. */
+    const mo = sil(read("src/components/challenge-player.tsx"));
+    sameList(
+      "olumlu an hata kalibiyla titremiyor",
+      ["meydan okumada vibrate=" + ((mo.match(/vibrate\("(\w+)"\)/) ?? [])[1] ?? "yok")],
+      ["meydan okumada vibrate=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Dokunus sesi: karo hareketi sessiz degil. */
+    const SES = [
+      ["harf dizme", "src/components/games/scramble-game.tsx", "mobile/src/game/rounds.tsx"],
+      ["kelime dizme", "src/components/games/order-game.tsx", "mobile/src/game/rounds.tsx"],
+      ["eslestirme", "src/components/games/match-game.tsx", "mobile/src/game/rounds.tsx"],
+    ];
+    sameList(
+      "karo hareketinin sesi",
+      SES.map(([ad, , m]) => ad + "=" + varMi(m, /sfx\("tap"\)/)),
+      SES.map(([ad, w]) => ad + "=" + varMi(w, /play\("tap"\)/)),
+      "mobil",
+      "web",
+    );
+
+    /* Yuklu her ses dosyasinin bir calan yeri var (MUTLAK, web). */
+    const webSes = sil(read("src/lib/sfx.ts"));
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx") || e.name.endsWith(".ts")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    const govde = tsxler("src").map((y) => sil(read(y))).join("\n");
+    const adlar = [...webSes.matchAll(/^  \| "([a-z_]+)"$/gm)].map((m) => m[1]);
+    const calmayan = adlar.filter((a) => !new RegExp('(?:play|walkCue)\\("' + a + '"\\)').test(govde) && !new RegExp('"' + a + '"').test(govde.replace(/type SfxName[\s\S]{0,400}?;/, "")));
+    sameList(
+      "yuklu sesin calan yeri var",
+      ["calmayan=" + calmayan.length + (calmayan.length ? " (" + calmayan.join(", ") + ")" : "")],
+      ["calmayan=0"],
+      "web",
+      "beklenen",
+    );
+  }
+
   /* -- 249. UZUN ICERIK: SATIR BUTCESI VE TASMA ------------------------
    *
    * Tarama once iki seyi temiz cikardi: mobilde sabit yuksekliklı bir metin
