@@ -19888,6 +19888,78 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --- 344. DEGERLENDIRME ISTEGINDE URETIMIN DILI: DORT CAGIRAN, IKI PLATFORM
+ *
+ * `/api/assess` istegi `lang` tasimak ZORUNDA: istem hem ogretmen kimligini
+ * hem seviye beklentilerini o dile gore kuruyor ve istemci vermezse route
+ * "de"ye dusuyor (`parseBody`: `b.lang === "en" ? "en" : "de"`). Yani
+ * Ingilizce kursta yazilan metin ALMANCA rubrigiyle puanlaniyor - "Perfekt
+ * arayan" beklentilerle.
+ *
+ * Web tarafinda alan bugun ZORUNLU (`AssessRequest.lang`) ve dort cagiran da
+ * gonderiyor; yorumu da orada: "isteğe bagliyken DORT CAGIRAN UNUTMUSTU".
+ * MOBILDE DORDU DE GONDERMIYORDU: ceviri turu, serbest cumle turu, sinavin
+ * yazma bolumu ve dersin rol yapma sinavi. Dorduyle de iki kurs birden
+ * calisiyor, yani Ingilizce ogrencinin her yazili uretimi yanlis rubrikle
+ * puanlaniyordu.
+ *
+ * Olcu: dort cagiran da iki tarafta `lang` gonderiyor. Cagri yeri SAYISI da
+ * yaziliyor - tarama bozulursa "hepsi gonderiyor" kendiliginden dogru
+ * cikardi. Ayrica sunucunun varsayilani da olculuyor: varsayilan degisirse
+ * (ornegin zorunlu hale gelirse) bu kapinin gerekcesi degisir. */
+{
+  const silD = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  /* Bir `/api/assess` cagrisinin govdesi: cagri yerinden ileriye dogru 1400
+     karakter - govde cagrinin hemen ardindan geliyor. */
+  const cagrilar = (yollar) => {
+    const out = [];
+    for (const y of yollar) {
+      const src = silD(read(y));
+      for (const m of src.matchAll(/["'`]\/api\/assess["'`]/g)) {
+        /* Pencere GERIYE de bakiyor: bir cagri govdeyi satir ici yaziyor
+           (ileri), oteki once bir `req` nesnesi kurup onu gonderiyor (geri).
+           Ilk yazilisinda yalniz ileri bakiyordu ve onceden kurulan istek
+           "lang yok" gorunuyordu - olcunun komsusunu olcmek. */
+        const pencere = src.slice(Math.max(0, m.index - 700), m.index + 1400);
+        out.push({ yer: y.split("/").slice(-1)[0], lang: /\blang: /.test(pencere) });
+      }
+    }
+    return out;
+  };
+  const MOBIL = ["mobile/src/game/rounds.tsx", "mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"];
+  /* Web tarafinda cagri `lib/assess-client` `askAssess` uzerinden gidiyor ve
+     `lang` istegi KURAN yerde yaziliyor; o yuzden cagri yerleri istek
+     nesnesinin kuruldugu dosyalar. */
+  const WEB = ["src/components/games/translate-game.tsx", "src/components/games/free-sentence-game.tsx", "src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx"];
+  const mob = cagrilar(MOBIL);
+  const webLang = WEB.map((y) => ({ yer: y.split("/").slice(-1)[0], lang: /\blang: /.test(silD(read(y))) }));
+  sameList(
+    "degerlendirme istegi uretimin dilini tasiyor",
+    [
+      "mobil cagri=" + mob.length,
+      "mobil eksik=" + (mob.filter((x) => !x.lang).map((x) => x.yer).join("+") || "yok"),
+    ],
+    [
+      "mobil cagri=4",
+      "mobil eksik=yok",
+    ],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "degerlendirme istegi (web)",
+    [
+      "web cagri=" + webLang.length,
+      "web eksik=" + (webLang.filter((x) => !x.lang).map((x) => x.yer).join("+") || "yok"),
+      "sunucu varsayilani=" + (/b\.lang === "en" \? "en" : "de"/.test(silD(read("src/app/api/assess/route.ts"))) ? "de" : "DEGISTI"),
+      "web tipi zorunlu=" + (/^\s+lang: "de" \| "en";$/m.test(silD(read("src/lib/assess-prompts.ts"))) ? "evet" : "HAYIR"),
+    ],
+    ["web cagri=4", "web eksik=yok", "sunucu varsayilani=de", "web tipi zorunlu=evet"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -17588,3 +17588,37 @@ gönderiyor ve ikisi "sunucunun göndermediği" diye düşmüştü. (2) Beceri
 kırılımı ölçüsü **çağrı** sayıyordu, satır değil — her satır yardımcıyı iki kez
 çağırıyor (koşul + şablon), yani bir bloğu silen enjeksiyon yeşil geçiyordu.
 İkisi de düzeltildi; enjeksiyon artık kırmızı veriyor.
+
+## §11.487 — Değerlendirme isteğinde üretimin dili: Android'in dört çağrısı da göndermiyordu
+
+Sözleşmenin ölçülmemiş yarısı istek yönüydü: **istemcilerin ne gönderdiği**.
+On sekiz uç/eylem çifti taradım; on yedisi birebir eşit, biri (`/api/assess`)
+tarayıcı artefaktıydı (web `{...req, day}` yazıyor, mobil aynı alanları düz
+listeliyor — aynı gövde). Ama o uca bakarken **gerçek bir ayrışma** çıktı.
+
+`/api/assess` isteği `lang` taşımak **zorunda**: istem hem öğretmen kimliğini
+hem seviye beklentilerini o dile göre kuruyor ve istemci vermezse route
+`"de"`ye düşüyor (`parseBody`: `b.lang === "en" ? "en" : "de"`). Yani İngilizce
+kursta yazılan metin **Almanca rubriğiyle** puanlanıyor — dosyanın kendi
+deyişiyle "Perfekt arayan bir rubrik".
+
+Web tarafında alan bugün **zorunlu** (`AssessRequest.lang`) ve dört çağıranın
+hepsi gönderiyor; yorumu da orada: "isteğe bağlıyken **dört çağıran
+unutmuştu** (2026-09-12 ölçüldü)". **Mobilde dördü de göndermiyordu:** çeviri
+turu, serbest cümle turu, sınavın yazma bölümü ve dersin rol yapma sınavı.
+Dördüyle de iki kurs birden çalışıyor, yani İngilizce öğrencinin her yazılı
+üretimi yanlış rubrikle puanlanıyordu. Dördüne `currentTargetLang()` eklendi.
+
+Kapı **§344** dört çağrıyı iki tarafta ölçüyor, çağrı **sayısını** da yazıyor
+(tarama bozulursa "hepsi gönderiyor" kendiliğinden doğru çıkardı) ve sunucunun
+varsayılanını da ölçüyor — varsayılan değişirse bu kapının gerekçesi değişir.
+
+**Kapının penceresi ilk yazılışta tek yönlüydü:** yalnız çağrıdan İLERİ
+bakıyordu, oysa iki çağrı gövdeyi satır içi yazıyor (ileri) ve biri önce bir
+`req` nesnesi kurup onu gönderiyor (geri) — önceden kurulan istek "lang yok"
+görünüyordu. Pencere artık geriye de bakıyor.
+
+`AssessRequest.native` alanını da kontrol ettim: route onu **okumuyor** ve
+okumaması doğru — geri bildirimin dili kullanıcının profilinden türüyor
+(`lib/assess` `native: await langOf(userId)`), yani istemcinin göndermesine
+gerek yok.

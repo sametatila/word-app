@@ -17,7 +17,7 @@ import { candoIdsForLesson } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
-import { currentTargetLocale } from "../lib/courses";
+import { currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
 import { assessFailKey, assessFailure } from "../lib/assessFail";
 import { notePremiumGate } from "../lib/premium";
@@ -119,6 +119,12 @@ export function RoleplayExamScreen() {
         body: JSON.stringify({
           kind: "roleplay",
           level: lesson.level,
+          /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye düşüyor
+             (`api/assess` `parseBody`), yani İngilizce kursta yapılan rol
+             yapma sınavı ALMANCA rubriğiyle puanlanıyordu. Web aynı çağrıda
+             `targetLangOf(lesson.course)` gönderiyor; burada kursun hedef
+             dili süreç genelinde kurulu (`lib/courses`). */
+          lang: currentTargetLang(),
           task: {
             prompt: `${lesson.roleplay.scene} (Sınav: ${lesson.roleplay.partner} ile konuşma)`,
             targets: lesson.patterns.map((p) => p.de),

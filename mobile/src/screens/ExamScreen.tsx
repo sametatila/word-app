@@ -1148,6 +1148,12 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           answer: { text: typed.trim() },
           /* `day` YAZMA anahtarı (satır + günlük kota); gönderilmezse sunucunun
              UTC günü işliyor. Web `assess-client` baştan beri gönderiyor. */
+          /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye
+          düşüyor (`api/assess` `parseBody`), yani İngilizce kursta
+          yazılan metin ALMANCA rubriğiyle puanlanıyordu ("Perfekt
+          arayan" beklentiler). Web dört çağıranın hepsinde gönderiyor
+          ve tipi de zorunlu yaptı (`AssessRequest.lang`). */
+          lang: currentTargetLang(),
           day: todayStr(),
         }),
       });

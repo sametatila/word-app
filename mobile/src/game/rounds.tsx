@@ -632,6 +632,12 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         prompt: `Bu kelimelerle bir cümle kur: ${targets.map((x) => withArtikel(x)).join(", ")}`,
         targets: targets.map((x) => x.de),
       },
+      /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye
+      düşüyor (`api/assess` `parseBody`), yani İngilizce kursta
+      yazılan metin ALMANCA rubriğiyle puanlanıyordu ("Perfekt
+      arayan" beklentiler). Web dört çağıranın hepsinde gönderiyor
+      ve tipi de zorunlu yaptı (`AssessRequest.lang`). */
+      lang: currentTargetLang(),
       answer: { text: typed },
     };
     try {
@@ -1150,6 +1156,12 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
               Mobil göndermiyordu, yani sunucunun UTC günü işliyordu: gece yarısından
               sonra yapılan değerlendirme dünkü güne düşüyor ve kota da yanlış güne
               sayılıyordu. Web `assess-client` baştan beri gönderiyor. */
+              /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye
+              düşüyor (`api/assess` `parseBody`), yani İngilizce kursta
+              yazılan metin ALMANCA rubriğiyle puanlanıyordu ("Perfekt
+              arayan" beklentiler). Web dört çağıranın hepsinde gönderiyor
+              ve tipi de zorunlu yaptı (`AssessRequest.lang`). */
+              lang: currentTargetLang(),
               day: todayStr(),
             }),
           },
