@@ -17260,6 +17260,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------- 310. GUNUN TURUNDA KAZANILAN XP GORUNUYOR
+   *
+   * `POST /api/daily` her gonderimde `xpGained` donduruyor (yalniz ILK kayitta
+   * dolu - tekrar gonderilen sonuc ne tabloya ne puana giriyor). Web sonuc
+   * kartinda "+N XP" diye gosteriyordu; MOBIL bu alani hic okumuyordu, oysa
+   * tip tanimi (`game/daily` `DailyResult`) onu zaten sayiyordu. Ayni tur,
+   * ayni sunucu cevabi: kazanc bir platformda gorunuyor otekinde gorunmuyordu.
+   *
+   * Olcu dort parca: sunucu alani donduruyor, iki istemci de OKUYOR, ve iki
+   * istemci de yalniz kazanc varken yaziyor (kosulsuz yazmak tekrar acilan
+   * sonucta "+0 XP" demek olurdu - sunucu orada 0 donduruyor). */
+  {
+    const uc = sil(read("src/app/api/daily/route.ts"));
+    const webOyn = sil(read("src/components/daily-player.tsx"));
+    const mobEkr = sil(read("mobile/src/screens/DailyScreen.tsx"));
+    sameList(
+      "gunun turunda kazanilan xp",
+      [
+        "sunucu=" + (/xpGained,\s*board\s*\}/.test(uc) || /xpGained/.test(uc) ? "donduruyor" : "DONDURMUYOR"),
+        "web okuyor=" + (/setXpGained\(/.test(webOyn) ? "evet" : "HAYIR"),
+        "mobil okuyor=" + (/setXpGained\(/.test(mobEkr) ? "evet" : "HAYIR"),
+        "web kosullu=" + (/xpGained > 0/.test(webOyn) ? "evet" : "HAYIR"),
+        "mobil kosullu=" + (/xpGained > 0/.test(mobEkr) ? "evet" : "HAYIR"),
+      ],
+      ["sunucu=donduruyor", "web okuyor=evet", "mobil okuyor=evet", "web kosullu=evet", "mobil kosullu=evet"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

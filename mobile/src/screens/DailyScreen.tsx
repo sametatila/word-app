@@ -109,6 +109,14 @@ export function DailyScreen() {
   const [idx, setIdx] = useState(0);
   const doneGuard = useRef(-1);
   const [board, setBoard] = useState<DailyBoardRow[]>([]);
+  /*
+    KAZANILAN XP. Sunucu her gonderimde `xpGained` donduruyor (yalniz ILK
+    kayitta dolu; tekrar gonderilen sonuc puana da yazilmiyor) ve web sonuc
+    kartinda "+N XP" diye gosteriyor (`daily-player`). Mobil bu alani hic
+    okumuyordu: ayni tur, ayni sunucu cevabi, bir platformda kazanc gorunuyor
+    otekinde gorunmuyordu.
+  */
+  const [xpGained, setXpGained] = useState(0);
   const [scoreView, setScoreView] = useState(0);
   const [comboView, setComboView] = useState(0);
 
@@ -203,6 +211,7 @@ export function DailyScreen() {
     try {
       const res = await submitDaily({ day: day.current, correct: correctRef.current, score: scoreRef.current, bestCombo: bestComboRef.current, seconds: secs });
       setBoard(res.board ?? []);
+      setXpGained(res.xpGained ?? 0);
     } catch { /* tablo eskisiyle kalır */ }
     setPhase("done");
   }
@@ -289,6 +298,13 @@ export function DailyScreen() {
               <View style={{ alignItems: "center" }}><Text variant="h3" color={colors.onPrimary}>{correctRef.current}/{total}</Text><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.correct")}</Text></View>
               <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>
             </View>
+            {/* KAZANILAN XP — kahraman kartinin ICINDE, web ile ayni yer
+                (`daily-player`: en iyi serinin hemen altinda) ve ayni kosul:
+                yalniz kazanc varsa yaziliyor. Tekrar acilan sonucta sunucu 0
+                donduruyor ve "+0 XP" yazmak yanlis olurdu. */}
+            {xpGained > 0 ? (
+              <Text variant="body" color={colors.onPrimaryMuted} style={{ marginTop: spacing.sm }}>+{xpGained} XP</Text>
+            ) : null}
           </View>
           {/* SIRAN kaç: tablo zaten altta ama "kaçıncıyım" sorusunun cevabı
               satır satır aranmamalı. Web sonucun hemen altında söylüyor. */}

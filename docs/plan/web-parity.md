@@ -16200,3 +16200,31 @@ düzeltme yönü: kart anahtarını listeye taşımak).
 
 Üç enjeksiyon doğrulandı: webi eski anahtara döndürmek, yalnız e-posta adımını
 kaldırmak, liste yedeğini kart anahtarıyla değiştirmek.
+
+## §11.445 — Günün turunda kazanılan XP Android'de hiç görünmüyordu
+
+`POST /api/daily` her gönderimde `xpGained` döndürüyor (yalnız **ilk** kayıtta
+dolu — tekrar gönderilen sonuç ne tabloya ne puana giriyor). Web sonuç kartında
+"+N XP" diye gösteriyor; mobil bu alanı **hiç okumuyordu** — üstelik tip tanımı
+(`game/daily` `DailyResult`) onu zaten sayıyordu. Aynı tur, aynı sunucu cevabı:
+kazanç bir platformda görünüyor, ötekinde görünmüyordu.
+
+Mobil kartın **içine**, webdeki yerine (en iyi serinin hemen altında) ve aynı
+koşulla eklendi: yalnız kazanç varsa. Koşulsuz yazmak tekrar açılan sonuçta
+"+0 XP" demek olurdu.
+
+İlk yazımda satırı kartın **dışına** koydum ve rengi `onPrimaryMuted` bıraktım —
+kahraman kartının dışında o renk sayfa zemininde neredeyse görünmez. Kod okunup
+düzeltildi (`sed -n` ile yerleşim doğrulandı).
+
+### §310
+
+Beş ölçü: sunucu alanı döndürüyor, iki istemci de **okuyor**, iki istemci de
+yalnız kazanç varken yazıyor.
+
+Üç enjeksiyon doğrulandı: mobilin okumasını kaldırmak, mobili koşulsuz yazdırmak,
+webin okumasını kaldırmak.
+
+Bulgunun sınıfı kayda değer: **sunucu bir alan döndürüyor, bir istemci onu
+okumuyor.** Tip tanımı iki tarafta da doğru olduğu için ne tsc ne de uç
+denetimi (`check:endpoints` yol/yöntem düzeyinde bakıyor) bunu görebiliyor.
