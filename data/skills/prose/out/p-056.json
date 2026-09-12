@@ -1,0 +1,182 @@
+[
+ {
+  "tr": "Biçim, iş, sayı, en sonda sınır.",
+  "kind": "explain",
+  "en": "The shape, the job, the number, the limit last."
+ },
+ {
+  "tr": "İki sözcük silinince ne kalıyor?",
+  "kind": "intro",
+  "en": "What is left when two words are deleted?"
+ },
+ {
+  "tr": "Üç devrik cümle ve bir plan satırı.",
+  "kind": "intro",
+  "en": "Three inverted sentences and one line from a plan."
+ },
+ {
+  "tr": "Devrik sırada parçacık nereye gidiyor?",
+  "kind": "intro",
+  "en": "Where does the particle go in an inversion?"
+ },
+ {
+  "tr": "İki kapalı, bir karışık ve iki aktarma.",
+  "kind": "intro",
+  "en": "Two closed, one mixed, and two reported sentences."
+ },
+ {
+  "tr": "Üç derece üç satırda. Sıra neden böyle?",
+  "kind": "intro",
+  "en": "Three degrees in three lines. Why that order?"
+ },
+ {
+  "tr": "Üç isim, üç ek. Hangisinin eki hiç yok?",
+  "kind": "intro",
+  "en": "Three nouns, three endings. Which one has none at all?"
+ },
+ {
+  "tr": "En zayıf aktarma: biri söyledi, o kadar.",
+  "kind": "explain",
+  "en": "The weakest report: somebody said it, and that is all."
+ },
+ {
+  "tr": "Üç adlaştırma, en sonda tek fiilli cümle.",
+  "kind": "explain",
+  "en": "Three nominalisations, the one sentence with a verb last."
+ },
+ {
+  "tr": "„is“ sonrası yalın fiil. Nerede oluyor bu?",
+  "kind": "intro",
+  "en": "A bare verb after „is“. Where does that happen?"
+ },
+ {
+  "tr": "„„Is said to“ carries no weight of its own…“",
+  "kind": "explain",
+  "en": "„„Is said to“ carries no weight of its own…“"
+ },
+ {
+  "tr": "Üç ortaç. Birincisi neden kurala aykırı değil?",
+  "kind": "intro",
+  "en": "Three participles. Why does the first one break no rule?"
+ },
+ {
+  "tr": "İki çekince, güçlendiren neden, en sonda kural.",
+  "kind": "explain",
+  "en": "Two hedges, the reason that strengthens, the rule last."
+ },
+ {
+  "tr": "İki isim yan yana. Hangisi hangisini niteliyor?",
+  "kind": "intro",
+  "en": "Two nouns side by side. Which one describes which?"
+ },
+ {
+  "tr": "Üç kip, bir eleştiri. Hangisi eleştirmene dair?",
+  "kind": "intro",
+  "en": "Three modals, one review. Which one is about the reviewer?"
+ },
+ {
+  "tr": "Üç koşul, boş bir salon. Hangisi bu akşama ait?",
+  "kind": "intro",
+  "en": "Three conditionals, an empty hall. Which one belongs to tonight?"
+ },
+ {
+  "tr": "Durum fiili ortaçta „-ing“ alıyor. Nasıl oluyor?",
+  "kind": "intro",
+  "en": "A state verb takes „-ing“ in a participle. How does that work?"
+ },
+ {
+  "tr": "„especially since“ ne yapıyor? Ödün mü, tersi mi?",
+  "kind": "intro",
+  "en": "What does „especially since“ do? Does it give ground or the opposite?"
+ },
+ {
+  "tr": "Dışta adlaştırma, içte bileşik. Soldaki tekil mi?",
+  "kind": "intro",
+  "en": "A nominalisation outside, a compound inside. Is the left noun singular?"
+ },
+ {
+  "tr": "Durum, önceki iş, edilgen; en sonda kuralın kendisi.",
+  "kind": "explain",
+  "en": "A state, the earlier action, the passive; the rule itself last."
+ },
+ {
+  "tr": "Planda bizim olan ve olmayan. Hangisi hangi biçimde?",
+  "kind": "intro",
+  "en": "What is ours in the plan and what is not. Which one in which form?"
+ },
+ {
+  "tr": "Üç ilgi cümlesi. Hangisinden iki sözcük silinebiliyor?",
+  "kind": "intro",
+  "en": "Three relative clauses. In which one can two words be deleted?"
+ },
+ {
+  "tr": "En zayıf aktarma: kaynak yok, kimse arkasında durmuyor.",
+  "kind": "explain",
+  "en": "The weakest report: no source, and nobody standing behind it."
+ },
+ {
+  "tr": "„„The dress which is red“ cannot become „the dress red“…“",
+  "kind": "explain",
+  "en": "„„The dress which is red“ cannot become „the dress red“…“"
+ },
+ {
+  "tr": "„has“ özneden öne geçiyor; fiilin gerisi yerinde kalıyor.",
+  "kind": "explain",
+  "en": "„has“ moves in front of the subject; the rest of the verb stays where it was."
+ },
+ {
+  "tr": "Silinebilen, silinemeyen, iyelik taşıyan; en sonda kural.",
+  "kind": "explain",
+  "en": "The one that can go, the one that cannot, the one with possession; the rule last."
+ },
+ {
+  "tr": "Üç aktarma fiili, bir duyuru. Hangisi oyunculara gitmiyor?",
+  "kind": "intro",
+  "en": "Three reporting verbs, one announcement. Which one does not go to the performers?"
+ },
+ {
+  "tr": "İşin içinde olmak: sürerli biçim, denetimimizde olmayan iş.",
+  "kind": "explain",
+  "en": "Being inside the work: the continuous form, for something we do not control."
+ },
+ {
+  "tr": "Kanıt, dışarıda bıraktığı, kendi payımız; en sonda yerleşim.",
+  "kind": "explain",
+  "en": "The evidence, what it rules out, our own part; the placing last."
+ },
+ {
+  "tr": "„That one cannot lose its two words, because „keeps“ is not „is“.“",
+  "kind": "explain",
+  "en": "„That one cannot lose its two words, because „keeps“ is not „is“.“"
+ },
+ {
+  "tr": "„„Especially since“ adds a reason that strengthens what was just said…“",
+  "kind": "explain",
+  "en": "„„Especially since“ adds a reason that strengthens what was just said…“"
+ },
+ {
+  "tr": "„After „is“ there is a bare verb — „name“, not „to name“ and not „naming“.“",
+  "kind": "explain",
+  "en": "„After „is“ there is a bare verb — „name“, not „to name“ and not „naming“.“"
+ },
+ {
+  "tr": "„The particle does not move with „do“; only the auxiliary goes to the front.“",
+  "kind": "explain",
+  "en": "„The particle does not move with „do“; only the auxiliary goes to the front.“"
+ },
+ {
+  "tr": "„„Which is“ can be deleted whenever the relative clause is extra — the kind with commas…“",
+  "kind": "explain",
+  "en": "„„Which is“ can be deleted whenever the relative clause is extra — the kind with commas…“"
+ },
+ {
+  "tr": "„a learner who has met „Wanting a new role“ goes back and writes „I am wanting a new role“.“",
+  "kind": "explain",
+  "en": "„a learner who has met „Wanting a new role“ goes back and writes „I am wanting a new role“.“"
+ },
+ {
+  "tr": "„puts „never“ in the middle, and a reader scanning a sports page sees the middle of nothing.“",
+  "kind": "explain",
+  "en": "„puts „never“ in the middle, and a reader scanning a sports page sees the middle of nothing.“"
+ }
+]

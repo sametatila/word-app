@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
-| B2 | 16–25 | bekliyor |
+| B2 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
+| B2 | 19–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -1120,6 +1120,51 @@ sildirdi. İki tireli terim daha düştü („under-counted“, „three-word“
 ünite 4 ve 9'daki kural üçüncü kez çalıştı, tireli terim tek belirteç
 olarak kapanmıyor. Bir de yazım düzeltmesi: sıralama sorusundaki
 „en serttten“ üç t ile yazılmıştı.
+
+
+**B2 ünite 16–18 (2026-09-12).** Ünite 16 The catalogue entry ·
+The season announcement · What the play does · A life on stage; ünite 17
+What the festival is · Never such an outrage · By the opening ·
+The second act; ünite 18 If she had portrayed it ·
+Saying you disliked it · The cost report · The company report.
+On sekiz egzersiz; ünite dışı ölçüm %0,0. B2 yuvalarının 108'i dolu.
+
+Ünite 16'nın noktası ORTAÇ SÜRERLİ ZAMAN DEĞİL. „I am wanting“ yanlış,
+çünkü „want“ bir durum fiili; ama „Wanting a new role, she left“ doğru,
+çünkü ortaç bir zaman değil — kendi zamanı yok, zamanını da öznesini de
+ana cümleden alıyor. Bu, hattın ilk İNGİLİZCE İÇİ KURAL ÇARPIŞMASI:
+öğrenciyi yanıltan şey başka bir dil değil, daha önce öğretilmiş bir
+İngilizce kuralı. Almanca eksende yardım yok ve engel de yok: Almancada
+Partizip I biçimi var („wollend“) ama bu işte kullanılmıyor, Almanca
+bunun yerine bir bağlaç kuruyor („da sie eine neue Rolle wollte“) — yani
+Almanca okuyanın elinde benzeyen ama işlemeyen bir biçim duruyor.
+
+Ünite 17'nin noktası „WHICH IS“ DÜŞÜYOR: virgüllü bir ilgi cümlesinde
+„which is“ ya da „who is“ silinebiliyor ve geriye ismi açıklayan bir öbek
+kalıyor („The dress, a traditional costume, is new“). Silme yalnız „be“ye
+kadar uzanıyor — „which keeps“ silinmiyor, „whose“ silinmiyor, ve seçim
+yapan (virgülsüz) cümlecikte hiç olmuyor. Almanca eksende yapı AYNI
+duruyor ama Almanca açıklayıcı öbeği baş ismin DURUMUNA göre çekiyor;
+İngilizcede çekilecek bir şey yok. Ünite 14'teki „whose“ bulgusunun
+devamı: aynı yerde Almanca bir tablo açıyor, İngilizce hiçbir şey
+açmıyor.
+
+Ünite 18'in noktası İSİM + İSİM BİLEŞİĞİ: „cost estimate“, „budget plan“,
+„income tax“ — iki isim, arada hiçbir şey yok, soldaki sağdakini
+niteliyor. İki kural birlikte geliyor: SIRA anlamı belirliyor („a cost
+estimate“ ile „an estimate cost“ aynı şey değil) ve soldaki isim TEKİL
+kalıyor. Almanca eksende bu bir YAZIM farkı gibi görünüyor ama değil:
+Almanca aynı şeyi TEK SÖZCÜK yaparak çözüyor („Kostenschätzung“,
+„Haushaltsplan“, „Einkommensteuer“), yani Almanca okuyan kavramı zaten
+biliyor ve öğrenmesi gereken şey onu AYIRMAK ile sırayı korumak. Bu
+ayrıca B2 sözcük listesinin neden bu kadar çok iki sözcüklü madde
+içerdiğini açıklıyor.
+
+Ölçüm bu turda doksan sekiz sözlükçe maddesi ekletti ve on dört maddeyi
+sildirdi. İki tireli örnek daha metinden çıkarıldı („three-day“,
+„right-hand“) — kural dördüncü kez çalıştı ve bu kez örnekler bileşik
+anlatan paragrafın kendi içindeydi, yani metnin konusu ile ölçümün sınırı
+aynı yerde çakıştı.
 
 
 ## Tamamlanma ölçütü

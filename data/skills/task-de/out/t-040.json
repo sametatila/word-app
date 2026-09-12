@@ -1,0 +1,292 @@
+[
+ {
+  "tr": "Ortaç kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Partizipkarte aus."
+ },
+ {
+  "tr": "Silme kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Streichungskarte aus."
+ },
+ {
+  "tr": "Bileşik kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Kompositumkarte aus."
+ },
+ {
+  "tr": "İki isim arasında hiçbir şey yok; soldaki niteliyor; soldaki tekil kalıyor; çoğul sağdakine takılıyor.",
+  "kind": "form.facts",
+  "de": "Zwischen den zwei Substantiven steht nichts; das linke bestimmt; das linke bleibt im Singular; der Plural hängt am rechten."
+ },
+ {
+  "tr": "„which is“ siliniyor; „which keeps“ silinmiyor; „whose“ silinmiyor; seçim yapan cümlecikte hiç olmuyor.",
+  "kind": "form.facts",
+  "de": "„which is“ fällt weg; „which keeps“ nicht; „whose“ nicht; im auswählenden Teilsatz geht es gar nicht."
+ },
+ {
+  "tr": "Durum fiili sürerli zamanda „-ing“ almıyor; ortaçta alıyor; ortacın kendi zamanı yok; zamanını ana cümleden alıyor.",
+  "kind": "form.facts",
+  "de": "Ein Zustandsverb nimmt in der Verlaufsform kein „-ing“; im Partizip schon; das Partizip hat keine eigene Zeitstufe; es holt sie aus dem Hauptsatz."
+ },
+ {
+  "tr": "Eksikliği kaçırmış olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können den Mangel nicht übersehen haben."
+ },
+ {
+  "tr": "Kârlılığın düşmesi bekleniyor.",
+  "kind": "build.tr",
+  "de": "Es wird erwartet, dass die Rentabilität sinkt."
+ },
+ {
+  "tr": "Bütçe planının onayı beklemede.",
+  "kind": "build.tr",
+  "de": "Die Genehmigung des Haushaltsplans steht aus."
+ },
+ {
+  "tr": "Defter tutmanın denetimi aylık.",
+  "kind": "build.tr",
+  "de": "Die Prüfung der Buchführung erfolgt monatlich."
+ },
+ {
+  "tr": "Dekor şık olsaydı oyun sürerdi.",
+  "kind": "build.tr",
+  "de": "Wäre das Bühnenbild stilvoll gewesen, hätte das Stück gehalten."
+ },
+ {
+  "tr": "Galanın ertelendiği düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Die Premiere soll verschoben worden sein."
+ },
+ {
+  "tr": "Yöresel kıyafet olan elbise yeni.",
+  "kind": "build.tr",
+  "de": "Das Kleid, das eine Tracht ist, ist neu."
+ },
+ {
+  "tr": "Sonun aceleye gelmiş olması gerek.",
+  "kind": "build.tr",
+  "de": "Der Schluss muss übereilt gewesen sein."
+ },
+ {
+  "tr": "Bestecinin hasta olduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Der Komponist soll krank sein."
+ },
+ {
+  "tr": "İş modelinin değiştiği düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Das Geschäftsmodell soll sich geändert haben."
+ },
+ {
+  "tr": "Tuvalin restorasyonu iki yıl sürdü.",
+  "kind": "build.tr",
+  "de": "Die Restaurierung der Leinwand dauerte zwei Jahre."
+ },
+ {
+  "tr": "Genişlemenin durdurulduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Expansion soll ausgesetzt sein."
+ },
+ {
+  "tr": "Film senaryosunun değişmesi bekleniyor.",
+  "kind": "build.tr",
+  "de": "Es wird erwartet, dass sich das Drehbuch ändert."
+ },
+ {
+  "tr": "Odayı betimleseydi eser görkemli olurdu.",
+  "kind": "build.tr",
+  "de": "Hätte sie den Raum dargestellt, wäre das Werk großartig gewesen."
+ },
+ {
+  "tr": "Sergi eserinin teşhiri mayısta başlıyor.",
+  "kind": "build.tr",
+  "de": "Die Ausstellung des Exponats beginnt im Mai."
+ },
+ {
+  "tr": "Haziranda mektupları arşivlemiş olacağız.",
+  "kind": "build.tr",
+  "de": "Bis Juni werden wir die Briefe archiviert haben."
+ },
+ {
+  "tr": "Bir yenilgi hiç bu kadar infial yaratmadı.",
+  "kind": "build.tr",
+  "de": "Nie hat eine Niederlage solche Empörung ausgelöst."
+ },
+ {
+  "tr": "Yıllarca övülen oyuncu alçakgönüllü kaldı.",
+  "kind": "build.tr",
+  "de": "Jahrelang gelobt, blieb der Schauspieler bescheiden."
+ },
+ {
+  "tr": "Sanat eserinin edinimi belgelenmiş durumda.",
+  "kind": "build.tr",
+  "de": "Der Erwerb des Kunstwerks ist dokumentiert."
+ },
+ {
+  "tr": "Bir destekçi tribünü nadiren erken terk eder.",
+  "kind": "build.tr",
+  "de": "Selten verlässt ein Anhänger die Tribüne früh."
+ },
+ {
+  "tr": "Tasvir zarif olsaydı salon şimdi dolu olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre die Darstellung elegant gewesen, wäre der Saal jetzt voll."
+ },
+ {
+  "tr": "Yeni bir rol istediği için şirketten ayrıldı.",
+  "kind": "build.tr",
+  "de": "Da sie eine neue Rolle wollte, verließ sie das Ensemble."
+ },
+ {
+  "tr": "Onun provasını izledikten sonra jüri oy verdi.",
+  "kind": "build.tr",
+  "de": "Nachdem sie ihr bei der Probe zugesehen hatte, stimmte die Jury ab."
+ },
+ {
+  "tr": "Maliyet tahmininin hazırlanması bir hafta sürdü.",
+  "kind": "build.tr",
+  "de": "Die Erstellung der Kostenschätzung dauerte eine Woche."
+ },
+ {
+  "tr": "Eski bir göreneği sürdüren halk şenliği ücretsiz.",
+  "kind": "build.tr",
+  "de": "Das Volksfest, das einen alten Brauch bewahrt, ist kostenlos."
+ },
+ {
+  "tr": "Yorumlaması çeşit çeşit olan teyzem ilk dansı ediyor.",
+  "kind": "build.tr",
+  "de": "Meine Tante, deren Auslegung vielfältig ist, tanzt zuerst."
+ },
+ {
+  "tr": "Ancak finalden sonra gerisini tezahüratla destekliyorlar.",
+  "kind": "build.tr",
+  "de": "Erst nach dem Endspiel feuern sie die Übrigen an."
+ },
+ {
+  "tr": "Tutulan bir görüş; mastar geçmişe bakıyor.",
+  "kind": "build.hint",
+  "de": "Eine vertretene Ansicht; der Infinitiv blickt zurück."
+ },
+ {
+  "tr": "Olumsuzu „can't have“.",
+  "kind": "build.hint",
+  "de": "Die Verneinung ist „can't have“."
+ },
+ {
+  "tr": "„has“ özneden öne geçiyor.",
+  "kind": "build.hint",
+  "de": "„has“ rückt vor das Subjekt."
+ },
+ {
+  "tr": "Dışta adlaştırma, içte bileşik.",
+  "kind": "build.hint",
+  "de": "Außen Nominalisierung, innen Kompositum."
+ },
+ {
+  "tr": "En zayıf aktarma: biri söyledi.",
+  "kind": "build.hint",
+  "de": "Die schwächste Wiedergabe: jemand hat es gesagt."
+ },
+ {
+  "tr": "„is expected to“ ileriye bakıyor.",
+  "kind": "build.hint",
+  "de": "„is expected to“ blickt nach vorn."
+ },
+ {
+  "tr": "İleriye bakıyor ve bir modeli var.",
+  "kind": "build.hint",
+  "de": "Es blickt nach vorn und hat ein Modell."
+ },
+ {
+  "tr": "Yine kapalı: gösterim martta bitti.",
+  "kind": "build.hint",
+  "de": "Wieder geschlossen: die Spielzeit endete im März."
+ },
+ {
+  "tr": "Üçüncü tür: fiil zaten isim, eki yok.",
+  "kind": "build.hint",
+  "de": "Die dritte Art: das Verb ist schon ein Substantiv, ohne Endung."
+ },
+ {
+  "tr": "„does“ geliyor; ana fiil çekimini kaybediyor.",
+  "kind": "build.hint",
+  "de": "„does“ kommt dazu; das Hauptverb verliert seine Endung."
+ },
+ {
+  "tr": "Fiil isme dönüyor: „restore“ → „restoration“.",
+  "kind": "build.hint",
+  "de": "Das Verb wird zum Substantiv: „restore“ → „restoration“."
+ },
+ {
+  "tr": "„budget plan“: iki isim, arada hiçbir şey yok.",
+  "kind": "build.hint",
+  "de": "„budget plan“: zwei Substantive, dazwischen nichts."
+ },
+ {
+  "tr": "„whose“ iyelik taşıyor; silinecek bir şey yok.",
+  "kind": "build.hint",
+  "de": "„whose“ trägt den Besitz; es gibt nichts zu streichen."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bu akşamın koltuklarında.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge sitzt in den Sesseln dieses Abends."
+ },
+ {
+  "tr": "„which is“ buradan silinebilir; virgüller şart.",
+  "kind": "build.hint",
+  "de": "„which is“ kann hier wegfallen; die Kommas sind Bedingung."
+ },
+ {
+  "tr": "İsim + isim: soldaki niteliyor ve tekil kalıyor.",
+  "kind": "build.hint",
+  "de": "Substantiv + Substantiv: das linke bestimmt und bleibt im Singular."
+ },
+ {
+  "tr": "„acquire“ → „acquisition“; kimse bunu tahmin etmiyor.",
+  "kind": "build.hint",
+  "de": "„acquire“ → „acquisition“; das errät niemand."
+ },
+ {
+  "tr": "„keeps“ silinmiyor; silme yalnız „be“ye kadar uzanıyor.",
+  "kind": "build.hint",
+  "de": "„keeps“ fällt nicht weg; die Streichung reicht nur bis „be“."
+ },
+ {
+  "tr": "Parçacık „on“ fiille kalıyor; yalnız yardımcı fiil öne geçiyor.",
+  "kind": "build.hint",
+  "de": "Die Partikel „on“ bleibt beim Verb; nur das Hilfsverb rückt nach vorn."
+ },
+ {
+  "tr": "Ortaç sürerli zaman değil; durum fiili burada „-ing“ alabiliyor.",
+  "kind": "build.hint",
+  "de": "Das Partizip ist keine Verlaufsform; ein Zustandsverb kann hier „-ing“ nehmen."
+ },
+ {
+  "tr": "Eleştirinin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Kritik: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Künyenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Eintrags: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Şenliğin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Festes: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Bileşiğin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Kompositums: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç ortacın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Partizipien: bring sie in die richtige Ordnung."
+ }
+]
