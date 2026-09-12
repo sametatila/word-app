@@ -235,7 +235,7 @@ export function SettingsScreen() {
         <Text accessibilityRole="header" variant="h2">{t("settings.settings")}</Text>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Group title={t("settings.group_learning")} colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
             {courseOptions(uiLang).map((c, i) => {

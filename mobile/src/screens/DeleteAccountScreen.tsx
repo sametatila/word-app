@@ -141,7 +141,7 @@ export function DeleteAccountScreen() {
         <Text accessibilityRole="header" variant="h2">{tx("deleteaccount.delete_account")}</Text>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>
           {tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
         </Text>

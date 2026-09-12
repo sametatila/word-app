@@ -62,7 +62,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView
+      <ScrollView automaticallyAdjustKeyboardInsets
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: insets.top + spacing.xxl, paddingBottom: insets.bottom + spacing.xxl }}
         keyboardShouldPersistTaps="handled"
       >

@@ -7488,6 +7488,106 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 296. KLAVYE METIN KUTUSUNU ORTMUYOR ---------------------------
+   *
+   * Android bu isi yillarca manifestten yapti: `windowSoftInputMode=
+   * "adjustResize"` pencereyi kucultuyor ve kutu klavyenin ustune cikiyor.
+   * IKI SEY onu gecersiz kildi:
+   *
+   *   - iOS'ta boyle bir ayar HIC YOK; kaydirma alani klavye icin kendisi
+   *     bosluk acmak zorunda (`automaticallyAdjustKeyboardInsets`).
+   *   - Android 15+/targetSdk 35+ edge-to-edge altinda pencere artik
+   *     kucultulmuyor; klavye icerigin USTUNE biniyor. `useKeyboardHeight`in
+   *     docblock'u bunu yaziyor.
+   *
+   * Yani bugun iki platformda da kutu ELLE kurtarilmak zorunda ve iki ayri
+   * duzen var:
+   *
+   *   A. kutu kaydirma alaninin ICINDE  -> `automaticallyAdjustKeyboardInsets`
+   *   B. kutu kaydirma alanindan SONRA, sabit bir alt cubukta -> cubugu klavye
+   *      yuksekligi kadar kaldir (`game/rounds` `RoundShell` kalibi)
+   *
+   * Olculdugunde A duzenindeki dokuz kaydirma alanindan yalniz IKISINDE
+   * (`QuizScreen`, `LessonScreen`) oznitelik vardi - o ikisi 8b6c084a'da
+   * bilerek eklenmisti, gerisi geride kalmisti. B duzeninde ise rol yapma
+   * sinavinin SOHBET KUTUSU kurtarilmiyordu: kullanici yazarken ne yazdigini
+   * gormuyordu. */
+  {
+    const dosyalar = (() => {
+      const out = [];
+      const walk = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const p = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); }
+          else if (e.name.endsWith(".tsx")) out.push(p);
+        }
+      };
+      walk("mobile/src");
+      return out;
+    })();
+
+    /* A DUZENI: metin kutusu olan her dosyanin kaydirma alanlari oznitelikli
+       olacak. Olcu dosya duzeyinde: kutu cocuk bilesende de olabiliyor
+       (`MockExamScreen` gorevleri, `PaywallScreen` promo karti), yani
+       "hangi ScrollView" sorusu metinden guvenilir sekilde sorulamiyor. */
+    const ALT_CUBUK = new Set([
+      "mobile/src/game/rounds.tsx",
+      "mobile/src/screens/RoleplayExamScreen.tsx",
+    ]);
+    const eksik = [];
+    for (const y of dosyalar) {
+      const g = sil(read(y));
+      if (!/<TextInput\s/.test(g) || !/<ScrollView\b/.test(g)) continue;
+      if (ALT_CUBUK.has(y)) continue;
+      if (!/automaticallyAdjustKeyboardInsets/.test(g)) eksik.push(y.split("/").pop());
+    }
+    sameList(
+      "kaydirma alani klavyeye bosluk aciyor",
+      ["oznitelik eksik=" + (eksik.sort().join("+") || "yok")],
+      ["oznitelik eksik=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ve gercekten OLCULUYOR: en az birkac dosya taraniyor. */
+    const taranan = dosyalar.filter((y) => {
+      const g = sil(read(y));
+      return /<TextInput\s/.test(g) && /<ScrollView\b/.test(g) && !ALT_CUBUK.has(y);
+    }).length;
+    sameList(
+      "taranan ekran sayisi",
+      ["taranan=" + (taranan >= 8 ? "var" : "AZ:" + taranan)],
+      ["taranan=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* B DUZENI: alt cubuk klavye yuksekligi kadar kalkiyor. Iki dosya da
+       AYNI ifadeyi kullaniyor - kalip tek olsun. */
+    const kalip = /Math\.max\(0, kb - insets\.bottom\) \+ spacing\.xxl/;
+    sameList(
+      "alt cubuk klavyenin ustune cikiyor",
+      [...ALT_CUBUK].sort().map((y) => {
+        const g = sil(read(y));
+        const kanca = /useKeyboardHeight\(\)/.test(g);
+        return y.split("/").pop() + "=" + (kanca && kalip.test(g) ? "kalkiyor" : kanca ? "KALIP AYRI" : "KANCA YOK");
+      }),
+      [...ALT_CUBUK].sort().map((y) => y.split("/").pop() + "=kalkiyor"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Android tarafi da yerinde: manifest hâlâ `adjustResize` diyor (edge-to-edge
+       oncesi surumler ve kaydirma alani olmayan ekranlar icin). */
+    sameList(
+      "android adjustResize duruyor",
+      ["manifest=" + (/android:windowSoftInputMode="adjustResize"/.test(read("mobile/android/app/src/main/AndroidManifest.xml")) ? "var" : "YOK")],
+      ["manifest=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 295. iOS ENVANTERININ IDDIALARI TUTUYOR ------------------------
    *
    * `docs/plan/ios-parity.md` iOS'un neyi eksik oldugunu sayan envanter ve

@@ -915,7 +915,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
   const hazir = it.mode === "order" ? parts.length === (it.chunks?.length ?? 0) : yazilanKelime >= MIN_FREE_WORDS;
 
   return (
-    <ScrollView contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
+    <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>{t(it.mode === "order" ? "exam.order_the_sentence" : "exam.write_in_target")}</Text>
         <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{it.prompt}</Text>
@@ -1175,7 +1175,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   }
 
   return (
-    <ScrollView contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
+    <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
         <Text variant="bodyStrong" style={{ lineHeight: 23 }}>{w.task.prompt}</Text>
         {w.task.checklist.map((c, i) => (

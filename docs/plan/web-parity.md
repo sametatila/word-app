@@ -15236,3 +15236,49 @@ Meta-kapı (§138) bu turda **altı** desen reddetti — `CFBundleLocalizations`
 `NomiTests` (iki kez), `ITSAppUsesNonExemptEncryption`, `CFBundleURLTypes`,
 `LernomiUITests` sınırsız ad desenleriyle aranmıştı. plist anahtarları artık
 `<key>…</key>` olarak tam eşleşiyor.
+
+## §11.421 — Klavye metin kutusunu örtüyordu: dokuz ekran
+
+Android bu işi yıllarca manifestten yaptı: `windowSoftInputMode="adjustResize"`
+pencereyi küçültüyor ve kutu klavyenin üstüne çıkıyor. **İki şey onu geçersiz
+kıldı:**
+
+- **iOS'ta böyle bir ayar hiç yok.** Kaydırma alanı klavye için kendisi boşluk
+  açmak zorunda (`automaticallyAdjustKeyboardInsets`).
+- **Android 15+/targetSdk 35+ edge-to-edge** altında pencere artık
+  küçültülmüyor; klavye içeriğin **üstüne** biniyor — `useKeyboardHeight`in
+  kendi docblock'u bunu yazıyor.
+
+Yani bugün iki platformda da kutu **elle** kurtarılmak zorunda ve iki ayrı
+düzen var:
+
+| Düzen | Kurtarma |
+|---|---|
+| **A** — kutu kaydırma alanının içinde | `automaticallyAdjustKeyboardInsets` |
+| **B** — kutu kaydırma alanından sonra, sabit alt çubukta | çubuğu klavye yüksekliği kadar kaldır (`RoundShell` kalıbı) |
+
+Ölçüldüğünde **A düzenindeki dokuz ekrandan yalnız ikisinde** öznitelik vardı
+(`QuizScreen`, `LessonScreen`) — o ikisi `8b6c084a`'da bilerek eklenmiş, gerisi
+geride kalmıştı: giriş, parola sıfırlama, hesap silme, sosyal ayarlar,
+ayarlar, deneme sınavı, ödeme (promo kodu) ve modül sınavının iki yazma
+bölümü.
+
+**B düzeninde rol yapma sınavının sohbet kutusu** kurtarılmıyordu: kutu
+kaydırma alanının altında sabit bir çubukta duruyor, yani kullanıcı yazarken
+**ne yazdığını görmüyordu** — üç dakikalık bir sınavda. Kalıp turlardan
+alındı, ifadesi `RoundShell`le birebir (klavye yüksekliği − güvenli alan +
+pay; öneri şeridi çoğu Android klavyesinde `keyboardDidShow` yüksekliğine
+dâhil değil).
+
+### §296
+
+Dört ölçü: A düzenindeki her ekranın özniteliği taşıdığı, **taranan ekran
+sayısının** ölçüldüğü (tarama boşalırsa "eksik yok" boş bir doğru olur), B
+düzenindeki iki dosyanın alt çubuğu **aynı ifadeyle** kaldırdığı (kalıp tek
+olsun) ve Android'in `adjustResize`ının yerinde durduğu — o, edge-to-edge
+öncesi sürümler ve kaydırma alanı olmayan ekranlar için hâlâ gerekli.
+
+Ölçü **dosya düzeyinde** soruluyor, "hangi ScrollView" diye değil: kutu çocuk
+bileşende de olabiliyor (`MockExamScreen` görev kartları, `PaywallScreen` promo
+kartı) ve o soru metinden güvenilir biçimde sorulamaz. Üç enjeksiyon da
+doğrulandı.

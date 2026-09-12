@@ -29,6 +29,7 @@ import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 import { reduceMotion } from "../lib/reduceMotion";
+import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 
 /** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
@@ -65,6 +66,7 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
 export function RoleplayExamScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const kb = useKeyboardHeight();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
   const lesson = findLesson(id) as Lesson | undefined;
@@ -428,7 +430,14 @@ export function RoleplayExamScreen() {
         ))}
         {busy ? <ActivityIndicator color={colors.primary} style={{ alignSelf: "flex-start" }} /> : null}
       </ScrollView>
-      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
+      {/* KLAVYE ALT ÇUBUĞU ÖRTÜYORDU. Yazma kutusu kaydırma alanının ALTINDA,
+          sabit bir çubukta duruyor; edge-to-edge altında (Android 15+/targetSdk 35+)
+          pencere `adjustResize` ile küçülmüyor ve iOS'ta zaten böyle bir şey yok,
+          yani klavye kutunun üstüne biniyordu — kullanıcı ne yazdığını görmüyor.
+          Kalıp turlardan geliyor (`game/rounds` `RoundShell`): çubuğu klavye
+          yüksekliği kadar kaldır, güvenli alanı düş, bir de pay ekle (öneri şeridi
+          çoğu Android klavyesinde `keyboardDidShow` yüksekliğine dâhil değil). */}
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm, marginBottom: kb > 0 ? Math.max(0, kb - insets.bottom) + spacing.xxl : 0 }}>
         {asr ? (
           <PressableScale
             onPress={() => void listen()}

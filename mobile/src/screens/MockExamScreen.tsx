@@ -402,7 +402,7 @@ export function MockExamScreen() {
 
       {phase === "gorev" ? <TaskBar part={part} ix={ix} colors={colors} /> : null}
 
-      <ScrollView
+      <ScrollView automaticallyAdjustKeyboardInsets
         ref={(r) => { scroller.current = r; }}
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
         showsVerticalScrollIndicator={false}
