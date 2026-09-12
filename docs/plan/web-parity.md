@@ -12143,3 +12143,84 @@ webde hiç `onMouseLeave` yok; kapı o sıfırı tutuyor.
 
 §225'in tepki seçicisi ölçüsü de yeni şekle güncellendi (`menuitemradio` →
 `radio` + `radiogroup`).
+
+## §11.360 — Boş hâl ev kalıbında: altı liste ikon, başlık ve çıkış yolu kazandı
+
+Eksen **boş durumlar**dı ve Android'in kendi cevabı hazır duruyordu:
+`social/common.tsx` `EmptyCard` — 52 px'lik **dolu** renkli ikon karosu, `h3`
+başlık, sönük açıklama ve isteğe bağlı bir düğme. On altı yerde o kullanılıyor
+(akış, gelen kutu, arkadaşlar, ortak görev, lig, profil…). Ama aynı
+uygulamanın içindeki **öteki** listeler başka bir dille konuşuyordu:
+ortalanmış tek bir sönük cümle.
+
+| Yüzey | Önce (iki platformda da) |
+|---|---|
+| Kelimeler | "Kelime bulunamadı." — ikon yok, sebep yok, çıkış yok |
+| Deneme kâğıtları | "{level} seviyesi için henüz deneme sınavı yok." |
+| Sınav istatistiği | "Henüz tamamlanmış bir deneme sınavın yok…" |
+| Patika | "Bu seviyede konuşma patikası henüz yok…" |
+| Kullanıcı arama sonucu | "Sonuç yok. Gizli profiller…" |
+| Öneriler | "Şimdilik öneri yok…" |
+
+Altısı da **iki platformda da** aynı şeyi yapıyordu, yani karşılaştırmalı bir
+kapı bunu göremezdi; ölçü bu yüzden **mutlak**: her boş hâl `EmptyCard`
+kabuğunda olmalı.
+
+İki yerde metnin kendisi de eksikti. **Kelimeler** boş olmasının iki sebebi
+var — hiç kelime yok, ya da süzgeçler her şeyi dışarıda bıraktı; ikincisinde
+çıkış yolu süzgeçleri kaldırmak ve bunu söylemeyen ekran kullanıcıyı listenin
+gerçekten boş olduğuna inandırıyordu (yeni `words.empty_sub` + süzgeç açıkken
+görünen "Süzgeçleri temizle" düğmesi). **Deneme kâğıtları** kâğıtların
+seviyeye bağlı olduğunu söylemiyordu, oysa seviye çubuğu kartın hemen
+üstünde duruyor. Sınav istatistiği ve Patika ise çıkış yolu kazandı (deneme
+sınavı listesi / Öğren).
+
+Yazılar ekranı **üçüncü** bir kalıptaydı: iki platform da başlık + açıklama +
+düğmeyi doğru veriyordu ama kendi karosunu kuruyordu — mobil 80 px `xl`
+yumuşak zemin, web 48 px %14 tint. Aynı uygulamada üç farklı boş hâl ölçüsü.
+O da kabuğa alındı; mobilde Yapabildiklerim'in **hata** dalı da öyle (boş dalı
+zaten `EmptyCard` çiziyordu, hata dalı kendi başlığını kuruyordu).
+
+### Kabuk hata hâllerini de taşıyor — ve sessizdi
+
+Bu kart yalnız "liste boş" demiyor: arkadaş tablosu, lig tablosu, başarımlar,
+yapabildiklerim ve yazılar **yüklenemediğinde** de aynı kart çiziliyor. O
+durumda ekran okuyucu kullanan biri hiçbir şey duymuyordu. Kabuk bir duyuru
+prop'u aldı (`live` → `accessibilityLiveRegion`, webde `role`) ve beş hata
+çağrısı da onu kullanıyor. Boş hâlde duyuru **istenmiyor**: "henüz arkadaşın
+yok" bir hata değil, sayfanın normal içeriği.
+
+Bunun bir kapı dersi var. §228 ("hata dalı duyuruluyor") duyuruyu **çağrı
+yerinde** arıyor; kabuk prop'u okumayı bıraksa o kapı yeşil kalır ve hiçbir
+şey duyurulmaz — denedim, kalıyor. §241 bu yüzden iletmenin kendisini ayrı
+bir olgu olarak ölçüyor. §228'in mobil deseni de `live="assertive"`i kabul
+edecek şekilde genişletildi.
+
+### Kullanıcı arama kutusu
+
+Android kutunun başına **büyüteç** koyuyor, web bir "@" harfi koyuyordu:
+kullanıcı adı işareti gibi okunuyor, oysa kutuya isim de yazılabiliyor.
+Temizleme de Android'de X ikonu, webde metnin devamı gibi duran bir "Temizle"
+sözcüğüydü. Webde `SearchIcon` **hiç yoktu** — mobil `ui/icons.tsx`te
+duruyordu, aynı çizimin web karşılığı yazıldı.
+
+### Kâğıt bulunamadı: yanlış sebep
+
+Mobilde tek taraflı bir hata çıktı. Bağlantıdaki kâğıt ya da bölüm
+bulunamadığında `MockExamScreen` **"{level} seviyesi için henüz deneme sınavı
+yok"** yazıyordu. Sebep yanlış (kâğıtlar duruyor, bozuk olan bağlantı),
+üstelik `paper` da bulunamadığı için seviye **boş** basılıyordu:
+"&nbsp;seviyesi için henüz deneme sınavı yok". Geri dönüş yolu da yoktu; tek
+çıkış cihazın geri hareketiydi. Web aynı yolda `notFound()` çağırıp 404
+sayfasını çiziyor. Artık Android'in kendi "bulunamadı" kalıbı var
+(`UserScreen`in X ikonlu, tehlike tintli kartı) + listeye dönüş düğmesi.
+
+### §241
+
+Yedi olgu: kabuğun duyuruyu iletmesi (mutlak), yedi yüzeyin boş hâlinin
+kabukta olması (iki platform ayrı listelerde, mutlak), beş hata çağrısının
+duyurması (iki platform), arama kutusunun işaretleri ve kâğıt bulunamadı
+dalının doğru sebebi. Ölçü **düğüm**, pencere değil: boş hâl kartlarının
+içine düğme ve bağlantı giriyor, karakter mesafesi ölçü olamaz — işaretin
+kendi açılış etiketi derinlik/tırnak farkındaki `acilisSonu` ile okunuyor.
+Beş enjeksiyon denendi, beşi de yakalandı.

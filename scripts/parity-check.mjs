@@ -7342,6 +7342,175 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 241. BOS HAL EV KALIBINDA ---------------------------------------
+   *
+   * Android'in kendi cevabi var: `social/common.tsx` `EmptyCard` - 52 px'lik
+   * DOLU renkli ikon karosu, `h3` baslik, sonuk aciklama ve istege bagli bir
+   * dugme. On alti yerde o kullaniliyor (akis, gelen kutu, arkadaslar, ortak
+   * gorev, lig, profil...). Ama listelerin geri kalani ayni uygulamanin
+   * icinde baska bir dille konusuyordu: ORTALANMIS TEK BIR SONUK CUMLE.
+   * Kelimeler, deneme kagitlari, sinav istatistigi, patika, kullanici arama
+   * ve oneriler - alti yuzey. Ikon yok, baslik yok, cikis yolu yok; ekran
+   * "bos" degil "bozuk" gibi duruyordu. Web de ayni alti yerde ayni seyi
+   * yapiyordu, yani IKI TARAF DA YANLISTI ve karsilastirmali bir kapi bunu
+   * goremezdi - olcu bu yuzden MUTLAK: her yuzeyin bos hali `EmptyCard`
+   * kabugunda olmali.
+   *
+   * Yazilar ekrani ucuncu bir kaliptaydi: iki platform da BASLIK + ACIKLAMA +
+   * DUGME'yi dogru veriyordu ama kendi karosunu kuruyordu (mobil 80 px `xl`
+   * yumusak zemin, web 48 px %14 tint) - ayni uygulamada uc farkli bos hal
+   * olcusu. O da kabuga alindi.
+   *
+   * Ikinci olcu: bu kabuk yalniz "liste bos" demiyor, arkadas tablosu, lig
+   * tablosu, basarimlar, yapabildiklerim ve yazilar YUKLENEMEDIGINDE de ayni
+   * kart ciziliyor. Hata hali DUYURULMALI; bos hali duyurulmamali ("henuz
+   * arkadasin yok" bir hata degil, sayfanin normal icerigi). Kabuk bu yuzden
+   * bir duyuru prop'u aldi ve iletmesi de olculuyor - prop'u okumayan bir
+   * kabukta cagri yerleri dogru gorunur ve hicbir sey duyurulmaz.
+   *
+   * Ucuncusu KULLANICI ARAMA KUTUSU: Android kutunun basina buyutec
+   * koyuyor, web bir "@" harfi koyuyordu (kullanici adi isareti gibi okunur,
+   * kutuya isim de yazilabiliyor); temizleme de Android'de X ikonu, webde
+   * metnin devami gibi duran bir "Temizle" sozcugu. Webde `SearchIcon` HIC
+   * YOKTU - mobil `ui/icons.tsx`te duruyordu, karsiligi yazildi.
+   *
+   * Dorduncusu mobilde tek tarafli bir YANLIS SEBEP: bagiantidaki kagit ya da
+   * bolum bulunamadiginda `MockExamScreen` "{level} seviyesi icin henuz deneme
+   * sinavi yok" yaziyordu - kagitlar duruyor, bozuk olan baglanti; ustelik
+   * `paper` bulunamadigi icin seviye BOS basiliyordu ve geri donus yolu da
+   * yoktu. Web ayni yolda `notFound()` cagiriyor. */
+  {
+    /* Isaretin KENDI etiketi: isaretten geriye dogru en yakin `<`, sonra
+       derinlik/tirnak farkindaki `acilisSonu` ile etiketin sonu. Pencere
+       DEGIL dugum: bos hal kartlarinin icine dugme ve baglanti giriyor,
+       karakter mesafesi bu yuzden olcu olamaz. */
+    /* Acilis etiketinin sonu: ilk `>` DEGIL - `icon={X}` gibi suslu
+       parantezlerin ve tirnaklarin icindeki `>` etiketi bitirmez. */
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    const kendiEtiket = (src, isaret) => {
+      const hedef = src.indexOf(isaret);
+      if (hedef < 0) return null;
+      const kendi = src.lastIndexOf("<", hedef);
+      if (kendi < 0) return "";
+      return src.slice(kendi, kendi + acilisSonu(src.slice(kendi)) + 1);
+    };
+    const kabukta = (yol, isaret) => {
+      const e = kendiEtiket(sil(read(yol)), isaret);
+      return e === null ? "ISARET YOK" : /^<EmptyCard\b/.test(e) ? "kabukta" : "EL YAPIMI";
+    };
+
+    /* Kabuk duyuruyu ILETIYOR MU. Cagri yerlerini olcmek yetmez: prop'u
+       okumayan bir kabukta `live="assertive"` yazan her cagri dogru gorunur
+       ve hicbir sey duyurulmaz. */
+    sameList(
+      "bos durum kabugu duyuruyu iletiyor",
+      [
+        "mobil=" + (/accessibilityLiveRegion=\{live\}/.test(sil(read("mobile/src/social/common.tsx"))) ? "iletiyor" : "ILETMIYOR"),
+        "web=" + (/<div role=\{role\}/.test(sil(read("src/components/empty-card.tsx"))) ? "iletiyor" : "ILETMIYOR"),
+      ],
+      ["mobil=iletiyor", "web=iletiyor"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Alti bos liste + yazilar: ikisi de kabukta olmali (MUTLAK). */
+    const YUZEYLER = [
+      ["kelimeler", "src/components/word-list.tsx", 'tx("words.empty_sub")', "mobile/src/screens/WordsScreen.tsx", 't("words.empty_sub")'],
+      ["deneme-kagitlari", "src/app/(app)/mock-exams/page.tsx", 't("mockexams.none_for_level"', "mobile/src/screens/MockExamsScreen.tsx", 't("mockexams.none_for_level"'],
+      ["sinav-istatistigi", "src/app/(app)/mock-exams/stats/page.tsx", 't("mockstats.empty")', "mobile/src/screens/MockStatsScreen.tsx", 't("mockstats.empty")'],
+      ["patika", "src/app/(app)/immersion/page.tsx", 't("path.no_units")', "mobile/src/screens/PathScreen.tsx", 't("path.no_units")'],
+      ["arama-sonucu", "src/components/social/find.tsx", 't("find.no_results_private_profiles_only")', "mobile/src/social/Find.tsx", 't("find.no_results_private_profiles_only")'],
+      ["oneriler", "src/components/social/find.tsx", 't("find.no_suggestions_yet_search_by")', "mobile/src/social/Find.tsx", 't("find.no_suggestions_yet_search_by")'],
+      ["yazilar", "src/components/writings-card.tsx", 't("writ.empty_sub")', "mobile/src/screens/WritingsScreen.tsx", 't("writ.empty_sub")'],
+    ];
+    sameList(
+      "bos hal ev kalibinda",
+      YUZEYLER.map(([ad, , , ym, im]) => ad + "=" + kabukta(ym, im)),
+      YUZEYLER.map(([ad]) => ad + "=kabukta"),
+      "mobil",
+      "beklenen",
+    );
+    sameList(
+      "bos hal ev kalibinda (web)",
+      YUZEYLER.map(([ad, yw, iw]) => ad + "=" + kabukta(yw, iw)),
+      YUZEYLER.map(([ad]) => ad + "=kabukta"),
+      "web",
+      "beklenen",
+    );
+
+    /* Ayni kabugun HATA cagri yerleri duyuruyor mu. */
+    const HATALAR = [
+      ["arkadas-tablosu", "src/components/social/friends-board.tsx", "mobile/src/social/FriendsBoard.tsx", 't("social.err_offline")'],
+      ["lig-tablosu", "src/components/social/league-board.tsx", "mobile/src/social/LeagueBoard.tsx", 't("social.err_offline")'],
+      ["basarimlar", "src/components/achievement-wall.tsx", "mobile/src/screens/AchievementsScreen.tsx", 't("achievements.couldn_t_load_achievements")'],
+      ["yapabildiklerim", "src/components/cando-card.tsx", "mobile/src/screens/CandoScreen.tsx", 't("cando.couldn_t_load")'],
+      ["yazilar", "src/components/writings-card.tsx", "mobile/src/screens/WritingsScreen.tsx", 't("writings.couldn_t_load_writings")'],
+    ];
+    const duyuruyorKart = (yol, isaret, desen) => {
+      const e = kendiEtiket(sil(read(yol)), isaret);
+      return e === null ? "ISARET YOK" : desen.test(e) ? "duyuruyor" : "SESSIZ";
+    };
+    sameList(
+      "bos durum kabugunun hata cagrilari duyuruyor",
+      HATALAR.map(([ad, , ym, i]) => ad + "=" + duyuruyorKart(ym, i, /live="assertive"/)),
+      HATALAR.map(([ad]) => ad + "=duyuruyor"),
+      "mobil",
+      "beklenen",
+    );
+    sameList(
+      "bos durum kabugunun hata cagrilari duyuruyor (web)",
+      HATALAR.map(([ad, yw, , i]) => ad + "=" + duyuruyorKart(yw, i, /role="alert"/)),
+      HATALAR.map(([ad]) => ad + "=duyuruyor"),
+      "web",
+      "beklenen",
+    );
+
+    /* Kullanici arama kutusu: basindaki isaret ve temizleme dugmesi. */
+    const fw = sil(read("src/components/social/find.tsx"));
+    const fm = sil(read("mobile/src/social/Find.tsx"));
+    sameList(
+      "kullanici arama kutusunun isaretleri",
+      [
+        "kutu basi=" + (/<SearchIcon /.test(fm) ? "buyutec" : "?"),
+        "temizleme=" + (/<XIcon /.test(fm) ? "ikon" : "METIN"),
+        "temizlemenin adi=" + (/accessibilityLabel=\{t\("find\.clear"\)\}/.test(fm) ? "var" : "YOK"),
+      ],
+      [
+        "kutu basi=" + (/<SearchIcon /.test(fw) ? "buyutec" : "?") + (/text-caption">@</.test(fw) ? " (@ KALDI)" : ""),
+        "temizleme=" + (/<XIcon /.test(fw) ? "ikon" : "METIN"),
+        "temizlemenin adi=" + (/aria-label=\{t\("find\.clear"\)\}/.test(fw) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Kagit bulunamadi: SEBEP dogru ve bir cikis var (mobil tek tarafli). */
+    const me = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    sameList(
+      "kagit bulunamadi dogru sebebi soyluyor",
+      [
+        "yanlis sebep=" + (/mockexams\.none_for_level/.test(me) ? "KALDI" : "yok"),
+        "dogru sebep=" + (/t\("mockexam\.paper_missing"\)/.test(me) ? "var" : "YOK"),
+        "cikis=" + (/t\("mockexam\.back_to_list"\)/.test(me) ? "var" : "YOK"),
+        "web=" + (/notFound\(\)/.test(sil(read("src/app/(app)/mock-exams/[paper]/[skill]/page.tsx"))) ? "404" : "?"),
+      ],
+      ["yanlis sebep=yok", "dogru sebep=var", "cikis=var", "web=404"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 240. ORTU OLMAYAN ACILIR PANEL: fare-ozel kapanis ----------------
    *
    * Tepki SECICISI webde `absolute z-10 shadow-lg` ile icerigin USTUNE
@@ -8306,7 +8475,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       return yigin.some((e) => desen.test(e)) || desen.test(kendiEtiket) ? "duyuruyor" : "SESSIZ";
     };
     const WEB = /role="alert"/;
-    const MOB = /accessibilityLiveRegion="assertive"/;
+    /* `live="assertive"` de sayiliyor: bos durum kabugu (`EmptyCard`) bu
+       prop'u `accessibilityLiveRegion`a ILETIYOR ve iletmesi 241'de mutlak
+       bir olcuyle tutuluyor - burada ikinci kez okumak gerekmiyor. */
+    const MOB = /(?:accessibilityLiveRegion|live)="assertive"/;
 
     const DALLAR = [
       ["src/components/boss-player.tsx", 't("exam.could_not_load")'],
