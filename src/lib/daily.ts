@@ -2,8 +2,8 @@ import "server-only";
 import { and, asc, desc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyScores, profiles, words } from "@/lib/db/schema";
-import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
+import { buildCloze } from "@/lib/session";
 import type { NativeLang } from "@/lib/courses";
 import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 import type { GameId, Option, Round, RoundWord } from "@/lib/types";
@@ -122,7 +122,7 @@ export async function buildDailyRounds(
     // Kelimeye hangi oyunların kurulabileceği kelimenin kendisine bağlı
     // (artikel yalnızca isimde, cümle oyunları örnek cümlesi olanda). Uygun
     // olanlar arasından seçim yine tohumdan geliyor.
-    const options = playableFor(word);
+    const options = playableFor(word, pool);
     const game = options[Math.floor(rand() * options.length)];
     const round = makeDailyRound(game, word, pool, nextId, rand, native);
     if (round) rounds.push(round);
@@ -131,11 +131,25 @@ export async function buildDailyRounds(
   return rounds;
 }
 
-/** Bu kelimeyle kurulabilecek oyunlar. */
-function playableFor(word: RoundWord): GameId[] {
+/**
+ * Bu kelimeyle kurulabilecek oyunlar.
+ *
+ * Boşluk doldurma artık ORTAK kurucuya soruluyor (`session.ts` `buildCloze`).
+ * Eskiden yalnız "örnek cümlesi var mı" diye bakılıyordu ve boşluğu günlük
+ * turun KENDİ `blank`'i açıyordu; o kopya `\b` ve `\w` ile çalıştığı için
+ * umlaut/ß taşıyan kelimeyi ortasından kesiyordu — "Unsere Wohnung ist
+ * ziemlich _____ß." (236 Almanca kelime) — ve çok kelimeli başlığın yalnız
+ * ilk parçasını gizliyordu: "We _____ up at eight o'clock." cevabı "get",
+ * oysa öğretilen kelime "get up" (2.011 İngilizce kelime). İkisi de
+ * 2026-09-12'de ölçüldü.
+ *
+ * Liste burada dürüst olmak zorunda: kurulamayan bir oyun seçilirse o tur
+ * sessizce düşüyor ve günün tur sayısı eksiliyor.
+ */
+function playableFor(word: RoundWord, pool: (typeof words.$inferSelect)[]): GameId[] {
   const list: GameId[] = ["choice", "listen", "truefalse"];
   if (word.artikel) list.push("artikel");
-  if (word.beispiel && firstExample(word.beispiel)) list.push("cloze");
+  if (buildCloze(word, pool)) list.push("cloze");
   if (word.de.length >= 3 && word.de.length <= 12) list.push("scramble");
   if (word.artikel && word.formen) list.push("plural");
   return list;
@@ -196,9 +210,7 @@ function makeDailyRound(
     case "scramble":
       return { id: nextId(), game: "scramble", word };
     case "cloze": {
-      const ex = word.beispiel ? firstExample(word.beispiel) : null;
-      if (!ex) return null;
-      const blanked = blank(ex, word.de);
+      const blanked = buildCloze(word, pool);
       if (!blanked) return null;
       // Çeldiriciler havuzdan, yine tohumla: boşluğa dört aday konuyor.
       const wrong = shuffleSeeded(
@@ -261,15 +273,6 @@ function seededOptions(
 }
 
 /** Cümledeki hedef kelimeyi boşluğa çevirir. */
-function blank(sentence: string, de: string): { sentence: string; answer: string } | null {
-  const stem = de.replace(/\(.*?\)/g, "").trim().split(/\s+/)[0];
-  if (stem.length < 3) return null;
-  const re = new RegExp(`\\b${stem.slice(0, Math.max(3, stem.length - 2))}\\w*`, "i");
-  const m = sentence.match(re);
-  if (!m) return null;
-  return { sentence: sentence.replace(re, "_____"), answer: m[0] };
-}
-
 export type DailyBoardRow = {
   rank: number;
   name: string | null;

@@ -75,4 +75,17 @@ assert.equal(buildOrder(w("Haus", "Nomen", "Das ist Haus.")), null);
 // Tek kelimesi çok uzun olan cümle (jeton ekrana sığmaz)
 assert.equal(buildOrder(w("Test", "Nomen", "Das ist ein Donaudampfschiffahrtsgesellschaftskapitaen Test.")), null);
 
+/* ── günlük ortak tur ──
+   Günün turu kendi `blank`'ini kullanıyordu ve o kopya `\b`/`\w` ile
+   çalıştığı için umlaut/ß taşıyan kelimeyi ortasından kesiyordu; artık
+   aynı kurucuyu çağırıyor. Burada kurucunun o davranışı sınanıyor. */
+const u1 = buildCloze(w("groß", "Sonstiges", "Unsere Wohnung ist ziemlich groß."), poolOf("de"));
+assert.equal(u1?.answer, "groß", "ß kelimenin parçası, boşluk onu da almalı");
+assert.ok(!u1?.sentence.includes("ß"), `cümlede kalıntı var: ${u1?.sentence}`);
+const u2 = buildCloze(w("Straße", "Nomen", "Unsere Straße ist sehr ruhig."), poolOf("de"));
+assert.equal(u2?.answer, "Straße");
+const u3 = buildCloze(w("get up", "Verb", "We get up at eight o'clock."), poolOf("en"));
+assert.equal(u3?.answer, "get up", "çok kelimeli başlık bütün olarak gizlenmeli");
+assert.equal(u3?.sentence, "We _____ at eight o'clock.");
+
 console.log("test:rounds — boşluk doldurma (mastar/gövde, guard, öbek fiil) ve cümle dizme (jeton + genişlik): tamam");
