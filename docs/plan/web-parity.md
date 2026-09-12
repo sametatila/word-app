@@ -13371,3 +13371,58 @@ sarmalayıcısı ayrıca ölçülüyor).
 Dört enjeksiyon denendi (ekran başına sınırın kalkması, ölçümün kalkması,
 grubun sarmalayıcısını kaybetmesi, sekme ekranlarının sarmalanmaması), dördü
 de yakalandı.
+
+## §11.384 — "Devre dışı" kelimesi kırk iki yerde üç farklı tonda
+
+Aynı durum uygulamanın her yerinde aynı güçte okunmalı. Ölçüm bunun tersini
+buldu:
+
+| Platform | Bulunan |
+|---|---|
+| Web | **üç** değer — `disabled:opacity-40` (8), `-50` (10), `-60` (24) |
+| Mobil | **beş** anlatım — 0.4, 0.45, 0.5, 0.6 ve renk takası |
+
+Aynı giriş ekranında gönder düğmesi 0.6, aynı ders oynatıcısında ileri
+düğmesi 0.5, kelime listesinde sayfa düğmesi 0.4 idi. Yazılı bir kural
+yoktu; her çağrı yeri kendi kararını veriyordu.
+
+**Değeri seçmedik, vardı**: `globals.css` içindeki `.input:disabled` baştan
+beri `opacity: 0.6` diyor. Ölçek ona getirildi — 42 web çağrı yeri tek değere
+indi.
+
+### Mobilde tek yer
+
+`Pressable` kapalıyken **hiçbir şey değiştirmiyor**: dokunma çalışmıyor ama
+düğme canlı görünüyor. O yüzden her çağrı yeri sönüklüğü kendi yazıyordu.
+Sönüklük `PressableScale`a taşındı ve **on altı** çağrı yerindeki elle
+sönüklük silindi. Elle bırakılsaydı iki kat sönerdi (0.6 × 0.6 = 0.36).
+
+**Renk takası da kalktı** (`MockExamScreen` `Primary`, `LessonScreen`
+`BigButton`): takas + sönüklük üst üste binince düğme okunmaz oluyordu ve web
+zaten takas yapmıyor.
+
+Bu sırada bir a11y kusuru çıktı: `BigButton` `disabled` **prop'unu hiç
+vermiyordu** — `onPress`i boş bir işlevle değiştiriyordu. Düğme ölüydü ama
+`accessibilityState` boş kaldığı için ekran okuyucuya **"basılabilir" diye
+okunuyordu**. Artık gerçekten `disabled`.
+
+### Kural dışında kalan iki şey
+
+İkisi de iki platformda eşit ve ikisi de bir **denetimin** durumu değil:
+
+- **"Başka maddede kullanılmış" şık (0.45)** — devre dışı değil, yine
+  basılabiliyor (kasıtlı: cevabı taşımak isteyen öğrenci engellenmemeli).
+- **Cevaptan sonra sönen yanlış şıklar (0.55) ve kilitli içerik (0.6)** —
+  içeriğin durumu.
+
+Eşleştirme oyununun **eşleşmiş çifti** de kurala girdi: web statik
+`opacity-50` yazıyordu, mobil 0.5; ikisi de `disabled` olduğu için artık
+ortak 0.6.
+
+### §261
+
+Dört ölçü, dördü de mutlak: webde tek değer, CSS kaynağının aynı sayıyı
+söylemesi (biri kayarsa yine iki değer olur), mobilde sönüklüğün bileşende
+olması, ve `disabled` verilen bir `PressableScale`da elle sönüklük kalmaması.
+
+Dört enjeksiyon denendi, dördü de yakalandı.
