@@ -158,7 +158,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
                  (`ChoiceGame` `reveal`) simgeyi de ciziyor. */
               role="radio"
               aria-checked={picked === o}
-              transition={{ delay: i * 0.04 }}
+              transition={{ delay: i * 0.05 }}
               disabled={picked !== null}
               onClick={() => pick(o)}
               className={`option flex items-center justify-between gap-2 px-3.5 py-3 text-left text-strong ${

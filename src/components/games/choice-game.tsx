@@ -137,9 +137,13 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
+              /* Doğru cevabın hareketi artık `.option-correct`in kendisinde
+                 (pop) - Android'de de paylaşılan `OptionButton`da duruyor,
+                 yani şık tabanlı bütün turlarda aynı. Eski nane halkası
+                 (`animate-glow`) Android'de hiç yoktu. */
               className={`option flex items-center justify-between gap-3 px-4 py-3 text-left font-medium ${state} ${
                 picked === opt.text && !isAnswer ? "animate-shake" : ""
-              } ${picked === opt.text && isAnswer ? "animate-glow" : ""}`}
+              }`}
             >
               <MeaningText tr={opt.text} en={opt.sub} />
               {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur.

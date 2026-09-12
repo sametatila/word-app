@@ -12,13 +12,19 @@
  * satır ve kutular ölçeğin 14 ve 20'sinde. İçerik gelince yarıçap zıplıyordu.
  * Mobil karşılıkları da öyle: `Skeleton` md (14), `SkeletonRows` lg (20).
  */
-function Skeleton({ className = "", opacity = 1 }: { className?: string; opacity?: number }) {
-  return (
-    <div
-      className={`animate-pulse rounded-tile ${className}`}
-      style={{ background: "var(--surface-2)", opacity }}
-    />
-  );
+/*
+ * OPAKLIK RAMPASI KALDIRILDI (`opacity={1 - i * 0.13}`).
+ *
+ * İki sebep birlikte: (1) Android'de böyle bir şey yok - bütün iskelet
+ * satırları AYNI nabızla nefes alıyor (`ui/Skeleton` tek paylaşılan
+ * `usePulse`); (2) rampa burada ve `RowSkeleton`da zaten ÇALIŞMIYORDU:
+ * `animate-pulse` opaklığı canlandırıyor ve CSS animasyonu satır içi stili
+ * ezdiği için verilen değer hiç görünmüyordu. `PersonRowSkeleton`da rampa
+ * KABA veriliyordu, yani orada çalışıyordu - o da kaldırıldı, çünkü ölçü
+ * Android.
+ */
+function Skeleton({ className = "" }: { className?: string }) {
+  return <div className={`animate-pulse rounded-tile ${className}`} style={{ background: "var(--surface-2)" }} />;
 }
 
 export function PageSkeleton({ rows = 5, header = true }: { rows?: number; header?: boolean }) {
@@ -32,7 +38,7 @@ export function PageSkeleton({ rows = 5, header = true }: { rows?: number; heade
         </>
       ) : null}
       {Array.from({ length: rows }).map((_, i) => (
-        <Skeleton key={i} className="h-14 w-full" opacity={1 - i * 0.13} />
+        <Skeleton key={i} className="h-14 w-full" />
       ))}
     </div>
   );
@@ -64,7 +70,7 @@ export function PersonRowSkeleton({ rows = 3 }: { rows?: number }) {
   return (
     <ol aria-hidden className="card divide-y divide-[color:var(--border)] overflow-hidden">
       {Array.from({ length: rows }).map((_, i) => (
-        <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
+        <li key={i} className="flex items-center gap-3 px-4 py-3">
           <SkeletonTile size={40} className="rounded-full" />
           <span className="min-w-0 flex-1">
             <SkeletonLine variant="body" width={`${64 - i * 8}%`} />
@@ -85,7 +91,7 @@ export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?:
         <div
           key={i}
           className="animate-pulse rounded-panel"
-          style={{ height, background: "var(--surface-2)", opacity: 1 - i * 0.12 }}
+          style={{ height, background: "var(--surface-2)" }}
         />
       ))}
     </div>

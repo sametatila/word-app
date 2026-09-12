@@ -20497,6 +20497,158 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 350. HAREKETIN SAYILARI: SARSINTI, NABIZ, POP, SECIM
+ *
+ * Ayni olay iki platformda iki ayri hareket dili konusuyordu:
+ *
+ * SARSINTI (yanlis cevap) UC AYRI EGRIYDI: Android'de iki (sik dugmesinde
+ * bes adim 7 piksel, tur sonucunda alti adim 8 piksel) ve webde bir
+ * (320 ms, 6 piksel, iki salinim). Ustelik Android'in sik dugmesi "hareketi
+ * azalt" tercihini HIC OKUMUYORDU - ayni dosyadaki obur sarsinti okuyor.
+ * Tek egri: 45 ms x 6 = 270 ms, genlik 8 -> 6 -> 3 -> 0.
+ *
+ * NABIZ (iskelet) Tailwind'in varsayilaniyla caliyordu: iki saniye, opaklik
+ * 1 ile 0.5 arasi. Android 850 + 850 ms ve 0.45-0.9 - hic tam opakliga
+ * cikmiyor. Otuz dort web iskeleti baska bir hizda ve baska bir parlaklikta
+ * nefes aliyordu.
+ *
+ * DOGRU CEVAP webde 0.6 sn genisleyen bir nane HALKASI ciziyordu; Android
+ * sikki BUYUTUP yerine oturtuyor (yay 1.05'e, sonra 1'e). Android'in
+ * hareketi webde hic yoktu, webin halkasi Android'de hic yok.
+ *
+ * SEVIYE TESTINDE SECILEN SIK `option-correct` ile NANE YESILI boyaniyordu -
+ * uygulamanin kendi dilinde yesil "dogru" demek. Olcum kipinde dogruluk
+ * aciklanmiyor, yani yanlis cevaplayan biri yesil gorup dogru bildigini
+ * saniyordu. Android ayni dalda marka tintini kullaniyor. Ayrica gecis
+ * gecikmesi 180 ms idi, Android'de 500.
+ *
+ * SECILI SIK webde yalniz kenarlik + 3 pikselik bir HALKA ile isaretliydi;
+ * Android yumusak marka ZEMINI + marka kenarlik + marka murekkep kullaniyor
+ * (`primarySoft`/`onPrimarySoft`) ve oyle bir halka yok.
+ *
+ * ISKELETIN OPAKLIK RAMPASI (`opacity={1 - i * 0.13}`) webde uc yerde vardi,
+ * Android'de hic: ustelik ikisi OLU idi - `animate-pulse` opakligi
+ * canlandiriyor ve CSS animasyonu satir ici stili eziyor.
+ *
+ * Olcu: her esin iki tarafindaki SAYI, ve mutlak olcut olarak Android'de tek
+ * sarsinti tanimi + iki cagri yerinin de tercihi okumasi. */
+{
+  const silH = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const css = read("src/app/globals.css");
+  const mobRounds = silH(read("mobile/src/game/rounds.tsx"));
+
+  /* (1) Sarsinti: genlik dizisi ve toplam sure. Android'in dizisi ile webin
+     kare dizisi (0 ve son 0 disarida) ayni olmali. */
+  const mobAdim = (mobRounds.match(/SHAKE_STEPS = \[([^\]]+)\]/) ?? ["", ""])[1]
+    .split(",").map((x) => x.trim()).filter(Boolean);
+  const mobMs = Number((mobRounds.match(/SHAKE_STEP_MS = (\d+)/) ?? [])[1] ?? 0);
+  const webKare = [...css.matchAll(/@keyframes shake \{([\s\S]*?)\n\}/g)]
+    /* `px` ZORUNLU DEGIL: sifir kareler `translateX(0)` yaziliyor ve `px`
+       arayan ilk yazim onlari HIC gormedi - dizi bes elemana dusup basindaki
+       -8 de `slice(1)` ile atildi, yani olcu dort sayi karsilastiriyordu. */
+    .flatMap((m) => [...m[1].matchAll(/translateX\((-?[\d.]+)(?:px)?\)/g)].map((x) => x[1]));
+  /* Ilk ve son kare 0: Android dizisinin son adimi da 0, o yuzden basdaki
+     sifir atiliyor ve geri kalan birebir karsilastiriliyor. */
+  const webAdim = webKare.slice(1);
+  const webSure = (css.match(/animation: shake ([\d.]+)s/) ?? [])[1];
+  sameList(
+    "sarsinti egrisi",
+    ["genlik=" + mobAdim.join("|"), "sure=" + (mobAdim.length * mobMs)],
+    ["genlik=" + webAdim.join("|"), "sure=" + Math.round(Number(webSure) * 1000)],
+    "mobil",
+    "web",
+  );
+  /* Mutlak: Android'de tek sarsinti tanimi kaldi (satir ici dizi yok) ve iki
+     cagri yeri de tercihi okuyor. */
+  const inlineDizi = (mobRounds.match(/Animated\.sequence\(\[-\d/g) ?? []).length;
+  const korumasiz = (mobRounds.match(/state === "wrong"\)?\s*shakeSeq/g) ?? []).length;
+  sameList(
+    "sarsinti: tek tanim ve hareket tercihi",
+    ["satir ici dizi=" + inlineDizi + " korumasiz cagri=" + korumasiz + " cagri=" + (mobRounds.match(/shakeSeq\(shake\)/g) ?? []).length],
+    ["satir ici dizi=0 korumasiz cagri=0 cagri=2"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* (2) Nabiz: sure ve opaklik araligi. */
+  const mobSkel = silH(read("mobile/src/ui/Skeleton.tsx"));
+  const mobNabizMs = Number((mobSkel.match(/toValue: 1, duration: (\d+)/) ?? [])[1] ?? 0);
+  const mobAralik = (mobSkel.match(/outputRange: \[([\d.]+), ([\d.]+)\]/) ?? ["", "?", "?"]).slice(1, 3);
+  const webNabizSn = (css.match(/--animate-pulse: nomi-pulse ([\d.]+)s/) ?? [])[1];
+  const webNabizKare = css.match(/@keyframes nomi-pulse \{[^}]*opacity: ([\d.]+);[^}]*\}\s*50% \{ opacity: ([\d.]+)/);
+  sameList(
+    "iskelet nabzi",
+    ["tam tur=" + mobNabizMs * 2 + " aralik=" + mobAralik.join("-")],
+    ["tam tur=" + Math.round(Number(webNabizSn) * 1000) + " aralik=" + (webNabizKare ? webNabizKare[1] + "-" + webNabizKare[2] : "OKUNAMADI")],
+    "mobil",
+    "web",
+  );
+  /* Opaklik rampasi iki tarafta da YOK. */
+  const rampa = (x) => (x.match(/opacity[^\n]*1 - i \* [\d.]+/g) ?? []).length + (x.match(/opacity=\{1 - i/g) ?? []).length;
+  /* Iki yanda AYNI metin karsilastirilmali: ilk yazimda deger dizgisine
+     platform adi gomulmustu ("mobil=0" ile "web=0") ve iki sifir esit
+     sayilmadi - kapi kendi etiketine takildi. */
+  sameList(
+    "iskelet opaklik rampasi",
+    ["rampa=" + rampa(mobSkel)],
+    ["rampa=" + rampa(silH(read("src/components/skeleton.tsx")))],
+    "mobil",
+    "web",
+  );
+
+  /* (3) Dogru cevabin hareketi: Android yayin tepe olcegi ile webin kare
+     tepesi ayni sayi; ve eski halka hicbir yerde kalmadi. */
+  const mobPop = (mobRounds.match(/spring\(pop, \{ toValue: ([\d.]+)/) ?? [])[1] ?? "YOK";
+  const webPop = (css.match(/@keyframes pop-correct \{[\s\S]*?scale\(([\d.]+)\)/g) ?? []).length
+    ? (css.match(/38% \{ transform: scale\(([\d.]+)\)/) ?? [])[1] ?? "YOK"
+    : "YOK";
+  /* YORUMLAR SAYILMAZ: kaldirilan halkanin adi choice-game'in yorumunda
+     geciyor ("eski nane halkasi") ve ham metni sayan ilk yazim onu bir
+     KULLANIM sandi. */
+  const halka = (silH(css).match(/animate-glow|glow-correct/g) ?? []).length
+    + (silH(read("src/components/games/choice-game.tsx")).match(/animate-glow/g) ?? []).length;
+  sameList(
+    "dogru cevap hareketi",
+    ["tepe olcek=" + mobPop, "eski halka=0"],
+    ["tepe olcek=" + webPop, "eski halka=" + halka],
+    "mobil",
+    "web",
+  );
+
+  /* (4) Seviye testi: gecis gecikmesi ve secili sikkin sinifi. */
+  const mobChoice = silH(read("mobile/src/game/ChoiceGame.tsx"));
+  const mobGecikme = (mobChoice.match(/reveal \? \(correct \? \d+ : \d+\) : (\d+)/) ?? [])[1] ?? "YOK";
+  const webPlc = silH(read("src/components/placement/placement-test.tsx"));
+  const webGecikme = (webPlc.match(/onPick\(i === answer\), (\d+)\)/) ?? [])[1] ?? "YOK";
+  const webSinif = /picked === i \? "option-picked"/.test(webPlc)
+    ? "secim"
+    : /picked === i \? "option-correct"/.test(webPlc)
+      ? "DOGRU RENGI"
+      : "OKUNAMADI";
+  sameList(
+    "seviye testi: gecikme ve secim rengi",
+    ["gecikme=" + mobGecikme, "secili sik=secim"],
+    ["gecikme=" + webGecikme, "secili sik=" + webSinif],
+    "mobil",
+    "web",
+  );
+
+  /* (5) Secili sikkin dolgusu: Android marka tinti + marka murekkep; webde
+     zemin yoktu. Jeton adlari seciliyle ayni aileyi kullaniyor. */
+  const secBlok = (css.match(/\.option-picked \{([^}]*)\}/) ?? ["", ""])[1];
+  sameList(
+    "secili sik dolgusu",
+    [
+      "zemin=" + (/background-color:\s*var\(--brand-soft\)/.test(secBlok) ? "marka tinti" : "YOK"),
+      "murekkep=" + (/color:\s*var\(--on-brand-soft\)/.test(secBlok) ? "marka" : "YOK"),
+      "halka=" + (/box-shadow/.test(secBlok) ? "VAR" : "yok"),
+    ],
+    ["zemin=marka tinti", "murekkep=marka", "halka=yok"],
+    "bulunan",
+    "beklenen (android)",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

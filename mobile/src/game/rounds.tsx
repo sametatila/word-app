@@ -360,6 +360,24 @@ function Prompt({ label, big, sub, speakText, colors }: { label: string; big: st
  *
  * Bekleme kısa tutuluyor: tur akışını tutmayacak kadar.
  */
+/**
+ * YANLIŞ CEVABIN SARSINTISI — TEK EĞRİ.
+ *
+ * İki ayrı dizi vardı: şık düğmesinde beş adım 7 piksel, tur sonucunda altı
+ * adım 8 piksel. Aynı hata iki farklı güçle anlatılıyordu. Web'in kendi
+ * eğrisi de üçüncü bir şeydi (320 ms, 6 piksel, iki salınım); `globals.css`
+ * `@keyframes shake` artık BURADAKİ adımları taşıyor (45 ms × 6 = 270 ms).
+ */
+const SHAKE_STEPS = [-8, 8, -6, 6, -3, 0];
+const SHAKE_STEP_MS = 45;
+
+/** Sarsıntı dizisi — "hareketi azalt" açıkken çağıran hiç başlatmıyor. */
+function shakeSeq(v: Animated.Value): Animated.CompositeAnimation {
+  return Animated.sequence(
+    SHAKE_STEPS.map((to) => Animated.timing(v, { toValue: to, duration: SHAKE_STEP_MS, useNativeDriver: true })),
+  );
+}
+
 const ASSESS_WAIT_MS = 6000;
 const ASSESS_ACCEPT = 75;
 
@@ -373,8 +391,7 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = 
     if (state === "wrong") {
       /* "Hareketi azalt": sarsıntı yok. Yanlış cevabın geri bildirimi renk,
          ikon, ses ve titreşimle zaten veriliyor - hareket dördüncü kanal. */
-      if (!reduceMotion())
-        Animated.sequence([-8, 8, -6, 6, -3, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
+      if (!reduceMotion()) shakeSeq(shake).start();
     } else if (state === "correct" && !reduceMotion()) {
       /* Doğru cevabın "pop"u da hareket; renk ve ikon zaten söylüyor. */
       Animated.sequence([
@@ -1243,7 +1260,10 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
   const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : state === "sel" ? colors.primarySoft : colors.surface;
   const shake = useRef(new Animated.Value(0)).current;
   useEffect(() => {
-    if (state === "wrong") Animated.sequence([-7, 7, -5, 5, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
+    /* "Hareketi azalt" BURADA OKUNMUYORDU: aynı dosyadaki öbür sarsıntı
+       tercihi okuyup hiç başlamıyor, bu şık düğmesi ise her yanlış cevapta
+       sarsılıyordu. Eğri de ayrıydı (beş adım 7 piksel); ikisi tek dizide. */
+    if (state === "wrong" && !reduceMotion()) shakeSeq(shake).start();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
   return (

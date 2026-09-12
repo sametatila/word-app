@@ -39,6 +39,21 @@
 
 @theme {
   /*
+   * ── NABIZ (iskelet) ───────────────────────────────────────────────────
+   *
+   * Tailwind'in kendi `animate-pulse`u iki saniye sürüyor ve opaklığı
+   * 1 ile 0.5 arasında gezdiriyor. Android'in iskeleti (`ui/Skeleton`
+   * `usePulse`) 850 ms gidiş + 850 ms dönüş, yani 1.7 sn, ve aralık
+   * 0.45–0.9 — hiç TAM opaklığa çıkmıyor. Otuz dört web iskeleti
+   * Tailwind'in sayılarıyla çalışıyordu: aynı bekleme iki uygulamada
+   * başka bir hızda ve başka bir parlaklıkta nefes alıyordu.
+   *
+   * Easing de mobilin `Animated.timing` varsayılanı (`Easing.inOut(ease)`);
+   * CSS'te zamanlama işlevi her kare ÇİFTİ arasında uygulandığı için
+   * `ease-in-out` birebir aynı eğriyi veriyor.
+   */
+  --animate-pulse: nomi-pulse 1.7s ease-in-out infinite;
+  /*
    * Nötrler — maskotun kontur renginden türetildi, doygunluğu düşürülerek.
    * Soğuk gri değil: sıcak bir maskotun çevresinde nötr grinin kendisi mavi
    * görünüyor.
@@ -860,10 +875,20 @@
     border-color: var(--color-brand-500);
     background: color-mix(in srgb, var(--color-brand) 8%, var(--surface));
   }
-  /* Seçilen ama henüz sonucu belli olmayan şık */
+  /*
+   * Seçilen ama henüz sonucu belli olmayan şık.
+   *
+   * Android bunu YUMUŞAK MARKA ZEMİNİ + marka kenarlığı + marka mürekkebiyle
+   * çiziyor (`ChoiceGame` `isPicked` dalı: `primarySoft`, `primary`,
+   * `onPrimarySoft`; `rounds` `state === "sel"` de aynı). Web'de zemin yoktu,
+   * yerine 3 pikselik bir halka vardı — Android'de öyle bir halka yok.
+   * Jetonlar seçili çipin kullandıklarıyla aynı (`.chip-active`), çünkü
+   * "seçildi ama sonuç belli değil" iki yerde de aynı cümle.
+   */
   .option-picked {
     border-color: var(--color-brand-500);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 18%, transparent);
+    background-color: var(--brand-soft);
+    color: var(--on-brand-soft);
   }
   /* Seviye/filtre çipleri */
   /*
@@ -997,6 +1022,7 @@
   .option-correct {
     border-color: var(--color-mint);
     background: color-mix(in srgb, var(--color-mint) 14%, var(--surface));
+    animation: pop-correct 0.42s ease-out;
   }
   .option-wrong {
     border-color: var(--color-rose);
@@ -1006,22 +1032,50 @@
 
 
 
+@keyframes nomi-pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.9; }
+}
+
+/*
+ * SARSINTI — Android'in eğrisi.
+ *
+ * Üç ayrı sarsıntı vardı: Android'de iki (`rounds` altı adım 8 piksel ve beş
+ * adım 7 piksel), web'de bir (320 ms, 6 piksel, iki salınım). Aynı hata üç
+ * farklı güçle anlatılıyordu. Referans Android'in altı adımlı, sönümlenen
+ * eğrisi: 45 ms × 6 = 270 ms, genlik 8 → 6 → 3 → 0.
+ */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
+  0% { transform: translateX(0); }
+  16.7% { transform: translateX(-8px); }
+  33.3% { transform: translateX(8px); }
+  50% { transform: translateX(-6px); }
+  66.7% { transform: translateX(6px); }
+  83.3% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
 }
 .animate-shake {
-  animation: shake 0.32s ease-in-out;
+  animation: shake 0.27s ease-in-out;
 }
 
 /* Doğru cevapta kısa bir yeşil hâle — dikkat dağıtmadan onaylar. */
-@keyframes glow-correct {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-mint) 45%, transparent); }
-  100% { box-shadow: 0 0 0 14px transparent; }
-}
-.animate-glow {
-  animation: glow-correct 0.6s ease-out;
+/*
+ * DOĞRU CEVAP: POP, HALKA DEĞİL.
+ *
+ * Web 0.6 saniyelik genişleyen bir nane halkası çiziyordu; Android aynı anda
+ * şıkkı BÜYÜTÜP yerine oturtuyor (`rounds` `OptionButton`: yay 1.05'e, sonra
+ * yay 1'e, hafif sekmeyle). Yani aynı olay iki platformda iki ayrı hareket
+ * dili konuşuyordu ve Android'in hareketi web'de hiç yoktu.
+ *
+ * Hareket `.option-correct`in kendisine bağlı: Android'de pop paylaşılan
+ * `OptionButton`da duruyor, yani şık tabanlı bütün turlar onu gösteriyor -
+ * webde de altı oyunun hepsi aynı sınıfı kullanıyor.
+ */
+@keyframes pop-correct {
+  0% { transform: scale(1); }
+  38% { transform: scale(1.05); }
+  72% { transform: scale(0.995); }
+  100% { transform: scale(1); }
 }
 
 /* Hareketi azalt tercihi: kutlamalar sessizleşir, arayüz çalışmaya devam eder. */
@@ -1040,7 +1094,7 @@
     transform: none !important;
   }
   .animate-shake,
-  .animate-glow {
+  .option-correct {
     animation: none;
   }
   /*

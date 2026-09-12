@@ -17869,3 +17869,77 @@ tavansız kalanlar **tam olarak** web'dekilerin karşılığı çıktı: better-
 `src/components/skills/quiz.tsx`ta yalnız ipucu balonunda duran bir metin
 bildiriyor (`title` dokunmatikte açılmaz). Beceri kütüphanesi çalışması o
 dosyada sürdüğü için dokunulmadı.
+
+## §11.493 — Hareketin sayıları: üç ayrı sarsıntı, Tailwind'in nabzı, halka yerine pop, ve seviye testinde yeşile boyanan seçim
+
+Bu tur hareketi ölçtüm: aynı olay iki platformda iki ayrı hareket dili
+konuşuyordu.
+
+**Sarsıntı üç ayrı eğriydi.** Android'de **iki** (şık düğmesinde beş adım
+7 piksel, tur sonucunda altı adım 8 piksel), web'de bir (320 ms, 6 piksel,
+iki salınım). Aynı hata üç farklı güçle anlatılıyordu. Üstelik Android'in şık
+düğmesi **"hareketi azalt" tercihini hiç okumuyordu** — aynı dosyadaki öbür
+sarsıntı okuyor, yani referans platformun kendisinde bir erişilebilirlik
+kusuru vardı. Artık tek dizi (`SHAKE_STEPS`, 45 ms × 6 = 270 ms, genlik
+8 → 6 → 3 → 0), tek yardımcı, iki çağrı yerinde de tercih kontrolü; web'in
+`@keyframes shake`i aynı adımları taşıyor. CSS'te zamanlama işlevi her kare
+çifti arasında uygulandığı için `ease-in-out` Android'in adım başına
+`Easing.inOut` eğrisini birebir veriyor.
+
+**Nabız Tailwind'in varsayılanıydı.** Otuz dört web iskeleti `animate-pulse`
+ile nefes alıyordu: 2 saniye, opaklık 1 ↔ 0.5. Android 850 + 850 ms ve
+0.45 ↔ 0.9 — **hiç tam opaklığa çıkmıyor**. Yani aynı bekleme iki uygulamada
+başka bir hızda ve başka bir parlaklıkta duruyordu. `--animate-pulse` tema
+anahtarı Android'in sayılarıyla ezildi.
+
+**İskeletin opaklık rampası** (`opacity={1 - i * 0.13}`) web'de üç yerdeydi,
+Android'de hiç yok — ve **ikisi zaten ölüydü**: `animate-pulse` opaklığı
+canlandırıyor, CSS animasyonu satır içi stili ezdiği için verilen değer hiç
+görünmüyordu. Üçü de kalktı.
+
+**Doğru cevap: halka değil pop.** Web 0.6 saniyelik genişleyen bir nane
+halkası çiziyordu; Android şıkkı büyütüp yerine oturtuyor (yay 1.05'e, sonra
+hafif sekmeyle 1'e). Android'in hareketi web'de hiç yoktu, web'in halkası
+Android'de hiç yok. Hareket `.option-correct`in kendisine bağlandı — Android'de
+de pop paylaşılan `OptionButton`da duruyor, yani şık tabanlı **bütün** turlar
+gösteriyor; web'de de altı oyunun hepsi aynı sınıfı kullanıyor (eskiden halka
+yalnız bir oyunda vardı).
+
+**Seviye testinde seçilen şık nane yeşili boyanıyordu.** Sınıfın adı
+`option-correct`: uygulamanın kendi dilinde yeşil "doğru" demek. Ölçüm kipinde
+doğruluk açıklanmıyor — dosyanın kendi yorumu da bunu yazıyor — yani yanlış
+cevaplayan biri yeşil görüp doğru bildiğini sanıyordu. Android aynı dalda
+(`ChoiceGame` `reveal={false}`, `isPicked`) marka tintini kullanıyor. Web artık
+`option-picked`; geçiş gecikmesi de Android'in 500 ms'ine çekildi (180 ms'de
+seçim ekranda görünmeye fırsat bulmuyordu).
+
+**Seçili şıkkın kendisi de ayrıydı:** web yalnız kenarlık + 3 pikselik bir
+halka çiziyordu, Android yumuşak marka **zemini** + marka kenarlık + marka
+mürekkep kullanıyor (`primarySoft`/`onPrimarySoft`) ve öyle bir halka yok.
+`.option-picked` seçili çipin jetonlarına bağlandı (`--brand-soft`,
+`--on-brand-soft`) — "seçildi ama sonuç belli değil" iki yerde de aynı cümle.
+
+Şıkların sıralı girişi (framer-motion `delay: i * 0.05`) web'e ait bir katman
+ve Android'de karşılığı yok; kaldırmak bir ürün kararı olurdu, o yüzden
+dokunulmadı — ama iki seviye testi dosyası 0.04 kullanıyordu, altı oyun 0.05.
+Aynı hareket dilinin tek sayısı olması gerektiği için ikisi de 0.05 oldu.
+
+**"Hareketi azalt" web tarafında zaten tamdı** — `MotionConfig
+reducedMotion="user"` framer-motion'ın hepsini kapsıyor, CSS gerisini; önceki
+bir tur `animation-iteration-count`u da kapatmış. Ölçmeden "eksik" saymadım.
+
+**Kapı §350** dokuz ölçü taşıyor (hepsi enjeksiyonla doğrulandı): sarsıntının
+genlik dizisi ve toplam süresi, Android'de tek sarsıntı tanımı + iki çağrının
+da tercihi okuması, nabzın tam turu ve opaklık aralığı, opaklık rampasının iki
+tarafta da olmaması, pop'un tepe ölçeği, eski halkanın hiçbir yerde kalmaması,
+seviye testinin gecikmesi ve seçim rengi, seçili şıkkın zemin/mürekkep/halka
+üçlüsü.
+
+**Ölçünün kendi üç hatası** (üçü de ilk çalıştırmada çıktı): (1) sarsıntı
+karelerini `translateX(...px)` diye arıyordum, sıfır kareler `translateX(0)`
+yazılıyor — dizi beş elemana düşünce baştaki `-8` de atıldı ve ölçü dört sayı
+karşılaştırıyordu; (2) "rampa yok" ölçüsünde iki yana **farklı** metin
+yazmıştım (`mobil=0` ile `web=0`), iki sıfır eşit sayılmadı — kapı kendi
+etiketine takıldı; (3) kaldırılan halkanın adı `choice-game`in yorumunda
+geçiyor ve ham metni sayan ölçü onu bir kullanım sandı (yorumlar artık
+soyuluyor).

@@ -326,13 +326,22 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
              `ChoiceGame` `reveal={false}` dali. */
           role="radio"
           aria-checked={picked === i}
-          transition={{ delay: i * 0.04 }}
+          transition={{ delay: i * 0.05 }}
           disabled={picked !== null}
           onClick={() => {
             setPicked(i);
-            setTimeout(() => onPick(i === answer), 180);
+            /* Android `ChoiceGame` `reveal={false}` dalı 500 ms bekliyor
+               (`onDone` çağrısı); web 180 ms'de geçiyordu, yani seçim
+               ekranda görünmeye fırsat bulmuyordu. */
+            setTimeout(() => onPick(i === answer), 500);
           }}
-          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-correct" : ""}`}
+          /* SEÇİM RENGİ, DOĞRU RENGİ DEĞİL. Ölçüm kipinde doğruluk
+             açıklanmıyor ama seçilen şık `option-correct` ile NANE YEŞİLİ
+             boyanıyordu - uygulamanın kendi dilinde yeşil "doğru" demek,
+             yani yanlış cevaplayan biri yeşil görüp doğru bildiğini
+             sanıyordu. Android aynı dalda marka tintini kullanıyor
+             (`ChoiceGame` `isPicked`: `primarySoft` + `primary`). */
+          className={`option px-3.5 py-3 text-left text-strong ${picked === i ? "option-picked" : ""}`}
         >
           {o}
         </motion.button>
