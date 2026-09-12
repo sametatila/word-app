@@ -12481,3 +12481,82 @@ bir olgunun yazımı değişince onu metin olarak arayan her kapı yanlış alar
 veriyor.
 
 Altı enjeksiyon denendi, altısı da yakalandı.
+
+## §11.365 — "1 reviews": on beş anahtarda çoğul yoktu, yirmi üçü ölüydü
+
+Eksen **çoğul ve sayı uyumu**ydu. Sözlükte `.one` mekanizması var (`n` birse
+`<anahtar>.one` kullanılıyor) ve iki platform da aynı kuralı uyguluyor — ama
+`{n}` taşıyan 133 anahtardan yalnız 45'inde tekil biçim vardı.
+
+Çoğunda gerek de yok: `{n}` bir **sıra** ("Deneme {n}", "Ünite {n}"), bir
+**kesir payı** ("{n}/{total}"), bir **puan** ya da çekimlenmeyen bir kısaltma
+("{n} sn") olduğunda tekil biçim anlamsız. Ölçüm 15 gerçek eksik buldu.
+
+### En görünür olan
+
+`learn.due_count` İngilizcede **"{n} review"**, Almancada **"{n}
+Wiederholung"** yazıyordu — temel biçim **tekildi**. Öğren ekranının en
+üstündeki rozet, on iki tekrar bekleyen bir kullanıcıya "12 review" diyordu.
+Temel biçim çoğula çevrildi, tekil `.one`a taşındı.
+
+### Kaçamak
+
+`mockexam.plays_left` İngilizcede **"{n} play(s) left"**, Almancada **"Noch
+{n} Durchgang/Durchgänge"** yazıyordu: sayının tekil mi çoğul mu olduğunu
+**söylemekten kaçınan** iki kalıp. `.one` mekanizması tam bunun için var;
+"(s)" çözüm değil, çözümün yerine konmuş bir işaret. `i18n:check` artık bir
+harften hemen sonra gelen `(s)`i reddediyor — ölçüt dar bilerek: dilbilgisi
+anlatan içerik "-(e)n" ve "Ja/Nein" yazıyor ve o iki kalıp ölçünün dışında
+kalıyor, yani muafiyet listesi yazmaya gerek yok.
+
+Geri kalan on üç: `social.mutual` ("1 mutual friends"), `exam.minutes` /
+`mockexams.minutes` ("1 minutes in total"), `mockexams.part_summary` ve
+`exam.items_and_time` ("1 items"), `friendpulse.progress` ("1 days"),
+`weekly.pitch_short` ("1 mastered words"), ve yönetici panelinden
+değiştirilebilen dört premium sayısı (`plan.free_mock`,
+`mockpack.free_note`, `plan.free_weekly`, `plan.free_weekly_ai`) artı iki
+premium tavanı. Son altısı bugün doğru görünüyor çünkü değerler 1 ya da 2 —
+ama Samet o sayıyı panelden değiştirdiği gün İngilizce cümle bozulurdu.
+
+### Mekanizmanın sınırı
+
+`.one` yalnız **`n`** değişkenine bakıyor. `exam.word_count` ("{n} / {min}
+words") gibi anahtarlarda çekimlenen sayı `{min}`; oraya tekil biçim
+yazılamıyor. Bugün `{min}` hiçbir yerde 1 olmuyor, o yüzden görünür bir kusur
+yok — sınırı kayda geçiriyorum.
+
+## §11.366 — Ölü anahtar yanlışı saklıyor
+
+Ortak sözlükte (`mobile/src/i18n/*`) ölü anahtar denetimi yoktu. Web
+sözlüğünün ölüleri baştan beri denetleniyordu; ortak sözlüğün gerekçesi
+"orada kullanılmayan anahtar Android'in kendi meselesi"ydi. O gerekçe artık
+geçersiz: `base/*` o dosyadan üretiliyor ve **iki istemci de aynı anahtarları
+okuyor**, yani hiçbir tarafın çağırmadığı bir anahtar iki tarafta da ölü.
+
+Ölçüm **23 ölü anahtar** buldu ve ikisinde çok net bir çürüme vardı:
+`leaderboard.this_week_left` ile `weak.n_times`in **Türkçe ve İngilizce
+değerleri yer değiştirmişti** — `tr.ts`te İngilizce cümle, `en.ts`te Türkçe
+cümle. Kimse çağırmadığı için kimse görmemiş. Ölü anahtarın zararı tam bu:
+yanlışı saklayan bir yer açıyor. (`mockpack.progress` de `%{pct}` yazıyordu —
+bir önceki turda kaldırdığım koda gömülü yüzde işareti.)
+
+Yirmi üçü silindi; hepsinin canlı kardeşleri ve adı konabilen bir yerine
+geçeni var (yazılar boş hâli iki tur önce `writ.empty_*`e geçmişti,
+`leaderboard.this_week_left` yerine `social.days_left` / `social.last_day`
+kullanılıyor).
+
+**Silinmeyen on bir:** premium kota kapısının cümleleri.
+`lib/premium/access.ts` her kararı bir `reason` ile döndürüyor
+(`premium_only`, `quota_spent`, `fair_use`, `free_quota`) ve bu anahtarlar o
+sebeplerin karşılığı olarak yazılmış; kotayı **arayüze bağlama kararı
+Samet'te** (§11.254). Hazır bir söz varlığını silmek benim işim değil — kayıtlı
+borç olarak listede duruyorlar. Liste **uzayamaz** ve **eskiyemez**: yeni bir
+ölü anahtar doğarsa denetim düşer, listedeki bir anahtar bağlanır ya da
+silinirse "liste güncel değil" der.
+
+Dört muafiyet çalışma anında kurulan aileler: `genre.${slug}`,
+`promo.${reason}`, `league.tier_${tier}`, ve web denetimindeki `band.*` /
+`push.rem_*_named`.
+
+Üç enjeksiyon denendi: yeni ölü anahtar yakalandı, eskiyen borç listesi
+yakalandı, çoğul kaçamağı yakalandı.

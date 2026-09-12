@@ -256,6 +256,112 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
   }
 }
 
+/*
+  ORTAK SOZLUKTE OLU ANAHTAR.
+
+  Web sozlugunun olu anahtarlari yukarida denetleniyordu; ORTAK sozluk
+  (`mobile/src/i18n/*`, `base/*`in kaynagi) denetlenmiyordu ve gerekcesi
+  "orada kullanilmayan anahtar Android'in kendi meselesi"ydi. O gerekce artik
+  gecersiz: ayni anahtarlari IKI istemci de okuyor, yani hicbir tarafin
+  cagirmadigi bir anahtar iki tarafta da olu.
+
+  Olcum yirmi uc olu anahtar buldu ve ikisinde COK NET bir curume vardi:
+  `leaderboard.this_week_left` ile `weak.n_times`in TURKCE ve INGILIZCE
+  degerleri YER DEGISTIRMISTI (tr dosyasinda Ingilizce cumle, en dosyasinda
+  Turkce cumle). Kimse cagirmadigi icin kimse gormemis. Olu anahtarin zarari
+  tam bu: yanlisi saklayan bir yer aciyor.
+
+  Arama plain metin (web denetimiyle ayni gerekce: anahtarlarin cogu bir
+  tabloda duruyor) ve IKI agaci birden tariyor - bir anahtar herhangi bir
+  istemcide cagriliyorsa canli.
+
+  MUAF olanlar CALISMA ANINDA kuruluyor:
+    - `genre.*`      → `genre.${exercise.genre}` (dort cagri yeri)
+    - `promo.*`      → `promo.${reason}` (iki cagri yeri)
+    - `league.tier_*` → `league.tier_${LEAGUE_TIERS[t]}`
+    - `band.*`, `push.rem_*_named` → web denetimindeki ayni aileler
+
+  KAYITLI BORC (`HAZIR_AMA_BAGLANMAMIS`): premium kota kapisinin cumleleri.
+  `lib/premium/access.ts` her karari bir `reason` ile donduruyor
+  (`premium_only`, `quota_spent`, `fair_use`, `free_quota`) ve bu anahtarlar o
+  sebeplerin karsiligi olarak yazilmis; kotayi ARAYUZE baglama karari
+  Samet'te (bkz. docs/plan/web-parity.md §11.254). Silinmiyorlar cunku hazir
+  bir soz varligi; listede duruyorlar cunku bugun hicbir sey soylemiyorlar.
+  Liste UZAYAMAZ: yeni bir olu anahtar dogarsa denetim duser.
+*/
+const DINAMIK_ORTAK = [/^genre\./, /^promo\./, /^league\.tier_/, /^band\./, /^push\.rem_.*_named$/];
+const HAZIR_AMA_BAGLANMAMIS = new Set([
+  "gate.premium_only",
+  "gate.quota_left_day",
+  "gate.quota_left_week",
+  "gate.quota_left_total",
+  "gate.quota_left_total.one",
+  "gate.quota_spent_day",
+  "gate.quota_spent_week",
+  "gate.quota_spent_total",
+  "gate.fair_use",
+  "gate.pocket_walk_locked",
+  "gate.upgrade",
+]);
+{
+  const mobilDosyalar = [];
+  const yuru = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const full = `${dir}/${e.name}`;
+      if (e.isDirectory()) yuru(full);
+      else if (/\.(ts|tsx)$/.test(e.name) && !full.includes("/i18n/")) mobilDosyalar.push(full);
+    }
+  };
+  yuru(new URL("../mobile/src", import.meta.url).pathname);
+  const govde = [...files, ...mobilDosyalar].map((f) => readFileSync(f, "utf8")).join("\n");
+  const cagrilan = (k) => govde.includes(`"${k}"`) || govde.includes(`'${k}'`) || govde.includes(`${k}\``);
+  const ortak = loadMobile("tr");
+  const olu = [...ortak.keys()].filter((k) => {
+    const temel = k.endsWith(".one") ? k.slice(0, -4) : k;
+    if (DINAMIK_ORTAK.some((re) => re.test(k) || re.test(temel))) return false;
+    return !cagrilan(k) && !(temel !== k && cagrilan(temel));
+  });
+  const yeni = olu.filter((k) => !HAZIR_AMA_BAGLANMAMIS.has(k));
+  const kalmayan = [...HAZIR_AMA_BAGLANMAMIS].filter((k) => !olu.includes(k));
+  if (yeni.length) {
+    bad += yeni.length;
+    for (const k of yeni) console.error(`ortak sözlükte ÖLÜ anahtar (iki istemcide de çağrılmıyor) → ${k}`);
+  }
+  /* Borc LISTESI de guncel kalmali: baglanan ya da silinen bir anahtar
+     listede kalirsa liste yalan soyler. */
+  if (kalmayan.length) {
+    bad += kalmayan.length;
+    for (const k of kalmayan) console.error(`kayıtlı borç listesi güncel değil (artık ölü değil) → ${k}`);
+  }
+  console.log(`ortak sözlük: ${ortak.size} anahtar, ${HAZIR_AMA_BAGLANMAMIS.size} kayıtlı borç`);
+}
+
+
+/*
+  COGUL KACAMAGI.
+
+  `mockexam.plays_left` Ingilizcede "{n} play(s) left", Almancada "Noch {n}
+  Durchgang/Durchgänge" yaziyordu: sayinin tekil mi cogul mu oldugunu
+  SOYLEMEKTEN kacinan iki kalip. Sozlukte `.one` mekanizmasi var ve tam bunun
+  icin: "(s)" ve "Tekil/Cogul" cozum degil, cozumun yerine konmus bir isaret.
+
+  Olcut dar bilerek: yalniz bir HARFTEN hemen sonra gelen "(s)". Dilbilgisi
+  anlatan icerik "-(e)n" ve "Ja/Nein" yaziyor ve o iki kalip bu olcunun
+  DISINDA kaliyor - muafiyet listesi yazmaya gerek yok. Her muafiyet kapinin
+  gordugu alani daraltiyor; onun yerine olcuyu daralttim.
+*/
+{
+  const kacamak = [];
+  for (const L of LANGS) {
+    for (const [k, v] of loadMobile(L)) if (/[A-Za-zÄÖÜäöüß]\(s\)/.test(v)) kacamak.push(`${L}: "${k}"`);
+  }
+  if (kacamak.length) {
+    bad += kacamak.length;
+    for (const x of kacamak) console.error(`çoğul kaçamağı — "(s)" yerine \`.one\` biçimi yazılmalı → ${x}`);
+  }
+}
+
+
 if (missingUse.size) {
   bad += missingUse.size;
   for (const [k, file] of missingUse) console.error(`kod: "${k}" sözlükte yok — ${file}`);
