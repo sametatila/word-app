@@ -528,7 +528,7 @@ function nerede(w, seviye, unit) {
   if (hv === undefined) return { sinif: "yabanci", detay: "havuzda yok" };
   return SIRA.indexOf(hv) > SIRA.indexOf(lv)
     ? { sinif: "ustu", detay: hv.toUpperCase() }
-    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, ders yok` };
+    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede ders yok` };
 }
 
 module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi, nerede };

@@ -125,7 +125,7 @@ console.log("\nen sık dışarıda kalanlar:", [...genelDisi].sort((a, b) => b[1
 const BASLIK: Record<string, string> = {
   ustu: "SEVİYE ÜSTÜ   — havuzda var ama üst seviyede; metin sadeleşmeli ya da sözlükçeye girmeli",
   erken: "ERKEN         — bu seviyenin dersi öğretiyor, ama daha sonraki ünitede",
-  derssiz: "DERSSİZ       — havuzda bu seviyede ama hiçbir ders öğretmiyor (patika boşluğu)",
+  derssiz: "DERSSİZ       — havuzda var ama BU SEVİYENİN dersleri öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
   turev: "TÜREV         — kök bu üniteye kadar öğretilmiş; kapı yüzey biçimini tanımadı (içerik kusuru DEĞİL)",
   // Bilinen eksik: ünlüsü değişen güçlü fiil ortacı (geschwommen ← schwimmen)
   // de buraya düşüyor; sınıflandırma o değişimi çözemiyor (gerekçe `ara`da).

@@ -25,7 +25,7 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { lessonsFor } from "../src/lib/lessons/index";
 import { UNIT_LESSONS } from "../src/lib/immersion/build";
-import { EN_FREE, LEVELS, measureEn } from "./lib/en-gate";
+import { EN_FREE, LEVELS, measureEn, enNerede } from "./lib/en-gate";
 
 /** Egzersizin öğrencinin gördüğü İNGİLİZCE yüzeyi; Türkçe alanlar dışarıda. */
 function surface(e: SkillExercise): string {
@@ -109,6 +109,39 @@ function unitPool(level: string, unit: number): Set<string> {
   return pool;
 }
 
+/**
+ * Seviyenin sözcük → İLK ÖĞRETİLDİĞİ ÜNİTE haritası.
+ *
+ * `unitPool` ile aynı veriden ama başka soruyla: o "bu üniteye kadar ne
+ * öğretildi" der, bu "bu sözcük KAÇINCI ünitede öğretiliyor". Bulgu
+ * sınıflandırması ikincisine muhtaç — "yirmi ünite sonra öğretiliyor" ile
+ * "bir ünite sonra" aynı iş değil.
+ */
+function dersUnite(level: string): Map<string, number> {
+  const m = new Map<string, number>();
+  const lessons = lessonsFor("en").filter((l) => l.level.toLowerCase() === level);
+  lessons.forEach((l, i) => {
+    const u = Math.floor(i / UNIT_LESSONS) + 1;
+    const koy = (raw: string) => {
+      for (const w of raw.toLowerCase().replace(/[^\p{L}\p{N}'\s/-]/gu, " ").split(/[\s/]+/)) {
+        const c = w.replace(/^'+|'+$/g, "");
+        if (c && !m.has(c)) m.set(c, u);
+      }
+    };
+    for (const v of l.vocab) koy(v.de);
+    for (const p of l.patterns) koy(p.de);
+  });
+  return m;
+}
+
+const BASLIK: Record<string, string> = {
+  ustu: "SEVİYE ÜSTÜ   — havuzda var ama üst seviyede; metin sadeleşmeli ya da sözlükçeye girmeli",
+  erken: "ERKEN         — bu seviyenin dersi öğretiyor, ama daha sonraki ünitede",
+  derssiz: "DERSSİZ       — havuzda var ama BU SEVİYENİN dersleri öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
+  turev: "TÜREV         — kök bu üniteye kadar öğretilmiş; kapı yüzey biçimini tanımadı (içerik kusuru DEĞİL)",
+  yabanci: "HAVUZDA YOK   — ödünç sözcük, kısaltma, özel ad ya da yazım hatası",
+};
+
 const levelArg = (process.argv[2] ?? "all").toLowerCase();
 const levels = levelArg === "all" ? LEVELS : [levelArg];
 for (const level of levels) {
@@ -116,6 +149,9 @@ for (const level of levels) {
   if (!list.length) continue;
   console.log(`\nEN ${level.toUpperCase()} · ünite hizalı egzersiz: ${list.length}`);
   const genel = new Map<string, number>();
+  const du = dersUnite(level);
+  const sinifSay = new Map<string, number>();
+  const sinifKelime = new Map<string, Map<string, string>>();
   let tokT = 0;
   let disiT = 0;
   for (const e of list) {
@@ -127,8 +163,26 @@ for (const level of levels) {
       const say = new Map<string, number>();
       for (const w of r.disi) say.set(w, (say.get(w) ?? 0) + 1);
       console.log(`  ${e.id.padEnd(16)} %${oran.padStart(4)} dışı (${r.disi.length}/${r.tok.length}): ${[...say].map(([w, n]) => (n > 1 ? `${w}×${n}` : w)).join(", ")}`);
-      for (const w of r.disi) genel.set(w, (genel.get(w) ?? 0) + 1);
+      for (const w of r.disi) {
+        genel.set(w, (genel.get(w) ?? 0) + 1);
+        const n = enNerede(w, level, e.unit ?? 1, du);
+        sinifSay.set(n.sinif, (sinifSay.get(n.sinif) ?? 0) + 1);
+        const t = sinifKelime.get(n.sinif) ?? new Map<string, string>();
+        if (!t.has(w)) t.set(w, n.detay);
+        sinifKelime.set(n.sinif, t);
+      }
     } else console.log(`  ${e.id.padEnd(16)} temiz (${r.tok.length} belirteç)`);
   }
   console.log(`  toplam %${tokT ? ((disiT / tokT) * 100).toFixed(1) : "0"} · en sık dışarıda: ${[...genel].sort((a, b) => b[1] - a[1]).slice(0, 12).map(([w, n]) => `${w}×${n}`).join(" · ") || "—"}`);
+  const toplam = [...sinifSay.values()].reduce((a, b) => a + b, 0);
+  if (toplam) {
+    console.log("  bulgu sınıfları:");
+    for (const k of ["ustu", "erken", "derssiz", "turev", "yabanci"]) {
+      const n = sinifSay.get(k) ?? 0;
+      if (!n) continue;
+      const ornek = [...(sinifKelime.get(k) ?? new Map())].slice(0, 6).map(([w, d]) => `${w} (${d})`).join(" · ");
+      console.log(`    ${BASLIK[k]}`);
+      console.log(`      ${String(n).padStart(4)} geçiş · %${((n / toplam) * 100).toFixed(0)} — ${ornek}`);
+    }
+  }
 }

@@ -165,6 +165,62 @@ export function enStems(w: string): string[] {
   return out;
 }
 
+/* ── bulguyu SINIFLANDIRMA ───────────────────────────────────────────────
+ *
+ * Almanca kapıdaki `nerede`nin İngilizce ikizi; sınıflar ve gerekçeleri
+ * orada yazılı (`lib/vocab-gate.cjs`). Özet: "kapı dışı" tek bir şey değil,
+ * yazarın yapacağı iş sınıfa göre değişiyor — seviye üstü sözcük metni
+ * sadeleştirmeyi ister, erken sözcük egzersizi taşımayı, derssiz sözcük
+ * patikaya ders eklemeyi, türev hiçbir şey (kapının eksiği).
+ *
+ * ALMANCADAN TEK FARKI EŞLEŞTİRME. Orada çekim/ayrılabilen önek makinesi
+ * gerekiyordu; burada `enStems` zaten var ve düzensiz fiil tablosunu,
+ * kısaltmaları, iyelik ekini, türetme eklerini birlikte soyuyor. Almanca
+ * tarafta denenip ATILAN iki gevşek eşleştirici (ünsüz iskeleti, anahtar ön
+ * eki indeksi) buraya hiç taşınmadı: yanlış sınıf yazarı yanlış işe gönderir,
+ * eksik sınıf yalnız "havuzda yok" der.
+ */
+const EN_SIRA = LEVELS;
+let enSeviyeBellek: Map<string, string> | null = null;
+/** Sözcük → havuzda ilk göründüğü seviye (her seviye, pencere yok). */
+export function enPoolLevels(): Map<string, string> {
+  if (enSeviyeBellek) return enSeviyeBellek;
+  const m = new Map<string, string>();
+  for (const l of readFileSync("data/app/words-en.json", "utf8").split("\n")) {
+    if (!l) continue;
+    const r = JSON.parse(l) as { de: string; niveau: string };
+    const lv = r.niveau.toLowerCase();
+    for (const w of r.de.toLowerCase().replace(/\(.*?\)/g, "").split(/[\s/,-]+/)) {
+      if (!w) continue;
+      const eski = m.get(w);
+      if (eski === undefined || EN_SIRA.indexOf(lv) < EN_SIRA.indexOf(eski)) m.set(w, lv);
+    }
+  }
+  enSeviyeBellek = m;
+  return m;
+}
+/** `enStems` ile haritada ara. */
+const enAra = <T,>(m: Map<string, T>, w: string): T | undefined => {
+  for (const st of enStems(w)) { const v = m.get(st); if (v !== undefined) return v; }
+  return undefined;
+};
+/**
+ * Kapı dışı bir sözcüğü sınıflandır. `dersUnite`: bu seviyenin sözcük →
+ * (ilk öğretildiği ünite) haritası; çağıran `lessonsFor("en")`den kuruyor,
+ * çünkü dersin tek kaynağı orası (mobil döküm bayatlayabilir).
+ */
+export function enNerede(w: string, level: string, unit: number, dersUnite: Map<string, number>): { sinif: string; detay: string } {
+  const du = enAra(dersUnite, w);
+  if (du !== undefined) return du > unit
+    ? { sinif: "erken", detay: `u${du} (${du - unit} ünite sonra)` }
+    : { sinif: "turev", detay: `kök u${du}'de öğretiliyor` };
+  const hv = enAra(enPoolLevels(), w);
+  if (hv === undefined) return { sinif: "yabanci", detay: "havuzda yok" };
+  return EN_SIRA.indexOf(hv) > EN_SIRA.indexOf(level)
+    ? { sinif: "ustu", detay: hv.toUpperCase() }
+    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede ders yok` };
+}
+
 export function measureEn(text: string, pool: Set<string>, ek: string[]): { tok: string[]; disi: string[] } {
   pool = new Set(pool);
   for (const w of ek) for (const p of w.toLowerCase().split(/[\s/,-]+/)) if (p) pool.add(p);
