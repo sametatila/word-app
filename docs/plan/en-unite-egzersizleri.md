@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
-| B1 | 13–25 | bekliyor |
+| B1 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
+| B1 | 16–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -716,6 +716,44 @@ metinde geçmiyor. İki kapı burada ters yönde çekiyor — `check:en-unitvoca
 soru kökünü ölçüm yüzeyine katıyor, `check-content` ise sözlükçe
 maddesinin METİNDE bulunmasını istiyor. Doğru çözüm sözlükçe eklemek
 değil, soruyu yeniden yazmak.
+
+**B1 ünite 13–15 (2026-09-12).** Ünite 13 The papers they need ·
+Appealing the decision · My study plan · Before the exam; ünite 14
+How I learn best · How far I have come · Learning from mistakes ·
+What the tutor said; ünite 15 Working in a group · The online course ·
+Keeping it up · What comes next. On sekiz egzersiz; ünite dışı ölçüm
+%0,0. B1 yuvalarının 90'ı dolu.
+
+Ünite 13'ün noktası ŞUNU ÖNCEKİ SÖZCÜK BELİRLİYOR: „decided TO appeal“
+mastar, „insisted ON seeing“ edat + „-ing“, „the right TO ask“ ise bir
+İSMİN aldığı mastar. Üçü de aynı anlamı kuruyor ve seçim mantıktan değil
+sözcükten geliyor. Almanca eksende her üçü de ayrı ayrı başka bir yapı
+istiyor („beschließen, zu …“, „darauf bestehen, zu …“, „das Recht, zu …“),
+yani Almanca okuyan ezberden kaçamıyor ama en azından hepsinde mastar
+görüyor — İngilizcedeki „-ing“ onun için tek gerçek sürpriz.
+
+Ünite 14 B1'in en çok karıştırılan çiftini alıyor: „used to do“ (bitmiş
+alışkanlık) ile „be used to doing“ (alışkın olmak). Aynı üç sözcük, iki
+ayrı anlam, ve ayırt eden tek şey „be“ ile sondaki „-ing“. İçerik ikisini
+YAN YANA koyuyor, çünkü ayrım ancak karşıtıyla görülünce oturuyor.
+Almanca eksende ortak biçim YOK — „früher schrieb ich“ ile „ich bin es
+gewohnt zu schreiben“ hiç benzemiyor — yani Almanca okuyan için tuzak
+yok ama tutamak da yok: ikisini de soğuktan öğrenmesi gerekiyor.
+
+Ünite 15'in noktası KOŞULDA „WERE“: „If I were less tired…“ İngilizcenin
+başka hiçbir yerde kullanmadığı tek biçim ve öğrenci ilk duyduğunda hata
+sanıyor. Almanca eksende bu bir PARİTE ve işe yarayan türden: Almanca
+Konjunktiv „wäre“ de gösterge „war“dan ayrı bir biçim, yani Almanca
+okuyanın refleksi zaten doğru. Yanında ünitenin ikinci tuzağı duruyor:
+„unless“ olumsuzluğu kendi içinde taşıyor, ana cümlenin olumsuzu onu
+iptal etmiyor.
+
+Ölçüm bu turda altmış yedi sözlükçe maddesi ekletti, ALTI maddeyi
+sildirdi ve iki dikte bölümünü ayırttırdı. Sildirilenler yine aynı
+sınıftan: sözcük soru kökünde ya da konuşmacı etiketinde geçiyor, metinde
+geçmiyor. Bu turda yeni olan, `Tutor:` konuşmacı etiketinin sözlükçeye
+dayanak olamaması — etiket ölçümden düşüyor ama içerik kapısı sözcüğü
+METİNDE arıyor, iki kapı aynı belirteci iki ayrı yerde bekliyor.
 
 ## Tamamlanma ölçütü
 

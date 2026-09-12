@@ -1,0 +1,292 @@
+[
+ {
+  "tr": "Kurs kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Kurskarte aus."
+ },
+ {
+  "tr": "İtiraz kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Widerspruchskarte aus."
+ },
+ {
+  "tr": "Öğrenme kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Lernkarte aus."
+ },
+ {
+  "tr": "Otobüste yirmi dakika dinleme; günde on kelime; defter elle; görsel yöntem işe yaramadı.",
+  "kind": "form.facts",
+  "de": "Zwanzig Minuten Hören im Bus; zehn Wörter am Tag; Heft mit der Hand; die visuelle Methode half nicht."
+ },
+ {
+  "tr": "Ders her pazartesi altıda; video indirilebiliyor; yeni modül iki hafta sonra; erişim bir yıl.",
+  "kind": "form.facts",
+  "de": "Die Lektion montags um sechs; das Video ist herunterladbar; neues Modul nach zwei Wochen; Zugang ein Jahr."
+ },
+ {
+  "tr": "Başvuru dokuz nisanda reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
+  "kind": "form.facts",
+  "de": "Der Antrag wurde am neunten April abgelehnt; Grund ein fehlendes Papier; das Original am einundzwanzigsten gebracht; es besteht ein Recht auf Überprüfung."
+ },
+ {
+  "tr": "Dokuzda mola vereceğim.",
+  "kind": "build.tr",
+  "de": "Ich mache um neun eine Pause."
+ },
+ {
+  "tr": "Eskiden ekranda yazardım.",
+  "kind": "build.tr",
+  "de": "Früher schrieb ich am Bildschirm."
+ },
+ {
+  "tr": "Deftere yazmaya alışkınım.",
+  "kind": "build.tr",
+  "de": "Ich bin es gewohnt, ins Heft zu schreiben."
+ },
+ {
+  "tr": "Her akşam tekrar edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich werde jeden Abend wiederholen."
+ },
+ {
+  "tr": "Yazdığım kısım en kısasıydı.",
+  "kind": "build.tr",
+  "de": "Der Teil, den ich schrieb, war der kürzeste."
+ },
+ {
+  "tr": "Aslını görmekte ısrar ettiler.",
+  "kind": "build.tr",
+  "de": "Sie bestanden darauf, das Original zu sehen."
+ },
+ {
+  "tr": "Daha çok alıştırma yapmalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest mehr üben."
+ },
+ {
+  "tr": "Ders her pazartesi yükleniyor.",
+  "kind": "build.tr",
+  "de": "Die Lektion wird jeden Montag hochgeladen."
+ },
+ {
+  "tr": "Kelime dağarcığım epey büyüdü.",
+  "kind": "build.tr",
+  "de": "Mein Wortschatz ist stark gewachsen."
+ },
+ {
+  "tr": "Benimle çalışan ortak güvenilir.",
+  "kind": "build.tr",
+  "de": "Der Partner, der mit mir arbeitet, ist verlässlich."
+ },
+ {
+  "tr": "Pazartesi yeni bölüme başlıyorum.",
+  "kind": "build.tr",
+  "de": "Am Montag fange ich das neue Kapitel an."
+ },
+ {
+  "tr": "Daha düşük bir seviyeden başladım.",
+  "kind": "build.tr",
+  "de": "Ich habe auf einem niedrigeren Niveau angefangen."
+ },
+ {
+  "tr": "Karara itiraz etmeye karar verdim.",
+  "kind": "build.tr",
+  "de": "Ich habe beschlossen, Widerspruch gegen die Entscheidung einzulegen."
+ },
+ {
+  "tr": "Sınava kartını getirmek zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst deine Karte zur Prüfung mitbringen."
+ },
+ {
+  "tr": "Yeniden inceleme isteme hakkım var.",
+  "kind": "build.tr",
+  "de": "Ich habe das Recht, eine Überprüfung zu verlangen."
+ },
+ {
+  "tr": "İhtiyaç duydukları belge asıl nüsha.",
+  "kind": "build.tr",
+  "de": "Das Papier, das sie brauchen, ist das Original."
+ },
+ {
+  "tr": "Sesli yayınları dinlemeyi seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich höre gern Podcasts."
+ },
+ {
+  "tr": "Sıkılırsam kısa bir yürüyüş yaparım.",
+  "kind": "build.tr",
+  "de": "Wenn mir langweilig wird, mache ich einen kurzen Spaziergang."
+ },
+ {
+  "tr": "Yorumumun yardımcı olduğunu söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, mein Beitrag habe geholfen."
+ },
+ {
+  "tr": "Hedefime rağmen seçim gerçekçi olmalı.",
+  "kind": "build.tr",
+  "de": "Trotz meines Ziels muss die Wahl realistisch sein."
+ },
+ {
+  "tr": "Günde on kelime ezberlemeye çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich versuche, zehn Wörter am Tag zu lernen."
+ },
+ {
+  "tr": "Ne kadar zamandır İngilizce çalışıyorsun?",
+  "kind": "build.tr",
+  "de": "Seit wann lernst du Englisch?"
+ },
+ {
+  "tr": "Geri bildirimi anlayıp anlamadığımı sordu.",
+  "kind": "build.tr",
+  "de": "Sie fragte, ob ich das Feedback verstanden hätte."
+ },
+ {
+  "tr": "Daha az yorgun olsaydım daha çok çalışırdım.",
+  "kind": "build.tr",
+  "de": "Wenn ich weniger müde wäre, würde ich mehr lernen."
+ },
+ {
+  "tr": "İleri düzey zor olmasına rağmen onu istiyorum.",
+  "kind": "build.tr",
+  "de": "Obwohl die Oberstufe schwer ist, will ich sie."
+ },
+ {
+  "tr": "Ondan keyif almayı bırakmadıkça bırakmayacaksın.",
+  "kind": "build.tr",
+  "de": "Du hörst nicht auf, es sei denn, es macht dir keine Freude mehr."
+ },
+ {
+  "tr": "Daha ileri gideceğim. Ancak bir plana ihtiyacım var.",
+  "kind": "build.tr",
+  "de": "Ich gehe weiter. Ich brauche jedoch einen Plan."
+ },
+ {
+  "tr": "Kapanmış bir an: sade geçmiş.",
+  "kind": "build.hint",
+  "de": "Ein abgeschlossener Moment: simple past."
+ },
+ {
+  "tr": "„although“ bir cümle bağlıyor.",
+  "kind": "build.hint",
+  "de": "„although“ verbindet einen Satz, wie „obwohl“."
+ },
+ {
+  "tr": "Özne konumundaki „who“ düşemez.",
+  "kind": "build.hint",
+  "de": "Ein „who“ in der Subjektstellung darf nicht wegfallen."
+ },
+ {
+  "tr": "„must“ kuralın kendisinden; istisna yok.",
+  "kind": "build.hint",
+  "de": "„must“ kommt aus der Regel selbst; keine Ausnahme."
+ },
+ {
+  "tr": "„try“ burada MASTAR alıyor: denemek anlamında.",
+  "kind": "build.hint",
+  "de": "„try“ nimmt hier den INFINITIV: im Sinne von versuchen."
+ },
+ {
+  "tr": "Burada mastarı bir İSİM alıyor: „the right to“.",
+  "kind": "build.hint",
+  "de": "Hier nimmt ein NOMEN den Infinitiv: „the right to“ — deutsch „das Recht, zu …“."
+ },
+ {
+  "tr": "Ayarlanmış: öğretmenle konuşulmuş ve o da biliyor.",
+  "kind": "build.hint",
+  "de": "Verabredet: mit der Lehrkraft besprochen, und sie weiß davon."
+ },
+ {
+  "tr": "O anda verilen karar: „will“. „take a break“ kalıp.",
+  "kind": "build.hint",
+  "de": "Ein Entschluss im Moment: „will“. „take a break“ ist eine feste Wendung."
+ },
+ {
+  "tr": "Edilgen ve zamansız: yükleyen sistem, her hafta böyle.",
+  "kind": "build.hint",
+  "de": "Passiv und ohne Zeitangabe: das System lädt hoch, jede Woche so."
+ },
+ {
+  "tr": "Nesne konumundaki bağlaç düşmüş; „that“ eklenebilirdi.",
+  "kind": "build.hint",
+  "de": "Das Relativpronomen in der Objektstellung ist weggefallen; „that“ wäre möglich. Im Deutschen geht das nie."
+ },
+ {
+  "tr": "Süreç sürüyor ve sonucu şimdi görünüyor: present perfect.",
+  "kind": "build.hint",
+  "de": "Der Vorgang dauert an und das Ergebnis zeigt sich jetzt: present perfect."
+ },
+ {
+  "tr": "Hâlâ sürüyor: present perfect. Türkçe şimdiki zaman diyor.",
+  "kind": "build.hint",
+  "de": "Es dauert an: present perfect. Deutsch nimmt wie das Türkische das Präsens."
+ },
+ {
+  "tr": "„despite“ bir isim istiyor; üç sözcük üç ayrı yapı kuruyor.",
+  "kind": "build.hint",
+  "de": "„despite“ verlangt ein Nomen wie „trotz“; die drei Wörter bauen drei Strukturen."
+ },
+ {
+  "tr": "„enjoy“ sonrası „-ing“; „listen“ kendi edatını taşıyor: to.",
+  "kind": "build.hint",
+  "de": "Nach „enjoy“ steht „-ing“; „listen“ trägt seine eigene Präposition: to."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile; „understood“ da geriye kayıyor.",
+  "kind": "build.hint",
+  "de": "Die Ja-Nein-Frage mit „if“; auch „understood“ rückt zurück."
+ },
+ {
+  "tr": "„decide“ MASTAR alıyor; „appeal“ kendi edatını taşıyor: against.",
+  "kind": "build.hint",
+  "de": "„decide“ nimmt den INFINITIV; „appeal“ trägt seine eigene Präposition: against."
+ },
+ {
+  "tr": "„however“ yeni bir cümle başlatıyor ve kendi virgülüyle geliyor.",
+  "kind": "build.hint",
+  "de": "„however“ beginnt einen neuen Satz und bringt sein eigenes Komma mit."
+ },
+ {
+  "tr": "„insist“ EDAT alıyor („on“) ve edattan sonra fiil „-ing“ oluyor.",
+  "kind": "build.hint",
+  "de": "„insist“ nimmt eine PRÄPOSITION („on“), und danach steht das Verb auf „-ing“. Deutsch braucht dort einen Infinitivsatz."
+ },
+ {
+  "tr": "Aktarılınca „helped“ bir basamak geriye kayıp „had helped“ oluyor.",
+  "kind": "build.hint",
+  "de": "Wiedergegeben rückt „helped“ eine Stufe zurück zu „had helped“."
+ },
+ {
+  "tr": "Gerçek olmayan koşulda „I“ yanında bile „were“ geliyor; „was“ değil.",
+  "kind": "build.hint",
+  "de": "In der irrealen Bedingung steht auch nach „I“ ein „were“, nicht „was“ — wie der deutsche Konjunktiv „wäre“."
+ },
+ {
+  "tr": "„that“ nesne konumunda; düşebilirdi ama resmî yazıda genelde kalıyor.",
+  "kind": "build.hint",
+  "de": "„that“ steht in der Objektstellung; es dürfte wegfallen, bleibt im Amtsstil aber stehen."
+ },
+ {
+  "tr": "„used to“ tek başına GEÇMİŞTEKİ alışkanlık: o zaman öyleydi, şimdi değil.",
+  "kind": "build.hint",
+  "de": "„used to“ allein meint eine FRÜHERE Gewohnheit: damals ja, heute nicht mehr."
+ },
+ {
+  "tr": "„unless“ zaten olumsuzluk taşıyor; ana cümlenin olumsuzu onu iptal etmiyor.",
+  "kind": "build.hint",
+  "de": "„unless“ trägt die Verneinung schon in sich; die Verneinung im Hauptsatz hebt sie nicht auf."
+ },
+ {
+  "tr": "„be used to“ ALIŞKIN OLMAK demek ve sonrası „-ing“; bitmiş alışkanlık değil.",
+  "kind": "build.hint",
+  "de": "„be used to“ heißt GEWOHNT SEIN, und danach steht „-ing“; keine beendete Gewohnheit."
+ },
+ {
+  "tr": "„practice“ burada isim ve sayılamaz: „more practice“, „more practices“ değil.",
+  "kind": "build.hint",
+  "de": "„practice“ ist hier ein unzählbares Nomen: „more practice“, nicht „more practices“."
+ }
+]
