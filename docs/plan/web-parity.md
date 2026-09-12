@@ -13426,3 +13426,45 @@ söylemesi (biri kayarsa yine iki değer olur), mobilde sönüklüğün bileşen
 olması, ve `disabled` verilen bir `PressableScale`da elle sönüklük kalmaması.
 
 Dört enjeksiyon denendi, dördü de yakalandı.
+
+## §11.385 — Aynı parmak hareketi, altı farklı cevap
+
+§11.384'ün kardeşi. Mobilde dokunulabilir **her şey** basınca 0.96'ya iniyor —
+kart, liste satırı, karo, çip, şık, düğme — çünkü hepsi tek bir
+`PressableScale`tan geçiyor. Web'de **altı** ayrı değer vardı:
+
+| Yer | Değer |
+|---|---|
+| `.btn:active` | 0.97 |
+| `.pressable:active` | 0.96 |
+| `.option:active` | 0.985 |
+| `.chip:active` | 0.95 |
+| `whileTap` (konuşma, sıralama, dinleme, harf, ders, beceri) | 0.9 · 0.92 · 0.93 · 0.94 |
+
+Aynı parmak hareketi ekranın altı yerinde altı farklı güçte cevap veriyordu.
+Hepsi `--press-scale: 0.96` jetonuna bağlandı; değer Android'inki, ve `.btn`
+ile `.pressable`ın kendi yorumu zaten "mobilde her şey 0.96'ya iniyor"
+diyordu — yani kural yazılıydı, uygulanmıyordu.
+
+### İkinci ve daha ciddi olgu
+
+**"Hareketi azalt" tercihi bunlardan yalnız birini kapatıyordu** —
+`.pressable`. Bloktaki `transition-duration: 0.01ms` ölçeği **kaldırmıyor,
+anında yapıyor**: düğme, çip ve şık basılı tutulduğu sürece *sıçrayarak*
+küçük duruyordu. Tercihi veren kullanıcı için bu, kapatılmış bir hareket
+değil, daha sert bir hareket.
+
+Android'de `PressableScale` tercihi okuyup yayı **hiç başlatmıyor** ve bu her
+dokunulabilir şey için geçerli. Dördü de bloğa alındı.
+
+`whileTap` ölçekleri zaten `MotionProvider`ın `reducedMotion="user"`
+kapsamındaydı (§11.57); sorun yalnız CSS tarafındaydı.
+
+### §262
+
+Üç ölçü: jetonun değeri Android'inkiyle eşleştirmeli, CSS'te ve `whileTap`ta
+sapan değer kalmaması (mutlak), ve "hareketi azalt" bloğunun **dört
+seçiciyi de** kapatması (mutlak).
+
+Dört enjeksiyon denendi (CSS'e ham ölçek, sapan bir `whileTap`, bloktan bir
+seçicinin düşmesi, mobil değerin kayması), dördü de yakalandı.
