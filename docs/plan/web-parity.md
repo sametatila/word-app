@@ -18098,3 +18098,43 @@ kalmadığını, tek sayılı boşluk borcunu ve web'in 24/32 piksel borcunu. Ü
 enjeksiyonla doğrulandı — ikincisinde ilk enjeksiyon **yanlıştı** (tek bir
 değeri başka bir tek sayıya çevirmek sayıyı değiştirmiyor), çift bir değeri tek
 yapınca kapı düştü.
+
+## §11.497 — Kart dolgusu: web'de beş değer, Android'de tek sayı — yirmi üç yüzey karşılığına bakılarak çevrildi
+
+§11.496 borcu dondurmuştu; bu tur onu **yüzey yüzey** ölçüp düşürdüm. Android'de
+kartın dolgusu tek sayı (`ui/Card` `padding: spacing.lg` = 16; 129 kullanımın
+yalnız sekizinde ve yalnız dikey bir ayar var). Web'de aynı `card` sınıfı beş
+ayrı dolguyla kullanılıyordu: 20 (78), 16 (70), 24 (17), 12 (24), 32 (3).
+
+**Karşılığına bakılarak çevrilenler (23):**
+
+| yüzey | web | Android karşılığı |
+|---|---|---|
+| sınav oynatıcısı (10) | 20 → 16 | `ExamScreen` kartlarının hepsi `<Card padded>` |
+| deneme oynatıcısı (3) | 20 → 16 | `MockExamScreen` on sekiz kart, hepsi `<Card padded>` |
+| beceri sayfası | 20 → 16 | `SkillsScreen` `<Card padded>` |
+| boss, meydan okuma | 24 → 16 | `BossScreen`/`ChallengeScreen` `<Card padded>` |
+| giriş kabuğu | 24 → 16 | `AuthScreen` `padding: spacing.lg` |
+| dört iskelet | 20 → 16 | gerçek sayfanın kartı 16 |
+
+Dört iskelet ayrıca **zıplama** hatasıydı: `profile/settings` iskeleti 20'de
+duruyor, gerçek kart 16'da açılıyordu — iskeletin çözmesi gereken sarsıntıyı
+iskeletin kendisi üretiyordu (bu dosyanın kendi yorumu aynı hatayı yarıçap için
+anlatıyor).
+
+**Ölçüp DOKUNMADIKLARIM** (Android'de de aynı sayı — "web yanlış" diye
+başlamasaydım üçünü de bozacaktım):
+
+- **diyaloglar** (onay, mikrofon izni, bildirim): 20 — Android `ui/ConfirmDialog`
+  `padding: spacing.xl`
+- **seviye testi**: 20 — Android `PlacementScreen` kart kullanmıyor,
+  `padding: spacing.xl`
+- **rol yapma sınavı** (4 yüzey): 20 — Android `RoleplayExamScreen` dört
+  yüzeyinin hepsinde `padding: spacing.xl`
+
+Ayrıca tanıtım/demo/admin sayfaları (Android karşılığı yok) ve
+`components/skills/*` oynatıcıları (başka bir oturumun etkin alanı) muaf.
+
+Geri kalan **23 yüzey tavan olarak donduruldu**; 24/32 piksel borcu da 108'den
+105'e indi. `check:tokens` üç borcu birlikte yazıyor ve üçü de enjeksiyonla
+doğrulandı.

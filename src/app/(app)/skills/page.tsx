@@ -157,7 +157,7 @@ export default async function SkillsPage({
           sebebini ancak aşağı kaydırınca okuyordu. Mobilde sıra baştan beri
           böyle (`SkillsScreen`: çipler, sonra boş durum). */}
       {!atLevel.length ? (
-        <p className="card mb-4 p-5 text-body" style={{ color: "var(--text-muted)" }}>
+        <p className="card mb-4 p-4 text-body" style={{ color: "var(--text-muted)" }}>
           {t("skills.this_course_has_no_reading")}
         </p>
       ) : null}

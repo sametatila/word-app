@@ -495,7 +495,7 @@ function Frame({ children }: { children: React.ReactNode }) {
       animate={{ opacity: 1, y: 0 }}
       className="relative mx-auto w-full max-w-md"
     >
-      <div className="card p-6">{children}</div>
+      <div className="card p-4">{children}</div>
       <p className="muted mt-4 text-center text-caption">
         <Link href="/learn" className="underline-offset-4 hover:underline">
           {t("challenge.back_to_normal")}

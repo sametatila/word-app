@@ -392,7 +392,7 @@ export function BossPlayer({
 function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status" | "alert"; busy?: boolean }) {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div role={role} aria-busy={busy ? "true" : undefined} className="card p-6 text-center">{children}</div>
+      <div role={role} aria-busy={busy ? "true" : undefined} className="card p-4 text-center">{children}</div>
     </div>
   );
 }

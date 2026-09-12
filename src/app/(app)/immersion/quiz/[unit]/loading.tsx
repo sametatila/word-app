@@ -13,7 +13,7 @@ export default function Loading() {
         <SkeletonLine variant="caption" width={48} />
       </div>
       <SkeletonBar height={7} />
-      <section className="card space-y-3 p-5">
+      <section className="card space-y-3 p-4">
         <SkeletonLine variant="h3" width="80%" />
         <SkeletonLine variant="caption" width="40%" />
       </section>

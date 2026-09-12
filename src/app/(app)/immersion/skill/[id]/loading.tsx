@@ -19,12 +19,12 @@ export default function Loading() {
         <SkeletonLine variant="strong" width={80} />
       </div>
       <SkeletonLine variant="h2" width={240} />
-      <section className="card space-y-2 p-5">
+      <section className="card space-y-2 p-4">
         {[0, 1, 2, 3].map((i) => (
           <SkeletonLine key={i} variant="body" width={`${94 - i * 9}%`} />
         ))}
       </section>
-      <section className="card space-y-3 p-5">
+      <section className="card space-y-3 p-4">
         <SkeletonLine variant="strong" width="70%" />
         {[0, 1, 2].map((i) => (
           <div key={i} className="h-12 w-full rounded-tile" style={{ background: "var(--surface-2)" }} />

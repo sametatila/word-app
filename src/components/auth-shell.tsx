@@ -24,7 +24,7 @@ export function AuthShell({
         <span className="text-h3">Lernomi</span>
       </Link>
 
-      <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="card p-6">
+      <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="card p-4">
         <h1 className="text-h2">{title}</h1>
         {subtitle ? <p className="muted mt-1 text-body">{subtitle}</p> : null}
         <div className="mt-5">{children}</div>

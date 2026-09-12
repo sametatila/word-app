@@ -308,7 +308,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   if (phase === "cover") {
     const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
     return (
-      <section className="card mx-auto w-full max-w-2xl p-5">
+      <section className="card mx-auto w-full max-w-2xl p-4">
         <p className="muted text-caption tracking-wide">{paper.level} · {t("mockexams.paper", { n: paper.no })}</p>
         <h1 className="mt-1 text-h3" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
         <p className="muted mt-1 text-body">{paper.theme} — {paper.themeTr}</p>
@@ -350,7 +350,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   if (phase === "result") {
     if (busy || !result) {
       return (
-        <section className="card mx-auto w-full max-w-2xl p-5" aria-busy>
+        <section className="card mx-auto w-full max-w-2xl p-4" aria-busy>
           <p className="muted text-body">{t("mockexam.scoring")}</p>
           <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
         </section>
@@ -1004,7 +1004,7 @@ function Result({
       ) : null}
 
       {score.total > 0 ? (
-        <div role="status" className="card p-5">
+        <div role="status" className="card p-4">
           <p className="muted text-caption tracking-wide">{t("mockexam.result")}</p>
           <div className="mt-1 flex items-end justify-between">
             <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(score.pct, lang)}</p>

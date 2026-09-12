@@ -16,7 +16,7 @@ export default function Loading() {
         <SkeletonLine variant="caption" width={56} />
       </div>
       <SkeletonBar height={7} />
-      <section className="card space-y-2 p-5">
+      <section className="card space-y-2 p-4">
         {[0, 1, 2, 3, 4].map((i) => (
           <SkeletonLine key={i} variant="body" width={`${96 - i * 7}%`} />
         ))}

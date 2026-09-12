@@ -199,6 +199,53 @@ for (const f of await walkDir("mobile/src")) {
     else if (px % 2 === 1) tekPiksel += 1;
   }
 }
+/* ── KART DOLGUSU ──────────────────────────────────────────────────────────
+ *
+ * Android'de kartın dolgusu TEK sayı: `ui/Card` `padding: spacing.lg` (16) ve
+ * yüz yirmi dokuz kullanımın yalnız sekizinde yalnız DİKEY bir ayar var.
+ * Web'de aynı `card` sınıfı beş ayrı dolguyla kullanılıyordu (20 seksen, 16
+ * altmış dokuz, 24 on yedi, 12 yirmi dört, 32 üç). Yirmi yüzey Android'deki
+ * karşılığı ölçülerek 16'ya çevrildi (sınav oynatıcısı, deneme oynatıcısı,
+ * beceri sayfası ve dört iskelet - iskeletlerinki ayrıca ZIPLAMA hatasıydı:
+ * gerçek sayfanın kartı 16, iskeleti 20'de duruyordu).
+ *
+ * MUAF olanlar ve sebepleri - hepsi ÖLÇÜLDÜ:
+ *   diyaloglar (onay, mikrofon izni, bildirim)  Android'de de 20
+ *       (`ui/ConfirmDialog` `padding: spacing.xl`)
+ *   seviye testi                                Android `PlacementScreen`
+ *       kart kullanmıyor, `padding: spacing.xl` (20)
+ *   rol yapma sınavı                            Android `RoleplayExamScreen`
+ *       dört yüzeyinin hepsinde `padding: spacing.xl` (20)
+ *   tur sonucu ve başarım kartları               Android'in kendi bölünmüş
+ *       ölçüleri (28/16 ve 20/16) - tek `p-` değil, yatay ve dikey ayrı yazılı
+ *   tanıtım ve demo sayfaları (`app/page`, `demo-*`, `admin/*`)
+ *       Android karşılığı YOK
+ *   `components/skills/*` oynatıcıları            başka bir oturumun etkin
+ *       alanı (beceri kütüphanesi); karşılığı da orada yazılıyor
+ *
+ * Geri kalan yirmi üç yüzey TAVAN: büyürse kapı düşer, küçülmesi serbest.
+ * Her biri kendi Android karşılığına bakılarak çevrilebilir - bu turda yirmi
+ * üç yüzey öyle çevrildi (sınav ve deneme oynatıcıları, beceri sayfası, dört
+ * iskelet, boss, meydan okuma, giriş kabuğu) ve her birinin gerekçesi commit
+ * mesajında yazılı. */
+const KART_MUAF = /\/(?:confirm-dialog|mic-disclosure|report-dialog|placement-test|demo-placement|session-player|achievement-unlock|roleplay-exam)\.tsx$|\/placement\/loading\.tsx$|^src\/app\/page\.tsx$|^src\/app\/demo-|^src\/app\/admin\/|^src\/components\/skills\//;
+let kartSapan = 0;
+const kartYer = [];
+for (const f of await walkDir("src")) {
+  if (KART_MUAF.test(f)) continue;
+  const satirlar = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8")).split("\n");
+  satirlar.forEach((l, i) => {
+    for (const m of l.matchAll(/className=(?:"([^"]*)"|\{`([^`]*)`\})/g)) {
+      const cls = m[1] ?? m[2] ?? "";
+      if (!/(?:^|\s)card(?:\s|$)/.test(cls)) continue;
+      const p = cls.match(/(?<![\w-])p-([\d.]+)(?![\w-])/);
+      if (!p || p[1] === "4") continue;
+      kartSapan += 1;
+      kartYer.push(`${f}:${i + 1} p-${p[1]}`);
+    }
+  });
+}
+
 let web24 = 0;
 for (const f of await walkDir("src")) {
   const src = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8"));
@@ -214,12 +261,15 @@ for (const f of await walkDir("src")) {
    `EmptyCard`ı da 16), iki tur sonucu kartı (`p-8` → 16/28, Android
    `rounds` sonuç kartı) ve başarım kartı (24 → 16/20, Android
    `AchievementUnlock`). */
-const TAVAN = { tekPiksel: 115, web24: 108 };
+const TAVAN = { tekPiksel: 115, web24: 105, kartSapan: 23 };
 if (jetonOlmayan.length) {
   problems.push(`boşluk: mobilde ölçek basamağına eşit ${jetonOlmayan.length} ham sayı (ilk üç: ${jetonOlmayan.slice(0, 3).join(" · ")}) — \`spacing.*\` kullan`);
 }
 if (tekPiksel > TAVAN.tekPiksel) {
   problems.push(`boşluk: mobilde tek sayılı boşluk ${tekPiksel} (tavan ${TAVAN.tekPiksel}) — web bunları çeyrek-rem ızgarasında yazamıyor`);
+}
+if (kartSapan > TAVAN.kartSapan) {
+  problems.push(`kart dolgusu: Android'in tek sayısından (16) sapan ${kartSapan} yüzey (tavan ${TAVAN.kartSapan}): ${kartYer.slice(0, 4).join(" · ")}`);
 }
 if (web24 > TAVAN.web24) {
   problems.push(`boşluk: webde 24/32 px boşluk ${web24} (tavan ${TAVAN.web24}) — Android ölçeği 20'den 28'e atlıyor`);
@@ -231,6 +281,6 @@ if (problems.length) {
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
   console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
-  console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24}`);
+  console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24} · kart dolgusu ${kartSapan}/${TAVAN.kartSapan}`);
 }
 process.exit(problems.length);

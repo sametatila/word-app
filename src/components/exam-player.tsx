@@ -346,7 +346,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
      Android karsiligi `accessibilityLiveRegion="polite"`. */
   if (phase === "loading" || phase === "finishing") {
     return (
-      <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-5">
+      <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-4">
         <p className="muted text-body">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
@@ -357,7 +357,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       /* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge degilse
          ekran okuyucu kullanan biri hicbir sey duymuyor. */
-      <section role="alert" className="card mx-auto w-full max-w-md p-5">
+      <section role="alert" className="card mx-auto w-full max-w-md p-4">
         {/* Android ayni dalda `sad` maskotu ciziyor (`ExamScreen`); webde
             sinav oynaticisinin hicbir dalinda maskot yoktu. Cevrimdisi
             KAYIT dalinda cizilmiyor: orada kotu bir sey olmadi, kayit
@@ -433,7 +433,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
   if (phase === "intro") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section className="card mx-auto w-full max-w-md p-4">
         {/* uppercase YOK: Türkçe yerelde text-transform "Teil"i "TEİL" yapıyor. */}
         {/* Kâğıdın kendi dili: "Teil" Almanca kursta, "Part" İngilizcede —
             sabit yazılıyken İngilizce öğrenci kâğıdında Almanca görüyordu. */}
@@ -549,7 +549,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (section === "grammar") {
     const g = paper!.sections.grammar[idx];
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section className="card mx-auto w-full max-w-md p-4">
         {header}
         {g.kind === "cell" ? (
           <>
@@ -599,7 +599,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const item = items[idx];
     const q = item.questions[qIdx];
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section className="card mx-auto w-full max-w-md p-4">
         {header}
         <p className="muted text-caption">
           {item.genre ?? item.situation ?? ""} {item.titleTr ? `· ${item.titleTr}` : ""}
@@ -666,7 +666,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       else nextSection();
     };
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section className="card mx-auto w-full max-w-md p-4">
         {header}
         <p className="muted text-caption">
           {idx + 1}/{paper!.sections.speaking.length} · {item.situation ?? t("exam.read_aloud")}
@@ -721,7 +721,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const w = paper!.sections.writing[0];
   const examWords = writingText.trim() ? writingText.trim().split(/\s+/).length : 0;
   return (
-    <section className="card mx-auto w-full max-w-md p-5">
+    <section className="card mx-auto w-full max-w-md p-4">
       {header}
       <p className="text-strong leading-relaxed">{w.task.prompt}</p>
       {w.task.stimulus ? (
@@ -814,7 +814,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
   }, [level, module]);
 
   return (
-    <section className="card mx-auto w-full max-w-md p-5">
+    <section className="card mx-auto w-full max-w-md p-4">
       {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
       <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
       {/*
@@ -997,7 +997,7 @@ function ProduceCard({
   const ready = item.mode === "order" ? chunks.length === (item.chunks?.length ?? 0) : yazilanKelime >= MIN_FREE_WORDS;
 
   return (
-    <section className="card mx-auto w-full max-w-md p-5">
+    <section className="card mx-auto w-full max-w-md p-4">
       {header}
       <p className="muted text-caption">
         {item.mode === "order"
@@ -1092,7 +1092,7 @@ function Result({
   return (
     /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). Sinavin TEK sonucu bu: bolum
        gecisleri ayri bir "sonuc" degil, calisan fazin icinde bir kapak. */
-    <section role="status" className="card mx-auto w-full max-w-md p-5">
+    <section role="status" className="card mx-auto w-full max-w-md p-4">
       <CoachBubble
         moment={result.passed ? "exam_pass" : "exam_fail"}
         mood={result.passed ? "celebrate" : "sad"}
