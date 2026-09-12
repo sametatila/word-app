@@ -14764,3 +14764,50 @@ aynı bilgiyi baştan beri `retry-after` **başlığıyla** veriyor
 sıfırlanmasına kalan saniye" ve o, kullanıcının kendi saatine bağlı
 (`profiles.timezone`) — premium kota metinleri de zaten kayıtlı borç (11
 `gate.*` anahtarı). Altı rotaya birlikte bakılacak, bu turda alınmadı.
+
+## §11.412 — Aynı oyun üç yüzeyde üç ayrı glifle anlatılıyordu
+
+On bir oyun üç yerde ikonla anlatılıyor: pratik ekranının karoları (web +
+Android) ve açılış sayfasının vitrini. Ölçüldüğünde **üçü de ayrı küme**
+yazıyordu:
+
+| oyun | Android | web pratik | web açılış |
+|---|---|---|---|
+| seçmeli | `QuizIcon` | `QuestionIcon` | `TargetIcon` |
+| boşluk doldurma | `WriteIcon` | `PenIcon` | `PenIcon` |
+| dinleme | `ListenIcon` | `HeadphonesIcon` | `HeadphonesIcon` |
+| eşleştirme | `CardsIcon` | `CardsIcon` | `LinkIcon` |
+| sıralama | `SortIcon` | `SortIcon` | `ListIcon` |
+| çoğul | `StackIcon` | `StackIcon` | `BookIcon` |
+
+Webin seçtikleri rastgele değil, **setin başka bir işi için ayrılmış**
+glifleriydi: `PenIcon` ve `HeadphonesIcon` iki platformda da **başarım
+rozetinin** glifi (`achievement-badge` / `ui/achievementIcon`), buna karşılık
+`QuizIcon`/`WriteIcon`/`ListenIcon` **adım türünün** glifi
+(`immersion/unit-pane` / `ui/unitKind`). Yani aynı oyun, aynı ekranda,
+Android'de bir glif webde başkası; üstüne web **kendi içinde de** ayrışıyordu
+— patika ile pratik aynı oyuna iki ikon veriyordu.
+
+`QuestionIcon` ise `QuizIcon`in yakın ikiziydi (ikisi de daire + soru
+işareti) ve yalnız o tek karoda çiziyordu; kaldırıldı.
+
+Açılış sayfasının kendi notu zaten şunu söylüyordu:
+
+> "…sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor."
+
+Glif de aynı sebebe tabi ve orada **üçüncü** bir küme duruyordu. Üç yüzeyin
+üçü Android'in kümesine geçti. **Tonlar zaten birebirdi** (web `--color-X-500`
+↔ mobil tema jetonu: brand=primary, flame=streak, sky=info, mint=success,
+violet=accent) — ayrışan yalnız gliflerdi.
+
+### §287
+
+Beş ölçü: karo **sayısı**, on bir karonun glifi, on bir karonun tonu (web
+rampası → mobil jeton eşlemesiyle), açılış vitrininin on satırı, ve
+**mutlak** olarak rozet glifinin oyun glifi olarak kullanılmadığı (kusur tam
+böyle doğdu, ve iki tarafta birden olabilirdi).
+
+Sayı ölçüsü ayrı duruyor çünkü listeden bir karo **okunamazsa** liste kısalır
+ve kalanlar eşit görünür — hiçbir şey ölçmeyen kapı. Enjeksiyonla doğrulandı:
+bir karo silindiğinde glif ölçüsü 11→10 düşüp **geçmeye devam etti**, sayı
+ölçüsü kırmızıya döndü.

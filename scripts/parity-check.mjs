@@ -7488,6 +7488,104 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 287. OYUNUN GLIFI UC YUZEYDE DE AYNI --------------------------
+   *
+   * Ayni on bir oyun UC yerde ikonla anlatiliyor: pratik ekraninin karolari
+   * (web + Android) ve acilis sayfasinin vitrini. Olculdugunde ucu de ayri
+   * kume yaziyordu:
+   *
+   *              Android          web pratik        web acilis
+   *   secmeli    QuizIcon         QuestionIcon      TargetIcon
+   *   bosluk     WriteIcon        PenIcon           PenIcon
+   *   dinleme    ListenIcon       HeadphonesIcon    HeadphonesIcon
+   *   eslestirme CardsIcon        CardsIcon         LinkIcon
+   *   siralama   SortIcon         SortIcon          ListIcon
+   *   cogul      StackIcon        StackIcon         BookIcon
+   *
+   * Ve webin sectikleri rastgele degil, SETIN BASKA BIR ISI ICIN AYRILMIS
+   * glifleriydi: `PenIcon` ve `HeadphonesIcon` iki platformda da BASARIM
+   * rozetinin glifi (`achievement-badge` / `ui/achievementIcon`),
+   * `QuizIcon`/`WriteIcon`/`ListenIcon` ise ADIM TURUNUN glifi
+   * (`immersion/unit-pane` / `ui/unitKind`). `QuestionIcon` ise `QuizIcon`in
+   * yakin ikiziydi ve yalniz o tek karoda cizyordu - kaldirildi.
+   *
+   * Acilis sayfasinin kendi notu zaten "adlar uygulamayla AYNI olmali, yoksa
+   * ziyaretci gordugu oyunu uygulamada tanimiyor" diyordu; glif de ayni
+   * sebebe tabi ve orada ucuncu bir kume duruyordu.
+   *
+   * TONLAR zaten birebirdi: web `--color-X-500` ile mobil tema jetonu
+   * arasindaki eslesme asagida yazili ve o da olculuyor. */
+  {
+    const pratikWeb = sil(read("src/app/(app)/learn/practice/page.tsx"));
+    const pratikMob = sil(read("mobile/src/screens/PracticeScreen.tsx"));
+    const acilis = sil(read("src/app/page.tsx"));
+
+    const webKaro = new Map(
+      [...pratikWeb.matchAll(/\{ game: "(\w+)", hint: "[\w.]+", Icon: (\w+), tone: "var\(--color-(\w+)-500\)" \}/g)]
+        .map((m) => [m[1], { ikon: m[2], ton: m[3] }]),
+    );
+    const mobKaro = new Map(
+      [...pratikMob.matchAll(/(\w+): \{ icon: \(p\) => <(\w+) \{\.\.\.p\} \/>, tint: "(\w+)" \}/g)]
+        .map((m) => [m[1], { ikon: m[2], ton: m[3] }]),
+    );
+    /* Olcu once SAYIYI karsilastiriyor: bir karo hic okunamazsa liste kisalir
+       ve kalanlar esit gorunur (hicbir sey olcmeyen kapi). */
+    sameList(
+      "pratik karolarinin sayisi",
+      ["mobil=" + mobKaro.size],
+      ["mobil=" + webKaro.size],
+      "mobil",
+      "web",
+    );
+    const oyunlar = [...webKaro.keys()].sort();
+    sameList(
+      "pratik karolarinin glifleri",
+      oyunlar.map((g) => g + "=" + (mobKaro.get(g)?.ikon ?? "KARO YOK")),
+      oyunlar.map((g) => g + "=" + webKaro.get(g).ikon),
+      "mobil",
+      "web",
+    );
+    /* Ton eslesmesi: web rampasi <-> mobil tema jetonu. */
+    const TON = { brand: "primary", flame: "streak", sky: "info", mint: "success", violet: "accent" };
+    sameList(
+      "pratik karolarinin tonlari",
+      oyunlar.map((g) => g + "=" + (mobKaro.get(g)?.ton ?? "KARO YOK")),
+      oyunlar.map((g) => g + "=" + (TON[webKaro.get(g).ton] ?? "ESLESME YOK")),
+      "mobil",
+      "web (esleme)",
+    );
+
+    /* Acilis vitrini de ayni kumeden. Anahtar `games.X`; oyun kimligine
+       cevrilirken iki ad ayrisiyor (makale yarisi, eslestirme). */
+    const VITRIN_AD = { match: "games.match", choice: "games.choice", artikel: "games.article_race", scramble: "games.scramble", cloze: "games.cloze", typing: "games.typing", listen: "games.listen", order: "games.order", plural: "games.plural", truefalse: "games.truefalse" };
+    const vitrin = new Map(
+      [...acilis.matchAll(/\{ Icon: (\w+), name: "([\w.]+)"/g)].map((m) => [m[2], m[1]]),
+    );
+    const vitrinOyun = Object.keys(VITRIN_AD).sort();
+    sameList(
+      "acilis vitrininin glifleri",
+      vitrinOyun.map((g) => g + "=" + (vitrin.get(VITRIN_AD[g]) ?? "SATIR YOK")),
+      vitrinOyun.map((g) => g + "=" + (webKaro.get(g)?.ikon ?? "KARO YOK")),
+      "acilis",
+      "pratik",
+    );
+
+    /* MUTLAK: baska bir isi olan glifler oyun glifi olarak KULLANILMIYOR.
+       Iki tarafta da - kusur tam boyle dogdu. */
+    const AYRILMIS = ["PenIcon", "HeadphonesIcon"];
+    const ihlal = [];
+    for (const [ad, kume] of [["web pratik", [...webKaro.values()].map((x) => x.ikon)], ["mobil pratik", [...mobKaro.values()].map((x) => x.ikon)], ["acilis", [...vitrin.values()]]]) {
+      for (const g of AYRILMIS) if (kume.includes(g)) ihlal.push(`${ad}:${g}`);
+    }
+    sameList(
+      "rozet glifi oyun glifi olarak kullanilmiyor",
+      ["ihlal=" + (ihlal.join("+") || "yok")],
+      ["ihlal=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 286. AYNI KARO AYNI GLIFI CIZIYOR -----------------------------
    *
    * `progress-view` kendi yorumunda "Dort karo mobildekiyle AYNI" diyordu ve
@@ -7596,7 +7694,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["InfoIcon", "e-posta dogrulama seridi ve beceri sorusu ipucu - ikisi de web yuzeyi"],
       ["LinkIcon", "acilis sayfasi ve pano metni kopyalama; mobil OS paylasim sayfasini aciyor"],
       ["ListIcon", "web kabugunun IKINCIL gezinme grubu (Kelimeler); mobil o yollara ekrandan gidiyor"],
-      ["QuestionIcon", "web pratik sayfasinin karo basligi"],
       ["UserIcon", "web kabugunun ikincil gezinme grubu (Profil)"],
     ]);
     const cizilenYok = [...webSet]

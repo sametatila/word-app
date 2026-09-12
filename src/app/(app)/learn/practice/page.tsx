@@ -13,15 +13,15 @@ import {
   BoltIcon,
   CardsIcon,
   CheckIcon,
-  HeadphonesIcon,
   KeyboardIcon,
-  PenIcon,
+  ListenIcon,
   PuzzleIcon,
-  QuestionIcon,
+  QuizIcon,
   SortIcon,
   StackIcon,
   TagIcon,
   TranslateIcon,
+  WriteIcon,
 } from "@/components/icons";
 
 export const generateMetadata = titleMeta("practice.practice");
@@ -64,12 +64,27 @@ type Tile = {
   mobildekiyle birebir aynı (orada `META`). Renkler de aynı sırada: mobilin
   `primary/streak/info/success/accent` beşlisinin web karşılıkları.
 */
+/*
+ * OYUN GLIFLERI UYGULAMANIN KENDI SOZLUGUNDEN.
+ *
+ * Uc karo YAKIN KOPYA ikon cizyordu: secmeli soruda `QuestionIcon`
+ * (`QuizIcon`in neredeyse ayni ikizi), bosluk doldurmada `PenIcon`
+ * (`WriteIcon`in ikizi), dinlemede `HeadphonesIcon` (`ListenIcon`in ikizi).
+ * Uclusu de setin BASKA bir isi icin ayrilmis glifleri: `PenIcon` ve
+ * `HeadphonesIcon` iki platformda da BASARIM rozetlerinin glifi
+ * (`achievement-badge` / `ui/achievementIcon`), `ListenIcon`/`WriteIcon`/
+ * `QuizIcon` ise ADIM TURUNUN glifi (`immersion/unit-pane` / `ui/unitKind`).
+ * Yani ayni oyun, ayni ekranda, Androidde bir glif webde baskasi; ustune web
+ * kendi icinde de ayrisiyordu (patika ile pratik ayni oyuna iki ikon).
+ * Tonlar zaten birebirdi (brand=primary, flame=streak, sky=info,
+ * mint=success, violet=accent) - ayrisan yalniz gliflerdi.
+ */
 const TILES: Tile[] = [
-  { game: "choice", hint: "prac.choice", Icon: QuestionIcon, tone: "var(--color-brand-500)" },
+  { game: "choice", hint: "prac.choice", Icon: QuizIcon, tone: "var(--color-brand-500)" },
   { game: "artikel", hint: "prac.artikel", Icon: TagIcon, tone: "var(--color-flame-500)" },
-  { game: "cloze", hint: "prac.cloze", Icon: PenIcon, tone: "var(--color-sky-500)" },
+  { game: "cloze", hint: "prac.cloze", Icon: WriteIcon, tone: "var(--color-sky-500)" },
   { game: "typing", hint: "prac.typing", Icon: KeyboardIcon, tone: "var(--color-mint-500)" },
-  { game: "listen", hint: "prac.listen", Icon: HeadphonesIcon, tone: "var(--color-violet-500)" },
+  { game: "listen", hint: "prac.listen", Icon: ListenIcon, tone: "var(--color-violet-500)" },
   { game: "truefalse", hint: "prac.truefalse", Icon: CheckIcon, tone: "var(--color-brand-500)" },
   { game: "match", hint: "prac.match", Icon: CardsIcon, tone: "var(--color-sky-500)" },
   { game: "scramble", hint: "prac.scramble", Icon: PuzzleIcon, tone: "var(--color-flame-500)" },

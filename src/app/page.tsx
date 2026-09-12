@@ -6,17 +6,17 @@ import { Reveal } from "@/components/reveal";
 import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
 import {
-  KeyboardIcon,
-  LinkIcon,
-  LogoMark,
-  PenIcon,
-  PuzzleIcon,
-  TagIcon,
-  TargetIcon,
-  HeadphonesIcon,
-  ListIcon,
-  BookIcon,
+  CardsIcon,
   CheckIcon,
+  KeyboardIcon,
+  ListenIcon,
+  LogoMark,
+  PuzzleIcon,
+  QuizIcon,
+  SortIcon,
+  StackIcon,
+  TagIcon,
+  WriteIcon,
 } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
 import { courseName, courseSub, onboardingCoursesFor } from "@/lib/courses";
@@ -24,16 +24,22 @@ import { legalPath } from "@/lib/legal";
 
 /* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
    sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor. */
+/* GLIF DE UYGULAMADAKI GLIF. Yukaridaki not adlarin uygulamayla ayni olmasini
+   istiyor; ikon da ayni sebebe tabi. Burada ucuncu bir kume yaziliydi
+   (eslestirmede `LinkIcon`, secmelide `TargetIcon`, siralamada `ListIcon`,
+   coguldan `BookIcon`) ve ziyaretci gordugu oyunu uygulamada tanimiyordu.
+   Kume pratik ekranindaki karolarla (ve Android `PracticeScreen` META ile)
+   birebir. */
 const GAMES = [
-  { Icon: LinkIcon, name: "games.match", desc: "land.game_match" },
-  { Icon: TargetIcon, name: "games.choice", desc: "land.game_choice" },
+  { Icon: CardsIcon, name: "games.match", desc: "land.game_match" },
+  { Icon: QuizIcon, name: "games.choice", desc: "land.game_choice" },
   { Icon: TagIcon, name: "games.article_race", desc: "land.game_artikel" },
   { Icon: PuzzleIcon, name: "games.scramble", desc: "land.game_scramble" },
-  { Icon: PenIcon, name: "games.cloze", desc: "land.game_cloze" },
+  { Icon: WriteIcon, name: "games.cloze", desc: "land.game_cloze" },
   { Icon: KeyboardIcon, name: "games.typing", desc: "land.game_typing" },
-  { Icon: HeadphonesIcon, name: "games.listen", desc: "land.game_listen" },
-  { Icon: ListIcon, name: "games.order", desc: "land.game_order" },
-  { Icon: BookIcon, name: "games.plural", desc: "land.game_plural" },
+  { Icon: ListenIcon, name: "games.listen", desc: "land.game_listen" },
+  { Icon: SortIcon, name: "games.order", desc: "land.game_order" },
+  { Icon: StackIcon, name: "games.plural", desc: "land.game_plural" },
   { Icon: CheckIcon, name: "games.truefalse", desc: "land.game_truefalse" },
 ];
 

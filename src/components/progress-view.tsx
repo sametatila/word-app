@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
-import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, PenIcon, TrophyIcon } from "@/components/icons";
+import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -220,7 +220,7 @@ export function ActivityProgress({
       */}
       <nav className="card px-4" aria-label={t("progress.progress")}>
         <ProgressRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
-        <ProgressRow href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} last />
+        <ProgressRow href="/profile/writings" icon={<WriteIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} last />
       </nav>
 
       {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit.
