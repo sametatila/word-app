@@ -206,9 +206,15 @@ export function GrowthPanel() {
           {detail ? (
             <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-                <Spark title={t("exam.sec_writing")} points={data.series.writing} max={100} color={colors.primary} colors={colors} />
-                <Spark title={t("exam.sec_speaking")} points={data.series.speaking} max={100} color={colors.success} colors={colors} />
-                <Spark title={t("exam.title")} points={data.series.usage} max={100} color={colors.streak} colors={colors} />
+                {/* ÇİZGİ RENGİ METİN VARYANTINDAN. Dolgu tonu (500) beyaz kart
+                    üstünde 2.77 / 3.55 / 2.88 veriyordu — grafik eşiği 3.0 ve
+                    ikisi onu bile tutmuyor. Web aynı üç çizgiyi rol takma adıyla
+                    çiziyor (`progress-panel`: `--color-brand`, `--color-mint`,
+                    `--color-flame`) ve açık temada o adlar tam bu `*Text`
+                    değerleri: 5.39 / 4.59 / 4.60. */}
+                <Spark title={t("exam.sec_writing")} points={data.series.writing} max={100} color={colors.primaryText} colors={colors} />
+                <Spark title={t("exam.sec_speaking")} points={data.series.speaking} max={100} color={colors.successText} colors={colors} />
+                <Spark title={t("exam.title")} points={data.series.usage} max={100} color={colors.streakText} colors={colors} />
                 <Spark title={t("prog.answers")} points={data.series.answers} color={colors.textMuted} colors={colors} />
               </View>
               {data.milestones?.length ? (

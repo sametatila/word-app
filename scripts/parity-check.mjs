@@ -19369,6 +19369,76 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ---- 339. KART VE YUMUSAK TINT USTUNDEKI MUREKKEP: ROL METIN VARYANTINDAN
+ *
+ * §338 DOLU karoyu kapatti (zemin renk, glif beyaz). Ayni ailenin oteki yarisi:
+ * zemin BEYAZ KART ya da tonun yumusak tinti, uzerindeki ikon/cizgi ise
+ * DOLGU tonuyla (500) ciziliyordu. Olcum (acik tema):
+ *   gelisim sparkline'i   primary 2.77, success 3.55, streak 2.88  (esik 3.0)
+ *   paywall onay isareti  primary, primarySoft zemininde 2.24
+ *   oyun kombo cipi       info, %13 info zemininde 3.11 - ve YANINDAKI SAYI
+ *                         `infoText` ile yaziliydi, yani ayni cipte iki ayri
+ *                         murekkep
+ * Web ucunu de ROL TAKMA ADIYLA ciziyor (`--color-brand`, `--color-mint`,
+ * `--color-flame`, `--color-sky`) ve acik temada o adlar mobilin `*Text`
+ * degerleri: 5.39 / 4.59 / 4.60 / 4.64 / 4.37.
+ *
+ * Olcu: uc yuzeyin murekkebi iki tarafta ayni DEGERE cozuluyor - web takma
+ * adi CSS'ten, mobil `*Text` jetonu acik paletten. Kapi renk tasimiyor. */
+{
+  const silI = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const css = read("src/app/globals.css");
+  const acikBlok = css.slice(0, css.indexOf("prefers-color-scheme: dark") >= 0 ? css.indexOf("prefers-color-scheme: dark") : css.length);
+  const rampa = new Map([...css.matchAll(/--color-([a-z]+-\d+):\s*(#[0-9a-fA-F]{6})/g)].map((m) => [m[1], m[2].toLowerCase()]));
+  const takma = (ad) => {
+    const m = acikBlok.match(new RegExp("--color-" + ad + ":\\s*var\\(--color-([a-z]+-\\d+)\\)"));
+    return m ? rampa.get(m[1]) ?? "COZULMEDI" : "COZULMEDI";
+  };
+  const mobRenk = silI(read("mobile/src/theme/colors.ts"));
+  const orangeT = new Map(
+    [...(mobRenk.match(/export const orange = \{([\s\S]*?)\} as const;/) ?? ["", ""])[1].matchAll(/(\d+): "(#[0-9a-fA-F]{6})"/g)].map((m) => [m[1], m[2].toLowerCase()]),
+  );
+  const acikGovde = (mobRenk.match(/export const light: Palette = \{([\s\S]*?)\n\};/) ?? ["", ""])[1];
+  const jeton = (ad) => {
+    const m = acikGovde.match(new RegExp("\\b" + ad + ': (?:"(#[0-9a-fA-F]{6})"|orange\\[(\\d+)\\])'));
+    if (!m) return "YOK";
+    return (m[1] ?? orangeT.get(m[2]) ?? "YOK").toLowerCase();
+  };
+  const mobSpark = silI(read("mobile/src/ui/GrowthPanel.tsx")).replace(/\s+/g, " ");
+  const webSpark = silI(read("src/components/progress-panel.tsx")).replace(/\s+/g, " ");
+  const mobOyun = silI(read("mobile/src/screens/GameScreen.tsx"));
+  const webOyun = silI(read("src/components/session-player.tsx")).replace(/\s+/g, " ");
+  const mobPaywall = silI(read("mobile/src/screens/PaywallScreen.tsx"));
+  const webPaywall = silI(read("src/components/premium-paywall.tsx")).replace(/\s+/g, " ");
+  const mobJeton = (desen) => {
+    const m = mobSpark.match(desen) ?? mobOyun.match(desen) ?? mobPaywall.match(desen);
+    return m ? jeton(m[1]) : "YOK";
+  };
+  const webAlias = (src, desen) => {
+    const m = src.match(desen);
+    return m ? takma(m[1]) : "YOK";
+  };
+  sameList(
+    "kart ustundeki murekkep rol metninden",
+    [
+      "sparkline yazma=" + mobJeton(/sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "sparkline konusma=" + mobJeton(/sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "sparkline kullanim=" + mobJeton(/exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "kombo ikonu=" + mobJeton(/<BoltIcon color=\{colors\.(\w+)\} size=\{15\} \/><Text variant="bodyStrong"/),
+      "paywall onayi=" + mobJeton(/<CheckIcon color=\{colors\.(\w+)\} size=\{14\} \/>/),
+    ],
+    [
+      "sparkline yazma=" + webAlias(webSpark, /sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
+      "sparkline konusma=" + webAlias(webSpark, /sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
+      "sparkline kullanim=" + webAlias(webSpark, /exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
+      "kombo ikonu=" + webAlias(webOyun, /color: "var\(--color-([a-z]+)\)", \}\} > <SparkIcon size=\{12\}/),
+      "paywall onayi=" + webAlias(webPaywall, /color: "var\(--color-([a-z]+)\)" \}\} > <CheckIcon size=\{14\}/),
+    ],
+    "mobil (jeton)",
+    "web (takma ad)",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

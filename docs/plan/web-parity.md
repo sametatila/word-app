@@ -17339,3 +17339,38 @@ taraması eklendikten sonra aynı enjeksiyon iki satırı da işaretliyor.
 İki eski kapı da güncellendi: "öğren sekmesi yolları" mobil tinti
 `tint={colors.X}` deseniyle okuyordu (artık `fillOf("X")`i de tanıyor) ve
 §337'nin kaynak ölçüsü `light[...]` yerine `fillOf(...)` arıyor.
+
+## §11.480 — Kart ve yumuşak tint üstündeki mürekkep: rol metin varyantından
+
+§11.479 **dolu** karoyu kapattı (zemin renk, glif beyaz). Aynı ailenin öteki
+yarısı: zemin **beyaz kart** ya da tonun **yumuşak tinti**, üzerindeki
+ikon/çizgi ise **dolgu tonuyla (500)** çiziliyordu. Ölçüm (açık tema):
+
+| Yüzey | 500 ile | Rol metin varyantıyla |
+|---|---|---|
+| Gelişim sparkline'ı — yazma | **2.77** | 5.39 |
+| … konuşma | 3.55 | 4.59 |
+| … kullanım | **2.88** | 4.60 |
+| Paywall onay işareti (yumuşak turuncu zemin) | **2.24** | 4.37 |
+| Oyun kombo çipi ikonu (%13 tint) | 3.11 | 4.64 |
+
+Grafik eşiği 3.0; üçü onu bile tutmuyordu. Kombo çipi ayrıca **kendi içinde
+tutarsızdı**: ikon `info` (500), yanındaki sayı `infoText` — aynı çipte iki
+ayrı mürekkep.
+
+**Web üçünü de rol takma adıyla çiziyor** (`--color-brand`, `--color-mint`,
+`--color-flame`, `--color-sky`) ve açık temada o adlar tam mobilin `*Text`
+değerleri. Mobil tarafı onlara çekildi.
+
+Kapı **§339** beş mürekkebi iki tarafta da **değere çözüp** karşılaştırıyor:
+web takma adını `globals.css`ten, mobil jetonunu açık paletten — kapının
+içinde renk yok. Enjeksiyon üç yönden (mobil sparkline, mobil kombo ikonu,
+webin paywall takma adını 500'e çevirmek).
+
+**Bu turda ölçülüp temiz çıkan web tarafı:** `text-white` ve `color:"#fff"`
+kullanımlarının 49'unu taradım — hiçbiri temaya göre değişen bir rol takma adı
+zemininin üstünde durmuyor (hepsi marka gradyanı, sabit rampa basamağı ya da
+gradyanlı kahraman kartın çocuğu). Rol takma adı zeminli 28 yüzeyin
+mürekkebi de ya `on-fill` ya da içeriksiz (çubuk/nokta). Yani §338'in kusuru
+Android'e özgüydü; webin `on-fill` jetonu ve sabit rampaları doğru
+kullanılmış.

@@ -370,7 +370,11 @@ function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "
     <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
       {premium ? (
         <View style={{ width: 22, height: 22, borderRadius: 11, alignItems: "center", justifyContent: "center", backgroundColor: colors.primarySoft, marginTop: 1 }}>
-          <CheckIcon color={colors.primary} size={14} />
+          {/* İkon METİN varyantında: dolgu tonu (500) yumuşak turuncu zemin
+              üstünde 2.24 veriyordu, grafik eşiği 3.0 bile değil. Web aynı
+              işareti rol takma adıyla çiziyor (`premium-paywall`:
+              `--color-brand`) ve açık temada o ad bu değer (4.37). */}
+          <CheckIcon color={colors.primaryText} size={14} />
         </View>
       ) : (
         /* ÜCRETSİZ TARAFTA ONAY İŞARETİ YOK: aynı işaret iki listede de

@@ -702,7 +702,7 @@ export function GameScreen() {
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
-        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.info + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.info} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
+        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.info + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
         {/* Bu turdaki kelime yeni mi tekrar mı: webde sayacın yanında bir çip
             var, mobilde hiç yoktu. Öğrenci "bunu ilk kez mi görüyorum" diye
             sormuyor artık. */}
