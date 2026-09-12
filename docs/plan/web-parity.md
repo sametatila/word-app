@@ -18163,3 +18163,41 @@ ve gerekçesi betikte yazılı.
 `check:tokens` artık bunu ayrı bir ölçü olarak taşıyor: ne mobilde
 `paddingVertical: 15`, ne web'de tam genişlikli bir `py-3.5`. İki yönü de
 enjeksiyonla doğrulandı. Tek sayılı boşluk borcu 115 → **75**.
+
+## §11.499 — Aynı denetim, başka görünüş: hoparlör düğmesi gri duruyordu, şık işareti dört piksel küçüktü
+
+Bu tur ikon boylarını **ikon adıyla** taradım (her ikonun iki platformdaki boy
+dağılımı). Çoğu fark yüzey farkından geliyordu — aynı ikon başka yerde başka
+boyda — ama iki tanesi gerçek çıktı.
+
+**Şık işareti.** Cevabın doğru mu yanlış mı olduğunu söyleyen simge Android'de
+**22** (`game/rounds` `OptionButton`), web'de **18**'di. Aynı işaret, dört
+piksel küçük.
+
+**Hoparlör düğmesi iki platformda iki ayrı renkte duruyordu.** Android'in
+`ui/SpeakButton`ı marka tintinde: `primarySoft` zemin, `primary` ikon,
+`hairline` kenarlık. Web `btn-ghost` kullanıyordu, yani **nötr** (`--surface-2`
+zemin, `--text` mürekkep) — kelime listesinde aynı hoparlör web'de gri,
+Android'de turuncuydu. Web'in jetonları zaten Android'in değerlerini taşıyor
+(`--brand-soft` = `--color-brand-100` ↔ `orange[100]`; koyu temada ikisi de
+%16 karışım), yani düzeltme yalnız doğru jetonu göstermek oldu.
+
+İkonun kutuya **oranı** da ayrıydı: Android kutunun 0.52'sini kullanıyor
+(`Math.round(size * 0.52)`), web sabit 13/16 yazıyordu — 36'lık kutuda 0.44,
+yani göreli olarak daha küçük bir simge. Web'in iki boyu da orana getirildi
+(28 → 15, 36 → 19).
+
+**Ölçtüğüm ama dokunmadıklarım** — üçü de eşitti ya da yapısal:
+
+- `EmptyCard` karosu: web 52 kutu / 26 ikon; Android `IconTile` `size={52}` ve
+  ikon `round(size * 0.5)` = 26. Aynı oran, aynı sayı.
+- Alt gezinme ikonları: Android `TabBar` 23, web kabuğunda da 23.
+- `AppHeader`: iki tarafta da 16 ve 44.
+- Titreşim/haptik: yürüyüş modunda Android iki ayrı çağrı (`correct`/`wrong`),
+  web tek dinamik çağrı (`vibrate(ok ? …)`) — **aynı davranış**, farklı kod
+  şekli. Ödeme ekranında Android titreşiyor, web'de titreşim yok ve doğrusu
+  bu: web'in ödeme akışı hiç yok (paywall yalnız bilgilendirme + promosyon
+  kodu), `purchase_start`/`purchase_done` olayları da yalnız mobilde.
+
+Kapı **§352** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): işaretin boyu,
+hoparlörün üç jetonunun rolü (zemin/mürekkep/kenarlık) ve ikon/kutu oranı.

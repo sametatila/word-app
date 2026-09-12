@@ -1028,9 +1028,27 @@ export function SpeakButton({
          isimle duyuyordu. Ortak olan kullanılıyor. */
       aria-label={t("speakbutton.read_aloud")}
       title={t("speakbutton.read_aloud")}
-      className={`btn btn-ghost hit-8 shrink-0 ${dim} ${className}`}
+      /*
+        DOLGU VE MÜREKKEP ANDROID'İNKİ.
+
+        `btn-ghost` nötr bir yüzey (`--surface-2` zemin, `--text` mürekkep);
+        Android'in aynı düğmesi MARKA TİNTİNDE (`ui/SpeakButton`:
+        `backgroundColor: colors.primarySoft`, ikon `colors.primary`,
+        kenarlık `colors.hairline`). Yani kelime listesinde aynı hoparlör
+        webde gri, Android'de turuncuydu.
+
+        İkonun boyu da oranla: Android kutunun 0.52'sini kullanıyor
+        (`Math.round(size * 0.52)`), web sabit 13/16 yazıyordu - 36'lık
+        kutuda 0.44, yani göreli olarak daha küçük bir simge.
+      */
+      className={`btn hit-8 shrink-0 ${dim} ${className}`}
+      style={{
+        background: "var(--brand-soft)",
+        color: "var(--color-brand)",
+        border: "1px solid var(--hairline)",
+      }}
     >
-      <SpeakerIcon size={size === "sm" ? 13 : 16} />
+      <SpeakerIcon size={size === "sm" ? 15 : 19} />
     </motion.button>
   );
 }

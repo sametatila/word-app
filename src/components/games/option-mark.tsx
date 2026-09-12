@@ -24,7 +24,11 @@ export function OptionMark({ state }: { state: "correct" | "wrong" | null }) {
   const Icon = state === "correct" ? CheckIcon : XIcon;
   return (
     <Icon
-      size={18}
+      /* BOY ANDROID'İNKİ. Aynı işaret Android'de 22 (`game/rounds`
+         `OptionButton`: `CheckIcon`/`XIcon` `size={22}`), webde 18 idi -
+         cevabın doğru mu yanlış mı olduğunu söyleyen simge dört piksel
+         küçüktü. */
+      size={22}
       role="img"
       aria-hidden={false}
       aria-label={label}

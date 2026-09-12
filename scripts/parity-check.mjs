@@ -20756,6 +20756,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 352. AYNI DENETIM, BASKA GORUNUS: HOPARLOR VE SIK ISARETI
+ *
+ * Ikon boylarini ikon ADIYLA taradim; cogu fark yuzey farkindan geliyordu
+ * (ayni ikon baska yerde baska boyda). Iki tanesi gercek cikti:
+ *
+ * SIK ISARETI: cevabin dogru mu yanlis mi oldugunu soyleyen simge Android'de
+ * 22 (`game/rounds` `OptionButton`), webde 18 idi - ayni isaret, dort piksel
+ * kucuk.
+ *
+ * HOPARLOR DUGMESI: ayni bilesen iki platformda iki ayri RENKTE duruyordu.
+ * Android `ui/SpeakButton` marka tintinde (`primarySoft` zemin, `primary`
+ * ikon, `hairline` kenarlik); web `btn-ghost` kullaniyordu, yani NOTR
+ * (`--surface-2` zemin, `--text` murekkep). Kelime listesinde ayni hoparlor
+ * webde gri, Android'de turuncuydu. Ikonun kutuya orani da ayriydi: Android
+ * 0.52, web sabit 13/16 (36'lik kutuda 0.44).
+ *
+ * Olcu: (1) isaretin boyu iki tarafta ayni sayi, (2) hoparlorun uc jetonu
+ * (zemin, murekkep, kenarlik) iki tarafta da ayni ROLU gosteriyor, (3)
+ * ikon/kutu orani iki tarafta 0.5 ile 0.56 arasinda (Android'in 0.52'si
+ * yuvarlanarak webin iki boyuna dagiliyor). */
+{
+  const silI = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+
+  /* (1) Sik isareti. */
+  const webIsaret = (silI(read("src/components/games/option-mark.tsx")).match(/size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
+  const mobIsaret = (silI(read("mobile/src/game/rounds.tsx")).match(/CheckIcon color=\{colors\.successText\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK";
+  sameList("sik isaretinin boyu", ["isaret=" + mobIsaret], ["isaret=" + webIsaret], "mobil", "web");
+
+  /* (2) Hoparlorun rengi: iki tarafta da MARKA tinti. Web jeton adlariyla,
+     mobil palet alanlariyla yaziyor; olcu ROL esitligi. */
+  const webHop = silI(read("src/components/speak-button.tsx"));
+  const mobHop = silI(read("mobile/src/ui/SpeakButton.tsx"));
+  const webRol = [
+    "zemin=" + (/background: "var\(--brand-soft\)"/.test(webHop) ? "marka tinti" : "NOTR"),
+    "murekkep=" + (/color: "var\(--color-brand\)"/.test(webHop) ? "marka" : "NOTR"),
+    "kenarlik=" + (/border: "1px solid var\(--hairline\)"/.test(webHop) ? "hairline" : "BASKA"),
+  ];
+  const mobRol = [
+    "zemin=" + (/backgroundColor: colors\.primarySoft/.test(mobHop) ? "marka tinti" : "NOTR"),
+    "murekkep=" + (/const color = tone \?\? colors\.primary/.test(mobHop) ? "marka" : "NOTR"),
+    "kenarlik=" + (/borderColor: colors\.hairline/.test(mobHop) ? "hairline" : "BASKA"),
+  ];
+  sameList("hoparlor dugmesinin rengi", mobRol, webRol, "mobil", "web");
+
+  /* (3) Ikon/kutu orani. Webin iki boyu (28 ve 36) ve ikonlari; mobilin
+     carpani dosyada yazili. */
+  const mobOran = (mobHop.match(/size=\{Math\.round\(size \* ([\d.]+)\)\}/) ?? [])[1] ?? "YOK";
+  const webKutu = { sm: 28, md: 36 };
+  const webIkon = (webHop.match(/size=\{size === "sm" \? (\d+) : (\d+)\}/) ?? []);
+  const oranTamam =
+    webIkon.length === 3 &&
+    Math.abs(Number(webIkon[1]) / webKutu.sm - Number(mobOran)) <= 0.04 &&
+    Math.abs(Number(webIkon[2]) / webKutu.md - Number(mobOran)) <= 0.04;
+  sameList(
+    "hoparlor ikonunun kutuya orani",
+    ["carpan=" + mobOran + " web uyuyor=" + oranTamam],
+    ["carpan=" + mobOran + " web uyuyor=true"],
+    "mobil",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
