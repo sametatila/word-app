@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
-| C1 | 7–25 | bekliyor |
+| C1 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
+| C1 | 10–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1354,6 +1354,79 @@ DA ÖTELİYOR.**
 kural yedinci kez çalıştı. Bir de araç tarafında küçük bir ders: sözlük
 dosyasına toplu ekleme yaparken var olan anahtarları atlamak gerekiyor,
 yoksa tek bir çakışma bütün bloğu düşürüyor.
+
+
+Ünite 7'nin noktası EKSİLTME ve bu ünite üç ayrı büyüklükte deliği tek
+derste yan yana koyuyor: fiil siliniyor ve yerini virgül tutuyor („Some
+articles name arson; others, bodily harm“), nesne siliniyor ve geçişli
+fiil bir kişiyi değil bir siyaseti adlandırmaya başlıyor („The police
+would apprehend if they could“), yüklem bütünüyle siliniyor ve „is not“
+onu tek başına taşıyor („One road is impassable; the other is not“).
+Yeniden ölçüm bu kez beklenmedik bir yere çıkıyor. Üç satırın üçü de aynı
+yönde gitmiyor: birincisinde İngilizce virgüle muhtaç, çünkü deliği başka
+hiçbir şey göstermiyor — fiili ikinci konumda tutan bir dil ise boş
+konumun kendisiyle idare ediyor, yani orada noktalama, söz diziminin
+zaten yaptığı işi yapıyor. İkincisinde İngilizce ÖNDE: „if they could“
+orada bitiyor, Almanca ardına bir „es“ bırakmak zorunda. Üçüncüsünde
+İngilizce GERİDE: Almanca „die andere nicht“ diyerek fiili de atıyor,
+İngilizce „is“i tutmak zorunda. Ölçünün adı bu: **SİLME YÖNÜ DİLE DEĞİL
+BİÇİME BAĞLI** — bir dil „daha çok siliyor“ diye bir şey yok, her biçim
+kendi yönünü seçiyor. Ünitenin ikinci yarısı da aynı aileden: „may well
+be raised“, „would tend to fall“, „might have been expected to“ — İngilizce
+çekinceyi UZATARAK kuruyor, dört beş sözcüklük bir zincir; Almanca tek bir
+vurgusuz parçacıkla („wohl“, „durchaus“, „eher“) aynı işi görüyor. Bu
+kayıtta çekince nezaket değil SORUMLULUK: mahkemede söz diye alıntılanamayan
+cümle yazmanın adı.
+
+Ünite 8'in noktası SORU EKİ. İngilizce onu her seferinde yeniden
+hesaplıyor — hangi yardımcı fiil, cümle artı mı eksi mi, özne hangi adıla
+iniyor — ve üçünden birini yanlış yapan satır sözlükle bulunamayacak
+biçimde İngilizce olmaktan çıkıyor. Almanca hiç hesap yapmıyor: sona
+değişmez tek bir sözcük („oder?“) koyuyor. Hesabın bedeli var ama
+karşılığı da var ve karşılık şu: **EK, CÜMLENİN GİZLİ KUTBUNU AÇIĞA
+ÇIKARAN TEK GÖRÜNÜR KANIT.** „Hardly cyclical, is it?“ içinde hiç „not“
+yokken ek artı kalıyor, çünkü „hardly“ cümleyi çoktan olumsuz saymış;
+„seldom“, „barely“, „few“ de öyle. Almancada bu testi çalıştıracak bir
+yer yok, dolayısıyla soru hiç sorulmuyor. İkinci ölçü ekin bir TABANI
+olması: konuşmada her yerde, kararda ya da raporda hiç. Yazı aynı işi
+başka yoldan görmek zorunda — sona eklenen bir yan cümleyle ya da tek
+başına bırakılmış bir eksiltili söyleyişle — ve bu, ünite 3'ün açtığı
+ipin neden yazının aracı olduğunu açıklıyor. Ünitenin yazılı yarısı da
+bunu doğruluyor: „This alone binds…“ (özneden sonra „alone“), „Such a
+hardship case is rare“ (geriye işaret eden ve betimlemenin kesin olduğuna
+söz veren bir kalıp), „The latter falls to…“ (dört sözcük kazanıp bir
+bakış harcayan kısaltma) — üçü de sesli söylenince belge okunuyor gibi
+duyuluyor, ki testin kendisi bu.
+
+Ünite 9'un noktası BAĞLAÇSIZ KOŞUL: fiil kendi cümleciğinin başına
+geçiyor, „if“ atılıyor, koşul anlamını yalnız söz dizimi taşıyor („Were
+it not for metaphysics…“, „Had the court known“, „Should you need the
+file“). Bu turun en ender bulgusu burada: **MEKANİZMA AYNI.** Almanca da
+tam bunu yapıyor — fiil başa, bağlaç yok, anlam aynı. Yani ortada
+„İngilizcenin fazlası“ ya da „Almancanın fazlası“ yok; ayrım yapıda değil
+KATTA. Almancada hareket sıradan: mutfakta da, şikâyette de, park yeri
+tartışmasının ortasında da duyulur. İngilizcede işaretli: „Had I known“
+sayfaya ait, odaya değil. Sonucu şu ve pratikte can yakan yer tam orası:
+kendi gündelik biçimini olduğu gibi İngilizceye taşıyan bir Alman
+konuşucu, durduğu kattan üç kat yukarıda bir kayda çıkıyor — yazdığı
+hiçbir şey yanlış değil, yazdığı her şey niyet ettiğinden yüksek sesli.
+Ölçünün cümlesi: **İKİ DİL AYNI BİÇİME SAHİP OLUP ONU FARKLI FİYATA
+KİRALAYABİLİR.** Yanında iki ek ölçü var: izinli fiil listesinin üçle
+kapalı olması (were/had/should) B2'deki „Almanca düzenli, İngilizce
+listeli“ ölçüsünün bu seviyedeki karşılığı; ve ünite 7'nin silmesi şiir
+dersinde geri dönüyor ama işlevi değişiyor — orada vurgu ve tasarruftu,
+burada BOŞLUK: „The poem is fragmentary; the reader, contemplative“
+cümlesinde fiili geri koyduğunuzda cümlede hiçbir şey bozulmuyor, şiir
+yalnızca üzerine kurulduğu bir saniyelik sessizliği yitiriyor.
+
+Ölçüm bu turda yüz yirmi beş sözlükçe maddesi ekletti ve on maddeyi
+sildirdi; altı soru yüzeyi yeniden yazıldı (seçenek ya da kabul listesi
+metinde geçmeyen bir sözcük taşıyordu). Araç tarafında bir hata çıktı ve
+kaydedilmeye değer: enjektör kapı çıktısını `%\s+[\d.]+` ile okuyordu,
+oysa kapı yüzdeyi sağa yaslıyor ve `%10.0` gibi satırlarda `%` ile sayı
+arasında boşluk kalmıyor — o tek satır sessizce atlanıyordu, üstelik
+toplam yine `%0.0` göründüğü için fark edilmesi kolay değil. Desen
+`%\s*` yapıldı.
 
 
 ## Tamamlanma ölçütü

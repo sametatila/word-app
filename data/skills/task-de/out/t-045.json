@@ -1,0 +1,352 @@
+[
+ {
+  "tr": "Eksiltme kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Tilgungskarte aus."
+ },
+ {
+  "tr": "Soru eki kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zum Frageanhang aus."
+ },
+ {
+  "tr": "Bağlaçsız koşul kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zur konjunktionslosen Bedingung aus."
+ },
+ {
+  "tr": "Ek her seferinde hesaplanıyor; yardımcı fiil, kutup ve özne belirleniyor; „hardly“ cümleyi olumsuz sayıyor; ek konuşmaya ait, karara değil.",
+  "kind": "form.facts",
+  "de": "Der Frageanhang wird jedes Mal neu berechnet; Hilfsverb, Polarität und Subjekt werden bestimmt; „hardly“ macht den Satz negativ; der Anhang gehört der Rede, nicht dem Beschluss."
+ },
+ {
+  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım kayıtta, Almancada sıradan İngilizcede işaretli.",
+  "kind": "form.facts",
+  "de": "Das Verb rückt nach vorn und die Konjunktion fällt weg; nur drei Verben sind zugelassen; der Mechanismus ist im Deutschen derselbe; der Unterschied liegt in der Sprachebene: im Deutschen alltäglich, im Englischen markiert."
+ },
+ {
+  "tr": "Fiil siliniyor ve virgül yerini tutuyor; nesne siliniyor ve fiil bir siyaseti adlandırıyor; yüklem siliniyor ve olumsuzluk kalıyor; yön dile değil biçime bağlı.",
+  "kind": "form.facts",
+  "de": "Das Verb wird getilgt und das Komma hält seine Stelle; das Objekt wird getilgt und das Verb benennt eine Politik; das Prädikat wird getilgt und die Verneinung bleibt; die Richtung hängt nicht von der Sprache ab, sondern von der Form."
+ },
+ {
+  "tr": "Ben buna tutumlu demezdim.",
+  "kind": "build.tr",
+  "de": "Ich würde das nicht sparsam nennen."
+ },
+ {
+  "tr": "Pek döngüsel değil, değil mi?",
+  "kind": "build.tr",
+  "de": "Kaum zyklisch, oder?"
+ },
+ {
+  "tr": "Pek kazançlı sayılmaz, değil mi?",
+  "kind": "build.tr",
+  "de": "Nicht gerade einträglich, oder?"
+ },
+ {
+  "tr": "Uzun öyküye bir monolog sızıyor.",
+  "kind": "build.tr",
+  "de": "In die Novelle schleicht sich ein Monolog."
+ },
+ {
+  "tr": "Taahhütnameyi bağlayan yalnızca bu.",
+  "kind": "build.tr",
+  "de": "Nur dies bindet die Verpflichtungserklärung."
+ },
+ {
+  "tr": "Likidite önce düşme eğiliminde olur.",
+  "kind": "build.tr",
+  "de": "Die Liquidität dürfte zuerst sinken."
+ },
+ {
+  "tr": "Uyuşmazlığa bir uyarı grevi giriyor.",
+  "kind": "build.tr",
+  "de": "In den Konflikt kommt ein Warnstreik."
+ },
+ {
+  "tr": "Kabul, ödeme aczi gerçek, gerçi yeni.",
+  "kind": "build.tr",
+  "de": "Zugegeben, die Zahlungsunfähigkeit ist real, wenn auch neu."
+ },
+ {
+  "tr": "Yollardan biri geçilmez; öteki değil.",
+  "kind": "build.tr",
+  "de": "Die eine Straße ist unpassierbar; die andere nicht."
+ },
+ {
+  "tr": "Böyle bir mağduriyet durumu seyrektir.",
+  "kind": "build.tr",
+  "de": "Ein solcher Härtefall ist selten."
+ },
+ {
+  "tr": "Polis, elinden gelse gözaltına alırdı.",
+  "kind": "build.tr",
+  "de": "Die Polizei würde festnehmen, wenn sie es könnte."
+ },
+ {
+  "tr": "Aydınlanma aklın özgür olmasını istedi.",
+  "kind": "build.tr",
+  "de": "Die Aufklärung verlangte, dass die Vernunft frei sei."
+ },
+ {
+  "tr": "Muafiyet tutarı pekâlâ yükseltilebilir.",
+  "kind": "build.tr",
+  "de": "Der Selbstbehalt dürfte durchaus erhöht werden."
+ },
+ {
+  "tr": "Harç geri alınamaz, ücret ise alınabilir.",
+  "kind": "build.tr",
+  "de": "Die Abgabe ist unwiderruflich, die Gebühr dagegen nicht."
+ },
+ {
+  "tr": "Şiir bölük pörçük; okur, derin düşünceli.",
+  "kind": "build.tr",
+  "de": "Das Gedicht ist bruchstückhaft; der Leser nachdenklich."
+ },
+ {
+  "tr": "Sendikanın elde ettiği şey bir çıkar temsili.",
+  "kind": "build.tr",
+  "de": "Was die Gewerkschaft erreicht hat, ist eine Interessenvertretung."
+ },
+ {
+  "tr": "Bir metne ideolojik demek onu okumak değildir.",
+  "kind": "build.tr",
+  "de": "Einen Text ideologisch zu nennen heißt nicht, ihn zu lesen."
+ },
+ {
+  "tr": "Dil sezgisi sana hangi kaydın uyduğunu söyler.",
+  "kind": "build.tr",
+  "de": "Das Sprachgefühl sagt dir, welche Sprachebene passt."
+ },
+ {
+  "tr": "Anlatı bakış açısının yaptığı şey esirgemektir.",
+  "kind": "build.tr",
+  "de": "Was die Erzählperspektive tut, ist vorenthalten."
+ },
+ {
+  "tr": "Metafizik olmasa bilgi kuramı daha basit olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Metaphysik, wäre die Erkenntnistheorie einfacher."
+ },
+ {
+  "tr": "Bazı yazılar kundaklama diyor; bazıları yaralama.",
+  "kind": "build.tr",
+  "de": "Manche Artikel nennen Brandstiftung, andere Körperverletzung."
+ },
+ {
+  "tr": "Hiçbir iddianın paradoksal olmamasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie verlangen, dass keine Behauptung paradox sei."
+ },
+ {
+  "tr": "Hazırcevaplık konuşma çekingenliğini iyileştiremez.",
+  "kind": "build.tr",
+  "de": "Schlagfertigkeit kann eine Sprechhemmung nicht heilen."
+ },
+ {
+  "tr": "Zamanın ruhu çığır açıcı hissettirdi; on yıl değil.",
+  "kind": "build.tr",
+  "de": "Der Zeitgeist fühlte sich epochal an; das Jahrzehnt nicht."
+ },
+ {
+  "tr": "Günlük konuşma dilinde aynı satır başka türlü düşüyor.",
+  "kind": "build.tr",
+  "de": "In der Umgangssprache landet dieselbe Zeile anders."
+ },
+ {
+  "tr": "Bir görüşmeyi sadeleştirmek bir soruyu atlatmak değildir.",
+  "kind": "build.tr",
+  "de": "Ein Gespräch zu straffen heißt nicht, eine Frage zu umgehen."
+ },
+ {
+  "tr": "Borçluluk ne kadar büyümüş olsa da müvekkil ödeme aczinde değil.",
+  "kind": "build.tr",
+  "de": "So sehr die Verschuldung auch gewachsen ist, der Mandant ist nicht zahlungsunfähig."
+ },
+ {
+  "tr": "Kesin bir dille söylenince içi boş bir söz iddia gibi duyuluyor.",
+  "kind": "build.tr",
+  "de": "Nachdrücklich gesagt, klingt eine Leerformel wie eine Behauptung."
+ },
+ {
+  "tr": "O bağlama oturtuyor; o deşifre ediyor; onlar parçalara ayırıyor.",
+  "kind": "build.tr",
+  "de": "Sie kontextualisiert es; er entziffert es; sie sezieren es."
+ },
+ {
+  "tr": "Bir anımsama halk bilgisi olarak, bir eski eser şifre olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Eine Erinnerung überlebt als Überlieferung, ein Relikt als Chiffre."
+ },
+ {
+  "tr": "Dördüncü sözcük „is“: yarma cümle.",
+  "kind": "build.hint",
+  "de": "Das vierte Wort ist „is“: ein Spaltsatz."
+ },
+ {
+  "tr": "Yer başta, özne sonda.",
+  "kind": "build.hint",
+  "de": "Der Ort am Anfang, das Subjekt am Ende."
+ },
+ {
+  "tr": "Kurala yazılamayan bilgi.",
+  "kind": "build.hint",
+  "de": "Wissen, das sich nicht als Regel aufschreiben lässt."
+ },
+ {
+  "tr": "Eski kip: „be“, „is“ değil.",
+  "kind": "build.hint",
+  "de": "Der alte Modus: „be“, nicht „is“."
+ },
+ {
+  "tr": "Hız çekingenliği büyütüyor.",
+  "kind": "build.hint",
+  "de": "Tempo vergrößert die Hemmung."
+ },
+ {
+  "tr": "Ek yok: bu satır yazıya ait.",
+  "kind": "build.hint",
+  "de": "Kein Frageanhang: diese Zeile gehört der Schrift."
+ },
+ {
+  "tr": "İki taviz sözcüğü, hiçbir ödün.",
+  "kind": "build.hint",
+  "de": "Zwei Zugeständniswörter, kein Nachgeben."
+ },
+ {
+  "tr": "Taviz değil ayrım: soğuk bağlaç.",
+  "kind": "build.hint",
+  "de": "Kein Zugeständnis, sondern eine Trennung: die kalte Konjunktion."
+ },
+ {
+  "tr": "Yüklem gitmiş; „did not“ onu taşıyor.",
+  "kind": "build.hint",
+  "de": "Das Prädikat ist weg; „did not“ trägt es."
+ },
+ {
+  "tr": "Sözcükler değişmedi; söyleyiş değişti.",
+  "kind": "build.hint",
+  "de": "Die Wörter blieben gleich; der Vortrag änderte sich."
+ },
+ {
+  "tr": "Eksiltili söyleyiş, sonra hesaplanan ek.",
+  "kind": "build.hint",
+  "de": "Erst die Untertreibung, dann der berechnete Frageanhang."
+ },
+ {
+  "tr": "Üç fiil, üç kuram; hiçbiri yansız değil.",
+  "kind": "build.hint",
+  "de": "Drei Verben, drei Theorien; keines davon neutral."
+ },
+ {
+  "tr": "Üç katman: kip fiili, belirteç, edilgen.",
+  "kind": "build.hint",
+  "de": "Drei Schichten: Modalverb, Adverb, Passiv."
+ },
+ {
+  "tr": "„Alone“ öznenin ardında: yazılı alışkanlık.",
+  "kind": "build.hint",
+  "de": "„Alone“ hinter dem Subjekt: eine Gewohnheit der Schrift."
+ },
+ {
+  "tr": "Düşüş bir alışkanlığa çevrilmiş; sahibi yok.",
+  "kind": "build.hint",
+  "de": "Der Fall ist zur Gewohnheit geworden; er gehört niemandem."
+ },
+ {
+  "tr": "Olumsuzluk öznede; „be“ olduğu gibi kalıyor.",
+  "kind": "build.hint",
+  "de": "Die Verneinung steht im Subjekt; „be“ bleibt, wie es ist."
+ },
+ {
+  "tr": "Büyümeyi kabul eden, sonucu reddeden menteşe.",
+  "kind": "build.hint",
+  "de": "Das Scharnier räumt das Wachstum ein und weist den Schluss zurück."
+ },
+ {
+  "tr": "İkinci yarıda fiil yok; yerini virgül tutuyor.",
+  "kind": "build.hint",
+  "de": "In der zweiten Hälfte fehlt das Verb; das Komma hält seine Stelle."
+ },
+ {
+  "tr": "Mastar özne; olumsuz biçim çıkarımı reddediyor.",
+  "kind": "build.hint",
+  "de": "Infinitiv als Subjekt; die verneinte Form weist den Schluss zurück."
+ },
+ {
+  "tr": "Yüklem gitmiş, „is not“ onu tek başına taşıyor.",
+  "kind": "build.hint",
+  "de": "Das Prädikat ist weg, „is not“ trägt es allein."
+ },
+ {
+  "tr": "Dil düzeyi sözcükleri değil etkiyi değiştiriyor.",
+  "kind": "build.hint",
+  "de": "Die Sprachebene ändert nicht die Wörter, sondern die Wirkung."
+ },
+ {
+  "tr": "Fiil başta, „if“ yok; koşulu söz dizimi taşıyor.",
+  "kind": "build.hint",
+  "de": "Das Verb am Anfang, kein „if“; die Wortstellung trägt die Bedingung."
+ },
+ {
+  "tr": "Nesne silinmiş; yardımcı fiil tek başına duruyor.",
+  "kind": "build.hint",
+  "de": "Das Objekt ist getilgt; das Hilfsverb steht allein."
+ },
+ {
+  "tr": "„Hardly“ cümleyi olumsuz saydırıyor; ek artı kalıyor.",
+  "kind": "build.hint",
+  "de": "„Hardly“ macht den Satz negativ; der Frageanhang bleibt positiv."
+ },
+ {
+  "tr": "Yer başta, özne sonda: olayı bildirmiyor, sahneliyor.",
+  "kind": "build.hint",
+  "de": "Der Ort am Anfang, das Subjekt am Ende: das Ereignis wird nicht berichtet, sondern inszeniert."
+ },
+ {
+  "tr": "İkinci yarı yine eksiltili; kulak kalıbı çoktan öğrendi.",
+  "kind": "build.hint",
+  "de": "Die zweite Hälfte ist wieder getilgt; das Ohr hat das Muster längst gelernt."
+ },
+ {
+  "tr": "Olumsuz mastar biçimi bir çıkarımı reddediyor, olguyu değil.",
+  "kind": "build.hint",
+  "de": "Die verneinte Infinitivform weist einen Schluss zurück, nicht die Tatsache."
+ },
+ {
+  "tr": "Geriye işaret ediyor; betimlemenin kesin olduğuna söz veriyor.",
+  "kind": "build.hint",
+  "de": "Es verweist zurück und verspricht, dass die Beschreibung genau war."
+ },
+ {
+  "tr": "Silinen fiilin yerini virgül tutuyor; boşluk dize sonunun işini görüyor.",
+  "kind": "build.hint",
+  "de": "Das Komma hält die Stelle des getilgten Verbs; die Lücke tut, was ein Zeilenumbruch täte."
+ },
+ {
+  "tr": "Dersin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Lektion: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç deliğin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Löcher: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç satırın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Zeilen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Dört satırın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der vier Zeilen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Yazılı üç satırın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei geschriebenen Zeilen: bring sie in die richtige Ordnung."
+ }
+]
