@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
-| C1 | 19–25 | bekliyor |
+| C1 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
+| C1 | 22–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1636,6 +1636,61 @@ hiçbir şey yok — sözcüğü sökebilen okur, sözcüğün bir yapısı oldu
 Ölçüm bu turda yüz bir sözlükçe maddesi ekletti ve yirmi sekiz maddeyi
 sildirdi; üç soru yüzeyi yeniden yazıldı. Tur boyunca tek bir tireli terim
 bile metne girmedi — kural artık yazarken çalışıyor, ölçerken değil.
+
+
+Ünite 19'un noktası EDAT EDİLGENİ. „Obsolescence is designed; longevity
+is paid for“ — „for“ cümlenin sonunda duruyor ve ardında hiçbir şey yok,
+çünkü „pay for something“un nesnesi özne yapılmış. İngilizce edatın
+nesnesini alıp başa çıkarıyor ve edatı yöneteceği hiçbir şey kalmadan
+arkada bırakıyor; liste uzun ve gündelik (dealt with, accounted for,
+looked after, relied on). Ölçü bu kez tek yönlü ve kesin: **ALMANCA BUNU
+HİÇ YAPAMIYOR** — Almanca edilgeni yalnız doğrudan nesneyi özne
+yapabiliyor, edatın nesnesi yerinde kalıyor, edat önünde duruyor, ve cümle
+başka yoldan kurulmak zorunda (öznesiz edilgen, başka bir fiil, ya da
+birini adlandırıp etkene dönmek). „Longevity is paid for“un sözcüğü
+sözcüğüne karşılığı yok ve çevirmen bunu neredeyse her teknik metnin ilk
+paragrafında karşılıyor. İkinci ölçü: bu biçim, bir şeye bir şey
+yapıldığını faili söylemeden yazmanın İngilizcedeki ana yolu — seviyenin
+failsiz cümle ailesinin DÖRDÜNCÜ üyesi, ve okurun üstünde en az duracağı
+üye, çünkü başa konan şey paragrafın zaten konusu olan şey.
+
+Ünite 20'nin noktası SIFIR TÜRETME. „The dismantling began; the repurpose
+did not“ — tek satırda fiilden yapılmış iki isim, iki ayrı yolla.
+„Dismantling“in eki var ve bu bin yıllık, her zaman elde hazır yol.
+„The repurpose“un hiçbir şeyi yok: ne ek, ne biçim değişikliği, ne görünür
+bir iz; isim olduğunu söyleyen tek şey önündeki sözcük. Dönüşüm dilin en
+ucuz makinesi (a build, a spend, an ask, a reveal, a read) ve öğrenilecek
+bir liste yok, çünkü eklenecek bir şey yok. Almanca bunu yapamıyor: orada
+fiilden yapılan isim her zaman bir iz bırakıyor — en azından büyük harf,
+çoğunlukla artikel, sıklıkla da ek — yani sınıf değişimi YAZIYA
+DÖKÜLÜYOR. Ölçü, bir önceki ünitenin öteki ucu: **İNGİLİZCE BİR ÜNİTE ÖNCE
+ÖNEK EKLEYEREK SÖZCÜK YAPIYORDU, BURADA HİÇBİR ŞEY EKLEMEDEN YAPIYOR** —
+iki makine de üretken, ikisi de beklemeyen okura görünmez, ve ikisinin
+bedeli de aynı: hiçten kurulmuş yeni bir sözcük TERİM gibi duruyor, ve
+planlama belgesinde başlık olarak „the repurpose“ gören okur bir yerlerde
+onun formu olduğunu varsayıyor.
+
+Ünite 21'in noktası ÇERÇEVE ÖBEĞİ: „in nominal terms“, „in real terms“,
+„in terms of scale“, „in urban design terms“ (son ikisi bir önceki ünitede
+geçmişti). Üç sözcük para hakkındaki herhangi bir iddianın önüne konabiliyor
+ve içindeki tek bir rakamı değiştirmeden iddianın ne söylediğini
+değiştiriyor: aynı bordro için ücretler nominal olarak yüzde dört yükseldi,
+reel olarak yüzde bir düştü, ve iki yarı da doğru. Asıl mesele KONUM: başta
+duran çerçeve okuru iddia gelmeden uyarıyor, dolayısıyla geri alınacak bir
+şey olmuyor; sonda duran ise daha büyüğüne inanmış okuru düzeltiyor.
+Sözcükler birebir aynı, iki cümle ayrı iş görüyor. Almanca boyutu
+çoğunlukla isimden türetilmiş bir sıfata ya da bir bileşiğe koyuyor, yani
+sınırlama cümlenin tamamının önünde yüzmüyor, sınırladığı öğeye
+bağlanıyor. Ölçü: **ÇERÇEVE TAŞINABİLİR, EK TAŞINAMAZ — İNGİLİZCE YAZAN
+OKURUN BOYUTU NE ZAMAN ÖĞRENECEĞİNİ SEÇİYOR, VE BU SEÇİMİN ÖTEKİ TARAFTA
+KARŞILIĞI YOK.**
+
+Ölçüm bu turda seksen dokuz sözlükçe maddesi ekletti ve yirmi dokuz
+maddeyi sildirdi; altı soru yüzeyi yeniden yazıldı. Bir de içerik hatası
+kapılardan değil okumaktan çıktı: ünite 21'in girişi „dört sözcük“
+diyordu, metin ise „three words“ — giriş düzeltildi ve paketler ondan
+sonra yazıldı. Kapılar sayı tutarlılığını ölçmüyor; bu sınıf yalnız
+yazarken yakalanıyor.
 
 
 ## Tamamlanma ölçütü

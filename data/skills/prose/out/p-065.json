@@ -1,0 +1,147 @@
+[
+ {
+  "tr": "Tasarım doğru, takvim yanlış.",
+  "kind": "explain",
+  "en": "The design is right and the calendar is wrong."
+ },
+ {
+  "tr": "Önemli olan dikkatli sözcük „may“.",
+  "kind": "explain",
+  "en": "The careful word that matters is „may“."
+ },
+ {
+  "tr": "Çerçeve öbeği ve gizlenen başarısızlık.",
+  "kind": "intro",
+  "en": "The frame phrase, and the failure that is hidden."
+ },
+ {
+  "tr": "Edat edilgeni ve önce gelen sorumluluk.",
+  "kind": "intro",
+  "en": "The prepositional passive, and the responsibility that comes first."
+ },
+ {
+  "tr": "Eksiksizlik eşiği ve faizin iki yarısı.",
+  "kind": "intro",
+  "en": "The threshold of completeness, and the two halves of an interest rate."
+ },
+ {
+  "tr": "Büyük taviz, tek iddia; ve ölçümü aktarmak.",
+  "kind": "intro",
+  "en": "A large concession, one claim; and reporting the measurement."
+ },
+ {
+  "tr": "Türü yadsıyan cümle ve modelin çekinceleri.",
+  "kind": "intro",
+  "en": "The sentence that denies the category, and the hedges of a model."
+ },
+ {
+  "tr": "Aynı tabloyu okuyan iki kişi, tek konu değil.",
+  "kind": "explain",
+  "en": "Two people reading the same table, and not one subject."
+ },
+ {
+  "tr": "Talep, dayanak, sıra; en sonda işe dönük öğüt.",
+  "kind": "explain",
+  "en": "The demand, the ground, the order; a practical piece of advice last."
+ },
+ {
+  "tr": "Cümle, biçim, öteki dil; en sonda kapanış satırı.",
+  "kind": "explain",
+  "en": "The sentence, the shape, the other language; the closing line last."
+ },
+ {
+  "tr": "Ekli isim ile eksiz isim; ve raporun göndermeleri.",
+  "kind": "intro",
+  "en": "The noun with an ending and the one without; and the pointers of a report."
+ },
+ {
+  "tr": "Bir açık neyi gizliyor? Hangi riski sigortalıyoruz?",
+  "kind": "intro",
+  "en": "What does a deficit hide? And which risk do we insure?"
+ },
+ {
+  "tr": "Bir ilke neyi önce sayıyor? Sıra neden karar demek?",
+  "kind": "intro",
+  "en": "What does a principle put first? And why is an order a decision?"
+ },
+ {
+  "tr": "Model neyi bilmiyor? Çekince hangi sayıyı saklıyor?",
+  "kind": "intro",
+  "en": "What does the model not know? And which number does the hedge hide?"
+ },
+ {
+  "tr": "„„Complete“ is a threshold rather than a direction.“",
+  "kind": "explain",
+  "en": "„„Complete“ is a threshold rather than a direction.“"
+ },
+ {
+  "tr": "Gönderme, sınırlama, çerçeve; en sonda sıranın önemi.",
+  "kind": "explain",
+  "en": "A pointer, a limit, a frame; the order last."
+ },
+ {
+  "tr": "Bir bulguyu seyreltmek ile oynak demek aynı şey değil.",
+  "kind": "intro",
+  "en": "Diluting a finding is not the same as calling it volatile."
+ },
+ {
+  "tr": "Tartışılan sayı, adlandırılmamış şeyin önünde duruyor.",
+  "kind": "explain",
+  "en": "The number everybody argues about stands in front of the thing nobody named."
+ },
+ {
+  "tr": "Politika işliyor ve yine de birine zarar veriyor. Kime?",
+  "kind": "intro",
+  "en": "The policy works and still harms somebody. Whom?"
+ },
+ {
+  "tr": "İki doğru, büyük bir taviz, dördüncü maliyet; en sonda biçim.",
+  "kind": "explain",
+  "en": "Two truths, one large concession, four costs; the shape last."
+ },
+ {
+  "tr": "İki oda, iki çerçeve, taşınabilirlik; en sonda sayı ile öykü.",
+  "kind": "explain",
+  "en": "Two rooms, two frames, the moving; a number and a story last."
+ },
+ {
+  "tr": "Aynı alan iki bölümde iki ad taşıyor. Gönderme neyi kurtarıyor?",
+  "kind": "intro",
+  "en": "The same area carries two names in two chapters. What does the pointer save?"
+ },
+ {
+  "tr": "Aynı satırda fiilden iki isim. İkisi neden aynı yolla yapılmamış?",
+  "kind": "intro",
+  "en": "Two nouns out of verbs in one line. Why were they not made the same way?"
+ },
+ {
+  "tr": "Cümlenin sonundaki edatın ardında hiçbir şey yok. Nesnesi nerede?",
+  "kind": "intro",
+  "en": "Nothing follows the preposition at the end of the sentence. Where is its object?"
+ },
+ {
+  "tr": "Eleştiri haklı ve yine de fatura ödeniyor. İki yarı nasıl duruyor?",
+  "kind": "intro",
+  "en": "The criticism is right and the bill is paid anyway. How do the two halves stand?"
+ },
+ {
+  "tr": "Talep eden bir kurum ve gömülen bir usulsüzlük. Sıra neden önemli?",
+  "kind": "intro",
+  "en": "A regulator that demands and a misconduct that is buried. Why does the order matter?"
+ },
+ {
+  "tr": "Fiil başta, bağlaç yok; ortak alanın neden yapıldığını adlandırıyor.",
+  "kind": "explain",
+  "en": "The verb first, no conjunction; it names what the commons is made of."
+ },
+ {
+  "tr": "Meydan canlandı, komşular daha az. Hangi sözcük hangisini iptal ediyor?",
+  "kind": "intro",
+  "en": "The square was revitalized, the neighbours less so. Which word cancels which?"
+ },
+ {
+  "tr": "Üç sözcük tek rakamı değiştirmeden iddiayı değiştiriyor. Nerede duruyorlar?",
+  "kind": "intro",
+  "en": "Three words change the claim without changing a single figure. Where do they stand?"
+ }
+]

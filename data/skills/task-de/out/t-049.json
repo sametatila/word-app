@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "Çerçeve kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Rahmenkarte aus."
+ },
+ {
+  "tr": "Dönüşüm kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Konversionskarte aus."
+ },
+ {
+  "tr": "Edat edilgeni kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zum Präpositionalpassiv aus."
+ },
+ {
+  "tr": "Edatın nesnesi özne oluyor; edat arkada kalıyor; Almanca bunu hiç yapamıyor; biçim faili söylemeden yazmanın dördüncü yolu.",
+  "kind": "form.facts",
+  "de": "Das Objekt der Präposition wird zum Subjekt; die Präposition bleibt zurück; das Deutsche kann das überhaupt nicht; die Form ist der vierte Weg, ohne den Handelnden zu schreiben."
+ },
+ {
+  "tr": "Fiil hiçbir ek almadan isim oluyor; isim olduğunu önündeki sözcük söylüyor; Almanca her seferinde görünür iz bırakıyor; bedeli sözcüğün terim gibi durması.",
+  "kind": "form.facts",
+  "de": "Das Verb wird ohne jede Endung zum Nomen; dass es ein Nomen ist, sagt allein das Wort davor; das Deutsche hinterlässt jedes Mal eine sichtbare Spur; der Preis ist, dass das Wort wie ein Fachbegriff aussieht."
+ },
+ {
+  "tr": "Çerçeve iddianın ölçüldüğü boyutu adlandırıyor; başta uyarıyor, sonda düzeltiyor; Almanca boyutu sıfata ya da bileşiğe koyuyor; çerçeve taşınabilir, ek taşınamaz.",
+  "kind": "form.facts",
+  "de": "Der Rahmen benennt die Dimension, an der die Behauptung gemessen wird; am Anfang warnt er, am Ende korrigiert er; das Deutsche steckt die Dimension in ein Adjektiv oder ein Kompositum; ein Rahmen lässt sich verschieben, eine Endung nicht."
+ },
+ {
+  "tr": "Atık önleme bir madde döngüsü değildir.",
+  "kind": "build.tr",
+  "de": "Abfallvermeidung ist kein Stoffkreislauf."
+ },
+ {
+  "tr": "Kopma, gerçek olsa da, yeterlilik sağlamıyor.",
+  "kind": "build.tr",
+  "de": "Die Entkopplung liefert, wenn auch real, keine Suffizienz."
+ },
+ {
+  "tr": "Sökme başladı; yeniden işlevlendirme başlamadı.",
+  "kind": "build.tr",
+  "de": "Der Rückbau begann; die Umnutzung nicht."
+ },
+ {
+  "tr": "Bir bulguyu seyreltmek ona oynak demek değildir.",
+  "kind": "build.tr",
+  "de": "Einen Befund zu verwässern heißt nicht, ihn volatil zu nennen."
+ },
+ {
+  "tr": "Eskime tasarlanır; uzun ömürlülüğün parası ödenir.",
+  "kind": "build.tr",
+  "de": "Obsoleszenz wird geplant; für Langlebigkeit wird bezahlt."
+ },
+ {
+  "tr": "Evler bakımsız kalıyor; salonlar harabeye dönüyor.",
+  "kind": "build.tr",
+  "de": "Die Häuser verfallen; die Hallen zerfallen."
+ },
+ {
+  "tr": "Meydana canlılık kazandırıldı; komşulara, daha az.",
+  "kind": "build.tr",
+  "de": "Der Platz wurde belebt; die Nachbarn weniger."
+ },
+ {
+  "tr": "Basın bülteninde ekonomik daralma, modelde durgunluk.",
+  "kind": "build.tr",
+  "de": "In der Pressemitteilung ist es ein Abschwung, im Modell Stagnation."
+ },
+ {
+  "tr": "Döküntü çürüyebilirse yenilenme kapasitesi tutabilir.",
+  "kind": "build.tr",
+  "de": "Die Regenerationsfähigkeit hält vielleicht, wenn die Streu sich zersetzen kann."
+ },
+ {
+  "tr": "Deflasyon bir sayıdır; konjonktür döngüsü bir öyküdür.",
+  "kind": "build.tr",
+  "de": "Deflation ist eine Zahl; der Konjunkturzyklus ist eine Geschichte."
+ },
+ {
+  "tr": "Bankanın değer kaybı dediğine reel ekonomi zarar diyor.",
+  "kind": "build.tr",
+  "de": "Was die Bank eine Abwertung nennt, nennt die Realwirtschaft einen Verlust."
+ },
+ {
+  "tr": "Metali geri kazanıp ikincil hammadde olarak satıyorlar.",
+  "kind": "build.tr",
+  "de": "Sie gewinnen das Metall zurück und verkaufen es als Sekundärrohstoff."
+ },
+ {
+  "tr": "Doğal sermaye olmasa hiçbir ortak kullanım alanı tutmazdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht das Naturkapital, würde keine Allmende halten."
+ },
+ {
+  "tr": "Kurtarma paketinin arkasında bir spekülasyon balonu duruyor.",
+  "kind": "build.tr",
+  "de": "Hinter dem Rettungspaket steht eine Spekulationsblase."
+ },
+ {
+  "tr": "Konjonktür karşıtı olsa da maliye politikası çok geç geliyor.",
+  "kind": "build.tr",
+  "de": "Wenn auch antizyklisch, kommt die Fiskalpolitik zu spät."
+ },
+ {
+  "tr": "Otomobil odaklı, dediler, ve trafik felcine karşı epeyce iyi.",
+  "kind": "build.tr",
+  "de": "Autogerecht, sagten sie, und ziemlich gut gegen den Verkehrskollaps."
+ },
+ {
+  "tr": "Burada soylulaştırma yok; yoğunlaştırıyor ve elden geçiriyoruz.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine Gentrifizierung; wir verdichten nach und sanieren."
+ },
+ {
+  "tr": "İhtiyat ilkesi koruma sorumluluğunun önce gelmesini talep eder.",
+  "kind": "build.tr",
+  "de": "Das Vorsorgeprinzip verlangt, dass die Schutzverantwortung vorrangig sei."
+ },
+ {
+  "tr": "Yukarıdaki mekânsal planlama aşağıda bir imar planına dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Die oben genannte Raumplanung wird unten zu einem Bebauungsplan."
+ },
+ {
+  "tr": "Bütçe açığının yaptığı şey bir piyasa başarısızlığını gizlemektir.",
+  "kind": "build.tr",
+  "de": "Was das Haushaltsdefizit tut, ist ein Marktversagen zu verbergen."
+ },
+ {
+  "tr": "Her ifşacının, usulsüzlük gömülmeden önce dinlenmesini istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie verlangen, dass jeder Hinweisgeber angehört werde, bevor das Fehlverhalten zugeschüttet ist."
+ },
+ {
+  "tr": "Şeffaflık eksikliği olmasa hiçbir bildirim birimine gerek olmazdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die fehlende Transparenz, bräuchte es keine Meldestelle."
+ },
+ {
+  "tr": "Finansal düzenleyici kurum açığa çıkarmanın eksiksiz olmasını talep eder.",
+  "kind": "build.tr",
+  "de": "Die Finanzaufsicht verlangt, dass die Offenlegung vollständig sei."
+ },
+ {
+  "tr": "Para politikası ne kadar işlese de politika faizi gençlere zarar veriyor.",
+  "kind": "build.tr",
+  "de": "So sehr die Geldpolitik wirkt, der Leitzins schadet den Jungen."
+ },
+ {
+  "tr": "Sonluluğun farkında olsa da döngüsel ekonomi hâlâ büyümeye ihtiyaç duyuyor.",
+  "kind": "build.tr",
+  "de": "Wenn auch der Endlichkeit bewusst, braucht die Kreislaufwirtschaft weiterhin Wachstum."
+ },
+ {
+  "tr": "Bir geri besleme döngüsü sistemi pekâlâ devrilme noktasının ötesine itebilir.",
+  "kind": "build.tr",
+  "de": "Eine Rückkopplungsschleife kann das System durchaus über einen Kipppunkt hinausschieben."
+ },
+ {
+  "tr": "Moratoryum bir söz olarak, inşaatın durdurulması bir tarih olarak sağ kalıyor.",
+  "kind": "build.tr",
+  "de": "Das Moratorium überlebt als Versprechen, der Baustopp als Datum."
+ },
+ {
+  "tr": "Biri yönlendirici etki bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
+  "kind": "build.tr",
+  "de": "Der eine berichtet eine Lenkungswirkung; der andere zweifelt am Transformationsprozess."
+ },
+ {
+  "tr": "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet eder.",
+  "kind": "build.tr",
+  "de": "Was den Maßstab angeht, dient ein kleinteiliges Quartier der Erreichbarkeit besser."
+ },
+ {
+  "tr": "Büyüme eleştirisi ne kadar haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor.",
+  "kind": "build.tr",
+  "de": "So berechtigt die Wachstumskritik ist, der Wachstumszwang bezahlt die Renten."
+ },
+ {
+  "tr": "Tasarım doğru, takvim yanlış.",
+  "kind": "build.hint",
+  "de": "Der Entwurf stimmt, der Kalender nicht."
+ },
+ {
+  "tr": "Biri niyet, öteki hukuki belge.",
+  "kind": "build.hint",
+  "de": "Das eine ist eine Absicht, das andere ein Rechtsdokument."
+ },
+ {
+  "tr": "Varsayım aynı zamanda bir itiraf.",
+  "kind": "build.hint",
+  "de": "Die Annahme ist zugleich ein Eingeständnis."
+ },
+ {
+  "tr": "Önemli olan dikkatli sözcük „may“.",
+  "kind": "build.hint",
+  "de": "Das entscheidende vorsichtige Wort ist „may“."
+ },
+ {
+  "tr": "Son sözcük bir yön değil, bir eşik.",
+  "kind": "build.hint",
+  "de": "Das letzte Wort ist keine Richtung, sondern eine Schwelle."
+ },
+ {
+  "tr": "Sondaki iltifatı bir yüzyıl sınadı.",
+  "kind": "build.hint",
+  "de": "Das Kompliment am Ende hat ein ganzes Jahrhundert geprüft."
+ },
+ {
+  "tr": "İki sözcük bütün projeyi bildiriyor.",
+  "kind": "build.hint",
+  "de": "Zwei Wörter berichten das ganze Projekt."
+ },
+ {
+  "tr": "Sıra kuralın kendisi: önce dinlenmek.",
+  "kind": "build.hint",
+  "de": "Die Reihenfolge ist die Regel selbst: zuerst angehört werden."
+ },
+ {
+  "tr": "Biri sütunu, öteki otuz yılı konuşuyor.",
+  "kind": "build.hint",
+  "de": "Der eine spricht über die Spalte, der andere über dreißig Jahre."
+ },
+ {
+  "tr": "Baştaki tavizin içinde bütün bir öbek var.",
+  "kind": "build.hint",
+  "de": "Im Zugeständnis am Anfang steckt eine ganze Phrase."
+ },
+ {
+  "tr": "Biri kâğıt hakkında, öteki dünya hakkında.",
+  "kind": "build.hint",
+  "de": "Das eine handelt vom Papier, das andere von der Welt."
+ },
+ {
+  "tr": "Çerçeve iddiadan önce boyutu adlandırıyor.",
+  "kind": "build.hint",
+  "de": "Der Rahmen benennt die Dimension vor der Behauptung."
+ },
+ {
+  "tr": "İki fiil, tek özne; ikincisinde adıl nesne.",
+  "kind": "build.hint",
+  "de": "Zwei Verben, ein Subjekt; beim zweiten ein Pronomen als Objekt."
+ },
+ {
+  "tr": "Biri yapmama kararı, öteki sonrası için plan.",
+  "kind": "build.hint",
+  "de": "Das eine ist die Entscheidung, es nicht zu machen, das andere ein Plan für danach."
+ },
+ {
+  "tr": "Fiil gitmiş; geriye kalan edat farkı taşıyor.",
+  "kind": "build.hint",
+  "de": "Das Verb ist weg; die verbliebene Präposition trägt den Unterschied."
+ },
+ {
+  "tr": "Biri ekli, öteki eksiz: ikisi de fiilden isim.",
+  "kind": "build.hint",
+  "de": "Das eine mit Endung, das andere ohne: beide sind Nomen aus Verben."
+ },
+ {
+  "tr": "Edatın nesnesi özne olmuş; edat arkada kalmış.",
+  "kind": "build.hint",
+  "de": "Das Objekt der Präposition ist Subjekt geworden; die Präposition ist zurückgeblieben."
+ },
+ {
+  "tr": "Tartışılan sayı, adlandırılmamış şeyin önünde.",
+  "kind": "build.hint",
+  "de": "Die umstrittene Zahl steht vor dem Unbenannten."
+ },
+ {
+  "tr": "Dokuz sözcükte iki koşul; işi ikincisi görüyor.",
+  "kind": "build.hint",
+  "de": "Zwei Bedingungen in neun Wörtern; die Arbeit leistet die zweite."
+ },
+ {
+  "tr": "İki yarı da doğru; hiçbiri ötekini yanıtlamıyor.",
+  "kind": "build.hint",
+  "de": "Beide Hälften sind wahr; keine beantwortet die andere."
+ },
+ {
+  "tr": "Tür yadsınıyor, örnek iki fiille kabul ediliyor.",
+  "kind": "build.hint",
+  "de": "Die Art wird verneint, der Einzelfall mit zwei Verben zugegeben."
+ },
+ {
+  "tr": "Taviz büyük; reddedilen şey değişimin yeterliliği.",
+  "kind": "build.hint",
+  "de": "Das Zugeständnis ist groß; zurückgewiesen wird, dass die Veränderung genügt."
+ },
+ {
+  "tr": "Bütün işi „prior“ yapıyor: daha güçlü değil, daha erken.",
+  "kind": "build.hint",
+  "de": "Die ganze Arbeit leistet „prior“: nicht stärker, sondern früher."
+ },
+ {
+  "tr": "İki yarı da doğru; ikincisi aynı paragrafta pek durmuyor.",
+  "kind": "build.hint",
+  "de": "Beide Hälften sind wahr; die zweite steht selten im selben Absatz."
+ },
+ {
+  "tr": "Biri gösterilerek yanlışlanabilir, öteki noktalardan çizilmiş bir biçim.",
+  "kind": "build.hint",
+  "de": "Das eine lässt sich durch Hinzeigen widerlegen, das andere ist eine durch Punkte gezogene Form."
+ }
+]
