@@ -16522,3 +16522,33 @@ de çalışması gerekiyor; o yüzden tablolar doğrudan karşılaştırılıyor
 Dört enjeksiyon doğrulandı: üreteci tek platform için koşturmak, Swift'te bir
 notayı değiştirmek, Swift bloğunu okunamaz yapmak, Kotlin'den bir ipucunu
 tamamen kaldırmak.
+
+## §11.454 — Sunucu STT sözleşmesi iki native tarafta da ölçülüyor
+
+Yürüyüşün **cepte / ekran-kapalı** yolu sesi native tarafta kaydedip
+`/api/stt`e **kendisi** gönderiyor (RN `fetch` arka planda takılıyor). Yani
+sözleşme üç yerde birden yazılı ve üçünün aynı olması gerekiyor:
+
+- sunucu: `form.get("audio" | "language" | "expected" | "mode")`
+- Kotlin: multipart alan adları + kayıt biçimi
+- Swift: aynısı
+
+Bir alan adı tek platformda değişirse sunucu 400 dönüyor, `uploadStt` `null`
+veriyor ve yürüyüş turu **sessizce hiçbir şey duymuyor** — hata görünmüyor,
+çünkü o yol zaten "duyamadım"a düşmek üzere tasarlanmış. Ölçülmezse bir
+platformda cep modu tümden çalışmaz ve kimse sebebini bulamaz.
+
+Kayıt biçimi de ölçünün içinde: sunucu 16 kHz **mono** PCM bekliyor. Bir
+platform 44.1 kHz kaydederse dosya büyür, yükleme yavaşlar, bazı sağlayıcı
+sessiz döner — yine görünmez bir kusur. (44100 aynı dosyalarda **ses ipucu**
+sentezinin oranı; ölçü karıştırmamak için kayıt yolundaki değeri arıyor.)
+
+Ölçüldü: bugün üçü de aynı (`audio+expected+language+mode`, 16000, mono).
+
+Dört enjeksiyon doğrulandı: Swift'te bir alan adını değiştirmek, Swift'in
+kayıt oranını 44100 yapmak, sunucuya yeni bir alan eklemek, Kotlin'i stereo
+kaydettirmek.
+
+Bir yan not: ilk yazımda kanal ölçüsünü `/CHANNEL_IN_MONO/` diye yazdım ve
+**meta-kapı** (§138) reddetti — sınırsız ad deseni. `\b` eklendi. Kapıları
+denetleyen kapının işe yaradığı yer tam burası.

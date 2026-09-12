@@ -17686,6 +17686,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ---------------------------- 316. SUNUCU STT SOZLESMESI IKI NATIVE TARAFTA
+   *
+   * Yuruyusun CEPTE / EKRAN-KAPALI yolu sesi NATIVE tarafta kaydedip
+   * `/api/stt`e kendisi gonderiyor (RN `fetch` arka planda takiliyor). Yani
+   * sozlesme uc yerde birden yazili: ucun de ayni olmasi gerekiyor.
+   *
+   *   sunucu  `form.get("audio"|"language"|"expected"|"mode")`
+   *   Kotlin  multipart alan adlari + kayit bicimi
+   *   Swift   multipart alan adlari + kayit bicimi
+   *
+   * Bir alan adi tek platformda degisirse sunucu 400 donuyor, `uploadStt`
+   * `null` veriyor ve yuruyus turu SESSIZCE hicbir sey duymuyor - hata
+   * gorunmuyor cunku o yol zaten "duyamadim"a dusmek uzere tasarlanmis.
+   *
+   * KAYIT BICIMI de olcunun icinde: sunucu 16 kHz mono PCM bekliyor
+   * (`lib/stt` zinciri). Bir platform 44.1 kHz kaydederse dosya buyur, yukleme
+   * yavaslar ve bazi saglayici sessiz doner - yine gorunmez bir kusur.
+   * (44100 ayni dosyalarda SES IPUCU sentezinin orani; karistirmamak icin
+   * olcu kayit yolundaki degeri ariyor.) */
+  {
+    const uc = sil(read("src/app/api/stt/route.ts"));
+    const kt = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
+    const sw = read("mobile/ios/Lernomi/LernomiSpeech.swift");
+    const sunucuAlan = [...uc.matchAll(/form\.get\("(\w+)"\)/g)].map((m) => m[1]).sort();
+    /* Multipart alan adlari: `name=\"x\"` (kacisli tirnak, iki dilde de oyle). */
+    const alanlar = (src) => [...new Set([...src.matchAll(/name=\\"(\w+)\\"/g)].map((m) => m[1]))].sort();
+    /* Kotlin gonderen alanlari dizgi olarak da ekliyor (`"language"` gibi):
+       ikisini birlestirip sunucunun bekledigi kumeyle karsilastiriyoruz. */
+    const gonderilen = (src) => {
+      const i = src.search(/fun uploadStt|func uploadStt/);
+      const blok = i < 0 ? "" : src.slice(i, i + 4000);
+      return [...new Set([...alanlar(blok), ...[...blok.matchAll(/"(audio|language|expected|mode)"/g)].map((m) => m[1])])].sort();
+    };
+    const kayitOrani = (src, desen) => (src.match(desen) ?? [])[1] ?? "YOK";
+    sameList(
+      "stt sozlesmesi iki native tarafta",
+      [
+        "sunucu alan=" + sunucuAlan.join("+"),
+        "kotlin alan=" + gonderilen(kt).join("+"),
+        "swift alan=" + gonderilen(sw).join("+"),
+        "kotlin kayit orani=" + kayitOrani(kt, /private val sampleRate = (\d+)/),
+        "swift kayit orani=" + kayitOrani(sw, /AVSampleRateKey: (\d+)/),
+        "kotlin kanal=" + (/\bCHANNEL_IN_MONO\b/.test(kt) ? "mono" : "YOK"),
+        "swift kanal=" + (/AVNumberOfChannelsKey: 1\b/.test(sw) ? "mono" : "YOK"),
+      ],
+      [
+        "sunucu alan=audio+expected+language+mode",
+        "kotlin alan=audio+expected+language+mode",
+        "swift alan=audio+expected+language+mode",
+        "kotlin kayit orani=16000",
+        "swift kayit orani=16000",
+        "kotlin kanal=mono",
+        "swift kanal=mono",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
