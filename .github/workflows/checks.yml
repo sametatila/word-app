@@ -91,6 +91,28 @@ jobs:
       # tasarım ölçekleri için onu yapıyor.
       - name: Tasarım jetonları
         run: npm run check:tokens
+      # AYNI AİLEDEN DOKUZ KAPI DAHA, hepsi yazıldı ve hiç çağrılmadı.
+      # `check:colors` ile `check:tokens` CI'daydı, kardeşleri değildi —
+      # ölçüldü (2026-09-12): dokuzu da BUGÜN sıfır hata veriyor ve toplam
+      # altı saniye sürüyor. Bir kapının yazılıp çağrılmaması, yazılmamasıyla
+      # aynı kapı; üstelik daha kötüsü, çünkü kimse eksikliği aramıyor.
+      # Ne ölçüyorlar: `client-boundary` sunucu-yalnız modülün istemciye
+      # sızmasını, `purge` silme yolunun tabloları eksiksiz süpürdüğünü,
+      # `key-families` sözlük anahtar ailelerinin üç dilde birlikte
+      # taşındığını, `radius`/`type`/`hit`/`selection`/`loading`/`title` ise
+      # yarıçap, tipografi ölçeği, dokunma hedefi, seçim durumu, iskelet ve
+      # başlık kurallarını. Hepsi saf statik; ne veritabanı ne ağ istiyor.
+      - name: Tasarım ve kod kapıları
+        run: |
+          npm run check:client-boundary
+          npm run check:purge
+          npm run check:key-families
+          npm run check:radius
+          npm run check:type
+          npm run check:hit
+          npm run check:selection
+          npm run check:loading
+          npm run check:title
       # Mobil paket kaynakla aynı içeriği taşıyor mu. DÖRT köprü ELLE
       # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda
@@ -215,6 +237,41 @@ jobs:
           npm run check:lessons-cando
           npm run check:lessons-cando-de
           npm run check:lessons
+      # HATTIN KENDİ KAPILARI — dokuzu da yazılmış, hiçbiri çağrılmıyordu.
+      # Yukarıdaki blok TÜRETİLMİŞ tarafı ölçüyor (`-de`, `-native`, `-prose`);
+      # bunlar KAYNAK tarafı: ders sözlükçesi, kalıplar, üstveri, rol yapma,
+      # anlatım, kelime turu, betik, sınav ve beceri düzyazısı. Türetilmiş
+      # tarafın kapısı yeşilken kaynağın bozulması mümkün ve tam da sessiz
+      # bozulma sınıfı — çözücü kaynağı bulamayınca Türkçeye düşüyor.
+      # Ölçüldü (2026-09-12): dokuzu da sıfır hata, toplam dört saniye.
+      #
+      # `test:content` bunların üstünde duruyor: uyarı bütçesi ETİKET başına
+      # ve `data/content/baseline.json` bugün TAMAMEN SIFIR. Bütçe mekanizması
+      # tam da CI için yazılmıştı (`--baseline` ile bilinçli kabul) ama kapı
+      # hiç çağrılmadı; yani bütçe aşılsa kimse görmeyecekti.
+      - name: Ders ve içerik kaynağı
+        run: |
+          npm run check:lessons-vocab
+          npm run check:lessons-patterns
+          npm run check:lessons-meta
+          npm run check:lessons-roleplay
+          npm run check:lessons-lecture
+          npm run check:lessons-word
+          npm run check:lessons-script
+          npm run check:lessons-exam
+          npm run check:skills-prose
+          npm run test:content
+      # Sınav üretiminin testleri. `test:exams` ile `test:mock-exams` kâğıtları,
+      # `test:exam-build` sınav kurucusunu (bu betik bir dönem SESSİZCE
+      # kırıktı: `ensureProfile` eklenince saplama veritabanı geride kaldı,
+      # kimse çalıştırmadığı için aylarca fark edilmedi), `test:loop` ise
+      # yineleme mantığını ölçüyor. Dördü de veritabanı ve ağ istemiyor.
+      - name: Sınav üretimi
+        run: |
+          npm run test:exams
+          npm run test:mock-exams
+          npm run test:exam-build
+          npm run test:loop
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler
