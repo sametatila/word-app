@@ -79,7 +79,37 @@ const STEP = /\brounded-(?:[a-z]{1,2}-)?(?:sm|md|lg|xl|2xl|3xl)\b/g;
  *      yoksa jeton degistiginde bu yuva geride kalir.
  *   2. Sayi 10'un ustunde, olcekte yok ve bir dairenin yarisi da degil.
  */
-const RADII = { 10: "sm", 14: "md", 20: "lg", 26: "xl", 34: "xxl" };
+/*
+ * OLCEK DOSYADAN OKUNUYOR, BURADA KOPYA DURMUYOR.
+ *
+ * Bu tablo elle yazili duruyordu: `{ 10: "sm", 14: "md", 20: "lg", 26: "xl",
+ * 34: "xxl" }`. Yani olcegi POLISLEYEN kapi, olcegin bir KOPYASINI tasiyordu -
+ * projenin her yerde savastigi sinif. `radii.lg` 20'den 22'ye cekilse kapi
+ * hala 20'yi "jeton" sayar, 22'yi "olcek disi" diye bildirirdi: kirmizi
+ * verirken yanlis sebebi soyleyen bir kapi.
+ *
+ * Vakumluk taramasinda bulundu (`mobile/src/theme/tokens.ts` bosaltildiginda
+ * bu kapinin kilini kipirdatmamasi ipucuydu). Olcek artik kaynaktan geliyor
+ * ve okunamazsa kapi DURUYOR - sessizce bos bir olcekle calismiyor.
+ *
+ * `pill` (999) disarida: o bir basamak degil "tamamen yuvarlak" isareti.
+ */
+const TOKENS = path.join(ROOT, "mobile/src/theme/tokens.ts");
+const RADII = (() => {
+  const src = fs.readFileSync(TOKENS, "utf8");
+  const blok = src.match(/export const radii = \{([^}]*)\}/);
+  if (!blok) {
+    console.error(`check:radius — mobil yaricap olcegi okunamadi (${path.relative(ROOT, TOKENS)} icinde \`radii\` yok).`);
+    process.exit(1);
+  }
+  const out = {};
+  for (const m of blok[1].matchAll(/(\w+):\s*(\d+)/g)) if (m[1] !== "pill") out[m[2]] = m[1];
+  if (Object.keys(out).length < 5) {
+    console.error(`check:radius — yaricap olcegi eksik okundu (${Object.keys(out).length} basamak, en az 5 bekleniyor).`);
+    process.exit(1);
+  }
+  return out;
+})();
 const BAR_MAX = 9;
 /** Yaricap civardaki bir genislik/yuksekligin yarisi mi (daire/pill)? */
 function isCircle(lines, i, r) {

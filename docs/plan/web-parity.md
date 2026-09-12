@@ -16453,3 +16453,31 @@ Yöntem notu: ilk denemem `read()`i boş dizge döndürecek şekilde yamayıp **
 kapıları birden ölçmekti; betik o girdiyle çöküyor (bir dosyanın yok olması
 gürültülü bir hata — istenen davranış), yani toplu vakumluk testi o yolla
 yapılamıyor. Ölçü bu yüzden çağrıların yapısı üzerinden yapıldı.
+
+## §11.452 — Vakumluk taraması: bir kapı polislediği ölçeğin kopyasını taşıyordu
+
+§11.451'in sorusunu bu kez **dosya dosya** sordum: on beş tasarım dosyası tek
+tek **boşaltılıp** kapılar koşturuldu. On dördünü `check:parity` tek başına
+yakaladı. Bir tanesi geçti — `mobile/src/theme/tokens.ts` — ama o bir delik
+değildi: `check:tokens` ve `check:type` onun yokluğunu ayrıca yakalıyor (ölçüldü).
+
+Asıl bulgu ipucun kendisiydi: **`check:radius` o dosya boşalınca kılını
+kıpırdatmıyordu.** Sebebi, ölçeği okumuyor olması — tabloyu **elle** taşıyordu:
+
+```
+const RADII = { 10: "sm", 14: "md", 20: "lg", 26: "xl", 34: "xxl" };
+```
+
+Yani ölçeği **polisleyen** kapı, ölçeğin bir **kopyasını** tutuyordu — projenin
+her yerde savaştığı sınıf. `radii.lg` 20'den 22'ye çekilse kapı hâlâ 20'yi
+"jeton" sayar, 22'yi "ölçek dışı" diye bildirirdi: kırmızı verirken **yanlış
+sebebi** söyleyen bir kapı.
+
+Ölçek artık kaynaktan geliyor (`mobile/src/theme/tokens.ts` `radii`), `pill`
+(999) dışarıda — o bir basamak değil "tamamen yuvarlak" işareti. Okunamazsa
+kapı **duruyor**: sessizce boş bir ölçekle çalışmıyor.
+
+Üç enjeksiyon: `radii` bloğunu okunamaz yapmak (kapı duruyor), basamakları
+eksiltmek (kapı duruyor), ve `radii.lg`yi değiştirmek — sonuncusu **geçiyor** ve
+bu doğru: `check:radius` yalnız **ham sayıları** polisliyor, mobil kodda ham
+sayı yok; web↔mobil ölçek eşitliği `check:tokens`in işi.
