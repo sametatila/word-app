@@ -15966,6 +15966,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const i = src.indexOf("function " + ad);
       return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i));
     };
+    /* Ortak katlamaya DELEGE etmiyor mu: ya `foldCompare` cagrisi yok, ya da
+       kendi kucultme/umlaut zincirini yeniden yaziyor. */
+    const kendiZincir = (g) =>
+      !/return foldCompare\(/.test(g) || /toLocaleLowerCase\(|\.replace\(\/ß\/g/.test(g);
     sameList(
       "bosluksuz katlama ayni hatti izliyor",
       [
@@ -15984,9 +15988,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            gecmeli. Web kendi zincirini yaziyordu: sabit `de-DE` kucultme,
            kosulsuz umlaut katlamasi ve SAYI katlamasi YOK - yani "two" ile
            "2" mobilde kabul ediliyor, webde edilmiyordu. Mobil bu duzeltmeyi
-           coktan yapmisti; kapi ikisini birden tutuyor. */
-        "web beceri katlamasi=" + (/return foldCompare\(s\)/.test(govde(webT2, "fold")) ? "ortak" : "kendi zinciri"),
-        "mobil beceri katlamasi=" + (/return foldCompare\(s, currentTargetLang\(\)\)/.test(govde(mobT2, "fold")) ? "ortak" : "kendi zinciri"),
+           coktan yapmisti; kapi ikisini birden tutuyor.
+
+           OLCUT SATIRIN KENDISI DEGIL, DELEGASYON. Once tam satir araniyordu
+           (`return foldCompare(s)`) ve kisaltma katlamasi eklenince
+           (`foldCompare(foldEnglishSpelling(foldContractions(s, lang)…))`)
+           kapi kirmizi yandi - oysa delegasyon aynen duruyordu, yalniz
+           icerisi sarilmisti. Artik iki sey birden olculuyor: `foldCompare`a
+           donuluyor MU, ve fonksiyon kendi kucultme/umlaut zincirini yeniden
+           yaziyor MU. Ikincisi kapinin disi: gevsetmek degil, dogru yeri
+           olcmek. */
+        "web beceri katlamasi=" + (kendiZincir(govde(webT2, "fold")) ? "kendi zinciri" : "ortak"),
+        "mobil beceri katlamasi=" + (kendiZincir(govde(mobT2, "fold")) ? "kendi zinciri" : "ortak"),
         "harf tablosu=" + (
           /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(webT, "foldCase"))
           && /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(mobT, "foldCase"))

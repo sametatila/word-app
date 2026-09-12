@@ -51,7 +51,8 @@ const S = (
 ): Sample => ({
   id,
   /* Örnekler Türkçe geri bildirim bekliyor: insan puanları da Türkçe yazıldı. */
-  req: { kind, level, task: { prompt, ...extra }, answer: { text }, native: "tr" },
+  /* Örnek küme ALMANCA kursun; `lang` zorunlu alan (bkz. assess-prompts). */
+  req: { kind, level, lang: "de", task: { prompt, ...extra }, answer: { text }, native: "tr" },
   human,
   expectErrors,
   expectSpans,

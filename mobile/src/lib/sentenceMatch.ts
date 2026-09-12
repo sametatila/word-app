@@ -2,7 +2,7 @@ import { classifyOrder, levenshtein, type ErrorType } from "./errors";
 import { foldContractions } from "./contractions";
 import { foldEnglishSpelling } from "./en-spelling";
 import { foldNumbers } from "./numbers";
-import { currentTargetLang } from "./courses";
+import { currentTargetLang, type TargetLang } from "./courses";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -51,11 +51,11 @@ export type SentenceMatch = {
  * "at five o'clock" ↔ "at 5 o'clock" çalışmıyordu) ve küçültme yanlış yerel
  * ile yapılıyordu. Mobil `lib/textFold` `foldCase` karşılığı.
  */
-export function foldSentence(s: string, lang: string = currentTargetLang()): string {
+export function foldSentence(s: string, lang: TargetLang = currentTargetLang()): string {
   // Sayı sözcükleri rakama: tanıyıcı/yazan "fünf"ü "5" verebiliyor, hedef
   // "fünf". Cümlede "um fünf Uhr" ↔ "um 5 Uhr" eşleşsin.
-  // Kısaltma açılıyor (noktalama temizliği kesme işaretini boşluğa çeviriyor;
-  // "I'm" ile "I am" yoksa buluşamaz — `lib/contractions.ts`).
+  // Kısaltma açılıyor (aşağıdaki noktalama temizliği kesme işaretini boşluğa
+  // çeviriyor; "I'm" ile "I am" yoksa buluşamaz — `lib/contractions.ts`).
   const lower = foldNumbers(
     foldEnglishSpelling(
       foldContractions(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang),
@@ -74,7 +74,7 @@ export function foldSentence(s: string, lang: string = currentTargetLang()): str
 }
 
 const tokens = (s: string) => s.split(/\s+/).filter(Boolean);
-const foldTokens = (s: string, lang: string) => tokens(foldSentence(s, lang));
+const foldTokens = (s: string, lang: TargetLang) => tokens(foldSentence(s, lang));
 /** Orijinal kelimeler, noktalama atılmış — ekranda işaretlenecek parçalar. */
 const showTokens = (s: string) => tokens(s.replace(/[.,!?;:„“”"()]/g, " "));
 
@@ -116,7 +116,7 @@ function lcs(a: string[], b: string[]): [number, number][] {
   return pairs;
 }
 
-function compare(typedRaw: string, targetRaw: string, lang: string) {
+function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
   const t = foldTokens(targetRaw, lang);
   const u = foldTokens(typedRaw, lang);
   const targetMarks: TokenMark[] = new Array(t.length).fill("missing");
@@ -165,7 +165,7 @@ function compare(typedRaw: string, targetRaw: string, lang: string) {
  * aynı, eksik/fazla/yazım yok, sıra farklı) → yanlış. Karma durumlar (hem
  * sıra hem yazım) sıraya sayılır: kelimeler bilinmiş, cümle kurulamamış.
  */
-export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: string = currentTargetLang()): SentenceMatch {
+export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = currentTargetLang()): SentenceMatch {
   const candidates = [target, ...alternatives.filter((a) => a && a.trim())];
   const typedShown = showTokens(typed);
   let best: { cand: string; c: ReturnType<typeof compare> } | null = null;

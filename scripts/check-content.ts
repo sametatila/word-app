@@ -595,7 +595,7 @@ const YANLILIK_ESIK = 45;
   let kagitT = 0;
   for (const lv of ["A1", "A2", "B1", "B2", "C1"]) {
     for (let m = 0; m < 10; m++) {
-      const plan = moduleExamPlan(lv, m) as {
+      const plan = moduleExamPlan("de", lv, m) as {
         code: string;
         reading?: { questions: { de: string; tr: string; options: string[]; answer: number }[] };
         listening?: { questions: { de: string; tr: string; options: string[]; answer: number }[] };

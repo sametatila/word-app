@@ -257,8 +257,18 @@ export function currentTargetLocale(): string {
   return courseOrDefault(current).speechLocale;
 }
 
+/**
+ * Hedef dil kodu — webin `lib/courses` `TargetLang`iyle AYNI tip.
+ *
+ * Mobil tarafta yalnız `string` yazılıydı ve bu, `classifyOrder` gibi ortak
+ * saf yardımcıların imzasını iki platformda AYIRIYORDU: `check:parity`
+ * gövdeleri harfi harfine karşılaştırdığı için kapı kırmızı yanıyordu.
+ * Tipi daraltmak aynı zamanda doğru olan: değer zaten `"de" | "en"`.
+ */
+export type TargetLang = "de" | "en";
+
 /** Seçili kursun iki harfli dil kodu — sunucu STT'sine (`/api/stt`) gider. */
-export function currentTargetLang(): string {
+export function currentTargetLang(): TargetLang {
   return courseOrDefault(current).targetLang;
 }
 

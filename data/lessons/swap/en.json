@@ -159,11 +159,15 @@
   },
   {
     "lesson": "de-b1-als-wenn",
-    "why": "Rol yapma açılışı öğrenciye bir OLGU söylüyor: 'Du bist also in Izmir aufgewachsen?' Model, öğrencinin çocukluğunu nerede geçirdiğini iddia ediyor. Anlatımdaki tekrar cümlesi de aynı biyografiyi kuruyor.",
+    "why": "Rol yapma açılışı öğrenciye bir OLGU söylüyor: 'Du bist also in Izmir aufgewachsen?' Model, öğrencinin çocukluğunu nerede geçirdiğini iddia ediyor. Anlatımdaki tekrar cümlesi de aynı biyografiyi kuruyor. MODEL CÜMLE artık kendi parçasında (noktalı ve noktasız iki biçim birden takas ediliyor); önceden Türkçe açıklamanın içine gömülüydü ve İngilizce tarafta onu alıntılayan bir çift gerekiyordu — parça ayrılınca o çift karşılıksız kaldı.",
     "de": [
       [
         "Als ich ein Kind war, wohnten wir in Izmir",
         "Als ich ein Kind war, wohnten wir in Manchester"
+      ],
+      [
+        "Als ich ein Kind war, wohnten wir in Izmir.",
+        "Als ich ein Kind war, wohnten wir in Manchester."
       ],
       [
         "Du bist also in Izmir aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals.",
@@ -171,10 +175,6 @@
       ]
     ],
     "en": [
-      [
-        "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Izmir.' Childhood is a single period → als.",
-        "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Manchester.' Childhood is a single period → als."
-      ],
       [
         "So you grew up in Izmir? What was your childhood like there? Tell me about those days.",
         "So you grew up in Manchester? What was your childhood like there? Tell me about those days."

@@ -222,7 +222,11 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
  * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
  */
-export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang = currentTargetLang()): Promise<string[] | null> {
+/* `lang` HEDEF DİL DEĞİL, tanıyıcının dil kodu: yürüyüş modunda ekran
+   kapalıyken Türkçe evet/hayır dinleniyor ve buraya "tr" geçiyor.
+   Varsayılanı `currentTargetLang()` olduğu için tip çıkarımı onu
+   `TargetLang`e daraltıyordu; açıkça `string` yazılı. */
+export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang: string = currentTargetLang()): Promise<string[] | null> {
   if (!Native) return null;
   try {
     const ok = await Native.startRecording().catch(() => false);

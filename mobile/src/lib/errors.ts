@@ -1,3 +1,4 @@
+import type { TargetLang } from "./courses";
 /**
  * Hata taksonomisi — web `src/lib/errors.ts`in SAF parçası.
  *
@@ -167,7 +168,7 @@ export function classifyOrder(
   placed: string[],
   answer: string[],
   tail: string,
-  lang: string = "de",
+  lang: TargetLang = "de",
 ): ErrorType {
   if (!answer.length) return "word_order";
   if (lang === "en") return classifyOrderEn(placed, answer, tail);

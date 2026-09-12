@@ -38,7 +38,7 @@ const genel = new Map<string, number>();
 for (const seviye of hedefSeviyeler) {
  const modulSayisi = seviye === "B1" ? 18 : 10;
  for (let m = 0; m < modulSayisi; m++) {
-  const p = moduleExamPlan(seviye, m);
+  const p = moduleExamPlan("de", seviye, m);
   if (!p) { console.log(`${seviye} modül ${m + 1}: PLAN YOK`); continue; }
   const u = sinirUnite(m);
 

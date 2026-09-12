@@ -1800,16 +1800,16 @@ async function main() {
   check("tek tırnakla kapatılmış dize onarılıyor", parsedS?.errors[0]?.why_tr === "Yan cümlede fiil sonda olmalıdır" && parsedS?.errors[0]?.span[1] === 18);
   check("wrong === fix olan madde hata sayılmıyor", parsedQ?.errors.length === 1 && parsedQ.errors[0].type === "article");
   check("kaçırılmış tırnak bozulmuyor", JSON.parse(repairQuotes('{"a":"he said \\"hi\\"","b":1}')).a === 'he said "hi"');
-  const fb = fallbackAssessment({ kind: "writing", level: "A2", task: { prompt: "mesaj yaz", targets: ["Wollen wir uns treffen?", "Ich hätte gern"], constraints: ["en az 10 kelime"] }, answer: { text: "Hallo Anna, wollen wir uns morgen um drei Uhr treffen? Ich hätte gern einen Kaffee." } });
+  const fb = fallbackAssessment({ kind: "writing", level: "A2", lang: "de", task: { prompt: "mesaj yaz", targets: ["Wollen wir uns treffen?", "Ich hätte gern"], constraints: ["en az 10 kelime"] }, answer: { text: "Hallo Anna, wollen wir uns morgen um drei Uhr treffen? Ich hätte gern einen Kaffee." } });
   check("yedek: offline işaretli, hata listesi boş", fb.offline === true && fb.errors.length === 0);
   check("yedek: kelime sayısı ve kalıplar", fb.words === 15 && fb.checks.filter((c) => c.ok).length === fb.checks.length);
-  const fb2 = fallbackAssessment({ kind: "sentence", level: "A1", task: { prompt: "çevir", target: "Ich trinke Kaffee." }, answer: { text: "ben kahve içiyorum" } });
+  const fb2 = fallbackAssessment({ kind: "sentence", level: "A1", lang: "de", task: { prompt: "çevir", target: "Ich trinke Kaffee." }, answer: { text: "ben kahve içiyorum" } });
   // Denetim TÜRÜNE bakılıyor, etiketine değil: etiket artık çeviriden
   // geliyor ve dile göre değişiyor (bkz. lib/assess-client `FallbackCheck`).
   check("yedek: Türkçe metin yakalanıyor, kalıp yok", fb2.checks.some((c) => c.kind === "target_lang" && !c.ok) && fb2.score.overall < 50);
-  check("assessHash aynı cevap → aynı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: " Ich trinke. " } }) === assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "Ich trinke." } }));
-  check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", task: { prompt: "a" }, answer: { text: "x" } }));
-  const noProvider = await assess(USER, { kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }, monday);
+  check("assessHash aynı cevap → aynı özet", assessHash({ kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: " Ich trinke. " } }) === assessHash({ kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: "Ich trinke." } }));
+  check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }));
+  const noProvider = await assess(USER, { kind: "sentence", level: "A1", lang: "de", task: { prompt: "a" }, answer: { text: "x" } }, monday);
   check("sağlayıcısız ortamda not_configured", chatConfigured() ? noProvider.ok || !noProvider.ok : !noProvider.ok && noProvider.reason === "not_configured");
 
   console.log("\n30) Çevrimdışı rol yapma (WP-04)");
@@ -1938,7 +1938,7 @@ async function main() {
 
   console.log("\n35) Yazma değerlendirme kuyruğu ve arşiv (WP-30)");
   await db.delete(assessments).where(eq(assessments.userId, USER));
-  const qReq = { kind: "writing" as const, level: "A2" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-u01-w1" };
+  const qReq = { kind: "writing" as const, level: "A2" as const, lang: "de" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-u01-w1" };
   const q1 = await queueAssessment(USER, qReq, monday);
   const q2 = await queueAssessment(USER, qReq, monday);
   check("kuyruğa alındı, aynı metin ikinci kez alınmadı", q1.queued && !q2.queued && q1.id === q2.id);
@@ -2156,7 +2156,7 @@ async function main() {
   check("exam_finish kind=level:A1", evx.some((e) => e.kind === "level:A1" && e.value === 77));
   const er2 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 3, total: 12 }], seconds: 100 }, monday);
   check("aynı gün tekrar: satır güncellenir, yeni kayıt açılmaz", er2.id === er.id && (await examHistory(USER)).length === 1);
-  check("geçilen modülün yapabilirlik satırları var", examCando("A1", 2).length >= 4 && examCando("A1", 2)[0].de.startsWith("Ich kann"));
+  check("geçilen modülün yapabilirlik satırları var", examCando("de", "A1", 2).length >= 4 && examCando("de", "A1", 2)[0].de.startsWith("Ich kann"));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));
