@@ -2101,10 +2101,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      (bkz. §11.212). `challenge_play`in gerekcesi ise artik dogru degildi:
      hayatta kalma modu mobile geldi (§11.199) ve tur ozetinden girisi de
      eklendi. */
+  /* BIRI DAHA DUSTU (invite_open): "tarayici olcum katmani" diye yaziliydi ve
+     olculen sey tarayiciya ait DEGILDI - davetin ACILDIGI an. Ustelik davetin
+     acildigi yer cogunlukla telefon: uygulamasi kurulu kullanici baglantiya
+     dokununca tarayici degil derin baglanti dali calisiyor. Panelde davet
+     hunisi `share` ve `invite_open` ciftini okuyor ve varis yarisi Androidde
+     hic yazilmiyordu. Ayrica iki paylasim yuzeyi de baglantiya `src=invite`
+     isaretini koymuyordu, yani olay WEBDE DE hic yazilmiyordu (bkz. 302). */
   const WEB_OZEL = [
     "feedback_why_opened", //   kural bagi (`why.href`) IKI TARAFTA da hep null; asagida denetleniyor
     "install_prompt", //        PWA kurulum onerisi
-    "invite_open", //           tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
     "walk_capture", //          tarayicinin getUserMedia kisiti; native kaydedicide karsiligi yok
   ];
@@ -10881,13 +10887,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       return k;
     };
     const web = olaylar(walkAll("src").filter((f) => !/^src\/lib\/events\.ts$/.test(f)));
-    const mob = olaylar(walkAll("mobile/src"));
+    /* `App.tsx` KOK DIZINDE, `mobile/src`in DISINDA - ve olay yazan bir dosya
+       (acilis, derin baglanti). Taramaya girmedigi surece oradan yazilan her
+       olay "yalniz webde" gorunuyordu: `invite_open` eklenir eklenmez kapi
+       yanlis yere dustu. 44 numarali kapi bu dosyayi bastan beri ayrica
+       okuyor; burasi okumuyordu. */
+    const mob = olaylar([...walkAll("mobile/src"), "mobile/App.tsx"]);
 
-    /* Tek platformda akmasi MESRU olanlar, gerekcesi ve gerekcenin KANITI. */
+    /* Tek platformda akmasi MESRU olanlar, gerekcesi ve gerekcenin KANITI.
+       `invite_open` BURADAN DUSTU: gerekcesi "mobil derin baglanti yalniz
+       sifirlama ve dogrulama tanir" diye yaziliydi ve artik davet baglantisi
+       da uygulamada aciliyor (bkz. 302); olay iki tarafta da akiyor. */
     const TEK = new Map([
       ["install_prompt", ["web", "PWA kurulum istemi tarayiciya ait", () => /beforeinstallprompt/.test(sil(read("src/components/install-prompt.tsx")))]],
       ["panel_open", ["web", "katlanan bolum webe ozel bir yuzey", () => web.has("panel_open")]],
-      ["invite_open", ["web", "davet baglantisi web profiline aciliyor; mobil derin baglanti yalniz sifirlama ve dogrulama tanir", () => !/invite/.test(sil(read("mobile/src/lib/deepLink.ts")))]],
       ["feedback_why_opened", ["web", "gerekce §118'de yazili", () => true]],
       ["walk_capture", ["web", "gerekce §119'da yazili", () => true]],
       ["notif_prime", ["mobil", "hatirlatma izni ekrani yalniz mobilde var", () => existsSync(new URL("../mobile/src/screens/NotifPrimeScreen.tsx", import.meta.url))]],
@@ -16467,6 +16480,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
     sameSet("bulunamadi cumleleri iki platformda", mob, web, "mobil", "web");
+  }
+  /* --------------------------------------------------- 302. DAVET HUNISI TAM MI
+   *
+   * Panelde davet hunisi iki olay okuyor: `share` (paylasildi) ve
+   * `invite_open` (acildi). Iki yarisi da kopuktu.
+   *
+   * `invite_open`i yalniz web yaziyordu (`components/telemetry`) ve kosulu
+   * adresteki `src=invite` / `invite` isaretine bakiyordu. O isareti HICBIR
+   * paylasim yuzeyi koymuyordu - iki platform da ciplak `/u/<ad>` paylasiyordu
+   * - yani olay hic yazilmiyordu. Ustune mobilde boyle bir olay HIC yoktu;
+   * oysa davetin acildigi yer cogunlukla telefon: uygulamasi kurulu kullanici
+   * baglantiya dokununca tarayici degil derin baglanti dali calisiyor
+   * (`lib/deepLink` `kind: "profile"`).
+   *
+   * Olcu bes parca: iki paylasim yuzeyi de isareti KOYUYOR, mobil derin
+   * baglanti isareti OKUYOR (web ile ayni kosul), iki platform da olayi
+   * YAZIYOR, ve hunının ilk yarisi (`share`) iki tarafta da duruyor. Sonuncusu
+   * olmasa yarim bir huni yesil gorunurdu. */
+  {
+    const webPay = sil(read("src/components/social/friends-hub.tsx"));
+    const mobPay = sil(read("mobile/src/screens/FriendsScreen.tsx"));
+    const mobLink = sil(read("mobile/src/lib/deepLink.ts"));
+    const webTel = sil(read("src/components/telemetry.tsx"));
+    const mobApp = sil(read("mobile/App.tsx"));
+    sameList(
+      "davet hunisi iki yariyla da olculuyor",
+      [
+        "web baglanti=" + (/\/u\/\$\{me\.username\}\?src=invite/.test(webPay) ? "isaretli" : "ISARETSIZ"),
+        "mobil baglanti=" + (/\/u\/\$\{me\.username\}\?src=invite/.test(mobPay) ? "isaretli" : "ISARETSIZ"),
+        "mobil okuyor=" +
+          (/get\("src"\) === "invite"/.test(mobLink) && /has\("invite"\)/.test(mobLink) ? "evet" : "HAYIR"),
+        "web okuyor=" +
+          (/get\("src"\) === "invite"/.test(webTel) && /has\("invite"\)/.test(webTel) ? "evet" : "HAYIR"),
+        "web olay=" + (/track\("invite_open"\)/.test(webTel) ? "var" : "YOK"),
+        "mobil olay=" + (/track\("invite_open"\)/.test(mobApp) ? "var" : "YOK"),
+        "web paylasim olayi=" + (/track\("share", 0, "profile"\)/.test(webPay) ? "var" : "YOK"),
+        "mobil paylasim olayi=" + (/track\("share", 0, "profile"\)/.test(mobPay) ? "var" : "YOK"),
+      ],
+      [
+        "web baglanti=isaretli",
+        "mobil baglanti=isaretli",
+        "mobil okuyor=evet",
+        "web okuyor=evet",
+        "web olay=var",
+        "mobil olay=var",
+        "web paylasim olayi=var",
+        "mobil paylasim olayi=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
   }
 }
 

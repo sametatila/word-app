@@ -38,7 +38,12 @@ export type DeepLinkAction =
    * Adresten ekrana çevirme bilgisi zaten vardı (`pushRoute` bildirimler için
    * `/u/…` eşliyor), eksik olan tek şey yolun iddia edilip karşılanmasıydı.
    */
-  | { kind: "profile"; username: string }
+  | {
+      kind: "profile";
+      username: string;
+      /** Bağlantı bir DAVET paylaşımından mı geldi (`?src=invite`) — bkz. App.tsx. */
+      invite: boolean;
+    }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -77,7 +82,12 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
        olabiliyor. Boşsa içeri alınmıyor - uygulama boş bir profil ekranı
        açmasın. */
     const username = decodeURIComponent(url.pathname.slice(3)).trim();
-    return username ? { kind: "profile", username } : null;
+    /* DAVET İŞARETİ — web ile AYNI koşul (`components/telemetry`: `src=invite`
+       ya da `invite` anahtarının varlığı). Paylaşım yüzeyleri işareti koyuyor;
+       aynı adres bir bildirimden gelirse buradan geçmiyor (`lib/pushRoute`)
+       ve davet sayılmıyor. */
+    const invite = url.searchParams.get("src") === "invite" || url.searchParams.has("invite");
+    return username ? { kind: "profile", username, invite } : null;
   }
 
   if (url.pathname === "/api/auth/verify-email") {

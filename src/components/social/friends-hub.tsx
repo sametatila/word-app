@@ -86,7 +86,14 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
   }
 
   async function share() {
-    const url = `${window.location.origin}/u/${me.username}`;
+    /* `src=invite` DAVETIN VARIŞ TARAFINI ÖLÇÜYOR.
+       `components/telemetry` bu işareti görünce `invite_open` yazıyor ve
+       panelde davet hunisi o olaya bakıyor. İşaret hiçbir paylaşım yüzeyinde
+       konmuyordu — iki platform da çıplak `/u/<ad>` paylaşıyordu — yani huninin
+       varış yarısı ölçülüyor GİBİ görünüyor, gerçekte hep sıfır kalıyordu.
+       Mobil paylaşım da aynı işareti koyuyor (`FriendsScreen`) ve derin bağlantı
+       onu okuyup aynı olayı yazıyor (`lib/deepLink`, `App.tsx`). */
+    const url = `${window.location.origin}/u/${me.username}?src=invite`;
     /* DAVET METNİ ÇEVİRİDEN. Web'de cümle doğrudan Türkçe yazılıydı: İngilizce
        ya da Almanca oynayan kullanıcı arkadaşına Türkçe bir davet gönderiyordu.
        Öğrenilen dil de "Almanca" diye sabitti - İngilizce kursundaki kullanıcı

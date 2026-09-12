@@ -77,7 +77,7 @@ export function FriendsScreen() {
   async function share() {
     if (!me) return;
     track("share", 0, "profile");
-    try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}` }) }); } catch { /* kapatıldı */ }
+    try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}?src=invite` }) }); } catch { /* kapatıldı */ }
   }
 
   if (!user) {

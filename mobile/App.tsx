@@ -88,7 +88,9 @@ function Nav() {
     /* Paylaşılan profil — aynı soğuk açılış yarışına tabi, o yüzden aynı
        bekletme yolundan geçiyor. */
     const goProfile = (username: string) => {
-      if (!navigationRef.isReady()) { pending.current = { kind: "profile", username }; return; }
+      /* Bekletilen eylemde `invite` artık gerekmiyor: olay bağlantı ÇÖZÜLÜR
+         ÇÖZÜLMEZ yazılıyor (aşağıdaki dal), gezgin yarışından önce. */
+      if (!navigationRef.isReady()) { pending.current = { kind: "profile", username, invite: false }; return; }
       try {
         (navigationRef.navigate as (n: string, p?: object) => void)("User", { username });
       } catch { /* yut */ }
@@ -100,7 +102,20 @@ function Nav() {
 
       if (action.kind === "reset-password") { goReset(action.token); return; }
 
-      if (action.kind === "profile") { goProfile(action.username); return; }
+      /*
+        DAVETİN VARIŞI ÖLÇÜLÜYOR — web ile aynı olay adıyla.
+
+        Panelde davet hunisi `share` (paylaşıldı) ve `invite_open` (açıldı)
+        çiftini okuyor. `invite_open`ı yalnız web yazıyordu ve orada da
+        paylaşılan bağlantı işaretsiz olduğu için hiç yazılmıyordu; oysa
+        davetin AÇILDIĞI yer çoğunlukla telefon — uygulaması kurulu kullanıcı
+        bağlantıya dokununca tarayıcı değil bu dal çalışıyor.
+      */
+      if (action.kind === "profile") {
+        if (action.invite) track("invite_open");
+        goProfile(action.username);
+        return;
+      }
 
       /*
         TARAYICIDAN DEVİR. Android'de Apple girişi sistem tarayıcısında

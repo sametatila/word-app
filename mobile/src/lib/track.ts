@@ -120,6 +120,13 @@ export type EventName =
      dokunuş yolu var (arka plan, ön plan, kapalıyken) ve üçü de tek yerden
      geçiyor (`pushRoute` `navigateFromPush`). */
   | "push_open"
+  /* Davet baglantisi uygulamada ACILDI - web `components/telemetry` ile ayni
+     ad ve ayni kosul (`?src=invite`). Panelde davet hunisi `share` (paylasildi)
+     ve bunun ciftini okuyor; varis yarisi Androidde HIC yazilmiyordu, oysa
+     davetin acildigi yer cogunlukla telefon: uygulamasi kurulu kullanici
+     baglantiya dokununca tarayici degil derin baglanti dali calisiyor
+     (`lib/deepLink`, `App.tsx`). */
+  | "invite_open"
   | "page_view"
   | "time_spent"
   | "client_error";

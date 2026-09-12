@@ -15515,3 +15515,58 @@ küçülebilir.
 Üç enjeksiyon doğrulandı: ders 404'ünü kaldırmak (hem dosya ölçüsü hem küme
 ölçüsü düşüyor — yani kapı kusurun kendisini yakalıyor), grup 404'ünü
 kaldırmak, muafiyeti boşaltmak.
+
+## §11.427 — Davet hunisinin varış yarısı iki platformda da ölçülmüyordu
+
+Panelde davet hunisi iki olay okuyor: `share` (paylaşıldı) ve `invite_open`
+(açıldı). İkinci yarısı **hiç akmıyordu** ve sebebi iki katlıydı.
+
+1. **İşaret hiçbir paylaşım yüzeyinde konmuyordu.** `components/telemetry`
+   adresteki `?src=invite` (ya da `?invite`) işaretini görünce `invite_open`
+   yazıyor. Ama iki platform da çıplak `/u/<ad>` paylaşıyordu
+   (`social/friends-hub` ve `FriendsScreen`) — yani huninin varış yarısı
+   ölçülüyor **gibi** görünüyor, gerçekte hep sıfır kalıyordu.
+2. **Mobilde böyle bir olay hiç yoktu.** Oysa davetin açıldığı yer çoğunlukla
+   telefon: uygulaması kurulu bir kullanıcı bağlantıya dokunduğunda tarayıcı
+   değil derin bağlantı dalı çalışıyor (`lib/deepLink` `kind: "profile"` —
+   yorumu bu bağlantıyı zaten "davet bağlantısının kendisi" diye adlandırıyor).
+
+Düzeltme üç parça:
+
+- İki paylaşım bağlantısı da `?src=invite` taşıyor.
+- `lib/deepLink` işareti okuyup eyleme koyuyor; koşul web ile **birebir aynı**
+  (`src=invite` ya da `invite` anahtarının varlığı).
+- `App.tsx` derin bağlantı çözülür çözülmez `track("invite_open")` yazıyor —
+  gezgin yarışından önce, yani bekletilen eylem yolunda olay kaybolmuyor.
+  Aynı adres bir **bildirimden** gelirse buradan geçmiyor (`lib/pushRoute`) ve
+  davet sayılmıyor; o yolun kendi olayı var (`push_open`).
+
+`EventName` birliğine de eklendi (mobil `lib/track` — tip kaydı, adın
+uydurulmadığının kanıtı).
+
+### İki eski kaydın gerekçesi düştü
+
+Değişiklik iki mevcut kapının kaydını da yanlışladı ve ikisi de **kendiliğinden
+düştü** — sayaç ölçülerinin işe yaradığı yer tam burası:
+
+- §44 `WEB_OZEL` listesinde `invite_open` "tarayıcı ölçüm katmanı" diye
+  yazılıydı. Ölçülen şey tarayıcıya ait değildi; kayıt listeden çıktı
+  (`page_view`, `time_spent`, `client_error`, `push_optin` ve üç yürüyüş
+  olayının aynı gerekçeyle düştüğü yer).
+- §133'ün `TEK` haritasındaki kanıt `!/invite/.test(deepLink.ts)` idi, yani
+  "mobil derin bağlantı daveti tanımıyor". Artık tanıyor; kayıt kalktı.
+
+Ayrıca §133'ün mobil taraması `mobile/src` ile sınırlıydı ve **`mobile/App.tsx`
+kök dizinde**: oradan yazılan her olay "yalnız webde" görünüyordu. §44 o dosyayı
+baştan beri ayrıca okuyor, §133 okumuyordu — tarama düzeltildi.
+
+### §302
+
+Sekiz ölçü: iki paylaşım yüzeyi de işareti **koyuyor**, iki istemci de işareti
+**okuyor** (aynı koşulla), iki platform da olayı **yazıyor**, ve huninin ilk
+yarısı (`share`, kind `profile`) iki tarafta da duruyor. Sonuncusu olmasa yarım
+bir huni yeşil görünürdü: varışı ölçülen ama paylaşımı ölçülmeyen bir davet de
+hesaplanamaz.
+
+Dört enjeksiyon doğrulandı: her iki bağlantıdan işareti kaldırmak, mobil olayı
+kaldırmak, mobil koşulun yarısını kaldırmak.
