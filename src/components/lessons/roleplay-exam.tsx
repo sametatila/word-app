@@ -21,6 +21,7 @@ import { Mascot } from "@/components/mascot";
 import { CoachBubble } from "@/components/coach-bubble";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
+import { ScoreRing } from "@/components/score-ring";
 import { reducedMotion } from "@/lib/fx";
 
 type Turn = { role: "user" | "assistant"; content: string };
@@ -304,9 +305,19 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section role="status" className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
-        <h1 className="text-h2">
-          {t("rpexam.title")} · {formatPercent(result.score.overall, lang)}
-        </h1>
+        {/*
+          PUAN HALKASI. Puan başlığın içinde bir ek cümleydi ("Rol yapma
+          sınavı · %85"); Android aynı yerde halkayı çiziyor ve başlıkta
+          yalnız sınavın adı duruyor (`RoleplayExamScreen`). Sonuç ekranının
+          en önemli sayısı bir bakışta okunmuyordu.
+        */}
+        <ScoreRing id="rpexam-overall" size={140} stroke={13} pct={result.score.overall} className="mx-auto mb-3">
+          <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
+            {formatPercent(result.score.overall, lang)}
+          </span>
+          <span className="muted text-micro">{t("assess.overall_score", { n: result.score.overall })}</span>
+        </ScoreRing>
+        <h1 className="text-h2">{t("rpexam.title")}</h1>
         <p className="muted mt-1 text-caption">
           {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
           {passed ? t("rpexam.passed") : t("rpexam.below_threshold", { n: EXAM_PASS_SCORE })}

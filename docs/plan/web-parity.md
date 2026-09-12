@@ -17079,3 +17079,47 @@ değiştirmek, süreyi sabitlemek ve bir yüzeyi kaldırmak.
 okuyordu; yeni klipler `ui/MascotFx.tsx`ten `require` edilince kapı onları ölü
 dosya sanacaktı. Tarama artık tüm mobil kaynakları geziyor — kapsamını ölçmenin
 bir biçimi daha.
+
+## §11.473 — Puan halkası: iki sonuç ekranında hiç yoktu, ikisinde elle kuruluydu
+
+Sonuç ekranının en önemli sayısı halkanın içinde duruyor. Android dört yüzeyde
+de aynı bileşeni çiziyor (`ui/ProgressRing`): haftalık sınav (160/15), rol yapma
+sınavı (140/13), yürüyüş modu (150/14) ve kelime turu (150/14).
+
+**Web'de iki yüzeyde halka yoktu:**
+
+- **Rol yapma sınavı:** puan başlığın içinde bir ek cümleydi ("Rol yapma
+  sınavı · %85"). Android'in başlığında yalnız sınavın adı var, puan halkada.
+- **Yürüyüş modu:** doğru sayısı sönük bir satırdı (`common.n_correct`).
+
+Kalan ikisinde halka **elle** kuruluydu (`conic-gradient` + içine oturan bir
+daire, dolgu payı her yerde başka: 15 px, 7 px) ve üç noktada Android'den
+ayrılıyordu:
+
+1. **Gradyan yoktu.** Android iki duraklı bir gradyanla çiziyor (`gradientA` =
+   `#fb8f2a → #f87612`, yani webin `--color-brand-400 → --color-brand-500`i,
+   135°); web tek renk basıyordu. (İki değer birebir aynı — mobil paleti
+   webinkiyle hizalı.)
+2. **Uç yuvarlak değildi.** `conic-gradient` keskin bir dilim veriyor; Android
+   `strokeLinecap="round"` ile iki ucu yuvarlatıyor.
+3. **Ölçüler ayrıydı:** web 128 ve 96, Android 160 ve 150.
+
+Web artık tek bir bileşen kullanıyor: `components/score-ring` — **SVG**, çünkü
+yuvarlak uç ve gradyan ancak böyle oluyor. Ortası boş, yani "içine oturan
+daire" hilesi de kalktı (o hile zemin rengini bilmek zorundaydı ve gradyanlı
+kartta ayrıca bir sınıf istiyordu). Ölçüler dört çağrı yerinde de
+Android'inkiler.
+
+Kelime turunun halkası **beyaz kalıyor**: web'de o halka marka gradyanlı bir
+kartın içinde duruyor, Android'de sayfa zemininde — gradyan orada görünmez.
+Bileşen ton alıyor, gerekçe çağrı yerinde yazılı.
+
+Kapı **§332** üç ölçü: dört yüzeyin boy/kalınlık çifti, halkanın çizim
+özellikleri (yuvarlak uç, iki duraklı gradyan, kırpma, yarıçap ve çevre
+formülü) ve webde **elle kurulmuş halka kalmadığı** — muafiyeti
+`progress-view`in küçük `Donut`u (sayaç karosu; Android'de karşılığı yok, orada
+çubuk var) ve `avatar`ın dönen konik dokusu.
+
+İki eski kapı da güncellendi (tur özeti ve haftalık sonuç yerleşimi): ikisi de
+webin halkasını `conic-gradient` deseniyle arıyordu, artık `<ScoreRing>` ve
+Android'in ölçüsüyle arıyorlar.

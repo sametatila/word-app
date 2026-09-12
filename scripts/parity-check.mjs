@@ -2836,7 +2836,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "tur ozeti sonuc halkasi",
     halka("mobile/src/screens/GameScreen.tsx", /<ProgressRing/),
-    halka("src/components/session-player.tsx", /conic-gradient/),
+    /* Web halkasi artik ORTAK bilesen (`components/score-ring`): elle
+       kurulmus `conic-gradient` yerine `<ScoreRing>`. Gerekcesi ve olculeri
+       §332'de. */
+    halka("src/components/session-player.tsx", /<ScoreRing/),
   );
 }
 
@@ -14185,7 +14188,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "alt satir=" + (/weekly\.done_sub/.test(hm) ? "done_sub" : "?"),
       ],
       [
-        "halka=" + (/conic-gradient\(var\(--color-brand-500\) \$\{result\.score\}%/.test(hw) ? "var" : "YOK"),
+        /* Ortak bilesen ve olcu Android'den: 160/15 (bkz. §332). */
+        "halka=" + (/<ScoreRing id="weekly-score" size=\{160\} stroke=\{15\}/.test(hw) ? "var" : "YOK"),
         "halka icinde yuzde=" + (/formatPercent\(result\.score, lang\)/.test(hw) ? "var" : "YOK"),
         "halka altyazisi=" + (/weekly\.score/.test(hw) ? "var" : "YOK"),
         "baslik=" + (/weekly\.done_title/.test(hw) ? "done_title" : "?"),
@@ -18840,6 +18844,100 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ],
     "mobil",
     "web",
+  );
+}
+
+/* ----------------------- 332. PUAN HALKASI: DORT SONUC EKRANINDA DA VAR
+ *
+ * Sonuc ekraninin en onemli sayisi halkanin icinde duruyor. Android dort
+ * yuzeyde de ayni bileseni ciziyor (`ui/ProgressRing`): haftalik sinav,
+ * rol yapma sinavi, yuruyus modu ve kelime turu.
+ *
+ * WEBDE IKI YUZEYDE HALKA YOKTU: rol yapma sinavinda puan BASLIGIN ICINDE bir
+ * ek cumleydi ("Rol yapma sinavi · %85"), yuruyus modunda dogru sayisi sonuk
+ * bir satirdi. Kalan ikisinde halka ELLE kuruluyordu (`conic-gradient` +
+ * icine oturan bir daire, dolgu payi her yerde baska: 15 px, 7 px) ve uc
+ * noktada Android'den ayriliyordu:
+ *   - gradyan yoktu (Android iki durak: `gradientA` = brand-400 -> brand-500,
+ *     135 derece; web tek renk basiyordu),
+ *   - uc yuvarlak degildi (`conic-gradient` keskin dilim verir; Android
+ *     `strokeLinecap="round"`),
+ *   - olculer ayriydi (web 128/96, Android 160/150).
+ *
+ * Web artik tek bir bilesen kullaniyor (`components/score-ring`, SVG - yuvarlak
+ * uc ve gradyan ancak boyle oluyor) ve olculeri Android'den aliyor.
+ *
+ * Olcu: dort yuzeyin boy/kalinlik cifti iki tarafta ayni, halkanin cizim
+ * ozellikleri (yuvarlak uc, iki duraklı gradyan, kirpma) iki tarafta da var,
+ * ve webde halka TEK KAYNAKTAN geliyor (elle kurulmus `conic-gradient`
+ * halkasi kalmadi). */
+{
+  const silH = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const YUZEY = [
+    ["haftalik", "mobile/src/screens/WeeklyScreen.tsx", "src/components/weekly-player.tsx"],
+    ["rol-yapma", "mobile/src/screens/RoleplayExamScreen.tsx", "src/components/lessons/roleplay-exam.tsx"],
+    ["yuruyus", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
+    ["kelime-turu", "mobile/src/screens/GameScreen.tsx", "src/components/session-player.tsx"],
+  ];
+  const mobOlcu = (yol) => {
+    const m = silH(read(yol)).match(/<ProgressRing size=\{(\d+)\} stroke=\{(\d+)\}/);
+    return m ? m[1] + "/" + m[2] : "HALKA YOK";
+  };
+  const webOlcu = (yol) => {
+    const src = silH(read(yol));
+    const m = src.match(/<ScoreRing[\s\S]{0,200}?size=\{(\d+)\}\s*\n?\s*stroke=\{(\d+)\}/) ?? src.match(/<ScoreRing[^>]*size=\{(\d+)\} stroke=\{(\d+)\}/);
+    return m ? m[1] + "/" + m[2] : "HALKA YOK";
+  };
+  sameList(
+    "puan halkasinin olculeri",
+    YUZEY.map(([ad, mob]) => ad + "=" + mobOlcu(mob)),
+    YUZEY.map(([ad, , web]) => ad + "=" + webOlcu(web)),
+    "mobil",
+    "web",
+  );
+  const mobHalka = silH(read("mobile/src/ui/ProgressRing.tsx"));
+  const webHalka = silH(read("src/components/score-ring.tsx"));
+  sameList(
+    "puan halkasinin cizimi",
+    [
+      "yuvarlak uc=" + (/strokeLinecap="round"/.test(mobHalka) ? "var" : "YOK"),
+      "gradyan durak=" + ((mobHalka.match(/<Stop /g) ?? []).length || "YOK"),
+      "kirpma=" + (/Math\.max\(0, Math\.min\(1, pct \/ 100\)\)/.test(mobHalka) ? "var" : "YOK"),
+      "yaricap=" + (/\(size - stroke\) \/ 2/.test(mobHalka) ? "size-stroke" : "FARKLI"),
+      "cevre=" + (/2 \* Math\.PI \* r/.test(mobHalka) ? "2pir" : "FARKLI"),
+    ],
+    [
+      "yuvarlak uc=" + (/strokeLinecap="round"/.test(webHalka) ? "var" : "YOK"),
+      "gradyan durak=" + ((webHalka.match(/<stop /g) ?? []).length || "YOK"),
+      "kirpma=" + (/Math\.max\(0, Math\.min\(1, pct \/ 100\)\)/.test(webHalka) ? "var" : "YOK"),
+      "yaricap=" + (/\(size - stroke\) \/ 2/.test(webHalka) ? "size-stroke" : "FARKLI"),
+      "cevre=" + (/2 \* Math\.PI \* r/.test(webHalka) ? "2pir" : "FARKLI"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* MUTLAK: webde elle kurulmus puan halkasi kalmadi. `progress-view`in
+     kucuk `Donut`u BU AILEDEN DEGIL - sayac karosu, Android'de karsiligi
+     yok ve orada cubuk var; o yuzden muaf ve muafiyet burada yazili. */
+  const elYapimi = [];
+  const yuruH = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuruH(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  for (const f of yuruH("src")) {
+    if (f.endsWith("progress-view.tsx") || f.endsWith("avatar.tsx")) continue;
+    if (/conic-gradient/.test(silH(read(f)))) elYapimi.push(f.split("/").slice(-1)[0]);
+  }
+  sameList(
+    "puan halkasi tek kaynaktan",
+    ["el yapimi halka=" + (elYapimi.length ? elYapimi.join("+") : "yok")],
+    ["el yapimi halka=yok"],
+    "bulunan",
+    "beklenen",
   );
 }
 

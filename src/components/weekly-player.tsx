@@ -17,6 +17,7 @@ import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { localDay } from "@/lib/day";
 import { formatPercent } from "@/lib/i18n/dict";
+import { ScoreRing } from "@/components/score-ring";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
 /* `auth` AYRI BIR HAL (bkz. `daily-player`): 401 "tekrar dene" ile
@@ -229,17 +230,12 @@ export function WeeklyPlayer() {
       */
       <section role="status" className="card mx-auto w-full max-w-md p-5 text-center">
         {result.total > 0 ? (
-          <div
-            className="relative mx-auto h-32 w-32 rounded-full"
-            style={{ background: `conic-gradient(var(--color-brand-500) ${result.score}%, var(--surface-2) ${result.score}% 100%)` }}
-          >
-            <div className="absolute inset-[15px] flex flex-col items-center justify-center rounded-full" style={{ background: "var(--surface)" }}>
-              <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
-                {formatPercent(result.score, lang)}
-              </span>
-              <span className="muted text-micro">{t("weekly.score")}</span>
-            </div>
-          </div>
+          <ScoreRing id="weekly-score" size={160} stroke={15} pct={result.score} className="mx-auto">
+            <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
+              {formatPercent(result.score, lang)}
+            </span>
+            <span className="muted text-micro">{t("weekly.score")}</span>
+          </ScoreRing>
         ) : null}
         <h1 className="mt-5 text-h1">{t("weekly.done_title")}</h1>
         <p className="muted mt-1 text-body">

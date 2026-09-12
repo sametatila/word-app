@@ -36,6 +36,7 @@ import { Stagger } from "@/components/reveal";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
+import { ScoreRing } from "@/components/score-ring";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit } from "@/components/round-exit";
@@ -1382,17 +1383,24 @@ function SummaryCard({
             gibi okunuyor.
           */}
           {tally.total > 0 ? (
-            <div
-              className="relative mx-auto mt-3 h-24 w-24 rounded-full"
-              style={{ background: `conic-gradient(#fff ${accuracy}%, rgb(255 255 255 / 0.28) ${accuracy}% 100%)` }}
+            <ScoreRing
+              id="round-accuracy"
+              size={150}
+              stroke={14}
+              pct={accuracy}
+              /* Halka MARKA GRADYANLI bir kartın içinde: gradyan burada
+                 görünmez, beyaz görünür. Android'in aynı halkası sayfa
+                 zemininde durduğu için orada marka gradyanı kullanılıyor. */
+              from="#fff"
+              to="#fff"
+              track="rgb(255 255 255 / 0.28)"
+              className="mx-auto mt-3"
             >
-              <div className="brand-gradient-deep absolute inset-[7px] flex flex-col items-center justify-center rounded-full">
-                <span className="text-h2 tabular-nums">
-                  {tally.correct}/{tally.total}
-                </span>
-                <span className="text-micro opacity-80">{t("game.correct")}</span>
-              </div>
-            </div>
+              <span className="text-h2 tabular-nums">
+                {tally.correct}/{tally.total}
+              </span>
+              <span className="text-micro opacity-80">{t("game.correct")}</span>
+            </ScoreRing>
           ) : null}
           {/* BASLIK ORTAK ANAHTARDAN. Web `summary.round_done` ("Tur
               tamamlandi"), Android `common.round_done` ("Tur bitti!") diyordu:

@@ -19,6 +19,7 @@ import { spokenMatches } from "@/components/games/types";
 import { parseConfirm, parseSkip, skipWord } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
 import { Mascot } from "@/components/mascot";
+import { ScoreRing } from "@/components/score-ring";
 import { Confetti } from "@/components/celebrate";
 import { resultText, shareText } from "@/lib/share";
 import { ShareIcon } from "@/components/icons";
@@ -1794,13 +1795,23 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           size={104}
           className="mx-auto"
         />
+        {/*
+          PUAN HALKASI. Doğru sayısı sönük bir satırdı; Android aynı yerde
+          halkayı çiziyor ve sayı halkanın içinde duruyor
+          (`WalkModeScreen`, 150/14). Satırda yalnız tur sayısı kaldı —
+          o bilgi halkada yok ve web'e özgü değil, yalnız birden fazla tur
+          yapıldığında anlamlı.
+        */}
+        <ScoreRing id="walk-correct" size={150} stroke={14} pct={donePct} className="mx-auto mt-1">
+          <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
+            {tally.correct}/{tally.total || 0}
+          </span>
+          <span className="muted text-micro">{t("walkmode.correct")}</span>
+        </ScoreRing>
         <h2 className="mt-1 text-h1">{t("walk.done_title")}</h2>
-        <p className="mt-2 text-body" style={{ color: "var(--color-mint)" }}>
-          {t("common.n_correct", { correct: tally.correct, total: tally.total })}
-          {walkRef.current.sessions > 1
-            ? ` · ${t("walk.n_rounds", { n: walkRef.current.sessions })}`
-            : ""}
-        </p>
+        {walkRef.current.sessions > 1 ? (
+          <p className="muted mt-2 text-body">{t("walk.n_rounds", { n: walkRef.current.sessions })}</p>
+        ) : null}
         <p className="muted mt-2 text-body">{t("walk.done_sub")}</p>
         <button
           onClick={() => { setStatus("loading"); void load(); }}
