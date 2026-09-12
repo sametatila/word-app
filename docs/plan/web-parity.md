@@ -16312,3 +16312,43 @@ bir hata mesajı, hata mesajı değildir — artık parça başına "aynı/FARKL
 Dört enjeksiyon doğrulandı: webde bir yolu 1 px kaydırmak, mobilde bir katmanı
 silmek, bir parçayı yeniden adlandırmak (sayı ölçüsü düşüyor), iki katmanın
 sırasını değiştirmek.
+
+## §11.448 — İkon iddiası: kapsamı okumak, "21 fark" ile "sıfır fark" arasındaki fark
+
+`components/icons.tsx` üç yerde çizimin Android'den geldiğini iddia ediyor ve
+iddiayı tutan hiçbir şey yoktu. İlk ham ölçüm **61 ortak ikondan 21'inin
+çiziminin farklı** olduğunu söyledi — ama iki düzeltme gerekti:
+
+**1. İddianın kapsamı.** "BİREBİR" cümlesi bütün set için değil, üç blok için
+yazılmış: "MOBİLDEN GELEN İKONLAR" (Bolt/ArrowRight/Walk/Exam/Podium), "ALT
+GEZİNMENİN ÜÇ İKONU" (Learn/Path/Skills) ve "PATİKA VE BECERİ SİMGELERİ —
+çizimleri Android'den" (Quiz/Read/Listen/Write/Grammar). Setin geri kalanı
+**bilerek** ayrı: webin kendi ailesi yarım piksel hizalı (113 yerde `.5`,
+mobilde 29) ve `CheckIcon` gibi ikonlar (dosyanın 71. satırı, iddia
+bloklarından **önce**) hiçbir zaman Android'den alınmamış.
+
+**2. Notasyon farkı çizim farkı değil.** Aynı yol iki dosyada farklı
+yazılabiliyor: `M13 2 5 13` (örtük lineto) ile `M13 2L5 13`, ya da yay
+bayrakları `1 0 0` ile bitişik `100`. Ham karşılaştırma bunları "fark"
+sayıyordu.
+
+İkisi düzeltilince sonuç: **iddia doğru** — on üç ikon, sıfır fark. Yani bu bir
+kusur bulgusu değil, **tutulmayan bir iddianın tutulmaya başlanması**.
+
+### §312
+
+`yolKanon` yolu komut komut ayrıştırıp kanonik biçime çeviriyor: örtük
+tekrarlar açılıyor, `M`den sonraki örtük çift **lineto** oluyor (SVG kuralı),
+yay bayrak konumundaki bitişik haneler koparılıyor. Sınırı yazılı: göreli (`l`)
+ile mutlak (`L`) yazım birbirine çevrilmiyor — aynı çizimi biri göreli biri
+mutlak yazan iki dosya yine "farklı" çıkar; iddia listesindeki on üç ikonda
+böyle bir çift yok.
+
+Beş ölçü: liste uzunluğu, iddia edilen her ikonun iki tarafta **var olduğu**,
+çizimlerin aynı olduğu, ilk farkın kendisi (kısa çıktı için) ve **iddia
+yorumunun hâlâ dosyada durduğu** — yorum kalkarsa liste gözden geçirilmeli,
+çünkü kapıyı meşru kılan şey o cümle.
+
+Dört enjeksiyon doğrulandı: webde bir yolu 1 px kaydırmak, **notasyonu
+değiştirmek** (fark sayılmıyor — normalleştiricinin kanıtı), iddia edilen bir
+ikonu mobilden kaldırmak, iddia yorumunu silmek.

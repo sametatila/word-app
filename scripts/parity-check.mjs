@@ -17363,6 +17363,109 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------------- 312. ANDROID'DEN ALINAN IKONLARIN CIZIMI
+   *
+   * `components/icons.tsx` uc yerde cizimin Androidden geldigini IDDIA ediyor:
+   *   - "MOBILDEN GELEN IKONLAR ... yollar birebir"      (Bolt/ArrowRight/Walk/Exam/Podium)
+   *   - "ALT GEZINMENIN UC IKONU ... BIREBIR"            (Learn/Path/Skills)
+   *   - "PATIKA VE BECERI SIMGELERI - cizimleri Androidden" (Quiz/Read/Listen/Write/Grammar)
+   * Iddiayi tutan hicbir sey yoktu. Ayni kavramin iki uygulamada iki ayri
+   * cizimle gosterilmesi bu dosyanin kendi yorumunda zaten bir kusur olarak
+   * yazili ("simge bir kavramin kimligiyse iki uygulamada ayni kimlik olmali")
+   * ve duzeltilmisti; tekrar ayrismasini engelleyen bir sey yoktu.
+   *
+   * Olcum sonucu: iddia bugun DOGRU (on uc ikon, sifir fark). Ama setin
+   * GERI KALANI bilerek ayri - webin kendi ailesi yari piksel hizali
+   * (113 yerde `.5`, mobilde 29) ve `CheckIcon` gibi ikonlar iddianin
+   * KAPSAMINDA DEGIL. Kapi bu yuzden butun sete degil, iddia edilen listeye
+   * bakiyor; kapsami genisletmek once o yorumlari degistirmeyi gerektirir.
+   *
+   * NOTASYON FARKI CIZIM FARKI DEGIL. Iki dosya ayni yolu farkli yazabiliyor:
+   * `M13 2 5 13` (ortuk lineto) ile `M13 2L5 13`, ya da yay bayraklari
+   * `1 0 0` ile bitisik `100`. Ham karsilastirma bu ikisini "fark" sayiyordu.
+   * `yolKanon` yolu komut komut ayristirip kanonik bicime ceviriyor: ortuk
+   * tekrarlar aciliyor, `M`den sonraki ortuk cift LINETO oluyor (SVG kurali),
+   * yay bayrak konumundaki bitisik haneler koparaliyor.
+   * SINIRI YAZILI: goreli (`l`) ile mutlak (`L`) yazim birbirine
+   * cevrilmiyor, yani ayni cizimi biri goreli biri mutlak yazan iki dosya
+   * yine "farkli" cikar - iddia listesindeki on uc ikonda boyle bir cift yok. */
+  {
+    const KOM = { M: 2, L: 2, H: 1, V: 1, C: 6, S: 4, Q: 4, T: 2, A: 7, Z: 0 };
+    const yolKanon = (d) => {
+      const ham = d.replace(/([a-zA-Z])/g, " $1 ").replace(/,/g, " ").replace(/([0-9.])-/g, "$1 -").replace(/\s+/g, " ").trim();
+      const par = ham.split(" ").filter(Boolean);
+      const out = [];
+      let i = 0;
+      let kom = null;
+      while (i < par.length) {
+        if (/^[a-zA-Z]$/.test(par[i])) { kom = par[i]; i++; }
+        if (kom === null) break;
+        const U = kom.toUpperCase();
+        const n = KOM[U] ?? 0;
+        if (U === "Z") { out.push("Z"); continue; }
+        const sayi = [];
+        for (let k = 0; k < n; k++) {
+          const t = par[i];
+          if (t === undefined) break;
+          if (U === "A" && (k === 3 || k === 4) && /^[01][0-9.]/.test(t)) { par[i] = t.slice(1); sayi.push(t[0]); continue; }
+          sayi.push(t);
+          i++;
+        }
+        out.push(kom === U ? U : U.toLowerCase(), ...sayi);
+        if (U === "M") kom = kom === "M" ? "L" : "l";
+      }
+      return out.join(" ");
+    };
+    const ikonlar = (yol) => {
+      const src = read(yol);
+      const out = new Map();
+      const idx = [...src.matchAll(/export (?:const|function) (\w+(?:Icon|Glyph)|LogoMark)\b/g)];
+      idx.forEach((m, i) => {
+        const son = i + 1 < idx.length ? idx[i + 1].index : src.length;
+        const blok = src.slice(m.index, son);
+        const nit = [
+          ...blok.matchAll(/(?:d|cx|cy|r|x|y|x1|y1|x2|y2|width|height|rx|ry|points)="([^"]*)"/g),
+        ].map((x) => x[0].split("=")[0] + "=" + (x[0].startsWith("d=") ? yolKanon(x[1]) : x[1].replace(/\s+/g, " ")));
+        out.set(m[1], nit);
+      });
+      return out;
+    };
+    /* IDDIA LISTESI - ucu de `components/icons.tsx`teki yorum bloklarindan. */
+    const IDDIA = [
+      "BoltIcon", "ArrowRightIcon", "WalkIcon", "ExamIcon", "PodiumIcon",
+      "LearnIcon", "PathIcon", "SkillsIcon",
+      "QuizIcon", "ReadIcon", "ListenIcon", "WriteIcon", "GrammarIcon",
+    ];
+    const webI = ikonlar("src/components/icons.tsx");
+    const mobI = ikonlar("mobile/src/ui/icons.tsx");
+    const webSrc2 = read("src/components/icons.tsx");
+    const eksik = IDDIA.filter((k) => !webI.has(k) || !mobI.has(k));
+    const farkli = IDDIA.filter((k) => webI.has(k) && mobI.has(k) && (webI.get(k) ?? []).join("|") !== (mobI.get(k) ?? []).join("|"));
+    const ilkFark = (() => {
+      for (const k of farkli) {
+        const a = mobI.get(k) ?? [];
+        const b = webI.get(k) ?? [];
+        for (let i = 0; i < Math.max(a.length, b.length); i++) if (a[i] !== b[i]) return k + "[" + i + "] mobil=" + (a[i] ?? "-") + " web=" + (b[i] ?? "-");
+      }
+      return "yok";
+    })();
+    /* Iddianin KENDISI duruyor mu: yorum kalkarsa liste gozden gecirilmeli. */
+    const iddiaYorumu = ["MOBİLDEN GELEN İKONLAR", "ALT GEZİNMENİN ÜÇ İKONU", "çizimleri Android'den"].filter((x) => webSrc2.includes(x)).length;
+    sameList(
+      "androidden alinan ikonlarin cizimi",
+      [
+        "iddia listesi=" + IDDIA.length,
+        "eksik ikon=" + (eksik.join(", ") || "yok"),
+        "cizimi farkli=" + (farkli.join(", ") || "yok"),
+        "ilk fark=" + ilkFark,
+        "iddia yorumu=" + iddiaYorumu,
+      ],
+      ["iddia listesi=13", "eksik ikon=yok", "cizimi farkli=yok", "ilk fark=yok", "iddia yorumu=3"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
