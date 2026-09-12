@@ -20,6 +20,7 @@ import { Mascot } from "@/components/mascot";
 import { CoachBubble } from "@/components/coach-bubble";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
+import { reducedMotion } from "@/lib/fx";
 
 type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error";
@@ -82,7 +83,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
   }, [left, phase]);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    endRef.current?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "end" });
   }, [turns]);
 
   function start() {

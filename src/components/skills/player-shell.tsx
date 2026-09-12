@@ -15,6 +15,7 @@ import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame } from "./player-context";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { reducedMotion } from "@/lib/fx";
 
 type FinishState =
   | { phase: "idle" }
@@ -159,7 +160,7 @@ export function ResultCard({
   const visible = state.phase !== "idle";
   // Sonuç sayfanın en altına eklenir; öğrenci görmeden kaçırmasın.
   useEffect(() => {
-    if (visible) ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (visible) ref.current?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "center" });
   }, [visible]);
   if (!visible) return null;
   const perfect = correct === total;

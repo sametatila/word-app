@@ -28,6 +28,7 @@ import { AssessmentCard } from "../ui/AssessmentCard";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
@@ -372,7 +373,7 @@ export function RoleplayExamScreen() {
       <ScrollView
         ref={scrollRef}
         style={{ flex: 1, marginTop: spacing.sm }}
-        onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: true })}
+        onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: !reduceMotion() })}
         showsVerticalScrollIndicator={false}
       >
         {turns.map((turn, i) => (

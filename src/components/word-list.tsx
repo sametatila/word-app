@@ -15,6 +15,7 @@ import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
+import { reducedMotion } from "@/lib/fx";
 
 export type WordRow = {
   id: number;
@@ -160,7 +161,7 @@ export function WordList({
     if (p > 0) next.set("page", String(p));
     else next.delete("page");
     router.replace(`/words?${next.toString()}`);
-    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: reducedMotion() ? "auto" : "smooth" });
   }
 
   return (

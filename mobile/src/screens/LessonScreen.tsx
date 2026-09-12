@@ -33,6 +33,7 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { LESSON_TRY_CEILING } from "../lib/learningRules";
 import { track } from "../lib/track";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
@@ -205,7 +206,9 @@ export function LessonScreen() {
   const [typing, setTyping] = useState(false);
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
-  const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 60);
+  /* Kaydirma ANIMASYONU "hareketi azalt"a bagli; kaydirmanin kendisi degil.
+     Web ayni ayrimi yapiyor (`behavior: reducedMotion() ? "auto" : "smooth"`). */
+  const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: !reduceMotion() }), 60);
   const push = (b: BubbleData) => setFeed((f) => [...f, { ...b, id: bubbleId.current++ }]);
 
   // Tanıyıcı bu cihazda/dilde var mı — bir kez sorulur, cevabı ekran boyunca geçerli.
