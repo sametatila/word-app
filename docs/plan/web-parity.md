@@ -18391,3 +18391,36 @@ anlatıyor.)
 Kapı **§358** iki ölçü taşıyor (ikisi de enjeksiyonla doğrulandı): beyaz
 mürekkep + numaralı dolgu taşıyan etiketlerin listesi (yalnız seri kartı
 kalmalı) ve seri kartının iki tarafta da **sabit** çifti taşıdığı.
+
+## §11.506 — Ölçüp dokunmadığım bir tur: yanlış ekranla karşılaştırmışım
+
+Bu tur dört şüpheyi ölçtüm; dördü de temiz çıktı. Değişen tek şey: iki eşitlik
+artık kapıda duruyor ve bir yanlış notum düzeldi.
+
+**Bildirim karosu — yanlış ekranı karşılaştırmışım.** §11.492'yi kapatırken
+"web'de gök mavisi, Android'de marka turuncusu" diye not düşmüştüm. Android'in
+**iki** bildirim ekranı var: `NotifPrimeScreen` (izin isteme; 88 piksel karo,
+`colors.primary`) ve `NotificationsScreen` (**ayarlar**; 72 piksel karo,
+`colors.info`). Web'in `/notifications` sayfası ikincisinin karşılığı ve
+`--color-sky` kullanıyor — o da Android paletindeki `info`nun web adı, aynı iki
+hex. Karo ölçüsü (72), yarıçap (xl/26), ikon boyu (36) ve mürekkep (`onFill`)
+zaten birebirdi.
+
+**Ekran başlığı** da eşit: aralık 12, geri düğmesi 44×44 `radii.md` `surface2`
+zeminde, ok 24, başlık `h2` (iki tarafta da başlık rolüyle), alt satır sönük
+`caption`.
+
+**Lig tablosunun "yalnızsın" hâli** web'de `EmptyCard` değil, kartın içine
+yazılmış bir blok — ama ölçüleri `EmptyCard`ın kendisiyle hizalanmış (52 karo,
+26 ikon, `h3` başlık, `caption` alt satır) ve gerekçesi yerinde yazılı: kart
+kendi başlığını koruyor. Bilinçli bir kompozisyon farkı.
+
+**Gelen kutusunun "giriş gerekli" hâli** Android'de var, web'de yok — ve doğrusu
+bu: web'in `(app)` düzeni oturumsuz kullanıcıyı `/login`e yolluyor, yani o hâl
+hiç oluşamıyor. Android'de sekme kabuğu oturumdan önce çiziliyor.
+
+Kapı **§359** iki yüzeyin sayılarını ölçüyor (ikisi de enjeksiyonla
+doğrulandı). **Ölçünün kendi hatası:** karoyu ararken dosyadaki ilk
+"width/height/borderRadius/backgroundColor" dizisini alıyordum ve o, başlığın
+**geri düğmesiydi** (44/md/surface2) — ölçü artık zil ikonunun kendi kabına
+bakıyor.

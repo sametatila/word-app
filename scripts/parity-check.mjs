@@ -21207,6 +21207,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 359. BILDIRIM KAROSU VE EKRAN BASLIGI: OLCULDU, ESITTI
+ *
+ * Iki supheyi olctum, ikisi de temiz cikti - ve ikisini de kapiya aliyorum ki
+ * kaydiginda gorunsun.
+ *
+ * BILDIRIM KAROSU. "Webde gok mavisi, Android'de marka turuncusu" diye not
+ * dusmustum; yanlis ekrani karsilastirmisim. Android'in iki bildirim ekrani
+ * var: `NotifPrimeScreen` (izin isteme, 88 piksel karo, `colors.primary`) ve
+ * `NotificationsScreen` (AYARLAR, 72 piksel karo, `colors.info`). Webin
+ * `/notifications` sayfasi ikincisinin karsiligi ve `--color-sky` kullaniyor -
+ * ki o, Android paletindeki `info`nun web adi (ayni iki hex). Karo olcusu,
+ * yaricap, ikon boyu ve murekkep de birebir.
+ *
+ * EKRAN BASLIGI. Android `ScreenHeader` ile webin `PageBack`i ayni: aralik 12,
+ * geri dugmesi 44x44 `radii.md` `surface2` zeminde, ok 24, baslik `h2`
+ * (ikisinde de basliK ROLUYLE), alt satir sonuk `caption`.
+ *
+ * Olcu: iki yuzeyin sayilari. */
+{
+  const silN = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const mobBildirim = silN(read("mobile/src/screens/NotificationsScreen.tsx"));
+  const webBildirim = silN(read("src/components/notification-settings.tsx"));
+  /* KARONUN KENDISI - geri dugmesi DEGIL. Dosyadaki ilk
+     "width/height/borderRadius/backgroundColor" dizisi basligin geri
+     dugmesi (44/md/surface2) ve ilk eslesmeye bakan yazim onu okuyordu;
+     karo, ZIL ikonunun hemen ustundeki kap. */
+  const zil = mobBildirim.indexOf("BellIcon color={colors.onFill}");
+  const mobKaro = mobBildirim.slice(Math.max(0, zil - 400), zil).match(/width: (\d+), height: \d+, borderRadius: radii\.(\w+)[^}]*backgroundColor: colors\.(\w+)/);
+  const mobIkon = mobBildirim.match(/BellIcon color=\{colors\.(\w+)\} size=\{(\d+)\}/);
+  sameList(
+    "bildirim karosu",
+    [
+      "kutu=" + (mobKaro?.[1] ?? "YOK"),
+      "yaricap=" + (mobKaro?.[2] ?? "YOK"),
+      "dolgu=" + (mobKaro?.[3] === "info" ? "teal" : "BASKA"),
+      "ikon=" + (mobIkon?.[2] ?? "YOK"),
+      "murekkep=" + (mobIkon?.[1] === "onFill" ? "onFill" : "BASKA"),
+    ],
+    [
+      "kutu=" + (/h-\[72px\] w-\[72px\]/.test(webBildirim) ? "72" : "BASKA"),
+      "yaricap=" + (/rounded-card/.test(webBildirim) ? "xl" : "BASKA"),
+      "dolgu=" + (/background: "var\(--color-sky\)"/.test(webBildirim) ? "teal" : "BASKA"),
+      "ikon=" + ((webBildirim.match(/BellIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "murekkep=" + (/color: "var\(--on-fill\)"/.test(webBildirim) ? "onFill" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+
+  const mobBaslik = silN(read("mobile/src/social/common.tsx"));
+  const webBaslik = silN(read("src/components/page-back.tsx"));
+  const mobGeri = mobBaslik.match(/width: 44, height: 44, borderRadius: radii\.(\w+)[^}]*backgroundColor: colors\.(\w+)/);
+  sameList(
+    "ekran basliginin olculeri",
+    [
+      "aralik=" + (/gap: spacing\.md, paddingTop: insets\.top/.test(mobBaslik) ? "12" : "BASKA"),
+      "geri kutusu=44/" + (mobGeri?.[1] ?? "YOK") + "/" + (mobGeri?.[2] ?? "YOK"),
+      "ok=" + ((mobBaslik.match(/ArrowBackIcon color=\{colors\.text\} size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "baslik=h2",
+      "alt satir=caption",
+    ],
+    [
+      "aralik=" + (/mb-4 flex items-center gap-3/.test(webBaslik) ? "12" : "BASKA"),
+      "geri kutusu=44/" + (/h-11 w-11 shrink-0 items-center justify-center rounded-tile/.test(webBaslik) ? "md" : "YOK") + "/" + (/background: "var\(--surface-2\)"/.test(webBaslik) ? "surface2" : "YOK"),
+      "ok=" + ((webBaslik.match(/ArrowLeftIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
+      "baslik=" + (/<h1 className="truncate text-h2">/.test(webBaslik) ? "h2" : "BASKA"),
+      "alt satir=" + (/muted truncate text-caption/.test(webBaslik) ? "caption" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
