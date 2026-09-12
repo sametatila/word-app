@@ -202,10 +202,12 @@ function LeagueRow({
         <span className="min-w-0 flex-1 truncate text-strong">
           {row.username && !row.isMe ? (
             <Link href={`/u/${row.username}`} prefetch={false}>
-              {row.name ?? t("social.unnamed")}
+              {/* Yedek `social.student` — bkz. `daily-player`. Aynı kişinin
+                  bildirme düğmesi zaten "öğrenci" diyordu. */}
+              {row.name ?? t("social.student")}
             </Link>
           ) : (
-            (row.name ?? t("social.unnamed"))
+            (row.name ?? t("social.student"))
           )}
           {row.isMe ? (
             <span

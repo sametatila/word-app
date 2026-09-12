@@ -76,7 +76,7 @@ export function FriendsBoard() {
             </span>
             <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={32} ring={MEDAL[r.rank] ?? null} />
             <span className="min-w-0 flex-1 truncate text-strong">
-              {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.unnamed")}</Link> : (r.name ?? t("social.unnamed"))}
+              {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.student")}</Link> : (r.name ?? t("social.student"))}
               {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de
                   "sen" yazıyordu. Anahtar taban sözlükte hazırdı ve Android
                   aynı satırda onu kullanıyor. */}
