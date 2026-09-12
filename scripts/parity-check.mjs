@@ -7488,6 +7488,78 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 297. YARIM BIRAKMA KORUMASI IOS'TA DA VAR ---------------------
+   *
+   * `useBackConfirm` yarim birakilinca emek kaybi olan ekranlarda geri tusunu
+   * onaya bagliyor: yarim tur, sureli sinav, yerlestirme, yuruyus oturumu.
+   * Bunu `BackHandler.addEventListener("hardwareBackPress", ...)` ile yapiyor.
+   *
+   * `BackHandler` ANDROID'E OZGU. iOS'ta `addEventListener` bos bir saplama,
+   * yani kenardan kaydirma ekrani onay SORMADAN kapatiyordu - yarim bir tur ya
+   * da suresi isleyen bir sinav tek harekette gidiyordu, hem de Android'de
+   * ayni hareketin "cikilsin mi?" diye sordugu yerde. Ustune kancanin kendi
+   * docblock'u "donanim/GESTURE geri tusu" diyordu; iOS'ta o soz tutulmuyordu.
+   *
+   * iOS'taki karsilik hareketi KAPATMAK: cikisin tek yolu ekranin kendi
+   * kapatma dugmesi kaliyor ve o dugme zaten onay diyalogundan geciyor.
+   *
+   * OLCU IKI KUMEYI karsilastiriyor: kancayi cagiran ekranlar ile
+   * `gestureEnabled: false` verilen ekranlar. Biri eklenip oteki unutulursa o
+   * ekran iOS'ta korumasiz kalir - ve bu, hicbir derlemenin soylemedigi bir
+   * fark. */
+  {
+    const yigin = sil(read("mobile/src/navigation/RootStack.tsx"));
+    /* Docblock HAM okunuyor: `sil` yorumlari siliyor ve iddia yorumun
+       icinde - ilk yazim tam bu yuzden "YOK" dedi. */
+    const kancaHam = read("mobile/src/lib/useBackConfirm.ts");
+    const kanca = sil(kancaHam);
+
+    /* Kancayi cagiran ekranlar ROTA ADIYLA. Dosya adindan cevirmek yanlis:
+       `WalkModeScreen` rotada `Walk` diye geciyor. Eslesme yiginin kendi
+       `component=` bildiriminden okunuyor. */
+    const rotaAdi = new Map(
+      [...yigin.matchAll(/<Stack\.Screen name="(\w+)" component=\{(\w+)\}/g)].map((m) => [m[2], m[1]]),
+    );
+    const ekranlar = (() => {
+      const out = [];
+      for (const e of readdirSync(new URL("../mobile/src/screens", import.meta.url))) {
+        if (!e.endsWith(".tsx")) continue;
+        if (!/\buseBackConfirm\(/.test(sil(read("mobile/src/screens/" + e)))) continue;
+        const bilesen = e.replace(/\.tsx$/, "");
+        out.push(rotaAdi.get(bilesen) ?? "ROTA YOK:" + bilesen);
+      }
+      return out.sort();
+    })();
+
+    /* `gestureEnabled: false` verilen rotalar. */
+    const kapali = [...yigin.matchAll(/<Stack\.Screen name="(\w+)"[^>]*gestureEnabled: false/g)].map((m) => m[1]).sort();
+
+    /* Once SAYI: iki liste de okunabilmis olmali, yoksa bos-bos esitlenir. */
+    sameList(
+      "iki liste de okunuyor",
+      ["kanca=" + (ekranlar.length >= 4 ? "okundu" : "OKUNAMADI:" + ekranlar.length), "hareket=" + (kapali.length >= 4 ? "okundu" : "OKUNAMADI:" + kapali.length)],
+      ["kanca=okundu", "hareket=okundu"],
+      "bulunan",
+      "beklenen",
+    );
+
+    sameList("yarim birakma korumasi olan ekranlar", kapali, ekranlar, "hareket kapali", "useBackConfirm");
+
+    /* Kanca gercekten Android'e ozgu olani kullaniyor - ve docblock artik
+       bunu soyluyor (eski hali "gesture" diyip iOS'ta tutmayan bir sozdu). */
+    sameList(
+      "kancanin kapsami dogru yazili",
+      [
+        "backhandler=" + (/BackHandler\.addEventListener\("hardwareBackPress"/.test(kanca) ? "var" : "YOK"),
+        "yalniz android notu=" + (/YALNIZ ANDROID/.test(kancaHam) ? "var" : "YOK"),
+        "gesture sozu=" + (/Donanım\/gesture geri tuşunu/.test(kancaHam) ? "KALDI" : "yok"),
+      ],
+      ["backhandler=var", "yalniz android notu=var", "gesture sozu=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 296. KLAVYE METIN KUTUSUNU ORTMUYOR ---------------------------
    *
    * Android bu isi yillarca manifestten yapti: `windowSoftInputMode=

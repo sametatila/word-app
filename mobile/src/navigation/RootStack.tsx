@@ -98,6 +98,25 @@ export type RootStackParams = {
 const Stack = createNativeStackNavigator<RootStackParams>();
 
 export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParams }) {
+  /*
+   * GERİ HAREKETİ BEŞ EKRANDA KAPALI — `gestureEnabled: false`.
+   *
+   * `useBackConfirm` yarım bırakılınca emek kaybı olan ekranlarda geri tuşunu
+   * onaya bağlıyor ve bunu `BackHandler` ile yapıyor. `BackHandler` ANDROID'E
+   * ÖZGÜ: iOS'ta `addEventListener` hiçbir şey yapmaz. Yani iPhone'da kenardan
+   * kaydırma ekranı onay SORMADAN kapatıyordu — yarım tur, süreli sınav ya da
+   * yürüyüş oturumu tek harekette gidiyordu, hem de Android'de aynı hareketin
+   * "çıkılsın mı?" diye sorduğu yerde.
+   *
+   * Çözüm hareketi kapatmak: çıkışın tek yolu ekranın kendi kapatma düğmesi
+   * kalıyor ve o düğme zaten onay diyaloğundan geçiyor. Web tarafı da aynı
+   * yeri aynı şekilde koruyor (`lib/use-leave-guard`: uygulama içi bağlantılar
+   * yakalanıyor, tarayıcı geri tuşu bilerek kapsam dışı).
+   *
+   * Liste `useBackConfirm` çağıranlarla BİREBİR ve `check:parity` §297 ikisini
+   * karşılaştırıyor — biri eklenip öteki unutulursa o ekran iOS'ta korumasız
+   * kalır.
+   */
   return (
     <Stack.Navigator initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
       {/* Sekmeler DIŞARIDA: kendi ekranlarını kendi içinde sütuna alıyor
@@ -110,14 +129,14 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="FirstPractice" component={FirstPracticeScreen} />
       <Stack.Screen name="NotifPrime" component={NotifPrimeScreen} />
-      <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Profile" component={ProfileScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="MockExams" component={MockExamsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="MockExam" component={MockExamScreen} layout={contentColumnLayout} />
+      <Stack.Screen name="MockExam" component={MockExamScreen} options={{ gestureEnabled: false }} layout={contentColumnLayout} />
       <Stack.Screen name="MockStats" component={MockStatsScreen} layout={contentColumnLayout} />
-      <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
+      <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom" }} layout={contentColumnLayout} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
@@ -131,7 +150,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
-      <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />

@@ -15282,3 +15282,49 @@ olsun) ve Android'in `adjustResize`ının yerinde durduğu — o, edge-to-edge
 bileşende de olabiliyor (`MockExamScreen` görev kartları, `PaywallScreen` promo
 kartı) ve o soru metinden güvenilir biçimde sorulamaz. Üç enjeksiyon da
 doğrulandı.
+
+## §11.422 — Yarım bırakma koruması iOS'ta hiç çalışmıyordu
+
+`useBackConfirm` yarım bırakılınca emek kaybı olan beş ekranda geri tuşunu
+onaya bağlıyor: yarım tur, süreli modül sınavı, deneme sınavı, yerleştirme ve
+yürüyüş oturumu. Bunu şöyle yapıyor:
+
+```ts
+BackHandler.addEventListener("hardwareBackPress", () => { setVisible(true); return true; })
+```
+
+**`BackHandler` Android'e özgü.** iOS'ta `addEventListener` boş bir saplama —
+yani iPhone'da kenardan kaydırma ekranı **onay sormadan** kapatıyordu: yarım
+bir tur ya da süresi işleyen bir sınav tek harekette gidiyordu, hem de
+Android'de aynı hareketin "çıkılsın mı?" diye sorduğu yerde.
+
+Üstüne kancanın kendi docblock'u **"donanım/gesture geri tuşunu onaya
+bağlar"** diyordu; iOS'ta o söz tutulmuyordu. Yazılı bir sözün tutmaması —
+bu defterin tanıdığı sınıf.
+
+iOS'taki karşılık hareketi **kapatmak** (`gestureEnabled: false`): çıkışın tek
+yolu ekranın kendi kapatma düğmesi kalıyor ve o düğme zaten onay diyaloğundan
+geçiyor. Web tarafı da aynı yeri aynı şekilde koruyor (`use-leave-guard`:
+uygulama içi bağlantılar yakalanıyor, tarayıcı geri tuşu bilerek kapsam dışı
+ve gerekçesi orada yazılı).
+
+### §297
+
+Üç ölçü: iki listenin de **okunabildiği** (ikisi boş kalırsa boş-boşa eşitlenir
+ve ölçü hiçbir şey söylemez), kancayı çağıran ekranlar ile hareketi kapatılan
+rotaların **birebir aynı küme** olduğu, ve kancanın kapsamının doğru yazılı
+olduğu (`BackHandler` var, "yalnız Android" notu var, eski "gesture" sözü
+yok).
+
+Ölçünün iki kusuru da bu turda çıktı ve ikisi de kayıtlı sınıftan:
+
+1. **Dosya adı rota adı değil.** `WalkModeScreen` rotada `Walk` diye geçiyor;
+   dosya adından çevirmek sahte bir ayrışma verdi. Eşleşme artık yığının kendi
+   `component={…}` bildiriminden okunuyor.
+2. **Yorumdaki iddiayı yorumu silen okuyucuyla aramak.** Docblock testi `sil()`
+   geçmiş metinde yapılıyordu — yorumlar silindiği için iddia hep "YOK"
+   çıkıyordu. O üç ölçü artık **ham** metni okuyor.
+
+Üç enjeksiyon doğrulandı; ikincisi özellikle anlamlı: `RoleplayExamScreen`e
+kanca eklenince ölçü onu hemen "hareketi kapatılmamış" diye gösterdi — yani
+yeni bir korumalı ekran eklenince iOS tarafının unutulması artık mümkün değil.
