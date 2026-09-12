@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
-| B1 | 19–25 | bekliyor |
+| B1 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
+| B1 | 22–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -788,6 +788,53 @@ sildirdi ve „per cent“i ikinci kez metinden çıkarttı. İkinci kez çıkma
 kuralın yerleştiğini gösteriyor: çok sözcüklü bir terim sözlükçeyle
 kapatılamıyor, çünkü havuz ham dizeyi alıyor ve metin belirteçleri ayrı
 sayıyor — o terim ya tek sözcüğe indirilecek ya hiç kullanılmayacak.
+
+**B1 ünite 19–21 (2026-09-12).** Ünite 19 Reading the label ·
+At the emergency room · The results are in · Seeing a specialist; ünite 20
+The sick note · Choosing a treatment · A second opinion · A night in
+hospital; ünite 21 Talking about the climate · Sorting the rubbish ·
+Saving energy at home · Parks and green space. On sekiz egzersiz; ünite
+dışı ölçüm %0,0. B1 yuvalarının 126'sı dolu, 24'ü kaldı.
+
+Ünite 19'un noktası KİPLİ EDİLGEN: „The pack must be kept in the fridge.“
+Kip ve edilgen üst üste biniyor ve sıra hiç değişmiyor — „must“ + „be“ +
+üçüncü hâl. Almanca eksende bu bir PARİTE, üstelik dizilişe kadar aynı
+(„muss … aufbewahrt werden“), yalnız Almanca sondaki yardımcı fiili
+cümlenin sonuna atıyor. Karşılık bunu yazıyor, çünkü öğrencinin burada
+kendi dilinden taşıyabileceği doğru bir kalıp var. Prospektüsün neden
+baştan sona edilgen olduğu da ünitenin kendi konusu: ilacı kimin aldığı
+değil, ilacın nasıl işlediği anlatılıyor — fail yok, çünkü fail önemli
+değil. „by“ ancak kimin yaptığı önemliyse geliyor („prescribed by a
+doctor“) ve metin ikisini yan yana gösteriyor.
+
+Ünite 20'nin noktası DÖRT BAĞLAÇ DÖRT AYRI İŞ: „moreover“ aynı türden
+ikinci bir şey ekliyor ve yazıya ait; „besides“ elindekinden başlayıp
+üstüne katıyor ve konuşmaya daha yakın; „otherwise“ uyarıyor (yapmazsan
+şu olur); „instead“ değiştiriyor — eklemiyor, yerine koyuyor. Dördü de
+Türkçede "ayrıca/üstelik/yoksa/onun yerine" ile karşılanıyor ve öğrenci
+birini ötekinin yerine koymaya yatkın. Almanca eksende bölüşüm BİREBİR
+duruyor („außerdem“ / „übrigens“ / „sonst“ / „stattdessen“), yani satır
+büyümüyor; karşılık dört Almanca eşi adıyla yazıyor, çünkü eşleşmenin
+kendisi öğretici.
+
+Ünite 21'in noktası ÜÇ GELECEK BİÇİMİ KANIT DERECESİ GÖSTERİYOR. B1 ünite
+4'te üçü aynı sahnede buluşmuştu ve orada ayrımın adı "ayarlanmış / plan /
+o anki karar"dı; burada aynı üçlü başka bir eksende dizilmiş: „will“ en
+zayıf kanıt (kanaat), „going to“ elde görünen veri (ölçümler bir yöne
+işaret ediyor), sürerli şimdiki zaman en güçlü ve en dar (takvimde
+saatiyle duruyor). Almanca eksende bu, ünite 4'teki notun doğrudan
+sonucu: Almanca üç biçimin üçünü de „werden“ ya da yalın şimdiki zamanla
+karşılıyor, yani KANIT DERECESİNİ dilbilgisiyle göstermiyor. Almanca
+okuyan burada kendi diline yaslanırsa üç cümleyi eşit güçte sanır —
+karşılık bunu adıyla söylüyor.
+
+Ölçüm bu turda altmış sözlükçe maddesi ekletti, ÜÇ maddeyi sildirdi ve
+„thirty per cent“i kullanımdan çıkarttı („by a third“). Sildirilenler yine
+aynı sınıftan — sözcük soru kökünde geçiyor, metinde geçmiyor — ve doğru
+çözüm her seferinde soruyu yeniden yazmak oldu („When is the operation?“ →
+„When will they operate?“). Bir dikte bölümü de ikiye ayrıldı: cümle uzun
+çizgiyle sürüyordu.
+
 
 ## Tamamlanma ölçütü
 

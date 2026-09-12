@@ -1,0 +1,522 @@
+[
+ {
+  "tr": "İki yol, bir karar. Neye göre seçilmiş?",
+  "kind": "intro",
+  "de": "Zwei Wege, eine Entscheidung. Wonach wurde gewählt?"
+ },
+ {
+  "tr": "Tahlil sonuçları. Hangi cümle aktarılmış?",
+  "kind": "intro",
+  "de": "Die Befunde. Welcher Satz ist wiedergegeben?"
+ },
+ {
+  "tr": "Acil serviste bir akşam. Ne zaten olmuştu?",
+  "kind": "intro",
+  "de": "Ein Abend in der Notaufnahme. Was war schon geschehen?"
+ },
+ {
+  "tr": "Sevk kâğıdı ve röntgen. Hangi hekim nerede?",
+  "kind": "intro",
+  "de": "Überweisung und Röntgenbild. Welcher Arzt sitzt wo?"
+ },
+ {
+  "tr": "Faturayı düşüren şeyler. Hangi koşul gerçek?",
+  "kind": "intro",
+  "de": "Was die Rechnung senkt. Welche Bedingung ist real?"
+ },
+ {
+  "tr": "Prospektüsün altı satırı. Neden hep edilgen?",
+  "kind": "intro",
+  "de": "Sechs Zeilen des Beipackzettels. Warum steht alles im Passiv?"
+ },
+ {
+  "tr": "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
+  "kind": "intro",
+  "de": "Modalverb und Passiv übereinander. Die Reihenfolge ändert sich nie."
+ },
+ {
+  "tr": "Ayırma kuralları. Yanlış kutu neye mal oluyor?",
+  "kind": "intro",
+  "de": "Die Trennregeln. Was kostet die falsche Tonne?"
+ },
+ {
+  "tr": "İkinci bir görüş isteniyor. Hangi koşul gerçek?",
+  "kind": "intro",
+  "de": "Eine zweite Meinung wird eingeholt. Welche Bedingung ist real?"
+ },
+ {
+  "tr": "Bir park anlatılıyor. Hangi cümlede bağlaç düşüyor?",
+  "kind": "intro",
+  "de": "Ein Park wird beschrieben. In welchem Satz fällt das Relativpronomen weg?"
+ },
+ {
+  "tr": "Aktarılan buyruk olumsuzlanınca „not“ nereye gidiyor?",
+  "kind": "intro",
+  "de": "Wohin geht das „not“, wenn eine wiedergegebene Aufforderung verneint wird?"
+ },
+ {
+  "tr": "Bir gecelik yatış. Hangi cümle plan, hangisi ayarlanmış?",
+  "kind": "intro",
+  "de": "Eine Nacht im Krankenhaus. Welcher Satz ist Plan, welcher verabredet?"
+ },
+ {
+  "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
+  "kind": "intro",
+  "de": "Vier Bindewörter, vier Aufgaben. Welches ergänzt, welches warnt?"
+ },
+ {
+  "tr": "Öğüt, koşul ve üç gelecek. Hangisi gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Rat, Bedingung und drei Zukunftsformen. Welche ist real, welche nicht?"
+ },
+ {
+  "tr": "Aynı konu, üç gelecek biçimi. Hangisi kanaat, hangisi veri?",
+  "kind": "intro",
+  "de": "Dasselbe Thema, drei Zukunftsformen. Welche ist Einschätzung, welche stützt sich auf Zahlen?"
+ },
+ {
+  "tr": "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Modalpassiv und Bedingungen. Welche Bedingung ist real, welche nicht?"
+ },
+ {
+  "tr": "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
+  "kind": "intro",
+  "de": "Drei Zukunftsformen, drei Grade an Beleg. Welche ist Einschätzung, welche Kalender?"
+ },
+ {
+  "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor, hangisi değiştiriyor?",
+  "kind": "intro",
+  "de": "Vier Bindewörter, vier Aufgaben. Welches ergänzt, welches warnt, welches ersetzt?"
+ },
+ {
+  "tr": "Özne konumundaki „that“ düşemez.",
+  "kind": "explain",
+  "de": "Ein „that“ in der Subjektstellung darf nicht wegfallen."
+ },
+ {
+  "tr": "Önceden kurulmuş karar: „going to“.",
+  "kind": "explain",
+  "de": "Ein vorher gefasster Entschluss: „going to“."
+ },
+ {
+  "tr": "Kanaat, veri, takvim, en sonda kuralın kendisi.",
+  "kind": "explain",
+  "de": "Einschätzung, Zahlen, Kalender, zuletzt die Regel selbst."
+ },
+ {
+  "tr": "Öğüt kalıbı: gerçek olmayan koşulda „were“ geliyor.",
+  "kind": "explain",
+  "de": "Die Ratformel: in der irrealen Bedingung steht „were“ — wie der Konjunktiv „wäre“."
+ },
+ {
+  "tr": "Doz, reçete, saklama, en sonda emir kipindeki uyarı.",
+  "kind": "explain",
+  "de": "Dosis, Verschreibung, Aufbewahrung, zuletzt die Warnung im Imperativ."
+ },
+ {
+  "tr": "Metnin kendi sırası: ekleme, ekleme, uyarı, değişim.",
+  "kind": "explain",
+  "de": "Die Ordnung des Textes: ergänzen, ergänzen, warnen, ersetzen."
+ },
+ {
+  "tr": "Aktarılan olumsuz buyrukta „not“ mastarın ÖNÜNE geliyor.",
+  "kind": "explain",
+  "de": "In der verneinten wiedergegebenen Aufforderung steht „not“ VOR dem Infinitiv."
+ },
+ {
+  "tr": "„„Will“ is the weakest of the three and the most honest here.“",
+  "kind": "explain",
+  "de": "„„Will“ is the weakest of the three and the most honest here.“"
+ },
+ {
+  "tr": "„„Otherwise“ is the only one of the four that carries a warning.“",
+  "kind": "explain",
+  "de": "„„Otherwise“ is the only one of the four that carries a warning.“"
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim olmayan bir şimdiyi anlatıyor.",
+  "kind": "explain",
+  "de": "Irreale Bedingung: die Vergangenheitsform meint eine Gegenwart, die es nicht gibt."
+ },
+ {
+  "tr": "„I use „will“ where I have data and „going to“ where I have a feeling.“",
+  "kind": "explain",
+  "de": "„I use „will“ where I have data and „going to“ where I have a feeling.“"
+ },
+ {
+  "tr": "„„Instead“ replaces. Nothing is added — one thing is exchanged for another.“",
+  "kind": "explain",
+  "de": "„„Instead“ replaces. Nothing is added — one thing is exchanged for another.“"
+ },
+ {
+  "tr": "„„Do not worry“ is nothing. „It has not changed in four years“ is information.“",
+  "kind": "explain",
+  "de": "„„Do not worry“ is nothing. „It has not changed in four years“ is information.“"
+ },
+ {
+  "tr": "„They will operate tomorrow morning. Eight o'clock, and I am the first on the list…“",
+  "kind": "explain",
+  "de": "„They will operate tomorrow morning. Eight o'clock, and I am the first on the list…“"
+ },
+ {
+  "tr": "„„Going to“ rests on something already visible: the measurements from the last ten seasons…“",
+  "kind": "explain",
+  "de": "„„Going to“ rests on something already visible: the measurements from the last ten seasons…“"
+ },
+ {
+  "tr": "dikti",
+  "kind": "gloss.tr",
+  "de": "pflanzte"
+ },
+ {
+  "tr": "ölçüm",
+  "kind": "gloss.tr",
+  "de": "Messung"
+ },
+ {
+  "tr": "musluk",
+  "kind": "gloss.tr",
+  "de": "der Hahn"
+ },
+ {
+  "tr": "bıraktı",
+  "kind": "gloss.tr",
+  "de": "hat aufgehört"
+ },
+ {
+  "tr": "görünür",
+  "kind": "gloss.tr",
+  "de": "sichtbar"
+ },
+ {
+  "tr": "ameliyat",
+  "kind": "gloss.tr",
+  "de": "die Operation"
+ },
+ {
+  "tr": "sevk etti",
+  "kind": "gloss.tr",
+  "de": "hat überwiesen"
+ },
+ {
+  "tr": "reçete edildi",
+  "kind": "gloss.tr",
+  "de": "wurde verschrieben"
+ },
+ {
+  "tr": "yerinde olsam",
+  "kind": "gloss.tr",
+  "de": "an deiner Stelle"
+ },
+ {
+  "tr": "ameliyat etmek",
+  "kind": "gloss.tr",
+  "de": "operieren"
+ },
+ {
+  "tr": "endişelenmemem",
+  "kind": "gloss.tr",
+  "de": "mir keine Sorgen zu machen"
+ },
+ {
+  "tr": "ait",
+  "kind": "gloss.tr",
+  "de": "gehört"
+ },
+ {
+  "tr": "buz",
+  "kind": "gloss.tr",
+  "de": "das Eis"
+ },
+ {
+  "tr": "kap",
+  "kind": "gloss.tr",
+  "de": "Behälter"
+ },
+ {
+  "tr": "bank",
+  "kind": "gloss.tr",
+  "de": "eine Bank"
+ },
+ {
+  "tr": "fail",
+  "kind": "gloss.tr",
+  "de": "der Urheber"
+ },
+ {
+  "tr": "form",
+  "kind": "gloss.tr",
+  "de": "das Blatt"
+ },
+ {
+  "tr": "hâli",
+  "kind": "gloss.tr",
+  "de": "Fassung"
+ },
+ {
+  "tr": "aitti",
+  "kind": "gloss.tr",
+  "de": "gehörte"
+ },
+ {
+  "tr": "ampul",
+  "kind": "gloss.tr",
+  "de": "Glühbirne"
+ },
+ {
+  "tr": "dikiş",
+  "kind": "gloss.tr",
+  "de": "Stiche"
+ },
+ {
+  "tr": "eklem",
+  "kind": "gloss.tr",
+  "de": "das Gelenk"
+ },
+ {
+  "tr": "eylem",
+  "kind": "gloss.tr",
+  "de": "Handlung"
+ },
+ {
+  "tr": "koğuş",
+  "kind": "gloss.tr",
+  "de": "die Station"
+ },
+ {
+  "tr": "nabız",
+  "kind": "gloss.tr",
+  "de": "der Puls"
+ },
+ {
+  "tr": "tıbbi",
+  "kind": "gloss.tr",
+  "de": "medizinisch"
+ },
+ {
+  "tr": "yoksa",
+  "kind": "gloss.tr",
+  "de": "sonst"
+ },
+ {
+  "tr": "aralık",
+  "kind": "gloss.tr",
+  "de": "Bereich"
+ },
+ {
+  "tr": "ayrıca",
+  "kind": "gloss.tr",
+  "de": "außerdem"
+ },
+ {
+  "tr": "bozmak",
+  "kind": "gloss.tr",
+  "de": "verderben"
+ },
+ {
+  "tr": "broşür",
+  "kind": "gloss.tr",
+  "de": "Faltblatt"
+ },
+ {
+  "tr": "en alt",
+  "kind": "gloss.tr",
+  "de": "ganz unten"
+ },
+ {
+  "tr": "kamyon",
+  "kind": "gloss.tr",
+  "de": "Lastwagen"
+ },
+ {
+  "tr": "kanama",
+  "kind": "gloss.tr",
+  "de": "die Blutung"
+ },
+ {
+  "tr": "patika",
+  "kind": "gloss.tr",
+  "de": "der Weg"
+ },
+ {
+  "tr": "tahmin",
+  "kind": "gloss.tr",
+  "de": "Vorhersage"
+ },
+ {
+  "tr": "yutmak",
+  "kind": "gloss.tr",
+  "de": "schlucken"
+ },
+ {
+  "tr": "cereyan",
+  "kind": "gloss.tr",
+  "de": "Zugluft"
+ },
+ {
+  "tr": "durduğu",
+  "kind": "gloss.tr",
+  "de": "wo er stand"
+ },
+ {
+  "tr": "ekliyor",
+  "kind": "gloss.tr",
+  "de": "ergänzt"
+ },
+ {
+  "tr": "konuşma",
+  "kind": "gloss.tr",
+  "de": "gesprochene Sprache"
+ },
+ {
+  "tr": "sürerli",
+  "kind": "gloss.tr",
+  "de": "Verlaufsform"
+ },
+ {
+  "tr": "tersine",
+  "kind": "gloss.tr",
+  "de": "rückwärts"
+ },
+ {
+  "tr": "üstelik",
+  "kind": "gloss.tr",
+  "de": "überdies"
+ },
+ {
+  "tr": "alınıyor",
+  "kind": "gloss.tr",
+  "de": "wird eingenommen"
+ },
+ {
+  "tr": "bozulmuş",
+  "kind": "gloss.tr",
+  "de": "verunreinigt"
+ },
+ {
+  "tr": "davranış",
+  "kind": "gloss.tr",
+  "de": "Verhalten"
+ },
+ {
+  "tr": "eriyecek",
+  "kind": "gloss.tr",
+  "de": "wird schmelzen"
+ },
+ {
+  "tr": "tansiyon",
+  "kind": "gloss.tr",
+  "de": "Blutdruck"
+ },
+ {
+  "tr": "ulaşması",
+  "kind": "gloss.tr",
+  "de": "dass es ankommt"
+ },
+ {
+  "tr": "anlaşılan",
+  "kind": "gloss.tr",
+  "de": "offenbar"
+ },
+ {
+  "tr": "ayrılmalı",
+  "kind": "gloss.tr",
+  "de": "muss getrennt werden"
+ },
+ {
+  "tr": "çıkarılan",
+  "kind": "gloss.tr",
+  "de": "weggelassen"
+ },
+ {
+  "tr": "daha ağır",
+  "kind": "gloss.tr",
+  "de": "schwerer"
+ },
+ {
+  "tr": "değişecek",
+  "kind": "gloss.tr",
+  "de": "wird sich ändern"
+ },
+ {
+  "tr": "durulamak",
+  "kind": "gloss.tr",
+  "de": "ausspülen"
+ },
+ {
+  "tr": "korkutmuş",
+  "kind": "gloss.tr",
+  "de": "hatte erschreckt"
+ },
+ {
+  "tr": "öteki yol",
+  "kind": "gloss.tr",
+  "de": "die Alternative"
+ },
+ {
+  "tr": "üstündeki",
+  "kind": "gloss.tr",
+  "de": "darüber"
+ },
+ {
+  "tr": "ayrılmamış",
+  "kind": "gloss.tr",
+  "de": "ungetrennt"
+ },
+ {
+  "tr": "fırçalamak",
+  "kind": "gloss.tr",
+  "de": "putzen"
+ },
+ {
+  "tr": "saklanmalı",
+  "kind": "gloss.tr",
+  "de": "muss aufbewahrt werden"
+ },
+ {
+  "tr": "başka yerde",
+  "kind": "gloss.tr",
+  "de": "woanders"
+ },
+ {
+  "tr": "devamsızlık",
+  "kind": "gloss.tr",
+  "de": "Fehlzeit"
+ },
+ {
+  "tr": "sevk kâğıdı",
+  "kind": "gloss.tr",
+  "de": "die Überweisung"
+ },
+ {
+  "tr": "onun durumunda",
+  "kind": "gloss.tr",
+  "de": "in seinem Fall"
+ },
+ {
+  "tr": "rahatsız edici",
+  "kind": "gloss.tr",
+  "de": "unangenehm"
+ },
+ {
+  "tr": "biraz daha uzağa",
+  "kind": "gloss.tr",
+  "de": "etwas weiter"
+ },
+ {
+  "tr": "geriye tarihlemek",
+  "kind": "gloss.tr",
+  "de": "rückdatieren"
+ },
+ {
+  "tr": "kendi yazdıklarım",
+  "kind": "gloss.tr",
+  "de": "in meinen eigenen Texten"
+ },
+ {
+  "tr": "aciliyet sıralaması",
+  "kind": "gloss.tr",
+  "de": "die Dringlichkeitsprüfung"
+ }
+]

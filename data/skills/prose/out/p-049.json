@@ -1,0 +1,167 @@
+[
+ {
+  "tr": "Özne konumundaki „that“ düşemez.",
+  "kind": "explain",
+  "en": "A „that“ in subject position cannot drop out."
+ },
+ {
+  "tr": "Önceden kurulmuş karar: „going to“.",
+  "kind": "explain",
+  "en": "A decision taken in advance: „going to“."
+ },
+ {
+  "tr": "İki yol, bir karar. Neye göre seçilmiş?",
+  "kind": "intro",
+  "en": "Two ways, one decision. What was it based on?"
+ },
+ {
+  "tr": "Tahlil sonuçları. Hangi cümle aktarılmış?",
+  "kind": "intro",
+  "en": "The test results. Which sentence is reported?"
+ },
+ {
+  "tr": "Acil serviste bir akşam. Ne zaten olmuştu?",
+  "kind": "intro",
+  "en": "An evening in the emergency room. What had already happened?"
+ },
+ {
+  "tr": "Sevk kâğıdı ve röntgen. Hangi hekim nerede?",
+  "kind": "intro",
+  "en": "A referral and an x-ray. Which doctor works where?"
+ },
+ {
+  "tr": "Faturayı düşüren şeyler. Hangi koşul gerçek?",
+  "kind": "intro",
+  "en": "What brings the bill down. Which condition is real?"
+ },
+ {
+  "tr": "Prospektüsün altı satırı. Neden hep edilgen?",
+  "kind": "intro",
+  "en": "Six lines from the label. Why is everything passive?"
+ },
+ {
+  "tr": "Kip ve edilgen üst üste. Sıra hiç değişmiyor.",
+  "kind": "intro",
+  "en": "A modal and a passive together. The order never changes."
+ },
+ {
+  "tr": "Ayırma kuralları. Yanlış kutu neye mal oluyor?",
+  "kind": "intro",
+  "en": "The rules for sorting. What does the wrong bin cost?"
+ },
+ {
+  "tr": "İkinci bir görüş isteniyor. Hangi koşul gerçek?",
+  "kind": "intro",
+  "en": "A second opinion is asked for. Which condition is real?"
+ },
+ {
+  "tr": "Kanaat, veri, takvim, en sonda kuralın kendisi.",
+  "kind": "explain",
+  "en": "A view, data, a calendar, and the rule itself last."
+ },
+ {
+  "tr": "Bir park anlatılıyor. Hangi cümlede bağlaç düşüyor?",
+  "kind": "intro",
+  "en": "A park is described. In which sentence does the relative pronoun drop?"
+ },
+ {
+  "tr": "Öğüt kalıbı: gerçek olmayan koşulda „were“ geliyor.",
+  "kind": "explain",
+  "en": "The formula for advice: an unreal condition takes „were“."
+ },
+ {
+  "tr": "Doz, reçete, saklama, en sonda emir kipindeki uyarı.",
+  "kind": "explain",
+  "en": "Dose, prescription, storage, and the warning in the imperative last."
+ },
+ {
+  "tr": "Metnin kendi sırası: ekleme, ekleme, uyarı, değişim.",
+  "kind": "explain",
+  "en": "The order of the text: add, add, warn, replace."
+ },
+ {
+  "tr": "Aktarılan buyruk olumsuzlanınca „not“ nereye gidiyor?",
+  "kind": "intro",
+  "en": "Where does „not“ go when a reported order is made negative?"
+ },
+ {
+  "tr": "Aktarılan olumsuz buyrukta „not“ mastarın ÖNÜNE geliyor.",
+  "kind": "explain",
+  "en": "In a negative reported order, „not“ goes BEFORE the infinitive."
+ },
+ {
+  "tr": "Bir gecelik yatış. Hangi cümle plan, hangisi ayarlanmış?",
+  "kind": "intro",
+  "en": "One night in hospital. Which sentence is a plan and which is arranged?"
+ },
+ {
+  "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
+  "kind": "intro",
+  "en": "Four linkers, four jobs. Which one adds and which one warns?"
+ },
+ {
+  "tr": "Öğüt, koşul ve üç gelecek. Hangisi gerçek, hangisi değil?",
+  "kind": "intro",
+  "en": "Advice, conditions and three futures. Which is real and which is not?"
+ },
+ {
+  "tr": "Aynı konu, üç gelecek biçimi. Hangisi kanaat, hangisi veri?",
+  "kind": "intro",
+  "en": "One subject, three future forms. Which is a view and which rests on data?"
+ },
+ {
+  "tr": "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "en": "A modal passive and conditions. Which condition is real and which is not?"
+ },
+ {
+  "tr": "„„Will“ is the weakest of the three and the most honest here.“",
+  "kind": "explain",
+  "en": "„„Will“ is the weakest of the three and the most honest here.“"
+ },
+ {
+  "tr": "Üç gelecek, üç kanıt derecesi. Hangisi kanaat, hangisi takvim?",
+  "kind": "intro",
+  "en": "Three futures, three degrees of evidence. Which is a view and which a calendar?"
+ },
+ {
+  "tr": "„„Otherwise“ is the only one of the four that carries a warning.“",
+  "kind": "explain",
+  "en": "„„Otherwise“ is the only one of the four that carries a warning.“"
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim olmayan bir şimdiyi anlatıyor.",
+  "kind": "explain",
+  "en": "An unreal condition: the past form means a present that does not exist."
+ },
+ {
+  "tr": "„I use „will“ where I have data and „going to“ where I have a feeling.“",
+  "kind": "explain",
+  "en": "„I use „will“ where I have data and „going to“ where I have a feeling.“"
+ },
+ {
+  "tr": "„„Instead“ replaces. Nothing is added — one thing is exchanged for another.“",
+  "kind": "explain",
+  "en": "„„Instead“ replaces. Nothing is added — one thing is exchanged for another.“"
+ },
+ {
+  "tr": "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor, hangisi değiştiriyor?",
+  "kind": "intro",
+  "en": "Four linkers, four jobs. Which adds, which warns, which replaces?"
+ },
+ {
+  "tr": "„„Do not worry“ is nothing. „It has not changed in four years“ is information.“",
+  "kind": "explain",
+  "en": "„„Do not worry“ is nothing. „It has not changed in four years“ is information.“"
+ },
+ {
+  "tr": "„They will operate tomorrow morning. Eight o'clock, and I am the first on the list…“",
+  "kind": "explain",
+  "en": "„They will operate tomorrow morning. Eight o'clock, and I am the first on the list…“"
+ },
+ {
+  "tr": "„„Going to“ rests on something already visible: the measurements from the last ten seasons…“",
+  "kind": "explain",
+  "en": "„„Going to“ rests on something already visible: the measurements from the last ten seasons…“"
+ }
+]

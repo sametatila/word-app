@@ -1,0 +1,292 @@
+[
+ {
+  "tr": "İklim kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Klimakarte aus."
+ },
+ {
+  "tr": "Rapor kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Attestkarte aus."
+ },
+ {
+  "tr": "Prospektüs kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Beipackzettel-Karte aus."
+ },
+ {
+  "tr": "Günde iki hap; hekim reçete etti; buzdolabında saklanacak; ilk iki gün araç kullanılmayacak.",
+  "kind": "form.facts",
+  "de": "Zwei Tabletten am Tag; der Arzt hat sie verschrieben; im Kühlschrank aufbewahren; die ersten zwei Tage nicht Auto fahren."
+ },
+ {
+  "tr": "İklim yavaş değişecek; buz daha hızlı eriyecek; fırtına cumartesi; en güçlü biçim en dar olanı.",
+  "kind": "form.facts",
+  "de": "Das Klima ändert sich langsam; das Eis schmilzt schneller; der Sturm kommt am Samstag; die stärkste Form ist die engste."
+ },
+ {
+  "tr": "Rapor üç iş günü; geriye tarihlenmiyor; pazartesi devamsızlığa perşembeye kadar rapor; raporda tanı yazmıyor.",
+  "kind": "form.facts",
+  "de": "Das Attest gilt drei Arbeitstage; es wird nicht rückdatiert; für ein Fehlen am Montag braucht man bis Donnerstag ein Attest; die Diagnose steht nicht darauf."
+ },
+ {
+  "tr": "Buz daha hızlı eriyecek.",
+  "kind": "build.tr",
+  "de": "Das Eis wird schneller schmelzen."
+ },
+ {
+  "tr": "Ateş düşmezse bizi arayın.",
+  "kind": "build.tr",
+  "de": "Rufen Sie uns an, wenn das Fieber nicht sinkt."
+ },
+ {
+  "tr": "Fırtına cumartesi geliyor.",
+  "kind": "build.tr",
+  "de": "Der Sturm kommt am Samstag."
+ },
+ {
+  "tr": "Geçen yıl sigarayı bıraktı.",
+  "kind": "build.tr",
+  "de": "Er hat letztes Jahr mit dem Rauchen aufgehört."
+ },
+ {
+  "tr": "Hap günde iki kez alınıyor.",
+  "kind": "build.tr",
+  "de": "Die Tablette wird zweimal am Tag eingenommen."
+ },
+ {
+  "tr": "Kemiği gösteren röntgen bu.",
+  "kind": "build.tr",
+  "de": "Das ist das Röntgenbild, das den Knochen zeigt."
+ },
+ {
+  "tr": "Plastik kâğıttan ayrılmalı.",
+  "kind": "build.tr",
+  "de": "Plastik muss von Papier getrennt werden."
+ },
+ {
+  "tr": "Cam salı günleri toplanıyor.",
+  "kind": "build.tr",
+  "de": "Glas wird dienstags abgeholt."
+ },
+ {
+  "tr": "İklim yavaş yavaş değişecek.",
+  "kind": "build.tr",
+  "de": "Das Klima wird sich langsam ändern."
+ },
+ {
+  "tr": "Nabız normalse bekleyeceğiz.",
+  "kind": "build.tr",
+  "de": "Wenn der Puls normal ist, warten wir."
+ },
+ {
+  "tr": "Kutu buzdolabında saklanmalı.",
+  "kind": "build.tr",
+  "de": "Die Packung muss im Kühlschrank aufbewahrt werden."
+ },
+ {
+  "tr": "Duş kısa olmadıkça fatura artar.",
+  "kind": "build.tr",
+  "de": "Wenn die Dusche nicht kurz ist, steigt die Rechnung."
+ },
+ {
+  "tr": "Alerjim olup olmadığını sordular.",
+  "kind": "build.tr",
+  "de": "Sie haben gefragt, ob ich eine Allergie habe."
+ },
+ {
+  "tr": "Çiçekleri diken kadın burada yaşıyor.",
+  "kind": "build.tr",
+  "de": "Die Frau, die die Blumen gepflanzt hat, wohnt hier."
+ },
+ {
+  "tr": "Beslenme düzenimi değiştirmemi önerdi.",
+  "kind": "build.tr",
+  "de": "Er hat mir vorgeschlagen, meine Ernährung zu ändern."
+ },
+ {
+  "tr": "İlaç bir hekim tarafından reçete edildi.",
+  "kind": "build.tr",
+  "de": "Das Medikament wurde von einem Arzt verschrieben."
+ },
+ {
+  "tr": "Beni sevk eden hekim üst katta çalışıyor.",
+  "kind": "build.tr",
+  "de": "Der Arzt, der mich überwiesen hat, arbeitet oben."
+ },
+ {
+  "tr": "İzni şimdi kullan; yoksa onu kaybedersin.",
+  "kind": "build.tr",
+  "de": "Nimm den Urlaub jetzt; sonst verlierst du ihn."
+ },
+ {
+  "tr": "Musluğu kapatırsan su tasarrufu yaparsın.",
+  "kind": "build.tr",
+  "de": "Wenn du den Hahn zudrehst, sparst du Wasser."
+ },
+ {
+  "tr": "Rapora ek olarak bir tarih de istiyorlar.",
+  "kind": "build.tr",
+  "de": "Außer dem Attest wollen sie auch ein Datum."
+ },
+ {
+  "tr": "Ben konuşmadan önce hekim yarayı görmüştü.",
+  "kind": "build.tr",
+  "de": "Der Arzt hatte die Wunde gesehen, bevor ich sprach."
+ },
+ {
+  "tr": "Raporu gönderdim; üstelik ofisi de aradım.",
+  "kind": "build.tr",
+  "de": "Ich habe das Attest geschickt; außerdem habe ich im Büro angerufen."
+ },
+ {
+  "tr": "Hekim kan tahlilinin normal olduğunu söyledi.",
+  "kind": "build.tr",
+  "de": "Der Arzt sagte, die Blutwerte seien normal."
+ },
+ {
+  "tr": "Bana görüntüleme için endişelenmememi söyledi.",
+  "kind": "build.tr",
+  "de": "Er sagte mir, ich solle mir wegen der Aufnahme keine Sorgen machen."
+ },
+ {
+  "tr": "Yerinde olsam kalbi bir daha kontrol ettirirdim.",
+  "kind": "build.tr",
+  "de": "An deiner Stelle würde ich das Herz noch einmal prüfen lassen."
+ },
+ {
+  "tr": "Yeni bir lambam olsaydı daha az enerji kullanırdım.",
+  "kind": "build.tr",
+  "de": "Wenn ich eine neue Lampe hätte, würde ich weniger Energie verbrauchen."
+ },
+ {
+  "tr": "E-posta göndermedim; onun yerine kayıt masasına gittim.",
+  "kind": "build.tr",
+  "de": "Ich habe keine E-Mail geschickt; stattdessen bin ich zur Anmeldung gegangen."
+ },
+ {
+  "tr": "„otherwise“ UYARIYOR: yapmazsan şu olur.",
+  "kind": "build.hint",
+  "de": "„otherwise“ WARNT: wenn du es nicht tust, passiert das."
+ },
+ {
+  "tr": "Edilgen ve zamansız: işleyiş anlatılıyor.",
+  "kind": "build.hint",
+  "de": "Passiv und zeitlos: der Ablauf wird beschrieben."
+ },
+ {
+  "tr": "„unless“ olumsuzluğu kendi içinde taşıyor.",
+  "kind": "build.hint",
+  "de": "„unless“ trägt die Verneinung schon in sich."
+ },
+ {
+  "tr": "En zayıf kanıt: kanaat. Tarih yok, veri yok.",
+  "kind": "build.hint",
+  "de": "Der schwächste Beleg: eine Meinung. Kein Datum, keine Zahlen."
+ },
+ {
+  "tr": "En güçlü ve en dar: takvimde saatiyle duruyor.",
+  "kind": "build.hint",
+  "de": "Am stärksten und am engsten: es steht mit Uhrzeit im Kalender."
+ },
+ {
+  "tr": "„besides“ elindekinden başlayıp üstüne KATIYOR.",
+  "kind": "build.hint",
+  "de": "„besides“ geht vom Vorhandenen aus und LEGT etwas drauf."
+ },
+ {
+  "tr": "„instead“ DEĞİŞTİRİYOR: eklemiyor, yerine koyuyor.",
+  "kind": "build.hint",
+  "de": "„instead“ TAUSCHT: es fügt nichts hinzu, es ersetzt."
+ },
+ {
+  "tr": "„that“ burada da özne konumunda; o yüzden kalıyor.",
+  "kind": "build.hint",
+  "de": "„that“ steht auch hier im Subjekt; deshalb bleibt es."
+ },
+ {
+  "tr": "Kip ve edilgen üst üste: „must“ + „be“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Modalverb und Passiv übereinander: „must“ + „be“ + dritte Form."
+ },
+ {
+  "tr": "Öğüdün kalıbı; gerçek olmayan koşulda „were“ geliyor.",
+  "kind": "build.hint",
+  "de": "Die Formel für den Rat; in der irrealen Bedingung steht „were“."
+ },
+ {
+  "tr": "Aktarılınca „is“ bir basamak geriye kayıp „was“ oluyor.",
+  "kind": "build.hint",
+  "de": "In der Wiedergabe rutscht „is“ eine Stufe zurück und wird „was“."
+ },
+ {
+  "tr": "Elde görünen veri var: ölçümler bir yöne işaret ediyor.",
+  "kind": "build.hint",
+  "de": "Es liegen Daten vor: die Messungen zeigen in eine Richtung."
+ },
+ {
+  "tr": "Önce olan iş „had“ + üçüncü hâl; konuşma sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Das Frühere ist „had“ + dritte Form; das Sprechen kommt danach."
+ },
+ {
+  "tr": "„give up“ sonrası „-ing“ istiyor; „give up to smoke“ olmaz.",
+  "kind": "build.hint",
+  "de": "„give up“ verlangt danach „-ing“; „give up to smoke“ geht nicht."
+ },
+ {
+  "tr": "„moreover“ aynı türden ikinci bir şey EKLİYOR ve yazıya ait.",
+  "kind": "build.hint",
+  "de": "„moreover“ FÜGT etwas Gleichartiges hinzu und gehört in den Text."
+ },
+ {
+  "tr": "Fail „by“ ile söyleniyor, çünkü kimin yazdığı burada önemli.",
+  "kind": "build.hint",
+  "de": "Der Urheber steht mit „by“, denn hier zählt, wer geschrieben hat."
+ },
+ {
+  "tr": "Kip ve edilgen üst üste: „must“ + „be“ + üçüncü hâl, bu sırayla.",
+  "kind": "build.hint",
+  "de": "Modalverb und Passiv übereinander: „must“ + „be“ + dritte Form, in dieser Reihenfolge."
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim olmayan bir şimdiyi anlatıyor.",
+  "kind": "build.hint",
+  "de": "Irreale Bedingung: die Vergangenheitsform meint eine Gegenwart, die es nicht gibt."
+ },
+ {
+  "tr": "Edilgen ve zamansız: ilacın işleyişi anlatılıyor, emir verilmiyor.",
+  "kind": "build.hint",
+  "de": "Passiv und zeitlos: die Wirkweise des Medikaments wird beschrieben, kein Befehl."
+ },
+ {
+  "tr": "„whether“ ile „if“ burada aynı işi görüyor; „whether“ biraz daha resmî.",
+  "kind": "build.hint",
+  "de": "„whether“ und „if“ tun hier dasselbe; „whether“ ist etwas förmlicher."
+ },
+ {
+  "tr": "„suggest“ de „-ing“ alıyor; „suggest me to change“ diye bir kuruluş yok.",
+  "kind": "build.hint",
+  "de": "Auch „suggest“ nimmt „-ing“; eine Fügung „suggest me to change“ gibt es nicht."
+ },
+ {
+  "tr": "Aktarılan olumsuz buyrukta „not“ mastarın ÖNÜNE geliyor: „not to worry“.",
+  "kind": "build.hint",
+  "de": "Im wiedergegebenen Verbot steht „not“ VOR dem Infinitiv: „not to worry“."
+ },
+ {
+  "tr": "Prospektüsün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Beipackzettels: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Dört bağlacın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der vier Bindewörter: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Kanıt sırası: en zayıftan en güçlüye koy.",
+  "kind": "question.text",
+  "de": "Reihenfolge der Belege: vom schwächsten zum stärksten."
+ }
+]
