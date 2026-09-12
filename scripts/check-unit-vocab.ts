@@ -71,7 +71,16 @@ function almanca(e: LooseExercise): string {
     if (t.answer) out.push(t.answer);
     if (t.source && !türkçeMi(t.source)) out.push(t.source);
     if (t.sample) out.push(t.sample);
-    if (t.stimulus) out.push(t.stimulus);
+    /* UYARAN ÇOĞUNLUKLA ALMANCA AMA HEPSİ DEĞİL. `stimulus` genelde
+       öğrencinin okuyup cevapladığı metin (e-posta, ilan, mesaj) ve Almanca;
+       ama 23 görevde Türkçe bir brifing bloğu ("DURUM — … ELİNDEKİ VERİ: …",
+       biri A2'de, yirmi ikisi C1'in `-w2` görevlerinde). Almanca ölçümüne
+       sokulunca her satırı kapı dışı sayılıyordu: `c1-u09-w2` %12,1 dışı
+       görünüyor ve işaretlenen 21 sözcüğün hepsi Türkçeydi (durum, ekip,
+       gerginlik, teslim, ertelendi). `source` alanı aynı nedenle zaten
+       süzülüyordu; uyaran atlanmıştı. Mobil tarafta ayrımı `isTurkishStem`
+       yapıyor, burada `türkçeMi`. */
+    if (t.stimulus && !türkçeMi(t.stimulus)) out.push(t.stimulus);
     for (const f of t.fields || []) if (f.answer) out.push(f.answer);
   }
   return out.join(" ");
