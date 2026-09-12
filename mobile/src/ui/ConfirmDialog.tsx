@@ -3,7 +3,7 @@ import { View, Modal, Pressable } from "react-native";
 import { Text } from "./Text";
 import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, DIALOG_FILL, DIALOG_INK } from "../theme";
 
 /**
  * Uygulama tasarımına uygun onay modalı (native Alert yerine). Karartılmış zemin
@@ -31,7 +31,10 @@ export function ConfirmDialog({
   onCancel: () => void;
 }) {
   const { colors } = useTheme();
-  const accent = destructive ? colors.danger : colors.primary;
+  /* Dolgu TEMAYA DUYARLI DEĞİL ve `theme/colors` `DIALOG_FILL`den geliyor:
+     gerekçesi ve kontrast ölçümleri orada yazılı (koyu temada `colors.danger`
+     açık pembeye dönüyor ve beyaz yazıyla 2.06 veriyordu). */
+  const accent = destructive ? DIALOG_FILL.destructive : DIALOG_FILL.primary;
   return (
     <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onCancel}>
       <Pressable onPress={onCancel} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
@@ -57,7 +60,7 @@ export function ConfirmDialog({
               <Text variant="bodyStrong" color={colors.text}>{cancelLabel}</Text>
             </PressableScale>
             <PressableScale onPress={onConfirm} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: accent, paddingVertical: 14, alignItems: "center" }, softShadow(accent, 8)]}>
-              <Text variant="bodyStrong" color="#fff">{confirmLabel}</Text>
+              <Text variant="bodyStrong" color={DIALOG_INK}>{confirmLabel}</Text>
             </PressableScale>
           </View>
         </Pressable>

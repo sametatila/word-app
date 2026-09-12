@@ -17225,3 +17225,42 @@ Kapı **§335** iki ölçü: dört sayı (çubuk, tutamaç, halka, dokunma alan�
 tarafta ve dolu kısmın gerçekten değere bağlı olması; ayrıca **mutlak** olarak
 `appearance: none` ile tutamaç tanımının **birlikte** bulunması — biri olup
 öteki olmayınca denetim görünmez oluyor ve bu kusur tam böyle doğmuştu.
+
+## §11.477 — Onay diyaloğunun yıkıcı düğmesi koyu temada okunmuyordu
+
+"Hesabı sil", "çıkış yap", "yazıyı sil" — yıkıcı her eylemin önünde bu kutu
+duruyor. Android yıkıcı dolguyu `colors.danger` ile çiziyor ve yazısı **koda
+gömülü beyazdı**. Ölçüm:
+
+| Tema | Dolgu | Beyaz yazıyla |
+|---|---|---|
+| açık | `danger` #dc3f55 | **4.30** (AA 4.5 — tutmuyor) |
+| **koyu** | `danger` #f79ba6 (açık pembe) | **2.06** |
+
+Yani koyu temada onay düğmesinin yazısı okunmuyordu — hem de yıkıcı eylemin
+onay kutusunda. Paletin kendi yorumu koyu temada dolgunun mürekkebinin `onFill`
+(#1e1916) olduğunu söylüyor (o çiftle 8.45); bu diyalog `onFill`i hiç
+kullanmıyordu.
+
+**Web aynı diyaloğu iki temada da sabit tonla çiziyor**
+(`components/confirm-dialog`: yıkıcı `--color-rose-600` = #b62e43, beyazla
+6.07; normal `--color-brand-500`). Değerler oradan alındı ve mobil tarafta
+temaya duyarsız bir jetona çıkarıldı (`theme/colors` `DIALOG_FILL`,
+`DIALOG_INK`).
+
+Normal (yıkıcı olmayan) dolgunun beyazla 2.77 vermesi **birincil düğmenin
+kabul edilmiş sapması** (T-KARAR-1) ve web de aynı değeri kullanıyor: zeminin
+markanın kendisi olması bir kimlik kararı. Yıkıcı düğme o kararın kapsamında
+değil — orada zemin bir kimlik değil bir **uyarı**.
+
+Kapı **§336** iki ölçü: dolgular ve mürekkep (web değerleri **CSS'ten
+çözülüyor**, kapıya kopyalanmıyor) ve kutunun geometrisi (en çok genişlik 400,
+`card` yarıçapı, 20 dolgu, 14 düğme payı, 12 aralık, %55 perde). Enjeksiyon iki
+yönden: mobil dolguyu eski değere döndürmek ve webin genişliği/perdesini
+değiştirmek.
+
+Bu turda ölçülüp temiz çıkanlar: `CardGrid` (geniş ekranda sütuna bölme —
+web'in karşılığı kabı `max-w-3xl` ile dar tutmak; aynı sorunun iki doğru
+cevabı, mobil dosyanın yorumunda yazılı) ve `Turnstile` (mobil kayıt, giriş ve
+**şifre sıfırlama** akışlarının üçünde de jeton üretiliyor; web'in üç yüzeyiyle
+birebir).

@@ -19145,6 +19145,81 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ---------- 336. ONAY DIYALOGU: YIKICI DUGME KOYU TEMADA OKUNMUYORDU
+ *
+ * "Hesabı sil", "cikis yap", "yaziyi sil" - yikici her eylemin onunde bu kutu
+ * duruyor. Android yikici dolguyu `colors.danger` ile ciziyor ve yazisi KODA
+ * GOMULU beyazdi. Olcum: acik temada #dc3f55 + beyaz 4.30 (yazi `bodyStrong`,
+ * 15 px, AA esigi 4.5 - tutmuyor), KOYU temada `danger` acik pembeye donuyor
+ * (#f79ba6) ve beyaz yaziyla 2.06 veriyor - yani onay dugmesinin yazisi
+ * okunmuyordu. Paletin kendi yorumu da koyu temada dolgunun murekkebinin
+ * `onFill` (#1e1916) oldugunu yaziyor; bu diyalog onu kullanmiyordu.
+ *
+ * Web ayni diyalogu iki temada da SABIT tonla ciziyor (yikici
+ * `--color-rose-600` = #b62e43, beyazla 6.07; normal `--color-brand-500`).
+ * Degerler oradan alindi ve mobil tarafta da temaya duyarsiz bir jetona
+ * cikarildi (`theme/colors` `DIALOG_FILL`).
+ *
+ * Normal dolgunun beyazla 2.77 vermesi birincil dugmenin KABUL EDILMIS
+ * sapmasi (T-KARAR-1) ve web de ayni degeri kullaniyor; yikici dugme o
+ * kararin kapsaminda degil - orada zemin bir kimlik degil bir uyari.
+ *
+ * Olcu: iki tarafin dolgulari (yikici + normal) ve murekkebi ayni deger, ve
+ * kutunun gecmisteki olculeri (genislik, yariçap, dugme payi, aralik)
+ * bozulmamis. Web degerleri CSS'ten cozuluyor, kapiya kopyalanmiyor. */
+{
+  const silD = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const css = read("src/app/globals.css");
+  const coz = (ad) => (css.match(new RegExp("--color-" + ad + ":\\s*(#[0-9a-fA-F]{6})")) ?? [])[1]?.toLowerCase() ?? "COZULMEDI";
+  const mobRenk = silD(read("mobile/src/theme/colors.ts"));
+  const orange500 = ((mobRenk.match(/500: "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
+  const govde = (mobRenk.match(/export const DIALOG_FILL = \{([^}]*)\}/) ?? ["", ""])[1];
+  const mobYikici = ((govde.match(/destructive: "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
+  const mobNormal = /primary: orange\[500\]/.test(govde) ? orange500 : "FARKLI";
+  const mobInk = ((mobRenk.match(/export const DIALOG_INK = "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
+  const webDiy = silD(read("src/components/confirm-dialog.tsx"));
+  const webTon = (webDiy.match(/background: destructive \? "var\(--color-([\w-]+)\)" : "var\(--color-([\w-]+)\)"/) ?? []);
+  sameList(
+    "onay diyalogunun dolgulari",
+    [
+      "yikici=" + mobYikici,
+      "normal=" + mobNormal,
+      "murekkep=" + mobInk,
+      "temadan bagimsiz=" + (/DIALOG_FILL\.destructive : DIALOG_FILL\.primary/.test(silD(read("mobile/src/ui/ConfirmDialog.tsx"))) ? "evet" : "HAYIR"),
+    ],
+    [
+      "yikici=" + coz(webTon[1] ?? "yok"),
+      "normal=" + coz(webTon[2] ?? "yok"),
+      "murekkep=" + (/className="btn flex-1 py-3\.5 text-white"/.test(webDiy) ? "#ffffff" : "FARKLI"),
+      "temadan bagimsiz=" + (webTon.length ? "evet" : "HAYIR"),
+    ],
+    "mobil",
+    "web (cozulmus)",
+  );
+  const mobDiy = silD(read("mobile/src/ui/ConfirmDialog.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "onay diyalogunun olculeri",
+    [
+      "en cok genislik=" + ((mobDiy.match(/maxWidth: (\d+)/) ?? [])[1] ?? "YOK"),
+      "yaricap=" + (/borderRadius: radii\.xl/.test(mobDiy) ? "card" : "FARKLI"),
+      "dolgu=" + (/padding: spacing\.xl/.test(mobDiy) ? "20" : "FARKLI"),
+      "dugme payi=" + ((mobDiy.match(/paddingVertical: (14), alignItems: "center" \}\]/) ?? [])[1] ?? (mobDiy.match(/paddingVertical: (14)/) ?? [])[1] ?? "YOK"),
+      "aralik=" + (/gap: spacing\.md, marginTop: spacing\.lg/.test(mobDiy) ? "12" : "FARKLI"),
+      "perde=" + (/backgroundColor: "rgba\(0,0,0,0\.55\)"/.test(mobDiy) ? "0.55" : "FARKLI"),
+    ],
+    [
+      "en cok genislik=" + ((webDiy.match(/w-\[min\((\d+)rem/) ?? []).slice(1).map((x) => String(Number(x) * 16))[0] ?? "YOK"),
+      "yaricap=" + (/className="card m-auto/.test(webDiy) ? "card" : "FARKLI"),
+      "dolgu=" + (/p-5 backdrop:/.test(webDiy) ? "20" : "FARKLI"),
+      "dugme payi=" + (/py-3\.5/.test(webDiy) ? "14" : "FARKLI"),
+      "aralik=" + (/mt-4 flex gap-3/.test(webDiy) ? "12" : "FARKLI"),
+      "perde=" + (/backdrop:bg-black\/55/.test(webDiy) ? "0.55" : "FARKLI"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

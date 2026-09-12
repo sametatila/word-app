@@ -205,3 +205,29 @@ export const LEVEL_TONE: Record<string, string> = {
 
 /** Rozet yazısı iki temada da beyaz (yukarıdaki gerekçe). */
 export const LEVEL_INK = "#ffffff";
+
+/**
+ * Onay diyaloğunun düğme dolguları — TEMAYA DUYARLI DEĞİL.
+ *
+ * Yıkıcı düğme `colors.danger` kullanıyordu ve yazısı KODA GÖMÜLÜ beyazdı.
+ * Ölçüm: açık temada #dc3f55 + beyaz 4.30 (yazı `bodyStrong`, 15 px, yani AA
+ * eşiği 4.5 — tutmuyor), KOYU temada `danger` açık pembeye dönüyor (#f79ba6)
+ * ve beyaz yazıyla **2.06** veriyor, yani "hesabı sil" onayı okunmuyordu.
+ * Paletin kendi yorumu da bunu söylüyor: koyu temada dolgunun mürekkebi
+ * `onFill` (#1e1916), beyaz değil — ama bu diyalog `onFill` kullanmıyordu.
+ *
+ * Web aynı diyaloğu iki temada da SABİT tonla çiziyor
+ * (`components/confirm-dialog`: yıkıcı `--color-rose-600`, normal
+ * `--color-brand-500`, yazı beyaz) ve rose-600 beyazla 6.07 veriyor. Değerler
+ * oradan alındı; iki uygulamanın onay kutusu artık birebir aynı.
+ *
+ * Normal (yıkıcı olmayan) dolgu marka turuncusunun 500'ü ve beyaz yazıyla
+ * 2.77 veriyor: bu, birincil düğmenin kabul edilmiş sapması (T-KARAR-1) —
+ * zeminin markanın kendisi olması bir kimlik kararı ve web de aynı değeri
+ * kullanıyor. Yıkıcı düğme o kararın KAPSAMINDA DEĞİL, orada zemin bir kimlik
+ * değil bir uyarı.
+ */
+export const DIALOG_FILL = { primary: orange[500], destructive: "#b62e43" } as const;
+
+/** Onay düğmesinin yazısı iki temada da beyaz (yukarıdaki gerekçe). */
+export const DIALOG_INK = "#ffffff";
