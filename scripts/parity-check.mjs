@@ -17535,6 +17535,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
   }
+
+  /* --------------------------------- 314. DEGERLENDIRME PUANI AYNI AGIRLIKLARLA
+   *
+   * `lib/assessFallback`in kendi yorumu: "Web `overallScore` ile AYNI
+   * agirliklar: iki platform ayni metne ayni puani vermeli." Iddiayi tutan
+   * hicbir sey yoktu ve 313'le ayni sinif: ayni metin, iki ayri puan.
+   *
+   * Iki sayi kumesi olculuyor:
+   *   AGIRLIKLAR  gorev .35 · dilbilgisi .30 · sozcuk .15 · yapi .20 ve
+   *               0-100'e cevirirken kullanilan bolen (4). Web
+   *               `lib/assess-prompts`, mobil `lib/assessFallback`.
+   *   ASGARI SOZCUK  `MIN_WORDS` - hangi tur kac sozcukten sonra
+   *               puanlanabilir (web `lib/assess-client`).
+   *
+   * Olcu dizgi degil SAYI: ifadeden katsayilar cekiliyor, yani bicimlendirme
+   * (bosluk, satir sonu) degisse kapi kirmizi vermez ama BIR katsayi degisse
+   * verir. */
+  {
+    const agirlik = (yol) => {
+      const src = sil(read(yol));
+      const m = src.match(/task \* ([\d.]+) \+ s\.grammar \* ([\d.]+) \+ s\.vocab \* ([\d.]+) \+ s\.structure \* ([\d.]+)/);
+      const bol = src.match(/\(w \/ (\d+)\) \* 100/);
+      return m ? ["gorev=" + m[1], "dilbilgisi=" + m[2], "sozcuk=" + m[3], "yapi=" + m[4], "bolen=" + (bol ? bol[1] : "YOK")] : ["OKUNAMADI"];
+    };
+    const asgari = (yol) => {
+      const src = sil(read(yol));
+      const i = src.indexOf("MIN_WORDS");
+      if (i < 0) return ["OKUNAMADI"];
+      const son = src.indexOf("}", i);
+      return [...src.slice(i, son).matchAll(/(\w+):\s*(\d+)/g)].map((m) => m[1] + "=" + m[2]).sort();
+    };
+    sameList(
+      "degerlendirme puani agirliklari",
+      agirlik("mobile/src/lib/assessFallback.ts"),
+      agirlik("src/lib/assess-prompts.ts"),
+      "mobil",
+      "web",
+    );
+    sameList(
+      "degerlendirme asgari sozcuk sayisi",
+      asgari("mobile/src/lib/assessFallback.ts"),
+      asgari("src/lib/assess-client.ts"),
+      "mobil",
+      "web",
+    );
+  }
 }
 
 console.log(

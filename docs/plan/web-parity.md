@@ -16387,3 +16387,38 @@ görünür.
 Beş enjeksiyon doğrulandı: webde bir kuralı değiştirmek, ortaç kümesinden bir
 kelime düşürmek, yazım çiftinden birini düşürmek, kural **sırasını**
 değiştirmek, zinciri okunamaz yapmak.
+
+## §11.450 — Değerlendirme puanının ağırlıkları da ölçülüyor
+
+`lib/assessFallback`in kendi yorumu: *"Web `overallScore` ile **AYNI**
+ağırlıklar: iki platform aynı metne aynı puanı vermeli."* İddiayı tutan hiçbir
+şey yoktu ve §11.449 ile aynı sınıf — aynı metin, iki ayrı puan.
+
+İki sayı kümesi ölçülüyor:
+
+- **Ağırlıklar**: görev .35 · dilbilgisi .30 · sözcük .15 · yapı .20 ve 0–100'e
+  çevirirken kullanılan bölen (4). Web `lib/assess-prompts`, mobil
+  `lib/assessFallback`.
+- **Asgari sözcük** (`MIN_WORDS`): hangi tür kaç sözcükten sonra puanlanabilir
+  (web `lib/assess-client`).
+
+Ölçü dizgi değil **sayı**: ifadeden katsayılar çekiliyor, yani biçimlendirme
+değişse kapı kırmızı vermez ama bir katsayı değişse verir.
+
+### §314 ve bir enjeksiyon dersi
+
+Dört enjeksiyon planladım, biri **yakalanmadı** ve sebebi kayda değer:
+`const w = s.task * …` bildirimini `const toplam = …` diye değiştirmek kapıyı
+düşürmedi — çünkü ölçü bildirimin **adına** bakmıyor, katsayı ifadesine ve
+ayrıca `(w / 4) * 100` kalıbına bakıyor; ikincisi hâlâ `w` diyordu. Yani
+enjeksiyon kapının **okuduğu şeyi değiştirmemişti**. Defterin tekrar eden
+dersi: *enjeksiyonun kapının okuduğu yeri gerçekten bozduğunu doğrula.*
+
+Yerine iki gerçek enjeksiyon konuldu: ifadedeki terim **düzenini** değiştirmek
+(kapı "OKUNAMADI" diyor — toplama değişmeli olduğu için bu bir yanlış pozitif
+sayılabilir, ama "artık doğrulayamıyorum" demek sessizce geçmekten iyidir) ve
+bölen ifadesini kaldırmak (`bolen=YOK`).
+
+Toplam beş enjeksiyon doğrulandı: bir ağırlığı değiştirmek, böleni
+değiştirmek, asgari sözcüğü değiştirmek, terim düzenini bozmak, bölen ifadesini
+kaldırmak.
