@@ -184,6 +184,11 @@ function WrittenInput({
       <div className="flex items-end gap-2">
         <input
           type="text"
+          /* KISA CEVAP: hedef dilde tek kelime ya da kısa bir öbek, o yüzden
+             cümle başı büyütme YOK ve düzeltme kapalı. Android aynı alanda
+             `autoCapitalize="none"` diyor (`game/skillQuiz`). */
+          autoCapitalize="none"
+          autoCorrect="off"
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
           onKeyDown={(e) => {

@@ -363,6 +363,12 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           }}
           rows={1}
           lang={lesson.course}
+          /* Cümle başı büyük, düzeltme kapalı (bkz. `lesson-player`).
+             Android tarafında bu alanda da hiçbiri yoktu; iki taraf
+             birlikte düzeltildi. */
+          autoCapitalize="sentences"
+          autoCorrect="off"
+          spellCheck={false}
           placeholder={
             listening
               ? t("speak.listening")

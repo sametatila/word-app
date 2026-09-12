@@ -740,6 +740,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             rows={7}
             lang={course}
             spellCheck={false}
+            /* Cümle başı büyük ve düzeltme kapalı — Android aynı alanda
+               `autoCapitalize="sentences"` diyor (`ExamScreen`). Buradaki
+               alan hiçbirini söylemiyordu ve tarayıcı varsayılanı otomatik
+               düzeltme AÇIK: İngilizce klavye Almanca sözcükleri
+               "düzeltiyor". */
+            autoCapitalize="sentences"
+            autoCorrect="off"
             /* Sabit Almanca yazıyordu; kurs İngilizce olabiliyor ve arayüzün
                üç dili var. Android aynı yerde `exam.write_text` kullanıyor. */
             placeholder={t("exam.write_text")}
@@ -1022,6 +1029,8 @@ function ProduceCard({
           rows={3}
           lang={course}
           spellCheck={false}
+          autoCapitalize="sentences"
+          autoCorrect="off"
           /* Android: `exam.write_sentence`. */
           placeholder={t("exam.write_sentence")}
           aria-label={t("exam.write_sentence")}

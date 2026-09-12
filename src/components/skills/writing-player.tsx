@@ -497,6 +497,11 @@ function FreeTask({
         onChange={(e) => setText(e.target.value)}
         rows={7}
         lang={lang}
+        /* Hedef dilde CÜMLE — Android aynı alanda `sentences` diyor
+           (`game/skillQuiz`). Burada hiçbiri yoktu. */
+        autoCapitalize="sentences"
+        autoCorrect="off"
+        spellCheck={false}
         /* Sabit Almanca yazıyordu. Android hedef dili SÖYLÜYOR
            (`skillquiz.write_your_answer_in`, {lang} = kursun adı); web de öyle. */
         placeholder={t("skillquiz.write_your_answer_in", { lang: courseName(lang, uiLang) })}
@@ -703,6 +708,8 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             rows={3}
             lang={lang}
             spellCheck={false}
+            autoCapitalize="sentences"
+            autoCorrect="off"
             placeholder={t("rounds.write_a_sentence_ph")}
             aria-label={t("rounds.write_a_sentence_ph")}
             className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-body outline-none"
@@ -774,6 +781,10 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
                 disabled={checked}
                 lang={lang}
                 spellCheck={false}
+                /* Form alanları KISA CEVAP: ad, tarih, tek sözcük. Cümle
+                   başı büyütme yok. */
+                autoCapitalize="none"
+                autoCorrect="off"
                 className="input flex-1 py-2 text-body"
                 style={checked ? { borderColor: results[i] ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
               />
@@ -861,6 +872,8 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             rows={2}
             lang={lang}
             spellCheck={false}
+            autoCapitalize="sentences"
+            autoCorrect="off"
             placeholder={t("writp.rewrite_ph")}
             aria-label={t("writp.rewrite_ph")}
             className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-body outline-none"

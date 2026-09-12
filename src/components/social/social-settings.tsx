@@ -109,6 +109,11 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           value={bio}
           onChange={(e) => setBio(e.target.value.slice(0, BIO_MAX))}
           rows={2}
+          /* ANA DİLDE serbest metin: cümle başı büyük ama otomatik düzeltme
+             AÇIK kalıyor — burada düzeltme yardımcı, hedef dilde yazılan
+             alanların tersine. Android'de de hiçbiri yoktu; iki taraf
+             birlikte düzeltildi. */
+          autoCapitalize="sentences"
           placeholder={t("socialsettings.why_one_sentence_is_enough", { lang: courseName(course, lang) })}
           className="mt-1.5 w-full rounded-tile border px-3 py-2 text-body"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}

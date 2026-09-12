@@ -613,6 +613,11 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
                   placeholder={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
                   aria-label={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
                   lang={course}
+                  /* KISA CEVAP (boşluk doldurma, dönüştürme): cümle başı
+                     büyütme yok, düzeltme kapalı. */
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck={false}
                   autoComplete="off"
                 />
               )}
@@ -664,6 +669,10 @@ function OpenTask({
         value={value}
         onChange={(e) => onOpen(task.id, e.target.value)}
         rows={8}
+        /* Cümle başı büyük, düzeltme kapalı (bkz. `exam-player`). */
+        autoCapitalize="sentences"
+        autoCorrect="off"
+        spellCheck={false}
         className="input mt-4 w-full"
         placeholder={t("mockexam.write_here")}
         aria-label={t("mockexam.write_here")}
@@ -873,6 +882,9 @@ function SpeakingTask({
             value={value}
             onChange={(e) => onOpen(task.id, e.target.value)}
             rows={8}
+            autoCapitalize="sentences"
+            autoCorrect="off"
+            spellCheck={false}
             className="input mt-1 w-full"
             placeholder={t("mockexam.transcript_placeholder")}
             aria-label={t("mockexam.transcript_placeholder")}

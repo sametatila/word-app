@@ -1358,6 +1358,15 @@ export function LessonPlayer({
                       }
                     }}
                     rows={1}
+                    /* KLAVYE DAVRANIŞI ANDROID İLE AYNI: hedef dilde CÜMLE
+                       yazılıyor, o yüzden cümle başı büyük ve otomatik
+                       düzeltme kapalı (`LessonScreen`: `sentences`). Alan
+                       hiçbirini söylemiyordu; tarayıcı varsayılanı düzeltme
+                       AÇIK ve İngilizce klavye Almanca sözcükleri
+                       "düzeltiyor". */
+                    autoCapitalize="sentences"
+                    autoCorrect="off"
+                    spellCheck={false}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-body"
@@ -1556,6 +1565,15 @@ export function LessonPlayer({
                       }
                     }}
                     rows={1}
+                    /* KLAVYE DAVRANIŞI ANDROID İLE AYNI: hedef dilde CÜMLE
+                       yazılıyor, o yüzden cümle başı büyük ve otomatik
+                       düzeltme kapalı (`LessonScreen`: `sentences`). Alan
+                       hiçbirini söylemiyordu; tarayıcı varsayılanı düzeltme
+                       AÇIK ve İngilizce klavye Almanca sözcükleri
+                       "düzeltiyor". */
+                    autoCapitalize="sentences"
+                    autoCorrect="off"
+                    spellCheck={false}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-body"
