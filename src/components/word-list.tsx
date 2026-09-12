@@ -8,7 +8,8 @@ import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackOnce } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronIcon } from "@/components/icons";
+import { CardsIcon, ChevronIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { PageBack } from "@/components/page-back";
 import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
@@ -141,6 +142,19 @@ export function WordList({
     router.replace(`/words?${next.toString()}`);
   }
 
+  /* Süzgeç AÇIK MI? Boş listenin sebebi iki ayrı şey: hiç kelime yok ya da
+     süzgeçler her şeyi dışarıda bıraktı. İkincisinde çıkış yolu süzgeçleri
+     kaldırmak; bunu söylemeyen boş ekran kullanıcıyı listenin gerçekten boş
+     olduğuna inandırıyordu. */
+  const filtered = Boolean(query.q || query.level || query.status);
+
+  function clearFilters() {
+    const next = new URLSearchParams(params.toString());
+    for (const k of ["q", "level", "status", "page"]) next.delete(k);
+    setTerm("");
+    router.replace(next.toString() ? `/words?${next.toString()}` : "/words");
+  }
+
   function goPage(p: number) {
     const next = new URLSearchParams(params.toString());
     if (p > 0) next.set("page", String(p));
@@ -251,9 +265,23 @@ export function WordList({
       </div>
 
       {rows.length === 0 ? (
-        <div className="card p-8 text-center">
-          <p className="muted text-body">{tx("words.no_words_found")}</p>
-        </div>
+        /* Boş hâl EV KALIBINDA: Android'in `EmptyCard`ı (ikon karosu +
+           başlık + açıklama + isteğe bağlı düğme). Burada yalnız sönük tek
+           bir cümle vardı: ne olduğunu da, nereye gidileceğini de
+           söylemiyordu. */
+        <EmptyCard
+          icon={CardsIcon}
+          tint="var(--color-sky)"
+          title={tx("words.no_words_found")}
+          text={tx("words.empty_sub")}
+          action={
+            filtered ? (
+              <button type="button" onClick={clearFilters} className="btn btn-primary px-4 py-2 text-body">
+                {tx("words.clear_filters")}
+              </button>
+            ) : undefined
+          }
+        />
       ) : (
         <ul className="space-y-2">
           {rows.map((r, i) => {

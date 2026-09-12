@@ -9,7 +9,8 @@ import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHe
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon, ExamIcon, ChevronRightIcon } from "../ui/icons";
+import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon, ExamIcon, ChevronRightIcon, PathIcon } from "../ui/icons";
+import { EmptyCard } from "../social/common";
 import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { useLayout, gridColumnsFor, gridItemWidthFor } from "../lib/useLayout";
 import { UnitPane } from "./UnitScreen";
@@ -172,9 +173,19 @@ export function PathScreen() {
     return (
       <Screen>
         <AppHeader title={t("path.path")} />
-        <Card padded style={{ marginTop: spacing.lg }}>
-          <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("path.no_units")}</Text>
-        </Card>
+        {/* Boş hâl EV KALIBINDA (`EmptyCard`) ve bir ÇIKIŞ YOLU veriyor:
+            metin "kelime turları ve yürüyüş modu açık" diyordu ama gidilecek
+            yeri göstermiyordu. */}
+        <View style={{ marginTop: spacing.lg }}>
+          <EmptyCard
+            icon={PathIcon}
+            tint={colors.info}
+            title={t("path.empty_title")}
+            text={t("path.no_units")}
+            action={t("nav.learn")}
+            onAction={() => nav.navigate("Tabs", { screen: "Learn" })}
+          />
+        </View>
       </Screen>
     );
   }

@@ -10,7 +10,8 @@ import { MOCK_PASS_PCT } from "../data/exams";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, PodiumIcon } from "../ui/icons";
+import { EmptyCard } from "../social/common";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
 import { mockCourseOf, mockPaperById, mockSkillLabel, type MockSkill } from "../data/exams";
@@ -133,7 +134,17 @@ export function MockStatsScreen() {
         ) : !data || data.attempts === 0 ? (
           <>
             {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
-            <Card padded><Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockstats.empty")}</Text></Card>
+            {/* Boş hâl EV KALIBINDA (`EmptyCard`) ve bir ÇIKIŞ YOLU veriyor:
+                "henüz sonucun yok" tek başına bir duvar, yanına deneme sınavı
+                listesine götüren kapı gerekiyor. */}
+            <EmptyCard
+              icon={PodiumIcon}
+              tint={colors.info}
+              title={t("mockstats.empty_title")}
+              text={t("mockstats.empty")}
+              action={t("mockexams.title")}
+              onAction={() => nav.navigate("MockExams")}
+            />
           </>
         ) : (
           <>

@@ -8,7 +8,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, LockIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
+import { EmptyCard } from "../social/common";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
@@ -202,9 +203,16 @@ export function MockExamsScreen() {
             ))}
           </>
         ) : (
-          <Card padded>
-            <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockexams.none_for_level", { level })}</Text>
-          </Card>
+          /* Boş hâl EV KALIBINDA (`EmptyCard`) ve metin bir ÇIKIŞ YOLU
+             söylüyor: kâğıtlar seviyeye bağlı ve seviye çubuğu bu kartın
+             hemen üstünde duruyor — onu söylemeyen tek cümle, kullanıcıya
+             kâğıt hiç yokmuş gibi geliyordu. */
+          <EmptyCard
+            icon={ExamIcon}
+            tint={colors.info}
+            title={t("mockexams.empty_title")}
+            text={t("mockexams.none_for_level", { level })}
+          />
         )}
       </ScrollView>
     </View>

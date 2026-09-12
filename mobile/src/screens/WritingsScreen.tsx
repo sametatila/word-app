@@ -14,8 +14,9 @@ import { ArrowBackIcon, WriteIcon } from "../ui/icons";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
+import { EmptyCard } from "../social/common";
 import { scoreBand } from "../lib/learningRules";
 
 /** Tür -> sözlük anahtarı. */
@@ -169,8 +170,7 @@ export function WritingsScreen() {
         /* YÜKLENEMEDİ ile BOŞ AYRI ŞEY. İkisine de "henüz değerlendirilmiş
            yazın yok" yazılıyordu: ağı kopan kullanıcıya, yazdığı metinlerin
            yok olduğu söyleniyordu. */
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <View style={{ width: 80, height: 80, borderRadius: radii.xl, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>
+        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
           {/*
             BOŞ HÂL BİR ÇIKIŞ YOLU VERİYOR. Eskiden tek cümle vardı ve
             kullanıcı "nereye gideceğim" sorusuyla baş başa kalıyordu; web
@@ -179,24 +179,31 @@ export function WritingsScreen() {
             Hata hâli ayrı kalıyor: ağı kopan kullanıcıya "yazın yok"
             denmiyor.
           */}
+          {/* Kabuk EL YAPIMI DEĞİL. Bu ekran kendi karosunu (80 px, `xl`
+              yarıçap, yumuşak zemin) ve kendi düğmesini kuruyordu; web aynı
+              yerde `EmptyCard` çiziyor (`writings-card`) ve ev kalıbı da o
+              (52 px dolu karo). İki hâl aynı kapta: duyuru yalnız hata
+              hâlinde — "yazın yok" bir hata değil. */}
           {phase === "error" ? (
-            /* Duyuru ORTAK KABA degil bu metne: kap bos hali de tasiyor ve
-               "yazin yok" bir hata degil, duyurulmasi gerekmiyor. */
-            <Text accessibilityLiveRegion="assertive" variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("writings.couldn_t_load_writings")}</Text>
+            <EmptyCard
+              live="assertive"
+              icon={WriteIcon}
+              tint={colors.info}
+              title={t("writings.my_writing")}
+              text={t("writings.couldn_t_load_writings")}
+              action={user ? t("common.try_again") : undefined}
+              onAction={user ? () => setAttempt((n) => n + 1) : undefined}
+            />
           ) : (
-            <>
-              <Text variant="h3" style={{ textAlign: "center" }}>{t("writ.empty_title")}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>{t("writ.empty_sub")}</Text>
-              <PressableScale onPress={() => nav.navigate("Tabs", { screen: "Skills" })} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingHorizontal: spacing.xl, paddingVertical: 13 }, softShadow(colors.primary, 8)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("writ.go_to_writing")}</Text>
-              </PressableScale>
-            </>
+            <EmptyCard
+              icon={WriteIcon}
+              tint={colors.info}
+              title={t("writ.empty_title")}
+              text={t("writ.empty_sub")}
+              action={t("writ.go_to_writing")}
+              onAction={() => nav.navigate("Tabs", { screen: "Skills" })}
+            />
           )}
-          {phase === "error" && user ? (
-            <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-              <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
-            </PressableScale>
-          ) : null}
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>

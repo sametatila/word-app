@@ -7,6 +7,9 @@ import { immersionCompletion } from "@/lib/immersion/progress";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { AppHeader } from "@/components/app-header";
+import Link from "next/link";
+import { PathIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
 import { nativeExamText } from "@/lib/lessons/native-server";
@@ -75,9 +78,20 @@ export default async function ImmersionPage() {
     return (
       <div className="mx-auto w-full max-w-3xl">
         <AppHeader title={t("path.path")} />
-        <div className="card p-5">
-          <p className="muted text-body leading-relaxed">{t("path.no_units")}</p>
-        </div>
+        {/* Boş hâl EV KALIBINDA (Android `EmptyCard`) ve bir ÇIKIŞ YOLU
+            veriyor: metin "kelime turları ve yürüyüş modu açık" diyordu ama
+            gidilecek yeri göstermiyordu. */}
+        <EmptyCard
+          icon={PathIcon}
+          tint="var(--color-sky)"
+          title={t("path.empty_title")}
+          text={t("path.no_units")}
+          action={
+            <Link href="/learn" prefetch={false} className="btn btn-primary px-4 py-2 text-body">
+              {t("nav.learn")}
+            </Link>
+          }
+        />
       </div>
     );
   }

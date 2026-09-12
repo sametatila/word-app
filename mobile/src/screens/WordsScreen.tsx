@@ -7,7 +7,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon } from "../ui/icons";
+import { ArrowBackIcon, CardsIcon } from "../ui/icons";
+import { EmptyCard } from "../social/common";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
@@ -213,7 +214,22 @@ export function WordsScreen() {
               </PressableScale>
             </View>
           ) : (
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xxl }}>{t("words.no_words_found")}</Text>
+            /* Boş hâl EV KALIBINDA (`social/common.tsx` `EmptyCard`): ikon
+               karosu + başlık + açıklama + isteğe bağlı düğme. Burada yalnız
+               ortalanmış sönük bir cümle vardı. Sebep de ikiye ayrılıyor:
+               süzgeçler açıkken listenin boş olmasının yolu süzgeçleri
+               kaldırmak, bunu söylemeyen ekran kullanıcıyı listenin gerçekten
+               boş olduğuna inandırıyordu. */
+            <View style={{ marginTop: spacing.xl }}>
+              <EmptyCard
+                icon={CardsIcon}
+                tint={colors.info}
+                title={t("words.no_words_found")}
+                text={t("words.empty_sub")}
+                action={q || level || filter ? t("words.clear_filters") : undefined}
+                onAction={q || level || filter ? () => { setQ(""); setLevel(""); setFilter(""); } : undefined}
+              />
+            </View>
           )
         }
         ListFooterComponent={

@@ -108,6 +108,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   if (items === null)
     return showEmpty ? (
       <EmptyCard
+        role="alert"
         icon={PenIcon}
         tint="var(--color-sky)"
         title={t("writings.my_writing")}
@@ -212,23 +213,20 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
 function WritingsEmpty() {
   const t = useT();
   return (
-    <section className="card p-6 text-center">
-      <span
-        className="mx-auto flex h-12 w-12 items-center justify-center rounded-tile"
-        style={{
-          background: "color-mix(in srgb, var(--color-sky) 14%, transparent)",
-          color: "var(--color-sky)",
-        }}
-      >
-        <PenIcon size={22} />
-      </span>
-      <h2 className="mt-3 font-bold">{t("writ.empty_title")}</h2>
-      <p className="muted mx-auto mt-2 max-w-sm text-body">
-        {t("writ.empty_sub")}
-      </p>
-      <Link href="/immersion" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-body">
-        {t("writ.go_to_writing")}
-      </Link>
-    </section>
+    /* Kabuk EL YAPIMI DEĞİL: aynı dosyanın hata dalı `EmptyCard` çiziyordu,
+       boş dal ise kendi karosunu (48 px, %14 tint) ve kendi başlığını kuruyordu
+       — iki boş hâl yan yana iki farklı ölçüde duruyordu. Android'in boş hâl
+       kalıbı tek: `social/common.tsx` `EmptyCard` (52 px dolu karo). */
+    <EmptyCard
+      icon={PenIcon}
+      tint="var(--color-sky)"
+      title={t("writ.empty_title")}
+      text={t("writ.empty_sub")}
+      action={
+        <Link href="/immersion" prefetch={false} className="btn btn-primary inline-flex px-5 py-2.5 text-body">
+          {t("writ.go_to_writing")}
+        </Link>
+      }
+    />
   );
 }

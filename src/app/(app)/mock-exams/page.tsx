@@ -10,7 +10,8 @@ import { ensureProfile, getProgress } from "@/lib/session";
 import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/lib/mock-exams";
 import { mockCourseOf } from "@/lib/courses";
 import { mockAccess } from "@/lib/premium/access";
-import { ChevronRightIcon, LockIcon } from "@/components/icons";
+import { ChevronRightIcon, ExamIcon, LockIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { getT, getLang } from "@/lib/i18n/server";
 import { isNativeLang } from "@/lib/i18n/dict";
 import { nativeMockText } from "@/lib/lessons/native-server";
@@ -320,7 +321,16 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           );
         })
       ) : (
-        <p className="card p-4 text-body">{t("mockexams.none_for_level", { level })}</p>
+        /* Boş hâl EV KALIBINDA (Android `EmptyCard`): ikon karosu + başlık +
+           açıklama. Metin de ÇIKIŞ YOLU söylüyor: kâğıtlar seviyeye bağlı ve
+           seviye çubuğu bu kartın hemen üstünde duruyor — onu söylemeyen tek
+           cümle, kullanıcıya kâğıt hiç yokmuş gibi geliyordu. */
+        <EmptyCard
+          icon={ExamIcon}
+          tint="var(--color-sky)"
+          title={t("mockexams.empty_title")}
+          text={t("mockexams.none_for_level", { level })}
+        />
       )}
     </div>
   );

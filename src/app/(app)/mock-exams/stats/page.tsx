@@ -5,7 +5,8 @@ import { getUserId } from "@/lib/auth/server";
 import { mockStats } from "@/lib/mock-exams/stats";
 import { mockPaperById } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
-import { ChevronRightIcon } from "@/components/icons";
+import { ChevronRightIcon, PodiumIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
@@ -56,9 +57,20 @@ export default async function MockStatsPage() {
           {data?.running.length ? (
             <Running rows={data.running} paperLabel={paperLabel} skillLabel={skillLabel} t={t} />
           ) : null}
-          <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
-            {t("mockstats.empty")}
-          </p>
+          {/* Boş hâl EV KALIBINDA (Android `EmptyCard`) ve bir ÇIKIŞ YOLU
+              veriyor: "henüz sonucun yok" tek başına bir duvar, yanına
+              deneme sınavı listesine götüren kapı gerekiyor. */}
+          <EmptyCard
+            icon={PodiumIcon}
+            tint="var(--color-sky)"
+            title={t("mockstats.empty_title")}
+            text={t("mockstats.empty")}
+            action={
+              <Link href="/mock-exams" prefetch={false} className="btn btn-primary px-4 py-2 text-body">
+                {t("mockexams.title")}
+              </Link>
+            }
+          />
         </>
       ) : (
         <>
