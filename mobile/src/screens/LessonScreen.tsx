@@ -737,7 +737,7 @@ export function LessonScreen() {
           <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
             <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); beginLecture(r.cursor, true); }} colors={colors} />
             <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); }}>
-              <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
+              <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}>
                 <Text variant="h3" color={colors.text}>{tx("lesson.start_over")}</Text>
               </View>
             </PressableScale>
@@ -841,7 +841,7 @@ function BigButton({ label, onPress, tint, colors, disabled }: { label: string; 
      kalktı, web de takas yapmıyor. */
   return (
     <PressableScale onPress={onPress} disabled={disabled}>
-      <View style={[{ borderRadius: radii.lg, backgroundColor: bg, paddingVertical: 15, alignItems: "center" }, disabled ? {} : softShadow(bg, 10)]}>
+      <View style={[{ borderRadius: radii.lg, backgroundColor: bg, paddingVertical: spacing.lg, alignItems: "center" }, disabled ? {} : softShadow(bg, 10)]}>
         <Text variant="h3" color={colors.onPrimary}>{label}</Text>
       </View>
     </PressableScale>
@@ -855,7 +855,7 @@ function BigButton({ label, onPress, tint, colors, disabled }: { label: string; 
 function MicButton({ listening, onPress, label, colors }: { listening: boolean; onPress: () => void; label: string; colors: Palette }) {
   return (
     <PressableScale onPress={listening ? () => {} : onPress}>
-      <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, listening ? {} : softShadow(colors.primary, 10)]}>
+      <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, listening ? {} : softShadow(colors.primary, 10)]}>
         <MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} />
         <Text variant="h3" color={listening ? colors.primaryText : colors.onPrimary}>
           {listening ? tx("speak.listening") : label}
@@ -945,14 +945,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
-            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.success, 8)]}>
+            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.success, 8)]}>
               <CheckIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.correct")}</Text>
             </View>
           </PressableScale>
         </View>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
-            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.danger, 8)]}>
+            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.danger, 8)]}>
               <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.wrong")}</Text>
             </View>
           </PressableScale>
@@ -1178,14 +1178,14 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
             biri ölçülebiliyordu. */}
         {onExam && roleMsgs.length > 1 ? (
           <PressableScale onPress={onExam}>
-            <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 15, alignItems: "center" }}>
+            <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.border, paddingVertical: spacing.lg, alignItems: "center" }}>
               <Text variant="h3" color={colors.text}>{tx("lessonp.try_as_exam")}</Text>
               <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{tx("lessonp.exam_hint")}</Text>
             </View>
           </PressableScale>
         ) : null}
         <PressableScale onPress={onBack}>
-          <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
+          <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}>
             <Text variant="h3" color={colors.text}>{tx("lesson.back_to_path")}</Text>
           </View>
         </PressableScale>

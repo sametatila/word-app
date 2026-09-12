@@ -238,7 +238,7 @@ export function BossScreen() {
         {/* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
             dalında yeniden denemek aynı cevabı getirir (dersler bitmemiş). */}
         {data ? null : (
-          <PressableScale onPress={() => void load()} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => void load()} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
           </PressableScale>
         )}
@@ -273,7 +273,7 @@ export function BossScreen() {
             </View>
           ) : null}
           {best !== null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("bossw.best_left", { n: best })}</Text> : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t(best !== null ? "boss.beat_record" : "boss.enter")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
@@ -310,7 +310,7 @@ export function BossScreen() {
             </Text>
           ) : null}
           {!won ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("bossw.still_counted")}</Text> : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t(won ? "bossw.play_again" : "common.try_again")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>

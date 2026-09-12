@@ -105,7 +105,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
           </Link>
         }
       >
-        <button type="button" onClick={reLogin} className="btn btn-primary w-full px-5 py-3.5">
+        <button type="button" onClick={reLogin} className="btn btn-primary w-full px-5 py-4">
           {t("del.sign_out_and_in")}
         </button>
       </AuthShell>
@@ -180,7 +180,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
         <button
           type="submit"
           disabled={busy || !agree || hasPassword === null || (hasPassword && password.length === 0)}
-          className="btn w-full px-5 py-3.5 font-bold text-white disabled:opacity-60"
+          className="btn w-full px-5 py-4 font-bold text-white disabled:opacity-60"
           style={{ background: "var(--color-rose-500)" }}
         >
           {t(busy ? "deleteaccount.deleting" : "deleteaccount.permanently_delete_my_account")}

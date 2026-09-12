@@ -1815,7 +1815,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         <p className="muted mt-2 text-body">{t("walk.done_sub")}</p>
         <button
           onClick={() => { setStatus("loading"); void load(); }}
-          className="btn btn-primary mt-5 w-full px-5 py-3.5"
+          className="btn btn-primary mt-5 w-full px-5 py-4"
         >
           {t("common.continue")}
         </button>

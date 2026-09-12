@@ -680,7 +680,7 @@ export function ExamScreen() {
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
               {t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
             </Text>
-            <PressableScale onPress={() => setPhase("run")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <PressableScale onPress={() => setPhase("run")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
               <Text variant="h3" color={colors.onPrimary}>{t("exam.start_section")}</Text>
             </PressableScale>
           </Card>
@@ -1025,7 +1025,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
         <PressableScale onPress={() => {
           it.questions.forEach((q, i) => { const a = answers[i]; if (a !== null && a !== q.answer) onMiss(q, q.options[a]); });
           onDone(correctRef, it.questions.length);
-        }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
         </PressableScale>
       ) : null}

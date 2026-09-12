@@ -1026,7 +1026,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       title: t("session.expired"),
       body: t("session.expired_sub"),
       action: (
-        <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-3.5">
+        <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-4">
           {t("auth.sign_in")}
         </Link>
       ),
@@ -1035,7 +1035,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       title: t("session.load_failed"),
       body: t("session.load_failed_sub"),
       action: (
-        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
+        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-4">
           <RefreshIcon size={18} /> {t("common.try_again")}
         </button>
       ),
@@ -1044,7 +1044,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       title: t("session.offline"),
       body: t("session.offline_sub"),
       action: (
-        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
+        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-4">
           <RefreshIcon size={18} /> {t("common.try_again")}
         </button>
       ),
@@ -1099,7 +1099,7 @@ function EmptyCard({
           {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
               çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
           <p className="muted mt-2 text-body">{t("session.review_only_mode")}</p>
-          <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+          <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-4">
             {t("session.back_to_mixed")}
           </button>
         </div>
@@ -1127,7 +1127,7 @@ function EmptyCard({
             })}
           </p>
         ) : null}
-        <button onClick={onExtra} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+        <button onClick={onExtra} className="btn btn-primary mt-5 w-full px-5 py-4">
           {t("session.continue_with_new")}
         </button>
       </div>
@@ -1281,7 +1281,7 @@ function StageCard({
 
           <button
             onClick={() => onContinue(bet)}
-            className="btn btn-primary w-full px-5 py-3.5 text-h3"
+            className="btn btn-primary w-full px-5 py-4 text-h3"
           >
             {t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}
           </button>
@@ -1567,7 +1567,7 @@ function SummaryCard({
         <PushOptIn streak={result?.currentStreak ?? 0} />
 
         <div className="space-y-2 p-6 pt-4">
-          <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
+          <button onClick={onContinue} className="btn btn-primary w-full px-5 py-4">
             {partial ? t("summary.back_to_round") : t("game.continue")}
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">

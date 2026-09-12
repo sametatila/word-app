@@ -199,6 +199,42 @@ for (const f of await walkDir("mobile/src")) {
     else if (px % 2 === 1) tekPiksel += 1;
   }
 }
+/* ── BİRİNCİL DÜĞMENİN DİKEY DOLGUSU ───────────────────────────────────────
+ *
+ * Aynı düğme iki platformda bir piksel farkla duruyordu: Android'in tam
+ * genişlikli birincil düğmesi `paddingVertical: 15` (otuz altı yer), web'in
+ * karşılığı `btn ... w-full py-3.5` yani 14 (kırk bir yer). Etiket zaten
+ * aynıydı (`variant="h3"` ↔ `--text-h3`, 16/700), yani ayrışan tek şey
+ * dolguydu - ve ikisi de ölçek dışıydı (15 ve 14).
+ *
+ * İkisi de `spacing.lg`/`py-4` (16) oldu: düğme yüksekliği artık iki
+ * platformda aynı ve iki taraf da ölçek basamağında. Bu tek değişiklik tek
+ * sayılı boşluk borcunun otuz altısını da kapattı.
+ *
+ * Ölçü ikisinin de GERİ DÖNMEDİĞİ: ne mobilde 15, ne webde tam genişlikli
+ * bir `py-3.5`. */
+let ctaSapan = [];
+for (const f of await walkDir("mobile/src")) {
+  const src = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8"));
+  if (/paddingVertical: 15(?![\d.])/.test(src)) ctaSapan.push(`${f}: paddingVertical 15`);
+}
+for (const f of await walkDir("src")) {
+  const src = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8"));
+  for (const m of src.matchAll(/className="([^"]*)"/g)) {
+    const cls = m[1];
+    /* YALNIZ TAM GENISLIKLI dugme. Ilk yazimda `flex-1` de kapsamdaydi ve
+       onay diyalogunun YAN YANA iki dugmesini de cevirmisti - oysa Android'de
+       o dugmeler 14 (`ui/ConfirmDialog` `paddingVertical: 14`) ve deponun
+       kendi kapisi ("onay diyalogunun olculeri") bunu hemen yakaladi. */
+    if (/\bbtn\b/.test(cls) && /(?<![\w-])py-3\.5(?![\w-])/.test(cls) && /\bw-full\b/.test(cls)) {
+      ctaSapan.push(`${f}: btn w-full py-3.5`);
+    }
+  }
+}
+if (ctaSapan.length) {
+  problems.push(`birincil düğme dolgusu: ${ctaSapan.length} yüzey ölçek dışına döndü (ilk üç: ${ctaSapan.slice(0, 3).join(" · ")}) — iki platformda da 16`);
+}
+
 /* ── KART DOLGUSU ──────────────────────────────────────────────────────────
  *
  * Android'de kartın dolgusu TEK sayı: `ui/Card` `padding: spacing.lg` (16) ve
@@ -261,7 +297,7 @@ for (const f of await walkDir("src")) {
    `EmptyCard`ı da 16), iki tur sonucu kartı (`p-8` → 16/28, Android
    `rounds` sonuç kartı) ve başarım kartı (24 → 16/20, Android
    `AchievementUnlock`). */
-const TAVAN = { tekPiksel: 115, web24: 105, kartSapan: 23 };
+const TAVAN = { tekPiksel: 75, web24: 105, kartSapan: 23 };
 if (jetonOlmayan.length) {
   problems.push(`boşluk: mobilde ölçek basamağına eşit ${jetonOlmayan.length} ham sayı (ilk üç: ${jetonOlmayan.slice(0, 3).join(" · ")}) — \`spacing.*\` kullan`);
 }
@@ -281,6 +317,7 @@ if (problems.length) {
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
   console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — birincil düğmenin dikey dolgusu iki platformda da 16 (ölçek dışına dönen yok)`);
   console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24} · kart dolgusu ${kartSapan}/${TAVAN.kartSapan}`);
 }
 process.exit(problems.length);

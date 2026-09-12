@@ -276,7 +276,7 @@ export function ChallengeScreen() {
       <View accessibilityLiveRegion="assertive" style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }]}>
         <AlertIcon color={colors.textMuted} size={56} />
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.load_failed")}</Text>
-        <PressableScale onPress={load} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={load} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
         </PressableScale>
         <PressableScale onPress={exit} style={{ paddingVertical: spacing.sm }}>
@@ -292,7 +292,7 @@ export function ChallengeScreen() {
         <Mascot mood="idle" size={96} />
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.none_title")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("challenge.none_sub")}</Text>
-        <PressableScale onPress={exit} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={exit} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.back_to_learn")}</Text>
         </PressableScale>
       </View>
@@ -320,7 +320,7 @@ export function ChallengeScreen() {
               {t("challenge.your_record")} {record} {t("common.points")}
             </Text>
           ) : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
@@ -359,7 +359,7 @@ export function ChallengeScreen() {
             <Box colors={colors} label={t("challenge.hit_rate")} value={formatPercent(accuracy)} />
             <Box colors={colors} label={t("challenge.longest_streak")} value={String(bestCombo)} />
           </View>
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>

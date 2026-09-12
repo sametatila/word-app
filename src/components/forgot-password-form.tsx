@@ -100,7 +100,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
           <button
             type="submit"
             disabled={busy || (Boolean(turnstileSiteKey) && !captchaToken)}
-            className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
+            className="btn btn-primary w-full px-5 py-4 disabled:opacity-60"
           >
             {t(busy ? "authw.sending" : "auth.send_reset_link")}
           </button>

@@ -171,7 +171,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
         <div role="alert" className="p-6 text-center">
           <p className="text-h3">{t("daily.sign_in_for_daily_round")}</p>
           <p className="muted mt-2 text-body leading-relaxed">{t("daily.play_same_round_as_everyone_and")}</p>
-          <Link href="/login" prefetch={false} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+          <Link href="/login" prefetch={false} className="btn btn-primary mt-5 w-full px-5 py-4">
             {t("daily.sign_in_sign_up")}
           </Link>
           <button type="button" onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
@@ -243,7 +243,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
               track("session_start", 0, "daily");
               setStatus("playing");
             }}
-            className="btn btn-primary w-full px-5 py-3.5 text-h3"
+            className="btn btn-primary w-full px-5 py-4 text-h3"
           >
             {t("common.start")}
           </button>
@@ -377,7 +377,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
             streak={bestCombo.current}
             level={data?.level ?? "A1"}
           />
-          <button onClick={onExit} className="btn btn-primary w-full px-5 py-3.5">
+          <button onClick={onExit} className="btn btn-primary w-full px-5 py-4">
             {t("common.back_to_learn")}
           </button>
           <p className="muted pt-1 text-center text-caption">

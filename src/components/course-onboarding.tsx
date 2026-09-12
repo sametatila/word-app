@@ -444,7 +444,7 @@ export function CourseOnboarding({
           type="button"
           disabled={!canNext || saving}
           onClick={next}
-          className="btn btn-primary flex-1 px-6 py-3.5 text-h3 disabled:opacity-60"
+          className="btn btn-primary flex-1 px-6 py-4 text-h3 disabled:opacity-60"
         >
           {saving ? t("rounds.saving") : t("common.continue_2")}
         </button>

@@ -182,7 +182,7 @@ function ContinueButton({ verdict, onContinue }: { verdict: "correct" | "wrong" 
       type="button"
       autoFocus
       onClick={onContinue}
-      className="btn glow-tint-sm w-full py-3.5 text-white"
+      className="btn glow-tint-sm w-full py-4 text-white"
       /* Android `rounds` devam düğmesi: `softShadow(ok ? success : primary, 8)`
          - gölge düğmenin kendi rengi. */
       style={{

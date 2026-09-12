@@ -18138,3 +18138,28 @@ Ayrıca tanıtım/demo/admin sayfaları (Android karşılığı yok) ve
 Geri kalan **23 yüzey tavan olarak donduruldu**; 24/32 piksel borcu da 108'den
 105'e indi. `check:tokens` üç borcu birlikte yazıyor ve üçü de enjeksiyonla
 doğrulandı.
+
+## §11.498 — Birincil düğme: aynı düğme iki platformda bir piksel farkla duruyordu
+
+§11.496'nın dondurduğu "tek sayılı boşluk" borcunun en yoğun değeri 15'ti
+(36 yer) — ve hepsi **aynı şey** çıktı: `paddingVertical: 15`, tam genişlikli
+birincil düğme. Web'in karşılığı `btn ... w-full py-3.5`, yani **14** (41 yer).
+Etiket zaten aynıydı (`variant="h3"` ↔ `--text-h3`, 16/700), yani ayrışan tek
+şey dolguydu ve **ikisi de ölçek dışıydı**.
+
+İkisi de `spacing.lg` / `py-4` (16) oldu: düğme yüksekliği artık iki platformda
+aynı (16×2 + 21.6 = 53.6) ve iki taraf da ölçek basamağında. Android'in dört
+adet `paddingVertical: 17`si de (ilk kurulum, ilk alıştırma, bildirim izni,
+ödeme ekranı) aynı basamağa geldi — web karşılıkları zaten 16.
+
+**Kapsamı ilk yazışımda geniş tuttum ve depo bunu hemen yakaladı.** Kural
+"`btn` + `py-3.5` + (`w-full` ya da `flex-1`)" diye yazılmıştı; `flex-1` onay
+diyaloğunun **yan yana** iki düğmesini de kapsıyordu, oysa Android'de o
+düğmeler 14 (`ui/ConfirmDialog` `paddingVertical: 14`). `check:parity`in kendi
+kapısı ("onay diyaloğunun ölçüleri") ilk çalıştırmada düştü ve `düğme payı=
+FARKLI` dedi. İkisi geri alındı, kural yalnız tam genişlikli düğmeye daraltıldı
+ve gerekçesi betikte yazılı.
+
+`check:tokens` artık bunu ayrı bir ölçü olarak taşıyor: ne mobilde
+`paddingVertical: 15`, ne web'de tam genişlikli bir `py-3.5`. İki yönü de
+enjeksiyonla doğrulandı. Tek sayılı boşluk borcu 115 → **75**.

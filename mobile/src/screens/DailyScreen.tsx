@@ -274,7 +274,7 @@ export function DailyScreen() {
     return (
       <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.couldn_t_load_daily_round")}</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.try_again")}</Text></PressableScale>
+        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );

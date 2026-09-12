@@ -141,7 +141,7 @@ export function TwoFactorForm() {
           {note ? <AuthNotice tone="success">{note}</AuthNotice> : null}
           {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 
-          <button type="submit" disabled={busy} className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60">
+          <button type="submit" disabled={busy} className="btn btn-primary w-full px-5 py-4 disabled:opacity-60">
             {busy ? t("authw.wait") : t("twofa.verify")}
           </button>
 

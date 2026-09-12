@@ -202,7 +202,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           </p>
         ) : null}
         {canRetake ? (
-          <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
+          <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
             {t("common.start")}
           </button>
         ) : (
@@ -265,7 +265,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             </button>
           ))}
         </div>
-        <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
+        <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
           {chosen === result.suggested
             ? t("placement.continue_with", { level: chosen ?? "" })
             : t("placement.pick_and_continue", { level: chosen ?? "" })}

@@ -18,7 +18,7 @@ export default async function AccountDeletePage() {
   if (!authEnabled) {
     return (
       <AuthShell title={t("del.disabled")} subtitle={t("del.disabled_sub")}>
-        <Link href="/" className="btn btn-primary w-full px-5 py-3.5">{t("common.home")}</Link>
+        <Link href="/" className="btn btn-primary w-full px-5 py-4">{t("common.home")}</Link>
       </AuthShell>
     );
   }
@@ -38,7 +38,7 @@ export default async function AccountDeletePage() {
         subtitle={t("del.sign_in_first")}
         footer={<span>{t("del.in_app_path")}</span>}
       >
-        <Link href="/login?next=/account/delete" className="btn btn-primary w-full px-5 py-3.5">
+        <Link href="/login?next=/account/delete" className="btn btn-primary w-full px-5 py-4">
           {t("auth.sign_in")}
         </Link>
       </AuthShell>

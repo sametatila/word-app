@@ -419,7 +419,7 @@ export function GameScreen() {
       <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("game.couldn_t_load_round")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>{t("game.check_your_connection_and_try")}</Text>
-        <PressableScale onPress={() => void load()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
+        <PressableScale onPress={() => void load()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -465,7 +465,7 @@ export function GameScreen() {
             {t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}
           </Text>
         ) : null}
-        <PressableScale onPress={() => void load({ extra: true })} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={() => void load({ extra: true })} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("session.continue_with_new")}</Text>
         </PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
@@ -482,7 +482,7 @@ export function GameScreen() {
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
         {/* Tek cümle: boş ekranda okunacak son şey modun nasıl çalıştığı. */}
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.review_only_mode")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Game"); }} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Game"); }} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("session.back_to_mixed")}</Text>
         </PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
@@ -827,7 +827,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
                 <Text variant="micro" color={colors.textMuted}>{t("wager.rules")}</Text>
               </View>
             </PressableScale>
-            <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
               <Text variant="h3" color={colors.onPrimary}>{t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}</Text>
             </PressableScale>
             <PressableScale onPress={onStop} style={{ paddingVertical: spacing.md, alignItems: "center" }}>

@@ -450,7 +450,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <p className="muted mt-3 text-caption">
           {t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
         </p>
-        <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-body">
+        <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-4 text-body">
           {t("exam.start_section")}
         </button>
       </section>
@@ -903,7 +903,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         </p>
       </div>
 
-      <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-body">
+      <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-4 text-body">
         {t("exam.start")}
       </button>
       <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">

@@ -285,7 +285,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           <p className="muted mt-2 text-body">
             {t("challenge.none_sub")}
           </p>
-          <button onClick={onExit} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+          <button onClick={onExit} className="btn btn-primary mt-5 w-full px-5 py-4">
             {t("common.back_to_learn")}
           </button>
         </div>
@@ -319,7 +319,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
               {t("challenge.your_record")} <strong>{record}</strong> {t("common.points")}
             </p>
           ) : null}
-          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-h3">
+          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4 text-h3">
             {t("common.start")}
           </button>
           <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
@@ -361,7 +361,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             <Box label={t("challenge.longest_streak")} value={String(bestCombo)} />
           </div>
 
-          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4">
             {t("common.try_again")}
           </button>
           <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">

@@ -314,11 +314,11 @@ function Featured({
           {t("path.finish_previous")}
         </p>
       ) : onOpen ? (
-        <button type="button" onClick={onOpen} className="btn btn-primary mt-3 w-full py-3.5">
+        <button type="button" onClick={onOpen} className="btn btn-primary mt-3 w-full py-4">
           {label}
         </button>
       ) : (
-        <Link href={href} prefetch={false} className="btn btn-primary mt-3 w-full py-3.5">
+        <Link href={href} prefetch={false} className="btn btn-primary mt-3 w-full py-4">
           {label}
         </Link>
       )}

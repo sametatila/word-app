@@ -312,10 +312,10 @@ export function RoleplayExamScreen() {
             "konuşmaya dön"dü ve o, geçici bir ağ kesintisinde girişi
             kaybettiriyordu. Aynı gerekçe sınav ekranında yazılı ve webde de
             aynı düzeltme yapıldı. */}
-        <PressableScale onPress={restart} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={restart} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
         </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, paddingHorizontal: spacing.xl }}>
+        <PressableScale onPress={() => nav.goBack()} style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, paddingHorizontal: spacing.xl }}>
           <Text variant="h3" color={colors.text}>{tx("lessonp.back_to_conversation")}</Text>
         </PressableScale>
       </View>
@@ -397,11 +397,11 @@ export function RoleplayExamScreen() {
         <View style={{ marginTop: spacing.xl, gap: spacing.sm }}>
           <PressableScale
             onPress={restart}
-            style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}
+            style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}
           >
             <Text variant="h3" color={colors.text}>{tx("common.try_again")}</Text>
           </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => nav.goBack()} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("lessonp.back_to_conversation")}</Text>
           </PressableScale>
         </View>

@@ -104,7 +104,7 @@ export function MicDisclosure({
         {t("micdisclosure.read_privacy_policy")}
       </Link>
 
-      <button type="button" onClick={onAccept} className="btn btn-primary mt-4 w-full px-5 py-3.5">
+      <button type="button" onClick={onAccept} className="btn btn-primary mt-4 w-full px-5 py-4">
         {t("micdisclosure.i_agree_start")}
       </button>
       <button type="button" onClick={onCancel} className="btn btn-ghost mt-2 w-full px-5 py-3">

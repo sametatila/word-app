@@ -309,7 +309,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
         </View>
         {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
       </View>
-      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
+      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx("common.continue")}</Text>
       </PressableScale>
     </View>
@@ -582,7 +582,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
-      <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
       </PressableScale>
     </View>
@@ -701,7 +701,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   const kelime = value.trim() ? value.trim().split(/\s+/).filter(Boolean).length : 0;
   const canCheck = !busy && !result && kelime >= MIN_FREE_WORDS;
   const footer = result && outcome ? (
-    <PressableScale onPress={finish} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+    <PressableScale onPress={finish} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
       <Text variant="h3" color={colors.onPrimary}>{tx("common.continue_2")}</Text>
     </PressableScale>
   ) : (
@@ -734,7 +734,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       {kelime < MIN_FREE_WORDS ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{tx("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
       ) : null}
-      <PressableScale disabled={!canCheck} onPress={() => void evaluate()} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: canCheck ? colors.primary : colors.surface2, paddingVertical: 15, alignItems: "center" }, canCheck ? softShadow(colors.primary, 8) : {}]}>
+      <PressableScale disabled={!canCheck} onPress={() => void evaluate()} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: canCheck ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, canCheck ? softShadow(colors.primary, 8) : {}]}>
         <Text variant="h3" color={canCheck ? colors.onPrimary : colors.textFaint}>{tx(busy ? "mockexam.evaluating" : "mockexam.evaluate")}</Text>
       </PressableScale>
     </View>
@@ -818,7 +818,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
             blurOnSubmit={false}
             style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
           />
-          <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
           </PressableScale>
         </View>
@@ -1242,7 +1242,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
-      <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : "common.check")}</Text>
       </PressableScale>
     </View>

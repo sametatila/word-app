@@ -66,7 +66,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         </View>
       )}
       <PressableScale style={{ marginTop: spacing.md }} onPress={onContinue}>
-        <View style={[{ borderRadius: radii.lg, backgroundColor: unit.locked ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center" }, unit.locked ? {} : softShadow(colors.primary, 10)]}>
+        <View style={[{ borderRadius: radii.lg, backgroundColor: unit.locked ? colors.surface2 : colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, unit.locked ? {} : softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={unit.locked ? colors.textFaint : colors.onPrimary}>{t(unit.locked ? "path.finish_previous" : unit.complete ? "path.repeat" : "path.continue")}</Text>
         </View>
       </PressableScale>

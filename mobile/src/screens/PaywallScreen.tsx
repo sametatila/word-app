@@ -325,7 +325,7 @@ export function PaywallScreen() {
             taşıyor; sessiz kalırsa kullanıcı düğmeye basıp hiçbir şey olmadığını
             sanıyor. */}
         {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
-        <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
+        <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
           {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="h3" color={pkg ? colors.onPrimary : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
         </PressableScale>
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu

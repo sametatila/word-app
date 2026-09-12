@@ -57,7 +57,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
           </Link>
         }
       >
-        <Link href="/forgot-password" className="btn btn-primary w-full px-5 py-3.5">
+        <Link href="/forgot-password" className="btn btn-primary w-full px-5 py-4">
           {t("authw.request_new_link")}
         </Link>
       </AuthShell>
@@ -130,7 +130,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
           <button
             type="submit"
             disabled={busy}
-            className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
+            className="btn btn-primary w-full px-5 py-4 disabled:opacity-60"
           >
             {t(busy ? "rounds.saving" : "authw.update_password")}
           </button>

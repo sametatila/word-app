@@ -290,7 +290,7 @@ export function BossPlayer({
           <p className="muted mt-3 text-body">{t("bossw.best_left", { n: best })}</p>
         ) : null}
 
-        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-h3">
+        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4 text-h3">
           {t(best !== null ? "boss.beat_record" : "boss.enter")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
@@ -331,7 +331,7 @@ export function BossPlayer({
         {!won ? (
           <p className="muted mt-3 text-body">{t("bossw.still_counted")}</p>
         ) : null}
-        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4">
           {t(won ? "bossw.play_again" : "common.try_again")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">

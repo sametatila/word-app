@@ -340,7 +340,7 @@ export function AuthForm({
         <button
           type="submit"
           disabled={busy || (Boolean(turnstileSiteKey) && !captchaToken)}
-          className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
+          className="btn btn-primary w-full px-5 py-4 disabled:opacity-60"
         >
           {busy ? t("authw.wait") : t(mode === "signin" ? "auth.sign_in" : "auth.sign_up")}
         </button>

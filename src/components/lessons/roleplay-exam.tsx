@@ -249,7 +249,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           <li>· {t("rpexam.rule_scoring")}</li>
           <li>· {t("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })}</li>
         </ul>
-        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
+        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
           {t("exam.start")}
         </button>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-2 w-full px-5 py-3 text-center text-body">

@@ -268,7 +268,7 @@ export function OnboardingScreen() {
         )}
       </View>
 
-      <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
+      <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
         <Text variant="h3" color={canNext ? colors.onPrimary : colors.textFaint}>{t("common.continue_2")}</Text>
       </PressableScale>
 

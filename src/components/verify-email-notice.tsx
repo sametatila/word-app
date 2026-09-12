@@ -100,7 +100,7 @@ export function VerifyEmailNotice({
           </button>
         ) : null}
 
-        <Link href="/login" className="btn btn-primary w-full px-5 py-3.5">
+        <Link href="/login" className="btn btn-primary w-full px-5 py-4">
           {t("verify.verified_sign_in")}
         </Link>
       </div>

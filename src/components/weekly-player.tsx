@@ -199,7 +199,7 @@ export function WeeklyPlayer() {
             <p className="muted mt-1 text-caption">{t("weekly.honest_note")}</p>
           </div>
         </div>
-        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-h3">
+        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
           {t("common.start")}
         </button>
         <Link href="/learn" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">

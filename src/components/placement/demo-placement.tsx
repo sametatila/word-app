@@ -102,7 +102,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
             {t("placement.saved")}
           </p>
         ) : null}
-        <button type="button" onClick={apply} className="btn btn-primary mt-8 w-full px-5 py-3.5">
+        <button type="button" onClick={apply} className="btn btn-primary mt-8 w-full px-5 py-4">
           {t("placement.understood")}
         </button>
         <button type="button" onClick={leave} className="muted mt-2 w-full px-5 py-3 font-bold">
