@@ -1049,6 +1049,7 @@ export const de: Record<string, string> = {
   "progress.words_learned": "Gelernte Wörter",
   "progress.level": "Niveau",
   "progress.total_xp": "XP gesamt",
+  "progress.load_failed": "Der Fortschritt konnte nicht geladen werden.",
   "quests.no_shared_quest_this_week": "Diese Woche keine gemeinsame Aufgabe",
   "quests.awaiting_reply": "Wartet auf Antwort",
   "quests.choose_friend": "Freund wählen",

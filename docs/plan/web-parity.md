@@ -16766,3 +16766,29 @@ Kapı **§320**, ölçü mutlak ve taraf başına ayrı: webde hata dalı boş h
 dalından ayrı ve duyuruyor, mobilde yedek dalı var, sebebini yazıyor ve
 duyuruyor; üçüncü ölçü iki tarafta da **boş hal dalının hâlâ durduğu** — ayırma
 boş hali yok etmiş olmasın.
+
+## §11.461 — Gelişim okunamayınca: bir tarafta sonsuz iskelet, diğerinde sessiz boşluk
+
+Aynı ekranın iki platformdaki hata hâli, aynı kusurun iki biçimiydi:
+
+- **Android** `ProgressScreen` yalnız `me`ye bakıyordu. `/api/me` ve oturum
+  yedeği birlikte patladığında `me` null kalıyor ve dört karo, ustalık kartı,
+  şerit **sonsuza kadar iskelet** çiziyordu: yüklenmeyen bir ekran "yükleniyor"
+  görünüyor. `loading` zaten `useMe`den geliyordu, okunmuyordu.
+- **web** `profile/progress` sayfası `content`i null bırakıyor ve yalnız
+  başlığı + yetkinlik panelini çiziyordu — **sessiz bir boşluk**, tek kelime
+  bile yok.
+
+İkisi de yanlış olduğu için karşılaştırmalı bir ölçü bunu göremez. İki taraf da
+aynı kartı çiziyor artık: `progress.load_failed` + `social.err_offline`, alev
+ikonu (ekranın kendi ikonu), duyurulu (`live="assertive"` / `role="alert"`) ve
+bir yeniden deneme yolu — mobilde `bumpStats()` (`useMe` o işareti dinliyor),
+webde sayfanın kendisine bağlantı.
+
+Sözlüğe tek anahtar eklendi (`progress.load_failed`, altı dosya: üç dil ×
+web/mobil) ve kapı onu da sayıyor: iki dilde bulunup üçüncüsünde eksik bir
+anahtar arayüzde anahtarın kendisini yazdırır.
+
+Kapı **§321**, mutlak. Enjeksiyon üç yönden: mobilin duyurusunu `polite`e
+çekmek, webin başlığını başka bir anahtara çevirmek ve İngilizce sözlükten
+satırı silmek — üçü de ayrı ayrı kırmızı veriyor.

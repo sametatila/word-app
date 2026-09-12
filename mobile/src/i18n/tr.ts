@@ -1054,6 +1054,7 @@ export const tr: Record<string, string> = {
   "progress.words_learned": "Öğrenilen kelime",
   "progress.level": "Seviye",
   "progress.total_xp": "Toplam XP",
+  "progress.load_failed": "Gelişim yüklenemedi.",
   "quests.no_shared_quest_this_week": "Bu hafta ortak görev yok",
   "quests.awaiting_reply": "Cevap bekleniyor",
   "quests.choose_friend": "Arkadaş seç",

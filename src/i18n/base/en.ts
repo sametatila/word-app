@@ -1051,6 +1051,7 @@ export const enBase: Record<string, string> = {
   "progress.words_learned": "Words learned",
   "progress.level": "Level",
   "progress.total_xp": "Total XP",
+  "progress.load_failed": "Progress couldn't be loaded.",
   "quests.no_shared_quest_this_week": "No shared quest this week",
   "quests.awaiting_reply": "Awaiting reply",
   "quests.choose_friend": "Choose a friend",

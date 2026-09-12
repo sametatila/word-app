@@ -18010,6 +18010,84 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* -------------- 321. OKUMA PATLAYINCA SONSUZ ISKELET / SESSIZ BOSLUK YOK
+ *
+ * Gelisim ekrani iki tarafta da AYNI kusurun iki bicimini tasiyordu:
+ *   Android  ekran yalniz `me`ye bakiyordu. `/api/me` ve oturum yedegi
+ *            birlikte patladiginda `me` null kaliyor ve dort karo, ustalik
+ *            karti, serit SONSUZA KADAR iskelet ciziyordu - yuklenmeyen bir
+ *            ekran "yukleniyor" gorunuyor, kullanicinin yapacagi bir sey yok.
+ *            `loading` zaten `useMe`den geliyordu, okunmuyordu.
+ *   web      `content` null kaliyor ve sayfa yalniz basligi + yetkinlik
+ *            panelini ciziyordu: SESSIZ bir bosluk, tek kelime bile yok.
+ *
+ * Ikisi de yanlis oldugu icin karsilastirmali bir olcu bunu goremez; olcu
+ * MUTLAK: her iki tarafta da hata hali kendi kartini ciziyor, duyuruyor ve
+ * bir yeniden deneme yolu veriyor. §241'in "hata hali duyurulmali" kurali
+ * bu yuzeyi kapsamiyordu (kart orada HIC yoktu, dolayisiyla duyuru prop'u da
+ * yok). §320 ayni kusurun deneme sinavi istatistigindeki bicimi.
+ *
+ * Sozluk olcusu de var: kart bir anahtar okuyor ve o anahtar UC dilde birden
+ * bulunmali - iki dilde eksik bir anahtar arayuzde anahtarin kendisini
+ * yazdirir. */
+{
+  const silZ = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const mob = silZ(read("mobile/src/screens/ProgressScreen.tsx"));
+  const web = silZ(read("src/app/(app)/profile/progress/page.tsx"));
+  /* Mobil dali DUGUM olarak kesiliyor: kosuldan sonraki ilk `)` degil,
+     `<EmptyCard` ile baslayan cagrinin kendisi okunuyor. */
+  const mobKart = (() => {
+    const i = mob.indexOf("{!loading && !me ? (");
+    if (i < 0) return "";
+    const j = mob.indexOf("<EmptyCard", i);
+    return j < 0 || j - i > 400 ? "" : mob.slice(j, mob.indexOf("/>", j) + 2);
+  })();
+  const webKart = (() => {
+    const i = web.indexOf("console.error(\"[progress] okunamadı\"");
+    if (i < 0) return "";
+    const j = web.indexOf("<EmptyCard", i);
+    /* Kendiliginden kapanan etiket: kapanis `</EmptyCard>` DEGIL `/>`.
+       Ilk yazilisinda kapanis etiketi araniyordu, bulunamayinca dilim bos
+       kaliyor ve kapi "kart YOK" diyordu - olcunun komsusunu olcmek. */
+    const k = web.indexOf("/>", j);
+    return j < 0 ? "" : web.slice(j, k < 0 ? j + 900 : k + 2);
+  })();
+  const sozluk = ["src/i18n/base", "mobile/src/i18n"].map(
+    (k) => ["tr", "en", "de"].filter((d) => /"progress\.load_failed":/.test(read(k + "/" + d + ".ts"))).length,
+  );
+  sameList(
+    "gelisim okumasi patlayinca hata karti",
+    [
+      "mobil loading okunuyor=" + (/const \{ me, loading \} = useMe\(\)/.test(mob) ? "evet" : "HAYIR"),
+      "mobil kart=" + (mobKart ? "var" : "YOK"),
+      "mobil duyuruyor=" + (/live="assertive"/.test(mobKart) ? "evet" : "HAYIR"),
+      "mobil metin=" + (/progress\.load_failed/.test(mobKart) ? "var" : "YOK"),
+      "mobil yeniden deneme=" + (/onAction=\{\(\) => bumpStats\(\)\}/.test(mobKart) ? "var" : "YOK"),
+      "web kart=" + (webKart ? "var" : "YOK"),
+      "web duyuruyor=" + (/role="alert"/.test(webKart) ? "evet" : "HAYIR"),
+      "web metin=" + (/progress\.load_failed/.test(webKart) ? "var" : "YOK"),
+      "web yeniden deneme=" + (/common\.try_again/.test(webKart) ? "var" : "YOK"),
+      "sozluk web dil=" + sozluk[0],
+      "sozluk mobil dil=" + sozluk[1],
+    ],
+    [
+      "mobil loading okunuyor=evet",
+      "mobil kart=var",
+      "mobil duyuruyor=evet",
+      "mobil metin=var",
+      "mobil yeniden deneme=var",
+      "web kart=var",
+      "web duyuruyor=evet",
+      "web metin=var",
+      "web yeniden deneme=var",
+      "sozluk web dil=3",
+      "sozluk mobil dil=3",
+    ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

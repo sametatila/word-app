@@ -16,6 +16,8 @@ import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthPanel } from "../ui/GrowthPanel";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
+import { bumpStats } from "../lib/statsSignal";
+import { EmptyCard } from "../social/common";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
@@ -152,7 +154,7 @@ export function ProgressScreen() {
   const { gridItemWidth } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { me } = useMe();
+  const { me, loading } = useMe();
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;
@@ -167,6 +169,33 @@ export function ProgressScreen() {
         <Text accessibilityRole="header" variant="h2">{t("progress.progress")}</Text>
       </View>
 
+      {/*
+        OKUMA PATLADIYSA İSKELET DEĞİL HATA.
+
+        Ekran yalnız `me`ye bakıyordu: hem `/api/me` hem oturum yedeği
+        başarısız olduğunda `me` null kalıyor ve dört karo, ustalık kartı,
+        şerit — hepsi SONSUZA KADAR iskelet çiziyordu. "Yükleniyor" görünen
+        bir ekran hiç yüklenmiyordu; kullanıcının yapacağı bir şey de yoktu.
+        `loading` zaten `useMe`den geliyordu, okunmuyordu.
+
+        Web'in aynı sayfası (`profile/progress`) okuma patladığında bloğu
+        HİÇ çizmiyordu — sessiz bir boşluk; o da aynı kartla düzeltildi
+        (§321). Yeniden deneme `bumpStats()` ile: `useMe` o işareti
+        dinliyor.
+      */}
+      {!loading && !me ? (
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          <EmptyCard
+            live="assertive"
+            icon={FlameIcon}
+            tint={colors.streak}
+            title={t("progress.load_failed")}
+            text={t("social.err_offline")}
+            action={t("common.try_again")}
+            onAction={() => bumpStats()}
+          />
+        </View>
+      ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* seri kahramanı */}
         {/* ZEMİN `streakDeep`. Ölçüm: beyaz yazı `streak` üstünde açık temada 2.88,
@@ -323,6 +352,7 @@ export function ProgressScreen() {
           <MenuRow icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />
         </Card>
       </ScrollView>
+      )}
     </View>
   );
 }
