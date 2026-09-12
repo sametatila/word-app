@@ -1,0 +1,352 @@
+[
+ {
+  "tr": "Kip kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Modalverbkarte aus."
+ },
+ {
+  "tr": "Biçim kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Formkarte aus."
+ },
+ {
+  "tr": "Kapanış kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Schlusskarte aus."
+ },
+ {
+  "tr": "„the“ varsa „of“ zorunlu; „the“ yoksa nesne doğrudan geliyor; üçüncü seçenek yok; biri şey, öteki eylem.",
+  "kind": "form.facts",
+  "de": "Steht „the“ davor, ist „of“ Pflicht; ohne „the“ kommt das Objekt direkt; eine dritte Möglichkeit gibt es nicht; das eine ist eine Sache, das andere eine Tätigkeit."
+ },
+ {
+  "tr": "„must have“ olumsuzlanamıyor; sert olumsuz „can't have“; yumuşak olumsuz ana fiile taşınıyor; ikisi aynı şey değil.",
+  "kind": "form.facts",
+  "de": "„must have“ lässt sich nicht verneinen; die harte Verneinung ist „can't have“; die weiche wandert ins Hauptverb; beides ist nicht dasselbe."
+ },
+ {
+  "tr": "„in view of“ geriye bakıyor; „provided that“ şart koyuyor; „if“ durumu betimliyor; seviyenin sorusu kimin kaybolduğu.",
+  "kind": "form.facts",
+  "de": "„in view of“ blickt zurück; „provided that“ setzt eine Bedingung; „if“ beschreibt eine Lage; die Frage der Stufe ist, wer verschwindet."
+ },
+ {
+  "tr": "Seçim yapan cümlecikte nesne adılı düşüyor; virgüllü cümlecikte düşmüyor; „which is“ isim öbeğinden önce silinebiliyor; „whose“ hiç silinmiyor.",
+  "kind": "form.facts",
+  "de": "Im auswählenden Teilsatz fällt das Objektpronomen weg; im Teilsatz mit Kommas nicht; „which is“ kann vor einer Nominalphrase gestrichen werden; „whose“ nie."
+ },
+ {
+  "tr": "Affetmez olmuş olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können nicht unversöhnlich gewesen sein."
+ },
+ {
+  "tr": "İlan yanıltıcı olmuş olmalı.",
+  "kind": "build.tr",
+  "de": "Die Anzeige muss irreführend gewesen sein."
+ },
+ {
+  "tr": "Güvenilirlik olsaydı kalırdık.",
+  "kind": "build.tr",
+  "de": "Wäre die Verlässlichkeit da gewesen, wären wir geblieben."
+ },
+ {
+  "tr": "Bir travma nadiren sessizce geçer.",
+  "kind": "build.tr",
+  "de": "Selten geht ein Trauma leise vorüber."
+ },
+ {
+  "tr": "Bir yük hiç bu kadar ağır gelmedi.",
+  "kind": "build.tr",
+  "de": "Nie hat sich eine Last so schwer angefühlt."
+ },
+ {
+  "tr": "Empati kurmayı başaramamış olmalı.",
+  "kind": "build.tr",
+  "de": "Er muss es versäumt haben, sich einzufühlen."
+ },
+ {
+  "tr": "Görünüşe göre onu ses tonu taşıdı.",
+  "kind": "build.tr",
+  "de": "Anscheinend hat der Tonfall es getragen."
+ },
+ {
+  "tr": "İlişik belgenin dosyalanması bitti.",
+  "kind": "build.tr",
+  "de": "Die Ablage der Anlage ist erledigt."
+ },
+ {
+  "tr": "Bizi kandırmayı amaçlamış olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können nicht beabsichtigt haben, uns zu täuschen."
+ },
+ {
+  "tr": "Daha açık fikirli olmamız gerekirdi.",
+  "kind": "build.tr",
+  "de": "Wir hätten aufgeschlossener sein sollen."
+ },
+ {
+  "tr": "Mesafeli olan arkadaşım ilk konuştu.",
+  "kind": "build.tr",
+  "de": "Mein Freund, der zurückhaltend ist, sprach zuerst."
+ },
+ {
+  "tr": "Bir yanıt hiç bu kadar çabuk gelmedi.",
+  "kind": "build.tr",
+  "de": "Nie ist eine Antwort so prompt gekommen."
+ },
+ {
+  "tr": "Dava dosyasının tam olduğu söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Akte soll vollständig sein."
+ },
+ {
+  "tr": "Hediye çeki gelseydi sipariş verirdik.",
+  "kind": "build.tr",
+  "de": "Wäre der Gutschein gekommen, hätten wir bestellt."
+ },
+ {
+  "tr": "Kimsenin okumadığı görev dağılımı eski.",
+  "kind": "build.tr",
+  "de": "Die Aufgabenverteilung, die niemand gelesen hat, ist alt."
+ },
+ {
+  "tr": "Konuşsaydık velayet paylaşılmış olurdu.",
+  "kind": "build.tr",
+  "de": "Hätten wir geredet, wäre das Sorgerecht geteilt worden."
+ },
+ {
+  "tr": "Bir yanıt nadiren bu kadar hızlı ulaşır.",
+  "kind": "build.tr",
+  "de": "Selten trifft eine Antwort so rasch ein."
+ },
+ {
+  "tr": "Yeni bir düzenleme olan plan işe yarıyor.",
+  "kind": "build.tr",
+  "de": "Der Plan, der eine neue Regelung ist, funktioniert."
+ },
+ {
+  "tr": "Satın alma belgesini saklamamız gerekirdi.",
+  "kind": "build.tr",
+  "de": "Wir hätten den Kaufbeleg aufbewahren sollen."
+ },
+ {
+  "tr": "Ancak konuşmadan sonra başa çıkma başlıyor.",
+  "kind": "build.tr",
+  "de": "Erst nach dem Gespräch beginnt die Bewältigung."
+ },
+ {
+  "tr": "Bunun sözsüz bir işaret olduğu anlaşılıyor.",
+  "kind": "build.tr",
+  "de": "Es scheint ein nonverbales Zeichen zu sein."
+ },
+ {
+  "tr": "Geri dönüş yapması istenince yeniden yazdı.",
+  "kind": "build.tr",
+  "de": "Um Nachfassen gebeten, schrieb sie erneut."
+ },
+ {
+  "tr": "Sonuçta son bir noktayı açıkça belirtirdim.",
+  "kind": "build.tr",
+  "de": "Alles in allem würde ich wohl einen letzten Punkt klarstellen."
+ },
+ {
+  "tr": "Dosya tam olmak şartıyla bunu kapatabiliriz.",
+  "kind": "build.tr",
+  "de": "Anscheinend können wir das schließen, sofern die Akte vollständig ist."
+ },
+ {
+  "tr": "Gelen postanın ayıklanması sekizde başlıyor.",
+  "kind": "build.tr",
+  "de": "Die Sortierung der Eingangspost beginnt um acht."
+ },
+ {
+  "tr": "Marta kadar ek anlaşmayı imzalamış olacağız.",
+  "kind": "build.tr",
+  "de": "Bis März werden wir die Zusatzvereinbarung unterschrieben haben."
+ },
+ {
+  "tr": "Nafaka adil olsaydı aile şimdi sakin olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre der Unterhalt fair gewesen, wäre die Familie jetzt ruhig."
+ },
+ {
+  "tr": "Taahhütlü mektup gönderilmesi kayda geçiyor.",
+  "kind": "build.tr",
+  "de": "Der Versand eines Einschreibens wird erfasst."
+ },
+ {
+  "tr": "Ara raporu okuduktan sonra planı değiştirdik.",
+  "kind": "build.tr",
+  "de": "Nachdem wir den Zwischenbericht gelesen hatten, änderten wir den Plan."
+ },
+ {
+  "tr": "Gecikmeye yol açan şey bir program çakışmasıydı.",
+  "kind": "build.tr",
+  "de": "Was die Verzögerung verursacht hat, war ein Terminkonflikt."
+ },
+ {
+  "tr": "Sorumluluk alanı geniş olan meslektaşım yanıtladı.",
+  "kind": "build.tr",
+  "de": "Meine Kollegin, deren Zuständigkeitsbereich weit ist, antwortete."
+ },
+ {
+  "tr": "Gelecek yaza kadar dönüm noktasını geçmiş olacağız.",
+  "kind": "build.tr",
+  "de": "Bis nächsten Sommer werden wir den Wendepunkt hinter uns haben."
+ },
+ {
+  "tr": "Ancak üçüncü mektuptan sonra hatırlatma gönderiyorlar.",
+  "kind": "build.tr",
+  "de": "Erst nach dem dritten Brief schicken sie eine Mahnung."
+ },
+ {
+  "tr": "Gelecek yıl bir güvenlik duygusu inşa ediyor olacağız.",
+  "kind": "build.tr",
+  "de": "Nächstes Jahr werden wir ein Sicherheitsgefühl aufbauen."
+ },
+ {
+  "tr": "Tarife açık olsaydı sabit ücret şimdi daha düşük olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre der Tarif klar gewesen, wäre die Grundgebühr jetzt niedriger."
+ },
+ {
+  "tr": "Mektubunuz göz önüne alındığında konu kapanmış görünüyor.",
+  "kind": "build.tr",
+  "de": "Angesichts Ihres Briefes scheint die Sache erledigt zu sein."
+ },
+ {
+  "tr": "Sert olumsuz: „can't have“.",
+  "kind": "build.hint",
+  "de": "Harte Verneinung: „can't have“."
+ },
+ {
+  "tr": "„only“ sınırlama; „do“ taşıyor.",
+  "kind": "build.hint",
+  "de": "„only“ ist eine Einschränkung; „do“ trägt sie."
+ },
+ {
+  "tr": "İşin içinde olmak: sürerli biçim.",
+  "kind": "build.hint",
+  "de": "Mitten in der Arbeit: die Verlaufsform."
+ },
+ {
+  "tr": "Yine kapalı; sitem gibi okunuyor.",
+  "kind": "build.hint",
+  "de": "Wieder geschlossen; es liest sich wie ein Vorwurf."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bu haftaya ait.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge gehört zu dieser Woche."
+ },
+ {
+  "tr": "Üçüncü kayıt satırı, aynı iki parça.",
+  "kind": "build.hint",
+  "de": "Die dritte Protokollzeile, dieselben zwei Teile."
+ },
+ {
+  "tr": "„the“ varsa nesne „of“ ile bağlanıyor.",
+  "kind": "build.hint",
+  "de": "Steht „the“ davor, wird das Objekt mit „of“ angeschlossen."
+ },
+ {
+  "tr": "Sert olumsuz: kanıt güçlü olduğu için.",
+  "kind": "build.hint",
+  "de": "Harte Verneinung: weil der Beleg stark ist."
+ },
+ {
+  "tr": "Tek sıfat ortada duruyor; silinemiyor.",
+  "kind": "build.hint",
+  "de": "Ein einzelnes Adjektiv steht in der Mitte; es lässt sich nicht streichen."
+ },
+ {
+  "tr": "Aynı biçim; başlık dili böyle kuruluyor.",
+  "kind": "build.hint",
+  "de": "Dieselbe Form; so ist die Sprache der Überschriften gebaut."
+ },
+ {
+  "tr": "İki çekince; söylediği olan „on balance“.",
+  "kind": "build.hint",
+  "de": "Zwei Absicherungen; die aussagekräftige ist „on balance“."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bu ayın faturasında.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge steht auf der Rechnung dieses Monats."
+ },
+ {
+  "tr": "Virgüllü cümlecikte nesne adılı düşmüyor.",
+  "kind": "build.hint",
+  "de": "Im Teilsatz mit Kommas fällt das Objektpronomen nicht weg."
+ },
+ {
+  "tr": "Yarık cümle: liste gözden geçirilmiş demek.",
+  "kind": "build.hint",
+  "de": "Spaltsatz: heißt, die Liste ist durchgegangen worden."
+ },
+ {
+  "tr": "„in view of“ geriye bakan bir neden veriyor.",
+  "kind": "build.hint",
+  "de": "„in view of“ gibt einen rückblickenden Grund."
+ },
+ {
+  "tr": "„whose“ iyelik taşıyor; hiçbir şey düşmüyor.",
+  "kind": "build.hint",
+  "de": "„whose“ trägt den Besitz; nichts fällt weg."
+ },
+ {
+  "tr": "Kendi payımız; mektupta hatırlanan tek satır.",
+  "kind": "build.hint",
+  "de": "Der eigene Anteil; die einzige Zeile, die im Brief haften bleibt."
+ },
+ {
+  "tr": "Kip olumlu kalıyor; olumsuz ana fiile taşınıyor.",
+  "kind": "build.hint",
+  "de": "Das Modalverb bleibt positiv; die Verneinung wandert ins Hauptverb."
+ },
+ {
+  "tr": "Burada „which is“ silinebilir: arkasında isim öbeği var.",
+  "kind": "build.hint",
+  "de": "Hier kann „which is“ wegfallen: dahinter steht eine Nominalphrase."
+ },
+ {
+  "tr": "„provided that“ bir şart koyuyor; „if“ yalnızca durumu betimliyor.",
+  "kind": "build.hint",
+  "de": "„provided that“ setzt eine Bedingung; „if“ beschreibt nur eine Lage."
+ },
+ {
+  "tr": "Kuralın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Regel: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Broşürün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Faltblatts: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Dosyanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Akte: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç kipin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Modalverben: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Kapanışın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Schlusses: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Şikâyetin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Beschwerde: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "İki biçimin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der zwei Formen: bring sie in die richtige Ordnung."
+ }
+]

@@ -63,8 +63,7 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
-| B2 | 22–25 | bekliyor |
+| **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -1208,6 +1207,63 @@ yerde duruyor — mastarı büyük harfle yazmak („das Aufbauen“) — yani �
 sildirdi ve bir dinleme bölümünü ikiye ayırttırdı. Yeni kusur: soru
 şıkkına konan TİRELİ BİR EK („-ment“) tek belirteç olarak kapanmıyor —
 tireli terim kuralının beşinci görünüşü, bu kez terim değil bir ekti.
+
+
+**EN B2 SEVİYESİ KAPANDI (ünite 22–25, 2026-09-12).** Ünite 22
+The person between us · Never felt so heavy · A year from now ·
+He must have misunderstood; ünite 23 If we had talked · Naming a feeling ·
+The official letter · According to the file; ünite 24
+What caused the delay · How the work runs · The person responsible ·
+Never so promptly; ünite 25 When the contract closes ·
+The complaint answered · If the offer had held · The closing line.
+Yirmi dört egzersiz; ünite dışı ölçüm %0,0. **25 ünite, 150 egzersiz,
+150/150 yuva dolu, 0 boş.**
+
+Ünite 22'nin noktası OLUMSUZU FİİLE TAŞIMAK. „must have“ olumsuzlanamıyor
+ve çıkarımın olumsuzu „can't have“; ama „can't have“ çok sert — „olanaksız“
+diyor. Yazarın demek istediği çoğu kez daha zayıf: „sanırım olmadı“.
+İngilizcede bunun kipi yok, o yüzden kip olumlu bırakılıyor ve olumsuz ANA
+FİİLE taşınıyor: „must have failed to empathize“, „must have forgotten“.
+Almanca eksende bu tam bir PARİTE — Almancada da „muss nicht“ çıkarımı
+olumsuzlayamıyor („gerek yok“ demek) ve Almanca da aynı numaraya
+başvuruyor („muss es versäumt haben“). İkisinin de aynı yerde aynı boşluğu
+olması ve aynı çözümü bulması hattın ender rastlanan tam örtüşmelerinden.
+
+Ünite 23'ün noktası „THE“ GELİNCE „OF“ ZORUNLU: „the filing OF the
+enclosure“ ile „filing the enclosure“ — iki biçim ve üçüncü seçenek yok.
+Ne „the filing the enclosure“ ne „filing of the enclosure“. Ünite 21
+„-ing“ adlaştırmasının üretken kapı olduğunu göstermişti; bu onun kendi
+kuralı. Almanca aynı ikiliği kuruyor ama edatla değil DURUMLA:
+„das Ablegen DER Anlage“ tamlayan hâli, „die Anlage ablegen“ ise
+belirtme hâli — yani ayrım aynı, işaret başka.
+
+Ünite 24'ün noktası VİRGÜLLÜ İLGİ CÜMLECİĞİNDE NESNE ADILI DÜŞMÜYOR ve bu,
+B1 ünite 3'te açılan deliği kapatıyor. Orada nesne adılının düşebildiği
+öğretilmişti („the report I sent“); söylenmeyen şey bunun yalnız SEÇİM
+YAPAN cümlecikte geçerli olduğuydu. „The division of tasks, which nobody
+read, is old“ cümlesinde „which“ nesne ve silinemiyor. Almanca eksende bu
+geç gelen bir PARİTE: Almanca ilgi adılını hiçbir zaman düşürmüyor, yani
+Almanca okuyanın elindeki kural burada ilk kez tam olarak doğru.
+
+Ünite 25 seviyeyi iki şeyle kapatıyor. Dilbilgisi tarafında „PROVIDED
+THAT“: koşulun üçüncü biçimi ve „if“ ile aynı şey değil — „if“ bir durumu
+BETİMLİYOR, „provided that“ bir ŞART KOYUYOR; fark anlamda değil, konuşanın
+konumunda. Yanında „in view of“ duruyor, geriye bakan ve masadaki bir şeye
+dayanan neden. Kapanış ipi ise şu: **B2 YENİ BİR ZAMAN ÖĞRETMEDİ.**
+Öğrettiği on yapının her biri kimin görüneceğine dair bir karar — edilgen
+faili gizliyor, adlaştırma kişiyi gizliyor, yarık cümle okuru
+yönlendiriyor, çekince kaynak olmayı reddediyor, devrik sıra sesi
+yükseltiyor, ortaç iki şeyin birbirine ait olduğunu söylüyor, aktarma
+fiili kanıtı derecelendiriyor. Seviyenin son cümlesi de bunun sorusu:
+bir biçimi seçmeden önce, onu kullandığında kimin kaybolduğunu ve o adı
+söylemeye razı olup olmadığını sor.
+
+Ölçüm bu turda yüz yirmi altı sözlükçe maddesi ekletti ve YİRMİ ALTI
+maddeyi sildirdi — hattın en yüksek silme sayısı. Sildirmenin bu kadar
+büyük olması bir araç değişikliğinden: maddeler tek tek değil, kapının
+kendi çıktısından okunarak toplu silindi, ve sonuç her turda elle
+yapılanla aynı oldu. Bir kısa cevap da beş kelimeyi aştığı için yeniden
+yazıldı.
 
 
 ## Tamamlanma ölçütü

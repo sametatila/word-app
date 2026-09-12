@@ -1,0 +1,247 @@
+[
+ {
+  "tr": "Üç devrik cümle ve iki ortaç.",
+  "kind": "intro",
+  "en": "Three inverted sentences and two participles."
+ },
+ {
+  "tr": "Üç devrik cümle ve bir takvim.",
+  "kind": "intro",
+  "en": "Three inverted sentences and one schedule."
+ },
+ {
+  "tr": "Bir neden, bir şart, bir çekince.",
+  "kind": "intro",
+  "en": "A reason, a condition, a hedge."
+ },
+ {
+  "tr": "İki kip, iki koşul ve bir takvim.",
+  "kind": "intro",
+  "en": "Two modals, two conditionals and one schedule."
+ },
+ {
+  "tr": "Tek edilgen. Neden orada duruyor?",
+  "kind": "intro",
+  "en": "A single passive. Why is it there?"
+ },
+ {
+  "tr": "Üç çekince. Hangisi bir şey söylüyor?",
+  "kind": "intro",
+  "en": "Three hedges. Which one says something?"
+ },
+ {
+  "tr": "İki kapalı, bir karışık ve iki çekince.",
+  "kind": "intro",
+  "en": "Two closed, one mixed, and two hedges."
+ },
+ {
+  "tr": "Tek çekince yeter; „seems“ işi yapıyor.",
+  "kind": "explain",
+  "en": "One hedge is enough; „seems“ does the work."
+ },
+ {
+  "tr": "Üç ilgi cümlesi. Hangisinden ne düşüyor?",
+  "kind": "intro",
+  "en": "Three relative clauses. What drops out of which?"
+ },
+ {
+  "tr": "„the“ ile „of“ birlikte. Üç kayıt satırı.",
+  "kind": "intro",
+  "en": "„the“ and „of“ go together. Three lines from a register."
+ },
+ {
+  "tr": "Üç kip. Olumsuz hangisinde fiile geçiyor?",
+  "kind": "intro",
+  "en": "Three modals. In which one does the negative move into the verb?"
+ },
+ {
+  "tr": "Üç ortaç bir iş akışında. Hangisi edilgen?",
+  "kind": "intro",
+  "en": "Three participles in a workflow. Which one is passive?"
+ },
+ {
+  "tr": "Kip olumlu kalıyor. Olumsuz nereye gidiyor?",
+  "kind": "intro",
+  "en": "The modal stays positive. Where does the negative go?"
+ },
+ {
+  "tr": "Üç devrik cümle. Hangisinde „does“ giriyor?",
+  "kind": "intro",
+  "en": "Three inverted sentences. In which one does „does“ appear?"
+ },
+ {
+  "tr": "Üç koşul, bir aile. Hangisi bu haftaya ait?",
+  "kind": "intro",
+  "en": "Three conditionals, one family. Which one belongs to this week?"
+ },
+ {
+  "tr": "„„on balance“ is the one that says something…“",
+  "kind": "explain",
+  "en": "„„on balance“ is the one that says something…“"
+ },
+ {
+  "tr": "Neden, şart, seviyenin ipi, en sonda tek soru.",
+  "kind": "explain",
+  "en": "A reason, a condition, the thread of the level, one question last."
+ },
+ {
+  "tr": "Üç koşul, bir fatura. Hangisi bir şey istiyor?",
+  "kind": "intro",
+  "en": "Three conditionals, one bill. Which one asks for something?"
+ },
+ {
+  "tr": "„who is“ + sıfat. Burada silme neden işlemiyor?",
+  "kind": "intro",
+  "en": "„who is“ + an adjective. Why does the deletion not work here?"
+ },
+ {
+  "tr": "Bir yıl sonrası. Hangi cümle bitmişi anlatıyor?",
+  "kind": "intro",
+  "en": "A year from now. Which sentence speaks of the finished thing?"
+ },
+ {
+  "tr": "Üç aktarma bir dosyada. Hangisinin dayanağı var?",
+  "kind": "intro",
+  "en": "Three reports in a file. Which one has a ground under it?"
+ },
+ {
+  "tr": "„„Must have failed to“ sounds like a description…“",
+  "kind": "explain",
+  "en": "„„Must have failed to“ sounds like a description…“"
+ },
+ {
+  "tr": "„only“ sınırlama; „does“ ve „do“ aynı işi görüyor.",
+  "kind": "explain",
+  "en": "„only“ is a restriction; „does“ and „do“ do the same job."
+ },
+ {
+  "tr": "Neden, kurtaran, eksik olan; en sonda yalın satır.",
+  "kind": "explain",
+  "en": "The cause, the thing that saved it, the thing that is missing; the plain line last."
+ },
+ {
+  "tr": "Düşmeyen örnek, düşen örnek, sonra iki yarım kural.",
+  "kind": "explain",
+  "en": "The example with no drop, the one with a drop, then the two halves of the rule."
+ },
+ {
+  "tr": "Edilgen değil ama bitmiş: „will have“ + üçüncü hâl.",
+  "kind": "explain",
+  "en": "Not passive but finished: „will have“ + third form."
+ },
+ {
+  "tr": "Üç kip bir şikâyette. Hangisi kişiyle yanıtlanıyor?",
+  "kind": "intro",
+  "en": "Three modals in a complaint. Which one is answered by a person?"
+ },
+ {
+  "tr": "Üç yarık cümle. Hangisi bir eksikliği adlandırıyor?",
+  "kind": "intro",
+  "en": "Three cleft sentences. Which one names an absence?"
+ },
+ {
+  "tr": "Devrik sıra bir şikâyet mektubunda. Ne kazandırıyor?",
+  "kind": "intro",
+  "en": "Inversion in a letter of complaint. What does it buy?"
+ },
+ {
+  "tr": "Birinci biçim, ikinci biçim, sonra ikisinin ağırlığı.",
+  "kind": "explain",
+  "en": "The first shape, the second shape, then the weight of each."
+ },
+ {
+  "tr": "„„What we lack is buffer time“ reads as an admission…“",
+  "kind": "explain",
+  "en": "„„What we lack is buffer time“ reads as an admission…“"
+ },
+ {
+  "tr": "Gelecekte bir tarihten geriye bakış: bitmiş bir durum.",
+  "kind": "explain",
+  "en": "Looking back from a future date: a finished state."
+ },
+ {
+  "tr": "„has turned a morning's work into a register of nouns…“",
+  "kind": "explain",
+  "en": "„has turned a morning's work into a register of nouns…“"
+ },
+ {
+  "tr": "„„Provided that the file is complete“ sets a condition…“",
+  "kind": "explain",
+  "en": "„„Provided that the file is complete“ sets a condition…“"
+ },
+ {
+  "tr": "Nesne adılı bazen düşüyor, bazen düşmüyor. Sınır nerede?",
+  "kind": "intro",
+  "en": "The object pronoun sometimes drops and sometimes does not. Where is the limit?"
+ },
+ {
+  "tr": "„In front of the noun. „My reserved friend spoke first“…“",
+  "kind": "explain",
+  "en": "„In front of the noun. „My reserved friend spoke first“…“"
+ },
+ {
+  "tr": "Kanıt, dışarıda bıraktığı, kendi payımız; en sonda istek.",
+  "kind": "explain",
+  "en": "The evidence, what it rules out, our own part; the request last."
+ },
+ {
+  "tr": "Şart koymak ile durumu betimlemek. Ve seviyenin kendi ipi.",
+  "kind": "intro",
+  "en": "Setting a condition and describing a situation. And the thread of the level itself."
+ },
+ {
+  "tr": "„„The report I sent“ is picking one report out of several.“",
+  "kind": "explain",
+  "en": "„„The report I sent“ is picking one report out of several.“"
+ },
+ {
+  "tr": "„the“ ile „of“ birlikte geliyor. Biri olmadan öteki olur mu?",
+  "kind": "intro",
+  "en": "„the“ and „of“ arrive together. Can one of them come without the other?"
+ },
+ {
+  "tr": "Yumuşak olumsuz, sert olumsuz, kendi payımız; en sonda bedeli.",
+  "kind": "explain",
+  "en": "The soft negative, the strong one, our own part; the cost last."
+ },
+ {
+  "tr": "„its negative is „can't have“ — but „can't have“ is very strong.“",
+  "kind": "explain",
+  "en": "„its negative is „can't have“ — but „can't have“ is very strong.“"
+ },
+ {
+  "tr": "„„My friend, always reserved with strangers, spoke first“ is fine…“",
+  "kind": "explain",
+  "en": "„„My friend, always reserved with strangers, spoke first“ is fine…“"
+ },
+ {
+  "tr": "Tek sıfat ortada duramıyor; ya isimden önce ya uzun bir öbek içinde.",
+  "kind": "explain",
+  "en": "A single adjective cannot stand in the middle; either in front of the noun or inside a longer phrase."
+ },
+ {
+  "tr": "„„does“ arrives to be the thing that moves, and „pass“ loses its ending.“",
+  "kind": "explain",
+  "en": "„„does“ arrives to be the thing that moves, and „pass“ loses its ending.“"
+ },
+ {
+  "tr": "„The „of“ has gone with it, and neither word can stay without the other.“",
+  "kind": "explain",
+  "en": "„The „of“ has gone with it, and neither word can stay without the other.“"
+ },
+ {
+  "tr": "„a closed conditional about somebody else's reliability is read as blame…“",
+  "kind": "explain",
+  "en": "„a closed conditional about somebody else's reliability is read as blame…“"
+ },
+ {
+  "tr": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“",
+  "kind": "explain",
+  "en": "„Two limits. Only after „be“, and only when what follows is a noun phrase.“"
+ },
+ {
+  "tr": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“",
+  "kind": "explain",
+  "en": "„The deletion works when „be“ is followed by a noun phrase, not by a single adjective on its own.“"
+ }
+]
