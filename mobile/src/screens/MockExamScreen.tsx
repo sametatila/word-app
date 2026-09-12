@@ -483,9 +483,13 @@ function Primary({ colors, label, onPress, disabled }: { colors: Palette; label:
     <PressableScale
       onPress={onPress}
       disabled={disabled}
-      style={{ backgroundColor: disabled ? colors.surface2 : colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
+      /* Renk TAKASI yok: devre dışı olmak tek bir sönüklükle anlatılıyor ve
+         onu `PressableScale` veriyor (bkz. oradaki not). Takas + sönüklük
+         üst üste binince düğme okunmaz hâle geliyordu, web de takas
+         yapmıyor. */
+      style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
     >
-      <Text variant="bodyStrong" color={disabled ? colors.textMuted : colors.onPrimary}>{label}</Text>
+      <Text variant="bodyStrong" color={colors.onPrimary}>{label}</Text>
     </PressableScale>
   );
 }
@@ -838,7 +842,7 @@ function WritingTask({
           <PressableScale
             onPress={() => void evaluate()}
             disabled={busy || !attemptId || n < MIN_ASSESS_WORDS}
-            style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || n < MIN_ASSESS_WORDS ? 0.5 : 1 }}
+            style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft }}
           >
             <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
           </PressableScale>
@@ -1070,7 +1074,7 @@ function SpeakingTask({
               <PressableScale
                 onPress={() => void evaluate()}
                 disabled={busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS}
-                style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS ? 0.5 : 1 }}
+                style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft }}
               >
                 <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
               </PressableScale>

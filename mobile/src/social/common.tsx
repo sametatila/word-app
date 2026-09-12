@@ -112,7 +112,7 @@ export function Pill({ label, onPress, tone = "primary", disabled, icon: Icon, b
   const bg = tone === "primary" ? colors.primary : tone === "soft" ? colors.primarySoft : tone === "danger" ? colors.dangerSoft : colors.surface2;
   const fg = tone === "primary" ? colors.onPrimary : tone === "soft" ? colors.primary : tone === "danger" ? colors.danger : colors.text;
   return (
-    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={[{ opacity: disabled ? 0.5 : 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, backgroundColor: bg, borderRadius: radii.pill, paddingHorizontal: small ? 14 : 20, paddingVertical: small ? 8 : 11, alignSelf: block ? "stretch" : "auto" }, tone === "primary" && !disabled ? softShadow(colors.primary, 6) : {}]}>
+    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={[{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, backgroundColor: bg, borderRadius: radii.pill, paddingHorizontal: small ? 14 : 20, paddingVertical: small ? 8 : 11, alignSelf: block ? "stretch" : "auto" }, tone === "primary" && !disabled ? softShadow(colors.primary, 6) : {}]}>
       {Icon ? <Icon color={fg} size={small ? 14 : 18} /> : null}
       <Text variant={small ? "caption" : "bodyStrong"} color={fg}>{label}</Text>
     </PressableScale>

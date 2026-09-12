@@ -822,11 +822,17 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
 }
 
 function BigButton({ label, onPress, tint, colors, disabled }: { label: string; onPress: () => void; tint?: string; colors: Palette; disabled?: boolean }) {
-  const bg = disabled ? colors.surface2 : tint ?? colors.primary;
+  const bg = tint ?? colors.primary;
+  /* KAPALI DÜĞME KAPALI OLDUĞUNU SÖYLÜYOR. `onPress`i boş bir işlevle
+     değiştirmek düğmeyi ölü yapıyordu ama ekran okuyucuya hiçbir şey
+     söylemiyordu: `disabled` verilmediği için `accessibilityState` de
+     boştu, yani basılamayan bir düğme "basılabilir" diye okunuyordu.
+     Sönüklüğü de `PressableScale` veriyor (bkz. oradaki not); renk takası
+     kalktı, web de takas yapmıyor. */
   return (
-    <PressableScale onPress={disabled ? () => {} : onPress}>
+    <PressableScale onPress={onPress} disabled={disabled}>
       <View style={[{ borderRadius: radii.lg, backgroundColor: bg, paddingVertical: 15, alignItems: "center" }, disabled ? {} : softShadow(bg, 10)]}>
-        <Text variant="h3" color={disabled ? colors.textFaint : colors.onPrimary}>{label}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{label}</Text>
       </View>
     </PressableScale>
   );

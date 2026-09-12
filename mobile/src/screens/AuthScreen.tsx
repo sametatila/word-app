@@ -375,7 +375,7 @@ export function AuthScreen() {
                     )}
                   </>
                 )}
-                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm, opacity: captchaBlocked ? 0.6 : 1 }, softShadow(colors.primary, 10)]}>
+                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
               </>
@@ -447,7 +447,7 @@ export function AuthScreen() {
               disabled={codeBusy || cooldown > 0}
               accessibilityLabel={t("twofa.resend")}
               accessibilityState={{ disabled: codeBusy || cooldown > 0 }}
-              style={{ alignItems: "center", paddingVertical: spacing.md, opacity: codeBusy || cooldown > 0 ? 0.6 : 1 }}
+              style={{ alignItems: "center", paddingVertical: spacing.md }}
             >
               <Text variant="bodyStrong" color={colors.primaryText}>
                 {cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("twofa.resend")}
@@ -481,7 +481,7 @@ export function AuthScreen() {
               disabled={resendBusy || cooldown > 0}
               accessibilityLabel={t("verify.resend")}
               accessibilityState={{ disabled: resendBusy || cooldown > 0 }}
-              style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, alignItems: "center", opacity: resendBusy || cooldown > 0 ? 0.6 : 1 }}
+              style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, alignItems: "center" }}
             >
               <Text variant="h3" color={colors.text}>
                 {resendBusy ? "..." : cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("verify.resend")}
@@ -558,7 +558,7 @@ export function AuthScreen() {
                 )}
               </>
             )}
-            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm, opacity: captchaBlocked ? 0.6 : 1 }, softShadow(colors.primary, 10)]}>
+            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
 

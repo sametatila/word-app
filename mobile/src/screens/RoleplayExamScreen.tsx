@@ -403,7 +403,7 @@ export function RoleplayExamScreen() {
             onPress={() => void listen()}
             disabled={busy || listening}
             accessibilityLabel={tx("lesson.mic_talk")}
-            style={[{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", opacity: busy || listening ? 0.4 : 1 }, softShadow(colors.primary, 8)]}
+            style={[{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
           >
             <MicIcon color={colors.onPrimary} size={20} />
           </PressableScale>
@@ -425,7 +425,7 @@ export function RoleplayExamScreen() {
         <PressableScale
           onPress={() => void send(draft)}
           disabled={busy || !draft.trim()}
-          style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingHorizontal: spacing.md, paddingVertical: 13, opacity: busy || !draft.trim() ? 0.4 : 1 }, softShadow(colors.primary, 8)]}
+          style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingHorizontal: spacing.md, paddingVertical: 13 }, softShadow(colors.primary, 8)]}
         >
           <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.send")}</Text>
         </PressableScale>

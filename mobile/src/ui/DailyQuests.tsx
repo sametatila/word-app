@@ -67,7 +67,7 @@ function QuestRow({ q, colors, onClaim, busy, onOpen }: { q: Quest; colors: Pale
           alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme.
         */}
         {complete && !q.claimed ? (
-          <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9, opacity: busy ? 0.6 : 1 }}>
+          <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
             <Text variant="caption" color={colors.onPrimary}>{busy ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}</Text>
           </PressableScale>
         ) : (
@@ -219,7 +219,7 @@ export function DailyQuests() {
             {board.allClaimed ? (
               <Text variant="caption" color={colors.textMuted}>+{ALL_DONE_XP} XP</Text>
             ) : (
-              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9, opacity: claiming === ALL_DONE_ID ? 0.6 : 1 }}>
+              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
                 <Text variant="caption" color={colors.onPrimary}>{claiming === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}</Text>
               </PressableScale>
             )}

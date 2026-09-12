@@ -864,7 +864,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
             await markKnown(word.id);
             onDone(true, { skip: true });
           }}
-          style={{ alignSelf: "center", paddingHorizontal: 18, paddingVertical: 10, opacity: skipping ? 0.5 : 1 }}
+          style={{ alignSelf: "center", paddingHorizontal: 18, paddingVertical: 10 }}
         >
           <Text variant="caption" color={colors.textMuted}>{tx(skipping ? "rounds.saving" : "rounds.already_known")}</Text>
         </PressableScale>
@@ -901,7 +901,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
  */
 function Tile({ label, undoKey, onPress, dim, colors }: { label: string; undoKey?: "rounds.undo_letter" | "rounds.undo_word"; onPress?: () => void; dim?: boolean; colors: Palette }) {
   return (
-    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border, opacity: dim ? 0.4 : 1 }}>
+    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border }}>
       <Text variant="bodyStrong" color={colors.text}>{label}</Text>
     </PressableScale>
   );
@@ -1010,11 +1010,11 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
         </View>
         {!fb ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
-            <PressableScale onPress={backspace} disabled={placed.length === 0} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length === 0 ? 0.4 : 1 }}>
+            <PressableScale onPress={backspace} disabled={placed.length === 0} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9 }}>
               <Text variant="caption" color={colors.textMuted}>{tx("common.delete")}</Text>
             </PressableScale>
             {noHints ? null : (
-              <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= target.length ? 0.4 : 1 }}>
+              <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9 }}>
                 <Text variant="caption" color={colors.textMuted}>{tx("rounds.hint")}</Text>
               </PressableScale>
             )}
@@ -1075,7 +1075,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
         </View>
         {!fb && !noHints ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
-            <PressableScale onPress={useHint} disabled={placed.length >= answer.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= answer.length ? 0.4 : 1 }}>
+            <PressableScale onPress={useHint} disabled={placed.length >= answer.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9 }}>
               <Text variant="caption" color={colors.textMuted}>{tx("rounds.hint")}</Text>
             </PressableScale>
           </View>
@@ -1198,7 +1198,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
-      <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center", opacity: checking ? 0.6 : 1 }, softShadow(colors.primary, 8)]}>
+      <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : "common.check")}</Text>
       </PressableScale>
     </View>
@@ -1221,7 +1221,7 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
   }, [state]);
   return (
     <Animated.View style={{ transform: [{ translateX: shake }] }}>
-      <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
+      <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, minHeight: 60, justifyContent: "center" }}>
         <Text variant="bodyStrong" color={colors.text}>{text}</Text>
         {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
       </PressableScale>

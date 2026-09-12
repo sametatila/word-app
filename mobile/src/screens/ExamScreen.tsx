@@ -478,7 +478,7 @@ export function ExamScreen() {
             </Text>
           </Card>
           {/* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */}
-          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ opacity: starting ? 0.6 : 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t(starting ? "common.loading" : "exam.start")}</Text>
           </PressableScale>
         </ScrollView>

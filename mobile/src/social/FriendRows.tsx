@@ -60,7 +60,7 @@ export function FriendCardSkeleton() {
 function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: IconCmp; label: string; tint: string; onPress: () => void; disabled?: boolean }) {
   const { colors } = useTheme();
   return (
-    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: 4, opacity: disabled ? 0.4 : 1 }}>
+    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: 4 }}>
       <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>

@@ -78,7 +78,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
             disabled={enabled === null}
             accessibilityRole="button"
             accessibilityLabel={t("twofa.title")}
-            style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft, opacity: enabled === null ? 0.6 : 1 }}
+            style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
           >
             <Text variant="caption" color={colors.primaryText}>{t(enabled ? "twofa.disable" : "twofa.enable")}</Text>
           </PressableScale>
