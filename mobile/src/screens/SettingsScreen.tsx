@@ -240,7 +240,12 @@ export function SettingsScreen() {
             {courseOptions(uiLang).map((c, i) => {
               const active = course === c.key;
               return (
-                <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                /* SATIR ZATEN BİR RADYO HALKASI ÇİZİYOR (sağdaki daire) ama
+                   ekran okuyucu onu görmüyordu: ne rol ne seçili durum
+                   vardı, satır düz bir "düğme" olarak okunuyordu. Kurs
+                   seçimi geri alınabilir ama sessizce yanlış kursu seçmek
+                   bütün ilerlemeyi öteki dile taşıyor. */
+                <PressableScale key={c.key} onPress={() => pickCourse(c.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
                     <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
@@ -259,7 +264,7 @@ export function SettingsScreen() {
 
           <Row label={t("settings.level")} colors={colors}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-              {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)}
+              {LEVELS.map((l) => <Chip key={l} role="radio" label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)}
             </View>
             {/* SEÇİLİ SEVİYENİN AÇIKLAMASI + seviyenin kendiliğinden değişmediği.
                 Dört açıklama sözlükte duruyordu (`level.*_desc`) ama mobilde
@@ -314,6 +319,7 @@ export function SettingsScreen() {
               {offeredNativeLangs().map((l) => (
                 <Chip
                   key={l}
+                  role="radio"
                   label={LANG_LABEL[l]}
                   active={uiLang === l}
                   onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); track("setting_change", NATIVE_LANGS.indexOf(l), "lang"); void keepCourseValid(l); }}

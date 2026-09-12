@@ -703,7 +703,12 @@ function ItemView({
       /* SEÇİLİ DURUMU DUYURULUYOR. Şık seçilince yalnız zemin ve kenarlık
          değişiyordu: ekran okuyucu kullanan öğrenci hangi şıkkı işaretlediğini
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
-         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
+         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı.
+
+         ROLÜ DE RADYO: "düğme, seçili" kaç şık olduğunu ve birini seçmenin
+         ötekini bıraktığını söylemiyordu. Bu da iki platformda birden
+         eksikti (bkz. parity 257). */
+      accessibilityRole="radio"
       accessibilityState={{ selected: active }}
       /* SOLUK OLMAK BİR BİLGİ: bu şık başka bir maddede kullanılmış.
          Opaklık bunu yalnız GÖZE söylüyordu; ekran okuyucu kullanan öğrenci

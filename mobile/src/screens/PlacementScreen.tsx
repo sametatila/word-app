@@ -435,7 +435,7 @@ export function PlacementScreen() {
           {user && result ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginBottom: spacing.lg }}>
               {CHOOSABLE.map((l) => (
-                <Chip key={l} label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
+                <Chip key={l} role="radio" label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
               ))}
             </View>
           ) : null}

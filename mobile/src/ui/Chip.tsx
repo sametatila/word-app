@@ -22,18 +22,33 @@ export function Chip({
   active,
   onPress,
   badge,
+  role,
 }: {
   label: string;
   active: boolean;
   onPress: () => void;
   /** Sağdaki sayı rozeti (bekleyen istek gibi); 0 ve undefined çizilmez. */
   badge?: number;
+  /**
+   * TEK SEÇİMLİK GRUPTAKİ ÇİP RADYODUR.
+   *
+   * Çip `selected` durumunu baştan beri söylüyordu ama rolü `button`du:
+   * TalkBack "düğme, seçili" diyor, yani kaç seçenek olduğu ve birini
+   * seçmenin ötekini bıraktığı hiçbir yerde geçmiyordu. `radio` deyince
+   * "radyo düğmesi, 5 ögeden 2., seçili" oluyor. Web karşılığı
+   * `role="radio"` + `aria-checked` (bkz. parity 256).
+   *
+   * SEKME olarak kullanılan iki çağrı yeri (sıralama kipi, arkadaş
+   * sekmeleri) bunu VERMİYOR: sekme bir radyo değil ve web'de de ayrı bir
+   * anlatımı var (`aria-current`). Onlar `button` olarak kalıyor.
+   */
+  role?: "radio";
 }) {
   const { colors } = useTheme();
   return (
     <PressableScale
       onPress={onPress}
-      accessibilityRole="button"
+      accessibilityRole={role ?? "button"}
       accessibilityState={{ selected: active }}
       style={{
         flexDirection: "row",

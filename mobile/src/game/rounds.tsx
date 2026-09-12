@@ -394,7 +394,9 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = 
      erisilebilir adiyla (dogru/yanlis) veriliyor. */
   return (
     <Animated.View style={{ transform: [{ translateX: shake }, { scale: pop }] }}>
-      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: answered, selected: chosen }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
+      {/* ROLÜ RADYO: sik listesi tek secimlik ve "dugme, secili" kac sik
+          oldugunu soylemiyordu (bkz. parity 257). */}
+      <PressableScale onPress={onPress} accessibilityRole="radio" accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: answered, selected: chosen }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
         style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" color={fg}>{text}</Text>

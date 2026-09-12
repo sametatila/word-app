@@ -127,7 +127,7 @@ export function NotificationsScreen() {
             <View style={{ marginTop: spacing.md }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                {TIMES.map((t) => <Chip key={t} label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
+                {TIMES.map((t) => <Chip key={t} role="radio" label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
               </View>
             </View>
           )}
