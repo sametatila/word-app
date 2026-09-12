@@ -15603,3 +15603,42 @@ kümeler boşalsa da "belgesiz yok" doğru çıkardı.
 Dört enjeksiyon doğrulandı: kayıttan bir uç düşürmek, listeye artık iki tarafın
 da çağırdığı bir uç eklemek, yöntem kaydını düşürmek, ve webin gerçek bir
 çağrısını kaldırmak (`POST /api/quests` yalnız mobile düştü ve kapı söyledi).
+
+## §11.429 — `check:hit` referans aldığı tarafı hiç ölçmüyordu
+
+`check:hit`in eşiği **36 px** ve gerekçesi kapının kendi yorumunda yazılı:
+"mobilde ikincil denetimler `hitSlop` taşıyor ve gerçek hedef 36-50; webde
+hedef görünen boyutun kendisi". Yani eşiğin kaynağı **mobilin ölçüsü** — ama
+mobil hiç ölçülmüyordu. Referans olduğu varsayılan taraf denetimsizdi.
+
+Ölçüldüğünde üç yerde tutulmadığı çıktı:
+
+| yer | hedef | ne oldu |
+|---|---|---|
+| `social/Find.tsx` temizleme ikonu | **18** | çıplak ikon: kutu yok, dolgu yok, `hitSlop` yok. Webde aynı düğme `h-9 w-9` = 36. |
+| `ExamScreen` "dinle" (diyalog satırı) | **30** | 18 px ikon + `hitSlop={6}` |
+| `ExamScreen` "dinle" (tek cümle) | **32** | 20 px ikon + `hitSlop={6}` |
+
+Son ikisi ayrıca **aynı ekranda aynı denetimin iki ayrı boyu**. Üçü de
+düzeltildi: temizleme ikonu webdekiyle aynı 36×36 kutuya girdi, iki "dinle"
+düğmesi de 20 px ikon + `hitSlop={8}` (etkili 36) ile eşitlendi.
+
+### Kapının mobil yarısı
+
+Aynı kural, mobilin hesabıyla: Tailwind sınıfı yok, görünen boyut ya
+`style`daki `width`/`height`ın küçük ekseni, ya ikon + dolgunun küçük ekseni,
+ya da — hiçbiri verilmemişse — **ikonun kendisi** (RN dokunulabiliri içeriğine
+göre ölçüyor). `hitSlop={N}` her eksende N ekliyor, etkili = görünen + 2N.
+
+Son dal kapının en önemli dalı ve **sonradan** eklendi. İlk yazımda "hiçbir şey
+verilmemiş" durum *ölçülemez* sayılıyordu; oysa boyut bilgisi hiç verilmemiş bir
+denetim, fazla küçük olması **en olası** olan denetimdir. Enjeksiyon ortaya
+çıkardı: `Find.tsx`in çıplak 18 px'lik ikonunu geri koyduğumda kapı bulgu değil
+"ölçülemez" dedi — yani kusurun kendisine bakmıyordu. Gerçekten ölçülemeyen tek
+durum boyutun başka yerden gelmesi (`flex`, satır içi olmayan stil).
+
+"tamam" satırı artık **ölçülen** sayıları da yazıyor (16 web · 46 mobil):
+kümeler boşalsa "eşiğin altında yok" boş bir doğru olurdu.
+
+Üç enjeksiyon doğrulandı: temizleme kutusunu geri almak, "dinle" düğmesini eski
+`hitSlop`una döndürmek, ve webde bir `hit-8`i silmek (web yarısı da çalışıyor).

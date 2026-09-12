@@ -977,9 +977,12 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
         <Text variant="bodyStrong">{it.title}</Text>
         {it.genre || it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation ?? it.genre}</Text> : null}
         {it.text ? <Text variant="body" style={{ lineHeight: 23, marginTop: spacing.xs }}>{it.text}</Text> : null}
+        {/* DINLE DUGMESI IKI YERDE DE AYNI: 20 px ikon + hitSlop 8 (etkili 36).
+            Biri 18+6 (30), oteki 20+6 (32) idi - ayni ekranda ayni denetim iki
+            boyda ve ikisi de `check:hit` esiginin altinda. */}
         {it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
-            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={18} /></PressableScale>
+            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
             <Text variant="body" style={{ flex: 1, lineHeight: 22 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
           </View>
         ))}
@@ -1066,7 +1069,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         {it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation}</Text> : null}
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h3" style={{ flex: 1 }}>{it.de}</Text>
-          <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(it.de)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
+          <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(it.de)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
         </View>
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
         {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}

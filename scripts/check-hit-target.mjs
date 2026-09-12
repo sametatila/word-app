@@ -21,6 +21,16 @@
  * metnin kendi genişliği kadar ve sınıflardan hesaplanamaz. Orada ölçüm
  * yapmayan bir kapı yazmak, yazmamaktan kötüdür.
  *
+ * MOBIL YARISI (2026-09-12, §11.429). Eşiğin kaynağı mobilin kendi ölçüsüydü
+ * ("ikincil denetimler `hitSlop` ile 36-50") ama mobil HİÇ ÖLÇÜLMÜYORDU:
+ * referans olduğu varsayılan taraf denetlenmiyordu. Ölçüldüğünde üç yerde
+ * tutulmadığı çıktı — arama kutusunun temizleme ikonu çıplak 18 px (webde aynı
+ * düğme 36) ve sınavın "dinle" düğmesi aynı ekranda iki ayrı boyda (30 ve 32).
+ *
+ * Mobilde ölçü biraz farklı hesaplanıyor: Tailwind sınıfı yok, boyut ya
+ * `style`daki `width`/`height` ya da ikon boyutu + dolgu; `hitSlop={N}` her
+ * eksende N ekliyor (etkili = görünen + 2N).
+ *
  * IKINCI ÖLÇÜ — KLAVYE HEDEFİ (2026-09-11, §11.342). Dokunma hedefi bir
  * denetimin PARMAĞA ne kadar yer bıraktığını söylüyor; aynı denetimin
  * KLAVYEYE hiç yer bırakmaması ayrı ve daha sert bir kusur. `<div onClick>`
@@ -86,6 +96,9 @@ function px(n) { return Math.round(Number(n) * 4); }
 const bulgular = [];
 /** Sinif listesi degiskenden gelen, yani olculemeyen dugme sayisi. */
 let olculemez = 0;
+/** OLCULEN dugme sayisi - "tamam" satirinda yaziyor: bu sayi sifira duserse
+    kapi hicbir sey olcmuyor demektir ve "esigin altinda yok" bos bir dogru olur. */
+let olculen = 0;
 
 for (const abs of walk(path.join(ROOT, "src"))) {
   const rel = path.relative(ROOT, abs);
@@ -139,8 +152,90 @@ for (const abs of walk(path.join(ROOT, "src"))) {
     const etkili = gorunen + (slop ? 16 : 0);
     const muaf = (ALLOW.get(rel) ?? []).find(([parca]) => acilis.includes(parca));
     if (muaf) continue;
+    olculen++;
     if (etkili < ESIK) {
       bulgular.push({ rel, satir, ikon: ikon[1], gorunen, etkili, slop, satirMetni: lines[satir - 1]?.trim().slice(0, 90) });
+    }
+  }
+}
+
+/* ── MOBİL DOKUNMA HEDEFİ ───────────────────────────────────────────────
+ * Aynı soru Android/iOS tarafında. Ölçülen yine YALNIZ ikonlu (metinsiz)
+ * dokunulabilirler; metin taşıyan bir denetimin genişliği metnin kendisi
+ * kadar ve `style`dan hesaplanamaz.
+ */
+const MOBIL_ETIKETLER = ["PressableScale", "Pressable", "TouchableOpacity", "TouchableHighlight"];
+/** Küçük kalması KABUL EDİLEN mobil denetimler, sebepleriyle. */
+const MOBIL_ALLOW = new Map([]);
+const mobilBulgular = [];
+let mobilOlculemez = 0;
+let mobilOlculen = 0;
+
+for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
+  const rel = path.relative(ROOT, abs);
+  const src = stripComments(fs.readFileSync(abs, "utf8"));
+  const lines = src.split("\n");
+  for (const et of MOBIL_ETIKETLER) {
+    const re = new RegExp("<" + et + "\\b", "g");
+    let m;
+    while ((m = re.exec(src))) {
+      const son = acilisiBitir(src.slice(m.index));
+      if (son < 0) continue;
+      const acilis = src.slice(m.index, m.index + son + 1);
+      /* Kendi kendine kapanan etiketin içeriği yok: ikon da yok, ölçülecek
+         bir şey de yok. */
+      if (/\/>$/.test(acilis)) continue;
+      const kapanis = src.indexOf("</" + et + ">", m.index + son);
+      if (kapanis < 0) continue;
+      const icerik = src.slice(m.index + son + 1, kapanis);
+      const ikon = icerik.match(/<[A-Z][A-Za-z]*(?:Icon|Glyph)\b[^>]*\bsize=\{(\d+)\}/);
+      if (!ikon) continue;
+      /* Metin de taşıyorsa ölçülemez (webdeki ile aynı kural). */
+      if (/<(?:Text|RNText|Animated\.Text)\b/.test(icerik)) continue;
+      const satir = src.slice(0, m.index).split("\n").length;
+      const muaf = (MOBIL_ALLOW.get(rel) ?? []).find(([parca]) => acilis.includes(parca));
+      if (muaf) continue;
+      const slop = Number((acilis.match(/hitSlop=\{?(\d+)/) ?? [])[1] ?? 0);
+      const w = (acilis.match(/\bwidth:\s*(\d+)/) ?? [])[1];
+      const h = (acilis.match(/\bheight:\s*(\d+)/) ?? [])[1];
+      const pv = (acilis.match(/paddingVertical:\s*(\d+)/) ?? [])[1];
+      const ph = (acilis.match(/paddingHorizontal:\s*(\d+)/) ?? [])[1];
+      const pad = (acilis.match(/\bpadding:\s*(\d+)/) ?? [])[1];
+      /*
+       * Görünen boyut:
+       *   kutu verilmişse iki eksenin KÜÇÜĞÜ (hedef en dar eksen kadar),
+       *   yoksa ikon + dolgunun küçük ekseni,
+       *   ikisi de yoksa İKONUN KENDİSİ — RN dokunulabiliri içeriğine göre
+       *   ölçüyor, yani hiçbir şey verilmemiş bir denetimin hedefi ikon
+       *   kadardır.
+       *
+       * SON DAL SONRADAN EKLENDİ ve kapının en önemli dalı o. İlk yazımda
+       * "hiçbir şey yok" durumu ÖLÇÜLEMEZ sayılıyordu; oysa bilgi hiç
+       * verilmemiş bir denetim, fazla küçük olması EN OLASI olan denetimdir.
+       * Enjeksiyon ortaya çıkardı: arama kutusunun çıplak 18 px'lik temizleme
+       * ikonunu geri koyduğumda kapı bulgu değil "ölçülemez" dedi.
+       *
+       * Gerçekten ölçülemeyen tek durum boyutun BAŞKA yerden gelmesi:
+       * `flex`, satır içi olmayan bir stil (`style={styles.x}` ya da bir
+       * değişken) ya da genişliği veren bir dış kap. Orada komşuyu ölçmek
+       * kapıyı yanlış yapar.
+       */
+      const stilSatirIci = /style=\{\{/.test(acilis);
+      const stilVar = /\bstyle=/.test(acilis);
+      const esnek = /\bflex:/.test(acilis) || /\balignSelf:\s*"stretch"/.test(acilis);
+      let gorunen = null;
+      if (w !== undefined && h !== undefined) gorunen = Math.min(Number(w), Number(h));
+      else if (pv !== undefined || ph !== undefined || pad !== undefined) {
+        const dy = 2 * Number(pv ?? pad ?? 0);
+        const dx = 2 * Number(ph ?? pad ?? 0);
+        gorunen = Number(ikon[1]) + Math.min(dy, dx);
+      } else if (!esnek && (!stilVar || stilSatirIci)) gorunen = Number(ikon[1]);
+      if (gorunen === null) { mobilOlculemez++; continue; }
+      const etkili = gorunen + 2 * slop;
+      mobilOlculen++;
+      if (etkili < ESIK) {
+        mobilBulgular.push({ rel, satir, ikon: ikon[1], gorunen, etkili, slop, satirMetni: lines[satir - 1]?.trim().slice(0, 90) });
+      }
     }
   }
 }
@@ -176,9 +271,12 @@ if (mode === "--hits") {
   for (const b of bulgular) {
     console.log(`${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili}${b.slop ? " (hit-8 var)" : ""}`);
   }
+  for (const b of mobilBulgular) {
+    console.log(`${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili} (hitSlop ${b.slop})`);
+  }
   for (const k of klavyesiz) console.log(`${k.rel}:${k.satir}  <${k.ad} onClick> klavyeden ulasilamaz`);
-  console.log(`\ntoplam ${bulgular.length} · olculemeyen ${olculemez} · klavyesiz ${klavyesiz.length}`);
-} else if (bulgular.length || klavyesiz.length) {
+  console.log(`\nweb ${bulgular.length} · mobil ${mobilBulgular.length} · olculemeyen ${olculemez}+${mobilOlculemez} · klavyesiz ${klavyesiz.length}`);
+} else if (bulgular.length || mobilBulgular.length || klavyesiz.length) {
   if (bulgular.length) {
     console.error(`check:hit — ikonlu düğmelerin dokunma hedefi ${ESIK} px'in altında:\n`);
     for (const b of bulgular) {
@@ -187,6 +285,15 @@ if (mode === "--hits") {
     }
     console.error("\n`hit-8` her eksende 8 px ekler (etkili = görünen + 16); mobil karşılığı `hitSlop={8}`.");
     console.error("Meşru bir istisnaysa betikteki ALLOW listesine SEBEBİYLE ekle.");
+  }
+  if (mobilBulgular.length) {
+    console.error(`check:hit — MOBİL ikonlu dokunulabilirlerin hedefi ${ESIK} px'in altında:\n`);
+    for (const b of mobilBulgular) {
+      console.error(`  ${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili} (hitSlop ${b.slop})`);
+      console.error(`      ${b.satirMetni}`);
+    }
+    console.error("\n`hitSlop={N}` her eksende N ekler (etkili = görünen + 2N); kutu vermek de olur.");
+    console.error("Meşru bir istisnaysa betikteki MOBIL_ALLOW listesine SEBEBİYLE ekle.");
   }
   if (klavyesiz.length) {
     console.error("\ncheck:hit — klavyeden ulaşılamayan denetimler (etkileşimli olmayan etikette `onClick`):\n");
@@ -198,5 +305,11 @@ if (mode === "--hits") {
   }
   process.exit(1);
 } else {
-  console.log(`check:hit — ikonlu düğmelerin hepsinin dokunma hedefi ${ESIK} px ve üstü, tıklanan her denetim klavyeden de ulaşılabilir: tamam (${olculemez} düğmenin sınıfı değişkenden geliyor, ölçülemez)`);
+  /* Sayılar çıkışta: "tamam" tek başına taramanın ÇALIŞTIĞINI söylemiyor. */
+  console.log(
+    `check:hit — web ve mobil ikonlu denetimlerin hepsinin dokunma hedefi ${ESIK} px ve üstü, ` +
+      `tıklanan her denetim klavyeden de ulaşılabilir: tamam ` +
+      `(ölçülen: ${olculen} web · ${mobilOlculen} mobil; ` +
+      `ölçülemeyen: ${olculemez} web · ${mobilOlculemez} mobil)`,
+  );
 }

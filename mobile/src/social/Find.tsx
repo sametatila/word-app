@@ -87,7 +87,13 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         {/* Arama CANLI (iki harften sonra kendiliginden); return tusunun isi
             yalnizca klavyeyi kapatmak, o yuzden "search" degil "done". */}
         <TextInput returnKeyType="done" value={q} onChangeText={setQ} placeholder={t("find.username_or_name")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.search_users")} />
-        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
+        {/* TEMIZLEME KUTUSU 36x36 — webdeki `h-9 w-9` ile ayni.
+            Ikon ciplak duruyordu: hitSlop da yok, dolgu da yok, yani dokunma
+            hedefi ikonun kendisi kadar (18) ve `check:hit`in esiginin (36)
+            yarisi. O esigin kaynagi mobilin kendi olcusu ("ikincil denetimler
+            hitSlop ile 36-50") ve tam burada tutulmuyordu; webde ayni dugme
+            zaten 36. */}
+        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")} style={{ width: 36, height: 36, alignItems: "center", justifyContent: "center" }}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
