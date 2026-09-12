@@ -12419,3 +12419,65 @@ silindi, gerekçesi kapıya yazıldı.
 
 Yedi enjeksiyon denendi; ikisi ilk turda kaçtı, desen düzeltildikten sonra
 yedisi de yakalandı.
+
+## §11.364 — Sayının biçimi: aynı olgunun iki kaynağı
+
+Eksen **sayı ve tarih biçimleri**ydi. Üç ayrışma çıktı, üçü de aynı sınıftan:
+bir olgunun iki kaynağı olması.
+
+### Yüzde
+
+İşaretin yeri dile göre değişiyor: `%45` / `45%` / `45 %`. Android bunu
+`Intl`den okuyor (`formatPercent`), web ise **üç elle yazılmış dizgide**
+tutuyordu (`common.pct`). İki sorun:
+
+- **Aynı olgunun iki kaynağı.** Biri değişirse diğeri sessizce ayrışır.
+- **Almanca kopyada normal boşluk** yazılıydı. `Intl` orada **bölünmez**
+  boşluk (U+00A0) veriyor; normal boşlukla sayı ile işaret satır sonunda
+  ayrılabiliyordu.
+
+Üstelik webde yüzde yazmanın **iki yolu** vardı: biçimleyici ve doğrudan
+`t("common.pct")` — yirmi iki çağrı yeri. Anahtar üç web sözlüğünden kalktı,
+tek yol biçimleyici, kaynak `Intl`.
+
+### Ondalık ayraç
+
+Meydan okuma ve boss sayaçları `toFixed(1)` yazıyordu: **sabit nokta**, yani
+Türkçe ve Almanca arayüzde de "8.3" çıkıyordu — iki dilde de ayraç virgül.
+**İki tarafta da** böyleydi, ölçü bu yüzden mutlak. İki platforma
+`formatDecimal` eklendi.
+
+### Tarihin yerel adı
+
+Oturum satırı `toLocaleDateString(lang)` yazıyordu — yerel ad değil **dil
+kodu** ("tr" yerine "tr-TR"). Aynı sapma Android'de de vardı
+(`ActiveSessions`: `currentLang()`), her iki taraftaki öteki otuz çağrı ise
+`localeOf(lang)` / `dateLocale()` kullanıyor.
+
+### Sessiz olan
+
+`formatNumber` webde **yuvarlamıyordu**, Android yuvarlıyor. Bugün her çağrı
+tam sayı geçiriyor, yani görünür bir kusur yok — ama kesirli bir değer
+geçtiği gün iki platform aynı sayıyı farklı yazardı. Web de yuvarlıyor artık.
+
+### §245 ve iki kapı dersi
+
+Beş olgu: yüzde biçiminin `Intl`den gelmesi ve yuvarlama (eşleştirmeli),
+sözlük anahtarının kalkması (mutlak, ağaç geneli), sabit noktanın kalmaması
+(mutlak), tarihin yerel adının dil kodu olmaması (mutlak) ve sayaçların
+biçimleyiciyi kullanması (eşleştirmeli — "sabit nokta yok" tek başına
+yetmez, sayı tamamen kaldırılmış da olabilir).
+
+**Kapının taraması yorumları da görüyor.** Anahtarın kalktığını ağaç genelinde
+ölçen liste ilk turda `dict.ts`i işaretledi: kalkışın **gerekçesi** o dosyanın
+yorumunda yazılı ve ham kaynakta arayan bir ölçü onu "anahtar hâlâ var" diye
+okuyor. `sil()` ile yorumlar düşürülüyor artık.
+
+**Üç mevcut kapı onarıldı.** Seviye sınavı sonucu, deneme kâğıdı sonuç başı ve
+haftalık sonuç yerleşimi kapıları yüzdeyi `t("common.pct"` metniyle arıyordu
+ve üçü birden "yüzde YOK" dedi — yüzde kalkmamış, **biçimi** değişmişti. Aynı
+sınıf bu oturumda üçüncü kez çıktı (§228 `live`, §11.331 duyuru seviyesi):
+bir olgunun yazımı değişince onu metin olarak arayan her kapı yanlış alarm
+veriyor.
+
+Altı enjeksiyon denendi, altısı da yakalandı.

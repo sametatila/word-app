@@ -7346,6 +7346,126 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 245. SAYININ VE TARIHIN BICIMI ----------------------------------
+   *
+   * Uc ayrisma cikti, hepsi "ayni olgunun iki kaynagi" sinifindan.
+   *
+   * YUZDE. Isaretin yeri dile gore degisiyor: "%45" / "45%" / "45 %".
+   * Android bunu `Intl`den okuyor (`formatPercent`), web ise UC ELLE
+   * YAZILMIS DIZGIDE tutuyordu (`common.pct`). Iki sorun: aynı olgunun iki
+   * kaynagi oluyor ve Almanca kopyada NORMAL bosluk yaziliydi - `Intl`in
+   * verdigi BOLUNMEZ bosluk yerine, yani sayi ile isaret satir sonunda
+   * ayrilabiliyordu. Ustelik webde yuzde yazmanin IKI yolu vardi: bicimleyici
+   * ve dogrudan `t("common.pct")` (yirmi iki cagri yeri). Anahtar kalkti,
+   * tek yol bicimleyici.
+   *
+   * ONDALIK AYRAC. Meydan okuma ve boss sayaclari `toFixed(1)` yaziyordu:
+   * SABIT NOKTA, yani Turkce ve Almanca arayuzde de "8.3" cikiyordu - iki
+   * dilde de ayrac virgul. IKI TARAFTA DA boyleydi, olcu bu yuzden mutlak.
+   *
+   * TARIHIN YEREL ADI. Oturum satiri `toLocaleDateString(lang)` yaziyordu -
+   * yerel ad degil DIL KODU ("tr" yerine "tr-TR"). Ayni sapma Android'de de
+   * vardi (`ActiveSessions`: `currentLang()`), her iki taraftaki oteki otuz
+   * cagri ise `localeOf(lang)` / `dateLocale()` kullaniyor.
+   *
+   * Bir de sessiz bir tane: `formatNumber` webde YUVARLAMIYORDU, Android
+   * yuvarliyor. Bugun her cagri tam sayi geciriyor, yani gorunur bir kusur
+   * yok - ama kesirli bir deger gectigi gun iki platform ayni sayiyi farkli
+   * yazardi. */
+  {
+    /* Yuzde: tek yol bicimleyici, kaynak `Intl`. */
+    const yw = sil(read("src/lib/i18n/dict.ts"));
+    const ym = sil(read("mobile/src/lib/i18n.ts"));
+    sameList(
+      "yuzde bicimi Intl'den",
+      [
+        "kaynak=" + (/new Intl\.NumberFormat\(dateLocale\(\), \{ style: "percent"/.test(ym) ? "Intl" : "?"),
+        "sayi yuvarliyor=" + (/return Math\.round\(n\)\.toLocaleString\(dateLocale\(\)\)/.test(ym) ? "evet" : "HAYIR"),
+        "ondalik bicimleyici=" + (/export function formatDecimal\(/.test(ym) ? "var" : "YOK"),
+      ],
+      [
+        "kaynak=" + (/new Intl\.NumberFormat\(localeOf\(lang\), \{ style: "percent"/.test(yw) ? "Intl" : "?"),
+        "sayi yuvarliyor=" + (/return Math\.round\(n\)\.toLocaleString\(localeOf\(lang\)\)/.test(yw) ? "evet" : "HAYIR"),
+        "ondalik bicimleyici=" + (/export function formatDecimal\(/.test(yw) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /** `src` ve `mobile/src` altindaki butun kaynak dosyalar. */
+    const kaynaklar = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) kaynaklar(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx") || e.name.endsWith(".ts")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    const TUM = [...kaynaklar("src"), ...kaynaklar("mobile/src")];
+
+    /* Sozluk anahtari KALKTI ve cagiran kalmadi (MUTLAK).
+       `sil()` SART: kalkisin GEREKCESI `dict.ts`in yorumunda yazili ve ham
+       kaynakta arayan bir olcu o yorumu "anahtar hala var" diye okuyor -
+       kapinin taramasi yorumlari da goruyor. */
+    const pctAnahtar = TUM.filter((y) => /"common\.pct"/.test(sil(read(y))));
+    sameList(
+      "yuzde sozluk anahtari kalkti",
+      ["kalan=" + pctAnahtar.length + (pctAnahtar.length ? " (" + pctAnahtar.join(", ") + ")" : "")],
+      ["kalan=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kullaniciya gorunen sayida SABIT NOKTA yok (MUTLAK).
+       Cizim (`svg` yol verileri, avatar aci hesabi) ve gunluk satiri bu
+       eksene ait degil: onlar ekrana SAYI olarak dusmuyor. */
+    const CIZIM = /progress-panel|GrowthPanel|Avatar|walk-player|dashboard|admin/;
+    const sabitNokta = [];
+    for (const y of TUM) {
+      if (CIZIM.test(y)) continue;
+      const src = sil(read(y));
+      for (const m of src.matchAll(/\.toFixed\(\d\)/g)) {
+        sabitNokta.push(y.split("/").pop() + ":" + src.slice(0, m.index).split("\n").length);
+      }
+    }
+    sameList(
+      "sayacin ondalik ayraci dilden",
+      ["sabit nokta=" + sabitNokta.length + (sabitNokta.length ? " (" + sabitNokta.join(", ") + ")" : "")],
+      ["sabit nokta=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Tarihin yerel adi DIL KODU olamaz (MUTLAK). */
+    const dilKodu = [];
+    for (const y of TUM) {
+      const src = sil(read(y));
+      for (const m of src.matchAll(/toLocaleDateString\((?:lang|currentLang\(\))\)/g)) {
+        dilKodu.push(y.split("/").pop() + ":" + src.slice(0, m.index).split("\n").length);
+      }
+    }
+    sameList(
+      "tarihin yerel adi dil kodu degil",
+      ["dil kodu gecen=" + dilKodu.length + (dilKodu.length ? " (" + dilKodu.join(", ") + ")" : "")],
+      ["dil kodu gecen=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Sayaclar bicimleyiciyi KULLANIYOR (yalniz "sabit nokta yok" yetmez:
+       sayi tamamen kaldirilmis da olabilir). */
+    const SAYAC = [
+      ["meydan-okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
+      ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
+    ];
+    sameList(
+      "sayaclar ondalik bicimleyiciden",
+      SAYAC.map(([ad, , m]) => ad + "=" + (/n: formatDecimal\(left\)/.test(sil(read(m))) ? "bicimleyiciden" : "DEGIL")),
+      SAYAC.map(([ad, w]) => ad + "=" + (/n: formatDecimal\(left, lang\)/.test(sil(read(w))) ? "bicimleyiciden" : "DEGIL")),
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 244. OLU DUGMENIN SEBEBI ----------------------------------------
    *
    * Degerlendirme dugmeleri bir KELIME TABANINA bagli: iki kelimeye puan
@@ -8466,7 +8586,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "kutlama=" + (/<Confetti fire=\{result\.passed \? 1 : 0\}/.test(sw) ? "gecince" : "YOK"),
         "koc balonu=" + (/moment=\{result\.passed \? "exam_pass" : "exam_fail"\}/.test(sw) ? "var" : "YOK"),
-        "buyuk yuzde=" + (/<h1 className="text-h1 tabular-nums">\{t\("common\.pct", \{ n: result\.total \}\)\}<\/h1>/.test(sw) ? "var" : "YOK"),
+        /* Webde de artik `formatPercent` (245): `common.pct` sozluk anahtari
+           kalkti ve yuzde yazmanin tek yolu bicimleyici. Yuzde KALKMADI,
+           bicimi degisti. */
+        "buyuk yuzde=" + (/<h1 className="text-h1 tabular-nums">\{formatPercent\(result\.total, lang\)\}<\/h1>/.test(sw) ? "var" : "YOK"),
         "hukum=" + (/exam\.passed[\s\S]{0,80}exam\.not_passed/.test(sw) ? "var" : "YOK"),
         "deneme cumlesi=" + (/exam\.trial_notice/.test(sw) ? "ortak anahtar" : "?"),
         "sertifika=" + (/exam\.open_certificate/.test(sw) ? "var" : "YOK"),
@@ -8518,7 +8641,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "deneme kagidi sonuc basi",
       kagit(dm, /variant="h1" color=\{score\.passed[\s\S]{0,80}formatPercent\(score\.pct\)/),
-      kagit(dw, /className="text-h1"[\s\S]{0,120}n: score\.pct/),
+      kagit(dw, /className="text-h1"[\s\S]{0,120}formatPercent\(score\.pct, lang\)/),
       "mobil",
       "web",
     );
@@ -8581,7 +8704,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ],
       [
         "halka=" + (/conic-gradient\(var\(--color-brand-500\) \$\{result\.score\}%/.test(hw) ? "var" : "YOK"),
-        "halka icinde yuzde=" + (/common\.pct", \{ n: result\.score \}/.test(hw) ? "var" : "YOK"),
+        "halka icinde yuzde=" + (/formatPercent\(result\.score, lang\)/.test(hw) ? "var" : "YOK"),
         "halka altyazisi=" + (/weekly\.score/.test(hw) ? "var" : "YOK"),
         "baslik=" + (/weekly\.done_title/.test(hw) ? "done_title" : "?"),
         "alt satir=" + (/weekly\.done_sub/.test(hw) ? "done_sub" : "?"),
