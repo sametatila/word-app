@@ -17009,3 +17009,45 @@ taraması yalnız XP adlı değerlere bakıyor, `mastered` oraya girmiyordu.
 Kapı **§330** web tablosunu **CSS'ten çözerek** karşılaştırıyor
 (`var(--color-mint-600)` → `#237a4c`): kapının içinde tonların bir kopyası yok,
 yani biri değişirse kapı ötekini de değişmeye zorluyor.
+
+## §11.471 — Tek Erdi kuralı Android'de hiç yoktu; ortam dikizlemesi üç noktada ayrışıyordu
+
+Bir tane mirket var. Ekranın kenarından dikizlerken cevap şeridinde de
+belirmesi, köşede kutlarken şeritte de baş parmak göstermesi karakteri ikiye
+bölüyor. **Web bunu bir kusur olarak bulup sahne kurdu** (`lib/mascot-stage`):
+gezici hareketler sahneyi süreli kilitliyor, sahne başkasınınken öteki her Erdi
+örneği görünmez oluyor; cevap şeridinin maskotu **muaf** (`pinned`), çünkü o süs
+değil cevabın kendisi.
+
+**Mobilde sahne hiç yoktu.** Ortam dikizlemesi, kutlama pop'u ve şeridin
+maskotu birbirinden habersiz çiziliyordu; aynı ekranda iki (bazen üç) Erdi
+görünebiliyordu. Modül birebir port edildi (`lib/mascotStage`), pop ve
+dikizleme sahneyi alıp bırakıyor, `Mascot` `stage`/`pinned` alıyor ve şeridin
+maskotu muaf işaretlendi.
+
+Dikizlemenin kendisi de üç noktada ayrışıyordu:
+
+1. **"Hareketi azalt".** Web `useStill()` ile `MascotFx`i hiç çizmiyor; mobil
+   maskotu *yerinde* gösteriyordu — belirip kaybolmanın kendisi de hareket.
+   Dahası o dalda **bir sonraki randevu kurulmuyordu** (`schedule(false)` erken
+   dönüşün arkasında kalıyordu): tercih açık olan kullanıcı bir kez dikizleme
+   görüp sonrasında hiç görmüyordu. Kural artık webinki.
+2. **Zamanlama.** Web ilk randevuyu 60–150 sn, sonrakileri klip süresi +
+   150–330 sn arasına koyuyor; mobil 20–60 ve 90–210 yazıyordu — aynı sürpriz
+   Android'de iki kat sık geliyordu.
+3. **Kenar.** Web iki yandan dikizliyor, mobil yalnız sağdan.
+
+Kapı **§331** üç ölçü kümesi: sahnenin API'si, kuralın katılımcıları (kim
+sahne alıyor, kim bırakıyor, `away` kuralı ve muaf çağrı sayısı) ve
+dikizlemenin sayıları (iki pencere, süre, iki kenar, hareket azaltma kuralı).
+Beş enjeksiyon noktası ayrı ayrı kırmızı veriyor.
+
+**Açık kalan ve bilerek ölçülmeyen:** webin ekranın altından geçen yürüyüşü
+(`Walker`, rastgele yön + "walk"/"stroll" çeşidi, süre ekran genişliğinden)
+mobilde yok ve pakete kopyalanmamış dört klip istiyor (`walk-left/right`,
+`stroll-left/right`; toplam ~0,5 MB). Dikizleme de webde kendi klibiyle
+(`peek` / `peek-mirror`, gövdenin yarısı kadraj dışında, ~0,8 MB) yapılıyor,
+mobilde ruh hâli klibiyle. Mobil paket klipleri webden **birebir kopya** olarak
+taşıyor (md5 aynı, bugün 8 klip / ~9,3 MB), yani port konvansiyona uygun ve
+sıradaki iş. Bugünkü durumu sabitleyen bir ölçü, onu düzeltmeye çalışan kişiye
+kırmızı verirdi — bu yüzden kapı yazılmadı, kayıt burada duruyor.

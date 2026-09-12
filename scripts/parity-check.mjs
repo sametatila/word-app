@@ -18666,6 +18666,117 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* -------------------- 331. TEK ERDI KURALI VE ORTAM DIKIZLEMESI IKI TARAFTA
+ *
+ * Bir tane mirket var. Ekranin kenarindan dikizlerken cevap seridinde de
+ * belirmesi, kosede kutlarken seritte de bas parmak gostermesi karakteri
+ * ikiye boluyor. Web bunu bir kusur olarak bulup SAHNE kurdu
+ * (`lib/mascot-stage`): gezici hareketler sahneyi sureli kilitliyor, sahne
+ * baskasinin oldugu surece oteki her Erdi ornegi gorunmez oluyor; cevap
+ * seridinin maskotu MUAF (`pinned`) cunku o sus degil cevabin kendisi.
+ *
+ * MOBILDE SAHNE HIC YOKTU: ortam dikizlemesi, kutlama pop'u ve seridin
+ * maskotu birbirinden habersiz ciziliyordu, yani ayni ekranda iki (bazen uc)
+ * Erdi gorunebiliyordu. Referans platform bu kez geride kalan taraftı.
+ *
+ * Dikizlemenin kendisi de uc noktada ayrisiyordu:
+ *   - "Hareketi azalt": web MascotFx'i HIC cizmiyor (`useStill`), mobil
+ *     maskotu yerinde gosteriyordu ve o dalda BIR SONRAKI RANDEVU DA
+ *     KURULMUYORDU (`schedule(false)` erken donusun arkasinda kaliyordu) -
+ *     tercih acik olan kullanici bir kez dikizleme gorup sonra hic gormuyordu.
+ *   - Zamanlama: web ilk randevuyu 60-150 sn, sonrakileri klip suresi +
+ *     150-330 sn arasina koyuyor; mobil 20-60 ve 90-210 yaziyordu, yani ayni
+ *     surpriz Android'de iki kat sik geliyordu.
+ *   - Kenar: web iki yandan, mobil yalniz sagdan.
+ *
+ * ACIK KALAN ve BILEREK OLCULMEYEN: webin EKRANIN ALTINDAN GECEN yuruyusu
+ * (`Walker`) mobilde yok ve pakete kopyalanmamis dort klip istiyor
+ * (`walk-*`, `stroll-*`). Bugunku durumu sabitleyen bir olcu, onu duzeltmeye
+ * calisan kisiye kirmizi verirdi. */
+{
+  const silE = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const webSahne = silE(read("src/lib/mascot-stage.ts"));
+  const mobSahne = silE(read("mobile/src/lib/mascotStage.ts"));
+  const API = ["claimStage", "releaseStage", "stageOwner", "useStageOwner"];
+  sameList(
+    "erdi sahnesinin api'si",
+    API.map((a) => a + "=" + (new RegExp("export function " + a + "\\(").test(mobSahne) ? "var" : "YOK")),
+    API.map((a) => a + "=" + (new RegExp("export function " + a + "\\(").test(webSahne) ? "var" : "YOK")),
+    "mobil",
+    "web",
+  );
+  const webPop = silE(read("src/components/mascot-pop.tsx"));
+  const mobPop = silE(read("mobile/src/ui/MascotPop.tsx"));
+  const webFx = silE(read("src/components/mascot-fx.tsx"));
+  const mobFx = silE(read("mobile/src/ui/AmbientMascot.tsx"));
+  const webMask = silE(read("src/components/mascot.tsx"));
+  const mobMask = silE(read("mobile/src/ui/Mascot.tsx"));
+  const pinnedSayi = (kok, desen) => {
+    const yuru = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const yol = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuru(yol, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(yol);
+      }
+      return out;
+    };
+    return yuru(kok).reduce((a, f) => a + (silE(read(f)).match(desen) ?? []).length, 0);
+  };
+  sameList(
+    "tek erdi kuralinin katilimcilari",
+    [
+      "pop sahne aliyor=" + (/claimStage\("pop", /.test(mobPop) ? "evet" : "HAYIR"),
+      "pop birakiyor=" + (/releaseStage\("pop"\)/.test(mobPop) ? "evet" : "HAYIR"),
+      "dikizleme sahne aliyor=" + (/claimStage\("peek", PEEK_MS \+ 400\)/.test(mobFx) ? "evet" : "HAYIR"),
+      "dikizleme birakiyor=" + (/releaseStage\("peek"\)/.test(mobFx) ? "evet" : "HAYIR"),
+      "maskot kurali=" + (/const away = !pinned && owner !== null && owner !== stage/.test(mobMask) ? "var" : "YOK"),
+      "muaf cagri=" + pinnedSayi("mobile/src", /<Mascot [^>]*\bpinned\b/g),
+    ],
+    [
+      "pop sahne aliyor=" + (/claimStage\("pop", hold \+ 400\)/.test(webPop) ? "evet" : "HAYIR"),
+      "pop birakiyor=" + (/releaseStage\("pop"\)/.test(webPop) ? "evet" : "HAYIR"),
+      "dikizleme sahne aliyor=" + (/claimStage\("peek", PEEK_MS \+ 400\)/.test(webFx) ? "evet" : "HAYIR"),
+      "dikizleme birakiyor=" + (/releaseStage\("peek"\)/.test(webFx) ? "evet" : "HAYIR"),
+      "maskot kurali=" + (/const away = !pinned && stageOwner !== null && stageOwner !== stage/.test(webMask) ? "var" : "YOK"),
+      "muaf cagri=" + pinnedSayi("src", /<Mascot [^>]*\bpinned\b/g),
+    ],
+    "mobil",
+    "web",
+  );
+  /* Dikizlemenin sayilari: ilk randevu penceresi, sonraki pencere ve sure. */
+  const pencere = (src, ad) => {
+    const m = src.match(new RegExp(ad + "\\((\\d[\\d_]*), (\\d[\\d_]*)\\)"));
+    return m ? m[1].replace(/_/g, "") + "-" + m[2].replace(/_/g, "") : "YOK";
+  };
+  const ilk = (src, ad) => {
+    const i = src.indexOf("peekNextAt === 0");
+    return i < 0 ? "YOK" : pencere(src.slice(i, i + 120), ad);
+  };
+  const sonra = (src, ad) => {
+    const i = src.indexOf("peekNextAt = Date.now() + PEEK_MS");
+    return i < 0 ? "YOK" : pencere(src.slice(i, i + 120), ad);
+  };
+  sameList(
+    "ortam dikizlemesinin zamanlamasi",
+    [
+      "ilk randevu=" + ilk(mobFx, "rastgele"),
+      "sonraki=" + sonra(mobFx, "rastgele"),
+      "sure=" + ((mobFx.match(/PEEK_MS = (\d+)/) ?? [])[1] ?? "YOK"),
+      "iki kenar=" + (/Math\.random\(\) < 0\.5 \? "left" : "right"/.test(mobFx) ? "evet" : "TEK KENAR"),
+      "hareket azaltmada=" + (/if \(reduceMotion\(\)\) return;/.test(mobFx) && /if \(reduceMotion\(\) \|\| !side\) return null;/.test(mobFx) ? "cizilmiyor" : "CIZILIYOR"),
+    ],
+    [
+      "ilk randevu=" + ilk(webFx, "rand"),
+      "sonraki=" + sonra(webFx, "rand"),
+      "sure=" + ((webFx.match(/PEEK_MS = (\d+)/) ?? [])[1] ?? "YOK"),
+      "iki kenar=" + (/Math\.random\(\) < 0\.5 \? "left" : "right"/.test(webFx) ? "evet" : "TEK KENAR"),
+      "hareket azaltmada=" + (/const still = useStill\(\);\s*if \(still\) return null;/.test(webFx) ? "cizilmiyor" : "CIZILIYOR"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

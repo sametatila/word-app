@@ -292,7 +292,9 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
       {/* Web VerdictBar: kompakt yatay şerit — maskot + tek akan satır (etiket +
           kalın Almanca cevap + · Türkçe), yanlışta ikinci küçük satır (neden). */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm, minHeight: 60 }}>
-        <Mascot mood={ok ? "thumbsup" : "sad"} size={44} />
+        {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de
+            görünür (web `games/round-sheet` ile aynı muafiyet). */}
+        <Mascot mood={ok ? "thumbsup" : "sad"} size={44} pinned />
         <View style={{ flex: 1 }}>
           <Text variant="body" style={{ lineHeight: 21 }}>
             <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{tx(ok ? "rounds.correct_excl" : "rounds.answer_is")}</Text>

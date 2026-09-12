@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, View } from "react-native";
+import { useStageOwner } from "../lib/mascotStage";
 
 /**
  * Erdi (maskot) — web ile aynı klipler (animasyonlu WebP). Android'de Fresco
@@ -26,10 +27,38 @@ const CLIP = {
 
 export type Mood = keyof typeof CLIP;
 
-export function Mascot({ mood = "idle", size = 88 }: { mood?: Mood; size?: number }) {
+export function Mascot({
+  mood = "idle",
+  size = 88,
+  stage,
+  pinned = false,
+}: {
+  mood?: Mood;
+  size?: number;
+  /**
+   * TEK ERDİ KURALI (`lib/mascotStage`). Sahneyi alan gezici sarmalayıcılar
+   * (kutlama pop'u, ortam dikizlemesi) kendi kimliğini buraya veriyor; sahne
+   * başkasınınken bu örnek görünmez olur. Kutu yerinde kalır, içi boşalır —
+   * yoksa düzen zıplar.
+   */
+  stage?: string;
+  /**
+   * Tek Erdi kuralından MUAF: sahne başkasınınken de görünür. Cevap şeridinin
+   * baş parmağı/üzülmesi için — o, süs değil cevabın kendisi.
+   */
+  pinned?: boolean;
+}) {
+  const owner = useStageOwner();
+  /* Sahne başkasınınsa bu Erdi burada değil (web `mascot.tsx` `away`). */
+  const away = !pinned && owner !== null && owner !== stage;
   return (
     <View style={{ width: size, height: size * 1.5, alignItems: "center", justifyContent: "flex-end" }}>
-      <Image source={CLIP[mood] ?? CLIP.idle} style={{ width: size, height: size * 1.5 }} resizeMode="contain" fadeDuration={0} />
+      <Image
+        source={CLIP[mood] ?? CLIP.idle}
+        style={{ width: size, height: size * 1.5, opacity: away ? 0 : 1 }}
+        resizeMode="contain"
+        fadeDuration={0}
+      />
     </View>
   );
 }
