@@ -140,10 +140,11 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
         </div>
       </header>
 
-      {/* Sekmeler */}
-      <div className="flex flex-wrap gap-1.5 border-b pb-2" style={{ borderColor: "var(--border)" }}>
+      {/* Sekmeler — seçili olan yalnız RENKTEN okunuyordu, hiçbir durum
+          bildirimi yoktu. `tablist`/`tab` (bkz. parity 258). */}
+      <div role="tablist" aria-label="Bölümler" className="flex flex-wrap gap-1.5 border-b pb-2" style={{ borderColor: "var(--border)" }}>
         {TABS.map((t) => (
-          <button key={t} onClick={() => setTab(t)}
+          <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
             className="rounded-full px-3.5 py-1.5 text-strong transition"
             style={tab === t ? { background: "var(--color-brand)", color: "var(--on-fill)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}>
             {t}

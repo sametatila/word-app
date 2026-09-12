@@ -99,7 +99,8 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
         varsayılan basılıyor.
       </p>
 
-      <div className="mt-5 flex flex-wrap gap-2">
+      {/* Sekmeler — seçili olan yalnız kalın yazıdan okunuyordu (bkz. parity 258). */}
+      <div role="tablist" aria-label="Bölümler" className="mt-5 flex flex-wrap gap-2">
         {([
           ["docs", "Belgeler"],
           ["identity", "Kimlik"],
@@ -109,6 +110,9 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
         ] as const).map(([k, label]) => (
           <button
             key={k}
+            type="button"
+            role="tab"
+            aria-selected={tab === k}
             onClick={() => setTab(k)}
             className={`chip h-8 px-3 text-caption ${tab === k ? "font-bold" : ""}`}
             style={tab === k ? { background: "var(--surface-2)" } : undefined}

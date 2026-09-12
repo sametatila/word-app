@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import { EmptyCard } from "@/components/empty-card";
 import { UserPlusIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
@@ -43,6 +43,16 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
   const lang = useLang();
   const { course } = useShell();
   const [tab, setTab] = useState<HubTab>(initialTab);
+  /*
+   * SEKME ŞERİDİ, BAĞLANTI ŞERİDİ DEĞİL. Çipler `aria-current="page"`
+   * taşıyordu ve o, "bir bağlantı kümesindeki GEÇERLİ SAYFA" demek — burada
+   * ne bağlantı var ne sayfa değişiyor (adres yalnız `?tab=` ile
+   * tazeleniyor). `<nav>` da gereksiz bir gezinme dönüm noktası açıyordu.
+   * Doğrusu `tablist`/`tab`/`tabpanel`; Android'de aynısı (`FriendsScreen`).
+   */
+  const kok = useId();
+  const sekmeId = (k: string) => `${kok}-${k}`;
+  const panelId = `${kok}-panel`;
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -178,12 +188,16 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           etiketlerdi — seçili olan dolu zeminliyken bile nerede bittiği
           okunmuyordu. Rozet artık "Arkadaşlar"da: gelen istekler o sekmenin
           başında duruyor. */}
-      <nav className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label={t("socialw.tabs")}>
+      <div role="tablist" aria-label={t("socialw.tabs")} className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1">
         {TABS.map((tb) => (
           <button
             key={tb.key}
+            id={sekmeId(tb.key)}
+            role="tab"
+            type="button"
+            aria-selected={tab === tb.key}
+            aria-controls={panelId}
             className={`chip shrink-0 px-3.5 py-2 text-caption ${tab === tb.key ? "chip-active" : ""}`}
-            aria-current={tab === tb.key ? "page" : undefined}
             onClick={() => go(tb.key)}
           >
             {t(tb.label)}
@@ -194,9 +208,9 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             ) : null}
           </button>
         ))}
-      </nav>
+      </div>
 
-      <div className="mt-3">
+      <div id={panelId} role="tabpanel" aria-labelledby={sekmeId(tab)} tabIndex={0} className="mt-3">
         {/* Hata metninin yanında YERİNDE tekrar deneme: Android burada bir
             "tekrar dene" düğmesi gösteriyor (`FriendsScreen`) ve geçici bir
             ağ hatasında kullanıcının sekmeyi terk etmesi gerekmiyor. */}
