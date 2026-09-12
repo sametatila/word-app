@@ -16297,6 +16297,115 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+  /* ------------------------------------- 300. CIKISTA HESABA AIT NE SILINIYOR
+   *
+   * Ortak cihazda A cikip B girdiginde A'nin cihazdaki kopyalari silinmek
+   * zorunda: iki uygulamada da bir ONEK LISTESI var (`session-keeper`
+   * `ACCOUNT_SCOPED_PREFIXES`, `lib/accountScope` ayni ad).
+   *
+   * KAPI NEDEN GENEL. Bu liste elle tutuluyor ve yeni bir anahtar eklendiginde
+   * unutuluyor. Somut olay: deneme sinavinin yarim kosusu webde
+   * `lernomi:mock-run:<kagit>:<bolum>` anahtarina yaziliyor - IKI NOKTA ile,
+   * oysa listedeki kalilarin hepsi `lernomi-` onekliydi. Liste bu koşuyu
+   * kapsadigini YORUMUNDA soyluyordu ("yarim deneme kosusu da ayni kuralla
+   * siliniyor") ama `startsWith` ile hicbiri tutmuyordu: B kagidi actiginda
+   * A'nin cevaplarini ve kalan suresini devraliyor, sonra o sinavi KENDI
+   * hesabina gonderiyordu. Android'de baştan beri siliniyordu.
+   *
+   * Olcu: her platformun KENDI bildirdigi cihaz anahtarlari (depo modulunde
+   * `= "lernomi..."` ya da `=> \`lernomi...\`` biciminde tanimlanmis olanlar)
+   * ve bunlarin `startsWith` ile listeye uymayanlari. Uymayanlarin kumesi asagidaki
+   * BELGELI listeye birebir esit olmak zorunda - yani yeni bir anahtar ya
+   * kapsanir ya da buraya sebebiyle yazilir. Liste yalnizca KUCULEBILIR.
+   *
+   * Ek olarak sayilar da olculuyor: harvest bozulur ve kumeler bosalirsa
+   * "uymayan yok" bos bir dogru olurdu. */
+  {
+    const yuruTs = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) yuruTs(d + "/" + e.name, out);
+        else if (/\.(ts|tsx)$/.test(e.name)) out.push(d + "/" + e.name);
+      }
+      return out;
+    };
+    /* Yalniz BILDIRIM biçimleri: `const X = "lernomi..."` ve
+       `=> \`lernomi...\``. Satir ici `new CustomEvent("lernomi:stats")` gibi
+       OLAY adlari ve yorum metinleri boylece disarida kaliyor; sunucu
+       tarafindaki anahtarlar da (depo cagrisi olmayan dosya) elenmis oluyor. */
+    const envanter = (kok, depo) => {
+      const out = new Set();
+      for (const f of yuruTs(kok)) {
+        const src = read(f);
+        if (!depo.test(src)) continue;
+        const re = /=>?\s*["'`](lernomi[-:][^"'`$]*)/g;
+        let m;
+        while ((m = re.exec(src)) !== null) out.add(m[1]);
+      }
+      return [...out];
+    };
+    /* Onek listesinin govdesi - dosyadaki baska dizileri almamak icin. */
+    const onekler = (yol) => {
+      const src = sil(read(yol));
+      const i = src.indexOf("ACCOUNT_SCOPED_PREFIXES");
+      if (i < 0) return [];
+      const j = src.indexOf("];", i);
+      if (j < 0) return [];
+      return [...src.slice(i, j).matchAll(/"(lernomi[-:][^"]*)"/g)].map((m) => m[1]);
+    };
+
+    const webAnahtar = envanter("src", /localStorage|sessionStorage/);
+    const mobAnahtar = envanter("mobile/src", /AsyncStorage/);
+    const webOnek = onekler("src/components/session-keeper.tsx");
+    const mobOnek = onekler("mobile/src/lib/accountScope.ts");
+    const kapsamsiz = (anahtarlar, oneklerL) =>
+      anahtarlar.filter((k) => !oneklerL.some((p) => k.startsWith(p)));
+
+    /* BELGELI CIHAZ ANAHTARLARI - hesaba degil TELEFONA/TARAYICIYA ait
+       oldugu icin cikista silinmeyenler. Yeni bir ad buraya ancak sebebi
+       yazilarak girer; liste yalnizca kuculebilir. */
+    const WEB_CIHAZ = [
+      "lernomi-account", //            hesap degisimini ANLAYAN isaret; silinirse degisim gorulmez
+      "lernomi-app-open", //           gunun ilk acilisi (telemetri) - cihazin gunu
+      "lernomi-lesson-handsfree", //   eller serbest tercihi - cihazin kullanim bicimi
+      "lernomi-onboarding", //         misafir ilk acilis tercihleri (hesap yok)
+      "lernomi-sound", //              ses acik/kapali
+      "lernomi-theme", //              tema
+      "lernomi:analytics", //          analitik onayi
+      "lernomi:install-dismissed", //  kurulum uyarisi kapatildi
+      "lernomi:mic-consent:v1", //     mikrofon onayi
+      "lernomi:push-dismissed", //     bildirim karti ertelemesi (izin tarayiciya ait)
+    ];
+    const MOBIL_CIHAZ = [
+      "lernomi-app-open", //           gunun ilk acilisi (telemetri)
+      "lernomi-lang", //               arayuz dili
+      "lernomi-lesson-handsfree", //   eller serbest tercihi
+      "lernomi:analytics", //          analitik onayi
+      "lernomi:mic-consent:v1", //     mikrofon onayi
+      "lernomi:notif-ids-v1", //       bildirim kimlikleri (OS tarafi)
+      "lernomi:notif-primed", //       bildirim izni ertelemesi (bkz. 299)
+      "lernomi:notif:streak", //       seri koruma bildirimi anahtari
+      "lernomi:notif:weekly", //       haftalik sinav bildirimi anahtari
+      "lernomi:onboarded", //          ilk acilis goruldu
+      "lernomi:onboarding-prefs", //   misafir ilk acilis tercihleri
+      "lernomi:reminder", //           gunluk hatirlatma saati
+      "lernomi:sound", //              ses acik/kapali
+    ];
+
+    sameList(
+      "hesap kapsami olculebiliyor",
+      [
+        "web anahtar=" + (webAnahtar.length > 10 ? "var" : "YOK(" + webAnahtar.length + ")"),
+        "mobil anahtar=" + (mobAnahtar.length > 10 ? "var" : "YOK(" + mobAnahtar.length + ")"),
+        "web onek=" + (webOnek.length > 5 ? "var" : "YOK(" + webOnek.length + ")"),
+        "mobil onek=" + (mobOnek.length > 5 ? "var" : "YOK(" + mobOnek.length + ")"),
+      ],
+      ["web anahtar=var", "mobil anahtar=var", "web onek=var", "mobil onek=var"],
+      "bulunan",
+      "beklenen",
+    );
+    sameSet("web hesap disi anahtarlar belgeli", kapsamsiz(webAnahtar, webOnek), WEB_CIHAZ, "kapsanmayan", "belgeli");
+    sameSet("mobil hesap disi anahtarlar belgeli", kapsamsiz(mobAnahtar, mobOnek), MOBIL_CIHAZ, "kapsanmayan", "belgeli");
+  }
 }
 
 console.log(

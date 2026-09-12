@@ -82,6 +82,17 @@ const ACCOUNT_SCOPED_PREFIXES = [
   */
   "lernomi-answer-queue",
   "lernomi-lessons-pending",
+  /*
+    YARIM DENEME KOŞUSU — yukarıdaki yorum bunu "baştan beri aynı kuralla
+    siliniyor" diye sayıyordu ama LİSTEDE YOKTU: koşunun anahtarı
+    `lernomi:mock-run:<kâğıt>:<bölüm>` (`components/mock-exam-player`), yani
+    iki nokta üstü üste ile başlıyor ve `lernomi-` önekli hiçbir kalıba
+    uymuyor. Ortak bilgisayarda A çıkıp B girdiğinde B, kâğıdı açtığında
+    A'nın cevaplarını ve kalan süresini kaldığı yerden devralıyor, sonra da
+    o sınavı KENDİ hesabına gönderiyordu. Android'de silinenler arasında
+    baştan beri vardı (`lib/accountScope`).
+  */
+  "lernomi:mock-run:",
   // Hangi koç cümlesinin gösterildiği: öğrenene ait, cihaza değil.
   "lernomi-coach-seen",
 ];

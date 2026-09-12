@@ -15417,3 +15417,55 @@ mobilde soğuk açılış rotası bayrağı okuyor.
 Dört enjeksiyon doğrulandı: mobil pencereyi 14 yapmak, `markNotifPrimed`i eski
 kalıcı bayrağa döndürmek, açılış rotasından bayrağı çıkarmak, `<PushOptIn`
 çağrısını kaldırmak.
+
+## §11.425 — Ortak bilgisayarda B, A'nın yarım deneme sınavını devralıyordu
+
+Çıkışta cihazdan hesaba ait kopyaların silinmesi iki uygulamada da bir **önek
+listesi** ile yapılıyor (`components/session-keeper` `ACCOUNT_SCOPED_PREFIXES`,
+mobilde `lib/accountScope` aynı ad).
+
+Web listesindeki kalıpların hepsi `lernomi-` önekliydi. Deneme sınavının yarım
+koşusu ise `lernomi:mock-run:<kâğıt>:<bölüm>` anahtarına yazılıyor
+(`components/mock-exam-player` `runKey`) — **iki nokta üstü üste ile**. Yani
+`startsWith` ile hiçbir kalıp tutmuyordu: A çıkıp B girdiğinde B, kâğıdı
+açtığında A'nın cevaplarını ve kalan süresini kaldığı yerden devralıyor,
+bitirdiğinde de o sınavı **kendi** hesabına gönderiyordu.
+
+En kötüsü listenin **kendi yorumunun bunu kapsadığını söylemesiydi**: bekleyen
+kuyruklar eklenirken yazılan gerekçe "listedeki öteki yarım işler de (yarım tur
+`lernomi-game`, yarım deneme koşusu) baştan beri aynı kuralla siliniyor"
+diyordu. Yarım tur siliniyordu, yarım deneme koşusu silinmiyordu. Android'de
+ikisi de baştan beri siliniyor (`lib/accountScope` `"lernomi:mock-run:"`).
+
+Düzeltme tek satır: `"lernomi:mock-run:"` web listesine de girdi.
+
+### §300
+
+Kapı tek satırı değil **sınıfı** ölçüyor, çünkü liste elle tutuluyor ve asıl
+kusur "yeni anahtar eklenirken unutulması".
+
+Her platformun kendi **bildirdiği** cihaz anahtarları toplanıyor: depo çağrısı
+geçen bir modülde `= "lernomi…"` ya da `=> \`lernomi…\`` biçiminde tanımlanmış
+olanlar. Bu biçim kısıtı gerekli — satır içi `new CustomEvent("lernomi:stats")`
+gibi **olay adları**, yorum metinleri ve sunucu tarafındaki anahtarlar
+(`lernomi:ratelimit:`, `lernomi:mailcap:`) böylece kendiliğinden dışarıda
+kalıyor.
+
+Sonra `startsWith` ile listeye **uymayanlar** çıkarılıyor ve bu kümenin kapıdaki
+**belgeli cihaz anahtarları** listesine birebir eşit olması bekleniyor: yeni bir
+anahtar ya kapsanır ya da sebebiyle oraya yazılır. Eşitlik iki yönlü çalışıyor —
+kapsama girmeyen yeni bir ad "yalnız kapsanmayan" olarak, artık var olmayan bir
+belgeli ad "yalnız belgeli" olarak düşüyor; yani liste bayatlayamıyor.
+
+Üçüncü ölçü sayılar: anahtar envanteri ya da önek listesi okunamaz hâle gelirse
+"uymayan yok" boş bir doğru olurdu.
+
+Bugünkü durum: webde 10, mobilde 13 belgeli cihaz anahtarı (tema, dil, ses,
+analitik onayı, mikrofon onayı, bildirim ayarları/kimlikleri, ilk açılış
+işaretleri, kurulum/bildirim uyarısı ertelemeleri ve hesap değişimini **anlayan**
+`lernomi-account` işaretinin kendisi).
+
+Beş enjeksiyon doğrulandı: web listesinden `lernomi:mock-run:` çıkarmak, bir
+depo modülüne belgesiz yeni anahtar eklemek, önek listesinin adını değiştirmek
+(sayı ölçüsü düşüyor), belgeli listeden canlı bir adı düşürmek, belgeli listeye
+artık var olmayan bir ad eklemek.
