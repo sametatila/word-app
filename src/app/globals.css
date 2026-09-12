@@ -228,6 +228,17 @@
   --radius-card: 1.625rem;
   --radius-float: 2.125rem;
 
+  /*
+   * ── BASMA ÖLÇEĞİ ───────────────────────────────────────────────────────
+   *
+   * Mobilde dokunulabilir HER şey basınca aynı orana iniyor (`PressableScale`
+   * 0.96): kart, liste satırı, karo, çip, şık, düğme. Web'de DÖRT ayrı değer
+   * vardı — `.btn` 0.97, `.pressable` 0.96, `.option` 0.985, `.chip` 0.95 —
+   * yani aynı jest ekranın dört yerinde dört farklı güçte cevap veriyordu ve
+   * hiçbiri yazılı değildi. Tek sayı, tek yer; Android'inki.
+   */
+  --press-scale: 0.96;
+
 }
 
 /*
@@ -582,7 +593,7 @@
     transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
   }
   .btn:active {
-    transform: scale(0.97);
+    transform: scale(var(--press-scale));
   }
   /*
    * Basma geri bildirimi — mobil `PressableScale`ın karşılığı.
@@ -604,7 +615,7 @@
     touch-action: manipulation;
   }
   .pressable:active {
-    transform: scale(0.96);
+    transform: scale(var(--press-scale));
   }
   /*
    * Birincil buton: DÜZ marka turuncusu + beyaz yazı — mobil uygulamayla
@@ -697,7 +708,7 @@
   }
   /* Dokunulduğu an tepki ver: kullanıcı seçiminin algılandığını hemen görsün. */
   .option:active:not(:disabled) {
-    transform: scale(0.985);
+    transform: scale(var(--press-scale));
     border-color: var(--color-brand-500);
     background: color-mix(in srgb, var(--color-brand) 8%, var(--surface));
   }
@@ -734,7 +745,7 @@
     }
   }
   .chip:active {
-    transform: scale(0.95);
+    transform: scale(var(--press-scale));
   }
   /* Seçili çip birincil butonun dilini konuşuyor: düz turuncu zemin, beyaz
      yazı — mobildeki filtre çipiyle aynı (`M/src/screens/WordsScreen.tsx`). */
@@ -884,8 +895,20 @@
   .animate-glow {
     animation: none;
   }
-  /* Basma ölçeği de hareket: tercih verilmişse öğe yerinde kalıyor. */
-  .pressable:active {
+  /*
+   * Basma ölçeği de hareket: tercih verilmişse öğe yerinde kalıyor.
+   *
+   * DÖRDÜ DE BURADA. Önce yalnız `.pressable` yazılıydı; düğme, çip ve şık
+   * basılınca hâlâ küçülüyordu. Aşağıdaki `transition-duration: 0.01ms`
+   * ölçeği KALDIRMIYOR, ANINDA yapıyor - yani öge basılı tutulduğu sürece
+   * küçülmüş duruyor, üstelik sıçrayarak. Android'de `PressableScale`
+   * tercihi okuyup yayı hiç başlatmıyor ve bu dokunulabilir HER şey için
+   * geçerli.
+   */
+  .pressable:active,
+  .btn:active,
+  .chip:active,
+  .option:active:not(:disabled) {
     transform: none;
   }
   *,

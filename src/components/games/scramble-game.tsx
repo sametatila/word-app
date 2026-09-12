@@ -224,7 +224,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
                 type="button"
                 onClick={() => addLetter(tile)}
                 disabled={used || status !== "playing"}
-                whileTap={{ scale: 0.92 }}
+                whileTap={{ scale: 0.96 }}
                 animate={{ opacity: used ? 0.25 : 1 }}
                 transition={{ duration: 0.15 }}
                 className={`option flex items-center justify-center font-bold disabled:cursor-default ${tileSize}`}

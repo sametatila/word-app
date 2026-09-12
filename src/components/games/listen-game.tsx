@@ -111,7 +111,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
               setReplays((n) => n + 1);
               speakGerman(spoken);
             }}
-            whileTap={{ scale: 0.93 }}
+            whileTap={{ scale: 0.96 }}
             aria-label={tx("mockexam.listen_again")}
             className="brand-gradient flex h-20 w-20 items-center justify-center rounded-full shadow-lg"
           >

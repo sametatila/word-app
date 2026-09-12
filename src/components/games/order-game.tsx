@@ -226,7 +226,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
                 type="button"
                 onClick={() => add(token)}
                 disabled={used || status !== "playing"}
-                whileTap={{ scale: 0.94 }}
+                whileTap={{ scale: 0.96 }}
                 animate={{ opacity: used ? 0.25 : 1 }}
                 transition={{ duration: 0.15 }}
                 className="option px-3 py-2 text-strong disabled:cursor-default"

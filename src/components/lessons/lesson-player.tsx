@@ -1266,7 +1266,7 @@ export function LessonPlayer({
                 <div className="flex flex-col items-center gap-2">
                   <motion.button
                     type="button"
-                    whileTap={{ scale: 0.94 }}
+                    whileTap={{ scale: 0.96 }}
                     onClick={() => {
                       if (listening) {
                         stopListening();
@@ -1504,7 +1504,7 @@ export function LessonPlayer({
                 <div className="flex flex-col items-center gap-2">
                   <motion.button
                     type="button"
-                    whileTap={{ scale: 0.94 }}
+                    whileTap={{ scale: 0.96 }}
                     onClick={() => {
                       if (listening) {
                         stopListening();
@@ -2014,7 +2014,7 @@ function LectureBubble({
       ) : ttsAvailable ? (
         <motion.button
           type="button"
-          whileTap={{ scale: 0.9 }}
+          whileTap={{ scale: 0.96 }}
           onClick={() => speakSegments(item.segments)}
           aria-label={t("lessonp.listen_again")}
           /* 28px gorunen daire, `hit-8` ile 44 hedef: mobil karsiligi da
@@ -2072,7 +2072,7 @@ function Bubble({
           ) : (
             <motion.button
               type="button"
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.96 }}
               onClick={() => speakGerman(body)}
               aria-label={t("lessonp.listen_again")}
               className="btn btn-ghost hit-8 ml-1 h-7 w-7 shrink-0 align-middle"

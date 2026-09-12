@@ -1006,7 +1006,7 @@ export function SpeakButton({
     <motion.button
       type="button"
       onClick={speak}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.96 }}
       aria-label={t("common.listen_pronunciation")}
       title={t("common.listen_pronunciation")}
       className={`btn btn-ghost hit-8 shrink-0 ${dim} ${className}`}

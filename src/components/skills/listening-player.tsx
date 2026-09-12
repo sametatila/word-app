@@ -201,7 +201,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
         <div className="flex items-center gap-4">
           <motion.button
             type="button"
-            whileTap={{ scale: 0.92 }}
+            whileTap={{ scale: 0.96 }}
             onClick={() => (playing ? stop() : play())}
             disabled={available === false && !hasAudio}
             aria-label={t(playing ? "exam.stop" : "item.listen")}
