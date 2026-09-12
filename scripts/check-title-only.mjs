@@ -68,6 +68,18 @@ function acilisSonu(blok) {
   return -1;
 }
 
+/**
+ * İKİNCİ ÖLÇÜ — `alt`SIZ RESİM.
+ *
+ * `alt` YOKLUĞU ile `alt=""` aynı şey değil: boş `alt` "bu resim
+ * dekoratiftir" diye bir BEYAN, hiç olmaması ise ekran okuyucunun dosya
+ * adını okumasına yol açıyor. Ölçüm (2026-09-12) dokuz resmin dokuzunda da
+ * `alt` buldu ve hepsi haklı olarak boş: maskot, arma, logo, balon çekmesi —
+ * yanlarında kişinin adı ya da uygulamanın adı yazılı. Kapı o sıfırı tutuyor.
+ */
+const RESIM = /^(?:img|Image|motion\.img)$/;
+const altsiz = [];
+
 const sayim = new Map();
 for (const abs of walk(path.join(ROOT, "src"))) {
   const rel = path.relative(ROOT, abs);
@@ -77,6 +89,9 @@ for (const abs of walk(path.join(ROOT, "src"))) {
     const son = acilisSonu(src.slice(j));
     if (son < 0) continue;
     const acilis = src.slice(j, j + son + 1);
+    if (RESIM.test(m[1]) && !/\balt=/.test(acilis)) {
+      altsiz.push(`${rel}:${src.slice(0, j).split("\n").length}`);
+    }
     if (!/\btitle=/.test(acilis)) continue;
     /* `aria-label` varsa metin erişilebilir addan da okunuyor. */
     if (/\baria-label=/.test(acilis)) continue;
@@ -93,6 +108,12 @@ for (const [rel, n] of [...sayim.entries()].sort()) {
 /* Taban azaldıysa haber ver: sayı güncellenmeli, yoksa borç geri açılabilir. */
 const azalan = Object.entries(TABAN).filter(([rel, n]) => (sayim.get(rel) ?? 0) < n);
 
+if (altsiz.length) {
+  console.error("check:title — `alt` ozniteligi olmayan resim:\n");
+  for (const a of altsiz) console.error(`  ${a}`);
+  console.error('\nDekoratifse `alt=""` yaz: YOKLUK degil BEYAN gerekiyor.');
+  process.exit(1);
+}
 if (yeni.length || artan.length) {
   console.error("check:title — yalnız ipucu balonunda duran YENİ metin:\n");
   for (const y of yeni) console.error(`  ${y.rel}  ${y.n} yeni`);
@@ -107,4 +128,7 @@ if (azalan.length) {
   for (const [rel, n] of azalan) console.log(`  ${rel}: ${n} → ${sayim.get(rel) ?? 0}`);
   process.exit(1);
 }
-console.log(`check:title — yalnız ipucu balonunda duran metin artmadı: tamam (${toplam} kayıtlı borç)`);
+console.log(
+  `check:title — yalnız ipucu balonunda duran metin artmadı, her resmin \`alt\`ı var: ` +
+    `tamam (${toplam} kayıtlı borç)`,
+);
