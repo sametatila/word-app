@@ -16000,3 +16000,35 @@ tuzağa düştüm).
 
 Dört enjeksiyon doğrulandı: her iki listeden bir ad düşürmek, yalnız birine yeni
 ad eklemek, listenin adını değiştirip okunamaz yapmak.
+
+## §11.439 — Şablonla kurulan sözlük anahtarlarının hiçbir ağı yoktu
+
+Çoğu `t("…")` çağrısı anahtarı **dizgi** olarak yazıyor ve eksik bir anahtar er
+ya da geç fark ediliyor. Ama bir kaç yerde anahtar **şablonla** kuruluyor:
+
+```
+t(`social.reaction_${kind}`)   t(`league.tier_${…}`)   t(`band.${p.band}`)
+t(`mockexam.fail_${offline}`)  t(`mockexam.goal_${g.goal}`)
+```
+
+Böyle bir anahtar sözlükte yoksa **hiçbir denetim kırmızı vermiyordu**:
+`check:i18n` sözlükleri **birbiriyle** karşılaştırıyor (üç dilde aynı anahtar var
+mı), kullanımla karşılaştırmıyor; tsc ise şablonun içini görmüyor. Sonuç ekranda
+ham anahtar — kullanıcı "band.solid" yazan bir etiket görüyor.
+
+Kapı her aileyi **kaynak kümesinden** genişletiyor (kümeler kodda zaten var:
+`REACTION_KINDS`, `LEAGUE_TIERS`, `Band`, `FailReason`, `MockGoal`) ve her
+genişlemeyi **iki** sözlükte de arıyor. Bugün 27 genişleme, sıfır eksik.
+
+Üç yan ölçü: kaynak kümenin **okunabildiği** (adı değişirse boş kümeyle "eksik
+yok" boş bir doğru olurdu), çağrı yerinin hâlâ **şablon** kullandığı (şablon
+kalkarsa aile listeden düşmeli), ve toplam genişleme sayısı.
+
+`genre.*` ailesi (26 anahtar, iki platformda da şablonla kullanılıyor) bilerek
+**dışarıda**: kaynak kümesi beceri egzersizi verisinden geliyor ve o dosyalar
+(`lib/skills/types`, `data/skills`) paralel oturumun elinde. Eklenmesi o iş
+bitince tek satır.
+
+Beş enjeksiyon doğrulandı: tabandan bir anahtar düşürmek, mobil sözlükten bir
+anahtar düşürmek, kaynak kümeye sözlüksüz yeni bir değer eklemek, kaynak kümenin
+adını değiştirmek, çağrı yerindeki şablonu sabit anahtara çevirmek.

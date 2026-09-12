@@ -16910,6 +16910,77 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
     sameSet("derin baglanti ve guvenilen koken ayni alan adlari", mobilAdlar, sunucuAdlar, "mobil", "sunucu");
   }
+
+  /* ------------------------------- 305. SABLONLA KURULAN SOZLUK ANAHTARLARI
+   *
+   * Cogu `t("...")` cagrisi anahtari DIZGI olarak yaziyor ve eksik bir anahtar
+   * er ya da gec fark ediliyor. Ama bir kac yerde anahtar SABLONLA kuruluyor:
+   *   t(`social.reaction_${kind}`)  t(`league.tier_${...}`)  t(`band.${band}`)
+   *   t(`mockexam.fail_${...}`)     t(`mockexam.goal_${g.goal}`)
+   * Boyle bir anahtar sozlukte YOKSA hicbir denetim kirmizi vermiyor:
+   * `check:i18n` sozlukleri BIRBIRIYLE karsilastiriyor (uc dilde ayni anahtar
+   * var mi), KULLANIMLA karsilastirmiyor; tsc ise sablonun icini gormuyor.
+   * Sonuc ekranda ham anahtar: kullanici "band.solid" yazan bir etiket
+   * goruyor.
+   *
+   * Kapi her aileyi KAYNAK KUMESINDEN genisletiyor - kume kodda zaten var
+   * (`REACTION_KINDS`, `LEAGUE_TIERS`, `Band`, `FailReason`, `MockGoal`) - ve
+   * her genislemeyi IKI sozlukte de ariyor. Kaynak kume okunamazsa (ad
+   * degisirse) o da kirmizi: bos kumeyle "eksik yok" demek bos bir dogru.
+   *
+   * Cagri yeri de olculuyor: sablon kalkarsa aile listeden dusmeli, yoksa
+   * liste bayatlar. */
+  {
+    const birlik = (yol, ad) => {
+      const src = sil(read(yol));
+      const i = src.indexOf("type " + ad);
+      if (i < 0) return [];
+      const son = src.indexOf(";", i);
+      if (son < 0) return [];
+      return [...src.slice(i, son).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]);
+    };
+    const dizi = (yol, ad) => {
+      const src = sil(read(yol));
+      const i = src.indexOf("const " + ad + " =");
+      if (i < 0) return [];
+      const son = src.indexOf("]", i);
+      if (son < 0) return [];
+      return [...src.slice(i, son).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]);
+    };
+    const AILE = [
+      { onek: "social.reaction_", degerler: dizi("src/lib/social/types.ts", "REACTION_KINDS"), cagri: ["mobile/src/api/social.ts", "social.reaction_${kind}"] },
+      { onek: "league.tier_", degerler: dizi("src/lib/social/types.ts", "LEAGUE_TIERS"), cagri: ["mobile/src/api/social.ts", "league.tier_${LEAGUE_TIERS["] },
+      { onek: "band.", degerler: birlik("src/lib/proficiency.ts", "Band"), cagri: ["mobile/src/ui/GrowthPanel.tsx", "band.${p.band}"] },
+      { onek: "mockexam.fail_", degerler: birlik("mobile/src/game/mockExam.ts", "FailReason"), cagri: ["mobile/src/screens/MockExamScreen.tsx", "mockexam.fail_${offline}"] },
+      { onek: "mockexam.goal_", degerler: birlik("src/lib/mock-exams/types.ts", "MockGoal"), cagri: ["mobile/src/screens/MockExamScreen.tsx", "mockexam.goal_${"] },
+    ];
+    const tabanSozluk = read("src/i18n/base/tr.ts");
+    const mobilSozluk = read("mobile/src/i18n/tr.ts");
+    const eksik = [];
+    const okunamayan = [];
+    const bayat = [];
+    for (const a of AILE) {
+      if (!a.degerler.length) { okunamayan.push(a.onek); continue; }
+      if (!read(a.cagri[0]).includes(a.cagri[1])) bayat.push(a.onek);
+      for (const v of a.degerler) {
+        const k = '"' + a.onek + v + '"';
+        if (!tabanSozluk.includes(k)) eksik.push("taban:" + a.onek + v);
+        if (!mobilSozluk.includes(k)) eksik.push("mobil:" + a.onek + v);
+      }
+    }
+    sameList(
+      "sablonla kurulan anahtarlar sozlukte",
+      [
+        "eksik=" + (eksik.join(", ") || "yok"),
+        "kaynak okunamayan=" + (okunamayan.join(", ") || "yok"),
+        "bayat cagri=" + (bayat.join(", ") || "yok"),
+        "genisleme=" + (AILE.reduce((n, a) => n + a.degerler.length, 0) >= 20 ? "20+" : AILE.reduce((n, a) => n + a.degerler.length, 0)),
+      ],
+      ["eksik=yok", "kaynak okunamayan=yok", "bayat cagri=yok", "genisleme=20+"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
