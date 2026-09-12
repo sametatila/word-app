@@ -15,7 +15,7 @@ import { aiUsage } from "@/lib/db/schema";
  * tutulan işi bekletmemeli.
  */
 
-export type AiKind = "roleplay" | "coach" | "stt" | "assess";
+export type AiKind = "roleplay" | "coach" | "stt" | "assess" | "tts";
 
 export type AiCallRecord = {
   kind: AiKind;
@@ -34,6 +34,8 @@ export type AiCallRecord = {
   heard?: string;
   /** Tanıyıcının kendi güveni (0–1), veren sağlayıcılarda. */
   confidence?: number;
+  /** Seslendirmede sentezlenen karakter sayısı — Azure orada ücretlendiriyor. */
+  chars?: number;
 };
 
 /** Hata metni kısaltılıyor: ayıklamaya yeter, tabloyu şişirmez. */
@@ -53,6 +55,7 @@ export function recordAiUsage(userId: string | null, call: AiCallRecord): void {
         error: call.error ? call.error.slice(0, MAX_ERROR) : null,
         ms: Math.max(0, Math.round(call.ms ?? 0)),
         promptTokens: call.promptTokens ?? null,
+        chars: call.chars ?? null,
         completionTokens: call.completionTokens ?? null,
         audioSeconds: call.audioSeconds ?? null,
         limits: call.limits && Object.keys(call.limits).length ? call.limits : null,

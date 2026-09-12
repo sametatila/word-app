@@ -97,7 +97,7 @@ export async function GET(req: Request) {
   void bumpUsage(userId, "tts_calls", "day");
 
   try {
-    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow);
+    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow, userId);
     return new Response(new Uint8Array(audio), {
       headers: {
         "content-type": "audio/mpeg",

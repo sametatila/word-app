@@ -640,7 +640,7 @@ export const aiUsage = pgTable(
     /** Kim tetikledi — arka plan işlerinde boş. */
     userId: text("user_id"),
     day: date("day").notNull(),
-    /** roleplay · coach · stt */
+    /** roleplay · coach · stt · assess · tts */
     kind: text("kind").notNull(),
     provider: text("provider").notNull(),
     model: text("model").notNull(),
@@ -655,6 +655,15 @@ export const aiUsage = pgTable(
     completionTokens: integer("completion_tokens"),
     /** Yazıya çevirmede klibin uzunluğu. */
     audioSeconds: integer("audio_seconds"),
+    /**
+     * Seslendirmede sentezlenen karakter sayısı.
+     *
+     * Ayrı bir kolon, çünkü birim ayrı: metin modelleri JETONLA, yazıya
+     * çevirme SANİYEYLE, seslendirme KARAKTERLE ücretlendiriliyor (Azure'un
+     * ücretsiz katmanı ayda 500.000 karakter). Jeton alanına yazmak üç
+     * birimi tek sütunda karıştırırdı.
+     */
+    chars: integer("chars"),
     /** Sağlayıcının bildirdiği kalan hak (ham başlıklar). */
     limits: jsonb("limits").$type<Record<string, string>>(),
     /**
