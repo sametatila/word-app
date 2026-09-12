@@ -18,7 +18,9 @@ import { localDay } from "@/lib/day";
 import { formatPercent } from "@/lib/i18n/dict";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
-type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "error";
+/* `auth` AYRI BIR HAL (bkz. `daily-player`): 401 "tekrar dene" ile
+   cozulmez. Android `WeeklyScreen` da bunu ayiriyor. */
+type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "error" | "auth";
 
 /**
  * Haftalık kullanım sınavı oynatıcısı (WP-42): tek hak, ipuçsuz, yalnız
@@ -47,6 +49,7 @@ export function WeeklyPlayer() {
     (async () => {
       try {
         const res = await fetch(`/api/weekly?day=${localDay()}`, { cache: "no-store" });
+        if (res.status === 401) { if (alive) setPhase("auth"); return; }
         if (!res.ok) throw new Error(String(res.status));
         const p = (await res.json()) as Payload;
         if (!alive) return;
@@ -130,6 +133,21 @@ export function WeeklyPlayer() {
       </section>
     );
   }
+  if (phase === "auth") {
+    return (
+      <section role="alert" className="card mx-auto w-full max-w-md p-5 text-center">
+        <p className="text-h3">{t("weekly.sign_in_for_weekly_quiz")}</p>
+        <p className="muted mt-2 text-body leading-relaxed">{t("weekly.test_what_you_ve_learned_once")}</p>
+        <Link href="/login" prefetch={false} className="btn btn-primary mt-4 block w-full px-4 py-3 text-body">
+          {t("weekly.sign_in_sign_up")}
+        </Link>
+        <Link href="/learn" prefetch={false} className="btn btn-ghost mt-2 block px-4 py-2 text-center text-body">
+          {t("common.close")}
+        </Link>
+      </section>
+    );
+  }
+
   if (phase === "error") {
     return (
       <section role="alert" className="card mx-auto w-full max-w-md p-5">

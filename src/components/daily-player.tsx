@@ -17,6 +17,7 @@ import { Mascot } from "@/components/mascot";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
+import Link from "next/link";
 
 /**
  * Günün turu.
@@ -46,7 +47,12 @@ type Payload = {
   board: Board;
 };
 
-type Status = "loading" | "ready" | "playing" | "submitting" | "done" | "error" | "empty";
+/* `auth` AYRI BIR HAL: oturum acik sayfada duserse (belirtec suresi, sunucu
+   yeniden baslamasi) istek 401 donuyor ve "yuklenemedi, tekrar dene" demek
+   YANLIS SEBEP - tekrar denemek hicbir zaman ise yaramaz. Android bunu
+   bastan ayiriyor (`DailyScreen`: `e.status === 401 ? "auth" : "error"`) ve
+   girise goturuyor; web ikisini tek dalda topluyordu. */
+type Status = "loading" | "ready" | "playing" | "submitting" | "done" | "error" | "empty" | "auth";
 
 export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const t = useT();
@@ -71,7 +77,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     (async () => {
       try {
         const res = await fetch(`/api/daily?day=${localDay()}`, { cache: "no-store" });
-        if (!res.ok) return setStatus("error");
+        if (!res.ok) return setStatus(res.status === 401 ? "auth" : "error");
         const payload = (await res.json()) as Payload;
         setData(payload);
         setBoard(payload.board);
@@ -154,6 +160,23 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Card>
         <p role="status" aria-busy="true" className="muted py-8 text-center text-body">{t("daily.preparing")}</p>
+      </Card>
+    );
+  }
+
+  if (status === "auth") {
+    return (
+      <Card>
+        <div role="alert" className="p-6 text-center">
+          <p className="text-h3">{t("daily.sign_in_for_daily_round")}</p>
+          <p className="muted mt-2 text-body leading-relaxed">{t("daily.play_same_round_as_everyone_and")}</p>
+          <Link href="/login" prefetch={false} className="btn btn-primary mt-5 w-full px-5 py-3.5">
+            {t("daily.sign_in_sign_up")}
+          </Link>
+          <button type="button" onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
+            {t("common.close")}
+          </button>
+        </div>
       </Card>
     );
   }
