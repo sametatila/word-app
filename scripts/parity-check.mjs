@@ -7469,6 +7469,112 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 267. DOKUNMATIKTE KLAVYE KENDILIGINDEN ACILMIYOR ---------------
+   *
+   * Iki olgu, ikisi de 266'nin devami.
+   *
+   * BIR: CIFT DOKUNUS YAKINLASTIRMASI. `touch-action: manipulation` yalniz
+   * `.pressable`da vardi. Yakinlastirma kilidi kalkinca (266) cift dokunusla
+   * buyutme iOS'ta geri geldi ve bir tur sirasinda iki sikka arka arkaya
+   * hizli dokunan kullanicida ikinci dokunus "cift dokunus" sayilip sayfayi
+   * yakinlastiriyor. Android uygulamasinda boyle bir jest yok. Kural artik
+   * denetimlerin ustunde; SAYFANIN kendisinde parmakla buyutme serbest, yani
+   * 266'nin cozdugu erisilebilirlik sorunu geri gelmiyor.
+   *
+   * IKI: KENDILIGINDEN ODAK. Bes oyun alani tur acilir acilmaz kendine odak
+   * aliyordu (`autoFocus` ve tur basi `focus()`), Android'in karsiliklarinda
+   * boyle bir sey YOK. Sebebi telefonda gorunuyor: odak klavyeyi aciyor,
+   * klavye de ekranin yarisini - yani sorulan kelimeyi, cumleyi ya da ipucunu
+   * - ortuyor. Kullanici once klavyeyi kapatip soruyu okumak zorunda
+   * kaliyordu, ustelik HER turda.
+   *
+   * Masaustunde tam tersi dogru, o yuzden ayrim ISARETCIDE: `(pointer: fine)`
+   * fare ve kalem demek. `focusOnFine` tek yer.
+   *
+   * KULLANICININ KENDI DOKUNUSUYLA gelen odak bunun disinda: ozel karakter
+   * dugmesine basinca alanin odagi geri aliniyor ve orada klavye zaten acik. */
+  {
+    /** Tur sifirlayan `useEffect`in govdesi (parantez dengeli). */
+    const govdeAl267 = (src) => {
+      const isaret = src.indexOf("started.current = Date.now();");
+      if (isaret < 0) return null;
+      const bas = src.lastIndexOf("useEffect(() => {", isaret);
+      if (bas < 0) return null;
+      let d = 0;
+      for (let j = src.indexOf("{", bas); j < src.length; j++) {
+        if (src[j] === "{") d++;
+        else if (src[j] === "}") { d--; if (d === 0) return src.slice(bas, j + 1); }
+      }
+      return null;
+    };
+    const css = sil(read("src/app/globals.css"));
+    const SECICI = ["button", "a", ".btn", ".chip", ".option", ".pressable"];
+    const blok = css.match(/(?:^|\n)\s*(?:[\w.\-,\s]*?)\{[^}]*touch-action: manipulation;[^}]*\}/g) ?? [];
+    const kapsanan = SECICI.filter((x) => blok.some((b) => new RegExp("(^|[\\s,])" + x.replace(".", "\\.") + "\\s*[,{]").test(b)));
+    sameList(
+      "cift dokunus yakinlastirmasi denetimlerde kapali",
+      SECICI.map((x) => x + "=" + (kapsanan.includes(x) ? "kapali" : "ACIK")),
+      SECICI.map((x) => x + "=kapali"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: oyun metin alanlarinda kosulsuz odak kalmadi. */
+    const OYUN = [
+      "src/components/games/cloze-game.tsx",
+      "src/components/games/typing-game.tsx",
+      "src/components/games/translate-game.tsx",
+      "src/components/games/free-sentence-game.tsx",
+    ];
+    const kosulsuz = [];
+    for (const y of OYUN) {
+      const src = sil(read(y));
+      /* `autoFocus` METIN ALANINDA olmamali; `round-sheet`teki dugme
+         baskadir ve listede yok. */
+      if (/\bautoFocus\b/.test(src)) kosulsuz.push(y.split("/").pop() + ": autoFocus");
+      /*
+       * TUR BASI odak `focusOnFine`dan gecmeli - ama yalniz TUR BASI.
+       *
+       * Ilk yazimda olcu dosyada gecen her `inputRef.current?.focus()`i
+       * sayiyordu ve `cloze-game`in ozel karakter dugmesini yakaladi: orada
+       * odagi geri veren sey KULLANICININ KENDI DOKUNUSU ve klavye zaten
+       * acik. Dosya degil YUZEY olculmeli. Tur sifirlayan etki
+       * `started.current = Date.now();` yazan etkidir; yalniz onun govdesine
+       * bakiliyor.
+       */
+      const etki = govdeAl267(src);
+      if (etki && /inputRef\.current\?\.focus\(\)/.test(etki)) kosulsuz.push(y.split("/").pop() + ": tur basi focus()");
+      if (!/focusOnFine\(inputRef\.current\)/.test(src)) kosulsuz.push(y.split("/").pop() + ": ince isaretci odagi yok");
+    }
+    sameList(
+      "oyun alanlarinda kosulsuz odak",
+      kosulsuz.length ? kosulsuz : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Yardimci gercekten isaretciye bakiyor mu. */
+    const ff = sil(read("src/lib/focus-fine.ts"));
+    sameList(
+      "odak yardimcisi isaretciye bakiyor",
+      ["focusOnFine=" + (/matchMedia\?\.\("\(pointer: fine\)"\)/.test(ff) ? "bakiyor" : "BAKMIYOR")],
+      ["focusOnFine=bakiyor"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Android tarafi: oyun alanlarinda kendiliginden odak YOK. */
+    const mob = sil(read("mobile/src/game/rounds.tsx")) + sil(read("mobile/src/game/skillQuiz.tsx"));
+    sameList(
+      "mobil oyun alanlarinda odak",
+      ["mobil=" + (/autoFocus/.test(mob) ? "ACILIYOR" : "acilmiyor")],
+      ["mobil=acilmiyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 266. TELEFONDA YAKINLASTIRMA ----------------------------------
    *
    * Iki kusur, ayni satirdan cikiyor.
