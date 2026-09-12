@@ -17488,3 +17488,35 @@ ada döndürmek ve akış karosunu eski `${tint} 13%`ine çevirmek.
 Bir eski kapı da güncellendi: "akış olay karosu" satırları `tint`ten sonra
 kapanış süslü parantezi bekliyordu; satırlar artık `fill` kardeşini de
 taşıyor.
+
+## §11.484 — Sözleşmenin ilk halkası: sunucu tipi ↔ mobil tip, ve iki ölçülmeyen uç
+
+Bu tur **ölçüm turuydu**: iki istemcinin aynı uçlardan okuduğu alan kümelerini
+karşılaştırdım. On üç çiftin hepsi eşit çıktı — düzeltilecek bir şey yok. Ama
+iki boşluk buldum ve ikisi de kapatıldı.
+
+**Boşluk 1 — zincirin ilk halkası ölçülmüyordu.** §30 web'in *istemci
+görünümlerini* (`lib/social/client`) mobil tiplerle karşılaştırıyor: on beş
+görünüm, iki yönde. Ama o görünümler web'in **kendi elle yazılmış aynası**;
+sunucu tarafındaki tip (`lib/social/profile`, `leagues`, `notify`) değişirse
+web'de **tip hatası çıkmaz**, çünkü arada JSON var. Yani sunucu bir alanı
+yeniden adlandırırsa iki istemci de sessizce `undefined` okur. Üç sunucu tipi
+artık doğrudan mobil tiple karşılaştırılıyor (`SocialMe`, `LeagueView`,
+`NotificationView`) — üçü birden eşitse zincir sağlam.
+
+**Boşluk 2 — iki uç hiç ölçülmüyordu:** `/api/premium/status` (on alan) ve
+`/api/notifications/prefs` (dört alan). İkisinin gövdesi satır içi yazılı, o
+yüzden tip değil **gövde** okunuyor — `/api/me` istisnasının aynısı.
+
+Bu sınıfın üç örneği zaten kayıtlı: `xpGained`in Android'de hiç
+gösterilmemesi, `coverage`ın `SessionMeta`dan düşmesi, `newPerDay`in ayarlar
+ekranına hiç gelmemesi. Hiçbiri tip hatası olarak çıkmadı; hepsi sessiz
+`undefined`dı.
+
+**Kapının kendi okuması da düzeldi:** `typeFields` yalnız `export type`
+arıyordu ve mobil tarafta dosyaya özel olan `type ServerPrefs = …` "bulunamadı"
+diye düşüyordu. Kapının görmediği şey kusur değil, kapının kendi körlüğüydü.
+
+Yeni eklenen ölçüler kasten §30'u tekrar etmiyor: ilk yazılışımda on iki
+istemci görünümünü de eklemiştim, sonra §30'un onları zaten kapsadığını görüp
+çıkardım — aynı şeyi iki kez ölçen kapı, yeşilken de bir şey söylemiyor.

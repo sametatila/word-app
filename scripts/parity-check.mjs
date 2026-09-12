@@ -1288,7 +1288,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      ic ice her alan "mobilde fazla" cikar. */
   const typeFields = (p, name) => {
     const x = strip(read(p));
-    const i = x.indexOf("export type " + name + " =");
+    /* `export` ZORUNLU DEGIL: mobil tarafta bazi yanit tipleri dosyaya ozel
+       (`type ServerPrefs = ...`). Ilk yazilisinda yalniz `export type`
+       araniyordu ve o tip "bulunamadi" diye dusuyordu - kapinin gormedigi
+       sey kusur degil, kapinin kendi okumasiydi. */
+    let i = x.indexOf("export type " + name + " =");
+    if (i < 0) i = x.search(new RegExp("(?:^|\\n)type " + name + " ="));
     if (i < 0) return ["bulunamadi: " + name];
     let k = x.indexOf("{", i);
     let d = 0;
@@ -1325,6 +1330,40 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ...typeFields("src/lib/achievements.ts", "AchievementDef"),
   ])].filter((a) => !["metric", "titleKey", "hintKey"].includes(a)).sort();
   ciftYon("rozet satiri alanlari", rowWeb, typeFields("mobile/src/data/achievements.ts", "Achievement"));
+
+  /*
+   * SUNUCU TIPI <-> ISTEMCI GORUNUMU <-> MOBIL TIP.
+   *
+   * §30 webin ISTEMCI GORUNUMLERINI (`lib/social/client`) mobil tiplerle
+   * karsilastiriyor - on bes gorunum, iki yonde. Ama o gorunumler webin
+   * KENDI ELLE YAZILMIS aynasi: sunucu tarafindaki tip (`lib/social/profile`,
+   * `leagues`, `notify`) degisirse web tarafinda TIP HATASI CIKMAZ, cunku
+   * arada JSON var. Yani zincirin ilk halkasi olculmuyordu: sunucu bir alani
+   * yeniden adlandirirsa iki istemci de sessizce `undefined` okur.
+   *
+   * Burada o halka olculuyor - sunucu tipi dogrudan MOBIL tiple
+   * karsilastiriliyor (ucu birden esitse zincir saglam). Uc tip yeter:
+   * sosyal katmanin uc govdesi bunlar.
+   */
+  const SUNUCU_TIP = [
+    ["sosyal sunucu SocialMe", "src/lib/social/profile.ts", "SocialMe", "mobile/src/api/social.ts", "SocialMe"],
+    ["sosyal sunucu LeagueView", "src/lib/social/leagues.ts", "LeagueView", "mobile/src/api/social.ts", "LeagueView"],
+    ["sosyal sunucu NotificationView", "src/lib/social/notify.ts", "NotificationView", "mobile/src/api/social.ts", "NotificationView"],
+  ];
+  for (const [ad, wy, wt, my, mt] of SUNUCU_TIP) ciftYon(ad + " alanlari", typeFields(wy, wt), typeFields(my, mt));
+
+  /* Iki uc daha, hicbir kapinin bakmadigi: govdeleri satir ici yazili, o
+     yuzden TIP degil GOVDE okunuyor (bkz. `/api/me` istisnasi). */
+  ciftYon(
+    "/api/premium/status alanlari",
+    govde("src/app/api/premium/status/route.ts", "premium: ent.premium"),
+    typeFields("mobile/src/lib/premium.ts", "PremiumStatus"),
+  );
+  ciftYon(
+    "/api/notifications/prefs alanlari",
+    govde("src/app/api/notifications/prefs/route.ts", "daily: p.remindersEnabled"),
+    typeFields("mobile/src/lib/notifications.ts", "ServerPrefs"),
+  );
 }
 
 /* ── 28. sosyal hata kodlarinin karsiligi ──────────────────────────────────
