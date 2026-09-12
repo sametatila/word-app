@@ -68,6 +68,14 @@ export type AdminData = {
   premium: { views: number; gates: number; starts: number; done: number };
   premiumGates: { feature: string; count: number }[];
   notifications: { optinYes: number; optinNo: number; sent: number; opened: number };
+  /**
+   * Giden e-posta (30g). `fail` SMTP reddi, `cap` alıcı başına saatlik tavan.
+   *
+   * Doğrulama postası zorunlu bir kapı: `verify:fail` sıfırdan büyükse o
+   * kadar kişi hesabına HİÇ giremiyor demektir. Panoya bu yüzden kendi
+   * bölümü konuldu (bkz. lib/email `mail_sent`).
+   */
+  mail: { kind: string; ok: number; fail: number; cap: number }[];
   ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number }[];
   /** İçerik bildirimleri (yapay zekâ yanıtı / değerlendirme): açık olanlar, en yeni önce. */
   reports: { id: number; day: string; kind: string; ref: string; reason: string; content: string; userId: string }[];
@@ -142,7 +150,7 @@ export async function getAdminData(): Promise<AdminData> {
     from content_reports where status = 'open' order by id desc limit 50
   `).catch(() => [] as Record<string, unknown>[]);
 
-  const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, ai] = await Promise.all([
+  const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, mail, ai] = await Promise.all([
     rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - 29 group by kind order by c desc`),
     rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - 29 group by kind order by views desc limit 20`),
     /* BAŞLANGIÇ KARTI BASAMAĞI KALKTI. `/learn` hub olunca turun başlangıç
@@ -158,6 +166,12 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - 29`),
     rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - 29 group by kind order by c desc limit 8`),
     rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
+    rows(sql`select split_part(coalesce(kind,'?'),':',1) kind,
+        count(*) filter (where kind like '%:ok')::int ok,
+        count(*) filter (where kind like '%:fail')::int fail,
+        count(*) filter (where kind like '%:cap')::int cap
+      from events where name='mail_sent' and day >= current_date - 29
+      group by 1 order by 2 desc`),
     rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens, coalesce(sum(chars),0)::bigint chars from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
   ]);
 
@@ -193,6 +207,7 @@ export async function getAdminData(): Promise<AdminData> {
     premium: { views: num(prem[0]?.views), gates: num(prem[0]?.gates), starts: num(prem[0]?.starts), done: num(prem[0]?.done) },
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
     notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), opened: num(notif[0]?.opened) },
+    mail: mail.map((r) => ({ kind: str(r.kind), ok: num(r.ok), fail: num(r.fail), cap: num(r.cap) })),
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
     reports: reports.map((r) => ({ id: num(r.id), day: str(r.day), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason), content: str(r.content), userId: str(r.user_id) })),
     generatedAt: new Date().toISOString(),

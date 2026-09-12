@@ -317,6 +317,24 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
               <Kpi label="Bildirimden açıldı" value={fmt(d.notifications.opened)} sub={d.notifications.sent ? pct(d.notifications.opened / d.notifications.sent) + " CTR" : undefined} />
             </div>
           </Section>
+
+          {/* Giden e-posta: doğrulama postası ZORUNLU bir kapı, o yüzden
+              başarısızlık burada kırmızı. */}
+          <Section title="Giden e-posta (30g)" hint="fail = SMTP reddi · cap = alıcı başına saatlik tavan" full>
+            {d.mail.length === 0 ? (
+              <p className="muted text-caption">Kayıt yok.</p>
+            ) : (
+              <div className="flex flex-wrap gap-1.5">
+                {d.mail.map((m) => (
+                  <span key={m.kind} className="rounded-full px-2.5 py-0.5 text-caption" style={{ background: "var(--surface-2)" }}>
+                    {m.kind}: {fmt(m.ok)} gitti
+                    {m.fail > 0 && <span style={{ color: "#dc2626" }}> · {fmt(m.fail)} hata</span>}
+                    {m.cap > 0 && <span style={{ color: "#d97706" }}> · {fmt(m.cap)} tavan</span>}
+                  </span>
+                ))}
+              </div>
+            )}
+          </Section>
         </div>
       )}
 
