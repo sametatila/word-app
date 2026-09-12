@@ -16597,3 +16597,36 @@ geçiyordu — mutlak ölçü olmasa fark edilmezdi.
 Üç enjeksiyon doğrulandı: Android'de bir kontrolü kaldırmak, **iki tarafta
 birden** kaldırmak (mutlak ölçü), Swift'in tanımından `https` şartını
 düşürmek.
+
+## §11.456 — Paywall kapsam satırları: bir yanıt dalı `copy` taşımazsa mobil sessizce boşalır
+
+Paywall'ın "neler var / ücretsizde ne var" listesi elle yazılmıyor:
+`lib/premium/gates` `describeLimits` yapılandırmadan üretiyor. Gerekçesi o
+dosyada yazılı ve **mağaza kurallarına bağlı** — bir sınır değiştiğinde
+paywall'ın söylediği de değişmek zorunda, yoksa beyan gerçekle ayrışıyor
+(App Store 2.3.1 / Play Yanıltıcı Davranış).
+
+İki istemci aynı satırları **ayrı yoldan** alıyor:
+
+- web: sunucuda `premiumCopy()` çağırıp doğrudan çiziyor
+- mobil: `/api/premium/status` yanıtındaki `copy` alanından
+
+Uç'un **üç** yanıt dalı var ve üçü de `copy` taşıyor. Bir dal onu taşımazsa
+(yeni bir erken dönüş eklenince) mobilin karşılaştırma kartı **sessizce
+boşalıyor** — `status?.copy.premium ?? []` — ve web etkilenmiyor. Yani kusur
+tek platformda ve görünmez; mağaza beyanı "hiçbir şey vaat etmiyor" hâline
+geliyor. Bunu ölçen hiçbir şey yoktu.
+
+Yan not: `plan.free_*` anahtarları bir önceki turun taramasında "yalnız web"
+görünmüştü. Sebebi taramanın beşinci artefakt sınıfı: **anahtarı sunucu
+çalışma anında istemciye gönderiyor**, yani mobil kaynağında literal olarak hiç
+geçmiyor. §11.446'nın listesine eklendi sayılsın.
+
+### §318
+
+Yedi ölçü: yanıt dalı sayısı, `copy` taşıyan dal sayısı (ikisi **eşit** olmak
+zorunda — yeni bir dal eklenirse fark açılıyor), üreticinin durduğu, ve iki
+istemcinin de **iki** bölümü (premium + ücretsiz) çizdiği.
+
+Üç enjeksiyon doğrulandı: bir daldan `copy`yi düşürmek, `copy`siz yeni bir dal
+eklemek, mobilin ücretsiz bölümünü kaldırmak.

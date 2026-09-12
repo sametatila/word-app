@@ -17816,6 +17816,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------- 318. PAYWALL KAPSAM SATIRLARI HER YANITTA
+   *
+   * Paywall'in "neler var / ucretsizde ne var" listesi ELLE YAZILMIYOR:
+   * `lib/premium/gates` `describeLimits` yapilandirmadan uretiyor. Gerekcesi o
+   * dosyada yazili ve magaza kurallarina bagli - bir sinir degistiginde
+   * paywall'in SOYLEDIGI de degismek zorunda, yoksa beyan gercekle ayrisiyor
+   * (App Store 2.3.1 / Play Yaniltici Davranis).
+   *
+   * IKI ISTEMCI AYNI SATIRLARI AYRI YOLDAN ALIYOR:
+   *   web    sunucuda `premiumCopy()` cagirip dogrudan ciziyor
+   *   mobil  `/api/premium/status` yanitindaki `copy` alanindan
+   *
+   * Ucun de yanit dali `copy` tasimak zorunda. Bir dal onu tasimazsa (yeni bir
+   * erken donus eklenince) mobilin karsilastirma karti SESSIZCE BOSALIYOR
+   * (`status?.copy.premium ?? []`) - web etkilenmiyor, yani kusur tek
+   * platformda ve gorunmez. Magaza beyani boyle bir ekranda "hicbir sey vaat
+   * etmiyor" haline geliyor.
+   *
+   * Olcu: yanit dali sayisi kadar `copy` alani, ve iki istemcinin de IKI
+   * bolumu (premium + ucretsiz) cizdigi. */
+  {
+    const uc = sil(read("src/app/api/premium/status/route.ts"));
+    const dal = (uc.match(/NextResponse\.json\(/g) ?? []).length;
+    const copySayi = (uc.match(/^\s+copy,$/gm) ?? []).length;
+    const webPaywall = sil(read("src/components/premium-paywall.tsx"));
+    const mobPaywall = sil(read("mobile/src/screens/PaywallScreen.tsx"));
+    sameList(
+      "paywall kapsam satirlari",
+      [
+        "yanit dali=" + dal,
+        "copy tasiyan dal=" + copySayi,
+        "uretim=" + (/describeLimits\(/.test(sil(read("src/lib/premium/gates.ts"))) ? "var" : "YOK"),
+        "web premium bolumu=" + (/copy\.premium\.map/.test(webPaywall) ? "var" : "YOK"),
+        "web ucretsiz bolumu=" + (/copy\.free\.map/.test(webPaywall) ? "var" : "YOK"),
+        "mobil premium bolumu=" + (/copy\.premium \?\? \[\]/.test(mobPaywall) ? "var" : "YOK"),
+        "mobil ucretsiz bolumu=" + (/copy\.free \?\? \[\]/.test(mobPaywall) ? "var" : "YOK"),
+      ],
+      [
+        "yanit dali=3",
+        "copy tasiyan dal=3",
+        "uretim=var",
+        "web premium bolumu=var",
+        "web ucretsiz bolumu=var",
+        "mobil premium bolumu=var",
+        "mobil ucretsiz bolumu=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
