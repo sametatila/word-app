@@ -1029,6 +1029,7 @@ export const en: Record<string, string> = {
   "progp.window.one": "last {days} days · {n} measurement",
   "assess.not_measured": "not measured",
   "assess.min_words": "At least {min} words ({n})",
+  "assess.gate_min_words": "Scoring needs at least {n} words.",
   "assess.target": "Pattern: {pattern}",
   "assess.capital": "Starts with a capital letter",
   "assess.punctuation": "Ends with punctuation",

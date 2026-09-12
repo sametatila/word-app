@@ -116,6 +116,23 @@ export function scoreOf(correct: number, total: number, score?: number | null): 
  */
 export const RUBRIC_PASS_PCT = 60;
 
+/**
+ * DEĞERLENDİRME TABANLARI — web `lib/assess-const.ts` ile aynı sayılar.
+ *
+ * Bunlar görevin kendi alt sınırı DEĞİL (`task.minWords`, kâğıda göre 40-120
+ * kelime olabiliyor). Bunlar yapay zekâ çağrısının tabanı: iki kelimeye puan
+ * istemek hem anlamsız bir puan üretir hem kotadan yer yer. İki sayı sekiz
+ * yerde ELLE yazılıydı ve hiçbir yerde adı geçmiyordu; kullanıcı ölü bir
+ * düğmeye bakıyor, düğmenin uyduğu sayı ile ekranda yazan sayı (`{n}/{min}`)
+ * birbirinden farklıydı.
+ */
+
+/** Serbest yazma ve açık sınav görevlerinde puan istemenin tabanı. */
+export const MIN_ASSESS_WORDS = 5;
+
+/** Tek cümlelik görevlerin tabanı (cümle kurma, çeviri yazma). */
+export const MIN_FREE_WORDS = 2;
+
 /** Puanın bandı — maskotun ruh hâli ve renk tonu bundan seçiliyor. */
 export function scoreBand(pct: number): "good" | "mid" | "weak" {
   if (pct >= SKILL_DONE_PCT) return "good";

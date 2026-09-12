@@ -1034,6 +1034,7 @@ export const tr: Record<string, string> = {
   "progp.window.one": "son {days} gün · {n} ölçüm",
   "assess.not_measured": "ölçülmedi",
   "assess.min_words": "En az {min} kelime ({n})",
+  "assess.gate_min_words": "Değerlendirme için en az {n} kelime gerekiyor.",
   "assess.target": "Kalıp: {pattern}",
   "assess.capital": "Büyük harfle başlıyor",
   "assess.punctuation": "Noktalama ile bitiyor",
