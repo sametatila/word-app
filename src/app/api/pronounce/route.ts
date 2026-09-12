@@ -64,7 +64,12 @@ export async function POST(req: Request) {
 
   try {
     const stt = await transcribe(file, { language, words: true, userId, expected: target });
-    const score = scorePronunciation(target, stt.text, { words: stt.words, duration: stt.duration, confusions });
+    const score = scorePronunciation(target, stt.text, {
+      words: stt.words,
+      duration: stt.duration,
+      confusions,
+      lang: language === "en" ? "en" : "de",
+    });
     if (exerciseId) void track(userId, "pronounce", new Date().toISOString().slice(0, 10), score.overall, exerciseId);
     return NextResponse.json({ ...score, provider: stt.provider, hasWordTiming: Boolean(stt.words?.length) });
   } catch (err) {

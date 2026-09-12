@@ -253,7 +253,12 @@ function whySpelling(word: WhyWord, typed?: string | null): Why {
 const W_WORDS = /^(wer|was|wo|wann|wie|warum|wohin|woher|welche[rs]?|wieso|weshalb|wem|wen|wessen)$/i;
 const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|als|sobald|falls)\b/i;
 
-function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
+function whyVerbPosition(answer?: string[] | null, tail?: string | null, targetLang: string = "de"): Why {
+  // İngilizcede elle yazılmış Almanca dallar YOK: kural tablosundan geliyor
+  // (web `lib/why.ts` ile aynı; gerekçe `whyRules` RULES_EN başında).
+  if (targetLang === "en") {
+    return whyFromRule("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`, "en");
+  }
   // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
   // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
   const href = null;
@@ -279,8 +284,8 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
  * Kural parçacığından gerekçe (WP-73): bağlamda geçen ipucuna göre seçilen
  * kural + Almanca örnek; tabloya kuralın kendi bağlantısıyla gider.
  */
-function whyFromRule(type: ErrorType, context: string): Why {
-  const rule = ruleFor(type, context);
+function whyFromRule(type: ErrorType, context: string, targetLang: string = "de"): Why {
+  const rule = ruleFor(type, context, targetLang);
   if (!rule) return { type, text: tx(ERROR_LABEL_KEYS[type]), href: null };
   const why = tx(rule.why);
   const text = `${why.charAt(0).toLocaleUpperCase(uiLocale())}${why.slice(1)}: ${rule.example}`;
@@ -296,6 +301,8 @@ function contextOf(input: WhyInput): string {
 
 export type WhyInput = {
   type: ErrorType;
+  /** Kursun HEDEF dili; sıra kuralları dile bağlı (web `lib/why.ts` ile aynı). */
+  targetLang?: string;
   word?: WhyWord | null;
   /** Seçilen şık / yazılan kelime. */
   detail?: string | null;
@@ -328,11 +335,11 @@ export function whyFor(input: WhyInput): Why {
         ? whySpelling(w, input.detail)
         : { type: "spelling", text: tx("sphint.compare"), href: null };
     case "verb_position":
-      return whyVerbPosition(input.answer, input.tail);
+      return whyVerbPosition(input.answer, input.tail, input.targetLang);
     case "word_order":
     case "case":
     case "conjugation":
-      return whyFromRule(input.type, contextOf(input));
+      return whyFromRule(input.type, contextOf(input), input.targetLang);
     case "meaning": {
       /*
         Karıştırma çifti (WP-73): seçilen karşılık bilinen bir çiftin öbür

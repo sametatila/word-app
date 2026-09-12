@@ -1046,7 +1046,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
       markAnswer(ok, full); // tamamlanınca tam cümleyi oku
-      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail), word, answer, tail }).text });
+      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }).text });
     } else {
       sfx("tap");
       speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
@@ -1063,7 +1063,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail, currentTargetLang()), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>

@@ -1,4 +1,5 @@
 import { matchSentence, type TokenMark } from "@/lib/sentence-match";
+import type { TargetLang } from "@/lib/courses";
 import { PASS_SCORE } from "@/lib/pronounce-const";
 import type { SpeechConfusion } from "@/lib/skills/types";
 import type { SttWord } from "@/lib/stt";
@@ -59,13 +60,20 @@ function statusOf(mark: TokenMark): WordScore["status"] {
   return "missing";
 }
 
-export function scorePronunciation(target: string, transcript: string, opts: { words?: SttWord[]; duration?: number; confusions?: SpeechConfusion[] } = {}): PronounceScore {
+export function scorePronunciation(
+  target: string,
+  transcript: string,
+  /* `lang` HEDEF dil: cümle hakemi sayı/kısaltma/yazım katlamasını ona göre
+     yapıyor ve verilmezse "de" sayılıyordu — İngilizce telaffuz puanı Almanca
+     kuralıyla hesaplanırdı. */
+  opts: { words?: SttWord[]; duration?: number; confusions?: SpeechConfusion[]; lang?: TargetLang } = {},
+): PronounceScore {
   const text = transcript.trim();
   if (!text) {
     const words: WordScore[] = target.split(/\s+/).filter(Boolean).map((w) => ({ word: w, status: "missing" }));
     return { overall: 0, wordAccuracy: 0, completeness: 0, fluency: 0, words, extra: [], rate: null, pauses: 0, transcript: "", passed: false };
   }
-  const m = matchSentence(text, target);
+  const m = matchSentence(text, target, [], opts.lang ?? "de");
   const heardTokens = m.typed.map((t) => t.text);
   const words: WordScore[] = m.target.map((t, i) => {
     const status = statusOf(t.mark);

@@ -1,4 +1,5 @@
 import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
+import type { TargetLang } from "@/lib/courses";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
 import { ruleFor } from "@/lib/why-rules";
 import { confusableHint } from "@/lib/confusables";
@@ -240,7 +241,16 @@ function whySpelling(word: WhyWord, lang: NativeLang, typed?: string | null): Wh
 const W_WORDS = /^(wer|was|wo|wann|wie|warum|wohin|woher|welche[rs]?|wieso|weshalb|wem|wen|wessen)$/i;
 const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|als|sobald|falls)\b/i;
 
-function whyVerbPosition(lang: NativeLang, answer?: string[] | null, tail?: string | null): Why {
+function whyVerbPosition(
+  lang: NativeLang,
+  answer?: string[] | null,
+  tail?: string | null,
+  targetLang: TargetLang = "de",
+): Why {
+  // İngilizcede elle yazılmış Almanca dalları YOK: kural tablosundan geliyor.
+  if (targetLang === "en") {
+    return whyFromRule("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`, lang, "en");
+  }
   // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
   // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
   const href = null;
@@ -266,8 +276,13 @@ function whyVerbPosition(lang: NativeLang, answer?: string[] | null, tail?: stri
  * Kural parçacığından gerekçe (WP-73): bağlamda geçen ipucuna göre seçilen
  * kural + Almanca örnek; tabloya kuralın kendi bağlantısıyla gider.
  */
-function whyFromRule(type: ErrorType, context: string, lang: NativeLang): Why {
-  const rule = ruleFor(type, context);
+function whyFromRule(
+  type: ErrorType,
+  context: string,
+  lang: NativeLang,
+  targetLang: TargetLang = "de",
+): Why {
+  const rule = ruleFor(type, context, targetLang);
   if (!rule) return { type, text: translate(lang, ERROR_LABEL_KEYS[type]), href: null };
   const why = translate(lang, rule.why);
   const text = `${why.charAt(0).toLocaleUpperCase(localeOf(lang))}${why.slice(1)}: ${rule.example}`;
@@ -283,6 +298,12 @@ function contextOf(input: WhyInput): string {
 
 export type WhyInput = {
   type: ErrorType;
+  /**
+   * KURSUN HEDEF DİLİ (`lang` ise arayüz dili). Sıra kuralları dile bağlı:
+   * Almanca tablo İngilizce kursta hem yanlış hem Almanca örnekli çıkıyordu
+   * (gerekçe `why-rules.ts` `RULES_EN` başında). Verilmezse "de".
+   */
+  targetLang?: TargetLang;
   word?: WhyWord | null;
   /** Seçilen şık / yazılan kelime. */
   detail?: string | null;
@@ -315,11 +336,11 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         ? whySpelling(w, lang, input.detail)
         : { type: "spelling", text: translate(lang, "sphint.compare"), href: null };
     case "verb_position":
-      return whyVerbPosition(lang, input.answer, input.tail);
+      return whyVerbPosition(lang, input.answer, input.tail, input.targetLang);
     case "word_order":
     case "case":
     case "conjugation":
-      return whyFromRule(input.type, contextOf(input), lang);
+      return whyFromRule(input.type, contextOf(input), lang, input.targetLang);
     case "meaning": {
       /*
         Karıştırma çifti (WP-73): seçilen karşılık bilinen bir çiftin öbür

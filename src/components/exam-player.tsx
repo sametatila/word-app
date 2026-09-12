@@ -638,7 +638,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       capture.current = null;
       setSpk("scoring");
       const blob = await cap.stop();
-      const res = blob ? await askPronounce(blob, item.de, { confusions: item.confusions, language: "de" }) : ({ ok: false, reason: "failed" } as const);
+      const res = blob ? await askPronounce(blob, item.de, { confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
       if (res.ok) {
         speakingScores.current[idx] = res.score.overall;
         score.current.speaking.correct += res.score.passed ? 1 : 0;

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { whyFor } from "@/lib/why";
 import { classifyOrder, miss } from "@/lib/errors";
+import { currentTargetLang } from "@/components/games/types";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
@@ -94,7 +95,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       hintUsed,
       ...miss(
         isCorrect,
-        classifyOrder(placed.map((t) => t.text), answer, tail),
+        classifyOrder(placed.map((t) => t.text), answer, tail, currentTargetLang()),
         placed.map((t) => t.text).join(" "),
       ),
     });
@@ -146,10 +147,11 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       why={
         status === "wrong"
           ? whyFor({
-              type: classifyOrder(placed.map((t) => t.text), answer, tail),
+              type: classifyOrder(placed.map((t) => t.text), answer, tail, currentTargetLang()),
               word,
               answer,
               tail,
+              targetLang: currentTargetLang(),
             }, lang)
           : null
       }

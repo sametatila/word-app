@@ -1,4 +1,5 @@
 import { translate, type NativeLang } from "@/lib/i18n/dict";
+import type { TargetLang } from "@/lib/courses";
 /**
  * Hata taksonomisi (plan WP-02).
  *
@@ -187,8 +188,42 @@ const W_WORDS = new Set(["wer", "was", "wo", "wann", "wie", "warum", "wohin", "w
  */
 const SUBORDINATORS = new Set(["weil", "dass", "wenn", "ob", "obwohl", "damit", "während", "bevor", "nachdem", "als", "sobald", "falls", "seit", "seitdem", "bis"]);
 
-export function classifyOrder(placed: string[], answer: string[], tail: string): ErrorType {
+/** İngilizce yardımcı fiiller — soruda özneden önce gelirler. */
+const EN_AUX = new Set([
+  "do", "does", "did", "is", "am", "are", "was", "were", "can", "could", "will",
+  "would", "shall", "should", "may", "might", "must", "have", "has", "had",
+]);
+const EN_WH = new Set(["what", "where", "when", "who", "whom", "whose", "which", "why", "how"]);
+
+/**
+ * İngilizcede "fiilin yeri" hatası YALNIZ soruda ölçülebiliyor.
+ *
+ * Almanca kuralı (çekimli fiil ikinci sırada) İngilizceye uymuyor: "I usually
+ * get up at seven." cümlesinde fiil üçüncü sırada ve cümle doğru. Çekimli
+ * fiili içerikten bilmediğimiz için düz cümlede tip "kelime sırası" kalıyor;
+ * soruda ise yardımcı fiilin yeri kurallı (evet/hayır sorusunda başta, soru
+ * kelimeli soruda hemen onun ardından) ve ölçülebiliyor.
+ */
+function classifyOrderEn(placed: string[], answer: string[], tail: string): ErrorType {
+  if (tail.trim() !== "?") return "word_order";
+  const norm = (x: string) => x.toLocaleLowerCase("en-US").replace(/[^a-z']/g, "");
+  const auxIdx = answer.findIndex((w) => EN_AUX.has(norm(w)));
+  if (auxIdx === -1) return "word_order";
+  const expected = EN_WH.has(norm(answer[0])) ? 1 : 0;
+  if (auxIdx !== expected) return "word_order";
+  // Büyük/küçük harf serbest: jeton aynı jeton ama cümle başında büyük yazılı.
+  const placedIdx = placed.findIndex((w) => norm(w) === norm(answer[auxIdx]));
+  return placedIdx !== -1 && placedIdx !== auxIdx ? "verb_position" : "word_order";
+}
+
+export function classifyOrder(
+  placed: string[],
+  answer: string[],
+  tail: string,
+  lang: TargetLang = "de",
+): ErrorType {
   if (!answer.length) return "word_order";
+  if (lang === "en") return classifyOrderEn(placed, answer, tail);
   const first = answer[0]?.toLocaleLowerCase("de-DE").replace(/[^a-zäöüß]/g, "") ?? "";
   // Yan cümle parçası ("weil ich krank bin"): çekimli fiil en sonda.
   const verbIdx = SUBORDINATORS.has(first)

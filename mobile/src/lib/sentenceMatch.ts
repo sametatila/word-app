@@ -186,7 +186,7 @@ export function matchSentence(typed: string, target: string, alternatives: strin
     return { verdict: "spelling", quality: 4, errorType: "spelling", target: targetOut, typed: typedOut, matched: cand };
   }
   if (c.missing === 0 && c.extra === 0 && c.moved > 0 && c.t.length === c.u.length) {
-    const errorType = classifyOrder(c.u, c.t, tail);
+    const errorType = classifyOrder(c.u, c.t, tail, lang);
     return { verdict: "order", quality: 3, errorType, target: targetOut, typed: typedOut, matched: cand };
   }
   return { verdict: "wrong", quality: 1, errorType: "meaning", target: targetOut, typed: typedOut, matched: cand };

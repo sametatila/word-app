@@ -867,7 +867,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
                 e.preventDefault();
-                if (text.trim()) setMatch(matchSentence(text, task.answer, task.alternatives ?? []));
+                if (text.trim()) setMatch(matchSentence(text, task.answer, task.alternatives ?? [], lang));
               }
             }}
             rows={2}
@@ -881,7 +881,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
           />
           <button
             type="button"
-            onClick={() => text.trim() && setMatch(matchSentence(text, task.answer, task.alternatives ?? []))}
+            onClick={() => text.trim() && setMatch(matchSentence(text, task.answer, task.alternatives ?? [], lang))}
             disabled={!text.trim()}
             className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body"
           >

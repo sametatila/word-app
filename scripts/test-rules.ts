@@ -4,7 +4,8 @@
  * tablolara; bağlam → doğru kural; why.ts artık bağlama göre kural seçiyor.
  */
 import assert from "node:assert/strict";
-import { RULES, ruleFor, uncoveredErrorTypes } from "../src/lib/why-rules";
+import { RULES, RULES_EN, ruleFor, uncoveredErrorTypes } from "../src/lib/why-rules";
+import { classifyOrder } from "../src/lib/errors";
 import { whyFor } from "../src/lib/why";
 import { CONFUSABLES, confusableHint } from "../src/lib/confusables";
 
@@ -57,4 +58,46 @@ for (const x of CONFUSABLES) assert.ok(x.hint.length > 10 && x.example.length > 
 assert.equal(confusableHint("schön", "zaten")?.a, "schon");
 assert.equal(confusableHint("die Kirche", "kiraz")?.b, "Kirsche");
 assert.ok(whyFor({ type: "meaning", word: { de: "Gift", artikel: "das", tr: "zehir" }, detail: "hediye" }).text.includes("Geschenk"));
-console.log(`test:rules — ${RULES.length} kural, ${ids.size} kimlik, bağlam seçimi ve why.ts bağı: tamam`);
+/*
+  İNGİLİZCE KURSUN KENDİ KURALLARI (2026-09-12).
+
+  Almanca tablo İngilizce kursta iki ayrı biçimde yanlıştı: kuralın kendisi
+  ("fiil ikinci sırada" — İngilizcede özne fiilden önce) ve örneğin dili
+  (İngilizce öğrenene Almanca cümle). Test ikisini de bekliyor: İngilizce
+  kuralın metni İngilizce örnekle gelmeli ve Almancaya DÜŞMEMELİ.
+*/
+for (const x of RULES_EN) {
+  assert.ok(!ids.has(x.id), `çift kimlik ${x.id}`);
+  ids.add(x.id);
+  assert.ok(x.why.length > 0 && x.why.length <= 120, `${x.id}: kural yok ya da uzun`);
+  assert.ok(!/[äöüßÄÖÜ]/.test(x.example), `${x.id}: İngilizce örnek Almanca harf taşıyor — ${x.example}`);
+  assert.ok(!x.link, `${x.id}: bağlantı Almanca tabloya gider`);
+}
+assert.equal(ruleFor("verb_position", "Where do you live?", "en")?.id, "vpos.en-wh");
+assert.equal(ruleFor("verb_position", "Do you like coffee?", "en")?.id, "vpos.en-yesno");
+assert.equal(ruleFor("word_order", "I usually get up at seven.", "en")?.id, "worder.en-frequency");
+assert.equal(ruleFor("word_order", "I bought a book.", "en")?.id, "worder.en-general");
+// Almanca tabloya düşmüyor: İngilizcede tanımlı olmayan tip null döner
+assert.equal(ruleFor("case", "Ich fahre mit dem Bus", "en"), null, "İngilizce kursta Almanca hâl kuralı gösterilmemeli");
+
+const e1 = whyFor({ type: "verb_position", answer: ["Where", "do", "you", "live"], tail: "?", targetLang: "en" });
+assert.ok(/soru kelimesinden sonra/i.test(e1.text), `İngilizce soru gerekçesi: ${e1.text}`);
+// Örnek İNGİLİZCE: Türkçe gerekçe metninde ö/ü zaten var, o yüzden ölçüt
+// harf değil örneğin kendisi.
+assert.ok(e1.text.includes("Where do you live?"), `İngilizce örnek yok: ${e1.text}`);
+assert.ok(!/Ich |Wo wohnst/.test(e1.text), `Almanca örnek sızmış: ${e1.text}`);
+const e2 = whyFor({ type: "word_order", answer: ["I", "usually", "get", "up", "at", "seven"], tail: ".", targetLang: "en" });
+assert.ok(/sıklık zarfı/i.test(e2.text), `İngilizce sıra gerekçesi: ${e2.text}`);
+// Almanca kurs değişmedi
+const e3 = whyFor({ type: "verb_position", answer: ["Heute", "gehe", "ich", "ins", "Kino"], tail: "." });
+assert.ok(/ikinci sırada|fiilden SONRA/i.test(e3.text), `Almanca gerekçe korunmalı: ${e3.text}`);
+
+// Sıra sınıflandırması dile bağlı
+assert.equal(classifyOrder(["I", "get", "usually", "up"], ["I", "usually", "get", "up"], ".", "en"), "word_order",
+  "İngilizce düz cümlede fiilin yeri ölçülemez");
+assert.equal(classifyOrder(["Where", "you", "do", "live"], ["Where", "do", "you", "live"], "?", "en"), "verb_position",
+  "İngilizce soruda yardımcı fiilin yeri ölçülür");
+assert.equal(classifyOrder(["Ich", "ins", "Kino", "gehe"], ["Ich", "gehe", "ins", "Kino"], "."), "verb_position",
+  "Almanca yol değişmedi");
+
+console.log(`test:rules — ${RULES.length} Almanca + ${RULES_EN.length} İngilizce kural, ${ids.size} kimlik, bağlam seçimi ve why.ts bağı: tamam`);

@@ -1,4 +1,5 @@
 import type { CefrLevel } from "@/lib/skills/types";
+import type { TargetLang } from "@/lib/courses";
 import { ERROR_TYPES, type ErrorType } from "@/lib/errors";
 
 /**
@@ -95,12 +96,60 @@ export const RULES: Rule[] = [
   r("pronunciation.general", "A1", "pronunciation", "whyrule.pronunciation.general", "Zeit, Wasser, über"),
 ];
 
+/**
+ * İNGİLİZCE KURSUN KENDİ KURALLARI.
+ *
+ * Yukarıdaki tablo baştan sona ALMANCA: tetikleyicileri Almanca sözcükler,
+ * örnekleri Almanca cümleler, bağlantıları Almanca dilbilgisi sayfaları.
+ * İngilizce kurs onu paylaşınca öğrenci kendi hatasının karşılığında Almanca
+ * bir kural görüyordu; 2026-09-12'de ölçüldü ve iki ayrı biçimde yanlıştı:
+ *
+ *   «I usually get up at seven.» → "Cümle „I“ ile başlayınca fiil yine
+ *      ikinci sırada kalır, özne fiilden SONRA gelir." — Almanca V2 kuralı,
+ *      İngilizcede özne fiilden ÖNCE gelir, yani cümle düpedüz yanlış.
+ *   «Where do you live?» → "Önce özne ve fiil, sonra zaman, tarz, yer…:
+ *      Ich muss heute früh nach Hause gehen." — İngilizce öğrenene Almanca
+ *      örnek cümle.
+ *
+ * Bu tablo yalnız SIRAYLA ilgili iki tipi kapsıyor (`verb_position`,
+ * `word_order`), çünkü İngilizce kursun tur akışında üretilen tipler
+ * bunlar; hâl (`case`) ve çekim (`conjugation`) kuralları Almanca kursun
+ * kendi oyunlarından geliyor. Kapsam büyürse buraya eklenir.
+ *
+ * `link` YOK: dilbilgisi tabloları (`CheatSheet`) Almanca kursun sayfaları.
+ */
+export const RULES_EN: Rule[] = [
+  // ── yardımcı fiilin yeri ──
+  r("vpos.en-yesno", "A1", "verb_position", "whyrule.vpos.en-yesno", "Do you like coffee?", undefined,
+    /^(do|does|did|is|am|are|was|were|can|could|will|would|shall|should|may|might|must|have|has|had)\b/i),
+  r("vpos.en-wh", "A1", "verb_position", "whyrule.vpos.en-wh", "Where do you live?", undefined,
+    /^(what|where|when|who|whom|whose|which|why|how)\b/i),
+  r("vpos.en-general", "A1", "verb_position", "whyrule.vpos.en-general", "I am going to the cinema."),
+
+  // ── kelime sırası ──
+  r("worder.en-frequency", "A1", "word_order", "whyrule.worder.en-frequency", "I usually get up at seven. / She is always late.", undefined,
+    /\b(always|usually|often|sometimes|never|rarely|seldom|ever|hardly ever)\b/i),
+  r("worder.en-negation", "A1", "word_order", "whyrule.worder.en-negation", "I do not drink coffee. / She is not here.", undefined,
+    /\b(not|n't|never)\b/i),
+  r("worder.en-place-time", "A2", "word_order", "whyrule.worder.en-place-time", "I went to the cinema yesterday.", undefined,
+    /\b(yesterday|today|tomorrow|tonight|last (week|year|month|night)|next (week|year|month)|this (morning|evening)|at \d)\b/i),
+  r("worder.en-general", "A1", "word_order", "whyrule.worder.en-general", "I bought a book yesterday."),
+];
+
 const BY_TYPE = new Map<ErrorType, Rule[]>();
 for (const rule of RULES) BY_TYPE.set(rule.trigger.errorType, [...(BY_TYPE.get(rule.trigger.errorType) ?? []), rule]);
+const BY_TYPE_EN = new Map<ErrorType, Rule[]>();
+for (const rule of RULES_EN) BY_TYPE_EN.set(rule.trigger.errorType, [...(BY_TYPE_EN.get(rule.trigger.errorType) ?? []), rule]);
 
-/** Bağlama uyan ilk kural; uyan yoksa tipin genel kuralı. */
-export function ruleFor(errorType: ErrorType, context = ""): Rule | null {
-  const list = BY_TYPE.get(errorType) ?? [];
+/**
+ * Bağlama uyan ilk kural; uyan yoksa tipin genel kuralı.
+ *
+ * `lang` HEDEF dil: İngilizce kursta İngilizce tablo, bulunamazsa Almanca
+ * tabloya düşmüyor — düşseydi öğrenci yine Almanca örnek görürdü. İngilizce
+ * tabloda olmayan tip için `null` dönüyor ve çağıran genel etikete iniyor.
+ */
+export function ruleFor(errorType: ErrorType, context = "", lang: TargetLang = "de"): Rule | null {
+  const list = (lang === "en" ? BY_TYPE_EN : BY_TYPE).get(errorType) ?? [];
   const ctx = context.trim();
   for (const rule of list) {
     if (!rule.trigger.pattern) continue;
