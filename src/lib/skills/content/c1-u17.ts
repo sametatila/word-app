@@ -272,7 +272,7 @@ export const c1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Der Einschub zwischen zwei Kommas",
-    genre: "monologue",
+    genre: "dialogue",
     intro: "Ara açıklama: virgüller arasına ne sıkıştırılabilir?",
     gloss: [
       { de: "die Apposition", tr: "ara açıklama", en: "apposition" },

@@ -303,7 +303,7 @@ export const enB2U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["misread", "it is misread", "somebody misreads it"],
-        explain: "„a column with two different grammars in it is a column somebody misreads.“",
+        explain: "„a column with two grammars in it is a column somebody misreads.“",
       },
     ],
   },

@@ -118,7 +118,7 @@ export const a1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["100"],
-        explain: "„Dazu kommen 100 Euro Nebenkosten.“",
+        explain: "„Und 100 Euro Nebenkosten.“",
       },
       {
         text: "Richtig oder falsch? Die Waschmaschine kostet mehr Geld.",

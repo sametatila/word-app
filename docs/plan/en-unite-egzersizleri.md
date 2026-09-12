@@ -1809,6 +1809,38 @@ nedeni de bu. Üç sınıf: (a) Türkçe üstdilin bir BİÇİMİN parçaların�
 ayıklamak için „…“ alıntılarını atıyor ve yüz/bin'i hiç saymıyor.
 
 
+**Tutarlılık taramasının üçüncü turu: tür etiketi ve alıntı (2026-09-12).**
+İki yeni sağlama sınıfı, bu kez İKİ KURSA birden uygulandı.
+
+*Tür etiketi ile konuşmacı sayısı.* `genre: "monologue"` ekranda türü söylüyor;
+üç kişilik bir seminer tartışmasına monolog demek okuru yanıltıyor. İki egzersiz
+çıktı, her kursta bir tane: `c1-u17-l2` (Dozentin + iki Teilnehmer → `dialogue`)
+ve `en-a1-u2-l2` (üç kişi sırayla kendini tanıtıyor → `profile`). Kalıcı kapı
+eklendi ve bir etiketi geri alarak ateşlendiği doğrulandı. Karşılık gelen
+„dialogue ≥ 2 konuşmacı“ kuralı BİLEREK yazılmadı: Almanca kursun 96 diyaloğu
+`speaker` alanını hiç yazmıyor ve hepsi tek küme olurdu — kapı gürültü olurdu.
+
+*Açıklamadaki alıntı metinde geçiyor mu.* „…“ içinde metni alıntılayan bir
+açıklama yanlış alıntılıyorsa, açıklama işe yaramaz olmaktan da kötüdür. On
+gerçek yanlış alıntı bulundu ve düzeltildi: `a1-u11-r1` bir ödeme seçeneğini
+düşürüyordu („bar oder mit Kreditkarte“ ↔ metinde „bar, mit Kreditkarte oder
+vom Konto“), `a1-u17-r2` „Dazu kommen“ diye başlıyordu (metin „Und“), `a1-u19-r2`
+„Nächstes“ ekliyordu, `a1-u24-l2` cümleyi baştan yazıyordu, `c1-u03-r2` ve
+`c1-u11-r1` ortadan sözcük atıyordu (biri „festgefahren“, öteki bir ara cümle),
+`en-b1-u6-l2` „three per cent“ diyordu (metin „three in a hundred“),
+`en-b1-u10-l1` iki cümleyi bir cümleye bağlıyordu, `en-b2-u19-l1` „two different
+grammars“ diyordu (metin „two grammars“) — ve en kötüsü `en-b1-u15-l1`:
+ders NESNE KONUMUNDAKİ İLGİ ADILININ DÜŞMESİNİ öğretirken açıklama „the part
+that I wrote“ diye adıllı biçimi alıntılıyordu, yani kendi öğrettiğinin tersini.
+
+Bu sınıf kapıya çevrilmedi. Nedeni ölçüldü: kalan 25 işaretin hepsi meşru ve
+üç desende toplanıyor — (a) açıkça YANLIŞ diye etiketlenmiş karşı örnek
+(„Yanlış: „…“"), (b) metnin söylemediğini söyleyen karşılaştırma („… demiyor“),
+(c) soru ile cevabı bir tireyle birleştiren alıntı („How much is the soup? —
+Five euros.“). Bir kapı bunların çerçevesini anlayamaz; gürültülü kapı
+kapısızlıktan kötüdür.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

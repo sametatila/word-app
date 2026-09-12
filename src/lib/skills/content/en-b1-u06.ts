@@ -294,7 +294,7 @@ export const enB1U06: SkillExercise[] = [
         text: "What does Mert want Sena to add?",
         options: ["a number", "a new date", "a second contract"],
         answer: 0,
-        explain: "„And add a number: unless it changes by more than three per cent.“",
+        explain: "„And add a number: unless it changes by more than three in a hundred.“",
       },
       {
         text: "Where should the date go?",

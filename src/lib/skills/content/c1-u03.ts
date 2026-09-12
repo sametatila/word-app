@@ -177,7 +177,7 @@ export const c1U03: SkillExercise[] = [
           "an der Zuständigkeit",
           "nicht an der Sache, sondern an der Zuständigkeit",
         ],
-        explain: "„nicht an der Sache, sondern an der Frage der Zuständigkeit“ — arabulucunun asıl bulgusu.",
+        explain: "„nicht an der Sache festgefahren, sondern an der Frage der Zuständigkeit“ — arabulucunun asıl bulgusu.",
       },
       {
         text: "Der Bericht empfiehlt, das Gespräch mit einer allgemeinen Formel zu beschwichtigen.",

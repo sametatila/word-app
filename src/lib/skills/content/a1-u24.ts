@@ -255,7 +255,7 @@ export const a1U24: SkillExercise[] = [
         text: "İkinci kişi Hamburg'a neyle gitti?",
         options: ["mit dem Zug", "mit dem Flugzeug", "mit dem Schiff"],
         answer: 0,
-        explain: "„Mit dem Zug, nicht mit dem Flugzeug.“",
+        explain: "„Mit dem Zug — ich fliege nicht gern.“",
       },
       {
         kind: "gapfill",

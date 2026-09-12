@@ -61,7 +61,7 @@ export const a1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Kreditkarte", "der Kreditkarte"],
-        explain: "„Sie können bar oder mit Kreditkarte bezahlen.“",
+        explain: "„Sie können bar, mit Kreditkarte oder vom Konto bezahlen.“",
       },
       {
         text: "Wo ist die Kasse?",

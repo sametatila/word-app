@@ -255,7 +255,7 @@ export const enA1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Three jobs",
-    genre: "monologue",
+    genre: "profile",
     intro: "Üç kişi işini anlatıyor. Her biri için üç şeyi not et: iş, yaş, konuştuğu dil.",
     gloss: [
       { de: "young", tr: "genç" },

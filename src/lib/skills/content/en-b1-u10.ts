@@ -218,7 +218,7 @@ export const enB1U10: SkillExercise[] = [
         text: "What will Nil do this evening?",
         options: ["confirm it by email", "cancel the booking", "bring the results"],
         answer: 0,
-        explain: "„I will confirm it this evening by email, so that we both have it in writing.“",
+        explain: "„I will confirm it this evening by email. Then we both have it in writing.“",
       },
       {
         kind: "truefalse",

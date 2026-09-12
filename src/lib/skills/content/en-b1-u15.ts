@@ -254,7 +254,7 @@ export const enB1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["The part I wrote was the shortest.", "The part I wrote was the shortest"],
-        explain: "Nesne konumundaki bağlaç düşmüş: „the part that I wrote“ ile aynı.",
+        explain: "Nesne konumundaki ilgi adılı düşmüş: „The part I wrote“ ile aynı.",
       },
       {
         kind: "short_answer",

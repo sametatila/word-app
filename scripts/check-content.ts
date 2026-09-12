@@ -238,6 +238,14 @@ function checkSkills(list: SkillExercise[]) {
       if (trLetters(e.text)) E(w, "okuma metninde Türkçe harf");
     }
     if (e.skill === "listening") {
+      /* „monologue“ tek sesli demek. Etiket ekranda türü söylüyor ve üç
+         kişilik bir seminer tartışmasına monolog demek okuru yanıltıyor;
+         2026-09-12'de iki egzersizde bulundu (biri her kursta bir tane).
+         „dialogue“ için karşılık gelen kural YOK: Almanca kursun 96
+         diyaloğu `speaker` alanını hiç yazmıyor, hepsi tek küme olurdu. */
+      const sesler = new Set(e.segments.map((s) => s.speaker).filter(Boolean));
+      if (e.genre === "monologue" && sesler.size > 1)
+        E(w, `monologue ama ${sesler.size} konuşmacı: ${[...sesler].join(", ")}`);
       for (const s of e.segments) {
         if (wc(s.text) > 40) W(w, `dinleme bölümü ${wc(s.text)} kelime (> 40): "${s.text.slice(0, 40)}…"`);
         if (trLetters(s.text)) E(w, `dinleme bölümünde Türkçe harf: "${s.text.slice(0, 40)}"`);

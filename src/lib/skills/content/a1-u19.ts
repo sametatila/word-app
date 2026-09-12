@@ -113,7 +113,7 @@ export const a1U19: SkillExercise[] = [
         text: "Wo ist das Konzert von Toms Band?",
         options: ["im Theater", "im Kino", "im Fitnessstudio"],
         answer: 0,
-        explain: "„Nächstes Konzert: am Samstag im Theater!“",
+        explain: "„Konzert: am Samstag im Theater!“",
       },
       {
         text: "Richtig oder falsch? Elif spielt Gitarre.",

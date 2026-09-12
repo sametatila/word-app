@@ -75,7 +75,7 @@ export const c1U11: SkillExercise[] = [
         text: "Was bedeutet Distanz laut Text NICHT?",
         options: ["Vorsicht", "Zweifel", "Wiedergabe"],
         answer: 1,
-        explain: "„Er distanziert sich, ohne zu widersprechen — Distanz ist kein Zweifel.“",
+        explain: "„Er distanziert sich, ohne zu widersprechen … Distanz ist kein Zweifel.“",
       },
       {
         kind: "short_answer",
