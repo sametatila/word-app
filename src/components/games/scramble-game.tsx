@@ -13,6 +13,7 @@ import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { play } from "@/lib/sfx";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -114,16 +115,22 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   function addLetter(tile: Tile) {
     if (status !== "playing" || usedIds.has(tile.id)) return;
+    /* DOKUNUS SESI. `tap.mp3` webde de yuklu ama yalnizca ses anahtarinin
+       onizlemesinde caliniyordu; Android her harf/kelime yerlestirmede ve
+       geri almada caliyor (`game/rounds`). Karo hareketi sessizdi. */
+    play("tap");
     setPlaced((prev) => (prev.length >= targetLetters.length ? prev : [...prev, tile]));
   }
 
   function removeAt(index: number) {
     if (status !== "playing") return;
+    play("tap");
     setPlaced((prev) => prev.filter((_, i) => i !== index));
   }
 
   function backspace() {
     if (status !== "playing" || placed.length === 0) return;
+    play("tap");
     setPlaced((prev) => prev.slice(0, -1));
   }
 

@@ -10,6 +10,7 @@ import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { speakGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { play } from "@/lib/sfx";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
@@ -94,6 +95,9 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
 
   function chooseLeft(wordId: number) {
     if (matched.has(wordId) || wrongPair) return;
+    /* Dokunus sesi — Android karti secerken caliyor (`game/rounds`
+       `pickLeft`). */
+    play("tap");
     // Almanca kelimeye dokununca telaffuzu da duyulur: eşleştirme aynı zamanda
     // kulak eğitimidir.
     const w = words.find((x) => x.id === wordId);
@@ -107,6 +111,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   function chooseRight(idx: number) {
     const item = rightItems[idx];
     if (!item || matched.has(item.wordId) || wrongPair) return;
+    play("tap");
     setSelectedRightIdx(idx);
     if (selectedLeft != null) {
       tryMatch(selectedLeft, idx);

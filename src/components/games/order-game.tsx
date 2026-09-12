@@ -13,6 +13,7 @@ import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { play } from "@/lib/sfx";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -106,12 +107,17 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     if (status !== "playing" || usedIds.has(token.id)) return;
     // Her yerleştirilen kelime tek tek okunuyor: cümle kurulurken sırayı
     // sesle takip etmek, Almanca sözcük dizilişini kulakla öğrenmenin yolu.
+    /* DOKUNUS SESI. `tap.mp3` webde de yuklu ama yalnizca ses anahtarinin
+       onizlemesinde caliniyordu; Android her harf/kelime yerlestirmede ve
+       geri almada caliyor (`game/rounds`). Karo hareketi sessizdi. */
+    play("tap");
     speakGerman(token.text);
     setPlaced((prev) => (prev.length >= answer.length ? prev : [...prev, token]));
   }
 
   function removeAt(index: number) {
     if (status !== "playing") return;
+    play("tap");
     setPlaced((prev) => prev.filter((_, i) => i !== index));
   }
 
@@ -234,7 +240,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
         <div className="flex gap-3">
           <button
             type="button"
-            onClick={() => setPlaced((prev) => prev.slice(0, -1))}
+            onClick={() => { play("tap"); setPlaced((prev) => prev.slice(0, -1)); }}
             disabled={status !== "playing" || placed.length === 0}
             className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
           >
