@@ -13,6 +13,7 @@ import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { ReportDialog } from "@/components/report-dialog";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 
 type Item = {
   id: number;
@@ -42,6 +43,8 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
   const [reported, setReported] = useState<Item | null>(null);
+  /* Silinmesi SORULAN kayıt. Bkz. aşağıdaki `remove`. */
+  const [toDelete, setToDelete] = useState<number | null>(null);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
@@ -62,14 +65,27 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     };
   }, [attempt]);
 
-  async function remove(id: number) {
-    if (!confirm(t("writ.delete_confirm"))) return;
-    try {
-      const res = await fetch(`/api/assessments?id=${id}`, { method: "DELETE" });
-      if (res.ok) setItems((list) => (list ?? []).filter((i) => i.id !== id));
-    } catch {
-      setItems(null);
-    }
+  /*
+   * SİLME, UYGULAMANIN KENDİ KUTUSUYLA SORULUYOR.
+   *
+   * Burası tarayıcının `confirm()`ünü çağıran son yerdi. `confirm-dialog`ın
+   * kendi yorumu neden yanlış olduğunu zaten yazıyor: sistem kutusu ne
+   * uygulamanın diline ne tasarımına ait ve iOS'ta "İptal"in yeri bizim
+   * düzenimizin tersi. Android bu soruyu `Alert.alert` ile SORUYOR ama iki
+   * düğmesini de kendi sözlüğünden adlandırıyor ("Vazgeç" / "Sil") ve silmeyi
+   * `destructive` diye işaretliyor (`WritingsScreen.askDelete`); web'de
+   * karşılığı `ConfirmDialog destructive`.
+   *
+   * Silme sırası da Android'inki: satır ÖNCE gidiyor, sunucu sonra. Eskiden
+   * web yanıtı bekliyordu ve iki ucu da kaçırıyordu — istek başarısızsa
+   * HİÇBİR ŞEY olmuyordu (kullanıcı boşuna bekliyor), istek fırlatırsa bütün
+   * liste "yüklenemedi" kartına dönüyordu (silinmeyen yazılar da gözden
+   * kayboluyordu). İkisi de silmenin kendisinden büyük bir ceza.
+   */
+  function remove(id: number) {
+    setToDelete(null);
+    setItems((list) => (list ?? []).filter((i) => i.id !== id));
+    void fetch(`/api/assessments?id=${id}`, { method: "DELETE" }).catch(() => {});
   }
 
   /* İskelet kartın gerçek yapısında: başlık, alt satır ve iki kayıt yeri.
@@ -172,7 +188,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                     {it.answer}
                   </span>
                 </button>
-                <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost hit-8 shrink-0 px-2 py-1 text-caption">
+                <button type="button" onClick={() => setToDelete(it.id)} className="btn btn-ghost hit-8 shrink-0 px-2 py-1 text-caption">
                   {t("common.delete")}
                 </button>
               </div>
@@ -208,6 +224,15 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
         refId={reported ? String(reported.id) : ""}
         content={reported?.answer ?? ""}
         onClose={() => setReported(null)}
+      />
+
+      <ConfirmDialog
+        open={toDelete !== null}
+        title={t("writ.delete_confirm")}
+        confirmLabel={t("common.delete")}
+        destructive
+        onConfirm={() => toDelete !== null && remove(toDelete)}
+        onCancel={() => setToDelete(null)}
       />
     </section>
   );

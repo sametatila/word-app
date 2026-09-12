@@ -403,7 +403,6 @@ export const trWeb: Record<string, string> = {
   "land.delete_account": "Hesabını sil",
   "land.support": "Destek",
   "socialw.settings_sub": "Arkadaşların seni nasıl bulur, ne görür.",
-  "socialw.unfriend_confirm": "Arkadaşlıktan çıkarılsın mı? Bildirim gitmez.",
   "socialw.link_copied": "Bağlantı kopyalandı",
   "socialw.tabs": "Sosyal sekmeler",
   "socialw.joined": "Katılım {date}",

@@ -377,7 +377,6 @@ export const deWeb: Record<string, string> = {
   "land.delete_account": "Konto löschen",
   "land.support": "Support",
   "socialw.settings_sub": "Wie deine Freunde dich finden und was sie sehen.",
-  "socialw.unfriend_confirm": "Freundschaft beenden? Es wird keine Benachrichtigung gesendet.",
   "socialw.link_copied": "Link kopiert",
   "socialw.tabs": "Soziale Reiter",
   "socialw.joined": "Dabei seit {date}",

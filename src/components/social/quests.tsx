@@ -11,6 +11,7 @@ import { useShell } from "@/components/app-shell";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, formatPercent } from "@/lib/i18n/dict";
 import { ErrorText } from "./error-text";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 
 /**
  * Ortak görevler. Bu haftanın görevi üstte (davet ya da ilerleme çubuğu),
@@ -186,6 +187,16 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
   const lang = useLang();
   const invited = q.status === "invited";
   const myShare = q.totalXp ? Math.round((q.myXp / q.totalXp) * 100) : 0;
+  /*
+   * YIKICI SORU UYGULAMANIN KENDİ KUTUSUNDA.
+   *
+   * `window.confirm` ne uygulamanın diline ne tasarımına ait: düğmeleri
+   * tarayıcının dilinde ("OK"/"Cancel"), iOS'ta da "İptal"in yeri bizim
+   * düzenimizin tersi. Üstelik başlıkla açıklama tek metne `\n\n` ile
+   * yapıştırılıyordu. Android ikisini ayrı satır yapıyor ve düğmeye adını
+   * veriyor ("Bırak", `destructive`).
+   */
+  const [leaving, setLeaving] = useState(false);
   return (
     <section className="card p-4">
       <div className="flex items-center gap-3">
@@ -255,10 +266,19 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
               Android sonucu açıkça yazıyor; başkasını etkileyen bir eylemde
               bunun söylenmemesi olmaz. */}
           <div className="mt-2 text-right">
-            <button className="muted text-micro" onClick={() => { if (window.confirm(`${t("quests.leave_title")}\n\n${t("quests.leave_text")}`)) void onAct(() => social.questAction(q.id, "cancel")); }}>
+            <button className="muted text-micro" onClick={() => setLeaving(true)}>
               {t("quests.leave_quest")}
             </button>
           </div>
+          <ConfirmDialog
+            open={leaving}
+            title={t("quests.leave_title")}
+            message={t("quests.leave_text")}
+            confirmLabel={t("quests.leave")}
+            destructive
+            onConfirm={() => { setLeaving(false); void onAct(() => social.questAction(q.id, "cancel")); }}
+            onCancel={() => setLeaving(false)}
+          />
         </>
       )}
     </section>

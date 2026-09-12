@@ -6,6 +6,7 @@ import { errorText, social } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
 import { useT } from "@/lib/i18n/client";
 import { ErrorText } from "./error-text";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 
 /**
  * İlişkiye göre tek düğme: Ekle · İstek gönderildi (iptal) · Kabul et ·
@@ -32,6 +33,16 @@ export function UserAction({
   const [fid, setFid] = useState<number | null>(friendshipId ?? null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+/*
+ * YIKICI SORU UYGULAMANIN KENDİ KUTUSUNDA.
+ *
+ * `window.confirm` ne uygulamanın diline ne tasarımına ait: düğmeleri
+ * tarayıcının dilinde ("OK"/"Cancel"), iOS'ta da "İptal"in yeri bizim
+ * düzenimizin tersi. Android aynı soruyu kendi sözlüğüyle soruyor —
+ * BAŞLIK, ayrı bir AÇIKLAMA satırı ve adı konmuş `destructive` bir düğme.
+ * Web'de karşılığı `ConfirmDialog`.
+ */
+  const [unfriending, setUnfriending] = useState(false);
 
   async function run(fn: () => Promise<Relation>) {
     if (busy) return;
@@ -58,13 +69,7 @@ export function UserAction({
       <button
         className={`btn btn-ghost ${size}`}
         disabled={busy}
-        onClick={() => {
-          if (!window.confirm(t("socialw.unfriend_confirm"))) return;
-          void run(async () => {
-            await social.remove(userId);
-            return "none";
-          });
-        }}
+        onClick={() => setUnfriending(true)}
       >
         <CheckIcon size={14} />
         <span className="ml-1">{t("useractionbutton.friends")}</span>
@@ -124,6 +129,21 @@ export function UserAction({
   return (
     <span className="flex flex-col items-end gap-1">
       {button}
+      <ConfirmDialog
+        open={unfriending}
+        title={t("social.unfriend")}
+        message={t("useractionbutton.no_notice")}
+        confirmLabel={t("social.remove")}
+        destructive
+        onConfirm={() => {
+          setUnfriending(false);
+          void run(async () => {
+            await social.remove(userId);
+            return "none";
+          });
+        }}
+        onCancel={() => setUnfriending(false)}
+      />
       {/* DEVRE DIŞI DÜĞMENİN SEBEBİ GÖRÜNÜR. Sebep `title=` ipucu balonunda
           duruyordu: dokunmatikte hiç açılmaz, klavyeyle de erişilmez — yani
           kullanıcı ölü bir düğmeye bakıp neden çalışmadığını hiçbir yerden

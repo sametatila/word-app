@@ -8,6 +8,7 @@ import { errorText, social } from "@/lib/social/client";
 import type { FriendRow } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 
 /**
  * Arkadaş satırı: kimlik + bu haftaki emeği + ortak seri + iki eylem
@@ -76,8 +77,18 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       setBusy(false);
     }
   }
+/*
+ * YIKICI SORU UYGULAMANIN KENDİ KUTUSUNDA.
+ *
+ * `window.confirm` ne uygulamanın diline ne tasarımına ait: düğmeleri
+ * tarayıcının dilinde ("OK"/"Cancel"), iOS'ta da "İptal"in yeri bizim
+ * düzenimizin tersi. Android aynı soruyu kendi sözlüğüyle soruyor —
+ * BAŞLIK, ayrı bir AÇIKLAMA satırı ve adı konmuş `destructive` bir düğme.
+ * Web'de karşılığı `ConfirmDialog`.
+ */
+  const [removing, setRemoving] = useState(false);
   async function remove() {
-    if (!window.confirm(t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") }))) return;
+    setRemoving(false);
     try {
       await social.remove(f.userId);
       onChanged();
@@ -164,10 +175,19 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           <TargetIcon size={15} />
           {t("friendrows.quest")}
         </button>
-        <button className="muted h-8 px-1.5 text-micro" onClick={() => void remove()} aria-label={t("social.unfriend")}>
+        <button className="muted h-8 px-1.5 text-micro" onClick={() => setRemoving(true)} aria-label={t("social.unfriend")}>
           {t("social.remove")}
         </button>
       </div>
+      <ConfirmDialog
+        open={removing}
+        title={t("social.unfriend")}
+        message={t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") })}
+        confirmLabel={t("social.remove")}
+        destructive
+        onConfirm={() => void remove()}
+        onCancel={() => setRemoving(false)}
+      />
     </li>
   );
 }

@@ -11,6 +11,7 @@ import { FeedCard } from "./feed";
 import { UserAction } from "./user-action";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf } from "@/lib/i18n/dict";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 
 /**
  * Herkese açık profil. Sunucu görünürlüğü uygulayıp kırpılmış veriyi verir;
@@ -26,6 +27,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
   const [busy, setBusy] = useState(false);
   const [more, setMore] = useState(false);
   const [reporting, setReporting] = useState(false);
+  const [blocking, setBlocking] = useState(false);
   const u = data.user;
   const isSelf = u.userId === me;
   const friends = rel === "friends";
@@ -44,8 +46,17 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
     }
   }
 
+/*
+ * YIKICI SORU UYGULAMANIN KENDİ KUTUSUNDA.
+ *
+ * `window.confirm` ne uygulamanın diline ne tasarımına ait: düğmeleri
+ * tarayıcının dilinde ("OK"/"Cancel"), iOS'ta da "İptal"in yeri bizim
+ * düzenimizin tersi. Android aynı soruyu kendi sözlüğüyle soruyor —
+ * BAŞLIK, ayrı bir AÇIKLAMA satırı ve adı konmuş `destructive` bir düğme.
+ * Web'de karşılığı `ConfirmDialog`.
+ */
   async function block() {
-    if (!window.confirm(t("user.block_confirm", { name: u.name ?? t("social.this_person") }))) return;
+    setBlocking(false);
     await act(async () => {
       await social.block(u.userId);
       router.replace("/friends");
@@ -110,7 +121,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         ) : null}
         {more && !isSelf ? (
           <div className="mt-3 flex flex-wrap gap-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
-            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => void block()}>
+            <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => setBlocking(true)}>
               {t("user.block")}
             </button>
             <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy} onClick={() => setReporting((r) => !r)}>
@@ -132,6 +143,15 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             ) : null}
           </div>
         ) : null}
+        <ConfirmDialog
+          open={blocking}
+          title={t("user.block")}
+          message={t("user.block_confirm", { name: u.name ?? t("social.this_person") })}
+          confirmLabel={t("user.block")}
+          destructive
+          onConfirm={() => void block()}
+          onCancel={() => setBlocking(false)}
+        />
       </section>
 
       {data.stats ? (

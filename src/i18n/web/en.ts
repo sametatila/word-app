@@ -377,7 +377,6 @@ export const enWeb: Record<string, string> = {
   "land.delete_account": "Delete your account",
   "land.support": "Support",
   "socialw.settings_sub": "How your friends find you and what they see.",
-  "socialw.unfriend_confirm": "Remove this friend? No notification is sent.",
   "socialw.link_copied": "Link copied",
   "socialw.tabs": "Social tabs",
   "socialw.joined": "Joined {date}",
