@@ -7480,6 +7480,79 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 277. DAVET BAGLANTISI UYGULAMAYI ACIYOR -----------------------
+   *
+   * §169'un yan notu "mobilde derin baglanti HIC YOK" diyordu ve o cumle
+   * bayatlamisti: bugun uc yol iddia ediliyor, karsilaniyor ve kapiyla
+   * olculuyor (sifirlama, dogrulama, tarayicidan devir). Dogru cumle daha
+   * dardi: AUTH yollari var, DAVET yolu yok.
+   *
+   * Sonucu buyume dongusunun tam ortasinda: bir kullanici `lernomi.app/u/ahmet`
+   * paylasiyor, arkadasi uygulamasi KURULU bir Android'de dokunuyor ve
+   * TARAYICI aciliyordu.
+   *
+   * IDDIA ETME KURALI burada da tutuyor ve olculdu: "yalniz uygulamanin
+   * karsilayabildigi yol iddia edilir, cunku karsilanmayan bir yol
+   * tarayicida acilmaktan KOTU". Webin `/u/[username]` sayfasi da oturum
+   * istiyor (oturumsuz ziyaretci girise yollaniyor); mobil `UserScreen` ise
+   * adi konmus bir kart ve "Giris yap" dugmesi gosteriyor. Iki taraf esit,
+   * uygulamanin cevabi daha acik.
+   *
+   * Cevirme bilgisi ZATEN VARDI: `pushRoute` bildirimler icin `/u/…`yi
+   * ekrana esliyordu. Eksik olan tek sey yolun iddia edilip
+   * `parseDeepLink`te karsilanmasiydi.
+   *
+   * SOGUK ACILIS: gezgin hazir degilse eylem bekletiliyor ve
+   * `NavigationContainer.onReady` isliyor - sifirlama yolunun ogrendigi ders
+   * (ilk yazim baglantiyi sessizce dusuruyordu). */
+  {
+    const aasa = read("src/app/.well-known/apple-app-site-association/route.ts");
+    const manifest = read("mobile/android/app/src/main/AndroidManifest.xml");
+    const derin = sil(read("mobile/src/lib/deepLink.ts"));
+    const app = sil(read("mobile/App.tsx"));
+    const push = sil(read("mobile/src/lib/pushRoute.ts"));
+
+    sameList(
+      "davet baglantisi dort yerde",
+      [
+        "beyan=" + (/"\/u\/"/.test(aasa) ? "var" : "YOK"),
+        "joker=" + (/path\.endsWith\("\/"\) \? `\$\{path\}\*` : path/.test(aasa) ? "var" : "YOK"),
+        "manifesto=" + (/android:pathPrefix="\/u\/"/.test(manifest) ? "var" : "YOK"),
+        "karsilanan=" + (/url\.pathname\.startsWith\("\/u\/"\)/.test(derin) ? "var" : "YOK"),
+        "eylem=" + (/kind: "profile"/.test(derin) ? "var" : "YOK"),
+      ],
+      ["beyan=var", "joker=var", "manifesto=var", "karsilanan=var", "eylem=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* EYLEM GEZGINE BAGLI MI: `parseDeepLink` bir eylem uretip kimse onu
+       islemezse bag  lanti uygulamayi acmakla kalir - iddia edilmis ama
+       karsilanmamis bir yol tam bu demek. Soguk acilista BEKLETME de
+       gerekiyor. */
+    sameList(
+      "profil eylemi isleniyor",
+      [
+        "handle=" + (/action\.kind === "profile"/.test(app) ? "var" : "YOK"),
+        "gezinme=" + (/"User", \{ username/.test(app) ? "var" : "YOK"),
+        "bekletme=" + (/p\?\.kind === "profile"/.test(app) ? "var" : "YOK"),
+      ],
+      ["handle=var", "gezinme=var", "bekletme=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Bildirim yolu ile derin baglanti AYNI ekrani aciyor: ikisi ayrisirsa
+       ayni adres iki farkli yere goturur. */
+    sameList(
+      "iki yol ayni ekrani aciyor",
+      ["push=" + (/name: "User", params: \{ username \}/.test(push) ? "User" : "BASKA")],
+      ["push=User"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 276. KAPANMIS AMA KILITLENMEMIS DORT MADDE --------------------
    *
    * Defterin ilk seritlerinde "Karar Samet'in" / "karar gerekiyor" diye
@@ -13230,7 +13303,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const derin = sil(read("mobile/src/lib/deepLink.ts"));
 
     const beyan = [...(aasa.match(/APP_LINK_PATHS = \[([^\]]*)\]/)?.[1] ?? "").matchAll(/"([^"]+)"/g)].map((m) => m[1]).sort();
-    const iddia = [...manifest.matchAll(/android:path="([^"]+)"/g)].map((m) => m[1]).sort();
+    /*
+     * IKI BICIM birden okunuyor: tam esleşen yollar `android:path`, ONEK
+     * yollari `android:pathPrefix`. Davet baglantisi (`/u/<kullaniciadi>`)
+     * onek olmak zorunda - kullanici adi degisken - ve olcu yalniz `path`
+     * ararsa beyanda olup manifestoda gorunmeyen bir yol saniyor (bu turda
+     * tam bunu soyledi).
+     */
+    const iddia = [...manifest.matchAll(/android:path(?:Prefix)?="([^"]+)"/g)].map((m) => m[1]).sort();
     /* Karsilanan yollar: `parseDeepLink` icindeki yol karsilastirmalari. */
     const karsilanan = [...derin.matchAll(/(?:pathname === |startsWith\()"([^"]+)"/g)].map((m) => m[1]).sort();
 
