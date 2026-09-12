@@ -89,9 +89,9 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer guesses at an ending when he is not sure.",
+        text: "The writer never guesses at an ending.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„and never to guess at an ending.“",
       },
       {
@@ -276,9 +276,9 @@ export const enB2U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Bahar would write „What stays is the remorse“ on a page.",
+        text: "Bahar would not write „What stays is the remorse“ on a page.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That one I would not write down.“",
       },
       {

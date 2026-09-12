@@ -65,9 +65,9 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz is married.",
+        text: "Deniz is not married.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I am not married.“ — „not“ cümleyi olumsuz yapıyor, yani evli değil.",
       },
       {
@@ -209,9 +209,9 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ava is not married.",
+        text: "Ava is married.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I am married. My husband is from Turkey.“ — evli; hüküm yanlış.",
       },
       {

@@ -69,9 +69,9 @@ export const enA2U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ali broke his arm.",
+        text: "Ali has a bad injury but no break.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The doctor said: No break, only a bad injury.“",
       },
       {
@@ -218,9 +218,9 @@ export const enA2U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz was alone all the time.",
+        text: "Deniz was alone until Thursday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Because my friend was working. He came on Thursday.“ — başta yalnızdı.",
       },
       {

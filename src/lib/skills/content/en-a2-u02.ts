@@ -65,9 +65,9 @@ export const enA2U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer liked the city at first.",
+        text: "The writer did not like the city at first.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„At first I didn't like it.“ — „at first“ sonradan değiştiğini söylüyor.",
       },
       {
@@ -206,9 +206,9 @@ export const enA2U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert used to like football.",
+        text: "Mert used to play football without liking it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I used to play football, but I didn't use to like it.“",
       },
       {

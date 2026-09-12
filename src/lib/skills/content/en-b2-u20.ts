@@ -90,9 +90,9 @@ export const enB2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The short version says which of the two it means.",
+        text: "The short version does not say which of the two it means.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the short version does not say which, because it does not have to…“",
       },
       {
@@ -273,9 +273,9 @@ export const enB2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Mustn't have“ could be used here.",
+        text: "There is no such sentence as „mustn't have“ here.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no such sentence.“",
       },
       {

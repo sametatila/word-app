@@ -68,9 +68,9 @@ export const enA2U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer thinks phones are hard.",
+        text: "The writer thinks the menus are hard.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't think phones are hard. I think the menus are.“",
       },
       {
@@ -213,9 +213,9 @@ export const enA2U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela thinks the series is very good.",
+        text: "Ela does not think the series is as good as people say.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't think it is as good as people say.“ — olumsuz „think“e takılıyor.",
       },
       {

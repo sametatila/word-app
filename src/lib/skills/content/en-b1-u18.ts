@@ -78,9 +78,9 @@ export const enB1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The cough started after the fever.",
+        text: "The cough started ten days before the fever.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Ten days before.“ — öksürük ateşten önce başlamış.",
       },
       {
@@ -223,9 +223,9 @@ export const enB1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert had not heard about the problem before.",
+        text: "Mert had heard about the problem earlier.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I had heard about the problem earlier. Twice, from two people, in the corridor…“",
       },
       {

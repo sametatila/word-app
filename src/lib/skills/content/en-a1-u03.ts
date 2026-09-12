@@ -63,9 +63,9 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ayla's father is a doctor.",
+        text: "Ayla's mother is a doctor.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
       },
       {
@@ -200,9 +200,9 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Tarik has got children.",
+        text: "Tarik has not got children.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Have you got children? No, I have not.“ — kardeşi var, çocuğu yok.",
       },
       {

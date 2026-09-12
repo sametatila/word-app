@@ -85,9 +85,9 @@ export const enB1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Who“ changes its shape after the first time.",
+        text: "The same „who“ serves a subject and an object.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the same „who“ serves one woman and forty, a subject and an object…“",
       },
       {
@@ -264,9 +264,9 @@ export const enB1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The longing goes away after the appointment.",
+        text: "The longing does not go away when you make the appointment.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The longing does not go away when you make the appointment.“",
       },
       {

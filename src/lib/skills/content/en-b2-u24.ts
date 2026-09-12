@@ -86,9 +86,9 @@ export const enB2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The report I sent“ is an extra clause.",
+        text: "„The report I sent“ names one report out of several.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„The report I sent“ is picking one report out of several.“",
       },
       {
@@ -274,9 +274,9 @@ export const enB2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A participle only saves words.",
+        text: "A participle does more than save words.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A participle does not only save words; it says these two things belong together.“",
       },
       {

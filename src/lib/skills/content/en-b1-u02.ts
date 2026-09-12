@@ -75,9 +75,9 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The old template is not used any more.",
+        text: "The old template is still used by two teams.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The old agenda template is still used by two teams. It was replaced in March.“",
       },
       {
@@ -226,9 +226,9 @@ export const enB1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The second report was late too.",
+        text: "The second report was on time.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The report I sent this Friday was on time.“",
       },
       {

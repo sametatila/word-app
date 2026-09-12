@@ -74,9 +74,9 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The children take the same tablet.",
+        text: "The children take a syrup.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„For children we have a syrup. This dose is for adults.“",
       },
       {
@@ -223,9 +223,9 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has to show her card.",
+        text: "Only the patients show a card.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, only the patients show a card.“ — kart hastanın, ziyaretçinin değil.",
       },
       {

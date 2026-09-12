@@ -73,9 +73,9 @@ export const enB1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The desk is busy between two and three.",
+        text: "The desk is quiet between two and three.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the desk is quiet between two and three…“",
       },
       {
@@ -229,9 +229,9 @@ export const enB1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Applicants take a number at the door.",
+        text: "Every applicant books a slot in advance.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no number. Every applicant books a slot in advance…“",
       },
       {

@@ -90,9 +90,9 @@ export const enB2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Undeniable“ is a good word for a report.",
+        text: "„Undeniable“ should almost never be written in a report.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„Undeniable“ is at the other end and should almost never be written…“",
       },
       {
@@ -273,9 +273,9 @@ export const enB2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The lawyers use the mixed sentence.",
+        text: "The council uses the mixed sentence and the lawyers use the closed ones.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The council uses the mixed one and the lawyers use the closed ones…“",
       },
       {

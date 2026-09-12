@@ -65,9 +65,9 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The queue on Saturday is short.",
+        text: "The queue for the ticket is longer than the tour.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„…the queue for the ticket is longer than the tour.“",
       },
       {
@@ -218,9 +218,9 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The luggage comes before the seven o'clock flight.",
+        text: "The luggage goes with the seven o'clock flight.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It goes with the seven o'clock flight. You get it at the end.“",
       },
       {

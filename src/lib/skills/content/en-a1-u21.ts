@@ -66,9 +66,9 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has to pay today.",
+        text: "Ela has to bring her card tomorrow.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, not today. But you must bring your card tomorrow.“",
       },
       {

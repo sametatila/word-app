@@ -64,9 +64,9 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer writes one report a week.",
+        text: "The writer writes two reports a week.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I write two reports a week, one short and one long.“",
       },
       {
@@ -211,9 +211,9 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The boss has asked for the long report since January.",
+        text: "The boss has not asked for the long report since January.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„But he hasn't asked since January.“ — olumsuz present perfect.",
       },
       {

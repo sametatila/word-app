@@ -60,9 +60,9 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer has a lot of ideas.",
+        text: "The writer does not have many ideas.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't have many ideas.“ — sayılabilen şeyde olumsuzda „many“ geliyor.",
       },
       {
@@ -210,9 +210,9 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena has many jackets.",
+        text: "Sena has only two jackets.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„You don't have many jackets. — Only two.“",
       },
       {

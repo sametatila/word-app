@@ -60,9 +60,9 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer likes sweet food.",
+        text: "The writer does not like sweet food.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't like sweet food — I hate very sweet cakes!“ — „hate“ en güçlü olumsuz.",
       },
       {
@@ -213,9 +213,9 @@ export const enA1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The water is warm.",
+        text: "The water is very hot.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Yes, it's very hot. Don't touch it!“ — ılık olan çay, su çok sıcak.",
       },
       {

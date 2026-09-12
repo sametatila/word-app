@@ -69,9 +69,9 @@ export const enA2U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz has answered the customer.",
+        text: "Deniz has not answered the customer yet.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I haven't answered them yet. I would like to talk to you first.“",
       },
       {
@@ -214,9 +214,9 @@ export const enA2U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil remembered all ten names.",
+        text: "Nil remembered three of the ten names.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Ten names in two minutes. I remembered three.“",
       },
       {

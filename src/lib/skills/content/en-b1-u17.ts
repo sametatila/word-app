@@ -74,9 +74,9 @@ export const enB1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The magazine quoted the survey wrongly.",
+        text: "The magazine quoted the survey correctly.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not wrong, old: the piece is from 2021 and it quotes the survey correctly.“",
       },
       {
@@ -232,9 +232,9 @@ export const enB1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The room booking was the reason.",
+        text: "The room was booked, and that was not the reason.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„He said the room was booked, which was true and not the reason.“",
       },
       {

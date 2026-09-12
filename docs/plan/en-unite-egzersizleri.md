@@ -1942,6 +1942,37 @@ seviyede birden hata verir ve `--baseline` ile borç kabul etmek bu kusuru
 kaydetmek için yanlış araç olurdu.
 
 
+**Doğru/yanlış dengesi düzeltildi ve kapıya bağlandı (2026-09-12).** Bir önceki
+notta C1 düzeltilmişti; bu turda B2, B1, A2 ve A1 de çevrildi. Toplam **192 soru**
+doğru bir önermeye dönüştürüldü (C1 50, B2 50, B1 50, A2 50, A1 42 — A1'de sekiz
+soru zaten „True“ idi). Beş seviyenin hepsi artık %50 civarında:
+
+| Seviye | Önce | Sonra |
+|---|---|---|
+| A1 | %8 True | %50 |
+| A2 | %1 | %51 |
+| B1 | %0 | %50 |
+| B2 | %0 | %50 |
+| C1 | %0 | %50 |
+
+Yöntem her seviyede aynı: her ünitenin `r1` ve `l1` sorusu metnin SÖYLEDİĞİNİ
+ileri süren bir önermeye çevrildi, `r2`/`l2` olduğu gibi bırakıldı.
+Açıklamalara dokunulmadı — hepsi zaten metnin ilgili satırını alıntılıyordu ve
+o satır şimdi doğru önermeyi destekliyor. İki kök ölçüm yüzünden yeniden
+yazıldı („excludes“ ve „picks“ ünite dışı kalıyordu).
+
+Kapı artık yazılı: kurs ve seviye başına doğru/yanlış cevap dağılımı **%35–65**
+bandının dışına çıkarsa hata. Bant bilerek geniş — amaç dengeyi dayatmak değil,
+tek yöne ÇÖKMEYİ yakalamak. Bandı geçici olarak %55–65'e daraltıp kapının
+ateşlendiği doğrulandı.
+
+Dersin kendisi kaydedilmeye değer: bir kapı „şık konumu yanlılığı“ diye
+yazılmıştı ama yalnız ÇOKTAN SEÇMELİYİ sayıyordu; iki şıklı sorular
+karıştırmadan da bilerek muaftı ve muafiyetin gerekçesi başka bir kursun
+ölçümüydü. Böylece bir soru türü hiçbir ölçümün kapsamında kalmadı ve kusur
+orada tam boyutuyla büyüdü. **Bir kapı neyi saymadığını da söylemeli.**
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

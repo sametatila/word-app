@@ -78,9 +78,9 @@ export const enA2U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There are rooms with a balcony on the second floor.",
+        text: "The rooms with a balcony are on the fourth floor.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„On the second floor, no. On the fourth there are two…“",
       },
       {
@@ -211,9 +211,9 @@ export const enA2U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The room is on the second floor.",
+        text: "The room is on the third floor.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Room three hundred and four, on the third floor.“",
       },
       {

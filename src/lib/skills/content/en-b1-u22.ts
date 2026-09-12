@@ -86,9 +86,9 @@ export const enB1U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Don't have to“ and „must not“ mean the same thing.",
+        text: "„Don't have to“ removes the rule and „must not“ creates it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„one removes the rule, the other creates it.“",
       },
       {
@@ -265,9 +265,9 @@ export const enB1U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a clear reason why the second verb takes „-ing“.",
+        text: "There is no reason why the second verb takes „-ing“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no reason. The first verb chooses the shape of the second one…“",
       },
       {

@@ -74,9 +74,9 @@ export const enB1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Tourists photograph the valley.",
+        text: "Nobody photographs the valley.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nobody photographs it because there is nothing in it…“",
       },
       {
@@ -222,9 +222,9 @@ export const enB1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Everybody outside the team knows that Ela runs it.",
+        text: "Nobody outside the team knows that Ela runs it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„She runs the whole thing and nobody outside the team knows it.“",
       },
       {

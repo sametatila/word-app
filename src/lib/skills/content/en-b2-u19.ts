@@ -91,9 +91,9 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The long form is the normal one.",
+        text: "The deletion is the normal form, not optional politeness.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That deletion is not optional politeness. It is the normal form…“",
       },
       {
@@ -275,9 +275,9 @@ export const enB2U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Flextime gets a relative clause.",
+        text: "Flextime gets no relative clause at all.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No relative clause at all, which is the right answer whenever it is available.“",
       },
       {

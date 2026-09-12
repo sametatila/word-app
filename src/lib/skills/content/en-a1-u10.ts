@@ -60,9 +60,9 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer is going to be late on Friday.",
+        text: "The writer is not going to be late.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I am not going to be late!“ — gelecek olumsuzu „not“ „am“den sonra.",
       },
       {
@@ -209,9 +209,9 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena is going to take the car.",
+        text: "Sena is going to take the bus.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, I'm going to take the bus.“ — soru arabayı soruyor, cevap otobüs diyor.",
       },
       {

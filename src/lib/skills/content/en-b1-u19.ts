@@ -79,9 +79,9 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Side effects are listed by how serious they are.",
+        text: "Side effects are listed by how often they happen.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Side effects are listed by how often they happen, not by how serious they are.“",
       },
       {
@@ -233,9 +233,9 @@ export const enB1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "They asked about the allergy once.",
+        text: "They asked about the allergy twice.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Twice, in two rooms, from two people, which I now understand is on purpose.“",
       },
       {

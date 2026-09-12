@@ -91,9 +91,9 @@ export const enB2U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Only“ is a negative word.",
+        text: "„Only“ is a restriction that works like a negative.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„a restriction, like a negative, because it says that everything outside the named case is excluded.“",
       },
       {
@@ -279,9 +279,9 @@ export const enB2U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "People misread the broken sentence.",
+        text: "Nobody misreads the broken sentence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nobody misreads it, and everybody sees it.“",
       },
       {

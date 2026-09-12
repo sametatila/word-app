@@ -80,9 +80,9 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The earlier letters came back to Deniz.",
+        text: "Neither of the earlier letters came back.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Both went to this address and neither came back.“",
       },
       {
@@ -232,9 +232,9 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has lost the records.",
+        text: "Ela has kept everything and can find nothing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I have kept everything and I can find nothing. Those are two different skills.“",
       },
       {

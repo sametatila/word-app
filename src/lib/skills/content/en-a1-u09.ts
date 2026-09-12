@@ -61,9 +61,9 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer always walks to work.",
+        text: "The writer usually walks to work.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I usually walk to work.“ — „usually“ „always“ değil; her zaman demiyor.",
       },
       {
@@ -203,9 +203,9 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz turns on the TV before work.",
+        text: "Deniz turns off the TV before work.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Before work, I turn off the TV.“ — açmak sabahın başında, kapatmak işten önce.",
       },
       {

@@ -93,9 +93,9 @@ export const enB2U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Yesterday I spoke to her“ changes its order too.",
+        text: "„Yesterday I spoke to her“ keeps its order.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„Yesterday I spoke to her“ keeps its order…“",
       },
       {
@@ -287,9 +287,9 @@ export const enB2U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Four of them in a paragraph makes the reader believe more.",
+        text: "Four of them in a paragraph makes the reader stop believing any of it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Four of them in a paragraph and the reader stops believing any of it…“",
       },
       {

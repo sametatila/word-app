@@ -65,9 +65,9 @@ export const enA1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The course is forty euros for students.",
+        text: "The course is thirty euros for students.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "Öğrenciler için otuz euro: „For students: thirty euros.“ Kırk euro ötekiler için.",
       },
       {
@@ -217,9 +217,9 @@ export const enA1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Emre speaks English very fast.",
+        text: "Emre does not speak fast.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I speak a little English … but I do not speak fast.“ — tam tersini söylüyor.",
       },
       {

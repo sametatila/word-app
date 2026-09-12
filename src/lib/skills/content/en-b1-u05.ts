@@ -72,9 +72,9 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The man upstairs apologised.",
+        text: "Nobody apologised.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nobody apologised and nobody had to.“",
       },
       {
@@ -220,9 +220,9 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The mark on the wall was new.",
+        text: "The mark on the wall was already in the first photo.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I opened the folder on my phone and the mark was there in the first photo.“",
       },
       {

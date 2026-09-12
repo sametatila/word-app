@@ -89,9 +89,9 @@ export const enB2U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The rule about the subject is broken in an instruction.",
+        text: "The rule that seems broken in an instruction is in fact being kept.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the rule that seems broken here is in fact being kept.“",
       },
       {
@@ -281,9 +281,9 @@ export const enB2U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a rule for which verb takes which ending.",
+        text: "There is no rule for which verb takes which ending.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no rule in English for which verb takes which…“",
       },
       {

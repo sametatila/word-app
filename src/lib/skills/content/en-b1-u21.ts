@@ -78,9 +78,9 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The strongest form is the one about the longest time.",
+        text: "The strongest form is the one about the shortest time.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„it is the strongest of the three because it is the smallest. Two days, one forecast…“",
       },
       {
@@ -238,9 +238,9 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Changing the bulbs saves a lot of money.",
+        text: "Changing the bulbs saves four euros a year.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„true, and it is four euros a year.“",
       },
       {

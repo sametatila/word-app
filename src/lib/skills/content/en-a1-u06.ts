@@ -64,9 +64,9 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Water is two euros.",
+        text: "Water is one euro.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Water: 1 euro“ — iki euro olan kahve.",
       },
       {
@@ -214,9 +214,9 @@ export const enA1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is milk in Ela's coffee.",
+        text: "There is no milk in Ela's coffee.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Is there any milk in it? — No milk, thank you.“ Soruda „any“, cevapta yok.",
       },
       {

@@ -71,9 +71,9 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "German is required for this job.",
+        text: "German is not required for this job.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„German is not required, but you have to understand simple instructions.“",
       },
       {
@@ -219,9 +219,9 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz wants a new job because the old one is bad.",
+        text: "Deniz wants a team and a plan for the week.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not because the old one is bad. I want a team and a plan for the week.“",
       },
       {

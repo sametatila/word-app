@@ -72,9 +72,9 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil is really relaxed.",
+        text: "Nil only looks relaxed.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I am not relaxed. I only look relaxed.“",
       },
       {
@@ -221,9 +221,9 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has had the cold for three days.",
+        text: "Ela has had the cold for almost a week.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "Deniz üç gün diyor, Ela düzeltiyor: „Almost a week. It started on Friday.“",
       },
       {

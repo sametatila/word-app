@@ -72,9 +72,9 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The jewelry costs nine euros.",
+        text: "The jewelry costs four euros.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„These postcards are one euro and this jewelry is four.“",
       },
       {
@@ -220,9 +220,9 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil comes to the party.",
+        text: "Nil is in Izmir until Sunday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I invited Nil but it doesn't work. Izmir until Sunday.“",
       },
       {

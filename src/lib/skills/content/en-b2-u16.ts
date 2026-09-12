@@ -89,9 +89,9 @@ export const enB2U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I am wanting a new role“ is now allowed.",
+        text: "A learner who has met „Wanting a new role“ may wrongly write „I am wanting a new role“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„a learner who has met „Wanting a new role“ goes back and writes „I am wanting a new role“.“",
       },
       {
@@ -286,9 +286,9 @@ export const enB2U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "An audience reads the three verbs differently.",
+        text: "A critic reads the three verbs differently and an audience does not.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„And a critic reads them that way. An audience does not…“",
       },
       {

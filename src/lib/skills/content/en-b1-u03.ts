@@ -70,9 +70,9 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer was happy with the old target.",
+        text: "The writer said yes to everything except the target.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I said yes and then I said: not with the target.“",
       },
       {
@@ -220,9 +220,9 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nobody called Ela in November.",
+        text: "They called Ela in November.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„They called me in November. I answered…“",
       },
       {

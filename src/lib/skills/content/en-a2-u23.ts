@@ -73,9 +73,9 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz should sign the form now.",
+        text: "Deniz should sign the form at the counter.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„don't sign it here. You sign at the counter, in front of us.“",
       },
       {
@@ -220,9 +220,9 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The next screen is finished.",
+        text: "The next screen looks finished but is not.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„…the next screen looks finished but it isn't.“",
       },
       {

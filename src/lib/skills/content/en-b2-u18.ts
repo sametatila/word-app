@@ -92,9 +92,9 @@ export const enB2U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„An estimate cost“ means the same as „a cost estimate“.",
+        text: "„An estimate cost“ would be the cost of an estimate.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„an estimate cost would be the cost of an estimate.“",
       },
       {
@@ -275,9 +275,9 @@ export const enB2U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Melis is sure the third reading is fair.",
+        text: "Melis is not sure the third reading is fair.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It is a picturesque one and I am not sure it is fair.“",
       },
       {

@@ -67,9 +67,9 @@ export const enA1U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The medicine is for children too.",
+        text: "The medicine is not for children.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„And be careful: this medicine is not for children.“",
       },
       {

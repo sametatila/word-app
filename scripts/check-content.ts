@@ -185,6 +185,31 @@ function checkSkills(list: SkillExercise[]) {
   for (const [k, u] of baslik)
     if (u.size > 1) E("[skills]", `başlık iki ünitede birden: "${k}" → ünite ${[...u].sort((a, b) => a - b).join(", ")}`);
 
+  /* Doğru/yanlış sorusunun cevap dengesi. 2026-09-12'de ölçüldü: İngilizce
+     kursun 500 sorusunun 499'u „False“ idi — hiçbir şey okumadan hep „False“
+     diyen öğrenci %99,8 alıyordu. Şık konumu yanlılığı kapısı yalnız çoktan
+     seçmeliyi sayıyordu ve iki şıklı sorular karıştırmadan da muaf
+     (`bundled.ts`), yani hiçbir ölçüm bu türü görmüyordu. Bant geniş
+     tutuldu (%35–65): amaç dengeyi dayatmak değil, tek yöne çökmeyi
+     yakalamak. */
+  const df = new Map<string, [number, number]>();
+  for (const e of list) {
+    if (e.unit == null || !("questions" in e) || !Array.isArray(e.questions)) continue;
+    for (const q of e.questions) {
+      if ((q.kind ?? "mcq") !== "truefalse") continue;
+      const k = `${e.course ?? "de"} ${e.level}`;
+      const v = df.get(k) ?? [0, 0];
+      v[q.answer === 0 ? 0 : 1]++; df.set(k, v);
+    }
+  }
+  for (const [k, [dogru, yanlis]] of df) {
+    const n = dogru + yanlis;
+    if (n < 20) continue;
+    const oran = Math.round((dogru / n) * 100);
+    if (oran < 35 || oran > 65)
+      E("[skills]", `doğru/yanlış dengesi bozuk (${k}): ${n} soruda „True“ %${oran} (%35–65 bekleniyor)`);
+  }
+
   const ids = new Set<string>();
   for (const e of list) {
     const w = `[skills] ${e.id}`;

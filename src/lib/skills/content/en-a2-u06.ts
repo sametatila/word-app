@@ -72,9 +72,9 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela has a pain in the stomach.",
+        text: "Ela has a pain in the throat and the head.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, only the throat and the head.“",
       },
       {
@@ -222,9 +222,9 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can has no appointment.",
+        text: "Can has an appointment on Thursday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I have an appointment on Thursday.“",
       },
       {

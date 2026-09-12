@@ -62,9 +62,9 @@ export const enA1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The bird sings.",
+        text: "The bird never sings.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Pit doesn't talk, and he never sings.“ — „never“ tek başına olumsuzluk taşıyor.",
       },
       {
@@ -210,9 +210,9 @@ export const enA1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can has a dog at home.",
+        text: "Can does not have an animal at home.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
       },
       {

@@ -76,9 +76,9 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You should ask for the reference after you leave.",
+        text: "You should ask for the reference before you leave.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Ask for the reference before you leave, not six months later.“",
       },
       {
@@ -228,9 +228,9 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The third move came with more money.",
+        text: "The third move had the same salary.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Same title, same salary, different industry.“",
       },
       {

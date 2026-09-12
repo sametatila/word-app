@@ -79,9 +79,9 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer never broke the streak.",
+        text: "The writer broke the streak four times.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I broke it four times and the four restarts are the reason I am still here.“",
       },
       {
@@ -235,9 +235,9 @@ export const enB1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can's part was the quickest to write.",
+        text: "Can's part was the shortest and took the longest.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The part I wrote was the shortest. It took the longest…“",
       },
       {

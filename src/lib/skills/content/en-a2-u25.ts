@@ -73,9 +73,9 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A car came on Thursday.",
+        text: "No car came.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„we send a car on Thursday. No car came.“",
       },
       {
@@ -218,9 +218,9 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A bill from last year works.",
+        text: "A bill not older than three months works.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That works. Not older than three months.“",
       },
       {

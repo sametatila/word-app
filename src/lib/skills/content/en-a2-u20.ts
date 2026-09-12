@@ -65,9 +65,9 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "They were close friends at first.",
+        text: "They were not close at first.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„At first we were not close. She was loud, I was quiet…“",
       },
       {
@@ -218,9 +218,9 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "All the food is from Nil's mother.",
+        text: "Only the bread is from Nil's mother.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The bread, yes. The rest is from the shop and everybody knows.“",
       },
       {

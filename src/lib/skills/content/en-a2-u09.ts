@@ -71,9 +71,9 @@ export const enA2U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The leak started on Monday.",
+        text: "The leak has been there since Saturday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„…it has been there since Saturday.“ — pazartesi kalorifere ait.",
       },
       {
@@ -217,9 +217,9 @@ export const enA2U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The armchair is new.",
+        text: "The armchair is from the grandmother.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„From my grandmother. It is the most comfortable chair in the flat.“",
       },
       {

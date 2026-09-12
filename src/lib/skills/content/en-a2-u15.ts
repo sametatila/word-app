@@ -73,9 +73,9 @@ export const enA2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz wants a very short haircut.",
+        text: "Deniz wants a haircut that is not too short.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I'd like a haircut, please. Not too short.“",
       },
       {
@@ -221,9 +221,9 @@ export const enA2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The second shop gave a discount.",
+        text: "The second shop said no to a discount.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I asked for a discount in the second shop. They said no…“",
       },
       {

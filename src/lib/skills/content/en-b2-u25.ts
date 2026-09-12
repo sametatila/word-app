@@ -102,9 +102,9 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "This level taught a new tense.",
+        text: "This level taught no new tense.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not one of those is a new tense.“",
       },
       {
@@ -290,9 +290,9 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The product range goes in a conditional.",
+        text: "The product range goes nowhere near a conditional.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The product range goes nowhere near a conditional.“",
       },
       {

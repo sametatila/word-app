@@ -76,9 +76,9 @@ export const enB1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The journalist wrote the headline.",
+        text: "Somebody other than the journalist wrote the headline.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„In fairness, the journalist did not write the headline. Somebody else did…“",
       },
       {
@@ -232,9 +232,9 @@ export const enB1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can had prepared an answer.",
+        text: "Can had not prepared an answer.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„They asked if I had prepared an answer. I had not, and I said so…“",
       },
       {

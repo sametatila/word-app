@@ -63,9 +63,9 @@ export const enA2U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer bought a new phone.",
+        text: "The writer bought a small bag for the phone.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I bought a small bag for the phone.“ — telefonu bulundu, yenisini almadı.",
       },
       {
@@ -211,9 +211,9 @@ export const enA2U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There was a fire in the kitchen.",
+        text: "There was smoke but no fire.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No fire, only smoke.“ — komşu duman gördü.",
       },
       {

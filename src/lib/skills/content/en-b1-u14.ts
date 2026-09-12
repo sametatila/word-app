@@ -77,9 +77,9 @@ export const enB1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The visual method worked best.",
+        text: "The visual method did nothing for the writer.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The visual method everybody talks about did nothing for me.“",
       },
       {
@@ -231,9 +231,9 @@ export const enB1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena uses the word fluent for her English.",
+        text: "Sena has stopped wanting the word fluent.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, and I have stopped wanting that word.“",
       },
       {

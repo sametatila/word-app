@@ -89,9 +89,9 @@ export const enB2U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Two hedges in a check of this kind is the right number.",
+        text: "Two hedges in a check of this kind is one too many.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Two hedges, and in a check of this kind that is one too many.“",
       },
       {
@@ -277,9 +277,9 @@ export const enB2U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The broken sentence rarely reaches print.",
+        text: "The broken sentence reaches print constantly.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It reaches print constantly…“",
       },
       {

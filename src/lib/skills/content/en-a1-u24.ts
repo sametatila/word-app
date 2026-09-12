@@ -63,9 +63,9 @@ export const enA1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz's password works.",
+        text: "Deniz's password does not work.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„My password doesn't work too.“ — yeni bir tane istiyor.",
       },
       {

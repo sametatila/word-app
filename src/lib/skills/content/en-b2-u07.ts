@@ -93,9 +93,9 @@ export const enB2U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The four words can be arranged in another order.",
+        text: "No other arrangement of those four words is a sentence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„no other arrangement of those four words is a sentence in English.“",
       },
       {
@@ -274,9 +274,9 @@ export const enB2U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The rule we refer to“ is wrong.",
+        text: "„The rule we refer to“ is correct.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„The rule we refer to“, and it is correct.“",
       },
       {

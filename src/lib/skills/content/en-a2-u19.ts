@@ -65,9 +65,9 @@ export const enA2U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There were photographs at the grandmother's wedding.",
+        text: "There were no photographs at the grandmother's wedding.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Rain, twelve guests, and no photographs.“",
       },
       {
@@ -211,9 +211,9 @@ export const enA2U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "It is a public holiday.",
+        text: "It is only a family tradition.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It is not a public holiday, only a family tradition.“",
       },
       {

@@ -91,9 +91,9 @@ export const enB2U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Whose“ changes for number.",
+        text: "„Whose“ does not change for number.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It also does not change for number, or for the job the clause is doing.“",
       },
       {
@@ -280,9 +280,9 @@ export const enB2U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The feeling can be measured.",
+        text: "The green space can be measured and the feeling cannot.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The green space is. The feeling is not…“",
       },
       {

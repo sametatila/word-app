@@ -65,9 +65,9 @@ export const enA1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer watched TV in the evening.",
+        text: "The writer did not watch TV in the evening.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I didn't watch TV in the evening — I was too tired.“ — „didn't“ sonrası fiil ilk hâlinde.",
       },
       {

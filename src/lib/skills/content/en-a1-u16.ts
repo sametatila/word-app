@@ -59,9 +59,9 @@ export const enA1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The kitchen is big.",
+        text: "The kitchen is small.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The kitchen is small, but there is a fridge and a table…“ — büyük olan oturma odası.",
       },
       {
@@ -202,9 +202,9 @@ export const enA1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There are three rooms.",
+        text: "There are four rooms.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There are four rooms.“",
       },
       {

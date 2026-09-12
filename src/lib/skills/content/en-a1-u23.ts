@@ -61,9 +61,9 @@ export const enA1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A fast change is healthy.",
+        text: "A slow change is better.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„But be careful: a fast change is not healthy. Slow is better.“",
       },
       {

@@ -64,9 +64,9 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The church is open on Monday.",
+        text: "The church is open today but not on Monday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The church is open today, but not on Monday.“",
       },
       {
@@ -211,9 +211,9 @@ export const enA1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can goes by bike in the winter.",
+        text: "Can goes on foot or by bus in the winter.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„In the winter I go on foot or by bus.“ — kışın bisiklet yok.",
       },
       {

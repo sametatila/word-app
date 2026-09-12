@@ -91,9 +91,9 @@ export const enB2U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The rule for writing them is the same as for reading them.",
+        text: "The rule for writing them is narrower than the rule for reading them.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the rule for writing them is narrower than the rule for reading them.“",
       },
       {
@@ -277,9 +277,9 @@ export const enB2U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "All of these nouns take „of“.",
+        text: "The distinction between two things takes „between“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The distinction between two things takes „between“…“",
       },
       {

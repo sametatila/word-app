@@ -92,9 +92,9 @@ export const enB2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a negative short form.",
+        text: "There is no negative short form.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no negative short form: „hadn't the factor been known“ is not written.“",
       },
       {
@@ -279,9 +279,9 @@ export const enB2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nehir saw the calibrating happen.",
+        text: "Nehir did not see the calibrating happen.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Because I did not see it happen and the log is a photocopy.“",
       },
       {

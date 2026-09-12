@@ -92,9 +92,9 @@ export const enB2U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Inverting the main verb directly is correct.",
+        text: "„Rarely arises a question“ is not English.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„rarely arises a question — which is not English…“",
       },
       {
@@ -278,9 +278,9 @@ export const enB2U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "People have argued about the frequency table.",
+        text: "Nobody has ever argued about the frequency table.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„which is why nobody has ever argued about it.“",
       },
       {

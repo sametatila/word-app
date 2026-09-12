@@ -90,9 +90,9 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a third option.",
+        text: "There are two shapes and no third option.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„So there are two shapes and no third option.“",
       },
       {
@@ -277,9 +277,9 @@ export const enB2U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The letter has three conditionals.",
+        text: "The letter has one conditional, and it is the mixed one.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„One, and it is the mixed one…“",
       },
       {

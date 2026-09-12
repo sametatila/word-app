@@ -65,9 +65,9 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The first shirt is too small.",
+        text: "The first shirt is too big.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It's too big. Have you got a small size?“ — küçüğünü sonra istiyor.",
       },
       {
@@ -197,9 +197,9 @@ export const enA1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The black jacket is too big for Kaan.",
+        text: "The black jacket is too small for Kaan.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It's too small. What size is it?“ — büyük olan gri ceket.",
       },
       {

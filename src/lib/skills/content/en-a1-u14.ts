@@ -68,9 +68,9 @@ export const enA1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The airport is near the station.",
+        text: "The airport is far from the station.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, it is far. Take a taxi from the square…“",
       },
       {
@@ -214,9 +214,9 @@ export const enA1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The train leaves from platform three.",
+        text: "The train leaves from platform four.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The train leaves from platform four…“ — üç, kafenin yanındaki peron.",
       },
       {

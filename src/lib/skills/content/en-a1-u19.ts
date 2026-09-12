@@ -67,9 +67,9 @@ export const enA1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela is busy tomorrow.",
+        text: "Ela is busy tonight.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Sorry, I can't tonight. I am busy.“ — meşgul olduğu gün bu akşam.",
       },
       {

@@ -70,9 +70,9 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The van driver did not know about the two streets.",
+        text: "The van driver knew about the two streets.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The van driver knew. I did not.“",
       },
       {
@@ -225,9 +225,9 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The plumber called Nil.",
+        text: "The plumber called nobody.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Then he called and told me to wait for the plumber. The plumber called nobody.“",
       },
       {

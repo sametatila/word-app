@@ -63,9 +63,9 @@ export const enA2U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer travels a lot now.",
+        text: "The writer almost never travels now.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't travel anymore — or almost not.“ — „anymore“ değişimi söylüyor.",
       },
       {
@@ -205,9 +205,9 @@ export const enA2U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The small bag is cheap.",
+        text: "The small bag is tiny and not cheap.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That is the worst of the three. It is tiny and it is not cheap.“",
       },
       {

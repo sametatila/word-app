@@ -87,9 +87,9 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The verb tells you which preposition the noun takes.",
+        text: "The verb underneath is no help with the preposition.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The verb underneath is no help.“",
       },
       {
@@ -274,9 +274,9 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The motive matters to the grammar.",
+        text: "The motive does not matter to the grammar; the urgency does.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not to the grammar. The urgency does…“",
       },
       {

@@ -93,9 +93,9 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The dress which is red“ can become „the dress red“.",
+        text: "„The dress which is red“ cannot become „the dress red“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„The dress which is red“ cannot become „the dress red“…“",
       },
       {
@@ -277,9 +277,9 @@ export const enB2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The error is in the first kind of sentence.",
+        text: "The error is always in the second kind of sentence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„it is always in this second kind and never in the first.“",
       },
       {

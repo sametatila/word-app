@@ -60,9 +60,9 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The neighbour's field is in the city.",
+        text: "The neighbour's field is outside the city.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„My neighbour has a field outside the city…“",
       },
       {
@@ -208,9 +208,9 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil can draw.",
+        text: "Nil cannot draw.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I can't draw. My hobby is music…“ — çizen Can.",
       },
       {

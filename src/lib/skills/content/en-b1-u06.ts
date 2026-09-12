@@ -72,9 +72,9 @@ export const enB1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The certificate reason was not true.",
+        text: "Both reasons were true.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Both reasons were true. Only one of them could be said out loud.“",
       },
       {
@@ -223,9 +223,9 @@ export const enB1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil wants the call after Can arrives.",
+        text: "Nil wants the call while Can is on the train.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Call when you are on the train, not when you arrive.“",
       },
       {

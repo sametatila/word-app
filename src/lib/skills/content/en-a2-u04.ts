@@ -65,9 +65,9 @@ export const enA2U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer has found a good job.",
+        text: "The writer has not found a good job yet.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„…but I haven't found a good job yet.“ — „yet“ henüz olmadığını söylüyor.",
       },
       {
@@ -216,9 +216,9 @@ export const enA2U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert was born outside this city.",
+        text: "Mert was born in this city.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I was born in this city, I moved away for three years and then I came back.“",
       },
       {

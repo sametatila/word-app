@@ -78,9 +78,9 @@ export const enB1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The two machines have different quality.",
+        text: "The two machines have the same quality.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Both have the same quality. Both cost about the same.“",
       },
       {
@@ -242,9 +242,9 @@ export const enB1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Sena tells Can the end.",
+        text: "Sena spoils only one thing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No. I will spoil one thing only…“",
       },
       {

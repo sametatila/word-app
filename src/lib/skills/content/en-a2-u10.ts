@@ -72,9 +72,9 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The caretaker repaired the machine.",
+        text: "The caretaker had no tools.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The caretaker looked at it but he had no tools.“",
       },
       {
@@ -201,9 +201,9 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The area is louder than the city centre.",
+        text: "The area is quieter than the city centre.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It's quieter than the city centre, but it isn't boring.“",
       },
       {

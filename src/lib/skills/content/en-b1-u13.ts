@@ -73,9 +73,9 @@ export const enB1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The right to ask for a review was easy to find.",
+        text: "The right to ask for a review was hard to find.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„…in the same size as everything else, and I had read the letter twice without finding it.“",
       },
       {
@@ -226,9 +226,9 @@ export const enB1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The list says what is missing.",
+        text: "The list does not say what is missing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Something is missing from the folder and it does not say what.“",
       },
       {

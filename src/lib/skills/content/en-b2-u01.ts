@@ -92,9 +92,9 @@ export const enB2U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Naming one of the four teams would be better.",
+        text: "Naming one of the four teams would be worse than naming none.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„naming one of those teams would be worse than naming none.“",
       },
       {
@@ -276,9 +276,9 @@ export const enB2U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nobody notices the broken sentence.",
+        text: "Everybody notices the broken sentence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nobody misunderstands it and everybody notices it…“",
       },
       {

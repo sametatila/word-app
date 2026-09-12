@@ -69,9 +69,9 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You should send one email for every question.",
+        text: "You should put everything in one email.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„And put everything in one email.“ — dört e-posta bir haftada bir cevap getirdi.",
       },
       {
@@ -220,9 +220,9 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert takes a credit card.",
+        text: "Mert takes no card for now.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Then no card for now.“",
       },
       {

@@ -58,9 +58,9 @@ export const enA1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan is quiet.",
+        text: "Kaan talks a lot.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Kaan is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
       },
       {

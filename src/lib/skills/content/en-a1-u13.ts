@@ -66,9 +66,9 @@ export const enA1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ela pays with cash.",
+        text: "Ela pays by card.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Can I pay by card? — Yes.“",
       },
       {
@@ -198,9 +198,9 @@ export const enA1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The train station is far.",
+        text: "The train station is near.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No, it is near. Five minutes on foot.“",
       },
       {

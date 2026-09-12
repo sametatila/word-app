@@ -74,9 +74,9 @@ export const enB1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The council has answered the questions.",
+        text: "The council has not answered the questions.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„So far the council has not answered our questions.“",
       },
       {
@@ -225,9 +225,9 @@ export const enB1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Everybody said yes to the chair.",
+        text: "Two people said yes and the rest said nothing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Two people said yes and the rest said nothing, and that counts as yes.“",
       },
       {

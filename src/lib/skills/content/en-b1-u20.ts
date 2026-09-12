@@ -77,9 +77,9 @@ export const enB1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The practice can backdate the note.",
+        text: "The practice will not backdate the note.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The practice will not backdate it…“",
       },
       {
@@ -228,9 +228,9 @@ export const enB1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can thinks something is wrong with the heart.",
+        text: "Can does not think something is wrong with the heart.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not because I think something is wrong…“",
       },
       {

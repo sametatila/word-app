@@ -62,9 +62,9 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Water is included in the rent.",
+        text: "Water is not included in the rent.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Water and electricity are not included in the rent.“",
       },
       {
@@ -211,9 +211,9 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The son likes the bathroom.",
+        text: "The son does not like the bathroom.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't like the bathroom!“",
       },
       {

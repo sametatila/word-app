@@ -79,9 +79,9 @@ export const enA2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There was a phone in the wallet.",
+        text: "There was an ID card and twenty euros in the wallet.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„My ID card, a transport card, twenty euros and a photo.“",
       },
       {
@@ -227,9 +227,9 @@ export const enA2U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The letter from the company is required this year.",
+        text: "The letter from the company is not required this year.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„We don't require the letter this year.“",
       },
       {

@@ -92,9 +92,9 @@ export const enB1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "This level taught mostly new shapes.",
+        text: "Very little of what this level taught was a new shape.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Very little of what this level taught was a new shape.“",
       },
       {
@@ -272,9 +272,9 @@ export const enB1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The map helped.",
+        text: "The map was the danger.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The map was the danger.“",
       },
       {

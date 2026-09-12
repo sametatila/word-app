@@ -99,9 +99,9 @@ export const enB2U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A noun cannot be dated or measured.",
+        text: "A thing can be dated and measured.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„a thing can be dated, measured and put in a numbered paragraph…“",
       },
       {
@@ -283,9 +283,9 @@ export const enB2U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Mustn't have“ is used for the past.",
+        text: "There is no „mustn't have“ for the past.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„There is no such form. A prohibition cannot point backwards…“",
       },
       {

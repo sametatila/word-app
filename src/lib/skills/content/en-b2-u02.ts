@@ -92,9 +92,9 @@ export const enB2U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The expense sentence should be mixed.",
+        text: "The expense sentence is closed, and correctly so.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Closed again, and correctly: the waiting was a decision available in one week only…“",
       },
       {
@@ -286,9 +286,9 @@ export const enB2U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Should have“ is about evidence.",
+        text: "„Should have“ is the one of the three that is not about evidence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It is the third one and the only one that is not about evidence.“",
       },
       {

@@ -60,9 +60,9 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer works on Sunday.",
+        text: "The writer does not work on Sunday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't work on Sunday.“ — gün adından önce „on“ geliyor.",
       },
       {
@@ -211,9 +211,9 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil works on Monday.",
+        text: "Nil does not work on Monday.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I don't work on Monday.“",
       },
       {

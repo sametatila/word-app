@@ -84,9 +84,9 @@ export const enB2U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Can't have“ is the weaker of the two.",
+        text: "„Can't have“ is the strong negative.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That is the strong negative…“",
       },
       {
@@ -266,9 +266,9 @@ export const enB2U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A longer adjective phrase cannot sit between commas.",
+        text: "A longer adjective phrase can sit between commas.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„My friend, always reserved with strangers, spoke first“ is fine…“",
       },
       {

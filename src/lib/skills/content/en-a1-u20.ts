@@ -62,9 +62,9 @@ export const enA1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The water is warm in the morning.",
+        text: "The water is cold in the morning.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The water is cold in the morning and warm in the afternoon.“",
       },
       {

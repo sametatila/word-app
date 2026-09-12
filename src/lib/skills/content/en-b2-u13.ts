@@ -93,9 +93,9 @@ export const enB2U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Is thought to“ is weaker than „is said to“.",
+        text: "„Is thought to“ is stronger than „is said to“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It is stronger than „said“ because it implies that the claim has been looked at…“",
       },
       {
@@ -278,9 +278,9 @@ export const enB2U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The sample was biased.",
+        text: "The sample was not biased.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„it was not biased, and it did not fail.“",
       },
       {

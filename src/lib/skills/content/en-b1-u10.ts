@@ -73,9 +73,9 @@ export const enB1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The label on the box was wrong.",
+        text: "The label on the box was right.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The label was right. The number on the label was right. Everything inside was wrong.“",
       },
       {
@@ -222,9 +222,9 @@ export const enB1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil has to confirm by email.",
+        text: "Nil does not have to confirm by email.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„You do not have to, but it helps.“",
       },
       {

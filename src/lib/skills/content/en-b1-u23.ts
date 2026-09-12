@@ -88,9 +88,9 @@ export const enB1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„By the time“ names an event.",
+        text: "„By the time“ names a deadline.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„By the time“ names a deadline, not an event…“",
       },
       {
@@ -263,9 +263,9 @@ export const enB1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Elif was afraid before she was angry.",
+        text: "Elif was angry before she noticed that she was afraid.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I was angry for two days before I noticed that I was afraid…“",
       },
       {

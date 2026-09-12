@@ -72,9 +72,9 @@ export const enA2U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Can has not restarted the laptop.",
+        text: "Can has already restarted the laptop twice.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I've already restarted it. Twice.“",
       },
       {
@@ -218,9 +218,9 @@ export const enA2U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil says you need a different password for every site.",
+        text: "Nil says the bank and the email need different passwords.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A different one for the bank and the email. The rest can be the same.“",
       },
       {
