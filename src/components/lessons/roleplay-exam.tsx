@@ -347,7 +347,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             onClick={() => void listen()}
             disabled={busy || listening}
             aria-label={t("lesson.mic_talk")}
-            className="brand-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow disabled:opacity-40"
+            className="brand-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow disabled:opacity-60"
           >
             <MicIcon size={20} />
           </button>

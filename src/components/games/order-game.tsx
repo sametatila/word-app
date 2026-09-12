@@ -242,7 +242,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             type="button"
             onClick={() => { play("tap"); setPlaced((prev) => prev.slice(0, -1)); }}
             disabled={status !== "playing" || placed.length === 0}
-            className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
+            className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-60"
           >
             {tx("common.delete")}
           </button>
@@ -251,7 +251,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
               type="button"
               onClick={useHint}
               disabled={status !== "playing" || placed.length >= answer.length}
-              className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-40"
+              className="btn btn-ghost px-5 py-2.5 text-body disabled:opacity-60"
             >
               {tx("rounds.hint")}
             </button>

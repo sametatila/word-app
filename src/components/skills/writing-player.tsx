@@ -294,7 +294,7 @@ function BuildTask({
               type="button"
               disabled={chosen.length !== tokens.length}
               onClick={check}
-              className="btn btn-primary px-6 py-2.5 disabled:opacity-50"
+              className="btn btn-primary px-6 py-2.5 disabled:opacity-60"
             >
               {t("skillquiz.check")}
             </button>
@@ -607,7 +607,7 @@ function FreeTask({
       ) : (
         <>
           <div className="mt-4 flex items-center gap-3">
-            <button type="button" disabled={busy || words < MIN_ASSESS_WORDS} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
+            <button type="button" disabled={busy || words < MIN_ASSESS_WORDS} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-60">
               {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
             </button>
             <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-body">

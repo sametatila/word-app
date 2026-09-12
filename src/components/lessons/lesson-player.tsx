@@ -1375,7 +1375,7 @@ export function LessonPlayer({
                     type="button"
                     onClick={submitTyped}
                     disabled={!draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-50"
+                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-60"
                   >
                     {t("common.send")}
                   </button>
@@ -1516,7 +1516,7 @@ export function LessonPlayer({
                     }}
                     disabled={busy}
                     aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
-                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-50"
+                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60"
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
@@ -1582,7 +1582,7 @@ export function LessonPlayer({
                     type="button"
                     onClick={() => void send(draft)}
                     disabled={busy || !draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-50"
+                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-60"
                   >
                     {t("common.send")}
                   </button>

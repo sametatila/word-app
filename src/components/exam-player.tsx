@@ -774,7 +774,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             type="button"
             disabled={busy || examWords < MIN_ASSESS_WORDS}
             onClick={() => void evaluateWriting()}
-            className="btn btn-primary mt-2 w-full px-5 py-3 text-body disabled:opacity-50"
+            className="btn btn-primary mt-2 w-full px-5 py-3 text-body disabled:opacity-60"
           >
             {t(busy ? "exam.evaluating" : "exam.submit_and_score")}
           </button>
@@ -1046,7 +1046,7 @@ function ProduceCard({
       {item.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
         <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
       ) : null}
-      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-body disabled:opacity-50">
+      <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-body disabled:opacity-60">
         {t(index + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
       </button>
       <p className="muted mt-2 text-center text-caption">

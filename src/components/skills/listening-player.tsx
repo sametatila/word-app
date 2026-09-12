@@ -205,7 +205,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             onClick={() => (playing ? stop() : play())}
             disabled={available === false && !hasAudio}
             aria-label={t(playing ? "exam.stop" : "item.listen")}
-            className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full shadow-lg disabled:opacity-40"
+            className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full shadow-lg disabled:opacity-60"
           >
             {playing ? <XIcon size={26} /> : <SpeakerIcon size={28} />}
           </motion.button>

@@ -67,7 +67,7 @@ export function Switch({
       aria-label={label}
       disabled={disabled}
       onClick={() => onChange(!on)}
-      className="relative h-7 w-12 shrink-0 rounded-full transition-opacity disabled:opacity-50"
+      className="relative h-7 w-12 shrink-0 rounded-full transition-opacity disabled:opacity-60"
       style={{ background: on ? "var(--color-brand-600)" : "var(--surface-2)" }}
     >
       <motion.span

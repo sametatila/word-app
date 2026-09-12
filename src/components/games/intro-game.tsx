@@ -160,7 +160,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
             onDone([]); // cevap kaydedilmez, kelime pekişmiş sayılır
           }}
           disabled={skipping}
-          className="btn btn-ghost w-full px-6 py-2.5 text-body disabled:opacity-50"
+          className="btn btn-ghost w-full px-6 py-2.5 text-body disabled:opacity-60"
         >
           {tx(skipping ? "rounds.saving" : "rounds.already_known")}
         </button>

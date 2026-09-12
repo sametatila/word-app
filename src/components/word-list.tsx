@@ -384,7 +384,7 @@ export function WordList({
           <button
             onClick={() => goPage(page - 1)}
             disabled={page === 0}
-            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-40"
+            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-60"
           >
             {tx("wordsw.prev")}
           </button>
@@ -392,7 +392,7 @@ export function WordList({
           <button
             onClick={() => goPage(page + 1)}
             disabled={!hasMore}
-            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-40"
+            className="btn btn-ghost px-4 py-2 text-body disabled:opacity-60"
           >
             {tx("wordsw.next")}
           </button>

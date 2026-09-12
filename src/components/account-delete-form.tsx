@@ -179,7 +179,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
         <button
           type="submit"
           disabled={busy || !agree || hasPassword === null || (hasPassword && password.length === 0)}
-          className="btn w-full px-5 py-3.5 font-bold text-white disabled:opacity-50"
+          className="btn w-full px-5 py-3.5 font-bold text-white disabled:opacity-60"
           style={{ background: "var(--color-rose-500)" }}
         >
           {t(busy ? "deleteaccount.deleting" : "deleteaccount.permanently_delete_my_account")}
