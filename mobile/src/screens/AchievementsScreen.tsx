@@ -162,7 +162,7 @@ export function AchievementsScreen() {
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("achievements.achievements")}</Text>
+          <Text accessibilityRole="header" variant="h2">{t("achievements.achievements")}</Text>
           {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: formatNumber(earned), total: formatNumber(total) })}</Text> : null}
         </View>
       </View>

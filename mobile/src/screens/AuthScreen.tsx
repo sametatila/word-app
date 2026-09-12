@@ -324,7 +324,7 @@ export function AuthScreen() {
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <BoltIcon color={colors.onPrimary} size={38} />
           </View>
-          <Text variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>
+          <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{headSub}</Text>
         </View>
 

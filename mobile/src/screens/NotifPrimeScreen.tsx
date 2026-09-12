@@ -91,7 +91,7 @@ export function NotifPrimeScreen() {
         <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
           <BellIcon color={colors.onPrimary} size={44} />
         </View>
-        <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
+        <Text accessibilityRole="header" variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
           {tx("notifprime.one_gentle_reminder_day_is")}
         </Text>

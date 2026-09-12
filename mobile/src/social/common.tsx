@@ -30,7 +30,8 @@ export function ScreenHeader({ title, subtitle, right }: { title: string; subtit
         <ArrowBackIcon color={colors.text} size={24} />
       </PressableScale>
       <View style={{ flex: 1 }}>
-        <Text variant="h2">{title}</Text>
+        {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR (bkz. parity 259). */}
+        <Text accessibilityRole="header" variant="h2">{title}</Text>
         {subtitle ? <Text variant="caption" color={colors.textMuted}>{subtitle}</Text> : null}
       </View>
       {right}
@@ -50,7 +51,7 @@ export function TabHeader({ title, right }: { title: string; right?: React.React
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm, minHeight: 44 + spacing.sm * 2 }}>
       <View style={{ flex: 1 }}>
-        <Text variant="h2">{title}</Text>
+        <Text accessibilityRole="header" variant="h2">{title}</Text>
       </View>
       {right}
     </View>
@@ -72,7 +73,8 @@ export function SectionTitle({ title, right }: { title: string; right?: string }
   const { colors } = useTheme();
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }}>
-      <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase(dateLocale())}</Text>
+      {/* Bölüm başlığı da bir başlık: web karşılığı `<h2>`. */}
+      <Text accessibilityRole="header" variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase(dateLocale())}</Text>
       {right ? <Text variant="caption" color={colors.textMuted}>{right}</Text> : null}
     </View>
   );

@@ -275,7 +275,7 @@ export function ChallengeScreen() {
     return (
       <View accessibilityLiveRegion="assertive" style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }]}>
         <AlertIcon color={colors.textMuted} size={56} />
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("challenge.load_failed")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.load_failed")}</Text>
         <PressableScale onPress={load} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
         </PressableScale>
@@ -290,7 +290,7 @@ export function ChallengeScreen() {
     return (
       <View style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }]}>
         <Mascot mood="idle" size={96} />
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("challenge.none_title")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.none_title")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("challenge.none_sub")}</Text>
         <PressableScale onPress={exit} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.back_to_learn")}</Text>
@@ -306,7 +306,7 @@ export function ChallengeScreen() {
           <View style={[{ width: 56, height: 56, borderRadius: radii.lg, alignSelf: "center", alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
             <FlameIcon color={colors.onFill} size={26} />
           </View>
-          <Text variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("challenge.title")}</Text>
+          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("challenge.title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 22 }}>
             {t("challenge.pitch", { n: START_SECONDS })}
           </Text>
@@ -344,7 +344,7 @@ export function ChallengeScreen() {
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
           <View style={{ alignItems: "center" }}><Mascot mood={isRecord ? "celebrate" : "happy"} size={96} /></View>
           {/* TURUN SONUCU DUYURULUYOR - web `challenge-player` ile ayni yer. */}
-          <Text accessibilityLiveRegion="polite" variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
+          <Text accessibilityLiveRegion="polite" accessibilityRole="header" variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
           {isRecord ? (
             <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: 4 }}>{t("challenge.new_record", { previous })}</Text>
           ) : (

@@ -227,7 +227,7 @@ export function OnboardingScreen() {
         <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 12)]}>
           <step.icon color={colors.onPrimary} size={44} />
         </View>
-        <Text variant="display">{step.title}</Text>
+        <Text accessibilityRole="header" variant="display">{step.title}</Text>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, marginBottom: spacing.xl }}>{step.subtitle}</Text>
 
         {step.options && (

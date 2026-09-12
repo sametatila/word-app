@@ -58,7 +58,7 @@ export function PracticeScreen() {
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("practice.practice")}</Text>
+          <Text accessibilityRole="header" variant="h2">{t("practice.practice")}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("practice.practice_one_game_with_your_own")}</Text>
         </View>
       </View>

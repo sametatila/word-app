@@ -143,7 +143,7 @@ export function WritingsScreen() {
             (`writings-card` `writ.sub`); mobilde yalnız başlık vardı, yani
             "bunlar kime görünüyor" sorusu ekranda hiç cevaplanmıyordu. */}
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("writings.my_writing")}</Text>
+          <Text accessibilityRole="header" variant="h2">{t("writings.my_writing")}</Text>
           <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 17 }} numberOfLines={2}>{t("writ.sub")}</Text>
         </View>
       </View>

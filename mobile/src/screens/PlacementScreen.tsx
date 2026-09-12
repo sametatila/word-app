@@ -304,7 +304,7 @@ export function PlacementScreen() {
     const last = status.last;
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
         {last ? (
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>
             {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}

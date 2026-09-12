@@ -73,7 +73,7 @@ export function QuizScreen() {
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
-            <Text variant="h3" numberOfLines={1}>{params.theme}</Text>
+            <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{params.theme}</Text>
           </View>
         </View>
       </View>
@@ -100,7 +100,7 @@ export function QuizScreen() {
                 gecti mi" sorularinin hicbirini duymuyordu. Canli bolge
                 METINDE, uygulamanin kendi kalibi (`FriendRows`,
                 `ActiveSessions`); web karsiligi kabin `role="status"`u. */}
-            <Text accessibilityLiveRegion="polite" variant="h2">{t("common.n_correct", { correct: correct, total: total })}</Text>
+            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2">{t("common.n_correct", { correct: correct, total: total })}</Text>
             <Text variant="caption" color={passed ? colors.successText : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>

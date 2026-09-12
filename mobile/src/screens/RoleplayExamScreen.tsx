@@ -232,7 +232,7 @@ export function RoleplayExamScreen() {
         <Back nav={nav} colors={colors} />
         <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, padding: spacing.xl, marginTop: spacing.md }, cardShadow(colors, 10)]}>
           <CoachBubble moment="exam_intro" mood="idle" size={56} />
-          <Text variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
+          <Text accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
           <Text variant="body" style={{ marginTop: spacing.md, lineHeight: 22 }}>{lesson.roleplay.scene}</Text>
           <View style={{ marginTop: spacing.md, gap: 4 }}>
@@ -299,7 +299,7 @@ export function RoleplayExamScreen() {
               <Text variant="micro" color={colors.textMuted}>{tx("assess.overall_score", { n: overall })}</Text>
             </ProgressRing>
           ) : null}
-          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
+          <Text accessibilityLiveRegion="polite" accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>
             {lesson.title} · {tx("lessonp.n_turns", { n: userTurns })}{result ? ` · ${tx(passed ? "rpexam.passed" : "rpexam.below_threshold", { n: EXAM_PASS_SCORE })}` : ""}
           </Text>

@@ -359,7 +359,7 @@ export function MockExamScreen() {
           <Text variant="micro" color={colors.textMuted}>
             {paper.level} · {t("mockexams.paper", { n: paper.no })}
           </Text>
-          <Text variant="h3">{mockSkillLabel(paper.course, part.skill)}</Text>
+          <Text accessibilityRole="header" variant="h3">{mockSkillLabel(paper.course, part.skill)}</Text>
         </View>
         {phase === "gorev" ? (
           <View style={{ alignItems: "flex-end" }}>
@@ -1171,7 +1171,7 @@ function ResultView({
         </Card>
       ) : null}
 
-      <Text variant="h3" style={{ marginBottom: spacing.sm }}>{t("mockexam.review")}</Text>
+      <Text accessibilityRole="header" variant="h3" style={{ marginBottom: spacing.sm }}>{t("mockexam.review")}</Text>
 
       {part.tasks.map((task) => (
         <View key={task.id} style={{ marginBottom: spacing.md }}>

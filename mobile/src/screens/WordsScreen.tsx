@@ -126,7 +126,7 @@ export function WordsScreen() {
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("words.my_words")}</Text>
+          <Text accessibilityRole="header" variant="h2">{t("words.my_words")}</Text>
           {/* İLERLEME ÖZETİ — web listesi başlığın altında yazıyor. Sayılar
               zaten `useMe` içinde geliyordu (`mastered`, `totalWords`,
               `dueCount`); mobil hiçbirini göstermiyordu, yani liste "kaç

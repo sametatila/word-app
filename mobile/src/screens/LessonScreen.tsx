@@ -1045,7 +1045,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
     <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
       <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
-      <Text variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
+      <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
       <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
 
       <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>

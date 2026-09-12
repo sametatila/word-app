@@ -90,7 +90,8 @@ function Group({ title, colors, children }: { title: string; colors: Palette; ch
   const items = React.Children.toArray(children).filter(Boolean);
   return (
     <View style={{ marginTop: spacing.xxl }}>
-      <Text variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{title}</Text>
+      {/* Grup başlığı da bir başlık — web `<h2>` (bkz. parity 259). */}
+      <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{title}</Text>
       <Card padded>
         {items.map((item, i) => (
           <View
@@ -231,7 +232,7 @@ export function SettingsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("settings.settings")}</Text>
+        <Text accessibilityRole="header" variant="h2">{t("settings.settings")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>

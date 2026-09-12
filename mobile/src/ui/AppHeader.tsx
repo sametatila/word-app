@@ -30,7 +30,10 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
         {/* Alt satır her zaman ayrılır (boşsa da) ki başlık yüksekliği ve sağdaki
             seri/profil konumu Learn, Patika ve Beceriler'de birebir aynı hizada olsun. */}
         <Text variant="caption" color={colors.textMuted}>{subtitle ?? " "}</Text>
-        <Text variant="display">{title}</Text>
+        {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR — TalkBack'in "başlıklara göre gez"
+            kipi mobilde hiçbir şey bulamıyordu; web'de aynı başlık `<h1>`
+            (bkz. parity 259). */}
+        <Text accessibilityRole="header" variant="display">{title}</Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {streak > 0 && (

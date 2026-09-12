@@ -56,7 +56,7 @@ export function ProfileScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2" style={{ flex: 1 }}>{t("profile.profile")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ flex: 1 }}>{t("profile.profile")}</Text>
         <PressableScale accessibilityLabel={t("settings.settings")} hitSlop={4} onPress={() => nav.navigate("Settings")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <SettingsIcon color={colors.text} size={22} />
         </PressableScale>

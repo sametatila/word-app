@@ -157,7 +157,7 @@ export function PaywallScreen() {
             <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
               <CrownIcon color={colors.onPrimary} size={44} />
             </View>
-            <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
+            <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{line}</Text>
             {status.bonusDaysPending > 0 ? (
               <Text variant="caption" color={colors.successText} style={{ marginTop: 4, textAlign: "center" }}>
@@ -208,7 +208,7 @@ export function PaywallScreen() {
           <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <CrownIcon color={colors.onPrimary} size={44} />
           </View>
-          <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
+          <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
           {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
               anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden

@@ -126,7 +126,7 @@ export function DeleteAccountScreen() {
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
           <CheckIcon color={colors.successText} size={34} />
         </View>
-        <Text variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.your_account_is_deleted")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.your_account_is_deleted")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.your_data_is_gone_it_was_good_to")}</Text>
       </View>
     );
@@ -138,7 +138,7 @@ export function DeleteAccountScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{tx("deleteaccount.delete_account")}</Text>
+        <Text accessibilityRole="header" variant="h2">{tx("deleteaccount.delete_account")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>

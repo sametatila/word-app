@@ -79,7 +79,7 @@ export function MockStatsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("mockstats.title")}</Text>
+        <Text accessibilityRole="header" variant="h2">{t("mockstats.title")}</Text>
       </View>
 
       <ScrollView

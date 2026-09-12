@@ -222,7 +222,7 @@ export function DailyScreen() {
       <View style={pad}>
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingBottom: spacing.xl }}>
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.daily_round")}</Text>
-          <Text variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
+          <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("daily.pitch", { n: rounds.length })}</Text>
           <PressableScale
             onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("play"); }}

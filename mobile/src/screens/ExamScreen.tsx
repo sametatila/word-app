@@ -426,7 +426,7 @@ export function ExamScreen() {
           <CoachBubble moment="exam_intro" mood="idle" size={48} />
           {cover?.titleDe ? (
             <Card padded style={{ gap: spacing.sm }}>
-              <Text variant="h2" style={{ lineHeight: 30 }}>{cover.titleDe}</Text>
+              <Text accessibilityRole="header" variant="h2" style={{ lineHeight: 30 }}>{cover.titleDe}</Text>
               <Text variant="body" color={colors.textMuted}>{cover.titleTr}</Text>
               {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
                   çiftler, ne oldukları söylenmeden duruyordu. */}
@@ -439,7 +439,7 @@ export function ExamScreen() {
             /* Kâğıdın kendi Almancası yoksa başlık SÖZLÜKTEN — web de burada
                sözlüğe düşüyor (`exam-player` `Cover`). */
             <Card padded style={{ gap: spacing.sm }}>
-              <Text variant="h2" style={{ lineHeight: 30 }}>
+              <Text accessibilityRole="header" variant="h2" style={{ lineHeight: 30 }}>
                 {moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
               </Text>
             </Card>
@@ -496,7 +496,7 @@ export function ExamScreen() {
             <Celebrate show={!!result?.passed} />
             <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={72} />
             {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-            <Text accessibilityLiveRegion="polite" variant="h1">{formatPercent(pct)}</Text>
+            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1">{formatPercent(pct)}</Text>
             <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
               {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
             </Text>
@@ -648,7 +648,7 @@ export function ExamScreen() {
           <Card padded style={{ gap: spacing.xs }}>
             {/* Büyük harfe çevrilmiyor: Türkçe yerelde "Teil" → "TEİL" oluyor. */}
             <Text variant="micro" color={colors.textMuted}>Teil {secIdx + 1} / {list.length}</Text>
-            <Text variant="h1">{SECTION_DE[active]}</Text>
+            <Text accessibilityRole="header" variant="h1">{SECTION_DE[active]}</Text>
             <Text variant="bodyStrong" color={colors.primaryText}>{t(SECTION_KEY[active])}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>{t(SECTION_BRIEF_KEY[active])}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>

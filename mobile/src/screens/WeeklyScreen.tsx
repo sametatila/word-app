@@ -143,7 +143,7 @@ export function WeeklyScreen() {
   if (phase === "ready") {
     return (
       <View style={[pad, { justifyContent: "center" }]}>
-        <Text variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
+        <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>
           {t("weekly.pitch", { n: rounds.length })}{" "}
           {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0, min: MIN_MASTERED })}
@@ -203,7 +203,7 @@ export function WeeklyScreen() {
               <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
             </ProgressRing>
           ) : null}
-          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
+          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {done ? t("weekly.done_sub", { total: result?.total ?? 0, correct: result?.correct ?? 0 }) : t("weekly.none_sub")}
           </Text>

@@ -453,7 +453,7 @@ export function GameScreen() {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Mascot mood="celebrate" size={112} />
-        <Text variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.goal_done")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.goal_done")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.goal_done_sub")}</Text>
         {meta ? (
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
@@ -472,7 +472,7 @@ export function GameScreen() {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Mascot mood="idle" size={104} />
-        <Text variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
         {/* Tek cümle: boş ekranda okunacak son şey modun nasıl çalıştığı. */}
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.review_only_mode")}</Text>
         <PressableScale onPress={() => { nav.goBack(); nav.navigate("Game"); }} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
@@ -522,7 +522,7 @@ export function GameScreen() {
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
           </ProgressRing>
           {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}</Text>
+          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
             {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
@@ -781,7 +781,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
             <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
             <Text variant="caption" color={colors.onPrimary} style={{ marginTop: 4, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
             {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-            <Text accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
+            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
             <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
               {Array.from({ length: stages }, (_, i) => (
                 <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: i < stage ? colors.onPrimary : "rgba(255,255,255,0.35)" }} />

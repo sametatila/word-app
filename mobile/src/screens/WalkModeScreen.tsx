@@ -766,7 +766,7 @@ export function WalkModeScreen() {
       ) : phase === "error" ? (
         <View accessibilityLiveRegion="assertive" style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <AlertIcon color={colors.textMuted} size={64} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
+          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walk.error_sub")}</Text>
           <PressableScale onPress={loadQueue} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>

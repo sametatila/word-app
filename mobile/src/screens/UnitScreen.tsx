@@ -95,7 +95,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
         )}
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level, unit: t("common.unit"), n: index })}</Text>
-          <Text variant="h2">{theme}</Text>
+          <Text accessibilityRole="header" variant="h2">{theme}</Text>
         </View>
       </View>
 

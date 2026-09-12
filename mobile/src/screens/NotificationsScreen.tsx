@@ -110,7 +110,7 @@ export function NotificationsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{tx("notifications.notifications")}</Text>
+        <Text accessibilityRole="header" variant="h2">{tx("notifications.notifications")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -118,7 +118,7 @@ export function NotificationsScreen() {
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
             <BellIcon color={colors.onFill} size={36} />
           </View>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
+          <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
 

@@ -267,7 +267,7 @@ export function ItemScreen() {
           {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[kind as keyof typeof KIND_KEY] ?? "") || t("item.content")} · {t(`genre.${exercise.genre}`)}</Text>
-            <Text variant="h3" numberOfLines={1}>{exercise.title}</Text>
+            <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>
       </View>
@@ -309,7 +309,7 @@ export function ItemScreen() {
             <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} />
             {/* TURUN SONUCU DUYURULUYOR - web `skills/player-shell` ile ayni
                 yer. Canli bolge metinde, uygulamanin kendi kalibi. */}
-            <Text accessibilityLiveRegion="polite" variant="h2">
+            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2">
               {exercise.skill === "writing" || exercise.monologue
                 ? t("item.tasks_done")
                 /* Hepsi doğruysa sayı yerine tek cümle - web de öyle söylüyor. */

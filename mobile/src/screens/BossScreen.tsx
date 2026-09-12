@@ -223,7 +223,7 @@ export function BossScreen() {
   if (phase === "error") {
     return (
       <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center", gap: spacing.md }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t(data ? "boss.not_ready" : "exam.could_not_load")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t(data ? "boss.not_ready" : "exam.could_not_load")}</Text>
         {data ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("boss.not_ready_sub")}</Text> : null}
         <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
           <Text variant="bodyStrong" color={colors.text}>{t("common.go_back")}</Text>
@@ -243,7 +243,7 @@ export function BossScreen() {
           <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
             {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           </Text>
-          <Text variant="h2" style={{ textAlign: "center", marginTop: 4 }}>{t("bossw.title_exam", { title: data.meta.title })}</Text>
+          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: 4 }}>{t("bossw.title_exam", { title: data.meta.title })}</Text>
           <View style={{ marginTop: spacing.lg, gap: 6 }}>
             <Text variant="body">{`· ${t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}`}</Text>
             <Text variant="body">{`· ${t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}`}</Text>
@@ -281,7 +281,7 @@ export function BossScreen() {
             {won ? <TrophyIcon color={colors.onFill} size={26} /> : <RepeatIcon color={colors.textMuted} size={26} />}
           </View>
           {/* TURUN SONUCU DUYURULUYOR - web `boss-player` ile ayni yer. */}
-          <Text accessibilityLiveRegion="polite" variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
+          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: 4 }}>
             {won
               ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
