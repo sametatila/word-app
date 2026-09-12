@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { MascotFx } from "@/components/mascot-fx";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
@@ -44,7 +45,7 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
       recordSkillResult(exercise.id, correct, total, score);
       setState({ phase: "saving" });
       try {
-        const res = await fetch("/api/skills", {
+        const res = await apiFetch("/api/skills", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({

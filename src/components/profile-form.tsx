@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import Link from "next/link";
 import { AlertIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
@@ -119,7 +120,7 @@ export function ProfileForm({
   async function patch(fields: Record<string, unknown>, onOk?: () => void) {
     setSaveError(null);
     try {
-      const res = await fetch("/api/profile", {
+      const res = await apiFetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(fields),

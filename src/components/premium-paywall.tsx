@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import type { ReferralStats } from "@/lib/premium/referral-types";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { useShell } from "@/components/app-shell";
@@ -284,7 +285,7 @@ function PromoBox({ prefill }: { prefill: string }) {
     setBusy(true);
     setMsg(null);
     try {
-      const res = await fetch("/api/premium/redeem", {
+      const res = await apiFetch("/api/premium/redeem", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ code }),

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { SettingRow } from "@/components/setting-row";
 import { track } from "@/lib/track";
 import { LANG_LABEL, NATIVE_LANGS, isNativeLang, type NativeLang } from "@/lib/i18n/dict";
@@ -45,7 +46,7 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
         vermek, iki tarafın farklı kurs sanmasına açık kapı bırakırdı.
         Sunucudaki kural `api/profile`ın çift doğrulamasında.
       */
-      await fetch("/api/profile", {
+      await apiFetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ nativeLang: next }),

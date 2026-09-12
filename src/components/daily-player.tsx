@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
@@ -76,7 +77,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     setStatus("loading");
     (async () => {
       try {
-        const res = await fetch(`/api/daily?day=${localDay()}`, { cache: "no-store" });
+        const res = await apiFetch(`/api/daily?day=${localDay()}`, { cache: "no-store" });
         if (!res.ok) return setStatus(res.status === 401 ? "auth" : "error");
         const payload = (await res.json()) as Payload;
         setData(payload);
@@ -102,7 +103,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       track("session_done", finalTally.correct, "daily");
       const seconds = Math.round((Date.now() - startedAt.current) / 1000);
       try {
-        const res = await fetch("/api/daily", {
+        const res = await apiFetch("/api/daily", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({

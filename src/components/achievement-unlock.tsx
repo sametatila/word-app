@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
 import { AchievementBadge, TIER_COLOR, TIER_LABEL_KEYS, type BadgeRow } from "@/components/achievement-badge";
 import { useT } from "@/lib/i18n/client";
@@ -81,7 +82,7 @@ export function AchievementUnlock() {
 
     // Ekrana konanların hepsi görüldü sayılıyor — toplu kartta sığmayan da
     // dahil, çünkü sayısı kartta yazıyor ve kendileri duvarda açık duruyor.
-    void fetch("/api/achievements", {
+    void apiFetch("/api/achievements", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ seen: sorted.map((f) => f.id) }),
@@ -93,7 +94,7 @@ export function AchievementUnlock() {
     if (running.current) return;
     running.current = true;
     try {
-      const res = await fetch("/api/achievements", { cache: "no-store" });
+      const res = await apiFetch("/api/achievements", { cache: "no-store" });
       if (!res.ok) return;
       const data = (await res.json()) as { fresh?: Fresh[] };
       const fresh = data.fresh ?? [];

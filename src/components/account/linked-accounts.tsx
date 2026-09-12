@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { SettingRow } from "@/components/setting-row";
 import { ChangePassword } from "@/components/account/change-password";
 import { ActiveSessions } from "@/components/account/active-sessions";
@@ -59,7 +60,7 @@ export function LinkedAccounts({
 
   /** Bağlı hesapları getirir. Hata sessiz: liste boş görünür, sayfa çalışır. */
   const getir = (): Promise<Account[]> =>
-    fetch("/api/auth/list-accounts", { headers: { accept: "application/json" } })
+    apiFetch("/api/auth/list-accounts", { headers: { accept: "application/json" } })
       .then((r) => (r.ok ? (r.json() as Promise<Partial<Account>[]>) : []))
       // Süzgeç şart: yukarıdaki `as` doğrulama değil, ATAMA. Alan adı bir kez
       // değişti ve fark edilmedi; artık biçimi tutmayan satır listeye girmiyor.
@@ -93,7 +94,7 @@ export function LinkedAccounts({
     setBusy(provider);
     setMsg(null);
     try {
-      const res = await fetch("/api/auth/link-social", {
+      const res = await apiFetch("/api/auth/link-social", {
         method: "POST",
         headers: { "content-type": "application/json" },
         // Dönüş adresine BİR İZ bırakılıyor: sağlayıcıdan dönen kullanıcıya
@@ -119,7 +120,7 @@ export function LinkedAccounts({
     setBusy(provider);
     setMsg(null);
     try {
-      const res = await fetch("/api/auth/unlink-account", {
+      const res = await apiFetch("/api/auth/unlink-account", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ providerId: provider }),

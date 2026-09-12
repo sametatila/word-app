@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { BOSS_SECONDS } from "@/lib/lessons/boss-const";
 import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
@@ -153,7 +154,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   async function start() {
     setPhase("loading");
     try {
-      const res = await fetch("/api/exam", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start", level, module, day: localDay() }) });
+      const res = await apiFetch("/api/exam", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start", level, module, day: localDay() }) });
       if (!res.ok) throw new Error(String(res.status));
       const { paper: p } = (await res.json()) as { paper: ExamPaper };
       setPaper(p);
@@ -207,7 +208,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     setPhase("finishing");
     const sections = SECTION_ORDER.map((id) => ({ id, ...score.current[id] })).filter((s) => s.total > 0);
     try {
-      const res = await fetch("/api/exam", {
+      const res = await apiFetch("/api/exam", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({

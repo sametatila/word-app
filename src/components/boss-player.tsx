@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import type { Answer, Round } from "@/lib/types";
@@ -88,7 +89,7 @@ export function BossPlayer({
     let alive = true;
     (async () => {
       try {
-        const res = await fetch(`/api/boss?level=${level}&module=${moduleIndex}`, {
+        const res = await apiFetch(`/api/boss?level=${level}&module=${moduleIndex}`, {
           cache: "no-store",
         });
         if (!res.ok) return alive && setStatus("error");
@@ -112,7 +113,7 @@ export function BossPlayer({
     pending.current = [];
     if (!batch.length) return;
     try {
-      const res = await fetch("/api/answers", {
+      const res = await apiFetch("/api/answers", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
@@ -144,7 +145,7 @@ export function BossPlayer({
       if (!won) return;
       track("boss_clear", Math.round(secondsLeft));
       try {
-        const res = await fetch("/api/boss", {
+        const res = await apiFetch("/api/boss", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ level, module: moduleIndex, secondsLeft: Math.round(secondsLeft) }),

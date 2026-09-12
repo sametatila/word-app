@@ -1,6 +1,7 @@
 "use client";
 
 import { glossFor, type GlossWord } from "@/lib/option-label";
+import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
@@ -455,7 +456,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         seri o günden hesaplanıyor. Aynı sayfanın oturum oynatıcısı ve mobilin
         yürüyüşü baştan beri yerel günü gönderiyor.
       */
-      const res = await fetch(`/api/session?day=${localDay()}&walk=1`, {
+      const res = await apiFetch(`/api/session?day=${localDay()}&walk=1`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
@@ -496,7 +497,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     pending.current = [];
     if (!batch.length) return;
     try {
-      const res = await fetch("/api/answers", {
+      const res = await apiFetch("/api/answers", {
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -1031,7 +1032,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
     try {
       const skip = [...askedIds.current].join(",");
-      const res = await fetch(`/api/session?day=${localDay()}&walk=1${skip ? `&skip=${skip}` : ""}`, {
+      const res = await apiFetch(`/api/session?day=${localDay()}&walk=1${skip ? `&skip=${skip}` : ""}`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });

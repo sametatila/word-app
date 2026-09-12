@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 
 type CodeRow = {
@@ -76,7 +77,7 @@ export function PremiumAdmin({
     setBusy(true);
     setMsg("");
     try {
-      const res = await fetch("/api/admin/premium", {
+      const res = await apiFetch("/api/admin/premium", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(body),

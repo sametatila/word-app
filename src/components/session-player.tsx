@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -289,8 +290,8 @@ export function SessionPlayer() {
     setOnlyGame(game);
     try {
       // "Yeni tura başla" önce kayıtlı turu atar, sonra yenisini ister.
-      if (opts.fresh) await fetch("/api/session", { method: "DELETE" });
-      const res = await fetch(
+      if (opts.fresh) await apiFetch("/api/session", { method: "DELETE" });
+      const res = await apiFetch(
         `/api/session?day=${localDay()}${opts.extra ? "&extra=1" : ""}${game ? `&game=${game}` : ""}`,
         {
         cache: "no-store",
@@ -486,7 +487,7 @@ export function SessionPlayer() {
       const batch = pending.current;
       if (!batch.length) {
         if (progress) {
-          void fetch("/api/session", {
+          void apiFetch("/api/session", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ day: localDay(), progress }),
@@ -500,7 +501,7 @@ export function SessionPlayer() {
       pending.current = [];
       const seconds = Math.round((Date.now() - startedAt.current) / 1000);
       try {
-        const res = await fetch("/api/answers", {
+        const res = await apiFetch("/api/answers", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({

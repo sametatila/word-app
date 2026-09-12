@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
@@ -137,7 +138,7 @@ export function AuthForm({
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth/sign-in/social", {
+      const res = await apiFetch("/api/auth/sign-in/social", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ provider, callbackURL: `${window.location.origin}/learn` }),

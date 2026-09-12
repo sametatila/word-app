@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { useEffect, useState } from "react";
 import { InboxIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
@@ -28,7 +29,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
     let alive = true;
     const fetchCount = async () => {
       try {
-        const res = await fetch("/api/social/notifications?cursor=", { cache: "no-store", credentials: "same-origin" });
+        const res = await apiFetch("/api/social/notifications?cursor=", { cache: "no-store", credentials: "same-origin" });
         if (!res.ok) return;
         const data = (await res.json()) as { unread?: number };
         if (alive) setUnread(data.unread ?? 0);

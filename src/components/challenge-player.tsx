@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import type { Answer, Round } from "@/lib/types";
@@ -89,7 +90,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     setStatus("loading");
     (async () => {
       try {
-        const res = await fetch("/api/challenge", { cache: "no-store" });
+        const res = await apiFetch("/api/challenge", { cache: "no-store" });
         if (!res.ok) {
           setStatus("error");
           return;
@@ -114,7 +115,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     if (batch.length) {
       const seconds = Math.round(START_SECONDS + batch.length * 2);
       try {
-        await fetch("/api/answers", {
+        await apiFetch("/api/answers", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ answers: batch, day: localDay(), seconds }),
@@ -124,7 +125,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       }
     }
     try {
-      const res = await fetch("/api/challenge", {
+      const res = await apiFetch("/api/challenge", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ score }),

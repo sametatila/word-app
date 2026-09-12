@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
@@ -25,7 +26,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch("/api/errors", { cache: "no-store" });
+        const res = await apiFetch("/api/errors", { cache: "no-store" });
         if (!res.ok) return setReport(null);
         // Gövde doğrulanıyor. Kör dönüşümde, 200 dönen ama biçimi tutmayan bir
         // cevap `report.types.length` üzerinde patlıyor ve hata sınırı kartı

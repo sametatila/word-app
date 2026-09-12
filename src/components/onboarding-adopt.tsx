@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { clearOnboardingPrefs, hasOnboardingPrefs, readOnboardingPrefs } from "@/lib/onboarding-prefs";
 
@@ -43,7 +44,7 @@ export function OnboardingAdopt() {
     }
     void (async () => {
       try {
-        const res = await fetch("/api/profile", {
+        const res = await apiFetch("/api/profile", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(body),

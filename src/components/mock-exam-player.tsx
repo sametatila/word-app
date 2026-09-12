@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
@@ -134,7 +135,7 @@ function failOf(err: unknown): Fail {
 }
 
 async function post<T>(body: Record<string, unknown>): Promise<T> {
-  const res = await fetch("/api/mock-exam", {
+  const res = await apiFetch("/api/mock-exam", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
@@ -775,7 +776,7 @@ function SpeakingTask({
     form.append("audio", blob, `clip.${ext}`);
     form.append("language", course);
     try {
-      const res = await fetch("/api/stt", { method: "POST", body: form });
+      const res = await apiFetch("/api/stt", { method: "POST", body: form });
       if (!res.ok) return "";
       // Güven eşiği UYGULANMIYOR: yürüyüş modunda düşük güvenli metin yanlış
       // bir cevabı doğru sayabilirdi, burada metin zaten düzenlenebilir ve

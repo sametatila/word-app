@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
 import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
@@ -313,7 +314,7 @@ export function LessonPlayer({
   // render'da yeni kimlik alırdı — bağımlılığa eklenince effect her render'da
   // yeniden koşardı. Kimlik artık yalnız ders değişince değişiyor.
   const probeRoleplayService = useCallback(() => {
-    void fetch("/api/roleplay", { cache: "no-store" })
+    void apiFetch("/api/roleplay", { cache: "no-store" })
       .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
       .then((s) => {
         if (s && !s.configured && !offlineRef.current) {
@@ -905,7 +906,7 @@ export function LessonPlayer({
       }
 
       try {
-        const res = await fetch("/api/roleplay", {
+        const res = await apiFetch("/api/roleplay", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ lessonId: lesson.id, messages: next }),
@@ -1040,7 +1041,7 @@ export function LessonPlayer({
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),
       };
-      const res = await fetch("/api/lesson", {
+      const res = await apiFetch("/api/lesson", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),

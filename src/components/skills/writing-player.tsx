@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
@@ -407,7 +408,7 @@ function FreeTask({
       if (ai.reason === "not_configured" || ai.reason === "upstream" || ai.reason === "timeout") {
         // Metin kaybolmasın: sunucu kuyruğa alır, servis dönünce puanlar.
         try {
-          const res = await fetch("/api/assess/queue", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(req) });
+          const res = await apiFetch("/api/assess/queue", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(req) });
           setQueued(res.ok);
         } catch {
           setQueued(false);

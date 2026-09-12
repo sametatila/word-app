@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { AiNotice } from "@/components/ai-notice";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -103,7 +104,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     setTurns(next);
     const n = next.filter((t) => t.role === "user").length;
     try {
-      const res = await fetch("/api/roleplay", {
+      const res = await apiFetch("/api/roleplay", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ lessonId: lesson.id, messages: next, mode: "exam" }),

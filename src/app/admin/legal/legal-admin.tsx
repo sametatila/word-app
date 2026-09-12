@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { LEGAL_LOCALES, type LegalLocale } from "@/lib/legal";
 import type { ConfigProcessor, LegalConfig } from "@/lib/legal/shape";
 import { LegalStyles, renderLegalBody } from "@/lib/legal/markdown";
@@ -62,7 +63,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
     setBusy(true);
     setMsg("");
     try {
-      const res = await fetch("/api/admin/legal", {
+      const res = await apiFetch("/api/admin/legal", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(body),

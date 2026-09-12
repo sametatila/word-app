@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { useEffect, useState } from "react";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
@@ -42,7 +43,7 @@ export function CandoCard() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch("/api/cando", { cache: "no-store" });
+        const res = await apiFetch("/api/cando", { cache: "no-store" });
         if (!res.ok) return setData(null);
         const d = (await res.json()) as Data;
         if (!alive) return;

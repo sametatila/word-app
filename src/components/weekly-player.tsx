@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { MIN_MASTERED } from "@/lib/weekly-const";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -48,7 +49,7 @@ export function WeeklyPlayer() {
     setPhase("loading");
     (async () => {
       try {
-        const res = await fetch(`/api/weekly?day=${localDay()}`, { cache: "no-store" });
+        const res = await apiFetch(`/api/weekly?day=${localDay()}`, { cache: "no-store" });
         if (res.status === 401) { if (alive) setPhase("auth"); return; }
         if (!res.ok) throw new Error(String(res.status));
         const p = (await res.json()) as Payload;
@@ -92,7 +93,7 @@ export function WeeklyPlayer() {
     if (index + 1 < data!.rounds.length) return setIndex(index + 1);
     setPhase("saving");
     try {
-      const res = await fetch("/api/weekly", {
+      const res = await apiFetch("/api/weekly", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ answers: answers.current, day: localDay(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),

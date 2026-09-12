@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -69,7 +70,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     setPhase("loading");
     track("exam_start", 0, "placement:A1");
     try {
-      const res = await fetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start" }) });
+      const res = await apiFetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start" }) });
       if (!res.ok) throw new Error(String(res.status));
       const data = (await res.json()) as { test: Test };
       setTest(data.test);
@@ -137,7 +138,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   async function finish() {
     setPhase("finishing");
     try {
-      const res = await fetch("/api/placement", {
+      const res = await apiFetch("/api/placement", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ action: "finish", answers: answers.current, day: localDay() }),
@@ -172,8 +173,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       /* Kayıt yoksa (id 0) kabul edilecek bir satır da yok: seviye doğrudan
          profile yazılıyor - Android'in aynı yerdeki yedeği (`updateProfile`). */
       await (result.id
-        ? fetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "accept", id: result.id, level: chosen }) })
-        : fetch("/api/profile", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ level: chosen }) }));
+        ? apiFetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "accept", id: result.id, level: chosen }) })
+        : apiFetch("/api/profile", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ level: chosen }) }));
     } finally {
       router.push("/learn");
       router.refresh();

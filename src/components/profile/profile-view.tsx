@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { MyAvatar } from "@/components/avatar";
@@ -296,7 +297,7 @@ function InviteRow({ last }: { last?: boolean }) {
     // Davet kodu ödülün tek bağı; okunamazsa bağlantı yine paylaşılıyor.
     let code: string | null = null;
     try {
-      const res = await fetch("/api/premium/referral", { cache: "no-store" });
+      const res = await apiFetch("/api/premium/referral", { cache: "no-store" });
       if (res.ok) code = ((await res.json()) as { code?: string }).code ?? null;
     } catch {
       /* kod olmadan da davet edilebilir */

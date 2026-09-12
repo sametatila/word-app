@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { apiFetch } from "@/lib/api-fetch";
 import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
@@ -52,7 +53,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     setItems(undefined);
     (async () => {
       try {
-        const res = await fetch("/api/assessments", { cache: "no-store" });
+        const res = await apiFetch("/api/assessments", { cache: "no-store" });
         if (!res.ok) return setItems(null);
         const data = (await res.json()) as { items: Item[] };
         if (alive) setItems(data.items);
@@ -85,7 +86,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   function remove(id: number) {
     setToDelete(null);
     setItems((list) => (list ?? []).filter((i) => i.id !== id));
-    void fetch(`/api/assessments?id=${id}`, { method: "DELETE" }).catch(() => {});
+    void apiFetch(`/api/assessments?id=${id}`, { method: "DELETE" }).catch(() => {});
   }
 
   /* İskelet kartın gerçek yapısında: başlık, alt satır ve iki kayıt yeri.

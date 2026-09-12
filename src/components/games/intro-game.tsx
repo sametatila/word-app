@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf } from "./types";
@@ -149,7 +150,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           onClick={async () => {
             setSkipping(true);
             try {
-              await fetch("/api/words/known", {
+              await apiFetch("/api/words/known", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ wordId: word.id }),

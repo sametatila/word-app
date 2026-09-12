@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { AuthNotice, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
@@ -40,7 +41,7 @@ export function TwoFactor() {
 
   useEffect(() => {
     let alive = true;
-    fetch("/api/auth/get-session", { headers: { accept: "application/json" }, cache: "no-store" })
+    apiFetch("/api/auth/get-session", { headers: { accept: "application/json" }, cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
       .then((j: { user?: { twoFactorEnabled?: boolean } } | null) => {
         if (alive) setEnabled(Boolean(j?.user?.twoFactorEnabled));

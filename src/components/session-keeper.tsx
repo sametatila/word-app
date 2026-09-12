@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { writeTzCookie } from "@/lib/tz-cookie";
 import { syncAvatarWithServer } from "@/lib/avatar";
 
@@ -169,7 +170,7 @@ export function SessionKeeper({ userId, avatar }: { userId: string; avatar: stri
       } catch {
         /* yok sayılır */
       }
-      void fetch("/api/auth/get-session?disableCookieCache=true", {
+      void apiFetch("/api/auth/get-session?disableCookieCache=true", {
         credentials: "same-origin",
         cache: "no-store",
       }).catch(() => {

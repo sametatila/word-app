@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
@@ -51,7 +52,7 @@ export function AchievementWall() {
     setFailed(false);
     (async () => {
       try {
-        const res = await fetch("/api/achievements", { cache: "no-store" });
+        const res = await apiFetch("/api/achievements", { cache: "no-store" });
         if (!res.ok) return alive && setFailed(true);
         /*
           Gövde körü körüne dönüştürülmüyor. Rozet duvarı artık profilin

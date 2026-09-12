@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { useCachedJson } from "@/lib/use-cached";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import Link from "next/link";
@@ -60,7 +61,7 @@ export function QuestCard() {
   async function claim(questId: string) {
     setBusy(questId);
     try {
-      const res = await fetch("/api/quests", {
+      const res = await apiFetch("/api/quests", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ questId, day: localDay() }),

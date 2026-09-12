@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { BellIcon } from "@/components/icons";
 import { SettingRow, Switch } from "@/components/setting-row";
 import { PushSettings } from "@/components/push-settings";
@@ -37,7 +38,7 @@ export function NotificationSettings() {
     let alive = true;
     (async () => {
       try {
-        const res = await fetch("/api/notifications/prefs", { cache: "no-store" });
+        const res = await apiFetch("/api/notifications/prefs", { cache: "no-store" });
         if (res.ok && alive) setPrefs((await res.json()) as Prefs);
       } catch {
         /* okunamazsa anahtarlar çizilmiyor; ekran yine açılıyor */
@@ -54,7 +55,7 @@ export function NotificationSettings() {
     // hissettirmeyen bir anahtardır.
     setPrefs((cur) => (cur ? { ...cur, ...next } : cur));
     try {
-      const res = await fetch("/api/notifications/prefs", {
+      const res = await apiFetch("/api/notifications/prefs", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(next),
