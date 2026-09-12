@@ -7488,6 +7488,95 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 298. PLATFORMA OZGU RN API'SI SESSIZ KALMIYOR -----------------
+   *
+   * 297 tek bir ornegi kapatti: `BackHandler` Android'e ozgu, iOS'ta bos bir
+   * saplama, ve o yuzden yarim birakma korumasi iPhone'da hic calismiyordu.
+   * Kusur SINIFI ise daha genis - React Native'in bir dizi API'si tek
+   * platformda is yapiyor, otekinde SESSIZCE hicbir sey yapmiyor:
+   *
+   *   Android: BackHandler, PermissionsAndroid, ToastAndroid,
+   *            TouchableNativeFeedback, DrawerLayoutAndroid
+   *   iOS:     ActionSheetIOS, SettingsManager, PushNotificationIOS, ...
+   *
+   * "Sessizce" onemli: ne derleme hatasi, ne calisma zamani hatasi, ne uyari.
+   * Ozellik yalniz bir platformda var ve kimse fark etmiyor.
+   *
+   * KURAL: boyle bir API'yi kullanan dosya ya bir `Platform` kapisi tasiyacak
+   * (yani karsi platformda ne olacagini soyluyor), ya da asagidaki listede
+   * SEBEBIYLE yazili olacak. Liste yalniz KISALABILIR. */
+  {
+    const ANDROIDE_OZGU = ["BackHandler", "PermissionsAndroid", "ToastAndroid", "TouchableNativeFeedback", "DrawerLayoutAndroid", "ProgressBarAndroid"];
+    const IOSA_OZGU = ["ActionSheetIOS", "SettingsManager", "AlertIOS", "ProgressViewIOS", "PushNotificationIOS", "DatePickerIOS"];
+
+    /* Kapisi olmayanlar - sebepleriyle. */
+    const MUAF = new Map([
+      ["useBackConfirm.ts:BackHandler", "iOS karsiligi hareketi kapatmak ve o `navigation/RootStack`ta (`gestureEnabled: false`, bkz. 297); kancanin kendisi Android'e ozgu kalmak zorunda"],
+      ["OnboardingScreen.tsx:BackHandler", "tanitim yalniz ILK rota ya da `reset` ile aciliyor, yani iOS'ta kaydirilacak bir onceki ekran YOK - geri hareketi zaten is yapmiyor"],
+    ]);
+
+    const dosyalar = (() => {
+      const out = ["mobile/App.tsx"];
+      const walk = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const p = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); }
+          else if (/\.tsx?$/.test(e.name)) out.push(p);
+        }
+      };
+      walk("mobile/src");
+      return out;
+    })();
+
+    const bulgular = [];
+    for (const y of dosyalar) {
+      const g = sil(read(y));
+      const kapi = /Platform\.OS|Platform\.select/.test(g);
+      for (const api of [...ANDROIDE_OZGU, ...IOSA_OZGU]) {
+        if (!new RegExp("\\b" + api + "\\b").test(g)) continue;
+        bulgular.push({ dosya: y.split("/").pop(), api, kapi });
+      }
+    }
+
+    /* Once SAYI: tarama bosalirsa "kapisiz yok" bos bir dogru olur. */
+    sameList(
+      "platforma ozgu api taramasi calisiyor",
+      ["bulgu=" + (bulgular.length >= 3 ? "var" : "AZ:" + bulgular.length)],
+      ["bulgu=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: kapisi olmayan her kullanim belgeli olacak. */
+    const belgesiz = bulgular
+      .filter((b) => !b.kapi && !MUAF.has(`${b.dosya}:${b.api}`))
+      .map((b) => `${b.dosya}:${b.api}`)
+      .sort();
+    sameList(
+      "kapisi olmayan platform api'si belgeli",
+      ["belgesiz=" + (belgesiz.join("+") || "yok")],
+      ["belgesiz=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Liste bayatlamiyor: muaf tutulan kullanim artik yoksa ya da kapi
+       kazanmissa listeden dusecek. */
+    const bayat = [...MUAF.keys()]
+      .filter((k) => {
+        const b = bulgular.find((x) => `${x.dosya}:${x.api}` === k);
+        return !b || b.kapi;
+      })
+      .sort();
+    sameList(
+      "muafiyet listesi bayat degil",
+      ["bayat=" + (bayat.join("+") || "yok")],
+      ["bayat=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 297. YARIM BIRAKMA KORUMASI IOS'TA DA VAR ---------------------
    *
    * `useBackConfirm` yarim birakilinca emek kaybi olan ekranlarda geri tusunu

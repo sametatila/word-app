@@ -15328,3 +15328,43 @@ yok).
 Üç enjeksiyon doğrulandı; ikincisi özellikle anlamlı: `RoleplayExamScreen`e
 kanca eklenince ölçü onu hemen "hareketi kapatılmamış" diye gösterdi — yani
 yeni bir korumalı ekran eklenince iOS tarafının unutulması artık mümkün değil.
+
+## §11.423 — Platforma özgü RN API'si sessiz kalmıyor (§297'nin sınıfı)
+
+§11.422 tek bir örneği kapattı: `BackHandler` Android'e özgü, iOS'ta boş bir
+saplama, ve o yüzden yarım bırakma koruması iPhone'da hiç çalışmıyordu.
+**Kusurun sınıfı daha geniş** — React Native'in bir dizi API'si tek platformda
+iş yapıyor, ötekinde **sessizce** hiçbir şey yapmıyor:
+
+| Platform | API'ler |
+|---|---|
+| Android | `BackHandler`, `PermissionsAndroid`, `ToastAndroid`, `TouchableNativeFeedback`, `DrawerLayoutAndroid`, `ProgressBarAndroid` |
+| iOS | `ActionSheetIOS`, `SettingsManager`, `AlertIOS`, `ProgressViewIOS`, `PushNotificationIOS`, `DatePickerIOS` |
+
+"Sessizce" burada anahtar kelime: ne derleme hatası, ne çalışma zamanı
+hatası, ne uyarı. Özellik yalnız bir platformda var ve kimse fark etmiyor.
+
+Depo bugün taranınca **üç kullanım** çıktı ve üçü de doğru durumda:
+`PermissionsAndroid` iki dosyada ve ikisi `Platform` kapılı; `BackHandler` iki
+dosyada ve ikisi de kapısız ama **sebepleri var** —
+
+- `useBackConfirm.ts`: iOS karşılığı hareketi kapatmak ve o `RootStack`ta
+  (§297); kancanın kendisi Android'e özgü kalmak zorunda.
+- `OnboardingScreen.tsx`: tanıtım yalnız **ilk rota** ya da `reset` ile
+  açılıyor, yani iOS'ta kaydırılacak bir önceki ekran **yok** — geri hareketi
+  zaten iş yapmıyor.
+
+### §298
+
+Üç ölçü: taramanın **çalıştığı** (bulgu boşalırsa "kapısız yok" boş bir doğru
+olur), kapısı olmayan her kullanımın **belgeli** olduğu, ve muafiyet listesinin
+**bayatlamadığı** (muaf tutulan kullanım kalkarsa ya da `Platform` kapısı
+kazanırsa listeden düşecek).
+
+Kural şu: böyle bir API'yi kullanan dosya ya bir `Platform` kapısı taşıyacak —
+yani karşı platformda ne olacağını **söylüyor** — ya da listede sebebiyle
+yazılı olacak. Bugünkü manuel tarama böylece duran bir denetime dönüştü: bir
+sonraki `ToastAndroid` ya da `ActionSheetIOS` kendiliğinden yakalanır.
+
+İki enjeksiyon doğrulandı (kapısız `ToastAndroid` eklemek; muaf dosyaya kapı
+kazandırmak).
