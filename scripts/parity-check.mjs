@@ -7480,6 +7480,80 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 273. GIDEN E-POSTANIN SONUCU GORUNUR --------------------------
+   *
+   * 272'nin kardesi: sessizce dusen bir zincir daha.
+   *
+   * E-posta gonderimi UC yoldan biriyle bitiyor - gitti, SMTP reddetti,
+   * alici basina saatlik tavan dusurdu - ve ucu de yalniz `console`a
+   * yaziliyordu. Oysa DOGRULAMA POSTASI ZORUNLU BIR KAPI: SMTP bagliyken
+   * e-posta dogrulamasi sart (bkz. `lib/auth/server`), yani saglayici
+   * reddetmeye basladiginda her yeni kayit KALICI OLARAK kilitli kaliyor ve
+   * tek iz kimsenin grep'lemedigi bir sunucu log satiri oluyordu. `cap` de
+   * sessizdi: posta dusuyor, kullanici hic gelmeyecek bir postayi bekliyor.
+   *
+   * Olay `mail_sent`: `value` 1 gitti / 0 gitmedi, `kind` `<tur>:<sonuc>`.
+   * Bes tur var (verify · reset · pw_changed · exists · twofa) ve BESI DE
+   * olcumu geciriyor - biri gecirmezse o akisin sessizligi aynen kalir.
+   *
+   * Pano da gosteriyor: yazilip gosterilmeyen bir sayi, yine kimsenin
+   * bakmadigi yerde durur (272'nin ayni dersi).
+   *
+   * Sunucu tek, olcu MUTLAK. */
+  {
+    const olay = sil(read("src/lib/events.ts"));
+    const mail = sil(read("src/lib/email.ts"));
+    const auth = sil(read("src/lib/auth/server.ts"));
+    const yonetim = sil(read("src/lib/admin.ts"));
+    const pano = sil(read("src/app/admin/dashboard.tsx"));
+
+    sameList(
+      "e-posta sonucu olcuyor",
+      [
+        "olay=" + (/"mail_sent"/.test(olay) ? "var" : "YOK"),
+        "gitti=" + (/yaz\(meta\?\.userId \?\? null, meta\?\.kind \?\? null, "ok"\)/.test(mail) ? "var" : "YOK"),
+        "hata=" + (/yaz\(meta\?\.userId \?\? null, meta\?\.kind \?\? null, "fail"\)/.test(mail) ? "var" : "YOK"),
+        "tavan=" + (/yaz\(meta\?\.userId \?\? null, meta\?\.kind \?\? null, "cap"\)/.test(mail) ? "var" : "YOK"),
+      ],
+      ["olay=var", "gitti=var", "hata=var", "tavan=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* BES TURUN HEPSI olcumu geciriyor - bir cagri yeri `meta` vermezse o
+       akisin sessizligi aynen kalir. */
+    const TUR = ["verify", "reset", "pw_changed", "exists", "twofa"];
+    sameList(
+      "her posta turu olcumu geciriyor",
+      TUR.map((t) => t + "=" + (new RegExp(`kind: "${t}"`).test(auth) ? "geciyor" : "SESSIZ")),
+      TUR.map((t) => t + "=geciyor"),
+      "bulunan",
+      "beklenen",
+    );
+    /* Ve `sendEmail` cagiran her yer `meta` veriyor mu - sayiyla. */
+    const cagri = (auth.match(/sendEmail\(/g) ?? []).length;
+    const metali = (auth.match(/sendEmail\([^;]*\{ userId: [^;]*kind: "/g) ?? []).length;
+    sameList(
+      "her gonderim olcumu geciriyor",
+      ["metasiz=" + (cagri - metali)],
+      ["metasiz=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    sameList(
+      "pano e-postayi gosteriyor",
+      [
+        "sorgu=" + (/name='mail_sent'/.test(yonetim) ? "var" : "YOK"),
+        "gorunum=" + (/Giden e-posta/.test(pano) ? "var" : "YOK"),
+        "hata kirmizi=" + (/m\.fail > 0 && /.test(pano) ? "var" : "YOK"),
+      ],
+      ["sorgu=var", "gorunum=var", "hata kirmizi=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 272. SESLENDIRME ZINCIRI GORUNUR ------------------------------
    *
    * `ai-usage`in kendi gerekcesi kurali yaziyor: "BASARISIZ cagrilar da
