@@ -433,7 +433,7 @@ export const deC1B01: Lesson[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün ofis Almancası — bazen alay konusu olan ama her toplantıda duyacağın dil. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Amacım bunu sevdirmek değil, ÇÖZDÜRMEK: 'Das nehmen wir mit' bir söz değil, bir erteleme. C1'de bunu duymak da kurmak da gerekiyor. Önce kelimeler.")] },
+      { say: [tr("Amacım bunu sevdirmek değil, ÇÖZDÜRMEK:"), de("Das nehmen wir mit"), tr("bir söz değil, bir erteleme. C1'de bunu duymak da kurmak da gerekiyor. Önce kelimeler.")] },
       word("İlk", { de: "im Nachgang", tr: "sonrasında" }),
       word("İkinci", { de: "abstimmen", tr: "mutabakat sağlamak" }),
       word("Üçüncü", { de: "die Schnittstelle", tr: "kesişim noktası" }),

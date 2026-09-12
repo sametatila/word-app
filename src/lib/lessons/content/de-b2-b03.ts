@@ -543,7 +543,7 @@ export const deB2B03: Lesson[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Modülün son dersi ve edilgenin en pratik hâli: iş bölümü. Kimsenin adını vermeden bütün işleri sayabilirsin. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Sahte özne 'es' burada çok işine yarar: 'Es muss noch eingekauft werden' — alışveriş yapılması gerekiyor, kim yapacak henüz belli değil. Önce kelimeler.")] },
+      { say: [tr("Sahte özne 'es' burada çok işine yarar:"), de("Es muss noch eingekauft werden"), tr("— alışveriş yapılması gerekiyor, kim yapacak henüz belli değil. Önce kelimeler.")] },
       word("İlk", { de: "die Aufgabenverteilung", tr: "görev dağılımı" }),
       word("İkinci", { de: "die Priorisierung", tr: "önceliklendirme" }),
       word("Üçüncü", { de: "das Zeitfenster", tr: "zaman aralığı" }),

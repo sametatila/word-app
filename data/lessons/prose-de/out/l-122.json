@@ -113,5 +113,7 @@
  { "tr": "Bugün öğrendiklerin: randevu isterken I'd like to book", "kind": "say.tr", "de": "Heute gelernt: für den Termin I'd like to book" },
  { "tr": "Bugün kopya ve asıl belgeyi ayırdık:", "kind": "say.tr", "de": "Heute haben wir Kopie und Original getrennt:" },
  { "tr": "Özetleyelim: şikâyeti", "kind": "say.tr", "de": "Fassen wir zusammen: die Beschwerde" },
- { "tr": "Bugün üç kalıp öğrendin:", "kind": "say.tr", "de": "Heute drei Wendungen gelernt:" }
+ { "tr": "Bugün üç kalıp öğrendin:", "kind": "say.tr", "de": "Heute drei Wendungen gelernt:" },
+ { "tr": ", cevap verirken 'Yes, I have' ya da 'No, I haven't'. Ama belli bir günü söylüyorsan sade geçmiş zaman:", "kind": "say.tr", "de": ", und in der Antwort 'Yes, I have' oder 'No, I haven't'. Nennst du aber einen bestimmten Tag, die einfache Vergangenheit:" },
+ { "tr": "Şimdi bir arkadaşına dizi önerme sırası sende!", "kind": "say.tr", "de": "Jetzt bist du dran, einem Freund eine Serie zu empfehlen!" }
 ]

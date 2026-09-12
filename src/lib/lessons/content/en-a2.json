@@ -54569,7 +54569,15 @@
      },
      {
       "lang": "tr",
-      "text": ", cevap verirken 'Yes, I have' ya da 'No, I haven't'. Ama belli bir günü söylüyorsan sade geçmiş zaman: 'I watched it last night.' Şimdi bir arkadaşına dizi önerme sırası sende!"
+      "text": ", cevap verirken 'Yes, I have' ya da 'No, I haven't'. Ama belli bir günü söylüyorsan sade geçmiş zaman:"
+     },
+     {
+      "lang": "en",
+      "text": "I watched it last night."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşına dizi önerme sırası sende!"
      }
     ]
    }

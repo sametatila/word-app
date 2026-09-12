@@ -99,17 +99,44 @@ for (const l of LESSONS) {
     "segment dilleri geçerli",
     `(${l.course} → tr/${targetLang})`,
   );
-  // Almanca metin Türkçe segmentte durmamalı: seslendirme dili segmentten
-  // seçiliyor, karışan dil yanlış sesle okunur. Sezgisel yalnızca Türkçede
-  // OLMAYAN işaretlere bakıyor: ß, ä ve "der/die/das + Büyük" artikelli ad.
-  const leakage = l.lecture.flatMap((s) =>
-    s.say.filter(
-      (seg) =>
-        seg.lang === "tr" &&
-        /[ßä]|\b(der|die|das|ein|eine|einen)\s+[A-ZÄÖÜ][a-zäöüß]/.test(seg.text),
-    ),
-  );
-  warn(`${id}: tr segmentinde Almanca sızıntısı olabilir`, leakage.length === 0,
+  /*
+    Türkçe parçanın içinde ALINTILANMIŞ HEDEF DİL CÜMLESİ durmamalı.
+
+    Sebep seslendirme: ses dili PARÇADAN seçiliyor, yani model cümle Türkçe
+    sesle okunuyor — öğrencinin tekrar edeceği cümle yanlış telaffuzla
+    geliyor. Doğrusu cümleyi kendi `de(...)`/`en(...)` parçasına almak;
+    oynatıcı onu zaten marka rengiyle ve kalın yazıyor (lesson-player).
+
+    ÖLÇÜT NE SAYMIYOR — Türkçe cümlenin içindeki TEK terim: "als mi wenn mi",
+    "Plusquamperfekt", "I would like", "on the weekend". Bunlar anlatımın
+    KONUSU, öğrenci onları tekrar etmiyor ve ayrı parçaya almak cümleyi
+    paramparça ederdi. Eski ölçüt ß/ä arıyordu ve tam bu ikisini
+    ayıramıyordu: "während" ile "'Während er kocht, deckt sie den Tisch.'"
+    aynı uyarıyı veriyordu, yani uyarı ne temizlenebiliyordu ne de bir şey
+    söylüyordu.
+
+    Ayrım ÖLÇÜLDÜ (2026-09-12): 11 derste 37 alıntı cümlesi vardı ve hepsi
+    kendi parçasına alındı; aynı taramada 25 kısa alıntı terim çıktı ve
+    onlar bilerek bırakıldı. Kesme işareti kısaltmada da kullanıldığı için
+    (don't, I'd) açıklık yalnız tırnak sözcüğe bitişik DEĞİLSE alıntı
+    sayılıyor — bitişik sayılsaydı İngilizce kursta altı uydurma "cümle"
+    çıkıyordu, ölçüldü.
+  */
+  const FOREIGN_WORD =
+    l.course === "en"
+      ? /\b(i|you|he|she|it|we|they|is|are|was|were|have|has|had|do|does|did|not|a|an|the|and|or|but|to|with|on|for|of|in|at|my|your|can|will|would|there|this|that)\b/gi
+      : /\b(ich|du|er|sie|es|wir|ihr|ist|sind|war|waren|habe|hat|haben|bin|nicht|ein|eine|einen|der|die|das|den|dem|und|oder|aber|zu|mit|auf|für|von|im|in|am|man|wird|kann|muss|will|soll|dass|weil|wenn|als|wie|mehr|noch|auch)\b/gi;
+  const quotedSentence = (t: string) =>
+    [...t.matchAll(/(?<=^|[\s(:—–-])'([^']{6,})'(?=$|[\s.,;:!?)…—–])/g)].some((m) => {
+      const span = m[1].trim();
+      if (/[ışğİĞŞ]/.test(span)) return false; // Türkçe alıntı
+      FOREIGN_WORD.lastIndex = 0;
+      if ((span.match(FOREIGN_WORD) ?? []).length < 2) return false;
+      const words = span.split(/\s+/).length;
+      return words >= 4 && (/[.!?…]$/.test(span) || words >= 5);
+    });
+  const leakage = l.lecture.flatMap((s) => s.say.filter((seg) => seg.lang === "tr" && quotedSentence(seg.text)));
+  ok(leakage.length === 0, "Türkçe parçada alıntılanmış hedef dil cümlesi yok",
     `(${leakage.slice(0, 2).map((s) => s.text.slice(0, 40)).join(" | ")})`);
 
   // Her kelime sesli tekrar ettiriliyor
