@@ -16552,3 +16552,48 @@ kaydettirmek.
 Bir yan not: ilk yazımda kanal ölçüsünü `/CHANNEL_IN_MONO/` diye yazdım ve
 **meta-kapı** (§138) reddetti — sınırsız ad deseni. `\b` eklendi. Kapıları
 denetleyen kapının işe yaradığı yer tam burası.
+
+## §11.455 — Native HTTP'nin adres beyaz listesi: iki platformda da ölçülüyor
+
+Native taraf **üç** yöntemde kendi HTTP isteğini atıyor (`uploadStt`,
+`httpGet`, `playTtsUrl`) ve bu isteklere **oturum çerezi** biniyor: Android
+`CookieManager`dan okuyup başlığa koyuyor, iOS paylaşımlı `HTTPCookieStorage`i
+kullanıyor (iOS'ta elle koymak çift başlık riski — gerekçe Swift dosyasında
+yazılı). Yani adres nereye giderse çerez de oraya gidiyor.
+
+Bu yüzden iki tarafta da bir **beyaz liste** var: `allowedUrl` yalnız `https`
+ve **tam olarak** API hostunu geçiriyor, host hiç kurulmadıysa hiçbir şeyi
+geçirmiyor. Kural iki dilde ayrı ayrı yazılı ve hiçbir şey iki tarafta da
+**durduğunu** ölçmüyordu. Kaybının bedeli: `playTtsUrl`e yabancı bir adres
+geçirilebilse oturum çerezi o hosta giderdi. Ne derleyici ne test bunu görür —
+yöntemler adresi `String` alıyor.
+
+### §317 — iki ölçü, biri ilişkisel biri mutlak
+
+Ölçü **varlık değil kapsam**: üç yöntemin **her birinin** gövdesinde beyaz
+liste çağrısı aranıyor, iki platformda ayrı ayrı. Tanımın kendisi de ölçülüyor
+(https şartı, tam host eşitliği, hostsuz ret).
+
+İkinci ölçü **mutlak** ve gerekçesi enjeksiyonla kanıtlandı: iki taraf
+kontrolü **birlikte** kaybederse ilişkisel ölçü "eşit" der ve yeşil kalır.
+Mutlak ölçü orada kırmızı veriyor.
+
+### Kapının kendi penceresi erken kapanıyordu
+
+İlk yazımda gövde "adından sonraki ilk `fun`/`func` bildirimine kadar" diye
+alınıyordu ve Android'in `playTtsUrl`u **KONTROLSUZ** çıktı. Sebebi: o
+yöntemin **içinde** yerel bir `fun finishP(...)` var ve pencere beyaz liste
+çağrısından önce kapanıyordu. Defterin tekrar eden kusuru — pencerenin erken
+bitmesi — ve bu kez kapının kendisi yakaladı (yanlış pozitif olarak).
+
+Düzeltme iki parça: gövde artık **tam iki boşluk girintili** bir bildirime
+kadar gidiyor (sınıf üyeleri orada duruyor, yerel fonksiyonlar daha derinde),
+ve "sonraki bildirim" aramasına kendi bildiriminin **sonundan** başlanıyor —
+`i + 1` demek, anotasyonu ayrı satırda olan bir yöntemin kendi `fun` satırını
+"sonraki bildirim" saymak ve pencereyi sıfıra düşürmekti. İkinci hata ilkini
+maskeledi: iki taraf da boş gövde okuyunca ilişkisel ölçü "eşit" deyip
+geçiyordu — mutlak ölçü olmasa fark edilmezdi.
+
+Üç enjeksiyon doğrulandı: Android'de bir kontrolü kaldırmak, **iki tarafta
+birden** kaldırmak (mutlak ölçü), Swift'in tanımından `https` şartını
+düşürmek.

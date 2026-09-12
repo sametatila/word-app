@@ -17745,6 +17745,77 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* -------------------- 317. NATIVE HTTP ADRES BEYAZ LISTESI IKI PLATFORMDA
+   *
+   * Native taraf UC yontemde kendi HTTP istegini atiyor (`uploadStt`,
+   * `httpGet`, `playTtsUrl`) ve bu isteklere OTURUM CEREZI binmek zorunda -
+   * Android `CookieManager`dan okuyup basliga koyuyor, iOS paylasimli
+   * `HTTPCookieStorage`i kullaniyor. Yani adres nereye giderse cerez de oraya
+   * gidiyor.
+   *
+   * Bu yuzden iki tarafta da bir BEYAZ LISTE var: `allowedUrl` yalniz `https`
+   * ve TAM OLARAK API hostunu geciriyor, host hic kurulmadiysa hicbir seyi
+   * geciriyor (`setApiBase` cagrilmadan once). Kural iki dilde ayri ayri
+   * yazili ve hicbir sey iki tarafta da DURDUGUNU olcmuyordu.
+   *
+   * Kaybinin bedeli: `playTtsUrl`e (ya da otekilere) yabanci bir adres
+   * gecirilebilse oturum cerezi o hosta giderdi. Ne derleyici ne test bunu
+   * gorur - yontemler adrese `String` aliyor.
+   *
+   * Olcu VARLIK DEGIL KAPSAM: uc yontemin HER BIRININ govdesinde beyaz liste
+   * cagrisi araniyor, iki platformda ayri ayri. Govde bir sonraki `fun`/`func`
+   * bildirimine kadar. Tanimin kendisi de olculuyor (https + tam host esitligi
+   * + host yoksa ret). */
+  {
+    const kt = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
+    const sw = read("mobile/ios/Lernomi/LernomiSpeech.swift");
+    /* Bir yontemin govdesi: adindan sonraki ilk UST DUZEY bildirime kadar.
+     *
+     * "Ust duzey" TAM IKI BOSLUK girintisi demek - iki dosyada da sinif
+     * uyeleri orada duruyor. Ilk yazim girintiye bakmiyordu ve Kotlin'in
+     * `playTtsUrl`u "KONTROLSUZ" cikti: o yontemin ICINDE yerel bir
+     * `fun finishP(...)` var (satir 258) ve pencere beyaz liste cagrisindan
+     * (260) ONCE kapaniyordu. Defterin tekrar eden kusuru - pencerenin erken
+     * bitmesi - ve bu kez kapinin kendisi yakaladi. */
+    const govde = (src, ad, anahtar) => {
+      const bas = new RegExp("\\n  (?:@\\w+\\([^)]*\\)\\n  |@\\w+\\n  )?(?:private |public |internal )?" + anahtar + "\\s+" + ad + "\\b").exec(src);
+      if (!bas) return "";
+      const i = bas.index;
+      const re = new RegExp("\\n  (?:@\\w+[^\\n]*\\n  )?(?:private |public |internal )?" + anahtar + "\\s+\\w+", "g");
+      /* Arama KENDI bildiriminin SONUNDAN basliyor: `i + 1` demek, ayni
+         bildirimin `fun` satirini "sonraki bildirim" saymak olurdu (anotasyon
+         ayri satirda duruyor ve pencere sifir uzunluga duserdi). */
+      re.lastIndex = i + bas[0].length;
+      const m = re.exec(src);
+      return src.slice(i, m ? m.index : src.length);
+    };
+    const YONTEM = ["uploadStt", "httpGet", "playTtsUrl"];
+    const kapsam = (src, anahtar) =>
+      YONTEM.map((y) => y + "=" + (/\ballowedUrl\b/.test(govde(src, y, anahtar)) ? "beyaz liste" : "KONTROLSUZ"));
+    /* Tanimin kendisi: https sarti, TAM host esitligi ve host yoksa ret. */
+    const tanim = (src) => [
+      "https=" + (/(?:protocol == "https"|scheme\?\.lowercased\(\) == "https")/.test(src) ? "var" : "YOK"),
+      "tam host=" + (/(?:u\.host\.equals\(host, ignoreCase = true\)|u\.host\?\.lowercased\(\) == host\.lowercased\(\))/.test(src) ? "var" : "YOK"),
+      "hostsuz ret=" + (/(?:apiHost \?: return false|guard let host = host)/.test(src) ? "var" : "YOK"),
+    ];
+    sameList(
+      "native http beyaz listesi kapsami",
+      [...kapsam(kt, "fun"), ...tanim(kt)],
+      [...kapsam(sw, "func"), ...tanim(sw)],
+      "android",
+      "ios",
+    );
+    /* Ve MUTLAK: ucunde de beyaz liste olmali - iki taraf birlikte kaybederse
+       yukaridaki karsilastirma "esit" derdi. */
+    sameList(
+      "native http beyaz listesi duruyor",
+      [...kapsam(kt, "fun"), ...kapsam(sw, "func")],
+      [...YONTEM.map((y) => y + "=beyaz liste"), ...YONTEM.map((y) => y + "=beyaz liste")],
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(
