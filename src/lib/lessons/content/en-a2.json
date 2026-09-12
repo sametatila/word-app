@@ -9562,8 +9562,8 @@
     "tr": "bir gün"
    },
    {
-    "de": "sure",
-    "tr": "emin"
+    "de": "be able to",
+    "tr": "-ebilmek"
    },
    {
     "de": "promise",
@@ -10052,20 +10052,20 @@
      },
      {
       "lang": "en",
-      "text": "sure"
+      "text": "be able to"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: emin. Lütfen tekrar et:"
+      "text": "Türkçesi: -ebilmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "sure"
+      "text": "be able to"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "sure"
+     "target": "be able to"
     }
    },
    {
@@ -27262,8 +27262,8 @@
     "tr": "takım"
    },
    {
-    "de": "reason",
-    "tr": "sebep"
+    "de": "be interested",
+    "tr": "ilgi duymak"
    },
    {
     "de": "start",
@@ -27923,20 +27923,20 @@
      },
      {
       "lang": "en",
-      "text": "reason"
+      "text": "be interested"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sebep. Lütfen tekrar et:"
+      "text": "Türkçesi: ilgi duymak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "reason"
+      "text": "be interested"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "reason"
+     "target": "be interested"
     }
    },
    {
@@ -31203,8 +31203,8 @@
     "tr": "yanıtlamak"
    },
    {
-    "de": "confirm",
-    "tr": "teyit etmek"
+    "de": "write down",
+    "tr": "not almak"
    },
    {
     "de": "regards",
@@ -31734,20 +31734,20 @@
      },
      {
       "lang": "en",
-      "text": "confirm"
+      "text": "write down"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: teyit etmek. Lütfen tekrar et:"
+      "text": "Türkçesi: not almak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "confirm"
+      "text": "write down"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "confirm"
+     "target": "write down"
     }
    },
    {
@@ -33390,8 +33390,8 @@
     "tr": "hasarlı"
    },
    {
-    "de": "quality",
-    "tr": "kalite"
+    "de": "fair",
+    "tr": "adil"
    },
    {
     "de": "complain",
@@ -33402,8 +33402,8 @@
     "tr": "yönetici"
    },
    {
-    "de": "expect",
-    "tr": "ummak"
+    "de": "be enough",
+    "tr": "yetmek"
    },
    {
     "de": "product",
@@ -33834,20 +33834,20 @@
      },
      {
       "lang": "en",
-      "text": "quality"
+      "text": "fair"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kalite. Lütfen tekrar et:"
+      "text": "Türkçesi: adil. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "quality"
+      "text": "fair"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "quality"
+     "target": "fair"
     }
    },
    {
@@ -33858,20 +33858,20 @@
      },
      {
       "lang": "en",
-      "text": "expect"
+      "text": "be enough"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: ummak. Lütfen tekrar et:"
+      "text": "Türkçesi: yetmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "expect"
+      "text": "be enough"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "expect"
+     "target": "be enough"
     }
    },
    {

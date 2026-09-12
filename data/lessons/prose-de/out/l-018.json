@@ -56,7 +56,6 @@
  { "tr": "ekmek fırını", "kind": "vocab.tr", "de": "Bäckerei" },
  { "tr": "erkek kardeş", "kind": "vocab.tr", "de": "Bruder" },
  { "tr": "izin belgesi", "kind": "vocab.tr", "de": "Genehmigung" },
- { "tr": "nefret etmek", "kind": "vocab.tr", "de": "hassen" },
  { "tr": "oturma odası", "kind": "vocab.tr", "de": "Wohnzimmer" },
  { "tr": "özür dilemek", "kind": "vocab.tr", "de": "sich entschuldigen" },
  { "tr": "resim yapmak", "kind": "vocab.tr", "de": "malen" },
@@ -94,6 +93,5 @@
  { "tr": "oynadım / oynadı", "kind": "vocab.tr", "de": "ich spielte / er spielte" },
  { "tr": "telefon numarası", "kind": "vocab.tr", "de": "Telefonnummer" },
  { "tr": "iade etmek / iade", "kind": "vocab.tr", "de": "zurückgeben / Rückgabe" },
- { "tr": "yeniden başlatmak", "kind": "vocab.tr", "de": "neu starten" },
- { "tr": "almak (ilaç içmek)", "kind": "vocab.tr", "de": "nehmen (Medikament)" }
+ { "tr": "yeniden başlatmak", "kind": "vocab.tr", "de": "neu starten" }
 ]

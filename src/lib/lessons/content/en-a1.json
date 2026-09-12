@@ -4702,8 +4702,8 @@
     "tr": "çalışmak"
    },
    {
-    "de": "job",
-    "tr": "iş"
+    "de": "become",
+    "tr": "haline gelmek"
    },
    {
     "de": "teacher",
@@ -5158,20 +5158,20 @@
      },
      {
       "lang": "en",
-      "text": "job"
+      "text": "become"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: iş. Lütfen tekrar et:"
+      "text": "Türkçesi: haline gelmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "job"
+      "text": "become"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "job"
+     "target": "become"
     }
    },
    {
@@ -9227,12 +9227,12 @@
     "tr": "bu"
    },
    {
-    "de": "here",
-    "tr": "burada"
+    "de": "wife",
+    "tr": "eş"
    },
    {
-    "de": "there",
-    "tr": "orada"
+    "de": "hat",
+    "tr": "şapka"
    },
    {
     "de": "who",
@@ -9614,20 +9614,20 @@
      },
      {
       "lang": "en",
-      "text": "here"
+      "text": "wife"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: burada. Lütfen tekrar et:"
+      "text": "Türkçesi: eş. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "here"
+      "text": "wife"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "here"
+     "target": "wife"
     }
    },
    {
@@ -9638,20 +9638,20 @@
      },
      {
       "lang": "en",
-      "text": "there"
+      "text": "hat"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: orada. Lütfen tekrar et:"
+      "text": "Türkçesi: şapka. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "there"
+      "text": "hat"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "there"
+     "target": "hat"
     }
    },
    {
@@ -10452,8 +10452,8 @@
     "tr": "saç"
    },
    {
-    "de": "eye",
-    "tr": "göz"
+    "de": "grey",
+    "tr": "gri"
    },
    {
     "de": "look",
@@ -10856,20 +10856,20 @@
      },
      {
       "lang": "en",
-      "text": "eye"
+      "text": "grey"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: göz. Lütfen tekrar et:"
+      "text": "Türkçesi: gri. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "eye"
+      "text": "grey"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "eye"
+     "target": "grey"
     }
    },
    {
@@ -12197,8 +12197,8 @@
     "tr": "sessiz"
    },
    {
-    "de": "busy",
-    "tr": "meşgul"
+    "de": "fun",
+    "tr": "eğlence"
    },
    {
     "de": "nice",
@@ -12688,20 +12688,20 @@
      },
      {
       "lang": "en",
-      "text": "busy"
+      "text": "fun"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: meşgul. Lütfen tekrar et:"
+      "text": "Türkçesi: eğlence. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "busy"
+      "text": "fun"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "busy"
+     "target": "fun"
     }
    },
    {
@@ -14124,8 +14124,8 @@
     "tr": "para"
    },
    {
-    "de": "price",
-    "tr": "fiyat"
+    "de": "hamburger",
+    "tr": "hamburger"
    },
    {
     "de": "bag",
@@ -14559,20 +14559,20 @@
      },
      {
       "lang": "en",
-      "text": "price"
+      "text": "hamburger"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: fiyat. Lütfen tekrar et:"
+      "text": "Türkçesi: hamburger. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "price"
+      "text": "hamburger"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "price"
+     "target": "hamburger"
     }
    },
    {
@@ -15415,8 +15415,8 @@
     "tr": "bayılmak / çok sevmek"
    },
    {
-    "de": "hate",
-    "tr": "nefret etmek"
+    "de": "orange",
+    "tr": "portakal"
    },
    {
     "de": "prefer",
@@ -15862,20 +15862,20 @@
      },
      {
       "lang": "en",
-      "text": "hate"
+      "text": "orange"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: nefret etmek. Lütfen tekrar et:"
+      "text": "Türkçesi: portakal. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "hate"
+      "text": "orange"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "hate"
+     "target": "orange"
     }
    },
    {
@@ -24964,8 +24964,8 @@
     "tr": "kapatmak"
    },
    {
-    "de": "late",
-    "tr": "geç"
+    "de": "library",
+    "tr": "kütüphane"
    },
    {
     "de": "early",
@@ -25449,20 +25449,20 @@
      },
      {
       "lang": "en",
-      "text": "late"
+      "text": "library"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: geç. Lütfen tekrar et:"
+      "text": "Türkçesi: kütüphane. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "late"
+      "text": "library"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "late"
+     "target": "library"
     }
    },
    {
@@ -30416,8 +30416,8 @@
     "tr": "yeterince / yeterli"
    },
    {
-    "de": "a few",
-    "tr": "birkaç"
+    "de": "whole",
+    "tr": "bütün"
    },
    {
     "de": "some",
@@ -30871,20 +30871,20 @@
      },
      {
       "lang": "en",
-      "text": "a few"
+      "text": "whole"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: birkaç. Lütfen tekrar et:"
+      "text": "Türkçesi: bütün. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "a few"
+      "text": "whole"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "a few"
+     "target": "whole"
     }
    },
    {
@@ -31574,8 +31574,8 @@
     "tr": "varmak / gelmek"
    },
    {
-    "de": "delivery",
-    "tr": "teslimat"
+    "de": "clothes",
+    "tr": "giysi"
    },
    {
     "de": "computer",
@@ -31924,20 +31924,20 @@
      },
      {
       "lang": "en",
-      "text": "delivery"
+      "text": "clothes"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: teslimat. Lütfen tekrar et:"
+      "text": "Türkçesi: giysi. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "delivery"
+      "text": "clothes"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "delivery"
+     "target": "clothes"
     }
    },
    {
@@ -34128,8 +34128,8 @@
     "tr": "zaman"
    },
    {
-    "de": "problem",
-    "tr": "sorun"
+    "de": "airplane",
+    "tr": "uçak"
    },
    {
     "de": "sorry",
@@ -34604,20 +34604,20 @@
      },
      {
       "lang": "en",
-      "text": "problem"
+      "text": "airplane"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sorun. Lütfen tekrar et:"
+      "text": "Türkçesi: uçak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "problem"
+      "text": "airplane"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "problem"
+     "target": "airplane"
     }
    },
    {
@@ -35316,8 +35316,8 @@
     "tr": "yanında"
    },
    {
-    "de": "behind",
-    "tr": "arkasında"
+    "de": "up",
+    "tr": "yukarı"
    },
    {
     "de": "between",
@@ -35889,20 +35889,20 @@
      },
      {
       "lang": "en",
-      "text": "behind"
+      "text": "up"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: arkasında. Lütfen tekrar et:"
+      "text": "Türkçesi: yukarı. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "behind"
+      "text": "up"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "behind"
+     "target": "up"
     }
    },
    {
@@ -36075,12 +36075,12 @@
     "tr": "park"
    },
    {
-    "de": "see",
-    "tr": "görmek"
+    "de": "king",
+    "tr": "kral"
    },
    {
-    "de": "open",
-    "tr": "açık"
+    "de": "studio",
+    "tr": "stüdyo"
    },
    {
     "de": "church",
@@ -36509,20 +36509,20 @@
      },
      {
       "lang": "en",
-      "text": "see"
+      "text": "king"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: görmek. Lütfen tekrar et:"
+      "text": "Türkçesi: kral. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "see"
+      "text": "king"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "see"
+     "target": "king"
     }
    },
    {
@@ -36533,20 +36533,20 @@
      },
      {
       "lang": "en",
-      "text": "open"
+      "text": "studio"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: açık. Lütfen tekrar et:"
+      "text": "Türkçesi: stüdyo. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "open"
+      "text": "studio"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "open"
+     "target": "studio"
     }
    },
    {
@@ -45627,8 +45627,8 @@
     "tr": "yüzmek"
    },
    {
-    "de": "run",
-    "tr": "koşmak"
+    "de": "bat",
+    "tr": "raket"
    },
    {
     "de": "team",
@@ -46084,20 +46084,20 @@
      },
      {
       "lang": "en",
-      "text": "run"
+      "text": "bat"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: koşmak. Lütfen tekrar et:"
+      "text": "Türkçesi: raket. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "run"
+      "text": "bat"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "run"
+     "target": "bat"
     }
    },
    {
@@ -53914,8 +53914,8 @@
     "tr": "baş ağrısı"
    },
    {
-    "de": "take",
-    "tr": "almak (ilaç içmek)"
+    "de": "have breakfast",
+    "tr": "kahvaltı yapmak"
    },
    {
     "de": "water",
@@ -54417,20 +54417,20 @@
      },
      {
       "lang": "en",
-      "text": "take"
+      "text": "have breakfast"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: almak (ilaç içmek). Lütfen tekrar et:"
+      "text": "Türkçesi: kahvaltı yapmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "take"
+      "text": "have breakfast"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "take"
+     "target": "have breakfast"
     }
    },
    {
@@ -55861,8 +55861,8 @@
     "tr": "ambulans"
    },
    {
-    "de": "fast",
-    "tr": "hızlı / çabuk"
+    "de": "stand",
+    "tr": "ayakta durmak"
    },
    {
     "de": "danger",
@@ -56242,20 +56242,20 @@
      },
      {
       "lang": "en",
-      "text": "fast"
+      "text": "stand"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: hızlı, çabuk. Lütfen tekrar et:"
+      "text": "Türkçesi: ayakta durmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "fast"
+      "text": "stand"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "fast"
+     "target": "stand"
     }
    },
    {

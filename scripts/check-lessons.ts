@@ -148,8 +148,14 @@ for (const l of LESSONS) {
 
     Kaynağı ölçüldü: sözlükçeyi 5'ten 8'e çıkaran iş (2026-09-11) yeni
     kelimeleri dersin SONUNA şablon adımıyla ekledi ve dersin gövdesinde
-    hâlihazırda açıklanmış kelimeyi göremedi. 2026-09-12'de 38 vakaydı;
-    14'ü havuzdaki boş kelimelerle değiştirildi.
+    hâlihazırda açıklanmış kelimeyi göremedi. 2026-09-12'de 36 vaka
+    bulundu ve HEPSİ kapatıldı (havuzda boşta duran kelimelerle), o yüzden
+    ölçüt uyarı değil HATA.
+
+    C1'de bir ders bilerek önce çifti tanıtıp sonra tek tek çalıştırıyor
+    (`de-c1-praezision`: "scheinbar ≠ anscheinend" kalıbı dersin konusu).
+    Ölçüt onu saymıyor çünkü o adımlar dört parçadan uzun — yani sınır
+    tesadüf değil, önizleme-sonra-drill kalıbını dışarıda bırakıyor.
 
     Ölçüt DAR tutuldu: yalnız şablon adımı ("Bir kelime daha:" ile açılan,
     dört parçalık) ve yalnız kelimenin TEK BAŞINA geçtiği önceki bir adım
@@ -168,7 +174,7 @@ for (const l of LESSONS) {
         st.say.some((x) => x.lang === "tr" && /demek/.test(x.text)),
     );
   });
-  warn(`${id}: kelime aynı derste iki kez öğretiliyor`, twiceTaught.length === 0,
+  ok(twiceTaught.length === 0, "kelime aynı derste iki kez öğretilmiyor",
     `(${twiceTaught.map((s) => (s.expect as { target: string }).target).join(", ")})`);
 
   // Her kelime sesli tekrar ettiriliyor
