@@ -79,10 +79,10 @@ export function ProfileScreen() {
             </View>
           ) : me ? (
             <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
                 <FlameIcon color={colors.streakText} size={16} /><Text variant="bodyStrong" color={colors.streakText}>{t("profile.days", { n: me.streak })}</Text>
               </View>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
                 <BoltIcon color={colors.primaryText} size={16} /><Text variant="bodyStrong" color={colors.primaryText}>{xpLabel} XP</Text>
               </View>
             </View>
@@ -201,7 +201,7 @@ export function ProfileScreen() {
           bulunur" istiyor — profil sekmesinin dibi, ayarların ortasından daha
           kolay bulunur.
         */}
-        <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
+        <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.dangerText} size={20} />
           <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
         </PressableScale>

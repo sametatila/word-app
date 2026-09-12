@@ -109,7 +109,7 @@ export function NotifPrimeScreen() {
           {tx("notifprime.one_gentle_reminder_day_is")}
         </Text>
 
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: spacing.sm }}>
           <FlameIcon color={colors.streakText} size={16} /><Text variant="caption" color={colors.streakText}>{tx("notifprime.reminder_longer_streak")}</Text>
         </View>
 
@@ -136,7 +136,7 @@ export function NotifPrimeScreen() {
       <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.turn_on_daily_reminder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
         <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
       </PressableScale>
-      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
+      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: spacing.xs }}>
         <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>
       </PressableScale>
     </View>

@@ -131,7 +131,7 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
              sonra tum sikler yutuluyor (`if (done) return`), o yuzden
              `disabled` da turun kapali olmasini soyler. */
           <PressableScale key={oi} accessibilityRole="radio" accessibilityState={{ selected: pick === oi, disabled: done }} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
-            style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
+            style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
             <Text variant="body" color={colors.text} style={{ flex: 1 }}>{opt}</Text>
             {done && isAnswer ? <CheckIcon color={colors.successText} size={18} /> : done && pick === oi ? <XIcon color={colors.dangerText} size={18} /> : null}
           </PressableScale>
@@ -328,12 +328,12 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
   return (
     <Card padded>
       <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("writp.build_sentence")}</Text>
-      <Text variant="bodyStrong" style={{ marginTop: 4 }}><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
+      <Text variant="bodyStrong" style={{ marginTop: spacing.xs }}><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
       {fails > 0 && t.hint && phase === "editing" ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("rounds.hint")}: {t.hint}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.hint")}: {t.hint}</Text>
       ) : null}
 
-      <View style={{ marginTop: spacing.md, minHeight: 52, borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: 8, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
+      <View style={{ marginTop: spacing.md, minHeight: 52, borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
         {chosen.length === 0 ? (
           <Text variant="caption" color={colors.textFaint}>{tx("exam.tap_chunks")}</Text>
         ) : chosen.map((ti, pos) => (
@@ -348,7 +348,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
         <View style={{ marginTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
           {tokens.map((tok, i) => chosen.includes(i) ? null : (
             <PressableScale key={i} onPress={() => setChosen([...chosen, i])}
-              style={{ borderRadius: radii.sm, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingHorizontal: 12, paddingVertical: 7 }}>
+              style={{ borderRadius: radii.sm, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
               <Text variant="bodyStrong" color={colors.text}>{tok}</Text>
             </PressableScale>
           ))}
@@ -419,8 +419,8 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
       {done ? (
         <View style={{ marginTop: spacing.sm }}>
           {match ? <Verdict m={match} ok={ok} colors={colors} /> : null}
-          {!ok ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
-          {t.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.why}</Text> : null}
+          {!ok ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
+          {t.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t.why}</Text> : null}
         </View>
       ) : null}
     </Card>
@@ -584,7 +584,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           uzun basışta duruyor. */}
       {t.phrases?.length ? (
         <View style={{ marginTop: spacing.sm }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("writp.useful_phrases")}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{tx("writp.useful_phrases")}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
             {t.phrases.map((p) => (
               <PressableScale
@@ -618,7 +618,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
         ) : null}
       </View>
       {!done && !reveal && !enough ? (
-        <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("writp.min_words_note", { min: t.minWords, n: words })}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("writp.min_words_note", { min: t.minWords, n: words })}</Text>
       ) : null}
       {score ? (
         <View style={{ marginTop: spacing.md }}>
@@ -627,7 +627,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           {score.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{score.tip}</Text> : null}
           {score.corrected ? (
             <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("item.mono_corrected")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{tx("item.mono_corrected")}</Text>
               <Text variant="body">{score.corrected}</Text>
             </View>
           ) : null}
@@ -644,20 +644,20 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           kullanıcının odağı düğmede kalıyor ve satırın geldiğini ekran okuyucu
           söylemiyordu. Hata değil bilgi, o yüzden `polite`. */}
       {note ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{note}</Text> : null}
-      {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("writp.queued")}</Text> : null}
+      {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("writp.queued")}</Text> : null}
       {reveal && !done ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-          <PressableScale onPress={settleNow} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.md, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={settleNow} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.md, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.continue")}</Text>
           </PressableScale>
-          <PressableScale onPress={retry} style={{ borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+          <PressableScale onPress={retry} style={{ borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
             <Text variant="bodyStrong" color={colors.text}>{tx("writp.try_once_more")}</Text>
           </PressableScale>
         </View>
       ) : null}
       {(done || reveal) && t.sample ? (
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.sample_answer")}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{tx("skillquiz.sample_answer")}</Text>
           <Text variant="body" color={colors.text}>{t.sample}</Text>
         </View>
       ) : null}

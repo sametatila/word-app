@@ -68,7 +68,7 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
           </PressableScale>
         </ScrollView>
         <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, gap: spacing.sm }}>
-          <PressableScale onPress={onAccept} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={onAccept} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("micdisclosure.i_agree_start")}</Text>
           </PressableScale>
           <PressableScale onPress={onCancel} style={{ paddingVertical: spacing.md, alignItems: "center" }}>

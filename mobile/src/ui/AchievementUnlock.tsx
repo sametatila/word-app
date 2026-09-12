@@ -216,7 +216,7 @@ export function AchievementUnlock() {
               </Text>
               <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}><Badge a={solo} size={92} /></View>
               <Text variant="h2" style={{ textAlign: "center" }}>{solo.title}</Text>
-              <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{solo.hint}</Text>
+              <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{solo.hint}</Text>
               {view.kind === "solo" && view.queue.length > 1 ? (
                 <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
                   {t("achu.n_more", { n: view.queue.length - 1 })}

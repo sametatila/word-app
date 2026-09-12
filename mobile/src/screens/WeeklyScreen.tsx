@@ -140,7 +140,7 @@ export function WeeklyScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="display" style={{ textAlign: "center" }}>{t("weekly.sign_in_for_weekly_quiz")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("weekly.test_what_you_ve_learned_once")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.sign_in_sign_up")}</Text></PressableScale>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.sign_in_sign_up")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -163,7 +163,7 @@ export function WeeklyScreen() {
         <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("weekly.honest_note")}</Text>
         <PressableScale
           onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("playing"); }}
-          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
         >
           <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
         </PressableScale>
@@ -228,7 +228,7 @@ export function WeeklyScreen() {
                 <Text variant="bodyStrong" style={{ marginBottom: spacing.sm }}>{t("weekly.back_in_queue")}</Text>
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
                   {wrong.map((w) => (
-                    <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+                    <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
                       <Text variant="caption">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
                       <Text variant="micro" color={colors.textMuted}>{w.tr}</Text>
                     </View>

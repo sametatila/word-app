@@ -52,7 +52,7 @@ export function LeagueBoard() {
   if (!view) {
     return (
       <View>
-        <SkeletonLine variant="caption" width={160} style={{ marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }} />
+        <SkeletonLine variant="caption" width={160} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }} />
         <SkeletonRows count={6} height={64} />
       </View>
     );
@@ -112,7 +112,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       delayLongPress={400}
       accessibilityHint={row.isMe ? undefined : t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
       style={[
-        { flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: row.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: row.isMe ? colors.primary : colors.hairline },
+        { flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: row.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: row.isMe ? colors.primary : colors.hairline },
         tint ? softShadow(tint, 4) : {},
       ]}
     >
@@ -125,7 +125,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
           {row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}
         </Text>
         {row.streak > 0 ? (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
             <FlameIcon color={colors.streakText} size={12} />
             <Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: row.streak })}</Text>
           </View>

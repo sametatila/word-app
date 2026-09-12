@@ -61,7 +61,7 @@ export function WeakSpots() {
       <Card padded accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={t("weak.loading")} style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
         <SkeletonLine variant="micro" width={120} />
         {[0, 1, 2].map((i) => (
-          <View key={i} style={{ gap: 4 }}>
+          <View key={i} style={{ gap: spacing.xs }}>
             <SkeletonLine variant="caption" width="70%" />
             <SkeletonBar height={6} />
           </View>
@@ -87,12 +87,12 @@ export function WeakSpots() {
                 <Text variant="caption" color={colors.text}>{x.label}</Text>
                 <Text variant="micro" color={colors.textMuted}>{x.n} · {formatPercent(x.pct)}</Text>
               </View>
-              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 4 }}>
+              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.xs }}>
                 <View style={{ height: "100%", width: `${x.pct}%`, backgroundColor: colors.danger, borderRadius: 3 }} />
               </View>
             </View>
             {game ? (
-              <PressableScale onPress={() => nav.navigate("Game", { game })} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+              <PressableScale onPress={() => nav.navigate("Game", { game })} style={{ paddingHorizontal: spacing.md, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                 <Text variant="micro" color={colors.primaryText}>{t("weak.study")}</Text>
               </PressableScale>
             ) : null}
@@ -103,7 +103,7 @@ export function WeakSpots() {
       {report.confusions.length ? (
         <View style={{ marginTop: spacing.sm }}>
           <Text variant="micro" color={colors.textMuted}>{t("weak.confusions")}</Text>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 4 }}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.xs }}>
             {report.confusions.slice(0, 5).map((c) => (
               <View key={`${c.wordId}-${c.with}`} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                 <Text variant="micro" color={colors.text}>
@@ -119,9 +119,9 @@ export function WeakSpots() {
         <View style={{ marginTop: spacing.sm }}>
           <Text variant="micro" color={colors.textMuted}>{t("weak.rules")}</Text>
           {report.weakRules.slice(0, 3).map((r) => (
-            <View key={r} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginTop: 4 }}>
+            <View key={r} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginTop: spacing.xs }}>
               <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{r}</Text>
-              <PressableScale onPress={() => nav.navigate("Tabs", { screen: "Path" })} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+              <PressableScale onPress={() => nav.navigate("Tabs", { screen: "Path" })} style={{ paddingHorizontal: spacing.md, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                 <Text variant="micro" color={colors.primaryText}>{t("weak.go_to_lesson")}</Text>
               </PressableScale>
             </View>

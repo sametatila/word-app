@@ -47,7 +47,7 @@ export function FriendCardSkeleton() {
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
         {[0, 1, 2].map((i) => (
-          <View key={i} style={{ alignItems: "center", gap: 4 }}>
+          <View key={i} style={{ alignItems: "center", gap: spacing.xs }}>
             <SkeletonTile size={44} />
             <SkeletonLine variant="micro" width={40} />
           </View>
@@ -60,7 +60,7 @@ export function FriendCardSkeleton() {
 function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: IconCmp; label: string; tint: string; onPress: () => void; disabled?: boolean }) {
   const { colors } = useTheme();
   return (
-    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: 4 }}>
+    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: spacing.xs }}>
       <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>

@@ -27,7 +27,7 @@ export function AiNotice({ variant, style }: { variant: "character" | "output"; 
       accessibilityLabel={text}
       style={[{
         flexDirection: "row", alignItems: "center", gap: spacing.sm,
-        paddingHorizontal: spacing.md, paddingVertical: 8,
+        paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
         borderRadius: radii.md, backgroundColor: colors.surface2,
       }, style]}
     >

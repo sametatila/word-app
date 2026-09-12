@@ -25,7 +25,7 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
 function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
   return (
     <View style={{ marginTop: spacing.xl }}>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{title}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, letterSpacing: 0.5 }}>{title}</Text>
       <Card padded>{children}</Card>
     </View>
   );
@@ -59,7 +59,7 @@ export function SocialSettingsScreen() {
 
   const input = { backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 } as const;
   const toggle = (title: string, sub: string, value: boolean, onChange: (v: boolean) => void, first?: boolean) => (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: first ? 0 : 1, borderTopColor: colors.hairline }}>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: first ? 0 : 1, borderTopColor: colors.hairline }}>
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong">{title}</Text>
         <Text variant="caption" color={colors.textMuted}>{sub}</Text>
@@ -80,7 +80,7 @@ export function SocialSettingsScreen() {
           <>
             {[0, 1, 2, 3].map((i) => (
               <View key={i} style={{ marginTop: spacing.xl }}>
-                <SkeletonLine variant="caption" width={116} style={{ marginBottom: spacing.sm, marginLeft: 4 }} />
+                <SkeletonLine variant="caption" width={116} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
                 <SkeletonCard padded>
                   <Skeleton height={48} radius={radii.md} />
                   <SkeletonLine variant="caption" width="70%" style={{ marginTop: spacing.sm }} />
@@ -120,7 +120,7 @@ export function SocialSettingsScreen() {
               {VIS.map((v, i) => {
                 const active = me.visibility === v.key;
                 return (
-                  <PressableScale key={v.key} accessibilityRole="radio" accessibilityState={{ selected: active, disabled: busy }} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                  <PressableScale key={v.key} accessibilityRole="radio" accessibilityState={{ selected: active, disabled: busy }} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                     <View style={{ flex: 1 }}>
                       <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{tx(v.label)}</Text>
                       <Text variant="caption" color={colors.textMuted}>{tx(v.sub)}</Text>

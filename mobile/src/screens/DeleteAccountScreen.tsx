@@ -30,7 +30,7 @@ function losses(): string[] {
 
 function LossRow({ text, colors }: { text: string; colors: Palette }) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 8 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm }}>
       <View style={{ width: 28, height: 28, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
         <XIcon color={colors.dangerText} size={16} />
       </View>
@@ -205,7 +205,7 @@ export function DeleteAccountScreen() {
                 orada hata `alert`, burada `assertive` — RN'in karşılığı. */}
             {error ? <Text accessibilityLiveRegion="assertive" variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
-            <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: 16, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
+            <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
               <Text variant="h3" color={ready ? colors.onFill : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx("deleteaccount.permanently_delete_my_account")}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>

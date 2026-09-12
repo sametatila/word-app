@@ -74,7 +74,7 @@ function CrashCardInner({ colors, onRetry }: { colors: Palette; onRetry: () => v
         onPress={onRetry}
         accessibilityRole="button"
         accessibilityLabel={t("common.try_again")}
-        style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm, backgroundColor: colors.primary, borderRadius: radii.lg, paddingHorizontal: 20, paddingVertical: 14 }}
+        style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm, backgroundColor: colors.primary, borderRadius: radii.lg, paddingHorizontal: spacing.xl, paddingVertical: 14 }}
       >
         <RefreshIcon color={colors.onPrimary} size={18} />
         <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.try_again")}</Text>

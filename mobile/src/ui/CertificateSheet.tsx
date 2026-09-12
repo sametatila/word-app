@@ -47,7 +47,7 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
      diye kendi zeminiyle sarılıyor; `viewport` olmadan WebView SVG'yi gerçek
      piksel boyunda çiziyor ve telefonda taşıyor. */
   const html = svg
-    ? `<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;padding:12px;background:${colors.bg};display:flex;align-items:center;justify-content:center;min-height:100%}svg{max-width:100%;height:auto}</style>${svg}`
+    ? `<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;padding: spacing.mdpx;background:${colors.bg};display:flex;align-items:center;justify-content:center;min-height:100%}svg{max-width:100%;height:auto}</style>${svg}`
     : "";
 
   return (

@@ -309,7 +309,7 @@ export function ProgressScreen() {
                       eşleme (mint=A1, sky=A2, violet=B1, brand=B2, rose=C1) burada
                       kullanılmıyordu, beş seviye de yeşil çiziliyordu; web her
                       seviyeyi kendi rengiyle çiziyor (`progress-view`). */}
-                  <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 4, flexDirection: "row" }}>
+                  <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.xs, flexDirection: "row" }}>
                     <View style={{ width: `${mastPct}%`, backgroundColor: levelTint(lv.niveau, colors) }} />
                     <View style={{ width: `${Math.max(0, seenPct - mastPct)}%`, backgroundColor: levelTint(lv.niveau, colors) + "66" }} />
                   </View>
@@ -317,7 +317,7 @@ export function ProgressScreen() {
               );
             })}
             {/* Şeridin iki tonu ne demek — web aynı notu taşıyor. */}
-            <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>
+            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
               {t("progress.bar_note", {
                 seen: formatNumber(me.levels.reduce((a, l) => a + l.seen, 0)),
                 total: formatNumber(me.levels.reduce((a, l) => a + l.total, 0)),
@@ -328,7 +328,7 @@ export function ProgressScreen() {
         ) : null}
 
         {me ? (
-          <Card padded style={{ marginBottom: spacing.lg, gap: 4 }}>
+          <Card padded style={{ marginBottom: spacing.lg, gap: spacing.xs }}>
             <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 2 }}>{t("progress.review_queue").toLocaleUpperCase(dateLocale())}</Text>
             <Text variant="caption" color={colors.text}>{t("progress.due_now", { n: me.dueCount ?? 0 })}</Text>
             <Text variant="caption" color={colors.textMuted}>{t("progress.upcoming", { n: me.upcoming ?? 0 })}</Text>

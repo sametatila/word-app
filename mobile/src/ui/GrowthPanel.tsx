@@ -120,7 +120,7 @@ export function GrowthPanel() {
         <SkeletonLine variant="bodyStrong" width={150} />
         <SkeletonLine variant="caption" width="90%" />
         {[0, 1, 2, 3].map((i) => (
-          <View key={i} style={{ gap: 4 }}>
+          <View key={i} style={{ gap: spacing.xs }}>
             <SkeletonLine variant="micro" width="60%" />
             <SkeletonBar height={6} />
           </View>
@@ -149,7 +149,7 @@ export function GrowthPanel() {
       {data.proficiency.map((p) => {
         const delta = p.now !== null && p.before !== null ? p.now - p.before : null;
         return (
-          <View key={p.skill} style={{ gap: 4 }}>
+          <View key={p.skill} style={{ gap: spacing.xs }}>
             <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
               <Text variant="micro" color={colors.text}>{p.label}</Text>
               <Text variant="micro" color={colors.textMuted}>
@@ -221,7 +221,7 @@ export function GrowthPanel() {
                 <View>
                   <Text variant="micro" color={colors.textMuted}>{t("progw.milestones")}</Text>
                   {data.milestones.map((m) => (
-                    <View key={`${m.at}-${m.text}`} style={{ flexDirection: "row", gap: spacing.sm, marginTop: 4 }}>
+                    <View key={`${m.at}-${m.text}`} style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.xs }}>
                       {/* Tarih arayüz dilinde -- web `progress-panel` içindeki nota bak:
                           gün-yalnız dizgi `T00:00:00` ile okunmazsa UTC kayması
                           tarihi bir gün geriye alır. */}

@@ -50,7 +50,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           );
         })}
         {!disabled ? (
-          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.react")} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.react")} style={{ paddingHorizontal: spacing.md, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="caption" color={colors.textMuted}>{s.mine ? t("social.reaction_change") : t("social.reaction_add")}</Text>
           </PressableScale>
         ) : null}

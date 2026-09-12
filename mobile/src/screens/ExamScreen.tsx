@@ -500,7 +500,7 @@ export function ExamScreen() {
             </Text>
           </Card>
           {/* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */}
-          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t(starting ? "common.loading" : "exam.start")}</Text>
           </PressableScale>
         </ScrollView>
@@ -544,13 +544,13 @@ export function ExamScreen() {
           */}
           {misses.current.length ? (
             <>
-              <PressableScale onPress={() => setShowMisses((v) => !v)} style={{ paddingVertical: 12, alignItems: "center", borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
+              <PressableScale onPress={() => setShowMisses((v) => !v)} style={{ paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
                 <Text variant="bodyStrong" color={colors.text}>
                   {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.current.length })}
                 </Text>
               </PressableScale>
               {showMisses ? misses.current.map((m, i) => (
-                <Card key={i} padded style={{ gap: 4 }}>
+                <Card key={i} padded style={{ gap: spacing.xs }}>
                   <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
                   <Text variant="body">{m.prompt}</Text>
                   <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
@@ -562,7 +562,7 @@ export function ExamScreen() {
                   gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı
                   tek şey buydu. Web aynı yerde açıyor. */}
               {showMisses && paper?.sections.writing[0]?.task.sample ? (
-                <Card padded style={{ gap: 4, backgroundColor: colors.surface2 }}>
+                <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
                   <Text variant="micro" color={colors.textMuted}>{t("exam.writing_sample")}</Text>
                   <Text variant="caption">{paper.sections.writing[0].task.sample}</Text>
                 </Card>
@@ -571,7 +571,7 @@ export function ExamScreen() {
           ) : null}
 
           {result?.passed && !result.trial ? (
-            <PressableScale onPress={() => setCertOpen(true)} style={[{ backgroundColor: colors.success, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.success, 10)]}>
+            <PressableScale onPress={() => setCertOpen(true)} style={[{ backgroundColor: colors.success, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.success, 10)]}>
               <Text variant="bodyStrong" color={colors.onFill}>{t("exam.open_certificate")}</Text>
             </PressableScale>
           ) : result ? (
@@ -631,7 +631,7 @@ export function ExamScreen() {
               ))}
             </Card>
           ) : null}
-          <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.go_back")}</Text>
           </PressableScale>
           {/*
@@ -643,7 +643,7 @@ export function ExamScreen() {
             var, seviye sınavında yok.
           */}
           {moduleIx !== null ? (
-            <PressableScale onPress={() => nav.navigate("Boss", { level, moduleIndex: moduleIx })} style={{ paddingVertical: 12, alignItems: "center" }}>
+            <PressableScale onPress={() => nav.navigate("Boss", { level, moduleIndex: moduleIx })} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link", { n: BOSS_SECONDS })}</Text>
             </PressableScale>
           ) : null}
@@ -939,7 +939,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
                 if (parts.includes(key)) return null;
                 return (
                   <PressableScale key={key} onPress={() => setParts([...parts, key])}
-                    style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 8 }}>
+                    style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: spacing.sm }}>
                     <Text variant="body">{c}</Text>
                   </PressableScale>
                 );
@@ -1011,7 +1011,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
             return (
               <PressableScale key={oi} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
                 accessibilityRole="radio" accessibilityState={{ selected: secili }}
-                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: 12, paddingHorizontal: spacing.md }}>
+                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
                 <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
               </PressableScale>
             );

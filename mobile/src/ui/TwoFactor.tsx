@@ -38,7 +38,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
 
   const input = {
     backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border,
-    paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16,
+    paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16,
   } as const;
 
   function kapat() {
@@ -78,7 +78,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
             disabled={enabled === null}
             accessibilityRole="button"
             accessibilityLabel={t("twofa.title")}
-            style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
+            style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
           >
             <Text variant="caption" color={colors.primaryText}>{t(enabled ? "twofa.disable" : "twofa.enable")}</Text>
           </PressableScale>

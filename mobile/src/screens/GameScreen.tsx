@@ -406,7 +406,7 @@ export function GameScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="display" style={{ textAlign: "center" }}>{t("game.sign_in_to_save_your_progress")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("game.sign_in_to_study_your_own_words")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("game.sign_in_sign_up")}</Text>
         </PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
@@ -590,7 +590,7 @@ export function GameScreen() {
           {/* Pekişen kelime: seviye rozeti yerine gerçekten kazanılmış olan şey.
               Mobil bu sayıyı yalnız kutlama eşiği için kullanıyor, göstermiyordu. */}
           {mastered > 0 ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.success), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.success), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.lg }}>
               <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center" }}>{t("sessionw.n_mastered", { n: mastered })}</Text>
             </View>
           ) : null}
@@ -599,19 +599,19 @@ export function GameScreen() {
               sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
               açıklanamaz hâle getirir. Web aynı kutuyu çiziyor. */}
           {repaired !== null ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.xxl }}>
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.xxl }}>
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
                 <FlameIcon color={colors.streakText} size={16} />
                 <Text variant="bodyStrong" color={colors.streakText}>{t("game.streak_saved")}</Text>
               </View>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
             </View>
           ) : null}
           {/* Kutunun rengi ve simgesi webdekiyle aynı: bu bir UYARI, hata
               değil - tur oynandı, yalnız kaydı bekliyor. Kırmızı çizmek
               kullanıcıya turu kaybettiğini söylerdi. */}
           {saveWarning ? (
-            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.lg }}>
               <AlertIcon color={colors.streakText} size={16} />
               <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
@@ -632,7 +632,7 @@ export function GameScreen() {
             <View style={{ width: "100%", marginTop: spacing.lg }}>
               <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("session.missed_title", { n: missed.current.length })}</Text>
               {missed.current.slice(0, 6).map((w) => (
-                <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 8, marginBottom: 6 }}>
+                <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, marginBottom: 6 }}>
                   <Text variant="bodyStrong" style={{ flexShrink: 1 }}>{w.de}</Text>
                   <View style={{ flexShrink: 1, alignItems: "flex-end" }}>
                     <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{w.tr}</Text>
@@ -666,7 +666,7 @@ export function GameScreen() {
           */}
           <PressableScale
             onPress={() => { track("challenge_play"); nav.navigate("Challenge"); }}
-            style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}
+            style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}
           >
             <FlameIcon color={colors.dangerText} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("challenge.title")}</Text>
           </PressableScale>
@@ -676,7 +676,7 @@ export function GameScreen() {
               iki ayri sey oluyordu. Sozluk anahtarlari webden ortak kumeye
               tasindi (`share.*`). */}
           {total > 0 && (
-            <PressableScale onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <PressableScale onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
               <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
             </PressableScale>
           )}
@@ -713,7 +713,7 @@ export function GameScreen() {
           const isNew = ws.every((w) => w.isNew);
           const tone = isNew ? colors.primary : colors.streak;
           return (
-            <View style={{ backgroundColor: soft(tone), borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 3 }}>
+            <View style={{ backgroundColor: soft(tone), borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 3 }}>
               <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
             </View>
           );
@@ -786,7 +786,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
         <View style={{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline }}>
           <View style={{ backgroundColor: colors.primary, paddingHorizontal: spacing.xl, paddingVertical: spacing.lg, alignItems: "center" }}>
             <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
-            <Text variant="caption" color={colors.onPrimary} style={{ marginTop: 4, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
+            <Text variant="caption" color={colors.onPrimary} style={{ marginTop: spacing.xs, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
             {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
             <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
             <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
@@ -818,7 +818,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
 
           <View style={{ padding: spacing.xl, gap: spacing.sm }}>
             <PressableScale onPress={() => { setBet(!bet); haptic("tap"); }} accessibilityState={{ selected: bet }}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: bet ? soft(colors.streak) : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: spacing.md, backgroundColor: bet ? soft(colors.streak) : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
               <View style={{ width: 36, height: 20, borderRadius: 10, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
                 <View style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
               </View>
@@ -830,7 +830,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
             <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
               <Text variant="h3" color={colors.onPrimary}>{t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}</Text>
             </PressableScale>
-            <PressableScale onPress={onStop} style={{ paddingVertical: 12, alignItems: "center" }}>
+            <PressableScale onPress={onStop} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.textMuted}>{t("stage.enough")}</Text>
             </PressableScale>
             <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("stage.stop_note")}</Text>

@@ -91,12 +91,12 @@ export function LearnScreen() {
           {hasToday && (dueCount > 0 || newToday > 0) && (
             <View style={{ position: "absolute", top: spacing.md, right: spacing.md, flexDirection: "row", gap: 6, zIndex: 2 }}>
               {dueCount > 0 && (
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
                   <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
                 </View>
               )}
               {newToday > 0 && (
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
                   <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
                 </View>
               )}
@@ -104,17 +104,17 @@ export function LearnScreen() {
           )}
           <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "flex-end", gap: spacing.md }}>
             <View style={{ flex: 1 }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: spacing.sm }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm }}>
               <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
                 <BoltIcon color="#fff" size={22} />
               </View>
               <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.daily_round")}</Text>
             </View>
             <Text variant="h1" color="#fff">{t("learn.practice_your_words")}</Text>
-            <Text variant="body" color="#ffffffdd" style={{ marginTop: 4 }}>
+            <Text variant="body" color="#ffffffdd" style={{ marginTop: spacing.xs }}>
               {t("learn.daily_pitch")}
             </Text>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: spacing.xl, paddingVertical: 11 }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("common.start")}</Text>
               <ArrowRightIcon color={colors.primaryText} size={18} />
             </View>

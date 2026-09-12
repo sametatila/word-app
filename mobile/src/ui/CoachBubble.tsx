@@ -94,7 +94,7 @@ export function CoachBubble({
             transform: [{ translateY: fade.interpolate({ inputRange: [0, 1], outputRange: [6, 0] }) }],
             flex: 1, marginBottom: spacing.md,
             backgroundColor: bg, borderRadius: radii.lg, borderBottomLeftRadius: radii.sm,
-            paddingHorizontal: spacing.md, paddingVertical: 8,
+            paddingHorizontal: spacing.md, paddingVertical: spacing.sm,
           }}
         >
           <Text accessibilityLiveRegion="polite" variant="body" color={fg}>{line}</Text>

@@ -66,7 +66,7 @@ export function VoicePicker({
                 accessibilityLabel={t("voice.listen_to", { name: v.label })}
                 hitSlop={8}
                 onPress={() => speakWithVoice(sample, v.id)}
-                style={{ padding: 4 }}
+                style={{ padding: spacing.xs }}
               >
                 <SpeakerIcon color={colors.primaryText} size={20} />
               </PressableScale>

@@ -156,7 +156,7 @@ export default async function WordsPage({
   } catch (err) {
     console.error("[words]", err);
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-6 text-center">
+      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
         <h2 className="text-h2">{t("words.couldn_t_load_your_words")}</h2>
         {/* Buraya "npm run db:push çalıştır" yazıyordu: geliştirici yönergesi,
             üretimde kullanıcının karşısına çıkıyordu ve yapabileceği bir şey

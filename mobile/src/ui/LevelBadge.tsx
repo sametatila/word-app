@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
 import { t, formatNumber, formatPercent } from "../lib/i18n";
-import { useTheme, radii, orange, LEVEL_TONE, LEVEL_INK } from "../theme";
+import { useTheme, radii, spacing, orange, LEVEL_TONE, LEVEL_INK } from "../theme";
 
 /**
  * Seçilen CEFR seviyesi ve o seviyenin pekişme durumu — web
@@ -31,10 +31,10 @@ export function LevelBadge({ level, mastered, total, compact = false }: { level:
   const tone = LEVEL_TONE[level] ?? orange[600];
   const pct = total > 0 ? Math.min(100, (mastered / total) * 100) : 0;
   return (
-    <View style={compact ? { flexDirection: "row", alignItems: "center", gap: 8 } : undefined}>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 8, flex: 1 }}>
-          <View style={{ backgroundColor: tone, borderRadius: radii.sm, paddingHorizontal: 8, paddingVertical: 2 }}>
+    <View style={compact ? { flexDirection: "row", alignItems: "center", gap: spacing.sm } : undefined}>
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
+          <View style={{ backgroundColor: tone, borderRadius: radii.sm, paddingHorizontal: spacing.sm, paddingVertical: 2 }}>
             <Text variant="bodyStrong" color={LEVEL_INK}>{level}</Text>
           </View>
           {!compact ? (

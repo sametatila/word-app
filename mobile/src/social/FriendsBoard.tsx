@@ -39,7 +39,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
   if (!board) {
     return (
       <View>
-        {!compact ? <SkeletonLine variant="caption" width={190} style={{ marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }} /> : null}
+        {!compact ? <SkeletonLine variant="caption" width={190} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }} /> : null}
         <SkeletonRows count={4} height={64} />
       </View>
     );
@@ -55,12 +55,12 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
         {board.rows.map((r) => {
           const mc = medal(r.rank, colors);
           return (
-            <PressableScale key={r.userId} disabled={r.isMe || !r.username} onPress={() => r.username && nav.navigate("User", { username: r.username })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
+            <PressableScale key={r.userId} disabled={r.isMe || !r.username} onPress={() => r.username && nav.navigate("User", { username: r.username })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
               <View style={{ width: 30, alignItems: "center" }}><Text variant="h3" color={mc}>{r.rank}</Text></View>
               <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={40} ring={r.rank <= 3 ? mc : null} />
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
                   <FlameIcon color={colors.streakText} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>

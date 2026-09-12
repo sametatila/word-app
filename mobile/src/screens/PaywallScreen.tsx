@@ -158,9 +158,9 @@ export function PaywallScreen() {
               <CrownIcon color={colors.onPrimary} size={44} />
             </View>
             <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{line}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{line}</Text>
             {status.bonusDaysPending > 0 ? (
-              <Text variant="caption" color={colors.successText} style={{ marginTop: 4, textAlign: "center" }}>
+              <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.xs, textAlign: "center" }}>
                 {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
               </Text>
             ) : null}
@@ -209,7 +209,7 @@ export function PaywallScreen() {
             <CrownIcon color={colors.onPrimary} size={44} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
           {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
               anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden
               satır sabit — "Ücretsiz hesap". */}
@@ -294,7 +294,7 @@ export function PaywallScreen() {
           3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. Sınav vaadi
           yalnız gerçekten deneme sınavı OLAN kursta.
         */}
-        <View style={{ marginBottom: spacing.xl, gap: 4 }}>
+        <View style={{ marginBottom: spacing.xl, gap: spacing.xs }}>
           {status?.limits ? (
             <Text variant="micro" color={colors.textMuted}>
               {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
@@ -380,7 +380,7 @@ function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "
         /* ÜCRETSİZ TARAFTA ONAY İŞARETİ YOK: aynı işaret iki listede de
            kullanılınca "premium'da olan" ile "zaten sende olan" ayırt
            edilmiyordu. Webde de aynı ayrım var (`premium-paywall` Row). */
-        <View style={{ width: 22, alignItems: "center", marginTop: 8 }}>
+        <View style={{ width: 22, alignItems: "center", marginTop: spacing.sm }}>
           <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: colors.textFaint }} />
         </View>
       )}
@@ -484,7 +484,7 @@ function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: 
   return (
     <Section title={t("referral.title")} colors={colors}>
       <Text variant="caption">{t("referral.explain", { days: referral.rewardDays })}</Text>
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>{t("referral.reward_note")}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
         <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center" }}>

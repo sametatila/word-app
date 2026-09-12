@@ -718,7 +718,7 @@ export function WalkModeScreen() {
             <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>
               {tx("walkmode.intro_text", { nativeLang: nativeLangName(), target: targetLangName() })}
             </Text>
-            <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
+            <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{tx("common.start")}</Text>
             </PressableScale>
             <PressableScale onPress={() => setDisclosure(true)} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
@@ -748,7 +748,7 @@ export function WalkModeScreen() {
               <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{tx("walkmode.continue")}</Text></PressableScale>
             )}
             {tally.total > 0 && (
-              <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+              <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
                 <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{tx("common.share")}</Text>
               </PressableScale>
             )}
@@ -760,7 +760,7 @@ export function WalkModeScreen() {
           <Mascot mood="idle" size={100} />
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.i_paused_round")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.i_haven_t_heard_you_for_while")}</Text>
-          <PressableScale onPress={() => { unheardWin.current = []; void runLoop(rounds, idx); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => { unheardWin.current = []; void runLoop(rounds, idx); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.continue")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
@@ -772,7 +772,7 @@ export function WalkModeScreen() {
           <AlertIcon color={colors.textMuted} size={64} />
           <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walk.error_sub")}</Text>
-          <PressableScale onPress={loadQueue} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={loadQueue} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
@@ -784,7 +784,7 @@ export function WalkModeScreen() {
           <MicIcon color={colors.textMuted} size={64} />
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.microphone_needed")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.walk_mode_works_by_voice_allow")}</Text>
-          <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.allow_and_start")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
@@ -832,7 +832,7 @@ export function WalkModeScreen() {
                 </Animated.View>
               </View>
 
-              <View style={{ alignItems: "center", gap: 4, minHeight: 46 }}>
+              <View style={{ alignItems: "center", gap: spacing.xs, minHeight: 46 }}>
                 <Text variant="bodyStrong" color={verdict === "correct" ? colors.successText : verdict === "wrong" ? colors.dangerText : listening ? colors.primaryText : colors.textMuted}>{stepLabel}</Text>
                 {heard ? <Text variant="caption" color={verdict === "correct" ? colors.successText : colors.dangerText}>{tx("walkmode.heard", { text: heard })}</Text> : null}
               </View>

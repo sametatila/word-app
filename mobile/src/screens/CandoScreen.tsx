@@ -109,7 +109,7 @@ export function CandoScreen() {
           <SkeletonCard label={t("cando.loading")} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
             {[0, 1].map((i) => (
               <View key={i} style={{ marginBottom: spacing.sm }}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.xs }}>
                   <SkeletonLine variant="bodyStrong" width={28} />
                   <SkeletonLine variant="caption" width={78} />
                 </View>
@@ -119,7 +119,7 @@ export function CandoScreen() {
           </SkeletonCard>
           {[0, 1].map((g) => (
             <View key={g} style={{ marginBottom: spacing.lg }}>
-              <SkeletonLine variant="caption" width={26} style={{ marginBottom: spacing.xs, marginLeft: 4 }} />
+              <SkeletonLine variant="caption" width={26} style={{ marginBottom: spacing.xs, marginLeft: spacing.xs }} />
               <SkeletonCard padded>
                 {[0, 1, 2, 3].map((i) => (
                   <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}>
@@ -204,7 +204,7 @@ export function CandoScreen() {
               const b = data!.byLevel[lv]; const pct = b.total ? Math.round((b.proven / b.total) * 100) : 0;
               return (
                 <View key={lv} style={{ marginBottom: spacing.sm }}>
-                  <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.xs }}>
                     <Text variant="bodyStrong">{lv}</Text>
                     <Text variant="caption" color={colors.textMuted}>{t("cando.proven_of_total", { proven: b.proven, total: b.total })}</Text>
                   </View>
@@ -218,7 +218,7 @@ export function CandoScreen() {
           <CardGrid minItemWidth={440}>
           {LEVELS.filter((lv) => byLevel[lv]?.length).map((lv) => (
             <View key={lv} style={{ marginBottom: spacing.lg }}>
-              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.xs, marginLeft: 4 }}>{lv}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.xs, marginLeft: spacing.xs }}>{lv}</Text>
               <Card padded>
                 {byLevel[lv].map((it, i) => (
                   <View key={it.cando.id}>

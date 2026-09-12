@@ -80,7 +80,7 @@ export function PracticeScreen() {
           </View>
         </PressableScale>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.single_game")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.single_game")}</Text>
         {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
             sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>

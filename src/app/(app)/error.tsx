@@ -33,7 +33,7 @@ export default function AppError({
   }, [error]);
 
   return (
-    <div className="card mx-auto flex w-full max-w-md flex-col items-center gap-3 p-6 text-center">
+    <div className="card mx-auto flex w-full max-w-md flex-col items-center gap-3 p-4 text-center">
       <span
         className="flex h-12 w-12 items-center justify-center rounded-tile"
         style={{

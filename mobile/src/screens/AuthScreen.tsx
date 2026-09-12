@@ -327,7 +327,7 @@ export function AuthScreen() {
             <BoltIcon color={colors.onPrimary} size={38} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{headSub}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{headSub}</Text>
         </View>
 
         {view === "options" ? (
@@ -377,7 +377,7 @@ export function AuthScreen() {
                     )}
                   </>
                 )}
-                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
               </>
@@ -439,7 +439,7 @@ export function AuthScreen() {
             <PressableScale
               onPress={doVerifyCode}
               accessibilityLabel={t("twofa.verify")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}
             >
               <Text variant="h3" color={colors.onPrimary}>{codeBusy ? "..." : t("twofa.verify")}</Text>
             </PressableScale>
@@ -497,7 +497,7 @@ export function AuthScreen() {
             <PressableScale
               onPress={() => { setMode("signin"); setPassword(""); setView("email"); setError(null); }}
               accessibilityLabel={t("verify.verified_sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}
             >
               <Text variant="h3" color={colors.onPrimary}>{t("verify.verified_sign_in")}</Text>
             </PressableScale>
@@ -568,7 +568,7 @@ export function AuthScreen() {
                 )}
               </>
             )}
-            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
 

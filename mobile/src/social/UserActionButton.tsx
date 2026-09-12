@@ -4,7 +4,7 @@ import { Alert, View } from "react-native";
 import { social, errorText, type Relation } from "../api/social";
 import { Text } from "../ui/Text";
 import { UserPlusIcon, CheckIcon } from "../ui/icons";
-import { useTheme } from "../theme";
+import { useTheme, spacing } from "../theme";
 import { ErrorText, Pill } from "./common";
 
 /** İlişkiye göre tek pill: Ekle · İstek gönderildi · Kabul et · Arkadaş (çıkar). */
@@ -44,7 +44,7 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
   return (
     <View style={{ alignItems: "flex-end" }}>
       {btn}
-      {!canRequest && state === "none" ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, textAlign: "right" }}>{t("social.err_requests_closed")}</Text> : null}
+      {!canRequest && state === "none" ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "right" }}>{t("social.err_requests_closed")}</Text> : null}
       <ErrorText text={err} />
     </View>
   );

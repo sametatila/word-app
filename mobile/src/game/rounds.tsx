@@ -168,7 +168,7 @@ function markAnswer(ok: boolean, speak?: string | null): void {
 function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
   if (!text?.trim()) return null;
   return (
-    <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: 4 }}>
+    <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: spacing.xs }}>
       <SpeakerIcon color={colors.primaryText} size={size} />
     </PressableScale>
   );
@@ -344,7 +344,7 @@ function Prompt({ label, big, sub, speakText, colors }: { label: string; big: st
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
       <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
       {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
-      {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: 4 }}>{sub}</Text> : null}
+      {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{sub}</Text> : null}
     </View>
   );
 }
@@ -528,7 +528,7 @@ function HintRow({ answer, colors, shown, onShow }: { answer: string; colors: Pa
       {shown ? (
         <Text variant="bodyStrong" color={colors.textMuted} style={{ fontFamily: Platform.OS === "ios" ? "Menlo" : "monospace", letterSpacing: 2, textAlign: "center" }}>{skeleton(answer)}</Text>
       ) : (
-        <PressableScale onPress={() => setShown()} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+        <PressableScale onPress={() => setShown()} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: spacing.sm }}>
           <Text variant="caption" color={colors.textMuted}>{tx("rounds.show_hint")}</Text>
         </PressableScale>
       )}
@@ -579,7 +579,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         onSubmitEditing={check}
         returnKeyType="done"
         blurOnSubmit={false}
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
@@ -716,7 +716,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         placeholder={tx("rounds.write_a_sentence_ph")}
         accessibilityLabel={tx("rounds.write_a_sentence_ph")}
         placeholderTextColor={colors.textFaint}
-        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 18 }}
+        style={{ minHeight: 92, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 18 }}
       />
       {/* Almanca özel harfler: telefon klavyesinde uzun basmak gerekiyor ve
           bir tur ortasında kimse onu aramıyor. Web de aynı dört harfi
@@ -816,7 +816,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
             onSubmitEditing={() => { if (val.trim()) choose(val.trim()); }}
             returnKeyType="done"
             blurOnSubmit={false}
-            style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
+            style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
           />
           <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
@@ -878,7 +878,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   }, [round.id]);
   if (!word) return <View style={{ flex: 1 }} />;
   const footer = !reveal ? (
-    <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+    <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
       <Text variant="h3" color={colors.onPrimary}>{tx("rounds.show_answer")}</Text>
     </PressableScale>
   ) : (
@@ -939,7 +939,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
  */
 function Tile({ label, undoKey, onPress, dim, colors }: { label: string; undoKey?: "rounds.undo_letter" | "rounds.undo_word"; onPress?: () => void; dim?: boolean; colors: Palette }) {
   return (
-    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border }}>
+    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: spacing.md, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border }}>
       <Text variant="bodyStrong" color={colors.text}>{label}</Text>
     </PressableScale>
   );
@@ -1040,10 +1040,10 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
-        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
           {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} />)}
         </View>
         {!fb ? (
@@ -1105,10 +1105,10 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
-        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
         </View>
         {!fb && !noHints ? (
@@ -1239,7 +1239,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         placeholder={tx("rounds.write_sentence", { lang: targetLangName() })}
         accessibilityLabel={tx("rounds.write_sentence", { lang: targetLangName() })}
         placeholderTextColor={colors.textFaint}
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>

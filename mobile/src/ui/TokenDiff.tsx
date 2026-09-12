@@ -1,7 +1,7 @@
 import React from "react";
 import { Text as RNText, View } from "react-native";
 import { t } from "../lib/i18n";
-import { useTheme } from "../theme";
+import { useTheme, spacing } from "../theme";
 import { Text } from "./Text";
 import type { TokenMark } from "../lib/sentenceMatch";
 
@@ -105,7 +105,7 @@ export function SentenceFeedback({ verdictKey, target, typed, showTyped }: { ver
         <TokenDiff tokens={target} />
       </Text>
       {showTyped ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
           {t("rounds.you_wrote")} <TypedTokens tokens={typed} />
         </Text>
       ) : null}

@@ -78,14 +78,14 @@ export function FirstPracticeScreen() {
         <Text variant="caption" color={colors.primaryText} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
-        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
+        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: 9 }}>
           <SpeakerIcon color={colors.primaryText} size={18} /><Text variant="bodyStrong" color={colors.primaryText}>{t("firstpractice.listen")}</Text>
         </PressableScale>
 
         {seen ? (
           <View style={{ alignItems: "center", gap: 6, marginTop: spacing.sm }}>
             <Text variant="h2" color={colors.text}>{w.tr}</Text>
-            <View style={{ backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border, borderRadius: radii.lg, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, alignItems: "center", marginTop: 4 }}>
+            <View style={{ backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border, borderRadius: radii.lg, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, alignItems: "center", marginTop: spacing.xs }}>
               <Text variant="bodyStrong">{w.ex}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{w.exTr}</Text>
             </View>
@@ -95,7 +95,7 @@ export function FirstPracticeScreen() {
         )}
       </View>
 
-      <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
+      <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.primary, 10)]}>
         {seen && last && <CheckIcon color={colors.onPrimary} size={20} />}
         <Text variant="h3" color={colors.onPrimary}>{t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")}</Text>
       </PressableScale>

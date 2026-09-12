@@ -225,7 +225,7 @@ export function DailyScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="display" style={{ textAlign: "center" }}>{t("daily.sign_in_for_daily_round")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("daily.play_same_round_as_everyone_and")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.sign_in_sign_up")}</Text></PressableScale>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.sign_in_sign_up")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -240,7 +240,7 @@ export function DailyScreen() {
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("daily.pitch", { n: rounds.length })}</Text>
           <PressableScale
             onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("playing"); }}
-            style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+            style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
           >
             <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
           </PressableScale>
@@ -293,10 +293,10 @@ export function DailyScreen() {
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.xl, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 12)]}>
             <Text variant="micro" color={colors.onPrimaryMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.your_score")}</Text>
             {/* TURUN SONUCU DUYURULUYOR - web `daily-player` ile ayni yer. */}
-            <Text accessibilityLiveRegion="polite" variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: 4 }}>{formatNumber(scoreRef.current)}</Text>
+            <Text accessibilityLiveRegion="polite" variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: spacing.xs }}>{formatNumber(scoreRef.current)}</Text>
             <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
               <View style={{ alignItems: "center" }}><Text variant="h3" color={colors.onPrimary}>{correctRef.current}/{total}</Text><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.correct")}</Text></View>
-              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>
+              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>
             </View>
             {/* KAZANILAN XP — kahraman kartinin ICINDE, web ile ayni yer
                 (`daily-player`: en iyi serinin hemen altinda) ve ayni kosul:
@@ -334,7 +334,7 @@ export function DailyScreen() {
                 kind: "daily",
                 score: scoreRef.current,
               })}
-              style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.xl, borderWidth: 1.5, borderColor: colors.border }}
+              style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.xl, borderWidth: 1.5, borderColor: colors.border }}
             >
               <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
             </PressableScale>

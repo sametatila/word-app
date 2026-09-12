@@ -38,7 +38,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
 
   const input = {
     backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border,
-    paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16,
+    paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16,
   } as const;
 
   function kapat() {
@@ -77,7 +77,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
             onPress={() => { setOpen(true); setDone(false); }}
             accessibilityRole="button"
             accessibilityLabel={t("changepw.title")}
-            style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
+            style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
           >
             <Text variant="caption" color={colors.primaryText}>{t("changepw.open")}</Text>
           </PressableScale>

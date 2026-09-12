@@ -242,7 +242,7 @@ export function BossScreen() {
             <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
           </PressableScale>
         )}
-        <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+        <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
           <Text variant="bodyStrong" color={colors.text}>{t("common.go_back")}</Text>
         </PressableScale>
       </View>
@@ -260,7 +260,7 @@ export function BossScreen() {
           <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
             {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
           </Text>
-          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: 4 }}>{t("bossw.title_exam", { title: data.meta.title })}</Text>
+          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.xs }}>{t("bossw.title_exam", { title: data.meta.title })}</Text>
           <View style={{ marginTop: spacing.lg, gap: 6 }}>
             <Text variant="body">{`· ${t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}`}</Text>
             <Text variant="body">{`· ${t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}`}</Text>
@@ -276,7 +276,7 @@ export function BossScreen() {
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t(best !== null ? "boss.beat_record" : "boss.enter")}</Text>
           </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
           </PressableScale>
         </Card>
@@ -299,13 +299,13 @@ export function BossScreen() {
           </View>
           {/* TURUN SONUCU DUYURULUYOR - web `boss-player` ile ayni yer. */}
           <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: 4 }}>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xs }}>
             {won
               ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
               : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
           </Text>
           {won && isRecord ? (
-            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: 4 }}>
+            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: spacing.xs }}>
               {`${t("bossw.record_prefix")} ${secondsLeft} ${t("bossw.record_suffix")}`}
             </Text>
           ) : null}
@@ -313,7 +313,7 @@ export function BossScreen() {
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t(won ? "bossw.play_again" : "common.try_again")}</Text>
           </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
           </PressableScale>
         </Card>

@@ -1055,7 +1055,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
     <div className="mx-auto w-full max-w-md">
       {/* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge
           degilse ekran okuyucu kullanan biri hicbir sey duymuyor. */}
-      <div role="alert" className="card p-6 text-center">
+      <div role="alert" className="card p-4 text-center">
         <Mascot mood="sad" size={96} className="mx-auto" />
         <h2 className="mt-1 text-h3">{content.title}</h2>
         <p className="muted mt-2 text-body">{content.body}</p>
@@ -1090,7 +1090,10 @@ function EmptyCard({
         animate={{ opacity: 1, y: 0 }}
         className="mx-auto w-full max-w-md"
       >
-        <div className="card p-8 text-center">
+        {/* Android'in tur sonucu kartı: dikey 28, yatay 16 (`game/rounds`
+            `paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg`).
+            Web 32/32 yazıyordu - ölçekte 32 diye bir basamak yok. */}
+        <div className="card px-4 py-7 text-center">
           <Mascot mood="think" size={104} className="mx-auto" />
           <h2 className="mt-1 text-h2">{t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })}</h2>
           {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
@@ -1110,7 +1113,8 @@ function EmptyCard({
       animate={{ opacity: 1, y: 0 }}
       className="mx-auto w-full max-w-md"
     >
-      <div className="card p-8 text-center">
+      {/* Aynı kart, ikinci hâli — ölçüler yukarıdakiyle aynı gerekçeden. */}
+      <div className="card px-4 py-7 text-center">
         <Mascot mood="celebrate" size={112} className="mx-auto" />
         <h2 className="mt-1 text-h2">{t("session.goal_done")}</h2>
         <p className="muted mt-2 text-body">{t("session.goal_done_sub")}</p>

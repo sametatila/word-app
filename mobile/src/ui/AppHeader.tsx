@@ -37,7 +37,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {streak > 0 && (
-          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
+          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
             <FlameIcon color={colors.streakText} size={16} />
             <Text variant="bodyStrong" color={colors.streakText}>{streak}</Text>
           </PressableScale>

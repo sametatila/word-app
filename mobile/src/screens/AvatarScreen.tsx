@@ -27,7 +27,7 @@ function OptTile({ preview, selected, onPress, colors, label }: { preview: Avata
       accessibilityState={{ selected }}
       accessibilityLabel={label}
       onPress={onPress}
-      style={{ padding: 4, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent" }}
+      style={{ padding: spacing.xs, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent" }}
     >
       <MascotAvatar config={preview} size={54} />
     </PressableScale>
@@ -37,7 +37,7 @@ function OptTile({ preview, selected, onPress, colors, label }: { preview: Avata
 function Group({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
   return (
     <View style={{ marginTop: spacing.lg }}>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{title}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{title}</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingRight: spacing.lg }}>
         {children}
       </ScrollView>
@@ -97,7 +97,7 @@ export function AvatarScreen() {
 
         {cfg.hat ? (
           <View style={{ marginTop: spacing.lg }}>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("avatar.hat_color")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{t("avatar.hat_color")}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
@@ -123,7 +123,7 @@ export function AvatarScreen() {
           ))}
         </Group>
 
-        <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.save")}</Text>
         </PressableScale>
       </ScrollView>

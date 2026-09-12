@@ -101,13 +101,13 @@ export function LinkedAccounts({
                 <Text variant="caption" color={colors.textMuted}>{t("links.only_method")}</Text>
               ) : (
                 <PressableScale onPress={() => void kaldir(p)} disabled={calisiyor} accessibilityRole="button"
-                  style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
+                  style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
                   <Text variant="caption" color={colors.dangerText}>{calisiyor ? "…" : t("links.unlink")}</Text>
                 </PressableScale>
               )
             ) : (
               <PressableScale onPress={() => void bagla(p as "google" | "apple")} disabled={calisiyor} accessibilityRole="button"
-                style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}>
+                style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.primarySoft }}>
                 <Text variant="caption" color={colors.primaryText}>{calisiyor ? "…" : t("links.link")}</Text>
               </PressableScale>
             )}

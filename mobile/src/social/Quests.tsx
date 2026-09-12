@@ -97,7 +97,7 @@ export function QuestsSkeleton() {
       </View>
       <View style={{ marginTop: spacing.lg }}>
         <SkeletonBar height={10} />
-        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
           <SkeletonLine variant="caption" width={62} />
           <SkeletonLine variant="bodyStrong" width={78} />
           <SkeletonLine variant="caption" width={62} />
@@ -158,12 +158,12 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <View style={{ width: `${Math.round(q.pct * myShare)}%`, backgroundColor: colors.primary }} />
             <View style={{ width: `${Math.round(q.pct * (1 - myShare))}%`, backgroundColor: colors.info }} />
           </View>
-          <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
+          <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
             <Text variant="caption" color={colors.primaryText}>{t("quests.my_xp", { xp: formatNumber(q.myXp) })}</Text>
             <Text variant="bodyStrong">{formatNumber(q.totalXp)} / {formatNumber(q.targetXp)}</Text>
             <Text variant="caption" color={colors.infoText}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatNumber(q.partnerXp)}</Text>
           </View>
-          <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.discard"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.discard"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: spacing.xs, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quests.leave_quest")}</Text>
           </PressableScale>
         </View>

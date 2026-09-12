@@ -126,7 +126,7 @@ export function NotificationsScreen() {
             <BellIcon color={colors.onFill} size={36} />
           </View>
           <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
 
         <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>

@@ -310,7 +310,7 @@ export function ChallengeScreen() {
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
             {t("challenge.pitch", { n: START_SECONDS })}
           </Text>
-          <View style={{ marginTop: spacing.lg, gap: 8 }}>
+          <View style={{ marginTop: spacing.lg, gap: spacing.sm }}>
             <Rule colors={colors} tone={colors.successText} text={t("challenge.rule_correct")} />
             <Rule colors={colors} tone={colors.dangerText} text={t("challenge.rule_wrong")} />
             <Rule colors={colors} tone={colors.streakText} text={data.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves")} />
@@ -323,7 +323,7 @@ export function ChallengeScreen() {
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
           </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("common.discard")}</Text>
           </PressableScale>
         </Card>
@@ -346,9 +346,9 @@ export function ChallengeScreen() {
           {/* TURUN SONUCU DUYURULUYOR - web `challenge-player` ile ayni yer. */}
           <Text accessibilityLiveRegion="polite" accessibilityRole="header" variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
           {isRecord ? (
-            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: 4 }}>{t("challenge.new_record", { previous })}</Text>
+            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: spacing.xs }}>{t("challenge.new_record", { previous })}</Text>
           ) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: 4 }}>{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xs }}>{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</Text>
           )}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
             <Box colors={colors} label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
@@ -362,7 +362,7 @@ export function ChallengeScreen() {
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
           </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("common.back_to_learn")}</Text>
           </PressableScale>
         </Card>
@@ -387,7 +387,7 @@ export function ChallengeScreen() {
             transform: [{ scale: flashAnim.interpolate({ inputRange: [0, 1], outputRange: [0.8, 1] }) }],
           }}
         >
-          <View style={{ borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 8, backgroundColor: flash.tone === "mint" ? colors.success : colors.streak }}>
+          <View style={{ borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm, backgroundColor: flash.tone === "mint" ? colors.success : colors.streak }}>
             <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.onFill}>{flash.text}</Text>
           </View>
         </Animated.View>
@@ -411,7 +411,7 @@ export function ChallengeScreen() {
 
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 6, marginBottom: spacing.md }}>
         {combo >= 2 ? (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
             <SparkIcon color={colors.accentText} size={13} />
             <Text variant="micro" color={colors.accentText}>{t("challenge.combo", { n: combo, mult })}</Text>
           </View>
@@ -428,7 +428,7 @@ export function ChallengeScreen() {
 
 function Rule({ colors, tone, text }: { colors: Palette; tone: string; text: string }) {
   return (
-    <View style={{ flexDirection: "row", gap: 8 }}>
+    <View style={{ flexDirection: "row", gap: spacing.sm }}>
       <Text variant="bodyStrong" color={tone}>·</Text>
       <Text variant="body" color={colors.text} style={{ flex: 1 }}>{text}</Text>
     </View>

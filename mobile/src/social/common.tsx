@@ -72,7 +72,7 @@ export function HeaderButton({ icon: Icon, onPress, label }: { icon: IconCmp; on
 export function SectionTitle({ title, right }: { title: string; right?: string }) {
   const { colors } = useTheme();
   return (
-    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }}>
+    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: spacing.xs, marginTop: spacing.lg }}>
       {/* Bölüm başlığı da bir başlık: web karşılığı `<h2>`. */}
       {/* BÜYÜK HARFLİ ETİKETİN ARALIĞI TEK SAYI. Uygulamadaki on sekiz üst
           etiket `letterSpacing: 1` diyor; bu bölüm başlığı 0.5'te kalmıştı ve

@@ -40,7 +40,7 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: {
        durumu yalnız RENKLE ve simgeyle anlatıyordu; satırın adı ise başlık +
        süreydi. Yani hangi alıştırmanın bitmiş olduğu TalkBack kullanan biri
        için hiç okunamıyordu. Web aynı turda onay simgesine ad verdi. */
-    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}${done ? `, ${t("common.completed")}` : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}${done ? `, ${t("common.completed")}` : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: done ? colors.success : tint }} />
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" numberOfLines={1}>{ex.title}</Text>
@@ -58,7 +58,7 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: {
           eşiği geçmemiş bir deneme. Web aynı rozeti alev (kehribar) tonunda
           çiziyor (`skills/page.tsx`); kırmızı tehlikeye ayrılmış. */}
       {score !== undefined ? (
-        <View style={{ paddingHorizontal: 8, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: (done ? colors.success : colors.streak) + "22" }}>
+        <View style={{ paddingHorizontal: spacing.sm, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: (done ? colors.success : colors.streak) + "22" }}>
           <Text variant="micro" color={done ? colors.successText : colors.streakText}>{formatPercent(score)}</Text>
         </View>
       ) : null}
@@ -133,7 +133,7 @@ export function SkillsScreen() {
 
       {!levelReady ? (
         <>
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: 4 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
             <SkeletonLine variant="caption" width={54} />
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
@@ -142,14 +142,14 @@ export function SkillsScreen() {
           <CardGrid minItemWidth={440}>
           {SKILLS.map((s) => (
             <View key={s.key} style={{ marginBottom: spacing.xl }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: 4 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
                 <Skeleton height={18} width={18} radius={9} />
                 <SkeletonLine variant="h3" width={92} />
                 <SkeletonLine variant="caption" width={74} />
               </View>
-              <SkeletonCard padded style={{ paddingVertical: 4 }}>
+              <SkeletonCard padded style={{ paddingVertical: spacing.xs }}>
                 {[0, 1, 2].map((i) => (
-                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
+                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
                     <Skeleton height={8} width={8} radius={4} />
                     <View style={{ flex: 1 }}>
                       <SkeletonLine variant="bodyStrong" width="70%" />
@@ -165,7 +165,7 @@ export function SkillsScreen() {
         </>
       ) : (
         <>
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: 4 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
             <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{t("skills.level")}</Text>
             {hasExercises ? <Text variant="caption" color={colors.textMuted}>{t("skills.done_of", { done: doneCount, total: totalCount })}</Text> : null}
           </View>
@@ -227,12 +227,12 @@ export function SkillsScreen() {
             const tint = colors[s.tint] as string;
             return (
               <View key={s.key} style={{ marginBottom: spacing.xl }}>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: 4 }}>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
                   <s.icon color={tint} size={18} />
                   <Text variant="h3">{t(s.label)}</Text>
                   <Text variant="caption" color={colors.textMuted}>{s.finished}/{s.items.length}</Text>
                 </View>
-                <Card padded style={{ paddingVertical: 4 }}>
+                <Card padded style={{ paddingVertical: spacing.xs }}>
                   {s.items.map((ex, i) => (
                     <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} />
                   ))}

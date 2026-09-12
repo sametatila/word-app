@@ -99,7 +99,7 @@ function Bar({ colors, label, value }: { colors: Palette; label: string; value: 
   const pct = Math.max(0, Math.min(4, value)) / 4;
   return (
     <View>
-      <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
+      <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.xs }}>
         <Text variant="caption" color={colors.textMuted}>{label}</Text>
         <Text variant="caption" color={colors.textMuted}>{value}/4</Text>
       </View>

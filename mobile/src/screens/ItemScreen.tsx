@@ -35,7 +35,7 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
     <Card style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
         <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel={t("item.read_text_aloud")}
-          style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+          style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
           <SpeakerIcon color={colors.primaryText} size={18} />
           <Text variant="caption" color={colors.primaryText}>{t("item.read_aloud")}</Text>
         </PressableScale>

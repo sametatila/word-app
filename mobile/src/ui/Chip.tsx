@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { useTheme, radii } from "../theme";
+import { useTheme, radii, spacing } from "../theme";
 
 /**
  * Seçim çipi — seviye, günlük hedef, dil, saat, sekme.
@@ -55,7 +55,7 @@ export function Chip({
         flexDirection: "row",
         alignItems: "center",
         gap: 6,
-        paddingHorizontal: 16,
+        paddingHorizontal: spacing.lg,
         paddingVertical: 9,
         borderRadius: radii.md,
         borderWidth: 1.5,
@@ -65,7 +65,7 @@ export function Chip({
     >
       <Text variant="bodyStrong" color={active ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
       {badge ? (
-        <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
+        <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xs }}>
           <Text variant="micro" color={colors.badgeInk}>{badge}</Text>
         </View>
       ) : null}

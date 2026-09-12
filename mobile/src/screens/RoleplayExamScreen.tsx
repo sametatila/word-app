@@ -268,13 +268,13 @@ export function RoleplayExamScreen() {
           <Text accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
           <Text variant="body" style={{ marginTop: spacing.md }}>{lesson.roleplay.scene}</Text>
-          <View style={{ marginTop: spacing.md, gap: 4 }}>
+          <View style={{ marginTop: spacing.md, gap: spacing.xs }}>
             <Rule colors={colors} text={tx("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })} />
             <Rule colors={colors} text={tx("rpexam.rule_partner")} />
             <Rule colors={colors} text={tx("rpexam.rule_scoring")} />
             <Rule colors={colors} text={tx("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })} />
           </View>
-          <PressableScale onPress={start} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.lg }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={start} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>{tx("exam.start")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
@@ -473,7 +473,7 @@ export function RoleplayExamScreen() {
           placeholder={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, maxHeight: 96, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 12, color: colors.text, fontSize: 15 }}
+          style={{ flex: 1, maxHeight: 96, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
         />
         <PressableScale
           onPress={() => void send(draft)}

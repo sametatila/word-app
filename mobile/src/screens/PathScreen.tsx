@@ -48,7 +48,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         </View>
       </View>
       {unit.items.length > 0 && (
-        <View style={{ flexDirection: "row", gap: 4, marginTop: spacing.md }}>
+        <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
           {unit.items.map((it) => (
             <View key={it.id} style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: it.done ? colors.success : it === next ? colors.primary : colors.surface2 }} />
           ))}
@@ -154,7 +154,7 @@ export function PathScreen() {
               <SkeletonLine variant="caption" width={92} />
             </View>
           </View>
-          <View style={{ flexDirection: "row", gap: 4, marginTop: spacing.md }}>
+          <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
             {[0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={10} radius={5} style={{ flex: 1 }} />)}
           </View>
           <Skeleton height={68} radius={radii.lg} style={{ marginTop: spacing.md }} />
@@ -230,7 +230,7 @@ export function PathScreen() {
               <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                 {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
               </View>
-              <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
+              <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.theme}</Text>
               <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, total: u.lessonsTotal })}</Text>
             </Card>
           </PressableScale>
@@ -239,13 +239,13 @@ export function PathScreen() {
 
       {moduller.length ? (
         <View style={{ marginTop: spacing.xl }}>
-          <Text variant="h3" style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("path.module_exams")}</Text>
-          <Card padded style={{ paddingVertical: 4 }}>
+          <Text variant="h3" style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{t("path.module_exams")}</Text>
+          <Card padded style={{ paddingVertical: spacing.xs }}>
             {moduller.map((m, i) => (
               <PressableScale
                 key={m.code}
                 onPress={() => nav.navigate("Exam", { level: path.level, module: m.index })}
-                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: i === moduller.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === moduller.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}
               >
                 <ExamIcon color={colors.streakText} size={18} />
                 <View style={{ flex: 1 }}>

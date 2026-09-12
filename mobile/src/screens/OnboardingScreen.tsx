@@ -252,7 +252,7 @@ export function OnboardingScreen() {
                 {LEVELS.map((lv) => {
                   const on = pickedLevel === lv;
                   return (
-                    <PressableScale key={lv} accessibilityRole="radio" accessibilityState={{ selected: on }} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: 12, borderRadius: radii.md, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
+                    <PressableScale key={lv} accessibilityRole="radio" accessibilityState={{ selected: on }} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: spacing.md, borderRadius: radii.md, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
                       <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{lv}</Text>
                     </PressableScale>
                   );

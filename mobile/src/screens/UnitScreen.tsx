@@ -124,7 +124,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
                       <CheckIcon color={colors.successText} size={16} />
                     </View>
                   ) : it.current ? (
-                    <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
+                    <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: spacing.xs }}>
                       <Text variant="micro" color={colors.primaryText}>{t("unit.now")}</Text>
                     </View>
                   ) : it.open && it.playable ? (

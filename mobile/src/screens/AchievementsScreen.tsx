@@ -50,7 +50,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
       <Text variant="bodyStrong" style={{ marginTop: spacing.sm }}>{a.title}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>
       {a.unlocked ? (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: spacing.sm }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, marginTop: spacing.sm }}>
           <CheckIcon color={colors.successText} size={14} /><Text variant="micro" color={colors.successText}>{t("achievements.earned")}</Text>
         </View>
       ) : (
@@ -77,7 +77,7 @@ function Section({ label, rows, colors }: { label: string; rows: Achievement[]; 
   if (!rows.length) return null;
   return (
     <View style={{ marginTop: spacing.lg }}>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{label.toLocaleUpperCase(dateLocale())}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{label.toLocaleUpperCase(dateLocale())}</Text>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
         {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
       </View>
@@ -173,7 +173,7 @@ export function AchievementsScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {[0, 1, 2].map((g) => (
             <View key={g} style={{ marginTop: spacing.lg }}>
-              <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: 4 }} />
+              <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
                 {[0, 1].map((i) => <Skeleton key={i} height={140} width="47.5%" radius={radii.lg} />)}
               </View>

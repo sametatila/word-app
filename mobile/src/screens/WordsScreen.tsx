@@ -154,14 +154,14 @@ export function WordsScreen() {
           accessibilityLabel={t("words.search", { target: targetLangName(), nativeLang: nativeLangName() })}
           placeholderTextColor={colors.textFaint}
           autoCapitalize="none"
-          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 15 }}
+          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
         />
         {/* Seviye şeridi — web listesindeki seviye süzgecinin karşılığı. */}
         <View style={{ flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" }}>
           {LEVELS.map((lv) => {
             const active = level === lv;
             return (
-              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 12, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
+              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: spacing.md, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
                 <Text variant="caption" color={active ? colors.onFill : colors.textMuted}>{lv || t("words.filter_level")}</Text>
               </PressableScale>
             );
@@ -171,7 +171,7 @@ export function WordsScreen() {
           {FILTERS.map((f) => {
             const active = filter === f.key;
             return (
-              <PressableScale key={f.key || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
+              <PressableScale key={f.key || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
                 <Text variant="caption" color={active ? colors.onPrimary : colors.textMuted}>{t(f.label)}</Text>
               </PressableScale>
             );
@@ -195,7 +195,7 @@ export function WordsScreen() {
             // Spinner yerine satır iskeleti: liste dolunca yükseklik değişmiyor.
             <View style={{ gap: spacing.sm }}>
               {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
                   <View style={{ flex: 1 }}>
                     <SkeletonLine variant="bodyStrong" width="55%" />
                     <SkeletonLine variant="caption" width="35%" />
@@ -235,7 +235,7 @@ export function WordsScreen() {
         }
         ListFooterComponent={
           phase === "ready" && hasMore ? (
-            <PressableScale onPress={() => setPage((p) => p + 1)} style={{ marginTop: spacing.md, paddingVertical: 12, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, alignItems: "center" }}>
+            <PressableScale onPress={() => setPage((p) => p + 1)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("words.load_more")}</Text>
             </PressableScale>
           ) : undefined
@@ -250,7 +250,7 @@ export function WordsScreen() {
             // Çok sütunda satır paydan payını alsın; tek sütunda `flex` VERİLMEZ,
             // FlatList'in dikey kabında yüksekliği doldurmaya çalışırdı.
             <View style={{ flex: listColumns > 1 ? 1 : undefined, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline }}>
-              <PressableScale onPress={() => setOpen(isOpen ? null : w.id)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+              <PressableScale onPress={() => setOpen(isOpen ? null : w.id)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingVertical: spacing.md }}>
                 <View style={{ flex: 1 }}>
                   <Text variant="bodyStrong">{say}</Text>
                   {/* İngilizce karşılık AYNI satırda, ayraçla: web listesi de

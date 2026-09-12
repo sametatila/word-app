@@ -65,7 +65,7 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
           <PressableScale
             onPress={() => void cikar(s.token)} disabled={busy === s.token} accessibilityRole="button"
             accessibilityLabel={t("sessions.revoke")}
-            style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.surface2 }}
+            style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.surface2 }}
           >
             <Text variant="caption" color={colors.dangerText}>{busy === s.token ? "…" : t("sessions.revoke")}</Text>
           </PressableScale>
@@ -91,7 +91,7 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
         <PressableScale
           onPress={() => void digerleri()} disabled={busy === "others"} accessibilityRole="button"
           accessibilityLabel={t("sessions.revoke_others")}
-          style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
+          style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.primarySoft }}
         >
           <Text variant="caption" color={colors.primaryText}>{busy === "others" ? "…" : t("sessions.revoke_others")}</Text>
         </PressableScale>

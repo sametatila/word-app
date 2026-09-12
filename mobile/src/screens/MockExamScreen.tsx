@@ -528,7 +528,7 @@ function Primary({ colors, label, onPress, disabled }: { colors: Palette; label:
 /** Görev şeridi: kaçıncı görevdeyiz, kaçı bitti. Geri dönüş yok, bu yüzden tıklanmıyor. */
 function TaskBar({ part, ix, colors }: { part: MockPart; ix: number; colors: Palette }) {
   return (
-    <View style={{ flexDirection: "row", gap: 4, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+    <View style={{ flexDirection: "row", gap: spacing.xs, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
       {part.tasks.map((tk, i) => (
         <View
           key={tk.id}
@@ -1175,7 +1175,7 @@ function ResultView({
                     {g.correct}/{g.total}
                   </Text>
                 </View>
-                <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
+                <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: spacing.xs }}>
                   <View style={{ height: 4, borderRadius: 2, width: `${pct}%`, backgroundColor: pct >= 70 ? colors.success : pct >= 50 ? colors.primary : colors.danger }} />
                 </View>
               </View>

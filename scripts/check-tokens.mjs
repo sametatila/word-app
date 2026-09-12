@@ -14,7 +14,7 @@
  *
  * Çıkış kodu ayrışma sayısı.
  */
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 
 const css = await readFile(new URL("../src/app/globals.css", import.meta.url), "utf8");
 const mob = await readFile(new URL("../mobile/src/theme/tokens.ts", import.meta.url), "utf8");
@@ -154,11 +154,83 @@ for (const [theme, read, want] of [["açık", cssVar, "light"], ["koyu", darkVar
   if (webOpacity !== undefined) eq(`gölge gücü (${theme})`, strength, webOpacity);
 }
 
+/* ── boşluğun ÇAĞRI YERLERİ ────────────────────────────────────────────────
+ *
+ * Ölçeğin var olması onu kimsenin kullandığı anlamına gelmiyor: ölçüm mobilde
+ * ölçek basamağına EŞİT 253 ham sayı buldu (`padding: 16` diye yazılmış
+ * `spacing.lg`ler). Jeton değişse o 253 yer yerinde kalırdı. Hepsi jetona
+ * çevrildi; burada ölçülen şey geri gelmemeleri.
+ *
+ * İKİ PLATFORMUN ORTAK IZGARASI da ölçüldü (piksel histogramı): 2, 4, 6, 8,
+ * 10, 12, 14, 16, 20 iki tarafta da yoğun kullanılıyor - yani adlandırılmış
+ * yedi basamak ızgaranın yalnız bir kısmı, gerisini iki taraf da aynı şekilde
+ * kullanıyor. AYRIŞAN iki şey var ve ikisi de borç listesinde:
+ *
+ *   - web 24 px (`p-6` ve kardeşleri) ve 32 px (`p-8`): Android'in ölçeğinde
+ *     bu basamaklar YOK, 20'den 28'e atlıyor. Web'in kart dolgusu ağırlıklı
+ *     olarak 16 (Android `Card` `padding: spacing.lg` ile aynı), ama bir
+ *     avuç yüzey 24/32 kullanıyor.
+ *   - mobilde TEK sayılı boşluklar (15, 3, 5, 11, 9, 7, 13, 17, 1): web
+ *     bunları Tailwind'in çeyrek-rem ızgarasında yazamıyor, yani o yüzeyler
+ *     eşlenemez.
+ *
+ * Sayılar TAVAN: büyürse kapı düşer, küçülmesi serbest. Toplu bir düzeltme
+ * yüz on dokuz yüzeyin görünümünü değiştirirdi ve hangi basamağa gideceği
+ * yüzey yüzey bir karar - ölçüyü koyup borcu dondurmak dürüst olanı. */
+const ALAN_RE = /(?:padding|paddingTop|paddingBottom|paddingLeft|paddingRight|paddingHorizontal|paddingVertical|margin|marginTop|marginBottom|marginLeft|marginRight|marginHorizontal|marginVertical|gap|rowGap|columnGap):\s*([\d.]+)/g;
+const UTIL_RE = /(?<![\w-])(?:p|px|py|pt|pb|pl|pr|m|mx|my|mt|mb|ml|mr|gap|gap-x|gap-y|space-x|space-y)-(\[[\d.]+px\]|[\d.]+)(?![\w-])/g;
+const stripJs = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+async function walkDir(dir, out = []) {
+  for (const e of await readdir(new URL("../" + dir + "/", import.meta.url), { withFileTypes: true })) {
+    if (e.isDirectory()) await walkDir(dir + "/" + e.name, out);
+    else if (/\.tsx?$/.test(e.name)) out.push(dir + "/" + e.name);
+  }
+  return out;
+}
+const OLCEK_PX = new Set(Object.values(WANT_SPACING));
+const jetonOlmayan = [];
+let tekPiksel = 0;
+for (const f of await walkDir("mobile/src")) {
+  if (/\/theme\//.test(f)) continue;
+  const src = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8"));
+  for (const m of src.matchAll(ALAN_RE)) {
+    const px = Number(m[1]);
+    if (OLCEK_PX.has(px)) jetonOlmayan.push(`${f}: ${m[0].trim()}`);
+    else if (px % 2 === 1) tekPiksel += 1;
+  }
+}
+let web24 = 0;
+for (const f of await walkDir("src")) {
+  const src = stripJs(await readFile(new URL("../" + f, import.meta.url), "utf8"));
+  for (const m of src.matchAll(UTIL_RE)) {
+    const raw = m[1];
+    const px = raw.startsWith("[") ? Number(raw.slice(1, -3)) : Number(raw) * 4;
+    if (px === 24 || px === 32) web24 += 1;
+  }
+}
+/* Ölçüldüğü ANDAKİ sayılar. Küçülmesi serbest, büyümesi ayrışma. Web tarafı
+   ilk ölçümde 119'du; on bir yüzey Android'in kendi sayılarına çevrildi:
+   yedi uyarı kartı + hata sayfası (`card p-6` → `p-4`, web'in kendi
+   `EmptyCard`ı da 16), iki tur sonucu kartı (`p-8` → 16/28, Android
+   `rounds` sonuç kartı) ve başarım kartı (24 → 16/20, Android
+   `AchievementUnlock`). */
+const TAVAN = { tekPiksel: 115, web24: 108 };
+if (jetonOlmayan.length) {
+  problems.push(`boşluk: mobilde ölçek basamağına eşit ${jetonOlmayan.length} ham sayı (ilk üç: ${jetonOlmayan.slice(0, 3).join(" · ")}) — \`spacing.*\` kullan`);
+}
+if (tekPiksel > TAVAN.tekPiksel) {
+  problems.push(`boşluk: mobilde tek sayılı boşluk ${tekPiksel} (tavan ${TAVAN.tekPiksel}) — web bunları çeyrek-rem ızgarasında yazamıyor`);
+}
+if (web24 > TAVAN.web24) {
+  problems.push(`boşluk: webde 24/32 px boşluk ${web24} (tavan ${TAVAN.web24}) — Android ölçeği 20'den 28'e atlıyor`);
+}
+
 if (problems.length) {
   console.error("check:tokens — tasarım ölçekleri ayrışmış:");
   for (const p of problems) console.error("  " + p);
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
   console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — boşluğun çağrı yerleri: mobilde ölçeğe eşit ham sayı yok; borç: tek sayılı ${tekPiksel}/${TAVAN.tekPiksel} · web 24-32 px ${web24}/${TAVAN.web24}`);
 }
 process.exit(problems.length);

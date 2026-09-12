@@ -79,7 +79,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
               <Text variant="caption" color={colors.dangerText}>{t("resetpw.invalid")}</Text>
             </View>
             <PressableScale onPress={toAuth} accessibilityRole="button" accessibilityLabel={t("auth.back_to_sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{t("auth.back_to_sign_in")}</Text>
             </PressableScale>
           </View>
@@ -89,7 +89,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
               <Text variant="bodyStrong" color={colors.successText}>{t("resetpw.done")}</Text>
             </View>
             <PressableScale onPress={toAuth} accessibilityRole="button" accessibilityLabel={t("auth.sign_in")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{t("auth.sign_in")}</Text>
             </PressableScale>
           </View>
@@ -136,7 +136,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
             )}
 
             <PressableScale onPress={kaydet} accessibilityRole="button" accessibilityLabel={t("resetpw.save")}
-              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{busy ? "…" : t("resetpw.save")}</Text>
             </PressableScale>
 

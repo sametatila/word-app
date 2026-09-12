@@ -18038,3 +18038,63 @@ elle değer).
 `lineHeight: 22`sini taşıyor. `Text` bileşeni girdi alanlarını sarmıyor, o yüzden
 ölçek oraya ulaşmıyor; ikisi de beceri kütüphanesi çalışmasının alanında olduğu
 için dokunulmadı ve kontrol onları bilerek muaf tutuyor.
+
+## §11.496 — Boşluk ölçeği: 253 çağrı yeri jetonu atlıyordu, ve iki ızgaranın gerçekten nerede ayrıldığı
+
+`check:tokens` boşluk **ölçeğini** karşılaştırıyordu (7 basamak, iki tarafta da
+aynı) ama **çağrı yerlerini** hiç ölçmüyordu — punto ve yarıçap için o tarama
+vardı, boşluk için yoktu.
+
+**Ölçek basamağına eşit 253 ham sayı.** Mobilde `padding: 16` diye yazılmış
+`spacing.lg`ler: jeton değişse o 253 yer yerinde kalırdı. Hepsi jetona çevrildi
+(65 dosya); beş dosyaya `spacing` importu eklendi. Aynı kusur sınıfı bu turda
+üçüncü kez çıktı (ölçek var, çağrı yeri onu atlıyor — satır yüksekliği, punto,
+şimdi boşluk).
+
+**İki ızgaranın piksel histogramı** (web `p-*`/`gap-*` sınıfları ↔ mobil
+`padding`/`margin`/`gap` alanları):
+
+| px | web | mobil | |
+|---|---|---|---|
+| 2 | 72 | 51 | |
+| 4 | 351 | 200 | `xs` |
+| 6 | 190 | 83 | |
+| 8 | 588 | 467 | `sm` |
+| 10 | 111 | 40 | |
+| 12 | 823 | 581 | `md` |
+| 14 | 72 | 41 | |
+| 16 | 482 | 381 | `lg` |
+| 20 | 271 | 90 | `xl` |
+| **24** | **91** | **0** | Android'de yok |
+| 28 | 6 | 22 | `xxl` |
+| **32** | **28** | **0** | Android'de yok |
+| tek sayılar | ~6 | ~115 | web yazamıyor |
+
+Yani adlandırılmış yedi basamak ızgaranın yalnız bir kısmı: 2, 6, 10, 14 iki
+tarafta da yoğun kullanılıyor ve **aynı** sayılar — iki platform aslında 2
+piksellik ortak bir ızgarada. Gerçek ayrışma iki yerde:
+
+1. **Web'in 24 ve 32 pikseli** (119 kullanım): Android'in ölçeği 20'den 28'e
+   atlıyor, bu basamaklar orada **hiç yok**.
+2. **Mobilin tek sayılı boşlukları** (115: 15, 3, 5, 11, 9, 7, 13, 17, 1):
+   web bunları Tailwind'in çeyrek-rem ızgarasında yazamıyor.
+
+**On bir yüzey Android'in kendi sayılarına çevrildi** (119 → 108): yedi uyarı
+kartı + hata sayfası (`card p-6` → `p-4`; web'in kendi `EmptyCard`ı da 16 ve
+Android'in `Card`ı tek bir dolgu taşıyor — 129 kullanımın 8'inde yalnız dikey
+ayar var), iki tur sonucu kartı (`p-8` → `px-4 py-7`, Android `rounds` sonuç
+kartı 28 dikey / 16 yatay) ve başarım kartı (24 → 16/20, Android
+`AchievementUnlock`).
+
+Geri kalanı **borç listesinde ve tavanı dondurulmuş**: büyürse kapı düşer,
+küçülmesi serbest. Toplu bir düzeltme yüz sekiz yüzeyin görünümünü değiştirirdi
+ve hangi basamağa gideceği yüzey yüzey bir karar — ölçüyü koyup borcu dondurmak
+dürüst olanı. (Web'in kart dolgusu ayrıca kendi içinde beş ayrı değer taşıyor:
+p-5 seksen, p-4 altmış dokuz, p-3 yirmi dört, p-6 on yedi, p-8 üç; Android'de
+tek bir sayı var. Bu da aynı borcun içinde.)
+
+`check:tokens` artık üç şey ölçüyor: mobilde ölçek basamağına eşit ham sayı
+kalmadığını, tek sayılı boşluk borcunu ve web'in 24/32 piksel borcunu. Üçü de
+enjeksiyonla doğrulandı — ikincisinde ilk enjeksiyon **yanlıştı** (tek bir
+değeri başka bir tek sayıya çevirmek sayıyı değiştirmiyor), çift bir değeri tek
+yapınca kapı düştü.

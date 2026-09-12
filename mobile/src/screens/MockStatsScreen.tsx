@@ -107,7 +107,7 @@ export function MockStatsScreen() {
                     <SkeletonLine variant="body" width={110} />
                     <SkeletonLine variant="bodyStrong" width={44} />
                   </View>
-                  <SkeletonBar height={4} style={{ marginTop: 4 }} />
+                  <SkeletonBar height={4} style={{ marginTop: spacing.xs }} />
                   <SkeletonLine variant="micro" width={130} style={{ marginTop: 2 }} />
                 </View>
               ))}
@@ -172,7 +172,7 @@ export function MockStatsScreen() {
                     <Text variant="body">{skillOf(s.skill)}</Text>
                     <Text variant="bodyStrong" color={s.pct >= MOCK_PASS_PCT ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
                   </View>
-                  <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
+                  <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: spacing.xs }}>
                     <View style={{ height: 4, borderRadius: 2, width: `${s.pct}%`, backgroundColor: s.pct >= MOCK_PASS_PCT ? colors.success : colors.danger }} />
                   </View>
                   <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>

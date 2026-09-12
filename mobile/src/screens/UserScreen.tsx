@@ -156,7 +156,7 @@ export function UserScreen() {
 
         {!isSelf ? (
           <View style={{ marginTop: spacing.lg, alignItems: "center" }}>
-            <PressableScale onPress={() => setMore((m) => !m)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+            <PressableScale onPress={() => setMore((m) => !m)} style={{ paddingHorizontal: 14, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
               <Text variant="caption" color={colors.textMuted}>{t(more ? "user.hide" : "user.block_or_report")}</Text>
             </PressableScale>
             {more ? (

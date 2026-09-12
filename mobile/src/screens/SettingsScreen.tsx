@@ -91,7 +91,7 @@ function Group({ title, colors, children }: { title: string; colors: Palette; ch
   return (
     <View style={{ marginTop: spacing.xxl }}>
       {/* Grup başlığı da bir başlık — web `<h2>` (bkz. parity 259). */}
-      <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{title}</Text>
+      <Text accessibilityRole="header" variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{title}</Text>
       <Card padded>
         {items.map((item, i) => (
           <View
@@ -246,7 +246,7 @@ export function SettingsScreen() {
                    vardı, satır düz bir "düğme" olarak okunuyordu. Kurs
                    seçimi geri alınabilir ama sessizce yanlış kursu seçmek
                    bütün ilerlemeyi öteki dile taşıyor. */
-                <PressableScale key={c.key} onPress={() => pickCourse(c.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                <PressableScale key={c.key} onPress={() => pickCourse(c.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
                     <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
@@ -338,7 +338,7 @@ export function SettingsScreen() {
           <Row label={t("settings.sound")} colors={colors}>
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("settings.reading_voice")}</Text>
             <VoicePicker course={course} value={voice} onChange={pickVoice} />
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: 12, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("snd.game_sounds_sub")}</Text>
@@ -354,7 +354,7 @@ export function SettingsScreen() {
           </Row>
 
           <Row label={t("settings.appearance")} colors={colors}>
-            <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
+            <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.xs }}>
               {THEME_OPTIONS.map((o) => {
                 const active = mode === o.key;
                 return (
@@ -471,7 +471,7 @@ export function SettingsScreen() {
             {micConsent === null ? (
               // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
               // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
-              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
                 <View style={{ flex: 1 }}>
                   <SkeletonLine variant="bodyStrong" width="55%" />
                   <SkeletonLine variant="caption" width="85%" />
@@ -479,7 +479,7 @@ export function SettingsScreen() {
                 <SkeletonLine variant="h3" width={20} />
               </View>
             ) : micConsent ? (
-              <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
                 <View style={{ flex: 1 }}>
                   <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
                   <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>
@@ -496,11 +496,11 @@ export function SettingsScreen() {
             AÇIP KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
           */}
           <Row label={t("settings.about")} colors={colors}>
-            <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12 }}>
+            <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
-            <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
@@ -515,7 +515,7 @@ export function SettingsScreen() {
               adıyla anlaşılıyor, bu ise ne olduğunu söylemezse "hangi destek"
               sorusunu bırakıyor.
             */}
-            <PressableScale onPress={() => openLegal("support")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <PressableScale onPress={() => openLegal("support")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("settings.support_contact")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("settings.support_contact_sub")}</Text>

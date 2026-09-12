@@ -31,7 +31,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     if (err instanceof SocialError && err.code === "not_found") notFound();
     console.error("[u page]", err);
     return (
-      <div role="alert" className="card mx-auto w-full max-w-md p-6 text-center">
+      <div role="alert" className="card mx-auto w-full max-w-md p-4 text-center">
         <h2 className="text-h2">{t("profw.load_failed")}</h2>
         <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
         <RetryButton />

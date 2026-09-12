@@ -226,7 +226,7 @@ function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { pape
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>{t("mockexams.paper", { n: paper.no })}</Text>
         {locked ? (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <LockIcon color={colors.textMuted} size={12} />
             <Text variant="micro" color={colors.textMuted}>{t("mockpack.locked")}</Text>
           </View>
@@ -271,7 +271,7 @@ function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { pape
         })}
       </View>
       {locked && showPlans ? (
-        <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: 12, alignItems: "center" }}>
+        <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: spacing.md, alignItems: "center" }}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("gate.see_plans")}</Text>
         </PressableScale>
       ) : null}

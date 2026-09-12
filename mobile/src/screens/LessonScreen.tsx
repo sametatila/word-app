@@ -685,7 +685,7 @@ export function LessonScreen() {
             accessibilityRole="switch"
             accessibilityState={{ checked: handsFree }}
             accessibilityLabel={tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
-            style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 10, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
+            style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: 10, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
           >
             <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={14} />
             <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
@@ -714,7 +714,7 @@ export function LessonScreen() {
             {["78%", "62%", "88%"].map((w, i) => (
               <View key={i} style={{ alignSelf: "flex-start", width: w, marginBottom: spacing.md }}>
                 <Skeleton height={22 + 2 + 18 * 2} radius={radii.lg} />
-                <SkeletonLine variant="micro" width={54} style={{ marginTop: 4, marginLeft: 4 }} />
+                <SkeletonLine variant="micro" width={54} style={{ marginTop: spacing.xs, marginLeft: spacing.xs }} />
               </View>
             ))}
           </View>
@@ -748,7 +748,7 @@ export function LessonScreen() {
           <ScrollView ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
-              <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 8, marginTop: 4 }}>
+              <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
                 <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
               </View>
             )}
@@ -810,14 +810,14 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
           ))}
         </Text>
         {b.fix?.length ? (
-          <View style={{ marginTop: 8, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
+          <View style={{ marginTop: spacing.sm, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
             {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("lesson.fix", { text: f })}</Text>)}
           </View>
         ) : null}
       </View>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: 4, marginLeft: 4 }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.xs, marginLeft: spacing.xs }}>
         {targetText(b.segments) ? (
-          <PressableScale onPress={() => speakTarget(targetText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+          <PressableScale onPress={() => speakTarget(targetText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
             <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("lesson.listen")}</Text>
           </PressableScale>
         ) : null}
@@ -855,7 +855,7 @@ function BigButton({ label, onPress, tint, colors, disabled }: { label: string; 
 function MicButton({ listening, onPress, label, colors }: { listening: boolean; onPress: () => void; label: string; colors: Palette }) {
   return (
     <PressableScale onPress={listening ? () => {} : onPress}>
-      <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, listening ? {} : softShadow(colors.primary, 10)]}>
+      <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, listening ? {} : softShadow(colors.primary, 10)]}>
         <MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} />
         <Text variant="h3" color={listening ? colors.primaryText : colors.onPrimary}>
           {listening ? tx("speak.listening") : label}
@@ -875,7 +875,7 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
       <TextInput value={value} onChangeText={onChange} placeholder={placeholder}
       accessibilityLabel={placeholder} placeholderTextColor={colors.textFaint}
         editable={!disabled} multiline autoCapitalize="sentences" onSubmitEditing={onSubmit}
-        style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
+        style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
       <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
         <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
       </PressableScale>
@@ -925,7 +925,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       <View style={{ gap: spacing.sm }}>
         {sttNotu}
         {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
-        <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
+        <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primaryText} size={20} /><Text variant="bodyStrong" color={colors.primaryText}>{expect.target}</Text>
         </PressableScale>
         {yaziYolu ? (
@@ -945,14 +945,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
-            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.success, 8)]}>
+            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.success, 8)]}>
               <CheckIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.correct")}</Text>
             </View>
           </PressableScale>
         </View>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
-            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.danger, 8)]}>
+            <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.danger, 8)]}>
               <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.wrong")}</Text>
             </View>
           </PressableScale>
@@ -1001,7 +1001,7 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
       {!busy && suggestions.length > 0 && (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
           {suggestions.map((s, i) => (
-            <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 8, borderWidth: 1, borderColor: colors.primary }}>
+            <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderWidth: 1, borderColor: colors.primary }}>
               <Text variant="caption" color={colors.primaryText}>{s}</Text>
             </PressableScale>
           ))}
@@ -1062,7 +1062,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
       <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
       <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
-      <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
+      <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
 
       <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
@@ -1141,7 +1141,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
         <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.corrections")}</Text>
           {corrections.map((c, i) => (
-            <Text key={i} variant="caption" color={colors.text} style={{ marginBottom: 4 }}>{c}</Text>
+            <Text key={i} variant="caption" color={colors.text} style={{ marginBottom: spacing.xs }}>{c}</Text>
           ))}
         </View>
       ) : roleMsgs.length > 1 ? (

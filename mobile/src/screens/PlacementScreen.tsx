@@ -271,7 +271,7 @@ export function PlacementScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.no_demo")}</Text>
-        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
         </PressableScale>
       </View>
@@ -282,7 +282,7 @@ export function PlacementScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.couldn_t_load_test")}</Text>
-        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.try_again")}</Text>
         </PressableScale>
         <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
@@ -318,7 +318,7 @@ export function PlacementScreen() {
           </Text>
         ) : null}
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
-        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
         </PressableScale>
       </View>
@@ -348,7 +348,7 @@ export function PlacementScreen() {
         ) : null}
         <PressableScale
           onPress={() => { track("exam_start", 0, "placement:A1"); setStarted(true); }}
-          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
         >
           <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
         </PressableScale>
@@ -407,7 +407,7 @@ export function PlacementScreen() {
               yani kullanıcının seviyesini ölçen test aynı zamanda ona
               öğretiyordu ve sonraki cevaplar bundan etkileniyordu. */}
           <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} reveal={!usingReal} />
-          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: 12, alignItems: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border }}>
+          <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
           </PressableScale>
         </>

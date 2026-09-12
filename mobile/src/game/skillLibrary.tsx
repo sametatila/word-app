@@ -39,7 +39,7 @@ export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: 
   return (
     <Card padded style={{ marginTop: spacing.md }}>
       <Text variant="micro" color={colors.streakText}>{t("item.grammar_rule")}</Text>
-      <Text variant="h3" style={{ marginTop: 4 }}>{focus}</Text>
+      <Text variant="h3" style={{ marginTop: spacing.xs }}>{focus}</Text>
       {blocks.map((b, i) => (
         <View key={i} style={{ marginTop: spacing.md }}>
           {b.heading ? <Text variant="bodyStrong">{b.heading}</Text> : null}
@@ -141,7 +141,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
           <SpeakerIcon color={colors.primaryText} size={18} />
         </PressableScale>
       </View>
-      <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{task.tr}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{task.tr}</Text>
       {task.hint ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.text}>{task.hint}</Text>
@@ -168,17 +168,17 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
               {t(verdict === "ok" ? "item.speak_ok" : verdict === "unheard" ? "item.speak_unheard" : "item.speak_miss")}
             </Text>
           </View>
-          {heard ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t("item.heard", { text: heard })}</Text> : null}
+          {heard ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("item.heard", { text: heard })}</Text> : null}
           {fixes.map((f, i) => (
             <View key={i} style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
               <Text variant="caption" color={colors.text}>{f}</Text>
             </View>
           ))}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-            <PressableScale onPress={listen} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+            <PressableScale onPress={listen} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.text}>{t("item.speak_again")}</Text>
             </PressableScale>
-            <PressableScale onPress={advance} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+            <PressableScale onPress={advance} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t(last ? "item.speak_finish" : "item.speak_next")}</Text>
             </PressableScale>
           </View>
@@ -366,7 +366,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             <Text variant="micro" color={colors.dangerText}>● {t("item.mono_recording")}</Text>
             <Text variant="bodyStrong">{mm(seconds)} / {mm(mono.maxSeconds)}</Text>
           </View>
-          {mono.bulletsTr.map((b, i) => <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>· {b}</Text>)}
+          {mono.bulletsTr.map((b, i) => <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>· {b}</Text>)}
           <View style={{ marginTop: spacing.md, minHeight: 60, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="body" color={transcript ? colors.text : colors.textMuted}>
               {transcript || t(sttOk === false ? "item.mono_recording" : "item.mono_listening")}
@@ -384,7 +384,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       {phase === "review" ? (
         <>
           <Text variant="micro" color={colors.primaryText}>{t("item.mono_review")}</Text>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t("item.mono_spoke", { time: mm(seconds) })}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("item.mono_spoke", { time: mm(seconds) })}</Text>
           {sttOk !== false ? (
             <>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("item.mono_transcript_hint")}</Text>
@@ -442,7 +442,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
               {result.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{result.tip}</Text> : null}
               {result.corrected ? (
                 <View style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-                  <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{t("item.mono_corrected")}</Text>
+                  <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{t("item.mono_corrected")}</Text>
                   <Text variant="body">{result.corrected}</Text>
                 </View>
               ) : null}
