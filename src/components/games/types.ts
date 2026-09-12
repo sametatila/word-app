@@ -271,9 +271,20 @@ function foldKeep(s: string, lang: TargetLang): string {
 export function matchesAnswer(typed: string, candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
   const target = foldKeep(typed, lang);
   if (!target) return false;
-  return candidates
-    .flatMap((c) => acceptedForms(c, lang))
-    .some((form) => foldKeep(form, lang) === target);
+  const forms = candidates.flatMap((c) => acceptedForms(c, lang));
+  if (forms.some((form) => foldKeep(form, lang) === target)) return true;
+  /*
+    BOŞLUKSUZ YEDEK — mobil `game/rounds` `check`te vardı, webde YOKTU ve iki
+    uygulama aynı cevaba farklı not veriyordu. Katlama tireyi boşluğa çeviriyor
+    ("t-shirt" → "t shirt"); kullanıcı bitişik yazdığında ("tshirt") web
+    reddediyor, Android kabul ediyordu. 2026-09-12'de ölçüldü: havuzda 142
+    İngilizce + 14 Almanca tireli başlık var ve hepsinde ayrışıyordu.
+
+    YALNIZ YEDEK: tam eşleşme önce deneniyor, çünkü boşluksuz karşılaştırma
+    "ich bin" ile "ichbin"i de aynı sayar.
+  */
+  const tight = foldTight(typed, lang);
+  return !!tight && forms.some((form) => foldTight(form, lang) === tight);
 }
 
 /**

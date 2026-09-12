@@ -524,9 +524,18 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     // Boşluksuz yedek: tireli başlıklarda ("t-shirt") tire boşluğa döndüğü için
     // kullanıcının bitişik yazdığı "tshirt" aksi halde reddedilirdi.
     const lang = currentTargetLang();
+    /*
+      EŞANLAMLILAR DA DOĞRU. Sunucu yazma turuna aynı Türkçe anlama sahip
+      öteki kelimeleri `alternatives` olarak gönderiyor ("kalkmak" → abfahren
+      / aufstehen) ve web onları kabul ediyordu; burada hiç okunmuyordu, yani
+      aynı cevap webde doğru, Android'de yanlıştı. 2026-09-12'de ölçüldü:
+      Almanca havuzun %22'si (1.899 kelime) bir eşanlamlı taşıyor.
+    */
+    const cands = [word.de, withArtikel(word), ...(round.alternatives ?? [])];
     const t = norm(val);
-    const ok = (!!t && (t === norm(word.de) || t === norm(withArtikel(word))))
-      || (!!foldTight(val, lang) && foldTight(val, lang) === foldTight(word.de, lang));
+    const tight = foldTight(val, lang);
+    const ok = (!!t && cands.some((c) => t === norm(c)))
+      || (!!tight && cands.some((c) => foldTight(c, lang) === tight));
     Keyboard.dismiss();
     markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım

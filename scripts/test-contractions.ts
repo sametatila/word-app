@@ -121,6 +121,17 @@ assert.ok(!matchesAnswer("Farbe", ["Tisch"], "de"));
 }
 
 /*
+  TİRELİ BAŞLIK: katlama tireyi boşluğa çeviriyor ("t-shirt" → "t shirt");
+  bitişik yazan öğrenci webde reddediliyor, Android'de geçiyordu. Boşluksuz
+  yedek artık webde de var (havuzda 142 İngilizce + 14 Almanca tireli başlık).
+*/
+assert.ok(matchesAnswer("tshirt", ["t-shirt"], "en"), "bitişik yazım kabul edilmeli");
+assert.ok(matchesAnswer("EMail", ["E-Mail"], "de"), "Almanca tarafta da");
+assert.ok(!matchesAnswer("tshit", ["t-shirt"], "en"), "eksik harf yine yanlış");
+// Eşanlamlı aday listesi (sunucu `alternatives` gönderiyor)
+assert.ok(matchesAnswer("aufstehen", ["abfahren", "aufstehen"], "de"), "eşanlamlı da doğru");
+
+/*
   YAZMA GÖREVİNİN FORM ALANI aynı hakeme bağlandı (`writing-player` `fieldOk`
   → `skills/quiz` `written`). Kendi katlaması vardı ve sayı katlaması yoktu:
   "Table for: two" alanına "2" yazan öğrenci Android'de geçiyor, webde
