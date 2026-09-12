@@ -224,9 +224,9 @@ export function MockExamScreen() {
     setIx(next);
     sureVer(budgets[next] ?? 60);
     scroller.current?.scrollTo({ y: 0, animated: false });
-    void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
-    if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
-  }, [ix, part, paper, budgets, attempt, answers, open, sureVer]);
+    void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60, plays });
+    if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60, plays });
+  }, [ix, part, paper, budgets, attempt, answers, open, plays, sureVer]);
 
   useEffect(() => {
     if (phase === "gorev" && left === 0) advance(true);
@@ -241,8 +241,8 @@ export function MockExamScreen() {
     if (phase !== "gorev" || !part) return;
     const id = setTimeout(() => {
       // Önce cihaz, sonra sunucu. Sunucu yoksa sınav yine kaybolmuyor.
-      void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
-      if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
+      void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left, plays });
+      if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left, plays });
     }, 2000);
     return () => clearTimeout(id);
   }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -258,6 +258,11 @@ export function MockExamScreen() {
       setAnswers(d.attempt.answers ?? {});
       setOpen(d.attempt.open ?? {});
       setOpenScores(d.attempt.openScores ?? {});
+      /* OYNATMA BÜTÇESİ DE GERİ YÜKLENİYOR. Sayaç yalnız ekranın belleğinde
+         tutuluyordu: bütçeyi tüketip uygulamayı kapatan öğrenci yeniden
+         açınca sıfırdan başlıyordu, yani sınırsız dinleme. Süre
+         (`secondsLeft`) ile aynı sebep, aynı yer (bkz. parity 270). */
+      setPlays(d.attempt.plays ?? {});
       const startIx = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(startIx);
       sureVer(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[startIx] ?? 60);
@@ -274,6 +279,7 @@ export function MockExamScreen() {
         setResumed(true);
         setAnswers(local.answers ?? {});
         setOpen(local.open ?? {});
+        setPlays(local.plays ?? {});
         const startIx = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
         setIx(startIx);
         sureVer(local.secondsLeft > 0 ? local.secondsLeft : budgets[startIx] ?? 60);
@@ -491,8 +497,8 @@ export function MockExamScreen() {
         onConfirm={() => {
           setQuit(false);
           back.cancel();
-          void saveLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
-          if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
+          void saveLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left, plays });
+          if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left, plays });
           nav.goBack();
         }}
         onCancel={() => { setQuit(false); back.cancel(); }}

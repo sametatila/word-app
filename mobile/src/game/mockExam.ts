@@ -86,6 +86,8 @@ export type Attempt = {
   openScores: Record<string, OpenScore>;
   taskIx: number;
   secondsLeft: number;
+  /** Uyaran kimliği → kaç kez oynatıldı; oynatma bütçesi de sınavın kısıtı. */
+  plays: Record<string, number>;
   correct: number;
   total: number;
   score: number;
@@ -156,7 +158,7 @@ export function startAttempt(paperId: string, skill: MockSkill): Promise<{ attem
  */
 export async function saveAttempt(
   id: number,
-  patch: { answers?: Record<string, string>; open?: Record<string, string>; taskIx?: number; secondsLeft?: number },
+  patch: { answers?: Record<string, string>; open?: Record<string, string>; taskIx?: number; secondsLeft?: number; plays?: Record<string, number> },
 ): Promise<boolean> {
   try {
     await api("/api/mock-exam", { method: "POST", body: JSON.stringify({ action: "save", id, ...patch }) });

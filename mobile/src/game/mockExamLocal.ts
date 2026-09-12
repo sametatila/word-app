@@ -31,6 +31,8 @@ export type LocalRun = {
   open: Record<string, string>;
   taskIx: number;
   secondsLeft: number;
+  /** Uyaran kimliği → kaç kez oynatıldı (bkz. parity 270). */
+  plays?: Record<string, number>;
   updatedAt: string;
 };
 

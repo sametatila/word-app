@@ -34,7 +34,7 @@ import { formatPercent } from "@/lib/i18n/dict";
 
 type Answers = Record<string, string>;
 type OpenScore = { score: number | null; tip?: string; praise?: string; errors?: { wrong?: string; right?: string; why_tr?: string }[] };
-type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number };
+type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number; plays: Record<string, number> };
 type Todo = { title: string; why: string; how: string };
 type Feedback = { summary: string; strengths: string[]; todo: Todo[]; source: "ai" | "rules" };
 type ScoredItem = { id: string; no: number; goal: string; correct: boolean; given: string; expected: string };
@@ -87,7 +87,7 @@ function isCorrect(item: MockItem, ans: string | undefined): boolean {
   bölümün tamamı kayboluyordu. Artık her cevap ÖNCE tarayıcıya, sonra sunucuya
   yazılıyor. Sunucu yetkili olmayı sürdürüyor; yerel kayıt bir yedek.
 */
-type LocalRun = { answers: Answers; open: Record<string, string>; taskIx: number; secondsLeft: number };
+type LocalRun = { answers: Answers; open: Record<string, string>; taskIx: number; secondsLeft: number; plays?: Record<string, number> };
 const runKey = (paperId: string, skill: string) => `lernomi:mock-run:${paperId}:${skill}`;
 
 function readLocalRun(paperId: string, skill: string): LocalRun | null {
@@ -220,9 +220,9 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     const next = ix + 1;
     setIx(next);
     sureVer(budgets[next] ?? 60);
-    writeLocalRun(paper.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
-    if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 }).catch(() => {});
-  }, [ix, part.tasks.length, part.skill, paper.id, budgets, attempt, answers, open, sureVer]);
+    writeLocalRun(paper.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60, plays });
+    if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60, plays }).catch(() => {});
+  }, [ix, part.tasks.length, part.skill, paper.id, budgets, attempt, answers, open, plays, sureVer]);
 
   useEffect(() => {
     if (phase === "run" && left === 0) advance(true);
@@ -232,8 +232,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   useEffect(() => {
     if (phase !== "run") return;
     const id = setTimeout(() => {
-      writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
-      if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {});
+      writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left, plays });
+      if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left, plays }).catch(() => {});
     }, 2000);
     return () => clearTimeout(id);
   }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -247,6 +247,11 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       setAnswers(d.attempt.answers ?? {});
       setOpen(d.attempt.open ?? {});
       setOpenScores(d.attempt.openScores ?? {});
+      /* OYNATMA BÜTÇESİ DE GERİ YÜKLENİYOR. Sayaç yalnız ekranın belleğinde
+         tutuluyordu: bütçeyi tüketip sekmeyi kapatan öğrenci yeniden açınca
+         sıfırdan başlıyordu, yani sınırsız dinleme. Süre (`secondsLeft`) ile
+         aynı sebep, aynı yer (bkz. parity 270). */
+      setPlays(d.attempt.plays ?? {});
       const start = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(start);
       sureVer(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[start] ?? 60);
@@ -263,6 +268,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         setResumed(true);
         setAnswers(local.answers ?? {});
         setOpen(local.open ?? {});
+        setPlays(local.plays ?? {});
         const start = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
         setIx(start);
         sureVer(local.secondsLeft > 0 ? local.secondsLeft : budgets[start] ?? 60);
@@ -394,8 +400,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         destructive
         onConfirm={() => {
           setQuit(false);
-          writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
-          if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {});
+          writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left, plays });
+          if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left, plays }).catch(() => {});
           if (ayril.pending) ayril.leave();
           else router.push("/mock-exams");
         }}
