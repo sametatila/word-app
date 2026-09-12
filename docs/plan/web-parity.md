@@ -16973,3 +16973,39 @@ birden silmek ise yalnız mutlak ölçüyü.
 
 Sıfır XP'li ses (telaffuz) alıştırmasında bildirim **yok** ve bu doğru: orada
 puanı model değil kural/tanıyıcı veriyor. İki platform bu ayrımda da aynı.
+
+## §11.470 — CEFR rozetinin tonları: Android'de beşten dördü AA eşiğini tutmuyordu
+
+Rozet **dolu zemin + beyaz yazı** ve yanında rengi açıklayan bir etiket yok,
+yani renk tek taşıyıcı: katı eşik geçerli (AA 4.5, yazı `bodyStrong` 15 px).
+Android tonu **rol renklerinden** alıyordu (`colors.success`, `colors.info`,
+`colors.accent`, `colors.primary`, `colors.danger`) ve o renkler kart üstünde
+okunacak yazı için değil, **işaret** için ayarlı.
+
+Ölçüm (açık tema, beyaz yazı):
+
+| Seviye | Ton | Beyazla kontrast |
+|---|---|---|
+| A1 | `colors.success` #2f9a61 | **3.55** |
+| A2 | `colors.info` #1b93ac | **3.61** |
+| B1 | `colors.accent` #9256bc | 4.91 |
+| B2 | `colors.primary` #f87612 | **2.77** |
+| C1 | `colors.danger` #dc3f55 | **4.30** |
+
+Beşten dördü 4.5'i tutmuyor; B2 büyük yazı eşiği 3.0'ı bile tutmuyor.
+
+**Aynı ölçüm web tarafında yapılmış ve düzeltilmişti** (`components/level-badge`
+`TONE`: ailelerin 600'ü, B2 ise 700'ü — marka turuncusunun 600'ü beyazla 3.72,
+700'ü 5.39). Yani doğru cevap zaten depoda duruyordu, yalnız bir platformda.
+Android tonları artık `theme/colors` `LEVEL_TONE`da ve web tablosuyla birebir
+aynı; **temaya duyarlı değil**, çünkü rozet kendi zeminini getiriyor ve temanın
+yüzeyiyle işi yok. `onFill` bu yüzden kullanılmıyor — o jeton koyu temada koyu
+mürekkebe dönüyor ve bu zeminlerde okunmaz.
+
+İkinci kusur aynı bileşenin sayısında: "1234 kelime pekişti" Android'de
+**binlik ayraçsız** yazılıyordu (web baştan beri `formatNumber`). §140'ın
+taraması yalnız XP adlı değerlere bakıyor, `mastered` oraya girmiyordu.
+
+Kapı **§330** web tablosunu **CSS'ten çözerek** karşılaştırıyor
+(`var(--color-mint-600)` → `#237a4c`): kapının içinde tonların bir kopyası yok,
+yani biri değişirse kapı ötekini de değişmeye zorluyor.

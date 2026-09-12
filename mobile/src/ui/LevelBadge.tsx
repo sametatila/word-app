@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
-import { t, formatPercent } from "../lib/i18n";
-import { useTheme, radii } from "../theme";
+import { t, formatNumber, formatPercent } from "../lib/i18n";
+import { useTheme, radii, orange, LEVEL_TONE, LEVEL_INK } from "../theme";
 
 /**
  * Seçilen CEFR seviyesi ve o seviyenin pekişme durumu — web
@@ -21,31 +21,25 @@ import { useTheme, radii } from "../theme";
  * B2 marka, C1 rose. Zemin bir kimlik değil bilgi taşıyıcısı, o yüzden dolu
  * renk + `onFill` yazı.
  */
-function toneOf(level: string, colors: ReturnType<typeof useTheme>["colors"]): string {
-  switch (level) {
-    case "A1": return colors.success;
-    case "A2": return colors.info;
-    case "B1": return colors.accent;
-    case "B2": return colors.primary;
-    case "C1": return colors.danger;
-    default: return colors.primary;
-  }
-}
 
 export function LevelBadge({ level, mastered, total, compact = false }: { level: string; mastered: number; total: number; compact?: boolean }) {
   const { colors } = useTheme();
-  const tone = toneOf(level, colors);
+  /* Ton TEMAYA DUYARLI DEĞİL ve `theme/colors` `LEVEL_TONE`dan geliyor:
+     gerekçesi ve kontrast ölçümleri orada yazılı. Burada rol renkleri
+     (`colors.success`, `colors.primary`…) kullanılıyordu ve beşten dördü
+     beyaz yazıyla AA eşiğini tutmuyordu. */
+  const tone = LEVEL_TONE[level] ?? orange[600];
   const pct = total > 0 ? Math.min(100, (mastered / total) * 100) : 0;
   return (
     <View style={compact ? { flexDirection: "row", alignItems: "center", gap: 8 } : undefined}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8, flex: 1 }}>
           <View style={{ backgroundColor: tone, borderRadius: radii.sm, paddingHorizontal: 8, paddingVertical: 2 }}>
-            <Text variant="bodyStrong" color={colors.onFill}>{level}</Text>
+            <Text variant="bodyStrong" color={LEVEL_INK}>{level}</Text>
           </View>
           {!compact ? (
             <Text variant="caption" color={colors.textMuted} numberOfLines={1} style={{ flex: 1 }}>
-              {mastered > 0 ? t("level.mastered_count", { n: mastered }) : t("level.mastered_none")}
+              {mastered > 0 ? t("level.mastered_count", { n: formatNumber(mastered) }) : t("level.mastered_none")}
             </Text>
           ) : null}
         </View>
