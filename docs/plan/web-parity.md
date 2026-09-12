@@ -13131,3 +13131,54 @@ değil, tek kullanıcısı Samet ve metni zaten sözlükte değil. **İstisnanı
 kendisi de ölçülüyor** — yolu `src/app/admin/` altında kalmazsa kapı kırmızı
 olur. Üç enjeksiyon denendi (işaretin kalkması, başka bir dosyaya sistem
 kutusu, istisnanın yer değiştirmesi), üçü de yakalandı.
+
+## §11.379 — Tek seçimlik liste radyo grubudur
+
+Aynı anda yalnız **biri** seçilebilen bir liste — sınav şıkkı, bildirim
+sebebi, ses, tema, görünürlük, hatırlatma saati, seviye, avatar parçası,
+tepki — ekran okuyucuya ne olduğunu söylemek zorunda. İki anlatım var ve
+ikisi aynı şey değil:
+
+- `aria-pressed` bir **aç/kapa düğmesi** anlatır: "düğme, basılı". Kaç seçenek
+  olduğu, birini seçmenin ötekini bıraktığı söylenmez.
+- `role="radio"` + `aria-checked`, `role="radiogroup"` içinde: "radyo düğmesi,
+  **4 ögeden 2.**, seçili".
+
+Android on üç yüzeyde `accessibilityRole="radio"` diyor ve TalkBack orada
+doğru cümleyi kuruyor. Web aynı yüzeylerin hepsinde `aria-pressed` ile
+kalmıştı.
+
+En keskin örnek **tepki şeridi**: aynı dosyanın *seçici* yarısı zaten
+`radiogroup` + `radio` iken, akışta **okunan** yarısı `aria-pressed`
+taşıyordu — dosya kendi içinde ayrışıyordu.
+
+| Yüzey | Android | Web (eskiden) |
+|---|---|---|
+| Bildirim sebebi · Ses · İlk kurulum · Kelime süzgeci | radio | aria-pressed |
+| Görünürlük · Hatırlatma saati · Tema segmenti | radio | aria-pressed |
+| Avatar parçaları · Sınav şıkkı · Beceri sorusu | radio | aria-pressed |
+| Yerleştirme şıkkı · Örnek yerleştirme · Tepki şeridi | radio | aria-pressed |
+
+Her grubun bir **adı** da var (`aria-label`): sorunun kendi metni, bölümün
+başlığı ya da mevcut etiket. Yalnız kelime süzgecinin "durum" şeridinde
+karşılık yoktu — Android'de öyle bir yapı da yok (RN'in radyo grubu rolü
+yok), o yüzden anahtar web'e ait: `wordsw.filter_status`.
+
+**Muaf kalan aç/kapa düğmeleri kasten dışarıda**: "eller serbest", "yavaş
+oku", "metni göster", "bahis", kelime eşleme ve sıralama. Bunlar gerçekten
+birer anahtar ve `aria-pressed` onların doğru anlatımı. Ölçü bu yüzden dosya
+değil **yüzey** sayıyor.
+
+### §256
+
+İki ölçü: on üç yüzey eşleştirmeli, ve **mutlak** olarak `role="radio"`
+taşıyan her dosyanın bir `role="radiogroup"` da taşıması. Gruptan kopmuş bir
+radyo "2 ögeden 1." diyemez, yani yarım iştir.
+
+İki mevcut kapı yanlış alarm verdi ve ikisi de **biçim değişikliğiydi, gerileme
+değil** (§247'nin tanımladığı sınıf): "çip durum bildirimi" `aria-checked`i bir
+durum kanalı saymıyordu, tepki ölçüsü de tek radyo yüzeyi bekliyordu. İkisi de
+yeni biçime getirildi.
+
+İki enjeksiyon denendi (bir yüzeyin `aria-pressed`e dönmesi, bir grubun
+kaybolması), ikisi de yakalandı.
