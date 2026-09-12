@@ -13224,3 +13224,40 @@ oku", "metni göster", "bahis", eşleme ve sıralama.
 Üç enjeksiyon denendi (bir web yüzeyinin `aria-pressed`e dönmesi, bir çağrı
 yerinin rolü unutması, sekme muafiyetinin karşılıksız kalması), üçü de
 yakalandı.
+
+## §11.381 — Sekme şeridi, bağlantı şeridi değil
+
+§11.380'in kasten dışarıda bıraktığı eksen. İki yüzey **aynı ekranın
+görünümleri** arasında geçiyor — sıralama (lig / arkadaşlar) ve arkadaş
+merkezi (dört sekme) — üçüncü bir küme de yönetici panosunda.
+
+Web bunları `aria-current="page"` ile işaretliyordu. O öznitelik **"bir
+bağlantı kümesindeki geçerli sayfa"** demek: burada ne bağlantı var ne de
+sayfa değişiyor (adres yalnız `?tab=` ile tazeleniyor). Ekran okuyucu
+"geçerli sayfa" diyerek yanlış bir zihin haritası kuruyordu. Üstelik şerit
+`<nav>` içindeydi, yani gereksiz bir **gezinme dönüm noktası** da açılıyordu:
+dönüm noktalarını gezen kullanıcı "gezinme" diye bir yere girip aynı ekranın
+görünüm seçicisini buluyordu.
+
+Yönetici panosunun iki şeridinde ise **hiçbir** durum bildirimi yoktu —
+seçili sekme yalnız renkten (ve kalın yazıdan) okunuyordu.
+
+Android tarafı da rolsüzdü: `Chip` "button" diyordu. Kusur yine **paylaşık**,
+ölçü **mutlak**.
+
+Doğrusu `tablist` / `tab` / `tabpanel`: "sekme, 2 ögeden 1., seçili" ve
+panelin adı seçili sekmeden geliyor (`aria-labelledby`). Mobilde karşılığı
+`accessibilityRole="tablist"` + `Chip role="tab"`.
+
+**Gerçek bağlantı şeritleri bunun dışında** ve `aria-current` orada doğru:
+`/skills` ve `/mock-exams` seviye şeritleri ile kabuk gezinmesi gerçek
+`<Link href>` taşıyor, sayfa gerçekten değişiyor.
+
+### §258
+
+Üç ölçü: iki yüzey eşleştirmeli, yönetici panosunun iki şeridi mutlak, ve
+**`aria-current` taşıyan her dosyanın bir `<Link` de taşıması** — bir düğmenin
+üstünde kalan `aria-current` böylece yine yakalanıyor.
+
+Üç enjeksiyon denendi (panelin rolünü kaybetmesi, yönetici şeridinin rolsüz
+kalması, bağlantısız bir dosyaya `aria-current` girmesi), üçü de yakalandı.
