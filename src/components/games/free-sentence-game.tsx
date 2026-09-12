@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
@@ -54,7 +55,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
     setFailure(null);
     setOutcome(null);
     started.current = Date.now();
-    inputRef.current?.focus();
+    focusOnFine(inputRef.current);
     return () => abort.current?.abort();
   }, [round.id]);
 
@@ -192,7 +193,6 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             onChange={(e) => setValue(e.target.value)}
             disabled={status !== "idle"}
             rows={3}
-            autoFocus
             autoCapitalize="sentences"
             autoCorrect="off"
             spellCheck={false}

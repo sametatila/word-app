@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { GameShell } from "./game-shell";
@@ -72,7 +73,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     setHintUsed(false);
     setHintShown(Boolean(round.assist));
     started.current = Date.now();
-    inputRef.current?.focus();
+    focusOnFine(inputRef.current);
     // Cevaptan sonra okunacak metin baştan belli: kelimenin doğru yazımı.
     // Önden indirmek dokunuşla sesin başlaması arasındaki boşluğu kapatıyor.
     prefetchGerman(withArtikel(word));
@@ -194,7 +195,6 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           disabled={status !== "idle"}
-          autoFocus
           autoCapitalize="off"
           autoCorrect="off"
           spellCheck={false}

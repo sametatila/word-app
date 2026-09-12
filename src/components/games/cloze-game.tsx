@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { focusOnFine } from "@/lib/focus-fine";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
@@ -48,6 +49,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // Doğru cümlenin sesi tur açılırken iniyor. Hangi şıkkın seçileceği belli
     // değil ama doğru cümle her hâlükârda okunuyor; önden indirmek dokunuşla
     // sesin başlaması arasındaki boşluğu kapatıyor.
+    focusOnFine(inputRef.current);
     prefetchGerman(`${before}${answer}${after}`.trim());
   }, [round.id, before, after, answer]);
 
@@ -161,7 +163,6 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             disabled={picked != null}
-            autoFocus
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}

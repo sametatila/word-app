@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
@@ -71,7 +72,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     setResult(null);
     setAiAccepted(false);
     started.current = Date.now();
-    inputRef.current?.focus();
+    focusOnFine(inputRef.current);
     prefetchGerman(sentence.de);
   }, [round.id, sentence.de]);
 
@@ -202,7 +203,6 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           }}
           disabled={status !== "idle"}
           rows={2}
-          autoFocus
           autoCapitalize="sentences"
           autoCorrect="off"
           spellCheck={false}
