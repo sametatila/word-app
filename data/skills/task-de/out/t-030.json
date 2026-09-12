@@ -1,0 +1,297 @@
+[
+ {
+  "tr": "Kayıt kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Anmeldekarte aus."
+ },
+ {
+  "tr": "Mektup kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Briefkarte aus."
+ },
+ {
+  "tr": "Karışıklık kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zur Verwechslung aus."
+ },
+ {
+  "tr": "Konu hesap 4471; iki mektup yazıldı; cevap gelmedi; yıllık hesap özeti isteniyor.",
+  "kind": "form.facts",
+  "de": "Betreff Konto 4471; zwei Briefe geschrieben; keine Antwort; der Jahresauszug wird erbeten."
+ },
+ {
+  "tr": "Siparişler pazartesi karıştı; kutu salı geldi; hata perşembe fark edildi; depo çarşamba düzeltti.",
+  "kind": "form.facts",
+  "de": "Die Bestellungen wurden am Montag vertauscht; die Kiste kam am Dienstag; der Fehler fiel am Donnerstag auf; das Lager korrigierte es am Mittwoch."
+ },
+ {
+  "tr": "Form gişede kaşeleniyor; kart on iş günü sonra; adres kanıtı ve pasaport gerekiyor; ilk gelişte bizzat.",
+  "kind": "form.facts",
+  "de": "Das Formular wird am Schalter gestempelt; die Karte nach zehn Werktagen; Adressnachweis und Pass nötig; beim ersten Mal persönlich."
+ },
+ {
+  "tr": "Form gişede kaşeleniyor.",
+  "kind": "build.tr",
+  "de": "Das Formular wird am Schalter gestempelt."
+ },
+ {
+  "tr": "Sonra hatayı fark ettim.",
+  "kind": "build.tr",
+  "de": "Dann bemerkte ich den Fehler."
+ },
+ {
+  "tr": "Kart ne zaman düzenleniyor?",
+  "kind": "build.tr",
+  "de": "Wann wird die Karte ausgestellt?"
+ },
+ {
+  "tr": "Bu yıl gelirimi beyan ettim.",
+  "kind": "build.tr",
+  "de": "Ich habe dieses Jahr mein Einkommen erklärt."
+ },
+ {
+  "tr": "Daha ucuz olacağını söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, es wäre billiger."
+ },
+ {
+  "tr": "Rezervasyonu iptal edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich werde die Buchung stornieren."
+ },
+ {
+  "tr": "Perşembe doktora görünüyorum.",
+  "kind": "build.tr",
+  "de": "Am Donnerstag gehe ich zum Arzt."
+ },
+ {
+  "tr": "Yanlış kutuyu göndermişlerdi.",
+  "kind": "build.tr",
+  "de": "Sie hatten die falsche Kiste geschickt."
+ },
+ {
+  "tr": "Bildirmedikçe kapsam dışındasın.",
+  "kind": "build.tr",
+  "de": "Du bist nicht versichert, es sei denn, du meldest es."
+ },
+ {
+  "tr": "Her bölümü doldurmak zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst jeden Abschnitt ausfüllen."
+ },
+ {
+  "tr": "Karar verip vermediğimi sordular.",
+  "kind": "build.tr",
+  "de": "Sie fragten, ob ich mich entschieden hätte."
+ },
+ {
+  "tr": "Bakiyeyi bu gece kontrol edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich schaue heute Abend auf den Kontostand."
+ },
+ {
+  "tr": "Ben aradığımda onu düzeltmişlerdi.",
+  "kind": "build.tr",
+  "de": "Als ich anrief, hatten sie es schon korrigiert."
+ },
+ {
+  "tr": "Oturmadan önce sıra fişi almıştım.",
+  "kind": "build.tr",
+  "de": "Ich hatte eine Nummer gezogen, bevor ich mich setzte."
+ },
+ {
+  "tr": "Bana pasaportumu getirmemi söyledi.",
+  "kind": "build.tr",
+  "de": "Er sagte mir, ich solle meinen Pass mitbringen."
+ },
+ {
+  "tr": "Başvurum geçen hafta işleme alındı.",
+  "kind": "build.tr",
+  "de": "Mein Antrag wurde letzte Woche bearbeitet."
+ },
+ {
+  "tr": "Telefon numarası vermen gerekmiyor.",
+  "kind": "build.tr",
+  "de": "Du musst keine Telefonnummer angeben."
+ },
+ {
+  "tr": "Cevabınızı bekliyorum. Saygılarımla.",
+  "kind": "build.tr",
+  "de": "Ich freue mich auf Ihre Antwort. Mit freundlichen Grüßen."
+ },
+ {
+  "tr": "Vizenin süresinin dolduğunu söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, das Visum sei abgelaufen."
+ },
+ {
+  "tr": "Ben oraya vardığımda kuyruk uzamıştı.",
+  "kind": "build.tr",
+  "de": "Als ich dort ankam, war die Schlange länger geworden."
+ },
+ {
+  "tr": "Her yönergeyi önce okumak zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst zuerst jede Anweisung lesen."
+ },
+ {
+  "tr": "İzin belgem olup olmadığını sordular.",
+  "kind": "build.tr",
+  "de": "Sie fragten, ob ich einen Aufenthaltstitel hätte."
+ },
+ {
+  "tr": "Aletin kuru olduğundan emin olmalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest sicherstellen, dass das Werkzeug trocken ist."
+ },
+ {
+  "tr": "İki kez yazmama rağmen cevap alamadım.",
+  "kind": "build.tr",
+  "de": "Obwohl ich zweimal geschrieben habe, kam keine Antwort."
+ },
+ {
+  "tr": "Bir kaza geçirirsen poliçe onu karşılıyor.",
+  "kind": "build.tr",
+  "de": "Wenn du einen Unfall hast, deckt die Police das ab."
+ },
+ {
+  "tr": "Hesabımla ilgili bir talep için yazıyorum.",
+  "kind": "build.tr",
+  "de": "Ich schreibe Ihnen mit einem Anliegen zu meinem Konto."
+ },
+ {
+  "tr": "Daha fazla ödesem daha iyi bir poliçe alırdım.",
+  "kind": "build.tr",
+  "de": "Wenn ich mehr zahlte, bekäme ich eine bessere Police."
+ },
+ {
+  "tr": "O anda verilen karar: „will“.",
+  "kind": "build.hint",
+  "de": "Ein Entschluss im Moment: „will“."
+ },
+ {
+  "tr": "Yıl bitmedi: present perfect.",
+  "kind": "build.hint",
+  "de": "Das Jahr ist nicht vorbei: present perfect. Deutsch nimmt das Perfekt."
+ },
+ {
+  "tr": "Aktarılınca „will“ „would“ oluyor.",
+  "kind": "build.hint",
+  "de": "Wiedergegeben wird aus „will“ ein „would“; Deutsch nimmt den Konjunktiv."
+ },
+ {
+  "tr": "Önceden kurulmuş plan: „going to“.",
+  "kind": "build.hint",
+  "de": "Ein vorher gefasster Plan: „going to“."
+ },
+ {
+  "tr": "„must“ kuralın kendisinden geliyor.",
+  "kind": "build.hint",
+  "de": "„must“ kommt aus der Regel selbst."
+ },
+ {
+  "tr": "Önce olan iş „had“ + üçüncü hâl alıyor.",
+  "kind": "build.hint",
+  "de": "Das Frühere nimmt „had“ + dritte Form, wie das Plusquamperfekt."
+ },
+ {
+  "tr": "Gerçek koşul: iki yarıda da geniş zaman.",
+  "kind": "build.hint",
+  "de": "Reale Bedingung: in beiden Hälften das Präsens."
+ },
+ {
+  "tr": "Edilgen soru: düzenleyen kimse odada değil.",
+  "kind": "build.hint",
+  "de": "Passivfrage: wer ausstellt, sitzt nicht in diesem Raum."
+ },
+ {
+  "tr": "„should“ öğüt; „ensure“ sonrası „that“ düşebiliyor.",
+  "kind": "build.hint",
+  "de": "„should“ ist ein Rat; nach „ensure“ darf „that“ wegfallen — im Deutschen bleibt „dass“."
+ },
+ {
+  "tr": "Anlatıda „daha önce“ demek için: „had“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "In der Erzählung heißt „had“ + dritte Form: davor."
+ },
+ {
+  "tr": "„unless“ „eğer … değilse“ demek; sonrası geniş zaman.",
+  "kind": "build.hint",
+  "de": "„unless“ heißt „es sei denn“; danach steht das Präsens."
+ },
+ {
+  "tr": "Ayarlanmış gelecek: saat belli ve karşı taraf biliyor.",
+  "kind": "build.hint",
+  "de": "Verabredete Zukunft: die Uhrzeit steht fest und die andere Seite weiß davon."
+ },
+ {
+  "tr": "Resmî kayıtta „but“ yerine „although“; kısaltma da yok.",
+  "kind": "build.hint",
+  "de": "Im förmlichen Register steht „although“ statt „but“, und Kurzformen entfallen."
+ },
+ {
+  "tr": "Zaman var: tek bir olay ve bitti. Aynı biçim, başka iş.",
+  "kind": "build.hint",
+  "de": "Eine Zeit steht da: ein einzelnes, abgeschlossenes Ereignis. Dieselbe Form, andere Aufgabe."
+ },
+ {
+  "tr": "Yasak değil, gerek yok: formdaki küçük sözcük „optional“.",
+  "kind": "build.hint",
+  "de": "Kein Verbot, keine Pflicht: das kleine Wort auf dem Formular heißt „optional“."
+ },
+ {
+  "tr": "Zaman yok: bu bir olay değil, işleyiş. Her zaman böyle olur.",
+  "kind": "build.hint",
+  "de": "Keine Zeitangabe: das ist kein Ereignis, sondern der Ablauf. So läuft es immer."
+ },
+ {
+  "tr": "Anlatının kendi anı: sade geçmiş. „had“ burada yanlış olurdu.",
+  "kind": "build.hint",
+  "de": "Der Moment der Erzählung selbst: simple past. „had“ wäre hier falsch."
+ },
+ {
+  "tr": "Gerçek olmayan koşul: geçmiş biçim burada geçmişi anlatmıyor.",
+  "kind": "build.hint",
+  "de": "Irreale Bedingung: die Vergangenheitsform meint hier keine Vergangenheit."
+ },
+ {
+  "tr": "„By the time“ iki geçmişi bağlıyor; uzama varıştan önce olmuş.",
+  "kind": "build.hint",
+  "de": "„By the time“ verbindet zwei Vergangenheiten; das Wachsen lag vor der Ankunft."
+ },
+ {
+  "tr": "„must“ kuralın kendisinden; boş bölüm „bitmedi“ diye okunuyor.",
+  "kind": "build.hint",
+  "de": "„must“ kommt aus der Regel; ein leerer Abschnitt wird als „nicht fertig“ gelesen."
+ },
+ {
+  "tr": "Resmî mektubun sabit açılışı; „I write“ değil, „I am writing“.",
+  "kind": "build.hint",
+  "de": "Der feste Einstieg des förmlichen Briefes; nicht „I write“, sondern „I am writing“."
+ },
+ {
+  "tr": "„By the time“ iki geçmişi bağlıyor; düzeltme aramadan önce olmuş.",
+  "kind": "build.hint",
+  "de": "„By the time“ verbindet zwei Vergangenheiten; die Korrektur lag vor dem Anruf."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile; „have“ da bir basamak geriye kayıyor.",
+  "kind": "build.hint",
+  "de": "Die Ja-Nein-Frage mit „if“; auch „have“ rückt eine Stufe zurück."
+ },
+ {
+  "tr": "Burada „had“ anlatıdan değil, aktarmanın geri kaymasından geliyor.",
+  "kind": "build.hint",
+  "de": "Dieses „had“ kommt nicht aus der Erzählung, sondern aus dem Rückschritt der Wiedergabe. Deutsch nimmt dort den Konjunktiv."
+ },
+ {
+  "tr": "Aktarılınca „has expired“ bir basamak geriye kayıp „had expired“ oluyor.",
+  "kind": "build.hint",
+  "de": "Wiedergegeben rückt „has expired“ eine Stufe zurück zu „had expired“."
+ },
+ {
+  "tr": "„Yours sincerely“ adı bildiğinde; bilmediğinde „Yours faithfully“ olurdu.",
+  "kind": "build.hint",
+  "de": "„Yours sincerely“ steht, wenn man den Namen kennt; sonst „Yours faithfully“. Deutsch trennt das nicht."
+ }
+]

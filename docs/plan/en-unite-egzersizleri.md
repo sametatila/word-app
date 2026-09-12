@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
-| B1 | 10–25 | bekliyor |
+| B1 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
+| B1 | 13–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -678,6 +678,44 @@ dikte cümlesi bölümün ortasında „, which …“ ile sürüyordu, bu yüzd
 tam eşleşmiyordu. Bölümler iki cümleye ayrıldı ve içerik aynı kaldı —
 kapı, virgülle bağlanan uzun bölümlerin dikteye uygun olmadığını her
 seferinde aynı yerden gösteriyor.
+
+**B1 ünite 10–12 (2026-09-12).** Ünite 10 Changing the appointment ·
+Step by step · The mix-up · Making up my mind; ünite 11 Registering here ·
+Filling in the form · Opening an account · At the embassy; ünite 12
+What the policy covers · The tax return · Writing to the office ·
+Waiting my turn. On sekiz egzersiz; ünite dışı ölçüm %0,0. B1
+yuvalarının 72'si dolu.
+
+Bu üç ünite müfredatın PEKİŞTİRME turu: aynı altı yapı yeni alanlardan
+geçiyor. O yüzden öğretme noktaları yeni yapı değil, aynı biçimin AYRI
+İŞLERİ oldu — ve bu, anadil ekseninde beklenmedik biçimde verimli çıktı.
+
+Ünite 10: „had“ iki ayrı iş görüyor. Anlatıda „daha önce“ demek için
+geliyor („They had sent the wrong box“), dolaylı anlatımda ise zamanın
+geri kaymasından doğuyor („They asked if I had decided“). Almanca eksende
+bu, geçen turdaki bulgunun TERSİ: orada bir Almanca biçim iki İngilizce
+biçimi karşılıyordu, burada bir İngilizce biçim İKİ AYRI Almanca biçime
+düşüyor — anlatıda Plusquamperfekt, aktarmada Konjunktiv. Karşılıklar bu
+yüzden iki ayrı yerde iki ayrı şey söylüyor.
+
+Ünite 11: edilgen üçüncü kez başka bir iş görüyor. Ünite 2'de tek bir
+olaydı, ünite 7'de haberin zamanıydı, burada İŞLEYİŞ: „The form is
+stamped at the desk“ cümlesinde zaman YOK ve yokluğu anlamın kendisi.
+İçerik bunu metnin içinde açıkça söylüyor, çünkü aynı paragrafta zamanlı
+bir edilgen de duruyor („My application was processed last week“).
+
+Ünite 12: resmî mektubun dili. Bu bir dilbilgisi değil KAYIT kuralı —
+yanlış cümle anlaşılır ama yanlış yerde durur. Burada İngilizcenin
+Almancada karşılığı olmayan bir kuralı çıktı: adı bildiğinde „Yours
+sincerely“, bilmediğinde „Yours faithfully“. Almanca ikisi için de „Mit
+freundlichen Grüßen“ diyor; karşılık ayrımı adıyla yazıyor.
+
+Ölçüm bu turda elli beş sözlükçe maddesi ekletti ve ÜÇ sözlükçe maddesini
+sildirdi. Sonuncusu yeni bir kusur sınıfı: sözcük SORU KÖKÜNDE geçiyor,
+metinde geçmiyor. İki kapı burada ters yönde çekiyor — `check:en-unitvocab`
+soru kökünü ölçüm yüzeyine katıyor, `check-content` ise sözlükçe
+maddesinin METİNDE bulunmasını istiyor. Doğru çözüm sözlükçe eklemek
+değil, soruyu yeniden yazmak.
 
 ## Tamamlanma ölçütü
 

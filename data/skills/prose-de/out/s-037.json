@@ -1,0 +1,427 @@
+[
+ {
+  "tr": "Üçüncü mektup. Resmî dil neyi değiştiriyor?",
+  "kind": "intro",
+  "de": "Der dritte Brief. Was ändert die förmliche Sprache?"
+ },
+ {
+  "tr": "Yanlış kutu. Hangi olay hangisinden önce oldu?",
+  "kind": "intro",
+  "de": "Die falsche Kiste. Welches Ereignis kam vor welchem?"
+ },
+ {
+  "tr": "Bekleme salonunda iki saat. Sıra nasıl işliyor?",
+  "kind": "intro",
+  "de": "Zwei Stunden im Wartesaal. Wie läuft die Schlange?"
+ },
+ {
+  "tr": "Kayıt işleminin dili. Cümleler neden hep edilgen?",
+  "kind": "intro",
+  "de": "Die Sprache der Anmeldung. Warum steht alles im Passiv?"
+ },
+ {
+  "tr": "Vergi beyanı. Hangi cümle tarihli, hangisi değil?",
+  "kind": "intro",
+  "de": "Die Steuererklärung. Welcher Satz nennt ein Datum, welcher nicht?"
+ },
+ {
+  "tr": "Banka hesabı açılıyor. Hangi ücret var, hangisi yok?",
+  "kind": "intro",
+  "de": "Ein Konto wird eröffnet. Welche Gebühr gibt es, welche nicht?"
+ },
+ {
+  "tr": "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
+  "kind": "intro",
+  "de": "Regeln zum Ausfüllen. Was ist Pflicht, was nicht?"
+ },
+ {
+  "tr": "Poliçenin üç cümlesi. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Drei Sätze aus der Police. Welche Bedingung ist real, welche nicht?"
+ },
+ {
+  "tr": "Randevu değişiyor. Hangi cümle ayarlanmış, hangisi plan?",
+  "kind": "intro",
+  "de": "Ein Termin wird verlegt. Welcher Satz ist verabredet, welcher geplant?"
+ },
+ {
+  "tr": "Aynı „had“, iki ayrı iş. Hangisi anlatı, hangisi aktarma?",
+  "kind": "intro",
+  "de": "Dasselbe „had“, zwei Aufgaben. Welches erzählt, welches gibt wieder?"
+ },
+ {
+  "tr": "Vize görüşmesi. Aktarılan cümlelerde zaman nereye kayıyor?",
+  "kind": "intro",
+  "de": "Das Gespräch zum Visum. Wohin rückt die Zeit in der Wiedergabe?"
+ },
+ {
+  "tr": "Randevu ve yönerge cümleleri. Hangi kip hangi gücü taşıyor?",
+  "kind": "intro",
+  "de": "Sätze zu Termin und Anleitung. Welches Modalverb trägt welche Kraft?"
+ },
+ {
+  "tr": "Resmî mektubun dört sabit parçası. Kısaltma yok, „but“ yok.",
+  "kind": "intro",
+  "de": "Die vier festen Teile des förmlichen Briefes. Keine Kurzformen, kein „but“."
+ },
+ {
+  "tr": "Poliçe ve sıra cümleleri. Hangi koşul gerçek, hangisi değil?",
+  "kind": "intro",
+  "de": "Sätze zu Police und Warteschlange. Welche Bedingung ist real, welche nicht?"
+ },
+ {
+  "tr": "Alet kullanımı anlatılıyor. Hangi kural zorunlu, hangisi öğüt?",
+  "kind": "intro",
+  "de": "Der Gebrauch eines Werkzeugs. Welche Regel ist Pflicht, welche ein Rat?"
+ },
+ {
+  "tr": "Aynı edilgen, üç ayrı iş. Hangisinde zaman var, hangisinde yok?",
+  "kind": "intro",
+  "de": "Dasselbe Passiv, drei Aufgaben. Wo steht eine Zeit, wo keine?"
+ },
+ {
+  "tr": "Büyükelçilik ve banka cümleleri. Aktarmada zaman nereye kayıyor?",
+  "kind": "intro",
+  "de": "Sätze zu Botschaft und Bank. Wohin rückt die Zeit in der Wiedergabe?"
+ },
+ {
+  "tr": "İki seçenek tartılıyor. Aktarılan cümlelerde zaman nereye kayıyor?",
+  "kind": "intro",
+  "de": "Zwei Angebote werden abgewogen. Wohin rückt die Zeit in der Wiedergabe?"
+ },
+ {
+  "tr": "„„Unless“ means „if not“…“",
+  "kind": "explain",
+  "de": "„„Unless“ means „if not“…“"
+ },
+ {
+  "tr": "O anda verilen karar: „will“.",
+  "kind": "explain",
+  "de": "Ein Entschluss im Moment: „will“."
+ },
+ {
+  "tr": "İşleyiş, tek olay, soru, en sonda öğüt.",
+  "kind": "explain",
+  "de": "Der Ablauf, ein einzelnes Ereignis, die Frage, zuletzt der Rat."
+ },
+ {
+  "tr": "Ayarlanmış gelecek: gün belli ve banka biliyor.",
+  "kind": "explain",
+  "de": "Verabredete Zukunft: der Tag steht fest und die Bank weiß davon."
+ },
+ {
+  "tr": "Açılış, geçmiş, istek, kapanış — resmî mektubun sırası.",
+  "kind": "explain",
+  "de": "Einstieg, Vorgeschichte, Anliegen, Schluss — die Ordnung des förmlichen Briefes."
+ },
+ {
+  "tr": "Önce olan iş „had“ + üçüncü hâl; oturmak sonra geliyor.",
+  "kind": "explain",
+  "de": "Das Frühere nimmt „had“ + dritte Form; das Hinsetzen kommt danach."
+ },
+ {
+  "tr": "„You mustn't press both buttons. One at a time, always.“",
+  "kind": "explain",
+  "de": "„You mustn't press both buttons. One at a time, always.“"
+ },
+ {
+  "tr": "„Read the „unless“ lines first. There are usually three…“",
+  "kind": "explain",
+  "de": "„Read the „unless“ lines first. There are usually three…“"
+ },
+ {
+  "tr": "„mustn't“ yasak; „don't have to“ olsaydı gerek yok olurdu.",
+  "kind": "explain",
+  "de": "„mustn't“ heißt Verbot; „don't have to“ hieße keine Pflicht."
+ },
+ {
+  "tr": "Aktarılınca zaman geri kayıyor: „has expired“ → „had expired“.",
+  "kind": "explain",
+  "de": "Wiedergegeben rückt die Zeit zurück: „has expired“ → „had expired“. Deutsch nimmt den Konjunktiv."
+ },
+ {
+  "tr": "„it is read as „not finished“, and the form goes back in the post.“",
+  "kind": "explain",
+  "de": "„it is read as „not finished“, and the form goes back in the post.“"
+ },
+ {
+  "tr": "„You don't have to give a phone number. … the small word is „optional“.“",
+  "kind": "explain",
+  "de": "„You don't have to give a phone number. … the small word is „optional“.“"
+ },
+ {
+  "tr": "„She said that it would be cheaper.“ — aktarılınca „will“ „would“ oluyor.",
+  "kind": "explain",
+  "de": "„She said that it would be cheaper.“ — wiedergegeben wird aus „will“ ein „would“."
+ },
+ {
+  "tr": "Pazartesi karışıklık, salı teslim, çarşamba düzeltme, perşembe fark ediş.",
+  "kind": "explain",
+  "de": "Montag die Verwechslung, Dienstag die Lieferung, Mittwoch die Korrektur, Donnerstag das Bemerken."
+ },
+ {
+  "tr": "Yıl bitmedi, o yüzden present perfect; „last year“ olsaydı sade geçmiş olurdu.",
+  "kind": "explain",
+  "de": "Das Jahr ist nicht vorbei, deshalb present perfect; mit „last year“ wäre es simple past."
+ },
+ {
+  "tr": "hiçbiri",
+  "kind": "gloss.tr",
+  "de": "keiner"
+ },
+ {
+  "tr": "var",
+  "kind": "gloss.tr",
+  "de": "gibt es"
+ },
+ {
+  "tr": "çift",
+  "kind": "gloss.tr",
+  "de": "doppelt"
+ },
+ {
+  "tr": "ekte",
+  "kind": "gloss.tr",
+  "de": "beigefügt"
+ },
+ {
+  "tr": "şube",
+  "kind": "gloss.tr",
+  "de": "Filiale"
+ },
+ {
+  "tr": "kayıt",
+  "kind": "gloss.tr",
+  "de": "Anmeldung"
+ },
+ {
+  "tr": "ajanda",
+  "kind": "gloss.tr",
+  "de": "Kalender"
+ },
+ {
+  "tr": "bakiye",
+  "kind": "gloss.tr",
+  "de": "Kontostand"
+ },
+ {
+  "tr": "fişler",
+  "kind": "gloss.tr",
+  "de": "Belege"
+ },
+ {
+  "tr": "uzamış",
+  "kind": "gloss.tr",
+  "de": "war länger geworden"
+ },
+ {
+  "tr": "uzatma",
+  "kind": "gloss.tr",
+  "de": "Verlängerung"
+ },
+ {
+  "tr": "edilgen",
+  "kind": "gloss.tr",
+  "de": "das Passiv"
+ },
+ {
+  "tr": "kutucuk",
+  "kind": "gloss.tr",
+  "de": "Kästchen"
+ },
+ {
+  "tr": "önceden",
+  "kind": "gloss.tr",
+  "de": "im Voraus"
+ },
+ {
+  "tr": "başvuran",
+  "kind": "gloss.tr",
+  "de": "antragstellende Person"
+ },
+ {
+  "tr": "boş saat",
+  "kind": "gloss.tr",
+  "de": "freier Termin"
+ },
+ {
+  "tr": "ilkbahar",
+  "kind": "gloss.tr",
+  "de": "Frühjahr"
+ },
+ {
+  "tr": "on dördü",
+  "kind": "gloss.tr",
+  "de": "der Vierzehnte"
+ },
+ {
+  "tr": "tarayıcı",
+  "kind": "gloss.tr",
+  "de": "Scanner"
+ },
+ {
+  "tr": "uzamıştı",
+  "kind": "gloss.tr",
+  "de": "war länger geworden"
+ },
+ {
+  "tr": "anlaşılır",
+  "kind": "gloss.tr",
+  "de": "klar"
+ },
+ {
+  "tr": "cevap yok",
+  "kind": "gloss.tr",
+  "de": "keine Antwort"
+ },
+ {
+  "tr": "her kimse",
+  "kind": "gloss.tr",
+  "de": "wer auch immer"
+ },
+ {
+  "tr": "ince yazı",
+  "kind": "gloss.tr",
+  "de": "das Kleingedruckte"
+ },
+ {
+  "tr": "sessizlik",
+  "kind": "gloss.tr",
+  "de": "Schweigen"
+ },
+ {
+  "tr": "var olmak",
+  "kind": "gloss.tr",
+  "de": "existieren"
+ },
+ {
+  "tr": "büyük harf",
+  "kind": "gloss.tr",
+  "de": "Großbuchstaben"
+ },
+ {
+  "tr": "emin olmak",
+  "kind": "gloss.tr",
+  "de": "sicherstellen"
+ },
+ {
+  "tr": "karşılıyor",
+  "kind": "gloss.tr",
+  "de": "deckt ab"
+ },
+ {
+  "tr": "aylık ücret",
+  "kind": "gloss.tr",
+  "de": "monatliche Gebühr"
+ },
+ {
+  "tr": "kaşeleniyor",
+  "kind": "gloss.tr",
+  "de": "wird gestempelt"
+ },
+ {
+  "tr": "püf noktası",
+  "kind": "gloss.tr",
+  "de": "der Kniff"
+ },
+ {
+  "tr": "ayakta kaldı",
+  "kind": "gloss.tr",
+  "de": "blieben übrig"
+ },
+ {
+  "tr": "düzenleniyor",
+  "kind": "gloss.tr",
+  "de": "wird ausgestellt"
+ },
+ {
+  "tr": "gerçek koşul",
+  "kind": "gloss.tr",
+  "de": "reale Bedingung"
+ },
+ {
+  "tr": "hasar talebi",
+  "kind": "gloss.tr",
+  "de": "Schadensmeldung"
+ },
+ {
+  "tr": "isteğe bağlı",
+  "kind": "gloss.tr",
+  "de": "freiwillig"
+ },
+ {
+  "tr": "izin belgesi",
+  "kind": "gloss.tr",
+  "de": "Aufenthaltstitel"
+ },
+ {
+  "tr": "karar vermiş",
+  "kind": "gloss.tr",
+  "de": "sich entschieden"
+ },
+ {
+  "tr": "işleme alındı",
+  "kind": "gloss.tr",
+  "de": "wurde bearbeitet"
+ },
+ {
+  "tr": "süresi dolmuş",
+  "kind": "gloss.tr",
+  "de": "abgelaufen"
+ },
+ {
+  "tr": "yapmaya değer",
+  "kind": "gloss.tr",
+  "de": "lohnt sich"
+ },
+ {
+  "tr": "göndermişlerdi",
+  "kind": "gloss.tr",
+  "de": "hatten geschickt"
+ },
+ {
+  "tr": "kutucuk başına",
+  "kind": "gloss.tr",
+  "de": "pro Kästchen"
+ },
+ {
+  "tr": "sipariş başına",
+  "kind": "gloss.tr",
+  "de": "pro Bestellung"
+ },
+ {
+  "tr": "asıl karışıklık",
+  "kind": "gloss.tr",
+  "de": "die eigentliche Verwirrung"
+ },
+ {
+  "tr": "en kısa zamanda",
+  "kind": "gloss.tr",
+  "de": "baldmöglichst"
+ },
+ {
+  "tr": "yer değiştirmiş",
+  "kind": "gloss.tr",
+  "de": "vertauscht"
+ },
+ {
+  "tr": "etiketin üstünde",
+  "kind": "gloss.tr",
+  "de": "auf dem Etikett"
+ },
+ {
+  "tr": "yeniden planlamak",
+  "kind": "gloss.tr",
+  "de": "neu ansetzen"
+ },
+ {
+  "tr": "herhangi bir yerde",
+  "kind": "gloss.tr",
+  "de": "irgendwo"
+ },
+ {
+  "tr": "daha ucuz olacağını",
+  "kind": "gloss.tr",
+  "de": "dass es billiger wäre"
+ }
+]
