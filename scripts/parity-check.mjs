@@ -7469,6 +7469,88 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 260. COKME SINIRI -----------------------------------------------
+   *
+   * Yine ONDE OLAN WEB. Bir ekranin ciziminde yakalanmamis bir hata olursa
+   * React butun agaci sokuyor. Webde bu baştan beri cozulmustu - iki
+   * `error.tsx` bir kart cizip "tekrar dene" veriyor - MOBILDE HIC SINIR
+   * YOKTU: gelistirmede kirmizi ekran, URETIMDE bombos bir pencere ve
+   * kullanicinin elinde uygulamayi olduren bir hareketten baska bir sey yok.
+   *
+   * Telemetri hatayi SAYIYORDU (`lib/telemetry`, `ErrorUtils` kancasi) ama
+   * CIZIM hatalari o kancaya HIC UGRAMIYOR: React onlari sinira veriyor,
+   * sinir yoksa agaci sokuyor. Yani coken ekranlarin bir bolumu hem
+   * gorunmuyor hem sayilmiyordu.
+   *
+   * IKI DUZEY, webdeki gibi:
+   *   - EKRAN BASINA sinir: gezginin duzen sarmalayicilarinda
+   *     (`contentColumnLayout` / `wideColumnLayout`). Sekme cubugu ve
+   *     gezinme ayakta kaliyor. Web karsiligi `app/(app)/error.tsx`.
+   *   - KOK sinir: `App.tsx`, tema saglayicisinin icinde. Web karsiligi
+   *     `app/error.tsx`.
+   *
+   * Duzen sarmalayicilarina konmasinin sebebi teknik ve yazili: React
+   * Navigation'da `Screen.layout`, `Group.screenLayout` ve gezginin
+   * `screenLayout`u arasindan yalniz BIRI uygulaniyor. Sinir ayri bir
+   * `screenLayout` olsaydi sutun duzenini ezerdi.
+   *
+   * Metin de ORTAK: `crash.title` / `crash.body` artik taban sozlukte ve iki
+   * platform ayni cumleyi yaziyor (once web'e ozel `err.title`/`err.body`
+   * ikilisiydi). `err.code` webde kaldi - `digest` Next'in kavrami. */
+  {
+    const KATMAN = [
+      ["ekran basina", "src/app/(app)/error.tsx", "mobile/src/ui/ContentColumn.tsx"],
+      ["kok", "src/app/error.tsx", "mobile/App.tsx"],
+    ];
+    sameList(
+      "cokme sinirinin iki katmani",
+      KATMAN.map(([ad, , m]) => ad + "=" + (/<ErrorBoundary\b/.test(sil(read(m))) ? "sinir var" : "SINIR YOK")),
+      KATMAN.map(([ad, w]) => ad + "=" + (/export default function \w+\(\s*\{\s*\n?\s*error/.test(read(w)) || /error,\s*\n\s*reset,/.test(read(w)) ? "sinir var" : "SINIR YOK")),
+      "mobil",
+      "web",
+    );
+
+    /* Sinirin ICI: ayni dort parca iki tarafta da. */
+    const eb = sil(read("mobile/src/ui/ErrorBoundary.tsx"));
+    const we = sil(read("src/app/(app)/error.tsx"));
+    const PARCA = [
+      ["baslik", /crash\.title/],
+      ["govde", /crash\.body/],
+      ["tekrar dene", /common\.try_again/],
+      ["uyari ikonu", /AlertIcon/],
+      ["yenile ikonu", /RefreshIcon/],
+      ["olcum", /track\("client_error", 1/],
+    ];
+    sameList(
+      "cokme kartinin parcalari",
+      PARCA.map(([ad, d]) => ad + "=" + (d.test(eb) ? "var" : "YOK")),
+      PARCA.map(([ad, d]) => ad + "=" + (d.test(we) ? "var" : "YOK")),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: her ekran bir duzen sarmalayicisindan geciyor, yani hicbiri
+       sinirsiz kalmiyor. Sekmeleri barindiran ekran BILEREK disarida (kendi
+       ekranlari kendi icinde sariliyor) ve gerekcesi burada olculuyor. */
+    const rs = sil(read("mobile/src/navigation/RootStack.tsx"));
+    const sinirsiz = [];
+    for (const m of rs.matchAll(/<Stack\.Screen\s+name="(\w+)"[\s\S]{0,200}?\/>/g)) {
+      if (m[1] === "Tabs") continue;
+      if (!/layout=\{(?:content|wide)ColumnLayout\}/.test(m[0]) && !/screenLayout=\{contentColumnLayout\}/.test(rs.slice(0, m.index))) {
+        sinirsiz.push(m[1]);
+      }
+    }
+    if (!/<Stack\.Screen name="Tabs" component=\{RootTabs\} \/>/.test(rs)) sinirsiz.push("Tabs muafiyeti artik gecerli degil");
+    if (!/screenLayout=\{contentColumnLayout\}/.test(sil(read("mobile/src/navigation/RootTabs.tsx")))) sinirsiz.push("sekme ekranlari sarmalanmiyor");
+    sameList(
+      "duzen sarmalayicisiz ekran",
+      sinirsiz.length ? sinirsiz : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 259. BASLIK BASLIK OLARAK OKUNUYOR -----------------------------
    *
    * Bu kez ONDE OLAN WEB. Web'de basliklar `<h1>`/`<h2>`/`<h3>`: ekran
