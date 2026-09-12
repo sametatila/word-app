@@ -44,10 +44,10 @@ export const a1U06: SkillExercise[] = [
         explain: "Menüde „Kakao — 3,00 Euro“. 2,50 kahve, 1,50 su.",
       },
       {
-        text: "Richtig oder falsch? Man kann hier Bier bestellen.",
+        text: "Richtig oder falsch? Man kann hier kein Bier bestellen.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
+        answer: 0,
+        explain: "Doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
       },
       {
         text: "Was ist im Frühstück?",
@@ -100,10 +100,10 @@ export const a1U06: SkillExercise[] = [
         explain: "„Ich trinke eine Tasse Kaffee.“",
       },
       {
-        text: "Richtig oder falsch? Tom isst viel zum Frühstück.",
+        text: "Richtig oder falsch? Tom isst nichts zum Frühstück.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
+        answer: 0,
+        explain: "Doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
       },
       {
         text: "Wer trinkt Kakao?",
@@ -171,10 +171,10 @@ export const a1U06: SkillExercise[] = [
         explain: "„Und ein Glas Wasser.“",
       },
       {
-        text: "Richtig oder falsch? Die Person möchte keine Marmelade.",
+        text: "Richtig oder falsch? Die Person möchte Marmelade.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
+        answer: 0,
+        explain: "Doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
       },
           {
         kind: "gapfill",
@@ -228,10 +228,10 @@ export const a1U06: SkillExercise[] = [
         explain: "„Zum Mitnehmen, bitte.“ — paket, yani yanına alıyor.",
       },
       {
-        text: "Richtig oder falsch? Die Person bestellt kein Getränk.",
+        text: "Richtig oder falsch? Die Person bestellt ein Wasser.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ja, ein Wasser bitte.“",
+        answer: 0,
+        explain: "Doğru: „Ja, ein Wasser bitte.“",
       },
           {
         kind: "gapfill",

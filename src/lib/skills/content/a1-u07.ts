@@ -45,10 +45,10 @@ export const a1U07: SkillExercise[] = [
         explain: "„zwei Kilo Kartoffeln“. Bir kilo olan domates.",
       },
       {
-        text: "Richtig oder falsch? Tom braucht auch Obst.",
+        text: "Richtig oder falsch? Tom braucht kein Obst.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Obst brauchen wir nicht, wir haben noch Äpfel und Bananen.“",
+        answer: 0,
+        explain: "Doğru: „Obst brauchen wir nicht, wir haben noch Äpfel und Bananen.“",
       },
       {
         text: "Was kocht Tom heute?",
@@ -104,10 +104,10 @@ export const a1U07: SkillExercise[] = [
         explain: "„Äpfel und Bananen mag ich sehr.“",
       },
       {
-        text: "Richtig oder falsch? Tom isst gern Fleisch.",
+        text: "Richtig oder falsch? Tom isst nicht gern Fleisch.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
+        answer: 0,
+        explain: "Doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
       },
       {
         text: "Was essen Elifs Kinder lieber?",
@@ -174,10 +174,10 @@ export const a1U07: SkillExercise[] = [
         explain: "„ich möchte zwei Flaschen“ — miktardan sonra çoğul: Flasche → Flaschen.",
       },
       {
-        text: "Richtig oder falsch? Das Geschäft hat kein Mineralwasser.",
+        text: "Richtig oder falsch? Das Geschäft hat Mineralwasser.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ja, eine Flasche kostet 0,80 Euro.“",
+        answer: 0,
+        explain: "Doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
       },
           {
         kind: "gapfill",

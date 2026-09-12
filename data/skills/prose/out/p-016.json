@@ -1,152 +1,737 @@
 [
- { "tr": "Dönüşlü zamir fiilden hemen sonra, da-bileşiği sonda: Ich kümmere mich darum.", "kind": "explain", "en": "The reflexive pronoun straight after the verb, the da- compound last: Ich kümmere mich darum." },
- { "tr": "eben, wohl, schon, endlich — dördü de cümlenin ortasında durur ve tonu taşır.", "kind": "intro", "en": "eben, wohl, schon, endlich — all four sit in the middle of the sentence and carry the tone." },
- { "tr": "İddia kimin? Söylenti kipi, dolaylı soru, iki parçalı bağlaç ve ortaç sıfatı.", "kind": "intro", "en": "Whose claim is it? The reporting mood, an indirect question, a two-part connector and a participle adjective." },
- { "tr": "İki mastar sona ve modal en arkaya gider: Wir hätten das früher sehen müssen.", "kind": "explain", "en": "Two infinitives go last with the modal right at the back: Wir hätten das früher sehen müssen." },
- { "tr": "İkisi de karşıtlık kurar: obwohl yan cümle ister, trotz genitif bir ad öbeği.", "kind": "intro", "en": "Both build a contrast: obwohl needs a clause, trotz a genitive noun phrase." },
- { "tr": "İlk bölümde kendini tanıtırken söylüyor: „Förster hier seit achtzehn Jahren.“", "kind": "explain", "en": "He says it while introducing himself in the first part: „Förster hier seit achtzehn Jahren.“" },
- { "tr": "indem yöntemi bildirir ve yan cümle kurar: özne tekrarlanır, fiil sona gider.", "kind": "explain", "en": "indem gives the method and opens a clause: the subject is repeated and the verb goes last." },
- { "tr": "İş seyahati beşine kadar sürdüğü için izin en erken sekizinde başlayabiliyor.", "kind": "explain", "en": "The business trip runs to the fifth, so the leave can start on the eighth at the earliest." },
- { "tr": "Kip fiilleri geçmişte Perfekt kurmaz, kısa biçimlerini alır: können → konnte.", "kind": "explain", "en": "Modal verbs do not form a Perfekt in the past, they take their short forms: können → konnte." },
- { "tr": "Malzeme listesinde et yok: patates, havuç, soğan, su, tuz, biber ve tereyağı.", "kind": "explain", "en": "There is no meat on the list: potatoes, carrots, onion, water, salt, pepper and butter." },
- { "tr": "Mektup tarihinden saymak üç gün kaybettiriyor, açtığı günden saymak her şeyi.", "kind": "explain", "en": "Counting from the date of the letter loses you three days; counting from the day you opened it loses everything." },
- { "tr": "Özneli biçimde fiil edilgen olur ve arkasından „to“ gelir: is believed to be.", "kind": "explain", "en": "In the subject-raised form the verb goes passive and „to“ follows: is believed to be." },
- { "tr": "Pitch'in ayırt edici cümlesi bu kalıpla kuruluyor: der Clou daran ist, dass …", "kind": "explain", "en": "The distinguishing sentence of the pitch is built with this pattern: der Clou daran ist, dass …" },
- { "tr": "Sahip nötr (das Gebäude) olduğu için dessen; ardından gelen ad artikel almaz.", "kind": "explain", "en": "The owner is neuter (das Gebäude), hence dessen; the noun after it takes no article." },
- { "tr": "Sigortaya kısa bir e-posta yaz: neyi soruyorsun, hangi belgeyi gönderiyorsun?", "kind": "intro", "en": "Write a short email to the insurer: what are you asking, which document are you sending?" },
- { "tr": "Sunumun son iki dakikasını anlatan bir rehber. Kapanış kalıplarına dikkat et.", "kind": "intro", "en": "A guide to the last two minutes of a talk. Watch the closing patterns." },
- { "tr": "Tatildesin; önce iki cümle kur, sonra bir arkadaşına kısa bir kartpostal yaz.", "kind": "intro", "en": "You are on holiday; first form two sentences, then write a short postcard to a friend." },
- { "tr": "Verginin nereye gittiğini anlatan bir yazı. Paranın kaynağı nasıl söyleniyor?", "kind": "intro", "en": "An article about where your taxes go. How is the source of the money described?" },
- { "tr": "würdigen: değerini teslim etmek. Övmekten farkı, iddia değil ayrıntı sunması.", "kind": "explain", "en": "würdigen: to give something its due. Unlike praising, it offers detail rather than a claim." },
- { "tr": "Yanlış: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“", "kind": "explain", "en": "False: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“" },
- { "tr": "Yanlış: „Getränke und Torte machen wir.“ Misafirler isterse salata getiriyor.", "kind": "explain", "en": "False: „Getränke und Torte machen wir.“ The guests bring a salad if they want to." },
- { "tr": "Yanlış: „Ja, ich habe die Aufnahme.“ Sorun alıntıda değil, haberi çıkarmakta.", "kind": "explain", "en": "False: „Ja, ich habe die Aufnahme.“ The trouble is not the quotation but running the story." },
- { "tr": "Zaman iki kez işaretlenmez: „did“ geçmişi üstlenince fiil yalın hâline döner.", "kind": "explain", "en": "Tense is not marked twice: once „did“ takes the past on, the verb returns to its bare form." },
- { "tr": "„austragen“ ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşer.", "kind": "explain", "en": "„austragen“ is a separable verb; in the present the prefix falls to the end of the sentence." },
- { "tr": "„Bitte lasst die Taschen im Bus.“ — ihr biçiminde emir kipinde özne söylenmez.", "kind": "explain", "en": "„Bitte lasst die Taschen im Bus.“ — the ihr imperative names no subject." },
- { "tr": "„das Auto“ nötr, iyelik eksiz kalır ve sıfat cinsi gösterir: unser neues Auto.", "kind": "explain", "en": "„das Auto“ is neuter, the possessive takes no ending and the adjective shows the gender: unser neues Auto." },
- { "tr": "„ein Verlierer, der trotzdem etwas mitnahm“ — deyimin mantığı buradan geliyor.", "kind": "explain", "en": "„ein Verlierer, der trotzdem etwas mitnahm“ — that is where the logic of the idiom comes from." },
- { "tr": "„einrühren“ ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşer.", "kind": "explain", "en": "„einrühren“ is a separable verb; in the present the prefix falls to the end of the sentence." },
- { "tr": "„Ich bin hier Stammkundin, geht da nichts?“ — satıcı sorup özel fiyat veriyor.", "kind": "explain", "en": "„Ich bin hier Stammkundin, geht da nichts?“ — the seller asks and gives a special price." },
- { "tr": "„Ich schlage deshalb kein Verbot vor.“ — yerine küçük bir alışkanlık öneriyor.", "kind": "explain", "en": "„Ich schlage deshalb kein Verbot vor.“ — instead he suggests one small habit." },
- { "tr": "„legen“ hareket anlatır, soru wohin? — eril kelimede Akkusativ: auf den Tisch.", "kind": "explain", "en": "„legen“ describes a movement, the question is wohin? — a masculine word goes accusative: auf den Tisch." },
- { "tr": "„mal“ ricayı küçültür ve gündelikleştirir: büyük bir şey istemiyorum demektir.", "kind": "explain", "en": "„mal“ makes the request smaller and everyday: it says I am not asking for much." },
- { "tr": "„Mein Mann ist jahrelang mit dem Rad zur Arbeit gefahren.“ Otomobilleri yoktu.", "kind": "explain", "en": "„Mein Mann ist jahrelang mit dem Rad zur Arbeit gefahren.“ They had no car." },
- { "tr": "„Start um neun Uhr vor dem Haus.“ Saat on ile iki pazartesi pizzanın saatleri.", "kind": "explain", "en": "„Start um neun Uhr vor dem Haus.“ Ten and two are the Monday pizza times." },
- { "tr": "„um“ mastar ister, çekimli fiil alamaz; doğrusu „damit ich es nicht vergesse“.", "kind": "explain", "en": "„um“ needs an infinitive and takes no finite verb; the correct form is „damit ich es nicht vergesse“." },
- { "tr": "„Wenn man 'seit gestern' einsetzen kann, ist es ein Zustand und braucht sein.“", "kind": "explain", "en": "„Wenn man 'seit gestern' einsetzen kann, ist es ein Zustand und braucht sein.“" },
- { "tr": "„Wir sind ein kleines Team von acht Mitarbeitern.“ Yirmi, görüşmenin dakikası.", "kind": "explain", "en": "„Wir sind ein kleines Team von acht Mitarbeitern.“ Twenty is the length of the interview in minutes." },
- { "tr": "„Woran haben Sie da besonders gedacht?“ — ima görünür oluyor, suçlama olmadan.", "kind": "explain", "en": "„Woran haben Sie da besonders gedacht?“ — the implication is made visible without an accusation." },
- { "tr": "Bir başvuru süreci. Ne zaman 'wurde', ne zaman 'war' kullanıldığına dikkat et.", "kind": "intro", "en": "An application process. Watch when 'wurde' is used and when 'war'." },
- { "tr": "Bir teknik destek hattını arayan müşterinin telefon görüşmesini dinleyeceksin.", "kind": "intro", "en": "You are going to hear a customer's phone call to a technical support line." },
- { "tr": "Bir ticaret odasının iş kurma rehberi. Resmî dilin adlaştırmalarına dikkat et.", "kind": "intro", "en": "A chamber of commerce guide to starting a business. Watch the nominalisations of formal language." },
- { "tr": "Doğaçlama, boşluğu bir sonraki konuşmacının işine yarayacak biçimde doldurmak.", "kind": "explain", "en": "Improvising means filling the gap in a way that helps the next speaker." },
- { "tr": "Doğru bir cleft: „What …“ öbeği özne, „was“ yüklem, vurgu „the tone“ üzerinde.", "kind": "explain", "en": "A correct cleft: the „What …“ phrase is the subject, „was“ the verb, the stress on „the tone“." },
- { "tr": "Edilgen: yardımcı fiil ile ortaç. „… muss der Schaden sofort gemeldet werden.“", "kind": "explain", "en": "The passive: an auxiliary and a participle. „… muss der Schaden sofort gemeldet werden.“" },
- { "tr": "Elif'in arkadaşına gönderdiği, aile fotoğrafını anlatan e-postayı okuyacaksın.", "kind": "intro", "en": "You are going to read the email in which Elif describes a family photo to her friend." },
- { "tr": "Emeklilik birikimi üzerine bir rehber yazı. Tahmin bildiren kiplere dikkat et.", "kind": "intro", "en": "A guide to saving for retirement. Watch the modals that mark a guess." },
- { "tr": "Emir cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.", "kind": "explain", "en": "An imperative plus a clause: in the clause the verb goes last — „was passiert ist“." },
- { "tr": "Emma \"I bought three books for 90 lira\" diyor. Üç kitaba toplam 90 lira ödedi.", "kind": "explain", "en": "Emma says \"I bought three books for 90 lira\". She paid 90 lira for three books in all." },
- { "tr": "İki parça cümlenin iki ucundadır: yardımcı fiil ikinci sırada, ortaç en sonda.", "kind": "explain", "en": "The two parts sit at either end of the sentence: the auxiliary second, the participle last." },
- { "tr": "İki tarafta da karşılaştırma derecesi var ve fiiller doğru yerde; cümle doğru.", "kind": "explain", "en": "Both halves have a comparative and the verbs are in the right place; the sentence is right." },
- { "tr": "İsimleşme ve edilgen sorumluluğu cümleden çıkarır; C1'de her ikisi de araçtır.", "kind": "intro", "en": "Nominalisation and the passive take responsibility out of the sentence; at C1 both are tools." },
- { "tr": "je yan cümlede, desto ana cümlede; her iki yarı da karşılaştırma biçimi ister.", "kind": "explain", "en": "je in the clause, desto in the main clause; both halves need a comparative form." },
- { "tr": "Kaan kız kardeşi için \"She's nineteen. She's studying music in London.\" diyor.", "kind": "explain", "en": "\"She's nineteen. She's studying music in London.\" — that is what Kaan says about his sister." },
- { "tr": "Katılmayanlara toplantıda ne konuşulduğunu yaz — kendi görüşünü karıştırmadan.", "kind": "intro", "en": "Write to those who were away what was discussed at the meeting — without mixing in your own view." },
- { "tr": "Ortaç sıfat gibi isimden önce durur: Die spielenden Kinder sind ziemlich laut.", "kind": "explain", "en": "The participle stands before the noun like an adjective: Die spielenden Kinder sind ziemlich laut." },
- { "tr": "Otobüsü kaçırınca yürümüş: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“", "kind": "explain", "en": "He missed the bus and walked: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“" },
- { "tr": "Resmî kayıtta neden aufgrund + genitif ile verilir; günlük dilde wegen olurdu.", "kind": "explain", "en": "In formal register the reason is given with aufgrund + genitive; everyday language would use wegen." },
- { "tr": "Sıra sabittir: artikel + tümleçler + ortaç + isim. Tümleç ortaçtan önce gelir.", "kind": "explain", "en": "The order is fixed: article + complements + participle + noun. The complement comes before the participle." },
- { "tr": "sich erweisen als: deneyim sonucunda ortaya çıkan yargı — iddiadan daha güçlü.", "kind": "explain", "en": "sich erweisen als: a judgement that emerges from experience — stronger than a claim." },
- { "tr": "Stres üzerine kısa bir yazı. Neden kafamızı dağıtamıyoruz, ne yardımcı oluyor?", "kind": "intro", "en": "A short article about stress. Why can we not switch off, and what helps?" },
- { "tr": "Tartışma kültürü üzerine bir yazı. İki tarafı birden anan cümlelere dikkat et.", "kind": "intro", "en": "An article about how we argue. Watch the sentences that name both sides at once." },
- { "tr": "Yanlış: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“", "kind": "explain", "en": "False: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“" },
- { "tr": "Yanlış: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“", "kind": "explain", "en": "False: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“" },
- { "tr": "Yanlış: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“", "kind": "explain", "en": "False: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“" },
- { "tr": "Yanlış: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Sahte değil, eski.", "kind": "explain", "en": "False: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Not fake but old." },
- { "tr": "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten, yardımcı fiil „ist“.", "kind": "explain", "en": "„anhalten“ is both separable and irregular: the participle is angehalten and the auxiliary „ist“." },
- { "tr": "„Anmeldung bis Freitag im Büro oder am Telefon“ — e-posta ya da bahçe geçmiyor.", "kind": "explain", "en": "„Anmeldung bis Freitag im Büro oder am Telefon“ — email and the garden do not count." },
- { "tr": "„Beim Abgeben weint man einen Tag.“ — „bei“ + adlaştırma bir zaman öbeği kurar.", "kind": "explain", "en": "„Beim Abgeben weint man einen Tag.“ — „bei“ + a nominalisation makes a time phrase." },
- { "tr": "„Das ist richtig. Dem ist entgegenzuhalten, dass …“ — kabul artı sınırlandırma.", "kind": "explain", "en": "„Das ist richtig. Dem ist entgegenzuhalten, dass …“ — a concession plus a limit." },
- { "tr": "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda anlaşılan tarihler.", "kind": "explain", "en": "„Ich habe noch zwölf Urlaubstage.“ Eight and fifteen are the dates finally agreed." },
- { "tr": "„Ich möchte dieses Paket in die Türkei schicken.“ Ülke adı ilk cümlede geçiyor.", "kind": "explain", "en": "„Ich möchte dieses Paket in die Türkei schicken.“ The country is named in the first sentence." },
- { "tr": "„ich habe Ihre Kritik von damals ernst genommen“ — iğnelemeyi kabule çeviriyor.", "kind": "explain", "en": "„ich habe Ihre Kritik von damals ernst genommen“ — she turns the jibe into an acceptance." },
- { "tr": "„if“ yarısında „will“ kullanılmaz; doğrusu „If it rains, we will stay at home.“", "kind": "explain", "en": "„will“ is not used in the „if“ half; the correct form is „If it rains, we will stay at home.“" },
- { "tr": "„Nur eines belegt es.“ İddia ile kanıt arasındaki fark bu ünitenin ölçtüğü şey.", "kind": "explain", "en": "„Nur eines belegt es.“ The difference between a claim and proof is what this unit measures." },
- { "tr": "„sein“ ikinci sırada, „zu + mastar“ en sonda: Der Text ist leicht zu verstehen.", "kind": "explain", "en": "„sein“ second, „zu + infinitive“ right at the end: Der Text ist leicht zu verstehen." },
- { "tr": "„sich lassen“ tam olarak „können + Passiv“ın yerini tutar; ikisi eş anlamlıdır.", "kind": "explain", "en": "„sich lassen“ stands exactly in place of „können + Passiv“; the two mean the same." },
- { "tr": "„Sie hätten mit einem ganzen Schuljahr gerechnet …“ — dört ay beklenenden kısa.", "kind": "explain", "en": "„Sie hätten mit einem ganzen Schuljahr gerechnet …“ — four months is shorter than expected." },
- { "tr": "„That is not an accident.“ — bir önceki gözlemin rastlantı olmadığını söylüyor.", "kind": "explain", "en": "„That is not an accident.“ — it says the previous observation is no coincidence." },
- { "tr": "„The museum closes … at six o'clock“ ama „The shop is open until ten past six.“", "kind": "explain", "en": "„The museum closes … at six o'clock“ but „The shop is open until ten past six.“" },
- { "tr": "„We are for something.“ — bir önceki cümledeki „against“ ile karşıtlık kuruyor.", "kind": "explain", "en": "„We are for something.“ — it builds a contrast with the „against“ in the sentence before." },
- { "tr": "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“, ortaç ortadan açılıyor.", "kind": "explain", "en": "„weglaufen“ is a verb of movement: „ist weggelaufen“, with the participle opening in the middle." },
- { "tr": "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“", "kind": "explain", "en": "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“" },
- { "tr": "Arkadan „dass“ cümlesi geliyor; edat önce da- bileşiği olarak duyurulur: damit.", "kind": "explain", "en": "A „dass“ clause follows; the preposition is announced first as a da- compound: damit." },
- { "tr": "Arkasından çekimli bir fiil geliyor, mastar değil; bu durumda damit kullanılır.", "kind": "explain", "en": "A finite verb follows, not an infinitive; in that case damit is used." },
- { "tr": "Ayrılabilen fiilin Partizip'inde ge- ön ekle kökün arasına girer: an-ge-nommen.", "kind": "explain", "en": "In the participle of a separable verb ge- goes between the prefix and the stem: an-ge-nommen." },
- { "tr": "Başlık ve Nils'in son cümlesi aynı soruyu soruyor: „What do you do with yours?“", "kind": "explain", "en": "The heading and Nils's last sentence ask the same question: „What do you do with yours?“" },
- { "tr": "Bir eczacı hastaya yeni bir ilacı anlatıyor. Neyin denenmiş olduğuna dikkat et.", "kind": "intro", "en": "A chemist explains a new medicine to a patient. Watch what has been trialled." },
- { "tr": "Bir işletmede boş kadro konuşuluyor. Eksikliğin nasıl dile getirildiğini dinle.", "kind": "intro", "en": "A vacancy at a firm is discussed. Listen to how the shortage is put into words." },
- { "tr": "Bir konuda görüşünü yaz. Yan cümleye gönderme yaparken 'da-' bileşiğini unutma.", "kind": "intro", "en": "Write your view on something. Do not forget the 'da-' compound when you point to a clause." },
- { "tr": "Bir mahalle şenliğinin hazırlık toplantısı. Neyin öncelikli olduğuna dikkat et.", "kind": "intro", "en": "A planning meeting for a neighbourhood party. Watch what has priority." },
- { "tr": "Bir radyo muhabiri polis basın sözcüsünü arıyor. Dün olan bir kaza konuşuluyor.", "kind": "intro", "en": "A radio reporter rings the police press officer. An accident from yesterday is discussed." },
- { "tr": "Biri düzenli (arrive - arrived), öteki düzensiz (leave - left); ikisi de doğru.", "kind": "explain", "en": "One is regular (arrive - arrived), the other irregular (leave - left); both are right." },
- { "tr": "Hata kabul ediliyor ama isimleştirilerek; „Wir haben zu spät gemeldet“ demiyor.", "kind": "explain", "en": "The mistake is admitted but turned into a noun; it does not say „Wir haben zu spät gemeldet“." },
- { "tr": "in den Wind reden: boşa konuşmak. Metin kendi uyarısını da bir deyimle veriyor.", "kind": "explain", "en": "in den Wind reden: to talk to no purpose. The text gives its own warning as an idiom too." },
- { "tr": "in Verzug geraten: temerrüt bir olay değil, sürenin geçmesiyle doğan bir durum.", "kind": "explain", "en": "in Verzug geraten: default is not an event but a state that arises when a deadline passes." },
- { "tr": "Maaş görüşmesi iste ve gerekçeni önceden yaz — rakamı söyle ama kapıyı kapatma.", "kind": "intro", "en": "Ask for a pay review and write your case beforehand — name the figure but leave the door open." },
- { "tr": "Metnin ilk cümlesi \"I get up at half past six\" diyor. Saat yedi kahvaltı saati.", "kind": "explain", "en": "The first sentence of the text says \"I get up at half past six\". Seven is breakfast time." },
- { "tr": "Muayenehanenin bekleme odasındaki bilgi yazısı. Ne zaman gelinir, ne getirilir?", "kind": "intro", "en": "The information sheet in the surgery waiting room. When do you come, what do you bring?" },
- { "tr": "Nazik rica Konjunktiv II ile kurulur: Könnten Sie …? „Konnten“ geçmiş zamandır.", "kind": "explain", "en": "A polite request is built with Konjunktiv II: Könnten Sie …? „Konnten“ is the past tense." },
- { "tr": "Ortaç sıfatı: 'die Aufnahmen, die im Film gezeigt werden' tek sıfata sıkışıyor.", "kind": "explain", "en": "A participle adjective: 'die Aufnahmen, die im Film gezeigt werden' squeezed into one adjective." },
- { "tr": "Öfkeli bir müşteri e-postasına cevap yaz: önce duygu, sonra olgu, en son çözüm.", "kind": "intro", "en": "Reply to an angry customer email: the feeling first, then the facts, the solution last." },
- { "tr": "Ön ek zaten cümlenin sonunda duruyor; boşluğa yalnız çekimli fiil gelir: stehe.", "kind": "explain", "en": "The prefix is already at the end of the sentence; only the finite verb goes in the gap: stehe." },
- { "tr": "Önce iki cümle kur, sonra bir kurum kararına gerekçeli ve nazik bir itiraz yaz.", "kind": "intro", "en": "First form two sentences, then write a reasoned, courteous appeal against an official decision." },
- { "tr": "Özür dilerken niyeti ayırmak: yaptığını kabul et, ama kasıtlı olmadığını söyle.", "kind": "explain", "en": "Separating intent when apologising: admit what you did, but say it was not deliberate." },
- { "tr": "Partizip Vorfeld'e alınmış, fiil ikinci sırada; vurgu bilinçli olarak kurulmuş.", "kind": "explain", "en": "The participle is moved to the Vorfeld and the verb is second; the stress is built deliberately." },
- { "tr": "Perfekt Passiv'de „geworden“ değil „worden“ kullanılır: ist beantwortet worden.", "kind": "explain", "en": "The Perfekt passive uses „worden“, not „geworden“: ist beantwortet worden." },
- { "tr": "Resmî hitapta yönelme hâli Ihnen olur; küçük ama sürekli kaçırılan bir ayrıntı.", "kind": "explain", "en": "In formal address the dative is Ihnen; a small detail that is constantly missed." },
- { "tr": "sowohl … als auch kapsar, weder … noch dışlar — ve fazladan olumsuzluk istemez.", "kind": "intro", "en": "sowohl … als auch includes, weder … noch excludes — and it needs no extra negative." },
- { "tr": "Türkçedeki tek „çok“ İngilizcede ikiye ayrılır ve bazı isimler hiç çoğul olmaz.", "kind": "intro", "en": "The single Turkish word for 'much' splits in two in English, and some nouns have no plural at all." },
- { "tr": "Ve tanık bunu kendisi söylüyor — ifadeyi zayıflatmıyor, kullanılabilir kılıyor.", "kind": "explain", "en": "And the witness says so herself — it does not weaken the statement, it makes it usable." },
- { "tr": "vermeintlich tahmin değil, iddiaya mesafe koyar. En sık karıştırılan sözcük bu.", "kind": "explain", "en": "vermeintlich is not a guess but distance from a claim. It is the word most often muddled." },
- { "tr": "Yanlış: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“", "kind": "explain", "en": "False: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“" },
- { "tr": "Yanlış: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“", "kind": "explain", "en": "False: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“" },
- { "tr": "Yanlış: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“", "kind": "explain", "en": "False: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“" },
- { "tr": "Yanlış: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“", "kind": "explain", "en": "False: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“" },
- { "tr": "Yanlış: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“", "kind": "explain", "en": "False: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“" },
- { "tr": "Yanlış. Metinde Kerem için \"He is nine years old.\" yazıyor, yani dokuz yaşında.", "kind": "explain", "en": "False. The text says \"He is nine years old.\" about Kerem, so he is nine." },
- { "tr": "Yayılmış bir yanlış bilgiyi düzelt — iddiayı, gerçeği ve kaynağı ayrı ayrı ver.", "kind": "intro", "en": "Correct a piece of misinformation that has spread — give the claim, the fact and the source separately." },
- { "tr": "„A new floor in one room and old floors everywhere else can't be a coincidence.“", "kind": "explain", "en": "„A new floor in one room and old floors everywhere else can't be a coincidence.“" },
- { "tr": "„alles, was davor steht, ist damit hervorgehoben“ — vurgu ilk konumla kuruluyor.", "kind": "explain", "en": "„alles, was davor steht, ist damit hervorgehoben“ — the stress is built by the first position." },
- { "tr": "„Am Anfang hatte ich Angst um meine Kunden.“ — „haben“ Präteritum'da hatte olur.", "kind": "explain", "en": "„Am Anfang hatte ich Angst um meine Kunden.“ — „haben“ becomes hatte in the Präteritum." },
- { "tr": "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğleden sonra çıkıyor.", "kind": "explain", "en": "„Am Morgen ist es neblig, besonders in den Tälern.“ The sun comes out in the afternoon." },
- { "tr": "„Die Erstberatung ist kostenlos.“ — ücret ancak sözleşme incelemesinde başlıyor.", "kind": "explain", "en": "„Die Erstberatung ist kostenlos.“ — a fee starts only with the review of the contract." },
- { "tr": "„genau weil es keinen Widerstand leistet“ — direnç göstermeyen çeviri sınanmalı.", "kind": "explain", "en": "„genau weil es keinen Widerstand leistet“ — a translation that offers no resistance must be tested." },
- { "tr": "„Ich bin heute nicht zu Hause“ — sonra da anahtar ve köpek için ricalar geliyor.", "kind": "explain", "en": "„Ich bin heute nicht zu Hause“ — and then come the favours about the key and the dog." },
- { "tr": "„Ich kann Ihre Wut gut verstehen.“ Önce duygu tanınıyor, sonra konuya geçiliyor.", "kind": "explain", "en": "„Ich kann Ihre Wut gut verstehen.“ The feeling is acknowledged first, then he moves to the matter." },
- { "tr": "„ich musste nach der Schule sofort arbeiten“ — zorunluluk fiilinin kısa geçmişi.", "kind": "explain", "en": "„ich musste nach der Schule sofort arbeiten“ — the short past of the verb of obligation." },
- { "tr": "„Marlow's is a quieter shop for one hour every week“ — müzik yok, ışıklar kısık.", "kind": "explain", "en": "„Marlow's is a quieter shop for one hour every week“ — no music, the lights turned down." },
- { "tr": "\"Next year I am going to open my own studio\" diyor; biraz korkuyor ama planı bu.", "kind": "explain", "en": "\"Next year I am going to open my own studio\" she says; she is a little afraid, but that is the plan." },
- { "tr": "„The cinema is open every day from four to eleven.“ Saat sekiz ilk filmin saati.", "kind": "explain", "en": "„The cinema is open every day from four to eleven.“ Eight is the time of the first film." },
- { "tr": "\"The train to Liverpool is late.\" cümlesi bunu açıkça söylüyor, bu yüzden doğru.", "kind": "explain", "en": "The sentence \"The train to Liverpool is late.\" says so plainly, so it is true." },
- { "tr": "„What we recommend stopping. The summer collection.“ — geri kalanı sürdürülüyor.", "kind": "explain", "en": "„What we recommend stopping. The summer collection.“ — the rest is being kept on." },
- { "tr": "Bina yönetimine yaz: neyin bozuk olduğunu bildir ve birinin gönderilmesini iste.", "kind": "intro", "en": "Write to the building management: report what is broken and ask for somebody to be sent." },
- { "tr": "Bir öğrenci deneyinin nasıl yapıldığı anlatılıyor. Yöntem cümlelerine dikkat et.", "kind": "intro", "en": "How a school experiment was carried out is described. Watch the sentences of method." },
- { "tr": "Bir teslim tarihi tehlikede. Koşullu söz ile boş söz arasındaki farka dikkat et.", "kind": "intro", "en": "A deadline is at risk. Watch the difference between a conditional promise and an empty one." },
- { "tr": "Bir yıl sonra geriye bakış: neyi bilerek değiştirmiş, ne kendiliğinden değişmiş?", "kind": "intro", "en": "Looking back after a year: what did they change on purpose, and what changed by itself?" },
- { "tr": "Biri hayalindeki evi anlatıyor. Her ilgi cümlesinde edatın nereye gittiğine bak.", "kind": "intro", "en": "Somebody describes the home they dream of. In each relative clause see where the preposition goes." },
- { "tr": "Biri sınav deneyimini anlatıyor. Beklenti ile gerçek arasındaki farka dikkat et.", "kind": "intro", "en": "Somebody describes taking an exam. Watch the gap between what was expected and what happened." },
- { "tr": "Çocukluğundan bir anı yaz. Bir kez olanı ve her seferinde olanı ayrı ayrı anlat.", "kind": "intro", "en": "Write a memory from your childhood. Tell what happened once and what happened every time apart." },
- { "tr": "Deniz \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir.", "kind": "explain", "en": "Deniz says \"At seven o'clock.\" Half past five is not the time of the film but of meeting." },
- { "tr": "Deyimle dolu bir metni seyrelt: altısını at, ikisini bırak, iki somut cümle yaz.", "kind": "intro", "en": "Thin out a text full of idioms: throw six away, keep two, write two concrete sentences." },
- { "tr": "Dilek kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.", "kind": "explain", "en": "The subjunctive softens a request. The plain „Haben Sie Zeit?“ reads like a demand." },
- { "tr": "Edilgen Perfekt geçmişte: war … verzeichnet worden. Artıştan önce bir düşüş var.", "kind": "explain", "en": "The Perfekt passive in the past: war … verzeichnet worden. A fall came before the rise." },
- { "tr": "Eski yapı ile yeni yapı tartışması. Binaları anlatan ilgi cümlelerine dikkat et.", "kind": "intro", "en": "An argument about old and new buildings. Watch the relative clauses describing them." },
- { "tr": "Hareket fiilinde Partizip II tamamlanmış etkin anlam taşır: der angekommene Zug.", "kind": "explain", "en": "With a verb of movement the Partizip II carries a completed active sense: der angekommene Zug." },
- { "tr": "İki arkadaşın bir aile fotoğrafındaki kişileri konuştuğu diyaloğu dinleyeceksin.", "kind": "intro", "en": "You are going to hear two friends talking about the people in a family photo." },
- { "tr": "İki seçeneği karşılaştır ve birini seç. Olumsuzdan sonraki düzeltmeye dikkat et.", "kind": "intro", "en": "Compare two options and choose one. Watch the correction that follows the negative." },
- { "tr": "indem yöntemi verir, dürfen nicht sınırı çizer, edilgen Perfekt sonucu bildirir.", "kind": "intro", "en": "indem gives the method, dürfen nicht draws the limit, the Perfekt passive reports the result." },
- { "tr": "İsimden önceki sıfat çekilir: eine schwarzE Brieftasche · mit einem rotEN Knopf.", "kind": "explain", "en": "An adjective before a noun is declined: eine schwarzE Brieftasche · mit einem rotEN Knopf." },
- { "tr": "je-desto iki niceliği bağlar; burada fiil elipsle düşmüş, kalıp yine de tanınır.", "kind": "explain", "en": "je-desto links two quantities; here the verb has been dropped by ellipsis and the pattern still shows." }
+ {
+  "tr": "Dönüşlü zamir fiilden hemen sonra, da-bileşiği sonda: Ich kümmere mich darum.",
+  "kind": "explain",
+  "en": "The reflexive pronoun straight after the verb, the da- compound last: Ich kümmere mich darum."
+ },
+ {
+  "tr": "eben, wohl, schon, endlich — dördü de cümlenin ortasında durur ve tonu taşır.",
+  "kind": "intro",
+  "en": "eben, wohl, schon, endlich — all four sit in the middle of the sentence and carry the tone."
+ },
+ {
+  "tr": "İddia kimin? Söylenti kipi, dolaylı soru, iki parçalı bağlaç ve ortaç sıfatı.",
+  "kind": "intro",
+  "en": "Whose claim is it? The reporting mood, an indirect question, a two-part connector and a participle adjective."
+ },
+ {
+  "tr": "İki mastar sona ve modal en arkaya gider: Wir hätten das früher sehen müssen.",
+  "kind": "explain",
+  "en": "Two infinitives go last with the modal right at the back: Wir hätten das früher sehen müssen."
+ },
+ {
+  "tr": "İkisi de karşıtlık kurar: obwohl yan cümle ister, trotz genitif bir ad öbeği.",
+  "kind": "intro",
+  "en": "Both build a contrast: obwohl needs a clause, trotz a genitive noun phrase."
+ },
+ {
+  "tr": "İlk bölümde kendini tanıtırken söylüyor: „Förster hier seit achtzehn Jahren.“",
+  "kind": "explain",
+  "en": "He says it while introducing himself in the first part: „Förster hier seit achtzehn Jahren.“"
+ },
+ {
+  "tr": "indem yöntemi bildirir ve yan cümle kurar: özne tekrarlanır, fiil sona gider.",
+  "kind": "explain",
+  "en": "indem gives the method and opens a clause: the subject is repeated and the verb goes last."
+ },
+ {
+  "tr": "İş seyahati beşine kadar sürdüğü için izin en erken sekizinde başlayabiliyor.",
+  "kind": "explain",
+  "en": "The business trip runs to the fifth, so the leave can start on the eighth at the earliest."
+ },
+ {
+  "tr": "Kip fiilleri geçmişte Perfekt kurmaz, kısa biçimlerini alır: können → konnte.",
+  "kind": "explain",
+  "en": "Modal verbs do not form a Perfekt in the past, they take their short forms: können → konnte."
+ },
+ {
+  "tr": "Malzeme listesinde et yok: patates, havuç, soğan, su, tuz, biber ve tereyağı.",
+  "kind": "explain",
+  "en": "There is no meat on the list: potatoes, carrots, onion, water, salt, pepper and butter."
+ },
+ {
+  "tr": "Mektup tarihinden saymak üç gün kaybettiriyor, açtığı günden saymak her şeyi.",
+  "kind": "explain",
+  "en": "Counting from the date of the letter loses you three days; counting from the day you opened it loses everything."
+ },
+ {
+  "tr": "Özneli biçimde fiil edilgen olur ve arkasından „to“ gelir: is believed to be.",
+  "kind": "explain",
+  "en": "In the subject-raised form the verb goes passive and „to“ follows: is believed to be."
+ },
+ {
+  "tr": "Pitch'in ayırt edici cümlesi bu kalıpla kuruluyor: der Clou daran ist, dass …",
+  "kind": "explain",
+  "en": "The distinguishing sentence of the pitch is built with this pattern: der Clou daran ist, dass …"
+ },
+ {
+  "tr": "Sahip nötr (das Gebäude) olduğu için dessen; ardından gelen ad artikel almaz.",
+  "kind": "explain",
+  "en": "The owner is neuter (das Gebäude), hence dessen; the noun after it takes no article."
+ },
+ {
+  "tr": "Sigortaya kısa bir e-posta yaz: neyi soruyorsun, hangi belgeyi gönderiyorsun?",
+  "kind": "intro",
+  "en": "Write a short email to the insurer: what are you asking, which document are you sending?"
+ },
+ {
+  "tr": "Sunumun son iki dakikasını anlatan bir rehber. Kapanış kalıplarına dikkat et.",
+  "kind": "intro",
+  "en": "A guide to the last two minutes of a talk. Watch the closing patterns."
+ },
+ {
+  "tr": "Tatildesin; önce iki cümle kur, sonra bir arkadaşına kısa bir kartpostal yaz.",
+  "kind": "intro",
+  "en": "You are on holiday; first form two sentences, then write a short postcard to a friend."
+ },
+ {
+  "tr": "Verginin nereye gittiğini anlatan bir yazı. Paranın kaynağı nasıl söyleniyor?",
+  "kind": "intro",
+  "en": "An article about where your taxes go. How is the source of the money described?"
+ },
+ {
+  "tr": "würdigen: değerini teslim etmek. Övmekten farkı, iddia değil ayrıntı sunması.",
+  "kind": "explain",
+  "en": "würdigen: to give something its due. Unlike praising, it offers detail rather than a claim."
+ },
+ {
+  "tr": "Yanlış: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“",
+  "kind": "explain",
+  "en": "False: „Dann brauchen wir einen Plan dafür. Sonst ist es nur eine Hoffnung.“"
+ },
+ {
+  "tr": "Yanlış: „Getränke und Torte machen wir.“ Misafirler isterse salata getiriyor.",
+  "kind": "explain",
+  "en": "False: „Getränke und Torte machen wir.“ The guests bring a salad if they want to."
+ },
+ {
+  "tr": "Zaman iki kez işaretlenmez: „did“ geçmişi üstlenince fiil yalın hâline döner.",
+  "kind": "explain",
+  "en": "Tense is not marked twice: once „did“ takes the past on, the verb returns to its bare form."
+ },
+ {
+  "tr": "„austragen“ ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşer.",
+  "kind": "explain",
+  "en": "„austragen“ is a separable verb; in the present the prefix falls to the end of the sentence."
+ },
+ {
+  "tr": "„Bitte lasst die Taschen im Bus.“ — ihr biçiminde emir kipinde özne söylenmez.",
+  "kind": "explain",
+  "en": "„Bitte lasst die Taschen im Bus.“ — the ihr imperative names no subject."
+ },
+ {
+  "tr": "„das Auto“ nötr, iyelik eksiz kalır ve sıfat cinsi gösterir: unser neues Auto.",
+  "kind": "explain",
+  "en": "„das Auto“ is neuter, the possessive takes no ending and the adjective shows the gender: unser neues Auto."
+ },
+ {
+  "tr": "„ein Verlierer, der trotzdem etwas mitnahm“ — deyimin mantığı buradan geliyor.",
+  "kind": "explain",
+  "en": "„ein Verlierer, der trotzdem etwas mitnahm“ — that is where the logic of the idiom comes from."
+ },
+ {
+  "tr": "„einrühren“ ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşer.",
+  "kind": "explain",
+  "en": "„einrühren“ is a separable verb; in the present the prefix falls to the end of the sentence."
+ },
+ {
+  "tr": "„Ich bin hier Stammkundin, geht da nichts?“ — satıcı sorup özel fiyat veriyor.",
+  "kind": "explain",
+  "en": "„Ich bin hier Stammkundin, geht da nichts?“ — the seller asks and gives a special price."
+ },
+ {
+  "tr": "„Ich schlage deshalb kein Verbot vor.“ — yerine küçük bir alışkanlık öneriyor.",
+  "kind": "explain",
+  "en": "„Ich schlage deshalb kein Verbot vor.“ — instead he suggests one small habit."
+ },
+ {
+  "tr": "„legen“ hareket anlatır, soru wohin? — eril kelimede Akkusativ: auf den Tisch.",
+  "kind": "explain",
+  "en": "„legen“ describes a movement, the question is wohin? — a masculine word goes accusative: auf den Tisch."
+ },
+ {
+  "tr": "„mal“ ricayı küçültür ve gündelikleştirir: büyük bir şey istemiyorum demektir.",
+  "kind": "explain",
+  "en": "„mal“ makes the request smaller and everyday: it says I am not asking for much."
+ },
+ {
+  "tr": "„Mein Mann ist jahrelang mit dem Rad zur Arbeit gefahren.“ Otomobilleri yoktu.",
+  "kind": "explain",
+  "en": "„Mein Mann ist jahrelang mit dem Rad zur Arbeit gefahren.“ They had no car."
+ },
+ {
+  "tr": "„Start um neun Uhr vor dem Haus.“ Saat on ile iki pazartesi pizzanın saatleri.",
+  "kind": "explain",
+  "en": "„Start um neun Uhr vor dem Haus.“ Ten and two are the Monday pizza times."
+ },
+ {
+  "tr": "„um“ mastar ister, çekimli fiil alamaz; doğrusu „damit ich es nicht vergesse“.",
+  "kind": "explain",
+  "en": "„um“ needs an infinitive and takes no finite verb; the correct form is „damit ich es nicht vergesse“."
+ },
+ {
+  "tr": "„Wenn man 'seit gestern' einsetzen kann, ist es ein Zustand und braucht sein.“",
+  "kind": "explain",
+  "en": "„Wenn man 'seit gestern' einsetzen kann, ist es ein Zustand und braucht sein.“"
+ },
+ {
+  "tr": "„Wir sind ein kleines Team von acht Mitarbeitern.“ Yirmi, görüşmenin dakikası.",
+  "kind": "explain",
+  "en": "„Wir sind ein kleines Team von acht Mitarbeitern.“ Twenty is the length of the interview in minutes."
+ },
+ {
+  "tr": "„Woran haben Sie da besonders gedacht?“ — ima görünür oluyor, suçlama olmadan.",
+  "kind": "explain",
+  "en": "„Woran haben Sie da besonders gedacht?“ — the implication is made visible without an accusation."
+ },
+ {
+  "tr": "Bir başvuru süreci. Ne zaman 'wurde', ne zaman 'war' kullanıldığına dikkat et.",
+  "kind": "intro",
+  "en": "An application process. Watch when 'wurde' is used and when 'war'."
+ },
+ {
+  "tr": "Bir teknik destek hattını arayan müşterinin telefon görüşmesini dinleyeceksin.",
+  "kind": "intro",
+  "en": "You are going to hear a customer's phone call to a technical support line."
+ },
+ {
+  "tr": "Bir ticaret odasının iş kurma rehberi. Resmî dilin adlaştırmalarına dikkat et.",
+  "kind": "intro",
+  "en": "A chamber of commerce guide to starting a business. Watch the nominalisations of formal language."
+ },
+ {
+  "tr": "Doğaçlama, boşluğu bir sonraki konuşmacının işine yarayacak biçimde doldurmak.",
+  "kind": "explain",
+  "en": "Improvising means filling the gap in a way that helps the next speaker."
+ },
+ {
+  "tr": "Doğru bir cleft: „What …“ öbeği özne, „was“ yüklem, vurgu „the tone“ üzerinde.",
+  "kind": "explain",
+  "en": "A correct cleft: the „What …“ phrase is the subject, „was“ the verb, the stress on „the tone“."
+ },
+ {
+  "tr": "Edilgen: yardımcı fiil ile ortaç. „… muss der Schaden sofort gemeldet werden.“",
+  "kind": "explain",
+  "en": "The passive: an auxiliary and a participle. „… muss der Schaden sofort gemeldet werden.“"
+ },
+ {
+  "tr": "Elif'in arkadaşına gönderdiği, aile fotoğrafını anlatan e-postayı okuyacaksın.",
+  "kind": "intro",
+  "en": "You are going to read the email in which Elif describes a family photo to her friend."
+ },
+ {
+  "tr": "Emeklilik birikimi üzerine bir rehber yazı. Tahmin bildiren kiplere dikkat et.",
+  "kind": "intro",
+  "en": "A guide to saving for retirement. Watch the modals that mark a guess."
+ },
+ {
+  "tr": "Emir cümlesi artı yan cümle: yan cümlede fiil sona gider — „was passiert ist“.",
+  "kind": "explain",
+  "en": "An imperative plus a clause: in the clause the verb goes last — „was passiert ist“."
+ },
+ {
+  "tr": "Emma \"I bought three books for 90 lira\" diyor. Üç kitaba toplam 90 lira ödedi.",
+  "kind": "explain",
+  "en": "Emma says \"I bought three books for 90 lira\". She paid 90 lira for three books in all."
+ },
+ {
+  "tr": "İki parça cümlenin iki ucundadır: yardımcı fiil ikinci sırada, ortaç en sonda.",
+  "kind": "explain",
+  "en": "The two parts sit at either end of the sentence: the auxiliary second, the participle last."
+ },
+ {
+  "tr": "İki tarafta da karşılaştırma derecesi var ve fiiller doğru yerde; cümle doğru.",
+  "kind": "explain",
+  "en": "Both halves have a comparative and the verbs are in the right place; the sentence is right."
+ },
+ {
+  "tr": "İsimleşme ve edilgen sorumluluğu cümleden çıkarır; C1'de her ikisi de araçtır.",
+  "kind": "intro",
+  "en": "Nominalisation and the passive take responsibility out of the sentence; at C1 both are tools."
+ },
+ {
+  "tr": "je yan cümlede, desto ana cümlede; her iki yarı da karşılaştırma biçimi ister.",
+  "kind": "explain",
+  "en": "je in the clause, desto in the main clause; both halves need a comparative form."
+ },
+ {
+  "tr": "Kaan kız kardeşi için \"She's nineteen. She's studying music in London.\" diyor.",
+  "kind": "explain",
+  "en": "\"She's nineteen. She's studying music in London.\" — that is what Kaan says about his sister."
+ },
+ {
+  "tr": "Katılmayanlara toplantıda ne konuşulduğunu yaz — kendi görüşünü karıştırmadan.",
+  "kind": "intro",
+  "en": "Write to those who were away what was discussed at the meeting — without mixing in your own view."
+ },
+ {
+  "tr": "Ortaç sıfat gibi isimden önce durur: Die spielenden Kinder sind ziemlich laut.",
+  "kind": "explain",
+  "en": "The participle stands before the noun like an adjective: Die spielenden Kinder sind ziemlich laut."
+ },
+ {
+  "tr": "Otobüsü kaçırınca yürümüş: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“",
+  "kind": "explain",
+  "en": "He missed the bus and walked: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“"
+ },
+ {
+  "tr": "Resmî kayıtta neden aufgrund + genitif ile verilir; günlük dilde wegen olurdu.",
+  "kind": "explain",
+  "en": "In formal register the reason is given with aufgrund + genitive; everyday language would use wegen."
+ },
+ {
+  "tr": "Sıra sabittir: artikel + tümleçler + ortaç + isim. Tümleç ortaçtan önce gelir.",
+  "kind": "explain",
+  "en": "The order is fixed: article + complements + participle + noun. The complement comes before the participle."
+ },
+ {
+  "tr": "sich erweisen als: deneyim sonucunda ortaya çıkan yargı — iddiadan daha güçlü.",
+  "kind": "explain",
+  "en": "sich erweisen als: a judgement that emerges from experience — stronger than a claim."
+ },
+ {
+  "tr": "Stres üzerine kısa bir yazı. Neden kafamızı dağıtamıyoruz, ne yardımcı oluyor?",
+  "kind": "intro",
+  "en": "A short article about stress. Why can we not switch off, and what helps?"
+ },
+ {
+  "tr": "Tartışma kültürü üzerine bir yazı. İki tarafı birden anan cümlelere dikkat et.",
+  "kind": "intro",
+  "en": "An article about how we argue. Watch the sentences that name both sides at once."
+ },
+ {
+  "tr": "Yanlış: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“",
+  "kind": "explain",
+  "en": "False: „Deshalb sind hier feste Rotationen wichtiger als zusätzliche Pausen.“"
+ },
+ {
+  "tr": "Yanlış: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“",
+  "kind": "explain",
+  "en": "False: „Fragen Sie in der Personalabteilung nach, nicht bei einem Vertreter.“"
+ },
+ {
+  "tr": "Yanlış: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“",
+  "kind": "explain",
+  "en": "False: „Keinen Tag. Aber die ersten drei Monate nach dem Wechsel waren hart.“"
+ },
+ {
+  "tr": "Yanlış: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Sahte değil, eski.",
+  "kind": "explain",
+  "en": "False: „Sehr viele Bilder sind echt, aber zehn Jahre alt.“ Not fake but old."
+ },
+ {
+  "tr": "„anhalten“ hem ayrılabilen hem kuralsız: ortaç angehalten, yardımcı fiil „ist“.",
+  "kind": "explain",
+  "en": "„anhalten“ is both separable and irregular: the participle is angehalten and the auxiliary „ist“."
+ },
+ {
+  "tr": "„Anmeldung bis Freitag im Büro oder am Telefon“ — e-posta ya da bahçe geçmiyor.",
+  "kind": "explain",
+  "en": "„Anmeldung bis Freitag im Büro oder am Telefon“ — email and the garden do not count."
+ },
+ {
+  "tr": "„Beim Abgeben weint man einen Tag.“ — „bei“ + adlaştırma bir zaman öbeği kurar.",
+  "kind": "explain",
+  "en": "„Beim Abgeben weint man einen Tag.“ — „bei“ + a nominalisation makes a time phrase."
+ },
+ {
+  "tr": "„Das ist richtig. Dem ist entgegenzuhalten, dass …“ — kabul artı sınırlandırma.",
+  "kind": "explain",
+  "en": "„Das ist richtig. Dem ist entgegenzuhalten, dass …“ — a concession plus a limit."
+ },
+ {
+  "tr": "„Ich habe noch zwölf Urlaubstage.“ Sekiz ve on beş, sonunda anlaşılan tarihler.",
+  "kind": "explain",
+  "en": "„Ich habe noch zwölf Urlaubstage.“ Eight and fifteen are the dates finally agreed."
+ },
+ {
+  "tr": "„Ich möchte dieses Paket in die Türkei schicken.“ Ülke adı ilk cümlede geçiyor.",
+  "kind": "explain",
+  "en": "„Ich möchte dieses Paket in die Türkei schicken.“ The country is named in the first sentence."
+ },
+ {
+  "tr": "„ich habe Ihre Kritik von damals ernst genommen“ — iğnelemeyi kabule çeviriyor.",
+  "kind": "explain",
+  "en": "„ich habe Ihre Kritik von damals ernst genommen“ — she turns the jibe into an acceptance."
+ },
+ {
+  "tr": "„if“ yarısında „will“ kullanılmaz; doğrusu „If it rains, we will stay at home.“",
+  "kind": "explain",
+  "en": "„will“ is not used in the „if“ half; the correct form is „If it rains, we will stay at home.“"
+ },
+ {
+  "tr": "„Nur eines belegt es.“ İddia ile kanıt arasındaki fark bu ünitenin ölçtüğü şey.",
+  "kind": "explain",
+  "en": "„Nur eines belegt es.“ The difference between a claim and proof is what this unit measures."
+ },
+ {
+  "tr": "„sein“ ikinci sırada, „zu + mastar“ en sonda: Der Text ist leicht zu verstehen.",
+  "kind": "explain",
+  "en": "„sein“ second, „zu + infinitive“ right at the end: Der Text ist leicht zu verstehen."
+ },
+ {
+  "tr": "„sich lassen“ tam olarak „können + Passiv“ın yerini tutar; ikisi eş anlamlıdır.",
+  "kind": "explain",
+  "en": "„sich lassen“ stands exactly in place of „können + Passiv“; the two mean the same."
+ },
+ {
+  "tr": "„Sie hätten mit einem ganzen Schuljahr gerechnet …“ — dört ay beklenenden kısa.",
+  "kind": "explain",
+  "en": "„Sie hätten mit einem ganzen Schuljahr gerechnet …“ — four months is shorter than expected."
+ },
+ {
+  "tr": "„That is not an accident.“ — bir önceki gözlemin rastlantı olmadığını söylüyor.",
+  "kind": "explain",
+  "en": "„That is not an accident.“ — it says the previous observation is no coincidence."
+ },
+ {
+  "tr": "„The museum closes … at six o'clock“ ama „The shop is open until ten past six.“",
+  "kind": "explain",
+  "en": "„The museum closes … at six o'clock“ but „The shop is open until ten past six.“"
+ },
+ {
+  "tr": "„We are for something.“ — bir önceki cümledeki „against“ ile karşıtlık kuruyor.",
+  "kind": "explain",
+  "en": "„We are for something.“ — it builds a contrast with the „against“ in the sentence before."
+ },
+ {
+  "tr": "„weglaufen“ yer değiştiren bir fiil: „ist weggelaufen“, ortaç ortadan açılıyor.",
+  "kind": "explain",
+  "en": "„weglaufen“ is a verb of movement: „ist weggelaufen“, with the participle opening in the middle."
+ },
+ {
+  "tr": "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“",
+  "kind": "explain",
+  "en": "„Wer 'soll' sagt, behauptet nichts. Er berichtet, dass andere etwas behaupten.“"
+ },
+ {
+  "tr": "Arkadan „dass“ cümlesi geliyor; edat önce da- bileşiği olarak duyurulur: damit.",
+  "kind": "explain",
+  "en": "A „dass“ clause follows; the preposition is announced first as a da- compound: damit."
+ },
+ {
+  "tr": "Arkasından çekimli bir fiil geliyor, mastar değil; bu durumda damit kullanılır.",
+  "kind": "explain",
+  "en": "A finite verb follows, not an infinitive; in that case damit is used."
+ },
+ {
+  "tr": "Ayrılabilen fiilin Partizip'inde ge- ön ekle kökün arasına girer: an-ge-nommen.",
+  "kind": "explain",
+  "en": "In the participle of a separable verb ge- goes between the prefix and the stem: an-ge-nommen."
+ },
+ {
+  "tr": "Başlık ve Nils'in son cümlesi aynı soruyu soruyor: „What do you do with yours?“",
+  "kind": "explain",
+  "en": "The heading and Nils's last sentence ask the same question: „What do you do with yours?“"
+ },
+ {
+  "tr": "Bir eczacı hastaya yeni bir ilacı anlatıyor. Neyin denenmiş olduğuna dikkat et.",
+  "kind": "intro",
+  "en": "A chemist explains a new medicine to a patient. Watch what has been trialled."
+ },
+ {
+  "tr": "Bir işletmede boş kadro konuşuluyor. Eksikliğin nasıl dile getirildiğini dinle.",
+  "kind": "intro",
+  "en": "A vacancy at a firm is discussed. Listen to how the shortage is put into words."
+ },
+ {
+  "tr": "Bir konuda görüşünü yaz. Yan cümleye gönderme yaparken 'da-' bileşiğini unutma.",
+  "kind": "intro",
+  "en": "Write your view on something. Do not forget the 'da-' compound when you point to a clause."
+ },
+ {
+  "tr": "Bir mahalle şenliğinin hazırlık toplantısı. Neyin öncelikli olduğuna dikkat et.",
+  "kind": "intro",
+  "en": "A planning meeting for a neighbourhood party. Watch what has priority."
+ },
+ {
+  "tr": "Bir radyo muhabiri polis basın sözcüsünü arıyor. Dün olan bir kaza konuşuluyor.",
+  "kind": "intro",
+  "en": "A radio reporter rings the police press officer. An accident from yesterday is discussed."
+ },
+ {
+  "tr": "Biri düzenli (arrive - arrived), öteki düzensiz (leave - left); ikisi de doğru.",
+  "kind": "explain",
+  "en": "One is regular (arrive - arrived), the other irregular (leave - left); both are right."
+ },
+ {
+  "tr": "Hata kabul ediliyor ama isimleştirilerek; „Wir haben zu spät gemeldet“ demiyor.",
+  "kind": "explain",
+  "en": "The mistake is admitted but turned into a noun; it does not say „Wir haben zu spät gemeldet“."
+ },
+ {
+  "tr": "in den Wind reden: boşa konuşmak. Metin kendi uyarısını da bir deyimle veriyor.",
+  "kind": "explain",
+  "en": "in den Wind reden: to talk to no purpose. The text gives its own warning as an idiom too."
+ },
+ {
+  "tr": "in Verzug geraten: temerrüt bir olay değil, sürenin geçmesiyle doğan bir durum.",
+  "kind": "explain",
+  "en": "in Verzug geraten: default is not an event but a state that arises when a deadline passes."
+ },
+ {
+  "tr": "Maaş görüşmesi iste ve gerekçeni önceden yaz — rakamı söyle ama kapıyı kapatma.",
+  "kind": "intro",
+  "en": "Ask for a pay review and write your case beforehand — name the figure but leave the door open."
+ },
+ {
+  "tr": "Metnin ilk cümlesi \"I get up at half past six\" diyor. Saat yedi kahvaltı saati.",
+  "kind": "explain",
+  "en": "The first sentence of the text says \"I get up at half past six\". Seven is breakfast time."
+ },
+ {
+  "tr": "Muayenehanenin bekleme odasındaki bilgi yazısı. Ne zaman gelinir, ne getirilir?",
+  "kind": "intro",
+  "en": "The information sheet in the surgery waiting room. When do you come, what do you bring?"
+ },
+ {
+  "tr": "Nazik rica Konjunktiv II ile kurulur: Könnten Sie …? „Konnten“ geçmiş zamandır.",
+  "kind": "explain",
+  "en": "A polite request is built with Konjunktiv II: Könnten Sie …? „Konnten“ is the past tense."
+ },
+ {
+  "tr": "Ortaç sıfatı: 'die Aufnahmen, die im Film gezeigt werden' tek sıfata sıkışıyor.",
+  "kind": "explain",
+  "en": "A participle adjective: 'die Aufnahmen, die im Film gezeigt werden' squeezed into one adjective."
+ },
+ {
+  "tr": "Öfkeli bir müşteri e-postasına cevap yaz: önce duygu, sonra olgu, en son çözüm.",
+  "kind": "intro",
+  "en": "Reply to an angry customer email: the feeling first, then the facts, the solution last."
+ },
+ {
+  "tr": "Ön ek zaten cümlenin sonunda duruyor; boşluğa yalnız çekimli fiil gelir: stehe.",
+  "kind": "explain",
+  "en": "The prefix is already at the end of the sentence; only the finite verb goes in the gap: stehe."
+ },
+ {
+  "tr": "Önce iki cümle kur, sonra bir kurum kararına gerekçeli ve nazik bir itiraz yaz.",
+  "kind": "intro",
+  "en": "First form two sentences, then write a reasoned, courteous appeal against an official decision."
+ },
+ {
+  "tr": "Özür dilerken niyeti ayırmak: yaptığını kabul et, ama kasıtlı olmadığını söyle.",
+  "kind": "explain",
+  "en": "Separating intent when apologising: admit what you did, but say it was not deliberate."
+ },
+ {
+  "tr": "Partizip Vorfeld'e alınmış, fiil ikinci sırada; vurgu bilinçli olarak kurulmuş.",
+  "kind": "explain",
+  "en": "The participle is moved to the Vorfeld and the verb is second; the stress is built deliberately."
+ },
+ {
+  "tr": "Perfekt Passiv'de „geworden“ değil „worden“ kullanılır: ist beantwortet worden.",
+  "kind": "explain",
+  "en": "The Perfekt passive uses „worden“, not „geworden“: ist beantwortet worden."
+ },
+ {
+  "tr": "Resmî hitapta yönelme hâli Ihnen olur; küçük ama sürekli kaçırılan bir ayrıntı.",
+  "kind": "explain",
+  "en": "In formal address the dative is Ihnen; a small detail that is constantly missed."
+ },
+ {
+  "tr": "sowohl … als auch kapsar, weder … noch dışlar — ve fazladan olumsuzluk istemez.",
+  "kind": "intro",
+  "en": "sowohl … als auch includes, weder … noch excludes — and it needs no extra negative."
+ },
+ {
+  "tr": "Türkçedeki tek „çok“ İngilizcede ikiye ayrılır ve bazı isimler hiç çoğul olmaz.",
+  "kind": "intro",
+  "en": "The single Turkish word for 'much' splits in two in English, and some nouns have no plural at all."
+ },
+ {
+  "tr": "Ve tanık bunu kendisi söylüyor — ifadeyi zayıflatmıyor, kullanılabilir kılıyor.",
+  "kind": "explain",
+  "en": "And the witness says so herself — it does not weaken the statement, it makes it usable."
+ },
+ {
+  "tr": "vermeintlich tahmin değil, iddiaya mesafe koyar. En sık karıştırılan sözcük bu.",
+  "kind": "explain",
+  "en": "vermeintlich is not a guess but distance from a claim. It is the word most often muddled."
+ },
+ {
+  "tr": "Yanlış: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“",
+  "kind": "explain",
+  "en": "False: „Ich muss dann nichts anmahnen, sondern umplanen — das ist mir lieber.“"
+ },
+ {
+  "tr": "Yanlış: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“",
+  "kind": "explain",
+  "en": "False: „Nicht mehr über die Sprache lernen, sondern in ihr etwas anderes tun.“"
+ },
+ {
+  "tr": "Yanlış: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“",
+  "kind": "explain",
+  "en": "False: „Wer nur Alt gegen Jung stellt, verfehlt die Frage nach Gerechtigkeit.“"
+ },
+ {
+  "tr": "Yanlış. Metinde Kerem için \"He is nine years old.\" yazıyor, yani dokuz yaşında.",
+  "kind": "explain",
+  "en": "False. The text says \"He is nine years old.\" about Kerem, so he is nine."
+ },
+ {
+  "tr": "Yayılmış bir yanlış bilgiyi düzelt — iddiayı, gerçeği ve kaynağı ayrı ayrı ver.",
+  "kind": "intro",
+  "en": "Correct a piece of misinformation that has spread — give the claim, the fact and the source separately."
+ },
+ {
+  "tr": "„A new floor in one room and old floors everywhere else can't be a coincidence.“",
+  "kind": "explain",
+  "en": "„A new floor in one room and old floors everywhere else can't be a coincidence.“"
+ },
+ {
+  "tr": "„alles, was davor steht, ist damit hervorgehoben“ — vurgu ilk konumla kuruluyor.",
+  "kind": "explain",
+  "en": "„alles, was davor steht, ist damit hervorgehoben“ — the stress is built by the first position."
+ },
+ {
+  "tr": "„Am Anfang hatte ich Angst um meine Kunden.“ — „haben“ Präteritum'da hatte olur.",
+  "kind": "explain",
+  "en": "„Am Anfang hatte ich Angst um meine Kunden.“ — „haben“ becomes hatte in the Präteritum."
+ },
+ {
+  "tr": "„Am Morgen ist es neblig, besonders in den Tälern.“ Güneş öğleden sonra çıkıyor.",
+  "kind": "explain",
+  "en": "„Am Morgen ist es neblig, besonders in den Tälern.“ The sun comes out in the afternoon."
+ },
+ {
+  "tr": "„Die Erstberatung ist kostenlos.“ — ücret ancak sözleşme incelemesinde başlıyor.",
+  "kind": "explain",
+  "en": "„Die Erstberatung ist kostenlos.“ — a fee starts only with the review of the contract."
+ },
+ {
+  "tr": "„genau weil es keinen Widerstand leistet“ — direnç göstermeyen çeviri sınanmalı.",
+  "kind": "explain",
+  "en": "„genau weil es keinen Widerstand leistet“ — a translation that offers no resistance must be tested."
+ },
+ {
+  "tr": "„Ich bin heute nicht zu Hause“ — sonra da anahtar ve köpek için ricalar geliyor.",
+  "kind": "explain",
+  "en": "„Ich bin heute nicht zu Hause“ — and then come the favours about the key and the dog."
+ },
+ {
+  "tr": "„Ich kann Ihre Wut gut verstehen.“ Önce duygu tanınıyor, sonra konuya geçiliyor.",
+  "kind": "explain",
+  "en": "„Ich kann Ihre Wut gut verstehen.“ The feeling is acknowledged first, then he moves to the matter."
+ },
+ {
+  "tr": "„ich musste nach der Schule sofort arbeiten“ — zorunluluk fiilinin kısa geçmişi.",
+  "kind": "explain",
+  "en": "„ich musste nach der Schule sofort arbeiten“ — the short past of the verb of obligation."
+ },
+ {
+  "tr": "„Marlow's is a quieter shop for one hour every week“ — müzik yok, ışıklar kısık.",
+  "kind": "explain",
+  "en": "„Marlow's is a quieter shop for one hour every week“ — no music, the lights turned down."
+ },
+ {
+  "tr": "\"Next year I am going to open my own studio\" diyor; biraz korkuyor ama planı bu.",
+  "kind": "explain",
+  "en": "\"Next year I am going to open my own studio\" she says; she is a little afraid, but that is the plan."
+ },
+ {
+  "tr": "„The cinema is open every day from four to eleven.“ Saat sekiz ilk filmin saati.",
+  "kind": "explain",
+  "en": "„The cinema is open every day from four to eleven.“ Eight is the time of the first film."
+ },
+ {
+  "tr": "\"The train to Liverpool is late.\" cümlesi bunu açıkça söylüyor, bu yüzden doğru.",
+  "kind": "explain",
+  "en": "The sentence \"The train to Liverpool is late.\" says so plainly, so it is true."
+ },
+ {
+  "tr": "„What we recommend stopping. The summer collection.“ — geri kalanı sürdürülüyor.",
+  "kind": "explain",
+  "en": "„What we recommend stopping. The summer collection.“ — the rest is being kept on."
+ },
+ {
+  "tr": "Bina yönetimine yaz: neyin bozuk olduğunu bildir ve birinin gönderilmesini iste.",
+  "kind": "intro",
+  "en": "Write to the building management: report what is broken and ask for somebody to be sent."
+ },
+ {
+  "tr": "Bir öğrenci deneyinin nasıl yapıldığı anlatılıyor. Yöntem cümlelerine dikkat et.",
+  "kind": "intro",
+  "en": "How a school experiment was carried out is described. Watch the sentences of method."
+ },
+ {
+  "tr": "Bir teslim tarihi tehlikede. Koşullu söz ile boş söz arasındaki farka dikkat et.",
+  "kind": "intro",
+  "en": "A deadline is at risk. Watch the difference between a conditional promise and an empty one."
+ },
+ {
+  "tr": "Bir yıl sonra geriye bakış: neyi bilerek değiştirmiş, ne kendiliğinden değişmiş?",
+  "kind": "intro",
+  "en": "Looking back after a year: what did they change on purpose, and what changed by itself?"
+ },
+ {
+  "tr": "Biri hayalindeki evi anlatıyor. Her ilgi cümlesinde edatın nereye gittiğine bak.",
+  "kind": "intro",
+  "en": "Somebody describes the home they dream of. In each relative clause see where the preposition goes."
+ },
+ {
+  "tr": "Biri sınav deneyimini anlatıyor. Beklenti ile gerçek arasındaki farka dikkat et.",
+  "kind": "intro",
+  "en": "Somebody describes taking an exam. Watch the gap between what was expected and what happened."
+ },
+ {
+  "tr": "Çocukluğundan bir anı yaz. Bir kez olanı ve her seferinde olanı ayrı ayrı anlat.",
+  "kind": "intro",
+  "en": "Write a memory from your childhood. Tell what happened once and what happened every time apart."
+ },
+ {
+  "tr": "Deniz \"At seven o'clock.\" diyor. Beş buçuk filmin saati değil, buluşma saatidir.",
+  "kind": "explain",
+  "en": "Deniz says \"At seven o'clock.\" Half past five is not the time of the film but of meeting."
+ },
+ {
+  "tr": "Deyimle dolu bir metni seyrelt: altısını at, ikisini bırak, iki somut cümle yaz.",
+  "kind": "intro",
+  "en": "Thin out a text full of idioms: throw six away, keep two, write two concrete sentences."
+ },
+ {
+  "tr": "Dilek kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
+  "kind": "explain",
+  "en": "The subjunctive softens a request. The plain „Haben Sie Zeit?“ reads like a demand."
+ },
+ {
+  "tr": "Edilgen Perfekt geçmişte: war … verzeichnet worden. Artıştan önce bir düşüş var.",
+  "kind": "explain",
+  "en": "The Perfekt passive in the past: war … verzeichnet worden. A fall came before the rise."
+ },
+ {
+  "tr": "Eski yapı ile yeni yapı tartışması. Binaları anlatan ilgi cümlelerine dikkat et.",
+  "kind": "intro",
+  "en": "An argument about old and new buildings. Watch the relative clauses describing them."
+ },
+ {
+  "tr": "Hareket fiilinde Partizip II tamamlanmış etkin anlam taşır: der angekommene Zug.",
+  "kind": "explain",
+  "en": "With a verb of movement the Partizip II carries a completed active sense: der angekommene Zug."
+ },
+ {
+  "tr": "İki arkadaşın bir aile fotoğrafındaki kişileri konuştuğu diyaloğu dinleyeceksin.",
+  "kind": "intro",
+  "en": "You are going to hear two friends talking about the people in a family photo."
+ },
+ {
+  "tr": "İki seçeneği karşılaştır ve birini seç. Olumsuzdan sonraki düzeltmeye dikkat et.",
+  "kind": "intro",
+  "en": "Compare two options and choose one. Watch the correction that follows the negative."
+ },
+ {
+  "tr": "indem yöntemi verir, dürfen nicht sınırı çizer, edilgen Perfekt sonucu bildirir.",
+  "kind": "intro",
+  "en": "indem gives the method, dürfen nicht draws the limit, the Perfekt passive reports the result."
+ },
+ {
+  "tr": "İsimden önceki sıfat çekilir: eine schwarzE Brieftasche · mit einem rotEN Knopf.",
+  "kind": "explain",
+  "en": "An adjective before a noun is declined: eine schwarzE Brieftasche · mit einem rotEN Knopf."
+ },
+ {
+  "tr": "je-desto iki niceliği bağlar; burada fiil elipsle düşmüş, kalıp yine de tanınır.",
+  "kind": "explain",
+  "en": "je-desto links two quantities; here the verb has been dropped by ellipsis and the pattern still shows."
+ }
 ]

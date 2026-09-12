@@ -182,10 +182,10 @@ export const c1U02: SkillExercise[] = [
         explain: "„Auffällig … Ob damit bewusst hinausgezögert wird, lässt sich nicht belegen.“ Şüphe kayda geçiyor, iddia edilmiyor.",
       },
       {
-        text: "Die Gegenseite hat bei der Haftungsobergrenze nachgegeben.",
+        text: "Die Gegenseite zeigt sich bei der Haftungsobergrenze weiterhin unnachgiebig.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „zeigt sich … weiterhin unnachgiebig“.",
+        answer: 0,
+        explain: "Doğru: „zeigt sich … weiterhin unnachgiebig“.",
       },
     ],
   },

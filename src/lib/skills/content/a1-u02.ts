@@ -47,10 +47,10 @@ export const a1U02: SkillExercise[] = [
         explain: "„Der Kurs kostet hundert Euro.“ — 100 Euro. Zehn ve zwanzig ilandaki kişi sayıları.",
       },
       {
-        text: "Richtig oder falsch? Man zahlt jeden Monat.",
+        text: "Richtig oder falsch? Man zahlt einmal.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
+        answer: 0,
+        explain: "Doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
       },
       {
         text: "Wie viele Personen sind mindestens in einer Gruppe?",
@@ -108,10 +108,10 @@ export const a1U02: SkillExercise[] = [
         explain: "„Ich arbeite als Verkäufer in einer Firma in Köln.“ — Tom.",
       },
       {
-        text: "Richtig oder falsch? Elif hat im Moment Arbeit.",
+        text: "Richtig oder falsch? Elif ist im Moment arbeitslos.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
+        answer: 0,
+        explain: "Doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
       },
       {
         text: "Wer spricht nur ein bisschen Deutsch?",
@@ -229,10 +229,10 @@ export const a1U02: SkillExercise[] = [
         explain: "„Der Kurs kostet zwanzig Euro.“ Hundert ise kurs numarasının bir parçası.",
       },
       {
-        text: "Richtig oder falsch? Ein Fehler ist ein Problem.",
+        text: "Richtig oder falsch? Ein Fehler ist kein Problem.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
+        answer: 0,
+        explain: "Doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
       },
           {
         kind: "gapfill",

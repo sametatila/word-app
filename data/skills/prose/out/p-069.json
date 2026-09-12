@@ -1,0 +1,462 @@
+[
+ {
+  "tr": "Doğru: „Ja, ein Wasser bitte.“",
+  "kind": "explain",
+  "en": "True: „Ja, ein Wasser bitte.“"
+ },
+ {
+  "tr": "Doğru: „Die lassen sich nachrüsten.“",
+  "kind": "explain",
+  "en": "True: „Die lassen sich nachrüsten.“"
+ },
+ {
+  "tr": "Doğru: „Eine Katze haben wir nicht.“",
+  "kind": "explain",
+  "en": "True: „Eine Katze haben wir nicht.“"
+ },
+ {
+  "tr": "Doğru: „Harmlos ist kein Arzneimittel.“",
+  "kind": "explain",
+  "en": "True: „Harmlos ist kein Arzneimittel.“"
+ },
+ {
+  "tr": "Doğru: „für die Kinder“ — çocuklar için.",
+  "kind": "explain",
+  "en": "True: „für die Kinder“ — for the children."
+ },
+ {
+  "tr": "Doğru: „Wertschätzung ist kein Vorwort.“",
+  "kind": "explain",
+  "en": "True: „Wertschätzung ist kein Vorwort.“"
+ },
+ {
+  "tr": "Doğru: „Am Sonntag bin ich zurückgekommen.“",
+  "kind": "explain",
+  "en": "True: „Am Sonntag bin ich zurückgekommen.“"
+ },
+ {
+  "tr": "Doğru: „Das höre ich nicht zum ersten Mal.“",
+  "kind": "explain",
+  "en": "True: „Das höre ich nicht zum ersten Mal.“"
+ },
+ {
+  "tr": "Doğru: „Familienstand: verheiratet“ — evli.",
+  "kind": "explain",
+  "en": "True: „Familienstand: verheiratet“ — married."
+ },
+ {
+  "tr": "Doğru: „Ja, eine Flasche kostet 0,80 Euro.“",
+  "kind": "explain",
+  "en": "True: „Ja, eine Flasche kostet 0,80 Euro.“"
+ },
+ {
+  "tr": "Doğru: „Kein Problem!“ diyor — sorun değil.",
+  "kind": "explain",
+  "en": "True: they say „Kein Problem!“ — no problem."
+ },
+ {
+  "tr": "Doğru: „Ja, und die beiden Reparaturbelege.“",
+  "kind": "explain",
+  "en": "True: „Ja, und die beiden Reparaturbelege.“"
+ },
+ {
+  "tr": "Doğru: „zeigt sich … weiterhin unnachgiebig“.",
+  "kind": "explain",
+  "en": "True: „zeigt sich … weiterhin unnachgiebig“."
+ },
+ {
+  "tr": "Doğru: „sag Bescheid — ich helfe dir gern aus“.",
+  "kind": "explain",
+  "en": "True: „sag Bescheid — ich helfe dir gern aus“."
+ },
+ {
+  "tr": "Doğru: „Die Hälfte. Danach bin ich eingeschlafen.“",
+  "kind": "explain",
+  "en": "True: „Die Hälfte. Danach bin ich eingeschlafen.“"
+ },
+ {
+  "tr": "Doğru: „Klare Ansagen sind freundlicher als vage.“",
+  "kind": "explain",
+  "en": "True: „Klare Ansagen sind freundlicher als vage.“"
+ },
+ {
+  "tr": "Doğru: „Aber sie ist drinnen, nicht auf dem Balkon.“",
+  "kind": "explain",
+  "en": "True: „Aber sie ist drinnen, nicht auf dem Balkon.“"
+ },
+ {
+  "tr": "Doğru: „auch wenn man sich gesund fühlt und fit ist“.",
+  "kind": "explain",
+  "en": "True: „auch wenn man sich gesund fühlt und fit ist“."
+ },
+ {
+  "tr": "Doğru: „Im Moment bin ich arbeitslos.“ — şu an işsiz.",
+  "kind": "explain",
+  "en": "True: „Im Moment bin ich arbeitslos.“ — out of work just now."
+ },
+ {
+  "tr": "Doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
+  "kind": "explain",
+  "en": "True: „Mein Kurs beginnt gleich.“ — it has not started yet."
+ },
+ {
+  "tr": "Doğru: „Sie ist kein Gericht und kostet fast nichts.“",
+  "kind": "explain",
+  "en": "True: „Sie ist kein Gericht und kostet fast nichts.“"
+ },
+ {
+  "tr": "Doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
+  "kind": "explain",
+  "en": "True: „Wir treffen uns oft.“ — they meet often."
+ },
+ {
+  "tr": "Doğru: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
+  "kind": "explain",
+  "en": "True: they say „Ja, bitte.“ — they do want butter and jam."
+ },
+ {
+  "tr": "Doğru: „mit einem großen Glas Wasser, nicht mit Kaffee“.",
+  "kind": "explain",
+  "en": "True: „mit einem großen Glas Wasser, nicht mit Kaffee“."
+ },
+ {
+  "tr": "Doğru: „Ursprünglich stammt es aus der Forstwirtschaft.“",
+  "kind": "explain",
+  "en": "True: „Ursprünglich stammt es aus der Forstwirtschaft.“"
+ },
+ {
+  "tr": "Doğru: „Das ist angeblich so, ja. Gesagt hat es niemand.“",
+  "kind": "explain",
+  "en": "True: „Das ist angeblich so, ja. Gesagt hat es niemand.“"
+ },
+ {
+  "tr": "Doğru: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
+  "kind": "explain",
+  "en": "True: „Ein Fehler ist kein Problem!“ — a mistake is no problem."
+ },
+ {
+  "tr": "Doğru: „Jetzt ist die Erleichterung größer als der Ärger.“",
+  "kind": "explain",
+  "en": "True: „Jetzt ist die Erleichterung größer als der Ärger.“"
+ },
+ {
+  "tr": "Doğru: „Das entscheidet die Staatsanwaltschaft, nicht ich.“",
+  "kind": "explain",
+  "en": "True: „Das entscheidet die Staatsanwaltschaft, nicht ich.“"
+ },
+ {
+  "tr": "Doğru: „Das kostet keine Zeit, verfälscht aber die Zahlen.“",
+  "kind": "explain",
+  "en": "True: „Das kostet keine Zeit, verfälscht aber die Zahlen.“"
+ },
+ {
+  "tr": "Doğru: „Einzelne Moleküle sieht man damit natürlich nicht.“",
+  "kind": "explain",
+  "en": "True: „Einzelne Moleküle sieht man damit natürlich nicht.“"
+ },
+ {
+  "tr": "Doğru: „hat kurze Haare“ deniyor ve bu kısım düzeltilmiyor.",
+  "kind": "explain",
+  "en": "True: „hat kurze Haare“ is what is said, and that part is not corrected."
+ },
+ {
+  "tr": "Doğru: „Ich habe morgens keinen Hunger.“ — sadece su içiyor.",
+  "kind": "explain",
+  "en": "True: „Ich habe morgens keinen Hunger.“ — he only drinks water."
+ },
+ {
+  "tr": "Doğru: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“",
+  "kind": "explain",
+  "en": "True: „Bringen Sie bitte diese Karte und Ihren Ausweis mit.“"
+ },
+ {
+  "tr": "Doğru: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“",
+  "kind": "explain",
+  "en": "True: „Die Dringlichkeit war ohnehin eher gefühlt als echt.“"
+ },
+ {
+  "tr": "Doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
+  "kind": "explain",
+  "en": "True: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“"
+ },
+ {
+  "tr": "Doğru: „eine Mutmaßung mit Grundlage“ — ipucu var (ceket yok).",
+  "kind": "explain",
+  "en": "True: „eine Mutmaßung mit Grundlage“ — there is a clue (no coat)."
+ },
+ {
+  "tr": "Doğru: „…eine Neuerung um der Neuerung willen zahle ich nicht.“",
+  "kind": "explain",
+  "en": "True: „…eine Neuerung um der Neuerung willen zahle ich nicht.“"
+ },
+ {
+  "tr": "Doğru: „Ich leite das Protokoll erst nach der Freigabe weiter.“",
+  "kind": "explain",
+  "en": "True: „Ich leite das Protokoll erst nach der Freigabe weiter.“"
+ },
+ {
+  "tr": "Doğru: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“",
+  "kind": "explain",
+  "en": "True: „Vor einer Behandlung untersuchen wir Sie immer zuerst.“"
+ },
+ {
+  "tr": "Doğru: „…das Innere dagegen ist konsequent modernisiert worden.“",
+  "kind": "explain",
+  "en": "True: „…das Innere dagegen ist konsequent modernisiert worden.“"
+ },
+ {
+  "tr": "Doğru: „Das war teurer, hat uns aber zwei große Kunden gebracht.“",
+  "kind": "explain",
+  "en": "True: „Das war teurer, hat uns aber zwei große Kunden gebracht.“"
+ },
+ {
+  "tr": "Doğru: „Eine Massage ist schön, aber sie löst das Problem nicht.“",
+  "kind": "explain",
+  "en": "True: „Eine Massage ist schön, aber sie löst das Problem nicht.“"
+ },
+ {
+  "tr": "Doğru: „Ich mag Fleisch nicht.“ — sebze ve pirinci tercih ediyor.",
+  "kind": "explain",
+  "en": "True: „Ich mag Fleisch nicht.“ — he prefers the vegetables and the rice."
+ },
+ {
+  "tr": "Doğru: „Wein und Bier gibt es nicht.“ Burası kafe, lokanta değil.",
+  "kind": "explain",
+  "en": "True: „Wein und Bier gibt es nicht.“ This is a café, not a restaurant."
+ },
+ {
+  "tr": "Doğru: „Ein schlecht strukturierter wird durch Folien nur länger.“",
+  "kind": "explain",
+  "en": "True: „Ein schlecht strukturierter wird durch Folien nur länger.“"
+ },
+ {
+  "tr": "Doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
+  "kind": "explain",
+  "en": "True: „in vielen Ländern normale Fragen, hier Grenzverletzungen“."
+ },
+ {
+  "tr": "Doğru: „Sie zahlen einmal, nicht jeden Monat.“ — bir kez ödeniyor.",
+  "kind": "explain",
+  "en": "True: „Sie zahlen einmal, nicht jeden Monat.“ — you pay once."
+ },
+ {
+  "tr": "Doğru: „Obst brauchen wir nicht, wir haben noch Äpfel und Bananen.“",
+  "kind": "explain",
+  "en": "True: „Obst brauchen wir nicht, wir haben noch Äpfel und Bananen.“"
+ },
+ {
+  "tr": "Doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
+  "kind": "explain",
+  "en": "True: Jonas is zwanzig and his brother zehn. Do not muddle the two numbers."
+ },
+ {
+  "tr": "Doğru: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“",
+  "kind": "explain",
+  "en": "True: „…eine E-Mail genügt; ein Grund muss nicht angegeben werden.“"
+ },
+ {
+  "tr": "Doğru: „Die neue Arbeit ist nicht leichter“ — ama ilerleme sağlıyor.",
+  "kind": "explain",
+  "en": "True: „Die neue Arbeit ist nicht leichter“ — but it does get her on."
+ },
+ {
+  "tr": "Doğru: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“",
+  "kind": "explain",
+  "en": "True: „Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.“"
+ },
+ {
+  "tr": "Doğru: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“",
+  "kind": "explain",
+  "en": "True: „Der Bürgermeister war in diesen Wochen jeden Tag im Rathaus.“"
+ },
+ {
+  "tr": "Doğru: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“",
+  "kind": "explain",
+  "en": "True: „Ein langes Anschreiben ist nicht nötig — zwei Sätze reichen.“"
+ },
+ {
+  "tr": "Doğru: „Geldbilder in Protokollen heikel“ — çünkü çoğu yargı taşıyor.",
+  "kind": "explain",
+  "en": "True: „Geldbilder in Protokollen heikel“ — because most of them carry a judgement."
+ },
+ {
+  "tr": "Doğru: „Reich waren sie nicht.“ Beş çocuğu tek başlarına büyütmüşler.",
+  "kind": "explain",
+  "en": "True: „Reich waren sie nicht.“ They brought up five children on their own."
+ },
+ {
+  "tr": "Doğru: „ich weiß die Wörter, aber ich kann sie nicht gut aussprechen“.",
+  "kind": "explain",
+  "en": "True: „ich weiß die Wörter, aber ich kann sie nicht gut aussprechen“."
+ },
+ {
+  "tr": "Doğru: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“",
+  "kind": "explain",
+  "en": "True: „Zuvor habe ich in einem Dorf gewohnt, mit dreihundert Leuten.“"
+ },
+ {
+  "tr": "Doğru: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“",
+  "kind": "explain",
+  "en": "True: „Das ist selten gelogen und trotzdem selten die ganze Wahrheit.“"
+ },
+ {
+  "tr": "Doğru: „Noch nicht. Genau das schlage ich für die nächste Version vor.“",
+  "kind": "explain",
+  "en": "True: „Noch nicht. Genau das schlage ich für die nächste Version vor.“"
+ },
+ {
+  "tr": "Doğru: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“.",
+  "kind": "explain",
+  "en": "True: „die Möbel von damals findet Frau Bergmann gar nicht altmodisch“."
+ },
+ {
+  "tr": "Doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
+  "kind": "explain",
+  "en": "True: „Ich habe leider kein Tier.“ The horse is her grandmother's, not hers."
+ },
+ {
+  "tr": "Doğru: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“",
+  "kind": "explain",
+  "en": "True: „Überteuert war Ihr Angebot ohnehin nie, das war nie mein Punkt.“"
+ },
+ {
+  "tr": "Doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
+  "kind": "explain",
+  "en": "True: „Bitte bringt keine großen Geschenke.“ Cake and sweets are wanted."
+ },
+ {
+  "tr": "Doğru: „Mein Chef hat nichts gesagt.“ Metinde kızgınlıktan söz edilmiyor.",
+  "kind": "explain",
+  "en": "True: „Mein Chef hat nichts gesagt.“ The text says nothing about anger."
+ },
+ {
+  "tr": "Doğru: „Aber er war fair: wer eine Frage hatte, bekam immer eine Antwort.“",
+  "kind": "explain",
+  "en": "True: „Aber er war fair: wer eine Frage hatte, bekam immer eine Antwort.“"
+ },
+ {
+  "tr": "Doğru: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“",
+  "kind": "explain",
+  "en": "True: „Ich habe in einer kleinen Stadt gewohnt, nicht in der Hauptstadt.“"
+ },
+ {
+  "tr": "Doğru: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“",
+  "kind": "explain",
+  "en": "True: „Und wir bleiben unter dreißig Minuten, das war der andere Wunsch.“"
+ },
+ {
+  "tr": "Doğru: „Wenigstens war das Wochenende ruhig.“ İki gün hiçbir şey yapmamış.",
+  "kind": "explain",
+  "en": "True: „Wenigstens war das Wochenende ruhig.“ She did nothing for two days."
+ },
+ {
+  "tr": "Doğru: „Ja, ich habe die Aufnahme.“ Sorun alıntıda değil, haberi çıkarmakta.",
+  "kind": "explain",
+  "en": "True: „Ja, ich habe die Aufnahme.“ The trouble is not the quotation but running the story."
+ },
+ {
+  "tr": "Doğru: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“",
+  "kind": "explain",
+  "en": "True: „Das macht der Kundendienst automatisch, Sie müssen nichts beantragen.“"
+ },
+ {
+  "tr": "Doğru: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“",
+  "kind": "explain",
+  "en": "True: „Rechenleistung ersetzt kein Ziel … das muss jemand vorher definieren.“"
+ },
+ {
+  "tr": "Doğru: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“",
+  "kind": "explain",
+  "en": "True: „Ich habe leider keine Karte dabei, aber ich schreibe Ihnen heute Abend.“"
+ },
+ {
+  "tr": "Doğru: „…das kann nicht am Vortag passieren“, sipariş çarşambaya kadar verilmeli.",
+  "kind": "explain",
+  "en": "True: „…das kann nicht am Vortag passieren“, the order has to be in by Wednesday."
+ },
+ {
+  "tr": "Doğru: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“",
+  "kind": "explain",
+  "en": "True: „Dann gilt die Kündigung trotzdem, sofern sie nachweislich zugegangen ist.“"
+ },
+ {
+  "tr": "Doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
+  "kind": "explain",
+  "en": "True: „Wer alles beschreibt, beschreibt nichts.“ One live detail beats five."
+ },
+ {
+  "tr": "Doğru: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“",
+  "kind": "explain",
+  "en": "True: „…nicht, weil ich Ihre Zeitung schlecht finde, sondern weil ich sie brauche.“"
+ },
+ {
+  "tr": "Doğru: „Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe.“",
+  "kind": "explain",
+  "en": "True: „Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe.“"
+ },
+ {
+  "tr": "Doğru: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“",
+  "kind": "explain",
+  "en": "True: „schicken wir Ihnen automatisch eine neue Karte. Sie müssen dafür nichts tun.“"
+ },
+ {
+  "tr": "Doğru: dışarıda hemen park edilebiliyor, „Im Zentrum sucht man dafür eine halbe Stunde“.",
+  "kind": "explain",
+  "en": "True: outside you can park at once, „Im Zentrum sucht man dafür eine halbe Stunde“."
+ },
+ {
+  "tr": "Doğru: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“",
+  "kind": "explain",
+  "en": "True: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“"
+ },
+ {
+  "tr": "Doğru: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“",
+  "kind": "explain",
+  "en": "True: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“"
+ },
+ {
+  "tr": "Doğru: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“",
+  "kind": "explain",
+  "en": "True: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“"
+ },
+ {
+  "tr": "Doğru: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — soslar da dâhil.",
+  "kind": "explain",
+  "en": "True: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — the sauces included."
+ },
+ {
+  "tr": "Doğru: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“",
+  "kind": "explain",
+  "en": "True: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“"
+ },
+ {
+  "tr": "Doğru: Şubattaki şikâyete ve kasımdan beri süren yazışmaya atıf yapıyor, ayrıca iki kez ihtar göndermiş.",
+  "kind": "explain",
+  "en": "True: it refers to the complaint in February and to correspondence going on since November, and two reminders were sent."
+ },
+ {
+  "tr": "Doğru: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“",
+  "kind": "explain",
+  "en": "True: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“"
+ },
+ {
+  "tr": "Doğru: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“",
+  "kind": "explain",
+  "en": "True: „…muss nach der geltenden Rechtsprechung trotzdem kennzeichnen, sobald ein Gegenwert im Spiel ist.“"
+ },
+ {
+  "tr": "Doğru: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“",
+  "kind": "explain",
+  "en": "True: „Eine Auswahl ist nie objektiv — schon die Entscheidung, worüber berichtet wird, ist eine Wertung.“"
+ },
+ {
+  "tr": "Doğru: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“",
+  "kind": "explain",
+  "en": "True: „Eine höfliche Rückfrage ist keine Störung, sondern der einzige Weg, ein Missverständnis zu klären.“"
+ },
+ {
+  "tr": "Doğru: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“",
+  "kind": "explain",
+  "en": "True: „Die Liste wird jedes Jahr aus diesen Einträgen ergänzt — deshalb ist sie inzwischen vier Seiten lang.“"
+ }
+]

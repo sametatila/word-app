@@ -181,10 +181,10 @@ export const c1U04: SkillExercise[] = [
         explain: "„keine schwache Vermutung, sondern eine begründete Verneinung“.",
       },
       {
-        text: "Der Text behauptet, „wohl“ sei eine Mutmaßung ohne jede Grundlage.",
+        text: "Der Text nennt „wohl“ eine Mutmaßung mit Grundlage.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „eine Mutmaßung mit Grundlage“ — ipucu var (ceket yok).",
+        answer: 0,
+        explain: "Doğru: „eine Mutmaßung mit Grundlage“ — ipucu var (ceket yok).",
       },
     ],
   },

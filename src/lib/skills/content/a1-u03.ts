@@ -120,10 +120,10 @@ export const a1U03: SkillExercise[] = [
         explain: "A1'in yanında [X] var, A2 boş: „[X] A1-Kurs  [ ] A2-Kurs“.",
       },
       {
-        text: "Richtig oder falsch? Amir ist ledig.",
+        text: "Richtig oder falsch? Amir ist verheiratet.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Familienstand: verheiratet“ — evli.",
+        answer: 0,
+        explain: "Doğru: „Familienstand: verheiratet“ — evli.",
       },
           {
         kind: "gapfill",
@@ -178,10 +178,10 @@ export const a1U03: SkillExercise[] = [
         explain: "„Meine Eltern wohnen in Wien.“",
       },
       {
-        text: "Richtig oder falsch? Jonas ist zehn Jahre alt.",
+        text: "Richtig oder falsch? Jonas ist zwanzig Jahre alt.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
+        answer: 0,
+        explain: "Doğru: Jonas zwanzig, kardeşi zehn. İki sayıyı karıştırmamak gerek.",
       },
           {
         kind: "gapfill",

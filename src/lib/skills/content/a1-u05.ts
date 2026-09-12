@@ -48,10 +48,10 @@ export const a1U05: SkillExercise[] = [
         explain: "„Nora ist Lehrerin.“ Verkäufer olan Jonas'ın kendisi.",
       },
       {
-        text: "Richtig oder falsch? Nora und Jonas treffen sich nicht oft.",
+        text: "Richtig oder falsch? Nora und Jonas treffen sich oft.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
+        answer: 0,
+        explain: "Doğru: „Wir treffen uns oft.“ — sık sık buluşuyorlar.",
       },
       {
         text: "Wo haben sie sich kennengelernt?",
@@ -107,10 +107,10 @@ export const a1U05: SkillExercise[] = [
         explain: "„Bei den Großeltern in Bremen.“",
       },
       {
-        text: "Richtig oder falsch? Die Gäste sollen große Geschenke bringen.",
+        text: "Richtig oder falsch? Die Gäste sollen keine großen Geschenke bringen.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
+        answer: 0,
+        explain: "Doğru: „Bitte bringt keine großen Geschenke.“ Kek ve şekerleme isteniyor.",
       },
       {
         kind: "gapfill",
@@ -163,10 +163,10 @@ export const a1U05: SkillExercise[] = [
         explain: "„Er ist groß und trägt eine Brille.“",
       },
       {
-        text: "Richtig oder falsch? Max hat lange Haare.",
+        text: "Richtig oder falsch? Max hat kurze Haare.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „hat kurze Haare“ deniyor ve bu kısım düzeltilmiyor.",
+        answer: 0,
+        explain: "Doğru: „hat kurze Haare“ deniyor ve bu kısım düzeltilmiyor.",
       },
       {
         kind: "gapfill",
@@ -229,10 +229,10 @@ export const a1U05: SkillExercise[] = [
         explain: "Tebrik kalıbı: „Herzlichen Glückwunsch!“",
       },
       {
-        text: "Richtig oder falsch? Die Süßigkeiten sind für die Erwachsenen.",
+        text: "Richtig oder falsch? Die Süßigkeiten sind für die Kinder.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „für die Kinder“ — çocuklar için.",
+        answer: 0,
+        explain: "Doğru: „für die Kinder“ — çocuklar için.",
       },
           {
         kind: "gapfill",

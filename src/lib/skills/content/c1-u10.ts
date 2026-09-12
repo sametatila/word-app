@@ -96,10 +96,10 @@ export const c1U10: SkillExercise[] = [
         explain: "Dört kelimede yetki sorusu — ve reddedilemeyecek kadar kibar.",
       },
       {
-        text: "Der Text hält Geldbilder für besonders geeignet in Protokollen.",
+        text: "Der Text hält Geldbilder in Protokollen für heikel.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Geldbilder in Protokollen heikel“ — çünkü çoğu yargı taşıyor.",
+        answer: 0,
+        explain: "Doğru: „Geldbilder in Protokollen heikel“ — çünkü çoğu yargı taşıyor.",
       },
     ],
   },

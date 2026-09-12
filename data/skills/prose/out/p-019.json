@@ -215,11 +215,6 @@
   "en": "False: „Ein höherer Satz bringt nicht automatisch mehr ein, weil sich Verhalten ändert.“"
  },
  {
-  "tr": "Yanlış: dışarıda hemen park edilebiliyor, „Im Zentrum sucht man dafür eine halbe Stunde“.",
-  "kind": "explain",
-  "en": "False: outside you can park at once, „Im Zentrum sucht man dafür eine halbe Stunde“."
- },
- {
   "tr": "„Am Freitag bleibt das Freibad zu.“ — zaman ifadesi başta olunca fiil ikinci sırada kalır.",
   "kind": "explain",
   "en": "„Am Freitag bleibt das Freibad zu.“ — with the time phrase first the verb stays second."
@@ -433,11 +428,6 @@
   "tr": "Spiker açıkça \"The buses are running normally today\" diyor, yani otobüslerde bir sorun yok.",
   "kind": "explain",
   "en": "The presenter says plainly \"The buses are running normally today\", so there is nothing wrong with the buses."
- },
- {
-  "tr": "Yanlış: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“",
-  "kind": "explain",
-  "en": "False: „Sie sagt nichts darüber, wie oft ein Team sich sieht. Das bleibt Sache der Teams.“"
  },
  {
   "tr": "Yanlış. \"I can speak a little English, but I can't speak French\" diyor; Fransızca bilmiyor.",
@@ -728,11 +718,6 @@
   "tr": "Resmî mektupta tehdit değil kayıt kurulur: 'kendimi mecbur görüyorum'. Özne cümleden çekilir.",
   "kind": "explain",
   "en": "A formal letter builds a record, not a threat: 'I find myself obliged'. The subject withdraws from the sentence."
- },
- {
-  "tr": "Yanlış: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“",
-  "kind": "explain",
-  "en": "False: „Es handelt sich also um eine Meinungsumfrage, nicht um eine Messung des Verhaltens.“"
  },
  {
   "tr": "yesterday zamanı sabitler; present perfect ile bir arada olmaz. Doğrusu: I saw him yesterday.",

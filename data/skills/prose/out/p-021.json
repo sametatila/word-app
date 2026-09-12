@@ -1,152 +1,727 @@
 [
- { "tr": "Erişilebilirliğin neden binada değil günlük işleyişte kazanıldığını savunan bir deneme okuyacaksın.", "kind": "intro", "en": "You are going to read an essay arguing that accessibility is won not in the building but in the daily running of it." },
- { "tr": "Gece gazete dağıtan bir kadınla söyleşi: işin ritmi, zorlukları, güzel yanı ve kime tavsiye ettiği.", "kind": "intro", "en": "An interview with a woman who delivers newspapers at night: the rhythm of the job, the hard parts, the good part and who she would recommend it to." },
- { "tr": "Gerçekdışı koşulda yan cümle de Konjunktiv II olmalı: „Wenn ich reich wäre, würde ich viel reisen.“", "kind": "explain", "en": "In an unreal condition the clause must be in Konjunktiv II too: „Wenn ich reich wäre, würde ich viel reisen.“" },
- { "tr": "İki edat tek cümlede liderlik tanımı yapıyor: önünde durmak korumak, arkasında durmak saklanmaktır.", "kind": "explain", "en": "Two prepositions define leadership in one sentence: standing in front of it protects, standing behind it hides." },
- { "tr": "Kelimenin başındaki „st“ ve „sp“ Almancada şt ve şp okunur, ortada ya da sonda ise normal st kalır.", "kind": "intro", "en": "At the start of a word „st“ and „sp“ are said sht and shp in German; in the middle or at the end they stay plain st." },
- { "tr": "Kira metrekare başına iki yılda beşte bir artmış: „Für Leute mit kleinem Gehalt ist das ungerecht.“", "kind": "explain", "en": "The rent per square metre has risen by a fifth in two years: „Für Leute mit kleinem Gehalt ist das ungerecht.“" },
- { "tr": "Nadia „ein bisschen Deutsch“ diyor. Tom ve Elif Almanca konuştuklarını sınırlama koymadan söylüyor.", "kind": "explain", "en": "Nadia says „ein bisschen Deutsch“. Tom and Elif say they speak German with no such limit." },
- { "tr": "Sebep bağlacı „weil“ (resmî yazıda „da“); yan cümle başta olduğu için ana cümle „ist“ ile başlıyor.", "kind": "explain", "en": "The connector of reason is „weil“ („da“ in formal writing); the clause comes first, so the main clause starts with „ist“." },
- { "tr": "Şehir merkezine giden 12 numaralı otobüsün sefer saatlerini ve yanındaki kısa duyuruyu okuyacaksın.", "kind": "intro", "en": "You are going to read the times of the number 12 bus to the city centre and the short notice beside them." },
- { "tr": "Türkçedeki tek gelecek eki İngilizcede ikiye ayrılır ve seçimi kararın ne zaman verildiği belirler.", "kind": "intro", "en": "The single Turkish future ending splits in two in English, and the choice depends on when the decision was made." },
- { "tr": "Yanlış: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“", "kind": "explain", "en": "False: „Ein Foto mit Datum ist kein Beweis vor Gericht, aber es beendet die meisten Diskussionen.“" },
- { "tr": "Yanlış: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — soslar da dâhil.", "kind": "explain", "en": "False: „Jede Zutat wird bei uns frisch geschnitten, nichts kommt aus der Dose.“ — the sauces included." },
- { "tr": "Yanlış: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“", "kind": "explain", "en": "False: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“" },
- { "tr": "\"Call me back tonight\" diyor. Taksiyi zaten kendisi ayırtmış: \"I have already booked a taxi for us.\"", "kind": "explain", "en": "She says \"Call me back tonight\". She has already booked the taxi: \"I have already booked a taxi for us.\"" },
- { "tr": "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve mobilya teslimi de bunu gösteriyor.", "kind": "explain", "en": "„Herzlich willkommen im Möbelhaus Nord“ — the kitchen advice and the furniture delivery show it too." },
- { "tr": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — takas, satış ya da üyelik değil.", "kind": "explain", "en": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — an exchange, not a sale or a membership." },
- { "tr": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“", "kind": "explain", "en": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“" },
- { "tr": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — memnun ama kusursuz değil.", "kind": "explain", "en": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — content but not flawless." },
- { "tr": "„Streit gibt es meistens nicht um Pflanzen, sondern um Regeln.“ — yükseklik, mangal, kullanım oranı.", "kind": "explain", "en": "„Streit gibt es meistens nicht um Pflanzen, sondern um Regeln.“ — the height, the barbecue, how much is used." },
- { "tr": "„Zuerst das Ehrliche: Du arbeitest gewissenhaft …“ Ilkay bunu sonunda ayrıca teşekkür ederek anıyor.", "kind": "explain", "en": "„Zuerst das Ehrliche: Du arbeitest gewissenhaft …“ Ilkay thanks her for that separately at the end." },
- { "tr": "Ayakkabı tamircisi telesekretere mesaj bırakıyor: ne yapıldı, ne kadar tuttu, ne getirmek gerekiyor.", "kind": "intro", "en": "A shoe repairer leaves a message on the answerphone: what was done, what it cost, what has to be brought." },
- { "tr": "Basit bir çorba tarifi okuyacaksın: neler gerekiyor, hangi sırayla yapılıyor, sonunda ne öneriliyor.", "kind": "intro", "en": "You are going to read a simple soup recipe: what you need, in what order, and what is suggested at the end." },
- { "tr": "Bir üretim biriminin haftalık raporu. Neyin yapıldığı, neyin yapılması gerektiği ayrı ayrı yazılmış.", "kind": "intro", "en": "A production unit's weekly report. What was done and what has to be done are written separately." },
- { "tr": "Çoğu kişinin görmediği bir işi anlatan blog yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.", "kind": "intro", "en": "You are going to write a blog post about a job most people never see; first form two sentences, then the post." },
- { "tr": "Doktor 'Take one tablet three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap.", "kind": "explain", "en": "The doctor says 'Take one tablet three times a day, after meals.'; one tablet three times a day, so three." },
- { "tr": "Haber ve rapor dilinin ayırt edici biçimi: söyleneni aktarırken doğruluğuna kefil olmadan bildirmek.", "kind": "intro", "en": "The distinguishing form of news and report language: passing on what was said without vouching for it." },
- { "tr": "Hemşire \"I used to drive to work. Now I walk\" diyor, yani eskiden araba kullanıyordu, şimdi yürüyor.", "kind": "explain", "en": "The nurse says \"I used to drive to work. Now I walk\", so she used to drive and now she walks." },
- { "tr": "İlk cümle „class 3B goes to the city zoo“ — sınıf geziye gidiyor; öğretmen ya da parti anlatılmıyor.", "kind": "explain", "en": "The first sentence is „class 3B goes to the city zoo“ — the class is going on a trip; no teacher and no party." },
- { "tr": "Kartta \"Time: 9:30 in the morning\" yazıyor. 8 ve 6 ise sağlık merkezinin açılış ve kapanış saatleri.", "kind": "explain", "en": "The card says \"Time: 9:30 in the morning\". 8 and 6 are when the health centre opens and closes." },
- { "tr": "Konuşmanın sonunda \"See you on Friday at half past ten\" deniyor. On iki, Ayse'nin işten çıkış saati.", "kind": "explain", "en": "At the end of the conversation it says \"See you on Friday at half past ten\". Twelve is when Ayse finishes work." },
- { "tr": "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte hep kısa biçimiyle söylenir.", "kind": "intro", "en": "In speech most verbs take the Perfekt, but three groups of verbs always use their short past form." },
- { "tr": "Mahalle merkezinin panosundaki duyuruyu okuyacaksın: kim ne tamir ediyor, ne zaman ve hangi kuralla.", "kind": "intro", "en": "You are going to read the notice on the neighbourhood centre's board: who repairs what, when, and under which rule." },
- { "tr": "Sözlükte neredeyse hiçbir şey ifade etmeyen, cümledeyse tutumu tümüyle belirleyen dört küçük kelime.", "kind": "intro", "en": "Four small words that mean almost nothing in a dictionary and decide the whole attitude in a sentence." },
- { "tr": "Telefonla yemek siparişi veren birini dinleyeceksin: ne istiyor, ne kadar tutuyor, ne zaman geliyor.", "kind": "intro", "en": "You are going to hear somebody ordering food by phone: what they want, what it costs, when it comes." },
- { "tr": "„Is there a name in the bag?“ — „No, but … my name is on the library card.“ Ad kartta, çantada değil.", "kind": "explain", "en": "„Is there a name in the bag?“ — „No, but … my name is on the library card.“ The name is on the card, not in the bag." },
- { "tr": "„Nicht ein größeres Budget, sondern eine andere Buchführung“ — sorun görünmeyen faydanın sayılmaması.", "kind": "explain", "en": "„Nicht ein größeres Budget, sondern eine andere Buchführung“ — the trouble is that the invisible benefit is not counted." },
- { "tr": "„Speicher ist billig, Erschließung ist es nicht.“ — ikinci cümlede yüklem „es“ ile geri gönderiliyor.", "kind": "explain", "en": "„Speicher ist billig, Erschließung ist es nicht.“ — in the second clause the predicate is picked up by „es“." },
- { "tr": "„Wir pflanzen nicht mehr eine Art pro Straße.“ — „nicht mehr“ eskiden yapılanın bırakıldığını söyler.", "kind": "explain", "en": "„Wir pflanzen nicht mehr eine Art pro Straße.“ — „nicht mehr“ says the old practice has been given up." },
- { "tr": "Belediyenin görüşe açtığı bir öneriye resmî yanıt yazacaksın; önce iki cümle kur, sonra görüşünü yaz.", "kind": "intro", "en": "You are going to write a formal reply to a council proposal put out for comment; first form two sentences, then your view." },
- { "tr": "Bir aksaklığın nedenini araştıran kısa bir iç rapor yazacaksın; önce iki cümle kur, sonra raporu yaz.", "kind": "intro", "en": "You are going to write a short internal report investigating the cause of a fault; first form two sentences, then the report." },
- { "tr": "Bir davet reddediliyor. Almanca'da hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.", "kind": "intro", "en": "An invitation is refused. Saying no in German has three parts: a clear no + a reason + a CONCRETE alternative." },
- { "tr": "Davetiyenin alt kısmında \"Please answer before 20 August\" yazıyor; 12 Eylül ise düğünün kendi tarihi.", "kind": "explain", "en": "At the bottom of the invitation it says \"Please answer before 20 August\"; 12 September is the date of the wedding itself." },
- { "tr": "Edilgen özneyi arkaya atar; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.", "kind": "explain", "en": "The passive pushes the subject to the back; the organisation describes the process, not itself. Length and prohibition do not come into it." },
- { "tr": "Görevli \"It's forty dollars. The green one is thirty dollars.\" diyor; kırk dolar siyah olanın fiyatı.", "kind": "explain", "en": "The assistant says \"It's forty dollars. The green one is thirty dollars.\"; forty dollars is the black one." },
- { "tr": "İki dakikaya kadar konuşacaksın: bir konumu savun, karşı tarafı hakkıyla anlat ve kendi ölçütünü koy.", "kind": "intro", "en": "You will speak for up to two minutes: defend a position, set out the other side fairly and state your own test." },
- { "tr": "İlk kez tek başına yolculuğa çıkacak birine mektup yazacaksın; önce iki cümle kur, sonra mektubu yaz.", "kind": "intro", "en": "You are going to write a letter to somebody travelling alone for the first time; first form two sentences, then the letter." },
- { "tr": "İngilizcede kısa „i“ ile uzun „ii“ iki ayrı sestir ve kelimeyi değiştirir; yedi cümlede ikisini ayır.", "kind": "intro", "en": "In English a short „i“ and a long „ii“ are two different sounds and change the word; keep them apart in seven sentences." },
- { "tr": "Kullanma kılavuzlarının neden okunmadığını inceleyen bir yazı okuyacaksın: sorun uzunluk mu, sıra mı.", "kind": "intro", "en": "You are going to read an article looking into why manuals go unread: is the trouble the length, or the order." },
- { "tr": "Kurumların çalışma saatleri üzerine bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.", "kind": "intro", "en": "You are going to write a column about the opening hours of public offices; first form two sentences, then the column." },
- { "tr": "Kurumsal dilin belkemiği: eylemi yapan söylenmediğinde cümle nasıl kurulur, hangi zamanda ne değişir.", "kind": "intro", "en": "The backbone of institutional language: how a sentence is built when the doer is not named, and what changes with the tense." },
- { "tr": "Metnin tamamı yazarın kendi yüzme hikâyesi; kızı ve plaj yalnız başlangıç noktası (ilk iki paragraf).", "kind": "explain", "en": "The whole text is the writer's own swimming story; the daughter and the beach are only the starting point in the first two paragraphs." },
- { "tr": "Öğretmenin velilere gönderdiği kısa mektubu oku: gezi ne zaman, kaç para, çocuk yanında ne getirecek.", "kind": "intro", "en": "Read the short letter the teacher has sent to parents: when the trip is, how much it costs, what the child should bring." },
- { "tr": "Radyoda kısa bir deneme dinleyeceksin: mekânlar davranışı nasıl yönlendiriyor ve bunu kim tasarlıyor.", "kind": "intro", "en": "You are going to hear a short essay on the radio: how places steer behaviour, and who designs that." },
- { "tr": "Sokakta bir direğe asılmış kayıp ilanı okuyacaksın: kim kayıp, nasıl görünüyor, kime haber verilecek.", "kind": "intro", "en": "You are going to read a lost notice on a lamp post in the street: who is missing, what they look like, who should be told." },
- { "tr": "Tüketici danışma merkezinde bir görüşme: sorun ne, hukuken kimin ne yapması gerekiyor, hangi sırayla.", "kind": "intro", "en": "A conversation at a consumer advice centre: what is the problem, who has to do what in law, and in what order." },
- { "tr": "Türkçedeki tek „-yor“ eki İngilizcede ikiye ayrılır: alışkanlık başka biçim, şu an başka biçim ister.", "kind": "intro", "en": "The single Turkish ending '-yor' splits in two in English: a habit takes one form and this very moment another." },
- { "tr": "Yazılışı hep aynı, sesi üç türlü: -ed kimi zaman „t“, kimi zaman „d“, yalnız t/d'den sonra „ıd“ olur.", "kind": "intro", "en": "Always written the same, sounded three ways: -ed is sometimes „t“, sometimes „d“, and only after t or d „id“." },
- { "tr": "„Das trifft zu, ändert aber nichts an der Wirkung“ — itirazı kabul ediyor, yalnız sonucunu reddediyor.", "kind": "explain", "en": "„Das trifft zu, ändert aber nichts an der Wirkung“ — he grants the objection and rejects only its conclusion." },
- { "tr": "\"I took forty photos\" cümlesine göre kırk fotoğraf çekti. Üç saat yürüdükleri de aynı cümlede yazıyor.", "kind": "explain", "en": "According to the sentence \"I took forty photos\" he took forty photos. The same sentence says they walked for three hours." },
- { "tr": "„Ich würde anregen, dass …“ — dilek kipi emri öneriye çeviriyor, ama içerik yine de bir görevlendirme.", "kind": "explain", "en": "„Ich würde anregen, dass …“ — the subjunctive turns an order into a suggestion, but the content is still an assignment." },
- { "tr": "„ist geschlossen“ dükkânın DURUMUNU söyler; „wird geschlossen“ kapatma işini, üçüncüsü etken cümledir.", "kind": "explain", "en": "„ist geschlossen“ states the shop's STATE; „wird geschlossen“ the act of closing, and the third is an active sentence." },
- { "tr": "„losgehen“ hem ayrılabilen hem yer değiştiren bir fiil: ortacı „losgegangen“ ve yardımcı fiili „sein“.", "kind": "explain", "en": "„losgehen“ is both separable and a verb of movement: its participle is „losgegangen“ and its auxiliary „sein“." },
- { "tr": "„Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich.“ Almanya'da doktora Termin ile gidilir.", "kind": "explain", "en": "„Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich.“ In Germany you go to the doctor with a Termin." },
- { "tr": "Bir dakikaya yakın tek başına konuşacaksın: bir seçim yap, gerekçelendir ve neyi seçmediğini de söyle.", "kind": "intro", "en": "You will speak alone for nearly a minute: make a choice, give your reasons, and say what you did not choose too." },
- { "tr": "Bir şehir forumunda çeşme tartışması var; önce iki cümle kur, sonra kendi görüşünü gerekçeleriyle yaz.", "kind": "intro", "en": "There is an argument about a fountain on a city forum; first form two sentences, then write your view with reasons." },
- { "tr": "Bu belirtide kişi özne olmaz, yönelme hâlinde durur: „Mir ist schwindlig“, „Ich bin schwindlig“ değil.", "kind": "explain", "en": "With this symptom the person is not the subject but goes into the dative: „Mir ist schwindlig“, not „Ich bin schwindlig“." },
- { "tr": "Deniz notunda \"I used to work in a small pizza place in Izmir, and I made coffee every morning\" diyor.", "kind": "explain", "en": "In his note Deniz says \"I used to work in a small pizza place in Izmir, and I made coffee every morning\"." },
- { "tr": "İki nesne var: gönderilen kişi belirtme hâlinde, kendisi için gönderilen kişi yönelme hâlinde ve önde.", "kind": "explain", "en": "There are two objects: the person sent goes accusative, the person it is sent for goes dative and comes first." },
- { "tr": "Kayıtta \"A new passport photo costs twelve euros\" geçiyor; ayrıca nakit ödenmesi gerektiği söyleniyor.", "kind": "explain", "en": "The recording says \"A new passport photo costs twelve euros\"; it also says it has to be paid in cash." },
- { "tr": "Köy toplantısından üyelere yazılmış notları okuyacaksın: kim ne dedi, kim itiraz etti, ne karar çıktı.", "kind": "intro", "en": "You are going to read the notes written to members after a village meeting: who said what, who objected, what was decided." },
- { "tr": "Kurallar bölümünde \"Small pets are fine, but dogs are not\" yazıyor. Küçük hayvanlar olur, köpek olmaz.", "kind": "explain", "en": "The rules section says \"Small pets are fine, but dogs are not\". Small pets are allowed, dogs are not." },
- { "tr": "Kütüphanenin taşındığını duyuran kısa bir haber okuyacaksın: yeni adres, kapalı günler ve açılış günü.", "kind": "intro", "en": "You are going to read a short report that the library is moving: the new address, the closed days and the opening day." },
- { "tr": "Mert \"I'm going to meet Deniz there on Saturday at eleven o'clock.\" diyor, yani buluşma saat on birde.", "kind": "explain", "en": "Mert says \"I'm going to meet Deniz there on Saturday at eleven o'clock.\", so they meet at eleven." },
- { "tr": "Metinde \"Check-out: Monday, 15 June, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı.", "kind": "explain", "en": "The text says \"Check-out: Monday, 15 June, before 11:00\", so the room must be left before 11:00." },
- { "tr": "sein + zu + mastar, edilgen yerine geçer: 'değiştirilmesi gerekir'. Ayrılabilen fiilde zu araya girer.", "kind": "explain", "en": "sein + zu + infinitive stands in for the passive: 'has to be replaced'. In a separable verb zu goes in the middle." },
- { "tr": "Veli toplantısında okul önündeki trafik konuşuluyor: sorun ne, kim itiraz ediyor, hangi karar çıkıyor.", "kind": "intro", "en": "The traffic in front of the school is discussed at a parents' meeting: what is wrong, who objects, what is decided." },
- { "tr": "Yerel radyonun öğle bültenini dinleyeceksin: birden fazla haber, aktarılan açıklamalar ve hava durumu.", "kind": "intro", "en": "You are going to hear a local radio lunchtime bulletin: several reports, statements passed on, and the weather." },
- { "tr": "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — para yalnız bir gün için isteniyor.", "kind": "explain", "en": "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — money is asked for one day only." },
- { "tr": "„Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke.“ — sözcüğü reddedip duyguyu kabul ediyor.", "kind": "explain", "en": "„Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke.“ — she rejects the word and admits the feeling." },
- { "tr": "„Bitte rufen Sie uns an … Sie können auch eine Nachricht schreiben.“ İlan yalnız haber vermeyi istiyor.", "kind": "explain", "en": "„Bitte rufen Sie uns an … Sie können auch eine Nachricht schreiben.“ The notice asks only to be told." },
- { "tr": "„Prüfung … erfolgt durch X“ kalıbı tek fiile iner: X prüft. Kurumsal metni açmanın en hızlı yolu budur.", "kind": "explain", "en": "The pattern „Prüfung … erfolgt durch X“ reduces to one verb: X prüft. That is the quickest way to open up an official text." },
- { "tr": "Başlık „Ferienprogramm“ ve altında beş gün sıralanıyor — bu bir tatil programı, davet ya da ilan değil.", "kind": "explain", "en": "The heading is „Ferienprogramm“ with five days listed under it — a holiday programme, not an invitation or an advert." },
- { "tr": "Bir buçuk dakikaya kadar konuşacaksın: kolay ölçütü ele, kendi ölçütünü parçalara ayır ve örnekle sına.", "kind": "intro", "en": "You will speak for up to a minute and a half: rule out the easy test, break your own into parts and try it on an example." },
- { "tr": "Bir derneğin iki yıllık ara raporunu okuyacaksın: sayılar ne diyor, ne öneriliyor, hangi soru cevapsız.", "kind": "intro", "en": "You are going to read a society's two-year interim report: what the figures say, what is proposed, which question is unanswered." },
- { "tr": "Deniz konuşmanın başında 'My laptop doesn't connect to the internet.' diyor. Sorun internet bağlantısı.", "kind": "explain", "en": "At the start of the call Deniz says 'My laptop doesn't connect to the internet.' The problem is the internet connection." },
- { "tr": "İki dakikaya kadar konuşacaksın: soruyu kolaylık sorusundan çıkar, dağılımı adlandır ve bir ölçüt öner.", "kind": "intro", "en": "You will speak for up to two minutes: take the question out of convenience, name the distribution and propose a test." },
- { "tr": "İngilizcede vurgulu hece daha uzun ve daha yüksektir; yanlış heceyi vurgulamak kelimeyi tanınmaz yapar.", "kind": "intro", "en": "In English the stressed syllable is longer and higher; stressing the wrong one makes the word unrecognisable." },
- { "tr": "Karşılaştırma İngilizcede ayrı bir kelimeyle değil, çoğu zaman sıfatın kendisine gelen eklerle kurulur.", "kind": "intro", "en": "In English a comparison is usually made not with a separate word but with endings on the adjective itself." },
- { "tr": "Kartta \"Bring this card and your ID.\" yazıyor. Su içmek ilaç notuyla ilgili, getirilecek bir şey değil.", "kind": "explain", "en": "The card says \"Bring this card and your ID.\" Drinking water belongs to the note about medicine, not to what to bring." },
- { "tr": "Kendini tanıtmayı yazarak çalış. Parçaları birleştir, sonra formu doldur. Sadece bu ünitenin kalıpları.", "kind": "intro", "en": "Practise introducing yourself in writing. Put the parts together, then fill in the form. Only the patterns of this unit." },
- { "tr": "Ms. Clark \"The shift starts at seven thirty in the morning\" diyor; vardiya sabah yedi buçukta başlıyor.", "kind": "explain", "en": "Ms. Clark says \"The shift starts at seven thirty in the morning\"; the shift starts at half past seven." },
- { "tr": "Sürücü kursundan bir sesli mesaj dinleyeceksin: ders neden iptal, hangi seçenekler var, ne getirilecek.", "kind": "intro", "en": "You are going to hear a voice message from a driving school: why is the lesson cancelled, what are the options, what should be brought." },
- { "tr": "warten fiili auf edatını ister ve ardından belirtme hâli gelir; Türkçede edat yok, bu yüzden atlanıyor.", "kind": "explain", "en": "The verb warten takes auf and the accusative after it; Turkish has no preposition there, so it gets left out." },
- { "tr": "Yanlış: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“", "kind": "explain", "en": "False: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“" },
- { "tr": "Yanlış: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“", "kind": "explain", "en": "False: „…schreibt grammatisch dasselbe wie eine Wochenzeitung; der Unterschied liegt in der Wortwahl.“" },
- { "tr": "Yazılışı benzeyen iki ses: „ei“ hep „ay“, „ie“ hep uzun „ii“. Yedi cümlede ikisini karıştırmadan söyle.", "kind": "intro", "en": "Two sounds that look alike: „ei“ is always „ay“ and „ie“ always a long „ii“. Keep them apart in seven sentences." },
- { "tr": "„… steht die Hälfte leer, weil niemand so weit fahren will.“ Toprak ve kurallar bu cümlede hiç geçmiyor.", "kind": "explain", "en": "„… steht die Hälfte leer, weil niemand so weit fahren will.“ The soil and the rules never appear in that sentence." },
- { "tr": "„Die Abfallmenge in den Kantinen ist um 68 Prozent gesunken.“ 340.000 ise tasarruf edilen bardak sayısı.", "kind": "explain", "en": "„Die Abfallmenge in den Kantinen ist um 68 Prozent gesunken.“ 340.000 is the number of cups saved." },
- { "tr": "„Ein Wald denkt nicht in Jahren, sondern in Generationen.“ — „nicht … sondern“ ikilisi karşıtlığı kurar.", "kind": "explain", "en": "„Ein Wald denkt nicht in Jahren, sondern in Generationen.“ — the „nicht … sondern“ pair builds the contrast." },
- { "tr": "„Ihre Bestellung liegt jetzt bei Ihrer Nachbarin, Frau Lorenz (Wohnung 3c).“ Şube yalnız ikinci ihtimal.", "kind": "explain", "en": "„Ihre Bestellung liegt jetzt bei Ihrer Nachbarin, Frau Lorenz (Wohnung 3c).“ The branch is only the second option." },
- { "tr": "„Ist es besser, wenn ich in Druckbuchstaben schreibe?“ — „Viel besser. Bei Zahlen hilft das am meisten.“", "kind": "explain", "en": "„Ist es besser, wenn ich in Druckbuchstaben schreibe?“ — „Viel besser. Bei Zahlen hilft das am meisten.“" },
- { "tr": "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ C1'de itirazın KAPSAMI ayrıca belirtilir.", "kind": "explain", "en": "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ At C1 the SCOPE of an objection is stated as well." },
- { "tr": "„Nobody wants surprises on holiday.“ — nobody olumsuz anlam taşır ama fiil olumlu ve tekil kalır: wants.", "kind": "explain", "en": "„Nobody wants surprises on holiday.“ — nobody carries a negative sense but the verb stays positive and singular: wants." },
- { "tr": "\"the new departure time is 3:35\" cümlesinden anlaşılıyor. 3:15 eski saat, 5:40 ise sonraki trenin saati.", "kind": "explain", "en": "It follows from the sentence \"the new departure time is 3:35\". 3:15 was the old time and 5:40 is the next train." },
- { "tr": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş ve ziyaretçi başka bağlamda geçiyor.", "kind": "explain", "en": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ The age and the visitors come up elsewhere." },
- { "tr": "Bir dakikaya yakın tek başına konuşacaksın: soruya net bir cevap ver ve iki farklı türde gerekçe kullan.", "kind": "intro", "en": "You will speak alone for nearly a minute: answer the question clearly and use two different kinds of reason." },
- { "tr": "Bir firma adayı telefonla arıyor. Dinle: aday ne kadar deneyimli, neden başvurdu, ne zaman başlayabilir?", "kind": "intro", "en": "A firm rings a candidate. Listen: how experienced is the candidate, why did they apply, when can they start?" },
- { "tr": "Bir yavru köpeği ilk kez büyütecek kişilere yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.", "kind": "intro", "en": "You are going to write instructions for people raising a puppy for the first time; first form two sentences, then the instructions." },
- { "tr": "C1'in ayırt edici işi iddiayı doğru dereceye ayarlamaktır: ne kadar eminsin ve bunu nasıl gösteriyorsun.", "kind": "intro", "en": "The distinguishing work of C1 is calibrating a claim: how sure you are, and how you show it." },
- { "tr": "Emma sarı portu soruyor, Deniz bakıp 'No, it's in the grey one.' diyor. Kablo yanlışlıkla gri porttaydı.", "kind": "explain", "en": "Emma asks about the yellow port and Deniz looks and says 'No, it's in the grey one.' The cable was in the grey port by mistake." },
- { "tr": "İngilizcede „w“ dudaklarla, „v“ ise diş ve dudakla çıkar; Türkçedeki tek v sesi ikisinin arasında kalır.", "kind": "intro", "en": "In English „w“ is made with the lips and „v“ with the teeth and lip; the single Turkish v sits between the two." },
- { "tr": "Kayıtta \"From Monday to Friday, we open at six in the morning\" deniyor; yani hafta içi açılış saat altı.", "kind": "explain", "en": "The recording says \"From Monday to Friday, we open at six in the morning\"; on weekdays it opens at six." },
- { "tr": "Lena, kütüphanedeki ilana cevap veriyor. İkisi dil değişimi için nasıl bir düzen kurduklarını konuşuyor.", "kind": "intro", "en": "Lena is answering the notice in the library. The two of them discuss how to arrange a language exchange." },
- { "tr": "Listede \"Shoes: black or brown. 45 dollars.\" satırı var. 12 dolar tişörtlerin, 30 dolar kotların fiyatı.", "kind": "explain", "en": "The list has the line \"Shoes: black or brown. 45 dollars.\" 12 dollars is the T-shirts and 30 dollars the jeans." },
- { "tr": "Ortak bahçenin girişindeki kural yazısını okuyacaksın: kapı ne zaman açık, ne yapılabilir, ne yapılamaz.", "kind": "intro", "en": "You are going to read the rules at the entrance to a shared garden: when the gate is open, what you may do, what not." },
- { "tr": "Sayıların nasıl kurulduğunu anlatan bir deneme: hangi karar hangi rakamı üretiyor ve manşete ne kalıyor.", "kind": "intro", "en": "An essay on how figures are built: which decision produces which number, and what is left for the headline." },
- { "tr": "Bir tatil evi ilanı buldun; önce iki cümle kur, sonra ev sahibine sorularını içeren kısa bir e-posta yaz.", "kind": "intro", "en": "You have found a holiday house advert; first form two sentences, then write a short email with your questions to the owner." },
- { "tr": "Çamaşırhanenin duvarındaki kullanım talimatını okuyacaksın: hangi sırayla ne yapılıyor, ne kadar tutuyor.", "kind": "intro", "en": "You are going to read the instructions on the wall of the launderette: what is done in what order, and what it costs." },
- { "tr": "Çoğul eki hep aynı yazılır ama üç ayrı ses verir: s, z ve iz. Hangisinin geleceğini önceki harf belirler.", "kind": "intro", "en": "The plural ending is always written the same but sounded three ways: s, z and iz. The letter before it decides." },
- { "tr": "Doğru kurulmuş bir nominal öbek: „nach + Dativ“, ardından Genitiv tamlaması. Resmî yazının tipik cümlesi.", "kind": "explain", "en": "A correctly built nominal phrase: „nach + Dativ“ followed by a genitive. The typical sentence of formal writing." },
- { "tr": "hören = duymak, sehen = görmek. Telefonda karşındakini görmezsin, o yüzden „Wiedersehen“ mantıksız kaçar.", "kind": "explain", "en": "hören = to hear, sehen = to see. On the phone you do not see the other person, so „Wiedersehen“ makes no sense." },
- { "tr": "Kaan \"That's my aunt Julia. She's my mother's sister.\" diyor. Julia, annesinin kız kardeşi, yani teyzesi.", "kind": "explain", "en": "Kaan says \"That's my aunt Julia. She's my mother's sister.\" Julia is his mother's sister, so his aunt." },
- { "tr": "Kurum dilinde nezaket işlev fiili öbeğiyle kuruluyor; düz fiil („stehlen“, „kosten“) burada kaba düşerdi.", "kind": "explain", "en": "In institutional language politeness is built with a light-verb phrase; a plain verb („stehlen“, „kosten“) would sound rude." },
- { "tr": "Resmî yazışmada „Mit freundlichen Grüßen“. İş başvurusunu „Liebe Grüße“ ile bitirmek ciddiyetsiz görünür.", "kind": "explain", "en": "In formal correspondence it is „Mit freundlichen Grüßen“. Ending a job application with „Liebe Grüße“ looks unserious." },
- { "tr": "Türkçede olmayan bir zorunluluk: İngilizce cümlede fiil hep bulunur, „var“ ise ayrı bir kalıpla söylenir.", "kind": "intro", "en": "An obligation that Turkish does not have: an English sentence always contains a verb, and 'there is' is a pattern of its own." },
- { "tr": "Yanlış: Şubattaki şikâyete ve kasımdan beri süren yazışmaya atıf yapıyor, ayrıca iki kez ihtar göndermiş.", "kind": "explain", "en": "False: it refers to the complaint in February and to correspondence going on since November, and two reminders were sent." },
- { "tr": "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve hangisinin nerede işe yaradığını ayır.", "kind": "intro", "en": "You will speak for up to a minute and a half: compare two approaches and separate out where each of them works." },
- { "tr": "Jonas telesekretere mesaj bırakıyor: anahtar nerede, köpeğe ne zaman bakılacak, sorun olursa ne yapılacak.", "kind": "intro", "en": "Jonas leaves a message on the answerphone: where the key is, when the dog has to be seen to, what to do if there is a problem." },
- { "tr": "Kayıt \"Yoga classes are on Tuesday and Thursday evenings at seven\" diyor; yoga salı ve perşembe akşamları.", "kind": "explain", "en": "The recording says \"Yoga classes are on Tuesday and Thursday evenings at seven\"; yoga is on Tuesday and Thursday evenings." },
- { "tr": "Kırk yıllık bir piyano akortçusuyla söyleşi okuyacaksın: işi neden ölçüm değil karar, neyi kimse duymuyor.", "kind": "intro", "en": "You are going to read an interview with a piano tuner of forty years: why the job is a judgement and not a measurement, and what nobody hears." },
- { "tr": "Leyla ev takasını anlatıyor: „you just swap keys“, „No rent, no.“ Para kazanmak ya da fotoğraf satmak yok.", "kind": "explain", "en": "Leyla describes a house swap: „you just swap keys“, „No rent, no.“ There is no earning money and no selling photos." },
- { "tr": "Modal fiillerle kurulan cümlede iki fiil vardır: biri ikinci sırada çekimli, öteki cümlenin sonunda yalın.", "kind": "intro", "en": "A sentence with a modal has two verbs: one conjugated in second place, the other bare at the end." },
- { "tr": "Programda 2. gün (Cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye Cumartesi sabahı gidiliyor.", "kind": "explain", "en": "Day 2 (Saturday) in the programme says \"Bus to the castle\" at 09:30, so they go to the castle on Saturday morning." },
- { "tr": "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.", "kind": "intro", "en": "A formal introduction (Sie). Herr Koch is meeting Frau Yilmaz. Careful: „Sie“ is used here." },
- { "tr": "Sistem ocakta başladı ve rapor dokuz ay sonrasının bilançosu: önce sayılar, sonra iki itiraz, sonra tepki.", "kind": "explain", "en": "The system started in January and the report is a balance nine months on: the figures first, then two objections, then the response." },
- { "tr": "Telefonsuz bir kafeyi işleten kadınla söyleşi dinleyeceksin: kural nasıl işliyor, neden başladı, sonuç ne.", "kind": "intro", "en": "You are going to hear an interview with a woman who runs a café without phones: how does the rule work, why did she start, what came of it." },
- { "tr": "Yanlış: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“", "kind": "explain", "en": "False: „Erst im dritten Schritt kommt die Gemeinde ins Spiel, und zwar nur bei wiederholter Ruhestörung.“" },
- { "tr": "„in der kommenden Woche … sobald die Prüfung abgeschlossen ist“ — tarih koşula bağlı, yani bağlayıcı değil.", "kind": "explain", "en": "„in der kommenden Woche … sobald die Prüfung abgeschlossen ist“ — the date hangs on a condition, so it does not bind." },
- { "tr": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ Garajlı daire henüz sadece bir plan.", "kind": "explain", "en": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ The flat with a garage is still only a plan." },
- { "tr": "\"Next week he will open a small office in Istanbul\" diyor; gelecek hafta İstanbul'da küçük bir ofis açacak.", "kind": "explain", "en": "He says \"Next week he will open a small office in Istanbul\"; next week he will open a small office in Istanbul." },
- { "tr": "Bir forumda ilk tam zamanlı işe başlayan birine tavsiye vereceksin; önce iki cümle kur, sonra cevabını yaz.", "kind": "intro", "en": "You are going to give advice on a forum to somebody starting their first full-time job; first form two sentences, then your answer." },
- { "tr": "Bir gençlik evinin tatil programını okuyacaksın: hangi gün ne var, ne kadar tutuyor, nasıl kayıt yapılıyor.", "kind": "intro", "en": "You are going to read a youth centre's holiday programme: what is on which day, what it costs, how you sign up." },
- { "tr": "Bir kafede Emre'nin sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.", "kind": "intro", "en": "You are going to hear Emre ordering in a café and talking to the waiter; watch what he wants and the price." },
- { "tr": "Bir müşteri ikinci el dükkânına kıyafet getiriyor: neler alınıyor, karşılığında ne veriliyor, ne gerekiyor.", "kind": "intro", "en": "A customer brings clothes to a second-hand shop: what is taken, what is given in return, what is needed." },
- { "tr": "Duyuruda \"Swimming for beginners - Saturday, 11 a.m.\" yazıyor. Pazar günü ders değil, arkadaş getirme günü.", "kind": "explain", "en": "The notice says \"Swimming for beginners - Saturday, 11 a.m.\" Sunday is not a lesson but the day for bringing a friend." },
- { "tr": "İki dakikaya kadar konuşacaksın: soruyu yeniden çerçevele, en güçlü itirazı hakkıyla anlat ve ölçütünü koy.", "kind": "intro", "en": "You will speak for up to two minutes: reframe the question, set out the strongest objection fairly and state your test." },
- { "tr": "Kamusal alandaki küçük tasarım kararlarını okuyan bir deneme: bir bankın kolçağı gerçekte kime ne söylüyor?", "kind": "intro", "en": "An essay reading the small design decisions in public space: what does an armrest on a bench really say, and to whom?" },
- { "tr": "Mobilya mağazasında kapanış anonsunu dinleyeceksin: indirim, restoran saati, kaybolan çocuk ve teslim alma.", "kind": "intro", "en": "You are going to hear the closing announcement in a furniture shop: the discount, the restaurant hours, a lost child and the collection point." },
- { "tr": "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.", "kind": "intro", "en": "You are going to hear the closing announcement in a museum: which floor shuts first, how long the shop stays open, what is on tomorrow." },
- { "tr": "Not şöyle: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var.", "kind": "explain", "en": "The note says: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" So there is Wi-Fi only indoors." }
+ {
+  "tr": "Erişilebilirliğin neden binada değil günlük işleyişte kazanıldığını savunan bir deneme okuyacaksın.",
+  "kind": "intro",
+  "en": "You are going to read an essay arguing that accessibility is won not in the building but in the daily running of it."
+ },
+ {
+  "tr": "Gece gazete dağıtan bir kadınla söyleşi: işin ritmi, zorlukları, güzel yanı ve kime tavsiye ettiği.",
+  "kind": "intro",
+  "en": "An interview with a woman who delivers newspapers at night: the rhythm of the job, the hard parts, the good part and who she would recommend it to."
+ },
+ {
+  "tr": "Gerçekdışı koşulda yan cümle de Konjunktiv II olmalı: „Wenn ich reich wäre, würde ich viel reisen.“",
+  "kind": "explain",
+  "en": "In an unreal condition the clause must be in Konjunktiv II too: „Wenn ich reich wäre, würde ich viel reisen.“"
+ },
+ {
+  "tr": "İki edat tek cümlede liderlik tanımı yapıyor: önünde durmak korumak, arkasında durmak saklanmaktır.",
+  "kind": "explain",
+  "en": "Two prepositions define leadership in one sentence: standing in front of it protects, standing behind it hides."
+ },
+ {
+  "tr": "Kelimenin başındaki „st“ ve „sp“ Almancada şt ve şp okunur, ortada ya da sonda ise normal st kalır.",
+  "kind": "intro",
+  "en": "At the start of a word „st“ and „sp“ are said sht and shp in German; in the middle or at the end they stay plain st."
+ },
+ {
+  "tr": "Kira metrekare başına iki yılda beşte bir artmış: „Für Leute mit kleinem Gehalt ist das ungerecht.“",
+  "kind": "explain",
+  "en": "The rent per square metre has risen by a fifth in two years: „Für Leute mit kleinem Gehalt ist das ungerecht.“"
+ },
+ {
+  "tr": "Nadia „ein bisschen Deutsch“ diyor. Tom ve Elif Almanca konuştuklarını sınırlama koymadan söylüyor.",
+  "kind": "explain",
+  "en": "Nadia says „ein bisschen Deutsch“. Tom and Elif say they speak German with no such limit."
+ },
+ {
+  "tr": "Sebep bağlacı „weil“ (resmî yazıda „da“); yan cümle başta olduğu için ana cümle „ist“ ile başlıyor.",
+  "kind": "explain",
+  "en": "The connector of reason is „weil“ („da“ in formal writing); the clause comes first, so the main clause starts with „ist“."
+ },
+ {
+  "tr": "Şehir merkezine giden 12 numaralı otobüsün sefer saatlerini ve yanındaki kısa duyuruyu okuyacaksın.",
+  "kind": "intro",
+  "en": "You are going to read the times of the number 12 bus to the city centre and the short notice beside them."
+ },
+ {
+  "tr": "Türkçedeki tek gelecek eki İngilizcede ikiye ayrılır ve seçimi kararın ne zaman verildiği belirler.",
+  "kind": "intro",
+  "en": "The single Turkish future ending splits in two in English, and the choice depends on when the decision was made."
+ },
+ {
+  "tr": "Yanlış: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“",
+  "kind": "explain",
+  "en": "False: „Streuen kostet außerdem nichts — im Gegenteil, breite Produkte sind meist die billigsten.“"
+ },
+ {
+  "tr": "\"Call me back tonight\" diyor. Taksiyi zaten kendisi ayırtmış: \"I have already booked a taxi for us.\"",
+  "kind": "explain",
+  "en": "She says \"Call me back tonight\". She has already booked the taxi: \"I have already booked a taxi for us.\""
+ },
+ {
+  "tr": "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve mobilya teslimi de bunu gösteriyor.",
+  "kind": "explain",
+  "en": "„Herzlich willkommen im Möbelhaus Nord“ — the kitchen advice and the furniture delivery show it too."
+ },
+ {
+  "tr": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — takas, satış ya da üyelik değil.",
+  "kind": "explain",
+  "en": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — an exchange, not a sale or a membership."
+ },
+ {
+  "tr": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“",
+  "kind": "explain",
+  "en": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“"
+ },
+ {
+  "tr": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — memnun ama kusursuz değil.",
+  "kind": "explain",
+  "en": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — content but not flawless."
+ },
+ {
+  "tr": "„Streit gibt es meistens nicht um Pflanzen, sondern um Regeln.“ — yükseklik, mangal, kullanım oranı.",
+  "kind": "explain",
+  "en": "„Streit gibt es meistens nicht um Pflanzen, sondern um Regeln.“ — the height, the barbecue, how much is used."
+ },
+ {
+  "tr": "„Zuerst das Ehrliche: Du arbeitest gewissenhaft …“ Ilkay bunu sonunda ayrıca teşekkür ederek anıyor.",
+  "kind": "explain",
+  "en": "„Zuerst das Ehrliche: Du arbeitest gewissenhaft …“ Ilkay thanks her for that separately at the end."
+ },
+ {
+  "tr": "Ayakkabı tamircisi telesekretere mesaj bırakıyor: ne yapıldı, ne kadar tuttu, ne getirmek gerekiyor.",
+  "kind": "intro",
+  "en": "A shoe repairer leaves a message on the answerphone: what was done, what it cost, what has to be brought."
+ },
+ {
+  "tr": "Basit bir çorba tarifi okuyacaksın: neler gerekiyor, hangi sırayla yapılıyor, sonunda ne öneriliyor.",
+  "kind": "intro",
+  "en": "You are going to read a simple soup recipe: what you need, in what order, and what is suggested at the end."
+ },
+ {
+  "tr": "Bir üretim biriminin haftalık raporu. Neyin yapıldığı, neyin yapılması gerektiği ayrı ayrı yazılmış.",
+  "kind": "intro",
+  "en": "A production unit's weekly report. What was done and what has to be done are written separately."
+ },
+ {
+  "tr": "Çoğu kişinin görmediği bir işi anlatan blog yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
+  "kind": "intro",
+  "en": "You are going to write a blog post about a job most people never see; first form two sentences, then the post."
+ },
+ {
+  "tr": "Doktor 'Take one tablet three times a day, after meals.' diyor; günde üç kez birer hap, yani üç hap.",
+  "kind": "explain",
+  "en": "The doctor says 'Take one tablet three times a day, after meals.'; one tablet three times a day, so three."
+ },
+ {
+  "tr": "Haber ve rapor dilinin ayırt edici biçimi: söyleneni aktarırken doğruluğuna kefil olmadan bildirmek.",
+  "kind": "intro",
+  "en": "The distinguishing form of news and report language: passing on what was said without vouching for it."
+ },
+ {
+  "tr": "Hemşire \"I used to drive to work. Now I walk\" diyor, yani eskiden araba kullanıyordu, şimdi yürüyor.",
+  "kind": "explain",
+  "en": "The nurse says \"I used to drive to work. Now I walk\", so she used to drive and now she walks."
+ },
+ {
+  "tr": "İlk cümle „class 3B goes to the city zoo“ — sınıf geziye gidiyor; öğretmen ya da parti anlatılmıyor.",
+  "kind": "explain",
+  "en": "The first sentence is „class 3B goes to the city zoo“ — the class is going on a trip; no teacher and no party."
+ },
+ {
+  "tr": "Kartta \"Time: 9:30 in the morning\" yazıyor. 8 ve 6 ise sağlık merkezinin açılış ve kapanış saatleri.",
+  "kind": "explain",
+  "en": "The card says \"Time: 9:30 in the morning\". 8 and 6 are when the health centre opens and closes."
+ },
+ {
+  "tr": "Konuşmanın sonunda \"See you on Friday at half past ten\" deniyor. On iki, Ayse'nin işten çıkış saati.",
+  "kind": "explain",
+  "en": "At the end of the conversation it says \"See you on Friday at half past ten\". Twelve is when Ayse finishes work."
+ },
+ {
+  "tr": "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte hep kısa biçimiyle söylenir.",
+  "kind": "intro",
+  "en": "In speech most verbs take the Perfekt, but three groups of verbs always use their short past form."
+ },
+ {
+  "tr": "Mahalle merkezinin panosundaki duyuruyu okuyacaksın: kim ne tamir ediyor, ne zaman ve hangi kuralla.",
+  "kind": "intro",
+  "en": "You are going to read the notice on the neighbourhood centre's board: who repairs what, when, and under which rule."
+ },
+ {
+  "tr": "Sözlükte neredeyse hiçbir şey ifade etmeyen, cümledeyse tutumu tümüyle belirleyen dört küçük kelime.",
+  "kind": "intro",
+  "en": "Four small words that mean almost nothing in a dictionary and decide the whole attitude in a sentence."
+ },
+ {
+  "tr": "Telefonla yemek siparişi veren birini dinleyeceksin: ne istiyor, ne kadar tutuyor, ne zaman geliyor.",
+  "kind": "intro",
+  "en": "You are going to hear somebody ordering food by phone: what they want, what it costs, when it comes."
+ },
+ {
+  "tr": "„Is there a name in the bag?“ — „No, but … my name is on the library card.“ Ad kartta, çantada değil.",
+  "kind": "explain",
+  "en": "„Is there a name in the bag?“ — „No, but … my name is on the library card.“ The name is on the card, not in the bag."
+ },
+ {
+  "tr": "„Nicht ein größeres Budget, sondern eine andere Buchführung“ — sorun görünmeyen faydanın sayılmaması.",
+  "kind": "explain",
+  "en": "„Nicht ein größeres Budget, sondern eine andere Buchführung“ — the trouble is that the invisible benefit is not counted."
+ },
+ {
+  "tr": "„Speicher ist billig, Erschließung ist es nicht.“ — ikinci cümlede yüklem „es“ ile geri gönderiliyor.",
+  "kind": "explain",
+  "en": "„Speicher ist billig, Erschließung ist es nicht.“ — in the second clause the predicate is picked up by „es“."
+ },
+ {
+  "tr": "„Wir pflanzen nicht mehr eine Art pro Straße.“ — „nicht mehr“ eskiden yapılanın bırakıldığını söyler.",
+  "kind": "explain",
+  "en": "„Wir pflanzen nicht mehr eine Art pro Straße.“ — „nicht mehr“ says the old practice has been given up."
+ },
+ {
+  "tr": "Belediyenin görüşe açtığı bir öneriye resmî yanıt yazacaksın; önce iki cümle kur, sonra görüşünü yaz.",
+  "kind": "intro",
+  "en": "You are going to write a formal reply to a council proposal put out for comment; first form two sentences, then your view."
+ },
+ {
+  "tr": "Bir aksaklığın nedenini araştıran kısa bir iç rapor yazacaksın; önce iki cümle kur, sonra raporu yaz.",
+  "kind": "intro",
+  "en": "You are going to write a short internal report investigating the cause of a fault; first form two sentences, then the report."
+ },
+ {
+  "tr": "Bir davet reddediliyor. Almanca'da hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.",
+  "kind": "intro",
+  "en": "An invitation is refused. Saying no in German has three parts: a clear no + a reason + a CONCRETE alternative."
+ },
+ {
+  "tr": "Davetiyenin alt kısmında \"Please answer before 20 August\" yazıyor; 12 Eylül ise düğünün kendi tarihi.",
+  "kind": "explain",
+  "en": "At the bottom of the invitation it says \"Please answer before 20 August\"; 12 September is the date of the wedding itself."
+ },
+ {
+  "tr": "Edilgen özneyi arkaya atar; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
+  "kind": "explain",
+  "en": "The passive pushes the subject to the back; the organisation describes the process, not itself. Length and prohibition do not come into it."
+ },
+ {
+  "tr": "Görevli \"It's forty dollars. The green one is thirty dollars.\" diyor; kırk dolar siyah olanın fiyatı.",
+  "kind": "explain",
+  "en": "The assistant says \"It's forty dollars. The green one is thirty dollars.\"; forty dollars is the black one."
+ },
+ {
+  "tr": "İki dakikaya kadar konuşacaksın: bir konumu savun, karşı tarafı hakkıyla anlat ve kendi ölçütünü koy.",
+  "kind": "intro",
+  "en": "You will speak for up to two minutes: defend a position, set out the other side fairly and state your own test."
+ },
+ {
+  "tr": "İlk kez tek başına yolculuğa çıkacak birine mektup yazacaksın; önce iki cümle kur, sonra mektubu yaz.",
+  "kind": "intro",
+  "en": "You are going to write a letter to somebody travelling alone for the first time; first form two sentences, then the letter."
+ },
+ {
+  "tr": "İngilizcede kısa „i“ ile uzun „ii“ iki ayrı sestir ve kelimeyi değiştirir; yedi cümlede ikisini ayır.",
+  "kind": "intro",
+  "en": "In English a short „i“ and a long „ii“ are two different sounds and change the word; keep them apart in seven sentences."
+ },
+ {
+  "tr": "Kullanma kılavuzlarının neden okunmadığını inceleyen bir yazı okuyacaksın: sorun uzunluk mu, sıra mı.",
+  "kind": "intro",
+  "en": "You are going to read an article looking into why manuals go unread: is the trouble the length, or the order."
+ },
+ {
+  "tr": "Kurumların çalışma saatleri üzerine bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
+  "kind": "intro",
+  "en": "You are going to write a column about the opening hours of public offices; first form two sentences, then the column."
+ },
+ {
+  "tr": "Kurumsal dilin belkemiği: eylemi yapan söylenmediğinde cümle nasıl kurulur, hangi zamanda ne değişir.",
+  "kind": "intro",
+  "en": "The backbone of institutional language: how a sentence is built when the doer is not named, and what changes with the tense."
+ },
+ {
+  "tr": "Metnin tamamı yazarın kendi yüzme hikâyesi; kızı ve plaj yalnız başlangıç noktası (ilk iki paragraf).",
+  "kind": "explain",
+  "en": "The whole text is the writer's own swimming story; the daughter and the beach are only the starting point in the first two paragraphs."
+ },
+ {
+  "tr": "Öğretmenin velilere gönderdiği kısa mektubu oku: gezi ne zaman, kaç para, çocuk yanında ne getirecek.",
+  "kind": "intro",
+  "en": "Read the short letter the teacher has sent to parents: when the trip is, how much it costs, what the child should bring."
+ },
+ {
+  "tr": "Radyoda kısa bir deneme dinleyeceksin: mekânlar davranışı nasıl yönlendiriyor ve bunu kim tasarlıyor.",
+  "kind": "intro",
+  "en": "You are going to hear a short essay on the radio: how places steer behaviour, and who designs that."
+ },
+ {
+  "tr": "Sokakta bir direğe asılmış kayıp ilanı okuyacaksın: kim kayıp, nasıl görünüyor, kime haber verilecek.",
+  "kind": "intro",
+  "en": "You are going to read a lost notice on a lamp post in the street: who is missing, what they look like, who should be told."
+ },
+ {
+  "tr": "Tüketici danışma merkezinde bir görüşme: sorun ne, hukuken kimin ne yapması gerekiyor, hangi sırayla.",
+  "kind": "intro",
+  "en": "A conversation at a consumer advice centre: what is the problem, who has to do what in law, and in what order."
+ },
+ {
+  "tr": "Türkçedeki tek „-yor“ eki İngilizcede ikiye ayrılır: alışkanlık başka biçim, şu an başka biçim ister.",
+  "kind": "intro",
+  "en": "The single Turkish ending '-yor' splits in two in English: a habit takes one form and this very moment another."
+ },
+ {
+  "tr": "Yazılışı hep aynı, sesi üç türlü: -ed kimi zaman „t“, kimi zaman „d“, yalnız t/d'den sonra „ıd“ olur.",
+  "kind": "intro",
+  "en": "Always written the same, sounded three ways: -ed is sometimes „t“, sometimes „d“, and only after t or d „id“."
+ },
+ {
+  "tr": "„Das trifft zu, ändert aber nichts an der Wirkung“ — itirazı kabul ediyor, yalnız sonucunu reddediyor.",
+  "kind": "explain",
+  "en": "„Das trifft zu, ändert aber nichts an der Wirkung“ — he grants the objection and rejects only its conclusion."
+ },
+ {
+  "tr": "\"I took forty photos\" cümlesine göre kırk fotoğraf çekti. Üç saat yürüdükleri de aynı cümlede yazıyor.",
+  "kind": "explain",
+  "en": "According to the sentence \"I took forty photos\" he took forty photos. The same sentence says they walked for three hours."
+ },
+ {
+  "tr": "„Ich würde anregen, dass …“ — dilek kipi emri öneriye çeviriyor, ama içerik yine de bir görevlendirme.",
+  "kind": "explain",
+  "en": "„Ich würde anregen, dass …“ — the subjunctive turns an order into a suggestion, but the content is still an assignment."
+ },
+ {
+  "tr": "„ist geschlossen“ dükkânın DURUMUNU söyler; „wird geschlossen“ kapatma işini, üçüncüsü etken cümledir.",
+  "kind": "explain",
+  "en": "„ist geschlossen“ states the shop's STATE; „wird geschlossen“ the act of closing, and the third is an active sentence."
+ },
+ {
+  "tr": "„losgehen“ hem ayrılabilen hem yer değiştiren bir fiil: ortacı „losgegangen“ ve yardımcı fiili „sein“.",
+  "kind": "explain",
+  "en": "„losgehen“ is both separable and a verb of movement: its participle is „losgegangen“ and its auxiliary „sein“."
+ },
+ {
+  "tr": "„Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich.“ Almanya'da doktora Termin ile gidilir.",
+  "kind": "explain",
+  "en": "„Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich.“ In Germany you go to the doctor with a Termin."
+ },
+ {
+  "tr": "Bir dakikaya yakın tek başına konuşacaksın: bir seçim yap, gerekçelendir ve neyi seçmediğini de söyle.",
+  "kind": "intro",
+  "en": "You will speak alone for nearly a minute: make a choice, give your reasons, and say what you did not choose too."
+ },
+ {
+  "tr": "Bir şehir forumunda çeşme tartışması var; önce iki cümle kur, sonra kendi görüşünü gerekçeleriyle yaz.",
+  "kind": "intro",
+  "en": "There is an argument about a fountain on a city forum; first form two sentences, then write your view with reasons."
+ },
+ {
+  "tr": "Bu belirtide kişi özne olmaz, yönelme hâlinde durur: „Mir ist schwindlig“, „Ich bin schwindlig“ değil.",
+  "kind": "explain",
+  "en": "With this symptom the person is not the subject but goes into the dative: „Mir ist schwindlig“, not „Ich bin schwindlig“."
+ },
+ {
+  "tr": "Deniz notunda \"I used to work in a small pizza place in Izmir, and I made coffee every morning\" diyor.",
+  "kind": "explain",
+  "en": "In his note Deniz says \"I used to work in a small pizza place in Izmir, and I made coffee every morning\"."
+ },
+ {
+  "tr": "İki nesne var: gönderilen kişi belirtme hâlinde, kendisi için gönderilen kişi yönelme hâlinde ve önde.",
+  "kind": "explain",
+  "en": "There are two objects: the person sent goes accusative, the person it is sent for goes dative and comes first."
+ },
+ {
+  "tr": "Kayıtta \"A new passport photo costs twelve euros\" geçiyor; ayrıca nakit ödenmesi gerektiği söyleniyor.",
+  "kind": "explain",
+  "en": "The recording says \"A new passport photo costs twelve euros\"; it also says it has to be paid in cash."
+ },
+ {
+  "tr": "Köy toplantısından üyelere yazılmış notları okuyacaksın: kim ne dedi, kim itiraz etti, ne karar çıktı.",
+  "kind": "intro",
+  "en": "You are going to read the notes written to members after a village meeting: who said what, who objected, what was decided."
+ },
+ {
+  "tr": "Kurallar bölümünde \"Small pets are fine, but dogs are not\" yazıyor. Küçük hayvanlar olur, köpek olmaz.",
+  "kind": "explain",
+  "en": "The rules section says \"Small pets are fine, but dogs are not\". Small pets are allowed, dogs are not."
+ },
+ {
+  "tr": "Kütüphanenin taşındığını duyuran kısa bir haber okuyacaksın: yeni adres, kapalı günler ve açılış günü.",
+  "kind": "intro",
+  "en": "You are going to read a short report that the library is moving: the new address, the closed days and the opening day."
+ },
+ {
+  "tr": "Mert \"I'm going to meet Deniz there on Saturday at eleven o'clock.\" diyor, yani buluşma saat on birde.",
+  "kind": "explain",
+  "en": "Mert says \"I'm going to meet Deniz there on Saturday at eleven o'clock.\", so they meet at eleven."
+ },
+ {
+  "tr": "Metinde \"Check-out: Monday, 15 June, before 11:00\" yazıyor, yani odadan saat 11:00'den önce çıkılmalı.",
+  "kind": "explain",
+  "en": "The text says \"Check-out: Monday, 15 June, before 11:00\", so the room must be left before 11:00."
+ },
+ {
+  "tr": "sein + zu + mastar, edilgen yerine geçer: 'değiştirilmesi gerekir'. Ayrılabilen fiilde zu araya girer.",
+  "kind": "explain",
+  "en": "sein + zu + infinitive stands in for the passive: 'has to be replaced'. In a separable verb zu goes in the middle."
+ },
+ {
+  "tr": "Veli toplantısında okul önündeki trafik konuşuluyor: sorun ne, kim itiraz ediyor, hangi karar çıkıyor.",
+  "kind": "intro",
+  "en": "The traffic in front of the school is discussed at a parents' meeting: what is wrong, who objects, what is decided."
+ },
+ {
+  "tr": "Yerel radyonun öğle bültenini dinleyeceksin: birden fazla haber, aktarılan açıklamalar ve hava durumu.",
+  "kind": "intro",
+  "en": "You are going to hear a local radio lunchtime bulletin: several reports, statements passed on, and the weather."
+ },
+ {
+  "tr": "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — para yalnız bir gün için isteniyor.",
+  "kind": "explain",
+  "en": "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — money is asked for one day only."
+ },
+ {
+  "tr": "„Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke.“ — sözcüğü reddedip duyguyu kabul ediyor.",
+  "kind": "explain",
+  "en": "„Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke.“ — she rejects the word and admits the feeling."
+ },
+ {
+  "tr": "„Bitte rufen Sie uns an … Sie können auch eine Nachricht schreiben.“ İlan yalnız haber vermeyi istiyor.",
+  "kind": "explain",
+  "en": "„Bitte rufen Sie uns an … Sie können auch eine Nachricht schreiben.“ The notice asks only to be told."
+ },
+ {
+  "tr": "„Prüfung … erfolgt durch X“ kalıbı tek fiile iner: X prüft. Kurumsal metni açmanın en hızlı yolu budur.",
+  "kind": "explain",
+  "en": "The pattern „Prüfung … erfolgt durch X“ reduces to one verb: X prüft. That is the quickest way to open up an official text."
+ },
+ {
+  "tr": "Başlık „Ferienprogramm“ ve altında beş gün sıralanıyor — bu bir tatil programı, davet ya da ilan değil.",
+  "kind": "explain",
+  "en": "The heading is „Ferienprogramm“ with five days listed under it — a holiday programme, not an invitation or an advert."
+ },
+ {
+  "tr": "Bir buçuk dakikaya kadar konuşacaksın: kolay ölçütü ele, kendi ölçütünü parçalara ayır ve örnekle sına.",
+  "kind": "intro",
+  "en": "You will speak for up to a minute and a half: rule out the easy test, break your own into parts and try it on an example."
+ },
+ {
+  "tr": "Bir derneğin iki yıllık ara raporunu okuyacaksın: sayılar ne diyor, ne öneriliyor, hangi soru cevapsız.",
+  "kind": "intro",
+  "en": "You are going to read a society's two-year interim report: what the figures say, what is proposed, which question is unanswered."
+ },
+ {
+  "tr": "Deniz konuşmanın başında 'My laptop doesn't connect to the internet.' diyor. Sorun internet bağlantısı.",
+  "kind": "explain",
+  "en": "At the start of the call Deniz says 'My laptop doesn't connect to the internet.' The problem is the internet connection."
+ },
+ {
+  "tr": "İki dakikaya kadar konuşacaksın: soruyu kolaylık sorusundan çıkar, dağılımı adlandır ve bir ölçüt öner.",
+  "kind": "intro",
+  "en": "You will speak for up to two minutes: take the question out of convenience, name the distribution and propose a test."
+ },
+ {
+  "tr": "İngilizcede vurgulu hece daha uzun ve daha yüksektir; yanlış heceyi vurgulamak kelimeyi tanınmaz yapar.",
+  "kind": "intro",
+  "en": "In English the stressed syllable is longer and higher; stressing the wrong one makes the word unrecognisable."
+ },
+ {
+  "tr": "Karşılaştırma İngilizcede ayrı bir kelimeyle değil, çoğu zaman sıfatın kendisine gelen eklerle kurulur.",
+  "kind": "intro",
+  "en": "In English a comparison is usually made not with a separate word but with endings on the adjective itself."
+ },
+ {
+  "tr": "Kartta \"Bring this card and your ID.\" yazıyor. Su içmek ilaç notuyla ilgili, getirilecek bir şey değil.",
+  "kind": "explain",
+  "en": "The card says \"Bring this card and your ID.\" Drinking water belongs to the note about medicine, not to what to bring."
+ },
+ {
+  "tr": "Kendini tanıtmayı yazarak çalış. Parçaları birleştir, sonra formu doldur. Sadece bu ünitenin kalıpları.",
+  "kind": "intro",
+  "en": "Practise introducing yourself in writing. Put the parts together, then fill in the form. Only the patterns of this unit."
+ },
+ {
+  "tr": "Ms. Clark \"The shift starts at seven thirty in the morning\" diyor; vardiya sabah yedi buçukta başlıyor.",
+  "kind": "explain",
+  "en": "Ms. Clark says \"The shift starts at seven thirty in the morning\"; the shift starts at half past seven."
+ },
+ {
+  "tr": "Sürücü kursundan bir sesli mesaj dinleyeceksin: ders neden iptal, hangi seçenekler var, ne getirilecek.",
+  "kind": "intro",
+  "en": "You are going to hear a voice message from a driving school: why is the lesson cancelled, what are the options, what should be brought."
+ },
+ {
+  "tr": "warten fiili auf edatını ister ve ardından belirtme hâli gelir; Türkçede edat yok, bu yüzden atlanıyor.",
+  "kind": "explain",
+  "en": "The verb warten takes auf and the accusative after it; Turkish has no preposition there, so it gets left out."
+ },
+ {
+  "tr": "Yanlış: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“",
+  "kind": "explain",
+  "en": "False: „…nicht dadurch, dass sie recht hat, sondern indem sie über Jahre zu denselben Sitzungen geht.“"
+ },
+ {
+  "tr": "Yazılışı benzeyen iki ses: „ei“ hep „ay“, „ie“ hep uzun „ii“. Yedi cümlede ikisini karıştırmadan söyle.",
+  "kind": "intro",
+  "en": "Two sounds that look alike: „ei“ is always „ay“ and „ie“ always a long „ii“. Keep them apart in seven sentences."
+ },
+ {
+  "tr": "„… steht die Hälfte leer, weil niemand so weit fahren will.“ Toprak ve kurallar bu cümlede hiç geçmiyor.",
+  "kind": "explain",
+  "en": "„… steht die Hälfte leer, weil niemand so weit fahren will.“ The soil and the rules never appear in that sentence."
+ },
+ {
+  "tr": "„Die Abfallmenge in den Kantinen ist um 68 Prozent gesunken.“ 340.000 ise tasarruf edilen bardak sayısı.",
+  "kind": "explain",
+  "en": "„Die Abfallmenge in den Kantinen ist um 68 Prozent gesunken.“ 340.000 is the number of cups saved."
+ },
+ {
+  "tr": "„Ein Wald denkt nicht in Jahren, sondern in Generationen.“ — „nicht … sondern“ ikilisi karşıtlığı kurar.",
+  "kind": "explain",
+  "en": "„Ein Wald denkt nicht in Jahren, sondern in Generationen.“ — the „nicht … sondern“ pair builds the contrast."
+ },
+ {
+  "tr": "„Ihre Bestellung liegt jetzt bei Ihrer Nachbarin, Frau Lorenz (Wohnung 3c).“ Şube yalnız ikinci ihtimal.",
+  "kind": "explain",
+  "en": "„Ihre Bestellung liegt jetzt bei Ihrer Nachbarin, Frau Lorenz (Wohnung 3c).“ The branch is only the second option."
+ },
+ {
+  "tr": "„Ist es besser, wenn ich in Druckbuchstaben schreibe?“ — „Viel besser. Bei Zahlen hilft das am meisten.“",
+  "kind": "explain",
+  "en": "„Ist es besser, wenn ich in Druckbuchstaben schreibe?“ — „Viel besser. Bei Zahlen hilft das am meisten.“"
+ },
+ {
+  "tr": "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ C1'de itirazın KAPSAMI ayrıca belirtilir.",
+  "kind": "explain",
+  "en": "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ At C1 the SCOPE of an objection is stated as well."
+ },
+ {
+  "tr": "„Nobody wants surprises on holiday.“ — nobody olumsuz anlam taşır ama fiil olumlu ve tekil kalır: wants.",
+  "kind": "explain",
+  "en": "„Nobody wants surprises on holiday.“ — nobody carries a negative sense but the verb stays positive and singular: wants."
+ },
+ {
+  "tr": "\"the new departure time is 3:35\" cümlesinden anlaşılıyor. 3:15 eski saat, 5:40 ise sonraki trenin saati.",
+  "kind": "explain",
+  "en": "It follows from the sentence \"the new departure time is 3:35\". 3:15 was the old time and 5:40 is the next train."
+ },
+ {
+  "tr": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş ve ziyaretçi başka bağlamda geçiyor.",
+  "kind": "explain",
+  "en": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ The age and the visitors come up elsewhere."
+ },
+ {
+  "tr": "Bir dakikaya yakın tek başına konuşacaksın: soruya net bir cevap ver ve iki farklı türde gerekçe kullan.",
+  "kind": "intro",
+  "en": "You will speak alone for nearly a minute: answer the question clearly and use two different kinds of reason."
+ },
+ {
+  "tr": "Bir firma adayı telefonla arıyor. Dinle: aday ne kadar deneyimli, neden başvurdu, ne zaman başlayabilir?",
+  "kind": "intro",
+  "en": "A firm rings a candidate. Listen: how experienced is the candidate, why did they apply, when can they start?"
+ },
+ {
+  "tr": "Bir yavru köpeği ilk kez büyütecek kişilere yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
+  "kind": "intro",
+  "en": "You are going to write instructions for people raising a puppy for the first time; first form two sentences, then the instructions."
+ },
+ {
+  "tr": "C1'in ayırt edici işi iddiayı doğru dereceye ayarlamaktır: ne kadar eminsin ve bunu nasıl gösteriyorsun.",
+  "kind": "intro",
+  "en": "The distinguishing work of C1 is calibrating a claim: how sure you are, and how you show it."
+ },
+ {
+  "tr": "Emma sarı portu soruyor, Deniz bakıp 'No, it's in the grey one.' diyor. Kablo yanlışlıkla gri porttaydı.",
+  "kind": "explain",
+  "en": "Emma asks about the yellow port and Deniz looks and says 'No, it's in the grey one.' The cable was in the grey port by mistake."
+ },
+ {
+  "tr": "İngilizcede „w“ dudaklarla, „v“ ise diş ve dudakla çıkar; Türkçedeki tek v sesi ikisinin arasında kalır.",
+  "kind": "intro",
+  "en": "In English „w“ is made with the lips and „v“ with the teeth and lip; the single Turkish v sits between the two."
+ },
+ {
+  "tr": "Kayıtta \"From Monday to Friday, we open at six in the morning\" deniyor; yani hafta içi açılış saat altı.",
+  "kind": "explain",
+  "en": "The recording says \"From Monday to Friday, we open at six in the morning\"; on weekdays it opens at six."
+ },
+ {
+  "tr": "Lena, kütüphanedeki ilana cevap veriyor. İkisi dil değişimi için nasıl bir düzen kurduklarını konuşuyor.",
+  "kind": "intro",
+  "en": "Lena is answering the notice in the library. The two of them discuss how to arrange a language exchange."
+ },
+ {
+  "tr": "Listede \"Shoes: black or brown. 45 dollars.\" satırı var. 12 dolar tişörtlerin, 30 dolar kotların fiyatı.",
+  "kind": "explain",
+  "en": "The list has the line \"Shoes: black or brown. 45 dollars.\" 12 dollars is the T-shirts and 30 dollars the jeans."
+ },
+ {
+  "tr": "Ortak bahçenin girişindeki kural yazısını okuyacaksın: kapı ne zaman açık, ne yapılabilir, ne yapılamaz.",
+  "kind": "intro",
+  "en": "You are going to read the rules at the entrance to a shared garden: when the gate is open, what you may do, what not."
+ },
+ {
+  "tr": "Sayıların nasıl kurulduğunu anlatan bir deneme: hangi karar hangi rakamı üretiyor ve manşete ne kalıyor.",
+  "kind": "intro",
+  "en": "An essay on how figures are built: which decision produces which number, and what is left for the headline."
+ },
+ {
+  "tr": "Bir tatil evi ilanı buldun; önce iki cümle kur, sonra ev sahibine sorularını içeren kısa bir e-posta yaz.",
+  "kind": "intro",
+  "en": "You have found a holiday house advert; first form two sentences, then write a short email with your questions to the owner."
+ },
+ {
+  "tr": "Çamaşırhanenin duvarındaki kullanım talimatını okuyacaksın: hangi sırayla ne yapılıyor, ne kadar tutuyor.",
+  "kind": "intro",
+  "en": "You are going to read the instructions on the wall of the launderette: what is done in what order, and what it costs."
+ },
+ {
+  "tr": "Çoğul eki hep aynı yazılır ama üç ayrı ses verir: s, z ve iz. Hangisinin geleceğini önceki harf belirler.",
+  "kind": "intro",
+  "en": "The plural ending is always written the same but sounded three ways: s, z and iz. The letter before it decides."
+ },
+ {
+  "tr": "Doğru kurulmuş bir nominal öbek: „nach + Dativ“, ardından Genitiv tamlaması. Resmî yazının tipik cümlesi.",
+  "kind": "explain",
+  "en": "A correctly built nominal phrase: „nach + Dativ“ followed by a genitive. The typical sentence of formal writing."
+ },
+ {
+  "tr": "hören = duymak, sehen = görmek. Telefonda karşındakini görmezsin, o yüzden „Wiedersehen“ mantıksız kaçar.",
+  "kind": "explain",
+  "en": "hören = to hear, sehen = to see. On the phone you do not see the other person, so „Wiedersehen“ makes no sense."
+ },
+ {
+  "tr": "Kaan \"That's my aunt Julia. She's my mother's sister.\" diyor. Julia, annesinin kız kardeşi, yani teyzesi.",
+  "kind": "explain",
+  "en": "Kaan says \"That's my aunt Julia. She's my mother's sister.\" Julia is his mother's sister, so his aunt."
+ },
+ {
+  "tr": "Kurum dilinde nezaket işlev fiili öbeğiyle kuruluyor; düz fiil („stehlen“, „kosten“) burada kaba düşerdi.",
+  "kind": "explain",
+  "en": "In institutional language politeness is built with a light-verb phrase; a plain verb („stehlen“, „kosten“) would sound rude."
+ },
+ {
+  "tr": "Resmî yazışmada „Mit freundlichen Grüßen“. İş başvurusunu „Liebe Grüße“ ile bitirmek ciddiyetsiz görünür.",
+  "kind": "explain",
+  "en": "In formal correspondence it is „Mit freundlichen Grüßen“. Ending a job application with „Liebe Grüße“ looks unserious."
+ },
+ {
+  "tr": "Türkçede olmayan bir zorunluluk: İngilizce cümlede fiil hep bulunur, „var“ ise ayrı bir kalıpla söylenir.",
+  "kind": "intro",
+  "en": "An obligation that Turkish does not have: an English sentence always contains a verb, and 'there is' is a pattern of its own."
+ },
+ {
+  "tr": "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve hangisinin nerede işe yaradığını ayır.",
+  "kind": "intro",
+  "en": "You will speak for up to a minute and a half: compare two approaches and separate out where each of them works."
+ },
+ {
+  "tr": "Jonas telesekretere mesaj bırakıyor: anahtar nerede, köpeğe ne zaman bakılacak, sorun olursa ne yapılacak.",
+  "kind": "intro",
+  "en": "Jonas leaves a message on the answerphone: where the key is, when the dog has to be seen to, what to do if there is a problem."
+ },
+ {
+  "tr": "Kayıt \"Yoga classes are on Tuesday and Thursday evenings at seven\" diyor; yoga salı ve perşembe akşamları.",
+  "kind": "explain",
+  "en": "The recording says \"Yoga classes are on Tuesday and Thursday evenings at seven\"; yoga is on Tuesday and Thursday evenings."
+ },
+ {
+  "tr": "Kırk yıllık bir piyano akortçusuyla söyleşi okuyacaksın: işi neden ölçüm değil karar, neyi kimse duymuyor.",
+  "kind": "intro",
+  "en": "You are going to read an interview with a piano tuner of forty years: why the job is a judgement and not a measurement, and what nobody hears."
+ },
+ {
+  "tr": "Leyla ev takasını anlatıyor: „you just swap keys“, „No rent, no.“ Para kazanmak ya da fotoğraf satmak yok.",
+  "kind": "explain",
+  "en": "Leyla describes a house swap: „you just swap keys“, „No rent, no.“ There is no earning money and no selling photos."
+ },
+ {
+  "tr": "Modal fiillerle kurulan cümlede iki fiil vardır: biri ikinci sırada çekimli, öteki cümlenin sonunda yalın.",
+  "kind": "intro",
+  "en": "A sentence with a modal has two verbs: one conjugated in second place, the other bare at the end."
+ },
+ {
+  "tr": "Programda 2. gün (Cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye Cumartesi sabahı gidiliyor.",
+  "kind": "explain",
+  "en": "Day 2 (Saturday) in the programme says \"Bus to the castle\" at 09:30, so they go to the castle on Saturday morning."
+ },
+ {
+  "tr": "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
+  "kind": "intro",
+  "en": "A formal introduction (Sie). Herr Koch is meeting Frau Yilmaz. Careful: „Sie“ is used here."
+ },
+ {
+  "tr": "Sistem ocakta başladı ve rapor dokuz ay sonrasının bilançosu: önce sayılar, sonra iki itiraz, sonra tepki.",
+  "kind": "explain",
+  "en": "The system started in January and the report is a balance nine months on: the figures first, then two objections, then the response."
+ },
+ {
+  "tr": "Telefonsuz bir kafeyi işleten kadınla söyleşi dinleyeceksin: kural nasıl işliyor, neden başladı, sonuç ne.",
+  "kind": "intro",
+  "en": "You are going to hear an interview with a woman who runs a café without phones: how does the rule work, why did she start, what came of it."
+ },
+ {
+  "tr": "„in der kommenden Woche … sobald die Prüfung abgeschlossen ist“ — tarih koşula bağlı, yani bağlayıcı değil.",
+  "kind": "explain",
+  "en": "„in der kommenden Woche … sobald die Prüfung abgeschlossen ist“ — the date hangs on a condition, so it does not bind."
+ },
+ {
+  "tr": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ Garajlı daire henüz sadece bir plan.",
+  "kind": "explain",
+  "en": "„Momentan wohne ich noch zur Miete im vierten Stockwerk, ohne Aufzug.“ The flat with a garage is still only a plan."
+ },
+ {
+  "tr": "\"Next week he will open a small office in Istanbul\" diyor; gelecek hafta İstanbul'da küçük bir ofis açacak.",
+  "kind": "explain",
+  "en": "He says \"Next week he will open a small office in Istanbul\"; next week he will open a small office in Istanbul."
+ },
+ {
+  "tr": "Bir forumda ilk tam zamanlı işe başlayan birine tavsiye vereceksin; önce iki cümle kur, sonra cevabını yaz.",
+  "kind": "intro",
+  "en": "You are going to give advice on a forum to somebody starting their first full-time job; first form two sentences, then your answer."
+ },
+ {
+  "tr": "Bir gençlik evinin tatil programını okuyacaksın: hangi gün ne var, ne kadar tutuyor, nasıl kayıt yapılıyor.",
+  "kind": "intro",
+  "en": "You are going to read a youth centre's holiday programme: what is on which day, what it costs, how you sign up."
+ },
+ {
+  "tr": "Bir kafede Emre'nin sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.",
+  "kind": "intro",
+  "en": "You are going to hear Emre ordering in a café and talking to the waiter; watch what he wants and the price."
+ },
+ {
+  "tr": "Bir müşteri ikinci el dükkânına kıyafet getiriyor: neler alınıyor, karşılığında ne veriliyor, ne gerekiyor.",
+  "kind": "intro",
+  "en": "A customer brings clothes to a second-hand shop: what is taken, what is given in return, what is needed."
+ },
+ {
+  "tr": "Duyuruda \"Swimming for beginners - Saturday, 11 a.m.\" yazıyor. Pazar günü ders değil, arkadaş getirme günü.",
+  "kind": "explain",
+  "en": "The notice says \"Swimming for beginners - Saturday, 11 a.m.\" Sunday is not a lesson but the day for bringing a friend."
+ },
+ {
+  "tr": "İki dakikaya kadar konuşacaksın: soruyu yeniden çerçevele, en güçlü itirazı hakkıyla anlat ve ölçütünü koy.",
+  "kind": "intro",
+  "en": "You will speak for up to two minutes: reframe the question, set out the strongest objection fairly and state your test."
+ },
+ {
+  "tr": "Kamusal alandaki küçük tasarım kararlarını okuyan bir deneme: bir bankın kolçağı gerçekte kime ne söylüyor?",
+  "kind": "intro",
+  "en": "An essay reading the small design decisions in public space: what does an armrest on a bench really say, and to whom?"
+ },
+ {
+  "tr": "Mobilya mağazasında kapanış anonsunu dinleyeceksin: indirim, restoran saati, kaybolan çocuk ve teslim alma.",
+  "kind": "intro",
+  "en": "You are going to hear the closing announcement in a furniture shop: the discount, the restaurant hours, a lost child and the collection point."
+ },
+ {
+  "tr": "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",
+  "kind": "intro",
+  "en": "You are going to hear the closing announcement in a museum: which floor shuts first, how long the shop stays open, what is on tomorrow."
+ },
+ {
+  "tr": "Not şöyle: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Yani Wi-Fi sadece içeride var.",
+  "kind": "explain",
+  "en": "The note says: \"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" So there is Wi-Fi only indoors."
+ }
 ]

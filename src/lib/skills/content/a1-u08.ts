@@ -175,10 +175,10 @@ export const a1U08: SkillExercise[] = [
         explain: "„Ich habe noch dreißig Minuten.“ Yarım saat = 30 dakika.",
       },
       {
-        text: "Richtig oder falsch? Der Kurs beginnt jetzt.",
+        text: "Richtig oder falsch? Der Kurs beginnt gleich.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
+        answer: 0,
+        explain: "Doğru: „Mein Kurs beginnt gleich.“ — henüz başlamadı.",
       },
           {
         kind: "gapfill",

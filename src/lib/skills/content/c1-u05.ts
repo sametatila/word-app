@@ -178,10 +178,10 @@ export const c1U05: SkillExercise[] = [
         explain: "Bitişi adlandırmak, kaçamak bir bakıştan kibar.",
       },
       {
-        text: "Der Text hält Fragen nach Gehalt und Gesundheit für unverfänglich.",
+        text: "Der Text hält Fragen nach Gehalt und Gesundheit hier für Grenzverletzungen.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
+        answer: 0,
+        explain: "Doğru: „in vielen Ländern normale Fragen, hier Grenzverletzungen“.",
       },
     ],
   },

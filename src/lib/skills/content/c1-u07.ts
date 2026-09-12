@@ -175,10 +175,10 @@ export const c1U07: SkillExercise[] = [
         explain: "Bu cevaplanmazsa hikâye iyi olsa bile şaşkınlık bırakıyor.",
       },
       {
-        text: "Der Text empfiehlt, möglichst viele Details zu schildern.",
+        text: "Der Text empfiehlt, wenige lebendige Details zu schildern.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
+        answer: 0,
+        explain: "Doğru: „Wer alles beschreibt, beschreibt nichts.“ Tek canlı ayrıntı beşten etkili.",
       },
     ],
   },

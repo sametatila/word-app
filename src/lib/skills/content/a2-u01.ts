@@ -73,10 +73,10 @@ export const a2U01: SkillExercise[] = [
         explain: "„Am Mittwoch hat unsere Vermieterin einen Kuchen gebacken.“",
       },
       {
-        text: "Selin ist am Samstag zurückgekommen.",
+        text: "Selin ist am Sonntag zurückgekommen.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Am Sonntag bin ich zurückgekommen.“",
+        answer: 0,
+        explain: "Doğru: „Am Sonntag bin ich zurückgekommen.“",
       },
     ],
   },

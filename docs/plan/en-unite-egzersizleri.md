@@ -1973,6 +1973,25 @@ karıştırmadan da bilerek muaftı ve muafiyetin gerekçesi başka bir kursun
 orada tam boyutuyla büyüdü. **Bir kapı neyi saymadığını da söylemeli.**
 
 
+**Aynı kusur Almanca kursta da vardı (2026-09-12).** İngilizce taraf kapanınca
+ölçüm Almanca kursun iki şıklı sorularına uygulandı ve kusur orada da çıktı —
+üstelik `bundled.ts`'in karıştırma muafiyetini gerekçelendiren „%28 Richtig“
+notunun aksine. Gerçek dağılım: **216 Richtig/Falsch sorusunun 200'ü „Falsch“**
+(A1 %12 Richtig, A2 %8, B2 %5, C1 %7). Hep „Falsch“ diyen öğrenci %93 alıyordu.
+92 soru doğru bir önermeye çevrildi (A1 20, A2 21, B2 45, C1 6) ve dört seviye
+de %50'ye geldi. Açıklamanın „Yanlış:“ öneki „Doğru:“ oldu; geri kalanı bilerek
+harfi harfine korundu, böylece `prose` hattının 92 yeni satırı eski satırın
+İngilizcesinden türetilebildi („False:“ → „True:“) ve elle çeviri gerekmedi.
+
+Kapı da genişletildi. İlk yazımı `kind: "truefalse"` arıyordu; Almanca kurs aynı
+soruyu `kind: "mcq"` ve „Richtig/Falsch“ şıklarıyla yazıyor, yani kapı onu
+görmüyordu — **tam da bir gün önce kaydedilen hatanın aynısı, bir gün sonra
+tekrar.** Kapı artık kutup sorusunu TÜR ETİKETİNDEN değil ŞIKLARINDAN tanıyor
+(„True/False“ ya da „Richtig/Falsch“), böylece „Sie (resmî)/du (samimi)“ gibi
+iki şıklı gerçek seçimler dışarıda kalıyor. Bandı geçici daraltınca sekiz
+seviyede birden ateşlendiği doğrulandı.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

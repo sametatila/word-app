@@ -180,10 +180,10 @@ export const c1U03: SkillExercise[] = [
         explain: "„nicht an der Sache festgefahren, sondern an der Frage der Zuständigkeit“ — arabulucunun asıl bulgusu.",
       },
       {
-        text: "Der Bericht empfiehlt, das Gespräch mit einer allgemeinen Formel zu beschwichtigen.",
+        text: "Der Bericht rät davon ab, das Gespräch mit einer allgemeinen Formel zu beschwichtigen.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
+        answer: 0,
+        explain: "Doğru: „Ein Versuch, … zu beschwichtigen, wäre hier verfehlt.“",
       },
     ],
   },

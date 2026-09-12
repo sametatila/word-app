@@ -196,7 +196,12 @@ function checkSkills(list: SkillExercise[]) {
   for (const e of list) {
     if (e.unit == null || !("questions" in e) || !Array.isArray(e.questions)) continue;
     for (const q of e.questions) {
-      if ((q.kind ?? "mcq") !== "truefalse") continue;
+      /* Tür etiketi yetmiyor: Almanca kurs aynı soruyu `kind: "mcq"` ve
+         „Richtig/Falsch“ şıklarıyla yazıyor. Kutup sorusunu ŞIKLARINDAN
+         tanı — „Sie (resmî)/du (samimi)“ gibi iki şıklı gerçek seçimler
+         bunun dışında kalsın. */
+      const et = (q.options ?? []).join("/");
+      if (et !== "True/False" && et !== "Richtig/Falsch") continue;
       const k = `${e.course ?? "de"} ${e.level}`;
       const v = df.get(k) ?? [0, 0];
       v[q.answer === 0 ? 0 : 1]++; df.set(k, v);

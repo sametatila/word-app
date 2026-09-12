@@ -51,10 +51,10 @@ export const a1U04: SkillExercise[] = [
         explain: "„Ich habe zwei Fische.“ — Çoğul: Fisch → Fische.",
       },
       {
-        text: "Richtig oder falsch? Elif hat ein Tier.",
+        text: "Richtig oder falsch? Elif hat kein Tier.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
+        answer: 0,
+        explain: "Doğru: „Ich habe leider kein Tier.“ At büyükannesinin, kendisinin değil.",
       },
       {
         kind: "gapfill",
@@ -176,10 +176,10 @@ export const a1U04: SkillExercise[] = [
         explain: "die Zeit dişil olduğu için „keine Zeit“ — „kein Zeit“ değil.",
       },
       {
-        text: "Richtig oder falsch? Das ist ein Problem.",
+        text: "Richtig oder falsch? Das ist kein Problem.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Kein Problem!“ diyor — sorun değil.",
+        answer: 0,
+        explain: "Doğru: „Kein Problem!“ diyor — sorun değil.",
       },
           {
         kind: "gapfill",
@@ -233,10 +233,10 @@ export const a1U04: SkillExercise[] = [
         explain: "„Bruno liebt den Ball.“",
       },
       {
-        text: "Richtig oder falsch? Die Familie hat auch eine Katze.",
+        text: "Richtig oder falsch? Die Familie hat keine Katze.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "Yanlış: „Eine Katze haben wir nicht.“",
+        answer: 0,
+        explain: "Doğru: „Eine Katze haben wir nicht.“",
       },
           {
         kind: "gapfill",
