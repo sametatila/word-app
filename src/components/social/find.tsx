@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon } from "@/components/icons";
+import { FlameIcon, SearchIcon, UserPlusIcon, XIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { PersonRowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
 import { UserAction } from "./user-action";
@@ -54,8 +55,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
 
   return (
     <div className="flex flex-col gap-4">
+      {/* KUTUNUN BAŞINDAKİ İŞARET BÜYÜTEÇ. Burada bir "@" harfi duruyordu:
+          kullanıcı adı işareti gibi okunuyor ve kutunun ne işe yaradığını
+          söylemiyordu — üstelik kutuya kullanıcı adı da isim de yazılabiliyor.
+          Android aynı kutuda büyüteç çiziyor (`social/Find.tsx`). */}
       <label className="card flex items-center gap-2 px-4 py-2.5">
-        <span className="muted text-caption">@</span>
+        <SearchIcon size={20} className="shrink-0" style={{ color: "var(--text-muted)" }} />
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -66,9 +71,19 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           spellCheck={false}
           aria-label={t("find.search_users")}
         />
+        {/* Temizleme de Android'de olduğu gibi X İKONU: kutunun içindeki
+            "Temizle" sözcüğü yazılan metinle aynı boyda duruyor ve metnin
+            devamı gibi okunuyordu. Ad ekran okuyucuya `aria-label` ile
+            veriliyor. */}
         {q ? (
-          <button className="muted text-caption" onClick={() => setQ("")} aria-label={t("find.clear")}>
-            {t("find.clear")}
+          <button
+            type="button"
+            onClick={() => setQ("")}
+            aria-label={t("find.clear")}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-pill"
+            style={{ color: "var(--text-muted)" }}
+          >
+            <XIcon size={18} />
           </button>
         ) : null}
       </label>
@@ -87,7 +102,14 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             ))}
           </ol>
         ) : (
-          <p className="muted px-1 text-body">{t("find.no_results_private_profiles_only")}</p>
+          /* Boş hâl EV KALIBINDA (Android `EmptyCard`): sönük tek bir cümle
+             listenin altında kaybolup gidiyordu. */
+          <EmptyCard
+            icon={SearchIcon}
+            tint="var(--color-sky)"
+            title={t("find.empty_results_title")}
+            text={t("find.no_results_private_profiles_only")}
+          />
         )
       ) : (
         <section>
@@ -108,7 +130,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
               ))}
             </ol>
           ) : (
-            <p className="muted px-1 text-body">{t("find.no_suggestions_yet_search_by")}</p>
+            <EmptyCard
+              icon={UserPlusIcon}
+              tint="var(--color-mint)"
+              title={t("find.empty_sugg_title")}
+              text={t("find.no_suggestions_yet_search_by")}
+            />
           )}
         </section>
       )}

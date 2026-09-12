@@ -10,9 +10,9 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, SearchIcon, XIcon, HandshakeIcon } from "../ui/icons";
+import { FlameIcon, SearchIcon, XIcon, HandshakeIcon, UserPlusIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
-import { ErrorText, SectionTitle, StatPill } from "./common";
+import { EmptyCard, ErrorText, SectionTitle, StatPill } from "./common";
 import { UserActionButton } from "./UserActionButton";
 
 /** Sonuç kartının iskeleti — kimlik satırı + rozet şeridi, aynı yükseklikte. */
@@ -93,14 +93,17 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       {q.trim().length >= 2 ? (
         <View style={{ marginTop: spacing.lg }}>
           {hits === null ? <SearchResultSkeleton /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("find.no_results_private_profiles_only")}</Text>
+            /* Boş hâl EV KALIBINDA: bu dosya `EmptyCard`ı zaten dışa veren
+               kabuğun içinde ama kendi boş hâllerinde çıplak bir cümle
+               kullanıyordu. */
+            <EmptyCard icon={SearchIcon} tint={colors.info} title={t("find.empty_results_title")} text={t("find.no_results_private_profiles_only")} />
           )}
         </View>
       ) : (
         <View>
           <SectionTitle title={t("find.you_may_know")} />
           {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: t("find.same_level", { level: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.no_suggestions_yet_search_by")}</Text>
+            <EmptyCard icon={UserPlusIcon} tint={colors.success} title={t("find.empty_sugg_title")} text={t("find.no_suggestions_yet_search_by")} />
           )}
         </View>
       )}

@@ -268,6 +268,14 @@ export const UserIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Büyüteç — mobil `ui/icons.tsx` `SearchIcon` ile aynı çizim. */
+export const SearchIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="11" cy="11" r="6" />
+    <path d="M20 20l-4.5-4.5" />
+  </Svg>
+);
+
 /** Arkadaş ekle — mobil `ui/icons.tsx` `UserPlusIcon` ile aynı çizim. */
 export const UserPlusIcon = (p: IconProps) => (
   <Svg {...p}>
