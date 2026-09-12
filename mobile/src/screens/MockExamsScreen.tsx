@@ -173,18 +173,18 @@ export function MockExamsScreen() {
           </Card>
         ) : papers.length ? (
           <>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 20 }}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
               {t("mockexams.intro")}
             </Text>
             {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
                 çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey. */}
             {access && !access.premium ? (
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 18 }}>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
                 {t("mockpack.free_note", { n: access.freeLimit })}
               </Text>
             ) : null}
             {access?.premium && papers.some((p) => isLocked(p.id)) ? (
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 18 }}>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
                 {access.unlockOnComplete
                   ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
                   : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}

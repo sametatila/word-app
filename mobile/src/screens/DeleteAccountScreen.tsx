@@ -142,7 +142,7 @@ export function DeleteAccountScreen() {
       </View>
 
       <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>
+        <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
           {tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
         </Text>
 
@@ -154,7 +154,7 @@ export function DeleteAccountScreen() {
           {/* Abonelik iptal yolu mağazaya göre değişir: Play Store › Ödemeler ve abonelikler,
               App Store'da Ayarlar › Apple Hesabı › Abonelikler. Yanlışını göstermek
               kullanıcıyı hiç var olmayan bir ekrana yolluyor. */}
-          <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted}>
             {tx(Platform.OS === "ios" ? "deleteaccount.subscription_cancel_appstore" : "deleteaccount.subscription_cancel_play")}
           </Text>
         </Card>
@@ -162,7 +162,7 @@ export function DeleteAccountScreen() {
         {needsFresh ? (
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
             <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.for_security_deleting_your")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{tx("deleteaccount.for_security_deleting_your")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? "..." : tx(freshProvider === "apple" ? "deleteaccount.sign_in_with_apple_again_and" : "deleteaccount.sign_in_with_google_again_and")}</Text>
             </PressableScale>

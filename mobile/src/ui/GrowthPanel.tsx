@@ -144,7 +144,7 @@ export function GrowthPanel() {
         <Text variant="micro" color={colors.textMuted}>{t("progp.window", { n: data.evidenceCount, days: DECAY_DAYS })}</Text>
       </View>
 
-      {data.summary?.text ? <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{data.summary.text}</Text> : null}
+      {data.summary?.text ? <Text variant="caption" color={colors.text}>{data.summary.text}</Text> : null}
 
       {data.proficiency.map((p) => {
         const delta = p.now !== null && p.before !== null ? p.now - p.before : null;
@@ -228,7 +228,7 @@ export function GrowthPanel() {
                       <Text variant="micro" color={colors.textFaint}>
                         {new Date(`${m.at}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" })}
                       </Text>
-                      <Text variant="caption" color={colors.text} style={{ flex: 1, lineHeight: 19 }}>{m.text}</Text>
+                      <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{m.text}</Text>
                     </View>
                   ))}
                 </View>

@@ -461,7 +461,7 @@ export function GameScreen() {
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.goal_done")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.goal_done_sub")}</Text>
         {meta ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>
             {t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}
           </Text>
         ) : null}
@@ -643,7 +643,7 @@ export function GameScreen() {
               {missed.current.length > 6 ? (
                 <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: 2 }}>{t("session.n_more_words", { n: missed.current.length - 6 })}</Text>
               ) : null}
-              <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 18 }}>{t("session.missed_note")}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.missed_note")}</Text>
               <PressableScale onPress={() => nav.navigate("Words")} style={{ alignSelf: "center", marginTop: spacing.xs, paddingVertical: 6 }}>
                 <Text variant="bodyStrong" color={colors.primaryText}>{t("words.my_words")}</Text>
               </PressableScale>
@@ -824,7 +824,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
               </View>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("wager.next_stage")}</Text>
-                <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 17 }}>{t("wager.rules")}</Text>
+                <Text variant="micro" color={colors.textMuted}>{t("wager.rules")}</Text>
               </View>
             </PressableScale>
             <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
@@ -833,7 +833,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
             <PressableScale onPress={onStop} style={{ paddingVertical: 12, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.textMuted}>{t("stage.enough")}</Text>
             </PressableScale>
-            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 17 }}>{t("stage.stop_note")}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("stage.stop_note")}</Text>
           </View>
         </View>
       </View>

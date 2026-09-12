@@ -110,7 +110,7 @@ export function PracticeScreen() {
                         arasındaki farkı bilmeyen kullanıcı oyunu açmadan
                         seçemiyordu. Web kartın altında bu satırı baştan beri
                         yazıyor (`learn/practice`). */}
-                    <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2, lineHeight: 16 }}>{t(g.hint)}</Text>
+                    <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{t(g.hint)}</Text>
                   </View>
                 </Card>
               </PressableScale>
@@ -121,7 +121,7 @@ export function PracticeScreen() {
             oyun türünün sabit kaldığı ve pratiğin kaldığı yerden SÜRMEDİĞİ
             yalnız webde yazıyordu (`learn/practice`); üçü de mobilde
             uygulanan davranış (bkz. `GameScreen` yükleme yorumu). */}
-        <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.lg, lineHeight: 18 }}>{t("prac.note")}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{t("prac.note")}</Text>
       </ScrollView>
     </View>
   );

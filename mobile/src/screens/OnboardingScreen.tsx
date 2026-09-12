@@ -260,7 +260,7 @@ export function OnboardingScreen() {
               </View>
             )}
             {step.key === "level" && chosen === "pick" && pickedLevel ? (
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
                 {t(LEVEL_DESC[pickedLevel] ?? "")}
               </Text>
             ) : null}

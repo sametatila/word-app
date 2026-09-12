@@ -79,7 +79,7 @@ export function QuizScreen() {
       </View>
 
       <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>
+        <Text variant="body" color={colors.textMuted}>
           {t(isGrammar ? "quiz.intro_grammar" : isCheckpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
         </Text>
 

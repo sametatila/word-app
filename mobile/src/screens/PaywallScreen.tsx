@@ -222,7 +222,7 @@ export function PaywallScreen() {
         {!storeOpen ? (
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
             <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t("paywall.store_not_open_sub")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("paywall.store_not_open_sub")}</Text>
           </View>
         ) : pkgs === null ? (
           // Plan satırları gelene dek aynı boyda iskelet: liste dolunca kaydırma
@@ -296,13 +296,13 @@ export function PaywallScreen() {
         */}
         <View style={{ marginBottom: spacing.xl, gap: 4 }}>
           {status?.limits ? (
-            <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 18 }}>
+            <Text variant="micro" color={colors.textMuted}>
               {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
             </Text>
           ) : null}
           {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
               birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
-          <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 18 }}>
+          <Text variant="micro" color={colors.textMuted}>
             {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
           </Text>
         </View>
@@ -330,7 +330,7 @@ export function PaywallScreen() {
         </PressableScale>
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
             satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
-        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 16 }}>
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
           {pkg ? (trial ? t("paywall.free_then", { duration: trial, price: pkg.product.priceString }) : t("paywall.fiyat_donem", { price: pkg.product.priceString })) : ""}
           {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
@@ -384,7 +384,7 @@ function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "
           <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: colors.textFaint }} />
         </View>
       )}
-      <Text variant="caption" color={premium ? colors.text : colors.textMuted} style={{ flex: 1, lineHeight: 19 }}>{text}</Text>
+      <Text variant="caption" color={premium ? colors.text : colors.textMuted} style={{ flex: 1 }}>{text}</Text>
     </View>
   );
 }
@@ -483,8 +483,8 @@ function promoErrorKey(reason: string | undefined): string {
 function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number; rewardDays: number } }) {
   return (
     <Section title={t("referral.title")} colors={colors}>
-      <Text variant="caption" style={{ lineHeight: 19 }}>{t("referral.explain", { days: referral.rewardDays })}</Text>
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 16 }}>{t("referral.reward_note")}</Text>
+      <Text variant="caption">{t("referral.explain", { days: referral.rewardDays })}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
         <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center" }}>

@@ -715,7 +715,7 @@ export function WalkModeScreen() {
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
             <Mascot mood="wave" size={120} />
             <Text variant="display" style={{ textAlign: "center" }}>{tx("walkmode.listen_and_say_it")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>
               {tx("walkmode.intro_text", { nativeLang: nativeLangName(), target: targetLangName() })}
             </Text>
             <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>

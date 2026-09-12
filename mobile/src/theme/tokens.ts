@@ -17,6 +17,38 @@ export const typography = {
   micro: { fontFamily: family, fontSize: 11, fontWeight: "700", letterSpacing: 0.4 } as TextStyle,
 };
 
+/**
+ * SATIR YÜKSEKLİĞİ ORANLARI — ölçeğin eksik yarısıydı.
+ *
+ * `typography` punto ve ağırlık taşıyordu ama satır yüksekliği taşımıyordu:
+ * React Native yazı tipinin kendi varsayılanını kullanıyor ve uygulama bunu
+ * ÇAĞRI YERİNDE düzeltiyordu — ölçüm yüz altmış üç elle yazılmış `lineHeight`
+ * buldu ve tek bir varyantta altı ayrı değer vardı (gövde 20, 21, 22, 23, 24,
+ * 25). Yani aynı metin ekranın farklı yerlerinde farklı nefes alıyordu.
+ *
+ * Oranlar web `globals.css` `--text-*--line-height` ile AYNI sayılar. İki
+ * değer web tarafında düzeldi: küçük yazı BÜYÜK gövdeden daha SIKI
+ * yazılıyordu (caption 1.4, micro 1.35 — gövdenin 1.5'inden sıkı), oysa
+ * tipografide küçülen punto göreli olarak daha çok satır arası ister.
+ * Android'in kendi çağrı yerleri zaten öyle yapıyordu (caption 20/12.5 = 1.6
+ * kırk altı yerde, micro 18/11 = 1.64 on beş yerde); ölçü onlar oldu.
+ *
+ * PUNTO ÖLÇEĞİYLE BİRLİKTE BÜYÜR. Sabit bir piksel değeri erişilebilirlik
+ * yazı ölçeğiyle büyümüyor ve elle yazılmış yüz altmış üç değerin hepsinde
+ * bu kusur vardı: sistem yazısı 1.5x'te satırlar üst üste biniyordu. `Text`
+ * bunu `PixelRatio.getFontScale()` ile çarpıyor (aynı 1.5 tavanıyla).
+ */
+export const lineHeightRatio: Record<keyof typeof typography, number> = {
+  display: 1.15,
+  h1: 1.2,
+  h2: 1.3,
+  h3: 1.35,
+  body: 1.5,
+  bodyStrong: 1.5,
+  caption: 1.6,
+  micro: 1.65,
+};
+
 /** Yumuşak modern gölge (fitness örneği): geniş, düşük opaklık. */
 export function softShadow(color: string, elevation = 8, opacity = 0.16) {
   return Platform.select({

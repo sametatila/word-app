@@ -193,6 +193,79 @@ for (const [file, list] of MOBIL_ALLOW) for (const [parca] of list) {
   if (!mobilUsed.has(file + "|" + parca)) dead.push(`${file}: ${parca}`);
 }
 
+/*
+ * ÖLÇEĞİN ÖBÜR ÜÇ BOYUTU: AĞIRLIK, HARF ARALIĞI, SATIR YÜKSEKLİĞİ.
+ *
+ * Bu betik puntoyu ölçüyordu, yalnız puntoyu. Ağırlık iki tarafta da yazılıydı
+ * (`--text-h2--font-weight: 700` ↔ `h2 fontWeight "700"`) ama ölçen kimse
+ * yoktu: biri değişse öbürü sessizce kalırdı. Satır yüksekliği ise mobil
+ * ölçekte HİÇ yoktu — yüz altmış üç çağrı yeri onu elle yazıyordu ve tek bir
+ * varyantta altı ayrı değer vardı; artık `lineHeightRatio` taşıyor ve oran
+ * web'dekiyle aynı sayı.
+ *
+ * Harf aralığı web'de `em`, mobilde `px`: karşılaştırma piksele çevrilerek
+ * yapılıyor (`em` × punto), tek ondalığa yuvarlanarak.
+ */
+const ADLAR = [
+  ["display", "display"],
+  ["h1", "h1"],
+  ["h2", "h2"],
+  ["h3", "h3"],
+  ["body", "body"],
+  ["strong", "bodyStrong"],
+  ["caption", "caption"],
+  ["micro", "micro"],
+];
+const cssKaynak = fs.readFileSync(path.join(ROOT, "src/app/globals.css"), "utf8");
+const tokKaynak = fs.readFileSync(path.join(ROOT, TOKENS), "utf8");
+const webJeton = (ad, alan) => {
+  const m = cssKaynak.match(new RegExp("--text-" + ad + "--" + alan + ":\\s*([^;]+);"));
+  return m ? m[1].trim() : "YOK";
+};
+const webPunto = (ad) => {
+  const m = cssKaynak.match(new RegExp("--text-" + ad + ":\\s*([\\d.]+)rem"));
+  return m ? Number(m[1]) * 16 : NaN;
+};
+const mobSatir = (ad) => {
+  const govde = (tokKaynak.match(/lineHeightRatio[^=]*=\s*\{([\s\S]*?)\n\};/) ?? ["", ""])[1];
+  const m = govde.match(new RegExp("\\b" + ad + ":\\s*([\\d.]+)"));
+  return m ? m[1] : "YOK";
+};
+const mobSatiri = (ad) => {
+  const m = tokKaynak.match(new RegExp("\\n\\s+" + ad + ": \\{([^}]*)\\}"));
+  return m ? m[1] : "";
+};
+const yuvarla = (x) => Math.round(x * 10) / 10;
+const olcekFark = [];
+for (const [web, mob] of ADLAR) {
+  const satir = mobSatiri(mob);
+  const punto = Number((satir.match(/fontSize:\s*([\d.]+)/) ?? [])[1] ?? NaN);
+  const agirlik = (satir.match(/fontWeight:\s*"(\d+)"/) ?? [])[1] ?? "YOK";
+  const aralikPx = Number((satir.match(/letterSpacing:\s*(-?[\d.]+)/) ?? [])[1] ?? 0);
+  const webAgirlik = webJeton(web, "font-weight");
+  const webAralikEm = Number((webJeton(web, "letter-spacing").match(/(-?[\d.]+)em/) ?? [])[1] ?? 0);
+  const webAralikPx = yuvarla(webAralikEm * webPunto(web));
+  const webSatirOran = webJeton(web, "line-height");
+  const mobSatirOran = mobSatir(mob);
+  if (punto !== webPunto(web)) olcekFark.push(`${web}: punto web ${webPunto(web)} ≠ mobil ${punto}`);
+  if (agirlik !== webAgirlik) olcekFark.push(`${web}: ağırlık web ${webAgirlik} ≠ mobil ${agirlik}`);
+  if (webAralikPx !== yuvarla(aralikPx)) olcekFark.push(`${web}: harf aralığı web ${webAralikPx}px ≠ mobil ${yuvarla(aralikPx)}px`);
+  if (String(webSatirOran) !== String(mobSatirOran)) olcekFark.push(`${web}: satır yüksekliği web ${webSatirOran} ≠ mobil ${mobSatirOran}`);
+}
+/* Mobilde ELLE yazilan satir yuksekligi kalmamali: oran olcekten geliyor.
+   `TextInput` bunun disinda - `Text` bileseni onu sarmiyor. */
+const elleSatir = [];
+for (const abs of walk(path.join(ROOT, "mobile/src"))) {
+  const rel = path.relative(ROOT, abs);
+  if (/theme\/tokens\.ts$|ui\/Text\.tsx$/.test(rel)) continue;
+  const lines = stripComments(fs.readFileSync(abs, "utf8")).split("\n");
+  lines.forEach((l, i) => {
+    if (!/lineHeight:\s*[\d.]+/.test(l)) return;
+    if (/TextInput|textAlignVertical/.test(l)) return; // girdi alani
+    elleSatir.push(`${rel}:${i + 1}`);
+  });
+}
+
 if (mode === "--hits") {
   for (const [f, list] of Object.entries(hits)) {
     if (filter && !f.includes(filter)) continue;
@@ -206,7 +279,7 @@ if (mode === "--hits") {
   }
   console.log(`\ntoplam web ${total} · mobil ${mobilTotal} (${mobilOlculen} punto okundu)`);
 } else {
-  if (total || mobilTotal || dead.length) {
+  if (total || mobilTotal || dead.length || olcekFark.length || elleSatir.length) {
     if (total) {
       console.error("check:type — ölçek dışı punto:\n");
       for (const [f, list] of Object.entries(hits)) {
@@ -232,6 +305,16 @@ if (mode === "--hits") {
       console.error("Meşru bir istisnaysa betikteki MOBIL_ALLOW listesine SEBEBİYLE ekle.");
     }
     for (const d of dead) console.error(`  istisna artık karşılıksız (ALLOW): ${d}`);
+    if (olcekFark.length) {
+      console.error("\ncheck:type — ÖLÇEĞİN İKİ KOPYASI AYRIŞTI (punto/ağırlık/harf aralığı/satır yüksekliği):\n");
+      for (const d of olcekFark) console.error(`      ${d}`);
+      console.error(`\nKaynaklar: src/app/globals.css \`--text-*\` ↔ ${TOKENS} \`typography\` + \`lineHeightRatio\`.`);
+    }
+    if (elleSatir.length) {
+      console.error("\ncheck:type — MOBİLDE elle yazılmış satır yüksekliği:\n");
+      for (const d of elleSatir) console.error(`      ${d}`);
+      console.error("\nOran ölçekten geliyor (`lineHeightRatio`); `<Text>` onu punto ölçeğiyle çarparak uyguluyor.");
+    }
     process.exit(1);
   }
   const muaf = [...ALLOW.values()].reduce((n, l) => n + l.length, 0);
@@ -241,5 +324,9 @@ if (mode === "--hits") {
   console.log(
     `check:type — web ve mobilin puntoları sekiz basamaklı ölçekte: tamam ` +
       `(${muaf} web + ${muafM} mobil kayıtlı istisna; mobilde ${mobilOlculen} punto okundu)`,
+  );
+  console.log(
+    `check:type — ölçeğin dört boyutu da iki tarafta birebir: ${ADLAR.length} basamak ` +
+      `(punto, ağırlık, harf aralığı, satır yüksekliği), mobilde elle yazılmış satır yüksekliği yok`,
   );
 }

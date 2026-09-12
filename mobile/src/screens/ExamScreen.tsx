@@ -448,7 +448,7 @@ export function ExamScreen() {
           <CoachBubble moment="exam_intro" mood="think" size={48} />
           {cover?.titleDe ? (
             <Card padded style={{ gap: spacing.sm }}>
-              <Text accessibilityRole="header" variant="h2" style={{ lineHeight: 30 }}>{cover.titleDe}</Text>
+              <Text accessibilityRole="header" variant="h2">{cover.titleDe}</Text>
               <Text variant="body" color={colors.textMuted}>{cover.titleTr}</Text>
               {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
                   çiftler, ne oldukları söylenmeden duruyordu. */}
@@ -461,7 +461,7 @@ export function ExamScreen() {
             /* Kâğıdın kendi Almancası yoksa başlık SÖZLÜKTEN — web de burada
                sözlüğe düşüyor (`exam-player` `Cover`). */
             <Card padded style={{ gap: spacing.sm }}>
-              <Text accessibilityRole="header" variant="h2" style={{ lineHeight: 30 }}>
+              <Text accessibilityRole="header" variant="h2">
                 {moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
               </Text>
             </Card>
@@ -495,7 +495,7 @@ export function ExamScreen() {
           */}
           <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
             <Text variant="bodyStrong">{t("exam.rules")}</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
+            <Text variant="caption" color={colors.textMuted}>
               {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
             </Text>
           </Card>
@@ -552,10 +552,10 @@ export function ExamScreen() {
               {showMisses ? misses.current.map((m, i) => (
                 <Card key={i} padded style={{ gap: 4 }}>
                   <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
-                  <Text variant="body" style={{ lineHeight: 21 }}>{m.prompt}</Text>
+                  <Text variant="body">{m.prompt}</Text>
                   <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
                   {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
-                  {m.why ? <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{m.why}</Text> : null}
+                  {m.why ? <Text variant="caption" color={colors.textMuted}>{m.why}</Text> : null}
                 </Card>
               )) : null}
               {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç
@@ -564,7 +564,7 @@ export function ExamScreen() {
               {showMisses && paper?.sections.writing[0]?.task.sample ? (
                 <Card padded style={{ gap: 4, backgroundColor: colors.surface2 }}>
                   <Text variant="micro" color={colors.textMuted}>{t("exam.writing_sample")}</Text>
-                  <Text variant="caption" style={{ lineHeight: 20 }}>{paper.sections.writing[0].task.sample}</Text>
+                  <Text variant="caption">{paper.sections.writing[0].task.sample}</Text>
                 </Card>
               ) : null}
             </>
@@ -575,7 +575,7 @@ export function ExamScreen() {
               <Text variant="bodyStrong" color={colors.onFill}>{t("exam.open_certificate")}</Text>
             </PressableScale>
           ) : result ? (
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t("exam.weak_section_hint")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("exam.weak_section_hint")}</Text>
           ) : null}
           {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
           {result?.sections.map((s) => (
@@ -623,7 +623,7 @@ export function ExamScreen() {
                 <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
                   <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
                   <View style={{ flex: 1 }}>
-                    <Text variant="caption" style={{ lineHeight: 19 }}>{c.de}</Text>
+                    <Text variant="caption">{c.de}</Text>
                     <Text variant="micro" color={colors.textMuted}>{c.tr}</Text>
                     <Text variant="micro" color={colors.textFaint}>{c.en}</Text>
                   </View>
@@ -676,7 +676,7 @@ export function ExamScreen() {
             <Text variant="micro" color={colors.textMuted}>{SECTION_WORD[currentTargetLang()] ?? "Teil"} {secIdx + 1} / {list.length}</Text>
             <Text accessibilityRole="header" variant="h1">{sectionFace()[active]}</Text>
             <Text variant="bodyStrong" color={colors.primaryText}>{t(SECTION_KEY[active])}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>{t(SECTION_BRIEF_KEY[active])}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t(SECTION_BRIEF_KEY[active])}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
               {t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
             </Text>
@@ -866,7 +866,7 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
   const [pick, setPick] = useState<number | null>(null);
   return (
     <Card padded style={{ gap: spacing.sm }}>
-      <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{prompt}</Text>
+      <Text variant="bodyStrong">{prompt}</Text>
       {/*
         SINAV CEVABI AÇILMIYOR — aşağıdaki `Produce` notunun aynı gerekçesi.
         Burada da doğru şık yeşile, yanlış seçim kırmızıya boyanıyordu: aynı
@@ -922,7 +922,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
     <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>{t(it.mode === "order" ? "exam.order_the_sentence" : "exam.write_in_target")}</Text>
-        <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{it.prompt}</Text>
+        <Text variant="bodyStrong">{it.prompt}</Text>
         {it.mode === "order" ? (
           <>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, padding: spacing.sm }}>
@@ -980,20 +980,20 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
       <Card padded style={{ gap: spacing.xs }}>
         <Text variant="bodyStrong">{it.title}</Text>
         {it.genre || it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation ?? it.genre}</Text> : null}
-        {it.text ? <Text variant="body" style={{ lineHeight: 23, marginTop: spacing.xs }}>{it.text}</Text> : null}
+        {it.text ? <Text variant="body" style={{ marginTop: spacing.xs }}>{it.text}</Text> : null}
         {/* DINLE DUGMESI IKI YERDE DE AYNI: 20 px ikon + hitSlop 8 (etkili 36).
             Biri 18+6 (30), oteki 20+6 (32) idi - ayni ekranda ayni denetim iki
             boyda ve ikisi de `check:hit` esiginin altinda. */}
         {it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
             <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
-            <Text variant="body" style={{ flex: 1, lineHeight: 22 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
+            <Text variant="body" style={{ flex: 1 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
           </View>
         ))}
       </Card>
       {it.questions.map((q, qi) => (
         <Card key={qi} padded style={{ gap: spacing.sm }}>
-          <Text variant="bodyStrong" style={{ lineHeight: 23 }}>{q.textTr ?? q.text}</Text>
+          <Text variant="bodyStrong">{q.textTr ?? q.text}</Text>
           {/*
             SINAVDA CEVAP AÇIKLANMIYOR.
             Seçilen şık yeşile, yanlış olan kırmızıya boyanıyordu ve şıklar
@@ -1088,15 +1088,15 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
               yazıldığı kullanıcıya hiçbir yerde söylenmiyordu (web-parity
               §11.139; hangi ölçümün kalacağı ayrı bir karar).
             */}
-            <Text variant="micro" color={colors.textFaint} style={{ lineHeight: 17 }}>{t("exam.speak_text_note")}</Text>
+            <Text variant="micro" color={colors.textFaint}>{t("exam.speak_text_note")}</Text>
           </>
         ) : null}
         {/* İpucu/hata satırı YERİNDE çıkıyor — web `exam-player` ile aynı yer,
             aynı gerekçe: odak mikrofon düğmesinde kalıyor ve satırın geldiğini
             ekran okuyucu söylemiyordu. */}
-        {tip ? <Text accessibilityLiveRegion="polite" variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
+        {tip ? <Text accessibilityLiveRegion="polite" variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm }}>{tip}</Text> : null}
         {phase === "err" ? (
-          <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t(tries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t(tries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}</Text>
         ) : null}
         {phase === "rec" ? (
           <Text variant="bodyStrong" color={colors.primaryText} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
@@ -1190,7 +1190,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   return (
     <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
-        <Text variant="bodyStrong" style={{ lineHeight: 23 }}>{w.task.prompt}</Text>
+        <Text variant="bodyStrong">{w.task.prompt}</Text>
         {w.task.checklist.map((c, i) => (
           <Text key={i} variant="caption" color={colors.textMuted}>· {c}</Text>
         ))}
@@ -1204,7 +1204,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         {gateNote ? (
           // Kapı notu puanın YERİNE geçiyor: sahte bir yüzde göstermek,
           // değerlendirmenin yapıldığını sanmaya yol açardı.
-          <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{gateNote}</Text>
+          <Text variant="caption" color={colors.textMuted}>{gateNote}</Text>
         ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>

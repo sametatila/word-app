@@ -273,7 +273,7 @@ export function SettingsScreen() {
                 görünüyor, hangi seviyenin ne anlama geldiği yazmıyordu. Web
                 ikisini AYNI cümlede veriyor ("<açıklama>. Bu düğmeyi senden
                 başkası çevirmiyor") ve mobil de artık öyle. */}
-            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm, lineHeight: 18 }}>
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>
               {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}
             </Text>
             <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>

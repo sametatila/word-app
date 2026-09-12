@@ -50,7 +50,7 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
           sanıyordu. Sebebini söylemek gerekiyor - tablo gün ilerledikçe
           doluyor. Web aynı notu aynı koşulda gösteriyor (`daily-player`). */}
       {rows.length === 1 ? (
-        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 17 }}>{t("daily.first_today")}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.first_today")}</Text>
       ) : null}
       {rows.map((r) => {
         const mc = medalColor(r.rank);
@@ -237,7 +237,7 @@ export function DailyScreen() {
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingBottom: spacing.xl }}>
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.daily_round")}</Text>
           <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("daily.pitch", { n: rounds.length })}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("daily.pitch", { n: rounds.length })}</Text>
           <PressableScale
             onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("playing"); }}
             style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
@@ -264,7 +264,7 @@ export function DailyScreen() {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.none_title")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 22 }}>{t("daily.none_sub")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("daily.none_sub")}</Text>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.xl }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -314,7 +314,7 @@ export function DailyScreen() {
             </Text>
           ) : null}
           {/* Neden tekrar oynanamadığı: web aynı yerde söylüyor. */}
-          <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 18 }}>{t("daily.once_a_day")}</Text>
+          <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("daily.once_a_day")}</Text>
           <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
           <Board rows={board} colors={colors} />

@@ -103,7 +103,7 @@ export function UserScreen() {
           <View style={softShadow(friends ? colors.success : colors.primary, 10)}><Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={76} ring={friends ? colors.success : null} /></View>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString(dateLocale(), { month: "short", year: "numeric" })}</Text>
-          {data.bio ? <Text variant="body" color={colors.text} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 21 }}>{data.bio}</Text> : null}
+          {data.bio ? <Text variant="body" color={colors.text} style={{ marginTop: spacing.sm, textAlign: "center" }}>{data.bio}</Text> : null}
           {(data.mutual > 0 || data.friendStreak > 0) ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md }}>
               {data.mutual > 0 ? <StatPill icon={HandshakeIcon} label={t("social.mutual", { n: data.mutual })} tint={colors.info} /> : null}

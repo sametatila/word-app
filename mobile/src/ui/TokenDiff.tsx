@@ -100,12 +100,12 @@ export function SentenceFeedback({ verdictKey, target, typed, showTyped }: { ver
         tutmuyor, yani kullanıcı yazıyı 2x'e aldığında bu iki satır ötekiler
         sabit kalırken büyümeye devam ediyordu.
       */}
-      <Text variant="body" style={{ lineHeight: 21 }}>
+      <Text variant="body">
         {t(verdictKey)}{" "}
         <TokenDiff tokens={target} />
       </Text>
       {showTyped ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 18 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>
           {t("rounds.you_wrote")} <TypedTokens tokens={typed} />
         </Text>
       ) : null}

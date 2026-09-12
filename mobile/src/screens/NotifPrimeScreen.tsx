@@ -105,7 +105,7 @@ export function NotifPrimeScreen() {
           <BellIcon color={colors.onPrimary} size={44} />
         </View>
         <Text accessibilityRole="header" variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", paddingHorizontal: spacing.md }}>
           {tx("notifprime.one_gentle_reminder_day_is")}
         </Text>
 
@@ -129,7 +129,7 @@ export function NotifPrimeScreen() {
       {/* Reddedilen izin, düğmenin HEMEN ÜSTÜNDE: kullanıcı basınca ne olduğunu
           aynı yerde görüyor. Metin `NotificationsScreen`dekiyle aynı anahtar. */}
       {denied ? (
-        <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm, lineHeight: 18 }}>
+        <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>
           {tx("notifications.permission_off")}
         </Text>
       ) : null}

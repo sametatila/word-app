@@ -48,7 +48,7 @@ export function AssessmentCard({
   return (
     <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, gap: spacing.sm }}>
       {failNote ? (
-        <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{failNote}</Text>
+        <Text variant="caption" color={colors.textMuted}>{failNote}</Text>
       ) : null}
 
       <Bar colors={colors} label={t("assess.task")} value={s.task} />
@@ -57,7 +57,7 @@ export function AssessmentCard({
       <Bar colors={colors} label={t("assess.vocab")} value={s.vocab} />
 
       {answer.trim() ? (
-        <Text variant="body" style={{ marginTop: spacing.sm, lineHeight: 22 }}>
+        <Text variant="body" style={{ marginTop: spacing.sm }}>
           <Highlighted answer={answer} errors={result.errors} colors={colors} />
         </Text>
       ) : null}
@@ -65,7 +65,7 @@ export function AssessmentCard({
       {result.errors.length ? (
         <View style={{ gap: 6, marginTop: 2 }}>
           {result.errors.map((e, i) => (
-            <Text key={i} variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>
+            <Text key={i} variant="caption" color={colors.textMuted}>
               <Text variant="caption" color={colors.dangerText}>{t(ERROR_LABEL_KEYS[e.type] ?? "err.meaning")}</Text>
               {" · "}
               {e.wrong ? `„${e.wrong}" → „${e.fix}"` : e.fix}
@@ -83,9 +83,9 @@ export function AssessmentCard({
       ) : null}
 
       {result.praise_tr ? <Text variant="body" color={colors.successText} style={{ marginTop: 2 }}>{result.praise_tr}</Text> : null}
-      {result.next_tip_tr ? <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{result.next_tip_tr}</Text> : null}
+      {result.next_tip_tr ? <Text variant="caption" color={colors.textMuted}>{result.next_tip_tr}</Text> : null}
       {example ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, lineHeight: 19 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>
           <Text variant="caption" color={colors.textFaint}>{t("assess.example")} </Text>
           {example}
         </Text>

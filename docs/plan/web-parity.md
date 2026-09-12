@@ -17990,3 +17990,51 @@ büyüyor) ve jetonun değeri, maskotun bekleme süresi + sahne kilidinin aynı
 sayıdan beslenmesi, maskotun giriş mesafesi ve web'de yatay/dönme bileşeninin
 kalmamış olması, başarım açılışının dört süresi (adlarıyla), koç balonu ve
 parlama süreleri.
+
+## §11.495 — Ölçeğin eksik yarısı: satır yüksekliği mobil ölçekte hiç yoktu, küçük yazı web'de gövdeden sıkıydı
+
+`check:type` puntoyu ölçüyordu, **yalnız** puntoyu. Ağırlık iki tarafta da
+yazılıydı ama ölçen kimse yoktu; satır yüksekliği ise mobil ölçekte **hiç**
+yoktu.
+
+**Yüz altmış üç elle yazılmış satır yüksekliği.** `typography` punto ve ağırlık
+taşıyor, satır yüksekliği taşımıyordu — React Native yazı tipinin kendi
+varsayılanını kullanıyor ve uygulama bunu çağrı yerinde düzeltiyordu. Ölçüm tek
+bir varyantta **altı ayrı değer** buldu:
+
+| varyant | mobilde elle yazılanlar | web oranı |
+|---|---|---|
+| body | 22 (39 yer), 21 (8), 23 (3), 20 (2), 24 (2), 25 (1) | 1.5 |
+| caption | 20 (46 yer), 19 (21), 18 (3) | 1.4 |
+| micro | 18 (15 yer), 17 (5), 16 (4) | 1.35 |
+
+Yani aynı metin ekranın farklı yerlerinde farklı nefes alıyordu. Oran artık
+`lineHeightRatio`da ve `Text` onu uyguluyor; 161 çağrı yerindeki elle yazılmış
+değer kalktı (36 dosya).
+
+**Üstelik hepsinde aynı erişilebilirlik kusuru vardı.** React Native `fontSize`ı
+sistem yazı ölçeğiyle büyütüyor ama **sabit bir `lineHeight`ı büyütmüyor** —
+yazıyı 1.5x yapan kullanıcıda satırlar üst üste biniyordu. `Text` artık oranı
+`PixelRatio.getFontScale()` ile çarpıyor, bileşenin kendi
+`maxFontSizeMultiplier` tavanıyla aynı sınırda.
+
+**Web'de küçük yazı gövdeden SIKI yazılıyordu.** `caption` 1.4 ve `micro` 1.35,
+gövdenin 1.5'inden sıkıydı; tipografide küçülen punto göreli olarak daha **çok**
+satır arası ister, yani ölçek tam ters yöne gidiyordu. Android'in kendi çağrı
+yerleri zaten doğru yapıyordu (caption 20/12.5 = **1.6** kırk altı yerde, micro
+18/11 = **1.64** on beş yerde) — ölçü onlar oldu: web 1.6 ve 1.65'e geldi, mobil
+ölçeğe de aynı sayılar yazıldı. Dominant piksel değerleri böylece korunuyor
+(caption 12.5 × 1.6 = 20.0, micro 11 × 1.65 = 18.15); değişen yalnız sapan
+değerler. `components/skeleton`in kendi tablosu da aynı sayıları taşıdığı için
+birlikte güncellendi — iskelet yüksekliği oradan türüyor.
+
+**`check:type` artık ölçeğin dört boyutunu ölçüyor:** punto, ağırlık, harf
+aralığı (web `em` → piksele çevrilerek) ve satır yüksekliği oranı, sekiz
+basamağın hepsinde; ayrıca mobilde elle yazılmış satır yüksekliği kalmadığını.
+Dördü de enjeksiyonla doğrulandı (ağırlık, harf aralığı, oran ve geri konan bir
+elle değer).
+
+**Açık kalan:** iki `TextInput` (`game/skillQuiz`, `game/skillLibrary`) kendi
+`lineHeight: 22`sini taşıyor. `Text` bileşeni girdi alanlarını sarmıyor, o yüzden
+ölçek oraya ulaşmıyor; ikisi de beceri kütüphanesi çalışmasının alanında olduğu
+için dokunulmadı ve kontrol onları bilerek muaf tutuyor.

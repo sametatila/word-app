@@ -267,7 +267,7 @@ export function RoleplayExamScreen() {
           <CoachBubble moment="exam_intro" mood="think" size={48} />
           <Text accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
-          <Text variant="body" style={{ marginTop: spacing.md, lineHeight: 22 }}>{lesson.roleplay.scene}</Text>
+          <Text variant="body" style={{ marginTop: spacing.md }}>{lesson.roleplay.scene}</Text>
           <View style={{ marginTop: spacing.md, gap: 4 }}>
             <Rule colors={colors} text={tx("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })} />
             <Rule colors={colors} text={tx("rpexam.rule_partner")} />
@@ -305,7 +305,7 @@ export function RoleplayExamScreen() {
     return (
       <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={80} />
-        <Text variant="body" style={{ textAlign: "center", lineHeight: 22 }}>{tx("rpexam.service_down")}</Text>
+        <Text variant="body" style={{ textAlign: "center" }}>{tx("rpexam.service_down")}</Text>
         {/* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
             düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani
             ölçülmüş hiçbir şey YOK — sınav baştan başlayabilir. Tek çıkış
@@ -352,7 +352,7 @@ export function RoleplayExamScreen() {
         </View>
 
         {gateNote ? (
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, lineHeight: 20 }}>{gateNote}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{gateNote}</Text>
         ) : null}
 
         {result ? (
@@ -388,7 +388,7 @@ export function RoleplayExamScreen() {
         ) : null}
 
         {cando.length ? (
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>
             <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{passed ? tx("lessonp.i_can") : tx("rpexam.goal")} </Text>
             {cando.join(" · ")}
           </Text>
@@ -438,7 +438,7 @@ export function RoleplayExamScreen() {
               marginBottom: spacing.sm,
             }}
           >
-            <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text} style={{ lineHeight: 22 }}>{turn.content}</Text>
+            <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
           </View>
         ))}
         {busy ? <ActivityIndicator color={colors.primary} style={{ alignSelf: "flex-start" }} /> : null}
@@ -501,7 +501,7 @@ function Rule({ colors, text }: { colors: Palette; text: string }) {
   return (
     <View style={{ flexDirection: "row", gap: 6 }}>
       <Text variant="caption" color={colors.textFaint}>·</Text>
-      <Text variant="caption" color={colors.textMuted} style={{ flex: 1, lineHeight: 19 }}>{text}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{text}</Text>
     </View>
   );
 }

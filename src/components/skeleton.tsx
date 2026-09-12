@@ -132,8 +132,8 @@ const TEXT = {
   h3: [16, 1.35],
   body: [15, 1.5],
   strong: [15, 1.5],
-  caption: [12.5, 1.4],
-  micro: [11, 1.35],
+  caption: [12.5, 1.6],
+  micro: [11, 1.65],
 } satisfies Record<string, [size: number, lineHeight: number]>;
 export type TextVariant = keyof typeof TEXT;
 

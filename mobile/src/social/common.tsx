@@ -144,7 +144,7 @@ export function EmptyCard({ icon, tint, title, text, action, onAction, live }: {
     <Card padded accessibilityLiveRegion={live} style={{ alignItems: "center", gap: spacing.sm }}>
       <IconTile icon={icon} tint={t} size={52} solid />
       <Text variant="h3" style={{ textAlign: "center", marginTop: spacing.xs }}>{title}</Text>
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 18 }}>{text}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{text}</Text>
       {action && onAction ? <View style={{ marginTop: spacing.sm }}><Pill label={action} onPress={onAction} /></View> : null}
     </Card>
   );

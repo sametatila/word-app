@@ -144,7 +144,7 @@ export function WritingsScreen() {
             "bunlar kime görünüyor" sorusu ekranda hiç cevaplanmıyordu. */}
         <View style={{ flex: 1 }}>
           <Text accessibilityRole="header" variant="h2">{t("writings.my_writing")}</Text>
-          <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 17 }} numberOfLines={2}>{t("writ.sub")}</Text>
+          <Text variant="micro" color={colors.textMuted} numberOfLines={2}>{t("writ.sub")}</Text>
         </View>
       </View>
       {phase === "loading" ? (

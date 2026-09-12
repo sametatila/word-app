@@ -291,7 +291,7 @@ export function ChallengeScreen() {
       <View style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }]}>
         <Mascot mood="idle" size={96} />
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.none_title")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("challenge.none_sub")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("challenge.none_sub")}</Text>
         <PressableScale onPress={exit} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color={colors.onPrimary}>{t("common.back_to_learn")}</Text>
         </PressableScale>
@@ -307,7 +307,7 @@ export function ChallengeScreen() {
             <FlameIcon color={colors.onFill} size={26} />
           </View>
           <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("challenge.title")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 22 }}>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
             {t("challenge.pitch", { n: START_SECONDS })}
           </Text>
           <View style={{ marginTop: spacing.lg, gap: 8 }}>
@@ -430,7 +430,7 @@ function Rule({ colors, tone, text }: { colors: Palette; tone: string; text: str
   return (
     <View style={{ flexDirection: "row", gap: 8 }}>
       <Text variant="bodyStrong" color={tone}>·</Text>
-      <Text variant="body" color={colors.text} style={{ flex: 1, lineHeight: 21 }}>{text}</Text>
+      <Text variant="body" color={colors.text} style={{ flex: 1 }}>{text}</Text>
     </View>
   );
 }

@@ -95,7 +95,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
         const ok = results[qi] === true;
         return (
           <Card key={qi} padded>
-            <Text variant="bodyStrong" style={{ lineHeight: 22 }}>
+            <Text variant="bodyStrong">
               <Text variant="bodyStrong" color={colors.textMuted}>{qi + 1}. </Text>{q.text}
             </Text>
             {kind === "order" ? (
@@ -107,7 +107,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
             )}
             {done ? (
               <View style={{ marginTop: spacing.md, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, backgroundColor: ok ? colors.successSoft : colors.surface2 }}>
-                <Text variant="caption" color={colors.text} style={{ lineHeight: 19 }}>{q.explain}</Text>
+                <Text variant="caption" color={colors.text}>{q.explain}</Text>
               </View>
             ) : null}
           </Card>
@@ -402,7 +402,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
       <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-        <Text variant="body" color={colors.text} style={{ lineHeight: 22 }}>{t.source}</Text>
+        <Text variant="body" color={colors.text}>{t.source}</Text>
       </View>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
@@ -443,7 +443,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
       {t.facts ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-          <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{t.facts}</Text>
+          <Text variant="caption" color={colors.text}>{t.facts}</Text>
         </View>
       ) : null}
       <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
@@ -569,7 +569,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
       {t.stimulus ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-          <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{t.stimulus}</Text>
+          <Text variant="caption" color={colors.text}>{t.stimulus}</Text>
         </View>
       ) : null}
       {t.checklist?.length ? (
@@ -618,23 +618,23 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
         ) : null}
       </View>
       {!done && !reveal && !enough ? (
-        <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 18 }}>{tx("writp.min_words_note", { min: t.minWords, n: words })}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("writp.min_words_note", { min: t.minWords, n: words })}</Text>
       ) : null}
       {score ? (
         <View style={{ marginTop: spacing.md }}>
           <Text variant="h3" color={score.overall >= RUBRIC_PASS_PCT ? colors.successText : colors.text}>{formatPercent(score.overall)}</Text>
-          {score.praise ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.praise}</Text> : null}
-          {score.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.tip}</Text> : null}
+          {score.praise ? <Text variant="body" style={{ marginTop: spacing.xs }}>{score.praise}</Text> : null}
+          {score.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{score.tip}</Text> : null}
           {score.corrected ? (
             <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
               <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("item.mono_corrected")}</Text>
-              <Text variant="body" style={{ lineHeight: 22 }}>{score.corrected}</Text>
+              <Text variant="body">{score.corrected}</Text>
             </View>
           ) : null}
         </View>
       ) : null}
       {score && score.overall < RUBRIC_PASS_PCT ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
           {/* Orta bant sabitten (`SCORE_MID_PCT`); sayi iki platformda da
               elle yaziliydi. */}
           {tx(score.overall >= SCORE_MID_PCT ? "writp.improve" : "writp.retry_suggest")}
@@ -643,8 +643,8 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       {/* "Puan verilemedi" satırı duyuruluyor: gönder düğmesine basan
           kullanıcının odağı düğmede kalıyor ve satırın geldiğini ekran okuyucu
           söylemiyordu. Hata değil bilgi, o yüzden `polite`. */}
-      {note ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{note}</Text> : null}
-      {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 20 }}>{tx("writp.queued")}</Text> : null}
+      {note ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{note}</Text> : null}
+      {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("writp.queued")}</Text> : null}
       {reveal && !done ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
           <PressableScale onPress={settleNow} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.md, paddingVertical: 12, alignItems: "center" }}>
@@ -658,7 +658,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       {(done || reveal) && t.sample ? (
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.sample_answer")}</Text>
-          <Text variant="body" color={colors.text} style={{ lineHeight: 22 }}>{t.sample}</Text>
+          <Text variant="body" color={colors.text}>{t.sample}</Text>
         </View>
       ) : null}
     </Card>

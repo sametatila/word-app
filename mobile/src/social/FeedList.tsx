@@ -50,7 +50,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
         </View>
         <IconTile icon={icon} tint={tint} size={40} />
       </View>
-      <Text variant="body" style={{ marginTop: spacing.md, lineHeight: 21 }}>{feedText(item)}</Text>
+      <Text variant="body" style={{ marginTop: spacing.md }}>{feedText(item)}</Text>
       <ReactionBar eventId={item.id} summary={item.reactions} disabled={item.isMine} />
     </Card>
   );

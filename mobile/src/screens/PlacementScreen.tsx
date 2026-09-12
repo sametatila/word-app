@@ -113,7 +113,7 @@ function StageHead({ head, colors }: { head: { title: string; text?: string; seg
           <Text variant="bodyStrong" color={colors.primaryText}>{t("common.listen")}</Text>
         </PressableScale>
       ) : (
-        <Text variant="body" style={{ lineHeight: 22 }}>{head.text ?? head.segments?.map((sg) => sg.text).join(" ")}</Text>
+        <Text variant="body">{head.text ?? head.segments?.map((sg) => sg.text).join(" ")}</Text>
       )}
     </View>
   );
@@ -306,7 +306,7 @@ export function PlacementScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
         {last ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
             {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
             {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
@@ -317,7 +317,7 @@ export function PlacementScreen() {
             {describePerSkill(last.perSkill) ? ` · ${describePerSkill(last.perSkill)}` : ""}
           </Text>
         ) : null}
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
         <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
         </PressableScale>
@@ -333,9 +333,9 @@ export function PlacementScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg, justifyContent: "center" }}>
         <Text variant="h1" style={{ textAlign: "center" }}>{t("onboarding.kisa_yerlestirme_sinavi")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("plc.intro")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("plc.intro")}</Text>
         {last ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>
             {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
             {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
@@ -393,7 +393,7 @@ export function PlacementScreen() {
             aynı, farkı tahmini ortadan kaldırması.
           */}
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginBottom: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ flex: 1, lineHeight: 19 }}>
+            <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
               {t(STAGE_TITLE_KEY[questions[idx].stage] ?? "plc.vocab")}
             </Text>
             <PressableScale onPress={skipStage} hitSlop={6}>
@@ -428,18 +428,18 @@ export function PlacementScreen() {
             {t("placement.result", { total: total, correct: correct })}
           </Text>
           {result && describePerSkill(result.perSkill) ? (
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 20 }}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, textAlign: "center" }}>
               {describePerSkill(result.perSkill)}
             </Text>
           ) : null}
           {/* SONUÇ YAZILAMADI uyarısı çiplerden ÖNCE: kullanıcı seviyesini
               seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
-          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("placement.not_saved")}</Text> : null}
+          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md }}>{t("placement.not_saved")}</Text> : null}
           {/* ÖNERİ NEREDEN GELİYOR. Beş çip seçilebilir duruyordu ama neden
               birinin işaretli olduğu ve seçimin gerçekten kullanıcıda olduğu
               hiçbir yerde yazmıyordu. Web aynı yerde söylüyor. */}
           {user && result ? (
-            <Text variant="caption" color={colors.textFaint} style={{ marginTop: spacing.md, marginBottom: spacing.lg, textAlign: "center", lineHeight: 19 }}>{t("placew.median_note")}</Text>
+            <Text variant="caption" color={colors.textFaint} style={{ marginTop: spacing.md, marginBottom: spacing.lg, textAlign: "center" }}>{t("placew.median_note")}</Text>
           ) : null}
           <View style={{ height: spacing.lg }} />
           {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu

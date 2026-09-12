@@ -593,7 +593,7 @@ export function AuthScreen() {
           (ölçüldü) ve Text hitSlop almıyor. Ayrı düğmelere çıkarıldı — hem 48 dp
           tabanını tutuyor hem cümle Türkçe eke bağlı kalmadan çevrilebiliyor. */}
       <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.xs, gap: 2 }}>
-        <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", lineHeight: 18 }}>
+        <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center" }}>
           {t("auth.legal_notice")}
         </Text>
         <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>

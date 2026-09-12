@@ -41,7 +41,7 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
         </PressableScale>
       </View>
       {text.split("\n\n").map((p, i) => (
-        <Text key={i} variant="body" style={{ lineHeight: 25, marginTop: i > 0 ? spacing.md : 0 }}>{p}</Text>
+        <Text key={i} variant="body" style={{ marginTop: i > 0 ? spacing.md : 0 }}>{p}</Text>
       ))}
     </Card>
   );
@@ -129,7 +129,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
               <SpeakerIcon color={colors.textMuted} size={16} />
               <View style={{ flex: 1 }}>
                 {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
-                <Text variant="body" style={{ lineHeight: 24 }}>{s.text}</Text>
+                <Text variant="body">{s.text}</Text>
               </View>
             </PressableScale>
           ))}
@@ -274,7 +274,7 @@ export function ItemScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{exercise.intro}</Text>
+        <Text variant="body" color={colors.textMuted}>{exercise.intro}</Text>
 
         {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} colors={colors} /> : null}
         {exercise.skill === "listening" && exercise.segments ? <ListeningBody segments={exercise.segments} colors={colors} /> : null}
@@ -326,7 +326,7 @@ export function ItemScreen() {
               </View>
             ) : null}
             {queued ? (
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>{t("skillp.saved_offline")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("skillp.saved_offline")}</Text>
             ) : null}
             {repeatNoXp ? (
               <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.repeat_note")}</Text>

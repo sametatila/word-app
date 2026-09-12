@@ -100,7 +100,7 @@ export function InboxScreen() {
                   <PressableScale key={n.id} onPress={() => open(n)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === items.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}>
                     {n.actor ? <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} /> : <IconTile icon={icon} tint={tint} size={40} />}
                     <View style={{ flex: 1 }}>
-                      <Text variant={n.read ? "body" : "bodyStrong"} style={{ lineHeight: 20 }}>{notificationText(n)}</Text>
+                      <Text variant={n.read ? "body" : "bodyStrong"}>{notificationText(n)}</Text>
                       <Text variant="micro" color={colors.textFaint} style={{ marginTop: 2 }}>{timeAgo(n.createdAt)}</Text>
                     </View>
                     {reaction ? (

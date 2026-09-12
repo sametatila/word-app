@@ -565,8 +565,8 @@ function Cover({
           <SpeakerIcon color={colors.primaryText} size={18} />
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.instructions")}</Text>
         </View>
-        <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{part.instruction}</Text>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{part.instructionTr}</Text>
+        <Text variant="body" style={{ marginTop: spacing.xs }}>{part.instruction}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{part.instructionTr}</Text>
       </Card>
       <Card padded style={{ marginBottom: spacing.md }}>
         <Text variant="bodyStrong">{paper.theme}</Text>
@@ -577,7 +577,7 @@ function Cover({
       </Card>
       <Card padded style={{ marginBottom: spacing.lg }}>
         <Text variant="micro" color={colors.textMuted}>{t("mockexam.rules_title")}</Text>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{t("mockexam.rules_body")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.rules_body")}</Text>
       </Card>
       <Primary colors={colors} label={busy ? t("mockexam.starting") : t("mockexam.start")} onPress={onStart} disabled={busy} />
     </>
@@ -618,8 +618,8 @@ function TaskView({
         {t("mockexam.task_of", { n: index + 1, total })}
       </Text>
       <Card padded style={{ marginBottom: spacing.md }}>
-        <Text variant="body" style={{ lineHeight: 22 }}>{task.prompt}</Text>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{task.promptTr}</Text>
+        <Text variant="body">{task.prompt}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{task.promptTr}</Text>
       </Card>
 
       {task.options?.length ? (
@@ -627,7 +627,7 @@ function TaskView({
           {task.options.map((o) => (
             <View key={o.key} style={{ marginBottom: spacing.sm }}>
               <Text variant="bodyStrong">{o.key}) {o.label}</Text>
-              {o.body ? <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{o.body}</Text> : null}
+              {o.body ? <Text variant="caption" color={colors.textMuted}>{o.body}</Text> : null}
             </View>
           ))}
         </Card>
@@ -673,7 +673,7 @@ function StimulusView({
       <Card padded style={{ marginBottom: spacing.md }}>
         <Text variant="micro" color={colors.textMuted}>{st.genre} · {st.genreTr}</Text>
         {st.title ? <Text variant="bodyStrong" style={{ marginTop: spacing.xs }}>{st.title}</Text> : null}
-        <Text variant="body" style={{ marginTop: spacing.sm, lineHeight: 24 }}>{withBlanks(st.body)}</Text>
+        <Text variant="body" style={{ marginTop: spacing.sm }}>{withBlanks(st.body)}</Text>
       </Card>
     );
   }
@@ -684,7 +684,7 @@ function StimulusView({
     <Card padded style={{ marginBottom: spacing.md }}>
       <Text variant="micro" color={colors.textMuted}>{st.genre} · {st.genreTr}</Text>
       {st.title ? <Text variant="bodyStrong" style={{ marginTop: spacing.xs }}>{st.title}</Text> : null}
-      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{st.situation}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{st.situation}</Text>
       <PressableScale
         onPress={() => onPlay(st)}
         disabled={rest <= 0 || busy}
@@ -768,7 +768,7 @@ function ItemView({
   // için gövdeye karışmamalı.
   return (
     <Card padded style={{ marginBottom: spacing.sm }}>
-      <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{item.no}. {item.text}</Text>
+      <Text variant="bodyStrong">{item.no}. {item.text}</Text>
       {item.kind === "gap" && item.cue ? (
         <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
       ) : null}
@@ -886,7 +886,7 @@ function WritingTask({
 
 function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
   if (score.score == null) {
-    return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 20 }}>{t("mockexam.ai_off")}</Text>;
+    return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.ai_off")}</Text>;
   }
   return (
     <View style={{ marginTop: spacing.md }}>
@@ -895,10 +895,10 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
           değiştirilebiliyor, bkz. `premium/gates` `unlockPct`) renk "geçti"
           demeye devam ederdi. Dört yerde aynı kopya vardı. */}
       <Text variant="h3" color={score.score >= MOCK_PASS_PCT ? colors.successText : colors.dangerText}>{formatPercent(score.score)}</Text>
-      {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.praise}</Text> : null}
-      {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.tip}</Text> : null}
+      {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{score.praise}</Text> : null}
+      {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs }}>{score.tip}</Text> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
-        <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>
+        <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
           {e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}
         </Text>
       ))}
@@ -1019,7 +1019,7 @@ function SpeakingTask({
 
       {step === "waiting" ? (
         <>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 20 }}>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
             {exchange.length
               ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
               : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
@@ -1051,21 +1051,21 @@ function SpeakingTask({
         <View style={{ marginTop: spacing.md, alignItems: "center" }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.prep")}</Text>
           <Text variant="h1" color={colors.primaryText}>{mmss(count)}</Text>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>{t("mockexam.prep_hint")}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t("mockexam.prep_hint")}</Text>
         </View>
       ) : step === "speaking" ? (
         <View style={{ marginTop: spacing.md }}>
           {current?.who === "partner" ? (
             <>
               <Text variant="micro" color={colors.textMuted}>{t("mockexam.partner")}</Text>
-              <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{current.de}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{current.tr}</Text>
+              <Text variant="body" style={{ marginTop: spacing.xs }}>{current.de}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{current.tr}</Text>
             </>
           ) : (
             <View style={{ alignItems: "center" }}>
               <MicIcon color={colors.dangerText} size={28} />
               <Text variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>
                 {current?.who === "you" ? current.hint : t("mockexam.solo_hint")}
               </Text>
             </View>
@@ -1088,7 +1088,7 @@ function SpeakingTask({
           {/* Mikrofon açılamadıysa sebebi ve çıkış yolu ayrı söyleniyor —
               genel döküm notu o durumda yanlış şeyi anlatıyor. Web aynı ayrımı
               yapıyor (`mic_failed` / `transcript_note`). */}
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t(micOk === false ? "mockexam.mic_failed" : "mockexam.transcript_note")}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t(micOk === false ? "mockexam.mic_failed" : "mockexam.transcript_note")}</Text>
           {score ? (
             <OpenResult score={score} colors={colors} />
           ) : (
@@ -1139,8 +1139,8 @@ function ResultView({
     <View>
       {offline ? (
         <Card padded style={{ marginBottom: spacing.md, backgroundColor: colors.dangerSoft }}>
-          <Text variant="caption" color={colors.dangerText} style={{ lineHeight: 20 }}>{t(`mockexam.fail_${offline}`)}</Text>
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockexam.saved_locally")}</Text>
+          <Text variant="caption" color={colors.dangerText}>{t(`mockexam.fail_${offline}`)}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.saved_locally")}</Text>
         </Card>
       ) : null}
 
@@ -1158,7 +1158,7 @@ function ResultView({
         </Card>
       ) : (
         <Card padded style={{ marginBottom: spacing.md }}>
-          <Text variant="body" style={{ lineHeight: 22 }}>{t("mockexam.not_scored")}</Text>
+          <Text variant="body">{t("mockexam.not_scored")}</Text>
         </Card>
       )}
 
@@ -1187,21 +1187,21 @@ function ResultView({
       {ai ? (
         <Card padded style={{ marginBottom: spacing.md }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.todo")}</Text>
-          <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{ai.summary}</Text>
+          <Text variant="body" style={{ marginTop: spacing.xs }}>{ai.summary}</Text>
           {ai.strengths.length ? (
-            <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+            <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.sm }}>
               {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
             </Text>
           ) : null}
           {ai.todo.map((td, i) => (
             <View key={i} style={{ marginTop: spacing.md, borderLeftWidth: 2, borderLeftColor: colors.primary, paddingLeft: spacing.md }}>
               <Text variant="bodyStrong">{i + 1}. {td.title}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, lineHeight: 20 }}>{td.why}</Text>
-              <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{td.how}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{td.why}</Text>
+              <Text variant="body" style={{ marginTop: spacing.xs }}>{td.how}</Text>
             </View>
           ))}
           {ai.source === "rules" ? (
-            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 18 }}>{t("mockexam.source_rules")}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.source_rules")}</Text>
           ) : null}
         </Card>
       ) : null}
@@ -1217,18 +1217,18 @@ function ResultView({
               {(open[task.id] ?? "").trim() ? (
                 <>
                   <Text variant="micro" color={colors.textMuted}>{t("mockexam.your_answer")}</Text>
-                  <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{open[task.id]}</Text>
+                  <Text variant="body" style={{ marginTop: spacing.xs }}>{open[task.id]}</Text>
                 </>
               ) : null}
               {openScores[task.id] ? <OpenResult score={openScores[task.id]} colors={colors} /> : null}
               <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.criteria")}</Text>
               {task.rubric.criteria.map((c, i) => (
-                <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>• {c}</Text>
+                <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>• {c}</Text>
               ))}
               {reveal[task.id] ? (
                 <>
                   <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.model_answer")}</Text>
-                  <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{task.rubric.sample}</Text>
+                  <Text variant="body" style={{ marginTop: spacing.xs }}>{task.rubric.sample}</Text>
                 </>
               ) : (
                 <PressableScale
@@ -1259,7 +1259,7 @@ function ResultView({
                       {ok ? <CheckIcon color={colors.successText} size={16} /> : <XIcon color={colors.dangerText} size={16} />}
                     </View>
                     <View style={{ flex: 1 }}>
-                      <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{it.no}. {it.text}</Text>
+                      <Text variant="bodyStrong">{it.no}. {it.text}</Text>
                       {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                       {it.kind === "gap" && it.cue ? (
                         <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
@@ -1272,7 +1272,7 @@ function ResultView({
                       <Text variant="caption" color={ok ? colors.successText : colors.text} style={{ marginTop: spacing.xs }}>
                         {t("mockexam.correct_answer")}: {scored?.expected ?? ""}
                       </Text>
-                      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{it.explain}</Text>
+                      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{it.explain}</Text>
                     </View>
                   </View>
                 </Card>
@@ -1285,7 +1285,7 @@ function ResultView({
               <Card key={st.id} padded style={{ marginBottom: spacing.sm }}>
                 <Text variant="micro" color={colors.textMuted}>{t("mockexam.transcript")} · {st.genreTr}</Text>
                 {st.segments.map((s, i) => (
-                  <Text key={i} variant="caption" style={{ marginTop: spacing.xs, lineHeight: 20 }}>
+                  <Text key={i} variant="caption" style={{ marginTop: spacing.xs }}>
                     {s.speaker ? `${s.speaker}: ` : ""}{s.text}
                   </Text>
                 ))}

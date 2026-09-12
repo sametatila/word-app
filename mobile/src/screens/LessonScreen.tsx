@@ -1128,7 +1128,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
       ) : null}
 
       {cando.length ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
           <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{tx("lessonp.i_can")}</Text> {cando.join(" · ")}
         </Text>
       ) : null}
@@ -1141,7 +1141,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
         <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.corrections")}</Text>
           {corrections.map((c, i) => (
-            <Text key={i} variant="caption" color={colors.text} style={{ lineHeight: 20, marginBottom: 4 }}>{c}</Text>
+            <Text key={i} variant="caption" color={colors.text} style={{ marginBottom: 4 }}>{c}</Text>
           ))}
         </View>
       ) : roleMsgs.length > 1 ? (
@@ -1159,11 +1159,11 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
         aynı yerde veriyor (`min_turns_note` + "Konuşmaya dön").
       */}
       {passed === false ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
           {tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
         </Text>
       ) : nextDays !== null ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
           {tx("lessonp.next_in_days", { n: nextDays })}
         </Text>
       ) : null}

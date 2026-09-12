@@ -73,7 +73,7 @@ export function CoachBubble({
          canlı bir bölgedeydi. Web aynı cümleyi `role="status"` ile duyuruyor
          (`coach-bubble`, iki dalda da). Geçici metin, canlı bölgenin tam
          tanımı. */
-      <Text accessibilityRole="text" accessibilityLiveRegion="polite" variant="body" color={tone === "dark" ? colors.text : colors.textMuted} style={{ lineHeight: 21 }}>
+      <Text accessibilityRole="text" accessibilityLiveRegion="polite" variant="body" color={tone === "dark" ? colors.text : colors.textMuted}>
         {line}
       </Text>
     );
@@ -97,7 +97,7 @@ export function CoachBubble({
             paddingHorizontal: spacing.md, paddingVertical: 8,
           }}
         >
-          <Text accessibilityLiveRegion="polite" variant="body" color={fg} style={{ lineHeight: 21 }}>{line}</Text>
+          <Text accessibilityLiveRegion="polite" variant="body" color={fg}>{line}</Text>
         </Animated.View>
       ) : null}
     </View>

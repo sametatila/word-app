@@ -296,7 +296,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
             görünür (web `games/round-sheet` ile aynı muafiyet). */}
         <Mascot mood={ok ? "thumbsup" : "sad"} size={44} pinned />
         <View style={{ flex: 1 }}>
-          <Text variant="body" style={{ lineHeight: 21 }}>
+          <Text variant="body">
             <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{tx(ok ? "rounds.correct_excl" : "rounds.answer_is")}</Text>
             {data.answerDe && !data.diff ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
             {data.tr ? <Text variant="body" color={colors.textMuted}>{`  ·  ${data.tr}`}</Text> : null}
@@ -793,7 +793,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-          <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{sentence}</Text>
+          <Text variant="h2" style={{ flex: 1 }}>{sentence}</Text>
           <SpeakButton text={sentence} colors={colors} size={22} />
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}

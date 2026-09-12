@@ -156,11 +156,11 @@ export function WeeklyScreen() {
             secim `GameScreen`in "kelime yok" dalinda da yapili. */}
         <View style={{ alignItems: "center", marginBottom: spacing.md }}><Mascot mood="think" size={64} /></View>
         <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
           {t("weekly.pitch", { n: rounds.length })}{" "}
           {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0, min: MIN_MASTERED })}
         </Text>
-        <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 19 }}>{t("weekly.honest_note")}</Text>
+        <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("weekly.honest_note")}</Text>
         <PressableScale
           onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("playing"); }}
           style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
@@ -221,7 +221,7 @@ export function WeeklyScreen() {
           </Text>
           {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği: web
               aynı yerde söylüyor, mobilde hiç yazmıyordu. */}
-          {notSent ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("weekly.not_sent")}</Text> : null}
+          {notSent ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md }}>{t("weekly.not_sent")}</Text> : null}
           {done ? (
             wrong.length ? (
               <View style={{ width: "100%", marginBottom: spacing.lg }}>
@@ -236,10 +236,10 @@ export function WeeklyScreen() {
                 </View>
               </View>
             ) : (
-              <Text variant="caption" color={colors.successText} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 19 }}>{t("weekly.all_correct")}</Text>
+              <Text variant="caption" color={colors.successText} style={{ textAlign: "center", marginBottom: spacing.lg }}>{t("weekly.all_correct")}</Text>
             )
           ) : null}
-          {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 18 }}>{t("weekly.once_a_week")}</Text> : null}
+          {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg }}>{t("weekly.once_a_week")}</Text> : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </View>
       </View>

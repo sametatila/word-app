@@ -156,10 +156,10 @@ export function MockStatsScreen() {
                  okuma patladığında yedek YOK, orada kart içeriğin yerine
                  geçiyor ve `role="alert"` ile duyuruluyor (§320). */
               <Card padded accessibilityLiveRegion="polite" style={{ marginBottom: spacing.md }}>
-                <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
+                <Text variant="caption" color={colors.textMuted}>
                   {t(`mockexam.fail_${err ?? "unreachable"}`)}
                 </Text>
-                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockstats.local_note")}</Text>
+                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockstats.local_note")}</Text>
               </Card>
             ) : null}
             {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}

@@ -182,7 +182,7 @@ export function SkillsScreen() {
 
           {!hasExercises ? (
             <Card padded>
-              <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("skills.this_course_has_no_reading")}</Text>
+              <Text variant="body" color={colors.textMuted}>{t("skills.this_course_has_no_reading")}</Text>
             </Card>
           ) : null}
 

@@ -27,7 +27,7 @@ function Point({ text, colors }: { text: string; colors: Palette }) {
       <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center", marginTop: 2 }}>
         <CheckIcon color={colors.primaryText} size={14} />
       </View>
-      <Text variant="body" style={{ flex: 1, lineHeight: 22 }}>{text}</Text>
+      <Text variant="body" style={{ flex: 1 }}>{text}</Text>
     </View>
   );
 }
@@ -57,7 +57,7 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
             <MicIcon color={colors.onPrimary} size={36} />
           </View>
           <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.microphone_and_voice_data")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>
             {t("micdisclosure.walk_mode_works_with_your_voice")}
           </Text>
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>

@@ -32,7 +32,7 @@ export function AiNotice({ variant, style }: { variant: "character" | "output"; 
       }, style]}
     >
       <SparkIcon color={colors.textMuted} size={14} />
-      <Text variant="micro" color={colors.textMuted} style={{ flex: 1, lineHeight: 16 }}>{text}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ flex: 1 }}>{text}</Text>
     </View>
   );
 }

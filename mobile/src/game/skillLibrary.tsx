@@ -43,7 +43,7 @@ export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: 
       {blocks.map((b, i) => (
         <View key={i} style={{ marginTop: spacing.md }}>
           {b.heading ? <Text variant="bodyStrong">{b.heading}</Text> : null}
-          <Text variant="body" style={{ lineHeight: 23, marginTop: b.heading ? 4 : 0 }}>{b.tr}</Text>
+          <Text variant="body" style={{ marginTop: b.heading ? 4 : 0 }}>{b.tr}</Text>
           {b.examples?.map((x, j) => (
             <PressableScale key={j} onPress={() => speakTarget(x.de)} accessibilityLabel={t("item.listen_example")}
               style={{ marginTop: spacing.sm, flexDirection: "row", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
@@ -135,7 +135,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
     <Card padded style={{ marginTop: spacing.md }}>
       <Text variant="micro" color={colors.textMuted}>{idx + 1}/{tasks.length}</Text>
       <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: 6 }}>
-        <Text variant="h3" style={{ flex: 1, lineHeight: 26 }}>{task.de}</Text>
+        <Text variant="h3" style={{ flex: 1 }}>{task.de}</Text>
         <PressableScale onPress={() => speakTarget(task.de)} hitSlop={8} accessibilityLabel={t("item.read_aloud")}
           style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
           <SpeakerIcon color={colors.primaryText} size={18} />
@@ -144,7 +144,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{task.tr}</Text>
       {task.hint ? (
         <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-          <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{task.hint}</Text>
+          <Text variant="caption" color={colors.text}>{task.hint}</Text>
         </View>
       ) : null}
 
@@ -171,7 +171,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
           {heard ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t("item.heard", { text: heard })}</Text> : null}
           {fixes.map((f, i) => (
             <View key={i} style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-              <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{f}</Text>
+              <Text variant="caption" color={colors.text}>{f}</Text>
             </View>
           ))}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
@@ -341,7 +341,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       {phase === "prep" ? (
         <>
           <Text variant="micro" color={colors.primaryText}>{t("item.mono_prep")}</Text>
-          <Text variant="bodyStrong" style={{ marginTop: 6, lineHeight: 23 }}>{mono.promptTr}</Text>
+          <Text variant="bodyStrong" style={{ marginTop: 6 }}>{mono.promptTr}</Text>
           {mono.bulletsTr.map((b, i) => <Text key={i} variant="body" color={colors.text} style={{ marginTop: 6 }}>• {b}</Text>)}
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
             {mono.targets.map((x) => (
@@ -368,7 +368,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           </View>
           {mono.bulletsTr.map((b, i) => <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>· {b}</Text>)}
           <View style={{ marginTop: spacing.md, minHeight: 60, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-            <Text variant="body" color={transcript ? colors.text : colors.textMuted} style={{ lineHeight: 22 }}>
+            <Text variant="body" color={transcript ? colors.text : colors.textMuted}>
               {transcript || t(sttOk === false ? "item.mono_recording" : "item.mono_listening")}
             </Text>
           </View>
@@ -438,17 +438,17 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           {result ? (
             <>
               <Text variant="h2">{formatPercent(result.overall)}</Text>
-              {result.praise ? <Text variant="body" style={{ marginTop: spacing.sm, lineHeight: 22 }}>{result.praise}</Text> : null}
-              {result.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{result.tip}</Text> : null}
+              {result.praise ? <Text variant="body" style={{ marginTop: spacing.sm }}>{result.praise}</Text> : null}
+              {result.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{result.tip}</Text> : null}
               {result.corrected ? (
                 <View style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
                   <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{t("item.mono_corrected")}</Text>
-                  <Text variant="body" style={{ lineHeight: 22 }}>{result.corrected}</Text>
+                  <Text variant="body">{result.corrected}</Text>
                 </View>
               ) : null}
             </>
           ) : (
-            <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>
+            <Text variant="body" color={colors.textMuted}>
               {gateNote ? gateNote : failed ? t("item.mono_unscored") : t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
             </Text>
           )}
@@ -457,7 +457,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           </PressableScale>
           {showSample ? (
             <View style={{ marginTop: spacing.sm, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
-              <Text variant="body" style={{ lineHeight: 22 }}>{mono.sampleDe}</Text>
+              <Text variant="body">{mono.sampleDe}</Text>
             </View>
           ) : null}
         </View>
