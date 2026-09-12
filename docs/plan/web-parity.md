@@ -12357,3 +12357,65 @@ denendi, altısı da yakalandı.
 Mevcut bir kapı da onarıldı: "sonuç duyurusu" (§11.331) seviyeyi düz dizgi
 olarak arıyordu ve koşullu biçime geçen beş yüzeyi "sessiz" saydı — duyuru
 kalkmamış, **biçimi değişmişti**. Desen ikisini de kabul ediyor.
+
+## §11.363 — Ölü düğmenin sebebi: elle yazılmış taban, yazılmayan sebep
+
+Eksen **devre dışı denetimin sebebi**ydi. 135 web + 79 mobil `disabled`
+çağrısını taradım; çoğu geçici (`busy`) ve bir sebep gerektirmiyor. Kalıcı
+olarak kapalı kalan yerler bir tek sınıfta toplandı: **değerlendirme
+düğmeleri bir kelime tabanına bağlı.**
+
+Taban makul (iki kelimeye puan istemek hem anlamsız bir puan üretir hem
+kotadan yer yer) ama üç sorun birden vardı, üçü de **her iki platformda**:
+
+1. **Sayı elle yazılıydı** — sekiz yerde `< 5`, üç yerde `< 2`. Hiçbir yerde
+   adı geçmiyordu, yani iki platform sessizce ayrışabilirdi.
+2. **Sebep yazmıyordu.** Ekranda görünen sayaç **görevin** alt sınırını
+   söylüyor (`{n}/{min}`, kâğıda göre 40–120 kelime) ama düğmenin uyduğu sayı
+   **başka**. Üç kelime yazan kullanıcı "3 / 40" görüyor ve ölü bir düğmeye
+   bakıyor; beş kelimede düğme açılıyor ama sayaç hâlâ "yetersiz" diyor. Aynı
+   ekranda iki farklı sayı.
+3. **Tek cümlelik görevlerde hiç not yoktu** — tek kelime yazan kullanıcıya
+   hiçbir şey söylenmiyordu (uzun görevde `writp.min_words_note` vardı).
+
+İki sayı artık adlı ve ortak: `MIN_ASSESS_WORDS` ve `MIN_FREE_WORDS`
+(`src/lib/assess-const.ts` ↔ `mobile/src/lib/learningRules.ts`). Kapalı
+düğmenin yanında da tek cümle duruyor (`assess.gate_min_words`).
+
+### İki tek taraflı kusur
+
+**Konuşma dökümü kapısı webde KARAKTER sayıyordu** (`length < 5`): "ja ja"
+gibi iki kelimelik bir döküm geçiyor, "Entschuldigung" gibi tek kelimelik bir
+döküm geçmiyordu. Android'de düğmede hiç kapı yoktu — işlevde karakter kapısı
+vardı, yani **düğme açık görünüyor ve basınca hiçbir şey olmuyordu**. İki
+taraf artık aynı kelime tabanını kullanıyor.
+
+**Sınav hazırlık kuralı**: Android yalnız `answer.trim()` istiyordu —
+sıralama kipinde beş parçanın biri yerleştirilmiş bir "cümle"
+gönderilebiliyor, yazma kipinde tek kelime geçebiliyordu, ve bunlar puanlanıp
+sınav sonucuna giriyordu. Web baştan beri sıralamada bütün parçaları, yazmada
+iki kelimeyi istiyordu. **Burada ileride olan webdi** ve kural webin kuralı
+oldu; Android'in daha gevşek olması bir tasarım tercihi değil, ölçülmemiş bir
+boşluktu.
+
+### §244 ve iki kapı dersi
+
+Dört olgu: elle yazılmış tabanın kalmaması (mutlak), kapalı düğmenin
+sebebinin yazması (üç yüzey, eşleştirmeli), döküm kapısının kelime sayması ve
+sınav hazırlık kuralının aynı olması.
+
+**Kapı yanlış şeyi saydı.** İlk desen `\bn\b` ile her `n` karşılaştırmasını
+alıyordu ve `writing-player`daki `if (n >= 2)` — bir **yanlış deneme sayacı** —
+"elle yazılmış taban" sayıldı. Desen yalnız `n <` biçimini alıyor artık. Aynı
+desen `examWords < 5`i de kaçırmıştı (değişken adı listede yoktu); enjeksiyon
+onu gösterdi ve desen ad kalıbına çevrildi.
+
+**Kapı hiçbir şey ölçmedi.** Sabitlerin değerini karşılaştıran ikinci bir
+liste yazmıştım: üretilen desen `\\b` (kaçışlı ters bölü + b) oluyor, asla
+eşleşmiyor, iki taraf da "yok" dönüyor ve liste yeşil kalıyordu. Değer
+eşitliğini "ortak sayısal sabitler" kapısı zaten doğru tutuyor (enjeksiyonu o
+yakaladı), ikinci ve daha zayıf bir kopya kapıyı güçlendirmiyor — liste
+silindi, gerekçesi kapıya yazıldı.
+
+Yedi enjeksiyon denendi; ikisi ilk turda kaçtı, desen düzeltildikten sonra
+yedisi de yakalandı.

@@ -7346,6 +7346,124 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 244. OLU DUGMENIN SEBEBI ----------------------------------------
+   *
+   * Degerlendirme dugmeleri bir KELIME TABANINA bagli: iki kelimeye puan
+   * istemek hem anlamsiz bir puan uretir hem kotadan yer yer. Taban makul
+   * ama uc sorun birden vardi ve ikisi de her iki platformda:
+   *
+   *  1. SAYI ELLE YAZILIYDI - sekiz yerde `< 5`, uc yerde `< 2`. Hicbir
+   *     yerde adi gecmiyordu, yani iki platform sessizce ayrisabilirdi.
+   *  2. SEBEP YAZMIYORDU. Ekranda gorunen sayac GOREVIN alt sinirini
+   *     soyluyor (`{n}/{min}`, kagida gore 40-120 kelime) ama dugmenin
+   *     uydugu sayi BASKA. Uc kelime yazan kullanici "3 / 40" goruyor ve olu
+   *     bir dugmeye bakiyor; bes kelimede dugme aciliyor ama sayac hala
+   *     "yetersiz" diyor. Ayni ekranda iki farkli sayi.
+   *  3. TEK CUMLELIK gorevlerde hic not yoktu: tek kelime yazan kullaniciya
+   *     hicbir sey soylenmiyordu.
+   *
+   * Iki tek tarafli kusur daha cikti:
+   *
+   *  - KONUSMA DOKUMU kapisi webde KARAKTER sayiyordu (`length < 5`): "ja
+   *    ja" gibi iki kelimelik bir dokum geciyor, "Entschuldigung" gibi tek
+   *    kelimelik bir dokum gecmiyordu. Android'de dugmede hic kapi yoktu
+   *    (islevde karakter kapisi vardi, yani dugme acik gorunuyor ve basinca
+   *    hicbir sey olmuyordu).
+   *  - SINAV HAZIRLIK KURALI: Android yalniz `answer.trim()` istiyordu -
+   *    siralama kipinde bes parcanin biri yerlestirilmis bir "cumle"
+   *    gonderilebiliyor, yazma kipinde tek kelime gecebiliyordu ve bunlar
+   *    puanlanip sinav sonucuna giriyordu. Web bastan beri siralamada butun
+   *    parcalari, yazmada iki kelimeyi istiyordu. Burada ILERIDE OLAN WEBDI
+   *    ve kural webin kurali oldu; Android'in daha gevsek olmasi bir
+   *    tasarim tercihi degil, olculmemis bir bosluktu. */
+  {
+    /* Iki sabitin DEGERI burada olculmuyor: "ortak sayisal sabitler" kapisi
+       `learningRules.ts`teki her sabiti web ikiziyle zaten esliyor ve bu
+       ikisini de yakaliyor (denendi). Ilk yazimda buraya ikinci bir liste
+       koymustum ve HICBIR SEY OLCMUYORDU - uretilen desen `\\b` (kacisli ters
+       bolu + b) oluyor ve asla eslesmiyordu, iki taraf da "yok" donuyor,
+       liste yesil kaliyordu. Ayni olguyu ikinci kez, daha zayif olcmek
+       kapiyi guclendirmiyor. */
+
+    /* Elle yazilmis taban KALMADI (MUTLAK). Olcu "sabit kullaniliyor mu"
+       degil "elle yazilmis sayi var mi": ikisi bir arada durabilir ve o
+       zaman sabit yalniz suslemedir. */
+    const ELLE = [
+      "src/components/exam-player.tsx",
+      "src/components/mock-exam-player.tsx",
+      "src/components/skills/writing-player.tsx",
+      "src/components/games/free-sentence-game.tsx",
+      "mobile/src/screens/ExamScreen.tsx",
+      "mobile/src/screens/MockExamScreen.tsx",
+      "mobile/src/game/rounds.tsx",
+      "mobile/src/game/skillQuiz.tsx",
+    ];
+    /* Sayaci kelime/karakter esigi olan karsilastirmalara daraltiyor:
+       `f.length >= 5` gibi levenshtein toleranslari bu eksene ait degil. */
+    const elleYazili = [];
+    for (const y of ELLE) {
+      const src = sil(read(y));
+      /* `\bn <` yalniz KUCUKTUR bicimiyle: `if (n >= 2)` bir yanlis deneme
+         sayaci (`writing-player`), taban degil - ilk yazim onu da sayip
+         yanlis seyi olcuyordu. */
+      for (const m of src.matchAll(/(?:[A-Za-z]*(?:[Ww]ords?|[Kk]elime|[Ss]ozcuk|[Cc]ount)\s*(?:<|>=)|\bn\s*<|value\.trim\(\)\.length\s*<|text\.length\s*<)\s*([25])\b/g)) {
+        elleYazili.push(y.split("/").pop() + ":" + src.slice(0, m.index).split("\n").length);
+      }
+    }
+    sameList(
+      "degerlendirme tabani elle yazilmiyor",
+      ["elle yazili=" + elleYazili.length + (elleYazili.length ? " (" + elleYazili.join(", ") + ")" : "")],
+      ["elle yazili=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kapali dugmenin SEBEBI ekranda. */
+    const SEBEP = [
+      ["modul-sinavi-yazma", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+      ["deneme-acik-gorev", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
+      ["serbest-cumle", "src/components/games/free-sentence-game.tsx", "mobile/src/game/rounds.tsx"],
+    ];
+    const sebep = (y) => (/assess\.gate_min_words/.test(sil(read(y))) ? "yaziyor" : "YAZMIYOR");
+    sameList(
+      "kapali dugmenin sebebi yaziyor",
+      SEBEP.map(([ad, , ym]) => ad + "=" + sebep(ym)),
+      SEBEP.map(([ad, yw]) => ad + "=" + sebep(yw)),
+      "mobil",
+      "web",
+    );
+
+    /* Dokum kapisi KELIME sayiyor, karakter degil. */
+    sameList(
+      "konusma dokumu kapisi kelime sayiyor",
+      [
+        "mobil kapi=" + (/dokumSozcuk < MIN_ASSESS_WORDS/.test(sil(read("mobile/src/screens/MockExamScreen.tsx"))) ? "kelime" : "?"),
+        "mobil karakter kapisi=" + (/text\.length < 5/.test(sil(read("mobile/src/screens/MockExamScreen.tsx"))) ? "KALDI" : "yok"),
+      ],
+      [
+        "web kapi=" + (/dokumSozcuk < MIN_ASSESS_WORDS/.test(sil(read("src/components/mock-exam-player.tsx"))) ? "kelime" : "?"),
+        "web karakter kapisi=" + (/value\.trim\(\)\.length < 5/.test(sil(read("src/components/mock-exam-player.tsx"))) ? "KALDI" : "yok"),
+      ].map((x) => x.replace("web ", "mobil ")),
+      "mobil",
+      "web(adlar esitlendi)",
+    );
+
+    /* Sinav hazirlik kurali: siralamada butun parcalar, yazmada taban. */
+    sameList(
+      "sinav hazirlik kurali ayni",
+      [
+        "siralama=" + (/parts\.length === \(it\.chunks\?\.length \?\? 0\)/.test(sil(read("mobile/src/screens/ExamScreen.tsx"))) ? "butun parcalar" : "?"),
+        "yazma=" + (/yazilanKelime >= MIN_FREE_WORDS/.test(sil(read("mobile/src/screens/ExamScreen.tsx"))) ? "taban" : "?"),
+      ],
+      [
+        "siralama=" + (/chunks\.length === \(item\.chunks\?\.length \?\? 0\)/.test(sil(read("src/components/exam-player.tsx"))) ? "butun parcalar" : "?"),
+        "yazma=" + (/yazilanKelime >= MIN_FREE_WORDS/.test(sil(read("src/components/exam-player.tsx"))) ? "taban" : "?"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 243. METIN ALANININ ADI VE HATANIN SEVIYESI ---------------------
    *
    * BIRINCISI: YERTUTUCU AD DEGILDIR. Iki uygulamadaki metin alanlarinin
