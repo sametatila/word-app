@@ -26,6 +26,7 @@ import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
+import { ErrorBoundary } from "./src/ui/ErrorBoundary";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -215,9 +216,16 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <AuthProvider>
-          <Nav />
-        </AuthProvider>
+        {/* KÖK ÇÖKME SINIRI — gezginin kendisi ya da oturum sağlayıcısı
+            patlarsa. Ekran başına sınır bir düzey altta, `ContentColumn`
+            içindeki `screenLayout`larda; bu ikili web'in iki `error.tsx`
+            dosyasının aynısı. Tema sağlayıcısının İÇİNDE, çünkü kart kendi
+            renklerini temadan okuyor. */}
+        <ErrorBoundary>
+          <AuthProvider>
+            <Nav />
+          </AuthProvider>
+        </ErrorBoundary>
       </ThemeProvider>
     </SafeAreaProvider>
   );

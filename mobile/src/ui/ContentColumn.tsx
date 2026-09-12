@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { useLayout } from "../lib/useLayout";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 /**
  * İçerik sütunu — geniş ekranda okunabilir genişlikte ve ortalı.
@@ -29,9 +30,18 @@ export function ContentColumn({ children, wide = false }: { children: React.Reac
  *
  * Sıra: `Screen.layout` → `Group.screenLayout` → gezginin `screenLayout`'u.
  * Sekmeleri barındıran ekran bilerek DIŞARIDA bırakılıyor (bkz. RootStack).
+ *
+ * ÇÖKME SINIRI DA BURADA. Üçünden yalnız BİRİ uygulanıyor (en özel olan
+ * kazanıyor), yani sınırı ayrı bir `screenLayout` olarak eklemek düzeni
+ * ezerdi. İkisi birlikte sarmalanınca her ekran hem sütununu hem sınırını
+ * alıyor ve sınır EKRAN BAŞINA oluyor: bir ekran çökse sekme çubuğu ve
+ * gezinme ayakta kalıyor, kullanıcı başka bir yere geçebiliyor. Web'de
+ * karşılığı `app/(app)/error.tsx` (kabuğun altındaki sınır).
  */
 export const contentColumnLayout = ({ children }: { children: React.ReactNode }) => (
-  <ContentColumn>{children}</ContentColumn>
+  <ErrorBoundary>
+    <ContentColumn>{children}</ContentColumn>
+  </ErrorBoundary>
 );
 
 /**
@@ -42,8 +52,11 @@ export const contentColumnLayout = ({ children }: { children: React.ReactNode })
  * sığıyor. Yalnız ızgara sistemine girmiş ekranlara veriliyor; metin ağırlıklı
  * ekranlar dar sütunda kalıyor, orada genişlik okunaklık kaybı demek.
  *
- * Dikeyde ve telefonda `contentColumnLayout` ile aynı sonucu verir.
+ * Dikeyde ve telefonda `contentColumnLayout` ile aynı sonucu verir. Çökme
+ * sınırı ondaki gibi burada da (bkz. yukarıdaki not).
  */
 export const wideColumnLayout = ({ children }: { children: React.ReactNode }) => (
-  <ContentColumn wide>{children}</ContentColumn>
+  <ErrorBoundary>
+    <ContentColumn wide>{children}</ContentColumn>
+  </ErrorBoundary>
 );

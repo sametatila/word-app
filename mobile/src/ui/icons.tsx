@@ -236,6 +236,10 @@ export const FlagIcon = ({ color = "#000", size }: P) => (
 export const AlertIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M12 4.5 21 19H3z" {...stroke(color)} /><Path d="M12 10v3.5M12 16.2v.01" {...stroke(color)} /></S>
 );
+/** Yenile — web `icons` `RefreshIcon` ile aynı çizim (açık halka + iki ok ucu). */
+export const RefreshIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M19.5 12a7.5 7.5 0 0 1-13 5M4.5 12a7.5 7.5 0 0 1 13-5" {...stroke(color)} /><Path d="M17.5 3.5V7h-3.5M6.5 20.5V17H10" {...stroke(color)} /></S>
+);
 export const GlobeIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="12" cy="12" r="8" {...stroke(color)} /><Path d="M4 12h16M12 4a13 13 0 0 1 0 16M12 4a13 13 0 0 0 0 16" {...stroke(color)} /></S>
 );
