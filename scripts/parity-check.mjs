@@ -8740,6 +8740,61 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
+    /* KOC BALONLARI: eslesen her dosya cifti, ayni SIRADA ayni an ve ayni boy.
+     *
+     * Asagidaki `YUZEY` listesi yalniz `exam_intro`un KIPINE bakiyordu; BOY
+     * hic olculmuyordu ve balonun oteki yerleri (sonuc balonu, zayif nokta
+     * turu) hic bakilmamisti. Olculdugunde uc dosya ciftinde bes balondan
+     * IKISI boyca ayrisikti ve ikisi de mobil tarafta, ustelik mobilin
+     * KENDI kardes ekraniyla da celisiyordu:
+     *
+     *   sinav girisi   web 48 / 48 · mobil ExamScreen 48, RoleplayExam 56
+     *   sonuc balonu   web 56 / 56 · mobil RoleplayExam 56, ExamScreen 72
+     *
+     * Web ucunde de kendi icinde tutarli (giris 48, sonuc 56, zayif nokta 72).
+     * Iki aykiri mobilde duzeltildi.
+     *
+     * Olcu dosya CIFTI uzerinden, cunku balonun kimligi `moment` ve ayni
+     * `moment` ikiliyi (`exam_pass`/`exam_fail`) iki ayri ekranda da
+     * kullaniyor - tek basina anahtar olamiyor. Sayi olcusu de var: eslestirme
+     * bozulup listeler bosalirsa "fark yok" bos bir dogru olurdu. */
+    {
+      const CIFT = [
+        ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+        ["rol yapma", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+        ["tur ozeti", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ];
+      /* Balonlari SIRAYLA cikar: her biri "<an kumesi>/<boy>". An kumesi
+         etiketteki `moment` dizgilerinin sirali birlesimi - ucluk ternary de
+         boylece tek bir kimlige donuyor. */
+      const balonlar = (yol) => {
+        const src = sil(read(yol));
+        const out = [];
+        for (const m of src.matchAll(/<CoachBubble\b/g)) {
+          const kes = acilisSonu(src.slice(m.index));
+          if (kes < 0) continue;
+          const etiket = src.slice(m.index, m.index + kes + 1);
+          const anlar = [...etiket.matchAll(/"(\w+)"/g)]
+            .map((x) => x[1])
+            .filter((x) => /^(exam_intro|exam_pass|exam_fail|weak_done)$/.test(x))
+            .sort();
+          const boy = (etiket.match(/size=\{(\d+)\}/) ?? [])[1] ?? "?";
+          out.push((anlar.join("+") || "AN YOK") + "/" + boy);
+        }
+        return out;
+      };
+      const mobListe = CIFT.flatMap(([ad, , m]) => balonlar(m).map((x) => ad + ":" + x));
+      const webListe = CIFT.flatMap(([ad, w]) => balonlar(w).map((x) => ad + ":" + x));
+      sameList(
+        "koc balonu sayisi",
+        ["mobil=" + (mobListe.length >= 5 ? "5+" : mobListe.length), "web=" + (webListe.length >= 5 ? "5+" : webListe.length)],
+        ["mobil=5+", "web=5+"],
+        "bulunan",
+        "beklenen",
+      );
+      sameList("koc balonlarinin ani ve boyu", mobListe, webListe, "mobil", "web");
+    }
+
     /* Eslesen yuzeyler ayni kipi geciyor. */
     const YUZEY = [
       ["sinav girisi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx", /moment="exam_intro" mood="(\w+)"/],

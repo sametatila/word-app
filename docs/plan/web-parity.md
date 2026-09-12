@@ -15755,3 +15755,69 @@ Elle yazılmış iki eski ölçü kalıyor: onlar `CoachBubble moment="exam_intr
 
 Üç enjeksiyon doğrulandı: puanlama kipini `idle`a döndürmek, haftalık maskotunu
 kaldırmak (sayı ölçüsü düşüyor), webin bir boyunu değiştirmek (kapı iki yönlü).
+
+## §11.433 — Koç balonunun boyu üç yerde iki türlüydü
+
+Koç balonu (`CoachBubble`) beş yerde çiziliyor ve boyu yalnız iki yerde
+karşılaştırılıyordu — hayır, karşılaştırılan şey **kip**ti; **boy hiç
+ölçülmüyordu** ve balonun öteki yerlerine (sonuç balonu, zayıf nokta turu) hiç
+bakılmamıştı.
+
+| yüzey | web | mobil |
+|---|---|---|
+| sınav girişi (`exam_intro`) | 48 | `ExamScreen` 48 · **`RoleplayExam` 56** |
+| sonuç balonu (`exam_pass`/`exam_fail`) | 56 | `RoleplayExam` 56 · **`ExamScreen` 72** |
+| zayıf nokta turu (`weak_done`) | 72 | 72 |
+
+Web üçünde de kendi içinde tutarlı: giriş 48, sonuç 56, zayıf nokta 72. Mobilde
+iki aykırı var ve ikisi de **mobilin kendi kardeş ekranıyla da** çelişiyor —
+yani düzeltmenin yönü iki ayrı gerekçeyle aynı: `RoleplayExam` girişi 48,
+`ExamScreen` sonucu 56.
+
+Aynı turda maskot tarafında da iki boy aykırısı çıkmıştı (§11.432); ikisi
+birlikte okununca kalıp belli: **rol yapma ve sınav ekranları büyütülmüş
+kopyalar taşıyor** ve hiçbiri ölçülmüyordu.
+
+### Kapı
+
+Ölçü **dosya çifti** üzerinden, çünkü balonun kimliği `moment` ve aynı ikili
+(`exam_pass`/`exam_fail`) iki ayrı ekranda kullanılıyor — tek başına anahtar
+olamıyor. Üç çiftin (sınav, rol yapma, tur özeti) balonları **sırayla**
+çıkarılıp `<an kümesi>/<boy>` olarak karşılaştırılıyor; üçlü koşul ifadesi
+(`passed ? "exam_pass" : "exam_fail"`) böylece tek bir kimliğe dönüyor.
+
+İkinci ölçü sayı: eşleştirme bozulup listeler boşalırsa "fark yok" boş bir
+doğru olurdu.
+
+Üç enjeksiyon doğrulandı: sınav sonucunu 72'ye döndürmek, rol yapma girişini
+56'ya döndürmek, webin bir balonunu kaldırmak (sayı ölçüsü düşüyor).
+
+## §11.434 — Ölçüldü, temiz: boş hâller ve mobil iskeletler
+
+İki eksen bu turda ölçülüp **temiz** çıktı; ikisini de yazmak gerekiyor çünkü
+"bakıldı mı" sorusunun cevabı kodda görünmüyor.
+
+**Boş hâller.** `<EmptyCard>` kullanımları başlık anahtarıyla eşleştirildi: 19
+ortak yüzeyde **ikon farkı yok**, tint'ler de anlamsal karşılıklarıyla eşleşiyor
+(web `rose`↔mobil `danger`, `mint`↔`success`, `sky`↔`info`, `flame`↔`streak`).
+Eşleşmeyenlerin hepsinin sebebi var: mobilin üç "giriş gerekli" kartı (webde
+sunucu `/login`a yönlendiriyor), `league.alone` (web aynı metinleri kendi
+kartının içinde çiziyor, gerekçesi orada yazılı) ve `notfound.title`
+(§11.426'da eklenen grup 404'ü — mobilde adres çubuğu yok).
+
+**Mobil yükleme iskeletleri** (§11.431'de açık bırakılan tek madde). `Skeleton`
+mobilde 37 dosyada; iskeleti olmayıp veri bekleyen yedi ekran tek tek okundu:
+
+- `Boss` ve `Challenge`: tam ekran "hazırlanıyor" metni, canlı bölge olarak
+  duyuruluyor. Web karşılıklarının `loading.tsx`i **yok** — o iki rota sunucuda
+  bekleyen bir şey yapmıyor, yani karşılaştırılacak bir iskelet de yok.
+- `Notifications`: anahtarlar varsayılan değerlerle hemen çiziliyor, boş ekran
+  yok; web de aynı (`NotificationSettings` başlığı ve izin satırını hemen
+  basıyor).
+- `Leaderboard`: iskelet alt bileşenlerde (`FriendsBoard`, `LeagueBoard`).
+- `RoleplayExam`: ilk faz yerel (`intro`), veri beklemesi yok.
+- `WalkMode`: ilk faz yerel (`intro`), ilk boyamadan önce ağ yok.
+- `Item`: beceri oynatıcısı — paralel oturumun elinde, dokunulmadı.
+
+Yani mobilde boş ekran bırakan bir yükleme yolu bulunmadı; `check:loading`in
+mobil yarısı **yazılmıyor** ve sebebi bu.

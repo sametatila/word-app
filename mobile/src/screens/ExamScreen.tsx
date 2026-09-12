@@ -516,7 +516,11 @@ export function ExamScreen() {
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!result?.passed} />
-            <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={72} />
+            {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
+                ve mobilin KENDI rol yapma sonucu da 56. Burada 72 yaziliydi:
+                ayni an, uc yerde iki ayri boy. 72 `weak_done` balonunun boyu
+                ve o ikisinde (web+mobil) zaten 72. */}
+            <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={56} />
             {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
             <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1">{formatPercent(pct)}</Text>
             <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
