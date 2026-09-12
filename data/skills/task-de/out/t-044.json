@@ -1,0 +1,317 @@
+[
+ {
+  "tr": "Mastar kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Infinitivkarte aus."
+ },
+ {
+  "tr": "Orta çatı kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Medium-Karte aus."
+ },
+ {
+  "tr": "İki „what“ kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte der zwei „what“ aus."
+ },
+ {
+  "tr": "Fiil etken biçimde; fail hiç yok; neredeyse hep bir zarf gerekiyor; özne asla bir kişi değil.",
+  "kind": "form.facts",
+  "de": "Das Verb steht aktiv; einen Urheber gibt es gar nicht; fast immer braucht es ein Adverb; das Subjekt ist nie eine Person."
+ },
+ {
+  "tr": "Dördüncü sözcük „is“ ise yarık cümle; özne ise öne çıkarma; yarık cümlede ağırlık sonda; öne çıkarmada başta.",
+  "kind": "form.facts",
+  "de": "Ist das vierte Wort „is“, ist es ein Spaltsatz; ist es ein Subjekt, ist es Voranstellung; im Spaltsatz liegt das Gewicht hinten, bei der Voranstellung vorn."
+ },
+ {
+  "tr": "Mastar desteksiz özne olabiliyor; olumlu biçim özdeşlik kuruyor; olumsuz biçim çıkarımı reddediyor; olgular ayakta kalıyor.",
+  "kind": "form.facts",
+  "de": "Der Infinitiv kann ohne Stütze Subjekt sein; die bejahte Form stiftet eine Identität; die verneinte weist einen Schluss zurück; die Tatsachen bleiben stehen."
+ },
+ {
+  "tr": "Buna erdemli demezdim.",
+  "kind": "build.tr",
+  "de": "Das würde ich nicht tugendhaft nennen."
+ },
+ {
+  "tr": "Seçmen kitlesi yapabilse yapardı.",
+  "kind": "build.tr",
+  "de": "Die Wählerschaft würde, wenn sie könnte."
+ },
+ {
+  "tr": "Boyun eğmek tartışmayı yitirmektir.",
+  "kind": "build.tr",
+  "de": "Sich zu fügen heißt, das Argument zu verlieren."
+ },
+ {
+  "tr": "Hukuk devleti olmasa bütünlük çökerdi.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht der Rechtsstaat, würde der Zusammenhalt scheitern."
+ },
+ {
+  "tr": "İfade biçimi pekâlâ ötekileştirebilir.",
+  "kind": "build.tr",
+  "de": "Die Formulierung dürfte durchaus ausgrenzen."
+ },
+ {
+  "tr": "Tam da vicdansız sayılmazlar, öyle mi?",
+  "kind": "build.tr",
+  "de": "Nicht gerade skrupellos, oder?"
+ },
+ {
+  "tr": "Anlatıya idealleştirme dürtüsü sızıyor.",
+  "kind": "build.tr",
+  "de": "In die Darstellung schleicht sich ein Drang zur Idealisierung."
+ },
+ {
+  "tr": "Daha az sömürmesi beklenmiş olabilirdi.",
+  "kind": "build.tr",
+  "de": "Man hätte erwarten können, dass es weniger ausbeutet."
+ },
+ {
+  "tr": "Tartışmanın yaptığı şey kutuplaştırmak.",
+  "kind": "build.tr",
+  "de": "Was die Debatte tut, ist polarisieren."
+ },
+ {
+  "tr": "Zamanaşımı olmasa talep ayakta kalırdı.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Verjährung, bliebe der Anspruch bestehen."
+ },
+ {
+  "tr": "Kurulun söz hakkı tanımasını öneriyoruz.",
+  "kind": "build.tr",
+  "de": "Wir beantragen, dass der Vorstand Mitbestimmung gewährt."
+ },
+ {
+  "tr": "Büronun itirazı sunmasını talep ediyoruz.",
+  "kind": "build.tr",
+  "de": "Wir beantragen, dass die Behörde den Widerspruch einlegt."
+ },
+ {
+  "tr": "Geçmişi yüceltiriz; bugünü stilize ederiz.",
+  "kind": "build.tr",
+  "de": "Die Vergangenheit verklären wir; die Gegenwart stilisieren wir."
+ },
+ {
+  "tr": "Yankı odası, adı konmuş bir filtre balonu.",
+  "kind": "build.tr",
+  "de": "Die Echokammer ist eine Filterblase mit einem Namen."
+ },
+ {
+  "tr": "Pek de felaket tellallığı sayılmaz, öyle mi?",
+  "kind": "build.tr",
+  "de": "Kaum Alarmismus, oder?"
+ },
+ {
+  "tr": "Hükme bağladığımız şeyi nadiren idrak ederiz.",
+  "kind": "build.tr",
+  "de": "Was wir festschreiben, das begreifen wir selten."
+ },
+ {
+  "tr": "Kimi kamu yararına hizmet eder; kimi kendine.",
+  "kind": "build.tr",
+  "de": "Die einen dienen dem Gemeinwohl; die anderen, sich selbst."
+ },
+ {
+  "tr": "Hiçbir üyenin çekimser kalmamasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie bitten darum, dass sich kein Mitglied enthält."
+ },
+ {
+  "tr": "Yalnızca bu, argüman zincirini bir arada tutuyor.",
+  "kind": "build.tr",
+  "de": "Dies allein hält die Argumentationskette zusammen."
+ },
+ {
+  "tr": "Bir öfke dalgası her dil düzeyinde başka okunuyor.",
+  "kind": "build.tr",
+  "de": "Eine Welle der Empörung liest sich auf jeder Sprachebene anders."
+ },
+ {
+  "tr": "Bir kuralı yürürlüğe koymak onu uygulatmak değildir.",
+  "kind": "build.tr",
+  "de": "Eine Regel zu erlassen heißt nicht, sie durchzusetzen."
+ },
+ {
+  "tr": "Yemin ettiremedikleri bir grubu oylamada yeniyorlar.",
+  "kind": "build.tr",
+  "de": "Sie überstimmen eine Gruppe, die sie nicht vereidigen können."
+ },
+ {
+  "tr": "Hiçbir belgenin kabul edilemez olmamasını istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie bitten darum, dass kein Dokument unzulässig sei."
+ },
+ {
+  "tr": "Bir görev süresinin verdiğini takdir yetkisi alabilir.",
+  "kind": "build.tr",
+  "de": "Was eine Amtszeit gewährt, das kann das Ermessen nehmen."
+ },
+ {
+  "tr": "Bir kayıtta hafif suç olan, başka bir kayıtta kabahat.",
+  "kind": "build.tr",
+  "de": "Was auf der einen Ebene ein Vergehen ist, ist auf der anderen eine Ordnungswidrigkeit."
+ },
+ {
+  "tr": "İdari işlem olarak yazılınca aynı adım daha soğuk okunuyor.",
+  "kind": "build.tr",
+  "de": "Als Verwaltungsakt geschrieben, liest sich derselbe Schritt kälter."
+ },
+ {
+  "tr": "Bir kararda alıntılanınca aynı sözcükler kamuoyu manipülasyonu oluyor.",
+  "kind": "build.tr",
+  "de": "In einem Beschluss zitiert, werden dieselben Wörter zur Meinungsmache."
+ },
+ {
+  "tr": "Varsayım: dilekçenin dayanağı.",
+  "kind": "build.hint",
+  "de": "Eine Annahme: die Grundlage der Eingabe."
+ },
+ {
+  "tr": "Virgül „serve“in yerini tutuyor.",
+  "kind": "build.hint",
+  "de": "Das Komma hält die Stelle von „serve“."
+ },
+ {
+  "tr": "Aynı kipin öteki yarısı: varsayım.",
+  "kind": "build.hint",
+  "de": "Die andere Hälfte desselben Modus: die Annahme."
+ },
+ {
+  "tr": "Olumlu biçim bir özdeşlik kuruyor.",
+  "kind": "build.hint",
+  "de": "Die bejahte Form stiftet eine Identität."
+ },
+ {
+  "tr": "Yarık cümle: dördüncü sözcük „is“.",
+  "kind": "build.hint",
+  "de": "Spaltsatz: das vierte Wort ist „is“."
+ },
+ {
+  "tr": "İki nesne öne çıkmış, devrilme yok.",
+  "kind": "build.hint",
+  "de": "Zwei Objekte sind vorangestellt, nichts kippt."
+ },
+ {
+  "tr": "Dört katman; işe yarayan „expected“.",
+  "kind": "build.hint",
+  "de": "Vier Schichten; die brauchbare ist „expected“."
+ },
+ {
+  "tr": "İstek kipi: „grant“, „grants“ değil.",
+  "kind": "build.hint",
+  "de": "Konjunktiv: „grant“, nicht „grants“."
+ },
+ {
+  "tr": "İstek kipi: „lodge“, „lodges“ değil.",
+  "kind": "build.hint",
+  "de": "Konjunktiv: „lodge“, nicht „lodges“."
+ },
+ {
+  "tr": "Uzun ve yeni olan özne sona gidiyor.",
+  "kind": "build.hint",
+  "de": "Das lange und neue Subjekt rückt ans Ende."
+ },
+ {
+  "tr": "Olumsuz öznede duruyor, fiilde değil.",
+  "kind": "build.hint",
+  "de": "Die Verneinung steht im Subjekt, nicht beim Verb."
+ },
+ {
+  "tr": "Uzun bir metinde en tehlikeli sözcük.",
+  "kind": "build.hint",
+  "de": "In einem langen Text das gefährlichste Wort."
+ },
+ {
+  "tr": "Aynı olay, iki sözcük, iki ayrı dünya.",
+  "kind": "build.hint",
+  "de": "Dasselbe Ereignis, zwei Wörter, zwei Welten."
+ },
+ {
+  "tr": "Olumsuz sıfatta değil, söyleme fiilinde.",
+  "kind": "build.hint",
+  "de": "Die Verneinung steht nicht beim Adjektiv, sondern beim Verb des Sagens."
+ },
+ {
+  "tr": "Orta çatı: okuyan kimse adlandırılmıyor.",
+  "kind": "build.hint",
+  "de": "Medium: niemand wird als Leser genannt."
+ },
+ {
+  "tr": "„be“ olduğu gibi kalıyor; olumsuz öznede.",
+  "kind": "build.hint",
+  "de": "„be“ bleibt, wie es ist; die Verneinung sitzt im Subjekt."
+ },
+ {
+  "tr": "„hardly“ zaten olumsuz; ikinci „not“ yok.",
+  "kind": "build.hint",
+  "de": "„hardly“ ist schon verneinend; ein zweites „not“ gibt es nicht."
+ },
+ {
+  "tr": "İlgi adılı düşmüş; parçacık sonda kalmış.",
+  "kind": "build.hint",
+  "de": "Das Relativpronomen ist weggefallen; die Partikel bleibt am Ende."
+ },
+ {
+  "tr": "Orta çatı: özne okunan şey, fiil etken biçimde.",
+  "kind": "build.hint",
+  "de": "Medium: das Subjekt ist das Gelesene, das Verb steht aktiv."
+ },
+ {
+  "tr": "Edilgen ortaç: bağlam değişince değer değişiyor.",
+  "kind": "build.hint",
+  "de": "Passives Partizip: ändert sich der Zusammenhang, ändert sich der Wert."
+ },
+ {
+  "tr": "Öne çıkarılmış nesne; dördüncü sözcük „is“ değil.",
+  "kind": "build.hint",
+  "de": "Vorangestelltes Objekt; das vierte Wort ist nicht „is“."
+ },
+ {
+  "tr": "Öne çıkarılmış nesne: dördüncü sözcük „is“ değil.",
+  "kind": "build.hint",
+  "de": "Vorangestelltes Objekt: das vierte Wort ist nicht „is“."
+ },
+ {
+  "tr": "Sondaki boşluk: fiil bir önceki cümleden geliyor.",
+  "kind": "build.hint",
+  "de": "Die Lücke am Ende: das Verb kommt aus dem vorigen Satz."
+ },
+ {
+  "tr": "„may well“: olası, ama ne kadar olduğu söylenmiyor.",
+  "kind": "build.hint",
+  "de": "„may well“: wahrscheinlich, aber wie sehr, wird nicht gesagt."
+ },
+ {
+  "tr": "İki isim: ikincisi birincisini yeniden adlandırıyor.",
+  "kind": "build.hint",
+  "de": "Zwei Substantive: das zweite benennt das erste neu."
+ },
+ {
+  "tr": "Olumsuzla söylenen olumlu; soru eki odaya devrediyor.",
+  "kind": "build.hint",
+  "de": "Das Positive, verneint gesagt; das Frageanhängsel gibt es dem Raum weiter."
+ },
+ {
+  "tr": "Mastar özne olabiliyor; olumsuz biçim bir çıkarımı reddediyor.",
+  "kind": "build.hint",
+  "de": "Der Infinitiv kann Subjekt sein; die verneinte Form weist einen Schluss zurück."
+ },
+ {
+  "tr": "Üç metnin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Texte: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç koşulun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Bedingungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Bağlayıcıların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Verknüpfungen: bring sie in die richtige Ordnung."
+ }
+]

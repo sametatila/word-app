@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz, 18/150 yuva |
-| C1 | 4–25 | bekliyor |
+| C1 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
+| C1 | 7–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1310,6 +1310,50 @@ sözlükçe maddesiyle %0,0'a indi, otuz yedi madde silindi ve bir dinleme
 bölümü ayrıldı. İki tireli terim daha metinden çıkarıldı („third-person“,
 „near-miss“) ve bu kez bir soru şıkkındaki tireli EK de düştü — kural
 altıncı kez çalıştı.
+
+
+**C1 ünite 4–6 (2026-09-12).** Ünite 4 The barbed reply ·
+The short answer · The phrases of debate · Shifting the stress; ünite 5
+The language of motions · How strong is your claim · The same objection ·
+Binding a long argument; ünite 6 The petition ·
+The same event in three texts · What the witness said ·
+The settled legal phrase. On sekiz egzersiz; ünite dışı ölçüm %0,0. C1
+yuvalarının 36'sı dolu.
+
+Ünite 4'ün noktası AYNI „WHAT“ İKİ AYRI İŞ GÖRÜYOR. „What the debate does
+IS polarize“ bir yarık cümle; „What we enshrine WE rarely comprehend“ ise
+öne çıkarılmış bir nesne. İlk üç sözcük birebir aynı ve okur hangisi
+olduğunu ancak DÖRDÜNCÜ sözcükte anlıyor. Almanca eksende bunun karşılığı
+yok, çünkü Almanca öne çıkarılan öğeyi genellikle bir GERİ GÖNDERME
+ADILIYLA tekrarlıyor („Was wir festschreiben, DAS begreifen wir selten“).
+Yani Almanca okur için belirsizlik hiç doğmuyor — ve tam bu yüzden Almanca
+okuyan İngilizcede dördüncü sözcüğü beklemeyi öğrenmek zorunda.
+
+Ünite 5'in noktası ORTA ÇATI: „A wave of outrage reads differently“ —
+fiil etken biçimde, ama özne eylemi yapan değil, eylemin uygulandığı şey.
+Edilgen değil, çünkü edilgende gizli bir fail var; burada hiç fail yok.
+Almanca eksende bu temiz bir „Almanca işaretliyor, İngilizce işaretlemiyor“
+satırı: Almanca aynı işi DÖNÜŞLÜ biçimle kuruyor („der Satz liest sich
+anders“, „das Buch verkauft sich gut“), yani orada bir „sich“ var ve
+İngilizcede hiçbir şey yok. Üstelik bu ünitenin konusu metnin bağlama göre
+değer değiştirmesi ve orta çatı, bunu BİR OKUR ADLANDIRMADAN söyleyebilen
+tek kuruluş.
+
+Ünite 6'nın noktası „TO X IS TO Y“: İngilizce mastarı hiçbir desteğe gerek
+duymadan özne yapabiliyor. Olumlu biçim bir özdeşlik kuruyor, olumsuz biçim
+bir ÇIKARIMI reddediyor — olguların hepsi ayakta kalıyor, yalnız okurun
+atmak üzere olduğu adım geri çevriliyor, ve bu hukuk ile akademik yazının
+karakteristik cümlesi. Almanca eksende iki fark birden var: Almanca bu işte
+„be“ değil „heißen“ kullanıyor, ve ağır bir mastarı başa koymak yerine
+„es“ ile öteliyor. Ünite 4'le birlikte turun ipi bu: **İNGİLİZCE AĞIR
+OLANI BAŞA KOYUP OKURUN TAŞIMASINI BEKLİYOR; ALMANCA YA DESTEK KOYUYOR YA
+DA ÖTELİYOR.**
+
+Ölçüm bu turda yüz iki sözlükçe maddesi ekletti ve sekiz maddeyi sildirdi.
+İki tireli terim daha metinden çıkarıldı („middle-voice“, „twenty-page“) —
+kural yedinci kez çalıştı. Bir de araç tarafında küçük bir ders: sözlük
+dosyasına toplu ekleme yaparken var olan anahtarları atlamak gerekiyor,
+yoksa tek bir çakışma bütün bloğu düşürüyor.
 
 
 ## Tamamlanma ölçütü
