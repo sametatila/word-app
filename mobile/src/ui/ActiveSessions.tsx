@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { t, currentLang } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { listSessions, revokeOtherSessions, revokeSession, type ActiveSession, type SessionsResult } from "../lib/sessions";
@@ -58,7 +58,7 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
           <View style={{ flex: 1 }}>
             <Text variant="bodyStrong">{cihazAdi(s.userAgent)}</Text>
             <Text variant="caption" color={colors.textMuted}>
-              {t("sessions.since", { date: new Date(s.createdAt).toLocaleDateString(currentLang()) })}
+              {t("sessions.since", { date: new Date(s.createdAt).toLocaleDateString(dateLocale()) })}
               {s.ipAddress ? ` · ${s.ipAddress}` : ""}
             </Text>
           </View>

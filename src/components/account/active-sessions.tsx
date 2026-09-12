@@ -5,6 +5,7 @@ import { AuthNotice } from "@/components/auth-shell";
 import { SettingRow } from "@/components/setting-row";
 import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
+import { localeOf } from "@/lib/i18n/dict";
 import { Row } from "@/components/settings-section";
 
 /**
@@ -110,7 +111,10 @@ export function ActiveSessions() {
   if (state === "loading") return null;
 
   const since = (iso: string) =>
-    t("sessions.since", { date: new Date(iso).toLocaleDateString(lang) });
+    /* Yerel ad DİL KODU değil: her yerde `localeOf(lang)` ("tr-TR") var,
+       burada bare `lang` ("tr") geçiyordu. Aynı sapma Android'de de vardı
+       (`ActiveSessions`: `currentLang()`). */
+    t("sessions.since", { date: new Date(iso).toLocaleDateString(localeOf(lang)) });
 
   return (
     <Row label={t("settings.sec_sessions")}>
