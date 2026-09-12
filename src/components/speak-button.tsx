@@ -277,6 +277,14 @@ export function speakWithVoice(text: string, voice: VoiceId) {
  *
  * Hata sessizce yutuluyor: önden indirme bir iyileştirme, garanti değil.
  */
+/**
+ * Ses indirmenin tavani — Android'in native oynaticisiyla AYNI SAYI
+ * (`playTtsUrl` connectTimeout/readTimeout 8000). Suresi gecen bir ses ise
+ * yaramaz: kullanici cumleyi coktan gecti. On indirmeler bunun disinda
+ * (atesle-unut, yanit bir yil `immutable` onbellekte).
+ */
+const TTS_FETCH_TIMEOUT_MS = 8_000;
+
 export function prefetchGerman(text: string) {
   const clean = cleanForSpeech(text);
   if (!clean || typeof fetch === "undefined") return;
@@ -495,7 +503,12 @@ function playGapless(
     for (let i = 0; i < urls.length; i++) {
       let buf: AudioBuffer | null = null;
       try {
-        const res = await fetch(urls[i]);
+        /* TAVAN: bu indirme OYNATMA YOLU, on indirme degil - kullanici
+           sesin baslamasini bekliyor ve asili kalan bir istek dersi sessiz
+           birakiyordu. Android ayni indirmeyi native yapiyor ve sekiz
+           saniyede vazgeciyor (`LernomiSpeechModule.playTtsUrl`
+           connectTimeout/readTimeout 8000); ayni sayi burada. */
+        const res = await fetch(urls[i], { signal: AbortSignal.timeout(TTS_FETCH_TIMEOUT_MS) });
         if (!res.ok) throw new Error(String(res.status));
         buf = await ctx.decodeAudioData(await res.arrayBuffer());
       } catch {

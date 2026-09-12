@@ -1,5 +1,7 @@
 "use client";
 
+import { apiFetch } from "@/lib/api-fetch";
+
 /**
  * Beceri egzersizlerinin tamamlanma durumu — sunucu asıl, cihaz önbellek (WP-01).
  *
@@ -110,7 +112,7 @@ export function syncSkillProgress(): Promise<SkillProgress> {
       const localIds = Object.keys(local);
 
       if (!migrated && localIds.length) {
-        const res = await fetch("/api/skills", {
+        const res = await apiFetch("/api/skills", {
           method: "PUT",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({
@@ -129,7 +131,7 @@ export function syncSkillProgress(): Promise<SkillProgress> {
         if (res.status === 401) return local;
       }
 
-      const res = await fetch("/api/skills");
+      const res = await apiFetch("/api/skills");
       if (!res.ok) return local;
       const data = (await res.json()) as { progress: ServerStatus };
       if (!migrated) {

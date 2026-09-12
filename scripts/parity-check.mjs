@@ -20123,14 +20123,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Besi de `apiFetch`e alindi.
  *
  * MUAF olanlar ve sebepleri:
- *   ses/AI uclari (`lib/stt`, `pocket-mic`, `pronounce-client`,
- *       `assess-client`)  kendi daha uzun tavanlari var ve ikisi de iki
- *       platformda eslesmis (`ASSESS_TIMEOUT_MS`, `ASSESS_ROLEPLAY_TIMEOUT_MS`)
+ *   istemci ses/AI uclari (`pocket-mic` 8 sn, `pronounce-client` 20 sn,
+ *       `assess-client`)  kendi daha uzun tavanlari var ve degerlendirme
+ *       ikisi de iki platformda eslesmis (`ASSESS_TIMEOUT_MS`,
+ *       `ASSESS_ROLEPLAY_TIMEOUT_MS`); sohbet tavani 348'de eslestirildi.
+ *       `pocket-mic`in sekiz saniyesi Android'in yirmisiyle ESLESMIYOR ve
+ *       bu dogru: web ekran-ACIKKEN sunucuya gidiyor (kullanici bekliyor,
+ *       suresi gecen metin ise yaramaz), Android'in yirmi saniyesi
+ *       ekran-KAPALI yurume yolu (`uploadStt` readTimeout) - ekran acikken
+ *       Android hic sunucuya gitmiyor, cihaz taniyicisini kullaniyor
  *   `lib/track`            telemetri; ates-ve-unut, Android de ham `fetch`
  *   `lib/auth/api`         better-auth uclari; Android de ham `fetch`
  *       (`mobile/src/lib/auth`) - iki taraf simetrik
  *   sunucu tarafi (`chat-providers`, `tts/azure`, `fcm`, `auth/apple*`)
- *       istemci degil; kendi `AbortSignal`lari ya da saglayici tavanlari var
+ *       istemci degil - ama "kendi tavanlari var" diye muaf yazilmasi YANLIS
+ *       cikti: `fcm`in iki cagrisinin ve `lib/stt`in yedi cagrisinin hicbiri
+ *       tavan tasimiyordu. Ikisi de duzeltildi ve olcusu 348'de.
  *   varlik indirmeleri (`mascot-clips`)  blob onbellegi, ekran beklemiyor
  *
  * Olcu: yukaridaki bes yardimci `apiFetch` kullaniyor, iki taraftaki tavan
@@ -20165,6 +20173,150 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "web",
     "mobil",
   );
+}
+
+/* --------- 348. ZAMAN ASIMI: SOHBET TAVANI VE SUNUCU CIKISLARI
+ *
+ * 347 istemci cagrilarini olctu ve iki muafiyeti "kendi tavanlari var" diye
+ * yazdi. Ikisi de olculdu, ikisi de YANLISTI:
+ *
+ * (a) SOHBET URETIMI. `/api/roleplay` bir cevap YAZDIRIYOR ve uzun bir turda
+ *     kirk saniyeye kadar suruyor. Android bunu biliyor ve `sendRoleplay`
+ *     kirk bes saniye bekliyor; webin iki cagirani (`lessons/lesson-player`,
+ *     `lessons/roleplay-exam`) kendi suresini vermedigi icin genel tavana
+ *     (25 sn) dusuyordu. Yani ayni agir cevap Android'de geliyor, webde
+ *     "sohbet kurulamadi" oluyordu. Web yanit AKISLI okudugu icin tavan
+ *     akisin tamamini kapsiyor. Sabit iki tarafta ayni ADLA duruyor.
+ *
+ * (b) SUNUCU CIKISLARI. Bu ayri bir eksen: paylasilan sunucu iki platformun
+ *     da arkasinda, yani buradaki bir kusur HER IKI uygulamada goruluyor.
+ *     `lib/stt`in yedi saglayici cagrisinin ve `lib/fcm`in iki cagrisinin
+ *     hicbirinde tavan yoktu. Sonucu:
+ *       - STT zincirinin butun anlami bir saglayici dusunce obürüne
+ *         gecmek; ama DUSMEK ile ASILI KALMAK ayni sey degil. Yanit
+ *         vermeyen bir saglayici ucun otuz saniyelik butcesini (`maxDuration`)
+ *         tek basina yiyor ve YEDEGE HIC GECILMIYOR - kullanici tam da
+ *         zincirin isine yaramasi gereken anda "duyamadim" goruyor.
+ *       - FCM jeton ucu asili kalirsa o gece HIC KIMSEYE bildirim gitmiyor
+ *         (cagiran `push.ts` onu kullanici basina bir `Promise.all` icinde
+ *         bekliyor); gonderme ucu asili kalirsa tur en yavas cihazi
+ *         bekliyor. Jeton hatasi artik `null` donuyor - turu dusurmuyor.
+ *     Kardeslerde tavan zaten vardi (`chat-providers` 30 sn controller ile,
+ *     `tts/azure` 15 sn, `auth/apple*` 10 sn `AbortSignal.timeout` ile) -
+ *     eksik olan yalniz bu iki dosyaydi.
+ *
+ * OLCUNUN KENDI TUZAGI: ilk yazilisinda tavan aramasi yalniz
+ * `AbortSignal.timeout` ariyordu ve `chat-providers` ile `tts/azure` "tavansiz"
+ * cikiyordu - oysa ikisi de `AbortController` + `setTimeout` kullaniyor.
+ * Iki bicim de sayiliyor artik.
+ *
+ * Olcu: (1) sohbet tavani iki tarafta ayni ad + ayni sayi, (2) ucu de
+ * (iki web + bir mobil) sabiti GERCEKTEN geciriyor - sabitin varligi tek
+ * basina hicbir sey demiyor, (3) `server-only` tasiyan hicbir dosyada
+ * tavansiz ham `fetch` kalmiyor + taranan dosya sayisi esigi (bos tarama
+ * gecmesin). */
+{
+  const silY = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  /* OLCUNUN KOMSUSU: `ROLEPLAY_TIMEOUT_MS = ` deseni
+     `ASSESS_ROLEPLAY_TIMEOUT_MS = 30000` satirini da yakaliyordu ve mobil
+     tavan 45000 yerine 30000 okunuyordu - kapi "ayrisma" diyordu, ayrisan
+     seyse olcunun kendisiydi. Onundeki harf/alt cizgi artik disarida. */
+  const sayi = (src, ad) => (silY(src).match(new RegExp("(?<![A-Z_])" + ad + " = ([\\d_]+)")) ?? [])[1]?.replace(/_/g, "") ?? "YOK";
+
+  /* (1) Ad da deger de ayni: ayri ayri degistirilemesin. */
+  sameList(
+    "sohbet zaman asimi tavani",
+    ["ROLEPLAY_TIMEOUT_MS=" + sayi(read("src/lib/api-fetch.ts"), "ROLEPLAY_TIMEOUT_MS")],
+    ["ROLEPLAY_TIMEOUT_MS=" + sayi(read("mobile/src/api/client.ts"), "ROLEPLAY_TIMEOUT_MS")],
+    "web",
+    "mobil",
+  );
+
+  /* (2) Cagri yerleri sabiti geciriyor mu. `/api/roleplay` webde uc yerde
+     cagriliyor; ucuncusu (lesson-player'daki `configured` yoklamasi) GET ve
+     genel tavanda kalmali - bu yuzden olcu POST'lari sayiyor, dosyayi degil. */
+  const postGecen = (yol) => {
+    const src = silY(read(yol));
+    let n = 0;
+    for (const par of src.split('apiFetch("/api/roleplay"').slice(1)) {
+      const govde = par.slice(0, par.indexOf("});") + 1);
+      /* Onundeki harf/alt cizgi DISARIDA: sade `/ROLEPLAY_TIMEOUT_MS/`
+         `ASSESS_ROLEPLAY_TIMEOUT_MS`i de sayardi, yani yanlis tavani geciren
+         bir cagri yeri "geciyor" gorunurdu (deponun kendi meta-kapisi
+         "kapilarda onek eslesmesi" bunu reddetti). */
+      if (/method:\s*"POST"/.test(govde) && /(?<![A-Z_])ROLEPLAY_TIMEOUT_MS/.test(govde)) n += 1;
+    }
+    return n;
+  };
+  const mobilGecen = /timeoutMs:\s*(?<![A-Z_])ROLEPLAY_TIMEOUT_MS/.test(silY(read("mobile/src/game/roleplay.ts"))) ? 1 : 0;
+  sameList(
+    "sohbet cagri yerleri tavani geciriyor",
+    [
+      "lesson-player=" + postGecen("src/components/lessons/lesson-player.tsx"),
+      "roleplay-exam=" + postGecen("src/components/lessons/roleplay-exam.tsx"),
+      "mobil sendRoleplay=" + mobilGecen,
+    ],
+    ["lesson-player=1", "roleplay-exam=1", "mobil sendRoleplay=1"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* (3) TAVANSIZ HAM `fetch` ENVANTERI - dosya secmeden, `src`in tamami.
+     347 bes yardimciyi ELLE sayarak duzeltmisti ve liste EKSIKTI: ayni tick
+     icinde `push-client`in iki cagrisi (biri bekleniyor), `lib/report`,
+     `lib/skills/progress` (iki), `lib/use-cached`, `components/exam-player`
+     ve `speak-button`in OYNATMA indirmesi tavansiz kalmisti - cunku tarama
+     `src/lib`in ust dizinine bakmisti. Bu yuzden olcu artik el listesi degil:
+     `src` altindaki HER ham `fetch` sayiliyor, tavansiz olanlar ADIYLA ve
+     SAYISIYLA asagidaki listeye uymak zorunda. Liste iki yonu de yakaliyor:
+     yeni bir tavansiz cagri (listede yok) ve artik tavansiz olmayan bir
+     girdi (liste kuculmeli).
+
+     `apiFetch`/`sttFetch` gibi sarmalar buyuk harfle ayrisiyor -
+     `(?<![A-Za-z])` onlari almiyor; her cagri kendi DEYIMI icinde (noktali
+     virgule kadar) taniniyor, pencere degil. */
+  const MUAF = [
+    /* better-auth uclari; Android da ham `fetch` (`mobile/src/lib/auth`) - simetrik */
+    ["src/lib/auth/api.ts", 1],
+    /* varlik indirmesi: maskot klipleri blob onbellegine gidiyor, ekran beklemiyor */
+    ["src/lib/mascot-clips.ts", 1],
+    /* telemetri; atesle-unut, Android da ham `fetch` - simetrik */
+    ["src/lib/track.ts", 1],
+    /* iki ON INDIRME (`priority: "low"`, atesle-unut, yanit bir yil
+       `immutable` onbellekte). Ayni dosyadaki OYNATMA indirmesi tavanli
+       (`TTS_FETCH_TIMEOUT_MS`, Android'in sekiz saniyesiyle ayni) - sayi 3
+       degil 2 olmasi bunu olcuyor. */
+    ["src/components/speak-button.tsx", 2],
+  ];
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) walk(d + "/" + e.name, out);
+      else if (/\.tsx?$/.test(e.name)) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  const tavansiz = new Map();
+  let cagri = 0;
+  for (const yol of walk("src").sort()) {
+    const src = silY(read(yol));
+    for (const par of src.split(/(?<![A-Za-z])fetch\(/).slice(1)) {
+      cagri += 1;
+      const k = par.indexOf(";");
+      const deyim = par.slice(0, k < 0 ? par.length : k);
+      if (!/signal/.test(deyim)) tavansiz.set(yol, (tavansiz.get(yol) ?? 0) + 1);
+    }
+  }
+  sameList(
+    "tavansiz ham fetch envanteri",
+    [...tavansiz].map(([y, n]) => y + "=" + n).sort(),
+    MUAF.map(([y, n]) => y + "=" + n).sort(),
+    "bulunan",
+    "muaf listesi",
+  );
+  /* Bos tarama gecmesin. Olculen: on dort tavanli + bes muaf = on dokuz
+     cagri. Esik on sekiz - once yirmi yazilmisti ve kapi "AYRISMA" diyordu:
+     esigi olcmeden koymak da bir olcu hatasi. */
+  sameList("fetch taramasi bos degil", ["cagri>=18=" + (cagri >= 18)], ["cagri>=18=true"], "bulunan", "beklenen");
 }
 
 console.log(

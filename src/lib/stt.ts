@@ -56,6 +56,27 @@ export function estimateSeconds(file: File): number {
 
 const ext = (file: File) => (file.type.includes("wav") ? "wav" : file.type.includes("mp4") ? "mp4" : file.type.includes("ogg") ? "ogg" : "webm");
 
+/**
+ * SAĞLAYICI ÇAĞRISININ TAVANI YOKTU.
+ *
+ * Zincirin bütün anlamı bir sağlayıcı düşünce öbürüne geçmek; ama DÜŞMEK ile
+ * ASILI KALMAK aynı şey değil. Aşağıdaki yedi çağrının hiçbiri zaman aşımı
+ * taşımıyordu: yanıt vermeyen bir sağlayıcı ucun otuz saniyelik bütçesini
+ * (`api/stt` `maxDuration`) tek başına yiyor ve sıradaki sağlayıcıya HİÇ
+ * geçilmiyordu. Kullanıcı tarafında bu "duyamadım" olarak görünüyor (web
+ * istemcisi sekiz saniyede, Android native yolu yirmide vazgeçiyor), yani
+ * yedek zincir tam da gerektiği anda çalışmıyordu.
+ *
+ * Sekiz saniye: bütçe içinde en az üç denemeye yer bırakıyor. Kardeş
+ * sağlayıcılarda tavan zaten vardı (`chat-providers` 30 sn, `tts/azure`
+ * 15 sn) - eksik olan yalnız bu dosyaydı.
+ */
+const PROVIDER_TIMEOUT_MS = 8_000;
+
+/** Tavanlı `fetch` — bu dosyadaki HER dış çağrı buradan geçiyor. */
+const sttFetch = (url: string, init?: RequestInit): Promise<Response> =>
+  fetch(url, { ...init, signal: AbortSignal.timeout(PROVIDER_TIMEOUT_MS) });
+
 export class SttError extends Error {
   constructor(
     message: string,
@@ -164,7 +185,7 @@ async function azure(p: SttProvider, file: File, language: string): Promise<Raw>
   const locale = AZURE_LOCALE[language] ?? `${language}-${language.toUpperCase()}`;
   // Küfür maskelenir: tanınan metin ekranda "duyduğum: …" olarak yansıyor.
   const query = new URLSearchParams({ language: locale, format: "detailed", profanity: "masked" });
-  const res = await fetch(`${p.baseUrl}/speech/recognition/conversation/cognitiveservices/v1?${query}`, {
+  const res = await sttFetch(`${p.baseUrl}/speech/recognition/conversation/cognitiveservices/v1?${query}`, {
     method: "POST",
     headers: { "Ocp-Apim-Subscription-Key": p.key, "content-type": type, accept: "application/json" },
     body: await file.arrayBuffer(),
@@ -233,14 +254,14 @@ async function openaiStyle(p: SttProvider, file: File, language: string, words: 
   const wantWords = words && p.name === "groq";
   body.append("response_format", wantWords ? "verbose_json" : "json");
   if (wantWords) body.append("timestamp_granularities[]", "word");
-  const res = await fetch(`${p.baseUrl}/audio/transcriptions`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
+  const res = await sttFetch(`${p.baseUrl}/audio/transcriptions`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
   if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
   const data = (await res.json()) as { text?: string; duration?: number; words?: { word: string; start: number; end: number }[] };
   return { text: (data.text ?? "").trim(), duration: data.duration, words: data.words?.map((w) => ({ word: w.word, start: w.start, end: w.end })) };
 }
 
 async function deepgram(p: SttProvider, file: File, language: string): Promise<Raw> {
-  const res = await fetch(`${p.baseUrl}?${new URLSearchParams({ model: p.model, language, punctuate: "false", smart_format: "false" })}`, {
+  const res = await sttFetch(`${p.baseUrl}?${new URLSearchParams({ model: p.model, language, punctuate: "false", smart_format: "false" })}`, {
     method: "POST",
     headers: { Authorization: `Token ${p.key}`, "content-type": file.type || "audio/webm" },
     body: await file.arrayBuffer(),
@@ -260,7 +281,7 @@ async function deepgram(p: SttProvider, file: File, language: string): Promise<R
  */
 async function cloudflare(p: SttProvider, file: File, language: string): Promise<Raw> {
   const audio = Buffer.from(await file.arrayBuffer()).toString("base64");
-  const res = await fetch(`${p.baseUrl}/ai/run/${p.model}`, {
+  const res = await sttFetch(`${p.baseUrl}/ai/run/${p.model}`, {
     method: "POST",
     headers: { authorization: `Bearer ${p.key}`, "content-type": "application/json" },
     body: JSON.stringify({ audio, language, task: "transcribe", vad_filter: true }),
@@ -280,18 +301,18 @@ async function speechmatics(p: SttProvider, file: File, language: string): Promi
   const body = new FormData();
   body.append("data_file", file, `clip.${ext(file)}`);
   body.append("config", JSON.stringify({ type: "transcription", transcription_config: { language, operating_point: "enhanced" } }));
-  const create = await fetch(`${p.baseUrl}/v2/jobs`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
+  const create = await sttFetch(`${p.baseUrl}/v2/jobs`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
   if (!create.ok) throw httpError(create.status, await create.text().catch(() => ""));
   const { id } = (await create.json()) as { id: string };
   const deadline = Date.now() + 12_000;
   while (Date.now() < deadline) {
     await new Promise((r) => setTimeout(r, 700));
-    const st = await fetch(`${p.baseUrl}/v2/jobs/${id}`, { headers: { authorization: `Bearer ${p.key}` } });
+    const st = await sttFetch(`${p.baseUrl}/v2/jobs/${id}`, { headers: { authorization: `Bearer ${p.key}` } });
     if (!st.ok) throw httpError(st.status, await st.text().catch(() => ""));
     const job = (await st.json()) as { job?: { status?: string; duration?: number } };
     if (job.job?.status === "rejected") throw httpError(400, "speechmatics rejected");
     if (job.job?.status !== "done") continue;
-    const tr = await fetch(`${p.baseUrl}/v2/jobs/${id}/transcript?format=json-v2`, { headers: { authorization: `Bearer ${p.key}` } });
+    const tr = await sttFetch(`${p.baseUrl}/v2/jobs/${id}/transcript?format=json-v2`, { headers: { authorization: `Bearer ${p.key}` } });
     if (!tr.ok) throw httpError(tr.status, await tr.text().catch(() => ""));
     const data = (await tr.json()) as { results?: { type: string; start_time: number; end_time: number; alternatives?: { content: string; confidence?: number }[] }[] };
     const words = (data.results ?? []).filter((r) => r.type === "word").map((r) => ({ word: r.alternatives?.[0]?.content ?? "", start: r.start_time, end: r.end_time, confidence: r.alternatives?.[0]?.confidence ?? 1 }));

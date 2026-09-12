@@ -22,6 +22,22 @@
  */
 export const API_TIMEOUT_MS = 25_000;
 
+/**
+ * SOHBET ÜRETİMİ GENEL TAVANA DÜŞÜYORDU.
+ *
+ * `/api/roleplay` bir cevap yazdırıyor (değerlendirme gibi hazır metni
+ * puanlamıyor) ve uzun bir turda kırk saniyeye kadar sürebiliyor. İki
+ * çağıran da (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi
+ * süresini vermediği için 25 saniyede kesiliyordu — Android aynı çağrıyı
+ * kırk beş saniye bekliyor (`api/client` `ROLEPLAY_TIMEOUT_MS`), yani
+ * ağır bir cevap mobilde geliyor, webde "sohbet kurulamadı" oluyordu.
+ * Yanıt AKIŞLI okunduğu için bu tavan akışın tamamını kapsıyor: sinyal
+ * gövde okunurken de geçerli.
+ *
+ * Sayı ve ad mobildekiyle birebir aynı: iki taraf ayrı ayrı değişmesin.
+ */
+export const ROLEPLAY_TIMEOUT_MS = 45_000;
+
 export function apiFetch(input: string, init?: RequestInit): Promise<Response> {
   /* Çağıran kendi sinyalini verdiyse ona dokunulmuyor: iptal edilebilir bir
      istek (ekrandan çıkınca durduruluyor) zaten kendi ömrünü yönetiyor. */

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
-import { apiFetch } from "@/lib/api-fetch";
+import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
 import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
@@ -914,6 +914,9 @@ export function LessonPlayer({
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ lessonId: lesson.id, messages: next }),
+          /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
+             kırk beş saniye bekliyor, aynı sabit adıyla. */
+          signal: AbortSignal.timeout(ROLEPLAY_TIMEOUT_MS),
         });
         if (res.status === 503) {
           // Sağlayıcı konuşmanın ortasında düştü: aynı cümleyi senaryoya ver.

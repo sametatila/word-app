@@ -17731,3 +17731,75 @@ indirmeleri.
 **Kapının kendi okuması yine bir kez yanlıştı:** mobil tarafta sabiti başka bir
 adla arıyordum ve değer "YOK" çıkıyordu; oysa iki taraf da `API_TIMEOUT_MS`
 diyor — zaten ölçülmek istenen şey o.
+
+## §11.491 — Zaman aşımı, ikinci geçiş: §11.490'ın listesi eksikti; sohbet tavanı, sunucu çıkışları ve iOS'un sessiz yirmi saniyesi
+
+§11.490 beş yardımcıyı **elle sayarak** düzeltti ve iki muafiyeti "kendi
+tavanları var" diye yazdı. İkisi de ölçüldü, ikisi de yanlıştı — ve el listesi
+de eksikti: tarama `src/lib`in **üst dizinine** bakmıştı.
+
+**Sohbet üretimi (Android referans).** `/api/roleplay` bir cevap *yazdırıyor*
+(değerlendirme gibi hazır metni puanlamıyor) ve uzun bir turda kırk saniyeye
+kadar sürüyor. Android bunu biliyor: `sendRoleplay` kırk beş saniye bekliyor.
+Web'in iki çağıranı (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi
+süresini vermediği için **genel tavana (25 sn) düşüyordu** — aynı ağır cevap
+Android'de geliyor, web'de "sohbet kurulamadı" oluyordu. Web yanıtı **akışlı**
+okuduğu için tavan akışın tamamını kapsıyor, yani uzun bir cevap tam ortasından
+kesiliyordu. Sabit artık iki tarafta **aynı adla** duruyor
+(`ROLEPLAY_TIMEOUT_MS = 45_000`).
+
+**El listesinin kaçırdığı yedi çağrı.** `src`in tamamı tarandığında §11.490'dan
+arta kalanlar çıktı: `lib/push-client`in **iki** çağrısı (biri bekleniyor —
+abonelikten çıkma), `lib/report` (Android `api()` kullanıyor), `lib/skills/progress`
+(iki: PUT + GET), `lib/use-cached` (başlangıç ekranının üç bölümünün tazelemesi),
+`components/exam-player` (kapak ön isteği) ve `speak-button`ın **oynatma**
+indirmesi. Sonuncusu ön indirme değil: kullanıcı sesin başlamasını bekliyor ve
+asılı kalan bir istek dersi sessiz bırakıyordu. Tavanı Android'in native
+oynatıcısıyla aynı sayı (`playTtsUrl` 8000).
+
+**iOS yirmi saniye sessiz kalıyordu.** Android `playTtsUrl`ı sekiz saniyede
+kesiyor; iOS'ta aynı indirme **ortak oturumun** yirmi saniyesini kullanıyordu
+(o sayı STT yüklemesi için doğru). Yürüyüş turunda bu, sıradaki kelimeye
+geçmiş bir kullanıcının yirmi saniye sessizlik dinlemesi demek. iOS artık
+istek başına sekizi geçiyor.
+
+**Sunucu çıkışları — iki platformu birlikte vuran eksen.** Paylaşılan sunucu
+iki uygulamanın da arkasında:
+
+- **`lib/stt`in yedi sağlayıcı çağrısının hiçbirinde tavan yoktu.** Zincirin
+  bütün anlamı bir sağlayıcı düşünce öbürüne geçmek; ama **düşmek ile asılı
+  kalmak aynı şey değil**. Yanıt vermeyen bir sağlayıcı ucun otuz saniyelik
+  bütçesini (`maxDuration`) tek başına yiyor ve **yedeğe hiç geçilmiyor** —
+  kullanıcı tam da zincirin işe yaraması gereken anda "duyamadım" görüyor.
+  Yedisi de tek bir tavanlı sarmaldan geçiyor artık (8 sn: bütçe içinde en az
+  üç denemeye yer kalıyor).
+- **`lib/fcm`in iki çağrısında da yoktu.** Jeton ucu asılı kalırsa **o gece
+  hiç kimseye** bildirim gitmiyor (çağıran `push.ts` onu kullanıcı başına bir
+  `Promise.all` içinde bekliyor); gönderme ucu asılı kalırsa tur en yavaş
+  cihazı bekliyor. Jeton hatası artık `null` dönüyor — imza hatasında olduğu
+  gibi — yani turu düşürmüyor.
+
+Kardeşlerde tavan zaten vardı (`chat-providers` 30 sn, `tts/azure` 15 sn,
+`auth/apple*` 10 sn) — eksik olan yalnız bu iki dosyaydı.
+
+**Kapı §348** üç şeyi ölçüyor: sohbet tavanının iki tarafta aynı ad + aynı
+sayı olduğunu, üç çağrı yerinin de sabiti **gerçekten geçirdiğini** (sabitin
+varlığı tek başına hiçbir şey söylemiyor) ve — el listesi yerine — `src`
+altındaki **her** ham `fetch`in envanterini: tavansız kalanlar adıyla ve
+sayısıyla muaf listesine uymak zorunda. Liste iki yönü de yakalıyor: yeni bir
+tavansız çağrı, ve artık tavansız olmayan bayat bir girdi (liste yalnız
+küçülebilir). Muaflar dört dosya: better-auth ve telemetri (Android de ham
+`fetch` — simetrik), maskot klipleri (varlık), `speak-button`ın iki ön
+indirmesi — sayının **3 değil 2** olması oynatma yolunun tavanlı kaldığını
+ölçüyor.
+
+**Ölçünün kendi üç hatası** (üçü de enjeksiyonla değil, ilk çalıştırmada
+çıktı): (1) `/ROLEPLAY_TIMEOUT_MS = /` deseni `ASSESS_ROLEPLAY_TIMEOUT_MS`
+satırını yakalıyordu ve mobil tavan 45000 yerine 30000 okunuyordu — ayrışan
+şey ölçünün kendisiydi; (2) "server-only taşıyan dosyalar" diye kurulan kapsam
+`auth/apple*`ı hiç görmüyordu (o dosyalarda o satır yok) — kapsam bu yüzden
+dosya seçmeyen tam envantere çevrildi; (3) "tarama boş değil" eşiği ölçülmeden
+yirmi yazılmıştı, gerçek sayı on dokuzdu. Ayrıca deponun **kendi meta-kapısı**
+(§138, "kapılarda önek eşleşmesi") sade `/ROLEPLAY_TIMEOUT_MS/` desenini
+reddetti — haklı olarak: yanlış tavanı geçiren bir çağrı yeri "geçiyor"
+görünürdü.

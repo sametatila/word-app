@@ -590,6 +590,13 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     }
     var req = URLRequest(url: u)
     req.setValue("audio/mpeg", forHTTPHeaderField: "accept")
+    /* TAVAN SEKIZ SANIYE - ortak oturumun yirmisi DEGIL. Android bu indirmeyi
+       sekiz saniyede kesiyor (`playTtsUrl` connectTimeout/readTimeout 8000) ve
+       sebebi yurume turu: suresi gecen bir ses ise yaramaz, tur coktan
+       sıradaki kelimede. iOS ortak oturumu (20 sn) STT yuklemesi icin dogru
+       ama burada turu yirmi saniye sessiz birakiyordu. Web de ayni sekiz
+       saniyeyi tasiyor (`speak-button` TTS_FETCH_TIMEOUT_MS). */
+    req.timeoutInterval = 8
     http.dataTask(with: req) { [weak self] data, response, error in
       let code = (response as? HTTPURLResponse)?.statusCode ?? 0
       guard let self = self, code == 200, let data = data, !data.isEmpty else {

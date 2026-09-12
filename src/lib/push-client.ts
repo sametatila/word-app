@@ -96,7 +96,7 @@ export async function subscribeToPush({ sendTest = true } = {}): Promise<boolean
   });
   if (!res.ok) throw new Error(`abonelik kaydedilemedi (${res.status})`);
 
-  if (sendTest) void fetch("/api/push/subscribe", { method: "PUT" });
+  if (sendTest) void apiFetch("/api/push/subscribe", { method: "PUT" });
   return true;
 }
 
@@ -109,7 +109,7 @@ export async function subscribeToPush({ sendTest = true } = {}): Promise<boolean
  */
 export async function unsubscribeFromPush(): Promise<void> {
   const sub = await currentSubscription();
-  await fetch("/api/push/subscribe", {
+  await apiFetch("/api/push/subscribe", {
     method: "DELETE",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ endpoint: sub?.endpoint ?? null }),

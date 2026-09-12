@@ -802,7 +802,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
        yaziyordu, seviye sinavinda hic yazmiyordu: ayni soru ("kac dakika,
        neler sorulacak") iki sinav turunde iki farkli cevap aliyordu. Uc
        seviye icin de sabitlerden kapak donduruyor -- kagit uretilmiyor. */
-    void fetch(module === null ? `/api/exam?level=${level}&kind=level` : `/api/exam?level=${level}&module=${module}`)
+    void apiFetch(module === null ? `/api/exam?level=${level}&kind=level` : `/api/exam?level=${level}&module=${module}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((d: { cover?: typeof cover } | null) => {
         if (alive && d?.cover) setCover(d.cover);

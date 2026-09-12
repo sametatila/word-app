@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { apiFetch } from "@/lib/api-fetch";
+import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { AiNotice } from "@/components/ai-notice";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -109,6 +109,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ lessonId: lesson.id, messages: next, mode: "exam" }),
+        /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
+           kırk beş saniye bekliyor, aynı sabit adıyla. */
+        signal: AbortSignal.timeout(ROLEPLAY_TIMEOUT_MS),
       });
       if (!res.ok || !res.body) throw new Error(`roleplay ${res.status}`);
       const reader = res.body.getReader();

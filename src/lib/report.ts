@@ -1,4 +1,5 @@
 import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { apiFetch } from "@/lib/api-fetch";
 
 /**
  * İçerik bildirimi — mobil `M/src/lib/report.ts`in karşılığı.
@@ -46,7 +47,7 @@ export async function sendReport(
   content: string,
 ): Promise<boolean> {
   try {
-    const res = await fetch("/api/reports", {
+    const res = await apiFetch("/api/reports", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ kind, ref, reason, content: content.slice(0, 4000) }),

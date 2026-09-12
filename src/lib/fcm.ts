@@ -30,6 +30,17 @@ const SCOPE = "https://www.googleapis.com/auth/firebase.messaging";
 /** Kalıcı hata sayısı bunu aşan jeton silinir (push_subscriptions ile aynı eşik mantığı). */
 const MAX_FAILURES = 5;
 
+/**
+ * DIŞ ÇAĞRILARIN TAVANI YOKTU.
+ *
+ * İki çağrı da (jeton ucu, gönderme ucu) sınırsız bekliyordu. Bu bir tur
+ * işinin içinde çalışıyor: jeton ucu asılı kalırsa O TURDA kimseye bildirim
+ * gitmiyor, gönderme ucu asılı kalırsa `Promise.all` en yavaş cihazı
+ * bekliyor ve tur süre bütçesini aşıyor. Sayı Apple'ın jeton uçlarıyla aynı
+ * (`auth/apple` 10 sn) - aynı şeklin aynı tavanı.
+ */
+const TIMEOUT_MS = 10_000;
+
 function b64url(input: string | Buffer): string {
   return Buffer.from(input).toString("base64url");
 }
@@ -68,14 +79,26 @@ async function accessToken(): Promise<string | null> {
     console.error("[fcm:sign]", err);
     return null;
   }
-  const res = await fetch(TOKEN_URL, {
-    method: "POST",
-    headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion: `${header}.${claims}.${signature}`,
-    }),
-  });
+  /* AĞ HATASI BİLDİRİM TURUNU DÜŞÜRMESİN. Çağıran (`push.ts`) bunu kullanıcı
+     başına bir `Promise.all` içinde bekliyor: buradan atılan bir hata TÜM
+     turu düşürüyor, yani tek bir asılı jeton isteği yüzünden o gece kimseye
+     bildirim gitmiyor. İmza hatasında olduğu gibi `null` dönüyor - gönderici
+     onu "push kapalı" sayıp sessizce vazgeçiyor. */
+  let res: Response;
+  try {
+    res = await fetch(TOKEN_URL, {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        assertion: `${header}.${claims}.${signature}`,
+      }),
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    });
+  } catch (err) {
+    console.error("[fcm:token]", err);
+    return null;
+  }
   if (!res.ok) {
     console.error("[fcm:token]", res.status, await res.text().catch(() => ""));
     return null;
@@ -157,6 +180,7 @@ export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promi
           method: "POST",
           headers: { authorization: `Bearer ${auth}`, "content-type": "application/json" },
           body: JSON.stringify(message),
+          signal: AbortSignal.timeout(TIMEOUT_MS),
         });
         if (res.ok) {
           ok.push(row.token);

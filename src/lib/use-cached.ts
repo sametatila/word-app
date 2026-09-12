@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
 import { localDay } from "@/lib/day";
 
 /**
@@ -127,7 +128,7 @@ export function useCachedJson<T>(
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch(url, { cache: "no-store" });
+      const res = await apiFetch(url, { cache: "no-store" });
       if (!res.ok) {
         // Elde bir kopya varsa KORU: geçici bir hata yüzünden ekrandan bilgi
         // silmek, biraz eski bilgiyi göstermekten kötü.
