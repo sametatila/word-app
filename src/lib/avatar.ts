@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { DEFAULT_AVATAR, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
+import { apiFetch } from "@/lib/api-fetch";
 
 /**
  * Kullanıcının KENDİ avatarı — Erdi maskotu tabanına aksesuar katmanları
@@ -73,7 +74,7 @@ export function saveAvatar(cfg: AvatarConfig): void {
     Yerel kayıt önce yapılıyor ki arayüz beklemeden değişsin; ağ hatası sessiz,
     bir sonraki kayıt ya da açılış eşitlemesi yakalıyor.
   */
-  void fetch("/api/profile", {
+  void apiFetch("/api/profile", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ avatar: cfg }),

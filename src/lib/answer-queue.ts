@@ -21,6 +21,8 @@
  * Yarım kalan turu ertesi gün yeniden açmak ya da geçmiş bir bahsi o gün
  * çözmek yanlış olurdu; Android kuyruğu da yalnız cevapları taşıyor.
  */
+import { apiFetch } from "@/lib/api-fetch";
+
 export type QueuedAnswers = {
   answers: unknown[];
   day: string;
@@ -68,7 +70,7 @@ export async function flushPendingAnswers(): Promise<void> {
   const remaining: QueuedAnswers[] = [];
   for (const [i, item] of list.entries()) {
     try {
-      const res = await fetch("/api/answers", {
+      const res = await apiFetch("/api/answers", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item),

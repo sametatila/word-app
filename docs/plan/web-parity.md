@@ -17694,3 +17694,40 @@ Kapı **§346** üç şey ölçüyor: `goal` kabulünün geri gelmediği, `consu
 çağıranının hâlâ **sıfır** olduğu **ve** bunu söyleyen üç yorumun yerinde
 durduğu (kayıt sessizce bayatlamasın), ve gerçekten sayılan üç tavanın kendi
 uçlarında arttığı — biri düşerse kotanın tek gerçek sınırı da kalkmış olur.
+
+## §11.490 — Zaman aşımı: sosyal katmanın tamamı sınırsız bekliyordu
+
+Başlık eksenini ölçtüm ve **temiz çıktı**: `content-type` (mobil gövde varsa
+kendisi koyuyor, web ya yardımcıda ya çağrı yerinde), `x-captcha-response`
+(iki taraf da jeton varsa gönderiyor), `origin` (mobil kendi kökenini açıkça
+bildiriyor ve `trustedOrigins`de; `sameOrigin` başlığı olmayan istemciyi de
+kabul ediyor ve gerekçesi yazılı), `authorization` (yalnız cron ve webhook —
+istemci başlığı değil). Ses/AI uçlarındaki `content-type` yokluğu da doğru:
+`FormData`nın sınırını tarayıcı koyuyor.
+
+Ama o taramada **başka bir asimetri** çıktı. Android'de her çağrı `api()`den
+geçiyor ve 25 saniyede vazgeçiyor; web'de `apiFetch` aynı sayıyı taşıyor
+(`API_TIMEOUT_MS` — iki tarafta **aynı ad, aynı değer**, tam da ayrı ayrı
+değiştirilemesin diye). Ama beş yardımcı o taramanın dışında kalmıştı:
+
+- **`lib/social/client` `call`** — sosyal katmanın **tamamı**: arkadaşlar, lig,
+  gelen kutusu, ortak görev, akış; kırktan fazla çağrı. Sunucu yanıt vermeyi
+  bırakırsa ekranda duran şey iskeletin kendisi oluyordu.
+- `lib/answer-queue` — çevrimdışı cevap kuyruğunun boşaltması
+- `lib/lesson-queue` — ders kuyruğu
+- `lib/push-client` — abonelik kaydı
+- `lib/avatar` — avatar senkronu
+
+Beşi de `apiFetch`e alındı. `apiFetch`in kendi yorumu bu kusuru anlatıyor
+("elli yedi istemci çağrısından elli dördünün hiçbir sınırı yoktu") — sosyal
+yardımcı o turda gözden kaçmış.
+
+Kapı **§347** beş yardımcının `apiFetch` kullandığını ve **tavanın iki tarafta
+aynı sayı** olduğunu ölçüyor. Muaf olanlar gerekçeleriyle yazılı: ses/AI uçları
+(kendi daha uzun ve eşleşmiş tavanları var), telemetri ve better-auth uçları
+(Android de ham `fetch` — **simetrik**), sunucu tarafı çağrılar ve varlık
+indirmeleri.
+
+**Kapının kendi okuması yine bir kez yanlıştı:** mobil tarafta sabiti başka bir
+adla arıyordum ve değer "YOK" çıkıyordu; oysa iki taraf da `API_TIMEOUT_MS`
+diyor — zaten ölçülmek istenen şey o.

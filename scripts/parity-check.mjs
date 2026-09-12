@@ -20108,6 +20108,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 347. ZAMAN ASIMI: ISTEMCI CAGRILARI SINIRSIZ BEKLEMIYOR
+ *
+ * Android'de HER cagri `api()`den geciyor ve 25 saniyede vazgeciyor; ekranlarin
+ * "yuklenemedi · tekrar dene" dali devreye giriyor. Webde `apiFetch` ayni sayiyi
+ * tasiyor (`API_TIMEOUT_MS`, iki tarafta ayni ad ve ayni deger) ama BIR KISIM
+ * YARDIMCI onun disinda kalmisti:
+ *   `lib/social/client` `call`  sosyal katmanin TAMAMI (arkadaslar, lig, gelen
+ *       kutusu, ortak gorev, akis - kirktan fazla cagri) sinirsiz bekliyordu
+ *   `lib/answer-queue`          cevrimdisi cevap kuyrugunun bosaltmasi
+ *   `lib/lesson-queue`          ders kuyrugu
+ *   `lib/push-client`           abonelik kaydi
+ *   `lib/avatar`                avatar senkronu
+ * Besi de `apiFetch`e alindi.
+ *
+ * MUAF olanlar ve sebepleri:
+ *   ses/AI uclari (`lib/stt`, `pocket-mic`, `pronounce-client`,
+ *       `assess-client`)  kendi daha uzun tavanlari var ve ikisi de iki
+ *       platformda eslesmis (`ASSESS_TIMEOUT_MS`, `ASSESS_ROLEPLAY_TIMEOUT_MS`)
+ *   `lib/track`            telemetri; ates-ve-unut, Android de ham `fetch`
+ *   `lib/auth/api`         better-auth uclari; Android de ham `fetch`
+ *       (`mobile/src/lib/auth`) - iki taraf simetrik
+ *   sunucu tarafi (`chat-providers`, `tts/azure`, `fcm`, `auth/apple*`)
+ *       istemci degil; kendi `AbortSignal`lari ya da saglayici tavanlari var
+ *   varlik indirmeleri (`mascot-clips`)  blob onbellegi, ekran beklemiyor
+ *
+ * Olcu: yukaridaki bes yardimci `apiFetch` kullaniyor, iki taraftaki tavan
+ * SAYISI ayni, ve muaf olmayan yeni bir istemci yardimcisi ham `fetch`e
+ * donmuyor (kapsam taramasi + sayim). */
+{
+  const silT = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const DUZELEN = [
+    ["sosyal", "src/lib/social/client.ts"],
+    ["cevap kuyrugu", "src/lib/answer-queue.ts"],
+    ["ders kuyrugu", "src/lib/lesson-queue.ts"],
+    ["push abonelik", "src/lib/push-client.ts"],
+    ["avatar", "src/lib/avatar.ts"],
+  ];
+  sameList(
+    "istemci yardimcilari zaman asimli",
+    DUZELEN.map(([ad, yol]) => ad + "=" + (/apiFetch\(/.test(silT(read(yol))) ? "apiFetch" : "HAM FETCH")),
+    DUZELEN.map(([ad]) => ad + "=apiFetch"),
+    "bulunan",
+    "beklenen",
+  );
+  const webMs = (silT(read("src/lib/api-fetch.ts")).match(/API_TIMEOUT_MS = ([\d_]+)/) ?? [])[1]?.replace(/_/g, "") ?? "YOK";
+  /* Iki tarafta da sabitin ADI ayni (`API_TIMEOUT_MS`) ve bu bilincli: iki
+     taraf ayri ayri degistirilemesin (webin `api-fetch` yorumu da boyle
+     diyor). Ilk yazilisinda mobil tarafta baska bir ad araniyordu ve deger
+     "YOK" cikiyordu - kapinin kendi okumasi. */
+  const mobMs = (silT(read("mobile/src/api/client.ts")).match(/API_TIMEOUT_MS = ([\d_]+)/) ?? [])[1]?.replace(/_/g, "") ?? "YOK";
+  sameList(
+    "zaman asimi tavani ayni",
+    ["web=" + webMs],
+    ["web=" + mobMs],
+    "web",
+    "mobil",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

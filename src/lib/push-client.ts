@@ -5,6 +5,8 @@
  * yürütüyor (service worker'ı kaydet, izin iste, abone ol, sunucuya bildir).
  * İki kopya olduğunda birinde yapılan düzeltme diğerine geçmiyordu.
  */
+import { apiFetch } from "@/lib/api-fetch";
+
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
@@ -81,7 +83,7 @@ export async function subscribeToPush({ sendTest = true } = {}): Promise<boolean
     }));
 
   const json = sub.toJSON() as { endpoint?: string; keys?: Record<string, string> };
-  const res = await fetch("/api/push/subscribe", {
+  const res = await apiFetch("/api/push/subscribe", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({

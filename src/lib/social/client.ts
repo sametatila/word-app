@@ -2,6 +2,7 @@ import { LEAGUE_TIERS, type FeedItem, type FriendRow, type LeagueOutcome, type P
 import { USERNAME_CHANGE_COOLDOWN_DAYS } from "@/lib/social/username";
 import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { readLangCookie } from "@/lib/i18n/set-lang";
+import { apiFetch } from "@/lib/api-fetch";
 
 /**
  * Tarayıcı tarafı sosyal API istemcisi. Hata gövdesi `{ error: kod }`;
@@ -18,7 +19,17 @@ export class SocialClientError extends Error {
 }
 
 async function call<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(path, {
+  /*
+    ZAMAN AŞIMI — `apiFetch` üzerinden (`lib/api-fetch`, 25 sn).
+    Burada ham `fetch` vardı, yani SOSYAL KATMANIN TAMAMI (arkadaşlar, lig,
+    gelen kutusu, ortak görev, akış — kırktan fazla çağrı) sınırsız
+    bekliyordu: sunucu yanıt vermeyi bırakırsa ekranda duran şey iskeletin
+    kendisi oluyordu. Android'de aynı çağrılar `api()`den geçiyor ve 25
+    saniyede vazgeçip ekranların "yüklenemedi · tekrar dene" dalını devreye
+    sokuyor (bkz. `mobile/src/api/client.ts`). `apiFetch`in yorumu da bu
+    kusuru anlatıyor; sosyal yardımcı o taramanın dışında kalmış.
+  */
+  const res = await apiFetch(path, {
     credentials: "same-origin",
     cache: "no-store",
     ...init,

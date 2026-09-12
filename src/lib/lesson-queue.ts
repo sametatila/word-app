@@ -14,6 +14,8 @@
  *    zaten tutuyor),
  *  - biri düşerse kalanı kuyrukta kalıyor ve sıradakiler denenmiyor.
  */
+import { apiFetch } from "@/lib/api-fetch";
+
 export type PendingLesson = {
   lessonId: string;
   correct: number;
@@ -50,7 +52,7 @@ export async function flushPendingLessons(): Promise<void> {
   const remaining: PendingLesson[] = [];
   for (const [i, item] of list.entries()) {
     try {
-      const res = await fetch("/api/lesson", {
+      const res = await apiFetch("/api/lesson", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item),
