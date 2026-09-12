@@ -62,8 +62,7 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–21 | **yazıldı** (2026-09-12) — 126 egzersiz, 126/150 yuva |
-| B1 | 22–25 | bekliyor |
+| **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -834,6 +833,65 @@ aynı sınıftan — sözcük soru kökünde geçiyor, metinde geçmiyor — ve 
 çözüm her seferinde soruyu yeniden yazmak oldu („When is the operation?“ →
 „When will they operate?“). Bir dikte bölümü de ikiye ayrıldı: cümle uzun
 çizgiyle sürüyordu.
+
+
+**EN B1 SEVİYESİ KAPANDI (ünite 22–25, 2026-09-12).** Ünite 22
+How the city changed · The daily commute · Water and waste · A local
+project; ünite 23 Before they built it · City or country · Naming a
+feeling · Looking back; ünite 24 What I dream of · If I could · The thing
+that moved me · Cheering someone up; ünite 25 Fears and worries · What
+they told me · Being thankful · Where I want to be. Yirmi dört egzersiz;
+ünite dışı ölçüm %0,0. **25 ünite, 150 egzersiz, 150/150 yuva dolu,
+0 boş.**
+
+Ünite 22'nin noktası „MUST“UN GEÇMİŞİ YOK. Zorunluluk üçlüsü A2 ünite
+10'da ve B1 ünite 6'da iki kez geçti; burada üçlünün söylenmemiş yanı
+geliyor: „must“ yalnız şimdiye ait bir sözcük. „musted“ diye bir biçim
+yok, kural düne aitse yerini „had to“ alıyor, yasak da „were not allowed
+to“ya dönüyor. Almanca eksende bu bir İNGİLİZCE EKSİĞİ — „müssen“in
+geçmişi var („musste“), yani Almanca okuyanın kendi dilinde boşluk
+görmediği bir yerde İngilizce bir biçim kaybediyor. Hattın şimdiye kadar
+gördüğü satırların çoğu ya İngilizcenin fazlasını ya Almancanın fazlasını
+gösteriyordu; bu, İngilizcenin bir şeyi EKSİK yaptığı ilk açık satır.
+
+Ünite 23'ün noktası BAĞLAÇ SIRAYI SÖYLÜYORSA GEÇMİŞİN GEÇMİŞİ SEÇİME
+KALIYOR. „Before they built the road, this was a field“ iki yarıda da
+yalın geçmiş kullanıyor, çünkü „before“ sırayı zaten kurmuş; „The farm
+had closed before we moved here“ ise „had“i tutuyor, çünkü sıra cümlenin
+KENDİ konusu. „by the time“ ise seçeneği kaldırıyor: o bir olay değil bir
+son tarih adlandırıyor. Almanca eksende Plusquamperfekt aynı işi görüyor
+ve aynı yerde isteğe bağlı — satır büyümüyor; ayrılan yer „by the time“ın
+kendisi, çünkü Almancada tek sözcüklük karşılığı yok ve „bis“ onu
+karşılamıyor.
+
+Ünite 24'ün noktası İLGİ ADILI HİÇ ÇEKİLMİYOR. „that“, „who“, „where“
+arasında yapılacak tek seçim sözcüğün TÜRÜ — şey, kişi, yer; seçildikten
+sonra biçim sayıya, göreve ve zamana göre hiç değişmiyor. Almanca eksende
+bu turun asıl bulgusu bu: Almanca ilgi adılı cinse ve duruma göre bir
+TABLODAN seçiliyor („der Film, der…“ / „die Frau, die…“), yani Almanca
+okuyan İngilizcede yapılacak işin yarısını fazladan yapmaya alışkın. Ünite
+3 adılın DÜŞMESİNİ, ünite 8 VİRGÜLÜNÜ öğretmişti; üçüncü ders adılın
+kendisinin donuk olduğu.
+
+Ünite 25 seviyeyi KAPANIŞ İPİYLE bitiriyor. Ünitenin dilbilgisi amaç,
+sonuç ve ödün („in order to“ / „as a result“ / „even though“) — üçü de
+bağlayıcı görünüyor, üçü de ayrı iş yapıyor ve yanlışını koyunca cümle
+yine okunuyor, bu yüzden yakalanması en zor yanlış sınıfı. Ama ünitenin
+okuma metni seviyenin kendi ipini adıyla söylüyor: B1 az sayıda YENİ
+biçim öğretti; öğrettiği şey bilinen biçimlerin İKİNCİ İŞİ oldu. „had“
+anlatıda ve aktarmada (ünite 10), edilgen olayda, haberde ve işleyişte
+(ünite 2, 7, 11), „must“ zorunlulukta ve çıkarımda (ünite 17), „will“
+gelecekte ve kanaatte (ünite 21). Seviyenin özgürlüğü daha uzun bir liste
+değil, elde olanın ikinci kullanımı.
+
+Ölçüm bu turda seksen altı sözlükçe maddesi ekletti, SEKİZ maddeyi
+sildirdi ve bir dikte bölümünü ayırttırdı. Sildirilenlerin hepsi aynı
+sınıftan — sözcük soru kökünde ya da şıkta geçiyor, metinde geçmiyor — ve
+çözüm her seferinde soruyu yeniden yazmak oldu („Which phrase takes the
+choice away?“ → „Which one takes the choice away?“). Bu turda ayrıca iki
+çok sözcüklü sözlükçe maddesi düştü („turns over“, „goes away“): metinde
+öğeler ayrık duruyordu, yani kural bir kez daha doğrulandı — çok sözcüklü
+terim ancak metinde bitişikse kapanıyor.
 
 
 ## Tamamlanma ölçütü

@@ -1,0 +1,407 @@
+[
+ {
+  "tr": "Adıl kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Pronomenkarte aus."
+ },
+ {
+  "tr": "Sıra kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Reihenfolgekarte aus."
+ },
+ {
+  "tr": "Kural kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Regelkarte aus."
+ },
+ {
+  "tr": "Bağlaç kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Bindewortkarte aus."
+ },
+ {
+  "tr": "Şey için „that“; kişi için „who“; yer için „where“; üçü de hiç çekilmiyor.",
+  "kind": "form.facts",
+  "de": "Für eine Sache „that“; für eine Person „who“; für einen Ort „where“; alle drei werden nie gebeugt."
+ },
+ {
+  "tr": "Yer ayırtmak zorunlu; kart göstermek gerekmiyor; şeritte bisiklet yasak; geçmişte „had to“ giriyor.",
+  "kind": "form.facts",
+  "de": "Einen Platz buchen ist Pflicht; eine Karte zeigen ist nicht nötig; Radfahren auf der Spur ist verboten; in der Vergangenheit steht „had to“."
+ },
+ {
+  "tr": "Amaç için „in order to“; sonuç için „as a result“; ödün için „even though“; yanlışı koyunca cümle yine okunuyor.",
+  "kind": "form.facts",
+  "de": "Für den Zweck „in order to“; für die Folge „as a result“; für die Einräumung „even though“; mit dem falschen liest sich der Satz trotzdem."
+ },
+ {
+  "tr": "Yol yapılmadan önce tarla; çiftlik önce kapandı; orman fark edilmeden kesildi; „by the time“ seçenek bırakmıyor.",
+  "kind": "form.facts",
+  "de": "Vor der Straße ein Feld; der Hof schloss zuerst; der Wald wurde unbemerkt gefällt; „by the time“ lässt keine Wahl."
+ },
+ {
+  "tr": "Şişe almayı bıraktık.",
+  "kind": "build.tr",
+  "de": "Wir haben aufgehört, Flaschen zu kaufen."
+ },
+ {
+  "tr": "Armağan özenle seçildi.",
+  "kind": "build.tr",
+  "de": "Das Geschenk wurde sorgfältig ausgesucht."
+ },
+ {
+  "tr": "O gittiğinde his başladı.",
+  "kind": "build.tr",
+  "de": "Das Gefühl begann, als sie ging."
+ },
+ {
+  "tr": "Beni ağlatan film eskiydi.",
+  "kind": "build.tr",
+  "de": "Der Film, der mich zum Weinen brachte, war alt."
+ },
+ {
+  "tr": "Gülümsediğim yer sessizdi.",
+  "kind": "build.tr",
+  "de": "Der Ort, wo ich lächelte, war still."
+ },
+ {
+  "tr": "O hayali bir gün izleyeceğim.",
+  "kind": "build.tr",
+  "de": "Ich werde diesem Traum eines Tages folgen."
+ },
+ {
+  "tr": "Gün gerektiği gibi kutlanmalı.",
+  "kind": "build.tr",
+  "de": "Der Tag muss gebührend gefeiert werden."
+ },
+ {
+  "tr": "Arkadaşlığın bittiğini söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, die Freundschaft sei vorbei."
+ },
+ {
+  "tr": "Anladığımda anı çoktan solmuştu.",
+  "kind": "build.tr",
+  "de": "Als ich es verstand, war die Erinnerung verblasst."
+ },
+ {
+  "tr": "Daha az utangaç olsam söylerdim.",
+  "kind": "build.tr",
+  "de": "Wäre ich weniger schüchtern, würde ich es sagen."
+ },
+ {
+  "tr": "Dün yer ayırtmak zorunda kaldım.",
+  "kind": "build.tr",
+  "de": "Ich musste gestern einen Platz buchen."
+ },
+ {
+  "tr": "Ona çok erken öğüt vermemelisin.",
+  "kind": "build.tr",
+  "de": "Du darfst ihr nicht zu früh Rat geben."
+ },
+ {
+  "tr": "Korkuyla yüzleşmeye karar verdim.",
+  "kind": "build.tr",
+  "de": "Ich habe beschlossen, mich der Angst zu stellen."
+ },
+ {
+  "tr": "Nehri temizlemeye karar verdiler.",
+  "kind": "build.tr",
+  "de": "Sie beschlossen, den Fluss zu reinigen."
+ },
+ {
+  "tr": "Önce onu neşelendirmen gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst sie zuerst aufheitern."
+ },
+ {
+  "tr": "Bana sarılan kadın bir yabancıydı.",
+  "kind": "build.tr",
+  "de": "Die Frau, die mich umarmte, war eine Fremde."
+ },
+ {
+  "tr": "Onu affedersen her şey kolaylaşır.",
+  "kind": "build.tr",
+  "de": "Wenn du ihm verzeihst, wird alles leichter."
+ },
+ {
+  "tr": "Ruh hâlim pazartesiden beri düşük.",
+  "kind": "build.tr",
+  "de": "Meine Stimmung ist seit Montag gedrückt."
+ },
+ {
+  "tr": "Bir yön bulmak için iş değiştirdim.",
+  "kind": "build.tr",
+  "de": "Ich habe die Stelle gewechselt, um eine Richtung zu finden."
+ },
+ {
+  "tr": "Mantıklı olsa da tereddüt ediyorum.",
+  "kind": "build.tr",
+  "de": "Auch wenn es sinnvoll ist, zögere ich."
+ },
+ {
+  "tr": "Yolu yapmadan önce burası tarlaydı.",
+  "kind": "build.tr",
+  "de": "Bevor sie die Straße bauten, war hier ein Feld."
+ },
+ {
+  "tr": "Bana bu konuda fısıldamamamı söyledi.",
+  "kind": "build.tr",
+  "de": "Er sagte mir, ich solle nicht darüber flüstern."
+ },
+ {
+  "tr": "Bize afişi kaldırmamamızı söylediler.",
+  "kind": "build.tr",
+  "de": "Sie sagten uns, wir sollten das Plakat nicht entfernen."
+ },
+ {
+  "tr": "Mesafeye rağmen bisikletimi alıyorum.",
+  "kind": "build.tr",
+  "de": "Trotz der Entfernung nehme ich mein Fahrrad."
+ },
+ {
+  "tr": "Bu güzergâhta yer ayırtmak zorundasın.",
+  "kind": "build.tr",
+  "de": "Auf dieser Strecke musst du einen Platz buchen."
+ },
+ {
+  "tr": "Kimse fark etmeden ormanı kesmişlerdi.",
+  "kind": "build.tr",
+  "de": "Sie hatten den Wald gefällt, bevor es jemand merkte."
+ },
+ {
+  "tr": "Yolcuların kart göstermesi gerekmiyor.",
+  "kind": "build.tr",
+  "de": "Die Fahrgäste müssen keine Karte zeigen."
+ },
+ {
+  "tr": "Otobüs şeridinde bisiklet sürmek yasak.",
+  "kind": "build.tr",
+  "de": "Auf der Busspur darf man nicht Rad fahren."
+ },
+ {
+  "tr": "Şehir yoğun; öte yandan hiç yalnız değil.",
+  "kind": "build.tr",
+  "de": "Die Stadt ist hektisch; andererseits ist sie nie einsam."
+ },
+ {
+  "tr": "Ona teşekkür etmezsen incinmiş hissedecek.",
+  "kind": "build.tr",
+  "de": "Wenn du ihr nicht dankst, wird sie sich verletzt fühlen."
+ },
+ {
+  "tr": "Dilekçeyi imzalayıp imzalamadığımızı sordu.",
+  "kind": "build.tr",
+  "de": "Sie fragte, ob wir die Unterschriftenliste unterschrieben hatten."
+ },
+ {
+  "tr": "İşin bir anlamı vardı; sonuç olarak kaldım.",
+  "kind": "build.tr",
+  "de": "Die Arbeit hatte einen Sinn; als Folge blieb ich."
+ },
+ {
+  "tr": "Onun işi herkes tarafından takdir ediliyor.",
+  "kind": "build.tr",
+  "de": "Ihre Arbeit wird von allen geschätzt."
+ },
+ {
+  "tr": "Belediye başkanı alanın boş olduğunu söyledi.",
+  "kind": "build.tr",
+  "de": "Die Bürgermeisterin sagte, der Platz sei frei."
+ },
+ {
+  "tr": "Orada hava temiz; buna karşılık burada değil.",
+  "kind": "build.tr",
+  "de": "Dort ist die Luft sauber; im Gegensatz dazu hier nicht."
+ },
+ {
+  "tr": "Biz buraya taşınmadan önce çiftlik kapanmıştı.",
+  "kind": "build.tr",
+  "de": "Der Hof hatte geschlossen, bevor wir hierher zogen."
+ },
+ {
+  "tr": "„decide“ mastar istiyor.",
+  "kind": "build.hint",
+  "de": "„decide“ verlangt den Infinitiv."
+ },
+ {
+  "tr": "„not“ mastarın ÖNÜNE geliyor.",
+  "kind": "build.hint",
+  "de": "„not“ steht VOR dem Infinitiv."
+ },
+ {
+  "tr": "Dışarıdan gelen zorunluluk: „have to“.",
+  "kind": "build.hint",
+  "de": "Eine Pflicht von außen: „have to“."
+ },
+ {
+  "tr": "„give up“ „-ing“ istiyor.",
+  "kind": "build.hint",
+  "de": "„give up“ verlangt „-ing“."
+ },
+ {
+  "tr": "Çizgi: başladı ve sürüyor.",
+  "kind": "build.hint",
+  "de": "Eine Linie: es begann und hält an."
+ },
+ {
+  "tr": "Kural YOK demek; yasak değil.",
+  "kind": "build.hint",
+  "de": "Heißt: es gibt KEINE Regel; kein Verbot."
+ },
+ {
+  "tr": "Yasak koyuyor; kuralı kaldırmıyor.",
+  "kind": "build.hint",
+  "de": "Setzt ein Verbot; nimmt die Regel nicht weg."
+ },
+ {
+  "tr": "Nokta: bir an anlatılıyor, süre değil.",
+  "kind": "build.hint",
+  "de": "Ein Punkt: ein Augenblick, keine Dauer."
+ },
+ {
+  "tr": "İki olay arasındaki boşluk anlatılıyor.",
+  "kind": "build.hint",
+  "de": "Es geht um den Abstand zwischen den zwei Ereignissen."
+ },
+ {
+  "tr": "Kişi için „who“; biçimi hiç değişmiyor.",
+  "kind": "build.hint",
+  "de": "Für eine Person „who“; die Form ändert sich nie."
+ },
+ {
+  "tr": "„despite“ İSİM alıyor; cümlecik almıyor.",
+  "kind": "build.hint",
+  "de": "„despite“ nimmt ein SUBSTANTIV; keinen Teilsatz."
+ },
+ {
+  "tr": "Fail yok, çünkü cümle armağanı anlatıyor.",
+  "kind": "build.hint",
+  "de": "Kein Urheber, denn der Satz handelt vom Geschenk."
+ },
+ {
+  "tr": "Şey için „that“; özne konumunda düşmüyor.",
+  "kind": "build.hint",
+  "de": "Für eine Sache „that“; im Subjekt fällt es nicht weg."
+ },
+ {
+  "tr": "Yasak: „must not“, „don't have to“ değil.",
+  "kind": "build.hint",
+  "de": "Verbot: „must not“, nicht „don't have to“."
+ },
+ {
+  "tr": "Fail „by“ ile geri geliyor, çünkü haber o.",
+  "kind": "build.hint",
+  "de": "Der Urheber kehrt mit „by“ zurück, denn er ist die Nachricht."
+ },
+ {
+  "tr": "Gerçek olmayan koşul: „were“, „was“ değil.",
+  "kind": "build.hint",
+  "de": "Irreale Bedingung: „were“, nicht „was“."
+ },
+ {
+  "tr": "Kip ve edilgen: „must“ + „be“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Modalverb und Passiv: „must“ + „be“ + dritte Form."
+ },
+ {
+  "tr": "Aktarılınca „is“ bir basamak geriye kayıyor.",
+  "kind": "build.hint",
+  "de": "In der Wiedergabe rutscht „is“ eine Stufe zurück."
+ },
+ {
+  "tr": "Sonuç: „as a result“ yalnız geriye bakabiliyor.",
+  "kind": "build.hint",
+  "de": "Folge: „as a result“ kann nur zurückblicken."
+ },
+ {
+  "tr": "„must“un geçmişi yok; geçmişte „had to“ giriyor.",
+  "kind": "build.hint",
+  "de": "„must“ hat keine Vergangenheit; dort steht „had to“."
+ },
+ {
+  "tr": "„before“ sırayı zaten söylüyor; „had“ gerekmiyor.",
+  "kind": "build.hint",
+  "de": "„before“ sagt die Reihenfolge schon; „had“ ist nicht nötig."
+ },
+ {
+  "tr": "„in contrast“ iki ölçülmüş şeyi yan yana koyuyor.",
+  "kind": "build.hint",
+  "de": "„in contrast“ stellt zwei gemessene Dinge nebeneinander."
+ },
+ {
+  "tr": "„on the other hand“ önünde bir ilk taraf istiyor.",
+  "kind": "build.hint",
+  "de": "„on the other hand“ verlangt eine erste Seite davor."
+ },
+ {
+  "tr": "Amaç: neden önce geliyor, „in order to“ + mastar.",
+  "kind": "build.hint",
+  "de": "Zweck: der Grund kommt zuerst, „in order to“ + Infinitiv."
+ },
+ {
+  "tr": "Ödün: bir şeyi kabul ediyor, sonra yine de diyor.",
+  "kind": "build.hint",
+  "de": "Einräumung: es räumt etwas ein und sagt trotzdem das andere."
+ },
+ {
+  "tr": "Yer için „where“; sayı ve görev onu değiştirmiyor.",
+  "kind": "build.hint",
+  "de": "Für einen Ort „where“; Zahl und Funktion ändern es nicht."
+ },
+ {
+  "tr": "Sıra cümlenin kendi konusu; o yüzden „had“ duruyor.",
+  "kind": "build.hint",
+  "de": "Die Reihenfolge ist das Thema des Satzes; darum steht „had“."
+ },
+ {
+  "tr": "Tarihsiz kanaat: „will“ ile „one day“ birlikte geliyor.",
+  "kind": "build.hint",
+  "de": "Eine Meinung ohne Datum: „will“ und „one day“ gehören zusammen."
+ },
+ {
+  "tr": "Aktarılan soruda sıra düzleşiyor; „whether“ işi üstleniyor.",
+  "kind": "build.hint",
+  "de": "In der wiedergegebenen Frage wird die Stellung gerade; „whether“ übernimmt."
+ },
+ {
+  "tr": "„by the time“ seçenek bırakmıyor: önceki iş „had“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "„by the time“ lässt keine Wahl: das Frühere ist „had“ + dritte Form."
+ },
+ {
+  "tr": "Vadinin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Tals: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Kasabanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Kleinstadt: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç adılın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Pronomen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Koşulların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Bedingungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç biçimin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Formen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç bağlacın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Bindewörter: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç edilgenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Passivsätze: bring sie in die richtige Ordnung."
+ }
+]
