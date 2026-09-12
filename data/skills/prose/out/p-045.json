@@ -1,0 +1,137 @@
+[
+ {
+  "tr": "Köy, turistler, vadi, bugün.",
+  "kind": "explain",
+  "en": "The village, the tourists, the valley, today."
+ },
+ {
+  "tr": "„recommend“ sonrası „-ing“ istiyor.",
+  "kind": "explain",
+  "en": "After „recommend“ comes „-ing“."
+ },
+ {
+  "tr": "Önce iki örnek, sonra ölçüt, en son karar.",
+  "kind": "explain",
+  "en": "First two examples, then the test, and the decision last."
+ },
+ {
+  "tr": "Toplantı özeti. Kim ne söyledi, kim ne önerdi?",
+  "kind": "intro",
+  "en": "The summary of the meeting. Who said what, and who suggested what?"
+ },
+ {
+  "tr": "Kitap mı önce, dizi mi? Tavsiye nasıl kuruluyor?",
+  "kind": "intro",
+  "en": "The book first or the series? How is a recommendation built?"
+ },
+ {
+  "tr": "Fotoğrafta kim kim? Betimlemeler nasıl kuruluyor?",
+  "kind": "intro",
+  "en": "Who is who in the photo? How are the descriptions built?"
+ },
+ {
+  "tr": "Kıyıda küçük bir köy. İki virgül ne değiştiriyor?",
+  "kind": "intro",
+  "en": "A small village on the coast. What do two commas change?"
+ },
+ {
+  "tr": "Kötü bir sabah. Hangi olay hangisinden önce oldu?",
+  "kind": "intro",
+  "en": "A bad morning. Which event came before which?"
+ },
+ {
+  "tr": "Cihaz anlatılıyor. Neden hep edilgen kullanılıyor?",
+  "kind": "intro",
+  "en": "A device is explained. Why is everything in the passive?"
+ },
+ {
+  "tr": "Üç edilgen. Hangisi bitti, hangisi şu anda sürüyor?",
+  "kind": "intro",
+  "en": "Three passive forms. Which is finished and which is going on now?"
+ },
+ {
+  "tr": "Kayıp eşya bürosu. Hangi ayrıntı çantayı bulduruyor?",
+  "kind": "intro",
+  "en": "The lost property office. Which detail finds the bag?"
+ },
+ {
+  "tr": "Deneyim soruları. Hangi cevap tarihli, hangisi tarihsiz?",
+  "kind": "intro",
+  "en": "Questions about experience. Which answer names a date and which does not?"
+ },
+ {
+  "tr": "„whose“ iyelik ilgi adılı: kimin arabası olduğunu bağlıyor.",
+  "kind": "explain",
+  "en": "„whose“ is the possessive relative pronoun: it links whose car it is."
+ },
+ {
+  "tr": "İkinci şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
+  "kind": "intro",
+  "en": "The second letter of complaint. Which sentence names a date and which does not?"
+ },
+ {
+  "tr": "Kullanma kılavuzu dili edilgen: kimin değiştirdiği önemsiz.",
+  "kind": "explain",
+  "en": "The language of a manual is passive: who changes it does not matter."
+ },
+ {
+  "tr": "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
+  "kind": "intro",
+  "en": "Three news items, three passive forms. Which is done and which is still running?"
+ },
+ {
+  "tr": "Aktarılınca zaman geriye kayıyor: „changed“ → „had changed“.",
+  "kind": "explain",
+  "en": "Reported, the tense moves back: „changed“ → „had changed“."
+ },
+ {
+  "tr": "Kural, yasak, öğüt ve deneyim. Hangi kip hangi gücü taşıyor?",
+  "kind": "intro",
+  "en": "Rule, ban, advice and experience. Which modal carries which force?"
+ },
+ {
+  "tr": "Üye kuralları. Hangisi zorunlu, hangisi yasak, hangisi öğüt?",
+  "kind": "intro",
+  "en": "The rules for members. What is required, what is forbidden, what is only advice?"
+ },
+ {
+  "tr": "Şikâyet ve kılavuz cümleleri. Hangisi tarihli, hangisi değil?",
+  "kind": "intro",
+  "en": "Sentences from a complaint and a manual. Which one names a date?"
+ },
+ {
+  "tr": "Tarih verilmiyor ve deneyim şimdi sayılıyor: present perfect.",
+  "kind": "explain",
+  "en": "No date is given and the experience counts now: present perfect."
+ },
+ {
+  "tr": "Virgül anlamı değiştiriyor. Hangisi seçiyor, hangisi ekliyor?",
+  "kind": "intro",
+  "en": "The comma changes the meaning. Which one selects and which one adds?"
+ },
+ {
+  "tr": "Bitmiş olay, duyurulan karar, süren soruşturma, cevapsız soru.",
+  "kind": "explain",
+  "en": "A finished event, an announced decision, a running case, an unanswered question."
+ },
+ {
+  "tr": "İki bağlaç, iki iş. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
+  "kind": "intro",
+  "en": "Two linkers, two jobs. Which one surprises and which one compares?"
+ },
+ {
+  "tr": "Özne konumundaki „that“ düşemez, çünkü sıfat cümlesinin öznesi o.",
+  "kind": "explain",
+  "en": "A „that“ in subject position cannot drop out, because it is the subject of the clause."
+ },
+ {
+  "tr": "Olayların sırası ve aktarılan sözler. Hangi biçim „daha önce“ diyor?",
+  "kind": "intro",
+  "en": "The order of events and reported words. Which form says „before that“?"
+ },
+ {
+  "tr": "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
+  "kind": "intro",
+  "en": "Two options, two linkers. Which one surprises and which one compares?"
+ }
+]

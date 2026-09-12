@@ -62,8 +62,8 @@ mi çıkacağına yazar karar verir.
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B1 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
-| B1 | 7–25 | bekliyor |
+| B1 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
+| B1 | 10–25 | bekliyor |
 | B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -644,6 +644,40 @@ kapatılamıyor, çünkü havuz sözlükçenin HAM dizesini alıyor ve metin
 yazıldı. İkincisi `prose` hattından geldi: „meter“ Amerikan yazımı diye
 uyarıldı (hat ölçülmüş İngiliz İngilizcesi yazıyor) — sayaç anlamında
 doğru olsa da satır „the reading“ ile yeniden yazıldı, kapı gevşetilmedi.
+
+**B1 ünite 7–9 (2026-09-12).** Ünite 7 The one with the handle ·
+What had happened · What they said · In the news; ünite 8 The rules here ·
+What I have done · The one with the glasses · The place where I grew up;
+ünite 9 You should see it · This one or that one · How it works ·
+The faulty order. On sekiz egzersiz; ünite dışı ölçüm %0,0. B1
+yuvalarının 54'ü dolu.
+
+Ünite 7 edilgenin SÜRERLİ biçimini getiriyor: „The case is being
+investigated.“ Almanca eksende bu, hattın ilk „AYRIM YOK“ satırı:
+Almanca edilgeni zaten „werden“ ile kuruyor, o yüzden „is investigated“
+ile „is being investigated“ İKİSİ DE „wird untersucht“ oluyor. Yani
+Almanca okuyan iki İngilizce cümleyi tek Almanca cümleye çeviriyor ve
+ayrımı bağlamdan çıkarmak zorunda; karşılık bunu adıyla söylüyor.
+
+Ünite 8'in noktası VİRGÜLLÜ VE VİRGÜLSÜZ SIFAT CÜMLESİ ve burada hattın
+en ince farkı çıktı. İngilizcede virgül ANLAM taşıyor: virgülsüz cümle
+seçiyor, virgüllü cümle ekliyor. Almancada da iki tür var, ama Almanca
+sıfat cümlesinin çevresine HER ZAMAN virgül koyuyor — yani aynı işareti
+kullanan iki dilden birinde işaret bilgi taşıyor, ötekinde taşımıyor.
+Almanca okuyan virgülü görüp hiçbir şey anlamamaya alışkın; karşılık
+„im Deutschen sagt das Komma das nicht“ diye yazıyor.
+
+Ünite 9 „although“ ile „whereas“ı ayırıyor: biri beklenmedik olanı
+bağlıyor, öteki iki olguyu eşit ağırlıkta karşılaştırıyor. Almancada
+ayrım var („obwohl“ / „wohingegen“) ve bölüşüm aynı, yani satır
+büyümüyor.
+
+Ölçüm bu turda kırk dört sözlükçe maddesi ekletti — hattın en yükseği —
+ve üç DİKTE cümlesini yeniden yazdırdı. Üçü de aynı kusurdan geldi:
+dikte cümlesi bölümün ortasında „, which …“ ile sürüyordu, bu yüzden
+tam eşleşmiyordu. Bölümler iki cümleye ayrıldı ve içerik aynı kaldı —
+kapı, virgülle bağlanan uzun bölümlerin dikteye uygun olmadığını her
+seferinde aynı yerden gösteriyor.
 
 ## Tamamlanma ölçütü
 

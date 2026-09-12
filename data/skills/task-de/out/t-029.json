@@ -1,0 +1,292 @@
+[
+ {
+  "tr": "Köy kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Dorfkarte aus."
+ },
+ {
+  "tr": "İki makine; kalite aynı; fiyat yaklaşık aynı; fark tek düğmede.",
+  "kind": "form.facts",
+  "de": "Zwei Geräte; gleiche Qualität; etwa derselbe Preis; der Unterschied liegt an einem Knopf."
+ },
+ {
+  "tr": "Kışın dört yüz kişi; ağustosta iki bin; vadi sakin kısım; yılda iki kez gidiliyor.",
+  "kind": "form.facts",
+  "de": "Im Winter vierhundert Leute; im August zweitausend; das Tal ist der ruhige Teil; zweimal im Jahr besucht."
+ },
+ {
+  "tr": "Rapor geçen hafta yayımlandı; karar salı duyuruldu; dava sürüyor; meclis cevap vermedi.",
+  "kind": "form.facts",
+  "de": "Der Bericht wurde letzte Woche veröffentlicht; die Entscheidung am Dienstag verkündet; der Fall läuft; der Rat hat nicht geantwortet."
+ },
+ {
+  "tr": "Dava soruşturuluyor.",
+  "kind": "build.tr",
+  "de": "Der Fall wird untersucht."
+ },
+ {
+  "tr": "Burası büyüdüğüm köy.",
+  "kind": "build.tr",
+  "de": "Das ist das Dorf, in dem ich aufgewachsen bin."
+ },
+ {
+  "tr": "Önce izin istemelisin.",
+  "kind": "build.tr",
+  "de": "Du solltest zuerst um Erlaubnis fragen."
+ },
+ {
+  "tr": "Size pazartesi yazdım.",
+  "kind": "build.tr",
+  "de": "Ich habe Ihnen am Montag geschrieben."
+ },
+ {
+  "tr": "Cihaz buradan açılıyor.",
+  "kind": "build.tr",
+  "de": "Das Gerät wird hier eingeschaltet."
+ },
+ {
+  "tr": "Bu küçük, oysa şu büyük.",
+  "kind": "build.tr",
+  "de": "Dieses ist klein, wohingegen jenes groß ist."
+ },
+ {
+  "tr": "Bu konuda iki kez yazdım.",
+  "kind": "build.tr",
+  "de": "Ich habe zweimal darüber geschrieben."
+ },
+ {
+  "tr": "Hiç bir ekip yönettin mi?",
+  "kind": "build.tr",
+  "de": "Hast du je ein Team geleitet?"
+ },
+ {
+  "tr": "Kıyıdaki kasaba küçüktür.",
+  "kind": "build.tr",
+  "de": "Die Stadt, die an der Küste liegt, ist klein."
+ },
+ {
+  "tr": "Daha erken başlamayı önerdi.",
+  "kind": "build.tr",
+  "de": "Er schlug vor, früher anzufangen."
+ },
+ {
+  "tr": "Turistlerin sevdiği bir yer.",
+  "kind": "build.tr",
+  "de": "Es ist ein Ort, den Touristen lieben."
+ },
+ {
+  "tr": "Bütçenin değiştiğini söyledi.",
+  "kind": "build.tr",
+  "de": "Sie sagte, das Budget habe sich geändert."
+ },
+ {
+  "tr": "İçeri yiyecek getirmemelisin.",
+  "kind": "build.tr",
+  "de": "Du darfst kein Essen hereinbringen."
+ },
+ {
+  "tr": "Rapor geçen hafta yayımlandı.",
+  "kind": "build.tr",
+  "de": "Der Bericht wurde letzte Woche veröffentlicht."
+ },
+ {
+  "tr": "Arabası dışarıda olan kadın o.",
+  "kind": "build.tr",
+  "de": "Das ist die Frau, deren Auto draußen steht."
+ },
+ {
+  "tr": "Anahtarlarımı evde bırakmıştım.",
+  "kind": "build.tr",
+  "de": "Ich hatte meine Schlüssel zu Hause gelassen."
+ },
+ {
+  "tr": "Ayarlar ekrandan değiştiriliyor.",
+  "kind": "build.tr",
+  "de": "Die Einstellungen werden am Bildschirm geändert."
+ },
+ {
+  "tr": "Ben birincisini tercih ediyorum.",
+  "kind": "build.tr",
+  "de": "Ich ziehe das erste vor."
+ },
+ {
+  "tr": "Ben vardığımda dükkân kapanmıştı.",
+  "kind": "build.tr",
+  "de": "Als ich ankam, hatte der Laden schon zu."
+ },
+ {
+  "tr": "Belediye meclisi bir karar duyurdu.",
+  "kind": "build.tr",
+  "de": "Eine Entscheidung wurde vom Rat verkündet."
+ },
+ {
+  "tr": "İki yıldır yurt dışında çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite seit zwei Jahren im Ausland."
+ },
+ {
+  "tr": "Kapıda kartını göstermek zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst an der Tür deine Karte zeigen."
+ },
+ {
+  "tr": "Onu iki kez izlemenizi tavsiye ederim.",
+  "kind": "build.tr",
+  "de": "Ich empfehle, es zweimal zu schauen."
+ },
+ {
+  "tr": "Başkan hemfikir olup olmadığımızı sordu.",
+  "kind": "build.tr",
+  "de": "Die Sitzungsleitung fragte, ob wir einverstanden seien."
+ },
+ {
+  "tr": "Daha ucuz olmasına rağmen kalitesi daha kötü.",
+  "kind": "build.tr",
+  "de": "Obwohl es billiger ist, ist die Qualität schlechter."
+ },
+ {
+  "tr": "Bir tanık ikinci şeridin kapalı olduğunu iddia etti.",
+  "kind": "build.tr",
+  "de": "Ein Zeuge hat behauptet, die zweite Spur sei gesperrt gewesen."
+ },
+ {
+  "tr": "„should“ öğüt; kural değil.",
+  "kind": "build.hint",
+  "de": "„should“ ist ein Rat, keine Regel."
+ },
+ {
+  "tr": "Bitmiş bir olay: yalın edilgen geçmiş.",
+  "kind": "build.hint",
+  "de": "Ein abgeschlossenes Ereignis: einfaches Passiv in der Vergangenheit."
+ },
+ {
+  "tr": "Çoğul özneyle aynı edilgen; „are“ geliyor.",
+  "kind": "build.hint",
+  "de": "Dasselbe Passiv mit Plural-Subjekt; es kommt „are“."
+ },
+ {
+  "tr": "Kılavuz dili edilgen: kimin açtığı önemsiz.",
+  "kind": "build.hint",
+  "de": "Die Sprache der Anleitung ist Passiv: wer einschaltet, ist gleich."
+ },
+ {
+  "tr": "Virgül YOK: birçok yer arasından bunu seçiyor.",
+  "kind": "build.hint",
+  "de": "KEIN Komma: der Satz wählt einen Ort aus vielen. Deutsch setzt trotzdem eins."
+ },
+ {
+  "tr": "Tarih verilmiyor ve süre sürüyor: present perfect.",
+  "kind": "build.hint",
+  "de": "Kein Datum, und die Dauer läuft weiter: present perfect. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "„ever“ deneyim sorusunda; „lead“in üçüncü hâli „led“.",
+  "kind": "build.hint",
+  "de": "„ever“ steht in der Erfahrungsfrage; die dritte Form von „lead“ ist „led“."
+ },
+ {
+  "tr": "„where“ yer için; ismi arkadan tamlıyor ve düşemiyor.",
+  "kind": "build.hint",
+  "de": "„where“ steht für den Ort; es hängt hinter dem Nomen und darf nicht wegfallen."
+ },
+ {
+  "tr": "„whose“ iyelik ilgi adılı; „who's“ ile karıştırılmaz.",
+  "kind": "build.hint",
+  "de": "„whose“ ist das besitzanzeigende Relativpronomen — deutsch „dessen“ und „deren“, englisch nur ein Wort."
+ },
+ {
+  "tr": "Anlatının şu anından ÖNCE olan iş: „had“ + üçüncü hâl.",
+  "kind": "build.hint",
+  "de": "Was VOR dem Jetzt der Erzählung liegt: „had“ + dritte Form, wie das Plusquamperfekt."
+ },
+ {
+  "tr": "Tarih verilmiyor ve sonuç şimdi önemli: present perfect.",
+  "kind": "build.hint",
+  "de": "Kein Datum genannt, und das Ergebnis zählt jetzt: present perfect."
+ },
+ {
+  "tr": "„replace“ yerine yenisini koymak; „repair“ onarmak demek.",
+  "kind": "build.hint",
+  "de": "„replace“ heißt ersetzen, „repair“ heißt reparieren."
+ },
+ {
+  "tr": "„suggest“ sonrası „-ing“ istiyor; „suggest to start“ olmaz.",
+  "kind": "build.hint",
+  "de": "Nach „suggest“ steht „-ing“; „suggest to start“ gibt es nicht. Deutsch braucht dort einen Infinitivsatz."
+ },
+ {
+  "tr": "„claim“ burada „söyledi“ değil: kaynak tek ve doğrulanmamış.",
+  "kind": "build.hint",
+  "de": "„claim“ heißt hier nicht einfach „sagte“: die Quelle ist einzeln und ungeprüft."
+ },
+ {
+  "tr": "Aktarılınca zaman geriye kayıyor: „changed“ → „had changed“.",
+  "kind": "build.hint",
+  "de": "Wiedergegeben rückt die Zeit zurück: „changed“ → „had changed“. Deutsch nimmt den Konjunktiv."
+ },
+ {
+  "tr": "„By the time“ iki geçmişi bağlıyor; önce kapanma, sonra varış.",
+  "kind": "build.hint",
+  "de": "„By the time“ verbindet zwei Vergangenheiten: erst das Schließen, dann die Ankunft."
+ },
+ {
+  "tr": "Gün söylendiği an sade geçmiş zorunlu; aynı olay, başka biçim.",
+  "kind": "build.hint",
+  "de": "Sobald ein Tag genannt wird, ist das simple past Pflicht; dasselbe Ereignis, andere Form."
+ },
+ {
+  "tr": "İki virgül: kasaba zaten belli, arada duran yalnızca ek bilgi.",
+  "kind": "build.hint",
+  "de": "Zwei Kommas: die Stadt steht fest, dazwischen nur eine Zusatzinfo. Im Deutschen sagt das Komma das nicht."
+ },
+ {
+  "tr": "„prefer“ doğrudan nesne alıyor; adın yerini yine „one“ tutuyor.",
+  "kind": "build.hint",
+  "de": "„prefer“ nimmt das Objekt direkt; das Nomen vertritt wieder „one“."
+ },
+ {
+  "tr": "„recommend“ sonrası „-ing“ istiyor; „recommend to watch“ olmaz.",
+  "kind": "build.hint",
+  "de": "Nach „recommend“ steht „-ing“; „recommend to watch“ gibt es nicht."
+ },
+ {
+  "tr": "„mustn't“ yasak demek; „don't have to“ olsaydı gerek yok olurdu.",
+  "kind": "build.hint",
+  "de": "„mustn't“ heißt Verbot: „du darfst nicht“. „don't have to“ hieße „du musst nicht“."
+ },
+ {
+  "tr": "„whereas“ iki olguyu eşit ağırlıkta karşılaştırıyor; şaşırtma yok.",
+  "kind": "build.hint",
+  "de": "„whereas“ vergleicht zwei Tatsachen mit gleichem Gewicht; keine Überraschung. Deutsch sagt „wohingegen“."
+ },
+ {
+  "tr": "Fail önemli olduğu için „by“ ile söyleniyor ve karar öne alınıyor.",
+  "kind": "build.hint",
+  "de": "Weil der Urheber zählt, steht er mit „by“, deutsch mit „von“, und die Entscheidung rückt nach vorn."
+ },
+ {
+  "tr": "Evet-hayır sorusu „if“ ile aktarılıyor; „chair“ burada başkan demek.",
+  "kind": "build.hint",
+  "de": "Die Ja-Nein-Frage wird mit „if“ wiedergegeben; „chair“ heißt hier die Sitzungsleitung."
+ },
+ {
+  "tr": "„although“ beklenmedik olanı bağlıyor: ikinci yarı birinciyi geri alıyor.",
+  "kind": "build.hint",
+  "de": "„although“ hängt das Unerwartete an: die zweite Hälfte nimmt die erste zurück. Deutsch sagt „obwohl“."
+ },
+ {
+  "tr": "„must“ kuralın kendisinden geliyor; „have to“ da olurdu ama bu daha sert.",
+  "kind": "build.hint",
+  "de": "„must“ kommt aus der Regel selbst; „have to“ ginge auch, klingt aber weicher."
+ },
+ {
+  "tr": "Şu anda sürüyor: edilgenin sürerli biçimi. „is investigated“ düzenli olanı söylerdi.",
+  "kind": "build.hint",
+  "de": "Es läuft gerade: die Verlaufsform des Passivs. „is investigated“ meinte das Regelmäßige. Deutsch hat diese Unterscheidung nicht: „wird untersucht“ heißt beides."
+ },
+ {
+  "tr": "Haberlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Meldungen: bring sie in die richtige Ordnung."
+ }
+]

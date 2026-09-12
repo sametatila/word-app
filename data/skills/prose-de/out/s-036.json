@@ -1,0 +1,462 @@
+[
+ {
+  "tr": "Toplantı özeti. Kim ne söyledi, kim ne önerdi?",
+  "kind": "intro",
+  "de": "Die Zusammenfassung der Sitzung. Wer sagte was, wer schlug was vor?"
+ },
+ {
+  "tr": "Kitap mı önce, dizi mi? Tavsiye nasıl kuruluyor?",
+  "kind": "intro",
+  "de": "Erst das Buch oder erst die Serie? Wie wird eine Empfehlung gebaut?"
+ },
+ {
+  "tr": "Fotoğrafta kim kim? Betimlemeler nasıl kuruluyor?",
+  "kind": "intro",
+  "de": "Wer ist wer auf dem Foto? Wie werden die Beschreibungen gebaut?"
+ },
+ {
+  "tr": "Kıyıda küçük bir köy. İki virgül ne değiştiriyor?",
+  "kind": "intro",
+  "de": "Ein kleines Dorf an der Küste. Was ändern zwei Kommas?"
+ },
+ {
+  "tr": "Kötü bir sabah. Hangi olay hangisinden önce oldu?",
+  "kind": "intro",
+  "de": "Ein schlechter Morgen. Welches Ereignis kam vor welchem?"
+ },
+ {
+  "tr": "Cihaz anlatılıyor. Neden hep edilgen kullanılıyor?",
+  "kind": "intro",
+  "de": "Ein Gerät wird erklärt. Warum steht überall das Passiv?"
+ },
+ {
+  "tr": "Üç edilgen. Hangisi bitti, hangisi şu anda sürüyor?",
+  "kind": "intro",
+  "de": "Drei Passivformen. Welche ist abgeschlossen, welche läuft gerade?"
+ },
+ {
+  "tr": "Kayıp eşya bürosu. Hangi ayrıntı çantayı bulduruyor?",
+  "kind": "intro",
+  "de": "Das Fundbüro. Welches Detail führt zur Tasche?"
+ },
+ {
+  "tr": "Deneyim soruları. Hangi cevap tarihli, hangisi tarihsiz?",
+  "kind": "intro",
+  "de": "Fragen zur Erfahrung. Welche Antwort nennt ein Datum, welche nicht?"
+ },
+ {
+  "tr": "İkinci şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
+  "kind": "intro",
+  "de": "Der zweite Beschwerdebrief. Welcher Satz nennt ein Datum, welcher nicht?"
+ },
+ {
+  "tr": "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
+  "kind": "intro",
+  "de": "Drei Meldungen, drei Passivformen. Welche ist fertig, welche läuft noch?"
+ },
+ {
+  "tr": "Kural, yasak, öğüt ve deneyim. Hangi kip hangi gücü taşıyor?",
+  "kind": "intro",
+  "de": "Regel, Verbot, Rat und Erfahrung. Welches Modalverb trägt welche Kraft?"
+ },
+ {
+  "tr": "Üye kuralları. Hangisi zorunlu, hangisi yasak, hangisi öğüt?",
+  "kind": "intro",
+  "de": "Die Regeln für Mitglieder. Was ist Pflicht, was verboten, was nur ein Rat?"
+ },
+ {
+  "tr": "Şikâyet ve kılavuz cümleleri. Hangisi tarihli, hangisi değil?",
+  "kind": "intro",
+  "de": "Sätze aus Beschwerde und Anleitung. Welcher nennt ein Datum, welcher nicht?"
+ },
+ {
+  "tr": "Virgül anlamı değiştiriyor. Hangisi seçiyor, hangisi ekliyor?",
+  "kind": "intro",
+  "de": "Das Komma ändert die Bedeutung. Welcher Satz wählt aus, welcher ergänzt?"
+ },
+ {
+  "tr": "İki bağlaç, iki iş. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
+  "kind": "intro",
+  "de": "Zwei Bindewörter, zwei Aufgaben. Welches überrascht, welches vergleicht?"
+ },
+ {
+  "tr": "Olayların sırası ve aktarılan sözler. Hangi biçim „daha önce“ diyor?",
+  "kind": "intro",
+  "de": "Die Reihenfolge der Ereignisse und die wiedergegebenen Sätze. Welche Form sagt „davor“?"
+ },
+ {
+  "tr": "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
+  "kind": "intro",
+  "de": "Zwei Optionen, zwei Bindewörter. Welches überrascht, welches vergleicht?"
+ },
+ {
+  "tr": "Köy, turistler, vadi, bugün.",
+  "kind": "explain",
+  "de": "Das Dorf, die Touristen, das Tal, heute."
+ },
+ {
+  "tr": "„recommend“ sonrası „-ing“ istiyor.",
+  "kind": "explain",
+  "de": "Nach „recommend“ steht „-ing“."
+ },
+ {
+  "tr": "Önce iki örnek, sonra ölçüt, en son karar.",
+  "kind": "explain",
+  "de": "Zuerst zwei Beispiele, dann der Test, zuletzt die Entscheidung."
+ },
+ {
+  "tr": "„whose“ iyelik ilgi adılı: kimin arabası olduğunu bağlıyor.",
+  "kind": "explain",
+  "de": "„whose“ ist das besitzanzeigende Relativpronomen — deutsch „dessen“ und „deren“, im Englischen nur ein Wort."
+ },
+ {
+  "tr": "Kullanma kılavuzu dili edilgen: kimin değiştirdiği önemsiz.",
+  "kind": "explain",
+  "de": "Die Sprache der Anleitung ist Passiv: wer es ändert, ist gleich."
+ },
+ {
+  "tr": "Aktarılınca zaman geriye kayıyor: „changed“ → „had changed“.",
+  "kind": "explain",
+  "de": "Wiedergegeben rückt die Zeit zurück: „changed“ → „had changed“. Deutsch nimmt dafür den Konjunktiv."
+ },
+ {
+  "tr": "Tarih verilmiyor ve deneyim şimdi sayılıyor: present perfect.",
+  "kind": "explain",
+  "de": "Kein Datum genannt, und die Erfahrung zählt jetzt: present perfect."
+ },
+ {
+  "tr": "Bitmiş olay, duyurulan karar, süren soruşturma, cevapsız soru.",
+  "kind": "explain",
+  "de": "Abgeschlossenes Ereignis, verkündete Entscheidung, laufende Ermittlung, unbeantwortete Frage."
+ },
+ {
+  "tr": "Özne konumundaki „that“ düşemez, çünkü sıfat cümlesinin öznesi o.",
+  "kind": "explain",
+  "de": "Ein „that“ in Subjektstellung darf nicht wegfallen, weil es das Subjekt des Relativsatzes ist."
+ },
+ {
+  "tr": "sıra",
+  "kind": "gloss.tr",
+  "de": "Reihe"
+ },
+ {
+  "tr": "kimin",
+  "kind": "gloss.tr",
+  "de": "dessen"
+ },
+ {
+  "tr": "beşinci",
+  "kind": "gloss.tr",
+  "de": "die fünfte"
+ },
+ {
+  "tr": "hiçbir yerde",
+  "kind": "gloss.tr",
+  "de": "nirgends"
+ },
+ {
+  "tr": "bez",
+  "kind": "gloss.tr",
+  "de": "Tuch"
+ },
+ {
+  "tr": "cep",
+  "kind": "gloss.tr",
+  "de": "Tasche"
+ },
+ {
+  "tr": "izin",
+  "kind": "gloss.tr",
+  "de": "Erlaubnis"
+ },
+ {
+  "tr": "olay",
+  "kind": "gloss.tr",
+  "de": "Vorgang"
+ },
+ {
+  "tr": "oysa",
+  "kind": "gloss.tr",
+  "de": "wohingegen"
+ },
+ {
+  "tr": "zevk",
+  "kind": "gloss.tr",
+  "de": "Geschmack"
+ },
+ {
+  "tr": "arada",
+  "kind": "gloss.tr",
+  "de": "dazwischen"
+ },
+ {
+  "tr": "bitti",
+  "kind": "gloss.tr",
+  "de": "ging kaputt"
+ },
+ {
+  "tr": "ölçüt",
+  "kind": "gloss.tr",
+  "de": "die Probe"
+ },
+ {
+  "tr": "arkada",
+  "kind": "gloss.tr",
+  "de": "hinten"
+ },
+ {
+  "tr": "durmak",
+  "kind": "gloss.tr",
+  "de": "stehen"
+ },
+ {
+  "tr": "kıyıda",
+  "kind": "gloss.tr",
+  "de": "an der Küste"
+ },
+ {
+  "tr": "ortada",
+  "kind": "gloss.tr",
+  "de": "in der Mitte"
+ },
+ {
+  "tr": "önerdi",
+  "kind": "gloss.tr",
+  "de": "schlug vor"
+ },
+ {
+  "tr": "ulaştı",
+  "kind": "gloss.tr",
+  "de": "ankam"
+ },
+ {
+  "tr": "virgül",
+  "kind": "gloss.tr",
+  "de": "Komma"
+ },
+ {
+  "tr": "yazdım",
+  "kind": "gloss.tr",
+  "de": "habe geschrieben"
+ },
+ {
+  "tr": "yedisi",
+  "kind": "gloss.tr",
+  "de": "der Siebte"
+ },
+ {
+  "tr": "büyüdüm",
+  "kind": "gloss.tr",
+  "de": "bin aufgewachsen"
+ },
+ {
+  "tr": "duvarda",
+  "kind": "gloss.tr",
+  "de": "an der Wand"
+ },
+ {
+  "tr": "fiiller",
+  "kind": "gloss.tr",
+  "de": "Verben"
+ },
+ {
+  "tr": "kusurlu",
+  "kind": "gloss.tr",
+  "de": "defekt"
+ },
+ {
+  "tr": "tasarım",
+  "kind": "gloss.tr",
+  "de": "Aufbau"
+ },
+ {
+  "tr": "tersten",
+  "kind": "gloss.tr",
+  "de": "rückwärts"
+ },
+ {
+  "tr": "tutanak",
+  "kind": "gloss.tr",
+  "de": "Protokoll"
+ },
+ {
+  "tr": "yarılar",
+  "kind": "gloss.tr",
+  "de": "Hälften"
+ },
+ {
+  "tr": "yazılım",
+  "kind": "gloss.tr",
+  "de": "Software"
+ },
+ {
+  "tr": "yine de",
+  "kind": "gloss.tr",
+  "de": "trotzdem"
+ },
+ {
+  "tr": "açılıyor",
+  "kind": "gloss.tr",
+  "de": "wird eingeschaltet"
+ },
+ {
+  "tr": "geçirmek",
+  "kind": "gloss.tr",
+  "de": "verbringen"
+ },
+ {
+  "tr": "karakter",
+  "kind": "gloss.tr",
+  "de": "Charakter"
+ },
+ {
+  "tr": "kurulmuş",
+  "kind": "gloss.tr",
+  "de": "gebaut"
+ },
+ {
+  "tr": "rakamlar",
+  "kind": "gloss.tr",
+  "de": "Zahlen"
+ },
+ {
+  "tr": "tercihen",
+  "kind": "gloss.tr",
+  "de": "lieber"
+ },
+ {
+  "tr": "yan yana",
+  "kind": "gloss.tr",
+  "de": "nebeneinander"
+ },
+ {
+  "tr": "yönettim",
+  "kind": "gloss.tr",
+  "de": "habe geleitet"
+ },
+ {
+  "tr": "daraltmak",
+  "kind": "gloss.tr",
+  "de": "eingrenzen"
+ },
+ {
+  "tr": "devretmek",
+  "kind": "gloss.tr",
+  "de": "übergeben"
+ },
+ {
+  "tr": "duyuruldu",
+  "kind": "gloss.tr",
+  "de": "wurde verkündet"
+ },
+ {
+  "tr": "görünüyor",
+  "kind": "gloss.tr",
+  "de": "taucht auf"
+ },
+ {
+  "tr": "kurmuştum",
+  "kind": "gloss.tr",
+  "de": "hatte aufgebaut"
+ },
+ {
+  "tr": "değişmişti",
+  "kind": "gloss.tr",
+  "de": "hatte sich geändert"
+ },
+ {
+  "tr": "kayıp eşya",
+  "kind": "gloss.tr",
+  "de": "Fundbüro"
+ },
+ {
+  "tr": "şaşırtmaca",
+  "kind": "gloss.tr",
+  "de": "eine Überraschung"
+ },
+ {
+  "tr": "yayımlandı",
+  "kind": "gloss.tr",
+  "de": "wurde veröffentlicht"
+ },
+ {
+  "tr": "ev arkadaşı",
+  "kind": "gloss.tr",
+  "de": "Mitbewohnerin"
+ },
+ {
+  "tr": "kayıt olmak",
+  "kind": "gloss.tr",
+  "de": "sich eintragen"
+ },
+ {
+  "tr": "olay örgüsü",
+  "kind": "gloss.tr",
+  "de": "die Handlung"
+ },
+ {
+  "tr": "ödün vermek",
+  "kind": "gloss.tr",
+  "de": "einräumen"
+ },
+ {
+  "tr": "beklemediğin",
+  "kind": "gloss.tr",
+  "de": "was du nicht erwartest"
+ },
+ {
+  "tr": "eşit ağırlık",
+  "kind": "gloss.tr",
+  "de": "gleiches Gewicht"
+ },
+ {
+  "tr": "kayda geçmiş",
+  "kind": "gloss.tr",
+  "de": "steht im Protokoll"
+ },
+ {
+  "tr": "tercih etmek",
+  "kind": "gloss.tr",
+  "de": "vorziehen"
+ },
+ {
+  "tr": "büyüdüğüm yer",
+  "kind": "gloss.tr",
+  "de": "wo ich aufgewachsen bin"
+ },
+ {
+  "tr": "anlam kazanmak",
+  "kind": "gloss.tr",
+  "de": "Sinn ergeben"
+ },
+ {
+  "tr": "işlem numarası",
+  "kind": "gloss.tr",
+  "de": "die Vorgangsnummer"
+ },
+ {
+  "tr": "soruşturuluyor",
+  "kind": "gloss.tr",
+  "de": "wird ermittelt"
+ },
+ {
+  "tr": "tadını kaçırmak",
+  "kind": "gloss.tr",
+  "de": "verraten"
+ },
+ {
+  "tr": "toplantı başkanı",
+  "kind": "gloss.tr",
+  "de": "die Sitzungsleitung"
+ },
+ {
+  "tr": "üst üste iki kez",
+  "kind": "gloss.tr",
+  "de": "zweimal hintereinander"
+ },
+ {
+  "tr": "arkadaki düğmeyi basılı tut",
+  "kind": "gloss.tr",
+  "de": "halte den hinteren Knopf gedrückt"
+ }
+]
