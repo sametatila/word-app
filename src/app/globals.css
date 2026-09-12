@@ -892,7 +892,19 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    /*
+      YINELEME SAYISI DA 1. Süreyi 0.01 ms yapmak SONSUZ animasyonu
+      durdurmuyor: `animate-pulse` (otuz dört iskelet) sonsuz yinelemeli ve
+      her karede yeniden başlıyor — görünür bir titreme ve boşa dönen bir
+      döngü. Android'de nabız "hareketi azalt" açıkken HİÇ başlamıyor
+      (`ui/Skeleton` `usePulse`); web yalnız süreyi kısaltıyordu.
+    */
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    /* Yumuşak kaydırma da hareket. CSS'ten geleni burası kapatıyor;
+       JavaScript'ten `behavior: "smooth"` geçen üç çağrı kendi içinde
+       tercihe bakıyor (`reducedMotion()`). */
+    scroll-behavior: auto !important;
   }
 }
 
