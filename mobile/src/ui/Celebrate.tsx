@@ -14,7 +14,10 @@ import { reduceMotion } from "../lib/reduceMotion";
  * webin turkuazı yerine düz mavi, gülü yerine pembe. Kutlama kullanıcının
  * ekran görüntüsü aldığı an ve iki uygulama farklı renklerle kutluyordu.
  */
-const CONFETTI = ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
+/* İlk değer brand-400 (`orange[400]`); eskiden emekli kehribar #eda45d
+   yazılıydı ve hiçbir rampanın basamağı değildi - web `celebrate` ile aynı
+   düzeltme, aynı sebep. */
+const CONFETTI = ["#fb8f2a", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
 
 /**
  * Kutlama konfetisi — tamamlanma/başarı ekranlarında bir kez patlar. Saf JS

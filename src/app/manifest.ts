@@ -11,8 +11,23 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     display: "standalone",
     orientation: "portrait",
-    background_color: "#14100e",
-    theme_color: "#c87318",
+    /*
+     * AÇILIŞ EKRANI ANDROİD'İNKİYLE AYNI.
+     *
+     * `background_color` Chrome'un PWA açılış ekranının zemini; koyu mürekkep
+     * yazılıydı, Android'in açılış ekranı ise MARKA TURUNCUSU üstünde
+     * launcher ikonu (`values/styles.xml` `Theme.Lernomi.Splash` →
+     * `ic_launcher_background` #FA7C13). Aynı ürün iki ayrı açılışla
+     * başlıyordu; değer artık o XML'deki renk.
+     *
+     * `theme_color` kurulu uygulamanın durum çubuğu rengi ve SÜRESİ GEÇMİŞ
+     * kehribar (#c87318) yazılıydı — marka mobilden gelen turuncuya geçtiğinde
+     * (bkz. globals.css `--color-brand-*`) burası güncellenmemişti. Sayfanın
+     * zemini yazılıyor; temaya göre okunan değeri `layout.tsx` `themeColor`
+     * veriyor, bu yalnız onun yetişemediği yerdeki yedek.
+     */
+    background_color: "#fa7c13",
+    theme_color: "#fbf7f2",
     lang: "tr",
     categories: ["education"],
     // Ana ekran simgesine uzun basınca çıkan hızlı erişimler.

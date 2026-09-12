@@ -7480,6 +7480,145 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 282. UYGULAMANIN DISINDAKI YUZEYLER DE MARKANIN ----------------
+   *
+   * `check:colors` ve `check:tokens` UYGULAMANIN ICINI olcuyor. Markanin
+   * gorundugu dort yuzey daha var ve hicbiri olculmuyordu:
+   *
+   *   - PWA tanimi (`manifest.ts`)  — kurulum ve acilis ekrani
+   *   - tarayici cubugu (`layout.tsx` `themeColor`)
+   *   - paylasim onizlemesi (`opengraph-image.tsx`)
+   *   - e-postalar (`lib/email.ts`)
+   *
+   * Dordunde de olculdugunde AYNI kusur cikti: marka mobilden gelen turuncuya
+   * gectiginde (T1, `--color-brand-*`) bu dosyalar SURESI GECMIS KEHRIBARDA
+   * (#c87318/#eda45d) kaldi. Yani hesabini acan ilk postayi, paylasilan her
+   * baglantinin onizlemesini ve kurulu uygulamanin durum cubugunu kullanici
+   * ARTIK VAR OLMAYAN bir kimlikte goruyordu.
+   *
+   * Ikisi de ayrica ZEMINDEN sapmisti: `themeColor` #fbf6ee/#14100e yaziyordu,
+   * `--bg` ise #fbf7f2/#17120e - telefonda adres cubugu ile sayfa arasinda
+   * gorunur bir dikis. Ve `manifest.background_color` koyu murekkepti, oysa
+   * Android'in acilis ekrani MARKA TURUNCUSU (`values/styles.xml`
+   * `Theme.Lernomi.Splash` -> `ic_launcher_background`).
+   *
+   * Konfeti ise "IKISI DE YANLIS" sinifinin ders kitabi ornegi: alti degerin
+   * besi ailelerin 400'u, ilki hicbir rampanin basamagi olmayan yetim kehribar
+   * - ve iki platformda AYNI yetim deger yaziliydi, o yuzden karsilastirma
+   * geciyordu (`check:colors` ikisini de "birebir" diye kayda gecirmisti). */
+  {
+    const css = read("src/app/globals.css");
+    const jeton = (ad, blok) => {
+      const kaynak = blok === "dark" ? css.slice(css.indexOf("\n.dark {")) : css;
+      return (kaynak.match(new RegExp("--" + ad + ":\\s*(#[0-9a-fA-F]{3,8})")) ?? [])[1]?.toLowerCase() ?? "YOK";
+    };
+    const xml = (dosya, ad) =>
+      (read(dosya).match(new RegExp('<color name="' + ad + '">(#[0-9a-fA-F]{6})')) ?? [])[1]?.toLowerCase() ?? "YOK";
+
+    const webBgAcik = jeton("bg", "light");
+    const webBgKoyu = jeton("bg", "dark");
+    const androidBgAcik = xml("mobile/android/app/src/main/res/values/colors.xml", "window_bg");
+    const androidBgKoyu = xml("mobile/android/app/src/main/res/values-night/colors.xml", "window_bg");
+    const acilisTuruncu = xml("mobile/android/app/src/main/res/values/colors.xml", "ic_launcher_background");
+
+    /* Zemin tek renk: web jetonu = Android pencere zemini. */
+    sameList(
+      "sayfa zemini iki platformda ayni",
+      ["acik=" + webBgAcik, "koyu=" + webBgKoyu],
+      ["acik=" + androidBgAcik, "koyu=" + androidBgKoyu],
+      "web jetonu",
+      "android xml",
+    );
+
+    /* Tarayici cubugu o zeminden. */
+    const layout = sil(read("src/app/layout.tsx"));
+    const tema = (medya) =>
+      (layout.match(new RegExp('prefers-color-scheme: ' + medya + '\\)", color: "(#[0-9a-fA-F]{6})"')) ?? [])[1]?.toLowerCase() ?? "YOK";
+    sameList(
+      "tarayici cubugu sayfa zemininden",
+      ["acik=" + tema("light"), "koyu=" + tema("dark")],
+      ["acik=" + webBgAcik, "koyu=" + webBgKoyu],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* PWA tanimi: durum cubugu zeminden, acilis ekrani Android'in turuncusundan. */
+    const man = sil(read("src/app/manifest.ts"));
+    const alan = (ad) => (man.match(new RegExp(ad + ': "(#[0-9a-fA-F]{6})"')) ?? [])[1]?.toLowerCase() ?? "YOK";
+    sameList(
+      "pwa tanimi markanin",
+      ["theme_color=" + alan("theme_color"), "background_color=" + alan("background_color")],
+      ["theme_color=" + webBgAcik, "background_color=" + acilisTuruncu],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* E-posta ve onizleme karti: her HAM renk bir jetonun DEGERI olacak.
+       (Ikisinde de `var(--x)` kullanilamiyor: e-posta istemcisi degiskeni
+       atiyor, `next/og` ise CSS degiskeni cozmuyor.) */
+    const JETONLAR = new Set(
+      [
+        ...[...css.matchAll(/--color-[a-z]+-\d+:\s*(#[0-9a-fA-F]{6})/g)].map((m) => m[1]),
+        ...[...css.matchAll(/--(?:bg|surface|surface-2|border|hairline|text|text-muted|text-faint|elevated|on-brand):\s*(#[0-9a-fA-F]{3,8})/g)].map((m) => m[1]),
+      ].map((h) => h.toLowerCase()),
+    );
+    const jetonsuz = (yol) =>
+      [...new Set([...sil(read(yol)).matchAll(/#[0-9a-fA-F]{6}\b/g)].map((m) => m[0].toLowerCase()))]
+        .filter((h) => !JETONLAR.has(h));
+    sameList(
+      "ham renkler jeton degeri",
+      [
+        "eposta=" + (jetonsuz("src/lib/email.ts").join("+") || "hepsi jeton"),
+        "onizleme=" + (jetonsuz("src/app/opengraph-image.tsx").join("+") || "hepsi jeton"),
+      ],
+      ["eposta=hepsi jeton", "onizleme=hepsi jeton"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Konfeti: iki liste birebir VE her deger bir ailenin 400'u. */
+    const liste = (yol, ad) => {
+      const m = sil(read(yol)).match(new RegExp("const " + ad + " = \\[([^\\]]+)\\]"));
+      return m ? [...m[1].matchAll(/#[0-9a-fA-F]{6}/g)].map((x) => x[0].toLowerCase()) : [];
+    };
+    const webKonfeti = liste("src/components/celebrate.tsx", "COLORS");
+    const mobKonfeti = liste("mobile/src/ui/Celebrate.tsx", "CONFETTI");
+    const dortyuz = new Set(
+      [...css.matchAll(/--color-[a-z]+-400:\s*(#[0-9a-fA-F]{6})/g)].map((m) => m[1].toLowerCase()),
+    );
+    sameList("konfeti listesi", webKonfeti, mobKonfeti, "web", "mobil");
+    sameList(
+      "konfetinin her degeri bir ailenin 400'u",
+      ["rampa disi=" + (webKonfeti.filter((h) => !dortyuz.has(h)).join("+") || "yok")],
+      ["rampa disi=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: emekli kehribar hicbir yerde CIZILMIYOR (yorumda gecmesi
+       serbest - tarih orada yaziyor). */
+    const EMEKLI = ["#c87318", "#eda45d"];
+    const cizen = [];
+    for (const yol of [
+      "src/app/manifest.ts",
+      "src/app/layout.tsx",
+      "src/app/opengraph-image.tsx",
+      "src/lib/email.ts",
+      "src/components/celebrate.tsx",
+      "mobile/src/ui/Celebrate.tsx",
+    ]) {
+      const govde = sil(read(yol)).toLowerCase();
+      for (const h of EMEKLI) if (govde.includes(h)) cizen.push(yol.split("/").pop() + "=" + h);
+    }
+    sameList(
+      "emekli kehribari cizen yok",
+      ["cizen=" + (cizen.join("+") || "yok")],
+      ["cizen=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 281. BILDIRIM DOKUNUSU UC YOLDA DA SAYILIYOR -------------------
    *
    * 278 Android'deki soguk acilis kusurunu kapatti ve orada olcunun yerini de

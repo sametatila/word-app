@@ -52,9 +52,19 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  /*
+   * TARAYICI ÇUBUĞU SAYFANIN ZEMİNİYLE AYNI RENK.
+   *
+   * İki değer de kendi başına yazılıydı ve ikisi de `--bg`den SAPIYORDU
+   * (#fbf6ee ↔ #fbf7f2, #14100e ↔ #17120e): telefonda adres çubuğu ile
+   * sayfanın zemini arasında görünür bir dikiş vardı. Değerler artık
+   * `globals.css` `--bg` ile birebir, o da Android'in `window_bg`si
+   * (`values/colors.xml` ve `values-night/colors.xml`) ile birebir — üç yüzey
+   * tek renk.
+   */
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbf6ee" },
-    { media: "(prefers-color-scheme: dark)", color: "#14100e" },
+    { media: "(prefers-color-scheme: light)", color: "#fbf7f2" },
+    { media: "(prefers-color-scheme: dark)", color: "#17120e" },
   ],
   width: "device-width",
   initialScale: 1,

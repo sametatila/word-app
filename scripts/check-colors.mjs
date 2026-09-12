@@ -64,7 +64,7 @@ const MOBILE_ALLOW = new Map([
   ["#2b1d12", "koç balonunun KOYU zemindeki metni: balon orada sabit beyaza yakın (rgba(255,255,255,0.94)), yani zemin temayla değişmiyor — jetondan gelen metin gece temasında açık kalıp okunmazdı. Web `coach-bubble` aynı değeri aynı sebeple yazıyor"],
   ["#c0392b", "varsayılan şapka rengi: kullanıcının seçtiği aksesuar, palet değil"],
   /* Konfeti kimlik listesi - web `components/celebrate.tsx` `COLORS` ile birebir. */
-  ["#eda45d", "konfeti (web listesiyle birebir)"],
+  ["#fb8f2a", "konfeti (web listesiyle birebir) — brand-400, `orange[400]`"],
   ["#ddb62c", "konfeti (web listesiyle birebir)"],
   ["#45b87a", "konfeti (web listesiyle birebir)"],
   ["#35b2cc", "konfeti (web listesiyle birebir)"],

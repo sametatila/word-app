@@ -14421,3 +14421,61 @@ dilinin yükten geldiği.
 Odak ölçüsü **dalın gövdesini** okuyor, dosyayı değil: "dosyada `postMessage`
 var mı" sorusu ikinci dala yazılmış bir çağrıyı da kabul ederdi — kaydedilmiş
 "pencere değil düğüm" kuralı. Enjeksiyonla doğrulandı.
+
+## §11.406 — Uygulamanın dışındaki yüzeyler emekli kimlikte kalmıştı
+
+`check:colors` ve `check:tokens` **uygulamanın içini** ölçüyor. Markanın
+göründüğü dört yüzey daha var ve hiçbiri ölçülmüyordu:
+
+| Yüzey | Dosya | Ne yazıyordu |
+|---|---|---|
+| PWA tanımı | `app/manifest.ts` | `theme_color: "#c87318"`, `background_color: "#14100e"` |
+| Tarayıcı çubuğu | `app/layout.tsx` | `#fbf6ee` / `#14100e` |
+| Paylaşım önizlemesi | `app/opengraph-image.tsx` | `linear-gradient(#eda45d, #c87318)` |
+| E-postalar | `lib/email.ts` | `#c87318` + kendi başına bir gri paleti |
+
+Dördünde de aynı kusur: marka mobilden gelen turuncuya geçtiğinde (T1,
+`--color-brand-*`) bu dosyalar **süresi geçmiş kehribarda** kalmıştı. Yani
+hesabını açan ilk postayı, paylaşılan her bağlantının önizlemesini ve kurulu
+uygulamanın durum çubuğunu kullanıcı **artık var olmayan** bir kimlikte
+görüyordu. Bu dört yüzeyin ortak yanı da bu: hiçbiri uygulamanın içinde
+değil, o yüzden hiçbir tur onlara bakmadı.
+
+**İkisi ayrıca zeminden sapmıştı.** `themeColor` #fbf6ee/#14100e yazıyordu,
+`--bg` ise #fbf7f2/#17120e — telefonda adres çubuğu ile sayfanın zemini
+arasında görünür bir dikiş. Ve `manifest.background_color` koyu mürekkepti,
+oysa Android'in açılış ekranı **marka turuncusu** üstünde launcher ikonu
+(`values/styles.xml` `Theme.Lernomi.Splash` → `ic_launcher_background`
+#FA7C13). Aynı ürün iki ayrı açılışla başlıyordu.
+
+E-postanın paleti tümüyle kendi başınaydı (#faf9f5 zemin, #141413 yazı,
+#555/#999 gri, #e6e4dd çerçeve). Değerler açık tema jetonlarının kendi
+değerleri oldu; `var(--bg)` kullanılamıyor çünkü e-posta istemcisi CSS
+değişkenini atıyor (aynı kısıt `next/og` için de geçerli).
+
+### Konfeti — "ikisi de yanlış" sınıfının ders kitabı örneği
+
+```
+["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"]
+   ^^^^^^^     flame-400  mint-400   sky-400   violet-400  rose-400
+   hiçbir rampanın basamağı değil
+```
+
+Altı değerin beşi ailelerin 400'ü; ilki markanın kehribar olduğu dönemden
+kalmış ve **yetim** kalmıştı. İki platformda **aynı** yetim değer yazılıydı,
+o yüzden karşılaştırma geçiyordu — `check:colors` ikisini de "birebir" diye
+kayda geçirmişti. İkisi de brand-400 (`orange[400]`, #fb8f2a) oldu, istisna
+kaydı da güncellendi.
+
+### §282
+
+Yedi ölçü: sayfa zemininin web jetonu ile Android `window_bg`si arasında
+birebir olduğu (açık ve koyu), tarayıcı çubuğunun o zeminden geldiği, PWA
+tanımının durum çubuğunu zeminden ve açılış ekranını Android'in
+`ic_launcher_background`ından aldığı, e-posta ve önizleme kartındaki **her ham
+rengin bir jetonun değeri** olduğu, konfeti listelerinin birebir olduğu, her
+konfeti değerinin bir ailenin 400'ü olduğu ve **emekli kehribarı çizen
+kimsenin kalmadığı** (yorumda geçmesi serbest — tarih orada yazıyor).
+
+Yedisi de enjeksiyonla doğrulandı; Android XML'inin kendisi kaydırıldığında da
+ölçü kırmızıya döndü, yani karşılaştırma tek yönlü değil.

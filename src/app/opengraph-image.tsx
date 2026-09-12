@@ -35,8 +35,15 @@ export default function Image() {
           Maskot burada raster olarak YOK: `next/og` sunucuda çalışıyor ve
           `public/` altındaki bir dosyayı okumak dağıtım ortamına göre sessizce
           boş dönebiliyor — bozuk bir önizleme, önizlemesiz bağlantıdan daha
-          kötü. Kart bu yüzden tipografik, ama rengi maskotun: kestane zemin
-          üstünde kehribar.
+          kötü. Kart bu yüzden tipografik, ama rengi MARKANIN: kestane zemin
+          üstünde turuncu.
+
+          Karo SÜRESİ GEÇMİŞ kehribarı (#eda45d/#c87318) taşıyordu. Marka
+          mobilden gelen turuncuya geçtiğinde (bkz. globals.css
+          `--color-brand-*`) paylaşılan her bağlantının önizlemesi eski
+          kimlikte kalmıştı. Rampa artık marka rampası (400 → 600) ve harfin
+          mürekkebi Android'in koyu tema `onPrimary`si (#1a1008), yani karo
+          birincil düğmenin kendisiyle aynı çifti kuruyor.
         */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <div
@@ -47,8 +54,8 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "linear-gradient(135deg, #eda45d, #c87318)",
-              color: "#2f1911",
+              background: "linear-gradient(135deg, #fb8f2a, #db5f08)",
+              color: "#1a1008",
               fontSize: 38,
               fontWeight: 800,
             }}

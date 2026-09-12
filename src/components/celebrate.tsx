@@ -5,8 +5,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { FlameIcon, TrophyIcon } from "@/components/icons";
 
-/* Konfeti — üstünde yazı yok, o yüzden rampanın en canlı basamakları. */
-const COLORS = ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
+/*
+ * Konfeti — üstünde yazı yok, o yüzden rampanın en canlı basamakları: altı
+ * değerin altısı da ailelerin 400'ü (brand, flame, mint, sky, violet, rose).
+ *
+ * İLK DEĞER RAMPADA DEĞİLDİ. #eda45d, markanın kehribar olduğu dönemden
+ * kalmıştı ve marka mobilden gelen turuncuya geçtiğinde (bkz. globals.css
+ * `--color-brand-*`) hiçbir rampanın basamağı olmayan yetim bir değere
+ * dönüştü — kutlama, kullanıcının ekran görüntüsü aldığı an, artık var
+ * olmayan bir kimlikle patlıyordu. İki platformda da AYNI yetim değer
+ * yazılıydı, o yüzden karşılaştırma geçiyordu (`check:colors` ikisini de
+ * "birebir" diye kayda geçirmişti). Yeni değer brand-400.
+ */
+const COLORS = ["#fb8f2a", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"];
 
 /** Deterministik olmayan ama tur boyunca sabit kalan parçacık listesi. */
 function particles(count: number) {
