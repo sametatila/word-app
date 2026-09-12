@@ -33,6 +33,7 @@ import { PronounceCard } from "@/components/feedback/pronounce-card";
 import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
 import type { PronounceScore } from "@/lib/pronounce";
 import { localDay } from "@/lib/day";
+import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 
 /**
  * Sınav oynatıcısı (WP-41 v3).
@@ -708,6 +709,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
   // writing
   const w = paper!.sections.writing[0];
+  const examWords = writingText.trim() ? writingText.trim().split(/\s+/).length : 0;
   return (
     <section className="card mx-auto w-full max-w-md p-5">
       {header}
@@ -745,14 +747,20 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             className="card mt-3 w-full resize-none px-4 py-3 text-body outline-none"
           />
           <p className="muted mt-1 text-right text-caption tabular-nums">
-            {t("exam.word_count", {
-              n: writingText.trim() ? writingText.trim().split(/\s+/).length : 0,
-              min: w.task.minWords,
-            })}
+            {t("exam.word_count", { n: examWords, min: w.task.minWords })}
           </p>
+          {/* SEBEP YAZIYOR. Düğme kapalıysa kullanıcı neden kapalı olduğunu
+              bilmiyordu: üstteki sayaç görevin alt sınırını söylüyor (40-120
+              kelime olabiliyor) ama düğmenin uyduğu sayı BAŞKA — yapay zekâ
+              çağrısının tabanı. İki sayının aynı ekranda farklı olması
+              "yazdım, niye açılmıyor" sorusunu doğuruyordu. Sayı da artık
+              elle yazılı değil (`MIN_ASSESS_WORDS`, mobille aynı kaynak). */}
+          {examWords < MIN_ASSESS_WORDS ? (
+            <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</p>
+          ) : null}
           <button
             type="button"
-            disabled={busy || writingText.trim().split(/\s+/).length < 5}
+            disabled={busy || examWords < MIN_ASSESS_WORDS}
             onClick={() => void evaluateWriting()}
             className="btn btn-primary mt-2 w-full px-5 py-3 text-body disabled:opacity-50"
           >
@@ -965,7 +973,11 @@ function ProduceCard({
     ref.current?.focus();
   }, [item.id]);
 
-  const ready = item.mode === "order" ? chunks.length === (item.chunks?.length ?? 0) : typed.trim().split(/\s+/).filter(Boolean).length >= 2;
+  /* Sayi elle yazili degil (`MIN_FREE_WORDS`, mobille ayni kaynak). Kapali
+     dugmenin SEBEBI de yaziyor: siralama kipinde kalan parcalar ekranda
+     goruldugu icin ayri bir cumle gerekmiyor, yazma kipinde gerekiyordu. */
+  const yazilanKelime = typed.trim() ? typed.trim().split(/\s+/).filter(Boolean).length : 0;
+  const ready = item.mode === "order" ? chunks.length === (item.chunks?.length ?? 0) : yazilanKelime >= MIN_FREE_WORDS;
 
   return (
     <section className="card mx-auto w-full max-w-md p-5">
@@ -1017,6 +1029,9 @@ function ProduceCard({
         />
       )}
 
+      {item.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
+        <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
+      ) : null}
       <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-body disabled:opacity-50">
         {t(index + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
       </button>

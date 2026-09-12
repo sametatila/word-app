@@ -10,6 +10,7 @@ import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
 import { useBackConfirm } from "../lib/useBackConfirm";
+import { MIN_ASSESS_WORDS } from "../lib/learningRules";
 import { speakAndWaitVoiced } from "../lib/tts";
 import { voicesFor } from "../lib/voices";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -783,7 +784,7 @@ function WritingTask({
   const need = task.rubric?.minWords ?? 0;
 
   async function evaluate() {
-    if (busy || !attemptId || n < 5) return;
+    if (busy || !attemptId || n < MIN_ASSESS_WORDS) return;
     setBusy(true);
     try {
       const d = await assessOpen(attemptId, task.id, value.trim());
@@ -819,13 +820,20 @@ function WritingTask({
       {score ? (
         <OpenResult score={score} colors={colors} />
       ) : (
-        <PressableScale
-          onPress={() => void evaluate()}
-          disabled={busy || !attemptId || n < 5}
-          style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || n < 5 ? 0.5 : 1 }}
-        >
-          <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
-        </PressableScale>
+        <>
+          {/* SEBEP YAZIYOR (bkz. `ExamScreen`): ustteki sayac gorevin alt
+              sinirini soyluyor, dugmenin uydugu sayi baskaydi. */}
+          {n < MIN_ASSESS_WORDS ? (
+            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</Text>
+          ) : null}
+          <PressableScale
+            onPress={() => void evaluate()}
+            disabled={busy || !attemptId || n < MIN_ASSESS_WORDS}
+            style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || n < MIN_ASSESS_WORDS ? 0.5 : 1 }}
+          >
+            <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+          </PressableScale>
+        </>
       )}
       {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
     </Card>
@@ -934,9 +942,16 @@ function SpeakingTask({
     setStep("done");
   }
 
+  /* Dokum kac KELIME: kapi karakter saymiyor artik (bkz. dugmenin yanindaki
+     not). */
+  const dokumSozcuk = (() => {
+    const t2 = (value || heard.join("\n")).trim();
+    return t2 ? t2.split(/\s+/).filter(Boolean).length : 0;
+  })();
+
   async function evaluate() {
     const text = (value || heard.join("\n")).trim();
-    if (busy || !attemptId || text.length < 5) return;
+    if (busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS) return;
     setBusy(true);
     try {
       const d = await assessOpen(attemptId, task.id, text);
@@ -1031,13 +1046,24 @@ function SpeakingTask({
           {score ? (
             <OpenResult score={score} colors={colors} />
           ) : (
-            <PressableScale
-              onPress={() => void evaluate()}
-              disabled={busy || !attemptId}
-              style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId ? 0.5 : 1 }}
-            >
-              <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
-            </PressableScale>
+            <>
+              {/* KONUSMA DOKUMUNUN DE TABANI VAR. Burada hic kapi yoktu: bos
+                  ya da tek kelimelik bir dokume puan istenebiliyordu ve
+                  donen puan hicbir sey olcmuyordu. Webde kapi vardi ama
+                  KARAKTER sayiyordu (`length < 5`): "ja ja" geciyor,
+                  "Entschuldigung" gecmiyordu. Iki taraf artik ayni kelime
+                  tabanini kullaniyor. */}
+              {dokumSozcuk < MIN_ASSESS_WORDS ? (
+                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</Text>
+              ) : null}
+              <PressableScale
+                onPress={() => void evaluate()}
+                disabled={busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS}
+                style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS ? 0.5 : 1 }}
+              >
+                <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+              </PressableScale>
+            </>
           )}
           {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
         </>

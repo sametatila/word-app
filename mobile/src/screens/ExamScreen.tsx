@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { BOSS_SECONDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
+import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
 import { View, ScrollView, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
@@ -877,6 +877,20 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
   const [parts, setParts] = useState<string[]>([]);
   const answer = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
   const ok = written(answer, [it.de, ...it.accept]);
+  /*
+    HAZIRLIK KURALI IKI PLATFORMDA AYNI. Burada yalniz `answer.trim()`
+    vardi: siralama kipinde bes parcanin biri yerlestirilmis bir "cumle"
+    gonderilebiliyor, yazma kipinde tek kelime gecebiliyordu - ve bunlar
+    puanlanip sinav sonucuna giriyordu. Web bastan beri siralamada butun
+    parcalari, yazmada iki kelimeyi istiyor; sayi artik elle yazili degil
+    (`MIN_FREE_WORDS`, weble ayni kaynak).
+
+    Kapali dugmenin SEBEBI de yaziyor: siralama kipinde kalan parcalar
+    ekranda goruldugu icin ayri bir cumle gerekmiyor, yazma kipinde
+    gerekiyordu.
+  */
+  const yazilanKelime = typed.trim() ? typed.trim().split(/\s+/).filter(Boolean).length : 0;
+  const hazir = it.mode === "order" ? parts.length === (it.chunks?.length ?? 0) : yazilanKelime >= MIN_FREE_WORDS;
 
   return (
     <ScrollView contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
@@ -912,11 +926,14 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
             accessibilityLabel={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
             style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         )}
+        {it.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
+          <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
+        ) : null}
         <PressableScale
-          disabled={!answer.trim()}
+          disabled={!hazir}
           onPress={() => onDone(ok, answer)}
-          style={{ backgroundColor: answer.trim() ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={answer.trim() ? colors.onPrimary : colors.textFaint}>
+          style={{ backgroundColor: hazir ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+          <Text variant="bodyStrong" color={hazir ? colors.onPrimary : colors.textFaint}>
             {t(idx + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
           </Text>
         </PressableScale>
@@ -1090,7 +1107,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
 
   async function evaluate() {
-    if (busy || wordCount < 5) return;
+    if (busy || wordCount < MIN_ASSESS_WORDS) return;
     setBusy(true);
     try {
       const d = await api<{ result: AssessmentResult }>("/api/assess", {
@@ -1162,12 +1179,22 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
             </PressableScale>
           </>
         ) : (
-          <PressableScale disabled={busy || wordCount < 5} onPress={() => void evaluate()}
-            style={{ backgroundColor: wordCount >= 5 && !busy ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={wordCount >= 5 && !busy ? colors.onPrimary : colors.textFaint}>
+          <>
+          {/* SEBEP YAZIYOR. Ustteki sayac GOREVIN alt sinirini soyluyor
+              (40-120 kelime olabiliyor) ama dugmenin uydugu sayi BASKA -
+              yapay zeka cagrisinin tabani. Iki sayinin ayni ekranda farkli
+              olmasi "yazdim, niye acilmiyor" sorusunu doguruyordu. Sayi da
+              artik elle yazili degil (`MIN_ASSESS_WORDS`, weble ayni). */}
+          {wordCount < MIN_ASSESS_WORDS ? (
+            <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</Text>
+          ) : null}
+          <PressableScale disabled={busy || wordCount < MIN_ASSESS_WORDS} onPress={() => void evaluate()}
+            style={{ backgroundColor: wordCount >= MIN_ASSESS_WORDS && !busy ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={wordCount >= MIN_ASSESS_WORDS && !busy ? colors.onPrimary : colors.textFaint}>
               {busy ? t("exam.evaluating") : t("skillquiz.check")}
             </Text>
           </PressableScale>
+          </>
         )}
       </Card>
     </ScrollView>

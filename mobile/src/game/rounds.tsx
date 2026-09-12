@@ -18,6 +18,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
+import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
@@ -657,7 +658,8 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
     setValue((v) => v + chunk);
   }
 
-  const canCheck = !busy && !result && value.trim().split(/\s+/).filter(Boolean).length >= 2;
+  const kelime = value.trim() ? value.trim().split(/\s+/).filter(Boolean).length : 0;
+  const canCheck = !busy && !result && kelime >= MIN_FREE_WORDS;
   const footer = result && outcome ? (
     <PressableScale onPress={finish} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
       <Text variant="h3" color={colors.onPrimary}>{tx("common.continue_2")}</Text>
@@ -686,6 +688,12 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
           </PressableScale>
         ))}
       </View>
+      {/* SEBEP YAZIYOR: tek kelime yazan kullanici olu bir dugmeye bakiyordu
+          ve hicbir sey soylenmiyordu. Web de ayni kusuru tasiyordu
+          (`free-sentence-game`, `writing-player`). */}
+      {kelime < MIN_FREE_WORDS ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{tx("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
+      ) : null}
       <PressableScale disabled={!canCheck} onPress={() => void evaluate()} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: canCheck ? colors.primary : colors.surface2, paddingVertical: 15, alignItems: "center" }, canCheck ? softShadow(colors.primary, 8) : {}]}>
         <Text variant="h3" color={canCheck ? colors.onPrimary : colors.textFaint}>{tx(busy ? "mockexam.evaluating" : "mockexam.evaluate")}</Text>
       </PressableScale>

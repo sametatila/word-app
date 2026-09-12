@@ -18,6 +18,7 @@ import { levenshtein } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-bands";
+import { MIN_ASSESS_WORDS, MIN_FREE_WORDS } from "@/lib/assess-const";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -597,7 +598,7 @@ function FreeTask({
       ) : (
         <>
           <div className="mt-4 flex items-center gap-3">
-            <button type="button" disabled={busy || words < 5} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
+            <button type="button" disabled={busy || words < MIN_ASSESS_WORDS} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
               {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
             </button>
             <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-body">
@@ -629,6 +630,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
   const [failure, setFailure] = useState<AssessFailure | null>(null);
   const [ok, setOk] = useState(false);
   const areaRef = useRef<HTMLTextAreaElement>(null);
+  const cumleSozcuk = text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
 
   async function evaluate() {
     const typed = text.trim();
@@ -708,7 +710,13 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
               </button>
             ))}
           </div>
-          <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
+          {/* SEBEP YAZIYOR. Tek cümlelik görevde düğme sessizce ölüydü: tek
+              kelime yazan kullanıcıya hiçbir şey söylenmiyordu (uzun görevde
+              `writp.min_words_note` var, burada hiçbir not yoktu). */}
+          {cumleSozcuk < MIN_FREE_WORDS ? (
+            <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
+          ) : null}
+          <button type="button" onClick={() => void evaluate()} disabled={busy || cumleSozcuk < MIN_FREE_WORDS} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-body">
             {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
           </button>
         </>

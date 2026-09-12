@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
@@ -640,7 +641,7 @@ function OpenTask({
   const need = task.rubric?.minWords ?? 0;
 
   async function evaluate() {
-    if (busy || !attemptId || n < 5) return;
+    if (busy || !attemptId || n < MIN_ASSESS_WORDS) return;
     setBusy(true);
     try {
       const d = await post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: task.id, text: value.trim() });
@@ -679,9 +680,16 @@ function OpenTask({
       {score ? (
         <OpenResult score={score} />
       ) : (
-        <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || n < 5} onClick={() => void evaluate()}>
-          {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
-        </button>
+        <>
+          {/* SEBEP YAZIYOR (bkz. `exam-player`): üstteki sayaç görevin alt
+              sınırını söylüyor, düğmenin uyduğu sayı başkaydı. */}
+          {n < MIN_ASSESS_WORDS ? (
+            <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</p>
+          ) : null}
+          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || n < MIN_ASSESS_WORDS} onClick={() => void evaluate()}>
+            {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
+          </button>
+        </>
       )}
       {!attemptId ? <p className="muted mt-2 text-caption">{t("mockexam.ai_needs_server")}</p> : null}
     </div>
@@ -796,9 +804,13 @@ function SpeakingTask({
     if (step === "prep" && count === 0) void run();
   }, [step, count]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  /* Döküm kaç KELIME: kapı karakter saymiyor artik (bkz. düğmenin yanindaki
+     not). */
+  const dokumSozcuk = value.trim() ? value.trim().split(/\s+/).length : 0;
+
   async function evaluate() {
     const text = value.trim();
-    if (busy || !attemptId || text.length < 5) return;
+    if (busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS) return;
     setBusy(true);
     try {
       const d = await post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: task.id, text });
@@ -874,9 +886,18 @@ function SpeakingTask({
           {score ? (
             <OpenResult score={score} />
           ) : (
-            <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || value.trim().length < 5} onClick={() => void evaluate()}>
-              {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
-            </button>
+            <>
+              {/* TABAN KELIME, KARAKTER DEĞİL. Burada `length < 5` yazıyordu:
+                  "ja ja" gibi iki kelimelik bir döküm geçiyor, "Entschuldigung"
+                  gibi tek kelimelik bir döküm geçmiyordu. Android'de bu kapı
+                  hiç yoktu; iki taraf artık aynı kelime tabanını kullanıyor. */}
+              {dokumSozcuk < MIN_ASSESS_WORDS ? (
+                <p className="muted mt-2 text-caption">{t("assess.gate_min_words", { n: MIN_ASSESS_WORDS })}</p>
+              ) : null}
+              <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={busy || !attemptId || dokumSozcuk < MIN_ASSESS_WORDS} onClick={() => void evaluate()}>
+                {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
+              </button>
+            </>
           )}
           {!attemptId ? <p className="muted mt-2 text-caption">{t("mockexam.ai_needs_server")}</p> : null}
         </>

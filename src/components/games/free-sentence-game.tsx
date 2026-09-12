@@ -12,6 +12,7 @@ import { firstExample } from "@/lib/example";
 import { whyFor, type Why } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { MIN_FREE_WORDS } from "@/lib/assess-const";
 
 type FreeRound = Extract<Round, { game: "free_sentence" }>;
 type Status = "idle" | "checking" | "done";
@@ -37,6 +38,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
   const lang = useLang();
   const { word, partners, level } = round;
   const [value, setValue] = useState("");
+  const kelime = value.trim() ? value.trim().split(/\s+/).filter(Boolean).length : 0;
   const [status, setStatus] = useState<Status>("idle");
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
   const [failure, setFailure] = useState<AssessFailure | null>(null);
@@ -206,7 +208,12 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               </button>
             ))}
           </div>
-          <button type="submit" disabled={status !== "idle" || value.trim().split(/\s+/).length < 2} className="btn btn-primary min-h-12 px-4 text-body">
+          {/* SEBEP YAZIYOR: tek kelime yazan kullanıcı ölü bir düğmeye
+              bakıyordu ve hiçbir şey söylenmiyordu. */}
+          {kelime < MIN_FREE_WORDS ? (
+            <p className="muted text-caption">{tx("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
+          ) : null}
+          <button type="submit" disabled={status !== "idle" || kelime < MIN_FREE_WORDS} className="btn btn-primary min-h-12 px-4 text-body">
             {tx(status === "checking" ? "mockexam.evaluating" : "mockexam.evaluate")}
           </button>
         </form>

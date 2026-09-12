@@ -18,7 +18,7 @@ import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premiu
 import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
-import { RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
+import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -502,7 +502,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
      yolu yoktu, atlama düğmesi de yoktu, yani `onAllDone` hiç çağrılmıyor ve
      EGZERSİZ BİTİRİLEMİYORDU. Web kısa metni de değerlendiriyor, yalnız
      görevi "tamamlandı" saymıyor (`writp.min_words_note`). */
-  const canSend = words >= 5;
+  const canSend = words >= MIN_ASSESS_WORDS;
 
   function body() {
     return {
