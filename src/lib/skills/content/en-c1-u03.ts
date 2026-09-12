@@ -94,9 +94,9 @@ export const enC1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Hardly“ can take a second negative.",
+        text: "„Hardly“ carries its own „not“ and takes no second one.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It carries its own „not“, and a second one cannot be added…“",
       },
       {
@@ -280,9 +280,9 @@ export const enC1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The last line has a concession in it.",
+        text: "The last line has no concession in it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„No concession at all there, and none is needed…“",
       },
       {

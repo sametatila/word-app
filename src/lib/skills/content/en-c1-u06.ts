@@ -91,9 +91,9 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Every language can front an infinitive like this.",
+        text: "Not every language can front an infinitive like this.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That is not true of every language…“",
       },
       {
@@ -283,9 +283,9 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The adjectives in a record are chosen more carefully than the verbs.",
+        text: "The verbs in a record are chosen more carefully than the adjectives.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the verbs in a record are chosen more carefully than the adjectives.“",
       },
       {

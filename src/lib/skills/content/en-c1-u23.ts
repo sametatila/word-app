@@ -105,9 +105,9 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The rule is that abstract nouns take no article.",
+        text: "The rule is: no article until something narrows the noun.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the rule is not that abstract nouns take no article.“",
       },
       {
@@ -303,9 +303,9 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ideas travel on their own.",
+        text: "Ideas travel in people.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„They travel in people…“",
       },
       {

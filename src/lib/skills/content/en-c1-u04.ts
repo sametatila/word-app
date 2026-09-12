@@ -91,9 +91,9 @@ export const enC1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Fronting inverts the subject and the verb.",
+        text: "Fronting inverts nothing and adds nothing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nothing is inverted and nothing is added.“",
       },
       {
@@ -283,9 +283,9 @@ export const enC1U04: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Understatement travels well without the room.",
+        text: "Understatement does not travel well without the room.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„understatement does not travel well without the room.“",
       },
       {

@@ -107,9 +107,9 @@ export const enC1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Longevity is paid for“ has a word for word equivalent.",
+        text: "„Longevity is paid for“ has no word for word equivalent.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„has no word for word equivalent…“",
       },
       {
@@ -303,9 +303,9 @@ export const enC1U19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A correction usually catches up with the first headline.",
+        text: "No correction catches up with the first headline.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„no correction has ever caught up with the first headline.“",
       },
       {

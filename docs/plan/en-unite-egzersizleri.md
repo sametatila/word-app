@@ -1916,6 +1916,32 @@ Gerekçesi oynatıcıdan geliyor: yardım yalnız yanlış denemeden sonra çık
 dolayısıyla ipucusuz bir görev yanılan öğrenciye hiçbir şey vermiyor.
 
 
+**Doğru/yanlış sorusunda cevap yanlılığı (2026-09-12) — ciddi bulgu.** Şık
+konumu yanlılığı 2026-09-05'te çoktan seçmelide ölçülüp düzeltilmişti ve bugün
+sağlıklı: ünite egzersizlerinin 2 637 çoktan seçmelisinde ilk şık %31. Ama
+ölçüm `truefalse` türüne hiç bakmamıştı ve orada kusur TAM olarak geri
+gelmişti, üstelik daha kötüsüyle: İngilizce kursun 500 doğru/yanlış sorusunun
+**499'unun cevabı „False“** (B1, B2, C1 %100; A2 %99; A1 %92). Hiçbir şey
+okumadan her soruda „False“ işaretleyen öğrenci %99,8 alıyordu.
+
+Neden kaçtı: (1) kapı yalnız çoktan seçmeliyi sayıyordu; (2) iki şıklı sorular
+karıştırmadan BİLEREK muaf (`bundled.ts`: „İki şık DIŞARIDA: onlar
+Richtig/Falsch ve orada sabit sıra doğru olan“) ve o muafiyetin gerekçesi
+Almanca kursun kendi ölçümüydü (%28 Richtig) — İngilizce kurs o ölçümün
+kapsamında değildi; (3) yazma alışkanlığı: „metnin söylemediği bir şeyi iddia
+et, öğrenci reddetsin“ doğal geliyor ve her seferinde `answer: 1` üretiyor.
+Karıştırma da kurtarmazdı: etiketler sabit anlam taşıyor, öğrenci konumu değil
+SÖZCÜĞÜ seçiyor.
+
+C1 düzeltildi: her ünitenin `r1` ve `l1` sorusu doğru bir önermeye çevrildi
+(50 soru), `r2`/`l2` olduğu gibi kaldı — C1 artık %50/%50. Açıklamalar
+değişmedi, çünkü hepsi zaten metnin ilgili satırını alıntılıyordu ve bu satır
+şimdi DOĞRU önermeyi destekliyor. Kalan: B2, B1, A2, A1 (her biri 100 soru,
+yarısı çevrilecek). Kapı hepsi düzelince yazılacak — şimdi yazılırsa dört
+seviyede birden hata verir ve `--baseline` ile borç kabul etmek bu kusuru
+kaydetmek için yanlış araç olurdu.
+
+
 ## Tamamlanma ölçütü
 
 - `en-<seviye>-u<NN>.ts` × 25 × 5, ünite başına 2 okuma + 2 dinleme + 2 yazma

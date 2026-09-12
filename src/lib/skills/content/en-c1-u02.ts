@@ -91,9 +91,9 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A writer can stay invisible in reported speech.",
+        text: "A writer cannot be invisible in reported speech.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A writer cannot be invisible in reported speech.“",
       },
       {
@@ -289,9 +289,9 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Whereas“ is about the writer.",
+        text: "„Whereas“ is the one of the three that is not about the writer.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„Whereas“ is the only one of the three that is not about me…“",
       },
       {

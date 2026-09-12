@@ -117,9 +117,9 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "These are fixed expressions to be memorised one at a time.",
+        text: "The pattern is productive rather than a list to memorise.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„They are not fixed expressions to be memorised one at a time.“",
       },
       {
@@ -313,9 +313,9 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Both sides of the trade have a price on them.",
+        text: "Only one side of the trade has a price on it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„only one side of the trade has a price on it.“",
       },
       {

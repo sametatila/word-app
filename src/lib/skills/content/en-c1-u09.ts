@@ -113,9 +113,9 @@ export const enC1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "This is a shape English has and its neighbour lacks.",
+        text: "Both languages have this shape.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„This is not a shape English has and its neighbour lacks.“",
       },
       {
@@ -325,9 +325,9 @@ export const enC1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Here the deletion saved room in a paragraph.",
+        text: "Putting the verb back costs the poem its second of silence.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the poem has lost the one second of silence it was built around.“",
       },
       {

@@ -110,9 +110,9 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A German sentence moves the object when it runs long.",
+        text: "A long German sentence moves nothing.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„a German sentence that runs long moves nothing…“",
       },
       {
@@ -303,9 +303,9 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The evening hours are in the figure.",
+        text: "The evening hours are in nobody's figure.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the evening hours are in nobody's figure at all.“",
       },
       {

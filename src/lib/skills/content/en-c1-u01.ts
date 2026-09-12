@@ -92,9 +92,9 @@ export const enC1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Should convene“ is the more formal version.",
+        text: "The bare form is the formal one.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„What it is not is more formal. The bare form is the formal one…“",
       },
       {
@@ -295,9 +295,9 @@ export const enC1U01: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The two notes have different content.",
+        text: "The two notes have identical content.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The content is identical and the effect is not…“",
       },
       {

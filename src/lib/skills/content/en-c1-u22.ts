@@ -109,9 +109,9 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A principle joins „capital“ and „requirement“.",
+        text: "No principle joins „capital“ and „requirement“.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„no principle joins the two: they were assigned separately…“",
       },
       {
@@ -304,9 +304,9 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Most of the brochure was false.",
+        text: "Almost nothing in the brochure was false.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Almost nothing. Every claim in it was true about one supplier…“",
       },
       {

@@ -121,9 +121,9 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Whereas“ can be taken apart by a reader who does not know it.",
+        text: "„Whereas“ cannot be taken apart by a reader who does not already know it.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„„whereas“ cannot be taken apart by anybody who does not already know the answer.“",
       },
       {
@@ -320,9 +320,9 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a form for having less room than last year.",
+        text: "There is no form for having less room than last year.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Having less room than last year is invisible and there is no form for it.“",
       },
       {

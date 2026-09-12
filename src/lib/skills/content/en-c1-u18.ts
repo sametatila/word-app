@@ -117,9 +117,9 @@ export const enC1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The German pair also shows that the two are opposites.",
+        text: "Nothing in the German pair says that the two are opposites.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„nothing in either of them says that the two are opposites.“",
       },
       {
@@ -311,9 +311,9 @@ export const enC1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "She would fund the best measurement.",
+        text: "She would fund the longest measurement.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Not the best measurement, the longest one…“",
       },
       {

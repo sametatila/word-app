@@ -118,9 +118,9 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "German uses one verb for both readings.",
+        text: "German usually keeps two verbs.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„German usually keeps two verbs…“",
       },
       {
@@ -309,9 +309,9 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The lost thing appears in a report.",
+        text: "The lost thing never appears in a report.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„it never appears in a report because the thing that was lost was never counted when it was there.“",
       },
       {

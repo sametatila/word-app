@@ -118,9 +118,9 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "One of the four options is neutral.",
+        text: "None of the four options is neutral.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„there is no neutral option among the four.“",
       },
       {
@@ -308,9 +308,9 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The word can answer whether it is mutual in the building.",
+        text: "The word cannot answer whether it is mutual in the building.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Whether it is mutual in the building is a question the word cannot answer…“",
       },
       {

@@ -117,9 +117,9 @@ export const enC1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Holes can be learned like endings.",
+        text: "Holes cannot be learned, because there is nothing there to learn.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Holes cannot be learned at all, because there is nothing there to learn…“",
       },
       {
@@ -317,9 +317,9 @@ export const enC1U25: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A transcript keeps the tone.",
+        text: "A transcript loses the tone entirely.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A transcript shows the answer and loses the tone entirely…“",
       },
       {

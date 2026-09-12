@@ -93,9 +93,9 @@ export const enC1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The subject of such a sentence can be a person.",
+        text: "The subject of such a sentence is never a person.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„And the subject is never a person.“",
       },
       {
@@ -277,9 +277,9 @@ export const enC1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The other negative form is wrong.",
+        text: "The other negative form is rarer but not wrong.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It is not wrong and it is rarer…“",
       },
       {

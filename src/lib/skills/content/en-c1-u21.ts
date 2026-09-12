@@ -110,9 +110,9 @@ export const enC1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "An ending can be moved like a frame.",
+        text: "A frame can be moved and an ending cannot.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„a frame can be moved and an ending cannot.“",
       },
       {
@@ -306,9 +306,9 @@ export const enC1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Somebody usually decides what the bought time is spent on.",
+        text: "Nobody usually decides what the bought time is spent on.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Nobody, in my experience.“",
       },
       {

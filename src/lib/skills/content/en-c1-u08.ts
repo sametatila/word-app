@@ -108,9 +108,9 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A tag appears now and then in a ruling.",
+        text: "A tag never appears in a ruling.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„in a ruling or a report it never appears once…“",
       },
       {
@@ -312,9 +312,9 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Deniz asks the question once and moves on.",
+        text: "Deniz asks the question twice and waits the second time.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„I ask the question twice and wait the second time.“",
       },
       {

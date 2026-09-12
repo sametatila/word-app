@@ -109,9 +109,9 @@ export const enC1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "English deletes more than other languages.",
+        text: "English does not delete more than other languages.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„English does not delete more than other languages.“",
       },
       {
@@ -316,9 +316,9 @@ export const enC1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A paragraph should end on what was given away.",
+        text: "A paragraph that ends on what was given away shows the other side where to push.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A paragraph that ends on what was given away has told the other side where to push…“",
       },
       {

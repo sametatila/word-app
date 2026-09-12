@@ -112,9 +112,9 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "There is a list of these to learn.",
+        text: "There is no list to learn, because there is nothing to add.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„there is no list to learn because there is nothing to add.“",
       },
       {
@@ -310,9 +310,9 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The first half cannot be answered at all.",
+        text: "The first half can be answered, but only with a definition.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„It can be answered, but only with a definition…“",
       },
       {

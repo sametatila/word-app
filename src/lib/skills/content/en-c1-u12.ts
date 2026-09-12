@@ -104,9 +104,9 @@ export const enC1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Context can be trusted to close the gap.",
+        text: "No amount of context closes the gap.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„not any amount of context that a careful reader will agree to trust.“",
       },
       {
@@ -305,9 +305,9 @@ export const enC1U12: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The violation is not real.",
+        text: "The violation is real.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„The violation is real and it is a violation of a rule that holds elsewhere.“",
       },
       {

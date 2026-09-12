@@ -107,9 +107,9 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A German reader can stop in the middle of the bracket.",
+        text: "A German reader cannot stop in the middle of the bracket.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„the reader cannot stop anywhere in the middle…“",
       },
       {
@@ -304,9 +304,9 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "An inserted clause arrives in time to stop something.",
+        text: "An inserted clause always arrives too late to stop anything.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„An inserted clause always arrives too late to stop anything.“",
       },
       {

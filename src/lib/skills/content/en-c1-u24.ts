@@ -105,9 +105,9 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "That is a small difference.",
+        text: "That is not a small difference.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„That sounds like a small difference and it is not.“",
       },
       {
@@ -300,9 +300,9 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The second study is the one that gets funded.",
+        text: "The second study is the one nobody funds.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„it is the one nobody funds…“",
       },
       {

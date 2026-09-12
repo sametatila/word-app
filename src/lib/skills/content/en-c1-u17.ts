@@ -110,9 +110,9 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The neighbouring language has both of these.",
+        text: "The neighbouring language has only one of these.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„A neighbouring language has only one of these.“",
       },
       {
@@ -313,9 +313,9 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Both losses in that line are on an invoice.",
+        text: "Only one of the two losses is on an invoice.",
         options: ["True", "False"],
-        answer: 1,
+        answer: 0,
         explain: "„Two losses in one line and only one of them is on an invoice.“",
       },
       {
