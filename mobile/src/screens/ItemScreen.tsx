@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { kindIcon, kindTint } from "../ui/unitKind";
+import { MascotFx } from "../ui/MascotFx";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -342,6 +343,10 @@ export function ItemScreen() {
           </Card>
         ) : null}
       </ScrollView>
+      {/* Ortam sürprizleri: web beceri oynatıcısında da çiziyor
+          (`skills/player-shell` `<MascotFx />`), mobilde yalnız kelime
+          turlarında vardı — aynı sürpriz iki yüzeyden birinde yoktu. */}
+      <MascotFx />
     </View>
   );
 }

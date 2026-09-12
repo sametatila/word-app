@@ -17042,12 +17042,40 @@ sahne alıyor, kim bırakıyor, `away` kuralı ve muaf çağrı sayısı) ve
 dikizlemenin sayıları (iki pencere, süre, iki kenar, hareket azaltma kuralı).
 Beş enjeksiyon noktası ayrı ayrı kırmızı veriyor.
 
-**Açık kalan ve bilerek ölçülmeyen:** webin ekranın altından geçen yürüyüşü
-(`Walker`, rastgele yön + "walk"/"stroll" çeşidi, süre ekran genişliğinden)
-mobilde yok ve pakete kopyalanmamış dört klip istiyor (`walk-left/right`,
-`stroll-left/right`; toplam ~0,5 MB). Dikizleme de webde kendi klibiyle
-(`peek` / `peek-mirror`, gövdenin yarısı kadraj dışında, ~0,8 MB) yapılıyor,
-mobilde ruh hâli klibiyle. Mobil paket klipleri webden **birebir kopya** olarak
-taşıyor (md5 aynı, bugün 8 klip / ~9,3 MB), yani port konvansiyona uygun ve
-sıradaki iş. Bugünkü durumu sabitleyen bir ölçü, onu düzeltmeye çalışan kişiye
-kırmızı verirdi — bu yüzden kapı yazılmadı, kayıt burada duruyor.
+Yürüyüş ve gerçek dikizleme klibi **aynı turda** port edildi; ayrıntısı
+§11.472'de.
+
+
+## §11.472 — Yürüyen mirket Android'e geldi: altı klip, iki yüzey
+
+§11.471'in açık kalanı kapandı. Webin `MascotFx`i iki ortam sürprizi çiziyor ve
+mobilde **yalnız yarım bir dikizleme** vardı:
+
+- **Yürüyüş yok.** Web rastgele bir anda mirketi ekranın altından bir uçtan
+  öbür uca yürütüyor; yön rastgele, çeşit rastgele (%35 "stroll" — patiler
+  ensede rahat gezinti) ve **süre ekran genişliğinden türetiliyor**: adım hızı
+  sabit (95 px/sn), yani dar telefonda kısa, geniş ekranda uzun yürüyor. Sabit
+  süreli bir yürüyüş dar telefonda koşar, tablette sürünür.
+- **Dikizleme kendi klibiyle değildi.** Web `peek` / `peek-mirror` kliplerini
+  kullanıyor ve gövdenin yarısı kadraj dışında kalıyor (125 px taşma, 190 px
+  boy); mobil bunun yerine bir ruh hâli klibini tam görünür hâlde gösteriyordu
+  — "dikizleme" jesti yoktu.
+- **Yüzey eksikti.** Web sürprizleri iki oynatıcıda da çiziyor (kelime turları
+  `session-player`, beceri egzersizi `skills/player-shell`); mobilde yalnız
+  kelime turlarında vardı.
+
+Altı klip mobil pakete kopyalandı (`peek`, `peek-mirror`, `walk-left/right`,
+`stroll-left/right`; ~1,34 MB, paket 9,3 → 10,7 MB). Dosyalar webin
+`public/anim` altındakilerle **birebir aynı** — mevcut sekiz klipte de öyleydi
+(md5 eşit), yani port konvansiyonun kendisi. `ui/AmbientMascot.tsx` yerini
+`ui/MascotFx.tsx`e bıraktı ve iki yüzeye de bağlandı.
+
+Kapı **§331** iki ölçü daha aldı: yürüyüşün sekiz sayısı (hız, boy, iki randevu
+penceresi, yön ve çeşit seçimi, sürenin genişlikten türetilmesi, sahne alımı)
+ve sürprizlerin çizildiği yüzey sayısı. Enjeksiyon üç yönden doğruladı: hızı
+değiştirmek, süreyi sabitlemek ve bir yüzeyi kaldırmak.
+
+**§306 de düzeltildi.** Mobil "ölü klip" taraması yalnız `ui/Mascot.tsx`i
+okuyordu; yeni klipler `ui/MascotFx.tsx`ten `require` edilince kapı onları ölü
+dosya sanacaktı. Tarama artık tüm mobil kaynakları geziyor — kapsamını ölçmenin
+bir biçimi daha.

@@ -17109,7 +17109,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const eksikDosya = [...adlar].filter((a) => !dosyalar2.includes(a)).sort();
     const oluDosya = dosyalar2.filter((d) => !adlar.has(d)).sort();
     /* Mobil tarafta da olu klip olmasin (Metro eksigi zaten yakaliyor). */
-    const mobKlip = new Set([...sil(read("mobile/src/ui/Mascot.tsx")).matchAll(/mascot\/([\w-]+)\.webp/g)].map((m) => m[1]));
+    /* Mobil adlar TUM mobil kaynaklardan: klipler yalniz `ui/Mascot`ta degil,
+       ortam surprizleri de kendi kliplerini `require` ediyor (`ui/MascotFx`).
+       Ilk yazilisinda yalniz `Mascot.tsx` taraniyordu ve yuruyus/dikizleme
+       klipleri pakete girdiginde kapi onlari OLU DOSYA sanmisti - taramanin
+       kapsamini olcmenin bir bicimi daha. */
+    const mobKaynak = (() => {
+      const out = [];
+      const yuru = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const yol = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuru(yol); }
+          else if (/\.tsx?$/.test(e.name)) out.push(yol);
+        }
+      };
+      yuru("mobile/src");
+      return out;
+    })();
+    const mobKlip = new Set(mobKaynak.flatMap((f) => [...sil(read(f)).matchAll(/mascot\/([\w-]+)\.webp/g)].map((m) => m[1])));
     const mobDosya = readdirSync(new URL("../mobile/src/assets/mascot", import.meta.url)).filter((x) => x.endsWith(".webp")).map((x) => x.replace(/\.webp$/, ""));
     const mobOlu = mobDosya.filter((d) => !mobKlip.has(d)).sort();
     sameList(
@@ -18708,7 +18725,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const webPop = silE(read("src/components/mascot-pop.tsx"));
   const mobPop = silE(read("mobile/src/ui/MascotPop.tsx"));
   const webFx = silE(read("src/components/mascot-fx.tsx"));
-  const mobFx = silE(read("mobile/src/ui/AmbientMascot.tsx"));
+  const mobFx = silE(read("mobile/src/ui/MascotFx.tsx"));
   const webMask = silE(read("src/components/mascot.tsx"));
   const mobMask = silE(read("mobile/src/ui/Mascot.tsx"));
   const pinnedSayi = (kok, desen) => {
@@ -18756,6 +18773,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const i = src.indexOf("peekNextAt = Date.now() + PEEK_MS");
     return i < 0 ? "YOK" : pencere(src.slice(i, i + 120), ad);
   };
+  /* YURUYUS: adim hizi, gorsel yukseklik, randevu pencereleri, yon ve cesit
+     secimi, ve suresinin EKRAN GENISLIGINDEN turetildigi. Son olcu onemli:
+     sabit sureli bir yuruyus dar telefonda kosar, tablette surunur. */
+  sameList(
+    "ortam yuruyusunun olculeri",
+    [
+      "hiz=" + ((mobFx.match(/WALK_SPEED = (\d+)/) ?? [])[1] ?? "YOK"),
+      "yukseklik=" + ((mobFx.match(/WALK_H = (\d+)/) ?? [])[1] ?? "YOK"),
+      "ilk randevu=" + pencere(mobFx.slice(mobFx.indexOf("walkNextAt === 0"), mobFx.indexOf("walkNextAt === 0") + 120), "rastgele"),
+      "sonraki=" + pencere(mobFx.slice(mobFx.indexOf("walkNextAt = Date.now() + dur"), mobFx.indexOf("walkNextAt = Date.now() + dur") + 140), "rastgele"),
+      "yon=" + (/Math\.random\(\) < 0\.5 \? "ltr" : "rtl"/.test(mobFx) ? "rastgele" : "SABIT"),
+      "cesit=" + (/Math\.random\(\) < 0\.35 \? "stroll" : "walk"/.test(mobFx) ? "0.35 stroll" : "FARKLI"),
+      "sure genislikten=" + (/const dur = \(w \+ 2 \* 140\) \/ WALK_SPEED;/.test(mobFx) ? "evet" : "HAYIR"),
+      "sahne aliyor=" + (/claimStage\("walk", dur \* 1000 \+ 400\)/.test(mobFx) ? "evet" : "HAYIR"),
+    ],
+    [
+      "hiz=" + ((webFx.match(/WALK_SPEED = (\d+)/) ?? [])[1] ?? "YOK"),
+      "yukseklik=" + ((webFx.match(/WALK_H = (\d+)/) ?? [])[1] ?? "YOK"),
+      "ilk randevu=" + pencere(webFx.slice(webFx.indexOf("walkNextAt === 0"), webFx.indexOf("walkNextAt === 0") + 120), "rand"),
+      "sonraki=" + pencere(webFx.slice(webFx.indexOf("walkNextAt = Date.now() + dur"), webFx.indexOf("walkNextAt = Date.now() + dur") + 140), "rand"),
+      "yon=" + (/Math\.random\(\) < 0\.5 \? "ltr" : "rtl"/.test(webFx) ? "rastgele" : "SABIT"),
+      "cesit=" + (/Math\.random\(\) < 0\.35 \? "stroll" : "walk"/.test(webFx) ? "0.35 stroll" : "FARKLI"),
+      "sure genislikten=" + (/const dur = \(w \+ 2 \* 140\) \/ WALK_SPEED;/.test(webFx) ? "evet" : "HAYIR"),
+      "sahne aliyor=" + (/claimStage\("walk", dur \* 1000 \+ 400\)/.test(webFx) ? "evet" : "HAYIR"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* Ortam surprizlerinin CIZILDIGI yuzeyler: web iki oynaticida da ciziyor
+     (kelime turlari + beceri egzersizi), mobilde yalniz kelime turlarinda
+     vardi. Sayi olculuyor, cunku bir yuzeyin dusmesi sessiz kalirdi. */
+  const fxMount = (kok, desen) => {
+    const yuru = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const yol = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuru(yol, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(yol);
+      }
+      return out;
+    };
+    return yuru(kok).reduce((a, f) => a + (silE(read(f)).match(desen) ?? []).length, 0);
+  };
+  sameList(
+    "ortam surprizlerinin yuzeyleri",
+    ["yuzey=" + fxMount("mobile/src", /<MascotFx \/>/g)],
+    ["yuzey=" + fxMount("src", /<MascotFx \/>/g)],
+    "mobil",
+    "web",
+  );
   sameList(
     "ortam dikizlemesinin zamanlamasi",
     [
@@ -18763,7 +18829,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "sonraki=" + sonra(mobFx, "rastgele"),
       "sure=" + ((mobFx.match(/PEEK_MS = (\d+)/) ?? [])[1] ?? "YOK"),
       "iki kenar=" + (/Math\.random\(\) < 0\.5 \? "left" : "right"/.test(mobFx) ? "evet" : "TEK KENAR"),
-      "hareket azaltmada=" + (/if \(reduceMotion\(\)\) return;/.test(mobFx) && /if \(reduceMotion\(\) \|\| !side\) return null;/.test(mobFx) ? "cizilmiyor" : "CIZILIYOR"),
+      "hareket azaltmada=" + (/export function MascotFx\(\) \{\s*if \(reduceMotion\(\)\) return null;/.test(mobFx) ? "cizilmiyor" : "CIZILIYOR"),
     ],
     [
       "ilk randevu=" + ilk(webFx, "rand"),

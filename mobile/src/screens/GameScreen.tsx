@@ -10,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon } from "../ui/icons";
 import { shareRoundResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
-import { AmbientPeek } from "../ui/AmbientMascot";
+import { MascotFx } from "../ui/MascotFx";
 import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { CoachBubble } from "../ui/CoachBubble";
@@ -722,7 +722,7 @@ export function GameScreen() {
       </View>
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { game: gameLabel })}</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
-      <AmbientPeek />
+      <MascotFx />
       <MascotPop trigger={pop} />
       <ConfirmDialog
         visible={back.visible}
