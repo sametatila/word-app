@@ -13182,3 +13182,45 @@ yeni biçime getirildi.
 
 İki enjeksiyon denendi (bir yüzeyin `aria-pressed`e dönmesi, bir grubun
 kaybolması), ikisi de yakalandı.
+
+## §11.380 — İkisinde de rolsüz kalan tek seçimlik yüzeyler
+
+§11.379 Android'in **önde** olduğu on üç yüzeyi eşitledi. Geri kalanlarda
+kusur **paylaşıktı**: iki taraf da seçimi söylüyor ("seçili" / `aria-pressed`)
+ama ikisi de **rolü** vermiyordu. Karşılaştırma yeşil yanıyordu, çünkü ikisi
+aynı şekilde eksikti — ölçü bu yüzden **mutlak**.
+
+Dokuz web, dört mobil yüzey:
+
+| Yüzey | Eskiden (iki tarafta da) |
+|---|---|
+| Kelime turu şıkkı (beş oyun, tek `OptionButton`) | rol yok |
+| Deneme sınavı şıkkı | rol yok |
+| Kurs seçimi | rol yok |
+| Seviye seçimi · Uygulama dili · Yerleştirme seviyesi · Hatırlatma saati | rol yok |
+
+En kötü örnek **kurs seçimi**: Android satırın sağına bir **radyo halkası
+çiziyor** — yani tasarım "burada tek seçim var" diyor — ama ekran okuyucuya
+ne rol ne de seçili durum gidiyordu. Yanlış kursu sessizce seçmek bütün
+ilerlemeyi öteki dile taşıyor.
+
+### Mobilde çip tek bileşen
+
+`ui/Chip` altı yerde kullanılıyor ve rol oraya bir **prop** olarak eklendi;
+çağrı yerleri ayrı ayrı bildiriyor. İki çağrı yeri **sekme** (sıralama kipi,
+arkadaş sekmeleri) ve kasten `button` kalıyor: sekme bir radyo değil, ve
+web'de de ayrı bir anlatımı var (`aria-current`). **Sekmeler ayrı bir eksen**
+ve bu turda kasten açılmadı — iki platformda da tam bir `tablist` yok.
+
+Gerçek aç/kapa düğmeleri dışarıda ve öyle kalmalı: "eller serbest", "yavaş
+oku", "metni göster", "bahis", eşleme ve sıralama.
+
+### §257
+
+Üç ölçü, üçü de mutlak: dokuz web yüzeyi, dört mobil yüzey, ve her `Chip`
+çağrı yerinin rolünü bildirmesi. Sekme muafiyetlerinin **kendisi de
+ölçülüyor** — o iki dosya artık sekme kurmuyorsa kapı kırmızı olur.
+
+Üç enjeksiyon denendi (bir web yüzeyinin `aria-pressed`e dönmesi, bir çağrı
+yerinin rolü unutması, sekme muafiyetinin karşılıksız kalması), üçü de
+yakalandı.
