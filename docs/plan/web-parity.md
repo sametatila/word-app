@@ -16352,3 +16352,38 @@ yorumunun hâlâ dosyada durduğu** — yorum kalkarsa liste gözden geçirilmel
 Dört enjeksiyon doğrulandı: webde bir yolu 1 px kaydırmak, **notasyonu
 değiştirmek** (fark sayılmıyor — normalleştiricinin kanıtı), iddia edilen bir
 ikonu mobilden kaldırmak, iddia yorumunu silmek.
+
+## §11.449 — Cevap katlama kuralları: ayrışmanın en pahalı sınıfı ölçülmüyordu
+
+İki dosya mobil tarafta *"web `lib/…` ile **AYNI** kural"* diye iddia ediyor ve
+iddiayı tutan hiçbir şey yoktu:
+
+- **`lib/contractions`** — İngilizce kısaltmaları **açarak** indirger ("I'm" ↔
+  "I am", "can't" ↔ "can not"). Karşılaştırma katmanı kesme işaretini boşluğa
+  çevirdiği için gerekli; yazıldığında ölçülmüş: 399 doğal varyantın **134'ü**
+  reddediliyordu.
+- **`lib/en-spelling`** — İngiliz/Amerikan yazım çifti ("colour" ↔ "color"),
+  70 çift.
+
+Bu, ayrışmanın **en pahalı sınıfı**: öğrenci doğru cevap verip yanlış cevap
+aldığını görür — ve yalnızca bir platformda. Bir kural ya da tek bir kelime
+farkı, o cümleyi tek platformda reddettirir; ne derleyici ne göz görür.
+
+Ölçüldü: bugün birebir (24 kural aynı **sırada**, 44 kelimelik ortaç kümesi, 70
+yazım çifti).
+
+### §313
+
+Ölçü **diziler** üzerinden, sıra dahil: kuralın kendisi kadar sırası da önemli
+(önce `won't → will not`, sonra genel `n't → not`; sıra ters olsa "won't" iki
+kez işlenirdi). Enjeksiyon sırayı da doğruladı.
+
+`PARTICIPLE` kümesi ayrıca ölçülüyor: `'s`/`'d` belirsizliğini o küme çözüyor
+("he's been" → has, "he's tired" → is).
+
+Sayı ölçüsü de var: zincir okunamaz hâle gelirse iki taraf da boşalır ve eşit
+görünür.
+
+Beş enjeksiyon doğrulandı: webde bir kuralı değiştirmek, ortaç kümesinden bir
+kelime düşürmek, yazım çiftinden birini düşürmek, kural **sırasını**
+değiştirmek, zinciri okunamaz yapmak.

@@ -17466,6 +17466,75 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* ------------------------------- 313. CEVAP KATLAMA KURALLARI IKI PLATFORMDA
+   *
+   * Bu, ayrismanin EN PAHALI sinifi: ogrenci DOGRU cevap verip yanlis cevap
+   * aldigini gorur - ve yalnizca bir platformda. Iki dosya da mobil tarafta
+   * "web ... ile AYNI kural" diye iddia ediyor ve iddiayi tutan hicbir sey
+   * yoktu:
+   *
+   *   `lib/contractions`  Ingilizce kisaltmalari ACARAK indirger
+   *                       ("I'm" ↔ "I am", "can't" ↔ "can not"). Karsilastirma
+   *                       katmani kesme isaretini bosluga cevirdigi icin
+   *                       gerekli; olculdugunde 399 varyanttan 134'u
+   *                       reddediliyordu.
+   *   `lib/en-spelling`   Ingiliz/Amerikan yazim cifti ("colour" ↔ "color").
+   *
+   * Ikisi de SIRALI kural zinciri: kuralin kendisi kadar SIRASI da onemli
+   * (once `won't` → `will not`, sonra genel `n't` → ` not`). O yuzden olcu
+   * kumeler degil DIZILER uzerinden ve sira dahil.
+   *
+   * `PARTICIPLE` kumesi ayrica olculuyor: `'s`/`'d` belirsizligini o kume
+   * cozuyor ("he's been" → has, "he's tired" → is) ve bir kelimenin bir
+   * tarafta eksik olmasi o cumleyi tek platformda reddettirir. */
+  {
+    const kurallar = (yol) =>
+      [
+        ...read(yol).matchAll(
+          /\.replace\(\s*(\/[^\n]*?\/[gimsuy]*)\s*,\s*("(?:[^"\\]|\\.)*"|`[^`]*`|\([^)]*\)\s*=>[^,)]*)/g,
+        ),
+      ].map((m) => m[1] + " -> " + m[2].replace(/\s+/g, " "));
+    const ciftler = (yol) =>
+      [...read(yol).matchAll(/\[\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\]/g)].map((m) => m[1] + "=>" + m[2]);
+    const katman = (yol) => {
+      const m = read(yol).match(/PARTICIPLE = new Set\(\[([\s\S]*?)\]\)/);
+      return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).sort() : [];
+    };
+    /* Once SAYILAR: zincir okunamazsa iki taraf da bos kalir ve esit gorunur. */
+    sameList(
+      "katlama kurallari okunabildi",
+      [
+        "kisaltma kurali=" + (kurallar("mobile/src/lib/contractions.ts").length >= 20 ? "20+" : kurallar("mobile/src/lib/contractions.ts").length),
+        "ortac kumesi=" + (katman("mobile/src/lib/contractions.ts").length >= 40 ? "40+" : katman("mobile/src/lib/contractions.ts").length),
+        "yazim cifti=" + (ciftler("mobile/src/lib/en-spelling.ts").length >= 60 ? "60+" : ciftler("mobile/src/lib/en-spelling.ts").length),
+      ],
+      ["kisaltma kurali=20+", "ortac kumesi=40+", "yazim cifti=60+"],
+      "bulunan",
+      "beklenen",
+    );
+    sameList(
+      "kisaltma acma kurallari",
+      kurallar("mobile/src/lib/contractions.ts"),
+      kurallar("src/lib/contractions.ts"),
+      "mobil",
+      "web",
+    );
+    sameList(
+      "gecmis ortac kumesi",
+      katman("mobile/src/lib/contractions.ts"),
+      katman("src/lib/contractions.ts"),
+      "mobil",
+      "web",
+    );
+    sameList(
+      "ingiliz amerikan yazim ciftleri",
+      ciftler("mobile/src/lib/en-spelling.ts"),
+      ciftler("src/lib/en-spelling.ts"),
+      "mobil",
+      "web",
+    );
+  }
 }
 
 console.log(
