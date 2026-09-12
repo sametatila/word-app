@@ -105,6 +105,9 @@ const BASLIK: Record<string, string> = {
 
 const args = process.argv.slice(2);
 const tabanYaz = args.includes("--baseline");
+/* `--worklist`: Almanca raporun ikizi — sınıf SAYILARI yerine, yazarın
+   sırayla işleyeceği liste (gerekçe `check-unit-vocab.ts`de). */
+const liste = args.includes("--worklist");
 const levelArg = (args.find((a) => !a.startsWith("--")) ?? "all").toLowerCase();
 const levels = levelArg === "all" ? LEVELS : [levelArg];
 const TABAN = "data/content/vocab-en-baseline.json";
@@ -117,6 +120,8 @@ for (const level of levels) {
   const du = dersUnite(level);
   const sinifSay = new Map<string, number>();
   const sinifKelime = new Map<string, Map<string, string>>();
+  const egzersizSoz = new Map<string, Map<string, string>>();
+  const sozEgzersiz = new Map<string, Set<string>>();
   let tokT = 0;
   let disiT = 0;
   for (const e of list) {
@@ -135,6 +140,11 @@ for (const level of levels) {
         const t = sinifKelime.get(n.sinif) ?? new Map<string, string>();
         if (!t.has(w)) t.set(w, n.detay);
         sinifKelime.set(n.sinif, t);
+        if (liste) {
+          const em = egzersizSoz.get(e.id) ?? new Map<string, string>();
+          em.set(w, n.sinif); egzersizSoz.set(e.id, em);
+          (sozEgzersiz.get(w) ?? sozEgzersiz.set(w, new Set()).get(w)!).add(e.id);
+        }
       }
     } else console.log(`  ${e.id.padEnd(16)} temiz (${r.tok.length} belirteç)`);
   }
@@ -149,6 +159,16 @@ for (const level of levels) {
       console.log(`    ${BASLIK[k]}`);
       console.log(`      ${String(n).padStart(4)} geçiş · %${((n / toplam) * 100).toFixed(0)} — ${ornek}`);
     }
+  }
+  if (liste && egzersizSoz.size) {
+    console.log("  İŞ LİSTESİ — önce en çok egzersizi rahatlatan sözcük:");
+    for (const [w, kume] of [...sozEgzersiz].sort((a, b) => b[1].size - a[1].size).slice(0, 12)) {
+      const sinif = [...egzersizSoz.values()].map((m) => m.get(w)).find(Boolean) ?? "?";
+      console.log(`    ${w.padEnd(16)} ${String(kume.size).padStart(3)} egzersiz  [${sinif}]`);
+    }
+    const kova = new Map<number, string[]>();
+    for (const [id, m] of egzersizSoz) (kova.get(m.size) ?? kova.set(m.size, []).get(m.size)!).push(id);
+    console.log(`    dağılım: ${[...kova].sort((a, b) => a[0] - b[0]).map(([n, l]) => `${n} sözcük→${l.length} egz`).join(" · ")}`);
   }
   for (const [k, n] of sinifSay) genelSinif.set(`${level} ${k}`, n);
 }
