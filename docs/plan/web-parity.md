@@ -13637,3 +13637,52 @@ olurdu. Kapı bunu **ölçüyor** — enjeksiyonla doğrulandı.
 Dört enjeksiyon denendi (kilidin geri gelmesi, puntonun 15'te kalması,
 kuralın bir katmana girmesi, mobilin ölçeği okumayı bırakması), dördü de
 yakalandı.
+
+## §11.390 — Dokunmatikte klavye kendiliğinden açılmıyor
+
+İki olgu, ikisi de §11.389'un devamı.
+
+### Bir: çift dokunuş yakınlaştırması
+
+`touch-action: manipulation` yalnız `.pressable`daydı. Yakınlaştırma kilidi
+kalkınca (§11.389) çift dokunuşla büyütme iOS'ta **geri geldi** — ve bir tur
+sırasında iki şıkka arka arkaya hızlı dokunan kullanıcıda ikinci dokunuş
+"çift dokunuş" sayılıp sayfayı yakınlaştırıyor. Android uygulamasında böyle
+bir jest yok.
+
+Kural artık `button`, `a`, `.btn`, `.chip`, `.option` üstünde. **Sayfanın
+kendisinde parmakla büyütme serbest** — yani §11.389'un çözdüğü
+erişilebilirlik sorunu geri gelmiyor; kapatılan tek şey basılabilir bir
+ögenin üstündeki çift dokunuş.
+
+### İki: kendiliğinden odak
+
+Beş oyun alanı tur açılır açılmaz kendine odak alıyordu (`autoFocus` ve tur
+başı `focus()`); Android'in karşılıklarında (`game/rounds`, `skillQuiz`)
+böyle bir şey **yok**. Sebebi telefonda görünüyor: odak klavyeyi açıyor,
+klavye de ekranın yarısını — yani **sorulan kelimeyi, cümleyi ya da ipucunu**
+— örtüyor. Kullanıcı önce klavyeyi kapatıp soruyu okumak zorunda kalıyordu,
+üstelik **her turda**.
+
+Masaüstünde tam tersi doğru: alan odaklı gelmezse önce tıklamak gerekir ve
+hızlı bir turun ritmi bozulur. O yüzden ayrım **işaretçide**, platformda
+değil: `focusOnFine` yalnız `(pointer: fine)` (fare/kalem) için odaklıyor.
+
+**Kullanıcının kendi dokunuşuyla gelen odak bunun dışında**: özel karakter
+düğmesine basınca alanın odağı geri alınıyor ve orada klavye zaten açık.
+
+### §267 — ve kapının kendi düzeltmesi
+
+Dört ölçü: çift dokunuşun altı seçicide kapalı olması, oyun alanlarında
+koşulsuz odak kalmaması (mutlak), yardımcının **gerçekten** işaretçiye
+bakması, ve Android'in oyun alanlarında odak açmadığı.
+
+İlk yazımda ikinci ölçü dosyada geçen **her** `inputRef.current?.focus()`i
+sayıyordu ve `cloze-game`in özel karakter düğmesini yakaladı — oysa orada
+odağı geri veren şey kullanıcının kendi dokunuşu. **Dosya değil yüzey**:
+ölçü artık yalnız tur sıfırlayan etkinin gövdesine bakıyor (o etki
+`started.current = Date.now();` yazan etkidir).
+
+Dört enjeksiyon denendi (bir seçicinin kapsam dışı kalması, `autoFocus`un
+geri gelmesi, tur başı koşulsuz odak, yardımcının işaretçiye bakmayı
+bırakması), dördü de yakalandı.
