@@ -13,6 +13,8 @@ import { createRequire } from "node:module";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 // Ölçülecek yüzey üç denetleyicide ORTAK; gerekçe `lib/skill-surface.ts`de.
 import { germanSurface, type LooseExercise } from "./lib/skill-surface";
+// Bütçe deseni: sıfıra inemeyen bulguyu yine de kapı yapar. Gerekçe `lib/budget.ts`de.
+import { butceUygula, butceBitir } from "./lib/budget";
 
 const require = createRequire(import.meta.url);
 const { olc, ozet, türkçeMi, nerede } = require("./lib/vocab-gate.cjs") as {
@@ -25,7 +27,15 @@ const ex = BUNDLED_EXERCISES as unknown as LooseExercise[];
 
 // Seviye argümanla seçilir: `npm run check:unitvocab -- b1`. Varsayılan a1,
 // böylece mevcut çağrılar aynen çalışır.
-const seviye = (process.argv[2] || "a1").toLowerCase();
+const args = process.argv.slice(2);
+const tabanYaz = args.includes("--baseline");
+/* Kapı olarak çalışırken TÜM seviyeler ölçülmeli, yoksa bütçe yarım kalır.
+   Elle tek seviye bakmak için argüman hâlâ çalışıyor. */
+const seviyeArg = args.find((a) => !a.startsWith("--"));
+const seviyeler = seviyeArg ? [seviyeArg.toLowerCase()] : ["a1", "a2", "b1", "b2", "c1"];
+const TABAN = "data/content/vocab-de-baseline.json";
+const genelSinif = new Map<string, number>();
+for (const seviye of seviyeler) {
 const hedef = ex.filter((e) => new RegExp(`^${seviye}-u\\d+-`).test(e.id));
 console.log(`${seviye.toUpperCase()} · ünite hizalı egzersiz: ${hedef.length}`);
 const genelDisi = new Map();
@@ -78,3 +88,6 @@ if (toplam) {
     console.log(`    ${String(n).padStart(4)} geçiş · %${(n / toplam * 100).toFixed(0)} — ${ornek}`);
   }
 }
+for (const [k, n] of sinifSay) genelSinif.set(`${seviye} ${k}`, n);
+}
+process.exit(butceBitir(butceUygula(TABAN, genelSinif, tabanYaz), "npm run check:unitvocab"));

@@ -272,6 +272,25 @@ jobs:
           npm run test:mock-exams
           npm run test:exam-build
           npm run test:loop
+      # SÖZLÜKÇE BÜTÇESİ — sıfıra inemeyen bulguyu yine de kapı yapan desen.
+      # İki rapor, ünite penceresinin dışına çıkan sözcükleri sayıyor ve sayı
+      # sıfır DEĞİL (Almancada 1.443, İngilizcede 109 geçiş); çoğu gerçek bir
+      # içerik kararı bekliyor, bazıları da kapının kendi yaklaşıklığı. Böyle
+      # bir kapıyı "sıfır olsun" diye kurmak her zaman kırmızı yanan bir kapı
+      # demekti, hiç kurmamak da borcun sessizce büyümesi. Üçüncü yol
+      # `check-content`te zaten vardı ve buraya alındı: BUGÜNKÜ sayıyı dondur,
+      # BÜYÜMEYİ reddet. Taban `data/content/vocab-{de,en}-baseline.json`,
+      # ETİKET başına (seviye × bulgu sınıfı) — tek toplam olsaydı A2'nin
+      # "seviye üstü" borcunu azaltıp C1'e "havuzda yok" borcu eklemek
+      # bütçeyi tutardı. Yeni etiket de açılamıyor: Almanca B1 tabanda HİÇ
+      # yok, yani bugünkü sıfır hâli donduruldu, ilk bulgu kırmızı yakar.
+      # Bilinçli artış `-- --baseline` ile yazılıyor, yani artış bir dosya
+      # değişikliği olarak İNCELEMEYE giriyor. Süre: Almanca 114 sn (beş
+      # seviye × 870 egzersiz), İngilizce 5 sn.
+      - name: Sözlükçe bütçesi
+        run: |
+          npm run check:unitvocab
+          npm run check:en-unitvocab
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler

@@ -25,6 +25,8 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import type { SkillExercise } from "../src/lib/skills/types";
 // Ölçülecek yüzey üç denetleyicide ORTAK; gerekçe `lib/skill-surface.ts`de.
 import { englishSurface } from "./lib/skill-surface";
+// Bütçe deseni: sıfıra inemeyen bulguyu yine de kapı yapar. Gerekçe `lib/budget.ts`de.
+import { butceUygula, butceBitir } from "./lib/budget";
 import { lessonsFor } from "../src/lib/lessons/index";
 import { UNIT_LESSONS } from "../src/lib/immersion/build";
 import { EN_FREE, LEVELS, measureEn, enNerede } from "./lib/en-gate";
@@ -101,8 +103,12 @@ const BASLIK: Record<string, string> = {
   yabanci: "HAVUZDA YOK   — ödünç sözcük, kısaltma, özel ad ya da yazım hatası",
 };
 
-const levelArg = (process.argv[2] ?? "all").toLowerCase();
+const args = process.argv.slice(2);
+const tabanYaz = args.includes("--baseline");
+const levelArg = (args.find((a) => !a.startsWith("--")) ?? "all").toLowerCase();
 const levels = levelArg === "all" ? LEVELS : [levelArg];
+const TABAN = "data/content/vocab-en-baseline.json";
+const genelSinif = new Map<string, number>();
 for (const level of levels) {
   const list = BUNDLED_EXERCISES.filter((e) => new RegExp(`^en-${level}-u\\d+-`).test(e.id));
   if (!list.length) continue;
@@ -144,4 +150,10 @@ for (const level of levels) {
       console.log(`      ${String(n).padStart(4)} geçiş · %${((n / toplam) * 100).toFixed(0)} — ${ornek}`);
     }
   }
+  for (const [k, n] of sinifSay) genelSinif.set(`${level} ${k}`, n);
 }
+/* Kapı yalnız TÜM seviyeler ölçülünce anlamlı: tek seviye bakıp tabanı
+   yazmak ötekilerin tavanını sıfırlardı. Argümanla tek seviye istenirse
+   rapor basılıyor ama bütçe uygulanmıyor. */
+if (levelArg !== "all") process.exit(0);
+process.exit(butceBitir(butceUygula(TABAN, genelSinif, tabanYaz), "npm run check:en-unitvocab"));
