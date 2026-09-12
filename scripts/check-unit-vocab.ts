@@ -17,7 +17,10 @@ import { germanSurface, type LooseExercise } from "./lib/skill-surface";
 import { butceUygula, butceBitir } from "./lib/budget";
 
 const require = createRequire(import.meta.url);
-const { olc, ozet, türkçeMi, nerede } = require("./lib/vocab-gate.cjs") as {
+/* `türkçeMi` modulde var ama burada kullanilmiyor - desenden cikarildi (lint
+   kullanilmayan degiskeni hata sayiyor). Tip bildiriminde KALIYOR: gerektiginde
+   tek kelimeyle geri alinir. */
+const { olc, ozet, nerede } = require("./lib/vocab-gate.cjs") as {
   olc: (ham: string, unit: number, ek?: string[], seviye?: string) => { tok: string[]; disi: string[] };
   ozet: (d: string[]) => string[];
   türkçeMi: (s: string) => boolean;
