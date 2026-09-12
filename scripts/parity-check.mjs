@@ -7469,6 +7469,73 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 263. ASILI KALAN ISTEK ----------------------------------------
+   *
+   * Tarayicinin `fetch`i KENDILIGINDEN VAZGECMIYOR. Kaptif portalda, zayif
+   * hucresel baglantida ya da sunucu yanit vermeyi biraktiginda istek
+   * suresiz bekliyor - ve ekranda duran sey ISKELETIN KENDISI oluyor.
+   * Kullanici "yukleniyor" goruyor, oysa hicbir sey yuklenmiyor ve bir daha
+   * da yuklenmeyecek. Ekranlarin zaten yazili olan "yuklenemedi · tekrar
+   * dene" dali HIC devreye girmiyor, cunku bir hata da olusmuyor.
+   *
+   * Android'de boyle degil: HER cagri `api()`den geciyor ve 25 saniyede
+   * vazgecip hatayi firlatiyor. Olcum webde elli yedi istemci cagrisindan
+   * elli dordunun hicbir siniri olmadigini gosterdi.
+   *
+   * Cozum Android'in sekli: TEK KAPI (`lib/api-fetch`). Cagiran kendi
+   * sinyalini verdiyse ona dokunulmuyor - iptal edilebilir bir istek zaten
+   * kendi omrunu yonetiyor.
+   *
+   * DEGERLENDIRME CAGRILARI BUNUN DISINDA ve oyle kalmali: yapay zeka yaniti
+   * 25 saniyeden uzun surebiliyor, o yuzden kendi (daha uzun) sureleri var ve
+   * ikisi de iki platformda eslesmis durumda. */
+  {
+    const web = sil(read("src/lib/api-fetch.ts"));
+    const mob = sil(read("mobile/src/api/client.ts"));
+    const deger = (src) => (src.match(/API_TIMEOUT_MS = ([\d_]+)/) ?? [])[1]?.replace(/_/g, "") ?? "yok";
+    sameList(
+      "istek zaman asimi",
+      ["API_TIMEOUT_MS=" + deger(mob)],
+      ["API_TIMEOUT_MS=" + deger(web)],
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: istemci tarafinda cilpak `/api` cagrisi kalmadi. */
+    const walkTsx263 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx263(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const cilpak = new Set();
+    for (const f of [...walkTsx263("src/components"), ...walkTsx263("src/app")]) {
+      const src = sil(read(f));
+      if (!/"use client"/.test(src)) continue;
+      /* `apiFetch(` de `fetch(` ile bitiyor; onu disarida birakmak icin
+         onundeki harfe bakiliyor. */
+      if (/(?<![A-Za-z])fetch\(\s*[`"]\/api\//.test(src)) cilpak.add(f.split("/").pop());
+    }
+    sameList(
+      "istemcide zaman asimisiz /api cagrisi",
+      cilpak.size ? [...cilpak] : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kapi gercekten sinir koyuyor mu - yoksa yalniz adi mi var. */
+    sameList(
+      "kapi zaman asimi koyuyor",
+      ["apiFetch=" + (/AbortSignal\.timeout\(API_TIMEOUT_MS\)/.test(web) ? "koyuyor" : "KOYMUYOR")],
+      ["apiFetch=koyuyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 262. BASMA OLCEGI TEK SAYI ------------------------------------
    *
    * 261'in kardesi: ayni JEST ekranin her yerinde ayni gucte cevap vermeli.
