@@ -1,152 +1,747 @@
 [
- { "tr": ", uzun sıfatta", "kind": "say.tr", "de": ", beim langen Adjektiv" },
- { "tr": ". Gelecek için", "kind": "say.tr", "de": ". Für die Zukunft" },
- { "tr": ". Kalıp basit:", "kind": "say.tr", "de": ". Das Muster ist einfach:" },
- { "tr": "'it is' yerine", "kind": "say.tr", "de": "statt 'it is'" },
- { "tr": "'Oldu, bitti.'", "kind": "say.tr", "de": "'Fertig, erledigt.'" },
- { "tr": "'ondan sonra',", "kind": "say.tr", "de": "'danach'," },
- { "tr": "'Sola dön.' ve", "kind": "say.tr", "de": "'Dreh nach links.' und" },
- { "tr": "'Solda.' ya da", "kind": "say.tr", "de": "'Links.' oder" },
- { "tr": "2022'den beri:", "kind": "say.tr", "de": "seit 2022:" },
- { "tr": "Başlamak fiili", "kind": "say.tr", "de": "Das Verb anfangen" },
- { "tr": "Başlayalım mı?", "kind": "say.tr", "de": "Fangen wir an?" },
- { "tr": "Bir fiil daha:", "kind": "say.tr", "de": "Noch ein Verb:" },
- { "tr": "bir kadın için", "kind": "say.tr", "de": "für eine Frau" },
- { "tr": "Bir köpek var.", "kind": "say.tr", "de": "Es gibt einen Hund." },
- { "tr": "böyle sorulur.", "kind": "say.tr", "de": "wird so gefragt." },
- { "tr": "cevap verirken", "kind": "say.tr", "de": "beim Antworten" },
- { "tr": "Ciddi değildi.", "kind": "say.tr", "de": "Es war nicht ernst." },
- { "tr": "Çeyrekler için", "kind": "say.tr", "de": "Für die Viertel" },
- { "tr": "Çok gülüyoruz.", "kind": "say.tr", "de": "Wir lachen viel." },
- { "tr": "çok işe yarar:", "kind": "say.tr", "de": "nützt sehr:" },
- { "tr": "çöpü çıkarmak,", "kind": "say.tr", "de": "den Müll rausbringen," },
- { "tr": "daha erken, ve", "kind": "say.tr", "de": "früher, und" },
- { "tr": "denir. Mesela:", "kind": "say.tr", "de": "sagt man. Zum Beispiel:" },
- { "tr": "der, geçersin.", "kind": "say.tr", "de": "sagst du und gehst weiter." },
- { "tr": "Doğrusu şudur:", "kind": "say.tr", "de": "Richtig ist:" },
- { "tr": "Dördüncü fiil:", "kind": "say.tr", "de": "Viertes Verb:" },
- { "tr": "Emin değilsen:", "kind": "say.tr", "de": "Wenn du unsicher bist:" },
- { "tr": "En temel özür:", "kind": "say.tr", "de": "Die einfachste Entschuldigung:" },
- { "tr": "Evet, severim.", "kind": "say.tr", "de": "Ja, ich mag es." },
- { "tr": "gelecek demek.", "kind": "say.tr", "de": "heißt Zukunft." },
- { "tr": "gelecek hafta.", "kind": "say.tr", "de": "nächste Woche." },
- { "tr": "giriyor. Yani:", "kind": "say.tr", "de": "kommt dazwischen. Also:" },
- { "tr": "Güneş kelimesi", "kind": "say.tr", "de": "Das Wort Sonne" },
- { "tr": "Hayır, sevmem.", "kind": "say.tr", "de": "Nein, ich mag es nicht." },
- { "tr": "iki günlüğüne.", "kind": "say.tr", "de": "für zwei Tage." },
- { "tr": "İki renk daha:", "kind": "say.tr", "de": "Noch zwei Farben:" },
- { "tr": "İkincisi tren:", "kind": "say.tr", "de": "Das zweite ist der Zug:" },
- { "tr": "ile başlarsın:", "kind": "say.tr", "de": "beginnst du:" },
- { "tr": "ile seslenmek,", "kind": "say.tr", "de": "jemanden ansprechen," },
- { "tr": "ile söylersin.", "kind": "say.tr", "de": "sagst du." },
- { "tr": "İşte tanıştık.", "kind": "say.tr", "de": "Wir haben uns bei der Arbeit kennengelernt." },
- { "tr": "iyi, daha iyi.", "kind": "say.tr", "de": "gut, besser." },
- { "tr": "kullanıyorsun.", "kind": "say.tr", "de": "verwendest du." },
- { "tr": "Lütfen dog de.", "kind": "say.tr", "de": "Bitte sag dog." },
- { "tr": "olur. Yani hem", "kind": "say.tr", "de": "wird es. Also sowohl" },
- { "tr": "Onlar soruyor:", "kind": "say.tr", "de": "Sie fragen:" },
- { "tr": "Öğrenci demek:", "kind": "say.tr", "de": "Student heißt:" },
- { "tr": "özel demek, ve", "kind": "say.tr", "de": "heißt besonders, und" },
- { "tr": "Paylaşmak için", "kind": "say.tr", "de": "Für teilen" },
- { "tr": "Sebebim basit.", "kind": "say.tr", "de": "Mein Grund ist einfach." },
- { "tr": "Sıradaki soru:", "kind": "say.tr", "de": "Die nächste Frage:" },
- { "tr": "sonra soyadın.", "kind": "say.tr", "de": "dann dein Nachname." },
- { "tr": "Süren şey için", "kind": "say.tr", "de": "Für Andauerndes" },
- { "tr": "Tekrar edelim.", "kind": "say.tr", "de": "Wiederholen wir." },
- { "tr": "turuncu demek.", "kind": "say.tr", "de": "heißt orange." },
- { "tr": "ve cezanın adı", "kind": "say.tr", "de": "und der Name der Strafe" },
- { "tr": "ve sormak için", "kind": "say.tr", "de": "und zum Fragen" },
- { "tr": "Yan komşu için", "kind": "say.tr", "de": "Für den Nachbarn nebenan" },
- { "tr": "Yani \"unutma\".", "kind": "say.tr", "de": "Also \"vergiss nicht\"." },
- { "tr": "yani bence, ve", "kind": "say.tr", "de": "also meiner Meinung nach, und" },
- { "tr": "yaşamak demek:", "kind": "say.tr", "de": "heißt wohnen:" },
- { "tr": "yok, \"be\" var.", "kind": "say.tr", "de": "fehlt, \"be\" steht da." },
- { "tr": "— belge. Çoğulu", "kind": "say.tr", "de": "— Dokument. Der Plural" },
- { "tr": "— israf, kayıp.", "kind": "say.tr", "de": "— Verschwendung, Verlust." },
- { "tr": ", 'daha ilginç'", "kind": "say.tr", "de": ", 'interessanter'" },
- { "tr": ", anlamadığında", "kind": "say.tr", "de": ", wenn du nicht verstehst" },
- { "tr": ", bağlantı için", "kind": "say.tr", "de": ", für die Verbindung" },
- { "tr": ", biten iş için", "kind": "say.tr", "de": ", für Erledigtes" },
- { "tr": ", depozito için", "kind": "say.tr", "de": ", für die Kaution" },
- { "tr": ", en iyisi için", "kind": "say.tr", "de": ", für das Beste" },
- { "tr": ", kurallar için", "kind": "say.tr", "de": ", für die Regeln" },
- { "tr": ", şans dilemede", "kind": "say.tr", "de": ", beim Wünschen von Glück" },
- { "tr": "; sormak içinse", "kind": "say.tr", "de": "; und zum Fragen" },
- { "tr": ". Doğdum derken", "kind": "say.tr", "de": ". Bei \"ich bin geboren\"" },
- { "tr": ". Günde üç kez:", "kind": "say.tr", "de": ". Dreimal am Tag:" },
- { "tr": ". Sen de söyle:", "kind": "say.tr", "de": ". Sag du auch:" },
- { "tr": ". Sen de söyle.", "kind": "say.tr", "de": ". Sag du auch." },
- { "tr": ". Tam saat için", "kind": "say.tr", "de": ". Für die volle Stunde" },
- { "tr": "'kurmak' demek.", "kind": "say.tr", "de": "heißt 'installieren'." },
- { "tr": "'Sağda.' Burada", "kind": "say.tr", "de": "'Rechts.' Hier" },
- { "tr": "adını söylerken", "kind": "say.tr", "de": "beim Nennen des Namens" },
- { "tr": "artı kişi, artı", "kind": "say.tr", "de": "plus Person, plus" },
- { "tr": "Az önce vardım.", "kind": "say.tr", "de": "Ich bin gerade angekommen." },
- { "tr": "az önce. Dinle:", "kind": "say.tr", "de": "gerade eben. Hör zu:" },
- { "tr": "Bir örnek daha:", "kind": "say.tr", "de": "Noch ein Beispiel:" },
- { "tr": "Bir örnek daha.", "kind": "say.tr", "de": "Noch ein Beispiel." },
- { "tr": "birlikte demek.", "kind": "say.tr", "de": "heißt zusammen." },
- { "tr": "Ceketini çıkar.", "kind": "say.tr", "de": "Zieh deine Jacke aus." },
- { "tr": "Çalışmak demek:", "kind": "say.tr", "de": "Arbeiten heißt:" },
- { "tr": "çalışmıyor için", "kind": "say.tr", "de": "für \"geht nicht\"" },
- { "tr": "çok ağır demek.", "kind": "say.tr", "de": "heißt sehr schwer." },
- { "tr": "Çok iyi. Şimdi:", "kind": "say.tr", "de": "Sehr gut. Jetzt:" },
- { "tr": "de doğrudur ama", "kind": "say.tr", "de": "ist auch richtig, aber" },
- { "tr": "diye bildirdin.", "kind": "say.tr", "de": "hast du gemeldet." },
- { "tr": "Düzensiz ikili:", "kind": "say.tr", "de": "Das unregelmäßige Paar:" },
- { "tr": "ekleyebilirsin.", "kind": "say.tr", "de": "kannst du anfügen." },
- { "tr": "for'. Plan için", "kind": "say.tr", "de": "for'. Für den Plan" },
- { "tr": "Geçerlilik için", "kind": "say.tr", "de": "Für die Gültigkeit" },
- { "tr": "Hadi sen söyle:", "kind": "say.tr", "de": "Los, sag du:" },
- { "tr": "Henüz ödemedim.", "kind": "say.tr", "de": "Ich habe noch nicht bezahlt." },
- { "tr": "Hepsi bu kadar.", "kind": "say.tr", "de": "Das ist alles." },
- { "tr": "İstasyon demek.", "kind": "say.tr", "de": "Heißt Bahnhof." },
- { "tr": "İstersen sonuna", "kind": "say.tr", "de": "Wenn du willst, ans Ende" },
- { "tr": "kahverengi saç.", "kind": "say.tr", "de": "braune Haare." },
- { "tr": "Kardeşi de var:", "kind": "say.tr", "de": "Es gibt auch ein Geschwisterwort:" },
- { "tr": "kısa cevap için", "kind": "say.tr", "de": "für die kurze Antwort" },
- { "tr": "Kibar olanı şu:", "kind": "say.tr", "de": "Die höfliche lautet:" },
- { "tr": "Kibar rica için", "kind": "say.tr", "de": "Für die höfliche Bitte" },
- { "tr": "kira sözleşmem.", "kind": "say.tr", "de": "mein Mietvertrag." },
- { "tr": "Küçük bir fark:", "kind": "say.tr", "de": "Ein kleiner Unterschied:" },
- { "tr": "O çoktan gitti.", "kind": "say.tr", "de": "Er ist schon gegangen." },
- { "tr": "O futbol oynar:", "kind": "say.tr", "de": "Er spielt Fußball:" },
- { "tr": "olur. İkincisi:", "kind": "say.tr", "de": "wird es. Das zweite:" },
- { "tr": "Ödemek için de:", "kind": "say.tr", "de": "Und zum Bezahlen:" },
- { "tr": "Önce iyi haber:", "kind": "say.tr", "de": "Zuerst die gute Nachricht:" },
- { "tr": "Sipariş verdin:", "kind": "say.tr", "de": "Du hast bestellt:" },
- { "tr": "sohbeti açarken", "kind": "say.tr", "de": "beim Eröffnen des Gesprächs" },
- { "tr": "Son büyük soru:", "kind": "say.tr", "de": "Die letzte große Frage:" },
- { "tr": "Şimdi bir fiil:", "kind": "say.tr", "de": "Jetzt ein Verb:" },
- { "tr": "Şimdi fiilimiz:", "kind": "say.tr", "de": "Jetzt unser Verb:" },
- { "tr": "Tam cümlesi şu:", "kind": "say.tr", "de": "Der ganze Satz lautet:" },
- { "tr": "tıklamak demek.", "kind": "say.tr", "de": "heißt klicken." },
- { "tr": "umuyorum demek.", "kind": "say.tr", "de": "heißt ich hoffe." },
- { "tr": "Ve beş kelimen:", "kind": "say.tr", "de": "Und deine fünf Wörter:" },
- { "tr": "Ve ödeme vakti:", "kind": "say.tr", "de": "Und Zeit zu zahlen:" },
- { "tr": "ve randevu için", "kind": "say.tr", "de": "und für den Termin" },
- { "tr": "ve tavsiye için", "kind": "say.tr", "de": "und für den Rat" },
- { "tr": "yani bana göre.", "kind": "say.tr", "de": "also meiner Ansicht nach." },
- { "tr": "Yani: onda var.", "kind": "say.tr", "de": "Also: er hat es." },
- { "tr": "Yardım isterken", "kind": "say.tr", "de": "Beim Bitten um Hilfe" },
- { "tr": "Zorunluluk için", "kind": "say.tr", "de": "Für die Pflicht" },
- { "tr": ", a proof değil.", "kind": "say.tr", "de": ", nicht a proof." },
- { "tr": ", güçlü yön için", "kind": "say.tr", "de": ", für die Stärke" },
- { "tr": ", neredeyse için", "kind": "say.tr", "de": ", für \"fast\"" },
- { "tr": ". Aç karnına ise", "kind": "say.tr", "de": ". Auf nüchternen Magen dagegen" },
- { "tr": ". Yıl ve ay için", "kind": "say.tr", "de": ". Für Jahr und Monat" },
- { "tr": "Bir de imza var:", "kind": "say.tr", "de": "Und es gibt die Unterschrift:" },
- { "tr": "Bir fiil alalım:", "kind": "say.tr", "de": "Nehmen wir ein Verb:" },
- { "tr": "Bu çok daha iyi.", "kind": "say.tr", "de": "Das ist viel besser." },
- { "tr": "Cevabı çok kısa.", "kind": "say.tr", "de": "Die Antwort ist sehr kurz." },
- { "tr": "Cevabı da basit:", "kind": "say.tr", "de": "Die Antwort ist einfach:" },
- { "tr": "Cevabı da hazır:", "kind": "say.tr", "de": "Die Antwort ist auch fertig:" },
- { "tr": "Cevabı da kolay:", "kind": "say.tr", "de": "Die Antwort ist leicht:" },
- { "tr": "Cevap çok basit:", "kind": "say.tr", "de": "Die Antwort ist sehr einfach:" },
- { "tr": "Cevap kısa olur:", "kind": "say.tr", "de": "Die Antwort wird kurz:" },
- { "tr": "Çabuk öğrenirim.", "kind": "say.tr", "de": "Ich lerne schnell." },
- { "tr": "Çocuk demek için", "kind": "say.tr", "de": "Für Kind" },
- { "tr": "Çoğul sorulursa:", "kind": "say.tr", "de": "Wenn im Plural gefragt wird:" },
- { "tr": "çok doğal durur.", "kind": "say.tr", "de": "klingt sehr natürlich." },
- { "tr": "Çok uzaksa araya", "kind": "say.tr", "de": "Wenn es sehr weit ist, dazwischen" }
+ {
+  "tr": ", uzun sıfatta",
+  "kind": "say.tr",
+  "de": ", beim langen Adjektiv"
+ },
+ {
+  "tr": ". Gelecek için",
+  "kind": "say.tr",
+  "de": ". Für die Zukunft"
+ },
+ {
+  "tr": ". Kalıp basit:",
+  "kind": "say.tr",
+  "de": ". Das Muster ist einfach:"
+ },
+ {
+  "tr": "'it is' yerine",
+  "kind": "say.tr",
+  "de": "statt 'it is'"
+ },
+ {
+  "tr": "'Oldu, bitti.'",
+  "kind": "say.tr",
+  "de": "'Fertig, erledigt.'"
+ },
+ {
+  "tr": "'ondan sonra',",
+  "kind": "say.tr",
+  "de": "'danach',"
+ },
+ {
+  "tr": "'Sola dön.' ve",
+  "kind": "say.tr",
+  "de": "'Dreh nach links.' und"
+ },
+ {
+  "tr": "'Solda.' ya da",
+  "kind": "say.tr",
+  "de": "'Links.' oder"
+ },
+ {
+  "tr": "2022'den beri:",
+  "kind": "say.tr",
+  "de": "seit 2022:"
+ },
+ {
+  "tr": "Başlamak fiili",
+  "kind": "say.tr",
+  "de": "Das Verb anfangen"
+ },
+ {
+  "tr": "Başlayalım mı?",
+  "kind": "say.tr",
+  "de": "Fangen wir an?"
+ },
+ {
+  "tr": "Bir fiil daha:",
+  "kind": "say.tr",
+  "de": "Noch ein Verb:"
+ },
+ {
+  "tr": "bir kadın için",
+  "kind": "say.tr",
+  "de": "für eine Frau"
+ },
+ {
+  "tr": "Bir köpek var.",
+  "kind": "say.tr",
+  "de": "Es gibt einen Hund."
+ },
+ {
+  "tr": "böyle sorulur.",
+  "kind": "say.tr",
+  "de": "wird so gefragt."
+ },
+ {
+  "tr": "cevap verirken",
+  "kind": "say.tr",
+  "de": "beim Antworten"
+ },
+ {
+  "tr": "Ciddi değildi.",
+  "kind": "say.tr",
+  "de": "Es war nicht ernst."
+ },
+ {
+  "tr": "Çeyrekler için",
+  "kind": "say.tr",
+  "de": "Für die Viertel"
+ },
+ {
+  "tr": "Çok gülüyoruz.",
+  "kind": "say.tr",
+  "de": "Wir lachen viel."
+ },
+ {
+  "tr": "çok işe yarar:",
+  "kind": "say.tr",
+  "de": "nützt sehr:"
+ },
+ {
+  "tr": "çöpü çıkarmak,",
+  "kind": "say.tr",
+  "de": "den Müll rausbringen,"
+ },
+ {
+  "tr": "daha erken, ve",
+  "kind": "say.tr",
+  "de": "früher, und"
+ },
+ {
+  "tr": "denir. Mesela:",
+  "kind": "say.tr",
+  "de": "sagt man. Zum Beispiel:"
+ },
+ {
+  "tr": "der, geçersin.",
+  "kind": "say.tr",
+  "de": "sagst du und gehst weiter."
+ },
+ {
+  "tr": "Doğrusu şudur:",
+  "kind": "say.tr",
+  "de": "Richtig ist:"
+ },
+ {
+  "tr": "Dördüncü fiil:",
+  "kind": "say.tr",
+  "de": "Viertes Verb:"
+ },
+ {
+  "tr": "Emin değilsen:",
+  "kind": "say.tr",
+  "de": "Wenn du unsicher bist:"
+ },
+ {
+  "tr": "En temel özür:",
+  "kind": "say.tr",
+  "de": "Die einfachste Entschuldigung:"
+ },
+ {
+  "tr": "Evet, severim.",
+  "kind": "say.tr",
+  "de": "Ja, ich mag es."
+ },
+ {
+  "tr": "gelecek demek.",
+  "kind": "say.tr",
+  "de": "heißt Zukunft."
+ },
+ {
+  "tr": "gelecek hafta.",
+  "kind": "say.tr",
+  "de": "nächste Woche."
+ },
+ {
+  "tr": "giriyor. Yani:",
+  "kind": "say.tr",
+  "de": "kommt dazwischen. Also:"
+ },
+ {
+  "tr": "Güneş kelimesi",
+  "kind": "say.tr",
+  "de": "Das Wort Sonne"
+ },
+ {
+  "tr": "Hayır, sevmem.",
+  "kind": "say.tr",
+  "de": "Nein, ich mag es nicht."
+ },
+ {
+  "tr": "iki günlüğüne.",
+  "kind": "say.tr",
+  "de": "für zwei Tage."
+ },
+ {
+  "tr": "İki renk daha:",
+  "kind": "say.tr",
+  "de": "Noch zwei Farben:"
+ },
+ {
+  "tr": "İkincisi tren:",
+  "kind": "say.tr",
+  "de": "Das zweite ist der Zug:"
+ },
+ {
+  "tr": "ile başlarsın:",
+  "kind": "say.tr",
+  "de": "beginnst du:"
+ },
+ {
+  "tr": "ile seslenmek,",
+  "kind": "say.tr",
+  "de": "jemanden ansprechen,"
+ },
+ {
+  "tr": "ile söylersin.",
+  "kind": "say.tr",
+  "de": "sagst du."
+ },
+ {
+  "tr": "İşte tanıştık.",
+  "kind": "say.tr",
+  "de": "Wir haben uns bei der Arbeit kennengelernt."
+ },
+ {
+  "tr": "iyi, daha iyi.",
+  "kind": "say.tr",
+  "de": "gut, besser."
+ },
+ {
+  "tr": "kullanıyorsun.",
+  "kind": "say.tr",
+  "de": "verwendest du."
+ },
+ {
+  "tr": "Lütfen dog de.",
+  "kind": "say.tr",
+  "de": "Bitte sag dog."
+ },
+ {
+  "tr": "olur. Yani hem",
+  "kind": "say.tr",
+  "de": "wird es. Also sowohl"
+ },
+ {
+  "tr": "Onlar soruyor:",
+  "kind": "say.tr",
+  "de": "Sie fragen:"
+ },
+ {
+  "tr": "Öğrenci demek:",
+  "kind": "say.tr",
+  "de": "Student heißt:"
+ },
+ {
+  "tr": "özel demek, ve",
+  "kind": "say.tr",
+  "de": "heißt besonders, und"
+ },
+ {
+  "tr": "Paylaşmak için",
+  "kind": "say.tr",
+  "de": "Für teilen"
+ },
+ {
+  "tr": "Sebebim basit.",
+  "kind": "say.tr",
+  "de": "Mein Grund ist einfach."
+ },
+ {
+  "tr": "Sıradaki soru:",
+  "kind": "say.tr",
+  "de": "Die nächste Frage:"
+ },
+ {
+  "tr": "sonra soyadın.",
+  "kind": "say.tr",
+  "de": "dann dein Nachname."
+ },
+ {
+  "tr": "Süren şey için",
+  "kind": "say.tr",
+  "de": "Für Andauerndes"
+ },
+ {
+  "tr": "Tekrar edelim.",
+  "kind": "say.tr",
+  "de": "Wiederholen wir."
+ },
+ {
+  "tr": "turuncu demek.",
+  "kind": "say.tr",
+  "de": "heißt orange."
+ },
+ {
+  "tr": "ve cezanın adı",
+  "kind": "say.tr",
+  "de": "und der Name der Strafe"
+ },
+ {
+  "tr": "ve sormak için",
+  "kind": "say.tr",
+  "de": "und zum Fragen"
+ },
+ {
+  "tr": "Yan komşu için",
+  "kind": "say.tr",
+  "de": "Für den Nachbarn nebenan"
+ },
+ {
+  "tr": "Yani \"unutma\".",
+  "kind": "say.tr",
+  "de": "Also \"vergiss nicht\"."
+ },
+ {
+  "tr": "yani bence, ve",
+  "kind": "say.tr",
+  "de": "also meiner Meinung nach, und"
+ },
+ {
+  "tr": "yaşamak demek:",
+  "kind": "say.tr",
+  "de": "heißt wohnen:"
+ },
+ {
+  "tr": "yok, \"be\" var.",
+  "kind": "say.tr",
+  "de": "fehlt, \"be\" steht da."
+ },
+ {
+  "tr": "— belge. Çoğulu",
+  "kind": "say.tr",
+  "de": "— Dokument. Der Plural"
+ },
+ {
+  "tr": "— israf, kayıp.",
+  "kind": "say.tr",
+  "de": "— Verschwendung, Verlust."
+ },
+ {
+  "tr": ", 'daha ilginç'",
+  "kind": "say.tr",
+  "de": ", 'interessanter'"
+ },
+ {
+  "tr": ", anlamadığında",
+  "kind": "say.tr",
+  "de": ", wenn du nicht verstehst"
+ },
+ {
+  "tr": ", bağlantı için",
+  "kind": "say.tr",
+  "de": ", für die Verbindung"
+ },
+ {
+  "tr": ", biten iş için",
+  "kind": "say.tr",
+  "de": ", für Erledigtes"
+ },
+ {
+  "tr": ", depozito için",
+  "kind": "say.tr",
+  "de": ", für die Kaution"
+ },
+ {
+  "tr": ", en iyisi için",
+  "kind": "say.tr",
+  "de": ", für das Beste"
+ },
+ {
+  "tr": ", kurallar için",
+  "kind": "say.tr",
+  "de": ", für die Regeln"
+ },
+ {
+  "tr": ", şans dilemede",
+  "kind": "say.tr",
+  "de": ", beim Wünschen von Glück"
+ },
+ {
+  "tr": "; sormak içinse",
+  "kind": "say.tr",
+  "de": "; und zum Fragen"
+ },
+ {
+  "tr": ". Doğdum derken",
+  "kind": "say.tr",
+  "de": ". Bei \"ich bin geboren\""
+ },
+ {
+  "tr": ". Günde üç kez:",
+  "kind": "say.tr",
+  "de": ". Dreimal am Tag:"
+ },
+ {
+  "tr": ". Sen de söyle:",
+  "kind": "say.tr",
+  "de": ". Sag du auch:"
+ },
+ {
+  "tr": ". Sen de söyle.",
+  "kind": "say.tr",
+  "de": ". Sag du auch."
+ },
+ {
+  "tr": ". Tam saat için",
+  "kind": "say.tr",
+  "de": ". Für die volle Stunde"
+ },
+ {
+  "tr": "'kurmak' demek.",
+  "kind": "say.tr",
+  "de": "heißt 'installieren'."
+ },
+ {
+  "tr": "'Sağda.' Burada",
+  "kind": "say.tr",
+  "de": "'Rechts.' Hier"
+ },
+ {
+  "tr": "adını söylerken",
+  "kind": "say.tr",
+  "de": "beim Nennen des Namens"
+ },
+ {
+  "tr": "artı kişi, artı",
+  "kind": "say.tr",
+  "de": "plus Person, plus"
+ },
+ {
+  "tr": "Az önce vardım.",
+  "kind": "say.tr",
+  "de": "Ich bin gerade angekommen."
+ },
+ {
+  "tr": "az önce. Dinle:",
+  "kind": "say.tr",
+  "de": "gerade eben. Hör zu:"
+ },
+ {
+  "tr": "Bir örnek daha:",
+  "kind": "say.tr",
+  "de": "Noch ein Beispiel:"
+ },
+ {
+  "tr": "Bir örnek daha.",
+  "kind": "say.tr",
+  "de": "Noch ein Beispiel."
+ },
+ {
+  "tr": "birlikte demek.",
+  "kind": "say.tr",
+  "de": "heißt zusammen."
+ },
+ {
+  "tr": "Ceketini çıkar.",
+  "kind": "say.tr",
+  "de": "Zieh deine Jacke aus."
+ },
+ {
+  "tr": "Çalışmak demek:",
+  "kind": "say.tr",
+  "de": "Arbeiten heißt:"
+ },
+ {
+  "tr": "çalışmıyor için",
+  "kind": "say.tr",
+  "de": "für \"geht nicht\""
+ },
+ {
+  "tr": "çok ağır demek.",
+  "kind": "say.tr",
+  "de": "heißt sehr schwer."
+ },
+ {
+  "tr": "de doğrudur ama",
+  "kind": "say.tr",
+  "de": "ist auch richtig, aber"
+ },
+ {
+  "tr": "diye bildirdin.",
+  "kind": "say.tr",
+  "de": "hast du gemeldet."
+ },
+ {
+  "tr": "Düzensiz ikili:",
+  "kind": "say.tr",
+  "de": "Das unregelmäßige Paar:"
+ },
+ {
+  "tr": "ekleyebilirsin.",
+  "kind": "say.tr",
+  "de": "kannst du anfügen."
+ },
+ {
+  "tr": "for'. Plan için",
+  "kind": "say.tr",
+  "de": "for'. Für den Plan"
+ },
+ {
+  "tr": "Geçerlilik için",
+  "kind": "say.tr",
+  "de": "Für die Gültigkeit"
+ },
+ {
+  "tr": "Hadi sen söyle:",
+  "kind": "say.tr",
+  "de": "Los, sag du:"
+ },
+ {
+  "tr": "Henüz ödemedim.",
+  "kind": "say.tr",
+  "de": "Ich habe noch nicht bezahlt."
+ },
+ {
+  "tr": "Hepsi bu kadar.",
+  "kind": "say.tr",
+  "de": "Das ist alles."
+ },
+ {
+  "tr": "İstasyon demek.",
+  "kind": "say.tr",
+  "de": "Heißt Bahnhof."
+ },
+ {
+  "tr": "İstersen sonuna",
+  "kind": "say.tr",
+  "de": "Wenn du willst, ans Ende"
+ },
+ {
+  "tr": "kahverengi saç.",
+  "kind": "say.tr",
+  "de": "braune Haare."
+ },
+ {
+  "tr": "Kardeşi de var:",
+  "kind": "say.tr",
+  "de": "Es gibt auch ein Geschwisterwort:"
+ },
+ {
+  "tr": "kısa cevap için",
+  "kind": "say.tr",
+  "de": "für die kurze Antwort"
+ },
+ {
+  "tr": "Kibar olanı şu:",
+  "kind": "say.tr",
+  "de": "Die höfliche lautet:"
+ },
+ {
+  "tr": "Kibar rica için",
+  "kind": "say.tr",
+  "de": "Für die höfliche Bitte"
+ },
+ {
+  "tr": "kira sözleşmem.",
+  "kind": "say.tr",
+  "de": "mein Mietvertrag."
+ },
+ {
+  "tr": "Küçük bir fark:",
+  "kind": "say.tr",
+  "de": "Ein kleiner Unterschied:"
+ },
+ {
+  "tr": "O çoktan gitti.",
+  "kind": "say.tr",
+  "de": "Er ist schon gegangen."
+ },
+ {
+  "tr": "O futbol oynar:",
+  "kind": "say.tr",
+  "de": "Er spielt Fußball:"
+ },
+ {
+  "tr": "olur. İkincisi:",
+  "kind": "say.tr",
+  "de": "wird es. Das zweite:"
+ },
+ {
+  "tr": "Ödemek için de:",
+  "kind": "say.tr",
+  "de": "Und zum Bezahlen:"
+ },
+ {
+  "tr": "Önce iyi haber:",
+  "kind": "say.tr",
+  "de": "Zuerst die gute Nachricht:"
+ },
+ {
+  "tr": "Sipariş verdin:",
+  "kind": "say.tr",
+  "de": "Du hast bestellt:"
+ },
+ {
+  "tr": "sohbeti açarken",
+  "kind": "say.tr",
+  "de": "beim Eröffnen des Gesprächs"
+ },
+ {
+  "tr": "Son büyük soru:",
+  "kind": "say.tr",
+  "de": "Die letzte große Frage:"
+ },
+ {
+  "tr": "Şimdi bir fiil:",
+  "kind": "say.tr",
+  "de": "Jetzt ein Verb:"
+ },
+ {
+  "tr": "Şimdi fiilimiz:",
+  "kind": "say.tr",
+  "de": "Jetzt unser Verb:"
+ },
+ {
+  "tr": "Tam cümlesi şu:",
+  "kind": "say.tr",
+  "de": "Der ganze Satz lautet:"
+ },
+ {
+  "tr": "tıklamak demek.",
+  "kind": "say.tr",
+  "de": "heißt klicken."
+ },
+ {
+  "tr": "umuyorum demek.",
+  "kind": "say.tr",
+  "de": "heißt ich hoffe."
+ },
+ {
+  "tr": "Ve beş kelimen:",
+  "kind": "say.tr",
+  "de": "Und deine fünf Wörter:"
+ },
+ {
+  "tr": "Ve ödeme vakti:",
+  "kind": "say.tr",
+  "de": "Und Zeit zu zahlen:"
+ },
+ {
+  "tr": "ve randevu için",
+  "kind": "say.tr",
+  "de": "und für den Termin"
+ },
+ {
+  "tr": "ve tavsiye için",
+  "kind": "say.tr",
+  "de": "und für den Rat"
+ },
+ {
+  "tr": "yani bana göre.",
+  "kind": "say.tr",
+  "de": "also meiner Ansicht nach."
+ },
+ {
+  "tr": "Yani: onda var.",
+  "kind": "say.tr",
+  "de": "Also: er hat es."
+ },
+ {
+  "tr": "Yardım isterken",
+  "kind": "say.tr",
+  "de": "Beim Bitten um Hilfe"
+ },
+ {
+  "tr": "Zorunluluk için",
+  "kind": "say.tr",
+  "de": "Für die Pflicht"
+ },
+ {
+  "tr": ", a proof değil.",
+  "kind": "say.tr",
+  "de": ", nicht a proof."
+ },
+ {
+  "tr": ", güçlü yön için",
+  "kind": "say.tr",
+  "de": ", für die Stärke"
+ },
+ {
+  "tr": ", neredeyse için",
+  "kind": "say.tr",
+  "de": ", für \"fast\""
+ },
+ {
+  "tr": ". Aç karnına ise",
+  "kind": "say.tr",
+  "de": ". Auf nüchternen Magen dagegen"
+ },
+ {
+  "tr": ". Yıl ve ay için",
+  "kind": "say.tr",
+  "de": ". Für Jahr und Monat"
+ },
+ {
+  "tr": "Bir de imza var:",
+  "kind": "say.tr",
+  "de": "Und es gibt die Unterschrift:"
+ },
+ {
+  "tr": "Bir fiil alalım:",
+  "kind": "say.tr",
+  "de": "Nehmen wir ein Verb:"
+ },
+ {
+  "tr": "Bu çok daha iyi.",
+  "kind": "say.tr",
+  "de": "Das ist viel besser."
+ },
+ {
+  "tr": "Cevabı çok kısa.",
+  "kind": "say.tr",
+  "de": "Die Antwort ist sehr kurz."
+ },
+ {
+  "tr": "Cevabı da basit:",
+  "kind": "say.tr",
+  "de": "Die Antwort ist einfach:"
+ },
+ {
+  "tr": "Cevabı da hazır:",
+  "kind": "say.tr",
+  "de": "Die Antwort ist auch fertig:"
+ },
+ {
+  "tr": "Cevabı da kolay:",
+  "kind": "say.tr",
+  "de": "Die Antwort ist leicht:"
+ },
+ {
+  "tr": "Cevap çok basit:",
+  "kind": "say.tr",
+  "de": "Die Antwort ist sehr einfach:"
+ },
+ {
+  "tr": "Cevap kısa olur:",
+  "kind": "say.tr",
+  "de": "Die Antwort wird kurz:"
+ },
+ {
+  "tr": "Çabuk öğrenirim.",
+  "kind": "say.tr",
+  "de": "Ich lerne schnell."
+ },
+ {
+  "tr": "Çocuk demek için",
+  "kind": "say.tr",
+  "de": "Für Kind"
+ },
+ {
+  "tr": "Çoğul sorulursa:",
+  "kind": "say.tr",
+  "de": "Wenn im Plural gefragt wird:"
+ },
+ {
+  "tr": "çok doğal durur.",
+  "kind": "say.tr",
+  "de": "klingt sehr natürlich."
+ },
+ {
+  "tr": "Çok uzaksa araya",
+  "kind": "say.tr",
+  "de": "Wenn es sehr weit ist, dazwischen"
+ }
 ]

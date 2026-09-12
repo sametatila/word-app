@@ -1,152 +1,732 @@
 [
- { "tr": "Ve tek bir kural: he, she, it ile fiilin sonuna -s eklenir. Diğer herkeste fiil olduğu gibi kalır.", "kind": "say.tr", "de": "Und eine einzige Regel: bei he, she, it kommt ans Verb ein -s. Bei allen anderen bleibt das Verb, wie es ist." },
- { "tr": "Yani kısaca: topla ve takımla oynanan sporlar play, -ing ile biten hareket sporları go, gerisi do.", "kind": "say.tr", "de": "Kurz gesagt: Sport mit Ball und Mannschaft nimmt play, Bewegung auf -ing nimmt go, der Rest do." },
- { "tr": "Yani: Bir şey çıktı, işim çıktı. Bu bir present perfect cümlesi: az önce oldu ve şu anı etkiliyor.", "kind": "say.tr", "de": "Also: Es ist etwas dazwischengekommen. Das ist ein present perfect: eben passiert und wirkt auf jetzt." },
- { "tr": "yeter. Şimdi bunu gerçek bir sahnede kullanalım: akşam bir arkadaşın arıyor ve ilk gününü soruyor.", "kind": "say.tr", "de": "reicht. Nutzen wir das jetzt in einer echten Szene: abends ruft ein Freund an und fragt nach deinem ersten Tag." },
- { "tr": "'Cuma'ya kadar yanıtlayabilir misiniz?' demek. Buradaki 'by' son tarihi gösterir. Lütfen tekrar et.", "kind": "say.tr", "de": "Heißt 'Könnten Sie bis Freitag antworten?'. Dieses 'by' nennt die Frist. Bitte wiederhole." },
- { "tr": "'Haftada iki kez rapor yazarım. E-postama günde üç kez bakarım.' Görüyorsun: önce iş, sonra sıklık.", "kind": "say.tr", "de": "'Zweimal die Woche schreibe ich Berichte. Dreimal am Tag sehe ich in meine Mail.' Du siehst: erst die Arbeit, dann die Häufigkeit." },
- { "tr": "'I'd like', 'I would like'in kısaltılmışı; İngilizcede bu kısaltmalar günlük konuşmanın normalidir.", "kind": "say.tr", "de": "'I'd like' ist die Kurzform von 'I would like'; solche Kurzformen sind im Englischen der Alltag." },
- { "tr": "'together' birlikte demek. Arkadaşınla tek hesap ödeyeceksen bu kelime lazım. Lütfen 'together' de.", "kind": "say.tr", "de": "'together' heißt zusammen. Zahlt ihr mit einer Rechnung, brauchst du dieses Wort. Bitte sag 'together'." },
- { "tr": "Bir de beğenmediğin şeyleri anlatalım. Geçmişte olumsuz için didn't kullanırız ve fiil yalın kalır:", "kind": "say.tr", "de": "Erzählen wir auch, was dir nicht gefiel. Für die Verneinung in der Vergangenheit nehmen wir didn't, und das Verb bleibt nackt:" },
- { "tr": "Bu cümle zaten kibar, çünkü can you ile soruyorsun. Daha da yumuşatmak istersen sonuna please ekle:", "kind": "say.tr", "de": "Dieser Satz ist schon höflich, denn du fragst mit can you. Willst du ihn noch weicher, häng please an:" },
- { "tr": "Bu yanlış — hem since yerine for gelmeli hem de süregelen bir durum present perfect ister. Doğrusu:", "kind": "say.tr", "de": "Das ist falsch — statt since muss for stehen, und ein andauernder Zustand verlangt das present perfect. Richtig heißt es:" },
- { "tr": "Bunun soru hali de aynı mantıkla kuruluyor. Karşındakine \"Anlıyor musun?\" demek istersen, başa yine", "kind": "say.tr", "de": "Die Frage baut sich nach derselben Logik. Willst du \"Verstehst du?\" sagen, kommt nach vorn wieder" },
- { "tr": "Deneyelim. Telefonu açtın ve kendini tanıtıyorsun. Adın Ayşe. Merhaba, ben Ayşe'yi İngilizce söyle.", "kind": "say.tr", "de": "Probieren wir es. Du hast abgehoben und stellst dich vor. Du heißt Ayşe. Sag \"Hallo, hier ist Ayşe\" auf Englisch." },
- { "tr": "Ders sonunda \"Parolanı değiştirmelisin\" ya da \"Bunu kimseyle paylaşma\" diyebileceksin. Hazır mısın?", "kind": "say.tr", "de": "Am Ende der Lektion kannst du \"Du solltest dein Passwort ändern\" oder \"Teil das mit niemandem\" sagen. Bist du bereit?" },
- { "tr": "didn't aslında did not'ın kısaltmasıdır. Konuşurken neredeyse herkes didn't der, sen de öyle söyle.", "kind": "say.tr", "de": "didn't ist eigentlich die Kurzform von did not. Beim Sprechen sagt fast jeder didn't, sag du es auch so." },
- { "tr": "Dikkat: \"should\"dan sonra fiil yalın haliyle gelir. Arada \"to\" yok, fiilin sonuna hiçbir ek gelmez.", "kind": "say.tr", "de": "Achtung: nach \"should\" steht das Verb nackt. Kein \"to\" dazwischen, und ans Verb kommt keine Endung." },
- { "tr": "Fiyat konuşurken en çok better lazım olacak: daha ucuz olan çoğu zaman daha iyi bir seçim değildir.", "kind": "say.tr", "de": "Beim Reden über Preise brauchst du better am meisten: das Billigere ist selten die bessere Wahl." },
- { "tr": "Güzel. İngilizcede soru sorarken çoğu zaman bir soru kelimesiyle başlarız. Beden sorarken bu kelime", "kind": "say.tr", "de": "Gut. Im Englischen beginnen wir Fragen meist mit einem Fragewort. Für die Größe ist das dieses Wort" },
- { "tr": "Küçük ama önemli bir nokta: \"a\" ve \"an\". Sesli harfle başlayan bir kelimeden önce a değil an deriz.", "kind": "say.tr", "de": "Ein kleiner, aber wichtiger Punkt: \"a\" und \"an\". Vor einem Wort, das mit einem Vokal beginnt, sagen wir nicht a, sondern an." },
- { "tr": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim; İngilizcesi doğru mu yanlış mı karar ver.", "kind": "say.tr", "de": "Eine kleine Kontrolle. Ich sage dir einen englischen Satz; entscheide, ob das Englisch stimmt oder nicht." },
- { "tr": "Menü geldi ama her şey yabancı. O zaman garsona tavsiye sorarsın. \"Tavsiye etmek\" fiili İngilizcede", "kind": "say.tr", "de": "Die Karte ist da, aber alles ist fremd. Dann fragst du den Kellner nach einer Empfehlung. Das Verb \"empfehlen\" heißt im Englischen" },
- { "tr": "Merhaba! Bugün zor ama çok işine yarayacak bir şey yapacağız: bir kuruma resmi dille şikâyet etmek.", "kind": "say.tr", "de": "Hallo! Heute machen wir etwas Schweres, das dir sehr helfen wird: eine förmliche Beschwerde an eine Behörde." },
- { "tr": "Satıcı sana ne kadar zamandır bu operatörde olduğunu sorabilir. Cevapta present perfect kullanılır:", "kind": "say.tr", "de": "Der Verkäufer fragt dich vielleicht, wie lange du schon bei diesem Anbieter bist. In der Antwort steht das present perfect:" },
- { "tr": "Sıra sende. Telefonu uzatıyorsun ve yakındaki kişiyi tanıtıyorsun: Bu benim annem. İngilizce söyle.", "kind": "say.tr", "de": "Du bist dran. Du reichst das Telefon weiter und stellst die Person neben dir vor: Das ist meine Mutter. Sag es auf Englisch." },
- { "tr": "Sıra Türkçeyle aynı: önce su, sonra fatura. İngilizcede iki kelime yan yana durur, arada ek yoktur.", "kind": "say.tr", "de": "Die Reihenfolge ist wie bei uns: erst Wasser, dann Rechnung. Im Englischen stehen zwei Wörter nebeneinander, bei uns wachsen sie zusammen." },
- { "tr": "Son olarak, karşındaki kişiye de sorabilmen lazım. Mahallen nasıl bir yer sorusu İngilizcede şöyle:", "kind": "say.tr", "de": "Zuletzt musst du auch dein Gegenüber fragen können. Die Frage nach seinem Viertel geht im Englischen so:" },
- { "tr": "Şimdi asıl kelime. Bugün için I am derdik, değil mi? Ben ...-ım. Dün için ise am kelimesi was olur.", "kind": "say.tr", "de": "Jetzt das eigentliche Wort. Für heute sagten wir I am, nicht wahr? Ich bin. Für gestern wird aus am das Wort was." },
- { "tr": "Şimdi bunu bir cümlede kullanalım. İngilizcede araçla gitmeyi anlatırken \"by\" edatını kullanıyoruz:", "kind": "say.tr", "de": "Nutzen wir das jetzt in einem Satz. Für die Fahrt mit einem Fahrzeug nimmt das Englische die Präposition \"by\":" },
- { "tr": "Şimdi de kendi gününü anlat. Bir arkadaşın sana hafta sonunu soracak; öğrendiğin kelimelerle anlat.", "kind": "say.tr", "de": "Und jetzt erzähl deinen eigenen Tag. Ein Freund fragt dich nach dem Wochenende; erzähl mit den gelernten Wörtern." },
- { "tr": "Şimdi sıra sende. Görevliye şunu söylemek istiyorsun: Bunu iade etmek istiyorum. İngilizcesini kur.", "kind": "say.tr", "de": "Jetzt bist du dran. Du willst der Verkäuferin sagen: Ich möchte das zurückgeben. Bilde den englischen Satz." },
- { "tr": "Şimdi sıra sende. Komşunu görüyorsun ve elin kutu dolu. 'Bana yardım edebilir misin?' nasıl dersin?", "kind": "say.tr", "de": "Jetzt bist du dran. Du siehst deinen Nachbarn und hast die Hände voller Kartons. Wie sagst du 'Kannst du mir helfen?'?" },
- { "tr": "Şimdi tekrar sen kuracaksın. Kahve içmiyorsun neredeyse hiç. Şunu söyle: Neredeyse hiç kahve içmem.", "kind": "say.tr", "de": "Jetzt baust du wieder. Kaffee trinkst du so gut wie nie. Sag das hier: Ich trinke fast nie Kaffee." },
- { "tr": "Ummak, beklemek demek. Hayal kırıklığını kibarca anlatmanın en güzel yolu bu fiilin geçmiş hâlidir:", "kind": "say.tr", "de": "Heißt hoffen, erwarten. Enttäuschung höflich zu sagen geht am schönsten mit der Vergangenheit dieses Verbs:" },
- { "tr": "Ve üç şey yapabiliyorsun: görevini sıklık kelimesiyle anlatmak, 'twice a week' gibi sayı vermek, ve", "kind": "say.tr", "de": "Und drei Dinge kannst du: deine Aufgabe mit einem Häufigkeitswort erzählen, eine Zahl wie 'twice a week' nennen, und" },
- { "tr": "Yani pazardayım. Burada I am, konuşurken kısalıp I'm oluyor. İngilizcede bu kısaltmalar çok normal.", "kind": "say.tr", "de": "Also, ich bin auf dem Markt. Aus I am wird beim Sprechen I'm. Solche Kurzformen sind im Englischen ganz normal." },
- { "tr": "Ama yaş sorarken İngilizler farklı bir yol seçer. Eski, yaşlı demek olan old kelimesini kullanırlar:", "kind": "say.tr", "de": "Beim Fragen nach dem Alter geht das Englische aber denselben Weg wie wir: es nimmt old, also alt:" },
- { "tr": "Bilgi işlemi arayacağım. Bu iki gelecek biçimini zaten biliyorsun, burada da aynı şekilde çalışıyor.", "kind": "say.tr", "de": "Ich rufe die IT an. Diese zwei Zukunftsformen kennst du schon, und hier arbeiten sie genauso." },
- { "tr": "Bu beş cümleyle dünyanın her restoranında idare edersin. Şimdi bunları gerçek bir sahnede deneyelim.", "kind": "say.tr", "de": "Mit diesen fünf Sätzen kommst du in jedem Restaurant der Welt zurecht. Probieren wir sie in einer echten Szene." },
- { "tr": "Deneyelim. Diyelim randevunu tamamen iptal etmek istiyorsun. Kibar biçimiyle İngilizce nasıl dersin?", "kind": "say.tr", "de": "Probieren wir es. Sagen wir, du willst deinen Termin ganz absagen. Wie sagst du das höflich auf Englisch?" },
- { "tr": "Dikkat et, burada wait fiil değil, beklemenin kendisi. Kafeler, istasyonlar bu cümleyi çok kullanır.", "kind": "say.tr", "de": "Achtung, wait ist hier kein Verb, sondern das Warten selbst. Cafés und Bahnhöfe nutzen diesen Satz sehr oft." },
- { "tr": "Dikkat: floor hem kat hem yer, zemin demek. Kat söylerken sıra sayısı kullanılır ve başına on gelir.", "kind": "say.tr", "de": "Achtung: floor heißt Stock und Boden zugleich. Beim Stockwerk nimmt man die Ordnungszahl und davor ein on." },
- { "tr": "İlk kelimemiz: already. Türkçesi çoktan, zaten demek. Bir iş beklenenden önce bittiğinde kullanılır.", "kind": "say.tr", "de": "Unser erstes Wort: already. Heißt schon, bereits. Man nimmt es, wenn etwas früher als erwartet fertig ist." },
- { "tr": "İngilizcede kibar bir ret neredeyse her zaman yumuşak bir girişle başlar. İlk kelimemiz çok tanıdık:", "kind": "say.tr", "de": "Eine höfliche Absage beginnt im Englischen fast immer mit einem weichen Anfang. Unser erstes Wort kennst du gut:" },
- { "tr": "kalkmak oluyor. Yani anlamı parçalarından çıkaramazsın; ikisini tek bir kelime gibi ezberleyeceksin.", "kind": "say.tr", "de": "heißt aufstehen. Die Bedeutung kannst du also nicht aus den Teilen ablesen; die zwei lernst du wie ein einziges Wort." },
- { "tr": "Kapı demek. Biniş kartında hep bir numarayla birlikte yazar: gate twelve, gate B five. Sen de söyle:", "kind": "say.tr", "de": "Heißt Tor. Auf der Bordkarte steht es immer mit einer Nummer: gate twelve, gate B five. Sag du auch:" },
- { "tr": "Kelimesi kelimesine köşedeki dükkân demek, çünkü bakkallar genelde sokak köşesindedir. Sen de söyle.", "kind": "say.tr", "de": "Wörtlich der Laden an der Ecke, denn kleine Läden stehen meist an einer Straßenecke. Sag du auch." },
- { "tr": "Merhaba! Bugün çok işine yarayacak bir şey yapacağız: kısa ve kibar bir e-posta yazmayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute machen wir etwas sehr Nützliches: wir lernen, eine kurze und höfliche Mail zu schreiben." },
- { "tr": "never tek başına \"asla\" der, without \"-sız\" demektir ve cümlenin başındaki don't birine \"yapma\" der.", "kind": "say.tr", "de": "never allein sagt \"nie\", without heißt \"ohne\", und das don't am Satzanfang sagt jemandem \"tu das nicht\"." },
- { "tr": "Önce kısa bir hatırlatma. Present perfect'i biliyorsun: have ya da has, artından fiilin üçüncü hâli.", "kind": "say.tr", "de": "Zuerst eine kurze Erinnerung. Das present perfect kennst du: have oder has, dahinter die dritte Form des Verbs." },
- { "tr": "Son bir nokta: a ve an sadece tek bir şey için kullanılır. Çoğulda onları atıyoruz. Bu benim kitabım", "kind": "say.tr", "de": "Ein letzter Punkt: a und an gelten nur für eine einzige Sache. In der Mehrzahl lassen wir sie weg. Das ist mein Buch" },
- { "tr": "Soru sormaya geçelim. Geniş zamanda soru sorarken cümlenin başına küçük bir yardımcı kelime koyarız:", "kind": "say.tr", "de": "Kommen wir zur Frage. Für eine Frage im einfachen Präsens setzen wir vorn ein kleines Helferwort:" },
- { "tr": "Şimdi sıra sende. Kirayı sorarken kullandığımız kalıbı hatırla ve depozitoyu sor: depozito ne kadar?", "kind": "say.tr", "de": "Jetzt bist du dran. Denk an die Wendung, mit der wir nach der Miete gefragt haben, und frag nach der Kaution: wie hoch ist die Kaution?" },
- { "tr": "Yani şunu diyebileceksin: bu telefon şundan daha ucuz, bu iş şundan daha zor, bugün dünden daha iyi.", "kind": "say.tr", "de": "Du wirst also sagen können: dieses Handy ist billiger als jenes, diese Arbeit ist schwerer als jene, heute ist besser als gestern." },
- { "tr": "Yani: bitirdim. İş bitti, sonucu şu anda geçerli. Bugün bu cümlenin içine üç kelime yerleştireceğiz.", "kind": "say.tr", "de": "Also: ich bin fertig. Die Sache ist erledigt, das Ergebnis gilt jetzt. Heute setzen wir drei Wörter in diesen Satz." },
- { "tr": "Yani: sonra. Türkçede \"sonra\" cümlenin sonuna da gidebilir ama İngilizcede then genelde başta durur:", "kind": "say.tr", "de": "Also: dann. Im Deutschen steht 'dann' meist auch vorn, und im Englischen genauso:" },
- { "tr": "Yeni kelimelerin: while, suddenly, happen, meet, leave. Şimdi bunları gerçek bir sohbette deneyelim.", "kind": "say.tr", "de": "Deine neuen Wörter: while, suddenly, happen, meet, leave. Probieren wir sie jetzt in einem echten Gespräch." },
- { "tr": ". Türkçesiyle neredeyse aynı, tablet demek. Sadece söyleyişi biraz farklı. Lütfen benden sonra söyle.", "kind": "say.tr", "de": ". Fast wie bei uns, es heißt Tablette. Nur die Aussprache ist etwas anders. Bitte sprich mir nach." },
- { "tr": "Aynı yapının olumsuzu için haven't kullanılır ve cümlenin sonuna yet eklenir. Yet burada henüz demek.", "kind": "say.tr", "de": "Für die Verneinung derselben Form nimmt man haven't und hängt hinten yet an. Yet heißt hier noch nicht." },
- { "tr": "Bir ara büyük bir şirkette çalışmışlığın olduğunu söylemek istiyorsun — ne zaman olduğu önemli değil:", "kind": "say.tr", "de": "Du willst sagen, dass du irgendwann einmal in einer großen Firma gearbeitet hast — wann, ist egal:" },
- { "tr": "Bir de nerede tanıştığınızı anlatmak var. Bu geçmişte olup bitti, o yüzden geçmiş zaman kullanıyoruz:", "kind": "say.tr", "de": "Wo ihr euch kennengelernt habt, erzählst du auch. Das ist vorbei, darum nehmen wir die Vergangenheit:" },
- { "tr": "Bir de uzaktaki şeyler var. Fotoğrafın öbür ucundaki kişiyi gösteriyorsun mesela. O zaman that deriz.", "kind": "say.tr", "de": "Es gibt auch Dinge in der Ferne. Du zeigst zum Beispiel auf die Person am anderen Rand des Fotos. Dann sagen wir that." },
- { "tr": "Bir şey bir iki dakika önce olduysa just kullanırız. Yeri already ile aynı: have ile fiilin arasında.", "kind": "say.tr", "de": "Ist etwas vor ein, zwei Minuten passiert, nehmen wir just. Sein Platz ist derselbe wie bei already: zwischen have und Verb." },
- { "tr": "Bu kelimenin iki anlamı var: hem 'kat' hem de 'yer, zemin'. Bugün 'kat' anlamını kullanacağız. Lütfen", "kind": "say.tr", "de": "Dieses Wort hat zwei Bedeutungen: 'Stock' und 'Boden'. Heute nehmen wir 'Stock'. Bitte sag" },
- { "tr": "Check-in masasında ne söyleyeceğini, güvenlik kontrolünde sana ne diyeceklerini birlikte çalışacağız.", "kind": "say.tr", "de": "Wir üben zusammen, was du am Check-in-Schalter sagst und was man dir bei der Sicherheitskontrolle sagt." },
- { "tr": "Çok iyi. Şimdi olumsuz cümle. Geçmişte olumsuz yaparken didn't kullanırız ve fiil yalın haline döner.", "kind": "say.tr", "de": "Sehr gut. Jetzt der verneinte Satz. Für die Verneinung in der Vergangenheit nehmen wir didn't, und das Verb kehrt in die nackte Form zurück." },
- { "tr": "Görevli sana yardımcı olamıyorsa yöneticiyi istersin. Yönetici İngilizcede manager. Lütfen tekrar et:", "kind": "say.tr", "de": "Hilft dir die Angestellte nicht weiter, verlangst du den Leiter. Leiter heißt auf Englisch manager. Bitte wiederhole:" },
- { "tr": "Harika iş çıkardın. Şimdi parkta biriyle konuşuyoruz; gördüklerini anlat, bir de soru sormayı unutma.", "kind": "say.tr", "de": "Das war großartig. Jetzt sprechen wir mit jemandem im Park; erzähl, was du siehst, und vergiss nicht zu fragen." },
- { "tr": "I'm aslında I am'in kısası. Konuşurken neredeyse herkes I'm der. Yazarken de rahatça kullanabilirsin.", "kind": "say.tr", "de": "I'm ist eigentlich die Kurzform von I am. Beim Sprechen sagt fast jeder I'm. Beim Schreiben darfst du es auch ruhig nehmen." },
- { "tr": "Kelimesi kelimesine Emma'yı nasıl tanıyorsun, ama Türkçesi Emma'yı nereden tanıyorsun. Söyle bakalım.", "kind": "say.tr", "de": "Wörtlich, wie du Emma kennst, gemeint aber, woher du Emma kennst. Sag mal." },
- { "tr": "Küçük bir İngilizce notu. Tek bir vücut bölümünden sahibini söylemeden bahsedersen başına a koyarsın:", "kind": "say.tr", "de": "Eine kleine englische Anmerkung. Sprichst du von einem Körperteil, ohne den Besitzer zu nennen, kommt ein a davor:" },
- { "tr": "Özellikle talimatlara kulak vereceğiz: çantanı buraya koy, ceketini çıkar gibi cümleler. Hazır mısın?", "kind": "say.tr", "de": "Vor allem hören wir auf Anweisungen: leg deine Tasche hierhin, zieh deine Jacke aus. Bist du bereit?" },
- { "tr": "Peki soru sormak istersen? Çok basit: can'i başa alıyorsun. 'Bana yardım edebilir misin?' demek için:", "kind": "say.tr", "de": "Und wenn du fragen willst? Ganz leicht: du stellst can nach vorn. Für 'Kannst du mir helfen?':" },
- { "tr": "Rica ederim demek. Dikkat, buradaki welcome hoş geldiniz anlamında değil. Daha rahat cevaplar da var:", "kind": "say.tr", "de": "Heißt gern geschehen. Achtung, dieses welcome heißt hier nicht willkommen. Es gibt auch lockerere Antworten:" },
- { "tr": "Söz vermek demek. Söz verirken de will kullanılır. Olumsuzu will not, kısaca won't. Lütfen tekrar et:", "kind": "say.tr", "de": "Heißt versprechen. Beim Versprechen nimmt man auch will. Die Verneinung ist will not, kurz won't. Bitte wiederhole:" },
- { "tr": "Su demek. Dikkat et, ortadaki t sesi İngilizcede yumuşar, neredeyse 'wo-dır' gibi duyulur. Lütfen de:", "kind": "say.tr", "de": "Heißt Wasser. Achtung, das t in der Mitte wird im Englischen weich, es klingt fast wie 'wo-der'. Bitte sag:" },
- { "tr": "Şimdi soru soralım. İngilizcede bu tür sorularda do yardımcı fiili kullanılır. Hangi müziği seversin:", "kind": "say.tr", "de": "Stellen wir jetzt eine Frage. Für solche Fragen nimmt das Englische den Helfer do. Welche Musik magst du:" },
- { "tr": "Teyze demek. Güzel haber: İngilizcede hala da teyze de aynı kelime, ayırmana gerek yok. Lütfen söyle:", "kind": "say.tr", "de": "Heißt Tante. Gute Nachricht: im Englischen ist es für beide Seiten der Familie dasselbe Wort, du musst nicht trennen. Bitte sag:" },
- { "tr": "Ve altın kural: şu anda olan bir şey anlatıyorsan is ya da am ile fiilin -ing hâlini birlikte kullan.", "kind": "say.tr", "de": "Und die goldene Regel: erzählst du etwas, das gerade jetzt geschieht, nimm is oder am zusammen mit der -ing-Form des Verbs." },
- { "tr": "Yani önce 'benim', sonra 'anne'. Bugünkü işimiz bu küçük kelimeler. Önce aile kelimelerini öğrenelim.", "kind": "say.tr", "de": "Also erst 'mein', dann 'Mutter'. Diese kleinen Wörter sind unsere heutige Arbeit. Lernen wir zuerst die Familienwörter." },
- { "tr": "'Sağa dön.' Dikkat et: Türkçedeki '-a, -e' eki için İngilizcede fazladan bir kelime koymuyoruz. Sadece", "kind": "say.tr", "de": "'Bieg rechts ab.' Achtung: für unser 'nach' setzt das Englische kein zusätzliches Wort dazu. Nur" },
- { "tr": "\"Sık sık\" demek. Bu kelimede ortadaki t harfi genelde okunmaz, kulağa \"ofın\" gibi gelir. Sen de söyle:", "kind": "say.tr", "de": "Heißt \"oft\". Das t in der Mitte wird meist nicht gesprochen, es klingt wie \"offn\". Sag du auch:" },
- { "tr": "Arada geçen \"of\" küçük bir bağ; \"bir kilo elma\" derken kullanılır. İki kilo olunca kilo da çoğullaşır:", "kind": "say.tr", "de": "Das \"of\" dazwischen ist ein kleines Band; man nimmt es bei \"ein Kilo Äpfel\". Bei zwei Kilo wird auch das Kilo zur Mehrzahl:" },
- { "tr": "Beş kelimemiz tamam. Şimdi arkadaşlıkta en çok sorulan şeye geçiyoruz: ne kadar zamandır arkadaşsınız?", "kind": "say.tr", "de": "Unsere fünf Wörter sind fertig. Jetzt zur häufigsten Frage in einer Freundschaft: wie lange seid ihr schon befreundet?" },
- { "tr": "Bir restorana giriyorsun ve garson seni karşılıyor. Öğrendiğin kalıpları kullan, please demeyi unutma.", "kind": "say.tr", "de": "Du gehst in ein Restaurant und der Kellner begrüßt dich. Nimm die gelernten Wendungen, vergiss das please nicht." },
- { "tr": "Bugün have got ile kimin nesi olduğunu söylemeyi öğrendin: brother, sister, son, daughter ve children.", "kind": "say.tr", "de": "Heute hast du mit have got gelernt, wer wen hat: brother, sister, son, daughter und children." },
- { "tr": "Bunun karşıtı part-time, yani yarı zamanlı. İlanlarda ikisi de çok geçer. Telefonda şunu sorabilirsin:", "kind": "say.tr", "de": "Das Gegenteil davon ist part-time, also Teilzeit. In Anzeigen kommen beide sehr oft vor. Am Telefon kannst du das hier fragen:" },
- { "tr": "Burada a değil the kullandık, çünkü belli bir şoförden bahsediyoruz: senin taksinin şoförü. Lütfen de:", "kind": "say.tr", "de": "Hier steht nicht a, sondern the, denn wir sprechen von einem bestimmten Fahrer: dem deines Taxis. Bitte sag:" },
- { "tr": "Dersin sonunda \"iki kilo domates istiyorum\" diyebilecek, tazelik ve fiyat sorabileceksin. Hazır mısın?", "kind": "say.tr", "de": "Am Ende der Lektion kannst du \"Ich möchte zwei Kilo Tomaten\" sagen und nach Frische und Preis fragen. Bist du bereit?" },
- { "tr": "İş e-postasında birinden yanıt isterken emir cümlesi kurmayız, soru sorarız. Çünkü soru daha kibardır.", "kind": "say.tr", "de": "Willst du in einer Geschäftsmail eine Antwort, bildest du keinen Befehl, sondern eine Frage. Denn die Frage ist höflicher." },
- { "tr": "Kalkmak, açmak, kapamak, giymek... Bunların hepsi İngilizcede iki kelimeyle söyleniyor. Başlayalım mı?", "kind": "say.tr", "de": "Aufstehen, anmachen, ausmachen, anziehen... all das sagt das Englische mit zwei Wörtern. Fangen wir an?" },
- { "tr": "Kelime kelime 'temasta kal' ama anlamı 'irtibatta kal, haberleşelim'. Bir de sık duyacağın cevabı var:", "kind": "say.tr", "de": "Wörtlich 'bleib in Berührung', gemeint aber 'bleib in Kontakt, lass uns hören'. Es gibt auch eine Antwort, die du oft hörst:" },
- { "tr": "Merhaba! Bugün bir düğünü anlatmayı öğreniyoruz: tören neredeydi, gelin ne giydi, misafirler ne yaptı.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, eine Hochzeit zu erzählen: wo die Zeremonie war, was die Braut trug, was die Gäste taten." },
- { "tr": "Peki bayramda ne dilenir? Ramazan ve Kurban Bayramı için İngilizcede Arapçadan gelen kalıp kullanılır:", "kind": "say.tr", "de": "Und was wünscht man am Fest? Für das Ramadan- und das Opferfest nimmt das Englische eine Wendung aus dem Arabischen:" },
- { "tr": "Şimdi bir mağazaya giriyoruz. Satıcıyla konuşacak, iki üründen birini seçeceksin. Hazırsan başlıyoruz.", "kind": "say.tr", "de": "Jetzt gehen wir in einen Laden. Du sprichst mit dem Verkäufer und wählst eines von zwei Geräten. Wenn du bereit bist, los." },
- { "tr": "Şimdi bunu gerçek bir konuşmada kullanacaksın. Bir arkadaşınla mutfaktasın, birlikte kek yapıyorsunuz.", "kind": "say.tr", "de": "Das nutzt du jetzt in einem echten Gespräch. Du bist mit einer Freundin in der Küche und ihr backt zusammen einen Kuchen." },
- { "tr": "Şimdi cümleyi kendin kur. Karşındakine \"Beni duyabiliyor musun?\" diye sormak istiyorsun. Nasıl dersin?", "kind": "say.tr", "de": "Bilde den Satz jetzt selbst. Du willst dein Gegenüber fragen \"Kannst du mich hören?\". Wie sagst du das?" },
- { "tr": "Şimdi sıra sende. Arkadaşın için aldığın bir hediyeyi göstererek söyle: Bu, arkadaşım için bir hediye.", "kind": "say.tr", "de": "Jetzt bist du dran. Zeig auf ein Geschenk, das du für deinen Freund gekauft hast, und sag: Das ist ein Geschenk für meinen Freund." },
- { "tr": "Türkçesi 'uygulama' demek. Telefonda kullandığımız uygulamalar. Lütfen tek bir uygulamadan bahsedelim:", "kind": "say.tr", "de": "Heißt 'Anwendung', eine App also. Die Programme auf dem Telefon. Bitte sprechen wir von einer einzigen App:" },
- { "tr": "Üç küçük kelime var: already, yet ve just. Üçü de present perfect ile birlikte çalışır. Başlayalım mı?", "kind": "say.tr", "de": "Es gibt drei kleine Wörter: already, yet und just. Alle drei arbeiten mit dem present perfect. Fangen wir an?" },
- { "tr": "Üye olmayı, kitap ödünç almayı, iade etmeyi ve kütüphane kurallarını İngilizce anlatmayı öğreneceksin.", "kind": "say.tr", "de": "Du lernst, Mitglied zu werden, Bücher auszuleihen, sie zurückzugeben und die Regeln der Bibliothek auf Englisch zu erklären." },
- { "tr": "Yani 'Bugün kendimi daha iyi hissediyorum.' Burada 'better' işi yapıyor: dünle bugünü karşılaştırıyor.", "kind": "say.tr", "de": "Also 'Heute fühle ich mich besser.' Hier macht 'better' die Arbeit: es vergleicht gestern mit heute." },
- { "tr": "Yani 'ey', 'bii', 'sii', 'dii', 'ii'. En sık yapılan hata burada: E harfi 'e' değil, 'ii' diye okunur.", "kind": "say.tr", "de": "Also 'ei', 'bii', 'sii', 'dii', 'ii'. Hier passiert der häufigste Fehler: der Buchstabe E heißt nicht 'e', sondern 'ii'." },
- { "tr": "Yani \"Banka otelin yanında\". Türkçede sona gelen \"yanında\" İngilizcede ortaya geliyor: önce yer, sonra", "kind": "say.tr", "de": "Also \"Die Bank ist neben dem Hotel\". Unser 'neben' steht wie im Englischen in der Mitte: erst der Ort, dann" },
- { "tr": "Yet henüz demek, olumsuz cümlede ve soruda, hep cümlenin sonunda. Just ise az önce demek, yine ortada.", "kind": "say.tr", "de": "Yet heißt noch nicht, steht im verneinten Satz und in der Frage, immer am Schluss. Just heißt gerade eben und steht wieder in der Mitte." },
- { "tr": "— çoktan demek. Bir işi beklenenden önce bitirdiysen kullanırsın. Present perfect ile birlikte gelir ve", "kind": "say.tr", "de": "— heißt schon, bereits. Du nimmst es, wenn du eine Sache früher als erwartet fertig hast. Es kommt mit dem present perfect und" },
- { "tr": "\"Sessiz\" demek. Sokakta gürültü yoksa evin sessizdir. Sondaki t'yi yutma, hafifçe duyur. Söyle bakalım:", "kind": "say.tr", "de": "\"Ruhig\" heißt das. Ist auf der Straße kein Lärm, ist dein Haus ruhig. Verschluck das t am Ende nicht, lass es leise hören. Sag mal:" },
- { "tr": "Ama bir de hâlâ devam eden şeyler var: 'üç yıldır buradayım' gibi. Onun için başka bir yapı kullanılır.", "kind": "say.tr", "de": "Aber es gibt auch Dinge, die noch andauern: 'ich bin seit drei Jahren hier' zum Beispiel. Dafür nimmt man eine andere Form." },
- { "tr": "Başkası için konuşurken de hiçbir şey değişmez. Türkçe düşünüp \"o\" için fiile bir şey eklemeye çalışma:", "kind": "say.tr", "de": "Sprichst du von jemand anderem, ändert sich auch nichts. Häng dem Verb für \"er\" oder \"sie\" nichts an:" },
- { "tr": "Bir de çok işine yarayacak bir nokta var. İngilizler iade ederken ürünü kullanıp kullanmadığını söyler.", "kind": "say.tr", "de": "Und noch ein Punkt, der dir sehr hilft. Beim Zurückgeben sagen die Engländer, ob sie die Ware benutzt haben." },
- { "tr": "Bu sonuncusu Türkçeden farklı çalışıyor. İngilizcede yurt dışında derken başına in koymuyorsun. Sadece:", "kind": "say.tr", "de": "Das letzte funktioniert anders als bei uns. Für 'im Ausland' setzt das Englische kein in davor. Nur:" },
- { "tr": "Bu, can not kelimelerinin kısaltılmış hâli ve İngilizcede neredeyse hep böyle kısaltılır. Sen de söyle:", "kind": "say.tr", "de": "Das ist die Kurzform von can not, und im Englischen wird fast immer so gekürzt. Sag du auch:" },
- { "tr": "Cuma günü hazır olacak. Ya da kesinleşmiş bir plan varsa: We're going to send it to the service centre.", "kind": "say.tr", "de": "Am Freitag ist es fertig. Oder wenn es ein fester Plan ist: We're going to send it to the service centre." },
- { "tr": "Emma'yı on yıldır tanıyorum. Türkçede 'tanıyorum' dersin ama İngilizcede burada mutlaka 'have' gerekir.", "kind": "say.tr", "de": "Ich kenne Emma seit zehn Jahren. Wir sagen 'ich kenne', im Englischen steht hier aber unbedingt ein 'have'." },
- { "tr": "En sonunda taşındık. Finally'yi sadece gerçekten son adım için kullan; hikâyenin ortasında kullanılmaz.", "kind": "say.tr", "de": "Am Ende sind wir eingezogen. Nimm Finally nur für den wirklich letzten Schritt; mitten in der Geschichte steht es nicht." },
- { "tr": "Güzel. Şimdi kuralların kalbi: must. Türkçedeki -meli, -malı eki gibi düşün. You must, yani yapmalısın.", "kind": "say.tr", "de": "Gut. Jetzt das Herz der Regeln: must. Denk an unser 'du musst'. You must, also du musst." },
- { "tr": "Hadi sen sor. Karşındakine, ne kadar süredir burada çalışıyorsun, diye sormak istiyorsun. Nasıl dersin?", "kind": "say.tr", "de": "Frag jetzt du. Du willst dein Gegenüber fragen, wie lange es schon hier arbeitet. Wie sagst du das?" },
- { "tr": "İngilizcede uykuyu saatle anlatırız: \"kaç saat uyuyorsun\" sorusunun cevabı sekiz saat gibi bir sayıdır.", "kind": "say.tr", "de": "Im Englischen erzählen wir den Schlaf in Stunden: die Antwort auf \"wie viele Stunden schläfst du\" ist eine Zahl wie acht Stunden." },
- { "tr": "kelimesinin kısaltması. İngilizce konuşurken neredeyse herkes kısaltmayı kullanır. Ve 'işe gitmek' için", "kind": "say.tr", "de": "die Kurzform. Beim englischen Sprechen nimmt fast jeder die Kurzform. Und für 'zur Arbeit kommen' heißt es" },
- { "tr": "Merhaba, hoş geldin. Bugün geçmişte bir şeyin ne zaman olduğunu söylemeyi öğreneceğiz: ago, last ve in.", "kind": "say.tr", "de": "Hallo, willkommen. Heute lernen wir zu sagen, wann etwas in der Vergangenheit war: ago, last und in." },
- { "tr": "Merhaba! Bugün pazardayız. Bu derste fiyat sormayı öğreneceksin: ne kadar, kaç tane, ucuz mu pahalı mı.", "kind": "say.tr", "de": "Hallo! Heute sind wir auf dem Markt. In dieser Lektion lernst du, nach dem Preis zu fragen: wie viel, wie viele, billig oder teuer." },
- { "tr": "Satıcıya hangisinin daha ucuz, hangisinin daha iyi olduğunu sor ve kararını söyle. Hazırsan başlayalım.", "kind": "say.tr", "de": "Frag den Verkäufer, welches billiger und welches besser ist, und sag deine Entscheidung. Wenn du bereit bist, los." },
- { "tr": "Sıra sende. Satıcıya şunu söylemek istiyorsun: Bu tarife diğerinden daha pahalı. İngilizcesini sen kur.", "kind": "say.tr", "de": "Du bist dran. Du willst dem Verkäufer sagen: Dieser Tarif ist teurer als der andere. Bilde den englischen Satz selbst." },
- { "tr": "Son kuruluş sende. İyi haberi ver: \"Toparlandım, iyileştim.\" İlk kelimemizi present perfect ile kullan.", "kind": "say.tr", "de": "Der letzte Satz gehört dir. Gib die gute Nachricht: \"Ich habe mich erholt, ich bin wieder gesund.\" Nimm unser erstes Wort mit dem present perfect." },
- { "tr": "Şimdi ikisini birleştirelim. İngilizcede hal hatır sorusuna cevap verirken teşekkür etmek çok doğaldır:", "kind": "say.tr", "de": "Verbinden wir jetzt beides. Im Englischen ist es sehr natürlich, sich beim Antworten auf die Befindensfrage zu bedanken:" },
- { "tr": "Şimdi son cümleyi kur. Hediyeyi karşındakine uzatıyorsun ve diyorsun ki: Bu senin için özel bir hediye.", "kind": "say.tr", "de": "Bilde jetzt den letzten Satz. Du reichst das Geschenk hinüber und sagst: Das ist ein besonderes Geschenk für dich." },
- { "tr": "Türkçesi 'izin vermek' demek. Tabelalarda çoğunlukla 'allowed' biçimini görürsün: izin verilmiş. Lütfen", "kind": "say.tr", "de": "Heißt 'erlauben'. Auf Schildern siehst du meist die Form 'allowed': erlaubt. Bitte sag" },
- { "tr": "Ve İngilizcede çok önemli bir şeyi: gün ve zaman söylerken hangi küçük kelimenin geldiğini. On, at, in.", "kind": "say.tr", "de": "Und etwas im Englischen sehr Wichtiges: welches kleine Wort vor Tag und Uhrzeit kommt. On, at, in." },
- { "tr": "Ve kelimeler: festival, tradition, family, special, food. Şimdi bunları gerçek bir sohbette kullanalım.", "kind": "say.tr", "de": "Und die Wörter: festival, tradition, family, special, food. Nutzen wir sie jetzt in einem echten Gespräch." },
- { "tr": "Yani 'İstasyonun yolunu gösterebilir misiniz?' Sondaki to kelimesi 'nereye' anlamını taşır; onu unutma.", "kind": "say.tr", "de": "Also 'Können Sie mir den Weg zum Bahnhof zeigen?' Das to am Ende trägt das 'wohin'; vergiss es nicht." },
- { "tr": "Bir şeye çok dikkat: must'tan sonra fiilin yalın hali gelir. Araya to koymuyoruz ve fiile s eklemiyoruz.", "kind": "say.tr", "de": "Pass gut auf: nach must steht das Verb in der nackten Form. Wir setzen kein to dazwischen und hängen ans Verb kein s." },
- { "tr": "Bu \"it is\"in kısaltması. Türkçede \"saat üç\" derken \"saat\" kelimesini söylüyoruz ya, İngilizcede o görevi", "kind": "say.tr", "de": "Das ist die Kurzform von \"it is\". Wie unser 'es ist' in 'es ist drei Uhr' — genau diese Arbeit macht im Englischen" },
- { "tr": "Bu sorulara kısa cevap vermek çok kolay. Cümleyi tekrar etmene gerek yok, sadece did ya da didn't yeter.", "kind": "say.tr", "de": "Kurz zu antworten ist sehr leicht. Du musst den Satz nicht wiederholen, es reicht did oder didn't." },
- { "tr": "Bunu bir şeyin olmasını umuyorsan kullanırsın. Arkasına fiilin yalın hali gelir: to find, to go, to see.", "kind": "say.tr", "de": "Das nimmst du, wenn du hoffst, dass etwas geschieht. Dahinter kommt das Verb nackt: to find, to go, to see." },
- { "tr": "Çok iyi iş çıkardın. Kısa bir özet: already çoktan demek, olumlu cümlede have ile fiilin arasında durur.", "kind": "say.tr", "de": "Sehr gut gemacht. Eine kurze Zusammenfassung: already heißt schon und steht im bejahten Satz zwischen have und Verb." },
- { "tr": "Ders boyunca ben söyleyeceğim, sen tekrar edeceksin. Sonra da kendi cümlelerini kuracaksın. Hazır mısın?", "kind": "say.tr", "de": "Die ganze Lektion sage ich vor und du sprichst nach. Danach baust du deine eigenen Sätze. Bist du bereit?" },
- { "tr": "Dikkat: don't koyunca fiil hiç değişmez, yalın kalır. Türkçedeki gibi fiilin sonuna bir şey eklemiyoruz.", "kind": "say.tr", "de": "Achtung: mit don't ändert sich das Verb überhaupt nicht, es bleibt nackt. Anders als bei uns kommt hinten nichts ans Verb." },
- { "tr": "Dikkat: used to'dan sonra fiil her zaman yalın haldedir. played değil, play. Çünkü geçmiş anlamını zaten", "kind": "say.tr", "de": "Achtung: nach used to steht das Verb immer nackt. Nicht played, sondern play. Denn die Bedeutung der Vergangenheit trägt schon" },
- { "tr": "Fark ettin mi? When'den sonra kısa olay geldi: the phone rang. Süren iş ise arkaya geçti: I was cooking.", "kind": "say.tr", "de": "Hast du es gemerkt? Nach When kam das kurze Ereignis: the phone rang. Die dauernde Sache rutschte nach hinten: I was cooking." },
- { "tr": "Harika iş çıkardın. Artık birinin nasıl biri olduğunu anlatabilir, sorabilir ve kısa cevap verebilirsin:", "kind": "say.tr", "de": "Das war großartig. Du kannst jetzt erzählen, wie jemand ist, danach fragen und kurz antworten:" },
- { "tr": "Kelimesi kelimesine 'ben doğmuş idim' gibi görünür ama anlamı sadece 'doğdum'. Her zaman böyle söylenir.", "kind": "say.tr", "de": "Wörtlich sieht es aus wie 'ich war geboren', gemeint ist aber nur 'ich wurde geboren'. Man sagt es immer so." },
- { "tr": "Kibarca oda isteyeceksin, kaç gece kalacağını söyleyeceksin ve fiyata kahvaltı dahil mi diye soracaksın.", "kind": "say.tr", "de": "Du wirst höflich ein Zimmer verlangen, sagen, wie viele Nächte du bleibst, und fragen, ob das Frühstück im Preis ist." },
- { "tr": "Küçük bir deneme. \"Dün yatakta kaldım\" nasıl dersin? Dün belli bir gün, yani geçmiş zaman kullanacaksın.", "kind": "say.tr", "de": "Ein kleiner Versuch. Wie sagst du \"Gestern bin ich im Bett geblieben\"? Gestern ist ein bestimmter Tag, also nimmst du die Vergangenheit." },
- { "tr": "Müdürle görüşmek istiyorum. 'I'd like to' resmî ve kibar bir istektir; 'I want' demekten çok daha nazik.", "kind": "say.tr", "de": "Ich möchte den Leiter sprechen. 'I'd like to' ist eine förmliche und höfliche Bitte; viel netter, als 'I want' zu sagen." },
- { "tr": "Şimdi hepsini birleştiriyoruz. Adın Deniz, Türkiyelisin. Selam ver, adını söyle ve nereli olduğunu ekle.", "kind": "say.tr", "de": "Jetzt setzen wir alles zusammen. Du heißt Deniz und kommst aus der Türkei. Grüß, sag deinen Namen und woher du kommst." },
- { "tr": "Şimdi tam bir cümle kuralım. Geçmişte verdiğin bir sipariş için fiilin sonuna -ed gelir: order, ordered.", "kind": "say.tr", "de": "Bilden wir jetzt einen ganzen Satz. Für eine Bestellung in der Vergangenheit kommt ans Verb ein -ed: order, ordered." },
- { "tr": "Tek bir elmadan söz ederken önüne küçük bir kelime koyarız. Türkçede \"bir elma\" deriz ya, İngilizcede de", "kind": "say.tr", "de": "Sprichst du von einem einzigen Apfel, kommt ein kleines Wort davor. Wie wir \"ein Apfel\" sagen, sagt das Englische" },
- { "tr": "Vazgeçtiysen ya da geri göndermek istiyorsan: cancel iptal etmek, return iade etmek, refund para iadesi.", "kind": "say.tr", "de": "Hast du es dir anders überlegt oder willst zurückschicken: cancel stornieren, return zurückgeben, refund Rückerstattung." },
- { "tr": "Bir de kısaltmalara alış. Konuşurken kimse I am demez, I'm der. You are yerine you're, it is yerine it's.", "kind": "say.tr", "de": "Und gewöhn dich an die Kurzformen. Beim Sprechen sagt niemand I am, sondern I'm. Statt You are you're, statt it is it's." },
- { "tr": "Fiyatına göre iyi, parasının hakkını veriyor demek. Ucuz olduğunu değil, ödediğine değdiğini söylüyorsun.", "kind": "say.tr", "de": "Heißt, es ist sein Geld wert. Du sagst nicht, dass es billig ist, sondern dass es das Bezahlte wert ist." },
- { "tr": "G 'cii', J 'cey', I 'ay', Y 'vay', W 'dabılyu', H 'eyç' diye okunur. G ile J'yi karıştırmamaya dikkat et.", "kind": "say.tr", "de": "G heißt 'dschii', J 'dschei', I 'ai', Y 'wai', W 'dabbeljuu', H 'eitsch'. Pass auf, G und J nicht zu verwechseln." }
+ {
+  "tr": "Ve tek bir kural: he, she, it ile fiilin sonuna -s eklenir. Diğer herkeste fiil olduğu gibi kalır.",
+  "kind": "say.tr",
+  "de": "Und eine einzige Regel: bei he, she, it kommt ans Verb ein -s. Bei allen anderen bleibt das Verb, wie es ist."
+ },
+ {
+  "tr": "Yani kısaca: topla ve takımla oynanan sporlar play, -ing ile biten hareket sporları go, gerisi do.",
+  "kind": "say.tr",
+  "de": "Kurz gesagt: Sport mit Ball und Mannschaft nimmt play, Bewegung auf -ing nimmt go, der Rest do."
+ },
+ {
+  "tr": "Yani: Bir şey çıktı, işim çıktı. Bu bir present perfect cümlesi: az önce oldu ve şu anı etkiliyor.",
+  "kind": "say.tr",
+  "de": "Also: Es ist etwas dazwischengekommen. Das ist ein present perfect: eben passiert und wirkt auf jetzt."
+ },
+ {
+  "tr": "yeter. Şimdi bunu gerçek bir sahnede kullanalım: akşam bir arkadaşın arıyor ve ilk gününü soruyor.",
+  "kind": "say.tr",
+  "de": "reicht. Nutzen wir das jetzt in einer echten Szene: abends ruft ein Freund an und fragt nach deinem ersten Tag."
+ },
+ {
+  "tr": "'Cuma'ya kadar yanıtlayabilir misiniz?' demek. Buradaki 'by' son tarihi gösterir. Lütfen tekrar et.",
+  "kind": "say.tr",
+  "de": "Heißt 'Könnten Sie bis Freitag antworten?'. Dieses 'by' nennt die Frist. Bitte wiederhole."
+ },
+ {
+  "tr": "'Haftada iki kez rapor yazarım. E-postama günde üç kez bakarım.' Görüyorsun: önce iş, sonra sıklık.",
+  "kind": "say.tr",
+  "de": "'Zweimal die Woche schreibe ich Berichte. Dreimal am Tag sehe ich in meine Mail.' Du siehst: erst die Arbeit, dann die Häufigkeit."
+ },
+ {
+  "tr": "'I'd like', 'I would like'in kısaltılmışı; İngilizcede bu kısaltmalar günlük konuşmanın normalidir.",
+  "kind": "say.tr",
+  "de": "'I'd like' ist die Kurzform von 'I would like'; solche Kurzformen sind im Englischen der Alltag."
+ },
+ {
+  "tr": "'together' birlikte demek. Arkadaşınla tek hesap ödeyeceksen bu kelime lazım. Lütfen 'together' de.",
+  "kind": "say.tr",
+  "de": "'together' heißt zusammen. Zahlt ihr mit einer Rechnung, brauchst du dieses Wort. Bitte sag 'together'."
+ },
+ {
+  "tr": "Bir de beğenmediğin şeyleri anlatalım. Geçmişte olumsuz için didn't kullanırız ve fiil yalın kalır:",
+  "kind": "say.tr",
+  "de": "Erzählen wir auch, was dir nicht gefiel. Für die Verneinung in der Vergangenheit nehmen wir didn't, und das Verb bleibt nackt:"
+ },
+ {
+  "tr": "Bu cümle zaten kibar, çünkü can you ile soruyorsun. Daha da yumuşatmak istersen sonuna please ekle:",
+  "kind": "say.tr",
+  "de": "Dieser Satz ist schon höflich, denn du fragst mit can you. Willst du ihn noch weicher, häng please an:"
+ },
+ {
+  "tr": "Bu yanlış — hem since yerine for gelmeli hem de süregelen bir durum present perfect ister. Doğrusu:",
+  "kind": "say.tr",
+  "de": "Das ist falsch — statt since muss for stehen, und ein andauernder Zustand verlangt das present perfect. Richtig heißt es:"
+ },
+ {
+  "tr": "Bunun soru hali de aynı mantıkla kuruluyor. Karşındakine \"Anlıyor musun?\" demek istersen, başa yine",
+  "kind": "say.tr",
+  "de": "Die Frage baut sich nach derselben Logik. Willst du \"Verstehst du?\" sagen, kommt nach vorn wieder"
+ },
+ {
+  "tr": "Deneyelim. Telefonu açtın ve kendini tanıtıyorsun. Adın Ayşe. Merhaba, ben Ayşe'yi İngilizce söyle.",
+  "kind": "say.tr",
+  "de": "Probieren wir es. Du hast abgehoben und stellst dich vor. Du heißt Ayşe. Sag \"Hallo, hier ist Ayşe\" auf Englisch."
+ },
+ {
+  "tr": "Ders sonunda \"Parolanı değiştirmelisin\" ya da \"Bunu kimseyle paylaşma\" diyebileceksin. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Am Ende der Lektion kannst du \"Du solltest dein Passwort ändern\" oder \"Teil das mit niemandem\" sagen. Bist du bereit?"
+ },
+ {
+  "tr": "didn't aslında did not'ın kısaltmasıdır. Konuşurken neredeyse herkes didn't der, sen de öyle söyle.",
+  "kind": "say.tr",
+  "de": "didn't ist eigentlich die Kurzform von did not. Beim Sprechen sagt fast jeder didn't, sag du es auch so."
+ },
+ {
+  "tr": "Dikkat: \"should\"dan sonra fiil yalın haliyle gelir. Arada \"to\" yok, fiilin sonuna hiçbir ek gelmez.",
+  "kind": "say.tr",
+  "de": "Achtung: nach \"should\" steht das Verb nackt. Kein \"to\" dazwischen, und ans Verb kommt keine Endung."
+ },
+ {
+  "tr": "Fiyat konuşurken en çok better lazım olacak: daha ucuz olan çoğu zaman daha iyi bir seçim değildir.",
+  "kind": "say.tr",
+  "de": "Beim Reden über Preise brauchst du better am meisten: das Billigere ist selten die bessere Wahl."
+ },
+ {
+  "tr": "Küçük ama önemli bir nokta: \"a\" ve \"an\". Sesli harfle başlayan bir kelimeden önce a değil an deriz.",
+  "kind": "say.tr",
+  "de": "Ein kleiner, aber wichtiger Punkt: \"a\" und \"an\". Vor einem Wort, das mit einem Vokal beginnt, sagen wir nicht a, sondern an."
+ },
+ {
+  "tr": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim; İngilizcesi doğru mu yanlış mı karar ver.",
+  "kind": "say.tr",
+  "de": "Eine kleine Kontrolle. Ich sage dir einen englischen Satz; entscheide, ob das Englisch stimmt oder nicht."
+ },
+ {
+  "tr": "Menü geldi ama her şey yabancı. O zaman garsona tavsiye sorarsın. \"Tavsiye etmek\" fiili İngilizcede",
+  "kind": "say.tr",
+  "de": "Die Karte ist da, aber alles ist fremd. Dann fragst du den Kellner nach einer Empfehlung. Das Verb \"empfehlen\" heißt im Englischen"
+ },
+ {
+  "tr": "Merhaba! Bugün zor ama çok işine yarayacak bir şey yapacağız: bir kuruma resmi dille şikâyet etmek.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute machen wir etwas Schweres, das dir sehr helfen wird: eine förmliche Beschwerde an eine Behörde."
+ },
+ {
+  "tr": "Satıcı sana ne kadar zamandır bu operatörde olduğunu sorabilir. Cevapta present perfect kullanılır:",
+  "kind": "say.tr",
+  "de": "Der Verkäufer fragt dich vielleicht, wie lange du schon bei diesem Anbieter bist. In der Antwort steht das present perfect:"
+ },
+ {
+  "tr": "Sıra sende. Telefonu uzatıyorsun ve yakındaki kişiyi tanıtıyorsun: Bu benim annem. İngilizce söyle.",
+  "kind": "say.tr",
+  "de": "Du bist dran. Du reichst das Telefon weiter und stellst die Person neben dir vor: Das ist meine Mutter. Sag es auf Englisch."
+ },
+ {
+  "tr": "Sıra Türkçeyle aynı: önce su, sonra fatura. İngilizcede iki kelime yan yana durur, arada ek yoktur.",
+  "kind": "say.tr",
+  "de": "Die Reihenfolge ist wie bei uns: erst Wasser, dann Rechnung. Im Englischen stehen zwei Wörter nebeneinander, bei uns wachsen sie zusammen."
+ },
+ {
+  "tr": "Son olarak, karşındaki kişiye de sorabilmen lazım. Mahallen nasıl bir yer sorusu İngilizcede şöyle:",
+  "kind": "say.tr",
+  "de": "Zuletzt musst du auch dein Gegenüber fragen können. Die Frage nach seinem Viertel geht im Englischen so:"
+ },
+ {
+  "tr": "Şimdi asıl kelime. Bugün için I am derdik, değil mi? Ben ...-ım. Dün için ise am kelimesi was olur.",
+  "kind": "say.tr",
+  "de": "Jetzt das eigentliche Wort. Für heute sagten wir I am, nicht wahr? Ich bin. Für gestern wird aus am das Wort was."
+ },
+ {
+  "tr": "Şimdi bunu bir cümlede kullanalım. İngilizcede araçla gitmeyi anlatırken \"by\" edatını kullanıyoruz:",
+  "kind": "say.tr",
+  "de": "Nutzen wir das jetzt in einem Satz. Für die Fahrt mit einem Fahrzeug nimmt das Englische die Präposition \"by\":"
+ },
+ {
+  "tr": "Şimdi de kendi gününü anlat. Bir arkadaşın sana hafta sonunu soracak; öğrendiğin kelimelerle anlat.",
+  "kind": "say.tr",
+  "de": "Und jetzt erzähl deinen eigenen Tag. Ein Freund fragt dich nach dem Wochenende; erzähl mit den gelernten Wörtern."
+ },
+ {
+  "tr": "Şimdi sıra sende. Görevliye şunu söylemek istiyorsun: Bunu iade etmek istiyorum. İngilizcesini kur.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Du willst der Verkäuferin sagen: Ich möchte das zurückgeben. Bilde den englischen Satz."
+ },
+ {
+  "tr": "Şimdi sıra sende. Komşunu görüyorsun ve elin kutu dolu. 'Bana yardım edebilir misin?' nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Du siehst deinen Nachbarn und hast die Hände voller Kartons. Wie sagst du 'Kannst du mir helfen?'?"
+ },
+ {
+  "tr": "Şimdi tekrar sen kuracaksın. Kahve içmiyorsun neredeyse hiç. Şunu söyle: Neredeyse hiç kahve içmem.",
+  "kind": "say.tr",
+  "de": "Jetzt baust du wieder. Kaffee trinkst du so gut wie nie. Sag das hier: Ich trinke fast nie Kaffee."
+ },
+ {
+  "tr": "Ummak, beklemek demek. Hayal kırıklığını kibarca anlatmanın en güzel yolu bu fiilin geçmiş hâlidir:",
+  "kind": "say.tr",
+  "de": "Heißt hoffen, erwarten. Enttäuschung höflich zu sagen geht am schönsten mit der Vergangenheit dieses Verbs:"
+ },
+ {
+  "tr": "Ve üç şey yapabiliyorsun: görevini sıklık kelimesiyle anlatmak, 'twice a week' gibi sayı vermek, ve",
+  "kind": "say.tr",
+  "de": "Und drei Dinge kannst du: deine Aufgabe mit einem Häufigkeitswort erzählen, eine Zahl wie 'twice a week' nennen, und"
+ },
+ {
+  "tr": "Yani pazardayım. Burada I am, konuşurken kısalıp I'm oluyor. İngilizcede bu kısaltmalar çok normal.",
+  "kind": "say.tr",
+  "de": "Also, ich bin auf dem Markt. Aus I am wird beim Sprechen I'm. Solche Kurzformen sind im Englischen ganz normal."
+ },
+ {
+  "tr": "Ama yaş sorarken İngilizler farklı bir yol seçer. Eski, yaşlı demek olan old kelimesini kullanırlar:",
+  "kind": "say.tr",
+  "de": "Beim Fragen nach dem Alter geht das Englische aber denselben Weg wie wir: es nimmt old, also alt:"
+ },
+ {
+  "tr": "Bilgi işlemi arayacağım. Bu iki gelecek biçimini zaten biliyorsun, burada da aynı şekilde çalışıyor.",
+  "kind": "say.tr",
+  "de": "Ich rufe die IT an. Diese zwei Zukunftsformen kennst du schon, und hier arbeiten sie genauso."
+ },
+ {
+  "tr": "Bu beş cümleyle dünyanın her restoranında idare edersin. Şimdi bunları gerçek bir sahnede deneyelim.",
+  "kind": "say.tr",
+  "de": "Mit diesen fünf Sätzen kommst du in jedem Restaurant der Welt zurecht. Probieren wir sie in einer echten Szene."
+ },
+ {
+  "tr": "Deneyelim. Diyelim randevunu tamamen iptal etmek istiyorsun. Kibar biçimiyle İngilizce nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Probieren wir es. Sagen wir, du willst deinen Termin ganz absagen. Wie sagst du das höflich auf Englisch?"
+ },
+ {
+  "tr": "Dikkat et, burada wait fiil değil, beklemenin kendisi. Kafeler, istasyonlar bu cümleyi çok kullanır.",
+  "kind": "say.tr",
+  "de": "Achtung, wait ist hier kein Verb, sondern das Warten selbst. Cafés und Bahnhöfe nutzen diesen Satz sehr oft."
+ },
+ {
+  "tr": "Dikkat: floor hem kat hem yer, zemin demek. Kat söylerken sıra sayısı kullanılır ve başına on gelir.",
+  "kind": "say.tr",
+  "de": "Achtung: floor heißt Stock und Boden zugleich. Beim Stockwerk nimmt man die Ordnungszahl und davor ein on."
+ },
+ {
+  "tr": "İlk kelimemiz: already. Türkçesi çoktan, zaten demek. Bir iş beklenenden önce bittiğinde kullanılır.",
+  "kind": "say.tr",
+  "de": "Unser erstes Wort: already. Heißt schon, bereits. Man nimmt es, wenn etwas früher als erwartet fertig ist."
+ },
+ {
+  "tr": "İngilizcede kibar bir ret neredeyse her zaman yumuşak bir girişle başlar. İlk kelimemiz çok tanıdık:",
+  "kind": "say.tr",
+  "de": "Eine höfliche Absage beginnt im Englischen fast immer mit einem weichen Anfang. Unser erstes Wort kennst du gut:"
+ },
+ {
+  "tr": "kalkmak oluyor. Yani anlamı parçalarından çıkaramazsın; ikisini tek bir kelime gibi ezberleyeceksin.",
+  "kind": "say.tr",
+  "de": "heißt aufstehen. Die Bedeutung kannst du also nicht aus den Teilen ablesen; die zwei lernst du wie ein einziges Wort."
+ },
+ {
+  "tr": "Kapı demek. Biniş kartında hep bir numarayla birlikte yazar: gate twelve, gate B five. Sen de söyle:",
+  "kind": "say.tr",
+  "de": "Heißt Tor. Auf der Bordkarte steht es immer mit einer Nummer: gate twelve, gate B five. Sag du auch:"
+ },
+ {
+  "tr": "Kelimesi kelimesine köşedeki dükkân demek, çünkü bakkallar genelde sokak köşesindedir. Sen de söyle.",
+  "kind": "say.tr",
+  "de": "Wörtlich der Laden an der Ecke, denn kleine Läden stehen meist an einer Straßenecke. Sag du auch."
+ },
+ {
+  "tr": "Merhaba! Bugün çok işine yarayacak bir şey yapacağız: kısa ve kibar bir e-posta yazmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute machen wir etwas sehr Nützliches: wir lernen, eine kurze und höfliche Mail zu schreiben."
+ },
+ {
+  "tr": "never tek başına \"asla\" der, without \"-sız\" demektir ve cümlenin başındaki don't birine \"yapma\" der.",
+  "kind": "say.tr",
+  "de": "never allein sagt \"nie\", without heißt \"ohne\", und das don't am Satzanfang sagt jemandem \"tu das nicht\"."
+ },
+ {
+  "tr": "Önce kısa bir hatırlatma. Present perfect'i biliyorsun: have ya da has, artından fiilin üçüncü hâli.",
+  "kind": "say.tr",
+  "de": "Zuerst eine kurze Erinnerung. Das present perfect kennst du: have oder has, dahinter die dritte Form des Verbs."
+ },
+ {
+  "tr": "Son bir nokta: a ve an sadece tek bir şey için kullanılır. Çoğulda onları atıyoruz. Bu benim kitabım",
+  "kind": "say.tr",
+  "de": "Ein letzter Punkt: a und an gelten nur für eine einzige Sache. In der Mehrzahl lassen wir sie weg. Das ist mein Buch"
+ },
+ {
+  "tr": "Soru sormaya geçelim. Geniş zamanda soru sorarken cümlenin başına küçük bir yardımcı kelime koyarız:",
+  "kind": "say.tr",
+  "de": "Kommen wir zur Frage. Für eine Frage im einfachen Präsens setzen wir vorn ein kleines Helferwort:"
+ },
+ {
+  "tr": "Şimdi sıra sende. Kirayı sorarken kullandığımız kalıbı hatırla ve depozitoyu sor: depozito ne kadar?",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Denk an die Wendung, mit der wir nach der Miete gefragt haben, und frag nach der Kaution: wie hoch ist die Kaution?"
+ },
+ {
+  "tr": "Yani şunu diyebileceksin: bu telefon şundan daha ucuz, bu iş şundan daha zor, bugün dünden daha iyi.",
+  "kind": "say.tr",
+  "de": "Du wirst also sagen können: dieses Handy ist billiger als jenes, diese Arbeit ist schwerer als jene, heute ist besser als gestern."
+ },
+ {
+  "tr": "Yani: bitirdim. İş bitti, sonucu şu anda geçerli. Bugün bu cümlenin içine üç kelime yerleştireceğiz.",
+  "kind": "say.tr",
+  "de": "Also: ich bin fertig. Die Sache ist erledigt, das Ergebnis gilt jetzt. Heute setzen wir drei Wörter in diesen Satz."
+ },
+ {
+  "tr": "Yani: sonra. Türkçede \"sonra\" cümlenin sonuna da gidebilir ama İngilizcede then genelde başta durur:",
+  "kind": "say.tr",
+  "de": "Also: dann. Im Deutschen steht 'dann' meist auch vorn, und im Englischen genauso:"
+ },
+ {
+  "tr": "Yeni kelimelerin: while, suddenly, happen, meet, leave. Şimdi bunları gerçek bir sohbette deneyelim.",
+  "kind": "say.tr",
+  "de": "Deine neuen Wörter: while, suddenly, happen, meet, leave. Probieren wir sie jetzt in einem echten Gespräch."
+ },
+ {
+  "tr": ". Türkçesiyle neredeyse aynı, tablet demek. Sadece söyleyişi biraz farklı. Lütfen benden sonra söyle.",
+  "kind": "say.tr",
+  "de": ". Fast wie bei uns, es heißt Tablette. Nur die Aussprache ist etwas anders. Bitte sprich mir nach."
+ },
+ {
+  "tr": "Aynı yapının olumsuzu için haven't kullanılır ve cümlenin sonuna yet eklenir. Yet burada henüz demek.",
+  "kind": "say.tr",
+  "de": "Für die Verneinung derselben Form nimmt man haven't und hängt hinten yet an. Yet heißt hier noch nicht."
+ },
+ {
+  "tr": "Bir ara büyük bir şirkette çalışmışlığın olduğunu söylemek istiyorsun — ne zaman olduğu önemli değil:",
+  "kind": "say.tr",
+  "de": "Du willst sagen, dass du irgendwann einmal in einer großen Firma gearbeitet hast — wann, ist egal:"
+ },
+ {
+  "tr": "Bir de nerede tanıştığınızı anlatmak var. Bu geçmişte olup bitti, o yüzden geçmiş zaman kullanıyoruz:",
+  "kind": "say.tr",
+  "de": "Wo ihr euch kennengelernt habt, erzählst du auch. Das ist vorbei, darum nehmen wir die Vergangenheit:"
+ },
+ {
+  "tr": "Bir de uzaktaki şeyler var. Fotoğrafın öbür ucundaki kişiyi gösteriyorsun mesela. O zaman that deriz.",
+  "kind": "say.tr",
+  "de": "Es gibt auch Dinge in der Ferne. Du zeigst zum Beispiel auf die Person am anderen Rand des Fotos. Dann sagen wir that."
+ },
+ {
+  "tr": "Bir şey bir iki dakika önce olduysa just kullanırız. Yeri already ile aynı: have ile fiilin arasında.",
+  "kind": "say.tr",
+  "de": "Ist etwas vor ein, zwei Minuten passiert, nehmen wir just. Sein Platz ist derselbe wie bei already: zwischen have und Verb."
+ },
+ {
+  "tr": "Bu kelimenin iki anlamı var: hem 'kat' hem de 'yer, zemin'. Bugün 'kat' anlamını kullanacağız. Lütfen",
+  "kind": "say.tr",
+  "de": "Dieses Wort hat zwei Bedeutungen: 'Stock' und 'Boden'. Heute nehmen wir 'Stock'. Bitte sag"
+ },
+ {
+  "tr": "Check-in masasında ne söyleyeceğini, güvenlik kontrolünde sana ne diyeceklerini birlikte çalışacağız.",
+  "kind": "say.tr",
+  "de": "Wir üben zusammen, was du am Check-in-Schalter sagst und was man dir bei der Sicherheitskontrolle sagt."
+ },
+ {
+  "tr": "Görevli sana yardımcı olamıyorsa yöneticiyi istersin. Yönetici İngilizcede manager. Lütfen tekrar et:",
+  "kind": "say.tr",
+  "de": "Hilft dir die Angestellte nicht weiter, verlangst du den Leiter. Leiter heißt auf Englisch manager. Bitte wiederhole:"
+ },
+ {
+  "tr": "Harika iş çıkardın. Şimdi parkta biriyle konuşuyoruz; gördüklerini anlat, bir de soru sormayı unutma.",
+  "kind": "say.tr",
+  "de": "Das war großartig. Jetzt sprechen wir mit jemandem im Park; erzähl, was du siehst, und vergiss nicht zu fragen."
+ },
+ {
+  "tr": "I'm aslında I am'in kısası. Konuşurken neredeyse herkes I'm der. Yazarken de rahatça kullanabilirsin.",
+  "kind": "say.tr",
+  "de": "I'm ist eigentlich die Kurzform von I am. Beim Sprechen sagt fast jeder I'm. Beim Schreiben darfst du es auch ruhig nehmen."
+ },
+ {
+  "tr": "Kelimesi kelimesine Emma'yı nasıl tanıyorsun, ama Türkçesi Emma'yı nereden tanıyorsun. Söyle bakalım.",
+  "kind": "say.tr",
+  "de": "Wörtlich, wie du Emma kennst, gemeint aber, woher du Emma kennst. Sag mal."
+ },
+ {
+  "tr": "Küçük bir İngilizce notu. Tek bir vücut bölümünden sahibini söylemeden bahsedersen başına a koyarsın:",
+  "kind": "say.tr",
+  "de": "Eine kleine englische Anmerkung. Sprichst du von einem Körperteil, ohne den Besitzer zu nennen, kommt ein a davor:"
+ },
+ {
+  "tr": "Özellikle talimatlara kulak vereceğiz: çantanı buraya koy, ceketini çıkar gibi cümleler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Vor allem hören wir auf Anweisungen: leg deine Tasche hierhin, zieh deine Jacke aus. Bist du bereit?"
+ },
+ {
+  "tr": "Peki soru sormak istersen? Çok basit: can'i başa alıyorsun. 'Bana yardım edebilir misin?' demek için:",
+  "kind": "say.tr",
+  "de": "Und wenn du fragen willst? Ganz leicht: du stellst can nach vorn. Für 'Kannst du mir helfen?':"
+ },
+ {
+  "tr": "Rica ederim demek. Dikkat, buradaki welcome hoş geldiniz anlamında değil. Daha rahat cevaplar da var:",
+  "kind": "say.tr",
+  "de": "Heißt gern geschehen. Achtung, dieses welcome heißt hier nicht willkommen. Es gibt auch lockerere Antworten:"
+ },
+ {
+  "tr": "Söz vermek demek. Söz verirken de will kullanılır. Olumsuzu will not, kısaca won't. Lütfen tekrar et:",
+  "kind": "say.tr",
+  "de": "Heißt versprechen. Beim Versprechen nimmt man auch will. Die Verneinung ist will not, kurz won't. Bitte wiederhole:"
+ },
+ {
+  "tr": "Su demek. Dikkat et, ortadaki t sesi İngilizcede yumuşar, neredeyse 'wo-dır' gibi duyulur. Lütfen de:",
+  "kind": "say.tr",
+  "de": "Heißt Wasser. Achtung, das t in der Mitte wird im Englischen weich, es klingt fast wie 'wo-der'. Bitte sag:"
+ },
+ {
+  "tr": "Şimdi soru soralım. İngilizcede bu tür sorularda do yardımcı fiili kullanılır. Hangi müziği seversin:",
+  "kind": "say.tr",
+  "de": "Stellen wir jetzt eine Frage. Für solche Fragen nimmt das Englische den Helfer do. Welche Musik magst du:"
+ },
+ {
+  "tr": "Teyze demek. Güzel haber: İngilizcede hala da teyze de aynı kelime, ayırmana gerek yok. Lütfen söyle:",
+  "kind": "say.tr",
+  "de": "Heißt Tante. Gute Nachricht: im Englischen ist es für beide Seiten der Familie dasselbe Wort, du musst nicht trennen. Bitte sag:"
+ },
+ {
+  "tr": "Ve altın kural: şu anda olan bir şey anlatıyorsan is ya da am ile fiilin -ing hâlini birlikte kullan.",
+  "kind": "say.tr",
+  "de": "Und die goldene Regel: erzählst du etwas, das gerade jetzt geschieht, nimm is oder am zusammen mit der -ing-Form des Verbs."
+ },
+ {
+  "tr": "Yani önce 'benim', sonra 'anne'. Bugünkü işimiz bu küçük kelimeler. Önce aile kelimelerini öğrenelim.",
+  "kind": "say.tr",
+  "de": "Also erst 'mein', dann 'Mutter'. Diese kleinen Wörter sind unsere heutige Arbeit. Lernen wir zuerst die Familienwörter."
+ },
+ {
+  "tr": "'Sağa dön.' Dikkat et: Türkçedeki '-a, -e' eki için İngilizcede fazladan bir kelime koymuyoruz. Sadece",
+  "kind": "say.tr",
+  "de": "'Bieg rechts ab.' Achtung: für unser 'nach' setzt das Englische kein zusätzliches Wort dazu. Nur"
+ },
+ {
+  "tr": "\"Sık sık\" demek. Bu kelimede ortadaki t harfi genelde okunmaz, kulağa \"ofın\" gibi gelir. Sen de söyle:",
+  "kind": "say.tr",
+  "de": "Heißt \"oft\". Das t in der Mitte wird meist nicht gesprochen, es klingt wie \"offn\". Sag du auch:"
+ },
+ {
+  "tr": "Arada geçen \"of\" küçük bir bağ; \"bir kilo elma\" derken kullanılır. İki kilo olunca kilo da çoğullaşır:",
+  "kind": "say.tr",
+  "de": "Das \"of\" dazwischen ist ein kleines Band; man nimmt es bei \"ein Kilo Äpfel\". Bei zwei Kilo wird auch das Kilo zur Mehrzahl:"
+ },
+ {
+  "tr": "Beş kelimemiz tamam. Şimdi arkadaşlıkta en çok sorulan şeye geçiyoruz: ne kadar zamandır arkadaşsınız?",
+  "kind": "say.tr",
+  "de": "Unsere fünf Wörter sind fertig. Jetzt zur häufigsten Frage in einer Freundschaft: wie lange seid ihr schon befreundet?"
+ },
+ {
+  "tr": "Bir restorana giriyorsun ve garson seni karşılıyor. Öğrendiğin kalıpları kullan, please demeyi unutma.",
+  "kind": "say.tr",
+  "de": "Du gehst in ein Restaurant und der Kellner begrüßt dich. Nimm die gelernten Wendungen, vergiss das please nicht."
+ },
+ {
+  "tr": "Bugün have got ile kimin nesi olduğunu söylemeyi öğrendin: brother, sister, son, daughter ve children.",
+  "kind": "say.tr",
+  "de": "Heute hast du mit have got gelernt, wer wen hat: brother, sister, son, daughter und children."
+ },
+ {
+  "tr": "Bunun karşıtı part-time, yani yarı zamanlı. İlanlarda ikisi de çok geçer. Telefonda şunu sorabilirsin:",
+  "kind": "say.tr",
+  "de": "Das Gegenteil davon ist part-time, also Teilzeit. In Anzeigen kommen beide sehr oft vor. Am Telefon kannst du das hier fragen:"
+ },
+ {
+  "tr": "Burada a değil the kullandık, çünkü belli bir şoförden bahsediyoruz: senin taksinin şoförü. Lütfen de:",
+  "kind": "say.tr",
+  "de": "Hier steht nicht a, sondern the, denn wir sprechen von einem bestimmten Fahrer: dem deines Taxis. Bitte sag:"
+ },
+ {
+  "tr": "Dersin sonunda \"iki kilo domates istiyorum\" diyebilecek, tazelik ve fiyat sorabileceksin. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Am Ende der Lektion kannst du \"Ich möchte zwei Kilo Tomaten\" sagen und nach Frische und Preis fragen. Bist du bereit?"
+ },
+ {
+  "tr": "İş e-postasında birinden yanıt isterken emir cümlesi kurmayız, soru sorarız. Çünkü soru daha kibardır.",
+  "kind": "say.tr",
+  "de": "Willst du in einer Geschäftsmail eine Antwort, bildest du keinen Befehl, sondern eine Frage. Denn die Frage ist höflicher."
+ },
+ {
+  "tr": "Kalkmak, açmak, kapamak, giymek... Bunların hepsi İngilizcede iki kelimeyle söyleniyor. Başlayalım mı?",
+  "kind": "say.tr",
+  "de": "Aufstehen, anmachen, ausmachen, anziehen... all das sagt das Englische mit zwei Wörtern. Fangen wir an?"
+ },
+ {
+  "tr": "Kelime kelime 'temasta kal' ama anlamı 'irtibatta kal, haberleşelim'. Bir de sık duyacağın cevabı var:",
+  "kind": "say.tr",
+  "de": "Wörtlich 'bleib in Berührung', gemeint aber 'bleib in Kontakt, lass uns hören'. Es gibt auch eine Antwort, die du oft hörst:"
+ },
+ {
+  "tr": "Merhaba! Bugün bir düğünü anlatmayı öğreniyoruz: tören neredeydi, gelin ne giydi, misafirler ne yaptı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Hochzeit zu erzählen: wo die Zeremonie war, was die Braut trug, was die Gäste taten."
+ },
+ {
+  "tr": "Peki bayramda ne dilenir? Ramazan ve Kurban Bayramı için İngilizcede Arapçadan gelen kalıp kullanılır:",
+  "kind": "say.tr",
+  "de": "Und was wünscht man am Fest? Für das Ramadan- und das Opferfest nimmt das Englische eine Wendung aus dem Arabischen:"
+ },
+ {
+  "tr": "Şimdi bir mağazaya giriyoruz. Satıcıyla konuşacak, iki üründen birini seçeceksin. Hazırsan başlıyoruz.",
+  "kind": "say.tr",
+  "de": "Jetzt gehen wir in einen Laden. Du sprichst mit dem Verkäufer und wählst eines von zwei Geräten. Wenn du bereit bist, los."
+ },
+ {
+  "tr": "Şimdi bunu gerçek bir konuşmada kullanacaksın. Bir arkadaşınla mutfaktasın, birlikte kek yapıyorsunuz.",
+  "kind": "say.tr",
+  "de": "Das nutzt du jetzt in einem echten Gespräch. Du bist mit einer Freundin in der Küche und ihr backt zusammen einen Kuchen."
+ },
+ {
+  "tr": "Şimdi cümleyi kendin kur. Karşındakine \"Beni duyabiliyor musun?\" diye sormak istiyorsun. Nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Bilde den Satz jetzt selbst. Du willst dein Gegenüber fragen \"Kannst du mich hören?\". Wie sagst du das?"
+ },
+ {
+  "tr": "Şimdi sıra sende. Arkadaşın için aldığın bir hediyeyi göstererek söyle: Bu, arkadaşım için bir hediye.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Zeig auf ein Geschenk, das du für deinen Freund gekauft hast, und sag: Das ist ein Geschenk für meinen Freund."
+ },
+ {
+  "tr": "Türkçesi 'uygulama' demek. Telefonda kullandığımız uygulamalar. Lütfen tek bir uygulamadan bahsedelim:",
+  "kind": "say.tr",
+  "de": "Heißt 'Anwendung', eine App also. Die Programme auf dem Telefon. Bitte sprechen wir von einer einzigen App:"
+ },
+ {
+  "tr": "Üç küçük kelime var: already, yet ve just. Üçü de present perfect ile birlikte çalışır. Başlayalım mı?",
+  "kind": "say.tr",
+  "de": "Es gibt drei kleine Wörter: already, yet und just. Alle drei arbeiten mit dem present perfect. Fangen wir an?"
+ },
+ {
+  "tr": "Üye olmayı, kitap ödünç almayı, iade etmeyi ve kütüphane kurallarını İngilizce anlatmayı öğreneceksin.",
+  "kind": "say.tr",
+  "de": "Du lernst, Mitglied zu werden, Bücher auszuleihen, sie zurückzugeben und die Regeln der Bibliothek auf Englisch zu erklären."
+ },
+ {
+  "tr": "Yani 'Bugün kendimi daha iyi hissediyorum.' Burada 'better' işi yapıyor: dünle bugünü karşılaştırıyor.",
+  "kind": "say.tr",
+  "de": "Also 'Heute fühle ich mich besser.' Hier macht 'better' die Arbeit: es vergleicht gestern mit heute."
+ },
+ {
+  "tr": "Yani 'ey', 'bii', 'sii', 'dii', 'ii'. En sık yapılan hata burada: E harfi 'e' değil, 'ii' diye okunur.",
+  "kind": "say.tr",
+  "de": "Also 'ei', 'bii', 'sii', 'dii', 'ii'. Hier passiert der häufigste Fehler: der Buchstabe E heißt nicht 'e', sondern 'ii'."
+ },
+ {
+  "tr": "Yani \"Banka otelin yanında\". Türkçede sona gelen \"yanında\" İngilizcede ortaya geliyor: önce yer, sonra",
+  "kind": "say.tr",
+  "de": "Also \"Die Bank ist neben dem Hotel\". Unser 'neben' steht wie im Englischen in der Mitte: erst der Ort, dann"
+ },
+ {
+  "tr": "Yet henüz demek, olumsuz cümlede ve soruda, hep cümlenin sonunda. Just ise az önce demek, yine ortada.",
+  "kind": "say.tr",
+  "de": "Yet heißt noch nicht, steht im verneinten Satz und in der Frage, immer am Schluss. Just heißt gerade eben und steht wieder in der Mitte."
+ },
+ {
+  "tr": "— çoktan demek. Bir işi beklenenden önce bitirdiysen kullanırsın. Present perfect ile birlikte gelir ve",
+  "kind": "say.tr",
+  "de": "— heißt schon, bereits. Du nimmst es, wenn du eine Sache früher als erwartet fertig hast. Es kommt mit dem present perfect und"
+ },
+ {
+  "tr": "\"Sessiz\" demek. Sokakta gürültü yoksa evin sessizdir. Sondaki t'yi yutma, hafifçe duyur. Söyle bakalım:",
+  "kind": "say.tr",
+  "de": "\"Ruhig\" heißt das. Ist auf der Straße kein Lärm, ist dein Haus ruhig. Verschluck das t am Ende nicht, lass es leise hören. Sag mal:"
+ },
+ {
+  "tr": "Ama bir de hâlâ devam eden şeyler var: 'üç yıldır buradayım' gibi. Onun için başka bir yapı kullanılır.",
+  "kind": "say.tr",
+  "de": "Aber es gibt auch Dinge, die noch andauern: 'ich bin seit drei Jahren hier' zum Beispiel. Dafür nimmt man eine andere Form."
+ },
+ {
+  "tr": "Başkası için konuşurken de hiçbir şey değişmez. Türkçe düşünüp \"o\" için fiile bir şey eklemeye çalışma:",
+  "kind": "say.tr",
+  "de": "Sprichst du von jemand anderem, ändert sich auch nichts. Häng dem Verb für \"er\" oder \"sie\" nichts an:"
+ },
+ {
+  "tr": "Bir de çok işine yarayacak bir nokta var. İngilizler iade ederken ürünü kullanıp kullanmadığını söyler.",
+  "kind": "say.tr",
+  "de": "Und noch ein Punkt, der dir sehr hilft. Beim Zurückgeben sagen die Engländer, ob sie die Ware benutzt haben."
+ },
+ {
+  "tr": "Bu sonuncusu Türkçeden farklı çalışıyor. İngilizcede yurt dışında derken başına in koymuyorsun. Sadece:",
+  "kind": "say.tr",
+  "de": "Das letzte funktioniert anders als bei uns. Für 'im Ausland' setzt das Englische kein in davor. Nur:"
+ },
+ {
+  "tr": "Bu, can not kelimelerinin kısaltılmış hâli ve İngilizcede neredeyse hep böyle kısaltılır. Sen de söyle:",
+  "kind": "say.tr",
+  "de": "Das ist die Kurzform von can not, und im Englischen wird fast immer so gekürzt. Sag du auch:"
+ },
+ {
+  "tr": "Cuma günü hazır olacak. Ya da kesinleşmiş bir plan varsa: We're going to send it to the service centre.",
+  "kind": "say.tr",
+  "de": "Am Freitag ist es fertig. Oder wenn es ein fester Plan ist: We're going to send it to the service centre."
+ },
+ {
+  "tr": "Emma'yı on yıldır tanıyorum. Türkçede 'tanıyorum' dersin ama İngilizcede burada mutlaka 'have' gerekir.",
+  "kind": "say.tr",
+  "de": "Ich kenne Emma seit zehn Jahren. Wir sagen 'ich kenne', im Englischen steht hier aber unbedingt ein 'have'."
+ },
+ {
+  "tr": "En sonunda taşındık. Finally'yi sadece gerçekten son adım için kullan; hikâyenin ortasında kullanılmaz.",
+  "kind": "say.tr",
+  "de": "Am Ende sind wir eingezogen. Nimm Finally nur für den wirklich letzten Schritt; mitten in der Geschichte steht es nicht."
+ },
+ {
+  "tr": "Hadi sen sor. Karşındakine, ne kadar süredir burada çalışıyorsun, diye sormak istiyorsun. Nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Frag jetzt du. Du willst dein Gegenüber fragen, wie lange es schon hier arbeitet. Wie sagst du das?"
+ },
+ {
+  "tr": "İngilizcede uykuyu saatle anlatırız: \"kaç saat uyuyorsun\" sorusunun cevabı sekiz saat gibi bir sayıdır.",
+  "kind": "say.tr",
+  "de": "Im Englischen erzählen wir den Schlaf in Stunden: die Antwort auf \"wie viele Stunden schläfst du\" ist eine Zahl wie acht Stunden."
+ },
+ {
+  "tr": "kelimesinin kısaltması. İngilizce konuşurken neredeyse herkes kısaltmayı kullanır. Ve 'işe gitmek' için",
+  "kind": "say.tr",
+  "de": "die Kurzform. Beim englischen Sprechen nimmt fast jeder die Kurzform. Und für 'zur Arbeit kommen' heißt es"
+ },
+ {
+  "tr": "Merhaba, hoş geldin. Bugün geçmişte bir şeyin ne zaman olduğunu söylemeyi öğreneceğiz: ago, last ve in.",
+  "kind": "say.tr",
+  "de": "Hallo, willkommen. Heute lernen wir zu sagen, wann etwas in der Vergangenheit war: ago, last und in."
+ },
+ {
+  "tr": "Merhaba! Bugün pazardayız. Bu derste fiyat sormayı öğreneceksin: ne kadar, kaç tane, ucuz mu pahalı mı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sind wir auf dem Markt. In dieser Lektion lernst du, nach dem Preis zu fragen: wie viel, wie viele, billig oder teuer."
+ },
+ {
+  "tr": "Satıcıya hangisinin daha ucuz, hangisinin daha iyi olduğunu sor ve kararını söyle. Hazırsan başlayalım.",
+  "kind": "say.tr",
+  "de": "Frag den Verkäufer, welches billiger und welches besser ist, und sag deine Entscheidung. Wenn du bereit bist, los."
+ },
+ {
+  "tr": "Sıra sende. Satıcıya şunu söylemek istiyorsun: Bu tarife diğerinden daha pahalı. İngilizcesini sen kur.",
+  "kind": "say.tr",
+  "de": "Du bist dran. Du willst dem Verkäufer sagen: Dieser Tarif ist teurer als der andere. Bilde den englischen Satz selbst."
+ },
+ {
+  "tr": "Son kuruluş sende. İyi haberi ver: \"Toparlandım, iyileştim.\" İlk kelimemizi present perfect ile kullan.",
+  "kind": "say.tr",
+  "de": "Der letzte Satz gehört dir. Gib die gute Nachricht: \"Ich habe mich erholt, ich bin wieder gesund.\" Nimm unser erstes Wort mit dem present perfect."
+ },
+ {
+  "tr": "Şimdi ikisini birleştirelim. İngilizcede hal hatır sorusuna cevap verirken teşekkür etmek çok doğaldır:",
+  "kind": "say.tr",
+  "de": "Verbinden wir jetzt beides. Im Englischen ist es sehr natürlich, sich beim Antworten auf die Befindensfrage zu bedanken:"
+ },
+ {
+  "tr": "Şimdi son cümleyi kur. Hediyeyi karşındakine uzatıyorsun ve diyorsun ki: Bu senin için özel bir hediye.",
+  "kind": "say.tr",
+  "de": "Bilde jetzt den letzten Satz. Du reichst das Geschenk hinüber und sagst: Das ist ein besonderes Geschenk für dich."
+ },
+ {
+  "tr": "Türkçesi 'izin vermek' demek. Tabelalarda çoğunlukla 'allowed' biçimini görürsün: izin verilmiş. Lütfen",
+  "kind": "say.tr",
+  "de": "Heißt 'erlauben'. Auf Schildern siehst du meist die Form 'allowed': erlaubt. Bitte sag"
+ },
+ {
+  "tr": "Ve İngilizcede çok önemli bir şeyi: gün ve zaman söylerken hangi küçük kelimenin geldiğini. On, at, in.",
+  "kind": "say.tr",
+  "de": "Und etwas im Englischen sehr Wichtiges: welches kleine Wort vor Tag und Uhrzeit kommt. On, at, in."
+ },
+ {
+  "tr": "Ve kelimeler: festival, tradition, family, special, food. Şimdi bunları gerçek bir sohbette kullanalım.",
+  "kind": "say.tr",
+  "de": "Und die Wörter: festival, tradition, family, special, food. Nutzen wir sie jetzt in einem echten Gespräch."
+ },
+ {
+  "tr": "Yani 'İstasyonun yolunu gösterebilir misiniz?' Sondaki to kelimesi 'nereye' anlamını taşır; onu unutma.",
+  "kind": "say.tr",
+  "de": "Also 'Können Sie mir den Weg zum Bahnhof zeigen?' Das to am Ende trägt das 'wohin'; vergiss es nicht."
+ },
+ {
+  "tr": "Bir şeye çok dikkat: must'tan sonra fiilin yalın hali gelir. Araya to koymuyoruz ve fiile s eklemiyoruz.",
+  "kind": "say.tr",
+  "de": "Pass gut auf: nach must steht das Verb in der nackten Form. Wir setzen kein to dazwischen und hängen ans Verb kein s."
+ },
+ {
+  "tr": "Bu \"it is\"in kısaltması. Türkçede \"saat üç\" derken \"saat\" kelimesini söylüyoruz ya, İngilizcede o görevi",
+  "kind": "say.tr",
+  "de": "Das ist die Kurzform von \"it is\". Wie unser 'es ist' in 'es ist drei Uhr' — genau diese Arbeit macht im Englischen"
+ },
+ {
+  "tr": "Bu sorulara kısa cevap vermek çok kolay. Cümleyi tekrar etmene gerek yok, sadece did ya da didn't yeter.",
+  "kind": "say.tr",
+  "de": "Kurz zu antworten ist sehr leicht. Du musst den Satz nicht wiederholen, es reicht did oder didn't."
+ },
+ {
+  "tr": "Bunu bir şeyin olmasını umuyorsan kullanırsın. Arkasına fiilin yalın hali gelir: to find, to go, to see.",
+  "kind": "say.tr",
+  "de": "Das nimmst du, wenn du hoffst, dass etwas geschieht. Dahinter kommt das Verb nackt: to find, to go, to see."
+ },
+ {
+  "tr": "Ders boyunca ben söyleyeceğim, sen tekrar edeceksin. Sonra da kendi cümlelerini kuracaksın. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die ganze Lektion sage ich vor und du sprichst nach. Danach baust du deine eigenen Sätze. Bist du bereit?"
+ },
+ {
+  "tr": "Dikkat: don't koyunca fiil hiç değişmez, yalın kalır. Türkçedeki gibi fiilin sonuna bir şey eklemiyoruz.",
+  "kind": "say.tr",
+  "de": "Achtung: mit don't ändert sich das Verb überhaupt nicht, es bleibt nackt. Anders als bei uns kommt hinten nichts ans Verb."
+ },
+ {
+  "tr": "Dikkat: used to'dan sonra fiil her zaman yalın haldedir. played değil, play. Çünkü geçmiş anlamını zaten",
+  "kind": "say.tr",
+  "de": "Achtung: nach used to steht das Verb immer nackt. Nicht played, sondern play. Denn die Bedeutung der Vergangenheit trägt schon"
+ },
+ {
+  "tr": "Fark ettin mi? When'den sonra kısa olay geldi: the phone rang. Süren iş ise arkaya geçti: I was cooking.",
+  "kind": "say.tr",
+  "de": "Hast du es gemerkt? Nach When kam das kurze Ereignis: the phone rang. Die dauernde Sache rutschte nach hinten: I was cooking."
+ },
+ {
+  "tr": "Harika iş çıkardın. Artık birinin nasıl biri olduğunu anlatabilir, sorabilir ve kısa cevap verebilirsin:",
+  "kind": "say.tr",
+  "de": "Das war großartig. Du kannst jetzt erzählen, wie jemand ist, danach fragen und kurz antworten:"
+ },
+ {
+  "tr": "Kelimesi kelimesine 'ben doğmuş idim' gibi görünür ama anlamı sadece 'doğdum'. Her zaman böyle söylenir.",
+  "kind": "say.tr",
+  "de": "Wörtlich sieht es aus wie 'ich war geboren', gemeint ist aber nur 'ich wurde geboren'. Man sagt es immer so."
+ },
+ {
+  "tr": "Kibarca oda isteyeceksin, kaç gece kalacağını söyleyeceksin ve fiyata kahvaltı dahil mi diye soracaksın.",
+  "kind": "say.tr",
+  "de": "Du wirst höflich ein Zimmer verlangen, sagen, wie viele Nächte du bleibst, und fragen, ob das Frühstück im Preis ist."
+ },
+ {
+  "tr": "Küçük bir deneme. \"Dün yatakta kaldım\" nasıl dersin? Dün belli bir gün, yani geçmiş zaman kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Ein kleiner Versuch. Wie sagst du \"Gestern bin ich im Bett geblieben\"? Gestern ist ein bestimmter Tag, also nimmst du die Vergangenheit."
+ },
+ {
+  "tr": "Müdürle görüşmek istiyorum. 'I'd like to' resmî ve kibar bir istektir; 'I want' demekten çok daha nazik.",
+  "kind": "say.tr",
+  "de": "Ich möchte den Leiter sprechen. 'I'd like to' ist eine förmliche und höfliche Bitte; viel netter, als 'I want' zu sagen."
+ },
+ {
+  "tr": "Şimdi hepsini birleştiriyoruz. Adın Deniz, Türkiyelisin. Selam ver, adını söyle ve nereli olduğunu ekle.",
+  "kind": "say.tr",
+  "de": "Jetzt setzen wir alles zusammen. Du heißt Deniz und kommst aus der Türkei. Grüß, sag deinen Namen und woher du kommst."
+ },
+ {
+  "tr": "Şimdi tam bir cümle kuralım. Geçmişte verdiğin bir sipariş için fiilin sonuna -ed gelir: order, ordered.",
+  "kind": "say.tr",
+  "de": "Bilden wir jetzt einen ganzen Satz. Für eine Bestellung in der Vergangenheit kommt ans Verb ein -ed: order, ordered."
+ },
+ {
+  "tr": "Tek bir elmadan söz ederken önüne küçük bir kelime koyarız. Türkçede \"bir elma\" deriz ya, İngilizcede de",
+  "kind": "say.tr",
+  "de": "Sprichst du von einem einzigen Apfel, kommt ein kleines Wort davor. Wie wir \"ein Apfel\" sagen, sagt das Englische"
+ },
+ {
+  "tr": "Vazgeçtiysen ya da geri göndermek istiyorsan: cancel iptal etmek, return iade etmek, refund para iadesi.",
+  "kind": "say.tr",
+  "de": "Hast du es dir anders überlegt oder willst zurückschicken: cancel stornieren, return zurückgeben, refund Rückerstattung."
+ },
+ {
+  "tr": "Bir de kısaltmalara alış. Konuşurken kimse I am demez, I'm der. You are yerine you're, it is yerine it's.",
+  "kind": "say.tr",
+  "de": "Und gewöhn dich an die Kurzformen. Beim Sprechen sagt niemand I am, sondern I'm. Statt You are you're, statt it is it's."
+ },
+ {
+  "tr": "Fiyatına göre iyi, parasının hakkını veriyor demek. Ucuz olduğunu değil, ödediğine değdiğini söylüyorsun.",
+  "kind": "say.tr",
+  "de": "Heißt, es ist sein Geld wert. Du sagst nicht, dass es billig ist, sondern dass es das Bezahlte wert ist."
+ },
+ {
+  "tr": "G 'cii', J 'cey', I 'ay', Y 'vay', W 'dabılyu', H 'eyç' diye okunur. G ile J'yi karıştırmamaya dikkat et.",
+  "kind": "say.tr",
+  "de": "G heißt 'dschii', J 'dschei', I 'ai', Y 'wai', W 'dabbeljuu', H 'eitsch'. Pass auf, G und J nicht zu verwechseln."
+ }
 ]

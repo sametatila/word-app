@@ -17,8 +17,44 @@ import { join } from "node:path";
 import { lessonsFor } from "../src/lib/lessons/index";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
-const out = join(process.cwd(), "mobile/src/data/lessons");
-mkdirSync(out, { recursive: true });
+const DIR = "mobile/src/data/lessons";
+
+/**
+ * Bir kursun mobil paketleri: dosya yolu + yazılacak JSON, seviye seviye.
+ *
+ * AYRI BİR İŞLEV, ÇÜNKÜ KAPI DA AYNI PROJEKSİYONU İSTİYOR. `check-dumps`
+ * bunu çağırıp dosyayla BAYT BAYT karşılaştırıyor; kimlik kümesi eşitliği
+ * metin sapmasını görmüyordu (gerekçe orada). Projeksiyon tek yerde durmalı,
+ * yoksa kapı dökümün kendisinden ayrı düşer ve yanlış yeri gösterir.
+ *
+ * Dersi olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
+ * tek import ediyor (`mobile/src/data/lessons/index.ts`) ve boş bir dosyayı
+ * hiçbir şey import etmez — yazmak yalnız depoya ölü dosya bırakırdı.
+ */
+export function buildLessonDump(course: string) {
+  const all = lessonsFor(course);
+  const packs: { level: string; file: string; json: string; count: number }[] = [];
+  for (const level of LEVELS) {
+    const lessons = all
+      .filter((l) => l.level === level)
+      .map((l) => {
+        return {
+          id: l.id, level: l.level, course: l.course, icon: l.icon,
+          title: l.title, titleTr: l.titleTr, summary: l.summary, minutes: l.minutes,
+          focusId: l.focusId, vocab: l.vocab, patterns: l.patterns,
+          lecture: l.lecture, roleplay: l.roleplay,
+        };
+      });
+    if (!lessons.length) continue;
+    packs.push({
+      level,
+      file: `${DIR}/${course}-${level.toLowerCase()}.json`,
+      json: JSON.stringify(lessons),
+      count: lessons.length,
+    });
+  }
+  return packs;
+}
 
 /**
  * Dökülecek kurs: `npm run dump:lessons -- <kurs>` (varsayılan "de").
@@ -27,35 +63,24 @@ mkdirSync(out, { recursive: true });
  * eklendiğinde bu betik sessizce yine Almanca paketi yazardı. Mobil yükleyici
  * paketleri kurs adına göre ayırıyor (data/lessons/index.ts).
  */
-const course = (process.argv[2] ?? "de").toLowerCase();
-const all = lessonsFor(course);
-if (!all.length) {
-  console.error(`"${course}" kursu için ders yok — paket yazılmadı.`);
-  process.exit(1);
-}
-let total = 0;
-for (const level of LEVELS) {
-  const lessons = all
-    .filter((l) => l.level === level)
-    .map((l) => {
-      return {
-        id: l.id, level: l.level, course: l.course, icon: l.icon,
-        title: l.title, titleTr: l.titleTr, summary: l.summary, minutes: l.minutes,
-        focusId: l.focusId, vocab: l.vocab, patterns: l.patterns,
-        lecture: l.lecture, roleplay: l.roleplay,
-      };
-    });
-  // Dersi olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
-  // tek import ediyor (`mobile/src/data/lessons/index.ts`) ve boş bir dosyayı
-  // hiçbir şey import etmez — yazmak yalnız depoya ölü dosya bırakırdı.
-  // İngilizce kursta bugün yalnız A1 ve A2 var; kalan üç seviye böyle eleniyor.
-  if (!lessons.length) {
-    console.log(level.padEnd(3), "   —  ders yok, dosya yazılmadı");
-    continue;
+if (process.argv[1]?.endsWith("dump-lessons-mobile.ts")) {
+  const course = (process.argv[2] ?? "de").toLowerCase();
+  const packs = buildLessonDump(course);
+  if (!packs.length) {
+    console.error(`"${course}" kursu için ders yok — paket yazılmadı.`);
+    process.exit(1);
   }
-  const file = join(out, `${course}-${level.toLowerCase()}.json`);
-  writeFileSync(file, JSON.stringify(lessons));
-  total += lessons.length;
-  console.log(level.padEnd(3), String(lessons.length).padStart(4), "ders");
+  mkdirSync(join(process.cwd(), DIR), { recursive: true });
+  let total = 0;
+  for (const level of LEVELS) {
+    const pack = packs.find((p) => p.level === level);
+    if (!pack) {
+      console.log(level.padEnd(3), "   —  ders yok, dosya yazılmadı");
+      continue;
+    }
+    writeFileSync(join(process.cwd(), pack.file), pack.json);
+    total += pack.count;
+    console.log(level.padEnd(3), String(pack.count).padStart(4), "ders");
+  }
+  console.log(course, "toplam", total);
 }
-console.log(course, "toplam", total);

@@ -8,10 +8,26 @@
  * Patika'da açılamayan bir ünite, listede olmayan bir kâğıt - ama hiçbir kapı
  * söylemez.
  *
- * Bu betik KİMLİK KÜMESİNİ karşılaştırıyor, içeriği değil. Sebep: içerik
- * metni sürekli değişiyor (çeviri hattı, anlatım adımları) ve tam eşitlik
- * isteyen bir kapı yarım kalmış her işte kırmızı yanardı. Kimlik kümesi ise
- * yalnız GERÇEK eksik varken ayrışıyor.
+ * İKİ ÖLÇÜT VAR ve ikisi ayrı şeyi yakalıyor.
+ *
+ * KİMLİK KÜMESİ eksik/fazla kaydı ADIYLA söylüyor: "dokumde EKSIK: en-c1-u07".
+ * Tek ölçüt uzun süre buydu, gerekçesi de yazılıydı — içerik metni sürekli
+ * değişiyor ve tam eşitlik isteyen bir kapı yarım kalmış her işte kırmızı
+ * yanardı.
+ *
+ * O gerekçe 2026-09-12'de ÖLÇÜLDÜ ve tutmadı: kimlikler aynı kalırken METİN
+ * ayrışıyor ve bu kapı "DOKUMLER KAYNAKLA AYNI" diyordu.
+ *   · `papers-en.json` bir gerekçede hâlâ «Ayşe» taşıyordu; kaynak c2f714b8'de
+ *     «Ayse»ye çekilmişti. Yani düzeltme web'de yaşıyor, mobilde yok.
+ *   · Aynı gün 122 anlatım adımındaki övgü açılışı silindi; kimlik kümesi
+ *     kılını kıpırdatmadı.
+ * Dökümün YENİDEN ÜRETİLMESİ tek komut (`npm run dump:lessons` …), yani
+ * kırmızı yanmanın bedeli düşük; sessiz sapmanın bedeli ekranda görünmeyen
+ * eski içerik. Ana dil dökümünde bayt eşitliği zaten böyle kurulmuştu.
+ *
+ * İkinci ölçüt dökümün KENDİ işlevini çağırıyor (`buildLessonDump` vb.),
+ * projeksiyonu kopyalamıyor: kopya olsaydı kapı dökümden ayrı düşer ve
+ * yanlış yeri gösterirdi.
  *
  *   npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-dumps.ts
  */
@@ -22,6 +38,9 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { mockPapersFor } from "../src/lib/mock-exams";
 import type { MockLevel } from "../src/lib/mock-exams/types";
 import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
+import { buildLessonDump } from "./dump-lessons-mobile";
+import { buildSkillDump } from "./dump-skills-mobile";
+import { buildPaperDump } from "./dump-mock-exams-mobile";
 
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8")) as unknown;
@@ -110,6 +129,54 @@ compare(
     console.error(`✗ ${label}: ${have === null ? "dosya yok" : "kaynakla ayrışmış"} (${file})`);
     console.error("   dokumu yenile: npm run dump:native");
   }
+}
+
+/*
+  METİN ÖLÇÜTÜ — kimlikler aynıyken içerik ayrışmış olabilir (gerekçe başta).
+  Karşılaştırma dökümün kendi çıktısıyla, bayt bayt.
+*/
+{
+  const built: { label: string; file: string; json: string; cmd: string }[] = [];
+  for (const course of ["de", "en"]) {
+    for (const pack of buildLessonDump(course))
+      built.push({
+        label: `ders metni ${course}-${pack.level}`,
+        file: pack.file,
+        json: pack.json,
+        cmd: `npm run dump:lessons -- ${course}`,
+      });
+    const skills = buildSkillDump(course);
+    if (skills.rows.length)
+      built.push({
+        label: `beceri metni ${course}`,
+        file: skills.file,
+        json: skills.json,
+        cmd: `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts ${course}`,
+      });
+    const papers = buildPaperDump(course);
+    if (papers.rows.length)
+      built.push({
+        label: `kâğıt metni ${course}`,
+        file: papers.file,
+        json: papers.json,
+        cmd: course === "de" ? "npm run dump:mock-exams" : "npm run dump:mock-exams:en",
+      });
+  }
+  let drift = 0;
+  for (const b of built) {
+    let have: string | null = null;
+    try {
+      have = readFileSync(path.join(ROOT, b.file), "utf8");
+    } catch {
+      have = null;
+    }
+    if (have === b.json) continue;
+    drift++;
+    fails++;
+    console.error(`✗ ${b.label}: ${have === null ? "dosya yok" : "kaynakla ayrışmış"} (${b.file})`);
+    console.error(`   dokumu yenile: ${b.cmd}`);
+  }
+  if (!drift) console.log(`✓ paket metni: ${built.length} dosya, kaynakla bayt bayt ayni`);
 }
 
 console.log(fails === 0 ? "\nDOKUMLER KAYNAKLA AYNI\n" : `\n${fails} DOKUM AYRISMASI\n`);

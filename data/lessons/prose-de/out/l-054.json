@@ -1,152 +1,732 @@
 [
- { "tr": "şarj etmek demek. Telefon şarj olmuyorsa şöyle dersin:", "kind": "say.tr", "de": "heißt laden. Lädt das Handy nicht, sagst du so:" },
- { "tr": "Şimdi cümleyi sen kur: 'O çok komik' — bir erkek için.", "kind": "say.tr", "de": "Jetzt bildest du den Satz: 'Er ist sehr lustig' — für einen Mann." },
- { "tr": "Şimdi kapanış. İş e-postasında en güvenli bitiş budur:", "kind": "say.tr", "de": "Jetzt der Schluss. In der Geschäftsmail ist das der sicherste:" },
- { "tr": "Şimdi komşunun kapısını çalıyoruz. Hazırsan konuşalım.", "kind": "say.tr", "de": "Jetzt klingeln wir beim Nachbarn. Wenn du bereit bist, los." },
- { "tr": "Şimdi kulağını çalıştıralım. Şu cümle doğru mu, dinle.", "kind": "say.tr", "de": "Jetzt das Ohr. Stimmt dieser Satz, hör zu." },
- { "tr": "Şimdi sen kur. Biri telefonumu çaldı, nasıl söylersin?", "kind": "say.tr", "de": "Jetzt bildest du. Jemand hat mein Handy gestohlen, wie sagst du das?" },
- { "tr": "Şimdi sen kur. Sorunu anlatıyorsun: Kartım çalışmıyor.", "kind": "say.tr", "de": "Jetzt bildest du. Du nennst das Problem: Meine Karte geht nicht." },
- { "tr": "Şimdi sen söyle: Çünkü yeni şeyler öğrenmek istiyorum.", "kind": "say.tr", "de": "Jetzt sag du: Weil ich Neues lernen möchte." },
- { "tr": "Tabelalar genelde kişiye seslenmez, kuralı düz söyler:", "kind": "say.tr", "de": "Schilder sprechen selten jemanden an, sie nennen die Regel:" },
- { "tr": "Telefon çaldığında ben yemek yapıyordum. Sen de söyle:", "kind": "say.tr", "de": "Als das Telefon klingelte, habe ich gekocht. Sag du auch:" },
- { "tr": "Türkçedeki \"-meli, -malı\" eki gibi düşün. Hazır mısın?", "kind": "say.tr", "de": "Denk an das deutsche \"sollte\". Bist du bereit?" },
- { "tr": "Üç kısa cümle, üç adım. Tarif anlatmak bu kadar basit.", "kind": "say.tr", "de": "Drei kurze Sätze, drei Schritte. So einfach ist ein Rezept." },
- { "tr": "ve can you show me the way ile kibarca yardım istemek.", "kind": "say.tr", "de": "und can you show me the way, um höflich um Hilfe zu bitten." },
- { "tr": "Yani \"kendimi ... hissediyorum\". İki kelime öğrenelim:", "kind": "say.tr", "de": "Also \"ich fühle mich ...\". Lernen wir zwei Wörter:" },
- { "tr": "Yani \"saat on\". Dakika varken bu kelimeyi hiç söyleme.", "kind": "say.tr", "de": "Also \"zehn Uhr\". Bei Minuten sag das Wort gar nicht." },
- { "tr": "Yani \"Servis dahil mi?\" Bir de kartla ödemek istersen:", "kind": "say.tr", "de": "Also \"Ist die Bedienung inbegriffen?\" Und wenn du mit Karte zahlst:" },
- { "tr": "Yani çok pahalı. Too kelimesi fazlasıyla anlamı katar.", "kind": "say.tr", "de": "Also zu teuer. Das Wort too gibt die Bedeutung übermäßig." },
- { "tr": "yani temiz demek. Ortak mutfak için sık görülen kural:", "kind": "say.tr", "de": "heißt also sauber. Eine häufige Regel für die Gemeinschaftsküche:" },
- { "tr": "Yani two breads denmez. Onun yerine biraz ekmek deriz:", "kind": "say.tr", "de": "Also sagt man nicht two breads. Stattdessen etwas Brot:" },
- { "tr": "Yürüyerek on dakika sürüyor. on foot, yürüyerek demek.", "kind": "say.tr", "de": "Zu Fuß dauert es zehn Minuten. on foot heißt zu Fuß." },
- { "tr": ". Yani 'seçmek'. Bir ekranda dili seçtiriyorsun mesela:", "kind": "say.tr", "de": ". Also 'auswählen'. Auf dem Bildschirm wählst du die Sprache:" },
- { "tr": "\"Mutfakta sandalye var mı?\" Lütfen bu soruyu tekrar et.", "kind": "say.tr", "de": "\"Gibt es Stühle in der Küche?\" Bitte wiederhole die Frage." },
- { "tr": "Aynı kalıpla istediğin kadar cümle kurabilirsin. Dinle:", "kind": "say.tr", "de": "Mit derselben Wendung baust du beliebig viele Sätze. Hör zu:" },
- { "tr": "Bazen de hemen cevap veremezsin. O zaman özür dilersin:", "kind": "say.tr", "de": "Manchmal kannst du nicht gleich antworten. Dann entschuldigst du dich:" },
- { "tr": "Bazı formlarda ve görüşmelerde soru biraz farklı gelir.", "kind": "say.tr", "de": "In manchen Formularen und Gesprächen klingt die Frage anders." },
- { "tr": "be fiilinin geçmişi ayrı: was ve were. Olumsuzu wasn't.", "kind": "say.tr", "de": "Die Vergangenheit von be ist eigen: was und were. Verneint wasn't." },
- { "tr": "Beş gün bir otelde kaldık. Otel için at, süre için for.", "kind": "say.tr", "de": "Wir waren fünf Tage in einem Hotel. Fürs Hotel at, für die Dauer for." },
- { "tr": "Bir de henüz olmamış işler var. Onlarda cümlenin sonuna", "kind": "say.tr", "de": "Es gibt auch noch offene Sachen. Dort kommt ans Satzende" },
- { "tr": "Bir de kuralı bozan kelimeler var, onları ezberliyoruz.", "kind": "say.tr", "de": "Es gibt auch Wörter, die die Regel brechen, die lernen wir auswendig." },
- { "tr": "Bir de oturma odası var. Bu iki kelime ama tek bir oda.", "kind": "say.tr", "de": "Und es gibt das Wohnzimmer. Zwei Wörter, aber ein Zimmer." },
- { "tr": "Bir de sormayı öğrenelim. Bir ürün var mı diye sorarken", "kind": "say.tr", "de": "Lernen wir auch zu fragen. Wenn du fragst, ob es etwas gibt" },
- { "tr": "Bir de soru kalıbı ekleyelim, sohbette çok işine yarar:", "kind": "say.tr", "de": "Fügen wir eine Fragewendung hinzu, sie hilft im Gespräch sehr:" },
- { "tr": "Bir de tanıdık bir kuaförse, deneyimini anlatabilirsin:", "kind": "say.tr", "de": "Und bei einem bekannten Friseur kannst du deine Erfahrung nennen:" },
- { "tr": "Bir de tanışırken çok duyacağın kısa bir alışveriş var:", "kind": "say.tr", "de": "Und beim Kennenlernen gibt es einen kurzen Wortwechsel:" },
- { "tr": "Bir soru daha: kabinin yerini soruyorsun. Nasıl dersin?", "kind": "say.tr", "de": "Noch eine Frage: du fragst nach der Kabine. Wie sagst du das?" },
- { "tr": "Bir şey bozulduğunda İngilizler neredeyse hep şunu der:", "kind": "say.tr", "de": "Wenn etwas kaputt ist, sagen die Engländer fast immer das:" },
- { "tr": "Bir tane daha kur. Kibar ol: 'Lütfen bir dakika bekle.'", "kind": "say.tr", "de": "Bilde noch einen. Sei höflich: 'Bitte warte einen Moment.'" },
- { "tr": "Birinin gününü sormak istersen şu soru çok işine yarar:", "kind": "say.tr", "de": "Willst du nach dem Tag fragen, hilft dir diese Frage sehr:" },
- { "tr": "Bu ikisini duyunca tanıman yeter. Lütfen benimle söyle:", "kind": "say.tr", "de": "Du musst die zwei nur erkennen. Bitte sag es mit mir:" },
- { "tr": "Bugün en çok işine yarayacak olan öğleden sonra. Lütfen", "kind": "say.tr", "de": "Am nützlichsten ist heute der Nachmittag. Bitte" },
- { "tr": "Burada worse kötünün, better iyinin karşılaştırma hâli.", "kind": "say.tr", "de": "Hier ist worse der Vergleich von schlecht, better von gut." },
- { "tr": "Ceplerini boşalt. Hepsi fiille başlıyor, fark ettin mi?", "kind": "say.tr", "de": "Leer deine Taschen. Alle beginnen mit dem Verb, gemerkt?" },
- { "tr": "Çok iyi. Mesajlarda en sık yazılan cümlelerden biri şu:", "kind": "say.tr", "de": "Sehr gut. Einer der häufigsten Sätze in Nachrichten:" },
- { "tr": "demek. Kötü bağlantıyı anlatmak için lütfen şunu söyle:", "kind": "say.tr", "de": "heißt das. Für eine schlechte Verbindung sag bitte das:" },
- { "tr": "Deneyelim. İki kız kardeşim var şöyle denir. Tekrar et:", "kind": "say.tr", "de": "Probieren wir es. Ich habe zwei Schwestern heißt so. Wiederhole:" },
- { "tr": "Deneyelim. Karşındakine sor: Ne sıklıkta spor yaparsın?", "kind": "say.tr", "de": "Probieren wir es. Frag dein Gegenüber: Wie oft machst du Sport?" },
- { "tr": "der. 'Henüz yaptın mı, yaptın mı artık' gibi. Cevabı da", "kind": "say.tr", "de": "sagt man. Wie 'hast du es schon gemacht'. Und die Antwort" },
- { "tr": "diye sordu, telefon sandalyenin üstünde. Ona cevap ver.", "kind": "say.tr", "de": "gefragt, das Handy liegt auf dem Stuhl. Antworte ihm." },
- { "tr": "Doğum günün ne zaman? Cevabı da genelde ay ile verilir:", "kind": "say.tr", "de": "Wann hast du Geburtstag? Die Antwort kommt meist mit dem Monat:" },
- { "tr": "erken demek. Ofisin sana söyleyeceği cümleyi tekrar et:", "kind": "say.tr", "de": "heißt früh. Wiederhole den Satz, den das Amt dir sagt:" },
- { "tr": "Gördüğün gibi kalıp hiç değişmiyor: özne, sıklık, fiil.", "kind": "say.tr", "de": "Wie du siehst, ändert sich nichts: Subjekt, Häufigkeit, Verb." },
- { "tr": "Görevlinin sana söyleyeceği cümle bu. Lütfen tekrar et:", "kind": "say.tr", "de": "Das ist der Satz, den man dir sagt. Bitte wiederhole:" },
- { "tr": "Gün varsa on. Hafta sonu için at. Günün bölümü için in.", "kind": "say.tr", "de": "Beim Tag on. Fürs Wochenende at. Für die Tageszeit in." },
- { "tr": "Güzel. Ev sahibi hemen şunu soracak: ne zamandır böyle?", "kind": "say.tr", "de": "Gut. Die Vermietung fragt gleich: seit wann ist das so?" },
- { "tr": "Hastanede en çok yaptığın şey ne? Beklemek. İngilizcesi", "kind": "say.tr", "de": "Was macht man im Krankenhaus am meisten? Warten. Auf Englisch" },
- { "tr": "Henüz değil. Bu iki kelimelik cevabı çok kullanacaksın.", "kind": "say.tr", "de": "Noch nicht. Diese Zweiwortantwort brauchst du oft." },
- { "tr": "Hepsi bir arada, küçük bir konuşma. Arkadaşın diyor ki:", "kind": "say.tr", "de": "Alles zusammen, ein kleines Gespräch. Deine Freundin sagt:" },
- { "tr": "İki gün önce demek istersen sona two days ago eklersin.", "kind": "say.tr", "de": "Für vor zwei Tagen hängst du hinten two days ago an." },
- { "tr": "İmzalamadan önce sorman gereken iki şey var. Birincisi:", "kind": "say.tr", "de": "Vor dem Unterschreiben musst du zwei Dinge fragen. Das erste:" },
- { "tr": "Kelime kelime: ne kadar o? Yani ne kadar tutuyor demek.", "kind": "say.tr", "de": "Wort für Wort: wie viel ist es? Also was kostet es." },
- { "tr": "Kibar bir soru kuruyoruz: Bana yardım edebilir misiniz?", "kind": "say.tr", "de": "Wir bilden eine höfliche Frage: Können Sie mir helfen?" },
- { "tr": "Kibar kalıbı kullan ve sonuna please ekle. Cümleyi kur.", "kind": "say.tr", "de": "Nimm die höfliche Wendung und häng please an. Bilde den Satz." },
- { "tr": "Kuralı bir cümlede görelim. Mağazadasın, iki ceket var:", "kind": "say.tr", "de": "Sehen wir die Regel im Satz. Im Laden hängen zwei Jacken:" },
- { "tr": "Merhaba, hoş geldin. Bugün seni bir kafeye götürüyorum.", "kind": "say.tr", "de": "Hallo, willkommen. Heute nehme ich dich mit ins Café." },
- { "tr": "Müdürümden izin istemem gerekiyor. Manager müdür demek.", "kind": "say.tr", "de": "Ich muss meinen Chef um Erlaubnis bitten. Manager heißt Chef." },
- { "tr": "olduğu için fiil yalın kalır. 'Gitmek' fiilinin geçmişi", "kind": "say.tr", "de": "ist, bleibt das Verb schlicht. Die Vergangenheit von 'gehen'" },
- { "tr": "Randevunu değiştirmen gerekirse de kibar bir kalıp var:", "kind": "say.tr", "de": "Musst du den Termin verschieben, gibt es eine höfliche Wendung:" },
- { "tr": "Sağlıklı alışkanlıkların bir de uyku ayağı var. Uyumak:", "kind": "say.tr", "de": "Zu gesunden Gewohnheiten gehört auch der Schlaf. Schlafen:" },
- { "tr": "Sıra sende. Bir arkadaşına 'Ne kadar kaldın?' diye sor.", "kind": "say.tr", "de": "Du bist dran. Frag deinen Freund 'Wie lange warst du da?'." },
- { "tr": "Sıra sende. Saat sekize on var. İngilizce nasıl dersin?", "kind": "say.tr", "de": "Du bist dran. Es ist zehn vor acht. Wie sagst du das auf Englisch?" },
- { "tr": "Sıradaki kelime kartının çalışıp çalışmadığıyla ilgili:", "kind": "say.tr", "de": "Das nächste Wort betrifft, ob deine Karte geht:" },
- { "tr": "Sırayla: her zaman, genellikle, sık sık, bazen ve asla.", "kind": "say.tr", "de": "Der Reihe nach: immer, meistens, oft, manchmal und nie." },
- { "tr": "Sonuna swim eklemene gerek yok, karşındaki zaten anlar.", "kind": "say.tr", "de": "Du musst kein swim anhängen, dein Gegenüber versteht es." },
- { "tr": "Sorusu çok kolay, sadece kelimeleri yer değiştiriyoruz:", "kind": "say.tr", "de": "Die Frage ist leicht, wir tauschen nur die Wörter:" },
- { "tr": "Süt de sayılmaz; bardağa dökülür. Biraz süt demek için:", "kind": "say.tr", "de": "Milch zählt man auch nicht; sie kommt ins Glas. Für etwas Milch:" },
- { "tr": "Şimdi adını söyleyelim. İngilizcede en yaygın kalıp bu:", "kind": "say.tr", "de": "Jetzt dein Name. Im Englischen ist das die häufigste Wendung:" },
- { "tr": "Şimdi bir kelime: office. Ofis demek. Lütfen office de.", "kind": "say.tr", "de": "Jetzt ein Wort: office. Heißt Büro. Bitte sag office." },
- { "tr": "Şimdi bunları gerçek bir mağaza konuşmasında deneyelim.", "kind": "say.tr", "de": "Probieren wir das jetzt in einem echten Ladengespräch." },
- { "tr": "Şimdi bunu bir cümlede kullanalım. Su derin demek için:", "kind": "say.tr", "de": "Setzen wir es in einen Satz. Um zu sagen, das Wasser ist tief:" },
- { "tr": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle:", "kind": "say.tr", "de": "Jetzt eine längere Spanne. \"Vor einem Jahr\". Bitte sag:" },
- { "tr": "Şimdi dünkü cümleyi sen söyle: 'Dün iki bölüm izledim.'", "kind": "say.tr", "de": "Jetzt sag du den Satz von gestern: 'Gestern sah ich zwei Folgen.'" },
- { "tr": "Şimdi fiyat soralım. İngilizce'de 'ne kadar' demek için", "kind": "say.tr", "de": "Jetzt der Preis. Für 'wie viel' im Englischen" },
- { "tr": "Şimdi hepsini baştan sona bir dinle. Kafeye giriyorsun:", "kind": "say.tr", "de": "Jetzt hör alles von vorn. Du gehst ins Café:" },
- { "tr": "Şimdi hepsini bir arada dinle. Kısa bir düğün hikâyesi:", "kind": "say.tr", "de": "Jetzt hör alles zusammen. Eine kurze Hochzeitsgeschichte:" },
- { "tr": "Şimdi ilk cümlemiz. Memura neden geldiğini söylüyorsun:", "kind": "say.tr", "de": "Jetzt unser erster Satz. Du sagst am Amt, warum du da bist:" },
- { "tr": "Şimdi karşılaştırma. İngilizcede kısa sıfatların sonuna", "kind": "say.tr", "de": "Jetzt der Vergleich. An kurze Adjektive hängt das Englische" },
- { "tr": "Şimdi küçük bir konuşma yapalım, öğrendiklerini kullan.", "kind": "say.tr", "de": "Machen wir ein kleines Gespräch, nutz das Gelernte." },
- { "tr": "Şimdi olayı tek cümlede anlat. İki fiili and ile bağla.", "kind": "say.tr", "de": "Erzähl es jetzt in einem Satz. Verbinde die zwei Verben mit and." },
- { "tr": "Şimdi sen dene. Garsona seslendin ve menüyü istiyorsun.", "kind": "say.tr", "de": "Jetzt probierst du. Du hast gerufen und möchtest die Karte." },
- { "tr": "Şimdi sen kur. \"İznimi yenilemem gerekiyor\" nasıl olur?", "kind": "say.tr", "de": "Jetzt bildest du. Wie heißt \"Ich muss meine Erlaubnis verlängern\"?" },
- { "tr": "Şimdi sen sor: karşındaki kişiye nerede oturduğunu sor.", "kind": "say.tr", "de": "Jetzt fragst du: frag dein Gegenüber, wo es wohnt." },
- { "tr": "Şimdi sıra sende. Bana şunu söyle: Ben yedide kalkarım.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag mir das: Ich stehe um sieben auf." },
- { "tr": "Telefonda çok işine yarayacak bir cümle: \"Anlamıyorum.\"", "kind": "say.tr", "de": "Ein sehr nützlicher Satz am Telefon: \"Ich verstehe nicht.\"" },
- { "tr": "Ve beş kelimemiz: close, together, trust, share, laugh.", "kind": "say.tr", "de": "Und unsere fünf Wörter: close, together, trust, share, laugh." },
- { "tr": "Yakın tek, uzak tek, yakın çok, uzak çok. Tek kural bu.", "kind": "say.tr", "de": "Nah eins, fern eins, nah viele, fern viele. Das ist die Regel." },
- { "tr": "yani 'artık' kelimesi hep cümlenin sonuna gider. Örnek:", "kind": "say.tr", "de": "also 'nicht mehr' geht immer ans Satzende. Beispiel:" },
- { "tr": "Yani been, bir deneyimi anlatır: oraya gitmişliğim var.", "kind": "say.tr", "de": "Also erzählt been eine Erfahrung: ich war schon mal dort." },
- { "tr": "Yani biniş. Check-in masasında sana verdikleri karta da", "kind": "say.tr", "de": "Also das Einsteigen. Die Karte am Check-in-Schalter heißt auch" },
- { "tr": "Yani: Bu bayramı ilkbaharda kutlarız. Lütfen tekrar et.", "kind": "say.tr", "de": "Also: Dieses Fest feiern wir im Frühling. Bitte wiederhole." },
- { "tr": "Yani: Bu mektubu göndermek istiyorum. Lütfen tekrar et:", "kind": "say.tr", "de": "Also: Ich möchte diesen Brief schicken. Bitte wiederhole:" },
- { "tr": "Yani: O nasıl biri, neye benziyor? Lütfen sen de söyle:", "kind": "say.tr", "de": "Also: Wie ist er, wie sieht er aus? Bitte sag du auch:" },
- { "tr": "Yemekler harikaydı. Good'dan çok daha güçlü bir kelime.", "kind": "say.tr", "de": "Das Essen war fantastisch. Viel stärker als good." },
- { "tr": "Yurt dışı gönderilerde bir de kâğıt işi var. Kelimemiz:", "kind": "say.tr", "de": "Bei Auslandssendungen gibt es auch Papierkram. Unser Wort:" },
- { "tr": "— yıkamak. Önce saçının yıkanmasını istiyorsan sorarsın:", "kind": "say.tr", "de": "— heißt waschen. Willst du erst die Haare gewaschen haben, frag:" },
- { "tr": ", daha az veri. Ve sınırsız paket için tek kelime yeter:", "kind": "say.tr", "de": ", also weniger Daten. Und fürs unbegrenzte Paket reicht ein Wort:" },
- { "tr": ". Türkçesi beden ya da boyut demek. Lütfen sen de söyle:", "kind": "say.tr", "de": ". Auf Deutsch heißt es Größe. Bitte sag du auch:" },
- { "tr": "'Pazar günü işe gitmedim.' 'didn't went' asla demiyoruz.", "kind": "say.tr", "de": "'Am Sonntag bin ich nicht zur Arbeit gegangen.' 'didn't went' nie." },
- { "tr": "'Üstü kalsın' demek. Ardından 'Thank you' demeyi unutma.", "kind": "say.tr", "de": "'Stimmt so' heißt das. Vergiss danach 'Thank you' nicht." },
- { "tr": "\"Belki\" demek. Kapıyı açık bırakmak için çok kullanılır:", "kind": "say.tr", "de": "\"Vielleicht\" heißt das. Es hält die Tür offen:" },
- { "tr": "Ama acil durumda çabuk gel demek için doğal kalıp şudur:", "kind": "say.tr", "de": "Aber im Notfall lautet die natürliche Wendung für komm schnell:" },
- { "tr": "Ama kelime sesli harfle başlıyorsa 'a' değil 'an' deriz:", "kind": "say.tr", "de": "Aber beginnt das Wort mit einem Vokal, sagen wir 'an', nicht 'a':" },
- { "tr": "Ben öğrenciyim demek için şöyle deriz. Lütfen tekrar et:", "kind": "say.tr", "de": "Um ich bin Student zu sagen, sagen wir so. Bitte wiederhole:" },
- { "tr": "Bir de karşındakinin fikrini sormalısın. Soru kalıbı şu:", "kind": "say.tr", "de": "Du musst auch nach der Meinung fragen. Die Fragewendung:" },
- { "tr": "Bir de olumsuzuna kısaca değinelim. Çalışmam demek için:", "kind": "say.tr", "de": "Kurz zur Verneinung. Um ich arbeite nicht zu sagen:" },
- { "tr": "Bir de tam tersi var. İş henüz olmadıysa cümlenin sonuna", "kind": "say.tr", "de": "Es geht auch umgekehrt. Ist es noch nicht passiert, kommt ans Ende" },
- { "tr": "Bir geleneği anlatmak için çok kullanışlı bir kalıp var:", "kind": "say.tr", "de": "Für einen Brauch gibt es eine sehr nützliche Wendung:" },
- { "tr": "Bir noktaya daha dikkat: arkadaşlar çoğulsa yine -s yok.", "kind": "say.tr", "de": "Noch ein Punkt: sind es mehrere Freunde, wieder kein -s." },
- { "tr": "Bir zaman ifadesi daha ekleyelim. Geçen hafta demek için", "kind": "say.tr", "de": "Noch eine Zeitangabe. Für letzte Woche" },
- { "tr": "Biz için de were kullanıyoruz. Biz geçen hafta evdeydik:", "kind": "say.tr", "de": "Für wir nehmen wir auch were. Letzte Woche waren wir zu Hause:" },
- { "tr": "Bunu bir kenara yaz, birazdan konuşmada işine yarayacak.", "kind": "say.tr", "de": "Schreib sie dir auf, gleich brauchst du sie im Gespräch." },
- { "tr": "Büyümek, bir yerde yetişmek demek. Geçmiş hali düzensiz:", "kind": "say.tr", "de": "Heißt aufwachsen, groß werden. Die Vergangenheit ist unregelmäßig:" },
- { "tr": "Cevabı çok kolay. Küçük small, orta medium, büyük large.", "kind": "say.tr", "de": "Die Antwort ist leicht. Klein small, mittel medium, groß large." },
- { "tr": "Cevap verirken eşyayı tekrar söylemene gerek yok. Sadece", "kind": "say.tr", "de": "Beim Antworten musst du die Sache nicht wiederholen. Nur" },
- { "tr": "Çoğu mağazada kartla ödediysen yine de yardımcı olurlar.", "kind": "say.tr", "de": "In den meisten Läden hilft man dir auch bei Kartenzahlung." },
- { "tr": "Diş ağrım var demek. Toothache diş ağrısı. Lütfen söyle:", "kind": "say.tr", "de": "Heißt ich habe Zahnschmerzen. Toothache ist der Zahnschmerz. Sag:" },
- { "tr": "Doktorun sorusu: 'Bu ağrı ne zamandır var?' İngilizcesi:", "kind": "say.tr", "de": "Die Arztfrage: 'Seit wann haben Sie diesen Schmerz?' Auf Englisch:" },
- { "tr": "Duydun mu? Beş cümle, hepsi bir ipe dizili: first, then,", "kind": "say.tr", "de": "Gehört? Fünf Sätze, alle auf einer Schnur: first, then," },
- { "tr": "edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:", "kind": "say.tr", "de": "nehmen wir die Präposition. Gratulieren wir zur neuen Stelle. Sag:" },
- { "tr": "Film izlemeyi sever misin demek. Cevabı da kısa verilir:", "kind": "say.tr", "de": "Heißt siehst du gern Filme. Die Antwort ist auch kurz:" },
- { "tr": "Genelde hafta sonu fotoğraf paylaşırım. Şimdi sen söyle:", "kind": "say.tr", "de": "Meistens poste ich am Wochenende Fotos. Jetzt sag du:" },
- { "tr": "Görüşme sırasında olduğunu anlatmak için de şunu dersin:", "kind": "say.tr", "de": "Um zu sagen, dass du gerade im Gespräch bist, sagst du das:" },
- { "tr": "Güncelleme: update. Hem isim hem fiil olarak kullanılır.", "kind": "say.tr", "de": "Aktualisierung: update. Es geht als Substantiv und als Verb." },
- { "tr": "Güzel. Şimdi paraya gelelim. Fiyat kelimesi İngilizcede:", "kind": "say.tr", "de": "Gut. Jetzt zum Geld. Das Wort Preis auf Englisch:" },
- { "tr": "Hadi sen kur. \"Ben genellikle kahve içerim\" nasıl denir?", "kind": "say.tr", "de": "Los, bilde du. Wie heißt \"Ich trinke meistens Kaffee\"?" },
- { "tr": "Harika iş çıkardın. Bugün planlarını anlatmayı öğrendin:", "kind": "say.tr", "de": "Großartig gemacht. Heute hast du gelernt, Pläne zu erzählen:" },
- { "tr": "Harika. Şimdi soru soralım. Sormak için is'i öne alırız.", "kind": "say.tr", "de": "Super. Jetzt fragen wir. Zum Fragen rückt is nach vorn." },
- { "tr": "Havuzun bir yeri sığ, bir yeri derindir. Derin kelimesi:", "kind": "say.tr", "de": "Ein Teil des Beckens ist flach, ein Teil tief. Das Wort tief:" },
- { "tr": "He, yani erkekler için de aynı kural. Onun bir oğlu var:", "kind": "say.tr", "de": "He, also für Männer, dieselbe Regel. Er hat einen Sohn:" },
- { "tr": "Hepsini geçmiş zamanla anlatacağız. Hazırsan başlıyoruz.", "kind": "say.tr", "de": "Wir erzählen alles in der Vergangenheit. Wenn du bereit bist, los." },
- { "tr": "İçinde ne vardı? Vardı demek için there was kullanırsın:", "kind": "say.tr", "de": "Was war darin? Für es gab nimmst du there was:" },
- { "tr": "İkinci kelimemiz kalmak. Bir yerde konaklamak anlamında:", "kind": "say.tr", "de": "Unser zweites Wort ist bleiben. Im Sinne von übernachten:" },
- { "tr": "İkisini birleştirelim. Neredeyse eski hâlindesin. De ki:", "kind": "say.tr", "de": "Verbinden wir beide. Du bist fast wieder der Alte. Sag:" },
- { "tr": "İlk kelimemiz work. Hem çalışmak hem de iş demek. Lütfen", "kind": "say.tr", "de": "Unser erstes Wort ist work. Heißt arbeiten und Arbeit. Bitte" },
- { "tr": "İlk kelimemiz zaman kelimesi. Dün demek için İngilizcede", "kind": "say.tr", "de": "Unser erstes Wort ist ein Zeitwort. Für gestern sagt das Englische" },
- { "tr": "İmzalamak ise sign. İkisini birleştiriyoruz. De bakalım:", "kind": "say.tr", "de": "Unterschreiben ist sign. Wir verbinden beide. Sag mal:" },
- { "tr": "İnternetten alışverişte en sık sorulan soruyu öğrenelim:", "kind": "say.tr", "de": "Lernen wir die häufigste Frage beim Onlinekauf:" },
- { "tr": "İşte dersin ana kalıbı. Gişedeki görevliye şöyle dersin:", "kind": "say.tr", "de": "Das ist die Hauptwendung der Lektion. Am Schalter sagst du so:" },
- { "tr": "it's not good' de anlaşılır ama doğal olan birincisidir.", "kind": "say.tr", "de": "it's not good' versteht man auch, aber natürlich ist das erste." },
- { "tr": "İzin isterken sebep söylemek çok önemli. Sebep kelimesi:", "kind": "say.tr", "de": "Beim Bitten um freie Tage zählt der Grund. Das Wort Grund:" },
- { "tr": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek", "kind": "say.tr", "de": "Die größte Regel der Bibliothek ist die Stille. Leise heißt" }
+ {
+  "tr": "şarj etmek demek. Telefon şarj olmuyorsa şöyle dersin:",
+  "kind": "say.tr",
+  "de": "heißt laden. Lädt das Handy nicht, sagst du so:"
+ },
+ {
+  "tr": "Şimdi cümleyi sen kur: 'O çok komik' — bir erkek için.",
+  "kind": "say.tr",
+  "de": "Jetzt bildest du den Satz: 'Er ist sehr lustig' — für einen Mann."
+ },
+ {
+  "tr": "Şimdi kapanış. İş e-postasında en güvenli bitiş budur:",
+  "kind": "say.tr",
+  "de": "Jetzt der Schluss. In der Geschäftsmail ist das der sicherste:"
+ },
+ {
+  "tr": "Şimdi komşunun kapısını çalıyoruz. Hazırsan konuşalım.",
+  "kind": "say.tr",
+  "de": "Jetzt klingeln wir beim Nachbarn. Wenn du bereit bist, los."
+ },
+ {
+  "tr": "Şimdi kulağını çalıştıralım. Şu cümle doğru mu, dinle.",
+  "kind": "say.tr",
+  "de": "Jetzt das Ohr. Stimmt dieser Satz, hör zu."
+ },
+ {
+  "tr": "Şimdi sen kur. Biri telefonumu çaldı, nasıl söylersin?",
+  "kind": "say.tr",
+  "de": "Jetzt bildest du. Jemand hat mein Handy gestohlen, wie sagst du das?"
+ },
+ {
+  "tr": "Şimdi sen kur. Sorunu anlatıyorsun: Kartım çalışmıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bildest du. Du nennst das Problem: Meine Karte geht nicht."
+ },
+ {
+  "tr": "Şimdi sen söyle: Çünkü yeni şeyler öğrenmek istiyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt sag du: Weil ich Neues lernen möchte."
+ },
+ {
+  "tr": "Tabelalar genelde kişiye seslenmez, kuralı düz söyler:",
+  "kind": "say.tr",
+  "de": "Schilder sprechen selten jemanden an, sie nennen die Regel:"
+ },
+ {
+  "tr": "Telefon çaldığında ben yemek yapıyordum. Sen de söyle:",
+  "kind": "say.tr",
+  "de": "Als das Telefon klingelte, habe ich gekocht. Sag du auch:"
+ },
+ {
+  "tr": "Türkçedeki \"-meli, -malı\" eki gibi düşün. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Denk an das deutsche \"sollte\". Bist du bereit?"
+ },
+ {
+  "tr": "Üç kısa cümle, üç adım. Tarif anlatmak bu kadar basit.",
+  "kind": "say.tr",
+  "de": "Drei kurze Sätze, drei Schritte. So einfach ist ein Rezept."
+ },
+ {
+  "tr": "ve can you show me the way ile kibarca yardım istemek.",
+  "kind": "say.tr",
+  "de": "und can you show me the way, um höflich um Hilfe zu bitten."
+ },
+ {
+  "tr": "Yani \"kendimi ... hissediyorum\". İki kelime öğrenelim:",
+  "kind": "say.tr",
+  "de": "Also \"ich fühle mich ...\". Lernen wir zwei Wörter:"
+ },
+ {
+  "tr": "Yani \"saat on\". Dakika varken bu kelimeyi hiç söyleme.",
+  "kind": "say.tr",
+  "de": "Also \"zehn Uhr\". Bei Minuten sag das Wort gar nicht."
+ },
+ {
+  "tr": "Yani \"Servis dahil mi?\" Bir de kartla ödemek istersen:",
+  "kind": "say.tr",
+  "de": "Also \"Ist die Bedienung inbegriffen?\" Und wenn du mit Karte zahlst:"
+ },
+ {
+  "tr": "Yani çok pahalı. Too kelimesi fazlasıyla anlamı katar.",
+  "kind": "say.tr",
+  "de": "Also zu teuer. Das Wort too gibt die Bedeutung übermäßig."
+ },
+ {
+  "tr": "yani temiz demek. Ortak mutfak için sık görülen kural:",
+  "kind": "say.tr",
+  "de": "heißt also sauber. Eine häufige Regel für die Gemeinschaftsküche:"
+ },
+ {
+  "tr": "Yani two breads denmez. Onun yerine biraz ekmek deriz:",
+  "kind": "say.tr",
+  "de": "Also sagt man nicht two breads. Stattdessen etwas Brot:"
+ },
+ {
+  "tr": "Yürüyerek on dakika sürüyor. on foot, yürüyerek demek.",
+  "kind": "say.tr",
+  "de": "Zu Fuß dauert es zehn Minuten. on foot heißt zu Fuß."
+ },
+ {
+  "tr": ". Yani 'seçmek'. Bir ekranda dili seçtiriyorsun mesela:",
+  "kind": "say.tr",
+  "de": ". Also 'auswählen'. Auf dem Bildschirm wählst du die Sprache:"
+ },
+ {
+  "tr": "\"Mutfakta sandalye var mı?\" Lütfen bu soruyu tekrar et.",
+  "kind": "say.tr",
+  "de": "\"Gibt es Stühle in der Küche?\" Bitte wiederhole die Frage."
+ },
+ {
+  "tr": "Aynı kalıpla istediğin kadar cümle kurabilirsin. Dinle:",
+  "kind": "say.tr",
+  "de": "Mit derselben Wendung baust du beliebig viele Sätze. Hör zu:"
+ },
+ {
+  "tr": "Bazen de hemen cevap veremezsin. O zaman özür dilersin:",
+  "kind": "say.tr",
+  "de": "Manchmal kannst du nicht gleich antworten. Dann entschuldigst du dich:"
+ },
+ {
+  "tr": "Bazı formlarda ve görüşmelerde soru biraz farklı gelir.",
+  "kind": "say.tr",
+  "de": "In manchen Formularen und Gesprächen klingt die Frage anders."
+ },
+ {
+  "tr": "be fiilinin geçmişi ayrı: was ve were. Olumsuzu wasn't.",
+  "kind": "say.tr",
+  "de": "Die Vergangenheit von be ist eigen: was und were. Verneint wasn't."
+ },
+ {
+  "tr": "Beş gün bir otelde kaldık. Otel için at, süre için for.",
+  "kind": "say.tr",
+  "de": "Wir waren fünf Tage in einem Hotel. Fürs Hotel at, für die Dauer for."
+ },
+ {
+  "tr": "Bir de henüz olmamış işler var. Onlarda cümlenin sonuna",
+  "kind": "say.tr",
+  "de": "Es gibt auch noch offene Sachen. Dort kommt ans Satzende"
+ },
+ {
+  "tr": "Bir de kuralı bozan kelimeler var, onları ezberliyoruz.",
+  "kind": "say.tr",
+  "de": "Es gibt auch Wörter, die die Regel brechen, die lernen wir auswendig."
+ },
+ {
+  "tr": "Bir de oturma odası var. Bu iki kelime ama tek bir oda.",
+  "kind": "say.tr",
+  "de": "Und es gibt das Wohnzimmer. Zwei Wörter, aber ein Zimmer."
+ },
+ {
+  "tr": "Bir de sormayı öğrenelim. Bir ürün var mı diye sorarken",
+  "kind": "say.tr",
+  "de": "Lernen wir auch zu fragen. Wenn du fragst, ob es etwas gibt"
+ },
+ {
+  "tr": "Bir de soru kalıbı ekleyelim, sohbette çok işine yarar:",
+  "kind": "say.tr",
+  "de": "Fügen wir eine Fragewendung hinzu, sie hilft im Gespräch sehr:"
+ },
+ {
+  "tr": "Bir de tanıdık bir kuaförse, deneyimini anlatabilirsin:",
+  "kind": "say.tr",
+  "de": "Und bei einem bekannten Friseur kannst du deine Erfahrung nennen:"
+ },
+ {
+  "tr": "Bir de tanışırken çok duyacağın kısa bir alışveriş var:",
+  "kind": "say.tr",
+  "de": "Und beim Kennenlernen gibt es einen kurzen Wortwechsel:"
+ },
+ {
+  "tr": "Bir soru daha: kabinin yerini soruyorsun. Nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Noch eine Frage: du fragst nach der Kabine. Wie sagst du das?"
+ },
+ {
+  "tr": "Bir şey bozulduğunda İngilizler neredeyse hep şunu der:",
+  "kind": "say.tr",
+  "de": "Wenn etwas kaputt ist, sagen die Engländer fast immer das:"
+ },
+ {
+  "tr": "Bir tane daha kur. Kibar ol: 'Lütfen bir dakika bekle.'",
+  "kind": "say.tr",
+  "de": "Bilde noch einen. Sei höflich: 'Bitte warte einen Moment.'"
+ },
+ {
+  "tr": "Birinin gününü sormak istersen şu soru çok işine yarar:",
+  "kind": "say.tr",
+  "de": "Willst du nach dem Tag fragen, hilft dir diese Frage sehr:"
+ },
+ {
+  "tr": "Bu ikisini duyunca tanıman yeter. Lütfen benimle söyle:",
+  "kind": "say.tr",
+  "de": "Du musst die zwei nur erkennen. Bitte sag es mit mir:"
+ },
+ {
+  "tr": "Bugün en çok işine yarayacak olan öğleden sonra. Lütfen",
+  "kind": "say.tr",
+  "de": "Am nützlichsten ist heute der Nachmittag. Bitte"
+ },
+ {
+  "tr": "Burada worse kötünün, better iyinin karşılaştırma hâli.",
+  "kind": "say.tr",
+  "de": "Hier ist worse der Vergleich von schlecht, better von gut."
+ },
+ {
+  "tr": "Ceplerini boşalt. Hepsi fiille başlıyor, fark ettin mi?",
+  "kind": "say.tr",
+  "de": "Leer deine Taschen. Alle beginnen mit dem Verb, gemerkt?"
+ },
+ {
+  "tr": "demek. Kötü bağlantıyı anlatmak için lütfen şunu söyle:",
+  "kind": "say.tr",
+  "de": "heißt das. Für eine schlechte Verbindung sag bitte das:"
+ },
+ {
+  "tr": "Deneyelim. İki kız kardeşim var şöyle denir. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Probieren wir es. Ich habe zwei Schwestern heißt so. Wiederhole:"
+ },
+ {
+  "tr": "Deneyelim. Karşındakine sor: Ne sıklıkta spor yaparsın?",
+  "kind": "say.tr",
+  "de": "Probieren wir es. Frag dein Gegenüber: Wie oft machst du Sport?"
+ },
+ {
+  "tr": "der. 'Henüz yaptın mı, yaptın mı artık' gibi. Cevabı da",
+  "kind": "say.tr",
+  "de": "sagt man. Wie 'hast du es schon gemacht'. Und die Antwort"
+ },
+ {
+  "tr": "diye sordu, telefon sandalyenin üstünde. Ona cevap ver.",
+  "kind": "say.tr",
+  "de": "gefragt, das Handy liegt auf dem Stuhl. Antworte ihm."
+ },
+ {
+  "tr": "Doğum günün ne zaman? Cevabı da genelde ay ile verilir:",
+  "kind": "say.tr",
+  "de": "Wann hast du Geburtstag? Die Antwort kommt meist mit dem Monat:"
+ },
+ {
+  "tr": "erken demek. Ofisin sana söyleyeceği cümleyi tekrar et:",
+  "kind": "say.tr",
+  "de": "heißt früh. Wiederhole den Satz, den das Amt dir sagt:"
+ },
+ {
+  "tr": "Gördüğün gibi kalıp hiç değişmiyor: özne, sıklık, fiil.",
+  "kind": "say.tr",
+  "de": "Wie du siehst, ändert sich nichts: Subjekt, Häufigkeit, Verb."
+ },
+ {
+  "tr": "Görevlinin sana söyleyeceği cümle bu. Lütfen tekrar et:",
+  "kind": "say.tr",
+  "de": "Das ist der Satz, den man dir sagt. Bitte wiederhole:"
+ },
+ {
+  "tr": "Gün varsa on. Hafta sonu için at. Günün bölümü için in.",
+  "kind": "say.tr",
+  "de": "Beim Tag on. Fürs Wochenende at. Für die Tageszeit in."
+ },
+ {
+  "tr": "Hastanede en çok yaptığın şey ne? Beklemek. İngilizcesi",
+  "kind": "say.tr",
+  "de": "Was macht man im Krankenhaus am meisten? Warten. Auf Englisch"
+ },
+ {
+  "tr": "Henüz değil. Bu iki kelimelik cevabı çok kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Noch nicht. Diese Zweiwortantwort brauchst du oft."
+ },
+ {
+  "tr": "Hepsi bir arada, küçük bir konuşma. Arkadaşın diyor ki:",
+  "kind": "say.tr",
+  "de": "Alles zusammen, ein kleines Gespräch. Deine Freundin sagt:"
+ },
+ {
+  "tr": "İki gün önce demek istersen sona two days ago eklersin.",
+  "kind": "say.tr",
+  "de": "Für vor zwei Tagen hängst du hinten two days ago an."
+ },
+ {
+  "tr": "İmzalamadan önce sorman gereken iki şey var. Birincisi:",
+  "kind": "say.tr",
+  "de": "Vor dem Unterschreiben musst du zwei Dinge fragen. Das erste:"
+ },
+ {
+  "tr": "Kelime kelime: ne kadar o? Yani ne kadar tutuyor demek.",
+  "kind": "say.tr",
+  "de": "Wort für Wort: wie viel ist es? Also was kostet es."
+ },
+ {
+  "tr": "Kibar bir soru kuruyoruz: Bana yardım edebilir misiniz?",
+  "kind": "say.tr",
+  "de": "Wir bilden eine höfliche Frage: Können Sie mir helfen?"
+ },
+ {
+  "tr": "Kibar kalıbı kullan ve sonuna please ekle. Cümleyi kur.",
+  "kind": "say.tr",
+  "de": "Nimm die höfliche Wendung und häng please an. Bilde den Satz."
+ },
+ {
+  "tr": "Kuralı bir cümlede görelim. Mağazadasın, iki ceket var:",
+  "kind": "say.tr",
+  "de": "Sehen wir die Regel im Satz. Im Laden hängen zwei Jacken:"
+ },
+ {
+  "tr": "Merhaba, hoş geldin. Bugün seni bir kafeye götürüyorum.",
+  "kind": "say.tr",
+  "de": "Hallo, willkommen. Heute nehme ich dich mit ins Café."
+ },
+ {
+  "tr": "Müdürümden izin istemem gerekiyor. Manager müdür demek.",
+  "kind": "say.tr",
+  "de": "Ich muss meinen Chef um Erlaubnis bitten. Manager heißt Chef."
+ },
+ {
+  "tr": "olduğu için fiil yalın kalır. 'Gitmek' fiilinin geçmişi",
+  "kind": "say.tr",
+  "de": "ist, bleibt das Verb schlicht. Die Vergangenheit von 'gehen'"
+ },
+ {
+  "tr": "Randevunu değiştirmen gerekirse de kibar bir kalıp var:",
+  "kind": "say.tr",
+  "de": "Musst du den Termin verschieben, gibt es eine höfliche Wendung:"
+ },
+ {
+  "tr": "Sağlıklı alışkanlıkların bir de uyku ayağı var. Uyumak:",
+  "kind": "say.tr",
+  "de": "Zu gesunden Gewohnheiten gehört auch der Schlaf. Schlafen:"
+ },
+ {
+  "tr": "Sıra sende. Bir arkadaşına 'Ne kadar kaldın?' diye sor.",
+  "kind": "say.tr",
+  "de": "Du bist dran. Frag deinen Freund 'Wie lange warst du da?'."
+ },
+ {
+  "tr": "Sıra sende. Saat sekize on var. İngilizce nasıl dersin?",
+  "kind": "say.tr",
+  "de": "Du bist dran. Es ist zehn vor acht. Wie sagst du das auf Englisch?"
+ },
+ {
+  "tr": "Sıradaki kelime kartının çalışıp çalışmadığıyla ilgili:",
+  "kind": "say.tr",
+  "de": "Das nächste Wort betrifft, ob deine Karte geht:"
+ },
+ {
+  "tr": "Sırayla: her zaman, genellikle, sık sık, bazen ve asla.",
+  "kind": "say.tr",
+  "de": "Der Reihe nach: immer, meistens, oft, manchmal und nie."
+ },
+ {
+  "tr": "Sonuna swim eklemene gerek yok, karşındaki zaten anlar.",
+  "kind": "say.tr",
+  "de": "Du musst kein swim anhängen, dein Gegenüber versteht es."
+ },
+ {
+  "tr": "Sorusu çok kolay, sadece kelimeleri yer değiştiriyoruz:",
+  "kind": "say.tr",
+  "de": "Die Frage ist leicht, wir tauschen nur die Wörter:"
+ },
+ {
+  "tr": "Süt de sayılmaz; bardağa dökülür. Biraz süt demek için:",
+  "kind": "say.tr",
+  "de": "Milch zählt man auch nicht; sie kommt ins Glas. Für etwas Milch:"
+ },
+ {
+  "tr": "Şimdi adını söyleyelim. İngilizcede en yaygın kalıp bu:",
+  "kind": "say.tr",
+  "de": "Jetzt dein Name. Im Englischen ist das die häufigste Wendung:"
+ },
+ {
+  "tr": "Şimdi bir kelime: office. Ofis demek. Lütfen office de.",
+  "kind": "say.tr",
+  "de": "Jetzt ein Wort: office. Heißt Büro. Bitte sag office."
+ },
+ {
+  "tr": "Şimdi bunları gerçek bir mağaza konuşmasında deneyelim.",
+  "kind": "say.tr",
+  "de": "Probieren wir das jetzt in einem echten Ladengespräch."
+ },
+ {
+  "tr": "Şimdi bunu bir cümlede kullanalım. Su derin demek için:",
+  "kind": "say.tr",
+  "de": "Setzen wir es in einen Satz. Um zu sagen, das Wasser ist tief:"
+ },
+ {
+  "tr": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle:",
+  "kind": "say.tr",
+  "de": "Jetzt eine längere Spanne. \"Vor einem Jahr\". Bitte sag:"
+ },
+ {
+  "tr": "Şimdi dünkü cümleyi sen söyle: 'Dün iki bölüm izledim.'",
+  "kind": "say.tr",
+  "de": "Jetzt sag du den Satz von gestern: 'Gestern sah ich zwei Folgen.'"
+ },
+ {
+  "tr": "Şimdi fiyat soralım. İngilizce'de 'ne kadar' demek için",
+  "kind": "say.tr",
+  "de": "Jetzt der Preis. Für 'wie viel' im Englischen"
+ },
+ {
+  "tr": "Şimdi hepsini baştan sona bir dinle. Kafeye giriyorsun:",
+  "kind": "say.tr",
+  "de": "Jetzt hör alles von vorn. Du gehst ins Café:"
+ },
+ {
+  "tr": "Şimdi hepsini bir arada dinle. Kısa bir düğün hikâyesi:",
+  "kind": "say.tr",
+  "de": "Jetzt hör alles zusammen. Eine kurze Hochzeitsgeschichte:"
+ },
+ {
+  "tr": "Şimdi ilk cümlemiz. Memura neden geldiğini söylüyorsun:",
+  "kind": "say.tr",
+  "de": "Jetzt unser erster Satz. Du sagst am Amt, warum du da bist:"
+ },
+ {
+  "tr": "Şimdi karşılaştırma. İngilizcede kısa sıfatların sonuna",
+  "kind": "say.tr",
+  "de": "Jetzt der Vergleich. An kurze Adjektive hängt das Englische"
+ },
+ {
+  "tr": "Şimdi küçük bir konuşma yapalım, öğrendiklerini kullan.",
+  "kind": "say.tr",
+  "de": "Machen wir ein kleines Gespräch, nutz das Gelernte."
+ },
+ {
+  "tr": "Şimdi olayı tek cümlede anlat. İki fiili and ile bağla.",
+  "kind": "say.tr",
+  "de": "Erzähl es jetzt in einem Satz. Verbinde die zwei Verben mit and."
+ },
+ {
+  "tr": "Şimdi sen dene. Garsona seslendin ve menüyü istiyorsun.",
+  "kind": "say.tr",
+  "de": "Jetzt probierst du. Du hast gerufen und möchtest die Karte."
+ },
+ {
+  "tr": "Şimdi sen kur. \"İznimi yenilemem gerekiyor\" nasıl olur?",
+  "kind": "say.tr",
+  "de": "Jetzt bildest du. Wie heißt \"Ich muss meine Erlaubnis verlängern\"?"
+ },
+ {
+  "tr": "Şimdi sen sor: karşındaki kişiye nerede oturduğunu sor.",
+  "kind": "say.tr",
+  "de": "Jetzt fragst du: frag dein Gegenüber, wo es wohnt."
+ },
+ {
+  "tr": "Şimdi sıra sende. Bana şunu söyle: Ben yedide kalkarım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Sag mir das: Ich stehe um sieben auf."
+ },
+ {
+  "tr": "Telefonda çok işine yarayacak bir cümle: \"Anlamıyorum.\"",
+  "kind": "say.tr",
+  "de": "Ein sehr nützlicher Satz am Telefon: \"Ich verstehe nicht.\""
+ },
+ {
+  "tr": "Ve beş kelimemiz: close, together, trust, share, laugh.",
+  "kind": "say.tr",
+  "de": "Und unsere fünf Wörter: close, together, trust, share, laugh."
+ },
+ {
+  "tr": "Yakın tek, uzak tek, yakın çok, uzak çok. Tek kural bu.",
+  "kind": "say.tr",
+  "de": "Nah eins, fern eins, nah viele, fern viele. Das ist die Regel."
+ },
+ {
+  "tr": "yani 'artık' kelimesi hep cümlenin sonuna gider. Örnek:",
+  "kind": "say.tr",
+  "de": "also 'nicht mehr' geht immer ans Satzende. Beispiel:"
+ },
+ {
+  "tr": "Yani been, bir deneyimi anlatır: oraya gitmişliğim var.",
+  "kind": "say.tr",
+  "de": "Also erzählt been eine Erfahrung: ich war schon mal dort."
+ },
+ {
+  "tr": "Yani biniş. Check-in masasında sana verdikleri karta da",
+  "kind": "say.tr",
+  "de": "Also das Einsteigen. Die Karte am Check-in-Schalter heißt auch"
+ },
+ {
+  "tr": "Yani: Bu bayramı ilkbaharda kutlarız. Lütfen tekrar et.",
+  "kind": "say.tr",
+  "de": "Also: Dieses Fest feiern wir im Frühling. Bitte wiederhole."
+ },
+ {
+  "tr": "Yani: Bu mektubu göndermek istiyorum. Lütfen tekrar et:",
+  "kind": "say.tr",
+  "de": "Also: Ich möchte diesen Brief schicken. Bitte wiederhole:"
+ },
+ {
+  "tr": "Yani: O nasıl biri, neye benziyor? Lütfen sen de söyle:",
+  "kind": "say.tr",
+  "de": "Also: Wie ist er, wie sieht er aus? Bitte sag du auch:"
+ },
+ {
+  "tr": "Yemekler harikaydı. Good'dan çok daha güçlü bir kelime.",
+  "kind": "say.tr",
+  "de": "Das Essen war fantastisch. Viel stärker als good."
+ },
+ {
+  "tr": "Yurt dışı gönderilerde bir de kâğıt işi var. Kelimemiz:",
+  "kind": "say.tr",
+  "de": "Bei Auslandssendungen gibt es auch Papierkram. Unser Wort:"
+ },
+ {
+  "tr": "— yıkamak. Önce saçının yıkanmasını istiyorsan sorarsın:",
+  "kind": "say.tr",
+  "de": "— heißt waschen. Willst du erst die Haare gewaschen haben, frag:"
+ },
+ {
+  "tr": ", daha az veri. Ve sınırsız paket için tek kelime yeter:",
+  "kind": "say.tr",
+  "de": ", also weniger Daten. Und fürs unbegrenzte Paket reicht ein Wort:"
+ },
+ {
+  "tr": ". Türkçesi beden ya da boyut demek. Lütfen sen de söyle:",
+  "kind": "say.tr",
+  "de": ". Auf Deutsch heißt es Größe. Bitte sag du auch:"
+ },
+ {
+  "tr": "'Pazar günü işe gitmedim.' 'didn't went' asla demiyoruz.",
+  "kind": "say.tr",
+  "de": "'Am Sonntag bin ich nicht zur Arbeit gegangen.' 'didn't went' nie."
+ },
+ {
+  "tr": "'Üstü kalsın' demek. Ardından 'Thank you' demeyi unutma.",
+  "kind": "say.tr",
+  "de": "'Stimmt so' heißt das. Vergiss danach 'Thank you' nicht."
+ },
+ {
+  "tr": "\"Belki\" demek. Kapıyı açık bırakmak için çok kullanılır:",
+  "kind": "say.tr",
+  "de": "\"Vielleicht\" heißt das. Es hält die Tür offen:"
+ },
+ {
+  "tr": "Ama acil durumda çabuk gel demek için doğal kalıp şudur:",
+  "kind": "say.tr",
+  "de": "Aber im Notfall lautet die natürliche Wendung für komm schnell:"
+ },
+ {
+  "tr": "Ama kelime sesli harfle başlıyorsa 'a' değil 'an' deriz:",
+  "kind": "say.tr",
+  "de": "Aber beginnt das Wort mit einem Vokal, sagen wir 'an', nicht 'a':"
+ },
+ {
+  "tr": "Ben öğrenciyim demek için şöyle deriz. Lütfen tekrar et:",
+  "kind": "say.tr",
+  "de": "Um ich bin Student zu sagen, sagen wir so. Bitte wiederhole:"
+ },
+ {
+  "tr": "Bir de karşındakinin fikrini sormalısın. Soru kalıbı şu:",
+  "kind": "say.tr",
+  "de": "Du musst auch nach der Meinung fragen. Die Fragewendung:"
+ },
+ {
+  "tr": "Bir de olumsuzuna kısaca değinelim. Çalışmam demek için:",
+  "kind": "say.tr",
+  "de": "Kurz zur Verneinung. Um ich arbeite nicht zu sagen:"
+ },
+ {
+  "tr": "Bir de tam tersi var. İş henüz olmadıysa cümlenin sonuna",
+  "kind": "say.tr",
+  "de": "Es geht auch umgekehrt. Ist es noch nicht passiert, kommt ans Ende"
+ },
+ {
+  "tr": "Bir geleneği anlatmak için çok kullanışlı bir kalıp var:",
+  "kind": "say.tr",
+  "de": "Für einen Brauch gibt es eine sehr nützliche Wendung:"
+ },
+ {
+  "tr": "Bir noktaya daha dikkat: arkadaşlar çoğulsa yine -s yok.",
+  "kind": "say.tr",
+  "de": "Noch ein Punkt: sind es mehrere Freunde, wieder kein -s."
+ },
+ {
+  "tr": "Bir zaman ifadesi daha ekleyelim. Geçen hafta demek için",
+  "kind": "say.tr",
+  "de": "Noch eine Zeitangabe. Für letzte Woche"
+ },
+ {
+  "tr": "Biz için de were kullanıyoruz. Biz geçen hafta evdeydik:",
+  "kind": "say.tr",
+  "de": "Für wir nehmen wir auch were. Letzte Woche waren wir zu Hause:"
+ },
+ {
+  "tr": "Bunu bir kenara yaz, birazdan konuşmada işine yarayacak.",
+  "kind": "say.tr",
+  "de": "Schreib sie dir auf, gleich brauchst du sie im Gespräch."
+ },
+ {
+  "tr": "Büyümek, bir yerde yetişmek demek. Geçmiş hali düzensiz:",
+  "kind": "say.tr",
+  "de": "Heißt aufwachsen, groß werden. Die Vergangenheit ist unregelmäßig:"
+ },
+ {
+  "tr": "Cevabı çok kolay. Küçük small, orta medium, büyük large.",
+  "kind": "say.tr",
+  "de": "Die Antwort ist leicht. Klein small, mittel medium, groß large."
+ },
+ {
+  "tr": "Cevap verirken eşyayı tekrar söylemene gerek yok. Sadece",
+  "kind": "say.tr",
+  "de": "Beim Antworten musst du die Sache nicht wiederholen. Nur"
+ },
+ {
+  "tr": "Çoğu mağazada kartla ödediysen yine de yardımcı olurlar.",
+  "kind": "say.tr",
+  "de": "In den meisten Läden hilft man dir auch bei Kartenzahlung."
+ },
+ {
+  "tr": "Diş ağrım var demek. Toothache diş ağrısı. Lütfen söyle:",
+  "kind": "say.tr",
+  "de": "Heißt ich habe Zahnschmerzen. Toothache ist der Zahnschmerz. Sag:"
+ },
+ {
+  "tr": "Doktorun sorusu: 'Bu ağrı ne zamandır var?' İngilizcesi:",
+  "kind": "say.tr",
+  "de": "Die Arztfrage: 'Seit wann haben Sie diesen Schmerz?' Auf Englisch:"
+ },
+ {
+  "tr": "Duydun mu? Beş cümle, hepsi bir ipe dizili: first, then,",
+  "kind": "say.tr",
+  "de": "Gehört? Fünf Sätze, alle auf einer Schnur: first, then,"
+ },
+ {
+  "tr": "edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:",
+  "kind": "say.tr",
+  "de": "nehmen wir die Präposition. Gratulieren wir zur neuen Stelle. Sag:"
+ },
+ {
+  "tr": "Film izlemeyi sever misin demek. Cevabı da kısa verilir:",
+  "kind": "say.tr",
+  "de": "Heißt siehst du gern Filme. Die Antwort ist auch kurz:"
+ },
+ {
+  "tr": "Genelde hafta sonu fotoğraf paylaşırım. Şimdi sen söyle:",
+  "kind": "say.tr",
+  "de": "Meistens poste ich am Wochenende Fotos. Jetzt sag du:"
+ },
+ {
+  "tr": "Görüşme sırasında olduğunu anlatmak için de şunu dersin:",
+  "kind": "say.tr",
+  "de": "Um zu sagen, dass du gerade im Gespräch bist, sagst du das:"
+ },
+ {
+  "tr": "Güncelleme: update. Hem isim hem fiil olarak kullanılır.",
+  "kind": "say.tr",
+  "de": "Aktualisierung: update. Es geht als Substantiv und als Verb."
+ },
+ {
+  "tr": "Hadi sen kur. \"Ben genellikle kahve içerim\" nasıl denir?",
+  "kind": "say.tr",
+  "de": "Los, bilde du. Wie heißt \"Ich trinke meistens Kaffee\"?"
+ },
+ {
+  "tr": "Harika. Şimdi soru soralım. Sormak için is'i öne alırız.",
+  "kind": "say.tr",
+  "de": "Super. Jetzt fragen wir. Zum Fragen rückt is nach vorn."
+ },
+ {
+  "tr": "Havuzun bir yeri sığ, bir yeri derindir. Derin kelimesi:",
+  "kind": "say.tr",
+  "de": "Ein Teil des Beckens ist flach, ein Teil tief. Das Wort tief:"
+ },
+ {
+  "tr": "He, yani erkekler için de aynı kural. Onun bir oğlu var:",
+  "kind": "say.tr",
+  "de": "He, also für Männer, dieselbe Regel. Er hat einen Sohn:"
+ },
+ {
+  "tr": "Hepsini geçmiş zamanla anlatacağız. Hazırsan başlıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir erzählen alles in der Vergangenheit. Wenn du bereit bist, los."
+ },
+ {
+  "tr": "İçinde ne vardı? Vardı demek için there was kullanırsın:",
+  "kind": "say.tr",
+  "de": "Was war darin? Für es gab nimmst du there was:"
+ },
+ {
+  "tr": "İkinci kelimemiz kalmak. Bir yerde konaklamak anlamında:",
+  "kind": "say.tr",
+  "de": "Unser zweites Wort ist bleiben. Im Sinne von übernachten:"
+ },
+ {
+  "tr": "İkisini birleştirelim. Neredeyse eski hâlindesin. De ki:",
+  "kind": "say.tr",
+  "de": "Verbinden wir beide. Du bist fast wieder der Alte. Sag:"
+ },
+ {
+  "tr": "İlk kelimemiz work. Hem çalışmak hem de iş demek. Lütfen",
+  "kind": "say.tr",
+  "de": "Unser erstes Wort ist work. Heißt arbeiten und Arbeit. Bitte"
+ },
+ {
+  "tr": "İlk kelimemiz zaman kelimesi. Dün demek için İngilizcede",
+  "kind": "say.tr",
+  "de": "Unser erstes Wort ist ein Zeitwort. Für gestern sagt das Englische"
+ },
+ {
+  "tr": "İmzalamak ise sign. İkisini birleştiriyoruz. De bakalım:",
+  "kind": "say.tr",
+  "de": "Unterschreiben ist sign. Wir verbinden beide. Sag mal:"
+ },
+ {
+  "tr": "İnternetten alışverişte en sık sorulan soruyu öğrenelim:",
+  "kind": "say.tr",
+  "de": "Lernen wir die häufigste Frage beim Onlinekauf:"
+ },
+ {
+  "tr": "İşte dersin ana kalıbı. Gişedeki görevliye şöyle dersin:",
+  "kind": "say.tr",
+  "de": "Das ist die Hauptwendung der Lektion. Am Schalter sagst du so:"
+ },
+ {
+  "tr": "it's not good' de anlaşılır ama doğal olan birincisidir.",
+  "kind": "say.tr",
+  "de": "it's not good' versteht man auch, aber natürlich ist das erste."
+ },
+ {
+  "tr": "İzin isterken sebep söylemek çok önemli. Sebep kelimesi:",
+  "kind": "say.tr",
+  "de": "Beim Bitten um freie Tage zählt der Grund. Das Wort Grund:"
+ },
+ {
+  "tr": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek",
+  "kind": "say.tr",
+  "de": "Die größte Regel der Bibliothek ist die Stille. Leise heißt"
+ }
 ]

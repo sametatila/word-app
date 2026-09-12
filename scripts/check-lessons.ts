@@ -174,18 +174,35 @@ for (const l of LESSONS) {
   ok(l.vocab.every((v) => prompt.includes(v.de)), "istem kelimeleri taşıyor");
   ok(prompt.includes(l.roleplay.goal), "istem konuşmanın amacını taşıyor");
 
-  // Tekrar/üretimden SONRAKİ adım övgüyle başlamamalı: doğru cevapta motor
-  // zaten övgü ekliyor, "Çok iyi! Harika! İkinci..." diye üst üste binerdi.
-  // (Doğru/yanlış ve kapanış adımlarından sonra motor övgü eklemiyor; oralarda
-  // içerik övgüsü serbest.)
+  /*
+    Tekrar/üretimden SONRAKİ adım övgüyle BAŞLAMAMALI. İki ayrı kusur, ikisi de
+    ölçüldü (2026-09-12, İngilizce kursta 121 adım / 85 ders):
+
+    1. ÜST ÜSTE BİNME. Doğru cevaptan sonra motor övgüyü sıradaki cümlenin
+       başına ekliyor (`lesson-player.tsx` → `PRAISE_KEYS`, "Çok iyi!",
+       "Harika!", "Süper!", "Çok güzel söyledin!", "Mükemmel!"). Adım kendi
+       övgüsüyle açılırsa öğrenci ikisini arka arkaya duyuyor — 15 adımda
+       AYNI sözcük iki kez ("Çok iyi! Çok iyi. İkinci kelime:").
+    2. YANLIŞ CEVAPTAN SONRA ÖVGÜ — daha keskin olan. Motorun övgüsü yola
+       bağlı: atlanan ya da üç denemede geçilemeyen adımda eklenmiyor. İçeriğe
+       yazılan övgü ise HER YOLDA okunuyor; öğrenci üç kez yanılıp geçtiğinde
+       ders ona "Güzel." diyor.
+
+    Bu yüzden övgü içerikte değil motorda durur. (Doğru/yanlış ve kapanış
+    adımlarından sonra motor övgü eklemiyor; oralarda içerik övgüsü serbest.)
+
+    Ölçüt İLK CÜMLEye bakıyor: kısa (≤30 karakter) ve övgü köküyle başlıyorsa
+    övgüdür. Eski biçim yalnız beş sözcüğü tanıyordu ve gerçek 121 adımın
+    65'ini görüyordu — "Güzel." (51 kez) hiç sayılmıyordu.
+  */
+  const PRAISE_ROOT = /^(çok iyi|çok güzel|iyi|güzel|harika|süper|mükemmel|bravo|aferin|tebrikler)/i;
   const doublePraise = l.lecture.filter((s, i) => {
     const prev = l.lecture[i - 1]?.expect?.kind;
-    return (
-      (prev === "repeat" || prev === "produce") &&
-      /^(Çok iyi|Harika|Süper|Mükemmel|Bravo)/.test(s.say[0]?.text ?? "")
-    );
+    if (prev !== "repeat" && prev !== "produce") return false;
+    const opener = /^[^.!?]{1,30}[.!]/.exec(s.say[0]?.text ?? "")?.[0] ?? "";
+    return PRAISE_ROOT.test(opener);
   });
-  warn(`${id}: övgü üst üste binebilir`, doublePraise.length === 0,
+  ok(doublePraise.length === 0, "övgü üst üste binmiyor",
     `(${doublePraise.slice(0, 1).map((s) => s.say[0].text.slice(0, 30)).join("")})`);
 }
 
