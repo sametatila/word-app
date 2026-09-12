@@ -13468,3 +13468,45 @@ seçiciyi de** kapatması (mutlak).
 
 Dört enjeksiyon denendi (CSS'e ham ölçek, sapan bir `whileTap`, bloktan bir
 seçicinin düşmesi, mobil değerin kayması), dördü de yakalandı.
+
+## §11.386 — Asılı kalan istek: web'de elli dört çağrının hiçbir sınırı yoktu
+
+Tarayıcının `fetch`i **kendiliğinden vazgeçmiyor**. Kaptif portalda, zayıf
+hücresel bağlantıda ya da sunucu yanıt vermeyi bıraktığında istek süresiz
+bekliyor — ve ekranda duran şey **iskeletin kendisi** oluyor. Kullanıcı
+"yükleniyor" görüyor, oysa hiçbir şey yüklenmiyor ve bir daha da
+yüklenmeyecek.
+
+En can sıkıcı tarafı: ekranların "yüklenemedi · tekrar dene" dalı **zaten
+yazılı**. Devreye girmiyor, çünkü bir hata da oluşmuyor. Yani hata yolu
+vardı, ona giden yol yoktu.
+
+Android'de böyle değil: **her** çağrı `api()`den geçiyor ve
+`API_TIMEOUT_MS = 25_000`de vazgeçip hatayı fırlatıyor.
+
+Ölçüm: web'de elli yedi istemci `/api` çağrısından **elli dördünün** hiçbir
+sınırı yoktu. (Üçü — değerlendirme, telaffuz, Apple — kendi sinyalini zaten
+veriyordu.)
+
+### Çözüm Android'in şekli: tek kapı
+
+`lib/api-fetch.ts` — `apiFetch()` aynı sayıyı koyuyor ve çağıran kendi
+sinyalini verdiyse **ona dokunmuyor** (iptal edilebilir bir istek zaten kendi
+ömrünü yönetiyor). Otuz dört dosyadaki elli yedi çağrı bu kapıdan geçti.
+
+Süre iki platformda **aynı adı taşıyan** bir sabit — `score-bands` ↔
+`learningRules` ile aynı kalıp; biri değişip öteki kalamaz.
+
+**Değerlendirme çağrıları bunun dışında ve öyle kalmalı**: yapay zekâ yanıtı
+25 saniyeden uzun sürebiliyor, o yüzden kendi (daha uzun) süreleri var ve
+`ASSESS_TIMEOUT_MS` / `ASSESS_ROLEPLAY_TIMEOUT_MS` ikisi de iki platformda
+eşleşmiş durumda.
+
+### §263
+
+Üç ölçü: sabitin değeri eşleştirmeli, istemcide çıplak `/api` çağrısı
+kalmaması (mutlak), ve kapının **gerçekten** sınır koyduğunun doğrulanması —
+adı olup işi olmayan bir sarmalayıcı en kötüsü olurdu.
+
+Üç enjeksiyon denendi (çıplak bir `fetch`in geri gelmesi, kapının sınırı
+bırakması, mobil değerin kayması), üçü de yakalandı.
