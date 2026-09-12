@@ -231,8 +231,8 @@ function PlanCard({
         /* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik yazı için
            eşik 4.5. 600'de 5.30. */
         <span
-          className="mt-2 inline-block rounded-full px-2 py-0.5 text-micro text-white"
-          style={{ background: "var(--color-mint-600)" }}
+          className="mt-2 inline-block rounded-full px-2 py-0.5 text-micro"
+          style={{ background: "var(--color-mint)", color: "var(--on-fill)" }}
         >
           −{savePct}%
         </span>

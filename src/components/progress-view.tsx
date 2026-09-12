@@ -166,6 +166,11 @@ export function ActivityProgress({
           büyük yazı eşiği 3.0'ı bile tutmuyor. 600'de (#86690e) 5.20. Aynı
           kart mobilde de aynı hatayı taşıyordu; ikisi birlikte koyulaştı. */}
       <div
+        /* SERİ KARTI TEMADAN BAĞIMSIZ ve öyle kalmalı: Android aynı kartı iki
+           temada da `colors.streakDeep` (#86690e) + BEYAZ yazıyla çiziyor
+           (`ProgressScreen`; ölçüm beyazla 5.20 ve 500'den 600'e o yüzden
+           inildi). Tema duyarlı jetona çevirmek koyu temada Android'i
+           bırakmak olurdu - bu tur bir kez çevrildi ve geri alındı. */
         className="flex items-center gap-4 rounded-card p-5 text-white glow-tint"
         style={{ background: "var(--color-flame-600)", "--tint-fill": "var(--color-flame-600)" } as React.CSSProperties}
       >

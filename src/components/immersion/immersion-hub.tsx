@@ -292,8 +292,8 @@ function Featured({
       {next && !unit.locked ? (
         <div className="mt-3 flex items-center gap-3 rounded-panel p-3" style={{ background: "var(--surface-2)" }}>
           <span
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile text-white"
-            style={{ background: "var(--color-brand-500)" }}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+            style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}
           >
             <KindIconFor kind={next.kind} size={20} />
           </span>

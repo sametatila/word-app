@@ -100,8 +100,8 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
         style={{ background: "color-mix(in srgb, var(--color-mint) 12%, transparent)" }}
       >
         <span
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white"
-          style={{ background: "var(--color-mint-600)" }}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full"
+          style={{ background: "var(--color-mint)", color: "var(--on-fill)" }}
         >
           <CheckIcon size={16} />
         </span>

@@ -1972,8 +1972,8 @@ function LectureBubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body text-white"
-          style={{ background: "var(--color-brand-600)" }}
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body"
+          style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}
         >
           {item.text}
         </p>
@@ -2057,8 +2057,8 @@ function Bubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body text-white"
-          style={{ background: "var(--color-brand-600)" }}
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-body"
+          style={{ background: "var(--brand-fill)", color: "var(--on-brand)" }}
         >
           {turn.content}
         </p>

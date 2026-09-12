@@ -155,8 +155,8 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
         >
           <span
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile text-white"
-            style={{ background: "var(--color-mint-600)" }}
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile"
+            style={{ background: "var(--color-mint)", color: "var(--on-fill)" }}
           >
             <CrownIcon size={26} />
           </span>
@@ -172,8 +172,8 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Link
           href="/premium?from=profile"
           prefetch={false}
-          className="pressable mb-4 flex items-center gap-3 rounded-card p-4 text-white glow-tint"
-          style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
+          className="pressable mb-4 flex items-center gap-3 rounded-card p-4 glow-tint"
+          style={{ background: "var(--brand-fill)", color: "var(--on-brand)", "--tint-fill": "var(--brand-fill)" } as React.CSSProperties}
         >
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile bg-white/20">
             <CrownIcon size={26} />

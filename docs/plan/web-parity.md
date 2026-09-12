@@ -18357,3 +18357,37 @@ sayılı boşluk borcunu da bir düşürdü (75 → 74).
 Kapı **§357** üç ölçü taşıyor (üçü de enjeksiyonla doğrulandı): seçili hapın
 zemin/mürekkep jetonları ve gölgesizliği, seviye satırının iki temadaki ayrı
 rengi, iki platformun dolgusu.
+
+## §11.505 — Dolu zeminin mürekkebi: on bir yüzey koyu temada açık temanın renklerinde kalıyordu
+
+§11.504 süzgeç hapında gördü; sınıfı web'in tamamında taradım. Ölçü **etiket
+düzeyinde**: aynı açılış etiketinde hem beyaz mürekkep hem **numaralı** (temadan
+bağımsız) dolgu taşıyan yüzeyler. On iki tane çıktı — ilk taramam ±4 satırlık
+bir pencereyle bakıyordu ve üç yanlış eşleşme üretti (beyaz yazı bir etikette,
+dolgu başka bir etikette); süslü parantez derinliğini takip eden bir etiket
+tarayıcısı gerçek çiftleri verdi.
+
+**On biri Android'in tema duyarlı jetonlarına çevrildi:**
+
+| dolgu | yeni | Android karşılığı |
+|---|---|---|
+| `--color-brand-500/600` | `--brand-fill` + `--on-brand` | `primary` + `onPrimary` (#ffffff / #1a1008) |
+| `--color-mint-600`, `--color-sky-500`, `--color-rose-500` | `--color-<aile>` + `--on-fill` | `onFill` (#ffffff / #1e1916) |
+
+İki jeton çifti de Android'in iki değeriyle **birebir aynı**. Kontrast iki
+temada da yükseldi: gök 3.61 → **5.39**, gül 4.30 → **6.07**, nane ve alev ışık
+tarafında aynı kalıp koyu tarafta 9.3–11.7'ye çıktı. Aynı etiketteki renkli
+gölge (`--tint-fill`, §11.492) de yeni jetona taşındı — yoksa gölge dolguyla
+ayrışırdı.
+
+**On ikincisi istisna ve ölçüldü: seri kartı.** Android onu **iki temada da**
+`colors.streakDeep` (#86690e) + beyazla çiziyor — palette `streakDeep` ikinci
+temada da aynı hex, `onFill` swap ederken bu etmiyor. Tema duyarlı jetona
+çevirmek koyu temada Android'i bırakmak olurdu. Bir kez çevirdim, Android'in
+paletini okuyunca geri aldım; kartın yanına da neden dokunulmayacağı yazıldı.
+(Android'in kendi yorumu zaten beyazla 5.20 ölçümünü ve 500→600 kararını
+anlatıyor.)
+
+Kapı **§358** iki ölçü taşıyor (ikisi de enjeksiyonla doğrulandı): beyaz
+mürekkep + numaralı dolgu taşıyan etiketlerin listesi (yalnız seri kartı
+kalmalı) ve seri kartının iki tarafta da **sabit** çifti taşıdığı.

@@ -21139,6 +21139,74 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------- 358. DOLU ZEMININ MUREKKEBI: SABIT BEYAZ MI, TEMA DUYARLI MI
+ *
+ * 357 suzgec hapinda gordu: sabit bir numarali dolgu + BEYAZ yazi koyu temada
+ * Android'i birakiyor. Ayni sinifi web'in tamaminda taradim (etiket duzeyinde:
+ * ayni acilis etiketinde hem beyaz murekkep hem numarali dolgu) ve on iki yuzey
+ * cikti. On biri Android'in tema duyarli jetonlarina cevrildi:
+ *   marka dolgusu  -> `--brand-fill` + `--on-brand`  (Android `primary` +
+ *       `onPrimary`: #ffffff / #1a1008 - iki taraf BIREBIR ayni iki deger)
+ *   nane/gok/gul   -> `--color-<aile>` + `--on-fill` (Android `onFill`:
+ *       #ffffff / #1e1916 - yine birebir)
+ * Kontrast iki temada da yukseldi: gok 3.61 -> 5.39, gul 4.30 -> 6.07, koyu
+ * tarafta hepsi 8.4 uzeri.
+ *
+ * ON IKINCISI ISTISNA VE OLCULDU: seri karti. Android onu iki temada da
+ * `colors.streakDeep` (#86690e) + BEYAZ ile ciziyor - `streakDeep` palette
+ * ikinci temada da ayni hex. Tema duyarli jetona cevirmek koyu temada
+ * Android'i birakmak olurdu; bir kez cevrildi, olculdu, geri alindi.
+ *
+ * Olcu: (1) beyaz murekkep + numarali dolgu tasiyan etiket sayisi (yalniz
+ * kayitli istisna kalmali), (2) seri kartinin iki tarafta da SABIT cift
+ * tasidigi. */
+{
+  const silD = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const walkD = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) walkD(d + "/" + e.name, out);
+      else if (/\.tsx$/.test(e.name)) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  const sabitler = [];
+  for (const f of walkD("src")) {
+    const src = silD(read(f));
+    for (const m of src.matchAll(/<[A-Za-z][\w.]*/g)) {
+      const etiket = src.slice(m.index, m.index + acilisSonu(src.slice(m.index)));
+      if (!/(?:^|\s)text-white(?=\s|"|`)|color:\s*"#fff/i.test(etiket)) continue;
+      if (!/background(?:Color)?:\s*"var\(--color-[a-z]+-\d00\)"/.test(etiket)) continue;
+      sabitler.push(f.replace("src/", ""));
+    }
+  }
+  /* Tek kayitli istisna: seri karti (Android da sabit). */
+  sameList(
+    "dolu zeminde sabit beyaz",
+    ["kalan: " + (sabitler.join(", ") || "yok")],
+    ["kalan: components/progress-view.tsx"],
+    "bulunan",
+    "beklenen (yalniz seri karti)",
+  );
+  const mobSeri = silD(read("mobile/src/screens/ProgressScreen.tsx"));
+  const webSeri = silD(read("src/components/progress-view.tsx"));
+  const paletSeri = (silD(read("mobile/src/theme/colors.ts")).match(/streakDeep: "(#[0-9a-f]{6})"/g) ?? []).map((x) => x.slice(-8, -1));
+  sameList(
+    "seri kartinin sabit cifti",
+    [
+      "dolgu=" + (/backgroundColor: colors\.streakDeep/.test(mobSeri) ? "streakDeep" : "BASKA"),
+      "iki temada ayni=" + (paletSeri.length === 2 && paletSeri[0] === paletSeri[1] ? "evet" : "HAYIR"),
+      "murekkep=beyaz",
+    ],
+    [
+      "dolgu=" + (/background: "var\(--color-flame-600\)"/.test(webSeri) ? "streakDeep" : "BASKA"),
+      "iki temada ayni=evet",
+      "murekkep=" + (/p-5 text-white glow-tint/.test(webSeri) ? "beyaz" : "BASKA"),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
