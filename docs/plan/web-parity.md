@@ -12824,3 +12824,53 @@ hata kalıbıyla titrememesi (mutlak), karo hareketinin sesi (üç oyun,
 eşleştirmeli) ve **yüklü her sesin bir çalan yeri olması** (mutlak, web).
 
 Dört enjeksiyon denendi, dördü de yakalandı.
+
+## §11.372 — "Hareketi azalt": sonsuz nabız ve yumuşak kaydırma
+
+Eksen **`prefers-reduced-motion` / `reduceMotion()`** idi. Ölçüm önce
+Android'in bu tercihi **tam** tuttuğunu doğruladı: `Animated` ile animasyon
+başlatan dokuz dosyanın dokuzu da tercihi okuyor — iskelet nabzı, maskot
+zıpla-kay, kart geçişleri, basma ölçeği, kutlama, meydan okuma parlaması,
+yürüyüş. Dosya dosya sayıldı, biri bile açık değil.
+
+Web de büyük ölçüde kapsıyor: `MotionConfig reducedMotion="user"` bütün
+framer-motion animasyonlarını, CSS bloğu da sıralı açılışı, sarsılmayı,
+parlamayı ve basma ölçeğini kapatıyor. **İki boşluk** kaldı.
+
+### Yineleme sayısı: süreyi kısaltmak sonsuzu durdurmuyor
+
+Blok `animation-duration: 0.01ms` diyordu ama **sonsuz** bir animasyonu
+durdurmuyordu. `animate-pulse` otuz dört iskelette sonsuz yinelemeli: süre
+0.01 ms olunca döngü her karede yeniden başlıyor — boşa dönen bir döngü ve
+görünür titreme riski. Standart kalıbın eksik parçası buydu
+(`animation-iteration-count: 1 !important`). Android'de nabız tercih açıkken
+**hiç başlamıyor** ve gerekçesi kodda yazılı: "iskeletin işi şekli ve
+yüksekliği göstermek; nabız yalnız süsleme."
+
+### Yumuşak kaydırma: iki taraf da açıktı
+
+Üç web çağrısı `behavior: "smooth"` geçiyordu ve JavaScript'ten gelen bu
+seçeneği CSS **ezmiyor**. Mobilde de iki `animated: true` vardı — yani **iki
+taraf da** aynı boşluktaydı. Ayrım önemli: kaydırmanın **kendisi** gerekli
+(sohbet sonuna gitmek), animasyonu değil. Beş çağrı da tercihe bağlandı, ve
+bloğa `scroll-behavior: auto !important` eklendi.
+
+### Yan çıkan: ders sohbeti webde zıplıyordu
+
+Ölçü web'in ders sohbetini "kaydırma yok" gösterdi ve sebebi gerçek bir
+ayrışmaydı: Android sohbeti `scrollToEnd({ animated })` ile **kaydırıyor**,
+web `scrollTop`u doğrudan yazıp **atlıyordu**. Aynı sohbet iki uygulamada iki
+ayrı his veriyordu. Hedef hâlâ kabın dibi (web'in kendi notu bunu açıklıyor),
+yalnız atlama yerine `scrollTo` — ve tercih açıkken atlama geri geliyor.
+
+### Kapsam dışı bırakılan
+
+Dört `requestAnimationFrame` çağrısı ölçüldü ve kapsam dışı: hepsi özel
+karakter eklendikten sonra **imleci** yerine koyuyor, animasyon değil.
+
+### §251
+
+Dört olgu: animasyon başlatan her mobil dosyanın tercihi okuması (mutlak),
+web bloğunun beş kuralı (mutlak), yumuşak kaydırmanın tercihe bağlı olması
+(mutlak, iki ağaç) ve sohbet kaydırmasının iki tarafta da kayması. Beş
+enjeksiyon denendi, beşi de yakalandı.

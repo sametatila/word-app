@@ -7461,6 +7461,107 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 251. "HAREKETI AZALT" TERCIHI ----------------------------------
+   *
+   * Android bu tercihi TAM tutuyor: `Animated` ile animasyon baslatan dokuz
+   * dosyanin dokuzu da `reduceMotion()` okuyor - iskelet nabzi, maskot
+   * zipla-kay, kart gecisleri, basma olcegi, kutlama, meydan okuma
+   * parlamasi, yuruyus. Olcum bunu dosya dosya dogruladi.
+   *
+   * Webin `MotionConfig reducedMotion="user"`u butun framer-motion
+   * animasyonlarini kapsiyor ve CSS blogu siralı acilisi, sarsilmayi,
+   * parlamayi ve basma olcegini kapatiyor. Iki bosluk kaldi:
+   *
+   *  1. YINELEME SAYISI. Blok sureyi 0.01 ms yapiyordu ama SONSUZ
+   *     animasyonu durdurmuyordu: `animate-pulse` otuz dort iskelette
+   *     sonsuz yinelemeli ve her karede yeniden basliyor - bosa donen bir
+   *     dongu ve gorunur bir titreme riski. Android'de nabiz HIC baslamiyor.
+   *     Standart kalibin eksik parcasi buydu (`animation-iteration-count: 1`).
+   *  2. YUMUSAK KAYDIRMA. Uc web cagrisi `behavior: "smooth"` geciyordu ve
+   *     JavaScript'ten gelen bu secenegi CSS ezmiyor. Mobilde de iki
+   *     `animated: true` vardi, yani IKI TARAF DA ayni bosluktaydi. Ayrim
+   *     onemli: kaydirmanin KENDISI gerekli (sohbet sonuna gitmek), animasyonu
+   *     degil.
+   *
+   * Dort `requestAnimationFrame` cagrisi olculdu ve KAPSAM DISI: hepsi ozel
+   * karakter eklendikten sonra imleci yerine koyuyor, animasyon degil. */
+  {
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+
+    /* MOBIL MUTLAK: animasyon baslatan her dosya tercihi okuyor. */
+    const acik = [];
+    for (const y of tsxler("mobile/src")) {
+      const src = sil(read(y));
+      if (!/Animated\.(?:loop|timing|spring|sequence|parallel|decay)\(/.test(src)) continue;
+      if (!/\breduceMotion\(/.test(src)) acik.push(y.split("/").pop());
+    }
+    sameList(
+      "animasyon baslatan dosya tercihi okuyor",
+      ["tercihi okumayan=" + acik.length + (acik.length ? " (" + acik.join(", ") + ")" : "")],
+      ["tercihi okumayan=0"],
+      "mobil",
+      "beklenen",
+    );
+
+    /* WEB MUTLAK: kutuphane genel ayari + CSS blogunun dort kurali. */
+    const css = read("src/app/globals.css");
+    const blok = css.slice(css.indexOf("@media (prefers-reduced-motion: reduce)"));
+    sameList(
+      "hareketi azalt blogu eksiksiz",
+      [
+        "kutuphane=" + (/reducedMotion="user"/.test(sil(read("src/components/motion-provider.tsx"))) ? "user" : "YOK"),
+        "sure=" + (/animation-duration: 0\.01ms !important/.test(blok) ? "var" : "YOK"),
+        "yineleme=" + (/animation-iteration-count: 1 !important/.test(blok) ? "var" : "YOK"),
+        "gecis=" + (/transition-duration: 0\.01ms !important/.test(blok) ? "var" : "YOK"),
+        "kaydirma=" + (/scroll-behavior: auto !important/.test(blok) ? "var" : "YOK"),
+      ],
+      ["kutuphane=user", "sure=var", "yineleme=var", "gecis=var", "kaydirma=var"],
+      "web",
+      "beklenen",
+    );
+
+    /* Yumusak kaydirma tercihe bagli (MUTLAK, iki agac). */
+    const kapisiz = [];
+    for (const y of tsxler("src")) {
+      const src = sil(read(y));
+      for (const m of src.matchAll(/behavior: "smooth"/g)) {
+        kapisiz.push("web " + y.split("/").pop() + ":" + src.slice(0, m.index).split("\n").length);
+      }
+    }
+    for (const y of tsxler("mobile/src")) {
+      const src = sil(read(y));
+      for (const m of src.matchAll(/animated: true/g)) {
+        kapisiz.push("mobil " + y.split("/").pop() + ":" + src.slice(0, m.index).split("\n").length);
+      }
+    }
+    sameList(
+      "yumusak kaydirma tercihe bagli",
+      ["kapisiz=" + kapisiz.length + (kapisiz.length ? " (" + kapisiz.join(", ") + ")" : "")],
+      ["kapisiz=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Kaydirma ANIMASYONU tercihe bagli ama kaydirmanin kendisi duruyor. */
+    const KAYDIRMA = [
+      ["sohbet sonu", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", "mobile/src/screens/LessonScreen.tsx"],
+    ];
+    sameList(
+      "sohbet kaydirmasi duruyor",
+      KAYDIRMA.map(([ad, , m]) => ad + "=" + (/scrollToEnd\(/.test(sil(read(m))) ? "kayiyor" : "YOK")),
+      KAYDIRMA.map(([ad, w]) => ad + "=" + (/scrollIntoView\(|scrollTo\(/.test(sil(read(w))) ? "kayiyor" : "YOK")),
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 250. SES VE TITRESIM -------------------------------------------
    *
    * Iki kanal da olcuduldu ve ikisinde de ayrisma cikti.
