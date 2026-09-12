@@ -4466,8 +4466,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        (`AppHeader title={t("learn.learn")}`) baslayip ilk karonun rengine
        kadar uzaniyordu ve ilk satir "learn.learn" diye okunuyordu - olcunun
        komsusunu olcmenin onuncu bicimi. */
-    [...src.matchAll(/<(?:WedgeTile|ActionRow) title=\{t\("([\w.]+)"[\s\S]*?tint=\{colors\.(\w+)\}\s*icon=\{(\w+)\}/g)]
-      .map((m) => `${m[1]} ${m[3]} ${mobHex(m[2])}`);
+    /* Zemin artik `fillOf("rol")` - temaya duyarsiz dolgu (bkz. §338). Eski
+       hali `colors.rol`du ve koyu temada pastele donuyordu; desen o yuzden
+       ikisini de taniyor ve ROL ADINI aliyor (hex cozumu ayni yerden). */
+    [...src.matchAll(/<(?:WedgeTile|ActionRow) title=\{t\("([\w.]+)"[\s\S]*?tint=\{(?:colors\.(\w+)|fillOf\("(\w+)"\))\}\s*icon=\{(\w+)\}/g)]
+      .map((m) => `${m[1]} ${m[4]} ${mobHex(m[2] ?? m[3])}`);
   const web = webSatir(read("src/components/learn/learn-hub.tsx"));
   const mob = mobSatir(read("mobile/src/screens/LearnScreen.tsx"));
   sameList("ogren sekmesi yollari", mob, web);
@@ -19271,7 +19274,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     [
       "unite satiri=" + (/const tint = kindFill\(it\.kind\);/.test(unit) ? "kindFill" : "TEMAYA BAGLI"),
       "egzersiz basligi=" + (/const tint = kindFill\(kind\);/.test(item) ? "kindFill" : "TEMAYA BAGLI"),
-      "kaynak=" + (/return light\[kindTint\(kind\)\] as string;/.test(mobKind) ? "acik palet" : "KOPYA TABLO"),
+      "kaynak=" + (/return fillOf\(kindTint\(kind\)\);/.test(mobKind) ? "acik palet" : "KOPYA TABLO"),
       "karo=" + ((unit.match(/width: 46, height: 46, borderRadius: radii\.md/) ) ? "46/md" : "FARKLI"),
       "glif=" + ((unit.match(/<Icon color="#fff" size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
     ],
@@ -19282,6 +19285,85 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "karo=46/md",
       "glif=" + ((webPane.match(/h-\[(46)px\] w-\[46px\] shrink-0 items-center justify-center rounded-tile text-white/) ) ? "22" : "YOK"),
     ],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* --- 338. DOLU KARO + BEYAZ GLIF: ZEMIN TEMAYA DUYARLI OLAMAZ (MUTLAK)
+ *
+ * Uygulamada bir suru yerde "dolu renkli karo + beyaz glif" var: Ogren
+ * ekraninin aksiyon satirlari ve kama dosemeleri, pratik oyun karolari, unite
+ * satiri, yuruyus modunun mikrofon dairesi, onay diyalogunun yikici dugmesi.
+ * Bu karolar zeminlerini ROL renginden aliyordu ve koyu temada o roller
+ * pastele donuyor: beyaz glif info ustunde 1.76, success 1.86, streak 1.94,
+ * accent ve danger 2.06, primary 2.32 - grafik esigi 3.0'in cok altinda.
+ * Web ayni karolari iki temada da SABIT 500'lerle ciziyor.
+ *
+ * Tek tek duzeltmek yetmez: yeni bir karo ayni hatayi yarin yapar. Olcu bu
+ * yuzden YUZEY TARIYOR ve MUTLAK: koda gomulu beyaz bir glif/yazi, temaya
+ * duyarli bir rol dolgusunun uzerinde duramaz. Zemin bir DEGISKENSE
+ * bildirimi de cozuluyor - kusur tam oradan geldi (`tint`, `dotColor` gibi
+ * `const`lar rol rengini tasiyordu).
+ *
+ * MUAF olan zeminler ve sebepleri:
+ *   - `fillOf(...)` / `light[...]`  temaya duyarsiz dolgu (bu turun cozumu)
+ *   - `TIER_COLOR` / `DIALOG_FILL`  zaten temaya duyarsiz, olcumleri yazili
+ *   - saydam beyaz (`#ffffffXX`)    marka gradyanli kahraman kartin ICINDEKI
+ *                                   cip; zemin gradyanin kendisi ve o kartlar
+ *                                   kimlik yuzeyi (T-KARAR-1, ProgressScreen
+ *                                   `streakDeep` olcumu dosyasinda yazili)
+ *   - `colors.surface2`             bos hal; orada glif beyaz degil `textFaint`
+ *   - gradyan / `streakDeep`        yukaridaki kimlik yuzeyleri */
+{
+  const silW = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gezW = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezW(yol, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const ROL = /colors\.(primary|success|danger|info|accent|streak)\b(?!Text|Soft|Deep|Strong)/;
+  const suclu = [];
+  let beyazSayi = 0;
+  for (const f of gezW("mobile/src")) {
+    const src = silW(read(f));
+    const satir = src.split("\n");
+    satir.forEach((l, i) => {
+      if (!/color="#fff|color: "#fff/.test(l)) return;
+      beyazSayi++;
+      /* Zemin: geriye dogru en yakin `backgroundColor:`. Pencere 12 satir -
+         karo bildirimi glifin hemen ustunde duruyor. */
+      let zemin = null;
+      for (let j = i; j >= Math.max(0, i - 12); j--) {
+        const m = satir[j].match(/backgroundColor: ([^,}\n]+)/);
+        if (m) { zemin = m[1].trim(); break; }
+      }
+      if (zemin === null) return; // gradyan kahraman karti (muaf)
+      /* Zemin bir DEGISKENSE bildirimini coz: kusur tam oradan geldi. */
+      let ifade = zemin;
+      const ad = zemin.match(/^(\w+)$/);
+      if (ad) {
+        const bildirim = src.match(new RegExp("const " + ad[1] + " = ([^;]+);"));
+        if (bildirim) ifade = bildirim[1];
+        else {
+          /* Yerel bir `const` degilse zemin bir PROP: karo bileseni rengi
+             disaridan aliyor (`ActionRow`, `WedgeTile`). O zaman cagri
+             yerlerine bakiliyor - ilk yazilisinda bakilmiyordu ve LearnScreen
+             cagrilarini `colors.accent`e cevirmek kapiyi yesil biraktı. */
+          const cagri = [...src.matchAll(new RegExp(ad[1] + "=\\{([^}]+)\\}", "g"))].map((m) => m[1]).join(" | ");
+          if (cagri) ifade = cagri;
+        }
+      }
+      if (ROL.test(ifade)) suclu.push(f.split("/").slice(-1)[0] + ":" + (i + 1));
+    });
+  }
+  sameList(
+    "beyaz glif temaya duyarli dolgu ustunde degil",
+    ["taranan beyaz=" + (beyazSayi >= 25 ? "25+" : beyazSayi), "suclu=" + (suclu.length ? suclu.join("+") : "yok")],
+    ["taranan beyaz=25+", "suclu=yok"],
     "bulunan",
     "beklenen",
   );

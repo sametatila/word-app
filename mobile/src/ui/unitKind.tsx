@@ -2,7 +2,7 @@ import React from "react";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon } from "./icons";
 import type { ItemKind } from "../data/unit";
 import type { Palette } from "../theme";
-import { light } from "../theme/colors";
+import { fillOf } from "../theme/colors";
 
 /**
  * Ünite öğesinin TÜRÜ → ikon ve renk.
@@ -64,9 +64,9 @@ export function kindTint(kind: string): keyof Palette {
  * çiziyor (`components/immersion/unit-pane` `KIND_TINT`) ve açık temadaki rol
  * renkleri tam o 500'ler.
  *
- * Değer AÇIK PALETTEN okunuyor, ikinci bir tablo yazılmadı: `light` paletinin
- * rol renkleri webin 500'leriyle birebir (bkz. `theme/colors` başlığı).
+ * Değer `theme/colors` `fillOf` üzerinden AÇIK PALETTEN okunuyor, ikinci bir
+ * tablo yazılmadı: `light` paletinin rol renkleri webin 500'leriyle birebir.
  */
 export function kindFill(kind: string): string {
-  return light[kindTint(kind)] as string;
+  return fillOf(kindTint(kind));
 }

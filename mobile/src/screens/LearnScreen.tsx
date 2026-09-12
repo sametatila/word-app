@@ -19,7 +19,7 @@ import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
 import { FriendPulse } from "../social/FriendPulse";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
@@ -168,8 +168,8 @@ export function LearnScreen() {
         <>
           <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-            {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
-            {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
+            {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={fillOf("accent")} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
+            {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={fillOf("streak")} icon={ExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
           </View>
         </>
       ) : null}
@@ -177,18 +177,18 @@ export function LearnScreen() {
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
       <CardGrid minItemWidth={380}>
-        <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-        <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
-        <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+        <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
+        <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={fillOf("info")} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+        <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
         {/* HAYATTA KALMA. Web'de `/learn/challenge` olarak baştan beri vardı,
             Android'de yoktu: aynı rekor tablosuna yalnız tarayıcıdan
             oynayanlar yazıyordu. */}
-        <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={colors.danger} icon={FlameIcon} onPress={() => nav.navigate("Challenge")} />
+        <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={fillOf("danger")} icon={FlameIcon} onPress={() => nav.navigate("Challenge")} />
         {/* Seviye sınavı: beş bölüm, 45 dakika — ünite ya da modül ölçeğinde
             değil, o yüzden Patika'da değil burada. Web'de de Öğren'de
             (components/learn/learn-hub). Mobilde ExamScreen'e giden İLK
             bağlantı bu: ekran aylardır kayıtlıydı ama çağıran yoktu. */}
-        <ActionRow title={t("learn.level_exam", { level })} subtitle={t("learn.level_exam_sub")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("Exam", { level, module: null })} />
+        <ActionRow title={t("learn.level_exam", { level })} subtitle={t("learn.level_exam_sub")} tint={fillOf("streak")} icon={ExamIcon} onPress={() => nav.navigate("Exam", { level, module: null })} />
       </CardGrid>
     </Screen>
   );

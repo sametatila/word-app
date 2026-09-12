@@ -26,7 +26,7 @@ import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MicDisclosure } from "../ui/MicDisclosure";
@@ -666,7 +666,11 @@ export function WalkModeScreen() {
   const teaching = phase === "teaching";
   const reveal = phase === "judging" || teaching; // Almanca göster: cevap açılınca veya öğretirken
   const listening = phase === "listening";
-  const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
+  /* DOLU daire + beyaz glif: zemin TEMAYA DUYARSIZ (`theme` `fillOf`).
+     Rol renkleri koyu temada pastele dönüyor ve 42 px'lik beyaz glif
+     görünmüyordu (ölçümler `theme/colors` `fillOf` başlığında). Boş hâl
+     `surface2` kalıyor — orada glif zaten `textFaint`, beyaz değil. */
+  const dotColor = verdict === "correct" ? fillOf("success") : verdict === "wrong" ? fillOf("danger") : listening ? fillOf("primary") : colors.surface2;
   const stepLabel = teaching ? tx("walkmode.step_new_word") : phase === "speaking" ? tx("walkmode.step_hint") : phase === "listening" ? tx("walkmode.step_say_now", { target: targetLangName() }) : verdict === "unheard" ? tx("walkmode.step_unheard") : verdict === "skip" ? tx("walkmode.step_skipped") : verdict === "correct" ? tx("walkmode.step_correct") : verdict === "wrong" ? tx("walkmode.step_answer") : "";
   // Sayaç SORU (speak) turlarını gösterir; intro (öğretme) turları soru değil — done (tally) ile tutarlı.
   const speakTotal = rounds.filter((r) => r.kind === "speak").length || rounds.length;

@@ -17295,3 +17295,47 @@ mobilin açık paletiyle karşılaştırılıyor — kapı kendi içinde renk ta
 iki çizim yerinin de temaya duyarsız dolguyu kullandığı, ve karo/glif ölçüleri.
 Enjeksiyon iki yönden: bir çizim yerini rol rengine döndürmek ve eşleme
 tablosunda bir türün rengini değiştirmek.
+
+## §11.479 — Dolu karo + beyaz glif: zemin temaya duyarlı olamaz
+
+§11.478'in tek yüzeyi aslında bir **tür**: uygulamada bir sürü yerde "dolu
+renkli karo + beyaz glif" var ve zemin rol renginden geliyordu. Koyu temada o
+roller pastele dönüyor — beyaz glif **info 1.76, success 1.86, streak 1.94,
+accent/danger 2.06, primary 2.32** — grafik eşiği 3.0'ın çok altında.
+
+Bu turda düzeltilenler (hepsi Android'de, hepsi koyu temada görünmeyen glif):
+
+- **Öğren ekranı** — aksiyon satırlarının 48 px karosu ve kama döşemelerinin
+  44 px karosu (yedi çağrı yeri: pratik, günün turu, haftalık sınav, hayatta
+  kalma, seviye sınavı, yürüyüş, deneme sınavı).
+- **Pratik ekranı** — on bir oyun karosu (44 px).
+- **Yürüyüş modu** — mikrofonun 96 px'lik dairesi ve içindeki 42 px glif (doğru
+  yeşili, yanlış kırmızısı, dinleme turuncusu). Boş hâl `surface2` kalıyor;
+  orada glif zaten `textFaint`.
+
+Web aynı karoları iki temada da **sabit 500'lerle** çiziyor (`learn-hub`,
+`learn/practice`, `immersion/unit-pane`) ve açık paletin rol renkleri tam o
+500'ler. Bu yüzden `theme/colors`a `fillOf(role)` geldi: değeri **açık
+paletten** okuyor, ikinci bir tablo yazılmadı. `kindFill` de onun üzerine
+bindi.
+
+**Uygulama bu kuralı zaten biliyordu:** `social/common` `IconTile` dolu karoda
+ikonu `colors.onFill` ile çiziyor ve yorumunda aynı ölçümü yazıyor ("sabit
+beyaz koyu temada okunmuyordu, 1.76–2.76"). Kusur, o kabuğu kullanmayıp beyazı
+**koda gömen** yüzeylerdeydi.
+
+Kapı **§338** yüzey tarıyor ve **mutlak**: koda gömülü beyaz bir glif, temaya
+duyarlı bir rol dolgusunun üzerinde duramaz. Zemin bir **değişkense bildirimi
+çözülüyor**, bir **prop ise çağrı yerlerine bakılıyor** — kusur tam bu iki
+yoldan geldi (`const dotColor = …colors.success…` ve `tint={colors.accent}`).
+Muaf zeminler gerekçeleriyle yazılı: `fillOf`/`light[...]`, `TIER_COLOR`,
+`DIALOG_FILL`, saydam beyaz çipler (marka gradyanlı kahraman kartın içi),
+`surface2` ve gradyanlar.
+
+**Kapının ilk hâli propları görmüyordu:** `tint={colors.accent}` enjeksiyonu
+yeşil geçti, çünkü yalnız yerel `const` bildirimleri çözülüyordu. Çağrı yeri
+taraması eklendikten sonra aynı enjeksiyon iki satırı da işaretliyor.
+
+İki eski kapı da güncellendi: "öğren sekmesi yolları" mobil tinti
+`tint={colors.X}` deseniyle okuyordu (artık `fillOf("X")`i de tanıyor) ve
+§337'nin kaynak ölçüsü `light[...]` yerine `fillOf(...)` arıyor.

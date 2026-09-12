@@ -12,7 +12,7 @@ import { ArrowBackIcon, BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, Ke
 import { Skeleton } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, fillOf } from "../theme";
 import { useLayout } from "../lib/useLayout";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
@@ -88,7 +88,11 @@ export function PracticeScreen() {
             <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.xl} />
           )) : practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? FALLBACK_META;
-            const tint = colors[m.tint] as string;
+            /* Zemin TEMAYA DUYARSIZ (`theme` `fillOf`): koyu temada rol
+               renkleri pastele dönüyor ve beyaz glif görünmüyordu; gerekçe ve
+               ölçümler `theme/colors`ta. Web de bu karoyu sabit 500 ile
+               çiziyor. */
+            const tint = fillOf(m.tint);
             return (
               <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ width: gridItemWidth }}>
                 <Card padded style={{ minHeight: 116, justifyContent: "space-between" }}>

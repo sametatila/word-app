@@ -231,3 +231,27 @@ export const DIALOG_FILL = { primary: orange[500], destructive: "#b62e43" } as c
 
 /** Onay düğmesinin yazısı iki temada da beyaz (yukarıdaki gerekçe). */
 export const DIALOG_INK = "#ffffff";
+
+
+/**
+ * DOLU KARONUN ZEMİNİ — temaya duyarlı DEĞİL.
+ *
+ * Uygulamada bir sürü yerde "dolu renkli karo + beyaz glif" var: Öğren
+ * ekranının aksiyon satırları ve kama döşemeleri, pratik oyun karoları, ünite
+ * satırı, yürüyüş modunun mikrofon dairesi. Bu karolar zeminlerini rol
+ * renginden (`colors.success`, `colors.info`…) alıyordu ve koyu temada o
+ * roller PASTELE dönüyor: beyaz glif info üstünde 1.76, success 1.86,
+ * streak 1.94, accent ve danger 2.06, primary 2.32 veriyordu — grafik eşiği
+ * 3.0'ın çok altında, yani glif pratikte görünmüyordu.
+ *
+ * Web aynı karoları iki temada da SABİT 500'lerle çiziyor (`learn-hub`,
+ * `learn/practice`, `immersion/unit-pane` hepsi `var(--color-x-500)`) ve açık
+ * paletin rol renkleri tam o 500'ler. Bu yüzden değer AÇIK PALETTEN okunuyor,
+ * ikinci bir tablo yazılmadı.
+ *
+ * Kullanılmayacak yer: METİN rengi. Bunlar dolgu tonu; okunacak yazı için
+ * `colors.<rol>Text` var ve o temaya duyarlı olmak zorunda.
+ */
+export function fillOf(role: keyof Palette): string {
+  return light[role] as string;
+}
