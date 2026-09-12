@@ -317,9 +317,15 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                 key={g.de}
                 type="button"
                 onClick={() => speakGerman(g.de)}
-                /* Erişilebilir ad da veriliyor: `title` yalnız fareyle açılır. */
-                aria-label={t("common.listen_pronunciation")}
-                title={t("common.listen_pronunciation")}
+                /*
+                  ERİŞİLEBİLİR AD İÇERİĞİN KENDİSİ. Burada `aria-label`
+                  vardı ve içeriğin adını EZİYORDU: ekran okuyucu kullanan
+                  biri "Haus · ev" yerine "Telaffuzu dinle" duyuyordu, yani
+                  hangi kelimeyi dinleyeceğini bilmiyordu. Android'in aynı
+                  çipinde etiket yok, ad içerikten geliyor. `title` kalıyor:
+                  o yalnız fareyle açılır ve adı değiştirmez.
+                */
+                title={t("speakbutton.read_aloud")}
                 className="chip px-3 py-1.5 text-caption"
               >
                 <GlossEntry g={g} />

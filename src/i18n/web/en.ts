@@ -176,7 +176,6 @@ export const enWeb: Record<string, string> = {
   "rounds.empty_letter_slot": "empty slot",
   "rounds.means": "means",
   "diff.typed_vs_answer": "You wrote: {typed}. The answer: {answer}.",
-  "common.listen_pronunciation": "Listen to the pronunciation",
   "assessw.fail_quota": "You've used up today's AI assessments — showing the basic check.",
   "pron.headline": "Pronunciation · {pct}",
   "pron.passed": "· passed",

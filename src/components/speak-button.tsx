@@ -1007,8 +1007,14 @@ export function SpeakButton({
       type="button"
       onClick={speak}
       whileTap={{ scale: 0.96 }}
-      aria-label={t("common.listen_pronunciation")}
-      title={t("common.listen_pronunciation")}
+      /* ERİŞİLEBİLİR AD ANDROID'İN ADI. Aynı düğme iki platformda iki ayrı
+         anahtar okuyordu: Android `speakbutton.read_aloud` ("Sesli oku",
+         ortak sözlükte), web `common.listen_pronunciation` ("Telaffuzu
+         dinle", yalnız web sözlüğünde). Aynı denetim, iki ad: ekran okuyucu
+         kullanan biri kelime listesinde aynı düğmeyi iki uygulamada iki ayrı
+         isimle duyuyordu. Ortak olan kullanılıyor. */
+      aria-label={t("speakbutton.read_aloud")}
+      title={t("speakbutton.read_aloud")}
       className={`btn btn-ghost hit-8 shrink-0 ${dim} ${className}`}
     >
       <SpeakerIcon size={size === "sm" ? 13 : 16} />

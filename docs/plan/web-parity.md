@@ -17175,3 +17175,27 @@ var(--color-x-500)` yazmasın" diyordu, oysa kusur `color: tone` şeklindeydi ve
 değer çağrı yerinden geliyordu — ölçü kusurun şeklini hiç görmüyordu. Yerine
 tipe ve kalıba bakan bir ölçü kondu; enjeksiyon (Gelişim satırını elle geri
 kurmak) artık kırmızı veriyor.
+
+## §11.475 — Hoparlör düğmesinin erişilebilir adı: aynı denetim, iki ad
+
+Aynı düğme iki platformda **iki ayrı anahtar** okuyordu: Android
+`speakbutton.read_aloud` ("Sesli oku", **ortak** sözlükte), web
+`common.listen_pronunciation` ("Telaffuzu dinle", yalnız web sözlüğünde).
+Kelime listesinde, oyun turunda, sözcük çipinde ekran okuyucu kullanan biri
+aynı düğmeyi iki uygulamada iki ayrı isimle duyuyordu. Ortak anahtara çekildi;
+web'e özel kopya sözlükten düştü (571 → 570 anahtar).
+
+İkinci kusur aynı ailede ve **ters yönde**: beceri sınavının sözcük çipinde web
+`aria-label` veriyordu ve o etiket **içeriğin adını eziyordu** — ekran okuyucu
+kullanan biri "Haus · ev" yerine "Telaffuzu dinle" duyuyor, yani hangi kelimeyi
+dinleyeceğini bilmiyordu. Android'in aynı çipinde etiket yok, ad içerikten
+geliyor. `title` kaldı: o yalnız fareyle açılıyor ve adı değiştirmiyor.
+
+Görünen boyut farkı (mobil 20–34, web 28–36) **zaten ölçülmüş ve karara
+bağlanmış** durumda (`globals.css` `.hit-8` yorumu: mobil `hitSlop={8}` ile
+gerçek hedef 36–50, web'e `::after` ile aynı büyütme verildi) — ona
+dokunulmadı.
+
+Kapı **§334**: iki tarafın okuduğu anahtar, ölü anahtarın üç web sözlüğünden de
+düşmüş olması, çipin adı ezmemesi ve dikte dinleme düğmesinin zaten ortak olan
+anahtarında kalması.

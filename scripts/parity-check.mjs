@@ -19016,6 +19016,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------------- 334. HOPARLOR DUGMESININ ERISILEBILIR ADI: TEK ANAHTAR
+ *
+ * Ayni dugme iki platformda IKI AYRI ANAHTAR okuyordu: Android
+ * `speakbutton.read_aloud` ("Sesli oku", ORTAK sozlukte), web
+ * `common.listen_pronunciation` ("Telaffuzu dinle", yalniz web sozlugunde).
+ * Kelime listesinde, oyun turunda, sozcuk cipinde ayni denetim iki
+ * uygulamada iki ayri isimle duyuluyordu. Ortak anahtara cekildi ve web'e
+ * ozel kopya sozlukten dusuruldu (571 -> 570 anahtar).
+ *
+ * Ikinci kusur ayni ailede ve TERS yonde: beceri sinavinin sozcuk cipinde web
+ * `aria-label` veriyordu ve o etiket ICERIGIN ADINI EZIYORDU - ekran okuyucu
+ * kullanan biri "Haus · ev" yerine "Telaffuzu dinle" duyuyor, yani hangi
+ * kelimeyi dinleyecegini bilmiyordu. Android'in ayni cipinde etiket yok, ad
+ * icerikten geliyor. `title` kaldi: o yalniz fareyle aciliyor ve adi
+ * degistirmiyor.
+ *
+ * Olcu: (1) iki tarafin okudugu anahtar ayni, (2) olu anahtar uc web
+ * sozlugunden de dusmus, (3) MUTLAK: sozcuk cipi iki tarafta da adi
+ * ezmiyor, (4) dikte dinleme dugmesi zaten ortak anahtarda - o ciftin
+ * bozulmadigi da olculuyor. */
+{
+  const silS = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const mobDugme = silS(read("mobile/src/ui/SpeakButton.tsx"));
+  const webDugme = silS(read("src/components/speak-button.tsx"));
+  const mobQuiz = silS(read("mobile/src/game/skillQuiz.tsx"));
+  const webQuiz = silS(read("src/components/skills/quiz.tsx"));
+  const anahtar = (src, desen) => (src.match(desen) ?? [])[1] ?? "YOK";
+  sameList(
+    "hoparlor dugmesinin adi",
+    [
+      "ad=" + anahtar(mobDugme, /accessibilityLabel=\{t\("([\w.]+)"\)\}/),
+      "dikte=" + anahtar(mobQuiz, /tx\("(skillquiz\.listen_to_sentence)"\)/),
+      "cip adi eziliyor=" + (/<PressableScale key=\{g\.de\}[^>]*accessibilityLabel/.test(mobQuiz.replace(/\s+/g, " ")) ? "EVET" : "hayir"),
+    ],
+    [
+      "ad=" + anahtar(webDugme, /aria-label=\{t\("([\w.]+)"\)\}/),
+      "dikte=" + anahtar(webQuiz, /t\("(skillquiz\.listen_to_sentence)"\)/),
+      "cip adi eziliyor=" + (/aria-label=\{t\("[\w.]+"\)\}\s*title=\{t\("speakbutton\.read_aloud"\)\}/.test(webQuiz) ? "EVET" : "hayir"),
+    ],
+    "mobil",
+    "web",
+  );
+  /* Olu anahtar ve ortak anahtarin varligi: iki dilde bulunup ucuncude eksik
+     bir anahtar arayuzde anahtarin kendisini yazdirir, o yuzden SAYI. */
+  const say = (yollar, anah) => yollar.reduce((n, y) => n + (read(y).includes('"' + anah + '":') ? 1 : 0), 0);
+  const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+  const ORTAK = ["src/i18n/base/tr.ts", "src/i18n/base/en.ts", "src/i18n/base/de.ts", "mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"];
+  sameList(
+    "hoparlor adinin sozluk izi",
+    [
+      "web kopyasi=" + say(WEB_SOZLUK, "common.listen_pronunciation"),
+      "ortak anahtar=" + say(ORTAK, "speakbutton.read_aloud"),
+    ],
+    ["web kopyasi=0", "ortak anahtar=6"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
