@@ -63,8 +63,8 @@ mi çıkacağına yazar karar verir.
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| B2 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
-| B2 | 13–25 | bekliyor |
+| B2 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
+| B2 | 16–25 | bekliyor |
 | C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -1078,6 +1078,48 @@ ve bir dikteyi değiştirtti — dikte cümlesi bir listenin ortasında
 duruyordu („the automation of the process, the invention of the tool,
 the introduction of the patch“), o yüzden bölüm başındaki tam cümleye
 çevrildi.
+
+
+**B2 ünite 13–15 (2026-09-12).** Ünite 13 Had the sample been larger ·
+A tentative conclusion · The inequality report · According to the figures;
+ünite 14 What drives the price · Rents rising · The group affected ·
+Never has turnout been so low; ünite 15 By the end of the decade ·
+The law that failed · If the plant had stayed · Speaking about a group.
+On sekiz egzersiz; ünite dışı ölçüm %0,0. B2 yuvalarının 90'ı dolu.
+
+Ünite 13'ün noktası ÜÇ AKTARMA FİİLİ, ÜÇ KANIT DERECESİ: „is said to“
+yalnızca biri söyledi demek, „is thought to“ tutulan bir görüş, „is
+expected to“ ise ileriye bakıyor ve arkasında bir model var. Üçü aynı
+edilgen kalıpta duruyor ve aynı şeyi söylemiyor. Almanca eksende bu üçlü
+İKİYE İNİYOR: Almanca ilk ikisini de „sollen“ ile karşılıyor
+(„Die Staatsschuld soll steigen“ / „Die Steuerlast soll sich verdoppelt
+haben“) ve yalnızca „expected“ için başka bir yapı kuruyor („es wird
+erwartet, dass“). Yani İngilizcenin üç dereceli ayrımı Almanca okuyanın
+elinde iki dereceye düşüyor ve ortadaki fark görünmez oluyor.
+
+Ünite 14'ün noktası „WHOSE“ ve bu, ilgi adılı dizisinin son üyesi: ünite
+1 ile 5 „who“ ve „which“i, ünite 8 virgülü öğretmişti. „Whose“
+İngilizcenin en sade yeri — kişide de şeyde de aynı, sayıya göre de
+göreve göre de hiç değişmiyor. Almanca eksende bu bir ALMANCANIN FAZLASI
+satırı: Almanca „dessen“ ile „deren“ arasında seçim yapıyor ve seçimi
+SAHİBİN cinsine ve sayısına göre veriyor, sahip olunan şeye göre değil —
+Almanca okuyanın sık yaptığı hata tam olarak burada. İngilizcede seçilecek
+hiçbir şey yok.
+
+Ünite 15'in noktası „BY NO MEANS“ OLUMSUZLUĞU KENDİ İÇİNDE TAŞIYOR:
+„The claim is by no means settled“ cümlesinde hiçbir yerde „not“ yok, ve
+öbeğin gücünü hisseden yazar bir „not“ ekleyince cümle tersine dönüyor.
+A2'de „unless“ ile konan tuzağın aynısı, iki düzey yukarıda. Almanca
+eksende bu tam bir PARİTE ve işe yarayan türden: „keineswegs“ de tek
+sözcük, o da ikinci bir olumsuz istemiyor, yani Almanca okuyanın refleksi
+burada doğru. Yanında çekince ölçeği duruyor: „by no means“ en sert,
+„in a sense“ en yumuşak, „undeniable“ ise okuru konuşmanın dışına itiyor.
+
+Ölçüm bu turda yetmiş sekiz sözlükçe maddesi ekletti ve sekiz maddeyi
+sildirdi. İki tireli terim daha düştü („under-counted“, „three-word“) —
+ünite 4 ve 9'daki kural üçüncü kez çalıştı, tireli terim tek belirteç
+olarak kapanmıyor. Bir de yazım düzeltmesi: sıralama sorusundaki
+„en serttten“ üç t ile yazılmıştı.
 
 
 ## Tamamlanma ölçütü

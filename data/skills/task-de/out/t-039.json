@@ -1,0 +1,277 @@
+[
+ {
+  "tr": "Aktarma kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Wiedergabekarte aus."
+ },
+ {
+  "tr": "Çekince kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Absicherungskarte aus."
+ },
+ {
+  "tr": "Şey için „which“; kişi için „who“; iyelik için „whose“; „whose“ kişide de şeyde de aynı.",
+  "kind": "form.facts",
+  "de": "Für eine Sache „which“; für eine Person „who“; für den Besitz „whose“; „whose“ ist bei Person und Sache gleich."
+ },
+ {
+  "tr": "„said“ yalnızca biri söyledi demek; „thought“ tutulan bir görüş; „expected“ ileriye bakıyor; üçü aynı kalıpta duruyor.",
+  "kind": "form.facts",
+  "de": "„said“ heißt nur, dass es jemand gesagt hat; „thought“ ist eine vertretene Ansicht; „expected“ blickt nach vorn; alle drei stehen im selben Muster."
+ },
+ {
+  "tr": "„by no means“ düpedüz ret; „questionable“ ağırlığı iddiaya koyuyor; „nonetheless“ ödün verip dönüyor; „in a sense“ küçük bir şeyi kabul ediyor.",
+  "kind": "form.facts",
+  "de": "„by no means“ ist eine glatte Ablehnung; „questionable“ legt das Gewicht auf die Behauptung; „nonetheless“ räumt ein und wendet; „in a sense“ gesteht etwas Kleines zu."
+ },
+ {
+  "tr": "İlk değişen faiz oranıydı.",
+  "kind": "build.tr",
+  "de": "Es war der Zinssatz, der sich zuerst änderte."
+ },
+ {
+  "tr": "Göçten söz eden kanun yeni.",
+  "kind": "build.tr",
+  "de": "Das Gesetz, das die Migration erwähnt, ist neu."
+ },
+ {
+  "tr": "Yönetmeliği okumuş olamazlar.",
+  "kind": "build.tr",
+  "de": "Sie können die Verordnung nicht gelesen haben."
+ },
+ {
+  "tr": "İddia hiç de kesinleşmiş değil.",
+  "kind": "build.tr",
+  "de": "Die Behauptung ist keineswegs geklärt."
+ },
+ {
+  "tr": "Fiyatı belirleyen şey enflasyon.",
+  "kind": "build.tr",
+  "de": "Was den Preis treibt, ist die Inflation."
+ },
+ {
+  "tr": "Görünüşe göre iddia akla yatkın.",
+  "kind": "build.tr",
+  "de": "Anscheinend ist die Behauptung plausibel."
+ },
+ {
+  "tr": "Kamu borcunun arttığı söyleniyor.",
+  "kind": "build.tr",
+  "de": "Die Staatsschuld soll steigen."
+ },
+ {
+  "tr": "Uygulatmayı fonlamamız gerekirdi.",
+  "kind": "build.tr",
+  "de": "Wir hätten die Durchsetzung finanzieren sollen."
+ },
+ {
+  "tr": "Ayrımcılığın belgelenmesi zorunlu.",
+  "kind": "build.tr",
+  "de": "Die Dokumentation der Diskriminierung ist Pflicht."
+ },
+ {
+  "tr": "Firma iflastan kaçınsaydı kalırdık.",
+  "kind": "build.tr",
+  "de": "Hätte die Firma die Insolvenz vermieden, wären wir geblieben."
+ },
+ {
+  "tr": "Her göçmeni sayan rapor kamuya açık.",
+  "kind": "build.tr",
+  "de": "Der Bericht, der jeden Migranten zählt, ist öffentlich."
+ },
+ {
+  "tr": "Kanun tasarısı belirsiz olmuş olmalı.",
+  "kind": "build.tr",
+  "de": "Der Gesetzentwurf muss unklar gewesen sein."
+ },
+ {
+  "tr": "Bunun bir genelleme olduğu anlaşılıyor.",
+  "kind": "build.tr",
+  "de": "Es scheint eine Verallgemeinerung zu sein."
+ },
+ {
+  "tr": "Eşitsizliğin ölçülmesi burada başlıyor.",
+  "kind": "build.tr",
+  "de": "Die Messung der Ungleichheit beginnt hier."
+ },
+ {
+  "tr": "Örneklem taraflı olsaydı sonuç çökerdi.",
+  "kind": "build.tr",
+  "de": "Wäre die Stichprobe verzerrt gewesen, wäre das Ergebnis gescheitert."
+ },
+ {
+  "tr": "Bütçe açığının yine büyümesi bekleniyor.",
+  "kind": "build.tr",
+  "de": "Es wird erwartet, dass das Defizit wieder wächst."
+ },
+ {
+  "tr": "Sonuçta rakam tartışmaya açık görünüyor.",
+  "kind": "build.tr",
+  "de": "Alles in allem ist die Zahl wohl fragwürdig."
+ },
+ {
+  "tr": "Önyargının azaltılması bir kuşak sürüyor.",
+  "kind": "build.tr",
+  "de": "Die Verringerung von Vorurteilen dauert eine Generation."
+ },
+ {
+  "tr": "Seçmen katılımı hiç bu kadar düşük olmadı.",
+  "kind": "build.tr",
+  "de": "Nie war die Wahlbeteiligung so niedrig."
+ },
+ {
+  "tr": "Vergi yükünün ikiye katlandığı düşünülüyor.",
+  "kind": "build.tr",
+  "de": "Die Steuerlast soll sich verdoppelt haben."
+ },
+ {
+  "tr": "Konut sıkıntısıyla karşılaşan aileler taşındı.",
+  "kind": "build.tr",
+  "de": "Mit einer Wohnungsnot konfrontiert, zogen Familien weg."
+ },
+ {
+  "tr": "Hızlı yapılan yerleşim bölgesi aşırı kalabalık.",
+  "kind": "build.tr",
+  "de": "Schnell gebaut, ist das Wohngebiet überfüllt."
+ },
+ {
+  "tr": "Örneklem daha büyük olsaydı genelleme yapardık.",
+  "kind": "build.tr",
+  "de": "Wäre die Stichprobe größer gewesen, hätten wir verallgemeinert."
+ },
+ {
+  "tr": "Vatandaşlığı yeni olan komşum bugün oy veriyor.",
+  "kind": "build.tr",
+  "de": "Meine Nachbarin, deren Staatsbürgerschaft neu ist, wählt heute."
+ },
+ {
+  "tr": "Yöntem açık olsaydı sonuç şimdi geçerli kalırdı.",
+  "kind": "build.tr",
+  "de": "Wäre die Methode klar gewesen, bliebe das Ergebnis jetzt gültig."
+ },
+ {
+  "tr": "Kıdem tazminatı adil olsaydı kasaba şimdi sakin olurdu.",
+  "kind": "build.tr",
+  "de": "Wäre die Abfindung fair gewesen, wäre die Stadt jetzt ruhig."
+ },
+ {
+  "tr": "Yeşil alanını kaybettikten sonra semt kentsel hissettiriyor.",
+  "kind": "build.tr",
+  "de": "Nachdem es seine Grünfläche verloren hat, wirkt das Viertel städtisch."
+ },
+ {
+  "tr": "Fiil isme dönüyor; yine „of“.",
+  "kind": "build.hint",
+  "de": "Das Verb wird zum Substantiv; wieder „of“."
+ },
+ {
+  "tr": "Üçüncü adlaştırma, aynı edat.",
+  "kind": "build.hint",
+  "de": "Die dritte Nominalisierung, dieselbe Präposition."
+ },
+ {
+  "tr": "Karışık koşul: sonuç hâlâ masada.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge liegt noch auf dem Tisch."
+ },
+ {
+  "tr": "Yalın ortaç burada NEDEN taşıyor.",
+  "kind": "build.hint",
+  "de": "Das schlichte Partizip trägt hier einen GRUND."
+ },
+ {
+  "tr": "Bildiriyor ve kaynağı üstlenmiyor.",
+  "kind": "build.hint",
+  "de": "Es berichtet und übernimmt die Quelle nicht."
+ },
+ {
+  "tr": "„is said to“: biri söyledi, o kadar.",
+  "kind": "build.hint",
+  "de": "„is said to“: jemand hat es gesagt, mehr nicht."
+ },
+ {
+  "tr": "Yine „which“; „that“ virgül almıyor.",
+  "kind": "build.hint",
+  "de": "Wieder „which“; „that“ nimmt kein Komma."
+ },
+ {
+  "tr": "Tek çekince yeter; „seems“ işi yapıyor.",
+  "kind": "build.hint",
+  "de": "Eine Absicherung genügt; „seems“ macht die Arbeit."
+ },
+ {
+  "tr": "Yine kapalı: ne taraflıydı ne de çöktü.",
+  "kind": "build.hint",
+  "de": "Wieder geschlossen: sie war nicht verzerrt und es scheiterte nicht."
+ },
+ {
+  "tr": "Üçüncü hâlle başlıyor: yapan söylenmiyor.",
+  "kind": "build.hint",
+  "de": "Beginnt mit der dritten Form: wer es baute, wird nicht genannt."
+ },
+ {
+  "tr": "Karışık koşul: sonuç bu sabahın sokağında.",
+  "kind": "build.hint",
+  "de": "Gemischte Bedingung: die Folge steht heute Morgen auf der Straße."
+ },
+ {
+  "tr": "„has“ özneyi atlıyor; özne üç sözcük uzunluğunda.",
+  "kind": "build.hint",
+  "de": "„has“ überspringt das Subjekt; das Subjekt ist drei Wörter lang."
+ },
+ {
+  "tr": "„whose“ ilgi adılının iyelik hâli; tek biçimi var.",
+  "kind": "build.hint",
+  "de": "„whose“ ist der Genitiv des Relativpronomens; es hat nur eine Form."
+ },
+ {
+  "tr": "„is expected to“ ileriye bakıyor ve bir dayanağı var.",
+  "kind": "build.hint",
+  "de": "„is expected to“ blickt nach vorn und hat eine Grundlage."
+ },
+ {
+  "tr": "Şey için „which“; virgüller cümleciği fazladan yapıyor.",
+  "kind": "build.hint",
+  "de": "Für eine Sache „which“; die Kommas machen den Teilsatz zur Zugabe."
+ },
+ {
+  "tr": "„is thought to“ tutulan bir görüş; mastar geçmişe bakıyor.",
+  "kind": "build.hint",
+  "de": "„is thought to“ ist eine vertretene Ansicht; der Infinitiv blickt zurück."
+ },
+ {
+  "tr": "„by no means“ olumsuzluğu kendi içinde taşıyor; ikinci bir „not“ olmaz.",
+  "kind": "build.hint",
+  "de": "„by no means“ trägt die Verneinung in sich; ein zweites „not“ gibt es nicht."
+ },
+ {
+  "tr": "„on balance“ bir tartma yapıldığını söylüyor; „arguably“ hiçbir şey söylemiyor.",
+  "kind": "build.hint",
+  "de": "„on balance“ sagt, dass abgewogen wurde; „arguably“ sagt gar nichts."
+ },
+ {
+  "tr": "Fiyatın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Preises: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Raporun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Berichts: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "İncelemenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Prüfung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç derecenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Grade: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Ölçeğin sırası: en sertten en yumuşağa koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Skala: vom Schärfsten zum Weichsten."
+ }
+]
