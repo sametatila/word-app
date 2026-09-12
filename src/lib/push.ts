@@ -509,10 +509,23 @@ export async function runReminders() {
       coStreak: coStreaks.get(t.userId) ?? null,
     });
     if (!payload) continue;
-    for (const sub of list ?? []) jobs.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
-    if (tokens?.length) jobs.push(sendFcmRows(tokens, payload));
-    // Gönderim ucu: push_open ile birlikte bildirim hunisi (WP-80). Sayıma
-    // girmiyor — `sent` yalnız teslimatı sayar.
+    /*
+     * HUNİNİN ÜÇ BASAMAĞI. `push_sent` denemeyi, `push_deliver` teslimatı
+     * yazıyor; ikisi ayrı çünkü arada kaybolan bildirim tam olarak görmek
+     * istediğimiz şey (bkz. lib/events `push_deliver`). Teslimat KULLANICI
+     * BAŞINA toplanıyor, yoksa olay kime yazılacağı bilinmez.
+     */
+    const benim: Promise<number>[] = [];
+    for (const sub of list ?? []) benim.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
+    if (tokens?.length) benim.push(sendFcmRows(tokens, payload));
+    const kisi = t.userId;
+    jobs.push(
+      Promise.all(benim).then(async (r) => {
+        const n = r.reduce((a, b) => a + b, 0);
+        if (n > 0) await track(kisi, "push_deliver", today, n, "reminder");
+        return n;
+      }),
+    );
     logs.push(track(t.userId, "push_sent", today, 0, "reminder"));
   }
 
@@ -656,8 +669,18 @@ async function deliverRound(
             url: "/learn/weekly",
             tag: "reminder",
           };
-    for (const sub of list ?? []) jobs.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
-    if (tokens?.length) jobs.push(sendFcmRows(tokens, payload));
+    /* Huninin üç basamağı — bkz. `runReminders` içindeki not. */
+    const benim: Promise<number>[] = [];
+    for (const sub of list ?? []) benim.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
+    if (tokens?.length) benim.push(sendFcmRows(tokens, payload));
+    const kisi = t.userId;
+    jobs.push(
+      Promise.all(benim).then(async (r) => {
+        const n = r.reduce((a, b) => a + b, 0);
+        if (n > 0) await track(kisi, "push_deliver", today, n, kind);
+        return n;
+      }),
+    );
     logs.push(track(t.userId, "push_sent", today, 0, kind));
   }
 

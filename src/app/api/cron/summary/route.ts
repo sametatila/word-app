@@ -43,9 +43,12 @@ export async function GET(req: Request) {
         if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
         // Gelişim/yetkinlik panosu profildedir (ProgressPanel) — özet oraya götürür.
         // Başlık da gövde gibi alıcının dilinde: gövde çevriliydi, başlık değil.
-        await sendToUser(r.userId, { title: translate(lang, "push.weekly_summary_title"), body: s.text, url: "/profile", tag: "weekly-summary" });
+        /* Deneme ve teslimat ayrı: `sendToUser` kaç kanala ulaştığını
+           döndürüyor (bkz. lib/events `push_deliver`). */
+        const ulasan = await sendToUser(r.userId, { title: translate(lang, "push.weekly_summary_title"), body: s.text, url: "/profile", tag: "weekly-summary" });
         sent++;
         await track(r.userId, "push_sent", today, 0, "summary");
+        if (ulasan > 0) await track(r.userId, "push_deliver", today, ulasan, "summary");
       } catch (err) {
         console.error("[cron/summary]", r.userId, err);
       }

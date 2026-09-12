@@ -71,7 +71,15 @@ export async function notify(
         title: translate(lang, titleKey, vars),
         body: translate(lang, bodyKey, vars),
       });
-      if (sent) await track(userId, "push_sent", serverToday(), 0, `social:${n.type}`);
+      /*
+       * DENEME ve TESLİMAT ayrı yazılıyor. Burada `push_sent` yalnız
+       * teslimat olunca yazılıyordu; `lib/push` ise onu koşulsuz yazıyor.
+       * Yani aynı olay iki yerde "denendi", burada "ulaştı" anlamına geliyor
+       * ve pano üçünü topluyordu (bkz. lib/events `push_deliver`).
+       */
+      const gun = serverToday();
+      await track(userId, "push_sent", gun, 0, `social:${n.type}`);
+      if (sent) await track(userId, "push_deliver", gun, sent, `social:${n.type}`);
     } catch (err) {
       console.error("[social:push]", err);
     }

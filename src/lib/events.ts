@@ -174,7 +174,17 @@ export const EVENT_NAMES = [
   "setting_change",
   "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)
   "install_prompt", // ana ekrana ekleme (value = 1 eklendi / 0 reddedildi / 2 iOS ipucu gösterildi)
-  "push_sent", // sunucu bildirim gönderdi (kind = reminder|summary) — push_open ile huni
+  /*
+   * Bildirim HUNİSİ üç basamak ve üçü ayrı ayrı yazılıyor. Eskiden iki
+   * basamak vardı ve ortadaki eksikti: `push_sent` "denedik" demek, ama
+   * `social/notify` onu YALNIZ TESLİMAT OLUNCA yazıyordu. Yani aynı olay iki
+   * yerde "denendi", bir yerde "ulaştı" anlamına geliyordu ve pano üçünü
+   * topluyordu - sayı hiçbirini söylemiyordu. Üstelik "CTR" etiketi
+   * açılan/DENENEN oranını gösteriyordu; teslim edilmeyen bildirim CTR'yi
+   * haksız yere düşürüyordu.
+   */
+  "push_sent", // DENENDİ: sunucu göndermeye çalıştı (kind = reminder|summary|social:<tür>)
+  "push_deliver", // ULAŞTI: kaç kanala teslim edildi (value = kanal sayısı, kind aynı)
   /*
    * Giden e-postanın sonucu (kind = `<tür>:<sonuç>`, value = 1 gitti / 0 gitmedi).
    *   tür:   verify | reset | pw_changed | exists | twofa
