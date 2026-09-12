@@ -1,11 +1,11 @@
 import "server-only";
 import { langOf } from "@/lib/social/notify";
-import { DEFAULT_NATIVE } from "@/lib/courses";
+import { DEFAULT_NATIVE, targetLangOf } from "@/lib/courses";
 import { translate } from "@/lib/i18n/dict";
 import { createHash } from "node:crypto";
 import { and, desc, eq, gte, isNotNull, isNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { assessments } from "@/lib/db/schema";
+import { assessments, profiles } from "@/lib/db/schema";
 import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { sendToUser } from "@/lib/push";
@@ -212,12 +212,30 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
   for (const row of rows) {
     const kind = (["sentence", "writing", "speaking", "roleplay"] as const).includes(row.kind as "writing") ? (row.kind as AssessRequest["kind"]) : "writing";
     const level = (["A1", "A2", "B1", "B2", "C1"] as const).includes(row.level as "A1") ? (row.level as AssessRequest["level"]) : "A1";
+    /*
+      HEDEF DİL KUYRUKTA SAKLANMIYOR, o yüzden kullanıcının kursundan
+      okunuyor. Alan isteğe bağlıyken kuyruk hiç yazmıyordu ve gecikmeli
+      değerlendirme HER ZAMAN Almanca rubriğiyle çalışıyordu — İngilizce
+      kursta metin "Almanca öğretmeni" kimliğine gidiyordu (2026-09-12).
+
+      Kusurlu tarafı açık: kullanıcı kuyruğa girdikten sonra kurs
+      değiştirirse yeni kursun dili kullanılır. Sütun eklemek daha doğru
+      olurdu ama şema değişikliği deploy sırasına bağlı (kolon canlıda
+      yokken kod onu okursa deploy kırılır); bu yüzden profil üzerinden
+      okunuyor ve sınırı burada yazılı.
+    */
+    const [prof] = await db
+      .select({ course: profiles.course })
+      .from(profiles)
+      .where(eq(profiles.userId, row.userId))
+      .limit(1);
     const req: AssessRequest = {
       kind,
       level,
       task: { prompt: "Serbest yazma görevi (gecikmeli değerlendirme: görev metni yok, metni kendi başına değerlendir)." },
       answer: { text: row.answer },
       exerciseId: row.exerciseId ?? undefined,
+      lang: targetLangOf(prof?.course),
       /* Geri bildirim öğrencinin dilinde. Kuyrukta dil saklanmıyor; kaydın
          sahibinden okunuyor. Kullanıcı bu arada dilini değiştirdiyse yeni
          dilinde geliyor — kart o dilde açılacağı için doğrusu da bu. */

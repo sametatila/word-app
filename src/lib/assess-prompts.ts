@@ -55,14 +55,21 @@ export type AssessRequest = {
    */
   native?: NativeLang;
   /**
-   * Değerlendirilen ÜRETİMİN dili. Verilmezse Almanca — bugüne kadarki tek
-   * hedef dil oydu ve mevcut çağıranların hiçbiri bu alanı yazmıyor.
+   * Değerlendirilen ÜRETİMİN dili — ZORUNLU.
    *
    * Ayrı bir alan olması şart: istem hem öğretmen kimliğini hem seviye
    * beklentilerini bu dile göre kuruyor. İngilizce bir metni "Almanca
    * öğretmeni" kimliğiyle değerlendirmek Perfekt arayan bir rubrik üretiyordu.
+   *
+   * İSTEĞE BAĞLIYKEN DÖRT ÇAĞIRAN UNUTMUŞTU (2026-09-12 ölçüldü): çeviri
+   * turu, serbest cümle turu, sınavın yazma bölümü ve dersin rol yapma
+   * sınavı. Dördü de iki kursta birden çalışıyor, yani İngilizce öğrencinin
+   * metni Almanca rubriğiyle puanlanıyordu. Varsayılan sessizce doğru
+   * görünen bir yanlış üretiyordu; alan zorunlu olunca aynı hata derleme
+   * hatası oluyor. Sunucu yine de savunmada bir varsayılan tutuyor (eski
+   * istemci, elle atılan istek).
    */
-  lang?: "de" | "en";
+  lang: "de" | "en";
 };
 
 export type AssessScore = {

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { focusOnFine } from "@/lib/focus-fine";
 import { GameShell } from "./game-shell";
-import { withArtikel, type GameProps } from "./types";
+import { withArtikel, currentTargetLang, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
@@ -75,6 +75,8 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
         targets: targets.map((t) => t.de),
       },
       answer: { text: typed },
+      // Hedef dil: verilmezse uç Almancaya düşüyor (bkz. `api/assess`).
+      lang: currentTargetLang(),
     };
     const ai = await askAssess(req, { signal: abort.current.signal });
     if (ai.ok) {

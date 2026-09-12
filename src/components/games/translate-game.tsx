@@ -96,6 +96,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           level: (word.niveau as "A1" | "A2" | "B1" | "B2" | "C1") || "A1",
           task: { prompt: `Çevir: ${sentence.tr}`, target: sentence.de },
           answer: { text: typed },
+          /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
+             Almanca rubriğinden geliyor (`assess-prompts` LEVEL_EXPECTATIONS).
+             İngilizce kursta öğrencinin cümlesi yanlış ölçütle puanlanırdı. */
+          lang: targetLangOf(course),
         },
         { timeoutMs: ASSESS_WAIT_MS },
       );

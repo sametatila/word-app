@@ -39,6 +39,7 @@ export default function DemoFeedback() {
     level: "A1",
     task: { prompt: "cümle kur", targets: ["Kaffee", "trinken"] },
     answer: { text: "Ich trinke Kaffee." },
+                lang: "de",
   });
   return (
     <div className="mx-auto max-w-2xl space-y-8 p-6">

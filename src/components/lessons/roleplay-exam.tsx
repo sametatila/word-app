@@ -13,7 +13,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
-import { courseName, speechLocaleOf } from "@/lib/courses";
+import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { MicIcon } from "@/components/icons";
@@ -176,6 +176,10 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       },
       answer: { text: said.join("\n"), transcript: said },
       exerciseId: `${lesson.id}:exam`,
+      /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
+         Almanca rubriğinden geliyor — İngilizce dersin rol yapma sınavı
+         yanlış ölçütle puanlanırdı (bkz. `api/assess`). */
+      lang: targetLangOf(lesson.course),
     };
     /* Konuşmanın tamamı gönderiliyor: tavan tek cümlelik değerlendirmeden
        uzun (bkz. `lib/assess-client`). */

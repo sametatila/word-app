@@ -38,6 +38,10 @@ export async function POST(req: Request) {
         task: { prompt: typeof (b.task as Record<string, unknown>)?.prompt === "string" ? String((b.task as Record<string, unknown>).prompt).slice(0, 600) : "" },
         answer: { text },
         exerciseId: typeof b.exerciseId === "string" ? b.exerciseId.slice(0, 40) : undefined,
+        /* Hedef dil: istemci söylerse o, demezse Almanca. Kuyruk satırında
+           saklanmıyor — işçi zaten kullanıcının kursundan okuyor
+           (`runAssessQueue`); burada yalnız tip sözleşmesi için duruyor. */
+        lang: b.lang === "en" ? "en" : "de",
       },
       day,
     );
