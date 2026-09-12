@@ -1248,8 +1248,8 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([TRUE_WORD[lang]]);
                     }}
-                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill shadow-soft-sm"
-                    style={{ background: "var(--color-success)" }}
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill glow-tint-sm"
+                    style={{ background: "var(--color-success)", "--tint-fill": "var(--color-success)" } as React.CSSProperties}
                   >
                     <CheckIcon size={18} />
                     {t("lesson.correct")}
@@ -1261,8 +1261,8 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([FALSE_WORD[lang]]);
                     }}
-                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill shadow-soft-sm"
-                    style={{ background: "var(--color-danger)" }}
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-strong on-fill glow-tint-sm"
+                    style={{ background: "var(--color-danger)", "--tint-fill": "var(--color-danger)" } as React.CSSProperties}
                   >
                     <XIcon size={18} />
                     {t("lesson.wrong")}

@@ -81,8 +81,10 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
           href="/profile"
           prefetch={false}
           aria-label={t("appheader.profile")}
-          className="pressable shrink-0 rounded-full"
-          style={{ boxShadow: "var(--shadow-soft-sm)" }}
+          className="pressable glow-tint-sm shrink-0 rounded-full"
+          /* Android `AppHeader`: `softShadow(colors.primary, 6)` - avatarın
+             altındaki hâle marka renginde. */
+          style={{ "--tint-fill": "var(--color-brand)" } as React.CSSProperties}
         >
           <MyAvatar userId={userId} name={name} serverAvatar={avatar} size={44} />
         </Link>

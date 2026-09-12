@@ -166,8 +166,8 @@ export function ActivityProgress({
           büyük yazı eşiği 3.0'ı bile tutmuyor. 600'de (#86690e) 5.20. Aynı
           kart mobilde de aynı hatayı taşıyordu; ikisi birlikte koyulaştı. */}
       <div
-        className="flex items-center gap-4 rounded-card p-5 text-white shadow-soft"
-        style={{ background: "var(--color-flame-600)" }}
+        className="flex items-center gap-4 rounded-card p-5 text-white glow-tint"
+        style={{ background: "var(--color-flame-600)", "--tint-fill": "var(--color-flame-600)" } as React.CSSProperties}
       >
         <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20">
           <FlameIcon size={34} />

@@ -19229,6 +19229,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mobInk = ((mobRenk.match(/export const DIALOG_INK = "(#[0-9a-fA-F]{6})"/) ?? [])[1] ?? "YOK").toLowerCase();
   const webDiy = silD(read("src/components/confirm-dialog.tsx"));
   const webTon = (webDiy.match(/background: destructive \? "var\(--color-([\w-]+)\)" : "var\(--color-([\w-]+)\)"/) ?? []);
+  /* Onay dugmesinin acilis etiketi - `onClick={onConfirm}`den baslayip
+     etiketin sonuna kadar (depo yardimcisi `acilisSonu` suslu parantez
+     derinligini takip ediyor, ilk `>`e bakan bir olcu prop icindeki `>`e
+     takilir). */
+  const onayBlok = webDiy.slice(webDiy.indexOf("onClick={onConfirm}"));
+  const onayEtiketi = onayBlok.slice(0, acilisSonu(onayBlok));
   sameList(
     "onay diyalogunun dolgulari",
     [
@@ -19240,7 +19246,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     [
       "yikici=" + coz(webTon[1] ?? "yok"),
       "normal=" + coz(webTon[2] ?? "yok"),
-      "murekkep=" + (/className="btn flex-1 py-3\.5 text-white"/.test(webDiy) ? "#ffffff" : "FARKLI"),
+      /* TAM METIN DESENI KIRILGANDI: `className="btn flex-1 py-3.5 text-white"`
+         birebir aranıyordu ve butona baska bir siniftan (renkli golge
+         `glow-tint-sm`) bir sey eklenince olcu "murekkep FARKLI" dedi -
+         oysa murekkep degismemisti. Olculen sey "onay dugmesinin yazisi
+         beyaz mi"; o yuzden dugmenin KENDI acilis etiketi cikariliyor ve
+         sinif LISTESINDE `text-white` araniyor. */
+      "murekkep=" + (/(?:^|\s)text-white(?:\s|")/.test(onayEtiketi) ? "#ffffff" : "FARKLI"),
       "temadan bagimsiz=" + (webTon.length ? "evet" : "HAYIR"),
     ],
     "mobil",
@@ -20317,6 +20329,172 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      cagri. Esik on sekiz - once yirmi yazilmisti ve kapi "AYRISMA" diyordu:
      esigi olcmeden koymak da bir olcu hatasi. */
   sameList("fetch taramasi bos degil", ["cagri>=18=" + (cagri >= 18)], ["cagri>=18=true"], "bulunan", "beklenen");
+
+  /* MOBIL YARISI - "Android de ham `fetch`" IDDIA olarak yaziliydi.
+     Web tarafinda iki muafiyetin gerekcesi "Android de ayni sekilde ham
+     cagiriyor, yani simetrik"ti; ama bu yalnizca YAZIYORDU, olculmuyordu.
+     Ayni tarama mobil kaynaklara da uygulaniyor ve tavansiz kalanlarin
+     web'deki KARSILIGIYLA eslesmesi bekleniyor. Mobilde tavanli yol iki
+     sarmal (`api`, `fetchWithTimeout`) ve alti cagri yeri sarmali atliyor -
+     hepsi `fetchWithTimeout`tan geciyor, o yuzden burada gorunmuyorlar.
+
+     Native HTTP (Kotlin `uploadStt`/`httpGet`/`playTtsUrl`, Swift
+     karsiliklari) bu taramanin disinda: JS degil. Onlarin tavanlari
+     dosyalarinda yazili (Android 15/20 sn, TTS 8 sn; iOS ortak oturum 20 sn,
+     TTS istek basina 8 sn - 348'de eslestirildi). */
+  const mobilTavansiz = new Map();
+  let mobilCagri = 0;
+  for (const yol of walk("mobile/src").sort()) {
+    const src = silY(read(yol));
+    for (const par of src.split(/(?<![A-Za-z])fetch\(/).slice(1)) {
+      mobilCagri += 1;
+      const k = par.indexOf(";");
+      const deyim = par.slice(0, k < 0 ? par.length : k);
+      if (!/signal/.test(deyim)) mobilTavansiz.set(yol, (mobilTavansiz.get(yol) ?? 0) + 1);
+    }
+  }
+  /* Iki tarafin muaf kumesi ESLESIYOR mu: better-auth + telemetri, baska
+     hicbir sey. Adlar dosya yolu degil ROL, cunku yollar zaten farkli. */
+  const rol = (yol) =>
+    /auth/.test(yol) ? "better-auth" : /track/.test(yol) ? "telemetri" : /mascot/.test(yol) ? "varlik" : /speak-button/.test(yol) ? "ses on indirme" : yol;
+  sameList(
+    "tavansiz fetch: iki tarafin muaf kumesi",
+    [...mobilTavansiz.keys()].map(rol).sort(),
+    [...tavansiz.keys()].map(rol).filter((r) => r === "better-auth" || r === "telemetri").sort(),
+    "mobil",
+    "web (ortak roller)",
+  );
+  sameList(
+    "mobil fetch taramasi bos degil",
+    ["cagri>=4=" + (mobilCagri >= 4) + " sarmal>=2=" + (mobilCagri - [...mobilTavansiz.values()].reduce((a, b) => a + b, 0) >= 2)],
+    ["cagri>=4=true sarmal>=2=true"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* --------- 349. RENKLI GOLGE: DOLGUNUN KENDI RENGIYLE
+ *
+ * Android'de dolgulu bir yuzeyin golgesi NOTR DEGIL, yuzeyin RENGI:
+ *   LessonScreen dogru/yanlis  softShadow(colors.success|danger, 8)
+ *   ProgressScreen seri karti  softShadow(colors.streakDeep, 12)
+ *   MicDisclosure karosu       softShadow(colors.primary, 12)
+ *   DailyQuests biten karo     softShadow(colors.success, 6)
+ *   AppHeader avatari          softShadow(colors.primary, 6)
+ *   rounds devam dugmesi       softShadow(ok ? success : primary, 8)
+ * Ayrim tek kural: SEMANTIK yuzey tintli golge alir, NOTR kart notr golge
+ * alir (`cardShadow(colors, n)`) - sekiz `cardShadow` cagrisinin hepsi
+ * `colors.surface` zeminli bir kapta.
+ *
+ * Webde bu kalibin yalniz MARKA hali vardi (`.btn-primary`,
+ * `.chip-filter.chip-active`); geri kalan renkli dolgularin hepsi kahverengi
+ * jetonu kullaniyordu - yesil bir dugme kahverengi golge dusuruyordu. On bes
+ * yuzey olculdu ve `glow-tint*` uc basamagina cevrildi (geometri notr
+ * aileyle AYNI, degisen tek sey renk).
+ *
+ * OLCUNUN KENDI HATASI: ilk tarama dolguyu `var(--color-X)` DIZ yazimiyla
+ * ariyordu ve `style={{ background: tone }}` yazan uc karoyu (learn-hub iki,
+ * practice bir) hic gormedi - dort yuzey "temiz" cikti, oysa on bes vardi.
+ * Dolgu deseni artik SATIR ICI HER `background` degeri (notr yuzey
+ * degerleri disarida).
+ *
+ * Olcu: (1) mutlak - hicbir satir ici renkli dolgunun ustunde notr golge
+ * kalmiyor, (2) `glow-tint*` kullanim sayisi esigi (bos cevrim gecmesin),
+ * (3) uc basamagin geometrisi notr ailenin geometrisiyle AYNI, (4) Android
+ * tarafinda kural hala boluyor: her `cardShadow` notr zeminde, her
+ * `softShadow` ilk argumani tema tinti DEGIL. */
+{
+  const walkT = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) walkT(d + "/" + e.name, out);
+      else if (/\.tsx$/.test(e.name)) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  /* (1) Notr golge + renkli dolgu ayni acilis etiketinde kalmis mi. Pencere
+     bes satir geri, bes satir ileri: acilis etiketi cok satirli yaziliyor ve
+     `className` ile `style` arasinda baska proplar olabiliyor. */
+  const notrKalan = [];
+  let glow = 0;
+  for (const f of [...walkT("src/components"), ...walkT("src/app")]) {
+    const satirlar = read(f).split("\n");
+    satirlar.forEach((satir, i) => {
+      if (/glow-tint/.test(satir)) glow += 1;
+      if (!/shadow-soft(?:-sm|-lg)?["\s]|--shadow-soft(?:-sm|-lg)?\)/.test(satir)) return;
+      const pencere = satirlar.slice(Math.max(0, i - 5), i + 6).join(" ");
+      const m = pencere.match(/background(?:Color)?:\s*([^,}\n]+)/);
+      if (!m) return;
+      const dolgu = m[1].trim();
+      /* Notr zeminler: kartin kendisi, govde zemini, saydam, beyaz. */
+      if (/--surface|--bg\b|transparent|#fff|white/.test(dolgu)) return;
+      notrKalan.push(f.split("/").pop() + ":" + (i + 1));
+    });
+  }
+  sameList(
+    "renkli dolgunun ustunde notr golge",
+    ["kalan: " + (notrKalan.join(", ") || "yok")],
+    ["kalan: yok"],
+    "bulunan",
+    "beklenen",
+  );
+  /* (2) 0/0 gecmesin: cevrim gercekten yapildi mi (olculen: yirmi satir). */
+  sameList("renkli golge kullanimi", ["glow-tint>=15=" + (glow >= 15)], ["glow-tint>=15=true"], "bulunan", "beklenen");
+
+  /* (3) Uc basamagin geometrisi notr aileyle ayni olmali - biri degisip obürü
+     kalirsa iki golge ailesi ayrisir ve ayni yuksekligi anlatmaz. */
+  const css = read("src/app/globals.css");
+  const geoNotr = ["sm", "", "lg"].map((k) => {
+    const ad = "--shadow-soft" + (k ? "-" + k : "");
+    const m = css.match(new RegExp(ad + ":\\s*(0 [\\dpx -]+?)\\s*rgb"));
+    return (k || "md") + "=" + (m ? m[1].trim() : "YOK");
+  });
+  const geoTint = ["sm", "", "lg"].map((k) => {
+    const ad = "glow-tint" + (k ? "-" + k : "");
+    const m = css.match(new RegExp("@utility " + ad + " \\{\\s*box-shadow:\\s*(0 [\\dpx -]+?)\\s*color-mix"));
+    return (k || "md") + "=" + (m ? m[1].trim() : "YOK");
+  });
+  sameList("renkli golge geometrisi notr aileyle ayni", geoTint, geoNotr, "tintli", "notr");
+
+  /* (4) Referans platformdaki kural hala boluyor mu. `cardShadow` cagrisinin
+     kabi notr olmali; `softShadow`un ilk argumani tema tinti OLMAMALI
+     (olursa "notr golge" tintli yolla yazilmis olur ve ayrim kaybolur). */
+  const mobilDosyalar = walkT("mobile/src").concat(
+    (() => {
+      const out = [];
+      const w = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          if (e.isDirectory()) w(d + "/" + e.name);
+          else if (/\.ts$/.test(e.name)) out.push(d + "/" + e.name);
+        }
+      };
+      w("mobile/src");
+      return out;
+    })(),
+  );
+  const yanlisKart = [];
+  let kartSayi = 0;
+  let tintSayi = 0;
+  for (const f of mobilDosyalar) {
+    if (/theme\/tokens\.ts$/.test(f)) continue;
+    const src = read(f);
+    for (const par of src.split("cardShadow(").slice(1)) {
+      kartSayi += 1;
+      /* Kabin zemini: cagrinin GERISINDE, ayni stil dizisinde. */
+      const geri = src.slice(Math.max(0, src.indexOf(par) - 700), src.indexOf(par));
+      if (!/backgroundColor:[^,}]*colors\.(?:surface|bg)/.test(geri)) yanlisKart.push(f.split("/").pop());
+    }
+    for (const m of src.matchAll(/softShadow\(([^,)]+)/g)) {
+      tintSayi += 1;
+      if (/shadowTint/.test(m[1])) yanlisKart.push(f.split("/").pop() + " (softShadow tema tinti)");
+    }
+  }
+  sameList(
+    "android golge kurali: notr kart / tintli yuzey",
+    ["kural disi: " + (yanlisKart.join(", ") || "yok") + " kart>=8=" + (kartSayi >= 8) + " tint>=100=" + (tintSayi >= 100)],
+    ["kural disi: yok kart>=8=true tint>=100=true"],
+    "bulunan",
+    "beklenen",
+  );
 }
 
 console.log(

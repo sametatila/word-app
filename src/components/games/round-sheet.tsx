@@ -182,11 +182,13 @@ function ContinueButton({ verdict, onContinue }: { verdict: "correct" | "wrong" 
       type="button"
       autoFocus
       onClick={onContinue}
-      className="btn w-full py-3.5 text-white"
+      className="btn glow-tint-sm w-full py-3.5 text-white"
+      /* Android `rounds` devam düğmesi: `softShadow(ok ? success : primary, 8)`
+         - gölge düğmenin kendi rengi. */
       style={{
         background: verdict === "wrong" ? "var(--color-brand-500)" : "var(--color-mint-600)",
-        boxShadow: "var(--shadow-soft-sm)",
-      }}
+        "--tint-fill": verdict === "wrong" ? "var(--color-brand-500)" : "var(--color-mint-600)",
+      } as React.CSSProperties}
     >
       {t("common.continue")}
     </button>

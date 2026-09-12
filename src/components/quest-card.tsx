@@ -191,11 +191,15 @@ export function QuestCard() {
               {/* Karo: tamamlanmışsa dolu yeşil + onay, değilse yumuşak marka
                   zemin + şimşek — Android `QuestRow` ile aynı (42 piksel). */}
               <span
-                className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile"
+                /* Tamamlanan karo Android'de KENDİ yeşiliyle parlıyor
+                   (`DailyQuests` softShadow(colors.success, 6)); webde hiç
+                   gölge yoktu, yani biten görev ekrandan öne çıkmıyordu. */
+                className={"flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile" + (done ? " glow-tint-sm" : "")}
                 style={{
                   background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                   color: done ? "#fff" : "var(--color-brand)",
-                }}
+                  "--tint-fill": "var(--color-mint)",
+                } as React.CSSProperties}
               >
                 {done ? <CheckIcon size={22} /> : <BoltIcon size={20} />}
               </span>

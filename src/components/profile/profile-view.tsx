@@ -106,7 +106,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* kimlik kartı */}
       <div className="card mb-4 flex flex-col items-center p-5">
-        <Link href="/profile/avatar" prefetch={false} aria-label={t("profile.edit_your_avatar")} className="pressable rounded-full shadow-soft">
+        <Link href="/profile/avatar" prefetch={false} aria-label={t("profile.edit_your_avatar")} className="pressable rounded-full glow-tint" style={{ "--tint-fill": "var(--color-brand)" } as React.CSSProperties}>
           <MyAvatar userId={userId} name={stats.name} serverAvatar={avatar} size={76} />
         </Link>
         <p className="mt-3 text-h2">{stats.name}</p>
@@ -172,8 +172,8 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Link
           href="/premium?from=profile"
           prefetch={false}
-          className="pressable mb-4 flex items-center gap-3 rounded-card p-4 text-white shadow-soft"
-          style={{ background: "var(--color-brand-500)" }}
+          className="pressable mb-4 flex items-center gap-3 rounded-card p-4 text-white glow-tint"
+          style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
         >
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile bg-white/20">
             <CrownIcon size={26} />

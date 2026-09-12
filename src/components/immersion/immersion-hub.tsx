@@ -240,8 +240,8 @@ function Featured({
     <section className="card p-4" style={{ borderWidth: 2, borderColor: "var(--color-brand-500)" }}>
       <div className="flex items-center gap-3">
         <span
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-tile text-white shadow-soft-sm"
-          style={{ background: unit.complete ? "var(--color-mint-500)" : "var(--color-brand-500)" }}
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-tile text-white glow-tint-sm"
+          style={{ background: unit.complete ? "var(--color-mint-500)" : "var(--color-brand-500)", "--tint-fill": unit.complete ? "var(--color-mint-500)" : "var(--color-brand-500)" } as React.CSSProperties}
         >
           {unit.complete ? <CheckIcon size={26} /> : <span className="text-h1">{unit.index}</span>}
         </span>

@@ -124,8 +124,8 @@ export default async function PracticePage() {
           karar burada verilebilmeli. Mobilde de listenin üstünde duruyor. */}
       <Link
         href="/learn/game"
-        className="pressable flex items-center gap-3 rounded-card p-5 text-white shadow-soft-lg"
-        style={{ background: "var(--color-brand-500)" }}
+        className="pressable flex items-center gap-3 rounded-card p-5 text-white glow-tint-lg"
+        style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
       >
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile bg-white/20">
           <BoltIcon size={24} />
@@ -147,8 +147,8 @@ export default async function PracticePage() {
               className="pressable card flex min-h-[8.25rem] flex-col justify-between gap-3 p-4"
             >
               <span
-                className="flex h-11 w-11 items-center justify-center rounded-tile text-white shadow-soft-sm"
-                style={{ background: tone }}
+                className="flex h-11 w-11 items-center justify-center rounded-tile text-white glow-tint-sm"
+                style={{ background: tone, "--tint-fill": tone } as React.CSSProperties}
               >
                 <Icon size={22} />
               </span>

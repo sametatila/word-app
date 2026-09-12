@@ -17803,3 +17803,69 @@ yirmi yazılmıştı, gerçek sayı on dokuzdu. Ayrıca deponun **kendi meta-kap
 (§138, "kapılarda önek eşleşmesi") sade `/ROLEPLAY_TIMEOUT_MS/` desenini
 reddetti — haklı olarak: yanlış tavanı geçiren bir çağrı yeri "geçiyor"
 görünürdü.
+
+## §11.492 — Renkli gölge: Android'de gölge dolgunun rengi, web'de kahverengiydi (on beş yüzey)
+
+Android'de dolgulu bir yüzeyin gölgesi **nötr değil, yüzeyin kendi rengi**:
+
+| Yüzey | Android |
+|---|---|
+| Ders doğru/yanlış düğmeleri | `softShadow(colors.success \| danger, 8)` |
+| İlerleme seri kartı | `softShadow(colors.streakDeep, 12)` |
+| Mikrofon izni karosu | `softShadow(colors.primary, 12)` |
+| Biten günlük görev karosu | `softShadow(colors.success, 6)` |
+| Başlıktaki avatar | `softShadow(colors.primary, 6)` |
+| Tur devam düğmesi | `softShadow(ok ? success : primary, 8)` |
+
+Ayrımı yapan tek kural şu: **semantik yüzey tintli gölge alır, nötr kart nötr
+gölge alır** (`cardShadow(colors, n)`). Sekiz `cardShadow` çağrısının hepsi
+`colors.surface` zeminli bir kapta duruyor — kural referans platformda
+tutarlı.
+
+Web'de bu kalıbın yalnız **marka** hâli vardı (`.btn-primary`,
+`.chip-filter.chip-active`); geri kalan renkli dolguların hepsi kahverengi
+jetonu kullanıyordu. Yani yeşil bir düğme kahverengi gölge düşürüyordu, biten
+görev karosunun hiç gölgesi yoktu ve avatarın altındaki marka hâlesi web'de
+kahverengiydi. On beş yüzey ölçüldü ve `glow-tint` / `glow-tint-sm` /
+`glow-tint-lg` basamaklarına çevrildi — **geometri nötr aileyle birebir aynı**
+(aynı formül: y = 0.7·yükseklik, bulanıklık 1.6·yükseklik), değişen tek şey
+renk. Renk `--tint-fill`den okunuyor: `.tint-soft` ile aynı değişken, o yüzden
+bir yüzey dolgusunu bir kez yazıp ikisini de kullanabiliyor.
+
+iOS ayrıca bir şey gerektirmedi: `softShadow` iOS dalında `shadowColor`ı
+zaten rengin kendisi yapıyor, yani paylaşılan RN kodu iOS'u Android'le eş
+tutuyor.
+
+**Ölçünün kendi hatası — aynı sınıf, üçüncü kez.** İlk tarama dolguyu
+`var(--color-X)` **düz yazımıyla** arıyordu ve `style={{ background: tone }}`
+yazan üç karoyu (learn-hub iki, practice bir) hiç görmedi: tarama "dört yüzey"
+diyordu, gerçek sayı on beşti. (§338'de `tint={colors.accent}`, §340'ta
+`tone + "22"`, burada `background: tone` — hepsi aynı kusur: deseni tek bir
+yazım şekline kapatmak.) Dolgu deseni artık satır içi **her** `background`
+değeri, nötr yüzey değerleri dışarıda.
+
+**Kapı §349** dört şeyi ölçüyor: (1) mutlak — hiçbir satır içi renkli
+dolgunun üstünde nötr gölge kalmıyor, (2) `glow-tint*` kullanım sayısı eşiği
+(boş çevrim geçmesin), (3) üç basamağın geometrisi nötr ailenin geometrisiyle
+aynı (biri değişip öbürü kalırsa iki aile aynı yüksekliği anlatmaz), (4)
+Android tarafında kural hâlâ bölüyor: her `cardShadow` nötr zeminde, hiçbir
+`softShadow` tema tintiyle çağrılmıyor. Dördü de enjeksiyonla doğrulandı.
+
+**Mevcut bir kapı da onarıldı.** "Onay diyaloğunun dolguları" mürekkebi
+`className="btn flex-1 py-3.5 text-white"` dizisini **birebir** arayarak
+ölçüyordu; düğmeye renkli gölge sınıfı eklenince kapı "mürekkep FARKLI" dedi —
+oysa mürekkep değişmemişti. Ölçülen şey "onay düğmesinin yazısı beyaz mı"
+olduğu için artık düğmenin kendi açılış etiketi çıkarılıyor (`acilisSonu`) ve
+sınıf **listesinde** `text-white` aranıyor. Onarımın gerçek bir değişimi hâlâ
+yakaladığı da ölçüldü (`text-black` enjeksiyonu kapıyı düşürüyor).
+
+**§348'in mobil yarısı da eklendi.** "Android de ham `fetch`" muafiyeti iddia
+olarak yazılıydı; aynı envanter taraması mobil kaynaklara uygulandığında
+tavansız kalanlar **tam olarak** web'dekilerin karşılığı çıktı: better-auth
+(`mobile/src/lib/auth`) ve telemetri (`mobile/src/lib/track`), başka hiçbir
+şey. Kapı artık iki tarafın muaf kümesini rol adlarıyla eşleştiriyor.
+
+**Açık kalan (başka oturumun alanı):** `check:title`,
+`src/components/skills/quiz.tsx`ta yalnız ipucu balonunda duran bir metin
+bildiriyor (`title` dokunmatikte açılmaz). Beceri kütüphanesi çalışması o
+dosyada sürdüğü için dokunulmadı.

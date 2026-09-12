@@ -72,8 +72,8 @@ export function NotificationSettings() {
     <div className="space-y-4">
       <div className="flex flex-col items-center px-2 text-center">
         <span
-          className="flex h-[72px] w-[72px] items-center justify-center rounded-card text-white shadow-soft"
-          style={{ background: "var(--color-sky-500)" }}
+          className="flex h-[72px] w-[72px] items-center justify-center rounded-card text-white glow-tint"
+          style={{ background: "var(--color-sky-500)", "--tint-fill": "var(--color-sky-500)" } as React.CSSProperties}
         >
           <BellIcon size={36} />
         </span>

@@ -176,8 +176,8 @@ export function UnitPane({
           const inner = (
             <>
               <span
-                className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-tile text-white shadow-soft-sm"
-                style={{ background: tint }}
+                className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-tile text-white glow-tint-sm"
+                style={{ background: tint, "--tint-fill": tint } as React.CSSProperties}
               >
                 <KindIconFor kind={it.kind} />
               </span>

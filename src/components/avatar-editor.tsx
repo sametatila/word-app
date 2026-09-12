@@ -57,7 +57,11 @@ export function AvatarEditor() {
       <PageBack fallback="/profile" title={t("avatar.your_avatar")} />
 
       <div className="my-5 flex justify-center">
-        <MascotAvatar config={cfg} size={140} className="shadow-soft-lg" />
+        {/* Hâle marka renginde - Android `AvatarScreen` `softShadow(colors.primary, 12)`.
+            `MascotAvatar` `style` almıyor, o yüzden sarmalayıcı taşıyor. */}
+        <span className="inline-flex rounded-full glow-tint" style={{ "--tint-fill": "var(--color-brand)" } as React.CSSProperties}>
+          <MascotAvatar config={cfg} size={140} />
+        </span>
       </div>
 
       <Group title={t("avatar.hat")}>

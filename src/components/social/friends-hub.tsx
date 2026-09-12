@@ -178,8 +178,8 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           durduğunda öyle görünmüyordu. */}
       <button
         onClick={() => void share()}
-        className="pressable mt-3 flex w-full items-center gap-3 rounded-card p-4 text-white shadow-soft"
-        style={{ background: "var(--color-brand-500)" }}
+        className="pressable mt-3 flex w-full items-center gap-3 rounded-card p-4 text-white glow-tint"
+        style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
       >
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile bg-white/20">
           <HandshakeIcon size={22} />

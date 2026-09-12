@@ -88,8 +88,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
       */}
       <Link
         href="/learn/game"
-        className="pressable relative mb-5 block overflow-hidden rounded-card shadow-soft-lg"
-        style={{ background: "var(--color-brand-500)" }}
+        className="pressable relative mb-5 block overflow-hidden rounded-card glow-tint-lg"
+        style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
       >
         {/* Kısa rozetler — kartın sağ üstünde. Bugün ne birikmiş, tek bakışta. */}
         {dueCount > 0 || newToday > 0 ? (
@@ -283,8 +283,8 @@ function Wedge({
       style={{ borderColor: tone, borderWidth: 1.5 }}
     >
       <span
-        className="flex h-11 w-11 items-center justify-center rounded-tile text-white shadow-soft-sm"
-        style={{ background: tone }}
+        className="flex h-11 w-11 items-center justify-center rounded-tile text-white glow-tint-sm"
+        style={{ background: tone, "--tint-fill": tone } as React.CSSProperties}
       >
         {icon}
       </span>
@@ -313,8 +313,8 @@ function Action({
   return (
     <Link href={href} prefetch={false} className="pressable card flex items-center gap-3 p-4">
       <span
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile text-white shadow-soft-sm"
-        style={{ background: tone }}
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile text-white glow-tint-sm"
+        style={{ background: tone, "--tint-fill": tone } as React.CSSProperties}
       >
         {icon}
       </span>

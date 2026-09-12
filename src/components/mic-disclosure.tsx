@@ -72,8 +72,8 @@ export function MicDisclosure({
     >
       <div className="flex flex-col items-center gap-3 text-center">
         <span
-          className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill shadow-soft"
-          style={{ background: "var(--color-brand)" }}
+          className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill glow-tint"
+          style={{ background: "var(--color-brand)", "--tint-fill": "var(--color-brand)" } as React.CSSProperties}
         >
           <MicIcon size={36} />
         </span>

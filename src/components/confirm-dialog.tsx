@@ -78,11 +78,13 @@ export function ConfirmDialog({
         <button
           type="button"
           onClick={onConfirm}
-          className="btn flex-1 py-3.5 text-white"
+          className="btn glow-tint-sm flex-1 py-3.5 text-white"
+          /* Gölge düğmenin KENDİ rengiyle - Android `ConfirmDialog`
+             `softShadow(accent, 8)` ile aynı. */
           style={{
             background: destructive ? "var(--color-rose-600)" : "var(--color-brand-500)",
-            boxShadow: "var(--shadow-soft-sm)",
-          }}
+            "--tint-fill": destructive ? "var(--color-rose-600)" : "var(--color-brand-500)",
+          } as React.CSSProperties}
         >
           {confirmLabel ?? t("common.confirm")}
         </button>
