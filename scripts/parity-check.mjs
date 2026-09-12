@@ -7480,6 +7480,101 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 276. KAPANMIS AMA KILITLENMEMIS DORT MADDE --------------------
+   *
+   * Defterin ilk seritlerinde "Karar Samet'in" / "karar gerekiyor" diye
+   * birakilmis maddeler var. Bu turda hepsi TEK TEK OLCULDU ve dordu zaten
+   * KAPANMIS cikti - sonraki turlarda yapilmislar, ama defter onlari acik
+   * gostermeye devam ediyordu. Bedeli somut: acik sanilan bir madde ya
+   * ikinci kez yapilir ya da Samet'ten bosa karar beklenir. Olcum burada,
+   * duzeltme §11.399'da.
+   *
+   * Kapanan sey KILITLENMEZSE yeniden acilir; bu kapi o dordunu tutuyor.
+   *
+   * ACIK KALANLAR bilerek disarida ve gercekten Samet'in: sfx not
+   * tablolarinin native kopyalari (ses dogrulanamiyor) ve premium kota
+   * dizgileri (urun karari). */
+  {
+    /* 1) KELIME SATIRI. Web satiri aciyor ve ornek cumleyi gosteriyordu;
+       Android satiri duzdu. Artik ikisi de aciyor - uc genisletildi,
+       `WordRow` buyudu, iki satir da ornegi cizdi. */
+    const wl = sil(read("src/components/word-list.tsx"));
+    const ws = sil(read("mobile/src/screens/WordsScreen.tsx"));
+    const uc = sil(read("src/app/api/words/route.ts"));
+    sameList(
+      "kelime satiri ayrintiyi aciyor",
+      [
+        "mobil acilir=" + (/const \[open, setOpen\] = useState<number \| null>/.test(ws) ? "var" : "YOK"),
+        "mobil ornek=" + (/<ExampleLines\b/.test(ws) ? "var" : "YOK"),
+      ],
+      [
+        "mobil acilir=" + (/const \[open, setOpen\] = useState<number \| null>/.test(wl) ? "var" : "YOK"),
+        "mobil ornek=" + (/firstExample\(r\.beispiel\)/.test(wl) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "kelime ucu ornegi tasiyor",
+      ["beispiel=" + (/beispiel: words\.beispiel/.test(uc) ? "var" : "YOK")],
+      ["beispiel=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* 2) ROZET IKONLARI. Webin haritasi yirmi dokuz addi, mobil alani hic
+       okumuyordu (elli yedi rozetin hepsi KUPA goruluyordu). Olcu SAYIM
+       DEGIL AD KUMESI: sayilar esit kalip bir ad degisse fark gorunmezdi. */
+    const ikonlar = (y) => {
+      const src = read(y);
+      const i = src.indexOf("const ICONS");
+      const j = src.indexOf("};", i);
+      const blok = src.slice(i, j);
+      return [...new Set(blok.match(/\b[A-Z][A-Za-z]*Icon\b/g) ?? [])].sort();
+    };
+    sameSet(
+      "rozet ikon adlari",
+      ikonlar("mobile/src/ui/achievementIcon.tsx"),
+      ikonlar("src/components/achievement-badge.tsx"),
+      "mobil",
+      "web",
+    );
+
+    /* 3) ROZET KUTLAMASI. Webde vardi, Androidde hic yoktu - rozet yalniz
+       duvarda dolu gorunuyordu ve mobil ses kumesinde `unlock` bile yoktu. */
+    const au = sil(read("mobile/src/ui/AchievementUnlock.tsx"));
+    sameList(
+      "rozet kutlamasi iki platformda",
+      [
+        "kutlama=" + (/export function AchievementUnlock/.test(au) ? "var" : "YOK"),
+        "ses=" + (/sfx\("unlock"\)/.test(au) ? "var" : "YOK"),
+      ],
+      ["kutlama=var", "ses=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* 4) DEVAM DUGMESI (eski G4). Mobilde cevaptan sonra "Devam" vardi, web
+       kendiliginden ilerliyordu. Artik ikisinde de acik bir dugme var ve
+       HICBIRI zamanlayiciyla ilerlemiyor - zamanlayici geri gelirse dugme
+       sus paya duser. */
+    const rs = sil(read("src/components/games/round-sheet.tsx"));
+    const rd = sil(read("mobile/src/game/rounds.tsx"));
+    sameList(
+      "cevaptan sonra devam dugmesi",
+      [
+        "dugme=" + (/onContinue/.test(rd) && /FeedbackFooter\b/.test(rd) ? "var" : "YOK"),
+        "kendiliginden=" + (/setTimeout\([^;]{0,120}onDone\(/.test(rd) ? "VAR" : "yok"),
+      ],
+      [
+        "dugme=" + (/function ContinueButton/.test(rs) && /onClick=\{onContinue\}/.test(rs) ? "var" : "YOK"),
+        "kendiliginden=" + (/setTimeout\([^;]{0,120}onContinue\(/.test(rs) ? "VAR" : "yok"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 275. BILDIRIM HUNISI UC BASAMAK -------------------------------
    *
    * Ayni olay iki yerde "denendi", bir yerde "ulasti" anlamina geliyordu.
