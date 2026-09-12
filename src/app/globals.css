@@ -614,6 +614,27 @@
     transition: transform 0.12s cubic-bezier(0.2, 0, 0.2, 1);
     touch-action: manipulation;
   }
+  /*
+   * ÇİFT DOKUNUŞ YAKINLAŞTIRMASI DENETİMLERİN ÜSTÜNDE KAPALI.
+   *
+   * `touch-action: manipulation` yalnız `.pressable`da vardı. Yakınlaştırma
+   * kilidi kalkınca (§11.389) çift dokunuşla büyütme iOS'ta geri geldi — ve
+   * bir tur sırasında iki şıkka arka arkaya hızlı dokunan kullanıcıda ikinci
+   * dokunuş "çift dokunuş" sayılıp sayfayı yakınlaştırıyor. Android
+   * uygulamasında böyle bir jest yok.
+   *
+   * Kural yalnız DENETİMLERİN üstünde: sayfanın kendisinde parmakla
+   * büyütme serbest kalıyor, yani §11.389'un çözdüğü erişilebilirlik sorunu
+   * geri gelmiyor. Kapatılan tek şey, basılabilir bir ögenin üstündeki çift
+   * dokunuş.
+   */
+  button,
+  a,
+  .btn,
+  .chip,
+  .option {
+    touch-action: manipulation;
+  }
   .pressable:active {
     transform: scale(var(--press-scale));
   }
