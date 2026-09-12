@@ -7461,6 +7461,87 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 253. CEVRIMDISI DAVRANIS ---------------------------------------
+   *
+   * Olcum once altyapinin ESIT oldugunu dogruladi: cevap kuyrugu (tur
+   * cevaplari ag donunce gonderiliyor), ders ilerlemesi kuyrugu, deneme
+   * kagidinin yerel kaydi ve modelsiz rol yapma iki tarafta da var. Iki
+   * ayrisma cikti, ikisi de CUMLEDE.
+   *
+   * YEDEGIN YEDEK OLDUGU. Degerlendirme cagrisi dustugunde iki taraf da
+   * kural tabanli bir yedek puan gosteriyor. Android o puanin yanina ikinci
+   * bir cumle yaziyor: "bu puan kelime sayisindan cikarilmis gecici bir
+   * tahmin, gercek degerlendirme degil" (`assess.fail_offline`). Web yalniz
+   * SEBEBI yaziyordu ("servis yanit vermedi") ve hemen altinda bir PUAN
+   * duruyordu - kullanici onu gercek bir degerlendirme sanabilirdi.
+   * Kosul PUANIN KENDISINDE (`result.offline`), sebep satirinda degil: kota
+   * kapisinda sebep satiri baska ama yedek yine gosteriliyor.
+   *
+   * BAGLAMA HATASI. Hesap baglama ag yuzunden dustugunde Android genel bir
+   * cumle basiyordu ("Baglanti kurulamadi"); web ayni yerde
+   * `links.link_offline` diyor ve o cumle NE YAPILACAGINI da soyluyor.
+   * Anahtar zaten ortak sozlukte ve KALDIRMA yolu kardesini baştan beri
+   * kullaniyordu - yalniz baglama yolu disarida kalmisti. */
+  {
+    /* Altyapi: iki tarafta da ayni dort parca. */
+    const ALTYAPI = [
+      ["cevap kuyrugu", "src/lib/answer-queue.ts", "mobile/src/game/session.ts", /lernomi-answer-queue/],
+      ["ders ilerlemesi", "src/lib/lesson-queue.ts", "mobile/src/game/lessonProgress.ts", /queue|Queue/],
+      ["deneme yerel kaydi", "src/components/mock-exam-player.tsx", "mobile/src/game/mockExamLocal.ts", /LocalRun|localRun/],
+      ["modelsiz rol yapma", "src/lib/lessons/offline-roleplay.ts", "mobile/src/game/offlineRoleplay.ts", /offlineReply|matchReply/],
+    ];
+    sameList(
+      "cevrimdisi altyapisi",
+      ALTYAPI.map(([ad, , m, d]) => ad + "=" + (d.test(sil(read(m))) ? "var" : "YOK")),
+      ALTYAPI.map(([ad, w, , d]) => ad + "=" + (d.test(sil(read(w))) ? "var" : "YOK")),
+      "mobil",
+      "web",
+    );
+
+    /* Yedek puanin yaninda "bu gercek degerlendirme degil" yaziyor. */
+    sameList(
+      "yedek puanin yaninda uyari var",
+      [
+        "sinav=" + (/assess\.fail_offline/.test(sil(read("mobile/src/screens/ExamScreen.tsx"))) ? "var" : "YOK"),
+        "tur=" + (/assess\.fail_offline/.test(sil(read("mobile/src/game/rounds.tsx"))) ? "var" : "YOK"),
+      ],
+      [
+        /* Webde tek yer: ortak kart, ve orada IKI dal var. Dosyada "gecyor
+           mu" diye sormak yetmez: bir dal silinse oteki hala gecer ve olcu
+           yesil kalirdi - "dosyayi degil dali olcmek" (bkz. 252). */
+        "sinav=" + (/\{t\(ASSESS_FAILURE_KEYS\[failure\]\)\}[\s\S]{0,120}assess\.fail_offline/.test(sil(read("src/components/feedback/assessment-card.tsx"))) ? "var" : "YOK"),
+        "tur=" + (/\) : offline \? \([\s\S]{0,240}assess\.fail_offline/.test(sil(read("src/components/feedback/assessment-card.tsx"))) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+    /* Kosul PUANDA: sebep satiri olmadan da yedek gosterilebiliyor. */
+    sameList(
+      "uyari yedek puanin kosuluna bagli",
+      ["kosul=" + (/\) : offline \? \(/.test(sil(read("src/components/feedback/assessment-card.tsx"))) ? "puanda" : "YALNIZ SEBEPTE")],
+      ["kosul=puanda"],
+      "web",
+      "beklenen",
+    );
+
+    /* Hesap baglama/kaldirma ag hatasi ORTAK anahtardan. */
+    const lw = sil(read("src/components/account/linked-accounts.tsx"));
+    const lm = sil(read("mobile/src/ui/LinkedAccounts.tsx"));
+    sameList(
+      "hesap baglama ag hatasi",
+      [
+        "baglama=" + (/links\.link_offline/.test(lm) ? "ortak anahtar" : "GENEL CUMLE"),
+        "kaldirma=" + (/links\.unlink_offline/.test(lm) ? "ortak anahtar" : "GENEL CUMLE"),
+      ],
+      [
+        "baglama=" + (/links\.link_offline/.test(lw) ? "ortak anahtar" : "GENEL CUMLE"),
+        "kaldirma=" + (/links\.unlink_offline/.test(lw) ? "ortak anahtar" : "GENEL CUMLE"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 252. KLAVYE DAVRANISI -------------------------------------------
    *
    * Her metin alaninin klavyeye soyledigi uc sey var: cumle basi buyutme,

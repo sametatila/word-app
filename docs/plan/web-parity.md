@@ -12929,3 +12929,70 @@ dışında kaldı. Doğru işaret zaten oradaydı: `secureTextEntry`.
 Üç olgu: sekiz yüzeyin klavye kipi (eşleştirmeli, alan bazında), ad alanının
 `words` demesi ve **mutlak** bir ölçüt — şifre/kod dışında her metin alanı
 kipini söylemeli. Beş enjeksiyon denendi, beşi de yakalandı.
+
+## §11.374 — Düzeltme: §11.366'daki "yer değiştirmiş değerler" bulgusu YANLIŞTI
+
+§11.366'da silinen iki ölü anahtar için "Türkçe ve İngilizce değerleri yer
+değiştirmişti" yazmıştım. **Bu doğru değil.** Git geçmişinden okundu:
+
+```
+tr.ts: "leaderboard.this_week_left": "Bu hafta · {n} gün kaldı"
+en.ts: "leaderboard.this_week_left": "This week · {n} days left"
+tr.ts: "weak.n_times": "{n} kez"
+en.ts: "weak.n_times": "{n} times"
+```
+
+Üçü de (Almanca dahil) doğru yerindeydi. Yanlış bulgunun sebebi ölçünün
+kendisi: `grep -h '"anahtar"' tr.ts en.ts` çıktısında **satırların hangi
+dosyadan geldiği yazmıyor** ve ben sırayı varsaydım — `-h` tam olarak o
+bilgiyi bastırmak için var. Aynı komutu bu turda `common.connection_failed`
+için de çalıştırdım, yine "yer değiştirmiş" göründü, ve dosya dosya okuyunca
+**o da doğru çıktı**.
+
+Silme kararı **değişmiyor**: anahtarlar gerçekten ölüydü (hiçbir istemci
+çağırmıyordu) ve ölü anahtar denetimi yerinde duruyor. Değişen yalnız
+gerekçe: o anahtarlar bir çürümeyi saklamıyordu, sadece ölüydüler.
+`mockpack.progress`in `%{pct}` yazdığı bulgusu ise **doğru** — o tek dosyadan
+okunmuştu.
+
+Ders: bir dosyanın adını bastıran bir çıktıya bakıp "hangi dosyadaydı"
+sorusuna cevap vermek, ölçmek değil varsaymaktır. Bu oturumda ölçüm
+hatalarının hepsi aynı aileden çıktı (§252'deki üç hata, §250'deki `walkCue`,
+bu): **bir olguyu, onu taşımayan bir çıktıda aramak.**
+
+## §11.375 — Çevrimdışı: yedek puanın yedek olduğu webde yazmıyordu
+
+Eksen **çevrimdışı davranış**tı. Ölçüm önce altyapının **eşit** olduğunu
+doğruladı: cevap kuyruğu (tur cevapları ağ dönünce gönderiliyor), ders
+ilerlemesi kuyruğu, deneme kâğıdının yerel kaydı ve modelsiz rol yapma iki
+tarafta da var. İki ayrışma çıktı ve ikisi de **cümlede**.
+
+### Yedeğin yedek olduğu
+
+Değerlendirme çağrısı düştüğünde iki taraf da kural tabanlı bir **yedek puan**
+gösteriyor. Android o puanın yanına ikinci bir cümle yazıyor: *"bu puan kelime
+sayısından çıkarılmış geçici bir tahmin, gerçek değerlendirme değil"*
+(`assess.fail_offline`). Web yalnız **sebebi** yazıyordu ("servis yanıt
+vermedi") ve hemen altında bir **puan** duruyordu — kullanıcı onu gerçek bir
+değerlendirme sanabilirdi.
+
+Koşul **puanın kendisinde** (`result.offline`), sebep satırında değil: kota
+kapısında sebep satırı başka ama yedek yine gösteriliyor.
+
+### Bağlama hatası
+
+Hesap bağlama ağ yüzünden düştüğünde Android genel bir cümle basıyordu
+("Bağlantı kurulamadı"); web aynı yerde `links.link_offline` diyor ve o cümle
+**ne yapılacağını** da söylüyor ("İnternet bağlantını kontrol et"). Anahtar
+zaten ortak sözlükte ve **kaldırma** yolu kardeşini baştan beri kullanıyordu —
+yalnız bağlama yolu dışarıda kalmıştı.
+
+### §253
+
+Dört olgu: çevrimdışı altyapısının dört parçası (eşleştirmeli), yedek puanın
+yanındaki uyarı (**dal bazında**, dosya bazında değil — kartta iki dal var ve
+biri silinse öteki ölçüyü yeşil tutardı), uyarının puanın koşuluna bağlı
+olması ve hesap bağlama/kaldırmanın ortak anahtardan gelmesi.
+
+Beş enjeksiyon denendi; biri ilk turda kaçtı (dosya bazlı ölçü), ölçü dal
+bazına çevrilince beşi de yakalandı.
