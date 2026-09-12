@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
-import { WrenchIcon } from "@/components/icons";
+import { SettingsIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
 import { FriendsHub } from "@/components/social/friends-hub";
 import { hubTab } from "@/lib/social/hub-tab";
@@ -33,7 +33,9 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
             className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
             style={{ background: "var(--surface-2)" }}
           >
-            <WrenchIcon size={20} />
+            {/* DİŞLİ, anahtar değil — ve 22 px: Android'in `HeaderButton`u
+                (44 px karo + 22 px dişli). */}
+            <SettingsIcon size={22} />
           </Link>
         </div>
         <FriendsHub me={me} initialTab={hubTab(tab)} />

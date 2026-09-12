@@ -22,7 +22,7 @@ import {
   ShareIcon,
   SparkIcon,
   TrophyIcon,
-  WrenchIcon,
+  SettingsIcon,
 } from "@/components/icons";
 
 /**
@@ -92,7 +92,8 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
           style={{ background: "var(--surface-2)", color: "var(--text)" }}
         >
-          <WrenchIcon size={22} />
+          {/* Dişli, anahtar değil (bkz. `icons.tsx` `SettingsIcon`). */}
+          <SettingsIcon size={22} />
         </Link>
       </div>
 
