@@ -57,6 +57,20 @@ function routes(dir = path.join(ROOT, "src", "app", "api"), out = []) {
  * çağırmış sayılmaz) ve BU BETİK (`ALLOW` listesindeki yollar kaynakta
  * geçtiği için her ucu "çağrılıyor" yapardı).
  */
+/*
+ * UÇ DOSYASININ YOLU ÇAĞIRAN DEĞİLDİR.
+ *
+ * `src/app/api/cron/summary/route.ts` dizgisi `/api/cron/summary` önekini
+ * İÇERİYOR; yani bir kapının o dosyayı `read()` etmesi, uç çağrılıyormuş gibi
+ * görünüyordu. 2026-09-12'de tam bu oldu: `check:parity` 274 özet cron'unun
+ * gövdesini okumaya başladı ve `check:endpoints` "listede olup artık çağrılan
+ * uç" dedi — oysa çağıran hâlâ systemd timer'ı.
+ *
+ * Yol biçimi taramadan ÖNCE düşürülüyor. Gerçek çağıran `fetch("/api/…")`
+ * yazıyor ve ondan etkilenmiyor; ölçü zayıflamıyor.
+ */
+const ROUTE_PATH = /\b(?:mobile\/)?src\/app\/api\/[\w[\]./-]*route\.ts\b/g;
+
 function sources(dirs, out = []) {
   for (const d of dirs) {
     const abs = path.join(ROOT, d);
@@ -79,7 +93,8 @@ function sources(dirs, out = []) {
             fs
               .readFileSync(p, "utf8")
               .replace(/\/\*[\s\S]*?\*\//g, " ")
-              .replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1"),
+              .replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1")
+              .replace(ROUTE_PATH, " "),
           );
         }
       }

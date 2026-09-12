@@ -14232,3 +14232,42 @@ kelimeyle ayrışmış ("aşağıdaki"), ölçü de yorumları dahil karşılaş
 Dosyalara **dokunulmadı** ve commit'e **alınmadı** (`src/lib/sentence-match.ts`,
 `mobile/src/lib/sentenceMatch.ts`). Kapı işini yapıyor: onlar iki kopyayı
 hizalayınca yeşile dönecek. Kendi turumun bütün ölçüleri yeşil.
+
+## §11.402 — Kapının okuduğu dosya yolu "çağıran" sayılıyordu
+
+§11.401 yazılırken **denetimin kendisinde** bir kusur ortaya çıktı, ve o kusur
+bir gün önce eklenen kapı yüzünden görünür oldu.
+
+`check:endpoints` her uç için "repoda çağıranı var mı" diye soruyor ve cevabı
+kaynak metninde `/api/<yol>` önekini arayarak veriyor. Cron uçlarının çağıranı
+repoda **değil** (systemd timer, bkz. AGENTS.md), o yüzden `ALLOW` listesinde
+sebebiyle yazılı. Sorun şu ki bir **uç dosyasının yolu** o öneki içeriyor:
+
+```
+src/app/api/cron/summary/route.ts
+    ^^^^^^^^^^^^^^^^^^^^^^ "/api/cron/summary" burada da geçiyor
+```
+
+§274 (cron kayıt zinciri) özet cron'unun gövdesini ölçmek için
+`read("src/app/api/cron/summary/route.ts")` yazıyor. Denetim o dizgiyi bir
+çağırı sandı ve "LİSTEDE OLUP ARTIK ÇAĞRILAN UÇ" dedi — oysa uç hâlâ
+çağıransız, `ALLOW` satırı hâlâ doğru. **Yanlış alarm**, ve yanlış yönde:
+denetim beni doğru bir satırı listeden çıkarmaya çağırıyordu.
+
+Düzeltme tarayıcıda: yol biçimi (`src/app/api/…/route.ts`, mobil öneki de
+kabul) yorumlar atıldıktan sonra, önek taramasından **önce** düşürülüyor.
+
+**Ölçü zayıflamadı, ve bu ölçüldü.** Gerçek bir çağıran `fetch("/api/config")`
+yazar; yol biçimine benzemez, düşmez. Doğrulama için tek çağıran dosyası olan
+bir uç seçildi (`/api/config` ← `mobile/src/lib/serverConfig.ts`; "tek çağıran"
+listesi tarayıcının kendi mantığıyla üretildi, gözle değil) ve o çağıran
+bozuldu: denetim ucu anında çağıransız bildirdi. Yol biçiminin **tek başına**
+çağıran sayılmadığı ise zaten canlı kanıt: §274 kapıda duruyor ve
+`/api/cron/summary` "belgelenmiş çağıransız" kalıyor.
+
+**Ders — enjeksiyon kör olabilir, kapı değil.** İlk deneme `/api/words`in bir
+çağıranını bozmaktı ve denetim tepki vermedi; bu, tarayıcının zayıfladığı
+anlamına gelmiyordu, o ucun **başka çağıranları** olduğu anlamına geliyordu.
+§276'nın dersinin aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
+ateşlemiyorsa önce enjeksiyonun okunan şeyi gerçekten değiştirdiği
+doğrulanmalı.
