@@ -413,6 +413,10 @@ export function RoleplayExamScreen() {
           onChangeText={setDraft}
           editable={!busy}
           multiline
+          /* Hedef dilde CUMLE (bkz. `LessonScreen`). Bu alanda hicbiri
+             yoktu ve web tarafinda da yoktu; ikisi birlikte duzeltildi. */
+          autoCapitalize="sentences"
+          autoCorrect={false}
           placeholder={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}

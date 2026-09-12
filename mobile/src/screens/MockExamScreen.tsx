@@ -808,6 +808,10 @@ function WritingTask({
         value={value}
         onChangeText={(v) => onOpen(task.id, v)}
         multiline
+        /* Hedef dilde CUMLE: cumle basi buyuk, duzeltme kapali. Web ayni
+           alanda `sentences` + `autoCorrect="off"` diyor. */
+        autoCapitalize="sentences"
+        autoCorrect={false}
         placeholder={t("mockexam.write_here")}
         accessibilityLabel={t("mockexam.write_here")}
         placeholderTextColor={colors.textFaint}
@@ -1034,6 +1038,8 @@ function SpeakingTask({
             value={value}
             onChangeText={(v) => onOpen(task.id, v)}
             multiline
+            autoCapitalize="sentences"
+            autoCorrect={false}
             placeholder={t("mockexam.transcript_placeholder")}
             accessibilityLabel={t("mockexam.transcript_placeholder")}
             placeholderTextColor={colors.textFaint}

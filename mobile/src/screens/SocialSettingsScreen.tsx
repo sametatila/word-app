@@ -101,7 +101,10 @@ export function SocialSettingsScreen() {
             </Section>
 
             <Section title={tx("socialsettings.short_bio")} colors={colors}>
-              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, SOCIAL_LIMITS.bioMax))} multiline placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })}
+              {/* ANA DILDE serbest metin: cumle basi buyuk ama otomatik duzeltme ACIK
+                    kaliyor - burada duzeltme yardimci, hedef dilde yazilan
+                    alanlarin tersine. Web de ayni. */}
+                <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, SOCIAL_LIMITS.bioMax))} multiline autoCapitalize="sentences" placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })}
               accessibilityLabel={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                 <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>

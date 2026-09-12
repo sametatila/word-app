@@ -447,7 +447,9 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
           return (
             <View key={f.label}>
               <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 3 }}>{f.label}</Text>
-              <TextInput value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done}
+              {/* Form alanlari KISA CEVAP: ad, tarih, tek sozcuk. Cumle basi
+                  buyutme yok (web ayni). */}
+              <TextInput value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done} autoCapitalize="none" autoCorrect={false}
                 placeholder={f.label}
                 accessibilityLabel={f.label} placeholderTextColor={colors.textFaint}
                 style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
