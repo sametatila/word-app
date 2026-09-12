@@ -9,7 +9,6 @@ import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
-import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
@@ -220,8 +219,13 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     } else {
       const nextTier = data?.tiers[index + 1];
       if (nextTier && nextTier > tier) {
+        /* TITRESIM BURADA DEGIL: `AchievementFlash` ateslendiginde kendisi
+            `vibrate("correct")` veriyor (bkz. `celebrate.tsx`). Buradaki
+            ikinci cagri hem MUKERRERDI hem de YANLIS KALIPTAYDI - dalga
+            yukselmesi olumlu bir an, `"wrong"` ise hata titresimi
+            ([0,34,60,34]). Android ayni ani bir kez ve `correct` ile
+            veriyor (`ChallengeScreen` `showFlash`). */
         setFlash({ fire: Date.now(), text: t("challenge.flash_wave", { wave: t(TIER_KEYS[nextTier] ?? TIER_KEYS[1]) }), tone: "mint" });
-        vibrate("wrong");
       }
     }
 
