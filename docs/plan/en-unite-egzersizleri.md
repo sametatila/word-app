@@ -64,8 +64,8 @@ mi çıkacağına yazar karar verir.
 | **A2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
-| C1 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
-| C1 | 10–25 | bekliyor |
+| C1 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
+| C1 | 13–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -1427,6 +1427,80 @@ oysa kapı yüzdeyi sağa yaslıyor ve `%10.0` gibi satırlarda `%` ile sayı
 arasında boşluk kalmıyor — o tek satır sessizce atlanıyordu, üstelik
 toplam yine `%0.0` göründüğü için fark edilmesi kolay değil. Desen
 `%\s*` yapıldı.
+
+
+Ünite 10'un noktası SONA ASILAN NİTELEME. „The multilayeredness above
+becomes a predisposition below“ — iki edat nesnesiz kalmış ve ismin
+ardına asılmış, ve İngilizce bunu uzun metinlerde durmadan yapıyor: the
+claim above, the table below, the passage quoted earlier, the objection
+raised on the first page. Hepsi birer gönderme ve birlikte denemenin,
+konu hakkında hiçbir şey söylemeyip okurun nerede durduğunu söyleyen bir
+KATMANINI kuruyorlar. Yeniden ölçüm bu seviyenin açılış ipini tersine
+çeviriyor. Cümle düzeyinde İngilizce ağır olanı başa koyuyordu; isim
+öbeğinde tam tersini yapıyor: niteleyen her şey ismin ardına parça parça
+asılabiliyor ve öbek yol boyunca HER NOKTADA tamamlanmış oluyor („the
+resentment“ → „the resentment of an earlier page“ → „…that nobody
+answered“). Almanca aynı öbeği önden kuruyor, ismin önünde erken açılan
+ve isim gelene dek kapanmayan bir parantezle, ve ortada durulabilecek bir
+yer yok çünkü daha üzerinde durulacak isim gelmemiş. Ölçünün adı: **YÜK
+DAĞILIMI DİLİN DEĞİL KATMANIN ÖZELLİĞİ** — aynı dil bir katmanda başa,
+ötekinde sona yüklüyor. Pratik sonucu da var: İngilizce yazar öbeğin
+arkasına eklemeye devam edebiliyor ve cümle okunmaz olmuyor; aynı biçimde
+ekleyen Alman yazar bir parantez dolduruyor ve parantezin bir boyu var.
+Ünitenin ikinci dersi bunun küçük kardeşi: „albeit“ cümlecik istemiyor
+(„Her demeanor, albeit formal, fits the milieu“), ve fiilsiz bir tavizin
+hiçbir zaman savunulması gerekmiyor çünkü hiçbir şey cümle olarak
+söylenmemiş.
+
+Ünite 11'in noktası GENEL ÖZNE. İngilizcede „hiç kimse“ demenin dört yolu
+var ve dördü de yansız değil: „one“ resmî, kullanımdan düşmekte ve yazarla
+iddia arasına duvar koyuyor; „we“ yazarı konuşan öbeğin içine alıyor ve
+okurun sorulmadan içeri alındığı bir öbek kuruyor; „you“ cümleyi okura
+çeviriyor, dördünün en dostu ve en tehlikelisi, çünkü okura bir kanı verip
+onu elinde bırakıyor; edilgen ise hiç kimseyi adlandırmıyor — kim, hangi
+bakanlıkta, ne zamandan beri, hepsi tek bir fiilin içinde kayboluyor.
+Almanca tek bir sözcükle geçiyor („man“): kısa, işaretsiz, mutfakta da
+mahkemede de aynı, hiçbir konum taşımıyor. Ölçü: **BİR DİLDE İŞARETSİZ
+TEK SÖZCÜK, ÖTEKİNDE DÖRT SEÇENEK VE HER SEÇİM YAZARI BETİMLEDİĞİ
+İNSANLARA GÖRE BİR YERE KOYUYOR.** Ünitenin ikinci ölçüsü aynı kaçınmanın
+öteki yüzü: soyut bir ismi baştaki yuvaya koymak („What marginalization
+does is name a marginal group“, „Behind the demarcation line stands
+xenophobia“) faili hiç anmadan cümle kurmanın ikinci yolu. İkisi hiç
+benzemiyor ve aynı işi görüyor. Ünite bunu yasaklamıyor, bedelini
+saydırıyor: böyle her cümle birini adlandırılmaktan kurtarmıştır ve
+sayfanın bir yerinde o birinin yine de adlandırılması gerekir, yoksa
+paragraf hiç kimsenin değiştiremeyeceği bir süreç hakkındadır.
+
+Ünite 12'nin noktası KARŞILAŞTIRMADA EKSİLTME. „Kinship may well shape
+the lifeworld more than the law“ iki ayrı cümle demek olabiliyor — ya
+hukuk yaşam dünyasını daha az biçimlendiriyor, ya akrabalık hukuku daha az
+biçimlendiriyor — ve cümlede seçim yapan hiçbir şey yok. Nadir bir kaza
+değil: yalın bir isimle biten her İngilizce karşılaştırmada aynı delik
+var, çünkü ikinci yarı karşılaştırılan tek sözcük dışında her şeyi
+atabiliyor ve fiil gidince sözcüğün hangi rolde olduğunu gösterecek iz de
+kalmıyor. Almanca bu belirsizliği hiçbir hüner harcamadan kapatıyor:
+isim zaten durum ekiyle geliyor, biri özne biri nesne diyor ve okur
+cevabı cümle bitmeden alıyor. Ölçü: **ALMANCA TEK BİR EKLE KAPATIYOR,
+İNGİLİZCEDE BOŞLUK ELLE ONARILMADIKÇA KALICI.** Tek onarım fiili geri
+koymak — „more than the law does“ tek okumalı, „more than it does the
+law“ ötekini veriyor — ve virgül, söz dizimi ya da bağlam işe yaramıyor.
+Bu da İngilizcenin küçük yardımcı fiilinin dildeki yerini hak ettiği
+ender yerlerden biri: kendi anlamı yok, yalnız gerçek bir fiilin duracağı
+yerde duruyor, ve burada bir ismin rolünü okunacak kadar açık tutabilen
+tek şey o.
+
+Ölçüm bu turda seksen sekiz sözlükçe maddesi ekletti ve otuz altı maddeyi
+sildirdi — bu turda silmelerin çoğu kapının değil BENİM yazdığım fazladan
+maddelerdi (metinde geçmeyen sözcüğe sözlükçe yazmışım), yani sıra artık
+şu: önce fazlalıkları buda, sonra kapının istediklerini yerleştir. Altı
+soru yüzeyi yeniden yazıldı. Üç tireli terim metinden çıkarıldı
+(„one-directional“, „so-called“, „time-honoured“) — kural sekizinci kez
+çalıştı. Bir de yeni bir kapı öğrenildi: `prose`/`prose-de` alıntıyı
+hedefte birebir arıyor, bu yüzden Türkçe bir sözcüğü tırnağa alan bir
+intro („„Biz“ ile „onlar“…“) İngilizce tarafta „alıntı düşmüş“ veriyor;
+intro İngilizce belirteçleri tırnağa alacak biçimde yeniden yazıldı, ve
+tırnak içi BÜYÜK/küçük harfiyle korunmak zorunda („Less so“, „less so“
+değil).
 
 
 ## Tamamlanma ölçütü

@@ -1,0 +1,337 @@
+[
+ {
+  "tr": "Niteleme kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Attributkarte aus."
+ },
+ {
+  "tr": "Genel özne kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zum unbestimmten Subjekt aus."
+ },
+ {
+  "tr": "„One“ duvar koyuyor; „we“ yazarı içeri alıyor; „you“ okura çeviriyor; edilgen hiç kimseyi adlandırmıyor; yansız seçenek yok.",
+  "kind": "form.facts",
+  "de": "„One“ stellt eine Wand auf; „we“ holt den Schreibenden in die Gruppe; „you“ dreht den Satz zum Leser; das Passiv nennt niemanden; eine neutrale Möglichkeit gibt es nicht."
+ },
+ {
+  "tr": "Yalın isimle biten karşılaştırmanın iki okuması var; Almanca durum ekiyle kapatıyor; tek onarım fiili geri koymak; yardımcı fiilin kendi anlamı yok.",
+  "kind": "form.facts",
+  "de": "Ein Vergleich, der auf ein bloßes Nomen endet, hat zwei Lesarten; das Deutsche schließt die Lücke mit der Kasusendung; die einzige Reparatur ist, das Verb zurückzusetzen; das Hilfsverb hat keine eigene Bedeutung."
+ },
+ {
+  "tr": "İngilizce niteleyeni ismin ardına parça parça asıyor; öbek her noktada tamamlanmış oluyor; Almanca önden bir parantez kuruyor; parantezin bir boyu var.",
+  "kind": "form.facts",
+  "de": "Das Englische hängt das Attribut Stück für Stück hinter das Nomen; die Phrase ist an jeder Stelle abgeschlossen; das Deutsche baut von vorn eine Klammer; und eine Klammer hat eine Länge."
+ },
+ {
+  "tr": "Göçmen kökeni bir göç akışı değildir.",
+  "kind": "build.tr",
+  "de": "Ein Migrationshintergrund ist keine Migrationsbewegung."
+ },
+ {
+  "tr": "Ona tuhaflık desek de, o ötekiliktir.",
+  "kind": "build.tr",
+  "de": "So sehr wir es Fremdartigkeit nennen, es ist Andersartigkeit."
+ },
+ {
+  "tr": "Yemek doyurucuydu; karşılama, daha az.",
+  "kind": "build.tr",
+  "de": "Das Essen war deftig; der Empfang weniger."
+ },
+ {
+  "tr": "Ziyafet şatafatlıydı; karşılama, kimliksiz.",
+  "kind": "build.tr",
+  "de": "Das Bankett war opulent; der Empfang gesichtslos."
+ },
+ {
+  "tr": "Onun tavrı, resmî olsa da, muhite yakışıyor.",
+  "kind": "build.tr",
+  "de": "Ihr Auftreten, wenn auch förmlich, passt zum Milieu."
+ },
+ {
+  "tr": "Saflık simgesi olsa da eser bir damga taşıyor.",
+  "kind": "build.tr",
+  "de": "Wenn auch ein Symbol der Reinheit, trägt das Artefakt ein Stigma."
+ },
+ {
+  "tr": "Karşılıklılık yalnız adında mütekabil olabilir.",
+  "kind": "build.tr",
+  "de": "Die Gegenseitigkeit ist vielleicht nur dem Namen nach gegenseitig."
+ },
+ {
+  "tr": "Özgürleşmenin yerinde saydığı yerde öfke dinmiyor.",
+  "kind": "build.tr",
+  "de": "Wo die Emanzipation stagniert, klingt der Zorn nicht ab."
+ },
+ {
+  "tr": "Bir akın sayılır; bir mülteci sözleşmesi imzalanır.",
+  "kind": "build.tr",
+  "de": "Ein Zustrom wird gezählt; eine Flüchtlingskonvention wird unterzeichnet."
+ },
+ {
+  "tr": "Eğitim eşitsizliği olmasa sınıflı toplum silinirdi.",
+  "kind": "build.tr",
+  "de": "Wäre da nicht die Bildungsungleichheit, würde die Klassengesellschaft verblassen."
+ },
+ {
+  "tr": "Yüksek kültür bir kayıt, başat kültür bir iddiadır.",
+  "kind": "build.tr",
+  "de": "Hochkultur ist eine Sprachebene, Leitkultur ist ein Anspruch."
+ },
+ {
+  "tr": "Ayrım hattının arkasında yabancı düşmanlığı duruyor.",
+  "kind": "build.tr",
+  "de": "Hinter der Demarkationslinie steht die Fremdenfeindlichkeit."
+ },
+ {
+  "tr": "Her katılım modelinin dayanışma göstermesini istiyorlar.",
+  "kind": "build.tr",
+  "de": "Sie verlangen, dass jedes Teilhabemodell Solidarität zeige."
+ },
+ {
+  "tr": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir.",
+  "kind": "build.tr",
+  "de": "Die Sozialisation setzt die Hackordnung vielleicht schon vor der Initiation."
+ },
+ {
+  "tr": "Örf ve âdet hukukuna saygıdeğer demek ona uymak değildir.",
+  "kind": "build.tr",
+  "de": "Das Gewohnheitsrecht ehrwürdig zu nennen heißt nicht, es zu befolgen."
+ },
+ {
+  "tr": "Sahne son derece sembolik değil, pekâlâ sıradan olabilir.",
+  "kind": "build.tr",
+  "de": "Die Szene ist durchaus eher gewöhnlich als hochsymbolisch."
+ },
+ {
+  "tr": "Sanat sayfasında alt kültür, bakanlıkta kültür politikası.",
+  "kind": "build.tr",
+  "de": "Im Feuilleton ist es eine Subkultur, im Ministerium Kulturpolitik."
+ },
+ {
+  "tr": "Biz ona kültürleşme desek de onlar asimilasyonu kastediyor.",
+  "kind": "build.tr",
+  "de": "So sehr wir es Akkulturation nennen, sie meinen Assimilation."
+ },
+ {
+  "tr": "Dik başlı bir çocuk, dediler, ve epeyce her şeyi merak eden.",
+  "kind": "build.tr",
+  "de": "Ein eigensinniges Kind, sagten sie, und ziemlich wissbegierig."
+ },
+ {
+  "tr": "Yukarıdaki çok katmanlılık aşağıda bir yatkınlığa dönüşüyor.",
+  "kind": "build.tr",
+  "de": "Die oben genannte Vielschichtigkeit wird unten zu einer Veranlagung."
+ },
+ {
+  "tr": "Eşitlik ilkesi insan onurunun dokunulmaz olmasını talep eder.",
+  "kind": "build.tr",
+  "de": "Der Gleichheitsgrundsatz verlangt, dass die Menschenwürde unantastbar sei."
+ },
+ {
+  "tr": "Burada hiç yabancılaşmayız; uzaklaşmayı sonradan adlandırırız.",
+  "kind": "build.tr",
+  "de": "Wir entfremden uns hier nie; wir benennen die Entfremdung nur später."
+ },
+ {
+  "tr": "O gazap, belirtildiği gibi, önceki bir sayfanın içerlemesidir.",
+  "kind": "build.tr",
+  "de": "Jener Zorn ist, wie erwähnt, der Groll einer früheren Seite."
+ },
+ {
+  "tr": "Burada normdan sapma yok; yörede alışılmış bir norm ihlali var.",
+  "kind": "build.tr",
+  "de": "Wir haben hier keine Abweichung; wir haben einen ortsüblichen Normverstoß."
+ },
+ {
+  "tr": "Ötekileştirmenin yaptığı şey bir marjinal grubu adlandırmaktır.",
+  "kind": "build.tr",
+  "de": "Was die Marginalisierung tut, ist eine Randgruppe zu benennen."
+ },
+ {
+  "tr": "Birinin kültür sahnesi dediğine bir başkası paralel toplum diyor.",
+  "kind": "build.tr",
+  "de": "Was der eine eine Kulturszene nennt, nennt der andere eine Parallelgesellschaft."
+ },
+ {
+  "tr": "Metin yorumu, kültürel miras korumasının varsaydığını iddia ediyor.",
+  "kind": "build.tr",
+  "de": "Die Exegese behauptet, was der Denkmalschutz voraussetzt."
+ },
+ {
+  "tr": "Melezlik işareti olsa da uyum yeteneği yalnız tek taraftan isteniyor.",
+  "kind": "build.tr",
+  "de": "Wenn auch ein Zeichen von Hybridität, wird Anpassungsfähigkeit nur von einer Seite verlangt."
+ },
+ {
+  "tr": "Akrabalık yaşam dünyasını pekâlâ hukuktan daha çok biçimlendiriyor olabilir.",
+  "kind": "build.tr",
+  "de": "Die Verwandtschaft prägt die Lebenswelt durchaus mehr als das Recht."
+ },
+ {
+  "tr": "Biri hatırlama kültürünü yeniden yorumluyor; bir başkası yorum yetkisini koruyor.",
+  "kind": "build.tr",
+  "de": "Der eine deutet die Erinnerungskultur neu; der andere hütet die Deutungshoheit."
+ },
+ {
+  "tr": "Her şey son üç sözcükte.",
+  "kind": "build.hint",
+  "de": "Alles steckt in den letzten drei Wörtern."
+ },
+ {
+  "tr": "Baştaki yuvayı bir yer almış.",
+  "kind": "build.hint",
+  "de": "Die vordere Stelle hat ein Ort besetzt."
+ },
+ {
+  "tr": "Aynı nefeste yadsıma ve kabul.",
+  "kind": "build.hint",
+  "de": "Im selben Atemzug geleugnet und zugegeben."
+ },
+ {
+  "tr": "Biri betimleme, öteki yönerge.",
+  "kind": "build.hint",
+  "de": "Das eine ist eine Beschreibung, das andere eine Anweisung."
+ },
+ {
+  "tr": "Varsayım: savın dayanağı burada.",
+  "kind": "build.hint",
+  "de": "Eine Annahme: hier liegt der Grund des Arguments."
+ },
+ {
+  "tr": "İki oda konuşanların yerini tutuyor.",
+  "kind": "build.hint",
+  "de": "Zwei Räume stehen für die Sprechenden."
+ },
+ {
+  "tr": "Sayfada değil savda bir yer gösteriyor.",
+  "kind": "build.hint",
+  "de": "Es zeigt keinen Ort auf der Seite, sondern im Argument."
+ },
+ {
+  "tr": "Tek eksik harf raporu talebe çeviriyor.",
+  "kind": "build.hint",
+  "de": "Ein einziger fehlender Buchstabe macht aus dem Bericht eine Forderung."
+ },
+ {
+  "tr": "Biri kişi hakkında, öteki sayı hakkında.",
+  "kind": "build.hint",
+  "de": "Das eine handelt von einer Person, das andere von einer Zahl."
+ },
+ {
+  "tr": "İki fiilden yalnız biri geçmiş hakkında.",
+  "kind": "build.hint",
+  "de": "Nur eines der beiden Verben handelt von der Vergangenheit."
+ },
+ {
+  "tr": "Masaya harcanan her şey, konuğa hiçbir şey.",
+  "kind": "build.hint",
+  "de": "Alles für die Tafel ausgegeben, nichts für den Gast."
+ },
+ {
+  "tr": "Kanıt tek bir sahneyse tek dürüst açılış bu.",
+  "kind": "build.hint",
+  "de": "Wenn der Beleg eine einzige Szene ist, ist das der einzig ehrliche Anfang."
+ },
+ {
+  "tr": "İki okuması var ve cümlede seçen bir şey yok.",
+  "kind": "build.hint",
+  "de": "Es hat zwei Lesarten, und nichts im Satz entscheidet zwischen ihnen."
+ },
+ {
+  "tr": "Soyut isim baştaki yuvada ve kendi fiili var.",
+  "kind": "build.hint",
+  "de": "Ein abstraktes Nomen an der vorderen Stelle, mit einem eigenen Verb."
+ },
+ {
+  "tr": "„One“ hiç kimse: yazarla iddia arasında duvar.",
+  "kind": "build.hint",
+  "de": "„One“ ist niemand: eine Wand zwischen dem Schreibenden und der Behauptung."
+ },
+ {
+  "tr": "İkinci yarı hem sıfatı hem fiili ödünç alıyor.",
+  "kind": "build.hint",
+  "de": "Die zweite Hälfte leiht sich Adjektiv und Verb zugleich."
+ },
+ {
+  "tr": "Olay yok, ad var: adlandırma sonradan geliyor.",
+  "kind": "build.hint",
+  "de": "Kein Ereignis, nur ein Name: die Benennung kommt später."
+ },
+ {
+  "tr": "Olumsuz mastar biçimi bir çıkarımı reddediyor.",
+  "kind": "build.hint",
+  "de": "Die verneinte Infinitivform weist einen Schluss zurück."
+ },
+ {
+  "tr": "Talep eden bir ilke; „be“ olduğu gibi kalıyor.",
+  "kind": "build.hint",
+  "de": "Ein forderndes Prinzip; „be“ bleibt, wie es ist."
+ },
+ {
+  "tr": "Araya sokulmuş cümlecik hükümden sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Der eingeschobene Satz kommt nach dem Urteil."
+ },
+ {
+  "tr": "Biri özellik, öteki ilişki: fark nesnede değil.",
+  "kind": "build.hint",
+  "de": "Das eine ist eine Eigenschaft, das andere eine Beziehung: der Unterschied liegt nicht im Gegenstand."
+ },
+ {
+  "tr": "„Only in name“ söyleneni yadsımadan geri alıyor.",
+  "kind": "build.hint",
+  "de": "„Only in name“ nimmt das Gesagte zurück, ohne es zu leugnen."
+ },
+ {
+  "tr": "İki edat nesnesiz kalmış ve ismin ardına asılmış.",
+  "kind": "build.hint",
+  "de": "Zwei Präpositionen ohne Objekt, hinter das Nomen gehängt."
+ },
+ {
+  "tr": "Ara söz okura bunun bir yineleme olduğunu söylüyor.",
+  "kind": "build.hint",
+  "de": "Der Einschub sagt dem Leser, dass dies eine Wiederholung ist."
+ },
+ {
+  "tr": "Varsayımın savunulması gerekmiyor, çünkü yazılmamış.",
+  "kind": "build.hint",
+  "de": "Eine Annahme muss nicht verteidigt werden, weil sie nicht aufgeschrieben ist."
+ },
+ {
+  "tr": "Zaman sözcüğü özne diye okunamaz; bu yüzden güvenli.",
+  "kind": "build.hint",
+  "de": "Ein Zeitwort kann nicht als Subjekt gelesen werden; darum ist es sicher."
+ },
+ {
+  "tr": "Bir satırda iki özne, aradaki boşlukta bütün tartışma.",
+  "kind": "build.hint",
+  "de": "Zwei Subjekte in einer Zeile, und in der Lücke dazwischen die ganze Debatte."
+ },
+ {
+  "tr": "„Albeit“ cümlecik istemiyor; ardında yalnız bir sıfat var.",
+  "kind": "build.hint",
+  "de": "„Albeit“ verlangt keinen Nebensatz; dahinter steht nur ein Adjektiv."
+ },
+ {
+  "tr": "İki edilgen, iki ayrı tür: biri usul gizliyor, öteki imza.",
+  "kind": "build.hint",
+  "de": "Zwei Passive, zwei Arten: das eine verbirgt ein Verfahren, das andere eine Unterschrift."
+ },
+ {
+  "tr": "Aynı sözcük cümlenin başında ve fiilsiz bir isim öbeği alıyor.",
+  "kind": "build.hint",
+  "de": "Dasselbe Wort am Satzanfang, und es nimmt eine verblose Nominalphrase."
+ },
+ {
+  "tr": "Üç cümlenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Sätze: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Üç göndermenin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der drei Verweise: bring sie in die richtige Ordnung."
+ }
+]

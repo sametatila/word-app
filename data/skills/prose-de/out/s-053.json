@@ -1,0 +1,892 @@
+[
+ {
+  "tr": "Talep eden metin ve fiilsiz taviz.",
+  "kind": "intro",
+  "de": "Der fordernde Text und das verblose Zugeständnis."
+ },
+ {
+  "tr": "Azı söylemek ve okumanın çekincesi.",
+  "kind": "intro",
+  "de": "Weniger sagen, und die Vorsicht einer Lesart."
+ },
+ {
+  "tr": "Genel özne ve öne alınan soyut isim.",
+  "kind": "intro",
+  "de": "Das unbestimmte Subjekt und das vorangestellte abstrakte Nomen."
+ },
+ {
+  "tr": "Sona asılan niteleme ve fiilsiz taviz.",
+  "kind": "intro",
+  "de": "Das nachgestellte Attribut und das verblose Zugeständnis."
+ },
+ {
+  "tr": "Yorum yetkisi ve iptal eden niteleyen.",
+  "kind": "intro",
+  "de": "Die Deutungshoheit und das aufhebende Attribut."
+ },
+ {
+  "tr": "Talep eden bir metinde özne kim oluyor?",
+  "kind": "intro",
+  "de": "Wer wird in einem fordernden Text zum Subjekt?"
+ },
+ {
+  "tr": "Öne alınan soyut isim faili nasıl gizliyor?",
+  "kind": "intro",
+  "de": "Wie verbirgt ein vorangestelltes abstraktes Nomen den Handelnden?"
+ },
+ {
+  "tr": "Karşılaştırmanın deliği ve göçün sözcükleri.",
+  "kind": "intro",
+  "de": "Die Lücke im Vergleich und die Wörter der Migration."
+ },
+ {
+  "tr": "„Hiç kimse“ demenin dört yolu. Hangisi yansız?",
+  "kind": "intro",
+  "de": "Vier Wege, „niemand“ zu sagen. Welcher ist neutral?"
+ },
+ {
+  "tr": "„Albeit“ bir cümlecik istemiyor. Peki ne istiyor?",
+  "kind": "intro",
+  "de": "„Albeit“ verlangt keinen Nebensatz. Was verlangt es dann?"
+ },
+ {
+  "tr": "Bir sayı mı, bir belge mi? Sözcükler neyi ölçüyor?",
+  "kind": "intro",
+  "de": "Eine Zahl oder ein Dokument? Was messen die Wörter?"
+ },
+ {
+  "tr": "Bir sözcük ötekini iptal ediyor. Hangisi hangisini?",
+  "kind": "intro",
+  "de": "Ein Wort hebt das andere auf. Welches welches?"
+ },
+ {
+  "tr": "„Less so“ neyi kısaltıyor? Azı söylemek neyi büyütüyor?",
+  "kind": "intro",
+  "de": "Was kürzt „Less so“ ab? Und was vergrößert es, weniger zu sagen?"
+ },
+ {
+  "tr": "Yorum yetkisini kim tutuyor? Bir fiil neyi ele veriyor?",
+  "kind": "intro",
+  "de": "Wer hält die Deutungshoheit? Und was verrät ein Verb?"
+ },
+ {
+  "tr": "Bir karşılaştırma iki cümle demek olabiliyor. Onarımı ne?",
+  "kind": "intro",
+  "de": "Ein Vergleich kann zwei Sätze bedeuten. Wie repariert man ihn?"
+ },
+ {
+  "tr": "Bir okuma ne zaman bir alanı kaplar? Çekince nerede duruyor?",
+  "kind": "intro",
+  "de": "Wann überzieht eine Lesart ein ganzes Fach? Und wo steht die Einschränkung?"
+ },
+ {
+  "tr": "İsim öbeği iki dilde iki ayrı uçtan yükleniyor. Hangisi nereden?",
+  "kind": "intro",
+  "de": "Die Nominalphrase wird in beiden Sprachen von verschiedenen Enden beladen. Welche von wo?"
+ },
+ {
+  "tr": "Bir satırda „we“ ve „they“. Hangisi hangi sözcüğü kullanıyor?",
+  "kind": "intro",
+  "de": "In einer Zeile „we“ und „they“. Wer benutzt welches Wort?"
+ },
+ {
+  "tr": "„„Albeit“ takes no clause.“",
+  "kind": "explain",
+  "de": "„„Albeit“ takes no clause.“"
+ },
+ {
+  "tr": "„„Less so“ makes no claim…“",
+  "kind": "explain",
+  "de": "„„Less so“ makes no claim…“"
+ },
+ {
+  "tr": "„„Otherness“ is a relation.“",
+  "kind": "explain",
+  "de": "„„Otherness“ is a relation.“"
+ },
+ {
+  "tr": "Bir satırda iki özne: „we“ ve „they“.",
+  "kind": "explain",
+  "de": "Zwei Subjekte in einer Zeile: „we“ und „they“."
+ },
+ {
+  "tr": "Talep eden bir ilke; „be“, „is“ değil.",
+  "kind": "explain",
+  "de": "Ein forderndes Prinzip; „be“, nicht „is“."
+ },
+ {
+  "tr": "Çekince burada zayıflık değil, dürüstlük.",
+  "kind": "explain",
+  "de": "Die Einschränkung ist hier keine Schwäche, sondern Ehrlichkeit."
+ },
+ {
+  "tr": "İkinci yarı sıfatı da fiili de ödünç alıyor.",
+  "kind": "explain",
+  "de": "Die zweite Hälfte leiht sich Adjektiv und Verb."
+ },
+ {
+  "tr": "„…and this one is honest: the „we“ is named…“",
+  "kind": "explain",
+  "de": "„…and this one is honest: the „we“ is named…“"
+ },
+ {
+  "tr": "Cümle, delik, onarım; en sonda güvenli biçim.",
+  "kind": "explain",
+  "de": "Satz, Lücke, Reparatur; ganz am Ende die sichere Form."
+ },
+ {
+  "tr": "İki belge: biri iddia ediyor, öteki varsayıyor.",
+  "kind": "explain",
+  "de": "Zwei Dokumente: das eine behauptet, das andere setzt voraus."
+ },
+ {
+  "tr": "İki sözcük, ara söz, cümle başı; en sonda ölçü.",
+  "kind": "explain",
+  "de": "Zwei Wörter, ein Einschub, ein Satzanfang; ganz am Ende das Maß."
+ },
+ {
+  "tr": "„A flood is nobody's fault and nobody's policy…“",
+  "kind": "explain",
+  "de": "„A flood is nobody's fault and nobody's policy…“"
+ },
+ {
+  "tr": "„„rather good for“ is what you say about medicine.“",
+  "kind": "explain",
+  "de": "„„rather good for“ is what you say about medicine.“"
+ },
+ {
+  "tr": "Soyut isim, yer, adlandırılmış „we“; en sonda bedel.",
+  "kind": "explain",
+  "de": "Abstraktes Nomen, Ort, ein genanntes „we“; ganz am Ende die Kosten."
+ },
+ {
+  "tr": "İkinci yarıda fiil yok; iki yarı birbirine yaslanıyor.",
+  "kind": "explain",
+  "de": "In der zweiten Hälfte fehlt das Verb; die beiden Hälften lehnen sich aneinander."
+ },
+ {
+  "tr": "„…„although“, which cannot stand without a clause behind it.“",
+  "kind": "explain",
+  "de": "„…„although“, which cannot stand without a clause behind it.“"
+ },
+ {
+  "tr": "Sayfada yer, cümle ortasında yineleme, savda yer; en sonda ölçü.",
+  "kind": "explain",
+  "de": "Ein Ort auf der Seite, eine Wiederholung in der Satzmitte, ein Ort im Argument; ganz am Ende das Maß."
+ },
+ {
+  "tr": "Dört seçenek, yansız yok, iki oda; en sonda betimleme ile yönerge.",
+  "kind": "explain",
+  "de": "Vier Möglichkeiten, keine neutrale, zwei Räume; ganz am Ende Beschreibung und Anweisung."
+ },
+ {
+  "tr": "Kişi ile sayı, hesap, iki edilgen; en sonda sözcüğün getirdiği resim.",
+  "kind": "explain",
+  "de": "Person und Zahl, die Rechnung, zwei Passive; ganz am Ende das Bild, das das Wort mitbringt."
+ },
+ {
+  "tr": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“",
+  "kind": "explain",
+  "de": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“"
+ },
+ {
+  "tr": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",
+  "kind": "explain",
+  "de": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“"
+ },
+ {
+  "tr": "kişi",
+  "kind": "gloss.tr",
+  "de": "die Person"
+ },
+ {
+  "tr": "dipnot",
+  "kind": "gloss.tr",
+  "de": "die Fußnote"
+ },
+ {
+  "tr": "ölçülen",
+  "kind": "gloss.tr",
+  "de": "gemessen"
+ },
+ {
+  "tr": "özellik",
+  "kind": "gloss.tr",
+  "de": "die Eigenschaft"
+ },
+ {
+  "tr": "ya",
+  "kind": "gloss.tr",
+  "de": "entweder"
+ },
+ {
+  "tr": "boy",
+  "kind": "gloss.tr",
+  "de": "die Länge"
+ },
+ {
+  "tr": "kök",
+  "kind": "gloss.tr",
+  "de": "die Wurzel"
+ },
+ {
+  "tr": "ölü",
+  "kind": "gloss.tr",
+  "de": "tot"
+ },
+ {
+  "tr": "sav",
+  "kind": "gloss.tr",
+  "de": "das Argument"
+ },
+ {
+  "tr": "sel",
+  "kind": "gloss.tr",
+  "de": "die Flut"
+ },
+ {
+  "tr": "yaş",
+  "kind": "gloss.tr",
+  "de": "das Alter"
+ },
+ {
+  "tr": "yön",
+  "kind": "gloss.tr",
+  "de": "die Richtung"
+ },
+ {
+  "tr": "akın",
+  "kind": "gloss.tr",
+  "de": "der Zustrom"
+ },
+ {
+  "tr": "attı",
+  "kind": "gloss.tr",
+  "de": "warf weg"
+ },
+ {
+  "tr": "kaza",
+  "kind": "gloss.tr",
+  "de": "der Zufall"
+ },
+ {
+  "tr": "müze",
+  "kind": "gloss.tr",
+  "de": "das Museum"
+ },
+ {
+  "tr": "bedel",
+  "kind": "gloss.tr",
+  "de": "die Kosten"
+ },
+ {
+  "tr": "bütçe",
+  "kind": "gloss.tr",
+  "de": "das Budget"
+ },
+ {
+  "tr": "gazap",
+  "kind": "gloss.tr",
+  "de": "der Zorn"
+ },
+ {
+  "tr": "konuk",
+  "kind": "gloss.tr",
+  "de": "der Gast"
+ },
+ {
+  "tr": "köken",
+  "kind": "gloss.tr",
+  "de": "die Herkunft"
+ },
+ {
+  "tr": "levha",
+  "kind": "gloss.tr",
+  "de": "die Tafel"
+ },
+ {
+  "tr": "önden",
+  "kind": "gloss.tr",
+  "de": "von vorn"
+ },
+ {
+  "tr": "simge",
+  "kind": "gloss.tr",
+  "de": "das Symbol"
+ },
+ {
+  "tr": "soyut",
+  "kind": "gloss.tr",
+  "de": "abstrakt"
+ },
+ {
+  "tr": "sözde",
+  "kind": "gloss.tr",
+  "de": "nominell"
+ },
+ {
+  "tr": "tablo",
+  "kind": "gloss.tr",
+  "de": "die Tabelle"
+ },
+ {
+  "tr": "terim",
+  "kind": "gloss.tr",
+  "de": "der Begriff"
+ },
+ {
+  "tr": "torun",
+  "kind": "gloss.tr",
+  "de": "das Enkelkind"
+ },
+ {
+  "tr": "uymak",
+  "kind": "gloss.tr",
+  "de": "befolgen"
+ },
+ {
+  "tr": "benzer",
+  "kind": "gloss.tr",
+  "de": "ähnlich"
+ },
+ {
+  "tr": "devlet",
+  "kind": "gloss.tr",
+  "de": "der Staat"
+ },
+ {
+  "tr": "dinmek",
+  "kind": "gloss.tr",
+  "de": "abklingen"
+ },
+ {
+  "tr": "manşet",
+  "kind": "gloss.tr",
+  "de": "die Schlagzeile"
+ },
+ {
+  "tr": "toplam",
+  "kind": "gloss.tr",
+  "de": "die Gesamtzahl"
+ },
+ {
+  "tr": "ara söz",
+  "kind": "gloss.tr",
+  "de": "der Einschub"
+ },
+ {
+  "tr": "asılmış",
+  "kind": "gloss.tr",
+  "de": "angehängt"
+ },
+ {
+  "tr": "fiilsiz",
+  "kind": "gloss.tr",
+  "de": "verblos"
+ },
+ {
+  "tr": "güvenli",
+  "kind": "gloss.tr",
+  "de": "sicher"
+ },
+ {
+  "tr": "hünerli",
+  "kind": "gloss.tr",
+  "de": "raffiniert"
+ },
+ {
+  "tr": "istenen",
+  "kind": "gloss.tr",
+  "de": "verlangt"
+ },
+ {
+  "tr": "konuşan",
+  "kind": "gloss.tr",
+  "de": "der Sprechende"
+ },
+ {
+  "tr": "okunmaz",
+  "kind": "gloss.tr",
+  "de": "unlesbar"
+ },
+ {
+  "tr": "sayılan",
+  "kind": "gloss.tr",
+  "de": "gezählt"
+ },
+ {
+  "tr": "seçiyor",
+  "kind": "gloss.tr",
+  "de": "wählt"
+ },
+ {
+  "tr": "yararlı",
+  "kind": "gloss.tr",
+  "de": "nützlich"
+ },
+ {
+  "tr": "yitiren",
+  "kind": "gloss.tr",
+  "de": "der Verlierer"
+ },
+ {
+  "tr": "ziyafet",
+  "kind": "gloss.tr",
+  "de": "das Bankett"
+ },
+ {
+  "tr": "arasında",
+  "kind": "gloss.tr",
+  "de": "unter"
+ },
+ {
+  "tr": "bakanlık",
+  "kind": "gloss.tr",
+  "de": "das Ministerium"
+ },
+ {
+  "tr": "çekilmiş",
+  "kind": "gloss.tr",
+  "de": "nach vorn gezogen"
+ },
+ {
+  "tr": "doyurucu",
+  "kind": "gloss.tr",
+  "de": "deftig"
+ },
+ {
+  "tr": "en dostu",
+  "kind": "gloss.tr",
+  "de": "das freundlichste"
+ },
+ {
+  "tr": "içerleme",
+  "kind": "gloss.tr",
+  "de": "der Groll"
+ },
+ {
+  "tr": "iki yanı",
+  "kind": "gloss.tr",
+  "de": "beide Seiten"
+ },
+ {
+  "tr": "melezlik",
+  "kind": "gloss.tr",
+  "de": "die Hybridität"
+ },
+ {
+  "tr": "ötekilik",
+  "kind": "gloss.tr",
+  "de": "die Andersartigkeit"
+ },
+ {
+  "tr": "parantez",
+  "kind": "gloss.tr",
+  "de": "die Klammer"
+ },
+ {
+  "tr": "seçilmiş",
+  "kind": "gloss.tr",
+  "de": "gewählt"
+ },
+ {
+  "tr": "sözümona",
+  "kind": "gloss.tr",
+  "de": "angeblich"
+ },
+ {
+  "tr": "takılmak",
+  "kind": "gloss.tr",
+  "de": "stolpern"
+ },
+ {
+  "tr": "tuhaflık",
+  "kind": "gloss.tr",
+  "de": "die Fremdartigkeit"
+ },
+ {
+  "tr": "yadsımak",
+  "kind": "gloss.tr",
+  "de": "leugnen"
+ },
+ {
+  "tr": "yineleme",
+  "kind": "gloss.tr",
+  "de": "die Wiederholung"
+ },
+ {
+  "tr": "yutulmuş",
+  "kind": "gloss.tr",
+  "de": "verschluckt"
+ },
+ {
+  "tr": "akrabalık",
+  "kind": "gloss.tr",
+  "de": "die Verwandtschaft"
+ },
+ {
+  "tr": "ana iddia",
+  "kind": "gloss.tr",
+  "de": "die Hauptbehauptung"
+ },
+ {
+  "tr": "atlatıldı",
+  "kind": "gloss.tr",
+  "de": "überstanden"
+ },
+ {
+  "tr": "aynı anda",
+  "kind": "gloss.tr",
+  "de": "zugleich"
+ },
+ {
+  "tr": "dik başlı",
+  "kind": "gloss.tr",
+  "de": "eigensinnig"
+ },
+ {
+  "tr": "en eskisi",
+  "kind": "gloss.tr",
+  "de": "das älteste"
+ },
+ {
+  "tr": "harcanmış",
+  "kind": "gloss.tr",
+  "de": "ausgegeben"
+ },
+ {
+  "tr": "iki nesne",
+  "kind": "gloss.tr",
+  "de": "zwei Objekte"
+ },
+ {
+  "tr": "işaretsiz",
+  "kind": "gloss.tr",
+  "de": "unmarkiert"
+ },
+ {
+  "tr": "iyi gelen",
+  "kind": "gloss.tr",
+  "de": "gut tut"
+ },
+ {
+  "tr": "karşılama",
+  "kind": "gloss.tr",
+  "de": "der Empfang"
+ },
+ {
+  "tr": "niteleyen",
+  "kind": "gloss.tr",
+  "de": "das Attribut"
+ },
+ {
+  "tr": "savunulan",
+  "kind": "gloss.tr",
+  "de": "verteidigt"
+ },
+ {
+  "tr": "silinirdi",
+  "kind": "gloss.tr",
+  "de": "würde verblassen"
+ },
+ {
+  "tr": "şatafatlı",
+  "kind": "gloss.tr",
+  "de": "opulent"
+ },
+ {
+  "tr": "tek taraf",
+  "kind": "gloss.tr",
+  "de": "eine Seite"
+ },
+ {
+  "tr": "uzaklaşma",
+  "kind": "gloss.tr",
+  "de": "die Entfremdung"
+ },
+ {
+  "tr": "yadsınmış",
+  "kind": "gloss.tr",
+  "de": "geleugnet"
+ },
+ {
+  "tr": "yakışıyor",
+  "kind": "gloss.tr",
+  "de": "passt zu"
+ },
+ {
+  "tr": "yatkınlık",
+  "kind": "gloss.tr",
+  "de": "die Veranlagung"
+ },
+ {
+  "tr": "aktarılmış",
+  "kind": "gloss.tr",
+  "de": "wiedergegeben"
+ },
+ {
+  "tr": "aynı nefes",
+  "kind": "gloss.tr",
+  "de": "derselbe Atemzug"
+ },
+ {
+  "tr": "aynı yolla",
+  "kind": "gloss.tr",
+  "de": "auf dieselbe Weise"
+ },
+ {
+  "tr": "dokunulmaz",
+  "kind": "gloss.tr",
+  "de": "unantastbar"
+ },
+ {
+  "tr": "eğretileme",
+  "kind": "gloss.tr",
+  "de": "die Metapher"
+ },
+ {
+  "tr": "eksik harf",
+  "kind": "gloss.tr",
+  "de": "der fehlende Buchstabe"
+ },
+ {
+  "tr": "karşılıklı",
+  "kind": "gloss.tr",
+  "de": "gegenseitig"
+ },
+ {
+  "tr": "okunabilir",
+  "kind": "gloss.tr",
+  "de": "lesbar"
+ },
+ {
+  "tr": "özgürleşme",
+  "kind": "gloss.tr",
+  "de": "die Emanzipation"
+ },
+ {
+  "tr": "saygıdeğer",
+  "kind": "gloss.tr",
+  "de": "ehrwürdig"
+ },
+ {
+  "tr": "asimilasyon",
+  "kind": "gloss.tr",
+  "de": "die Assimilation"
+ },
+ {
+  "tr": "ayrım hattı",
+  "kind": "gloss.tr",
+  "de": "die Demarkationslinie"
+ },
+ {
+  "tr": "insan onuru",
+  "kind": "gloss.tr",
+  "de": "die Menschenwürde"
+ },
+ {
+  "tr": "kuşku duyan",
+  "kind": "gloss.tr",
+  "de": "der Zweifler"
+ },
+ {
+  "tr": "kültürleşme",
+  "kind": "gloss.tr",
+  "de": "die Akkulturation"
+ },
+ {
+  "tr": "parça parça",
+  "kind": "gloss.tr",
+  "de": "Stück für Stück"
+ },
+ {
+  "tr": "sıra düzeni",
+  "kind": "gloss.tr",
+  "de": "die Hackordnung"
+ },
+ {
+  "tr": "sıradan şey",
+  "kind": "gloss.tr",
+  "de": "etwas Gewöhnliches"
+ },
+ {
+  "tr": "tamamlanmış",
+  "kind": "gloss.tr",
+  "de": "abgeschlossen"
+ },
+ {
+  "tr": "üçüncü kişi",
+  "kind": "gloss.tr",
+  "de": "die dritte Person"
+ },
+ {
+  "tr": "vatansızlık",
+  "kind": "gloss.tr",
+  "de": "die Staatenlosigkeit"
+ },
+ {
+  "tr": "başat kültür",
+  "kind": "gloss.tr",
+  "de": "die Leitkultur"
+ },
+ {
+  "tr": "baştaki yuva",
+  "kind": "gloss.tr",
+  "de": "die vordere Stelle"
+ },
+ {
+  "tr": "dörtlü takım",
+  "kind": "gloss.tr",
+  "de": "ein Satz von vieren"
+ },
+ {
+  "tr": "durduğun yer",
+  "kind": "gloss.tr",
+  "de": "wo man steht"
+ },
+ {
+  "tr": "elinde tutan",
+  "kind": "gloss.tr",
+  "de": "der es in der Hand hält"
+ },
+ {
+  "tr": "fark etmeden",
+  "kind": "gloss.tr",
+  "de": "ohne es zu merken"
+ },
+ {
+  "tr": "iptal ediyor",
+  "kind": "gloss.tr",
+  "de": "hebt auf"
+ },
+ {
+  "tr": "karıştırıyor",
+  "kind": "gloss.tr",
+  "de": "verwechselt"
+ },
+ {
+  "tr": "karşıt uçlar",
+  "kind": "gloss.tr",
+  "de": "entgegengesetzte Enden"
+ },
+ {
+  "tr": "metin yorumu",
+  "kind": "gloss.tr",
+  "de": "die Exegese"
+ },
+ {
+  "tr": "virgül çifti",
+  "kind": "gloss.tr",
+  "de": "ein Kommapaar"
+ },
+ {
+  "tr": "ders programı",
+  "kind": "gloss.tr",
+  "de": "der Stundenplan"
+ },
+ {
+  "tr": "karşılıklılık",
+  "kind": "gloss.tr",
+  "de": "die Gegenseitigkeit"
+ },
+ {
+  "tr": "normdan sapma",
+  "kind": "gloss.tr",
+  "de": "die Abweichung"
+ },
+ {
+  "tr": "ötekileştirme",
+  "kind": "gloss.tr",
+  "de": "die Marginalisierung"
+ },
+ {
+  "tr": "yaşam dünyası",
+  "kind": "gloss.tr",
+  "de": "die Lebenswelt"
+ },
+ {
+  "tr": "zaman sözcüğü",
+  "kind": "gloss.tr",
+  "de": "ein Zeitwort"
+ },
+ {
+  "tr": "erken açılıyor",
+  "kind": "gloss.tr",
+  "de": "öffnet früh"
+ },
+ {
+  "tr": "katılım modeli",
+  "kind": "gloss.tr",
+  "de": "das Teilhabemodell"
+ },
+ {
+  "tr": "kültür sahnesi",
+  "kind": "gloss.tr",
+  "de": "die Kulturszene"
+ },
+ {
+  "tr": "paralel toplum",
+  "kind": "gloss.tr",
+  "de": "die Parallelgesellschaft"
+ },
+ {
+  "tr": "toplumsallaşma",
+  "kind": "gloss.tr",
+  "de": "die Sozialisation"
+ },
+ {
+  "tr": "yansız seçenek",
+  "kind": "gloss.tr",
+  "de": "eine neutrale Möglichkeit"
+ },
+ {
+  "tr": "çok katmanlılık",
+  "kind": "gloss.tr",
+  "de": "die Vielschichtigkeit"
+ },
+ {
+  "tr": "kendi anlamı yok",
+  "kind": "gloss.tr",
+  "de": "hat keine eigene Bedeutung"
+ },
+ {
+  "tr": "hatırlama kültürü",
+  "kind": "gloss.tr",
+  "de": "die Erinnerungskultur"
+ },
+ {
+  "tr": "kullanımdan düşen",
+  "kind": "gloss.tr",
+  "de": "außer Gebrauch kommend"
+ },
+ {
+  "tr": "sözcüğü sözcüğüne",
+  "kind": "gloss.tr",
+  "de": "Wort für Wort"
+ },
+ {
+  "tr": "eğitim eşitsizliği",
+  "kind": "gloss.tr",
+  "de": "die Bildungsungleichheit"
+ },
+ {
+  "tr": "örf ve âdet hukuku",
+  "kind": "gloss.tr",
+  "de": "das Gewohnheitsrecht"
+ },
+ {
+  "tr": "her şeyi merak eden",
+  "kind": "gloss.tr",
+  "de": "wissbegierig"
+ },
+ {
+  "tr": "hiç haberi olmayacak",
+  "kind": "gloss.tr",
+  "de": "wird nie davon erfahren"
+ },
+ {
+  "tr": "araya sokulmuş cümlecik",
+  "kind": "gloss.tr",
+  "de": "ein eingeschobener Satz"
+ }
+]
