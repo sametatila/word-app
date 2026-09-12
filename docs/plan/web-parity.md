@@ -12996,3 +12996,49 @@ olması ve hesap bağlama/kaldırmanın ortak anahtardan gelmesi.
 
 Beş enjeksiyon denendi; biri ilk turda kaçtı (dosya bazlı ölçü), ölçü dal
 bazına çevrilince beşi de yakalandı.
+
+## §11.376 — Oturum düşünce: yanlış sebep, ve bir sonraki hesaba yazılan cevaplar
+
+Eksen **oturum ve kimlik kenar durumları**ydı. İki ayrışma çıktı; ikincisi
+bu oturumun en ciddi bulgusu.
+
+### Oturum düştüğünde ne yazıyor
+
+Sayfa açıkken oturum düşerse (belirteç süresi, sunucu yeniden başlaması)
+istek **401** dönüyor. Android bunu baştan ayırıyor
+(`e.status === 401 ? "auth" : "error"`) ve girişe götürüyor; webde **günün
+turu** ile **haftalık sınav** ikisini tek dalda topluyordu: "yüklenemedi,
+tekrar dene". Sebep yanlış, ve **tekrar denemek hiçbir zaman işe yaramaz** —
+kullanıcı ekranda kilitli kalıyor. Tur oynatıcısı ayrımı zaten yapıyordu, iki
+kardeşi yapmıyordu.
+
+Mevcut bir kapı bu boşluğu **belgeliyordu**: günün turunun faz listesini
+karşılaştıran ölçü mobilin `auth` fazını açıkça dışarıda bırakıyor ve
+gerekçesini yazıyordu — "webde oturum rota düzeyinde çözülüyor". O gerekçe
+yalnız **sayfa açılışı** için doğruydu. Muafiyet kalktı.
+
+### Çıkışta ne siliniyor — ve ne silinmiyordu
+
+İki uygulamada da hesaba ait cihaz anahtarları çıkışta siliniyor
+(`ACCOUNT_SCOPED_PREFIXES`). Ama **gönderilmeyi bekleyen kuyruklar listede
+yoktu**:
+
+- `lernomi-answer-queue` — ağ yokken biriken **tur cevapları**
+- `lernomi-lessons-pending` — biriken **ders ilerlemesi**
+- mobilde ayrıca `lernomi-items-pending` ve `lernomi-item-scores`
+
+Bu kuyruklar bir sonraki **açılışta** gönderiliyor. Yani A çıkıp B
+girdiğinde, **A'nın bekleyen cevapları B'nin hesabına yazılıyordu**: B'nin
+SRS aralıkları yabancı cevaplarla ilerliyor, XP'si şişiyordu. Ortak
+bilgisayarda ya da bir telefonu paylaşan iki öğrencide bu sessizce oluyor.
+**İki taraf da böyleydi**, ölçü bu yüzden mutlak.
+
+Silmenin bedeli A'nın o kayıtlarının **kaybolması** ve bu bilinçli: yanlış
+hesaba yazmaktan iyi. Listedeki öteki yarım işler (yarım tur, yarım deneme
+koşusu) baştan beri aynı kuralla siliniyor.
+
+### §254
+
+Üç olgu: 401'in ayrı bir dal olması (üç oyuncu, eşleştirmeli), bekleyen
+kuyrukların çıkışta silinmesi (mutlak, iki ağaç) ve mobilin kendi iki beceri
+kuyruğu. Beş enjeksiyon denendi, beşi de yakalandı.

@@ -4514,9 +4514,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mobSrc = read("mobile/src/screens/DailyScreen.tsx");
   const webSrc = read("src/components/daily-player.tsx");
   const faz = (src, re) => (src.match(re)?.[1] ?? "").match(/"(\w+)"/g)?.map((x) => x.slice(1, -1)).sort() ?? [];
-  /* Adlar bir yerde ayri: web oynanan fazi "playing", mobil "play" diyor ve
-     mobilde bir de "auth" var (webde oturum ROTA duzeyinde cozuluyor). */
-  const mob = faz(mobSrc, /type Phase = ([^;]+);/).filter((x) => x !== "auth").map((x) => (x === "play" ? "playing" : x));
+  /* Adlar bir yerde ayri: web oynanan fazi "playing", mobil "play" diyor.
+     `auth` ARTIK IKI TARAFTA DA VAR. Eskiden yalniz mobildeydi ve buradaki
+     liste onu DISARIDA birakiyordu, gerekcesi "webde oturum ROTA duzeyinde
+     cozuluyor"du. O gerekce yalniz SAYFA ACILISI icin dogruydu: sayfa
+     acikken dusen bir oturum 401 donduruyor ve web "yuklenemedi, tekrar
+     dene" diyordu - yanlis sebep, ustelik tekrar denemek hic ise yaramaz
+     (bkz. 254). Muafiyet kalkti. */
+  const mob = faz(mobSrc, /type Phase = ([^;]+);/).map((x) => (x === "play" ? "playing" : x));
   const web = faz(webSrc, /type Status = ([^;]+);/).map((x) => (x === "play" ? "playing" : x));
   sameList("gunluk tur fazlari", mob.sort(), web.sort());
 
@@ -7460,6 +7465,82 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 254. OTURUM KENAR DURUMLARI ------------------------------------
+   *
+   * Iki ayrisma cikti.
+   *
+   * OTURUM DUSTUGUNDE NE YAZIYOR. Sayfa acikken oturum duserse (belirtec
+   * suresi, sunucu yeniden baslamasi) istek 401 donuyor. Android bunu
+   * bastan ayiriyor (`e.status === 401 ? "auth" : "error"`) ve girise
+   * goturuyor; webde gunun turu ile haftalik sinav ikisini TEK dalda
+   * topluyordu: "yuklenemedi, tekrar dene". Sebep yanlis ve tekrar denemek
+   * hicbir zaman ise yaramaz - kullanici ekranda kilitli kaliyor. Tur
+   * oynaticisi (`session-player`) ayrimi zaten yapiyordu, iki kardesi
+   * yapmiyordu.
+   *
+   * CIKISTA NE SILINIYOR. Iki uygulamada da hesaba ait cihaz anahtarlari
+   * cikista siliniyor (`ACCOUNT_SCOPED_PREFIXES`) ama GONDERILMEYI BEKLEYEN
+   * KUYRUKLAR listede yoktu: `lernomi-answer-queue` (tur cevaplari),
+   * `lernomi-lessons-pending` (ders ilerlemesi) ve mobilde ayrica
+   * `lernomi-items-pending` / `lernomi-item-scores`. A cikip B girdiginde
+   * A'nin bekleyen cevaplari B'nin hesabina yaziliyordu - B'nin SRS
+   * araliklari yabanci cevaplarla ilerliyor, XP'si sisiyordu. IKI TARAF DA
+   * boyleydi, olcu bu yuzden MUTLAK.
+   *
+   * Silmenin bedeli kayittir, ve bilincli: yanlis hesaba yazmaktan iyi.
+   * Listedeki oteki yarim isler (yarim tur, yarim deneme kosusu) baştan beri
+   * ayni kuralla siliniyor. */
+  {
+    /* 401 ayri bir dal. */
+    const AUTH = [
+      ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
+      ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
+    ];
+    const webAuth = (y) => {
+      const src = sil(read(y));
+      return /res\.status === 401/.test(src) && /"auth"/.test(src) ? "ayri" : "TEK DAL";
+    };
+    const mobilAuth = (y) => {
+      const src = sil(read(y));
+      return /e\.status === 401 \? "auth" : "error"/.test(src) ? "ayri" : "TEK DAL";
+    };
+    sameList(
+      "oturum dustugunde ayri dal",
+      AUTH.map(([ad, , m]) => ad + "=" + mobilAuth(m)),
+      AUTH.map(([ad, w]) => ad + "=" + webAuth(w)),
+      "mobil",
+      "web",
+    );
+
+    /* MUTLAK: bekleyen kuyruklar cikista siliniyor. */
+    const KUYRUKLAR = [
+      ["cevap kuyrugu", "lernomi-answer-queue"],
+      ["ders kuyrugu", "lernomi-lessons-pending"],
+    ];
+    const webListe = sil(read("src/components/session-keeper.tsx"));
+    const mobListe = sil(read("mobile/src/lib/accountScope.ts"));
+    sameList(
+      "bekleyen kuyruk cikista siliniyor",
+      KUYRUKLAR.map(([ad, k]) => ad + "=" + (mobListe.includes('"' + k + '"') ? "siliniyor" : "KALIYOR")),
+      KUYRUKLAR.map(([ad, k]) => ad + "=" + (webListe.includes('"' + k + '"') ? "siliniyor" : "KALIYOR")),
+      "mobil",
+      "web",
+    );
+    /* Mobilin kendi iki kuyrugu da listede (webde karsiligi `lernomi-skills`
+       onekiyle zaten kapsanan beceri ilerlemesi). */
+    sameList(
+      "mobilin beceri kuyruklari da siliniyor",
+      [
+        "oge kuyrugu=" + (mobListe.includes('"lernomi-items-pending"') ? "siliniyor" : "KALIYOR"),
+        "oge puanlari=" + (mobListe.includes('"lernomi-item-scores"') ? "siliniyor" : "KALIYOR"),
+      ],
+      ["oge kuyrugu=siliniyor", "oge puanlari=siliniyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* -- 253. CEVRIMDISI DAVRANIS ---------------------------------------
    *
