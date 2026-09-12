@@ -23,7 +23,7 @@ import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
 import { onTint } from "../theme/colors";
 import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -590,7 +590,7 @@ export function GameScreen() {
           {/* Pekişen kelime: seviye rozeti yerine gerçekten kazanılmış olan şey.
               Mobil bu sayıyı yalnız kutlama eşiği için kullanıyor, göstermiyordu. */}
           {mastered > 0 ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.success + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.success), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
               <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center" }}>{t("sessionw.n_mastered", { n: mastered })}</Text>
             </View>
           ) : null}
@@ -599,7 +599,7 @@ export function GameScreen() {
               sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
               açıklanamaz hâle getirir. Web aynı kutuyu çiziyor. */}
           {repaired !== null ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.streak + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.xxl }}>
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.xxl }}>
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
                 <FlameIcon color={colors.streakText} size={16} />
                 <Text variant="bodyStrong" color={colors.streakText}>{t("game.streak_saved")}</Text>
@@ -611,7 +611,7 @@ export function GameScreen() {
               değil - tur oynandı, yalnız kaydı bekliyor. Kırmızı çizmek
               kullanıcıya turu kaybettiğini söylerdi. */}
           {saveWarning ? (
-            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: colors.streak + "1f", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
               <AlertIcon color={colors.streakText} size={16} />
               <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
@@ -702,7 +702,7 @@ export function GameScreen() {
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
-        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.info + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
+        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: soft(colors.info), borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.infoText} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
         {/* Bu turdaki kelime yeni mi tekrar mı: webde sayacın yanında bir çip
             var, mobilde hiç yoktu. Öğrenci "bunu ilk kez mi görüyorum" diye
             sormuyor artık. */}
@@ -818,7 +818,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
 
           <View style={{ padding: spacing.xl, gap: spacing.sm }}>
             <PressableScale onPress={() => { setBet(!bet); haptic("tap"); }} accessibilityState={{ selected: bet }}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: bet ? colors.streak + "1f" : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: bet ? soft(colors.streak) : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
               <View style={{ width: 36, height: 20, borderRadius: 10, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
                 <View style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
               </View>

@@ -17,7 +17,7 @@ import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatXp } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
 
@@ -79,7 +79,7 @@ export function ProfileScreen() {
             </View>
           ) : me ? (
             <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
                 <FlameIcon color={colors.streakText} size={16} /><Text variant="bodyStrong" color={colors.streakText}>{t("profile.days", { n: me.streak })}</Text>
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>

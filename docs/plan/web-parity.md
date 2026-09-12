@@ -17374,3 +17374,39 @@ gradyanlı kahraman kartın çocuğu). Rol takma adı zeminli 28 yüzeyin
 mürekkebi de ya `on-fill` ya da içeriksiz (çubuk/nokta). Yani §338'in kusuru
 Android'e özgüydü; webin `on-fill` jetonu ve sabit rampaları doğru
 kullanılmış.
+
+## §11.481 — Yumuşak tint oranı: beş değer yerine bir, web'in ölçülmüş oranı
+
+Rol renginin kendi zemini, üstünde yazı/ikon varken. Android'de **on beş
+yerde elle** yazılıyordu ve **beş ayrı oran** çıkmıştı:
+
+| Alfa | Oran | Kaç yerde |
+|---|---|---|
+| `"22"` | %13,3 | 9 |
+| `"24"` | %14,1 | 2 |
+| `"1f"` | %12,2 | 2 |
+| `"1e"` | %11,8 | 1 |
+| `"1a"` | %10,2 | 1 |
+
+Aynı fikir, beş farklı görünüm — ve hiçbiri bir kurala bağlı değildi.
+
+**Web'in yazılı kuralı var** (`immersion/unit-pane` yorumu): "%14 — yumuşak
+tintin üstünde yazı/ikon varken uygulamanın kullandığı oran. %18'de açık temada
+4.34 ölçüyordu, eşik 4.5; %14'te 4.54. Daha koyu tintler yalnız yazısız
+yüzeylerde." Kural gerçekten uygulanmış: o oran web'de **otuz altı yerde**
+geçiyor.
+
+Mobil tarafı tek bir yardımcıya çıkarıldı (`theme/colors` `soft`, `0x24` =
+%14,1) ve ölçüm iki tarafta aynı sonucu veriyor — rolün `*Text` mürekkebi bu
+zeminde **4.53–5.68** (streak 4.55, success 4.53, info 4.58, primary 4.68,
+danger 5.00, accent 5.68); %18'de üçü 4.5'in altına düşüyor.
+
+Kapı **§340** üç ölçü: mobilde **elle yazılmış alfa eki kalmadığı** (mutlak),
+yardımcının çağrı sayısı (on beş+ — tarama boşalırsa "elle yazan yok"
+kendiliğinden doğru çıkardı) ve oranın **web'in baskın oranıyla** aynı olduğu.
+Üçüncüsü web'in kuralının hâlâ baskın olmasını da ölçüyor: kural tek yerde
+kalıp gerisi kaymışsa karşılaştırma anlamsız olurdu.
+
+Bir ad çakışması çıktı: `social/common` `StatPill` zaten `soft` adlı bir prop
+taşıyor (açıkça verilen zemin). Yardımcı o dosyada `softOf` diye alınıyor ve
+kapı iki adı da sayıyor.

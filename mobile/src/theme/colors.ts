@@ -255,3 +255,26 @@ export const DIALOG_INK = "#ffffff";
 export function fillOf(role: keyof Palette): string {
   return light[role] as string;
 }
+
+/**
+ * YUMUŞAK TİNT — rol renginin kendi zemini, üstünde yazı/ikon varken.
+ *
+ * On beş yerde elle yazılıyordu ve BEŞ ayrı oran çıkmıştı: `"22"` (%13,3)
+ * dokuz kez, `"24"` (%14,1) iki kez, `"1f"` (%12,2) iki kez, `"1e"` (%11,8)
+ * ve `"1a"` (%10,2) birer kez. Aynı fikir, beş farklı görünüm.
+ *
+ * Web'in yazılı kuralı var (`immersion/unit-pane` yorumu): "%14 — yumuşak
+ * tintin üstünde YAZI/İKON varken uygulamanın kullandığı oran. %18'de açık
+ * temada 4.34 ölçüyordu, eşik 4.5; %14'te 4.54. Daha koyu tintler yalnız
+ * yazısız yüzeylerde." Web'de o oran otuz altı yerde geçiyor, yani kural
+ * gerçekten uygulanmış.
+ *
+ * `0x24` = %14,1 ve ölçüm iki tarafta da aynı sonucu veriyor: rolün `*Text`
+ * mürekkebi bu zeminde 4.53–5.68 (streak 4.55, success 4.53, info 4.58,
+ * primary 4.68, danger 5.00, accent 5.68). %18'de üçü 4.5'in altına düşüyor.
+ */
+const SOFT_ALPHA = "24";
+
+export function soft(tint: string): string {
+  return tint + SOFT_ALPHA;
+}

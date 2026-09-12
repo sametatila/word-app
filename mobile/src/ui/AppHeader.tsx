@@ -10,7 +10,7 @@ import { FlameIcon } from "./icons";
 import { MyAvatar } from "./Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, soft } from "../theme";
 import { InboxBell } from "../social/InboxBell";
 
 /**
@@ -37,7 +37,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {streak > 0 && (
-          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
+          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
             <FlameIcon color={colors.streakText} size={16} />
             <Text variant="bodyStrong" color={colors.streakText}>{streak}</Text>
           </PressableScale>

@@ -19439,6 +19439,67 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* --------------- 340. YUMUSAK TINT ORANI: TEK DEGER, WEBIN OLCULMUS ORANI
+ *
+ * Rol renginin kendi zemini, ustunde yazi/ikon varken. Android'de ON BES yerde
+ * elle yaziliyordu ve BES ayri oran cikmisti: "22" (%13,3) dokuz kez, "24"
+ * (%14,1) iki kez, "1f" (%12,2) iki kez, "1e" (%11,8) ve "1a" (%10,2) birer
+ * kez - ayni fikir, bes farkli gorunum.
+ *
+ * Webin YAZILI kurali var (`immersion/unit-pane` yorumu): %14, cunku %18'de
+ * acik temada 4.34 olculuyor ve esik 4.5; %14'te 4.54. Kural gercekten
+ * uygulanmis - web'de o oran otuz alti yerde geciyor. Mobil tarafta tek bir
+ * yardimciya cikarildi (`theme/colors` `soft`, `0x24` = %14,1) ve olcum iki
+ * tarafta ayni sonucu veriyor: rolun `*Text` murekkebi bu zeminde 4.53-5.68.
+ *
+ * Olcu: (1) MUTLAK - mobilde elle yazilmis alfa eki kalmadi, (2) yardimcinin
+ * orani webin baskin oraniyla ayni (yuzde olarak, yuvarlanmis), (3) webin o
+ * oranı hâlâ BASKIN (otuz alti yer) - kural tek yerde kalip gerisi kaymissa
+ * karsilastirma anlamsiz olurdu. */
+{
+  const silA = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const gezA = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) gezA(yol, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const elle = [];
+  let softCagri = 0;
+  for (const f of gezA("mobile/src")) {
+    const src = silA(read(f));
+    if (f.endsWith("theme/colors.ts")) continue; // yardimcinin kendisi
+    for (const m of src.matchAll(/(?:tint|colors\.\w+) \+ "[0-9a-fA-F]{2}"/g)) elle.push(f.split("/").slice(-1)[0] + ":" + m[0]);
+    softCagri += (src.match(/\bsoft(?:Of)?\(/g) ?? []).length;
+  }
+  const mobRenk = silA(read("mobile/src/theme/colors.ts"));
+  const alfa = (mobRenk.match(/const SOFT_ALPHA = "([0-9a-fA-F]{2})"/) ?? [])[1] ?? "YOK";
+  const mobYuzde = alfa === "YOK" ? "YOK" : String(Math.round((parseInt(alfa, 16) / 255) * 100));
+  /* Webin baskin orani: tum kaynaklarda `color-mix` yuzdelerinin modu. */
+  const sayac = new Map();
+  for (const f of gezA("src")) {
+    for (const m of silA(read(f)).matchAll(/color-mix\(in srgb, [^)]*?\)? (\d+)%/g)) sayac.set(m[1], (sayac.get(m[1]) ?? 0) + 1);
+  }
+  const baskin = [...sayac.entries()].sort((a, b) => b[1] - a[1])[0] ?? ["YOK", 0];
+  sameList(
+    "yumusak tint orani tek deger",
+    [
+      "elle yazilmis alfa=" + (elle.length ? elle.join("+") : "yok"),
+      "yardimci cagrisi=" + (softCagri >= 15 ? "15+" : softCagri),
+      "oran=" + mobYuzde,
+    ],
+    [
+      "elle yazilmis alfa=yok",
+      "yardimci cagrisi=15+",
+      "oran=" + baskin[0] + (baskin[1] >= 20 ? "" : " (BASKIN DEGIL)"),
+    ],
+    "mobil",
+    "web (baskin oran)",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

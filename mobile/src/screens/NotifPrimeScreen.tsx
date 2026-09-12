@@ -11,7 +11,7 @@ import { enableDailyReminder, markNotifPrimed } from "../lib/notifications";
 import { track } from "../lib/track";
 import { PRIME_HOURS } from "../lib/profileDefaults";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, soft } from "../theme";
 
 /**
  * İlk giriş sonrası bir kez gösterilen bildirim izni ekranı (§4). İzni sistem
@@ -109,7 +109,7 @@ export function NotifPrimeScreen() {
           {tx("notifprime.one_gentle_reminder_day_is")}
         </Text>
 
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: soft(colors.streak), borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
           <FlameIcon color={colors.streakText} size={16} /><Text variant="caption" color={colors.streakText}>{tx("notifprime.reminder_longer_streak")}</Text>
         </View>
 

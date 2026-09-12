@@ -18,7 +18,7 @@ import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Ske
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
 import { EmptyCard } from "../social/common";
-import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
 
@@ -121,7 +121,7 @@ function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: s
   const { gridItemWidth } = useLayout();
   return (
     <Card padded style={{ width: gridItemWidth, gap: 6 }}>
-      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
+      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="h1" color={colors.text}>{value}</Text>

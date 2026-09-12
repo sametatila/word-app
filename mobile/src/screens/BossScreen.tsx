@@ -16,7 +16,7 @@ import { api } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, soft } from "../theme";
 
 /**
  * MODÜL PATRONU — web `components/boss-player` karşılığı.
@@ -268,7 +268,7 @@ export function BossScreen() {
             <Text variant="body" color={colors.textMuted}>{`· ${t("bossw.rule_pool", { n: data.pool })}`}</Text>
           </View>
           {!ready ? (
-            <View style={{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.streak + "1a", paddingHorizontal: spacing.md, paddingVertical: 10 }}>
+            <View style={{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 10 }}>
               <Text variant="caption" color={colors.streakText}>{t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })}</Text>
             </View>
           ) : null}
