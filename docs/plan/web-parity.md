@@ -14866,3 +14866,58 @@ Enjeksiyonların ikisi birlikte önemli: `think` klibi silinip kaynak `think`
 demeye devam ettiğinde "kelime yok" ölçüsü **geçmeye devam etti** (kaynak
 doğru kipi yazıyor) ama "webdeki fazla kip belgeli" ölçüsü kırmızıya döndü —
 sessiz düşüşü yakalayan ikinci yarı o.
+
+## §11.414 — Ölçülen dört eksen temiz çıktı; biri gerçek bir eksik verdi
+
+Bu tur paylaşılan **sözcük dağarcıkları** üzerinden gitti. Dördü temiz çıktı ve
+temiz çıkmaları da bir sonuç — hangi ölçünün neden yazılmadığı buraya yazılıyor
+ki bir daha aynı yola girilmesin.
+
+| Eksen | Sonuç |
+|---|---|
+| ses efektleri (13 ipucu) | **eşit**; `Cue` ve `SFX_NOTES` birebir aynı 13 ad |
+| koç cümleleri | **eşit**; 8 an, 40 cümle, sayılar bile aynı |
+| başarım ikonu haritası | **eşit**; 29 ad, aynı yedek (`StarIcon`) |
+| canlı bölge (a11y) | **eşit**; hata kartlarının hepsi duyuruyor |
+
+Ses tarafında bir yanlış iz vardı ve kaydedilmiş bir sınıfa giriyor
+(**çıktıda olmayan olguyu aramak**): `play("correct")` webde yalnız ses
+ayarlarının önizleme düğmesinde geçiyor, yani "web cevap sesi çalmıyor" gibi
+görünüyordu. Gerçek yol `vibrate()` **içinden** geçiyor
+(`lib/fx`: `play(kind)` + `navigator.vibrate`), yani on oyunun hepsi tek
+geçitten sesleniyor. Çağrı yeri ipucunun adını taşımıyor.
+
+### Canlı bölge kuralı: hata duyurulur, boşluk duyurulmaz
+
+`EmptyCard` iki işi birden görüyor — "liste boş" ve "yüklenemedi". Ayrım ekran
+okuyucu için önemli: birincisi sayfanın **normal** içeriği ("henüz arkadaşın
+yok"), ikincisi bir **olay**. Kural iki tarafta da bileşenin kendi yorumunda
+yazılıydı ama **hiçbir ölçü tutmuyordu**: kırk altı çağrı yerinden biri hata
+dalında `role`/`live` vermeyi unutsa kimse görmezdi. Ölçüldüğünde iki platform
+da temiz çıktı; §289 o hâlin kilidi.
+
+### Gerçek eksik: deneme kâğıdı bulunamadığında
+
+Webin `mock-exams/[paper]/[skill]` sayfası üç durumda `notFound()` atıyor
+(kâğıt kimliği tanınmıyor, beceri adı listede değil, kâğıdın o becerisi yok)
+ve uygulamanın **genel** 404'ü çiziliyordu: "Sayfa bulunamadı" + Öğren'e dön.
+Kullanıcı **neyin** bulunamadığını ve ne yapacağını öğrenemiyordu — eski bir
+bağlantı mı, kaldırılmış bir kâğıt mı belli değildi.
+
+Android aynı durumda kâğıda özel kartı çiziyor (`MockExamScreen`, `!paper ||
+!part` dalı) ve metinler üç dilde **zaten vardı**, webde hiçbir yerden
+çağrılmıyordu — yani üç ölü dizgi. Bölüm artık kendi `not-found.tsx`sini
+taşıyor: kırmızı karo, `XIcon`, `role="alert"` (Android `live="assertive"`) ve
+"listeye dön".
+
+§162'nin dördüncü ölçüsündeki "mobil tek taraflı" notu bu yüzden güncellendi;
+oradaki `web=404` ölçüsü yine doğru ve gerekli — sayfanın `notFound()` atmaya
+devam etmesi kartın çizilmesinin **ön koşulu**.
+
+### §289
+
+Beş ölçü: kart çağrılarının **okunabildiği** (okunamazsa "sessiz hata yok" boş
+bir doğru olur), **mutlak** olarak hata dalındaki her kartın duyurduğu, iki
+tarafta da gerçekten **hata dalı bulunduğu** (yoksa bir önceki ölçü hiçbir şey
+ölçmez), kâğıt kartının üç metninin iki platformda da olduğu ve kartın
+duyurduğu.

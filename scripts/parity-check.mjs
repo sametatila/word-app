@@ -7488,6 +7488,108 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 289. HATA HALI DUYURULUYOR, BOS HAL DUYURULMUYOR ---------------
+   *
+   * Ayni kart (`EmptyCard`) iki isi birden goruyor: "liste bos" ve
+   * "yuklenemedi". Ayrim ekran okuyucu icin onemli - birincisi sayfanin
+   * NORMAL icerigi ("henuz arkadasin yok"), ikincisi bir OLAY ve duyurulmasi
+   * gerekiyor. Kural iki tarafta da bileşenin kendi yorumunda yazili
+   * (`components/empty-card`: "Bos halde duyuru ISTENMIYOR"; mobil karsiligi
+   * `live` ozniteligi) ama HICBIR OLCU tutmuyordu: kirk alti cagri yerinden
+   * biri hata dalinda `role`/`live` vermeyi unutsa kimse gormezdi.
+   *
+   * Olculdugunde iki platform da temiz cikti - bu kapi o halin KILIDI.
+   *
+   * Ikinci yari ayni ailenin bir eksigini kapatti: DENEME KAGIDI
+   * BULUNAMADIGINDA. Webin `mock-exams/[paper]/[skill]` sayfasi uc durumda
+   * `notFound()` atiyor ve uygulamanin GENEL 404'u ciziliyordu ("Sayfa
+   * bulunamadi" + Ogren'e don): kullanici NEYIN bulunamadigini ogrenemiyordu.
+   * Android ayni durumda kagida ozel karti ciziyor ve metinler (`paper_missing`,
+   * `_sub`, `back_to_list`) uc dilde zaten vardi, webde hicbir yerden
+   * cagrilmiyordu. Bolum artik kendi `not-found.tsx`sini tasiyor. */
+  {
+    const HATA = /couldn_t_load|could_not_load|load_failed|paper_missing|_failed|err_/;
+    /* Kart cagrisinin GOVDESI: ilk `/>` ya da kapanis etiketi. Pencere degil -
+       bazi cagrilar cok satirli ve `action` govdesi de iceriyor. */
+    const kartlar = (kok, disla, etiketAdi, oznitelik) => {
+      const out = [];
+      const walk = (d) => {
+        for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+          const p = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p); continue; }
+          if (!/\.tsx$/.test(e.name) || disla.test(p)) continue;
+          const s = sil(read(p));
+          let i = 0;
+          while ((i = s.indexOf("<" + etiketAdi, i)) >= 0) {
+            const kapa = s.indexOf("/>", i);
+            const kapa2 = s.indexOf("</" + etiketAdi + ">", i);
+            const son = kapa > 0 && (kapa2 < 0 || kapa < kapa2) ? kapa : kapa2 > 0 ? kapa2 : i + 900;
+            const govde = s.slice(i, son);
+            out.push({ yol: p, satir: s.slice(0, i).split("\n").length, hata: HATA.test(govde), duyuru: govde.includes(oznitelik) });
+            i = son + 1;
+          }
+        }
+      };
+      walk(kok);
+      return out;
+    };
+    const webKart = kartlar("src", /components\/empty-card\.tsx$/, "EmptyCard", "role=");
+    const mobKart = kartlar("mobile/src", /social\/common\.tsx$/, "EmptyCard", "live=");
+
+    /* Once SAYI: cagrilar okunamazsa listeler bosalir ve "hata ama sessiz yok"
+       bos bir dogru olur. */
+    sameList(
+      "bos durum karti cagrilari okunuyor",
+      ["web=" + (webKart.length >= 15 ? "okundu" : "OKUNAMADI:" + webKart.length), "mobil=" + (mobKart.length >= 20 ? "okundu" : "OKUNAMADI:" + mobKart.length)],
+      ["web=okundu", "mobil=okundu"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: hata dalindaki her kart duyuruyor - iki tarafta da. */
+    const sessizHata = (liste, etiket) =>
+      liste.filter((k) => k.hata && !k.duyuru).map((k) => `${etiket}:${k.yol.split("/").pop()}:${k.satir}`);
+    const sessiz = [...sessizHata(webKart, "web"), ...sessizHata(mobKart, "mobil")];
+    sameList(
+      "hata hali duyuruluyor",
+      ["sessiz hata=" + (sessiz.join("+") || "yok")],
+      ["sessiz hata=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Ve gercekten hata dali OLCULUYOR: iki tarafta da en az birkac tane
+       bulunmali, yoksa yukaridaki "yok" hicbir seyi olcmuyor. */
+    sameList(
+      "hata dali sayisi",
+      ["web=" + (webKart.filter((k) => k.hata).length >= 3 ? "var" : "YOK"), "mobil=" + (mobKart.filter((k) => k.hata).length >= 3 ? "var" : "YOK")],
+      ["web=var", "mobil=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Deneme kagidi bulunamadiginda iki platform ayni seyi soyluyor. */
+    const web404 = "src/app/(app)/mock-exams/[paper]/[skill]/not-found.tsx";
+    const mobEkran = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    const varMi = existsSync(new URL("../" + web404, import.meta.url));
+    const w404 = varMi ? sil(read(web404)) : "";
+    const anahtarlar = ["mockexam.paper_missing", "mockexam.paper_missing_sub", "mockexam.back_to_list"];
+    sameList(
+      "kagit bulunamadi karti",
+      anahtarlar.map((k) => k.split(".")[1] + "=" + (mobEkran.includes(`"${k}"`) ? "var" : "YOK")),
+      anahtarlar.map((k) => k.split(".")[1] + "=" + (w404.includes(`"${k}"`) ? "var" : "YOK")),
+      "mobil",
+      "web",
+    );
+    sameList(
+      "kagit karti duyuruyor",
+      ["mobil=" + (/live="assertive"[\s\S]{0,300}mockexam\.paper_missing/.test(mobEkran) ? "duyuruyor" : "SESSIZ")],
+      ["mobil=" + (/role="alert"[\s\S]{0,300}mockexam\.paper_missing/.test(w404) ? "duyuruyor" : "SESSIZ")],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 288. MASKOTUN KIPI IKI PLATFORMDA AYNI ------------------------
    *
    * Maskot iki uygulamada da ayni kliplerle oynuyor ve kip ADIYLA seciliyor.
@@ -12065,7 +12167,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
-    /* Kagit bulunamadi: SEBEP dogru ve bir cikis var (mobil tek tarafli). */
+    /* Kagit bulunamadi: SEBEP dogru ve bir cikis var.
+       "mobil tek tarafli" notu ARTIK GECERSIZ: web de bolume ait bir
+       `not-found.tsx` tasiyor ve ayni uc metni kullaniyor (bkz. 289).
+       Buradaki `web=404` olcusu yine dogru ve gerekli - sayfanin `notFound()`
+       atmaya devam etmesi o kartin ciziliyor olmasinin ON KOSULU. */
     const me = sil(read("mobile/src/screens/MockExamScreen.tsx"));
     sameList(
       "kagit bulunamadi dogru sebebi soyluyor",
