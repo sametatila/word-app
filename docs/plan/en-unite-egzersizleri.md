@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–15 | **yazıldı** (2026-09-12) — 90 egzersiz, 90/150 yuva |
-| A2 | 16–25 | bekliyor |
+| A2 | 1–18 | **yazıldı** (2026-09-12) — 108 egzersiz, 108/150 yuva |
+| A2 | 19–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -454,6 +454,42 @@ yaptığı, sonra iki dilin ortak davranışı.
 değiştirtti: „Repair service“ başlığındaki „service“ ünite havuzunda yok ve
 başlık da ölçüm yüzeyinin parçası. Aynı sözcük dinleme egzersizinin
 konuşmacı etiketinde de duruyordu; etiket bir kişi adına çevrildi.
+
+**A2 ünite 16–18 (2026-09-12).** Ünite 16 Booking a room · At the airport ·
+Hotel check-in · Finding your way abroad; ünite 17 Sightseeing ·
+Travel problems · Renting a car · Eating out abroad; ünite 18
+Buying souvenirs · Telling about a trip · Inviting a friend ·
+Birthdays and gifts. On sekiz egzersiz; ünite dışı ölçüm %0,0.
+A2 yuvalarının 108'i dolu.
+
+Ünite 16'nın noktası SOME/ANY bölüşümü ve Almanca eksende bu, yeniden
+ölçümün dördüncü bir türünü gösterdi: fark VAR ama başka KATMANDA.
+İngilizce olumsuzda belirteci değiştiriyor („there aren't any towels“);
+Almanca belirteci değiştirmiyor, olumsuzluğu belirtecin İÇİNE katıyor
+(„es gibt keine Handtücher“ — „nicht“ + „ein“ tek sözcükte). Yani iki dil
+de bir şey yapıyor, ama biri sözdiziminde, öteki sözcük yapımında yapıyor.
+Karşılık bunu tek cümleyle söylüyor.
+
+Ünite 17 „-ing“ alan iki sözcüğü öğretiyor: „How about taking …“ ve
+„worth visiting“. Almanca eksende burada hiçbir karşılık yok, çünkü
+Almancada bu yapı YOK: „wie wäre es mit einer Bustour“ bir İSİM alıyor ve
+„sehenswert“ bir SIFAT. Yani Almanca okuyan öğrenci hangi biçimi
+koyacağını kendi dilinden türetemiyor; karşılık iki satırda da Almancanın
+ne koyduğunu adıyla söylüyor, çünkü doğru olan "senin dilinde böyle bir
+şey yok" demek.
+
+Ünite 18'in noktası BAŞIBOŞ „to“: „I'd love to.“ Fiil düşüyor, „to“
+kalıyor. Almanca aynı yerde tek bir sözcük söylüyor: „gern“. Yani ne
+İngilizcenin bıraktığı iz var ne de Türkçedeki tam çekim; karşılık bunu
+"Deutsch sagt einfach „gern“" diye kuruyor. Öğrencinin iki sezgisi de
+yanlış: „to“yu atmak da fiili tekrar etmek de kulakta duyuluyor.
+
+Ölçüm bu turda on bir sözlükçe maddesi ekletti ve dört yeri yeniden
+yazdırdı. İkisi CEVAP LİSTESİNDEN geldi — „a confirmation“ ve „it is not
+necessary“ metinde geçmeyen sözcüklerdi ve kabul listesi de ölçüm
+yüzeyinin parçası; biri soru şıkkındaydı („the hotel has none“); sonuncusu
+bir dikte cümlesiydi: „Could you help me, please?“ bölümün ortasında
+küçük harfle başlıyordu, bölüm iki cümleye ayrıldı.
 
 ## Tamamlanma ölçütü
 

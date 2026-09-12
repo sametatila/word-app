@@ -1,0 +1,302 @@
+[
+ {
+  "tr": "Davet kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Einladungskarte aus."
+ },
+ {
+  "tr": "Kiralama kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Mietkarte aus."
+ },
+ {
+  "tr": "Rezervasyon kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Buchungskarte aus."
+ },
+ {
+  "tr": "Küçük araba; üç gün; doksan euro; yakıt dahil değil; iade cuma altıda.",
+  "kind": "form.facts",
+  "de": "Kleines Auto; drei Tage; neunzig Euro; Sprit nicht dabei; Rückgabe Freitag um sechs."
+ },
+ {
+  "tr": "Doğum günü cumartesi; saat yediden itibaren; sekiz kişi; hediye gerekmiyor.",
+  "kind": "form.facts",
+  "de": "Geburtstag am Samstag; ab sieben Uhr; acht Leute; ein Geschenk ist nicht nötig."
+ },
+ {
+  "tr": "Çift kişilik oda; iki gece; dört mayıstan; kahvaltı dahil; toplam yüz kırk euro.",
+  "kind": "form.facts",
+  "de": "Doppelzimmer; zwei Nächte; ab dem vierten Mai; Frühstück dabei; insgesamt hundertvierzig Euro."
+ },
+ {
+  "tr": "Uçuşum gecikti.",
+  "kind": "build.tr",
+  "de": "Mein Flug hat Verspätung."
+ },
+ {
+  "tr": "Odada hiç su yok.",
+  "kind": "build.tr",
+  "de": "Im Zimmer gibt es kein Wasser."
+ },
+ {
+  "tr": "Aktarmamı kaçırdım.",
+  "kind": "build.tr",
+  "de": "Ich habe meinen Anschluss verpasst."
+ },
+ {
+  "tr": "Cuma akşamı vardık.",
+  "kind": "build.tr",
+  "de": "Wir kamen am Freitagabend an."
+ },
+ {
+  "tr": "Gelmek ister misin?",
+  "kind": "build.tr",
+  "de": "Möchtest du kommen?"
+ },
+ {
+  "tr": "Bankanın karşısında.",
+  "kind": "build.tr",
+  "de": "Es ist gegenüber der Bank."
+ },
+ {
+  "tr": "Cumartesi boş musun?",
+  "kind": "build.tr",
+  "de": "Hast du am Samstag Zeit?"
+ },
+ {
+  "tr": "Orada üç gün kaldık.",
+  "kind": "build.tr",
+  "de": "Wir blieben drei Tage dort."
+ },
+ {
+  "tr": "Henüz hediye almadım.",
+  "kind": "build.tr",
+  "de": "Ich habe noch kein Geschenk gekauft."
+ },
+ {
+  "tr": "Müze görülmeye değer.",
+  "kind": "build.tr",
+  "de": "Das Museum ist sehenswert."
+ },
+ {
+  "tr": "Odamda hiç havlu yok.",
+  "kind": "build.tr",
+  "de": "In meinem Zimmer gibt es keine Handtücher."
+ },
+ {
+  "tr": "Müzeyi ziyaret edelim.",
+  "kind": "build.tr",
+  "de": "Besuchen wir das Museum."
+ },
+ {
+  "tr": "Çok isterim ama gelemem.",
+  "kind": "build.tr",
+  "de": "Sehr gern, aber ich kann nicht."
+ },
+ {
+  "tr": "Otobüs turuna ne dersin?",
+  "kind": "build.tr",
+  "de": "Wie wäre es mit einer Bustour?"
+ },
+ {
+  "tr": "Bir oda ayırtmak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte ein Zimmer buchen."
+ },
+ {
+  "tr": "Oraya yine gitmek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte wieder dorthin fahren."
+ },
+ {
+  "tr": "Daha ucuz bir şeyiniz var mı?",
+  "kind": "build.tr",
+  "de": "Haben Sie etwas Billigeres?"
+ },
+ {
+  "tr": "Fiyat kahvaltıyı içeriyor mu?",
+  "kind": "build.tr",
+  "de": "Ist das Frühstück im Preis dabei?"
+ },
+ {
+  "tr": "Hesabı alabilir miyiz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten wir bitte zahlen?"
+ },
+ {
+  "tr": "Menüyü görebilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnte ich bitte die Karte sehen?"
+ },
+ {
+  "tr": "Dosdoğru git ve köşeden sola dön.",
+  "kind": "build.tr",
+  "de": "Geh geradeaus und bieg an der Ecke links ab."
+ },
+ {
+  "tr": "İki havlu alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnte ich bitte zwei Handtücher haben?"
+ },
+ {
+  "tr": "Biniş kartını göstermen gerekiyor.",
+  "kind": "build.tr",
+  "de": "Du musst deine Bordkarte zeigen."
+ },
+ {
+  "tr": "Bana yardım edebilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie mir bitte helfen?"
+ },
+ {
+  "tr": "Affedersiniz, postaneye nasıl giderim?",
+  "kind": "build.tr",
+  "de": "Entschuldigung, wie komme ich zur Post?"
+ },
+ {
+  "tr": "Üç günlüğüne bir araba kiralamak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte für drei Tage ein Auto mieten."
+ },
+ {
+  "tr": "Onu hediye paketi yapabilir misiniz, lütfen?",
+  "kind": "build.tr",
+  "de": "Könnten Sie es bitte als Geschenk einpacken?"
+ },
+ {
+  "tr": "Kuraldan gelen zorunluluk „have to“ ile.",
+  "kind": "build.hint",
+  "de": "Die Pflicht aus einer Regel steht mit „have to“."
+ },
+ {
+  "tr": "„Let's“ sonrası fiil eksiz ve „to“ almıyor.",
+  "kind": "build.hint",
+  "de": "Nach „Let's“ steht das nackte Verb, ohne „to“."
+ },
+ {
+  "tr": "Belirli bir akşam: simple past, gün „on“ ile.",
+  "kind": "build.hint",
+  "de": "Ein bestimmter Abend: simple past, der Tag mit „on“."
+ },
+ {
+  "tr": "Soruda „anything“; sıfat isimden SONRA geliyor.",
+  "kind": "build.hint",
+  "de": "In der Frage „anything“; das Adjektiv kommt DAHINTER, wie „etwas Billigeres“."
+ },
+ {
+  "tr": "„book“ burada fiil: ayırtmak demek, kitap değil.",
+  "kind": "build.hint",
+  "de": "„book“ ist hier ein Verb: buchen, nicht das Buch."
+ },
+ {
+  "tr": "„as“ burada „olarak“ demek; „like“ başka iş görür.",
+  "kind": "build.hint",
+  "de": "„as“ heißt hier „als“; „like“ tut etwas anderes."
+ },
+ {
+  "tr": "„opposite“ önüne edat almıyor: „opposite to“ olmaz.",
+  "kind": "build.hint",
+  "de": "„opposite“ nimmt keine Präposition davor: „opposite to“ gibt es nicht."
+ },
+ {
+  "tr": "Otelde „Could I have“ kalıbı; „give me“ kaba durur.",
+  "kind": "build.hint",
+  "de": "Im Hotel das Muster „Could I have“; „give me“ klingt grob."
+ },
+ {
+  "tr": "„yet“ olumsuzda ve en sonda; iş bitmedi ama bitecek.",
+  "kind": "build.hint",
+  "de": "„yet“ in der Verneinung und ganz hinten; noch nicht erledigt, aber es kommt."
+ },
+ {
+  "tr": "Çoğul özneyle aynı kalıp; „bill“ burada hesap demek.",
+  "kind": "build.hint",
+  "de": "Dasselbe Muster mit Plural-Subjekt; „bill“ heißt hier die Rechnung."
+ },
+ {
+  "tr": "Tekil özneyle aynı kalıp; lokantada en olağan giriş.",
+  "kind": "build.hint",
+  "de": "Dasselbe Muster im Singular; der übliche Einstieg im Restaurant."
+ },
+ {
+  "tr": "„want“ sonrası „to“ + fiil; „again“ en sonda duruyor.",
+  "kind": "build.hint",
+  "de": "Nach „want“ kommt „to“ + Verb; „again“ steht ganz hinten."
+ },
+ {
+  "tr": "Süre „for“ ile; „I'd like“ sonrası bu kez „to“ + fiil.",
+  "kind": "build.hint",
+  "de": "Die Dauer mit „for“; nach „I'd like“ hier „to“ + Verb."
+ },
+ {
+  "tr": "„help“ sonrası doğrudan nesne geliyor; edat gerekmiyor.",
+  "kind": "build.hint",
+  "de": "Nach „help“ folgt das Objekt direkt, wie deutsch „mir helfen“."
+ },
+ {
+  "tr": "Edilgen biçim burada sıfat gibi çalışıyor: „is delayed“.",
+  "kind": "build.hint",
+  "de": "Die Passivform wirkt hier wie ein Adjektiv: „is delayed“."
+ },
+ {
+  "tr": "Emir cümlesi öznesiz; noktayı „at the corner“ gösteriyor.",
+  "kind": "build.hint",
+  "de": "Der Imperativ steht ohne Subjekt; die Stelle nennt „at the corner“."
+ },
+ {
+  "tr": "„water“ sayılamaz: „isn't any“ geliyor, „aren't any“ değil.",
+  "kind": "build.hint",
+  "de": "„water“ ist unzählbar: es heißt „isn't any“, nicht „aren't any“."
+ },
+ {
+  "tr": "Fiil düşüyor, „to“ kalıyor: „I'd love to come“ın kısası bu.",
+  "kind": "build.hint",
+  "de": "Das Verb fällt weg, „to“ bleibt: die Kurzform von „I'd love to come“. Deutsch sagt nur „gern“."
+ },
+ {
+  "tr": "Olumsuzda „any“ geliyor; „some“ yalnız olumlu cümlede durur.",
+  "kind": "build.hint",
+  "de": "In der Verneinung steht „any“; „some“ nur im Aussagesatz. Deutsch macht das mit „kein-“ in einem Wort."
+ },
+ {
+  "tr": "Sonucu şimdi önemli — hâlâ havaalanındasın: present perfect.",
+  "kind": "build.hint",
+  "de": "Das Ergebnis zählt jetzt — du stehst noch am Flughafen: present perfect."
+ },
+ {
+  "tr": "Süre „for“ ile; kapanmış dönem olduğu için yine simple past.",
+  "kind": "build.hint",
+  "de": "Die Dauer mit „for“; weil der Zeitraum abgeschlossen ist, wieder simple past."
+ },
+ {
+  "tr": "„free“ burada „müsait“ demek, „ücretsiz“ değil; gün „on“ ile.",
+  "kind": "build.hint",
+  "de": "„free“ heißt hier „frei, Zeit haben“, nicht „kostenlos“; der Tag mit „on“."
+ },
+ {
+  "tr": "Yol sorarken „get to“ kalıp; „go to“ da doğru ama daha seyrek.",
+  "kind": "build.hint",
+  "de": "Beim Fragen nach dem Weg ist „get to“ die Formel; „go to“ geht auch, ist aber seltener."
+ },
+ {
+  "tr": "„How about“ sonrası fiil „-ing“ biçimine giriyor, mastar olmaz.",
+  "kind": "build.hint",
+  "de": "Nach „How about“ steht das Verb auf „-ing“. Deutsch nimmt dort ein Nomen: wie wäre es mit einer Bustour."
+ },
+ {
+  "tr": "Davetin kalıbı „would you like“; „do you want“ daha sert durur.",
+  "kind": "build.hint",
+  "de": "Das Einladungsmuster „would you like“; „do you want“ klingt härter."
+ },
+ {
+  "tr": "„worth“ da „-ing“ istiyor: „worth to visit“ diye bir kuruluş yok.",
+  "kind": "build.hint",
+  "de": "Auch „worth“ verlangt „-ing“: „worth to visit“ gibt es nicht. Deutsch hat dafür ein Adjektiv: sehenswert."
+ },
+ {
+  "tr": "Gezinin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Reise: bring sie in die richtige Ordnung."
+ }
+]

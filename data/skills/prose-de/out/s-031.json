@@ -1,0 +1,407 @@
+[
+ {
+  "tr": "Yol tarifi. Dört adım, tek yön.",
+  "kind": "intro",
+  "de": "Eine Wegbeschreibung. Vier Schritte, eine Richtung."
+ },
+ {
+  "tr": "Resepsiyonda giriş. Odada ne eksik?",
+  "kind": "intro",
+  "de": "Check-in an der Rezeption. Was fehlt im Zimmer?"
+ },
+ {
+  "tr": "Geç kalan bir hediye. Kaç ayda alınıyor?",
+  "kind": "intro",
+  "de": "Ein verspätetes Geschenk. Wie viele Monate dauert der Kauf?"
+ },
+ {
+  "tr": "Altı hediye, yirmi euro. Kime ne alınıyor?",
+  "kind": "intro",
+  "de": "Sechs Geschenke, zwanzig Euro. Wer bekommt was?"
+ },
+ {
+  "tr": "Araba kiralama. Yakıt dahil mi, sınır kaç?",
+  "kind": "intro",
+  "de": "Eine Autovermietung. Ist der Sprit dabei, wie hoch ist das Limit?"
+ },
+ {
+  "tr": "Doğum günü daveti. Kim geliyor, kim gelemiyor?",
+  "kind": "intro",
+  "de": "Eine Geburtstagseinladung. Wer kommt, wer kann nicht?"
+ },
+ {
+  "tr": "İki günlük gezi yazısı. Neyi ne zaman görmeli?",
+  "kind": "intro",
+  "de": "Ein Reisebericht über zwei Tage. Was sieht man wann?"
+ },
+ {
+  "tr": "Kaçan aktarma ve kayıp çanta. Ne zaman, nerede?",
+  "kind": "intro",
+  "de": "Verpasster Anschluss und verlorene Tasche. Wann, wo?"
+ },
+ {
+  "tr": "Havaalanı yönergesi. Ne zorunlu, nerede bakılır?",
+  "kind": "intro",
+  "de": "Eine Anweisung am Flughafen. Was ist Pflicht, wo schaut man nach?"
+ },
+ {
+  "tr": "Lokantada sipariş. Alerji nerede sorun çıkarıyor?",
+  "kind": "intro",
+  "de": "Eine Bestellung im Restaurant. Wo macht die Allergie Probleme?"
+ },
+ {
+  "tr": "Davet ve cevabı. Cevapta fiil düşüyor, „to“ kalıyor.",
+  "kind": "intro",
+  "de": "Einladung und Antwort. In der Antwort fällt das Verb weg, „to“ bleibt stehen."
+ },
+ {
+  "tr": "Telefonda oda ayırtılıyor. Fiyata ne dahil, ne değil?",
+  "kind": "intro",
+  "de": "Ein Zimmer wird am Telefon gebucht. Was ist im Preis, was nicht?"
+ },
+ {
+  "tr": "Otel cümleleri. Olumluda „some“, olumsuz ve soruda „any“.",
+  "kind": "intro",
+  "de": "Sätze im Hotel. Im Aussagesatz „some“, in Verneinung und Frage „any“."
+ },
+ {
+  "tr": "Üç öneri kalıbı. Hangisi eksiz fiil, hangisi „-ing“ istiyor?",
+  "kind": "intro",
+  "de": "Drei Vorschlagsmuster. Welches nimmt das nackte Verb, welches „-ing“?"
+ },
+ {
+  "tr": "Gezi anlatısı ve dükkân. Kapanmış günler simple past istiyor.",
+  "kind": "intro",
+  "de": "Reisebericht und Laden. Abgeschlossene Tage verlangen simple past."
+ },
+ {
+  "tr": "Üç günlük gezi. İlk gün ile ikinci gün arasında ne değişiyor?",
+  "kind": "intro",
+  "de": "Drei Reisetage. Was ändert sich zwischen dem ersten und dem zweiten?"
+ },
+ {
+  "tr": "Yol ve havaalanı cümleleri. „any“ sayılamayanla da çalışıyor.",
+  "kind": "intro",
+  "de": "Sätze zu Weg und Flughafen. „any“ steht auch bei Unzählbarem."
+ },
+ {
+  "tr": "Seyahat sorunu ve lokanta. Aynı kalıp iki kişi için de çalışıyor.",
+  "kind": "intro",
+  "de": "Reiseproblem und Restaurant. Dasselbe Muster geht auch für zwei Personen."
+ },
+ {
+  "tr": "„Then I come at five. I don't like extra.“",
+  "kind": "explain",
+  "de": "„Then I come at five. I don't like extra.“"
+ },
+ {
+  "tr": "Yol sorarken „get to“ kalıbı kullanılıyor.",
+  "kind": "explain",
+  "de": "Beim Fragen nach dem Weg gilt das Muster „get to“."
+ },
+ {
+  "tr": "Otelde adı „under the name“ ile veriyorsun.",
+  "kind": "explain",
+  "de": "Im Hotel nennt man den Namen mit „under the name“."
+ },
+ {
+  "tr": "Üç gün sırayla, en sonda gelecek yılın sorusu.",
+  "kind": "explain",
+  "de": "Drei Tage der Reihe nach, zuletzt die Frage nach dem nächsten Jahr."
+ },
+ {
+  "tr": "„help“ sonrası doğrudan nesne geliyor; edat yok.",
+  "kind": "explain",
+  "de": "Nach „help“ folgt das Objekt direkt; keine Präposition — wie deutsch „mir helfen“."
+ },
+ {
+  "tr": "„One thing: there aren't any towels in the room.“",
+  "kind": "explain",
+  "de": "„One thing: there aren't any towels in the room.“"
+ },
+ {
+  "tr": "„I said: I'd love to.“ — fiil düşüyor, „to“ kalıyor.",
+  "kind": "explain",
+  "de": "„I said: I'd love to.“ — das Verb fällt weg, „to“ bleibt. Deutsch sagt einfach „gern“."
+ },
+ {
+  "tr": "„Ninety euros for three days.“ — yüz otuz hız sınırı.",
+  "kind": "explain",
+  "de": "„Ninety euros for three days.“ — hundertdreißig ist das Tempolimit."
+ },
+ {
+  "tr": "Davetin kalıbı „would you like“; sonrası „to“ + fiil.",
+  "kind": "explain",
+  "de": "Das Einladungsmuster „would you like“; danach „to“ + Verb."
+ },
+ {
+  "tr": "„I'm allergic to fish. Is there anything with chicken?“",
+  "kind": "explain",
+  "de": "„I'm allergic to fish. Is there anything with chicken?“"
+ },
+ {
+  "tr": "„I invited Nil but it doesn't work. Izmir until Sunday.“",
+  "kind": "explain",
+  "de": "„I invited Nil but it doesn't work. Izmir until Sunday.“"
+ },
+ {
+  "tr": "Önce istek, sonra belge, sonra yakıt, en son iade saati.",
+  "kind": "explain",
+  "de": "Zuerst der Wunsch, dann die Papiere, dann der Sprit, zuletzt die Rückgabezeit."
+ },
+ {
+  "tr": "„It's my birthday. Would you like to come? … From seven.“",
+  "kind": "explain",
+  "de": "„It's my birthday. Would you like to come? … From seven.“"
+ },
+ {
+  "tr": "Mert hediyeyi eylülde veriyor ve kendi doğum günü kasımda.",
+  "kind": "explain",
+  "de": "Mert übergibt das Geschenk im September, der eigene Geburtstag ist im November."
+ },
+ {
+  "tr": "Hediye verirken iki kısa cümle; „hope“ sonrası „that“ düşüyor.",
+  "kind": "explain",
+  "de": "Beim Übergeben zwei kurze Sätze; nach „hope“ fällt „that“ weg, wie deutsch „ich hoffe, es gefällt dir“."
+ },
+ {
+  "tr": "„And two postcards for my parents.“ — takı arkadaşlara gidiyor.",
+  "kind": "explain",
+  "de": "„And two postcards for my parents.“ — der Schmuck geht an die Freunde."
+ },
+ {
+  "tr": "„It goes with the seven o'clock flight. You get it at the end.“",
+  "kind": "explain",
+  "de": "„It goes with the seven o'clock flight. You get it at the end.“"
+ },
+ {
+  "tr": "„And you don't have to buy a present.“ — yasak değil, gerek yok.",
+  "kind": "explain",
+  "de": "„And you don't have to buy a present.“ — kein Verbot, sondern „du musst nicht“."
+ },
+ {
+  "tr": "Lokantanın ilk cümlesi; „Can I“ da olur ama „Could I“ daha kibar.",
+  "kind": "explain",
+  "de": "Der erste Satz im Restaurant; „Can I“ geht auch, „Could I“ ist höflicher."
+ },
+ {
+  "tr": "„I haven't bought your present yet. Your birthday is in November.“",
+  "kind": "explain",
+  "de": "„I haven't bought your present yet. Your birthday is in November.“"
+ },
+ {
+  "tr": "„Let's go again in September. The castle is open until eight then.“",
+  "kind": "explain",
+  "de": "„Let's go again in September. The castle is open until eight then.“"
+ },
+ {
+  "tr": "„No, it's opposite the bank. It is easy to find — the door is yellow.“",
+  "kind": "explain",
+  "de": "„No, it's opposite the bank. It is easy to find — the door is yellow.“"
+ },
+ {
+  "tr": "„On Sunday we made a picnic next to the water.“ — tekne gezisi cumartesi.",
+  "kind": "explain",
+  "de": "„On Sunday we made a picnic next to the water.“ — die Bootsfahrt war am Samstag."
+ },
+ {
+  "tr": "„In the shop at the station.“ — haritayı satan dükkân, adamın kendisi değil.",
+  "kind": "explain",
+  "de": "„In the shop at the station.“ — die Karte gibt es im Laden, nicht bei dem Mann."
+ },
+ {
+  "tr": "„Does the price include breakfast? — Yes, from seven to ten.“ Otopark ayrı ücret.",
+  "kind": "explain",
+  "de": "„Does the price include breakfast? — Yes, from seven to ten.“ Das Parken kostet extra."
+ },
+ {
+  "tr": "„My flight is delayed and I've missed my connection.“ — aktarma birdeydi, uçak iki buçukta indi.",
+  "kind": "explain",
+  "de": "„My flight is delayed and I've missed my connection.“ — der Anschluss war um eins, die Maschine landete halb drei."
+ },
+ {
+  "tr": "çok isterim",
+  "kind": "gloss.tr",
+  "de": "sehr gern"
+ },
+ {
+  "tr": "beşi",
+  "kind": "gloss.tr",
+  "de": "der Fünfte"
+ },
+ {
+  "tr": "tepe",
+  "kind": "gloss.tr",
+  "de": "oben"
+ },
+ {
+  "tr": "dördü",
+  "kind": "gloss.tr",
+  "de": "der Vierte"
+ },
+ {
+  "tr": "güldü",
+  "kind": "gloss.tr",
+  "de": "lachte"
+ },
+ {
+  "tr": "komik",
+  "kind": "gloss.tr",
+  "de": "lustig"
+ },
+ {
+  "tr": "kaldık",
+  "kind": "gloss.tr",
+  "de": "blieben"
+ },
+ {
+  "tr": "kendin",
+  "kind": "gloss.tr",
+  "de": "dich selbst"
+ },
+ {
+  "tr": "rüzgâr",
+  "kind": "gloss.tr",
+  "de": "Wind"
+ },
+ {
+  "tr": "uzakta",
+  "kind": "gloss.tr",
+  "de": "weg von"
+ },
+ {
+  "tr": "vardık",
+  "kind": "gloss.tr",
+  "de": "kamen an"
+ },
+ {
+  "tr": "aktarma",
+  "kind": "gloss.tr",
+  "de": "Anschluss"
+ },
+ {
+  "tr": "gecikti",
+  "kind": "gloss.tr",
+  "de": "hat Verspätung"
+ },
+ {
+  "tr": "içermek",
+  "kind": "gloss.tr",
+  "de": "enthalten"
+ },
+ {
+  "tr": "söyledi",
+  "kind": "gloss.tr",
+  "de": "erzählte"
+ },
+ {
+  "tr": "üstünde",
+  "kind": "gloss.tr",
+  "de": "über dir"
+ },
+ {
+  "tr": "yapıyor",
+  "kind": "gloss.tr",
+  "de": "stellt es her"
+ },
+ {
+  "tr": "aktarmam",
+  "kind": "gloss.tr",
+  "de": "mein Anschluss"
+ },
+ {
+  "tr": "bol şans",
+  "kind": "gloss.tr",
+  "de": "viel Glück"
+ },
+ {
+  "tr": "bu nokta",
+  "kind": "gloss.tr",
+  "de": "diese Stelle"
+ },
+ {
+  "tr": "fazladan",
+  "kind": "gloss.tr",
+  "de": "zusätzlich"
+ },
+ {
+  "tr": "ayrı ayrı",
+  "kind": "gloss.tr",
+  "de": "getrennt"
+ },
+ {
+  "tr": "hiç havlu",
+  "kind": "gloss.tr",
+  "de": "keine Handtücher"
+ },
+ {
+  "tr": "ne dersin",
+  "kind": "gloss.tr",
+  "de": "wie wäre es mit"
+ },
+ {
+  "tr": "dört mayıs",
+  "kind": "gloss.tr",
+  "de": "der vierte Mai"
+ },
+ {
+  "tr": "karşısında",
+  "kind": "gloss.tr",
+  "de": "gegenüber"
+ },
+ {
+  "tr": "paketlemek",
+  "kind": "gloss.tr",
+  "de": "einpacken"
+ },
+ {
+  "tr": "yerel saat",
+  "kind": "gloss.tr",
+  "de": "Ortszeit"
+ },
+ {
+  "tr": "biniş kartı",
+  "kind": "gloss.tr",
+  "de": "die Bordkarte"
+ },
+ {
+  "tr": "kablosuz ağ",
+  "kind": "gloss.tr",
+  "de": "das WLAN"
+ },
+ {
+  "tr": "alerjisi olan",
+  "kind": "gloss.tr",
+  "de": "allergisch"
+ },
+ {
+  "tr": "geldiklerinde",
+  "kind": "gloss.tr",
+  "de": "wann sie eben kommen"
+ },
+ {
+  "tr": "karşıya geçmek",
+  "kind": "gloss.tr",
+  "de": "überqueren"
+ },
+ {
+  "tr": "araba kiralamak",
+  "kind": "gloss.tr",
+  "de": "ein Auto mieten"
+ },
+ {
+  "tr": "beklemeye değer",
+  "kind": "gloss.tr",
+  "de": "das Warten wert"
+ },
+ {
+  "tr": "görülmeye değer",
+  "kind": "gloss.tr",
+  "de": "sehenswert"
+ },
+ {
+  "tr": "umarım beğenirsin",
+  "kind": "gloss.tr",
+  "de": "ich hoffe, es gefällt dir"
+ }
+]
