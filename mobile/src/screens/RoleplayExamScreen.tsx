@@ -152,6 +152,28 @@ export function RoleplayExamScreen() {
    * turu bunu baştan beri doğru yapıyor (`ChallengeScreen` `deadline`).
    */
   const deadline = useRef(0);
+
+  /*
+   * SINAVI BAŞTAN KURAN TEK YER.
+   *
+   * `deadline` REF'İ DE SIFIRLANMALI. Sayaç `left`ten değil
+   * `deadline.current`tan okuyor (`if (!deadline.current)` bir kez kuruyor);
+   * yalnızca `setLeft(EXAM_SECONDS)` yazmak ilk tik'te eziliyor ve sınav
+   * ANINDA bitiyordu — sonuç ekranındaki "Tekrar dene" tam bu yüzden
+   * bozuktu: dokunan kullanıcı sıfır turluk, anında bitmiş bir sınav
+   * alıyordu. Hata dalı ve sonuç ekranı artık aynı sıfırlamayı kullanıyor
+   * (web `roleplay-exam` `restart` ile birebir).
+   */
+  const restart = useCallback(() => {
+    scored.current = false;
+    deadline.current = 0;
+    setResult(null);
+    setGateNote(null);
+    setTurns([]);
+    setDraft("");
+    setLeft(EXAM_SECONDS);
+    setPhase("intro");
+  }, []);
   useEffect(() => {
     if (phase !== "talk") return;
     if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
@@ -269,6 +291,15 @@ export function RoleplayExamScreen() {
       <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={92} />
         <Text variant="body" style={{ textAlign: "center", lineHeight: 22 }}>{tx("rpexam.service_down")}</Text>
+        {/* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
+            düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani
+            ölçülmüş hiçbir şey YOK — sınav baştan başlayabilir. Tek çıkış
+            "konuşmaya dön"dü ve o, geçici bir ağ kesintisinde girişi
+            kaybettiriyordu. Aynı gerekçe sınav ekranında yazılı ve webde de
+            aynı düzeltme yapıldı. */}
+        <PressableScale onPress={restart} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
+        </PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, paddingHorizontal: spacing.xl }}>
           <Text variant="h3" color={colors.text}>{tx("lessonp.back_to_conversation")}</Text>
         </PressableScale>
@@ -350,7 +381,7 @@ export function RoleplayExamScreen() {
 
         <View style={{ marginTop: spacing.xl, gap: spacing.sm }}>
           <PressableScale
-            onPress={() => { scored.current = false; setResult(null); setGateNote(null); setTurns([]); setLeft(EXAM_SECONDS); setPhase("intro"); }}
+            onPress={restart}
             style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}
           >
             <Text variant="h3" color={colors.text}>{tx("common.try_again")}</Text>

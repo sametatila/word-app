@@ -85,27 +85,35 @@ export function BossPlayer({
   const pending = useRef<Answer[]>([]);
   const startedAt = useRef(Date.now());
 
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const res = await apiFetch(`/api/boss?level=${level}&module=${moduleIndex}`, {
-          cache: "no-store",
-        });
-        if (!res.ok) return alive && setStatus("error");
-        const payload = (await res.json()) as Payload;
-        if (!alive) return;
-        setData(payload);
-        setBest(payload.meta.bestLeft);
-        setStatus(payload.rounds.length ? "ready" : "empty");
-      } catch {
-        if (alive) setStatus("error");
-      }
-    })();
-    return () => {
-      alive = false;
-    };
+  /*
+   * YUKLEME AYRI BIR ISLEV: hata dalindan YENIDEN cagrilabilsin.
+   *
+   * Once yalnizca etkinin icindeydi ve hata ekraninda tek dugme "Geri don"du.
+   * Modul sinavi kazanilmis bir yuzey (dersler bitmeden acilmiyor); gecici bir
+   * ag kesintisinde kullaniciyi listeye geri gonderip yeniden girmeye zorlamak
+   * o girisi kaybettirir. Uygulamadaki her veri ekrani "Tekrar dene" sunuyor,
+   * yalniz burasi sunmuyordu — ve Androidde de sunmuyordu, yani iki taraf ayni
+   * kusuru tasidigi icin karsilastirma geciyordu.
+   */
+  const load = useCallback(async () => {
+    setStatus("loading");
+    try {
+      const res = await apiFetch(`/api/boss?level=${level}&module=${moduleIndex}`, {
+        cache: "no-store",
+      });
+      if (!res.ok) return setStatus("error");
+      const payload = (await res.json()) as Payload;
+      setData(payload);
+      setBest(payload.meta.bestLeft);
+      setStatus(payload.rounds.length ? "ready" : "empty");
+    } catch {
+      setStatus("error");
+    }
   }, [level, moduleIndex]);
+
+  useEffect(() => {
+    void load();
+  }, [load]);
 
   /** Cevapları gönderir — sınav da tekrar planını besliyor. */
   const flush = useCallback(async () => {
@@ -234,7 +242,8 @@ export function BossPlayer({
       <Frame role="alert">
         <AlertIcon size={26} />
         <h2 className="mt-2 text-h3">{t("exam.could_not_load")}</h2>
-        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
+        <button onClick={() => void load()} className="btn btn-primary mt-5 w-full px-5 py-3">{t("common.try_again")}</button>
+        <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 

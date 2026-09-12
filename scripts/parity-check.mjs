@@ -7488,6 +7488,232 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 285. SINAVI BASTAN KURAN TEK YER -------------------------------
+   *
+   * 284'un tekrar dugmesi eklenirken ROL YAPMA SINAVINDA duran bir kusur
+   * cikti ve o kusur kullaniciya gorunuyordu:
+   *
+   * Sayac `left` DEGERINDEN degil `deadline` REF'INDEN okuyor - efekt
+   * `if (!deadline.current)` ile bir kez kuruyor, sonra her tik farki oradan
+   * hesapliyor (bu kalip 271'in dersi: arka plana atilan sinav sureyi
+   * uzatmasin diye duvar saati kullaniliyor). Android'in SONUC ekranindaki
+   * "Tekrar dene" `setLeft(EXAM_SECONDS)` yaziyor ama `deadline.current`i
+   * SIFIRLAMIYORDU: ilk tik `left`i hemen 0 yapiyor, "sure bitti" efekti
+   * kosuyor ve sinav ANINDA, sifir turla bitiyordu. Yani dugme calisiyor
+   * gibi duruyor, sonuc ekrani yeniden geliyor - kullanici hicbir sey
+   * yapamiyor.
+   *
+   * Webde ayni dugme `location.reload()` cagiriyordu: bozuk DEGIL (yeniden
+   * monte olmak ref'i sifirliyor) ama sayfanin tamamini yeniden yukleyen bir
+   * cekic, ve iki platform ayni isi iki ayri yolla yapiyordu.
+   *
+   * Iki tarafta da tek bir `restart()` var ve dort cagiran (hata dali + sonuc
+   * ekrani, iki platform) onu kullaniyor. */
+  {
+    const CIFT = [
+      ["web", "src/components/lessons/roleplay-exam.tsx"],
+      ["mobil", "mobile/src/screens/RoleplayExamScreen.tsx"],
+    ];
+    const govde = (metin, ad) => {
+      const i = metin.indexOf("const " + ad + " = useCallback(");
+      if (i < 0) return "";
+      const son = metin.indexOf("}, [", i);
+      return son < 0 ? "" : metin.slice(i, son);
+    };
+    sameList(
+      "sinavi bastan kuran islev",
+      CIFT.map(([et, y]) => {
+        const g = sil(read(y));
+        const r = govde(g, "restart");
+        return [
+          et + " var=" + (r ? "var" : "YOK"),
+          et + " deadline=" + (/deadline\.current = 0/.test(r) ? "sifirlaniyor" : "SIFIRLANMIYOR"),
+          et + " sure=" + (/setLeft\(EXAM_SECONDS\)/.test(r) ? "var" : "YOK"),
+          et + " asama=" + (/setPhase\("intro"\)/.test(r) ? "intro" : "BASKA"),
+        ].join(" | ");
+      }),
+      CIFT.map(([et]) => [et + " var=var", et + " deadline=sifirlaniyor", et + " sure=var", et + " asama=intro"].join(" | ")),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* MUTLAK: sureyi `restart` DISINDA sifirlayan kimse olmayacak - kusur tam
+       oyle dogdu (yerinde yazilmis bir sifirlama, ref'i unutarak). Ve web
+       artik sayfayi yeniden yuklemiyor. */
+    sameList(
+      "sureyi baska yerde sifirlayan yok",
+      CIFT.map(([et, y]) => {
+        const g = sil(read(y));
+        const disi = [...g.matchAll(/setLeft\(EXAM_SECONDS\)/g)].length - (/setLeft\(EXAM_SECONDS\)/.test(govde(g, "restart")) ? 1 : 0);
+        return `${et}=${disi === 0 ? "yok" : disi}` + (et === "web" ? `+reload=${/location\.reload\(\)/.test(g) ? "VAR" : "yok"}` : "");
+      }),
+      CIFT.map(([et]) => `${et}=yok` + (et === "web" ? "+reload=yok" : "")),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Dort cagiranin dordu de `restart` - hata dali ve sonuc ekrani. */
+    sameList(
+      "tekrar dugmeleri ayni sifirlamayi cagiriyor",
+      CIFT.map(([et, y]) => {
+        const g = sil(read(y));
+        const n = [...g.matchAll(/(?:onClick|onPress)=\{restart\}/g)].length;
+        return `${et}=${n}`;
+      }),
+      CIFT.map(([et]) => `${et}=2`),
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+  /* -- 284. HER YUKLEME HATASI YERINDE TEKRAR DENEMEYI SUNUYOR --------
+   *
+   * Uygulamanin veri ceken ekranlarinin neredeyse hepsi hata dalinda "Tekrar
+   * dene" sunuyor; olculdugunde IKI yuzeyin sunmadigi cikti ve IKISI DE iki
+   * platformda ayni sekilde eksikti - yani karsilastirma geciyordu:
+   *
+   *   - MODUL SINAVI (`boss`): tek dugme "Geri don". Kazanilmis bir yuzey
+   *     (dersler bitmeden acilmiyor); gecici bir ag kesintisinde kullaniciyi
+   *     listeye geri gonderip yeniden girmeye zorlamak o girisi kaybettirir.
+   *   - ROL YAPMA SINAVI (`roleplay-exam`): tek cikis "konusmaya don". Bu dala
+   *     yalniz muhatap servisi ILK IKI TURDA dusunce giriliyor (sonrasinda
+   *     konusma puanlaniyor), yani olculmus hicbir sey yok - sinav bastan
+   *     baslayabilir.
+   *
+   * Gerekce zaten depoda yaziliydi, yalniz bir yerde: sinav oynaticisinin
+   * "haftanin kagidi gecici bir ag kesintisiyle harcanabiliyordu" notu. Ayni
+   * cumle bu iki yuzey icin de gecerliydi.
+   *
+   * OLCU DAL GOVDESINI okuyor (dengeli parantez), pencere DEGIL: ilk yazim
+   * 1400 karakterlik pencere kullandi ve `exam-player`in dalini "tekrar yok"
+   * sandi - dugme 1900 karakter sonra geliyordu. Ve tekrar iki bicimde
+   * olabiliyor: etiket (`common.try_again`) ya da bilesen kancasi
+   * (`onRetry=`); ilk yazim yalniz etikete bakip `session-player`in
+   * `<ErrorCard onRetry>`unu de kacirdi. Ikisi de "ciktida olmayan bir olguyu
+   * aramak" sinifindan. */
+  {
+    /* Dengeli parantezli `return (...)` govdesi. */
+    const dalGovdesi = (metin, i) => {
+      const r = metin.indexOf("return", i);
+      if (r < 0) return "";
+      const p = metin.indexOf("(", r);
+      if (p < 0 || p - r > 40) {
+        const son = metin.indexOf(";", r);
+        return son < 0 ? metin.slice(r, r + 400) : metin.slice(r, son);
+      }
+      let d = 0;
+      for (let j = p; j < metin.length; j++) {
+        if (metin[j] === "(") d++;
+        else if (metin[j] === ")") { d--; if (d === 0) return metin.slice(r, j + 1); }
+      }
+      return metin.slice(r, r + 3000);
+    };
+    /* HATA DALI UC BICIMDE yazilabiliyor ve olcu ucunu de tanimak zorunda:
+       `phase === "error"`, `status === "error"`, ve ayri bir hata METNI
+       durumu (`if (err)` - mobil `ExamScreen` boyle). Ilk yazim yalniz
+       ilkine bakiyordu ve o ekranin dali 0/0 cikti: "hicbir sey olcmeyen
+       kapi" sinifi, cunku 0/0 her zaman gecer. */
+    const tekrarli = (yol) => {
+      const g = sil(read(yol));
+      const out = [];
+      for (const m of g.matchAll(/(?:status|phase) === "error"|\bif \((?:err|error)\)/g)) {
+        /* Yalniz CIZIM dallari: oncesinde `if (` olacak. */
+        const onek = g.slice(Math.max(0, m.index - 40), m.index);
+        if (!/\bif \(\s*$/.test(onek) && !/^if \(/.test(m[0])) continue;
+        const govde = dalGovdesi(g, m.index);
+        out.push(/\btry_again\b/.test(govde) || /onRetry=/.test(govde));
+      }
+      return out;
+    };
+    const OYNATICI = [
+      ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
+      ["rol yapma sinavi", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+      ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
+      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
+      ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
+      ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+    ];
+    const oran = (yol) => {
+      const v = tekrarli(yol);
+      return `${v.filter(Boolean).length}/${v.length}`;
+    };
+    sameList(
+      "hata dallari tekrar denemeyi sunuyor",
+      OYNATICI.map(([ad, , m]) => ad + "=" + oran(m)),
+      OYNATICI.map(([ad, w]) => ad + "=" + oran(w)),
+      "mobil",
+      "web",
+    );
+    /* MUTLAK: iki tarafta da HEPSI sunacak - ikisinin birden eksik olmasi
+       karsilastirmayi gecirir (bu kusur tam oyle bulundu). */
+    const eksik = [];
+    for (const [ad, w, m] of OYNATICI) {
+      for (const [etiket, yol] of [["web", w], ["mobil", m]]) {
+        const v = tekrarli(yol);
+        if (v.length && v.some((x) => !x)) eksik.push(`${etiket}:${ad}`);
+      }
+    }
+    sameList(
+      "tekrar denemesi olmayan hata dali",
+      ["eksik=" + (eksik.join("+") || "yok")],
+      ["eksik=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* NEGATIF OLCU: tekrar denemek ANLAMSIZ oldugu iki yerde sunulmuyor.
+       Duzeltmenin fazlaya kacmadigini bu olcuyor. */
+    const bossWeb = sil(read("src/components/boss-player.tsx"));
+    const bossMob = sil(read("mobile/src/screens/BossScreen.tsx"));
+    const sinavWeb = sil(read("src/components/exam-player.tsx"));
+    /* AYNI DURUMUN TEK ADI. Dokuz oynatici ciftinin asama kumeleri
+       karsilastirildiginda kalan farklarin cogu mesruydu (mobilde `auth`,
+       `no_words`, `denied` gibi platforma ozel durumlar) ama ikisi duperduz
+       isim surtunmesiydi: mobil uc ekranda `play`, web ve mobilin oteki
+       oynaticilari `playing`; ve webin haftalik oynaticisi tek basina
+       `saving` (oteki uc yuzey `submitting`). Surtunme gorunmuyor ama
+       maliyeti gercek: platformlar arasi olculer asama adini OKUYOR ve bu
+       turda biri tam bu yuzden kirildi (106, sinav asamalari Turkceden
+       Ingilizceye gecince). Olcu artik iki adin bir arada olmasini
+       yasakliyor. */
+    const asama = (yol) => {
+      const g = sil(read(yol));
+      const m = g.match(/type (?:Phase|Status) = ([^;]+);/) ?? g.match(/useState<((?:"\w+"\s*\|\s*)+"\w+")>/);
+      return m ? [...new Set([...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]))] : [];
+    };
+    const tumAsamalar = new Set();
+    for (const [, w, m] of OYNATICI) for (const y of [w, m]) for (const a of asama(y)) tumAsamalar.add(a);
+    for (const y of ["src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx", "src/components/placement/placement-test.tsx"]) {
+      for (const a of asama(y)) tumAsamalar.add(a);
+    }
+    sameList(
+      "ayni durumun tek adi",
+      [
+        "play+playing=" + (tumAsamalar.has("play") && tumAsamalar.has("playing") ? "IKISI BIRDEN" : "tek"),
+        "saving=" + (tumAsamalar.has("saving") ? "VAR" : "yok"),
+      ],
+      ["play+playing=tek", "saving=yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    sameList(
+      "anlamsiz tekrar sunulmuyor",
+      [
+        /* "Henuz hazir degil": yeniden denemek ayni cevabi getirir. */
+        "web boss bos dali=" + (/status === "empty"/.test(bossWeb) && !/try_again/.test(dalGovdesi(bossWeb, bossWeb.indexOf('status === "empty"'))) ? "yok" : "VAR"),
+        "mobil boss veri varsa=" + (/\{data \? null : \(/.test(bossMob) ? "yok" : "VAR"),
+        /* Cevrimdisi KAYIT dali: tekrar denemek kagidi bastan acar ve kaydi
+           cope atardi (gerekce `exam-player` icinde yazili). */
+        "web sinav cevrimdisi=" + (/\{offline \? null : \(/.test(sinavWeb) ? "yok" : "VAR"),
+      ],
+      ["web boss bos dali=yok", "mobil boss veri varsa=yok", "web sinav cevrimdisi=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 283. HATIRLATMA SAATLERI TEK KAYNAKTAN --------------------------
    *
    * Ayni liste UC yerde ayri yaziliydi ve ucu ayni DEGILDI:

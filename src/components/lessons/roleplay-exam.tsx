@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { AiNotice } from "@/components/ai-notice";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Lesson } from "@/lib/lessons/types";
 import { parseReply } from "@/lib/chat-format";
@@ -136,6 +136,30 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
   }
 
   const scored = useRef(false);
+
+  /*
+   * SINAVI BASTAN KURAN TEK YER.
+   *
+   * `deadline` REF'I DE SIFIRLANMALI. Sayac `left`ten degil `deadline.current`
+   * tan okuyor (`if (!deadline.current)` bir kez kuruyor); yalnizca
+   * `setLeft(EXAM_SECONDS)` yazmak ilk tik'te ezilir ve sinav ANINDA biter.
+   * Android sonuc ekranindaki "Tekrar dene" tam bu yuzden bozuktu: dokunan
+   * kullanici sifir turluk, aninda bitmis bir sinav aliyordu. Web ayni yerde
+   * `location.reload()` cagiriyordu - bozuk degil ama sayfanin tamamini
+   * yeniden yukleyen bir cekic. Iki yuzey de artik ayni sifirlamayi kullaniyor
+   * (hata dali ve sonuc ekrani).
+   */
+  const restart = useCallback(() => {
+    scored.current = false;
+    deadline.current = 0;
+    setResult(null);
+    setFailure(null);
+    setTurns([]);
+    setDraft("");
+    setLeft(EXAM_SECONDS);
+    setPhase("intro");
+  }, []);
+
   async function score(all: Turn[]) {
     if (scored.current) return;
     scored.current = true;
@@ -244,6 +268,17 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             dalinda maskot vardi (`think`). */}
         <Mascot mood="sad" size={80} className="mx-auto" />
         <p className="mt-1 text-body">{t("rpexam.service_down")}</p>
+        {/* YERINDE TEKRAR DENEME. Bu dala yalniz muhatap servisi ILK iki turda
+            dusunce giriliyor (`send`: `n >= 2` ise konusma puanlaniyor), yani
+            olculmus hicbir sey YOK - sinav bastan baslayabilir. Tek cikis
+            "konusmaya don"du ve o, gecici bir ag kesintisinde girisi
+            kaybettiriyordu. Ayni gerekce sinav oynaticisinda yazili
+            ("haftanin kagidi gecici bir ag kesintisiyle harcanabiliyordu") ve
+            ayni duzeltme Androidde de yapildi - iki taraf ayni kusuru
+            tasidigi icin karsilastirma geciyordu. */}
+        <button type="button" onClick={restart} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
+          {t("common.try_again")}
+        </button>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-body">
           {t("lessonp.back_to_conversation")}
         </Link>
@@ -304,7 +339,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           </p>
         ) : null}
         <div className="mt-4 flex gap-2">
-          <button type="button" onClick={() => location.reload()} className="btn btn-ghost flex-1 py-3 text-body">
+          <button type="button" onClick={restart} className="btn btn-ghost flex-1 py-3 text-body">
             {t("common.try_again")}
           </button>
           <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-body">

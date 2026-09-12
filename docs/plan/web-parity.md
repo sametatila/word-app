@@ -14575,3 +14575,121 @@ denendi ve gürültülü çıktı: 1798 anahtarın 140'ı "kaynakta yok" görün
 Böyle bir kapı ancak dinamik kurulumu tanıyan bir çözümlemeyle yazılabilir;
 şimdilik `i18n:check`in **web** tarafındaki ölü anahtar denetimi tek yönlü
 kalıyor ve bu burada yazılı.
+
+## §11.409 — İki sınav yüzeyi yükleme hatasında yeniden denemeyi sunmuyordu
+
+Veri çeken ekranların neredeyse hepsi hata dalında "Tekrar dene" sunuyor.
+Ölçüldüğünde **iki** yüzeyin sunmadığı çıktı, ve ikisi de **iki platformda
+aynı şekilde** eksikti — yani karşılaştırma geçiyordu:
+
+- **Modül sınavı** (`boss`): tek düğme "Geri dön". Kazanılmış bir yüzey
+  (dersler bitmeden açılmıyor); geçici bir ağ kesintisinde kullanıcıyı
+  listeye geri gönderip yeniden girmeye zorlamak o girişi kaybettirir.
+- **Rol yapma sınavı** (`roleplay-exam`): tek çıkış "konuşmaya dön". Bu dala
+  yalnız muhatap servisi **ilk iki turda** düşünce giriliyor (sonrasında
+  konuşma puanlanıyor), yani ölçülmüş hiçbir şey yok — sınav baştan
+  başlayabilir.
+
+Gerekçe zaten depoda yazılıydı, yalnız bir yerde: sınav oynatıcısının
+"haftanın kâğıdı geçici bir ağ kesintisiyle harcanabiliyordu" notu. Aynı
+cümle bu iki yüzey için de geçerliydi. İkisinde de yükleme ayrı bir işleve
+çıkarıldı (`load`) ki hata dalından yeniden çağrılabilsin.
+
+### Aşama adları web'in sözlüğüne geçti
+
+`ExamScreen`in beş aşaması **Türkçe** yazılıydı:
+
+```
+useState<"yukleniyor" | "kapak" | "bolumGiris" | "bolum" | "sonuc">
+```
+
+Depo kuralı tanımlayıcıların İngilizce olmasını istiyor (Türkçe yalnız arayüz
+metni ve yorumda), web karşılığı (`exam-player` `Phase`) ise baştan beri
+`"cover" | "loading" | "intro" | "run" | "result"`. İki uygulamanın **aynı
+ekranı aynı durumları iki ayrı sözlükle** anıyordu. Yeniden adlandırma §106'yı
+(bölüm arası kartı) anında kırmızıya çevirdi — o ölçü aşama adını elle
+yazıyordu; ölçü de güncellendi.
+
+### §284
+
+Üç ölçü: yedi oynatıcı çiftinin hata dallarında tekrar denemenin oranı, **hiç
+eksik kalmadığı** (mutlak — bu kusur tam da "ikisi de eksik" olduğu için
+gizlenmişti), ve **anlamsız tekrarın sunulmadığı** (negatif ölçü: boss'un
+"henüz hazır değil" dalı ve sınavın çevrimdışı **kayıt** dalı — ikisinde de
+yeniden denemek ya aynı cevabı getirir ya da kaydı çöpe atar).
+
+Ölçünün kendi iki kusuru da bu turda çıktı ve ikisi de kayıtlı sınıflardan:
+
+1. **Pencere değil düğüm.** İlk yazım 1400 karakterlik pencere okuyordu ve
+   `exam-player`ın dalını "tekrar yok" sandı — düğme 1900 karakter sonra
+   geliyordu. Ölçü artık dalın **dengeli parantezli** gövdesini okuyor.
+2. **Çıktıda olmayan olguyu aramak.** Yalnız `common.try_again` etiketine
+   bakıyordu ve `session-player`ın `<ErrorCard onRetry>`unu kaçırdı; ayrıca
+   yalnız `phase === "error"` biçimini tanıyordu, mobil `ExamScreen`in ayrı
+   hata metni durumunu (`if (err)`) görmedi ve o dosya için **0/0** verdi —
+   yani hiçbir şey ölçmeyen bir kapı, çünkü 0/0 her zaman geçer. Üç biçimin
+   üçü de tanınıyor; on dört dalın on dördü sayılıyor.
+
+### Aynı durumun tek adı
+
+Dokuz oynatıcı çiftinin aşama kümeleri karşılaştırıldı. Kalan farkların çoğu
+meşru (mobilde `auth`, `no_words`, `denied` gibi platforma özel durumlar) ama
+ikisi düpedüz isim sürtünmesiydi:
+
+- mobil üç ekranda `play`, web ve mobilin öteki oynatıcıları (`BossScreen`,
+  `ChallengeScreen`) `playing` — aynı durumun iki adı, **aynı uygulamanın
+  içinde**;
+- webin haftalık oynatıcısı tek başına `saving`, öteki üç yüzey
+  `submitting` — yani dördüncü bir ad.
+
+Sürtünme kullanıcıya görünmüyor ama maliyeti gerçek: platformlar arası ölçüler
+aşama adını **okuyor** ve bu turda biri tam bu yüzden kırıldı. Dördü de tek
+ada indirildi (`playing`, `submitting`) ve ölçü ikisinin bir arada olmasını
+yasaklıyor.
+
+## §11.410 — Rol yapma sınavının "Tekrar dene"si Android'de hiç çalışmıyordu
+
+§11.409'un tekrar düğmesi eklenirken **aynı ekranda duran** bir kusur çıktı ve
+o kusur kullanıcıya görünüyordu.
+
+Sayaç `left` **değerinden** değil `deadline` **ref'inden** okuyor — efekt bir
+kez kuruyor, sonra her tik farkı oradan hesaplıyor:
+
+```ts
+if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
+const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
+```
+
+Bu kalıp §271'in dersi: arka plana atılan sınav süresini uzatamasın diye
+**duvar saati** kullanılıyor. Ama Android'in sonuç ekranındaki "Tekrar dene"
+şunu yazıyordu:
+
+```ts
+scored.current = false; setResult(null); setGateNote(null);
+setTurns([]); setLeft(EXAM_SECONDS); setPhase("intro");
+//                    ^ deadline.current SIFIRLANMIYOR
+```
+
+`deadline.current` geçmişte kalmış bir an olduğu için ilk tik `left`i hemen
+**0** yapıyor, "süre bitti" efekti koşuyor ve sınav **anında, sıfır turla**
+bitiyordu: düğme çalışıyor gibi duruyor, sonuç ekranı geri geliyor ve
+kullanıcı hiçbir şey yapamıyor. Üç dakikalık ölçümü tekrar denemenin **hiçbir
+yolu yoktu**.
+
+Webde aynı düğme `location.reload()` çağırıyordu — bozuk değil (yeniden monte
+olmak ref'i sıfırlıyor) ama sayfanın tamamını yeniden yükleyen bir çekiç, ve
+iki platform aynı işi iki ayrı yolla yapıyordu.
+
+İki tarafta da tek bir `restart()` var; dört çağıranın dördü (hata dalı +
+sonuç ekranı, iki platform) onu kullanıyor.
+
+### §285
+
+Üç ölçü: `restart`ın iki platformda da var olduğu ve **`deadline.current`ı
+sıfırladığı**, süreyi `restart` **dışında** sıfırlayan kimsenin kalmadığı
+(kusur tam öyle doğdu: yerinde yazılmış bir sıfırlama, ref'i unutarak) ve
+webin artık sayfayı yeniden yüklemediği, ve dört tekrar düğmesinin dördünün
+de aynı sıfırlamayı çağırdığı.
+
+Üçü de enjeksiyonla doğrulandı — `deadline.current = 0` satırı kaldırıldığında
+ölçü gerçek kusuru yeniden gördü.

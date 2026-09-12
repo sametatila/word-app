@@ -82,21 +82,31 @@ export function BossScreen() {
      çözümlemesinde okunuyor; `GameScreen` baştan beri tur başına ölçüyor. */
   const roundStart = useRef(0);
 
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const p = await api<BossPayload>(`/api/boss?level=${level}&module=${moduleIndex}`);
-        if (!alive) return;
-        setData(p);
-        setBest(p.meta.bestLeft);
-        setPhase(p.rounds.length ? "ready" : "error");
-      } catch {
-        if (alive) setPhase("error");
-      }
-    })();
-    return () => { alive = false; };
+  /*
+   * YÜKLEME AYRI BİR İŞLEV: hata dalından YENİDEN çağrılabilsin.
+   *
+   * Önce yalnız etkinin içindeydi ve hata ekranında tek düğme "Geri dön"dü.
+   * Modül sınavı kazanılmış bir yüzey (dersler bitmeden açılmıyor); geçici bir
+   * ağ kesintisinde kullanıcıyı listeye geri gönderip yeniden girmeye zorlamak
+   * o girişi kaybettirir. Uygulamadaki her veri ekranı "Tekrar dene" sunuyor,
+   * yalnız burası sunmuyordu — webde de sunmuyordu, yani iki taraf aynı kusuru
+   * taşıdığı için karşılaştırma geçiyordu.
+   */
+  const load = useCallback(async () => {
+    setPhase("loading");
+    try {
+      const p = await api<BossPayload>(`/api/boss?level=${level}&module=${moduleIndex}`);
+      setData(p);
+      setBest(p.meta.bestLeft);
+      setPhase(p.rounds.length ? "ready" : "error");
+    } catch {
+      setPhase("error");
+    }
   }, [level, moduleIndex]);
+
+  useEffect(() => {
+    void load();
+  }, [load]);
 
   /** Biriken cevaplar SRS'e — tur bitince bir kez. */
   const flush = useCallback(async () => {
@@ -225,6 +235,13 @@ export function BossScreen() {
       <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center", gap: spacing.md }]}>
         <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t(data ? "boss.not_ready" : "exam.could_not_load")}</Text>
         {data ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("boss.not_ready_sub")}</Text> : null}
+        {/* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
+            dalında yeniden denemek aynı cevabı getirir (dersler bitmemiş). */}
+        {data ? null : (
+          <PressableScale onPress={() => void load()} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+            <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
+          </PressableScale>
+        )}
         <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
           <Text variant="bodyStrong" color={colors.text}>{t("common.go_back")}</Text>
         </PressableScale>
