@@ -9,6 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
+import { useBackConfirm } from "../lib/useBackConfirm";
 import { speakAndWaitVoiced } from "../lib/tts";
 import { voicesFor } from "../lib/voices";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -146,6 +147,20 @@ export function MockExamScreen() {
   const [fail, setFail] = useState<FailReason | null>(null);
   const [reveal, setReveal] = useState<Record<string, boolean>>({});
   const [quit, setQuit] = useState(false);
+  /*
+    DONANIM GERI TUSU DA ONAYA BAGLI. Basliktaki kapatma dugmesi "sinavi
+    birak?" diye soruyor ve onaylanirsa cevaplari hem yerele hem sunucuya
+    YAZIP cikiyor; geri tusu ise hicbir sey sormadan, hicbir sey yazmadan
+    ekrani kapatiyordu. Ayni ekranda iki farkli cikis davranisi vardi ve
+    kullanicinin dogal hareketi olan geri tusu, korunmayan olandi. Oteki uc
+    sinav/tur ekrani zaten bu kancayi kullaniyor (`GameScreen`, `ExamScreen`,
+    `PlacementScreen`, `WalkModeScreen`).
+
+    Kayip iki saniyeyle sinirli (`saveLocalRun` her degisiklikten iki saniye
+    sonra calisiyor) ama sorun kayip degil: SURELI bir sinavdan kazara
+    cikmak. Web karsiligi `useLeaveGuard` ile ayni yolu kapatiyor.
+  */
+  const back = useBackConfirm(phase === "gorev");
   const [autoNext, setAutoNext] = useState(false);
   const scroller = useRef<React.ComponentRef<typeof ScrollView> | null>(null);
   const alive = useRef(true);
@@ -442,18 +457,19 @@ export function MockExamScreen() {
       ) : null}
 
       <ConfirmDialog
-        visible={quit}
+        visible={quit || back.visible}
         title={t("mockexam.quit_title")}
         message={`${t("mockexam.quit_body_saved")} ${blanks ? t("mockexam.unanswered", { n: blanks }) : ""}`.trim()}
         confirmLabel={t("mockexam.quit_ok")}
         destructive
         onConfirm={() => {
           setQuit(false);
+          back.cancel();
           void saveLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
           if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
           nav.goBack();
         }}
-        onCancel={() => setQuit(false)}
+        onCancel={() => { setQuit(false); back.cancel(); }}
       />
     </View>
   );
