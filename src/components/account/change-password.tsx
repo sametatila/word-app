@@ -82,6 +82,7 @@ export function ChangePassword() {
               type="password"
               required
               placeholder={t("changepw.current")}
+              aria-label={t("changepw.current")}
               autoComplete="current-password"
               className={authInputClass}
             />
@@ -92,8 +93,11 @@ export function ChangePassword() {
               required
               minLength={MIN_PASSWORD_LENGTH}
               placeholder={t("changepw.new")}
+              aria-label={t("changepw.new")}
               autoComplete="new-password"
               className={authInputClass}
+              aria-describedby={next ? "changepw-hint" : undefined}
+              aria-invalid={next && problem ? true : undefined}
             />
             <input
               value={confirm}
@@ -102,11 +106,12 @@ export function ChangePassword() {
               required
               minLength={MIN_PASSWORD_LENGTH}
               placeholder={t("changepw.again")}
+              aria-label={t("changepw.again")}
               autoComplete="new-password"
               className={authInputClass}
             />
             {next ? (
-              <div aria-live="polite">
+              <div id="changepw-hint" aria-live="polite">
                 <AuthNotice tone={problem ? "error" : "success"}>
                   {problem
                     ? t(

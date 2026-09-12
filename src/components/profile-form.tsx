@@ -160,11 +160,14 @@ export function ProfileForm({
         /* Ad alanı Android ile aynı: kelime başlarını büyütüyor (bkz.
            `screens/SettingsScreen`). */
         autoCapitalize="words"
+        aria-label={t("settings.sec_name")}
+        aria-invalid={nameError ? true : undefined}
+        aria-describedby={nameError ? "profile-name-error" : undefined}
         className="option w-full px-4 py-3 text-body outline-none focus:border-[color:var(--color-brand)]"
         />
       </label>
       {nameError ? (
-        <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
+        <p id="profile-name-error" role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
       ) : null}
       {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
         eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin

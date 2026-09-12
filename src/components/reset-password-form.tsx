@@ -87,9 +87,12 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             required
             minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("changepw.new")}
+            aria-label={t("changepw.new")}
             autoComplete="new-password"
             autoFocus
             className={authInputClass}
+            aria-describedby={password ? "reset-password-hint" : undefined}
+            aria-invalid={password && passwordProblem ? true : undefined}
           />
           <input
             value={confirm}
@@ -98,6 +101,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             required
             minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("changepw.again")}
+            aria-label={t("changepw.again")}
             autoComplete="new-password"
             className={authInputClass}
           />

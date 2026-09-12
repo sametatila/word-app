@@ -242,6 +242,11 @@ export function AuthForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={t("auth.your_name_optional")}
+            /* ADI YERTUTUCUDAN GELMIYOR. Yertutucu bir ad degil: yazmaya
+               baslayinca kayboluyor ve bazi ekran okuyuculari onu hic
+               okumuyor - alanin ne istedigi yalnizca kutu bosken belliydi.
+               Yeni anahtar yok, ad yertutucunun kendi anahtari. */
+            aria-label={t("auth.your_name_optional")}
             /* Sınır profil formuyla aynı KAYNAKTAN: uç da onu okuyor. */
             maxLength={PROFILE_LIMITS.displayNameMax}
             /* KLAVYE DAVRANIŞI ANDROID İLE AYNI. Telefonda web de kullanılıyor
@@ -260,6 +265,7 @@ export function AuthForm({
           type="email"
           required
           placeholder={t("auth.email")}
+          aria-label={t("auth.email")}
           autoCapitalize="none"
           spellCheck={false}
           autoComplete="email"
@@ -272,9 +278,14 @@ export function AuthForm({
           required
           minLength={MIN_PASSWORD_LENGTH}
           placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
+          aria-label={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
           autoComplete={mode === "signin" ? "current-password" : "new-password"}
           className={authInputClass}
           aria-describedby={mode === "signup" && password ? "password-hint" : undefined}
+          /* GECERSIZLIK ALANIN KENDISINDE. Kural ihlali yalnizca altta bir
+             kutuda yaziyordu; alan "gecerli" gorunuyordu ve ekran okuyucu
+             alana geri donen kullaniciya sorunun surdugunu soylemiyordu. */
+          aria-invalid={mode === "signup" && password && passwordProblem ? true : undefined}
         />
         {/* Canlı geri bildirim YALNIZ kayıtta: girişte parolayı yargılamak
             anlamsız (kural değişmiş olabilir ve kullanıcı zaten var olan bir
