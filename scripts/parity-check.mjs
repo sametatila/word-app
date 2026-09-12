@@ -4875,7 +4875,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const m = src.match(/left < (\d+)/);
     return m ? "esik=" + m[1] : "uyari yok";
   };
-  sameList("sinav sayaci", [kaynak(mobSinav), uyari(mobSinav)], [kaynak(webSinav), uyari(webSinav)]);
+  /* IKI TARAF DA SENTINEL VEREBILIYORDU. `kaynak()` kaliba uymayinca
+     "sayici", `uyari()` esigi bulamayinca "uyari yok" donuyor; iki taraf
+     birden okunamaz hale gelirse (ortak bir bicimlendirme ya da zamanlayici
+     yeniden yazimi) ikisi de ayni sentineli verir ve kapi YESIL kalir -
+     hicbir sey olcmeden. Olcu artik MUTLAK: bugunku dogru cevap ikisinde de
+     "duvar saati" ve esik 120, ve o iki deger bekleniyor. Tasarim bilerek
+     degisirse bu satir da degisir; sessizce bosalamaz. */
+  sameList(
+    "sinav sayaci",
+    ["mobil=" + kaynak(mobSinav) + "/" + uyari(mobSinav), "web=" + kaynak(webSinav) + "/" + uyari(webSinav)],
+    ["mobil=duvar saati/esik=120", "web=duvar saati/esik=120"],
+    "bulunan",
+    "beklenen",
+  );
 
   /*
    * Deneme kagidinda gorev butcesi ve kalan saniyenin kaydi; kalip birebir
@@ -9211,13 +9224,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* XP rozetinin glifi profil ekranlarinda da ayni. */
+    /* XP rozetinin glifi profil ekranlarinda da ayni.
+     *
+     * IKI TARAF DA "YOK" VEREBILIYORDU: iki desen de uzun ve BICIME duyarli
+     * (prop sirasi, satir kaymasi). Ortak bir bicimlendirme gecisi ikisini
+     * birden bozsa iki taraf da "YOK" der, esit gorunur ve kapi yesil kalir.
+     * Bu yuzden glif ADI da bekleniyor: bugun `BoltIcon`. Glif bilerek
+     * degisirse bu satir da degisir. */
+    const xpGlif = (yol, desen) => (sil(read(yol)).match(desen) ?? [])[1] ?? "YOK";
     sameList(
       "profil XP rozetinin glifi",
-      ["mobil=" + ((sil(read("mobile/src/screens/ProfileScreen.tsx")).match(/<(\w+Icon) color=\{colors\.primaryText\} size=\{16\} \/><Text variant="bodyStrong" color=\{colors\.primaryText\}>\{xpLabel\}/) ?? [])[1] ?? "YOK")],
-      ["mobil=" + ((sil(read("src/components/profile/profile-view.tsx")).match(/<(\w+Icon) size=\{16\} \/> \{formatNumber\(stats\.xp, lang\)\} XP/) ?? [])[1] ?? "YOK")],
-      "mobil",
-      "web",
+      [
+        "mobil=" + xpGlif("mobile/src/screens/ProfileScreen.tsx", /<(\w+Icon) color=\{colors\.primaryText\} size=\{16\} \/><Text variant="bodyStrong" color=\{colors\.primaryText\}>\{xpLabel\}/),
+        "web=" + xpGlif("src/components/profile/profile-view.tsx", /<(\w+Icon) size=\{16\} \/> \{formatNumber\(stats\.xp, lang\)\} XP/),
+      ],
+      ["mobil=BoltIcon", "web=BoltIcon"],
+      "bulunan",
+      "beklenen",
     );
 
     /* IKON ENVANTERI: webde cizilen ama mobilde OLMAYAN bir ikon, ayni

@@ -16422,3 +16422,34 @@ bölen ifadesini kaldırmak (`bolen=YOK`).
 Toplam beş enjeksiyon doğrulandı: bir ağırlığı değiştirmek, böleni
 değiştirmek, asgari sözcüğü değiştirmek, terim düzenini bozmak, bölen ifadesini
 kaldırmak.
+
+## §11.451 — Kapıların kendi denetimi: iki tarafın birlikte boşalması
+
+Bu tur soruyu kapılara çevirdim: **hangi ölçü, okuduğu şey kaybolduğunda da
+yeşil kalır?**
+
+424 karşılaştırma çağrısının 412'sinde beklenen taraf **değişmez bir liste**
+(mutlak ölçü) — orada böyle bir delik olamaz. Kalan 12'sinde beklenen taraf da
+hesaplanıyor ve ikisinde **her iki taraf aynı sentineli** verebiliyordu:
+
+| kapı | sentinel | ne zaman |
+|---|---|---|
+| `sinav sayaci` | `"sayici"` / `"uyari yok"` | sayaç kalıbı iki tarafta birden yeniden yazılırsa |
+| `profil XP rozetinin glifi` | `"YOK"` | iki uzun, biçime duyarlı desen birden bozulursa (ortak biçimlendirme geçişi) |
+
+İkisi de "eşit mi" diye soruyordu; iki taraf birlikte okunamaz hâle gelince
+cevap "evet" oluyor ve kapı hiçbir şey ölçmeden yeşil kalıyordu.
+
+İkisi de **mutlak** ölçüye çevrildi: bugünkü doğru cevap yazılı (sayaç "duvar
+saati" ve eşik 120; glif `BoltIcon`). Tasarım bilerek değişirse o satır da
+değişir — ama sessizce boşalamaz.
+
+Enjeksiyonların ikisi tam bu vakayı kuruyor: **iki tarafta birden** kalıbı
+bozmak. Eski kapı ikisinde de yeşil kalıyordu, yenisi kırmızı veriyor. Üçüncü
+enjeksiyon ilişkisel ölçünün de sağlam kaldığını gösteriyor (yalnız mobilde
+eşiği değiştirmek).
+
+Yöntem notu: ilk denemem `read()`i boş dizge döndürecek şekilde yamayıp **bütün**
+kapıları birden ölçmekti; betik o girdiyle çöküyor (bir dosyanın yok olması
+gürültülü bir hata — istenen davranış), yani toplu vakumluk testi o yolla
+yapılamıyor. Ölçü bu yüzden çağrıların yapısı üzerinden yapıldı.
