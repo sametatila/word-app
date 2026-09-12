@@ -7469,6 +7469,84 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 266. TELEFONDA YAKINLASTIRMA ----------------------------------
+   *
+   * Iki kusur, ayni satirdan cikiyor.
+   *
+   * BIR: `maximum-scale=1` yakinlastirmayi HERKESE kapatiyordu. Az goren bir
+   * kullanici sayfayi parmakla buyutemiyor (WCAG 1.4.4). Android uygulamasi
+   * bunun tersini yapiyor - sistem yazi olcegini OKUYOR ve 1.5 katina kadar
+   * buyutuyor (`ui/Text` `maxFontSizeMultiplier`). Yani ayni kullanici
+   * telefonda uygulamada buyutebiliyor, tarayicida buyutemiyordu.
+   *
+   * IKI: kilit zaten ISE YARAMIYORDU. iOS Safari `maximum-scale`i iOS 10'dan
+   * beri yok sayiyor; odak yakinlastirmasini durduran sey alanin yazisinin
+   * 16 pikselin ALTINA inmemesi. Uygulamanin govde puntosu 15 ve butun metin
+   * alanlari onu kullaniyordu - yani iPhone'da her alana dokunusta sayfa
+   * ziplayip buyuyordu: giris, arama, promo kodu, sinav cevabi, yazma
+   * gorevi.
+   *
+   * Cozum alanin kendisinde ve YALNIZ KABA ISARETCIDE: masaustunde olcek
+   * 15'te kaliyor.
+   *
+   * KURALIN KATMANSIZ OLMASI OLCULUYOR. Tailwind'in `text-body` gibi
+   * yardimci siniflari `@layer utilities` icinde ve katmanli stiller
+   * katmansiz olanlara YENILIR; blok bir `@layer`in icine konsaydi her
+   * alandaki `text-body` onu ezer, kural hicbir sey olcmeyen bir sus
+   * olurdu. */
+  {
+    const lay = read("src/app/layout.tsx");
+    const css = read("src/app/globals.css");
+
+    /* Yakinlastirma kilidi kalkti mi. */
+    const kilit = [];
+    if (/maximumScale\s*:/.test(sil(lay))) kilit.push("maximumScale");
+    if (/userScalable\s*:\s*false/.test(sil(lay))) kilit.push("userScalable");
+    if (/maximum-scale|user-scalable=no/.test(sil(lay))) kilit.push("meta");
+    sameList(
+      "yakinlastirma kilidi",
+      kilit.length ? kilit : ["yok"],
+      ["yok"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Odak yakinlastirmasini durduran kural: var mi, 16px mi, KATMANSIZ mi. */
+    const i = css.indexOf("@media (pointer: coarse)");
+    let derinlik = null;
+    if (i >= 0) {
+      derinlik = 0;
+      for (let j = 0; j < i; j++) {
+        if (css[j] === "{") derinlik++;
+        else if (css[j] === "}") derinlik--;
+      }
+    }
+    const blok = i >= 0 ? css.slice(i, i + 400) : "";
+    sameList(
+      "odak yakinlastirmasi kurali",
+      [
+        "kural=" + (i >= 0 ? "var" : "YOK"),
+        "punto=" + (/font-size:\s*(1rem|16px)/.test(blok) ? "16px" : "KUCUK"),
+        "katman=" + (derinlik === 0 ? "katmansiz" : "KATMANLI"),
+        "alanlar=" + (/input[^{]*textarea/s.test(blok) ? "hepsi" : "EKSIK"),
+      ],
+      ["kural=var", "punto=16px", "katman=katmansiz", "alanlar=hepsi"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Android tarafi: sistem yazi olcegi okunuyor. */
+    const txt = sil(read("mobile/src/ui/Text.tsx"));
+    const kat = (txt.match(/maxFontSizeMultiplier = ([\d.]+)/) ?? [])[1] ?? "yok";
+    sameList(
+      "sistem yazi olcegi okunuyor",
+      ["mobil=" + kat],
+      ["mobil=1.5"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 265. ENTER TUSUNUN ADI VE ISI ---------------------------------
    *
    * Android on alti metin alaninda `returnKeyType` diyor: klavyenin
