@@ -13792,3 +13792,50 @@ eski damgadan okumaya devam eder.
 
 Üç enjeksiyon denendi (web'in sayıcıya dönmesi, mobilde çıplak bir `setLeft`,
 kapının kaybolması), üçü de yakalandı.
+
+## §11.393 — Dinleme bütçesi yarım kalan koşuda sıfırlanıyordu
+
+§11.392'nin kardeşi ve aynı sınıf: **sınavın kısıtı yarım kalan koşuda
+korunmalı**.
+
+Dinleme görevinin kâğıtta yazılı bir oynatma bütçesi var (`st.plays`, çoğu
+maddede bir ya da iki) ve iki taraf da onu **doğru uyguluyordu** — ama bütçe
+yalnız **ekranın belleğinde** tutuluyordu. Öğrenci bütçeyi tüketip uygulamayı
+kapatıp yeniden açınca (ya da sekmeyi kapatıp dönünce) bütçe **sıfırdan**
+başlıyordu: sınırsız dinleme, hem web'de hem mobilde.
+
+`taskIx` ve `secondsLeft` aynı sebeple zaten kaydediliyordu; bu üçüncüsü
+geride kalmıştı. Artık her iki istemci de `plays`i yerel koşuya **ve**
+sunucuya yazıyor, iki devam yolunda da (sunucudan ve çevrimdışı yerel
+kayıttan) geri yüklüyor.
+
+Sunucu tarafı: `mock_exam_attempts.plays` sütunu (`0049_mock_attempt_plays`),
+uçta **tavanlı** temizleyici — istemciden gelen nesne sınırsız büyüyemez, sayı
+olmayan değer yazılamaz, anahtar sayısı ve değer sınırlı.
+
+> **Samet:** bu turda bir göçürme var (`0049`). Deploy'dan **önce**
+> uygulanmalı — `0036` ile aynı kural.
+
+### Kapı iki kez yanlış ölçtü, ikisini de enjeksiyon gösterdi
+
+1. **Varlık değil kapsam.** Geri yükleme ölçüsü `setPlays(d.attempt.plays)`
+   *ya da* `setPlays(local.plays)` görünce yeşil yanıyordu. Sunucu yolunu
+   silen enjeksiyon kaçtı — yerel yol duruyordu. İki yolun **ikisi de**
+   gerekli: biri sunucudan devam, öteki çevrimdışı kayıttan.
+2. **Oran, sayı değil.** "En az üç yerde yazılıyor" eşiği bir kayıt yerinin
+   eksik kalmasını gizliyordu — ve gizlediği şey **gerçekti**: web'in
+   **çıkış onayındaki** iki kayıt yeri `plays` taşımıyordu. Ölçü artık
+   `secondsLeft` yazan **her** yükün `plays` de taşıdığını soruyor (6/6).
+
+İkinci düzeltme, kapının kendisinin bir kusuru bulmasıydı: ölçüyü orana
+çevirince kod değişikliği gerekti, tersi değil.
+
+### §270
+
+Üç ölçü, hepsi mutlak: iki istemcide oynatma bütçesinin yazılıp geri
+yüklendiği (oranla), sunucunun dört parçası (şema · göçürme · uç yazıyor · uç
+döndürüyor), ve uçtaki temizleyicinin tavanlı olduğu.
+
+Beş enjeksiyon denendi (web'de geri yüklemenin kalkması, göçürmenin
+kaybolması, tavanın kalkması, sunucu yolunun silinmesi, bir kayıt yerinin
+`plays`i bırakması), beşi de yakalandı.
