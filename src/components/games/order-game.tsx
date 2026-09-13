@@ -182,8 +182,19 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       }
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6">
-        {/* Cevap alanı — yuva sayısı sabit, konumlar oynamaz */}
+        {/* Cevap alanı — yuva sayısı sabit, konumlar oynamaz.
+
+            SÜRÜKLENEN KELİME BURAYA BIRAKILIYOR. Tıklama yerinde duruyor;
+            sürükleme onun yerine geçmiyor, yanına ekleniyor. */}
         <div
+          onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
+          onDrop={(e) => {
+            e.preventDefault();
+            if (status !== "playing") return;
+            const id = Number(e.dataTransfer.getData("text/plain"));
+            const token = pool.find((t) => t.id === id && !usedIds.has(t.id));
+            if (token) add(token);
+          }}
           className={`flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 rounded-panel px-3 py-3 ${
             status === "wrong" ? "animate-shake" : ""
           }`}
@@ -223,18 +234,26 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
           {pool.map((token) => {
             const used = usedIds.has(token.id);
             return (
-              <motion.button
+              /* Yerli sürükleme SARMALAYICIDA: `motion.button`un kendi
+                 `onDragStart`ı framer-motion'un sürükleme API'si. */
+              <span
                 key={token.id}
-                type="button"
-                onClick={() => add(token)}
-                disabled={used || status !== "playing"}
-                whileTap={{ scale: 0.96 }}
-                animate={{ opacity: used ? 0.25 : 1 }}
-                transition={{ duration: 0.15 }}
-                className="option px-3 py-2 text-strong disabled:cursor-default"
+                draggable={!used && status === "playing"}
+                onDragStart={(e) => e.dataTransfer.setData("text/plain", String(token.id))}
+                className="inline-flex"
               >
-                {token.text}
-              </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={() => add(token)}
+                  disabled={used || status !== "playing"}
+                  whileTap={{ scale: 0.96 }}
+                  animate={{ opacity: used ? 0.25 : 1 }}
+                  transition={{ duration: 0.15 }}
+                  className="option px-3 py-2 text-strong disabled:cursor-default"
+                >
+                  {token.text}
+                </motion.button>
+              </span>
             );
           })}
         </div>

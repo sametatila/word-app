@@ -189,8 +189,19 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
       }
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-7">
-        {/* Cevap yuvaları — sayısı ve konumu sabit */}
+        {/* Cevap yuvaları — sayısı ve konumu sabit.
+
+            SÜRÜKLENEN HARF BURAYA BIRAKILIYOR. Dokunma/tıklama yerinde
+            duruyor; sürükleme onun yerine geçmiyor, yanına ekleniyor. */}
         <div
+          onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
+          onDrop={(e) => {
+            e.preventDefault();
+            if (status !== "playing") return;
+            const id = Number(e.dataTransfer.getData("text/plain"));
+            const tile = pool.find((t) => t.id === id && !usedIds.has(t.id));
+            if (tile) addLetter(tile);
+          }}
           className={`flex flex-wrap justify-center ${compact ? "gap-1" : "gap-1.5"} ${status === "wrong" ? "animate-shake" : ""}`}
         >
           {targetLetters.map((_, i) => {
@@ -220,18 +231,27 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
           {pool.map((tile) => {
             const used = usedIds.has(tile.id);
             return (
-              <motion.button
+              /* Yerli sürükleme SARMALAYICIDA: `motion.button`un kendi
+                 `onDragStart`ı framer-motion'un sürükleme API'si, tarayıcının
+                 DnD olayı değil. */
+              <span
                 key={tile.id}
-                type="button"
-                onClick={() => addLetter(tile)}
-                disabled={used || status !== "playing"}
-                whileTap={{ scale: 0.96 }}
-                animate={{ opacity: used ? 0.25 : 1 }}
-                transition={{ duration: 0.15 }}
-                className={`option flex items-center justify-center font-bold disabled:cursor-default ${tileSize}`}
+                draggable={!used && status === "playing"}
+                onDragStart={(e) => e.dataTransfer.setData("text/plain", String(tile.id))}
+                className="inline-flex"
               >
-                {tile.char}
-              </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={() => addLetter(tile)}
+                  disabled={used || status !== "playing"}
+                  whileTap={{ scale: 0.96 }}
+                  animate={{ opacity: used ? 0.25 : 1 }}
+                  transition={{ duration: 0.15 }}
+                  className={`option flex items-center justify-center font-bold disabled:cursor-default ${tileSize}`}
+                >
+                  {tile.char}
+                </motion.button>
+              </span>
             );
           })}
         </div>

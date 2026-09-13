@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { seededShuffle } from "../lib/shuffle";
 import { grammarLine, typLabel } from "./wordGrammar";
 import { firstExample } from "../data/example";
@@ -11,7 +11,7 @@ import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
-import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
+import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
@@ -1043,11 +1043,71 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
  * yalnız "S" derken dokunmanın ne yapacağı ayırt edilemiyordu - web ikisini
  * baştan beri ayırıyor (`scramble-game` / `order-game` aria etiketleri).
  */
-function Tile({ label, undoKey, onPress, dim, colors }: { label: string; undoKey?: "rounds.undo_letter" | "rounds.undo_word"; onPress?: () => void; dim?: boolean; colors: Palette }) {
+/**
+ * Harf/kelime döşemesi.
+ *
+ * HARCANMIŞ DÖŞEME BELLİ OLUYOR. Kullanılan döşemenin tek işareti zeminin
+ * `surface`ten `surface2`ye geçmesiydi — iki ton arasında bir tık fark var ve
+ * yazı tam güçte kalıyordu; öğrenci hangi harfi kullandığını ancak sayarak
+ * anlıyordu. Web aynı döşemeyi %25 opaklığa indiriyor (`scramble-game`);
+ * mobil de aynı değere geldi, üstüne kesik kenarlıkla "burası boşaldı"
+ * deniyor. Döşeme YERİNDEN KALKMIYOR: kalksaydı kalan harfler her dokunuşta
+ * yer değiştirir, parmağın altındaki hedef kaçardı.
+ *
+ * `drag`: döşeme cevap alanına SÜRÜKLENEBİLİR. Dokunma da duruyor — parmağını
+ * kaldırmadan taşımak isteyen taşıyor, dokunmak isteyen dokunuyor.
+ */
+function Tile({ label, undoKey, onPress, dim, colors, drag }: {
+  label: string;
+  undoKey?: "rounds.undo_letter" | "rounds.undo_word";
+  onPress?: () => void;
+  dim?: boolean;
+  colors: Palette;
+  /** Sürükleme desteği: bırakıldığı nokta çağırana bildiriliyor. */
+  drag?: { onDrop: (pageY: number) => void };
+}) {
+  const pan = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
+  const [tasiniyor, setTasiniyor] = useState(false);
+  const responder = useMemo(
+    () =>
+      PanResponder.create({
+        onMoveShouldSetPanResponder: (_e, g) => !dim && !!drag && (Math.abs(g.dx) > 6 || Math.abs(g.dy) > 6),
+        onPanResponderGrant: () => setTasiniyor(true),
+        onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], { useNativeDriver: false }),
+        onPanResponderRelease: (e) => {
+          setTasiniyor(false);
+          pan.setValue({ x: 0, y: 0 });
+          /* Bırakma noktası EKRAN koordinatı: hedef kutunun yerini çağıran
+             biliyor, döşeme bilmiyor. */
+          drag?.onDrop(e.nativeEvent.pageY);
+        },
+        onPanResponderTerminate: () => { setTasiniyor(false); pan.setValue({ x: 0, y: 0 }); },
+      }),
+    [dim, drag, pan],
+  );
   return (
-    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: spacing.md, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border }}>
-      <Text variant="bodyStrong" color={colors.text}>{label}</Text>
-    </PressableScale>
+    <Animated.View
+      {...(drag && !dim ? responder.panHandlers : {})}
+      style={{ transform: pan.getTranslateTransform(), zIndex: tasiniyor ? 20 : 0, opacity: dim ? 0.25 : 1 }}
+    >
+      <PressableScale
+        onPress={onPress}
+        disabled={dim}
+        accessibilityLabel={undoKey ? tx(undoKey, undoKey === "rounds.undo_letter" ? { char: label } : { word: label }) : label}
+        accessibilityState={{ disabled: !!dim }}
+        style={{
+          paddingHorizontal: 14,
+          paddingVertical: spacing.md,
+          borderRadius: radii.md,
+          backgroundColor: dim ? colors.surface2 : colors.surface,
+          borderWidth: 1.5,
+          borderStyle: dim ? "dashed" : "solid",
+          borderColor: dim ? colors.hairline : colors.border,
+        }}
+      >
+        <Text variant="bodyStrong" color={dim ? colors.textFaint : colors.text}>{label}</Text>
+      </PressableScale>
+    </Animated.View>
   );
 }
 
@@ -1097,6 +1157,29 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
   );
 }
 
+/**
+ * Cevap kutusunun EKRANDAKİ yeri — sürüklenen döşeme nereye bırakıldı?
+ *
+ * Kutu kaydırma alanının içinde ve konumu kaydırmayla değişiyor, o yüzden
+ * ölçüm bırakma anında yapılıyor; bir kez ölçüp saklamak yanlış cevap verirdi.
+ */
+function useDropZone() {
+  const ref = useRef<React.ComponentRef<typeof View>>(null);
+  const kutu = useRef<{ top: number; bottom: number } | null>(null);
+  const olc = () => {
+    ref.current?.measureInWindow((_x: number, y: number, _w: number, h: number) => { kutu.current = { top: y, bottom: y + h }; });
+  };
+  /* Sürükleme başlarken ölçüm tazeleniyor; bırakma anında `kutu` hazır olur. */
+  const icinde = (pageY: number) => {
+    const k = kutu.current;
+    /* Ölçüm alınamadıysa (ilk kare) cömert davranılıyor: kutu her zaman
+       havuzun ÜSTÜNDE, yani yukarı doğru bırakmak "kutuya bırak" demek. */
+    if (!k) return false;
+    return pageY >= k.top - 24 && pageY <= k.bottom + 24;
+  };
+  return { ref, olc, icinde };
+}
+
 function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const target = React.useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
   // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
@@ -1141,16 +1224,17 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (tile) place(tile);
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
+  const drop = useDropZone();
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
-        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} />)}
+          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} drag={{ onDrop: (y) => { drop.olc(); if (drop.icinde(y)) tapPool(t); } }} />)}
         </View>
         {!fb ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
@@ -1206,16 +1290,17 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     setHintUsed(true);
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
+  const drop = useDropZone();
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail, currentTargetLang()), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
-        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+        <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
+          {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} drag={{ onDrop: (y) => { drop.olc(); if (drop.icinde(y)) tap(t); } }} />)}
         </View>
         {!fb && !noHints ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
