@@ -254,11 +254,29 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
       </form>
 
       {hintShown ? (
-        /* İskelet: her kelimenin ilk harfi. Cümleyi vermez, omurgasını verir;
-           kelime sayısı zaten üstte. Kalite 3'e düşer (hintUsed). */
-        <p className="mt-3 text-center font-mono text-strong tracking-wide" style={{ color: "var(--text)" }}>
-          {targetWords.map((w) => `${w[0]}${"_".repeat(Math.max(1, Math.min(6, w.length - 1)))}`).join("  ")}
-        </p>
+        /*
+          KULLANILACAK KELİMELER — alfabetik, cümledeki sırayla değil.
+
+          Burada harf iskeleti vardı ("I__ g___ n___ H____") ve o, cümle
+          çevirisi için öğretici bir yardım değil: öğrenciye Almancayı değil
+          bulmacayı çözdürüyor, harf sayısını sayıp boşluk dolduruyor.
+
+          Malzeme ortada ama iş duruyor: hangi kelimenin nereye gideceği,
+          fiilin ikinci konumu, çekim ve büyük harf hâlâ öğrencinin. Kalite
+          yine 3'e düşüyor (hintUsed).
+        */
+        <div className="mt-3">
+          <p className="muted mb-1.5 text-center text-micro uppercase tracking-eyebrow">{tx("rounds.hint_words")}</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[...new Set(targetWords.map((w) => w.replace(/[.,!?;:]+$/g, "")).filter(Boolean))]
+              .sort((a, b) => a.localeCompare(b, "de"))
+              .map((w) => (
+                <span key={w} className="surface-2 rounded-chip px-3 py-1 text-strong">
+                  {w}
+                </span>
+              ))}
+          </div>
+        </div>
       ) : null}
     </GameShell>
   );

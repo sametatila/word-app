@@ -1139,6 +1139,7 @@ export const trBase: Record<string, string> = {
   "rounds.translate_into": "{lang} diline çevir",
   "rounds.write_equivalent": "{lang} karşılığını yaz",
   "rounds.hint": "İpucu",
+  "rounds.hint_words": "Kullanılacak kelimeler",
   "rounds.show_hint": "İpucu göster",
   "rounds.undo_word": "{word} kelimesini geri al",
   "rounds.undo_letter": "{char} harfini geri al",

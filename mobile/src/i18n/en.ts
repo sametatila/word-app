@@ -1137,6 +1137,7 @@ export const en: Record<string, string> = {
   "rounds.translate_into": "Translate into {lang}",
   "rounds.write_equivalent": "Write the {lang} equivalent",
   "rounds.hint": "Hint",
+  "rounds.hint_words": "Words to use",
   "rounds.show_hint": "Show hint",
   "rounds.undo_word": "Undo the word {word}",
   "rounds.undo_letter": "Undo the letter {char}",

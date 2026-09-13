@@ -536,6 +536,43 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
   );
 }
 
+/**
+ * Çeviri turunun ipucu: KULLANILACAK KELİMELER.
+ *
+ * Burada da harf iskeleti vardı ("I__ g___ n___ H____") ve o, cümle çevirisi
+ * için öğretici bir yardım değil: öğrenciye Almancayı değil bulmacayı
+ * çözdürüyor, harf sayısını sayıp boşluk dolduruyor.
+ *
+ * Kelimeler ALFABETİK veriliyor, cümledeki sırayla değil. Yani malzeme
+ * ortada ama iş duruyor: hangi kelimenin nereye gideceği, fiilin ikinci
+ * konumu, çekim ve büyük harf hâlâ öğrencinin. Öğretilen şey zaten bu.
+ */
+function WordBankHint({ answer, colors, shown, onShow }: { answer: string; colors: Palette; shown: boolean; onShow: () => void }) {
+  if (useNoHints() && !shown) return null;
+  const kelimeler = Array.from(new Set(answer.split(/\s+/).map((w) => w.replace(/[.,!?;:]+$/g, "")).filter(Boolean)))
+    .sort((a, b) => a.localeCompare(b, "de"));
+  return (
+    <View style={{ marginTop: spacing.md }}>
+      {shown ? (
+        <View style={{ gap: spacing.sm }}>
+          <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.hint_words")}</Text>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+            {kelimeler.map((w) => (
+              <View key={w} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+                <Text variant="bodyStrong" color={colors.text}>{w}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      ) : (
+        <PressableScale onPress={onShow} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: spacing.sm }}>
+          <Text variant="caption" color={colors.textMuted}>{tx("rounds.show_hint")}</Text>
+        </PressableScale>
+      )}
+    </View>
+  );
+}
+
 /** Yaz(arak) turları için: ipucu düğmesi + iskelet. */
 /**
  * İpucu satırı — harf iskeleti.
@@ -1310,7 +1347,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         placeholderTextColor={colors.textFaint}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
-      <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
+      <WordBankHint answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : "common.check")}</Text>
       </PressableScale>
