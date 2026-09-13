@@ -46,7 +46,18 @@ export function Text({ variant = "body", color, style, maxFontSizeMultiplier = 1
   return (
     <RNText
       maxFontSizeMultiplier={maxFontSizeMultiplier}
-      style={[typography[variant], { lineHeight: satir, color: color ?? colors.text }, style]}
+      /*
+       * `includeFontPadding: false` — Android kırpmasının asıl sebebi.
+       *
+       * Android varsayılan olarak her satıra yazı tipinin kendi üst/alt
+       * dolgusunu ekliyor (Roboto'da satır kutusu ~1,37 em oluyor). Biz açıkça
+       * daha küçük bir `lineHeight` verince sistem kutuyu o değere SIKIŞTIRIP
+       * taşanı kesiyordu — Türkçe "İ" noktası üstten, "g/j/p/y" kuyrukları
+       * alttan. Dolgu kapatılınca kutu tam olarak yazının kendi yüksekliği
+       * (çıkan + inen, ~1,17 em) oluyor ve aşağıdaki 1,25 tabanı ona rahat
+       * yetiyor. CSS'te zaten böyle davranıyor, yani web ile de eşitleniyor.
+       */
+      style={[typography[variant], { lineHeight: satir, includeFontPadding: false, color: color ?? colors.text }, style]}
       {...rest}
     />
   );
