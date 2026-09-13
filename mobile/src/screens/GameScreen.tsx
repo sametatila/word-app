@@ -25,7 +25,6 @@ import { haptic } from "../lib/haptics";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
 import { onTint } from "../theme/colors";
-import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
@@ -689,14 +688,14 @@ export function GameScreen() {
   // play
   return (
     <View style={pad}>
-      {/* Üst satır: çıkış + seviye rozeti. Rozet webde (`session-player`)
-          baştan beri var, mobilde hiç yoktu - sayı `meta.coverage` ile
-          geliyor ve tip onu tanımıyordu (bkz. web-parity §11.22). */}
+      {/* Üst satır: yalnız çıkış.
+
+          Yanında CEFR seviyesinin pekişme çubuğu duruyordu ve turun üstünde
+          iki ayrı ilerleme oluyordu. Turun içindeyken cevabı değişen tek ölçü
+          turun kendi ilerlemesi; öteki çubuk kıpırdamıyor ve okunması gereken
+          çubuğu ikiye bölüyordu. Webde de kaldırıldı (`session-player`). */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.md }}>
         <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.quit_round")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-        <View style={{ flex: 1 }}>
-          <LevelBadge level={meta?.level ?? ""} mastered={meta?.coverage?.mastered ?? 0} total={meta?.coverage?.total ?? 0} />
-        </View>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>

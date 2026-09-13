@@ -176,37 +176,6 @@ export const TIER_COLOR = {
 } as const;
 
 /**
- * CEFR rozetinin tonları — TEMAYA DUYARLI DEĞİL.
- *
- * Rozet dolu bir zemin ve üstünde beyaz yazı taşıyor, yani zemini kendisi
- * getiriyor; önemli olan yalnızca beyazla kontrastı. Ton `colors.success`,
- * `colors.info` gibi ROL renklerinden alınıyordu ve o renkler kart üstünde
- * OKUNACAK yazı için değil, işaret için ayarlı. Ölçüm (açık tema, beyaz yazı):
- * A1 3.55, A2 3.61, B1 4.91, B2 2.77, C1 4.30 — yazı `bodyStrong` (15 px),
- * yani AA eşiği 4.5 ve beşten dördü tutmuyordu; B2 büyük yazı eşiği 3.0'ı
- * bile tutmuyor.
- *
- * Aynı ölçüm web tarafında yapılmış ve düzeltilmişti (`components/level-badge`
- * `TONE`): ailelerin 600'ü, B2 ise 700'ü (marka turuncusunun 600'ü beyazla
- * 3.72, 700'ü 5.39). Değerler o tabloyla BİREBİR aynı ve kapı karşılaştırıyor
- * (parity §330).
- *
- * Koyu temada da aynı tonlar: rozet kendi zeminini getirdiği için temanın
- * yüzeyiyle işi yok. `onFill` bu yüzden KULLANILMIYOR — o jeton koyu temada
- * koyu mürekkebe dönüyor ve bu zeminlerde okunmaz.
- */
-export const LEVEL_TONE: Record<string, string> = {
-  A1: "#237a4c",
-  A2: "#16748a",
-  B1: "#77439d",
-  B2: orange[700],
-  C1: "#b62e43",
-};
-
-/** Rozet yazısı iki temada da beyaz (yukarıdaki gerekçe). */
-export const LEVEL_INK = "#ffffff";
-
-/**
  * Onay diyaloğunun düğme dolguları — TEMAYA DUYARLI DEĞİL.
  *
  * Yıkıcı düğme `colors.danger` kullanıyordu ve yazısı KODA GÖMÜLÜ beyazdı.

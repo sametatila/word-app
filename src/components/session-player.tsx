@@ -20,7 +20,6 @@ import {
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
-import { LevelBadge } from "@/components/level-badge";
 import { prefetchGerman } from "@/components/speak-button";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
@@ -838,19 +837,17 @@ export function SessionPlayer() {
       {/* ÇIKIŞ — turun içindeyken sekme çubuğu yok (yığın sayfası) ve tarayıcı
           geri düğmesi ana ekrana eklenmiş uygulamada da yok: düğme olmadan
           turdan çıkmanın hiçbir yolu kalmıyordu. Mobilde aynı yerde, aynı
-          ölçüde (`GameScreen`: 44x44, `surface-2`). */}
+          ölçüde (`GameScreen`: 44x44, `surface-2`).
+
+          YANINDA SEVİYE ROZETİ YOK. Turun üstünde iki ayrı ilerleme çubuğu
+          vardı: CEFR seviyesinin pekişme oranı ve turun kendi ilerlemesi.
+          İkincisi turun içindeyken cevabı değişen tek ölçü; birincisi bir
+          turda kıpırdamıyor ve okunması gereken çubuğu ikiye bölüyordu. */}
       <div className="mb-2 flex shrink-0 items-center gap-3">
         {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
             kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
             kaynak. */}
         <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
-        <div className="min-w-0 flex-1">
-          <LevelBadge
-            level={session!.meta.level}
-            mastered={session!.meta.coverage.mastered}
-            total={session!.meta.coverage.total}
-          />
-        </div>
       </div>
       {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
           bunu söyleyen tek yer buydu, mobilde de öyle. */}
