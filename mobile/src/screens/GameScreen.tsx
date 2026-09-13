@@ -163,6 +163,17 @@ export function GameScreen() {
       }
       answers.current = [];
       roundsSeen.current = 0; roundsRight.current = 0;
+      /*
+        ETABIN TABAN NOKTASI DA SIFIRLANIYOR.
+
+        `roundsSeen/Right` her turda sıfırdan başlıyor ama `stageStart` bir
+        önceki turdan kalan sayıları taşıyordu; etap kartı farkı gösterdiği
+        için ikinci turun ilk etabında "-6/-10 bu etap" yazıyordu (cihazda
+        görüldü). `xpEstimate` aynı sebeple sıfırlanıyor: bahsin kasası da
+        fark üzerinden hesaplanıyor.
+      */
+      stageStart.current = { index: 0, correct: 0, total: 0, xp: 0 };
+      xpEstimate.current = 0;
       submitted.current = false;
       setCombo(0);
       // Yarım kalan turdan devam yalnız karışık turda (pratik taze başlar).
@@ -785,12 +796,17 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
         <View style={{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline }}>
           <View style={{ backgroundColor: colors.primary, paddingHorizontal: spacing.xl, paddingVertical: spacing.lg, alignItems: "center" }}>
             <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
-            <Text variant="caption" color={colors.onPrimary} style={{ marginTop: spacing.xs, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
+            {/* İkincil yazı için jeton var (`onPrimaryMuted`); burada mürekkep
+                opaklıkla solduruluyordu ve koyu temada gri bir lekeye dönüyordu. */}
+            <Text variant="caption" color={colors.onPrimaryMuted} style={{ marginTop: spacing.xs }}>{t("stage.counter", { n: stage, total: stages })}</Text>
             {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
             <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
             <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
               {Array.from({ length: stages }, (_, i) => (
-                <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: i < stage ? colors.onPrimary : "rgba(255,255,255,0.35)" }} />
+                /* Nokta rengi DOLU YÜZEYİN mürekkebinden türüyor, soluk hâli
+                   opaklıkla. Boş noktalar sabit beyazdı; koyu temada başlık
+                   açık turuncuya dönünce beyaz-%35 neredeyse görünmüyordu. */
+                <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: colors.onPrimary, opacity: i < stage ? 1 : 0.35 }} />
               ))}
             </View>
           </View>
