@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import { View, TextInput, ScrollView } from "react-native";
+import { View, TextInput } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -62,7 +63,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScrollView automaticallyAdjustKeyboardInsets
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: insets.top + spacing.xxl, paddingBottom: insets.bottom + spacing.xxl }}
         keyboardShouldPersistTaps="handled"
       >
@@ -145,7 +146,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
             </PressableScale>
           </View>
         )}
-      </ScrollView>
+      </KeyboardAwareScroll>
     </View>
   );
 }

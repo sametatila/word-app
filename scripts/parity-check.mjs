@@ -7837,15 +7837,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      *
      * MUAFIYET LISTESI DE GEREKSIZ KALDI: B duzenindeki iki dosyanin metin
      * kutulari kaydirma alaninin DISINDA (sabit alt cubukta), yani dugum
-     * olcusu onlari kendiliginde saymiyor. Liste yalniz B olcusu icin duruyor. */
-    const govdeAl = (g, i, kes) => {
+     * olcusu onlari kendiliginde saymiyor. Liste yalniz B olcusu icin duruyor.
+     *
+     * `KeyboardAwareScroll` de kaydirma alani SAYILIYOR: ozniteligi kendi
+     * icinde veriyor (ve Android tarafinda odaktaki kutuyu klavyenin ustune
+     * kaydiriyor), yani onu kullanan ekran kurali zaten sagliyor. Olcu
+     * ikisini birden tariyor ki yalin `ScrollView` kullanan yeni bir ekran
+     * gozden kacmasin. */
+    /* Iki etiket de kaydirma alani: yalin `ScrollView` ve onun yerine gecen
+       `KeyboardAwareScroll`. Govde cikarimi hangi etiketse ona gore. */
+    const govdeAl = (g, i, kes, ad) => {
+      const ac = "<" + ad;
+      const kapa = "</" + ad + ">";
       let j = i + kes + 1;
       let derin = 1;
       while (derin > 0) {
-        const a = g.indexOf("<ScrollView", j);
-        const b = g.indexOf("</ScrollView>", j);
+        const a = g.indexOf(ac, j);
+        const b = g.indexOf(kapa, j);
         if (b < 0) return "";
-        if (a >= 0 && a < b) { derin++; j = a + 11; } else { derin--; if (derin === 0) return g.slice(i + kes + 1, b); j = b + 13; }
+        if (a >= 0 && a < b) { derin++; j = a + ac.length; } else { derin--; if (derin === 0) return g.slice(i + kes + 1, b); j = b + kapa.length; }
       }
       return "";
     };
@@ -7854,17 +7864,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     for (const y of dosyalar) {
       const g = sil(read(y));
       let i = 0;
-      while ((i = g.indexOf("<ScrollView", i)) >= 0) {
+      while (true) {
+        const a = g.indexOf("<ScrollView", i);
+        const b = g.indexOf("<KeyboardAwareScroll", i);
+        if (a < 0 && b < 0) break;
+        const ad = b >= 0 && (a < 0 || b < a) ? "KeyboardAwareScroll" : "ScrollView";
+        i = ad === "ScrollView" ? a : b;
         const kes = acilisSonu(g.slice(i));
         if (kes < 0) break;
         const etiket = g.slice(i, i + kes + 1);
-        const govde = govdeAl(g, i, kes);
+        const govde = govdeAl(g, i, kes, ad);
         if (/<TextInput\s/.test(govde)) {
           kutulu++;
           /* Ad SINIRI: `automaticallyAdjustKeyboardInsetsX` gibi bir yazim
                ilk yazimda oznitelik SAYILIYORDU (enjeksiyon gosterdi) - dizgi
                icinde gecmek yetmez, oznitelik ADI orada bitmek zorunda. */
-            if (!/automaticallyAdjustKeyboardInsets(?![A-Za-z0-9_])/.test(etiket)) {
+            if (ad !== "KeyboardAwareScroll" && !/automaticallyAdjustKeyboardInsets(?![A-Za-z0-9_])/.test(etiket)) {
             eksik.push(y.split("/").pop() + ":" + g.slice(0, i).split("\n").length);
           }
         }

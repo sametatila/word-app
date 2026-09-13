@@ -83,6 +83,20 @@ export const viewport: Viewport = {
    * Yani kilit hem zarar veriyor hem bir şey çözmüyordu.
    */
   viewportFit: "cover",
+  /*
+   * KLAVYE AÇILINCA DÜZEN KÜÇÜLÜYOR.
+   *
+   * Varsayılan davranışta (`resizes-visual`) Android Chrome yalnız GÖRSEL
+   * pencereyi küçültüyor: düzen penceresi aynı kalıyor, yani ekranın altına
+   * sabitlenmiş her şey (tur kabuğunun sonuç katmanı, sohbet kutusu) klavyenin
+   * ALTINDA kalıyor ve alttaki girdiler örtülüyor. `resizes-content` düzen
+   * penceresini de küçültüyor: sabit öğeler klavyenin üstüne çıkıyor, odaktaki
+   * girdi kendiliğinden görünür alana kayıyor.
+   *
+   * Mobil tarafın karşılığı `ui/KeyboardAwareScroll` — orada pencere hiç
+   * küçülmediği için hesabı uygulama yapıyor.
+   */
+  interactiveWidget: "resizes-content",
 };
 
 /**

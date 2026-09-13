@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
-import { View, ScrollView, TextInput } from "react-native";
+import { View, TextInput } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -442,7 +443,7 @@ export function ExamScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
-        <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
+        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
               aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
           <CoachBubble moment="exam_intro" mood="think" size={48} />
@@ -503,7 +504,7 @@ export function ExamScreen() {
           <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t(starting ? "common.loading" : "exam.start")}</Text>
           </PressableScale>
-        </ScrollView>
+        </KeyboardAwareScroll>
       </View>
     );
   }
@@ -513,7 +514,7 @@ export function ExamScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
-        <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
+        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!result?.passed} />
             {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
@@ -647,7 +648,7 @@ export function ExamScreen() {
               <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link", { n: BOSS_SECONDS })}</Text>
             </PressableScale>
           ) : null}
-        </ScrollView>
+        </KeyboardAwareScroll>
       </View>
     );
   }
@@ -670,7 +671,7 @@ export function ExamScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
-        <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
+        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
           <Card padded style={{ gap: spacing.xs }}>
             {/* Büyük harfe çevrilmiyor: Türkçe yerelde "Teil" → "TEİL" oluyor. */}
             <Text variant="micro" color={colors.textMuted}>{SECTION_WORD[currentTargetLang()] ?? "Teil"} {secIdx + 1} / {list.length}</Text>
@@ -684,7 +685,7 @@ export function ExamScreen() {
               <Text variant="h3" color={colors.onPrimary}>{t("exam.start_section")}</Text>
             </PressableScale>
           </Card>
-        </ScrollView>
+        </KeyboardAwareScroll>
         {quitDialog}
       </View>
     );
@@ -785,7 +786,7 @@ function SectionBody({
   if (id === "grammar") {
     const it = paper.sections.grammar[idx];
     return (
-      <ScrollView contentContainerStyle={pad}>
+      <KeyboardAwareScroll contentContainerStyle={pad}>
         {it.kind === "cell" ? (
           <Choice
             key={it.id}
@@ -811,7 +812,7 @@ function SectionBody({
             }}
           />
         )}
-      </ScrollView>
+      </KeyboardAwareScroll>
     );
   }
 
@@ -919,7 +920,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
   const hazir = it.mode === "order" ? parts.length === (it.chunks?.length ?? 0) : yazilanKelime >= MIN_FREE_WORDS;
 
   return (
-    <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
+    <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>{t(it.mode === "order" ? "exam.order_the_sentence" : "exam.write_in_target")}</Text>
         <Text variant="bodyStrong">{it.prompt}</Text>
@@ -967,7 +968,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
           {idx + 1} / {total} · {t("exam.answers_at_end")}
         </Text>
       </Card>
-    </ScrollView>
+    </KeyboardAwareScroll>
   );
 }
 
@@ -976,7 +977,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
   const allAnswered = answers.every((a) => a !== null);
   const correctRef = answers.filter((a, i) => a === it.questions[i].answer).length;
   return (
-    <ScrollView contentContainerStyle={pad}>
+    <KeyboardAwareScroll contentContainerStyle={pad}>
       <Card padded style={{ gap: spacing.xs }}>
         <Text variant="bodyStrong">{it.title}</Text>
         {it.genre || it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation ?? it.genre}</Text> : null}
@@ -1029,7 +1030,7 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
         </PressableScale>
       ) : null}
-    </ScrollView>
+    </KeyboardAwareScroll>
   );
 }
 
@@ -1068,7 +1069,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
   }
 
   return (
-    <ScrollView contentContainerStyle={pad}>
+    <KeyboardAwareScroll contentContainerStyle={pad}>
       <Card padded style={{ gap: spacing.sm }}>
         {it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation}</Text> : null}
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
@@ -1121,7 +1122,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
           </PressableScale>
         )}
       </Card>
-    </ScrollView>
+    </KeyboardAwareScroll>
   );
 }
 
@@ -1188,7 +1189,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   }
 
   return (
-    <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
+    <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
         <Text variant="bodyStrong">{w.task.prompt}</Text>
         {w.task.checklist.map((c, i) => (
@@ -1232,6 +1233,6 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           </>
         )}
       </Card>
-    </ScrollView>
+    </KeyboardAwareScroll>
   );
 }

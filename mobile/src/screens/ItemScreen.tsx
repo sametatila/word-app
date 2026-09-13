@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { MascotFx } from "../ui/MascotFx";
 import { t } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { View } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -273,7 +274,7 @@ export function ItemScreen() {
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>{exercise.intro}</Text>
 
         {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} colors={colors} /> : null}
@@ -342,7 +343,7 @@ export function ItemScreen() {
             </View>
           </Card>
         ) : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
       {/* Ortam sürprizleri: web beceri oynatıcısında da çiziyor
           (`skills/player-shell` `<MascotFx />`), mobilde yalnız kelime
           turlarında vardı — aynı sürpriz iki yüzeyden birinde yoktu. */}

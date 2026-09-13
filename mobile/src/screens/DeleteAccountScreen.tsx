@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View, TextInput, ScrollView, Platform } from "react-native";
+import { View, TextInput, Platform } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -141,7 +142,7 @@ export function DeleteAccountScreen() {
         <Text accessibilityRole="header" variant="h2">{tx("deleteaccount.delete_account")}</Text>
       </View>
 
-      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
           {tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
         </Text>
@@ -213,7 +214,7 @@ export function DeleteAccountScreen() {
             </PressableScale>
           </>
         )}
-      </ScrollView>
+      </KeyboardAwareScroll>
 
       <ConfirmDialog
         visible={confirm}

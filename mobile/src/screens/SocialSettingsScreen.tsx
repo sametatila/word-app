@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { t as tx, targetLangName } from "../lib/i18n";
-import { ScrollView, Switch, TextInput, View } from "react-native";
+import { Switch, TextInput, View } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { social, errorText, type PublicUser, type SocialMe, type Visibility } from "../api/social";
 import { useAuth } from "../lib/AuthContext";
@@ -74,7 +75,7 @@ export function SocialSettingsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={tx("socialsettings.social_and_privacy")} />
-      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         {!me ? (
           // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
           <>
@@ -155,7 +156,7 @@ export function SocialSettingsScreen() {
         )}
         {/* HATA `assertive`, BASARI `polite` (bkz. `PaywallScreen`). */}
         {msg ? <Text accessibilityLiveRegion={ok ? "polite" : "assertive"} variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text> : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
     </View>
   );
 }

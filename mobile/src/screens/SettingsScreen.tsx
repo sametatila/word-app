@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, ScrollView, Switch } from "react-native";
+import { View, TextInput, Switch } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -235,7 +236,7 @@ export function SettingsScreen() {
         <Text accessibilityRole="header" variant="h2">{t("settings.settings")}</Text>
       </View>
 
-      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Group title={t("settings.group_learning")} colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
             {courseOptions(uiLang).map((c, i) => {
@@ -535,7 +536,7 @@ export function SettingsScreen() {
             kontrolün kendisi zaten yeni durumu gösteriyor. Duyuruluyor:
             sessiz bir kayıp ekran okuyucu kullanan kişiye hiç ulaşmazdı. */}
         {msg && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
-      </ScrollView>
+      </KeyboardAwareScroll>
     </View>
   );
 }

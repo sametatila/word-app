@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, ScrollView, ActivityIndicator } from "react-native";
+import { View, TextInput, ActivityIndicator } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -321,7 +322,7 @@ export function AuthScreen() {
         )}
       </View>
 
-      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <BoltIcon color={colors.onPrimary} size={38} />
@@ -586,7 +587,7 @@ export function AuthScreen() {
             </PressableScale>
           </View>
         )}
-      </ScrollView>
+      </KeyboardAwareScroll>
 
       {/* Hukuki kabul: Play, politikanın uygulama içinden erişilebilir olmasını ister.
           Bağlantılar satır içi <Text onPress> idi: 18 dp yüksekliğinde dokunma hedefi

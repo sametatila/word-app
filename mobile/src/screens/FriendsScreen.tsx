@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { t as tx, currentLang } from "../lib/i18n";
 import { courseOrDefault, currentCourseId } from "../lib/courses";
 import { ScrollView, Share, View } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -98,7 +99,7 @@ export function FriendsScreen() {
       {/* Alt dolgu 96: yüzen sekme çubuğunun altında kalan içerik olmasın
           (ui/Screen ile aynı ölçü). Bu ekran bir yığın ekranıyken çubuk yoktu
           ve xxl yetiyordu. */}
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={softShadow(colors.primary, 10)}><Avatar userId={me.userId} name={me.name} avatar={me.avatar} size={76} /></View>
@@ -170,7 +171,7 @@ export function FriendsScreen() {
         ) : null}
         <ErrorText text={err} />
         {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.try_again")} tone="ghost" onPress={() => void reload()} /></View> : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
     </View>
   );
 }

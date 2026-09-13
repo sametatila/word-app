@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
-import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
+import { View, TextInput, ActivityIndicator } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -745,14 +746,14 @@ export function LessonScreen() {
         </View>
       ) : (
         <>
-          <ScrollView ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>
+          <KeyboardAwareScroll ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
                 <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
               </View>
             )}
-          </ScrollView>
+          </KeyboardAwareScroll>
 
           {/* Alt eylem alanı — tek el için ekranın altında. */}
           <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
@@ -1058,7 +1059,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
   const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
   const mood = pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle";
   return (
-    <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
+    <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
       <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
       <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
@@ -1190,6 +1191,6 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
           </View>
         </PressableScale>
       </View>
-    </ScrollView>
+    </KeyboardAwareScroll>
   );
 }

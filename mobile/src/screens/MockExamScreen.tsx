@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
+import { View, TextInput, ActivityIndicator } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t, formatPercent } from "../lib/i18n";
@@ -165,7 +166,7 @@ export function MockExamScreen() {
   */
   const back = useBackConfirm(phase === "gorev");
   const [autoNext, setAutoNext] = useState(false);
-  const scroller = useRef<React.ComponentRef<typeof ScrollView> | null>(null);
+  const scroller = useRef<React.ComponentRef<typeof KeyboardAwareScroll> | null>(null);
   const alive = useRef(true);
   useEffect(() => () => { alive.current = false; stopListening(); }, []);
 
@@ -402,7 +403,7 @@ export function MockExamScreen() {
 
       {phase === "gorev" ? <TaskBar part={part} ix={ix} colors={colors} /> : null}
 
-      <ScrollView automaticallyAdjustKeyboardInsets
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets
         ref={(r) => { scroller.current = r; }}
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
         showsVerticalScrollIndicator={false}
@@ -471,7 +472,7 @@ export function MockExamScreen() {
             onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))}
           />
         )}
-      </ScrollView>
+      </KeyboardAwareScroll>
 
       {phase === "gorev" ? (
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.sm, backgroundColor: colors.bg, borderTopWidth: 1, borderTopColor: colors.surface2 }}>

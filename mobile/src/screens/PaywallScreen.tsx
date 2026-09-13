@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator, Linking, Platform, TextInput } from "react-native";
+import { View, ActivityIndicator, Linking, Platform, TextInput } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
@@ -152,7 +153,7 @@ export function PaywallScreen() {
         uygulamak için ikinci kez basmak gerekiyordu. On iki kaydırılabilir
         yüzeyin on ikisi bunu veriyor, bu ekran tek istisnaydı.
       */}
-      <ScrollView automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
           <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
               <CrownIcon color={colors.onPrimary} size={44} />
@@ -180,7 +181,7 @@ export function PaywallScreen() {
               {t(Platform.OS === "ios" ? "premiumstate.manage_ios" : "premiumstate.manage_android")}
             </Text>
           </PressableScale>
-        </ScrollView>
+        </KeyboardAwareScroll>
       </View>
     );
   }
@@ -203,7 +204,7 @@ export function PaywallScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {close}
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <CrownIcon color={colors.onPrimary} size={44} />
@@ -309,7 +310,7 @@ export function PaywallScreen() {
 
         <PromoBox colors={colors} onRedeemed={refresh} />
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
 
       {!storeOpen ? (
         // Mağaza kapalı: satın alma çubuğu yok ama şartlar bağlantısı kalıyor —

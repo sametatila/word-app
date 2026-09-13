@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
+import { View, TextInput, ActivityIndicator } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -258,7 +259,7 @@ export function RoleplayExamScreen() {
 
   if (phase === "intro") {
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
+      <KeyboardAwareScroll style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
         <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, padding: spacing.xl, marginTop: spacing.md }, cardShadow(colors, 10)]}>
           {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
@@ -281,7 +282,7 @@ export function RoleplayExamScreen() {
             <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
           </PressableScale>
         </View>
-      </ScrollView>
+      </KeyboardAwareScroll>
     );
   }
 
@@ -335,7 +336,7 @@ export function RoleplayExamScreen() {
     const overall = result?.score.overall ?? 0;
     const passed = overall >= EXAM_PASS_SCORE;
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
+      <KeyboardAwareScroll style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
         <View style={{ alignItems: "center", marginTop: spacing.md }}>
           <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: overall, level: lesson.level }} size={56} />
@@ -405,7 +406,7 @@ export function RoleplayExamScreen() {
             <Text variant="h3" color={colors.onPrimary}>{tx("lessonp.back_to_conversation")}</Text>
           </PressableScale>
         </View>
-      </ScrollView>
+      </KeyboardAwareScroll>
     );
   }
 
@@ -416,7 +417,7 @@ export function RoleplayExamScreen() {
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
       </View>
       <AiNotice variant="character" />
-      <ScrollView
+      <KeyboardAwareScroll
         ref={scrollRef}
         style={{ flex: 1, marginTop: spacing.sm }}
         onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: !reduceMotion() })}
@@ -442,7 +443,7 @@ export function RoleplayExamScreen() {
           </View>
         ))}
         {busy ? <ActivityIndicator color={colors.primary} style={{ alignSelf: "flex-start" }} /> : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
       {/* KLAVYE ALT ÇUBUĞU ÖRTÜYORDU. Yazma kutusu kaydırma alanının ALTINDA,
           sabit bir çubukta duruyor; edge-to-edge altında (Android 15+/targetSdk 35+)
           pencere `adjustResize` ile küçülmüyor ve iOS'ta zaten böyle bir şey yok,

@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { View } from "react-native";
+import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -78,7 +79,7 @@ export function QuizScreen() {
         </View>
       </View>
 
-      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>
           {t(isGrammar ? "quiz.intro_grammar" : isCheckpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
         </Text>
@@ -112,7 +113,7 @@ export function QuizScreen() {
             </View>
           </Card>
         ) : null}
-      </ScrollView>
+      </KeyboardAwareScroll>
     </View>
   );
 }
