@@ -516,7 +516,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.listen_again": "Noch einmal anhören",
   "snd.play_sample": "Beispielton anhören",
   "settings.privacy_policy_short": "Richtlinie",
-  "voicew.playing": "Läuft…",
   "walkw.album": "Gehmodus",
   "appw.offline_body": "Du bist weiterhin angemeldet, aber der Server ist gerade nicht erreichbar. Versuch es in ein paar Sekunden noch einmal — abmelden musst du dich nicht.",
   "candow.sub": "Die Fähigkeiten, die du nachgewiesen hast — Niveau für Niveau",

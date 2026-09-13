@@ -542,7 +542,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.listen_again": "Yeniden dinle",
   "snd.play_sample": "Örnek sesi dinle",
   "settings.privacy_policy_short": "Politika",
-  "voicew.playing": "Çalıyor…",
   "walkw.album": "Yürürken",
   "appw.offline_body": "Hesabın açık, ama şu anda sunucuya ulaşılamıyor. Birkaç saniye sonra tekrar dene — çıkış yapmana gerek yok.",
   "candow.sub": "Kanıtladığın beceriler, seviye seviye",

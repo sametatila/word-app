@@ -516,7 +516,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.listen_again": "Listen again",
   "snd.play_sample": "Play a sample sound",
   "settings.privacy_policy_short": "Policy",
-  "voicew.playing": "Playing…",
   "walkw.album": "Walk mode",
   "appw.offline_body": "You're still signed in, but the server can't be reached right now. Try again in a few seconds — you don't need to sign out.",
   "candow.sub": "The skills you've proven, level by level",
