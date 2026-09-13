@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import type { Why } from "@/lib/why";
 import { Mascot } from "@/components/mascot";
-import { RoundSheet, roundSheetHeight } from "./round-sheet";
+import { RoundSheet } from "./round-sheet";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -38,9 +38,19 @@ import { RoundSheet, roundSheetHeight } from "./round-sheet";
  * baktığı anda. Şerit artık akışta değil, içeriğin üstüne binen ayrı bir
  * katman (`round-sheet`): alttaki hiçbir şey kımıldamıyor.
  *
- * Katman içeriği örtmüyor; kapladığı bandı burası turun başından itibaren
- * dipte boş tutuyor (`SheetGap`). Yani cevaptan önceki ve sonraki düzen
- * birebir aynı.
+ * Katman İÇERİĞİN ÜSTÜNE BİNİYOR ve turun başından yer AYRILMIYOR.
+ *
+ * Ayrılıyordu: dipte katmanın boyu kadar boş bir band vardı ve içerik o
+ * bandın üstüne sıkışıyordu. Uzun turlarda (cümle kur, sırala, eşleştir)
+ * bunun bedeli doğrudan kesilen içerikti — ekranın üçte biri cevaptan önce
+ * hiçbir işe yaramayan bir boşluktu. Katman zaten turun BİTTİĞİNİ söylüyor,
+ * yani altında kalanın üstüne binmesinde bir sakınca yok. Kayma da yok:
+ * katman `fixed`, akışta hiç yer tutmuyor, belirdiğinde altındaki hiçbir şey
+ * kımıldamıyor.
+ *
+ * Cevaptan sonra da pay EKLENMİYOR: sütun esneyen boşluklarla dağıldığı için
+ * sonradan eklenen bir dip payı o boşlukları kısar ve tam cevap anında her
+ * şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta kendisi.
  *
  * ## Boşluk
  *
@@ -74,7 +84,6 @@ export function GameShell({
   feedback,
   why = null,
   pull = true,
-  sheet = true,
   onContinue,
 }: {
   label: string;
@@ -95,15 +104,6 @@ export function GameShell({
   feedback?: ReactNode;
   /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
   pull?: boolean;
-  /**
-   * Bu turda alttan çıkan katman var mı.
-   *
-   * Yer turun BAŞINDAN ayrıldığı için karar cevaba bakamaz: `onContinue`
-   * ancak cevaptan sonra dolduğundan ona bakmak, boşluğun tam cevap anında
-   * belirmesi — yani düzeltmeye çalışılan kaymanın ta kendisi — demek olurdu.
-   * Tanıtım kartında sonuç diye bir şey yok; oradan `false` geliyor.
-   */
-  sheet?: boolean;
   /**
    * "Devam" — cevaptan sonra turu KULLANICI kapatır.
    *
@@ -143,25 +143,11 @@ export function GameShell({
       <div className="md:mt-5">{children}</div>
       {footer ? <div className="mt-4">{footer}</div> : null}
 
-      {/* Dokunma bölgesiyle katman arasındaki pay. En az sınırı yok: sıkışık
-          ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
+      {/* Dokunma bölgesiyle ekranın dibi arasındaki pay. En az sınırı yok:
+          sıkışık ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
-      {/* AKSİYON ALANI — katmanın oturacağı band. Cevaptan önce boş duruyor;
-          dolduğunda içerik kımıldamıyor. */}
-      {sheet ? <SheetGap hasFeedback={feedback !== undefined} /> : null}
       <RoundSheet verdict={verdict} feedback={feedback} why={why} pull={pull} onContinue={onContinue} />
     </div>
   );
-}
-
-/**
- * Katmanın kapladığı boşluk.
- *
- * Ölçü katmanın kendi en az yüksekliğiyle aynı yerden geliyor
- * (`roundSheetHeight`); iki sayı ayrı yazılsaydı biri değişince öbürü sessizce
- * kayar, katman ya şıkların üstüne biner ya da altta boşluk bırakırdı.
- */
-function SheetGap({ hasFeedback }: { hasFeedback: boolean }) {
-  return <div aria-hidden className="shrink-0" style={{ height: roundSheetHeight(hasFeedback) }} />;
 }

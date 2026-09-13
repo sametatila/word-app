@@ -204,10 +204,17 @@ const SHEET_GAP = spacing.xl;
  * — hem de tam öğrencinin işaretlediği şıkka baktığı anda, dokunulan şık
  * parmağın altından kaçarak. Web'de de aynı karar (`games/round-sheet`).
  *
- * Katman içeriği örtmüyor: dipte kendi akışı OLMAYAN turlarda (şıklı turlar)
- * katmanın bandı baştan boş tutuluyor. Yazma turlarında zaten input bloğu
- * duruyor; orada katman onun üstüne biniyor — Duolingo'daki "Kontrol et"in
- * yerini geri bildirimin alması gibi.
+ * Katman İÇERİĞİN ÜSTÜNE BİNİYOR ve turun başından yer AYRILMIYOR.
+ *
+ * Ayrılıyordu: dipte katmanın boyu kadar boş bir band duruyordu ve içerik o
+ * bandın üstüne sıkışıyordu. Uzun turlarda (cümle kur, sırala, eşleştir)
+ * bunun bedeli doğrudan kesilen içerikti — ekranın üçte biri cevaptan önce
+ * hiçbir işe yaramayan bir boşluktu. Katman zaten turun BİTTİĞİNİ söylüyor,
+ * yani altında kalanın üstüne binmesinde bir sakınca yok.
+ *
+ * Cevaptan sonra da pay EKLENMİYOR: içerik `flexGrow` ile dağıldığı için
+ * sonradan eklenen bir dip payı esneyen boşlukları kısar ve tam cevap anında
+ * her şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta kendisi.
  */
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
   const kb = useKeyboardHeight();
@@ -220,14 +227,18 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
   return (
     <View style={{ flex: 1 }}>
       {scroll ? (
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+        <ScrollView
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1 }}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
           {children}
         </ScrollView>
       ) : (
         <View style={{ flex: 1 }}>{children}</View>
       )}
       {footer ? <View style={{ marginBottom: lift, paddingTop: spacing.md }}>{footer}</View> : null}
-      {footer ? null : <View style={{ height: SHEET_H + SHEET_GAP }} />}
       {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
   );
