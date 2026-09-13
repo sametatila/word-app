@@ -688,16 +688,16 @@ export function GameScreen() {
   // play
   return (
     <View style={pad}>
-      {/* Üst satır: yalnız çıkış.
+      {/* ÇIKIŞ + İLERLEME AYNI SATIRDA.
 
-          Yanında CEFR seviyesinin pekişme çubuğu duruyordu ve turun üstünde
-          iki ayrı ilerleme oluyordu. Turun içindeyken cevabı değişen tek ölçü
-          turun kendi ilerlemesi; öteki çubuk kıpırdamıyor ve okunması gereken
-          çubuğu ikiye bölüyordu. Webde de kaldırıldı (`session-player`). */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.md }}>
-        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.quit_round")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-      </View>
+          Çıkış kendi satırındaydı çünkü yanında CEFR seviyesinin pekişme
+          çubuğu duruyordu; turun üstünde iki ayrı ilerleme oluyordu. Turun
+          içindeyken cevabı değişen tek ölçü turun kendi ilerlemesi, öteki
+          çubuk kıpırdamıyordu. Rozet kalkınca düğme o satırda tek başına
+          kaldı ve altındaki ilerleme satırıyla arasında boşuna bir kat vardı.
+          Webde de aynı satır (`session-player`). */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
+        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.quit_round")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>

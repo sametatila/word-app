@@ -834,28 +834,6 @@ export function SessionPlayer() {
     <MascotPop trigger={cheer} />
     <MascotFx />
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
-      {/* ÇIKIŞ — turun içindeyken sekme çubuğu yok (yığın sayfası) ve tarayıcı
-          geri düğmesi ana ekrana eklenmiş uygulamada da yok: düğme olmadan
-          turdan çıkmanın hiçbir yolu kalmıyordu. Mobilde aynı yerde, aynı
-          ölçüde (`GameScreen`: 44x44, `surface-2`).
-
-          YANINDA SEVİYE ROZETİ YOK. Turun üstünde iki ayrı ilerleme çubuğu
-          vardı: CEFR seviyesinin pekişme oranı ve turun kendi ilerlemesi.
-          İkincisi turun içindeyken cevabı değişen tek ölçü; birincisi bir
-          turda kıpırdamıyor ve okunması gereken çubuğu ikiye bölüyordu. */}
-      <div className="mb-2 flex shrink-0 items-center gap-3">
-        {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
-            kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
-            kaynak. */}
-        <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
-      </div>
-      {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
-          bunu söyleyen tek yer buydu, mobilde de öyle. */}
-      {onlyGame ? (
-        <p className="muted mb-2 shrink-0 text-center text-micro uppercase tracking-eyebrow">
-          {t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) })}
-        </p>
-      ) : null}
       <ConfirmDialog
         open={confirmExit || ayril.pending !== null}
         title={t("game.quit_round_2")}
@@ -870,9 +848,24 @@ export function SessionPlayer() {
         }}
         onCancel={() => { setConfirmExit(false); ayril.stay(); }}
       />
+      {/* ÇIKIŞ + İLERLEME AYNI SATIRDA.
+
+          Turun içindeyken sekme çubuğu yok (yığın sayfası) ve tarayıcı geri
+          düğmesi ana ekrana eklenmiş uygulamada da yok: düğme olmadan turdan
+          çıkmanın hiçbir yolu kalmıyordu. Mobilde aynı yerde, aynı ölçüde
+          (`GameScreen`: 44x44, `surface-2`).
+
+          Düğme kendi satırındaydı çünkü yanında CEFR rozeti duruyordu; rozet
+          kalkınca o satırda tek başına kaldı ve altındaki ilerleme satırıyla
+          arasında boşuna bir kat vardı. Günün turu (`daily-player`) bu şekli
+          zaten kullanıyor. */}
       <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between text-caption">
-          <span className="muted flex items-center gap-2">
+        <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
+          {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
+              kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
+              kaynak. */}
+          <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
+          <span className="muted flex min-w-0 flex-1 items-center gap-2">
             {index + 1} / {session!.rounds.length}
             {(() => {
               const ws = round.game === "match" ? round.words : [round.word];
@@ -929,6 +922,13 @@ export function SessionPlayer() {
           />
         </div>
       </div>
+      {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
+          bunu söyleyen tek yer buydu, mobilde de öyle. */}
+      {onlyGame ? (
+        <p className="muted mb-2 shrink-0 text-center text-micro uppercase tracking-eyebrow">
+          {t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) })}
+        </p>
+      ) : null}
 
       {saveWarning ? (
         <div
