@@ -138,8 +138,29 @@ export function stopSpeaking(): void {
  * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
  * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
  */
+/**
+ * Okunacak metnin sadeleştirilmesi — web `lib/tts/edge` `cleanForSpeech`ün eşi.
+ *
+ * Parantezli açıklamalar (Hochdeutsch karşılıkları) ve eğik çizgiyle ayrılmış
+ * seçenekler ekranda anlamlı ama sesli okunduğunda cümleyi bozuyor. Boşluk
+ * doldurma çizgisi ("_____") ise düpedüz yanlış okunuyordu: motor onu "alt
+ * tire alt tire alt tire" diye seslendiriyor ve cümlenin kendisi kayboluyordu.
+ *
+ * Kural webde baştan beri vardı, mobilde HİÇ yoktu: aynı cümle iki
+ * uygulamada iki farklı şey olarak okunuyordu.
+ */
+export function cleanForSpeech(text: string): string {
+  return text
+    .replace(/\(.*?\)/g, "")
+    .replace(/_{2,}/g, " ")
+    .replace(/[/–—]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function speakTarget(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
-  if (!text) return;
+  const clean = cleanForSpeech(text);
+  if (!clean) return;
   /* HANGİ EKRANDA SES DİNLENİYOR — ekran başına bir kez. Web aynı olayı aynı
      adla yazıyor (`speak-button` `trackOnce("tts_play", 0, ekran)`); Android
      hiç yazmıyordu, yani panelde ses kullanımı yalnız webden görünüyordu ve
@@ -149,7 +170,7 @@ export function speakTarget(text: string, opts?: { slow?: boolean; voice?: Voice
   const voice = opts?.voice ?? currentVoice;
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse cihaz TTS'i.
   if (bridgeReady()) {
-    bridgeSpeak(voice, text, opts?.slow ?? false);
+    bridgeSpeak(voice, clean, opts?.slow ?? false);
     return;
   }
   void ttsAvailable().then(async (ok) => {
@@ -158,7 +179,7 @@ export function speakTarget(text: string, opts?: { slow?: boolean; voice?: Voice
     try {
       Tts.stop();
       const iosVoiceId = await applyVoice(voice);
-      Tts.speak(text, {
+      Tts.speak(clean, {
         androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" },
         rate,
         iosVoiceId,

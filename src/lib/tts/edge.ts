@@ -105,6 +105,11 @@ function endpoint(version: number): string {
 export function cleanForSpeech(text: string): string {
   return text
     .replace(/\(.*?\)/g, "")
+    /* BOŞLUK DOLDURMA ÇİZGİSİ OKUNMUYOR. Cümledeki boşluk ekranda "_____"
+       ile duruyor ve motor onu "alt tire alt tire alt tire" diye okuyordu —
+       cümlenin kendisi kaybolacak kadar. Yerine boşluk konuyor: öğrenci
+       cümleyi eksik kelimesiyle, akıcı biçimde duyuyor. */
+    .replace(/_{2,}/g, " ")
     .replace(/[/–—]/g, " ")
     .replace(/\s+/g, " ")
     .trim();

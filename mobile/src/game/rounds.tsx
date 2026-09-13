@@ -181,13 +181,6 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
  */
 const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
 /**
- * Katmanla üstündeki içerik arasındaki pay. `md` denendi ve yetmedi: katmanın
- * yükseltme gölgesi yukarı doğru yayıldığı için şıkların alt kenarı kesilmiş
- * gibi duruyordu (koyu temada belirgin).
- */
-const SHEET_GAP = spacing.xl;
-
-/**
  * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
  * alanı ALTTA.
  *
@@ -776,11 +769,39 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   );
 }
 
+/**
+ * Cümledeki BOŞLUK — web `cloze-game`teki çip ile aynı fikir.
+ *
+ * Boşluk ham "_____" olarak yazılıyordu ve iki ayrı zararı vardı: ekranda
+ * tasarımın hiçbir yerinde olmayan bir alt tire dizisi duruyor, TTS de onu
+ * "alt tire alt tire" diye okuyordu (okuma tarafı `lib/tts` `cleanForSpeech`).
+ * Cevaptan sonra kutu seçilen kelimeyle doluyor ve doğru/yanlış rengini alıyor.
+ *
+ * Kutu `Text` içinde `Text`: RN'de satır içi akan tek yapı bu. Kenarlık
+ * Android'de iç içe `Text`te çizilmiyor, o yüzden ayrımı ZEMİN yapıyor.
+ */
+function BlankSlot({ picked, correct, colors }: { picked: string | null; correct: boolean; colors: Palette }) {
+  if (picked === null) {
+    return <Text style={{ backgroundColor: colors.surface2, color: colors.surface2 }}>{"      "}</Text>;
+  }
+  return (
+    <Text style={{ backgroundColor: correct ? colors.successSoft : colors.dangerSoft, color: correct ? colors.successText : colors.dangerText, fontWeight: "800" }}>
+      {` ${picked} `}
+    </Text>
+  );
+}
+
 function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const opts = optionTexts(round);
   const answer = typeof round.answer === "string" ? round.answer : "";
   const sentence = typeof round.sentence === "string" ? round.sentence : "";
   const full = fillBlank(sentence, answer);
+  /* Cümle boşluktan ikiye bölünüyor; boşluk yoksa (eski içerik) cümle olduğu
+     gibi çiziliyor. Ayraç `fillBlank` ile AYNI: iki yer ayrı yazılsaydı biri
+     beş alt tire, öteki iki alt tire arardı. */
+  const blankParts: [string, string] | null = /_{2,}/.test(sentence)
+    ? [sentence.slice(0, sentence.search(/_{2,}/)), sentence.replace(/^[\s\S]*?_{2,}/, "")]
+    : null;
   const typeMode = round.mode === "type";
   const [picked, setPicked] = useState<string | null>(null);
   const [val, setVal] = useState("");
@@ -804,7 +825,17 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-          <Text variant="h2" style={{ flex: 1 }}>{sentence}</Text>
+          <Text variant="h2" style={{ flex: 1 }}>
+            {blankParts ? (
+              <>
+                {blankParts[0]}
+                <BlankSlot picked={picked} correct={picked === answer} colors={colors} />
+                {blankParts[1]}
+              </>
+            ) : (
+              sentence
+            )}
+          </Text>
           <SpeakButton text={sentence} colors={colors} size={22} />
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
