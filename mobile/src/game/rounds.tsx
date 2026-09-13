@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { seededShuffle } from "../lib/shuffle";
-import { grammarLine } from "./wordGrammar";
+import { grammarLine, typLabel } from "./wordGrammar";
 import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
@@ -503,7 +503,28 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.correct")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
+      {/*
+        SORULAN ŞEY İDDİANIN KENDİSİ, o yüzden iddia da soru kadar büyük.
+
+        Almanca kelime `big`, iddia ise `sub` satırındaydı: 32 punto kelimenin
+        altında 15 puntoluk soluk bir satır. Oysa tur "bu karşılık doğru mu"
+        diye soruyor — okunması gereken şey o satır. Web aynı kartı baştan
+        beri böyle çiziyor (`truefalse-game`): kelime, ayraçlı "anlamı"
+        etiketi, sonra iddia.
+      */}
+      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
+        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.correct")}</Text>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm }}>
+          <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+          <SpeakButton text={withArtikel(word)} colors={colors} size={22} />
+        </View>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginVertical: spacing.md }}>
+          <View style={{ height: 1, width: 40, backgroundColor: colors.border }} />
+          <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.means")}</Text>
+          <View style={{ height: 1, width: 40, backgroundColor: colors.border }} />
+        </View>
+        <Text variant="h2" style={{ textAlign: "center" }}>{round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)}</Text>
+      </View>
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: tx("common.correct") }, { v: false, l: tx("common.wrong") }].map(({ v, l }) => {
@@ -594,9 +615,15 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
   return (
     <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
-      {/* Yazma turunda da tür/çoğul: web `typing-game` aynı satırı çiziyor ve
-          artikeli olan bir ismi yazarken çoğulunu bilmek işin parçası. */}
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{grammarLine(word, word.tr)}</Text>
+      {/*
+        YALNIZ TÜR, ÇEKİM DEĞİL — web `typing-game` de yalnız türü yazıyor.
+
+        Burada `grammarLine` vardı ve o satır çoğulu/çekimi de taşıyor:
+        "isim · çoğul: die Häuser". Yani Almanca karşılığını YAZMASI istenen
+        kelime, sorunun hemen altında yazılı duruyordu. Tür ("isim", "fiil")
+        cevabı vermiyor, hangi biçimin beklendiğini söylüyor.
+      */}
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{typLabel(word.typ, word.tr)}</Text>
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );

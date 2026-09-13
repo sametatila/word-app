@@ -3535,6 +3535,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* SERBEST YAZMA TURUNUN ALTI ANAHTARI BURADAYDI ("mobilde oynaticisi
        yok"). Tur mobile geldi (§171) ve altisi da ortak sozluge tasindi:
        artik ikisi de ayni cumleyi soyluyor. */
+    /* "rounds.means" BURADAN CIKTI: mobilde de dogru/yanlis kartinda ayni
+       ayrac duruyor artik (iddia `sub` satirinda kuculmustu, buyutuldu), yani
+       anahtar web-ozel degil ORTAK. */
     /* Bos yuvanin etiketi: webde yuva bir div ve aria-label gerekiyor;
        mobilde ayni yerde GERCEK metin duruyor ("Harflere dokun") ve ekran
        okuyucu onu zaten okuyor. Geri alma etiketleri (`undo_*`) ortak
@@ -3542,7 +3545,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "rounds.empty_letter_slot": "bos harf yuvasinin aria etiketi; mobilde yerinde gercek metin var (rounds.tap_letters)",
     "rounds.empty_word_slot": "bos kelime yuvasinin aria etiketi; mobilde rounds.tap_words",
     "rounds.great": "yazma turu geri bildirim basligi; mobilde FeedbackFooter kendi basligini kuruyor",
-    "rounds.means": "dogru/yanlis kartindaki ayrac sozcugu; mobilde anlam tek satirda birlesiyor",
     "rounds.no_tts": "tarayicida konusma sentezi olmayabilir; Android'de sistem TTS her zaman var",
     "rounds.understood": "tanitim turunun ekran okuyucu etiketi",
     "rounds.write_sentence_ph": "ceviri turu yer tutucusu; mobilde `rounds.write_sentence` hedef dili de yaziyor",

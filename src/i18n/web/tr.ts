@@ -199,7 +199,6 @@ export const trWeb: Record<string, string> = {
   "rounds.great": "Harika! ",
   "rounds.empty_word_slot": "boş yer",
   "rounds.empty_letter_slot": "boş yuva",
-  "rounds.means": "demek",
   "diff.typed_vs_answer": "Yazılan: {typed}. Doğrusu: {answer}.",
   "assessw.fail_quota": "Bugünlük AI değerlendirme hakkın doldu — temel kontrol gösteriliyor.",
   "pron.headline": "Telaffuz · {pct}",

@@ -1130,6 +1130,7 @@ export const deBase: Record<string, string> = {
   "rounds.put_sentence_in_order": "Satz ordnen",
   "rounds.listen_pick_meaning": "Hören · Bedeutung wählen",
   "rounds.correct": "Richtig?",
+  "rounds.means": "bedeutet",
   "rounds.match": "Zuordnen",
   "rounds.which_article": "Welcher Artikel?",
   "rounds.tap_letters": "Buchstaben antippen…",

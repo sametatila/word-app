@@ -1133,6 +1133,7 @@ export const tr: Record<string, string> = {
   "rounds.put_sentence_in_order": "Cümleyi sıraya diz",
   "rounds.listen_pick_meaning": "Dinle · anlamını seç",
   "rounds.correct": "Doğru mu?",
+  "rounds.means": "demek",
   "rounds.match": "Eşleştir",
   "rounds.which_article": "Hangi artikel?",
   "rounds.tap_letters": "Harflere dokun…",

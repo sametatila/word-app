@@ -1130,6 +1130,7 @@ export const enBase: Record<string, string> = {
   "rounds.put_sentence_in_order": "Put the sentence in order",
   "rounds.listen_pick_meaning": "Listen · pick the meaning",
   "rounds.correct": "Correct?",
+  "rounds.means": "means",
   "rounds.match": "Match",
   "rounds.which_article": "Which article?",
   "rounds.tap_letters": "Tap the letters…",
