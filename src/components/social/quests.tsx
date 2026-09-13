@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Avatar, MyAvatar } from "@/components/avatar";
 import { EmptyCard } from "@/components/empty-card";
-import { TargetIcon } from "@/components/icons";
+import { CheckIcon, TargetIcon } from "@/components/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
@@ -88,17 +88,20 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
           {pick ? (
             <div className="mt-3">
               <p className="muted mb-1.5 px-1 text-caption font-semibold uppercase tracking-eyebrow">{t("quests.with")}</p>
-              <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+              {/* AYRI KARTLAR — Android `social/Quests`: her satır `Card padded`
+                  (16), aralarında 12; arma 44 ve ad `h3`. Web tek bir kartın
+                  içinde çizgiyle ayrılmış listeydi, arma 32, ad `strong`. */}
+              <ol className="space-y-3">
                 {friends.map((f) => (
-                  <li key={f.userId} className="flex items-center gap-3 px-4 py-2.5">
-                    <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={32} />
+                  <li key={f.userId} className="card flex items-center gap-3 p-4">
+                    <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={44} />
                     {/* HAFTALIK XP DE YAZILI: ortak görevde partner seçmek
                         "kim gerçekten çekecek" kararıdır ve o soruya cevap
                         veren tek sayı bu. Android satırı baştan beri
                         gösteriyor (`social/Quests`); webde yalnız ad vardı,
                         yani seçim kör yapılıyordu. */}
                     <span className="min-w-0 flex-1 truncate">
-                      <span className="block truncate text-strong">{f.name ?? t("social.unnamed")}</span>
+                      <span className="block truncate text-h3">{f.name ?? t("social.unnamed")}</span>
                       <span className="muted block text-caption">{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}</span>
                     </span>
                     <button className="btn btn-primary h-8 px-3 text-caption" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
@@ -115,24 +118,52 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
       {past.length ? (
         <section>
           <h3 className="muted mb-2 px-1 text-micro uppercase tracking-eyebrow">{t("quests.past_weeks")}</h3>
-          <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
-            {past.map((q) => (
-              <li key={q.id} className="flex items-center gap-3 px-4 py-2.5 text-body" style={{ borderColor: "var(--border)" }}>
-                <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={28} />
-                <span className="min-w-0 flex-1 truncate">
-                  {t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp, lang) })}
-                </span>
-                {/* Başarısız haftada TOPLANAN XP de yazıyor: yalnız yüzde,
-                    "hedefin ne kadarına yaklaştık" sorusunu yarım cevaplıyor -
-                    yüzdenin paydası hedef ve o satırın solunda duruyor, payı
-                    ise hiçbir yerde yoktu. Android ikisini birden yazıyor. */}
-                <span className="shrink-0 text-caption tabular-nums" style={{ color: q.status === "completed" ? "var(--color-mint)" : "var(--text-muted)" }}>
-                  {q.status === "completed"
-                    ? t("quests.completed")
-                    : `${formatPercent(q.pct, lang)} · ${formatNumber(q.totalXp, lang)} XP`}
-                </span>
-              </li>
-            ))}
+          {/* GEÇMİŞ HAFTA SATIRI ANDROID'İN (`social/Quests`): ayrı kart,
+              solda DURUM KAROSU (bitti → dolu yeşil onay, bitmedi → sönük
+              hedef), sağında iki satır — başlık ve altında `micro` durum.
+              Kartın kenarlığı da durumun rengi. Web'de arma + tek satır
+              vardı ve durum sağda duruyordu; arma burada kimi değil NEYİ
+              anlattığı belli olmayan bir işaretti. */}
+          <ol className="space-y-3">
+            {past.map((q) => {
+              const done = q.status === "completed";
+              const tint = done ? "var(--color-mint)" : "var(--text-muted)";
+              return (
+                <li
+                  key={q.id}
+                  className="card flex items-center gap-3 p-4"
+                  style={{ borderColor: done ? "var(--color-mint)" : "var(--border)" }}
+                >
+                  {/* Sönük hâl ORTAK SINIFTAN (`tint-soft`): burada
+                      `data-soft` diye bir öznitelik veriliyordu ve öyle bir
+                      kural yok — değişkenler yazılıyor, hiçbir şey onları
+                      okumuyordu, yani bitmemiş haftanın karosu zeminsiz
+                      kalıyordu. */}
+                  <span
+                    className={`flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile ${done ? "" : "tint-soft"}`}
+                    style={
+                      done
+                        ? { background: tint, color: "var(--on-fill)" }
+                        : ({ "--tint-fill": tint, "--tint-ink": tint } as React.CSSProperties)
+                    }
+                  >
+                    {done ? <CheckIcon size={21} /> : <TargetIcon size={21} />}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-strong">
+                      {t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp, lang) })}
+                    </span>
+                    {/* Başarısız haftada TOPLANAN XP de yazıyor: yalnız yüzde,
+                        "hedefin ne kadarına yaklaştık" sorusunu yarım cevaplıyor -
+                        yüzdenin paydası hedef ve o satırın solunda duruyor, payı
+                        ise hiçbir yerde yoktu. Android ikisini birden yazıyor. */}
+                    <span className="muted block text-micro tabular-nums">
+                      {done ? t("quests.completed") : `${formatPercent(q.pct, lang)} · ${formatNumber(q.totalXp, lang)} XP`}
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
           </ol>
         </section>
       ) : null}
