@@ -19,7 +19,7 @@ import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
 import { MIN_FREE_WORDS } from "../lib/learningRules";
-import { sfx } from "../lib/sfx";
+import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyFor } from "./why";
@@ -27,7 +27,7 @@ import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
-import { speakTarget, ttsAvailable } from "../lib/tts";
+import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -154,14 +154,39 @@ type Feedback = {
  * okunur; Almanca'nın SORU olduğu turlarda (choice de-tr, truefalse, listen)
  * mount'ta okunduğundan burada tekrar okunmaz (speak=null).
  */
+/**
+ * Bekleyen okuma — efekt bitince başlayacak olan.
+ *
+ * Tur değişince İPTAL edilmesi şart: kullanıcı "Devam"a hızlı basarsa okuma
+ * bir sonraki turun üstünde başlıyordu ve o turun kendi okuması da gelince
+ * iki ses üst üste biniyordu.
+ */
+let bekleyenOkuma: ReturnType<typeof setTimeout> | null = null;
+
+/** Bekleyen okumayı ve çalan sesi keser — tur kapanırken çağrılıyor. */
+function sesiKes(): void {
+  if (bekleyenOkuma) { clearTimeout(bekleyenOkuma); bekleyenOkuma = null; }
+  stopSpeaking();
+}
+
 function markAnswer(ok: boolean, speak?: string | null): void {
   /* SES `haptic`IN ICINDEN GIDIYOR. Burada ikisi birden yaziliydi ve ses iki
      kez isteniyordu; tek duyulmasini `sfx`in 120 ms yineleme penceresine
      borcluyduk. `lib/haptics` bu ciftlemenin dort yerde temizlendigini
      yaziyordu - en cok gecilen yol olan burasi atlanmis. Webde ayni artik
      `walk-player`da duruyordu (bkz. web-parity 11.435). */
-  haptic(ok ? "correct" : "wrong");
-  if (speak) speakTarget(speak);
+  const kind = ok ? "correct" : "wrong";
+  haptic(kind);
+  if (!speak) return;
+  /*
+    OKUMA EFEKTTEN SONRA. İkisi aynı anda başlıyordu: doğru/yanlış sesi ile
+    Almanca cevap üst üste biniyor, ikisi de anlaşılmıyordu. Bekleme efektin
+    KENDİ süresinden okunuyor (`sfxDurationMs`), sabit bir sayı değil — efekt
+    tablosu değişirse bu da değişiyor. Kullanıcıdan bir eylem beklenmiyor,
+    okuma kendiliğinden geliyor.
+  */
+  if (bekleyenOkuma) clearTimeout(bekleyenOkuma);
+  bekleyenOkuma = setTimeout(() => { bekleyenOkuma = null; speakTarget(speak); }, sfxDurationMs(kind) + 60);
 }
 
 /** Almanca metnin yanında küçük hoparlör. */
@@ -210,6 +235,13 @@ const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
  * her şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta kendisi.
  */
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
+  /*
+    TUR KAPANIRKEN SES SUSUYOR. "Devam"a basıp bir sonraki tura geçildiğinde
+    önceki turun okuması sürüyordu; yeni turun kendi okuması da gelince iki
+    ses üst üste biniyordu. Temizlik burada çünkü her tur bu iskeletten
+    geçiyor — turdan çıkmak da (geri düğmesi, etap kartı) aynı yoldan.
+  */
+  useEffect(() => () => sesiKes(), []);
   const kb = useKeyboardHeight();
   const insets = useSafeAreaInsets();
   // Host (GameScreen/DailyScreen) zaten insets.bottom + spacing.lg alt padding
@@ -342,13 +374,33 @@ function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
 }
 
 /** Soru kartı — ortak üst blok. */
-function Prompt({ label, big, sub, speakText, colors }: { label: string; big: string; sub?: string | null; speakText?: string | null; colors: Palette }) {
+/**
+ * Sorunun kartı.
+ *
+ * PUNTO SORUNUN UZUNLUĞUNA GÖRE. Her soru 32 puntoyla çiziliyordu; tek
+ * kelimede doğru ama "İlk evliliğinden iki çocuğu var" gibi bir cümlede kart
+ * üç satıra çıkıp ekranı yutuyordu. Web de bunu sabit tutmuyor
+ * (`game-shell`: `text-h3 sm:text-h2`). Eşikler karakter sayısında çünkü
+ * ölçülen şey satır sayısı değil metnin kendisi: kısa (tek kelime) büyük,
+ * orta uzunluk bir kademe küçük, cümle boyu iki kademe.
+ *
+ * `meta`: karta AİT ikincil bilgi (kelime türü gibi). Kartın DIŞINDA duran
+ * bir satır, karta ait olduğunu söylemiyordu.
+ */
+function promptVariant(text: string): "display" | "h1" | "h2" {
+  if (text.length > 34) return "h2";
+  if (text.length > 18) return "h1";
+  return "display";
+}
+
+function Prompt({ label, big, sub, meta, speakText, colors }: { label: string; big: string; sub?: string | null; meta?: string | null; speakText?: string | null; colors: Palette }) {
   return (
     <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
-      <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
+      <Text variant={promptVariant(big)} style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
       {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
       {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{sub}</Text> : null}
+      {meta ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
     </View>
   );
 }
@@ -651,16 +703,17 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
   );
   return (
     <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown })} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
       {/*
-        YALNIZ TÜR, ÇEKİM DEĞİL — web `typing-game` de yalnız türü yazıyor.
+        TÜR KARTIN İÇİNDE. Kartın dışında, altında duran bir satırdı ve
+        neye ait olduğu belirsizdi.
 
+        YALNIZ TÜR, ÇEKİM DEĞİL — web `typing-game` de yalnız türü yazıyor.
         Burada `grammarLine` vardı ve o satır çoğulu/çekimi de taşıyor:
         "isim · çoğul: die Häuser". Yani Almanca karşılığını YAZMASI istenen
         kelime, sorunun hemen altında yazılı duruyordu. Tür ("isim", "fiil")
         cevabı vermiyor, hangi biçimin beklendiğini söylüyor.
       */}
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{typLabel(word.typ, word.tr)}</Text>
+      <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} meta={typLabel(word.typ, word.tr)} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
@@ -834,24 +887,51 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
 }
 
 /**
- * Cümledeki BOŞLUK — web `cloze-game`teki çip ile aynı fikir.
+ * Cümledeki BOŞLUK — sırala turlarındaki YUVANIN aynısı.
  *
- * Boşluk ham "_____" olarak yazılıyordu ve iki ayrı zararı vardı: ekranda
- * tasarımın hiçbir yerinde olmayan bir alt tire dizisi duruyor, TTS de onu
- * "alt tire alt tire" diye okuyordu (okuma tarafı `lib/tts` `cleanForSpeech`).
- * Cevaptan sonra kutu seçilen kelimeyle doluyor ve doğru/yanlış rengini alıyor.
+ * Boşluk önce ham "_____" idi (TTS onu "alt tire" diye okuyordu), sonra
+ * `Text` içinde zeminli bir aralık oldu: kutu görünmüyordu ve kelimeler
+ * birbirine yapışıyordu, çünkü iç içe `Text`te kenarlık Android'de
+ * çizilmiyor ve boşluklar komşu sözcüğe dayanıyor.
  *
- * Kutu `Text` içinde `Text`: RN'de satır içi akan tek yapı bu. Kenarlık
- * Android'de iç içe `Text`te çizilmiyor, o yüzden ayrımı ZEMİN yapıyor.
+ * Bu yüzden cümle artık SÖZCÜK SÖZCÜK diziliyor ve boşluk gerçek bir kutu:
+ * `OrderRound`/`ScrambleRound` cevap yuvasıyla aynı dil — kesik kenarlık,
+ * `surface2` zemin, aynı köşe yarıçapı. Öğrenci aynı işareti üç oyunda da
+ * "buraya bir şey gelecek" diye okuyor.
  */
 function BlankSlot({ picked, correct, colors }: { picked: string | null; correct: boolean; colors: Palette }) {
-  if (picked === null) {
-    return <Text style={{ backgroundColor: colors.surface2, color: colors.surface2 }}>{"      "}</Text>;
-  }
+  const tone = picked === null ? colors.border : correct ? colors.success : colors.danger;
   return (
-    <Text style={{ backgroundColor: correct ? colors.successSoft : colors.dangerSoft, color: correct ? colors.successText : colors.dangerText, fontWeight: "800" }}>
-      {` ${picked} `}
-    </Text>
+    <View
+      style={{
+        minWidth: 72,
+        minHeight: 34,
+        paddingHorizontal: spacing.md,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: radii.md,
+        borderWidth: 2,
+        borderStyle: picked === null ? "dashed" : "solid",
+        borderColor: tone,
+        backgroundColor: picked === null ? colors.surface2 : correct ? colors.successSoft : colors.dangerSoft,
+      }}
+    >
+      {picked === null ? null : (
+        <Text variant="bodyStrong" color={correct ? colors.successText : colors.dangerText}>{picked}</Text>
+      )}
+    </View>
+  );
+}
+
+/** Cümleyi sözcüklere böler; boşluk kendi kutusu olarak araya giriyor. */
+function ClozeSentence({ before, after, picked, correct, colors }: { before: string; after: string; picked: string | null; correct: boolean; colors: Palette }) {
+  const sozcukler = (x: string) => x.split(/\s+/).filter(Boolean);
+  return (
+    <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
+      {sozcukler(before).map((w, i) => <Text key={`b${i}`} variant="h2">{w}</Text>)}
+      <BlankSlot picked={picked} correct={correct} colors={colors} />
+      {sozcukler(after).map((w, i) => <Text key={`a${i}`} variant="h2">{w}</Text>)}
+    </View>
   );
 }
 
@@ -889,17 +969,11 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-          <Text variant="h2" style={{ flex: 1 }}>
-            {blankParts ? (
-              <>
-                {blankParts[0]}
-                <BlankSlot picked={picked} correct={picked === answer} colors={colors} />
-                {blankParts[1]}
-              </>
-            ) : (
-              sentence
-            )}
-          </Text>
+          {blankParts ? (
+            <ClozeSentence before={blankParts[0]} after={blankParts[1]} picked={picked} correct={picked === answer} colors={colors} />
+          ) : (
+            <Text variant="h2" style={{ flex: 1 }}>{sentence}</Text>
+          )}
           <SpeakButton text={sentence} colors={colors} size={22} />
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
@@ -1064,7 +1138,7 @@ function Tile({ label, undoKey, onPress, dim, colors, drag }: {
   dim?: boolean;
   colors: Palette;
   /** Sürükleme desteği: bırakıldığı nokta çağırana bildiriliyor. */
-  drag?: { onDrop: (pageY: number) => void };
+  drag?: { onStart?: () => void; onDrop: (pageX: number, pageY: number) => void };
 }) {
   const pan = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
   const [tasiniyor, setTasiniyor] = useState(false);
@@ -1072,14 +1146,20 @@ function Tile({ label, undoKey, onPress, dim, colors, drag }: {
     () =>
       PanResponder.create({
         onMoveShouldSetPanResponder: (_e, g) => !dim && !!drag && (Math.abs(g.dx) > 6 || Math.abs(g.dy) > 6),
-        onPanResponderGrant: () => setTasiniyor(true),
+        onPanResponderGrant: () => {
+          setTasiniyor(true);
+          /* Hedef kutunun ölçümü BURADA: `measureInWindow` eşzamansız ve
+             kutunun ekrandaki yeri kaydırmayla değişiyor, bırakma anında
+             ölçmek bir kare geç kalırdı. */
+          drag?.onStart?.();
+        },
         onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], { useNativeDriver: false }),
         onPanResponderRelease: (e) => {
           setTasiniyor(false);
           pan.setValue({ x: 0, y: 0 });
           /* Bırakma noktası EKRAN koordinatı: hedef kutunun yerini çağıran
              biliyor, döşeme bilmiyor. */
-          drag?.onDrop(e.nativeEvent.pageY);
+          drag?.onDrop(e.nativeEvent.pageX, e.nativeEvent.pageY);
         },
         onPanResponderTerminate: () => { setTasiniyor(false); pan.setValue({ x: 0, y: 0 }); },
       }),
@@ -1158,26 +1238,60 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
 }
 
 /**
- * Cevap kutusunun EKRANDAKİ yeri — sürüklenen döşeme nereye bırakıldı?
+ * Cevap kutusu: hem "buraya bırakıldı mı" hem "kaçıncı yuvaya bırakıldı".
  *
  * Kutu kaydırma alanının içinde ve konumu kaydırmayla değişiyor, o yüzden
- * ölçüm bırakma anında yapılıyor; bir kez ölçüp saklamak yanlış cevap verirdi.
+ * ölçüm bırakma anında tazeleniyor; bir kez ölçüp saklamak yanlış cevap
+ * verirdi.
+ *
+ * Yerleşmiş döşemelerin yerleri `onLayout` ile toplanıyor: sürüklenen döşeme
+ * bırakıldığında merkezi en yakın yuva bulunup ondan önceye mi sonraya mı
+ * gireceğine bakılıyor. Kutunun DIŞINA bırakmak "geri al" demek.
  */
 function useDropZone() {
   const ref = useRef<React.ComponentRef<typeof View>>(null);
-  const kutu = useRef<{ top: number; bottom: number } | null>(null);
+  const kutu = useRef<{ x: number; y: number; w: number; h: number } | null>(null);
+  const yuvalar = useRef<Map<number, { x: number; y: number; w: number; h: number }>>(new Map());
   const olc = () => {
-    ref.current?.measureInWindow((_x: number, y: number, _w: number, h: number) => { kutu.current = { top: y, bottom: y + h }; });
+    ref.current?.measureInWindow((x: number, y: number, w: number, h: number) => { kutu.current = { x, y, w, h }; });
   };
-  /* Sürükleme başlarken ölçüm tazeleniyor; bırakma anında `kutu` hazır olur. */
-  const icinde = (pageY: number) => {
+  const yuvaOlc = (i: number, l: { x: number; y: number; width: number; height: number }) => {
+    yuvalar.current.set(i, { x: l.x, y: l.y, w: l.width, h: l.height });
+  };
+  const icinde = (pageX: number, pageY: number) => {
     const k = kutu.current;
-    /* Ölçüm alınamadıysa (ilk kare) cömert davranılıyor: kutu her zaman
-       havuzun ÜSTÜNDE, yani yukarı doğru bırakmak "kutuya bırak" demek. */
     if (!k) return false;
-    return pageY >= k.top - 24 && pageY <= k.bottom + 24;
+    return pageX >= k.x - 24 && pageX <= k.x + k.w + 24 && pageY >= k.y - 24 && pageY <= k.y + k.h + 24;
   };
-  return { ref, olc, icinde };
+  /** Bırakma noktasına en yakın EKLEME indeksi (0..n). */
+  const hedefIndex = (pageX: number, pageY: number, adet: number) => {
+    const k = kutu.current;
+    if (!k) return adet;
+    const rx = pageX - k.x;
+    const ry = pageY - k.y;
+    let enIyi = adet;
+    let enYakin = Number.POSITIVE_INFINITY;
+    for (let i = 0; i < adet; i++) {
+      const y = yuvalar.current.get(i);
+      if (!y) continue;
+      const cx = y.x + y.w / 2;
+      const cy = y.y + y.h / 2;
+      /* Dikey fark AĞIRLIKLI: satırlar sarmalıyor, yani yanlış satırdaki
+         yakın bir yuva doğru satırdaki uzak yuvadan önce gelmemeli. */
+      const d = Math.abs(rx - cx) + Math.abs(ry - cy) * 3;
+      if (d < enYakin) { enYakin = d; enIyi = rx > cx ? i + 1 : i; }
+    }
+    return enIyi;
+  };
+  return { ref, olc, yuvaOlc, icinde, hedefIndex };
+}
+
+/** Bir döşemeyi listede `from`dan `to` ekleme noktasına taşır. */
+function tasi<T>(list: T[], from: number, to: number): T[] {
+  const arr = [...list];
+  const [item] = arr.splice(from, 1);
+  arr.splice(to > from ? to - 1 : to, 0, item);
+  return arr;
 }
 
 function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
@@ -1201,8 +1315,9 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
   const [hintUsed, setHintUsed] = useState(false);
   const usedIds = new Set(placed.map((t) => t.id));
   // Bir harf yerleştir; tamamlanınca değerlendir (hem dokunuş hem ipucu buradan geçer).
-  function place(t: { id: number; char: string }) {
-    const np = [...placed, t];
+  function place(t: { id: number; char: string }, at = placed.length) {
+    const np = [...placed];
+    np.splice(Math.max(0, Math.min(at, np.length)), 0, t);
     setPlaced(np);
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
@@ -1213,6 +1328,8 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     }
   }
   function tapPool(t: { id: number; char: string }) { if (fb || usedIds.has(t.id)) return; place(t); }
+  /** Sürüklenip bırakılan havuz döşemesi — bırakıldığı yuvaya giriyor. */
+  function dropPool(t: { id: number; char: string }, at: number) { if (fb || usedIds.has(t.id)) return; place(t, at); }
   function backspace() { if (fb || placed.length === 0) return; sfx("tap"); setPlaced((p) => p.slice(0, -1)); }
   // İpucu (web): sıradaki DOĞRU harfi havuzdan bulup otomatik yerleştirir.
   function useHint() {
@@ -1231,10 +1348,14 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => (
+            <View key={i} onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
+              <Tile label={t.char} undoKey="rounds.undo_letter" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
+            </View>
+          ))}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} drag={{ onDrop: (y) => { drop.olc(); if (drop.icinde(y)) tapPool(t); } }} />)}
+          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (drop.icinde(x, y)) dropPool(t, drop.hedefIndex(x, y, placed.length)); } }} />)}
         </View>
         {!fb ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
@@ -1267,9 +1388,10 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   const [hintUsed, setHintUsed] = useState(false);
   const noHints = useNoHints();
   const usedIds = new Set(placed.map((t) => t.id));
-  function tap(t: { id: number; text: string }) {
+  function tap(t: { id: number; text: string }, at = placed.length) {
     if (fb || usedIds.has(t.id) || placed.length >= answer.length) return;
-    const np = [...placed, t];
+    const np = [...placed];
+    np.splice(Math.max(0, Math.min(at, np.length)), 0, t);
     setPlaced(np);
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
@@ -1280,6 +1402,8 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
     }
   }
+  /** Sürüklenip bırakılan havuz döşemesi — bırakıldığı yuvaya giriyor. */
+  function dropPool(t: { id: number; text: string }, at: number) { tap(t, at); }
   /** İpucu sıradaki doğru kelimeyi yerleştirir — cümleyi çözmez, tıkanmayı açar. */
   function useHint() {
     if (fb || placed.length >= answer.length) return;
@@ -1297,10 +1421,14 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => (
+            <View key={i} onLayout={(e) => drop.yuvaOlc(i, e.nativeEvent.layout)}>
+              <Tile label={t.text} undoKey="rounds.undo_word" colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (fb) return; if (drop.icinde(x, y)) setPlaced((p) => tasi(p, i, drop.hedefIndex(x, y, p.length))); else setPlaced((p) => p.filter((_, j) => j !== i)); } }} />
+            </View>
+          ))}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} drag={{ onDrop: (y) => { drop.olc(); if (drop.icinde(y)) tap(t); } }} />)}
+          {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} drag={{ onStart: drop.olc, onDrop: (x, y) => { if (drop.icinde(x, y)) dropPool(t, drop.hedefIndex(x, y, placed.length)); } }} />)}
         </View>
         {!fb && !noHints ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>

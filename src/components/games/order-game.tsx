@@ -104,6 +104,36 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   const usedIds = new Set(placed.map((t) => t.id));
 
+  /**
+   * Sürükleyip bırakma: havuzdan gelen kelime yuvaya GİRİYOR, yerleşmiş
+   * kelime ise taşınıyor. Yük "p:<indeks>" ise taşınan bir kelime, düz sayı
+   * ise havuzdan gelen. Tıklama yerinde duruyor.
+   */
+  function dropAt(payload: string, at: number) {
+    if (status !== "playing") return;
+    play("tap");
+    if (payload.startsWith("p:")) {
+      const from = Number(payload.slice(2));
+      setPlaced((prev) => {
+        if (!Number.isInteger(from) || from < 0 || from >= prev.length) return prev;
+        const arr = [...prev];
+        const [item] = arr.splice(from, 1);
+        arr.splice(at > from ? at - 1 : at, 0, item);
+        return arr;
+      });
+      return;
+    }
+    const id = Number(payload);
+    setPlaced((prev) => {
+      if (prev.length >= answer.length) return prev;
+      const token = pool.find((t) => t.id === id && !prev.some((p) => p.id === t.id));
+      if (!token) return prev;
+      const arr = [...prev];
+      arr.splice(Math.max(0, Math.min(at, arr.length)), 0, token);
+      return arr;
+    });
+  }
+
   function add(token: Token) {
     if (status !== "playing" || usedIds.has(token.id)) return;
     // Her yerleştirilen kelime tek tek okunuyor: cümle kurulurken sırayı
@@ -188,13 +218,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             sürükleme onun yerine geçmiyor, yanına ekleniyor. */}
         <div
           onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (status !== "playing") return;
-            const id = Number(e.dataTransfer.getData("text/plain"));
-            const token = pool.find((t) => t.id === id && !usedIds.has(t.id));
-            if (token) add(token);
-          }}
+          onDrop={(e) => { e.preventDefault(); dropAt(e.dataTransfer.getData("text/plain"), placed.length); }}
           className={`flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 rounded-panel px-3 py-3 ${
             status === "wrong" ? "animate-shake" : ""
           }`}
@@ -203,25 +227,36 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
           {answer.map((_, i) => {
             const token = placed[i];
             return (
-              <button
+              /* Sürükleme/bırakma SARMALAYICIDA: boş yuvanın düğmesi
+                 `disabled` ve devre dışı bir düğme bırakma olayı almıyor —
+                 oysa boş yuva tam da bırakılmak istenen yer. */
+              <span
                 key={i}
-                type="button"
-                onClick={() => token && removeAt(i)}
-                disabled={!token || status !== "playing"}
-                aria-label={token ? tx("rounds.undo_word", { word: token.text }) : tx("rounds.empty_word_slot")}
-                className={
-                  token
-                    ? "option px-2.5 py-1.5 text-strong"
-                    : "rounded-chip px-2.5 py-1.5"
-                }
-                style={
-                  token
-                    ? undefined
-                    : { minWidth: "2.5rem", background: "var(--surface)", opacity: 0.5 }
-                }
+                draggable={!!token && status === "playing"}
+                onDragStart={(e) => e.dataTransfer.setData("text/plain", `p:${i}`)}
+                onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
+                onDrop={(e) => { e.preventDefault(); e.stopPropagation(); dropAt(e.dataTransfer.getData("text/plain"), i); }}
+                className="inline-flex"
               >
-                {token?.text ?? " "}
-              </button>
+                <button
+                  type="button"
+                  onClick={() => token && removeAt(i)}
+                  disabled={!token || status !== "playing"}
+                  aria-label={token ? tx("rounds.undo_word", { word: token.text }) : tx("rounds.empty_word_slot")}
+                  className={
+                    token
+                      ? "option px-2.5 py-1.5 text-strong"
+                      : "rounded-chip px-2.5 py-1.5"
+                  }
+                  style={
+                    token
+                      ? undefined
+                      : { minWidth: "2.5rem", background: "var(--surface)", opacity: 0.5 }
+                  }
+                >
+                  {token?.text ?? " "}
+                </button>
+              </span>
             );
           })}
           {placed.length === answer.length ? (

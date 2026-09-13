@@ -123,6 +123,38 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     setPlaced((prev) => (prev.length >= targetLetters.length ? prev : [...prev, tile]));
   }
 
+  /**
+   * Sürükleyip bırakma: havuzdan gelen harf yuvaya GİRİYOR, yerleşmiş harf
+   * ise taşınıyor. Yük "p:<indeks>" ise taşınan bir harf, düz sayı ise
+   * havuzdan gelen.
+   *
+   * Tıklama yerinde duruyor; sürükleme onun yerine geçmiyor, yanına ekleniyor.
+   */
+  function dropAt(payload: string, at: number) {
+    if (status !== "playing") return;
+    play("tap");
+    if (payload.startsWith("p:")) {
+      const from = Number(payload.slice(2));
+      setPlaced((prev) => {
+        if (!Number.isInteger(from) || from < 0 || from >= prev.length) return prev;
+        const arr = [...prev];
+        const [item] = arr.splice(from, 1);
+        arr.splice(at > from ? at - 1 : at, 0, item);
+        return arr;
+      });
+      return;
+    }
+    const id = Number(payload);
+    setPlaced((prev) => {
+      if (prev.length >= targetLetters.length) return prev;
+      const tile = pool.find((t) => t.id === id && !prev.some((p) => p.id === t.id));
+      if (!tile) return prev;
+      const arr = [...prev];
+      arr.splice(Math.max(0, Math.min(at, arr.length)), 0, tile);
+      return arr;
+    });
+  }
+
   function removeAt(index: number) {
     if (status !== "playing") return;
     play("tap");
@@ -195,33 +227,38 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
             duruyor; sürükleme onun yerine geçmiyor, yanına ekleniyor. */}
         <div
           onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
-          onDrop={(e) => {
-            e.preventDefault();
-            if (status !== "playing") return;
-            const id = Number(e.dataTransfer.getData("text/plain"));
-            const tile = pool.find((t) => t.id === id && !usedIds.has(t.id));
-            if (tile) addLetter(tile);
-          }}
+          onDrop={(e) => { e.preventDefault(); dropAt(e.dataTransfer.getData("text/plain"), placed.length); }}
           className={`flex flex-wrap justify-center ${compact ? "gap-1" : "gap-1.5"} ${status === "wrong" ? "animate-shake" : ""}`}
         >
           {targetLetters.map((_, i) => {
             const tile = placed[i];
             return (
-              <button
+              /* Sürükleme/bırakma SARMALAYICIDA: boş yuvanın düğmesi
+                 `disabled` ve devre dışı bir düğme bırakma olayı almıyor —
+                 oysa boş yuva tam da bırakılmak istenen yer. */
+              <span
                 key={i}
-                type="button"
-                onClick={() => tile && removeAt(i)}
-                disabled={!tile || status !== "playing"}
-                aria-label={tile ? tx("rounds.undo_letter", { char: tile.char }) : tx("rounds.empty_letter_slot")}
-                className={`flex items-center justify-center rounded-tile font-bold transition-colors ${slotSize}`}
-                style={{
-                  border: `2px ${tile ? "solid" : "dashed"} ${slotTone}`,
-                  background: tile ? "var(--surface)" : "transparent",
-                  color: "var(--text)",
-                }}
+                draggable={!!tile && status === "playing"}
+                onDragStart={(e) => e.dataTransfer.setData("text/plain", `p:${i}`)}
+                onDragOver={(e) => { if (status === "playing") e.preventDefault(); }}
+                onDrop={(e) => { e.preventDefault(); e.stopPropagation(); dropAt(e.dataTransfer.getData("text/plain"), i); }}
+                className="inline-flex"
               >
-                {tile?.char ?? ""}
-              </button>
+                <button
+                  type="button"
+                  onClick={() => tile && removeAt(i)}
+                  disabled={!tile || status !== "playing"}
+                  aria-label={tile ? tx("rounds.undo_letter", { char: tile.char }) : tx("rounds.empty_letter_slot")}
+                  className={`flex items-center justify-center rounded-tile font-bold transition-colors ${slotSize}`}
+                  style={{
+                    border: `2px ${tile ? "solid" : "dashed"} ${slotTone}`,
+                    background: tile ? "var(--surface)" : "transparent",
+                    color: "var(--text)",
+                  }}
+                >
+                  {tile?.char ?? ""}
+                </button>
+              </span>
             );
           })}
         </div>
