@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MIN_MASTERED } from "../lib/learningRules";
 import { t, formatPercent } from "../lib/i18n";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -205,7 +205,10 @@ export function WeeklyScreen() {
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        {/* Özet KAYDIRILABİLİR: sığıyorsa ortada, sığmıyorsa kaydırılıyor.
+            Sabit ortalanmış bir kutuda içerik ekranı aşınca hem üstten hem
+            alttan kesiliyor ve kaydırılamıyordu (bkz. `GameScreen` özeti). */}
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, alignItems: "center", justifyContent: "center", paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
           {/* HALKA YALNIZ OYNANMIŞSA. Sınav kurulamadığında da %0'lık bir halka
               çiziliyordu: "şu an sınav yok" başlığının üstünde sıfır puan,
               oynanmamış bir sınavdan kalınmış gibi okunuyordu. */}
@@ -241,7 +244,7 @@ export function WeeklyScreen() {
           ) : null}
           {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg }}>{t("weekly.once_a_week")}</Text> : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
-        </View>
+        </ScrollView>
       </View>
     );
   }

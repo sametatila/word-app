@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t, dateLocale, formatPercent } from "../lib/i18n";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -512,7 +512,20 @@ export function GameScreen() {
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        {/*
+          ÖZET KAYDIRILABİLİR.
+
+          Bütün içerik `justifyContent: "center"` verilmiş sabit bir kutudaydı
+          ve kaydırma yoktu: içerik ekrana sığmayınca ortalanıp HEM ÜSTTEN HEM
+          ALTTAN kesiliyordu — halka ve düğmeler görünmüyor, kaydırmaya da
+          çalışmıyordu. İçerik zaten uzun (maskot, halka, üç sayı, seri,
+          zorlanılan kelimeler, yarınki tekrar, dört düğme) ve küçük ekranda
+          hiçbir zaman sığmıyor.
+
+          `flexGrow: 1` + `justifyContent: "center"`: sığıyorsa ortada duruyor,
+          sığmıyorsa kaydırılıyor. Kesilme yok.
+        */}
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, alignItems: "center", justifyContent: "center", paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
           {/*
             KUTLAMA EŞİĞİ WEB'İN KURALI. Burada `pct >= 60` yazıyordu, yani
             neredeyse her tur konfeti patlıyordu; web aynı ekranda daha yüksek
@@ -691,7 +704,7 @@ export function GameScreen() {
             </PressableScale>
           )}
           <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.finish")}</Text></PressableScale>
-        </View>
+        </ScrollView>
       </View>
     );
   }
