@@ -19545,7 +19545,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      araniyor. */
   const ISARET = {
     "profil-seri": /className="tint-soft flex items-center gap-1\.5 rounded-full/,
-    "tur-seridi": /className="tint-soft rounded-full px-2 py-0\.5 text-micro uppercase/,
+    /* Cip bir flex satirin icine tasindi ve `shrink-0` aldi; isaret artik
+       sinif SIRASINA degil `tint-soft`un varligina bakiyor - olculen sey
+       zaten o. */
+    "tur-seridi": /className="tint-soft[^"]*text-micro uppercase/,
     "ortak-gorev": /className="tint-soft rounded-full px-2 py-0\.5 text-micro"/,
     "lig-sonucu": /className="tint-soft flex h-11 w-11 shrink-0/,
     yapabildiklerim: /color-mix\(in srgb, var\(--color-mint-500\) 14%, transparent\)/,

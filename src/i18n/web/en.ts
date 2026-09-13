@@ -149,7 +149,6 @@ export const enWeb: Record<string, string> = {
   "settings.add_to_home_hint": "full screen, offline",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Getting today's session ready…",
-  "session.lets_go": "Let's go",
   "session.expired": "Your session has expired",
   "session.expired_sub": "Your progress is saved — sign in and pick up where you left off.",
   "session.load_failed": "Words couldn't be loaded",
@@ -190,7 +189,6 @@ export const enWeb: Record<string, string> = {
   "pron.pauses": "{n} pauses",
   "pron.pauses.one": "{n} pause",
   "pron.word_level_note": "word-level measurement, not a phoneme score",
-  "session.accuracy": "{pct} correct",
   "daily.preparing": "Getting today's round ready…",
   "weekly.preparing": "Getting the quiz ready…",
   "weekly.saving": "Saving the result…",

@@ -174,7 +174,6 @@ export const trWeb: Record<string, string> = {
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha
      sade olduğu için bu anahtarların çoğu web'e özel. */
   "session.preparing": "Bugünkü çalışman hazırlanıyor…",
-  "session.lets_go": "Hadi başlayalım",
   "session.expired": "Oturumun sona ermiş",
   "session.expired_sub": "İlerlemen kayıtlı — girince kaldığın yerden devam edersin.",
   "session.load_failed": "Kelimeler yüklenemedi",
@@ -216,7 +215,6 @@ export const trWeb: Record<string, string> = {
   "pron.pauses": "{n} duraklama",
   "pron.pauses.one": "{n} duraklama",
   "pron.word_level_note": "kelime düzeyi ölçüm, fonem notu değil",
-  "session.accuracy": "{pct} doğru",
   "daily.preparing": "Günün turu hazırlanıyor…",
   "weekly.preparing": "Sınav hazırlanıyor…",
   "weekly.saving": "Sonuç kaydediliyor…",

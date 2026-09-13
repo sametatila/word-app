@@ -110,7 +110,6 @@ function sessionKey(game: PlayableGame | null): string {
  */
 export function SessionPlayer() {
   const t = useT();
-  const lang = useLang();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -856,64 +855,19 @@ export function SessionPlayer() {
           (`GameScreen`: 44x44, `surface-2`).
 
           Düğme kendi satırındaydı çünkü yanında CEFR rozeti duruyordu; rozet
-          kalkınca o satırda tek başına kaldı ve altındaki ilerleme satırıyla
-          arasında boşuna bir kat vardı. Günün turu (`daily-player`) bu şekli
-          zaten kullanıyor. */}
-      <div className="mb-3 shrink-0">
-        <div className="mb-1.5 flex items-center justify-between gap-3 text-caption">
-          {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
-              kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
-              kaynak. */}
-          <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
-          <span className="muted flex min-w-0 flex-1 items-center gap-2">
-            {index + 1} / {session!.rounds.length}
-            {(() => {
-              const ws = round.game === "match" ? round.words : [round.word];
-              const isNew = ws.every((w) => w.isNew);
-              return (
-                <span
-                  /* Ortak yumuşak tint (`tint-soft`): iki çipin oranı ayrıydı
-                     (%14 / %16) ve washleri takma addan kuruluyordu. */
-                  className="tint-soft rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
-                  style={{
-                    "--tint-fill": isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
-                    "--tint-ink": isNew ? "var(--color-brand)" : "var(--color-flame)",
-                  } as React.CSSProperties}
-                >
-                  {t(isNew ? "session.chip_new" : "session.chip_review")}
-                </span>
-              );
-            })()}
-          </span>
-          {/* Combo üç doğrudan önce görünmüyor: her doğru cevapta yanıp sönen
-              bir rozet, ödül olmaktan çıkıp gürültü olurdu. */}
-          {combo >= 3 ? (
-            <motion.span
-              key={combo}
-              initial={{ scale: 1.35 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 420, damping: 16 }}
-              className="flex items-center gap-1 rounded-full px-2 py-0.5 text-micro"
-              /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
-                 iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
-              style={{
-                background: "color-mix(in srgb, var(--color-sky-500) 14%, transparent)",
-                color: "var(--color-sky)",
-              }}
-            >
-              <SparkIcon size={12} /> {t("sessionw.combo", { n: combo })}
-            </motion.span>
-          ) : (
-            <span className="muted">
-              {tally.total > 0
-                ? t("session.accuracy", {
-                    pct: formatPercent(Math.round((tally.correct / tally.total) * 100), lang),
-                  })
-                : t("session.lets_go")}
-            </span>
-          )}
-        </div>
-        <div className="h-2 w-full overflow-hidden rounded-full surface-2">
+          kalkınca o satırda tek başına kaldı. Şimdi sıra Android'inkiyle
+          birebir: çıkış, çubuk, seri hapı, yeni/tekrar çipi, sayaç.
+
+          DOĞRULUK ORANI BU SATIRDA YOK. Tur boyunca "%80 doğru" yazan bir
+          alan vardı ve ilk soruda söyleyecek bir şeyi olmadığı için
+          "hadi başlayalım" diyordu — ölçü değil dolgu. Oran turun sonunda
+          zaten veriliyor; Android bu satırda hiç göstermiyordu. */}
+      <div className="mb-3 flex shrink-0 items-center gap-3 text-caption">
+        {/* Ölçüler ORTAK BİLEŞENDE: bu düğme Android'in ölçüsünü elle
+            kopyalıyordu ve aynı kopya beş yerde vardı. `RoundExit` tek
+            kaynak. */}
+        <RoundExit onExit={() => setConfirmExit(true)} labelKey="game.quit_round" />
+        <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
           <motion.div
             className="brand-gradient h-full rounded-full"
             initial={{ width: 0 }}
@@ -921,6 +875,45 @@ export function SessionPlayer() {
             transition={{ type: "spring", stiffness: 180, damping: 26 }}
           />
         </div>
+        {/* Combo üç doğrudan önce görünmüyor: her doğru cevapta yanıp sönen
+            bir rozet, ödül olmaktan çıkıp gürültü olurdu. */}
+        {combo >= 3 ? (
+          <motion.span
+            key={combo}
+            initial={{ scale: 1.35 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 420, damping: 16 }}
+            className="flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-micro"
+            /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
+               iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
+            style={{
+              background: "color-mix(in srgb, var(--color-sky-500) 14%, transparent)",
+              color: "var(--color-sky)",
+            }}
+          >
+            <SparkIcon size={12} /> {t("sessionw.combo", { n: combo })}
+          </motion.span>
+        ) : null}
+        {(() => {
+          const ws = round.game === "match" ? round.words : [round.word];
+          const isNew = ws.every((w) => w.isNew);
+          return (
+            <span
+              /* Ortak yumuşak tint (`tint-soft`): iki çipin oranı ayrıydı
+                 (%14 / %16) ve washleri takma addan kuruluyordu. */
+              className="tint-soft shrink-0 rounded-full px-2 py-0.5 text-micro uppercase tracking-eyebrow"
+              style={{
+                "--tint-fill": isNew ? "var(--color-brand-500)" : "var(--color-flame-500)",
+                "--tint-ink": isNew ? "var(--color-brand)" : "var(--color-flame)",
+              } as React.CSSProperties}
+            >
+              {t(isNew ? "session.chip_new" : "session.chip_review")}
+            </span>
+          );
+        })()}
+        <span className="muted shrink-0 tabular-nums">
+          {index + 1} / {session!.rounds.length}
+        </span>
       </div>
       {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
           bunu söyleyen tek yer buydu, mobilde de öyle. */}

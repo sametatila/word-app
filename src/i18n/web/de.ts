@@ -149,7 +149,6 @@ export const deWeb: Record<string, string> = {
   "settings.add_to_home_hint": "Vollbild, offline",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Deine heutige Runde wird vorbereitet…",
-  "session.lets_go": "Los geht's",
   "session.expired": "Deine Sitzung ist abgelaufen",
   "session.expired_sub": "Dein Fortschritt ist gespeichert — melde dich an und mach dort weiter.",
   "session.load_failed": "Die Wörter konnten nicht geladen werden",
@@ -190,7 +189,6 @@ export const deWeb: Record<string, string> = {
   "pron.pauses": "{n} Pausen",
   "pron.pauses.one": "{n} Pause",
   "pron.word_level_note": "Messung auf Wortebene, keine Phonembewertung",
-  "session.accuracy": "{pct} richtig",
   "daily.preparing": "Die Runde des Tages wird vorbereitet…",
   "weekly.preparing": "Der Test wird vorbereitet…",
   "weekly.saving": "Das Ergebnis wird gespeichert…",
