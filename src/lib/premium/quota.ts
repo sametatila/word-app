@@ -102,5 +102,43 @@ export async function bumpUsage(userId: string, key: string, period: Period, by 
   }
 }
 
+/**
+ * Kontrol ve sayım TEK ifadede: sayaç `limit`in altındaysa artırır ve true
+ * döner; doluysa dokunmaz ve false döner.
+ *
+ * Ücretli sağlayıcıya giden her uçtaki emniyet tavanı bununla kurulmalı.
+ * `getUsage` + `bumpUsage` ikilisi oku-sonra-yaz: aynı anda gelen N istek
+ * sayacı aynı değerde okur, hepsi kapıdan geçer ve tavan paralel bir
+ * patlamaya karşı hiçbir şey korumaz (güvenlik denetimi 2026-09-14, #1).
+ *
+ * Neden yarışsız: `ON CONFLICT DO UPDATE` satırı kilitliyor ve `WHERE`
+ * kilidi alan işlemde satırın EN SON hâline bakıyor. Sıradaki istek önceki
+ * artırımı görüyor; `limit`e varınca güncelleme olmuyor, `RETURNING` boş
+ * dönüyor. Reddedilen istek sayılmıyor — tavanda bekleyen istemci sayacı
+ * şişirmesin (`social/ratelimit.ts` `consume()` sayıyor; orada pencere var,
+ * burada gün sınırı sabit).
+ *
+ * Hata olursa kapı AÇIK, `getUsage` ile aynı gerekçe.
+ */
+export async function takeUsage(userId: string, key: string, period: Period, limit: number, now?: Date): Promise<boolean> {
+  if (limit <= 0) return false;
+  const p = periodKey(period, now);
+  try {
+    const rows = await db
+      .insert(usageCounters)
+      .values({ userId, key, period: p, count: 1 })
+      .onConflictDoUpdate({
+        target: [usageCounters.userId, usageCounters.key, usageCounters.period],
+        set: { count: sql`${usageCounters.count} + 1`, updatedAt: new Date() },
+        setWhere: sql`${usageCounters.count} < ${limit}`,
+      })
+      .returning({ count: usageCounters.count });
+    return rows.length > 0;
+  } catch (err) {
+    console.error("[quota] sayaç yazılamadı", key, err);
+    return true;
+  }
+}
+
 /** Ömürlük kotalarda seviyeye bağlı anahtar: "speaking_lesson:A1". */
 export const levelKey = (base: string, level: string): string => `${base}:${level}`;

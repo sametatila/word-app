@@ -34,7 +34,7 @@ export {
   type EntitlementView,
   type BonusSource,
 } from "./entitlement";
-export { checkQuota, getUsage, bumpUsage, levelKey, type QuotaCheck, type Period } from "./quota";
+export { checkQuota, getUsage, bumpUsage, takeUsage, levelKey, type QuotaCheck, type Period } from "./quota";
 export { findPremiumAccount, type PremiumAccount } from "./account";
 
 /**

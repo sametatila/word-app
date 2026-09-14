@@ -26,11 +26,12 @@ import { and, eq } from "drizzle-orm";
 // yönlendiriyor. Göreli yazılsaydı test kendi sorgularını GERÇEK modülle,
 // premium modülleri ise test ikiziyle koşardı: iki ayrı havuz, iki ayrı adres.
 import { db } from "@/lib/db";
-import { entitlements, premiumGrants, profiles, promoCodes, referrals } from "../src/lib/db/schema";
+import { entitlements, premiumGrants, profiles, promoCodes, referrals, usageCounters } from "../src/lib/db/schema";
 import { applyStoreEvent, grantBonus, resolveEntitlement, daysToMinutes } from "../src/lib/premium/entitlement";
 import { createCodes, redeemCode } from "../src/lib/premium/promo";
 import { attachReferral, ensureReferralCode, rewardForFirstPayment } from "../src/lib/premium/referral";
 import type { StoreEvent } from "../src/lib/premium/ports";
+import { getUsage, takeUsage } from "../src/lib/premium/quota";
 
 /**
  * ADRES `TEST_DATABASE_URL`DEN OKUNUR, `DATABASE_URL`den değil.
@@ -72,6 +73,7 @@ async function cleanup(ids: string[]) {
     await db.delete(referrals).where(eq(referrals.inviterUserId, id));
     await db.delete(referrals).where(eq(referrals.inviteeUserId, id));
     await db.delete(profiles).where(eq(profiles.userId, id));
+    await db.delete(usageCounters).where(eq(usageCounters.userId, id));
   }
 }
 
@@ -266,6 +268,25 @@ async function main() {
     const twice = await resolveEntitlement(inviter);
     const gun = Math.round(((twice.until?.getTime() ?? 0) - Date.now()) / 86_400_000) + twice.bonusDaysPending;
     check("ödül İKİ KEZ verilmiyor", gun <= 8, `${gun} gün`);
+  }
+
+  /* ───────── KOTA TAVANI: paralel patlama (güvenlik denetimi #1) ───────── */
+  console.log("\nKota tavanı: aynı anda gelen istekler");
+  {
+    const u = uid("quota");
+    created.push(u);
+    const limit = 20;
+    // Havuzun bütün bağlantıları aynı anda yazıyor; oku-sonra-yaz kapı burada
+    // tavanın katlarını geçiriyordu.
+    const results = await Promise.all(Array.from({ length: 200 }, () => takeUsage(u, "ai_assess_calls", "day", limit)));
+    const passed = results.filter(Boolean).length;
+    check("200 eşzamanlı istekten TAM tavan kadarı geçti", passed === limit, passed);
+    check("sayaç tavanı aşmadı (reddedilen sayılmıyor)", (await getUsage(u, "ai_assess_calls", "day")) === limit, await getUsage(u, "ai_assess_calls", "day"));
+    check("tavan doluyken sonraki istek reddediliyor", !(await takeUsage(u, "ai_assess_calls", "day", limit)));
+    check("başka anahtar etkilenmiyor", await takeUsage(u, "tts_calls", "day", limit));
+    const tomorrow = new Date(Date.now() + 86_400_000);
+    check("ertesi gün sayaç yeniden açılıyor", await takeUsage(u, "ai_assess_calls", "day", limit, tomorrow));
+    check("sıfır tavan hiç geçirmiyor", !(await takeUsage(u, "zero_key", "day", 0)));
   }
 
   await cleanup(created);

@@ -11,6 +11,7 @@ import { logRoleplayTurn } from "@/lib/lessons/log";
 import { langOf } from "@/lib/social/notify";
 import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
+import { takeUsage } from "@/lib/premium";
 
 export const dynamic = "force-dynamic";
 
@@ -101,6 +102,12 @@ export async function POST(req: Request) {
 
   const messages = parseMessages(raw);
   if (!messages) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+
+  // Paralel patlamaya karşı atomik sayaç — gerekçesi `/api/stt`'de aynı yerde.
+  // Gövde doğrulandıktan SONRA: bozuk istek hak yakmasın.
+  if (!(await takeUsage(userId, "roleplay_turns", "day", ROLEPLAY_DAILY_LIMIT))) {
+    return NextResponse.json({ error: "quota" }, { status: 429 });
+  }
 
   try {
     const encoder = new TextEncoder();

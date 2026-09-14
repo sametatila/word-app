@@ -4,6 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
+import { takeUsage } from "@/lib/premium";
 import { scorePronunciation } from "@/lib/pronounce";
 import { track } from "@/lib/events";
 import type { SpeechConfusion } from "@/lib/skills/types";
@@ -61,6 +62,10 @@ export async function POST(req: Request) {
   if (!target) return NextResponse.json({ error: "no_target" }, { status: 400 });
 
   if (!(await underDailyLimit(userId))) return NextResponse.json({ error: "quota" }, { status: 429 });
+  // Paralel patlamaya karşı atomik sayaç — gerekçesi `/api/stt`'de aynı yerde.
+  if (!(await takeUsage(userId, "pronounce_requests", "day", DAILY_LIMIT))) {
+    return NextResponse.json({ error: "quota" }, { status: 429 });
+  }
 
   try {
     const stt = await transcribe(file, { language, words: true, userId, expected: target });

@@ -12,7 +12,7 @@ import {
   type AssessRequest,
 } from "@/lib/assess-prompts";
 import { canAiPractice } from "@/lib/premium/access";
-import { premiumConfig, bumpUsage, getUsage } from "@/lib/premium";
+import { premiumConfig, takeUsage } from "@/lib/premium";
 import { clampDay } from "@/lib/award";
 
 export const dynamic = "force-dynamic";
@@ -86,10 +86,9 @@ export async function POST(req: Request) {
      */
     const cfg = await premiumConfig();
     const ceiling = Math.max(cfg.fairUse.aiPracticePerDay, 1) * 4;
-    if ((await getUsage(userId, "ai_assess_calls", "day")) >= ceiling) {
+    if (!(await takeUsage(userId, "ai_assess_calls", "day", ceiling))) {
       return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
     }
-    void bumpUsage(userId, "ai_assess_calls", "day");
   }
 
   const outcome = await assess(userId, parsed.req, parsed.day, (r) =>

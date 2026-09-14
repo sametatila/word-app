@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
-import { bumpUsage, getUsage } from "@/lib/premium";
+import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
 import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
@@ -88,13 +88,12 @@ export async function GET(req: Request) {
    * geçmiyor; önbellek (tarayıcı + CDN) zaten çoğu isteği buraya hiç
    * getirmiyor. Yani normal kullanıcı bu tavanı göremez.
    */
-  if ((await getUsage(userId, "tts_calls", "day")) >= DAILY_TTS_CEILING) {
+  if (!(await takeUsage(userId, "tts_calls", "day", DAILY_TTS_CEILING))) {
     return NextResponse.json(
       { error: "quota" },
       { status: 429, headers: { "cache-control": "no-store" } },
     );
   }
-  void bumpUsage(userId, "tts_calls", "day");
 
   try {
     const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow, userId);

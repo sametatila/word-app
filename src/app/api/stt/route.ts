@@ -5,7 +5,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders, type SttMode } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
 import { canPocketWalk } from "@/lib/premium/access";
-import { premiumConfig, bumpUsage, getUsage } from "@/lib/premium";
+import { premiumConfig, takeUsage } from "@/lib/premium";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -88,10 +88,9 @@ export async function POST(req: Request) {
      */
     const cfg = await premiumConfig();
     const ceiling = Math.max(cfg.fairUse.pocketWalksPerDay, 1) * 40;
-    if ((await getUsage(userId, "pocket_walk_words", "day")) >= ceiling) {
+    if (!(await takeUsage(userId, "pocket_walk_words", "day", ceiling))) {
       return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
     }
-    void bumpUsage(userId, "pocket_walk_words", "day");
   }
 
   if (!sttProviders(mode).length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
@@ -99,6 +98,16 @@ export async function POST(req: Request) {
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
 
   if (!(await underDailyLimit(userId))) return NextResponse.json({ error: "quota" }, { status: 429 });
+  /**
+   * `underDailyLimit` tek başına paralel patlamayı durdurmuyor: saydığı
+   * `ai_usage` satırı sağlayıcı cevap VERDİKTEN sonra yazılıyor, yani aynı
+   * anda gelen yüz istek sayacı sıfırda görür ve yüzü de faturalanır. Atomik
+   * sayaç o pencereyi kapatıyor; `ai_usage` sayımı yine duruyor çünkü düşen
+   * sağlayıcı denemelerini de sayan o (bkz. `takeUsage`).
+   */
+  if (!(await takeUsage(userId, "stt_requests", "day", DAILY_LIMIT))) {
+    return NextResponse.json({ error: "quota" }, { status: 429 });
+  }
   try {
     const out = await transcribe(file, { language, userId, expected, mode });
     return NextResponse.json({ text: out.text, confidence: out.confidence, provider: out.provider, model: out.model });
