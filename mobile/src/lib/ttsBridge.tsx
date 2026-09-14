@@ -146,7 +146,12 @@ export function TtsBridge() {
         ref={(r) => { viewRef = r; }}
         source={{ uri: `${API_BASE}/tts-bridge` }}
         sharedCookiesEnabled
-        thirdPartyCookiesEnabled
+        // Navigasyon kilidi (güvenlik denetimi): bu görünmez köprü canlı oturum
+        // çerezini taşıyor; /tts-bridge'te olası bir XSS/açık-yönlendirme WebView'i
+        // başka bir kökene götürüp çerezi sızdırmasın. Yalnız NAVİGASYONU gate eder
+        // (fetch/ses gibi alt-kaynaklar etkilenmez). thirdPartyCookies de kaldırıldı:
+        // birinci-taraf sayfa için gereksiz.
+        onShouldStartLoadWithRequest={(req) => req.url.startsWith(API_BASE) || req.url.startsWith("about:")}
         javaScriptEnabled
         domStorageEnabled
         mediaPlaybackRequiresUserAction={false}

@@ -185,7 +185,9 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
   const canSee = isSelf || visibility === "public" || (visibility === "friends" && rel.state === "friends");
   const today = serverToday();
   const [mutual, weekly, ach, streaks, recent] = await Promise.all([
-    isSelf ? Promise.resolve(0) : mutualFriendCount(viewer, uid),
+    // Ortak arkadaş sayısı yalnız profil görülebilirken hesaplanır: gizli/engelli
+    // profil için küçük de olsa bir sinyal (kaç ortak) sızdırmamalı (güvenlik denetimi).
+    isSelf || !canSee ? Promise.resolve(0) : mutualFriendCount(viewer, uid),
     canSee ? weeklyXpFor([uid], today) : Promise.resolve(new Map<string, number>()),
     canSee ? achievementCount(uid) : Promise.resolve(0),
     rel.state === "friends" ? friendStreaks(viewer, [uid], today) : Promise.resolve(new Map<string, FriendStreak>()),

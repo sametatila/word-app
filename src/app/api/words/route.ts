@@ -34,7 +34,9 @@ export async function GET(req: Request) {
     filters.push(eq(words.course, "de"));
   }
   if (q) {
-    const like = `%${q}%`;
+    // %/_/\ kaçışlanır: kullanıcının joker karakterleri LIKE'ı genişletmesin
+    // (kendi araması, güvenlik denetimi — searchUsers ile aynı hijyen).
+    const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
     const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));
     if (cond) filters.push(cond);
   }

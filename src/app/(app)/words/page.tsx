@@ -47,7 +47,8 @@ export default async function WordsPage({
     filters.push(eq(words.course, "de"));
   }
   if (q) {
-    const like = `%${q}%`;
+    // %/_/\ kaçışlanır: joker karakterler LIKE'ı genişletmesin (güvenlik denetimi).
+    const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
     // Arama İngilizceyi de kapsıyor: kelimeyi "table" diye arayan biri
     // Türkçesini bilmek zorunda kalmasın.
     const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));
