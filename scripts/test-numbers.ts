@@ -10,6 +10,7 @@ import { foldNumbers, wordToNumber } from "../src/lib/numbers";
 import { foldSpelling, foldTight, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
 import { matchSentence, foldSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
+import { cleanForSpeech } from "../src/lib/tts/edge";
 
 // Tek sözcük → sayı
 assert.equal(wordToNumber("fünf", "de"), 5);
@@ -130,6 +131,30 @@ assert.equal(foldTight("auf Wiedersehen", "de"), foldTight("aufWiedersehen", "de
 // `acceptedForms` de dile bakıyor: simge tablosu ve baştaki tanımlık.
 assert.ok(spokenMatches(["door"], ["the door"], "en"), "acceptedForms İngilizce tanımlığı düşürür");
 assert.ok(spokenMatches(["Bekannte"], ["die Bekannte"], "de"), "Almanca tanımlık eskisi gibi");
+
+/*
+ * İSTEĞE BAĞLI ÖN EK — "(X-)Y" başlığı yalnız BİRLEŞİK doğru.
+ *
+ * Parantezsiz hâl başka bir kelime: "(herunter-)fahren" için "fahren",
+ * "(Back-)Ofen" için "Ofen" (havuzda ayrı madde, 8352). Eskiden ikisi de doğru
+ * sayılıyordu ve seslendirme de parantezi silip "fahren" okuyordu. İsteğe
+ * bağlı SON EK ("gern(e)") ve not ("setzen (sich)") eskisi gibi iki biçimde.
+ * Mobil karşılığı `mobile/__tests__/voiceMatch.test.ts`.
+ */
+assert.ok(matchesAnswer("Backofen", ["(Back-)Ofen"], "de"), "ön ek birleşik kabul");
+assert.ok(!matchesAnswer("Ofen", ["(Back-)Ofen"], "de"), "ön eksiz kök başka kelime — ret");
+assert.ok(!matchesAnswer("fahren", ["(herunter-)fahren"], "de"), "fahren ≠ herunterfahren");
+assert.ok(matchesAnswer("herunterfahren", ["(herunter-)fahren"], "de"), "herunterfahren kabul");
+assert.ok(matchesAnswer("Schlagsahne", ["(Schlag-)Sahne"], "de") && !matchesAnswer("Sahne", ["(Schlag-)Sahne"], "de"), "Schlagsahne evet, Sahne hayır");
+assert.ok(matchesAnswer("gerne", ["gern(e)"], "de") && matchesAnswer("gern", ["gern(e)"], "de"), "isteğe bağlı son ek iki biçimde");
+assert.ok(matchesAnswer("setzen", ["setzen (sich)"], "de") && matchesAnswer("sich setzen", ["setzen (sich)"], "de"), "(sich) notu eskisi gibi");
+assert.ok(spokenMatches(["Back Ofen"], ["(Back-)Ofen"], "de"), "tanıyıcı bileşiği bölünce de kabul");
+assert.ok(!spokenMatches(["Ofen"], ["(Back-)Ofen"], "de"), "sözlü: kök tek başına ret");
+assert.equal(cleanForSpeech("(Back-)Ofen"), "Backofen", "seslendirme ön eki birleştirir");
+assert.equal(cleanForSpeech("der (herunter-)fahren"), "der herunterfahren");
+assert.equal(cleanForSpeech("setzen (sich)"), "setzen", "(sich) notu düşer");
+assert.equal(cleanForSpeech("Eis (D, CH)"), "Eis", "bölge notu düşer");
+assert.equal(cleanForSpeech("gern(e)"), "gern", "isteğe bağlı son ek notu düşer");
 
 /*
  * İNGİLİZCE SAYI SÖZCÜKLERİ — modül `lib/german-numbers`ten `lib/numbers`e

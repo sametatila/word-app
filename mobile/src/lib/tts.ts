@@ -151,6 +151,8 @@ export function stopSpeaking(): void {
  */
 export function cleanForSpeech(text: string): string {
   return text
+    // İsteğe bağlı ön ek birleşiyor: "(Back-)Ofen" → "Backofen", "Ofen" değil (web ile aynı).
+    .replace(/\((\p{L}+)-\)\s*(\p{L}?)/gu, (_, pre: string, head: string) => pre + head.toLowerCase())
     .replace(/\(.*?\)/g, "")
     .replace(/_{2,}/g, " ")
     .replace(/[/–—]/g, " ")

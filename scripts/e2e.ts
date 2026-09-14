@@ -433,7 +433,8 @@ async function main() {
     ["r/e Erwachsene", ["erwachsene", "der erwachsene", "die erwachsene"]],
     ["heraus/raus", ["heraus", "raus"]],
     ["hin/hin-/-hin", ["hin"]],
-    ["(Schlag-)Sahne", ["sahne", "schlagsahne"]],
+    // İsteğe bağlı ön ek yalnız birleşik: "Sahne" başka bir madde (ret aşağıda).
+    ["(Schlag-)Sahne", ["schlagsahne"]],
     ["gern/gerne", ["gern", "gerne"]],
   ];
   for (const [head, forms] of accept) {
@@ -444,6 +445,11 @@ async function main() {
   check(
     "yanlış yazım kabul edilmiyor",
     !new Set(acceptedForms("sich setzen")).has("sitzen"),
+  );
+  check(
+    "isteğe bağlı ön eksiz kök kabul edilmiyor",
+    !new Set(acceptedForms("(Schlag-)Sahne")).has("sahne") &&
+      !new Set(acceptedForms("(herunter-)fahren")).has("fahren"),
   );
 
   // Harfi harfine yazmak şart değil: klavyede Almanca karakter olmayabilir ve

@@ -38,3 +38,28 @@ describe("boşluksuz okuma ve içerme eşiği", () => {
     expect(spokenMatches(["der."], ["der Punkt"])).toBe(true);
   });
 });
+
+/**
+ * İsteğe bağlı ön ek: "(X-)Y" başlığı yalnız birleşik doğru. Parantezsiz kök
+ * başka bir kelime ("(herunter-)fahren" → "fahren", "(Back-)Ofen" → "Ofen").
+ * Web karşılığı `scripts/test-numbers.ts` içinde, aynı örneklerle.
+ */
+describe("isteğe bağlı ön ek", () => {
+  it("birleşik biçim kabul, bölünmüş okuma da", () => {
+    expect(spokenMatches(["Backofen"], ["(Back-)Ofen"])).toBe(true);
+    expect(spokenMatches(["Back Ofen"], ["(Back-)Ofen"])).toBe(true);
+    expect(spokenMatches(["herunterfahren"], ["(herunter-)fahren"])).toBe(true);
+  });
+
+  it("ön eksiz kök doğru sayılmıyor", () => {
+    expect(spokenMatches(["Ofen"], ["(Back-)Ofen"])).toBe(false);
+    expect(spokenMatches(["fahren"], ["(herunter-)fahren"])).toBe(false);
+    expect(spokenMatches(["Sahne"], ["(Schlag-)Sahne"])).toBe(false);
+  });
+
+  it("isteğe bağlı son ek ve (sich) notu eskisi gibi", () => {
+    expect(spokenMatches(["gerne"], ["gern(e)"])).toBe(true);
+    expect(spokenMatches(["gern"], ["gern(e)"])).toBe(true);
+    expect(spokenMatches(["setzen"], ["setzen (sich)"])).toBe(true);
+  });
+});

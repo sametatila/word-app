@@ -21380,6 +21380,40 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 248. seslendirme sadelestirmesi ve istege bagli on ek ─────────────────
+ * `cleanForSpeech` UC kopya: sunucu (`lib/tts/edge`, sentez ve onbellek
+ * anahtari), web istemcisi (`speak-button`, URL onbellek anahtari) ve mobil
+ * (`lib/tts`). Biri ayrisirsa ayni metin iki ayri onbellek girdisi olur ya da
+ * iki uygulamada farkli okunur. "(Back-)Ofen" tam bu yuzden "Ofen" okunuyordu:
+ * genel parantez silme on eki de atiyordu.
+ *
+ * Olcu: yorumlari atilmis govdedeki `.replace(...)` zinciri (tip bildirimi
+ * haric) uc tarafta ayni; cevap denetiminde (web `parenVariants`, mobil
+ * `acceptedForms`) on ek birlestirme deseni iki tarafta da var. */
+console.log("\n" + C.b + "248. SESLENDIRME SADELESTIRMESI VE ISTEGE BAGLI ON EK" + C.off);
+{
+  const silY = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const zincir = (p) => {
+    const src = silY(read(p));
+    const m = src.match(/function cleanForSpeech\(text: string\): string \{\s*return text([\s\S]*?);\s*\n\}/);
+    if (!m) return ["OKUNAMADI"];
+    return m[1]
+      .replace(/:\s*string\b/g, "")
+      .split(/\n\s*(?=\.)/)
+      .map((l) => l.replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+  };
+  const sunucu = zincir("src/lib/tts/edge.ts");
+  sameList("cleanForSpeech zinciri (mobil / sunucu)", zincir("mobile/src/lib/tts.ts"), sunucu, "mobil", "sunucu");
+  sameList("cleanForSpeech zinciri (web istemci / sunucu)", zincir("src/components/speak-button.tsx"), sunucu, "web istemci", "sunucu");
+  const onEk = /\\\(\(\\p\{L\}\+\)-\\\)\\s\*/;
+  sameList(
+    "istege bagli on ek birlesik kabul ediliyor",
+    ["on ek birlestirme=" + (onEk.test(silY(read("mobile/src/lib/voiceMatch.ts"))) ? "var" : "YOK")],
+    ["on ek birlestirme=" + (onEk.test(silY(read("src/components/games/types.ts"))) ? "var" : "YOK")],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

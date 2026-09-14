@@ -473,14 +473,23 @@ export function acceptedForms(raw: string, lang: TargetLang = currentTargetLang(
 }
 
 /**
- * Parantezli kısım hem varken hem yokken geçerlidir.
- * "(Schlag-)Sahne" → "Schlagsahne" ve "Sahne"; "setzen (sich)" → "setzen sich" ve "setzen".
+ * Parantezli kısım hem varken hem yokken geçerlidir — İSTEĞE BAĞLI ÖN EK HARİÇ.
+ * "gern(e)" → "gerne" ve "gern"; "setzen (sich)" → "setzen sich" ve "setzen".
+ *
+ * "(X-)Y" biçimindeki ön ek yalnız BİRLEŞİK kabul edilir: "(Schlag-)Sahne" →
+ * "Schlagsahne". Parantezsiz hâli ("Sahne", "(herunter-)fahren" için "fahren")
+ * çoğu zaman havuzda ayrı bir madde, yani başka bir kelime — onu doğru saymak
+ * yanlış cevabı ödüllendiriyordu. Seslendirme (`cleanForSpeech`) aynı kuralla
+ * ön eki birleştiriyor; içerik denetimi (`test:content`) bu biçimi havuzda
+ * zaten reddediyor, burası dersler ve eski veri için emniyet.
  */
 function parenVariants(raw: string): string[] {
   if (!raw.includes("(")) return [raw];
+  const joinedPrefix = raw.replace(/\((\p{L}+)-\)\s*/gu, "$1");
+  if (!joinedPrefix.includes("(")) return [joinedPrefix];
   return [
-    raw.replace(/\(([^)]*)\)\s*/g, (_, inner: string) => inner.replace(/-+$/, "")), // birleşik
-    raw.replace(/\([^)]*\)/g, " "), // parantezsiz
+    joinedPrefix.replace(/\(([^)]*)\)\s*/g, (_, inner: string) => inner.replace(/-+$/, "")), // birleşik
+    joinedPrefix.replace(/\([^)]*\)/g, " "), // parantezsiz
   ];
 }
 

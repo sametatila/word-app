@@ -39,6 +39,12 @@ export function readLocal(key: string): string | null {
  */
 function cleanForSpeech(text: string): string {
   return text
+    /* İSTEĞE BAĞLI ÖN EK BİRLEŞİYOR, ATILMIYOR. "(Back-)Ofen" başlığında
+       parantez bir açıklama değil, kelimenin parçası: genel parantez silme
+       onu "Ofen" diye okuyordu ve "(herunter-)fahren" "fahren" oluyordu —
+       başka bir kelime. Ön ek önce kelimeye yapıştırılıyor ("Backofen", baş harf küçülür);
+       "(sich)", "(e)", "(D, CH)" gibi notlar aşağıda eskisi gibi düşüyor. */
+    .replace(/\((\p{L}+)-\)\s*(\p{L}?)/gu, (_, pre: string, head: string) => pre + head.toLowerCase())
     .replace(/\(.*?\)/g, "")
     /* BOŞLUK DOLDURMA ÇİZGİSİ OKUNMUYOR. Cümledeki boşluk ekranda "_____"
        ile duruyor ve motor onu "alt tire alt tire alt tire" diye okuyordu —

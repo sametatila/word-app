@@ -71,12 +71,20 @@ export function expandPunctuationWords(s: string, lang: string): string {
   return out.replace(/\s+/g, " ").trim();
 }
 
-/** Sözlük başlığı varyantları: parantez, "/" alternatifleri, "sich" düşürme. */
+/**
+ * Sözlük başlığı varyantları: parantez, "/" alternatifleri, "sich" düşürme.
+ *
+ * İsteğe bağlı ön ek ("(Back-)Ofen") yalnız BİRLEŞİK kabul edilir: parantezsiz
+ * hâli ("Ofen", "(herunter-)fahren" için "fahren") başka bir kelime. Web
+ * `games/types` `parenVariants` ile aynı kural; "gern(e)" gibi isteğe bağlı
+ * son ek hem "gerne" hem "gern" olarak kabul edilmeye devam ediyor.
+ */
 function acceptedForms(raw: string): string[] {
   const out = new Set<string>();
-  const base = (raw || "").trim();
+  const base = (raw || "").trim().replace(/\((\p{L}+)-\)\s*/gu, "$1");
   if (!base) return [];
   out.add(base);
+  out.add(base.replace(/\(([^)]*)\)/g, "$1").replace(/\s+/g, " ").trim());
   out.add(base.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim());
   for (const part of base.split("/")) out.add(part.trim());
   out.add(base.replace(/\bsich\b/g, " ").replace(/\s+/g, " ").trim());
