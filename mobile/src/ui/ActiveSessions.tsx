@@ -59,7 +59,7 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
             <Text variant="bodyStrong">{cihazAdi(s.userAgent)}</Text>
             <Text variant="caption" color={colors.textMuted}>
               {t("sessions.since", { date: new Date(s.createdAt).toLocaleDateString(dateLocale()) })}
-              {s.ipAddress ? ` · ${s.ipAddress}` : ""}
+              {s.ipAddress ? ` · ${maskIp(s.ipAddress)}` : ""}
             </Text>
           </View>
           <PressableScale
@@ -101,6 +101,23 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
       {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.text}>{msg}</Text> : null}
     </View>
   );
+}
+
+/**
+ * IP'yi ekranda KISMEN gösterir (güvenlik denetimi #12): tam adres bir ekran
+ * görüntüsünde ya da omuz-sörfünde sızmasın diye ana kısmı maskelenir; satırı
+ * tanımak için yeterli ön ek (kaba ağ/bölge) kalır. Asıl tanıma sinyali zaten
+ * cihaz etiketi + tarih. Maskeleme yalnız GÖRÜNÜM; sunucu tam IP'yi tutmaya
+ * devam ediyor (oturum incelemesi için).
+ */
+function maskIp(ip: string | null | undefined): string | null {
+  if (!ip) return null;
+  if (ip.includes(":")) {
+    const g = ip.split(":").filter(Boolean);
+    return g.length > 2 ? `${g[0]}:${g[1]}:…` : ip; // IPv6: ilk iki öbek
+  }
+  const o = ip.split(".");
+  return o.length === 4 ? `${o[0]}.${o[1]}.•.•` : ip; // IPv4: ilk iki oktet
 }
 
 /**
