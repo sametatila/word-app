@@ -30,6 +30,7 @@
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
     "test:legal": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal.ts",
+    "test:exam-grade": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts",
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",
     "test:league": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-league.ts",
     "check:en-de": "node data/en-de/check.mjs",

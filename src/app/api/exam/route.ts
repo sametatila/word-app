@@ -7,7 +7,8 @@ import { buildExam, COUNTS as EXAM_COUNTS, examHistory, finishExam, modulePrereq
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
 import { LEVEL_SECONDS, MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
-import { nativeOf } from "@/lib/courses";
+import { nativeOf, targetLangOf } from "@/lib/courses";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -154,7 +155,10 @@ export async function POST(req: Request) {
     if (body.action === "start") {
       const paper = await buildExam(userId, profile.course, level, moduleNo, day);
       await track(userId, "exam_start", day, 0, `${paper.kind}:${level}`);
-      return NextResponse.json({ paper });
+      // F7: nesnel cevap anahtarını mühürleyip istemciye opak keyToken olarak
+      // ver — finish'te sunucu bununla puanlar (istemci sayısına güvenmeden).
+      const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course)));
+      return NextResponse.json({ paper, keyToken });
     }
     if (body.action === "finish") {
       const raw = Array.isArray(body.sections) ? (body.sections as Record<string, unknown>[]) : [];
@@ -182,16 +186,36 @@ export async function POST(req: Request) {
 speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100, body.speakingScore)) : null,
         seconds: typeof body.seconds === "number" ? Math.max(0, Math.min(3 * 3600, Math.round(body.seconds))) : 0,
       };
+      // NESNEL BÖLÜMLER SUNUCUDA PUANLANIR — güvenlik denetimi F7 (kalıntı kapatma).
+      // start'ta mühürlenen keyToken + istemcinin ham seçimleri (responses) geldiyse
+      // dilbilgisi/okuma/dinleme/üretim puanı burada, cevap anahtarına karşı yeniden
+      // hesaplanır; istemcinin gönderdiği doğru/toplam sayıları YOK SAYILIR. keyToken
+      // geçersiz/eksikse (eski mobil istemci) sınırlı istemci-sayımına düşülür —
+      // geriye uyumlu. (Kelime SRS-bulanık: istemci-sayımı kalır; yazma/konuşma
+      // AI-rubriği.)
+      const keyToken = typeof body.keyToken === "string" ? body.keyToken : null;
+      const key = keyToken ? openKey(keyToken) : null;
+      if (key && body.responses && typeof body.responses === "object" && !Array.isArray(body.responses)) {
+        const graded = gradeObjective(key, body.responses as ExamResponses);
+        const override: Partial<Record<ExamSectionId, SectionCount>> = {
+          grammar: graded.grammar,
+          reading: graded.reading,
+          listening: graded.listening,
+          produce: graded.produce,
+        };
+        sub.sections = sub.sections.map((s) => (override[s.id] ? { id: s.id, ...override[s.id]! } : s));
+        // İstemci bir nesnel bölümü hiç göndermeyip puanından kaçamasın: anahtarda
+        // olup gönderilmemiş her bölümü (total>0) ekle.
+        for (const id of ["grammar", "reading", "listening", "produce"] as ExamSectionId[]) {
+          const o = override[id];
+          if (o && o.total > 0 && !sub.sections.some((s) => s.id === id)) sub.sections.push({ id, ...o });
+        }
+      }
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));
-      // trial İSTEMCİDEN ALINMIYOR — güvenlik denetimi F7. Modül ön koşulu (o
-      // modülden önceki derslerin ≥%80'i) sunucuda hesaplanır; buildExam da
-      // start'ta aynısını yapıyor. Aksi halde istemci `trial:false` gönderip
-      // ön koşulsuz bir "geçti"yi roadmap tacına saydırabilirdi
-      // (passedModuleExams trial kayıtlarını atar). Nesnel bölüm puanlarının
-      // istemcide sayılması ayrı, açık bir kalıntı (sertifika/kendi ilerlemen;
-      // tam sunucu-puanlaması web+mobil istemcinin soru-bazlı cevap göndermesini
-      // gerektiren lockstep değişikliği).
+      // trial İSTEMCİDEN ALINMIYOR — F7. Modül ön koşulu sunucuda hesaplanır
+      // (buildExam da start'ta aynısını yapar); istemci trial:false gönderip
+      // ön koşulsuz bir "geçti"yi roadmap tacına saydıramaz.
       const trial =
         moduleNo === null ? false : !(await modulePrereq(userId, profile.course ?? "de", level as CefrLevel, moduleNo));
       const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial }, sub, day);

@@ -152,6 +152,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     vocab: empty(), grammar: empty(), produce: empty(), reading: empty(), listening: empty(), speaking: empty(), writing: empty(),
   });
   const vocabAnswers = useRef<Record<string, unknown>[]>([]);
+  // F7: nesnel bölümlerin HAM seçimleri — finish'te keyToken ile birlikte
+  // gönderilir, sunucu bunlarla puanlar (istemci sayısına güvenilmez).
+  const keyToken = useRef<string | null>(null);
+  const responses = useRef<{ grammar: number[]; reading: number[][]; listening: number[][]; produce: string[] }>({
+    grammar: [], reading: [], listening: [], produce: [],
+  });
   const writingScore = useRef<number | null>(null);
   const misses = useRef<Miss[]>([]);
   const startedAt = useRef(Date.now());
@@ -164,7 +170,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     try {
       const res = await apiFetch("/api/exam", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start", level, module, day: localDay() }) });
       if (!res.ok) throw new Error(String(res.status));
-      const { paper: p } = (await res.json()) as { paper: ExamPaper };
+      const { paper: p, keyToken: kt } = (await res.json()) as { paper: ExamPaper; keyToken?: string };
+      keyToken.current = kt ?? null;
+      responses.current = { grammar: [], reading: [], listening: [], produce: [] };
       setPaper(p);
       setLeft(p.seconds);
       startedAt.current = Date.now();
@@ -225,6 +233,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           module,
           trial: paper.trial,
           sections,
+          keyToken: keyToken.current,
+          responses: responses.current,
           vocabAnswers: vocabAnswers.current,
           writingScore: writingScore.current,
           speakingScore: speakingScores.current.length ? Math.round(speakingScores.current.reduce((a, b) => a + b, 0) / speakingScores.current.length) : null,
@@ -265,6 +275,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
   function pickGrammar(chosen: number) {
     const g = paper!.sections.grammar[idx];
+    responses.current.grammar[idx] = chosen;
     const correct = g.kind === "cell" ? chosen === g.answer : chosen === (g.answer ? 0 : 1);
     if (correct) score.current.grammar.correct++;
     else if (g.kind === "cell")
@@ -286,6 +297,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const item = paper!.sections.produce[idx];
     const answer = item.mode === "order" ? chunks.map((i) => item.chunks![i]).join(" ") : typed.trim();
     if (!answer) return;
+    responses.current.produce[idx] = answer;
     const m = matchSentence(answer, item.de, item.accept, targetLangOf(course));
     // Sınavda sıra hatası doğru sayılmaz: ölçülen şey tam olarak sıra.
     const correct = m.verdict === "exact" || m.verdict === "spelling";
@@ -301,6 +313,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const list = kind === "reading" ? paper!.sections.reading : paper!.sections.listening;
     const item = list[idx];
     const q = item.questions[qIdx];
+    (responses.current[kind][idx] ??= [])[qIdx] = chosen;
     if (chosen === q.answer) score.current[kind].correct++;
     else misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given: q.options[chosen] });
     setPicked(null);
