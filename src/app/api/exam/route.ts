@@ -184,7 +184,17 @@ speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100
       };
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));
-      const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial: body.trial === true }, sub, day);
+      // trial İSTEMCİDEN ALINMIYOR — güvenlik denetimi F7. Modül ön koşulu (o
+      // modülden önceki derslerin ≥%80'i) sunucuda hesaplanır; buildExam da
+      // start'ta aynısını yapıyor. Aksi halde istemci `trial:false` gönderip
+      // ön koşulsuz bir "geçti"yi roadmap tacına saydırabilirdi
+      // (passedModuleExams trial kayıtlarını atar). Nesnel bölüm puanlarının
+      // istemcide sayılması ayrı, açık bir kalıntı (sertifika/kendi ilerlemen;
+      // tam sunucu-puanlaması web+mobil istemcinin soru-bazlı cevap göndermesini
+      // gerektiren lockstep değişikliği).
+      const trial =
+        moduleNo === null ? false : !(await modulePrereq(userId, profile.course ?? "de", level as CefrLevel, moduleNo));
+      const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial }, sub, day);
       return NextResponse.json(result);
     }
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
