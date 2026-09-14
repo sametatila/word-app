@@ -7409,7 +7409,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "uc sinirlari kaynaktan",
     [
-      "ad=" + (/name\.slice\(0, PROFILE_LIMITS\.displayNameMax\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
+      "ad=" + (/\.slice\(0, PROFILE_LIMITS\.displayNameMax\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
       "gunluk hedef=" + (/clampInt\(body\.dailyGoal, PROFILE_LIMITS\.dailyGoal\.min, PROFILE_LIMITS\.dailyGoal\.max\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
       "yeni kelime=" + (/clampInt\(body\.newPerDay, PROFILE_LIMITS\.newPerDay\.min, PROFILE_LIMITS\.newPerDay\.max\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
     ],
