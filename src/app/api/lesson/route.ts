@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
+import { clampDay } from "@/lib/award";
 import { findLesson } from "@/lib/lessons";
 import { scoredSteps } from "@/lib/lessons/types";
 import { recordLesson } from "@/lib/lessons/progress";
@@ -39,10 +40,10 @@ export async function POST(req: Request) {
 
   // Gün istemciden geliyor çünkü seri kullanıcının yerel gününe göre işliyor;
   // sunucunun UTC günü Türkiye'de gece yarısından sonra yanlış gün olurdu.
-  const today =
-    typeof day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(day)
-      ? day
-      : new Date().toISOString().slice(0, 10);
+  // clampDay sunucu-bugününün ±1'ine sıkıştırır: yalnız biçim doğrulansaydı
+  // (güvenlik denetimi F5) ileri tarihli lesson istekleriyle seri sınırsız
+  // şişirilip kalıcı dondurulabilirdi.
+  const today = clampDay(day);
   const secs = typeof seconds === "number" ? Math.max(0, Math.min(3600, Math.round(seconds))) : 0;
 
   try {

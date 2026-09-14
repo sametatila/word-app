@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
+import { clampDay } from "@/lib/award";
 import { ensureProfile } from "@/lib/session";
 import { getExercise } from "@/lib/skills";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt } from "@/lib/skills/record";
@@ -108,10 +109,11 @@ function parseBody(body: unknown) {
   const b = body as Record<string, unknown>;
   if (typeof b.id !== "string" || b.id.length > 20) return null;
   if (typeof b.correct !== "number" || !Number.isInteger(b.correct) || b.correct < 0) return null;
-  const day =
-    typeof b.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(b.day)
-      ? b.day
-      : new Date().toISOString().slice(0, 10);
+  // clampDay: gün istemciden geliyor ama sunucu-bugününün ±1'ine sıkıştırılır.
+  // Yalnız biçim doğrulansaydı (güvenlik denetimi F5) ileri tarihli tekrar
+  // istekleriyle seri sınırsız şişirilip lastActiveDay geleceğe yazılıp kalıcı
+  // dondurulabilirdi — her kardeş award ucu zaten clampDay kullanıyor.
+  const day = clampDay(b.day);
   const seconds =
     typeof b.seconds === "number" ? Math.max(0, Math.min(3600, Math.round(b.seconds))) : 0;
   const score =

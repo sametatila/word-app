@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
+import { clampDay } from "@/lib/award";
 import { SocialError } from "./errors";
 
 /**
@@ -43,8 +44,16 @@ export function ok(data: unknown, status = 200): NextResponse {
   return NextResponse.json(data, { status, ...NO_STORE });
 }
 
+/**
+ * İstemci günü — sunucu-bugününün ±1'ine sıkıştırılır (clampDay).
+ *
+ * Güvenlik denetimi F6: yalnız biçim doğrulansaydı `GET /api/social/league?
+ * day=<bugün+7>` `closeWeekIfNeeded`'i CANLI haftayı erken kapatmaya
+ * zorlayabilir, kısmi sıralamalar üzerinden terfileri kilitler ve meşru pazar
+ * kapanışını no-op'a çevirirdi. Clamp bu pencereyi kapatır.
+ */
 export function dayParam(value: unknown): string {
-  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : new Date().toISOString().slice(0, 10);
+  return clampDay(value);
 }
 
 export function intParam(value: unknown): number | null {
