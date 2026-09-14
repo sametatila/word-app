@@ -28,6 +28,7 @@ import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
 import { ErrorBoundary } from "./src/ui/ErrorBoundary";
+import { NavBarBackdrop } from "./src/ui/NavBarBackdrop";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -253,6 +254,9 @@ function Nav() {
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <RootStack initialRoute={initialRoute} />
       </View>
+      {/* Gezinme çubuğunun zemini — kaydırılan içerik tuşların arkasından
+          akmasın (bkz. ui/NavBarBackdrop). */}
+      <NavBarBackdrop />
       {/* Rozet kutlaması TEK YERDE, kökte: rozet altı ayrı yerde kazanılıyor
           ve altısına ayrı kutlama koymak altı yerde unutulur (web de kabukta
           tek kart tutuyor). Kendisi akış ekranlarını kesmiyor. */}
