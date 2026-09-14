@@ -1,4 +1,5 @@
-import { auth, authEnabled } from "@/lib/auth/server";
+import { auth, authEnabled, AUTH_BASE_URL } from "@/lib/auth/server";
+import { pinLegacyRedirects } from "@/lib/auth/legacy-redirects";
 import { toNextJsHandler } from "better-auth/next-js";
 import { NextResponse } from "next/server";
 
@@ -36,9 +37,12 @@ function withRetryAfter(res: Response): Response {
   return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
 }
 
+/** Eski alan adına giden yönlendirme adresleri asıl alan adına sabitleniyor (bkz. lib/auth/legacy-redirects). */
+const canonicalOrigin = new URL(AUTH_BASE_URL).origin;
+
 export const GET = authEnabled
-  ? async (req: Request) => withRetryAfter(await handler.GET(req))
+  ? async (req: Request) => withRetryAfter(await handler.GET(await pinLegacyRedirects(req, canonicalOrigin)))
   : disabled;
 export const POST = authEnabled
-  ? async (req: Request) => withRetryAfter(await handler.POST(req))
+  ? async (req: Request) => withRetryAfter(await handler.POST(await pinLegacyRedirects(req, canonicalOrigin)))
   : disabled;

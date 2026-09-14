@@ -393,6 +393,11 @@ jobs:
       # 2026-09-14, prompt injection). Dil modeli istemez.
       - name: İstemde öğrenci metni sınırı
         run: npm run test:prompt-fence
+      # Eski alan adına (exfe.me) giden yönlendirme adresleri asıl alan adına
+      # sabitleniyor; sıfırlama jetonu o alan adına gidemiyor (güvenlik denetimi
+      # 2026-09-14). Veritabanı istemez.
+      - name: Eski alan adı yönlendirme sabitlemesi
+        run: npm run test:legacy-redirects
       # Yetki katmanının veritabanı testi — 32 doğrulama. Buradaki hata sınıfı
       # sessiz: yanlış hesaplanmış bir bitiş tarihi ya da iki kez uygulanmış bir
       # ödeme olayı kullanıcı şikâyet edene kadar görünmez, sonra da parayla

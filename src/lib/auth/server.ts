@@ -90,6 +90,8 @@ export const appleWebConfigured = Boolean(appleServicesId) && appleRevokeConfigu
 export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 
 const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.lernomi.app";
+/** Yönlendirme sabitlemesinin hedef kökeni (bkz. lib/auth/legacy-redirects). */
+export const AUTH_BASE_URL = BASE_URL;
 
 export const auth = betterAuth({
   appName: "Lernomi",
@@ -100,7 +102,10 @@ export const auth = betterAuth({
   basePath: "/api/auth",
   // Eski alan adı LİSTEDE KALIR: yayımlanmış APK'lerde API adresi gömülü, o
   // kurulumlar ömür boyu exfe.me'ye istek atacak. Çıkarılırsa eski sürümdeki
-  // herkesin girişi kırılır.
+  // herkesin girişi kırılır. Güven yalnız Origin denetimi için anlamlı:
+  // exfe.me'ye giden YÖNLENDİRME adresleri (redirectTo, callbackURL) istek
+  // buraya varmadan asıl alan adına çevriliyor, sıfırlama jetonu hiçbir
+  // koşulda o alan adına gitmiyor (bkz. lib/auth/legacy-redirects).
   trustedOrigins: [
     BASE_URL,
     "https://lernomi.app", "https://www.lernomi.app",
