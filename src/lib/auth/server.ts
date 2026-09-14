@@ -87,7 +87,20 @@ export const appleWebConfigured = Boolean(appleServicesId) && appleRevokeConfigu
  * sözleşmesi. Sarmalayıcı kaldırıldı; sağlayıcı kendi `idToken` yapılandırmasıyla
  * (jwks, iss, aud, yaş sınırı, nonce) doğruluyor.
  */
-export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
+/**
+ * Derleme-zamanı yer tutucusu. Yalnız `next build` sırasında env yokken
+ * betterAuth'un kurulabilmesi için var. Güvenlik denetimi (2026-09-14): bu değer
+ * env'e GERÇEKTEN yazılırsa oturum çerezi, 2FA HMAC'i, trust-device ve verify-JWT
+ * bilinen bir sırra iner. Bu yüzden `authEnabled` onu boş kabul eder — placeholder
+ * ile auth AÇILMAZ (fail-closed: /api/auth 503, oturum okunmaz).
+ */
+const PLACEHOLDER_SECRET = "build-time-placeholder-secret-change-me";
+
+export const authEnabled = Boolean(
+  process.env.DATABASE_URL &&
+    process.env.BETTER_AUTH_SECRET &&
+    process.env.BETTER_AUTH_SECRET !== PLACEHOLDER_SECRET,
+);
 
 const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.lernomi.app";
 /** Yönlendirme sabitlemesinin hedef kökeni (bkz. lib/auth/legacy-redirects). */
@@ -97,7 +110,7 @@ export const auth = betterAuth({
   appName: "Lernomi",
   // Yer tutucu yalnız derleme içindir: `authEnabled` false iken /api/auth 503
   // döner ve readSession oturum okumaz (bkz. app/api/auth/[...path]/route.ts).
-  secret: process.env.BETTER_AUTH_SECRET ?? "build-time-placeholder-secret-change-me",
+  secret: process.env.BETTER_AUTH_SECRET ?? PLACEHOLDER_SECRET,
   baseURL: BASE_URL,
   basePath: "/api/auth",
   // Eski alan adı LİSTEDE KALIR: yayımlanmış APK'lerde API adresi gömülü, o
