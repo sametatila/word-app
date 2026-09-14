@@ -3,6 +3,7 @@ import { clampDay } from "@/lib/award";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
+import { consume } from "@/lib/social/ratelimit";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
 import { GAME_LABEL_KEYS, type Answer, type GameId, type Wager } from "@/lib/types";
@@ -23,11 +24,25 @@ export const dynamic = "force-dynamic";
  */
 const GAMES = new Set(Object.keys(GAME_LABEL_KEYS));
 
+/**
+ * Hız sınırı — gerçek oyunun çok üstünde (bir tur birkaç saniyede bir POST
+ * eder), yalnız otomatik kötüye kullanımı yakalar. XP'nin ASIL sınırı
+ * submitAnswers'daki günlük tavan; bu, uydurma döngüsünün hızını keser
+ * (güvenlik denetimi #2). Sayaç atomik + üç instance'ta ortak (Postgres).
+ */
+const ANSWERS_RATE_LIMIT = 120;
+const ANSWERS_RATE_WINDOW_SEC = 60;
+
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const rl = await consume(`answers:${userId}`, ANSWERS_RATE_LIMIT, ANSWERS_RATE_WINDOW_SEC);
+  if (!rl.ok) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429, headers: { "retry-after": String(rl.retryAfterSec) } });
+  }
 
   let body: unknown;
   try {

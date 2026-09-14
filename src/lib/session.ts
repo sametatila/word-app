@@ -10,7 +10,7 @@ import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics
 import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { onActivityAwarded } from "@/lib/social/hooks";
-import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
+import { cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { nativeOf, type NativeLang } from "@/lib/courses";
 import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
@@ -1842,6 +1842,22 @@ export async function submitAnswers(
    */
   const wagerXp = wager ? xpForWager(wager.correct, wager.total, wager.stake) : 0;
   xpGained = Math.max(0, xpGained + wagerXp);
+
+  // Günlük XP tavanı (güvenlik denetimi #2). İstemci `correct`'ini uydurabildiği
+  // ve sunucu sözlü/serbest cevabı yeniden puanlayamadığı için, bir günde
+  // /api/answers üzerinden kazanılan XP `ANSWERS_DAILY_XP_CAP` ile sınırlanıyor —
+  // lig `dailyStats.xp`'den sıralandığından sınırlanan tam o. Tavan gerçek en uç
+  // günün belirgin üstünde; kimseyi kırpmaz. Oku-sonra-kırp bilinçli: /api/answers
+  // hız-sınırlı, tek kullanıcı yüksek eşzamanlılık üretemez; olası minik taşma
+  // bütünlük için önemsiz (fatura değil, güvenlik denetimi #1'in aksine).
+  if (xpGained > 0) {
+    const [prior] = await db
+      .select({ xp: dailyStats.xp })
+      .from(dailyStats)
+      .where(and(eq(dailyStats.userId, userId), eq(dailyStats.day, today)))
+      .limit(1);
+    xpGained = cappedDailyXp(prior?.xp ?? 0, xpGained);
+  }
 
   const [stat] = await db
     .insert(dailyStats)

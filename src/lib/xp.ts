@@ -22,6 +22,28 @@
 export const XP_PER_MINUTE = 100;
 
 /**
+ * Bir günde `/api/answers` üzerinden kazanılabilecek XP tavanı (güvenlik
+ * denetimi 2026-09-14, #2).
+ *
+ * `/api/answers` istemcinin bildirdiği `correct`'e güveniyor ve sunucu sözlü ya
+ * da serbest bir cevabı yeniden puanlayamıyor; dolayısıyla uydurma cevaplarla
+ * lig (dailyStats.xp'den sıralanıyor) SONSUZ şişirilebiliyordu. Tavan bir güne
+ * sığabilecek XP'yi sınırlar. Bilerek YÜKSEK: ölçülen en uç gerçek gün ~40.000
+ * XP (100 XP/dk × ~6,6 saat). 60.000, en çalışkan kullanıcıyı bile kırpmadan
+ * (xp.ts felsefesi) uydurmayı "bir günde erişilemez" bölgede tutar. Beceri/ders
+ * XP'si ayrı yollardan gelir; bu tavan yalnız kelime-oyunu yolunu bağlar.
+ */
+export const ANSWERS_DAILY_XP_CAP = 60_000;
+
+/**
+ * Günlük tavanı uygular: bugün kazanılan XP'ye göre kalan bütçeye kırpar.
+ * Saf fonksiyon (DB'siz test edilebilir); asıl okuma/yazma çağırıcıda.
+ */
+export function cappedDailyXp(usedToday: number, xpGained: number, cap = ANSWERS_DAILY_XP_CAP): number {
+  return Math.max(0, Math.min(xpGained, cap - Math.max(0, usedToday)));
+}
+
+/**
  * Çaba/başarı ayrımı.
  *
  * Puanın bir kısmı işi YAPMAYA, kalanı DOĞRU yapmaya bağlı. Tamamen doğruluğa
