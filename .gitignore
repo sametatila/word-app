@@ -79,6 +79,10 @@ service-account*.json
 *.pem
 *.key
 *.p12
+# Mağaza API anahtarları — .secrets/appstore/ (App Store .p8) ve .secrets/play/ (Play servis hesabı JSON), ASLA commit edilmez
+*.p8
+.secrets/
+nomi-*.json
 *.pfx
 id_rsa*
 .npmrc
