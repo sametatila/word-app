@@ -135,7 +135,7 @@ export async function takeUsage(userId: string, key: string, period: Period, lim
       .returning({ count: usageCounters.count });
     return rows.length > 0;
   } catch (err) {
-    console.error("[quota] sayaç yazılamadı", key, err);
+    console.error("[quota:takeUsage]", key, err);
     return true;
   }
 }

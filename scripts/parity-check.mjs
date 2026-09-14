@@ -20072,15 +20072,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
-  /* Gercekten sayilan tavanlar kendi uclarinda artiyor mu. */
+  /* Gercekten sayilan tavanlar kendi uclarinda artiyor mu.
+     Sayim `takeUsage` ile: kontrol ve artirim TEK ifadede (guvenlik denetimi
+     2026-09-14 #1). `getUsage` + `void bumpUsage` ikilisine donmek paralel
+     istekte tavani kaldirir; olcu o yuzden `takeUsage` cagrisini ariyor. */
+  const alir = (yol, anahtar) =>
+    new RegExp(`takeUsage\\(userId, (?:"${anahtar}"|MOCK_AI_KEY), "day"`).test(silB(read(yol))) ? "artiyor" : "ARTMIYOR";
   sameList(
     "sayilan emniyet tavanlari",
     [
-      "assess=" + (/bumpUsage\(userId, "ai_assess_calls", "day"\)/.test(silB(read("src/app/api/assess/route.ts"))) ? "artiyor" : "ARTMIYOR"),
-      "stt=" + (/bumpUsage\(userId, "pocket_walk_words", "day"\)/.test(silB(read("src/app/api/stt/route.ts"))) ? "artiyor" : "ARTMIYOR"),
-      "tts=" + (/bumpUsage\(userId, "tts_calls", "day"\)/.test(silB(read("src/app/api/tts/route.ts"))) ? "artiyor" : "ARTMIYOR"),
+      "assess=" + alir("src/app/api/assess/route.ts", "ai_assess_calls"),
+      "stt yuruyus=" + alir("src/app/api/stt/route.ts", "pocket_walk_words"),
+      "stt istek=" + alir("src/app/api/stt/route.ts", "stt_requests"),
+      "tts=" + alir("src/app/api/tts/route.ts", "tts_calls"),
+      "pronounce=" + alir("src/app/api/pronounce/route.ts", "pronounce_requests"),
+      "roleplay=" + alir("src/app/api/roleplay/route.ts", "roleplay_turns"),
+      "deneme sinavi=" + alir("src/app/api/mock-exam/route.ts", "mock_exam_ai_calls"),
     ],
-    ["assess=artiyor", "stt=artiyor", "tts=artiyor"],
+    ["assess=artiyor", "stt yuruyus=artiyor", "stt istek=artiyor", "tts=artiyor", "pronounce=artiyor", "roleplay=artiyor", "deneme sinavi=artiyor"],
     "bulunan",
     "beklenen",
   );
