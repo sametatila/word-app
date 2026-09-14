@@ -423,8 +423,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         <textarea
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
+          enterKeyHint="send"
           onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
+            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
               e.preventDefault();
               void send(draft);
             }

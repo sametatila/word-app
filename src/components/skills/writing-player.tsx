@@ -710,6 +710,14 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             ref={areaRef}
             value={text}
             onChange={(e) => setText(e.target.value)}
+            /* Tek cümle: Enter = Değerlendir. */
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+                e.preventDefault();
+                if (!busy && cumleSozcuk >= MIN_FREE_WORDS) void evaluate();
+              }
+            }}
+            enterKeyHint="done"
             rows={3}
             lang={lang}
             spellCheck={false}
@@ -870,7 +878,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             value={text}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
+              if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                 e.preventDefault();
                 if (text.trim()) setMatch(matchSentence(text, task.answer, task.alternatives ?? [], lang));
               }

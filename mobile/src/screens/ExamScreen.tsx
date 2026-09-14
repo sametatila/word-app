@@ -949,6 +949,8 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
           </>
         ) : (
           <TextInput value={typed} onChangeText={setTyped} multiline autoCapitalize="sentences"
+            /* Tek cümle: Enter = cevapla (uzun yazma bölümü alt satıra inmeye devam ediyor). */
+            submitBehavior="submit" returnKeyType="done" onSubmitEditing={() => { if (hazir) onDone(ok, answer); }}
             placeholder={t("exam.write_sentence")}
             accessibilityLabel={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
             style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />

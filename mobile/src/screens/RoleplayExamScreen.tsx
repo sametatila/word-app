@@ -482,6 +482,10 @@ export function RoleplayExamScreen() {
           onChangeText={setDraft}
           editable={!busy}
           multiline
+          /* Enter = Gönder (ders ekranıyla aynı; bkz. `LessonScreen` `TypedRow`). */
+          submitBehavior="submit"
+          returnKeyType="send"
+          onSubmitEditing={() => void send(draft)}
           /* Hedef dilde CUMLE (bkz. `LessonScreen`). Bu alanda hicbiri
              yoktu ve web tarafinda da yoktu; ikisi birlikte duzeltildi. */
           autoCapitalize="sentences"

@@ -1385,8 +1385,9 @@ export function LessonPlayer({
                   <textarea
                     value={draft}
                     onChange={(e) => setDraft(e.target.value)}
+                    enterKeyHint="send"
                     onKeyDown={(e) => {
-                      if (e.key === "Enter" && !e.shiftKey) {
+                      if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                         e.preventDefault();
                         submitTyped();
                       }
@@ -1606,8 +1607,9 @@ export function LessonPlayer({
                   <textarea
                     value={draft}
                     onChange={(e) => setDraft(e.target.value)}
+                    enterKeyHint="send"
                     onKeyDown={(e) => {
-                      if (e.key === "Enter" && !e.shiftKey) {
+                      if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                         e.preventDefault();
                         void send(draft);
                       }

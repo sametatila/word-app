@@ -695,7 +695,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         placeholderTextColor={colors.textFaint}
         onSubmitEditing={check}
         returnKeyType="done"
-        blurOnSubmit={false}
+        submitBehavior="submit"
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
@@ -835,6 +835,10 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         onChangeText={setValue}
         editable={!result}
         multiline
+        /* Enter = Değerlendir (çeviri turuyla aynı gerekçe: tek cümle). */
+        submitBehavior="submit"
+        returnKeyType="done"
+        onSubmitEditing={() => { if (canCheck) void evaluate(); }}
         autoCapitalize="sentences"
         autoCorrect={false}
         placeholder={tx("rounds.write_a_sentence_ph")}
@@ -1560,6 +1564,13 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         value={val}
         onChangeText={setVal}
         multiline
+        /* ENTER = KONTROL ET. Kutu çok satırlı (uzun cümle sarsın diye) ama
+           çeviri tek cümle: Enter alt satıra iniyordu ve yazma turunda
+           "Kontrol et" yerine geçiyordu — iki tur iki ayrı davranış.
+           `submit` klavyeyi açık tutuyor, sonuç katmanı zaten kapatıyor. */
+        submitBehavior="submit"
+        returnKeyType="done"
+        onSubmitEditing={() => { if (val.trim()) void check(); }}
         autoCapitalize="sentences"
         autoCorrect={false}
         placeholder={tx("rounds.write_sentence", { lang: targetLangName() })}

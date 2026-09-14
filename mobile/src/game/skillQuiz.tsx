@@ -399,6 +399,12 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
   const [typed, setTyped] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
   const ok = match ? isPass(match) : false;
+  function check() {
+    if (done || !typed.trim()) return;
+    const m = matchSentence(typed, t.answer, t.alternatives ?? [], currentTargetLang());
+    setMatch(m);
+    onSettle(isPass(m));
+  }
   return (
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
@@ -407,11 +413,13 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
       </View>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
+          /* Tek cümle: Enter = Kontrol et (uzun metin görevleri alt satıra inmeye devam ediyor). */
+          submitBehavior="submit" returnKeyType="done" onSubmitEditing={check}
           placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })}
           accessibilityLabel={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
-          <PressableScale onPress={() => { if (!typed.trim()) return; const m = matchSentence(typed, t.answer, t.alternatives ?? [], currentTargetLang()); setMatch(m); onSettle(isPass(m)); }} disabled={!typed.trim()}
+          <PressableScale onPress={check} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
             <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
           </PressableScale>

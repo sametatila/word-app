@@ -193,6 +193,15 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             ref={inputRef}
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            /* Enter = Değerlendir (çeviri turuyla aynı: tek cümle, alt satıra
+               inmenin anlamı yok). Shift+Enter ve IME birleştirmesi dokunulmuyor. */
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+                e.preventDefault();
+                if (kelime >= MIN_FREE_WORDS) void evaluate();
+              }
+            }}
+            enterKeyHint="done"
             disabled={status !== "idle"}
             rows={3}
             autoCapitalize="sentences"
