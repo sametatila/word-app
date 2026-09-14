@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { isEventName, track } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +18,7 @@ export const dynamic = "force-dynamic";
  * değiştirmemeli, hata gösterilecek bir şey de yok.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   try {
     const userId = await getUserId();
     if (!userId) return new NextResponse(null, { status: 204 });
