@@ -378,12 +378,23 @@ export async function coStreaksAtRisk(userIds: string[], today: string): Promise
   if (!userIds.length) return out;
   const y1 = shiftDay(today, -1);
   const y2 = shiftDay(today, -2);
+  /*
+    DİZİ TEK PARAMETRE OLARAK GİDİYOR. `sql` şablonuna düz bir dizi verilince
+    Drizzle onu `($1, $2, …)` biçiminde bir LİSTEYE açıyor; `any(…::text[])`
+    içinde bu Postgres'e dizi olarak değil tek bir metin (ya da satır) olarak
+    ulaşıyor ve sorgu "malformed array literal" ile düşüyordu. Hatırlatma turu
+    bu yüzden 2026-09-10'dan beri her akşam 500 döndü; hiçbir hatırlatma
+    gitmedi. `sql.param` diziyi TEK parametre yapıyor ve node-postgres onu
+    Postgres dizisine çeviriyor: hedef sayısı büyüse de sorgu metni ve
+    parametre sayısı değişmiyor. Kapı: `scripts/test-push-sql.ts`.
+  */
+  const ids = sql.param(userIds);
   const rows = await db.execute(sql`
     with live as (
       select f.requester_id as a, f.addressee_id as b
         from friendships f
        where f.status = 'accepted'
-         and (f.requester_id = any(${userIds}::text[]) or f.addressee_id = any(${userIds}::text[]))
+         and (f.requester_id = any(${ids}::text[]) or f.addressee_id = any(${ids}::text[]))
          and exists (select 1 from daily_stats d where d.user_id = f.requester_id and d.day = ${y1} and d.xp > 0)
          and exists (select 1 from daily_stats d where d.user_id = f.addressee_id and d.day = ${y1} and d.xp > 0)
          and exists (select 1 from daily_stats d where d.user_id = f.requester_id and d.day = ${y2} and d.xp > 0)
