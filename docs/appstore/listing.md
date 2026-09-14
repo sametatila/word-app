@@ -47,7 +47,7 @@ Bu cümle iki şey söylüyor: **ne öğretiyor** (kelime + konuşma + sınav) v
 kullanılıyor** (kısa turlar, yürürken). 30 karakterlik Subtitle'a ikisi birden sığmıyor.
 
 **Tutulan:** yürürken + sınav → `Yürürken konuş, sınava çalış` (28).
-Uygulama adı zaten "Almanca Öğren" dediği için altyazının onu tekrar etmesine gerek yok;
+Uygulama adı zaten "Almanca Öğren A1-C1" dediği için altyazının onu tekrar etmesine gerek yok;
 ayırt edici olan yürüyüş modu, sınav ise arayanın niyetini yakalayan sözcük.
 
 **Feda edilen:** "kelime" ve "kısa turlar". Yani ürünün çekirdek mekaniği (aralıklı
@@ -174,9 +174,9 @@ Her yerelleştirme kendi ekran görüntülerini de ister (§4).
 **App Name**
 
 ```
-Lernomi: Almanca Öğren
+Lernomi: Almanca Öğren A1-C1
 ```
-_22/30 karakter._
+_28/30 karakter._ Connect'teki adla aynı (2026-09-14'te API'den okundu); Play başlığı da bu.
 
 **Subtitle**
 
@@ -195,9 +195,9 @@ _115/170 karakter._
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
 
 ```
-telc,sınav,a1,b1,b2,kelime,ezber,tekrar,gramer,dinleme,okuma,telaffuz,zürih,ingilizce
+telc,sınav,b1,b2,kelime,ezber,tekrar,gramer,dinleme,okuma,telaffuz,zürih,ingilizce
 ```
-_92/100 karakter._
+_82/100 karakter._ `a1` çıkarıldı: artık adda geçiyor.
 
 **Description**
 

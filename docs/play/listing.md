@@ -53,7 +53,7 @@ App Store derecesi, şartlar §3) artık aynı sayıyı söylüyor. Gerekçe:
 
 ### Başlık (en çok 30 karakter)
 
-`Lernomi: Almanca Öğren`
+`Lernomi: Almanca Öğren A1-C1` (28/30). Console'daki başlıkla ve App Store adıyla aynı (2026-09-14'te API'den okundu).
 
 Tek kelime "Lernomi" Play'de başka bir uygulamayla (yapay zekâ arkadaş) çakışıyor;
 ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Lernomi: Almanca ve İngilizce`.
