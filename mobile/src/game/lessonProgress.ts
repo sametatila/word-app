@@ -245,17 +245,38 @@ export async function recordItemScore(id: string, score: number): Promise<void> 
 
 /**
  * Yarım kalan dersin cihazda saklanması (web lesson-player RESUME_KEY karşılığı).
- * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. Yalnız anlatım fazı
- * saklanır (konuşma sona yakın; gerekirse baştan). 3 günden eski kayıt atılır.
+ * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. 3 günden eski kayıt
+ * atılır.
+ *
+ * KONUŞMA FAZI DA SAKLANIYOR. Eskiden yalnız anlatım saklanıyordu ve konuşmaya
+ * geçildiği AN kayıt siliniyordu: yirmi adımlık anlatımı bitirip konuşmanın
+ * ortasında çıkan öğrenci dersi sıfırdan başlıyordu, sunucuda da hiçbir kayıt
+ * olmadığı için Patika adımı "denenmemiş" gösteriyordu. Web konuşmayı ve
+ * turlarını baştan beri saklıyor.
  */
 const RESUME_PREFIX = "lernomi-lesson-resume:";
 const RESUME_TTL_MS = 3 * 86400000;
 
-export type LessonResume = { cursor: number; correct: number; at: number };
+export type LessonResume = {
+  cursor: number;
+  correct: number;
+  at: number;
+  /** Yoksa anlatım (eski kayıtlar). */
+  phase?: "lecture" | "roleplay";
+  /** Konuşma fazı: sohbetin kendisi, tur sayısı ve senaryo yolunun durumu. */
+  roleMsgs?: { role: "user" | "assistant"; content: string }[];
+  roleTurns?: number;
+  offline?: unknown;
+};
 
-export async function saveLessonResume(id: string, cursor: number, correct: number): Promise<void> {
+export async function saveLessonResume(
+  id: string,
+  cursor: number,
+  correct: number,
+  extra?: Pick<LessonResume, "phase" | "roleMsgs" | "roleTurns" | "offline">,
+): Promise<void> {
   try {
-    await AsyncStorage.setItem(RESUME_PREFIX + id, JSON.stringify({ cursor, correct, at: Date.now() }));
+    await AsyncStorage.setItem(RESUME_PREFIX + id, JSON.stringify({ cursor, correct, at: Date.now(), ...extra }));
   } catch { /* yut */ }
 }
 
@@ -266,6 +287,7 @@ export async function loadLessonResume(id: string): Promise<LessonResume | null>
     const v = JSON.parse(raw) as LessonResume;
     if (!v || typeof v.cursor !== "number" || typeof v.at !== "number") return null;
     if (Date.now() - v.at > RESUME_TTL_MS) return null;
+    if (v.phase === "roleplay") return Array.isArray(v.roleMsgs) && v.roleMsgs.length ? v : null;
     if (v.cursor <= 0) return null;
     return v;
   } catch {

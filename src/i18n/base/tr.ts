@@ -764,6 +764,8 @@ export const trBase: Record<string, string> = {
   "lessonp.chat_off_patterns": "Konuşma servisi kapalı — kalıpları kullan",
   "lessonp.chat_off_consent": "Yapay zekâya izin vermediğin için konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır; istersen ayarlardan açabilirsin.",
   "lessonp.conversation_unfinished": "Konuşma yarım kaldı",
+  "lessonp.leave_for_now": "Şimdilik bırak",
+  "lessonp.resumed": "Konuşmaya kaldığın yerden devam ediyorsun.",
   "lessonp.corrections": "Konuşmadaki düzeltmeler",
   "lessonp.no_corrections": "Konuşmada hiç düzeltme gerekmedi.",
   "lessonp.hands_free": "Eller serbest",

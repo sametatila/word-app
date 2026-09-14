@@ -764,6 +764,8 @@ export const deBase: Record<string, string> = {
   "lessonp.chat_off_patterns": "Chatdienst aus — nutz die Muster",
   "lessonp.chat_off_consent": "Weil KI nicht erlaubt ist, läuft das Gespräch nach einem geschriebenen Skript. Es zählt trotzdem; du kannst KI in den Einstellungen einschalten.",
   "lessonp.conversation_unfinished": "Das Gespräch ist unvollendet",
+  "lessonp.leave_for_now": "Für jetzt lassen",
+  "lessonp.resumed": "Du machst da weiter, wo du aufgehört hast.",
   "lessonp.corrections": "Korrekturen aus dem Gespräch",
   "lessonp.no_corrections": "Im Gespräch war nichts zu korrigieren.",
   "lessonp.hands_free": "Freihändig",

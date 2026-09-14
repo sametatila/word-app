@@ -23,7 +23,7 @@ import { foldEnglishSpelling } from "../lib/en-spelling";
 import { sendRoleplay, roleplayAvailability, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
-import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
+import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume, type LessonResume } from "../game/lessonProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
@@ -192,8 +192,14 @@ export function LessonScreen() {
     if (text) push({ role: "teacher", segments: [{ lang: "tr", text }], tone: "hint" });
   }
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [saved, setSaved] = useState(false);
-  const [resumeOffer, setResumeOffer] = useState<{ cursor: number; correct: number } | null>(null);
+  /*
+    Sunucuya YAZILAN son hüküm: null = yazılmadı, false = yarım (deneme),
+    true = konuşma bitti. Tek bayraktı ve ilk yazımdan sonra her şeyi
+    kilitliyordu: "Şimdilik bırak" deyip konuşmaya dönen ve bitiren öğrencinin
+    tamamlanması HİÇ yazılmıyordu.
+  */
+  const kaydedilen = useRef<boolean | null>(null);
+  const [resumeOffer, setResumeOffer] = useState<LessonResume | null>(null);
   // Yarım kayıt okunana dek boş sohbet kabuğu çizilmez: ya "devam et" ekranı ya
   // da ilk baloncuklar geliyor, ikisi de boş kabuğun yerine geçip ekranı zıplatır.
   const [resumeChecked, setResumeChecked] = useState(false);
@@ -292,7 +298,7 @@ export function LessonScreen() {
   useEffect(() => {
     if (!lesson) return;
     loadLessonResume(lesson.id).then((r) => {
-      if (r && r.cursor < lesson.lecture.length) setResumeOffer({ cursor: r.cursor, correct: r.correct });
+      if (r && (r.phase === "roleplay" || r.cursor < lesson.lecture.length)) setResumeOffer(r);
       else beginLecture(0, false);
       setResumeChecked(true);
     });
@@ -305,6 +311,13 @@ export function LessonScreen() {
     if (cursor > 0 && cursor < lesson.lecture.length) void saveLessonResume(lesson.id, cursor, correct);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, phase]);
+
+  // Konuşma ilerledikçe de sakla: sohbet, tur sayısı, senaryo yolunun durumu.
+  useEffect(() => {
+    if (!lesson || phase !== "roleplay" || kaydedilen.current === true || !roleMsgs.length) return;
+    void saveLessonResume(lesson.id, lesson.lecture.length, correct, { phase: "roleplay", roleMsgs, roleTurns, offline });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roleMsgs, roleTurns, phase]);
 
   /**
    * Ders BAŞLADI - web `lesson-player` ile aynı olay, aynı değer (1 kaldığı
@@ -542,7 +555,7 @@ export function LessonScreen() {
   function enterRoleplay() {
     if (!lesson) return;
     setPhase("roleplay");
-    void clearLessonResume(lesson.id);
+    /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveLessonResume`). */
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
     /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
@@ -558,6 +571,30 @@ export function LessonScreen() {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
       speakTarget(opening);
+    }
+    scrollDown();
+  }
+
+  /** Yarım kalan konuşmayı geri kurar: sahne, sohbet, tur sayısı, senaryo yolu. */
+  function resumeRoleplay(r: LessonResume) {
+    if (!lesson) return;
+    track("lesson_start", 1, lesson.id);
+    setCorrect(r.correct);
+    setCursor(lesson.lecture.length);
+    setPhase("roleplay");
+    setFeed([]);
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
+    const msgs = r.roleMsgs ?? [];
+    for (const m of msgs) {
+      if (m.role === "user") push({ role: "student", text: m.content });
+      else push({ role: "teacher", segments: [{ lang: "de", text: m.content }] });
+    }
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.resumed") }], tone: "hint" });
+    setRoleMsgs(msgs);
+    setRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
+    if (r.offline) {
+      offlineRef.current = true;
+      setOffline(r.offline as OfflineState);
     }
     scrollDown();
   }
@@ -638,9 +675,11 @@ export function LessonScreen() {
   async function finish(roleDone: boolean) {
     if (!lesson) return;
     setPhase("summary");
-    if (saved) return;
-    setSaved(true);
-    sfx("finish"); // tamamlanma sesi (özet; saved koruması sayesinde bir kez)
+    /* Aynı hüküm iki kez yazılmıyor; ama yarım kaydın ardından gelen
+       tamamlanma yazılıyor. */
+    if (kaydedilen.current === true || (kaydedilen.current === false && !roleDone)) return;
+    kaydedilen.current = roleDone;
+    sfx("finish"); // tamamlanma sesi (özet; kayıt koruması sayesinde hüküm başına bir kez)
     /* Puan yüzdesi web ile aynı formül: puanlanan adımlar içinde doğru oranı
        (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
        formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
@@ -650,8 +689,13 @@ export function LessonScreen() {
        yeni geldiği için ölçüm de şimdi geliyor. */
     if (offline) track("production_attempt", offlineSummary(lesson, offline).score, "roleplay");
     bumpStats(); // ders bitti: XP/seri değişti
-    void markItemDone(lesson.id);
-    void clearLessonResume(lesson.id);
+    /* "Şimdilik bırak" dersi BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
+       bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
+       Patika adımı "denendi" görünsün ve sıra ilerlesin. */
+    if (roleDone) {
+      void markItemDone(lesson.id);
+      void clearLessonResume(lesson.id);
+    }
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     const payload = { lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds };
     try {
@@ -772,7 +816,7 @@ export function LessonScreen() {
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("lesson.pick_up_where_you_left_off")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.you_paused_this_lesson_pick_up")}</Text>
           <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
-            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); beginLecture(r.cursor, true); }} colors={colors} />
+            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } }} colors={colors} />
             <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); }}>
               <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}>
                 <Text variant="h3" color={colors.text}>{tx("lesson.start_over")}</Text>
@@ -803,7 +847,7 @@ export function LessonScreen() {
               <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
                 onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
-                ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)}
+                ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} onLeave={() => void finish(false)}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
@@ -1019,10 +1063,10 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   );
 }
 
-function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, sttOk, sttSebep, listening, typing, setTyping, colors }: {
+function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, sttOk, sttSebep, listening, typing, setTyping, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
-  ready: boolean; turns: number; minTurns: number; onFinish: () => void;
+  ready: boolean; turns: number; minTurns: number; onFinish: () => void; onLeave: () => void;
   sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
 }) {
   const yaziYolu = sttOk === false || typing;
@@ -1050,7 +1094,17 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
       {ready ? (
         <BigButton label={tx("lesson.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
-        <Text variant="caption" color={colors.textMuted}>{tx("lesson.keep_talking", { n: turns, target: minTurns })}</Text>
+        /* "ŞİMDİLİK BIRAK" — web `lesson-player` ile aynı çıkış. Yoktu: tur
+           sayısı dolmadan konuşmadan çıkmanın tek yolu geri tuşuydu ve deneme
+           hiçbir yere yazılmıyordu. Kaldığı yer saklı kalıyor. */
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
+          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{tx("lesson.keep_talking", { n: turns, target: minTurns })}</Text>
+          {turns > 0 ? (
+            <PressableScale onPress={onLeave} hitSlop={6} style={{ paddingHorizontal: spacing.sm, paddingVertical: spacing.xs }}>
+              <Text variant="caption" color={colors.primaryText}>{tx("lessonp.leave_for_now")}</Text>
+            </PressableScale>
+          ) : null}
+        </View>
       )}
       {yaziYolu ? (
         <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />

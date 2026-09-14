@@ -764,6 +764,8 @@ export const enBase: Record<string, string> = {
   "lessonp.chat_off_patterns": "Chat service off — use the patterns",
   "lessonp.chat_off_consent": "Because AI isn't allowed, the conversation runs from a written script. It still counts; you can turn AI on in the settings.",
   "lessonp.conversation_unfinished": "The conversation is unfinished",
+  "lessonp.leave_for_now": "Leave it for now",
+  "lessonp.resumed": "You're picking the conversation up where you left off.",
   "lessonp.corrections": "Corrections from the conversation",
   "lessonp.no_corrections": "Nothing needed correcting in the conversation.",
   "lessonp.hands_free": "Hands-free",
