@@ -54,7 +54,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   // Cümle tamamlanınca doğru hâli okunuyor ve o metin baştan belli; en uzun
   // ses bu oyunda olduğu için önden indirmenin kazancı da en çok burada.
   useEffect(() => {
-    prefetchGerman([...answer, tail].filter(Boolean).join(" "));
+    prefetchGerman(`${answer.join(" ")}${tail}`);
   }, [answer, tail]);
   const onDoneRef = useRef(onDone);
 
@@ -84,7 +84,9 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     // Cümle tamamlanınca DOĞRU hâli bütün olarak okunuyor. Tek tek kelimeler
     // yerleştirilirken duyulmuştu ama cümlenin ritmi ancak bütün okunduğunda
     // çıkıyor — asıl öğrenilen şey o.
-    const full = [...answer, tail].filter(Boolean).join(" ");
+    /* Kuyruk noktalama (`session` `[.!?…]+$`): araya boşluk girince doğru
+       cevap "Ich gehe ins Kino ." diye yazılıyordu. */
+    const full = `${answer.join(" ")}${tail}`;
     // Cümle uzun ve uzunluğu turdan tura çok değişiyor; sabit süre burada
     // özellikle kırılgandı. Çizgi okumanın gerçek uzunluğunda dolduruluyor.
     vibrate(isCorrect ? "correct" : "wrong");

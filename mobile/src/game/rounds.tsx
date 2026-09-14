@@ -933,11 +933,19 @@ function BlankSlot({ picked, correct, colors }: { picked: string | null; correct
 /** Cümleyi sözcüklere böler; boşluk kendi kutusu olarak araya giriyor. */
 function ClozeSentence({ before, after, picked, correct, colors }: { before: string; after: string; picked: string | null; correct: boolean; colors: Palette }) {
   const sozcukler = (x: string) => x.split(/\s+/).filter(Boolean);
+  /* Boşluğun hemen ardındaki noktalama KUTUYA YAPIŞIK: sözcükler arası
+     aralıkla ayrı çizilince "Ich trinke [____] ." gibi noktadan önce boşluk
+     görünüyordu. */
+  const arka = sozcukler(after);
+  const yapisik = arka.length && /^[.,!?;:…]+$/.test(arka[0]) ? arka.shift() : null;
   return (
     <View style={{ flex: 1, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
       {sozcukler(before).map((w, i) => <Text key={`b${i}`} variant="h2">{w}</Text>)}
-      <BlankSlot picked={picked} correct={correct} colors={colors} />
-      {sozcukler(after).map((w, i) => <Text key={`a${i}`} variant="h2">{w}</Text>)}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}>
+        <BlankSlot picked={picked} correct={correct} colors={colors} />
+        {yapisik ? <Text variant="h2">{yapisik}</Text> : null}
+      </View>
+      {arka.map((w, i) => <Text key={`a${i}`} variant="h2">{w}</Text>)}
     </View>
   );
 }
@@ -1388,7 +1396,10 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
 function OrderRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const answer = Array.isArray(round.answer) ? round.answer : [];
   const tail = round.tail ?? "";
-  const full = [...answer, tail].filter(Boolean).join(" ");
+  /* Kuyruk NOKTALAMA ("." "?" — sunucu `[.!?…]+$` ile ayırıyor), sözcük
+     değil: araya boşluk girince doğru cevap "Ich gehe ins Kino ." diye
+     yazılıyordu. */
+  const full = `${answer.join(" ")}${tail}`;
   const pool = React.useMemo(() => (round.tokens ?? []).map((text, id) => ({ id, text })), [round.tokens]);
   const [placed, setPlaced] = useState<{ id: number; text: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
