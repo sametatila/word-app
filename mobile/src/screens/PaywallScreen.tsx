@@ -47,11 +47,70 @@ function planLabel(pkg: PurchasesPackage): string {
  */
 const OWN_PROMO_CODES = Platform.OS !== "ios";
 
-/** Mağazanın bildirdiği ücretsiz deneme (giriş fiyatı 0) — yoksa deneme vaadi yok. */
+/**
+ * Mağazanın bildirdiği ücretsiz deneme (giriş fiyatı 0) — yoksa deneme vaadi yok.
+ *
+ * Süre TEKİL/ÇOĞUL anahtarla kuruluyor: "1" + "months" birleştirmesi İngilizcede
+ * "1 months", Almancada "1 Monate" basıyordu. Yıllık birim de eksikti ve aya
+ * düşüyordu.
+ */
 function freeTrialOf(pkg: PurchasesPackage | undefined): string | null {
   const intro = pkg?.product.introPrice;
   if (!intro || intro.price !== 0) return null;
-  return `${intro.periodNumberOfUnits} ${intro.periodUnit === "DAY" ? t("paywall.days") : intro.periodUnit === "WEEK" ? t("paywall.weeks") : t("paywall.ay")}`;
+  const n = intro.periodNumberOfUnits;
+  const unit = intro.periodUnit;
+  const key = unit === "DAY" ? "paywall.trial_days" : unit === "WEEK" ? "paywall.trial_weeks" : unit === "YEAR" ? "paywall.trial_years" : "paywall.trial_months";
+  return t(key, { n });
+}
+
+type BillingPeriod = { unit: "year" | "month" | "week"; n: number };
+
+/**
+ * Faturalama dönemi — önce mağazanın ISO 8601 süresinden (`P1Y`, `P1M`, `P3M`,
+ * `P1W`), yoksa paket türünden. Bilinmiyorsa `null` ve satır dönemsiz kalıyor
+ * (ör. ömür boyu ürün).
+ */
+function billingPeriodOf(pkg: PurchasesPackage): BillingPeriod | null {
+  const m = /^P(\d+)([YMWD])$/.exec(pkg.product.subscriptionPeriod ?? "");
+  if (m) {
+    const n = Number(m[1]);
+    if (m[2] === "Y") return { unit: "year", n };
+    if (m[2] === "M") return n % 12 === 0 ? { unit: "year", n: n / 12 } : { unit: "month", n };
+    if (m[2] === "W") return { unit: "week", n };
+    if (m[2] === "D" && n % 7 === 0) return { unit: "week", n: n / 7 };
+  }
+  switch (pkg.packageType) {
+    case "ANNUAL": return { unit: "year", n: 1 };
+    case "SIX_MONTH": return { unit: "month", n: 6 };
+    case "THREE_MONTH": return { unit: "month", n: 3 };
+    case "TWO_MONTH": return { unit: "month", n: 2 };
+    case "MONTHLY": return { unit: "month", n: 1 };
+    case "WEEKLY": return { unit: "week", n: 1 };
+    default: return null;
+  }
+}
+
+/**
+ * Satın almadan önce görünen ücret satırı: DÖNEMİYLE birlikte.
+ *
+ * "1 ay ücretsiz, sonra 1.199,99 ₺" yazıyordu; dönem yalnız plan satırındaydı.
+ * Apple denemenin süresini ve bittikten sonra faturalanacak tutarı, Play fatura
+ * döngüsünü açıkça istiyor — satırın kendisi eksiksiz okunmalı: "1 ay ücretsiz,
+ * sonra yılda 1.199,99 ₺". Cümle dilden dile farklı dizildiği için dönem ayrı
+ * bir sözcük değil, her dönem kendi cümlesi.
+ */
+/* Anahtarlar DÜZ YAZILI: sözlük denetimi kodda geçen anahtarı arıyor ve
+   `paywall.price_${…}` gibi kurulmuş bir ad onu ölü sanardı. */
+const TRIAL_THEN = { year: "paywall.trial_then_year", month: "paywall.trial_then_month", week: "paywall.trial_then_week", months: "paywall.trial_then_months" } as const;
+const PRICE_PER = { year: "paywall.price_year", month: "paywall.price_month", week: "paywall.price_week", months: "paywall.price_months" } as const;
+
+function priceLine(pkg: PurchasesPackage, trial: string | null): string {
+  const price = pkg.product.priceString;
+  const p = billingPeriodOf(pkg);
+  const kind = !p ? null : p.n === 1 ? p.unit : p.unit === "month" ? "months" : null;
+  const n = p?.n ?? 1;
+  if (trial) return kind ? t(TRIAL_THEN[kind], { duration: trial, price, n }) : t("paywall.free_then", { duration: trial, price });
+  return kind ? t(PRICE_PER[kind], { price, n }) : t("paywall.fiyat_donem", { price });
 }
 
 export function PaywallScreen() {
@@ -267,7 +326,7 @@ export function PaywallScreen() {
               const active = selected === p.identifier;
               const tr = freeTrialOf(p);
               return (
-                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${p.product.priceString}`} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                     {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
                   </View>
@@ -351,7 +410,7 @@ export function PaywallScreen() {
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
             satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
-          {pkg ? (trial ? t("paywall.free_then", { duration: trial, price: pkg.product.priceString }) : t("paywall.fiyat_donem", { price: pkg.product.priceString })) : ""}
+          {pkg ? priceLine(pkg, trial) : ""}
           {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
         {/*
