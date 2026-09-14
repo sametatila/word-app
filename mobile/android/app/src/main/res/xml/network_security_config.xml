@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Ağ güvenliği yapılandırması (güvenlik denetimi #10).
+
+  SERTİFİKA PİNLEME YOK — bilinçli karar. Sunucu Let's Encrypt kullanıyor
+  (kısa ömürlü sertifika + varsayılan anahtar döndürme + ara-sertifika
+  rotasyonu); pinleme sahadaki uygulamayı yenilemede tuğlalaştırmaya yatkın ve
+  bu risk, küçük self-hosted ekip için marjinal derinlemesine-savunma faydasına
+  değmez (LE'nin ve Android/Apple'ın güncel rehberi de bu yönde). Uygulama zaten
+  yalnız sistem-CA'ya güveniyor, cleartext yok, iOS ATS açık.
+
+  BU DOSYANIN YAPTIĞI: güven çıpalarını release'de AÇIKÇA yalnız sistem
+  CA'larına bağlar (kullanıcı-yüklü MITM CA'ları reddedilir; minSdk 24 altına
+  düşse bile korur). Debug yapıda kullanıcı CA'larına izin verir ki ekip kendi
+  trafiğini proxy ile inceleyebilsin (yalnız debuggable yapı; release'i
+  etkilemez). Cleartext'e dokunmaz — onu manifest/RN eklentisi yönetiyor.
+-->
+<network-security-config>
+    <base-config>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
