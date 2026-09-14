@@ -30,6 +30,9 @@ type RcEvent = {
   original_transaction_id?: string;
   transaction_id?: string;
   entitlement_ids?: string[];
+  /** Yalnız TRANSFER olayında: aboneliğin ayrıldığı ve geçtiği kimlikler. */
+  transferred_from?: string[];
+  transferred_to?: string[];
 };
 
 /**
@@ -57,7 +60,7 @@ const STATE_BY_TYPE: Record<string, StoreState> = {
 };
 
 /** Yetkiye hiç dokunmayan olaylar — sessizce kabul edilir. */
-const IGNORED = new Set(["TEST", "TRANSFER", "SUBSCRIBER_ALIAS", "INVOICE_ISSUANCE", "TEMPORARY_ENTITLEMENT_GRANT"]);
+const IGNORED = new Set(["TEST", "SUBSCRIBER_ALIAS", "INVOICE_ISSUANCE", "TEMPORARY_ENTITLEMENT_GRANT"]);
 
 function platformOf(store: string | undefined): StoreEvent["platform"] {
   switch (store) {
@@ -117,6 +120,22 @@ export const revenuecat: StoreAdapter = {
     }
 
     if (IGNORED.has(type)) return { ok: false, status: 400, reason: "ignored_type" };
+
+    /*
+      TRANSFER YETKİYİ TAŞIR. Önceden yok sayılıyordu: başka bir uygulama
+      hesabında "geri yükle" denince RevenueCat aboneliği yeni kimliğe
+      geçiriyor, biz eski hesabı premium bırakıyorduk; yeni hesap da ilk
+      yenilemede premium oluyordu. Tek satın alım iki hesaba yayılıyordu
+      (güvenlik denetimi 2026-09-14, bilgi maddesi: app_user_id güveni).
+      Olayda `app_user_id` yok; kimlikler iki dizide geliyor.
+    */
+    if (type === "TRANSFER") {
+      const from = (ev.transferred_from ?? []).filter((x) => typeof x === "string" && x);
+      const to = (ev.transferred_to ?? []).filter((x) => typeof x === "string" && x);
+      if (!from.length || to.length !== 1) return { ok: false, status: 400, reason: "bad_transfer" };
+      if (!ev.id) return { ok: false, status: 400, reason: "no_event_id" };
+      return { ok: true, transfer: { provider: "revenuecat", eventId: ev.id, from, to: to[0] } };
+    }
 
     const state = STATE_BY_TYPE[type];
     if (!state) return { ok: false, status: 400, reason: `unknown_type:${type}` };

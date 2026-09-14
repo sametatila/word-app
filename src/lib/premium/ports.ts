@@ -70,9 +70,28 @@ export type StoreEvent = {
   paid: boolean;
 };
 
+/**
+ * Abonelik hesaplar arasında TAŞINDI.
+ *
+ * Mağaza hesabı aynı, uygulama hesabı farklı bir cihazda "satın alımları geri
+ * yükle" denince sağlayıcı aboneliği yeni kullanıcıya taşıyor. Bu olay
+ * işlenmezse eski hesap süresi dolana dek premium kalıyor, yeni hesap da ilk
+ * yenilemede premium oluyor: tek satın alım birden çok hesaba yayılıyor.
+ */
+export type StoreTransfer = {
+  provider: string;
+  /** Tekrar teslimat elemesi için ZORUNLU. */
+  eventId: string;
+  /** Aboneliğin ayrıldığı kullanıcılar (bizde olmayan anonim kimlikler de olabilir). */
+  from: string[];
+  /** Aboneliğin geçtiği kullanıcı. */
+  to: string;
+};
+
 /** Webhook'un sonucu — uç bunu HTTP durumuna çeviriyor. */
 export type WebhookResult =
   | { ok: true; event: StoreEvent }
+  | { ok: true; transfer: StoreTransfer }
   | { ok: false; status: 401 | 400 | 503; reason: string };
 
 /**

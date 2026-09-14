@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { applyStoreEvent } from "@/lib/premium";
+import { applyStoreEvent, applyStoreTransfer } from "@/lib/premium";
 import { adapterFor, DEFAULT_ADAPTER } from "@/lib/premium/providers";
 import { rewardForFirstPayment } from "@/lib/premium/referral";
 
@@ -46,6 +46,10 @@ export async function POST(req: Request, ctx: { params: Promise<{ provider?: str
   }
 
   try {
+    if ("transfer" in parsed) {
+      const { applied, moved } = await applyStoreTransfer(parsed.transfer);
+      return NextResponse.json({ ok: true, applied, moved });
+    }
     const { applied, firstPayment } = await applyStoreEvent(parsed.event);
 
     // Referans ödülü YALNIZ ilk gerçek ödemede ve yalnız olay ilk kez

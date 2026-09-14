@@ -29,6 +29,7 @@ export {
   resolveEntitlement,
   grantBonus,
   applyStoreEvent,
+  applyStoreTransfer,
   revokeEntitlement,
   daysToMinutes,
   type EntitlementView,

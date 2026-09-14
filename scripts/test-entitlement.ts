@@ -27,7 +27,8 @@ import { and, eq, isNotNull, sql } from "drizzle-orm";
 // premium modülleri ise test ikiziyle koşardı: iki ayrı havuz, iki ayrı adres.
 import { db } from "@/lib/db";
 import { entitlements, premiumGrants, profiles, promoCodes, referrals, usageCounters } from "../src/lib/db/schema";
-import { applyStoreEvent, grantBonus, resolveEntitlement, daysToMinutes } from "../src/lib/premium/entitlement";
+import { applyStoreEvent, applyStoreTransfer, grantBonus, resolveEntitlement, daysToMinutes } from "../src/lib/premium/entitlement";
+import { revenuecat } from "../src/lib/premium/providers/revenuecat";
 import { createCodes, redeemCode } from "../src/lib/premium/promo";
 import { attachReferral, ensureReferralCode, rewardForFirstPayment } from "../src/lib/premium/referral";
 import { clearPremiumConfigCache, savePremiumConfig } from "../src/lib/premium/config";
@@ -269,6 +270,49 @@ async function main() {
     const twice = await resolveEntitlement(inviter);
     const gun = Math.round(((twice.until?.getTime() ?? 0) - Date.now()) / 86_400_000) + twice.bonusDaysPending;
     check("ödül İKİ KEZ verilmiyor", gun <= 8, `${gun} gün`);
+  }
+
+  /* ───────── ABONELİK TAŞIMA: TRANSFER olayı (güvenlik denetimi, bilgi maddesi) ───────── */
+  console.log("\nAbonelik taşıma: geri yükleme aboneliği yeni hesaba geçiriyor");
+  {
+    const a = uid("tr-a");
+    const b = uid("tr-b");
+    created.push(a, b);
+    await applyStoreEvent(storeEvent(a, { eventId: `tr-paid-${a}`, paid: true, ref: `tr-sub-${a}` }));
+    // A'nın çalışmayı bekleyen hediyesi var: taşıma onu silmemeli.
+    await grantBonus(a, daysToMinutes(3), { source: "promo", ref: `tr-bonus-${a}` });
+    check("taşıma öncesi A mağazadan premium", (await resolveEntitlement(a)).source === "store");
+
+    const tr = { provider: "revenuecat", eventId: `tr-ev-${a}`, from: [a, "$RCAnonymousID:abc"], to: b };
+    const first = await applyStoreTransfer(tr);
+    check("taşıma uygulandı", first.applied && first.moved, JSON.stringify(first));
+    const vb = await resolveEntitlement(b);
+    check("B artık mağazadan premium", vb.premium && vb.source === "store", vb.source);
+    const va = await resolveEntitlement(a);
+    check("A'nın mağaza penceresi kapandı", va.source !== "store", va.source);
+    check("A'nın hediyesi korunuyor (bonus penceresi başladı)", va.premium && va.source === "bonus", `${va.premium}/${va.source}`);
+
+    const again = await applyStoreTransfer(tr);
+    check("aynı TRANSFER ikinci kez uygulanmıyor", !again.applied, JSON.stringify(again));
+
+    const renew = await applyStoreEvent(storeEvent(b, { eventId: `tr-renew-${b}`, paid: true, ref: `tr-sub-${a}` }));
+    check("B'nin sonraki yenilemesi 'ilk ödeme' sayılmıyor (davet ödülü tekrar tetiklenmez)", renew.applied && !renew.firstPayment, JSON.stringify(renew));
+
+    const anon = await applyStoreTransfer({ provider: "revenuecat", eventId: `tr-anon-${b}`, from: ["$RCAnonymousID:yok"], to: b });
+    check("bizde olmayan kaynaktan taşıma: kayıt var, yetki değişmedi", anon.applied && !anon.moved && (await resolveEntitlement(b)).source === "store", JSON.stringify(anon));
+
+    // Adaptör: TRANSFER yok sayılmıyor, taşıma olarak çıkıyor.
+    const prevSecret = process.env.REVENUECAT_WEBHOOK_AUTH;
+    process.env.REVENUECAT_WEBHOOK_AUTH = "test-sir";
+    const req = (body: unknown) => new Request("http://x/api/premium/webhook", { method: "POST", headers: { authorization: "Bearer test-sir" }, body: JSON.stringify(body) });
+    const good = { event: { id: "rc-tr-1", type: "TRANSFER", environment: "PRODUCTION", transferred_from: [a], transferred_to: [b] } };
+    const parsed = await revenuecat.parse(req(good), JSON.stringify(good));
+    check("adaptör TRANSFER'ı taşımaya çeviriyor", parsed.ok && "transfer" in parsed && parsed.transfer.to === b && parsed.transfer.from[0] === a, JSON.stringify(parsed));
+    const twoTo = { event: { id: "rc-tr-2", type: "TRANSFER", environment: "PRODUCTION", transferred_from: [a], transferred_to: [a, b] } };
+    const bad = await revenuecat.parse(req(twoTo), JSON.stringify(twoTo));
+    check("birden çok hedefli TRANSFER reddediliyor", !bad.ok, JSON.stringify(bad));
+    if (prevSecret === undefined) delete process.env.REVENUECAT_WEBHOOK_AUTH;
+    else process.env.REVENUECAT_WEBHOOK_AUTH = prevSecret;
   }
 
   /* ───────── DAVET TAVANI: eşzamanlı ödemeler (güvenlik denetimi #14) ───────── */

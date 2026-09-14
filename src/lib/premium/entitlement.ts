@@ -1,8 +1,8 @@
 import "server-only";
-import { and, eq, gt, isNull, isNotNull, lte, ne, or, sql } from "drizzle-orm";
+import { and, eq, gt, inArray, isNull, isNotNull, lte, ne, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { entitlements, premiumGrants, profiles } from "@/lib/db/schema";
-import { STATE_GRANTS, type StoreEvent } from "./ports";
+import { STATE_GRANTS, type StoreEvent, type StoreState, type StoreTransfer } from "./ports";
 
 /**
  * YETKİNİN HESAPLANDIĞI VE YAZILDIĞI TEK YER.
@@ -306,33 +306,8 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
         .values({ userId: ev.userId, ...emptyRow(), ...next })
         .onConflictDoUpdate({ target: entitlements.userId, set: next });
 
-      /**
-       * Hediye çalışırken abonelik başladıysa KALANI bakiyeye geri al.
-       *
-       * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye yukarıdaki mutlak yazmanın
-       * içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook satırı
-       * okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak değer o
-       * ödülü üzerine yazıp silerdi.
-       *
-       * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor ve
-       * koşul da aynı cümlede: pencere bu arada kapandıysa hiçbir şey olmuyor.
-       */
-      if (grants && !wasCovered) {
-        await tx
-          .update(entitlements)
-          .set({
-            bonusMinutes: sql`${entitlements.bonusMinutes} + ceil(extract(epoch from (${entitlements.bonusUntil} - now())) / 60)::int`,
-            bonusUntil: null,
-            updatedAt: new Date(),
-          })
-          .where(
-            and(
-              eq(entitlements.userId, ev.userId),
-              isNotNull(entitlements.bonusUntil),
-              gt(entitlements.bonusUntil, sql`now()`),
-            ),
-          );
-      }
+      // Hediye çalışırken abonelik başladıysa kalanı bakiyeye geri al (bkz. `returnRunningBonus`).
+      if (grants && !wasCovered) await returnRunningBonus(tx, ev.userId);
       return { applied: true, firstPayment };
     });
   } finally {
@@ -340,6 +315,100 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
     // olsaydı `resolveEntitlement`in kendi yazmaları kapının kilidini uzatırdı.
     await resolveEntitlement(ev.userId).catch(() => {});
   }
+}
+
+/**
+ * Aboneliği bir kullanıcıdan ötekine taşır (sağlayıcının TRANSFER olayı).
+ *
+ * TAŞINAN YALNIZ MAĞAZA PENCERESİ. Bitiş, ürün, durum, platform ve abonelik
+ * kimliği yeni kullanıcıya MUTLAK yazılıyor; eskinin penceresi kapanıyor.
+ * Hediye (bonus) bakiyesi ve çalışan hediye penceresi kişiye ait, taşınmıyor
+ * ve silinmiyor. Birden çok kaynak varsa en geç biten pencere taşınıyor.
+ *
+ * `storePaidAt` yeni kullanıcıya KOPYALANIYOR: aynı aboneliğin sonraki
+ * yenilemesi "ilk ödeme" sayılıp davet ödülünü ikinci kez tetiklemesin.
+ *
+ * KAPI `applyStoreEvent` ile aynı: olay kimliği deftere tekil yazılıyor,
+ * çakışırsa olay zaten işlenmiş. Satırlar işlem içinde kilitleniyor; aynı
+ * anda gelen bir yenileme olayı taşınan değeri yarı yolda ezmesin.
+ */
+export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: boolean; moved: boolean }> {
+  const from = [...new Set(tr.from)].filter((u) => u !== tr.to);
+  const involved = [...from, tr.to];
+  try {
+    return await db.transaction(async (tx) => {
+      const [gate] = await tx
+        .insert(premiumGrants)
+        .values({ userId: tr.to, source: "store", ref: tr.eventId, actor: tr.provider, note: `transfer ← ${from.join(", ")}` })
+        .onConflictDoNothing()
+        .returning({ id: premiumGrants.id });
+      if (!gate) return { applied: false, moved: false };
+
+      const rows = from.length
+        ? await tx.select().from(entitlements).where(inArray(entitlements.userId, involved)).for("update")
+        : [];
+      const toRow = rows.find((r) => r.userId === tr.to);
+      const source = rows
+        .filter((r) => r.userId !== tr.to && r.storeProvider)
+        .sort((a, b) => (b.storeUntil?.getTime() ?? 0) - (a.storeUntil?.getTime() ?? 0))[0];
+      if (!source) return { applied: true, moved: false };
+
+      const now = Date.now();
+      const next = {
+        storeUntil: source.storeUntil,
+        storeProvider: source.storeProvider,
+        storePlatform: source.storePlatform,
+        storeProduct: source.storeProduct,
+        storeState: source.storeState,
+        storeRef: source.storeRef,
+        storePaidAt: toRow?.storePaidAt ?? source.storePaidAt,
+        updatedAt: new Date(),
+      };
+      await tx
+        .insert(entitlements)
+        .values({ userId: tr.to, ...emptyRow(), ...next })
+        .onConflictDoUpdate({ target: entitlements.userId, set: next });
+
+      const grants = !!source.storeState && STATE_GRANTS.has(source.storeState as StoreState) && active(source.storeUntil, now);
+      if (grants && !active(toRow?.storeUntil, now)) await returnRunningBonus(tx, tr.to);
+
+      for (const r of rows.filter((x) => x.userId !== tr.to && x.storeProvider)) {
+        await tx
+          .update(entitlements)
+          .set({ storeUntil: null, storeState: "expired", storeRef: null, updatedAt: new Date() })
+          .where(eq(entitlements.userId, r.userId));
+        await tx
+          .insert(premiumGrants)
+          .values({ userId: r.userId, source: "store", ref: `${tr.eventId}:from:${r.userId}`, actor: tr.provider, note: `transfer → ${tr.to}` })
+          .onConflictDoNothing();
+      }
+      return { applied: true, moved: true };
+    });
+  } finally {
+    for (const u of involved) await resolveEntitlement(u).catch(() => {});
+  }
+}
+
+/**
+ * Hediye çalışırken abonelik başladıysa KALANI bakiyeye geri al.
+ *
+ * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye mağaza alanlarının mutlak
+ * yazmasının içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook
+ * satırı okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak
+ * değer o ödülü üzerine yazıp silerdi.
+ *
+ * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor ve
+ * koşul da aynı cümlede: pencere bu arada kapandıysa hiçbir şey olmuyor.
+ */
+async function returnRunningBonus(tx: Parameters<Parameters<typeof db.transaction>[0]>[0], userId: string): Promise<void> {
+  await tx
+    .update(entitlements)
+    .set({
+      bonusMinutes: sql`${entitlements.bonusMinutes} + ceil(extract(epoch from (${entitlements.bonusUntil} - now())) / 60)::int`,
+      bonusUntil: null,
+      updatedAt: new Date(),
+    })
+    .where(and(eq(entitlements.userId, userId), isNotNull(entitlements.bonusUntil), gt(entitlements.bonusUntil, sql`now()`)));
 }
 
 /**
