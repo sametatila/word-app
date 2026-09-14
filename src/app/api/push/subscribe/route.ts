@@ -19,6 +19,27 @@ type Incoming = {
   timezone?: unknown;
 };
 
+/**
+ * IANA saat dilimi doğrulaması — güvenlik denetimi F4 (2026-09-14).
+ *
+ * `timezone` istemciden geliyor ve `profiles.timezone`'a yazılıyor; oradan
+ * push.ts'teki hatırlatma/streak/haftalık/özet cron işleri TÜM profiller
+ * üzerinde tek sorguda `now() at time zone <col>` çalıştırıyor. Postgres
+ * tanınmayan bir dilimde ("time zone not recognized") tüm batch sorgusunu
+ * iptal eder — tek bir kullanıcının yazdığı çöp değer, o günden sonra HERKESİN
+ * bildirimlerini kalıcı olarak durdururdu (kalıcı, veri-tabanı geneli DoS).
+ * Bu yüzden yalnız gerçek IANA dilimleri saklanır; geçersizse alan hiç
+ * güncellenmez (şema varsayılanı "Europe/Istanbul" ya da eski değer korunur).
+ */
+function isValidTimeZone(tz: string): boolean {
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: tz });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   if (!pushEnabled) return NextResponse.json({ error: "push_disabled" }, { status: 503 });
@@ -54,7 +75,7 @@ export async function POST(req: Request) {
 
     // Saat dilimi buradan geliyor: hatırlatmayı gönderen sunucu, kullanıcının
     // "akşam 8"inin ne zaman olduğunu ancak böyle bilebiliyor.
-    if (typeof body.timezone === "string" && body.timezone.length < 64) {
+    if (typeof body.timezone === "string" && body.timezone.length < 64 && isValidTimeZone(body.timezone)) {
       await db
         .update(profiles)
         .set({ timezone: body.timezone, remindersEnabled: true })
