@@ -54,6 +54,7 @@
     "test:consent": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-consent.ts",
     "test:push-sql": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-push-sql.ts",
     "test:push-endpoint": "tsx scripts/test-push-endpoint.ts",
+    "test:prompt-fence": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-prompt-fence.ts",
     "grant:premium": "tsx --tsconfig scripts/tsconfig.ops.json scripts/grant-premium.ts",
     "test:track": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-track.ts",
     "briefs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/immersion-briefs.ts",
