@@ -304,7 +304,7 @@ async function main() {
     // Adaptör: TRANSFER yok sayılmıyor, taşıma olarak çıkıyor.
     const prevSecret = process.env.REVENUECAT_WEBHOOK_AUTH;
     process.env.REVENUECAT_WEBHOOK_AUTH = "test-sir";
-    const req = (body: unknown) => new Request("http://x/api/premium/webhook", { method: "POST", headers: { authorization: "Bearer test-sir" }, body: JSON.stringify(body) });
+    const req = (body: unknown) => new Request("http://test.invalid/adaptor-parse", { method: "POST", headers: { authorization: "Bearer test-sir" }, body: JSON.stringify(body) });
     const good = { event: { id: "rc-tr-1", type: "TRANSFER", environment: "PRODUCTION", transferred_from: [a], transferred_to: [b] } };
     const parsed = await revenuecat.parse(req(good), JSON.stringify(good));
     check("adaptör TRANSFER'ı taşımaya çeviriyor", parsed.ok && "transfer" in parsed && parsed.transfer.to === b && parsed.transfer.from[0] === a, JSON.stringify(parsed));
