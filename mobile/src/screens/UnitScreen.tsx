@@ -49,21 +49,12 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
   const currentId = (acik.find((i) => !i.attempted) ?? acik.find((i) => !i.done))?.id;
   const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
   /*
-    İLERLEME YALNIZ KAYIT TUTAN ADIMLARA GÖRE — web ile aynı ölçüt.
-
-    Quiz ve kontrol noktası ünite brief'inden türetilen pratik: oynanabilir
-    ama madde başına "bitti" kaydı tutmuyorlar (v1). Paydaya katılınca ünite
-    hiçbir zaman %100 görünmüyordu — mobilde tavan 10/12 idi, webde aynı
-    ünite 10/10 diyordu. Sunucu da (immersion/state) sayıma yalnız ders ve
-    beceriyi alıyor; mobil ölçütü ona hizalandı.
+    İLERLEME = OYNANABİLİR HER ADIM — Patika kartı, adım şeridi ve sunucunun
+    `total`ı ile aynı küme. Dil bilgisi/tekrar/kontrol noktası artık kayıt
+    tutuyor (`POST /api/immersion/item`); tutmadıkları dönemde sayımdan
+    düşülüyorlardı ve ekran 13 adım gösterip 10 üzerinden sayıyordu.
   */
-  /* `playable` ŞARTI SUNUCUYLA AYNI. Eksikti ve İngilizce kursta ayrışma
-     canlıydı: içeriği olmayan yuvalar (ref yok) sunucunun `total`ına
-     girmiyor ama burada sayılıyordu — ünite sunucuda bitmiş sayılıp sonraki
-     açılırken ekranda ilerleme takılı kalıyordu. Bkz. web `unit-pane`. */
-  const counted = items.filter(
-    (i) => i.playable && (i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write"),
-  );
+  const counted = items.filter((i) => i.playable);
   const done = counted.filter((i) => i.done).length;
   const pct = counted.length ? Math.round((done / counted.length) * 100) : 0;
 

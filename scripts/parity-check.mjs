@@ -15956,23 +15956,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       return src.slice(i, Math.min(...[j, k].filter((x) => x > i)) + 1);
     };
     const oynanabilir = (src, ad) => (/playable/.test(govdeAl(src, ad)) ? "var" : "YOK");
+    /* OLCUT: OYNANABILIR HER ADIM. Dil bilgisi/tekrar/kontrol noktasi artik
+       kayit tutuyor (`user_path_items`); tutmadiklari donemde sayimdan
+       dusuluyorlardi ve unite ekrani 13 adim gosterip 10 uzerinden sayiyordu.
+       Sunucu pratik kaydi verildiginde (`practiceDone`) onlari da sayiyor;
+       web ve mobil sayac `playable` suzgecinden baska tur suzgeci tasimiyor. */
     sameList(
       "ilerlemeye sayilan maddeler",
       [
-        "sunucu turler=" + (() => { const i = sunucu.indexOf("completable"); const b = sunucu.slice(i, i + 420);
-          return ["lesson", "read", "listen", "write"].filter((t) => b.includes(`"${t}"`)).join("+"); })(),
-        "sunucu oynanabilir=" + oynanabilir(sunucu, "completable"),
+        "sunucu olcut=" + (/const completable = playable\.filter\(\(i\) => kayitTutarTur\(i\.item\.kind\)\)/.test(sunucu) && /practiceTracked \|\| !isPracticeKind/.test(sunucu) ? "oynanabilir her adim" : "?"),
         "web turler=" + turler(webPane, "function counted"),
         "web oynanabilir=" + oynanabilir(webPane, "function counted"),
         "mobil turler=" + turler(mobUnit, "const counted"),
         "mobil oynanabilir=" + oynanabilir(mobUnit, "const counted"),
       ],
       [
-        "sunucu turler=lesson+read+listen+write",
-        "sunucu oynanabilir=var",
-        "web turler=lesson+read+listen+write",
+        "sunucu olcut=oynanabilir her adim",
+        "web turler=tur yok",
         "web oynanabilir=var",
-        "mobil turler=lesson+read+listen+write",
+        "mobil turler=tur yok",
         "mobil oynanabilir=var",
       ],
       "bulunan",

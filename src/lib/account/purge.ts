@@ -29,6 +29,7 @@ import {
   userLessons,
   userReports,
   userSkills,
+  userPathItems,
   userWords,
   deviceTokens,
   entitlements,
@@ -79,6 +80,7 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(reviews).where(eq(reviews.userId, userId));
     await tx.delete(dailyStats).where(eq(dailyStats.userId, userId));
     await tx.delete(userSkills).where(eq(userSkills.userId, userId));
+    await tx.delete(userPathItems).where(eq(userPathItems.userId, userId));
     await tx.delete(sessionState).where(eq(sessionState.userId, userId));
     await tx.delete(dailyScores).where(eq(dailyScores.userId, userId));
     await tx.delete(questClaims).where(eq(questClaims.userId, userId));

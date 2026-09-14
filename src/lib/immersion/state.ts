@@ -77,23 +77,43 @@ export type Completion = {
    */
   lessonAttempted?: (ref: string) => boolean;
   skillAttempted?: (ref: string) => boolean;
+  /**
+   * Pratik adımlar (dil bilgisi, tekrar, kontrol noktası) — ÖĞE KİMLİĞİYLE,
+   * ref ile değil: içerikleri türetildiği için ref ünite kimliği ve üç adımda
+   * aynı. Kayıt `user_path_items`ta (bkz. `practice.ts`).
+   *
+   * Verilmezse (eski çağıranlar, testler) pratik adımlar eskisi gibi sayıma
+   * girmez ve sırayı harcamaz.
+   */
+  practiceDone?: (itemId: string) => boolean;
+  practiceAttempted?: (itemId: string) => boolean;
 };
+
+/** Pratik adım: içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
+export function isPracticeKind(kind: string): boolean {
+  return kind === "grammar" || kind === "quiz" || kind === "checkpoint";
+}
 
 function itemDone(it: ImmersionItem, c: Completion): boolean {
   if (it.ref === null) return false;
   if (it.kind === "lesson") return c.lessonDone(it.ref);
   if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return c.skillDone(it.ref);
-  return false; // grammar/quiz/checkpoint bugün ref taşımaz (placeholder)
+  return c.practiceDone?.(it.id) ?? false;
 }
 
 function itemAttempted(it: ImmersionItem, c: Completion): boolean {
   if (it.ref === null) return false;
   if (it.kind === "lesson") return c.lessonAttempted?.(it.ref) ?? false;
   if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return c.skillAttempted?.(it.ref) ?? false;
-  return false;
+  return c.practiceAttempted?.(it.id) ?? false;
 }
 
 export function buildTrackState(track: ImmersionTrack, c: Completion): TrackState {
+  /* Pratik adımların kaydı verildiyse onlar da DİĞER ADIMLAR GİBİ sayılıyor:
+     sırayı harcıyor, sayaca ve "bitti"ye giriyor. Ünite 13 adımsa sayaç da
+     13 — Patika kartı, adım şeridi ve ünite ekranı aynı ölçütü okuyor. */
+  const practiceTracked = typeof c.practiceDone === "function";
+  const kayitTutarTur = (kind: string) => practiceTracked || !isPracticeKind(kind);
   const units: UnitState[] = [];
   let prevComplete = true; // ilk ünite daima kilitsiz
   let currentIndex = -1;
@@ -132,8 +152,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
         denendiyse (yani pencere hâlâ kimseye verilmediyse) açılırlar; bir
         adım eksikse kapalı kalırlar. Sırayı ise hiç harcamazlar.
       */
-      const kayitTutar =
-        s.item.kind === "lesson" || s.item.kind === "read" || s.item.kind === "listen" || s.item.kind === "write";
+      const kayitTutar = kayitTutarTur(s.item.kind);
       if (!kayitTutar) { s.open = !siradakiVerildi; continue; }
       if (s.attempted) { s.open = true; continue; }
       if (!siradakiVerildi) { s.open = true; siradakiVerildi = true; }
@@ -142,9 +161,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/checkpoint
     // ünite brief'inden türetilen PRATİK: oynanabilir ama done-takibi yok (v1),
     // sayıma girmez — yoksa asla-biten-olmayan bir item done===total'ı bozardı.
-    const completable = playable.filter(
-      (i) => i.item.kind === "lesson" || i.item.kind === "read" || i.item.kind === "listen" || i.item.kind === "write",
-    );
+    const completable = playable.filter((i) => kayitTutarTur(i.item.kind));
     const total = completable.length;
     const done = completable.filter((i) => i.done).length;
     const lessons = completable.filter((i) => i.item.kind === "lesson");

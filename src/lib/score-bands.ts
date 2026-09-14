@@ -37,6 +37,13 @@ export const SKILL_DONE_PCT = 70;
  */
 export const RUBRIC_PASS_PCT = 60;
 
+/**
+ * Patika'nın pratik adımlarında (dil bilgisi, tekrar, kontrol noktası) geçer
+ * puan. Oynatıcıların "geçtin" dediği eşikle AYNI sayı olmalı: ekran "geçtin"
+ * deyip adım bitmemiş kalırsa ikisi birbirini yalanlar.
+ */
+export const PRACTICE_PASS_PCT = 60;
+
 /** Orta bandın tabanı: altı "zayıf", üstü "orta". */
 export const SCORE_MID_PCT = 40;
 

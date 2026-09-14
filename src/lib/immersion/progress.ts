@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { userSkills } from "@/lib/db/schema";
 import { lessonBoard } from "@/lib/lessons/progress";
 import { isSkillDone } from "@/lib/score-bands";
+import { practiceProgress } from "./practice";
 import type { Completion } from "./state";
 
 /**
@@ -47,7 +48,17 @@ export async function immersionCompletion(userId: string, course: string): Promi
     console.error("[immersion] beceri ilerlemesi okunamadı", err);
   }
 
+  // Pratik adımlar (dil bilgisi, tekrar, kontrol noktası) — öğe kimliğiyle.
+  let practice = { tried: new Set<string>(), passed: new Set<string>() };
+  try {
+    practice = await practiceProgress(userId, course);
+  } catch (err) {
+    console.error("[immersion] pratik adım ilerlemesi okunamadı", err);
+  }
+
   return {
+    practiceDone: (id) => practice.passed.has(id),
+    practiceAttempted: (id) => practice.tried.has(id),
     lessonDone: (ref) => doneLessons.has(ref),
     skillDone: (ref) => doneSkills.has(ref),
     lessonAttempted: (ref) => triedLessons.has(ref),

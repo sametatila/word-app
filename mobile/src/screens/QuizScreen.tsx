@@ -12,7 +12,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { QuestionList } from "../game/skillQuiz";
-import { markItemDone } from "../game/lessonProgress";
+import { markItemDone, recordPathItem } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
@@ -54,7 +54,10 @@ export function QuizScreen() {
     setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (saved.current) return;
     saved.current = true;
-    void markItemDone(params.itemId);
+    /* "Bitti" = GEÇTİ (web `PRACTICE_PASS_PCT` ile aynı eşik). Cihazdaki işaret
+       her denemede konuyordu, yani geçemeyen öğrenci de adımı bitmiş görüyordu. */
+    if (total && Math.round((c / total) * 100) >= 60) void markItemDone(params.itemId);
+    if (total) void recordPathItem({ itemId: params.itemId, correct: c, total });
   }
   function retry() { saved.current = false; setFinished(false); setCorrect(0); setRound((r) => r + 1); }
 

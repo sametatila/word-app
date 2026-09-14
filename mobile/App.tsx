@@ -19,7 +19,7 @@ import { loadCoachSeen } from "./src/game/coachLines";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
-import { flushPendingLessons } from "./src/game/lessonProgress";
+import { flushPendingLessons, flushPendingPathItems } from "./src/game/lessonProgress";
 import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
@@ -168,7 +168,7 @@ function Nav() {
     ikinci turu hiç oynamasa da metroda çözdüğü tur sunucuya ulaşıyor.
     Oturum yoksa denenmiyor - 401 kuyruğu silmiyor ama boşuna istek de atmayalım.
   */
-  useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingLessons(); } }, [user]);
+  useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingLessons(); void flushPendingPathItems(); } }, [user]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {

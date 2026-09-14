@@ -185,6 +185,55 @@ export async function flushPendingLessons(): Promise<void> {
   } catch { /* yut */ }
 }
 
+/**
+ * PATİKA PRATİK ADIMI — dil bilgisi, tekrar, kontrol noktası.
+ *
+ * Bu adımların sonucu hiçbir yere yazılmıyordu; yalnız cihazda bir işaret
+ * (`markItemDone`) vardı ve sunucu patikası onu hiç görmüyordu. Adım bitince
+ * `POST /api/immersion/item`; ağ yoksa kuyruğa, uygulama açılışında
+ * `flushPendingPathItems` gönderiyor (derslerle aynı yol).
+ */
+const PATH_ITEM_KEY = "lernomi-path-items-pending";
+export type PendingPathItem = { itemId: string; correct: number; total: number };
+
+export async function recordPathItem(item: PendingPathItem): Promise<void> {
+  try {
+    await api("/api/immersion/item", { method: "POST", body: JSON.stringify(item) });
+  } catch {
+    try {
+      const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);
+      const list = raw ? (JSON.parse(raw) as PendingPathItem[]) : [];
+      /* Aynı adımın yalnız son denemesi bekliyor: sunucu en iyi puanı zaten tutuyor. */
+      const kalan = list.filter((x) => x.itemId !== item.itemId);
+      kalan.push(item);
+      await AsyncStorage.setItem(PATH_ITEM_KEY, JSON.stringify(kalan.slice(-40)));
+    } catch { /* depolama yoksa yapacak bir şey yok */ }
+  }
+}
+
+/** Bekleyen pratik adım sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
+export async function flushPendingPathItems(): Promise<void> {
+  let list: PendingPathItem[] = [];
+  try {
+    const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);
+    list = raw ? (JSON.parse(raw) as PendingPathItem[]) : [];
+  } catch { return; }
+  if (!list.length) return;
+  const kalan: PendingPathItem[] = [];
+  for (const [i, item] of list.entries()) {
+    try {
+      await api("/api/immersion/item", { method: "POST", body: JSON.stringify(item) });
+    } catch {
+      kalan.push(...list.slice(i));
+      break;
+    }
+  }
+  try {
+    if (kalan.length) await AsyncStorage.setItem(PATH_ITEM_KEY, JSON.stringify(kalan));
+    else await AsyncStorage.removeItem(PATH_ITEM_KEY);
+  } catch { /* yut */ }
+}
+
 /** Egzersiz bitince puanı da yerele yazılır (web `recordSkillResult` karşılığı). */
 export async function recordItemScore(id: string, score: number): Promise<void> {
   const scores = await getItemScores();

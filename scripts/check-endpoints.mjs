@@ -166,6 +166,9 @@ const MOBIL_ONLY = {
   "/api/premium/status": "premium durumu; web sunucu tarafinda `lib/premium/access` ile okuyor",
   "/api/push/device": "FCM cihaz jetonu; tarayicida karsiligi /api/push/subscribe",
   "/api/turnstile": "site anahtari; web onu sunucuda cizilen sayfaya gomuyor",
+  /* Önceden `/api/words/...` alt uçlarının web çağrıları bu ucu da "webde
+     çağrılıyor" gösteriyordu (alt dizi eşleşmesi); tam yol aranınca göründü. */
+  "/api/words": "kelime listesi; web sayfayi sunucuda ciziyor",
 };
 
 const MOBIL_ONLY_METHOD = {
@@ -186,7 +189,13 @@ const all = routes().sort();
 const src = sources(["src", "scripts", "mobile/src", "mobile/scripts"]);
 /* Dinamik parça (`[id]`) çağıranda değişken olarak duruyor: önek aranıyor. */
 const prefix = (api) => api.replace(/\/\[[^\]]+\].*$/, "");
-const called = (api) => src.some((t) => t.includes(prefix(api)));
+/* Dinamik parçası OLMAYAN uç tam yol olarak aranıyor: `/api/immersion`,
+   `/api/immersion/item` çağrısının içinde alt dizi olarak geçiyor ve alt uç
+   webde çağrılınca üst uç da "webde çağrılıyor" sayılıyordu. */
+const kacir = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const callRe = (api) => new RegExp(kacir(prefix(api)) + (prefix(api) === api ? "(?![\\w/-])" : ""));
+const has = (t, api) => callRe(api).test(t);
+const called = (api) => src.some((t) => has(t, api));
 
 const orphans = all.filter((a) => !called(a));
 const undocumented = orphans.filter((a) => !ALLOW[a]);
@@ -196,7 +205,7 @@ const stale = Object.keys(ALLOW).filter((a) => !orphans.includes(a));
    boyle sorulabiliyor. */
 const webSrc = sources(["src"]);
 const mobSrc = sources(["mobile/src"]);
-const calledIn = (list, api) => list.some((t) => t.includes(prefix(api)));
+const calledIn = (list, api) => list.some((t) => has(t, api));
 const webOnly = all.filter((a) => calledIn(webSrc, a) && !calledIn(mobSrc, a));
 const webOnlyUndoc = webOnly.filter((a) => !WEB_ONLY[prefix(a)] && !WEB_ONLY[a]);
 const webOnlyStale = Object.keys(WEB_ONLY).filter((a) => !webOnly.some((x) => prefix(x) === a || x === a));

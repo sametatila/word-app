@@ -135,6 +135,29 @@ check("ama sonraki üniteyi AÇAR (unlocksNext)", s2.units[0].unlocksNext);
 check("dersler bitince ünite2 açılır (beceri bloklamaz)", !s2.units[1].locked);
 check("bitmemiş ünite 'şu an buradasın' kalır", s2.currentIndex === 1);
 
+/*
+  PRATİK ADIMLAR KAYITLIYSA SAYIMA GİRER. Dil bilgisi, tekrar ve kontrol
+  noktasının "bitti" kaydı yokken ünite ekranı 13 adım gösterip 10 üzerinden
+  sayıyordu; kayıt verilince ölçüt tek: oynanabilir her adım.
+*/
+const u1Practice = u1.items.filter((i) => i.kind === "grammar" || i.kind === "quiz" || i.kind === "checkpoint");
+const u1Oynanabilir = u1.items.filter((i) => i.ref !== null);
+const sP0 = buildTrackState(t, { lessonDone: () => false, skillDone: () => false, practiceDone: () => false, practiceAttempted: () => false });
+check("pratik kaydı verilince toplam = oynanabilir adım sayısı", sP0.units[0].total === u1Oynanabilir.length && u1Practice.length === 3);
+check("pratik adım sırayı harcar: başta yalnız ilk adım açık", sP0.units[0].items.filter((i) => i.open).length === 1);
+const practiceIds = new Set(u1Practice.map((i) => i.id));
+const sP1 = buildTrackState(t, {
+  lessonDone: (r) => doneSet.has(r),
+  skillDone: (r) => doneSet.has(r),
+  practiceDone: (id) => practiceIds.has(id),
+  practiceAttempted: (id) => practiceIds.has(id),
+});
+check("ders+beceri+pratik bitince ünite complete ve done=total", sP1.units[0].complete && sP1.units[0].done === sP1.units[0].total);
+const sP2 = buildTrackState(t, { lessonDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r), practiceDone: () => false, practiceAttempted: () => false });
+check("pratik adımları bitmeden ünite complete sayılmaz", !sP2.units[0].complete && sP2.units[0].done === sP2.units[0].total - 3);
+check("pratik adımlar sonraki üniteyi kilitlemez (kapı dersler)", !sP2.units[1].locked);
+check("dersler ve beceriler bitince ilk pratik adım (gramer) açılır", sP2.units[0].items.find((i) => i.item.kind === "grammar")?.open === true);
+
 const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true });
 check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
 check("grup 0 tamamlanmış (groupComplete)", groupComplete(sAll, 0) && !groupComplete(s0, 0));

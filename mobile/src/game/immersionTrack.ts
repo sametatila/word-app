@@ -92,25 +92,29 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
         const derivable = unitLessons.length > 0;
         items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       } else {
-        // grammar — elle yazılmış içerik gerekir, henüz yok → "Yakında".
+        // grammar — sunucuyla aynı: ders taşıyan ünitede TÜRETİLİYOR
+        // (`immersionQuiz.deriveGrammar`, QuizScreen onu çiziyor). "Yakında"
+        // yazılıydı ama oynatıcı hazırdı: yerel patika 12, sunucu 13 adım sayıyordu.
         const slot = SLOT_KEY[kind];
-        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: false, done: false, open: true, ref: null });
+        const derivable = unitLessons.length > 0;
+        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       }
     }
 
     const lessonItems = items.filter((it) => it.kind === "lesson");
     const lessonsDone = lessonItems.filter((it) => it.done).length;
     /*
-      SAYILABİLİR item'lar: oynanabilir ders ve beceri yuvaları. Şablon her
+      SAYILABİLİR item'lar: OYNANABİLİR HER ADIM (sunucu `state.ts` ile aynı,
+      pratik adımlar artık kayıt tutuyor). Aşağıdaki not eski ölçütün tarihçesi.
+
+      Eski: oynanabilir ders ve beceri yuvaları. Şablon her
       ünitede 13 yuva açıyor ama içerik bitince kalanlar "Yakında" (ref yok) ve
       gramer/quiz/kontrol noktası done-takibi tutmuyor. `total` bunların
       hepsini sayıyordu: ünite, içeriği olmayan yuvalar yüzünden hiç
       dolmayacak bir "x / 13" gösteriyordu. Sunucu (lib/immersion/state.ts)
       zaten sayılabilir olanları sayıyor; yerel kurulum da öyle.
     */
-    const completable = items.filter(
-      (it) => it.playable && (it.kind === "lesson" || it.kind === "read" || it.kind === "listen" || it.kind === "write"),
-    );
+    const completable = items.filter((it) => it.playable);
     const completableCount = completable.length;
     const doneCount = completable.filter((it) => it.done).length;
     units.push({

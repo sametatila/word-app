@@ -95,30 +95,12 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
   }
 }
 
-/**
- * İLERLEME YALNIZ KAYIT TUTAN ADIMLARA GÖRE — mobil ve sunucu ile aynı ölçüt.
- *
- * Tekrar ve kontrol noktası ünite brief'inden türetilen pratik: oynanabilir
- * ama madde başına "bitti" kaydı tutmuyorlar. Paydaya katılınca ünite hiçbir
- * zaman %100 görünmüyor.
- */
-/**
- * İlerlemeye SAYILAN maddeler — sunucudaki ölçütün aynısı.
- *
- * `playable` ŞARTI EKSİKTİ ve ayrışma İngilizce kursta canlıydı: sunucu
- * `total`a yalnız oynanabilir maddeleri katıyor (`lib/immersion/state`
- * `completable = playable ∩ {lesson,read,listen,write}`), istemci ise
- * içeriği olmayan yuvaları da sayıyordu. İngilizce seviyede 25 ünite × 2
- * okuma = 50 yuva var, havuzda 13 metin — yani yuvaların çoğu `ref: null`,
- * yani oynanamaz. Sonuç: sunucu üniteyi BİTMİŞ sayıp sonrakini açıyor,
- * ekranda ise ilerleme "5/10"da takılı kalıyor ve ünite bitmemiş görünüyor.
- */
 function counted(items: HubItem[]): HubItem[] {
-  return items.filter(
-    (i) =>
-      i.playable &&
-      (i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write"),
-  );
+  /* OYNANABİLİR HER ADIM — Patika kartı, adım şeridi ve sunucunun `total`ı ile
+     aynı küme. Dil bilgisi/tekrar/kontrol noktası artık kayıt tutuyor
+     (`user_path_items`); tutmadıkları dönemde sayımdan düşülüyorlardı ve ekran
+     13 adım gösterip 10 üzerinden sayıyordu. */
+  return items.filter((i) => i.playable);
 }
 
 export function UnitPane({

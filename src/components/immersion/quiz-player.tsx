@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { QuestionList } from "@/components/skills/quiz";
 import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
@@ -9,22 +9,23 @@ import { ArrowLeftIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { SkillQuestion } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
-
-/** Geçme eşiği mobil `QuizScreen` ile aynı: yüzde altmış. */
-const PASS_PCT = 60;
+import { apiFetch } from "@/lib/api-fetch";
+import { PRACTICE_PASS_PCT as PASS_PCT } from "@/lib/score-bands";
 
 /**
  * Immersion quiz/checkpoint oynatıcısı — ünitenin brief'inden TÜRETİLEN sorular
  * (deriveQuiz) için ince kabuk. Mevcut QuestionList UI'sini aynen kullanır.
  *
- * v1: PRATİK — sunucu ilerleme kaydı yok (opsiyonel, gating yapmıyor). Skor
- * ekranda gösterilir; kalıcı "tamam" işareti sonraki adımda (hafif uç nokta).
+ * Bitince sonuç `POST /api/immersion/item` ile kaydediliyor: bu adımların
+ * "bitti" kaydı yokken Patika 13 adım gösterip 10 üzerinden sayıyordu. Kayıt
+ * sonraki üniteyi açmaz (kapı dersler) — ünitenin kendi ilerlemesini tamamlar.
  */
 export function ImmersionQuizPlayer({
   title,
   subtitle,
   intro,
   kind = "quiz",
+  itemId,
   questions,
 }: {
   title: string;
@@ -42,10 +43,27 @@ export function ImmersionQuizPlayer({
    * ikonuyla (bulmaca) ve kendi rengiyle gösteriyor.
    */
   kind?: "quiz" | "checkpoint" | "grammar";
+  /** Patika öğesinin kimliği (`de-a1-u03-quiz1`) — sonucun kaydı buna yazılıyor. */
+  itemId: string;
   questions: SkillQuestion[];
 }) {
   const t = useT();
   const [score, setScore] = useState<number | null>(null);
+  /** Aynı deneme bir kez kaydedilsin; "Tekrar dene" yeni bir deneme açıyor. */
+  const kaydedilenTur = useRef(-1);
+
+  function bitir(correct: number) {
+    setScore(correct);
+    if (kaydedilenTur.current === round || !questions.length) return;
+    kaydedilenTur.current = round;
+    /* Ağ yoksa sessizce düşüyor: adım Patika'da bitmemiş görünür ve bir
+       sonraki denemede yazılır. Sonuç kartı zaten ekranda. */
+    void apiFetch("/api/immersion/item", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ itemId, correct, total: questions.length }),
+    }).catch(() => {});
+  }
   /** Yeniden denemede soru listesi sıfırdan kurulsun diye taze anahtar. */
   const [round, setRound] = useState(0);
 
@@ -86,7 +104,7 @@ export function ImmersionQuizPlayer({
       {intro && score === null ? <p className="muted mb-4 text-body">{intro}</p> : null}
 
       {score === null ? (
-        <QuestionList key={round} questions={questions} onAllAnswered={(c) => setScore(c)} />
+        <QuestionList key={round} questions={questions} onAllAnswered={bitir} />
       ) : (
         /* Kapanış Android'deki kartın aynısı: geçtiyse maskot kutluyor ve
            konfeti atıyor, geçmediyse duruyor. Yüzde tek başına bir sayıydı;

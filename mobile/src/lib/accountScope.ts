@@ -47,6 +47,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-answer-queue", //       gonderilmeyi bekleyen tur cevaplari
   "lernomi-lessons-pending", //    gonderilmeyi bekleyen ders ilerlemesi
   "lernomi-items-pending", //      gonderilmeyi bekleyen beceri ogeleri
+  "lernomi-path-items-pending", // gonderilmeyi bekleyen patika pratik adimlari
   "lernomi-item-scores", //        oge puanlari
   "lernomi-coach-seen", //         gosterilen koc cumleleri
 ];

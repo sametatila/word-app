@@ -436,6 +436,36 @@ export const userSkills = pgTable(
 );
 
 /**
+ * Patika'nın PRATİK adımları — dil bilgisi, tekrar (quiz) ve kontrol noktası.
+ *
+ * Bu üç adım ünitenin kendi derslerinden türetiliyor; bir egzersiz kaydı
+ * (`skill_exercises`) yok, bu yüzden `user_skills`e yazılamıyorlardı ve HİÇBİR
+ * yerde "bitti" kaydı tutulmuyordu. Sonuç: ünite ekranı 13 adım gösterirken
+ * sayaç 10 üzerinden sayıyor, Patika kartları yalnız 4 dersi sayıyor, adım
+ * şeridinin son üç çizgisi hiç dolmuyordu — üç yer üç ayrı ölçüt.
+ *
+ * Anahtar patika ÖĞESİNİN kimliği (`de-a1-u03-quiz1`): içerik türetildiği için
+ * öğe kimliği adımın tek kalıcı adı. Kullanıcıya bağlı — hesap silmede
+ * `lib/account/purge` siliyor.
+ */
+export const userPathItems = pgTable(
+  "user_path_items",
+  {
+    userId: text("user_id").notNull(),
+    itemId: text("item_id").notNull(),
+    /** Son denemenin puanı, 0–100. */
+    lastPct: integer("last_pct").notNull(),
+    /** En iyi puan — "geçti" bir kez kazanılınca geri alınmıyor. */
+    bestPct: integer("best_pct").notNull(),
+    attempts: integer("attempts").notNull().default(1),
+    /** Geçer puanın (`PRACTICE_PASS_PCT`) ilk alındığı an; geçmediyse null. */
+    passedAt: timestamp("passed_at", { withTimezone: true }),
+    lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.itemId] })],
+);
+
+/**
  * Yarım kalan oturum — sunucuda, kullanıcı başına tek satır.
  *
  * Bu daha önce cihazın localStorage'ında duruyordu ve her cihaz kendi turunu
