@@ -224,7 +224,15 @@ export async function registerDevice(userId: string, token: string, platform: "i
     });
 }
 
-/** Çıkışta ya da bildirim kapatılınca — cihaz artık bu hesabın bildirimini almasın. */
-export async function unregisterDevice(token: string): Promise<void> {
-  await db.delete(deviceTokens).where(eq(deviceTokens.token, token));
+/**
+ * Çıkışta ya da bildirim kapatılınca — cihaz artık bu hesabın bildirimini almasın.
+ *
+ * Silme OTURUMDAKİ kullanıcının satırıyla sınırlı. Yalnız jetona bakıldığında
+ * başka bir hesabın jetonunu gönderen herkes o cihazın bildirimlerini
+ * susturabiliyordu (güvenlik denetimi 2026-09-14, #9). Web'in
+ * `push/subscribe` DELETE'i zaten bu desende. Mobil çıkış akışı jetonu oturum
+ * kapanmadan ÖNCE siliyor, yani meşru istek her zaman sahibinden geliyor.
+ */
+export async function unregisterDevice(userId: string, token: string): Promise<void> {
+  await db.delete(deviceTokens).where(and(eq(deviceTokens.token, token), eq(deviceTokens.userId, userId)));
 }

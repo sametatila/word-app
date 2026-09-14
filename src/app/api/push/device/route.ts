@@ -48,7 +48,7 @@ export async function DELETE(req: Request) {
   const token = typeof body?.token === "string" ? body.token.trim() : "";
   if (!token) return NextResponse.json({ error: "bad_request" }, { status: 400 });
   try {
-    await unregisterDevice(token);
+    await unregisterDevice(userId, token);
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[push:device] silinemedi", err);
