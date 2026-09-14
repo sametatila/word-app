@@ -480,8 +480,81 @@ export const trWeb: Record<string, string> = {
   "writp.rewrite_ph": "Cümleyi yeni biçimiyle yaz…",
   "del.disabled": "Hesap silme kapalı",
   "del.disabled_sub": "Giriş sistemi bu ortamda yapılandırılmamış.",
-  "del.sign_in_first": "Hesabını ve tüm verilerini silmek için önce giriş yapman gerekiyor. Giriş yaptıktan sonra bu sayfaya dönersin.",
-  "del.in_app_path": "Uygulamada: Profil › Ayarlar › Hesap › Hesabı sil",
+  /*
+   * GİRİŞSİZ HESAP SİLME SAYFASI (/account/delete). Google Play bu adresi
+   * "hesap silme web kaynağı" olarak istiyor ve inceleyici bağlantıyı GİRİŞ
+   * YAPMADAN açıyor: uygulama adı, silme adımları, silinen ve saklanan veri
+   * türleri, saklama süreleri, abonelik iptali ve girişi olmayan kullanıcı
+   * için bir destek yolu bu metinlerde. Sayfa eskiden yalnız "önce giriş yap"
+   * diyordu (mağaza ön inceleme raporu B17).
+   *
+   * İçerik UYDURMA DEĞİL, üç kaynağa bağlı: silinenler `lib/account/purge.ts`in
+   * gerçekten sildikleri, saklananlar ve süreler gizlilik politikası §9 ile §11,
+   * e-posta başvurusu ve süresi §10. E-posta adresleri ve yedek süresi metne
+   * YAZILMIYOR, hukuki yapılandırmadan geliyor (`{days}` ve sayfadaki adresler).
+   * Metne düz yazılan üç sayı (30 gün, 2 yıl, 10 yıl) politikada da düz yazılı;
+   * politika değişirse bunlar da değişir.
+   *
+   * `del.in_app_path` ARAYÜZÜN KENDİ ETİKETLERİNDEN kurulan yolu taşımak
+   * zorunda (`scripts/test-legal.ts`). Önündeki "Uygulamada:" kalktı, çünkü
+   * sayfada o yol artık "Uygulamada" başlıklı kartın bir adımı.
+   */
+  "del.in_app_path": "Profil › Ayarlar › Hesap › Hesabı sil",
+  "del.title": "Lernomi hesabını ve verilerini sil",
+  "del.meta_description": "Lernomi hesabını uygulamadan ya da web'den silmenin adımları: hangi verilerin silindiği, hangilerinin ne kadar saklandığı, abonelik iptali ve giriş yapamıyorsan e-postayla silme talebi.",
+  "del.intro": "Lernomi dil öğrenme uygulamasındaki hesabını dilediğin an kendin silebilirsin. Uygulamadan ya da bu sayfadan yaptığın silme hemen gerçekleşir ve geri alınamaz.",
+  "del.publisher": "Yayıncı",
+  "del.controller": "Veri sorumlusu",
+  "del.language": "Dil",
+  "del.how_title": "Hesabını nasıl silersin",
+  "del.in_app_title": "Uygulamada",
+  "del.app_step_open": "Lernomi uygulamasını aç ve hesabına giriş yap.",
+  "del.app_step_path": "Şuraya git:",
+  "del.on_web_title": "Web'de",
+  "del.web_step_sign_in": "Aşağıdaki düğmeyle Lernomi hesabına giriş yap.",
+  "del.web_step_return": "Giriş yapınca bu sayfaya dönersin; hesabını burada silebilirsin.",
+  "del.step_confirm": "Parolayla giriyorsan parolanı yaz (Google ya da Apple ile giriyorsan gerekmez), onay kutusunu işaretle ve “{button}” düğmesine bas. Son bir kez onaylaman istenir.",
+  "del.sign_in_cta": "Giriş yap ve hesabını sil",
+  "del.help_title": "Giriş yapamıyorsan",
+  "del.help_forgot": "Parolanı unuttuysan önce yeni bir parola belirle, sonra hesabını yukarıdaki adımlarla sil.",
+  "del.help_reset_link": "Parolanı sıfırla",
+  "del.help_email": "Hesabına hiç erişemiyorsan silme talebini e-postayla gönderebilirsin. Hesabında kayıtlı e-posta adresinden yazman, kimliğini doğrulamak için yeterlidir.",
+  "del.help_kvkk": "Türkiye'den (KVKK)",
+  "del.help_gdpr": "AB, AEA ve Birleşik Krallık'tan (GDPR)",
+  "del.help_subject": "Hesap silme talebi",
+  "del.help_deadline": "Talebin en geç 30 gün içinde ücretsiz sonuçlandırılır; GDPR kapsamında bu süre gerekirse iki ay uzatılabilir ve bu sana bildirilir. Hesabın bu sayfada anlatılan kapsamda silinir.",
+  "del.subs_title": "Aboneliğin varsa mağazadan ayrıca iptal et",
+  "del.subs_play_link": "Google Play aboneliklerini aç",
+  "del.deleted_title": "Silinen veriler",
+  "del.deleted_sub": "Hesabın silindiği anda aşağıdakilerin hepsi kalıcı olarak silinir:",
+  "del.d_account": "Hesap ve giriş",
+  "del.d_account_body": "E-posta adresin, adın, parola özetin, bağlı Google ya da Apple girişin ve açık oturumların (IP adresi ve cihaz tanımıyla birlikte).",
+  "del.d_profile": "Profil ve tercihler",
+  "del.d_profile_body": "Görünen adın, avatarın, seviyen, kursun ve günlük hedefin, sosyal profilin (kullanıcı adı, biyografi), hatırlatma tercihlerin ve saat dilimin.",
+  "del.d_learning": "Öğrenme verisi",
+  "del.d_learning_body": "Kelime durumun ve tekrar sonuçların, serin, XP ve başarımların, ders ve beceri ilerlemen, sınav, deneme sınavı ve seviye testi sonuçların, lig üyeliğin.",
+  "del.d_texts": "Yazdıkların ve söylediklerin",
+  "del.d_texts_body": "Yazma görevlerin, sınav cevapların ve bunların değerlendirmeleri, konuşma pratiği kayıtların.",
+  "del.d_usage": "Kullanım kayıtları",
+  "del.d_usage_body": "Kullanım olayların (ürün analitiği), yapay zekâ kullanım kayıtların ve günlük kota sayaçların.",
+  "del.d_social": "Sosyal izler",
+  "del.d_social_body": "Arkadaşlıkların ve arkadaşlık isteklerin, engellemelerin, kullanıcı bildirimlerin, tepkilerin, dürtmelerin, ortak görevlerin, etkinlik akışın ve gelen kutun. Bu kayıtlar karşı tarafta da kalkar.",
+  "del.d_devices": "Bildirimler ve izinler",
+  "del.d_devices_body": "Mobil bildirim jetonun, web bildirim aboneliğin ve yapay zekâ ile ses izni kararların.",
+  "del.d_premium": "Premium",
+  "del.d_premium_body": "Premium hakkın ve kullandığın promosyon kodları.",
+  "del.d_local": "Silmeyi uygulamadan ya da bu sayfadan yaptıysan, uygulamanın o cihazda sakladığı tercihler ve taslaklar da temizlenir.",
+  "del.kept_title": "Saklanan veriler ve süreleri",
+  "del.k_financial": "Mali kayıtlar",
+  "del.k_financial_body": "Yasal saklama yükümlülüğü olan mali kayıtlar (abonelik faturaları) anonimleştirilerek, yani sana bağlanamayacak biçimde, Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre boyunca (10 yıl) tutulur.",
+  "del.k_reports": "Açık içerik bildirimleri",
+  "del.k_reports_body": "Henüz incelenmemiş içerik bildirimlerin, kimliğin çıkarılarak inceleme kapanana kadar tutulur; incelenmiş olanlar silinir.",
+  "del.k_backups": "Sunucu yedekleri",
+  "del.k_backups_body": "Silinen veriler yedeklerden en geç {days} gün içinde düşer. Yedekler yalnız felaket kurtarma için kullanılır; silinen bir hesap yedekten geri yüklenmez.",
+  "del.k_mail": "Yazışmalar",
+  "del.k_mail_body": "E-postayla gönderdiğin destek ve hak talepleri (e-postayla silme talebi dahil), talep kapandıktan sonra 2 yıl saklanır.",
+  "del.policy_note": "Hesap silme gizlilik politikasının 11. bölümünde, saklama süreleri 9. bölümünde de anlatılıyor.",
+  "del.policy_link": "Gizlilik politikasını oku",
   "linked.credential_sub": "Kayıt olurken kullandığın yöntem",
   "linked.google": "Google",
   "linked.google_sub": "Google hesabıyla giriş",
