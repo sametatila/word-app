@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
-import { View, ActivityIndicator, Linking, Platform, TextInput } from "react-native";
+import { View, ActivityIndicator, AppState, Linking, Platform, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -11,7 +11,7 @@ import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
-import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
+import { billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, restore } from "../lib/billing";
 import { usePremiumStatus, refreshPremium } from "../lib/premium";
 import { shareInvite } from "../lib/share";
 import { api } from "../api/client";
@@ -38,6 +38,14 @@ function planLabel(pkg: PurchasesPackage): string {
   if (pkg.packageType === "MONTHLY") return t("paywall.monthly");
   return pkg.product.title;
 }
+
+/**
+ * KENDİ PROMO KODUMUZ iOS'TA YOK. Guideline 3.1.1 özellik kilidini uygulama içi
+ * satın alma dışında bir mekanizmayla (lisans anahtarı, kod) açmayı yasaklıyor ve
+ * paywall incelemede mutlaka açılan ekran. iOS'ta kodun meşru karşılığı Apple'ın
+ * teklif kodları (`presentOfferCodeRedemption`). Android ve web'de kutu kalıyor.
+ */
+const OWN_PROMO_CODES = Platform.OS !== "ios";
 
 /** Mağazanın bildirdiği ücretsiz deneme (giriş fiyatı 0) — yoksa deneme vaadi yok. */
 function freeTrialOf(pkg: PurchasesPackage | undefined): string | null {
@@ -88,6 +96,18 @@ export function PaywallScreen() {
 
   const pkg = pkgs?.find((p) => p.identifier === selected);
   const trial = freeTrialOf(pkg);
+
+  /* Apple'ın teklif kodu sayfası uygulamanın ÜSTÜNDE açılıyor ve sözü sayfa
+     gösterilince çözülüyor. Bozdurulan kodun yetkisi webhook'la sunucuya
+     geliyor; sayfa kapanıp uygulama öne döndüğünde durum bir kez tazeleniyor. */
+  async function redeemOfferCode() {
+    const sub = AppState.addEventListener("change", (st) => {
+      if (st !== "active") return;
+      sub.remove();
+      void refreshPremium().then(refresh);
+    });
+    await presentOfferCodeRedemption();
+  }
 
   async function start() {
     if (!pkg || busy) return;
@@ -173,7 +193,7 @@ export function PaywallScreen() {
             ))}
           </Section>
 
-          <PromoBox colors={colors} onRedeemed={refresh} />
+          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
           {status.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
 
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
@@ -223,7 +243,8 @@ export function PaywallScreen() {
         {!storeOpen ? (
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
             <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
-            <Text variant="caption" color={colors.textMuted}>{t("paywall.store_not_open_sub")}</Text>
+            {/* iOS'ta metin davet ödülüne ya da promo koduna YÖNLENDİRMİYOR (3.1.1). */}
+            <Text variant="caption" color={colors.textMuted}>{t(OWN_PROMO_CODES ? "paywall.store_not_open_sub" : "paywall.store_not_open_sub_ios")}</Text>
           </View>
         ) : pkgs === null ? (
           // Plan satırları gelene dek aynı boyda iskelet: liste dolunca kaydırma
@@ -308,7 +329,7 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        <PromoBox colors={colors} onRedeemed={refresh} />
+        {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </KeyboardAwareScroll>
 
@@ -348,6 +369,11 @@ export function PaywallScreen() {
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
             <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.manage_subscription")}</Text>
           </PressableScale>
+          {offerCodesAvailable() ? (
+            <PressableScale onPress={() => { void redeemOfferCode(); }} hitSlop={6} accessibilityRole="button" style={{ paddingVertical: spacing.sm }}>
+              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.redeem_offer_code")}</Text>
+            </PressableScale>
+          ) : null}
           <LegalLinks colors={colors} />
         </View>
       </View>

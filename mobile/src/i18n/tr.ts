@@ -1737,6 +1737,8 @@ export const tr: Record<string, string> = {
   "settings.notifications_sub": "Hatırlatmalar, seri koruma, haftalık test",
   "paywall.store_not_open": "Mağaza aboneliği henüz açılmadı",
   "paywall.store_not_open_sub": "Premium'a bugün davet ödülüyle ya da promo koduyla geçebilirsin — ikisi de aşağıda.",
+  "paywall.store_not_open_sub_ios": "Premium henüz App Store'da satışta değil. Satışa çıktığında planlar ve fiyatlar burada görünecek.",
+  "paywall.redeem_offer_code": "Teklif kodunu kullan",
   "assess.fail_offline": "Değerlendirme servisi şu an kapalı; bu puan kelime sayısından çıkarılmış geçici bir tahmin, gerçek değerlendirme değil.",
   "assess.fail_unscored": "Değerlendirme servisi şu an kapalı; metnin puanlanamadı.",
   /* Değerlendirme neden alınamadı - SEBEBİNE göre. Mobil hepsini tek

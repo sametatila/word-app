@@ -107,3 +107,30 @@ export async function restore(): Promise<boolean> {
 
 /** Satın alma dışı bir sebeple yetki değiştiyse (kod, ödül) durumu tazele. */
 export const refreshEntitlement = refreshPremium;
+
+/**
+ * App Store TEKLİF KODU (Offer Codes) — iOS'ta kodla abonelik vermenin tek meşru yolu.
+ *
+ * Kendi promo kodu kutumuz iOS'ta çizilmiyor: Guideline 3.1.1 özellik kilidini
+ * uygulama içi satın alma dışında bir mekanizmayla (lisans anahtarı, kod) açmayı
+ * yasaklıyor. Kod dağıtmak gerekirse App Store Connect'te teklif kodu üretilir ve
+ * burada Apple'ın KENDİ bozdurma sayfası açılır; abonelik ve yetki normal satın
+ * alma yolundan gelir (App Store → RevenueCat → webhook → sunucu).
+ *
+ * Yalnız mağaza bağlıyken anlamlı: bağlı değilken bozdurulan kodun gideceği bir
+ * abonelik ürünü de yok.
+ */
+export function offerCodesAvailable(): boolean {
+  return platform() === "ios" && billingAvailable();
+}
+
+/**
+ * Sayfayı açar. Söz sayfa GÖSTERİLİNCE çözülüyor, kod bozdurulunca değil; çağıran
+ * durumu uygulama öne döndüğünde tazeliyor (PaywallScreen).
+ */
+export async function presentOfferCodeRedemption(): Promise<void> {
+  if (!configured || platform() !== "ios") return;
+  try {
+    await Purchases.presentCodeRedemptionSheet();
+  } catch { /* yut — sayfa açılamazsa kullanıcı hiçbir şey kaybetmiyor */ }
+}
