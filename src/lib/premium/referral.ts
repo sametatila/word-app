@@ -155,23 +155,36 @@ export async function rewardForFirstPayment(inviteeUserId: string): Promise<stri
   const days = cfg.referral.rewardDays;
   if (days <= 0) return null;
 
-  // Davet başına tavan (0 = sınırsız). Panelden ayarlanıyor; kötüye kullanım
-  // ortaya çıkarsa kod değiştirmeden kısılabilsin diye.
-  if (cfg.referral.maxRewards > 0) {
-    const [c] = await db
-      .select({ n: sql<number>`count(*)::int` })
-      .from(referrals)
-      .where(and(eq(referrals.inviterUserId, row.inviterUserId), isNotNull(referrals.rewardedAt)));
-    if ((c?.n ?? 0) >= cfg.referral.maxRewards) return null;
-  }
-
   const minutes = daysToMinutes(days);
-  // Koşullu güncelleme: ödülü YAZAN istek kazanır, ikincisi boş döner.
-  const claimed = await db
-    .update(referrals)
-    .set({ rewardedAt: new Date(), rewardMinutes: minutes })
-    .where(and(eq(referrals.id, row.id), sql`${referrals.rewardedAt} is null`))
-    .returning({ id: referrals.id });
+  /**
+   * TAVAN VE ÖDÜL AYNI KİLİT ALTINDA.
+   *
+   * Davetçi başına tavan (0 = sınırsız) panelden ayarlanıyor; kötüye kullanım
+   * ortaya çıkarsa kod değiştirmeden kısılabilsin diye. Sayım ve yazma ayrı
+   * ifadelerdi: aynı davetçinin iki davetlisi aynı anda ödeme yapınca ikisi de
+   * sayımı tavanın altında görüyor ve ikisi de ödül alıyordu (güvenlik
+   * denetimi 2026-09-14, #14). İki farklı SATIR güncellendiği için satırdaki
+   * koşul bunu kapatamıyor; davetçiye özel işlem kilidi sayım ile yazmayı
+   * sıraya sokuyor. Kilit işlem bitince kendiliğinden bırakılıyor.
+   *
+   * Koşullu güncelleme yine duruyor: aynı DAVETLİ için gelen ikinci istek
+   * (webhook yeniden teslimi) boş döner.
+   */
+  const claimed = await db.transaction(async (tx) => {
+    if (cfg.referral.maxRewards > 0) {
+      await tx.execute(sql`select pg_advisory_xact_lock(hashtextextended(${`referral:${row.inviterUserId}`}, 0))`);
+      const [c] = await tx
+        .select({ n: sql<number>`count(*)::int` })
+        .from(referrals)
+        .where(and(eq(referrals.inviterUserId, row.inviterUserId), isNotNull(referrals.rewardedAt)));
+      if ((c?.n ?? 0) >= cfg.referral.maxRewards) return [];
+    }
+    return tx
+      .update(referrals)
+      .set({ rewardedAt: new Date(), rewardMinutes: minutes })
+      .where(and(eq(referrals.id, row.id), sql`${referrals.rewardedAt} is null`))
+      .returning({ id: referrals.id });
+  });
   if (claimed.length === 0) return null;
 
   await grantBonus(row.inviterUserId, minutes, {

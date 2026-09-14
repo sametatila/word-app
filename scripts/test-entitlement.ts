@@ -21,7 +21,7 @@
  * Adres `localhost`/`127.0.0.1` değilse baştan reddediyor.
  */
 import "dotenv/config";
-import { and, eq } from "drizzle-orm";
+import { and, eq, isNotNull, sql } from "drizzle-orm";
 // `@/lib/db` — göreli yol DEĞİL: e2e tsconfig'i bu takma adı `scripts/test-db.ts`e
 // yönlendiriyor. Göreli yazılsaydı test kendi sorgularını GERÇEK modülle,
 // premium modülleri ise test ikiziyle koşardı: iki ayrı havuz, iki ayrı adres.
@@ -30,6 +30,7 @@ import { entitlements, premiumGrants, profiles, promoCodes, referrals, usageCoun
 import { applyStoreEvent, grantBonus, resolveEntitlement, daysToMinutes } from "../src/lib/premium/entitlement";
 import { createCodes, redeemCode } from "../src/lib/premium/promo";
 import { attachReferral, ensureReferralCode, rewardForFirstPayment } from "../src/lib/premium/referral";
+import { clearPremiumConfigCache, savePremiumConfig } from "../src/lib/premium/config";
 import type { StoreEvent } from "../src/lib/premium/ports";
 import { getUsage, takeUsage } from "../src/lib/premium/quota";
 
@@ -268,6 +269,35 @@ async function main() {
     const twice = await resolveEntitlement(inviter);
     const gun = Math.round(((twice.until?.getTime() ?? 0) - Date.now()) / 86_400_000) + twice.bonusDaysPending;
     check("ödül İKİ KEZ verilmiyor", gun <= 8, `${gun} gün`);
+  }
+
+  /* ───────── DAVET TAVANI: eşzamanlı ödemeler (güvenlik denetimi #14) ───────── */
+  console.log("\nDavet tavanı: aynı davetçinin davetlileri aynı anda ödüyor");
+  {
+    const inviter = uid("cap-inv");
+    const guests = [uid("cap-g1"), uid("cap-g2"), uid("cap-g3"), uid("cap-g4")];
+    created.push(inviter, ...guests);
+    await savePremiumConfig({ referral: { rewardDays: 7, maxRewards: 2 } }, "test");
+    try {
+      await db.insert(profiles).values({ userId: inviter });
+      const code = await ensureReferralCode(inviter);
+      for (const g of guests) {
+        await db.insert(profiles).values({ userId: g });
+        await attachReferral(g, code);
+        await applyStoreEvent(storeEvent(g, { eventId: `cap-paid-${g}`, paid: true, ref: `cap-${g}` }));
+      }
+      const results = await Promise.all(guests.map((g) => rewardForFirstPayment(g)));
+      const odul = results.filter(Boolean).length;
+      check("dört eşzamanlı ödemeden TAM tavan (2) kadarı ödül verdi", odul === 2, odul);
+      const [c] = await db
+        .select({ n: sql<number>`count(*)::int` })
+        .from(referrals)
+        .where(and(eq(referrals.inviterUserId, inviter), isNotNull(referrals.rewardedAt)));
+      check("defterde tavan kadar ödül satırı", c.n === 2, c.n);
+    } finally {
+      await savePremiumConfig({}, "test");
+      clearPremiumConfigCache();
+    }
   }
 
   /* ───────── KOTA TAVANI: paralel patlama (güvenlik denetimi #1) ───────── */
