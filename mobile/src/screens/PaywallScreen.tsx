@@ -289,7 +289,12 @@ export function PaywallScreen() {
             <CrownIcon color={colors.onPrimary} size={44} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
+          {/* "SINIRSIZ" YOK. Premium'un adil kullanım tavanı var ve aşağıda
+              yazılı; tavanı olan bir aboneliği "sınırsız" diye sunmak App Store
+              3.1.2(a) ve Play'in aldatıcı teklif kuralına takılır, şartlar §7a
+              ile de çelişir. Cümle gerçek kapsamı sayıyor; deneme sınavı yalnız
+              sınavı OLAN kursta anılıyor. */}
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t(hasMockExams(currentCourseId()) ? "paywall.pitch_exams" : "paywall.pitch")}</Text>
           {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
               anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden
               satır sabit — "Ücretsiz hesap". */}

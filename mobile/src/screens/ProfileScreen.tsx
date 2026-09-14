@@ -17,6 +17,8 @@ import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatXp } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
+import { hasMockExams } from "../data/exams";
+import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
@@ -162,7 +164,8 @@ export function ProfileScreen() {
             </View>
             <View style={{ flex: 1 }}>
               <Text variant="h3" color="#fff">{t("profile.go_premium")}</Text>
-              <Text variant="caption" color="#ffffffcc">{t("profile.unlimited_speaking_full_exam")}</Text>
+              {/* "Sınırsız" değil, gerçek kapsam: premium'un adil kullanım tavanı var (paywall'da yazılı). */}
+              <Text variant="caption" color="#ffffffcc">{t(hasMockExams(currentCourseId()) ? "profile.premium_band_exams" : "profile.premium_band")}</Text>
             </View>
             <ChevronRightIcon color="#fff" size={22} />
           </PressableScale>

@@ -12,6 +12,7 @@ import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { useShell } from "@/components/app-shell";
+import { supportsMockExams } from "@/lib/mock-exams";
 import { inviteText, shareInvite } from "@/lib/share";
 import {
   CheckIcon,
@@ -64,7 +65,7 @@ export type ProfileStats = {
 
 
 export function ProfileView({ stats }: { stats: ProfileStats }) {
-  const { userId, avatar } = useShell();
+  const { userId, avatar, course } = useShell();
   const router = useRouter();
   const t = useT();
   const lang = useLang();
@@ -180,7 +181,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-h3">{t("profile.go_premium")}</span>
-            <span className="block text-caption text-white/85">{t("profile.unlimited_speaking_full_exam")}</span>
+            <span className="block text-caption text-white/85">{t(supportsMockExams(course) ? "profile.premium_band_exams" : "profile.premium_band")}</span>
           </span>
           <ChevronRightIcon size={22} />
         </Link>

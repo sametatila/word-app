@@ -115,7 +115,9 @@ export function PremiumPaywall({
         <h1 className="mt-4 text-display">{t("paywall.nomi_premium")}</h1>
         {/* Sloganı mobil başlığın hemen altında gösteriyor; web'de hiç yoktu.
             Premium'u olana pazarlama yapılmıyor. */}
-        {!premium && <p className="muted mt-1 text-body">{t("paywall.unlimited_learning_full_exam")}</p>}
+        {/* "Sınırsız" yok: premium'un adil kullanım tavanı var; cümle gerçek kapsamı
+            sayıyor, deneme sınavını yalnız sınavı olan kursta anıyor (mobil ile aynı). */}
+        {!premium && <p className="muted mt-1 text-body">{t(supportsMockExams(course) ? "paywall.pitch_exams" : "paywall.pitch")}</p>}
         <p className="mt-1 muted">{stateLine()}</p>
         {/* Bekleyen hediye her durumda gösteriliyor: kullanıcı kazandığı ama
             henüz başlamamış süreyi göremezse kazandığını bilmez. */}
