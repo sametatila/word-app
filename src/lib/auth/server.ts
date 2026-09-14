@@ -641,12 +641,18 @@ export async function getSessionRead(): Promise<SessionRead> {
   return readSession();
 }
 
-/** Oturumdaki kullanıcının e-postası (admin kapısı için); yoksa null. */
-export async function getUserEmail(): Promise<string | null> {
+/**
+ * Oturumdaki kullanıcının e-postası ve DOĞRULANMIŞ olup olmadığı (admin kapısı
+ * için); oturum yoksa `email: null`.
+ *
+ * Doğrulama bilgisi ayrı dönüyor çünkü e-postanın kendisi sahipliği kanıtlamaz:
+ * doğrulama kapalıyken kayıt, yazılan adresle anında oturum veriyor.
+ */
+export async function getUserEmail(): Promise<{ email: string | null; verified: boolean }> {
   try {
     const data = await auth.api.getSession({ headers: await headers() });
-    return data?.user?.email ?? null;
+    return { email: data?.user?.email ?? null, verified: data?.user?.emailVerified === true };
   } catch {
-    return null;
+    return { email: null, verified: false };
   }
 }

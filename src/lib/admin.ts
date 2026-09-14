@@ -17,10 +17,20 @@ const ADMINS = Array.from(new Set(
   (process.env.ADMIN_EMAILS ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean),
 ));
 
-/** Admin kapısı — hem yetki hem de tanılama için giriş e-postasını da döndürür. */
+/**
+ * Admin kapısı — hem yetki hem de tanılama için giriş e-postasını da döndürür.
+ *
+ * E-posta listede olmakla yetmiyor, DOĞRULANMIŞ olmalı. Doğrulama zorunluluğu
+ * SMTP'nin yapılandırılmış olmasına bağlı (`requireEmailVerification:
+ * emailConfigured`): SMTP kapalı bir ortamda kayıt, yazılan adresle anında
+ * oturum veriyor. Gerçek sahip henüz kaydolmamışsa bir ADMIN_EMAILS adresine
+ * kaydolan herkes panoya girer: kullanıcı verisi, premium ver/al, canlı
+ * hukuki metinler (güvenlik denetimi 2026-09-14, #5). Kapı artık SMTP
+ * yapılandırmasına değil, adresin gerçekten doğrulanmış olmasına bakıyor.
+ */
 export async function adminGate(): Promise<{ ok: boolean; email: string | null }> {
-  const email = (await getUserEmail()) ?? null;
-  return { ok: !!email && ADMINS.includes(email.toLowerCase()), email };
+  const { email, verified } = await getUserEmail();
+  return { ok: !!email && verified && ADMINS.includes(email.toLowerCase()), email };
 }
 
 type Row = Record<string, unknown>;
