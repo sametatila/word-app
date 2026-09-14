@@ -6,6 +6,8 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { MicIcon, CheckIcon } from "./icons";
 import { openLegal } from "../lib/legal";
+import { ProcessorList } from "./AiConsentSheet";
+import type { AiConsentProcessor } from "../lib/aiConsent";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -37,7 +39,17 @@ function Point({ text, colors }: { text: string; colors: Palette }) {
  * izninden ÖNCE, ne toplandığı, neden, nereye gittiği ve nasıl durdurulacağı.
  * Onay olumlu bir eylemle verilir; Vazgeç mikrofonu hiç açmaz.
  */
-export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolean; onAccept: () => void; onCancel: () => void }) {
+export function MicDisclosure({ visible, onAccept, onCancel, processors, processorsFailed }: {
+  visible: boolean;
+  onAccept: () => void;
+  onCancel: () => void;
+  /**
+   * Sesin gidebileceği sağlayıcılar — sunucudan, gizlilik politikasının
+   * tablosundan. Metin "aşağıda adları yazılı" diyor; liste o sözün karşılığı.
+   */
+  processors: AiConsentProcessor[] | null;
+  processorsFailed: boolean;
+}) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   return (
@@ -63,6 +75,7 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
             {points().map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
+          <ProcessorList processors={processors} failed={processorsFailed} colors={colors} />
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.primaryText}>{t("micdisclosure.read_privacy_policy")}</Text>
           </PressableScale>

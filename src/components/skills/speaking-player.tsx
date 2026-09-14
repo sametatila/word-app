@@ -98,6 +98,11 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             ? t("assessw.fail_quota")
             : res.reason === "rate_limited"
               ? t("speakp.rate_limited")
+            /* İzin verilmedi: klip gönderilmedi, "gönderilemedi" değil.
+               Neyin çalışmadığı ve nereden açılacağı söyleniyor; "puansız
+               geç" düğmesi akışı sürdürüyor. */
+            : res.reason === "consent"
+              ? `${t("aiconsent.voice_without")} ${t("aiconsent.change_later")}`
             : t("speakp.send_failed"),
       );
       setPhase("failed");

@@ -1,6 +1,7 @@
 "use client";
 
 import { afterMs, tickClock } from "@/components/pocket-clock";
+import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 
 /**
  * Cepte çalışan mikrofon.
@@ -683,8 +684,10 @@ export type PocketHeard = {
    *   premium — sunucu 403 `premium_required` döndü: ekran kapalı yol (mode=walk)
    *             ücretsiz katmanda kapalı. Bu bir HATA DEĞİL, bir kapı; çağıranın
    *             onu "duyamadım" diye göstermemesi için ayrı tutuluyor.
+   *   consent — sesin sağlayıcıya gitmesine izin yok (`ai_voice`): klip sunucudan
+   *             öteye gitmedi. O da bir kapı, "duyamadım" değil.
    */
-  reason?: "network" | "empty" | "low_confidence" | "aborted" | "premium";
+  reason?: "network" | "empty" | "low_confidence" | "aborted" | "premium" | "consent";
 };
 
 /**
@@ -719,13 +722,22 @@ export async function transcribe(
   form.append("language", language);
   form.append("mode", hidden ? "walk" : "default");
   if (expected) form.append("expected", expected);
-  // Zaman aşımı ŞART. Cepteki telefon zayıf sinyalde bir isteği dakikalarca
-  // asılı tutabiliyor ve tur o istekte donuyordu. Süresi geçen bir yazıya
-  // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
-  const timeout = AbortSignal.timeout(STT_TIMEOUT_MS);
-  const signal = opts.signal && typeof AbortSignal.any === "function" ? AbortSignal.any([timeout, opts.signal]) : timeout;
   try {
-    const res = await fetch("/api/stt", { method: "POST", body: form, signal });
+    const res = await apiFetch("/api/stt", {
+      method: "POST",
+      body: form,
+      // Zaman aşımı ŞART. Cepteki telefon zayıf sinyalde bir isteği dakikalarca
+      // asılı tutabiliyor ve tur o istekte donuyordu. Süresi geçen bir yazıya
+      // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
+      timeoutMs: STT_TIMEOUT_MS,
+      signal: opts.signal,
+      /* İZİN DİYALOĞU BURADA AÇILMIYOR. Bu yol ekran KAPALIYKEN yürüyor:
+         açılan bir diyaloğu gören olmaz ve tur onun cevabını beklerken
+         donardı. İzin yürüyüş başlarken, ekran açıkken soruluyor
+         (`walk-player` `begin`); burada yoksa klip gitmiyor ve sebep
+         `consent` olarak dönüyor. */
+      consentPrompt: false,
+    });
     /*
       403 PREMIUM KAPISI — "ağ hatası" değil.
 
@@ -737,7 +749,7 @@ export async function transcribe(
     */
     if (res.status === 403) {
       const body = await res.json().catch(() => null) as { error?: string } | null;
-      return none(body?.error === "premium_required" ? "premium" : "network");
+      return none(body?.error === "premium_required" ? "premium" : body?.error === AI_CONSENT_DECLINED ? "consent" : "network");
     }
     if (!res.ok) return none("network");
     const data = (await res.json()) as { text?: string; confidence?: number; provider?: string };
@@ -765,9 +777,9 @@ export async function transcribe(
 /** Sunucuda yazıya çevirme açık mı — mod hangi yolu kullanacağını buna göre seçiyor. */
 export async function sttAvailable(): Promise<boolean> {
   try {
-    const res = await fetch("/api/stt", {
+    const res = await apiFetch("/api/stt", {
       cache: "no-store",
-      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
+      timeoutMs: PROBE_TIMEOUT_MS,
     });
     if (!res.ok) return false;
     const data = (await res.json()) as { configured?: boolean };

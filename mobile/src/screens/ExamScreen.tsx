@@ -26,7 +26,7 @@ import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
-import { assessFailKey } from "../lib/assessFail";
+import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -1183,7 +1183,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       /* Sebebi SÖYLENİYOR: metin çok uzunsa "kısalt", oturum düştüyse
          "yeniden giriş yap" - hepsi "servis kapalı" değil (bkz.
          `lib/assessFail`). Geçici puanın geçici olduğu satırı da koruyor. */
-      else { setGateNote(`${t(assessFailKey(e))} ${t("assess.fail_offline")}`); setScore(wordCount >= w.task.minWords ? 70 : 40); }
+      else { setGateNote(`${t(assessFailKey(e))} ${t(fallbackNoteKey(e, "estimate", "assess.fail_offline"))}`); setScore(wordCount >= w.task.minWords ? 70 : 40); }
     }
     setBusy(false);
   }

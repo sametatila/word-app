@@ -20,6 +20,7 @@ import type { AssessLevel } from "@/lib/assess-prompts";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { ensureProfile } from "@/lib/session";
 import { localiseMockPaper } from "@/lib/lessons/native-server";
+import { aiConsentGate, hasAiConsent } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
 
@@ -331,6 +332,10 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
   // Değerlendirme kâğıdın dilinde yapılıyor: İngilizce bir yazma görevi
   // "Almanca öğretmeni" kimliğiyle okunursa rubrik olmayan yapıları arar.
   const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, lang: paper.course };
+  /* Açık görevin metni dil modeline gidiyor: izin yoksa sağlayıcıya
+     iletilmeden 403 dönüyor, istemci izin ekranını açıyor (lib/ai-consent). */
+  const consent = await aiConsentGate(userId, "ai_text");
+  if (consent) return consent;
   /* Tavan doluysa sağlayıcıya gitmeden 429: istemci puanı boş gösteriyor ve
      kaydetmiyor, yani görev ertesi gün yeniden değerlendirilebiliyor. */
   if (!(await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING))) {
@@ -446,9 +451,15 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const part = findPart(paper, row.skill as MockSkill)!;
   const explains: Record<string, string> = {};
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
+  /*
+    YAPAY ZEKÂ GERİ BİLDİRİMİ İZNE BAĞLI, SINAVIN BİTMESİ DEĞİL. Özet dil
+    modelinde üretiliyor; izin yoksa model çağrılmıyor ve sağlayıcı kapalıyken
+    kullanılan kural tabanlı özet dönüyor. Kapıyı 403 yapmak, izin vermeyen
+    kullanıcının kâğıdını hiç bitirememesi demek olurdu.
+  */
   /* Günlük tavan doluysa model çağrılmıyor ama sınav yine bitiyor: kural
      tabanlı özet dönüyor (sağlayıcı kapalıyken kullanılan). */
-  const aiAllowed = await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING);
+  const aiAllowed = (await hasAiConsent(userId, "ai_text")) && (await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING));
   const ai = !aiAllowed ? rulesFeedback(score, paper.course, lang) : await mockFeedback(
     score,
     explains,

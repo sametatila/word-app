@@ -20,6 +20,14 @@ import {
   processorRow,
   type LegalDoc,
 } from "@/lib/legal";
+import { AI_CONSENT_FINGERPRINT, AI_CONSENT_PURPOSES, AI_CONSENT_VERSIONS } from "@/lib/ai-consent-shared";
+import { aiConsentFingerprintOf, aiConsentProcessorList } from "@/lib/ai-consent";
+import { trBase } from "@/i18n/base/tr";
+import { enBase } from "@/i18n/base/en";
+import { deBase } from "@/i18n/base/de";
+import { trWeb } from "@/i18n/web/tr";
+import { enWeb } from "@/i18n/web/en";
+import { deWeb } from "@/i18n/web/de";
 
 /**
  * HUKUKİ METİNLERİN KAPISI — veritabanı istemez, saniye sürer.
@@ -258,6 +266,79 @@ console.log("\nAdil kullanım");
        yüzden kalıp ada değil BİÇİME bakıyor: herhangi bir `..._LIMIT = sayı`. */
     const plain = /[A-Z_]*LIMIT\s*=\s*\d/.test(code);
     check(`${name}: elle yazılmış sınır kalmadı`, !plain);
+  }
+}
+
+console.log("\nYapay zekâ rızası");
+/*
+  RIZA BİR ALICI LİSTESİNE VERİLİYOR. Politikanın alıcılar tablosuna yeni bir
+  dil modeli ya da konuşma tanıma sağlayıcısı eklenince, eski listeye verilmiş
+  izin o yeni alıcıyı KAPSAMAZ; sürüm artmalı ve kullanıcıya yeniden
+  sorulmalı ("outdated"). Parmak izi o bağı tutuyor: tablo değişip
+  `AI_CONSENT_FINGERPRINT` değişmezse burası kırılır, onu değiştiren de
+  `AI_CONSENT_VERSIONS`i artırmayı hatırlar.
+*/
+for (const purpose of AI_CONSENT_PURPOSES) {
+  const actual = aiConsentFingerprintOf(purpose);
+  check(
+    `${purpose}: alıcı listesi rıza sürümünün parmak iziyle aynı (sürüm ${AI_CONSENT_VERSIONS[purpose]})`,
+    actual === AI_CONSENT_FINGERPRINT[purpose],
+    `"${actual}" ≠ "${AI_CONSENT_FINGERPRINT[purpose]}" — alıcı değiştiyse AI_CONSENT_VERSIONS.${purpose} artmalı ve parmak izi güncellenmeli`,
+  );
+  check(`${purpose}: rıza ekranında en az bir alıcı var`, aiConsentProcessorList(purpose).length > 0);
+}
+
+console.log("\nUygulama içi yollar");
+/*
+  METİN BİR YOL SÖYLÜYOR, UYGULAMA BAŞKA BİR YERDE.
+
+  Hesap silme düğmesi 2026-09-09'da Ayarlar'dan Profil ekranının altına
+  taşındı; gizlilik politikası, şartlar, destek sayfası, web silme sayfası ve
+  iki mağazanın inceleme notları "Profil › Ayarlar › Hesap › Hesabı sil"
+  demeye devam etti. İnceleme notları da yürüyüş modunu Beceriler sekmesinde
+  gösteriyordu, giriş ise Öğren'deki kutucuk. İnceleyici notlardaki yolu izler;
+  yolda düğme yoksa "hesap silme bulunamadı" (App Store 5.1.1(v)) yazar, Play
+  de beyanla video ve uygulamanın uyuşmasını istiyor (mağaza raporu B13, B14).
+
+  Yol ARAYÜZÜN KENDİ ETİKETLERİNDEN kuruluyor, elle yazılmıyor: bir etiket
+  yeniden çevrilince ya da düğme başka bir gruba taşınınca burası kırılır.
+*/
+{
+  const base = { tr: trBase, en: enBase, de: deBase } as const;
+  const web = { tr: trWeb, en: enWeb, de: deWeb } as const;
+  const deletePath = (l: (typeof LEGAL_LOCALES)[number]) =>
+    [base[l]["profile.profile"], base[l]["settings.settings"], base[l]["settings.group_account"], base[l]["settings.delete_account"]].join(" › ");
+  const walkPath = (l: (typeof LEGAL_LOCALES)[number]) => [base[l]["nav.learn"], base[l]["learn.walk_mode"]].join(" › ");
+  const oldWalkPath = (l: (typeof LEGAL_LOCALES)[number]) => [base[l]["nav.skills"], base[l]["learn.walk_mode"]].join(" › ");
+
+  for (const locale of LEGAL_LOCALES) {
+    const path = deletePath(locale);
+    for (const [name, doc] of [["gizlilik", PRIVACY_DEFAULT], ["şartlar", TERMS_DEFAULT], ["destek", SUPPORT_DEFAULT]] as const) {
+      check(`${name} · ${locale}: hesap silme yolu arayüzle aynı ("${path}")`, doc[locale].body.includes(path));
+    }
+    check(`web silme sayfası · ${locale}: hesap silme yolu arayüzle aynı`, (web[locale]["del.in_app_path"] ?? "").includes(path));
+  }
+
+  // Yolun uygulamada gerçekten var olduğu: Profil → Ayarlar, Ayarlar'ın Hesap grubunda silme satırı.
+  const settings = readFileSync("mobile/src/screens/SettingsScreen.tsx", "utf8");
+  const groupAt = settings.indexOf('<Group title={t("settings.group_account")}');
+  const accountGroup = groupAt < 0 ? "" : settings.slice(groupAt, settings.indexOf("</Group>", groupAt));
+  check("uygulama: Ayarlar › Hesap grubunda hesap silme satırı var", accountGroup.includes('nav.navigate("DeleteAccount")'));
+  check("uygulama: Profil ekranından Ayarlar açılıyor", readFileSync("mobile/src/screens/ProfileScreen.tsx", "utf8").includes('nav.navigate("Settings")'));
+  check("uygulama: yürüyüş modu Öğren sekmesinden açılıyor", readFileSync("mobile/src/screens/LearnScreen.tsx", "utf8").includes('nav.navigate("Walk")'));
+
+  // İnceleme notları İngilizce (inceleyici onu okuyor), Console beyanı ve Veri Güvenliği notu Türkçe.
+  const docs: { file: string; locale: (typeof LEGAL_LOCALES)[number] }[] = [
+    { file: "docs/appstore/connect.md", locale: "en" },
+    { file: "docs/play/console.md", locale: "en" },
+    { file: "docs/play/console.md", locale: "tr" },
+    { file: "docs/play/data-safety.md", locale: "tr" },
+  ];
+  for (const { file, locale } of docs) {
+    const md = readFileSync(file, "utf8");
+    check(`${file} · ${locale}: yürüyüş modu yolu "${walkPath(locale)}"`, md.includes(walkPath(locale)));
+    check(`${file} · ${locale}: eski "${oldWalkPath(locale)}" yolu kalmadı`, !md.includes(oldWalkPath(locale)));
+    check(`${file} · ${locale}: hesap silme yolu "${deletePath(locale)}"`, md.includes(deletePath(locale)));
   }
 }
 

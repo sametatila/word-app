@@ -2,6 +2,8 @@
 
 import type { PronounceScore } from "@/lib/pronounce";
 import type { SpeechConfusion } from "@/lib/skills/types";
+import { apiFetch } from "@/lib/api-fetch";
+import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 
 /**
  * Telaffuz puanı istemci yardımcıları (WP-20).
@@ -121,7 +123,10 @@ export function encodeWav(samples: Float32Array, sampleRate: number): Blob {
   return new Blob([buf], { type: "audio/wav" });
 }
 
-export type PronounceResponse = { ok: true; score: PronounceScore & { provider: string; hasWordTiming: boolean } } | { ok: false; reason: "not_configured" | "rate_limited" | "quota" | "failed" | "network" };
+export type PronounceResponse =
+  | { ok: true; score: PronounceScore & { provider: string; hasWordTiming: boolean } }
+  /** `consent`: kullanıcı sesinin sağlayıcıya gitmesine izin vermedi — klip gönderilmedi, arıza değil. */
+  | { ok: false; reason: "not_configured" | "rate_limited" | "quota" | "consent" | "failed" | "network" };
 
 export async function askPronounce(blob: Blob, target: string, opts: { exerciseId?: string; confusions?: SpeechConfusion[]; language?: string } = {}): Promise<PronounceResponse> {
   const form = new FormData();
@@ -131,13 +136,17 @@ export async function askPronounce(blob: Blob, target: string, opts: { exerciseI
   if (opts.language) form.append("language", opts.language);
   if (opts.confusions?.length) form.append("confusions", JSON.stringify(opts.confusions.slice(0, 8)));
   try {
-    const res = await fetch("/api/pronounce", { method: "POST", body: form, signal: AbortSignal.timeout(20_000) });
+    /* `apiFetch`ten: ses sağlayıcıya gitmeden önce izin soruluyor (yakalayıcı,
+       `lib/api-fetch`). Süre `timeoutMs` ile — izin diyaloğunda geçen süre
+       yirmi saniyeden yenmesin. */
+    const res = await apiFetch("/api/pronounce", { method: "POST", body: form, timeoutMs: 20_000 });
     if (res.ok) return { ok: true, score: (await res.json()) as PronounceScore & { provider: string; hasWordTiming: boolean } };
     if (res.status === 503) return { ok: false, reason: "not_configured" };
     if (res.status === 429) {
       const d = (await res.json().catch(() => ({}))) as { error?: string };
       return { ok: false, reason: d.error === "quota" ? "quota" : "rate_limited" };
     }
+    if (await isAiConsentDeclined(res)) return { ok: false, reason: "consent" };
     return { ok: false, reason: "failed" };
   } catch {
     return { ok: false, reason: "network" };

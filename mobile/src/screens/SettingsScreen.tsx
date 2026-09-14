@@ -30,7 +30,8 @@ import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
-import { hasMicConsent, setMicConsent } from "../lib/micConsent";
+import { hasMicConsent, revokeMicConsent } from "../lib/micConsent";
+import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentState } from "../lib/aiConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 
@@ -163,6 +164,36 @@ export function SettingsScreen() {
   const [uiLang, setUiLang] = useState<NativeLang>(currentLang());
   const [micConsent, setMicConsentState] = useState<boolean | null>(null);
   useEffect(() => { void hasMicConsent().then(setMicConsentState); }, []);
+  /*
+    YAPAY ZEKÂ İLE GERİ BİLDİRİM — sunucudaki rıza (`ai_text`). Açmak doğrudan
+    yazmıyor, izin ekranını açıyor: alıcılar görülmeden izin verilmiş sayılmaz.
+    Kapatmak tek dokunuş, çünkü geri almak vermek kadar kolay olmalı (GDPR
+    m.7(3)). Oturum yoksa uç 401 döner ve anahtar kapalı/devre dışı kalır.
+  */
+  const [aiText, setAiText] = useState<AiConsentState | null>(null);
+  /* Ses rızası (`ai_voice`) başka bir cihazda, ör. web'de verilmiş olabilir. O
+     zaman bu telefonda mikrofon onayı yoktur ama sunucuda izin vardır; geri
+     alma satırı yine görünmeli, yoksa izin buradan geri alınamazdı. */
+  const [aiVoice, setAiVoice] = useState<AiConsentState | null>(null);
+  const [aiBusy, setAiBusy] = useState(false);
+  const yenileAi = () =>
+    fetchAiConsent()
+      .then((i) => { setAiText(i.statuses.ai_text.state); setAiVoice(i.statuses.ai_voice.state); })
+      .catch(() => {});
+  useEffect(() => { void yenileAi(); }, []);
+  async function toggleAiText(on: boolean) {
+    if (aiBusy) return;
+    setAiBusy(true);
+    setMsg(null);
+    try {
+      if (on) await requestAiConsent("ai_text");
+      else await decideAiConsent("ai_text", false);
+    } catch {
+      setMsg(t("aiconsent.save_failed"));
+    }
+    await yenileAi();
+    setAiBusy(false);
+  }
 
   // useMe async gelir: ilk render'da me=null olduğu için state'ler yedeğe
   // (A1 / 20) düşüyordu ve gerçek değer (ör. A2) sonradan gelince useState'in
@@ -419,9 +450,6 @@ export function SettingsScreen() {
               maxLength={PROFILE_LIMITS.displayNameMax}
               style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
             />
-            {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
-                eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
-                tamamı ProfileScreen'de. */}
           </Row>
 
           {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
@@ -429,6 +457,34 @@ export function SettingsScreen() {
               otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
           <Row label={t("links.title")} colors={colors}>
             <LinkedAccounts colors={colors} accounts={accounts} onChanged={yenileHesaplar} />
+          </Row>
+
+          {/*
+            HESABI SİL — Ayarlar › Hesap'ın SON satırı.
+
+            2026-09-09'da buradan kaldırılıp yalnız Profil'in dibine taşınmıştı
+            (gerekçe: yıkıcı eylem ad kutusunun bir dokunuş yanında duruyordu).
+            Ama iki mağaza, gizlilik politikası §11, şartlar §3, destek sayfası,
+            web silme sayfası ve inceleme notları üç dilde birden "Profil ›
+            Ayarlar › Hesap › Hesabı sil" diyordu; incelemeci notu izleyip
+            düğmeyi bulamıyordu. Play'in kendi örneği de "hesap ayarlarının
+            içinde". Satır geri geldi ama gerekçe korunarak: ad kutusunun hemen
+            altında değil, giriş yöntemlerinin ardında ve grubun sonunda. Profil'in
+            dibindeki bağlantı da duruyor; iki kapı, aynı ekran.
+          */}
+          <Row colors={colors}>
+            <PressableScale
+              onPress={() => nav.navigate("DeleteAccount")}
+              accessibilityRole="button"
+              accessibilityLabel={t("settings.delete_account")}
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+            >
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong" color={colors.dangerText}>{t("settings.delete_account")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("deleteaccount.your_account_and_all_your_data")}</Text>
+              </View>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
           </Row>
 
           {/*
@@ -469,6 +525,13 @@ export function SettingsScreen() {
               </View>
               <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
             </View>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("aiconsent.text_title")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("aiconsent.settings_text_sub")}</Text>
+              </View>
+              <Switch value={aiText === "granted"} disabled={aiText === null || aiBusy} onValueChange={(v) => { void toggleAiText(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("aiconsent.text_title")} />
+            </View>
             {micConsent === null ? (
               // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
               // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
@@ -479,8 +542,8 @@ export function SettingsScreen() {
                 </View>
                 <SkeletonLine variant="h3" width={20} />
               </View>
-            ) : micConsent ? (
-              <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            ) : micConsent || aiVoice === "granted" ? (
+              <PressableScale onPress={() => { setMicConsentState(false); setAiVoice(null); void revokeMicConsent().then(yenileAi); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
                 <View style={{ flex: 1 }}>
                   <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
                   <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>

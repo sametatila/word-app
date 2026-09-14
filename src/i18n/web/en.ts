@@ -264,6 +264,15 @@ export const enWeb: Record<string, string> = {
   "mockfb.work_on": "Work on {goal}",
   "mockfb.wrong_of": "{wrong} of the {total} items for this goal are wrong ({pct}).",
   "mockfb.how_fallback": "Read the explanations for your wrong items one by one and write, in your own words, where each mistake came from.",
+  /*
+    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
+    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
+    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
+    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
+    sağlayıcıları adlarıyla sayarken.
+  */
+  "mockexamw.transcript_note": "This text came from your voice being transcribed on the server; you can fix anything it got wrong. The recording is not stored.",
+  "mockexamw.voice_not_sent": "Your speech wasn't transcribed because sending your voice isn't allowed. You can type your answer here, or turn it on in the settings.",
   "mockhow_en.gist": "Read the text in two passes. In the first, read only the opening and closing paragraphs and tell yourself in one sentence what the text argues; ignore the detail. In the second, read the questions and test that sentence.",
   "mockhow_en.detail": "Read the questions BEFORE the text and mark every number, time or proper name in them. Then scan the text for those marks only. The trap in these items is usually a second number in the text.",
   "mockhow_en.opinion": "Read the LAST sentence of each text separately: that's usually where the stance shows. What follows `but`, `however`, `still`, `only`, `in fact` is the writer's conclusion; what comes before is often the concession.",

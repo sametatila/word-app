@@ -26,6 +26,7 @@ import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
+import { AiConsentHost } from "./src/ui/AiConsentSheet";
 import { ErrorBoundary } from "./src/ui/ErrorBoundary";
 
 function Nav() {
@@ -256,6 +257,11 @@ function Nav() {
           ve altısına ayrı kutlama koymak altı yerde unutulur (web de kabukta
           tek kart tutuyor). Kendisi akış ekranlarını kesmiyor. */}
       <AchievementUnlock />
+      {/* YAPAY ZEKÂ RIZASI TEK YERDE, kökte: sunucu metni ya da sesi
+          sağlayıcıya göndermeden önce izin istediğinde API istemcisi bu
+          ekranı açtırıyor (bkz. lib/aiConsent). Kırk çağrı yerinin her birine
+          ayrı ekran koymak kırk yerde unutulurdu. */}
+      <AiConsentHost />
       {/* Doğrulama sürerken ekranı bir an boş bırakmamak için örtü: ağ çağrısı
           ve oturum tazelemesi bitene kadar duruyor. */}
       {verifying ? (

@@ -38,39 +38,40 @@ oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uy
 ve markalı açılış ekranı geldi, Apple ile Giriş kuruldu, Google girişi iOS'ta
 kurulabilir hâle getirildi. Açık kalanlar aşağıdaki tabloda.
 
-Hukuki metinler iOS için **hazır yazıldı ama kapalı**: `src/lib/legal.ts` içindeki
-`LEGAL_PLATFORMS.ios` `false`. Açıldığında şunlar kendiliğinden devreye giriyor:
+Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**): `src/lib/legal/index.ts`
+içindeki `LEGAL_PLATFORMS.ios` `true`. Bayrak açıkken şunlar basılıyor:
 
 - şartlarda "13a. Apple App Store için ek koşullar" (Apple'ın özel EULA için istediği
   asgari maddeler: taraflar, lisans kapsamı, bakım, garanti, talepler, fikri mülkiyet,
   ihracat beyanı, iletişim, üçüncü taraf şartları, **Apple'ın üçüncü taraf lehtar** olması),
 - satın alma / iptal / iade maddelerinin Apple yolu (Ayarlar › Apple Hesabı › Abonelikler,
-  reportaproblem.apple.com),
+  reportaproblem.apple.com); destek sayfasında da aynısı,
 - gizlilik politikasında platform sayımı ve alıcılar tablosuna **Apple (App Store)** satırı.
 
-Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a kayıt
-düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm **1.1**'in
-"ne değişti" metnini üç dilde tutuyor ve bayrak kapalıyken listeye hiç girmiyor. O gün
-yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.1"`,
-`LEGAL_EFFECTIVE_DATE` yayın günü.
+**Neden yayından önce açıldı.** Eski plan bayrağı App Store'daki yayın günü açmaktı. App
+Review ise gönderimde Privacy Policy URL'sini, şartları ve Support URL'yi okuyor; yalnız
+Android'i sayan bir metin iOS uygulamasının metni sayılmıyor (5.1.1(i), 3.1.2). Bir metnin
+bir uygulamayı kapsaması "yayında" demek değil ve 1.1 kaydı bunu iddia etmiyor. Yayın günü
+için hazır bekleyen `IOS_LAUNCH_ENTRY` tam olarak "App Store'da yayımlandı" dediği için
+kullanılmadı ve silindi.
 
 > **NUMARA NEDEN 1.1.** Sürüm geçmişi 2026-09-09'da sıfırlandı: numara geliştirme
 > sırasında 1.1'den 1.3.1'e yürümüştü ama o kayıtların anlattığı değişikliklerin çoğu
 > henüz yayında olmayan özelliklerin maddeleriydi ve kimsenin kabul ettiği bir sürüm
-> değişmemişti (kabul edilen sürüm hiçbir yerde saklanmıyor). Yürürlükteki metin
-> **1.0**; iOS yayını, metne gerçekten yeni hükümler eklediği için ikinci basamağı
-> alıyor. Gerekçenin tamamı `src/lib/legal.ts`'in sürüm notunda.
+> değişmemişti (kabul edilen sürüm hiçbir yerde saklanmıyor). 1.1 metne gerçekten yeni
+> hükümler eklediği için ikinci basamağı aldı: iOS kapsamı, yapay zekâ ve ses için açık
+> rıza, bildirim jetonu, mikrofonun gerçek kapsamı. Gerekçenin tamamı
+> `src/lib/legal/index.ts`'in sürüm notunda.
 
-Alıcılar tablosundaki **Apple (Sign-In)** ve **Apple (App Store)** satırları da aynı
-bayrağın arkasında hazır bekliyor.
+**Apple (Sign-In)** satırı artık bayraktan **bağımsız**: Apple ile giriş web'de ve Android'de
+de açık (`/api/config` → `"apple":true,"appleWeb":true`), yani bu alıcı iOS'a özgü değil.
+Şartların "üçüncü taraf hizmetleri" maddesi (7b) de Apple ile girişi koşulsuz sayıyor.
 
-Bu dosyanın dışında kalan tek metin işi: şartların "üçüncü taraf hizmetleri" maddesi
-(`src/app/terms/page.tsx` ve `src/content/legal/terms-{en,de}.tsx`) giriş sağlayıcısı
-olarak yalnız Google'ı sayıyor. iOS'ta Apple ile Giriş de sunulduğu için oraya
-`hasIos()` koşullu bir "Apple ile Giriş" eklenmeli — 1.4 kaydı bunu anlattığı için
-bayrak açılmadan önce yapılmalı.
+> **Panel üstyazımı.** Üretimde `app_settings["legal.config"]` satırı oluşursa oradaki
+> `platforms.ios` kodun önüne geçer. 2026-09-14'te satır yok (salt okuma ile ölçüldü);
+> ayrıntı `LEGAL_PLATFORMS` notunda.
 
-## Bayrak açılmadan bitmesi gereken iş
+## iOS yayınından önce bitmesi gereken iş
 
 | # | İş | Neden |
 |---|---|---|
@@ -83,7 +84,7 @@ bayrak açılmadan önce yapılmalı.
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
 | 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlendi, cihazda denenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
-| 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · açık kalan: **`APPLE_BUNDLE_ID` değeri** | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. Env boşken sağlayıcı hiç kurulmaz, yani akış bugün kapalı |
+| 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · ~~`APPLE_BUNDLE_ID` değeri~~ → **sunucuda dolu** (2026-09-14: canlı `/api/config` → `"apple":true,"appleWeb":true`) | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. iOS'ta cihazda henüz denenmedi |
 | 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **Google Console'da iOS istemcisi açmak** | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
 | 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu — kare betiği ikisini de üretiyor (aşağıda "Cihaz ailesi") |
 | 13 | ~~Cihaz ailesi kararı~~ → **iPhone + iPad, beyan sabitlendi** (2026-09-05) | Aşağıda |

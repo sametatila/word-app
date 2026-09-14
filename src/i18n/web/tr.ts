@@ -290,6 +290,15 @@ export const trWeb: Record<string, string> = {
   "mockfb.work_on": "{goal} üzerine çalış",
   "mockfb.wrong_of": "Bu hedefteki {total} maddenin {wrong} tanesi yanlış ({pct}).",
   "mockfb.how_fallback": "Yanlış maddelerin açıklamalarını sırayla oku ve her birinde hatanın nereden geldiğini kendi cümlenle yaz.",
+  /*
+    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
+    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
+    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
+    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
+    sağlayıcıları adlarıyla sayarken.
+  */
+  "mockexamw.transcript_note": "Metin, sesinin sunucuda yazıya çevrilmesiyle oluştu; yanlış yazılan yerleri düzeltebilirsin. Ses kaydı saklanmıyor.",
+  "mockexamw.voice_not_sent": "Sesinin gönderilmesine izin vermediğin için konuşman yazıya çevrilmedi. Cevabını buraya yazabilirsin; istersen ayarlardan açabilirsin.",
   "mockhow_en.gist": "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
   "mockhow_en.detail": "Soruları metinden ÖNCE oku ve her sorudaki sayıyı, saati ya da özel adı işaretle. Sonra metni tararken yalnız o işaretleri ara. Bu maddelerde tuzak çoğu zaman metindeki ikinci bir sayıdır.",
   "mockhow_en.opinion": "Her metnin SON cümlesini ayrıca oku: taraf çoğu zaman orada belli olur. `but`, `however`, `still`, `only`, `in fact` sözcüklerinden sonrası yazarın vardığı sonuçtur; öncesi çoğu zaman karşı tarafa verilen paydır.",

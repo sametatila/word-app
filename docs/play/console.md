@@ -13,16 +13,37 @@ Seçim: "All or some functionality is restricted" → "Add new instructions".
 | Ad | Lernomi inceleme hesabı |
 | Kullanıcı adı / e-posta | `[[TEST_HESABI_E_POSTA]]` |
 | Parola | `[[TEST_HESABI_PAROLA]]` |
-| Diğer bilgiler | Aşağıdaki adımlar |
+| Diğer bilgiler | Aşağıdaki İngilizce metin, olduğu gibi |
 
-Adımlar (Console'daki "Any other information" alanına):
+Console'daki "Any other information" alanına **İngilizce** metin girilir.
 
-1. Uygulamayı açın; onboarding'de "Devam et" ile ilerleyin, kurs olarak Almanca, seviye olarak "Sıfırdan", hedef olarak "Rahat" seçin.
-2. Giriş ekranında "E-posta ile devam et" → yukarıdaki e-posta ve parola ile giriş yapın.
-3. Bildirim izni ekranında "Belki sonra" seçilebilir.
-4. Ana sekmeler: Öğren (günlük tur), Patika (dersler), Beceriler (okuma/dinleme/yazma alıştırmaları, yürüyüş modu).
-5. Yürüyüş modu: Beceriler › Yürüyüş modu › Başla → mikrofon açıklama ekranı → "Kabul ediyorum, başla" → sistem mikrofon izni. Ekran kapatılınca mikrofon tipli ön plan servisi bildirimi görünür; X ile bitirilir.
-6. Hesap silme: Profil › Ayarlar › Hesap › Hesabı sil (test hesabını silmeyin; ayrı bir hesapla deneyin).
+Yollar 2026-09-14'te koddan doğrulandı: yürüyüş modu **Öğren** sekmesindeki "Yürüyüş modu"
+kutucuğunda (`mobile/src/screens/LearnScreen.tsx`), Beceriler sekmesinde DEĞİL — eski notlar
+yürüyüş modunu Beceriler'de gösteriyordu ve inceleyiciyi olmayan bir yola gönderiyordu. Hesap
+silme **Profil › Ayarlar › Hesap › Hesabı sil**, Hesap grubunun son satırı (`SettingsScreen.tsx`); Profil
+ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uygulamanın
+İngilizce arayüzünden birebir (`mobile/src/i18n/en.ts`, kilit ekranı metni
+`Localizable.strings` / `values-en/strings.xml`).
+
+> **İnceleme hesabı Premium olmalı.** Ekran kapalı yürüyüş (arka planda dinleme) Premium:
+> ücretsiz hesapta `/api/stt` `mode=walk` 403 döner ve inceleyici kilit ekranı akışını
+> göremez. Hesap üretim veritabanında açılıp Premium tanımlanacağı için bu iş ayrıca
+> onaylanır (mağaza raporu B07).
+
+```text
+Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall or purchase. It does not expire and needs no one-time code.
+
+1. Open the app and go through onboarding with "Continue": course German, level "From scratch", goal "Easy".
+2. On the sign-in screen tap "Continue with email" and sign in with the account above.
+3. On the notification permission screen you may tap "Maybe later".
+4. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
+
+5. AI consent (User Data policy, prominent disclosure): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
+
+6. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission. Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X inside the app) to end.
+
+7. Account deletion: Profile › Settings › Account › Delete account (the last row; also linked at the bottom of the Profile screen). Please test deletion with a separate account, not the review account.
+```
 
 Test hesabı: gerçek veritabanında `[[TEST_HESABI_E_POSTA]]` ile bir hesap açın, e-posta
 doğrulamasını tamamlayın, seviyeyi A1 bırakın. Parolayı yalnız Console'a yazın; bu belgeye
@@ -88,20 +109,27 @@ verilmezse ya da videodaki akış koda uymazsa politika reddi gelir.
 | Temel işlev | Kullanıcının başlattığı sürekli ses yakalama — yürüyüş modunda konuşma tanıma |
 | Kullanıcıya faydası | Telefon cepteyken ve ekran kapalıyken sesli çalışabilmek; ekrana bakmadan söylenen cevabın değerlendirilmesi |
 | Alternatif neden yok | Ekran kapalıyken mikrofon erişimi Android 9'dan beri yalnız mikrofon tipli ön plan servisiyle mümkün; WorkManager, JobScheduler ve normal servis bu işi yapamaz |
-| Kullanıcı bunu nasıl başlatır | Beceriler › Yürüyüş modu › Başla → mikrofon açıklama ekranı → "Kabul ediyorum, başla" → sistem mikrofon izni. Onay ve izin olmadan servis hiç başlamaz |
+| Kullanıcı bunu nasıl başlatır | Öğren › Yürüyüş modu › Başla → mikrofon açıklama ekranı (sesin gidebileceği konuşma tanıma sağlayıcılarını adıyla sayar) → "Kabul ediyorum, başla" → sistem mikrofon izni. Onay ve izin olmadan servis hiç başlamaz |
 | Kullanıcı bunu nasıl durdurur | Kalıcı bildirimdeki "Durdur"; uygulama içinden X; tur bitince kendiliğinden |
 
 ### Videoda gösterilecek akış
 
-Kesintisiz tek çekim, ses açık, 30-60 saniye:
+Kesintisiz tek çekim, ses açık, 30-60 saniye. **Premium inceleme hesabıyla ve bu
+düzeltmeleri taşıyan yapıyla** çekilir: ücretsiz hesapta ekran kapalı dinleme sunucuda 403
+alır ve videoda cevap tanınmaz; eski yapılarda açıklama ekranı sağlayıcıları adıyla
+saymıyordu. Açıklama ekranını hiç görmemiş bir hesap kullanılır (ya da önce Ayarlar ›
+Gizlilik › "Mikrofon onayını geri al").
 
-1. Beceriler › Yürüyüş modu › **Başla**.
-2. Mikrofon açıklama ekranı (`MicDisclosure`) — metin okunacak kadar beklenir.
+1. **Öğren** sekmesi › "Yürüyüş modu" kutucuğu › **Başla**.
+2. Mikrofon açıklama ekranı (`MicDisclosure`) — sağlayıcı listesi yüklenene ve metin
+   okunacak kadar beklenir.
 3. **Kabul ediyorum, başla** → sistem izin diyaloğu → **İzin ver**.
 4. Bir kelime sorulur, sesli cevap verilir.
 5. **Güç tuşuyla ekran kapatılır.** Kilit ekranında bildirim görünür: başlık,
    "mikrofon dinliyor" metni ve **Durdur** düğmesi. Sistemin mikrofon göstergesi açıktır.
-6. Kilit ekranındaki **Durdur**'a basılır; bildirim kaybolur, mikrofon kapanır.
+6. Ekran kapalıyken bir kelime daha sorulur ve sesli cevap verilir — arka planda dinlemenin
+   gerçekten çalıştığını gösteren kare bu.
+7. Kilit ekranındaki **Durdur**'a basılır; bildirim kaybolur, mikrofon kapanır.
 
 Kilit ekranında görünmesi kodda karşılığı olan bir iddia: kanal
 `lockscreenVisibility = VISIBILITY_PUBLIC`, bildirim `VISIBILITY_PUBLIC` ve
@@ -123,3 +151,8 @@ kuralının aradığı da tam olarak bu.
 - Mağaza görselleri gerçek cihazdan, premium özellikleri yalnız canlıysa gösteriyor (D1).
 - `docs/play/data-safety.md` formu ve `/privacy` bağlantısı girildi (B1, B4).
 - Foreground service beyanı ve videosu yüklendi (C1) — §3'teki alanlar ve akış.
+- Veri Güvenliği ve ön plan servisi beyanı, yapay zekâ iznini, sağlayıcıları adıyla sayan
+  mikrofon açıklamasını ve gizlilik politikası 1.1'i taşıyan sürüm canlıya çıkıp AAB
+  yüklendikten SONRA gönderilir; beyan, video ve uygulama aynı şeyi göstermeli.
+- `drizzle/0052_user_consents.sql` üretimde uygulandı: yapay zekâ ve ses uçlarının izin kapısı
+  bu tabloya bağlı.

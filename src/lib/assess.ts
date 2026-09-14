@@ -5,7 +5,8 @@ import { translate } from "@/lib/i18n/dict";
 import { createHash } from "node:crypto";
 import { and, desc, eq, gte, isNotNull, isNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { assessments, profiles } from "@/lib/db/schema";
+import { assessments, profiles, userConsents } from "@/lib/db/schema";
+import { AI_CONSENT_VERSIONS } from "@/lib/ai-consent-shared";
 import { chatConfigured, completeChat, type CallReport } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { sendToUser } from "@/lib/push";
@@ -199,10 +200,31 @@ export async function queueAssessment(userId: string, req: AssessRequest, day: s
  * bildirim gider (push açıksa).
  */
 export async function runAssessQueue(limit = 20): Promise<{ pending: number; done: number; failed: number }> {
+  /*
+    YALNIZ İZNİ GEÇERLİ KULLANICININ METNİ. Kuyruğa girerken izin soruluyordu
+    (`/api/assess/queue`) ama metin burada, saatler sonra sağlayıcıya gidiyor;
+    arada izin geri alınmış olabilir. Süzme sorgunun İÇİNDE, döngüde değil:
+    döngüde atlansaydı en eski yirmi satır izinsiz kullanıcılara ait olduğunda
+    kuyruk hiç ilerlemezdi. İzni olmayanın satırı silinmiyor, bekliyor — izni
+    açarsa işlenir. (Son karar `lib/ai-consent` ile aynı: en yeni satır.)
+  */
   const rows = await db
     .select()
     .from(assessments)
-    .where(isNull(assessments.result))
+    .where(
+      and(
+        isNull(assessments.result),
+        sql`exists (
+          select 1 from (
+            select ${userConsents.granted} as granted, ${userConsents.version} as version
+            from ${userConsents}
+            where ${userConsents.userId} = ${assessments.userId} and ${userConsents.purpose} = 'ai_text'
+            order by ${userConsents.decidedAt} desc, ${userConsents.id} desc
+            limit 1
+          ) son where son.granted and son.version >= ${AI_CONSENT_VERSIONS.ai_text}
+        )`,
+      ),
+    )
     .orderBy(assessments.createdAt)
     .limit(limit);
   if (!rows.length) return { pending: 0, done: 0, failed: 0 };

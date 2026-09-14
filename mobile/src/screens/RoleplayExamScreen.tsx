@@ -21,6 +21,7 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
 import { assessFailKey, assessFailure } from "../lib/assessFail";
+import { isAiConsentDeclined } from "../lib/aiConsent";
 import { notePremiumGate } from "../lib/premium";
 
 import { todayStr } from "../game/session";
@@ -81,6 +82,12 @@ export function RoleplayExamScreen() {
   const [left, setLeft] = useState(EXAM_SECONDS);
   const [result, setResult] = useState<Result | null>(null);
   const [gateNote, setGateNote] = useState<string | null>(null);
+  /**
+   * Muhatap cevap vermedi çünkü yapay zekâya izin verilmedi — servis kapalı
+   * DEĞİL. Sınav senaryoyla yürüyemiyor (sayılmazdı), ama sebep doğru
+   * söylenmeli ve nereden açılacağı belli olmalı (web `roleplay-exam` ile aynı).
+   */
+  const [consentOff, setConsentOff] = useState(false);
   const [cando, setCando] = useState<string[]>([]);
   const scored = useRef(false);
   const mounted = useRef(true);
@@ -178,6 +185,7 @@ export function RoleplayExamScreen() {
     deadline.current = 0;
     setResult(null);
     setGateNote(null);
+    setConsentOff(false);
     setTurns([]);
     setDraft("");
     setLeft(EXAM_SECONDS);
@@ -229,9 +237,12 @@ export function RoleplayExamScreen() {
       setBusy(false);
       speakTarget(body);
       if (n >= EXAM_TURNS) setTimeout(() => void score(all), 6000);
-    } catch {
+    } catch (e) {
       if (!mounted.current) return;
       setBusy(false);
+      /* İzin ekranında "hayır" dendiyse ya da daha önce denmişse cümle
+         sağlayıcıya gitmedi. Akış öteki arızalarla aynı; değişen yalnız cümle. */
+      if (isAiConsentDeclined(e)) setConsentOff(true);
       // İki turdan sonra kopan bağlantı sınavı çöpe atmaz: eldekini puanla.
       if (n >= 2) void score(next);
       else setPhase("error");
@@ -306,7 +317,9 @@ export function RoleplayExamScreen() {
     return (
       <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={80} />
-        <Text variant="body" style={{ textAlign: "center" }}>{tx("rpexam.service_down")}</Text>
+        {/* Sıra bilinçli: `check:parity` maskot yüzeyini ondan sonraki İLK sözlük
+            anahtarıyla tanıyor ve web aynı dalda önce `rpexam.service_down` yazıyor. */}
+        <Text variant="body" style={{ textAlign: "center" }}>{!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")}</Text>
         {/* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
             düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani
             ölçülmüş hiçbir şey YOK — sınav baştan başlayabilir. Tek çıkış

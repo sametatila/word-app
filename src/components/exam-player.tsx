@@ -19,7 +19,7 @@ import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit } from "@/components/round-exit";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
-import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/assess-client";
+import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
@@ -129,10 +129,18 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   // Yazma bölümü
   const [writingText, setWritingText] = useState("");
   const [writingResult, setWritingResult] = useState<Assessment | FallbackAssessment | null>(null);
+  /* Yedek puanın SEBEBİ kartta yazıyor (mobil `ExamScreen` yazma adımı da
+     söylüyor). Sebepsiz kart her yedeğe "servis kapalı" diyordu; yapay zekâya
+     izin vermeyen kullanıcı için bu yanlış teşhis. */
+  const [writingFailure, setWritingFailure] = useState<AssessFailure | null>(null);
   // Konuşma bölümü (WP-20 + WP-41)
   const [spk, setSpk] = useState<"idle" | "rec" | "scoring" | "done" | "failed">("idle");
   const [spkResult, setSpkResult] = useState<PronounceScore | null>(null);
   const [spkTries, setSpkTries] = useState(0);
+  /* Söyleyiş maddesi izin verilmediği için puanlanmadı: klip gönderilmedi.
+     "Ses alınamadı, bir daha dene" demek yanlış teşhis olurdu — yeniden
+     denemek aynı cevabı alır. Madde yine 0 sayılıyor ve sınav sürüyor. */
+  const [spkConsent, setSpkConsent] = useState(false);
   const [showMisses, setShowMisses] = useState(false);
   const capture = useRef<Capture | null>(null);
   const speakingScores = useRef<number[]>([]);
@@ -319,6 +327,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const ai = await askAssess(req);
     const out = ai.ok ? ai.result : fallbackAssessment(req, t);
     setWritingResult(out);
+    setWritingFailure(ai.ok ? null : ai.reason);
     writingScore.current = out.score.overall;
     score.current.writing.correct = (writingScore.current ?? 0) >= 60 ? 1 : 0;
     setBusy(false);
@@ -649,6 +658,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         setSpkResult(res.score);
         setSpk("done");
       } else {
+        setSpkConsent(res.reason === "consent");
         setSpkTries((n) => n + 1);
         setSpk("failed");
       }
@@ -662,6 +672,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       setSpk("idle");
       setSpkResult(null);
       setSpkTries(0);
+      setSpkConsent(false);
       if (!last) setIdx(idx + 1);
       else nextSection();
     };
@@ -700,10 +711,12 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
              düğmesine basan kullanıcı odağı düğmede tutuyor ve kutunun geldiğini
              ekran okuyucu söylemiyordu. Hata olduğu için `alert`. */
           <p role="alert" className="mt-4 rounded-panel px-3 py-2 text-body" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
-            {t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
+            {spkConsent
+              ? `${t("aiconsent.voice_without")} ${t("aiconsent.change_later")}`
+              : t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}
-        {spk === "failed" && spkTries < 2 ? (
+        {spk === "failed" && spkTries < 2 && !spkConsent ? (
           <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-body">
             {t("common.try_again")}
           </button>
@@ -737,7 +750,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       </ul>
       {writingResult ? (
         <div className="mt-3 flex flex-col gap-3">
-          <AssessmentCard answer={writingText.trim()} result={writingResult} />
+          <AssessmentCard answer={writingText.trim()} result={writingResult} failure={writingFailure} />
           <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-body">
             {t("exam.finish_exam")}
           </button>

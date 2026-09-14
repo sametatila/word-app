@@ -1,7 +1,7 @@
 "use client";
 
 import { FeedbackLine } from "@/components/feedback/feedback-line";
-import { ASSESS_FAILURE_KEYS, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
+import { ASSESS_FAILURE_KEYS, fallbackNoteKey, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
@@ -56,11 +56,15 @@ export function AssessmentCard({
         Koşul PUANIN KENDİSİNDE: `result.offline` yedek hesabın işareti. Sebep
         satırı olmadan da (kota kapısında olduğu gibi) yedek gösterilebiliyor
         ve o durumda da söylenmesi gerekiyor.
+
+        İZİN VERİLMEDİYSE "SERVİS KAPALI" DENMİYOR: servis çalışıyor, metin
+        bilerek gönderilmedi. Sebep satırı bunu söylüyor, yanındaki cümle
+        yalnız puanın tahmin olduğunu (`fallbackNoteKey`).
       */}
       {failure && failure !== "aborted" ? (
         <p className="mb-3 rounded-panel px-3 py-2 text-caption" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
           {t(ASSESS_FAILURE_KEYS[failure])}
-          {offline ? ` ${t("assess.fail_offline")}` : ""}
+          {offline ? ` ${t(fallbackNoteKey(failure, "estimate", "assess.fail_offline"))}` : ""}
         </p>
       ) : offline ? (
         <p className="mb-3 rounded-panel px-3 py-2 text-caption" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>

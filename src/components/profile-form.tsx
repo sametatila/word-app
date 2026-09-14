@@ -7,11 +7,12 @@ import { AlertIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
+import { AiConsentSettings } from "@/components/ai-consent-settings";
 import { SoundSettings } from "@/components/sound-settings";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
-import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
+import { hasMicConsent, revokeMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
 import { Group, Row } from "@/components/settings-section";
@@ -445,6 +446,10 @@ export function ProfileForm({
       <Group title={t("settings.group_privacy_about")}>
         <Row label={t("settings.privacy")}>
           <AnalyticsSettings bare />
+          {/* Yapay zekâ rızası analitiğin yanında: ikisi de "verim nereye
+              gidiyor" sorusunun anahtarı. "Hayır" diyene diyalog bir daha
+              kendiliğinden gelmediği için fikrini değiştirmenin yeri burası. */}
+          <AiConsentSettings />
           {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
               geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
               Mobil ayarlarda da aynı satır ve aynı koşul var. */}
@@ -455,7 +460,7 @@ export function ProfileForm({
           HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar ve destek "Gizlilik"in
           içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı ama "hakkında"
           diye bir yer yoktu. Gizlilik artık yalnız kullanıcının AÇIP
-          KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
+          KAPATABİLDİĞİ şeyleri taşıyor; okunacak metinler burada.
         */}
         <Row label={t("settings.about")}>
           <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
@@ -555,7 +560,10 @@ function MicConsentRow() {
       <button
         type="button"
         onClick={() => {
-          setMicConsent(false);
+          /* Tarayıcıdaki bayrakla birlikte sunucudaki ses rızası da geri
+             alınıyor: yalnız bayrağı silmek, sesin sağlayıcıya gitme iznini
+             sunucuda açık bırakırdı (mobil `revokeMicConsent` ile aynı). */
+          void revokeMicConsent();
           setOn(false);
         }}
         className="btn btn-ghost h-9 px-3 text-caption"

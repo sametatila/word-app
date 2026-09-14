@@ -408,6 +408,9 @@ function FreeTask({
       setFailure(ai.reason);
       if (ai.reason === "not_configured" || ai.reason === "upstream" || ai.reason === "timeout") {
         // Metin kaybolmasın: sunucu kuyruğa alır, servis dönünce puanlar.
+        // İzin reddi (`consent`) bu listede YOK ve olmamalı: kuyruk metni
+        // sonradan yine dil modeline gönderiyor, "hayır" diyenin metni
+        // bekletilip gönderilmez (uç izni kuyruğa alırken de okuyor).
         try {
           const res = await apiFetch("/api/assess/queue", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(req) });
           setQueued(res.ok);

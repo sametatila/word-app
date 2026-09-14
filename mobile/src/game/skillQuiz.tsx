@@ -18,6 +18,7 @@ import { haptic } from "../lib/haptics";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
+import { isAiConsentDeclined } from "../lib/aiConsent";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
@@ -540,6 +541,11 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
         if (isPremiumRefusal(e)) notePremiumGate("writing");
         setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
+      } else if (isAiConsentDeclined(e)) {
+        /* İZİN YOK: servis kapalı değil, metin bilerek gönderilmedi. Kuyruğa
+           da bırakılmıyor — kuyruk da sonunda aynı sağlayıcıya gidiyor ve uç
+           onu da reddediyor. */
+        setNote(`${tx("assess.fail_consent")} ${tx("assess.not_scored")}`);
       } else {
         /* Sağlayıcı/ağ yok: metin kaybolmasın diye sunucu kuyruğuna bırakılıyor
            (uç kendi sınırlarını yine uyguluyor). Kuyruk da tutmazsa kullanıcı

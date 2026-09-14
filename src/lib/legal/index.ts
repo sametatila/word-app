@@ -9,11 +9,12 @@
  *
  *   - VERİ SORUMLUSU (controller*): amaç ve araçlara karar veren, Almanya'da
  *     yerleşik gerçek kişi. Veri koruma yükümlülüğü onda.
- *   - YAYINCI (publisher*): uygulamayı Google Play'de yayımlayan, Google'dan
- *     ödeme alan ve Türkiye'de vergilenen gerçek kişi. Veri sorumlusunun
- *     talimatıyla hareket eden VERİ İŞLEYEN sıfatını da taşıyor (Play Console
- *     sipariş, abone ve yorum verisine erişim). Aralarında GDPR m.28 / KVKK m.12
- *     işleme sözleşmesi gerekiyor.
+ *   - YAYINCI (publisher*): uygulamayı Google Play'de ve App Store'da
+ *     yayımlayan, mağazalardan ödeme alan ve Türkiye'de vergilenen gerçek
+ *     kişi. Veri sorumlusunun talimatıyla hareket eden VERİ İŞLEYEN sıfatını
+ *     da taşıyor (Play Console ve App Store Connect'te sipariş, abone ve yorum
+ *     verisine erişim). Aralarında GDPR m.28 / KVKK m.12 işleme sözleşmesi
+ *     gerekiyor.
  *
  * Bu ayrımın iki büyük sonucu var ve ikisi de birbirinin aynası:
  *
@@ -70,18 +71,22 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * Hak ya da yükümlülüğü değiştiren değişiklik ikinci basamağı (1.1), yalnız
  * düzelten değişiklik yama basamağını (1.0.1) alır.
  *
- * iOS yayın gününde ikisi de değişecek (→ "1.1" ve o günün tarihi); ne
- * yazılacağı ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
+ * 1.1 iOS YAYIN GÜNÜNÜ BEKLEMEDİ (2026-09-14). Plan, sürümü App Store'daki
+ * yayın günü artırmaktı ve plan yanlıştı: App Review gönderimde gizlilik
+ * politikasını, şartları ve destek sayfasını açıp okuyor, yani metnin iOS
+ * uygulamasını İNCELEMEDEN ÖNCE kapsaması gerekiyor. Aynı sürüm yapay zekâ
+ * rızasını, bildirim jetonunu ve mikrofonun gerçek kapsamını da metne yazdı;
+ * ayrıntı LEGAL_PLATFORMS notunda ve kaydın kendisinde.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-10";
-export const LEGAL_VERSION = "1.0.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-14";
+export const LEGAL_VERSION = "1.1";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
   controllerName: "Samet Atila",
   controllerAddress: "Emil-Figge-Str. 9, Zimmer 421, 44227 Dortmund, Almanya",
 
-  /** Yayıncı: Play hesabı sahibi, tahsilat tarafı ve veri işleyen (Türkiye'de yerleşik). */
+  /** Yayıncı: Play ve App Store hesabı sahibi, tahsilat tarafı ve veri işleyen (Türkiye'de yerleşik). */
   publisherName: "Musa Atila",
   publisherAddress: "Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
   /** Yayıncının bağlı olduğu vergi dairesi — ticaret sicil/MERSİS yok, tacir değil. */
@@ -208,80 +213,46 @@ export const LEGAL_PATHS = {
  * eklenmeden LEGAL_VERSION artırılmamalı. En yeni kayıt başa yazılır.
  */
 /**
- * Yayımlandığı mağazalar.
+ * Metinlerin KAPSADIĞI platformlar. `ios` 2026-09-14'te AÇILDI (sürüm 1.1).
  *
- * Metinler iOS için hazır yazıldı ama `ios` KAPALI: uygulama App Store'da
- * yayımlanmadan "iOS uygulamamız" demek, denetimde kovaladığımız iddia/gerçek
- * ayrışmasının ta kendisi olurdu. iOS yayına girdiği gün burası `true` yapılır,
- * LEGAL_VERSION artırılır ve sürüm geçmişine kayıt düşülür — metnin kalanı
- * kendiliğinden doğru hâle gelir.
+ * Bayrak açıkken üç şey oluyor: kapsam cümlesi "Android ve iOS uygulamalarını"
+ * diyor, şartlardaki Apple maddeleri (satın alma, iptal, iade, App Store ek
+ * koşulları) basılıyor ve alıcılar tablosuna "Apple (App Store)" satırı giriyor.
  *
- * Bayrağın açılmasından ÖNCE bitmesi gereken iş (metin değil, ürün). Kod tarafı
- * 2026-09-04'te büyük ölçüde yazıldı ama HİÇBİRİ DERLENMEDİ — geliştirme makinesi
- * Linux. "Yazıldı" bu listede "bitti" saymaz; kapıların tamamı
- * `docs/plan/ios-parity.md` §6'da:
- *   - Apple Developer hesabı. Bundle kimliği `app.lernomi.ios` olarak yazıldı
- *     (şablonun org.reactjs.native.example.… değeri gitti) ama hesap olmadan
- *     imzalanamıyor, dolayısıyla hiçbir yere yüklenemiyor.
- *   - Apple ile Giriş: Google ile giriş sunulduğu için App Store Review
- *     Guidelines 4.8 bunu istiyor. Sunucu sağlayıcısı ve iOS düğmesi yazıldı;
- *     Sign in with Apple yetkisi (entitlements) ve APPLE_BUNDLE_ID env değeri
- *     hesaba bağlı olduğu için akış bugün çalışmıyor.
- *   - App Store Connect gizlilik etiketleri (Play'in Veri Güvenliği formundan
- *     AYRI bir beyandır; bkz. docs/appstore/). Uygulama içindeki
- *     PrivacyInfo.xcprivacy ile beyan tablosunun örtüştüğü doğrulandı, ama
- *     Connect'e henüz hiçbir şey girilmedi.
- *   - Cihazda doğrulama: arka planda ses, hesap silme akışı ve giriş yolları
- *     gerçek bir iPhone'da koşulmadı.
- */
-/**
- * Metinlerin KAPSADIĞI platformlar. `ios` bugün KAPALI ve bu bir karar.
+ * NEDEN YAYINDAN ÖNCE. Bayrak, "App Store'da yayımlanmadan iOS uygulamamız
+ * demek iddia/gerçek ayrışması olur" diye kapalı tutuluyordu. İnceleme sırası
+ * tersini istiyor: App Review gönderimde gizlilik politikasını, şartları ve
+ * destek sayfasını okuyor, ve yalnız Android'i sayan, App Store satın almasını
+ * ve iptal yolunu hiç anmayan bir metin iOS uygulamasının metni sayılmıyor
+ * (Guideline 5.1.1(i), 3.1.2). Bir metnin bir uygulamayı KAPSAMASI, onun
+ * yayında olduğunu söylemiyor; sürüm kaydı da "yayımlandı" demiyor.
  *
- * Bayrak açılınca üç şey oluyor: kapsam cümlesi "Android ve iOS uygulamalarını"
- * diyor, şartlardaki Apple maddeleri (satın alma, iptal, iade, Apple ile giriş,
- * App Store ek koşulları) basılıyor, ve alıcılar tablosuna iki Apple satırı
- * giriyor.
+ * ESKİ KAPININ SEBEBİ KALKTI. Bayrak bir de "Apple (Sign-In)" satırını basacağı
+ * için kapalıydı: `APPLE_BUNDLE_ID` boşken Apple ile giriş kurulmuyordu ve veri
+ * alması imkânsız bir alıcıyı beyan etmek olurdu (Google Gemini ve OpenRouter
+ * tablodan tam bu sebeple çıktı, bkz. PROCESSORS notu). 2026-09-14'te canlı
+ * `/api/config` `"apple":true,"appleWeb":true` diyor: Apple ile giriş web'de
+ * ve Android'de de açık. O satır bu yüzden artık bayraktan BAĞIMSIZ
+ * (`PROCESSORS`); bayrağa yalnız App Store satırı bağlı.
  *
- * NEDEN AÇIK DEĞİL — sebep "erteleme" değil, son maddesi ölçülebilir bir liste:
- * bayrak açılınca tablo "Apple (Sign-In)" satırını basar, oysa `APPLE_BUNDLE_ID`
- * üç env dosyasında da BOŞ; boşken sağlayıcı kurulmuyor, `/api/config`
- * `apple:false` diyor ve düğme hiç çizilmiyor. Yani bugün açmak, veri
- * alması İMKÂNSIZ bir alıcıyı beyan etmek olurdu — Google Gemini ve
- * OpenRouter'ı tablodan tam olarak bu sebeple çıkardık (bkz. PROCESSORS notu).
- *
- * AÇILMA KAPILARI (`docs/plan/ios-parity.md` §6 ile aynı liste):
- *   1. Apple Developer hesabı + gerçek bundle kimliği → `APPLE_BUNDLE_ID` dolu
- *   2. Apple ile Giriş cihazda çalışıyor
- *   3. Uygulama içi hesap silme iOS'ta doğrulandı
- *   4. Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor
- *   5. Uygulama ikonu ve açılış ekranı markalı
- *   6. Cihaz sınama listesi koşuldu
- *   7. `LEGAL_VERSION` → "1.1", `LEGAL_EFFECTIVE_DATE` → o gün, kayıt düşüldü
- *   8. PANELDE de açıldı — aşağıyı oku, bu satır sekizinci kapı ve en sinsisi
- *
- * SEKİZİNCİ KAPI: BURADAKİ BAYRAK TEK BAŞINA YETMEYEBİLİR.
+ * PANEL ÜSTYAZIMI: BURADAKİ BAYRAK TEK BAŞINA YETMEYEBİLİR.
  *
  * Hukuki yapılandırma panelden düzenlenebiliyor ve kayıt kodun ÖNÜNE geçiyor:
  * `parseLegalConfig` `ios`u `bool(pf.ios, d.platforms.ios)` ile okuyor, yani
  * `app_settings["legal.config"]` satırı varsa oradaki değer kazanıyor
  * (bkz. lib/legal/shape.ts). Satır, panelden HERHANGİ bir alan bir kez
- * kaydedildiğinde doğuyor — platformla ilgisi olmayan bir alan bile olsa —
- * ve `platforms.ios`u o günkü hâliyle donduruyor.
+ * kaydedildiğinde doğuyor ve `platforms.ios`u o günkü hâliyle donduruyor.
+ * Aynı şey `visibleProcessors` üzerinden Apple (App Store) satırını da etkiler.
  *
- * Sonucu: biri yayından önce panelden destek e-postasını değiştirirse, iOS
- * günü buradaki bayrağı açmak canlı sayfayı DEĞİŞTİRMEZ ve hiçbir yerde hata
- * görünmez. Aynı şey `visibleProcessors` üzerinden Apple alıcı satırlarını da
- * kapalı tutar, yani gizlilik politikası eksik kalır.
+ * ÖLÇÜLDÜ (2026-09-14, salt okuma): üretimde `app_settings` BOŞ ve
+ * `legal_documents` 0 satır — bugün her şey kod varsayılanından geliyor ve
+ * bayrak tek başına çalışıyor. Panelden kayıt yapılmışsa önce oradaki
+ * `platforms.ios` değerine bak.
  *
- * ÖLÇÜLDÜ (2026-09-10): üretimde `app_settings` tamamen BOŞ ve
- * `legal_documents` 0 satır — bugün her şey kod varsayılanından geliyor, yani
- * bayrak bugün tek başına çalışır. Kapı, o günün korunacağını varsaymamak için
- * yazıldı.
- *
- * Metin tarafında yarım iş KALMADI: şartların 7b maddesi (üç dilde) Apple ile
- * girişi zaten `hasIos()` arkasında sayıyor. Bayrak tek satır.
+ * Metin dışında iOS için bitmesi gereken iş (Apple Developer hesabı, cihaz
+ * doğrulaması, App Store Connect etiketleri) `docs/plan/ios-parity.md` §6'da.
  */
-export const LEGAL_PLATFORMS = { android: true, ios: false } as const;
+export const LEGAL_PLATFORMS = { android: true, ios: true } as const;
 
 /** Metinlerde platformların sayıldığı yer — tek kaynak, üç dil. */
 export const PLATFORM_TEXT: Record<LegalLocale, string> = {
@@ -301,61 +272,43 @@ export type LegalChangelogEntry = {
   changes: Record<LegalLocale, readonly string[]>;
 };
 
-/**
- * iOS YAYIN GÜNÜ İÇİN HAZIR KAYIT — bugün hiçbir yerde basılmıyor.
- *
- * `LEGAL_PLATFORMS.ios` false olduğu sürece aşağıdaki koşullu yayılım bu kaydı
- * listeye almıyor, yani metin bugünkü hâliyle doğru kalıyor. Amacı, bayrağın
- * açıldığı gün "ne değişti"yi sıfırdan yazmak zorunda kalmamak: o gün metin
- * gerçekten değişecek ve kayıt düşmeden sürüm artırmak bu dosyanın kendi
- * kuralına aykırı.
- *
- * `date` sabit yazılmadı, `LEGAL_EFFECTIVE_DATE`'e bağlandı: en yeni kayıt her
- * zaman o sürümün yürürlük tarihini taşır (1.2.1 için ikisi de 2026-09-07). Böylece
- * unutulup eski bir tarih basılamıyor.
- *
- * O GÜN YAPILACAKLAR — üçü de bu dosyada, hepsi tek satır:
- *   1. `LEGAL_PLATFORMS.ios` → `true`
- *   2. `LEGAL_VERSION` → `"1.1"`   (kaydın kendi `version` alanıyla aynı)
- *   3. `LEGAL_EFFECTIVE_DATE` → yayın günü
- *
- * ÖNCE bitmesi gerekenler `docs/plan/ios-parity.md` §6'daki kapılar. Metin
- * tarafında iş KALMADI: şartların "üçüncü taraf hizmetleri" maddesi (7b) giriş
- * sağlayıcısı olarak yalnız Google'ı sayıyordu, 2026-09-09'da üç dilde birden
- * `hasIos()` koşullu "Apple ile giriş" eklendi. Alıcılar tablosundaki iki Apple
- * satırı da bu dosyada hazır ve aynı bayrağın arkasında.
- */
-const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
-  version: "1.1",
-  date: LEGAL_EFFECTIVE_DATE,
-  changes: {
-    tr: [
-      "Uygulama App Store'da da yayımlandı; bu metinler artık iOS uygulamasını da kapsıyor.",
-      "Şartlara \"Apple App Store için ek koşullar\" bölümü eklendi: sözleşme yalnız seninle bizim aramızda, uygulamadan ve desteğinden yalnız biz sorumluyuz, Apple bu sözleşmenin üçüncü taraf lehtarı.",
-      "iOS'ta abonelik satın alma, yenileme, iptal ve iade Apple üzerinden yürüyor; metinler artık Ayarlar › Apple Hesabı › Abonelikler yolunu ve reportaproblem.apple.com adresini gösteriyor.",
-      "Apple ile Giriş eklendi. Bu yolu seçersen Apple'a kimliğin, adın ve e-postan üzerinden bir giriş yapılır; e-posta yerine Apple'ın gizli aktarma adresini kullanmayı seçebilirsin. Apple alıcılar tablosuna eklendi.",
-      "Ekran kapalıyken yürüyüş modunun iOS'ta arka plan ses oturumuyla çalıştığı yazıldı; Android'deki mikrofon tipli ön plan servisinin karşılığı bu.",
-    ],
-    en: [
-      "The app is now published on the App Store as well; these texts now cover the iOS app too.",
-      "The terms gained an \"Additional terms for the Apple App Store\" section: the agreement is between you and us only, we alone are responsible for the app and its support, and Apple is a third-party beneficiary of it.",
-      "On iOS, buying, renewing, cancelling and refunding a subscription goes through Apple; the texts now point to Settings › Apple Account › Subscriptions and to reportaproblem.apple.com.",
-      "Sign in with Apple was added. If you choose it, you sign in through your Apple identity, name and e-mail, and you may use Apple's private relay address instead of your own. Apple was added to the table of recipients.",
-      "It is now stated that walk mode with the screen off runs through a background audio session on iOS — the counterpart of the microphone-type foreground service on Android.",
-    ],
-    de: [
-      "Die App ist jetzt auch im App Store veröffentlicht; diese Texte gelten damit auch für die iOS-App.",
-      "Die Nutzungsbedingungen haben einen Abschnitt \"Zusätzliche Bedingungen für den Apple App Store\" bekommen: Der Vertrag besteht nur zwischen dir und uns, für die App und ihren Support sind allein wir verantwortlich, und Apple ist Drittbegünstigter dieses Vertrags.",
-      "Unter iOS laufen Kauf, Verlängerung, Kündigung und Erstattung eines Abonnements über Apple; die Texte verweisen jetzt auf Einstellungen › Apple-Account › Abonnements und auf reportaproblem.apple.com.",
-      "Die Anmeldung mit Apple wurde ergänzt. Wenn du sie wählst, meldest du dich über deine Apple-Identität, deinen Namen und deine E-Mail an und kannst statt deiner Adresse die private Weiterleitungsadresse von Apple verwenden. Apple wurde in die Empfängertabelle aufgenommen.",
-      "Es steht jetzt im Text, dass der Gehmodus bei ausgeschaltetem Bildschirm unter iOS über eine Hintergrund-Audiositzung läuft — das Gegenstück zum Vordergrunddienst vom Typ \"Mikrofon\" unter Android.",
-    ],
-  },
-};
-
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
-  // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
-  ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
+  {
+    /*
+      İKİNCİ BASAMAK: hak ve yükümlülük değişti. Metinler yeni bir platformu
+      kapsıyor, yapay zekâ ve ses gönderimlerinin hukuki dayanağı açık rızaya
+      döndü, alıcılar tablosuna iki Apple satırı girdi.
+
+      Kayıt "App Store'da yayımlandı" DEMİYOR: sürüm incelemeden önce çıktı
+      (bkz. LEGAL_PLATFORMS notu). Yayın günü için hazır bekleyen eski kayıt
+      tam olarak bunu diyordu; o yüzden kullanılmadı ve silindi.
+    */
+    version: "1.1",
+    date: "2026-09-14",
+    changes: {
+      tr: [
+        "Metinler artık iOS uygulamasını da kapsıyor. Şartlara \"Apple App Store için ek koşullar\" bölümü (13a) eklendi: sözleşme yalnız seninle bizim aramızda, uygulamadan ve desteğinden yalnız biz sorumluyuz, Apple bu sözleşmenin üçüncü taraf lehtarı. iOS'ta abonelik satın alma, yenileme, iptal ve iade Apple üzerinden yürüyor; metinler Ayarlar › Apple Hesabı › Abonelikler yolunu ve reportaproblem.apple.com adresini gösteriyor. Apple (App Store) alıcılar tablosuna eklendi.",
+        "Apple ile giriş web'de ve Android'de de sunulduğu için veri kaynağı ve alıcı olarak yazıldı: bu yolu seçersen Apple hesabı kimliğin, adın ve e-postan (istersen Apple'ın gizli aktarma adresi) kullanılır. Şartların üçüncü taraf hizmetleri maddesine (7b) Apple ile giriş eklendi.",
+        "Yazdıkların ve söylediklerin dil modeli sağlayıcılarına, sunucuda yazıya çevrilecek ses kayıtların konuşma tanıma sağlayıcılarına artık ancak uygulama içinde, sağlayıcıları adıyla gösteren ekranda izin verdikten sonra gönderiliyor. Bu gönderimlerin hukuki dayanağı açık rıza oldu; iki beyanın metni politikada, kural şartların yapay zekâ maddesinde (6) de yazılı. İzin vermezsen alıştırmalar yapay zekâsız sürüyor; kararını Ayarlar › Gizlilik'ten değiştirebilirsin.",
+        "Bildirimler gerçekte çalıştığı gibi anlatıldı: hatırlatma tercihlerin ve saat dilimin hesabında tutuluyor; bildirimlere izin verirsen cihazının bildirim jetonu saklanıyor ve bildirimler Firebase Cloud Messaging üzerinden iletiliyor. \"Cihaz kimliği toplanmaz\" ifadesi bu yüzden donanım kimlikleriyle sınırlandı.",
+        "Mikrofon bölümü genişletildi: mikrofon yürüyüş modunun yanında derslerde, konuşma alıştırmalarında, sınavlarda ve rol yapmada da, yalnız sen konuşarak cevap verdiğinde açılıyor. Web'de telaffuz puanı ve sınavlardaki konuşma cevapları için de kısa kayıtların, izin verirsen, sunucuya gittiği yazıldı.",
+      ],
+      en: [
+        "These texts now cover the iOS app too. The terms gained an \"Additional terms for the Apple App Store\" section (13a): the agreement is between you and us only, we alone are responsible for the app and its support, and Apple is a third-party beneficiary of it. On iOS, buying, renewing, cancelling and refunding a subscription goes through Apple; the texts point to Settings › Apple Account › Subscriptions and to reportaproblem.apple.com. Apple (App Store) was added to the table of recipients.",
+        "Because Sign in with Apple is also offered on the web and on Android, Apple is now listed as a data source and recipient: if you choose it, your Apple account id, name and e-mail (or, if you prefer, Apple's private relay address) are used. Sign in with Apple was added to the third-party services clause of the terms (7b).",
+        "What you write and say is now sent to language model providers, and recordings to be transcribed on the server to speech recognition providers, only after you allow it in the app on a screen that names the providers. The legal ground for these transfers is now explicit consent; both declarations are quoted in the policy, and the rule is also stated in the AI clause of the terms (6). If you decline, practice continues without AI; you can change your decision under Settings › Privacy.",
+        "Notifications are now described as they actually work: your reminder preferences and time zone are kept in your account; if you allow notifications, your device's notification token is stored and notifications are delivered through Firebase Cloud Messaging. The statement that no device identifier is collected was therefore narrowed to hardware identifiers.",
+        "The microphone section was broadened: besides walk mode, the microphone opens in lessons, speaking practice, exams and roleplay, but only when you answer by speaking. It now also says that on the web, short recordings for pronunciation scores and spoken exam answers go to the server if you allow it.",
+      ],
+      de: [
+        "Diese Texte gelten jetzt auch für die iOS-App. Die Nutzungsbedingungen haben einen Abschnitt \"Zusätzliche Bedingungen für den Apple App Store\" (13a) bekommen: Der Vertrag besteht nur zwischen dir und uns, für die App und ihren Support sind allein wir verantwortlich, und Apple ist Drittbegünstigter dieses Vertrags. Unter iOS laufen Kauf, Verlängerung, Kündigung und Erstattung eines Abonnements über Apple; die Texte verweisen auf Einstellungen › Apple-Account › Abonnements und auf reportaproblem.apple.com. Apple (App Store) wurde in die Empfängertabelle aufgenommen.",
+        "Da die Anmeldung mit Apple auch im Web und unter Android angeboten wird, ist Apple jetzt als Datenquelle und Empfänger aufgeführt: Wählst du sie, werden deine Apple-Konto-ID, dein Name und deine E-Mail-Adresse (auf Wunsch die private Weiterleitungsadresse von Apple) verwendet. Die Anmeldung mit Apple wurde in die Klausel über Drittanbieterdienste der Nutzungsbedingungen (7b) aufgenommen.",
+        "Was du schreibst und sagst, geht jetzt erst an Sprachmodell-Anbieter, und Aufnahmen, die auf dem Server verschriftlicht werden, erst an Spracherkennungsanbieter, wenn du es in der App auf einem Bildschirm erlaubt hast, der die Anbieter namentlich nennt. Rechtsgrundlage dieser Übermittlungen ist jetzt die ausdrückliche Einwilligung; beide Erklärungen stehen im Wortlaut in der Datenschutzerklärung, und die Regel steht auch in der KI-Klausel der Nutzungsbedingungen (6). Lehnst du ab, übst du ohne KI weiter; deine Entscheidung kannst du unter Einstellungen › Datenschutz ändern.",
+        "Benachrichtigungen werden jetzt so beschrieben, wie sie tatsächlich funktionieren: Deine Erinnerungseinstellungen und deine Zeitzone werden in deinem Konto gespeichert; erlaubst du Benachrichtigungen, wird das Benachrichtigungs-Token deines Geräts gespeichert, und die Zustellung läuft über Firebase Cloud Messaging. Die Aussage, es werde keine Geräte-ID erhoben, wurde deshalb auf Hardwarekennungen beschränkt.",
+        "Der Mikrofonabschnitt wurde erweitert: Außer im Gehmodus öffnet sich das Mikrofon in Lektionen, Sprechübungen, Prüfungen und im Rollenspiel, aber nur, wenn du sprechend antwortest. Außerdem steht jetzt darin, dass im Web kurze Aufnahmen für die Aussprachebewertung und gesprochene Prüfungsantworten mit deiner Erlaubnis an den Server gehen.",
+      ],
+    },
+  },
   {
     /*
       YAMA SÜRÜMÜ: yalnız anlatım değişti, hak ya da yükümlülük değişmedi —
@@ -516,22 +469,27 @@ export type Processor = {
 
 /** Verinin ulaştığı hizmet sağlayıcılar (KVKK "aktarım", GDPR "işleyici", Play "paylaşım"). */
 /**
- * Yalnız iOS yayındayken basılan satırlar.
+ * Yalnız metinler iOS'u kapsarken basılan satırlar.
  *
- * Ayrı bir sabit olmalarının iki sebebi var. Birincisi beyan: yayımlanmamış bir
- * mağazayı ve yalnız iOS uygulamasında bulunan bir giriş yolunu alıcı diye
- * listelemek, olmayan bir aktarımı beyan etmek olurdu. Apple ile Giriş satırı
- * Google (Sign-In) satırının simetriği — aynı şey oluyor, sağlayıcı farklı.
+ * Ayrı bir sabit olmasının sebebi sınanabilirlik: satır `PROCESSORS`ın içine
+ * koşulla gömülü olsaydı bayrak kapalıyken var olmazdı ve kapı
+ * (`scripts/test-legal.ts`) ona ait sözlük anahtarlarını "ölü" sanardı.
  *
- * İkincisi sınanabilirlik: satırlar `PROCESSORS`ın içine gömülü olsaydı bayrak
- * kapalıyken var olmazlardı ve kapı (`scripts/test-legal.ts`) onlara ait
- * sözlük anahtarlarını "ölü" sanardı. Ayrı durunca bayraktan bağımsız
- * sınanıyorlar: yayın günü ilk kez basıldıklarında hücreleri boş çıkmaz.
+ * "Apple (Sign-In)" 2026-09-14'te buradan `PROCESSORS`a taşındı. Burada durduğu
+ * sürece Apple ile giriş web'de ve Android'de AÇIKKEN tabloda görünmüyordu:
+ * yalnız iOS'ta bulunan bir giriş yolu varsayılmıştı, oysa sağlayıcı üç
+ * istemcide de kurulu (bkz. LEGAL_PLATFORMS notu).
  */
 const IOS_PROCESSORS: Processor[] = [
-  { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" },
   { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" },
 ];
+
+/**
+ * Yalnız iOS'a ait satırların adları — panelin varsayılan yapılandırması
+ * (`lib/legal/shape`) bunlara `iosOnly` işareti koyuyor. Liste orada ELLE
+ * tutuluyordu ve Apple ile giriş taşınınca geride kalabilirdi; artık buradan.
+ */
+export const IOS_ONLY_PROCESSOR_NAMES: readonly string[] = IOS_PROCESSORS.map((p) => p.name);
 
 /**
  * ALICILAR — kullanıcının verisinin gerçekten ulaştığı üçüncü taraflar.
@@ -555,6 +513,12 @@ export const PROCESSORS: Processor[] = [
   { name: "Mistral AI", purpose: "sttLlm", data: "audioAndTexts", region: "eu", safeguard: "euAdequacy" },
   { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
+  /*
+    Apple ile giriş web'de, Android'de ve iOS'ta açık (canlı `/api/config`:
+    "apple":true,"appleWeb":true), yani bayraktan bağımsız. Google (Sign-In)
+    satırının simetriği: aynı şey oluyor, sağlayıcı farklı.
+  */
+  { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
   /*
     Firebase Cloud Messaging 2026-09-10'da açıldı ve o güne kadar bu satır DOĞRU

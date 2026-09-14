@@ -4,6 +4,7 @@ import { overallScore, type AssessRequest, type Assessment } from "@/lib/assess-
 import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 import { track } from "@/lib/track";
+import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 
 /**
  * `/api/assess` istemci yardımcısı (WP-03).
@@ -17,6 +18,7 @@ import { track } from "@/lib/track";
 
 export type AssessFailure =
   | "premium"
+  | "consent"
   | "not_configured"
   | "quota"
   | "too_long"
@@ -57,6 +59,10 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
   // Bir HATA değil bir KAPI: ücretsiz katmanın yapay zekâ değerlendirme hakkı
   // bitmiş. Genel hata metniyle göstermek kullanıcıya "bir şey bozuldu" dedirtir.
   premium: "assess.fail_premium",
+  /* Yapay zekâya izin verilmedi: metin sağlayıcıya hiç gitmedi. Servis
+     kapalı DEĞİL — o yüzden "kapalı" diyen yedek cümleleriyle birleştirilmez
+     (bkz. `fallbackNoteKey`). */
+  consent: "assess.fail_consent",
   not_configured: "assess.fail_not_configured",
   /* WEB'E ÖZEL ANAHTAR. Bu satırın metni platforma göre GERÇEKTEN farklı:
      webde hak dolunca kural tabanlı yedek gösteriliyor (`fallbackAssessment`),
@@ -77,17 +83,17 @@ export async function askAssess(
   req: AssessRequest,
   opts: { signal?: AbortSignal; timeoutMs?: number } = {},
 ): Promise<AssessResponse> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort("timeout"), opts.timeoutMs ?? ASSESS_TIMEOUT_MS);
-  const onOuter = () => controller.abort("aborted");
-  opts.signal?.addEventListener("abort", onOuter, { once: true });
-
   try {
-    const res = await fetch("/api/assess", {
+    /* `apiFetch`ten, kendi süresiyle: izin isteyen 403'ü yakalayıcı karşılıyor
+       (izin diyaloğu, onaydan sonra tek yeniden deneme). Süre `timeoutMs` ile
+       veriliyor, sinyal olarak değil — diyalog açıkken geçen süre değerlendirme
+       tavanından yenmesin (bkz. `lib/api-fetch` `ApiFetchInit`). */
+    const res = await apiFetch("/api/assess", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ ...req, day: localDay() }),
-      signal: controller.signal,
+      signal: opts.signal,
+      timeoutMs: opts.timeoutMs ?? ASSESS_TIMEOUT_MS,
     });
     if (res.ok) {
       const data = (await res.json()) as { result: Assessment; cached: boolean; provider: string | null };
@@ -104,12 +110,11 @@ export async function askAssess(
       track("premium_gate", 0, req.kind === "writing" || req.kind === "sentence" ? "writing" : "speaking");
     }
     return { ok: false, reason };
-  } catch {
-    const why = controller.signal.reason;
-    return { ok: false, reason: why === "timeout" ? "timeout" : why === "aborted" ? "aborted" : "upstream" };
-  } finally {
-    clearTimeout(timer);
-    opts.signal?.removeEventListener("abort", onOuter);
+  } catch (e) {
+    /* Çağıranın iptali önce: sinyali kesildiyse sebep o. Süre dolduysa
+       `AbortSignal.timeout` "TimeoutError" ile kesiyor. */
+    if (opts.signal?.aborted) return { ok: false, reason: "aborted" };
+    return { ok: false, reason: (e as { name?: string } | null)?.name === "TimeoutError" ? "timeout" : "upstream" };
   }
 }
 
@@ -130,6 +135,7 @@ function refusal(status: number, err: { error?: string }): AssessFailure {
       bir şeyin bozulduğunu sanıyor, oysa kapıya çarpmış.
     */
     case 403:
+      if (err.error === AI_CONSENT_DECLINED) return "consent";
       return err.error === "premium_required" ? "premium" : "unauthorized";
     case 401:
       return "unauthorized";
@@ -144,6 +150,20 @@ function refusal(status: number, err: { error?: string }): AssessFailure {
     default:
       return "bad_request";
   }
+}
+
+/**
+ * Sebep cümlesinin YANINA gelen yedek cümlesi — mobil `lib/assessFail`
+ * `fallbackNoteKey`.
+ *
+ * Yedek cümleleri ("servis şu an kapalı; bu puan geçici bir tahmin") arıza
+ * içindir. İzin verilmediğinde servis kapalı değil, metin bilerek gönderilmedi;
+ * aynı cümle "izin vermedin … servis kapalı" diye kendisiyle çelişirdi. İzin
+ * dalı yalnız yedeğin NE olduğunu söylüyor.
+ */
+export function fallbackNoteKey(failure: AssessFailure | null | undefined, kind: "estimate" | "unscored", arizaKey: string): string {
+  if (failure !== "consent") return arizaKey;
+  return kind === "estimate" ? "assess.estimate_only" : "assess.not_scored";
 }
 
 /** Yedek değerlendirmenin dayandığı kontrol listesi — ekranda madde madde gösterilir. */

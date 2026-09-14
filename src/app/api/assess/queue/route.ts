@@ -3,6 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { queueAssessment } from "@/lib/assess";
 import { ASSESS_KINDS, ASSESS_LEVELS, ASSESS_MAX_CHARS, type AssessKind, type AssessLevel } from "@/lib/assess-prompts";
+import { aiConsentGate } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +16,10 @@ export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* Kuyruğa giren metin de sonunda dil modeline gidiyor: izin kuyruğa
+     girerken soruluyor, işlenirken yeniden okunuyor (`runAssessQueue`). */
+  const consent = await aiConsentGate(userId, "ai_text");
+  if (consent) return consent;
   let body: unknown;
   try {
     body = await req.json();

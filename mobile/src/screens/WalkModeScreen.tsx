@@ -31,6 +31,7 @@ import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MicDisclosure } from "../ui/MicDisclosure";
 import { hasMicConsent, setMicConsent } from "../lib/micConsent";
+import { decideAiConsent, fetchAiConsent, type AiConsentProcessor } from "../lib/aiConsent";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
@@ -103,6 +104,9 @@ export function WalkModeScreen() {
   const [curWord, setCurWord] = useState<WalkWord>({ id: 0, de: "", tr: "", en: null });
   const [phase, setPhase] = useState<Phase>("intro");
   const [disclosure, setDisclosure] = useState(false); // belirgin açıklama ve rıza (ilk kullanım)
+  /* Açıklamada adları sayılan ses sağlayıcıları (sunucudan, politikanın tablosu). */
+  const [voiceProcessors, setVoiceProcessors] = useState<AiConsentProcessor[] | null>(null);
+  const [voiceProcessorsFailed, setVoiceProcessorsFailed] = useState(false);
   const [verdict, setVerdict] = useState<Verdict>(null);
   const [heard, setHeard] = useState("");
   const [tally, setTally] = useState({ correct: 0, total: 0 });
@@ -523,12 +527,38 @@ export function WalkModeScreen() {
   }
 
   /** Başla: önce uygulama içi açıklama ve onay (bir kez), sonra sistem izni ve tur. */
+  /**
+   * Başla: önce açıklama ve onay, sonra sistem izni ve tur.
+   *
+   * ONAYIN İKİ YARISI VAR. Cihazdaki bayrak "bu telefonda mikrofon açıklaması
+   * okundu" diyor; sunucudaki ses rızası (`ai_voice`) ise ekran kapalıyken sesin
+   * sağlayıcıya gidebilmesinin şartı — uç izin yoksa sesi iletmiyor. İkisi
+   * ayrışabilir: başka bir cihazda ya da webde geri alınmış olabilir. Sunucu
+   * "izin yok" diyorsa açıklama yeniden gösteriliyor; okunamıyorsa (ağ yok)
+   * cihazdaki bayrakla başlanıyor, çünkü ekran açık yol sunucuya hiç gitmiyor.
+   */
   async function beginWalk() {
-    if (await hasMicConsent()) { await start(rounds); return; }
+    const local = await hasMicConsent();
+    let serverGranted: boolean | null = null;
+    try {
+      const info = await fetchAiConsent();
+      serverGranted = info.statuses.ai_voice.state === "granted";
+      setVoiceProcessors(info.processors.ai_voice);
+      setVoiceProcessorsFailed(false);
+    } catch {
+      setVoiceProcessorsFailed(true);
+    }
+    if (local && serverGranted !== false) { await start(rounds); return; }
     setDisclosure(true);
   }
   async function acceptDisclosure() {
     await setMicConsent(true);
+    /* Sunucu rızası YALNIZ alıcı listesi gösterildiyse yazılıyor: adları
+       görülmemiş sağlayıcılara izin alınmış sayılmaz. Liste yüklenemediyse
+       bir sonraki başlangıçta açıklama yeniden gelir. */
+    if (voiceProcessors) {
+      try { await decideAiConsent("ai_voice", true); } catch { /* ağ yok: ekran açık yol yine çalışır */ }
+    }
     setDisclosure(false);
     await start(rounds);
   }
@@ -862,7 +892,7 @@ export function WalkModeScreen() {
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}
       />
-      <MicDisclosure visible={disclosure} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(false)} />
+      <MicDisclosure visible={disclosure} processors={voiceProcessors} processorsFailed={voiceProcessorsFailed} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(false)} />
     </View>
   );
 }

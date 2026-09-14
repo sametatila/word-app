@@ -207,7 +207,7 @@ turları, gerçek sahnelerde konuşma pratiği ve sınav formatına hedefli haz�
 
 YÜRÜRKEN ÇALIŞ
 Ekrana bakmadan öğren: Türkçe ipucunu duy, Almancasını sesli söyle. Telefon cebindeyken
-ya da ekran kapalıyken de dinler. Mikrofon yalnız sen yürüyüş modunu başlatınca açılır,
+ya da ekran kapalıyken de dinler. Mikrofon yalnız sen başlattığında açılır,
 sesin yalnız tanıma için kullanılır ve saklanmaz.
 
 KELİME TURLARI
@@ -297,7 +297,7 @@ practice in real scenes, and focused preparation for the telc exams.
 PRACTICE WHILE YOU WALK
 Learn without looking at the screen: hear the prompt in your language, say the German out
 loud. It keeps listening with the phone in your pocket or the screen off. The microphone
-opens only when you start walk mode; your audio is used for recognition only and is not
+opens only when you start it; your audio is used for recognition only and is not
 stored.
 
 VOCABULARY ROUNDS
@@ -394,7 +394,7 @@ Sprechpraxis in echten Szenen und gezielte Vorbereitung auf die telc-Prüfungen.
 UNTERWEGS ÜBEN
 Lernen ohne Bildschirm: Du hörst die Vorgabe in deiner Sprache und sprichst die Antwort
 laut aus. Die App hört weiter zu, wenn das Handy in der Tasche steckt oder der Bildschirm
-aus ist. Das Mikrofon geht nur an, wenn du den Gehmodus startest; deine Aufnahme dient
+aus ist. Das Mikrofon geht nur an, wenn du es startest; deine Aufnahme dient
 allein der Erkennung und wird nicht gespeichert.
 
 VOKABELRUNDEN

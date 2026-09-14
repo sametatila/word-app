@@ -93,8 +93,8 @@ Haftalık sıralama, arkadaş ekleme, tepkiler ve ortak görevler. Özel mesajla
 profil görünürlüğünü sen yönetirsin.
 
 GİZLİLİK
-Reklam yok, takip yok, veri satışı yok. Mikrofon yalnız sen yürüyüş modunu başlatınca
-açılır. Hesabını dilediğin an uygulamadan silebilirsin.
+Reklam yok, takip yok, veri satışı yok. Mikrofon yalnız sen başlattığında açılır;
+yapay zekâya bir şey gitmeden önce iznin istenir. Hesabını dilediğin an uygulamadan silebilirsin.
 
 Zürih Almancası (Züritüütsch) kursu ve İngilizce kursu da mevcuttur.
 

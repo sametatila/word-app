@@ -313,12 +313,10 @@ export function PaywallScreen() {
       </KeyboardAwareScroll>
 
       {!storeOpen ? (
-        // Mağaza kapalı: satın alma çubuğu yok ama şartlar bağlantısı kalıyor —
+        // Mağaza kapalı: satın alma çubuğu yok ama hukuki bağlantılar kalıyor —
         // sayfanın hukuki metne açılan tek kapısı orası.
-        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, alignItems: "center" }}>
-          <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
-          </PressableScale>
+        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
+          <LegalLinks colors={colors} />
         </View>
       ) : (
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
@@ -335,16 +333,22 @@ export function PaywallScreen() {
           {pkg ? (trial ? t("paywall.free_then", { duration: trial, price: pkg.product.priceString }) : t("paywall.fiyat_donem", { price: pkg.product.priceString })) : ""}
           {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
-        <View style={{ flexDirection: "row", justifyContent: "center", gap: spacing.lg, marginTop: spacing.xs }}>
+        {/*
+          SATIN ALMA ALANINDA İKİ HUKUKİ BAĞLANTI BİRDEN. Burada yalnız
+          Kullanım Şartları vardı; Apple'ın lisans sözleşmesi (Schedule 2
+          §3.8(b)) otomatik yenilenen abonelik satan ekranda Gizlilik
+          Politikası'nı da istiyor ve eksik bağlantı abonelik retlerinin en
+          sık sebebi. Satır sarıyor: dört bağlantı en dar telefonda (320pt)
+          tek satıra sığmıyor, kırpılmak yerine ikinci satıra iniyor.
+        */}
+        <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg, marginTop: spacing.xs }}>
           <PressableScale onPress={doRestore} hitSlop={6} accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
             <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
           </PressableScale>
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
             <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.manage_subscription")}</Text>
           </PressableScale>
-          <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
-          </PressableScale>
+          <LegalLinks colors={colors} />
         </View>
       </View>
       )}
@@ -353,6 +357,24 @@ export function PaywallScreen() {
 }
 
 /* ─────────────────────────── paywall parçaları ─────────────────────────── */
+
+/**
+ * Kullanım Şartları + Gizlilik Politikası — satın alma ekranının iki dalında da
+ * AYNI ikili. Mağaza kapalıyken tek şartlar bağlantısı kalıyordu ve gizlilik
+ * hiç yoktu; ikisi tek bileşende durunca biri öbürü olmadan basılamıyor.
+ */
+function LegalLinks({ colors }: { colors: Palette }) {
+  return (
+    <>
+      <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
+        <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
+      </PressableScale>
+      <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
+        <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.privacy_policy")}</Text>
+      </PressableScale>
+    </>
+  );
+}
 
 function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
   return (

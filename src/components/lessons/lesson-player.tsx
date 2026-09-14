@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
+import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
 import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
@@ -270,6 +271,13 @@ export function LessonPlayer({
   useEffect(() => {
     offlineRef.current = offline;
   }, [offline]);
+  /**
+   * Senaryoya NEDEN düşüldü. İkisi farklı cümle istiyor: servis kapalıyken
+   * "servis kapalı", yapay zekâya izin verilmediyse "izin vermediğin için" —
+   * ikincisine "servis kapalı" demek yanlış teşhis olurdu (servis çalışıyor,
+   * metin bilerek gönderilmiyor) ve nereden açılacağını da söylemezdi.
+   */
+  const [offlineWhy, setOfflineWhy] = useState<"service" | "consent">("service");
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
   /* Dersin süresi: `/api/lesson` `seconds` alanını istiyor ve web onu HİÇ
@@ -315,12 +323,19 @@ export function LessonPlayer({
   // yeniden koşardı. Kimlik artık yalnız ders değişince değişiyor.
   const probeRoleplayService = useCallback(() => {
     void apiFetch("/api/roleplay", { cache: "no-store" })
-      .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
+      .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean; consent?: string | null }>) : null))
       .then((s) => {
-        if (s && !s.configured && !offlineRef.current) {
+        if (!s || offlineRef.current) return;
+        /* Yapay zekâya "hayır" demiş kullanıcı da baştan senaryoya geçiyor:
+           ilk cümlesi 403'e yenmesin. Hiç karar vermemiş olan ise modelle
+           başlıyor; izin ilk turda, metin gitmeden önce soruluyor
+           (`lib/api-fetch` yakalayıcısı). Mobil `roleplayAvailability`. */
+        const declined = s.configured && s.consent === "declined";
+        if (!s.configured || declined) {
           const start = offlineStart(lesson);
           setOffline(start.state);
           setHintKey(start.hint);
+          setOfflineWhy(declined ? "consent" : "service");
         }
       })
       .catch(() => {});
@@ -916,12 +931,23 @@ export function LessonPlayer({
           body: JSON.stringify({ lessonId: lesson.id, messages: next }),
           /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
              kırk beş saniye bekliyor, aynı sabit adıyla. */
-          signal: AbortSignal.timeout(ROLEPLAY_TIMEOUT_MS),
+          timeoutMs: ROLEPLAY_TIMEOUT_MS,
         });
         if (res.status === 503) {
           // Sağlayıcı konuşmanın ortasında düştü: aynı cümleyi senaryoya ver.
           // Senaryo baştan başlar (önceki turlar modelindi); hedef kalıplar
           // yine de ölçülür ve ders geçilebilir.
+          setOfflineWhy("service");
+          local(offlineRef.current ?? offlineStart(lesson).state);
+          return;
+        }
+        if (await isAiConsentDeclined(res)) {
+          /* İZİN VERİLMEDİ (diyalogda "yapay zekâ olmadan devam" dendi ya da
+             kapatıldı). Cümle sağlayıcıya gitmedi; konuşma durmuyor, senaryoya
+             geçip bu turu da senaryodan cevaplıyor. Yoksa kullanıcı "cevap
+             alınamadı" görürdü — oysa bağlantı yerinde, yalnız yapay zekâ
+             kapalı. Mobil `LessonScreen` aynı dal. */
+          setOfflineWhy("consent");
           local(offlineRef.current ?? offlineStart(lesson).state);
           return;
         }
@@ -1421,7 +1447,21 @@ export function LessonPlayer({
                   baloncuk, konuşmanın ortasına giren kullanıcı için yok
                   hükmünde olurdu (mobil `AiNotice` ile aynı gerekçe). */}
               <AiNotice variant="character" className="mt-2" />
-              {offline ? (
+              {offline && offlineWhy === "consent" ? (
+                /* İzin dalı: "servis kapalı" çipi ve güvencesi YOK (ikisi de
+                   servisin kapalı olduğunu söylüyor). Tek cümle hem sebebi hem
+                   konuşmanın sayıldığını hem de nereden açılacağını söylüyor. */
+                <p
+                  className="mt-2 flex items-start gap-1.5 rounded-panel px-2.5 py-1.5 text-caption leading-relaxed"
+                  style={{
+                    background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
+                    color: "var(--color-flame)",
+                  }}
+                >
+                  <AlertIcon size={12} className="mt-1 shrink-0" />
+                  {t("lessonp.chat_off_consent")}
+                </p>
+              ) : offline ? (
                 <>
                   <p
                     className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-micro"

@@ -1,4 +1,4 @@
-import { ApiError } from "../api/client";
+import { ApiError, AI_CONSENT_DECLINED } from "../api/client";
 
 /**
  * Değerlendirme neden alınamadı — SEBEBİNE göre tek cümle.
@@ -14,6 +14,7 @@ import { ApiError } from "../api/client";
  */
 export type AssessFailure =
   | "premium"
+  | "consent"
   | "not_configured"
   | "quota"
   | "too_long"
@@ -26,6 +27,10 @@ export type AssessFailure =
 /** Kullanıcıya gösterilecek kısa açıklama — web `ASSESS_FAILURE_KEYS`. */
 export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
   premium: "assess.fail_premium",
+  /* Yapay zekâya izin verilmedi: metin sağlayıcıya hiç gitmedi. Servis
+     kapalı DEĞİL — o yüzden "kapalı" diyen yedek cümleleriyle birleştirilmez
+     (bkz. `fallbackNoteKey`). */
+  consent: "assess.fail_consent",
   not_configured: "assess.fail_not_configured",
   /* Web burada kendi anahtarını kullanıyor (`assessw.fail_quota`): orada hak
      dolunca kural tabanlı yedek gösteriliyor, mobilde puan hiç verilmiyor —
@@ -48,6 +53,7 @@ export function assessFailure(e: unknown): AssessFailure {
   }
   switch (err?.status) {
     case 403:
+      if (err.message === AI_CONSENT_DECLINED) return "consent";
       return err.message === "premium_required" ? "premium" : "unauthorized";
     case 401:
       return "unauthorized";
@@ -67,6 +73,19 @@ export function assessFailure(e: unknown): AssessFailure {
 /** Doğrudan sözlük anahtarı. */
 export function assessFailKey(e: unknown): string {
   return ASSESS_FAILURE_KEYS[assessFailure(e)];
+}
+
+/**
+ * Sebep cümlesinin YANINA gelen yedek cümlesi.
+ *
+ * Yedek cümleleri ("servis şu an kapalı; bu puan geçici bir tahmin") arıza
+ * içindir. İzin verilmediğinde servis kapalı değil, metin bilerek gönderilmedi;
+ * aynı cümle "izin vermedin … servis kapalı" diye kendisiyle çelişirdi. İzin
+ * dalı yalnız yedeğin NE olduğunu söylüyor.
+ */
+export function fallbackNoteKey(e: unknown, kind: "estimate" | "unscored", arizaKey: string): string {
+  if (assessFailure(e) !== "consent") return arizaKey;
+  return kind === "estimate" ? "assess.estimate_only" : "assess.not_scored";
 }
 
 /**

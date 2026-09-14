@@ -6,8 +6,8 @@ ile Apple'ın sorduğu şey (arka plan sesi gerekçesi, App Privacy, 4.8) örtü
 
 Uygulamanın tüm içeriği hesap gerektirir (misafir modu yok), bu yüzden inceleme test
 kimlik bilgisi ister. Bu belgedeki hiçbir alan **doldurulmuş değil**: Apple Developer
-hesabı henüz açılmadı (bkz. `docs/appstore/README.md` "Bayrak açılmadan bitmesi gereken
-iş" §1).
+hesabı henüz açılmadı (bkz. `docs/appstore/README.md` "iOS yayınından önce bitmesi
+gereken iş" §1).
 
 ## 1. App Review Information › Sign-In Required
 
@@ -16,22 +16,37 @@ iş" §1).
 | Sign-in required | Evet |
 | User name | `[[TEST_HESABI_E_POSTA]]` |
 | Password | `[[TEST_HESABI_PAROLA]]` |
-| Notes | Aşağıdaki adımlar |
+| Notes | Aşağıdaki İngilizce metin, olduğu gibi |
 
-Adımlar (Notes alanına):
+**Notes alanına İngilizce metin girilir**: inceleyicinin Türkçe bilmesi beklenemez.
 
-1. Uygulamayı açın; onboarding'de ilerleyin, kurs Almanca, seviye "Sıfırdan", hedef "Rahat".
-2. Giriş ekranında "E-posta ile devam et" → yukarıdaki e-posta ve parola.
-3. Bildirim izni ekranında "Belki sonra" seçilebilir.
-4. Sekmeler: Öğren (günlük tur), Patika (dersler), Beceriler (okuma/dinleme/yazma, yürüyüş modu).
-5. **Yürüyüş modu / arka plan sesi:** Beceriler › Yürüyüş modu › Başla → mikrofon açıklama
-   ekranı → "Kabul ediyorum, başla" → sistem mikrofon izni. Modu kullanıcı başlatır.
-   Telefonu kilitleyin: kilit ekranında "Yürüyüş modu açık" kaydı ve sistemin mikrofon
-   göstergesi görünür. **Durdurmak için kilidi açmanız gerekmez** — kilit ekranındaki
-   durdur/duraklat (ya da kulaklık düğmesi) turu bitirir; uygulama içinden de
-   durdurulabilir.
-6. **Hesap silme:** Profil › Ayarlar › Hesap › Hesabı sil (5.1.1(v)). Test hesabını
-   silmeyin; ayrı bir hesapla deneyin.
+Yollar 2026-09-14'te koddan doğrulandı: yürüyüş modu **Öğren** sekmesindeki "Yürüyüş modu"
+kutucuğunda (`mobile/src/screens/LearnScreen.tsx`), Beceriler sekmesinde DEĞİL — eski notlar
+yürüyüş modunu Beceriler'de gösteriyordu ve inceleyiciyi olmayan bir yola gönderiyordu. Hesap
+silme **Profil › Ayarlar › Hesap › Hesabı sil**, Hesap grubunun son satırı (`SettingsScreen.tsx`); Profil
+ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uygulamanın
+İngilizce arayüzünden birebir (`mobile/src/i18n/en.ts`, kilit ekranı metni
+`Localizable.strings` / `values-en/strings.xml`).
+
+> **İnceleme hesabı Premium olmalı.** Ekran kapalı yürüyüş (arka planda dinleme) Premium:
+> ücretsiz hesapta `/api/stt` `mode=walk` 403 döner ve inceleyici kilit ekranı akışını
+> göremez. Hesap üretim veritabanında açılıp Premium tanımlanacağı için bu iş ayrıca
+> onaylanır (mağaza raporu B07).
+
+```text
+Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication.
+
+1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
+2. On the sign-in screen tap "Continue with email" and sign in with the account above.
+3. On the notification permission screen you may tap "Maybe later".
+4. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
+
+5. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
+
+6. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. The microphone disclosure explains what happens and names the speech recognition providers; tap "I agree, start", then allow the microphone and speech recognition permissions. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
+
+7. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account.
+```
 
 Test hesabı gerçek veritabanında açılır, e-posta doğrulaması tamamlanır, seviye A1
 bırakılır. Parola yalnız Connect'e yazılır, bu belgeye **yazılmaz**.
@@ -62,9 +77,11 @@ Google sunulduğu için zorunlu. Kurulum:
    ayrı alan adlarında olabilir); yordam `docs/appstore/README.md` §Apple ile
    Giriş madde 4'te.
 
-Web akışı (Services ID + .p8 client secret) **kurulmadı**; uygulama yalnız native yolu
-kullanıyor ve o yolda secret gerekmiyor. Web'de Apple ile Giriş sunulmuyor — 4.8 App
-Store uygulaması için işliyor.
+Web akışı (Services ID + .p8 client secret) da **kurulu** ve canlıda açık (2026-09-14:
+`/api/config` → `"apple":true,"appleWeb":true`). iOS native yolu kullanıyor; web ve Android
+Apple'ın web akışını (`APPLE_SERVICES_ID`, `mobile/src/screens/AuthScreen.tsx`). Bu yüzden
+gizlilik politikasının alıcılar tablosundaki **Apple (Sign-In)** satırı iOS bayrağından
+bağımsız ve şartların 7b maddesi Apple ile girişi koşulsuz sayıyor.
 
 ### 2.2 Google ile Giriş — iOS istemcisi
 
@@ -144,5 +161,12 @@ Bugün ikisi eşit (altı tür, hiçbiri izleme için).
 - Yapay zekâ içeriği: rol yapma bir dil modeliyle üretiliyor, "gerçek kişi değil" bildirimi
   ekranda kalıcı, her yanıtın altında "Bildir" var.
 - Yaş derecelendirmesi Play'deki 18+ ile tutarlı dolduruldu.
-- `src/lib/legal.ts` › `LEGAL_PLATFORMS.ios` — §6 kapıları geçilmeden **açılmaz**;
-  açılırken `LEGAL_VERSION` artar ve `LEGAL_CHANGELOG`'a kayıt düşer.
+- `src/lib/legal/index.ts` › `LEGAL_PLATFORMS.ios` **açık** (sürüm 1.1, 2026-09-14): gizlilik
+  politikası, şartlar ve destek sayfası iOS uygulamasını kapsıyor. Gönderimden önce canlıda
+  doğrula: `https://www.lernomi.app/privacy/en` "the Android and iOS apps" diyor, alıcılar
+  tablosunda Apple (Sign-In) ve Apple (App Store) var.
+- Yapay zekâ rızası (5.1.2(i)): ilk yapay zekâ çağrısında sağlayıcıları adıyla sayan izin
+  ekranı açılıyor (notlardaki 5. adım). Sunucu kapısı `user_consents` tablosuna bağlı;
+  `drizzle/0052_user_consents.sql` üretimde uygulanmadan bu sürüm yayına çıkmaz.
+- Satın alma ekranında kullanım şartları ve gizlilik politikası bağlantıları var (Schedule 2
+  §3.8(b)); App Store açıklamasında da aynı iki bağlantı bulunmalı (3.1.2).

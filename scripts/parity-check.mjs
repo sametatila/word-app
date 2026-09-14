@@ -3843,7 +3843,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .replace(/ \}/g, "")
       .replace(/err\.(error|message)/g, "err.x")
       .replace(/\s+/g, " ");
-    const kod = [...duz.matchAll(/case (\d{3}): return ([^;]+);/g)].map((m) => m[1] + "->" + m[2].replace(/"/g, "").trim());
+    /* Bir kodun dalı birden fazla karara bölünebiliyor (`case 403: if (…)
+       return "consent"; return …`). Desen önce yalnız tek `return`lü dalı
+       görüyordu: 403'e rıza satırı eklenince dal İKİ taraftan birden sessizce
+       düşüyordu ve iki taraf aynı biçimde kaybettiği için karşılaştırma yeşil
+       kalıyordu. Önündeki `if … return` zinciri artık dalın parçası. */
+    const kod = [...duz.matchAll(/case (\d{3}): ((?:if \([^)]*\) return [^;]+; )*)return ([^;]+);/g)].map((m) => m[1] + "->" + (m[2] + m[3]).replace(/"/g, "").trim());
     return [...tablo, ...kod];
   };
   sameList("degerlendirme hata sebepleri", sebep("mobile/src/lib/assessFail.ts"), sebep("src/lib/assess-client.ts"));
@@ -7959,6 +7964,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const auth = sil(read("mobile/src/screens/AuthScreen.tsx"));
     const legal = sil(read("src/lib/legal/index.ts"));
     const sema = read("mobile/ios/Lernomi.xcodeproj/xcshareddata/xcschemes/Lernomi.xcscheme");
+    const iosMetinleri = /LEGAL_PLATFORMS = \{ android: true, ios: true \}/.test(legal);
 
     /* Blok yerinde ve tarihli. */
     sameList(
@@ -7983,6 +7989,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "C2 sifreleme beyani=" + (/<key>ITSAppUsesNonExemptEncryption<\/key>/.test(plist) ? "var" : "YOK"),
         "C3 apple girisi=" + (/\{ id: "apple", label: "Apple" \}/.test(auth) && /applesignin/.test(yetki) ? "var" : "YOK"),
         "C4 google url tipi=" + (/<key>CFBundleURLTypes<\/key>/.test(plist) ? "var" : "YOK"),
+        "C5 hukuki metinler iOS'u kapsiyor=" + (iosMetinleri ? "evet" : "HAYIR"),
       ],
       [
         "P1 native dosyalar pbxproj'da=var",
@@ -7995,6 +8002,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "C2 sifreleme beyani=var",
         "C3 apple girisi=var",
         "C4 google url tipi=var",
+        "C5 hukuki metinler iOS'u kapsiyor=evet",
       ],
       "bulunan",
       "beklenen",
@@ -8013,24 +8021,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* ACIK listesi de bayatlamiyor: madde kapanirsa belge guncellenecek. */
     const podKilidi = existsSync(new URL("../mobile/ios/Podfile.lock", import.meta.url));
     const uiTest = /\bLernomiUITests\b/.test(pbx);
-    const iosYayinda = /LEGAL_PLATFORMS = \{ android: true, ios: false \}/.test(legal);
     sameList(
       "acik listesi bayat degil",
       [
         "P8 podfile kilidi=" + (podKilidi ? "GELDI (belge guncellensin)" : "yok"),
         "ui test hedefi=" + (uiTest ? "GELDI (belge guncellensin)" : "yok"),
-        "C5 ios yayinda=" + (iosYayinda ? "hayir" : "ACILDI (belge ve LEGAL_VERSION)"),
       ],
-      ["P8 podfile kilidi=yok", "ui test hedefi=yok", "C5 ios yayinda=hayir"],
+      ["P8 podfile kilidi=yok", "ui test hedefi=yok"],
       "bulunan",
       "beklenen",
     );
 
-    /* Belge ile KOD ayni seyi soyluyor: yayin bayragi iki yerde de kapali. */
+    /* Belge ile KOD ayni seyi soyluyor: hukuki metinlerin iOS bayragi.
+       2026-09-14'te ACILDI (C5 kapandi): App Review politikayi, sartlari ve
+       destek sayfasini gonderimde okuyor, yani metinler iOS'u yayindan ONCE
+       kapsamak zorunda. Bayrak yeniden kapanirsa belge de soylemeli. */
     sameList(
       "yayin bayragi belge ile ayni",
-      ["kod=" + (iosYayinda ? "kapali" : "acik")],
-      ["kod=" + (/LEGAL_PLATFORMS\.ios = false` — \*\*bilinçli\*\*/.test(plan) ? "kapali" : "acik")],
+      ["kod=" + (iosMetinleri ? "acik" : "kapali")],
+      ["kod=" + (/`LEGAL_PLATFORMS\.ios = true`/.test(plan) ? "acik" : "kapali")],
       "kod",
       "belge",
     );
@@ -16754,7 +16763,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi-theme", //              tema
       "lernomi:analytics", //          analitik onayi
       "lernomi:install-dismissed", //  kurulum uyarisi kapatildi
-      "lernomi:mic-consent:v1", //     mikrofon onayi
+      "lernomi:mic-consent:v2", //     mikrofon onayi (v2: saglayicilar adiyla sayiliyor, onay yeniden soruluyor)
       "lernomi:push-dismissed", //     bildirim karti ertelemesi (izin tarayiciya ait)
     ];
     const MOBIL_CIHAZ = [
@@ -16762,7 +16771,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi-lang", //               arayuz dili
       "lernomi-lesson-handsfree", //   eller serbest tercihi
       "lernomi:analytics", //          analitik onayi
-      "lernomi:mic-consent:v1", //     mikrofon onayi
+      "lernomi:mic-consent:v2", //     mikrofon onayi (v2: saglayicilar adiyla sayiliyor, onay yeniden soruluyor)
       "lernomi:notif-ids-v1", //       bildirim kimlikleri (OS tarafi)
       "lernomi:notif-primed", //       bildirim izni ertelemesi (bkz. 299)
       "lernomi:notif:streak", //       seri koruma bildirimi anahtari
@@ -20284,8 +20293,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
   /* Bos tarama gecmesin. Olculen: on dort tavanli + bes muaf = on dokuz
      cagri. Esik on sekiz - once yirmi yazilmisti ve kapi "AYRISMA" diyordu:
-     esigi olcmeden koymak da bir olcu hatasi. */
-  sameList("fetch taramasi bos degil", ["cagri>=18=" + (cagri >= 18)], ["cagri>=18=true"], "bulunan", "beklenen");
+     esigi olcmeden koymak da bir olcu hatasi.
+
+     2026-09-14 YENIDEN OLCULDU: dort yapay zeka cagrisi (`assess-client`,
+     `pronounce-client`, `pocket-mic`in ikisi) ham `fetch`ten `apiFetch`e
+     tasindi, cunku riza yakalayicisi yalniz orada. Sayi on bes (on tavanli +
+     bes muaf); esik on dort. */
+  sameList("fetch taramasi bos degil", ["cagri>=14=" + (cagri >= 14)], ["cagri>=14=true"], "bulunan", "beklenen");
 
   /* MOBIL YARISI - "Android de ham `fetch`" IDDIA olarak yaziliydi.
      Web tarafinda iki muafiyetin gerekcesi "Android de ayni sekilde ham

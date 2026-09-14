@@ -1503,3 +1503,36 @@ export const deviceTokens = pgTable(
   },
   (t) => [index("device_tokens_user_idx").on(t.userId)],
 );
+
+/**
+ * Yapay zekâ işleme rızası (0052) — kullanıcının her KARARI bir satır.
+ *
+ * Metin ve ses üçüncü taraf yapay zekâ sağlayıcılarına gitmeden önce açık izin
+ * isteniyor (App Store 5.1.2(i), Play Kullanıcı Verileri; gerekçe
+ * `lib/ai-consent-shared.ts`). Rıza SUNUCUDA tutuluyor, cihazda değil: kapı
+ * uçlarda duruyor (`lib/ai-consent.ts` `aiConsentGate`) ve eski bir istemci ya
+ * da başka bir cihaz izni atlayamıyor.
+ *
+ * EKLEMELİ DEFTER, üstüne yazılmıyor. Yürürlükteki durum (kullanıcı × amaç)
+ * için son satır okunuyor; öncekiler, geçmişte verinin hangi izinle
+ * gönderildiğini gösterebilmek için duruyor (GDPR m.7(1): rızanın verildiğini
+ * gösterebilme yükü veri sorumlusunda). Hesap silinince hepsi gider
+ * (`lib/account/purge`).
+ */
+export const userConsents = pgTable(
+  "user_consents",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** ai_text · ai_voice */
+    purpose: text("purpose").notNull(),
+    /** true = izin verdi · false = reddetti ya da geri aldı */
+    granted: boolean("granted").notNull(),
+    /** Kararın verildiği metin sürümü (`AI_CONSENT_VERSIONS`). */
+    version: integer("version").notNull(),
+    /** ios · android · web — kararın verildiği yüzey. */
+    platform: text("platform"),
+    decidedAt: timestamp("decided_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("user_consents_user_purpose_idx").on(t.userId, t.purpose, t.decidedAt)],
+);

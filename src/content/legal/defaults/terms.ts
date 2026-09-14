@@ -31,7 +31,7 @@ export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     ],
     body: `## 1. Taraflar ve kabul
 
-Bu sözleşme, aşağıda kimliği verilen taraflar ("Lernomi", "biz") ile Lernomi web uygulamasını (www.lernomi.app) ya da Android uygulamasını kullanan kişi ("sen") arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve [Gizlilik Politikası]({{link:privacy}})'nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
+Bu sözleşme, aşağıda kimliği verilen taraflar ("Lernomi", "biz") ile Lernomi web uygulamasını (www.lernomi.app) ya da {{platforms}} kullanan kişi ("sen") arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve [Gizlilik Politikası]({{link:privacy}})'nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
 
 {{entityBlock:controller:contact}}
 
@@ -45,7 +45,7 @@ Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uyg
 
 - Lernomi yetişkinlere yöneliktir: hesap açmak için 18 yaşını doldurmuş olman gerekir. 18 yaşından küçük olduğunu öğrendiğimiz hesapları kapatır ve verilerini sileriz.
 - Hesap bilgilerin doğru olmalı; parolanı kimseyle paylaşma. Hesabınla yapılan işlemlerden sen sorumlusun; yetkisiz kullanımı fark edince bize bildir.
-- Hesabını dilediğin an silebilirsin: uygulamada Profil › Ayarlar › Hesap ya da web'de [hesap silme sayfası]({{link:deleteAccount}}). Silme geri alınamaz.
+- Hesabını dilediğin an silebilirsin: uygulamada Profil › Ayarlar › Hesap › Hesabı sil ya da web'de [hesap silme sayfası]({{link:deleteAccount}}). Silme geri alınamaz.
 
 ## 4. Kabul edilebilir kullanım
 
@@ -75,6 +75,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 ## 6. Yapay zekâ içeriği
 
 - Konuşma pratiği ve değerlendirmeler dil modelleriyle üretilir; bir yapay zekâ ile etkileştiğin uygulamada açıkça belirtilir. Yanıtlar yanlış, eksik ya da tutarsız olabilir; dil bilgisi düzeltmeleri kesin doğru sayılmamalıdır.
+- Yapay zekâ ve sunucu konuşma tanımasıyla çalışan özellikler, metninin ya da kısa ses kayıtlarının Gizlilik Politikası'nda adları sayılan sağlayıcılara gönderilmesini gerektirir. Bu gönderim ancak uygulama içinde izin verdiğinde yapılır; izin vermezsen ya da iznini Ayarlar › Gizlilik'ten geri alırsan bu özellikler yapay zekâ olmadan, kısıtlı biçimde çalışır ya da kapalı kalır.
 - Rahatsız edici ya da hatalı bir yanıtı, yanıtın altındaki "Bildir" ile uygulamadan çıkmadan bildirebilirsin.
 - Yapay zekâ karakterleri gerçek kişi değildir; tıbbi, hukuki ya da mali tavsiye vermezler.
 
@@ -95,7 +96,7 @@ Premium'un kendi günlük adil kullanım sınırları da vardır (cepte yürüy�
 
 ## 7b. Üçüncü taraf hizmetler
 
-Google ile giriş (Google Hesap şartları), {{ifIos}}Apple ile giriş (Apple Hesabı şartları), {{/ifIos}}uygulamayı indirdiğin mağaza (Google Play Hizmet{{ifIos}} Şartları, Apple Media Services{{/ifIos}} Şartları ve ilgili iade politikaları) ve cihazının konuşma tanıma servisi kendi sağlayıcılarının şartlarına tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası'nda listelenir; bunlar bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
+Google ile giriş (Google Hesap şartları), Apple ile giriş (Apple Hesabı şartları), uygulamayı indirdiğin mağaza (Google Play Hizmet{{ifIos}} Şartları, Apple Media Services{{/ifIos}} Şartları ve ilgili iade politikaları) ve cihazının ya da tarayıcının konuşma tanıma servisi kendi sağlayıcılarının şartlarına tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası'nda listelenir; bunlar bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
 
 ## 8. Fikri mülkiyet
 
@@ -166,7 +167,7 @@ Uygulamayı App Store'dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunl
     ],
     body: `## 1. Parties and acceptance
 
-This agreement is between the parties identified below ("Lernomi", "we") and the person using the Lernomi web app (www.lernomi.app) or Android app ("you"). There are two of us: the person who designs and operates the service and is responsible for your data, and the person who publishes the app on Google Play and collects the subscription revenue. By creating an account or using the app you accept these terms and the [Privacy Policy]({{link:privacy}}). Under Turkish Law no. 6563 this text is accessible and can be stored before the contract is concluded. If you do not accept it, do not use the app.
+This agreement is between the parties identified below ("Lernomi", "we") and the person using the Lernomi web app (www.lernomi.app) or {{platforms}} ("you"). There are two of us: the person who designs and operates the service and is responsible for your data, and the person who publishes the app in the app stores and collects the subscription revenue. By creating an account or using the app you accept these terms and the [Privacy Policy]({{link:privacy}}). Under Turkish Law no. 6563 this text is accessible and can be stored before the contract is concluded. If you do not accept it, do not use the app.
 
 {{entityBlock:controller:contact}}
 
@@ -180,7 +181,7 @@ Lernomi is a language learning app offering vocabulary, listening, speaking and 
 
 - Lernomi is intended for adults: you must be 18 or older to create an account. We close accounts we learn belong to someone under 18 and delete their data.
 - Your account details must be accurate; never share your password. You are responsible for activity on your account; tell us if you notice unauthorised use.
-- You can delete your account at any time: in the app under Profile › Settings › Account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone.
+- You can delete your account at any time: in the app under Profile › Settings › Account › Delete account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone.
 
 ## 4. Acceptable use
 
@@ -210,6 +211,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 ## 6. AI content
 
 - Speaking practice and assessments are produced by language models; the app states clearly where you are interacting with an AI. Answers can be wrong, incomplete or inconsistent; grammar corrections must not be treated as definitive.
+- Features that use AI or server-side speech recognition need your text or short audio recordings to be sent to the providers named in the Privacy Policy. This happens only after you allow it in the app; if you decline, or withdraw permission under Settings › Privacy, these features run without AI in a limited form or stay off.
 - You can report an offensive or incorrect answer without leaving the app, using "Report" under that answer.
 - AI characters are not real people; they do not give medical, legal or financial advice.
 
@@ -230,7 +232,7 @@ Premium has its own daily fair-use limits too (pocket-walk rounds and AI evaluat
 
 ## 7b. Third-party services
 
-Sign-in with Google (Google Account terms), {{ifIos}}Sign in with Apple (Apple Account terms), {{/ifIos}}the store you downloaded the app from (Google Play Terms of Service{{ifIos}}, Apple Media Services Terms{{/ifIos}} and the relevant refund policies) and your device's speech recognition service are subject to their own providers' terms. The AI and speech recognition providers are listed in the Privacy Policy; they are our sub-processors and do not enter into a contract with you directly.
+Sign-in with Google (Google Account terms), Sign in with Apple (Apple Account terms), the store you downloaded the app from (Google Play Terms of Service{{ifIos}}, Apple Media Services Terms{{/ifIos}} and the relevant refund policies) and your device's or browser's speech recognition service are subject to their own providers' terms. The AI and speech recognition providers are listed in the Privacy Policy; they are our sub-processors and do not enter into a contract with you directly.
 
 ## 8. Intellectual property
 
@@ -301,7 +303,7 @@ When we update these terms, the effective date and version change; we announce m
     ],
     body: `## 1. Parteien und Annahme
 
-Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien ("Lernomi", "wir") und der Person, die die Lernomi-Webanwendung (www.lernomi.app) oder die Android-App nutzt ("du"). Wir sind zwei Personen: diejenige, die den Dienst gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App bei Google Play veröffentlicht und die Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung der App nimmst du diese Bedingungen und die [Datenschutzerklärung]({{link:privacy}}) an. Nach dem türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die App nicht.
+Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien ("Lernomi", "wir") und der Person, die die Lernomi-Webanwendung (www.lernomi.app) oder {{platforms}} nutzt ("du"). Wir sind zwei Personen: diejenige, die den Dienst gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App in den App-Stores veröffentlicht und die Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung der App nimmst du diese Bedingungen und die [Datenschutzerklärung]({{link:privacy}}) an. Nach dem türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die App nicht.
 
 {{entityBlock:controller:contact}}
 
@@ -315,7 +317,7 @@ Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und
 
 - Lernomi richtet sich an Erwachsene: Für ein Konto musst du mindestens 18 Jahre alt sein. Konten, von denen wir erfahren, dass sie einer Person unter 18 gehören, schließen wir und löschen die Daten.
 - Deine Kontodaten müssen richtig sein; gib dein Passwort niemals weiter. Für Aktivitäten über dein Konto bist du verantwortlich; melde uns unbefugte Nutzung.
-- Du kannst dein Konto jederzeit löschen: in der App unter Profil › Einstellungen › Konto oder im Web über die [Seite zur Kontolöschung]({{link:deleteAccount}}). Die Löschung ist unwiderruflich.
+- Du kannst dein Konto jederzeit löschen: in der App unter Profil › Einstellungen › Konto › Konto löschen oder im Web über die [Seite zur Kontolöschung]({{link:deleteAccount}}). Die Löschung ist unwiderruflich.
 
 ## 4. Zulässige Nutzung
 
@@ -345,6 +347,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 ## 6. KI-Inhalte
 
 - Sprechpraxis und Bewertungen werden von Sprachmodellen erzeugt; die App weist deutlich darauf hin, wo du mit einer KI interagierst. Antworten können falsch, unvollständig oder widersprüchlich sein; Grammatikkorrekturen dürfen nicht als endgültig richtig gelten.
+- Funktionen mit KI oder serverseitiger Spracherkennung setzen voraus, dass dein Text oder kurze Audioaufnahmen an die in der Datenschutzerklärung genannten Anbieter gesendet werden. Das geschieht erst, wenn du es in der App erlaubst; lehnst du ab oder widerrufst du die Erlaubnis unter Einstellungen › Datenschutz, laufen diese Funktionen ohne KI in eingeschränkter Form oder bleiben ausgeschaltet.
 - Eine anstößige oder fehlerhafte Antwort kannst du ohne die App zu verlassen über "Melden" unter der Antwort melden.
 - KI-Figuren sind keine echten Personen; sie erteilen keine medizinische, rechtliche oder finanzielle Beratung.
 
@@ -365,7 +368,7 @@ Auch Premium hat eigene tägliche Fair-Use-Grenzen (Geh-Runden in der Tasche und
 
 ## 7b. Dienste Dritter
 
-Die Anmeldung mit Google (Google-Konto-Bedingungen), {{ifIos}}die Anmeldung mit Apple (Apple-Account-Bedingungen), {{/ifIos}}der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{{ifIos}}, Apple-Media-Services-Bedingungen{{/ifIos}} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
+Die Anmeldung mit Google (Google-Konto-Bedingungen), die Anmeldung mit Apple (Apple-Account-Bedingungen), der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{{ifIos}}, Apple-Media-Services-Bedingungen{{/ifIos}} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts oder Browsers unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
 
 ## 8. Geistiges Eigentum
 

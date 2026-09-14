@@ -200,6 +200,11 @@ export function ProfileScreen() {
           (3) mağaza kuralları (App Store 5.1.1(v), Play veri silme) "kolay
           bulunur" istiyor — profil sekmesinin dibi, ayarların ortasından daha
           kolay bulunur.
+
+          İKİNCİ KAPI AYARLAR › HESAP'TA (2026-09-14). Buradaki bağlantı tek
+          başına kalınca bütün metinlerin anlattığı yol ("Profil › Ayarlar ›
+          Hesap › Hesabı sil") boşa düşmüştü; satır orada grubun sonuna geri
+          kondu. İkisi aynı ekranı açıyor.
         */}
         <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.dangerText} size={20} />

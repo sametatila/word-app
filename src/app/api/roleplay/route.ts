@@ -12,6 +12,7 @@ import { langOf } from "@/lib/social/notify";
 import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { takeUsage } from "@/lib/premium";
+import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
 
@@ -47,7 +48,14 @@ const ROLEPLAY_DAILY_LIMIT = DAILY_QUOTAS.roleplayTurns;
 export async function GET() {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  return NextResponse.json({ configured: chatConfigured() }, { headers: { "cache-control": "no-store" } });
+  /*
+    RIZA DURUMU DA BURADA. Oynatıcı konuşma fazına girerken zaten bu ucu
+    soruyor; yapay zekâya izin vermemiş ("declined") kullanıcı ilk cümlesini
+    403'e yedirmek yerine baştan senaryolu konuşmaya geçiyor. Hiç karar
+    vermemiş kullanıcıya ise ilk turda izin ekranı açılıyor (istemci).
+  */
+  const consent = await aiConsentStateFor(userId, "ai_text");
+  return NextResponse.json({ configured: chatConfigured(), consent }, { headers: { "cache-control": "no-store" } });
 }
 
 export async function POST(req: Request) {
@@ -59,6 +67,14 @@ export async function POST(req: Request) {
   if (!chatConfigured()) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
+
+  /*
+    YAPAY ZEKÂ RIZASI — metin dil modeline gitmeden ÖNCE (App Store 5.1.2(i),
+    Play Kullanıcı Verileri). İzin yoksa istek sağlayıcıya hiç iletilmiyor;
+    istemci 403'ü yakalayıp izin ekranını açıyor (bkz. lib/ai-consent).
+  */
+  const consent = await aiConsentGate(userId, "ai_text");
+  if (consent) return consent;
 
   if (!(await underDailyLimit(userId))) {
     return NextResponse.json({ error: "quota" }, { status: 429 });

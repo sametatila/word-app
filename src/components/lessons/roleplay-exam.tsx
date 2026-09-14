@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
+import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { AiNotice } from "@/components/ai-notice";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -53,6 +54,12 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
   const [left, setLeft] = useState(EXAM_SECONDS);
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
   const [failure, setFailure] = useState<AssessFailure | null>(null);
+  /**
+   * Muhatap cevap vermedi çünkü yapay zekâya izin verilmedi — servis kapalı
+   * DEĞİL. Sınav senaryoyla yürüyemiyor (sayılmazdı), ama sebep doğru
+   * söylenmeli ve nereden açılacağı belli olmalı.
+   */
+  const [consentOff, setConsentOff] = useState(false);
   const rec = useRef<Recognition | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
   const userTurns = turns.filter((t) => t.role === "user").length;
@@ -111,8 +118,12 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         body: JSON.stringify({ lessonId: lesson.id, messages: next, mode: "exam" }),
         /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
            kırk beş saniye bekliyor, aynı sabit adıyla. */
-        signal: AbortSignal.timeout(ROLEPLAY_TIMEOUT_MS),
+        timeoutMs: ROLEPLAY_TIMEOUT_MS,
       });
+      /* İzin diyaloğunda "hayır" dendiyse ya da daha önce denmişse cümle
+         sağlayıcıya gitmedi. Akış öteki arızalarla aynı (iki turdan sonra
+         eldeki puanlanır, önce ise sınav kurulamaz); değişen yalnız cümle. */
+      if (await isAiConsentDeclined(res)) setConsentOff(true);
       if (!res.ok || !res.body) throw new Error(`roleplay ${res.status}`);
       const reader = res.body.getReader();
       const dec = new TextDecoder();
@@ -158,6 +169,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     deadline.current = 0;
     setResult(null);
     setFailure(null);
+    setConsentOff(false);
     setTurns([]);
     setDraft("");
     setLeft(EXAM_SECONDS);
@@ -275,7 +287,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         {/* Android ayni dalda `sad` maskotu ciziyor; webde yalniz puanlama
             dalinda maskot vardi (`think`). */}
         <Mascot mood="sad" size={80} className="mx-auto" />
-        <p className="mt-1 text-body">{t("rpexam.service_down")}</p>
+        {/* İzin verilmediyse servis kapalı DEĞİL: sebep kendi cümlesiyle
+            söyleniyor ve nereden açılacağı belli (bkz. `consentOff`). */}
+        <p className="mt-1 text-body">{!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")}</p>
         {/* YERINDE TEKRAR DENEME. Bu dala yalniz muhatap servisi ILK iki turda
             dusunce giriliyor (`send`: `n >= 2` ise konusma puanlaniyor), yani
             olculmus hicbir sey YOK - sinav bastan baslayabilir. Tek cikis

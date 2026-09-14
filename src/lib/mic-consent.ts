@@ -1,5 +1,7 @@
 "use client";
 
+import { decideAiConsent } from "@/lib/ai-consent-client";
+
 /**
  * Yürüyüş modu mikrofon onayı — mobil `M/src/lib/micConsent.ts`in karşılığı.
  *
@@ -14,7 +16,15 @@
  * geri alınabiliyor — geri alınca ekran yeniden geliyor. Anahtardaki sürüm,
  * açıklama metni anlamlı değişirse artırılır ve onay yeniden sorulur.
  */
-const KEY = "lernomi:mic-consent:v1";
+/*
+  v2 (2026-09-14): açıklama artık sesin gidebileceği sağlayıcıları ADIYLA
+  sayıyor ve onay sunucuya da "ai_voice" rızası olarak yazılıyor (uç izin
+  yoksa sesi sağlayıcıya iletmiyor). v1 onayları "Microsoft Azure ve benzeri"
+  diyen metne verilmişti; App Store 5.1.2(i) alıcıların adıyla söylenmesini
+  istediği için o onaylar yeniden soruluyor. Mobil `micConsent` aynı sürüme
+  birlikte geçti.
+*/
+const KEY = "lernomi:mic-consent:v2";
 
 export function hasMicConsent(): boolean {
   try {
@@ -23,6 +33,20 @@ export function hasMicConsent(): boolean {
     // Depolama kapalıysa onay saklanamaz. "Verilmemiş" saymak doğrusu:
     // ekran her seferinde gelir, hiç sorulmadan mikrofon açılmaz.
     return false;
+  }
+}
+
+/**
+ * Onayı GERİ ALIR: tarayıcıdaki bayrak ve sunucudaki ses rızası birlikte.
+ * Ağ yoksa sunucu tarafı yazılamaz; yürüyüş modu yine başlamaz (bayrak kapalı)
+ * ve açıklama yeniden sorar.
+ */
+export async function revokeMicConsent(): Promise<void> {
+  setMicConsent(false);
+  try {
+    await decideAiConsent("ai_voice", false);
+  } catch {
+    /* yut */
   }
 }
 

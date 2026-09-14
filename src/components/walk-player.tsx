@@ -12,6 +12,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
+import { decideAiConsent, fetchAiConsent, type AiConsentProcessor } from "@/lib/ai-consent-client";
 import type { NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
@@ -293,6 +294,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [status, setStatus] = useState<Status>("loading");
   // Açıklama ekranı: null = kapalı; açıksa hangi başlatma yolunun beklediği.
   const [disclosure, setDisclosure] = useState<"pocket" | "screen" | null>(null);
+  /*
+    SUNUCUDAKİ SES RIZASI (`ai_voice`) ve açıklamada adları sayılan sağlayıcılar.
+
+    ÖNCEDEN okunuyor, başlangıç dokunuşunda değil: `begin` dokunuşun içinde
+    EŞZAMANLI kalmak zorunda (cep yolunun tam ekranı yalnız kullanıcı
+    hareketinin içinden alınabiliyor), araya bir istek giremez. `null` =
+    okunamadı / henüz bilinmiyor.
+  */
+  const voiceGranted = useRef<boolean | null>(null);
+  const [voiceProcessors, setVoiceProcessors] = useState<AiConsentProcessor[] | null>(null);
+  const [voiceFailed, setVoiceFailed] = useState(false);
   const [session, setSession] = useState<SessionPayload | null>(null);
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("speaking");
@@ -406,6 +418,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const captureFails = useRef(0);
   /** Premium kapısı bir kez söylendi mi — her kelimede tekrarlanmasın. */
   const premiumTold = useRef(false);
+  /** Ses rızası olmadığı bir kez söylendi mi — aynı sebeple. */
+  const consentTold = useRef(false);
   /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye. */
   const askedIds = useRef<Set<number>>(new Set());
   /**
@@ -818,6 +832,28 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               walkCue("premium");
               await new Promise((r) => setTimeout(r, walkCueMs("premium")));
               await say([{ lang, narration: true, text: t("walkmode.screen_off_premium") }]);
+            }
+            /*
+              SES RIZASI YOK — o da "duyamadım" değil.
+
+              Sunucu sesi sağlayıcıya iletmedi; bu yolda izin diyaloğu da
+              açılmıyor (ekran kapalı, bkz. pocket-mic `transcribe`). Sebep bir
+              kez SESLE söyleniyor. Tanıyıcıya dönülecek bir yol yoksa tur
+              duruyor: her cevabı "duyulmadı" diye saymak yirmi kelimeyi boşa
+              harcardı. Durunca `begin` açıklamayı sağlayıcı listesiyle yeniden
+              gösteriyor.
+            */
+            if (heard.reason === "consent") {
+              voiceGranted.current = false;
+              if (!consentTold.current) {
+                consentTold.current = true;
+                track("walk_listen", 0, "stt:consent");
+                await say([{ lang, narration: true, text: t("aiconsent.voice_without") }]);
+              }
+              if (!browserRef.current) {
+                pauseRef.current();
+                return [];
+              }
             }
             const outcome = heard.reason ?? "ok";
             track("walk_listen", Math.round(heard.sentSeconds * 10), `${heard.provider ?? "stt"}:${outcome}`);
@@ -1393,12 +1429,40 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     [askContinue, course, fetchSession, flush, hear, release, say, lang, t],
   );
 
+  /*
+    Ses rızası tur BAŞLAMADAN ve her duruşta yeniden okunuyor: başka bir
+    cihazda ya da Ayarlar'da geri alınmış olabilir. Açıklama açıldığında liste
+    hâlâ yoksa (ilk okuma düştüyse) bir kez daha deneniyor.
+  */
+  const loadVoiceConsent = useCallback(() => {
+    fetchAiConsent(lang)
+      .then((info) => {
+        voiceGranted.current = info.statuses.ai_voice.state === "granted";
+        setVoiceProcessors(info.processors.ai_voice);
+        setVoiceFailed(false);
+      })
+      .catch(() => setVoiceFailed(true));
+  }, [lang]);
+  useEffect(() => {
+    if (status !== "ready" && status !== "paused") return;
+    loadVoiceConsent();
+  }, [status, loadVoiceConsent]);
+  useEffect(() => {
+    if (disclosure && voiceFailed) loadVoiceConsent();
+  }, [disclosure, voiceFailed, loadVoiceConsent]);
+
   /**
-   * Başla: mikrofon açılmadan ÖNCE bir kez uygulama içi açıklama ve onay.
-   * Onay verilmişse doğrudan tur başlıyor (mobil `beginWalk` ile aynı sıra).
+   * Başla: mikrofon açılmadan ÖNCE uygulama içi açıklama ve onay.
+   *
+   * ONAYIN İKİ YARISI VAR (mobil `beginWalk` ile aynı karar). Tarayıcıdaki
+   * bayrak "bu cihazda açıklama okundu" diyor; sunucudaki ses rızası ise sesin
+   * sağlayıcıya gidebilmesinin şartı — uç izin yoksa sesi iletmiyor. Sunucu
+   * "izin yok" diyorsa açıklama yeniden gösteriliyor; okunamadıysa tarayıcıdaki
+   * bayrakla başlanıyor, çünkü ekran açık yol sunucuya gitmiyor ve sunucu yolu
+   * izin yoksa klibi göndermiyor.
    */
   function begin(mode: "pocket" | "screen") {
-    if (!hasMicConsent()) {
+    if (!hasMicConsent() || voiceGranted.current === false) {
       setDisclosure(mode);
       return;
     }
@@ -1454,6 +1518,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     resetCombo();
     heardLog.current = [];
     askedIds.current = new Set();
+    consentTold.current = false;
     startedAt.current = Date.now();
     ended.current = false;
     armed.current = false;
@@ -1766,12 +1831,31 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             "Cebe koy" yolunun karartması bu yüzden kaybolmuyor. */}
         <MicDisclosure
           open={disclosure !== null}
+          processors={voiceProcessors}
+          processorsFailed={voiceFailed}
           onAccept={() => {
             const mode = disclosure;
+            /* Sunucu rızası YALNIZ sağlayıcı listesi GÖSTERİLDİYSE yazılıyor:
+               adları görülmemiş sağlayıcılara izin alınmış sayılmaz. Liste
+               yüklenemediyse yalnız tarayıcıdaki bayrak yazılıyor; sunucu
+               okunabildiği ilk duruşta "izin yok" görülür ve açıklama bir
+               sonraki başlangıçta listeyle yeniden gelir. O arada sunucu yolu
+               klibi göndermiyor (`transcribe` → `consent`). */
+            const listShown = voiceProcessors !== null && !voiceFailed;
             setMicConsent(true);
             setDisclosure(null);
             if (mode === "pocket") darken();
-            void start(index);
+            void (async () => {
+              if (listShown) {
+                try {
+                  await decideAiConsent("ai_voice", true);
+                  voiceGranted.current = true;
+                } catch {
+                  /* ağ yok: ekran açık yol yine çalışır */
+                }
+              }
+              await start(index);
+            })();
           }}
           onCancel={() => setDisclosure(null)}
         />

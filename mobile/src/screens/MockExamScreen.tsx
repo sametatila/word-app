@@ -46,6 +46,7 @@ import {
 } from "../game/mockExam";
 import { clearLocalRun, loadLocalRun, pushLocalResult, saveLocalRun } from "../game/mockExamLocal";
 import { notePremiumGate } from "../lib/premium";
+import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
@@ -254,6 +255,10 @@ export function MockExamScreen() {
     setBusy(true);
     try {
       const d = await startAttempt(paper.id, part.skill);
+      /* İZİN SÜRE BAŞLAMADAN (`sureVer` aşağıda). Yazma ve konuşma dökümü
+         değerlendirmeye gidiyor; ses bu uygulamada cihazda yazıya çevrildiği
+         için yalnız metin izni. Kâğıt açılamadıysa (kilit, ağ) sorulmuyor. */
+      if (part.skill === "writing" || part.skill === "speaking") await askAiConsentUpfront(["ai_text"]);
       setAttempt(d.attempt);
       setResumed(d.resumed);
       setAnswers(d.attempt.answers ?? {});

@@ -3,8 +3,10 @@
 import { useEffect, useRef, useId } from "react";
 import Link from "next/link";
 import { CheckIcon, MicIcon } from "@/components/icons";
-import { LEGAL_PATHS } from "@/lib/legal";
-import { useT } from "@/lib/i18n/client";
+import { legalPath } from "@/lib/legal";
+import { useLang, useT } from "@/lib/i18n/client";
+import { ProcessorList } from "@/components/ai-consent-dialog";
+import type { AiConsentProcessor } from "@/lib/ai-consent-client";
 
 /**
  * Belirgin açıklama ve rıza — mobil `M/src/ui/MicDisclosure.tsx`in karşılığı.
@@ -24,12 +26,23 @@ export function MicDisclosure({
   open,
   onAccept,
   onCancel,
+  processors,
+  processorsFailed,
 }: {
   open: boolean;
   onAccept: () => void;
   onCancel: () => void;
+  /**
+   * Sesin gidebileceği sağlayıcılar — sunucudan, gizlilik politikasının
+   * tablosundan (`api/consent`). Üçüncü madde "aşağıda adları yazılı" diyor;
+   * liste o sözün karşılığı. Mobil `MicDisclosure` aynı listeyi aynı yerde
+   * çiziyor.
+   */
+  processors: AiConsentProcessor[] | null;
+  processorsFailed: boolean;
 }) {
   const t = useT();
+  const lang = useLang();
   /* DİYALOĞUN ADI. `<dialog>` açıldığında ekran okuyucu "diyalog" diyor ama
      ADINI söylemiyordu: kutunun ne sorduğu yalnız içeriği okunmaya
      başlayınca anlaşılıyordu. Başlık zaten ekranda; `aria-labelledby` onu
@@ -95,9 +108,18 @@ export function MicDisclosure({
         ))}
       </ul>
 
+      <div className="mt-4">
+        <ProcessorList processors={processors} failed={processorsFailed} />
+      </div>
+
+      {/* YENİ SEKMEDE VE ARAYÜZ DİLİNDE. Aynı sekmede açılan politika yürüyüş
+          sayfasını söküyordu: açıklamayı okumak isteyen kullanıcı turu
+          kaybediyordu. Yapay zekâ izin diyaloğu da politikayı böyle açıyor. */}
       <Link
-        href={LEGAL_PATHS.privacy}
+        href={legalPath("privacy", lang)}
         prefetch={false}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 block text-center text-strong"
         style={{ color: "var(--color-brand)" }}
       >

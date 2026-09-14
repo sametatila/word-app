@@ -264,6 +264,15 @@ export const deWeb: Record<string, string> = {
   "mockfb.work_on": "Arbeite an {goal}",
   "mockfb.wrong_of": "{wrong} von {total} Aufgaben zu diesem Ziel sind falsch ({pct}).",
   "mockfb.how_fallback": "Lies die Erklärungen zu deinen falschen Aufgaben der Reihe nach und schreib in eigenen Worten, woher der Fehler jeweils kam.",
+  /*
+    Deneme sınavının konuşma görevi WEBDE sesi sunucuda yazıya çeviriyor
+    (`/api/stt`); mobil cihazın kendi tanıyıcısını kullanıyor. Ortak
+    `mockexam.transcript_note` sesin Lernomi sunucusuna gitmediğini söylüyor
+    (mobilde doğru) ve webde yanlış olurdu — izin diyaloğu aynı ekranda
+    sağlayıcıları adlarıyla sayarken.
+  */
+  "mockexamw.transcript_note": "Dieser Text entstand, indem deine Stimme auf dem Server in Text umgewandelt wurde; du kannst Fehler korrigieren. Die Aufnahme wird nicht gespeichert.",
+  "mockexamw.voice_not_sent": "Deine Sprache wurde nicht in Text umgewandelt, weil das Senden deiner Stimme nicht erlaubt ist. Du kannst deine Antwort hier eintippen oder es in den Einstellungen einschalten.",
   "mockhow_en.gist": "Lies den Text in zwei Durchgängen. Im ersten nur den ersten und letzten Absatz — und sag dir in einem Satz, was der Text vertritt; Details ignorierst du. Im zweiten liest du die Fragen und prüfst diesen Satz.",
   "mockhow_en.detail": "Lies die Fragen VOR dem Text und markiere darin jede Zahl, Uhrzeit und jeden Eigennamen. Beim Überfliegen suchst du dann nur diese Markierungen. Die Falle ist hier meist eine zweite Zahl im Text.",
   "mockhow_en.opinion": "Lies den LETZTEN Satz jedes Textes gesondert: Dort zeigt sich meist die Haltung. Was nach `but`, `however`, `still`, `only`, `in fact` kommt, ist der Schluss der Autorin; davor steht oft das Zugeständnis.",

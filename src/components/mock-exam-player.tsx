@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { apiFetch } from "@/lib/api-fetch";
+import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
+import { askAiConsentUpfront, isAiConsentDeclined, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
@@ -33,7 +34,18 @@ import { formatPercent } from "@/lib/i18n/dict";
  */
 
 type Answers = Record<string, string>;
-type OpenScore = { score: number | null; tip?: string; praise?: string; errors?: { wrong?: string; right?: string; why_tr?: string }[] };
+type OpenScore = {
+  score: number | null;
+  tip?: string;
+  praise?: string;
+  errors?: { wrong?: string; right?: string; why_tr?: string }[];
+  /**
+   * Puan yok çünkü yapay zekâya izin verilmedi (metin gönderilmedi) — yalnız
+   * istemcide, kaydedilmiyor. "Yapay zekâ kullanılamıyor" cümlesi bu durumda
+   * yanlış teşhis olurdu.
+   */
+  consent?: boolean;
+};
 type Attempt = { id: number; answers: Answers; open: Record<string, string>; openScores: Record<string, OpenScore>; taskIx: number; secondsLeft: number; plays: Record<string, number> };
 type Todo = { title: string; why: string; how: string };
 type Feedback = { summary: string; strengths: string[]; todo: Todo[]; source: "ai" | "rules" };
@@ -134,6 +146,15 @@ function failOf(err: unknown): Fail {
   return "unreachable";
 }
 
+/**
+ * Açık görevin değerlendirmesi yapay zekâ izni olmadığı için mi alınamadı?
+ * İzin diyaloğu `apiFetch`in yakalayıcısında açılıyor; "hayır" ya da kapatma
+ * `403 ai_consent_declined` olarak buraya geliyor (bkz. `lib/api-fetch`).
+ */
+function consentRefused(err: unknown): boolean {
+  return err instanceof HttpError && err.status === 403 && err.code === AI_CONSENT_DECLINED;
+}
+
 async function post<T>(body: Record<string, unknown>): Promise<T> {
   const res = await apiFetch("/api/mock-exam", {
     method: "POST",
@@ -147,8 +168,20 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
   return (await res.json()) as T;
 }
 
+/**
+ * Bölümün hangi yapay zekâ izinlerine dayandığı. Yazma metni değerlendirmeye
+ * gidiyor; konuşmada ses önce sunucuda yazıya çevriliyor (`/api/stt`), sonra
+ * döküm değerlendiriliyor. Okuma ve dinleme hiçbir sağlayıcıya gitmiyor.
+ */
+function consentPurposesOf(skill: MockPart["skill"]): AiConsentPurpose[] {
+  if (skill === "writing") return ["ai_text"];
+  if (skill === "speaking") return ["ai_voice", "ai_text"];
+  return [];
+}
+
 export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPart }) {
   const t = useT();
+  const lang = useLang();
   const budgets = useMemo(() => taskSeconds(part), [part]);
   const router = useRouter();
   const [phase, setPhase] = useState<"cover" | "run" | "result">("cover");
@@ -242,6 +275,9 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     setBusy(true);
     try {
       const d = await post<{ attempt: Attempt; resumed: boolean }>({ action: "start", paper: paper.id, skill: part.skill });
+      /* İZİN SÜRE BAŞLAMADAN (`sureVer` aşağıda). Kâğıt açılamadıysa
+         (kilit, ağ) sorulmuyor: değerlendirme zaten yapılamayacak. */
+      await askAiConsentUpfront(lang, consentPurposesOf(part.skill));
       setAttempt(d.attempt);
       setResumed(d.resumed);
       setAnswers(d.attempt.answers ?? {});
@@ -692,8 +728,8 @@ function OpenTask({
     try {
       const d = await post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: task.id, text: value.trim() });
       onOpenScore(task.id, d.result);
-    } catch {
-      onOpenScore(task.id, { score: null });
+    } catch (e) {
+      onOpenScore(task.id, { score: null, consent: consentRefused(e) });
     }
     setBusy(false);
   }
@@ -776,6 +812,13 @@ function SpeakingTask({
   const [count, setCount] = useState(0);
   const [busy, setBusy] = useState(false);
   const [micErr, setMicErr] = useState(false);
+  /**
+   * Sesin gönderilmesine izin verilmedi (izin diyaloğunda "ses göndermeden
+   * devam"): konuşma yazıya çevrilemiyor. Ref de var, çünkü karşılıklı konuşma
+   * döngüsü (`run`) kapanışta eski durumu görür.
+   */
+  const [voiceOff, setVoiceOff] = useState(false);
+  const voiceOffRef = useRef(false);
   const alive = useRef(true);
   useEffect(() => () => { alive.current = false; }, []);
 
@@ -813,6 +856,11 @@ function SpeakingTask({
     form.append("language", course);
     try {
       const res = await apiFetch("/api/stt", { method: "POST", body: form });
+      if (await isAiConsentDeclined(res)) {
+        voiceOffRef.current = true;
+        setVoiceOff(true);
+        return "";
+      }
       if (!res.ok) return "";
       // Güven eşiği UYGULANMIYOR: yürüyüş modunda düşük güvenli metin yanlış
       // bir cevabı doğru sayabilirdi, burada metin zaten düzenlenebilir ve
@@ -833,6 +881,9 @@ function SpeakingTask({
     } else {
       for (const [i, tn] of exchange.entries()) {
         if (!alive.current) return;
+        /* Ses gönderilemiyorsa kalan turlar için mikrofon açılmıyor: kaydı
+           gidecek bir yer yok. Konuşma yazıyla sürüyor. */
+        if (voiceOffRef.current) break;
         setTurn(i);
         if (tn.who === "partner") {
           setCount(0);
@@ -865,8 +916,8 @@ function SpeakingTask({
     try {
       const d = await post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: task.id, text });
       onOpenScore(task.id, d.result);
-    } catch {
-      onOpenScore(task.id, { score: null });
+    } catch (e) {
+      onOpenScore(task.id, { score: null, consent: consentRefused(e) });
     }
     setBusy(false);
   }
@@ -933,8 +984,16 @@ function SpeakingTask({
             aria-label={t("mockexam.transcript_placeholder")}
             lang={course}
           />
+          {/*
+            NOT WEBİN KENDİ CÜMLESİ. Ortak `mockexam.transcript_note` "metin
+            cihazın tanıyıcısından geldi, ses Lernomi sunucusuna gönderilmiyor"
+            diyor: mobilde doğru (orada cihaz tanıyıcısı), webde YANLIŞ — burada ses
+            `/api/stt` üzerinden sunucuda ve konuşma tanıma sağlayıcısında
+            yazıya çevriliyor ve izin diyaloğu bunu adlarıyla söylüyor. Aynı
+            ekranda ikisi birden çelişirdi.
+          */}
           <p className="muted mt-1 text-caption leading-relaxed">
-            {t(micErr ? "mockexam.mic_failed" : "mockexam.transcript_note")}
+            {t(micErr ? "mockexam.mic_failed" : voiceOff ? "mockexamw.voice_not_sent" : "mockexamw.transcript_note")}
           </p>
           {score ? (
             <OpenResult score={score} />
@@ -963,7 +1022,7 @@ function OpenResult({ score }: { score: OpenScore }) {
   const t = useT();
   const lang = useLang();
   if (score.score == null) {
-    return <p className="muted mt-3 text-body leading-relaxed">{t("mockexam.ai_off")}</p>;
+    return <p className="muted mt-3 text-body leading-relaxed">{t(score.consent ? "assess.fail_consent" : "mockexam.ai_off")}</p>;
   }
   return (
     <div className="mt-3">

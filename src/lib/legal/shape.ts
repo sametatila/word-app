@@ -7,6 +7,7 @@ import {
   LEGAL_VERSION,
   LEGAL_CHANGELOG,
   ALL_PROCESSORS,
+  IOS_ONLY_PROCESSOR_NAMES,
   processorRow,
   type LegalChangelogEntry,
   type LegalLocale,
@@ -123,7 +124,7 @@ function lines(v: unknown, fallback: readonly string[], maxItems = 40, maxLen = 
  * işaretleniyor ki panelde de görünsünler ama bayrak kapalıyken basılmasınlar.
  */
 function defaultProcessors(): ConfigProcessor[] {
-  const iosNames = new Set(["Apple (Sign-In)", "Apple (App Store)"]);
+  const iosNames = new Set(IOS_ONLY_PROCESSOR_NAMES);
   return ALL_PROCESSORS.map((p) => {
     const cell = (pick: (l: LegalLocale) => string): Trio => ({
       tr: pick("tr"),

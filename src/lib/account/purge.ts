@@ -38,6 +38,7 @@ import {
   promoRedemptions,
   referrals,
   usageCounters,
+  userConsents,
 } from "@/lib/db/schema";
 
 /**
@@ -115,6 +116,9 @@ export async function purgeUserData(userId: string): Promise<void> {
     // Cihaz jetonu bir ADRES: kalırsa silinmiş hesabın telefonuna bildirim
     // gönderilebilir hâlde kalır.
     await tx.delete(deviceTokens).where(eq(deviceTokens.userId, userId));
+    // Yapay zekâ rıza defteri: hesap yoksa işlenecek veri de yok, rızayı
+    // gösterme yükü de kalmıyor.
+    await tx.delete(userConsents).where(eq(userConsents.userId, userId));
 
     // Premium hakkı ve promosyon kullanımı: kimliğe bağlı, mali kayıt değil.
     await tx.delete(entitlements).where(eq(entitlements.userId, userId));

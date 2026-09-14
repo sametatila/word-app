@@ -8,8 +8,27 @@ import { api, API_BASE, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "../api/cli
  */
 export type ChatMsg = { role: "user" | "assistant"; content: string };
 
-export async function roleplayConfigured(): Promise<boolean> {
-  try { const r = await api<{ configured: boolean }>("/api/roleplay"); return !!r.configured; } catch { return false; }
+/**
+ * Konuşma fazının hangi yoldan yürüyeceği.
+ *
+ *   ai        sohbet yapay zekâyla
+ *   off       sağlayıcı yapılandırılmamış ya da uç okunamadı → senaryo
+ *   declined  kullanıcı yapay zekâya izin vermedi → senaryo (ilk cümle 403'e
+ *             yenmesin diye baştan)
+ *
+ * Hiç karar vermemiş kullanıcı "ai" döner: izin ilk turda, metin gitmeden
+ * önce soruluyor (`api/client` yakalayıcısı).
+ */
+export type RoleplayRoute = "ai" | "off" | "declined";
+
+export async function roleplayAvailability(): Promise<RoleplayRoute> {
+  try {
+    const r = await api<{ configured: boolean; consent?: string | null }>("/api/roleplay");
+    if (!r.configured) return "off";
+    return r.consent === "declined" ? "declined" : "ai";
+  } catch {
+    return "off";
+  }
 }
 
 export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {

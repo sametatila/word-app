@@ -11,6 +11,7 @@ import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
+import { AiConsentHost } from "./ai-consent-dialog";
 import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
 import { flushPendingAnswers } from "@/lib/answer-queue";
@@ -317,6 +318,12 @@ export function AppShell({
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
           Tetikleyici zaten var olan `lernomi:stats` olayı. */}
       <AchievementUnlock />
+      {/* Yapay zekâ rızası diyaloğu kabukta TEK: izin isteyen 403'ü kırk ayrı
+          çağrı yerinde değil `lib/api-fetch` yakalıyor ve buraya soruyor.
+          Yapay zekâ uçlarının hepsi oturum istiyor ve oturumlu yüzeylerin
+          hepsi bu kabuğun içinde; dışarıda kalan tek çağıran geliştirme
+          sayfası `demo-games` (orada diyalog yok, istek "hayır"a düşer). */}
+      <AiConsentHost />
       <ScreenDiag />
       <TopProgress />
       <InstallPrompt />

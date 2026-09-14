@@ -8,6 +8,7 @@ import { takeUsage } from "@/lib/premium";
 import { scorePronunciation } from "@/lib/pronounce";
 import { track } from "@/lib/events";
 import type { SpeechConfusion } from "@/lib/skills/types";
+import { aiConsentGate } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -33,6 +34,13 @@ export async function POST(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!sttProviders().length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
+  /*
+    YAPAY ZEKÂ RIZASI — ses kaydı konuşma tanıma sağlayıcısına gitmeden ÖNCE.
+    Metinden AYRI bir izin: mikrofon açıklama ekranında verilen onay yalnız
+    sesi kapsıyor (bkz. lib/ai-consent-shared).
+  */
+  const consent = await aiConsentGate(userId, "ai_voice");
+  if (consent) return consent;
 
   let file: File | null = null;
   let target = "";

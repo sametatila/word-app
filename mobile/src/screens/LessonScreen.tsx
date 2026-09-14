@@ -19,7 +19,8 @@ import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, t
 import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
-import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
+import { sendRoleplay, roleplayAvailability, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
+import { isAiConsentDeclined } from "../lib/aiConsent";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
@@ -241,9 +242,17 @@ export function LessonScreen() {
      * ve konuşma çalışmaya devam ediyor; o yolun mobile taşınması ayrı bir iş.
      * Burada yapılan yalnız doğruyu söylemek.
      */
-    roleplayConfigured()
-      .then((ok) => {
-        if (alive && !ok) {
+    roleplayAvailability()
+      .then((route) => {
+        if (alive && route === "declined") {
+          /* İZİN YOK, SERVİS KAPALI DEĞİL. "Servis kapalı" demek yanlış
+             teşhis olurdu; kullanıcıya neden senaryoya düşüldüğü ve nereden
+             açılacağı söyleniyor. */
+          offlineRef.current = true;
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" });
+          return;
+        }
+        if (alive && route === "off") {
           offlineRef.current = true;
           /* HANGİ YEDEĞE DÜŞTÜĞÜ SÖYLENİYOR. Mesaj "birazdan tekrar dene"
              diyordu ama ders DURMUYOR: çevrimdışı rol yapma devralıyor
@@ -584,8 +593,29 @@ export function LessonScreen() {
       push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${lesson.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
       if (bodyText) speakTarget(bodyText);
-    } catch {
-      push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.connection_problem") }], tone: "hint" });
+    } catch (e) {
+      if (isAiConsentDeclined(e)) {
+        /*
+          İLK TURDA İZİN VERİLMEDİ. Metin sağlayıcıya gitmedi; konuşma
+          durmuyor, senaryoya geçip bu turu da senaryodan cevaplıyor. Yoksa
+          kullanıcı her cümlesinde "bağlantı sorunu" görürdü — oysa bağlantı
+          yerinde, yalnız yapay zekâ kapalı.
+        */
+        offlineRef.current = true;
+        const st = offlineStart(lesson);
+        const r = offlineReply(lesson, st.state, text);
+        setOffline(r.state);
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" });
+        const parsed = parseReply(r.content);
+        const bodyText = parsed.body || r.content;
+        setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
+        push({ role: "teacher", segments: [{ lang: "de", text: bodyText }] });
+        setSuggestions(parsed.suggestions);
+        pushHint(r.hint);
+        if (r.speak) speakTarget(r.speak);
+      } else {
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.connection_problem") }], tone: "hint" });
+      }
     } finally {
       setBusy(false);
       scrollDown();

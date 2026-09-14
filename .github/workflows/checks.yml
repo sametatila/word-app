@@ -393,11 +393,16 @@ jobs:
       # o yolun her adımı yayına çıkmış bir sözleşme sayfasını değiştiriyor —
       # bozuk girdinin geri çevrildiği, "varsayılana dön"ün gerçekten döndüğü ve
       # boş bir gövdenin sayfayı boşaltmadığı veritabanı olmadan sınanamıyor.
+      # `test:consent` yapay zekâ rızasının kapısı: izin yoksa metin ve ses
+      # sağlayıcıya gitmiyor (App Store 5.1.2(i), Play Kullanıcı Verileri). Söz
+      # SQL'de tutuluyor ya da tutulmuyor — eklemeli defterin son kararı ve
+      # gecikmeli değerlendirme kuyruğunun izin süzgeci ancak burada sınanıyor.
       - name: Yetki ve hukuki metin (veritabanı)
         run: |
           npx tsx scripts/migrate-all.ts
           npx tsx scripts/schema-check.ts
           npm run test:entitlement
+          npm run test:consent
           npm run test:legal-db
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test

@@ -5,7 +5,7 @@ politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce 
 sonra Console'daki form. "Paylaşım" Play tanımıyla: verinin üçüncü tarafa aktarılması —
 sunucumuz üzerinden konuşma tanıma ve dil modeli sağlayıcılarına giden veri de paylaşımdır.
 
-Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te; Console'a girilecek destek adresi `support@lernomi.app`, gizlilik/veri talepleri `kvkk@lernomi.app` (KVKK) ve `gdpr@lernomi.app` (GDPR). Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor; Türkiye'deki başvurular için yayıncı veri sorumlusu temsilcisi olarak belirlendi. VERBİS kaydı yapılmıyor (çalışan sayısı ve mali bilanço eşiklerine dayanan istisna) ve metinler kayıtlı olduğunu iddia etmiyor.
+Son güncelleme: 2026-09-14. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te; Console'a girilecek destek adresi `support@lernomi.app`, gizlilik/veri talepleri `kvkk@lernomi.app` (KVKK) ve `gdpr@lernomi.app` (GDPR). Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor; Türkiye'deki başvurular için yayıncı veri sorumlusu temsilcisi olarak belirlendi. VERBİS kaydı yapılmıyor (çalışan sayısı ve mali bilanço eşiklerine dayanan istisna) ve metinler kayıtlı olduğunu iddia etmiyor.
 
 ## Genel sorular
 
@@ -13,8 +13,8 @@ Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te
 |---|---|
 | Uygulama kullanıcı verisi topluyor ya da paylaşıyor mu | Evet |
 | Toplanan tüm veriler aktarımda şifreleniyor mu | Evet (HTTPS) |
-| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.lernomi.app/account/delete` ve uygulama içi Ayarlar › Hesap › Hesabı sil |
-| Hesap oluşturma var mı | Evet (e-posta/parola, Google) |
+| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.lernomi.app/account/delete` ve uygulama içi Profil › Ayarlar › Hesap › Hesabı sil |
+| Hesap oluşturma var mı | Evet (e-posta/parola, Google, Apple) |
 | Bağımsız güvenlik incelemesi (MASA) | Hayır |
 | Aileler politikasına tabi mi | Hayır (hedef kitle 18+; şartlar hesap açmayı 18 yaşla sınırlıyor) |
 
@@ -28,8 +28,8 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Kişisel bilgi › E-posta adresi | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, güvenlik (doğrulama, parola sıfırlama) |
 | Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP adresi, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
-| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram, Mistral) | Evet (saklanmaz) | İsteğe bağlı (yürüyüş modu, açık rıza) | Uygulama işlevi (konuşma tanıma) |
-| Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı | Uygulama işlevi (değerlendirme ve geri bildirim) |
+| Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram, Mistral) | Evet (saklanmaz) | İsteğe bağlı (ekran kapalı yürüyüş modu; uygulama içi açık rıza, izin yoksa gönderilmez) | Uygulama işlevi (konuşma tanıma) |
+| Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı (uygulama içi açık rıza, izin yoksa gönderilmez) | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran görüntüleme olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar, kapatılabilir) | Uygulama işlevi, analitik, kişiselleştirme |
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, biyografi, içerik ve kullanıcı bildirimleri) | Evet | Hayır | Hayır | Zorunlu (ad) / isteğe bağlı (biyografi) | Uygulama işlevi, kişiselleştirme (sıralama, sosyal profil), güvenlik (moderasyon) |
 | Uygulama etkinliği › Diğer eylemler (arkadaşlık istekleri, tepkiler, dürtmeler, ortak görevler, engellemeler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal özellikler) |
@@ -40,7 +40,8 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 
 Notlar:
 - "Geçici işleme" yalnız ses kaydı için: ses tanıma bitince silinir, hiçbir yerde saklanmaz.
-- Google ile giriş: Google, hesap kimliği/ad/e-posta'yı bize verir (Google'a bizden veri gitmez). Console'da bu, "Kişisel bilgi" toplama satırlarıyla karşılanır.
+- Google ya da Apple ile giriş: sağlayıcı hesap kimliği/ad/e-posta'yı bize verir (sağlayıcıya bizden veri gitmez). Console'da bu, "Kişisel bilgi" toplama satırlarıyla karşılanır. Apple ile giriş Android'de de sunuluyor (web akışı; `/api/config` → `appleWeb:true`).
+- **Paylaşım izinle yapılıyor (2026-09-14).** Metin dil modeli sağlayıcılarına, ses konuşma tanıma sağlayıcılarına ancak uygulama içinde sağlayıcıları adıyla sayan ekranda izin verildikten sonra gidiyor; karar sunucuda (`user_consents`) ve uç izin yoksa isteği sağlayıcıya iletmiyor. Play Kullanıcı Verileri politikasının belirgin açıklama ve rıza şartının karşılığı; Veri Güvenliği'nde bu türler bu yüzden "isteğe bağlı".
 - Reklam SDK'sı, üçüncü taraf analitik ve çökme raporlama yok.
 - **"Cihaz veya diğer kimlikler" 2026-09-10'da HAYIR'dan EVET'e döndü.** Uzak bildirim
   (Firebase Cloud Messaging) o gün açıldı; cihaz başına bir kayıt jetonu saklanıyor
@@ -66,6 +67,6 @@ Notlar:
 
 ## Diğer beyanlarla tutarlılık
 
-- Foreground service (mikrofon): "Kullanıcının başlattığı sürekli ses yakalama — yürüyüş modunda konuşma tanıma". Video: Başla → onay ekranı (MicDisclosure) → izin → ekran kapatma → bildirim → durdurma.
+- Foreground service (mikrofon): "Kullanıcının başlattığı sürekli ses yakalama — yürüyüş modunda konuşma tanıma". Video: Öğren › Yürüyüş modu › Başla → onay ekranı (MicDisclosure, sağlayıcılar adıyla) → izin → ekran kapatma → bildirim → ekran kapalıyken bir cevap → durdurma (`docs/play/console.md` §3).
 - İçerik derecelendirme: kullanıcılar birbirini görüyor (görünen ad, arkadaşlık), yapay zekâ ile etkileşim var, dijital satın alma **var** (abonelik; satın alma akışı RevenueCat bağlanınca açılır — beyan ürüne göre yapılır, akışın hazır olma tarihine göre değil).
 - Üretken yapay zekâ: uygulama içi bildirme (her yanıtın altında "Bildir"), promptlarda güvenlik sınırları, insan incelemesi (admin › Loglar).

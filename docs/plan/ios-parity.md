@@ -23,8 +23,10 @@
 >    açılmadı; `ios:check` bunu "KAPALI" diye raporluyor ve Android etkilenmiyor.
 > 2. **RevenueCat anahtarları** (C6) — `billingConfig.ts` içinde ikisi de boş.
 >    Bu iOS'a özgü DEĞİL, iki platformun ortak eksiği.
-> 3. **`LEGAL_PLATFORMS.ios = false`** — bilinçli kapı (`src/lib/legal/index.ts:246`);
->    §6'daki koşullar sağlanınca `LEGAL_VERSION` artışıyla birlikte açılacak.
+> 3. ~~**`LEGAL_PLATFORMS.ios = false`**~~ → **açıldı** (2026-09-14, `LEGAL_VERSION` 1.1):
+>    gizlilik politikası, şartlar ve destek sayfası iOS'u **gönderimden önce** kapsıyor,
+>    çünkü App Review üçünü de incelemede okuyor. §6'daki kapılar artık bayrağın değil
+>    **yayının** kapıları; gerekçe `src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda.
 > 4. **Mac'te derleme ve cihaz koşusu** (Şerit S) — `docs/plan/ios-device-runbook.md`.
 >
 > Aşağısı tarihsel kayıt olarak duruyor: hangi eksiğin neden kapatıldığı ve
@@ -89,6 +91,7 @@ Kanıt sütunundaki yollar depo köküne göredir. `M/` = `mobile/`.
 > | C2 | `ITSAppUsesNonExemptEncryption = false` |
 > | C3 | Apple ile Giriş: `PROVIDERS` listesinde ilk sırada, yetki dosyasında `applesignin`, `appleAuth.ts` cihaz kapısıyla |
 > | C4 | Google iOS istemcisi AÇIK (`ios:check` doğruluyor), `CFBundleURLTypes` var |
+> | C5 | `LEGAL_PLATFORMS.ios = true` — **2026-09-14**, `LEGAL_VERSION` 1.1 + changelog kaydı. Metinler iOS'u incelemeden önce kapsamak zorunda olduğu için yayın gününe bırakılmadı; 1.1 kaydı "yayımlandı" demiyor |
 > | E1 | Abonelik metinleri platforma göre: `premiumstate.manage_ios`, `paywall.renew_cancel_appstore`, `deleteaccount.subscription_cancel_appstore` |
 > | E2 | `track("app_open", …, "${Platform.OS}:standalone")` — platform artık sabit değil |
 > | E3 | Güncelleme şeridi kaldırıldı (`useUpdate.ts` yok) |
@@ -101,7 +104,6 @@ Kanıt sütunundaki yollar depo köküne göredir. `M/` = `mobile/`.
 > | # | Durum | Kimin |
 > |---|---|---|
 > | P8 | `Podfile.lock` depoda **yok** ve gitignore'da da değil; pod çözümü makineden makineye değişebilir. Android `gradlew` + wrapper jar'ı sabitliyor, iOS'ta karşılığı eksik | Mac'te `pod install` sonrası commit |
-> | C5 | `LEGAL_PLATFORMS.ios = false` — **bilinçli**. Açılırken `LEGAL_VERSION` artacak + changelog kaydı düşecek | yayınla birlikte |
 > | C6 | RevenueCat anahtarları boş — **iki platformda da**; iOS'ta ayrıca IAP yetkisi + App Store Connect ürünleri gerekiyor | Samet |
 > | — | `LernomiUITests.swift` diskte var ama pbxproj'da **yok** (`grep -c LernomiUITests` = 0); eklemek için `scripts/ios-add-uitest-target.rb` yazılmış | Mac'te |
 > | §5 | Cihazda sınanacaklar listesi — Mac gerektiriyor (Şerit S) | Mac'te |
@@ -383,7 +385,11 @@ yalnız cihazda öğrenilebilecekleri taşır.
 
 ## 6. Yayın kapıları
 
-`LEGAL_PLATFORMS.ios` ancak şunların **hepsi** bitince açılır:
+iOS **yayını** ancak şunların **hepsi** bitince yapılır. Bu liste eskiden
+`LEGAL_PLATFORMS.ios` bayrağının kapısıydı; bayrak 2026-09-14'te ayrıca açıldı, çünkü
+App Review gizlilik politikasını, şartları ve destek sayfasını gönderimde okuyor ve
+yalnız Android'i sayan bir metin iOS uygulamasının metni sayılmıyor (gerekçe
+`src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda).
 
 | Kapı | Kaynak |
 |---|---|
@@ -393,7 +399,7 @@ yalnız cihazda öğrenilebilecekleri taşır.
 | Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor | C1 |
 | Uygulama ikonu ve açılış ekranı markalı | R1, R2 |
 | §5'in tamamı cihazda koşuldu | Şerit S |
-| `LEGAL_VERSION` artırıldı + changelog kaydı düşüldü | `src/lib/legal.ts` |
+| ~~`LEGAL_VERSION` artırıldı + changelog kaydı düşüldü~~ → **1.1, 2026-09-14** | `src/lib/legal/index.ts` |
 
 Açık ürün kararları:
 

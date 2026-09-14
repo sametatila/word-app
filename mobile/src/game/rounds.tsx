@@ -24,7 +24,7 @@ import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyFor } from "./why";
 import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
-import { assessFailKey } from "../lib/assessFail";
+import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
@@ -797,7 +797,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       const targetsOk = fb.checks.filter((c) => c.kind === "target").every((c) => c.ok);
       const correct = targetsOk && fb.words >= 3;
       setResult(fb);
-      setFailNote(`${tx(assessFailKey(e))} ${tx("assess.fail_offline")}`);
+      setFailNote(`${tx(assessFailKey(e))} ${tx(fallbackNoteKey(e, "estimate", "assess.fail_offline"))}`);
       setOutcome({ correct, quality: correct ? 3 : 2 });
       markAnswer(correct);
     }

@@ -14,6 +14,7 @@ import {
 import { canAiPractice } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
 import { clampDay } from "@/lib/award";
+import { aiConsentGate } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
 
@@ -35,6 +36,14 @@ export async function POST(req: Request) {
 
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  /*
+    YAPAY ZEKÂ RIZASI — metin dil modeline gitmeden ÖNCE (App Store 5.1.2(i),
+    Play Kullanıcı Verileri). İzin yoksa istek sağlayıcıya hiç iletilmiyor;
+    istemci 403'ü yakalayıp izin ekranını açıyor (bkz. lib/ai-consent).
+  */
+  const consent = await aiConsentGate(userId, "ai_text");
+  if (consent) return consent;
 
   let body: unknown;
   try {

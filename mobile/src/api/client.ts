@@ -70,7 +70,56 @@ export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
  */
 export const ROLEPLAY_TIMEOUT_MS = 45_000;
 
-export type ApiInit = RequestInit & { timeoutMs?: number };
+export type ApiInit = RequestInit & {
+  timeoutMs?: number;
+  /** İç bayrak: rıza onayından sonraki TEK yeniden deneme (döngü olmasın). */
+  consentRetry?: boolean;
+};
+
+/**
+ * YAPAY ZEKÂ RIZASI — kırk çağrı yerine tek yakalayıcı.
+ *
+ * Sunucu, metni ya da sesi yapay zekâ sağlayıcısına göndermeden önce izni
+ * kendisi okuyor ve izin yoksa isteği sağlayıcıya hiç iletmeden
+ * `403 { error: "ai_consent_required", purpose, state }` döndürüyor (web
+ * `lib/ai-consent`). İstemcinin işi o anda izin ekranını açmak: onay gelirse
+ * aynı istek BİR KEZ yeniden gidiyor, gelmezse `AI_CONSENT_DECLINED` atılıyor
+ * ve çağrı yerlerinin zaten var olan yedeği (senaryolu konuşma, kural tabanlı
+ * puan) devralıyor.
+ *
+ * Ekranı açan kod burada değil (`lib/aiConsent` + `ui/AiConsentSheet`); o
+ * modül bu dosyayı içe aktardığı için ters yönde bir kayıt kancası kuruldu,
+ * yoksa döngüsel içe aktarma olurdu.
+ */
+export const AI_CONSENT_REQUIRED = "ai_consent_required";
+export const AI_CONSENT_DECLINED = "ai_consent_declined";
+
+export type AiConsentPrompt = { purpose: "ai_text" | "ai_voice"; state: "unset" | "declined" | "outdated" };
+type ConsentHandler = (req: AiConsentPrompt) => Promise<boolean>;
+let consentHandler: ConsentHandler | null = null;
+
+export function setAiConsentHandler(h: ConsentHandler | null): void {
+  consentHandler = h;
+}
+
+/** 403 gövdesi bir rıza isteği mi — değilse null. */
+function consentPromptOf(status: number, body: unknown): AiConsentPrompt | null {
+  if (status !== 403 || typeof body !== "object" || body === null) return null;
+  const b = body as Record<string, unknown>;
+  if (b.error !== AI_CONSENT_REQUIRED || (b.purpose !== "ai_text" && b.purpose !== "ai_voice")) return null;
+  const state = b.state === "declined" || b.state === "outdated" ? b.state : "unset";
+  return { purpose: b.purpose, state };
+}
+
+/**
+ * Ekran açılacak mı, açılırsa onay geldi mi. "declined" ekranı KENDİLİĞİNDEN
+ * açtırmaz: hayır diyene her çağrıda yeniden sormak rızayı yıpratarak koparmak
+ * olurdu; kapalı amaç Ayarlar'dan açılıyor.
+ */
+async function askConsent(req: AiConsentPrompt): Promise<boolean> {
+  if (req.state === "declined" || !consentHandler) return false;
+  try { return await consentHandler(req); } catch { return false; }
+}
 
 /**
  * Zaman aşımlı ham `fetch` — `api()`yi KULLANAMAYAN çağrılar için.
@@ -88,14 +137,25 @@ export async function fetchWithTimeout(url: string, init?: ApiInit): Promise<Res
   const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
   const ctl = ms > 0 ? new AbortController() : null;
   const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
+  let res: Response;
   try {
-    return await fetch(url, { ...init, signal: ctl?.signal as RequestInit["signal"] });
+    res = await fetch(url, { ...init, signal: ctl?.signal as RequestInit["signal"] });
   } catch (e) {
     if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
     throw e;
   } finally {
     if (timer) clearTimeout(timer);
   }
+  /* Rıza isteği: gövde küçük bir JSON, kopyasından okunuyor ki çağıran asıl
+     yanıtı yine kendisi çözebilsin. */
+  if (res.status === 403 && !init?.consentRetry) {
+    const prompt = consentPromptOf(403, await res.clone().json().catch(() => null));
+    if (prompt) {
+      if (await askConsent(prompt)) return fetchWithTimeout(url, { ...init, consentRetry: true });
+      throw new ApiError(403, AI_CONSENT_DECLINED);
+    }
+  }
+  return res;
 }
 
 export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T> {
@@ -141,7 +201,13 @@ export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T>
   const text = await res.text().catch(() => "");
   if (!res.ok) {
     let msg = text.slice(0, 200);
-    try { const j = JSON.parse(text); msg = j.error ?? j.message ?? msg; } catch { /* düz metin */ }
+    let parsed: unknown = null;
+    try { parsed = JSON.parse(text); const j = parsed as { error?: string; message?: string }; msg = j.error ?? j.message ?? msg; } catch { /* düz metin */ }
+    const prompt = init?.consentRetry ? null : consentPromptOf(res.status, parsed);
+    if (prompt) {
+      if (await askConsent(prompt)) return api<T>(path, { ...init, consentRetry: true });
+      throw new ApiError(403, AI_CONSENT_DECLINED);
+    }
     throw new ApiError(res.status, msg || `api ${res.status}`);
   }
   return (text ? JSON.parse(text) : null) as T;
