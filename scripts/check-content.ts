@@ -2,7 +2,7 @@
  * İçerik doğrulayıcı — `npm run test:content` (WP-70)
  *
  *   npm run test:content                 # hepsi
- *   npm run test:content -- lessons      # tek tür: skills | lessons | cheatsheet
+ *   npm run test:content -- lessons      # tek tür: skills | lessons | words | cheatsheet
  *   npm run test:content -- --baseline   # uyarı sayısını baseline'a yaz
  *
  * Kurallar `data/content/SPEC.md`'de; burası onların kodu. İki liste:
@@ -16,7 +16,7 @@
  * Veritabanı yok: içerik koddan (`bundled`, `LESSONS`, `CHEATSHEETS`),
  * kelime havuzu `data/app/words.json`'dan.
  */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { LESSONS } from "../src/lib/lessons";
@@ -31,6 +31,7 @@ import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore — .mjs, tip bildirimi yok
 import { contains } from "../data/meanings/contains.mjs";
+import { cleanHeadword } from "../src/lib/headword";
 
 const ROOT = path.resolve(__dirname, "..");
 const BASELINE = path.join(ROOT, "data/content/baseline.json");
@@ -534,10 +535,61 @@ function checkLessons(list: Lesson[]) {
 }
 
 
+/* ───────────── kelime havuzu başlıkları ───────────── */
+/*
+  PARANTEZLİ BAŞLIK HAVUZA GİRMİYOR (2026-09-14).
+
+  Başlık üç yerde işleniyor ve üçü de parantezi kendi yoluyla okuyor:
+  seslendirme (`cleanForSpeech`) parantezi siliyor, cevap denetimi
+  (`acceptedForms`) parantezsiz hâli de doğru sayıyor, ekran olduğu gibi
+  gösteriyor. Bu havuzda iki gerçek kusur üretti:
+
+    (herunter-)fahren  "fahren" okunuyor ve "fahren" cevabı doğru sayılıyordu
+                       — başka bir kelime (havuzda 139)
+    (Back-)Ofen        "Ofen" okunuyordu (havuzda 8352); "(Back-)Rohr" ise
+                       "Rohr" = boru
+    gern(e)            parantez atılınca 189 «gern»in ta kendisi
+
+  İki kural, üç kurs (seed'in yazdığı biçimle: de ve gsw `cleanHeadword`
+  sonrası, en olduğu gibi):
+    1. "(X-)" isteğe bağlı ön eki başlıkta olamaz — birleşik yazılır.
+    2. Parantez atılınca aynı kursta BAŞKA bir başlığa dönüşen başlık olamaz;
+       öğrenci iki maddeyi ne duyarak ne yazarak ayırabilir.
+*/
+function checkHeadwords() {
+  const read = (file: string) => readFileSync(path.join(ROOT, file), "utf8");
+  const jsonl = (file: string) =>
+    read(file).split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as { id: number; de: string });
+  const zurichDir = path.join(ROOT, "data/zurich");
+  const gsw = readdirSync(zurichDir)
+    .filter((f) => /^chunk-\d+\.json$/.test(f))
+    .sort()
+    .flatMap((f) => JSON.parse(readFileSync(path.join(zurichDir, f), "utf8")) as { id: number; gsw: string }[]);
+  const courses: [string, { id: number; head: string }[]][] = [
+    ["de", (JSON.parse(read("data/app/words.json")) as { id: number; de: string }[]).map((r) => ({ id: r.id, head: cleanHeadword(r.de) }))],
+    ["en", jsonl("data/app/words-en.json").map((r) => ({ id: r.id, head: r.de }))],
+    ["gsw-zh", gsw.map((r) => ({ id: r.id, head: cleanHeadword(r.gsw) }))],
+  ];
+  const key = (s: string) => s.toLocaleLowerCase("de-DE").replace(/\s+/g, " ").trim();
+  for (const [course, rows] of courses) {
+    const byHead = new Map<string, number[]>();
+    for (const r of rows) byHead.set(key(r.head), [...(byHead.get(key(r.head)) ?? []), r.id]);
+    for (const r of rows) {
+      if (!r.head.includes("(")) continue;
+      const w = `[words] ${course} ${r.id} «${r.head}»`;
+      if (/\(\p{L}+-\)/u.test(r.head)) E(w, "isteğe bağlı ön ek parantezde — başlık birleşik yazılmalı");
+      const dropped = key(r.head.replace(/\([^)]*\)/g, " "));
+      const others = (byHead.get(dropped) ?? []).filter((id) => id !== r.id);
+      if (others.length) E(w, `parantez atılınca başka bir başlık oluyor: «${dropped}» = ${others.join(", ")}`);
+    }
+  }
+}
+
 /* ───────────── çalıştır ───────────── */
-const kinds = only ? [only] : ["skills", "lessons"];
+const kinds = only ? [only] : ["skills", "lessons", "words"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
 if (kinds.includes("lessons")) checkLessons(LESSONS);
+if (kinds.includes("words")) checkHeadwords();
 
 // Muafiyet listesi bayatladıysa söyle: artık eşiği aşmayan bir kimlik listede
 // durursa bir sonraki okuyan onu gerçek bir kusur sanır.
