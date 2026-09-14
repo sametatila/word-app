@@ -18,7 +18,7 @@ import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate } from "../lib/premium";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -106,6 +106,9 @@ export function WalkModeScreen() {
   /* Açıklama ekranı ve KİPİ: Android'de rıza (iki düğme), iOS'ta sistem izninden
      önceki tek düğmeli ekran, girişteki bağlantıda yalnız okuma (bkz. MicDisclosure). */
   const [disclosure, setDisclosure] = useState<MicDisclosureMode | null>(null);
+  /* Android 13+'ta bildirim izni verilmediyse servis bildirimi görünmüyor; ekranda
+     bunun ve nasıl durdurulacağının söylenmesi için (B23). */
+  const [notifHidden, setNotifHidden] = useState(false);
   /* Açıklamada adları sayılan ses sağlayıcıları (sunucudan, politikanın tablosu). */
   const [voiceProcessors, setVoiceProcessors] = useState<AiConsentProcessor[] | null>(null);
   const [voiceProcessorsFailed, setVoiceProcessorsFailed] = useState(false);
@@ -608,6 +611,7 @@ export function WalkModeScreen() {
     if (!rs.length) { setNoMore(true); setPhase("done"); return; }
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
+    if (Platform.OS === "android") setNotifHidden(!(await ensureWalkNotificationPermission()));
     if (Platform.OS === "ios" && greet) await askVoiceConsent();
     if (!mounted.current) return;
     setKeepAwake(true); // ekran turu boyunca sönmesin
@@ -754,6 +758,16 @@ export function WalkModeScreen() {
    * tek şey ekran kapatılırsa dinlemenin süremeyeceği. Yalnız native tarafın
    * bildirdiği gerçek bir hatada çiziliyor (LernomiWalkServiceFailed).
    */
+  /**
+   * Android 13+'ta bildirim izni verilmediyse: dinleme bildirimi görünmeyecek ve
+   * "Durdur" oradan basılamayacak. Tur durmuyor; nasıl durdurulacağı söyleniyor.
+   */
+  const notifWarning = () => (notifHidden ? (
+    <View accessibilityLiveRegion="polite" style={{ marginHorizontal: spacing.lg, marginTop: -spacing.md, marginBottom: spacing.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
+      <Text variant="caption" color={colors.textMuted}>{tx("walkmode.notif_hidden")}</Text>
+    </View>
+  ) : null);
+
   const bgWarning = () => (bgUnavailable ? (
     <View style={{ marginHorizontal: spacing.lg, marginTop: -spacing.md, marginBottom: spacing.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
       <Text variant="caption" color={colors.textMuted}>{tx("walkmode.background_unavailable")}</Text>
@@ -869,6 +883,7 @@ export function WalkModeScreen() {
         <>
           {topBar(true)}
           {bgWarning()}
+          {notifWarning()}
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
             <Mascot mood="wave" size={124} />
             <Text variant="h1">{tx("walkmode.here_we_go")}</Text>
@@ -879,6 +894,7 @@ export function WalkModeScreen() {
         <>
           {topBar(true)}
           {bgWarning()}
+          {notifWarning()}
           <View style={{ flex: 1, paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
             {/* durum rozeti */}
             <View style={{ alignItems: "center" }}>

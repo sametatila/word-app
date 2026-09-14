@@ -75,6 +75,39 @@ export async function ensureMicPermission(): Promise<boolean> {
 }
 
 /**
+ * ANDROID 13+ BİLDİRİM İZNİ — yürüyüş servisinin bildirimi için.
+ *
+ * Mikrofonlu ön plan servisi bildirim izni olmadan da çalışıyor ama bildirimi
+ * çekmecede GÖRÜNMÜYOR (yalnız Görev Yöneticisi'nde çıkıyor). Play'in ön plan
+ * servisi kuralı servisin kullanıcı tarafından fark edilebilir ve durdurulabilir
+ * olmasını istiyor ve beyanımızdaki durdurma yolu tam o bildirimdeki "Durdur".
+ * İzin eskiden yalnız giriş sonrası bildirim ekranında isteniyordu ve "Belki
+ * sonra" ile geçilebiliyordu; o kullanıcıda yürüyüş sessizce bildirimsiz kalıyordu.
+ *
+ * İzin burada, servisi başlatmadan hemen önce ve BAĞLAMIYLA isteniyor: daha önce
+ * reddedildiyse sistem gerekçe penceresini gösteriyor. Verilmezse `false` döner;
+ * çağıran yürüyüşü durdurmuyor, ekranda bildirimin görünmeyeceğini ve nasıl
+ * durdurulacağını yazıyor (WalkModeScreen `notifHidden`). iOS'ta karşılığı yok:
+ * dinleme kilit ekranında Now Playing kaydıyla görünüyor.
+ */
+export async function ensureWalkNotificationPermission(): Promise<boolean> {
+  if (Platform.OS !== "android" || Number(Platform.Version) < 33) return true;
+  try {
+    const perm = PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS;
+    if (await PermissionsAndroid.check(perm)) return true;
+    const res = await PermissionsAndroid.request(perm, {
+      title: t("walkmode.notif_perm_title"),
+      message: t("walkmode.notif_perm_message"),
+      buttonPositive: t("micperm.allow"),
+      buttonNegative: t("common.discard"),
+    });
+    return res === PermissionsAndroid.RESULTS.GRANTED;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Cihazda mikrofon DONANIMI var mı (izin değil). Manifest mikrofonu zorunlu özellik
  * saymıyor, yani mikrofonsuz cihaz da kurabiliyor; sonuç önbelleklenir çünkü donanım
  * uygulama çalışırken değişmez. Sorulamıyorsa VAR sayılır — yanlışlıkla özellik

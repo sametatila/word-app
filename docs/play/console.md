@@ -40,7 +40,7 @@ Review account: the account above has an active Premium subscription, so walk mo
 
 5. AI consent (User Data policy, prominent disclosure): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
 
-6. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission. Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X inside the app) to end.
+6. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission → notification permission (Android 13+; the walk notification is only visible with it). Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X inside the app) to end. If notification permission is denied, the walk screen says the notification will not appear and that walk mode is stopped from the app.
 
 7. Account deletion: Profile › Settings › Account › Delete account (the last row; also linked at the bottom of the Profile screen). Please test deletion with a separate account, not the review account.
 ```
@@ -109,8 +109,8 @@ verilmezse ya da videodaki akış koda uymazsa politika reddi gelir.
 | Temel işlev | Kullanıcının başlattığı sürekli ses yakalama — yürüyüş modunda konuşma tanıma |
 | Kullanıcıya faydası | Telefon cepteyken ve ekran kapalıyken sesli çalışabilmek; ekrana bakmadan söylenen cevabın değerlendirilmesi |
 | Alternatif neden yok | Ekran kapalıyken mikrofon erişimi Android 9'dan beri yalnız mikrofon tipli ön plan servisiyle mümkün; WorkManager, JobScheduler ve normal servis bu işi yapamaz |
-| Kullanıcı bunu nasıl başlatır | Öğren › Yürüyüş modu › Başla → mikrofon açıklama ekranı (sesin gidebileceği konuşma tanıma sağlayıcılarını adıyla sayar) → "Kabul ediyorum, başla" → sistem mikrofon izni. Onay ve izin olmadan servis hiç başlamaz |
-| Kullanıcı bunu nasıl durdurur | Kalıcı bildirimdeki "Durdur"; uygulama içinden X; tur bitince kendiliğinden |
+| Kullanıcı bunu nasıl başlatır | Öğren › Yürüyüş modu › Başla → mikrofon açıklama ekranı (sesin gidebileceği konuşma tanıma sağlayıcılarını adıyla sayar) → "Kabul ediyorum, başla" → sistem mikrofon izni → bildirim izni (Android 13+, bildirimin görünmesi için; servis başlamadan hemen önce isteniyor). Onay ve mikrofon izni olmadan servis hiç başlamaz |
+| Kullanıcı bunu nasıl durdurur | Kalıcı bildirimdeki "Durdur"; uygulama içinden X; tur bitince kendiliğinden. Bildirim izni verilmediyse bildirim görünmüyor: yürüyüş ekranı bunu ve durdurmanın uygulamadaki çarpıyla yapıldığını kalıcı bir satırla söylüyor (`WalkModeScreen` `notifHidden`) |
 
 ### Videoda gösterilecek akış
 
@@ -123,7 +123,7 @@ Gizlilik › "Mikrofon onayını geri al").
 1. **Öğren** sekmesi › "Yürüyüş modu" kutucuğu › **Başla**.
 2. Mikrofon açıklama ekranı (`MicDisclosure`) — sağlayıcı listesi yüklenene ve metin
    okunacak kadar beklenir.
-3. **Kabul ediyorum, başla** → sistem izin diyaloğu → **İzin ver**.
+3. **Kabul ediyorum, başla** → sistem mikrofon izni → **İzin ver** → bildirim izni (Android 13+) → **İzin ver**.
 4. Bir kelime sorulur, sesli cevap verilir.
 5. **Güç tuşuyla ekran kapatılır.** Kilit ekranında bildirim görünür: başlık,
    "mikrofon dinliyor" metni ve **Durdur** düğmesi. Sistemin mikrofon göstergesi açıktır.
