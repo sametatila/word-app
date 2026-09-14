@@ -383,6 +383,11 @@ jobs:
       # Support URL alanına giriyor).
       - name: Hukuki metinler
         run: npm run test:legal
+      # Web Push abonelik adresi izin listesi. Sunucu kayıtlı adrese POST atıyor;
+      # liste gevşerse kayıtlı bir kullanıcı sunucuya iç ağa istek attırabilir
+      # (kör SSRF, güvenlik denetimi 2026-09-14 #7). Veritabanı istemez.
+      - name: Push abonelik adresi izin listesi
+        run: npm run test:push-endpoint
       # Yetki katmanının veritabanı testi — 32 doğrulama. Buradaki hata sınıfı
       # sessiz: yanlış hesaplanmış bir bitiş tarihi ya da iki kez uygulanmış bir
       # ödeme olayı kullanıcı şikâyet edene kadar görünmez, sonra da parayla

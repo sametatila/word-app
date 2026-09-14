@@ -7,6 +7,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { pushEnabled, sendToUser } from "@/lib/push";
 import { langOf } from "@/lib/social/notify";
 import { translate } from "@/lib/i18n/dict";
+import { isPushEndpoint } from "@/lib/push-endpoint";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
@@ -35,7 +36,7 @@ export async function POST(req: Request) {
   const endpoint = typeof body.endpoint === "string" ? body.endpoint : "";
   const p256dh = typeof body.keys?.p256dh === "string" ? body.keys.p256dh : "";
   const auth = typeof body.keys?.auth === "string" ? body.keys.auth : "";
-  if (!endpoint || !p256dh || !auth || !validEndpoint(endpoint) || !validKey(p256dh, 200) || !validKey(auth, 64)) {
+  if (!endpoint || !p256dh || !auth || !isPushEndpoint(endpoint) || !validKey(p256dh, 200) || !validKey(auth, 64)) {
     return NextResponse.json({ error: "bad_subscription" }, { status: 400 });
   }
 
@@ -147,26 +148,6 @@ export async function PUT(req: Request) {
     console.error("[push/subscribe] deneme", err);
     return NextResponse.json({ error: "send_failed" }, { status: 500 });
   }
-}
-
-/**
- * Endpoint tarayıcının push servisidir ve sunucu ona istek atar. Doğrulanmazsa
- * kayıtlı bir kullanıcı sunucuyu istediği adrese (iç ağ dâhil) POST attırabilir.
- * Yalnız https ve herkese açık bir ana bilgisayar adı kabul edilir.
- */
-function validEndpoint(v: string): boolean {
-  if (v.length > 2048) return false;
-  let u: URL;
-  try {
-    u = new URL(v);
-  } catch {
-    return false;
-  }
-  if (u.protocol !== "https:" || u.username || u.password) return false;
-  const h = u.hostname.toLowerCase();
-  if (!h.includes(".") || h === "localhost" || h.endsWith(".local") || h.endsWith(".internal")) return false;
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(h) || h.startsWith("[")) return false; // IP değil, ad
-  return true;
 }
 
 function validKey(v: string, max: number): boolean {

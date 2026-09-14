@@ -7,6 +7,7 @@ import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
 import { deviceTokensFor, fcmEnabled, sendFcm, sendFcmRows } from "@/lib/fcm";
+import { isPushEndpoint } from "@/lib/push-endpoint";
 import { DEFAULT_NATIVE, formatNumber, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
@@ -191,6 +192,12 @@ export function composeReminder(input: {
  * aboneleri silmemesi için.
  */
 async function deliver(sub: typeof pushSubscriptions.$inferSelect, payload: PushPayload) {
+  // Gönderim anında da bakılıyor: izin listesinden ÖNCE kaydedilmiş bir satır
+  // (ya da veritabanına başka yoldan giren biri) sunucuya istek attırmasın.
+  if (!isPushEndpoint(sub.endpoint)) {
+    await db.delete(pushSubscriptions).where(eq(pushSubscriptions.id, sub.id));
+    return false;
+  }
   try {
     await webpush.sendNotification(
       { endpoint: sub.endpoint, keys: { p256dh: sub.p256dh, auth: sub.auth } },
