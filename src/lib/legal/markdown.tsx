@@ -11,7 +11,12 @@ import { platformText, visibleProcessors, type LegalConfig } from "./shape";
  * bunu "güvenli" yapmaz, çünkü o yetki bir gün devredilebilir ve XSS'in bedeli
  * oturum çerezi. Ayrıştırıcı bunun yerine yalnız TANIDIĞI düğümleri (başlık,
  * paragraf, liste, tablo, bağlantı, kalın, kod) React öğesi olarak kuruyor;
- * geri kalan her şey düz metin olarak basılıyor. Enjeksiyon yüzeyi yok.
+ * geri kalan her şey düz metin olarak basılıyor.
+ *
+ * BAĞLANTI ADRESİ AYRICA SÜZÜLÜYOR. React `href`'i kaçırmıyor:
+ * `[x](javascript:…)` tıklanınca betik çalıştırırdı ve bu sayfalar herkese açık
+ * (güvenlik denetimi 2026-09-14, #8). `safeHref` yalnız uygulama içi yol,
+ * çapa, http(s) ve mailto geçiriyor; gerisi bağlantısız düz etiket oluyor.
  *
  * ASLA İSTİSNA ATMAZ. Bozuk markdown, yarım tablo, kapanmamış belirteç — hepsi
  * ya düz metne düşer ya görünür bir işaretle basılır. Bir gizlilik politikası
@@ -22,6 +27,23 @@ import { platformText, visibleProcessors, type LegalConfig } from "./shape";
  * işlevi çağırıyor. Önizlemenin ayrı bir uygulamayla üretilmesi, "panelde
  * gördüğüm şey yayına çıkan şey değil" sınıfının tamamını açardı.
  */
+
+/**
+ * Bağlantı adresinin güvenli olup olmadığı; değilse null.
+ *
+ * İzin listesi, yasak listesi değil: `javascript:`/`data:`/`vbscript:` saymak
+ * büyük-küçük harf, boşluk ve kontrol karakteri oyunlarıyla atlatılır
+ * (`jav\tascript:`). `//evil.example` "/" ile başladığı halde başka bir alan
+ * adına gider; uygulama içi yol sayılmıyor.
+ */
+export function safeHref(href: string): string | null {
+  const h = href.trim();
+  if (/[\u0000-\u001F\u007F\s]/.test(h)) return null;
+  if (h.startsWith("/") && !h.startsWith("//") && !h.startsWith("/\\")) return h;
+  if (h.startsWith("#")) return h;
+  if (/^(https?:\/\/|mailto:)/i.test(h)) return h;
+  return null;
+}
 
 /* ── belirteç sözlüğü ───────────────────────────────────────────────────── */
 
@@ -253,13 +275,18 @@ function inline(ctx: Ctx, text: string, keyPrefix: string): ReactNode[] {
       const t = href.match(/^\{\{([a-zA-Z][a-zA-Z0-9:/]*)\}\}$/);
       if (t) href = tokenText(ctx, t[1]) ?? "#";
       const inner = inline(ctx, label, key);
+      // Belirteçten gelen adres de süzülüyor: panelden yazılan varlık alanları
+      // da serbest metin.
+      const safe = safeHref(href);
       // Uygulama içi yollar `next/link` ile; dış adresler düz <a>. Ayrım
       // gezinmenin istemci tarafında kalması için: /privacy → /terms geçişi
       // tam sayfa yenilemesi olmamalı.
       out.push(
-        href.startsWith("/")
-          ? <Link key={key} href={href} prefetch={false}>{inner}</Link>
-          : <a key={key} href={href} rel="noopener noreferrer">{inner}</a>,
+        safe === null
+          ? <span key={key}>{inner}</span>
+          : safe.startsWith("/")
+            ? <Link key={key} href={safe} prefetch={false}>{inner}</Link>
+            : <a key={key} href={safe} rel="noopener noreferrer">{inner}</a>,
       );
     } else {
       const name = tok.slice(2, -2);

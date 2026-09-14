@@ -3,7 +3,7 @@ import { PRIVACY_DEFAULT } from "@/content/legal/defaults/privacy";
 import { TERMS_DEFAULT } from "@/content/legal/defaults/terms";
 import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
 import type { LegalDocDefault } from "@/content/legal/defaults/types";
-import { unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
+import { safeHref, unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 import { DAILY_QUOTAS } from "@/lib/quotas";
@@ -340,6 +340,27 @@ console.log("\nUygulama içi yollar");
     check(`${file} · ${locale}: eski "${oldWalkPath(locale)}" yolu kalmadı`, !md.includes(oldWalkPath(locale)));
     check(`${file} · ${locale}: hesap silme yolu "${deletePath(locale)}"`, md.includes(deletePath(locale)));
   }
+}
+
+/* ── bağlantı adresi süzgeci (güvenlik denetimi 2026-09-14, #8) ─────────── */
+{
+  console.log("\nbağlantı adresi süzgeci");
+  // Metinlerin bugün kullandığı her biçim geçmeli: süzgeç yayımlanmış bir
+  // bağlantıyı düşürürse gizlilik politikası sessizce bağlantısız kalır.
+  for (const ok of ["/privacy", "/tr/terms#silme", "#bolum", "https://play.google.com/x", "http://example.com", "mailto:support@example.com", "MAILTO:a@b.c"]) {
+    check(`geçer: ${ok}`, safeHref(ok) === ok);
+  }
+  for (const bad of ["javascript:alert(1)", "JavaScript:alert(1)", " javascript:alert(1)", "jav\tascript:alert(1)", "java\nscript:x", "data:text/html,<script>", "vbscript:x", "//evil.example/x", "/\\evil.example", "privacy", "ftp://x", "https://a b"]) {
+    check(`reddedilir: ${JSON.stringify(bad)}`, safeHref(bad) === null);
+  }
+  // Yayımlanmış metinlerdeki bütün düz bağlantılar süzgeçten geçiyor.
+  const hrefs = [PRIVACY_DEFAULT, TERMS_DEFAULT, SUPPORT_DEFAULT]
+    .flatMap((d) => Object.values(d).map((v) => JSON.stringify(v)))
+    .flatMap((s) => [...s.matchAll(/\]\(([^)]+)\)/g)].map((m) => m[1]))
+    .filter((h) => !h.startsWith("{{"));
+  check("varsayılan metinlerde bağlantı bulundu", hrefs.length > 0, String(hrefs.length));
+  const dusen = hrefs.filter((h) => safeHref(h) === null);
+  check("varsayılan metinlerdeki hiçbir bağlantı düşmüyor", dusen.length === 0, dusen.join(", "));
 }
 
 console.log(fails === 0 ? `\ntamam: hepsi geçti` : `\nKALDI: ${fails}`);
