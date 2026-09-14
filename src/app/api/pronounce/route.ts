@@ -6,7 +6,7 @@ import { sttProviders } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
 import { takeUsage } from "@/lib/premium";
 import { scorePronunciation } from "@/lib/pronounce";
-import { signScore } from "@/lib/exam-grade";
+import { signScore, openKey, examSpeakingTarget } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import type { SpeechConfusion } from "@/lib/skills/types";
 import { aiConsentGate } from "@/lib/ai-consent";
@@ -48,6 +48,7 @@ export async function POST(req: Request) {
   let exerciseId = "";
   let language = "de";
   let confusions: SpeechConfusion[] = [];
+  let examToken = "";
   try {
     const form = await req.formData();
     const f = form.get("audio");
@@ -55,7 +56,11 @@ export async function POST(req: Request) {
     const t = form.get("target");
     if (typeof t === "string") target = t.trim().slice(0, MAX_TARGET);
     const ex = form.get("exerciseId");
-    if (typeof ex === "string" && /^[a-z0-9_:-]{1,32}$/.test(ex)) exerciseId = ex;
+    // Sınav madde id'leri büyük harf/nokta içerebiliyor (ör. s:A1.2:0); charset
+    // genişletildi ki skor jetonu bağlaması (F7) çalışsın.
+    if (typeof ex === "string" && /^[A-Za-z0-9_:.-]{1,48}$/.test(ex)) exerciseId = ex;
+    const et = form.get("examToken");
+    if (typeof et === "string") examToken = et;
     const lang = form.get("language");
     if (typeof lang === "string" && /^[a-z]{2}$/.test(lang)) language = lang;
     const c = form.get("confusions");
@@ -68,6 +73,18 @@ export async function POST(req: Request) {
   }
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
+  // SINAV KONUŞMA OVERRIDE — güvenlik denetimi F7 (teorik açık kapatma):
+  // geçerli examToken + exerciseId gelirse hedef cümle mühürlü kâğıttan alınır
+  // (istemcinin gönderdiği kolay hedef değil). Skor jetonu YALNIZ o zaman imzalanır.
+  let examVerified = false;
+  if (examToken && exerciseId) {
+    const key = openKey(examToken);
+    const sealed = key ? examSpeakingTarget(key, exerciseId) : null;
+    if (sealed) {
+      target = sealed.slice(0, MAX_TARGET);
+      examVerified = true;
+    }
+  }
   if (!target) return NextResponse.json({ error: "no_target" }, { status: 400 });
 
   if (!(await underDailyLimit(userId))) return NextResponse.json({ error: "quota" }, { status: 429 });
@@ -85,8 +102,9 @@ export async function POST(req: Request) {
       lang: language === "en" ? "en" : "de",
     });
     if (exerciseId) void track(userId, "pronounce", new Date().toISOString().slice(0, 10), score.overall, exerciseId);
-    // F7 kalıntısı: konuşma puanını imzala — sınav finish'i bu jetonla puanlıyor.
-    const scoreToken = exerciseId && typeof score.overall === "number" ? signScore(userId, "speaking", exerciseId, score.overall) : undefined;
+    // F7: konuşma puanını imzala — AMA yalnız hedef mühürlü kâğıttan geldiyse
+    // (examVerified). Jeton = "sunucunun sınav hedefine karşı puanlandı".
+    const scoreToken = examVerified && typeof score.overall === "number" ? signScore(userId, "speaking", exerciseId, score.overall) : undefined;
     return NextResponse.json({ ...score, provider: stt.provider, hasWordTiming: Boolean(stt.words?.length), ...(scoreToken ? { scoreToken } : {}) });
   } catch (err) {
     if (err instanceof SttError) {

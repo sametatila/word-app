@@ -128,11 +128,12 @@ export type PronounceResponse =
   /** `consent`: kullanıcı sesinin sağlayıcıya gitmesine izin vermedi — klip gönderilmedi, arıza değil. */
   | { ok: false; reason: "not_configured" | "rate_limited" | "quota" | "consent" | "failed" | "network" };
 
-export async function askPronounce(blob: Blob, target: string, opts: { exerciseId?: string; confusions?: SpeechConfusion[]; language?: string } = {}): Promise<PronounceResponse> {
+export async function askPronounce(blob: Blob, target: string, opts: { exerciseId?: string; confusions?: SpeechConfusion[]; language?: string; examToken?: string } = {}): Promise<PronounceResponse> {
   const form = new FormData();
   form.append("audio", blob, blob.type.includes("wav") ? "clip.wav" : "clip.webm");
   form.append("target", target);
   if (opts.exerciseId) form.append("exerciseId", opts.exerciseId);
+  if (opts.examToken) form.append("examToken", opts.examToken);
   if (opts.language) form.append("language", opts.language);
   if (opts.confusions?.length) form.append("confusions", JSON.stringify(opts.confusions.slice(0, 8)));
   try {

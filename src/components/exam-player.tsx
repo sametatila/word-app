@@ -347,7 +347,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       // Hedef dil: verilmezse uç Almancaya düşüyor (bkz. `api/assess`).
       lang: targetLangOf(course),
     };
-    const ai = await askAssess(req);
+    const ai = await askAssess(req, { examToken: keyToken.current ?? undefined });
     const out = ai.ok ? ai.result : fallbackAssessment(req, t);
     setWritingResult(out);
     setWritingFailure(ai.ok ? null : ai.reason);
@@ -675,7 +675,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       capture.current = null;
       setSpk("scoring");
       const blob = await cap.stop();
-      const res = blob ? await askPronounce(blob, item.de, { exerciseId: item.id, confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
+      const res = blob ? await askPronounce(blob, item.de, { exerciseId: item.id, examToken: keyToken.current ?? undefined, confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
       if (res.ok) {
         speakingScores.current[idx] = res.score.overall;
         speakingScoreTokens.current[idx] = res.score.scoreToken ?? null;

@@ -81,7 +81,7 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
 
 export async function askAssess(
   req: AssessRequest,
-  opts: { signal?: AbortSignal; timeoutMs?: number } = {},
+  opts: { signal?: AbortSignal; timeoutMs?: number; examToken?: string } = {},
 ): Promise<AssessResponse> {
   try {
     /* `apiFetch`ten, kendi süresiyle: izin isteyen 403'ü yakalayıcı karşılıyor
@@ -91,7 +91,7 @@ export async function askAssess(
     const res = await apiFetch("/api/assess", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ ...req, day: localDay() }),
+      body: JSON.stringify({ ...req, day: localDay(), ...(opts.examToken ? { examToken: opts.examToken } : {}) }),
       signal: opts.signal,
       timeoutMs: opts.timeoutMs ?? ASSESS_TIMEOUT_MS,
     });

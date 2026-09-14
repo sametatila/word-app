@@ -13,7 +13,7 @@ import {
 } from "@/lib/assess-prompts";
 import { canAiPractice } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
-import { signScore } from "@/lib/exam-grade";
+import { signScore, openKey, examWritingTask } from "@/lib/exam-grade";
 import { clampDay } from "@/lib/award";
 import { aiConsentGate } from "@/lib/ai-consent";
 
@@ -56,6 +56,28 @@ export async function POST(req: Request) {
   const parsed = parseBody(body);
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
   if (parsed.tooLong) return NextResponse.json({ error: "too_long", max: ASSESS_MAX_CHARS }, { status: 413 });
+
+  /*
+   * SINAV YAZMA OVERRIDE — güvenlik denetimi F7 (teorik açık kapatma).
+   *
+   * Geçerli bir sınav `examToken`'ı (start'ta mühürlenen keyToken) + exerciseId
+   * gelirse, GÖREV TANIMI istemciden DEĞİL mühürlü kâğıttan alınır ve seviye de
+   * sınavınki olur. Böylece değiştirilmiş bir istemci "kolay görev + mükemmel
+   * cevap" ile yüksek puan alamaz: AI her zaman sunucunun gerçek sınav görevine
+   * karşı puanlıyor. Skor jetonu YALNIZ bu override gerçekleştiğinde imzalanır
+   * (`examVerified`), yani jetonun varlığı = "sunucu görevine karşı puanlandı".
+   */
+  let examVerified = false;
+  const examToken = typeof (body as { examToken?: unknown }).examToken === "string" ? (body as { examToken: string }).examToken : null;
+  if (examToken && parsed.req.kind === "writing" && typeof parsed.req.exerciseId === "string") {
+    const key = openKey(examToken);
+    const wt = key ? examWritingTask(key, parsed.req.exerciseId) : null;
+    if (wt) {
+      parsed.req.task = { prompt: wt.prompt, constraints: wt.constraints };
+      parsed.req.level = wt.level as AssessLevel;
+      examVerified = true;
+    }
+  }
 
   /**
    * PREMIUM KAPISI — yalnız AI değerlendirmesi taşıyan türlerde.
@@ -115,11 +137,12 @@ export async function POST(req: Request) {
   );
 
   if (outcome.ok) {
-    // F7 kalıntısı: yazma puanını imzala — sınav finish'i bu jetonla istemcinin
-    // ham skoruna güvenmeden puanlıyor. Yalnız exerciseId'li yazma isteklerinde.
+    // F7: yazma puanını imzala — AMA yalnız sınav görevine karşı puanlandıysa
+    // (examVerified). Böylece jeton, sunucunun gerçek görevine karşı hesaplanmış
+    // bir skoru kanıtlar; istemci-görevli çağrılar jeton üretmez.
     const overall = outcome.result?.score?.overall;
     const scoreToken =
-      parsed.req.kind === "writing" && typeof parsed.req.exerciseId === "string" && typeof overall === "number"
+      examVerified && typeof parsed.req.exerciseId === "string" && typeof overall === "number"
         ? signScore(userId, "writing", parsed.req.exerciseId, overall)
         : undefined;
     return NextResponse.json({

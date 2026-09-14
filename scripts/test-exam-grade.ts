@@ -3,13 +3,14 @@
  * Çalıştır: npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts
  */
 import assert from "node:assert";
-import { buildAnswerKey, sealKey, openKey, gradeObjective, signScore, verifyScore, resolveSpokenWritten } from "../src/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, signScore, verifyScore, resolveSpokenWritten, examWritingTask, examSpeakingTarget } from "../src/lib/exam-grade";
 import type { ExamPaper } from "../src/lib/exam-types";
 
 const USER = "user-123";
 
 // Yalnız buildAnswerKey'in okuduğu bölümleri kuran minimal kâğıt.
 const paper = {
+  level: "A1",
   sections: {
     vocab: [],
     grammar: [
@@ -23,7 +24,7 @@ const paper = {
     reading: [{ id: "r1", questions: [{ text: "", options: ["x", "y", "z"], answer: 0 }, { text: "", options: ["x", "y", "z"], answer: 2 }] }],
     listening: [{ id: "l1", questions: [{ text: "", options: ["x", "y"], answer: 1 }] }],
     speaking: [{ id: "s:A1:0", de: "Guten Tag" }, { id: "s:A1:1", de: "Auf Wiedersehen" }],
-    writing: [{ id: "w:A1:0", task: { kind: "free" } }],
+    writing: [{ id: "w:A1:0", task: { kind: "free", prompt: "Kafede sipariş ver", checklist: ["selam", "sipariş"], minWords: 30 } }],
   },
 } as unknown as ExamPaper;
 
@@ -110,4 +111,15 @@ assert.deepStrictEqual(resolveSpokenWritten(key, USER, null, null), { writingSco
 // forge edilen ham skor işe yaramaz: jeton olmadan writingScore alınamaz
 assert.strictEqual(resolveSpokenWritten(key, USER, "duzmece-jeton", null).writingScore, null, "düzmece jeton → null");
 
-console.log("✓ exam-grade: 11 senaryo geçti (nesnel puanlama + imzalı yazma/konuşma skor jetonu; forgery kapalı)");
+// 12) Mühürlü görev/hedef — assess/pronounce override'ı bunları kullanır (istemci
+//     görevine güvenilmez; teorik açık kapatma)
+assert.deepStrictEqual(
+  examWritingTask(key, "w:A1:0"),
+  { prompt: "Kafede sipariş ver", constraints: ["selam", "sipariş", "en az 30 kelime"], level: "A1" },
+  "mühürlü yazma görevi + seviye",
+);
+assert.strictEqual(examWritingTask(key, "yok"), null, "olmayan yazma id → null");
+assert.strictEqual(examSpeakingTarget(key, "s:A1:1"), "Auf Wiedersehen", "mühürlü konuşma hedefi");
+assert.strictEqual(examSpeakingTarget(key, "yok"), null, "olmayan konuşma id → null");
+
+console.log("✓ exam-grade: 12 senaryo geçti (nesnel puanlama + imzalı skor jetonu + mühürlü görev/hedef; teorik açık kapalı)");

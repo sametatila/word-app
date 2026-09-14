@@ -32,6 +32,12 @@ export type ObjectiveKey = {
   /** Kâğıttaki yazma/konuşma madde id'leri — imzalı skor jetonu bunlara bağlanır. */
   writingIds: string[];
   speakingIds: string[];
+  /** Sınav seviyesi — assess override'ında rubrik seviyesi buradan (istemciden değil). */
+  level: string;
+  /** Yazma görevleri — assess, istemci task'ı yerine bunları puanlar. */
+  writingTasks: { id: string; prompt: string; constraints: string[] }[];
+  /** Konuşma hedef cümleleri — pronounce, istemci target'ı yerine bunları puanlar. */
+  speakingTargets: { id: string; de: string }[];
 };
 
 export type ExamResponses = {
@@ -55,7 +61,25 @@ export function buildAnswerKey(paper: ExamPaper, lang: TargetLang): ObjectiveKey
     lang,
     writingIds: paper.sections.writing.map((w) => w.id),
     speakingIds: paper.sections.speaking.map((s) => s.id),
+    level: paper.level,
+    writingTasks: paper.sections.writing.map((w) => ({
+      id: w.id,
+      prompt: w.task.prompt,
+      constraints: [...(w.task.checklist ?? []), `en az ${w.task.minWords} kelime`],
+    })),
+    speakingTargets: paper.sections.speaking.map((s) => ({ id: s.id, de: s.de })),
   };
+}
+
+/** Mühürlü kâğıttan yazma görevi (assess override'ı için) — istemci task'ına güvenilmez. */
+export function examWritingTask(key: ObjectiveKey, exerciseId: string): { prompt: string; constraints: string[]; level: string } | null {
+  const w = key.writingTasks.find((x) => x.id === exerciseId);
+  return w ? { prompt: w.prompt, constraints: w.constraints, level: key.level } : null;
+}
+
+/** Mühürlü kâğıttan konuşma hedef cümlesi (pronounce override'ı için). */
+export function examSpeakingTarget(key: ObjectiveKey, exerciseId: string): string | null {
+  return key.speakingTargets.find((x) => x.id === exerciseId)?.de ?? null;
 }
 
 /**
