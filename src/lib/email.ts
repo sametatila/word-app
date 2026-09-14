@@ -148,8 +148,20 @@ export async function sendEmail(
  */
 
 /** Ortak şablon: sade, tek eylem düğmesi. Metin sürümü sesli okuyucu/istemci için. */
+/**
+ * HTML öznitelik ve metin kaçışı. Adres yalnız `"` kaçırılarak basılıyordu;
+ * better-auth'un ürettiği adres bugün kodlanmış geliyor, ama içine giren
+ * `callbackURL` çağıranın verdiği bir değer ve şablon kaynağa güvenmemeli
+ * (güvenlik denetimi 2026-09-14, bilgi maddesi: e-posta şablonu kaçışı).
+ * `&amp;` tarayıcıda ve e-posta istemcisinde `&`e geri çözülüyor, bağlantı
+ * değişmiyor.
+ */
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
 function template(lang: NativeLang, heading: string, body: string, cta: string, url: string): string {
-  const safeUrl = url.replace(/"/g, "&quot;");
+  const safeUrl = escapeHtml(url);
   return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#fbf7f2;font-family:-apple-system,Segoe UI,sans-serif;color:#241a12">
   <div style="max-width:480px;margin:0 auto;padding:32px 24px">
     <div style="font-size:22px;font-weight:800;color:#b44909;margin-bottom:16px">Lernomi</div>
@@ -174,7 +186,7 @@ function codeTemplate(lang: NativeLang, heading: string, body: string, code: str
     <div style="font-size:22px;font-weight:800;color:#b44909;margin-bottom:16px">Lernomi</div>
     <h1 style="font-size:20px;margin:0 0 12px">${heading}</h1>
     <p style="font-size:15px;line-height:1.6;color:#7c6c5d;margin:0 0 20px">${body}</p>
-    <div style="font-size:32px;font-weight:800;letter-spacing:8px;background:#ffffff;border:1px solid #ece3d8;border-radius:12px;padding:18px 12px;text-align:center">${code}</div>
+    <div style="font-size:32px;font-weight:800;letter-spacing:8px;background:#ffffff;border:1px solid #ece3d8;border-radius:12px;padding:18px 12px;text-align:center">${escapeHtml(code)}</div>
     <p style="font-size:12px;color:#b7a695;margin:24px 0 0;line-height:1.6">${note}</p>
   </div></body></html>`;
 }
