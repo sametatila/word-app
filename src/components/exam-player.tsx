@@ -158,6 +158,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const responses = useRef<{ grammar: number[]; reading: number[][]; listening: number[][]; produce: string[] }>({
     grammar: [], reading: [], listening: [], produce: [],
   });
+  // F7 kalıntısı: yazma/konuşma için sunucunun imzaladığı skor jetonları —
+  // finish'te relay edilir, sunucu istemci skoru yerine imzalı skoru kullanır.
+  const writingScoreToken = useRef<string | null>(null);
+  const speakingScoreTokens = useRef<(string | null)[]>([]);
   const writingScore = useRef<number | null>(null);
   const misses = useRef<Miss[]>([]);
   const startedAt = useRef(Date.now());
@@ -173,6 +177,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       const { paper: p, keyToken: kt } = (await res.json()) as { paper: ExamPaper; keyToken?: string };
       keyToken.current = kt ?? null;
       responses.current = { grammar: [], reading: [], listening: [], produce: [] };
+      writingScoreToken.current = null;
+      speakingScoreTokens.current = [];
       setPaper(p);
       setLeft(p.seconds);
       startedAt.current = Date.now();
@@ -235,6 +241,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           sections,
           keyToken: keyToken.current,
           responses: responses.current,
+          writingScoreToken: writingScoreToken.current,
+          speakingScoreTokens: speakingScoreTokens.current.filter((x) => x),
           vocabAnswers: vocabAnswers.current,
           writingScore: writingScore.current,
           speakingScore: speakingScores.current.length ? Math.round(speakingScores.current.reduce((a, b) => a + b, 0) / speakingScores.current.length) : null,
@@ -332,6 +340,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const req: AssessRequest = {
       kind: "writing",
       level: level as AssessLevel,
+      // exerciseId: imzalı skor jetonu bu sınav maddesine bağlansın (F7).
+      exerciseId: item.id,
       task: { prompt: item.task.prompt, constraints: [...item.task.checklist, `en az ${item.task.minWords} kelime`] },
       answer: { text },
       // Hedef dil: verilmezse uç Almancaya düşüyor (bkz. `api/assess`).
@@ -341,6 +351,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const out = ai.ok ? ai.result : fallbackAssessment(req, t);
     setWritingResult(out);
     setWritingFailure(ai.ok ? null : ai.reason);
+    writingScoreToken.current = ai.ok ? (ai.scoreToken ?? null) : null;
     writingScore.current = out.score.overall;
     score.current.writing.correct = (writingScore.current ?? 0) >= 60 ? 1 : 0;
     setBusy(false);
@@ -664,9 +675,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       capture.current = null;
       setSpk("scoring");
       const blob = await cap.stop();
-      const res = blob ? await askPronounce(blob, item.de, { confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
+      const res = blob ? await askPronounce(blob, item.de, { exerciseId: item.id, confusions: item.confusions, language: targetLangOf(course) }) : ({ ok: false, reason: "failed" } as const);
       if (res.ok) {
         speakingScores.current[idx] = res.score.overall;
+        speakingScoreTokens.current[idx] = res.score.scoreToken ?? null;
         score.current.speaking.correct += res.score.passed ? 1 : 0;
         setSpkResult(res.score);
         setSpk("done");
@@ -1062,6 +1074,14 @@ function ProduceCard({
           ref={ref}
           value={typed}
           onChange={(e) => onTyped(e.target.value)}
+          /* Tek cümle: Enter = cevapla (uzun yazma bölümü alt satıra inmeye devam ediyor). */
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+              e.preventDefault();
+              if (ready) onSubmit();
+            }
+          }}
+          enterKeyHint="done"
           rows={3}
           lang={course}
           spellCheck={false}

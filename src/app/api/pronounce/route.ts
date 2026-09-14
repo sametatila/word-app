@@ -6,6 +6,7 @@ import { sttProviders } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
 import { takeUsage } from "@/lib/premium";
 import { scorePronunciation } from "@/lib/pronounce";
+import { signScore } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import type { SpeechConfusion } from "@/lib/skills/types";
 import { aiConsentGate } from "@/lib/ai-consent";
@@ -84,7 +85,9 @@ export async function POST(req: Request) {
       lang: language === "en" ? "en" : "de",
     });
     if (exerciseId) void track(userId, "pronounce", new Date().toISOString().slice(0, 10), score.overall, exerciseId);
-    return NextResponse.json({ ...score, provider: stt.provider, hasWordTiming: Boolean(stt.words?.length) });
+    // F7 kalıntısı: konuşma puanını imzala — sınav finish'i bu jetonla puanlıyor.
+    const scoreToken = exerciseId && typeof score.overall === "number" ? signScore(userId, "speaking", exerciseId, score.overall) : undefined;
+    return NextResponse.json({ ...score, provider: stt.provider, hasWordTiming: Boolean(stt.words?.length), ...(scoreToken ? { scoreToken } : {}) });
   } catch (err) {
     if (err instanceof SttError) {
       console.error("[api/pronounce] zincir düştü", err.failures.join(" · "));

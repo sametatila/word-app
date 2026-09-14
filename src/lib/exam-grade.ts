@@ -1,5 +1,5 @@
 import "server-only";
-import { createCipheriv, createDecipheriv, createHash, randomBytes } from "node:crypto";
+import { createCipheriv, createDecipheriv, createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { matchSentence } from "@/lib/sentence-match";
 import type { TargetLang } from "@/lib/courses";
 import type { ExamPaper } from "@/lib/exam-types";
@@ -29,6 +29,9 @@ export type ObjectiveKey = {
   listening: number[][];
   produce: { de: string; accept: string[] }[];
   lang: TargetLang;
+  /** Kâğıttaki yazma/konuşma madde id'leri — imzalı skor jetonu bunlara bağlanır. */
+  writingIds: string[];
+  speakingIds: string[];
 };
 
 export type ExamResponses = {
@@ -50,7 +53,91 @@ export function buildAnswerKey(paper: ExamPaper, lang: TargetLang): ObjectiveKey
     listening: paper.sections.listening.map((t) => t.questions.map((q) => q.answer)),
     produce: paper.sections.produce.map((p) => ({ de: p.de, accept: p.accept })),
     lang,
+    writingIds: paper.sections.writing.map((w) => w.id),
+    speakingIds: paper.sections.speaking.map((s) => s.id),
   };
+}
+
+/**
+ * İmzalı skor jetonu — güvenlik denetimi F7 kalıntısı (yazma/konuşma).
+ *
+ * Yazma/konuşma AI-rubriği ve puanı sunucuda (/api/assess, /api/pronounce)
+ * hesaplanıyor ama İSTEMCİ relay ediyordu — değiştirilmiş istemci hiç AI çağırmadan
+ * writingScore:100 gönderebiliyordu. Artık o uçlar puanı (userId+kind+exerciseId+
+ * score+zaman) üzerinde HMAC-SHA256 ile İMZALIYOR; istemci opak jetonu sınav
+ * finish'ine relay ediyor, sunucu imzayı + TTL'yi doğrulayıp exam maddesine bağlı
+ * İMZALI skoru kullanıyor (istemcinin ham skoru yok sayılır). Jeton yoksa/geçersizse
+ * (eski istemci) çağıran istemci skoruna düşer — geriye uyumlu.
+ *
+ * NOT (dürüst kalıntı): görev tanımı (task/constraints) hâlâ istemciden gel, yani
+ * özel istemci + gerçek yazma emeğiyle daha kolay bir görevden yüksek puan
+ * alınabilir — ama "yoktan 100" ve eski-skoru-replay artık kapalı; tam kapatma
+ * görev tanımını da sunucuya taşımayı gerektirir (kendi kredin, düşük etki).
+ */
+const SCORE_TTL_MS = 3 * 3600 * 1000; // sınav süresi (max 45dk) + bol pay
+
+export function signScore(userId: string, kind: "writing" | "speaking", exerciseId: string, score: number): string {
+  const payload = { u: userId, k: kind, e: exerciseId, s: Math.max(0, Math.min(100, Math.round(score))), t: Date.now() };
+  const body = Buffer.from(JSON.stringify(payload)).toString("base64url");
+  const sig = createHmac("sha256", keyBytes()).update(body).digest("base64url");
+  return `${body}.${sig}`;
+}
+
+export function verifyScore(token: string, userId: string): { kind: "writing" | "speaking"; exerciseId: string; score: number } | null {
+  try {
+    const dot = token.indexOf(".");
+    if (dot < 1) return null;
+    const body = token.slice(0, dot);
+    const sig = token.slice(dot + 1);
+    const expect = createHmac("sha256", keyBytes()).update(body).digest("base64url");
+    const a = Buffer.from(sig);
+    const b = Buffer.from(expect);
+    if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
+    const p = JSON.parse(Buffer.from(body, "base64url").toString("utf8")) as { u: string; k: string; e: string; s: number; t: number };
+    if (p.u !== userId) return null;
+    const age = Date.now() - Number(p.t);
+    if (!(age >= -60_000 && age <= SCORE_TTL_MS)) return null; // gelecek/eski jeton reddi
+    if (p.k !== "writing" && p.k !== "speaking") return null;
+    return { kind: p.k, exerciseId: String(p.e), score: Math.max(0, Math.min(100, Number(p.s))) };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Yazma/konuşma skorlarını imzalı jetonlardan SUNUCUDA çözer. Jeton bu sınavın
+ * maddesine bağlı (exerciseId ∈ key ids) ve imzası/TTL'si geçerliyse kabul edilir;
+ * konuşma çok maddeli → her maddenin doğrulanmış skoru bir kez sayılıp ortalanır.
+ * Bir bölüm için geçerli jeton yoksa null döner (çağıran istemci skoruna düşer).
+ */
+export function resolveSpokenWritten(
+  key: ObjectiveKey,
+  userId: string,
+  writingToken: unknown,
+  speakingTokens: unknown,
+): { writingScore: number | null; speakingScore: number | null } {
+  let writingScore: number | null = null;
+  if (typeof writingToken === "string" && key.writingIds.length) {
+    const v = verifyScore(writingToken, userId);
+    if (v && v.kind === "writing" && key.writingIds.includes(v.exerciseId)) writingScore = v.score;
+  }
+
+  let speakingScore: number | null = null;
+  if (Array.isArray(speakingTokens) && key.speakingIds.length) {
+    const scores: number[] = [];
+    const seen = new Set<string>();
+    for (const tk of speakingTokens) {
+      if (typeof tk !== "string") continue;
+      const v = verifyScore(tk, userId);
+      // Aynı madde jetonu bir kez sayılır (ortalamayı tekrarla şişirme engeli).
+      if (v && v.kind === "speaking" && key.speakingIds.includes(v.exerciseId) && !seen.has(v.exerciseId)) {
+        seen.add(v.exerciseId);
+        scores.push(v.score);
+      }
+    }
+    if (scores.length) speakingScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+  }
+  return { writingScore, speakingScore };
 }
 
 // 32-baytlık anahtar, sunucu sırrından türetilir. Sır placeholder/boş olsa bile

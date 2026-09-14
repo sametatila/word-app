@@ -30,7 +30,7 @@ export type AssessFailure =
   | "bad_request";
 
 export type AssessResponse =
-  | { ok: true; result: Assessment; cached: boolean; provider: string | null }
+  | { ok: true; result: Assessment; cached: boolean; provider: string | null; scoreToken?: string }
   | { ok: false; reason: AssessFailure };
 
 /**
@@ -96,8 +96,8 @@ export async function askAssess(
       timeoutMs: opts.timeoutMs ?? ASSESS_TIMEOUT_MS,
     });
     if (res.ok) {
-      const data = (await res.json()) as { result: Assessment; cached: boolean; provider: string | null };
-      return { ok: true, result: data.result, cached: data.cached, provider: data.provider };
+      const data = (await res.json()) as { result: Assessment; cached: boolean; provider: string | null; scoreToken?: string };
+      return { ok: true, result: data.result, cached: data.cached, provider: data.provider, scoreToken: data.scoreToken };
     }
     const err = (await res.json().catch(() => ({}))) as { error?: string };
     const reason = refusal(res.status, err);

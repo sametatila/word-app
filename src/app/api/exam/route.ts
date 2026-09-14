@@ -8,7 +8,7 @@ import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
 import { LEVEL_SECONDS, MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
 import { nativeOf, targetLangOf } from "@/lib/courses";
-import { buildAnswerKey, sealKey, openKey, gradeObjective, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, resolveSpokenWritten, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -210,6 +210,15 @@ speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100
           const o = override[id];
           if (o && o.total > 0 && !sub.sections.some((s) => s.id === id)) sub.sections.push({ id, ...o });
         }
+      }
+      // YAZMA/KONUŞMA skoru da sunucuda doğrulanır — F7 kalıntısı. assess/pronounce
+      // puanı imzalıyor (scoreToken); istemci relay ediyor. Jeton geçerli + bu
+      // sınavın maddesine bağlıysa istemcinin ham writingScore/speakingScore'u
+      // yerine İMZALI skor kullanılır. Jeton yoksa istemci skoru kalır (eski istemci).
+      if (key) {
+        const sw = resolveSpokenWritten(key, userId, body.writingScoreToken, body.speakingScoreTokens);
+        if (sw.writingScore !== null) sub.writingScore = sw.writingScore;
+        if (sw.speakingScore !== null) sub.speakingScore = sw.speakingScore;
       }
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));

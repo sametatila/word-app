@@ -124,7 +124,7 @@ export function encodeWav(samples: Float32Array, sampleRate: number): Blob {
 }
 
 export type PronounceResponse =
-  | { ok: true; score: PronounceScore & { provider: string; hasWordTiming: boolean } }
+  | { ok: true; score: PronounceScore & { provider: string; hasWordTiming: boolean; scoreToken?: string } }
   /** `consent`: kullanıcı sesinin sağlayıcıya gitmesine izin vermedi — klip gönderilmedi, arıza değil. */
   | { ok: false; reason: "not_configured" | "rate_limited" | "quota" | "consent" | "failed" | "network" };
 
@@ -140,7 +140,7 @@ export async function askPronounce(blob: Blob, target: string, opts: { exerciseI
        `lib/api-fetch`). Süre `timeoutMs` ile — izin diyaloğunda geçen süre
        yirmi saniyeden yenmesin. */
     const res = await apiFetch("/api/pronounce", { method: "POST", body: form, timeoutMs: 20_000 });
-    if (res.ok) return { ok: true, score: (await res.json()) as PronounceScore & { provider: string; hasWordTiming: boolean } };
+    if (res.ok) return { ok: true, score: (await res.json()) as PronounceScore & { provider: string; hasWordTiming: boolean; scoreToken?: string } };
     if (res.status === 503) return { ok: false, reason: "not_configured" };
     if (res.status === 429) {
       const d = (await res.json().catch(() => ({}))) as { error?: string };

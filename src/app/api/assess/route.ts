@@ -13,6 +13,7 @@ import {
 } from "@/lib/assess-prompts";
 import { canAiPractice } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
+import { signScore } from "@/lib/exam-grade";
 import { clampDay } from "@/lib/award";
 import { aiConsentGate } from "@/lib/ai-consent";
 
@@ -114,7 +115,19 @@ export async function POST(req: Request) {
   );
 
   if (outcome.ok) {
-    return NextResponse.json({ result: outcome.result, cached: outcome.cached, provider: outcome.provider });
+    // F7 kalıntısı: yazma puanını imzala — sınav finish'i bu jetonla istemcinin
+    // ham skoruna güvenmeden puanlıyor. Yalnız exerciseId'li yazma isteklerinde.
+    const overall = outcome.result?.score?.overall;
+    const scoreToken =
+      parsed.req.kind === "writing" && typeof parsed.req.exerciseId === "string" && typeof overall === "number"
+        ? signScore(userId, "writing", parsed.req.exerciseId, overall)
+        : undefined;
+    return NextResponse.json({
+      result: outcome.result,
+      cached: outcome.cached,
+      provider: outcome.provider,
+      ...(scoreToken ? { scoreToken } : {}),
+    });
   }
   switch (outcome.reason) {
     case "not_configured":
