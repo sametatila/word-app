@@ -85,16 +85,16 @@
   },
   {
    "id": 2439,
-   "de": "der (Back-)Ofen",
+   "de": "der Backofen",
    "typ": "Nomen",
    "niveau": "B1",
-   "formen": "¨- (D, CH) → A: (Back-)Rohr",
+   "formen": "¨- (D, CH) → A: Backrohr",
    "currentTr": "fırın",
    "currentBeispiel": "Ich habe gerade eine Pizza gemacht. Sie ist ganz frisch aus dem Ofen.",
    "currentBeispielTr": "Az önce pizza yaptım. Fırından yeni çıktı, taptaze.",
    "overlapping": [
     "die Bäckerei (A1)",
-    "das (Back-)Rohr (B1)"
+    "das Backrohr (B1)"
    ]
   },
   {

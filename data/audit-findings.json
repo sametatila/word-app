@@ -1488,22 +1488,10 @@
   "detail": "\"Hersteller\" → \"Ihr Handy ist kaputt?\""
  },
  {
-  "id": 2069,
-  "de": "(herunter-)fahren",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"(herunter-)fahren\" → \"Zum Schluss musst du den Computer herunterfahren.\""
- },
- {
   "id": 2070,
   "de": "Herz",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"Herz\" → \"Ich bin ganz nervös.\""
- },
- {
-  "id": 2075,
-  "de": "(hinunter) runterwerfen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"(hinunter) runterwerfen\" → \"Kannst du mir bitte den Schlüssel runterwerfen?\""
  },
  {
   "id": 2077,
@@ -1800,12 +1788,6 @@
   "detail": "\"Nach dem Essen gab es noch eine leckere Nachspeise\""
  },
  {
-  "id": 2400,
-  "de": "nah(e)",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"nah(e)\" → \"Wie weit ist es zum Bahnhof?\""
- },
- {
   "id": 2401,
   "de": "nähen",
   "rule": "cümle kelimeyi taşımıyor",
@@ -1852,12 +1834,6 @@
   "de": "Obers",
   "rule": "gereksiz artikel",
   "detail": "\"Obers\" isim değil ama artikeli var: das"
- },
- {
-  "id": 2439,
-  "de": "(Back-)Ofen",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"(Back-)Ofen\" → \"Ich habe gerade eine Pizza gemacht.\""
  },
  {
   "id": 2446,
@@ -2044,12 +2020,6 @@
   "de": "roh",
   "rule": "cümle kelimeyi taşımıyor",
   "detail": "\"roh\" → \"Du kannst das nicht essen.\""
- },
- {
-  "id": 2591,
-  "de": "(Back-)Rohr",
-  "rule": "cümle kelimeyi taşımıyor",
-  "detail": "\"(Back-)Rohr\" → \"Ich habe gerade eine Pizza gemacht.\""
  },
  {
   "id": 2594,

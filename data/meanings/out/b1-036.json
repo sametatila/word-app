@@ -41,8 +41,8 @@
   },
   {
     "id": 2670,
-    "tr": "Kuzey Denizi",
-    "en": "North Sea",
+    "tr": "Kuzey Denizi / Baltık Denizi",
+    "en": "North Sea / Baltic Sea",
     "beispiel": "Im Sommer fahren wir jedes Jahr an die Nordsee.",
     "beispielTr": "Yazın her yıl Kuzey Denizi'ne gideriz.",
     "beispielEn": "In summer we go to the North Sea every year."
@@ -329,8 +329,8 @@
   },
   {
     "id": 3110,
-    "tr": "ne kadar; kaç tane",
-    "en": "how much; how many",
+    "tr": "kaç tane",
+    "en": "how many",
     "beispiel": "Wie viele Kinder haben Sie?",
     "beispielTr": "Kaç çocuğunuz var?",
     "beispielEn": "How many children do you have?"

@@ -531,7 +531,7 @@
   },
   {
    "id": 2061,
-   "de": "das Hend(e)l",
+   "de": "das Hendl",
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "- (A) → D: Hähnchen/Hühnchen, CH: Poulet",
@@ -544,10 +544,10 @@
   },
   {
    "id": 2068,
-   "de": "herunter-",
+   "de": "herunter",
    "typ": "Sonstiges",
    "niveau": "B1",
-   "formen": "runter- (herunter-)laden, lädt herunter, lud herunter, hat heruntergeladen",
+   "formen": "",
    "currentTr": "aşağı, indirme",
    "currentBeispiel": "Ich habe mir Musik aus dem Internet (he)runtergeladen.",
    "currentBeispielTr": "İnternetten müzik indirdim."
@@ -564,7 +564,7 @@
   },
   {
    "id": 2075,
-   "de": "(hinunter) runterwerfen",
+   "de": "runterwerfen",
    "typ": "Verb",
    "niveau": "B1",
    "formen": "wirft runter, warf runter, hat runtergeworfen",

@@ -518,8 +518,8 @@
    "currentBeispiel": "Ich geh mal schnell zur Bäckerei.",
    "currentBeispielTr": "Hemen fırına gidip geliyorum.",
    "overlapping": [
-    "der (Back-)Ofen (B1)",
-    "das (Back-)Rohr (B1)"
+    "der Backofen (B1)",
+    "das Backrohr (B1)"
    ]
   },
   {
@@ -545,7 +545,7 @@
    "currentBeispiel": "Ein Hähnchen mit Pommes bitte!",
    "currentBeispielTr": "Bir piliç ve patates kızartması lütfen!",
    "overlapping": [
-    "das Hend(e)l (B1)"
+    "das Hendl (B1)"
    ]
   },
   {
