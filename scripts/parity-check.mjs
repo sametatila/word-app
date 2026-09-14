@@ -7824,6 +7824,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     const ALT_CUBUK = new Set([
       "mobile/src/game/rounds.tsx",
+      "mobile/src/screens/LessonScreen.tsx",
       "mobile/src/screens/RoleplayExamScreen.tsx",
     ]);
 
@@ -7911,15 +7912,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* B DUZENI: alt cubuk klavye yuksekligi kadar kalkiyor. Iki dosya da
-       AYNI ifadeyi kullaniyor - kalip tek olsun. */
-    const kalip = /Math\.max\(0, kb - insets\.bottom\) \+ spacing\.xxl/;
+    /* B DUZENI: alt cubuk klavyenin ustune kalkiyor. Pay OLCULUYOR
+       (`useKeyboardLift`): eski ortak ifade `kb - insets.bottom` Android'de
+       gezinme cubugunu iki kez dusuyordu (RN klavye yuksekligini zaten
+       cubuksuz bildiriyor) ve 3 tuslu gezinmede dugme klavyenin altinda
+       kaliyordu. Elle yazilmis bir hesap geri gelirse burada yakalaniyor. */
+    const eskiHesap = /kb - insets\.bottom/;
     sameList(
       "alt cubuk klavyenin ustune cikiyor",
       [...ALT_CUBUK].sort().map((y) => {
         const g = sil(read(y));
-        const kanca = /useKeyboardHeight\(\)/.test(g);
-        return y.split("/").pop() + "=" + (kanca && kalip.test(g) ? "kalkiyor" : kanca ? "KALIP AYRI" : "KANCA YOK");
+        const kanca = /useKeyboardLift\(/.test(g);
+        return y.split("/").pop() + "=" + (kanca && !eskiHesap.test(g) ? "kalkiyor" : kanca ? "ELLE HESAP" : "KANCA YOK");
       }),
       [...ALT_CUBUK].sort().map((y) => y.split("/").pop() + "=kalkiyor"),
       "bulunan",

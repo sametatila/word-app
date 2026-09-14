@@ -3,6 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput, ActivityIndicator } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
+import { useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -134,6 +135,11 @@ export function LessonScreen() {
   const { params } = useRoute<RouteProp<RootStackParams, "Lesson">>();
   const lesson = useMemo<Lesson | undefined>(() => findLesson(params.id), [params.id]);
   const scrollRef = useRef<any>(null);
+  /* Alt eylem alanı dipte sabit; klavye açılınca dolgusu klavyenin üstüne
+     çıkacak kadar büyüyor. Eskiden hiç büyümüyordu: yazma satırı ve
+     "Gönder" klavyenin altında kalıyordu. */
+  const dockRef = useRef<React.ComponentRef<typeof View>>(null);
+  const dockLift = useKeyboardLift(dockRef, spacing.sm);
   const startedAt = useRef(Date.now());
 
   const [phase, setPhase] = useState<Phase>("lecture");
@@ -749,7 +755,7 @@ export function LessonScreen() {
               </View>
             ))}
           </View>
-          <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
+          <View ref={dockRef} collapsable={false} style={{ paddingHorizontal: spacing.lg, paddingBottom: Math.max(dockLift, insets.bottom + spacing.md), paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
             <Skeleton height={53} radius={radii.lg} />
           </View>
         </>
@@ -786,7 +792,7 @@ export function LessonScreen() {
           </KeyboardAwareScroll>
 
           {/* Alt eylem alanı — tek el için ekranın altında. */}
-          <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
+          <View ref={dockRef} collapsable={false} style={{ paddingHorizontal: spacing.lg, paddingBottom: Math.max(dockLift, insets.bottom + spacing.md), paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
             {phase === "lecture" ? (
               <LectureControls expect={expect} tries={tries} input={input} setInput={setInput}
                 onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat()} onTypedRepeat={submitRepeatTyped}

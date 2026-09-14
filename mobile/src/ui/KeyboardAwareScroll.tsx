@@ -1,9 +1,8 @@
-import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from "react";
-import { findNodeHandle, ScrollView, TextInput, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewProps, type LayoutChangeEvent } from "react-native";
+import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { Platform, ScrollView, TextInput, type NativeScrollEvent, type NativeSyntheticEvent, type ScrollViewProps } from "react-native";
 import type { ScrollViewInstance } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useKeyboardHeight } from "../lib/useKeyboardHeight";
+import { useKeyboardInset, useKeyboardTop } from "../lib/useKeyboardHeight";
 import { spacing } from "../theme";
 
 /**
@@ -21,9 +20,10 @@ import { spacing } from "../theme";
  * "Kontrol et" gibi ona ait bilgiler) klavyenin üstüne KAYDIRIYOR. Kaydırma
  * içerik içinde olduğu için başlık yerinde kalıyor.
  *
- * ÖLÇÜ CİHAZDAN: yükseklik `keyboardDidShow`un bildirdiği gerçek değer, yani
- * üçüncü parti klavyeler, öneri şeridi, bölünmüş/yüzen klavye ve dil çubuğu
- * dahil ne varsa ölçüye giriyor. Sabit bir sayı varsayılmıyor.
+ * ÖLÇÜ CİHAZDAN: klavyenin üst kenarı platformun bildirdiği gerçek değerden
+ * (bkz. `useKeyboardInset`), girdinin ve alanın yeri `measureInWindow` ile.
+ * Üçüncü parti klavyeler, öneri şeridi, gezinme türü (3 tuş / jest) ve alanın
+ * altındaki dolgu ne olursa olsun hesap aynı. Sabit bir sayı varsayılmıyor.
  */
 type Props = ScrollViewProps & {
   /**
@@ -42,17 +42,15 @@ export const KeyboardAwareScroll = forwardRef<ScrollViewInstance, Props>(functio
   contentContainerStyle,
   keepVisible = 96,
   onScroll: onScrollDisari,
-  onLayout: onLayoutDisari,
   ...rest
 }, disRef) {
-  const kb = useKeyboardHeight();
-  const insets = useSafeAreaInsets();
+  const inset = useKeyboardInset();
+  const kbTop = useKeyboardTop();
   const ref = useRef<ScrollViewInstance>(null);
   useImperativeHandle(disRef, () => ref.current as ScrollViewInstance, []);
-  /* Kaydırma konumu ve görünür yükseklik: hesabın ikisine de ihtiyacı var ve
-     ikisi de yalnız olaylardan öğrenilebiliyor. */
+  /* Kaydırma konumu yalnız olaydan öğrenilebiliyor. */
   const offset = useRef(0);
-  const viewH = useRef(0);
+  const [pad, setPad] = useState(0);
 
   /* Çağıranın kendi dinleyicisi varsa KORUNUYOR: bu bileşen `ScrollView`un
      yerine geçiyor, onun sözleşmesini daraltmamalı. */
@@ -60,57 +58,55 @@ export const KeyboardAwareScroll = forwardRef<ScrollViewInstance, Props>(functio
     offset.current = e.nativeEvent.contentOffset.y;
     onScrollDisari?.(e);
   }, [onScrollDisari]);
-  const onLayout = useCallback((e: LayoutChangeEvent) => {
-    viewH.current = e.nativeEvent.layout.height;
-    onLayoutDisari?.(e);
-  }, [onLayoutDisari]);
 
-  /* Klavye yüksekliği değişince (açılma, kapanma, klavye değiştirme, emoji
-     paneline geçme) odaktaki girdi yeniden hizalanıyor. */
+  /*
+    Klavye değişince (açılma, kapanma, klavye değiştirme, emoji paneli)
+    hem dip payı hem odaktaki girdinin yeri PENCERE KOORDİNATINDA ölçülüyor.
+
+    Eskiden görünür alan `kb - insets.bottom` ile tahmin ediliyordu ve
+    kaydırma alanının ekranın dibine kadar uzandığı varsayılıyordu. İkisi de
+    yanlıştı: Android klavye yüksekliğinden gezinme çubuğunu zaten düşüyor
+    (bkz. `useKeyboardInset`) ve alanın altında çoğu ekranda bir dolgu ya da
+    sabit bir çubuk var. Ölçüm ikisini de gereksiz kılıyor.
+  */
   useEffect(() => {
-    if (kb <= 0) return;
-    const node = TextInput.State.currentlyFocusedInput();
     const host = ref.current;
-    if (!node || !host) return;
-    const hostNode = findNodeHandle(host);
-    if (hostNode == null) return;
+    if (inset <= 0) { setPad(0); return; }
+    if (!host) return;
+    /* Dip payı: kaydırma alanının klavyenin altında kalan kısmı + nefes.
+       iOS'ta `automaticallyAdjustKeyboardInsets` aynı işi içerik payıyla
+       yapıyor; ikisi birden verilirse klavye kadar boşluk iki kez eklenir. */
+    if (Platform.OS === "android") {
+      host.measureInWindow((_x, y, _w, h) => setPad(Math.max(0, y + h - kbTop) + spacing.lg));
+    }
     /* Bir kare bekleniyor: dip payı bu render'da yeni eklendi, ölçüm ondan
        önce yapılırsa kaydırılabilir yükseklik henüz eski değeri taşıyor. */
     const id = setTimeout(() => {
-      node.measureLayout(
-        hostNode,
-        (_x, y, _w, h) => {
-          const kapali = Math.max(0, kb - insets.bottom);
-          const gorunurDip = offset.current + viewH.current - kapali;
-          const istenen = y + h + keepVisible;
-          /* "Hareketi azalt" açıksa kaydırma yerinde oluyor (uygulama geneli
-             kural; kapısız `animated: true` denetimde kalıyor). */
-          if (istenen > gorunurDip) host.scrollTo({ y: offset.current + (istenen - gorunurDip), animated: !reduceMotion() });
-        },
-        () => { /* ölçüm başarısız: kaydırma yapılmıyor, pay yine de duruyor */ },
-      );
-    }, 60);
+      const node = TextInput.State.currentlyFocusedInput();
+      if (!node) return;
+      node.measureInWindow((_x, y, _w, h) => {
+        const tasma = y + h + keepVisible - (kbTop - spacing.sm);
+        /* "Hareketi azalt" açıksa kaydırma yerinde oluyor (uygulama geneli
+           kural; kapısız `animated: true` denetimde kalıyor). */
+        if (tasma > 0) ref.current?.scrollTo({ y: offset.current + tasma, animated: !reduceMotion() });
+      });
+    }, 80);
     return () => clearTimeout(id);
-  }, [kb, insets.bottom, keepVisible]);
-
-  /* Dip payı: klavyenin kapattığı yükseklik + bir nefes. Güvenli alan
-     payı düşülüyor çünkü klavye zaten onun üstünde duruyor. */
-  const pad = kb > 0 ? Math.max(0, kb - insets.bottom) + spacing.lg : 0;
+  }, [inset, kbTop, keepVisible]);
 
   return (
     <ScrollView
       ref={ref}
       onScroll={onScroll}
       scrollEventThrottle={16}
-      onLayout={onLayout}
       keyboardShouldPersistTaps="handled"
       /* iOS'un kendi kurtarması BURADA, tek yerde. Her ekranda ayrı ayrı
          yazılıyordu ve yazılmayan ekranlar geride kalıyordu; artık bu bileşeni
-         kullanan herkes onu da alıyor. Android'de etkisiz (orada hesabı
-         yukarıdaki ölçüm yapıyor). */
+         kullanan herkes onu da alıyor. Android'de etkisiz (orada payı
+         yukarıdaki ölçüm veriyor). */
       automaticallyAdjustKeyboardInsets
-      contentContainerStyle={[contentContainerStyle, { paddingBottom: pad }]}
       {...rest}
+      contentContainerStyle={[contentContainerStyle, pad > 0 ? { paddingBottom: pad } : null]}
     >
       {children}
     </ScrollView>

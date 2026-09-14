@@ -31,7 +31,7 @@ import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useKeyboardHeight } from "../lib/useKeyboardHeight";
+import { useKeyboardLift } from "../lib/useKeyboardHeight";
 
 /** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
@@ -68,7 +68,10 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
 export function RoleplayExamScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const kb = useKeyboardHeight();
+  /* Konuşma ekranının kökü ölçülüyor: alt kenarı klavyeyle oynamıyor
+     (bkz. `useKeyboardLift`). */
+  const rootRef = useRef<React.ComponentRef<typeof View>>(null);
+  const kbLift = useKeyboardLift(rootRef, spacing.sm);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
   const lesson = findLesson(id) as Lesson | undefined;
@@ -424,7 +427,7 @@ export function RoleplayExamScreen() {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.md, paddingHorizontal: spacing.lg }}>
+    <View ref={rootRef} collapsable={false} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.md, paddingHorizontal: spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <Text variant="caption" color={colors.textMuted}>{tx("rpexam.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}</Text>
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
@@ -461,10 +464,9 @@ export function RoleplayExamScreen() {
           sabit bir çubukta duruyor; edge-to-edge altında (Android 15+/targetSdk 35+)
           pencere `adjustResize` ile küçülmüyor ve iOS'ta zaten böyle bir şey yok,
           yani klavye kutunun üstüne biniyordu — kullanıcı ne yazdığını görmüyor.
-          Kalıp turlardan geliyor (`game/rounds` `RoundShell`): çubuğu klavye
-          yüksekliği kadar kaldır, güvenli alanı düş, bir de pay ekle (öneri şeridi
-          çoğu Android klavyesinde `keyboardDidShow` yüksekliğine dâhil değil). */}
-      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm, marginBottom: kb > 0 ? Math.max(0, kb - insets.bottom) + spacing.xxl : 0 }}>
+          Pay kökün ölçülen alt kenarından geliyor (`useKeyboardLift`); kökün
+          kendi alt dolgusu zaten klavyenin altında kaldığı için düşülüyor. */}
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm, marginBottom: Math.max(0, kbLift - insets.bottom - spacing.md) }}>
         {asr ? (
           <PressableScale
             onPress={() => void listen()}

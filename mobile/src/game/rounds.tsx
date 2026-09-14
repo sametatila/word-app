@@ -12,7 +12,6 @@ import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
@@ -21,7 +20,7 @@ import { haptic } from "../lib/haptics";
 import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useKeyboardHeight } from "../lib/useKeyboardHeight";
+import { useKeyboardInset, useKeyboardLift } from "../lib/useKeyboardHeight";
 import { whyFor } from "./why";
 import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
@@ -242,15 +241,19 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
     geçiyor — turdan çıkmak da (geri düğmesi, etap kartı) aynı yoldan.
   */
   useEffect(() => () => sesiKes(), []);
-  const kb = useKeyboardHeight();
-  const insets = useSafeAreaInsets();
-  // Host (GameScreen/DailyScreen) zaten insets.bottom + spacing.lg alt padding
-  // veriyor. Klavye açılınca footer'ı klavyenin üstüne çıkacak kadar kaldır +
-  // ekstra pay: öneri/araç şeridi çoğu Android klavyesinde keyboardDidShow
-  // yüksekliğine DAHİL değil, o yüzden "Kontrol et" butonunu örtmesin diye tampon.
-  const lift = kb > 0 ? Math.max(0, kb - insets.bottom) + spacing.xxl : 0;
+  /*
+    KLAVYE PAYI ÖLÇÜLÜYOR, TAHMİN EDİLMİYOR. Eskiden `kb - insets.bottom +
+    spacing.xxl` idi ve Android'de gezinme çubuğunu iki kez düşüyordu (bkz.
+    `useKeyboardInset`): 3 tuşlu gezinmeli telefonda "Kontrol et"in alt
+    kısmı klavyenin altında kalıyordu. Artık kabın alt kenarı ölçülüp
+    klavyenin üst kenarıyla karşılaştırılıyor — kabı hangi ekranın, ne kadar
+    dolguyla taşıdığı hesaba girmiyor.
+  */
+  const shellRef = useRef<React.ComponentRef<typeof View>>(null);
+  const lift = useKeyboardLift(shellRef, spacing.md);
+  const kbOpen = useKeyboardInset() > 0;
   return (
-    <View style={{ flex: 1 }}>
+    <View ref={shellRef} collapsable={false} style={{ flex: 1 }}>
       {scroll ? (
         <ScrollView
           style={{ flex: 1 }}
@@ -263,7 +266,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
       ) : (
         <View style={{ flex: 1 }}>{children}</View>
       )}
-      {footer ? <View style={{ marginBottom: lift, paddingTop: spacing.md }}>{footer}</View> : null}
+      {footer ? <View style={{ marginBottom: lift, paddingTop: kbOpen ? spacing.sm : spacing.md }}>{footer}</View> : null}
       {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
   );
@@ -964,8 +967,30 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
     setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }).text });
   }
+  const submitTyped = () => { if (val.trim()) choose(val.trim()); };
+  const typeFooter = typeMode ? (
+    <View>
+      <TextInput
+        value={val}
+        onChangeText={setVal}
+        autoCapitalize="none"
+        autoCorrect={false}
+        editable={!picked}
+        placeholder={tx("rounds.type")}
+        accessibilityLabel={tx("rounds.type")}
+        placeholderTextColor={colors.textFaint}
+        onSubmitEditing={submitTyped}
+        returnKeyType="done"
+        submitBehavior="submit"
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
+      />
+      <PressableScale onPress={submitTyped} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
+      </PressableScale>
+    </View>
+  ) : undefined;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
+    <RoundShell footer={typeFooter} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
@@ -981,28 +1006,10 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <MascotMid mood={picked ? (fb?.correct ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       {/* Yazarak modda şıklar ÇİZİLMİYOR: web de öyle yapıyor, şıkları
           göstermek zorlaştırmanın kendisini geri alırdı. Şıklar yine
-          sunucudan geliyor çünkü basamak inişi onlara dönüyor. */}
-      {typeMode ? (
-        <View>
-          <TextInput
-            value={val}
-            onChangeText={setVal}
-            autoCapitalize="none"
-            autoCorrect={false}
-            editable={!picked}
-            placeholder={tx("rounds.type")}
-            accessibilityLabel={tx("rounds.type")}
-            placeholderTextColor={colors.textFaint}
-            onSubmitEditing={() => { if (val.trim()) choose(val.trim()); }}
-            returnKeyType="done"
-            blurOnSubmit={false}
-            style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.lg, color: colors.text, fontSize: 18 }}
-          />
-          <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
-          </PressableScale>
-        </View>
-      ) : (
+          sunucudan geliyor çünkü basamak inişi onlara dönüyor. Yazma kutusu
+          kaydırılan içerikte değil turun DİBİNDE (`footer`): içerikteyken
+          klavye açılınca altında kalıyordu. */}
+      {typeMode ? null : (
         <View style={{ gap: spacing.md }}>
           {opts.map((o) => {
             const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
