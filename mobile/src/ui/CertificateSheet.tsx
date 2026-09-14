@@ -72,6 +72,11 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
             originWhitelist={["*"]}
             source={{ html }}
             style={{ flex: 1, backgroundColor: colors.bg }}
+            // Kâğıt statik SVG; script çalıştırmaya gerek yok. Sunucudan gelen
+            // HTML üzerinde JS kapalı: sertifika ucu ileride kullanıcı-etkili bir
+            // metin gömerse oluşacak WebView-içi XSS'i sıfır işlev kaybıyla kapatır
+            // (güvenlik denetimi #11).
+            javaScriptEnabled={false}
             // Kâğıt kendi içinde bağlantı taşımıyor; gezinme kapalı kalsın.
             onShouldStartLoadWithRequest={() => false}
           />
