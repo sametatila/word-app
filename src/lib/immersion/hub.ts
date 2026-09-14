@@ -12,7 +12,7 @@ import type { HubUnit } from "@/components/immersion/immersion-hub";
  */
 type TrackState = {
   units: {
-    unit: { id: string; index: number; group: number; theme: string };
+    unit: { id: string; index: number; group: number; theme: string; moduleIndex: number; topics: string[] };
     locked: boolean;
     complete: boolean;
     done: number;
@@ -30,6 +30,8 @@ export function buildHubUnits(state: TrackState): HubUnit[] {
     index: u.unit.index,
     group: u.unit.group,
     theme: u.unit.theme,
+    moduleIndex: u.unit.moduleIndex,
+    topics: u.unit.topics,
     locked: u.locked,
     complete: u.complete,
     done: u.done,

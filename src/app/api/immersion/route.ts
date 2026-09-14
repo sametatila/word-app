@@ -32,6 +32,8 @@ export async function GET() {
       index: u.unit.index,
       group: u.unit.group,
       theme: u.unit.theme,
+      moduleIndex: u.unit.moduleIndex,
+      topics: u.unit.topics,
       locked: u.locked,
       complete: u.complete,
       done: u.done,

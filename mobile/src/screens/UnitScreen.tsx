@@ -12,6 +12,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useLearningPath } from "../lib/useLearningPath";
 
 
 /**
@@ -29,13 +30,24 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
  */
 export type UnitPaneProps = RootStackParams["Unit"] & { embedded?: boolean };
 
-export function UnitPane({ index, level, theme, items: gelenItems, embedded = false }: UnitPaneProps) {
+export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, embedded = false }: UnitPaneProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  /*
+    CANLI VERİ, AÇILIŞ ANININ KOPYASI DEĞİL. Adımlar gezinme parametresinden
+    okunuyordu: bir beceriyi bitirip geri dönen öğrenci, sunucu kaydı almış
+    olsa da adımı "bitmemiş" görüyordu ve ekran onu hiç tazelemiyordu. Artık
+    patika deposundan (her odakta tazelenen) okunuyor; depo henüz dolmadıysa
+    parametre yedek.
+  */
+  const { data: canli } = useLearningPath();
+  const canliUnit = canli && canli.level === level ? canli.units.find((u) => u.index === index) : undefined;
+  const theme = canliUnit?.theme ?? gelenTheme;
+  const topics = canliUnit?.topics ?? [];
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti yerine
   // ünite yalnız gerçekten yapılabilecek adımları gösterir; ilerleme yüzdesi de onlara göre.
-  const raw = (gelenItems ?? [])
+  const raw = (canliUnit?.items ?? gelenItems ?? [])
     .filter((i) => i.playable || i.kind === "lesson")
     .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null }));
   /*
@@ -87,6 +99,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level, unit: t("common.unit"), n: index })}</Text>
           <Text accessibilityRole="header" variant="h2">{theme}</Text>
+          {topics.length ? <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{topics.join(" · ")}</Text> : null}
         </View>
       </View>
 

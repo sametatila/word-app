@@ -57,6 +57,17 @@ export type ImmersionUnit = {
   course: string;
   /** Tema — ünitenin ilk dersinin düştüğü modülden (moduleTheme). */
   theme: string;
+  /**
+   * Temanın geldiği modülün sırası (0 tabanlı) — Patika üniteleri bununla
+   * modül başlıkları altında grupluyor.
+   *
+   * Neden gerekli: ünite 4 ders, modül 10 ders. Tema modülden geldiği için aynı
+   * ad art arda 2-3 kartta tekrar ediyordu ("Tanışma ve ben" ×3) ve kartlar
+   * birbirinden ayırt edilemiyordu. Tema artık grubun başlığı, kartın adı değil.
+   */
+  moduleIndex: number;
+  /** Ünitenin derslerinin başlıkları (hedef dilde) — kartı ayırt eden ad. */
+  topics: string[];
   /** Sıralı item'lar; sonuncusu daima `checkpoint`. */
   items: ImmersionItem[];
   /** Dolu (ref'li) ders item sayısı — ünitenin iskeleti buna dayanır. */

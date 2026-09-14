@@ -44,16 +44,18 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.primaryText}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
-          <Text variant="caption" color={colors.textMuted}>{unit.complete ? t("common.completed") : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}</Text>
+          {/* Kartı ayırt eden ünitenin KENDİ dersleri: tema 2-3 ünitede aynı. */}
+          <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{unit.topics.join(" · ")}</Text>
         </View>
       </View>
-      {unit.items.length > 0 && (
-        <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
-          {unit.items.map((it) => (
-            <View key={it.id} style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: it.done ? colors.success : it === next ? colors.primary : colors.surface2 }} />
-          ))}
-        </View>
-      )}
+      {/* TEK ÖLÇÜT: şeritteki çizgi sayısı = sayacın paydası = ünite ekranındaki
+          adım sayısı. Şerit içeriği olmayan yuvaları da çiziyordu, sayaç yalnız
+          dersleri sayıyordu: 13 çizginin yanında "1/4 konuşma" yazıyordu. */}
+      <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.md, marginBottom: 6 }}>
+        <Text variant="caption" color={colors.textMuted}>{t("path.steps_done", { n: unit.done, total: unit.total })}</Text>
+        {unit.complete ? <Text variant="caption" color={colors.successText}>{t("common.completed")}</Text> : null}
+      </View>
+      <StepBar unit={unit} next={next} colors={colors} />
       {next && NextIcon && (
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.md, padding: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }}>
@@ -71,6 +73,45 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         </View>
       </PressableScale>
     </Card>
+  );
+}
+
+/** Üniteleri temalarının modülüne göre, sırayı bozmadan gruplar. */
+function moduleGroups(units: LearningPathUnit[]): { moduleIndex: number; theme: string; units: LearningPathUnit[] }[] {
+  const groups: { moduleIndex: number; theme: string; units: LearningPathUnit[] }[] = [];
+  for (const u of units) {
+    const last = groups[groups.length - 1];
+    if (last && last.moduleIndex === u.moduleIndex) last.units.push(u);
+    else groups.push({ moduleIndex: u.moduleIndex, theme: u.theme, units: [u] });
+  }
+  return groups;
+}
+
+/** Adım şeridi — ünitenin OYNANABİLİR adımları, sayaçla aynı küme. */
+function StepBar({ unit, next, colors, thin = false }: { unit: LearningPathUnit; next?: LearningPathUnit["items"][number] | null; colors: Palette; thin?: boolean }) {
+  const steps = unit.items.filter((i) => i.playable);
+  const h = thin ? 5 : 10;
+  return (
+    <View style={{ flexDirection: "row", gap: thin ? 2 : spacing.xs }}>
+      {steps.map((it) => (
+        <View key={it.id} style={{ flex: 1, height: h, borderRadius: h / 2, backgroundColor: it.done ? colors.success : it === next ? colors.primary : it.attempted ? colors.primarySoft : colors.surface2 }} />
+      ))}
+    </View>
+  );
+}
+
+function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: string; titleTr: string; titleDe: string }; colors: Palette; onPress: () => void }) {
+  return (
+    <PressableScale onPress={onPress} style={{ marginTop: spacing.md }}>
+      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
+        <ExamIcon color={colors.streakText} size={18} />
+        <View style={{ flex: 1 }}>
+          <Text variant="bodyStrong" numberOfLines={1}>{t("path.module_exam_n", { n: m.index + 1 })} · {m.titleTr}</Text>
+          <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{m.code} · {m.titleDe} · {t("path.module_exam_minutes")}</Text>
+        </View>
+        <ChevronRightIcon color={colors.textFaint} size={20} />
+      </Card>
+    </PressableScale>
   );
 }
 
@@ -223,39 +264,46 @@ export function PathScreen() {
 
       {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
 
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-        {path.units.map((u) => (
-          <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
-            <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
-              <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
-              </View>
-              <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.theme}</Text>
-              <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, total: u.lessonsTotal })}</Text>
-            </Card>
-          </PressableScale>
-        ))}
-      </View>
+      {/*
+        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor; modül 10 ders, ünite 4
+        ders olduğu için aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve
+        ben" ×3) ve kartlar ayırt edilmiyordu. Tema artık grubun başlığı, kartın
+        adı kendi dersleri. Modülün sınavı da modülün sonunda — ayrı listede
+        hangi ünitelere ait olduğu okunmuyordu. Web `immersion-hub` ile aynı.
+      */}
+      {moduleGroups(path.units).map((g) => {
+        const sinav = moduller.find((m) => m.index === g.moduleIndex);
+        return (
+          <View key={g.moduleIndex} style={{ marginTop: spacing.lg }}>
+            <Text variant="micro" color={colors.textMuted} style={{ marginLeft: spacing.xs, textTransform: "uppercase", letterSpacing: 1 }}>{t("path.module_n", { n: g.moduleIndex + 1 })}</Text>
+            <Text variant="h3" style={{ marginLeft: spacing.xs, marginBottom: spacing.sm }}>{g.theme}</Text>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+              {g.units.map((u) => (
+                <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
+                  <Card padded style={{ minHeight: 132, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
+                    <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+                      {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
+                    </View>
+                    <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.topics.length ? u.topics.join(" · ") : u.theme}</Text>
+                    <View style={{ flex: 1 }} />
+                    {u.locked ? null : <View style={{ marginTop: spacing.sm }}><StepBar unit={u} colors={colors} thin /></View>}
+                    <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: 4 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.steps_done", { n: u.done, total: u.total })}</Text>
+                  </Card>
+                </PressableScale>
+              ))}
+            </View>
+            {sinav ? <ModuleExamRow m={sinav} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: sinav.index })} /> : null}
+          </View>
+        );
+      })}
 
-      {moduller.length ? (
+      {/* Ünitesi olmayan modülün sınavı (içerik ünitelerden önce yazılmış olabilir). */}
+      {moduller.some((m) => !path.units.some((u) => u.moduleIndex === m.index)) ? (
         <View style={{ marginTop: spacing.xl }}>
           <Text variant="h3" style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{t("path.module_exams")}</Text>
-          <Card padded style={{ paddingVertical: spacing.xs }}>
-            {moduller.map((m, i) => (
-              <PressableScale
-                key={m.code}
-                onPress={() => nav.navigate("Exam", { level: path.level, module: m.index })}
-                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === moduller.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}
-              >
-                <ExamIcon color={colors.streakText} size={18} />
-                <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" numberOfLines={1}>{m.code} · {m.titleTr}</Text>
-                  <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{m.titleDe} · {t("path.module_exam_minutes")}</Text>
-                </View>
-                <ChevronRightIcon color={colors.textFaint} size={20} />
-              </PressableScale>
-            ))}
-          </Card>
+          {moduller.filter((m) => !path.units.some((u) => u.moduleIndex === m.index)).map((m) => (
+            <ModuleExamRow key={m.code} m={m} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: m.index })} />
+          ))}
         </View>
       ) : null}
     </>

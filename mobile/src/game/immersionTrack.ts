@@ -120,6 +120,8 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
     units.push({
       id: unitId, index, group: Math.floor(u / GROUP_SIZE),
       theme: unitTheme(level, u * UNIT_LESSONS, index),
+      moduleIndex: Math.floor((u * UNIT_LESSONS) / MODULE_SIZE),
+      topics: unitLessons.map((l) => l.title),
       locked: false,
       // Sunucudaki kuralla aynı (lib/immersion/state.ts): "bitti" ünitedeki
       // BÜTÜN sayılabilir item'lara bakar. Yalnız derslere bakmak, dört dersi

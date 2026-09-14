@@ -15,6 +15,7 @@ import {
   QuizIcon,
 } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Ünitenin GÖVDESİ — adımların tam listesi.
@@ -115,6 +116,7 @@ export function UnitPane({
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti
   // yerine ünite yalnız gerçekten yapılabilecek adımları gösteriyor.
   const t = useT();
+  const course = useCourse();
   const items = unit.items.filter((i) => i.playable || i.kind === "lesson");
 
   /*
@@ -138,7 +140,8 @@ export function UnitPane({
           {level} · {t("common.unit")} {unit.index}
         </p>
       ) : null}
-      {!embedded ? <h1 className="mb-3 text-h2">{unit.theme}</h1> : null}
+      {!embedded ? <h1 className="text-h2">{unit.theme}</h1> : null}
+      <p className="muted mb-3 text-caption" lang={course}>{unit.topics.join(" · ")}</p>
 
       <div className="h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <div

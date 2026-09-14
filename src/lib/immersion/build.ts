@@ -152,6 +152,8 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       level,
       course,
       theme: unitTheme(level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`, lang),
+      moduleIndex: Math.floor((u * UNIT_LESSONS) / MODULE_SIZE),
+      topics: unitLessons.map((l) => l.title),
       items,
       lessonCount: items.filter((it) => it.kind === "lesson").length,
     });

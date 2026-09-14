@@ -12642,13 +12642,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
-    /* Unite temasi: iki satir, iki gorunumde de. */
+    /* Unite KARTININ ADI (dersleri): iki satir, iki gorunumde de. Tema artik
+       modul grubunun basligi; kartta tekrar edince yan yana uc kart ayni adi
+       tasiyordu. */
     const pw = sil(read("src/components/immersion/immersion-hub.tsx"));
     const pm = sil(read("mobile/src/screens/PathScreen.tsx"));
     sameList(
-      "unite temasinin satir butcesi",
-      ["butce=" + ((pm.match(/\{u\.theme\}/) && /numberOfLines=\{2\}[^\n]*\{u\.theme\}/.test(pm)) ? "2" : "?")],
-      ["butce=" + (pw.split("{unit.theme}").length - 1 === (pw.match(/line-clamp-2[^\n]*\{unit\.theme\}/g) ?? []).length ? "2" : "?")],
+      "unite kartinin ad butcesi",
+      ["butce=" + (/numberOfLines=\{2\}>\{u\.topics\.length \? u\.topics\.join\(" · "\)/.test(pm) ? "2" : "?")],
+      ["butce=" + (/line-clamp-2 text-strong" lang=\{course\}>\{unit\.topics\.join\(" · "\)\}/.test(pw) ? "2" : "?")],
       "mobil",
       "web",
     );

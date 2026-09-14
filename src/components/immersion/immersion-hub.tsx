@@ -7,6 +7,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
 import { CheckIcon, LockIcon } from "@/components/icons";
+import { useCourse } from "@/components/app-shell";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 
@@ -54,6 +55,10 @@ export type HubUnit = {
   index: number;
   group: number;
   theme: string;
+  /** Temanın modülü (0 tabanlı) — kartlar bununla gruplanıyor. */
+  moduleIndex: number;
+  /** Derslerin başlıkları — kartın ayırt edici adı. */
+  topics: string[];
   locked: boolean;
   complete: boolean;
   done: number;
@@ -149,43 +154,46 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
         />
       ) : null}
 
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        {units.map((u) => (
-          <Tile
-            key={u.id}
-            unit={u}
-            highlighted={u.index === highlight}
-            isCurrent={u.index === currentIndex}
-            onSelect={twoPane && !u.locked ? () => setSelected(u.index) : undefined}
-          />
-        ))}
-      </div>
+      {/*
+        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor ve modül 10 ders, ünite 4
+        ders: aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve ben" ×3) ve
+        kartlar birbirinden ayırt edilmiyordu. Tema artık grubun başlığı; kartın
+        adı kendi dersleri. Modülün sınavı da modülün sonunda — ayrı bir listede
+        hangi ünitelere ait olduğu okunmuyordu.
+      */}
+      {moduleGroups(units).map((g) => {
+        const exam = moduleExams.find((m) => m.index === g.moduleIndex);
+        return (
+          <section key={g.moduleIndex} className="mt-5">
+            <p className="muted ml-1 text-micro uppercase tracking-eyebrow">{t("path.module_n", { n: g.moduleIndex + 1 })}</p>
+            <h2 className="mb-2 ml-1 text-h3">{g.theme}</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {g.units.map((u) => (
+                <Tile
+                  key={u.id}
+                  unit={u}
+                  highlighted={u.index === highlight}
+                  isCurrent={u.index === currentIndex}
+                  onSelect={twoPane && !u.locked ? () => setSelected(u.index) : undefined}
+                />
+              ))}
+            </div>
+            {exam ? <ModuleExamRow level={level} exam={exam} /> : null}
+          </section>
+        );
+      })}
 
-      {moduleExams.length ? (
+      {/* Ünitesi olmayan modülün sınavı (içerik ünitelerden önce yazılmış olabilir). */}
+      {moduleExams.some((m) => !units.some((u) => u.moduleIndex === m.index)) ? (
         <section className="mt-6">
           <h2 className="mb-2 ml-1 text-h3">{t("path.module_exams")}</h2>
-          <ul className="card divide-y" style={{ borderColor: "var(--hairline)" }}>
-            {moduleExams.map((m) => (
-              <li key={m.code}>
-                <Link
-                  href={`/exam/${level}/${m.index}`}
-                  prefetch={false}
-                  className="pressable flex items-center gap-3 px-4 py-3"
-                >
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-strong">
-                      {m.code} · {m.titleTr}
-                    </span>
-                    {/* `titleDe` adıyla Almanca: modül sınavı planı kursa bağlı değil. */}
-                    <span className="muted block truncate text-caption" lang="de">
-                      {m.titleDe}
-                    </span>
-                  </span>
-                  <span className="muted shrink-0 text-caption">{t("path.module_exam_minutes")}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="space-y-2">
+            {moduleExams
+              .filter((m) => !units.some((u) => u.moduleIndex === m.index))
+              .map((m) => (
+                <ModuleExamRow key={m.code} level={level} exam={m} />
+              ))}
+          </div>
         </section>
       ) : null}
     </>
@@ -235,6 +243,8 @@ function Featured({
   const next = open.find((i) => !i.attempted) ?? open.find((i) => !i.done) ?? open[0] ?? null;
   const href = `/immersion/unit/${unit.index}`;
   const label = t(unit.complete ? "path.repeat" : "path.continue");
+  const course = useCourse();
+  const steps = unit.items.filter((i) => i.playable);
 
   return (
     <section className="card p-4" style={{ borderWidth: 2, borderColor: "var(--color-brand-500)" }}>
@@ -254,20 +264,23 @@ function Featured({
               satır. Burası tek satırdı, yani aynı alan aynı uygulamada iki
               farklı bütçeyle çiziliyordu. */}
           <p className="line-clamp-2 text-h2">{unit.theme}</p>
-          <p className="muted text-caption">
-            {unit.complete
-              ? t("common.completed")
-              : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}
-          </p>
+          {/* Kartı ayırt eden: ünitenin kendi dersleri. Tema 2-3 ünitede aynı. */}
+          <p className="muted line-clamp-1 text-caption" lang={course}>{unit.topics.join(" · ")}</p>
         </div>
       </div>
 
+      {/* Tek ölçüt: şeritteki çizgi sayısı = sayacın paydası = ünite ekranındaki adım sayısı. */}
+      <div className="mt-3 flex items-center justify-between text-caption">
+        <span className="muted">{t("path.steps_done", { n: unit.done, total: unit.total })}</span>
+        {unit.complete ? <span style={{ color: "var(--color-mint)" }}>{t("common.completed")}</span> : null}
+      </div>
       {/* Adım şeridi — biten yosun, sıradaki turuncu, denenmiş soluk turuncu,
           kapalı boş. Açık olanlar doğrudan tıklanabiliyor: takılınan bir
-          beceriye dönmenin ya da sıradakine atlamanın kısa yolu. */}
-      {unit.items.length > 0 ? (
-        <div className="mt-3 flex gap-1">
-          {unit.items.map((it) => {
+          beceriye dönmenin ya da sıradakine atlamanın kısa yolu. Yalnız
+          OYNANABİLİR adımlar: sayaçla aynı küme. */}
+      {steps.length > 0 ? (
+        <div className="mt-1.5 flex gap-1">
+          {steps.map((it) => {
             const seg = it.done
               ? "var(--color-mint-500)"
               : it === next
@@ -339,6 +352,7 @@ function Tile({
   onSelect?: () => void;
 }) {
   const t = useT();
+  const course = useCourse();
   const ringColor = unit.complete
     ? "var(--color-mint-500)"
     : isCurrent
@@ -361,16 +375,21 @@ function Tile({
           </span>
         )}
       </span>
-      <span className="mt-2 line-clamp-2 text-strong">{unit.theme}</span>
-      <span
-        className="mt-0.5 block text-micro"
-        style={{ color: unit.complete ? "var(--color-mint)" : "var(--text-muted)" }}
-      >
-        {unit.complete
-          ? t("common.completed")
-          : unit.locked
-            ? t("common.locked")
-            : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}
+      {/* Kartın adı ÜNİTENİN KENDİ DERSLERİ: tema grubun başlığında (bkz.
+          `moduleGroups`); kartta tekrar edince yan yana üç kart aynı adı taşıyordu. */}
+      <span className="mt-2 line-clamp-2 text-strong" lang={course}>{unit.topics.join(" · ")}</span>
+      <span className="mt-auto block w-full pt-2">
+        {unit.locked ? null : <StepBar unit={unit} size="sm" />}
+        <span
+          className="mt-1 block text-micro"
+          style={{ color: unit.complete ? "var(--color-mint)" : "var(--text-muted)" }}
+        >
+          {unit.complete
+            ? t("common.completed")
+            : unit.locked
+              ? t("common.locked")
+              : t("path.steps_done", { n: unit.done, total: unit.total })}
+        </span>
       </span>
     </>
   );
@@ -399,6 +418,64 @@ function Tile({
   return (
     <Link href={`/immersion/unit/${unit.index}`} prefetch={false} className={`pressable ${cls}`} style={style}>
       {inner}
+    </Link>
+  );
+}
+
+/** Üniteleri temalarının modülüne göre, sırayı bozmadan gruplar. */
+function moduleGroups(units: HubUnit[]): { moduleIndex: number; theme: string; units: HubUnit[] }[] {
+  const groups: { moduleIndex: number; theme: string; units: HubUnit[] }[] = [];
+  for (const u of units) {
+    const last = groups.at(-1);
+    if (last && last.moduleIndex === u.moduleIndex) last.units.push(u);
+    else groups.push({ moduleIndex: u.moduleIndex, theme: u.theme, units: [u] });
+  }
+  return groups;
+}
+
+/**
+ * Adım şeridi — ünitenin OYNANABİLİR adımları, sayaçla aynı küme.
+ *
+ * Şerit eskiden içeriği olmayan yuvaları da çiziyordu, sayaç ise yalnız dersleri
+ * sayıyordu: 13 çizginin yanında "1/4 konuşma" yazıyordu.
+ */
+export function StepBar({ unit, next, size = "md" }: { unit: HubUnit; next?: HubItem | null; size?: "sm" | "md" }) {
+  const steps = unit.items.filter((i) => i.playable);
+  return (
+    <div className={`flex ${size === "sm" ? "gap-0.5" : "gap-1"}`} aria-hidden>
+      {steps.map((it) => (
+        <span
+          key={it.id}
+          className={`block flex-1 rounded-full ${size === "sm" ? "h-1.5" : "h-2.5"}`}
+          style={{
+            background: it.done
+              ? "var(--color-mint-500)"
+              : it === next
+                ? "var(--color-brand-500)"
+                : it.attempted
+                  ? "var(--color-brand-300)"
+                  : "var(--surface-2)",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ModuleExamRow({ level, exam }: { level: CefrLevel; exam: { index: number; code: string; titleTr: string; titleDe: string } }) {
+  const t = useT();
+  return (
+    <Link href={`/exam/${level}/${exam.index}`} prefetch={false} className="card pressable mt-3 flex items-center gap-3 px-4 py-3">
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-strong">
+          {t("path.module_exam_n", { n: exam.index + 1 })} · {exam.titleTr}
+        </span>
+        {/* `titleDe` adıyla Almanca: modül sınavı planı kursa bağlı değil. */}
+        <span className="muted block truncate text-caption" lang="de">
+          {exam.code} · {exam.titleDe}
+        </span>
+      </span>
+      <span className="muted shrink-0 text-caption">{t("path.module_exam_minutes")}</span>
     </Link>
   );
 }
