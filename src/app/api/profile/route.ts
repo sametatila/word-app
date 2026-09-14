@@ -52,12 +52,22 @@ export async function POST(req: Request) {
   // arayüz atlansa bile isimsiz bir profil oluşamıyor. Sıralamada "İsimsiz
   // öğrenci" diye görünen kayıtların kaynağı buydu.
   if (typeof body.displayName === "string") {
-    const name = body.displayName.trim().replace(/\s+/g, " ");
+    // UZUNLUK SINIRI MODERASYONDAN ÖNCE. Eskiden `displayNameAllowed` ham girdinin
+    // tamamı üzerinde çalışıyor, kırpma SONRA yapılıyordu: uzun bir dize moderasyon
+    // regex'inde O(n²) geri-izlemeyle event-loop'u kilitliyordu (ReDoS, güvenlik
+    // denetimi #3). Biyografi ucu (social/profile.ts) zaten bu sırayla çalışıyor;
+    // aynı disiplin burada da. Gerçek bir ad bu kadar uzun olmaz; aşırı uzun girdi
+    // sessizce kırpılmaz — ama yeni bir hata kodu i18n'e eklenmesin diye mevcut
+    // `name_invalid`'e eşleniyor (aşırı uzun = geçersiz; normal arayüz zaten 40'ta durur).
+    if (body.displayName.length > PROFILE_LIMITS.displayNameMax * 4) {
+      return NextResponse.json({ error: "name_invalid" }, { status: 400 });
+    }
+    const name = body.displayName.trim().replace(/\s+/g, " ").slice(0, PROFILE_LIMITS.displayNameMax);
     if (name.length < 2) return NextResponse.json({ error: "name_required" }, { status: 400 });
     // Görünen ad başkalarına görünür (sıralama, arkadaşlar): bağlantı, e-posta, kontrol
     // karakteri ve küfür kabul edilmez (Play UGC: başkalarına görünen metin için moderasyon).
     if (!displayNameAllowed(name)) return NextResponse.json({ error: "name_invalid" }, { status: 400 });
-    patch.displayName = name.slice(0, PROFILE_LIMITS.displayNameMax);
+    patch.displayName = name;
   }
   /*
     AVATAR. Ham değer doğrulanıp METİN olarak yazılıyor; bilinmeyen parça
