@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
@@ -12,8 +12,9 @@ import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
 import type { MockLevel } from "@/lib/mock-exams/types";
 import { mockCourseOf } from "@/lib/courses";
 import { canMockPaper, mockAccess } from "@/lib/premium/access";
+import { takeUsage } from "@/lib/premium";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
-import { mockFeedback } from "@/lib/mock-exams/feedback";
+import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
@@ -55,6 +56,19 @@ const MOCK_LEVELS = new Set(["A1", "A2", "B1", "B2", "C1"]);
 const MAX_ANSWERS = 60;
 const MAX_ANSWER_CHARS = 240;
 const MAX_OPEN_CHARS = 4000;
+
+/**
+ * Hesap başına günlük yapay zekâ çağrısı: açık görev değerlendirmesi ve
+ * bitirmedeki geri bildirim aynı sayaçtan yiyor.
+ *
+ * Tam bir kâğıt (dört bölüm) en fazla 10 çağrı yapıyor (bölümde en çok 4 açık
+ * görev + bölüm başına bir geri bildirim, 120 kâğıt sayıldı). 100, günde on tam
+ * kâğıt demek: dürüst çalışan bunu görmez. Tavan olmadan bitir → yeniden başlat
+ * döngüsü sağlayıcıya sınırsız çağrı yaptırabiliyordu (güvenlik denetimi
+ * 2026-09-14, #1'in bu uçtaki karşılığı). Sayaç atomik, bkz. `takeUsage`.
+ */
+const MOCK_AI_DAILY_CEILING = 100;
+const MOCK_AI_KEY = "mock_exam_ai_calls";
 
 type Attempt = typeof mockExamAttempts.$inferSelect;
 
@@ -317,9 +331,13 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
   // Değerlendirme kâğıdın dilinde yapılıyor: İngilizce bir yazma görevi
   // "Almanca öğretmeni" kimliğiyle okunursa rubrik olmayan yapıları arar.
   const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, lang: paper.course };
+  /* Tavan doluysa sağlayıcıya gitmeden 429: istemci puanı boş gösteriyor ve
+     kaydetmiyor, yani görev ertesi gün yeniden değerlendirilebiliyor. */
+  if (!(await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING))) {
+    return NextResponse.json({ error: "quota" }, { status: 429 });
+  }
   const outcome = await assess(userId, req, day, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
 
-  const scores = (row.openScores ?? {}) as Record<string, unknown>;
   const entry = outcome.ok
     ? {
         score: outcome.result.score.overall ?? null,
@@ -330,15 +348,45 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
       }
     : { score: null, reason: outcome.reason };
 
-  const opens = (row.open ?? {}) as Record<string, string>;
-  await db
+  /*
+   * YAZMA VERİTABANINDA BİRLEŞİYOR, VE İLK PUAN KALIYOR.
+   *
+   * Puan, isteğin başında okunan satırın KOPYASINA eklenip bütün sözlük geri
+   * yazılıyordu. Değerlendirme saniyeler sürdüğü için aynı anda değerlendirilen
+   * iki görevden sonra yazan, öncekinin puanını siliyordu. `||` yalnız bu
+   * görevin anahtarını ekliyor.
+   *
+   * Yukarıdaki "zaten puanlandı mı" bakışı da okuma anındaydı: aynı görev için
+   * paralel istekler hepsi geçiyordu. Koşul artık yazmanın kendisinde; ilk
+   * yazan kazanıyor, geç kalan kayıtlı puanı alıyor. Bitmiş denemeye de
+   * yazılmıyor (`save` ve `finish` ile aynı kural).
+   */
+  const [saved] = await db
     .update(mockExamAttempts)
     .set({
-      openScores: { ...scores, [taskId]: entry },
-      open: { ...opens, [taskId]: text.slice(0, MAX_OPEN_CHARS) },
+      openScores: sql`${mockExamAttempts.openScores} || jsonb_build_object(${taskId}::text, ${JSON.stringify(entry)}::jsonb)`,
+      open: sql`${mockExamAttempts.open} || jsonb_build_object(${taskId}::text, ${text.slice(0, MAX_OPEN_CHARS)}::text)`,
       updatedAt: new Date(),
     })
-    .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId)));
+    .where(
+      and(
+        eq(mockExamAttempts.id, id),
+        eq(mockExamAttempts.userId, userId),
+        eq(mockExamAttempts.state, "running"),
+        sql`${mockExamAttempts.openScores} -> ${taskId}::text is null`,
+      ),
+    )
+    .returning({ id: mockExamAttempts.id });
+  if (!saved) {
+    const [son] = await db
+      .select({ openScores: mockExamAttempts.openScores })
+      .from(mockExamAttempts)
+      .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId)))
+      .limit(1);
+    const kayitli = ((son?.openScores ?? {}) as Record<string, unknown>)[taskId];
+    if (kayitli !== undefined) return NextResponse.json({ result: kayitli });
+    return NextResponse.json({ error: "attempt_done" }, { status: 409 });
+  }
 
   // Sağlayıcı yoksa bu bir hata değil: ekran ölçüt listesini gösterir.
   return NextResponse.json({ result: entry, configured: outcome.ok });
@@ -398,7 +446,10 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const part = findPart(paper, row.skill as MockSkill)!;
   const explains: Record<string, string> = {};
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
-  const ai = await mockFeedback(
+  /* Günlük tavan doluysa model çağrılmıyor ama sınav yine bitiyor: kural
+     tabanlı özet dönüyor (sağlayıcı kapalıyken kullanılan). */
+  const aiAllowed = await takeUsage(userId, MOCK_AI_KEY, "day", MOCK_AI_DAILY_CEILING);
+  const ai = !aiAllowed ? rulesFeedback(score, paper.course, lang) : await mockFeedback(
     score,
     explains,
     paper.course,
