@@ -87,29 +87,38 @@ export function LearnScreen() {
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
         <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 14)]}>
-          {/* Kısa rozetler — kartın sağ üstünde (tekrar / yeni) */}
-          {hasToday && (dueCount > 0 || newToday > 0) && (
-            <View style={{ position: "absolute", top: spacing.md, right: spacing.md, flexDirection: "row", gap: 6, zIndex: 2 }}>
-              {dueCount > 0 && (
-                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
-                  <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
-                </View>
-              )}
-              {newToday > 0 && (
-                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
-                  <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
-                </View>
-              )}
-            </View>
-          )}
-          <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "flex-end", gap: spacing.md }}>
-            <View style={{ flex: 1 }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm }}>
+          {/*
+            BAŞLIK SATIRI KARTIN TAMAMINA YAYILIYOR: ikon + "Günlük tur" solda,
+            rozetler (tekrar / yeni) sağda, ikonla AYNI SATIRDA ve dikeyde ona
+            ortalı. Rozetler eskiden kartın köşesine mutlak konumla asılıydı
+            (üstten 12dp, ikon 20dp'den başlıyordu): ikonun üst hizasını aşıyor
+            ve kayık görünüyordu, dar telefonda da başlığın üstüne biniyordu.
+            Sığmazsa rozetler alt satıra sarıyor, üst üste binmiyor.
+          */}
+          <View style={{ paddingHorizontal: spacing.xl, paddingTop: spacing.xl, flexDirection: "row", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", rowGap: spacing.sm, columnGap: spacing.sm }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
               <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
                 <BoltIcon color="#fff" size={22} />
               </View>
               <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.daily_round")}</Text>
             </View>
+            {hasToday && (dueCount > 0 || newToday > 0) ? (
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginLeft: "auto" }}>
+                {dueCount > 0 && (
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
+                    <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
+                  </View>
+                )}
+                {newToday > 0 && (
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: spacing.xs }}>
+                    <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
+                  </View>
+                )}
+              </View>
+            ) : null}
+          </View>
+          <View style={{ padding: spacing.xl, paddingTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.md }}>
+            <View style={{ flex: 1 }}>
             <Text variant="h1" color="#fff">{t("learn.practice_your_words")}</Text>
             <Text variant="body" color="#ffffffdd" style={{ marginTop: spacing.xs }}>
               {t("learn.daily_pitch")}
