@@ -84,20 +84,29 @@ export async function POST(req: Request) {
     if (!gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
     }
-    /**
-     * Emniyet tavanı — ÇAĞRI başına.
-     *
-     * Hak sayacını hiç çağırmayan değiştirilmiş bir istemci yukarıdaki kapıyı
-     * geçip aynı hakla sınırsız değerlendirme isteyebilirdi. Günlük çağrı
-     * tavanı buna karşı: alıştırma başına birkaç değerlendirmeye izin verecek
-     * kadar cömert (×4), tek bir hesabın Mistral bütçesini yakmasına izin
-     * vermeyecek kadar dar.
-     */
-    const cfg = await premiumConfig();
-    const ceiling = Math.max(cfg.fairUse.aiPracticePerDay, 1) * 4;
-    if (!(await takeUsage(userId, "ai_assess_calls", "day", ceiling))) {
-      return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
-    }
+  }
+
+  /**
+   * Emniyet tavanı — ÇAĞRI başına, HER TÜR İÇİN (`sentence` dahil).
+   *
+   * Değiştirilmiş bir istemci hak sayacını hiç çağırmadan sınırsız değerlendirme
+   * isteyebilirdi. Günlük çağrı tavanı buna karşı: alıştırma başına birkaç
+   * değerlendirmeye izin verecek kadar cömert (×4), tek bir hesabın Mistral
+   * bütçesini yakmasına izin vermeyecek kadar dar.
+   *
+   * Güvenlik denetimi F2 (2026-09-14): tavan eskiden yalnız `if (gated)`
+   * içindeydi ve `sentence` bilerek gated değildi — o yol yalnız assess.ts'teki
+   * read-then-act sayaçla (`n >= dailyLimit()`) korunuyordu. Bu klasik bir
+   * TOCTOU: eşzamanlı `sentence` burst'ünde hepsi `n < limit` okuyup gerçek
+   * Mistral çağrısı yapıyordu; üstüne client `day` (±1) sayacı üç kovaya bölüp
+   * ~3× aşmaya izin veriyordu. Atomik `takeUsage` sunucu-günü anahtarlı ve
+   * yarış-güvenli (ON CONFLICT ... count < limit); tüm türleri kapsayacak
+   * şekilde `if (gated)` dışına alındı. Premium kapısı yukarıda gated kalır.
+   */
+  const cfg = await premiumConfig();
+  const ceiling = Math.max(cfg.fairUse.aiPracticePerDay, 1) * 4;
+  if (!(await takeUsage(userId, "ai_assess_calls", "day", ceiling))) {
+    return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
   }
 
   const outcome = await assess(userId, parsed.req, parsed.day, (r) =>
