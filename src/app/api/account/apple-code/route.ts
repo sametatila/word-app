@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { appleRevokeConfigured } from "@/lib/auth/apple";
 import { storeAppleAuthorizationCode } from "@/lib/account/apple-revoke";
 
@@ -18,6 +19,7 @@ export const dynamic = "force-dynamic";
  * cevabı umursamıyor, giriş bundan etkilenmiyor.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!appleRevokeConfigured()) return new NextResponse(null, { status: 204 });

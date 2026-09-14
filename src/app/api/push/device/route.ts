@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { registerDevice, unregisterDevice } from "@/lib/fcm";
 
 export const dynamic = "force-dynamic";
@@ -12,6 +13,7 @@ export const dynamic = "force-dynamic";
  * aynı satır hesap değişince el değiştiriyor.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   let body: { token?: unknown; platform?: unknown } | null = null;
@@ -37,6 +39,7 @@ export async function POST(req: Request) {
 
 /** Çıkışta ya da bildirim kapatılınca — cihaz artık bu hesabın bildirimini almasın. */
 export async function DELETE(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   let body: { token?: unknown } | null = null;

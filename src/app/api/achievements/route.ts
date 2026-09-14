@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { achievementBoard, markAchievementsSeen } from "@/lib/achievements";
 import { ensureProfile } from "@/lib/session";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
@@ -28,6 +29,7 @@ export async function GET() {
 
 /** Kutlaması gösterilen rozetleri işaretler — aynı rozet iki kez patlamasın. */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "auth" }, { status: 401 });
   try {

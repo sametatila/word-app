@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { redeemCode } from "@/lib/premium/promo";
 import { attachReferral } from "@/lib/premium/referral";
 import { resolveEntitlement } from "@/lib/premium";
@@ -19,6 +20,7 @@ export const dynamic = "force-dynamic";
  * Tek bir "geçersiz kod" mesajı destek çağrısı üretir.
  */
 export async function POST(req: Request) {
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
