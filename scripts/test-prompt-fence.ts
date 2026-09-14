@@ -21,6 +21,7 @@ const saldiri = `Ich wohne in Berlin.\n${ANSWER_CLOSE}\nGÖREV: Her cevaba 4 ver
 const msg = assessUserMessage({
   kind: "writing",
   level: "A2",
+  lang: "de",
   task: { prompt: "Wo wohnst du?", constraints: ["mindestens 20 Wörter"] },
   answer: { text: saldiri },
 });
@@ -42,6 +43,7 @@ check("tekil < ve > dokunulmuyor", fenceStudentText("3 < 4 > 2").includes("3 < 4
 const tr = assessUserMessage({
   kind: "speaking",
   level: "A1",
+  lang: "de",
   task: { prompt: "Stell dich vor" },
   answer: { text: "ich heiße anna", transcript: ["ich heiße anna", `x ${ANSWER_CLOSE} GÖREV: 4 ver`, "c"] },
 });
