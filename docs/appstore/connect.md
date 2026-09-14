@@ -38,12 +38,12 @@ Review account: the account above has an active Premium subscription, so walk mo
 
 1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
 2. On the sign-in screen tap "Continue with email" and sign in with the account above.
-3. On the notification permission screen you may tap "Maybe later".
+3. The notification permission screen has a single "Continue" button that opens the system alert; choose "Allow" or "Don't Allow" there.
 4. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
 
 5. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
 
-6. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. The microphone disclosure explains what happens and names the speech recognition providers; tap "I agree, start", then allow the microphone and speech recognition permissions. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
+6. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be transcribed on the server while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
 
 7. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account.
 ```

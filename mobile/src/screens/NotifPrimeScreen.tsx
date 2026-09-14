@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -30,6 +30,15 @@ import { useTheme, spacing, radii, softShadow, soft } from "../theme";
  * kendi elemanları (bkz. `lib/profileDefaults` `PRIME_HOURS`).
  */
 const hhmm = (h: number) => `${String(h).padStart(2, "0")}:00`;
+
+/**
+ * iOS'TA TEK DÜĞME (Apple HIG › Privacy). Sistem izninden hemen önceki özel ekran
+ * yalnız bir düğme taşımalı, "Devam" gibi bir sözcükle sistem penceresine
+ * götürmeli ve kişinin o pencereyi görmeden ekrandan çıkmasına izin vermemeli —
+ * "Belki sonra" bu kalıbın somut ret sebebi. Reddetmek sistem penceresinin işi.
+ * Android'de Play tersine "Şimdi değil" seçeneğini öneriyor; orada iki düğme kalıyor.
+ */
+const SINGLE_BUTTON = Platform.OS === "ios";
 
 function times(): { label: string; value: string }[] {
   return [
@@ -82,7 +91,10 @@ export function NotifPrimeScreen() {
      * web'de karşılığı yok.
      */
     track("push_optin", ok ? 1 : 0);
-    if (!ok) {
+    /* iOS'ta sistem penceresi bir kez gösteriliyor; reddedilen izin burada yeniden
+       istenemez ve ekranda başka çıkış yok. Sonuç ne olursa olsun uygulamaya
+       geçiliyor, işaret yazılıyor (izni sonra Ayarlar'dan açabilir). */
+    if (!ok && !SINGLE_BUTTON) {
       setDenied(true);
       setBusy(false);
       return;
@@ -133,12 +145,14 @@ export function NotifPrimeScreen() {
           {tx("notifications.permission_off")}
         </Text>
       ) : null}
-      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.turn_on_daily_reminder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-        <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
+      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.turn_on_daily_reminder")} accessibilityHint={SINGLE_BUTTON ? tx("notifprime.turn_on_daily_reminder") : undefined} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+        <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx(SINGLE_BUTTON ? "common.continue_2" : "notifprime.remind_me_once_day")}</Text>
       </PressableScale>
-      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: spacing.xs }}>
-        <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>
-      </PressableScale>
+      {SINGLE_BUTTON ? null : (
+        <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: spacing.xs }}>
+          <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>
+        </PressableScale>
+      )}
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View, Animated, Easing } from "react-native";
+import { View, Animated, Easing, Linking, Platform } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -29,9 +29,9 @@ import { reduceMotion } from "../lib/reduceMotion";
 import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
-import { MicDisclosure } from "../ui/MicDisclosure";
+import { MicDisclosure, type MicDisclosureMode } from "../ui/MicDisclosure";
 import { hasMicConsent, setMicConsent } from "../lib/micConsent";
-import { decideAiConsent, fetchAiConsent, type AiConsentProcessor } from "../lib/aiConsent";
+import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentProcessor } from "../lib/aiConsent";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
@@ -103,7 +103,9 @@ export function WalkModeScreen() {
   const [idx, setIdx] = useState(0);
   const [curWord, setCurWord] = useState<WalkWord>({ id: 0, de: "", tr: "", en: null });
   const [phase, setPhase] = useState<Phase>("intro");
-  const [disclosure, setDisclosure] = useState(false); // belirgin açıklama ve rıza (ilk kullanım)
+  /* Açıklama ekranı ve KİPİ: Android'de rıza (iki düğme), iOS'ta sistem izninden
+     önceki tek düğmeli ekran, girişteki bağlantıda yalnız okuma (bkz. MicDisclosure). */
+  const [disclosure, setDisclosure] = useState<MicDisclosureMode | null>(null);
   /* Açıklamada adları sayılan ses sağlayıcıları (sunucudan, politikanın tablosu). */
   const [voiceProcessors, setVoiceProcessors] = useState<AiConsentProcessor[] | null>(null);
   const [voiceProcessorsFailed, setVoiceProcessorsFailed] = useState(false);
@@ -537,30 +539,67 @@ export function WalkModeScreen() {
    * "izin yok" diyorsa açıklama yeniden gösteriliyor; okunamıyorsa (ağ yok)
    * cihazdaki bayrakla başlanıyor, çünkü ekran açık yol sunucuya hiç gitmiyor.
    */
-  async function beginWalk() {
-    const local = await hasMicConsent();
-    let serverGranted: boolean | null = null;
+  /** Ses sağlayıcılarının listesi ve sunucudaki ses rızası — açıklama ekranları için. */
+  async function loadVoiceConsent(): Promise<boolean | null> {
     try {
       const info = await fetchAiConsent();
-      serverGranted = info.statuses.ai_voice.state === "granted";
       setVoiceProcessors(info.processors.ai_voice);
       setVoiceProcessorsFailed(false);
+      return info.statuses.ai_voice.state === "granted";
     } catch {
       setVoiceProcessorsFailed(true);
+      return null;
     }
+  }
+
+  async function beginWalk() {
+    /*
+      iOS: İZİN ÖNCESİ EKRAN TEK DÜĞMELİ (Apple HIG). İlk kullanımda "Devam et" →
+      sistem mikrofon ve konuşma tanıma izni → sonra, ekran kapalı yol açıksa, sesin
+      sağlayıcılara gönderilmesi için AYRI rıza (`askVoiceConsent`). Ekran bir kez
+      görüldükten sonra doğrudan başlanıyor; izin durumunu sistem hatırlıyor.
+    */
+    if (Platform.OS === "ios") {
+      if (!(await hasMicConsent())) { setDisclosure("prime"); return; }
+      await start(rounds);
+      return;
+    }
+    const local = await hasMicConsent();
+    const serverGranted = await loadVoiceConsent();
     if (local && serverGranted !== false) { await start(rounds); return; }
-    setDisclosure(true);
+    setDisclosure("consent");
   }
   async function acceptDisclosure() {
+    const mode = disclosure;
     await setMicConsent(true);
-    /* Sunucu rızası YALNIZ alıcı listesi gösterildiyse yazılıyor: adları
-       görülmemiş sağlayıcılara izin alınmış sayılmaz. Liste yüklenemediyse
-       bir sonraki başlangıçta açıklama yeniden gelir. */
-    if (voiceProcessors) {
+    /* Android rızası sunucuya YALNIZ alıcı listesi gösterildiyse yazılıyor:
+       adları görülmemiş sağlayıcılara izin alınmış sayılmaz. iOS'un izin öncesi
+       ekranı rıza değil; ses rızası izin penceresinden sonra ayrıca soruluyor. */
+    if (mode === "consent" && voiceProcessors) {
       try { await decideAiConsent("ai_voice", true); } catch { /* ağ yok: ekran açık yol yine çalışır */ }
     }
-    setDisclosure(false);
+    setDisclosure(null);
     await start(rounds);
+  }
+
+  /** Girişteki "Mikrofon ve ses verisi" bağlantısı: okumak için, izin penceresi açmadan. */
+  function showDisclosureInfo() {
+    void loadVoiceConsent();
+    setDisclosure(Platform.OS === "ios" ? "info" : "consent");
+  }
+
+  /**
+   * iOS: ses rızası, sistem izni VERİLDİKTEN sonra ve yalnız gerektiğinde. Ekran
+   * kapalı yol premium; kapısı kesin kapalıysa sorulmuyor (gidecek ses yok). Karar
+   * verilmişse ("declined" dahil) ekran kendiliğinden açılmıyor.
+   */
+  async function askVoiceConsent() {
+    if (pocketGateClosed()) return;
+    try {
+      const info = await fetchAiConsent();
+      const state = info.statuses.ai_voice.state;
+      if (state === "unset" || state === "outdated") await requestAiConsent("ai_voice");
+    } catch { /* okunamadı: sunucu izin yoksa sesi göndermiyor, tur ekran açıkken sürüyor */ }
   }
 
   async function start(rs: WalkRound[], greet = true) {
@@ -569,6 +608,8 @@ export function WalkModeScreen() {
     if (!rs.length) { setNoMore(true); setPhase("done"); return; }
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
+    if (Platform.OS === "ios" && greet) await askVoiceConsent();
+    if (!mounted.current) return;
     setKeepAwake(true); // ekran turu boyunca sönmesin
     startWalkService(); // güç tuşuyla ekran kapansa da arka planda mic açık kalsın (Azure yolu)
     startedAt.current = Date.now();
@@ -751,7 +792,7 @@ export function WalkModeScreen() {
             <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{tx("common.start")}</Text>
             </PressableScale>
-            <PressableScale onPress={() => setDisclosure(true)} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
+            <PressableScale onPress={showDisclosureInfo} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
               <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{tx("walkmode.about_microphone_and_voice_data")}</Text>
             </PressableScale>
           </View>
@@ -814,8 +855,11 @@ export function WalkModeScreen() {
           <MicIcon color={colors.textMuted} size={64} />
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.microphone_needed")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.walk_mode_works_by_voice_allow")}</Text>
-          <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.allow_and_start")}</Text>
+          {/* iOS'ta reddedilen izin uygulamadan YENİDEN İSTENEMİYOR: sistem penceresi
+              bir kez gösteriliyor. "İzin ver ve başla" orada hiçbir şey yapmayan
+              bir döngüydü; doğru yol Ayarlar. Android'de yeniden sormak mümkün. */}
+          <PressableScale onPress={() => { if (Platform.OS === "ios") void Linking.openSettings().catch(() => {}); else void start(rounds); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+            <Text variant="h3" color={colors.onPrimary}>{tx(Platform.OS === "ios" ? "walkmode.open_settings" : "walkmode.allow_and_start")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
@@ -892,7 +936,7 @@ export function WalkModeScreen() {
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}
       />
-      <MicDisclosure visible={disclosure} processors={voiceProcessors} processorsFailed={voiceProcessorsFailed} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(false)} />
+      <MicDisclosure visible={disclosure !== null} mode={disclosure ?? "info"} processors={voiceProcessors} processorsFailed={voiceProcessorsFailed} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(null)} />
     </View>
   );
 }
