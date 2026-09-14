@@ -8,7 +8,7 @@ import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
 import { LEVEL_SECONDS, MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
 import { nativeOf, targetLangOf } from "@/lib/courses";
-import { buildAnswerKey, sealKey, openKey, gradeObjective, resolveSpokenWritten, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, resolveSpokenWritten, blindPaper, objectiveReview, type ExamResponses, type SectionCount } from "@/lib/exam-grade";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -158,7 +158,11 @@ export async function POST(req: Request) {
       // F7: nesnel cevap anahtarını mühürleyip istemciye opak keyToken olarak
       // ver — finish'te sunucu bununla puanlar (istemci sayısına güvenmeden).
       const keyToken = sealKey(buildAnswerKey(paper, targetLangOf(profile.course)));
-      return NextResponse.json({ paper, keyToken });
+      // Kör kâğıt (airtight): yeni istemci `blind:true` isteyince nesnel cevaplar
+      // sıyrılır — cevaplar yalnız keyToken'da. Eski istemci bayrak göndermez →
+      // tam kâğıt alır (geriye uyumlu, kendi sürümünde airtight olur).
+      const sent = body.blind === true ? blindPaper(paper) : paper;
+      return NextResponse.json({ paper: sent, keyToken });
     }
     if (body.action === "finish") {
       const raw = Array.isArray(body.sections) ? (body.sections as Record<string, unknown>[]) : [];
@@ -228,7 +232,9 @@ speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100
       const trial =
         moduleNo === null ? false : !(await modulePrereq(userId, profile.course ?? "de", level as CefrLevel, moduleNo));
       const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial }, sub, day);
-      return NextResponse.json(result);
+      // Kör modda istemci döküm/review'ı kâğıttan kuramaz (cevaplar yoktu);
+      // sunucu doğru cevapları BİTİŞTE döndürüyor (artık sömürüye yaramaz).
+      return NextResponse.json(key ? { ...result, review: objectiveReview(key) } : result);
     }
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   } catch (err) {

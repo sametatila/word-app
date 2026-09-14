@@ -83,6 +83,40 @@ export function examSpeakingTarget(key: ObjectiveKey, exerciseId: string): strin
 }
 
 /**
+ * KÖR KÂĞIT — güvenlik denetimi F7 (airtight): nesnel bölümlerin DOĞRU CEVAPLARINI
+ * istemciye gitmeden önce siler. Sınavda anlık geri bildirim olmadığı için istemci
+ * cevapları oyun sırasında GÖRMEYE ihtiyaç duymaz; sıyrılınca değiştirilmiş bir
+ * istemci "cevabı oku + doğru gönder" yapamaz. Cevaplar yalnız mühürlü keyToken'da
+ * kalır; sunucu kör puanlar, döküm/review finish cevabından gelir. Kelime bölümü
+ * SRS-oyun (istemci-sayımı) olduğu için dokunulmaz; nesnel bölümler + pass buna bağlı.
+ * Render için gerekenler (options, prompt, chunks, statement) korunur.
+ */
+export function blindPaper<T extends ExamPaper>(paper: T): T {
+  const s = paper.sections;
+  return {
+    ...paper,
+    sections: {
+      ...s,
+      grammar: s.grammar.map((g) => (g.kind === "cell" ? { ...g, answer: -1 } : { ...g, answer: false })),
+      reading: s.reading.map((t) => ({ ...t, questions: t.questions.map((q) => ({ ...q, answer: -1 })) })),
+      listening: s.listening.map((t) => ({ ...t, questions: t.questions.map((q) => ({ ...q, answer: -1 })) })),
+      produce: s.produce.map((p) => ({ ...p, de: "", accept: [] })),
+    },
+  };
+}
+
+/** Finish'te istemciye dönen döküm anahtarı — kör moddaki review için (cevaplar sınav BİTTİKTEN sonra açılır). */
+export type ObjectiveReview = {
+  grammar: ({ kind: "cell"; answer: number } | { kind: "judge"; answer: boolean })[];
+  reading: number[][];
+  listening: number[][];
+  produce: string[];
+};
+export function objectiveReview(key: ObjectiveKey): ObjectiveReview {
+  return { grammar: key.grammar, reading: key.reading, listening: key.listening, produce: key.produce.map((p) => p.de) };
+}
+
+/**
  * İmzalı skor jetonu — güvenlik denetimi F7 kalıntısı (yazma/konuşma).
  *
  * Yazma/konuşma AI-rubriği ve puanı sunucuda (/api/assess, /api/pronounce)

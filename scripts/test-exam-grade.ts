@@ -3,7 +3,7 @@
  * Çalıştır: npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts
  */
 import assert from "node:assert";
-import { buildAnswerKey, sealKey, openKey, gradeObjective, signScore, verifyScore, resolveSpokenWritten, examWritingTask, examSpeakingTarget } from "../src/lib/exam-grade";
+import { buildAnswerKey, sealKey, openKey, gradeObjective, signScore, verifyScore, resolveSpokenWritten, examWritingTask, examSpeakingTarget, blindPaper, objectiveReview } from "../src/lib/exam-grade";
 import type { ExamPaper } from "../src/lib/exam-types";
 
 const USER = "user-123";
@@ -122,4 +122,20 @@ assert.strictEqual(examWritingTask(key, "yok"), null, "olmayan yazma id → null
 assert.strictEqual(examSpeakingTarget(key, "s:A1:1"), "Auf Wiedersehen", "mühürlü konuşma hedefi");
 assert.strictEqual(examSpeakingTarget(key, "yok"), null, "olmayan konuşma id → null");
 
-console.log("✓ exam-grade: 12 senaryo geçti (nesnel puanlama + imzalı skor jetonu + mühürlü görev/hedef; teorik açık kapalı)");
+// 13) KÖR KÂĞIT — nesnel cevaplar sıyrılır, render alanları + orijinal korunur
+const blind = blindPaper(paper);
+assert.strictEqual(blind.sections.reading[0].questions[0].answer, -1, "kör: reading cevabı -1");
+assert.strictEqual(blind.sections.listening[0].questions[0].answer, -1, "kör: listening cevabı -1");
+const g0 = blind.sections.grammar[0];
+assert.strictEqual(g0.kind === "cell" ? g0.answer : 999, -1, "kör: grammar cell cevabı -1");
+assert.strictEqual(blind.sections.produce[0].de, "", "kör: produce de boş");
+assert.deepStrictEqual(blind.sections.reading[0].questions[0].options, ["x", "y", "z"], "kör: şıklar korunur");
+assert.strictEqual(paper.sections.reading[0].questions[0].answer, 0, "orijinal kâğıt değişmez (immutable)");
+
+// 14) objectiveReview — finish'te istemciye dönen doğru cevaplar (döküm için)
+const rev = objectiveReview(key);
+assert.deepStrictEqual(rev.reading, [[0, 2]], "review reading cevapları");
+assert.deepStrictEqual(rev.listening, [[1]], "review listening cevapları");
+assert.deepStrictEqual(rev.produce, ["Ich bin hier", "Wie geht es dir"], "review produce cevapları");
+
+console.log("✓ exam-grade: 14 senaryo geçti (puanlama + imzalı jeton + mühürlü görev + kör kâğıt/review; sınav airtight)");

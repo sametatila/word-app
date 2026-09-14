@@ -65,6 +65,22 @@ type Phase = "cover" | "loading" | "intro" | "run" | "finishing" | "result" | "e
  */
 const SPEAK_MAX_MS = 12000;
 
+/**
+ * KÖR MOD (airtight, F7): sunucudan nesnel cevapları GİZLENMİŞ kâğıt istiyoruz.
+ * İstemci cevapları görmüyor → değiştirilmiş bir istemci "cevabı oku + doğru
+ * gönder" yapamaz; puanı sunucu ham seçimlerden veriyor. Nesnel döküm sınav
+ * BİTİNCE sunucunun döndürdüğü `review`'dan kuruluyor (aşağıda).
+ */
+const BLIND = true;
+
+/** Nesnel döküm anahtarı — finish yanıtından gelir (cevaplar sınav bitince açılır). */
+type Review = {
+  grammar: ({ kind: "cell"; answer: number } | { kind: "judge"; answer: boolean })[];
+  reading: number[][];
+  listening: number[][];
+  produce: string[];
+};
+
 /** Bölümün öğrenciye ne yaptıracağı — bölüm arası kartında okunur. */
 const SECTION_BRIEF_KEYS: Record<ExamSectionId, string> = {
   vocab: "exam.brief_vocab",
@@ -172,7 +188,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   async function start() {
     setPhase("loading");
     try {
-      const res = await apiFetch("/api/exam", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start", level, module, day: localDay() }) });
+      const res = await apiFetch("/api/exam", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "start", level, module, day: localDay(), blind: BLIND }) });
       if (!res.ok) throw new Error(String(res.status));
       const { paper: p, keyToken: kt } = (await res.json()) as { paper: ExamPaper; keyToken?: string };
       keyToken.current = kt ?? null;
@@ -251,7 +267,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
-      setResult((await res.json()) as ExamResult);
+      const data = (await res.json()) as ExamResult & { review?: Review };
+      // Kör modda nesnel döküm sunucunun döndürdüğü doğru cevaplardan kurulur
+      // (sınav bitti; cevapların açılması artık sömürüye yaramaz).
+      if (BLIND && data.review) buildObjectiveMisses(data.review);
+      setResult(data);
       setPhase("result");
     } catch {
       /* SONUÇ GÖNDERİLEMEDİ AMA SINAV YAPILDI. Eskiden burada yalnız bir hata
@@ -259,11 +279,15 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
          Puan zaten istemcide hesaplanmış durumda; Android de tam bunu yapıyor:
          yüzdeyi gösterip "sonuç gönderilemedi" diyor. Geçti/kaldı YAZILMIYOR,
          o kararı sunucu veriyor. */
-      const total = sections.reduce((a, x) => a + x.total, 0);
-      const correct = sections.reduce((a, x) => a + x.correct, 0);
+      // Kör modda nesnel bölümleri istemci puanlayamaz (cevap yok); onları
+      // çevrimdışı özetten çıkar ki yanıltıcı düşük yüzde görünmesin.
+      const OBJECTIVE = new Set<ExamSectionId>(["grammar", "reading", "listening", "produce"]);
+      const shown = BLIND ? sections.filter((x) => !OBJECTIVE.has(x.id)) : sections;
+      const total = shown.reduce((a, x) => a + x.total, 0);
+      const correct = shown.reduce((a, x) => a + x.correct, 0);
       setOffline({
         pct: total ? Math.round((correct / total) * 100) : 0,
-        sections: sections.map((x) => ({ id: x.id, pct: x.total ? Math.round((x.correct / x.total) * 100) : 0 })),
+        sections: shown.map((x) => ({ id: x.id, pct: x.total ? Math.round((x.correct / x.total) * 100) : 0 })),
       });
       setPhase("error");
     }
@@ -286,9 +310,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     responses.current.grammar[idx] = chosen;
     const correct = g.kind === "cell" ? chosen === g.answer : chosen === (g.answer ? 0 : 1);
     if (correct) score.current.grammar.correct++;
-    else if (g.kind === "cell")
+    // Kör modda nesnel döküm finish'te review'dan kurulur (kâğıtta cevap yok).
+    else if (!BLIND && g.kind === "cell")
       misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[g.answer], given: g.options[chosen] });
-    else
+    else if (!BLIND && g.kind === "judge")
       misses.current.push({
         section: "grammar",
         prompt: g.statement,
@@ -310,7 +335,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     // Sınavda sıra hatası doğru sayılmaz: ölçülen şey tam olarak sıra.
     const correct = m.verdict === "exact" || m.verdict === "spelling";
     if (correct) score.current.produce.correct++;
-    else misses.current.push({ section: "produce", prompt: item.prompt, answer: item.de, given: answer });
+    else if (!BLIND) misses.current.push({ section: "produce", prompt: item.prompt, answer: item.de, given: answer });
     setTyped("");
     setChunks([]);
     if (idx + 1 < paper!.sections.produce.length) setIdx(idx + 1);
@@ -323,13 +348,54 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const q = item.questions[qIdx];
     (responses.current[kind][idx] ??= [])[qIdx] = chosen;
     if (chosen === q.answer) score.current[kind].correct++;
-    else misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given: q.options[chosen] });
+    else if (!BLIND) misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given: q.options[chosen] });
     setPicked(null);
     if (qIdx + 1 < item.questions.length) setQIdx(qIdx + 1);
     else if (idx + 1 < list.length) {
       setIdx(idx + 1);
       setQIdx(0);
     } else nextSection();
+  }
+
+  /**
+   * Kör modda nesnel dökümü sunucunun döndürdüğü `review` (doğru cevaplar) +
+   * kaydedilmiş ham seçimlerden kurar. Kâğıt render için sağlam (yalnız cevaplar
+   * sıyrılmıştı), o yüzden soru metni/şıklar buradan okunuyor.
+   */
+  function buildObjectiveMisses(review: Review) {
+    const p = paper;
+    if (!p) return;
+    p.sections.grammar.forEach((g, i) => {
+      const key = review.grammar[i];
+      if (!key) return;
+      const chosen = responses.current.grammar[i];
+      if (g.kind === "cell" && key.kind === "cell") {
+        if (chosen === key.answer) return;
+        misses.current.push({ section: "grammar", prompt: `${g.key} · ${g.label}`, answer: g.options[key.answer], given: typeof chosen === "number" ? g.options[chosen] : "—" });
+      } else if (g.kind === "judge" && key.kind === "judge") {
+        if (chosen === (key.answer ? 0 : 1)) return;
+        misses.current.push({ section: "grammar", prompt: g.statement, answer: t(key.answer ? "common.correct" : "common.wrong"), given: t(chosen === 0 ? "common.correct" : "common.wrong"), why: g.why.map((s) => s.text).join(" ") });
+      }
+    });
+    (["reading", "listening"] as const).forEach((kind) => {
+      p.sections[kind].forEach((item, ti) => {
+        item.questions.forEach((q, qi) => {
+          const correct = review[kind][ti]?.[qi];
+          if (correct === undefined) return;
+          const chosen = responses.current[kind][ti]?.[qi];
+          if (chosen === correct) return;
+          misses.current.push({ section: kind, prompt: q.textTr ?? q.text, answer: q.options[correct], given: typeof chosen === "number" ? q.options[chosen] : "—" });
+        });
+      });
+    });
+    p.sections.produce.forEach((item, i) => {
+      const de = review.produce[i];
+      if (!de) return;
+      const given = responses.current.produce[i] ?? "";
+      const m = matchSentence(given, de, [], targetLangOf(course));
+      if (m.verdict === "exact" || m.verdict === "spelling") return;
+      misses.current.push({ section: "produce", prompt: item.prompt, answer: de, given });
+    });
   }
 
   async function evaluateWriting() {
