@@ -10,7 +10,7 @@ import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics
 import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { onActivityAwarded } from "@/lib/social/hooks";
-import { cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
+import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { nativeOf, type NativeLang } from "@/lib/courses";
 import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
@@ -1847,9 +1847,13 @@ export async function submitAnswers(
   // ve sunucu sözlü/serbest cevabı yeniden puanlayamadığı için, bir günde
   // /api/answers üzerinden kazanılan XP `ANSWERS_DAILY_XP_CAP` ile sınırlanıyor —
   // lig `dailyStats.xp`'den sıralandığından sınırlanan tam o. Tavan gerçek en uç
-  // günün belirgin üstünde; kimseyi kırpmaz. Oku-sonra-kırp bilinçli: /api/answers
-  // hız-sınırlı, tek kullanıcı yüksek eşzamanlılık üretemez; olası minik taşma
-  // bütünlük için önemsiz (fatura değil, güvenlik denetimi #1'in aksine).
+  // günün belirgin üstünde; kimseyi kırpmaz.
+  //
+  // İki katman: (a) buradaki oku-sonra-kırp görüntülenen değeri doğru tutar;
+  // (b) ASIL tavan aşağıdaki atomik yazımda `LEAST(...)` ile — güvenlik denetimi
+  // F8: oku-sonra-kırp tek başına TOCTOU'ydu (bir burst eşzamanlı /api/answers
+  // hepsi bayat `prior` okuyup atomik artışla tavanı aşabiliyordu), atomik LEAST
+  // toplamı satır düzeyinde bağlar, yarış kapanır.
   if (xpGained > 0) {
     const [prior] = await db
       .select({ xp: dailyStats.xp })
@@ -1876,7 +1880,7 @@ export async function submitAnswers(
         reviews: sql`${dailyStats.reviews} + ${answers.length}`,
         correct: sql`${dailyStats.correct} + ${correctCount}`,
         newWords: sql`${dailyStats.newWords} + ${newCount}`,
-        xp: sql`${dailyStats.xp} + ${xpGained}`,
+        xp: sql`LEAST(${dailyStats.xp} + ${xpGained}, ${ANSWERS_DAILY_XP_CAP})`,
         seconds: sql`${dailyStats.seconds} + ${Math.min(seconds, 7200)}`,
       },
     })
