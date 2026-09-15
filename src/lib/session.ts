@@ -74,14 +74,81 @@ const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION
 const PRODUCTION_CEILING = 0.4;
 
 /**
- * Borç varken de gelen yeni kelime sayısı.
+ * Borç varken de gelen yeni kelime: taban 2, tavan 5.
  *
  * Tekrar borcu günlük hedefin iki katını aşınca tempo "review" oluyor ve yeni
  * kelime HİÇ gelmiyordu; tanıtım kartı ve eşleştirme gibi hafif turlar da onunla
- * kayboluyor, tur yalnız zor tekrarlardan oluşuyordu. Üç yeni kelime borcu
- * belirgin büyütmüyor, turu nefes aldırıyor.
+ * kayboluyor, tur yalnız zor tekrarlardan oluşuyordu (canlıda 393 tekrarlı
+ * hesapta haftalarca sıfır yeni kelime). Sayı borcun büyüklüğüne göre:
+ * borç hedefin 2 katıyken 5, her 2 kat fazlası için bir eksik, en az 2.
+ * Kullanıcının kendi `newPerDay` ayarı bunun da üstünde bir tavan.
+ *
+ * Yeni ya da kısa süredir kullanan hesap bu dala hiç girmiyor: borcu hedefin
+ * iki katına ulaşmadıkça tempo "normal" ve kota kullanıcının kendi ayarı.
  */
-const REVIEW_NEW_WORDS = 3;
+const REVIEW_NEW_MIN = 2;
+const REVIEW_NEW_MAX = 5;
+
+export type Pacing = "normal" | "light" | "review";
+
+/** Günün yeni kelime kararı — tur kurulumu ve Öğren rozeti AYNI hesabı okuyor. */
+export function newWordQuota(input: { dueCount: number; dailyGoal: number; newPerDay: number; seen: number; leeches: number }): { pacing: Pacing; quota: number } {
+  const { dueCount, dailyGoal, newPerDay, seen, leeches } = input;
+  const leechRatio = seen >= 20 ? leeches / seen : 0;
+  const goal = Math.max(1, dailyGoal);
+  const pacing: Pacing = dueCount >= goal * 2 ? "review" : leechRatio > 0.15 ? "light" : "normal";
+  if (pacing === "normal") return { pacing, quota: newPerDay };
+  if (pacing === "light") return { pacing, quota: Math.ceil(newPerDay / 2) };
+  const ratio = dueCount / goal;
+  const byBacklog = Math.max(REVIEW_NEW_MIN, Math.min(REVIEW_NEW_MAX, REVIEW_NEW_MAX - Math.floor((ratio - 2) / 2)));
+  return { pacing, quota: Math.min(newPerDay, byBacklog) };
+}
+
+/**
+ * Bugün turda KALAN yeni kelime — Öğren'deki "{n} yeni" rozeti.
+ *
+ * Rozet eskiden bugün ÖĞRENİLMİŞ yeni kelimeyi gösteriyordu ve hiç
+ * öğrenilmediyse hiç çizilmiyordu: kullanıcı turda yeni kelime olup
+ * olmadığını rozetten okuyamıyordu. Artık tur kurulumunun kendi kararından
+ * (`newWordQuota`) kalan sayı; seviyede görülmemiş kelime kalmadıysa 0.
+ */
+export async function newWordsLeft(userId: string, today: string): Promise<number> {
+  const profile = await ensureProfile(userId);
+  const [[stat], [health]] = await Promise.all([
+    db.select({ newWords: dailyStats.newWords }).from(dailyStats).where(and(eq(dailyStats.userId, userId), eq(dailyStats.day, today))),
+    db
+      .select({
+        due: sql<number>`count(*) filter (where ${userWords.dueAt} <= now())::int`,
+        seen: sql<number>`count(*)::int`,
+        leeches: sql<number>`count(*) filter (where ${userWords.leech})::int`,
+      })
+      .from(userWords)
+      .innerJoin(words, eq(words.id, userWords.wordId))
+      .where(and(eq(userWords.userId, userId), practiceWordsOf(profile.course))),
+  ]);
+  const { quota } = newWordQuota({
+    dueCount: health?.due ?? 0,
+    dailyGoal: profile.dailyGoal,
+    newPerDay: profile.newPerDay,
+    seen: health?.seen ?? 0,
+    leeches: health?.leeches ?? 0,
+  });
+  const left = Math.max(0, quota - (stat?.newWords ?? 0));
+  if (left === 0) return 0;
+  const band = levelBand(profile.level);
+  const unseen = await db
+    .select({ id: words.id })
+    .from(words)
+    .where(
+      and(
+        practiceWordsOf(profile.course),
+        inArray(words.niveau, band.pool),
+        sql`not exists (select 1 from ${userWords} where ${userWords.wordId} = ${words.id} and ${userWords.userId} = ${userId})`,
+      ),
+    )
+    .limit(left);
+  return unseen.length;
+}
 
 /**
  * Bir oturumda bulunması istenen en az olgun kelime sayısı.
@@ -539,9 +606,14 @@ export async function buildSession(
    * yükseldiyse yeni kelime almak yalnızca borcu büyütür. Bu, kullanıcının
    * başarısıyla ilgili bir yargı değil; sırt çantasının ağırlığıyla ilgili.
    */
-  const leechRatio = health && health.seen >= 20 ? health.leeches / health.seen : 0;
-  const pacing: "normal" | "light" | "review" =
-    dueCount >= profile.dailyGoal * 2 ? "review" : leechRatio > 0.15 ? "light" : "normal";
+  const plan = newWordQuota({
+    dueCount,
+    dailyGoal: profile.dailyGoal,
+    newPerDay: profile.newPerDay,
+    seen: health?.seen ?? 0,
+    leeches: health?.leeches ?? 0,
+  });
+  const pacing = plan.pacing;
 
   // Kapsam: seçilen seviyenin ne kadarı pekişti. Yalnızca artan bir ölçü —
   // öğrenciyi derecelendirmez, biriktirdiğini gösterir.
@@ -569,13 +641,7 @@ export async function buildSession(
 
   if (metaOnly) return { rounds: [], resume: null, meta };
 
-  const quota = extra
-    ? 10
-    : pacing === "review"
-      ? REVIEW_NEW_WORDS
-      : pacing === "light"
-        ? Math.ceil(profile.newPerDay / 2)
-        : profile.newPerDay;
+  const quota = extra ? 10 : plan.quota;
   const newBudget = extra ? quota : Math.max(0, quota - newToday);
 
   // Günlük kota bir hız ayarıdır, duvar değil: tekrar kuyruğu zayıfsa oturumu
@@ -833,9 +899,27 @@ export async function loadSession(
      */
     const leftoverPractice =
       Array.isArray(rounds) && rounds.length > 2 && new Set(rounds.map((r) => r.game)).size === 1;
+    /*
+      BAYAT PLAN: kayıtlı tur hiç yeni kelime içermiyor, henüz başlanmamış ve
+      bugünkü plan artık yeni kelime veriyor.
+
+      Borçlu hesaplarda tur "review" temposunda sıfır yeni kelimeyle kuruluyordu;
+      kural değişince (borçta da 2–5 yeni kelime) o gün kaydedilmiş tur olduğu
+      gibi geri gelseydi kullanıcı ertesi güne kadar yeni kelime göremez, Öğren
+      rozeti "3 yeni" derken tur hiç yeni kelime göstermezdi. Başlanmış tur
+      bozulmuyor: yarım kalanı bitirince sıradaki tur yeni plana göre kuruluyor.
+      Ayar değişikliği (günde yeni kelime) de aynı yoldan hemen yansıyor.
+    */
+    const stalePlan =
+      Array.isArray(rounds) &&
+      saved?.index === 0 &&
+      saved.day === today &&
+      !rounds.some((r) => r.game === "intro") &&
+      (await newWordsLeft(userId, today)) > 0;
     if (
       saved &&
       !leftoverPractice &&
+      !stalePlan &&
       currentShape &&
       saved.day === today &&
       saved.course === profile.course &&

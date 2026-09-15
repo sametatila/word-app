@@ -10,6 +10,8 @@ import { joinLeague, leagueBoard } from "../src/lib/social/leagues";
 import {
   buildChallenge,
   buildSession,
+  newWordsLeft,
+  newWordQuota,
   weekStart,
   clearSessionState,
   loadSession,
@@ -403,11 +405,32 @@ async function main() {
       dueAt: past, reps: 3, lapses: 0, correctStreak: 2, leech: false, lastReviewedAt: past,
     })),
   );
+  // Rozet: tur kurulmadan önce kalan yeni kelime, kurulan turdaki tanıtım sayısıyla aynı olmalı.
+  const badgeLeft = await newWordsLeft(USER, day1);
   const sBacklog = await buildSession(USER, day1);
   check("borç birikince tempo 'review'", sBacklog.meta.pacing === "review", `(${sBacklog.meta.pacing})`);
   // Borçta da tur nefes alsın: en çok üç yeni kelime (bkz. session `REVIEW_NEW_WORDS`).
   const backlogIntros = sBacklog.rounds.filter((r) => r.game === "intro").length;
-  check("tekrar gününde en çok üç yeni kelime", backlogIntros >= 1 && backlogIntros <= 3, `(${backlogIntros})`);
+  // Borç hedefin 8 katı (40 tekrar / hedef 5): taban 2 yeni kelime.
+  check("borçta yeni kelime tabanda (2)", backlogIntros === 2, `(${backlogIntros})`);
+  check("Öğren rozeti turdaki yeni kelimeyle aynı", badgeLeft === backlogIntros, `(rozet ${badgeLeft}, tur ${backlogIntros})`);
+  // Yeni kota kuralı: normal kullanıcıya dokunmuyor, borçta 2–5 arası.
+  const q = (dueCount: number, dailyGoal: number, newPerDay = 15) => newWordQuota({ dueCount, dailyGoal, newPerDay, seen: 100, leeches: 0 });
+  check("borçsuz kullanıcıda kota kendi ayarı", q(10, 20).pacing === "normal" && q(10, 20).quota === 15);
+  check("borç 2 kat: 5 yeni", q(40, 20).pacing === "review" && q(40, 20).quota === 5, `(${q(40, 20).quota})`);
+  check("borç 5,5 kat: 4 yeni", q(110, 20).quota === 4, `(${q(110, 20).quota})`);
+  check("borç çok yüksek: taban 2", q(393, 5).quota === 2, `(${q(393, 5).quota})`);
+  check("kullanıcının günlük yeni ayarı tavan", q(393, 5, 1).quota === 1);
+  // Bayat plan: bugün kaydedilmiş, yeni kelimesiz ve başlanmamış tur yeniden kuruluyor.
+  const noNew = sBacklog.rounds.filter((r) => r.game !== "intro");
+  await db.insert(sessionState).values({ userId: USER, day: day1, course: "de", rounds: noNew, index: 0 })
+    .onConflictDoUpdate({ target: sessionState.userId, set: { day: day1, course: "de", rounds: noNew, index: 0 } });
+  const refreshed = await loadSession(USER, day1);
+  check("yeni kelimesiz bayat tur yeniden kuruluyor", refreshed.rounds.some((r) => r.game === "intro"));
+  await db.update(sessionState).set({ rounds: noNew, index: 1 }).where(eq(sessionState.userId, USER));
+  const kept = await loadSession(USER, day1);
+  check("başlanmış tur bozulmuyor", !kept.rounds.some((r) => r.game === "intro") && kept.rounds.length === noNew.length);
+  await db.delete(sessionState).where(eq(sessionState.userId, USER));
   // Üretim tavanı: tanıtım ve eşleştirme dışındaki turların en çok %40'ı üretim.
   const backlogCounted = sBacklog.rounds.filter((r) => r.game !== "intro" && r.game !== "match");
   const backlogProd = backlogCounted.filter((r) => ["typing", "scramble", "order", "translate", "free_sentence", "speak"].includes(r.game)).length;
