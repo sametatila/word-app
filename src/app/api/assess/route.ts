@@ -119,7 +119,11 @@ export async function POST(req: Request) {
     düşüyor, sonraki değerlendirmeler aynı hakla geçiyor. Sınav kâğıdının
     yazma görevi (`examVerified`) bu kapıya girmez.
   */
-  const skillExercise = gated && !examVerified && typeof parsed.req.exerciseId === "string" ? await getExercise(parsed.req.exerciseId) : undefined;
+  /* Misafir bu kapıya girmez: sınırı zaten ömürlük tek deneme hakkı
+     (`GUEST_AI_TRIALS`, aşağıda atomik alınıyor ve başarısızlıkta geri
+     veriliyor). Kapıya girseydi beceri kotası da düşer, geri verilmez ve
+     premium_required ile misafirin tek hakkını hiç kullanamamasına yol açardı. */
+  const skillExercise = gated && !examVerified && !who.guest && typeof parsed.req.exerciseId === "string" ? await getExercise(parsed.req.exerciseId) : undefined;
   const skillGate = skillExercise ? await claimSkillAi(userId, skillExercise, parsed.req.level) : null;
   if (skillGate && !skillGate.allowed) {
     return NextResponse.json({ error: "premium_required", reason: skillGate.reason, gate: skillGate.gate }, { status: 403 });
