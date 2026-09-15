@@ -33,7 +33,7 @@
     "test:exam-grade": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts",
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",
     "test:league": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-league.ts",
-    "check:en-de": "node data/en-de/check.mjs",
+    "check:en-de": "node data/en-de/make-packets.mjs && node data/en-de/check.mjs",
     "check:dumps": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-dumps.ts",
     "check:parity": "node scripts/parity-check.mjs",
     "check:endpoints": "node scripts/check-endpoints.mjs --check",
