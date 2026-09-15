@@ -8,7 +8,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
+import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
@@ -63,12 +63,33 @@ export function AuthScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  /* Ekrandan tek çıkış: kendi akışlarımız ve dışarıdan açılan oturum (aşağıdaki
+     etki) aynı anda çağırabiliyor; ikinci sıfırlama bildirim sorusunu iki kez açardı. */
+  const left = useRef(false);
   const toApp = async () => {
+    if (left.current) return;
+    left.current = true;
     // İlk giriş sonrası bir kez bildirim priming; sonra uygulama.
     const prime = await notifPrimeNeeded().catch(() => false);
     nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
   };
-  const { signIn, signUp, socialComplete } = useAuth();
+  const { user, signIn, signUp, socialComplete, continueAsGuest } = useAuth();
+  /*
+    MİSAFİR HESAP OLUŞTURMAYA GELDİ (Profil, kilitli bir özellik). Ekran
+    kapatılabiliyor (misafir uygulamaya geri dönebilir), "Hesapsız devam et"
+    yok (zaten misafir) ve başlık ilerlemenin taşınacağını söylüyor.
+  */
+  const guestUpgrade = Boolean(user?.guest);
+  /*
+    DIŞARIDAN AÇILAN OTURUM. Android'deki Apple girişi tarayıcıda, e-posta
+    doğrulaması bağlantıda bitiyor; oturumu App.tsx kuruyor ve bu ekran
+    açık kalıyordu. Gerçek bir hesap belirince uygulamaya geçiliyor.
+  */
+  useEffect(() => {
+    if (user && !user.guest) void toApp();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- `toApp` her çizimde yeni; kapı `left`
+  }, [user?.id, user?.guest]);
+  const [guestBusy, setGuestBusy] = useState(false);
   /*
     İKİNCİ ADIM. Parola kabul edildiğinde sunucu oturumu açmıyor; kimliği
     kısa ömürlü imzalı bir çerez taşıyor ve kod e-postaya gidiyor (bkz.
@@ -198,6 +219,21 @@ export function AuthScreen() {
     setCooldown(RESEND_COOLDOWN);
   }
 
+  /** "Hesapsız devam et" — sunucuda misafir kimliği (mağaza ön inceleme B24). */
+  async function doGuest() {
+    if (guestBusy) return;
+    setGuestBusy(true);
+    setError(null);
+    const r = await continueAsGuest();
+    setGuestBusy(false);
+    if (r.ok) {
+      left.current = true;
+      nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
+      return;
+    }
+    setError(r.status === 429 ? t("auth.guest_rate_limited") : r.status === 0 ? t("common.connection_failed") : t("auth.guest_failed"));
+  }
+
   async function submit() {
     if (busy || captchaBlocked) return;
     const address = email.trim();
@@ -297,7 +333,7 @@ export function AuthScreen() {
     view === "twofactor" ? t("twofa.verify_title")
       : view === "verify" ? t(verifyReason === "blocked" ? "verify.title_blocked" : "verify.title")
       : view === "forgot" ? t("auth.forgot_your_password")
-        : view === "options" ? t("auth.sign_in")
+        : view === "options" ? (guestUpgrade ? t("auth.guest_upgrade_title") : t("auth.sign_in"))
           : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account");
 
   const headSub =
@@ -307,14 +343,20 @@ export function AuthScreen() {
         ? (verifyEmail ? t("verify.blocked_with_email", { email: verifyEmail }) : t("verify.blocked"))
         : (verifyEmail ? t("verify.sent_with_email", { email: verifyEmail }) : t("verify.sent"))
       : view === "forgot" ? t("auth.enter_your_email_and_we_ll_send")
-        : view === "options" ? t("auth.your_progress_is_saved_and")
+        : view === "options" ? (guestUpgrade ? t("auth.guest_upgrade_sub") : t("auth.your_progress_is_saved_and"))
           : mode === "signin" ? t("auth.pick_your_streak_up_where_you") : t("auth.it_takes_few_seconds_and_your");
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {/* Zorunlu giriş duvarı: seçenekler ekranında kapatma YOK (misafir modu yok).
-          Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
+      {/* Seçenekler ekranında kapatma yalnız MİSAFİRE: girişsiz kullanıcının
+          arkasında dönülecek bir ekran yok, onun çıkışı "Hesapsız devam et".
+          E-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
+        {view === "options" && guestUpgrade && nav.canGoBack() && (
+          <PressableScale accessibilityLabel={t("common.close")} hitSlop={4} onPress={() => nav.goBack()} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <XIcon color={colors.text} size={22} />
+          </PressableScale>
+        )}
         {(view === "email" || view === "verify" || view === "twofactor") && (
           <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView(view === "email" ? "options" : "email"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
@@ -349,6 +391,24 @@ export function AuthScreen() {
               <View style={{ width: 24, alignItems: "center" }}><MailIcon color={colors.text} size={22} /></View>
               <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.continue_with_email")}</Text>
             </PressableScale>
+
+            {/*
+              HESAPSIZ DEVAM ET (mağaza ön inceleme B24, App Store 5.1.1(v)):
+              hesaba bağlı olmayan içerik girişsiz açılmalı. Düğme giriş
+              seçenekleriyle AYNI boyda ve aynı ekranda: saklı bir "atla"
+              bağlantısı incelemede bulunmuyor. Altındaki cümle neyin hesap
+              istediğini söylüyor; misafir sonradan şaşırmasın. 18 yaş ve
+              şartlar satırı bu düğmeyi de kapsıyor (ekranın dibinde).
+            */}
+            {!user && (
+              <>
+                <PressableScale onPress={() => { void doGuest(); }} disabled={guestBusy} accessibilityRole="button" accessibilityLabel={t("auth.continue_as_guest")}
+                  style={{ alignItems: "center", justifyContent: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, marginTop: spacing.xs }}>
+                  {guestBusy ? <ActivityIndicator color={colors.textMuted} /> : <Text variant="h3" color={colors.primaryText}>{t("auth.continue_as_guest")}</Text>}
+                </PressableScale>
+                <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("auth.guest_hint")}</Text>
+              </>
+            )}
 
             {error && (
               <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
