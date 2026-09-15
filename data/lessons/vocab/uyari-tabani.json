@@ -1,0 +1,6 @@
+{
+  "aciklama": "check:lessons-vocab uyarı tabanı (scripts/lib/uyari-tabani.mjs). Her kayıt incelendi; anahtar karşılığın kendisini taşıyor, karşılık değişirse kabul düşer.",
+  "uyarilar": {
+    "de-b1-nachhaltig-einkaufen «regional» → regional | karşılık Almancanın aynısı (akraba kelime olabilir)": "İncelendi, doğru: Almanca regional ile İngilizce regional akraba kelime; öğrenciye öğretilecek bilgi (kuralın hatadan uyarıya inme nedeni bu örnek, bkz. check.mjs)."
+  }
+}

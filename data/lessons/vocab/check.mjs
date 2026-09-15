@@ -12,10 +12,11 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractVocab } from "./extract.mjs";
 import { usSpelling } from "../spelling.mjs";
+import { uyariTabani, konumsalArgumanlar } from "../../../scripts/lib/uyari-tabani.mjs";
 
 const ROOT = new URL("../../../", import.meta.url).pathname;
 const DIR = `${ROOT}data/lessons/vocab`;
-const ARG = (process.argv[2] || "all").toLowerCase();
+const ARG = (konumsalArgumanlar()[0] || "all").toLowerCase();
 
 const errors = [];
 const warnings = [];
@@ -29,7 +30,13 @@ if (existsSync(`${DIR}/out`))
     for (const r of JSON.parse(readFileSync(`${DIR}/out/${f}`, "utf8"))) {
       const key = `${r.lesson} ${r.de}`;
       const H = (m) => errors.push(`  [${packet}] ${r.lesson} «${r.de}» — ${m}`);
-      const U = (m) => warnings.push(`  [${packet}] ${r.lesson} «${r.de}» — ${m}`);
+      /* Taban anahtarı karşılığın kendisini taşıyor: karşılık değişirse kabul
+         düşer ve madde yeniden incelenir (bkz. scripts/lib/uyari-tabani.mjs). */
+      const U = (m) =>
+        warnings.push({
+          anahtar: `${r.lesson} «${r.de}» → ${String(r.en ?? "").trim()} | ${m}`,
+          metin: `  [${packet}] ${r.lesson} «${r.de}» → ${String(r.en ?? "").trim()} — ${m}`,
+        });
       if (written.has(key)) H("aynı madde iki pakette");
       const en = String(r.en ?? "").trim();
       if (!en) H("karşılık boş");
@@ -97,15 +104,24 @@ if (errors.length) {
   console.log(errors.slice(0, 40).join("\n"));
   if (errors.length > 40) console.log(`  … ${errors.length - 40} tane daha`);
 }
-if (warnings.length) {
+let taban = { dustu: false, ozet: `${warnings.length} uyarı` };
+if (ARG === "all") {
+  taban = uyariTabani({
+    ad: "check:lessons-vocab",
+    dosya: `${DIR}/uyari-tabani.json`,
+    komut: "npm run check:lessons-vocab",
+    uyarilar: warnings,
+    gerekceZorunlu: true,
+  });
+} else if (warnings.length) {
   console.log(`\nuyarı (${warnings.length}):`);
-  console.log(warnings.slice(0, 20).join("\n"));
+  console.log(warnings.map((w) => w.metin).join("\n"));
 }
 console.log(
-  `\nözet: ${written.size} elle yazılmış karşılık · ${errors.length} hata · ${warnings.length} uyarı` +
+  `\nözet: ${written.size} elle yazılmış karşılık · ${errors.length} hata · ${taban.ozet}` +
     (coverage
       ? `\nkapsam: ${coverage.rows - coverage.missing}/${coverage.rows} ` +
         `(${coverage.derived} türetilen + ${coverage.hand} elle)`
       : ""),
 );
-process.exit(errors.length ? 1 : 0);
+process.exit(errors.length || taban.dustu ? 1 : 0);
