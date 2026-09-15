@@ -941,7 +941,7 @@ export const trBase: Record<string, string> = {
   "paywall.price_months": "{n} ayda bir {price}",
   "paywall.no_purchase_to_restore_on_this": "Bu hesapta geri yüklenecek satın alma bulunamadı.",
   "paywall.content_is_built_around_cefr": "İçerikler CEFR A1–C1 seviyelerine uygun olarak hazırlanır.",
-  "paywall.content_is_built_around_cefr_a1": "İçerikler CEFR A1–C1 seviyelerine ve resmî sınav formatlarına uygun olarak hazırlanır.",
+  "paywall.content_is_built_around_cefr_a1": "İçerikler CEFR A1–C1 seviyelerine uygun olarak hazırlanır. Deneme sınavları Lernomi'nin kendi alıştırmalarıdır; hiçbir sınav kurumuyla bağlantılı değildir.",
   "paywall.first_free": "İlk {duration} ücretsiz",
   "paywall.trial_days": "{n} gün",
   "paywall.trial_days.one": "{n} gün",

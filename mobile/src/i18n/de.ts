@@ -939,7 +939,7 @@ export const de: Record<string, string> = {
   "paywall.price_months": "{price} alle {n} Monate",
   "paywall.no_purchase_to_restore_on_this": "Kein wiederherstellbarer Kauf für dieses Konto.",
   "paywall.content_is_built_around_cefr": "Die Inhalte werden passend zu den GER-Stufen A1–C1 erstellt.",
-  "paywall.content_is_built_around_cefr_a1": "Die Inhalte werden passend zu den GER-Stufen A1–C1 und den offiziellen Prüfungsformaten erstellt.",
+  "paywall.content_is_built_around_cefr_a1": "Die Inhalte werden passend zu den GER-Stufen A1–C1 erstellt. Die Probeprüfungen sind eigene Übungen von Lernomi und stehen mit keinem Prüfungsanbieter in Verbindung.",
   "paywall.first_free": "{duration} kostenlos",
   "paywall.trial_days": "{n} Tage",
   "paywall.trial_days.one": "{n} Tag",

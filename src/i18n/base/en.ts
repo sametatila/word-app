@@ -941,7 +941,7 @@ export const enBase: Record<string, string> = {
   "paywall.price_months": "{price} every {n} months",
   "paywall.no_purchase_to_restore_on_this": "No purchase to restore on this account.",
   "paywall.content_is_built_around_cefr": "Content is prepared to match CEFR levels A1–C1.",
-  "paywall.content_is_built_around_cefr_a1": "Content is prepared to match CEFR levels A1–C1 and official exam formats.",
+  "paywall.content_is_built_around_cefr_a1": "Content is prepared to match CEFR levels A1–C1. The mock exams are Lernomi's own practice material and are not affiliated with any exam provider.",
   "paywall.first_free": "{duration} free",
   "paywall.trial_days": "{n} days",
   "paywall.trial_days.one": "{n} day",
