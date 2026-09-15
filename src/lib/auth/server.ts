@@ -18,6 +18,7 @@ import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } fr
 import { captchaPlugins } from "@/lib/auth/captcha";
 import { anonymous, twoFactor } from "better-auth/plugins";
 import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
+import { guestResume } from "@/lib/auth/guest-resume";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
@@ -423,6 +424,9 @@ export const auth = betterAuth({
         kullanıcı yine hesapla girebiliyor.
       */
       "/sign-in/anonymous": { window: 3600, max: 10 },
+      /* Misafir oturumunu jetonla geri kurma (lib/auth/guest-resume): jeton
+         32 karakter rastgele, yine de tahmin denemesine karşı IP başına tavan. */
+      "/guest/resume": { window: 3600, max: 20 },
     },
   },
   advanced: {
@@ -491,6 +495,9 @@ export const auth = betterAuth({
       generateName: () => "guest",
       disableDeleteAnonymousUser: true,
     }),
+    /* Çerezini kaybeden misafir kimliğine döner (2FA'dan vazgeçilen giriş
+       denemesi); ayrıntı lib/auth/guest-resume. */
+    guestResume(),
     /**
      * İKİ ADIMLI DOĞRULAMA — isteğe bağlı, e-posta koduyla.
      *
