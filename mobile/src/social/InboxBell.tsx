@@ -9,12 +9,16 @@ import { InboxIcon } from "../ui/icons";
 import { useTheme, radii, spacing } from "../theme";
 import { useUnread } from "./useUnread";
 import { t } from "../lib/i18n";
+import { useAuth } from "../lib/AuthContext";
 
 /** Başlıktaki gelen kutusu zili — okunmamış varsa rozet. */
 export function InboxBell() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const unread = useUnread();
+  /* Misafirin gelen kutusu yok (sosyal hesap istiyor); zil her sekmede
+     yalnız hesap kartına götürüyordu. Hesap çağrısı Profil'de duruyor. */
+  if (useAuth().user?.guest) return null;
   return (
     <PressableScale hitSlop={4} onPress={() => nav.navigate("Inbox")} accessibilityLabel={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
       <InboxIcon color={colors.text} size={20} />
