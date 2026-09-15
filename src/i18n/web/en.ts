@@ -169,7 +169,6 @@ export const enWeb: Record<string, string> = {
   "rounds.write_sentence_ph": "Write the sentence…",
   "rounds.understood": "{word} — got it",
   "rounds.no_tts": "Your device can't read aloud — the word is shown as text.",
-  "rounds.great": "Great! ",
   "rounds.empty_word_slot": "empty slot",
   "rounds.empty_letter_slot": "empty slot",
   "diff.typed_vs_answer": "You wrote: {typed}. The answer: {answer}.",

@@ -195,7 +195,6 @@ export const trWeb: Record<string, string> = {
   "rounds.write_sentence_ph": "Cümleyi yaz…",
   "rounds.understood": "{word} — anladım",
   "rounds.no_tts": "Cihazın sesli okumayı desteklemiyor — kelime yazıyla gösterildi.",
-  "rounds.great": "Harika! ",
   "rounds.empty_word_slot": "boş yer",
   "rounds.empty_letter_slot": "boş yuva",
   "diff.typed_vs_answer": "Yazılan: {typed}. Doğrusu: {answer}.",

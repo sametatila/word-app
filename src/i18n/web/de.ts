@@ -169,7 +169,6 @@ export const deWeb: Record<string, string> = {
   "rounds.write_sentence_ph": "Schreib den Satz…",
   "rounds.understood": "{word} — verstanden",
   "rounds.no_tts": "Dein Gerät kann nicht vorlesen — das Wort steht als Text da.",
-  "rounds.great": "Super! ",
   "rounds.empty_word_slot": "leeres Feld",
   "rounds.empty_letter_slot": "leeres Feld",
   "diff.typed_vs_answer": "Geschrieben: {typed}. Richtig: {answer}.",
