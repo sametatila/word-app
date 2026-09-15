@@ -24,6 +24,13 @@ import { typography } from "../theme";
 const BASE_MIN = 1.25;
 const HEADROOM = 0.08;
 const PROBE_SIZE = 100;
+/**
+ * Ölçüm dizgisi: en yüksek çıkan (noktalı büyük harfler Ä Ö Ü İ) ve en derin
+ * inen (g j p y) glifler. Ekranda görünmüyor, kullanıcıya metin değil; o
+ * yüzden Unicode kaçışıyla yazılı. Harfle yazıldığında i18n taraması onu
+ * çevrilmemiş Türkçe arayüz metni sanıp mobil CI'ı düşürüyordu.
+ */
+const PROBE_GLYPHS = "\u00C4\u00D6\u00DC\u0130gjpy";
 
 let minRatio = BASE_MIN;
 const listeners = new Set<() => void>();
@@ -66,7 +73,7 @@ export function FontMetricsProbe() {
           onTextLayout={onProbe}
           style={{ fontFamily: st.fontFamily, fontWeight: st.fontWeight, fontSize: PROBE_SIZE, includeFontPadding: false }}
         >
-          ÄÖÜİgjpy
+          {PROBE_GLYPHS}
         </RNText>
       ))}
     </View>
