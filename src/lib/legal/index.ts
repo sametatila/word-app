@@ -81,9 +81,15 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * 1.2 (2026-09-15) şartların cayma maddesini gerçek satın alma akışına çekti:
  * eski metin, uygulamada hiç olmayan bir "satın alma ekranındaki onay"a
  * dayanıyordu (mağaza ön inceleme B35).
+ *
+ * 1.3 (2026-09-15) misafir kullanımının kapsamını değiştirdi: misafire tek
+ * yapay zekâ değerlendirmesi (açık rızayla), cihaz içi hatırlatmalar, jetonun
+ * güvenli depoda saklanması, e-postayla yerinde hesap ve var olan hesaba
+ * girişte "eklensin mi" sorusu. Yapay zekâya gönderim misafire ilk kez
+ * açıldığı için hak ve yükümlülük değişikliği sayıldı (ikinci basamak).
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-15";
-export const LEGAL_VERSION = "1.2";
+export const LEGAL_VERSION = "1.3";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -277,6 +283,26 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: misafirin verisi yapay zekâ sağlayıcısına (açık rızayla,
+      tek değerlendirme) gidebiliyor; bu yeni bir işleme. Aynı gün 1.2'den
+      sonra yayımlandığı için ayrı sürüm: 1.2'yi okuyan misafir farkı görmeli.
+    */
+    version: "1.3",
+    date: "2026-09-15",
+    changes: {
+      tr: [
+        "Hesapsız (misafir) kullanım genişledi. Misafir kimliği başına tek bir yazma ya da konuşma değerlendirmesi yapay zekâ sağlayıcısına, hesaptaki gibi ancak açık rızanla gönderilebiliyor; rıza kararın misafir kimliğine yazılıyor ve Ayarlar › Gizlilik'ten geri alınabiliyor. Hatırlatmalar misafirde de açık ve yalnız cihazında kuruluyor. Misafir jetonu cihazının güvenli deposunda (iOS Anahtar Zinciri, Android Keystore) saklanıyor ve oturumu geri kurmak için de kullanılıyor. E-postayla hesap oluşturursan misafir kimliği hesabının kendisi oluyor; var olan ve ilerleme bulunan bir hesaba girersen ilerlemeyi eklemek isteyip istemediğin soruluyor, eklemezsen misafir verileri siliniyor. Şartlar (3) buna göre güncellendi.",
+      ],
+      en: [
+        "Using the app without an account (guest) was extended. A single writing or speaking assessment per guest identity can be sent to an AI provider, as with an account only with your explicit consent; your decision is recorded under the guest identity and can be withdrawn under Settings › Privacy. Reminders are available to guests too and are set up only on your device. The guest token is stored in your device's secure storage (iOS Keychain, Android Keystore) and is also used to restore the session. If you create an account with e-mail, the guest identity becomes your account itself; if you sign in to an existing account that already has progress, you are asked whether to add the progress, and if you don't, the guest data is deleted. The terms (3) were updated accordingly.",
+      ],
+      de: [
+        "Die Nutzung ohne Konto (Gast) wurde erweitert. Eine einzige Schreib- oder Sprechbewertung pro Gastidentität kann an einen KI-Anbieter gesendet werden, wie beim Konto nur mit deiner ausdrücklichen Einwilligung; deine Entscheidung wird unter der Gastidentität gespeichert und lässt sich unter Einstellungen › Datenschutz widerrufen. Erinnerungen gibt es jetzt auch für Gäste, nur auf deinem Gerät eingerichtet. Das Gast-Token liegt im sicheren Speicher deines Geräts (iOS-Schlüsselbund, Android Keystore) und dient auch dazu, die Sitzung wiederherzustellen. Erstellst du ein Konto per E-Mail, wird die Gastidentität zu deinem Konto selbst; meldest du dich bei einem bestehenden Konto mit Fortschritt an, wirst du gefragt, ob du den Fortschritt hinzufügen willst, und wenn nicht, werden die Gastdaten gelöscht. Die Nutzungsbedingungen (3) wurden entsprechend angepasst.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: tüketici hakkının anlatımı değişti. Eski madde cayma
