@@ -6,6 +6,12 @@
  * olabileceği gibi yanlış da olabilen bir işaret; hataya çevirmek yazarı doğru
  * işi bozmaya iterdi.
  *
+ * İncelenip DOĞRU bulunan uyarılar gerekçesiyle `uyari-tabani.json`da duruyor
+ * (bkz. scripts/lib/uyari-tabani.mjs). Kabulün anahtarı İngilizce cümle ve
+ * Almanca çevirinin kendisi: çeviri değişirse kabul düşer ve madde yeniden
+ * incelenir. Taban yalnız `all` koşusunda uygulanıyor, tek paket bakılırken
+ * uyarılar eskisi gibi basılıyor.
+ *
  * DENETLEYİCİ YENİDEN YAZILMIYOR. Almanca `contains` zaten var ve 8.267 madde
  * üzerinde çalışılmış (`data/meanings/contains.mjs`): ayrılabilir ön ekler,
  * güçlü fiil gövdeleri, çoğul ünlü değişimi. İkinci bir kopya çıkarmak, iki
@@ -13,11 +19,12 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { contains } from "../meanings/contains.mjs";
+import { uyariTabani, konumsalArgumanlar } from "../../scripts/lib/uyari-tabani.mjs";
 
 const ROOT = new URL("../..", import.meta.url).pathname;
 const IN = `${ROOT}data/en-de/in`;
 const OUT = `${ROOT}data/en-de/out`;
-const ARG = (process.argv[2] || "all").toLowerCase();
+const ARG = (konumsalArgumanlar()[0] || "all").toLowerCase();
 
 /** Cümledeki sayılar — çeviri sayıyı değiştiremez. */
 /*
@@ -78,7 +85,11 @@ for (const p of packets) {
     if (de === undefined) continue;
     items++;
     const H = (m) => errors.push(`  [${p}] ${k.id} «${k.en}» — ${m}`);
-    const U = (m) => warnings.push(`  [${p}] ${k.id} «${k.en}» — ${m}`);
+    const U = (m) =>
+      warnings.push({
+        anahtar: `${k.id} «${k.en}» — ${m} | EN: ${k.beispiel} | DE: ${de}`,
+        metin: `  [${p}] ${k.id} «${k.en}» — ${m}\n      EN: ${k.beispiel}\n      DE: ${de}`,
+      });
 
     if (!de) {
       H("boş");
@@ -178,17 +189,25 @@ if (errors.length) {
   console.log(errors.slice(0, 40).join("\n"));
   if (errors.length > 40) console.log(`  … ${errors.length - 40} tane daha`);
 }
-if (warnings.length) {
+let taban = { dustu: false, ozet: `${warnings.length} uyarı` };
+if (ARG === "all") {
+  taban = uyariTabani({
+    ad: "check:en-de",
+    dosya: `${ROOT}data/en-de/uyari-tabani.json`,
+    komut: "npm run check:en-de",
+    uyarilar: warnings,
+    gerekceZorunlu: true,
+  });
+} else if (warnings.length) {
   console.log(`\nuyarı (${warnings.length}):`);
-  console.log(warnings.slice(0, 20).join("\n"));
-  if (warnings.length > 20) console.log(`  … ${warnings.length - 20} tane daha`);
+  console.log(warnings.map((w) => w.metin).join("\n"));
 }
 console.log(
   `\nözet: ${packets.length - pending}/${packets.length} paket üretilmiş, ${items} madde · ` +
-    `${errors.length} hata · ${warnings.length} uyarı · ${twinGroups} ikiz karşılık grubu` +
+    `${errors.length} hata · ${taban.ozet} · ${twinGroups} ikiz karşılık grubu` +
     (coverage
       ? `\nkapsam: ${coverage.rows - coverage.noGloss}/${coverage.rows} karşılık · ` +
         `${coverage.rows - coverage.noSentence}/${coverage.rows} cümle`
       : ""),
 );
-process.exit(errors.length ? 1 : 0);
+process.exit(errors.length || taban.dustu ? 1 : 0);
