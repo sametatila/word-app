@@ -180,6 +180,10 @@ export function LessonScreen() {
    */
   const [offline, setOffline] = useState<OfflineState | null>(null);
   const offlineRef = useRef(false);
+  /* Senaryoya NEDEN düşüldüğünü söyleyen öğretmen notu. Ders açılırken
+     basılıyor, ama konuşmaya geçiş akışı temizliyor (`setFeed([])`) ve not
+     tam senaryonun başladığı anda kayboluyordu; giriş ve devamda yeniden basılıyor. */
+  const offNoteRef = useRef<BubbleData | null>(null);
   /*
    * Yönlendirme BALONCUK olarak çiziliyor. Web onu mikrofon etiketine
    * koyuyor; mobilde o etiket tek satır ve kalıp cümlesi sığmıyor, üstelik
@@ -260,14 +264,9 @@ export function LessonScreen() {
           /* MİSAFİR: yapay zekâyla konuşma hesap istiyor (mağaza ön inceleme
              B24). Servis kapalı değil; senaryo devralıyor ve konuşma sayılıyor. */
           offlineRef.current = true;
-          push({
-            role: "teacher",
-            segments: [
-              { lang: "tr", text: tx("lessonp.chat_off_account") },
-              { lang: "tr", text: tx("lesson.chat_offline_note") },
-            ],
-            tone: "hint",
-          });
+          /* "Servis kapalı" notu EKLENMİYOR: servis kapalı değil. */
+          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_account") }], tone: "hint" };
+          push(offNoteRef.current);
           return;
         }
         if (alive && route === "declined") {
@@ -275,7 +274,8 @@ export function LessonScreen() {
              teşhis olurdu; kullanıcıya neden senaryoya düşüldüğü ve nereden
              açılacağı söyleniyor. */
           offlineRef.current = true;
-          push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" });
+          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" };
+          push(offNoteRef.current);
           return;
         }
         if (alive && route === "off") {
@@ -290,14 +290,15 @@ export function LessonScreen() {
              bırakabilirdi. Web'de bu cümle vardı ama `title=` ipucu balonunda
              duruyordu (dokunmatikte hiç açılmıyor) - aynı turda ortak anahtara
              alındı ve iki tarafta da yazılır oldu. */
-          push({
+          offNoteRef.current = {
             role: "teacher",
             segments: [
               { lang: "tr", text: tx(lesson?.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns") },
               { lang: "tr", text: tx("lesson.chat_offline_note") },
             ],
             tone: "hint",
-          });
+          };
+          push(offNoteRef.current);
         }
       })
       .catch(() => {});
@@ -572,6 +573,7 @@ export function LessonScreen() {
     /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveLessonResume`). */
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
+    if (offlineRef.current && offNoteRef.current) push(offNoteRef.current);
     /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
        çalışıyorsa dersin kendi açılış repliği. */
     let opening = lesson.roleplay.opening;
@@ -609,6 +611,7 @@ export function LessonScreen() {
     if (r.offline) {
       offlineRef.current = true;
       setOffline(r.offline as OfflineState);
+      if (offNoteRef.current) push(offNoteRef.current);
     }
     scrollDown();
   }
@@ -790,7 +793,9 @@ export function LessonScreen() {
       </View>
       {/* Rol yapma boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
-      {phase === "roleplay" && (
+      {/* Senaryoda (misafir, izin yok, servis kapalı) karşıdaki yapay zekâ
+          değil: "yapay zekâ ile konuşuyorsun" demek yanlış olurdu. */}
+      {phase === "roleplay" && !offline && (
         <AiNotice variant="character" style={{ marginHorizontal: spacing.lg, marginBottom: spacing.xs }} />
       )}
       {phase === "lecture" && (
