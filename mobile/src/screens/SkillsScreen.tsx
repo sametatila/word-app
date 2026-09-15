@@ -11,7 +11,9 @@ import { CardGrid } from "../ui/CardGrid";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
-import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon } from "../ui/icons";
+import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { FlowNote } from "../ui/flow";
+import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, type SkillAccess } from "../lib/skillAccess";
 import { useMe } from "../lib/useMe";
 import { listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
 import { getDoneItems, getItemScores, syncItemProgress } from "../game/lessonProgress";
@@ -34,13 +36,13 @@ const SKILLS: { key: SkillKey; kind: Kind; label: string; icon: (p: { color: str
   { key: "grammar", kind: "grammar", label: "skills.grammar", icon: GrammarIcon, tint: "streak" },
 ];
 
-function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; score?: number; isNext: boolean; onPress: () => void; colors: Palette; last: boolean }) {
+function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last, locked = false }: { ex: SkillMeta; tint: string; done: boolean; score?: number; isNext: boolean; onPress: () => void; colors: Palette; last: boolean; locked?: boolean }) {
   return (
     /* SATIRIN ADI DURUMU DA SÖYLÜYOR. Nokta, onay simgesi ve puan rozeti
        durumu yalnız RENKLE ve simgeyle anlatıyordu; satırın adı ise başlık +
        süreydi. Yani hangi alıştırmanın bitmiş olduğu TalkBack kullanan biri
        için hiç okunamıyordu. Web aynı turda onay simgesine ad verdi. */
-    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}${done ? `, ${t("common.completed")}` : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}${done ? `, ${t("common.completed")}` : ""}${locked ? `, ${t("gate.premium_only")}` : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline, opacity: locked ? 0.6 : 1 }}>
       <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: done ? colors.success : tint }} />
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" numberOfLines={1}>{ex.title}</Text>
@@ -62,7 +64,7 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: {
           <Text variant="micro" color={done ? colors.successText : colors.streakText}>{formatPercent(score)}</Text>
         </View>
       ) : null}
-      {done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
+      {locked ? <LockIcon color={colors.textMuted} size={18} /> : done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
     </PressableScale>
   );
 }
@@ -86,6 +88,10 @@ export function SkillsScreen() {
   const [done, setDone] = useState<Set<string>>(() => new Set());
   /* Egzersiz başına puan — web listesi de rozet olarak gösteriyor. */
   const [scores, setScores] = useState<Record<string, number>>({});
+  /* Premium kilidi (yazma + B1+ konuşma; bkz. lib/skillAccess). Liste bugüne
+     kadar her şeyi açık çiziyordu. Odaklanmada tazelenir: değerlendirme hak
+     düşürdüyse dönünce not güncel olsun. */
+  const [access, setAccess] = useState<SkillAccess | null>(null);
   useEffect(() => {
     if (meLoading || me) return;
     void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
@@ -101,6 +107,7 @@ export function SkillsScreen() {
       if (alive) { setDone(new Set(s)); setScores({ ...p }); }
     });
     void oku().then(() => syncItemProgress()).then(oku);
+    void fetchSkillAccess().then((a) => { if (alive) setAccess(a); });
     return () => { alive = false; };
   }, []));
   const activeLevel = level ?? me?.level ?? guestLevel ?? "A1";
@@ -111,11 +118,11 @@ export function SkillsScreen() {
   const lists = useMemo(
     () => SKILLS.map((s) => {
       const items = listOwnSkillMeta(activeLevel, s.key);
-      const next = items.find((e) => !done.has(e.id)) ?? null;
+      const next = items.find((e) => !done.has(e.id) && !isSkillLocked(e, access)) ?? null;
       const finished = items.filter((e) => done.has(e.id)).length;
       return { ...s, items, next, finished, ratio: items.length ? finished / items.length : 1 };
     }),
-    [activeLevel, done],
+    [activeLevel, done, access],
   );
   const hasExercises = lists.some((l) => l.items.length > 0);
   const totalCount = lists.reduce((n, l) => n + l.items.length, 0);
@@ -124,6 +131,8 @@ export function SkillsScreen() {
   const nextLevel = LEVELS[LEVELS.indexOf(activeLevel as (typeof LEVELS)[number]) + 1] ?? null;
 
   function open(ex: SkillMeta, kind: Kind) {
+    // Kilitli satır planlara gidiyor; açılsaydı öğrenci yazıp gönderirken 403 görürdü.
+    if (isSkillLocked(ex, access)) { nav.navigate("Paywall"); return; }
     nav.navigate("Item", { id: ex.id, kind, title: ex.title, from: "skills" });
   }
 
@@ -232,9 +241,19 @@ export function SkillsScreen() {
                   <Text variant="h3">{t(s.label)}</Text>
                   <Text variant="caption" color={colors.textMuted}>{s.finished}/{s.items.length}</Text>
                 </View>
+                {/* Kuralı kilide çarpmadan ÖNCE söyle (web aynı notu çiziyor). */}
+                {(() => {
+                  const kind = s.items[0] ? gatedMetaKind(s.items[0]) : null;
+                  const note = kind && access ? gateNote(access[kind]) : null;
+                  return note ? (
+                    <View style={{ marginBottom: spacing.sm }}>
+                      <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
+                    </View>
+                  ) : null;
+                })()}
                 <Card padded style={{ paddingVertical: spacing.xs }}>
                   {s.items.map((ex, i) => (
-                    <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} />
+                    <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} locked={isSkillLocked(ex, access)} />
                   ))}
                 </Card>
               </View>

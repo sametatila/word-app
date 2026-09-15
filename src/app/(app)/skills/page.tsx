@@ -10,7 +10,10 @@ import { isSkillDone } from "@/lib/score-bands";
 import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { CardGrid } from "@/components/layout";
-import { CheckIcon, ChevronRightIcon } from "@/components/icons";
+import { CheckIcon, ChevronRightIcon, LockIcon } from "@/components/icons";
+import { FlowNote } from "@/components/flow";
+import { gatedMetaKind, isSkillLocked, skillLibraryAccess, type SkillLibraryAccess } from "@/lib/premium/skill-access";
+import { gateNote } from "@/lib/premium/gate-note";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { formatPercent, localeOf } from "@/lib/i18n/dict";
 
@@ -86,12 +89,26 @@ export default async function SkillsPage({
   const scoreOf = (id: string): number | null => status[id]?.lastScore ?? null;
   const done = (id: string) => isSkillDone(scoreOf(id));
 
+  /*
+    PREMIUM KİLİDİ — yapay zekâyla değerlendirilen yazma ve konuşma (bkz.
+    lib/premium/skill-access). Liste bugüne kadar her şeyi açık çiziyordu.
+    Okunamazsa kilit çizilmiyor; kapıyı zaten `/api/assess` tutuyor.
+  */
+  let access: SkillLibraryAccess | null = null;
+  if (!user.guest) {
+    try {
+      access = await skillLibraryAccess(user.id, level);
+    } catch (err) {
+      console.error("[skills] skillLibraryAccess", err);
+    }
+  }
+
   const doneCount = atLevel.filter((m) => done(m.id)).length;
 
   // Beceri başına liste ve sıradaki; en üstteki öneri en geride kalan beceriden.
   const sections = SKILL_ORDER.map((skill) => {
     const list = atLevel.filter((m) => m.skill === skill);
-    const next = list.find((m) => !done(m.id)) ?? null;
+    const next = list.find((m) => !done(m.id) && !isSkillLocked(m, access)) ?? null;
     const ratio = list.length ? list.filter((m) => done(m.id)).length / list.length : 1;
     return { skill, list, next, ratio };
   });
@@ -201,6 +218,8 @@ export default async function SkillsPage({
           const Icon = SKILL_ICON[skill];
           const tint = SKILL_TINT[skill];
           const finished = list.filter((m) => done(m.id)).length;
+          const kind = list.some((m) => gatedMetaKind(m)) ? gatedMetaKind(list[0]) : null;
+          const note = kind && access ? gateNote(access[kind]) : null;
           return (
             <section key={skill} className="mb-5">
               <h2 className="mb-2 ml-1 flex items-center gap-2 text-h3">
@@ -210,10 +229,19 @@ export default async function SkillsPage({
                   {finished}/{list.length}
                 </span>
               </h2>
+              {/* Kuralı kilide çarpmadan ÖNCE söyle (deneme sınavlarındaki not). */}
+              {note ? (
+                <div className="mb-2">
+                  <FlowNote
+                    icon={<LockIcon size={16} className="muted shrink-0" />}
+                    text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`}
+                  />
+                </div>
+              ) : null}
               <ul className="card divide-y px-4" style={{ borderColor: "var(--hairline)" }}>
                 {list.map((m) => (
                   <li key={m.id}>
-                    <Row meta={m} done={done(m.id)} score={scoreOf(m.id)} isNext={next?.id === m.id} tint={tint} />
+                    <Row meta={m} done={done(m.id)} score={scoreOf(m.id)} isNext={next?.id === m.id} tint={tint} locked={isSkillLocked(m, access)} />
                   </li>
                 ))}
               </ul>
@@ -263,17 +291,25 @@ async function Row({
   score,
   isNext,
   tint,
+  locked,
 }: {
   meta: SkillMeta;
   done: boolean;
   score: number | null;
   isNext: boolean;
   tint: string;
+  /** Hak bitti ve alıştırma daha önce açılmadı: satır planlara götürür. */
+  locked: boolean;
 }) {
   const t = await getT();
   const lang = await getLang();
   return (
-    <Link href={`/immersion/skill/${meta.id}?from=skills`} className="pressable flex items-center gap-3 py-3">
+    <Link
+      href={locked ? "/premium" : `/immersion/skill/${meta.id}?from=skills`}
+      prefetch={locked ? false : undefined}
+      className="pressable flex items-center gap-3 py-3"
+      style={locked ? { opacity: 0.6 } : undefined}
+    >
       {/* Nokta: biten yosun, bitmeyen becerinin kendi rengi. Mobilde de öyle —
           renk hem durumu hem hangi beceride olunduğunu taşıyor. */}
       <span
@@ -324,7 +360,9 @@ async function Row({
           için HİÇ okunamıyordu — aynı eksik Android'de de vardı ve ikisi
           birlikte kapatıldı. Kalıp `option-mark`tan: simgeye rol ve ad
           verilince `aria-hidden` varsayılanı eziliyor. */}
-      {done ? (
+      {locked ? (
+        <LockIcon size={18} role="img" aria-hidden={false} aria-label={t("gate.premium_only")} className="muted shrink-0" />
+      ) : done ? (
         <CheckIcon
           size={18}
           role="img"

@@ -1,5 +1,11 @@
 import { notFound } from "next/navigation";
-import { getUserId } from "@/lib/auth/server";
+import Link from "next/link";
+import { getUserId, getUserInfo } from "@/lib/auth/server";
+import { getT } from "@/lib/i18n/server";
+import { LockIcon } from "@/components/icons";
+import { StateBody } from "@/components/flow";
+import { gatedSkillKind, isSkillLocked, skillLibraryAccess } from "@/lib/premium/skill-access";
+import { gateNote } from "@/lib/premium/gate-note";
 import { getExercise, libraryMetas, listExerciseMeta } from "@/lib/skills";
 import { listSkillStatus } from "@/lib/skills/record";
 import { isSkillDone } from "@/lib/score-bands";
@@ -46,6 +52,26 @@ export default async function ImmersionSkillPage({
   const source = await getExercise(id);
   if (!source) notFound();
 
+  /* PREMIUM KİLİDİ doğrudan adresle girilince de geçerli: liste kilitli satırı
+     planlara götürüyor ama adres paylaşılabiliyor. Oynatıcı açılsaydı öğrenci
+     yazısını yazıp ancak gönderirken 403 görürdü (bkz. lib/premium/skill-access). */
+  const lockedNote = await lockNote(source);
+  if (lockedNote) {
+    const t = await getT();
+    return (
+      <div className="mx-auto w-full max-w-md">
+        <StateBody icon={<LockIcon size={40} className="muted mx-auto" />} title={t("gate.premium_only")} body={lockedNote}>
+          <Link href="/premium" prefetch={false} className="btn btn-primary w-full px-4 py-2.5 text-body">
+            {t("gate.see_plans")}
+          </Link>
+          <Link href={`/skills?level=${source.level}`} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-body">
+            {t("item.back_to_skills")}
+          </Link>
+        </StateBody>
+      </div>
+    );
+  }
+
   /* YÖNERGE VE AÇIKLAMA öğrencinin dilinde. Metin, soru kökü ve şıklar
      öğrenilen dilde kalıyor — egzersizin ölçtüğü şey onlar. Çeviri BURADA,
      `getExercise`te değil: öteki üç çağıran (puanlama, kayıt, rol yapma uç
@@ -77,6 +103,24 @@ export default async function ImmersionSkillPage({
   };
 
   return <PlayerFrame value={frame}>{pickPlayer(exercise, backHref)}</PlayerFrame>;
+}
+
+/** Kilitliyse gösterilecek tek satır (kota durumu), değilse null. */
+async function lockNote(exercise: NonNullable<Awaited<ReturnType<typeof getExercise>>>): Promise<string | null> {
+  if (!gatedSkillKind(exercise as typeof exercise & { monologue?: unknown })) return null;
+  try {
+    const who = await getUserInfo();
+    if (!who || who.guest) return null;
+    const access = await skillLibraryAccess(who.id, exercise.level);
+    if (!isSkillLocked({ id: exercise.id, skill: exercise.skill, unit: exercise.unit ?? null, level: exercise.level }, access)) return null;
+    const kind = gatedSkillKind(exercise as typeof exercise & { monologue?: unknown });
+    const note = kind ? gateNote(access[kind]) : null;
+    const t = await getT();
+    return note ? `${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}` : t("skills.ai_quota");
+  } catch (err) {
+    console.error("[skill] lockNote", err);
+    return null;
+  }
 }
 
 function pickPlayer(exercise: NonNullable<Awaited<ReturnType<typeof getExercise>>>, backHref: string) {
