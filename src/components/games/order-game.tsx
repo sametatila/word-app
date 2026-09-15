@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import type { GameProps, GameResult } from "./types";
+import { meaningOf, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman, speakGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
 
@@ -174,28 +174,26 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   return (
     <GameShell
       label={tx("rounds.put_sentence_in_order")}
-      verdict={status === "playing" ? null : status}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
-      why={
-        status === "wrong"
-          ? whyFor({
-              type: classifyOrder(placed.map((t) => t.text), answer, tail, currentTargetLang()),
-              word,
-              answer,
-              tail,
-              targetLang: currentTargetLang(),
-            }, lang)
-          : null
-      }
-      feedback={
-        <span className="inline-flex flex-wrap items-center">
-          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
-          <strong className="ml-1">
-            {answer.join(" ")}
-            {tail}
-          </strong>
-          <SpeakButton text={`${answer.join(" ")}${tail}`} size="sm" className="ml-1" />
-        </span>
+      sheet={
+        status === "playing"
+          ? null
+          : {
+              correct: status === "correct",
+              answer: `${answer.join(" ")}${tail}`,
+              meaning: sentenceTr ?? meaningOf(word, lang),
+              you: `${placed.map((t) => t.text).join(" ")}${tail}`,
+              why:
+                status === "wrong"
+                  ? whyFor({
+                      type: classifyOrder(placed.map((t) => t.text), answer, tail, currentTargetLang()),
+                      word,
+                      answer,
+                      tail,
+                      targetLang: currentTargetLang(),
+                    }, lang)
+                  : null,
+            }
       }
       prompt={
         <span className="brand-text text-h2 sm:text-h1">

@@ -65,20 +65,16 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   return (
     <GameShell
       label={tx("rounds.correct")}
-      verdict={!settled ? null : wasRight ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null}
-      feedback={
-        <span>
-          {withArtikel(word)} ={" "}
-          <strong>{meaningOf(word, lang)}</strong>
-          {word.en ? (
-            <span className="font-normal opacity-70" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </span>
+      sheet={
+        !settled
+          ? null
+          : {
+              correct: wasRight,
+              answer: withArtikel(word),
+              meaning: meaningOf(word, lang),
+              why: !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null,
+            }
       }
     >
       <motion.div

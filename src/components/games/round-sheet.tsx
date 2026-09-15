@@ -1,16 +1,20 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { FeedbackLine } from "@/components/feedback/feedback-line";
+import { RuleLink } from "@/components/feedback/feedback-line";
+import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "@/components/feedback/marked";
+import { CheckIcon, XIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { SpeakButton } from "@/components/speak-button";
+import { useCourse } from "@/components/app-shell";
 import { useStill } from "@/lib/use-still";
 import { holdRound } from "@/lib/mascot-hold";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
 import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
-import { useT } from "@/lib/i18n/client";
-import type { Why } from "@/lib/why";
+import { useLang, useT } from "@/lib/i18n/client";
+import { whyLabel, type Why } from "@/lib/why";
 
 /**
  * Cevaptan sonra ALTTAN çıkan sonuç katmanı.
@@ -50,8 +54,8 @@ import type { Why } from "@/lib/why";
  * kalırdı. Sütun neyse katman da o.
  */
 
-/** Şerit + "Devam"ın kapladığı en az yükseklik. */
-const BODY_FULL = "8.125rem"; /* 4.5rem şerit + 0.5rem ara + 3.125rem düğme */
+/** Hüküm bandı + "Devam"ın kapladığı en az yükseklik. */
+const BODY_FULL = "7.375rem"; /* 3.75rem band + 0.5rem ara + 3.125rem düğme */
 /** Yalnız "Devam" — söyleyecek sözü olmayan turlarda (eşleştirme). */
 const BODY_ACTION = "3.125rem";
 
@@ -81,22 +85,78 @@ function useSheetHost(): { host: HTMLElement | null; fixed: boolean } {
   return state;
 }
 
+/**
+ * Katmanın verisi — mobil `game/rounds` `Feedback` ile AYNI alanlar, aynı sıra.
+ *
+ * Katman satır satır okunuyor: hüküm → doğru cevap → anlamı (→ dil bilgisi) →
+ * yanlışsa "Senin", "Farklar", "Neden" → Devam. Eskiden her oyun şeride kendi
+ * serbest düğümünü veriyordu: hüküm, cevap ve anlam tek satırda "·" ile
+ * birbirine ekleniyordu, satır sarınca "·" yeni satırın başına düşüyor, çeviri
+ * turunda "Doğrusu:" iki kez yazıyor ve farklar yalnız "↔" ile anlatılıyordu.
+ * Artık oyun yalnız VERİYİ veriyor, düzen tek yerde.
+ */
+export type SheetTone = "ok" | "bad" | "near" | "neutral";
+
+export type SheetData = {
+  correct: boolean;
+  /** Katmanın tonu; verilmezse doğru/yanlıştan. "near" = kabul edildi ama kusurlu. */
+  tone?: SheetTone;
+  /** Hüküm metni; verilmezse "Doğru" / "Yanlış". */
+  label?: string;
+  /** Doğru cevap (düz). */
+  answer?: string | null;
+  /** Doğru cevap, kelime kelime işaretli (cümle hakemi) — `answer`ın yerine çizilir. */
+  answerTokens?: MarkedToken[] | null;
+  /** İşaretli cevabın cümle sonu noktalaması. */
+  answerTail?: string;
+  /** Hoparlörün okuyacağı metin; yoksa `answer`. */
+  speak?: string | null;
+  /** Anlamı (anadilde). */
+  meaning?: string | null;
+  /** Dil bilgisi satırı (tür, çoğul, çekim) — cevap verildikten sonra pekiştirme. */
+  detail?: string | null;
+  /** Öğrencinin cevabı (yalnız yanlışta gösterilir). */
+  you?: string | null;
+  youTokens?: MarkedToken[] | null;
+  /** Kelime kelime fark listesi için hedef ve yazılan (cümle hakemi). */
+  diffs?: { target: MarkedToken[]; typed: MarkedToken[] } | null;
+  /** Neden — hata tipi etiketi + tek cümle (+ yazımda harf farkı). */
+  why?: Why | null;
+  /** Hüküm bandının altına eklenen serbest satır (eşleştirme özeti gibi). */
+  extra?: ReactNode;
+};
+
+/**
+ * Tonun renkleri. Mürekkep rol takma adı (açık temada 600, koyuda 300) —
+ * mobil `*Text`; zemin ailenin 500'ü %14 — mobil `*Soft`/`soft()`. Nokta
+ * mürekkeple aynı dolgu, üstündeki glif `--on-fill` (açıkta beyaz, koyuda
+ * mürekkep): sabit beyaz koyu temada açık yeşil üstünde okunmuyordu.
+ */
+const TONES: Record<SheetTone, { ink: string; fill: string | null; dot: string }> = {
+  ok: { ink: "var(--color-mint)", fill: "var(--color-mint-500)", dot: "var(--color-mint)" },
+  bad: { ink: "var(--color-rose)", fill: "var(--color-rose-500)", dot: "var(--color-rose)" },
+  near: { ink: "var(--color-flame)", fill: "var(--color-flame-500)", dot: "var(--color-flame)" },
+  neutral: { ink: "var(--text)", fill: null, dot: "var(--text-muted)" },
+};
+
+export function sheetTone(data: SheetData): SheetTone {
+  return data.tone ?? (data.correct ? "ok" : "bad");
+}
+
 export function RoundSheet({
-  verdict,
-  feedback,
-  why,
+  sheet,
   pull,
   onContinue,
 }: {
-  verdict: "correct" | "wrong" | null;
-  feedback?: ReactNode;
-  why: Why | null;
+  /** Cevaptan sonraki katman verisi. `null` iken katman kapalı. */
+  sheet: SheetData | null;
   pull: boolean;
   onContinue?: () => void;
 }) {
   const { host, fixed } = useSheetHost();
   const still = useStill();
-  const open = verdict != null && (Boolean(feedback) || Boolean(onContinue));
+  const open = sheet != null;
+  const tone = sheet ? sheetTone(sheet) : "ok";
 
   /*
     Katmanın klipleri, katman GÖRÜNMEDEN indiriliyor.
@@ -107,10 +167,11 @@ export function RoundSheet({
 
     Burada tetiklemenin sebebi yer: katmanı kim kullanıyorsa klipleri de o
     kullanacak, yani hiçbir oyun bunu ayrıca hatırlamak zorunda kalmıyor.
-    Aynı dosya iki kez indirilmiyor (bkz. lib/mascot-clips).
+    Aynı dosya iki kez indirilmiyor (bkz. lib/mascot-clips). `happy` nötr ton
+    (eşleştirmede karıştırılan kelime) için.
   */
   useEffect(() => {
-    preloadClips(["thumbsup", "sad"]);
+    preloadClips(["thumbsup", "sad", "happy"]);
   }, []);
 
   if (!host) return null;
@@ -135,18 +196,13 @@ export function RoundSheet({
           className={`round-sheet pointer-events-auto safe-bottom z-40 overflow-hidden px-4 pt-3 md:px-8 ${
             fixed ? "fixed inset-x-0 bottom-0" : ""
           }`}
-          style={{ borderTopColor: verdict === "correct" ? "var(--color-mint)" : "var(--color-rose)" }}
+          style={{ borderTopColor: TONES[tone].dot }}
         >
           {/* Genişlik kartla aynı (`max-w-md`): katman ekranın dibinde ayrı bir
               yüzey ama içindeki metin ve düğme kartın kolonunda kalıyor. */}
-          <div
-            className="mx-auto flex w-full max-w-md flex-col gap-2"
-            style={{ minHeight: feedback ? BODY_FULL : BODY_ACTION }}
-          >
-            {feedback ? (
-              <VerdictBar verdict={verdict} feedback={feedback} why={verdict === "wrong" ? why : null} pull={pull} />
-            ) : null}
-            {onContinue ? <ContinueButton verdict={verdict} onContinue={onContinue} /> : null}
+          <div className="mx-auto flex w-full max-w-md flex-col gap-2" style={{ minHeight: BODY_FULL }}>
+            <SheetBody data={sheet} pull={pull} />
+            {onContinue ? <ContinueButton tone={tone} onContinue={onContinue} /> : null}
           </div>
         </motion.div>
       ) : null}
@@ -158,18 +214,25 @@ export function RoundSheet({
 /**
  * Turu kapatan düğme.
  *
- * Rengi sonucu tekrarlıyor (doğruda nane, yanlışta marka) — şeridin rengiyle
- * aynı dili konuşuyor. Enter ve boşluk da çalışıyor: klavyeyle oynayan
- * kullanıcı her turda fareye uzanmak zorunda kalmasın.
+ * Rengi sonucu tekrarlıyor: yanlışta marka, doğruda (ve "neredeyse", nötr)
+ * koyu yeşil. Açık temada nane 600 + beyaz (5,3:1; eski nane 500 üstünde
+ * beyaz 3,4 idi), koyu temada nane 300 + mürekkep — `--color-mint` ile
+ * `--on-fill` temayla birlikte dönüyor. Mobil `FeedbackFooter` aynı çift:
+ * `isDark ? success : successText` + `onFill`. Enter ve boşluk da çalışıyor:
+ * klavyeyle oynayan kullanıcı her turda fareye uzanmak zorunda kalmasın.
  */
-function ContinueButton({ verdict, onContinue }: { verdict: "correct" | "wrong" | null; onContinue: () => void }) {
+function ContinueButton({ tone, onContinue }: { tone: SheetTone; onContinue: () => void }) {
   const t = useT();
+  const continueRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Enter" && e.key !== " ") return;
       // Yazma turlarında girdi hâlâ odaktaysa boşluk metne gitmeli.
       const el = document.activeElement;
       if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) return;
+      // Katmanın İÇİNDEKİ başka bir denetim (hoparlör, "Ayrıntıları gör",
+      // "Kural ↗") odaktaysa Enter onun işini yapsın, turu kapatmasın.
+      if (el instanceof HTMLElement && el !== continueRef.current && el.closest(".round-sheet") && el.matches("button, a")) return;
       e.preventDefault();
       onContinue();
     };
@@ -177,18 +240,21 @@ function ContinueButton({ verdict, onContinue }: { verdict: "correct" | "wrong" 
     return () => window.removeEventListener("keydown", onKey);
   }, [onContinue]);
 
+  const fill = tone === "bad" ? "var(--brand-fill)" : "var(--color-mint)";
   return (
     <button
       type="button"
+      ref={continueRef}
       autoFocus
       onClick={onContinue}
-      className="btn glow-tint-sm w-full py-4 text-white"
-      /* Android `rounds` devam düğmesi: `softShadow(ok ? success : primary, 8)`
-         - gölge düğmenin kendi rengi. */
+      className="btn glow-tint-sm w-full py-4 text-h3"
+      /* Android `rounds` devam düğmesi: `softShadow(btnBg, 8)` - gölge
+         düğmenin kendi rengi. */
       style={{
-        background: verdict === "wrong" ? "var(--color-brand-500)" : "var(--color-mint-600)",
-        "--tint-fill": verdict === "wrong" ? "var(--color-brand-500)" : "var(--color-mint-600)",
-      } as React.CSSProperties}
+        background: fill,
+        color: tone === "bad" ? "var(--on-brand)" : "var(--on-fill)",
+        "--tint-fill": fill,
+      } as CSSProperties}
     >
       {t("common.continue")}
     </button>
@@ -200,24 +266,27 @@ const PULL_MS = 2600;
 const PULL_LINGER_MS = 900;
 
 /**
- * Sonuç şeridi — katmanın içindeki renkli kutu.
+ * Katmanın gövdesi — hüküm bandı + etiketli satırlar.
  *
- * Renk cevabın kendisini anlatıyor, karakterin yüzü turun duygusunu taşıyor,
- * konum sabit. Şerit tek bakışta okunan bir cevap, bir metin bloğu değil:
- * daha uzun ek bilgiler (örnek cümle gibi) bilerek buraya konmuyor.
+ * Band hükmün tonunda (500 %14 zemin, rol takma adı yazı), satırlar nötr.
+ * Uzun bir yanlışta katman ekranın yarısını aşmasın diye gövde kendi içinde
+ * kayıyor; "Devam" hep görünür kalıyor. Mobil `FeedbackFooter` aynı alanları
+ * aynı sırayla çiziyor.
  */
-function VerdictBar({
-  verdict,
-  feedback,
-  why,
-  pull,
-}: {
-  verdict: "correct" | "wrong" | null;
-  feedback: ReactNode;
-  why: Why | null;
-  pull: boolean;
-}) {
+function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
   const still = useStill();
+  const t = useT();
+  const lang = useLang();
+  const course = useCourse();
+  const tone = sheetTone(data);
+  const palette = TONES[tone];
+  const label = data.label ?? t(data.correct ? "sheet.correct" : "sheet.wrong");
+  const speakText = data.speak ?? data.answer ?? "";
+  const wrong = !data.correct;
+  const showYou = wrong && Boolean(data.youTokens?.length || data.you);
+  const showDiffs =
+    !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
+  const showWhy = wrong && !!data.why;
 
   /*
     Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
@@ -231,17 +300,21 @@ function VerdictBar({
     (2,6 sn) sürüyor. Tur bu sürede kapanmasın diye şerit kurulurken kapanış
     saati ileri alınıyor (lib/mascot-hold). Zar, şerit her yeniden kurulduğunda
     bir kez atılır.
+
+    Çekilen şey artık gövdenin tamamı (band + satırlar): gövde kendi içinde
+    kaydığı için taşan her şeyi kırpıyor, çeken Erdi o yüzden kayan kabın
+    DIŞINDA, kaymayan sarmalayıcıda duruyor.
   */
   /* "right": şerit sağdan gelir, mirket solunda (pull-left: sağa dönük, geri
      geri sola yürür). "left": şerit soldan gelir, mirket sağında (pull-right:
      sola dönük, geri geri sağa yürür). İki yön de eşit olasılıkta. */
   const fx = useMemo<"right" | "left" | null>(() => {
-    if (!verdict || still || !pull) return null;
+    if (still || !pull) return null;
     if (Math.random() >= 0.25) return null;
     // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
     if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
     return Math.random() < 0.5 ? "right" : "left";
-  }, [verdict, still, pull]);
+  }, [still, pull]);
 
   useEffect(() => {
     if (!fx) return;
@@ -252,27 +325,25 @@ function VerdictBar({
 
   return (
     <motion.div
-      /* Ekran okuyucu sonucu duyurur: renk ve ikon yalnız görene bir şey söyler. */
+      /* Ekran okuyucu sonucu duyurur: renk, ikon ve maskot yalnız görene bir şey söyler. */
       role="status"
       aria-live="polite"
       initial={fx ? { x: fx === "right" ? "110%" : "-110%" } : false}
       animate={fx ? { x: 0 } : undefined}
       transition={fx ? { duration: PULL_MS / 1000, ease: "easeInOut" } : undefined}
-      className={`verdict relative flex min-h-[4.5rem] flex-1 items-center gap-1 py-1 pl-1 pr-4 text-left text-strong ${
-        verdict === "correct" ? "verdict-correct" : "verdict-wrong"
-      }`}
+      className="relative text-left"
     >
       {fx && pullUrl && (
         /* Şeridi çekerek getiren Erdi — şeridin geldiği kenarın karşı
            tarafında, şeritle birlikte kayar; şerit oturunca işini bitirip
-           kaybolur. Boy şeridi aşıyor (70px): sürükleyen karakter şeridin
-           içindeki simgeden büyük olmalı ki "getiren" o olsun. */
+           kaybolur. Boy bandı aşıyor (70px): sürükleyen karakter bandın
+           içindeki maskottan büyük olmalı ki "getiren" o olsun. */
         <motion.img
           src={pullUrl}
           alt=""
           aria-hidden
           draggable={false}
-          className="pointer-events-none absolute -bottom-1 w-auto"
+          className="pointer-events-none absolute -top-1.5 w-auto"
           style={{ height: 70, ...(fx === "right" ? { left: -76 } : { right: -76 }) }}
           initial={{ opacity: 1 }}
           animate={{ opacity: [1, 1, 0] }}
@@ -282,31 +353,107 @@ function VerdictBar({
           }}
         />
       )}
-      {/*
-        Şeritteki tepki bir onay/çarpı simgesi değil, Erdi'nin kendisi.
-        Simge yalnızca "doğru" ya da "yanlış" diyor; renk ve metin zaten onu
-        söylüyordu. Karakterin yüzü ise turun duygusunu taşıyor ve her turda
-        tekrar eden bu an, uygulamanın en çok görülen anı.
-
-        Şeride tam oturuyor, taşmıyor ve şeridi BÜYÜTMÜYOR: mirket dik duran
-        bir hayvan, yani çizim geniş değil uzun. 54 pikselde şerit en az
-        yüksekliğini 9 piksel aşıyordu; 48'de içinde kalıyor.
-      */}
-      <motion.span
-        initial={{ scale: 0.4, y: 14 }}
-        animate={{ scale: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
-        className="shrink-0"
-      >
-        {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
-        <Mascot mood={verdict === "correct" ? "thumbsup" : "sad"} size={48} pinned />
-      </motion.span>
-      {/* Gerekçe ikinci satır: şerit en az yüksekliğini korur, uzun gerekçe
-          küçük yazıyla sarar. Cevap satırı hep önde: önce NE, sonra NEDEN. */}
-      <div className="min-w-0">
-        {feedback}
-        {why ? <FeedbackLine why={why} compact /> : null}
+      <div className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto overflow-x-hidden overscroll-contain">
+        <div
+          className="verdict flex min-h-[3.75rem] items-start gap-2 p-2"
+          style={{
+            background: palette.fill ? `color-mix(in srgb, ${palette.fill} 14%, var(--surface))` : "var(--surface-2)",
+          }}
+        >
+          {/*
+            Banddaki tepki Erdi'nin kendisi: renk ve simge "doğru/yanlış"
+            diyor, karakterin yüzü turun duygusunu taşıyor. Nötr tonda
+            (eşleştirmede karıştırılan kelime) mutlu — ceza değil, özet.
+          */}
+          <motion.span
+            initial={{ scale: 0.4, y: 14 }}
+            animate={{ scale: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
+            className="shrink-0"
+          >
+            {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
+            <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned />
+          </motion.span>
+          <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+            <div className="flex items-center gap-1.5">
+              <span
+                aria-hidden
+                className="flex h-[1.125rem] w-[1.125rem] shrink-0 items-center justify-center rounded-full"
+                style={{ background: palette.dot, color: "var(--on-fill)" }}
+              >
+                {tone === "bad" ? <XIcon size={12} strokeWidth={3} /> : <CheckIcon size={12} strokeWidth={3} />}
+              </span>
+              <span className="min-w-0 flex-1 text-strong" style={{ color: palette.ink }}>
+                {label}
+              </span>
+              {speakText ? <SpeakButton text={speakText} size="sm" /> : null}
+            </div>
+            {data.answerTokens?.length ? (
+              <span className="text-h3">
+                <MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} lang={course} />
+              </span>
+            ) : data.why?.diff && wrong ? (
+              <span className="text-h3">
+                <CharMarked segs={data.why.diff.target} side="target" lang={course} />
+              </span>
+            ) : data.answer ? (
+              <span className="text-h3" lang={course} style={{ color: "var(--text)" }}>
+                {data.answer}
+              </span>
+            ) : null}
+            {data.meaning ? <span className="muted text-body">{data.meaning}</span> : null}
+            {data.detail ? <span className="muted text-caption">{data.detail}</span> : null}
+            {data.extra}
+          </div>
+        </div>
+        {showYou || showDiffs || showWhy ? (
+          <div className="flex flex-col gap-1.5 px-1 pb-0.5">
+            {showYou ? (
+              <SheetRow label={t("sheet.you")}>
+                {data.youTokens?.length ? (
+                  <span className="text-body">
+                    <MarkedSentence tokens={data.youTokens} strong={false} lang={course} />
+                  </span>
+                ) : data.why?.diff ? (
+                  <span className="text-body">
+                    <CharMarked segs={data.why.diff.typed} side="typed" lang={course} />
+                  </span>
+                ) : (
+                  <span className="muted text-body" lang={course}>
+                    {data.you}
+                  </span>
+                )}
+              </SheetRow>
+            ) : null}
+            {showDiffs && data.diffs ? (
+              <SheetRow label={t("sheet.diffs")}>
+                <DiffLines target={data.diffs.target} typed={data.diffs.typed} />
+              </SheetRow>
+            ) : null}
+            {showWhy && data.why ? (
+              <SheetRow label={t("sheet.why")}>
+                <span className="flex items-start gap-1.5">
+                  <Chip label={whyLabel(data.why.type, lang)} />
+                  <span className="min-w-0 flex-1 text-caption" style={{ color: "var(--text)" }}>
+                    {data.why.text}
+                    <RuleLink why={data.why} />
+                  </span>
+                </span>
+              </SheetRow>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </motion.div>
+  );
+}
+
+/** Katmanın etiketli satırı: solda küçük büyük harf etiket, sağda içerik. */
+function SheetRow({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex items-start gap-2">
+      <span className="muted w-[3.625rem] shrink-0 break-words pt-0.5 text-micro uppercase tracking-eyebrow">{label}</span>
+      <div className="min-w-0 flex-1">{children}</div>
+    </div>
   );
 }

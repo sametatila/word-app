@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import type { SheetData } from "./round-sheet";
+import { useCourse } from "@/components/app-shell";
 import { withArtikel, shuffle, type GameProps, type GameResult , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
@@ -19,6 +21,7 @@ type RightItem = { wordId: number; tr: string; en: string | null };
 export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const tx = useT();
   const lang = useLang();
+  const course = useCourse();
   const { words } = round;
 
   const [rightItems, setRightItems] = useState<RightItem[]>([]);
@@ -118,12 +121,35 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
     }
   }
 
+  function matchSheet(results: GameResult[]): SheetData {
+    const okCount = results.filter((r) => r.correct).length;
+    const mixed = words.filter((w) => results.some((r) => r.wordId === w.id && !r.correct));
+    return {
+      correct: okCount === words.length,
+      tone: mixed.length ? "neutral" : "ok",
+      label: tx("sheet.first_try", { n: okCount, total: words.length }),
+      extra: mixed.length ? (
+        <span className="muted mt-0.5 text-caption">
+          {`${tx("sheet.mixed_up")}: `}
+          {mixed.map((w, i) => (
+            <span key={w.id} style={{ color: "var(--text)" }}>
+              <strong lang={course}>{withArtikel(w)}</strong>
+              {` = ${meaningOf(w, lang)}${i < mixed.length - 1 ? " · " : ""}`}
+            </span>
+          ))}
+        </span>
+      ) : null,
+    };
+  }
+
   return (
     <GameShell
       label={tx("rounds.match")}
-      /* Eşleştirmede tek tek doğru/yanlış yok: tur bitince hepsi eşleşmiş
-         olur, o yüzden şerit yalnız "tamam" diyor. */
-      verdict={pending ? "correct" : null}
+      /* ÖZET + KARIŞTIRILANLAR. Eşleştirmede tur bitince hepsi eşleşmiş
+         olur, yani hüküm "doğru/yanlış" değil: kaç kelimenin İLK denemede
+         tutturulduğu. İlk denemede tutturulamayanlar anlamlarıyla altında;
+         varsa ton nötr (ceza değil, hatırlatma). Mobil `MatchRound` ile aynı. */
+      sheet={pending ? matchSheet(pending) : null}
       onContinue={pending ? () => onDone(pending) : undefined}
     >
       <div className="grid grid-cols-2 gap-3">

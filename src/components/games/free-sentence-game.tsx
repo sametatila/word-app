@@ -44,6 +44,8 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
   const [failure, setFailure] = useState<AssessFailure | null>(null);
   const [outcome, setOutcome] = useState<{ correct: boolean; quality: number } | null>(null);
+  /** Katmanın içindeki dört ölçütlü kart açık mı. */
+  const [details, setDetails] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const started = useRef(Date.now());
   const abort = useRef<AbortController | null>(null);
@@ -54,6 +56,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
     setResult(null);
     setFailure(null);
     setOutcome(null);
+    setDetails(false);
     started.current = Date.now();
     focusOnFine(inputRef.current);
     return () => abort.current?.abort();
@@ -144,18 +147,47 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
   return (
     <GameShell
       label={tx("games.free_sentence")}
-      verdict={outcome ? (outcome.correct ? "correct" : "wrong") : null}
       onContinue={status === "done" && result ? finish : undefined}
-      why={why}
       pull={false}
-      feedback={
-        result && outcome ? (
-          <span>
-            {tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again")} — {tx("rounds.score")}{" "}
-            <strong>{result.score.overall}</strong>
-            {"offline" in result && result.offline ? <span className="font-normal opacity-80"> · {tx("rounds.basic_check")}</span> : null}
-          </span>
-        ) : null
+      /* DEĞERLENDİRME DE SONUÇ KATMANINDA — öteki turlarla aynı yer, aynı
+         düzen. Sonuç dokunma bölgesinde uzun bir kart olarak açılıyordu ve
+         turu kapatan "Devam" ondan ayrı, dipteki katmandaydı. Katman kısa
+         hükmü veriyor (puan, düzeltilmiş cümle, senin cümlen); dört ölçütlü
+         kart "Ayrıntıları gör" ile katmanın İÇİNDE açılıyor. Mobil
+         `FreeSentenceRound` ile aynı. */
+      sheet={
+        status === "done" && result && outcome
+          ? {
+              correct: outcome.correct,
+              label: tx("sheet.sentence_score", {
+                label: tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again"),
+                n: result.score.overall,
+              }),
+              answer: result.corrected.trim() || value.trim(),
+              detail: "offline" in result && result.offline ? tx("rounds.basic_check") : null,
+              you: result.corrected.trim() && result.corrected.trim() !== value.trim() ? value.trim() : null,
+              why,
+              extra: (
+                <div className="mt-1">
+                  <button
+                    type="button"
+                    onClick={() => setDetails((d) => !d)}
+                    aria-expanded={details}
+                    data-panel="free_sentence_details"
+                    className="hit-8 text-caption font-bold"
+                    style={{ color: "var(--color-brand)" }}
+                  >
+                    {tx(details ? "sheet.hide_details" : "sheet.details")}
+                  </button>
+                  {details ? (
+                    <div className="mt-2">
+                      <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
+                    </div>
+                  ) : null}
+                </div>
+              ),
+            }
+          : null
       }
       prompt={<span className="text-h2 sm:text-h1">{tx("rounds.build_sentence")}</span>}
       hint={
@@ -175,60 +207,52 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
         </div>
       }
     >
-      {status === "done" && result ? (
-        /* Değerlendirme kartı dokunma bölgesinde kalıyor: rubrik, düzeltme ve
-           örnek cümle tek bakışta okunacak bir şerit değil, okunacak bir
-           metin. Turu kapatan "Devam" ise diğer on oyunla aynı yerde, alttan
-           çıkan katmanda. */
-        <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
-      ) : (
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            void evaluate();
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void evaluate();
+        }}
+        className="flex flex-col gap-3"
+      >
+        <textarea
+          ref={inputRef}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          /* Enter = Değerlendir (çeviri turuyla aynı: tek cümle, alt satıra
+             inmenin anlamı yok). Shift+Enter ve IME birleştirmesi dokunulmuyor. */
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+              e.preventDefault();
+              if (kelime >= MIN_FREE_WORDS) void evaluate();
+            }
           }}
-          className="flex flex-col gap-3"
-        >
-          <textarea
-            ref={inputRef}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            /* Enter = Değerlendir (çeviri turuyla aynı: tek cümle, alt satıra
-               inmenin anlamı yok). Shift+Enter ve IME birleştirmesi dokunulmuyor. */
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
-                e.preventDefault();
-                if (kelime >= MIN_FREE_WORDS) void evaluate();
-              }
-            }}
-            enterKeyHint="done"
-            disabled={status !== "idle"}
-            rows={3}
-            autoCapitalize="sentences"
-            autoCorrect="off"
-            spellCheck={false}
-            lang={course}
-            placeholder={tx("rounds.write_a_sentence_ph")}
-            aria-label={tx("rounds.write_a_sentence_ph")}
-            className="card min-h-20 w-full resize-none px-4 py-3 text-lg outline-none"
-          />
-          <div className="flex flex-wrap justify-center gap-2">
-            {SPECIAL_CHARS.map((char) => (
-              <button key={char} type="button" onClick={() => insertChar(char)} disabled={status !== "idle"} className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3">
-                {char}
-              </button>
-            ))}
-          </div>
-          {/* SEBEP YAZIYOR: tek kelime yazan kullanıcı ölü bir düğmeye
-              bakıyordu ve hiçbir şey söylenmiyordu. */}
-          {kelime < MIN_FREE_WORDS ? (
-            <p className="muted text-caption">{tx("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
-          ) : null}
-          <button type="submit" disabled={status !== "idle" || kelime < MIN_FREE_WORDS} className="btn btn-primary min-h-12 px-4 text-body">
-            {tx(status === "checking" ? "mockexam.evaluating" : "mockexam.evaluate")}
-          </button>
-        </form>
-      )}
+          enterKeyHint="done"
+          disabled={status !== "idle"}
+          rows={3}
+          autoCapitalize="sentences"
+          autoCorrect="off"
+          spellCheck={false}
+          lang={course}
+          placeholder={tx("rounds.write_a_sentence_ph")}
+          aria-label={tx("rounds.write_a_sentence_ph")}
+          className="card min-h-20 w-full resize-none px-4 py-3 text-lg outline-none"
+        />
+        <div className="flex flex-wrap justify-center gap-2">
+          {SPECIAL_CHARS.map((char) => (
+            <button key={char} type="button" onClick={() => insertChar(char)} disabled={status !== "idle"} className="btn btn-ghost min-h-9 min-w-9 px-3 text-h3">
+              {char}
+            </button>
+          ))}
+        </div>
+        {/* SEBEP YAZIYOR: tek kelime yazan kullanıcı ölü bir düğmeye
+            bakıyordu ve hiçbir şey söylenmiyordu. */}
+        {kelime < MIN_FREE_WORDS ? (
+          <p className="muted text-caption">{tx("assess.gate_min_words", { n: MIN_FREE_WORDS })}</p>
+        ) : null}
+        <button type="submit" disabled={status !== "idle" || kelime < MIN_FREE_WORDS} className="btn btn-primary min-h-12 px-4 text-body">
+          {tx(status === "checking" ? "mockexam.evaluating" : "mockexam.evaluate")}
+        </button>
+      </form>
     </GameShell>
   );
 }

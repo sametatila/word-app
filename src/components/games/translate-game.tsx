@@ -9,10 +9,9 @@ import { targetName, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
-import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "@/lib/sentence-match";
+import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
-import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
@@ -159,23 +158,38 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   return (
     <GameShell
       label={tx("rounds.translate_into", { lang: targetName(lang) })}
-      verdict={status === "idle" || status === "checking" ? null : status}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={why}
-      feedback={
-        result ? (
-          <span>
-            <span className="block">
-              {`${tx(aiAccepted ? "rounds.ai_accepted" : VERDICT_KEYS[result.verdict])} `}
-              <TokenDiff tokens={result.target} />
-            </span>
-            {status === "wrong" && result.typed.some((t) => t.mark !== "same") ? (
-              <span className="block text-caption opacity-80">
-                {tx("rounds.you_wrote")} <TypedTokens tokens={result.typed} />
-              </span>
-            ) : null}
-          </span>
-        ) : null
+      /* HÜKÜM TEK İFADE, cevap kendi satırında: "Doğrusu:" iki kez
+         yazılıyordu (etiket + hüküm cümlesi). Yazım sapmasında katman
+         "neredeyse" tonunda; sıra hatası yanlış sayılıyor ama adını söylüyor.
+         Model kabul ettiyse cevap düz (kuruluş hedefle aynı değildi, işaret
+         yanıltırdı). Mobil `TranslateRound` ile aynı alanlar. */
+      sheet={
+        result && (status === "correct" || status === "wrong")
+          ? {
+              correct: status === "correct",
+              tone: status === "correct" ? (result.verdict === "spelling" ? "near" : "ok") : "bad",
+              label: tx(
+                aiAccepted
+                  ? "sheet.ai_accepted"
+                  : result.verdict === "exact"
+                    ? "sheet.correct"
+                    : result.verdict === "spelling"
+                      ? "sheet.near_spelling"
+                      : result.verdict === "order"
+                        ? "sheet.order"
+                        : "sheet.wrong",
+              ),
+              answerTokens: aiAccepted ? null : result.target,
+              answer: aiAccepted ? sentence.de : null,
+              answerTail: result.matched.match(/[.!?…]+$/)?.[0] ?? "",
+              speak: sentence.de,
+              meaning: sentence.tr,
+              youTokens: status === "wrong" ? result.typed : null,
+              diffs: aiAccepted ? null : { target: result.target, typed: result.typed },
+              why,
+            }
+          : null
       }
       prompt={
         <span className="text-h2 sm:text-h1">

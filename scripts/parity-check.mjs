@@ -6974,8 +6974,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * kaliptaydi.
  *
  * Olculen: iki platformun geri bildirim seridinin de duyurmasi ve serbest
- * cumle turunun sonuc satirinin duyurmasi (o serit FeedbackFooter'dan
- * gecmiyor, kendi blogunu ciziyor). */
+ * cumle turunun sonuc satirinin duyurmasi (eskiden o serit FeedbackFooter'dan
+ * gecmiyor, kendi blogunu ciziyordu; artik iki platformda da katmandan
+ * geciyor). */
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
   /* Bilesenin govdesi: dosyada baska bir yerdeki duyuru bunu yesil yapmasin. */
@@ -6993,9 +6994,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   const mob = [
     "geri bildirim seridi=" + (/accessibilityLiveRegion="polite"/.test(mobSerit) ? "duyuruyor" : "sessiz"),
-    /* Webde serbest cumle turu sonucu GameShell'in seridinden geciyor; mobilde
-       kendi blogu var, o yuzden iki tarafta ayri yerde olculuyor. */
-    "serbest cumle sonucu=" + (/accessibilityLiveRegion="polite"/.test(mobSerbest) ? "duyuruyor" : "sessiz"),
+    /* Serbest cumle sonucu artik iki platformda da SONUC KATMANINDAN geciyor
+       (mobil `FeedbackFooter`, web `GameShell` -> `round-sheet`): kendi blogu
+       kalmadi. Olcu yine turun kendi govdesinde basliyor - tur katmani
+       kullanmayi birakip kendi sessiz blogunu cizerse kirmiziya doner. */
+    "serbest cumle sonucu=" +
+      (/accessibilityLiveRegion="polite"/.test(mobSerbest) ||
+      (/<FeedbackFooter\b/.test(mobSerbest) && /accessibilityLiveRegion="polite"/.test(mobSerit))
+        ? "duyuruyor"
+        : "sessiz"),
   ];
   const web = [
     "geri bildirim seridi=" + (/role="status" aria-live="polite"/.test(webSerit) ? "duyuruyor" : "sessiz"),

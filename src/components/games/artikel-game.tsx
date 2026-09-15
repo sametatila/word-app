@@ -60,22 +60,17 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
   return (
     <GameShell
       label={tx("rounds.which_article")}
-      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={picked != null && picked !== answer ? whyFor({ type: "article", word, detail: picked }, lang) : null}
-      feedback={
-        <span>
-          <strong>
-            {answer} {word.de}
-          </strong>{" "}
-          — {meaningOf(word, lang)}
-          {word.en ? (
-            <span className="font-normal opacity-70" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </span>
+      sheet={
+        picked == null
+          ? null
+          : {
+              correct: picked === answer,
+              answer: `${answer} ${word.de}`,
+              meaning: meaningOf(word, lang),
+              you: `${picked} ${word.de}`,
+              why: picked !== answer ? whyFor({ type: "article", word, detail: picked }, lang) : null,
+            }
       }
       prompt={<span className="text-display sm:text-display">{word.de}</span>}
     >

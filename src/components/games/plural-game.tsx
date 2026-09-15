@@ -66,14 +66,17 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
   return (
     <GameShell
       label={tx("rounds.plural")}
-      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={picked != null && picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }, lang) : null}
-      feedback={
-        <span className="inline-flex items-center">
-          <strong>die {answer}</strong>
-          <SpeakButton text={`die ${answer}`} size="sm" className="ml-1" />
-        </span>
+      sheet={
+        picked == null
+          ? null
+          : {
+              correct: picked === answer,
+              answer: `die ${answer}`,
+              meaning: meaningOf(word, lang),
+              you: `die ${picked}`,
+              why: picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }, lang) : null,
+            }
       }
       prompt={
         <span className="inline-flex items-center gap-2">

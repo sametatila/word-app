@@ -1,9 +1,8 @@
 "use client";
 
 import type { ReactNode } from "react";
-import type { Why } from "@/lib/why";
 import { Mascot } from "@/components/mascot";
-import { RoundSheet } from "./round-sheet";
+import { RoundSheet, type SheetData } from "./round-sheet";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -80,9 +79,7 @@ export function GameShell({
   hint,
   children,
   footer,
-  verdict = null,
-  feedback,
-  why = null,
+  sheet = null,
   pull = true,
   onContinue,
 }: {
@@ -93,15 +90,16 @@ export function GameShell({
   /** Dokunma bölgesi: şıklar, girdi, butonlar. */
   children: ReactNode;
   footer?: ReactNode;
-  /** Cevap verildi mi, verildiyse doğru mu. `null` iken katman kapalı. */
-  verdict?: "correct" | "wrong" | null;
   /**
-   * Yanlışın gerekçesi (WP-13): şeridin ikinci satırı. Yalnız yanlışta ve
-   * yalnız oyun bir kural çıkarabildiğinde; doğru cevapta gerekçe yok.
+   * Cevaptan sonraki sonuç katmanının VERİSİ; `null` iken tur sürüyor ve
+   * katman kapalı.
+   *
+   * Eskiden üç ayrı prop vardı (`verdict`, serbest düğüm `feedback`, `why`)
+   * ve her oyun şeridin içini kendi biçimiyle yazıyordu. Artık oyun yalnız
+   * alanları veriyor (hüküm, cevap, anlam, senin cevabın, farklar, neden);
+   * düzen `round-sheet`te tek yerde — mobil `FeedbackFooter` ile aynı.
    */
-  why?: Why | null;
-  /** Şeritte yazacak olan: doğru karşılık, anlam, düzeltme. */
-  feedback?: ReactNode;
+  sheet?: SheetData | null;
   /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
   pull?: boolean;
   /**
@@ -136,8 +134,8 @@ export function GameShell({
         ve uzun ekranda soru kartı dibe çöküyordu; mobilde soru en üstte kalır,
         esneyen tek yer bu orta bölge (`MascotMid`, `flex: 1`).
       */}
-      <div aria-hidden={verdict != null} className="flex min-h-5 grow items-center justify-center md:hidden">
-        {verdict == null ? <Mascot mood="idle" size={72} /> : null}
+      <div aria-hidden={sheet != null} className="flex min-h-5 grow items-center justify-center md:hidden">
+        {sheet == null ? <Mascot mood="idle" size={72} /> : null}
       </div>
 
       <div className="md:mt-5">{children}</div>
@@ -147,7 +145,7 @@ export function GameShell({
           sıkışık ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
-      <RoundSheet verdict={verdict} feedback={feedback} why={why} pull={pull} onContinue={onContinue} />
+      <RoundSheet sheet={sheet} pull={pull} onContinue={onContinue} />
     </div>
   );
 }

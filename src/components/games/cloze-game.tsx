@@ -90,26 +90,28 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     speak(truth);
   }
 
+  /** Boşluğa verilen kelimeyle tam cümle; boşluksuz (eski) içerikte sona eklenir — mobil `fillBlank`. */
+  const filled = (w: string) => (after === undefined ? `${before} ${w}` : `${before}${w}${after}`).replace(/\s+/g, " ").trim();
+
   return (
     <GameShell
       label={tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}
-      verdict={picked == null ? null : correct ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={
-        picked != null && !correct
-          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked, targetLang: currentTargetLang() }, lang)
-          : null
-      }
-      feedback={
-        <span>
-          <strong>{answer}</strong> — {meaningOf(word, lang)}
-          {word.en ? (
-            <span className="font-normal opacity-70" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </span>
+      /* Katmanda kelime değil TAM cümle: boşluk doldurmada öğrenilen şey
+         kelimenin cümledeki hâli, anlamı da cümlenin çevirisi (mobil
+         `ClozeRound` ile aynı). Okunan da o cümle. */
+      sheet={
+        picked == null
+          ? null
+          : {
+              correct,
+              answer: filled(answer),
+              meaning: sentenceTr ?? meaningOf(word, lang),
+              you: filled(picked),
+              why: !correct
+                ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked, targetLang: currentTargetLang() }, lang)
+                : null,
+            }
       }
       prompt={
         <span>

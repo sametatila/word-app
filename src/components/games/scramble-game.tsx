@@ -12,7 +12,7 @@ import { foldTight, withArtikel, type GameProps, type GameResult , meaningOf } f
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman, SpeakButton } from "@/components/speak-button";
+import { prefetchGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
 
@@ -197,15 +197,23 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   return (
     <GameShell
       label={tx("rounds.order_letters")}
-      verdict={status === "playing" ? null : status}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
-      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join(""), targetLang: currentTargetLang() }, lang) : null}
-      feedback={
-        <span className="inline-flex items-center">
-          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
-          <strong className="ml-1">{word.de}</strong>
-          <SpeakButton text={withArtikel(word)} size="sm" className="ml-1" />
-        </span>
+      /* Cevap harfleri dizilen kelimenin kendisi (artikelsiz); okunan
+         artikelli hâli. Yanlışta cevap ve "Senin" satırı harf farkıyla. */
+      sheet={
+        status === "playing"
+          ? null
+          : {
+              correct: status === "correct",
+              answer: word.de,
+              speak: withArtikel(word),
+              meaning: meaningOf(word, lang),
+              you: placed.map((t) => t.char).join(""),
+              why:
+                status === "wrong"
+                  ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join(""), targetLang: currentTargetLang() }, lang)
+                  : null,
+            }
       }
       prompt={
         <span className="brand-text text-h1 sm:text-display">

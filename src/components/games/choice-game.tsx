@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
+import { grammarLine } from "./grammar-line";
 import { withArtikel, targetName, type GameProps, type GameResult , meaningOf } from "./types";
 import { nativeLangName } from "@/lib/i18n/dict";
 import type { Option, Round } from "@/lib/types";
@@ -79,22 +80,21 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
       label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName(lang) }) : tx("rounds.ask_target", { target: targetName(lang) })}
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
       pull={false}
-      verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={picked != null && picked !== answer ? whyFor({ type: "meaning", word, detail: picked }, lang) : null}
-      feedback={
-        // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha
-        // okumak da turun işi. Yanlışta düzeltme, doğruda pekiştirme.
-        <span>
-          {tx(picked === answer ? "rounds.correct_excl" : "rounds.answer_is")}
-          <strong>{answer}</strong>
-          {word.en ? (
-            <span className="font-normal opacity-70" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </span>
+      /* Katman doğruda da doluyor: cevabı görmek kadar onu bir kez daha
+         okumak da turun işi. Cevap satırı yönden bağımsız hep kelimenin
+         kendisi (artikelli), anlamı altında - mobil `ChoiceRound` ile aynı. */
+      sheet={
+        picked == null
+          ? null
+          : {
+              correct: picked === answer,
+              answer: withArtikel(word),
+              meaning: meaning,
+              detail: grammarLine(word, lang),
+              you: picked,
+              why: picked !== answer ? whyFor({ type: "meaning", word, detail: picked }, lang) : null,
+            }
       }
       prompt={
         <span className="text-h1 sm:text-display">

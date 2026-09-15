@@ -80,16 +80,19 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   return (
     <GameShell
       label={tx("rounds.listen_pick_meaning")}
-      verdict={picked == null ? null : picked === meaning ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={picked != null && picked !== meaning ? whyFor({ type: "listening", word, detail: picked }, lang) : null}
-      feedback={
-        // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
-        // yazıyla duruyor. Örnek cümle şeride girmiyor, kendi yerinde kalıyor
-        // — şerit tek bakışta okunan bir cevap.
-        <span>
-          <strong>{spoken}</strong> — {meaningOf(word, lang)}
-        </span>
+      /* Bu oyunda öğrenilen şey sesin YAZIMI: katmanda duyulan kelime
+         yazıyla duruyor. Örnek cümle katmana girmiyor, kendi yerinde kalıyor. */
+      sheet={
+        picked == null
+          ? null
+          : {
+              correct: picked === meaning,
+              answer: spoken,
+              meaning,
+              you: picked,
+              why: picked !== meaning ? whyFor({ type: "listening", word, detail: picked }, lang) : null,
+            }
       }
       prompt={
         // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.

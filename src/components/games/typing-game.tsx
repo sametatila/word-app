@@ -8,6 +8,7 @@ import { classifyTyping, miss } from "@/lib/errors";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
+import { grammarLine } from "./grammar-line";
 import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
@@ -137,29 +138,28 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
   return (
     <GameShell
       label={tx("rounds.write_equivalent", { lang: targetName(lang) })}
-      verdict={status === "idle" ? null : status}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={
-        status === "wrong"
-          ? whyFor({
-              type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
-              targetLang: currentTargetLang(),
-              word,
-              detail: value,
-            }, lang)
-          : null
-      }
-      feedback={
-        <span>
-          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
-          <strong>{withArtikel(word)}</strong>
-          {word.en ? (
-            <span className="font-normal opacity-70" lang="en">
-              {" "}
-              · {word.en}
-            </span>
-          ) : null}
-        </span>
+      /* Dil bilgisi satırı (tür + çoğul/çekim) YALNIZ katmanda: soruda
+         yalnız tür var, çoğul orada cevabı ele verirdi. */
+      sheet={
+        status === "idle"
+          ? null
+          : {
+              correct: status === "correct",
+              answer: withArtikel(word),
+              meaning: meaningOf(word, lang),
+              detail: grammarLine(word, lang),
+              you: value.trim(),
+              why:
+                status === "wrong"
+                  ? whyFor({
+                      type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
+                      targetLang: currentTargetLang(),
+                      word,
+                      detail: value,
+                    }, lang)
+                  : null,
+            }
       }
       prompt={
         <span className="text-h1 sm:text-display">
