@@ -205,7 +205,7 @@ export function LearnScreen() {
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
       <CardGrid minItemWidth={380}>
         <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-        <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={fillOf("info")} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+        <ActionRow title={t("learn.daily_round_2")} subtitle={t(user?.guest ? "guest.learn_daily_sub" : "learn.same_challenge_for_everyone_get")} tint={fillOf("info")} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
         <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
         {/* HAYATTA KALMA. Web'de `/learn/challenge` olarak baştan beri vardı,
             Android'de yoktu: aynı rekor tablosuna yalnız tarayıcıdan

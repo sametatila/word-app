@@ -73,6 +73,7 @@ export const trBase: Record<string, string> = {
   "guest.exam_writing": "Yazma bölümünü yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak bu bölüm kelime sayısından tahminle puanlanır.",
   "guest.writings_title": "Yazıların hesapla değerlendirilir",
   "guest.writings_body": "Yazma ve konuşma görevlerini yapay zekâ değerlendirir ve sonuçlar burada birikir; bu hesap ister. Hesap oluştur; misafir ilerlemen hesabına taşınır.",
+  "guest.learn_daily_sub": "Herkesle aynı sorular · sıralama hesapla",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun. Konuşma yine sayılır.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",

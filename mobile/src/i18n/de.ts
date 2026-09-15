@@ -71,6 +71,7 @@ export const de: Record<string, string> = {
   "guest.exam_writing": "Den Schreibteil bewertet die KI, und dafür brauchst du ein Konto. Als Gast wird dieser Teil anhand der Wortzahl geschätzt.",
   "guest.writings_title": "Deine Texte werden mit Konto bewertet",
   "guest.writings_body": "Die KI bewertet deine Schreib- und Sprechaufgaben, und die Ergebnisse sammeln sich hier; dafür brauchst du ein Konto. Leg eins an, dein Gastfortschritt kommt mit.",
+  "guest.learn_daily_sub": "Gleiche Fragen für alle · Rangliste mit Konto",
   "lessonp.chat_off_account": "Freies Gespräch mit der KI braucht ein Konto; in dieser Lektion geht es mit einem vorgegebenen Gespräch weiter. Das Gespräch zählt trotzdem.",
   "auth.your_email_address": "deine E-Mail-Adresse",
   "auth.enter_your_email_and_we_ll_send": "Gib deine E-Mail-Adresse ein, wir senden dir einen Link zum Zurücksetzen.",
