@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { DAILY_QUOTAS } from "@/lib/quotas";
-import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
@@ -46,8 +46,10 @@ const ROLEPLAY_DAILY_LIMIT = DAILY_QUOTAS.roleplayTurns;
  * öğrencinin ilk cümlesinde yemek yerine.
  */
 export async function GET() {
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: misafir yapay zekâyla konuşamıyor; istemci 403 account_required'ı senaryolu konuşmaya ve "hesap oluştur" satırına çeviriyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
   /*
     RIZA DURUMU DA BURADA. Oynatıcı konuşma fazına girerken zaten bu ucu
     soruyor; yapay zekâya izin vermemiş ("declined") kullanıcı ilk cümlesini
@@ -61,8 +63,10 @@ export async function GET() {
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: yapay zekâ konuşması misafire kapalı, 403 account_required (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   if (!chatConfigured()) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });

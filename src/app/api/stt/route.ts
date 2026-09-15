@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { DAILY_QUOTAS } from "@/lib/quotas";
-import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders, type SttMode } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
@@ -34,8 +34,10 @@ const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: sunucuda ses tanıma misafire kapalı; misafir cihazın kendi tanıyıcısıyla devam ediyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   /*
     YAPAY ZEKÂ RIZASI — ses kaydı konuşma tanıma sağlayıcısına gitmeden ÖNCE.

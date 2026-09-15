@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { and, eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles, pushSubscriptions } from "@/lib/db/schema";
@@ -44,8 +45,10 @@ export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   if (!pushEnabled) return NextResponse.json({ error: "push_disabled" }, { status: 503 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: bildirim aboneliği yalnız hesaba yazılıyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   let body: Incoming;
   try {
@@ -143,8 +146,10 @@ export async function PUT(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   if (!pushEnabled) return NextResponse.json({ error: "push_disabled" }, { status: 503 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: bildirim aboneliği yalnız hesaba yazılıyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   try {
     const [profile] = await db

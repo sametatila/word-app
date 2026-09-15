@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
+import { ACCOUNT_REQUIRED } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
 import { SocialError } from "./errors";
@@ -17,12 +18,21 @@ export function fail(code: string, status: number, retryAfterSec?: number): Next
   return NextResponse.json({ error: code }, { status, headers });
 }
 
-/** Oturum (ve yazan isteklerde origin) kontrolü. Başarısızsa hazır cevap döner. */
+/**
+ * Oturum (ve yazan isteklerde origin) kontrolü. Başarısızsa hazır cevap döner.
+ *
+ * SOSYAL KATMAN HESAP İSTER. Misafir kimliğinin görünen adı ve ulaşılabilir
+ * bir sahibi yok: arkadaş listesinde, ligde ya da sıralamada adsız bir oyuncu
+ * olarak görünmemeli, kimseye istek ya da dürtme gönderememeli. Misafire
+ * 403 `account_required` (bkz. lib/auth/guest); istemci "hesap oluştur"
+ * kartını gösteriyor.
+ */
 export async function requireUser(req: Request, mutating: boolean): Promise<string | NextResponse> {
   if (mutating && !sameOrigin(req)) return fail("forbidden", 403);
-  const userId = await getUserId();
-  if (!userId) return fail("unauthorized", 401);
-  return userId;
+  const who = await getUserInfo();
+  if (!who) return fail("unauthorized", 401);
+  if (who.guest) return fail(ACCOUNT_REQUIRED, 403);
+  return who.id;
 }
 
 export async function readJson(req: Request): Promise<Record<string, unknown> | null> {

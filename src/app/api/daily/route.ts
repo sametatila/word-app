@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { nativeOf } from "@/lib/courses";
 import { ensureProfile } from "@/lib/session";
@@ -23,16 +23,19 @@ export const dynamic = "force-dynamic";
  * gerekmiyor.
  */
 export async function GET(req: Request) {
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const who = await getUserInfo();
+  if (!who) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const userId = who.id;
 
   const day = normalizeDay(new URL(req.url).searchParams.get("day"));
 
   try {
     const profile = await ensureProfile(userId);
+    /* Misafir turu oynuyor ama tabloyu görmüyor: sıralama başkalarının
+       adlarını gösteriyor ve hesap istiyor (bkz. lib/auth/guest). */
     const [played, board] = await Promise.all([
       todaysResult(userId, day),
-      dailyBoard(userId, day, profile.course, profile.level),
+      who.guest ? Promise.resolve([]) : dailyBoard(userId, day, profile.course, profile.level),
     ]);
 
     // Oynanmışsa tur gönderilmiyor: cevapları elinde tutan bir istemci, ikinci
@@ -70,8 +73,9 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const who = await getUserInfo();
+  if (!who) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const userId = who.id;
 
   let body: Record<string, unknown>;
   try {
@@ -117,7 +121,7 @@ export async function POST(req: Request) {
       xpGained = award.xpGained;
     }
 
-    const board = await dailyBoard(userId, day, profile.course, profile.level);
+    const board = who.guest ? [] : await dailyBoard(userId, day, profile.course, profile.level);
     return NextResponse.json({ saved, xpGained, board });
   } catch (err) {
     console.error("[daily:score]", err);

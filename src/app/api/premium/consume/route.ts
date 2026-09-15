@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { bumpUsage } from "@/lib/premium";
 import { canAiPractice, canPocketWalk, canWeeklyExam } from "@/lib/premium/access";
@@ -42,8 +42,10 @@ type Gate = (typeof GATES)[number];
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: kota sayacı yapay zekâ ve Premium özellikleri için; misafire kapalı (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   let gate: Gate | null = null;
   let scope: "lesson" | "skill" = "lesson";

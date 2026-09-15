@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
-import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
 
@@ -24,8 +24,10 @@ export const dynamic = "force-dynamic";
  * edilmiyor çünkü sorgu onu doğrudan karşılaştırmada kullanıyor.
  */
 export async function GET() {
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: hatırlatma tercihleri misafire kapalı (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
   try {
     const p = await ensureProfile(userId, null);
     return NextResponse.json(
@@ -40,8 +42,10 @@ export async function GET() {
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: hatırlatma tercihleri misafire kapalı (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   let body: Record<string, unknown>;
   try {

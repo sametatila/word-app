@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { redeemCode } from "@/lib/premium/promo";
 import { attachReferral } from "@/lib/premium/referral";
@@ -21,8 +21,10 @@ export const dynamic = "force-dynamic";
  */
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: kodla kazanılan Premium hesaba yazılıyor; misafirin hakkı başka cihazda geri yüklenemez (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   const rl = await consume(`promo:${userId}`, 10, 600);
   if (!rl.ok) {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { attachReferral, referralStats } from "@/lib/premium/referral";
 
@@ -7,8 +7,10 @@ export const dynamic = "force-dynamic";
 
 /** Kullanıcının davet kodu ve kazanımları. Kod yoksa ilk çağrıda üretilir. */
 export async function GET() {
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: davet kodu bir kişiye bağlı; misafirin kodu olmaz (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
   try {
     return NextResponse.json(await referralStats(userId), { headers: { "cache-control": "no-store" } });
   } catch (err) {
@@ -30,8 +32,10 @@ export async function GET() {
  */
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: davet ödülü hesaba yazılıyor; misafire kapalı (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   let code = "";
   try {

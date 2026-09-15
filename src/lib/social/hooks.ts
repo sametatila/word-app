@@ -2,6 +2,7 @@ import { emitActivity, streakMilestoneCrossed } from "./activity";
 import { joinLeague } from "./leagues";
 import { checkQuestProgress } from "./quests";
 import { celebrateFriendStreaks } from "./streaks";
+import { isGuestUser } from "@/lib/auth/guest-user";
 
 /**
  * Öğrenme yollarından sosyal katmana giden kancalar.
@@ -12,6 +13,10 @@ import { celebrateFriendStreaks } from "./streaks";
  */
 export async function onActivityAwarded(userId: string, today: string, prevStreak: number, nextStreak: number): Promise<void> {
   try {
+    /* Misafir sosyal katmana girmiyor: lige katılmıyor, akışa olay yazmıyor,
+       ortak görev ve arkadaş serisi yok (bkz. lib/auth/guest). Hesap açınca
+       ilerlemesi hesaba birleşiyor ve bir sonraki etkinlikte lige giriyor. */
+    if (await isGuestUser(userId)) return;
     const m = streakMilestoneCrossed(prevStreak, nextStreak);
     if (m) await emitActivity(userId, "streak_milestone", { days: m });
     // Lige giriş XP kazanınca: hafta boyunca bir kez, sonraki çağrılar okuyup döner.
@@ -31,6 +36,8 @@ export async function onAchievementsUnlocked(
   unlocked: { id: string; title: string; tier: string }[],
 ): Promise<void> {
   try {
+    // Rozet misafirde de açılıyor, ama akışa (arkadaşlara) olay yazılmıyor.
+    if (await isGuestUser(userId)) return;
     for (const a of unlocked) await emitActivity(userId, "achievement", { id: a.id, title: a.title, tier: a.tier });
   } catch (err) {
     console.error("[social:hook:achievement]", err);

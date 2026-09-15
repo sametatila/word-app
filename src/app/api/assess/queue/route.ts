@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { queueAssessment } from "@/lib/assess";
 import { ASSESS_KINDS, ASSESS_LEVELS, ASSESS_MAX_CHARS, type AssessKind, type AssessLevel } from "@/lib/assess-prompts";
@@ -14,8 +14,10 @@ export const dynamic = "force-dynamic";
  */
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: kuyruktaki metin de dil modeline gidiyor; misafire 403 account_required (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
   /* Kuyruğa giren metin de sonunda dil modeline gidiyor: izin kuyruğa
      girerken soruluyor, işlenirken yeniden okunuyor (`runAssessQueue`). */
   const consent = await aiConsentGate(userId, "ai_text");

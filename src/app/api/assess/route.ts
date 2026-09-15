@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { assess } from "@/lib/assess";
@@ -35,8 +35,10 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: yapay zekâ değerlendirmesi misafire kapalı, 403 account_required — rıza kapısından ÖNCE, yoksa misafire açılamayacak bir izin ekranı açılırdı (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   /*
     YAPAY ZEKÂ RIZASI — metin dil modeline gitmeden ÖNCE (App Store 5.1.2(i),

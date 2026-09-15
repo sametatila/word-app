@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
 import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
@@ -50,6 +50,13 @@ const VOICE_IDS = new Set<string>([...VOICES.map((v) => v.id), TURKISH_VOICE]);
 
 /** Hesap başına günlük sentez tavanı — gerekçesi aşağıda, kotanın koyulduğu yerde. */
 const DAILY_TTS_CEILING = 2000;
+/**
+ * Misafir kimliği başına günlük tavan. Misafir saniyeler içinde, e-postasız
+ * açılıyor (IP başına saatte 10); hesabın tavanı misafire verilseydi bir IP
+ * saatte 20.000 sentez harcayabilirdi. Bir tur ~20 kelime, 500 en yoğun günü
+ * de karşılıyor; misafir tavana çarparsa istemci cihaz sesine düşüyor.
+ */
+const GUEST_DAILY_TTS_CEILING = 500;
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -70,7 +77,8 @@ export async function GET(req: Request) {
   }
   // Girişsiz sayfaların hiçbiri seslendirme kullanmıyor; açık uç, Azure yedeğinin
   // ücretli kotasını herkesin harcayabildiği bir sentez servisi olurdu.
-  const userId = await getUserId();
+  const who = await getUserInfo();
+  const userId = who?.id ?? null;
   if (!userId) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401, headers: { "cache-control": "no-store" } });
   }
@@ -88,7 +96,7 @@ export async function GET(req: Request) {
    * geçmiyor; önbellek (tarayıcı + CDN) zaten çoğu isteği buraya hiç
    * getirmiyor. Yani normal kullanıcı bu tavanı göremez.
    */
-  if (!(await takeUsage(userId, "tts_calls", "day", DAILY_TTS_CEILING))) {
+  if (!(await takeUsage(userId, "tts_calls", "day", who?.guest ? GUEST_DAILY_TTS_CEILING : DAILY_TTS_CEILING))) {
     return NextResponse.json(
       { error: "quota" },
       { status: 429, headers: { "cache-control": "no-store" } },

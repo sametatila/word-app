@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { getLang } from "@/lib/i18n/server";
 import { isLegalLocale, legalPath, type LegalLocale } from "@/lib/legal";
@@ -30,8 +30,10 @@ export const dynamic = "force-dynamic";
  * olmadığı tam o durum.
  */
 export async function GET(req: Request) {
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: yapay zekâ misafire kapalı, rıza defteri de yalnız hesaba tutuluyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   const asked = new URL(req.url).searchParams.get("lang") ?? "";
   const locale: LegalLocale = isLegalLocale(asked) ? asked : await getLang();
@@ -54,8 +56,10 @@ const DAILY_DECISIONS = 60;
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  /* HESAP İSTER: yapay zekâ misafire kapalı, rıza defteri de yalnız hesaba tutuluyor (bkz. lib/auth/guest). */
+  const who = await requireAccount();
+  if (who instanceof NextResponse) return who;
+  const userId = who;
 
   let body: Record<string, unknown>;
   try {

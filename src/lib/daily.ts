@@ -1,4 +1,5 @@
 import "server-only";
+import { notGuest } from "@/lib/auth/guest-user";
 import { and, asc, desc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyScores, profiles, words } from "@/lib/db/schema";
@@ -305,6 +306,8 @@ export async function dailyBoard(
         eq(dailyScores.day, day),
         eq(dailyScores.course, course),
         eq(dailyScores.level, level),
+        // Misafirin puanı tabloya girmiyor: adı yok, sıralama hesap istiyor.
+        notGuest(dailyScores.userId),
       ),
     )
     .orderBy(desc(dailyScores.score), asc(dailyScores.seconds))

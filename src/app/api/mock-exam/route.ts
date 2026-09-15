@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { and, desc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
-import { getUserId } from "@/lib/auth/server";
+import { getUserId, getUserInfo } from "@/lib/auth/server";
+import { accountRequired } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
 import { track } from "@/lib/events";
@@ -162,8 +163,9 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  const userId = await getUserId();
-  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const who = await getUserInfo();
+  if (!who) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const userId = who.id;
 
   let body: Record<string, unknown>;
   try {
@@ -176,7 +178,12 @@ export async function POST(req: Request) {
   try {
     if (action === "start") return await start(userId, body);
     if (action === "save") return await save(userId, body);
-    if (action === "assess") return await assessOpen(userId, body);
+    /* Açık uçlu cevabın yapay zekâ değerlendirmesi misafire kapalı (bkz.
+       lib/auth/guest): istemci 403 account_required'ı kural tabanlı puana ve
+       "hesap oluştur" satırına çeviriyor. Kâğıdı başlatmak, kaydetmek ve
+       bitirmek misafire açık; bitişteki özet de rızasız misafirde zaten kural
+       tabanlı (`hasAiConsent` misafirde hiç kayıt bulamaz). */
+    if (action === "assess") return who.guest ? accountRequired() : await assessOpen(userId, body);
     if (action === "finish") return await finish(userId, body);
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   } catch (err) {

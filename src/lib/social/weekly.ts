@@ -6,6 +6,7 @@ import { shiftDay, weekStart } from "./dates";
 import { closeLeagueWeek } from "./leagues";
 import { finalizeExpiredQuests } from "./quests";
 import { claimOnce, releaseClaim } from "./ratelimit";
+import { notGuest } from "@/lib/auth/guest-user";
 
 /**
  * Hafta kapanışı — cron YOK (sunucuda zamanlayıcı kurulu değil), o yüzden
@@ -36,7 +37,8 @@ export async function closeWeekIfNeeded(today: string): Promise<void> {
     const top = await db
       .select({ userId: dailyStats.userId, xp: sql<number>`sum(${dailyStats.xp})::int` })
       .from(dailyStats)
-      .where(and(gte(dailyStats.day, lastWeek), lt(dailyStats.day, thisWeek)))
+      // Misafir haftanın ilk üçüne girmiyor: adı yok ve arkadaş akışı hesaba bağlı.
+      .where(and(gte(dailyStats.day, lastWeek), lt(dailyStats.day, thisWeek), notGuest(dailyStats.userId)))
       .groupBy(dailyStats.userId)
       .having(sql`sum(${dailyStats.xp}) > 0`)
       .orderBy(desc(sql`sum(${dailyStats.xp})`))
