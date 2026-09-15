@@ -14,6 +14,7 @@ import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from 
 import { currentTargetLocale, currentTargetLang } from "./courses";
 import { t } from "./i18n";
 import { API_BASE } from "../api/client";
+import { PACE_PARAM, paceOf, type Pace } from "./voices";
 
 type SpeechNative = {
   start(locale: string): Promise<boolean>;
@@ -193,10 +194,11 @@ export function setKeepAwake(on: boolean): void {
  * WebView köprüsü ekran kapanınca askıya alınıp susuyor). Neural ses (Katja/Emel) korunur.
  * Bitene kadar bekler. Çerez native tarafta CookieManager'dan alınır (auth).
  */
-export async function speakServerTts(voice: string, text: string, slow = false): Promise<void> {
-  if (!Native || !text) return;
-  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${slow ? "&r=slow" : ""}`;
-  try { await Native.playTtsUrl(url); } catch { /* yut */ }
+export async function speakServerTts(voice: string, text: string, slow: Pace | boolean = false): Promise<boolean> {
+  if (!Native || !text) return false;
+  const pace = paceOf(slow);
+  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}`;
+  try { return await Native.playTtsUrl(url); } catch { return false; }
 }
 export function stopServerTts(): void { try { Native?.stopTts(); } catch { /* yut */ } }
 

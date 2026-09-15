@@ -5,6 +5,8 @@ import { navigationRef } from "./pushRoute";
 import { type Pace, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
+import { speakServerTts, stopServerTts } from "./stt";
+import { API_BASE, fetchWithTimeout } from "../api/client";
 
 /**
  * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
@@ -145,8 +147,37 @@ async function applyVoice(voice: VoiceId): Promise<string> {
  * çalarken kullanıcı durdurunca ya da ekrandan çıkınca çağrılıyor.
  */
 export function stopSpeaking(): void {
+  speakSeq++;
   try { bridgeStop(); } catch { /* yut */ }
+  try { stopServerTts(); } catch { /* yut */ }
   try { Tts.stop(); } catch { /* yut */ }
+}
+
+/**
+ * SEÇİLEN SES YERİNE CİHAZ SESİ YOK.
+ *
+ * Köprü hazır değilken (açılışın ilk saniyeleri, girişten sonra yeniden
+ * kurulurken, iki hatadan sonra) okuma doğrudan cihazın kendi sesine
+ * gidiyordu: kullanıcı Katja'yı seçmişken bazen iPhone'un sesi konuşuyordu
+ * ("hiç hoş değil"). Artık aynı nöral ses NATIVE oynatıcıyla çalıyor
+ * (`speakServerTts`: `/api/tts` MP3'ü, oturum çereziyle — yürüyüş modunun
+ * ekran kapalıyken zaten kullandığı yol). Cihaz sesi yalnız sunucuya HİÇ
+ * ulaşılamıyorsa: çevrimdışı çalışan derste sessizlikten iyi.
+ */
+let speakSeq = 0;
+/** Native oynatıcıda süren bir okuma var mı (köprüye geçerken kesmek için). */
+let nativePlaying = false;
+let probe = { at: 0, online: true };
+async function serverUnreachable(): Promise<boolean> {
+  if (Date.now() - probe.at < 30_000) return !probe.online;
+  let online = true;
+  try {
+    await fetchWithTimeout(`${API_BASE}/api/config`, { timeoutMs: 2500 });
+  } catch {
+    online = false;
+  }
+  probe = { at: Date.now(), online };
+  return !online;
 }
 
 /**
@@ -185,13 +216,22 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
      başına: yoksa sayı ölçüm değil gürültü olur. */
   trackOnce("tts_play", 0, navigationRef.isReady() ? (navigationRef.getCurrentRoute()?.name ?? "?") : "?");
   const voice = opts?.voice ?? currentVoice;
-  // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse cihaz TTS'i.
+  // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse aynı ses native
+  // oynatıcıdan; ikisi de yoksa ve sunucuya ulaşılamıyorsa cihaz TTS'i.
   if (bridgeReady()) {
+    // Köprü hazırlanırken native yoldan başlamış bir okuma sürüyor olabilir: üst üste binmesin.
+    if (nativePlaying) { stopServerTts(); nativePlaying = false; }
     bridgeSpeak(voice, clean, opts?.slow ?? false);
     return;
   }
-  void ttsAvailable().then(async (ok) => {
-    if (!ok) return;
+  const seq = ++speakSeq;
+  nativePlaying = true;
+  try { Tts.stop(); } catch { /* yut */ }
+  void speakServerTts(voice, clean, opts?.slow ?? false).then(async (played) => {
+    if (seq === speakSeq) nativePlaying = false;
+    if (played || seq !== speakSeq || !(await serverUnreachable())) return;
+    const ok = await ttsAvailable();
+    if (!ok || seq !== speakSeq) return;
     const rate = deviceRate(opts?.slow);
     try {
       Tts.stop();
@@ -223,8 +263,16 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
  */
 export async function speakAndWaitVoiced(text: string, voice: VoiceId, opts?: { slow?: Pace | boolean; onStart?: () => void }): Promise<void> {
   if (!text) return;
-  if (bridgeReady()) { await bridgeSpeakAndWait(voice, text, opts?.slow ?? false, opts?.onStart); return; }
+  if (bridgeReady()) {
+    if (nativePlaying) { stopServerTts(); nativePlaying = false; }
+    await bridgeSpeakAndWait(voice, text, opts?.slow ?? false, opts?.onStart);
+    return;
+  }
   opts?.onStart?.();
+  // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
+  const seq = ++speakSeq;
+  if (await speakServerTts(voice, text, opts?.slow ?? false)) return;
+  if (seq !== speakSeq || !(await serverUnreachable())) return;
   // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
   // yazılıydı ve İngilizce ses Almanca okunurdu.
   await speakAndWait(text, langOf(voice), { slow: opts?.slow, voice });

@@ -189,9 +189,9 @@ export function WalkModeScreen() {
   // anlatım yine Türkçe okunurdu. sayTarget: öğrenilen dilin sesi (kurstan).
   const sayNative = (txt: string) => {
     const v = narrationVoice(currentLang());
-    return screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt) : speakAndWaitVoiced(txt, v);
+    return screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt).then(() => undefined) : speakAndWaitVoiced(txt, v);
   };
-  const sayTarget = (txt: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt) : speakAndWaitVoiced(txt, currentVoiceId()));
+  const sayTarget = (txt: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt).then(() => undefined) : speakAndWaitVoiced(txt, currentVoiceId()));
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {
