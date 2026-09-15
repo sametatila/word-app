@@ -1,11 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "..",
     "paths": {
-      "server-only": ["./scripts/empty-module.ts"],
-      "@/lib/db": ["./scripts/stub-db.ts"],
-      "@/*": ["./src/*"]
+      "server-only": ["./empty-module.ts"],
+      "@/lib/db": ["./stub-db.ts"],
+      "@/*": ["../src/*"]
     }
   }
 }

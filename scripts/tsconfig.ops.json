@@ -1,13 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "..",
     "paths": {
       "server-only": [
-        "./scripts/empty-module.ts"
+        "./empty-module.ts"
       ],
       "@/*": [
-        "./src/*"
+        "../src/*"
       ]
     }
   },

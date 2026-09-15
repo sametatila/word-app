@@ -1,16 +1,15 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "..",
     "paths": {
       "server-only": [
-        "./scripts/empty-module.ts"
+        "./empty-module.ts"
       ],
       "@/lib/db": [
-        "./scripts/test-db.ts"
+        "./test-db.ts"
       ],
       "@/*": [
-        "./src/*"
+        "../src/*"
       ]
     }
   },
