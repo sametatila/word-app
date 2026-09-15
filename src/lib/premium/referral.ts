@@ -6,6 +6,7 @@ import { entitlements, profiles, referrals } from "@/lib/db/schema";
 import { grantBonus, daysToMinutes } from "./entitlement";
 import { premiumConfig } from "./config";
 import type { ReferralStats } from "./referral-types";
+import { isGuestUser } from "@/lib/auth/guest-user";
 
 /**
  * Davet zinciri — davet edilen ÖDEME YAPINCA davetçi premium kazanır.
@@ -87,7 +88,8 @@ export type AttachResult = "ok" | "self" | "already" | "unknown_code";
  */
 export async function attachReferral(inviteeUserId: string, code: string): Promise<AttachResult> {
   const inviter = await userIdByReferralCode(code);
-  if (!inviter) return "unknown_code";
+  // Misafirin daveti yok; eskiden üretilmiş bir kod da davetçi yapmıyor.
+  if (!inviter || (await isGuestUser(inviter))) return "unknown_code";
   if (inviter === inviteeUserId) return "self";
 
   /**

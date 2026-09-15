@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, resolveEntitlement } from "@/lib/premium";
 import { canPocketWalk, canWeeklyExam, canAiPractice } from "@/lib/premium/access";
 import { referralStats } from "@/lib/premium/referral";
@@ -24,7 +24,8 @@ export const dynamic = "force-dynamic";
  * ekranın kendisinde soruyor).
  */
 export async function GET(req: Request) {
-  const userId = await getUserId();
+  const who = await getUserInfo();
+  const userId = who?.id ?? null;
   const cfg = await premiumConfig();
   const copy = await premiumCopy();
 
@@ -55,7 +56,9 @@ export async function GET(req: Request) {
     const [walk, weekly, referral, speaking, writing] = await Promise.all([
       canPocketWalk(userId),
       canWeeklyExam(userId),
-      referralStats(userId).catch(() => null),
+      /* Davet hesap istiyor (bkz. lib/auth/guest): misafire kod ÜRETİLMİYOR —
+         üretilseydi o kodla ödeyen birinin ödülü misafire Premium yazardı. */
+      who?.guest ? Promise.resolve(null) : referralStats(userId).catch(() => null),
       level ? canAiPractice(userId, "speaking", "lesson", level) : Promise.resolve(null),
       level ? canAiPractice(userId, "writing", "lesson", level) : Promise.resolve(null),
     ]);
