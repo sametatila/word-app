@@ -2,7 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useRef, useSt
 import { AppState } from "react-native";
 import { forgetAccountScoped } from "./accountScope";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
-import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, startGuest, type GuestStart } from "./guest";
+import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
@@ -31,6 +31,12 @@ type Ctx = {
   /** Son birleşmenin notu; gösteren ekran `clearClaimNotice` ile kapatır. */
   claimNotice: ClaimNotice | null;
   clearClaimNotice: () => void;
+  /**
+   * Cihazdaki misafir kimliği sunucuda artık yok (30 gün kullanılmadı ya da
+   * silindi). Giriş ekranı nedenini söylüyor; yeni misafir ya da girişle kapanır.
+   */
+  guestGone: boolean;
+  clearGuestGone: () => void;
   /** `captchaToken`: bot koruması açıkken zorunlu (bkz. lib/auth post). */
   signIn: (email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
   signUp: (name: string, email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
@@ -46,6 +52,8 @@ const AuthContext = createContext<Ctx>({
   deleteGuest: async () => false,
   claimNotice: null,
   clearClaimNotice: () => {},
+  guestGone: false,
+  clearGuestGone: () => {},
   signIn: async () => ({ ok: false, code: "", message: "" }),
   signUp: async () => ({ ok: false, code: "", message: "" }),
   signOut: async () => {},
@@ -94,6 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [claimNotice, setClaimNotice] = useState<ClaimNotice | null>(null);
+  const [guestGone, setGuestGone] = useState(false);
   /** Kullanıcı ağsız açılışta cihaz kaydından mı kuruldu (bkz. provisionalGuest). */
   const provisional = useRef(false);
 
@@ -119,14 +128,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!out.hadProgress && yeniHesap && ad) await updateProfile({ displayName: ad });
   }, []);
 
+  /**
+   * OTURUMU OLMAYAN AMA CİHAZDA KAYDI DURAN MİSAFİR (bkz. lib/guest
+   * `resumeGuest`). Çerez gitmiş olabilir — iki adımlı doğrulaması olan bir
+   * hesaba giriş denenip kodda vazgeçilmesi bunu yapıyor — ama kimlik
+   * sunucuda duruyor: oturum jetonla geri kuruluyor. Kimlik gerçekten
+   * yoksa cihazdaki hesap verisi (seri, kuyruklar, yarım ders) o misafirindi
+   * ve siliniyor; yoksa aynı telefonda açılan yeni misafir onları devralırdı.
+   */
+  const restoreGuest = useCallback(async (rec: GuestRecord): Promise<AuthUser | null> => {
+    const out = await resumeGuest(rec);
+    if (out === "resumed") {
+      provisional.current = false;
+      return (await getSession()) ?? provisionalGuest(rec.id);
+    }
+    if (out === "retry") { provisional.current = true; return provisionalGuest(rec.id); }
+    provisional.current = false;
+    await forgetAccountScoped();
+    setGuestGone(true);
+    return null;
+  }, []);
+
   const refresh = useCallback(async () => {
     const s = await getSessionState();
     // Okunamadıysa eldeki kullanıcı korunuyor: ağ kesintisi çıkış değil.
     if (!s.known) return;
     provisional.current = false;
-    if (s.user) await claimPendingGuest(s.user, yeniHesapMi(s.user));
-    setUser(s.user);
-  }, [claimPendingGuest]);
+    let u = s.user;
+    if (u) await claimPendingGuest(u, yeniHesapMi(u));
+    else {
+      const rec = await loadGuestRecord();
+      if (rec && !rec.for) u = await restoreGuest(rec);
+    }
+    setUser(u);
+  }, [claimPendingGuest, restoreGuest]);
 
   /**
    * Girişten sonra cihazı hesaba bağlar ve misafirken seçilen anadil/kurs/hedef/
@@ -174,14 +209,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const s = await getSessionState();
       let u = s.user;
       if (u) await claimPendingGuest(u, false);
-      else if (!s.known) {
+      else {
         const rec = await loadGuestRecord();
-        if (rec && !rec.for) { u = provisionalGuest(rec.id); provisional.current = true; }
+        if (rec && !rec.for) {
+          if (s.known) u = await restoreGuest(rec);
+          else { u = provisionalGuest(rec.id); provisional.current = true; }
+        }
       }
       if (alive) { setUser(u); setLoading(false); }
     })();
     return () => { alive = false; };
-  }, [claimPendingGuest]);
+  }, [claimPendingGuest, restoreGuest]);
 
   // Ağsız açılan misafir: uygulama öne gelince oturum yeniden okunuyor.
   useEffect(() => {
@@ -257,6 +295,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [adoptAccount, claimPendingGuest]);
 
   const signOut = useCallback(async () => {
+    /* Bu hesaba sabitlenmiş, ağ yüzünden bekleyen bir misafir birleştirmesi
+       varsa oturum kapanmadan son kez deneniyor: çıkıştan sonra "Hesapsız
+       devam et" kaydı yenisiyle ezer ve eski misafirin ilerlemesi sahipsiz kalır. */
+    const pending = await loadGuestRecord();
+    if (pending?.for) await claimGuest(pending, pending.for);
     // Jeton ÖNCE siliniyor: çıkıştan sonra oturum çerezi kalmadığı için silme
     // isteği 401 alırdı ve cihaz eski hesabın bildirimlerini almaya devam ederdi.
     await unregisterPushDevice();
@@ -311,6 +354,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const r = await startGuest();
     if (!r.ok) return r;
     provisional.current = false;
+    setGuestGone(false);
     const u = (await getSession()) ?? provisionalGuest(r.record.id);
     setUser(u);
     await adoptAccount(u, true);
@@ -334,9 +378,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const clearClaimNotice = useCallback(() => setClaimNotice(null), []);
+  const clearGuestGone = useCallback(() => setGuestGone(false), []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice, guestGone, clearGuestGone }}>
       {children}
     </AuthContext.Provider>
   );

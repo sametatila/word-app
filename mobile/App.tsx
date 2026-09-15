@@ -33,7 +33,7 @@ import { NavBarBackdrop } from "./src/ui/NavBarBackdrop";
 
 function Nav() {
   const { colors, isDark } = useTheme();
-  const { user, loading, refresh } = useAuth();
+  const { user, loading, refresh, guestGone } = useAuth();
   /** Doğrulama bağlantısı işlenirken gösterilen örtü (bkz. aşağıdaki derin bağlantı kancası). */
   const [verifying, setVerifying] = useState(false);
   /** Gezgin hazır olmadan gelen derin bağlantı (bkz. onReady). */
@@ -169,6 +169,19 @@ function Nav() {
     ikinci turu hiç oynamasa da metroda çözdüğü tur sunucuya ulaşıyor.
     Oturum yoksa denenmiyor - 401 kuyruğu silmiyor ama boşuna istek de atmayalım.
   */
+  /*
+    MİSAFİR KİMLİĞİ UYGULAMA AÇIKKEN KAYBOLDU (sunucuda silinmiş, jetonla geri
+    kurulamadı; bkz. AuthContext `restoreGuest`). Kullanıcı null'a düşüyor ama
+    ekran yerinde kalıyordu ve her istek 401 alıyordu. Giriş ekranı nedenini
+    söylüyor.
+  */
+  useEffect(() => {
+    if (loading || user || !guestGone || !navigationRef.isReady()) return;
+    const here = navigationRef.getCurrentRoute()?.name;
+    if (here === "Auth" || here === "Onboarding") return;
+    (navigationRef.reset as (s: object) => void)({ index: 0, routes: [{ name: "Auth" }] });
+  }, [loading, user, guestGone]);
+
   useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingLessons(); void flushPendingPathItems(); } }, [user]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.

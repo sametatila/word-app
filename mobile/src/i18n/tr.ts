@@ -45,6 +45,7 @@ export const tr: Record<string, string> = {
   "auth.guest_upgrade_sub": "Misafir olarak yaptığın ilerleme hesabına taşınır. Hesabın zaten varsa ikisi birleşir.",
   "guest.claim_moved": "Misafir ilerlemen hesabına taşındı.",
   "guest.claim_merged": "Misafir ilerlemen hesabındaki ilerlemeyle birleştirildi.",
+  "guest.session_gone": "Önceki misafir oturumun artık yok: hesapsız ilerleme 30 gün kullanılmayınca silinir. Yeniden başlayabilir ya da hesabınla girebilirsin.",
   "guest.name": "Misafir",
   "guest.subline": "Hesapsız kullanıyorsun",
   "guest.create_account": "Hesap oluştur",

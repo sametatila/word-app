@@ -40,6 +40,7 @@ export const de: Record<string, string> = {
   "auth.guest_upgrade_sub": "Dein Fortschritt als Gast wird in dein Konto übernommen. Hast du schon ein Konto, wird beides zusammengeführt.",
   "guest.claim_moved": "Dein Gastfortschritt ist jetzt in deinem Konto.",
   "guest.claim_merged": "Dein Gastfortschritt wurde mit deinem Konto zusammengeführt.",
+  "guest.session_gone": "Deine frühere Gastsitzung gibt es nicht mehr: Fortschritt ohne Konto wird nach 30 Tagen ohne Nutzung gelöscht. Fang neu an oder melde dich mit deinem Konto an.",
   "guest.name": "Gast",
   "guest.subline": "Du nutzt Lernomi ohne Konto",
   "guest.create_account": "Konto erstellen",

@@ -8,7 +8,8 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon, XIcon } from "../ui/icons";
+import { AppleIcon, ArrowBackIcon, BoltIcon, ClockIcon, GoogleIcon, MailIcon, XIcon } from "../ui/icons";
+import { FlowNote } from "../ui/flow";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
@@ -69,17 +70,30 @@ export function AuthScreen() {
   const toApp = async () => {
     if (left.current) return;
     left.current = true;
+    clearGuestGone();
     // İlk giriş sonrası bir kez bildirim priming; sonra uygulama.
     const prime = await notifPrimeNeeded().catch(() => false);
     nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
   };
-  const { user, signIn, signUp, socialComplete, continueAsGuest } = useAuth();
+  const { user, signIn, signUp, socialComplete, continueAsGuest, refresh, guestGone, clearGuestGone } = useAuth();
   /*
     MİSAFİR HESAP OLUŞTURMAYA GELDİ (Profil, kilitli bir özellik). Ekran
     kapatılabiliyor (misafir uygulamaya geri dönebilir), "Hesapsız devam et"
     yok (zaten misafir) ve başlık ilerlemenin taşınacağını söylüyor.
   */
   const guestUpgrade = Boolean(user?.guest);
+  /*
+    İKİ ADIMLI DOĞRULAMADA VAZGEÇEN MİSAFİR. Parola kabul edilince sunucu
+    misafirin çerezinin yerine yazılan oturumu siliyor ve kod bekliyor; kod
+    girilmezse cihazda oturum kalmıyor. Kod ekranından geri dönülünce ya da
+    ekran kapanınca oturum yeniden okunuyor: hesap açıldıysa birleşme zaten
+    olmuştur, açılmadıysa misafirin oturumu jetonla geri kuruluyor (bkz.
+    AuthContext `restoreGuest`). Kod beklenirken geri KONAMAZ: sunucu oturum
+    varken kodu o oturumun kodu sayıyor.
+  */
+  const guestUpgradeRef = useRef(guestUpgrade);
+  useEffect(() => { if (guestUpgrade) guestUpgradeRef.current = true; }, [guestUpgrade]);
+  useEffect(() => () => { if (guestUpgradeRef.current) void refresh(); }, [refresh]);
   /*
     DIŞARIDAN AÇILAN OTURUM. Android'deki Apple girişi tarayıcıda, e-posta
     doğrulaması bağlantıda bitiyor; oturumu App.tsx kuruyor ve bu ekran
@@ -352,13 +366,16 @@ export function AuthScreen() {
           arkasında dönülecek bir ekran yok, onun çıkışı "Hesapsız devam et".
           E-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
-        {view === "options" && guestUpgrade && nav.canGoBack() && (
-          <PressableScale accessibilityLabel={t("common.close")} hitSlop={4} onPress={() => nav.goBack()} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        {/* Arkada ekran yoksa (ekran bir bağlantıdan, ör. parola sıfırlamadan
+            yığın sıfırlanarak açıldı) kapatma uygulamaya dönüyor: misafirin
+            burada "Hesapsız devam et"i yok, yoksa ekranda kalakalıyordu. */}
+        {view === "options" && guestUpgrade && (
+          <PressableScale accessibilityLabel={t("common.close")} hitSlop={4} onPress={() => { if (nav.canGoBack()) nav.goBack(); else nav.reset({ index: 0, routes: [{ name: "Tabs" }] }); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <XIcon color={colors.text} size={22} />
           </PressableScale>
         )}
         {(view === "email" || view === "verify" || view === "twofactor") && (
-          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView(view === "email" ? "options" : "email"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { if (view === "twofactor" && guestUpgrade) void refresh(); setView(view === "email" ? "options" : "email"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}
@@ -402,6 +419,8 @@ export function AuthScreen() {
             */}
             {!user && (
               <>
+                {/* Cihazdaki misafir sunucuda artık yok: neden yeniden başladığı söyleniyor. */}
+                {guestGone ? <FlowNote icon={<ClockIcon color={colors.textMuted} size={16} />} text={t("guest.session_gone")} /> : null}
                 <PressableScale onPress={() => { void doGuest(); }} disabled={guestBusy} accessibilityRole="button" accessibilityLabel={t("auth.continue_as_guest")}
                   style={{ alignItems: "center", justifyContent: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg, marginTop: spacing.xs }}>
                   {guestBusy ? <ActivityIndicator color={colors.textMuted} /> : <Text variant="h3" color={colors.primaryText}>{t("auth.continue_as_guest")}</Text>}

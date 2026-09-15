@@ -40,6 +40,7 @@ export const en: Record<string, string> = {
   "auth.guest_upgrade_sub": "The progress you made as a guest moves to your account. If you already have one, the two are combined.",
   "guest.claim_moved": "Your guest progress moved to your account.",
   "guest.claim_merged": "Your guest progress was combined with your account's progress.",
+  "guest.session_gone": "Your previous guest session is gone: progress without an account is deleted after 30 days of inactivity. Start again or sign in to your account.",
   "guest.name": "Guest",
   "guest.subline": "You're using Lernomi without an account",
   "guest.create_account": "Create account",

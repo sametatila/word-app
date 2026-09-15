@@ -86,6 +86,45 @@ export async function startGuest(): Promise<GuestStart> {
   }
 }
 
+export type ResumeOutcome =
+  /** Misafirin oturum çerezi geri kuruldu. */
+  | "resumed"
+  /** Misafir yok (temizlik silmiş, jeton geçersiz): kayıt silindi. */
+  | "gone"
+  /** Ağ, sınır ya da sunucu hatası: kayıt duruyor. */
+  | "retry";
+
+/**
+ * Çerezini kaybetmiş misafiri kimliğine geri döndürür (sunucu
+ * `lib/auth/guest-resume`).
+ *
+ * Misafirin giriş yolu yok; çerez giderse (iki adımlı doğrulaması olan bir
+ * hesaba giriş denenip kod girilmeden vazgeçilirse, çerez deposu sıfırlanırsa)
+ * giriş ekranındaki "Hesapsız devam et" YENİ bir kimlik açıp eskisinin
+ * ilerlemesini sahipsiz bırakıyordu. Hesaba sabitlenmiş kayıt (`for`) bekleyen
+ * bir birleştirmedir, geri kurulmaz.
+ */
+export async function resumeGuest(record: GuestRecord): Promise<ResumeOutcome> {
+  if (record.for) return "gone";
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/api/auth/guest/resume`, {
+      method: "POST",
+      headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
+      body: JSON.stringify({ guestId: record.id, token: record.token }),
+    });
+    if (res.status === 404 || res.status === 400) { await clearGuestRecord(); return "gone"; }
+    if (!res.ok) return "retry";
+    const json = (await res.json().catch(() => null)) as { token?: unknown } | null;
+    // Süresi geçmiş oturumun yerine yenisi açıldıysa jeton değişti: birleştirme onu isteyecek.
+    if (typeof json?.token === "string" && json.token && json.token !== record.token) {
+      try { await AsyncStorage.setItem(GUEST_KEY, JSON.stringify({ ...record, token: json.token })); } catch { /* geç */ }
+    }
+    return "resumed";
+  } catch {
+    return "retry";
+  }
+}
+
 export type ClaimOutcome =
   /** Misafirin ilerlemesi hesaba birleşti; `hadProgress` hesapta önceden ilerleme vardı. */
   | { kind: "merged"; hadProgress: boolean }
@@ -123,11 +162,24 @@ export async function claimGuest(record: GuestRecord, accountId: string): Promis
 
 /** Misafirin sunucudaki verisini siler (Profil › Misafir verilerini sil). */
 export async function deleteGuestData(): Promise<boolean> {
-  try {
-    await api("/api/account/guest", { method: "DELETE" });
-    return true;
-  } catch (e) {
-    // Oturum zaten yoksa silinecek misafir de yok.
-    return e instanceof ApiError && e.status === 401;
-  }
+  const del = async (): Promise<"ok" | "no_session" | "failed"> => {
+    try {
+      await api("/api/account/guest", { method: "DELETE" });
+      return "ok";
+    } catch (e) {
+      return e instanceof ApiError && e.status === 401 ? "no_session" : "failed";
+    }
+  };
+  const first = await del();
+  if (first !== "no_session") return first === "ok";
+  /* OTURUM YOK AMA KİMLİK DURUYOR OLABİLİR: 401'i "silindi" saymak kaydı ve
+     jetonu siliyor, sunucudaki satırlar ise haftalık temizliğe kadar kalıyordu.
+     Önce oturum jetonla geri kuruluyor; kimlik gerçekten yoksa silinecek bir
+     şey de yok. */
+  const rec = await loadGuestRecord();
+  if (!rec) return true;
+  const resumed = await resumeGuest(rec);
+  if (resumed === "gone") return true;
+  if (resumed === "retry") return false;
+  return (await del()) === "ok";
 }
