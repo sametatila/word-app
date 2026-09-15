@@ -379,6 +379,13 @@
       "when": 1788985897854,
       "tag": "0053_user_path_items",
       "breakpoints": true
+    },
+    {
+      "idx": 54,
+      "version": "7",
+      "when": 1789475939812,
+      "tag": "0054_guest_accounts",
+      "breakpoints": true
     }
   ]
 }

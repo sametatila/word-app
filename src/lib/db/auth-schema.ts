@@ -19,6 +19,14 @@ export const user = pgTable("user", {
     belirsizleşirdi.
   */
   twoFactorEnabled: boolean("twoFactorEnabled").notNull().default(false),
+  /*
+    Misafir kimliği mi (better-auth `anonymous` eklentisi, migration 0054).
+    Misafirin e-postası yer tutucu, adı yok; hesap isteyen kapılar (sosyal,
+    yapay zekâ, satın alma, bildirim) bu bayrağa bakıyor (bkz. lib/auth/guest).
+    Eklenti alanı bu ADLA arıyor: drizzle eşlemesinde anahtar `isAnonymous`
+    olmazsa açılışta şema uyuşmazlığıyla düşer.
+  */
+  isAnonymous: boolean("isAnonymous").notNull().default(false),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
 });
