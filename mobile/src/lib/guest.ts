@@ -121,9 +121,12 @@ export async function resumeGuest(record: GuestRecord): Promise<ResumeOutcome> {
       headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
       body: JSON.stringify({ guestId: record.id, token: record.token }),
     });
-    if (res.status === 404 || res.status === 400) { await clearGuestRecord(); return "gone"; }
+    const json = (await res.json().catch(() => null)) as { token?: unknown; code?: unknown } | null;
+    /* YALNIZ SUNUCUNUN AÇIK HÜKMÜ "YOK" SAYILIYOR. Çıplak bir 404 (uç henüz
+       yayında değil, vekil sunucu hatası) kaydı silseydi misafirin ilerlemesi
+       bir daha birleştirilemezdi; o hâlde kayıt duruyor ve sonra yeniden deneniyor. */
+    if (!res.ok && (json?.code === "GUEST_NOT_FOUND" || json?.code === "BAD_REQUEST")) { await clearGuestRecord(); return "gone"; }
     if (!res.ok) return "retry";
-    const json = (await res.json().catch(() => null)) as { token?: unknown } | null;
     // Süresi geçmiş oturumun yerine yenisi açıldıysa jeton değişti: birleştirme onu isteyecek.
     if (typeof json?.token === "string" && json.token && json.token !== record.token) {
       try { await AsyncStorage.setItem(GUEST_KEY, JSON.stringify({ ...record, token: json.token })); } catch { /* geç */ }

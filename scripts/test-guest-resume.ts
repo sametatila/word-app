@@ -102,11 +102,11 @@ async function main() {
 
     console.log("\nReddedilenler");
     const wrongId = await call("/guest/resume", { guestId: G_OLD, token: tok(G) });
-    check("jeton başka misafirin: 404", wrongId.status === 404 && !wrongId.setCookie.includes("session_token="), wrongId);
+    check("jeton başka misafirin: 404 GUEST_NOT_FOUND (istemci yalnız bu kodla kaydı siliyor)", wrongId.status === 404 && wrongId.json?.code === "GUEST_NOT_FOUND" && !wrongId.setCookie.includes("session_token="), wrongId);
     const real = await call("/guest/resume", { guestId: R, token: tok(R) });
     check("gerçek hesabın jetonu: 404", real.status === 404 && !real.setCookie.includes("session_token="), real);
     const bad = await call("/guest/resume", { guestId: G });
-    check("jetonsuz: 400", bad.status === 400, bad);
+    check("jetonsuz: 400 BAD_REQUEST", bad.status === 400 && bad.json?.code === "BAD_REQUEST", bad);
 
     const signIn = await call("/guest/resume", { guestId: G, token: tok(G) });
     const guestCookie = signIn.setCookie.split(";")[0];
