@@ -4,8 +4,8 @@
 limitleri daha dar ve arama Play'inkiyle aynı yerden beslenmiyor. Aşağıdaki metinler
 Play metinlerinden türetildi ama her biri Apple'ın kendi kutusuna göre yeniden yazıldı.
 
-Kaynak yine aynı: uygulamadaki gerçek içerik. Rakip adı, olmayan özellik ve abartılı
-iddia yok (App Review Guidelines 2.3 — "Accurate Metadata").
+Kaynak yine aynı: uygulamadaki gerçek içerik. Rakip adı, sınav markası, olmayan özellik ve
+abartılı iddia yok (App Review Guidelines 2.3 — "Accurate Metadata").
 
 Kimlik ve alan adı 2026-09-10'da kesinleşti ve dolduruldu; geriye yalnız inceleme
 hesabının kimliği kaldı (`[[TEST_HESABI_*]]`, bkz. `docs/appstore/connect.md`).
@@ -41,21 +41,21 @@ adları. Bunun iki doğrudan sonucu var:
 
 Play'in 80 karakterlik kısa açıklaması (tr):
 
-> `Almanca kelime, konuşma ve sınav hazırlığı. Kısa turlar, yürürken pratik.`
+> `A1'den C1'e dersler, deneme sınavları ve yürürken sesli kelime pratiği.`
 
-Bu cümle iki şey söylüyor: **ne öğretiyor** (kelime + konuşma + sınav) ve **nasıl
-kullanılıyor** (kısa turlar, yürürken). 30 karakterlik Subtitle'a ikisi birden sığmıyor.
+Bu cümle üç şey söylüyor: **kapsam** (A1'den C1'e dersler), **sınav** (deneme sınavları)
+ve **kullanım biçimi** (yürürken, sesli). 30 karakterlik Subtitle'a üçü birden sığmıyor.
 
 **Tutulan:** yürürken + sınav → `Yürürken konuş, sınava çalış` (28).
-Uygulama adı zaten "Almanca Öğren A1-C1" dediği için altyazının onu tekrar etmesine gerek yok;
-ayırt edici olan yürüyüş modu, sınav ise arayanın niyetini yakalayan sözcük.
+Uygulama adı zaten iki kursu ("Almanca ve İngilizce") söylediği için altyazının onları
+tekrar etmesine gerek yok; ayırt edici olan yürüyüş modu, "sınav" ise arayanın niyetini
+yakalayan sözcük.
 
-**Feda edilen:** "kelime" ve "kısa turlar". Yani ürünün çekirdek mekaniği (aralıklı
-tekrarlı kelime turları) vitrinin en üstünde görünmüyor. Nereye gitti:
+**Feda edilen:** "dersler", "A1–C1" ve ürünün çekirdek mekaniği olan "kelime". Nereye gitti:
 
-- `kelime`, `ezber`, `tekrar` → **Keywords** (aranabilir ama görünmez).
-- "kısa turlar / günde on dakika" → **Promotional Text** (görünür, açıklamanın üstünde
-  durur ve inceleme beklemeden değiştirilebilir).
+- `ders`, `kelime`, `deneme`, `a1`…`c1` → **Keywords** (aranabilir ama görünmez).
+- "A1'den C1'e dersler ve deneme sınavları" → **Promotional Text** (görünür, açıklamanın
+  üstünde durur ve inceleme beklemeden değiştirilebilir).
 
 Yani kayıp aramada değil, **ilk bakışta**: mağaza sayfasını üç saniye görüp geçen biri
 uygulamanın bir kelime uygulaması olduğunu altyazıdan anlamıyor. Bilinçli seçim; tersi
@@ -169,14 +169,32 @@ Değişmeyen kurallar:
 
 Her yerelleştirme kendi ekran görüntülerini de ister (§4).
 
+> **2026-09-14'te baştan yazıldı** (mağaza ön inceleme raporu B25, B26). Eski metin üç dilde
+> "İngilizce kursunda A1 ve A2 var, sınav hazırlığı ve B1-C1 henüz yok" diyordu, sınavları
+> "Lesen ve Hören alıştırmaları" diye anlatıyordu, `keywords` bir sınav markasıyla
+> başlıyordu ve Almanca vitrin, Almanca konuşana açılmayan Almanca ve Zürih kurslarını
+> anlatıyordu. Şimdi her yerelleştirme **yalnız o arayüz dilinde gerçekten açılan kursu**
+> anlatıyor. Kurs × arayüz dili × seviye × ders × deneme sınavı ölçümü, anadil çevirisinin
+> kapsamı ve Premium ayrımının kaynağı `docs/play/listing.md` §3.0'da; iki mağaza aynı
+> ölçüme dayanıyor.
+>
+> Description, Play'deki tam açıklamayla aynı metin; yalnız abonelik yönetimi cümlesi
+> Apple'a göre yazıldı (2.3.10: metadata'da başka platform adı geçmez). Paragraflar tek
+> satır, yapıştırınca satır ortasında kırılma olmasın. Sayılar betikle hesaplandı:
+> karakter = Unicode karakter, satır sonları dahil; `keywords` UTF-8 bayt (ı, ş, ğ, ü, ö, ç,
+> ä, ß iki bayt sayılır).
+
 ### 3.1 Türkçe (tr)
 
 **App Name**
 
 ```
-Lernomi: Almanca Öğren A1-C1
+Lernomi: Almanca ve İngilizce
 ```
-_28/30 karakter._ Connect'teki adla aynı (2026-09-14'te API'den okundu); Play başlığı da bu.
+_29/30 karakter._
+
+Türkçe arayüzde iki kurs var (Almanca ve İngilizce), ikisi de adda. Eski ad "Almanca Öğren"
+yalnız birini söylüyordu.
 
 **Subtitle**
 
@@ -188,68 +206,69 @@ _28/30 karakter._
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Ekrana bakmadan çalış: kulaklığı tak, telefonu cebine at, yürürken Almanca konuş. Günde on dakika, kaldığın yerden.
+Kulaklığı tak, yürürken sesli çalış: ipucunu duy, karşılığını söyle. Almanca ve İngilizce için A1'den C1'e dersler ve deneme sınavları.
 ```
-_115/170 karakter._
+_135/170 karakter._
 
-**Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
+Eski tanıtım metni "telefonu cebine at" diyordu; cepte (ekran kapalı) yürüyüş Premium olduğu
+için ücretsiz bir özellik gibi okunuyordu. Yenisi ekran açık da yapılabilen şeyi anlatıyor.
+
+**Keywords** (virgülle, virgülden sonra BOŞLUK YOK; sınır 100 bayt)
 
 ```
-telc,sınav,b1,b2,kelime,ezber,tekrar,gramer,dinleme,okuma,telaffuz,zürih,ingilizce
+sertifika,seviye,öğren,dil,kelime,ders,sınav,deneme,gramer,konuşma,dinleme,yazma,a1,a2,b1,b2,c1
 ```
-_82/100 karakter._ `a1` çıkarıldı: artık adda geçiyor.
+_99/100 bayt (95 karakter)._
+
+Ad ve altyazıdaki sözcükler (lernomi, almanca, ingilizce, yürürken, konuş, sınava, çalış)
+listede yok. Çıkanlar ve sebepleri: sınav markası (§7, karar 2); `zürih` (kurs duraklatılmış,
+yeni kullanıcıya sunulmuyor); `ingilizce` (artık adda); `telaffuz` (mobilde telaffuz notu
+yok, söyleyiş alıştırması yalnız "anlaşıldı mı" diye bakıyor); `ezber`, `tekrar`, `okuma`
+(bayt sınırında daha zayıf aramalar). Girenler: `sertifika,seviye` (markanın yerine
+tanımlayıcı), `öğren`, `dil`, `ders`, `deneme`, `konuşma`, `yazma`, `a2`, `c1`.
 
 **Description**
 
 ```
-Lernomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
-turları, gerçek sahnelerde konuşma pratiği ve sınav formatına hedefli hazırlık.
-
-YÜRÜRKEN ÇALIŞ
-Ekrana bakmadan öğren: Türkçe ipucunu duy, Almancasını sesli söyle. Telefon cebindeyken
-ya da ekran kapalıyken de dinler. Mikrofon yalnız sen başlattığında açılır,
-sesin yalnız tanıma için kullanılır ve saklanmaz.
-
-KELİME TURLARI
-Aralıklı tekrar her kelimeyi tam unutmak üzereyken önüne getirir. A1'den C1'e resmi
-kelime listelerine dayanan içerik; çoktan seçmeli, yazma, dinleme, eşleştirme ve cümle
-kurma alıştırmaları. Günde on dakika yeter.
-
-DERSLER VE KONUŞMA PRATİĞİ
-Her ders kısa bir anlatımla başlar, ardından bir karakterle gerçek bir sahnede
-konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Düzeltmeler anında gelir.
-Karşındaki gerçek bir kişi değil, bir yapay zekâ; uygulama bunu ekranda sürekli söyler
-ve her yanıtın altında bildirme düğmesi durur.
-
-OKUMA, DİNLEME, YAZMA
-Her seviyede okuma ve dinleme parçaları, yazma görevleri. Yazdıkların değerlendirilir ve
-neyi neden düzeltmen gerektiğini görürsün.
-
-SINAV HAZIRLIĞI
-telc Deutsch sınavının Lesen ve Hören bölümlerinin biçimine uygun
-alıştırmalar. Lernomi bu kurumlarla bağlantılı değildir ve onlar tarafından onaylanmamıştır;
-adlar yalnız sınav biçimini tarif etmek için geçiyor.
-
-ARKADAŞLARINLA
-Haftalık sıralama, arkadaş ekleme, tepkiler ve ortak görevler. Özel mesajlaşma yoktur.
-Görünen ad, kullanıcı adı ve biyografi süzgeçten geçer; bildirme ve engelleme her ekranda
-elinin altında.
+Lernomi ile Almanca ya da İngilizce öğren: kısa kelime turları, bir yapay zekâ karakteriyle konuşarak ilerleyen dersler, beceri alıştırmaları ve CEFR seviyelerine göre deneme sınavları. Anlatım ve yönergeler Türkçe.
 
 KURSLAR
-Almanca ve Zürih Almancası (Züritüütsch) kurslarında dersler, beceri alıştırmaları ve
-sınav hazırlığı hazır. İngilizce kursunda A1 ve A2 dersleri ve beceri alıştırmaları
-var; sınav hazırlığı ve B1-C1 seviyeleri henüz yok.
+• Almanca: A1'den C1'e 580 ders
+• İngilizce: A1'den C1'e 500 ders
+İki kursta da her seviyede beceri alıştırmaları ve 12 deneme sınavı var. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin.
+
+KELİME TURLARI
+Aralıklı tekrar, her kelimeyi unutmak üzereyken yeniden önüne getirir. Anlamını seç, duyduğunu tanı, yazarak hatırla, eşleştir, cümle kur, çevir. Almanca kursunda artikel ve çoğul turları da var.
+
+YÜRÜYÜŞ MODU
+Kulaklığı tak, ekrana bakmadan çalış: ipucunu Türkçe duyarsın, karşılığını öğrendiğin dilde sesli söylersin. Ekran açıkken ücretsizdir. Ekran kapalıyken ya da telefon cebindeyken çalışan Cepte yürüyüş Premium'a dahildir.
+
+DERSLER VE KONUŞMA
+Her ders Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
+
+BECERİLER
+Okuma, dinleme, yazma, konuşma ve dil bilgisi alıştırmaları. İznin varsa yazdıklarını ve söylediklerini yapay zekâ değerlendirir; neyi neden düzeltmen gerektiğini görürsün. "Neler yapabilirim" ekranı hangi becerileri kanıtladığını gösterir.
+
+DENEME SINAVLARI
+Her seviyede 12 deneme sınavı; her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını iznin varsa yapay zekâ değerlendirir, ölçütler ve örnek cevap da gösterilir. Haftalık sınavla öğrendiklerini düzenli olarak ölçersin. Deneme sınavları Lernomi'nin hazırladığı alıştırmalardır; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.
+
+ÜCRETSİZ VE PREMIUM
+Kelime turları, okuma ve dinleme alıştırmaları ve ekran açıkken yürüyüş modu ücretsizdir. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, haftada 1 haftalık sınav ve derslerde ve becerilerde sınırlı sayıda yapay zekâ değerlendirmeli konuşma ve yazma alıştırması var. Premium: Cepte yürüyüş, tüm deneme sınavları ve daha çok konuşma, yazma değerlendirmesi. Deneme sınavları üçerli paketler hâlinde sırayla açılır: bir paketten yeterli puanı alınca ya da üç kâğıdı da bitirince sonraki paket açılır. Haftalık sınav havuzunun tamamı ve geçmiş haftalar da açıktır. Cepte yürüyüşte ve değerlendirmede günlük adil kullanım sınırı vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
+Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Apple hesabının abonelik ayarlarından yönetebilir ya da iptal edebilirsin.
+
+ARKADAŞLARINLA
+Haftalık lig ve sıralama, arkadaş ekleme, tepkiler ve bir arkadaşınla haftalık ortak görev. Özel mesajlaşma yoktur. Görünen ad, kullanıcı adı ve biyografi süzgeçten geçer; diğer kullanıcıları bildirebilir ve engelleyebilirsin.
 
 GİZLİLİK
-Reklam yok, izleme yok, veri satışı yok. Hesabını uygulamanın içinden tek ekranda
-silebilirsin.
+Reklam yok, reklam amaçlı izleme yok, veri satışı yok. Mikrofon yalnız konuşarak cevap verdiğinde açılır; sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yapay zekâya bir şey gönderilmeden önce iznin istenir. Hesabını uygulamanın içinden silebilirsin.
 
-Arayüz Türkçe, İngilizce ve Almanca.
+DİLLER
+Arayüz Türkçe, İngilizce ve Almanca. Türkçe arayüzde Almanca ve İngilizce, İngilizce arayüzde Almanca, Almanca arayüzde İngilizce kursu sunulur.
 
 Gizlilik politikası: https://www.lernomi.app/privacy
 Kullanım şartları: https://www.lernomi.app/terms
 ```
-_2036/4000 karakter._
+_3613/4000 karakter._
 
 **What's New**
 
@@ -259,6 +278,8 @@ _2036/4000 karakter._
 _10/4000 karakter._
 
 ### 3.2 İngilizce (en)
+
+İngilizce arayüzde yalnız Almanca kursu sunuluyor; metin yalnız onu anlatıyor.
 
 **App Name**
 
@@ -270,76 +291,73 @@ _21/30 karakter._
 **Subtitle**
 
 ```
-Speak on the go, pass exams
+Speak on the go, exam practice
 ```
-_27/30 karakter._
+_30/30 karakter._
+
+Eski altyazı "pass exams" diyordu: geçmeyi vaat eden bir ifade. Yenisi "exam practice".
 
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Study without looking at the screen: headphones on, phone in your pocket, speak German while you walk. Ten minutes a day, right where you left off.
+Put your headphones on and practice out loud on a walk: hear the prompt, say the German word. Lessons and mock exams from A1 to C1.
 ```
-_147/170 karakter._
+_131/170 karakter._
 
-**Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
+**Keywords** (virgülle, virgülden sonra BOŞLUK YOK; sınır 100 bayt)
 
 ```
-telc,exam,a1,b1,b2,vocabulary,flashcard,grammar,listening,reading,speaking,swiss
+zertifikat,level,deutsch,vocabulary,words,grammar,listening,lessons,course,mock,test,a1,a2,b1,b2,c1
 ```
-_87/100 karakter._
+_99/100 bayt (99 karakter)._
+
+Ad ve altyazıdaki sözcükler (lernomi, learn, german, speak, on, the, go, exam, practice)
+listede yok. Çıkanlar: sınav markası (§7, karar 2); `exam` (artık altyazıda); `swiss` (Zürih
+kursu bu arayüzde hiç sunulmuyor); `flashcard`, `reading`, `speaking` (bayt sınırında daha
+zayıf aramalar). Girenler: `zertifikat,level` (markanın yerine tanımlayıcı; `zertifikat`
+Almanca öğrenenin aradığı genel sözcük), `deutsch`, `words`, `lessons`, `course`, `mock`,
+`test`, `a2`, `c1`.
 
 **Description**
 
 ```
-Lernomi turns language learning into a daily habit: short vocabulary rounds, speaking
-practice in real scenes, and focused preparation for the telc exams.
+Learn German with Lernomi: short vocabulary rounds, lessons where you talk with an AI character, skill exercises and mock exams organized by CEFR level. Explanations and instructions are in English.
 
-PRACTICE WHILE YOU WALK
-Learn without looking at the screen: hear the prompt in your language, say the German out
-loud. It keeps listening with the phone in your pocket or the screen off. The microphone
-opens only when you start it; your audio is used for recognition only and is not
-stored.
+THE GERMAN COURSE
+580 lessons from A1 to C1, skill exercises at every level and 12 mock exams per level. Choose your starting level yourself or find it with a short placement test.
 
 VOCABULARY ROUNDS
-Spaced repetition brings each word back just before you would have forgotten it. Content
-built on the official A1-C1 word lists: multiple choice, typing, listening, matching and
-sentence building. Ten minutes a day is enough.
+Spaced repetition brings each word back just before you would forget it. Choose the meaning, recognize what you hear, type from memory, match, build and translate sentences, and practice German articles and plurals.
 
-LESSONS AND SPEAKING PRACTICE
-Each lesson starts with a short explanation, then you talk your way through a real scene:
-ordering in a cafe, a doctor's appointment, a job interview. Corrections arrive
-immediately. The character is an AI, not a real person; the app says so on screen at all
-times and every reply has a report button.
+WALK MODE
+Put your headphones on and study without looking at the screen: you hear a prompt in English and say the German out loud. Walk mode is free with the screen on. Pocket Walking, which keeps it running with the screen off or with your phone in your pocket, is part of Premium.
 
-READING, LISTENING, WRITING
-Reading and listening passages and writing tasks at every level. Your writing is assessed
-and you see what to fix and why.
+LESSONS AND SPEAKING
+Each lesson starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
 
-EXAM PREPARATION
-Lesen and Hören exercises that follow the format of the telc Deutsch
-exams. Lernomi is not affiliated with or endorsed by those institutions; the names appear
-only to describe the exam format.
+SKILLS
+Reading, listening, writing, speaking and grammar exercises. With your permission, AI assesses your writing and speaking, and you see what to fix and why. The "What I can do" screen shows which abilities you have demonstrated.
+
+MOCK EXAMS
+12 mock exams at every level, each with reading, listening, writing and speaking sections and a time limit for each section. Reading and listening are scored automatically; with your permission, AI assesses your writing and speaking answers, and you also see the criteria and a sample answer. A weekly quiz checks what you have learned. The mock exams are practice material written by Lernomi; they are not affiliated with any exam provider and do not replace an official certificate.
+
+FREE AND PREMIUM
+Vocabulary rounds, reading and listening exercises and walk mode with the screen on are free. The free plan also includes 1 mock exam per level, 1 weekly quiz per week and a limited number of AI-assessed speaking and writing exercises in lessons and skills. Premium: Pocket Walking, every mock exam and more speaking and writing feedback. Mock exams unlock in packs of three, one after another: score well on a pack or finish all three papers to open the next one. The whole weekly quiz pool and past weeks are open too. Pocket Walking and assessments have a daily fair-use limit; the current limits are shown on the Premium screen in the app.
+Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Apple Account subscription settings.
 
 WITH FRIENDS
-A weekly leaderboard, friends, reactions and shared quests. There is no private messaging.
-Display names, usernames and bios are filtered, and reporting and blocking are one tap
-away on every screen.
-
-COURSES
-The German and Zurich German (Züritüütsch) courses have lessons, skill exercises and exam
-preparation. The English course has A1 and A2 lessons and skill exercises; exam
-preparation and the B1-C1 levels are not there yet.
+A weekly league and leaderboard, friends, reactions and a weekly shared quest with a friend. There is no private messaging. Display names, usernames and bios are filtered, and you can report and block other users.
 
 PRIVACY
-No ads, no tracking, no data selling. You can delete your account from inside the app, on
-one screen.
+No ads, no ad tracking, no data selling. The microphone opens only when you answer by speaking; your audio reaches the server only with your permission, and the recording is not kept. The app asks for your permission before anything is sent to AI. You can delete your account from inside the app.
 
-The interface is available in Turkish, English and German.
+LANGUAGES
+The interface is available in English, Turkish and German. In English the app teaches German; the Turkish interface offers German and English, and the German interface offers English.
 
 Privacy policy: https://www.lernomi.app/privacy
 Terms of use: https://www.lernomi.app/terms
 ```
-_2107/4000 karakter._
+_3628/4000 karakter._
 
 **What's New**
 
@@ -350,93 +368,87 @@ _14/4000 karakter._
 
 ### 3.3 Almanca (de)
 
-> **Almanca vitrin neyi satıyor.** Almanca konuşan bir kullanıcı bu uygulamada Almanca
-> kursunu almaz; ona kalan İngilizce (uygulamada A1 ve A2 dersleri + beceri alıştırmaları)
-> ve Zürih Almancası. İkisi de gerçek ürün, yani Almanca vitrinin arkası boş değil —
-> yalnız Türkçe ve İngilizce vitrinlerden dar: sınav hazırlığı Almancayı hedefleyen
-> kurslara ait, İngilizcede henüz yok. Metin bunu açıkça söylüyor (2.3 açısından temiz)
-> ve bu yüzden Almanca vitrin **açılabilir**; ad da buna göre "Deutsch & Englisch".
+> **Almanca vitrin neyi satıyor.** Almanca konuşan kullanıcıya uygulama **yalnız İngilizce
+> kursunu** sunuyor: Almanca kursu kendi dilini öğreteceği için, Zürih Almancası da hedefi
+> Almanca olduğu için bu arayüzde yok (`coursesForNative` hedef dile bakıyor). Eski metin
+> "Deutsch & Englisch" adıyla bu kullanıcıya Almanca ve Zürih kurslarını anlatıyordu ve
+> İngilizce kursu A1–A2 sanıyordu; ikisi de yanlıştı (B25). Bugünkü İngilizce kurs A1–C1,
+> 500 ders, 939 beceri alıştırması ve 60 deneme sınavı; Almanca arayüzde bunların tamamının
+> yönergesi çevrilmiş (ölçüm `docs/play/listing.md` §3.0). Ad ve metin yalnız bunu anlatıyor.
 
 **App Name**
 
 ```
-Lernomi: Deutsch & Englisch
+Lernomi: Englisch lernen
 ```
-_27/30 karakter._
+_24/30 karakter._
 
 **Subtitle**
 
 ```
-Sprechen üben, Wörter merken
+Sprechen üben, Probeprüfungen
 ```
-_28/30 karakter._
+_29/30 karakter._
 
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Lernen ohne Bildschirm: Kopfhörer auf, Handy in die Tasche, unterwegs laut sprechen. Zehn Minuten am Tag, genau da weiter, wo du aufgehört hast.
+Kopfhörer auf und beim Gehen laut üben: Vorgabe hören, das englische Wort sagen. Lektionen und Probeprüfungen von A1 bis C1.
 ```
-_144/170 karakter._
+_124/170 karakter._
 
-**Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
+**Keywords** (virgülle, virgülden sonra BOŞLUK YOK; sınır 100 bayt)
 
 ```
-telc,prüfung,a1,b1,b2,vokabeln,karteikarten,grammatik,hören,lesen,zürich,schweiz
+zertifikat,niveau,english,vokabeln,wortschatz,grammatik,hören,prüfung,test,kurs,a1,a2,b1,b2,c1
 ```
-_87/100 karakter._
+_96/100 bayt (94 karakter)._
+
+Ad ve altyazıdaki sözcükler (lernomi, englisch, lernen, sprechen, üben, probeprüfungen)
+listede yok. Çıkanlar: sınav markası (§7, karar 2); `zürich` ve `schweiz` (bu arayüzde Zürih
+kursu yok); `karteikarten`, `lesen`. Girenler: `zertifikat,niveau` (markanın yerine
+tanımlayıcı), `english`, `wortschatz`, `kurs`, `test`, `a2`, `c1`.
 
 **Description**
 
 ```
-Lernomi macht Sprachenlernen zur täglichen Gewohnheit: kurze Vokabelrunden,
-Sprechpraxis in echten Szenen und gezielte Vorbereitung auf die telc-Prüfungen.
+Lerne Englisch mit Lernomi: kurze Vokabelrunden, Lektionen, in denen du mit einer KI-Figur sprichst, Übungen zu allen Fertigkeiten und Probeprüfungen nach GER-Niveaus. Erklärungen und Anweisungen sind auf Deutsch.
 
-UNTERWEGS ÜBEN
-Lernen ohne Bildschirm: Du hörst die Vorgabe in deiner Sprache und sprichst die Antwort
-laut aus. Die App hört weiter zu, wenn das Handy in der Tasche steckt oder der Bildschirm
-aus ist. Das Mikrofon geht nur an, wenn du es startest; deine Aufnahme dient
-allein der Erkennung und wird nicht gespeichert.
+DER ENGLISCHKURS
+500 Lektionen von A1 bis C1, Übungen auf jedem Niveau und 12 Probeprüfungen pro Niveau. Dein Startniveau wählst du selbst oder findest es mit einem kurzen Einstufungstest heraus.
 
 VOKABELRUNDEN
-Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fast
-vergessen hättest. Inhalte auf Basis der offiziellen Wortlisten von A1 bis C1: Auswahl,
-Tippen, Hören, Zuordnen und Sätze bauen. Zehn Minuten am Tag reichen.
+Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fast vergessen hättest. Bedeutung wählen, Gehörtes erkennen, aus dem Gedächtnis tippen, zuordnen, Sätze bauen und übersetzen.
 
-LEKTIONEN UND SPRECHPRAXIS
-Jede Lektion beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine echte
-Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Korrekturen kommen sofort.
-Dein Gegenüber ist eine KI und kein echter Mensch; die App sagt das dauerhaft auf dem
-Bildschirm, und unter jeder Antwort steht eine Meldefunktion.
+GEHMODUS
+Kopfhörer auf und lernen, ohne auf den Bildschirm zu schauen: Du hörst eine Vorgabe auf Deutsch und sprichst das englische Wort laut aus. Bei eingeschaltetem Bildschirm ist der Gehmodus kostenlos. Der Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm weiterläuft, gehört zu Premium.
 
-LESEN, HÖREN, SCHREIBEN
-Lese- und Hörtexte sowie Schreibaufgaben auf jedem Niveau. Deine Texte werden bewertet und
-du siehst, was du warum ändern solltest.
+LEKTIONEN UND SPRECHEN
+Jede Lektion beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
 
-PRÜFUNGSVORBEREITUNG
-Lesen- und Hören-Aufgaben im Format der Prüfung telc Deutsch.
-Lernomi steht in keiner Verbindung zu diesen Institutionen und ist von ihnen nicht
-zertifiziert; die Namen beschreiben ausschließlich das Prüfungsformat.
+FÄHIGKEITEN
+Übungen zu Lesen, Hören, Schreiben, Sprechen und Grammatik. Mit deiner Erlaubnis bewertet eine KI deine Texte und gesprochenen Antworten, und du siehst, was du warum ändern solltest. Der Bildschirm „Was ich kann“ zeigt, welche Fähigkeiten du schon nachgewiesen hast.
+
+PROBEPRÜFUNGEN
+12 Probeprüfungen pro Niveau, jede mit den Teilen Lesen, Hören, Schreiben und Sprechen und einer Zeitvorgabe pro Teil. Lesen und Hören werden automatisch ausgewertet; Schreiben und Sprechen bewertet mit deiner Erlaubnis eine KI, dazu siehst du die Kriterien und eine Musterlösung. Ein Wochentest zeigt, was du gelernt hast. Die Probeprüfungen sind von Lernomi erstellte Übungen; sie stehen mit keinem Prüfungsanbieter in Verbindung und ersetzen kein offizielles Zertifikat.
+
+KOSTENLOS UND PREMIUM
+Vokabelrunden, Lese- und Hörübungen und der Gehmodus bei eingeschaltetem Bildschirm sind kostenlos. Kostenlos sind außerdem 1 Probeprüfung pro Niveau, 1 Wochentest pro Woche und eine begrenzte Zahl KI-bewerteter Sprech- und Schreibübungen in Lektionen und Fähigkeiten. Premium: Gehmodus in der Tasche, alle Probeprüfungen und mehr Feedback zum Sprechen und Schreiben. Probeprüfungen werden nacheinander in Dreierpaketen freigeschaltet: Mit einem guten Ergebnis oder nach allen drei Prüfungen eines Pakets öffnet sich das nächste. Dazu kommen der gesamte Wochentest-Pool und vergangene Wochen. Für den Gehmodus in der Tasche und die Bewertungen gilt eine tägliche Fair-Use-Grenze; die aktuellen Grenzen stehen auf dem Premium-Bildschirm der App.
+Premium ist ein automatisch verlängertes Monats- oder Jahresabo. Preis und eine eventuelle kostenlose Testphase werden vor dem Kauf in der App angezeigt. Dein Abo verwaltest oder kündigst du in den Abo-Einstellungen deines Apple Accounts.
 
 MIT FREUNDEN
-Wochenrangliste, Freundschaften, Reaktionen und gemeinsame Aufgaben. Private Nachrichten
-gibt es nicht. Anzeigename, Benutzername und Bio werden gefiltert; Melden und Blockieren
-sind auf jedem Bildschirm erreichbar.
-
-KURSE
-In den Kursen Deutsch und Zürichdeutsch (Züritüütsch) gibt es Lektionen, Übungen und
-Prüfungsvorbereitung. Der Englischkurs enthält Lektionen und Übungen für A1 und A2;
-Prüfungsvorbereitung und die Stufen B1 bis C1 gibt es noch nicht.
+Wöchentliche Liga und Rangliste, Freundschaften, Reaktionen und eine gemeinsame Wochenaufgabe mit einer befreundeten Person. Private Nachrichten gibt es nicht. Anzeigename, Benutzername und Bio werden gefiltert; andere Nutzer kannst du melden und blockieren.
 
 DATENSCHUTZ
-Keine Werbung, kein Tracking, kein Datenverkauf. Dein Konto kannst du in der App auf einem
-einzigen Bildschirm löschen.
+Keine Werbung, kein Werbe-Tracking, kein Datenverkauf. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest; Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Bevor etwas an eine KI geht, fragt die App um Erlaubnis. Dein Konto kannst du in der App löschen.
 
-Die Oberfläche gibt es auf Türkisch, Englisch und Deutsch.
+SPRACHEN
+Die Oberfläche gibt es auf Deutsch, Englisch und Türkisch. Auf Deutsch lernst du Englisch; auf Türkisch gibt es Deutsch und Englisch, auf Englisch Deutsch.
 
 Datenschutzerklärung: https://www.lernomi.app/privacy
 Nutzungsbedingungen: https://www.lernomi.app/terms
 ```
-_2266/4000 karakter._
+_3895/4000 karakter._
 
 **What's New**
 
@@ -458,22 +470,24 @@ görüntüsü **zorunlu**.
 | iPhone 6.9" | 1290×2796 (ya da 1320×2868) | **Evet** | Aşağıdaki sıra |
 | iPad 13" | 2064×2752 (ya da 2048×2732) | **Evet** (iPad desteklendiği için) | Beceriler ve ders ekranı, yatay düzen |
 | Küçük iPhone boyutları | — | Hayır | Apple 6.9"dan türetiyor; **Connect'teki güncel listeye bakılmalı**, Apple bu kuralı sık değiştiriyor |
-| App Preview (video) | boyut başına en çok 3, 15-30 sn | Hayır | Yürüyüş modu videosu incelemede en çok işe yarayan şey (bkz. §6) |
+| App Preview (video) | boyut başına en çok 3, 15-30 sn | Hayır | Yürüyüş modu videosu incelemede en çok işe yarayan şey (bkz. §7, karar 3) |
 
 Boyut başına, **yerelleştirme başına** en çok 10 görsel; arama sonucunda ilk üçü görünür,
 o yüzden sıra önemli:
 
 1. Günlük tur (kelime turu)
-2. Yürüyüş modu — ekran kapalı çalışma
+2. Yürüyüş modu (ekran kapalı çalışma, yani Cepte yürüyüş gösterilirse altyazıda "Premium" yazar)
 3. Ders diyaloğu (yapay zekâ sahnesi, "gerçek kişi değil" bildirimi görünür durumda)
-4. Beceriler: okuma / dinleme / yazma
-5. Sınav hazırlığı
+4. Beceriler: okuma / dinleme / yazma / konuşma
+5. Deneme sınavları (altyazı seviye başına 12 kâğıttan birinin ücretsiz olduğunu söyler)
 6. Haftalık sıralama
 
 Ekran görüntüleri gerçek cihazdan ve gerçek hesapla alınır; yer tutucu veri olmaz. Üstüne
-yazılan metin uygulamadaki özelliği anlatır, fiyat ya da vaat içermez. **Üç
+yazılan metin uygulamadaki özelliği anlatır, fiyat ya da vaat içermez, **sınav markası
+taşımaz** (§6) ve Premium gerektiren bir özelliği anıyorsa bunu söyler (2.3.2). **Üç
 yerelleştirmenin görselleri de kendi dilinde** olmalı — arayüz Türkçe görünen bir ekran
-görüntüsünü Almanca vitrine koymak 2.3.3'e takılır.
+görüntüsünü Almanca vitrine koymak 2.3.3'e takılır. Altyazıların kaynağı ve kuralları
+`docs/store/README.md`.
 
 ---
 
@@ -489,7 +503,7 @@ görüntüsünü Almanca vitrine koymak 2.3.3'e takılır.
 | Support URL | `https://www.lernomi.app/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
 | Marketing URL | `https://www.lernomi.app` (isteğe bağlı) |
 | Privacy Policy URL | `https://www.lernomi.app/privacy` — **zorunlu** |
-| Uygulama içi satın alma | **Var** — ürünler Connect'te tanımlanır; satın alma akışı RevenueCat bağlanınca açılır |
+| Uygulama içi satın alma | **Var** — ürünler Connect'te tanımlanır; satın alma akışı RevenueCat üzerinden (`mobile/src/lib/billingConfig.ts`'te iOS anahtarı dolu) |
 | Age Rating | §2 anketinden hesaplanır |
 
 Yayıncı **Musa Atila** (Tufanbeyli, Adana), gizlilik politikasındaki veri sorumlusu ise
@@ -497,54 +511,87 @@ Yayıncı **Musa Atila** (Tufanbeyli, Adana), gizlilik politikasındaki veri sor
 App Store'da da aynı şekilde kalır — Connect'teki yasal ad `LEGAL_ENTITY.publisherName`
 ile aynı olmalı, `controllerName` ile değil.
 
-**Abonelik (ZORUNLU, ertelenemez):** Apple 3.1.2 gereği abonelik uygulamalarında başlık, süre, fiyat ve
-kullanım şartları/gizlilik bağlantısı metadata'da bulunmalı. Bugün satın alma kapalı
-(`billingConfig.ts` anahtarları boş) ve bu yüzden açıklamalarda abonelikten hiç söz
-edilmiyor. Premium canlıya alınırken açıklamalara abonelik paragrafı **eklenmeli**,
-aksi hâlde 3.1.2'den reddedilir.
+**Abonelik (3.1.2):** Apple abonelik bilgisinin satın almadan önce uygulamada açıkça
+gösterilmesini, metadata'da da kullanım şartları (EULA) ve gizlilik politikası
+bağlantılarının bulunmasını istiyor. Bu belgenin önceki sürümü "satın alma kapalı, bu yüzden
+açıklamalarda abonelikten söz edilmiyor" diyordu; anahtarlar artık dolu ve açıklamaların üç
+dilinde bir "Ücretsiz ve Premium" paragrafı var (2026-09-14): Premium'un ne açtığı,
+ücretsizde neyin kaldığı, aylık ya da yıllık otomatik yenilenen abonelik olduğu, fiyatın ve
+varsa deneme süresinin satın almadan önce uygulamada gösterildiği, aboneliğin Apple
+hesabının abonelik ayarlarından yönetildiği. Şartlar ve gizlilik bağlantıları metnin
+sonunda. Fiyat metinde yok: App Store onu ülkeye göre kendisi gösteriyor ve sabit bir fiyat
+cümlesi ilk fiyat değişikliğinde yanlış olur. Abonelik ürünlerinin kendi görünen adı ve
+açıklaması Connect'te ürün sayfasında girilir (`docs/premium/README.md` §3.1).
 
 ---
 
 ## 6. Yasaklar ve metadata kuralları
 
-- **Rakip adı yok.** "Duolingo", "Babbel" gibi adlar ne açıklamada ne `keywords`te geçer.
-  Apple, başkasının markasını anahtar kelime olarak kullanmayı reddediyor.
-- **telc riski.** Ad tescilli bir marka. Açıklamada tanımlayıcı kullanım
-  (sınav biçimini anlatmak) ve açık bir "bağlantılı değiliz" cümlesi var; bu savunulabilir.
-  `keywords` alanındaki `telc` ise daha riskli — Apple marka içeren anahtar
-  kelimeleri reddedebiliyor. **Reddedilirse:** onu `keywords`ten çıkar, yerine
-  `zertifikat,niveau` (de/en) ve `sertifika,seviye` (tr) koy; açıklamadaki tanımlayıcı
-  kullanım kalabilir. Bu bir yayın engeli değil, tek alanda geri adım.
-- **Abartı yok.** "En iyi", "1 numara", "garantili geçiş" gibi iddialar yok.
-- **Olmayan özellik yok.** Tam deneme sınavı ve reklamsız premium metinlerde geçmiyor.
-  İngilizce kursunda sınav hazırlığı ve B1-C1'in bulunmadığı üç dilde de yazılı; kaynağı
-  `mobile/src/data/exams.ts` (katalog hedef dile bağlı, İngilizce için boş) ve
-  `mobile/src/data/lessons/` (yalnız `en-a1`, `en-a2`).
+Play'deki metin kuralları (`docs/play/listing.md` §3.4) burada da geçerli; Apple'a özgü olanlar:
+
+- **Rakip adı yok.** Başka bir uygulamanın adı ne açıklamada ne `keywords`te geçer;
+  Apple başkasının markasını anahtar kelime olarak kullanmayı reddediyor.
+- **Sınav markası yok** — ne ad ve altyazıda, ne `keywords`te, ne açıklamada, ne ekran
+  görüntüsü altyazısında. Karar ve gerekçe `docs/play/listing.md` §4.2; §7'deki açık madde
+  bununla kapandı. `keywords`te markanın yerini tanımlayıcılar aldı: `sertifika,seviye` (tr),
+  `zertifikat,niveau` (de), `zertifikat,level` (en).
+- **Başka platform adı yok (2.3.10).** App Store metninde "Google Play" ya da "Android"
+  geçmez; abonelik yönetimi cümlesi bu yüzden Play metninden farklı.
+- **Abartı, garanti ve fiyat yok.** "En iyi", "1 numara", "garantili geçiş" gibi iddialar yok.
+- **Olmayan özellik yok; Premium açıkça yazılır.** Kapsam cümleleri `docs/play/listing.md`
+  §3.0'daki ölçümden geliyor. Premium gerektiren özellik (Cepte yürüyüş, tüm deneme
+  sınavları) anıldığı cümlede Premium diye geçer (2.3.2); adlar uygulamanın paywall
+  cümlesiyle aynı ve "sınırsız" denmez (3.1.2(a)).
+- **Promo kodu yok.** iOS'ta uygulama içinde kendi promo kodumuz yok (indirim yalnız Apple
+  teklif koduyla); App Store metninde promo kodu, davet ödülü ya da "kodla Premium" anılmaz
+  (3.1.1).
+- **iOS'ta cihazda doğrulanmamış bir iddia var.** Açıklama, ekran kapalıyken çalışan Cepte
+  yürüyüşü Premium özelliği olarak anıyor. iOS'ta bu yol kodda var ama cihazda koşulmadı
+  (`docs/appstore/README.md`, "Ekran kapalıyken yürüyüş modu"). TestFlight'ta doğrulanmadan
+  gönderilecekse iOS açıklamasından o yarım cümle çıkarılmalı; aksi hâlde 2.3.1 riski.
 - **Çocuk vurgusu yok** (§2.4).
 
 ---
 
 ## 7. Açık kararlar
 
-| # | Karar | Kim verir |
-|---|---|---|
-| 1 | **Web/uygulama İngilizce ayrışması kapatılacak mı** — aşağıya bak | Ürün |
-| 2 | `keywords`te `telc` denensin mi, baştan güvenli sürüm mü kullanılsın (§6) | Ürün |
-| 3 | App Preview videosu çekilecek mi — arka planda mikrofon isteyen bir uygulamada incelemeyi en hızlı geçiren şey | Ürün |
-| 4 | Hesaplanan yaş derecesi Connect'te görülünce bu belgeye yazılacak (§2.3) | Yayın günü |
+| # | Karar | Kim verir | Durum |
+|---|---|---|---|
+| 1 | Web/uygulama İngilizce ayrışması kapatılacak mı | Ürün | **Kapandı (içerikle)** — aşağıya bak |
+| 2 | `keywords`te `telc` denensin mi, baştan güvenli sürüm mü kullanılsın | Ürün | **Kapandı (2026-09-14): hiçbir sınav markası kullanılmıyor** — aşağıya bak |
+| 3 | App Preview videosu çekilecek mi — arka planda mikrofon isteyen bir uygulamada incelemeyi en hızlı geçiren şey | Ürün | Açık |
+| 4 | Hesaplanan yaş derecesi Connect'te görülünce bu belgeye yazılacak (§2.3) | Yayın günü | Açık |
 
-**1 numaralı karar — İngilizce kursu iki platformda aynı şey değil.**
+**2 numaralı karar — kapandı: marka kullanılmıyor.** Karar yalnız `telc` için değil, bütün
+sınav markaları için verildi: üç dilde ad, altyazı, tanıtım metni, `keywords`, açıklama ve
+ekran görüntüsü altyazıları markasız. Eski plan "önce markayla gönder, reddedilirse
+`keywords`ten çıkar" idi; üç sebeple bırakıldı:
 
-| Nerede | İngilizce kursunda ne var |
-|---|---|
-| Uygulama (iOS + Android, aynı JS paketi) | A1 ve A2 dersleri (`mobile/src/data/lessons/en-a1.json`, `en-a2.json`) + beceri alıştırmaları (`mobile/src/data/skills/exercises-en.json`) |
-| Web (www.lernomi.app) | Yalnız kelime katmanı — `src/lib/lessons/content/` içinde `de-*` dışında dosya yok, `src/lib/skills/content/` yalnız `a1..c1` ve `zh-*` taşıyor (`src/lib/courses.ts`: "Kelime katmanı hazır; ders/beceri içeriği henüz yok") |
+1. **Tanımlayıcı kullanım savunması tutmuyor.** Savunma "sınavın biçimini tarif ediyoruz"
+   idi, ama uygulamanın hiçbir yerinde o sınavın adı geçmiyor ve deneme kâğıtları
+   Lernomi'nin kendi yazdığı kâğıtlar; içerik kapısı markayı zaten yasaklıyor
+   (`scripts/check-mock-exams.ts`). Uygulamada karşılığı olmayan bir ad vitrinde durunca
+   2.3.1 (metadata uygulamayı yansıtmalı) ve 2.3.7 / 4.1(c) / 5.2.1 (başkasının markası) aynı
+   anda devreye giriyor.
+2. **Ret ucuz değil.** Reddedilen metadata incelemeyi bir tur geciktirir; ilk gönderimde
+   zaten beklenen başka kapılar var (abonelik, arka plan sesi, hesap silme).
+3. **Play'de karşılığı yok.** Play'de `keywords` alanı yok; marka doğrudan açıklamada
+   duruyordu ve orada bir kurumla bağlantı ya da onay iması olarak okunabiliyor. İki
+   mağazada aynı karar tutarlı.
 
-Bu bir vitrin hatası değil, **ürün ayrışması**: uygulamada kaydolup İngilizce çalışan
-biri siteye girdiğinde daha azını buluyor. Vitrin uygulamayı anlattığı için buradaki
-metinler doğru; ayrışmanın kendisi ayrı bir karar. Seçenekler: web'e ders/beceri
-içeriğini taşımak, ya da web'de İngilizce kursunu bugünkü sınırıyla açıkça anlatmak.
-Kapanana kadar bir yerde yazılı durması gerekiyordu, burası.
+Yerine: `keywords`te `sertifika,seviye` / `zertifikat,niveau` / `zertifikat,level`;
+açıklamada "CEFR seviyelerine göre deneme sınavları" (de: "GER-Niveaus") ve marka anmadan
+bağlantısızlık cümlesi ("hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika
+yerine geçmez"). Tam gerekçe `docs/play/listing.md` §4.2.
+
+**1 numaralı karar — kapandı: iki platform aynı İngilizce içeriği taşıyor.** Madde,
+uygulamada İngilizce kursun A1–A2 olduğu ve web'de yalnız kelime katmanının bulunduğu
+dönemde açılmıştı. 2026-09-14 ölçümü: web'de `src/lib/lessons/content/en-{a1,a2,b1,b2,c1}.json`
+(seviye başına 100 ders), `src/lib/skills/content/en-*` ve `src/lib/mock-exams/en/` (60 kâğıt)
+var ve `src/lib/courses.ts` İngilizce kurs için "Kelime, ders, beceri ve deneme sınavı
+katmanları hazır" diyor; mobil pakette de aynı ders ve kâğıt sayıları var
+(`mobile/src/data/lessons/en-*.json`, `exams/papers-en.json`; beceri alıştırmaları
+`skills/exercises-en.json`). Ayrışma kalmadı; vitrin metni iki platformu da doğru anlatıyor.
 
 ---
 

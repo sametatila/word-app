@@ -51,7 +51,41 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 - **Maskot ana unsur olmaz** (bkz. `docs/play/listing.md` §1): hedef kitle 18+ ve
   vitrinde çocuk vurgusu istenmiyor.
 - **Altyazı özellik anlatır**, fiyat ya da vaat içermez.
-- **Her yerelleştirme kendi dilinde** kare ister. Bugün yalnız Türkçe vitrin açılıyor
-  (`PAIR_READY` yalnız `tr` için dolu), o yüzden yalnız Türkçe kare seti var.
+- **Sınav markası geçmez** (hiçbir sınav kurumunun ya da sınavın adı; karar
+  `docs/play/listing.md` §4.2). "Gerçek
+  sınav görevi", "resmî sınav" gibi bir kurumla bağ ya da resmîlik ima eden ifade de yok:
+  deneme kâğıtları Lernomi'nin kendi kâğıtları.
+- **Premium gerektiren özellik anılıyorsa altyazıda "Premium" yazar** (App Store 2.3.2, Play
+  yanıltıcı meta veri). Karedeki ekran premium hesapla çekildiği için kilitsiz görünüyor;
+  ücretsiz kapsamı altyazı söylemek zorunda. Ücretsiz/Premium ayrımının kaynağı
+  `src/lib/premium/gates.ts`; "1'i ücretsiz" sayısı `free.mockPapersPerLevel` ve panelde
+  değişirse altyazı da değişir.
+- **Her yerelleştirme kendi dilinde** kare ister. Üç arayüz dilinin üçü de açık
+  (`PAIR_READY`: tr, en, de — `mobile/src/lib/courses.ts`), ama bugün yalnız Türkçe kare seti
+  var: en-US ve de-DE için ham görüntüler o arayüz diliyle yeniden çekilmeli. Betik karenin
+  üstündeki "ADIM n / N" etiketini sabit Türkçe basıyor (`scripts/store-shots.py`); öteki
+  diller için o etiket de yerelleştirilmeli.
 - **iOS kareleri iOS'tan alınır.** Android karesini App Store'a yüklemek 2.3.3 ihlalidir;
   `--store ios` yalnız yerleşim provası için.
+
+## Altyazı değişikliği (2026-09-14) — kareler yeniden üretilmeli
+
+Mağaza ön inceleme raporu (B25, B26; ücretsiz/Premium ayrımı için B21) üzerine beş altyazı
+değişti. `play/` altındaki üretilmiş kareler **eski altyazıyı taşıyor**; yüklemeden önce üç
+set de yeniden üretilmeli (ham görüntüler değişmedi, yeni çekim gerekmiyor):
+
+| Set | Kare | Eski | Yeni | Sebep |
+|---|---|---|---|---|
+| a-walk 05, b-exam 01, c-native 05 | `mock-list.png` | Her seviyede 12 tam deneme kâğıdı | Her seviyede 12 deneme sınavı: 1'i ücretsiz, tümü Premium'da | Ücretsizde seviye başına 1 kâğıt açık; kare premium hesapla çekildi |
+| b-exam 02 | `mock-task.png` | Gerçek sınav görevi, gerçek süre | Sınav düzeninde görev, süre tutarak | "Gerçek sınav" resmî sınav materyali iması taşıyordu |
+| c-native 06 | `walk.png` | Ekran kapalıyken bile çalışır | Ekran kapalıyken Cepte yürüyüş, Premium'da | Ekran kapalı çalışan yürüyüş (uygulamadaki adıyla Cepte yürüyüş) yalnız Premium'da |
+
+```bash
+for p in a-walk b-exam c-native; do
+  python3 scripts/store-shots.py --plan docs/store/plan/$p.json --out docs/store/play/$p --store play
+done
+```
+
+Yeni altyazıların üçü de mevcut punto aralığında en çok üç satıra sığıyor (betiğin kendi
+`fit_caption` hesabıyla ölçüldü; Play'de 90–96 px). Değişmeyen on üç altyazıda marka,
+fiyat ya da Premium'a bağlı bir iddia yok.
