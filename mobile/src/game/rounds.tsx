@@ -4,14 +4,14 @@ import { grammarLine, typLabel } from "./wordGrammar";
 import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
-import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
+import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { markKnown, optionCards, optionTexts, todayStr } from "./session";
-import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
+import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
-import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, View } from "react-native";
+import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
@@ -21,13 +21,13 @@ import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardInset, useKeyboardLift } from "../lib/useKeyboardHeight";
-import { whyFor } from "./why";
+import { whyFor, whyLabel, type Why } from "./why";
 import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
-import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, cardShadow, soft, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
 const withArtikel = (w: RoundWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
@@ -51,6 +51,16 @@ function norm(s: string): string {
   // halde eşleşmiyor.
   const base = foldCase(s.trim(), lang).replace(LEAD_ARTICLE[lang] ?? LEAD_ARTICLE.de, "");
   return foldCompare(base, lang);
+}
+
+/**
+ * Sonuç katmanındaki dil bilgisi satırı — yalnız bir NOT varsa (çoğul, çekim).
+ * Tek başına tür ("fiil") soru kartında zaten yazıyor; katmanda tekrar etmesi
+ * bilgi değil gürültü.
+ */
+function grammarDetail(w: RoundWord): string | null {
+  const line = grammarLine(w, w.tr);
+  return line === typLabel(w.typ, w.tr) ? null : line;
 }
 
 /** Anlam satırı: Türkçe + (varsa) İngilizce ayırt edici. */
@@ -126,25 +136,42 @@ function artikelTone(a: string, colors: Palette): string {
  */
 type Done = (correct: boolean, extra?: DoneExtra) => void;
 
-/** Cevap sonrası geri bildirim verisi — web VerdictBar'ın taşıdığı bilgi. */
+/**
+ * Cevap sonrası geri bildirim verisi — web `games/round-sheet` ile AYNI alanlar.
+ *
+ * Katman satır satır okunuyor: hüküm → doğru cevap → anlamı (→ dil bilgisi) →
+ * yanlışsa "Senin", "Farklar", "Neden" → Devam. Eskiden hüküm, cevap ve anlam
+ * tek satırda "·" ile birbirine ekleniyordu; satır sarınca "·" yeni satırın
+ * başına düşüyor, çeviri turunda "Doğrusu:" iki kez yazıyor ve farklar yalnız
+ * "↔" ile anlatılıyordu.
+ */
 type Feedback = {
   correct: boolean;
-  answerDe?: string | null; // doğru Almanca cevap (belirgin gösterilir)
-  speakDe?: string | null;  // hoparlör tıklanınca okunacak (yoksa answerDe) — cloze/order tam cümle
-  tr?: string | null;       // Türkçe anlam (BELİRGİN gösterilir)
-  en?: string | null;
-  why?: string | null;      // yalnız yanlışta: neden yanlış
-  note?: string | null;     // özet (match gibi tek cevabı olmayan turlar)
-  /**
-   * Kelime kelime fark (yalnız cümle hakemi olan turlar).
-   *
-   * Web çeviri turunda hükmü ve farkı birlikte gösteriyor
-   * (`components/feedback/diff-text`); mobil hakem sonucunu kullanmaya
-   * başladıktan sonra da farkı GÖSTERMİYORDU: öğrenci "yanlış" görüyor, nerede
-   * yanlış olduğunu görmüyordu. Verildiğinde `answerDe` satırının yerine bu
-   * çiziliyor - ikisi aynı şeyi iki kez söylerdi.
-   */
-  diff?: { verdictKey: string; target: MarkedToken[]; typed: MarkedToken[]; showTyped: boolean } | null;
+  /** Katmanın tonu; verilmezse doğru/yanlıştan. "near" = kabul edildi ama kusurlu. */
+  tone?: "ok" | "bad" | "near" | "neutral";
+  /** Hüküm metni; verilmezse "Doğru" / "Yanlış". */
+  label?: string;
+  /** Doğru cevap (düz). */
+  answer?: string | null;
+  /** Doğru cevap, kelime kelime işaretli (cümle hakemi) — `answer`in yerine çizilir. */
+  answerTokens?: MarkedToken[] | null;
+  /** İşaretli cevabın cümle sonu noktalaması. */
+  answerTail?: string;
+  /** Hoparlörün okuyacağı metin; yoksa `answer`. */
+  speak?: string | null;
+  /** Anlamı (anadilde). */
+  meaning?: string | null;
+  /** Dil bilgisi satırı (tür, çoğul, çekim) — cevap verildikten sonra pekiştirme. */
+  detail?: string | null;
+  /** Öğrencinin cevabı (yalnız yanlışta gösterilir). */
+  you?: string | null;
+  youTokens?: MarkedToken[] | null;
+  /** Kelime kelime fark listesi için hedef ve yazılan (cümle hakemi). */
+  diffs?: { target: MarkedToken[]; typed: MarkedToken[] } | null;
+  /** Neden — hata tipi etiketi + tek cümle (+ yazımda harf farkı). */
+  why?: Why | null;
+  /** Hüküm bandının altına eklenen serbest satır (eşleştirme özeti gibi). */
+  extra?: React.ReactNode;
 };
 
 /**
@@ -266,7 +293,9 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
       ) : (
         <View style={{ flex: 1 }}>{children}</View>
       )}
-      {footer ? <View style={{ marginBottom: lift, paddingTop: kbOpen ? spacing.sm : spacing.md }}>{footer}</View> : null}
+      {/* Sonuç katmanı açıkken dip görünmez ama yerini koruyor: katmanın yuvarlak
+          köşelerinin arkasından turuncu "Kontrol et" kenarları taşıyordu. */}
+      {footer ? <View pointerEvents={sheet ? "none" : "auto"} style={{ marginBottom: lift, paddingTop: kbOpen ? spacing.sm : spacing.md, opacity: sheet ? 0 : 1 }}>{footer}</View> : null}
       {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
   );
@@ -306,51 +335,103 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * Geri bildirim (Duolingo mantığı): cevaptan sonra KOMPAKT şerit — maskot +
- * doğru/yanlış, doğru Almanca cevap (hoparlörlü), TÜRKÇE anlam BELİRGİN, yanlışta
- * kısa neden. "Devam" düğmesi şeridin ALTINDA, ekranın en altında (tek el).
+ * SONUÇ KATMANI — hüküm bandı + etiketli satırlar + Devam.
  *
  * Kendi YÜZEYİ var: katman içeriğin üstüne bindiği için altındaki şıkların
- * arasından sızmamalı. Zemin nötr (`surface`), rengi şerit taşıyor — zemin de
- * renklense şerit ikinci bir renk katmanı olur ve "cevabın kutusu" olduğu
- * okunmazdı.
+ * arasından sızmamalı. Band hükmün tonunda (`*Soft` zemin, `*Text` yazı —
+ * dolgu tonu açık zeminde okunurluk eşiğinin altındaydı), satırlar nötr.
+ * Uzun bir yanlışta katman ekranın yarısını aşmasın diye satırlar kendi içinde
+ * kayıyor. Web `games/round-sheet` aynı alanları aynı sırayla çiziyor.
  */
 function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
-  const ok = data.correct;
-  const tone = ok ? colors.success : colors.danger;
-  const speakText = data.speakDe ?? data.answerDe ?? undefined;
+  const { isDark } = useTheme();
+  const tone = data.tone ?? (data.correct ? "ok" : "bad");
+  const bandBg = tone === "ok" ? colors.successSoft : tone === "bad" ? colors.dangerSoft : tone === "near" ? soft(colors.streak) : colors.surface2;
+  const ink = tone === "ok" ? colors.successText : tone === "bad" ? colors.dangerText : tone === "near" ? colors.streakText : colors.text;
+  const dot = tone === "ok" ? colors.success : tone === "bad" ? colors.danger : tone === "near" ? colors.streak : colors.textMuted;
+  const label = data.label ?? tx(data.correct ? "sheet.correct" : "sheet.wrong");
+  const speakText = data.speak ?? data.answer ?? undefined;
+  const wrong = !data.correct;
+  const showYou = wrong && (data.youTokens?.length || data.you);
+  const showDiffs = !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
+  const showWhy = wrong && !!data.why;
+  /* Devam: doğruda koyu yeşil (açık temada beyaz yazı #2f9a61 üzerinde 3,4:1
+     idi), yanlışta marka rengi. Koyu temada `*Text` dolgu tonuna eşit ve açık;
+     yazı orada `onFill`. */
+  const okFill = isDark ? colors.success : colors.successText;
+  const btnBg = tone === "bad" ? colors.primary : okFill;
+  const btnInk = tone === "bad" ? colors.onPrimary : isDark ? colors.onFill : colors.onPrimary;
+  const { height } = useWindowDimensions();
   return (
-    /* SONUÇ DUYURULUYOR. Turun cevabı ("Doğru!" ya da "Cevap: …", gerekçesi
-       ve anlamı) yalnız GÖRSEL bir değişiklikti: renk, ikon ve maskot. Ekran
-       okuyucu kullanan biri cevabının doğru mu yanlış mı olduğunu HİÇ
-       öğrenmiyordu — hem de uygulamanın en çok kullanılan yüzeyinde. Web aynı
-       şeridi baştan beri duyuruyor (`round-sheet`: `role="status"
-       aria-live="polite"`). §157'nin taraması bunu kaçırmıştı: orada geçici
-       MESAJ durumları (`setMsg`) aranmıştı, buradaki biçim ayrı. */
-    <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(tone, 16)]}>
-      {/* Web VerdictBar: kompakt yatay şerit — maskot + tek akan satır (etiket +
-          kalın Almanca cevap + · Türkçe), yanlışta ikinci küçük satır (neden). */}
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm, minHeight: 60 }}>
-        {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de
-            görünür (web `games/round-sheet` ile aynı muafiyet). */}
-        <Mascot mood={ok ? "thumbsup" : "sad"} size={44} pinned />
-        <View style={{ flex: 1 }}>
-          <Text variant="body">
-            <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{tx(ok ? "rounds.correct_excl" : "rounds.answer_is")}</Text>
-            {data.answerDe && !data.diff ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
-            {data.tr ? <Text variant="body" color={colors.textMuted}>{`  ·  ${data.tr}`}</Text> : null}
-            {data.note ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.note}</Text> : null}
-          </Text>
-          {data.diff ? (
-            <SentenceFeedback verdictKey={data.diff.verdictKey} target={data.diff.target} typed={data.diff.typed} showTyped={data.diff.showTyped} />
-          ) : null}
-          {!ok && data.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{data.why}</Text> : null}
+    /* SONUÇ DUYURULUYOR: renk, ikon ve maskot yalnız görene bir şey söylüyor
+       (web `round-sheet` `role="status" aria-live="polite"`). */
+    <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(dot, 16)]}>
+      <ScrollView style={{ maxHeight: height * 0.5 }} contentContainerStyle={{ gap: spacing.sm }} showsVerticalScrollIndicator={false} bounces={false}>
+        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: bandBg, borderRadius: radii.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm }}>
+          {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de görünür. */}
+          <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned />
+          <View style={{ flex: 1, gap: 2 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+              <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: dot, alignItems: "center", justifyContent: "center" }}>
+                {tone === "bad" ? <XIcon color="#fff" size={12} /> : <CheckIcon color="#fff" size={12} />}
+              </View>
+              <Text variant="bodyStrong" color={ink} style={{ flex: 1 }}>{label}</Text>
+              {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
+            </View>
+            {data.answerTokens?.length ? (
+              <Text variant="h3"><MarkedSentence tokens={data.answerTokens} tail={data.answerTail ?? ""} /></Text>
+            ) : data.why?.diff && wrong ? (
+              <Text variant="h3"><CharMarked segs={data.why.diff.target} side="target" /></Text>
+            ) : data.answer ? (
+              <Text variant="h3" color={colors.text}>{data.answer}</Text>
+            ) : null}
+            {data.meaning ? <Text variant="body" color={colors.textMuted}>{data.meaning}</Text> : null}
+            {data.detail ? <Text variant="caption" color={colors.textMuted}>{data.detail}</Text> : null}
+            {data.extra}
+          </View>
         </View>
-        {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
-      </View>
-      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
-        <Text variant="h3" color={colors.onPrimary}>{tx("common.continue")}</Text>
+        {showYou || showDiffs || showWhy ? (
+          <View style={{ gap: 6, paddingHorizontal: spacing.xs }}>
+            {showYou ? (
+              <SheetRow label={tx("sheet.you")} colors={colors}>
+                {data.youTokens?.length ? (
+                  <Text variant="body"><MarkedSentence tokens={data.youTokens} strong={false} /></Text>
+                ) : data.why?.diff ? (
+                  <Text variant="body"><CharMarked segs={data.why.diff.typed} side="typed" /></Text>
+                ) : (
+                  <Text variant="body" color={colors.textMuted}>{data.you}</Text>
+                )}
+              </SheetRow>
+            ) : null}
+            {showDiffs && data.diffs ? (
+              <SheetRow label={tx("sheet.diffs")} colors={colors}>
+                <DiffLines target={data.diffs.target} typed={data.diffs.typed} />
+              </SheetRow>
+            ) : null}
+            {showWhy && data.why ? (
+              <SheetRow label={tx("sheet.why")} colors={colors}>
+                <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 6 }}>
+                  <Chip label={whyLabel(data.why.type)} fg={colors.text} bg={colors.surface2} />
+                  <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{data.why.text}</Text>
+                </View>
+              </SheetRow>
+            ) : null}
+          </View>
+        ) : null}
+      </ScrollView>
+      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: btnBg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(btnBg, 8)]}>
+        <Text variant="h3" color={btnInk}>{tx("common.continue")}</Text>
       </PressableScale>
+    </View>
+  );
+}
+
+/** Katmanın etiketli satırı: solda küçük büyük harf etiket, sağda içerik. */
+function SheetRow({ label, colors, children }: { label: string; colors: Palette; children: React.ReactNode }) {
+  return (
+    <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" }}>
+      <Text variant="micro" color={colors.textMuted} style={{ width: 58, textTransform: "uppercase", letterSpacing: 0.6, paddingTop: 3 }}>{label}</Text>
+      <View style={{ flex: 1 }}>{children}</View>
     </View>
   );
 }
@@ -505,7 +586,7 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
     // Almanca CEVAP olduğunda (tr-de) doğru Almanca'yı oku; de-tr'de Almanca zaten
     // soru olarak mount'ta okundu → tekrar okuma.
     markAnswer(ok, deSide ? null : withArtikel(word));
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }).text });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, detail: grammarDetail(word), you: o.text, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
@@ -529,7 +610,7 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
     const ok = a === word.artikel;
     setPicked(a);
     markAnswer(ok, withArtikel(word)); // doğru artikel+kelime (Almanca = cevap)
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "article", word, detail: a }).text });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, you: `${a} ${word.de}`, why: ok ? null : whyFor({ type: "article", word, detail: a }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
@@ -554,7 +635,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
     const ok = v === round.isTrue;
     setAns(v);
     markAnswer(ok, null); // Almanca zaten mount'ta okundu
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }).text });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
@@ -680,8 +761,8 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
-    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() }).text;
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why });
+    const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, detail: grammarDetail(word), you: val.trim(), why });
   }
   const inputBlock = (
     <View>
@@ -751,12 +832,14 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   const [failNote, setFailNote] = useState<string | null>(null);
   const [outcome, setOutcome] = useState<{ correct: boolean; quality: number } | null>(null);
   const started = useRef(Date.now());
+  const [details, setDetails] = useState(false);
 
   useEffect(() => {
     setValue("");
     setResult(null);
     setFailNote(null);
     setOutcome(null);
+    setDetails(false);
     started.current = Date.now();
   }, [round.id]);
 
@@ -824,11 +907,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
 
   const kelime = value.trim() ? value.trim().split(/\s+/).filter(Boolean).length : 0;
   const canCheck = !busy && !result && kelime >= MIN_FREE_WORDS;
-  const footer = result && outcome ? (
-    <PressableScale onPress={finish} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-      <Text variant="h3" color={colors.onPrimary}>{tx("common.continue_2")}</Text>
-    </PressableScale>
-  ) : (
+  const footer = result && outcome ? null : (
     <View>
       <TextInput
         value={value}
@@ -869,7 +948,38 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   );
 
   return (
-    <RoundShell footer={footer}>
+    <RoundShell
+      footer={footer}
+      /* DEĞERLENDİRME DE SONUÇ KATMANINDA — öteki turlarla aynı yer, aynı düzen.
+         Sonuç sayfanın içinde uzun bir kart olarak açılıyor ve "Devam" onun
+         altına düşüyordu. Katman kısa hükmü (puan, düzeltilmiş cümle) veriyor,
+         dört ölçütlü kart "Ayrıntıları gör" ile katmanın içinde açılıyor. */
+      sheet={result && outcome ? (
+        <FeedbackFooter
+          colors={colors}
+          onContinue={finish}
+          data={{
+            correct: outcome.correct,
+            label: tx("sheet.sentence_score", { label: tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again"), n: result.score.overall }),
+            answer: result.corrected && result.corrected.trim() ? result.corrected.trim() : value.trim(),
+            detail: "offline" in result && result.offline ? tx("rounds.basic_check") : null,
+            you: result.corrected && result.corrected.trim() !== value.trim() ? value.trim() : null,
+            extra: (
+              <View style={{ marginTop: spacing.xs }}>
+                <PressableScale onPress={() => setDetails((d) => !d)} hitSlop={6} style={{ alignSelf: "flex-start", paddingVertical: 2 }}>
+                  <Text variant="caption" color={colors.primaryText} style={{ fontWeight: "800" }}>{tx(details ? "sheet.hide_details" : "sheet.details")}</Text>
+                </PressableScale>
+                {details ? (
+                  <View style={{ marginTop: spacing.sm }}>
+                    <AssessmentCard answer={value.trim()} result={result} failNote={failNote} example={firstExample(word.beispiel)} />
+                  </View>
+                ) : null}
+              </View>
+            ),
+          }}
+        />
+      ) : undefined}
+    >
       <Prompt label={tx("games.free_sentence")} big={tx("rounds.build_sentence")} colors={colors} />
       {/* Hedef kelimeler: dokununca metne ekleniyor — web de öyle. */}
       <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginBottom: spacing.md }}>
@@ -880,15 +990,6 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
           </PressableScale>
         ))}
       </View>
-      {result && outcome ? (
-        <View accessibilityLiveRegion="polite" style={{ paddingHorizontal: spacing.lg, gap: spacing.sm }}>
-          <Text variant="bodyStrong" color={outcome.correct ? colors.successText : colors.dangerText}>
-            {tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again")} — {tx("rounds.score")} {result.score.overall}
-            {"offline" in result && result.offline ? ` · ${tx("rounds.basic_check")}` : ""}
-          </Text>
-          <AssessmentCard answer={value.trim()} result={result} failNote={failNote} example={firstExample(word.beispiel)} />
-        </View>
-      ) : null}
     </RoundShell>
   );
 }
@@ -977,7 +1078,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setPicked(o);
     markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
-    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }).text });
+    setFb({ correct: ok, answer: full, meaning: round.sentenceTr ?? null, you: fillBlank(sentence, o), why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }) });
   }
   const submitTyped = () => { if (val.trim()) choose(val.trim()); };
   const typeFooter = typeMode ? (
@@ -1044,7 +1145,7 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o === answer;
     setPicked(o);
     markAnswer(ok, `die ${answer}`); // doğru çoğulu oku
-    setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "plural", word, detail: o, correct: answer }).text });
+    setFb({ correct: ok, answer: `die ${answer}`, meaning: word.tr, you: `die ${o}`, why: ok ? null : whyFor({ type: "plural", word, detail: o, correct: answer }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "plural", picked))} colors={colors} /> : undefined}>
@@ -1228,7 +1329,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o.text === word.tr;
     setPicked(o.text);
     markAnswer(ok, null); // dinleme turu: Almanca zaten çalındı
-    setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }).text });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, you: o.text, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
@@ -1341,7 +1442,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
-      setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en, why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }).text });
+      setFb({ correct: ok, answer: word.de, speak: withArtikel(word), meaning: word.tr, you: np.map((x) => x.char).join(""), why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
     }
@@ -1418,7 +1519,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
       markAnswer(ok, full); // tamamlanınca tam cümleyi oku
-      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }).text });
+      setFb({ correct: ok, answer: full, speak: full, meaning: round.sentenceTr ?? word.tr, you: `${np.map((x) => x.text).join(" ")}${tail}`, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
       speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
@@ -1543,19 +1644,25 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     judged.current = m;
     Keyboard.dismiss();
     markAnswer(ok, s.de); // doğru Almanca cümleyi oku
+    /* HÜKÜM TEK İFADE, cevap kendi satırında: "Doğrusu:" iki kez yazılıyordu
+       (etiket + `match.wrong` hükmü). Yazım sapmasında katman "neredeyse"
+       tonunda; sıra hatası yanlış sayılıyor ama adını söylüyor. */
+    const label = rescued ? tx("sheet.ai_accepted")
+      : m.verdict === "exact" ? tx("sheet.correct")
+      : m.verdict === "spelling" ? tx("sheet.near_spelling")
+      : m.verdict === "order" ? tx("sheet.order")
+      : tx("sheet.wrong");
     setFb({
       correct: ok,
-      answerDe: s.de,
-      speakDe: s.de,
-      tr: s.tr,
-      en: s.en,
-      diff: {
-        verdictKey: rescued ? "rounds.ai_accepted" : VERDICT_KEYS[m.verdict],
-        target: m.target,
-        typed: m.typed,
-        // Yazdığın satırı yalnız YANLIŞTA ve gerçekten fark varken göster.
-        showTyped: !ok && m.typed.some((tk) => tk.mark !== "same"),
-      },
+      tone: ok ? (m.verdict === "spelling" ? "near" : "ok") : "bad",
+      label,
+      answerTokens: rescued ? null : m.target,
+      answer: rescued ? s.de : null,
+      answerTail: (m.matched.match(/[.!?…]+$/)?.[0] ?? ""),
+      speak: s.de,
+      meaning: s.tr,
+      youTokens: !ok ? m.typed : null,
+      diffs: rescued ? null : { target: m.target, typed: m.typed },
     });
   }
   /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta,
@@ -1665,7 +1772,25 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       if (nm.size === words.length) {
         const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
         const okCount = batch.filter((b) => b.correct).length;
-        setFb({ correct: batch.every((b) => b.correct), note: tx("rounds.match_first_try", { n: okCount, total: words.length }), tr: null, answerDe: null });
+        /* ÖZET + KARIŞTIRILANLAR. Eskiden "Doğrusu: 3/5 kelime ilk denemede"
+           yazıyordu — bir sayı "doğrusu" olamaz. Hüküm artık sayının kendisi;
+           ilk denemede tutturulamayan kelimeler anlamlarıyla altında. */
+        const karisan = words.filter((w) => wrongBefore.current.has(w.id));
+        setFb({
+          correct: batch.every((b) => b.correct),
+          tone: karisan.length ? "neutral" : "ok",
+          label: tx("sheet.first_try", { n: okCount, total: words.length }),
+          extra: karisan.length ? (
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>
+              {`${tx("sheet.mixed_up")}: `}
+              {karisan.map((w, i) => (
+                <Text key={w.id} variant="caption" color={colors.text}>
+                  <Text variant="caption" color={colors.text} style={{ fontWeight: "800" }}>{withArtikel(w)}</Text>{` = ${w.tr}${i < karisan.length - 1 ? " · " : ""}`}
+                </Text>
+              ))}
+            </Text>
+          ) : null,
+        });
       }
     } else {
       wrongBefore.current.add(selLeft); haptic("wrong");
