@@ -35,7 +35,8 @@ import { useTheme, spacing, radii, softShadow, soft, type Palette } from "../the
 export const MASCOT_BAND = 80;
 export const MASCOT_STATE = 96;
 
-export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode };
+/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Sınav olarak dene" · "yardım yok, 5 tur"). */
+export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string };
 
 /** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
 export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAction | null; secondary?: FlowAction | null; tertiary?: FlowAction | null }) {
@@ -62,7 +63,14 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
           style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 14, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, opacity: secondary.disabled ? 0.5 : 1 }}
         >
           {secondary.icon}
-          <Text variant="bodyStrong" color={colors.text}>{secondary.label}</Text>
+          {secondary.hint ? (
+            <View style={{ alignItems: "center" }}>
+              <Text variant="bodyStrong" color={colors.text}>{secondary.label}</Text>
+              <Text variant="micro" color={colors.textMuted}>{secondary.hint}</Text>
+            </View>
+          ) : (
+            <Text variant="bodyStrong" color={colors.text}>{secondary.label}</Text>
+          )}
         </PressableScale>
       ) : null}
       {tertiary ? (
@@ -260,7 +268,7 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
 }) {
   const { colors } = useTheme();
   return (
-    <View style={{ gap: spacing.md }}>
+    <View style={{ gap: spacing.md, paddingTop: spacing.md }}>
       <View style={[{ width: 56, height: 56, borderRadius: radii.lg, backgroundColor: tint, alignItems: "center", justifyContent: "center" }, softShadow(tint, 8)]}>
         <Icon color="#fff" size={28} />
       </View>
@@ -290,11 +298,15 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
 /**
  * Durum gövdesi — boş, bitti, açılamadı, giriş gerekli.
  * Maskot durumu söylüyor; tek cümle; tek çıkış yolu `FlowScreen` dibinde.
+ *
+ * `alert`: hata dalı (yüklenemedi). Bölge "assertive" duyuruyor — web
+ * karşılığındaki `alert` (`role="alert"`) ile aynı ad ve aynı ağırlık; hata
+ * dalları şablona geçmeden önce de assertive idi.
  */
-export function StateBody({ mood, title, body, icon, children }: { mood?: Mood | null; title: string; body?: string | null; icon?: React.ReactNode; children?: React.ReactNode }) {
+export function StateBody({ mood, title, body, icon, children, alert = false }: { mood?: Mood | null; title: string; body?: string | null; icon?: React.ReactNode; children?: React.ReactNode; alert?: boolean }) {
   const { colors } = useTheme();
   return (
-    <View accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: spacing.md, paddingVertical: spacing.xl }}>
+    <View accessibilityLiveRegion={alert ? "assertive" : "polite"} style={{ alignItems: "center", gap: spacing.md, paddingVertical: spacing.xl }}>
       {mood ? <Mascot mood={mood} size={MASCOT_STATE} /> : icon}
       <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{title}</Text>
       {body ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: 340 }}>{body}</Text> : null}

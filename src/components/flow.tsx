@@ -35,23 +35,32 @@ export function FlowColumn({ children, celebrate = false, className = "" }: { ch
   );
 }
 
+/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Sınav olarak dene" · "yardım yok, 5 tur"). */
 export type FlowAction =
-  | { label: ReactNode; onClick: () => void; href?: undefined; disabled?: boolean; icon?: ReactNode }
-  | { label: ReactNode; href: string; onClick?: () => void; disabled?: undefined; icon?: ReactNode };
+  | { label: ReactNode; onClick: () => void; href?: undefined; disabled?: boolean; icon?: ReactNode; hint?: ReactNode }
+  | { label: ReactNode; href: string; onClick?: () => void; disabled?: undefined; icon?: ReactNode; hint?: ReactNode };
 
 function ActionEl({ a, className }: { a: FlowAction; className: string }) {
+  const label = a.hint ? (
+    <span className="flex flex-col items-center">
+      {a.label}
+      <span className="muted text-micro font-normal">{a.hint}</span>
+    </span>
+  ) : (
+    a.label
+  );
   if (a.href) {
     return (
       <Link href={a.href} prefetch={false} onClick={a.onClick} className={className}>
         {a.icon}
-        {a.label}
+        {label}
       </Link>
     );
   }
   return (
     <button type="button" onClick={a.onClick} disabled={a.disabled} className={className}>
       {a.icon}
-      {a.label}
+      {label}
     </button>
   );
 }
