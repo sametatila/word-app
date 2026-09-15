@@ -9,7 +9,8 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, FlameIcon, BoltIcon, ShareIcon, PodiumIcon, LockIcon, ClockIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
-import { FlowScreen, FlowTopBar, FlowActions, ResultHero, StatRow, DetailCard, StateBody, CoverBody } from "../ui/flow";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, StateBody, CoverBody } from "../ui/flow";
+import { useAuth } from "../lib/AuthContext";
 import { fetchDaily, submitDaily, scoreAnswer, type DailyBoardRow } from "../game/daily";
 import type { Round } from "../game/session";
 import { ApiError } from "../api/client";
@@ -99,6 +100,10 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
 
 export function DailyScreen() {
   const { colors } = useTheme();
+  /* MİSAFİR turu oynuyor ama sıralamaya girmiyor (sunucu tabloyu boş
+     döndürüyor, bkz. `api/daily`): kapak sıralama vaat etmiyor, sonuç boş
+     tablo ve "—" yerine nedenini ve hesap yolunu söylüyor. */
+  const guest = Boolean(useAuth().user?.guest);
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [phase, setPhase] = useState<Phase>("loading");
@@ -257,7 +262,9 @@ export function DailyScreen() {
           rules={[
             { icon: LockIcon, text: t("daily.rule_once") },
             { icon: ClockIcon, text: t("daily.rule_speed") },
-            { icon: PodiumIcon, text: t("daily.rule_board", { level: levelRef.current }), tone: "ok" },
+            guest
+              ? { icon: LockIcon, text: t("guest.daily_rule") }
+              : { icon: PodiumIcon, text: t("daily.rule_board", { level: levelRef.current }), tone: "ok" },
           ]}
         />
         {/* Bugünün tablosu turdan ÖNCE de duruyor: "kime yetişiyorum" sorusu
@@ -324,6 +331,7 @@ export function DailyScreen() {
                   score: scoreRef.current,
                 }),
               } : null}
+              tertiary={guest ? { label: t("guest.create_account"), onPress: () => nav.navigate("Auth") } : null}
             />
             {/* Neden tekrar oynanamadığı: web aynı yerde söylüyor. */}
             <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.once_a_day")}</Text>
@@ -345,12 +353,16 @@ export function DailyScreen() {
         <StatRow items={[
           { value: `${correct}/${total}`, label: t("daily.correct") },
           { value: String(bestComboRef.current), label: t("daily.best_streak"), tone: "streak" },
-          { value: me ? t("daily.rank_value", { rank: me.rank }) : "—", label: t("daily.rank") },
+          ...(guest ? [] : [{ value: me ? t("daily.rank_value", { rank: me.rank }) : "—", label: t("daily.rank") }]),
         ]} />
-        <DetailCard title={`${t("daily.today_s_ranking")} · ${levelRef.current}`}>
-          <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
-          <Board rows={board} colors={colors} />
-        </DetailCard>
+        {guest ? (
+          <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.daily_result")} />
+        ) : (
+          <DetailCard title={`${t("daily.today_s_ranking")} · ${levelRef.current}`}>
+            <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
+            <Board rows={board} colors={colors} />
+          </DetailCard>
+        )}
       </FlowScreen>
     );
   }

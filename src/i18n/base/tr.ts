@@ -65,6 +65,8 @@ export const trBase: Record<string, string> = {
   "guest.deleted_body": "İstediğin zaman yeniden başlayabilirsin.",
   "guest.learn_nudge": "İlerlemen yalnız misafir kimliğinde. Hesap oluştur, kaybetme.",
   "guest.ai_exam": "Bu sınavda yapay zekâyla konuşuyor ve ondan puan alıyorsun; ikisi de hesap istiyor. Misafir ilerlemen hesabına taşınır.",
+  "guest.daily_rule": "Sıralamada görünmek hesap ister",
+  "guest.daily_result": "Puanın günün sıralamasına girmedi: sıralama hesap ister. Hesap oluşturunca misafir ilerlemen hesabına taşınır.",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",
