@@ -4,6 +4,7 @@ import { forgetAccountScoped } from "./accountScope";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
+import { cancelLocalReminders } from "./notifications";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
 import { billingLogout, configureBilling } from "./billing";
@@ -243,6 +244,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // yapılandırması yoksa sessizce no-op (bkz. pushDevice.ts). Hatırlatmalar
   // hesap istiyor: misafirde jeton hiç alınmıyor.
   useEffect(() => { if (billingId) void registerPushDevice(); }, [billingId]);
+  /* CİHAZDAKİ ZAMANLAMA DA HESABA AİT. Hatırlatmalar notifee ile telefona
+     kuruluyor ve çıkış, silme ya da misafire geçiş onları iptal etmiyordu:
+     aynı telefonda açılan misafir önceki hesabın hatırlatmalarını alıyor,
+     Bildirimler ekranı ona kapalı olduğu için kapatamıyordu. */
+  useEffect(() => { if (user?.guest) void cancelLocalReminders(); }, [user?.guest]);
 
   // Giriş yapılınca (veya açılışta oturum geri yüklenince) TTS köprüsünü tazele.
   // Köprü uygulama kökünde girişten ÖNCE yükleniyor; taze kurulum/silip-yükle
@@ -303,6 +309,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Jeton ÖNCE siliniyor: çıkıştan sonra oturum çerezi kalmadığı için silme
     // isteği 401 alırdı ve cihaz eski hesabın bildirimlerini almaya devam ederdi.
     await unregisterPushDevice();
+    await cancelLocalReminders();
     await apiSignOut();
     // Google SDK oturumunu da kapat ki tekrar girişte hesap seçici açılsın
     // (yoksa önceki hesaba sessizce girilir). Hata olsa da çıkışı sürdür.
@@ -369,6 +376,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const deleteGuest = useCallback(async () => {
     if (!(await deleteGuestData())) return false;
     await clearGuestRecord();
+    await cancelLocalReminders();
     await billingLogout();
     clearPremium();
     try { await AsyncStorage.clear(); } catch { /* depolama kapalıysa geç */ }
