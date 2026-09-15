@@ -28,7 +28,11 @@ export default async function SocialSettingsPage() {
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/friends" />
-          <h1 className="text-h2">{t("socialsettings.social_and_privacy")}</h1>
+          {/* `min-w-0 break-words`: esnek satırdaki başlık dar ekranda en uzun
+              kelimesinden daralamıyor ve satırı taşırıyordu. `truncate` bilerek
+              yok (öteki `PageBack` başlıkları gibi): Almancası ("Soziales und
+              Datenschutz") uzun, sarılması kesilmesinden iyi. */}
+          <h1 className="min-w-0 flex-1 break-words text-h2">{t("socialsettings.social_and_privacy")}</h1>
         </div>
         <SocialSettings initial={me} course={profile.course} bare />
       </div>
