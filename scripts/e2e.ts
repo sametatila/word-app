@@ -405,10 +405,14 @@ async function main() {
   );
   const sBacklog = await buildSession(USER, day1);
   check("borç birikince tempo 'review'", sBacklog.meta.pacing === "review", `(${sBacklog.meta.pacing})`);
-  check(
-    "tekrar gününde yeni kelime gelmiyor",
-    !sBacklog.rounds.some((r) => r.game === "intro"),
-  );
+  // Borçta da tur nefes alsın: en çok üç yeni kelime (bkz. session `REVIEW_NEW_WORDS`).
+  const backlogIntros = sBacklog.rounds.filter((r) => r.game === "intro").length;
+  check("tekrar gününde en çok üç yeni kelime", backlogIntros >= 1 && backlogIntros <= 3, `(${backlogIntros})`);
+  // Üretim tavanı: tanıtım ve eşleştirme dışındaki turların en çok %40'ı üretim.
+  const backlogCounted = sBacklog.rounds.filter((r) => r.game !== "intro" && r.game !== "match");
+  const backlogProd = backlogCounted.filter((r) => ["typing", "scramble", "order", "translate", "free_sentence", "speak"].includes(r.game)).length;
+  const backlogAssist = backlogCounted.filter((r) => (r as { assist?: boolean }).assist).length;
+  check("üretim payı tavanı aşmıyor", backlogProd - backlogAssist <= Math.max(1, Math.floor((backlogCounted.length - backlogAssist) * 0.4)), `(${backlogProd - backlogAssist}/${backlogCounted.length - backlogAssist})`);
 
   const challenge = await buildChallenge(USER);
   check("meydan okuma turu kuruluyor", challenge.rounds.length > 0, `(${challenge.rounds.length})`);

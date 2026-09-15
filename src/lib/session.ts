@@ -51,13 +51,37 @@ const FREE_SENTENCE_PER_SESSION = 2;
  * 30 gün) payın %12–18'de kaldığını gösterdi: gerçek hesaplarda kelimelerin
  * neredeyse tamamı "fresh/shaky" ve o basamakta üretim yalnız harf bulmacası
  * + iki ipuçlu yazma. Taban, kurulmuş oturumu sondan başa tarayıp tanıma
- * turlarını kelimenin gücüne uygun üretim turuna çevirir: yeni/takılan
+ * turlarını kelimenin gücüne uygun üretim turuna çevirir (2026-09-15'ten beri
+ * %20; olgunlaşmış kuyrukta üst sınır da var, bkz. `PRODUCTION_CEILING`): yeni/takılan
  * kelimede ipuçlu yazma ya da harf bulmacası (destekli), oturmuş/sağlamda
  * çeviri, cümle diz, yazma. Aynı kelime iki kez üretilmez; tanıtım ve
  * eşleştirme dokunulmaz; tek oyun modunda taban yok. `PRODUCTION_FLOOR=0`
  * ile kapatılır (ölçüm/karşılaştırma için).
  */
-const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR || 0.4)));
+const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR || 0.2)));
+
+/**
+ * ÜRETİM TAVANI — tabanın öteki ucu.
+ *
+ * Taban (%40) yeni hesaplar için yazılmıştı: kelimelerin çoğu "fresh" iken
+ * üretim payı %12–18'de kalıyordu. Kuyruk olgunlaşınca tersi oldu: "strong"
+ * basamak çeviri ve yazmayı ÇİFT ağırlıkla öne alıyor ve tavan olmadığı için
+ * tur baştan sona üretime döndü (Eylül ortası, gerçek hesaplar: tanıtım %2,7,
+ * yazma doğruluğu %42). Ürün kararı (2026-09-15): tur tekdüzeleşmesin ve
+ * öğrenciyi "yapamıyorum" noktasına itmesin — üretim en çok %40, en az %20.
+ * Fazlası, oturumda en az çıkmış tanıma oyununa çevriliyor.
+ */
+const PRODUCTION_CEILING = 0.4;
+
+/**
+ * Borç varken de gelen yeni kelime sayısı.
+ *
+ * Tekrar borcu günlük hedefin iki katını aşınca tempo "review" oluyor ve yeni
+ * kelime HİÇ gelmiyordu; tanıtım kartı ve eşleştirme gibi hafif turlar da onunla
+ * kayboluyor, tur yalnız zor tekrarlardan oluşuyordu. Üç yeni kelime borcu
+ * belirgin büyütmüyor, turu nefes aldırıyor.
+ */
+const REVIEW_NEW_WORDS = 3;
 
 /**
  * Bir oturumda bulunması istenen en az olgun kelime sayısı.
@@ -548,7 +572,7 @@ export async function buildSession(
   const quota = extra
     ? 10
     : pacing === "review"
-      ? 0
+      ? REVIEW_NEW_WORDS
       : pacing === "light"
         ? Math.ceil(profile.newPerDay / 2)
         : profile.newPerDay;
@@ -1115,13 +1139,66 @@ function composeRounds(
     if (recent.length > RECENT_GAME_WINDOW) recent.shift();
   }
 
-  if (!only) raiseProductionFloor(rounds, meta, pool, nextId, native);
+  if (!only) {
+    raiseProductionFloor(rounds, meta, pool, nextId, native);
+    lowerProductionCeiling(rounds, meta, pool, nextId, native, skipGames);
+  }
 
   if (useMatch) {
     rounds.push({ id: nextId(), game: "match", words: matchCandidates.map((m) => m.word) });
   }
 
   return rounds;
+}
+
+/** Üretim tavanı — gerekçe `PRODUCTION_CEILING` yorumunda. */
+function lowerProductionCeiling(
+  rounds: Round[],
+  meta: Map<string, QueueItem>,
+  pool: (typeof words.$inferSelect)[],
+  nextId: () => string,
+  native: NativeLang,
+  skipGames: readonly string[],
+): void {
+  // Yeni kelimenin ipuçlu yazması (WP-14) tavana SAYILMIYOR: destekli bir
+  // pedagojik adım, zorluk değil; sayılsaydı yeni kelime çok olan turda
+  // pekişmiş kelimenin üretim turunu iterdi.
+  const isAssist = (r: Round) => Boolean((r as { assist?: boolean }).assist);
+  const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match" && !isAssist(r));
+  // En az bir: iki-üç turluk küçük bir kuyrukta tavan sıfıra inip pekişmiş
+  // kelimenin tek üretim turunu da almasın.
+  const cap = Math.max(1, Math.floor(counted.length * PRODUCTION_CEILING));
+  let over = counted.filter((r) => isProductionGame(r.game)).length - cap;
+  if (over <= 0) return;
+  const usage = new Map<string, number>();
+  for (const r of rounds) usage.set(r.game, (usage.get(r.game) ?? 0) + 1);
+  // Baştan sona: turun başı hafiflesin; yeni kelimenin ipuçlu yazması (WP-14)
+  // pedagojik adım, dokunulmuyor.
+  for (let i = 0; i < rounds.length && over > 0; i++) {
+    const r = rounds[i];
+    if (!isProductionGame(r.game) || !("word" in r) || (r as { assist?: boolean }).assist) continue;
+    const strength = meta.get(r.id)?.strength ?? "solid";
+    // Tekdüzelik kuralı burada da geçerli: komşu pencerede (üç tur önce/sonra)
+    // çıkan oyun önce denenmiyor; hiçbiri kurulamazsa pencere gevşetiliyor.
+    const near = new Set(rounds.slice(Math.max(0, i - RECENT_GAME_WINDOW), i + RECENT_GAME_WINDOW + 1).filter((_, k) => k !== Math.min(i, RECENT_GAME_WINDOW)).map((x) => x.game));
+    const all = (["choice", "listen", "truefalse", ...(r.word.artikel ? ["artikel"] : [])] as Round["game"][])
+      .filter((g) => !skipGames.includes(g))
+      .sort((a, b) => (usage.get(a) ?? 0) - (usage.get(b) ?? 0));
+    // Hemen yanındaki turla aynı oyun HİÇ konmuyor: öyleyse üretim turu kalıyor.
+    const adjacent = new Set([rounds[i - 1]?.game, rounds[i + 1]?.game]);
+    const options = [...all.filter((g) => !near.has(g)), ...all.filter((g) => near.has(g) && !adjacent.has(g))];
+    let alt: Round | null = null;
+    for (const g of options) {
+      alt = makeRound(g, r.word, pool, nextId, strength, native);
+      if (alt) break;
+    }
+    if (!alt) continue;
+    usage.set(r.game, (usage.get(r.game) ?? 1) - 1);
+    usage.set(alt.game, (usage.get(alt.game) ?? 0) + 1);
+    meta.set(alt.id, meta.get(r.id) ?? { word: r.word, strength });
+    rounds[i] = alt;
+    over--;
+  }
 }
 
 /** Üretim tabanı — gerekçe `PRODUCTION_FLOOR` yorumunda. */
