@@ -50,6 +50,8 @@ const str = (v: unknown) => (v == null ? "" : String(v));
 export type AdminData = {
   kpi: {
     totalUsers: number; new1d: number; new7d: number; new30d: number;
+    /** Toplamın içindeki misafir kimlikleri (hesapsız kullanım, 30 gün kullanılmayınca silinir). */
+    guestUsers: number;
     dau: number; wau: number; mau: number; streakUsers: number;
     totalXp: number; totalReviews: number; accuracy: number; avgStreak: number;
     reviews1d: number; seconds30d: number;
@@ -111,6 +113,7 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`
       select
         (select count(*) from profiles)::int as total_users,
+        (select count(*) from profiles p join "user" u on u.id = p.user_id where u."isAnonymous")::int as guest_users,
         (select count(*) from profiles where created_at >= now() - interval '1 day')::int as new1d,
         (select count(*) from profiles where created_at >= now() - interval '7 days')::int as new7d,
         (select count(*) from profiles where created_at >= now() - interval '30 days')::int as new30d,
@@ -210,7 +213,7 @@ export async function getAdminData(): Promise<AdminData> {
   const k = kpiRows[0] ?? {};
   return {
     kpi: {
-      totalUsers: num(k.total_users), new1d: num(k.new1d), new7d: num(k.new7d), new30d: num(k.new30d),
+      totalUsers: num(k.total_users), guestUsers: num(k.guest_users), new1d: num(k.new1d), new7d: num(k.new7d), new30d: num(k.new30d),
       dau: num(k.dau), wau: num(k.wau), mau: num(k.mau), streakUsers: num(k.streak_users),
       totalXp: num(k.total_xp), totalReviews: num(k.total_reviews), accuracy: num(k.accuracy),
       avgStreak: num(k.avg_streak), reviews1d: num(k.reviews1d), seconds30d: num(k.seconds30d),

@@ -156,7 +156,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
       {tab === "Genel Bakış" && (
         <div className="space-y-6">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            <Kpi label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g`} />
+            <Kpi label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g · ${fmt(k.guestUsers)} misafir`} />
             <Kpi label="Aktif DAU/WAU/MAU" value={`${fmt(k.dau)}/${fmt(k.wau)}/${fmt(k.mau)}`} sub="günlük / haftalık / aylık" />
             <Kpi label="Seri tutan" value={fmt(k.streakUsers)} sub={`ort. ${Math.round(k.avgStreak)} gün`} />
             <Kpi label="Toplam XP" value={fmt(k.totalXp)} />
