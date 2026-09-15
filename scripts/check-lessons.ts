@@ -9,22 +9,36 @@
  *
  * İki seviye var: HATA (çıkış kodu 1 — parti kabul edilmez) ve UYARI
  * (yayına engel değil ama üretici gözden geçirmeli).
+ *
+ * Bilinen uyarılar `check-lessons.taban.json`da duruyor (bkz.
+ * scripts/lib/uyari-tabani.mjs). Tabanda olmayan YENİ bir uyarı ya da
+ * kapandığı hâlde tabandan silinmemiş bir kayıt denetimi düşürür. Hepsini
+ * görmek için: `npm run check:lessons -- --uyarilar`.
  */
+import path from "node:path";
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
 import { scoredSteps, type Lesson } from "../src/lib/lessons/types";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { courseOrDefault } from "../src/lib/courses";
+import { uyariTabani } from "./lib/uyari-tabani.mjs";
 
 let fails = 0;
-let warns = 0;
+/** Uyarılar hemen basılmıyor; hangisinin yeni olduğuna taban karar veriyor. */
+const uyarilar: { anahtar: string; metin: string }[] = [];
 function check(name: string, ok: boolean, extra = "") {
   if (!ok) fails++;
   console.log(`${ok ? "✓" : "✗"} ${name} ${extra}`.trimEnd());
 }
-function warn(name: string, ok: boolean, extra = "") {
+/**
+ * `anahtar` tabandaki kararlı kimlik. Oran, sayı gibi değişen ayrıntı içermemeli;
+ * yoksa ilgisiz her içerik düzenlemesi "yeni uyarı" üretir. Aynı anahtar iki kez
+ * çıkarsa (bir derste iki kopya) sıra numarası ekleniyor.
+ */
+function warn(name: string, ok: boolean, extra = "", anahtar = name) {
   if (ok) return;
-  warns++;
-  console.log(`! ${name} ${extra}`.trimEnd());
+  let k = anahtar;
+  for (let n = 2; uyarilar.some((u) => u.anahtar === k); n++) k = `${anahtar} #${n}`;
+  uyarilar.push({ anahtar: k, metin: `! ${name} ${extra}`.trimEnd() });
 }
 
 const repeatsOf = (l: Lesson) =>
@@ -310,7 +324,8 @@ for (const l of LESSONS) {
   for (const v of l.vocab) {
     const key = `${l.level}:${lang}:${v.de.toLowerCase()}`;
     if (seen.has(key)) {
-      warn(`yinelenen kelime: ${v.de}`, false, `(${seen.get(key)} ve ${l.id}, ${l.level})`);
+      warn(`yinelenen kelime: ${v.de}`, false, `(${seen.get(key)} ve ${l.id}, ${l.level})`,
+        `yinelenen kelime | ${key} | ${seen.get(key)} ↔ ${l.id}`);
     } else {
       seen.set(key, l.id);
     }
@@ -324,22 +339,35 @@ const targets = LESSONS.flatMap((l) =>
     .map((s) => ({ id: l.id, t: (s.expect as { target: string }).target.toLowerCase() })),
 );
 const dupTargets = targets.filter((a, i) => targets.findIndex((b) => b.t === a.t) !== i);
-warn("yinelenen üretim hedefi yok", dupTargets.length === 0,
-  `(${[...new Set(dupTargets.map((d) => `${d.id}: ${d.t}`))].slice(0, 3).join(" | ")})`);
+for (const d of dupTargets) {
+  const ilk = targets.find((b) => b.t === d.t)!.id;
+  warn("yinelenen üretim hedefi", false, `(${ilk} ve ${d.id}: ${d.t})`,
+    `yinelenen üretim hedefi | ${d.t} | ${ilk} ↔ ${d.id}`);
+}
 
 // Hüküm cümleleri de kopya olmamalı: aynı yanlışı iki kez yargılatmak yeni bir
 // şey ölçmez. Uyarı, hata değil — B2 finali ile C1 finali aynı cümleyi BİLEREK
-// yankılıyor (seviyenin ilk kuralına kapanışta geri dönüş).
+// yankılıyor (seviyenin ilk kuralına kapanışta geri dönüş). O istisna eskiden
+// "en fazla bir kopya" eşiğiyle yazılıydı ve HANGİ kopyanın kasıtlı olduğunu
+// bilmiyordu: ikinci, kasıtsız bir kopya eşiğin altında kalabiliyordu. Artık
+// tabanda adıyla ve gerekçesiyle duruyor.
 const statements = LESSONS.flatMap((l) =>
   l.lecture
     .filter((s) => s.expect?.kind === "truefalse")
     .map((s) => ({ id: l.id, t: (s.expect as { statement: string }).statement.toLowerCase() })),
 );
 const dupStatements = statements.filter((a, i) => statements.findIndex((b) => b.t === a.t) !== i);
-warn("yinelenen hüküm cümlesi yok", dupStatements.length <= 1,
-  `(${[...new Set(dupStatements.map((d) => `${d.id}: ${d.t}`))].slice(0, 3).join(" | ")})`);
+for (const d of dupStatements) {
+  const ilk = statements.find((b) => b.t === d.t)!.id;
+  warn("yinelenen hüküm cümlesi", false, `(${ilk} ve ${d.id}: ${d.t})`,
+    `yinelenen hüküm cümlesi | ${d.t} | ${ilk} ↔ ${d.id}`);
+}
 
-console.log(
-  `\n${fails ? `${fails} HATA` : "Hata yok"} · ${warns ? `${warns} uyarı` : "uyarı yok"}`,
-);
-process.exit(fails ? 1 : 0);
+const taban = uyariTabani({
+  ad: "check:lessons",
+  dosya: path.join(import.meta.dirname, "check-lessons.taban.json"),
+  komut: "npm run check:lessons",
+  uyarilar,
+});
+console.log(`\n${fails ? `${fails} HATA` : "Hata yok"} · ${taban.ozet}`);
+process.exit(fails || taban.dustu ? 1 : 0);
