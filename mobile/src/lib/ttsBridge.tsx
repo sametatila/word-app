@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
@@ -71,7 +71,28 @@ export function bridgeRefresh(force = false): void {
   lastReloadAt = now;
   ready = false; healthy = true; errors = 0;
   finishPending();
-  try { viewRef?.reload?.(); } catch { /* yut */ }
+  /*
+    iOS'TA `reload()` YETMİYOR — WebView yeniden KURULUYOR.
+
+    `sharedCookiesEnabled` iOS'ta uygulamanın çerezlerini (NSHTTPCookieStorage)
+    WKWebView'a yalnız görünüm İLK YÜKLENİRKEN aktarıyor; `reload()` eski
+    çerez deposuyla yükleniyor. Köprü girişten önce kurulduğu için iOS'ta
+    oturum çerezi köprüye hiç ulaşmıyordu: `/api/tts` 401 dönüyor (sunucu
+    günlüğünde iPhone + /tts-bridge + 401), köprü iki hatadan sonra
+    "sağlıksız" sayılıp cihaz sesine düşüyordu — seçilen Katja/Conrad iOS'ta
+    hiç duyulmuyordu. Android'de fetch ile WebView aynı CookieManager'ı
+    paylaştığı için reload yetiyordu. Anahtar değişince görünüm sökülüp
+    yeniden kuruluyor ve çerezler yeniden aktarılıyor; iki platformda da.
+  */
+  generation++;
+  listeners.forEach((fn) => fn());
+}
+
+let generation = 0;
+const listeners = new Set<() => void>();
+function subscribeGeneration(fn: () => void) {
+  listeners.add(fn);
+  return () => { listeners.delete(fn); };
 }
 
 /**
@@ -159,9 +180,11 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | bo
  * alınır; WebView 1×1 olarak içeride çalışır (JS/ses çalışır) ama düzeni etkilemez.
  */
 export function TtsBridge() {
+  const gen = useSyncExternalStore(subscribeGeneration, () => generation, () => generation);
   return (
     <View style={{ position: "absolute", width: 0, height: 0, top: -10000, left: -10000, overflow: "hidden" }} pointerEvents="none">
       <WebView
+        key={gen}
         ref={(r) => { viewRef = r; }}
         source={{ uri: `${API_BASE}/tts-bridge` }}
         sharedCookiesEnabled
