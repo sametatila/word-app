@@ -209,12 +209,15 @@ function Nav() {
   // Bayrak + oturum okunana dek düz zemin — tema rengiyle, zıplama olmasın.
   if (onboarded === null || loading) return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
 
-  // Misafir modu YOK: onboarding bitince hesap zorunlu. Oturum ÖNCE bakılıyor —
-  // açık oturum "bu kullanıcı yeni değil" demek, cihaz bayrağı ne derse desin.
-  // Sıra tersken bayrağı silinmiş (depolama temizliği, geri yükleme) ama oturumu
-  // duran kullanıcı ilk açılış akışına düşüyor, kendi ayarı olmayan sorulara
-  // yanıt veriyordu. Oturum yoksa: akış görülmemişse ilk akış, görülmüşse giriş.
-  const initialRoute = user ? (prime ? "NotifPrime" : "Tabs") : !onboarded ? "Onboarding" : "Auth";
+  // Oturum ÖNCE bakılıyor — açık oturum "bu kullanıcı yeni değil" demek, cihaz
+  // bayrağı ne derse desin. Sıra tersken bayrağı silinmiş (depolama temizliği,
+  // geri yükleme) ama oturumu duran kullanıcı ilk açılış akışına düşüyor, kendi
+  // ayarı olmayan sorulara yanıt veriyordu. Oturum yoksa: akış görülmemişse ilk
+  // akış, görülmüşse giriş ekranı (orada "Hesapsız devam et" de var).
+  //
+  // MİSAFİR bildirim izni ekranına düşmüyor: hatırlatmalar hesap istiyor
+  // (mağaza ön inceleme B24). Hesap açınca giriş ekranı o soruyu soruyor.
+  const initialRoute = user ? (user.guest ? "Tabs" : prime ? "NotifPrime" : "Tabs") : !onboarded ? "Onboarding" : "Auth";
 
   return (
     /* Gezgin başvurusu bileşen ağacının dışından gezinmek için: bildirime

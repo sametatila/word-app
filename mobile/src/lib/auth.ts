@@ -17,6 +17,13 @@ export type AuthUser = {
    * yanıtlıyor — onboarding seçimlerinin devri buna bakıyor (bkz. AuthContext).
    */
   createdAt: string | null;
+  /**
+   * Misafir kimliği mi (sunucuda better-auth `anonymous`, bkz. lib/guest).
+   * Misafirde ad ve e-posta NULL: sunucunun yazdığı yer tutucu ad ve
+   * `.invalid` adres hiçbir yüzeye çıkmamalı. Sosyal, yapay zekâ, satın alma
+   * ve bildirim hesap istiyor; ekranlar bu bayrağa bakıyor.
+   */
+  guest: boolean;
 };
 /**
  * `session`: istek 200 döndü ve OTURUM DA AÇILDI mı.
@@ -67,9 +74,10 @@ async function post(path: string, body: Record<string, unknown>, captchaToken?: 
 }
 
 function userFrom(obj: unknown): AuthUser | null {
-  const u = (obj as { user?: { id?: string; name?: string; email?: string; createdAt?: string } })?.user;
+  const u = (obj as { user?: { id?: string; name?: string; email?: string; createdAt?: string; isAnonymous?: boolean | null } })?.user;
   if (!u?.id) return null;
-  return { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null, createdAt: u.createdAt ?? null };
+  if (u.isAnonymous === true) return { id: u.id, name: null, email: null, createdAt: u.createdAt ?? null, guest: true };
+  return { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null, createdAt: u.createdAt ?? null, guest: false };
 }
 
 /** Yanıt gövdesinde oturum jetonu var mı (bkz. AuthOutcome.session). */
@@ -110,17 +118,32 @@ export async function signUp(name: string, email: string, password: string, capt
   }
 }
 
-/** Geçerli oturumun kullanıcısı; oturum yoksa null. */
-export async function getSession(): Promise<AuthUser | null> {
+/**
+ * Oturum durumu: kullanıcı ve bu cevabın BİLİNİP BİLİNMEDİĞİ.
+ *
+ * "Oturum yok" ile "sunucuya ulaşılamadı" aynı şey değil. İkisi de null
+ * dönüyordu ve ağsız bir açılış oturumu olan kullanıcıyı çıkış yapmış
+ * sayıyordu. Gerçek hesapta bedel bir giriş ekranıydı; misafirde bedel
+ * ilerlemenin kendisi olurdu, çünkü misafirin geri giriş yolu yok ve giriş
+ * ekranındaki "Hesapsız devam et" yeni bir kimlik açardı. `known: false`
+ * ağ hatası, zaman aşımı ya da 5xx demek: çağıran eldeki kullanıcıyı korur.
+ */
+export async function getSessionState(): Promise<{ user: AuthUser | null; known: boolean }> {
   try {
     const res = await fetchWithTimeout(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
-    if (!res.ok) return null;
+    if (res.status === 401) return { user: null, known: true };
+    if (!res.ok) return { user: null, known: false };
     const text = await res.text().catch(() => "");
-    if (!text || text === "null") return null;
-    return userFrom(JSON.parse(text));
+    if (!text || text === "null") return { user: null, known: true };
+    return { user: userFrom(JSON.parse(text)), known: true };
   } catch {
-    return null;
+    return { user: null, known: false };
   }
+}
+
+/** Geçerli oturumun kullanıcısı; oturum yoksa (ya da okunamadıysa) null. */
+export async function getSession(): Promise<AuthUser | null> {
+  return (await getSessionState()).user;
 }
 
 export async function signOut(): Promise<void> {

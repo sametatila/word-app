@@ -25,7 +25,18 @@ export const GUEST_KEY = "lernomi:guest";
 /** Sunucunun hesap isteyen uçlardaki cevabı (bkz. sunucu lib/auth/guest). */
 export const ACCOUNT_REQUIRED = "account_required";
 
-export type GuestRecord = { id: string; token: string; at: number };
+export type GuestRecord = {
+  id: string;
+  token: string;
+  at: number;
+  /**
+   * Birleştirmenin İLK denendiği hesap. Deneme ağ yüzünden yarım kalırsa bir
+   * sonraki açılışta yalnız AYNI hesap için yeniden deneniyor: o hesap çıkış
+   * yapıp aynı telefonda başkası girerse misafirin ilerlemesi yanlış kişiye
+   * geçmesin.
+   */
+  for?: string;
+};
 
 /** Hata "bu özellik hesap istiyor" mu. */
 export function isAccountRequired(e: unknown): boolean {
@@ -37,7 +48,9 @@ export async function loadGuestRecord(): Promise<GuestRecord | null> {
     const raw = await AsyncStorage.getItem(GUEST_KEY);
     if (!raw) return null;
     const v = JSON.parse(raw) as Partial<GuestRecord>;
-    return typeof v.id === "string" && typeof v.token === "string" ? { id: v.id, token: v.token, at: Number(v.at) || 0 } : null;
+    return typeof v.id === "string" && typeof v.token === "string"
+      ? { id: v.id, token: v.token, at: Number(v.at) || 0, ...(typeof v.for === "string" ? { for: v.for } : {}) }
+      : null;
   } catch {
     return null;
   }
@@ -87,7 +100,11 @@ export type ClaimOutcome =
  * yazımı, kuyruk boşaltma) hesap misafirin seçimlerini görmeden kendi boş
  * satırlarını kurar.
  */
-export async function claimGuest(record: GuestRecord): Promise<ClaimOutcome> {
+export async function claimGuest(record: GuestRecord, accountId: string): Promise<ClaimOutcome> {
+  if (record.for && record.for !== accountId) return { kind: "gone" };
+  if (!record.for) {
+    try { await AsyncStorage.setItem(GUEST_KEY, JSON.stringify({ ...record, for: accountId })); } catch { /* geç */ }
+  }
   try {
     const r = await api<{ merged?: boolean; targetHadProgress?: boolean }>("/api/account/guest/claim", {
       method: "POST",

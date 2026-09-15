@@ -1,6 +1,8 @@
-import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { AppState } from "react-native";
 import { forgetAccountScoped } from "./accountScope";
-import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
+import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
+import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, startGuest, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
@@ -11,10 +13,24 @@ import { clearPremium } from "./premium";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ONBOARDED_KEY } from "./onboarding";
 
+/** Misafir hesaba geçtiğinde bir kez gösterilecek not (bkz. ui/GuestClaimNotice). */
+export type ClaimNotice = "moved" | "merged";
+
 type Ctx = {
   user: AuthUser | null;
   /** Oturum ilk kez okunuyor (açılış): ekran kararı bunu bekler. */
   loading: boolean;
+  /**
+   * "Hesapsız devam et" (mağaza ön inceleme B24): sunucuda misafir kimliği açar
+   * ve onboarding seçimlerini ona yazar. Başarısızsa sebep döner (429 sınır,
+   * 0 ağ yok).
+   */
+  continueAsGuest: () => Promise<GuestStart>;
+  /** Profil › "Misafir verilerini sil": sunucudaki misafiri ve cihazdaki her şeyi siler. */
+  deleteGuest: () => Promise<boolean>;
+  /** Son birleşmenin notu; gösteren ekran `clearClaimNotice` ile kapatır. */
+  claimNotice: ClaimNotice | null;
+  clearClaimNotice: () => void;
   /** `captchaToken`: bot koruması açıkken zorunlu (bkz. lib/auth post). */
   signIn: (email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
   signUp: (name: string, email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
@@ -26,6 +42,10 @@ type Ctx = {
 
 const AuthContext = createContext<Ctx>({
   user: null, loading: true,
+  continueAsGuest: async () => ({ ok: false, status: 0, code: "" }),
+  deleteGuest: async () => false,
+  claimNotice: null,
+  clearClaimNotice: () => {},
   signIn: async () => ({ ok: false, code: "", message: "" }),
   signUp: async () => ({ ok: false, code: "", message: "" }),
   signOut: async () => {},
@@ -60,11 +80,53 @@ function gercekAd(u: AuthUser | null): string {
   return ad.length >= 2 && ad !== (u?.email ?? "").trim() ? ad : "";
 }
 
+/**
+ * Ağ yokken açılan misafir. Misafirin geri giriş yolu yok: oturum okunamadı
+ * diye onu çıkış yapmış saymak, giriş ekranında "Hesapsız devam et"e basan
+ * kişiye YENİ bir kimlik açtırıp ilerlemesini kaybettirirdi. Cihazdaki kayıt
+ * kimliği biliyor; istekler ağ gelince oturum çereziyle zaten doğru gidiyor.
+ */
+function provisionalGuest(id: string): AuthUser {
+  return { id, name: null, email: null, createdAt: null, guest: true };
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
+  const [claimNotice, setClaimNotice] = useState<ClaimNotice | null>(null);
+  /** Kullanıcı ağsız açılışta cihaz kaydından mı kuruldu (bkz. provisionalGuest). */
+  const provisional = useRef(false);
 
-  const refresh = useCallback(async () => { setUser(await getSession()); }, []);
+  /**
+   * MİSAFİR HESABA GEÇİYOR. Gerçek bir oturum açıldığında, hesabın başka bir
+   * isteği gitmeden ÖNCE çağrılıyor: cihazda misafir kaydı varsa misafirin
+   * ilerlemesi sunucuda hesaba birleşiyor (bkz. lib/guest `claimGuest`).
+   * Önce profil yazımı ya da kuyruk boşaltma gitseydi hesap kendi boş
+   * satırlarını kurar, misafirin seçimlerini görmezdi.
+   *
+   * Yeni hesaba TAŞINDIYSA hesabın gerçek adı profile yazılıyor: misafirin
+   * profili adsızdı ve onboarding seçimleri misafir açılırken zaten harcandı,
+   * yani `adoptAccount` ada ulaşamadan dönüyor.
+   */
+  const claimPendingGuest = useCallback(async (u: AuthUser, yeniHesap: boolean) => {
+    if (u.guest) return;
+    const rec = await loadGuestRecord();
+    if (!rec || rec.id === u.id) return;
+    const out = await claimGuest(rec, u.id);
+    if (out.kind !== "merged") return;
+    setClaimNotice(out.hadProgress ? "merged" : "moved");
+    const ad = gercekAd(u);
+    if (!out.hadProgress && yeniHesap && ad) await updateProfile({ displayName: ad });
+  }, []);
+
+  const refresh = useCallback(async () => {
+    const s = await getSessionState();
+    // Okunamadıysa eldeki kullanıcı korunuyor: ağ kesintisi çıkış değil.
+    if (!s.known) return;
+    provisional.current = false;
+    if (s.user) await claimPendingGuest(s.user, yeniHesapMi(s.user));
+    setUser(s.user);
+  }, [claimPendingGuest]);
 
   /**
    * Girişten sonra cihazı hesaba bağlar ve misafirken seçilen anadil/kurs/hedef/
@@ -109,19 +171,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     let alive = true;
     (async () => {
-      const u = await getSession();
+      const s = await getSessionState();
+      let u = s.user;
+      if (u) await claimPendingGuest(u, false);
+      else if (!s.known) {
+        const rec = await loadGuestRecord();
+        if (rec && !rec.for) { u = provisionalGuest(rec.id); provisional.current = true; }
+      }
       if (alive) { setUser(u); setLoading(false); }
     })();
     return () => { alive = false; };
-  }, []);
+  }, [claimPendingGuest]);
+
+  // Ağsız açılan misafir: uygulama öne gelince oturum yeniden okunuyor.
+  useEffect(() => {
+    const sub = AppState.addEventListener("change", (st) => {
+      if (st === "active" && provisional.current) void refresh();
+    });
+    return () => sub.remove();
+  }, [refresh]);
 
   // Kullanıcı değişince RevenueCat'i hesap kimliğiyle başlat/güncelle (web+mobil
   // aynı entitlement). Anahtar yoksa güvenle no-op.
-  useEffect(() => { void configureBilling(user?.id ?? null); }, [user?.id]);
+  //
+  // MİSAFİR SATIN ALMAYA EŞLENMİYOR. Premium hesap istiyor (sunucu lib/auth/
+  // guest): misafir kimliğiyle alınan bir abonelik başka cihazda geri
+  // yüklenemez ve kimlik birleşince yenilemeleri sahipsiz kalırdı. Misafirde
+  // sağlayıcı anonim kalıyor; ödeme ekranı hesap oluşturmayı öneriyor.
+  const billingId = user && !user.guest ? user.id : null;
+  useEffect(() => { void configureBilling(billingId); }, [billingId]);
 
   // Uzak bildirim jetonu hesaba yazılıyor: oturum varken kaydet. Firebase
-  // yapılandırması yoksa sessizce no-op (bkz. pushDevice.ts).
-  useEffect(() => { if (user?.id) void registerPushDevice(); }, [user?.id]);
+  // yapılandırması yoksa sessizce no-op (bkz. pushDevice.ts). Hatırlatmalar
+  // hesap istiyor: misafirde jeton hiç alınmıyor.
+  useEffect(() => { if (billingId) void registerPushDevice(); }, [billingId]);
 
   // Giriş yapılınca (veya açılışta oturum geri yüklenince) TTS köprüsünü tazele.
   // Köprü uygulama kökünde girişten ÖNCE yükleniyor; taze kurulum/silip-yükle
@@ -140,9 +223,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     */
     if (r.ok && r.twoFactor) return r;
     // Giriş = hesap zaten vardı: akışta seçilenler değil, hesabın kendi ayarları geçerli.
-    if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, false); }
+    if (r.ok) {
+      const u = r.user ?? (await getSession());
+      if (u) await claimPendingGuest(u, false);
+      setUser(u);
+      await adoptAccount(u, false);
+    }
     return r;
-  }, [adoptAccount]);
+  }, [adoptAccount, claimPendingGuest]);
 
   /**
    * Kayıt. OTURUM AÇILDIYSA kullanıcıyı yazar — açılmadıysa yazmaz.
@@ -159,9 +247,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    */
   const signUp = useCallback(async (name: string, email: string, password: string, captchaToken?: string | null) => {
     const r = await apiSignUp(name, email, password, captchaToken);
-    if (r.ok && r.session) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, true); }
+    if (r.ok && r.session) {
+      const u = r.user ?? (await getSession());
+      if (u) await claimPendingGuest(u, true);
+      setUser(u);
+      await adoptAccount(u, true);
+    }
     return r;
-  }, [adoptAccount]);
+  }, [adoptAccount, claimPendingGuest]);
 
   const signOut = useCallback(async () => {
     // Jeton ÖNCE siliniyor: çıkıştan sonra oturum çerezi kalmadığı için silme
@@ -203,14 +296,47 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const socialComplete = useCallback(async () => {
     const u = await getSession();
+    if (u) await claimPendingGuest(u, yeniHesapMi(u));
     setUser(u);
     // Sosyal düğme hem kayıt hem giriş: hesabın yaşı ayırıyor (bkz. yeniHesapMi).
     if (u) await adoptAccount(u, yeniHesapMi(u));
     return !!u;
+  }, [adoptAccount, claimPendingGuest]);
+
+  /**
+   * "Hesapsız devam et". Misafir de yeni bir hesap gibi onboarding seçimlerini
+   * profiline alıyor (kurs, seviye, hedef, anadil); ad yok.
+   */
+  const continueAsGuest = useCallback(async (): Promise<GuestStart> => {
+    const r = await startGuest();
+    if (!r.ok) return r;
+    provisional.current = false;
+    const u = (await getSession()) ?? provisionalGuest(r.record.id);
+    setUser(u);
+    await adoptAccount(u, true);
+    return r;
   }, [adoptAccount]);
 
+  /**
+   * Misafir verilerini sil. Misafirin çıkış yolu yok (bir daha dönemez); bu
+   * yüzden "çıkış" yerine bu var ve hesap silmenin aynısı gibi davranıyor:
+   * sunucudaki her satır, sonra cihazdaki her şey (dil ve ilk açılış dahil).
+   */
+  const deleteGuest = useCallback(async () => {
+    if (!(await deleteGuestData())) return false;
+    await clearGuestRecord();
+    await billingLogout();
+    clearPremium();
+    try { await AsyncStorage.clear(); } catch { /* depolama kapalıysa geç */ }
+    provisional.current = false;
+    setUser(null);
+    return true;
+  }, []);
+
+  const clearClaimNotice = useCallback(() => setClaimNotice(null), []);
+
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice }}>
       {children}
     </AuthContext.Provider>
   );
