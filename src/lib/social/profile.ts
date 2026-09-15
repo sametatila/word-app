@@ -15,6 +15,7 @@ import { friendIds, weeklyXpFor } from "./stats";
 import { friendStreaks, type FriendStreak } from "./streaks";
 import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, normalizeBio, normalizeUsername, usernameQuery } from "./username";
 import { assignOne, ensureUsernames } from "./usernames";
+import { isGuestUser, notGuest } from "@/lib/auth/guest-user";
 import { VISIBILITIES, type FeedItem, type PublicUser, type Relation, type Visibility } from "./types";
 
 export type SocialMe = {
@@ -176,7 +177,8 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
   const username = normalizeUsername(usernameRaw);
   if (!username) throw new SocialError("not_found", 404);
   const [p] = await db.select().from(profiles).where(eq(profiles.username, username)).limit(1);
-  if (!p) throw new SocialError("not_found", 404);
+  // Misafirin sosyal kimliği yok: bir yolla kullanıcı adı almış olsa da profili açılmıyor.
+  if (!p || (p.userId !== viewer && (await isGuestUser(p.userId)))) throw new SocialError("not_found", 404);
   const uid = p.userId;
   if (viewer !== uid && (await blockedEitherWay(viewer, uid))) throw new SocialError("not_found", 404);
   const rel = await relation(viewer, uid);
@@ -239,6 +241,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
     .where(
       and(
         notInArray(profiles.userId, blocked),
+        notGuest(profiles.userId),
         or(
           uq ? eq(profiles.username, uq) : sql`false`,
           and(

@@ -12,6 +12,7 @@ import { friendIds, friendRows, publicUsers, weeklyXpFor } from "./stats";
 import { friendStreaks } from "./streaks";
 import type { FriendRow, PublicUser, Relation } from "./types";
 import { ensureUsernames } from "./usernames";
+import { isGuestUser, notGuest } from "@/lib/auth/guest-user";
 
 /**
  * Arkadaşlık durum makinesi.
@@ -100,7 +101,9 @@ export async function sendRequest(me: string, other: string): Promise<{ state: R
     .from(profiles)
     .where(eq(profiles.userId, other))
     .limit(1);
-  if (!target) throw new SocialError("not_found", 404);
+  /* Misafir sosyal katmanda yok (bkz. lib/auth/guest): isteği hiç göremez ve
+     yanıtlayamaz; satır ve bildirim sahipsiz kalırdı. */
+  if (!target || (await isGuestUser(other))) throw new SocialError("not_found", 404);
   if (!target.allowRequests) throw new SocialError("requests_closed", 403);
 
   const rows = await pairRows(me, other);
@@ -338,6 +341,8 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
           eq(profiles.showInSuggestions, true),
           ne(profiles.visibility, "private"),
           gte(profiles.lastActiveDay, shiftDay(today, -7)),
+          // Misafir öneride çıkmıyor: profili varsayılan olarak açık ve etkin görünüyor.
+          notGuest(profiles.userId),
           excludeList.length ? notInArray(profiles.userId, excludeList) : sql`true`,
         ),
       )
