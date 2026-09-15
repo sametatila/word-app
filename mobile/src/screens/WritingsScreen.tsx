@@ -17,6 +17,7 @@ import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 import { EmptyCard } from "../social/common";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 import { scoreBand } from "../lib/learningRules";
 
 /** Tür -> sözlük anahtarı. */
@@ -126,6 +127,8 @@ export function WritingsScreen() {
 
   useEffect(() => {
     if (!user) { setPhase("error"); return; }
+    /* Misafirin yapay zekâ değerlendirmesi yok, arşiv hep boş: istek atılmıyor. */
+    if (user.guest) { setItems([]); setPhase("ready"); return; }
     let alive = true;
     setPhase("loading");
     fetchWritings().then((it) => { if (alive) { setItems(it); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
@@ -184,7 +187,11 @@ export function WritingsScreen() {
               yerde `EmptyCard` çiziyor (`writings-card`) ve ev kalıbı da o
               (52 px dolu karo). İki hâl aynı kapta: duyuru yalnız hata
               hâlinde — "yazın yok" bir hata değil. */}
-          {phase === "error" ? (
+          {/* MİSAFİR: "henüz yazın yok, yazmaya git" sözü tutmuyordu — misafirin
+              yazısı değerlendirilmiyor ve buraya hiç düşmüyor. */}
+          {user?.guest ? (
+            <GuestAccountCard icon={WriteIcon} tint={colors.info} title={t("guest.writings_title")} text={t("guest.writings_body")} />
+          ) : phase === "error" ? (
             <EmptyCard
               live="assertive"
               icon={WriteIcon}
