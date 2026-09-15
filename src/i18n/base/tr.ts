@@ -76,6 +76,7 @@ export const trBase: Record<string, string> = {
   "guest.learn_daily_sub": "Herkesle aynı sorular · sıralama hesapla",
   "guest.skill_ai": "Bu görevi yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak görevi yapıp örnek cevapla karşılaştırırsın; görev puansız sayılır.",
   "guest.mono_unscored": "Söylediklerin puanlanmaz: yapay zekâ değerlendirmesi hesap ister.",
+  "guest.certificate_name": "Sertifikada adın yerine \"Öğrenci\" yazıyor: ad hesapla gelir. Hesap oluşturunca sınav sonucun da hesabına taşınır.",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun. Konuşma yine sayılır.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",

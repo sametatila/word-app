@@ -5,7 +5,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
-import { XIcon } from "./icons";
+import { LockIcon, XIcon } from "./icons";
+import { FlowNote } from "./flow";
+import { useAuth } from "../lib/AuthContext";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -23,6 +25,9 @@ import { useTheme, spacing, radii } from "../theme";
  * gibi verilebiliyor.
  */
 export function CertificateSheet({ examId, visible, onClose }: { examId: number; visible: boolean; onClose: () => void }) {
+  /* Misafirin adı yok: kâğıtta "Öğrenci" yazıyor. Neden ve adın nasıl
+     geleceği kâğıdın üstünde söyleniyor. */
+  const guest = Boolean(useAuth().user?.guest);
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const [svg, setSvg] = useState<string | null>(null);
@@ -61,6 +66,11 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
             <XIcon color={colors.text} size={22} />
           </PressableScale>
         </View>
+        {guest && !failed ? (
+          <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+            <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.certificate_name")} />
+          </View>
+        ) : null}
         {failed ? (
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}>
             <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("exam.certificate_failed")}</Text>

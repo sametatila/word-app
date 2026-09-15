@@ -74,6 +74,7 @@ export const de: Record<string, string> = {
   "guest.learn_daily_sub": "Gleiche Fragen für alle · Rangliste mit Konto",
   "guest.skill_ai": "Diese Aufgabe bewertet die KI, und dafür brauchst du ein Konto. Als Gast machst du die Aufgabe und vergleichst mit der Musterantwort; sie zählt ohne Punkte.",
   "guest.mono_unscored": "Was du sagst, wird nicht bewertet: KI-Bewertung braucht ein Konto.",
+  "guest.certificate_name": "Auf dem Zertifikat steht \"Lernende\" statt deines Namens: Der Name kommt mit einem Konto. Leg eins an, dein Prüfungsergebnis kommt mit.",
   "lessonp.chat_off_account": "Freies Gespräch mit der KI braucht ein Konto; in dieser Lektion geht es mit einem vorgegebenen Gespräch weiter. Das Gespräch zählt trotzdem.",
   "auth.your_email_address": "deine E-Mail-Adresse",
   "auth.enter_your_email_and_we_ll_send": "Gib deine E-Mail-Adresse ein, wir senden dir einen Link zum Zurücksetzen.",
