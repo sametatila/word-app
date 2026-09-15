@@ -13,17 +13,24 @@ import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/vo
  * orada: aynı kelime dönüp duruyor (tekrar algoritmasının doğası bu), yani her
  * parça ömründe bir kez sentezlenip sonsuza kadar önbellekten dönebilir.
  *
- * PAYLAŞIMLI KATMAN ŞU AN YOK. Vercel bırakılınca (bkz. AGENTS.md) aradaki CDN
- * de gitti ve Netcup'taki nginx hiçbir şeyi önbelleğe almıyor — yapılandırmada
- * `proxy_cache` bölgesi tanımlı değil. Yani bugün iki katman çalışıyor:
+ * PAYLAŞIMLI KATMAN nginx'te (2026-09-15, `/etc/nginx/conf.d/lernomi-tts-cache.conf`
+ * + sitede `location = /api/tts`). Vercel bırakılınca aradaki CDN gitmişti ve
+ * bir kelimeyi ilk kez dinleyen HER kullanıcı onu yeniden sentezletiyordu
+ * (günlükte isteklerin ~%46'sı başka birinin istediği metnin tekrarıydı).
+ * Şimdi üç katman var:
  *   1. Tarayıcı önbelleği — aynı cihazda ikinci dinleme hiç ağa çıkmıyor.
- *   2. Sentez zinciri (Edge → Azure) — tarayıcıda olmayan her parça için.
+ *   2. nginx önbelleği — anahtar yalnız adres (ses, hız, metin); çerezden ve
+ *      alan adından bağımsız, 60 gün. Önbellekten dönen istek BU UCA HİÇ
+ *      GELMİYOR: oturum, köken ve günlük tavan denetimi yalnız sentezlenecek
+ *      yeni metinde çalışıyor. Bu bilinçli — içerik gizli değil, maliyet sentezde.
+ *      Range yukarı gönderilmiyor, aralıkları nginx kesiyor; Set-Cookie bu uçta
+ *      saklanmıyor ve gönderilmiyor (oturum sızmasın).
+ *   3. Sentez zinciri (Edge → Azure) — ikisinde de olmayan her parça için.
  *
- * Bunun bedeli, bir kelimeyi ilk kez dinleyen HER kullanıcının onu yeniden
- * sentezlemesi: eskiden ilk dinleyen herkes için ısıtıyordu. Önbelleğe uygun
- * cevap biçimi yine de korunuyor (GET, 200, `immutable`, `CDN-Cache-Control`),
- * çünkü öne bir önbellek konduğu gün — nginx `proxy_cache` ya da bir CDN —
- * kod tarafında değişiklik gerekmeden devreye girmesi isteniyor:
+ * `rateFor` ya da ses kataloğu değişirse nginx önbelleği BOŞALTILMALI (aynı
+ * adres artık farklı bir ses demek): `rm -rf /var/cache/nginx/lernomi-tts/*`.
+ *
+ * Cevap biçimi önbelleğe uygun kalmak zorunda:
  *
  *   - GET olmak zorunda. POST cevapları paylaşımlı önbelleklerde saklanmıyor.
  *   - `Cache-Control` tek başına yetmez, çünkü ara katmanların bir kısmı
@@ -31,12 +38,11 @@ import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/vo
  *   - Durum kodu 200 olmalı; hata cevapları bilerek önbelleklenmiyor
  *     (geçici bir kesinti kalıcı bir sessizliğe dönüşmesin).
  *
- * Kimlik doğrulaması bilerek **yok**: oturum okumak cevabı kullanıcıya özel
- * hâle getirip paylaşımı bozardı ve `Authorization` taşıyan istekler zaten
- * paylaşımlı önbelleğe girmez. Okunan içerik gizli değil — sözlükteki Almanca
- * kelimeler. Karşılığında `sameOrigin` denetimi var; bu, başka bir siteden
- * doğrudan bağlanmayı engelliyor ama kararlı birini durdurmaz. Kötüye kullanım
- * görülürse doğru çözüm imzalı URL, oturum değil.
+ * Sentez OTURUM İSTİYOR (aşağıda, günlük tavanla birlikte): açık uç Azure
+ * yedeğinin ücretli kotasını herkesin harcayabildiği bir servis olurdu. Oturum
+ * cevabı kullanıcıya özel yapmıyor — cevapta çerez yok, içerik herkes için
+ * aynı — yani nginx önbelleği paylaşmaya devam ediyor. `sameOrigin` başka bir
+ * siteden doğrudan bağlanmayı engelliyor.
  */
 
 export const dynamic = "force-dynamic";
