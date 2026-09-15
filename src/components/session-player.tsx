@@ -21,21 +21,18 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
 import { prefetchGerman } from "@/components/speak-button";
-import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { vibrate } from "@/lib/fx";
 import { track } from "@/lib/track";
 import { FitBox } from "@/components/fit-box";
 import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
-import { Mascot } from "@/components/mascot";
 import { MascotPop } from "@/components/mascot-pop";
 import { MascotFx } from "@/components/mascot-fx";
-import { Stagger } from "@/components/reveal";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
-import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
-import { ScoreRing } from "@/components/score-ring";
+import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
+import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit } from "@/components/round-exit";
@@ -758,7 +755,7 @@ export function SessionPlayer() {
   if (status === "error")
     return (
       <Screen header>
-        <ErrorCard kind={errorKind} onRetry={() => void load()} />
+        <ErrorCard kind={errorKind} onRetry={() => void load()} onClose={exit} />
       </Screen>
     );
   if (status === "empty")
@@ -768,6 +765,7 @@ export function SessionPlayer() {
           meta={session?.meta}
           onlyGame={onlyGame}
           onExtra={() => void load({ extra: true })}
+          onClose={exit}
           onMixed={() => {
             // Adresteki `?game=` kalırsa sayfa tazelenince yine pratiğe düşer.
             router.replace("/learn/game");
@@ -785,6 +783,7 @@ export function SessionPlayer() {
           correct={tally.correct - stageStart.current.correct}
           total={tally.total - stageStart.current.total}
           bestCombo={bestCombo.current}
+          xp={Math.max(0, tally.xp - stageStart.current.xp)}
           remaining={session.rounds.length - index}
           wagerResult={wagerResult}
           onContinue={(bet) => {
@@ -812,6 +811,9 @@ export function SessionPlayer() {
           level={session?.meta.level ?? "A1"}
           partial={stoppedEarly.current}
           targeted={targeted.current}
+          onlyGame={onlyGame}
+          wagerResult={wagerResult}
+          saveWarning={saveWarning}
           onContinue={() => {
             router.refresh();
             void load();
@@ -1009,49 +1011,31 @@ function LoadingCard() {
   );
 }
 
-function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) {
+/*
+  DURUM ŞABLONU (`components/flow` `StateBody`): maskot durumu söylüyor
+  (giriş = el sallayan, hata = üzgün), tek cümle, tek birincil çıkış + metin
+  bağlantısı. Mobil `GameScreen` `auth`/`error` dallarıyla aynı yerleşim;
+  metinler webin üç ayrı sebebini (oturum, sunucu, bağlantı) koruyor.
+*/
+function ErrorCard({ kind, onRetry, onClose }: { kind: ErrorKind; onRetry: () => void; onClose: () => void }) {
   const t = useT();
   const content = {
-    auth: {
-      title: t("session.expired"),
-      body: t("session.expired_sub"),
-      action: (
-        <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-4">
-          {t("auth.sign_in")}
-        </Link>
-      ),
-    },
-    db: {
-      title: t("session.load_failed"),
-      body: t("session.load_failed_sub"),
-      action: (
-        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-4">
-          <RefreshIcon size={18} /> {t("common.try_again")}
-        </button>
-      ),
-    },
-    network: {
-      title: t("session.offline"),
-      body: t("session.offline_sub"),
-      action: (
-        <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-4">
-          <RefreshIcon size={18} /> {t("common.try_again")}
-        </button>
-      ),
-    },
+    auth: { mood: "wave" as const, title: t("session.expired"), body: t("session.expired_sub") },
+    db: { mood: "sad" as const, title: t("session.load_failed"), body: t("session.load_failed_sub") },
+    network: { mood: "sad" as const, title: t("session.offline"), body: t("session.offline_sub") },
   }[kind];
 
   return (
-    <div className="mx-auto w-full max-w-md">
-      {/* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge
-          degilse ekran okuyucu kullanan biri hicbir sey duymuyor. */}
-      <div role="alert" className="card p-4 text-center">
-        <Mascot mood="sad" size={96} className="mx-auto" />
-        <h2 className="mt-1 text-h3">{content.title}</h2>
-        <p className="muted mt-2 text-body">{content.body}</p>
-        {content.action}
-      </div>
-    </div>
+    <FlowColumn>
+      {/* Hata DUYURULUYOR (`alert`): ekranı kaplayan bir hata metni canlı
+          bölge değilse ekran okuyucu kullanan biri hiçbir şey duymuyor. */}
+      <StateBody alert mood={content.mood} title={content.title} body={content.body}>
+        <FlowActions
+          primary={kind === "auth" ? { label: t("auth.sign_in"), href: "/login" } : { label: t("common.try_again"), onClick: onRetry }}
+          tertiary={{ label: t("common.close"), onClick: onClose }}
+        />
+      </StateBody>
+    </FlowColumn>
   );
 }
 
@@ -1060,11 +1044,13 @@ function EmptyCard({
   onlyGame,
   onExtra,
   onMixed,
+  onClose,
 }: {
   meta: SessionPayload["meta"] | undefined;
   onlyGame: PlayableGame | null;
   onExtra: () => void;
   onMixed: () => void;
+  onClose: () => void;
 }) {
   const t = useT();
   // Tek oyun seçiliyken boş dönmesinin sebebi hedefin tamamlanması değil.
@@ -1075,64 +1061,46 @@ function EmptyCard({
   // tamamladın" diye anlatmak kullanıcıyı yanıltırdı.
   if (onlyGame) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mx-auto w-full max-w-md"
-      >
-        {/* Android'in tur sonucu kartı: dikey 28, yatay 16 (`game/rounds`
-            `paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg`).
-            Web 32/32 yazıyordu - ölçekte 32 diye bir basamak yok. */}
-        <div className="card px-4 py-7 text-center">
-          <Mascot mood="think" size={104} className="mx-auto" />
-          <h2 className="mt-1 text-h2">{t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })}</h2>
-          {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
-              çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
-          <p className="muted mt-2 text-body">{t("session.review_only_mode")}</p>
-          <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-4">
-            {t("session.back_to_mixed")}
-          </button>
-        </div>
-      </motion.div>
+      <FlowColumn>
+        <StateBody mood="think" title={t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })} body={t("session.review_only_mode")}>
+          <FlowActions primary={{ label: t("session.back_to_mixed"), onClick: onMixed }} tertiary={{ label: t("common.close"), onClick: onClose }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
 
+  /* Hedef tamam bir durum, sonuç değil ama olumlu: kutlayan maskot. Günün
+     özeti gövdenin ikinci cümlesi — mobil `goal_done` aynı birleşimi yazıyor. */
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="mx-auto w-full max-w-md"
-    >
-      {/* Aynı kart, ikinci hâli — ölçüler yukarıdakiyle aynı gerekçeden. */}
-      <div className="card px-4 py-7 text-center">
-        <Mascot mood="celebrate" size={112} className="mx-auto" />
-        <h2 className="mt-1 text-h2">{t("session.goal_done")}</h2>
-        <p className="muted mt-2 text-body">{t("session.goal_done_sub")}</p>
-        {meta ? (
-          <p className="muted mt-4 text-body">
-            {t("session.today_summary", {
-              reviews: meta.reviewsToday,
-              news: meta.newToday,
-              streak: meta.currentStreak,
-            })}
-          </p>
-        ) : null}
-        <button onClick={onExtra} className="btn btn-primary mt-5 w-full px-5 py-4">
-          {t("session.continue_with_new")}
-        </button>
-      </div>
-    </motion.div>
+    <FlowColumn>
+      <StateBody
+        mood="celebrate"
+        title={t("session.goal_done")}
+        body={
+          meta
+            ? `${t("session.goal_done_sub")} ${t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}`
+            : t("session.goal_done_sub")
+        }
+      >
+        <FlowActions primary={{ label: t("session.continue_with_new"), onClick: onExtra }} tertiary={{ label: t("common.close"), onClick: onClose }} />
+      </StateBody>
+    </FlowColumn>
   );
 }
 
 /**
- * Etap sonu ekranı.
+ * ETAP KARTI — sonuç şablonunun küçük hâli (mobil `GameScreen` `StageCard`).
  *
  * İki işi var. Birincisi turu bitirilebilir kılmak: 20 turluk bir blok
  * kullanıcıyı başlamadan kaçırıyordu, beş tur ise bir oturuşta bitiyor.
  * İkincisi durmayı meşrulaştırmak — "şimdilik yeter" bir vazgeçme değil,
  * sunulan bir seçenek. İlerleme zaten sunucuda; ertesi gün kaldığı yerden
  * devam ediyor.
+ *
+ * BAHİS KURALI ÜÇ SONUÇ SATIRI: anahtar kapalıyken tek satır özet, açılınca
+ * üç olası sonuç ve "önceki XP'lerin güvende". Eski tek cümle bir yanlışta
+ * ne olduğunu hiç söylemiyordu — gizli kuralı olan bir bahis, bahis değil
+ * tuzaktır.
  */
 function StageCard({
   stage,
@@ -1140,6 +1108,7 @@ function StageCard({
   correct,
   total,
   bestCombo,
+  xp,
   remaining,
   wagerResult,
   onContinue,
@@ -1150,6 +1119,8 @@ function StageCard({
   correct: number;
   total: number;
   bestCombo: number;
+  /** Bu etabın istemci tahmini XP'si (doğru 10, yanlış 3) — mobille aynı sayı. */
+  xp: number;
   remaining: number;
   /** Kapanan bahsin puan farkı; bahis oynanmadıysa null. */
   wagerResult: number | null;
@@ -1168,122 +1139,97 @@ function StageCard({
   }, [perfect]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.97 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="relative mx-auto w-full max-w-md"
-    >
-      {/* Kutlama yalnızca etap tertemiz geçtiyse: her etapta patlayan konfeti
-          birkaç turda değersizleşir. */}
-      <Confetti fire={perfect ? stage : 0} count={22} />
+    /* Kutlama yalnızca etap tertemiz geçtiyse: her etapta patlayan konfeti
+       birkaç turda değersizleşir. */
+    <FlowColumn celebrate={perfect}>
+      <ResultHero
+        eyebrow={t("stage.counter", { n: stage, total: stages })}
+        title={t(perfect ? "stage.clean" : "stage.done")}
+        sub={`${correct}/${total}`}
+        mood={perfect ? "celebrate" : "happy"}
+        segments={{ done: stage, total: stages }}
+      />
+      <StatRow
+        items={[
+          { value: `${correct}/${total}`, label: t("stage.this_stage") },
+          { value: bestCombo > 0 ? String(bestCombo) : "—", label: t("stage.best_streak") },
+          { value: `+${xp}`, label: "XP" },
+        ]}
+      />
+      {/* Kapanan bahsin sonucu: kazanılan, berabere ve yanan üç hâl de açık.
+          Sessizce eklenen/eksilen puan bahsi gürültüye çevirirdi. */}
+      {wagerResult !== null ? <WagerNote delta={wagerResult} /> : null}
 
-      <div role="status" className="card overflow-hidden">
-        <div className="brand-gradient-deep px-6 py-5 text-center text-white">
-          <motion.div
-            initial={{ scale: 0.6, y: 10, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 250, damping: 16 }}
-            className="mx-auto w-fit"
+      <button
+        type="button"
+        role="switch"
+        aria-checked={bet}
+        onClick={() => {
+          setBet((b) => !b);
+          vibrate("tap");
+        }}
+        className="flex w-full flex-col gap-2 rounded-card p-3 text-left transition-colors"
+        style={{
+          background: bet ? "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" : "var(--surface)",
+          boxShadow: `inset 0 0 0 1.5px ${bet ? "var(--color-flame)" : "var(--hairline)"}`,
+        }}
+      >
+        <span className="flex w-full items-center gap-3">
+          <span className="min-w-0 flex-1">
+            <span className="block text-strong">{t("wager.next_stage")}</span>
+            <span className="muted block text-caption">{t("wager.rules")}</span>
+          </span>
+          <span
+            className="flex h-[22px] w-10 shrink-0 items-center rounded-full p-0.5 transition-colors"
+            style={{ background: bet ? "var(--color-flame)" : "var(--border)" }}
           >
-            <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
-          </motion.div>
-          <p className="mt-1 text-body opacity-90">{t("stage.counter", { n: stage, total: stages })}</p>
-          <h2 className="mt-0.5 text-h2">
-            {perfect ? t("stage.clean") : t("stage.done")}
-          </h2>
-          <div className="mt-3 flex items-center justify-center gap-1.5">
-            {Array.from({ length: stages }, (_, i) => (
-              <span
-                key={i}
-                className="h-1.5 rounded-full transition-all"
-                style={{
-                  width: i < stage ? 22 : 10,
-                  background: i < stage ? "#fff" : "rgba(255,255,255,0.35)",
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
-          <Stat label={t("stage.this_stage")} value={`${correct}/${total}`} />
-          <Stat label={t("stage.best_streak")} value={bestCombo > 0 ? `${bestCombo}` : "—"} />
-        </div>
-
-        {/* Kapanan bahsin sonucu. Üç hâl var ve üçü de açıkça söyleniyor:
-            kazanılan, boşa giden ve yanan. Sessizce eklenen/eksilen puan,
-            bahsi bir mekanik olmaktan çıkarıp gürültüye çevirirdi. */}
-        {wagerResult !== null ? (
-          <div
-            className="px-6 pt-4 text-center text-strong"
-            style={{
-              color:
-                wagerResult > 0
-                  ? "var(--color-mint)"
-                  : wagerResult < 0
-                    ? "var(--color-flame)"
-                    : "var(--text-muted)",
-            }}
-          >
-            {wagerResult > 0
-              ? t("stage.wager_won", { xp: wagerResult })
-              : wagerResult < 0
-                ? t("stage.wager_lost", { xp: wagerResult })
-                : t("wager.even")}
-          </div>
+            <motion.span
+              layout
+              transition={{ type: "spring", stiffness: 500, damping: 32 }}
+              className="h-[18px] w-[18px] rounded-full bg-white"
+              style={{ marginLeft: bet ? "auto" : 0 }}
+            />
+          </span>
+        </span>
+        {bet ? (
+          <span className="flex w-full flex-col gap-1.5 border-t pt-2" style={{ borderColor: "var(--hairline)" }}>
+            <WagerLine icon={<CheckIcon size={14} style={{ color: "var(--color-mint)" }} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} />
+            <WagerLine icon={<BoltIcon size={14} className="muted" />} text={t("wager.outcome_one")} />
+            <WagerLine icon={<XIcon size={14} style={{ color: "var(--color-rose)" }} />} text={t("wager.outcome_two")} />
+            <span className="muted block text-caption">{t("wager.safe")}</span>
+          </span>
         ) : null}
+      </button>
 
-        <div className="space-y-2 p-6 pt-4">
-          {/* Bahis anahtarı: kapalıysa oyun hiç değişmiyor. Açık olduğunda
-              ne kazanılacağı ve ne kaybedileceği aynı cümlede yazıyor —
-              gizli kuralı olan bir bahis, bahis değil tuzaktır. */}
-          <button
-            type="button"
-            onClick={() => {
-              setBet((b) => !b);
-              vibrate("tap");
-            }}
-            aria-pressed={bet}
-            className="flex w-full items-center gap-3 rounded-panel px-3.5 py-3 text-left transition-colors"
-            style={{
-              background: bet
-                ? "color-mix(in srgb, var(--color-flame-500) 14%, transparent)"
-                : "var(--surface-2)",
-              boxShadow: bet ? "inset 0 0 0 1.5px var(--color-flame)" : undefined,
-            }}
-          >
-            <span
-              className="flex h-5 w-9 shrink-0 items-center rounded-full p-0.5 transition-colors"
-              style={{ background: bet ? "var(--color-flame)" : "var(--border)" }}
-            >
-              <motion.span
-                layout
-                transition={{ type: "spring", stiffness: 500, damping: 32 }}
-                className="h-4 w-4 rounded-full bg-white"
-                style={{ marginLeft: bet ? "auto" : 0 }}
-              />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-strong">{t("wager.next_stage")}</span>
-              <span className="muted block text-caption">{t("wager.rules")}</span>
-            </span>
-          </button>
-
-          <button
-            onClick={() => onContinue(bet)}
-            className="btn btn-primary w-full px-5 py-4 text-h3"
-          >
-            {t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}
-          </button>
-          <button onClick={onStop} className="btn btn-ghost w-full px-5 py-3">
-            {t("stage.enough")}
-          </button>
-          <p className="muted pt-1 text-center text-caption">
-            {t("stage.stop_note")}
-          </p>
-        </div>
+      <div className="flex flex-col gap-1">
+        <FlowActions
+          primary={{ label: t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining }), onClick: () => onContinue(bet) }}
+          tertiary={{ label: t("stage.enough"), onClick: onStop }}
+        />
+        <p className="muted text-center text-micro">{t("stage.stop_note")}</p>
       </div>
-    </motion.div>
+    </FlowColumn>
+  );
+}
+
+function WagerLine({ icon, text }: { icon: ReactNode; text: string }) {
+  return (
+    <span className="flex items-center gap-2 text-caption">
+      {icon}
+      <span>{text}</span>
+    </span>
+  );
+}
+
+/** Bahsin sonucu tek satır — etap kartında ve özette aynı biçim. */
+function WagerNote({ delta }: { delta: number }) {
+  const t = useT();
+  return (
+    <FlowNote
+      tone={delta > 0 ? "ok" : delta < 0 ? "warn" : "neutral"}
+      icon={<BoltIcon size={16} />}
+      text={delta > 0 ? t("stage.wager_won", { xp: delta }) : delta < 0 ? t("stage.wager_lost", { xp: delta }) : t("wager.even")}
+    />
   );
 }
 
@@ -1295,6 +1241,9 @@ function SummaryCard({
   level,
   partial,
   targeted,
+  onlyGame,
+  wagerResult,
+  saveWarning,
   onContinue,
   onChallenge,
   onFinish,
@@ -1307,8 +1256,13 @@ function SummaryCard({
   level: string;
   /** Tur bitmeden bırakıldıysa özet "tamamlandı" demiyor. */
   partial?: boolean;
-  /** Hedefli tur (zayıf nokta): Erdi baş parmak + koç cümlesi (WP-66). */
+  /** Hedefli tur (zayıf nokta): Erdi bandda değil, altında konuşuyor (WP-66). */
   targeted?: boolean;
+  /** Tek oyunlu tur: bandın üst satırı pratiğin adı. */
+  onlyGame: PlayableGame | null;
+  /** Kapanan son bahsin farkı (etap kartıyla aynı değişken). */
+  wagerResult: number | null;
+  saveWarning: null | "queued" | "dropped";
   onContinue: () => void;
   onChallenge: () => void;
   /** Özet ekranından çıkış — turdan sonra Öğren merkezine dönüş. */
@@ -1316,13 +1270,14 @@ function SummaryCard({
 }) {
   const t = useT();
   const lang = useLang();
-  const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
+  const total = tally.total;
+  const accuracy = total ? Math.round((tally.correct / total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
   const mastered = result?.newlyMastered ?? 0;
   // Konfeti yalnızca gerçekten iyi bir tur sonunda: her seferinde patlarsa
   // değersizleşir. Kelime pekiştirmek de kutlanmayı hak eder — o, oturum
   // doğruluğunun aksine gerçekten kazanılmış bir şey.
-  const deserved = mastered > 0 || (accuracy >= 80 && tally.total >= 4);
+  const deserved = mastered > 0 || (accuracy >= 80 && total >= 4);
 
   // Oturumun kapanış sesi. Hak edilmiş turda yükselen ezgi, sıradan turda
   // yumuşak bir kadans — ikisi de "bitti" diyor ama aynı tonda değil.
@@ -1330,274 +1285,115 @@ function SummaryCard({
     play(deserved ? "perfect" : "finish");
   }, [deserved]);
 
+  /*
+    SONUÇ ŞABLONU (`components/flow`): band → üç sayı → notlar → ayrıntı
+    kartları → düğmeler; mobil `GameScreen` `done` ile aynı alanlar, aynı
+    sıra. Eskiden maskot, halka, başlık, XP, sayılar ve beş ayrı renkli kutu
+    aynı ağırlıkta alt alta diziliyordu. Halka kalktı: bandın ana sayısı
+    (doğru/toplam) aynı bilgiyi veriyor.
+  */
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="relative mx-auto w-full max-w-md"
-    >
-      <Confetti fire={deserved ? 1 : 0} />
+    <FlowColumn celebrate={deserved}>
+      {/* PAYLAŞ İKİNCİL: mobilde üst çubuğun sağında. Düğme grubunun içinde
+          dururken "bitir"i aşağı itiyor ve ekranın asıl kararı (devam mı,
+          bitir mi) dört düğmeye bölünüyordu. */}
+      {total > 0 ? (
+        <div className="flex justify-end">
+          <div className="w-fit">
+            <ShareResult marks={marks} total={total} accuracy={accuracy} streak={result?.currentStreak ?? 0} level={level} />
+          </div>
+        </div>
+      ) : null}
+      <ResultHero
+        eyebrow={onlyGame ? t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) }) : t("flow.round")}
+        title={t(total ? (partial ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
+        figure={total ? `${tally.correct}/${total}` : null}
+        sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
+        /* Turun nasıl geçtiğini Erdi'nin hâli söylüyor: hak edilmiş turda
+           kutluyor, iyi turda gülümsüyor, kötü turda üzülüyor. */
+        mood={targeted && total > 0 ? null : total > 0 ? (deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad") : "idle"}
+      />
+      {targeted && total > 0 ? <CoachBubble moment="weak_done" mood={accuracy >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
+      {total > 0 ? (
+        <StatRow
+          items={[
+            { value: formatPercent(accuracy, lang), label: t("summary.accuracy") },
+            { value: String(total), label: t("summary.words") },
+            { value: t("profile.days", { n: result?.currentStreak ?? 0 }), label: t("summary.streak") },
+          ]}
+        />
+      ) : null}
 
-      {/*
-        Kartın bölümleri ardı ardına açılıyor, hepsi bir anda değil. Yedi
-        bölümün aynı anda belirmesi tek bir blok gibi okunuyordu; hangisinin
-        ne olduğu ancak durup bakınca ayrılıyordu. Sıra okunma sırasıyla
-        aynı: önce Erdi ve kazanılan XP, sonra sayılar, sonra ayrıntı.
-      */}
-      <Stagger role="status" className="card overflow-hidden">
-        <div className="brand-gradient-deep p-8 text-center text-white">
-          {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
-              hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda
-              üzülüyor. Aynı bilgi bir cümleyle de yazılabilirdi ama okunması
-              gereken bir cümle olurdu; ifade bir bakışta anlaşılıyor. */}
-          <motion.div
-            initial={{ scale: 0.6, y: 14, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 240, damping: 15 }}
-            className="mx-auto w-fit"
-          >
-            {targeted ? (
-              <CoachBubble
-                moment="weak_done"
-                mood={accuracy >= 60 ? "thumbsup" : "sad"}
-                size={72}
-                tone="dark"
-                className="mx-auto w-fit text-left"
-              />
-            ) : (
-              <Mascot mood={deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad"} size={92} />
-            )}
-          </motion.div>
-          {/*
-            SONUÇ HALKASI. Android tur özetinin ortasında halkayı gösteriyor ve
-            halkanın doluluğu turun kendisi: kaç soru, kaçı doğru. Webde bu
-            yoktu - aynı bilgi yalnız aşağıdaki karoların içinde bir sayı
-            olarak duruyordu ve tur "nasıl geçti" sorusu bir bakışta
-            cevaplanmıyordu. İç daire başlığın zemininde, yani halka bir şerit
-            gibi okunuyor.
-          */}
-          {tally.total > 0 ? (
-            <ScoreRing
-              id="round-accuracy"
-              size={150}
-              stroke={14}
-              pct={accuracy}
-              /* Halka MARKA GRADYANLI bir kartın içinde: gradyan burada
-                 görünmez, beyaz görünür. Android'in aynı halkası sayfa
-                 zemininde durduğu için orada marka gradyanı kullanılıyor. */
-              from="#fff"
-              to="#fff"
-              track="rgb(255 255 255 / 0.28)"
-              className="mx-auto mt-3"
-            >
-              <span className="text-h2 tabular-nums">
-                {tally.correct}/{tally.total}
-              </span>
-              <span className="text-micro opacity-80">{t("game.correct")}</span>
-            </ScoreRing>
-          ) : null}
-          {/* BASLIK ORTAK ANAHTARDAN. Web `summary.round_done` ("Tur
-              tamamlandi"), Android `common.round_done` ("Tur bitti!") diyordu:
-              ayni ekran iki farkli cumle yaziyordu ve anahtar webde yalniz
-              webde duruyordu. Ortak olan kullaniliyor; "buraya kadar" dali da
-              ortak kumeye tasindi, cunku Android'in de erken durdurma yolu
-              var (`stage.enough`). */}
-          <h2 className="mt-2 text-h1">
-            {partial ? t("summary.stopped") : t("common.round_done")}
-          </h2>
-          <p className="mt-1 text-body opacity-90">
-            +<CountUp value={xp} /> XP
+      {/* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */}
+      {mastered > 0 ? <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
+      {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı gösterilmeden
+          tur bittiği için başka söylenecek yer yok. */}
+      {wagerResult !== null ? <WagerNote delta={wagerResult} /> : null}
+      {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart: sessiz
+          bir onarım ekrandaki sayıyı açıklanamaz hâle getirir. */}
+      {result?.streakRepaired ? (
+        <FlowNote tone="warn" icon={<FlameIcon size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: result.currentStreak })}`} />
+      ) : null}
+      {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
+      {saveWarning ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+
+      {/* ZORLANDIKLARIN — en çok altı satır; gerisi "Kelimelerim"de. Kelime
+          listesinin girişi burası: merakın doğduğu an tam bu ekran. */}
+      {missed.length ? (
+        <DetailCard
+          title={t("session.missed_title", { n: missed.length })}
+          right={
+            <Link href="/words?status=learning" prefetch={false} className="text-caption font-extrabold underline-offset-2 hover:underline" style={{ color: "var(--color-brand)" }}>
+              {t("words.my_words")}
+            </Link>
+          }
+        >
+          {missed.slice(0, 6).map((w) => (
+            <DetailRow key={w.id} left={w.de} right={w.tr} lang="de" />
+          ))}
+          {missed.length > 6 ? <p className="muted text-caption">{t("session.n_more_words", { n: missed.length - 6 })}</p> : null}
+          <p className="muted text-caption">
+            {result && result.dueTomorrow > 0 ? t("sessionw.due_tomorrow", { n: result.dueTomorrow }) : t("session.missed_note")}
           </p>
-        </div>
+        </DetailCard>
+      ) : result && result.dueTomorrow > 0 ? (
+        /* Ertesi güne dair somut bir sayı: yarın uygulamayı açmak için sebep. */
+        <FlowNote icon={<RefreshIcon size={16} className="muted" />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
+      ) : null}
 
-        <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
-          {/* İki değer de KODA GÖMÜLÜ Türkçe yazıyordu: yüzde "%85" biçiminde
-              (Almanca "85 %", İngilizce "85%" ister) ve seri "5g" - "g" gün
-              demek, yani Almanca ve İngilizce arayüzde anlamsız bir harf.
-              İkisi de sözlükteki ortak biçimlere alındı; Android ikisini de
-              baştan beri sözlükten alıyor (`formatPercent`, `profile.days`). */}
-          <Stat label={t("summary.accuracy")} value={formatPercent(accuracy, lang)} />
-          <Stat label={t("summary.words")} value={String(tally.total)} />
-          <Stat label={t("summary.streak")} value={t("profile.days", { n: result?.currentStreak ?? 0 })} />
-        </div>
-
-        {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı
-            gösterilmeden tur bittiği için başka söylenecek yer yok. */}
-        {result?.wagerXp ? (
-          <div
-            className="border-b px-6 py-2.5 text-center text-strong"
-            style={{
-              borderColor: "var(--border)",
-              color: result.wagerXp > 0 ? "var(--color-mint)" : "var(--color-flame)",
-            }}
-          >
-            {result.wagerXp > 0
-              ? t("session.wager_won", { xp: result.wagerXp })
-              : t("session.wager_lost", { xp: result.wagerXp })}
+      {result && result.dailyGoal > 0 ? (
+        <DetailCard
+          title={t("learn.daily_goal")}
+          right={result.goalReached ? <span className="text-caption font-extrabold" style={{ color: "var(--color-mint)" }}>{t("session.goal_reached")}</span> : null}
+        >
+          <div className="h-2 w-full overflow-hidden rounded-full surface-2">
+            <motion.div
+              className="h-full rounded-full"
+              style={{ background: "var(--color-mint)" }}
+              initial={{ width: 0 }}
+              animate={{ width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%` }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 160, damping: 24 }}
+            />
           </div>
-        ) : null}
-
-        {result ? (
-          <div className="px-6 pb-2">
-            <div className="mb-2 flex items-center justify-between text-caption">
-              <span className="muted">{t("learn.daily_goal")}</span>
-              <span className="muted">
-                {result.reviewsToday} / {result.dailyGoal}
-              </span>
-            </div>
-            <div className="h-2 w-full overflow-hidden rounded-full surface-2">
-              <motion.div
-                className="h-full rounded-full"
-                style={{ background: "var(--color-mint)" }}
-                initial={{ width: 0 }}
-                animate={{
-                  width: `${Math.min(100, (result.reviewsToday / result.dailyGoal) * 100)}%`,
-                }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 160, damping: 24 }}
-              />
-            </div>
-            {result.goalReached ? (
-              <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-strong text-[color:var(--color-mint)]">
-                <FlameIcon size={16} /> {t("session.goal_reached")}
-              </p>
-            ) : null}
-          </div>
-        ) : null}
-
-        {/* Seviye rozeti yerine gerçekten kazanılmış olan şey: pekişen kelime.
-            Bu ölçü yalnızca ileri gider, kimseyi geri düşürmez. */}
-        {mastered > 0 ? (
-          <div
-            className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
-          >
-            <p className="text-strong" style={{ color: "var(--color-mint)" }}>
-              {t("sessionw.n_mastered", { n: mastered })}
-            </p>
-
-          </div>
-        ) : null}
-
-        {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart:
-            sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
-            açıklanamaz hâle getirir. */}
-        {result?.streakRepaired ? (
-          <div
-            className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
-            style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)" }}
-          >
-            <p
-              className="flex items-center justify-center gap-1.5 text-strong"
-              style={{ color: "var(--color-flame)" }}
-            >
-              <FlameIcon size={16} /> {t("game.streak_saved")}
-            </p>
-            <p className="muted mt-1 text-caption">{t("game.streak_saved_sub", { n: result.currentStreak })}</p>
-          </div>
-        ) : null}
-
-        {/* Ertesi güne dair somut bir sayı. t("summary.scheduled") doğruydu
-            ama tarihsizdi; kullanıcıya yarın uygulamayı açmak için bir sebep
-            vermiyordu. */}
-        {result && result.dueTomorrow > 0 ? (
-          <p className="px-6 pt-2 text-center text-strong">
-            {t("sessionw.due_tomorrow", { n: result.dueTomorrow })}
+          <p className="muted text-caption tabular-nums">
+            {result.reviewsToday} / {result.dailyGoal}
           </p>
-        ) : null}
+        </DetailCard>
+      ) : null}
 
-        {missed.length ? (
-          <div className="px-6 pt-4">
-            {/* Başlık KODA GÖMÜLÜ Türkçeydi: Almanca ve İngilizce arayüzde de
-                "Zorlandıkların" yazıyordu. Sözlüğe alındı ve Android de aynı
-                anahtarı kullanıyor. */}
-            <p className="muted mb-2 text-micro uppercase tracking-eyebrow">
-              {t("session.missed_title", { n: missed.length })}
-            </p>
-            <ul className="space-y-1.5">
-              {missed.slice(0, 6).map((w) => (
-                <li
-                  key={w.id}
-                  className="flex items-baseline justify-between gap-3 rounded-panel px-3 py-2 text-body surface-2"
-                >
-                  <span className="font-semibold">{w.de}</span>
-                  <span className="muted min-w-0 text-right">
-                    <span className="block truncate">{w.tr}</span>
-                    {w.en ? (
-                      <span className="block truncate text-caption opacity-70" lang="en">
-                        {w.en}
-                      </span>
-                    ) : null}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {missed.length > 6 ? (
-              <p className="muted mt-2 text-center text-caption">{t("session.n_more_words", { n: missed.length - 6 })}</p>
-            ) : null}
-            {/*
-              Kelime listesinin GİRİŞİ burası.
+      {/* Hatırlatma izni tam burada isteniyor: tur bitti, XP göründü, seri
+          ekranda duruyor. Girişte sorulan izin reddedilir ve tarayıcıda
+          kalıcı olarak kapanır — ikinci şans yok. Mobilde izin ayrı bir
+          hazırlık ekranından isteniyor (`NotifPrimeScreen`). */}
+      <PushOptIn streak={result?.currentStreak ?? 0} />
 
-              t("profile.my_words") alt sekmeden çıktı çünkü bir hedef değil bir sonuç:
-              kimse "kelime listeme bakayım" diye uygulamayı açmıyor, tura girip
-              zorlandığı kelimeyi merak ettiğinde bakıyor. Merakın doğduğu an tam
-              olarak bu ekran — bağlantı da o yüzden burada.
-            */}
-            <p className="muted mt-2 text-center text-caption">
-              {t("session.missed_note")}{" "}
-              <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
-                {t("words.my_words")}
-              </Link>
-            </p>
-          </div>
-        ) : null}
-
-        {/* Hatırlatma izni tam burada isteniyor: tur bitti, XP göründü, seri
-            ekranda duruyor. Girişte sorulan izin reddedilir ve tarayıcıda
-            kalıcı olarak kapanır — ikinci şans yok. */}
-        <PushOptIn streak={result?.currentStreak ?? 0} />
-
-        <div className="space-y-2 p-6 pt-4">
-          <button onClick={onContinue} className="btn btn-primary w-full px-5 py-4">
-            {partial ? t("summary.back_to_round") : t("game.continue")}
-          </button>
-          <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
-            {t("challenge.title")}
-          </button>
-          <ShareResult
-            marks={marks}
-            total={tally.total}
-            accuracy={accuracy}
-            streak={result?.currentStreak ?? 0}
-            level={level}
-          />
-          {/* KAPANIŞ — özetin üç düğmesi de yeni bir şey BAŞLATIYORDU (yeni
-              tur, hayatta kalma, paylaş) ve tur ekranında sekme çubuğu yok:
-              özetten Öğren'e dönmenin hiçbir yolu kalmıyordu. Mobilde bu
-              düğme baştan beri var (`GameScreen`: t("common.finish")).
-              EN ALTTA: paylaşmak da yeni bir şey başlatıyor ve çıkış
-              düğmesinin ALTINDA duruyordu — çıkışı grubun sonuna aldım, iki
-              platformda da sıra aynı (devam · hayatta kalma · paylaş · bitir). */}
-          <button onClick={onFinish} className="btn btn-ghost w-full px-5 py-3">
-            {t("common.finish")}
-          </button>
-        </div>
-      </Stagger>
-    </motion.div>
-  );
-}
-
-/**
- * Bölüm başlığı — kartın neyi topladığını söyleyen tek satır.
- *
- * Başlangıç ekranında altı kart alt alta duruyordu ve hepsi aynı ağırlıktaydı;
- * hangisinin bugüne özel bir olay, hangisinin her zaman orada duran bir ayar
- * olduğu okunmuyordu. Başlık o ayrımı kuruyor.
- */
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="px-2 py-4 text-center">
-      <div className="text-h2">{value}</div>
-      <div className="muted text-caption">{label}</div>
-    </div>
+      <FlowActions
+        primary={{ label: t(partial ? "summary.back_to_round" : "game.continue"), onClick: onContinue }}
+        /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti). */
+        secondary={{ label: t("challenge.title"), icon: <FlameIcon size={18} style={{ color: "var(--color-rose)" }} />, onClick: onChallenge }}
+        /* KAPANIŞ — turda sekme çubuğu yok; özetten Öğren'e dönmenin yolu bu. */
+        tertiary={{ label: t("common.finish"), onClick: onFinish }}
+      />
+    </FlowColumn>
   );
 }

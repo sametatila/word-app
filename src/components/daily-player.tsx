@@ -8,17 +8,15 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
-import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { TIER_COLOR } from "@/components/achievement-badge";
 import { track } from "@/lib/track";
 import { ShareResult } from "@/components/share-result";
-import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
+import { ClockIcon, LockIcon, PodiumIcon, SparkIcon } from "@/components/icons";
+import { CoverBody, DetailCard, FlowActions, FlowColumn, ResultHero, StateBody, StatRow } from "@/components/flow";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
-import Link from "next/link";
 
 /**
  * Günün turu.
@@ -71,6 +69,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const marks = useRef<boolean[]>([]);
   const startedAt = useRef(Date.now());
   const sent = useRef(false);
+  /* Sonuç BU OTURUMDA mı bitti, yoksa bugün oynanmış tur yeniden mi
+     açıldı. Konfeti yalnız ilkinde: aynı sonucu her açışta kutlamak
+     kutlamayı değersizleştirir. */
+  const justFinished = useRef(false);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
@@ -96,6 +98,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       // yavaşsa kullanıcı düğmeye iki kez basabiliyor.
       if (sent.current) return;
       sent.current = true;
+      justFinished.current = true;
       /* GÖNDERİLİRKEN ekranda bir şey olmalı: son tur donmuş hâlde duruyordu
          ve ağ yavaşsa kullanıcı düğmenin işe yaramadığını sanıyordu. Android
          aynı anda yükleme iskeletini gösteriyor (`DailyScreen` `submitting`). */
@@ -165,94 +168,88 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     );
   }
 
+  /* DURUM ŞABLONU (`components/flow` `StateBody`): giriş = el sallayan
+     maskot, hata = üzgün, boş = düşünen; tek birincil çıkış + metin
+     bağlantısı. Mobil `DailyScreen` aynı üç dalı aynı biçimde çiziyor. */
   if (status === "auth") {
     return (
-      <Card>
-        <div role="alert" className="p-6 text-center">
-          <p className="text-h3">{t("daily.sign_in_for_daily_round")}</p>
-          <p className="muted mt-2 text-body leading-relaxed">{t("daily.play_same_round_as_everyone_and")}</p>
-          <Link href="/login" prefetch={false} className="btn btn-primary mt-5 w-full px-5 py-4">
-            {t("daily.sign_in_sign_up")}
-          </Link>
-          <button type="button" onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            {t("common.close")}
-          </button>
-        </div>
-      </Card>
+      <FlowColumn>
+        <StateBody alert mood="wave" title={t("daily.sign_in_for_daily_round")} body={t("daily.play_same_round_as_everyone_and")}>
+          <FlowActions primary={{ label: t("daily.sign_in_sign_up"), href: "/login" }} tertiary={{ label: t("common.close"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
 
   if (status === "error") {
     return (
-      <Card>
-        <div role="alert" className="p-6 text-center">
-          <AlertIcon size={22} />
-          <p className="mt-2 text-strong">{t("daily.couldn_t_load_daily_round")}</p>
-          {/* YERİNDE TEKRAR DENEME. Web yalnız "geri dön" diyordu: geçici bir
-              ağ hatası kullanıcıyı ekrandan çıkarıp geri getirmeye zorluyordu.
-              Android birincil düğme olarak tekrar denetiyor, çıkış ikincil. */}
-          <button
-            type="button"
-            onClick={() => setAttempt((n) => n + 1)}
-            className="btn btn-primary mt-4 w-full px-5 py-2.5 text-body"
-          >
-            {t("daily.try_again")}
-          </button>
-          <button onClick={onExit} className="btn btn-ghost mt-2 px-5 py-2.5 text-body">
-            {t("common.close")}
-          </button>
-        </div>
-      </Card>
+      <FlowColumn>
+        {/* YERİNDE TEKRAR DENEME: geçici bir ağ hatası kullanıcıyı ekrandan
+            çıkarıp geri getirmeye zorlamasın. */}
+        <StateBody alert mood="sad" title={t("daily.couldn_t_load_daily_round")}>
+          <FlowActions primary={{ label: t("daily.try_again"), onClick: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.close"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
 
   if (status === "empty") {
     return (
-      <Card>
-        <div className="p-6 text-center">
-          <p className="text-strong">{t("daily.none_title")}</p>
-          <p className="muted mt-1 text-caption">{t("daily.none_sub")}</p>
-          <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-body">
-            {t("common.go_back")}
-          </button>
-        </div>
-      </Card>
+      <FlowColumn>
+        <StateBody mood="think" title={t("daily.none_title")} body={t("daily.none_sub")}>
+          <FlowActions primary={{ label: t("common.back_to_learn"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
 
   if (status === "ready" && data) {
+    /*
+     * KAPAK ŞABLONU: ikon karosu · başlık · tek cümle · kural satırları.
+     * Eski tanıtım tek cümlede "·" ile üç kuralı sıralıyordu; kurallar artık
+     * ayrı ve ikonlu. "Hız puana eklenir" `lib/daily-score` `scoreAnswer`dan:
+     * doğru cevaba 2-8 sn arasında azalan hız bonusu biniyor.
+     *
+     * DÜĞMELER TABLODAN ÖNCE (bilinçli fark): mobilde düğmeler ekranın dibine
+     * sabit, burada sayfa akıyor — tablo üstte kalsa "Başla" katlamanın
+     * altına düşerdi.
+     */
     return (
-      <Card>
-        <div className="brand-gradient-deep px-6 py-6 text-center text-white">
-          <p className="text-body opacity-90">{t("daily.daily_round")} · {data.level}</p>
-          <h2 className="mt-1 text-h1">{t("daily.same_words")}</h2>
-          <p className="mx-auto mt-2 max-w-xs text-body opacity-90">
-            {t("daily.pitch", { n: data.rounds.length })}
-          </p>
-        </div>
-        <div className="space-y-2 p-6">
-          <button
-            onClick={() => {
+      <FlowColumn>
+        <CoverBody
+          icon={<PodiumIcon size={28} />}
+          tint="var(--color-sky-500)"
+          eyebrow={t("daily.daily_round")}
+          title={t("daily.same_words")}
+          pitch={t("daily.cover_pitch", { n: data.rounds.length })}
+          rules={[
+            { icon: <LockIcon size={16} />, text: t("daily.rule_once") },
+            { icon: <ClockIcon size={16} />, text: t("daily.rule_speed") },
+            { icon: <PodiumIcon size={16} />, text: t("daily.rule_board", { level: data.level }), tone: "ok" },
+          ]}
+        />
+        <FlowActions
+          primary={{
+            label: t("common.start"),
+            onClick: () => {
               startedAt.current = Date.now();
-              /* Günün turu ÖLÇÜLÜYOR. Mobil `DailyScreen` baştan beri
-                 `session_start`/`session_done` yazıyor ve `kind`i "daily"
-                 veriyor; web hiçbir olay yazmıyordu, yani günün turu
-                 raporlarda yalnız Android tarafından görünüyordu. Ayrı bir
-                 `daily_play` olayı YOK: ölçüm zaten `kind` ile ayrışıyor
-                 (bkz. web-parity §11.28). */
+              /* Günün turu ÖLÇÜLÜYOR: `session_start`, kind "daily" — mobil
+                 `DailyScreen` ile aynı (bkz. web-parity §11.28). */
               track("session_start", 0, "daily");
               setStatus("playing");
-            }}
-            className="btn btn-primary w-full px-5 py-4 text-h3"
-          >
-            {t("common.start")}
-          </button>
-          <button onClick={onExit} className="btn btn-ghost w-full px-5 py-3">
-            {t("common.later")}
-          </button>
-        </div>
-        {board.length > 1 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
-      </Card>
+            },
+          }}
+          tertiary={{ label: t("common.later"), onClick: onExit }}
+        />
+        {/* Bugünün tablosu turdan ÖNCE de duruyor: "kime yetişiyorum" sorusu
+            oynamaya iten şeyin kendisi. Tek satırsa (yalnız kendisi) çizilmiyor. */}
+        {board.length > 1 ? (
+          <DetailCard title={`${t("daily.today_s_ranking")} · ${data.level}`}>
+            <p className="muted text-caption">{t("daily.players_at_your_level")}</p>
+            <BoardList rows={board} />
+          </DetailCard>
+        ) : null}
+      </FlowColumn>
     );
   }
 
@@ -320,72 +317,78 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const finalScore = played?.score ?? score;
   const finalCorrect = played?.correct ?? tally.correct;
   const finalTotal = played?.total ?? tally.total;
+  const finalBest = played?.bestCombo ?? bestCombo.current;
+  const level = data?.level ?? "A1";
+  const accuracy = finalTotal ? Math.round((finalCorrect / finalTotal) * 100) : 0;
   const me = board.find((r) => r.isMe);
+  /* Günün turunda geçme/kalma yok; maskot ve kutlama doğruluktan çıkıyor
+     (kelime turunun eşiği: %80 kutlama, %60 mutlu). Eskiden her sonuç —
+     3/20 bile — konfetiyle açılıyordu. */
+  const deserved = finalTotal >= 4 && accuracy >= 80;
 
+  /*
+    SONUÇ ŞABLONU (`components/flow`): band (puan · doğru + XP · sıra hapı)
+    → üç sayı → günün sıralaması → Bitir / Paylaş. Mobil `DailyScreen`
+    `done` ile aynı alanlar, aynı sıra.
+  */
   return (
-    <div className="relative mx-auto w-full max-w-md">
-      <Confetti fire={1} />
-      {/* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */}
-      <div role="status" className="card overflow-hidden">
-        <div className="brand-gradient-deep p-8 text-center text-white">
-          {/* Günün turu da bir kapanış anı: kelime turu, oyun içindeki sonuç
-              şeridi, beceri egzersizi ve ders aynı karakterle kapanıyor.
-              Kupa simgesi bunun dışında kalan tek yerdi. */}
-          <Mascot mood="celebrate" size={88} className="mx-auto" />
-          <h2 className="mt-1 text-h1">
-            <CountUp value={finalScore} /> {t("common.points")}
-          </h2>
-          <p className="mt-1 text-body opacity-90">
-            {t("common.n_correct", { correct: finalCorrect, total: finalTotal })}
-            {me ? ` · ${t("daily.your_rank_today", { rank: me.rank })}` : ""}
-          </p>
-          {/* En iyi seri Android'in sonuç başlığında ayrı bir kutu; web'de
-              yalnız paylaşım görselinin içindeydi, ekranda hiç görünmüyordu —
-              oysa turun asıl anlattığı şey art arda kaç doğru yaptığın. */}
-          <p className="mt-1 flex items-center justify-center gap-1 text-body opacity-90">
-            <FlameIcon size={14} />
-            {bestCombo.current} {t("daily.best_streak")}
-          </p>
-          {xpGained > 0 ? <p className="mt-1 text-body opacity-90">+{xpGained} XP</p> : null}
-        </div>
-
-        {/* Tablo tek satırken de gösteriliyor: "Tabloyu gör" deyip tablo
-            görmemek, düğmenin yalan söylemesi. Seviyesinde ilk oynayan
-            kullanıcı kendi satırını ve neden yalnız olduğunu görüyor. */}
-        {/* BOŞ TABLO da bir şey söylüyor: eskiden hiçbir şey çizilmiyordu ve
-            ekran bozuk görünüyordu. Android aynı koşulda "ilk oynayan sen ol"
-            diyor (`DailyScreen` `Board`). */}
+    <FlowColumn celebrate={deserved && justFinished.current}>
+      {/* TURUN SONUCU DUYURULUYOR: bant canlı bölge (bkz. 11.337). */}
+      <ResultHero
+        eyebrow={t("daily.daily_round")}
+        title={t("daily.your_score")}
+        figure={formatNumber(finalScore, lang)}
+        /* Kazanılan XP yalnız kazanç varsa: yeniden açılan sonuçta sunucu 0 döndürüyor. */
+        sub={
+          xpGained > 0
+            ? `${t("common.n_correct", { correct: finalCorrect, total: finalTotal })} · +${xpGained} XP`
+            : t("common.n_correct", { correct: finalCorrect, total: finalTotal })
+        }
+        mood={deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad"}
+        pill={me ? { text: t("daily.rank_pill", { rank: me.rank }) } : null}
+      />
+      <StatRow
+        items={[
+          { value: `${finalCorrect}/${finalTotal}`, label: t("daily.correct") },
+          { value: String(finalBest), label: t("daily.best_streak"), tone: "streak" },
+          { value: me ? t("daily.rank_value", { rank: me.rank }) : "—", label: t("daily.rank") },
+        ]}
+      />
+      {/* Tablo tek satırken de gösteriliyor ("ilk sensin"); boşken de bir şey
+          söylüyor ("ilk oynayan sen ol") — sessiz tablo bozuk görünür. */}
+      <DetailCard title={`${t("daily.today_s_ranking")} · ${level}`}>
+        <p className="muted text-caption">{t("daily.players_at_your_level")}</p>
         {board.length === 0 ? (
-          <p className="muted px-5 py-3 text-center text-caption">{t("daily.be_first_to_play_today")}</p>
-        ) : null}
-        {board.length > 0 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
-        {board.length === 1 ? (
-          <p className="muted border-t px-5 py-3 text-caption" style={{ borderColor: "var(--border)" }}>
-            {t("daily.first_today")}
-          </p>
-        ) : null}
+          <p className="muted py-2 text-center text-caption">{t("daily.be_first_to_play_today")}</p>
+        ) : (
+          <>
+            {board.length === 1 ? <p className="muted text-micro">{t("daily.first_today")}</p> : null}
+            <BoardList rows={board} />
+          </>
+        )}
+      </DetailCard>
 
-        <div className="space-y-2 p-6">
-          {/* Paylaşılan sonuç burada gerçekten bir şey ifade ediyor: karşı taraf
-              aynı turu oynadıysa skorları doğrudan karşılaştırabiliyor. */}
-          <ShareResult
-            kind="daily"
-            score={finalScore}
-            marks={marks.current}
-            total={finalTotal}
-            accuracy={finalTotal ? Math.round((finalCorrect / finalTotal) * 100) : 0}
-            streak={bestCombo.current}
-            level={data?.level ?? "A1"}
-          />
-          <button onClick={onExit} className="btn btn-primary w-full px-5 py-4">
-            {t("common.back_to_learn")}
-          </button>
-          <p className="muted pt-1 text-center text-caption">
-            {t("daily.once_a_day")}
-          </p>
-        </div>
+      <div className="flex flex-col gap-2">
+        <FlowActions primary={{ label: t("common.finish"), onClick: onExit }} />
+        {/* PAYLAŞ İKİNCİL (çerçeveli): karşı taraf aynı turu oynadıysa skorları
+            doğrudan karşılaştırabiliyor. Düğme kendi bileşeninde (Web Share /
+            panoya kopyalama), çerçeve `FlowActions` ikincilinin ölçüsünde. */}
+        {finalTotal > 0 ? (
+          <div className="rounded-panel border-[1.5px]" style={{ borderColor: "var(--border)" }}>
+            <ShareResult
+              kind="daily"
+              score={finalScore}
+              marks={marks.current}
+              total={finalTotal}
+              accuracy={accuracy}
+              streak={finalBest}
+              level={level}
+            />
+          </div>
+        ) : null}
+        <p className="muted text-center text-micro">{t("daily.once_a_day")}</p>
       </div>
-    </div>
+    </FlowColumn>
   );
 }
 
@@ -403,19 +406,18 @@ function medalColor(rank: number): string | null {
   return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;
 }
 
-function BoardList({ rows, title }: { rows: Board; title: string }) {
+/**
+ * Günün sıralaması — `DetailCard`ın içinde çiziliyor (kapakta önizleme,
+ * sonuçta tablo). Başlık ve "aynı seviyede oynayanlar" notu kartın kendisinde.
+ * Satırlar arasında çizgi yok (kartın içinde kart olurdu); kendi satırı marka
+ * zeminiyle vurgulu — mobil `DailyScreen` `Board` ile aynı.
+ */
+function BoardList({ rows }: { rows: Board }) {
   const t = useT();
   const lang = useLang();
   return (
-    <div className="border-t" style={{ borderColor: "var(--border)" }}>
-      {/* Tablonun seviyeye göre olduğu Android'de altyazıyla söyleniyor;
-          web'de yalnız başlık vardı ve kullanıcı kendini bütün oyuncularla
-          karşılaştırdığını sanıyordu. */}
-      <div className="px-5 pt-2.5 pb-1">
-        <p className="muted text-micro uppercase tracking-eyebrow">{title}</p>
-        <p className="muted text-micro">{t("daily.players_at_your_level")}</p>
-      </div>
-      <ol>
+    <div>
+      <ol className="flex flex-col gap-1">
         {rows.map((r) => {
           /* Baş harf JSX'İN DIŞINDA, Android'de olduğu gibi
              (`DailyScreen`: `const initial = …`). Satırın içinde hesaplanırsa
@@ -425,12 +427,12 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
           return (
           <li
             key={`${r.rank}-${r.name ?? "x"}`}
-            className="flex items-center gap-3 border-t px-5 py-2.5 text-body"
+            className="flex items-center gap-3 rounded-panel px-2 py-2 text-body"
             style={{
-              borderColor: "var(--border)",
               background: r.isMe
                 ? "color-mix(in srgb, var(--color-brand) 8%, transparent)"
                 : undefined,
+              boxShadow: r.isMe ? "inset 0 0 0 1px var(--color-brand)" : undefined,
             }}
           >
             {/*

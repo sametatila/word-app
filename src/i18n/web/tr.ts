@@ -180,7 +180,6 @@ export const trWeb: Record<string, string> = {
   "session.load_failed_sub": "Birkaç saniye sonra tekrar denemek genelde yetiyor.",
   "session.offline": "İnternet bağlantısı yok",
   "session.offline_sub": "Bağlantını kontrol et.",
-  "summary.scheduled": "Tekrar planına alındı",
   /* Oyun adları (web'e özel üçü) ve günlük plan metinleri. Plan sunucuda
      kuruluyor, o yüzden çeviri de orada. */
   "games.intro": "Yeni Kelime",
@@ -686,8 +685,6 @@ export const trWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Cevapladıkların kaydedilir; pratik kaldığı yerden sürmez.",
-  "session.wager_won": "Son etapta bahis tuttu · +{xp} XP",
-  "session.wager_lost": "Son etapta bahis yandı · {xp} XP",
   "placement.section_n": "Bölüm {n}",
   "push.assess_title": "Yazın değerlendirildi",
   "push.assess_body": "Puan {score}/100 — düzeltmelere bak.",

@@ -155,7 +155,6 @@ export const enWeb: Record<string, string> = {
   "session.load_failed_sub": "Trying again in a few seconds usually does it.",
   "session.offline": "No internet connection",
   "session.offline_sub": "Check your connection.",
-  "summary.scheduled": "Added to your review plan",
   /* Oyun adları + plan — bkz. tr.ts notu. */
   "games.intro": "New Word",
   "games.speak": "Say It Aloud",
@@ -639,8 +638,6 @@ export const enWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Your answers are saved; practice does not resume where you left off.",
-  "session.wager_won": "Wager paid off in the last leg · +{xp} XP",
-  "session.wager_lost": "Wager lost in the last leg · {xp} XP",
   "placement.section_n": "Section {n}",
   "push.assess_title": "Your writing has been assessed",
   "push.assess_body": "Score {score}/100 — take a look at the corrections.",

@@ -155,7 +155,6 @@ export const deWeb: Record<string, string> = {
   "session.load_failed_sub": "Es in ein paar Sekunden noch einmal zu versuchen reicht meistens.",
   "session.offline": "Keine Internetverbindung",
   "session.offline_sub": "Prüfe deine Verbindung.",
-  "summary.scheduled": "In deinen Wiederholungsplan aufgenommen",
   /* Oyun adları + plan — bkz. tr.ts notu. */
   "games.intro": "Neues Wort",
   "games.speak": "Laut sprechen",
@@ -639,8 +638,6 @@ export const deWeb: Record<string, string> = {
     bildirimi yalnız webde.
   */
   "game.exit_message_practice": "Deine Antworten werden gespeichert; die Übung wird nicht fortgesetzt.",
-  "session.wager_won": "Einsatz in der letzten Etappe aufgegangen · +{xp} XP",
-  "session.wager_lost": "Einsatz in der letzten Etappe verloren · {xp} XP",
   "placement.section_n": "Abschnitt {n}",
   "push.assess_title": "Dein Text wurde bewertet",
   "push.assess_body": "Punktzahl {score}/100 — sieh dir die Korrekturen an.",

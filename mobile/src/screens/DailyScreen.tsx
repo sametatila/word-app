@@ -1,21 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t, formatNumber } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, FlameIcon, BoltIcon, ShareIcon } from "../ui/icons";
+import { XIcon, FlameIcon, BoltIcon, ShareIcon, PodiumIcon, LockIcon, ClockIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
-import { Celebrate } from "../ui/Celebrate";
+import { FlowScreen, FlowTopBar, FlowActions, ResultHero, StatRow, DetailCard, StateBody, CoverBody } from "../ui/flow";
 import { fetchDaily, submitDaily, scoreAnswer, type DailyBoardRow } from "../game/daily";
 import type { Round } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
+import { useTheme, spacing, radii, TIER_COLOR, fillOf, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { shareRoundResult } from "../lib/share";
@@ -42,32 +42,33 @@ function medalColor(rank: number): string | null {
   return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;
 }
 
+/**
+ * Günün sıralaması — `DetailCard`ın içinde çiziliyor (kapakta önizleme,
+ * sonuçta tablo). Satırın parçaları aynı: madalya/numara, baş harf, ad +
+ * doğru sayısı, puan. Her satır ayrı bir kart değil artık — kartın içinde
+ * kart olurdu; kendi satırı marka zeminiyle vurgulu.
+ */
 function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
-  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>{t("daily.be_first_to_play_today")}</Text>;
+  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", paddingVertical: spacing.sm }}>{t("daily.be_first_to_play_today")}</Text>;
   return (
-    <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
+    <View style={{ gap: spacing.xs }}>
       {/* TEK SATIR: tabloda yalnız kendisi olan kullanıcı "kimse oynamamış"
           sanıyordu. Sebebini söylemek gerekiyor - tablo gün ilerledikçe
           doluyor. Web aynı notu aynı koşulda gösteriyor (`daily-player`). */}
       {rows.length === 1 ? (
-        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.first_today")}</Text>
+        <Text variant="micro" color={colors.textMuted}>{t("daily.first_today")}</Text>
       ) : null}
       {rows.map((r) => {
         const mc = medalColor(r.rank);
         const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
         return (
-          <View key={`${r.rank}-${r.name}`} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 11, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, mc ? softShadow(mc, 4) : {}]}>
+          <View key={`${r.rank}-${r.name}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: spacing.sm, paddingVertical: 8, backgroundColor: r.isMe ? colors.primarySoft : "transparent", borderWidth: 1, borderColor: r.isMe ? colors.primary : "transparent" }}>
             {/*
               İLK ÜÇ DOLU DAİRE, GERİSİ DÜZ NUMARA.
               Numara madalya rengiyle YAZILIYORDU ve açık temada üçü de
               okunmuyordu - ölçüm beyaz kart üstünde altın 2.88, gümüş 2.56,
-              bronz 3.09; normal yazı eşiği 4.5. Hue'yu koruyup koyulaştırmak
-              çözmüyor: okunabilir bir gümüş (#7b746a) madalyasız sıralamanın
-              soluk tonundan (#7c6c5d) ayırt edilemiyor, yani ikinci sıra
-              dördüncüyle aynı görünürdü.
-              Uygulamanın kendi dili dolu zemin + beyaz içerik (seviye rozeti,
-              başarı rozeti) ve o ölçekte üçü de eşiği geçiyor (4.44 / 3.79 /
-              3.62; büyük-kalın yazı ve grafik eşiği 3.0).
+              bronz 3.09; normal yazı eşiği 4.5. Uygulamanın kendi dili dolu
+              zemin + beyaz içerik ve o ölçekte üçü de eşiği geçiyor.
             */}
             <View style={{ width: 26, alignItems: "center" }}>
               {mc ? (
@@ -82,16 +83,12 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               <Text variant="bodyStrong" color={r.isMe ? colors.onPrimary : colors.textMuted}>{initial}</Text>
             </View>
             <View style={{ flex: 1 }}>
-              {/* AD TEK SATIRDA. Görünen ad kırk karaktere kadar olabiliyor ve
-                  sıralama satırında ikinci satıra düşüp satırı büyütüyordu:
-                  madalyalar ve puanlar hizadan çıkıyor, liste dalgalanıyordu.
-                  Web aynı satırda kırpıyor (`daily-player` `min-w-0 truncate`). */}
+              {/* AD TEK SATIRDA: kırk karakterlik ad ikinci satıra düşüp
+                  madalyaları ve puanları hizadan çıkarıyordu. */}
               <Text numberOfLines={1} variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
               <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { correct: r.correct, total: r.total })}</Text>
             </View>
-            {/* Sayi BICIMLEYICIDEN: burada `toLocaleString` dogrudan cagriliyordu,
-                yani ortak `formatNumber`in yuvarlamasini atliyordu. Uygulamada
-                sayi bicimleyen tek yer o (web karsiligi `formatNumber`). */}
+            {/* Sayi BICIMLEYICIDEN (web karsiligi `formatNumber`). */}
             <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatNumber(r.score)}</Text>
           </View>
         );
@@ -135,6 +132,10 @@ export function DailyScreen() {
   const roundStart = useRef(0);
   const startedAt = useRef(0);
   const submitted = useRef(false);
+  /* Sonuç BU OTURUMDA mı bitti, yoksa bugün oynanmış tur yeniden mi
+     açıldı. Konfeti yalnız ilkinde: aynı sonucu her açışta kutlamak
+     kutlamayı değersizleştirir. */
+  const justFinished = useRef(false);
 
   async function load() {
     setPhase("loading");
@@ -203,6 +204,7 @@ export function DailyScreen() {
   async function finish() {
     if (submitted.current) return;
     submitted.current = true;
+    justFinished.current = true;
     setPhase("submitting");
     track("session_done", correctRef.current, "daily");
     if (rounds.length > 0) sfx("finish"); // tamamlanma sesi
@@ -220,128 +222,136 @@ export function DailyScreen() {
 
   if (phase === "loading" || phase === "submitting") return <RoundSkeleton />;
 
+  /* DURUM ŞABLONU (`ui/flow` `StateBody`): giriş = el sallayan maskot,
+     hata = üzgün, boş = düşünen; tek birincil çıkış + metin bağlantısı. */
   if (phase === "auth") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>{t("daily.sign_in_for_daily_round")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("daily.play_same_round_as_everyone_and")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.sign_in_sign_up")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("daily.sign_in_sign_up"), onPress: () => { nav.goBack(); nav.navigate("Auth"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="wave" title={t("daily.sign_in_for_daily_round")} body={t("daily.play_same_round_as_everyone_and")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "ready") {
+    /*
+     * KAPAK ŞABLONU: ikon karosu · başlık · tek cümle · kural satırları.
+     * Eski tanıtım tek cümlede "·" ile üç kuralı sıralıyordu; kurallar artık
+     * ayrı ve ikonlu. "Hız puana eklenir" `scoreAnswer`dan: doğru cevaba
+     * 2-8 sn arasında azalan hız bonusu biniyor, yanlış cevap sıfır.
+     */
     return (
-      <View style={pad}>
-        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingBottom: spacing.xl }}>
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.daily_round")}</Text>
-          <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("daily.pitch", { n: rounds.length })}</Text>
-          <PressableScale
-            onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("playing"); }}
-            style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
-          >
-            <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text></PressableScale>
-          {/* Bugünün tablosu turdan ÖNCE de duruyor: web aynı kartın altında
-              gösteriyor ve "kime yetişiyorum" sorusu oynamaya iten şeyin
-              kendisi. Tek satırsa (yalnız kendisi) çizilmiyor. */}
-          {board.length > 1 ? (
-            <View style={{ marginTop: spacing.xxl }}>
-              <Text variant="h3" style={{ marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
-              <Board rows={board} colors={colors} />
-            </View>
-          ) : null}
-        </ScrollView>
-      </View>
+      <FlowScreen
+        actions={
+          <FlowActions
+            primary={{ label: t("common.start"), onPress: () => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("playing"); } }}
+            tertiary={{ label: t("common.later"), onPress: () => nav.goBack() }}
+          />
+        }
+      >
+        <CoverBody
+          icon={PodiumIcon}
+          tint={fillOf("info")}
+          eyebrow={t("daily.daily_round")}
+          title={t("daily.same_words")}
+          pitch={t("daily.cover_pitch", { n: rounds.length })}
+          rules={[
+            { icon: LockIcon, text: t("daily.rule_once") },
+            { icon: ClockIcon, text: t("daily.rule_speed") },
+            { icon: PodiumIcon, text: t("daily.rule_board", { level: levelRef.current }), tone: "ok" },
+          ]}
+        />
+        {/* Bugünün tablosu turdan ÖNCE de duruyor: "kime yetişiyorum" sorusu
+            oynamaya iten şeyin kendisi. Tek satırsa (yalnız kendisi) çizilmiyor. */}
+        {board.length > 1 ? (
+          <DetailCard title={`${t("daily.today_s_ranking")} · ${levelRef.current}`}>
+            <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
+            <Board rows={board} colors={colors} />
+          </DetailCard>
+        ) : null}
+      </FlowScreen>
     );
   }
 
   if (phase === "empty") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.none_title")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("daily.none_sub")}</Text>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.xl }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.back_to_learn"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="think" title={t("daily.none_title")} body={t("daily.none_sub")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.couldn_t_load_daily_round")}</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.try_again")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("daily.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="sad" title={t("daily.couldn_t_load_daily_round")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "done") {
     const total = totalRef.current;
+    const correct = correctRef.current;
+    const pct = total ? Math.round((correct / total) * 100) : 0;
+    const me = board.find((r) => r.isMe);
+    /* Günün turunda geçme/kalma yok; maskot ve kutlama doğruluktan çıkıyor
+       (kelime turunun eşiği: %80 kutlama, %60 mutlu). Konfeti yalnız bu
+       oturumda biten hak edilmiş turda. Mobil sonuçta maskot hiç yoktu. */
+    const deserved = total >= 4 && pct >= 80;
+    /*
+      SONUÇ ŞABLONU: band (puan · doğru + XP · sıra hapı) → üç sayı → günün
+      sıralaması → Bitir / Paylaş. Sıra bantta hap olarak, tablo altta.
+    */
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <Celebrate show />
-        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-          <Text variant="h2">{t("daily.daily_round")}</Text>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-        </View>
-        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.xl, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 12)]}>
-            <Text variant="micro" color={colors.onPrimaryMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.your_score")}</Text>
-            {/* TURUN SONUCU DUYURULUYOR - web `daily-player` ile ayni yer. */}
-            <Text accessibilityLiveRegion="polite" variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: spacing.xs }}>{formatNumber(scoreRef.current)}</Text>
-            <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
-              <View style={{ alignItems: "center" }}><Text variant="h3" color={colors.onPrimary}>{correctRef.current}/{total}</Text><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.correct")}</Text></View>
-              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>
-            </View>
-            {/* KAZANILAN XP — kahraman kartinin ICINDE, web ile ayni yer
-                (`daily-player`: en iyi serinin hemen altinda) ve ayni kosul:
-                yalniz kazanc varsa yaziliyor. Tekrar acilan sonucta sunucu 0
-                donduruyor ve "+0 XP" yazmak yanlis olurdu. */}
-            {xpGained > 0 ? (
-              <Text variant="body" color={colors.onPrimaryMuted} style={{ marginTop: spacing.sm }}>+{xpGained} XP</Text>
-            ) : null}
+      <FlowScreen
+        celebrate={deserved && justFinished.current}
+        top={<FlowTopBar onClose={() => nav.goBack()} />}
+        actions={
+          <View style={{ gap: spacing.xs }}>
+            <FlowActions
+              primary={{ label: t("common.finish"), onPress: () => nav.goBack() }}
+              /* PAYLASIM: gunun turu tam olarak paylasilmaya deger olan tur,
+                 cunku sorular o seviyedeki HERKESE ayni geliyor. */
+              secondary={total > 0 ? {
+                label: t("common.share"),
+                icon: <ShareIcon color={colors.text} size={18} />,
+                onPress: () => void shareRoundResult({
+                  marks: marksRef.current,
+                  total,
+                  accuracy: pct,
+                  streak: 0,
+                  level: levelRef.current,
+                  kind: "daily",
+                  score: scoreRef.current,
+                }),
+              } : null}
+            />
+            {/* Neden tekrar oynanamadığı: web aynı yerde söylüyor. */}
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.once_a_day")}</Text>
           </View>
-          {/* SIRAN kaç: tablo zaten altta ama "kaçıncıyım" sorusunun cevabı
-              satır satır aranmamalı. Web sonucun hemen altında söylüyor. */}
-          {board.find((r) => r.isMe) ? (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-              {t("daily.your_rank_today", { rank: board.find((r) => r.isMe)!.rank })}
-            </Text>
-          ) : null}
-          {/* Neden tekrar oynanamadığı: web aynı yerde söylüyor. */}
-          <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("daily.once_a_day")}</Text>
-          <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
+        }
+      >
+        {/* TURUN SONUCU DUYURULUYOR - bant canlı bölge (web `daily-player` ile ayni). */}
+        <ResultHero
+          eyebrow={t("daily.daily_round")}
+          title={t("daily.your_score")}
+          figure={formatNumber(scoreRef.current)}
+          /* KAZANILAN XP yalnız kazanç varsa: tekrar açılan sonuçta sunucu 0
+             döndürüyor ve "+0 XP" yazmak yanlış olurdu. */
+          sub={xpGained > 0 ? `${t("common.n_correct", { correct, total })} · +${xpGained} XP` : t("common.n_correct", { correct, total })}
+          mood={deserved ? "celebrate" : pct >= 60 ? "happy" : "sad"}
+          /* SIRAN kaç: "kaçıncıyım" sorusunun cevabı tabloda satır satır aranmamalı. */
+          pill={me ? { text: t("daily.rank_pill", { rank: me.rank }) } : null}
+        />
+        <StatRow items={[
+          { value: `${correct}/${total}`, label: t("daily.correct") },
+          { value: String(bestComboRef.current), label: t("daily.best_streak"), tone: "streak" },
+          { value: me ? t("daily.rank_value", { rank: me.rank }) : "—", label: t("daily.rank") },
+        ]} />
+        <DetailCard title={`${t("daily.today_s_ranking")} · ${levelRef.current}`}>
           <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
           <Board rows={board} colors={colors} />
-          {/* PAYLASIM. Web'in gunun turu sonucunda paylasim var
-              (`daily-player` `ShareResult kind="daily"`), Androidde HIC
-              yoktu: ayni tur bir platformda paylasilabilir, otekinde
-              paylasilamazdi - ve gunun turu tam olarak paylasilmaya deger
-              olan tur, cunku sorular o seviyedeki HERKESE ayni geliyor. */}
-          {totalRef.current > 0 && (
-            <PressableScale
-              onPress={() => void shareRoundResult({
-                marks: marksRef.current,
-                total: totalRef.current,
-                accuracy: totalRef.current ? Math.round((correctRef.current / totalRef.current) * 100) : 0,
-                streak: 0,
-                level: levelRef.current,
-                kind: "daily",
-                score: scoreRef.current,
-              })}
-              style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.xl, borderWidth: 1.5, borderColor: colors.border }}
-            >
-              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
-            </PressableScale>
-          )}
-          <PressableScale onPress={() => nav.goBack()} style={[{ marginTop: spacing.md, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
-        </ScrollView>
-      </View>
+        </DetailCard>
+      </FlowScreen>
     );
   }
 
