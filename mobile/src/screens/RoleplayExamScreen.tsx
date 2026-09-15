@@ -31,6 +31,7 @@ import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardLift } from "../lib/useKeyboardHeight";
+import { useAuth } from "../lib/AuthContext";
 
 /** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
@@ -65,6 +66,7 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
  * ölçülmemiş bir sınavı ölçülmüş gibi göstermemek daha doğru.
  */
 export function RoleplayExamScreen() {
+  const guest = Boolean(useAuth().user?.guest);
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   /* Konuşma ekranının kökü ölçülüyor: alt kenarı klavyeyle oynamıyor
@@ -283,7 +285,11 @@ export function RoleplayExamScreen() {
          dördüncü "kuralı" gibi okunuyordu. */
       <FlowScreen
         top={<FlowTopBar back onClose={() => nav.goBack()} />}
-        actions={<FlowActions primary={{ label: tx("exam.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
+        actions={guest
+          /* MİSAFİR: sınavın muhatabı ve puanı yapay zekâ; ikisi de hesap istiyor
+             (mağaza ön inceleme B24). Başla yerine hesap oluşturma. */
+          ? <FlowActions primary={{ label: tx("guest.create_account"), onPress: () => nav.navigate("Auth") }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />
+          : <FlowActions primary={{ label: tx("exam.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
       >
         {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
             sinav girisiyle de ayni (`ExamScreen` 48). */}
@@ -302,6 +308,7 @@ export function RoleplayExamScreen() {
             { icon: TargetIcon, text: tx("rpexam.rule_scoring") },
           ]}
         >
+          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_exam")} /> : null}
           {lesson.patterns.length ? (
             <DetailCard title={tx("rpexam.patterns_title")}>
               {lesson.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}

@@ -49,6 +49,7 @@ import { notePremiumGate } from "../lib/premium";
 import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
+import { isAccountRequired } from "../lib/guest";
 
 /**
  * Deneme sınavı oynatıcısı — TEK BÖLÜM, dijital oturum kurallarıyla.
@@ -848,8 +849,9 @@ function WritingTask({
     try {
       const d = await assessOpen(attemptId, task.id, value.trim());
       onOpenScore(task.id, d.result);
-    } catch {
-      onOpenScore(task.id, { score: null, reason: "offline" });
+    } catch (e) {
+      // Misafir: değerlendirme hesap istiyor — "servis kapalı" demek yanlış teşhis olurdu.
+      onOpenScore(task.id, { score: null, reason: isAccountRequired(e) ? "account" : "offline" });
     }
     setBusy(false);
   }
@@ -905,7 +907,7 @@ function WritingTask({
 
 function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
   if (score.score == null) {
-    return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.ai_off")}</Text>;
+    return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t(score.reason === "account" ? "assess.fail_account" : "mockexam.ai_off")}</Text>;
   }
   return (
     <View style={{ marginTop: spacing.md }}>
@@ -1019,8 +1021,8 @@ function SpeakingTask({
     try {
       const d = await assessOpen(attemptId, task.id, text);
       onOpenScore(task.id, d.result);
-    } catch {
-      onOpenScore(task.id, { score: null, reason: "offline" });
+    } catch (e) {
+      onOpenScore(task.id, { score: null, reason: isAccountRequired(e) ? "account" : "offline" });
     }
     setBusy(false);
   }

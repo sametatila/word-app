@@ -1,4 +1,5 @@
 import { api, API_BASE, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "../api/client";
+import { isAccountRequired } from "../lib/guest";
 
 /**
  * Sohbet (roleplay) — web /api/roleplay (DEPLOY'LU). Senaryo metnini SUNUCU
@@ -19,15 +20,16 @@ export type ChatMsg = { role: "user" | "assistant"; content: string };
  * Hiç karar vermemiş kullanıcı "ai" döner: izin ilk turda, metin gitmeden
  * önce soruluyor (`api/client` yakalayıcısı).
  */
-export type RoleplayRoute = "ai" | "off" | "declined";
+export type RoleplayRoute = "ai" | "off" | "declined" | "account";
 
 export async function roleplayAvailability(): Promise<RoleplayRoute> {
   try {
     const r = await api<{ configured: boolean; consent?: string | null }>("/api/roleplay");
     if (!r.configured) return "off";
     return r.consent === "declined" ? "declined" : "ai";
-  } catch {
-    return "off";
+  } catch (e) {
+    // Misafir kimliği: yapay zekâ hesap istiyor (403 account_required) → senaryo.
+    return isAccountRequired(e) ? "account" : "off";
   }
 }
 

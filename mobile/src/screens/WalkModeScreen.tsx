@@ -583,7 +583,9 @@ export function WalkModeScreen() {
     /* Android rızası sunucuya YALNIZ alıcı listesi gösterildiyse yazılıyor:
        adları görülmemiş sağlayıcılara izin alınmış sayılmaz. iOS'un izin öncesi
        ekranı rıza değil; ses rızası izin penceresinden sonra ayrıca soruluyor. */
-    if (mode === "consent" && voiceProcessors) {
+    /* Misafirde sunucuya yazılmıyor: rıza defteri yalnız hesaba tutuluyor ve
+       sunucuda ses tanıma misafire zaten kapalı (mağaza ön inceleme B24). */
+    if (mode === "consent" && voiceProcessors && !user?.guest) {
       try { await decideAiConsent("ai_voice", true); } catch { /* ağ yok: ekran açık yol yine çalışır */ }
     }
     setDisclosure(null);

@@ -256,6 +256,20 @@ export function LessonScreen() {
      */
     roleplayAvailability()
       .then((route) => {
+        if (alive && route === "account") {
+          /* MİSAFİR: yapay zekâyla konuşma hesap istiyor (mağaza ön inceleme
+             B24). Servis kapalı değil; senaryo devralıyor ve konuşma sayılıyor. */
+          offlineRef.current = true;
+          push({
+            role: "teacher",
+            segments: [
+              { lang: "tr", text: tx("lessonp.chat_off_account") },
+              { lang: "tr", text: tx("lesson.chat_offline_note") },
+            ],
+            tone: "hint",
+          });
+          return;
+        }
         if (alive && route === "declined") {
           /* İZİN YOK, SERVİS KAPALI DEĞİL. "Servis kapalı" demek yanlış
              teşhis olurdu; kullanıcıya neden senaryoya düşüldüğü ve nereden

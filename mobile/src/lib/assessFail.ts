@@ -15,6 +15,7 @@ import { ApiError, AI_CONSENT_DECLINED } from "../api/client";
 export type AssessFailure =
   | "premium"
   | "consent"
+  | "account"
   | "not_configured"
   | "quota"
   | "too_long"
@@ -31,6 +32,9 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
      kapalı DEĞİL — o yüzden "kapalı" diyen yedek cümleleriyle birleştirilmez
      (bkz. `fallbackNoteKey`). */
   consent: "assess.fail_consent",
+  /* Misafir kimliği (mağaza ön inceleme B24): yapay zekâ hesap istiyor, metin
+     gönderilmedi. Servis kapalı DEĞİL — rıza gibi yedek cümlesiyle birleşmez. */
+  account: "assess.fail_account",
   not_configured: "assess.fail_not_configured",
   /* Web burada kendi anahtarını kullanıyor (`assessw.fail_quota`): orada hak
      dolunca kural tabanlı yedek gösteriliyor, mobilde puan hiç verilmiyor —
@@ -54,6 +58,7 @@ export function assessFailure(e: unknown): AssessFailure {
   switch (err?.status) {
     case 403:
       if (err.message === AI_CONSENT_DECLINED) return "consent";
+      if (err.message === "account_required") return "account";
       return err.message === "premium_required" ? "premium" : "unauthorized";
     case 401:
       return "unauthorized";
@@ -84,7 +89,8 @@ export function assessFailKey(e: unknown): string {
  * dalı yalnız yedeğin NE olduğunu söylüyor.
  */
 export function fallbackNoteKey(e: unknown, kind: "estimate" | "unscored", arizaKey: string): string {
-  if (assessFailure(e) !== "consent") return arizaKey;
+  const f = assessFailure(e);
+  if (f !== "consent" && f !== "account") return arizaKey;
   return kind === "estimate" ? "assess.estimate_only" : "assess.not_scored";
 }
 

@@ -19,6 +19,7 @@ import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 export type AssessFailure =
   | "premium"
   | "consent"
+  | "account"
   | "not_configured"
   | "quota"
   | "too_long"
@@ -63,6 +64,10 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
      kapalı DEĞİL — o yüzden "kapalı" diyen yedek cümleleriyle birleştirilmez
      (bkz. `fallbackNoteKey`). */
   consent: "assess.fail_consent",
+  /* Misafir kimliği (mobil, mağaza ön inceleme B24): yapay zekâ hesap istiyor.
+     Web'de misafir oturumu yok (uygulama düzeni girişe yolluyor); sebep yine
+     de iki tabloda aynı, mobil ile birebir. */
+  account: "assess.fail_account",
   not_configured: "assess.fail_not_configured",
   /* WEB'E ÖZEL ANAHTAR. Bu satırın metni platforma göre GERÇEKTEN farklı:
      webde hak dolunca kural tabanlı yedek gösteriliyor (`fallbackAssessment`),
@@ -136,6 +141,7 @@ function refusal(status: number, err: { error?: string }): AssessFailure {
     */
     case 403:
       if (err.error === AI_CONSENT_DECLINED) return "consent";
+      if (err.error === "account_required") return "account";
       return err.error === "premium_required" ? "premium" : "unauthorized";
     case 401:
       return "unauthorized";
@@ -162,7 +168,7 @@ function refusal(status: number, err: { error?: string }): AssessFailure {
  * dalı yalnız yedeğin NE olduğunu söylüyor.
  */
 export function fallbackNoteKey(failure: AssessFailure | null | undefined, kind: "estimate" | "unscored", arizaKey: string): string {
-  if (failure !== "consent") return arizaKey;
+  if (failure !== "consent" && failure !== "account") return arizaKey;
   return kind === "estimate" ? "assess.estimate_only" : "assess.not_scored";
 }
 

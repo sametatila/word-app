@@ -22,6 +22,7 @@ import { isAiConsentDeclined } from "../lib/aiConsent";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
+import { isAccountRequired } from "../lib/guest";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -549,6 +550,10 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
         if (isPremiumRefusal(e)) notePremiumGate("writing");
         setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
+      } else if (isAccountRequired(e)) {
+        /* MİSAFİR: yapay zekâ hesap istiyor; kuyruk da aynı sağlayıcıya gidiyor
+           ve uç misafiri onu da reddediyor. Görev puansız sayılıyor. */
+        setNote(`${tx("assess.fail_account")} ${tx("assess.not_scored")}`);
       } else if (isAiConsentDeclined(e)) {
         /* İZİN YOK: servis kapalı değil, metin bilerek gönderilmedi. Kuyruğa
            da bırakılmıyor — kuyruk da sonunda aynı sağlayıcıya gidiyor ve uç
