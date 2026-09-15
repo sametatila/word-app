@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { foldCompare, currentTargetLang } from "@/components/games/types";
 import type { TargetLang } from "@/lib/courses";
 import { foldContractions } from "@/lib/contractions";
@@ -294,6 +294,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
 export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
   const t = useT();
   const [open, setOpen] = useState(false);
+  const hintId = useId();
   if (!gloss.length) return null;
   return (
     <section className="card mt-4 p-4">
@@ -322,17 +323,22 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                   vardı ve içeriğin adını EZİYORDU: ekran okuyucu kullanan
                   biri "Haus · ev" yerine "Telaffuzu dinle" duyuyordu, yani
                   hangi kelimeyi dinleyeceğini bilmiyordu. Android'in aynı
-                  çipinde etiket yok, ad içerikten geliyor. `title` kalıyor:
-                  o yalnız fareyle açılır ve adı değiştirmez.
+                  çipinde etiket yok, ad içerikten geliyor.
+
+                  Ne yaptığı AÇIKLAMA olarak altındaki görünür ipucundan
+                  geliyor (`aria-describedby`): ad "Haus · ev" kalıyor, ekran
+                  okuyucu ardından "Kelimeye dokununca telaffuzunu duyarsın"
+                  diyor. Eski `title` yalnız fareyle açılıyordu; dokunmatikte
+                  ve klavyede hiç görünmüyordu (check:title).
                 */
-                title={t("speakbutton.read_aloud")}
+                aria-describedby={hintId}
                 className="chip px-3 py-1.5 text-caption"
               >
                 <GlossEntry g={g} />
               </button>
             ))}
           </div>
-          <p className="muted mt-2 text-micro">{t("skillq.tap_word_hint")}</p>
+          <p id={hintId} className="muted mt-2 text-micro">{t("skillq.tap_word_hint")}</p>
         </>
       ) : null}
     </section>
