@@ -19,12 +19,13 @@ let instance: Db | null = null;
  * Önbelleğe ALINMIYOR: DATABASE_URL modül yüklendikten sonra tanımlanırsa
  * (betikler bunu yapabiliyor) bir sonraki erişim gerçek havuzu açsın.
  */
+const UNCONFIGURED = "DATABASE_URL tanımlı değil.";
 class UnconfiguredClient {
   query(): never {
-    throw new Error("DATABASE_URL tanımlı değil.");
+    throw new Error(UNCONFIGURED);
   }
   connect(): never {
-    throw new Error("DATABASE_URL tanımlı değil.");
+    throw new Error(UNCONFIGURED);
   }
 }
 
