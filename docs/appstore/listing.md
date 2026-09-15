@@ -545,3 +545,17 @@ biri siteye girdiğinde daha azını buluyor. Vitrin uygulamayı anlattığı i�
 metinler doğru; ayrışmanın kendisi ayrı bir karar. Seçenekler: web'e ders/beceri
 içeriğini taşımak, ya da web'de İngilizce kursunu bugünkü sınırıyla açıkça anlatmak.
 Kapanana kadar bir yerde yazılı durması gerekiyordu, burası.
+
+---
+
+## 8. Ad kontrolü (rapor B28)
+
+App Store'da "Lernomi" adlı bir uygulama yok: Apple'ın arama ucu (iTunes Search API,
+`entity=software`) 2026-09-14'te us, gb, tr, de, at, ch, fr ve nl vitrinlerinde adında,
+satıcı adında ya da paket kimliğinde "lernom" geçen hiçbir uygulama döndürmedi
+([örnek sorgu](https://itunes.apple.com/search?term=lernomi&entity=software&country=tr)).
+Play'de de aynı adla uygulama yok; eski "Play'de çakışıyor" notu doğrulanmadı. TMview
+(EUIPO, TÜRKPATENT, WIPO Madrid dahil) ve USPTO'da "LERNOMI" işareti çıkmadı; WIPO Global
+Brand Database ile TÜRKPATENT'in kendi araştırma ekranı otomatik sorguya kapalıydı. Sorguların
+tamamı, yakın yazımlı işaretler ve profesyonel marka araştırması önerisi `docs/play/listing.md`
+§4.1'de; ad iki mağazada aynı olduğu için kayıt tek yerde tutuluyor.

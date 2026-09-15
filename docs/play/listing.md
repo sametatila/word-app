@@ -55,8 +55,8 @@ App Store derecesi, şartlar §3) artık aynı sayıyı söylüyor. Gerekçe:
 
 `Lernomi: Almanca Öğren A1-C1` (28/30). Console'daki başlıkla ve App Store adıyla aynı (2026-09-14'te API'den okundu).
 
-Tek kelime "Lernomi" Play'de başka bir uygulamayla (yapay zekâ arkadaş) çakışıyor;
-ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Lernomi: Almanca ve İngilizce`.
+Tek kelime "Lernomi" Play'de başka bir uygulamayla çakışmıyor: 2026-09-14 sorgusunda aynı
+adla uygulama çıkmadı (§4.1). İngilizce kurs listelemede öne çıkacaksa: `Lernomi: Almanca ve İngilizce`.
 
 ### Kısa açıklama (en çok 80 karakter)
 
@@ -135,11 +135,67 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 
 ## 4. Marka ve fikri mülkiyet
 
-- "Lernomi" adı: TÜRKPATENT ve EUIPO'da marka sorgusu yap; Play'deki "Lernomi" (yapay zekâ arkadaş)
-  ile karışıklık itirazına karşı ayırt edici başlık kullan.
-- Maskot (mirket) özgün; başka bir dil uygulamasının maskotuna benzemiyor.
+### 4.1 "Lernomi" ad sorgusu — yapılan sorgular ve sonuçları (2026-09-14)
+
+Rapor B28 "Lernomi adı Play'de başka bir uygulamada; marka sorgusu yapılmamış" diyordu ve
+bu belgenin eski sürümü de aynı şeyi söylüyordu. Sorgular 2026-09-14'te, oturum açmadan ve
+her kaynağın kendi arama ucuyla yapıldı. Aşağıdakiler **yapılan sorgu ve sonucu**dur; hukuki
+bir değerlendirme ya da "kullanılabilir" görüşü değildir.
+
+**Mağazalar**
+
+| Kaynak | Sorgu | Sonuç |
+|---|---|---|
+| Google Play, ABD vitrini | [`lernomi`](https://play.google.com/store/search?q=lernomi&c=apps&hl=en&gl=US) | "Lernomi" adlı uygulama yok. Tek sonuç **Nomi: AI Companion with a Soul** (geliştirici Nomi.ai, paket `ai.nomi.twa`): adı "Nomi", Play'in yakın yazım eşleşmesi. Eski belgedeki "yapay zekâ arkadaş uygulamasıyla çakışıyor" notuyla örtüşen tek sonuç bu ve **aynı ad değil** |
+| Google Play, Türkiye vitrini (İngilizce ve Türkçe arayüz) | [`lernomi`](https://play.google.com/store/search?q=lernomi&c=apps&hl=tr&gl=TR) | Eşleşme yok; Play genel eğitim uygulamaları öneriyor |
+| Google Play, Almanya vitrini (İngilizce ve Almanca arayüz) | [`Lernomi`](https://play.google.com/store/search?q=Lernomi&c=apps&hl=de&gl=DE) | "Keine Ergebnisse für Lernomi" / "No results for lernomi" |
+| Google Play, Birleşik Krallık | [`"lernomi"`](https://play.google.com/store/search?q=%22lernomi%22&c=apps&hl=en&gl=GB) | "No results" |
+| Google Play, doğrudan adres | geliştirici `Lernomi`, paket `com.lernomi.learn` | İkisi de 404 (henüz yayımlanmış bir sayfa yok) |
+| App Store — Apple'ın arama ucu (iTunes Search API) | [`term=lernomi&entity=software`](https://itunes.apple.com/search?term=lernomi&entity=software&country=tr), vitrinler us, gb, tr, de, at, ch, fr, nl | Adında, satıcı adında ya da paket kimliğinde "lernom" geçen uygulama yok (us ve gb'de alakasız yakın sonuçlar, öteki altı vitrinde sıfır sonuç) |
+
+**Marka veritabanları** (sınıf 9, 41, 42 odaklı)
+
+| Kaynak | Sorgu | Sonuç |
+|---|---|---|
+| [TMview](https://www.tmdn.org/tmview/) (EUIPO'nun işlettiği ortak veritabanı) — tüm ofisler | `lernomi`: tam, "içerir", "benzer" | **Tam eşleşme yok.** İçerir: 3 — SALERNOMIA (İtalya), SELLERNOMICS (ABD, sınıf 41, tescilli), DEALERNOMICS (ABD, sona ermiş). Benzer: 7 — **LERNMI** (İspanya, **sınıf 41, tescilli**, MIXELAND 1431 S.L.), Lenomi (Almanya, 24/25), LeRoMi Camper (Almanya, 12/22/35), LENOMI (ABD başvurusu, 25/35), SERNOMI (ABD ve Fransa, sınıf 5, sona ermiş), LEROMI (Brezilya, sona ermiş) |
+| TMview — ofis ofis: EUIPO (EM), TÜRKPATENT (TR), WIPO Madrid (WO), Almanya (DE), İsviçre (CH), Birleşik Krallık (GB), Avusturya (AT) | aynı üç arama | EM, TR, WO, CH, GB, AT: üç aramada da **0**. DE: yalnız benzer aramada Lenomi ve LeRoMi Camper. Ofis filtresinin çalıştığı bilinen markalarla sınandı (ör. TR'de "turkcell", EM ve WO'da "babbel" kayıt döndürdü) |
+| [USPTO](https://tmsearch.uspto.gov/search/search-information) — sitenin kullandığı arama servisi | kelime markası `lernomi`; ayrıca en çok iki harf farklı yazımlar | **Tam eşleşme 0** (aynı sorgu "duolingo" için 19 kayıt döndürdü, yani sorgu çalışıyor). Yakın yazımda 74 kayıt; sınıf 9/41/42'de canlı olanlar: LEOMI (9/41/42), LERNOU (9), LEMNOI (9), ERGOMI (9), LEBROMI (9), LERMOM (9), GENOMI-K (42/44). "lernom" ya da "learnom" içeren canlı marka: SELLERNOMICS (41), LEARNOMATION (41) |
+| [EUIPO eSearch plus](https://euipo.europa.eu/eSearch/) | — | Doğrudan sorgulanmadı (tarayıcıda çalışan uygulama). EUIPO kayıtları TMview'da EM ofisiyle sorgulandı: 0 |
+| [WIPO Global Brand Database](https://branddb.wipo.int/en/quicksearch) | — | **Erişilemedi.** Site otomatik istemciye bir doğrulama (ALTCHA) gösteriyor; atlatılmadı. Madrid sistemi uluslararası kayıtları TMview'da (WO) 0; GBD'nin TMview'da olmayan ulusal koleksiyonları **sorgulanmadı** |
+| [TÜRKPATENT araştırma ekranı](https://www.turkpatent.gov.tr/arastirma-yap?form=trademark) | — | **Erişilemedi**: ekran reCAPTCHA istiyor. TÜRKPATENT kayıtları TMview'da (TR) 0. TMview ulusal veriyi ofislerden dönemsel olarak aldığı için çok yeni başvurular orada gecikmeli görünebilir |
+
+**Alan adları ve şirket adları**
+
+| Kaynak | Sorgu | Sonuç |
+|---|---|---|
+| Kayıt kuruluşlarının RDAP/WHOIS servisleri (Verisign, PIR, DENIC, EURid, SWITCH, nic.at, Nominet, TRABIS ve .io/.ai/.co kayıt kuruluşları) | `lernomi` + .com, .net, .org, .io, .ai, .co, .de, .eu, .ch, .at, .co.uk, .uk, .com.tr, .tr | **Hiçbiri kayıtlı değil.** Kayıtlı olan yalnız bizim `lernomi.app`. (Alan adının boş olması marka hakkı hakkında bir şey söylemez) |
+| [UK Companies House](https://find-and-update.company-information.service.gov.uk/search/companies?q=lernomi) | `lernomi` | "No results found" |
+| [Zefix](https://www.zefix.ch/) (İsviçre ticaret sicili) | `lernomi` | Sonuç yok |
+| [North Data](https://www.northdata.com/lernomi) (Almanya, Avusturya, İsviçre, Birleşik Krallık, Kıbrıs vb. sicil yayınlarını derleyen ikincil kaynak) | `lernomi` | Adında "Lernomi" geçen tek kayıt **Lernomi Holdings Ltd.**, Lefkoşa, Kıbrıs, sicil HE 261397, durumu "Terminated" (sona ermiş). Faaliyet alanı kaynakta yok; Kıbrıs resmî sicilinde doğrulanmadı |
+| OpenCorporates; Türkiye Ticaret Sicili Gazetesi ünvan sorgusu | `lernomi` | **Erişilemedi** (ikisi de captcha istiyor) |
+| Genel web araması | "Lernomi" app / trademark / language learning | "Lernomi" adlı bir ürün, marka ya da şirket sitesi çıkmadı. Aynı alanda yakın adlar var: **Lerni** (lerni.us, çevrimiçi dil kursu; Play'de `com.lerni.android`), Lernix (yapay zekâ dil öğretmeni), Lernu! (Esperanto). TMview'da "LERNI" adıyla da kayıtlar var, ör. AB markası LERNi (sınıf 16/19/28/41, tescilli) ve Türkiye başvurusu "ludi lerni" (9/28/35/38/41/42) |
+
+**Özet.** 2026-09-14 itibarıyla iki mağazada da "Lernomi" adlı bir uygulama, sorgulanabilen
+marka veritabanlarında da "LERNOMI" işareti bulunmadı; eski "Play'de çakışıyor" iddiası
+doğrulanmadı (bulunan uygulamanın adı "Nomi"). Buna karşılık eğitim ve yazılım sınıflarında
+yazılışı yakın işaretler (LERNMI, LEOMI, LERNi, NOMI adlı çeşitli kayıtlar) ve aynı pazarda
+yakın adlı ürünler (Lerni) var; bunların karışıklık yaratıp yaratmayacağı hukuki bir
+değerlendirme ve burada yapılmadı. İki sınır da açık: WIPO GBD ile TÜRKPATENT'in kendi ekranı
+otomatik sorguya kapalıydı ve sesçe benzerlik taraması yapılmadı.
+
+**Öneri (hukuki görüş değil):** ilk sürümden ve reklam harcamasından önce profesyonel bir
+marka araştırması (sesçe benzerlik ve TMview dışındaki ulusal siciller dahil) yaptırılması
+ve "LERNOMI"nin TÜRKPATENT ve/veya EUIPO'da 9, 41 ve 42. sınıflarda başvurusunun
+değerlendirilmesi. Olası bir ad değişikliği yayından önce çok daha ucuz.
+
+### 4.2 Sınav markaları
+
 - telc tescilli bir marka: listelemede yalnız tanımlayıcı kullanım,
   logo yok; Kullanım Şartları §8 bağlantısızlığı belirtiyor.
+
+### 4.3 Maskot
+
+Maskot (mirket) özgün; başka bir dil uygulamasının maskotuna benzemiyor.
 
 > iOS için ayrı bir beyan seti gerekiyor; bkz. `docs/appstore/README.md`. Play'in Veri
 > Güvenliği formu ile App Store gizlilik etiketleri farklı sorular sorar, biri öbürüne
