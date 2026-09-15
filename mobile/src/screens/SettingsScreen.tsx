@@ -34,6 +34,7 @@ import { hasMicConsent, revokeMicConsent } from "../lib/micConsent";
 import { decideAiConsent, fetchAiConsent, requestAiConsent, type AiConsentState } from "../lib/aiConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
@@ -125,6 +126,11 @@ export function SettingsScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, refresh } = useAuth();
+  /* MİSAFİR (mağaza ön inceleme B24): giriş yöntemi, parola, oturumlar ve
+     yapay zekâ izni yok; hesap bölümünde bunların yerine hesap oluşturma
+     çağrısı ve "Misafir verilerini sil" duruyor. Öğrenme ve uygulama ayarları
+     misafirde de çalışıyor (profil misafir kimliğine yazılıyor). */
+  const guest = Boolean(user?.guest);
   const { me } = useMe();
 
   const [name, setName] = useState(me?.name ?? user?.name ?? "");
@@ -154,7 +160,12 @@ export function SettingsScreen() {
    */
   const [accounts, setAccounts] = useState<LinkedAccount[] | null>(null);
   const yenileHesaplar = () => listAccounts().then(setAccounts);
-  useEffect(() => { let alive = true; void listAccounts().then((a) => { if (alive) setAccounts(a); }); return () => { alive = false; }; }, []);
+  useEffect(() => {
+    if (guest) { setAccounts([]); return; }
+    let alive = true;
+    void listAccounts().then((a) => { if (alive) setAccounts(a); });
+    return () => { alive = false; };
+  }, [guest]);
   const parolaliHesap = accounts?.some((a) => a.providerId === "credential") ?? false;
   const [analytics, setAnalytics] = useState(analyticsEnabled());
   /* Oyun sesleri: efektler için ayrı anahtar. Telaffuz sesi buna BAĞLI DEĞİL —
@@ -180,7 +191,8 @@ export function SettingsScreen() {
     fetchAiConsent()
       .then((i) => { setAiText(i.statuses.ai_text.state); setAiVoice(i.statuses.ai_voice.state); })
       .catch(() => {});
-  useEffect(() => { void yenileAi(); }, []);
+  // Yapay zekâ misafire kapalı; rıza defteri de yalnız hesaba tutuluyor (sunucu 403 dönerdi).
+  useEffect(() => { if (!guest) void yenileAi(); }, [guest]);
   async function toggleAiText(on: boolean) {
     if (aiBusy) return;
     setAiBusy(true);
@@ -428,6 +440,28 @@ export function SettingsScreen() {
         </Group>
 
         <Group title={t("settings.group_account")} colors={colors}>
+          {guest ? (
+            <>
+              <Row colors={colors}>
+                <GuestAccountCard title={t("guest.profile_title")} text={t("guest.profile_body")} />
+              </Row>
+              <Row colors={colors}>
+                <PressableScale
+                  onPress={() => nav.navigate("DeleteAccount")}
+                  accessibilityRole="button"
+                  accessibilityLabel={t("guest.delete_row")}
+                  style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+                >
+                  <View style={{ flex: 1 }}>
+                    <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{t("guest.delete_row_sub")}</Text>
+                  </View>
+                  <ChevronRightIcon color={colors.textFaint} size={20} />
+                </PressableScale>
+              </Row>
+            </>
+          ) : (
+          <>
           <Row label={t("settings.sec_name")} colors={colors}>
             <TextInput
               value={name}
@@ -486,6 +520,8 @@ export function SettingsScreen() {
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
           </Row>
+          </>
+          )}
 
           {/*
             GÜVENLİK KENDİ GRUBU. Üçü de "Giriş yöntemleri" bölümünün içindeydi
@@ -495,6 +531,7 @@ export function SettingsScreen() {
           */}
         </Group>
 
+        {!guest && (
         <Group title={t("settings.group_security")} colors={colors}>
           {/* Parola ve ikinci adım YALNIZ parolalı hesapta: yalnız Google/Apple
               ile girmiş birine "şu anki parolan" sormak olmayan bir şeyi
@@ -515,6 +552,7 @@ export function SettingsScreen() {
             <ActiveSessions colors={colors} />
           </Row>
         </Group>
+        )}
 
         <Group title={t("settings.group_privacy_about")} colors={colors}>
           <Row label={t("settings.privacy")} colors={colors}>
@@ -525,6 +563,12 @@ export function SettingsScreen() {
               </View>
               <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
             </View>
+            {guest ? (
+              <View style={{ paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+                <Text variant="bodyStrong">{t("guest.ai_setting")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("guest.ai_setting_sub")}</Text>
+              </View>
+            ) : (
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("aiconsent.text_title")}</Text>
@@ -532,6 +576,7 @@ export function SettingsScreen() {
               </View>
               <Switch value={aiText === "granted"} disabled={aiText === null || aiBusy} onValueChange={(v) => { void toggleAiText(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("aiconsent.text_title")} />
             </View>
+            )}
             {micConsent === null ? (
               // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
               // bölümü uzayıp altındaki bağlantıları aşağı itmesin.

@@ -19,6 +19,7 @@ import { openLegal } from "../lib/legal";
 import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useAuth } from "../lib/AuthContext";
 
 /**
  * Paywall — YALNIZ mağaza entegrasyonu canlıyken (RevenueCat anahtarı) anlamlı; canlı
@@ -116,7 +117,17 @@ function priceLine(pkg: PurchasesPackage, trial: string | null): string {
 export function PaywallScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<{ goBack: () => void; navigate: (name: "Auth") => void }>();
+  /*
+    MİSAFİR SATIN ALAMIYOR (mağaza ön inceleme B24). Premium iPhone, iPad,
+    Android ve web'de aynı hesapla çalışan bir abonelik: misafir kimliğiyle
+    alınsaydı başka cihazda geri yüklenemez, kimlik hesaba birleşince de
+    yenilemeleri sahipsiz kalırdı (RevenueCat misafirde hesap kimliğine
+    eşlenmiyor, bkz. AuthContext). Kapsam, sınırlar ve fiyatlar misafire de
+    görünüyor; satın alma çubuğunun yerinde hesap oluşturma çağrısı var.
+    Promosyon kodu ve davet de hesap istiyor.
+  */
+  const guest = Boolean(useAuth().user?.guest);
   /*
     `configured` = anahtar var mı; `storeOpen` = gerçekten satılacak bir şey var mı.
 
@@ -298,7 +309,7 @@ export function PaywallScreen() {
           {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
               anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden
               satır sabit — "Ücretsiz hesap". */}
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t("premiumstate.free")}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t(guest ? "guest.name" : "premiumstate.free")}</Text>
         </View>
 
         {/* PLANLAR ÖNCE: fiyat iki özellik listesinin arkasında kalıyordu.
@@ -393,11 +404,22 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
-        {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
+        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
+        {status?.referral && !guest ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </KeyboardAwareScroll>
 
-      {!storeOpen ? (
+      {guest ? (
+        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.sm }}>
+          <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.premium_body")}</Text>
+          <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 12)]}>
+            <Text variant="h3" color={colors.onPrimary}>{t("guest.create_account")}</Text>
+          </PressableScale>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
+            <LegalLinks colors={colors} />
+          </View>
+        </View>
+      ) : !storeOpen ? (
         // Mağaza kapalı: satın alma çubuğu yok ama hukuki bağlantılar kalıyor —
         // sayfanın hukuki metne açılan tek kapısı orası.
         <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>

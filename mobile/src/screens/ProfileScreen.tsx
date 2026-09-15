@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
 import { MyAvatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -22,6 +22,7 @@ import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
   const { gridItemWidth } = useLayout();
@@ -44,8 +45,11 @@ export function ProfileScreen() {
   // Tam durum: davet kodu da buradan geliyor (paylaşım bağlantısı onu taşıyor).
   const { status: premiumStatus } = usePremiumStatus();
   const premium = !!premiumStatus?.premium;
-  // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
-  const displayName = user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
+  /* MİSAFİR (mağaza ön inceleme B24): adı ve e-postası yok; kimlik kartı
+     "Misafir" diyor, kartın altında hesap oluşturma çağrısı duruyor. Hesapta
+     adı yoksa e-posta adından türet. */
+  const guest = Boolean(user?.guest);
+  const displayName = guest ? t("guest.name") : user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   // Veri gelmeden rakam gösterilmez (uydurma "1.2k" yok): yükleniyor kartı var.
@@ -71,7 +75,7 @@ export function ProfileScreen() {
             <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={76} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
-          <Text variant="caption" color={colors.textMuted}>{user?.email ?? t("profile.not_signed_in")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{guest ? t("guest.subline") : user?.email ?? t("profile.not_signed_in")}</Text>
           {/* Rozetler yüklenmeden de yerini tutar: sonradan belirince kimlik
               kartı uzayıp altındaki her şeyi aşağı itmesin. */}
           {meLoading ? (
@@ -90,6 +94,13 @@ export function ProfileScreen() {
             </View>
           ) : null}
         </Card>
+
+        {/* Misafir: ilerlemenin hesapta durması için tek çağrı (bkz. ui/GuestAccountCard). */}
+        {guest ? (
+          <View style={{ marginBottom: spacing.lg }}>
+            <GuestAccountCard icon={SparkIcon} title={t("guest.profile_title")} text={t("guest.profile_body")} />
+          </View>
+        ) : null}
 
         {/*
           İKİ KARO, DÖRT DEĞİL. Profil kimliktir, ölçüm tablosu değil: öğrenilen
@@ -185,12 +196,18 @@ export function ProfileScreen() {
           görünüyor: statü işareti, yani kimliğin parçası. Haftalık sıralama da
           kalıyor — o bir ölçüm değil, başkalarıyla kıyas.
         */}
+        {/* Misafirde yalnız rozetler: sıralama, arkadaşlar, gelen kutusu ve davet
+            hesap istiyor ve kimlik kartının altındaki çağrı bunu zaten söylüyor. */}
         <Card padded style={{ paddingVertical: 0 }}>
-          <MenuRow icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
-          <MenuRow icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
-          <MenuRow icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => goFriends(nav)} />
-          <MenuRow icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
-          <MenuRow icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} last />
+          <MenuRow icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} last={guest} />
+          {!guest && (
+            <>
+              <MenuRow icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
+              <MenuRow icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => goFriends(nav)} />
+              <MenuRow icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
+              <MenuRow icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} last />
+            </>
+          )}
         </Card>
 
         {/*
@@ -209,14 +226,25 @@ export function ProfileScreen() {
           Hesap › Hesabı sil") boşa düşmüştü; satır orada grubun sonuna geri
           kondu. İkisi aynı ekranı açıyor.
         */}
-        <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, paddingVertical: spacing.md }}>
-          <LogoutIcon color={colors.dangerText} size={20} />
-          <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
-        </PressableScale>
+        {/* MİSAFİRİN ÇIKIŞI YOK: giriş yöntemi olmadığı için geri dönemez. Yerine
+            "Misafir verilerini sil" var — hesap silmenin misafirdeki karşılığı,
+            aynı ekran (bkz. DeleteAccountScreen). */}
+        {guest ? (
+          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("guest.delete_row")} style={{ alignItems: "center", marginTop: spacing.lg, paddingVertical: spacing.md }}>
+            <Text variant="bodyStrong" color={colors.dangerText}>{t("guest.delete_row")}</Text>
+          </PressableScale>
+        ) : (
+          <>
+            <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, paddingVertical: spacing.md }}>
+              <LogoutIcon color={colors.dangerText} size={20} />
+              <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
+            </PressableScale>
 
-        <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
-          <Text variant="caption" color={colors.textMuted}>{t("settings.delete_account")}</Text>
-        </PressableScale>
+            <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
+              <Text variant="caption" color={colors.textMuted}>{t("settings.delete_account")}</Text>
+            </PressableScale>
+          </>
+        )}
       </ScrollView>
 
       <ConfirmDialog

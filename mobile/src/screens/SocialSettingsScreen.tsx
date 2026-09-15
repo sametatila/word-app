@@ -14,6 +14,7 @@ import { useTheme, spacing, radii } from "../theme";
 import type { Palette } from "../theme/colors";
 import { Pill, ScreenHeader } from "../social/common";
 import { SOCIAL_LIMITS } from "../lib/profileDefaults";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 /** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
@@ -46,7 +47,7 @@ export function SocialSettingsScreen() {
   const [blocked, setBlocked] = useState<(PublicUser & { since: string })[] | null>(null);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user || user.guest) return;
     social.me().then((m) => { setMe(m); setUsername(m.username); setBio(m.bio ?? ""); }).catch((e) => setMsg(errorText(e)));
     social.blocks().then((r) => setBlocked(r.blocked)).catch(() => setBlocked([]));
   }, [user]);
@@ -76,7 +77,11 @@ export function SocialSettingsScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={tx("socialsettings.social_and_privacy")} />
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        {!me ? (
+        {user?.guest ? (
+          <View style={{ marginTop: spacing.sm }}>
+            <GuestAccountCard title={tx("guest.social_title")} text={tx("guest.social_body")} />
+          </View>
+        ) : !me ? (
           // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
           <>
             {[0, 1, 2, 3].map((i) => (

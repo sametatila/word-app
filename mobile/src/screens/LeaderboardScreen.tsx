@@ -9,6 +9,8 @@ import { Chip } from "../ui/Chip";
 import { Text } from "../ui/Text";
 import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing } from "../theme";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { PodiumIcon } from "../ui/icons";
 
 /**
  * Sıralama — iki küme, tek ekran: LİG ve ARKADAŞLAR.
@@ -41,7 +43,9 @@ export function LeaderboardScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        {!user ? (
+        {user?.guest ? (
+          <GuestAccountCard icon={PodiumIcon} title={t("guest.social_title")} text={t("guest.social_body")} />
+        ) : !user ? (
           <Text variant="body" color={colors.textMuted}>{t("leaderboard.sign_in_for_friends_board")}</Text>
         ) : mode === "league" ? (
           <LeagueBoard />

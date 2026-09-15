@@ -20,7 +20,9 @@ import { Skeleton } from "../ui/Skeleton";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
-function losses(): string[] {
+function losses(guest = false): string[] {
+  // Misafirin arkadaşlığı, gelen kutusu, e-postası ve yapay zekâ kaydı yok: yalnız ilerlemesi gidiyor.
+  if (guest) return [tx("deleteaccount.your_word_progress_streaks_xp")];
   return [
     tx("deleteaccount.your_word_progress_streaks_xp"),
     tx("deleteaccount.your_writing_speaking_records"),
@@ -50,7 +52,14 @@ export function DeleteAccountScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { user, signOut } = useAuth();
+  const { user, signOut, deleteGuest } = useAuth();
+  /*
+    MİSAFİR VERİLERİNİ SİL (mağaza ön inceleme B24). Misafirin çıkış yolu yok
+    ve silmesi hesap silmeyle aynı sonucu doğuruyor: sunucudaki her satır,
+    sonra cihazdaki her şey. Parola ve taze giriş sorulmuyor (misafirin
+    ikisi de yok); abonelik satırı yok (misafir abone olamıyor).
+  */
+  const guest = Boolean(user?.guest);
 
   const [hasPassword, setHasPassword] = useState<boolean | null>(null);
   /** Bağlı sağlayıcılar — taze giriş hangi düğmeyle yapılacak, onu belirliyor. */
@@ -64,6 +73,7 @@ export function DeleteAccountScreen() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (guest) { setHasPassword(false); return; }
     let alive = true;
     listAccounts().then((accs) => {
       if (!alive) return;
@@ -71,7 +81,7 @@ export function DeleteAccountScreen() {
       setProviders(accs.map((a) => a.providerId));
     });
     return () => { alive = false; };
-  }, []);
+  }, [guest]);
 
   const ready = agree && hasPassword !== null && (!hasPassword || password.length > 0) && !busy;
 
@@ -88,6 +98,15 @@ export function DeleteAccountScreen() {
     if (busy) return;
     setBusy(true);
     setError(null);
+    if (guest) {
+      // Cihazı da `deleteGuest` temizliyor; çıkış çağrısı gerekmiyor.
+      const ok = await deleteGuest();
+      setBusy(false);
+      if (!ok) { setError(tx("guest.delete_failed")); return; }
+      setDone(true);
+      setTimeout(() => nav.reset({ index: 0, routes: [{ name: "Onboarding" }] }), 1600);
+      return;
+    }
     const r = await deleteAccount(hasPassword ? password : undefined);
     setBusy(false);
     if (r.ok) { await finishDeleted(); return; }
@@ -127,8 +146,8 @@ export function DeleteAccountScreen() {
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
           <CheckIcon color={colors.successText} size={34} />
         </View>
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.your_account_is_deleted")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.your_data_is_gone_it_was_good_to")}</Text>
+        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx(guest ? "guest.deleted_title" : "deleteaccount.your_account_is_deleted")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx(guest ? "guest.deleted_body" : "deleteaccount.your_data_is_gone_it_was_good_to")}</Text>
       </View>
     );
   }
@@ -139,18 +158,19 @@ export function DeleteAccountScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text accessibilityRole="header" variant="h2">{tx("deleteaccount.delete_account")}</Text>
+        <Text accessibilityRole="header" variant="h2">{tx(guest ? "guest.delete_row" : "deleteaccount.delete_account")}</Text>
       </View>
 
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
-          {tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
+          {guest ? tx("guest.delete_intro") : tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
         </Text>
 
         <Card padded style={{ marginTop: spacing.lg, paddingVertical: spacing.sm }}>
-          {losses().map((text) => <LossRow key={text} text={text} colors={colors} />)}
+          {losses(guest).map((text) => <LossRow key={text} text={text} colors={colors} />)}
         </Card>
 
+        {!guest && (
         <Card padded style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderColor: "transparent" }}>
           {/* Abonelik iptal yolu mağazaya göre değişir: Play Store › Ödemeler ve abonelikler,
               App Store'da Ayarlar › Apple Hesabı › Abonelikler. Yanlışını göstermek
@@ -159,6 +179,7 @@ export function DeleteAccountScreen() {
             {tx(Platform.OS === "ios" ? "deleteaccount.subscription_cancel_appstore" : "deleteaccount.subscription_cancel_play")}
           </Text>
         </Card>
+        )}
 
         {needsFresh ? (
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
@@ -170,7 +191,7 @@ export function DeleteAccountScreen() {
           </Card>
         ) : (
           <>
-            {hasPassword ? (
+            {guest ? null : hasPassword ? (
               <TextInput
                 value={password}
                 onChangeText={setPassword}
@@ -207,7 +228,7 @@ export function DeleteAccountScreen() {
             {error ? <Text accessibilityLiveRegion="assertive" variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
             <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
-              <Text variant="h3" color={ready ? colors.onFill : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx("deleteaccount.permanently_delete_my_account")}</Text>
+              <Text variant="h3" color={ready ? colors.onFill : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx(guest ? "guest.delete_button" : "deleteaccount.permanently_delete_my_account")}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
@@ -219,7 +240,7 @@ export function DeleteAccountScreen() {
       <ConfirmDialog
         visible={confirm}
         title={tx("deleteaccount.we_re_asking_one_last_time")}
-        message={tx("deleteaccount.your_account_and_all_your_data")}
+        message={tx(guest ? "guest.delete_confirm" : "deleteaccount.your_account_and_all_your_data")}
         confirmLabel={tx("deleteaccount.yes_delete")}
         cancelLabel={tx("common.discard")}
         destructive

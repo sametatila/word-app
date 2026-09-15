@@ -9,7 +9,7 @@ import { Card } from "../ui/Card";
 import { Skeleton, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon, FlameIcon } from "../ui/icons";
+import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon, FlameIcon, SparkIcon, ChevronRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
@@ -165,6 +165,24 @@ export function LearnScreen() {
         okumak değil. (İstenirse geri gelir: git geçmişinde bu yorumun
         commit'inde duruyor.)
       */}
+
+      {/*
+        MİSAFİRE HESAP ÇAĞRISI (mağaza ön inceleme B24). Tek satır, kahramanın
+        altında: misafirin ilerlemesi yalnız misafir kimliğinde ve 30 gün
+        kullanılmazsa siliniyor, uygulama silinirse de kayboluyor. Bunu
+        söylemeyen bir misafir modu, ilerlemeyi sessizce riske atar.
+      */}
+      {user?.guest ? (
+        <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={`${t("guest.create_account")}. ${t("guest.learn_nudge")}`}
+          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.hairline, backgroundColor: colors.surface, padding: spacing.md, marginBottom: spacing.xl }}>
+          <SparkIcon color={colors.primaryText} size={22} />
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyStrong">{t("guest.create_account")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("guest.learn_nudge")}</Text>
+          </View>
+          <ChevronRightIcon color={colors.textFaint} size={20} />
+        </PressableScale>
+      ) : null}
 
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       <DailyQuests />

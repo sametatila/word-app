@@ -26,6 +26,7 @@ import { FeedList } from "../social/FeedList";
 import { Quests, QuestsSkeleton } from "../social/Quests";
 import { Requests, RequestCardSkeleton } from "../social/Requests";
 import { Find } from "../social/Find";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 type Tab = "friends" | "feed" | "find";
 /** Sekme etiketleri — t() çağrı anında (dil modül yüklenirken hazır değil). */
@@ -62,7 +63,8 @@ export function FriendsScreen() {
   const [err, setErr] = useState<string | null>(null);
 
   const reload = useCallback(async () => {
-    if (!user) return;
+    // Sosyal katman hesap istiyor: misafirde istek atılmıyor (sunucu 403 dönerdi).
+    if (!user || user.guest) return;
     try {
       const [m, d] = await Promise.all([social.me(), social.friends()]);
       setMe(m);
@@ -79,6 +81,17 @@ export function FriendsScreen() {
     if (!me) return;
     track("share", 0, "profile");
     try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}?src=invite` }) }); } catch { /* kapatıldı */ }
+  }
+
+  if (user?.guest) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <TabHeader title={tx("friends.friends")} />
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          <GuestAccountCard icon={HandshakeIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
+        </View>
+      </View>
+    );
   }
 
   if (!user) {

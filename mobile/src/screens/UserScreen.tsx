@@ -20,6 +20,7 @@ import { useLayout } from "../lib/useLayout";
 import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
 import { FeedCard } from "../social/FeedList";
 import { UserActionButton } from "../social/UserActionButton";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
   const { gridItemWidth } = useLayout();
@@ -50,7 +51,7 @@ export function UserScreen() {
   const [more, setMore] = useState(false);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user || user.guest) return;
     social.profile(username).then((d) => { setData(d); setRel(d.relation); }).catch((e) => { if (e instanceof ApiError && e.status === 404) setNotFound(true); else setErr(errorText(e)); });
   }, [username, user]);
 
@@ -66,6 +67,7 @@ export function UserScreen() {
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, gap: spacing.md }}>{child}</View>
     </View>
   );
+  if (user?.guest) return wrap(<GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />);
   if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.sign_in_required")} text={t("user.sign_in_to_see_profiles")} action={t("user.sign_in")} onAction={() => nav.navigate("Auth")} />);
   if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.user_not_found")} text={t("user.link_may_be_old_or_this_profile")} />);
   if (!data) return wrap(

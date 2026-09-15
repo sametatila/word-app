@@ -22,7 +22,8 @@ export function useUnread(): number {
     return () => { listeners.delete(setN); };
   }, []);
   useEffect(() => {
-    if (!user) { setUnreadGlobal(0); return; }
+    // Bildirim kutusu hesaba bağlı: misafirde sorulmuyor (sunucu 403 dönerdi).
+    if (!user || user.guest) { setUnreadGlobal(0); return; }
     let alive = true;
     const pull = () => social.notifications().then((r) => { if (alive) setUnreadGlobal(r.unread); }).catch(() => undefined);
     void pull();

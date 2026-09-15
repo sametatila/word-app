@@ -26,9 +26,10 @@ export function FriendPulse() {
   const { user } = useAuth();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [q, setQ] = useState<QuestView | null>(null);
-  const [loading, setLoading] = useState(() => !!user);
+  const [loading, setLoading] = useState(() => !!user && !user.guest);
   useEffect(() => {
-    if (!user) { setQ(null); setLoading(false); return; }
+    // Ortak görev hesap istiyor: misafirde satır hiç çizilmiyor.
+    if (!user || user.guest) { setQ(null); setLoading(false); return; }
     let alive = true;
     setLoading(true);
     social.quests()

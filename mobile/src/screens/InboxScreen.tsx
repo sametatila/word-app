@@ -18,6 +18,7 @@ import { useTheme, spacing, onTint, soft } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, ReactionGlyph, ScreenHeader, reactionTone, type IconCmp } from "../social/common";
 import { setUnreadGlobal } from "../social/useUnread";
+import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 /** Bildirim türü → ikon karosu rengi (Profil menüsündeki satır karoları gibi). */
 function tileFor(n: NotificationView, colors: Palette): { icon: IconCmp; tint: string } {
@@ -55,7 +56,7 @@ export function InboxScreen() {
       if (!after && page.unread > 0) { await social.markRead("all"); setUnreadGlobal(0); }
     } catch (e) { setErr(errorText(e)); setItems((prev) => prev ?? []); } finally { setBusy(false); }
   }
-  useEffect(() => { if (user) void load(null); }, [user]);
+  useEffect(() => { if (user && !user.guest) void load(null); }, [user]);
 
   function open(n: NotificationView) {
     switch (n.type) {
@@ -70,7 +71,9 @@ export function InboxScreen() {
     }
   }
 
-  const body = !user
+  const body = user?.guest
+    ? <GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />
+    : !user
     ? <EmptyCard icon={LockIcon} title={t("inbox.sign_in_required")} text={t("inbox.notifications_are_tied_to_your")} action={t("inbox.sign_in")} onAction={() => nav.navigate("Auth")} />
     : items === null
       ? (
