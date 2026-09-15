@@ -59,7 +59,8 @@ export type LearnHubData = {
    */
   hasToday: boolean;
   dueCount: number;
-  newToday: number;
+  /** Turda bugün KALAN yeni kelime — rozet (bkz. session `newWordsLeft`). */
+  newLeft: number;
   /** Kursun deneme sınavı kataloğu var mı — yoksa o kama hiç çizilmez. */
   hasMockExams: boolean;
   /** Mikrofon gerektiren yürüyüş modu bu tarayıcıda mümkün mü. */
@@ -70,7 +71,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
   // `xp` kart kaldırıldıktan sonra da lazım: maskotun uyku hâli "puanı var ama
   // serisi kırık" ayrımını buradan yapıyor (aşağıda).
-  const { xp, streak, dailyGoal, reviewsToday, hasToday, dueCount, newToday } = data;
+  const { xp, streak, dailyGoal, reviewsToday, hasToday, dueCount, newLeft } = data;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 
   return (
@@ -91,16 +92,16 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         style={{ background: "var(--color-brand-500)", "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties}
       >
         {/* Kısa rozetler — kartın sağ üstünde. Bugün ne birikmiş, tek bakışta. */}
-        {dueCount > 0 || newToday > 0 ? (
+        {dueCount > 0 || newLeft > 0 ? (
           <div className="absolute right-3 top-3 z-10 flex gap-1.5">
             {dueCount > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
                 <RefreshIcon size={13} /> {t("learn.due_count", { n: dueCount })}
               </span>
             ) : null}
-            {newToday > 0 ? (
+            {newLeft > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
-                <BoltIcon size={13} /> {t("learn.new_count", { n: newToday })}
+                <BoltIcon size={13} /> {t("learn.new_count", { n: newLeft })}
               </span>
             ) : null}
           </div>

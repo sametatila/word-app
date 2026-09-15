@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { LearnHub, type LearnHubData } from "@/components/learn/learn-hub";
 import { getUserInfo } from "@/lib/auth/server";
-import { ensureProfile, getProgress } from "@/lib/session";
+import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { titleMeta } from "@/lib/page-meta";
 
@@ -49,7 +49,7 @@ export default async function LearnPage({
     reviewsToday: 0,
     hasToday: false,
     dueCount: 0,
-    newToday: 0,
+    newLeft: 0,
     hasMockExams: false,
     // Yürüyüş modu mikrofon istiyor ve tarayıcının izni sunucudan bilinemez.
     // Kama yine de çiziliyor; izni modun kendisi soruyor. Mobilde de kart
@@ -79,7 +79,8 @@ export default async function LearnPage({
          `hasToday` ayrımı). Günün satırı hiç yoksa (henüz çalışılmadı) sayı
          yine sıfır, ama o SAHİCİ bir sıfır. */
       hasToday: !!progress,
-      newToday: todayStat?.newWords ?? 0,
+      // Rozet turda KALAN yeni kelimeyi söylüyor (tur kurulumuyla aynı karar).
+      newLeft: await newWordsLeft(user.id, today).catch(() => 0),
       dueCount: progress?.dueNow ?? 0,
       hasMockExams: supportsMockExams(profile.course),
       canWalk: true,

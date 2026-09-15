@@ -76,7 +76,9 @@ export function LearnScreen() {
   const dailyGoal = me?.dailyGoal ?? 0;
   const reviewsToday = me?.reviewsToday ?? 0;
   const dueCount = me?.dueCount ?? 0;
-  const newToday = me?.newToday ?? 0;
+  // Rozet turda KALAN yeni kelimeyi söylüyor (sunucu `newWordsLeft`); eski uç
+  // yalnız `newToday` gönderiyorsa o okunuyor.
+  const newToday = me?.newLeft ?? me?.newToday ?? 0;
   const hasToday = me?.reviewsToday !== undefined; // canlı /api/me
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 

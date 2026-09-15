@@ -27,6 +27,8 @@ export type Me = {
   /** Günlük alışkanlık döngüsü (/api/me; canlı değilse tanımsız). */
   reviewsToday?: number;
   newToday?: number;
+  /** Turda bugün KALAN yeni kelime — Öğren rozeti (sunucu `newWordsLeft`). */
+  newLeft?: number;
   /** Günde yeni kelime hedefi — ayarlar ekranı bunu çiziyor. */
   newPerDay?: number;
   dueCount?: number;

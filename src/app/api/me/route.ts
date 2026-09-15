@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
-import { ensureProfile, getProgress } from "@/lib/session";
+import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
 
 export const dynamic = "force-dynamic";
@@ -27,6 +27,7 @@ export async function GET() {
     // bugünkü tekrar/yeni sayısı + zamanı gelen (due) toplam. Ana ekranın günlük
     // hedef halkası ve "bugün ne var" çipleri bunları gösterir.
     const todayStat = progress?.days?.find((d) => d.day === today);
+    const newLeft = await newWordsLeft(userId, today).catch(() => 0);
 
     return NextResponse.json(
       {
@@ -54,7 +55,16 @@ export async function GET() {
         totalWords,
         seconds: progress?.seconds ?? 0,
         reviewsToday: todayStat?.reviews ?? 0,
-        newToday: todayStat?.newWords ?? 0,
+        /*
+          `newToday` ÖĞREN ROZETİNİN SAYISI: turda bugün KALAN yeni kelime
+          (`newWordsLeft`, tur kurulumuyla aynı karar). Eskiden bugün öğrenilmiş
+          yeni kelimeydi ve hiç öğrenilmediyse rozet çizilmiyordu; yayındaki
+          mobil sürümler bu adı yalnız rozet için okuyor, o yüzden ad korunup
+          anlam düzeltildi — rozet yeni build beklemeden doğru. Bugün öğrenilen
+          sayı tur özetinde oturumun kendi metasından geliyor.
+        */
+        newToday: newLeft,
+        newLeft,
         dueCount: progress?.dueNow ?? 0,
         /*
          * TEKRAR KUYRUĞU VE SEVİYE KIRILIMI. `getProgress` üçünü de zaten
