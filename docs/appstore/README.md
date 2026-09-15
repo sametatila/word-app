@@ -348,7 +348,8 @@ Bu ayrım gizlilik politikası §3 ve §4 ile birebir aynı.
 ## İnceleme notları (App Review Information)
 
 Uygulama hesapsız da kullanılabiliyor (misafir kimliği, 2026-09-15, mağaza ön inceleme B24);
-sosyal, yapay zekâ, Premium satın alma ve hatırlatmalar hesap istiyor. `docs/appstore/connect.md`'deki
+hatırlatmalar (cihaz içi) ve rızayla tek bir yapay zekâ değerlendirmesi misafire açık; sosyal,
+sonraki yapay zekâ değerlendirmeleri ve Premium satın alma hesap istiyor. `docs/appstore/connect.md`'deki
 inceleme hesabı ve adımlar App Store Connect'e girilir; misafir yolu notların 2. adımında.
 Gizlilik etiketinde misafir yeni bir veri türü açmıyor: misafirde toplanan her şey (rastgele
 kullanıcı kimliği, öğrenme ve etkileşim verisi) hesapta da toplanıyor ve beyanlı (User ID,

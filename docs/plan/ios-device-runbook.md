@@ -238,7 +238,8 @@ aranıyor, Android'de uzantısız.
 
 Onboarding bitince giriş ekranı açılıyor; oradaki "Hesapsız devam et" misafir kimliğiyle
 uygulamaya geçiriyor (2026-09-15, mağaza ön inceleme B24). Hesap isteyen yüzeyler (sosyal,
-yapay zekâ, Premium, hatırlatmalar) misafirde "Hesap oluştur" kartı gösteriyor. 6'dan
+tek denemeden sonraki yapay zekâ, Premium) misafirde "Hesap oluştur" kartı gösteriyor; hatırlatmalar
+misafire de açık (cihaz içi). 6'dan
 sonrasının çoğu hesapla koşulmalı; misafir akışı 5.0'da.
 
 ### 5.0 · Hesapsız devam et

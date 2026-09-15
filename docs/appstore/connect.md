@@ -6,8 +6,8 @@ ile Apple'ın sorduğu şey (arka plan sesi gerekçesi, App Privacy, 4.8) örtü
 
 Uygulama hesapsız da kullanılabiliyor (2026-09-15, mağaza ön inceleme B24): giriş
 ekranındaki "Continue without an account" kelime turlarını, dersleri, becerileri, Patika'yı,
-ekran açık yürüyüş modunu ve sınavları açıyor. Sosyal özellikler, yapay zekâ değerlendirmesi,
-Premium satın alma ve hatırlatmalar hesap istiyor; o ekranlar bunu söyleyip "Create account"
+ekran açık yürüyüş modunu ve sınavları açıyor. Hatırlatmalar (cihaz içi) ve rızayla tek bir yapay zekâ
+değerlendirmesi misafire açık; sosyal özellikler, sonraki değerlendirmeler ve Premium satın alma hesap istiyor; o ekranlar bunu söyleyip "Create account"
 sunuyor ve misafir ilerlemesi hesaba taşınıyor. Arka plan sesini ve yapay zekâyı görebilmesi
 için inceleme yine Premium bir test hesabı ister (Sign-in required: evet). Bu belgedeki hiçbir alan **doldurulmuş değil**: Apple Developer
 hesabı henüz açılmadı (bkz. `docs/appstore/README.md` "iOS yayınından önce bitmesi
@@ -41,7 +41,7 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication.
 
 1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
-2. No account is needed to use the app (Guideline 5.1.1(v)): on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends and leagues, AI feedback, buying Premium and reminders need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
+2. No account is needed to use the app (Guideline 5.1.1(v)): on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Reminders work without an account (set up on the device), and a guest gets one AI writing or speaking assessment after consenting. Friends and leagues, further AI feedback and buying Premium need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
 3. To review the account features, sign in instead: on the sign-in screen tap "Continue with email" and sign in with the account above.
 4. The notification permission screen has a single "Continue" button that opens the system alert; choose "Allow" or "Don't Allow" there.
 5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).

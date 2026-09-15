@@ -1,8 +1,9 @@
 # Google Play Console — uygulama erişimi, giriş ve inceleme notları (Lernomi, `com.lernomi.learn`)
 
 Uygulama hesapsız da kullanılabiliyor (2026-09-15, mağaza ön inceleme B24): giriş ekranındaki
-"Continue without an account" çekirdek öğrenmeyi açıyor. Sosyal özellikler, yapay zekâ
-değerlendirmesi, Premium satın alma ve hatırlatmalar hesap istiyor; Play incelemesi bu yüzden
+"Continue without an account" çekirdek öğrenmeyi açıyor. Hatırlatmalar misafire de açık (cihaz içi) ve misafir
+rızayla tek bir yapay zekâ değerlendirmesi alıyor. Sosyal özellikler, sonraki yapay zekâ
+değerlendirmeleri ve Premium satın alma hesap istiyor; Play incelemesi bu yüzden
 yine test kimlik bilgisi ister ("some functionality is restricted"). Google girişi de Play'in
 imzaladığı sürümde ancak doğru SHA-1 kayıtlıysa çalışır. Bu belge iki formu ve inceleme öncesi kontrolleri toplar.
 
@@ -36,7 +37,7 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall or purchase. It does not expire and needs no one-time code.
 
 1. Open the app and go through onboarding with "Continue": course German, level "From scratch", goal "Easy".
-2. The core app works without an account: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends and leagues, AI feedback, buying Premium and reminders need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
+2. The core app works without an account: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Reminders work without an account (set up on the device), and a guest gets one AI writing or speaking assessment after consenting. Friends and leagues, further AI feedback and buying Premium need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
 3. To review the restricted features, sign in instead: on the sign-in screen tap "Continue with email" and sign in with the account above.
 4. On the notification permission screen you may tap "Maybe later".
 5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
