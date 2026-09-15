@@ -56,6 +56,7 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorum
 | Veri | Nereden | Amaç | Hukuki dayanak (KVKK / GDPR) | Saklama |
 |---|---|---|---|---|
 | E-posta adresi, ad, parola özeti | Kayıt formu ya da giriş için seçtiğin Google veya Apple hesabın | Hesap açma, giriş, parola sıfırlama, doğrulama e-postası | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | Hesap süresince |
+| Misafir kimliği: rastgele bir kullanıcı kimliği ve oturum jetonu (e-posta, ad ya da parola alınmaz) | Uygulama, "Hesapsız devam et"e dokunduğunda | Uygulamayı hesapsız kullanırken ilerlemeni sunucuda tutmak; hesap oluşturur ya da hesabına girersen ilerlemeni hesabına birleştirmek | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | {{sessionMaxDays}} gün kullanılmazsa en geç 7 gün içinde silinir; hesaba birleşince hemen silinir |
 | Görünen ad, avatar seçimi, seviye, kurs, günlük hedef, ses tercihi | Sen | Kişiselleştirme; görünen ad haftalık sıralamada diğer kullanıcılara görünür | Sözleşmenin ifası | Hesap süresince |
 | Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, konuşma ve sınav sonuçları | Uygulamayı kullanırken | Aralıklı tekrar planı, ilerleme, sıralama | Sözleşmenin ifası | Hesap süresince |
 | Yazdığın ve söylediğin metinler (yazma görevleri, konuşma pratiği, sınav cevapları) | Sen | Yapay zekâ ile değerlendirme, geri bildirim ve konuşma pratiğindeki yanıtlar | Dil modeli sağlayıcılarına gönderim için açık rıza (m.5/1 / m.6(1)(a)): uygulama içi izin ekranı, geri alınabilir. Sonuçların hesabında tutulması için sözleşmenin ifası | Değerlendirmeler hesap süresince; konuşma pratiği kayıtları {{speechLogDays}} gün |
@@ -72,6 +73,8 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorum
 | Satın alma ve abonelik durumu | Uygulama mağazası / RevenueCat | Premium özellikleri açmak | Sözleşmenin ifası; yasal yükümlülük (muhasebe) | Hesap süresince; mali kayıtlar yasal süre boyunca |
 | İçerik bildirimlerin | Sen ("Bildir") | Uygunsuz yapay zekâ yanıtlarını incelemek | Meşru menfaat (güvenli hizmet) | İnceleme kapanana kadar |
 | Yazdığın destek ve hak talepleri | Sen | Talebi cevaplamak, yasal kayıt | Yasal yükümlülük (KVKK m.13, GDPR m.12) | Talep kapandıktan sonra 2 yıl |
+
+**Hesapsız (misafir) kullanım:** Hesap oluşturmadan kullanırsan yukarıdaki öğrenme verisi, kişiselleştirme tercihleri, kullanım olayları ve oturum kaydı hesap yerine misafir kimliğine bağlı işlenir. Misafirde sosyal özellikler, yapay zekâya ve sunucudaki ses tanımaya gönderim, bildirim jetonu ve satın alma yoktur. Misafir kimliğinin jetonu yalnız cihazında saklanır ve yalnız ilerlemeni hesabına birleştirmek için kullanılır. Hesap oluşturursan misafir ilerlemen hesabına taşınır; var olan hesabına girersen hesabındaki ilerlemeyle birleşir (aynı kelimede, derste ya da alıştırmada en ileri durum ve toplam emek korunur, hesabının ayarları geçerli kalır) ve misafir kimliği silinir.
 
 **Toplanmayanlar:** konum, rehber, takvim, fotoğraf, reklam kimliği, donanım kimlikleri (IMEI, seri numarası gibi), çökme raporu, özel nitelikli kişisel veri. Toplanan cihaz tanımlayıcıları yalnız yukarıdaki mobil bildirim jetonu ve web push aboneliğidir; ikisi de yalnız bildirim göndermek için kullanılır. Lernomi reklam göstermez, üçüncü taraf analitik ya da takip SDK'sı içermez, veri satmaz.
 
@@ -144,6 +147,7 @@ Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola s�
 ## 9. Saklama süreleri
 
 - Hesap ve öğrenme verisi: hesabın açık olduğu sürece; hesap silinince tümü silinir.
+- Misafir verisi (hesapsız kullanım): misafir kimliğini {{sessionMaxDays}} gün kullanmazsan oturumu düşer ve veriler en geç 7 gün içinde silinir; hesap oluşturur ya da hesabına girersen hesabına birleşir ve misafir kimliği hemen silinir.
 - Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): {{speechLogDays}} gün, sonra kendiliğinden silinir.
 - Ses kayıtları: saklanmaz.
 - Mobil bildirim jetonu: çıkış yapana ya da jeton geçersizleşene kadar.
@@ -171,6 +175,8 @@ KVKK m.11 ve GDPR m.15-22 uyarınca şunları isteyebilirsin:
 ## 11. Hesabını ve verilerini silme
 
 Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap › Hesabı sil**, ya da web'de [www.lernomi.app/account/delete]({{link:deleteAccount}}). Silme anında hesabın, ilerlemen, yazıların, konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
+
+Hesapsız (misafir) kullanıyorsan verilerini uygulamada **Profil › Misafir verilerini sil** ile silebilirsin: misafir kimliği ve bütün ilerlemen sunucudan ve cihazından kalıcı olarak silinir.
 
 ## 12. Çocuklar
 
@@ -221,6 +227,7 @@ The servers run on {{hosting}}; the data is stored there. The controller is not 
 | Data | Source | Purpose | Legal ground (KVKK / GDPR) | Retention |
 |---|---|---|---|---|
 | E-mail address, name, password hash | Registration form, or the Google or Apple account you sign in with | Account creation, sign-in, password reset, verification e-mail | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | For the life of the account |
+| Guest identity: a random user ID and session token (no e-mail, name or password is collected) | The app, when you tap "Continue without an account" | Keeping your progress on the server while you use the app without an account; combining it with your account if you create one or sign in | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | Deleted within 7 days after {{sessionMaxDays}} days without use; deleted immediately when combined with an account |
 | Display name, avatar choice, level, course, daily goal, voice preference | You | Personalisation; the display name is visible to other users on the weekly leaderboard | Performance of a contract | For the life of the account |
 | Learning data: word state, review results, streak, XP, achievements, speaking practice and exam results | While you use the app | Spaced repetition schedule, progress, leaderboard | Performance of a contract | For the life of the account |
 | Texts you write and say (writing tasks, speaking practice, exam answers) | You | AI assessment, feedback and replies in speaking practice | Explicit consent for sending to language model providers (Art. 5/1 / Art. 6(1)(a)): in-app consent screen, revocable. Performance of a contract for keeping the results in your account | Assessments for the life of the account; speaking practice logs for {{speechLogDays}} days |
@@ -237,6 +244,8 @@ The servers run on {{hosting}}; the data is stored there. The controller is not 
 | Purchase and subscription state | App store / RevenueCat | Unlocking Premium features | Performance of a contract; legal obligation (accounting) | For the life of the account; financial records for the statutory period |
 | Your content reports | You ("Report") | Reviewing inappropriate AI answers | Legitimate interest (a safe service) | Until the review closes |
 | Support messages and rights requests you send | You | Answering the request, statutory record | Legal obligation (KVKK Art. 13, GDPR Art. 12) | 2 years after the request closes |
+
+**Using the app without an account (guest):** If you use the app without creating an account, the learning data, personalisation preferences, usage events and session record described above are processed under a guest identity instead of an account. Guests have no social features, nothing is sent to AI or to server-side speech recognition, and there is no notification token and no purchase. The guest identity's token is stored only on your device and used only to combine your progress with an account. If you create an account, your guest progress moves into it; if you sign in to an existing account, it is combined with that account's progress (for the same word, lesson or exercise the most advanced state and the total effort are kept, and your account's settings stay in force) and the guest identity is deleted.
 
 **What is not collected:** location, contacts, calendar, photos, advertising identifier, hardware identifiers (such as IMEI or serial number), crash reports, special categories of personal data. The only device identifiers collected are the mobile notification token and the web push subscription above; both are used solely to deliver notifications. Lernomi shows no ads, contains no third-party analytics or tracking SDK, and sells no data.
 
@@ -309,6 +318,7 @@ You receive only service-related messages: e-mail verification, password reset, 
 ## 9. Retention periods
 
 - Account and learning data: as long as the account exists; when the account is deleted, all of it is deleted.
+- Guest data (use without an account): if you do not use the guest identity for {{sessionMaxDays}} days, its session expires and the data is deleted within 7 days at the latest; if you create an account or sign in, it is combined with the account and the guest identity is deleted immediately.
 - Speaking practice logs (the sentence you said and the model's reply): {{speechLogDays}} days, then deleted automatically.
 - Audio recordings: not kept.
 - Mobile notification token: until you sign out or the token expires.
@@ -336,6 +346,8 @@ Under KVKK Art. 11 and Art. 15-22 GDPR you may ask to:
 ## 11. Deleting your account and your data
 
 You can delete your account in two ways: in the app under **Profile › Settings › Account › Delete account**, or on the web at [www.lernomi.app/account/delete]({{link:deleteAccount}}). At the moment of deletion your account, your progress, your texts, your speaking logs, your usage events and your social traces (friendships, reactions) are permanently deleted; this cannot be undone. Financial records subject to a statutory retention obligation are kept in anonymised form. If you have a store subscription, you need to cancel it separately in the store you bought it from.
+
+If you use the app without an account (as a guest), you can delete your data in the app under **Profile › Delete guest data**: the guest identity and all of your progress are permanently deleted from the server and from your device.
 
 ## 12. Children
 
@@ -386,6 +398,7 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verant
 | Daten | Herkunft | Zweck | Rechtsgrundlage (KVKK / DSGVO) | Speicherdauer |
 |---|---|---|---|---|
 | E-Mail-Adresse, Name, Passwort-Hash | Registrierungsformular oder das Google- oder Apple-Konto, mit dem du dich anmeldest | Kontoerstellung, Anmeldung, Passwort-Reset, Bestätigungs-E-Mail | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Für die Dauer des Kontos |
+| Gastidentität: eine zufällige Nutzerkennung und ein Sitzungstoken (keine E-Mail-Adresse, kein Name, kein Passwort) | Die App, wenn du auf "Ohne Konto fortfahren" tippst | Deinen Fortschritt bei Nutzung ohne Konto auf dem Server halten; ihn mit deinem Konto zusammenführen, wenn du eines erstellst oder dich anmeldest | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Nach {{sessionMaxDays}} Tagen ohne Nutzung innerhalb von 7 Tagen gelöscht; bei Zusammenführung mit einem Konto sofort |
 | Anzeigename, Avatar-Auswahl, Niveau, Kurs, Tagesziel, Stimmpräferenz | Du | Personalisierung; der Anzeigename ist für andere Nutzer in der Wochen-Rangliste sichtbar | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Ergebnisse von Sprechübungen und Prüfungen | Während der Nutzung der App | Wiederholungsplan, Fortschritt, Rangliste | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Texte, die du schreibst und sprichst (Schreibaufgaben, Sprechpraxis, Prüfungsantworten) | Du | Bewertung, Rückmeldung und Antworten in der Sprechpraxis durch KI | Ausdrückliche Einwilligung für die Übermittlung an Sprachmodell-Anbieter (Art. 5/1 / Art. 6 Abs. 1 lit. a): Einwilligungsbildschirm in der App, widerruflich. Erfüllung eines Vertrags für die Speicherung der Ergebnisse in deinem Konto | Bewertungen für die Dauer des Kontos; Protokolle der Sprechpraxis {{speechLogDays}} Tage |
@@ -402,6 +415,8 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verant
 | Kauf- und Abonnementstatus | App-Store / RevenueCat | Freischalten der Premium-Funktionen | Erfüllung eines Vertrags; rechtliche Verpflichtung (Buchhaltung) | Für die Dauer des Kontos; Finanzunterlagen für die gesetzliche Frist |
 | Deine Inhaltsmeldungen | Du ("Melden") | Prüfung unangemessener KI-Antworten | Berechtigtes Interesse (sicherer Dienst) | Bis zum Abschluss der Prüfung |
 | Support-Nachrichten und Rechteanfragen | Du | Beantwortung der Anfrage, gesetzliche Dokumentation | Rechtliche Verpflichtung (Art. 13 KVKK, Art. 12 DSGVO) | 2 Jahre nach Abschluss der Anfrage |
+
+**Nutzung ohne Konto (Gast):** Nutzt du die App ohne Konto, werden die oben beschriebenen Lerndaten, Personalisierungseinstellungen, Nutzungsereignisse und der Sitzungseintrag unter einer Gastidentität statt unter einem Konto verarbeitet. Gäste haben keine sozialen Funktionen, es wird nichts an eine KI oder an die serverseitige Spracherkennung gesendet, und es gibt weder ein Benachrichtigungs-Token noch Käufe. Das Token der Gastidentität wird nur auf deinem Gerät gespeichert und nur verwendet, um deinen Fortschritt mit einem Konto zusammenzuführen. Erstellst du ein Konto, wird dein Gastfortschritt übernommen; meldest du dich bei einem bestehenden Konto an, wird er mit dessen Fortschritt zusammengeführt (bei demselben Wort, derselben Lektion oder Übung bleiben der weiteste Stand und der gesamte Aufwand erhalten, die Einstellungen deines Kontos gelten weiter), und die Gastidentität wird gelöscht.
 
 **Was nicht erhoben wird:** Standort, Kontakte, Kalender, Fotos, Werbe-ID, Hardwarekennungen (etwa IMEI oder Seriennummer), Absturzberichte, besondere Kategorien personenbezogener Daten. Die einzigen erhobenen Gerätekennungen sind das oben genannte mobile Benachrichtigungs-Token und das Web-Push-Abonnement; beide dienen nur der Zustellung von Benachrichtigungen. Lernomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine Daten.
 
@@ -474,6 +489,7 @@ Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset
 ## 9. Speicherfristen
 
 - Konto- und Lerndaten: solange das Konto besteht; mit der Löschung des Kontos wird alles gelöscht.
+- Gastdaten (Nutzung ohne Konto): Nutzt du die Gastidentität {{sessionMaxDays}} Tage nicht, läuft ihre Sitzung ab und die Daten werden spätestens nach 7 Tagen gelöscht; erstellst du ein Konto oder meldest du dich an, werden sie mit dem Konto zusammengeführt und die Gastidentität wird sofort gelöscht.
 - Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): {{speechLogDays}} Tage, danach automatische Löschung.
 - Audioaufnahmen: werden nicht gespeichert.
 - Mobiles Benachrichtigungs-Token: bis du dich abmeldest oder das Token ungültig wird.
@@ -501,6 +517,8 @@ Nach Art. 11 KVKK und Art. 15-22 DSGVO kannst du verlangen:
 ## 11. Konto und Daten löschen
 
 Du kannst dein Konto auf zwei Wegen löschen: in der App unter **Profil › Einstellungen › Konto › Konto löschen** oder im Web unter [www.lernomi.app/account/delete]({{link:deleteAccount}}). Im Moment der Löschung werden dein Konto, dein Fortschritt, deine Texte, deine Sprechprotokolle, deine Nutzungsereignisse und deine sozialen Spuren (Freundschaften, Reaktionen) dauerhaft gelöscht; das ist unwiderruflich. Finanzunterlagen, die einer gesetzlichen Aufbewahrungspflicht unterliegen, werden anonymisiert aufbewahrt. Hast du ein Store-Abonnement, musst du es zusätzlich in dem Store kündigen, in dem du es gekauft hast.
+
+Nutzt du die App ohne Konto (als Gast), kannst du deine Daten in der App unter **Profil › Gastdaten löschen** löschen: Die Gastidentität und dein gesamter Fortschritt werden dauerhaft vom Server und von deinem Gerät gelöscht.
 
 ## 12. Kinder
 

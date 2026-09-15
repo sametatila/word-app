@@ -283,18 +283,25 @@ export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
       hakkının "satın alma ekranında istenen onayla" sona erdiğini söylüyordu;
       uygulamada böyle bir onay hiç yoktu ve satışı mağaza yapıyor. Yeni madde
       hakkı daraltmıyor, mağazanın yoluna ve yasal haklara bağlıyor.
+
+      Aynı sürüm misafir kullanımını da kapsıyor (mağaza ön inceleme B24): yeni
+      bir veri işleme (misafir kimliği), saklama süresi ve silme yolu. İkisi de
+      yayımlanmadan aynı gün yazıldığı için tek sürüm.
     */
     version: "1.2",
     date: "2026-09-15",
     changes: {
       tr: [
         "Şartların cayma maddesi (7) gerçek satın alma akışına göre yeniden yazıldı. Eski metin cayma hakkının satın alma ekranında verilen bir onayla sona erdiğini söylüyordu, oysa uygulama böyle bir onay hiç istemiyordu. Premium'u mağaza satar: satın almayı mağazanın ödeme ekranında onaylarsın, cayma ve iade taleplerini mağazanın şartlarına göre mağaza üzerinden kullanırsın. Tüketici olarak yasal hakların saklıdır; satın alma ekranı da bunu kısaca söylüyor.",
+        "Mobil uygulama artık hesapsız (misafir olarak) da kullanılabiliyor. Politika misafir kimliğini anlatıyor: e-posta, ad ya da parola alınmıyor; ilerlemen rastgele bir kimlikle sunucuda tutuluyor, jetonu yalnız cihazında duruyor. Misafirde sosyal özellikler, yapay zekâya gönderim, bildirim ve satın alma yok. Hesap oluşturursan ilerlemen hesabına taşınıyor, var olan hesabına girersen onunla birleşiyor; misafir kimliği 30 gün kullanılmazsa en geç 7 gün içinde siliniyor ve Profil › Misafir verilerini sil ile istediğin an silinebiliyor. Şartlara (3) misafir kullanımına da 18 yaş sınırının uygulandığı yazıldı.",
       ],
       en: [
         "The withdrawal clause of the terms (7) was rewritten to match the actual purchase flow. The old text said the right of withdrawal ended with a consent given on the purchase screen, but the app never asked for such a consent. Premium is sold by the store: you confirm the purchase on the store's payment screen and exercise withdrawal and refund requests through the store under its terms. Your statutory rights as a consumer are not affected; the purchase screen now says this briefly too.",
+        "The mobile app can now be used without an account (as a guest). The policy describes the guest identity: no e-mail, name or password is collected; your progress is kept on the server under a random identity whose token stays only on your device. Guests have no social features, nothing is sent to AI, and there are no notifications or purchases. If you create an account your progress moves into it, and if you sign in to an existing account it is combined with it; a guest identity is deleted within 7 days after 30 days without use and can be deleted at any time under Profile › Delete guest data. The terms (3) now state that the minimum age of 18 applies to guest use too.",
       ],
       de: [
         "Die Widerrufsklausel der Nutzungsbedingungen (7) wurde an den tatsächlichen Kaufablauf angepasst. Der alte Text sagte, das Widerrufsrecht erlösche mit einer Zustimmung auf dem Kaufbildschirm, doch die App hat nie eine solche Zustimmung eingeholt. Premium verkauft der Store: Du bestätigst den Kauf auf dessen Zahlungsbildschirm und machst Widerruf und Erstattung über den Store nach dessen Bedingungen geltend. Deine gesetzlichen Rechte als Verbraucher bleiben unberührt; das sagt jetzt auch kurz der Kaufbildschirm.",
+        "Die mobile App lässt sich jetzt auch ohne Konto (als Gast) nutzen. Die Datenschutzerklärung beschreibt die Gastidentität: Es werden weder E-Mail-Adresse noch Name noch Passwort erhoben; dein Fortschritt liegt unter einer zufälligen Kennung auf dem Server, deren Token nur auf deinem Gerät gespeichert ist. Gäste haben keine sozialen Funktionen, es wird nichts an eine KI gesendet, und es gibt keine Benachrichtigungen oder Käufe. Erstellst du ein Konto, wird dein Fortschritt übernommen; meldest du dich bei einem bestehenden Konto an, wird er damit zusammengeführt. Eine Gastidentität wird nach 30 Tagen ohne Nutzung innerhalb von 7 Tagen gelöscht und lässt sich jederzeit unter Profil › Gastdaten löschen löschen. Die Nutzungsbedingungen (3) sagen jetzt, dass das Mindestalter von 18 Jahren auch für die Nutzung als Gast gilt.",
       ],
     },
   },

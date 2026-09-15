@@ -44,6 +44,7 @@ Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uyg
 ## 3. Hesap ve yaş
 
 - Lernomi yetişkinlere yöneliktir: hesap açmak için 18 yaşını doldurmuş olman gerekir. 18 yaşından küçük olduğunu öğrendiğimiz hesapları kapatır ve verilerini sileriz.
+- Mobil uygulamayı hesap oluşturmadan (misafir olarak) da kullanabilirsin; bu şartlar ve 18 yaş sınırı misafir kullanımına da uygulanır. Sosyal özellikler, yapay zekâ değerlendirmesi, Premium ve hatırlatmalar hesap ister. Misafir ilerlemen o cihazdaki misafir kimliğine bağlıdır: uygulamayı silersen ya da {{sessionMaxDays}} gün kullanmazsan kaybolur. Hesap oluşturduğunda hesabına taşınır, var olan hesabına girersen onunla birleşir. Misafir verilerini uygulamada Profil › Misafir verilerini sil ile silebilirsin.
 - Hesap bilgilerin doğru olmalı; parolanı kimseyle paylaşma. Hesabınla yapılan işlemlerden sen sorumlusun; yetkisiz kullanımı fark edince bize bildir.
 - Hesabını dilediğin an silebilirsin: uygulamada Profil › Ayarlar › Hesap › Hesabı sil ya da web'de [hesap silme sayfası]({{link:deleteAccount}}). Silme geri alınamaz.
 
@@ -180,6 +181,7 @@ Lernomi is a language learning app offering vocabulary, listening, speaking and 
 ## 3. Account and age
 
 - Lernomi is intended for adults: you must be 18 or older to create an account. We close accounts we learn belong to someone under 18 and delete their data.
+- You can also use the mobile app without creating an account (as a guest); these terms and the minimum age of 18 apply to guest use too. Social features, AI feedback, Premium and reminders require an account. Your guest progress is tied to the guest identity on that device: it is lost if you delete the app or do not use it for {{sessionMaxDays}} days. When you create an account it moves into it, and if you sign in to an existing account it is combined with that account. You can delete your guest data in the app under Profile › Delete guest data.
 - Your account details must be accurate; never share your password. You are responsible for activity on your account; tell us if you notice unauthorised use.
 - You can delete your account at any time: in the app under Profile › Settings › Account › Delete account, or on the web via the [account deletion page]({{link:deleteAccount}}). Deletion cannot be undone.
 
@@ -316,6 +318,7 @@ Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und
 ## 3. Konto und Alter
 
 - Lernomi richtet sich an Erwachsene: Für ein Konto musst du mindestens 18 Jahre alt sein. Konten, von denen wir erfahren, dass sie einer Person unter 18 gehören, schließen wir und löschen die Daten.
+- Die mobile App kannst du auch ohne Konto (als Gast) nutzen; diese Bedingungen und das Mindestalter von 18 Jahren gelten auch für die Nutzung als Gast. Soziale Funktionen, KI-Feedback, Premium und Erinnerungen brauchen ein Konto. Dein Gastfortschritt hängt an der Gastidentität auf diesem Gerät: Er geht verloren, wenn du die App löschst oder sie {{sessionMaxDays}} Tage nicht nutzt. Erstellst du ein Konto, wird er übernommen; meldest du dich bei einem bestehenden Konto an, wird er damit zusammengeführt. Deine Gastdaten löschst du in der App unter Profil › Gastdaten löschen.
 - Deine Kontodaten müssen richtig sein; gib dein Passwort niemals weiter. Für Aktivitäten über dein Konto bist du verantwortlich; melde uns unbefugte Nutzung.
 - Du kannst dein Konto jederzeit löschen: in der App unter Profil › Einstellungen › Konto › Konto löschen oder im Web über die [Seite zur Kontolöschung]({{link:deleteAccount}}). Die Löschung ist unwiderruflich.
 

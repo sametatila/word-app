@@ -327,6 +327,27 @@ console.log("\nUygulama içi yollar");
   check("uygulama: Profil ekranından Ayarlar açılıyor", readFileSync("mobile/src/screens/ProfileScreen.tsx", "utf8").includes('nav.navigate("Settings")'));
   check("uygulama: yürüyüş modu Öğren sekmesinden açılıyor", readFileSync("mobile/src/screens/LearnScreen.tsx", "utf8").includes('nav.navigate("Walk")'));
 
+  /*
+    MİSAFİR SİLME YOLU (mağaza ön inceleme B24). Hesapsız kullanımda "Hesabı sil"
+    yok; politika, şartlar ve destek sayfası "Profil › Misafir verilerini sil"
+    diyor. Yol yine arayüzün etiketlerinden kuruluyor ve düğmenin Profil'de
+    gerçekten durduğu ölçülüyor.
+  */
+  const guestDeletePath = (l: (typeof LEGAL_LOCALES)[number]) => [base[l]["profile.profile"], base[l]["guest.delete_row"]].join(" › ");
+  for (const locale of LEGAL_LOCALES) {
+    const path = guestDeletePath(locale);
+    check(`misafir silme etiketi · ${locale}: sözlükte var`, Boolean(base[locale]["guest.delete_row"]));
+    for (const [name, doc] of [["gizlilik", PRIVACY_DEFAULT], ["şartlar", TERMS_DEFAULT], ["destek", SUPPORT_DEFAULT]] as const) {
+      check(`${name} · ${locale}: misafir silme yolu arayüzle aynı ("${path}")`, doc[locale].body.includes(path));
+    }
+  }
+  const profileScreen = readFileSync("mobile/src/screens/ProfileScreen.tsx", "utf8");
+  check(
+    "uygulama: Profil'de misafir silme satırı silme ekranını açıyor",
+    /onPress=\{\(\) => nav\.navigate\("DeleteAccount"\)\} accessibilityLabel=\{t\("guest\.delete_row"\)\}/.test(profileScreen),
+  );
+  check("uygulama: silme ekranı misafiri siliyor", readFileSync("mobile/src/screens/DeleteAccountScreen.tsx", "utf8").includes("await deleteGuest()"));
+
   // İnceleme notları İngilizce (inceleyici onu okuyor), Console beyanı ve Veri Güvenliği notu Türkçe.
   const docs: { file: string; locale: (typeof LEGAL_LOCALES)[number] }[] = [
     { file: "docs/appstore/connect.md", locale: "en" },
