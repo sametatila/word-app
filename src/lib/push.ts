@@ -319,8 +319,11 @@ export async function findReminderTargets(limit = 500): Promise<ReminderTarget[]
         // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
         // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
         // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
-            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
+        // PARANTEZ ŞART: Drizzle `and()` parçaları sarmıyor; çıplak `or`
+        // "(a and b and x) or y" okunuyordu ve cihaz jetonu olan herkes
+        // anahtarı, saati ve günde-bir-kez sınırını atlıyordu.
+        sql`(exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId}))`,
       ),
     )
     .limit(limit);
@@ -606,8 +609,11 @@ export async function runStreakAlerts(limit = 500) {
         // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
         // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
         // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
-            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
+        // PARANTEZ ŞART: Drizzle `and()` parçaları sarmıyor; çıplak `or`
+        // "(a and b and x) or y" okunuyordu ve cihaz jetonu olan herkes
+        // anahtarı, saati ve günde-bir-kez sınırını atlıyordu.
+        sql`(exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId}))`,
       ),
     )
     .limit(limit);
@@ -648,8 +654,11 @@ export async function runWeeklyReminders(limit = 500) {
         // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
         // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
         // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
-            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
+        // PARANTEZ ŞART: Drizzle `and()` parçaları sarmıyor; çıplak `or`
+        // "(a and b and x) or y" okunuyordu ve cihaz jetonu olan herkes
+        // anahtarı, saati ve günde-bir-kez sınırını atlıyordu.
+        sql`(exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId}))`,
       ),
     )
     .limit(limit);

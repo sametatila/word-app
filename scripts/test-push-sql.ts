@@ -1,6 +1,6 @@
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { coStreaksAtRisk } from "../src/lib/push";
+import { coStreaksAtRisk, findReminderTargets } from "../src/lib/push";
 
 /**
  * HATIRLATMA TURUNUN HAM SQL'İ — gerçek Postgres'te.
@@ -40,7 +40,11 @@ const tag = Math.random().toString(36).slice(2, 8);
 const A = `test-push-a-${tag}`;
 const B = `test-push-b-${tag}`;
 const C = `test-push-c-${tag}`;
-const ALL = [A, B, C];
+/* Hatırlatma hedefleri: hepsinin cihaz jetonu var. */
+const R_ON = `test-push-ron-${tag}`;
+const R_OFF = `test-push-roff-${tag}`;
+const R_SENT = `test-push-rsent-${tag}`;
+const ALL = [A, B, C, R_ON, R_OFF, R_SENT];
 
 /** Yalnız sorgunun okuduğu sütunlar yazılıyor; öteki sütunların varsayılanı var. */
 async function seed(today: string, days: string[]) {
@@ -59,6 +63,7 @@ async function cleanup() {
   await db.execute(sql`delete from friendships where requester_id = any(${ids}::text[]) or addressee_id = any(${ids}::text[])`);
   await db.execute(sql`delete from daily_stats where user_id = any(${ids}::text[])`);
   await db.execute(sql`delete from profiles where user_id = any(${ids}::text[])`);
+  await db.execute(sql`delete from device_tokens where user_id = any(${ids}::text[])`);
 }
 
 async function main() {
@@ -93,6 +98,21 @@ async function main() {
     check("iki gün üst üste çalışılmadıysa seri canlı sayılmıyor", broken.size === 0, JSON.stringify([...broken]));
     const empty = await coStreaksAtRisk([], today);
     check("boş liste sorgusuz boş döner", empty.size === 0);
+
+    /* KANAL KOŞULU PARANTEZ İÇİNDE Mİ. `and(..., sql\`exists … or exists …\`)`
+       "(filtreler and abonelik) or cihaz jetonu" okunuyordu: jetonu olan herkes
+       anahtarı kapalıyken ve bugün zaten hatırlatma almışken yine seçiliyordu. */
+    console.log("\nHatırlatma hedefleri (cihaz jetonu olanlar)");
+    await db.execute(sql`insert into profiles (user_id, display_name, reminder_hour, reminders_enabled, last_reminder_day, timezone) values
+      (${R_ON}, 'Açık', 0, true, null, 'UTC'),
+      (${R_OFF}, 'Kapalı', 0, false, null, 'UTC'),
+      (${R_SENT}, 'Aldı', 0, true, (now() at time zone 'UTC')::date, 'UTC')`);
+    await db.execute(sql`insert into device_tokens (token, user_id, platform) values
+      (${`t-${R_ON}`}, ${R_ON}, 'android'), (${`t-${R_OFF}`}, ${R_OFF}, 'android'), (${`t-${R_SENT}`}, ${R_SENT}, 'android')`);
+    const ids = new Set((await findReminderTargets(100_000)).map((r) => r.userId));
+    check("anahtarı açık ve jetonu olan seçiliyor", ids.has(R_ON));
+    check("anahtarı kapalıysa jeton olsa da seçilmiyor", !ids.has(R_OFF));
+    check("bugün hatırlatma aldıysa jeton olsa da seçilmiyor", !ids.has(R_SENT));
   } finally {
     await cleanup();
   }
