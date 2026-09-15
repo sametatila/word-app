@@ -247,7 +247,9 @@ export function AuthScreen() {
     setGuestBusy(false);
     if (r.ok) {
       left.current = true;
-      nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
+      /* Hatırlatma misafire de açık: hesapla girenle aynı bildirim sorusu. */
+      const prime = await notifPrimeNeeded().catch(() => false);
+      nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
       return;
     }
     setError(r.status === 429 ? t("auth.guest_rate_limited") : r.status === 0 ? t("common.connection_failed") : t("auth.guest_failed"));

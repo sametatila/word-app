@@ -5,7 +5,7 @@ import { api } from "../api/client";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
-import { cancelLocalReminders } from "./notifications";
+import { cancelLocalReminders, setReminderServerSync } from "./notifications";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
 import { billingLogout, configureBilling } from "./billing";
@@ -252,11 +252,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // yapılandırması yoksa sessizce no-op (bkz. pushDevice.ts). Hatırlatmalar
   // hesap istiyor: misafirde jeton hiç alınmıyor.
   useEffect(() => { if (billingId) void registerPushDevice(); }, [billingId]);
-  /* CİHAZDAKİ ZAMANLAMA DA HESABA AİT. Hatırlatmalar notifee ile telefona
-     kuruluyor ve çıkış, silme ya da misafire geçiş onları iptal etmiyordu:
-     aynı telefonda açılan misafir önceki hesabın hatırlatmalarını alıyor,
-     Bildirimler ekranı ona kapalı olduğu için kapatamıyordu. */
-  useEffect(() => { if (user?.guest) void cancelLocalReminders(); }, [user?.guest]);
+  /* Misafirin hatırlatması yalnız telefonda; sunucu tercihi yazılmıyor. Çıkış
+     ve silme cihazdaki zamanlamayı ayrıca iptal ediyor (aşağıda). */
+  useEffect(() => { setReminderServerSync(!user?.guest); }, [user?.guest]);
 
   // Giriş yapılınca (veya açılışta oturum geri yüklenince) TTS köprüsünü tazele.
   // Köprü uygulama kökünde girişten ÖNCE yükleniyor; taze kurulum/silip-yükle

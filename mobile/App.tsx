@@ -232,7 +232,7 @@ function Nav() {
   //
   // MİSAFİR bildirim izni ekranına düşmüyor: hatırlatmalar hesap istiyor
   // (mağaza ön inceleme B24). Hesap açınca giriş ekranı o soruyu soruyor.
-  const initialRoute = user ? (user.guest ? "Tabs" : prime ? "NotifPrime" : "Tabs") : !onboarded ? "Onboarding" : "Auth";
+  const initialRoute = user ? (prime ? "NotifPrime" : "Tabs") : !onboarded ? "Onboarding" : "Auth";
 
   return (
     /* Gezgin başvurusu bileşen ağacının dışından gezinmek için: bildirime

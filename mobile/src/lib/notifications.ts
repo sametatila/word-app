@@ -52,7 +52,16 @@ export const CHANNEL_ID = "reminder";
 type ServerPrefs = { daily: boolean; hour: number; streak: boolean; weekly: boolean };
 type PrefPatch = { daily?: boolean; hour?: number; streak?: boolean; weekly?: boolean };
 
+/**
+ * Sunucu tercihi yazılsın mı. Misafirde HAYIR: tercih ucu hesap istiyor (403)
+ * ve misafirin uzak bildirim jetonu yok — hatırlatma yalnız bu telefonda
+ * kuruluyor. Oturum sağlayıcısı kullanıcı değişince ayarlıyor.
+ */
+let serverSync = true;
+export function setReminderServerSync(on: boolean): void { serverSync = on; }
+
 async function syncPrefs(patch: PrefPatch): Promise<void> {
+  if (!serverSync) return;
   try {
     await api("/api/notifications/prefs", { method: "POST", body: JSON.stringify(patch) });
   } catch { /* ağ yok: yerel zamanlama yine geçerli, bir sonraki `loadPrefs` tekrar dener */ }
@@ -110,7 +119,7 @@ export async function loadPrefs(): Promise<ReminderPrefs> {
   const [hasDaily, hasStreak, hasWeekly] = await Promise.all([decided(KEY_DAILY), decided(KEY_STREAK), decided(KEY_WEEKLY)]);
 
   let srv: ServerPrefs | null = null;
-  if (!hasDaily || !hasStreak || !hasWeekly) {
+  if (serverSync && (!hasDaily || !hasStreak || !hasWeekly)) {
     try { srv = await api<ServerPrefs>("/api/notifications/prefs"); } catch { /* ağ yok: yerel değerlerle çiziliyor */ }
   }
   const out: ReminderPrefs = {

@@ -18,7 +18,7 @@ import { track } from "../lib/track";
 import { PROFILE_DEFAULTS, REMINDER_HOURS } from "../lib/profileDefaults";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { useAuth } from "../lib/AuthContext";
-import { GuestAccountCard } from "../ui/GuestAccountCard";
+import { FlowNote } from "../ui/flow";
 
 const hhmmOf = (h: number) => `${String(h).padStart(2, "0")}:00`;
 
@@ -59,12 +59,13 @@ export function NotificationsScreen() {
   const [weeklyOn, setWeeklyOn] = useState(false);
   const [denied, setDenied] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
-  /* Hatırlatmalar hesap istiyor (mağaza ön inceleme B24): misafirde tercih
-     okunmuyor, izin sorulmuyor, cihaza zamanlama kurulmuyor. */
+  /* MİSAFİRE DE AÇIK. Hatırlatma telefona kuruluyor ve sunucu istemiyor;
+     ilk günlerde uygulamaya geri getiren şey tam olarak bu. Misafirde yalnız
+     sunucu tercihi yazılmıyor (bkz. lib/notifications `setReminderServerSync`)
+     ve hatırlatmanın bu telefona bağlı olduğu söyleniyor. */
   const guest = Boolean(useAuth().user?.guest);
 
   useEffect(() => {
-    if (guest) return;
     /* Karar verilmemiş kategori sunucudaki değerle çiziliyor; bkz. `loadPrefs`. */
     loadPrefs().then((p) => {
       setDailyTime(p.hour);
@@ -82,7 +83,7 @@ export function NotificationsScreen() {
      * gösteriyor (`PushSettings`), mobil de artık gösteriyor.
      */
     pushPermissionDenied().then((d) => { if (d) fail(); });
-  }, [guest]);
+  }, []);
 
   function fail() { setDenied(true); setMsg(tx("notifications.permission_off")); }
 
@@ -126,12 +127,6 @@ export function NotificationsScreen() {
         <Text accessibilityRole="header" variant="h2">{tx("notifications.notifications")}</Text>
       </View>
 
-      {guest ? (
-        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-          <GuestAccountCard icon={BellIcon} tint={colors.info} title={tx("guest.reminders_title")} text={tx("guest.reminders_body")} />
-        </View>
-      ) : (
-
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.md, marginBottom: spacing.lg }}>
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
@@ -140,6 +135,7 @@ export function NotificationsScreen() {
           <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
+        {guest ? <View style={{ marginBottom: spacing.lg }}><FlowNote icon={<BellIcon color={colors.textMuted} size={16} />} text={tx("guest.reminders_local")} /></View> : null}
 
         <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
           {dailyOn && (
@@ -171,7 +167,6 @@ export function NotificationsScreen() {
           </PressableScale>
         ) : null}
       </ScrollView>
-      )}
     </View>
   );
 }
