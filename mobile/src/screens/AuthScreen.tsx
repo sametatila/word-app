@@ -71,6 +71,11 @@ export function AuthScreen() {
     if (left.current) return;
     left.current = true;
     clearGuestGone();
+    /* MİSAFİR UYGULAMANIN İÇİNDEN HESAP AÇTI (Premium, kilitli bir özellik,
+       Profil): geldiği ekrana dönüyor. Yığın sıfırlanınca Premium'a gelmiş
+       kişi Öğren sekmesinde kalıyordu. Bildirim sorusu açılışta ayrıca
+       soruluyor (App.tsx). */
+    if (guestUpgradeRef.current && nav.canGoBack()) { nav.goBack(); return; }
     // İlk giriş sonrası bir kez bildirim priming; sonra uygulama.
     const prime = await notifPrimeNeeded().catch(() => false);
     nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
