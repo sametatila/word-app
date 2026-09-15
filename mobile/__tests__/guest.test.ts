@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ApiError } from "../src/api/client";
-import { claimGuest, GUEST_KEY, isAccountRequired, loadGuestRecord, startGuest } from "../src/lib/guest";
+import { accountRequiredError, claimGuest, deleteGuestData, GUEST_KEY, isAccountRequired, loadGuestRecord, resumeGuest, startGuest } from "../src/lib/guest";
 
 /**
  * MİSAFİR KAYDI (mağaza ön inceleme B24).
@@ -77,4 +77,56 @@ test("hesap isteyen uç tanınıyor", () => {
   expect(isAccountRequired(new ApiError(403, "account_required"))).toBe(true);
   expect(isAccountRequired(new ApiError(403, "ai_consent_required"))).toBe(false);
   expect(isAccountRequired(new ApiError(401, "account_required"))).toBe(false);
+});
+
+/* ÇEREZİNİ KAYBEDEN MİSAFİR (iki adımlı doğrulamada vazgeçilen giriş). Kayıt
+   yalnız sunucunun AÇIK hükmüyle silinmeli: çıplak bir 404 (uç henüz yayında
+   değil) kaydı silseydi ilerleme bir daha birleştirilemezdi. */
+const reply = (status: number, body: unknown) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
+
+test("oturum jetonla geri kurulur; yeni jeton kayda yazılır", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  fetchWithTimeout.mockResolvedValue(reply(200, { token: "n".repeat(32), user: { id: record.id } }));
+  expect(await resumeGuest(record)).toBe("resumed");
+  expect((await loadGuestRecord())?.token).toBe("n".repeat(32));
+});
+
+test("sunucu GUEST_NOT_FOUND derse kayıt silinir", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  fetchWithTimeout.mockResolvedValue(reply(404, { code: "GUEST_NOT_FOUND" }));
+  expect(await resumeGuest(record)).toBe("gone");
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
+});
+
+test("kodsuz 404 ve ağ hatası kaydı silmez", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  fetchWithTimeout.mockResolvedValueOnce(reply(404, null));
+  expect(await resumeGuest(record)).toBe("retry");
+  fetchWithTimeout.mockRejectedValueOnce(new Error("network"));
+  expect(await resumeGuest(record)).toBe("retry");
+  expect(await loadGuestRecord()).toMatchObject({ id: record.id });
+});
+
+test("hesaba sabitlenmiş kayıt geri kurulmaz (bekleyen birleşme)", async () => {
+  expect(await resumeGuest({ ...record, for: "acc-1" })).toBe("gone");
+  expect(fetchWithTimeout).not.toHaveBeenCalled();
+});
+
+test("silme 401 alırsa önce oturumu geri kurup yeniden dener", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  api.mockRejectedValueOnce(new ApiError(401, "unauthorized")).mockResolvedValueOnce({ ok: true });
+  fetchWithTimeout.mockResolvedValue(reply(200, { token: record.token, user: { id: record.id } }));
+  expect(await deleteGuestData()).toBe(true);
+  expect(api).toHaveBeenCalledTimes(2);
+});
+
+test("silme 401 alır ve geri kurma da olmazsa başarı sayılmaz", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  api.mockRejectedValueOnce(new ApiError(401, "unauthorized"));
+  fetchWithTimeout.mockRejectedValue(new Error("network"));
+  expect(await deleteGuestData()).toBe(false);
+});
+
+test("misafirde atılmayan çağrının hatası hesap reddiyle aynı", () => {
+  expect(isAccountRequired(accountRequiredError())).toBe(true);
 });
