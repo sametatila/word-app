@@ -3,6 +3,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
+import { parseRange } from "@/lib/http-range";
 import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
@@ -96,30 +97,64 @@ export async function GET(req: Request) {
    * geçmiyor; önbellek (tarayıcı + CDN) zaten çoğu isteği buraya hiç
    * getirmiyor. Yani normal kullanıcı bu tavanı göremez.
    */
-  if (!(await takeUsage(userId, "tts_calls", "day", who?.guest ? GUEST_DAILY_TTS_CEILING : DAILY_TTS_CEILING))) {
-    return NextResponse.json(
-      { error: "quota" },
-      { status: 429, headers: { "cache-control": "no-store" } },
-    );
+  const key = `${voice}|${slow}|${text}`;
+  let hit = recent.get(key);
+  if (hit) {
+    // LRU: son kullanılanı sona taşı.
+    recent.delete(key);
+    recent.set(key, hit);
+  } else {
+    if (!(await takeUsage(userId, "tts_calls", "day", who?.guest ? GUEST_DAILY_TTS_CEILING : DAILY_TTS_CEILING))) {
+      return NextResponse.json(
+        { error: "quota" },
+        { status: 429, headers: { "cache-control": "no-store" } },
+      );
+    }
   }
 
   try {
-    const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow, userId);
-    return new Response(new Uint8Array(audio), {
-      headers: {
-        "content-type": "audio/mpeg",
-        "content-length": String(audio.length),
-        // Hangi yoldan geldiği yalnızca teşhis için: Edge kırılırsa bu
-        // başlıktan görülüyor, kullanıcı için bir farkı yok.
-        "x-tts-source": source,
-        // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
-        // doğrulama isteği bile gitmiyor.
-        "cache-control": `public, max-age=${MAX_AGE}, immutable`,
-        // Paylaşımlı önbellek için ayrı başlık: yukarıdakinin s-maxage'i her
-        // ara katmana ulaşmıyor. Bugün önde önbellek yok, başlık ileriye dönük.
-        "cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
-      },
-    });
+    if (!hit) {
+      hit = await synthesizeSpeech(text, voice as VoiceId, slow, userId);
+      remember(key, hit);
+    }
+    const { audio, source } = hit;
+    const headers: Record<string, string> = {
+      "content-type": "audio/mpeg",
+      "accept-ranges": "bytes",
+      // Hangi yoldan geldiği yalnızca teşhis için: Edge kırılırsa bu
+      // başlıktan görülüyor, kullanıcı için bir farkı yok.
+      "x-tts-source": source,
+      // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
+      // doğrulama isteği bile gitmiyor.
+      "cache-control": `public, max-age=${MAX_AGE}, immutable`,
+      // Paylaşımlı önbellek için ayrı başlık: yukarıdakinin s-maxage'i her
+      // ara katmana ulaşmıyor. Bugün önde önbellek yok, başlık ileriye dönük.
+      "cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
+    };
+    /*
+      BAYT ARALIĞI — iOS'ta `<audio>` bunsuz HİÇ çalmıyor.
+
+      iOS'un medya katmanı bir ses dosyasını açmadan önce `Range: bytes=0-1`
+      istiyor ve 206 bekliyor; düz 200 gelince oynatmayı hata ile bırakıyor.
+      Uç Range başlığını yok sayıyordu, önündeki nginx de proxy'lenen 200'e
+      aralık uygulamıyor (ölçüldü: 206 yok, `Accept-Ranges` yok). Sonuç: iOS
+      web uygulamasında (Safari ve ana ekrana eklenmiş PWA) ses öğesi yolu hep
+      düşüyor, tarayıcı sentezi de dokunuşun dışında kaldığı için susuyordu.
+      Aynı `<audio>`u mobil uygulamanın iOS'taki ses köprüsü de kullanıyor.
+      Android ve masaüstü Chrome aralık istemediği için orada sorun görünmüyordu.
+    */
+    const range = parseRange(req.headers.get("range"), audio.length);
+    if (range === "unsatisfiable") {
+      return new Response(null, { status: 416, headers: { "content-range": `bytes */${audio.length}`, "cache-control": "no-store" } });
+    }
+    if (range) {
+      const [start, end] = range;
+      return new Response(new Uint8Array(audio.subarray(start, end + 1)), {
+        status: 206,
+        headers: { ...headers, "content-range": `bytes ${start}-${end}/${audio.length}`, "content-length": String(end - start + 1) },
+      });
+    }
+    return new Response(new Uint8Array(audio), { headers: { ...headers, "content-length": String(audio.length) } });
   } catch (err) {
     console.error("[tts]", err);
     // 503 ve `no-store`: istemci bunu sessizce tarayıcı sentezine düşerek
@@ -150,5 +185,31 @@ function sameOrigin(req: Request): boolean {
     return new URL(source).host === host;
   } catch {
     return false;
+  }
+}
+
+/**
+ * Son sentezler — süreç içi, küçük.
+ *
+ * iOS bir sesi en az İKİ istekle alıyor (`bytes=0-1`, sonra geri kalanı).
+ * Her istek yeniden sentezleseydi bir kelime iki kez Edge'e gider ve günlük
+ * tavandan iki kez düşerdi. Önbellekten dönen istek sayılmıyor: maliyet
+ * sentezde. Instance başına tutuluyor (3 instance); aralık istekleri çoğunlukla
+ * aynı bağlantıdan aynı instance'a gidiyor, gitmezse yalnız bir fazla sentez olur.
+ */
+type Synth = Awaited<ReturnType<typeof synthesizeSpeech>>;
+const recent = new Map<string, Synth>();
+const RECENT_MAX_ITEMS = 400;
+const RECENT_MAX_BYTES = 24 * 1024 * 1024;
+let recentBytes = 0;
+
+function remember(key: string, value: Synth) {
+  recent.set(key, value);
+  recentBytes += value.audio.length;
+  while (recent.size > RECENT_MAX_ITEMS || recentBytes > RECENT_MAX_BYTES) {
+    const oldest = recent.keys().next();
+    if (oldest.done) break;
+    recentBytes -= recent.get(oldest.value)?.audio.length ?? 0;
+    recent.delete(oldest.value);
   }
 }
