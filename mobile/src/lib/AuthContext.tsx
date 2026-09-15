@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AppState } from "react-native";
 import { forgetAccountScoped } from "./accountScope";
+import { api } from "../api/client";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
@@ -114,9 +115,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * Önce profil yazımı ya da kuyruk boşaltma gitseydi hesap kendi boş
    * satırlarını kurar, misafirin seçimlerini görmezdi.
    *
-   * Yeni hesaba TAŞINDIYSA hesabın gerçek adı profile yazılıyor: misafirin
-   * profili adsızdı ve onboarding seçimleri misafir açılırken zaten harcandı,
-   * yani `adoptAccount` ada ulaşamadan dönüyor.
+   * Hesabın profilinde AD YOKSA gerçek adı yazılıyor: misafirin profili
+   * adsızdı ve onboarding seçimleri misafir açılırken zaten harcandı, yani
+   * `adoptAccount` ada ulaşamadan dönüyor. Yalnız "az önce açılan hesap"a
+   * bakmak yetmiyordu: e-postası sonradan doğrulanan ya da birleşmesi ağ
+   * yüzünden sonraki açılışa kalan hesap adsız kalıyordu. Adı olan hesabın
+   * adına dokunulmuyor.
    */
   const claimPendingGuest = useCallback(async (u: AuthUser, yeniHesap: boolean) => {
     if (u.guest) return;
@@ -126,7 +130,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (out.kind !== "merged") return;
     setClaimNotice(out.hadProgress ? "merged" : "moved");
     const ad = gercekAd(u);
-    if (!out.hadProgress && yeniHesap && ad) await updateProfile({ displayName: ad });
+    if (!ad) return;
+    const adsiz = yeniHesap && !out.hadProgress
+      ? true
+      : await api<{ name?: string | null }>("/api/me").then((m) => !m?.name?.trim()).catch(() => false);
+    if (adsiz) await updateProfile({ displayName: ad });
   }, []);
 
   /**
