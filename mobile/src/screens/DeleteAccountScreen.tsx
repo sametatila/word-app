@@ -60,7 +60,10 @@ export function DeleteAccountScreen() {
     sonra cihazdaki her şey. Parola ve taze giriş sorulmuyor (misafirin
     ikisi de yok); abonelik satırı yok (misafir abone olamıyor).
   */
-  const guest = Boolean(user?.guest);
+  /* Silme bitince kullanıcı null'a düşüyor; bayrak son bilinen kimlikte
+     donuyor, yoksa misafirin bitiş ekranı "hesabın silindi" diyordu. */
+  const [guest, setGuest] = useState(Boolean(user?.guest));
+  useEffect(() => { if (user) setGuest(Boolean(user.guest)); }, [user]);
 
   const [hasPassword, setHasPassword] = useState<boolean | null>(null);
   /** Bağlı sağlayıcılar — taze giriş hangi düğmeyle yapılacak, onu belirliyor. */
