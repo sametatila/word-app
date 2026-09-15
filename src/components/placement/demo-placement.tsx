@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { RoundExit } from "@/components/round-exit";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StateBody } from "@/components/flow";
+import { CheckIcon } from "@/components/icons";
 import { OptionMark } from "@/components/games/option-mark";
 import { demoPlacementFor, estimateLevel } from "@/lib/placement-demo";
 import { courseOrDefault } from "@/lib/courses";
@@ -77,38 +79,33 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
   // sebebi söyleniyor (onboarding bu seçeneği zaten göstermiyor).
   if (!total) {
     return (
-      <section className="card mx-auto w-full max-w-md p-6 text-center">
-        <p className="muted text-body">{t("placement.no_demo")}</p>
-        <button type="button" onClick={leave} className="btn btn-primary mt-4 px-5 py-3">
-          {t("common.close")}
-        </button>
-      </section>
+      <FlowColumn>
+        <StateBody mood="think" title={t("placement.no_demo")} />
+        <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
+      </FlowColumn>
     );
   }
 
+  /* SONUÇ ŞABLONU — mobil `PlacementScreen`in misafir dalıyla aynı alanlar:
+     band (seviye) → kaydedildi notu → Anladım / Kapat. Beceri kırılımı ve
+     seviye seçimi yok: örnek tur tek aşama ve kabul edilecek bir kayıt yok. */
   if (done) {
     return (
-      <section className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-10 text-center">
-        <span
-          className="flex items-center justify-center rounded-full on-fill"
-          style={{ width: 110, height: 110, background: "var(--color-brand)", fontSize: 40, fontWeight: 800 }}
-        >
-          {level}
-        </span>
-        <h1 className="mt-6 text-h1">{t("placement.your_level", { level })}</h1>
-        <p className="muted mt-1 text-body">{t("placement.result", { total, correct })}</p>
+      <FlowColumn className="px-4 py-6">
+        <ResultHero
+          eyebrow={t("placement.title")}
+          title={t("placement.your_level", { level })}
+          figure={level}
+          sub={t("placement.result_sub", { total, correct })}
+          mood="happy"
+        />
         {saved ? (
-          <p role="status" className="mt-4 font-bold" style={{ color: "var(--color-mint)" }}>
-            {t("placement.saved")}
-          </p>
+          <div role="status">
+            <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("placement.saved")} />
+          </div>
         ) : null}
-        <button type="button" onClick={apply} className="btn btn-primary mt-8 w-full px-5 py-4">
-          {t("placement.understood")}
-        </button>
-        <button type="button" onClick={leave} className="muted mt-2 w-full px-5 py-3 font-bold">
-          {t("common.close")}
-        </button>
-      </section>
+        <FlowActions primary={{ label: t("placement.understood"), onClick: apply }} tertiary={{ label: t("common.close"), onClick: leave }} />
+      </FlowColumn>
     );
   }
 

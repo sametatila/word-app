@@ -5,10 +5,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, AlertIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
-import { Celebrate } from "../ui/Celebrate";
-import { ProgressRing } from "../ui/ProgressRing";
+import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon } from "../ui/icons";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
@@ -17,7 +15,7 @@ import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate } from "../lib/premium";
 import { narrationVoice } from "../lib/voices";
-import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
+import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
 import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
@@ -165,6 +163,11 @@ export function WalkModeScreen() {
   }
 
   const tallyRef = useRef({ correct: 0, total: 0 });
+  /* Bitiş ekranının "yeni kelime" ve "süre" sayıları. Tur sayacıyla aynı
+     yerlerde sıfırlanıyor: ikisi aynı turu anlatmalı. `endedAt` bitişte bir
+     kez yazılıyor ki süre ekran yeniden çizildikçe kaymasın. */
+  const taughtRef = useRef(0);
+  const endedAt = useRef<number | null>(null);
   const manualResolve = useRef<((v: boolean | "skip") => void) | null>(null);
   const pulse = useRef(new Animated.Value(0)).current;
 
@@ -359,6 +362,7 @@ export function WalkModeScreen() {
     await sayNative(w.tr); if (!alive()) return true;
     await sayTarget(target); if (!alive()) return true;
     if (user && typeof w.id === "number") answers.current.push({ wordId: w.id, game: "intro", correct: true, latencyMs: 0 });
+    taughtRef.current += 1;
     return false;
   }
 
@@ -527,6 +531,7 @@ export function WalkModeScreen() {
     // Güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
     if (screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
+    endedAt.current = Date.now();
     setPhase("done");
     void sayNative(tx("walk.tour_done", { total: tallyRef.current.total, correct: tallyRef.current.correct }));
   }
@@ -618,6 +623,7 @@ export function WalkModeScreen() {
     startWalkService(); // güç tuşuyla ekran kapansa da arka planda mic açık kalsın (Azure yolu)
     startedAt.current = Date.now();
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
+    taughtRef.current = 0; endedAt.current = null;
     unheardWin.current = [];
     sfx("start"); // yürüyüşün açılışı — web `walk-player` aynı yerde çalıyor
     if (greet) {
@@ -648,7 +654,7 @@ export function WalkModeScreen() {
     } catch { setPhase("error"); }
   }
 
-  function finishDone() { setKeepAwake(false); stopWalkService(); setPhase("done"); }
+  function finishDone() { setKeepAwake(false); stopWalkService(); endedAt.current = Date.now(); setPhase("done"); }
 
   /** Ekran kapalı tur sonu: mikrofonu bir kez açıp evet/hayır dinle (parseConfirm). */
   async function listenConfirm(alive: () => boolean): Promise<boolean | null> {
@@ -684,6 +690,7 @@ export function WalkModeScreen() {
       if (!alive()) return;
       if (wr.length) {
         tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
+        taughtRef.current = 0; endedAt.current = null;
         unheardWin.current = []; startedAt.current = Date.now();
         setRounds(wr);
         void runLoop(wr, 0);
@@ -751,7 +758,7 @@ export function WalkModeScreen() {
   const speakTotal = rounds.filter((r) => r.kind === "speak").length || rounds.length;
   const speakStep = Math.min(speakTotal, rounds.slice(0, idx).filter((r) => r.kind === "speak").length + (rounds[idx]?.kind === "speak" ? 1 : 0));
   const donePct = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
-  const donePad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
+  const doneMin = Math.max(1, Math.round(((endedAt.current ?? Date.now()) - startedAt.current) / 60000));
 
   /**
    * Arka plan yolu kurulamadıysa tek satırlık uyarı. Turu durdurmuyor; söylediği
@@ -792,102 +799,117 @@ export function WalkModeScreen() {
     </View>
   );
 
+  /* Oynatıcı içindeki durum ekranları (karşılama, duraklama): üst çubuk ve
+     ilerleme yerinde, gövde durum şablonu, düğmeler altta sabit. */
+  const inPlayer = (body: React.ReactNode, actions?: React.ReactNode) => (
+    <>
+      {topBar(true)}
+      <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>{body}</View>
+      {actions ? <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>{actions}</View> : null}
+    </>
+  );
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {phase === "intro" ? (
-        <>
-          {topBar(false)}
-          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
-            <Mascot mood="wave" size={120} />
-            <Text variant="display" style={{ textAlign: "center" }}>{tx("walkmode.listen_and_say_it")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>
-              {tx("walkmode.intro_text", { nativeLang: nativeLangName(), target: targetLangName() })}
-            </Text>
-            <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color={colors.onPrimary}>{tx("common.start")}</Text>
-            </PressableScale>
-            <PressableScale onPress={showDisclosureInfo} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
-              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{tx("walkmode.about_microphone_and_voice_data")}</Text>
-            </PressableScale>
-          </View>
-        </>
+        /* KAPAK ŞABLONU. Eski tek paragraflık tanıtım ikonlu kural
+           satırlarına bölündü; açıklama bağlantısı altta metin düğmesi. */
+        <FlowScreen
+          top={<FlowTopBar onClose={onBackPress} />}
+          actions={
+            <FlowActions
+              primary={{ label: tx("common.start"), onPress: () => { void beginWalk(); } }}
+              tertiary={{ label: tx("walkmode.about_microphone_and_voice_data"), onPress: showDisclosureInfo }}
+            />
+          }
+        >
+          <CoverBody
+            icon={WalkIcon}
+            tint={fillOf("accent")}
+            eyebrow={tx("learn.walk_mode")}
+            title={tx("walkmode.listen_and_say_it")}
+            pitch={tx("walkmode.cover_pitch")}
+            rules={[
+              { icon: SpeakerIcon, text: tx("walkmode.rule_hint", { nativeLang: nativeLangName() }) },
+              { icon: MicIcon, text: tx("walkmode.rule_say", { target: targetLangName() }) },
+              { icon: SparkIcon, text: tx("walkmode.rule_teach") },
+              { icon: CheckIcon, text: tx("walkmode.rule_verdict") },
+              { icon: RepeatIcon, text: tx("walkmode.rule_continue") },
+            ]}
+          />
+        </FlowScreen>
+      ) : phase === "done" && noMore && tally.total === 0 ? (
+        /* BUGÜNLÜK KELİME YOK — bitmiş bir tur değil, boş kuyruk: durum şablonu. */
+        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
+          <StateBody mood="think" title={tx("walkmode.done_no_more")} body={tx("walkmode.done_no_more_sub")} />
+        </FlowScreen>
       ) : phase === "done" ? (
-        // Diğer oyunlarla (GameScreen) bütünlük: sağ üst X, ProgressRing, mascot, Tur bitti + Devam/Paylaş/Bitir.
-        <View style={donePad}>
-          <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-          </View>
-          <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-            <Celebrate show={tally.total > 0 && donePct >= 60} />
-            <Mascot mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"} size={104} />
-            <ProgressRing size={150} stroke={14} pct={donePct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-              <Text variant="display" color={colors.primaryText}>{tally.correct}/{tally.total || 0}</Text>
-              <Text variant="micro" color={colors.textMuted}>{tx("walkmode.correct")}</Text>
-            </ProgressRing>
-            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-            <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-              {tx(noMore ? "walkmode.done_no_more_sub" : "walkmode.done_saved")}
-            </Text>
-            {!noMore && (
-              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{tx("walkmode.continue")}</Text></PressableScale>
-            )}
-            {tally.total > 0 && (
-              <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{tx("common.share")}</Text>
-              </PressableScale>
-            )}
-            <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text></PressableScale>
-          </View>
-        </View>
+        /* SONUÇ ŞABLONU (GameScreen ile aynı dil): band → üç sayı → not →
+           altta sabit düğmeler. Halka kalktı: bandın ana sayısı aynı bilgi.
+           Kutlama eşiği eskisi gibi %60. */
+        <FlowScreen
+          celebrate={tally.total > 0 && donePct >= 60}
+          top={<FlowTopBar onClose={() => nav.goBack()} />}
+          actions={
+            <FlowActions
+              primary={noMore ? { label: tx("common.finish"), onPress: () => nav.goBack() } : { label: tx("walkmode.continue"), onPress: newTour }}
+              secondary={tally.total > 0 ? { label: tx("common.share"), icon: <ShareIcon color={colors.text} size={19} />, onPress: () => shareResult(tally.correct, tally.total) } : null}
+              tertiary={noMore ? null : { label: tx("common.finish"), onPress: () => nav.goBack() }}
+            />
+          }
+        >
+          {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337): bandın kendi canlı bölgesi. */}
+          <ResultHero
+            eyebrow={tx("learn.walk_mode")}
+            title={tx("walkmode.done_title")}
+            figure={`${tally.correct}/${tally.total || 0}`}
+            sub={tx("walkmode.done_saved")}
+            mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"}
+          />
+          {tally.total > 0 ? (
+            <StatRow items={[
+              { value: formatPercent(donePct), label: tx("summary.accuracy") },
+              ...(taughtRef.current > 0 ? [{ value: String(taughtRef.current), label: tx("walkmode.stat_new") }] : []),
+              { value: tx("time.minutes_short", { m: doneMin }), label: tx("walkmode.stat_time") },
+            ]} />
+          ) : null}
+          {noMore ? <FlowNote icon={<InboxIcon color={colors.textMuted} size={16} />} text={tx("walkmode.done_no_more_sub")} /> : null}
+        </FlowScreen>
       ) : phase === "stopped" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <Mascot mood="idle" size={100} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.i_paused_round")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.i_haven_t_heard_you_for_while")}</Text>
-          <PressableScale onPress={() => { unheardWin.current = []; void runLoop(rounds, idx); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.continue")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text>
-          </PressableScale>
-        </View>
+        inPlayer(
+          <StateBody mood="think" title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,
+          <FlowActions
+            primary={{ label: tx("walkmode.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, idx); } }}
+            tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
+          />,
+        )
       ) : phase === "error" ? (
-        <View accessibilityLiveRegion="assertive" style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <AlertIcon color={colors.textMuted} size={64} />
-          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walk.error_sub")}</Text>
-          <PressableScale onPress={loadQueue} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.go_back")}</Text>
-          </PressableScale>
-        </View>
+        <FlowScreen center actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: loadQueue }} tertiary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
+          <StateBody alert mood="sad" title={tx("walk.error_title")} body={tx("walk.error_sub")} />
+        </FlowScreen>
       ) : phase === "denied" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <MicIcon color={colors.textMuted} size={64} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.microphone_needed")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.walk_mode_works_by_voice_allow")}</Text>
-          {/* iOS'ta reddedilen izin uygulamadan YENİDEN İSTENEMİYOR: sistem penceresi
-              bir kez gösteriliyor. "İzin ver ve başla" orada hiçbir şey yapmayan
-              bir döngüydü; doğru yol Ayarlar. Android'de yeniden sormak mümkün. */}
-          <PressableScale onPress={() => { if (Platform.OS === "ios") void Linking.openSettings().catch(() => {}); else void start(rounds); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx(Platform.OS === "ios" ? "walkmode.open_settings" : "walkmode.allow_and_start")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
-          </PressableScale>
-        </View>
+        /* iOS'ta reddedilen izin uygulamadan YENİDEN İSTENEMİYOR: sistem penceresi
+           bir kez gösteriliyor. "İzin ver ve başla" orada hiçbir şey yapmayan
+           bir döngüydü; doğru yol Ayarlar. Android'de yeniden sormak mümkün. */
+        <FlowScreen
+          center
+          actions={
+            <FlowActions
+              primary={{ label: tx(Platform.OS === "ios" ? "walkmode.open_settings" : "walkmode.allow_and_start"), onPress: () => { if (Platform.OS === "ios") void Linking.openSettings().catch(() => {}); else void start(rounds); } }}
+              tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }}
+            />
+          }
+        >
+          <StateBody mood="think" title={tx("walkmode.microphone_needed")} body={tx("walkmode.walk_mode_works_by_voice_allow")} />
+        </FlowScreen>
       ) : greeting ? (
         <>
           {topBar(true)}
           {bgWarning()}
           {notifWarning()}
-          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
-            <Mascot mood="wave" size={124} />
-            <Text variant="h1">{tx("walkmode.here_we_go")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.listen_first_word_coming_up")}</Text>
+          {/* Karşılama okunurken: durum şablonu, düğme yok (ses bitince tur kendiliğinden başlıyor). */}
+          <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+            <StateBody mood="wave" title={tx("walkmode.here_we_go")} body={tx("walkmode.listen_first_word_coming_up")} />
           </View>
         </>
       ) : (

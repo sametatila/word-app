@@ -13,15 +13,13 @@ import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import { decideAiConsent, fetchAiConsent, type AiConsentProcessor } from "@/lib/ai-consent-client";
-import type { NativeLang } from "@/lib/i18n/dict";
+import { formatPercent, nativeLangName, type NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
 import { parseConfirm, parseSkip, skipWord } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
-import { Mascot } from "@/components/mascot";
-import { ScoreRing } from "@/components/score-ring";
-import { Confetti } from "@/components/celebrate";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
 import { resultText, shareText } from "@/lib/share";
 import { ShareIcon } from "@/components/icons";
 import { sharedAudioContext } from "@/lib/audio-context";
@@ -46,7 +44,7 @@ import { afterMs, withDeadline } from "@/components/pocket-clock";
 import { play, resetCombo, walkCueMs, type WalkCue } from "@/lib/sfx";
 import { pocketWalkCue } from "@/components/pocket-audio";
 import { track } from "@/lib/track";
-import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, InboxIcon, MicIcon, RefreshIcon, SparkIcon, SpeakerIcon, WalkIcon, XIcon } from "@/components/icons";
 import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "@/lib/types";
 import { localDay } from "@/lib/day";
 import { vibrate } from "@/lib/fx";
@@ -451,6 +449,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * ne yaptığı.
    */
   const walkRef = useRef({ correct: 0, total: 0, sessions: 1 });
+  /* Bitiş ekranının "yeni kelime" ve "süre" sayıları — `walkRef` gibi
+     YÜRÜYÜŞÜN tamamına ait (mobil tur başına sıfırlıyor, çünkü orada sayaç
+     da tur başına). Süre ilk başlangıçtan bitişe; bitiş anı bir kez
+     yazılıyor ki ekran yeniden çizildikçe kaymasın. */
+  const taught = useRef(0);
+  const walkBegan = useRef<number | null>(null);
+  const endedAt = useRef<number | null>(null);
+  /** Devam turu boş geldi: bitiş ekranında "devam" yok, not var (mobil `noMore`). */
+  const [noMore, setNoMore] = useState(false);
   /** Son turların duyuldu/duyulmadı geçmişi — pencere bunun üstünde. */
   const heardLog = useRef<boolean[]>([]);
   const { acquire, release } = useWakeLock();
@@ -1202,6 +1209,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               latencyMs: 0,
               hintUsed: true,
             });
+            taught.current += 1;
             continue;
           }
 
@@ -1397,6 +1405,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         stopPocketAudio();
         closeMic();
         void release();
+        endedAt.current = Date.now();
         setStatus("done");
         return;
       }
@@ -1409,6 +1418,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         track("walk_end", 2);
         ended.current = true;
         await say([{ lang, narration: true, text: t("walk.no_more") }]);
+        endedAt.current = Date.now();
+        setNoMore(true);
         setStatus("done");
         return;
       }
@@ -1520,6 +1531,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     askedIds.current = new Set();
     consentTold.current = false;
     startedAt.current = Date.now();
+    if (walkBegan.current === null) walkBegan.current = Date.now();
+    endedAt.current = null;
+    setNoMore(false);
     ended.current = false;
     armed.current = false;
     reask.current = false;
@@ -1719,112 +1733,107 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   if (status === "error")
     return (
-      <Frame role="alert">
-        <h2 className="text-h3">{t("walk.error_title")}</h2>
-        <p className="muted mt-2 text-body">{t("walk.error_sub")}</p>
+      <FlowColumn>
+        <StateBody alert mood="sad" title={t("walk.error_title")} body={t("walk.error_sub")} />
         {/* YERİNDE TEKRAR DENEME. Tek çıkış "Geri dön"dü: geçici bir ağ
             hatası kullanıcıyı yürüyüş modundan tamamen atıyordu -- oysa
-            metnin kendisi "bağlantını kontrol edip tekrar dene" diyor ve
-            deneyecek düğme yoktu. Android'deki sıra: birincil "tekrar dene",
-            ikincil çıkış (aynı düzeltme `placement-test` hata dalında da
-            yapılmıştı). */}
-        <button
-          type="button"
-          onClick={() => { setStatus("loading"); void load(); }}
-          className="btn btn-primary mt-5 w-full px-5 py-3"
-        >
-          {t("common.try_again")}
-        </button>
-        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+            metnin kendisi "bağlantını kontrol edip tekrar dene" diyor.
+            Android'deki sıra: birincil "tekrar dene", ikincil çıkış. */}
+        <FlowActions
+          primary={{ label: t("common.try_again"), onClick: () => { setStatus("loading"); void load(); } }}
+          tertiary={{ label: t("common.go_back"), onClick: leave }}
+        />
+      </FlowColumn>
     );
 
+  /* BUGÜNLÜK KELİME YOK — mobille aynı metin (`walkmode.done_no_more*`);
+     iki platform aynı boş kuyruğu iki ayrı cümleyle anlatıyordu. */
   if (status === "empty")
     return (
-      <Frame>
-        <h2 className="text-h3">{t("walk.empty_title")}</h2>
-        <p className="muted mt-2 text-body">{t("walk.empty_sub")}</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      <FlowColumn>
+        <StateBody mood="think" title={t("walkmode.done_no_more")} body={t("walkmode.done_no_more_sub")} />
+        <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
+      </FlowColumn>
     );
 
   if (status === "unsupported")
     return (
-      <Frame>
-        <h2 className="text-h3">{t("walk.unsupported_title")}</h2>
-        <p className="muted mt-2 text-body">{t("walk.unsupported_sub")}</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      <FlowColumn>
+        <StateBody mood="sad" title={t("walk.unsupported_title")} body={t("walk.unsupported_sub")} />
+        <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
+      </FlowColumn>
     );
 
+  /* İZİN YOK: metin "izin verip tekrar dene" diyordu ama deneyecek düğme
+     yoktu; mobil aynı yerde birincil düğmeyle yeniden istiyor. Tarayıcıda
+     ayarları açmanın yolu yok — "tekrar dene" izni yeniden soruyor. */
   if (status === "denied")
     return (
-      <Frame>
-        <h2 className="text-h3">{t("walk.denied_title")}</h2>
-        <p className="muted mt-2 text-body">{t("walk.denied_sub")}</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      <FlowColumn>
+        <StateBody mood="think" title={t("walk.denied_title")} body={t("walk.denied_sub")} />
+        <FlowActions
+          primary={{ label: t("common.try_again"), onClick: () => void start(index) }}
+          tertiary={{ label: t("common.go_back"), onClick: leave }}
+        />
+      </FlowColumn>
     );
 
-  if (status === "ready" || status === "paused")
+  if (status === "ready" || status === "paused") {
+    /* Kaldığın yer + cep yolunun bu kurulumda çalışmadığı uyarısı: kapakta da
+       duraklamada da aynı iki satır. */
+    const where = (
+      <FlowNote
+        text={
+          <>
+            <span className="muted">{t("walk.where_you_left")} </span>
+            <strong>{Math.max(1, step)}</strong>
+            <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
+          </>
+        }
+      />
+    );
+    const sttNote = pocketReady === false ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("walk.no_server_stt")} /> : null;
+    /*
+      İki başlatma: "Cebe koy" ekranı karartarak başlatır (fullscreen düğme
+      dokunuşunun içinde alınıyor, sonra tur); "Ekran açık" normal. Ekran
+      açık başlayan da tur içinde "Cebe koy"a basabilir.
+    */
+    const actions = (
+      <FlowActions
+        primary={{ label: t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start"), onClick: () => begin("pocket") }}
+        secondary={{ label: t(status === "paused" ? "walk.screen_continue" : "walk.screen_start"), onClick: () => begin("screen") }}
+        tertiary={{ label: t("common.go_back"), onClick: leave }}
+      />
+    );
     return (
-      <Frame>
-        {/* MASKOT. Android'in yürüyüş ekranı DÖRT yerde maskot çiziyor
-            (giriş, duraklama, bitiş, başlangıç); webde hiç yoktu - aynı kip
-            bir platformda karakterli, diğerinde çıplak metindi. Giriş
-            "el sallayan", duraklama "bekleyen" maskot. */}
-        <Mascot mood={status === "paused" ? "idle" : "wave"} size={status === "paused" ? 100 : 120} className="mx-auto" />
-        <h2 className="mt-1 text-h2">
-          {t(status === "paused" ? "walk.paused" : "walk.title")}
-        </h2>
-        <p className="muted mt-2 text-body leading-relaxed">
-          {t("walk.intro_1", { target: courseName(course, lang) })}
-        </p>
-        <p className="muted mt-2 text-body leading-relaxed">{t("walk.intro_2")}</p>
-        {pocketReady === false ? (
-          <p
-            className="mt-3 rounded-panel px-3 py-2.5 text-body leading-relaxed"
-            style={{
-              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
-              color: "var(--color-flame)",
-            }}
-          >
-            {t("walk.no_server_stt")}
-          </p>
-        ) : null}
+      <FlowColumn>
         {status === "paused" ? (
-          <p
-            className="mt-3 rounded-panel px-3 py-2.5 text-body"
-            style={{
-              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
-              color: "var(--color-flame)",
-            }}
-          >
-            {t("walk.paused_note")}
-          </p>
-        ) : null}
-        <div className="mt-4 rounded-panel px-3 py-2.5 text-center text-body" style={{ background: "var(--surface-2)" }}>
-          <span className="muted">{t("walk.where_you_left")} </span>
-          <strong>{Math.max(1, step)}</strong>
-          <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
-        </div>
-        {/*
-          İki başlatma: "Cebe koy" ekranı karartarak başlatır (fullscreen düğme
-          dokunuşunun içinde alınıyor, sonra tur); "Ekran açık" normal. Ekran
-          açık başlayan da tur içinde "Cebe koy"a basabilir.
-        */}
-        <button
-          onClick={() => begin("pocket")}
-          className="btn btn-primary mt-5 w-full px-5 py-4 text-h3"
-        >
-          {t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start")}
-        </button>
-        <button
-          onClick={() => begin("screen")}
-          className="btn btn-ghost mt-2 w-full px-5 py-4 text-h3"
-        >
-          {t(status === "paused" ? "walk.screen_continue" : "walk.screen_start")}
-        </button>
+          /* DURAKLAMA — durum şablonu (bekleniyor = düşünen maskot). */
+          <StateBody mood="think" title={t("walk.paused")} body={t("walk.paused_note")} />
+        ) : (
+          /* KAPAK ŞABLONU — mobil `WalkModeScreen` kapağıyla aynı kural
+             satırları (eski iki paragraflık tanıtım bunlara bölündü).
+             Cebe koyma talimatı (`walk.intro_2`) WEB'E ÖZEL: mobilde ekran
+             gerçekten kapanıyor, karartma düğmesi yok. */
+          <CoverBody
+            icon={<WalkIcon size={28} />}
+            tint="var(--color-violet-500)"
+            eyebrow={t("learn.walk_mode")}
+            title={t("walkmode.listen_and_say_it")}
+            pitch={t("walkmode.cover_pitch")}
+            rules={[
+              { icon: <SpeakerIcon size={16} />, text: t("walkmode.rule_hint", { nativeLang: nativeLangName(lang) }) },
+              { icon: <MicIcon size={16} />, text: t("walkmode.rule_say", { target: courseName(course, lang) }) },
+              { icon: <SparkIcon size={16} />, text: t("walkmode.rule_teach") },
+              { icon: <CheckIcon size={16} />, text: t("walkmode.rule_verdict") },
+              { icon: <RefreshIcon size={16} />, text: t("walkmode.rule_continue") },
+            ]}
+            note={t("walk.intro_2")}
+          />
+        )}
+        {where}
+        {sttNote}
+        {actions}
         {/* Açıklama İKİ düğmenin de önünde: hangisine basılmışsa onay
             verildikten sonra o yol sürüyor. Onay diyaloğunun düğmesi de bir
             kullanıcı hareketi olduğu için tam ekrana geçiş orada da alınıyor;
@@ -1859,61 +1868,46 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           }}
           onCancel={() => setDisclosure(null)}
         />
-        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      </FlowColumn>
     );
+  }
 
-  if (status === "done")
+  if (status === "done") {
+    const doneMin = Math.max(1, Math.round(((endedAt.current ?? Date.now()) - (walkBegan.current ?? startedAt.current)) / 60000));
     return (
-      /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */
-      <Frame role="status">
-        {/* BITIS EKRANI ANDROID'DEKI GIBI: konfeti, maskot, sonuc, sonra
-            DEVAM ve PAYLAS. Web yalnız "bitir" sunuyordu - yeni bir tura
-            devam etmek için kipten çıkıp yeniden girmek gerekiyordu ve
-            sonucu paylaşmanın hiçbir yolu yoktu; Android ikisini de
-            veriyor (`WalkModeScreen`: `newTour`, `shareResult`).
-            Konfeti ve maskotun eşiği de oradan: %60. */}
-        <Confetti fire={tally.total > 0 && donePct >= 60 ? 1 : 0} count={34} />
-        <Mascot
+      /* SONUÇ ŞABLONU — mobil `WalkModeScreen` bitişiyle aynı alanlar: band →
+         üç sayı → notlar → Devam / Paylaş / Bitir. Halka kalktı (bandın ana
+         sayısı aynı bilgi); kutlama eşiği eskisi gibi %60. Sonucu duyuran
+         bandın kendi `role="status"`u (bkz. 11.337). */
+      <FlowColumn celebrate={tally.total > 0 && donePct >= 60}>
+        <ResultHero
+          eyebrow={t("learn.walk_mode")}
+          title={t("walkmode.done_title")}
+          figure={`${tally.correct}/${tally.total || 0}`}
+          sub={t("walkmode.done_saved")}
           mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"}
-          size={104}
-          className="mx-auto"
         />
-        {/*
-          PUAN HALKASI. Doğru sayısı sönük bir satırdı; Android aynı yerde
-          halkayı çiziyor ve sayı halkanın içinde duruyor
-          (`WalkModeScreen`, 150/14). Satırda yalnız tur sayısı kaldı —
-          o bilgi halkada yok ve web'e özgü değil, yalnız birden fazla tur
-          yapıldığında anlamlı.
-        */}
-        <ScoreRing id="walk-correct" size={150} stroke={14} pct={donePct} className="mx-auto mt-1">
-          <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
-            {tally.correct}/{tally.total || 0}
-          </span>
-          <span className="muted text-micro">{t("walkmode.correct")}</span>
-        </ScoreRing>
-        <h2 className="mt-1 text-h1">{t("walk.done_title")}</h2>
-        {walkRef.current.sessions > 1 ? (
-          <p className="muted mt-2 text-body">{t("walk.n_rounds", { n: walkRef.current.sessions })}</p>
-        ) : null}
-        <p className="muted mt-2 text-body">{t("walk.done_sub")}</p>
-        <button
-          onClick={() => { setStatus("loading"); void load(); }}
-          className="btn btn-primary mt-5 w-full px-5 py-4"
-        >
-          {t("common.continue")}
-        </button>
         {tally.total > 0 ? (
-          <button
-            onClick={() => void shareText(resultText(lang, tally.correct, tally.total), "result")}
-            className="btn btn-ghost mt-2 flex w-full items-center justify-center gap-2 px-5 py-3"
-          >
-            <ShareIcon size={19} /> {t("common.share")}
-          </button>
+          <StatRow
+            items={[
+              { value: formatPercent(donePct, lang), label: t("summary.accuracy") },
+              ...(taught.current > 0 ? [{ value: String(taught.current), label: t("walkmode.stat_new") }] : []),
+              { value: t("time.minutes_short", { m: doneMin }), label: t("walkmode.stat_time") },
+            ]}
+          />
         ) : null}
-        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.finish")}</button>
-      </Frame>
+        {/* Birden fazla tur yapıldığında sayılar yürüyüşün TOPLAMI; bunu söyleyen
+            satır web'e özel, çünkü mobil sayacı tur başına sıfırlıyor. */}
+        {walkRef.current.sessions > 1 ? <FlowNote text={t("walk.n_rounds", { n: walkRef.current.sessions })} /> : null}
+        {noMore ? <FlowNote icon={<InboxIcon size={16} />} text={t("walkmode.done_no_more_sub")} /> : null}
+        <FlowActions
+          primary={noMore ? { label: t("common.finish"), onClick: leave } : { label: t("walkmode.continue"), onClick: () => { setStatus("loading"); void load(); } }}
+          secondary={tally.total > 0 ? { label: t("common.share"), icon: <ShareIcon size={19} />, onClick: () => void shareText(resultText(lang, tally.correct, tally.total), "result") } : null}
+          tertiary={noMore ? null : { label: t("common.finish"), onClick: leave }}
+        />
+      </FlowColumn>
     );
+  }
 
   // playing
   return (

@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { speakGerman } from "@/components/speak-button";
-import { SpeakerIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit } from "@/components/round-exit";
@@ -16,7 +16,7 @@ import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/pla
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
-import { formatPercent, localeOf } from "@/lib/i18n/dict";
+import { formatPercent, localeOf, type NativeLang } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
@@ -29,6 +29,27 @@ const STAGE_HINT: Record<PlacementStage, string> = {
   reading: "plc.reading",
   listening: "plc.listening",
 };
+
+/**
+ * BECERİ BAŞINA DOĞRU ORANI — sonuç ekranının sayı satırı (mobil
+ * `PlacementScreen` `skillRows` ile aynı hesap).
+ *
+ * Kayıt beceri başına yalnız SEVİYE taşıyor; oran cevaplardan çıkıyor.
+ * Cevabı olmayan aşama (atlandı) kırılımda kalıyor, oranı "—".
+ */
+function skillRows(answers: PlacementAnswer[], perSkill: PlacementRecord["perSkill"], t: (k: string) => string, lang: NativeLang) {
+  return (["vocab", "grammar", "reading", "listening"] as PlacementStage[]).flatMap((stage) => {
+    const own = answers.filter((a) => a.stage === stage);
+    if (!own.length && perSkill[stage] === undefined) return [];
+    const lvl = perSkill[stage];
+    return [{
+      stage,
+      label: t(STAGE_TITLE_KEYS[stage]),
+      pct: own.length ? formatPercent(Math.round((100 * own.filter((a) => a.correct).length) / own.length), lang) : "—",
+      level: lvl === undefined ? null : lvl ?? t("plc.below_a1"),
+    }];
+  });
+}
 
 /**
  * Yerleştirme testi (WP-40): dört aşama, ≤ 15 dakika, sonunda öneri +
@@ -188,30 +209,51 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   }, [phase, level, index, textIndex, qIndex]);
 
   // ── Ekranlar ──
+  /* "Son alma" satırı — kapakta ve bekleme kilidinde aynı cümle. */
+  const lastLine = initialLast ? (
+    <>
+      {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
+      {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
+    </>
+  ) : null;
+
   if (phase === "intro") {
+    /* BEKLEME SÜRESİ DOLMADI: kilit kapağın içinde bir cümleydi (başla düğmesi
+       yerine). Mobil aynı dalı ayrı bir durum ekranı olarak çiziyor; ikisi
+       artık aynı şablonda — bekleniyor = düşünen maskot, tek çıkış. */
+    if (!canRetake) {
+      return (
+        <FlowColumn>
+          <StateBody mood="think" title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })}>
+            {lastLine ? <p className="muted text-caption">{lastLine}</p> : null}
+          </StateBody>
+          <FlowActions primary={{ label: t("common.close"), href: "/profile" }} />
+        </FlowColumn>
+      );
+    }
+    /* KAPAK ŞABLONU: eski tek paragraflık tanıtım ikonlu kural satırlarına bölündü. */
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-h2">{t("onboarding.kisa_yerlestirme_sinavi")}</h1>
-        <p className="muted mt-2 text-body leading-relaxed">
-          {t("plc.intro")}
-        </p>
-        {initialLast ? (
-          <p className="mt-3 rounded-panel px-3 py-2 text-caption surface-2">
-            {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
-            {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
-          </p>
-        ) : null}
-        {canRetake ? (
-          <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
-            {t("common.start")}
-          </button>
-        ) : (
-          <p className="muted mt-4 text-body">{t("placement.retake_in", { n: retakeDays })}</p>
-        )}
-        <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
-          {t("common.discard")}
-        </Link>
-      </section>
+      <FlowColumn>
+        <CoverBody
+          icon={<ExamIcon size={28} />}
+          tint="var(--color-brand-500)"
+          eyebrow={t("placement.title")}
+          title={t("onboarding.kisa_yerlestirme_sinavi")}
+          pitch={t("plc.cover_pitch")}
+          rules={[
+            { icon: <StackIcon size={16} />, text: t("plc.rule_stages") },
+            { icon: <ClockIcon size={16} />, text: t("plc.rule_time") },
+            { icon: <FlagIcon size={16} />, text: t("plc.rule_dont_know") },
+            { icon: <TargetIcon size={16} />, text: t("plc.rule_result") },
+            { icon: <CheckIcon size={16} />, text: t("plc.rule_choose"), tone: "ok" },
+          ]}
+          note={lastLine}
+        />
+        <FlowActions
+          primary={{ label: t("common.start"), onClick: () => void start() }}
+          tertiary={{ label: t("common.later"), href: "/profile" }}
+        />
+      </FlowColumn>
     );
   }
   /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
@@ -230,47 +272,69 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   }
   if (phase === "error") {
     return (
-      <section role="alert" className="card mx-auto w-full max-w-md p-5">
-        <p className="text-body">{t("placement.couldn_t_load_test")}</p>
+      <FlowColumn>
+        <StateBody alert mood="sad" title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
         {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici
             bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
-        <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
-          {t("common.try_again")}
-        </button>
-        <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-2 w-full px-4 py-2 text-body">
-          {t("common.back")}
-        </button>
-      </section>
+        <FlowActions
+          primary={{ label: t("common.try_again"), onClick: () => void start() }}
+          tertiary={{ label: t("common.back"), onClick: () => setPhase("intro") }}
+        />
+      </FlowColumn>
     );
   }
   if (phase === "result" && result) {
+    /* SONUÇ ŞABLONU — mobil `PlacementScreen` ile aynı alanlar, aynı sıra:
+       band (seviye) → beceri oranları → kayıt uyarısı → seviye seçimi. */
+    /* Band seçilen seviyeyi gösteriyor — mobil de çipe dokununca bandı güncelliyor. */
+    const shown = chosen ?? result.suggested;
+    const answered = answers.current.length;
+    const correctCount = answers.current.filter((a) => a.correct).length;
+    const skills = skillRows(answers.current, result.perSkill, t, lang);
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-h2">{t("placew.suggestion", { level: result.suggested })}</h1>
-        <p className="muted mt-1 text-body">
-          {describePerSkill(result.perSkill, t)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
-        </p>
-        {notSaved ? (
-          <p className="mt-3 text-strong" style={{ color: "var(--color-danger)" }}>{t("placement.not_saved")}</p>
+      <FlowColumn>
+        <ResultHero
+          eyebrow={t("placement.title")}
+          title={t("placement.your_level", { level: shown })}
+          figure={shown}
+          sub={`${t("placement.result_sub", { total: answered, correct: correctCount })} · ${t("time.minutes_short", { m: minutes })}`}
+          mood="happy"
+        />
+        {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
+        {skills.length > 0 && skills.length <= 3 ? (
+          <StatRow items={skills.map((s) => ({ value: s.pct, label: s.level ? `${s.label} · ${s.level}` : s.label }))} />
         ) : null}
-        <p className="mt-3 text-body leading-relaxed">{t("placew.median_note")}</p>
-        {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android'in `Chip`i de artık
-            `accessibilityRole="radio"` (bkz. parity 257). */}
-        <div role="radiogroup" aria-label={t("settings.level")} className="mt-4 flex flex-wrap gap-2">
-          {PLACEMENT_LEVELS.map((l) => (
-            <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} role="radio" aria-checked={chosen === l}>
-              {l}
-              {l === result.suggested ? <span className="muted ml-1 text-caption">{t("placement.suggested")}</span> : null}
-            </button>
-          ))}
-        </div>
-        <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
-          {chosen === result.suggested
-            ? t("placement.continue_with", { level: chosen ?? "" })
-            : t("placement.pick_and_continue", { level: chosen ?? "" })}
-        </button>
-      </section>
+        {notSaved ? <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={t("placement.not_saved")} /> : null}
+        {skills.length > 3 ? (
+          <DetailCard title={t("placement.skill_profile")}>
+            {skills.map((s) => <DetailRow key={s.stage} left={s.label} right={s.level ? `${s.level} · ${s.pct}` : s.pct} />)}
+          </DetailCard>
+        ) : null}
+        <DetailCard title={t("placement.start_level")}>
+          <p className="muted text-caption">{t("placew.median_note")}</p>
+          {/* TEK SEÇİMLİK ŞERİT RADYO GRUBUDUR — Android'in `Chip`i de artık
+              `accessibilityRole="radio"` (bkz. parity 257). */}
+          <div role="radiogroup" aria-label={t("settings.level")} className="flex flex-wrap gap-2">
+            {PLACEMENT_LEVELS.map((l) => (
+              <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-strong ${chosen === l ? "chip-active" : ""}`} role="radio" aria-checked={chosen === l}>
+                {l}
+                {l === result.suggested ? <span className="muted ml-1 text-caption">{t("placement.suggested")}</span> : null}
+              </button>
+            ))}
+          </div>
+        </DetailCard>
+        <FlowActions
+          primary={{
+            label: chosen === result.suggested
+              ? t("placement.continue_with", { level: chosen ?? "" })
+              : t("placement.pick_and_continue", { level: chosen ?? "" }),
+            onClick: () => void accept(),
+          }}
+          /* Mobil sonuçta "Kapat" baştan beri var: seviyeyi uygulamadan çıkış. */
+          tertiary={{ label: t("common.close"), href: "/profile" }}
+        />
+      </FlowColumn>
     );
   }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, currentLang, nativeLangName, dateLocale } from "../lib/i18n";
+import { t, currentLang, nativeLangName, dateLocale, formatPercent } from "../lib/i18n";
 import { track } from "../lib/track";
 import { currentCourseId } from "../lib/courses";
 import { View, ActivityIndicator } from "react-native";
@@ -8,8 +8,9 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, SpeakerIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon, ExamIcon, StackIcon, ClockIcon, FlagIcon, TargetIcon, CheckIcon, QuizIcon, UserPlusIcon, AlertIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
+import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
@@ -27,7 +28,7 @@ import { useAuth } from "../lib/AuthContext";
 import { updateProfile } from "../lib/updateProfile";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, fillOf, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { speakTarget } from "../lib/tts";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -128,6 +129,38 @@ function describePerSkill(perSkill: Record<string, string | null> | undefined): 
     .join(" · ");
 }
 
+/**
+ * "Son alma" satırı — kapakta ve bekleme kilidinde aynı cümle.
+ *
+ * BECERİ KIRILIMI da satırda: web aynı yerde dört aşamanın seviyesini yazıyor
+ * (`placement-test` `describePerSkill`) ve veri (`perSkill`) o kayıtta duruyor.
+ */
+function lastTakenLine(last: NonNullable<PlacementStatus["last"]>): string {
+  const skills = describePerSkill(last.perSkill);
+  return `${t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} ${last.suggested}${last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}${skills ? ` · ${skills}` : ""}`;
+}
+
+/**
+ * BECERİ BAŞINA DOĞRU ORANI — sonuç ekranının sayı satırı.
+ *
+ * Sunucu beceri başına yalnız SEVİYE döndürüyor; oran cevaplardan çıkıyor
+ * (web `placement-test` aynı hesabı yapıyor). Cevabı olmayan aşama (atlandı)
+ * sunucunun kırılımında varsa satırda kalıyor, oranı "—".
+ */
+function skillRows(answers: PlacementAnswer[], perSkill: Record<string, string | null> | undefined) {
+  return ["vocab", "grammar", "reading", "listening"].flatMap((stage) => {
+    const own = answers.filter((a) => a.stage === stage);
+    if (!own.length && perSkill?.[stage] === undefined) return [];
+    const lvl = perSkill?.[stage];
+    return [{
+      stage,
+      label: t(SKILL_LABEL_KEY[stage]),
+      pct: own.length ? formatPercent(Math.round((100 * own.filter((a) => a.correct).length) / own.length)) : "—",
+      level: lvl === undefined ? null : lvl ?? t("plc.below_a1"),
+    }];
+  });
+}
+
 export function PlacementScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -176,6 +209,11 @@ export function PlacementScreen() {
    */
   const [started, setStarted] = useState(false);
   const answers = useRef<PlacementAnswer[]>([]);
+  /* Testin süresi sonuç bandında (web sonucu dakikayı baştan
+     beri yazıyor). Bitişte bir kez ölçülüyor: seviye çipine her dokunuşta
+     yeniden hesaplanıp kaymasın. */
+  const startedAt = useRef(Date.now());
+  const minutes = useRef(0);
 
   useEffect(() => {
     if (!user) { setReal(null); setLoading(false); return; }
@@ -228,6 +266,7 @@ export function PlacementScreen() {
   /** Test bitti: ses, ve gerçek modda cevapları sunucuya ver. */
   function finishNow() {
     sfx("finish"); // tamamlanma sesi (sonuç ekranı)
+    minutes.current = Math.round((Date.now() - startedAt.current) / 60000);
     if (!usingReal || !user) return;
     setSubmitting(true);
     finishPlacement(answers.current)
@@ -246,6 +285,13 @@ export function PlacementScreen() {
     const next = idx + 1;
     setIdx(next);
     if (next >= total) finishNow();
+  }
+
+  /* Tanıtımdaki BAŞLA: `exam_start` burada, ekran açılışında değil. */
+  function start() {
+    track("exam_start", 0, "placement:A1");
+    startedAt.current = Date.now();
+    setStarted(true);
   }
 
   async function applyLevel() {
@@ -269,24 +315,17 @@ export function PlacementScreen() {
   // ekran yerine sebebi söylenir (onboarding bu seçeneği zaten göstermiyor).
   if (!user && !questions.length) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.no_demo")}</Text>
-        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
-        </PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
+        <StateBody mood="think" title={t("placement.no_demo")} />
+      </FlowScreen>
     );
   }
 
   if (user && !loading && loadError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.couldn_t_load_test")}</Text>
-        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.try_again")}</Text>
-        </PressableScale>
-        <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.close"), onPress: leave }} />}>
+        <StateBody alert mood="sad" title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
+      </FlowScreen>
     );
   }
 
@@ -298,64 +337,121 @@ export function PlacementScreen() {
    * Test 30 günde bir alınabiliyor; sunucu bunu yalnız BİLDİRİYOR, kapıyı
    * istemci tutuyor. Mobil hiç sormadığı için Android'de test istenildiği
    * kadar tekrarlanabiliyor ve her bitiş seviyeyi yeniden yazabiliyordu.
-   * Web aynı yerde son almayı ve kalan süreyi söylüyor (`placement-test`).
+   * Durum şablonu (bekleniyor = düşünen maskot); web aynı dalı artık kapağın
+   * içinde değil, ayrı bir durum ekranı olarak çiziyor.
    */
   if (user && status && !status.canRetake) {
-    const last = status.last;
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
-        {last ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
-            {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
-            {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
-            {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
-                yaziyor (`placement-test`: `· describePerSkill(...)`); mobilde
-                yalnizca TAZE sonuc kartinda vardi, "en son ne zaman girdin"
-                satirinda yoktu - oysa veri (`perSkill`) o kayitta duruyor ve
-                yardimci da bu dosyada. */}
-            {describePerSkill(last.perSkill) ? ` · ${describePerSkill(last.perSkill)}` : ""}
-          </Text>
-        ) : null}
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
-        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
-        </PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
+        <StateBody mood="think" title={t("placement.title")} body={t("placement.retake_in", { n: status.retakeDays })}>
+          {status.last ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{lastTakenLine(status.last)}</Text> : null}
+        </StateBody>
+      </FlowScreen>
     );
   }
 
   /* TANITIM — soru gelmeden çizilmiyor: "başla" düğmesi boş bir teste
-     götürürdü. `exam_start` de tam burada yazılıyor; eskiden ekranı AÇAN
-     herkes "başladı" sayılıyordu ve huninin payı olduğundan büyüktü. */
+     götürürdü. `exam_start` bu kapağın BAŞLA'sında (`start`); eskiden ekranı AÇAN
+     herkes "başladı" sayılıyordu ve huninin payı olduğundan büyüktü.
+     KAPAK ŞABLONU: eski tek paragraflık tanıtım ikonlu kural satırlarına
+     bölündü. Misafirin örnek turu dört aşamalı değil — kuralları kendi. */
   if (!started && !done && total > 0) {
-    const last = status?.last;
+    const rules: CoverRule[] = usingReal
+      ? [
+          { icon: StackIcon, text: t("plc.rule_stages") },
+          { icon: ClockIcon, text: t("plc.rule_time") },
+          { icon: FlagIcon, text: t("plc.rule_dont_know") },
+          { icon: TargetIcon, text: t("plc.rule_result") },
+          { icon: CheckIcon, text: t("plc.rule_choose"), tone: "ok" },
+        ]
+      : [
+          { icon: QuizIcon, text: t("plc.rule_demo_count", { n: total }) },
+          { icon: CheckIcon, text: t("plc.rule_demo_reveal") },
+          { icon: UserPlusIcon, text: t("plc.rule_demo_carry"), tone: "ok" },
+        ];
+    const cover = (
+      <CoverBody
+        icon={ExamIcon}
+        tint={fillOf("primary")}
+        eyebrow={t("placement.title")}
+        title={t("onboarding.kisa_yerlestirme_sinavi")}
+        pitch={t("plc.cover_pitch")}
+        rules={rules}
+        note={status?.last ? lastTakenLine(status.last) : null}
+      />
+    );
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg, justifyContent: "center" }}>
-        <Text variant="h1" style={{ textAlign: "center" }}>{t("onboarding.kisa_yerlestirme_sinavi")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("plc.intro")}</Text>
-        {last ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>
-            {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
-            {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
-            {/* BECERI KIRILIMI. Web ayni satirda dort asamanin seviyesini de
-                yaziyor (`placement-test`: `· describePerSkill(...)`); mobilde
-                yalnizca TAZE sonuc kartinda vardi, "en son ne zaman girdin"
-                satirinda yoktu - oysa veri (`perSkill`) o kayitta duruyor ve
-                yardimci da bu dosyada. */}
-            {describePerSkill(last.perSkill) ? ` · ${describePerSkill(last.perSkill)}` : ""}
-          </Text>
+      <FlowScreen
+        top={<FlowTopBar onClose={leave} />}
+        actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} tertiary={{ label: t("common.later"), onPress: leave }} />}
+      >
+        {cover}
+      </FlowScreen>
+    );
+  }
+
+  /*
+   * SONUÇ ŞABLONU — band (seviye) → beceri oranları → notlar → seviye seçimi.
+   * Maskotsuz dairesel rozet kalktı: seviye bandın ana sayısı. Hesaplanırken
+   * (submitting) aşağıdaki soru çerçevesinin bekleme dalı çiziliyor.
+   */
+  if (done && !submitting) {
+    const answered = answers.current.length;
+    const skills = usingReal ? skillRows(answers.current, result?.perSkill) : [];
+    return (
+      <FlowScreen
+        top={<FlowTopBar onClose={leave} />}
+        actions={
+          <FlowActions
+            primary={{
+              label: user && result
+                ? t(level === result.suggested ? "placement.continue_with" : "placement.pick_and_continue", { level: String(level) })
+                : t(user ? "placement.set_level" : "placement.understood"),
+              onPress: () => void applyLevel(),
+            }}
+            tertiary={{ label: t("common.close"), onPress: leave }}
+          />
+        }
+      >
+        <ResultHero
+          eyebrow={t("placement.title")}
+          title={t("placement.your_level", { level: String(level) })}
+          figure={String(level)}
+          sub={`${t("placement.result_sub", { total: answered, correct })}${usingReal ? ` · ${t("time.minutes_short", { m: minutes.current })}` : ""}`}
+          mood="happy"
+        />
+        {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
+        {skills.length > 0 && skills.length <= 3 ? (
+          <StatRow items={skills.map((s) => ({ value: s.pct, label: s.level ? `${s.label} · ${s.level}` : s.label }))} />
         ) : null}
-        <PressableScale
-          onPress={() => { track("exam_start", 0, "placement:A1"); setStarted(true); }}
-          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
-        >
-          <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
-        </PressableScale>
-        <PressableScale onPress={leave} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}>
-          <Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text>
-        </PressableScale>
-      </View>
+        {/* SONUÇ YAZILAMADI uyarısı seçimden ÖNCE: kullanıcı seviyesini
+            seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
+        {notSaved ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t("placement.not_saved")} /> : null}
+        {saved ? (
+          <View accessibilityLiveRegion="polite">
+            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("placement.saved")} />
+          </View>
+        ) : null}
+        {skills.length > 3 ? (
+          <DetailCard title={t("placement.skill_profile")}>
+            {skills.map((s) => <DetailRow key={s.stage} left={s.label} right={s.level ? `${s.level} · ${s.pct}` : s.pct} />)}
+          </DetailCard>
+        ) : null}
+        {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu
+            kullanıcıda - misafir akışında kabul edilecek bir kayıt yok.
+            ÖNERİ NEREDEN GELİYOR notu çiplerin üstünde: neden birinin
+            işaretli olduğu ve seçimin kullanıcıda olduğu yazmalı. */}
+        {user && result ? (
+          <DetailCard title={t("placement.start_level")}>
+            <Text variant="caption" color={colors.textMuted}>{t("placew.median_note")}</Text>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+              {CHOOSABLE.map((l) => (
+                <Chip key={l} role="radio" label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
+              ))}
+            </View>
+          </DetailCard>
+        ) : null}
+      </FlowScreen>
     );
   }
 
@@ -411,57 +507,12 @@ export function PlacementScreen() {
             <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
           </PressableScale>
         </>
-      ) : submitting ? (
+      ) : (
         /* Seviye hesaplanirken ekran tamamen bu dala geciyor ve sessizdi;
            webde ayni dal `role="status" aria-busy` tasiyor. */
         <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ActivityIndicator color={colors.primaryText} />
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.calculating_your_level")}</Text>
-        </View>
-      ) : (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <View style={[{ width: 110, height: 110, borderRadius: 55, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 14)]}>
-            <Text variant="display" color={colors.onPrimary} style={{ fontSize: 40 }}>{level}</Text>
-          </View>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { level: level })}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>
-            {t("placement.result", { total: total, correct: correct })}
-          </Text>
-          {result && describePerSkill(result.perSkill) ? (
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, textAlign: "center" }}>
-              {describePerSkill(result.perSkill)}
-            </Text>
-          ) : null}
-          {/* SONUÇ YAZILAMADI uyarısı çiplerden ÖNCE: kullanıcı seviyesini
-              seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
-          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md }}>{t("placement.not_saved")}</Text> : null}
-          {/* ÖNERİ NEREDEN GELİYOR. Beş çip seçilebilir duruyordu ama neden
-              birinin işaretli olduğu ve seçimin gerçekten kullanıcıda olduğu
-              hiçbir yerde yazmıyordu. Web aynı yerde söylüyor. */}
-          {user && result ? (
-            <Text variant="caption" color={colors.textFaint} style={{ marginTop: spacing.md, marginBottom: spacing.lg, textAlign: "center" }}>{t("placew.median_note")}</Text>
-          ) : null}
-          <View style={{ height: spacing.lg }} />
-          {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu
-              kullanıcıda - misafir akışında kabul edilecek bir kayıt yok. */}
-          {user && result ? (
-            <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginBottom: spacing.lg }}>
-              {CHOOSABLE.map((l) => (
-                <Chip key={l} role="radio" label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
-              ))}
-            </View>
-          ) : null}
-          {saved && <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
-          <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>
-              {user && result
-                ? t(level === result.suggested ? "placement.continue_with" : "placement.pick_and_continue", { level: String(level) })
-                : t(user ? "placement.set_level" : "placement.understood")}
-            </Text>
-          </PressableScale>
-          <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text>
-          </PressableScale>
         </View>
       )}
       <ConfirmDialog
