@@ -157,8 +157,8 @@ android {
           görünen bir etkisi yok. versionName ayrı bir eksen, o kullanıcıya
           görünüyor ve ürün sürümünü anlatıyor.
         */
-        versionCode 2
-        versionName "1.0.0"
+        versionCode 4
+        versionName "1.0.1"
     }
     signingConfigs {
         debug {
