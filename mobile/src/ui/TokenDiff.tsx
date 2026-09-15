@@ -105,7 +105,7 @@ const CHIP_KEYS: Record<Exclude<TokenMark, "same">, string> = {
 };
 
 /** Küçük etiket — farkın ya da hata tipinin adı. */
-export function Chip({ label, fg, bg }: { label: string; fg: string; bg: string }) {
+export function MarkTag({ label, fg, bg }: { label: string; fg: string; bg: string }) {
   return (
     <View style={{ backgroundColor: bg, borderRadius: 6, paddingHorizontal: 6, paddingVertical: 1, alignSelf: "flex-start" }}>
       <Text variant="micro" color={fg} style={{ textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</Text>
@@ -133,7 +133,7 @@ export function DiffLines({ target, typed }: { target: MarkedToken[]; typed: Mar
         const tone = markTone(l.mark, colors);
         return (
           <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-            <Chip label={t(CHIP_KEYS[l.mark])} fg={tone.fg} bg={tone.soft} />
+            <MarkTag label={t(CHIP_KEYS[l.mark])} fg={tone.fg} bg={tone.soft} />
             <Text variant="caption" color={colors.text}>{l.text}</Text>
           </View>
         );

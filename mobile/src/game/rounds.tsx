@@ -6,7 +6,7 @@ import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { markKnown, optionCards, optionTexts, todayStr } from "./session";
-import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
+import { CharMarked, MarkTag, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import type { DoneExtra } from "./session";
@@ -373,7 +373,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
           <View style={{ flex: 1, gap: 2 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
               <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: dot, alignItems: "center", justifyContent: "center" }}>
-                {tone === "bad" ? <XIcon color="#fff" size={12} /> : <CheckIcon color="#fff" size={12} />}
+                {tone === "bad" ? <XIcon color={colors.onFill} size={12} /> : <CheckIcon color={colors.onFill} size={12} />}
               </View>
               <Text variant="bodyStrong" color={ink} style={{ flex: 1 }}>{label}</Text>
               {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
@@ -411,7 +411,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
             {showWhy && data.why ? (
               <SheetRow label={tx("sheet.why")} colors={colors}>
                 <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 6 }}>
-                  <Chip label={whyLabel(data.why.type)} fg={colors.text} bg={colors.surface2} />
+                  <MarkTag label={whyLabel(data.why.type)} fg={colors.text} bg={colors.surface2} />
                   <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{data.why.text}</Text>
                 </View>
               </SheetRow>
@@ -1662,6 +1662,19 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       speak: s.de,
       meaning: s.tr,
       youTokens: !ok ? m.typed : null,
+      /* NEDEN: sıra ve yazım hatası kendi kuralını söylüyor (fiilin yeri gibi);
+         anlam hatasında yazılanın tamamı gerekçeye konmuyor. Web
+         `translate-game` aynı girdiyle aynı satırı çiziyor. */
+      why: !ok && m.errorType
+        ? whyFor({
+            type: m.errorType,
+            word: round.word ?? null,
+            detail: m.errorType === "meaning" ? null : typed.slice(0, 60),
+            answer: s.de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean),
+            tail: s.de.match(/[.!?…]+$/)?.[0] ?? ".",
+            targetLang: currentTargetLang(),
+          })
+        : null,
       diffs: rescued ? null : { target: m.target, typed: m.typed },
     });
   }
