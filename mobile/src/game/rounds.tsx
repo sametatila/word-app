@@ -9,6 +9,8 @@ import { markKnown, optionCards, optionTexts, todayStr } from "./session";
 import { CharMarked, MarkTag, DiffLines, MarkedSentence, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
+import { accountRequiredError } from "../lib/guest";
+import { useAuth } from "../lib/AuthContext";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
@@ -824,6 +826,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
 const SPECIAL_CHARS = ["\u00e4", "\u00f6", "\u00fc", "\u00df"] as const;
 
 function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
+  const guest = Boolean(useAuth().user?.guest);
   const partners = round.partners ?? [];
   const targets = [word, ...partners];
   const [value, setValue] = useState("");
@@ -865,6 +868,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
       answer: { text: typed },
     };
     try {
+      if (guest) throw accountRequiredError();
       const d = await api<{ result: AssessmentResult }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,
@@ -1566,6 +1570,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
 }
 
 function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
+  const guest = Boolean(useAuth().user?.guest);
   const s = typeof round.sentence === "object" && round.sentence ? round.sentence : { tr: "", de: "", en: null };
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
@@ -1597,7 +1602,8 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
        uzunsa modele sorulur. Kabul ederse tur doğru sayılır ve kalite 4
        olur - web `translate-game` ile aynı eşikler. */
     let rescued = false;
-    if (!ok && m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
+    /* Misafirde model yok (uç 403): istek atılmıyor, yerel hüküm geçerli. */
+    if (!ok && !guest && m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
       setChecking(true);
       try {
         const d = await api<{ result?: { score?: { overall?: number; task?: number } } }>(

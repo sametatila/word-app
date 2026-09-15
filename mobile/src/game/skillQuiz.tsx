@@ -22,7 +22,8 @@ import { isAiConsentDeclined } from "../lib/aiConsent";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
-import { isAccountRequired } from "../lib/guest";
+import { accountRequiredError, isAccountRequired } from "../lib/guest";
+import { useAuth } from "../lib/AuthContext";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -505,6 +506,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
  * mobilde metin hiç puanlanmadan kalıyordu (kayıt defteri §11.12).
  */
 function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: FreeTask; n: number; done: boolean; level: string; exerciseId: string; onSettle: (ok: boolean) => void; colors: Palette }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [typed, setTyped] = useState("");
   const [reveal, setReveal] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -538,6 +540,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     setBusy(true);
     setNote(null);
     try {
+      if (guest) throw accountRequiredError();
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,

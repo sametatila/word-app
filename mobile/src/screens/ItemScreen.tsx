@@ -10,7 +10,8 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Celebrate } from "../ui/Celebrate";
-import { XIcon, SpeakerIcon, AlertIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
+import { useAuth } from "../lib/AuthContext";
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
@@ -143,6 +144,11 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
 
 export function ItemScreen() {
   const { colors } = useTheme();
+  /* Yazma ve monolog görevlerini yapay zekâ puanlıyor. Misafirde bu hesap
+     istiyor: "bu değerlendirmeyi yapay zekâ üretti" yerine, yazmaya ya da
+     konuşmaya BAŞLAMADAN puanlanmayacağı söyleniyor (görev yine sayılıyor). */
+  const guest = Boolean(useAuth().user?.guest);
+  const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.skill_ai")} /></View>;
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Item">>();
@@ -342,13 +348,13 @@ export function ItemScreen() {
           // Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
           // değerlendirdiği yazmaya başlamadan önce söyleniyor.
           <>
-            <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
+            {guest ? guestAiNote : <AiNotice variant="output" style={{ marginBottom: spacing.md }} />}
             <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} level={exercise.level} exerciseId={exercise.id} onAllDone={recordAndFinish} colors={colors} />
           </>
         ) : exercise.skill === "speaking" && exercise.monologue ? (
           // Monolog: metin sunucuda rubrikle puanlanıyor (ses gitmiyor).
           <>
-            <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
+            {guest ? guestAiNote : <AiNotice variant="output" style={{ marginBottom: spacing.md }} />}
             {/* Monologda band geri bildirimin ÜSTÜNDE (web `ResultCard` onu
                 ayrıntı olarak içine alıyor); gövde yerinde kalıyor ki durumu
                 (puan, transkript) sökülmesin. */}

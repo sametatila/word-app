@@ -39,6 +39,15 @@ export type GuestRecord = {
 };
 
 /** Hata "bu özellik hesap istiyor" mu. */
+/**
+ * Misafirde yapay zekâ çağrısı ATILMIYOR — uç kesin 403 account_required
+ * dönecekti. Çağıranlar isteğin yerine bu hatayı fırlatıyor; böylece hesap
+ * cümlesi ve yedek yol isteğin gerçekten reddedildiği yolla aynı kalıyor.
+ */
+export function accountRequiredError(): ApiError {
+  return new ApiError(403, ACCOUNT_REQUIRED);
+}
+
 export function isAccountRequired(e: unknown): boolean {
   return e instanceof ApiError && e.status === 403 && e.message === ACCOUNT_REQUIRED;
 }

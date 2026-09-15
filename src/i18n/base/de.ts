@@ -74,6 +74,8 @@ export const deBase: Record<string, string> = {
   "guest.writings_title": "Deine Texte werden mit Konto bewertet",
   "guest.writings_body": "Die KI bewertet deine Schreib- und Sprechaufgaben, und die Ergebnisse sammeln sich hier; dafür brauchst du ein Konto. Leg eins an, dein Gastfortschritt kommt mit.",
   "guest.learn_daily_sub": "Gleiche Fragen für alle · Rangliste mit Konto",
+  "guest.skill_ai": "Diese Aufgabe bewertet die KI, und dafür brauchst du ein Konto. Als Gast machst du die Aufgabe und vergleichst mit der Musterantwort; sie zählt ohne Punkte.",
+  "guest.mono_unscored": "Was du sagst, wird nicht bewertet: KI-Bewertung braucht ein Konto.",
   "lessonp.chat_off_account": "Freies Gespräch mit der KI braucht ein Konto; in dieser Lektion geht es mit einem vorgegebenen Gespräch weiter. Das Gespräch zählt trotzdem.",
   "auth.your_email_address": "deine E-Mail-Adresse",
   "auth.enter_your_email_and_we_ll_send": "Gib deine E-Mail-Adresse ein, wir senden dir einen Link zum Zurücksetzen.",

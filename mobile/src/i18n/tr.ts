@@ -77,6 +77,8 @@ export const tr: Record<string, string> = {
   "guest.writings_title": "Yazıların hesapla değerlendirilir",
   "guest.writings_body": "Yazma ve konuşma görevlerini yapay zekâ değerlendirir ve sonuçlar burada birikir; bu hesap ister. Hesap oluştur; misafir ilerlemen hesabına taşınır.",
   "guest.learn_daily_sub": "Herkesle aynı sorular · sıralama hesapla",
+  "guest.skill_ai": "Bu görevi yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak görevi yapıp örnek cevapla karşılaştırırsın; görev puansız sayılır.",
+  "guest.mono_unscored": "Söylediklerin puanlanmaz: yapay zekâ değerlendirmesi hesap ister.",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun. Konuşma yine sayılır.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",

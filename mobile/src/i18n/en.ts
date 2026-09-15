@@ -72,6 +72,8 @@ export const en: Record<string, string> = {
   "guest.writings_title": "Your writing is assessed with an account",
   "guest.writings_body": "The AI assesses your writing and speaking tasks and the results collect here; that needs an account. Create one and your guest progress moves with you.",
   "guest.learn_daily_sub": "Same questions for everyone · ranking with an account",
+  "guest.skill_ai": "The AI scores this task, and that needs an account. As a guest you do the task and compare with the model answer; it counts without a score.",
+  "guest.mono_unscored": "What you say won't be scored: AI assessment needs an account.",
   "lessonp.chat_off_account": "Free conversation with the AI needs an account; in this lesson you continue with a scripted conversation. It still counts.",
   "auth.your_email_address": "your email address",
   "auth.enter_your_email_and_we_ll_send": "Enter your email and we'll send you a reset link.",

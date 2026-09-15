@@ -13,6 +13,8 @@ import { SPEAK_CLIP_MS, MONOLOGUE_CHUNK_MS } from "../lib/learningRules";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
+import { accountRequiredError } from "../lib/guest";
+import { useAuth } from "../lib/AuthContext";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
@@ -214,6 +216,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   mono: Monologue; level: string; exerciseId: string;
   onDone: (ok: boolean, score?: number) => void; colors: Palette;
 }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [phase, setPhase] = useState<Phase>("prep");
   const [seconds, setSeconds] = useState(0);
   const [transcript, setTranscript] = useState("");
@@ -280,6 +283,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
     if (!text) return;
     setPhase("scoring");
     try {
+      if (guest) throw accountRequiredError();
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
         method: "POST",
         body: JSON.stringify({
@@ -402,7 +406,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             ))}
           </View>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>
-            {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })} {sttOk === false ? t("item.mono_no_stt") : t("item.mono_will_score")}
+            {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })} {sttOk === false ? t("item.mono_no_stt") : t(guest ? "guest.mono_unscored" : "item.mono_will_score")}
           </Text>
           <PressableScale onPress={() => void start()} style={[{ marginTop: spacing.md, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14 }, softShadow(colors.primary, 8)]}>
             <MicIcon color={colors.onPrimary} size={18} />
