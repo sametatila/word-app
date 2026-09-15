@@ -430,7 +430,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
 function SheetRow({ label, colors, children }: { label: string; colors: Palette; children: React.ReactNode }) {
   return (
     <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" }}>
-      <Text variant="micro" color={colors.textMuted} style={{ width: 58, textTransform: "uppercase", letterSpacing: 0.6, paddingTop: 3 }}>{label}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ width: 58, textTransform: "uppercase", letterSpacing: 1, paddingTop: 3 }}>{label}</Text>
       <View style={{ flex: 1 }}>{children}</View>
     </View>
   );

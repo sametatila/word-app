@@ -60,7 +60,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
         <PressableScale
           onPress={secondary.onPress}
           disabled={secondary.disabled}
-          style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 14, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, opacity: secondary.disabled ? 0.5 : 1 }}
+          style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 14, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }}
         >
           {secondary.icon}
           {secondary.hint ? (
@@ -205,7 +205,7 @@ export function StatRow({ items }: { items: { value: string; label: string; tone
           >
             {it.value}
           </Text>
-          <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 0.6, textAlign: "center" }} numberOfLines={2}>{it.label}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, textAlign: "center" }} numberOfLines={2}>{it.label}</Text>
         </View>
       ))}
     </View>
@@ -218,7 +218,7 @@ export function DetailCard({ title, children, right }: { title: string; children
   return (
     <Card padded style={{ gap: spacing.sm }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-        <Text variant="micro" color={colors.textMuted} style={{ flex: 1, textTransform: "uppercase", letterSpacing: 0.8 }}>{title}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ flex: 1, textTransform: "uppercase", letterSpacing: 1 }}>{title}</Text>
         {right}
       </View>
       {children}

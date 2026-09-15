@@ -423,7 +423,7 @@ export function GameScreen() {
   if (phase === "error") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("game.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
-        <StateBody mood="sad" title={t("game.couldn_t_load_round")} body={t("game.check_your_connection_and_try")} />
+        <StateBody alert mood="sad" title={t("game.couldn_t_load_round")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
   }

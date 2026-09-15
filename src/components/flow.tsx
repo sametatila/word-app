@@ -122,7 +122,14 @@ export function ResultHero({
         }
       : { background: "rgb(255 255 255 / 0.22)", color: "#fff" };
   return (
-    <section role={live ? "status" : undefined} className={`overflow-hidden rounded-card p-4 ${quiet ? "card" : "brand-gradient-deep shadow-soft"}`}>
+    /* Dolu bandın gölgesi DOLGUNUN RENGİ (`glow-tint`, mobil
+       `softShadow(colors.primary, 14)`): nötr `shadow-soft` turuncu bandın
+       altına kahverengi gölge düşürüyordu. Geometri nötr aileyle aynı. */
+    <section
+      role={live ? "status" : undefined}
+      className={`overflow-hidden rounded-card p-4 ${quiet ? "card" : "brand-gradient-deep glow-tint"}`}
+      style={quiet ? undefined : ({ "--tint-fill": "var(--color-brand-500)" } as React.CSSProperties)}
+    >
       <div className="flex items-end gap-3">
         <div className="min-w-0 flex-1">
           <p className={`text-micro uppercase tracking-eyebrow ${quiet ? "muted" : "opacity-80"}`}>{eyebrow}</p>

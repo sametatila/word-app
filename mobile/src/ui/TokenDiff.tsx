@@ -108,7 +108,7 @@ const CHIP_KEYS: Record<Exclude<TokenMark, "same">, string> = {
 export function MarkTag({ label, fg, bg }: { label: string; fg: string; bg: string }) {
   return (
     <View style={{ backgroundColor: bg, borderRadius: 6, paddingHorizontal: 6, paddingVertical: 1, alignSelf: "flex-start" }}>
-      <Text variant="micro" color={fg} style={{ textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</Text>
+      <Text variant="micro" color={fg} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
     </View>
   );
 }

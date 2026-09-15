@@ -283,7 +283,7 @@ export function DailyScreen() {
   if (phase === "error") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("daily.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
-        <StateBody mood="sad" title={t("daily.couldn_t_load_daily_round")} />
+        <StateBody alert mood="sad" title={t("daily.couldn_t_load_daily_round")} />
       </FlowScreen>
     );
   }

@@ -79,6 +79,97 @@ export const atalarinda = (src, isaret, desen) => {
   return yigin.some((e) => desen.test(e));
 };
 
+/**
+ * AKIS SABLONLARI (2026-09-15) — ortak bilesenlerin VERDIGI sey.
+ *
+ * Otuzdan fazla bilgi/sonuc/kapak/durum ekrani ortak sablonlara tasindi
+ * (mobil `ui/flow.tsx`, web `components/flow.tsx`). Canli bolge, baslik rolu
+ * ve maskot boyu artik ekran dosyasinda YAZILI DEGIL, bilesenin icinde. Bu
+ * dosyadaki bircok olcu ekranda `role="status"`, `<Mascot size=…>`,
+ * `accessibilityRole="header"` ariyordu ve hepsi birden sustu.
+ *
+ * Cozum olcuyu gevsetmek degil: ekran `<ResultHero>` kullaniyorsa duyuruyor
+ * SAYILIYOR, ama yalniz bilesenin kendisi gercekten duyuruyorsa. Asagidaki
+ * tablo sablon dosyalarindan OKUNUYOR - biri `ResultHero`dan canli bolgeyi ya
+ * da `StateBody`den baslik rolunu silerse buna yaslanan her olcu kirmizi olur.
+ */
+const sablonGovde = (src, ad) => {
+  const i = src.indexOf("export function " + ad + "(");
+  if (i < 0) return "";
+  const j = src.indexOf("\nexport ", i + 1);
+  return src.slice(i, j < 0 ? src.length : j);
+};
+const sablonSabit = (src, ad) => Number((src.match(new RegExp("export const " + ad + " = (\\d+);")) ?? [])[1] ?? NaN);
+export const SABLON = (() => {
+  const mob = read("mobile/src/ui/flow.tsx");
+  const web = read("src/components/flow.tsx");
+  return {
+    mobil: {
+      /* `live={false}` verilmedikce bant "polite" duyuruyor. */
+      heroCanli: /accessibilityLiveRegion=\{live \? "polite" : undefined\}/.test(sablonGovde(mob, "ResultHero")),
+      /* `alert` hata dali "assertive", oteki durumlar "polite". */
+      durumCanli: /accessibilityLiveRegion=\{alert \? "assertive" : "polite"\}/.test(sablonGovde(mob, "StateBody")),
+      baslik: Object.fromEntries(["ResultHero", "CoverBody", "StateBody", "FlowTopBar"].map((ad) => [ad, /accessibilityRole="header"/.test(sablonGovde(mob, ad))])),
+      bantBoy: /<Mascot [^>]*size=\{MASCOT_BAND\}/.test(sablonGovde(mob, "ResultHero")) ? sablonSabit(mob, "MASCOT_BAND") : NaN,
+      durumBoy: /<Mascot [^>]*size=\{MASCOT_STATE\}/.test(sablonGovde(mob, "StateBody")) ? sablonSabit(mob, "MASCOT_STATE") : NaN,
+    },
+    web: {
+      heroCanli: /role=\{live \? "status" : undefined\}/.test(sablonGovde(web, "ResultHero")),
+      durumCanli: /role=\{alert \? "alert" : "status"\}/.test(sablonGovde(web, "StateBody")),
+      baslik: {
+        ResultHero: /<h[123]\b/.test(sablonGovde(web, "ResultHero")),
+        CoverBody: /<h[123]\b/.test(sablonGovde(web, "CoverBody")),
+        StateBody: /<h[123]\b/.test(sablonGovde(web, "StateBody")),
+      },
+      bantBoy: /<Mascot [^>]*size=\{MASCOT_BAND\}/.test(sablonGovde(web, "ResultHero")) ? sablonSabit(web, "MASCOT_BAND") : NaN,
+      durumBoy: /<Mascot [^>]*size=\{MASCOT_STATE\}/.test(sablonGovde(web, "StateBody")) ? sablonSabit(web, "MASCOT_STATE") : NaN,
+    },
+  };
+})();
+
+/**
+ * ISARETI KENDI ACILIS ETIKETINDE TASIYAN sablon etiketi (`<ResultHero
+ * title={t("x")} />` icinde `t("x")`). Kendi kendini kapatan etiket ata
+ * olmadigi icin `atalarinda` onu gormez; bu yardimci o boslugu kapatiyor.
+ */
+export const sablonEtiketi = (src, isaret, adlar = "ResultHero|StateBody|CoverBody") => {
+  const hedef = src.indexOf(isaret);
+  if (hedef < 0) return null;
+  const re = new RegExp("<(" + adlar + ")\\b", "g");
+  let bulunan = null, m;
+  while ((m = re.exec(src)) !== null && m.index < hedef) {
+    const k = acilisSonu(src.slice(m.index));
+    if (k >= 0 && m.index + k >= hedef) bulunan = { ad: m[1], etiket: src.slice(m.index, m.index + k + 1) };
+  }
+  return bulunan;
+};
+/** Etikette ciplak boolean prop (`<StateBody alert mood=…>`). */
+export const ciplakProp = (etiket, ad) => new RegExp("\\s" + ad + "(?=[\\s/>]|=\\{true\\})").test(etiket);
+
+/**
+ * DUGME GRUBU ICERIGIN SONUNDA. Mobilde `FlowScreen actions={…}` prop'u
+ * kaynakta ICERIKTEN ONCE yaziliyor ama ekranda en altta, kaydirilan icerigin
+ * disinda duruyor. Bolum SIRASI olcen kapilar icin prop metni dilimin sonuna
+ * tasiniyor. Blok yorumlar once siliniyor: icindeki tirnak ve parantezler
+ * dengeyi bozmasin.
+ */
+export const actionsSona = (src) => {
+  let govde = src.replace(/\/\*[\s\S]*?\*\//g, " ");
+  const sonda = [];
+  for (;;) {
+    const m = /\bactions=\{/.exec(govde);
+    if (!m) break;
+    let i = m.index + m[0].length, d = 1;
+    for (; i < govde.length && d > 0; i++) {
+      if (govde[i] === "{") d++;
+      else if (govde[i] === "}") d--;
+    }
+    sonda.push(govde.slice(m.index, i));
+    govde = govde.slice(0, m.index) + govde.slice(i);
+  }
+  return govde + "\n" + sonda.join("\n");
+};
+
 function fail(title, detail) {
   fails++;
   console.log("  " + C.bad + "KALIR" + C.off + "  " + title);
@@ -2817,13 +2908,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * bir listeydi, sonuc karti ise seritli - ayni sey iki bicimde. Ayrica gecen
  * bolum webde notr renkteydi: "hangi bolumu gectim" sorusu ancak yuzdeler tek
  * tek okunarak cevaplaniyordu. Android iki durumu da ayni cizip iki rengi de
- * kullaniyor. Sayilar ikiser: normal sonuc + cevrimdisi. */
+ * kullaniyor.
+ *
+ * SAYI DEGIL VARLIK (2026-09-15): eskiden iki taraf da ikiser satir
+ * yaziyordu (normal sonuc + cevrimdisi). Mobil sonuc ekrani ortak sablona
+ * gecerken iki durumu TEK listeden ciziyor (`rows = result ? … : offline`),
+ * web ise hâlâ iki ayri dalda ayni satiri yaziyor. Ayni bicim, farkli kaynak
+ * yerlesimi - olculen sey renk ve seridin iki tarafta da BULUNMASI. */
 {
   const satir = (p, metin, serit) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "yuzde rengi=" + (src.match(metin) ?? []).length,
-      "serit=" + (src.match(serit) ?? []).length,
+      "yuzde rengi=" + ((src.match(metin) ?? []).length >= 1 ? "var" : "YOK"),
+      "serit=" + ((src.match(serit) ?? []).length >= 1 ? "var" : "YOK"),
     ];
   };
   sameList(
@@ -3544,7 +3641,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        sozluge tasindi - orada iki taraf da ayni seyi soyluyor. */
     "rounds.empty_letter_slot": "bos harf yuvasinin aria etiketi; mobilde yerinde gercek metin var (rounds.tap_letters)",
     "rounds.empty_word_slot": "bos kelime yuvasinin aria etiketi; mobilde rounds.tap_words",
-    "rounds.great": "yazma turu geri bildirim basligi; mobilde FeedbackFooter kendi basligini kuruyor",
+    /* "rounds.great" BURADAN CIKTI (2026-09-15): cevap katmani yeniden
+       yazildi, hukum iki tarafta da ortak `sheet.*` anahtarlarindan kuruluyor
+       ve web sozlugundeki anahtar silindi. */
     "rounds.no_tts": "tarayicida konusma sentezi olmayabilir; Android'de sistem TTS her zaman var",
     "rounds.understood": "tanitim turunun ekran okuyucu etiketi",
     "rounds.write_sentence_ph": "ceviri turu yer tutucusu; mobilde `rounds.write_sentence` hedef dili de yaziyor",
@@ -4420,7 +4519,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const web = [
     "etap sinirinda=" + (/STAGE_SIZE === 0/.test(kapanis) ? "kapanir" : "kapanmaz"),
     "tur sonunda=" + (/isLast/.test(kapanis) ? "kapanir" : "kapanmaz"),
-    "ozet gosterir=" + (/result\?\.wagerXp \?/.test(webSrc) ? "evet" : "hayir"),
+    /* Ozet karti ortak sablona gecince bahis notu `SummaryCard` icinde
+       `wagerResult !== null` ile ciziliyor (etap kartiyla ayni degisken);
+       eski `result?.wagerXp ?` yazimi kalkti. Arama o fonksiyonla sinirli. */
+    "ozet gosterir=" + (/wagerResult !== null/.test(webSrc.slice(webSrc.indexOf("function SummaryCard("), webSrc.indexOf("\n}\n", webSrc.indexOf("function SummaryCard(")))) ? "evet" : "hayir"),
   ];
   sameList("son etabin bahsi", mob, web);
 }
@@ -4438,12 +4540,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * ait - iki tarafta ayni anahtar kullanilmiyor (ornegin baslik webde
  * `summary.round_done`, mobilde `common.round_done`). */
 {
+  /* SUTUNLAR: [ad, web deseni, mobil deseni].
+     2026-09-15 SONUC SABLONU: "halka" iki taraftan da kalkti (bandin ana
+     sayisi dogru/toplam ayni bilgiyi veriyor); XP bandin alt satirinda;
+     paylas webde `ShareResult`, mobilde ust cubugun `common.share` dugmesi;
+     bahis notu iki tarafta `wagerResult !== null` ile ciziliyor (web metni
+     `WagerNote` bileseninde, ozetin DISINDA; o yuzden anahtar degil kosul). */
   const BOLUM = [
-    ["halka", /game\.correct/, /game\.correct/],
-    ["baslik", /summary\.(round_done|stopped)/, /common\.round_done/],
-    ["xp", /CountUp value=\{xp\}/, /xpGained\} XP/],
+    ["baslik", /summary\.stopped|common\.round_done/, /summary\.stopped|common\.round_done/],
+    ["xp", /xp > 0 \? `\+\$\{xp\} XP/, /xp > 0 \? `\+\$\{xp\} XP/],
     ["uc sayi", /summary\.accuracy/, /summary\.accuracy/],
-    ["bahis", /session\.wager_won/, /stage\.wager_won/],
+    ["bahis", /wagerResult !== null/, /wagerResult !== null/],
+
     ["gunluk hedef", /learn\.daily_goal/, /learn\.daily_goal/],
     ["pekisen", /sessionw\.n_mastered/, /sessionw\.n_mastered/],
     ["seri onarildi", /game\.streak_saved/, /game\.streak_saved/],
@@ -4474,11 +4582,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .filter(([, i]) => i >= 0)
       .sort((a, b) => a[1] - b[1])
       .map(([ad]) => ad);
-  /* Dilim HALKADAN basliyor: `summary.stopped`ten baslatinca halka dilimin
-     DISINDA kaliyordu ve "webde halka yok" gibi gorunuyordu - olcunun
-     komsusunu olcmenin bir baska bicimi. */
-  const web = dilim(read("src/components/session-player.tsx"), "SONUÇ HALKASI");
-  const mob = dilim(read("mobile/src/screens/GameScreen.tsx"), "if (phase === \"done\") {", "\n/**");
+  /* Web dilimi `SummaryCard` fonksiyonu (eskiden "SONUÇ HALKASI" yorumuna
+     capaliydi; halka ve yorum kalkti). Mobilde dugmeler `FlowScreen`
+     `actions` prop'unda, kaynakta icerikten ONCE ama ekranda en altta:
+     `actionsSona` onlari dilimin sonuna tasiyor. Blok yorumlar da siliniyor. */
+  const web = dilim(read("src/components/session-player.tsx"), "function SummaryCard(", "\n}\n").replace(/\/\*[\s\S]*?\*\//g, " ");
+  const mob = actionsSona(dilim(read("mobile/src/screens/GameScreen.tsx"), "if (phase === \"done\") {", "\n/**"));
+
   sameList("tur ozetinin bolum sirasi", sira(mob, 1), sira(web, 0));
 }
 
@@ -4588,7 +4698,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Web yerlesim Android'e esitlenince anahtarlar da ortaklasti: halkanin
        altyazisi iki tarafta `weekly.score`, dogru sayisi `weekly.done_sub`.
        Eskiden web `weekly.your_score` + `common.n_correct` diyordu. */
-    ["puan halkasi", /weekly\.score/, /weekly\.score/],
+    /* "puan halkasi" (`weekly.score`) 2026-09-15'te iki taraftan da kalkti:
+       sonuc sablonunun bandi yuzdeyi ana sayi olarak gosteriyor. */
     ["dogru sayisi", /weekly\.done_sub/, /weekly\.done_sub/],
     ["gonderilemedi", /weekly\.not_sent/, /weekly\.not_sent/],
     ["kuyruga donenler", /weekly\.back_in_queue/, /weekly\.back_in_queue/],
@@ -4596,13 +4707,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["haftada bir", /weekly\.once_a_week/, /weekly\.once_a_week/],
     ["cikis", /weekly\.back_to_learn/, /common\.finish/],
   ];
+  /* Mobilde dugmeler `FlowScreen` `actions` prop'unda: kaynakta icerikten
+     once, ekranda en altta (`actionsSona`). */
   const dilim = (src, bas, son) => {
     const i = src.indexOf(bas);
     const j = src.indexOf(son, i);
     return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
   };
   const web = dilim(read("src/components/weekly-player.tsx"), 'if (phase === "done" && result) {', "\n  const round =");
-  const mob = dilim(read("mobile/src/screens/WeeklyScreen.tsx"), 'if (phase === "done") {', "\n  // play");
+  const mob = actionsSona(dilim(read("mobile/src/screens/WeeklyScreen.tsx"), 'if (phase === "done") {', "\n  // play"));
   const sira = (src, ix) =>
     BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
       .filter(([, i]) => i >= 0)
@@ -4656,11 +4769,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .filter(([, i]) => i >= 0)
       .sort((a, b) => a[1] - b[1])
       .map(([ad]) => ad);
-  sameList(
-    "gunluk tur tanitimi",
-    sira(dilim(mobSrc, 'if (phase === "ready") {', '\n  if (phase === "empty")'), 1),
-    sira(dilim(webSrc, 'if (status === "ready" && data) {', "\n  if (status ==="), 0),
-  );
+  /* KAPAK SABLONU (2026-09-15): mobilde dugmeler ekranin dibine SABIT
+     (`FlowScreen` `actions`, `actionsSona` dilimin sonuna tasiyor), webde
+     sayfa aktigi icin tablodan ONCE - `daily-player` bunu "bilincli fark"
+     diye yaziyor: tablo ustte kalsa "Basla" katlamanin altina duserdi.
+     O yuzden sira iki parca olculuyor: icerigin sirasi (dugmeler haric) ve
+     dugmelerin kendi sirasi. "tanitim" (`daily.pitch`) iki taraftan da
+     kalkti; yerine kapagin tek cumlesi (`daily.cover_pitch`). */
+  const DUGME = new Set(["basla", "sonra"]);
+  const mobKapak = sira(actionsSona(dilim(mobSrc, 'if (phase === "ready") {', '\n  if (phase === "empty")')), 1);
+  const webKapak = sira(dilim(webSrc, 'if (status === "ready" && data) {', "\n  if (status ==="), 0);
+  sameList("gunluk tur tanitimi", mobKapak.filter((x) => !DUGME.has(x)), webKapak.filter((x) => !DUGME.has(x)));
+  sameList("gunluk tur tanitiminin dugmeleri", mobKapak.filter((x) => DUGME.has(x)), webKapak.filter((x) => DUGME.has(x)));
 
   /* `session_start` tanitim ekraninda DEGIL, BASLA dugmesinde yazilmali. */
   const nerede = (src) => (/session_start", 0, "daily"\)/.test(src) ? (/(onPress|onClick)=\{\(\) => \{[^}]*session_start", 0, "daily"/.test(src.replace(/\n/g, " ")) ? "basla dugmesinde" : "baska yerde") : "hic yazilmiyor");
@@ -4682,15 +4802,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 {
   const BOLUM = [
     ["baslik", /lesson\.lesson_complete/, /lesson\.lesson_complete/],
-    /* Web de artik ortak anahtari kullaniyor (eskiden `lessonp.practice`). */
-    ["alistirma", /lesson\.correct_production/, /lesson\.correct_production/],
+    /* 2026-09-15 SONUC SABLONU: "alistirma" (`lesson.correct_production`) ve
+       "sonraki gun" (`lessonp.next_in_days`) satirlari iki taraftan da kalkti
+       - alistirma bandin ana sayisi (dogru/toplam), tekrar gunu uc sayinin
+       ucuncusu (`lessonp.stat_review`). Tur sayisi iki tarafta da bandin alt
+       satiri (`lessonp.n_turns`); mobilin eski `lesson.phase_roleplay`
+       deseni kalkti. */
     ["basari", /lesson\.accuracy/, /lesson\.accuracy/],
-    ["tur sayisi", /lessonp\.n_turns/, /lesson\.phase_roleplay/],
+    ["tur sayisi", /lessonp\.n_turns/, /lessonp\.n_turns/],
     ["kelimeler", /lessonp\.words_of_lesson/, /lessonp\.words_of_lesson/],
     ["yapabildiklerim", /lessonp\.i_can/, /lessonp\.i_can/],
     ["duzeltmeler", /lessonp\.corrections/, /lessonp\.corrections/],
     ["en az kac tur", /lessonp\.min_turns_note/, /lessonp\.min_turns_note/],
-    ["sonraki gun", /lessonp\.next_in_days/, /lessonp\.next_in_days/],
+
     ["konusmaya don", /lessonp\.back_to_conversation/, /lessonp\.back_to_conversation/],
     ["sinav olarak dene", /lessonp\.try_as_exam/, /lessonp\.try_as_exam/],
     ["patikaya don", /lesson\.back_to_path/, /lesson\.back_to_path/],
@@ -5512,14 +5636,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Kagit VARKEN Almanca dogru, YOKKEN sozluk. O yuzden olculen sey dizginin
      varligi degil, YEDEK DALIN ne kullandigi: `cover?.titleDe ?? (...)` ve
      goz kapagindaki `cover ? ... : ...` ifadelerinin YANLIS tarafi. */
+  /* KAPAK SABLONU (2026-09-15): baslik `CoverBody` `title=` prop'u -
+     `cover?.titleDe ? <span lang>…</span> : t("exam.cover_title_*")`; sinavin
+     adi her durumda sozlukten, ust satirda (`eyebrow=`). Eski `?? (…)` ve
+     `cover ? … : …` yazimlari kalkti; olculen sey yine YEDEK DALIN kaynagi,
+     ustelik gomulu Almanca dizginin dosyada hic kalmamasi da araniyor. */
   const kapak = strip(read("src/components/exam-player.tsx")).replace(/\s+/g, " ");
-  const baslikYedek = kapak.match(/cover\?\.titleDe \?\? \(([^)]*\([^)]*\)[^)]*)*\)/)?.[0] ?? "";
-  const gozYedek = kapak.match(/: module === null \? t\("exam\.level_exam"[^}]*\}/)?.[0] ?? "";
+  const baslikYedek = kapak.match(/title=\{cover\?\.titleDe \? <span lang=\{course\}>\{cover\.titleDe\}<\/span> : ([^}]*)\}/)?.[1] ?? "";
+  const gozYedek = kapak.match(/eyebrow=\{module === null \? t\("exam\.level_exam"[^}]*\}\) : t\("exam\.module_exam"/)?.[0] ?? "";
+  const gomulu = /["'`](?:Niveaupr(?:ü|ue|u)fung|Modulpr(?:ü|ue|u)fung|Pr(?:ü|ue|u)fung [ABC][12])/.test(kapak);
   sameList(
     "sinav kapagi kagitsiz hâl",
     [
-      "baslik yedegi=" + (/t\("exam\.(level|module)_exam"/.test(baslikYedek) ? "sozlukten" : "uydurma almanca"),
-      "goz kapagi yedegi=" + (gozYedek ? "sozlukten" : "uydurma almanca"),
+      "baslik yedegi=" + (/^t\(.*"exam\.[\w]+"/.test(baslikYedek.trim()) && !gomulu ? "sozlukten" : "uydurma almanca"),
+      "goz kapagi yedegi=" + (gozYedek && !gomulu ? "sozlukten" : "uydurma almanca"),
     ],
     ["baslik yedegi=sozlukten", "goz kapagi yedegi=sozlukten"],
     "web",
@@ -6408,7 +6538,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "sinav baslatma dugmede",
     [
-      "mobil=" + (/action: "start"/.test(mobStart) && /onPress=\{startExam\}/.test(mob.replace(/\s+/g, " ")) ? "dugmede" : "mount etkisinde"),
+      /* Sablonda dugme `FlowActions primary={{ …, onPress: startExam }}`:
+         JSX prop'u degil nesne alani. Iki yazim da dugmeye baglilik. */
+      "mobil=" + (/action: "start"/.test(mobStart) && /onPress(?:=\{|: )startExam\b/.test(mob.replace(/\s+/g, " ")) ? "dugmede" : "mount etkisinde"),
       "web=" + (/action: "start"/.test(webStart) && /onStart=\{\(\) => void start\(\)\}/.test(web.replace(/\s+/g, " ")) ? "dugmede" : "mount etkisinde"),
     ],
     ["mobil=dugmede", "web=dugmede"],
@@ -8960,6 +9092,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
         ["rol yapma", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
         ["tur ozeti", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
+        /* 2026-09-15: sonuc/kapak ekranlari sablona gecince mobil kapak
+           kurallari ikonu BILESEN olarak veriyor (`icon: ClockIcon`, boy
+           sablonda) ve bu uc ciftte tek gecen ortak ikon ikiye dustu.
+           Haftalik sinav cifti eklendi (iki tek gecen ortak ikon: Alert 16,
+           Check 16); esik 3'te kaldi. Kapi yeni cifte balon eklemiyor. */
+        ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
       ];
       /* Balonlari SIRAYLA cikar: her biri "<an kumesi>/<boy>". An kumesi
          etiketteki `moment` dizgilerinin sirali birlesimi - ucluk ternary de
@@ -9053,17 +9191,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "mobil",
       "web",
     );
-    /* "Bu oyuna kelime yok" dali: ayni anahtar, ayni boy, ayni kip. */
-    const bosDal = (metin, anahtar) => {
+    /* "Bu oyuna kelime yok" dali: ayni anahtar, ayni boy, ayni kip.
+       2026-09-15: dal iki tarafta da DURUM SABLONU (`<StateBody mood=…>`);
+       maskot sablonun icinde ve boyu sablondan (`MASCOT_STATE`). Isaret
+       kendi etiketinde, ciplak `<Mascot` yedegi eski yazim icin duruyor. */
+    const bosDal = (metin, anahtar, platform) => {
+      if (metin.indexOf(anahtar) < 0) return "DAL YOK";
+      const sb = sablonEtiketi(metin, anahtar, "StateBody|ResultHero");
+      if (sb) {
+        const kip = (sb.etiket.match(/mood="(\w+)"/) ?? [])[1];
+        const boy = sb.ad === "StateBody" ? SABLON[platform].durumBoy : SABLON[platform].bantBoy;
+        return kip ? kip + "/" + boy : "KIP YOK";
+      }
       const i = metin.indexOf(anahtar);
-      if (i < 0) return "DAL YOK";
       const bas = metin.lastIndexOf("<Mascot", i);
-      return bas < 0 ? "MASKOT YOK" : ((metin.slice(bas, i).match(/mood="(\w+)"/) ?? [])[1] ?? "KIP YOK");
+      return bas < 0 ? "MASKOT YOK" : ((metin.slice(bas, i).match(/mood="(\w+)"/) ?? [])[1] ?? "KIP YOK") + "/" + ((metin.slice(bas, i).match(/size=\{(\d+)\}/) ?? [])[1] ?? "?");
     };
     sameList(
       "kelime yok ekraninda maskotun kipi",
-      ["mobil=" + bosDal(sil(read("mobile/src/screens/GameScreen.tsx")), "session.no_words_for_game")],
-      ["mobil=" + bosDal(sil(read("src/components/session-player.tsx")), "session.no_words_for_game")],
+      ["mobil=" + bosDal(sil(read("mobile/src/screens/GameScreen.tsx")), "session.no_words_for_game", "mobil")],
+      ["mobil=" + bosDal(sil(read("src/components/session-player.tsx")), "session.no_words_for_game", "web")],
       "mobil",
       "web",
     );
@@ -9107,6 +9254,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
             /* Yuzeyin kimligi: etiketten SONRAKI ilk sozluk anahtari. */
             const pencere = src.slice(m.index, m.index + 700);
             const k = (pencere.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
+            if (!k || out.has(k)) continue;
+            out.set(k, kip + "/" + boy);
+          }
+          /* SABLON YUZEYLERI (2026-09-15). Maskot artik `<ResultHero mood=…>`
+             (bant, `MASCOT_BAND`) ve `<StateBody mood=…>` (durum,
+             `MASCOT_STATE`) icinde ciziliyor; ciplak `<Mascot>` arayan tarama
+             yedi ortak yuzeyin hepsini kaybetti. Kip etiketten, boy SABLONUN
+             KENDI dosyasindan okunuyor (`SABLON`). Yuzeyin kimligi `title=`
+             prop'undaki ilk sozluk anahtari: bandin ilk anahtari ust satir
+             (`flow.round` gibi) ve cok ekranda ortak. */
+          const platform = kok.startsWith("mobile") ? "mobil" : "web";
+          for (const m of src.matchAll(/<(ResultHero|StateBody)\b/g)) {
+            const son = acilisSonu(src.slice(m.index));
+            if (son < 0) continue;
+            const etiket = src.slice(m.index, m.index + son + 1);
+            const kip = (etiket.match(/\smood="(\w+)"/) ?? [])[1];
+            if (!kip) continue;
+            const boy = m[1] === "StateBody" ? SABLON[platform].durumBoy : SABLON[platform].bantBoy;
+            const baslik = etiket.slice(Math.max(0, etiket.search(/\stitle=\{/)));
+            const k = (baslik.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
             if (!k || out.has(k)) continue;
             out.set(k, kip + "/" + boy);
           }
@@ -9470,7 +9637,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "tekrar dugmeleri ayni sifirlamayi cagiriyor",
       CIFT.map(([et, y]) => {
         const g = sil(read(y));
-        const n = [...g.matchAll(/(?:onClick|onPress)=\{restart\}/g)].length;
+        /* Sablonda cagri `FlowActions` nesne alani (`onClick: restart`). */
+        const n = [...g.matchAll(/(?:onClick|onPress)(?:=\{|: )restart\b/g)].length;
         return `${et}=${n}`;
       }),
       CIFT.map(([et]) => `${et}=2`),
@@ -9619,7 +9787,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil boss veri varsa=" + (/\{data \? null : \(/.test(bossMob) ? "yok" : "VAR"),
         /* Cevrimdisi KAYIT dali: tekrar denemek kagidi bastan acar ve kaydi
            cope atardi (gerekce `exam-player` icinde yazili). */
-        "web sinav cevrimdisi=" + (/\{offline \? null : \(/.test(sinavWeb) ? "yok" : "VAR"),
+        /* 2026-09-15: dal ikiye ayrildi - `if (!offline)` durum sablonu
+           (tekrar VAR), altinda cevrimdisi sonuc bandi. Olculen: sonuc bandi
+           ile sonraki `phase === "result"` dali arasinda tekrar yok. */
+        "web sinav cevrimdisi=" + (() => {
+          const i = sinavWeb.indexOf('t("exam.saved_offline")');
+          const j = sinavWeb.indexOf('if (phase === "result"', i);
+          return /if \(!offline\)/.test(sinavWeb) && i >= 0 && j > i && !/try_again/.test(sinavWeb.slice(i, j)) ? "yok" : "VAR";
+        })(),
+
       ],
       ["web boss bos dali=yok", "mobil boss veri varsa=yok", "web sinav cevrimdisi=yok"],
       "bulunan",
@@ -11683,10 +11859,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const MUAF = new Map([
       ["mobile/src/screens/FirstPracticeScreen.tsx", "src/components/first-practice.tsx"],
     ]);
+    /* SABLONLAR BASLIGI VERIYOR (2026-09-15). Sonuc, kapak ve durum ekranlari
+       basligini `ResultHero`/`CoverBody`/`StateBody`nin `title` prop'uyla
+       yaziyor ve rol bilesenin icinde. Bir ekran bu bilesenlerden birini
+       kullaniyorsa basliklidir - ama YALNIZ bilesenin kendisi rolu gercekten
+       tasiyorsa (`SABLON`, sablon dosyasindan okunuyor). `FlowTopBar`
+       sayilmiyor: onun satiri kucuk bir baglam etiketi, baslik rolu yok. */
+    const rolluSablon = Object.entries(SABLON.mobil.baslik).filter(([, v]) => v).map(([ad]) => ad);
+    const sablonBasligi = rolluSablon.length ? new RegExp("<(?:" + rolluSablon.join("|") + ")\\b") : /(?!)/;
+    sameList(
+      "sablon bilesenleri baslik rolu ve canli bolge veriyor",
+      [
+        "mobil baslik=" + ["ResultHero", "CoverBody", "StateBody"].filter((ad) => !SABLON.mobil.baslik[ad]).join("+"),
+        "web baslik=" + ["ResultHero", "CoverBody", "StateBody"].filter((ad) => !SABLON.web.baslik[ad]).join("+"),
+        "mobil canli=" + (SABLON.mobil.heroCanli && SABLON.mobil.durumCanli ? "bant+durum" : "EKSIK"),
+        "web canli=" + (SABLON.web.heroCanli && SABLON.web.durumCanli ? "bant+durum" : "EKSIK"),
+        "maskot boyu=" + [SABLON.mobil.bantBoy, SABLON.web.bantBoy, SABLON.mobil.durumBoy, SABLON.web.durumBoy].join("/"),
+      ],
+      ["mobil baslik=", "web baslik=", "mobil canli=bant+durum", "web canli=bant+durum", "maskot boyu=80/80/96/96"],
+      "bulunan",
+      "beklenen",
+    );
     const basliksiz = [];
     for (const f of walkTsx259("mobile/src/screens")) {
       const src = sil(read(f));
-      if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader)\b/.test(src)) continue;
+      if (/accessibilityRole="header"/.test(src) || /<(?:AppHeader|ScreenHeader|TabHeader)\b/.test(src) || sablonBasligi.test(src)) continue;
       if (MUAF.has(f)) continue;
       basliksiz.push(f.split("/").pop());
     }
@@ -11718,10 +11915,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["beceri", "src/components/skills/player-shell.tsx", "mobile/src/screens/ItemScreen.tsx"],
       ["birim sinavi", "src/components/immersion/quiz-player.tsx", "mobile/src/screens/QuizScreen.tsx"],
     ];
+    const webRolluSablon = Object.entries(SABLON.web.baslik).filter(([, v]) => v).map(([ad]) => ad);
+    const webSablonBasligi = webRolluSablon.length ? new RegExp("<(?:" + webRolluSablon.join("|") + ")\\b") : /(?!)/;
     sameList(
       "akis oynaticilarinda baslik",
-      AKIS.map(([ad, , m]) => ad + "=" + (/accessibilityRole="header"/.test(sil(read(m))) ? "baslik" : "ROL YOK")),
-      AKIS.map(([ad, w]) => ad + "=" + (/<h[123]\b/.test(sil(read(w))) ? "baslik" : "ROL YOK")),
+      AKIS.map(([ad, , m]) => ad + "=" + (/accessibilityRole="header"/.test(sil(read(m))) || sablonBasligi.test(sil(read(m))) ? "baslik" : "ROL YOK")),
+      AKIS.map(([ad, w]) => ad + "=" + (/<h[123]\b/.test(sil(read(w))) || webSablonBasligi.test(sil(read(w))) ? "baslik" : "ROL YOK")),
       "mobil",
       "web",
     );
@@ -14252,8 +14451,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "bayrak=" + (/stoppedEarly\.current = true/.test(ow) ? "var" : "YOK"),
         "yuklemede sifirlaniyor=" + (/stoppedEarly\.current = false/.test(ow) ? "evet" : "HAYIR"),
-        "baslik=" + (/partial \? t\("summary\.stopped"\) : t\("common\.round_done"\)/.test(ow) ? "iki dal" : "TEK"),
-        "dugme adi=" + (/partial \? t\("summary\.back_to_round"\) : t\("game\.continue"\)/.test(ow) ? "iki dal" : "TEK"),
+        /* Sablonda anahtar tek `t()` cagrisinin icinde seciliyor
+           (`t(partial ? "summary.stopped" : "common.round_done")`); iki
+           `t()` yazimi da ayni ayrim. */
+        "baslik=" + (/partial \? (?:t\()?"summary\.stopped"\)? : (?:t\()?"common\.round_done"/.test(ow) ? "iki dal" : "TEK"),
+        "dugme adi=" + (/partial \? (?:t\()?"summary\.back_to_round"\)? : (?:t\()?"game\.continue"/.test(ow) ? "iki dal" : "TEK"),
+
       ],
       "mobil",
       "web",
@@ -14450,19 +14653,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        bambaska bir agactan doluyor ve kapi dogru koda "YOK" diyordu. Artik
        her cift bir TANIK tasiyor: dalin govdesinde mutlaka bulunmasi gereken
        bir metin. Tanik yoksa olcum "DAL YOK" diyor, sessizce gecmiyor. */
+    /* SABLONDA MASKOT (2026-09-15): durum ve sonuc dallari maskotu
+       `<StateBody mood=…>` / `<ResultHero mood=…>` ile ciziyor; `mood={null}`
+       ya da hic `mood` yoksa maskot yok. KAPAK sablonunda (`CoverBody`)
+       maskot HIC YOK - ikon karosu var; yuruyusun girisi iki tarafta da kapak
+       oldu ve iki tarafta da maskotsuz ("kapak" diye ayri okunuyor). */
     const maskot = (yol, capa, tanik) => {
       const g = dalGovdesi(sil(read(yol)), capa);
       if (g === null || !g.includes(tanik)) return "DAL YOK";
-      return /<Mascot\b/.test(g) ? "maskot" : "YOK";
+      if (/<Mascot\b/.test(g)) return "maskot";
+      for (const m of g.matchAll(/<(StateBody|ResultHero)\b/g)) {
+        const son = acilisSonu(g.slice(m.index));
+        const etiket = son < 0 ? "" : g.slice(m.index, m.index + son + 1);
+        if (/\smood=(?!\{null\})/.test(etiket)) return "maskot";
+      }
+      return /<CoverBody\b/.test(g) ? "kapak" : "YOK";
     };
 
     const CIFTLER = [
       ["meydan bos", "mobile/src/screens/ChallengeScreen.tsx", 'phase === "empty"', 'challenge.none_title', "src/components/challenge-player.tsx", 'status === "empty"', 'challenge.none_title'],
       ["rol hata", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "error")', 'rpexam.service_down', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "error")', 'rpexam.service_down'],
       ["rol puanlama", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "scoring")', 'item.mono_scoring', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "scoring")', 'item.mono_scoring'],
-      ["sinav hata", "mobile/src/screens/ExamScreen.tsx", "if (err) {", '{err}', "src/components/exam-player.tsx", 'if (phase === "error") {', 'exam.load_or_save_failed'],
-      ["yuruyus giris", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "intro" ? (', 'walkmode.listen_and_say_it', "src/components/walk-player.tsx", 'if (status === "ready" || status === "paused")', 'walk.intro_1'],
-      ["yuruyus bitis", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "done" ? (', 'walkmode.correct', "src/components/walk-player.tsx", 'if (status === "done")', 'walk.done_sub'],
+      ["sinav hata", "mobile/src/screens/ExamScreen.tsx", "if (err) {", 'title={err}', "src/components/exam-player.tsx", 'if (phase === "error") {', 'exam.load_or_save_failed'],
+      /* Web kapagi uc durumlu bir dalin icinde (duraklama / kapak); capa
+         kapagin kendi etiketi, tanik iki tarafta ayni baslik anahtari. Eski
+         tanik `walk.intro_1` tanitim paragrafiyla birlikte kalkti. */
+      ["yuruyus giris", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "intro" ? (', 'walkmode.listen_and_say_it', "src/components/walk-player.tsx", '<CoverBody', 'walkmode.listen_and_say_it'],
+      /* Tanik bandin basligi: eski `walkmode.correct` / `walk.done_sub`
+         satirlari bantla birlikte kalkti. */
+      ["yuruyus bitis", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "done" ? (', 'walkmode.done_title', "src/components/walk-player.tsx", 'if (status === "done")', 'walkmode.done_title'],
     ];
     sameList(
       "durum dallarinda maskot",
@@ -14594,21 +14813,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const kendiEtiket = kendi >= 0 ? src.slice(kendi, kendi + (acilisSonu(src.slice(kendi)) + 1 || 0)) : "";
       return yigin.some((e) => desen.test(e)) || desen.test(kendiEtiket) ? "duyuruyor" : "SESSIZ";
     };
-    const WEB = /role="alert"/;
+    /* DURUM SABLONU (2026-09-15): `<StateBody alert …>` web'de `role="alert"`,
+       mobilde "assertive" canli bolge veriyor - ama YALNIZ sablonun kendisi
+       oyle yaziyorsa (`SABLON.*.durumCanli`). `alert`siz `StateBody` "polite"
+       / `status` duyuruyor ve hata dali icin YETMIYOR; sayilmiyor. Isaret
+       cogunlukla etiketin kendi `title=` prop'unda. */
+    const sablonAlert = (platform) =>
+      SABLON[platform].durumCanli ? { test: (e) => /^<StateBody\b/.test(e) && ciplakProp(e, "alert") } : /(?!)/;
+    const WEB = { test: (e) => /role="alert"/.test(e) || sablonAlert("web").test(e) };
     /* `live="assertive"` de sayiliyor: bos durum kabugu (`EmptyCard`) bu
        prop'u `accessibilityLiveRegion`a ILETIYOR ve iletmesi 241'de mutlak
        bir olcuyle tutuluyor - burada ikinci kez okumak gerekmiyor. */
-    const MOB = /(?:accessibilityLiveRegion|live)="assertive"/;
+    const MOB = { test: (e) => /(?:accessibilityLiveRegion|live)="assertive"/.test(e) || sablonAlert("mobil").test(e) };
 
     const DALLAR = [
       ["src/components/boss-player.tsx", 't("exam.could_not_load")'],
       ["src/components/challenge-player.tsx", 't("challenge.load_failed")'],
       ["src/components/daily-player.tsx", 't("daily.couldn_t_load_daily_round")'],
-      ["src/components/weekly-player.tsx", 't("weekly.load_failed")'],
+      ["src/components/weekly-player.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
       ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
       ["src/components/walk-player.tsx", 't("walk.error_title")'],
       ["src/components/lessons/roleplay-exam.tsx", 't("rpexam.service_down")'],
-      ["src/components/session-player.tsx", "{content.title}"],
+      ["src/components/session-player.tsx", "title={content.title}"],
       ["src/components/exam-player.tsx", 't("exam.load_or_save_failed")'],
       ["src/components/cando-card.tsx", 't("cando.couldn_t_load")'],
       ["mobile/src/screens/BossScreen.tsx", '"boss.not_ready" : "exam.could_not_load"'],
@@ -14620,7 +14846,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["mobile/src/screens/WordsScreen.tsx", 't("words.couldn_t_load_your_words")', 'phase === "error" ? ('],
       ["mobile/src/screens/WritingsScreen.tsx", 't("writings.couldn_t_load_writings")', 'phase === "error" ? ('],
       ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("rpexam.service_down")'],
-      ["mobile/src/screens/ExamScreen.tsx", "{err}"],
+      ["mobile/src/screens/ExamScreen.tsx", "title={err}"],
       ["mobile/src/screens/CandoScreen.tsx", 't("cando.couldn_t_load")', 'phase === "error" ? ('],
     ];
     const kisa = (y) => y.split("/").pop().replace(/\.tsx$/, "");
@@ -14658,12 +14884,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "hata dalinda yerinde tekrar deneme",
       [
-        "meydan mobil=" + (/onPress=\{load\}/.test(chm) ? "var" : "YOK"),
+        /* Sablonda dugmeler `FlowActions` nesne alanlari (`onPress: load`,
+           `onClick: () => void start()`); iki yazim da ayni baglanti. */
+        "meydan mobil=" + (/onPress(?:=\{|: )load\b/.test(chm) ? "var" : "YOK"),
         "meydan web=" + (/setAttempt\(\(n\) => n \+ 1\)/.test(chw) ? "var" : "YOK"),
         "sinav mobil=" + (/setAttempt\(\(n\) => n \+ 1\)/.test(exm) ? "var" : "YOK"),
-        "sinav web=" + (/onClick=\{\(\) => void start\(\)\}/.test(exw) ? "var" : "YOK"),
-        /* Cevrimdisi kayit varken tekrar SUNULMUYOR - kaydi cope atardi. */
-        "sinav web cevrimdisi ayrimi=" + (/offline \? null : \(/.test(exw) ? "var" : "YOK"),
+        "sinav web=" + (/onClick(?:=\{|: )\(\) => void start\(\)/.test(exw) ? "var" : "YOK"),
+        /* Cevrimdisi kayit varken tekrar SUNULMUYOR - kaydi cope atardi.
+           Eski `{offline ? null : (` yazimi `if (!offline)` dalina donustu. */
+        "sinav web cevrimdisi ayrimi=" + (/offline \? null : \(|if \(!offline\)/.test(exw) ? "var" : "YOK"),
       ],
       ["meydan mobil=var", "meydan web=var", "sinav mobil=var", "sinav web=var", "sinav web cevrimdisi ayrimi=var"],
       "bulunan",
@@ -14735,10 +14964,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       }
       return yigin;
     };
-    const duyuruyor = (src, isaret, desen) => {
+    /* DURUM SABLONU (2026-09-15): bekleme dallari `<StateBody title=…>` ile
+       ciziliyor ve bilesen kendisi `role="status"` / "polite" veriyor
+       (`SABLON.*.durumCanli`). Isaret sablonun KENDI etiketindeyse (ata
+       degil) o etiket de sayiliyor. */
+    const duyuruyor = (src, isaret, desen, platform) => {
       const yigin = atalar(src, isaret);
       if (yigin === null) return "ISARET YOK";
-      return yigin.some((e) => desen.test(e)) ? "duyuruyor" : "SESSIZ";
+      const kendi = sablonEtiketi(src, isaret, "StateBody");
+      if (kendi && SABLON[platform].durumCanli) return "duyuruyor";
+      return yigin.some((e) => desen.test(e) || (SABLON[platform].durumCanli && /^<StateBody\b/.test(e))) ? "duyuruyor" : "SESSIZ";
     };
     const WEB_ISARET = /role="status"/;
     const MOBIL_ISARET = /accessibilityLiveRegion="polite"/;
@@ -14764,7 +14999,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "ekrani kaplayan bekleme duyuruluyor",
       [...WEB, ...MOBIL].map(([y, isaret]) =>
-        kisa(y) + "=" + duyuruyor(sil(read(y)), isaret, y.startsWith("mobile/") ? MOBIL_ISARET : WEB_ISARET),
+        kisa(y) + "=" + duyuruyor(sil(read(y)), isaret, y.startsWith("mobile/") ? MOBIL_ISARET : WEB_ISARET, y.startsWith("mobile/") ? "mobil" : "web"),
+
       ),
       [...WEB, ...MOBIL].map(([y]) => kisa(y) + "=duyuruyor"),
       "bulunan",
@@ -15103,149 +15339,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobSinav = sil(read("mobile/src/screens/ExamScreen.tsx"));
     const mobOturum = sil(read("mobile/src/screens/GameScreen.tsx"));
     const mobYuruyus = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
-    /* Mobil tarafta canli bolge SONUC METNINDE; hangi metin oldugu ekrana
-       gore degisiyor, o yuzden her biri kendi dizesiyle araniyor. */
-    const mobSonuc = (src, desen) => (desen.test(src) ? "duyuruyor" : "SESSIZ");
-    /**
-     * Sonucu isaretleyen dizeden GERI gidip ondan hemen once acilan kabin
-     * etiketini okuyor: kap `<section ...>` ya da `<div ...>` olabilir.
-     * Pencere tahmin edilmiyor, en yakin kap bulunuyor.
-     */
-    /**
-     * Dalin KOK ELEMANI: capadan sonraki ilk acilis etiketi.
+    /* ESKI OLCULER (kaldirildi 2026-09-15): mobilde canli bolgeyi SONUC
+       METNININ desenleriyle, webde sonucu isaretleyen dizeden geri gidip kap
+       etiketini (`<section`/`<div className="card`) ve dalin kok elemanini
+       okuyorlardi. Dersleri asagidaki olcude duruyor: pencere degil dugum
+       (konfeti + maskot araya girince 120 karakter yetmedi), `return (`dan
+       sonraki ilk `<` (TypeScript generigi etiket sanildi), parcalar da yigina
+       giriyor (`</>` bir ustteki etiketi dusuruyordu). */
+    /*
+     * SONUC SABLONU (2026-09-15). Yirmi dort yuzeyin hepsi sonucunu artik
+     * `<ResultHero>` bandiyla ciziyor ve canli bolge BANDIN KENDISINDE
+     * (web `role="status"`, mobil "polite"). Eski olculer ekran
+     * dosyasinda `role="status"` kabi, `accessibilityLiveRegion="polite"`
+     * metni ve `<section` kapi ariyordu - hepsi birden "SESSIZ" dedi, oysa
+     * duyuru yerindeydi (bicim degisikligi, gerileme degil).
      *
-     * Yuruyus ve patron turunun sonucu `<Frame role="status">` ile
-     * duyuruluyor; `Frame` bir BILESEN, yani `<section`/`<div` arayan
-     * `dalDuyuruyor` onu bulamaz. Ilk yazim bu yuzden 120 karakterlik bir
-     * pencere kullaniyordu ve ARAYA konfeti + maskot girince yetmedi -
-     * pencere tuzaginin ALTINCI vakasi. Dogrusu mesafe degil dugum: dalin
-     * kok elemanini okumak.
+     * Olcu yine DUGUM: isaret (sonucun kendi basligi/anahtari) ya bir
+     * `ResultHero` etiketinin icinde ve o etiket `live={false}` DEMIYOR
+     * (bolum gecis bandi gibi) - ve sablonun kendisi duyuruyor
+     * (`SABLON.*.heroCanli`) - ya da atalarindan biri eski usul duyuruyor.
      */
-    /** Acilis etiketinin sonu: ilk `>` degil, suslu parantez ve tirnak farkinda. */
-    const dalKokuSonu = (blok) => {
-      let derinlik = 0, tirnak = null;
-      for (let i = 0; i < blok.length; i++) {
-        const c = blok[i];
-        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
-        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
-        if (c === "{") derinlik++;
-        else if (c === "}") derinlik--;
-        else if (c === ">" && derinlik === 0) return i;
-      }
-      return -1;
-    };
-    const dalKoku = (src, capa) => {
-      const i = src.indexOf(capa);
-      if (i < 0) return "";
-      /* CAPADAN SONRA ILK `<` DEGIL, `return (`DEN SONRAKI ILK `<`.
-         Haftalik sinavin dalinda ilk `<` bir TIPSCRIPT GENERIGI
-         (`new Map<number, boolean>()`) ve kapi onu acilis etiketi sanip
-         `<number, boolean>` okuyordu - yani dogru koda "SESSIZ" diyordu.
-         `return (` ile JSX arasina generik giremez. */
-      const r = src.indexOf("return", i);
-      const bas = r < 0 ? i : r;
-      const j = src.indexOf("<", bas);
-      if (j < 0) return "";
-      let derinlik = 0, tirnak = null;
-      for (let k = j; k < src.length; k++) {
-        const c = src[k];
-        if (tirnak) { if (c === tirnak && src[k - 1] !== "\\") tirnak = null; continue; }
-        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
-        if (c === "{") derinlik++;
-        else if (c === "}") derinlik--;
-        else if (c === ">" && derinlik === 0) return src.slice(j, k + 1);
-      }
-      return "";
-    };
-    /**
-     * Isaretin ATALARI arasinda `role="status"` tasiyan bir etiket var mi.
-     *
-     * DUGUM OLCUSU: etiket adina, sinif adina ve mesafeye bakmiyor. Bes
-     * yuzeyin olcusu once `<div role="status" className="card relative p-6
-     * text-center">` gibi TAM METINdi ve o desen duyuruyu degil BICIMLENDIRMEYI
-     * de sabitliyordu: `p-6`yi `p-5` yapan biri kapiyi kirmizi yapardi, oysa
-     * duyuru yerinde duruyor. Bu oturumda ayni sinif dort kez cikti
-     * (228 `live`, 243 duyuru seviyesi, 245 yuzde, 246 `labelKey`) ve hepsi
-     * ayni kokten: bir olguyu METIN olarak aramak.
-     *
-     * Parcalar (`<>` / `</>`) da yigina giriyor: ilk yazimda girmiyordu ve
-     * `</>` bir ustteki gercek etiketi yiginda dusuruyordu.
-     */
-    const kapDuyuruyor = (src, isaret) => {
-      const hedef = src.indexOf(isaret);
-      if (hedef < 0) return "ISARET YOK";
-      const yigin = [];
-      const re = /<(\/?)(>|[A-Za-z][A-Za-z0-9.]*)/g;
-      let m;
-      while ((m = re.exec(src)) !== null && m.index < hedef) {
-        if (m[1] === "/") { yigin.pop(); continue; }
-        if (m[2] === ">") { yigin.push("<>"); continue; }
-        const son = dalKokuSonu(src.slice(m.index));
-        if (son < 0) continue;
-        const etiket = src.slice(m.index, m.index + son + 1);
-        if (/\/>$/.test(etiket)) continue;
-        yigin.push(etiket);
-        re.lastIndex = m.index + son;
-      }
-      return yigin.some((e) => /role="status"/.test(e)) ? "duyuruyor" : "SESSIZ";
-    };
-    const dalDuyuruyor = (src, isaret) => {
-      const j = src.indexOf(isaret);
-      if (j < 0) return "ISARET YOK";
-      const oncesi = src.slice(0, j);
-      const k = Math.max(oncesi.lastIndexOf("<section"), oncesi.lastIndexOf('<div role="status" className="card'), oncesi.lastIndexOf('<div className="card'));
-      if (k < 0) return "KAP YOK";
-      const etiket = src.slice(k, src.indexOf(">", k) + 1);
-      return /role="status"/.test(etiket) ? "duyuruyor" : "SESSIZ";
+    const sonucDuyuruyor = (src, isaret, platform) => {
+      if (src.indexOf(isaret) < 0) return "ISARET YOK";
+      const bant = sablonEtiketi(src, isaret, "ResultHero");
+      if (bant) return SABLON[platform].heroCanli && !/\slive=\{false\}/.test(bant.etiket) ? "duyuruyor" : "SESSIZ";
+      return atalarinda(src, isaret, platform === "web" ? /role="status"/ : /accessibilityLiveRegion="polite"/) ? "duyuruyor" : "SESSIZ";
     };
     sameList(
       "turun sonucu duyuruluyor",
       [
-        "web beceri=" + kapDuyuruyor(webBeceri, 't("item.repeat_note")'),
-        "web quiz=" + kapDuyuruyor(webQuiz, 't("common.n_correct"'),
-        "web patron=" + (/role="status"/.test(dalKoku(webPatron, 'if (status === "won" || status === "lost")')) ? "duyuruyor" : "SESSIZ"),
-        "web meydan=" + kapDuyuruyor(webMeydan, 't("challenge.hit_rate")'),
-        "web gunun=" + kapDuyuruyor(webGunun, 't("daily.best_streak")'),
-        /* DESENLER BITISIK IKI OZNITELIGI ARIYORDU ve aralarina ucuncu bir
-           oznitelik girince (bu turda `accessibilityRole="header"`) susuyordu -
-           §247'nin yasakladigi kirilgan kalibin ta kendisi. Hepsi "arada baska
-           oznitelik olabilir" bicimine getirildi (§11.382). */
-        "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"/),
-        "mobil quiz=" + mobSonuc(mobQuiz, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"/),
-        "mobil patron=" + mobSonuc(mobPatron, /accessibilityLiveRegion="polite"[\s\S]{0,140}boss\.passed/),
-        "mobil meydan=" + mobSonuc(mobMeydan, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="display"/),
-        "mobil gunun=" + mobSonuc(mobGunun, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="display"/),
-        /* SONUC DALINDA MI, DOSYANIN HERHANGI BIR YERINDE MI? Bu dosyalarda
-           ayni kart sinifi uc-bes kez geciyor (giris, hata, sonuc) ve yalniz
-           "dosyada bir yerde role=status var" demek komsuyu olcmek olurdu:
-           rol yanlis dala kayarsa kapi yine yesil kalirdi.
-           KARAKTER PENCERESI DE YETMEDI - ilk yazimda 400 karakter verdim,
-           gercek mesafe 547 cikti ve kapi kendi kendine kirmizi oldu. Pencere
-           tahmin etmek yerine SONUCU ISARETLEYEN dizeden GERI gidip ondan
-           hemen once acilan kabin etiketine bakiliyor. */
-        /* Isaret `weekly.your_score`ti; yerlesim Android'e esitlenince o
-           anahtar kalkti. Dalin KOK ELEMANI okunuyor (bkz. `dalKoku`). */
-        "web haftalik=" + (/role="status"/.test(dalKoku(webHaftalik, 'if (phase === "done" && result)')) ? "duyuruyor" : "SESSIZ"),
-        "web deneme=" + dalDuyuruyor(webDeneme, "mockexam.result"),
-        "web rol yapma=" + dalDuyuruyor(webRol, "rpexam.below_threshold"),
-        "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"/),
-        "mobil deneme=" + mobSonuc(mobDeneme, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="bodyStrong"/),
-        /* Desen BITISIK iki ozniteligi ariyordu; aralarina `accessibilityRole="header"`
-           girince sustu (§11.382). Bicim degisikligi, gerileme degil - §247'nin
-           tanimladigi sinif. Arada baska oznitelik olabilir. */
-        "mobil rol yapma=" + mobSonuc(mobRol, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"/),
+        /* Beceri kabugunda baslik bir degisken (`title={title}`); bandin
+           kendine ozgu isareti ana sayi satiri. */
+        "web beceri=" + sonucDuyuruyor(webBeceri, "figure={isMono", "web"),
+        "web quiz=" + sonucDuyuruyor(webQuiz, '"quiz.result_passed"', "web"),
+        "web patron=" + sonucDuyuruyor(webPatron, '"boss.passed"', "web"),
+        "web meydan=" + sonucDuyuruyor(webMeydan, 't("daily.your_score")', "web"),
+        "web gunun=" + sonucDuyuruyor(webGunun, 't("daily.your_score")', "web"),
+        "mobil beceri=" + sonucDuyuruyor(mobBeceri, '"skillp.result_perfect"', "mobil"),
+        "mobil quiz=" + sonucDuyuruyor(mobQuiz, '"quiz.result_passed"', "mobil"),
+        "mobil patron=" + sonucDuyuruyor(mobPatron, '"boss.passed"', "mobil"),
+        "mobil meydan=" + sonucDuyuruyor(mobMeydan, 't("daily.your_score")', "mobil"),
+        "mobil gunun=" + sonucDuyuruyor(mobGunun, 't("daily.your_score")', "mobil"),
+        "web haftalik=" + sonucDuyuruyor(webHaftalik, '"weekly.done_title"', "web"),
+        "web deneme=" + sonucDuyuruyor(webDeneme, '"mockexam.part_done"', "web"),
+        "web rol yapma=" + sonucDuyuruyor(webRol, '"rpexam.below_threshold"', "web"),
+        "mobil haftalik=" + sonucDuyuruyor(mobHaftalik, '"weekly.done_title"', "mobil"),
+        "mobil deneme=" + sonucDuyuruyor(mobDeneme, '"mockexam.part_done"', "mobil"),
+        "mobil rol yapma=" + sonucDuyuruyor(mobRol, '"rpexam.below_threshold"', "mobil"),
         /* SON UC YUZEY COK DURUMLU: sinav (tek sonuc; bolum gecisleri calisan
-           fazin icinde bir KAPAK, ayri bir sonuc degil - ilk varsayim
-           yanlisti ve olcum duzeltti), oturum (ETAP karti + BITIS karti, iki
-           ayri sonuc) ve yuruyus (bitis). */
-        "web sinav=" + dalDuyuruyor(webSinav, "exam.not_passed"),
-        "web oturum etap=" + dalDuyuruyor(webOturum, "stage.clean"),
-        "web oturum bitis=" + kapDuyuruyor(webOturum, 't("summary.accuracy")'),
-        "web yuruyus=" + (/role="status"/.test(dalKoku(webYuruyus, 'if (status === "done")')) ? "duyuruyor" : "SESSIZ"),
-        "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1">\{formatPercent\(pct\)\}/),
-        "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h2"[\s\S]{0,80}stage\.clean/),
-        "mobil oturum bitis=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"[\s\S]{0,120}common\.round_done/),
-        "mobil yuruyus=" + mobSonuc(mobYuruyus, /accessibilityLiveRegion="polite"[^>]{0,80}?variant="h1"[\s\S]{0,140}walkmode\.done_title/),
+           fazin icinde bir KAPAK ve bandi `live={false}` - ayri bir sonuc
+           degil), oturum (ETAP karti + BITIS karti, iki ayri sonuc) ve
+           yuruyus (bitis). */
+        "web sinav=" + sonucDuyuruyor(webSinav, '"exam.not_passed"', "web"),
+        "web oturum etap=" + sonucDuyuruyor(webOturum, '"stage.clean"', "web"),
+        "web oturum bitis=" + sonucDuyuruyor(webOturum, '"summary.stopped"', "web"),
+        "web yuruyus=" + sonucDuyuruyor(webYuruyus, '"walkmode.done_title"', "web"),
+        "mobil sinav=" + sonucDuyuruyor(mobSinav, '"exam.not_passed"', "mobil"),
+        "mobil oturum etap=" + sonucDuyuruyor(mobOturum, '"stage.clean"', "mobil"),
+        "mobil oturum bitis=" + sonucDuyuruyor(mobOturum, '"summary.stopped"', "mobil"),
+        "mobil yuruyus=" + sonucDuyuruyor(mobYuruyus, '"walkmode.done_title"', "mobil"),
       ],
       [
         "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
@@ -16131,8 +16283,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const re = new RegExp("\\{\\s*(?:msg|error|saveError|note|failNote)\\s*(?:\\?|&&)\\s*" + etiket + "\\b[\\s\\S]{0,400}?[^=]>", "g");
       for (const f of walkTsx5(kok)) {
         const src = strip5(read(f));
+        /* MUAF (2026-09-15): akis sablonunun KAPAK notu (`CoverBody` `note`).
+           Adi desene uyuyor ama bir eylemin cevabi degil: kapak acilirken
+           gelen bilgi satiri ("en iyi skorun", "son girisin"), odak bir
+           dugmede beklemiyor. Muafiyet yalniz iki sablon dosyasinda ve
+           yalniz `CoverBody` govdesinin icinde; ayni ad baska bir sablon
+           bileseninde duyurusuz kalirsa kapi yine yakalar. */
+        const kapak = /(?:^|\/)(?:ui|components)\/flow\.tsx$/.test(f) ? [src.indexOf("export function CoverBody("), src.indexOf("\nexport ", src.indexOf("export function CoverBody(") + 1)] : null;
         for (const m of src.matchAll(re)) {
           if (duyuru.test(m[0])) continue;
+          if (kapak && kapak[0] >= 0 && m.index > kapak[0] && (kapak[1] < 0 || m.index < kapak[1])) continue;
+
           sessiz.push(f.split("/").pop() + ": " + m[0].replace(/\s+/g, " ").slice(0, 40));
         }
       }
@@ -16966,15 +17127,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       for (const m of src.matchAll(/"(--[a-zA-Z0-9-]+)"\s*:/g)) tanim.add(m[1]);
     }
     /* Sablonla kurulan adlar: sebebi ve alabilecegi degerler. */
+    /* `challenge-player` `Rule` girdisi 2026-09-15'te dustu: kapak kurallari
+       ortak sablona (`CoverBody`) tasindi ve `Rule` silindi. */
     const DINAMIK = [
       {
-        yer: "src/components/challenge-player.tsx",
-        kalip: "var(--color-${tone}-500)",
-        degerler: ["mint", "rose", "flame"],
+        yer: "src/components/flow.tsx",
+        kalip: 'var(--color-${r.tone === "ok" ? "mint" : "rose"}-500)',
+        degerler: ["mint", "rose"],
         ad: (v) => "--color-" + v + "-500",
-        sebep: "kural satirinin tonu prop olarak geliyor (`Rule` `tone`)",
+        sebep: "kapak kural satirinin tonlu karosu (`CoverBody` `rules[].tone`)",
+      },
+      {
+        yer: "src/components/flow.tsx",
+        kalip: 'var(--color-${r.tone === "ok" ? "mint" : "rose"})',
+        degerler: ["mint", "rose"],
+        ad: (v) => "--color-" + v,
+        sebep: "ayni karonun murekkebi (rol takma adi)",
       },
     ];
+
     const kullanim = new Map();
     for (const f of dosyalar) {
       const src = read(f);
@@ -18099,7 +18270,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "okuma hatasi bos halden ayri",
     [
       "web hata dali=" + (hataDali ? "var" : "YOK"),
-      "web duyuruyor=" + (/role="alert"/.test(hataDali) ? "evet" : "HAYIR"),
+      /* 2026-09-15: hata dali DURUM SABLONU (`<StateBody alert>`); rol
+         bilesenin icinde ve yalniz sablon gercekten veriyorsa sayiliyor. */
+      "web duyuruyor=" + (/role="alert"/.test(hataDali) || (SABLON.web.durumCanli && /<StateBody\b[^>]*?\salert(?=[\s/>])/.test(hataDali)) ? "evet" : "HAYIR"),
       "web hata metni=" + (/common\.connection_failed/.test(hataDali) ? "var" : "YOK"),
       "web bos dali=" + (bosBasi >= 0 ? "var" : "YOK"),
       "mobil yedek dali=" + (mLocal ? "var" : "YOK"),
@@ -18452,10 +18625,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "ust bar mobil=" + (/\{streak > 0 && \(/.test(ubM) ? "kosullu" : "KOSULSUZ"),
       "ust bar web=" + (/\{streak > 0 \? \(/.test(ubW) ? "kosullu" : "KOSULSUZ"),
       "ust bar web glif=" + (/<BoltIcon size=\{15\} \/> \{formatNumber\(xp, lang\)\}/.test(ubW) ? "bolt" : "SPARK"),
-      "beceri mobil xp=" + (/\{earnedXp > 0 \? \(/.test(bcM) ? "kosullu" : "KOSULSUZ"),
-      "beceri mobil seri=" + (/\{streak > 0 \? <Text/.test(bcM) ? "kosullu" : "KOSULSUZ"),
-      "beceri web xp=" + (/\{state\.xpGained > 0 \? \(/.test(bcW) ? "kosullu" : "KOSULSUZ"),
-      "beceri web seri=" + (/\{state\.currentStreak > 0 \? \(/.test(bcW) ? "kosullu" : "KOSULSUZ"),
+      /* SONUC SABLONU (2026-09-15): XP bandin alt satirinda bir oge
+         (`xp > 0 ? \`+${xp} XP\` : null`), seri uc sayidan biri
+         (`streak > 0 ? { … } : null`). Rozet JSX'i kalkti; kosul ayni. Webde
+         `state.xpGained`/`state.currentStreak` once `xp`/`streak`e indiriliyor. */
+      "beceri mobil xp=" + (/\bearnedXp > 0 \?/.test(bcM) ? "kosullu" : "KOSULSUZ"),
+      "beceri mobil seri=" + (/\bstreak > 0 \?/.test(bcM) ? "kosullu" : "KOSULSUZ"),
+      "beceri web xp=" + (/\bxp > 0 \?/.test(bcW) ? "kosullu" : "KOSULSUZ"),
+      "beceri web seri=" + (/\bstreak > 0 \?/.test(bcW) ? "kosullu" : "KOSULSUZ"),
     ],
     [
       "ust bar mobil=kosullu",
@@ -18590,7 +18767,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "bos hal karosunun rengi ayni rol",
     ["cift=" + cift.length, "ayrisan=" + (ayri.length ? ayri.join("+") : "yok")],
-    ["cift=20", "ayrisan=yok"],
+    /* 20 -> 19 (2026-09-15): "kagit bulunamadi" (`mockexam.paper_missing`)
+       iki tarafta birden DURUM SABLONUNA gecti (`StateBody`, maskotlu, tintli
+       karo yok) - renk karari o yuzeyde artik sorulmuyor. */
+    ["cift=19", "ayrisan=yok"],
     "bulunan",
     "beklenen",
   );
@@ -19447,8 +19627,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const webOyun = silI(read("src/components/session-player.tsx")).replace(/\s+/g, " ");
   const mobPaywall = silI(read("mobile/src/screens/PaywallScreen.tsx"));
   const webPaywall = silI(read("src/components/premium-paywall.tsx")).replace(/\s+/g, " ");
-  const mobJeton = (desen) => {
-    const m = mobSpark.match(desen) ?? mobOyun.match(desen) ?? mobPaywall.match(desen);
+  /* Her yuzey KENDI dosyasinda araniyor. Uc dosyayi sirayla deneyen eski
+     yazim, sonuc sablonuyla `GameScreen`in bahis satirina bir
+     `<CheckIcon color={colors.successText} size={14} />` gelince paywall
+     onayini oradan okudu (2026-09-15) - olcunun komsusunu olcmek. */
+  const mobJeton = (src, desen) => {
+    const m = src.match(desen);
     return m ? jeton(m[1]) : "YOK";
   };
   const webAlias = (src, desen) => {
@@ -19458,11 +19642,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "kart ustundeki murekkep rol metninden",
     [
-      "sparkline yazma=" + mobJeton(/sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color=\{colors\.(\w+)\}/),
-      "sparkline konusma=" + mobJeton(/sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color=\{colors\.(\w+)\}/),
-      "sparkline kullanim=" + mobJeton(/exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color=\{colors\.(\w+)\}/),
-      "kombo ikonu=" + mobJeton(/<BoltIcon color=\{colors\.(\w+)\} size=\{15\} \/><Text variant="bodyStrong"/),
-      "paywall onayi=" + mobJeton(/<CheckIcon color=\{colors\.(\w+)\} size=\{14\} \/>/),
+      "sparkline yazma=" + mobJeton(mobSpark, /sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "sparkline konusma=" + mobJeton(mobSpark, /sec_speaking"\)\} points=\{data\.series\.speaking\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "sparkline kullanim=" + mobJeton(mobSpark, /exam\.title"\)\} points=\{data\.series\.usage\} max=\{100\} color=\{colors\.(\w+)\}/),
+      "kombo ikonu=" + mobJeton(mobOyun, /<BoltIcon color=\{colors\.(\w+)\} size=\{15\} \/><Text variant="bodyStrong"/),
+      "paywall onayi=" + mobJeton(mobPaywall, /<CheckIcon color=\{colors\.(\w+)\} size=\{14\} \/>/),
     ],
     [
       "sparkline yazma=" + webAlias(webSpark, /sec_writing"\)\} points=\{data\.series\.writing\} max=\{100\} color="var\(--color-([a-z]+)\)"/),
@@ -19867,8 +20051,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kabul edilen=" + (/placement\.you_chose", \{ level: last\.accepted \}/.test(mobPlc) ? "var" : "YOK"),
       /* SATIR sayiliyor, CAGRI degil: her satir yardimciyi iki kez
          cagiriyor (kosul + sablon), yani "cagri >= 2" bir satir icin de
-         dogru cikiyordu ve bir blogu silen enjeksiyon yesil geciyordu. */
-      "beceri kirilimi=" + ((mobPlc.match(/\? ` · \$\{describePerSkill\(last\.perSkill\)\}`/g) ?? []).length === 2 ? "iki yerde" : "EKSIK"),
+         dogru cikiyordu ve bir blogu silen enjeksiyon yesil geciyordu.
+         2026-09-15: iki satir tek yardimciya indi (`lastTakenLine`: kapak
+         notu + bekleme kilidi). Olculen: yardimci kirilimi yaziyor VE iki
+         cizim yerinden cagriliyor - birini silen enjeksiyon yine kirmizi. */
+      "beceri kirilimi=" + (/function lastTakenLine\([\s\S]{0,200}?describePerSkill\(last\.perSkill\)/.test(mobPlc) && (mobPlc.match(/lastTakenLine\(status\??\.last\)/g) ?? []).length === 2 ? "iki yerde" : "EKSIK"),
     ],
     [
       "tarih=" + (/placement\.last_taken", \{ date: new Date\(initialLast\.at\)/.test(webPlc) ? "var" : "YOK"),
@@ -20485,8 +20672,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
   sameList(
     "android golge kurali: notr kart / tintli yuzey",
-    ["kural disi: " + (yanlisKart.join(", ") || "yok") + " kart>=8=" + (kartSayi >= 8) + " tint>=100=" + (tintSayi >= 100)],
-    ["kural disi: yok kart>=8=true tint>=100=true"],
+    /* Esik 100 -> 60 (2026-09-15): otuzdan fazla ekranin kendi dugme ve bant
+       golgeleri ortak sablonlara (`ui/flow`) tasindi ve cagri sayisi 126'dan
+       84'e dustu. Esik taramanin bosalmadigini olcuyor, sayiyi degil. */
+    ["kural disi: " + (yanlisKart.join(", ") || "yok") + " kart>=8=" + (kartSayi >= 8) + " tint>=60=" + (tintSayi >= 60)],
+    ["kural disi: yok kart>=8=true tint>=60=true"],
     "bulunan",
     "beklenen",
   );
