@@ -11,6 +11,7 @@ import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
 import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
 import { purgeStaleGuests } from "@/lib/account/guest-merge";
+import { notGuest } from "@/lib/auth/guest-user";
 import { langOf } from "@/lib/social/notify";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +34,10 @@ export async function GET(req: Request) {
     const rows = await db
       .selectDistinct({ userId: dailyStats.userId })
       .from(dailyStats)
-      .where(and(gte(dailyStats.day, shiftDay(today, -7)), sql`${dailyStats.reviews} > 0 or ${dailyStats.xp} > 0`))
+      /* Misafir hedeflenmiyor: bildirim hesap istiyor, misafirin cihaz jetonu yok
+         (bkz. lib/auth/guest). Hedeflenseydi "gönderilen" sayısı hiç ulaşmayan
+         bildirimlerle şişerdi. */
+      .where(and(gte(dailyStats.day, shiftDay(today, -7)), sql`(${dailyStats.reviews} > 0 or ${dailyStats.xp} > 0)`, notGuest(dailyStats.userId)))
       .limit(500);
     let sent = 0;
     for (const r of rows) {
