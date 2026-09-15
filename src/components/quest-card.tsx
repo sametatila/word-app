@@ -11,7 +11,6 @@ import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
-import { CardGrid } from "@/components/layout";
 import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 
 /**
@@ -125,17 +124,18 @@ export function QuestCard() {
           <SkeletonLine variant="strong" width={130} />
           <SkeletonLine variant="caption" width={92} />
         </div>
-        <CardGrid min={360}>
+        <div className="card divide-y px-4 py-1" style={{ borderColor: "var(--hairline)" }}>
           {[0, 1, 2].map((i) => (
-            <div key={i} className="card flex items-center gap-3 p-4" style={{ opacity: 1 - i * 0.12 }}>
-              <SkeletonTile size={42} />
+            <div key={i} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
+              <SkeletonTile size={32} />
               <div className="min-w-0 flex-1">
-                <SkeletonLine variant="body" width={`${70 - i * 8}%`} />
-                <SkeletonBar height={6} className="mt-1.5" />
+                <SkeletonLine variant="strong" width={`${70 - i * 8}%`} />
+                <SkeletonBar height={4} className="mt-0.5" />
               </div>
+              <SkeletonLine variant="caption" width={48} />
             </div>
           ))}
-        </CardGrid>
+        </div>
       </section>
     );
   if (!board) return null;
@@ -178,30 +178,30 @@ export function QuestCard() {
         )}
       </div>
 
-      <CardGrid min={360}>
+      {/*
+        KOMPAKT: TEK KART, ÇİZGİYLE AYRILMIŞ SATIRLAR (mobil `ui/DailyQuests`
+        ile aynı, `MenuRow` kalıbı). Her görev kendi kartıydı; üç kart, 42
+        piksellik karo ve çubuğun altında ayrı bir sayı satırıyla üç görev
+        Öğren'in yarısını kaplıyordu. Sayı çubuğun yanına geçti, ödül tek satır.
+      */}
+      <div className="card divide-y px-4 py-1" style={{ borderColor: "var(--hairline)" }}>
         {board.quests.map((q) => {
           const done = q.done >= q.target;
           const pct = Math.min(100, Math.round((q.done / q.target) * 100));
           return (
-            <div
-              key={q.id}
-              className="card flex items-center gap-3 p-4"
-              style={{ borderColor: done ? "var(--color-mint)" : "var(--border)" }}
-            >
-              {/* Karo: tamamlanmışsa dolu yeşil + onay, değilse yumuşak marka
-                  zemin + şimşek — Android `QuestRow` ile aynı (42 piksel). */}
+            <div key={q.id} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--hairline)" }}>
+              {/* Karo: tamamlanmışsa dolu yeşil + onay (kendi yeşiliyle parlıyor,
+                  Android `softShadow(colors.success, 6)`), değilse yumuşak marka
+                  zemin + şimşek. */}
               <span
-                /* Tamamlanan karo Android'de KENDİ yeşiliyle parlıyor
-                   (`DailyQuests` softShadow(colors.success, 6)); webde hiç
-                   gölge yoktu, yani biten görev ekrandan öne çıkmıyordu. */
-                className={"flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile" + (done ? " glow-tint-sm" : "")}
+                className={"flex h-8 w-8 shrink-0 items-center justify-center rounded-chip" + (done ? " glow-tint-sm" : "")}
                 style={{
                   background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                   color: done ? "#fff" : "var(--color-brand)",
                   "--tint-fill": "var(--color-mint)",
                 } as React.CSSProperties}
               >
-                {done ? <CheckIcon size={22} /> : <BoltIcon size={20} />}
+                {done ? <CheckIcon size={18} /> : <BoltIcon size={16} />}
               </span>
 
               <div className="min-w-0 flex-1">
@@ -214,76 +214,67 @@ export function QuestCard() {
                     {q.label}
                   </Link>
                 )}
-                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full surface-2">
-                  <motion.div
-                    className="h-full rounded-full"
-                    style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${Math.max(3, pct)}%` }}
-                  />
+                <div className="mt-0.5 flex items-center gap-2">
+                  <div className="h-1 min-w-0 flex-1 overflow-hidden rounded-full surface-2">
+                    <motion.div
+                      className="h-full rounded-full"
+                      style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
+                      initial={{ width: 0 }}
+                      animate={{ width: `${Math.max(3, pct)}%` }}
+                    />
+                  </div>
+                  <span className="muted shrink-0 text-micro tabular-nums">
+                    {Math.min(q.done, q.target)}/{q.target}
+                  </span>
                 </div>
-                {/* Sayı çubuğun ALTINDA — Android'de de öyle; sağ sütun artık
-                    kazanılacak XP'yi taşıyor. */}
-                <p className="muted mt-1 text-micro tabular-nums">
-                  {Math.min(q.done, q.target)}/{q.target}
-                </p>
               </div>
 
               {/* Üç durum Android ile aynı: tamam+alınmamış → düğme,
-                  ötekilerde kazanılacak XP (ilerleme çubuğun altında yazıyor). */}
+                  ötekilerde kazanılacak XP. */}
               {done && !q.claimed ? (
                 <button
                   onClick={() => void claim(q.id)}
                   disabled={busy === q.id}
-                  className="btn btn-primary shrink-0 px-3 py-1.5 text-caption disabled:opacity-60"
+                  className="btn btn-primary shrink-0 px-3 py-2 text-caption disabled:opacity-60"
                 >
                   {busy === q.id ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}
                 </button>
               ) : (
-                <span className="shrink-0 text-right">
-                  <span
-                    className="block text-strong"
-                    style={{ color: done ? "var(--color-mint)" : "var(--color-brand)" }}
-                  >
-                    +{q.xp}
-                  </span>
-                  <span className="muted block text-micro">XP</span>
+                <span className="shrink-0 text-caption" style={{ color: done ? "var(--color-mint)" : "var(--color-brand)" }}>
+                  +{q.xp} XP
                 </span>
               )}
             </div>
           );
         })}
-      </CardGrid>
 
-      {board.allDone ? (
-        /* Kutu artık KENDİ kartı: pano tek bir kart olmaktan çıkınca bu
-           şerit dayanaksız kalıyordu. Android'de de ayrı bir kart ve aynı
-           renk ailesinde (`ui/DailyQuests`, `successSoft` zemin + `success`
-           kenarlık). */
-        <div
-          className="card mt-3 flex items-center gap-3 p-4"
-          style={{
-            background: "color-mix(in srgb, var(--color-mint) 10%, transparent)",
-            borderColor: "var(--color-mint)",
-          }}
-        >
-          <GiftIcon size={22} />
-          <p className="min-w-0 flex-1 text-strong">
-            {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
-          </p>
-          {board.allClaimed ? (
-            <span className="muted shrink-0 text-micro">+{ALL_DONE_XP} XP</span>
-          ) : (
-            <button
-              onClick={() => void claim(ALL_DONE_ID)}
-              disabled={busy === ALL_DONE_ID}
-              className="btn btn-primary shrink-0 px-3 py-1.5 text-caption disabled:opacity-60"
+        {board.allDone ? (
+          /* Üçü birden: ayrı kart değil, aynı kartın dibinde yeşil şerit
+             (Android `ui/DailyQuests` ile aynı). */
+          <div className="py-2" style={{ borderColor: "var(--hairline)" }}>
+            <div
+              className="flex items-center gap-3 rounded-panel px-3 py-2"
+              style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
             >
-              {busy === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}
-            </button>
-          )}
-        </div>
-      ) : null}
+              <GiftIcon size={18} className="shrink-0" />
+              <p className="min-w-0 flex-1 text-caption">
+                {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
+              </p>
+              {board.allClaimed ? (
+                <span className="shrink-0 text-caption">+{ALL_DONE_XP} XP</span>
+              ) : (
+                <button
+                  onClick={() => void claim(ALL_DONE_ID)}
+                  disabled={busy === ALL_DONE_ID}
+                  className="btn btn-primary shrink-0 px-3 py-2 text-caption disabled:opacity-60"
+                >
+                  {busy === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}
+                </button>
+              )}
+            </div>
+          </div>
+        ) : null}
+      </div>
 
       {flash > 0 ? (
         <motion.p

@@ -17,7 +17,6 @@ import { todayStr } from "../game/session";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
-import { CardGrid } from "./CardGrid";
 
 /**
  * Görevin GÖTÜRDÜĞÜ yer.
@@ -39,65 +38,63 @@ const QUEST_TAB: Record<string, keyof RootTabParams> = {
   lesson1: "Path",
 };
 
-function QuestRow({ q, colors, onClaim, busy, onOpen }: { q: Quest; colors: Palette; onClaim: () => void; busy: boolean; onOpen: (() => void) | null }) {
+/**
+ * KOMPAKT SATIR — tek kartın içinde, ince çizgiyle ayrılmış (ayar menüsünün
+ * `MenuRow` kalıbı). Eskiden her görev KENDİ kartıydı: üç kart, üç gölge, 42
+ * piksellik karo ve iki satırlık metin; üç görev Learn'de bir ekranın yarısını
+ * yiyordu. Satırda aynı üç bilgi var (etiket, ilerleme, ödül), yükseklik yarıya
+ * indi. Sayı çubuğun YANINDA, ayrı satırda değil.
+ */
+function QuestRow({ q, colors, onClaim, busy, onOpen, last }: { q: Quest; colors: Palette; onClaim: () => void; busy: boolean; onOpen: (() => void) | null; last: boolean }) {
   const pct = q.target ? Math.min(100, Math.round((q.done / q.target) * 100)) : 0;
   const complete = q.done >= q.target;
   return (
-    <Card padded style={{ marginBottom: spacing.md, borderWidth: 1, borderColor: complete ? colors.success : colors.hairline }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <View style={[{ width: 42, height: 42, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: complete ? colors.success : colors.primarySoft }, complete ? softShadow(colors.success, 6) : {}]}>
-          {complete ? <CheckIcon color={colors.onFill} size={22} /> : <BoltIcon color={colors.primaryText} size={20} />}
-        </View>
-        <View style={{ flex: 1 }}>
-          {onOpen && !complete ? (
-            <PressableScale onPress={onOpen} accessibilityRole="link" hitSlop={4}>
-              <Text variant="bodyStrong" color={colors.primaryText}>{q.label}</Text>
-            </PressableScale>
-          ) : (
-            <Text variant="bodyStrong">{q.label}</Text>
-          )}
-          <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 6 }}>
-            <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: complete ? colors.success : colors.primary, borderRadius: 3 }} />
-          </View>
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{Math.min(q.done, q.target)}/{q.target}</Text>
-        </View>
-        {/*
-          ÖDÜLÜ AL. Tamamlanmış ve alınmamış görevde düğme; alınmışsa yalnız
-          kazanılan XP yazıyor. Web aynı üç durumu çiziyor (`quest-card`):
-          alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme.
-        */}
-        {complete && !q.claimed ? (
-          <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
-            <Text variant="caption" color={colors.onPrimary}>{busy ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}</Text>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+      <View style={[{ width: 32, height: 32, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: complete ? colors.success : colors.primarySoft }, complete ? softShadow(colors.success, 6) : {}]}>
+        {complete ? <CheckIcon color={colors.onFill} size={18} /> : <BoltIcon color={colors.primaryText} size={16} />}
+      </View>
+      <View style={{ flex: 1 }}>
+        {onOpen && !complete ? (
+          <PressableScale onPress={onOpen} accessibilityRole="link" hitSlop={4}>
+            <Text variant="bodyStrong" color={colors.primaryText} numberOfLines={1}>{q.label}</Text>
           </PressableScale>
         ) : (
-          <View style={{ alignItems: "flex-end" }}>
-            <Text variant="bodyStrong" color={complete ? colors.successText : colors.primaryText}>+{q.xp}</Text>
-            <Text variant="micro" color={colors.textMuted}>XP</Text>
-          </View>
+          <Text variant="bodyStrong" numberOfLines={1}>{q.label}</Text>
         )}
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: 2 }}>
+          <View style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
+            <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: complete ? colors.success : colors.primary, borderRadius: 2 }} />
+          </View>
+          <Text variant="micro" color={colors.textMuted}>{Math.min(q.done, q.target)}/{q.target}</Text>
+        </View>
       </View>
-    </Card>
+      {/*
+        ÖDÜLÜ AL. Tamamlanmış ve alınmamış görevde düğme; alınmışsa yalnız
+        kazanılan XP yazıyor. Web aynı üç durumu çiziyor (`quest-card`):
+        alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme.
+      */}
+      {complete && !q.claimed ? (
+        <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
+          <Text variant="caption" color={colors.onPrimary}>{busy ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}</Text>
+        </PressableScale>
+      ) : (
+        <Text variant="caption" color={complete ? colors.successText : colors.primaryText}>+{q.xp} XP</Text>
+      )}
+    </View>
   );
 }
 
-/** QuestRow ile birebir aynı kaplar; yalnız içerik iskelet (aynı yükseklik). */
-function QuestRowSkeleton({ colors }: { colors: Palette }) {
+/** QuestRow ile birebir aynı ölçüler; yalnız içerik iskelet (aynı yükseklik). */
+function QuestRowSkeleton({ colors, last }: { colors: Palette; last: boolean }) {
   return (
-    <Card padded style={{ marginBottom: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <SkeletonTile size={42} />
-        <View style={{ flex: 1 }}>
-          <SkeletonLine variant="bodyStrong" width="65%" />
-          <SkeletonBar height={6} style={{ marginTop: 6 }} />
-          <SkeletonLine variant="micro" width={38} style={{ marginTop: 3 }} />
-        </View>
-        <View style={{ alignItems: "flex-end" }}>
-          <SkeletonLine variant="bodyStrong" width={34} />
-          <SkeletonLine variant="micro" width={20} />
-        </View>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.sm, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+      <SkeletonTile size={32} radius={radii.sm} />
+      <View style={{ flex: 1 }}>
+        <SkeletonLine variant="bodyStrong" width="65%" />
+        <SkeletonBar height={4} style={{ marginTop: 2 }} />
       </View>
-    </Card>
+      <SkeletonLine variant="caption" width={48} />
+    </View>
   );
 }
 
@@ -159,7 +156,7 @@ export function DailyQuests() {
           <SkeletonLine variant="h3" width={140} />
           <SkeletonLine variant="caption" width={58} />
         </View>
-        <CardGrid minItemWidth={380}>{[0, 1, 2].map((i) => <QuestRowSkeleton key={i} colors={colors} />)}</CardGrid>
+        <Card padded style={{ paddingVertical: spacing.xs }}>{[0, 1, 2].map((i) => <QuestRowSkeleton key={i} colors={colors} last={i === 2} />)}</Card>
       </View>
     );
   }
@@ -185,8 +182,8 @@ export function DailyQuests() {
           <Text variant="caption" color={colors.textMuted}>{t("dailyquests.resets_midnight")}</Text>
         )}
       </View>
-      <CardGrid minItemWidth={380}>
-        {quests.map((q) => {
+      <Card padded style={{ paddingVertical: spacing.xs }}>
+        {quests.map((q, i) => {
           const tab = QUEST_TAB[q.id];
           return (
             <QuestRow
@@ -196,36 +193,36 @@ export function DailyQuests() {
               busy={claiming === q.id}
               onClaim={() => void claim(q.id)}
               onOpen={tab ? () => nav.navigate("Tabs", { screen: tab }) : null}
+              last={i === quests.length - 1 && !board.allDone}
             />
           );
         })}
-      </CardGrid>
 
-      {/*
-        ÜÇÜ BİRDEN BİTİRENİN TOPLU ÖDÜLÜ — mobilde HİÇ YOKTU.
-        Sunucu bu ödülü `questId: "all"` ile veriyor ve pano `allDone` /
-        `allClaimed` alanlarını baştan beri taşıyordu; mobilde iki alanı da
-        okuyan bir yüzey olmadığı için günün üçünü de bitiren Android
-        kullanıcısı 300 XP'yi HİÇ alamıyordu. Web bu kutuyu baştan beri
-        çiziyor (`quest-card`).
-      */}
-      {board.allDone ? (
-        <Card padded style={{ backgroundColor: colors.successSoft, borderWidth: 1, borderColor: colors.success }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-            <GiftIcon color={colors.successText} size={22} />
-            <Text variant="bodyStrong" style={{ flex: 1 }}>
+        {/*
+          ÜÇÜ BİRDEN BİTİRENİN TOPLU ÖDÜLÜ — mobilde HİÇ YOKTU.
+          Sunucu bu ödülü `questId: "all"` ile veriyor ve pano `allDone` /
+          `allClaimed` alanlarını baştan beri taşıyordu; mobilde iki alanı da
+          okuyan bir yüzey olmadığı için günün üçünü de bitiren Android
+          kullanıcısı 300 XP'yi HİÇ alamıyordu. Web bu kutuyu baştan beri
+          çiziyor (`quest-card`). Artık ayrı bir kart değil, aynı kartın dibinde
+          yeşil bir şerit.
+        */}
+        {board.allDone ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginVertical: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: radii.md, backgroundColor: colors.successSoft }}>
+            <GiftIcon color={colors.successText} size={18} />
+            <Text variant="caption" color={colors.successText} style={{ flex: 1 }}>
               {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
             </Text>
             {board.allClaimed ? (
-              <Text variant="caption" color={colors.textMuted}>+{ALL_DONE_XP} XP</Text>
+              <Text variant="caption" color={colors.successText}>+{ALL_DONE_XP} XP</Text>
             ) : (
-              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
+              <PressableScale onPress={() => void claim(ALL_DONE_ID)} disabled={claiming === ALL_DONE_ID} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}>
                 <Text variant="caption" color={colors.onPrimary}>{claiming === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}</Text>
               </PressableScale>
             )}
           </View>
-        </Card>
-      ) : null}
+        ) : null}
+      </Card>
 
       {flash > 0 ? (
         <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.successText} style={{ marginTop: spacing.sm, textAlign: "center" }}>
