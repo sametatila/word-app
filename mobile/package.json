@@ -66,5 +66,9 @@
   },
   "engines": {
     "node": ">= 22.11.0"
+  },
+  "allowScripts": {
+    "@firebase/util": false,
+    "protobufjs": false
   }
 }
