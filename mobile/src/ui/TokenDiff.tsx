@@ -1,7 +1,7 @@
 import React from "react";
 import { Text as RNText, View } from "react-native";
 import { t } from "../lib/i18n";
-import { useTheme, soft } from "../theme";
+import { useTheme, soft, spacing } from "../theme";
 import { Text } from "./Text";
 import type { TokenMark } from "../lib/sentenceMatch";
 
@@ -128,7 +128,7 @@ export function DiffLines({ target, typed }: { target: MarkedToken[]; typed: Mar
   ];
   if (!lines.length) return null;
   return (
-    <View style={{ gap: 4 }}>
+    <View style={{ gap: spacing.xs }}>
       {lines.map((l, i) => {
         const tone = markTone(l.mark, colors);
         return (

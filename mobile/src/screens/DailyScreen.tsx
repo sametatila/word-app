@@ -62,7 +62,7 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
         const mc = medalColor(r.rank);
         const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
         return (
-          <View key={`${r.rank}-${r.name}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: spacing.sm, paddingVertical: 8, backgroundColor: r.isMe ? colors.primarySoft : "transparent", borderWidth: 1, borderColor: r.isMe ? colors.primary : "transparent" }}>
+          <View key={`${r.rank}-${r.name}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, backgroundColor: r.isMe ? colors.primarySoft : "transparent", borderWidth: 1, borderColor: r.isMe ? colors.primary : "transparent" }}>
             {/*
               İLK ÜÇ DOLU DAİRE, GERİSİ DÜZ NUMARA.
               Numara madalya rengiyle YAZILIYORDU ve açık temada üçü de

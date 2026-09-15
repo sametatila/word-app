@@ -287,7 +287,7 @@ export function PathScreen() {
                     <Text variant="bodyStrong" style={{ marginTop: spacing.sm }} numberOfLines={2}>{u.topics.length ? u.topics.join(" · ") : u.theme}</Text>
                     <View style={{ flex: 1 }} />
                     {u.locked ? null : <View style={{ marginTop: spacing.sm }}><StepBar unit={u} colors={colors} thin /></View>}
-                    <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: 4 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.steps_done", { n: u.done, total: u.total })}</Text>
+                    <Text variant="micro" color={u.complete ? colors.successText : colors.textMuted} style={{ marginTop: spacing.xs }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.steps_done", { n: u.done, total: u.total })}</Text>
                   </Card>
                 </PressableScale>
               ))}

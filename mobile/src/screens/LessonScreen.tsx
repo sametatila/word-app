@@ -1220,7 +1220,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
               return (
                 <View key={i} style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", opacity: talked && !used ? 0.6 : 1 }}>
                   {talked ? (
-                    <View style={{ width: 16, alignItems: "center", paddingTop: 3 }}>
+                    <View style={{ width: 16, alignItems: "center", paddingTop: 2 }}>
                       {used ? <CheckIcon color={colors.successText} size={14} /> : null}
                     </View>
                   ) : null}
@@ -1246,7 +1246,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
           <DetailCard title={tx("lessonp.words_of_lesson")}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
               {lesson.vocab.map((v) => (
-                <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+                <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                   <Text variant="micro" color={colors.text}><Text variant="micro" color={colors.text} style={{ fontWeight: "700" }}>{v.de}</Text> · {v.tr}</Text>
                 </View>
               ))}

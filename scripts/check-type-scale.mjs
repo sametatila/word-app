@@ -156,13 +156,9 @@ const MOBIL_ALLOW = new Map([
   ["mobile/src/game/rounds.tsx", [
     ["fontSize: 18", "oyun turunun cevap alani: webde de 18 (`text-lg`, bkz. yukaridaki ALLOW)"],
   ]],
-  ["mobile/src/screens/PlacementScreen.tsx", [
-    ["fontSize: 40", "yerlestirme sonucunun seviye karosu: 110 px'lik dairenin icindeki tek kahraman sayi"],
-  ]],
-  ["mobile/src/screens/DailyScreen.tsx", [
-    ["fontSize: 52", "gunun turunun sonuc puani: kartin tek kahraman sayisi"],
-  ]],
 ]);
+/* Seviye testi (40) ve günün turu (52) kahraman sayıları ortak sonuç bandına
+   (`ui/flow` `ResultHero`, `display` 32) taşındı; istisnalar kalktı. */
 const mobilHits = {};
 let mobilOlculen = 0;
 const mobilUsed = new Set();

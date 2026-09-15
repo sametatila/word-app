@@ -694,7 +694,7 @@ function WordBankHint({ answer, colors, shown, onShow }: { answer: string; color
           <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.hint_words")}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {kelimeler.map((w) => (
-              <View key={w} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+              <View key={w} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
                 <Text variant="bodyStrong" color={colors.text}>{w}</Text>
               </View>
             ))}

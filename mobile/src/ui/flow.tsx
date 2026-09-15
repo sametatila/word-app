@@ -28,7 +28,7 @@ import { useTheme, spacing, radii, softShadow, soft, type Palette } from "../the
  *   Etap      — sonucun küçük hâli: aynı band (etap şeridiyle), aynı sayı satırı
  *   Durum     — maskot · başlık · tek cümle · tek çıkış yolu
  *
- * Web karşılığı `components/flow/*` — alanlar ve sıra birebir.
+ * Web karşılığı `src/components/flow.tsx` — alanlar ve sıra birebir.
  */
 
 /** Maskot boyları: üç sabit ölçü (katman 40, bant 80, kapak/durum 96). */
@@ -60,7 +60,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
         <PressableScale
           onPress={secondary.onPress}
           disabled={secondary.disabled}
-          style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 14, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }}
+          style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }}
         >
           {secondary.icon}
           {secondary.hint ? (
@@ -167,10 +167,10 @@ export function ResultHero({ eyebrow, title, figure, sub, mood, pill, quiet = fa
         <View style={{ flex: 1, gap: 2 }}>
           <Text variant="micro" color={muted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{eyebrow}</Text>
           <Text accessibilityRole="header" variant="h2" color={ink}>{title}</Text>
-          {figure ? <Text variant="display" color={ink} style={{ fontSize: 40, lineHeight: 46, marginTop: spacing.xs, fontVariant: ["tabular-nums"] }}>{figure}</Text> : null}
+          {figure ? <Text variant="display" color={ink} style={{ marginTop: spacing.xs, fontVariant: ["tabular-nums"] }}>{figure}</Text> : null}
           {sub ? <Text variant="body" color={muted}>{sub}</Text> : null}
           {pill ? (
-            <View style={{ alignSelf: "flex-start", marginTop: spacing.sm, backgroundColor: pillBg, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 3 }}>
+            <View style={{ alignSelf: "flex-start", marginTop: spacing.sm, backgroundColor: pillBg, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 2 }}>
               <Text variant="micro" color={pillInk} style={{ fontWeight: "800" }}>{pill.text}</Text>
             </View>
           ) : null}
@@ -178,7 +178,7 @@ export function ResultHero({ eyebrow, title, figure, sub, mood, pill, quiet = fa
         {mood ? <Mascot mood={mood} size={MASCOT_BAND} pinned /> : null}
       </View>
       {segments && segments.total > 1 ? (
-        <View style={{ flexDirection: "row", gap: 4, marginTop: spacing.md }}>
+        <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
           {Array.from({ length: segments.total }).map((_, i) => (
             <View key={i} style={{ flex: 1, height: 5, borderRadius: 3, backgroundColor: i < segments.done ? ink : quiet ? colors.surface2 : "#ffffff59" }} />
           ))}
@@ -284,7 +284,7 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
               <View style={{ width: 28, height: 28, borderRadius: radii.sm, backgroundColor: r.tone === "ok" ? colors.successSoft : r.tone === "bad" ? colors.dangerSoft : colors.surface2, alignItems: "center", justifyContent: "center" }}>
                 <r.icon color={r.tone === "ok" ? colors.successText : r.tone === "bad" ? colors.dangerText : colors.textMuted} size={16} />
               </View>
-              <Text variant="body" style={{ flex: 1, paddingTop: 3 }}>{r.text}</Text>
+              <Text variant="body" style={{ flex: 1, paddingTop: 2 }}>{r.text}</Text>
             </View>
           ))}
         </Card>

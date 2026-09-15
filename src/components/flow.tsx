@@ -73,7 +73,7 @@ export function FlowActions({ primary, secondary, tertiary }: { primary?: FlowAc
       {secondary ? (
         <ActionEl
           a={secondary}
-          className="btn w-full border-[1.5px] px-5 py-3.5 text-strong disabled:opacity-60"
+          className="btn w-full border-[1.5px] px-5 py-4 text-strong disabled:opacity-60"
         />
       ) : null}
       {tertiary ? <ActionEl a={tertiary} className="btn muted w-full px-5 py-2.5 text-strong" /> : null}
@@ -134,7 +134,7 @@ export function ResultHero({
         <div className="min-w-0 flex-1">
           <p className={`text-micro uppercase tracking-eyebrow ${quiet ? "muted" : "opacity-80"}`}>{eyebrow}</p>
           <h2 className="text-h2">{title}</h2>
-          {figure != null ? <p className="mt-1 text-[2.5rem] font-extrabold leading-none tabular-nums">{figure}</p> : null}
+          {figure != null ? <p className="mt-1 text-display tabular-nums">{figure}</p> : null}
           {sub ? <p className={`mt-1 text-body ${quiet ? "muted" : "opacity-90"}`}>{sub}</p> : null}
           {pill ? (
             <span className="mt-2 inline-block rounded-full px-2.5 py-0.5 text-micro font-extrabold" style={pillStyle}>
