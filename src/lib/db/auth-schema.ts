@@ -1,4 +1,5 @@
-import { pgTable, text, timestamp, boolean, integer } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
+import { pgTable, text, timestamp, boolean, integer, index } from "drizzle-orm/pg-core";
 
 /**
  * Self-hosted Better Auth tabloları. Better Auth bu dört
@@ -29,7 +30,15 @@ export const user = pgTable("user", {
   isAnonymous: boolean("isAnonymous").notNull().default(false),
   createdAt: timestamp("createdAt").notNull().defaultNow(),
   updatedAt: timestamp("updatedAt").notNull().defaultNow(),
-});
+}, (t) => [
+  /*
+    Haftalık misafir temizliğinin dizini (0054 ile aynı tanım). BURADA da
+    tanımlı olmak zorunda: deploy `drizzle-kit push --force` çalıştırıyor ve
+    şemada olmayan dizini canlıdan SİLİYOR. Yalnız migration'da kalsaydı elle
+    uygulanan dizin ilk deploy'da düşerdi (ölçüldü, canlı şema kopyasında).
+  */
+  index("user_is_anonymous_idx").on(t.createdAt).where(sql`${t.isAnonymous}`),
+]);
 
 export const session = pgTable("session", {
   id: text("id").primaryKey(),
