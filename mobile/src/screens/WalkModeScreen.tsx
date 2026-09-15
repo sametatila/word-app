@@ -96,6 +96,11 @@ export function WalkModeScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
+  /* MİSAFİR: ekran kapalı yol sunucu ses tanıması ve o misafire kapalı
+     (`/api/stt` 403 account_required). Kapı Premium'dan önce hesap; misafire
+     "Premium'a özel" demek yanlış yolu gösteriyordu. */
+  const guestRef = useRef(Boolean(user?.guest));
+  guestRef.current = Boolean(user?.guest);
 
   const [rounds, setRounds] = useState<WalkRound[]>([]);
   const [idx, setIdx] = useState(0);
@@ -135,7 +140,7 @@ export function WalkModeScreen() {
     pocketGateRef.current = premium?.gates?.pocket_walk?.allowed ?? null;
   }, [premium]);
   /** Kapı KESİN kapalı mı (bilinmiyorsa false — bilmediğimiz için susmayız, deneriz). */
-  const pocketGateClosed = () => pocketGateRef.current === false;
+  const pocketGateClosed = () => guestRef.current || pocketGateRef.current === false;
   const nativeListeningRef = useRef(false); // şu an native dinliyor mu (kesinti gelince hızlı kesmek için)
   const listenCut = useRef(false); // dinlemeyi BİZ kestik mi — boş sonuç kullanıcının sessizliği sayılmasın
 
@@ -300,9 +305,14 @@ export function WalkModeScreen() {
         // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
         // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
         sfx("premium");
-        track("walk_listen", 0, "stt:premium"); // web `walk-player` ile aynı ad
-        notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
-        void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
+        if (guestRef.current) {
+          track("walk_listen", 0, "stt:account");
+          void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_account")));
+        } else {
+          track("walk_listen", 0, "stt:premium"); // web `walk-player` ile aynı ad
+          notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
+          void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
+        }
       }
     });
     return () => { unsub(); stopWalkService(); };
@@ -549,6 +559,9 @@ export function WalkModeScreen() {
    */
   /** Ses sağlayıcılarının listesi ve sunucudaki ses rızası — açıklama ekranları için. */
   async function loadVoiceConsent(): Promise<boolean | null> {
+    /* Misafirde rıza defteri ve sağlayıcı listesi yok (uç 403): okumak
+       açıklamada kırmızı "liste yüklenemedi, bağlantını kontrol et" çiziyordu. */
+    if (guestRef.current) return null;
     try {
       const info = await fetchAiConsent();
       setVoiceProcessors(info.processors.ai_voice);
@@ -976,7 +989,7 @@ export function WalkModeScreen() {
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}
       />
-      <MicDisclosure visible={disclosure !== null} mode={disclosure ?? "info"} processors={voiceProcessors} processorsFailed={voiceProcessorsFailed} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(null)} />
+      <MicDisclosure visible={disclosure !== null} mode={disclosure ?? "info"} processors={voiceProcessors} processorsFailed={voiceProcessorsFailed} guest={Boolean(user?.guest)} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(null)} />
     </View>
   );
 }

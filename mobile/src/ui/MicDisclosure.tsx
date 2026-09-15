@@ -36,19 +36,20 @@ export type MicDisclosureMode = "consent" | "prime" | "info";
  * "uygulamaya dönüp durdurursun" diyor; iOS'ta kalıcı bildirim yok, dinleme
  * kilit ekranındaki denetimden ve kulaklık düğmesinden duruyor.
  */
-function points(): string[] {
+function points(guest: boolean): string[] {
   if (Platform.OS === "ios") {
     return [
       t("micdisclosure.ios_you_start"),
       t("micdisclosure.ios_keeps_listening"),
-      t("micdisclosure.ios_voice_later"),
+      t(guest ? "micdisclosure.guest_device_only" : "micdisclosure.ios_voice_later"),
       t("micdisclosure.audio_is_not_stored_only"),
     ];
   }
   return [
     t("micdisclosure.you_start_walk_mode_yourself"),
     t("micdisclosure.it_keeps_listening_while_screen"),
-    t("micdisclosure.while_screen_is_off_what_you_say"),
+    /* Misafirde ses sunucuya hiç gitmiyor (ekran kapalı yol hesap istiyor). */
+    t(guest ? "micdisclosure.guest_device_only" : "micdisclosure.while_screen_is_off_what_you_say"),
     t("micdisclosure.audio_is_not_stored_only"),
   ];
 }
@@ -69,7 +70,7 @@ function Point({ text, colors }: { text: string; colors: Palette }) {
  * nereye gittiği ve nasıl durdurulacağı. Kip, düğmeleri ve sağlayıcı listesini
  * belirliyor (yukarıdaki not).
  */
-export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, processorsFailed }: {
+export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, processorsFailed, guest = false }: {
   visible: boolean;
   mode: MicDisclosureMode;
   /** consent: onay · prime: sistem izin penceresine geç · info: kullanılmıyor */
@@ -82,10 +83,12 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
    */
   processors: AiConsentProcessor[] | null;
   processorsFailed: boolean;
+  /** Misafir: ses sunucuya gitmiyor; sağlayıcı listesi ve sunucu maddesi yok. */
+  guest?: boolean;
 }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const showProcessors = mode !== "prime";
+  const showProcessors = mode !== "prime" && !guest;
   /* İzin öncesi ekranda donanım geri tuşu da çıkış değil: iOS'ta zaten yok,
      ama kip yanlışlıkla Android'de kullanılırsa da sistem penceresi atlanmasın. */
   const requestClose = mode === "prime" ? () => {} : onCancel;
@@ -110,7 +113,7 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
             {t("micdisclosure.walk_mode_works_with_your_voice")}
           </Text>
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
-            {points().map((p) => <Point key={p} text={p} colors={colors} />)}
+            {points(guest).map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
           {showProcessors ? <ProcessorList processors={processors} failed={processorsFailed} colors={colors} /> : null}
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
