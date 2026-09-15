@@ -27,12 +27,18 @@ export default async function CourseSelectPage() {
     cihazda saklanıp giriş sonrası profile taşınıyor (bkz. lib/onboarding-prefs
     ve components/onboarding-adopt).
   */
-  const user = await getUserInfo();
+  const info = await getUserInfo();
+  /*
+    Misafir kimliği web'de girişsiz sayılıyor (bkz. (app)/layout) ve bu
+    sayfanın TAMAMINDA öyle: yalnız profil kontrolünde değil. Çizim de hesap
+    sansaydı sihirbaz kararları cihaz yerine misafirin profiline yazardı; web
+    misafiri hesaba birleştirmediği için hesap açılınca kararlar kaybolurdu.
+  */
+  const user = info?.guest ? null : info;
 
   let alreadyChosen = false;
   try {
-    // Misafir kimliği de web'de girişsiz sayılıyor (bkz. (app)/layout).
-    if (!user || user.guest) throw new Error("misafir");
+    if (!user) throw new Error("no-account");
     /*
       Ad, hesabın kendi adından tamamlanıyor (`ensureProfile` ikinci argüman).
       Bu ekran ismi ARTIK SORMUYOR: kayıt formu ve kimlik sağlayıcısı zaten
