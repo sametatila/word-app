@@ -557,6 +557,7 @@ export const deBase: Record<string, string> = {
   "speak.mic_needed": "Mikrofonzugriff ist nötig. Du kannst ihn in den Einstellungen erlauben.",
   "speak.not_heard": "Ich konnte dich nicht hören. Versuchst du es etwas lauter und langsamer?",
   "item.listen": "Anhören",
+  "item.stop": "Stopp",
   "item.finish": "Beenden",
   "common.next": "Weiter",
   /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.

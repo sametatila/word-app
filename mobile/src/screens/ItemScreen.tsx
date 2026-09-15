@@ -11,6 +11,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
+import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
@@ -25,7 +26,7 @@ import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
 /** Sonuç bandının başlığındaki beceri adı — Beceriler sekmesiyle aynı anahtarlar. */
@@ -49,6 +50,21 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
   );
 }
 
+/**
+ * Aç/kapa çipi — dinleme kartındaki "Yavaş" ve "Metni göster".
+ *
+ * `ui/Chip` DEĞİL: o tek seçimlik grubun radyosu (bkz. `Chip` `role`). Bu iki
+ * çip birbirinden bağımsız anahtarlar; web karşılığı `aria-pressed`.
+ */
+function ToggleChip({ label, on, onPress, colors }: { label: string; on: boolean; onPress: () => void; colors: Palette }) {
+  return (
+    <PressableScale onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: on }}
+      style={{ borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, backgroundColor: on ? colors.primarySoft : colors.surface2 }}>
+      <Text variant="caption" color={on ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
+    </PressableScale>
+  );
+}
+
 /** Dinleme — cihaz TTS'i (audio dosyaları /public'te, çevrimdışı yok); metin gizli başlar. */
 /**
  * DİNLEME OYNATICISI — web `skills/listening-player` karşılığı.
@@ -65,6 +81,8 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
   const [reveal, setReveal] = useState(false);
   const [slow, setSlow] = useState(false);
   const [playing, setPlaying] = useState(false);
+  /** Bu koşuda ses gerçekten başladı mı — başlamadıysa düğme "yükleniyor". */
+  const [started, setStarted] = useState(false);
   const [segIdx, setSegIdx] = useState(-1);
   const [playCount, setPlayCount] = useState(0);
   const run = useRef(0);
@@ -73,6 +91,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
 
   async function play() {
     const my = ++run.current;
+    setStarted(false);
     setPlaying(true);
     for (let i = 0; i < segments.length; i++) {
       if (my !== run.current) return;
@@ -83,7 +102,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
          Android'de hız parametresi okunmadığı için "Yavaş" hiçbir şey
          değiştirmiyordu. Satıra dokununca (`speakTarget`) ise nöral ses
          çalıyordu: aynı alıştırmada iki ayrı ses. */
-      await speakAndWaitVoiced(segments[i].text, currentVoiceId(), { slow: slow ? "listenSlow" : "listen" });
+      await speakAndWaitVoiced(segments[i].text, currentVoiceId(), { slow: slow ? "listenSlow" : "listen", onStart: () => { if (my === run.current) setStarted(true); } });
     }
     if (my !== run.current) return;
     setPlaying(false);
@@ -109,25 +128,37 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
 
   return (
     <>
-      <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
-        <PressableScale accessibilityLabel={t("item.listen")} onPress={() => (playing ? stop() : void play())} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
-          <SpeakerIcon color={colors.onFill} size={34} />
-        </PressableScale>
-        <Text variant="bodyStrong" style={{ marginTop: spacing.md }}>
-          {playing ? t("listenp.playing", { n: segIdx + 1, total: segments.length }) : t(playCount > 0 ? "listenp.done" : "listenp.start")}
-        </Text>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t("listenp.replay_note")}</Text>
-        <PressableScale onPress={() => setSlow((v) => !v)} accessibilityState={{ selected: slow }}
-          style={{ marginTop: spacing.md, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7, backgroundColor: slow ? colors.primarySoft : colors.surface2 }}>
-          <Text variant="caption" color={slow ? colors.onPrimarySoft : colors.textMuted}>{t("listenp.slow")}</Text>
-        </PressableScale>
+      {/* KART DÜZENİ — web `skills/listening-player` ile aynı: solda durumlu
+          düğme, sağda durum + not + bölüm çubukları, altta iki çip (yavaş,
+          metni göster). Önceden düğme kartın ortasında tek başına duruyor,
+          yavaş çipi altında asılı kalıyor ve "metni göster" kartın DIŞINDA
+          bir bağlantıydı; hangi replikte olunduğu da yalnız sayıyla
+          söyleniyordu. */}
+      <Card style={{ marginTop: spacing.md }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.lg }}>
+          <ListenButton
+            state={playing ? (started ? "playing" : "loading") : playCount > 0 ? "done" : "idle"}
+            onPress={() => (playing ? stop() : void play())}
+            label={t(playing ? "item.stop" : "item.listen")}
+          />
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyStrong">
+              {playing ? t("listenp.playing", { n: segIdx + 1, total: segments.length }) : t(playCount > 0 ? "listenp.done" : "listenp.start")}
+            </Text>
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{t("listenp.replay_note")}</Text>
+            <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm }}>
+              {segments.map((_, i) => (
+                <View key={i} style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: playing && i <= segIdx ? colors.primary : colors.surface2 }} />
+              ))}
+            </View>
+          </View>
+        </View>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: spacing.sm, marginTop: spacing.lg }}>
+          <ToggleChip label={t("listenp.slow")} on={slow} onPress={() => setSlow((v) => !v)} colors={colors} />
+          <ToggleChip label={t(reveal ? "item.hide_text" : "item.show_text")} on={reveal} onPress={() => setReveal((v) => !v)} colors={colors} />
+          {!reveal ? <Text variant="caption" color={colors.textMuted} style={{ flexShrink: 1 }}>{t("listenp.hint_listen_first")}</Text> : null}
+        </View>
       </Card>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md, flexWrap: "wrap" }}>
-        <PressableScale onPress={() => setReveal((v) => !v)}>
-          <Text variant="bodyStrong" color={colors.primaryText}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
-        </PressableScale>
-        {!reveal ? <Text variant="caption" color={colors.textMuted}>{t("listenp.hint_listen_first")}</Text> : null}
-      </View>
       {reveal ? (
         <Card style={{ marginTop: spacing.sm }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("listenp.tap_line")}</Text>

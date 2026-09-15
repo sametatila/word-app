@@ -3,11 +3,10 @@
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { useTargetLang } from "./player-context";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import type { ListeningExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
-import { SpeakerIcon, XIcon } from "@/components/icons";
+import { ListenButton, type ListenState } from "@/components/listen-button";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -32,6 +31,8 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
   /** Oynatma koşusunun kimliği — durdurulan koşunun geç gelen bitişi yok sayılır. */
   const runRef = useRef(0);
   const [playing, setPlaying] = useState(false);
+  /** Bu koşuda ses gerçekten başladı mı — başlamadıysa düğme "yükleniyor". */
+  const [started, setStarted] = useState(false);
   const [segIdx, setSegIdx] = useState(-1);
   const [playCount, setPlayCount] = useState(0);
   const [slow, setSlow] = useState(false);
@@ -84,6 +85,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
   /** Statik kayıtları sırayla çalar (gerçek lehçe sesi). */
   function playAudioFrom(start: number, slowNow: boolean, single = false) {
     stop();
+    setStarted(true); // statik kayıt: indirme beklemesi yok sayılır
     setPlaying(true);
     const next = (i: number) => {
       if (i >= exercise.segments.length || (single && i > start)) {
@@ -119,6 +121,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     }
     stop();
     const run = runRef.current;
+    setStarted(false);
     setPlaying(true);
     const next = (i: number) => {
       if (run !== runRef.current) return;
@@ -127,7 +130,9 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
         return;
       }
       setSegIdx(i);
-      speakGerman(exercise.segments[i].text, () => next(i + 1), slowNow ? "listenSlow" : "listen");
+      speakGerman(exercise.segments[i].text, () => next(i + 1), slowNow ? "listenSlow" : "listen", () => {
+        if (run === runRef.current) setStarted(true);
+      });
     };
     next(0);
   }
@@ -141,13 +146,21 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     if (available === false) return;
     stop();
     const run = runRef.current;
+    setStarted(false);
     setPlaying(true);
     setSegIdx(i);
-    speakGerman(exercise.segments[i].text, () => {
-      if (run !== runRef.current) return;
-      setPlaying(false);
-      setSegIdx(-1);
-    }, slow ? "listenSlow" : "listen");
+    speakGerman(
+      exercise.segments[i].text,
+      () => {
+        if (run !== runRef.current) return;
+        setPlaying(false);
+        setSegIdx(-1);
+      },
+      slow ? "listenSlow" : "listen",
+      () => {
+        if (run === runRef.current) setStarted(true);
+      },
+    );
   }
 
   function toggleSlow() {
@@ -162,22 +175,20 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     if (playing) play(next);
   }
 
+  const listenState: ListenState = playing ? (started ? "playing" : "loading") : playCount > 0 ? "done" : "idle";
+
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-body">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
         <div className="flex items-center gap-4">
-          <motion.button
-            type="button"
-            whileTap={{ scale: 0.96 }}
-            onClick={() => (playing ? stop() : play())}
+          <ListenButton
+            state={listenState}
+            onPress={() => (playing ? stop() : play())}
             disabled={available === false && !hasAudio}
-            aria-label={t(playing ? "exam.stop" : "item.listen")}
-            className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full shadow-lg disabled:opacity-60"
-          >
-            {playing ? <XIcon size={26} /> : <SpeakerIcon size={28} />}
-          </motion.button>
+            label={t(playing ? "item.stop" : "item.listen")}
+          />
           <div className="min-w-0 flex-1">
             <p className="text-strong">
               {playing

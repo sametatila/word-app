@@ -557,6 +557,7 @@ export const trBase: Record<string, string> = {
   "speak.mic_needed": "Mikrofon izni gerekiyor. Ayarlardan açabilirsin.",
   "speak.not_heard": "Sesini duyamadım. Biraz daha yüksek ve yavaş dener misin?",
   "item.listen": "Dinle",
+  "item.stop": "Durdur",
   "item.finish": "Bitir",
   "common.next": "Sonraki",
   /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.

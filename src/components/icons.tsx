@@ -80,6 +80,13 @@ export const XIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Durdur — çalan sesi kesen düğme (dinleme oynatıcısı). Dolu kare, mobil `StopIcon` ile aynı. */
+export const StopIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="6.5" y="6.5" width="11" height="11" rx="2.5" fill="currentColor" />
+  </Svg>
+);
+
 /** Telaffuz */
 export const SpeakerIcon = (p: IconProps) => (
   <Svg {...p}>

@@ -555,6 +555,7 @@ export const en: Record<string, string> = {
   "speak.mic_needed": "Microphone permission is needed. You can enable it in Settings.",
   "speak.not_heard": "I couldn't hear you. Could you try a bit louder and slower?",
   "item.listen": "Listen",
+  "item.stop": "Stop",
   "item.finish": "Finish",
   "common.next": "Next",
   /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.

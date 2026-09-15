@@ -202,9 +202,16 @@ if (typeof window !== "undefined") primeOnFirstGesture();
  * Eller serbest rol yapmada mikrofonun kendiliğinden açılması buna bağlı; hiç
  * gelmeyecek bir bitiş döngüyü kilitlerdi.
  */
-export function speakGerman(text: string, onEnd?: () => void, slow: Pace | boolean = false) {
+export function speakGerman(
+  text: string,
+  onEnd?: () => void,
+  slow: Pace | boolean = false,
+  /** Ses gerçekten başlayınca, bir kez (dinleme düğmesinin "yükleniyor"u buna bakıyor). */
+  onStart?: () => void,
+) {
   const clean = cleanForSpeech(text);
   if (!clean) {
+    onStart?.();
     onEnd?.();
     return;
   }
@@ -214,7 +221,17 @@ export function speakGerman(text: string, onEnd?: () => void, slow: Pace | boole
   // Hangi ekranda ses dinleniyor — ekran açılışı başına bir kez (WP-80).
   if (typeof window !== "undefined") trackOnce("tts_play", 0, screenKey(window.location.pathname));
 
-  speakChain(clean, voice, course, onEnd, slow);
+  // Zincirin iki basamağı da başlangıç bildirebiliyor (WebAudio düşüp öğeye
+  // geçerse); çağıran yalnız bir kez duymalı.
+  let started = false;
+  const startOnce = onStart
+    ? () => {
+        if (started) return;
+        started = true;
+        onStart();
+      }
+    : undefined;
+  speakChain(clean, voice, course, onEnd, slow, startOnce);
 }
 
 /**
@@ -244,6 +261,7 @@ function speakChain(
   course: string,
   onEnd?: () => void,
   slow: Pace | boolean = false,
+  onStart?: () => void,
 ): (() => void) | null {
   const mine = ++token;
   stopActiveChain();
@@ -252,18 +270,19 @@ function speakChain(
   const cancel = playGapless([ttsUrl(voice, clean, slow)], {
     mine,
     onEnd,
+    onStart,
     onFail: () => {
       // Ölçüm: nöral ses WebAudio ile çalınamadı. Sık görünüyorsa sorun ağ ya
       // da çözme tarafında; bu iki basamak da hâlâ DOĞRU sesi çalıyor.
       if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "element");
-      play(clean, voice, course, onEnd, slow);
+      play(clean, voice, course, onEnd, slow, onStart);
     },
   });
   if (cancel) {
     activeChainStop = cancel;
     return cancel;
   }
-  play(clean, voice, course, onEnd, slow);
+  play(clean, voice, course, onEnd, slow, onStart);
   return null;
 }
 
@@ -875,10 +894,11 @@ function play(
   course: string,
   onEnd?: () => void,
   slow: Pace | boolean = false,
+  onStart?: () => void,
 ) {
   const audio = audioElement();
   if (!audio) {
-    speakWithBrowser(clean, voice, course, onEnd, slow);
+    speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
     return;
   }
 
@@ -902,7 +922,7 @@ function play(
     // yerine cihazın kendi sesi geliyor, cihazda Almanca ses yoksa hiç ses
     // gelmiyor. Şikâyetin kaynağı bu basamak, o yüzden ayrıca işaretleniyor.
     if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
-    speakWithBrowser(clean, voice, course, onEnd, slow);
+    speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
   };
 
   /*
@@ -951,6 +971,7 @@ function play(
   }, PLAY_WATCHDOG_MS);
   const iptal = () => clearTimeout(bekci);
   audio.addEventListener("playing", iptal, { once: true });
+  if (onStart) audio.addEventListener("playing", () => { if (token === mine) onStart(); }, { once: true });
   audio.addEventListener("error", iptal, { once: true });
 }
 
@@ -973,8 +994,10 @@ function speakWithBrowser(
   course: string,
   onEnd?: () => void,
   slow: Pace | boolean = false,
+  onStart?: () => void,
 ) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+    onStart?.();
     onEnd?.();
     return;
   }
@@ -998,6 +1021,7 @@ function speakWithBrowser(
     : (voices.find((v) => v.lang === lang) ??
       voices.find((v) => v.lang.startsWith(lang.slice(0, 2))));
   if (picked) u.voice = picked;
+  if (onStart) u.onstart = () => onStart();
   if (onEnd) {
     u.onend = () => onEnd();
     // Hata da bir bitiştir: sentez çuvallarsa döngü asılı kalmasın.
