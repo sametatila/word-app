@@ -204,7 +204,10 @@ for (const file of files) {
  * Uçlarda ikinci bir kabul var: `no-store` başlığı. `route.ts` gövdesi
  * oturum okuyup ne `force-dynamic` ne `no-store` taşıyorsa bildiriliyor.
  */
-const SESSION = /getUserId\(|getUserInfo\(|requireUser\(|auth\.api\.getSession|cookies\(\)|headers\(\)/;
+/* `requireAccount` ve `getAccountUserId` de oturum okuyor (misafiri ayıran
+   kapılar, bkz. lib/auth/guest). Listede olmasalar onlara geçen uçlar önbellek
+   denetiminden sessizce çıkardı. */
+const SESSION = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cookies\(\)|headers\(\)/;
 const cacheIssues = new Set();
 for (const file of walk("src/app")) {
   const src = read(file);
@@ -226,7 +229,7 @@ for (const file of walk("src/app")) {
  * BEŞİNCİ SINIR: her uç bir kapıdan geçiyor mu?
  *
  * `src/app/api` altındaki her `route.ts` şu dördünden BİRİNE dayanmalı:
- * oturum (`requireUser`/`getUserId`/…), cron anahtarı (`cronGate`), yönetici
+ * oturum (`requireUser`/`getUserId`/`requireAccount`/…), cron anahtarı (`cronGate`), yönetici
  * (`adminGate`) ya da imza doğrulaması (webhook). Hiçbirine dayanmayan bir uç
  * internete açık demektir ve bunu fark etmenin tek yolu dosyayı okumak.
  *
@@ -243,7 +246,7 @@ const PUBLIC_ROUTES = new Map([
   ["src/app/api/turnstile/route.ts", "captcha doğrulaması: çağıran henüz giriş yapmamış olabilir"],
 ]);
 
-const GATES = /getUserId\(|getUserInfo\(|requireUser\(|auth\.api\.getSession|cronGate\(|adminGate\(|verifyAppleNotification\(|adapter\.parse\(/;
+const GATES = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cronGate\(|adminGate\(|verifyAppleNotification\(|adapter\.parse\(/;
 const apiFiles = walk("src/app/api");
 const ungated = new Set();
 for (const file of apiFiles) {
