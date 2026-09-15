@@ -35,8 +35,12 @@ export type SentenceMatch = {
   quality: 5 | 4 | 3 | 1;
   /** Yanlışsa hata tipi; tam doğruda yok. */
   errorType?: ErrorType;
-  /** Hedef cümlenin kelimeleri, işaretli: missing = öğrenci yazmadı, moved = yeri yanlış, typo = yazımı yanlış. */
-  target: { text: string; mark: TokenMark }[];
+  /**
+   * Hedef cümlenin kelimeleri, işaretli: missing = öğrenci yazmadı, moved = yeri
+   * yanlış, typo = yazımı yanlış. `typed`: yazım hatasında öğrencinin o kelime
+   * için yazdığı biçim — sonuç katmanı "Kinno → Kino" diye gösteriyor.
+   */
+  target: { text: string; mark: TokenMark; typed?: string }[];
   /** Öğrencinin kelimeleri, işaretli: extra = hedefte yok, moved, typo. */
   typed: { text: string; mark: TokenMark }[];
   /** Eşleşen hedef (alternatifler arasından en yakını). */
@@ -120,6 +124,8 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
   const t = foldTokens(targetRaw, lang);
   const u = foldTokens(typedRaw, lang);
   const targetMarks: TokenMark[] = new Array(t.length).fill("missing");
+  /** Yazım hatası eşi: hedef indeksi → yazılan indeksi. */
+  const typoPair = new Map<number, number>();
   const typedMarks: TokenMark[] = new Array(u.length).fill("extra");
   for (const [i, j] of lcs(t, u)) {
     targetMarks[i] = "same";
@@ -143,6 +149,7 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
     if (near !== undefined) {
       targetMarks[i] = "typo";
       typedMarks[near] = "typo";
+      typoPair.set(i, near);
       freeTyped.delete(near);
     }
   }
@@ -154,7 +161,7 @@ function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
   const same = count(targetMarks, "same");
   // Yakınlık: eşleşen + yer değiştirmiş + yazım hatalı kelime oranı — aday seçimi için.
   const score = t.length ? (same + moved + typo * 0.8 - missing * 0.5 - extra * 0.5) / t.length : 0;
-  return { t, u, targetMarks, typedMarks, missing, extra, moved, typo, same, score };
+  return { t, u, targetMarks, typedMarks, typoPair, missing, extra, moved, typo, same, score };
 }
 
 /**
@@ -175,7 +182,12 @@ export function matchSentence(typed: string, target: string, alternatives: strin
   }
   const { cand, c } = best!;
   const targetShown = showTokens(cand);
-  const targetOut = c.t.map((_, i) => ({ text: targetShown[i] ?? c.t[i], mark: c.targetMarks[i] }));
+  const targetOut = c.t.map((_, i) => {
+    const j = c.typoPair.get(i);
+    return j === undefined
+      ? { text: targetShown[i] ?? c.t[i], mark: c.targetMarks[i] }
+      : { text: targetShown[i] ?? c.t[i], mark: c.targetMarks[i], typed: typedShown[j] ?? c.u[j] };
+  });
   const typedOut = c.u.map((_, j) => ({ text: typedShown[j] ?? c.u[j], mark: c.typedMarks[j] }));
 
   const tail = cand.match(/[.!?…]+$/)?.[0] ?? "";
