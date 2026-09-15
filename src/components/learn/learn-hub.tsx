@@ -14,7 +14,6 @@ import {
   CrownIcon,
   ExamIcon,
   FlameIcon,
-  PodiumIcon,
   QuizIcon,
   RefreshIcon,
   WalkIcon,
@@ -218,13 +217,6 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           icon={<QuizIcon size={24} />}
           title={t("learn.practice")}
           sub={t("learn.practice_one_game_with_your_own")}
-        />
-        <Action
-          href="/learn/daily"
-          tone="var(--color-sky-500)"
-          icon={<PodiumIcon size={24} />}
-          title={t("learn.daily_round_2")}
-          sub={t("learn.same_challenge_for_everyone_get")}
         />
         <Action
           href="/learn/weekly"

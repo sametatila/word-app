@@ -48,7 +48,8 @@ import { formatPercent } from "@/lib/i18n/dict";
  * `challenge`/`daily`/`walk` BURADAN KALKTI: üçü de oturum oynatıcısının bir
  * durumuydu ve aynı adreste başka bir mod başlatıyordu — paylaşılamayan,
  * yer imine alınamayan, tarayıcı geri düğmesiyle çıkılamayan modlar. Artık
- * kendi adreslerindeler (`/learn/daily`, `/learn/walk`, `/learn/challenge`).
+ * kendi adreslerindeler (`/learn/walk`, `/learn/challenge`; Günün turu
+ * 2026-09-15'te kaldırıldı).
  */
 type Status = "loading" | "ready" | "playing" | "stage" | "done" | "empty" | "error";
 

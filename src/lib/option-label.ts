@@ -9,7 +9,7 @@ import type { Option } from "./types";
  * üretmezse doğru şık hiçbir zaman seçilemez.
  *
  * Tam da bu oldu: `lib/session.ts` içindeki `optionsFor` artikeli koyuyordu,
- * `lib/daily.ts` içindeki `seededOptions` koymuyordu. Günlük oyunda tr→de
+ * Günün turunun (2026-09-15'te kaldırıldı) `seededOptions`ı koymuyordu. O oyunda tr→de
  * yönündeki her şık turunda kullanıcı "Auto"yu işaretleyip "yanlış, doğrusu
  * das Auto" cevabını alıyordu — hiçbir şık doğru olamıyordu.
  *

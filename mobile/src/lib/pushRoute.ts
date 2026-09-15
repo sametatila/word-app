@@ -40,7 +40,6 @@ function friendTab(v: string | null): FriendTab | undefined {
  */
 const LEARN_SUB = {
   weekly: "Weekly",
-  daily: "Daily",
   practice: "Practice",
   walk: "Walk",
   challenge: "Challenge",

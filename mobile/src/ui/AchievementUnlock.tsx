@@ -45,7 +45,7 @@ import { useTheme, spacing, radii, softShadow, TIER_COLOR } from "../theme";
 
 /** Akış ekranları — biri açıkken kutlama bekler (webin `lernomi:busy` karşılığı). */
 const BUSY_ROUTES = new Set([
-  "Game", "Lesson", "Quiz", "Item", "Walk", "Boss", "Daily", "Weekly",
+  "Game", "Lesson", "Quiz", "Item", "Walk", "Boss", "Weekly",
   "Exam", "MockExam", "Placement", "FirstPractice",
 ]);
 

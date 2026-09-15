@@ -10,7 +10,6 @@ import {
   assessments,
   exams,
   questClaims,
-  dailyScores,
   dailyStats,
   profiles,
   reviews,
@@ -67,8 +66,6 @@ export type Metric =
   | "gameSpeak"
   | "lessons"
   | "skills"
-  | "dailyRounds"
-  | "perfectDaily"
   | "challengeBest"
   | "nightAnswers"
   | "earlyAnswers"
@@ -198,11 +195,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "writing85", titleKey: "ach.writing85.title", hintKey: "ach.writing85.hint", icon: "StarIcon", tier: "gold", group: "skills", metric: "bestWriting", target: 85 },
   { id: "speaking25", titleKey: "ach.speaking25.title", hintKey: "ach.speaking25.hint", icon: "MicIcon", tier: "silver", group: "skills", metric: "speakings", target: 25 },
 
-  // ——— Günün turu & hayatta kalma ————————————————————————————————
-  { id: "daily1", titleKey: "ach.daily1.title", hintKey: "ach.daily1.hint", icon: "TrophyIcon", tier: "bronze", group: "rounds", metric: "dailyRounds", target: 1 },
-  { id: "daily10", titleKey: "ach.daily10.title", hintKey: "ach.daily10.hint", icon: "TrophyIcon", tier: "silver", group: "rounds", metric: "dailyRounds", target: 10 },
-  { id: "daily50", titleKey: "ach.daily50.title", hintKey: "ach.daily50.hint", icon: "TrophyIcon", tier: "gold", group: "rounds", metric: "dailyRounds", target: 50 },
-  { id: "dailyPerfect", titleKey: "ach.dailyPerfect.title", hintKey: "ach.dailyPerfect.hint", icon: "StarIcon", tier: "gold", group: "rounds", metric: "perfectDaily", target: 1 },
+  // ——— Hayatta kalma ————————————————————————————————————————————
   { id: "challenge500", titleKey: "ach.challenge500.title", hintKey: "ach.challenge500.hint", icon: "SparkIcon", tier: "bronze", group: "rounds", metric: "challengeBest", target: 500 },
   { id: "challenge1500", titleKey: "ach.challenge1500.title", hintKey: "ach.challenge1500.hint", icon: "SparkIcon", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
   { id: "challenge3000", titleKey: "ach.challenge3000.title", hintKey: "ach.challenge3000.hint", icon: "SparkIcon", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
@@ -252,7 +245,6 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     lessonRow,
     skillRow,
     bossRow,
-    dailyRow,
     hourRow,
     dayRow,
     courseRow,
@@ -284,14 +276,6 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .select({ n: sql<number>`count(*)::int` })
       .from(moduleClears)
       .where(eq(moduleClears.userId, userId)),
-
-    db
-      .select({
-        n: sql<number>`count(*)::int`,
-        perfect: sql<number>`count(*) filter (where ${dailyScores.total} > 0 and ${dailyScores.correct} = ${dailyScores.total})::int`,
-      })
-      .from(dailyScores)
-      .where(eq(dailyScores.userId, userId)),
 
     // Gece/sabah sayımı kullanıcının KENDİ saat diliminde: sunucunun UTC
     // saati "gece kuşu" rozetini İstanbul'daki bir kullanıcı için üç saat
@@ -399,8 +383,6 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     gameSpeak: games.get("speak") ?? 0,
     lessons: Number(lessonRow[0]?.n ?? 0),
     skills: Number(skillRow[0]?.n ?? 0),
-    dailyRounds: Number(dailyRow[0]?.n ?? 0),
-    perfectDaily: Number(dailyRow[0]?.perfect ?? 0),
     challengeBest: profile?.challengeBest ?? 0,
     nightAnswers: Number(hourRow[0]?.night ?? 0),
     earlyAnswers: Number(hourRow[0]?.early ?? 0),

@@ -104,8 +104,8 @@ export function pluralChoices(
   /**
    * Rastgelelik kaynağı.
    *
-   * Günün ortak turu aynı seviyedeki herkese aynı şıkları göstermek zorunda
-   * (bkz. lib/daily.ts) ve bu ancak üretim tohumdan türetilirse mümkün.
+   * Tohumlu üretim için (aynı girdi → aynı şıklar). Tek çağıranı Günün turuydu
+   * ve 2026-09-15'te kaldırıldı; tohumsuz çağrı rastgele.
    * Verilmezse normal turlardaki davranış sürüyor.
    */
   rand: () => number = Math.random,

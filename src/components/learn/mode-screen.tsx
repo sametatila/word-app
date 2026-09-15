@@ -2,27 +2,26 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { DailyPlayer } from "@/components/daily-player";
 import { WalkPlayer } from "@/components/walk-player";
 import { ChallengePlayer } from "@/components/challenge-player";
 
 /**
  * Öğren'in yan modları — her biri KENDİ ADRESİNDE.
  *
- * Üçü de oturum oynatıcısının bir DURUMU idi (`status === "daily" | "walk" |
- * "challenge"`): `/learn` açılıyor, oyunun başlangıç kartındaki bir döşemeye
+ * Hepsi oturum oynatıcısının bir DURUMU idi (`status === "walk" | "challenge"`;
+ * Günün turu 2026-09-15'te kaldırıldı): `/learn` açılıyor, oyunun başlangıç kartındaki bir döşemeye
  * dokunuluyor ve aynı adreste başka bir mod başlıyordu. Adres değişmediği için
  * paylaşılamıyor, yer imine alınamıyor, tarayıcı geri düğmesiyle çıkılamıyordu
  * — ve moddan çıkmak, oynatıcının o durumu bırakıp yeniden oturum kurması
  * demekti.
  *
- * Mobilde üçü de kök yığında ayrı ekran (`RootStack`: Daily, Walk, Challenge
+ * Mobilde ikisi de kök yığında ayrı ekran (`RootStack`: Walk, Challenge
  * karşılığı). Burada da öyle: çıkış merkeze döner, geri düğmesi çalışır.
  *
  * `router.refresh()` çıkışta bir kez: mod XP/seri kazandırmış olabilir ve
  * merkez o sayıları sunucudan okuyor.
  */
-export function ModeScreen({ mode }: { mode: "daily" | "walk" | "challenge" }) {
+export function ModeScreen({ mode }: { mode: "walk" | "challenge" }) {
   const router = useRouter();
 
   /*
@@ -46,7 +45,6 @@ export function ModeScreen({ mode }: { mode: "daily" | "walk" | "challenge" }) {
   };
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      {mode === "daily" ? <DailyPlayer onExit={onExit} /> : null}
       {mode === "walk" ? <WalkPlayer onExit={onExit} /> : null}
       {mode === "challenge" ? <ChallengePlayer onExit={onExit} /> : null}
     </div>

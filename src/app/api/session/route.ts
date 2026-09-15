@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 /** Atlanacak kelime listesinin üst sınırı — adres uzunluğu için. */
 const SKIP_LIMIT = 200;
 
-/** Günün turu: yarım kalan varsa o, yoksa yenisi. Tur sunucuda tutulur. */
+/** Günlük tur: yarım kalan varsa o, yoksa yenisi. Tur sunucuda tutulur. */
 export async function GET(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });

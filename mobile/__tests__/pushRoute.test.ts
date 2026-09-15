@@ -53,7 +53,8 @@ describe("bildirim adresi -> ekran", () => {
 
   it("haftalık sınav hatırlatması sınav ekranını açıyor", () => {
     expect(routeFromPush("/learn/weekly")).toEqual({ name: "Weekly" });
-    expect(routeFromPush("/learn/daily")).toEqual({ name: "Daily" });
+    // Günün turu kaldırıldı (2026-09-15): eski bir bildirim adresi ana ekrana düşer.
+    expect(routeFromPush("/learn/daily")).toEqual({ name: "Tabs" });
     expect(routeFromPush("/learn")).toEqual({ name: "Tabs" });
   });
 

@@ -210,7 +210,7 @@ export function todayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-/** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir.
+/** Günlük tur (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir.
     `game`: tek-oyun pratiği (web'deki oyun seçici — ör. yalnız "artikel").
     `fresh`: "yeni tura başla" — önce kayıtlı turu atar, sonra yenisini kurar. */
 /**

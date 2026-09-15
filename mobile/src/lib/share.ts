@@ -1,6 +1,6 @@
 import { Share } from "react-native";
 import { track } from "./track";
-import { t, targetLangName, formatNumber, formatPercent } from "./i18n";
+import { t, targetLangName, formatPercent } from "./i18n";
 
 /**
  * Paylaşım / davet. RN'in yerleşik Share API'siyle (native dep yok) OS paylaşım
@@ -65,37 +65,23 @@ export type ShareInput = {
   accuracy: number;
   streak: number;
   level: string;
-  /** Gunun turu farkli bir metin uretir. */
-  kind?: "session" | "daily";
-  /** Gunun turunun puani — yalniz `kind: "daily"` icin anlamli. */
-  score?: number;
 };
 
 /** Paylasim metni — web `buildShareText` ile satir satir ayni. */
 export function buildShareText(input: ShareInput): string {
-  const daily = input.kind === "daily";
-  const head = daily
-    ? t("share.head_daily", { level: input.level })
-    : t("share.head", { level: input.level });
-  const lines = [head, marksToGrid(input.marks)];
+  const lines = [t("share.head", { level: input.level }), marksToGrid(input.marks)];
 
   const pct = formatPercent(input.accuracy);
-  const stats = daily
-    ? [t("share.points", { n: formatNumber(input.score ?? 0) }), t("share.of_questions", { n: input.total, pct })]
-    : [t("share.n_words", { n: input.total }), t("share.pct_correct", { pct })];
-  if (input.streak > 0) {
-    stats.push(daily ? t("share.streak_short", { n: input.streak }) : t("social.days_streak", { n: input.streak }));
-  }
+  const stats = [t("share.n_words", { n: input.total }), t("share.pct_correct", { pct })];
+  if (input.streak > 0) stats.push(t("social.days_streak", { n: input.streak }));
   lines.push(stats.join(" · "));
-
-  if (daily) lines.push("", t("share.daily_cta", { level: input.level }));
-  else lines.push("");
+  lines.push("");
   lines.push(`${APP_URL}?ref=sonuc`);
   return lines.join("\n");
 }
 
 /**
- * TUR sonucu (oturum ve gunun turu) — DESENLI metin.
+ * TUR sonucu — DESENLI metin.
  *
  * Yuruyus kipi bunu KULLANMIYOR ve bu bilincli: orada tur basina dogru/yanlis
  * dizisi tutulmuyor (ne webde ne Androidde), yani cizilecek desen yok. O kip
@@ -104,7 +90,7 @@ export function buildShareText(input: ShareInput): string {
  */
 export async function shareRoundResult(input: ShareInput): Promise<void> {
   try {
-    track("share", input.marks.filter(Boolean).length, input.kind === "daily" ? "daily" : "result");
+    track("share", input.marks.filter(Boolean).length, "result");
     await Share.share({ message: buildShareText(input) });
   } catch { /* kullanıcı vazgeçti */ }
 }

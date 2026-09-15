@@ -4,7 +4,6 @@ import { db } from "@/lib/db";
 import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import {
-  dailyScores,
   dailyStats,
   questClaims,
   reviews,
@@ -32,7 +31,6 @@ export type QuestId =
   | "newWords3"
   | "artikel5"
   | "listen5"
-  | "daily"
   | "skill1"
   | "lesson1";
 
@@ -68,7 +66,6 @@ const QUESTS: QuestDef[] = [
   { id: "newWords3", labelKey: "quest.newWords3", href: "/learn", target: 3, xp: 120 },
   { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150 },
   { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
-  { id: "daily", labelKey: "quest.daily", href: "/learn", target: 1, xp: 200, discovery: true },
   { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
   { id: "lesson1", labelKey: "quest.lesson1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
@@ -188,14 +185,6 @@ export async function questBoard(
       if (r.game === "artikel") counts.set("artikel5", Number(r.n));
       if (r.game === "listen") counts.set("listen5", Number(r.n));
     }
-  }
-
-  if (ids.includes("daily")) {
-    const [row] = await db
-      .select({ n: sql<number>`count(*)::int` })
-      .from(dailyScores)
-      .where(and(eq(dailyScores.userId, userId), eq(dailyScores.day, day)));
-    counts.set("daily", Number(row?.n ?? 0));
   }
 
   if (ids.includes("skill1")) {

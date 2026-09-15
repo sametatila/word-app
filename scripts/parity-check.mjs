@@ -3483,23 +3483,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("rozet acilis kutlamasi", kutlama("mobile/src/ui/AchievementUnlock.tsx"), kutlama("src/components/achievement-unlock.tsx"));
 }
 
-/* ── 87. gunun turu: tablonun iki OZEL durumu ─────────────────────────────
- * Gunluk siralamanin iki hali kullaniciya bir sey soylemek zorunda: tablo BOS
- * ("ilk oynayan sen ol") ve tabloda YALNIZ KENDISI var ("ilk sensin, tablo
- * gun ilerledikce doluyor"). Iki platform birer tanesini gosteriyordu: mobil
- * bos hali, web tek satirli hali. Otekinde ekran sessiz kaliyor ve kullanici
- * "kimse oynamamis" ya da "ekran bozuk" saniyor. */
-{
-  const hal = (p) => {
-    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-    return [
-      "bos tablo=" + (src.includes("daily.be_first_to_play_today") ? "var" : "yok"),
-      "tek satir=" + (src.includes("daily.first_today") ? "var" : "yok"),
-    ];
-  };
-  sameList("gunun turu tablo halleri", hal("mobile/src/screens/DailyScreen.tsx"), hal("src/components/daily-player.tsx"));
-}
-
 /* ── 88. yazilarim listesinin BOS hali ────────────────────────────────────
  * Bos liste bir cikis yolu vermeli: ne oldugunu anlatan bir satir ve
  * kullaniciyi yazma alistirmalarina goturen bir dugme. Mobilde tek cumle
@@ -4720,69 +4703,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .sort((a, b) => a[1] - b[1])
       .map(([ad]) => ad);
   sameList("haftalik sinav sonucu", sira(mob, 1), sira(web, 0));
-}
-
-/* ── 128. gunluk turun tanitimi ───────────────────────────────────────────
- * Android turu DOGRUDAN baslatiyordu: kullanici ne oynayacagini, kac soru
- * oldugunu, TEK HAK oldugunu ve herkesin ayni turu oynadigini hicbir yerde
- * okumadan kendini ilk sorunun icinde buluyordu. Web ayni yerde bir tanitim
- * karti gosteriyor ve bugunun tablosunu da oraya koyuyor - "kime
- * yetisiyorum" sorusu oynamaya iten seyin kendisi. Mobilin kendi duzeni
- * haftalik sinavda zaten boyle (`WeeklyScreen` `ready`); gunluk tur tek
- * istisnaydi.
- *
- * Olculen: ekranin fazlari ve tanitim kartinin bolum sirasi. `session_start`
- * artik iki tarafta da BASLA'ya basinca yaziliyor - ekrani acan herkesi
- * "basladi" saymak huninin ilk adimini oldugundan buyuk gosteriyordu. */
-{
-  const mobSrc = read("mobile/src/screens/DailyScreen.tsx");
-  const webSrc = read("src/components/daily-player.tsx");
-  const faz = (src, re) => (src.match(re)?.[1] ?? "").match(/"(\w+)"/g)?.map((x) => x.slice(1, -1)).sort() ?? [];
-  /* Adlar bir yerde ayri: web oynanan fazi "playing", mobil "play" diyor.
-     `auth` ARTIK IKI TARAFTA DA VAR. Eskiden yalniz mobildeydi ve buradaki
-     liste onu DISARIDA birakiyordu, gerekcesi "webde oturum ROTA duzeyinde
-     cozuluyor"du. O gerekce yalniz SAYFA ACILISI icin dogruydu: sayfa
-     acikken dusen bir oturum 401 donduruyor ve web "yuklenemedi, tekrar
-     dene" diyordu - yanlis sebep, ustelik tekrar denemek hic ise yaramaz
-     (bkz. 254). Muafiyet kalkti. */
-  const mob = faz(mobSrc, /type Phase = ([^;]+);/).map((x) => (x === "play" ? "playing" : x));
-  const web = faz(webSrc, /type Status = ([^;]+);/).map((x) => (x === "play" ? "playing" : x));
-  sameList("gunluk tur fazlari", mob.sort(), web.sort());
-
-  const BOLUM = [
-    ["ust satir", /daily\.daily_round/, /daily\.daily_round/],
-    ["baslik", /daily\.same_words/, /daily\.same_words/],
-    ["tanitim", /daily\.pitch/, /daily\.pitch/],
-    ["basla", /common\.start/, /common\.start/],
-    ["sonra", /common\.later/, /common\.later/],
-    ["bugunun tablosu", /daily\.today_s_ranking/, /daily\.today_s_ranking/],
-  ];
-  const dilim = (src, bas, son) => {
-    const i = src.indexOf(bas);
-    const j = src.indexOf(son, i);
-    return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
-  };
-  const sira = (src, ix) =>
-    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
-      .filter(([, i]) => i >= 0)
-      .sort((a, b) => a[1] - b[1])
-      .map(([ad]) => ad);
-  /* KAPAK SABLONU (2026-09-15): mobilde dugmeler ekranin dibine SABIT
-     (`FlowScreen` `actions`, `actionsSona` dilimin sonuna tasiyor), webde
-     sayfa aktigi icin tablodan ONCE - `daily-player` bunu "bilincli fark"
-     diye yaziyor: tablo ustte kalsa "Basla" katlamanin altina duserdi.
-     O yuzden sira iki parca olculuyor: icerigin sirasi (dugmeler haric) ve
-     dugmelerin kendi sirasi. "tanitim" (`daily.pitch`) iki taraftan da
-     kalkti; yerine kapagin tek cumlesi (`daily.cover_pitch`). */
-  const DUGME = new Set(["basla", "sonra"]);
-  const mobKapak = sira(actionsSona(dilim(mobSrc, 'if (phase === "ready") {', '\n  if (phase === "empty")')), 1);
-  const webKapak = sira(dilim(webSrc, 'if (status === "ready" && data) {', "\n  if (status ==="), 0);
-  sameList("gunluk tur tanitimi", mobKapak.filter((x) => !DUGME.has(x)), webKapak.filter((x) => !DUGME.has(x)));
-  sameList("gunluk tur tanitiminin dugmeleri", mobKapak.filter((x) => DUGME.has(x)), webKapak.filter((x) => DUGME.has(x)));
-
-  /* `session_start` tanitim ekraninda DEGIL, BASLA dugmesinde yazilmali. */
-  const nerede = (src) => (/session_start", 0, "daily"\)/.test(src) ? (/(onPress|onClick)=\{\(\) => \{[^}]*session_start", 0, "daily"/.test(src.replace(/\n/g, " ")) ? "basla dugmesinde" : "baska yerde") : "hic yazilmiyor");
-  sameList("gunluk tur olcum ani", [nerede(mobSrc)], [nerede(webSrc)]);
 }
 
 /* ── 129. dersin kapanis ozeti ────────────────────────────────────────────
@@ -6463,7 +6383,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const MOB = /numberOfLines=\{1\}/;
   const WEB = /truncate|line-clamp/;
   const CIFT = [
-    ["gunluk siralama", "mobile/src/screens/DailyScreen.tsx", "src/components/daily-player.tsx"],
     ["arkadas tablosu", "mobile/src/social/FriendsBoard.tsx", "src/components/social/friends-board.tsx"],
     ["akis", "mobile/src/social/FeedList.tsx", "src/components/social/feed.tsx"],
     ["istekler", "mobile/src/social/Requests.tsx", "src/components/social/requests.tsx"],
@@ -9709,7 +9628,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["rol yapma sinavi", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
       ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
       ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
-      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
       ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
       ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
     ];
@@ -11906,7 +11824,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        kardesi de tasiyor. */
     const AKIS = [
       ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
-      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
       ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
       ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
       ["deneme sinavi", "src/components/mock-exam-player.tsx", "mobile/src/screens/MockExamScreen.tsx"],
@@ -12347,7 +12264,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* 401 ayri bir dal. */
     const AUTH = [
       ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
-      ["gunun turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
       ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
     ];
     const webAuth = (y) => {
@@ -12937,7 +12853,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     `formatNumber`inin yuvarlamasini atliyordu; artik bicimleyiciden. */
   {
     const TABLOLAR = [
-      ["gunluk", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
       ["lig", "src/components/social/league-board.tsx", "mobile/src/social/LeagueBoard.tsx"],
       ["arkadas", "src/components/social/friends-board.tsx", "mobile/src/social/FriendsBoard.tsx"],
     ];
@@ -12964,27 +12879,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "liste satirinda ad yedegi",
       LISTELER.map(([ad, , m]) => ad + "=" + yedek(m)),
       LISTELER.map(([ad, w]) => ad + "=" + yedek(w)),
-      "mobil",
-      "web",
-    );
-
-    /* Gunluk siralama satirinin parcalari. */
-    const gw = sil(read("src/components/daily-player.tsx"));
-    const gm = sil(read("mobile/src/screens/DailyScreen.tsx"));
-    sameList(
-      "gunluk siralama satirinin parcalari",
-      [
-        "bas harf=" + (/const initial = \(\(r\.name \?\? "\?"\)\.trim\(\)\[0\] \?\? "\?"\)\.toUpperCase\(\)/.test(gm) ? "var" : "YOK"),
-        "kendi isareti=" + (/t\("social\.you_paren"\)/.test(gm) ? "adin devaminda" : "?"),
-        "dogru sayisi=" + (/t\("common\.n_correct", \{ correct: r\.correct, total: r\.total \}\)/.test(gm) ? "ortak anahtar" : "HAM KESIR"),
-        "puan=" + (/formatNumber\(r\.score\)/.test(gm) ? "bicimleyiciden" : "DOGRUDAN"),
-      ],
-      [
-        "bas harf=" + (/const initial = \(\(r\.name \?\? "\?"\)\.trim\(\)\[0\] \?\? "\?"\)\.toUpperCase\(\)/.test(gw) ? "var" : "YOK"),
-        "kendi isareti=" + (/t\("social\.you_paren"\)/.test(gw) ? "adin devaminda" : "?"),
-        "dogru sayisi=" + (/t\("common\.n_correct", \{ correct: r\.correct, total: r\.total \}\)/.test(gw) ? "ortak anahtar" : "HAM KESIR"),
-        "puan=" + (/formatNumber\(r\.score, lang\)/.test(gw) ? "bicimleyiciden" : "DOGRUDAN"),
-      ],
       "mobil",
       "web",
     );
@@ -13561,7 +13455,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const EKRANLAR = [
       ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
       ["meydan-okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
-      ["gunun-turu", "src/components/daily-player.tsx", "mobile/src/screens/DailyScreen.tsx"],
       ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
       ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
       ["modul-sinavi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
@@ -13634,7 +13527,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* Cikis karosunun OLCUSU: Android 44x44 / 22 px simge. */
     const re = sil(read("src/components/round-exit.tsx"));
-    const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/DailyScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"];
+    const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"];
     sameList(
       "cikis karosunun olcusu",
       [
@@ -14554,7 +14447,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        (base<->mobil birebirligini `i18n:check` ayrica zorluyor.) */
     const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
     const MOB_SOZLUK = ["mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"];
-    const ANAHTARLAR = ["share.head", "share.head_daily", "share.points", "share.of_questions", "share.n_words", "share.pct_correct", "share.streak_short", "share.daily_cta"];
+    const ANAHTARLAR = ["share.head", "share.n_words", "share.pct_correct"];
     sameList(
       "paylasim anahtarlari ortak kumede",
       [
@@ -14566,18 +14459,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* Dugmenin bulundugu turlar: oturum, gunun turu (desenli) ve yuruyus
-       (duz cumle). Ucu de iki platformda. */
+    /* Dugmenin bulundugu turlar: oturum (desenli) ve yuruyus (duz cumle).
+       Ikisi de iki platformda. (Gunun turu 2026-09-15'te kalkti.) */
     sameList(
       "paylasim dugmesi hangi turlarda",
       [
         "oturum=" + (/shareRoundResult\(\{ marks: answers\.current/.test(sil(read("mobile/src/screens/GameScreen.tsx"))) ? "desenli" : "YOK"),
-        "gunun turu=" + (/shareRoundResult\(\{[\s\S]{0,400}kind: "daily"/.test(sil(read("mobile/src/screens/DailyScreen.tsx"))) ? "desenli" : "YOK"),
         "yuruyus=" + (/shareResult\(tally\.correct, tally\.total\)/.test(sil(read("mobile/src/screens/WalkModeScreen.tsx"))) ? "duz" : "YOK"),
       ],
       [
         "oturum=" + (/<ShareResult\b/.test(sil(read("src/components/session-player.tsx"))) ? "desenli" : "YOK"),
-        "gunun turu=" + (/kind="daily"/.test(sil(read("src/components/daily-player.tsx"))) ? "desenli" : "YOK"),
         "yuruyus=" + (/shareText\(resultText\(/.test(sil(read("src/components/walk-player.tsx"))) ? "duz" : "YOK"),
       ],
       "mobil",
@@ -14831,7 +14722,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const DALLAR = [
       ["src/components/boss-player.tsx", 't("exam.could_not_load")'],
       ["src/components/challenge-player.tsx", 't("challenge.load_failed")'],
-      ["src/components/daily-player.tsx", 't("daily.couldn_t_load_daily_round")'],
       ["src/components/weekly-player.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
       ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
       ["src/components/walk-player.tsx", 't("walk.error_title")'],
@@ -14841,7 +14731,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/cando-card.tsx", 't("cando.couldn_t_load")'],
       ["mobile/src/screens/BossScreen.tsx", '"boss.not_ready" : "exam.could_not_load"'],
       ["mobile/src/screens/ChallengeScreen.tsx", 't("challenge.load_failed")'],
-      ["mobile/src/screens/DailyScreen.tsx", 't("daily.couldn_t_load_daily_round")'],
       ["mobile/src/screens/WeeklyScreen.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
       ["mobile/src/screens/GameScreen.tsx", 't("game.couldn_t_load_round")'],
       ["mobile/src/screens/WalkModeScreen.tsx", 'tx("walk.error_title")'],
@@ -14983,7 +14872,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const WEB = [
       ["src/components/boss-player.tsx", 't("exam.preparing")'],
       ["src/components/walk-player.tsx", 't("walk.preparing")'],
-      ["src/components/daily-player.tsx", 't("daily.preparing")'],
       ["src/components/challenge-player.tsx", 't("challenge.preparing")'],
       ["src/components/exam-player.tsx", '"exam.preparing" : "item.mono_scoring"'],
       ["src/components/weekly-player.tsx", '"weekly.preparing" : "weekly.saving"'],
@@ -15313,7 +15201,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * Kapi ARTIK BUTUN sonuc yuzeylerini tutuyor: beceri egzersizi (bes
    * oynatici da `player-shell`den geciyor), unite quizi, patron turu, meydan
-   * okuma, gunun turu, haftalik sinav, deneme sinavi, rol yapma, seviye
+   * okuma, haftalik sinav, deneme sinavi, rol yapma, seviye
    * sinavi, oturumun ETAP ve BITIS kartlari, yuruyus. Oturum iki sonuc
    * tasidigi icin iki ayri olcut var.
    * Kapiyi yesil tutmak icin degil, her yuzeyin kendi turunda dogru yere
@@ -15325,10 +15213,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobQuiz = sil(read("mobile/src/screens/QuizScreen.tsx"));
     const webPatron = sil(read("src/components/boss-player.tsx"));
     const webMeydan = sil(read("src/components/challenge-player.tsx"));
-    const webGunun = sil(read("src/components/daily-player.tsx"));
     const mobPatron = sil(read("mobile/src/screens/BossScreen.tsx"));
     const mobMeydan = sil(read("mobile/src/screens/ChallengeScreen.tsx"));
-    const mobGunun = sil(read("mobile/src/screens/DailyScreen.tsx"));
     const webHaftalik = sil(read("src/components/weekly-player.tsx"));
     const webDeneme = sil(read("src/components/mock-exam-player.tsx"));
     const webRol = sil(read("src/components/lessons/roleplay-exam.tsx"));
@@ -15376,12 +15262,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web quiz=" + sonucDuyuruyor(webQuiz, '"quiz.result_passed"', "web"),
         "web patron=" + sonucDuyuruyor(webPatron, '"boss.passed"', "web"),
         "web meydan=" + sonucDuyuruyor(webMeydan, 't("daily.your_score")', "web"),
-        "web gunun=" + sonucDuyuruyor(webGunun, 't("daily.your_score")', "web"),
         "mobil beceri=" + sonucDuyuruyor(mobBeceri, '"skillp.result_perfect"', "mobil"),
         "mobil quiz=" + sonucDuyuruyor(mobQuiz, '"quiz.result_passed"', "mobil"),
         "mobil patron=" + sonucDuyuruyor(mobPatron, '"boss.passed"', "mobil"),
         "mobil meydan=" + sonucDuyuruyor(mobMeydan, 't("daily.your_score")', "mobil"),
-        "mobil gunun=" + sonucDuyuruyor(mobGunun, 't("daily.your_score")', "mobil"),
         "web haftalik=" + sonucDuyuruyor(webHaftalik, '"weekly.done_title"', "web"),
         "web deneme=" + sonucDuyuruyor(webDeneme, '"mockexam.part_done"', "web"),
         "web rol yapma=" + sonucDuyuruyor(webRol, '"rpexam.below_threshold"', "web"),
@@ -15403,9 +15287,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ],
       [
         "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
-        "web meydan=duyuruyor", "web gunun=duyuruyor",
+        "web meydan=duyuruyor",
         "mobil beceri=duyuruyor", "mobil quiz=duyuruyor", "mobil patron=duyuruyor",
-        "mobil meydan=duyuruyor", "mobil gunun=duyuruyor",
+        "mobil meydan=duyuruyor",
         "web haftalik=duyuruyor", "web deneme=duyuruyor", "web rol yapma=duyuruyor",
         "mobil haftalik=duyuruyor", "mobil deneme=duyuruyor", "mobil rol yapma=duyuruyor",
         "web sinav=duyuruyor", "web oturum etap=duyuruyor", "web oturum bitis=duyuruyor",
@@ -16277,43 +16161,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList("durum satiri duyurusu", sessiz.length ? sessiz : ["yok"], ["yok"], "sessiz satir", "beklenen");
   }
 
-  /* ── 203. gunun turu siralamasinda madalya ───────────────────────────
-   * Mobil ilk uce dolu daire + beyaz rakam veriyor ve rengi ORTAK kademe
-   * olceginden (`TIER_COLOR`) okuyor; webde madalya HIC yoktu, ilk uc
-   * dorduncuden ayirt edilemiyordu.
-   *
-   * Bu, defterde ikinci kez ayni yonde cikan bir fark: mobil tarafta
-   * duzeltilmis (orada yorumda "ayni cakisma rozet ekraninda duzeltilmisti
-   * ama burasi gozden kacmisti" yaziyor) ama webe hic ulasmamis. Renk
-   * secimi de rastgele degil, mobil tarafta OLCULMUS: madalya rengini yaziya
-   * vermek acik temada okunmuyor (altin 2.88, gumus 2.56, bronz 3.09; esik
-   * 4.5), dolu zemin + beyaz icerik ucunde de esigi geciyor.
-   *
-   * Kapi ucunu de mutlak olcutle tutuyor: iki tarafta da kural var mi, ikisi
-   * de ortak olcekten mi okuyor, ve kural AYNI mi (ilk uc, sonrasi yok). */
-  {
-    const webGun = sil(read("src/components/daily-player.tsx"));
-    const mobGun = sil(read("mobile/src/screens/DailyScreen.tsx"));
-    const kural = (src) => {
-      const i = src.indexOf("function medalColor");
-      return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ").trim();
-    };
-    const beklenen = "function medalColor(rank: number): string | null { return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;";
-    sameList(
-      "siralama madalyasi",
-      [
-        "web kural=" + (kural(webGun) === beklenen ? "ayni" : kural(webGun) ? "FARKLI" : "YOK"),
-        "mobil kural=" + (kural(mobGun) === beklenen ? "ayni" : kural(mobGun) ? "FARKLI" : "YOK"),
-        /* Dolu zemin + beyaz icerik: rengi yaziya vermek okunmuyor. */
-        "web dolu zemin=" + (/rounded-full[^"]*text-white/.test(webGun) ? "var" : "YOK"),
-        "mobil dolu zemin=" + (/borderRadius: 13[\s\S]{0,120}backgroundColor: mc/.test(mobGun) ? "var" : "YOK"),
-      ],
-      ["web kural=ayni", "mobil kural=ayni", "web dolu zemin=var", "mobil dolu zemin=var"],
-      "bulunan",
-      "beklenen",
-    );
-  }
-
   /* ── 202. tohumlu mu, rastgele mi ────────────────────────────────────
    * §201'den cikan soru: KALAN secimler hangi tarafta tohumlu, hangi tarafta
    * rastgele? Tarama uc sonuc verdi.
@@ -16536,39 +16383,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ],
       "bulunan",
       "beklenen",
-    );
-  }
-
-  /* ── 198. gunun turunun puan formulu ─────────────────────────────────
-   * Iki dosyanin da yorumu "formul ayni" diyordu (`game/daily`: "web'deki
-   * lib/daily-score ile AYNI (ekranla tablo ayrismasin)"; `lib/daily-score`:
-   * "iki kopya formul, ekranda gorunen puanla tabloya yazilanin ayrismasi
-   * demekti"). Yani gerekcesi de, sonucu da yaziliydi - olcen bir sey yoktu.
-   *
-   * Sabitler zaten korunuyordu ("ortak sayisal sabitler" bes sayiyi da
-   * goruyor, enjeksiyonla dogrulandi) ama GOVDE korunmuyordu: mobilde
-   * `combo >= 3` yerine `combo >= 2` yazmak butun kapilari yesil birakiyordu.
-   * Kullanicinin gordugu sey sudur - tur boyunca ekranda bir puan birikiyor,
-   * gun sonunda tabloda baska bir sayi yaziyor.
-   *
-   * Karsilastirma §16'nin kalibi: govde satir satir, yorumlar ayiklanarak
-   * (iki taraf kendi hikayesini anlatiyor) ve bosluk teklenerek. */
-  {
-    const govde = (p, ad) => {
-      const src = sil(read(p));
-      const i = src.indexOf("export function " + ad);
-      if (i < 0) return ["bulunamadi: " + ad + " @ " + p];
-      const j = src.indexOf("\n}", i);
-      return src
-        .slice(i, j)
-        .split("\n")
-        .map((l) => l.trim().replace(/\s+/g, " "))
-        .filter(Boolean);
-    };
-    sameList(
-      "gunun turu puan formulu",
-      govde("mobile/src/game/daily.ts", "scoreAnswer"),
-      govde("src/lib/daily-score.ts", "scoreAnswer"),
     );
   }
 
@@ -16920,6 +16734,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
     const MOBIL_CIHAZ = [
       "lernomi-app-open", //           gunun ilk acilisi (telemetri)
+      "lernomi-daily", //              gunluk hatirlatma bildiriminin OS kimligi (depo anahtari degil; Gunun turu onbellegi 2026-09-15'te kalkti)
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
       "lernomi-lesson-handsfree", //   eller serbest tercihi
@@ -17554,36 +17369,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "liste yedegi web=social.student",
         "liste yedegi mobil=social.student",
       ],
-      "bulunan",
-      "beklenen",
-    );
-  }
-
-  /* ------------------------------- 310. GUNUN TURUNDA KAZANILAN XP GORUNUYOR
-   *
-   * `POST /api/daily` her gonderimde `xpGained` donduruyor (yalniz ILK kayitta
-   * dolu - tekrar gonderilen sonuc ne tabloya ne puana giriyor). Web sonuc
-   * kartinda "+N XP" diye gosteriyordu; MOBIL bu alani hic okumuyordu, oysa
-   * tip tanimi (`game/daily` `DailyResult`) onu zaten sayiyordu. Ayni tur,
-   * ayni sunucu cevabi: kazanc bir platformda gorunuyor otekinde gorunmuyordu.
-   *
-   * Olcu dort parca: sunucu alani donduruyor, iki istemci de OKUYOR, ve iki
-   * istemci de yalniz kazanc varken yaziyor (kosulsuz yazmak tekrar acilan
-   * sonucta "+0 XP" demek olurdu - sunucu orada 0 donduruyor). */
-  {
-    const uc = sil(read("src/app/api/daily/route.ts"));
-    const webOyn = sil(read("src/components/daily-player.tsx"));
-    const mobEkr = sil(read("mobile/src/screens/DailyScreen.tsx"));
-    sameList(
-      "gunun turunda kazanilan xp",
-      [
-        "sunucu=" + (/xpGained,\s*board\s*\}/.test(uc) || /xpGained/.test(uc) ? "donduruyor" : "DONDURMUYOR"),
-        "web okuyor=" + (/setXpGained\(/.test(webOyn) ? "evet" : "HAYIR"),
-        "mobil okuyor=" + (/setXpGained\(/.test(mobEkr) ? "evet" : "HAYIR"),
-        "web kosullu=" + (/xpGained > 0/.test(webOyn) ? "evet" : "HAYIR"),
-        "mobil kosullu=" + (/xpGained > 0/.test(mobEkr) ? "evet" : "HAYIR"),
-      ],
-      ["sunucu=donduruyor", "web okuyor=evet", "mobil okuyor=evet", "web kosullu=evet", "mobil kosullu=evet"],
       "bulunan",
       "beklenen",
     );

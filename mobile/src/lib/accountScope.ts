@@ -26,7 +26,6 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-avatar", //             avatar aksesuarları
   "lernomi-voice", //              okuma sesi (webde de hesaba ait)
   "lernomi-streak", //             seri önbelleği
-  "lernomi-daily", //              günün turu önbelleği
   "lernomi-weekly", //             haftalık sınav önbelleği
   "lernomi-items-done", //         bitirilen ünite öğeleri
   "lernomi-lesson-resume:", //     yarım kalmış ders

@@ -88,10 +88,6 @@ uygulama gibi tam ekran açılır (PWA).
   ikiye katlanıyor, iki yanlışta etap hiç puan kazandırmamış oluyor, tek yanlış başa baş.
   Kayıp yalnızca o etaba ait: dünkü birikime dokunulmuyor. Bahse girmeyen için oyun hiç
   değişmiyor.
-- **Günün turu bir düello:** o tur herkese aynı kelimeleri aynı sırayla verdiği için paylaşılan
-  sonuç sıradan bir skor değil, karşılaştırılabilir bir meydan okuma. Paylaşım metni bunu
-  söylüyor ve puanı taşıyor — günün turunda kıyaslanan şey doğru sayısı değil puan, çünkü hız
-  ve seri puana giriyor.
 - **Yürürken (ekransız) mod:** uygulamanın tamamı bir ekrana bakmayı gerektiriyordu. Bu modda
   Türkçesini duyar, Almancasını söylersin — telefon cepte kalabilir. Yön bilerek üretim: şık
   işaretlemek tanımadır, ağızdan çıkarmak dilin asıl kullanıldığı iş. Tur ekrandaki turun ta
@@ -106,14 +102,11 @@ uygulama gibi tam ekran açılır (PWA).
   takar ve kalan en iyi süre rekor olarak kalır. Kaybedince hiçbir şey silinmez — cevaplar zaten
   tekrar planına işlemiştir.
 - **Arena başlangıç ekranında:** hayatta kalma turuna tek giriş oturum ÖZETİYDİ, yani turu
-  görebilmek için önce 20 turluk bir oturumu bitirmek gerekiyordu. Artık günün turunun hemen
-  altında, rekorunla birlikte duruyor.
+  görebilmek için önce 20 turluk bir oturumu bitirmek gerekiyordu. Artık Öğren'in "Daha
+  fazlası" bölümünde, rekorunla birlikte duruyor.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
-- **Günün turu:** aynı kurs ve seviyedeki herkes her gün **aynı kelimeleri aynı sırayla**
-  görür — tur saklanmaz, günden türetilir. Tek hak, süre baskısı yok; skor tablosu ve
-  paylaşılabilir sonuç bu yüzden anlamlıdır (herkes aynı soruları çözmüştür).
-- **Günün görevleri:** her gün üç görev, biri mutlaka beceri/ders/günün turu gibi az
+- **Günün görevleri:** her gün üç görev, biri mutlaka beceri/ders gibi az
   uğranan bir bölüme götürür. İlerleme ayrı bir sayaçta biriktirilmez, mevcut tablolardan
   okunur; ödül talep edilince verilir ve tamamlanma sunucuda yeniden doğrulanır.
 - **Tek oyun oyna:** on oyunun her biri 20 turluk bağımsız bir tur olarak seçilebilir.
@@ -532,7 +525,6 @@ ilerlemiyordu. Sıralamada yükselmek isteyen öğrenci kelime kartı çevirmek 
 | Kelime cevabı | kaliteye göre 3–12 (≈100 XP/dk) |
 | Beceri alıştırması | `minutes × 100 × (0,5 + 0,5 × doğruluk)` |
 | Ders | süreye göre; rol yapma ayrı ağırlık taşır (dersin asıl parçası o) |
-| Günün turu | süreye göre, ilk kayıtta bir kez |
 | Görev ödülü | görev başına 120–200, üçü birden +300 |
 | Hayatta kalma rekoru | farkla orantılı, 25–400 arası |
 | Bahisli etap | hatasızsa etabın puanı kadar ek, iki yanlışta etabın puanı kadar eksi (tavan 250) |
@@ -584,8 +576,8 @@ cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
 
 Kutlama tek bir yerde duruyor (`app-shell.tsx` → `AchievementUnlock`) ve tetikleyicisi zaten var
 olan `lernomi:stats` olayı: XP değiştiğinde bir şey kazanılmış demektir. Rozetin kazanılabileceği
-altı ayrı yere (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ayrı kutlama koymak,
-altı yerde unutulabilecek bir şey demekti.
+beş ayrı yere (kelime turu, ders, beceri, görev, hayatta kalma) ayrı kutlama koymak, beş yerde
+unutulabilecek bir şey demekti.
 
 ### Bahis
 

@@ -5,8 +5,9 @@
  * karşılaştırıyor. Şık üreticisi başka bir biçim üretirse doğru şık hiçbir
  * zaman seçilemez — kullanıcı doğruyu işaretleyip "yanlış" cevabı alır.
  *
- * Tam da bu olmuştu: `lib/session.ts` artikeli koyuyordu, `lib/daily.ts`
- * koymuyordu; Günlük oyunda tr→de yönündeki HER şık turu çözümsüzdü.
+ * Tam da bu olmuştu: `lib/session.ts` artikeli koyuyordu, Günün turunun şık
+ * üreticisi koymuyordu; o oyunda tr→de yönündeki HER şık turu çözümsüzdü
+ * (Günün turu 2026-09-15'te kaldırıldı).
  */
 import { readFileSync } from "node:fs";
 import { optionLabel, withArtikel } from "../src/lib/option-label";
@@ -40,9 +41,9 @@ const de_tr = optionLabel(ornek, "de-tr");
 if (!de_tr) bildir("de→tr etiketi üretilemedi: karşılığı olan bir kelimede null döndü");
 else if (de_tr.text !== ornek.tr || de_tr.sub !== ornek.en) bildir("de→tr etiketi anlam + ayırt edici olmalı");
 
-// 4) Sapma nöbeti: iki tur üreticisi de ortak kaynaktan geçmeli. Biri kendi
-//    etiketini yazarsa bu test görmeden yeniden ayrışırlar.
-for (const [dosya, fn] of [["src/lib/session.ts", "optionsFor"], ["src/lib/daily.ts", "seededOptions"]] as const) {
+// 4) Sapma nöbeti: tur üreticisi ortak kaynaktan geçmeli. Kendi etiketini
+//    yazarsa bu test görmeden yeniden ayrışır.
+for (const [dosya, fn] of [["src/lib/session.ts", "optionsFor"]] as const) {
   const src = readFileSync(dosya, "utf8");
   const bas = src.indexOf(`function ${fn}(`);
   if (bas < 0) { bildir(`${dosya}: ${fn} bulunamadı (yeniden adlandırıldıysa bu testi de güncelle)`); continue; }

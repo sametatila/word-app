@@ -30,7 +30,6 @@ import { UserScreen } from "../screens/UserScreen";
 import { InboxScreen } from "../screens/InboxScreen";
 import { SocialSettingsScreen } from "../screens/SocialSettingsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
-import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
 import { BossScreen } from "../screens/BossScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
@@ -81,7 +80,6 @@ export type RootStackParams = {
   Placement: { onboarding?: boolean } | undefined;
   Leaderboard: undefined;
   Notifications: undefined;
-  Daily: undefined;
   Weekly: undefined;
   Practice: undefined;
   Cando: undefined;
@@ -154,7 +152,6 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />

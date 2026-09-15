@@ -1495,23 +1495,13 @@ async function main() {
   check("fark doğru", rivalMap.get(USER)?.gap === 160, `(${rivalMap.get(USER)?.gap})`);
   check("zirvedekine rakip verilmiyor", rivalMap.get("e2e-onde") === undefined);
 
-  console.log("\n20) Paylaşılan metin — günün turu bir meydan okuma");
+  console.log("\n20) Paylaşılan metin");
   const marks = [true, true, false, true];
   const sessionText = buildShareText({
     marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test", lang: "tr" as const,
   });
-  check("sıradan tur kelime sayısı yazıyor", sessionText.includes("20 kelime"));
-  check("sıradan turda meydan okuma yok", !sessionText.includes("Aynı sorular"));
-
-  const dailyText = buildShareText({
-    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test", lang: "tr" as const,
-    kind: "daily", score: 1240,
-  });
-  check("günün turu başlıkta belli", dailyText.includes("Günün turu"));
-  check("puan yazıyor", dailyText.includes("1.240 puan"));
-  check("aynı sorular vurgusu var", dailyText.includes("Aynı sorular"));
-  check("adres her iki metinde de var", sessionText.includes("https://x.test") && dailyText.includes("https://x.test"));
-  check("kareler kelimeleri ele vermiyor", !dailyText.includes("A2 seviyesindeki kelime"));
+  check("tur kelime sayısı yazıyor", sessionText.includes("20 kelime"));
+  check("adres metinde var", sessionText.includes("https://x.test"));
 
   await db.delete(dailyStats).where(eq(dailyStats.userId, "e2e-onde"));
   await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));

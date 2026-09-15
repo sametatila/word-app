@@ -46,7 +46,7 @@ export function targetName(lang: NativeLang): string {
   return courseName(readLocal(COURSE_KEY) ?? "de", lang);
 }
 
-// Artikelli gösterim ortak kaynakta: şık üreticisi (lib/session, lib/daily) ile
+// Artikelli gösterim ortak kaynakta: şık üreticisi (lib/session) ile
 // oyun ekranının doğru cevabı kurma biçimi AYNI fonksiyondan gelmeli — ayrıldığı
 // anda doğru şık seçilemez hâle geliyor.
 export { withArtikel } from "@/lib/option-label";
