@@ -248,13 +248,34 @@ type QueueItem = {
   bias?: "recognition" | "production";
 };
 
-function wordStrength(uw: typeof userWords.$inferSelect | null | undefined): Strength {
+function wordStrength(uw: typeof userWords.$inferSelect | null | undefined, now: Date = new Date()): Strength {
   if (!uw || uw.reps === 0) return "fresh";
   // Takılan, sık unutulan ya da az önce yanlış bilinen kelime destek ister.
   if (uw.leech || uw.lapses >= 2 || uw.ease < 2.1 || uw.correctStreak === 0) return "shaky";
-  if (uw.correctStreak >= 4 && uw.intervalDays >= 7 && uw.ease >= 2.3) return "strong";
-  if (uw.correctStreak >= 2 && uw.intervalDays >= 1) return "solid";
-  return "fresh";
+  const base: Strength =
+    uw.correctStreak >= 4 && uw.intervalDays >= 7 && uw.ease >= 2.3
+      ? "strong"
+      : uw.correctStreak >= 2 && uw.intervalDays >= 1
+        ? "solid"
+        : "fresh";
+  /*
+    GECİKMİŞ KELİME BİR BASAMAK İNER.
+
+    Güç yalnız GEÇMİŞE bakıyordu (seri, aralık, kolaylık) ve kelimenin şu an
+    hatırlanıp hatırlanmadığını hiç sormuyordu. Birkaç gün ara veren öğrencide
+    7 günlük aralıktaki bir kelime on gün gecikmiş olsa da "strong" kalıyor ve
+    doğrudan çeviri/yazma ile soruluyordu. Ölçüm (Eylül): ara sonrası yazma
+    doğruluğu %92'den %42'ye, çeviri %65'ten %32'ye düştü ve tur "yapamıyorum"
+    hissine döndü. Vadesini KENDİ aralığından fazla geçiren kelime artık bir
+    basamak aşağıdan (strong→solid, solid→shaky) soruluyor; doğru bilince SRS
+    onu yine yükseltiyor.
+  */
+  const overdueDays = uw.dueAt ? (now.getTime() - new Date(uw.dueAt).getTime()) / 86_400_000 : 0;
+  if (overdueDays > Math.max(1, uw.intervalDays)) {
+    if (base === "strong") return "solid";
+    if (base === "solid") return "shaky";
+  }
+  return base;
 }
 
 /**
