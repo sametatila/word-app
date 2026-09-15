@@ -81,6 +81,23 @@ BUILD_FILE_SAYISI = {
 BUILD_FILE_SAYISI_DOSYA = {
     "GoogleService-Info.plist": 1,
 }
+# DEPODA BİLEREK OLMAYAN dosyalar: sır taşıyan yapılandırma. .gitignore'da,
+# yapı makinesinde gizli değişkenden yazılıyor. Temiz bir klonda (CI) diskte
+# olmamaları hata DEĞİL; başvurunun kendisi, fazı ve sayısı yine denetleniyor.
+# İstisna dürüst kalsın diye iki şart aranıyor: dosya git tarafından gerçekten
+# yok sayılıyor olmalı (izlenen bir dosya silinirse yakalanmaya devam etsin) ve
+# pbxproj ona hâlâ başvurmalı (bayat istisna sessiz bir delik olmasın).
+GIZLI_YAPILANDIRMA = {
+    "Lernomi/GoogleService-Info.plist": "Firebase istemci yapılandırması, mobile/.gitignore",
+}
+
+
+def git_yok_sayiyor(yol):
+    try:
+        p = subprocess.run(["git", "check-ignore", "-q", yol], cwd=ROOT, capture_output=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return p.returncode == 0
 # Hangi uzantı hangi fazda olmalı. Kaynak kod derlenir, gerisi pakete kopyalanır.
 BEKLENEN_FAZ = {
     ".swift": "Sources", ".m": "Sources",
@@ -117,8 +134,14 @@ def check_pbxproj():
         if yol.startswith("Target Support Files"):
             continue  # `pod install` üretiyor, depoda yok
         yollar[uuid] = yol
-        if not os.path.exists(os.path.join(IOS, yol)):
+        if not os.path.exists(os.path.join(IOS, yol)) and yol not in GIZLI_YAPILANDIRMA:
             hatalar.append(f"diskte olmayan dosya başvurusu: {yol}")
+
+    for yol, neden in GIZLI_YAPILANDIRMA.items():
+        if yol not in yollar.values():
+            hatalar.append(f"bayat istisna, pbxproj başvurmuyor: {yol}")
+        elif not git_yok_sayiyor(os.path.join(IOS, yol)):
+            hatalar.append(f"istisna geçersiz, dosya .gitignore'da değil: {yol} ({neden})")
 
     for uuid, ref in BUILD_FILE.findall(src):
         if ref not in tanimli_set:
