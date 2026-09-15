@@ -11,6 +11,16 @@ concurrency:
   group: checks-${{ github.ref }}
   cancel-in-progress: true
 
+# actions/checkout işe `git init` ile başlıyor ve runner'daki git
+# init.defaultBranch ayarsızken her job'da çok satırlı bir "hint: Using
+# 'master' as the name for the initial branch" uyarısı basıyordu. Ayar ortam
+# değişkeniyle veriliyor (git GIT_CONFIG_COUNT/KEY/VALUE'yu okuyor); ayrı bir
+# adım ya da global yapılandırma gerekmiyor.
+env:
+  GIT_CONFIG_COUNT: "1"
+  GIT_CONFIG_KEY_0: init.defaultBranch
+  GIT_CONFIG_VALUE_0: main
+
 jobs:
   web:
     runs-on: ubuntu-latest
@@ -22,17 +32,26 @@ jobs:
     # hiçbirini üretmez, yalnız yeşil gösterir.
     services:
       postgres:
-        image: postgres:17-alpine
+        # Debian tabanlı imaj: alpine'da sistem yereli olmadığı için initdb
+        # "no usable system locales were found" uyarısı basıyordu.
+        image: postgres:17
         env:
           POSTGRES_PASSWORD: test
           POSTGRES_DB: lernomi_test
+          # Kimlik doğrulama yöntemleri AÇIKÇA veriliyor. Verilmeyince initdb
+          # "enabling trust authentication for local connections" uyarısı
+          # basıyor. Yerel soket trust kalıyor, TCP parolalı; testler zaten
+          # parolayla bağlanıyor.
+          POSTGRES_INITDB_ARGS: "--auth-local=trust --auth-host=scram-sha-256"
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready --health-interval 5s
           --health-timeout 5s --health-retries 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # v7: node24 çalışma zamanı. v4 Node 20 hedefliyordu ve GitHub her job'da
+      # "Node.js 20 is deprecated" uyarısı basıyordu.
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with: { node-version: "22", cache: npm }
       - run: npm ci
       # Sürüm kapısı, en başta: dört kaynak (package.json, mobile/src/version.ts,
@@ -446,8 +465,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version-file: mobile/package.json
           cache: npm
