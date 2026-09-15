@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { View, ScrollView, Animated, Easing } from "react-native";
+import { View, Animated, Easing } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -7,10 +7,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { Card } from "../ui/Card";
-import { FlameIcon, SparkIcon, AlertIcon, XIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
-import { Celebrate } from "../ui/Celebrate";
+import { FlameIcon, SparkIcon, XIcon, CheckIcon, BoltIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
@@ -18,7 +16,7 @@ import { sfx } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { bumpStats } from "../lib/statsSignal";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii } from "../theme";
 
 /**
  * HAYATTA KALMA TURU — web `components/challenge-player` karşılığı.
@@ -261,7 +259,6 @@ export function ChallengeScreen() {
 
   const exit = () => nav.goBack();
   const page = { flex: 1, backgroundColor: colors.bg } as const;
-  const cardPad = { padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxl };
 
   if (phase === "loading") {
     /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip
@@ -273,61 +270,42 @@ export function ChallengeScreen() {
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }]}>
-        <AlertIcon color={colors.textMuted} size={56} />
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.load_failed")}</Text>
-        <PressableScale onPress={load} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
-        </PressableScale>
-        <PressableScale onPress={exit} style={{ paddingVertical: spacing.sm }}>
-          <Text variant="bodyStrong" color={colors.textMuted}>{t("common.go_back")}</Text>
-        </PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: load }} tertiary={{ label: t("common.go_back"), onPress: exit }} />}>
+        <StateBody alert mood="sad" title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "empty") {
     return (
-      <View style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }]}>
-        <Mascot mood="idle" size={96} />
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t("challenge.none_title")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("challenge.none_sub")}</Text>
-        <PressableScale onPress={exit} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={colors.onPrimary}>{t("common.back_to_learn")}</Text>
-        </PressableScale>
-      </View>
+      /* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
+         bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */
+      <FlowScreen center actions={<FlowActions primary={{ label: t("common.back_to_learn"), onPress: exit }} />}>
+        <StateBody mood="think" title={t("challenge.none_title")} body={t("challenge.none_sub")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "ready" && data) {
+    /* KAPAK ŞABLONU (ui/flow). Kurallar eskiden renkli "·" satırlarıydı;
+       rengin söylediği (doğru kazandırır, yanlış yakar) artık kural
+       ikonunun tonunda. Web `challenge-player` aynı sırada. */
     return (
-      <ScrollView style={page} contentContainerStyle={cardPad}>
-        <Card padded>
-          <View style={[{ width: 56, height: 56, borderRadius: radii.lg, alignSelf: "center", alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
-            <FlameIcon color={colors.onFill} size={26} />
-          </View>
-          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("challenge.title")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
-            {t("challenge.pitch", { n: START_SECONDS })}
-          </Text>
-          <View style={{ marginTop: spacing.lg, gap: spacing.sm }}>
-            <Rule colors={colors} tone={colors.successText} text={t("challenge.rule_correct")} />
-            <Rule colors={colors} tone={colors.dangerText} text={t("challenge.rule_wrong")} />
-            <Rule colors={colors} tone={colors.streakText} text={data.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves")} />
-          </View>
-          {record > 0 ? (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>
-              {t("challenge.your_record")} {record} {t("common.points")}
-            </Text>
-          ) : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
-          </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.discard")}</Text>
-          </PressableScale>
-        </Card>
-      </ScrollView>
+      <FlowScreen actions={<FlowActions primary={{ label: t("common.start"), onPress: start }} tertiary={{ label: t("common.discard"), onPress: exit }} />}>
+        <CoverBody
+          icon={FlameIcon}
+          tint={colors.primary}
+          eyebrow={t("learn.survival")}
+          title={t("challenge.title")}
+          pitch={t("challenge.pitch", { n: START_SECONDS })}
+          rules={[
+            { icon: CheckIcon, text: t("challenge.rule_correct"), tone: "ok" },
+            { icon: XIcon, text: t("challenge.rule_wrong"), tone: "bad" },
+            { icon: BoltIcon, text: data.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
+          ]}
+          note={record > 0 ? `${t("challenge.your_record")} ${record} ${t("common.points")}` : null}
+        />
+      </FlowScreen>
     );
   }
 
@@ -336,37 +314,33 @@ export function ChallengeScreen() {
     const previous = outcome?.previous ?? record;
     const isRecord = score > previous && score > 0;
     const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
+    /*
+      SONUÇ ŞABLONU (ui/flow): band (puan · rekor) → üç sayı → düğmeler.
+      Konfeti ve kutlayan maskot yalnız rekorda. Rekor kırılmadıysa maskot
+      gülümsüyor, üzülmüyor — hayatta kalma turu tükenerek bitiyor, üzgün
+      bir yüz burada haksız olurdu; band da bu yüzden `quiet` değil.
+    */
     return (
-      <ScrollView style={page} contentContainerStyle={cardPad}>
-        <Celebrate show={isRecord} />
-        <Card padded>
-          {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
-              kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
-          <View style={{ alignItems: "center" }}><Mascot mood={isRecord ? "celebrate" : "happy"} size={96} /></View>
-          {/* TURUN SONUCU DUYURULUYOR - web `challenge-player` ile ayni yer. */}
-          <Text accessibilityLiveRegion="polite" accessibilityRole="header" variant="display" style={{ textAlign: "center", marginTop: spacing.sm }}>{score} <Text variant="h3" color={colors.textMuted}>{t("common.points")}</Text></Text>
-          {isRecord ? (
-            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: spacing.xs }}>{t("challenge.new_record", { previous })}</Text>
-          ) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xs }}>{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</Text>
-          )}
-          <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
-            <Box colors={colors} label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
-            {/* İşaret KODA GÖMÜLÜ yazılıydı: Türkçe ve Almanca arayüzde de
-                "85%" çıkıyordu, oysa tr "%85", de "85 %" ister. Sözlüğün
-                biçimleyicisi bunu biliyor (`lib/i18n` `formatPercent`) ve web
-                aynı kutuda `common.pct` anahtarını kullanıyor. */}
-            <Box colors={colors} label={t("challenge.hit_rate")} value={formatPercent(accuracy)} />
-            <Box colors={colors} label={t("challenge.longest_streak")} value={String(bestCombo)} />
-          </View>
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
-          </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.back_to_learn")}</Text>
-          </PressableScale>
-        </Card>
-      </ScrollView>
+      <FlowScreen
+        celebrate={isRecord}
+        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: start }} tertiary={{ label: t("common.back_to_learn"), onPress: exit }} />}
+      >
+        <ResultHero
+          eyebrow={t("learn.survival")}
+          title={t("daily.your_score")}
+          figure={String(score)}
+          sub={isRecord ? null : `${t("challenge.your_record")} ${outcome?.best ?? Math.max(record, score)}`}
+          pill={isRecord ? { text: t("challenge.new_record", { previous }) } : null}
+          mood={isRecord ? "celebrate" : "happy"}
+        />
+        {/* İşaret KODA GÖMÜLÜ yazılıydı: Türkçe ve Almanca arayüzde de "85%"
+            çıkıyordu; sözlüğün biçimleyicisi (`formatPercent`) dili biliyor. */}
+        <StatRow items={[
+          { value: `${tally.correct}/${tally.total}`, label: t("daily.correct") },
+          { value: formatPercent(accuracy), label: t("challenge.hit_rate") },
+          { value: String(bestCombo), label: t("challenge.longest_streak"), tone: "streak" },
+        ]} />
+      </FlowScreen>
     );
   }
 
@@ -422,24 +396,6 @@ export function ChallengeScreen() {
       </View>
 
       <RoundView key={round?.id ?? index} round={round} onDone={onDone} />
-    </View>
-  );
-}
-
-function Rule({ colors, tone, text }: { colors: Palette; tone: string; text: string }) {
-  return (
-    <View style={{ flexDirection: "row", gap: spacing.sm }}>
-      <Text variant="bodyStrong" color={tone}>·</Text>
-      <Text variant="body" color={colors.text} style={{ flex: 1 }}>{text}</Text>
-    </View>
-  );
-}
-
-function Box({ colors, label, value }: { colors: Palette; label: string; value: string }) {
-  return (
-    <View style={{ flex: 1, borderRadius: radii.md, backgroundColor: colors.surface2, paddingVertical: spacing.md, alignItems: "center" }}>
-      <Text variant="h3">{value}</Text>
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{label}</Text>
     </View>
   );
 }

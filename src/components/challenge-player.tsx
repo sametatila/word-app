@@ -3,16 +3,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
-import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
+import { AchievementFlash, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
-import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
+import { BoltIcon, CheckIcon, FlameIcon, SparkIcon, XIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
 import { useLang, useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
 import { formatDecimal, formatPercent } from "@/lib/i18n/dict";
@@ -242,91 +241,56 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
      Android karsiligi `accessibilityLiveRegion="polite"`. */
   if (status === "loading")
     return (
-      <Frame>
-        <p role="status" aria-busy="true" className="muted text-center text-body">{t("challenge.preparing")}</p>
-      </Frame>
+      <FlowColumn>
+        <p role="status" aria-busy="true" className="card muted p-4 text-center text-body">{t("challenge.preparing")}</p>
+      </FlowColumn>
     );
 
   if (status === "error")
     return (
-      <Frame>
+      <FlowColumn>
         {/* YERINDE TEKRAR DENEME. Web yalniz "geri don" diyordu: gecici bir ag
             hatasi kullaniciyi meydan okumadan tamamen atiyordu. Android'deki
             sira: birincil "tekrar dene", ikincil cikis (`ChallengeScreen`).
-            Hata ayrica DUYURULUYOR - ekrani kaplayan bir hata metni canli
-            bolge degilse ekran okuyucu kullanan biri hicbir sey duymuyor. */}
-        <div role="alert" className="text-center">
-          <AlertIcon size={22} />
-          <p className="mt-2 text-body">{t("challenge.load_failed")}</p>
-          <button
-            type="button"
-            onClick={() => setAttempt((n) => n + 1)}
-            className="btn btn-primary mt-4 w-full px-5 py-3"
-          >
-            {t("common.try_again")}
-          </button>
-          <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            {t("common.go_back")}
-          </button>
-        </div>
-      </Frame>
+            Hata `alert` ile DUYURULUYOR. */}
+        <StateBody alert mood="sad" title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")}>
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
 
   if (status === "empty")
     return (
-      <Frame>
-        <div className="text-center">
-          {/* MASKOT BOS DALDA DA. Android ayni ekranda `idle` maskotu
-              ciziyor (`ChallengeScreen`); webde yalniz sonuc dalinda vardi,
-              yani "bugun meydan okuma yok" ekrani karaktersiz bir metin
-              blogu olarak kaliyordu. */}
-          <Mascot mood="idle" size={96} className="mx-auto" />
-          <h2 className="mt-1 text-h3">{t("challenge.none_title")}</h2>
-          <p className="muted mt-2 text-body">
-            {t("challenge.none_sub")}
-          </p>
-          <button onClick={onExit} className="btn btn-primary mt-5 w-full px-5 py-4">
-            {t("common.back_to_learn")}
-          </button>
-        </div>
-      </Frame>
+      <FlowColumn>
+        {/* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
+            bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */}
+        <StateBody mood="think" title={t("challenge.none_title")} body={t("challenge.none_sub")}>
+          <FlowActions primary={{ label: t("common.back_to_learn"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
 
   if (status === "ready")
     return (
-      <Frame>
-        <div className="text-center">
-          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
-            <FlameIcon size={26} />
-          </div>
-          <h2 className="text-h2">{t("challenge.title")}</h2>
-          <p className="muted mt-2 text-body">
-            {t("challenge.pitch", { n: START_SECONDS })}
-          </p>
-
-          <ul className="mt-4 space-y-1.5 text-left text-body">
-            <Rule tone="mint">{t("challenge.rule_correct")}</Rule>
-            <Rule tone="rose">{t("challenge.rule_wrong")}</Rule>
-            <Rule tone="flame">
-              {data?.weak
-                ? t("challenge.rule_waves_weak", { weak: data.weak })
-                : t("challenge.rule_waves")}
-            </Rule>
-          </ul>
-
-          {record > 0 ? (
-            <p className="muted mt-4 text-body">
-              {t("challenge.your_record")} <strong>{record}</strong> {t("common.points")}
-            </p>
-          ) : null}
-          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4 text-h3">
-            {t("common.start")}
-          </button>
-          <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            {t("common.discard")}
-          </button>
-        </div>
-      </Frame>
+      /* KAPAK ŞABLONU (`flow`). Kurallar eskiden renkli nokta satırlarıydı;
+         rengin söylediği (doğru kazandırır, yanlış yakar) artık kural
+         ikonunun tonunda. Mobil `ChallengeScreen` aynı sırada. */
+      <FlowColumn>
+        <CoverBody
+          icon={<FlameIcon size={28} />}
+          tint="var(--color-brand-500)"
+          eyebrow={t("learn.survival")}
+          title={t("challenge.title")}
+          pitch={t("challenge.pitch", { n: START_SECONDS })}
+          rules={[
+            { icon: <CheckIcon size={16} />, text: t("challenge.rule_correct"), tone: "ok" },
+            { icon: <XIcon size={16} />, text: t("challenge.rule_wrong"), tone: "bad" },
+            { icon: <BoltIcon size={16} />, text: data?.weak ? t("challenge.rule_waves_weak", { weak: data.weak }) : t("challenge.rule_waves") },
+          ]}
+          note={record > 0 ? `${t("challenge.your_record")} ${record} ${t("common.points")}` : null}
+        />
+        <FlowActions primary={{ label: t("common.start"), onClick: start }} tertiary={{ label: t("common.discard"), onClick: onExit }} />
+      </FlowColumn>
     );
 
   if (status === "done") {
@@ -336,39 +300,31 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     const isRecord = score > previous && score > 0;
     const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
     return (
-      <Frame>
+      /*
+        SONUÇ ŞABLONU (`flow`): band (puan · rekor) → üç sayı → düğmeler.
+        Konfeti ve kutlayan maskot yalnız rekorda. Rekor kırılmadıysa maskot
+        gülümsüyor, üzülmüyor — hayatta kalma turu tükenerek bitiyor; band da
+        bu yüzden `quiet` değil. Bandın `role="status"`u sonucu duyuruyor.
+      */
+      <FlowColumn celebrate={isRecord}>
         <RecordChime fire={isRecord} />
-        <Confetti fire={isRecord ? 1 : 0} count={40} />
-        {/* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */}
-        <div role="status" className="text-center">
-          {/* Rekor kırıldıysa kutluyor, kırılmadıysa gülümsüyor — hayatta
-              kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
-          <Mascot mood={isRecord ? "celebrate" : "happy"} size={96} className="mx-auto" />
-          <h2 className="text-display">
-            <CountUp value={score} /> <span className="text-h3">{t("common.points")}</span>
-          </h2>
-          {isRecord ? (
-            <p className="mt-1 text-strong text-[color:var(--color-mint)]">
-              {t("challenge.new_record", { previous })}
-            </p>
-          ) : (
-            <p className="muted mt-1 text-body">{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</p>
-          )}
-
-          <div className="mt-5 grid grid-cols-3 gap-2 text-center">
-            <Box label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
-            <Box label={t("challenge.hit_rate")} value={formatPercent(accuracy, lang)} />
-            <Box label={t("challenge.longest_streak")} value={String(bestCombo)} />
-          </div>
-
-          <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4">
-            {t("common.try_again")}
-          </button>
-          <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            {t("common.back_to_learn")}
-          </button>
-        </div>
-      </Frame>
+        <ResultHero
+          eyebrow={t("learn.survival")}
+          title={t("daily.your_score")}
+          figure={<CountUp value={score} />}
+          sub={isRecord ? null : `${t("challenge.your_record")} ${outcome?.best ?? Math.max(record, score)}`}
+          pill={isRecord ? { text: t("challenge.new_record", { previous }) } : null}
+          mood={isRecord ? "celebrate" : "happy"}
+        />
+        <StatRow
+          items={[
+            { value: `${tally.correct}/${tally.total}`, label: t("daily.correct") },
+            { value: formatPercent(accuracy, lang), label: t("challenge.hit_rate") },
+            { value: String(bestCombo), label: t("challenge.longest_streak"), tone: "streak" },
+          ]}
+        />
+        <FlowActions primary={{ label: t("common.try_again"), onClick: start }} tertiary={{ label: t("common.back_to_learn"), onClick: onExit }} />
+      </FlowColumn>
     );
   }
 
@@ -465,43 +421,6 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         </motion.div>
       </AnimatePresence>
     </div>
-  );
-}
-
-function Rule({ tone, children }: { tone: "mint" | "rose" | "flame"; children: React.ReactNode }) {
-  const color = `var(--color-${tone}-500)`;
-  return (
-    <li className="flex items-start gap-2">
-      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: color }} />
-      <span className="muted">{children}</span>
-    </li>
-  );
-}
-
-function Box({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-panel px-2 py-3 surface-2">
-      <div className="text-strong">{value}</div>
-      <div className="muted text-micro">{label}</div>
-    </div>
-  );
-}
-
-function Frame({ children }: { children: React.ReactNode }) {
-  const t = useT();
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="relative mx-auto w-full max-w-md"
-    >
-      <div className="card p-4">{children}</div>
-      <p className="muted mt-4 text-center text-caption">
-        <Link href="/learn" className="underline-offset-4 hover:underline">
-          {t("challenge.back_to_normal")}
-        </Link>
-      </p>
-    </motion.div>
   );
 }
 

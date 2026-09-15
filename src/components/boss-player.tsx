@@ -9,10 +9,11 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
-import { Confetti, CountUp } from "@/components/celebrate";
+import { CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
-import { AlertIcon, ClockIcon, TrophyIcon } from "@/components/icons";
+import { AlertIcon, BoltIcon, BookIcon, ClockIcon, CrownIcon, RefreshIcon, TrophyIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "@/components/flow";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatDecimal } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
@@ -235,109 +236,105 @@ export function BossPlayer({
      bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
      der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
      Android karsiligi `accessibilityLiveRegion="polite"`. */
-  if (status === "loading") return <Frame role="status" busy><p className="muted">{t("exam.preparing")}</p></Frame>;
+  if (status === "loading")
+    return (
+      <FlowColumn>
+        <p role="status" aria-busy="true" className="card muted p-4 text-center">{t("exam.preparing")}</p>
+      </FlowColumn>
+    );
 
   if (status === "error")
     return (
-      <Frame role="alert">
-        <AlertIcon size={26} />
-        <h2 className="mt-2 text-h3">{t("exam.could_not_load")}</h2>
-        <button onClick={() => void load()} className="btn btn-primary mt-5 w-full px-5 py-3">{t("common.try_again")}</button>
-        <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      <FlowColumn>
+        <StateBody alert mood="sad" title={t("exam.could_not_load")}>
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void load() }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
 
   if (status === "empty")
     return (
-      <Frame>
-        <h2 className="text-h3">{t("boss.not_ready")}</h2>
-        <p className="muted mt-2 text-body">{t("boss.not_ready_sub")}</p>
-        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
-      </Frame>
+      /* "Henüz hazır değil" bir bekleyiş (think). Tekrar denemek burada
+         anlamsız - aynı cevap gelir; tek çıkış çerçeveli "Geri dön". */
+      <FlowColumn>
+        <StateBody alert mood="think" title={t("boss.not_ready")} body={t("boss.not_ready_sub")}>
+          <FlowActions secondary={{ label: t("common.go_back"), onClick: onExit }} />
+        </StateBody>
+      </FlowColumn>
     );
 
   if (status === "ready" && data) {
     const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
+    /* KAPAK ŞABLONU (`flow`). Kurallar eskiden "·" ile başlayan dört metin
+       satırıydı; artık her biri ikonlu tek satır. "Henüz hazır değilsin"
+       uyarısı kapağın içinde uyarı notu. Mobil `BossScreen` aynı sırada. */
     return (
-      <Frame>
-        <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
-          <TrophyIcon size={26} />
-        </div>
-        <p className="muted text-micro uppercase tracking-eyebrow">
-          {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
-        </p>
-        <h2 className="mt-1 text-h2">{t("bossw.title_exam", { title: data.meta.title })}</h2>
-        <ul className="mt-4 space-y-1.5 text-left text-body">
-          <li>· {t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}</li>
-          <li>· {t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}</li>
-          <li>· {t("bossw.rule_crown")}</li>
-          <li className="muted">· {t("bossw.rule_pool", { n: data.pool })}</li>
-        </ul>
-
-        {!ready ? (
-          <p
-            className="mt-4 rounded-panel px-3 py-2.5 text-body"
-            style={{
-              background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
-              color: "var(--color-flame)",
-            }}
-          >
-            {t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })}
-          </p>
-        ) : null}
-
-        {best !== null ? (
-          <p className="muted mt-3 text-body">{t("bossw.best_left", { n: best })}</p>
-        ) : null}
-
-        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4 text-h3">
-          {t(best !== null ? "boss.beat_record" : "boss.enter")}
-        </button>
-        <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-          {t("bossw.back_to_path")}
-        </button>
-      </Frame>
+      <FlowColumn>
+        <CoverBody
+          icon={<TrophyIcon size={28} />}
+          tint="var(--color-brand-500)"
+          eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
+          title={t("bossw.title_exam", { title: data.meta.title })}
+          rules={[
+            { icon: <ClockIcon size={16} />, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
+            { icon: <BoltIcon size={16} />, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
+            { icon: <CrownIcon size={16} />, text: t("bossw.rule_crown") },
+            { icon: <BookIcon size={16} />, text: t("bossw.rule_pool", { n: data.pool }) },
+          ]}
+          note={best !== null ? t("bossw.best_left", { n: best }) : null}
+        >
+          {!ready ? (
+            <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })} />
+          ) : null}
+        </CoverBody>
+        <FlowActions
+          primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onClick: start }}
+          tertiary={{ label: t("bossw.back_to_path"), onClick: onExit }}
+        />
+      </FlowColumn>
     );
   }
 
-  if (status === "won" || status === "lost") {
+  if ((status === "won" || status === "lost") && data) {
     const won = status === "won";
     const secondsLeft = Math.round(left);
     return (
-      /* TURUN SONUCU DUYURULUYOR (bkz. 11.337): kart oyunun yerine geliyor ve
-         "gectin" / "sure doldu" yalniz gorsel bir degisiklikti. */
-      <Frame role="status">
-        <Confetti fire={won ? 1 : 0} count={won ? 40 : 0} />
-        <div
-          className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile"
-          style={{
-            background: won ? "var(--color-mint)" : "var(--surface-2)",
-            color: won ? "var(--on-fill)" : "var(--text-muted)",
-          }}
-        >
-          {won ? <TrophyIcon size={26} /> : <ClockIcon size={26} />}
-        </div>
-        <h2 className="text-h1">{t(won ? "boss.passed" : "boss.time_up")}</h2>
-        <p className="muted mt-1 text-body">
-          {won
-            ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
-            : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
-        </p>
-        {won && isRecord ? (
-          <p className="mt-1 text-strong" style={{ color: "var(--color-mint)" }}>
-            {t("bossw.record_prefix")} <CountUp value={secondsLeft} /> {t("bossw.record_suffix")}
-          </p>
-        ) : null}
-        {!won ? (
-          <p className="muted mt-3 text-body">{t("bossw.still_counted")}</p>
-        ) : null}
-        <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-4">
-          {t(won ? "bossw.play_again" : "common.try_again")}
-        </button>
-        <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-          {t("bossw.back_to_path")}
-        </button>
-      </Frame>
+      /*
+        SONUÇ ŞABLONU (`flow`). Kazanınca kupa ikonu yerine kutlayan maskot,
+        ana sayı kalan süre; kaybedince band `quiet`, "Geçilmedi" etiketi ve
+        üzgün maskot. Konfeti yalnız kazanınca. Bandın `role="status"`u sonucu
+        duyuruyor (bkz. 11.337).
+      */
+      <FlowColumn celebrate={won}>
+        <ResultHero
+          eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
+          title={t(won ? "boss.passed" : "boss.time_up")}
+          figure={won ? t("challenge.seconds", { n: secondsLeft }) : null}
+          sub={
+            won
+              ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
+              : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })
+          }
+          pill={
+            won
+              ? isRecord
+                ? { text: <>{t("bossw.record_prefix")} <CountUp value={secondsLeft} /> {t("bossw.record_suffix")}</> }
+                : null
+              : { text: t("boss.not_passed"), tone: "bad" }
+          }
+          quiet={!won}
+          mood={won ? "celebrate" : "sad"}
+        />
+        <StatRow
+          items={[
+            { value: `${tally.correct}/${tally.total}`, label: t("common.correct"), tone: "ok" },
+            { value: String(Math.max(0, tally.total - tally.correct)), label: t("common.wrong"), tone: tally.total > tally.correct ? "bad" : null },
+            { value: best !== null ? t("challenge.seconds", { n: best }) : "—", label: t("bossw.stat_best") },
+          ]}
+        />
+        {!won ? <FlowNote icon={<RefreshIcon size={16} />} text={t("bossw.still_counted")} /> : null}
+        <FlowActions primary={{ label: t("bossw.play_again"), onClick: start }} tertiary={{ label: t("bossw.back_to_path"), onClick: onExit }} />
+      </FlowColumn>
     );
   }
 
@@ -380,19 +377,6 @@ export function BossPlayer({
       <FitBox>
         <GameSwitch round={round} onDone={(results) => handleDone(round, results)} />
       </FitBox>
-    </div>
-  );
-}
-
-/**
- * `role` DISARIDAN: Frame uc durumu da sariyor (giris, oyun, sonuc) ve
- * `role="status"`u burada sabitlemek tur oynanirken de canli bolge acmak
- * olurdu. Sonucu duyuran yalniz sonuc dali.
- */
-function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status" | "alert"; busy?: boolean }) {
-  return (
-    <div className="relative mx-auto w-full max-w-md">
-      <div role={role} aria-busy={busy ? "true" : undefined} className="card p-4 text-center">{children}</div>
     </div>
   );
 }

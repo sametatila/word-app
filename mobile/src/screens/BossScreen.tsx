@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { View, ScrollView } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -7,16 +7,15 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { t, formatDecimal } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { Card } from "../ui/Card";
-import { TrophyIcon, RepeatIcon, XIcon } from "../ui/icons";
-import { Celebrate } from "../ui/Celebrate";
+import { TrophyIcon, RepeatIcon, XIcon, ClockIcon, BoltIcon, CrownIcon, BookIcon, AlertIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } from "../game/session";
 import { api } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
-import { useTheme, spacing, radii, softShadow, soft } from "../theme";
+import { useTheme, spacing, radii } from "../theme";
 
 /**
  * MODÜL PATRONU — web `components/boss-player` karşılığı.
@@ -232,92 +231,84 @@ export function BossScreen() {
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center", gap: spacing.md }]}>
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{t(data ? "boss.not_ready" : "exam.could_not_load")}</Text>
-        {data ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("boss.not_ready_sub")}</Text> : null}
-        {/* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
-            dalında yeniden denemek aynı cevabı getirir (dersler bitmemiş). */}
-        {data ? null : (
-          <PressableScale onPress={() => void load()} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t("common.try_again")}</Text>
-          </PressableScale>
-        )}
-        <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-          <Text variant="bodyStrong" color={colors.text}>{t("common.go_back")}</Text>
-        </PressableScale>
-      </View>
+      <FlowScreen
+        center
+        actions={
+          <FlowActions
+            /* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
+               dalında yeniden denemek aynı cevabı getirir (dersler bitmemiş);
+               orada tek çıkış çerçeveli "Geri dön". */
+            primary={data ? null : ({ label: t("common.try_again"), onPress: () => void load() })}
+            secondary={data ? { label: t("common.go_back"), onPress: exit } : null}
+            tertiary={data ? null : { label: t("common.go_back"), onPress: exit }}
+          />
+        }
+      >
+        {/* Hazır değil = bekleyiş (think), yüklenemedi = hata (sad). */}
+        <StateBody alert mood={data ? "think" : "sad"} title={t(data ? "boss.not_ready" : "exam.could_not_load")} body={data ? t("boss.not_ready_sub") : null} />
+      </FlowScreen>
     );
   }
 
   if (phase === "ready" && data) {
     const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
+    /* KAPAK ŞABLONU (ui/flow). Kurallar eskiden "·" ile başlayan dört metin
+       satırıydı; artık her biri ikonlu tek satır. "Henüz hazır değilsin"
+       uyarısı kapağın içinde uyarı notu. Web `boss-player` aynı sırada. */
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
-        <Card padded>
-          <View style={[{ width: 56, height: 56, borderRadius: radii.lg, alignSelf: "center", alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
-            <TrophyIcon color={colors.onFill} size={26} />
-          </View>
-          <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
-            {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
-          </Text>
-          <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.xs }}>{t("bossw.title_exam", { title: data.meta.title })}</Text>
-          <View style={{ marginTop: spacing.lg, gap: 6 }}>
-            <Text variant="body">{`· ${t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}`}</Text>
-            <Text variant="body">{`· ${t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}`}</Text>
-            <Text variant="body">{`· ${t("bossw.rule_crown")}`}</Text>
-            <Text variant="body" color={colors.textMuted}>{`· ${t("bossw.rule_pool", { n: data.pool })}`}</Text>
-          </View>
-          {!ready ? (
-            <View style={{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: 10 }}>
-              <Text variant="caption" color={colors.streakText}>{t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })}</Text>
-            </View>
-          ) : null}
-          {best !== null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("bossw.best_left", { n: best })}</Text> : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t(best !== null ? "boss.beat_record" : "boss.enter")}</Text>
-          </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
-          </PressableScale>
-        </Card>
-      </ScrollView>
+      <FlowScreen actions={<FlowActions primary={{ label: t(best !== null ? "boss.beat_record" : "boss.enter"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}>
+        <CoverBody
+          icon={TrophyIcon}
+          tint={colors.primary}
+          eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
+          title={t("bossw.title_exam", { title: data.meta.title })}
+          rules={[
+            { icon: ClockIcon, text: t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds }) },
+            { icon: BoltIcon, text: t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty }) },
+            { icon: CrownIcon, text: t("bossw.rule_crown") },
+            { icon: BookIcon, text: t("bossw.rule_pool", { n: data.pool }) },
+          ]}
+          note={best !== null ? t("bossw.best_left", { n: best }) : null}
+        >
+          {!ready ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })} /> : null}
+        </CoverBody>
+      </FlowScreen>
     );
   }
 
   if ((phase === "won" || phase === "lost") && data) {
     const won = phase === "won";
     const secondsLeft = Math.round(left);
+    /*
+      SONUÇ ŞABLONU (ui/flow). Kazanınca kupa ikonu yerine kutlayan maskot,
+      ana sayı kalan süre; kaybedince band `quiet`, "Geçilmedi" etiketi ve
+      üzgün maskot. Konfeti yalnız kazanınca.
+    */
     return (
-      <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={{ padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
-        <Celebrate show={won} />
-        <Card padded>
-          {/* Kaybedince saat ikonu gösterilir; mobil ikon kümesinde saat yok,
-              web `ClockIcon` yerine tekrar ikonu: "süre bitti, yeniden dene"
-              aynı şeyi söylüyor. */}
-          <View style={{ width: 56, height: 56, borderRadius: radii.lg, alignSelf: "center", alignItems: "center", justifyContent: "center", backgroundColor: won ? colors.success : colors.surface2 }}>
-            {won ? <TrophyIcon color={colors.onFill} size={26} /> : <RepeatIcon color={colors.textMuted} size={26} />}
-          </View>
-          {/* TURUN SONUCU DUYURULUYOR - web `boss-player` ile ayni yer. */}
-          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ textAlign: "center", marginTop: spacing.md }}>{t(won ? "boss.passed" : "boss.time_up")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xs }}>
-            {won
-              ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
-              : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
-          </Text>
-          {won && isRecord ? (
-            <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center", marginTop: spacing.xs }}>
-              {`${t("bossw.record_prefix")} ${secondsLeft} ${t("bossw.record_suffix")}`}
-            </Text>
-          ) : null}
-          {!won ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("bossw.still_counted")}</Text> : null}
-          <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t(won ? "bossw.play_again" : "common.try_again")}</Text>
-          </PressableScale>
-          <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
-          </PressableScale>
-        </Card>
-      </ScrollView>
+      <FlowScreen
+        celebrate={won}
+        actions={<FlowActions primary={{ label: t("bossw.play_again"), onPress: start }} tertiary={{ label: t("bossw.back_to_path"), onPress: exit }} />}
+      >
+        <ResultHero
+          eyebrow={t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
+          title={t(won ? "boss.passed" : "boss.time_up")}
+          figure={won ? t("challenge.seconds", { n: secondsLeft }) : null}
+          sub={won
+            ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
+            : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
+          pill={won
+            ? (isRecord ? { text: `${t("bossw.record_prefix")} ${secondsLeft} ${t("bossw.record_suffix")}` } : null)
+            : { text: t("boss.not_passed"), tone: "bad" }}
+          quiet={!won}
+          mood={won ? "celebrate" : "sad"}
+        />
+        <StatRow items={[
+          { value: `${tally.correct}/${tally.total}`, label: t("common.correct"), tone: "ok" },
+          { value: String(Math.max(0, tally.total - tally.correct)), label: t("common.wrong"), tone: tally.total > tally.correct ? "bad" : null },
+          { value: best !== null ? t("challenge.seconds", { n: best }) : "—", label: t("bossw.stat_best") },
+        ]} />
+        {!won ? <FlowNote icon={<RepeatIcon color={colors.textMuted} size={16} />} text={t("bossw.still_counted")} /> : null}
+      </FlowScreen>
     );
   }
 

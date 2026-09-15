@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MIN_MASTERED } from "../lib/learningRules";
 import { t, formatPercent } from "../lib/i18n";
-import { ScrollView, View } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon } from "../ui/icons";
-import { ProgressRing } from "../ui/ProgressRing";
-import { Mascot } from "../ui/Mascot";
+import { XIcon, ExamIcon, KeyboardIcon, LockIcon, CalendarIcon, AlertIcon, CheckIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { fetchWeekly, submitWeekly, type WeeklyStatus } from "../game/weekly";
 import { todayStr, type DoneExtra } from "../game/session";
@@ -18,7 +17,7 @@ import type { Round, AnswerOut } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
@@ -137,115 +136,126 @@ export function WeeklyScreen() {
 
   if (phase === "auth") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>{t("weekly.sign_in_for_weekly_quiz")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("weekly.test_what_you_ve_learned_once")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.sign_in_sign_up")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("weekly.sign_in_sign_up"), onPress: () => { nav.goBack(); nav.navigate("Auth"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="wave" title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "ready") {
+    /*
+     * KAPAK ŞABLONU (ui/flow). Kurallar eskiden tek bir "·" dizisiydi
+     * ("25 soru · yalnız yazarak · ipucu yok · tek hak"); artık her kural
+     * kendi ikonlu satırında. Pekişmiş kelime cümlesi tek cümlelik tanıtım,
+     * dürüst ölçüm notu kapağın notu - web `weekly-player` aynı sırada.
+     */
     return (
-      <View style={[pad, { justifyContent: "center" }]}>
-        {/* DUSUNEN MIRKET — web ayni kapakta ayni kipi ve ayni boyu ciziyor
-            (`weekly-player`, `mood="think" size={64}`); mobilde hic maskot
-            yoktu. Web satiri sola yatirip maskotu basligin soluna koyuyor,
-            mobil kapak ortali oldugu icin maskot basligin USTUNDE - ayni
-            secim `GameScreen`in "kelime yok" dalinda da yapili. */}
-        <View style={{ alignItems: "center", marginBottom: spacing.md }}><Mascot mood="think" size={64} /></View>
-        <Text accessibilityRole="header" variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-          {t("weekly.pitch", { n: rounds.length })}{" "}
-          {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0, min: MIN_MASTERED })}
-        </Text>
-        <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("weekly.honest_note")}</Text>
-        <PressableScale
-          onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("playing"); }}
-          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
-        >
-          <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
-        </PressableScale>
-        {/* "Sonra", "Kapat" değil: düğme sınavı ERTELİYOR, hak duruyor. Web
-            aynı yerde aynı sözü söylüyor (`weekly-player`). */}
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text></PressableScale>
-      </View>
+      <FlowScreen
+        actions={
+          <FlowActions
+            primary={{ label: t("common.start"), onPress: () => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("playing"); } }}
+            /* "Sonra", "Kapat" değil: düğme sınavı ERTELİYOR, hak duruyor. Web
+               aynı yerde aynı sözü söylüyor (`weekly-player`). */
+            tertiary={{ label: t("common.later"), onPress: () => nav.goBack() }}
+          />
+        }
+      >
+        <CoverBody
+          icon={ExamIcon}
+          tint={colors.primary}
+          eyebrow={t("learn.weekly_quiz")}
+          title={t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}
+          pitch={t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0, min: MIN_MASTERED })}
+          rules={[
+            { icon: KeyboardIcon, text: t("weekly.rule_count", { n: rounds.length }) },
+            { icon: LockIcon, text: t("weekly.rule_no_hints") },
+            { icon: CalendarIcon, text: t("weekly.rule_once") },
+          ]}
+          note={t("weekly.honest_note")}
+        />
+      </FlowScreen>
     );
   }
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("weekly.couldn_t_load_weekly_quiz")}</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.try_again")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("weekly.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody alert mood="sad" title={t("weekly.couldn_t_load_weekly_quiz")} body={t("game.check_your_connection_and_try")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "done") {
     const score = result?.score ?? 0;
-    const done = (result?.total ?? 0) > 0;
+    const correct = result?.correct ?? 0;
+    const total = result?.total ?? 0;
+    /* SINAV YOK: sınav kurulamadıysa sonuç değil durum ekranı. Eskiden burada
+       da %0'lık bir halka çiziliyordu ve oynanmamış bir sınavdan kalınmış
+       gibi okunuyordu. Web aynı dalı `empty` diye ayrı çiziyor. */
+    if (total <= 0) {
+      return (
+        <FlowScreen center actions={<FlowActions primary={{ label: t("weekly.start_round"), onPress: () => { nav.goBack(); nav.navigate("Game"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+          <StateBody mood="think" title={t("weekly.none_title")} body={t("weekly.none_sub")} />
+        </FlowScreen>
+      );
+    }
     /*
      * KUYRUĞA GERİ DÖNENLER — web `weekly-player` aynı yerde gösteriyor.
      *
      * Sınav bitiyordu ve "{total} sorudan {correct} doğru" dışında hiçbir şey
-     * yazmıyordu: HANGİ kelimede takıldığın hiçbir yerde görünmüyordu. Turun
-     * özetinde bu liste vardı (§11.x "zorlandıkların"), haftalık sınavda
-     * yoktu. Hesap sunucudan gelmiyor, elde duran cevaplardan çıkıyor —
-     * webdeki hesabın aynısı: bir kelime turlarının HEPSİNDE doğruysa doğru.
+     * yazmıyordu: HANGİ kelimede takıldığın hiçbir yerde görünmüyordu. Hesap
+     * sunucudan gelmiyor, elde duran cevaplardan çıkıyor — webdeki hesabın
+     * aynısı: bir kelime turlarının HEPSİNDE doğruysa doğru.
      */
     const wordOf = (r: Round) => (r.game === "match" ? r.words?.[0] : r.word);
     const byWord = new Map<number, boolean>();
     for (const a of answers.current) if (a.wordId) byWord.set(a.wordId, (byWord.get(a.wordId) ?? true) && a.correct);
     const wrong = rounds.map(wordOf).filter((w): w is NonNullable<typeof w> => !!w && byWord.get(w.id) === false);
+    /* Konfeti yalnız olumlu sonuçta ve kayıt yazıldıysa: gönderilemeyen bir
+       sınavı kutlamak "hakkın kullanıldı" izlenimini güçlendirirdi. */
+    const good = score >= 80;
+    /*
+      SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartı →
+      altta sabit düğme. Halka kalktı: bandın ana sayısı aynı yüzdeyi veriyor.
+      Maskot da eklendi - sonuçta maskotu olmayan tek ekranlardan biriydi.
+    */
     return (
-      <View style={pad}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-        </View>
-        {/* Özet KAYDIRILABİLİR: sığıyorsa ortada, sığmıyorsa kaydırılıyor.
-            Sabit ortalanmış bir kutuda içerik ekranı aşınca hem üstten hem
-            alttan kesiliyor ve kaydırılamıyordu (bkz. `GameScreen` özeti). */}
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, alignItems: "center", justifyContent: "center", paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
-          {/* HALKA YALNIZ OYNANMIŞSA. Sınav kurulamadığında da %0'lık bir halka
-              çiziliyordu: "şu an sınav yok" başlığının üstünde sıfır puan,
-              oynanmamış bir sınavdan kalınmış gibi okunuyordu. */}
-          {done ? (
-            <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-              <Text variant="display" color={colors.primaryText}>{formatPercent(score)}</Text>
-              <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
-            </ProgressRing>
-          ) : null}
-          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-            {done ? t("weekly.done_sub", { total: result?.total ?? 0, correct: result?.correct ?? 0 }) : t("weekly.none_sub")}
-          </Text>
-          {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği: web
-              aynı yerde söylüyor, mobilde hiç yazmıyordu. */}
-          {notSent ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md }}>{t("weekly.not_sent")}</Text> : null}
-          {done ? (
-            wrong.length ? (
-              <View style={{ width: "100%", marginBottom: spacing.lg }}>
-                <Text variant="bodyStrong" style={{ marginBottom: spacing.sm }}>{t("weekly.back_in_queue")}</Text>
-                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                  {wrong.map((w) => (
-                    <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
-                      <Text variant="caption">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
-                      <Text variant="micro" color={colors.textMuted}>{w.tr}</Text>
-                    </View>
-                  ))}
+      <FlowScreen
+        celebrate={good && !notSent}
+        top={<FlowTopBar onClose={() => nav.goBack()} />}
+        actions={<FlowActions primary={{ label: t("common.finish"), onPress: () => nav.goBack() }} />}
+      >
+        <ResultHero
+          eyebrow={t("learn.weekly_quiz")}
+          title={t("weekly.done_title")}
+          figure={formatPercent(score)}
+          sub={t("weekly.done_sub", { total, correct })}
+          mood={good ? "celebrate" : score >= 50 ? "happy" : "sad"}
+        />
+        <StatRow items={[
+          { value: `${correct}/${total}`, label: t("common.correct"), tone: "ok" },
+          { value: String(Math.max(0, total - correct)), label: t("weekly.wrong_count"), tone: total > correct ? "bad" : null },
+          { value: "1", label: t("weekly.per_week") },
+        ]} />
+        {/* Haftada tek hak var: kaydedilmemiş bir sınav "yapıldı" görünürse
+            kullanıcı hakkını harcadığını sanır - bu yüzden kırmızı not. */}
+        {notSent ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t("weekly.not_sent")} /> : null}
+        {correct === total ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("weekly.all_correct")} /> : null}
+        {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği. */}
+        <FlowNote icon={<CalendarIcon color={colors.textMuted} size={16} />} text={t("weekly.once_a_week")} />
+        {wrong.length ? (
+          <DetailCard title={t("weekly.back_in_queue")}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+              {wrong.map((w) => (
+                <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
+                  <Text variant="caption">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{w.tr}</Text>
                 </View>
-              </View>
-            ) : (
-              <Text variant="caption" color={colors.successText} style={{ textAlign: "center", marginBottom: spacing.lg }}>{t("weekly.all_correct")}</Text>
-            )
-          ) : null}
-          {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg }}>{t("weekly.once_a_week")}</Text> : null}
-          <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
-        </ScrollView>
-      </View>
+              ))}
+            </View>
+          </DetailCard>
+        ) : null}
+      </FlowScreen>
     );
   }
 

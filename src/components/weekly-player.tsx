@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { MIN_MASTERED } from "@/lib/weekly-const";
 import { useEffect, useRef, useState } from "react";
@@ -10,14 +9,14 @@ import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { RoundExit } from "@/components/round-exit";
-import { Mascot } from "@/components/mascot";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
+import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, KeyboardIcon, LockIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import type { WeeklyStatus } from "@/lib/weekly";
 import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { localDay } from "@/lib/day";
 import { formatPercent } from "@/lib/i18n/dict";
-import { ScoreRing } from "@/components/score-ring";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
 /* `auth` AYRI BIR HAL (bkz. `daily-player`): 401 "tekrar dene" ile
@@ -139,117 +138,100 @@ export function WeeklyPlayer() {
   }
   if (phase === "auth") {
     return (
-      <section role="alert" className="card mx-auto w-full max-w-md p-5 text-center">
-        <p className="text-h3">{t("weekly.sign_in_for_weekly_quiz")}</p>
-        <p className="muted mt-2 text-body leading-relaxed">{t("weekly.test_what_you_ve_learned_once")}</p>
-        <Link href="/login" prefetch={false} className="btn btn-primary mt-4 block w-full px-4 py-3 text-body">
-          {t("weekly.sign_in_sign_up")}
-        </Link>
-        <Link href="/learn" prefetch={false} className="btn btn-ghost mt-2 block px-4 py-2 text-center text-body">
-          {t("common.close")}
-        </Link>
-      </section>
+      <FlowColumn>
+        <StateBody alert mood="wave" title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")}>
+          <FlowActions primary={{ label: t("weekly.sign_in_sign_up"), href: "/login" }} tertiary={{ label: t("common.close"), href: "/learn" }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
 
   if (phase === "error") {
     return (
-      <section role="alert" className="card mx-auto w-full max-w-md p-5">
-        <p className="text-body">{t("weekly.load_failed")}</p>
+      <FlowColumn>
         {/* YERİNDE TEKRAR DENEME — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış. Yalnız çıkış sunmak geçici bir ağ hatasında
             kullanıcıyı ekrandan atıyordu. */}
-        <button
-          type="button"
-          onClick={() => setAttempt((n) => n + 1)}
-          className="btn btn-primary mt-3 w-full px-4 py-2 text-body"
-        >
-          {t("weekly.try_again")}
-        </button>
-        <Link href="/learn" className="btn btn-ghost mt-2 block px-4 py-2 text-center text-body">
-          {t("weekly.back_to_learn")}
-        </Link>
-      </section>
+        <StateBody alert mood="sad" title={t("weekly.couldn_t_load_weekly_quiz")} body={t("game.check_your_connection_and_try")}>
+          <FlowActions primary={{ label: t("weekly.try_again"), onClick: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
   if (phase === "empty") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-h3">{t("weekly.none_title")}</h1>
-        <p className="muted mt-2 text-body">{t("weekly.none_sub")}</p>
-        <Link href="/learn" className="btn btn-primary mt-4 w-full px-5 py-3 text-body">
-          {t("weekly.start_round")}
-        </Link>
-      </section>
+      <FlowColumn>
+        <StateBody mood="think" title={t("weekly.none_title")} body={t("weekly.none_sub")}>
+          <FlowActions primary={{ label: t("weekly.start_round"), href: "/learn" }} />
+        </StateBody>
+      </FlowColumn>
     );
   }
   if (phase === "ready" && data) {
+    /*
+     * KAPAK ŞABLONU (`flow`). Kurallar eskiden tek bir "·" dizisiydi
+     * ("25 soru · yalnız yazarak · ipucu yok · tek hak"); artık her kural
+     * kendi ikonlu satırında. Mobil `WeeklyScreen` aynı sırada.
+     */
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
-        <div className="flex items-start gap-3">
-          <Mascot mood="think" size={64} />
-          <div>
-            <h1 className="text-h3">{t(data.status.short ? "plan.weekly_short" : "plan.weekly_exam")}</h1>
-            <p className="muted mt-1 text-body">
-              {t("weekly.pitch", { n: data.rounds.length })}{" "}
-              {data.status.short
-                ? t("weekly.pitch_short", { n: data.status.mastered, min: MIN_MASTERED })
-                : t("weekly.pitch_full", { n: data.status.mastered })}
-            </p>
-            <p className="muted mt-1 text-caption">{t("weekly.honest_note")}</p>
-          </div>
-        </div>
-        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
-          {t("common.start")}
-        </button>
-        <Link href="/learn" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
-          {t("common.later")}
-        </Link>
-      </section>
+      <FlowColumn>
+        <CoverBody
+          icon={<ExamIcon size={28} />}
+          tint="var(--color-brand-500)"
+          eyebrow={t("learn.weekly_quiz")}
+          title={t(data.status.short ? "plan.weekly_short" : "plan.weekly_exam")}
+          pitch={
+            data.status.short
+              ? t("weekly.pitch_short", { n: data.status.mastered, min: MIN_MASTERED })
+              : t("weekly.pitch_full", { n: data.status.mastered })
+          }
+          rules={[
+            { icon: <KeyboardIcon size={16} />, text: t("weekly.rule_count", { n: data.rounds.length }) },
+            { icon: <LockIcon size={16} />, text: t("weekly.rule_no_hints") },
+            { icon: <CalendarIcon size={16} />, text: t("weekly.rule_once") },
+          ]}
+          note={t("weekly.honest_note")}
+        />
+        <FlowActions primary={{ label: t("common.start"), onClick: start }} tertiary={{ label: t("common.later"), href: "/learn" }} />
+      </FlowColumn>
     );
   }
   if (phase === "done" && result) {
     const byWord = new Map<number, boolean>();
     for (const a of answers.current) byWord.set(a.wordId, (byWord.get(a.wordId) ?? true) && a.correct);
     const wrong = (data?.rounds ?? []).map(wordOf).filter((w) => byWord.get(w.id) === false);
+    /* Konfeti yalnız olumlu sonuçta ve kayıt yazıldıysa: gönderilemeyen bir
+       sınavı kutlamak "hakkın kullanıldı" izlenimini güçlendirirdi. */
+    const good = result.score >= 80;
     return (
       /*
-        YERLESIM ANDROID'DEKI GIBI. Iki ekran ayni sonucu iki bicimde
-        ciziyordu: Android buyuk bir halkayi ORTADA gosterip altina basligi ve
-        "{total} sorudan {correct} dogru" satirini yaziyor; web 64 px'lik
-        kucuk bir halkayi yanda tutup "Kullanim skorun" diye BASKA bir baslik
-        ve "hafta {n}" diye bir satir yaziyordu.
-
-        O "hafta {n}" satiri ayrica HATALIYDI: `{n}` sayi bekliyor ama
-        `status.week` bir dizge ("2026-W37"), yani ekranda "hafta 2026-W37"
-        yaziyordu. Android'de bu satir hic yok; yerlesim esitlenirken hata da
-        kapaniyor.
-
-        Halkanin rengi de Android'den: puana gore uc renk degil, MARKA rengi -
-        "yuzde kac" bilgisini halkanin dolulugu tasiyor, rengi degil.
+        SONUÇ ŞABLONU (`flow`): band → üç sayı → notlar → ayrıntı kartı →
+        tek birincil düğme. Halka kalktı: bandın ana sayısı aynı yüzdeyi
+        veriyor. Mobil `WeeklyScreen` aynı alanları aynı sırayla çiziyor.
       */
-      <section role="status" className="card mx-auto w-full max-w-md p-5 text-center">
-        {result.total > 0 ? (
-          <ScoreRing id="weekly-score" size={160} stroke={15} pct={result.score} className="mx-auto">
-            <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
-              {formatPercent(result.score, lang)}
-            </span>
-            <span className="muted text-micro">{t("weekly.score")}</span>
-          </ScoreRing>
-        ) : null}
-        <h1 className="mt-5 text-h1">{t("weekly.done_title")}</h1>
-        <p className="muted mt-1 text-body">
-          {t("weekly.done_sub", { total: result.total, correct: result.correct })}
-        </p>
-        {notSent ? (
-          <p className="mt-3 text-strong" style={{ color: "var(--color-danger)" }}>
-            {t("weekly.not_sent")}
-          </p>
-        ) : null}
+      <FlowColumn celebrate={good && !notSent}>
+        <ResultHero
+          eyebrow={t("learn.weekly_quiz")}
+          title={t("weekly.done_title")}
+          figure={formatPercent(result.score, lang)}
+          sub={t("weekly.done_sub", { total: result.total, correct: result.correct })}
+          mood={good ? "celebrate" : result.score >= 50 ? "happy" : "sad"}
+        />
+        <StatRow
+          items={[
+            { value: `${result.correct}/${result.total}`, label: t("common.correct"), tone: "ok" },
+            { value: String(Math.max(0, result.total - result.correct)), label: t("weekly.wrong_count"), tone: result.total > result.correct ? "bad" : null },
+            { value: "1", label: t("weekly.per_week") },
+          ]}
+        />
+        {/* Haftada tek hak var: kaydedilmemiş bir sınav "yapıldı" görünürse
+            kullanıcı hakkını harcadığını sanır - bu yüzden kırmızı not. */}
+        {notSent ? <FlowNote tone="bad" icon={<AlertIcon size={16} />} text={t("weekly.not_sent")} /> : null}
+        {result.total > 0 && result.correct === result.total ? <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("weekly.all_correct")} /> : null}
+        <FlowNote icon={<CalendarIcon size={16} />} text={t("weekly.once_a_week")} />
         {wrong.length ? (
-          <div className="mt-4">
-            <p className="text-strong">{t("weekly.back_in_queue")}</p>
-            <ul className="mt-1 flex flex-wrap gap-2">
+          <DetailCard title={t("weekly.back_in_queue")}>
+            <ul className="flex flex-wrap gap-2">
               {wrong.map((w) => (
                 <li key={w.id} className="chip px-3 py-1 text-caption" lang={course}>
                   {w.artikel ? `${w.artikel} ` : ""}
@@ -257,17 +239,10 @@ export function WeeklyPlayer() {
                 </li>
               ))}
             </ul>
-          </div>
-        ) : answers.current.length ? (
-          <p className="mt-4 text-body" style={{ color: "var(--color-mint)" }}>
-            {t("weekly.all_correct")}
-          </p>
+          </DetailCard>
         ) : null}
-        <p className="muted mt-3 text-caption">{t("weekly.once_a_week")}</p>
-        <Link href="/learn" className="btn btn-primary mt-4 w-full px-5 py-3 text-body">
-          {t("weekly.back_to_learn")}
-        </Link>
-      </section>
+        <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
+      </FlowColumn>
     );
   }
 
