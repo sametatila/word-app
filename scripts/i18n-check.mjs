@@ -285,21 +285,17 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
   `lib/premium/access.ts` her karari bir `reason` ile donduruyor
   (`premium_only`, `quota_spent`, `fair_use`, `free_quota`) ve bu anahtarlar o
   sebeplerin karsiligi olarak yazilmis; kotayi ARAYUZE baglama karari
-  Samet'te (bkz. docs/plan/web-parity.md §11.254). Silinmiyorlar cunku hazir
+  Samet'te (bkz. docs/plan/web-parity.md §11.254). Beceriler kutuphanesinin
+  kilidi (2026-09-15, `lib/premium/gate-note`) alti tanesini bagladi ve listeden
+  cikti. Kalanlar silinmiyor cunku hazir
   bir soz varligi; listede duruyorlar cunku bugun hicbir sey soylemiyorlar.
   Liste UZAYAMAZ: yeni bir olu anahtar dogarsa denetim duser.
 */
 const DINAMIK_ORTAK = [/^genre\./, /^promo\./, /^league\.tier_/, /^band\./, /^push\.rem_.*_named$/];
 const HAZIR_AMA_BAGLANMAMIS = new Set([
-  "gate.premium_only",
   "gate.quota_left_day",
-  "gate.quota_left_week",
-  "gate.quota_left_total",
-  "gate.quota_left_total.one",
   "gate.quota_spent_day",
-  "gate.quota_spent_week",
   "gate.quota_spent_total",
-  "gate.fair_use",
   "gate.pocket_walk_locked",
   "gate.upgrade",
 ]);
