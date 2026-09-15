@@ -16,6 +16,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // giriş formu geliyor. Burada yalnızca "yeniden dene" gösteriliyor.
   if (!user && failed) return <SessionUnavailable />;
   if (!user) redirect(authEnabled ? "/login" : "/");
+  /*
+    MİSAFİR WEB'DE GİRİŞSİZ SAYILIYOR. Hesapsız kullanım yalnız mobilde var
+    (mağaza ön inceleme B24); web hesap istemeye devam ediyor. Misafir çerezi
+    taşıyan bir tarayıcı giriş sayfasına gidiyor — giriş sayfası da misafiri
+    girişsiz saydığı için (`getAccountUserId`) iki sayfa birbirine yönlendirmez.
+  */
+  if (user.guest) redirect("/login");
 
   let streak = 0;
   let xp = 0;

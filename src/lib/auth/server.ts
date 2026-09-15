@@ -16,7 +16,8 @@ import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/a
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 import { captchaPlugins } from "@/lib/auth/captcha";
-import { twoFactor } from "better-auth/plugins";
+import { anonymous, twoFactor } from "better-auth/plugins";
+import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
@@ -411,6 +412,17 @@ export const auth = betterAuth({
         gerçek kullanıcı bu tavana çarpmıyor.
       */
       "/send-verification-email": { window: 3600, max: 5 },
+      /*
+        MİSAFİR KİMLİĞİ AÇMA. Uç kimlik, e-posta ya da doğrulama istemiyor; her
+        çağrı veritabanında bir kullanıcı ve oturum açıyor. Kuralsız kalsaydı
+        Better Auth'un `/sign-in*` varsayılanı (10 saniyede 3) geçerdi, yani
+        saatte binin üstünde kimlik. Misafir yapay zekâ, sosyal, satın alma ve
+        bildirim kullanamıyor (bkz. lib/auth/guest), geriye kalan maliyet
+        seslendirme kotası ve satır; saatte 10 bir aileyi, bir sınıfı rahat
+        geçirir. Mobil operatörlerin ortak IP'si (CGNAT) bu tavana çarparsa
+        kullanıcı yine hesapla girebiliyor.
+      */
+      "/sign-in/anonymous": { window: 3600, max: 10 },
     },
   },
   advanced: {
@@ -448,6 +460,37 @@ export const auth = betterAuth({
      * devredilebilir bir dizgeye çevirebilirdi.
      */
     oneTimeToken({ expiresIn: 3, storeToken: "hashed", disableClientRequest: true }),
+    /**
+     * MİSAFİR KİMLİĞİ — mobilde "Hesapsız devam et" (mağaza ön inceleme B24,
+     * App Store 5.1.1(v): hesaba bağlı olmayan içerik girişsiz açılmalı).
+     *
+     * `POST /sign-in/anonymous` e-postasız, adsız bir kullanıcı ve oturum
+     * açıyor; öğrenme uçları (kelime turları, dersler, beceriler, Patika,
+     * sınavlar) bu oturumla bugünkü gibi çalışıyor. Hesap isteyen dört alan
+     * misafire kapalı: sosyal, yapay zekâ, satın alma ve bildirim
+     * (bkz. lib/auth/guest `requireAccount`).
+     *
+     * EKLENTİNİN BAĞLAMA KANCASI BİLEREK ETKİSİZ. Eklenti, misafir çerezi
+     * taşıyan bir girişte yeni kullanıcıyı görüp misafiri SİLİYOR ama bu
+     * yolda `purgeUserData` çalışmıyor (yalnız `internalAdapter.deleteUser`)
+     * ve misafirin ilerlemesi sahipsiz kalıyordu. Üstelik kanca Android'deki
+     * Apple girişini (`/one-time-token/verify`) ve e-posta doğrulamasının
+     * sonradan açılan bağlantısını görmüyor. Devralma bu yüzden istemcinin
+     * açık çağrısıyla yapılıyor: gerçek oturum açılınca uygulama misafirin
+     * jetonunu `/api/account/guest/claim`e veriyor, sunucu ilerlemeyi hesaba
+     * birleştirip misafiri siliyor (bkz. lib/account/guest-merge).
+     * `disableDeleteAnonymousUser` hem kancanın silmesini hem eklentinin
+     * temizliksiz silme ucunu kapatıyor; misafir silme `/api/account/guest`.
+     *
+     * Ad "guest" ve e-posta `.invalid` alanında: ikisi de hiçbir yüzeye
+     * çıkmıyor (`readSession` misafirde ikisini de null döndürüyor) ve posta
+     * yolu bu adresi baştan eliyor.
+     */
+    anonymous({
+      emailDomainName: GUEST_EMAIL_DOMAIN,
+      generateName: () => "guest",
+      disableDeleteAnonymousUser: true,
+    }),
     /**
      * İKİ ADIMLI DOĞRULAMA — isteğe bağlı, e-posta koduyla.
      *
@@ -617,7 +660,17 @@ export const auth = betterAuth({
  * bir `getUserEmail()` zaten vardı ama o oturumu İKİNCİ kez okuyor; aynı
  * çağrıda gelen bir alanı ikinci bir istekle almak gereksiz.
  */
-export type SessionUser = { id: string; name: string | null; email: string | null };
+export type SessionUser = {
+  id: string;
+  name: string | null;
+  email: string | null;
+  /**
+   * Misafir kimliği mi (bkz. lib/auth/guest). Misafirde ad ve e-posta NULL:
+   * eklentinin yazdığı yer tutucu ad ve `.invalid` adres hiçbir yüzeye
+   * çıkmamalı — profil kartı, görünen ad, posta.
+   */
+  guest: boolean;
+};
 export type SessionRead = { user: SessionUser | null; failed: boolean };
 
 async function readSession(): Promise<SessionRead> {
@@ -626,7 +679,9 @@ async function readSession(): Promise<SessionRead> {
     const data = await auth.api.getSession({ headers: await headers() });
     const u = data?.user;
     if (!u) return { user: null, failed: false };
-    return { user: { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null }, failed: false };
+    const guest = (u as { isAnonymous?: boolean | null }).isAnonymous === true;
+    if (guest) return { user: { id: u.id, name: null, email: null, guest: true }, failed: false };
+    return { user: { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null, guest: false }, failed: false };
   } catch (err) {
     /*
       Next'in KENDİ akış hataları buraya düşmemeli. Somut hâli: ana sayfa
@@ -652,6 +707,18 @@ export async function getUserId(): Promise<string | null> {
 
 export async function getUserInfo(): Promise<SessionUser | null> {
   return (await readSession()).user;
+}
+
+/**
+ * Oturumdaki GERÇEK hesabın kimliği; giriş yoksa ya da oturum bir misafirinse
+ * null. Web sayfaları için: web hesap istemeye devam ediyor ve misafir çerezi
+ * taşıyan bir tarayıcı girişsiz sayılmalı. `getUserId` kullanılsaydı giriş
+ * sayfası misafiri uygulamaya, uygulama düzeni de girişe yollar ve iki sayfa
+ * birbirine yönlendirirdi.
+ */
+export async function getAccountUserId(): Promise<string | null> {
+  const u = (await readSession()).user;
+  return u && !u.guest ? u.id : null;
 }
 
 /** Oturum durumu + okuma hatası bilgisi (giriş ekranına yönlendirme kararı için). */

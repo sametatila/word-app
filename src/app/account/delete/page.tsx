@@ -57,7 +57,10 @@ export default async function AccountDeletePage() {
   let signedIn = false;
   try {
     const data = await auth.api.getSession({ headers: await headers() });
-    signedIn = Boolean(data?.user?.id);
+    /* Misafir kimliği web'de hesap sayılmıyor: silme formu parola ya da
+       taze giriş istiyor ve misafirin ikisi de yok. Misafir verisini mobilde
+       Profil'den siliyor; burada girişsiz ziyaretçinin bilgi sayfası açılır. */
+    signedIn = Boolean(data?.user?.id) && !(data?.user as { isAnonymous?: boolean | null } | undefined)?.isAnonymous;
     email = data?.user?.email ?? null;
   } catch {
     signedIn = false;

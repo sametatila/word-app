@@ -30,6 +30,9 @@ export async function GET(req: Request) {
   const h = await headers();
   const session = await auth.api.getSession({ headers: h });
   if (!session) return NextResponse.redirect(new URL("/login", req.url));
+  // Tarayıcıdaki bir misafir oturumu uygulamaya devredilmez: bu yol yalnız
+  // tarayıcıda tamamlanan Apple girişini taşımak için var.
+  if ((session.user as { isAnonymous?: boolean | null }).isAnonymous) return NextResponse.redirect(new URL("/login", req.url));
 
   let token: string;
   try {

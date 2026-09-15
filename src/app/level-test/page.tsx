@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { titleMeta } from "@/lib/page-meta";
-import { getUserId } from "@/lib/auth/server";
+import { getAccountUserId } from "@/lib/auth/server";
 import { DemoPlacement } from "@/components/placement/demo-placement";
 
 export const generateMetadata = titleMeta("placement.title");
@@ -15,6 +15,6 @@ export const dynamic = "force-dynamic";
  * sunucuda puanlanıyor; burası ona rakip değil, önündeki adım.
  */
 export default async function LevelTestPage() {
-  if (await getUserId()) redirect("/placement");
+  if (await getAccountUserId()) redirect("/placement");
   return <DemoPlacement />;
 }

@@ -31,7 +31,8 @@ export default async function CourseSelectPage() {
 
   let alreadyChosen = false;
   try {
-    if (!user) throw new Error("misafir");
+    // Misafir kimliği de web'de girişsiz sayılıyor (bkz. (app)/layout).
+    if (!user || user.guest) throw new Error("misafir");
     /*
       Ad, hesabın kendi adından tamamlanıyor (`ensureProfile` ikinci argüman).
       Bu ekran ismi ARTIK SORMUYOR: kayıt formu ve kimlik sağlayıcısı zaten

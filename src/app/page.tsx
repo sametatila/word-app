@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { getUserId } from "@/lib/auth/server";
+import { getAccountUserId } from "@/lib/auth/server";
 import { SignOutLink } from "@/components/sign-out-link";
 import { Reveal } from "@/components/reveal";
 import { Mascot } from "@/components/mascot";
@@ -79,7 +79,8 @@ export default async function Home() {
   */
   const t = await getT();
   const lang = await getLang();
-  const signedIn = Boolean(await getUserId());
+  // Misafir web'de girişsiz: "Başla" onu kuruluma götürür, uygulama düzenine değil.
+  const signedIn = Boolean(await getAccountUserId());
   const startHref = signedIn ? "/learn" : "/setup";
 
   return (

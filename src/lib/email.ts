@@ -4,6 +4,7 @@ import { LEGAL_ENTITY } from "@/lib/legal";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { redisClient, warnRedisOnce } from "@/lib/auth/redis";
 import { track } from "@/lib/events";
+import { isGuestEmail } from "@/lib/auth/guest-email";
 
 /**
  * Giden e-posta — sağlayıcı **Resend**, taşıma **SMTP**.
@@ -109,6 +110,16 @@ export async function sendEmail(
 ): Promise<void> {
   if (!emailConfigured) {
     console.log(`[email] SMTP tanımsız — gönderilmedi: ${to} · ${subject}`);
+    return;
+  }
+  /*
+    Misafir kimliğinin adresi yer tutucu (`.invalid`, bkz. lib/auth/guest-email).
+    Oraya giden bir posta hiçbir kutuya düşmez; sağlayıcıda geri dönen posta
+    olarak birikir ve gönderici itibarını düşürür. Sıfırlama isteği gibi
+    kimlik istemeyen bir uç bu adresi alırsa gönderim burada biter.
+  */
+  if (isGuestEmail(to)) {
+    console.warn(`[email] guest placeholder address, not sent: ${subject}`);
     return;
   }
   if (await overMailCap(to)) {

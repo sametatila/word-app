@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getT } from "@/lib/i18n/server";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
-import { authEnabled, getUserId, googleConfigured, appleWebConfigured } from "@/lib/auth/server";
+import { authEnabled, getAccountUserId, googleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
 import { titleMeta } from "@/lib/page-meta";
 import { turnstileSiteKey } from "@/lib/auth/captcha";
@@ -28,7 +28,8 @@ export default async function LoginPage() {
     );
   }
 
-  const userId = await getUserId();
+  // Misafir oturumu girişsiz sayılıyor: uygulama düzeni misafiri buraya yolluyor.
+  const userId = await getAccountUserId();
   if (userId) redirect("/learn");
 
   // AuthForm useSearchParams okuyor (?next=): Suspense sınırı gerekir.
