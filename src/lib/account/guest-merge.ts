@@ -325,6 +325,24 @@ type ProfileRow = {
 };
 
 /**
+ * Kimliğin öğrenme ilerlemesi var mı — birleştirmenin cümlesini ("taşındı" /
+ * "birleştirildi") ve istemcinin "hesabına eklensin mi?" sorusunu belirliyor.
+ */
+export async function hasProgress(exec: { execute: typeof db.execute }, userId: string): Promise<boolean> {
+  const row = rowsOf(await exec.execute(sql`
+    select (
+      exists (select 1 from user_words where user_id = ${userId})
+      or exists (select 1 from daily_stats where user_id = ${userId})
+      or exists (select 1 from user_lessons where user_id = ${userId})
+      or exists (select 1 from user_skills where user_id = ${userId})
+      or exists (select 1 from mock_exam_attempts where user_id = ${userId})
+      or exists (select 1 from placements where user_id = ${userId})
+    ) as had
+  `))[0] as { had?: boolean } | undefined;
+  return Boolean(row?.had);
+}
+
+/**
  * Misafiri hesaba birleştirir ve misafiri siler. Hedef gerçek bir hesap
  * olmalı; misafir de hâlâ misafir.
  */
@@ -343,16 +361,7 @@ export async function mergeGuestInto(guestId: string, targetId: string): Promise
     if (!guest || !guest.guest) return { merged: false, reason: "guest_not_found" } as const;
     if (!target || target.guest) return { merged: false, reason: "target_not_account" } as const;
 
-    const had = rowsOf(await tx.execute(sql`
-      select (
-        exists (select 1 from user_words where user_id = ${T})
-        or exists (select 1 from daily_stats where user_id = ${T})
-        or exists (select 1 from user_lessons where user_id = ${T})
-        or exists (select 1 from user_skills where user_id = ${T})
-        or exists (select 1 from mock_exam_attempts where user_id = ${T})
-        or exists (select 1 from placements where user_id = ${T})
-      ) as had
-    `))[0] as { had?: boolean } | undefined;
+    const had = { had: await hasProgress(tx, T) };
 
     for (const step of mergeSteps(G, T)) {
       for (const statement of step.statements) await tx.execute(statement);

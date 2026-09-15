@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { consume } from "@/lib/social/ratelimit";
-import { mergeGuestInto, verifyGuestToken } from "@/lib/account/guest-merge";
+import { deleteGuest, hasProgress, mergeGuestInto, verifyGuestToken } from "@/lib/account/guest-merge";
+import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,16 @@ const NO_STORE = { "cache-control": "no-store" } as const;
  * guest-merge). `targetHadProgress` istemcinin cümlesini seçiyor: "ilerlemen
  * hesabına taşındı" ya da "hesabındaki ilerlemeyle birleştirildi".
  *
+ * KİP (`mode`): "merge" (varsayılan) yukarıdaki iş. "preview" hiçbir şeyi
+ * değiştirmeden iki tarafın ilerlemesini söylüyor — var olan, içinde
+ * ilerleme olan bir hesaba girişte istemci birleştirmeden ÖNCE soruyor
+ * ("bu cihazdaki ilerleme hesabına eklensin mi?"): başka birinin misafir
+ * turları sessizce hesaba karışmasın. "discard" kullanıcı eklemek
+ * istemediğinde misafiri siliyor (misafir silmeyle aynı temizlik).
+ *
+ *   POST { guestId, token, mode: "preview" } → 200 { guestHasProgress, targetHasProgress }
+ *   POST { guestId, token, mode: "discard" } → 200 { discarded: true }
+ *
  * Misafir bulunamazsa (jeton yanlış, temizlik silmiş, iki istek yarışmış)
  * 404 `guest_not_found`: istemci kaydını siliyor ve devam ediyor, çünkü
  * birleştirilecek bir şey kalmamış.
@@ -36,15 +47,18 @@ export async function POST(req: Request) {
   // Misafir oturumuyla misafir almak anlamsız: hedef gerçek bir hesap olmalı.
   if (who.guest) return NextResponse.json({ error: "guest_session" }, { status: 403 });
 
-  let body: { guestId?: unknown; token?: unknown };
+  let body: { guestId?: unknown; token?: unknown; mode?: unknown };
   try {
-    body = (await req.json()) as { guestId?: unknown; token?: unknown };
+    body = (await req.json()) as { guestId?: unknown; token?: unknown; mode?: unknown };
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
   const guestId = typeof body.guestId === "string" && body.guestId.length > 0 && body.guestId.length <= 64 ? body.guestId : null;
   const token = typeof body.token === "string" && body.token.length >= 16 && body.token.length <= 128 ? body.token : null;
-  if (!guestId || !token) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+  const mode = body.mode === undefined ? "merge" : body.mode;
+  if (!guestId || !token || (mode !== "merge" && mode !== "preview" && mode !== "discard")) {
+    return NextResponse.json({ error: "bad_request" }, { status: 400 });
+  }
 
   /* Jeton tahmin edilemez, ama yine de hesap başına sınır: bir hesabın saatte
      onlarca misafir birleştirmesi meşru bir akış değil. Anahtar
@@ -57,6 +71,14 @@ export async function POST(req: Request) {
   try {
     if (!(await verifyGuestToken(guestId, token))) {
       return NextResponse.json({ error: "guest_not_found" }, { status: 404, headers: NO_STORE });
+    }
+    if (mode === "preview") {
+      const [guestHasProgress, targetHasProgress] = await Promise.all([hasProgress(db, guestId), hasProgress(db, who.id)]);
+      return NextResponse.json({ guestHasProgress, targetHasProgress }, { headers: NO_STORE });
+    }
+    if (mode === "discard") {
+      if (!(await deleteGuest(guestId))) return NextResponse.json({ error: "guest_not_found" }, { status: 404, headers: NO_STORE });
+      return NextResponse.json({ discarded: true }, { headers: NO_STORE });
     }
     const out = await mergeGuestInto(guestId, who.id);
     if (!out.merged) {

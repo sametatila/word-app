@@ -24,7 +24,7 @@ import {
   userWords,
   words,
 } from "@/lib/db/schema";
-import { deleteGuest, mergeGuestInto, mergeStreaks, purgeStaleGuests, verifyGuestToken } from "../src/lib/account/guest-merge";
+import { deleteGuest, hasProgress, mergeGuestInto, mergeStreaks, purgeStaleGuests, verifyGuestToken } from "../src/lib/account/guest-merge";
 import { purgeUserData } from "../src/lib/account/purge";
 
 /**
@@ -305,6 +305,9 @@ async function mergeIntoNew() {
   await db.insert(profiles).values({ userId: G2, course: "en", level: "A2", courseChosenAt: at(10), totalXp: 30, currentStreak: 2, longestStreak: 2, lastActiveDay: d(0), nativeLang: "de" });
   await db.insert(userWords).values({ userId: G2, wordId: 900010, state: 1, reps: 1, lastReviewedAt: at(3) });
 
+  /* "Hesabına eklensin mi?" sorusu bu ölçüden çıkıyor (api/account/guest/claim preview). */
+  check("ilerleme ölçüsü: misafirde kelime var", await hasProgress(db, G2));
+  check("ilerleme ölçüsü: boş hesapta yok", !(await hasProgress(db, T2)));
   const out = await mergeGuestInto(G2, T2);
   check("taşındı ve hesapta önceden ilerleme yoktu", out.merged === true && out.targetHadProgress === false, out);
   const [prof] = await db.select().from(profiles).where(eq(profiles.userId, T2));
