@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Keychain from "react-native-keychain";
 import { api, API_BASE, ApiError, fetchWithTimeout } from "../api/client";
 
 /**
@@ -52,10 +53,42 @@ export function isAccountRequired(e: unknown): boolean {
   return e instanceof ApiError && e.status === 403 && e.message === ACCOUNT_REQUIRED;
 }
 
-export async function loadGuestRecord(): Promise<GuestRecord | null> {
+/*
+ * KAYIT GÜVENLİ DEPODA — iOS Keychain, Android Keystore (react-native-keychain).
+ *
+ * Jeton misafirin oturumunun KENDİSİ: onu bilen misafir olarak girer ve
+ * ilerlemesini bir hesaba birleştirebilir. AsyncStorage'da açık metin
+ * duruyordu. Güvenli depo iki şey kazandırıyor: jeton şifreli ve (iOS'ta)
+ * uygulama silinip yeniden kurulsa da duruyor — misafir ilerlemesine dönüyor
+ * (bkz. lib/auth/guest-resume). `THIS_DEVICE_ONLY`: iCloud yedeğiyle başka bir
+ * cihaza taşınmıyor; Android'de `allowBackup=false` zaten aynı işi yapıyor.
+ *
+ * Güvenli depo açılamazsa (eski cihaz, bozuk anahtar deposu) kayıt
+ * AsyncStorage'a düşüyor: şifresiz bir jeton, kaybolmuş bir ilerlemeden iyi.
+ * Eski sürümün AsyncStorage kaydı ilk okumada güvenli depoya taşınıyor.
+ */
+const SECURE_SERVICE = "app.lernomi.guest";
+
+async function readSecure(): Promise<string | null> {
   try {
-    const raw = await AsyncStorage.getItem(GUEST_KEY);
-    if (!raw) return null;
+    const c = await Keychain.getGenericPassword({ service: SECURE_SERVICE });
+    return c ? c.password : null;
+  } catch {
+    return null;
+  }
+}
+
+async function writeSecure(raw: string): Promise<boolean> {
+  try {
+    return Boolean(await Keychain.setGenericPassword("guest", raw, { service: SECURE_SERVICE, accessible: Keychain.ACCESSIBLE.AFTER_FIRST_UNLOCK_THIS_DEVICE_ONLY }));
+  } catch {
+    return false;
+  }
+}
+
+function parseRecord(raw: string | null): GuestRecord | null {
+  if (!raw) return null;
+  try {
     const v = JSON.parse(raw) as Partial<GuestRecord>;
     return typeof v.id === "string" && typeof v.token === "string"
       ? { id: v.id, token: v.token, at: Number(v.at) || 0, ...(typeof v.for === "string" ? { for: v.for } : {}) }
@@ -65,7 +98,28 @@ export async function loadGuestRecord(): Promise<GuestRecord | null> {
   }
 }
 
+/** Kaydı yazar: önce güvenli depo, olmazsa AsyncStorage. */
+export async function saveGuestRecord(record: GuestRecord): Promise<void> {
+  const raw = JSON.stringify(record);
+  if (await writeSecure(raw)) {
+    try { await AsyncStorage.removeItem(GUEST_KEY); } catch { /* geç */ }
+    return;
+  }
+  try { await AsyncStorage.setItem(GUEST_KEY, raw); } catch { /* depolama kapalıysa geç */ }
+}
+
+export async function loadGuestRecord(): Promise<GuestRecord | null> {
+  const secure = parseRecord(await readSecure());
+  if (secure) return secure;
+  let legacy: GuestRecord | null = null;
+  try { legacy = parseRecord(await AsyncStorage.getItem(GUEST_KEY)); } catch { /* geç */ }
+  // Eski sürümün açık metin kaydı: güvenli depoya taşınıyor.
+  if (legacy) await saveGuestRecord(legacy);
+  return legacy;
+}
+
 export async function clearGuestRecord(): Promise<void> {
+  try { await Keychain.resetGenericPassword({ service: SECURE_SERVICE }); } catch { /* geç */ }
   try { await AsyncStorage.removeItem(GUEST_KEY); } catch { /* depolama kapalıysa geç */ }
 }
 
@@ -88,7 +142,7 @@ export async function startGuest(): Promise<GuestStart> {
     const id = typeof json?.user?.id === "string" ? json.user.id : "";
     if (!res.ok || !token || !id) return { ok: false, status: res.status, code: typeof json?.code === "string" ? json.code : "" };
     const record: GuestRecord = { id, token, at: Date.now() };
-    await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+    await saveGuestRecord(record);
     return { ok: true, record };
   } catch {
     return { ok: false, status: 0, code: "NETWORK" };
@@ -129,7 +183,7 @@ export async function resumeGuest(record: GuestRecord): Promise<ResumeOutcome> {
     if (!res.ok) return "retry";
     // Süresi geçmiş oturumun yerine yenisi açıldıysa jeton değişti: birleştirme onu isteyecek.
     if (typeof json?.token === "string" && json.token && json.token !== record.token) {
-      try { await AsyncStorage.setItem(GUEST_KEY, JSON.stringify({ ...record, token: json.token })); } catch { /* geç */ }
+      await saveGuestRecord({ ...record, token: json.token });
     }
     return "resumed";
   } catch {
@@ -154,7 +208,7 @@ export type ClaimOutcome =
 export async function claimGuest(record: GuestRecord, accountId: string): Promise<ClaimOutcome> {
   if (record.for && record.for !== accountId) return { kind: "gone" };
   if (!record.for) {
-    try { await AsyncStorage.setItem(GUEST_KEY, JSON.stringify({ ...record, for: accountId })); } catch { /* geç */ }
+    await saveGuestRecord({ ...record, for: accountId });
   }
   try {
     const r = await api<{ merged?: boolean; targetHadProgress?: boolean }>("/api/account/guest/claim", {

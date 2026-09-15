@@ -23,17 +23,36 @@ jest.mock("../src/api/client", () => {
 const { api, fetchWithTimeout } = require("../src/api/client") as { api: jest.Mock; fetchWithTimeout: jest.Mock };
 const record = { id: "guest-1", token: "t".repeat(32), at: 1 };
 
+const Keychain = require("react-native-keychain") as { __reset: () => void; setGenericPassword: jest.Mock; getGenericPassword: (o: { service: string }) => Promise<false | { password: string }> };
+
 beforeEach(async () => {
   api.mockReset();
   fetchWithTimeout.mockReset();
   await AsyncStorage.clear();
+  Keychain.__reset();
 });
 
-test("misafir açılınca kimlik ve jeton cihaza yazılır", async () => {
+test("misafir açılınca kimlik ve jeton cihaza yazılır — güvenli depoya, açık metin değil", async () => {
   fetchWithTimeout.mockResolvedValue({ ok: true, status: 200, json: async () => ({ token: record.token, user: { id: record.id } }) });
   const r = await startGuest();
   expect(r.ok).toBe(true);
   expect(await loadGuestRecord()).toMatchObject({ id: record.id, token: record.token });
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
+  expect(await Keychain.getGenericPassword({ service: "app.lernomi.guest" })).toBeTruthy();
+});
+
+test("eski sürümün açık metin kaydı ilk okumada güvenli depoya taşınır", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  expect(await loadGuestRecord()).toMatchObject({ id: record.id });
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
+  expect(await loadGuestRecord()).toMatchObject({ id: record.id });
+});
+
+test("güvenli depo açılamazsa kayıt kaybolmaz (AsyncStorage yedeği)", async () => {
+  Keychain.setGenericPassword.mockRejectedValueOnce(new Error("keystore"));
+  fetchWithTimeout.mockResolvedValue({ ok: true, status: 200, json: async () => ({ token: record.token, user: { id: record.id } }) });
+  await startGuest();
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeTruthy();
 });
 
 test("kimlik açma sınırı (429) kayıt yazmaz ve sebebi döndürür", async () => {

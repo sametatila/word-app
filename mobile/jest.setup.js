@@ -18,6 +18,21 @@ jest.mock('@react-native-async-storage/async-storage', () =>
   require('@react-native-async-storage/async-storage/jest'),
 );
 jest.mock('@notifee/react-native', () => require('@notifee/react-native/jest-mock'));
+// Güvenli depo (iOS Keychain / Android Keystore): bellekte bir harita.
+// `__reset` testlerin arasında depoyu boşaltmak için.
+jest.mock('react-native-keychain', () => {
+  const store = new Map();
+  return {
+    ACCESSIBLE: {AFTER_FIRST_UNLOCK_THIS_DEVICE_ONLY: 'AccessibleAfterFirstUnlockThisDeviceOnly'},
+    setGenericPassword: jest.fn(async (username, password, options) => {
+      store.set(options?.service ?? '', {username, password});
+      return {service: options?.service ?? '', storage: 'mock'};
+    }),
+    getGenericPassword: jest.fn(async (options) => store.get(options?.service ?? '') ?? false),
+    resetGenericPassword: jest.fn(async (options) => store.delete(options?.service ?? '')),
+    __reset: () => store.clear(),
+  };
+});
 
 // Firebase (uzak bildirim). `getApps()` BOŞ dizi dönüyor: üründe de yapılandırma
 // dosyası yoksa durum bu ve lib/pushDevice.ts o zaman hiçbir şey yapmıyor. Yani
