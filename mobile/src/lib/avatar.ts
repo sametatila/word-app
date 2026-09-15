@@ -12,8 +12,8 @@ import { updateProfile } from "./updateProfile";
  * boyamanın ağı beklememesi ve kaydedince başlığın anında değişmesi için var.
  *
  * `null` = KULLANICI HİÇ AVATAR SEÇMEDİ. Varsayılan yapılandırmadan ayrı bir
- * durum olması şart: seçmemiş olan kimlikten türeyen armasıyla görünüyor
- * (`ui/PersonAvatar`), seçmiş olan maskotuyla.
+ * durum olması şart: seçmemiş olan kimliğinden türeyen maskotla görünüyor
+ * (`ui/Avatar` › `derivedAvatar`), seçmiş olan kendi seçimiyle.
  */
 export type AvatarConfig = {
   hat: string | null;      // bkz. avatarParts HATS
@@ -113,7 +113,7 @@ export function parseAvatar(raw: unknown): AvatarConfig | null {
 
 /**
  * Reaktif avatar — kaydedilince otomatik yeniden çizer. `null` dönerse
- * kullanıcı hiç seçmemiş demektir (çağıran armaya düşer).
+ * kullanıcı hiç seçmemiş demektir (çağıran türetilmiş maskota düşer).
  */
 export function useAvatar(): AvatarConfig | null {
   const [, bump] = useState(0);

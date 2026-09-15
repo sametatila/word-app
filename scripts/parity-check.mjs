@@ -16,13 +16,6 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 
 const ESC = String.fromCharCode(27);
-/** 209: `PALETTE` tablosunun govdesi - dosyadaki baska cift dizilerini alma. */
-function govdeAl209(src) {
-  const i = src.indexOf("PALETTE");
-  if (i < 0) return "";
-  const j = src.indexOf("];", i);
-  return j < 0 ? "" : src.slice(i, j);
-}
 
 const C = { ok: ESC + "[32m", bad: ESC + "[31m", b: ESC + "[1m", off: ESC + "[0m", dim: ESC + "[2m" };
 let fails = 0;
@@ -1061,12 +1054,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ];
   for (const [name, wp, mp] of PAIRS) sameList("sabit " + name, val(mp, name), val(wp, name));
 
-  /* ARMA TURETIMI. Avatar secmemis kisi kimliginden turetilen armayla
-     ciziliyor ve o arma bir KIMLIK: ayni kisi telefonda ve tarayicida ayni
-     gorunmeli. Bir zamanlar gorunmuyordu - renkler ayniydi ama mobil duz bir
-     capraz gradyan, web dondurulmus bir gradyan + desen ciziyordu. Burasi
-     hash'i, paleti, desen listesini ve uc secici ifadeyi karsilastiriyor. */
-  const crest = (p) => {
+  /* TURETILMIS AVATAR. Avatar secmemis kisi kimliginden turetilen maskotla
+     ciziliyor ve bu bir KIMLIK: ayni kisi telefonda ve tarayicida ayni
+     sapkayla gorunmeli. (Eskiden ayni yerde bas harfli arma vardi; 2026-09-15'te
+     kalkti.) Burasi hash'i ve turetme govdesini karsilastiriyor. */
+  const derived = (p) => {
     const src = read(p);
     const kes = (desen) => {
       const m = src.match(desen);
@@ -1074,15 +1066,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     };
     return [
       kes(/function hash\(seed: string\): number \{[\s\S]*?\n\}/),
-      kes(/const PALETTE: \[string, string\]\[\] = \[[\s\S]*?\n\];/),
-      kes(/const PATTERNS = \[[^\]]+\] as const;/),
-      kes(/const h = hash\([^;]+\);/),
-      kes(/PALETTE\[[^\]]+\]/),
-      kes(/PATTERNS\[[^\]]+\]/),
-      kes(/rotate = [^;]+/),
+      kes(/export function derivedAvatar\(seed: string\): AvatarConfig \{[\s\S]*?\n\}/),
+      kes(/parseAvatar\(avatar\) \?\? derivedAvatar\([^)]*\)/),
     ];
   };
-  sameList("arma turetimi", crest("mobile/src/ui/Avatar.tsx"), crest("src/components/avatar.tsx"));
+  sameList("turetilmis avatar", derived("mobile/src/ui/Avatar.tsx"), derived("src/components/avatar.tsx"));
 
   /* AVATAR COZUMLEME. Iki taraf ayni ham JSON'u okuyor (sunucudaki tek kayit);
      birinin kabul edip otekinin attigi bir parca, ayni kisinin iki platformda
@@ -16050,32 +16038,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "bulunan",
       "beklenen",
     );
-  }
-
-  /* ── 209. arma paleti: on iki renk cifti ─────────────────────────────
-   * Arma rengi bir KIMLIK: "ayni kisi telefonda ve tarayicida ayni renkte
-   * gorunmeli, yoksa listede tanidigin kisiyi renginden bulamazsin" - bunu
-   * iki dosyanin yorumu da SOYLUYOR, olcen bir sey yoktu. Tam bu turlarda
-   * tekrar tekrar cikan sinif: zorunlulugu yazan cumle.
-   *
-   * Renkler bilerek jetona bagli DEGIL (tema degistiginde kimlik degismesin),
-   * o yuzden `check:colors` iki dosyayi da atliyor - yani ham hex'leri
-   * karsilastiran baska bir kapi yoksa ayrisma hicbir yerden gorunmuyor.
-   * Sira da onemli: secim kimligin hash'inden indeksle yapiliyor, cift
-   * yerleri degisirse ayni kisi iki platformda AYRI renge duser. */
-  {
-    const ciftler = (f) => {
-      const blok = govdeAl209(sil(read(f)));
-      return [...blok.matchAll(/\["(#[0-9a-fA-F]{6})",\s*"(#[0-9a-fA-F]{6})"\]/g)]
-        .map((m, i) => i + ":" + m[1].toLowerCase() + ">" + m[2].toLowerCase());
-    };
-    const web = ciftler("src/components/avatar.tsx");
-    const mob = ciftler("mobile/src/ui/Avatar.tsx");
-    /* Palet tablosunun govdesi: `PALETTE`ten kapanis parantezine kadar.
-       Dosyanin tamamini taramak baska cift dizilerini de (desen tablolari,
-       gradyanlar) icine alirdi. */
-    sameList("arma paleti", mob.length ? mob : ["mobilde palet bulunamadi"], web.length ? web : ["webde palet bulunamadi"], "mobil", "web");
-    sameList("arma paleti uzunlugu", ["cift=" + mob.length], ["cift=12"], "bulunan", "beklenen");
   }
 
   /* ── 208. ilerlemeye sayilan maddeler: sunucu ile iki istemci ─────────

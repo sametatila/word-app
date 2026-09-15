@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { MascotAvatar } from "@/components/avatar";
+import { derivedAvatar, MascotAvatar } from "@/components/avatar";
+import { useShell } from "@/components/app-shell";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { PageBack } from "@/components/page-back";
@@ -37,7 +38,11 @@ export function AvatarEditor() {
   */
   const stored = useAvatar();
   const [draft, setDraft] = useState<AvatarConfig | null>(null);
-  const cfg = draft ?? stored ?? DEFAULT_AVATAR;
+  /* Hiç seçmemiş kişi listelerde kimliğinden türeyen maskotla görünüyor;
+     ekran da ONDAN başlıyor, çıplak maskottan değil — yoksa "kaydet"e basmak
+     görünen avatarı sessizce değiştirirdi. */
+  const { userId } = useShell();
+  const cfg = draft ?? stored ?? derivedAvatar(userId);
   const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
 
   /** Tek bir aksesuarı gösteren önizleme — diğerleri kapalı, şapka rengi korunuyor. */

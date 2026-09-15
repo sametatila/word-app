@@ -1,31 +1,25 @@
 "use client";
 
-import { AvatarOverlay } from "@/components/avatar-parts";
+import { AvatarOverlay, GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { useAvatar } from "@/lib/avatar";
 import { parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
 
 /**
- * Öğrenci arması.
+ * Bir kişinin avatarı — iki platformda tek kural: HERKES maskotla çizilir.
  *
- * Sıralamada insanlar adlarının BAŞ HARFLERİYLE görünüyordu: gri bir daire
- * içinde "SA". Yedi kişilik bir tabloda bile kimin kim olduğu ancak okunarak
- * anlaşılıyordu ve tablo bir liste gibi değil, bir tablo gibi duruyordu.
+ * Eskiden avatar seçmemiş kişi kimliğinden türeyen baş harfli, renkli bir
+ * armayla çiziliyordu. Avatar sunucuya taşındıktan sonra listeler iki ayrı
+ * dil konuşmaya başladı: seçmiş iki kişi Erdi, geri kalan herkes (canlıda 23
+ * profilin 21'i) eski arma. Arkadaşlar, Bul sekmesi ve sıralama baştan sona
+ * eski görünüyordu.
  *
- * Arma bunu iki şekilde çözüyor:
- *
- *   - **Tanınırlık.** Renk okumaktan hızlıdır. Aynı kişi her ekranda aynı
- *     armayla göründüğü için tablo taranarak değil, bakılarak okunuyor.
- *   - **Kimlik.** Uygulamanın avatar yükleme yeri yok ve olmasını da
- *     istemiyoruz (dosya yükleme, depolama, moderasyon — hepsi bu ölçekte
- *     gereksiz). Armanın tamamı kullanıcı kimliğinden TÜRETİLİYOR: sıfır
- *     depolama, sıfır ayar, herkes farklı.
- *
- * Renkler rastgele değil, sabit bir paletten seçiliyor. Serbest hue kullanmak
- * koyu temada okunmayan ya da uygulamanın markasıyla kavga eden tonlar
- * üretiyordu; palet hem tutarlı hem de her zaman beyaz metinle okunur.
+ * Arma kalktı, AYIRT EDİCİLİĞİ kalmadı değil: seçmemiş kişinin aksesuarları
+ * kimliğinden türetiliyor (`derivedAvatar`). Aynı kişi her ekranda ve iki
+ * platformda aynı şapkayla görünüyor, tabloda da kimse kimseyle aynı değil.
+ * Kişi kendi avatarını seçince o geçer.
  */
 
-/** Kimlikten sayı: aynı kimlik her zaman aynı armayı verir. */
+/** Kimlikten sayı: aynı kimlik her zaman aynı avatarı verir (mobil `hash` ile aynı). */
 function hash(seed: string): number {
   let h = 2166136261;
   for (let i = 0; i < seed.length; i++) {
@@ -36,42 +30,21 @@ function hash(seed: string): number {
 }
 
 /**
- * Arma paleti — çiftler gradyanın iki ucu.
+ * Avatar seçmemiş kişinin kimliğinden türeyen maskot.
  *
- * Ham hex, CSS değişkeni değil: arma bir KİMLİK. Aynı kişi açık ve koyu temada
- * aynı renkte görünmeli, yoksa listede tanıdığın kişiyi renginden bulamazsın.
- *
- * İki kısıt var. Her uç beyaz metinle okunmalı — hepsi rampanın 600 ve daha
- * koyu basamaklarından, en düşüğü 5.0 kontrast. Ve on iki çift birbirinden
- * ayrılmalı: altı ailenin her biri önce kendi içinde koyulaşan bir çift veriyor,
- * sonra farklı ailelerden altı çapraz çift.
+ * Herkese şapka (3 × 6 renk = 18 görünüm); üçte birine gözlük, dörtte birine
+ * bıyık — hepsi aynı olsaydı yedi kişilik tabloda yine kimse kimseyi
+ * ayırt edemezdi. Bitler birbirine binmesin diye her seçim hash'in ayrı bir
+ * diliminden okunuyor. Mobil `derivedAvatar` ile BİREBİR.
  */
-const PALETTE: [string, string][] = [
-  ["#a65c15", "#653916"], // kehribar → kestane
-  ["#16748a", "#115a6b"], // turkuaz → derin turkuaz
-  ["#237a4c", "#1a5c39"], // yosun → koyu yosun
-  ["#b62e43", "#8e2335"], // kiremit → koyu kiremit
-  ["#77439d", "#5d347a"], // erik → koyu erik
-  ["#86690e", "#6a530b"], // hardal → koyu hardal
-  ["#a65c15", "#8e2335"], // kehribar → kiremit
-  ["#16748a", "#5d347a"], // turkuaz → erik
-  ["#237a4c", "#115a6b"], // yosun → turkuaz
-  ["#b62e43", "#5d347a"], // kiremit → erik
-  ["#86690e", "#854a15"], // hardal → kestane
-  ["#77439d", "#1a5c39"], // erik → yosun
-];
-
-/**
- * Arka plan deseni — aynı renk çiftine düşen iki kişi bile aynı görünmesin.
- * Desenler kasten çok sade: armanın işi süslemek değil ayırt etmek.
- */
-const PATTERNS = ["none", "rays", "dots", "stripe", "arc"] as const;
-
-export function initials(name: string | null): string {
-  if (!name) return "?";
-  const parts = name.trim().split(/\s+/).filter(Boolean).slice(0, 2);
-  const out = parts.map((p) => [...p][0]?.toLocaleUpperCase("tr-TR") ?? "").join("");
-  return out || "?";
+export function derivedAvatar(seed: string): AvatarConfig {
+  const h = hash(seed || "?");
+  return {
+    hat: HATS[h % HATS.length],
+    hatColor: HAT_COLORS[(h >>> 4) % HAT_COLORS.length],
+    glasses: (h >>> 8) % 3 === 0 ? GLASSES[(h >>> 10) % GLASSES.length] : null,
+    mustache: (h >>> 12) % 4 === 0 ? MUSTACHES[(h >>> 14) % MUSTACHES.length] : null,
+  };
 }
 
 export function Avatar({
@@ -79,84 +52,20 @@ export function Avatar({
   name,
   avatar,
   size = 32,
-  /** Kazanılmış bir unvanın halkası — yoksa arma çıplak görünür. */
+  /** Kazanılmış bir unvanın halkası. */
   ring,
   className = "",
 }: {
   userId: string;
   name: string | null;
-  /**
-   * Kişinin KENDİ avatarı (ham JSON, bkz. lib/avatar-config). Doluysa arma
-   * yerine maskot çiziliyor.
-   *
-   * Avatar eskiden yalnız cihazda duruyordu, yani başkalarınınkini kimse
-   * göremiyordu ve herkes bu dosyadaki türetilmiş armayla çiziliyordu. Artık
-   * sunucuda: seçmiş olan kendi avatarıyla, seçmemiş olan eski armasıyla
-   * görünüyor. Arma SİLİNMEDİ çünkü hâlâ gerçek bir yedek.
-   */
+  /** Kişinin KENDİ avatarı (ham JSON, bkz. lib/avatar-config). Boşsa türetilmiş maskot. */
   avatar?: string | null;
   size?: number;
   ring?: string | null;
   className?: string;
 }) {
-  const cfg = parseAvatar(avatar);
-  if (cfg) return <MascotAvatar config={cfg} size={size} ring={ring} className={className} />;
-  const h = hash(userId || name || "?");
-  const [from, to] = PALETTE[h % PALETTE.length];
-  const pattern = PATTERNS[(h >>> 8) % PATTERNS.length];
-  const rotate = (h >>> 16) % 360;
-  const text = initials(name);
-  // Uzun baş harfler küçük armada taşıyor; ölçü armanın kendisinden geliyor.
-  const fontSize = Math.round(size * (text.length > 1 ? 0.36 : 0.44));
-
-  return (
-    <span
-      className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full ${className}`}
-      style={{
-        width: size,
-        height: size,
-        background: `linear-gradient(${rotate}deg, ${from}, ${to})`,
-        boxShadow: ring ? `0 0 0 2px var(--bg), 0 0 0 4px ${ring}` : undefined,
-      }}
-      aria-hidden
-    >
-      {pattern === "rays" ? (
-        <span
-          className="absolute inset-0"
-          style={{
-            background: `repeating-conic-gradient(from ${rotate}deg, rgba(255,255,255,0.16) 0deg 18deg, transparent 18deg 36deg)`,
-          }}
-        />
-      ) : pattern === "dots" ? (
-        <span
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(rgba(255,255,255,0.28) 1px, transparent 1px)",
-            backgroundSize: `${Math.max(4, size / 5)}px ${Math.max(4, size / 5)}px`,
-          }}
-        />
-      ) : pattern === "stripe" ? (
-        <span
-          className="absolute inset-0"
-          style={{
-            background: `repeating-linear-gradient(${rotate + 45}deg, rgba(255,255,255,0.18) 0 3px, transparent 3px 9px)`,
-          }}
-        />
-      ) : pattern === "arc" ? (
-        <span
-          className="absolute -bottom-1/3 left-1/2 h-full w-[140%] -translate-x-1/2 rounded-[50%]"
-          style={{ background: "rgba(255,255,255,0.18)" }}
-        />
-      ) : null}
-
-      <span
-        className="relative font-black leading-none text-white"
-        style={{ fontSize, textShadow: "0 1px 2px rgba(0,0,0,0.28)" }}
-      >
-        {text}
-      </span>
-    </span>
-  );
+  const cfg = parseAvatar(avatar) ?? derivedAvatar(userId || name || "?");
+  return <MascotAvatar config={cfg} size={size} ring={ring} className={className} />;
 }
 
 /**
@@ -197,8 +106,8 @@ export function MascotAvatar({
  *
  * `Avatar`dan tek farkı kaynağı: sunucudan gelen alan yerine REAKTİF yerel
  * depo okunuyor, böylece düzenleme ekranından çıkar çıkmaz başlıktaki kopya
- * da değişiyor (sayfa tazelemeden). Çizim aynı: seçim varsa maskot, yoksa
- * arma.
+ * da değişiyor (sayfa tazelemeden). Çizim aynı: seçim varsa o, yoksa
+ * kimlikten türeyen maskot.
  *
  * Ayrı bir "ben" çizimi VARDI ve maskotu koşulsuz çiziyordu: hiç avatar
  * seçmemiş biri başlıkta çıplak maskot, kendi arkadaş listesinde arma olarak

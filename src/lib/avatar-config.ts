@@ -37,7 +37,8 @@ const part = (v: unknown): string | null => (typeof v === "string" && ID.test(v)
  *
  * `null` dönmesi "bu kullanıcı avatarını hiç seçmemiş" demek — varsayılanla
  * aynı şey DEĞİL. Çağıran ikisini ayırabilsin diye: seçmemiş kullanıcı
- * listelerde eski armasıyla kalıyor, seçmiş olan maskotuyla görünüyor.
+ * kimliğinden türeyen maskotla (`components/avatar` › `derivedAvatar`),
+ * seçmiş olan kendi seçimiyle görünüyor.
  *
  * BİLİNMEYEN PARÇA KİMLİĞİ ATILIYOR, kayıt reddedilmiyor: parça listesi
  * sürümle değişiyor ve eski bir cihazdan gelen kayıt yüzünden avatarın

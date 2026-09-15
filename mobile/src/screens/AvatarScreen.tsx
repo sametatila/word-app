@@ -6,7 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon } from "../ui/icons";
-import { MascotAvatar } from "../ui/Avatar";
+import { derivedAvatar, MascotAvatar } from "../ui/Avatar";
+import { useAuth } from "../lib/AuthContext";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -66,7 +67,10 @@ export function AvatarScreen() {
   */
   const stored = useAvatar();
   const [draft, setDraft] = useState<AvatarConfig | null>(null);
-  const cfg = draft ?? stored ?? DEFAULT_AVATAR;
+  /* Hiç seçmemiş kişi listelerde kimliğinden türeyen maskotla görünüyor;
+     ekran da ondan başlıyor (web `avatar-editor` ile aynı). */
+  const { user } = useAuth();
+  const cfg = draft ?? stored ?? derivedAvatar(user?.id ?? "");
   const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
 
   const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, ...over });
