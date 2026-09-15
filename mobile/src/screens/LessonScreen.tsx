@@ -13,8 +13,8 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
+import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
@@ -736,11 +736,10 @@ export function LessonScreen() {
 
   if (!lesson) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
-        <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.this_lesson_wasn_t_found")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{tx("lesson.go_back")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }} />}>
+        {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `lessons/[id]/not-found`). */}
+        <StateBody mood="sad" title={tx("lesson.this_lesson_wasn_t_found")} />
+      </FlowScreen>
     );
   }
 
@@ -808,21 +807,36 @@ export function LessonScreen() {
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined}
           passed={passed}
+          turnsDone={roleplayReady}
           onResume={() => setPhase("roleplay")}
           onExam={() => nav.navigate("RoleplayExam", { id: lesson.id })} />
       ) : resumeOffer ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <Mascot mood="wave" size={90} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("lesson.pick_up_where_you_left_off")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.you_paused_this_lesson_pick_up")}</Text>
-          <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
-            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } }} colors={colors} />
-            <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); }}>
-              <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}>
-                <Text variant="h3" color={colors.text}>{tx("lesson.start_over")}</Text>
-              </View>
-            </PressableScale>
+        /*
+          KALDIĞIN YERDEN — durum şablonu (el sallayan maskot) + nerede
+          kalındığını söyleyen kart. Eskiden yalnız "ara vermiştin" yazıyordu:
+          öğrenci anlatımın sonunda mı, konuşmanın ortasında mı olduğunu
+          bilmeden seçiyordu. Web kaydı kendiliğinden sürdürüp ince bir not
+          gösteriyor (`lesson-player` `resumed`) — bilinçli fark: webde ekran
+          sohbetin kendisi, burada tam ekran bir soru.
+        */
+        <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
+          <View style={{ flex: 1, justifyContent: "center", gap: spacing.md }}>
+            <StateBody mood="wave" title={tx("lesson.pick_up_where_you_left_off")} body={tx("lesson.you_paused_this_lesson_pick_up")} />
+            <DetailCard title={tx("lessonp.resume_where")}>
+              <DetailRow
+                left={tx("lesson.phase_lecture")}
+                right={resumeOffer.phase === "roleplay" || resumeOffer.cursor >= lesson.lecture.length ? `${lesson.lecture.length}/${lesson.lecture.length} ✓` : `${resumeOffer.cursor}/${lesson.lecture.length}`}
+                faded={resumeOffer.phase === "roleplay"}
+              />
+              {resumeOffer.phase === "roleplay" ? (
+                <DetailRow left={tx("lesson.phase_roleplay")} right={tx("lessonp.resume_turns", { n: resumeOffer.roleTurns ?? (resumeOffer.roleMsgs ?? []).filter((m) => m.role === "user").length, min: lesson.roleplay.minTurns })} />
+              ) : null}
+            </DetailCard>
           </View>
+          <FlowActions
+            primary={{ label: tx("lesson.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
+            tertiary={{ label: tx("lesson.start_over"), onPress: () => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); } }}
+          />
         </View>
       ) : (
         <>
@@ -1118,9 +1132,11 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, colors, insets, onBack, onNext, onExam, onResume }: {
+function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
   lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
+  /** Yerel hüküm: asgari tur doldu mu. Sunucu yanıtı gelmezse (çevrimdışı) başlık buna bakıyor. */
+  turnsDone: boolean;
   insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void; onResume?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -1150,140 +1166,112 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
   /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
      ve aynı ayrıştırıcı (`parseReply`). */
   const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
-  const mood = pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle";
+  const userTurns = roleMsgs.filter((m) => m.role === "user").length;
+  const talked = roleMsgs.length > 1;
+  /*
+    KONUŞMA YARIM KALDI: sunucu açıkça "sayılmadı" dediyse ya da asgari tur
+    dolmadıysa. Yalnız sunucuya bakılıyordu; çevrimdışı "Şimdilik bırak"ta
+    yanıt gelmiyor ve yarım konuşma "bitti" damgası alıyordu. Web aynı iki
+    koşula bakıyor.
+  */
+  const unfinished = passed === false || !turnsDone;
+  /*
+    SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
+    altta sabit düğmeler (en çok üç). Eskiden 110'luk maskot, dev başlık, üç
+    ayrı kutu, dört kart, iki not ve beş düğmeye kadar alt alta diziliyordu;
+    "Patika'ya dön" hep en altta kayboluyordu.
+  */
   return (
-    <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
-      <Celebrate show={pct >= 80} />
-      <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
-      <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{tx(passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}</Text>
-      <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
+    <View style={{ flex: 1 }}>
+      <Celebrate show={!unfinished && pct >= 80} />
+      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
+        <ResultHero
+          eyebrow={`${tx("unitkind.lesson")} · ${lesson.title}`}
+          title={tx(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
+          figure={total ? `${correct}/${total}` : null}
+          sub={tx("lessonp.n_turns", { n: userTurns })}
+          mood={unfinished ? "sad" : pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "sad"}
+          quiet={unfinished}
+          pill={unfinished ? { text: tx("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
+        />
+        {/* Tur sayısı KONUŞMANIN UZUNLUĞU, isabetten ayrı bir şey söylüyor;
+            eşikle birlikte yazılıyor ki eksik kalanı görünsün. Tekrar günü
+            aralıklı tekrar merdiveninden (kayıt yanıtı). */}
+        <StatRow items={[
+          { value: formatPercent(pct), label: tx("lesson.accuracy") },
+          { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: tx("lessonp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+          ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("lessonp.stat_review") }] : []),
+        ]} />
 
-      <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>
-        <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={colors.primaryText}>{total ? `${correct}/${total}` : "—"}</Text>
-          <Text variant="caption" color={colors.textMuted}>{tx("lesson.correct_production")}</Text>
-        </View>
-        <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={colors.successText}>{formatPercent(pct)}</Text>
-          <Text variant="caption" color={colors.textMuted}>{tx("lesson.accuracy")}</Text>
-        </View>
-        {/* KAÇ TUR KONUŞULDU — web özette baştan beri gösteriyor ve mobilde
-            hiç yoktu. Konuşmanın UZUNLUĞU isabetten ayrı bir şey söylüyor:
-            beş turda üç doğru ile on beş turda üç doğru aynı ders değil. */}
-        <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={passed === false ? colors.streakText : colors.text}>{roleMsgs.filter((m) => m.role === "user").length}</Text>
-          <Text variant="caption" color={colors.textMuted}>{tx("lesson.phase_roleplay")}</Text>
-        </View>
-      </View>
+        {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
+        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
+        {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("lessonp.i_can")} ${cando.join(" · ")}`} /> : null}
+        {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("lessonp.no_corrections")} /> : null}
 
-      {lesson.patterns?.length ? (
-        <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lesson.patterns_you_learned")}</Text>
-          {/*
-            KULLANILAN KALIP İŞARETLİ. Liste düzdü: her kalıp aynı görünüyordu
-            ve öğrenci konuşmada hangisini gerçekten kullandığını hiçbir yerden
-            öğrenemiyordu - oysa dersin asıl amacı kalıbı KULLANMAK, yalnız
-            görmek değil. Web özeti bunu baştan beri işaretliyor
-            (`lesson-player`, aynı `patternUsed` kuralı). Konuşma hiç
-            olmadıysa (roleplay atlandı) işaret de yok: yanlış bir "yapmadın"
-            damgası vurmasın.
-          */}
-          {lesson.patterns.map((p, i) => {
-            const used = roleMsgs.length > 1 && patternUsed(p.de, roleMsgs);
-            return (
-              <View key={i} style={{ flexDirection: "row", gap: spacing.sm, marginBottom: 6, alignItems: "flex-start", opacity: roleMsgs.length > 1 && !used ? 0.6 : 1 }}>
-                {roleMsgs.length > 1 ? (
-                  <View style={{ width: 16, alignItems: "center" }}>
-                    {used ? <CheckIcon color={colors.successText} size={14} /> : null}
-                  </View>
-                ) : null}
-                <Text variant="bodyStrong" color={used ? colors.successText : colors.text}>{p.de}</Text>
-                <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{p.tr}</Text>
-              </View>
-            );
-          })}
-        </View>
-      ) : null}
-
-      {/* DERSİN KELİMELERİ kapanışta bir kez daha. Liste kâğıtta zaten vardı
-          (`lesson.vocab`) ve mobil özet onu hiç göstermiyordu: dersin dili
-          kapanışta toplu görünmeli, web özeti bunu yapıyor. */}
-      {lesson.vocab?.length ? (
-        <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.words_of_lesson")}</Text>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
-            {lesson.vocab.map((v) => (
-              <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-                <Text variant="micro" color={colors.text}><Text variant="micro" color={colors.text} style={{ fontWeight: "700" }}>{v.de}</Text> · {v.tr}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-      ) : null}
-
-      {cando.length ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
-          <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{tx("lessonp.i_can")}</Text> {cando.join(" · ")}
-        </Text>
-      ) : null}
-
-      {/* DÜZELTMELER TOPLU. Konuşma sırasında her balonun altında tek tek
-          geçiyordu ve akışta kayboluyordu; kapanışta hepsi bir arada durmalı
-          - dersin öğrettiği şey tam olarak bunlar. Web aynı listeyi aynı
-          yerde çıkarıyor (`parseReply(...).corrections`). */}
-      {corrections.length ? (
-        <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.corrections")}</Text>
-          {corrections.map((c, i) => (
-            <Text key={i} variant="caption" color={colors.text} style={{ marginBottom: spacing.xs }}>{c}</Text>
-          ))}
-        </View>
-      ) : roleMsgs.length > 1 ? (
-        <Text variant="caption" color={colors.successText} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>{tx("lessonp.no_corrections")}</Text>
-      ) : null}
-
-      {/* DERS NE ZAMAN GERİ GELECEK. Aralıklı tekrar merdiveni sunucuda
-          hesaplanıyor ve kayıt yanıtında geliyordu; mobil yanıtı hiç
-          okumadığı için bu satır yoktu. */}
-      {/*
-        KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK.
-        Başlık "Konuşma tamamlanmadı" diyordu ve orada bitiyordu: kaç tur
-        gerektiği yazmıyor, konuşmaya dönmenin bir yolu da görünmüyordu -
-        kullanıcı dersi kapatmaktan başka bir şey yapamıyordu. Web ikisini de
-        aynı yerde veriyor (`min_turns_note` + "Konuşmaya dön").
-      */}
-      {passed === false ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
-          {tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
-        </Text>
-      ) : nextDays !== null ? (
-        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>
-          {tx("lessonp.next_in_days", { n: nextDays })}
-        </Text>
-      ) : null}
-
-      <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
-        {passed === false && onResume ? <BigButton label={tx("lessonp.back_to_conversation")} onPress={onResume} colors={colors} /> : null}
-        {onNext && next ? <BigButton label={tx("lesson.next_speaking", { title: next.title })} onPress={onNext} colors={colors} /> : null}
-        {/* SINAV OLARAK DENE. Konuşma yapıldıysa aynı sahne bir de ölçüm
-            olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı.
-            Web özeti bu düğmeyi baştan beri gösteriyordu; Androidde yüzeyin
-            kendisi yoktu, yani aynı dersi bitiren iki kullanıcıdan yalnız
-            biri ölçülebiliyordu. */}
-        {onExam && roleMsgs.length > 1 ? (
-          <PressableScale onPress={onExam}>
-            <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.border, paddingVertical: spacing.lg, alignItems: "center" }}>
-              <Text variant="h3" color={colors.text}>{tx("lessonp.try_as_exam")}</Text>
-              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{tx("lessonp.exam_hint")}</Text>
-            </View>
-          </PressableScale>
+        {lesson.patterns?.length ? (
+          <DetailCard title={tx("lesson.patterns_you_learned")}>
+            {/*
+              KULLANILAN KALIP İŞARETLİ — dersin asıl amacı kalıbı KULLANMAK.
+              Web aynı `patternUsed` kuralıyla işaretliyor. Konuşma hiç
+              olmadıysa işaret de yok: yanlış bir "yapmadın" damgası vurmasın.
+            */}
+            {lesson.patterns.map((p, i) => {
+              const used = talked && patternUsed(p.de, roleMsgs);
+              return (
+                <View key={i} style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", opacity: talked && !used ? 0.6 : 1 }}>
+                  {talked ? (
+                    <View style={{ width: 16, alignItems: "center", paddingTop: 3 }}>
+                      {used ? <CheckIcon color={colors.successText} size={14} /> : null}
+                    </View>
+                  ) : null}
+                  <Text variant="bodyStrong" color={used ? colors.successText : colors.text}>{p.de}</Text>
+                  <Text variant="caption" color={colors.textMuted} style={{ flex: 1, textAlign: "right" }}>{p.tr}</Text>
+                </View>
+              );
+            })}
+          </DetailCard>
         ) : null}
-        <PressableScale onPress={onBack}>
-          <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}>
-            <Text variant="h3" color={colors.text}>{tx("lesson.back_to_path")}</Text>
-          </View>
-        </PressableScale>
+
+        {/* DÜZELTMELER TOPLU — konuşmada balon balon geçiyor, kapanışta bir arada. */}
+        {corrections.length ? (
+          <DetailCard title={tx("lessonp.corrections")}>
+            {corrections.map((c, i) => (
+              <Text key={i} variant="caption" color={colors.text}>{c}</Text>
+            ))}
+          </DetailCard>
+        ) : null}
+
+        {/* DERSİN KELİMELERİ kapanışta bir kez daha — dersin dili toplu. */}
+        {lesson.vocab?.length ? (
+          <DetailCard title={tx("lessonp.words_of_lesson")}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+              {lesson.vocab.map((v) => (
+                <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+                  <Text variant="micro" color={colors.text}><Text variant="micro" color={colors.text} style={{ fontWeight: "700" }}>{v.de}</Text> · {v.tr}</Text>
+                </View>
+              ))}
+            </View>
+          </DetailCard>
+        ) : null}
+      </KeyboardAwareScroll>
+
+      {/* Düğmeler kaydırılan özetin DIŞINDA: "Patika'ya dön" kaybolmuyor. */}
+      <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
+        {unfinished ? (
+          <FlowActions
+            primary={onResume ? { label: tx("lessonp.back_to_conversation"), onPress: onResume } : { label: tx("lesson.back_to_path"), onPress: onBack }}
+            tertiary={onResume ? { label: tx("lesson.back_to_path"), onPress: onBack } : null}
+          />
+        ) : (
+          <FlowActions
+            primary={onNext && next ? { label: tx("lesson.next_speaking", { title: next.title }), onPress: onNext } : { label: tx("lesson.back_to_path"), onPress: onBack }}
+            /* SINAV OLARAK DENE — konuşma yapıldıysa aynı sahne bir de ölçüm
+               olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı. */
+            secondary={onExam && talked ? { label: tx("lessonp.try_as_exam"), hint: tx("lessonp.exam_hint"), onPress: onExam } : null}
+            tertiary={onNext && next ? { label: tx("lesson.back_to_path"), onPress: onBack } : null}
+          />
+        )}
       </View>
-    </KeyboardAwareScroll>
+    </View>
   );
 }

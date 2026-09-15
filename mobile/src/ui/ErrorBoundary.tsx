@@ -1,11 +1,9 @@
 import React from "react";
-import { View } from "react-native";
-import { Text } from "./Text";
-import { PressableScale } from "./PressableScale";
-import { AlertIcon, RefreshIcon } from "./icons";
+import { FlowScreen, FlowActions, StateBody } from "./flow";
+import { RefreshIcon } from "./icons";
+import { useTheme } from "../theme";
 import { t } from "../lib/i18n";
 import { track } from "../lib/track";
-import { useTheme, spacing, radii, type Palette } from "../theme";
 
 /**
  * ÇÖKME SINIRI — mobilde hiç yoktu.
@@ -56,29 +54,14 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
 function CrashCard({ onRetry }: { onRetry: () => void }) {
   const { colors } = useTheme();
-  return <CrashCardInner colors={colors} onRetry={onRetry} />;
-}
-
-/* Kart AYRI bir bileşen: sınıf bileşeni kanca kullanamıyor ve tema kancadan
-   geliyor. */
-function CrashCardInner({ colors, onRetry }: { colors: Palette; onRetry: () => void }) {
+  /* DURUM ŞABLONU (ui/flow): üzgün maskot · başlık · tek cümle · tek çıkış.
+     Eskiden kırmızı ikon karosu vardı; öteki "açılamadı" ekranlarıyla aynı
+     dili konuşsun diye maskota geçti. Sınıf bileşeni kanca kullanamadığı için
+     (tema ve FlowScreen'in güvenli alanı kancadan) ayrı bir fonksiyon bileşeni. */
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-      <View style={{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
-        <AlertIcon color={colors.dangerText} size={24} />
-      </View>
-      {/* Başlık başlık olarak okunuyor (bkz. parity 259); hata da duyuruluyor. */}
-      <Text accessibilityRole="header" accessibilityLiveRegion="assertive" variant="h2" style={{ textAlign: "center" }}>{t("crash.title")}</Text>
-      <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("crash.body")}</Text>
-      <PressableScale
-        onPress={onRetry}
-        accessibilityRole="button"
-        accessibilityLabel={t("common.try_again")}
-        style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm, backgroundColor: colors.primary, borderRadius: radii.lg, paddingHorizontal: spacing.xl, paddingVertical: 14 }}
-      >
-        <RefreshIcon color={colors.onPrimary} size={18} />
-        <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.try_again")}</Text>
-      </PressableScale>
-    </View>
+    <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon color={colors.onPrimary} size={18} />, onPress: onRetry }} />}>
+      {/* Hata duyuruluyor (`alert` = assertive bölge, eskisi gibi); başlık başlık olarak okunuyor (bkz. parity 259). */}
+      <StateBody alert mood="sad" title={t("crash.title")} body={t("crash.body")} />
+    </FlowScreen>
   );
 }

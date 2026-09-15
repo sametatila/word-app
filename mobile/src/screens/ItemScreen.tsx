@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { MascotFx } from "../ui/MascotFx";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -9,15 +9,15 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
-import { XIcon, SpeakerIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon, AlertIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
-import { isSkillDone, scoreBand, scoreOf } from "../lib/learningRules";
+import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
 import { speakTarget, speakAndWait, stopSpeaking } from "../lib/tts";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE, fetchWithTimeout } from "../api/client";
@@ -28,7 +28,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
-
+/** Sonuç bandının başlığındaki beceri adı — Beceriler sekmesiyle aynı anahtarlar. */
+const SKILL_KEY: Record<string, string> = { reading: "skills.reading", listening: "skills.listening", writing: "skills.writing", speaking: "skills.speaking", grammar: "skills.grammar" };
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
@@ -174,6 +175,8 @@ export function ItemScreen() {
      satır gösteriyor (`skills/player-shell` `offline` fazı). */
   const [queued, setQueued] = useState(false);
   const [streak, setStreak] = useState(0);
+  /** Rubrik puanı (yazma, monolog): bandın ana sayısı doğru/toplam değil bu. */
+  const [lastScore, setLastScore] = useState<number | undefined>(undefined);
   const [round, setRound] = useState(0);
 
   const kind = params.kind as ItemKind;
@@ -183,6 +186,7 @@ export function ItemScreen() {
   /** `score`: monologda rubrik puanı (0–100); verilmezse sunucu doğru/toplam oranını yazar. */
   async function recordAndFinish(c: number, score?: number) {
     setCorrect(c);
+    setLastScore(score);
     setFinished(true);
     setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (!exercise || saved.current) return;
@@ -227,6 +231,7 @@ export function ItemScreen() {
     setEarnedXp(0);
     setRepeatNoXp(false);
     setQueued(false);
+    setLastScore(undefined);
     saved.current = false;
     setFinished(false);
     setCorrect(0);
@@ -235,11 +240,10 @@ export function ItemScreen() {
 
   if (!exercise) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
-        <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.this_exercise_can_t_be_opened")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{t("item.go_back")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
+        {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış. */}
+        <StateBody mood="sad" title={t("item.this_exercise_can_t_be_opened")} />
+      </FlowScreen>
     );
   }
 
@@ -252,12 +256,61 @@ export function ItemScreen() {
       : exercise.skill === "speaking"
         ? (drillTasks ? drillTasks.length : 1)
         : (exercise.questions?.length ?? 0);
-  const pct = scoreOf(correct, total);
+  const isMono = exercise.skill === "speaking" && !!exercise.monologue;
+  const isTasks = exercise.skill === "writing" || isMono;
+  /* Rubrikle puanlananlarda (yazma, monolog) yüzde rubrik puanından: monolog
+     tek görev ve doğru/toplam ya %0 ya %100 olurdu. */
+  const pct = scoreOf(correct, total, lastScore);
   /* Maskotun ruh hâli ve konfeti PUAN BANDINDAN: eşikler (70 / 40) burada
      elle yazılıydı, oysa aynı iki sayı uygulamanın her yerinde aynı ayrımı
      yapıyor (web `lib/score-bands.ts`). */
   const band = scoreBand(pct);
   const fromSkills = params.from === "skills";
+  const perfect = total > 0 && correct === total;
+  /* Olumsuz sonuç = adım "bitti" sayılmadı. Monologda hüküm rubrik eşiği
+     (`RUBRIC_PASS_PCT`, tek görevin geçip geçmediği); ötekilerde beceri eşiği. */
+  const passed = isMono ? perfect : isSkillDone(pct);
+  const backLabel = t(fromSkills ? "item.back_to_skills" : "item.back_to_path");
+  const skillKey = SKILL_KEY[exercise.skill];
+
+  /*
+    SONUÇ ŞABLONU (ui/flow): band → sayılar → notlar → [monolog geri bildirimi]
+    → düğmeler. Eskiden tek kart: maskot, "x/y doğru", XP, seri, iki not ve
+    yüzde satırı alt alta aynı ağırlıkta. Band sonucun kendisini söylüyor;
+    eşiğin altında sessizleşiyor ve birincil düğme "Tekrar dene" oluyor.
+    Web karşılığı `skills/player-shell` `ResultCard`.
+  */
+  const resultHead = (
+    <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
+      <Celebrate show={band === "good" && passed} />
+      <ResultHero
+        eyebrow={`${skillKey ? t(skillKey) : t("item.content")} · ${exercise.level}`}
+        title={t(isTasks ? (passed ? "item.tasks_done" : "skillp.result_retry") : perfect ? "skillp.result_perfect" : passed ? "skillp.result_done" : "skillp.result_retry")}
+        figure={isMono && lastScore === undefined ? null : formatPercent(pct)}
+        sub={[!isMono ? t("common.n_correct", { correct, total }) : null, earnedXp > 0 ? `+${earnedXp} XP` : null].filter(Boolean).join(" · ") || null}
+        mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "sad"}
+        quiet={!passed}
+        pill={passed ? null : { text: t("skillp.pill_need", { pct: isMono ? RUBRIC_PASS_PCT : SKILL_DONE_PCT }), tone: "bad" }}
+      />
+      {(() => {
+        const items = [
+          !isMono ? { value: `${correct}/${total}`, label: t("common.correct") } : null,
+          !isMono || lastScore !== undefined ? { value: formatPercent(pct), label: t("skillp.stat_score") } : null,
+          /* Kazanılmayan sayı yazılmıyor: seri yoksa kutu da yok. */
+          streak > 0 ? { value: t("profile.days", { n: streak }), label: t("summary.streak"), tone: "streak" as const } : null,
+        ].filter((x): x is NonNullable<typeof x> => x !== null);
+        return items.length ? <StatRow items={items} /> : null;
+      })()}
+      {/* Bu bir UYARI, hata değil — sonuç cihazda, bağlantıyı bekliyor. */}
+      {queued ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("skillp.saved_offline")} /> : null}
+      {repeatNoXp ? <FlowNote text={t("item.repeat_note")} /> : null}
+    </View>
+  );
+  const resultActions = passed ? (
+    <FlowActions primary={{ label: backLabel, onPress: () => nav.goBack() }} secondary={{ label: t("item.try_again"), onPress: retry }} />
+  ) : (
+    <FlowActions primary={{ label: t("item.try_again"), onPress: retry }} secondary={{ label: backLabel, onPress: () => nav.goBack() }} />
+  );
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -296,6 +349,10 @@ export function ItemScreen() {
           // Monolog: metin sunucuda rubrikle puanlanıyor (ses gitmiyor).
           <>
             <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
+            {/* Monologda band geri bildirimin ÜSTÜNDE (web `ResultCard` onu
+                ayrıntı olarak içine alıyor); gövde yerinde kalıyor ki durumu
+                (puan, transkript) sökülmesin. */}
+            {finished ? resultHead : null}
             <MonologueBody key={round} mono={exercise.monologue} level={exercise.level} exerciseId={exercise.id}
               onDone={(ok, score) => recordAndFinish(ok ? 1 : 0, score)} colors={colors} />
           </>
@@ -305,44 +362,8 @@ export function ItemScreen() {
           <QuestionList key={round} questions={exercise.questions ?? []} onAllAnswered={recordAndFinish} colors={colors} />
         )}
 
-        {finished ? (
-          <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
-            <Celebrate show={band === "good"} />
-            <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} />
-            {/* TURUN SONUCU DUYURULUYOR - web `skills/player-shell` ile ayni
-                yer. Canli bolge metinde, uygulamanin kendi kalibi. */}
-            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2">
-              {exercise.skill === "writing" || exercise.monologue
-                ? t("item.tasks_done")
-                /* Hepsi doğruysa sayı yerine tek cümle - web de öyle söylüyor. */
-                : total > 0 && correct === total
-                  ? t("skillp.perfect")
-                  : t("common.n_correct", { correct: correct, total: total })}
-            </Text>
-            {/* Kazanılan XP — `GameScreen` ile aynı biçim (`+N XP`). */}
-            {earnedXp > 0 ? (
-              <View style={{ alignItems: "center", gap: 2 }}>
-                <Text variant="h2" color={colors.primaryText}>{`+${earnedXp} XP`}</Text>
-                {streak > 0 ? <Text variant="caption" color={colors.streakText}>{t("social.days_streak", { n: streak })}</Text> : null}
-              </View>
-            ) : null}
-            {queued ? (
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("skillp.saved_offline")}</Text>
-            ) : null}
-            {repeatNoXp ? (
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.repeat_note")}</Text>
-            ) : null}
-            {exercise.skill !== "writing" && !exercise.monologue ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
-            <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
-              <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.text}>{t("item.try_again")}</Text>
-              </PressableScale>
-              <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t(fromSkills ? "item.back_to_skills" : "item.back_to_path")}</Text>
-              </PressableScale>
-            </View>
-          </Card>
-        ) : null}
+        {finished && !isMono ? resultHead : null}
+        {finished ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
       </KeyboardAwareScroll>
       {/* Ortam sürprizleri: web beceri oynatıcısında da çiziyor
           (`skills/player-shell` `<MascotFx />`), mobilde yalnız kelime

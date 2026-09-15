@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { AlertIcon, RefreshIcon } from "@/components/icons";
+import { RefreshIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
 import { useT } from "@/lib/i18n/client";
@@ -32,27 +33,23 @@ export default function AppError({
     track("client_error", 1, screenKey(window.location.pathname));
   }, [error]);
 
+  /* DURUM ŞABLONU (components/flow): üzgün maskot · başlık · tek cümle ·
+     tek çıkış. Mobil `ui/ErrorBoundary` aynı parçaları çiziyor. */
   return (
-    <div className="card mx-auto flex w-full max-w-md flex-col items-center gap-3 p-4 text-center">
-      <span
-        className="flex h-12 w-12 items-center justify-center rounded-tile"
-        style={{
-          background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
-          color: "var(--color-rose)",
-        }}
+    <FlowColumn>
+      <StateBody
+        alert
+        mood="sad"
+        title={t("crash.title")}
+        body={t("crash.body")}
       >
-        <AlertIcon size={24} />
-      </span>
-      <h1 className="text-h2">{t("crash.title")}</h1>
-      <p className="muted text-body">{t("crash.body")}</p>
-      {error.digest ? (
-        <p className="muted text-caption">
-          {t("err.code")} <code>{error.digest}</code>
-        </p>
-      ) : null}
-      <button onClick={reset} className="btn btn-primary mt-2 flex items-center gap-2 px-5 py-3">
-        <RefreshIcon size={18} /> {t("common.try_again")}
-      </button>
-    </div>
+        {error.digest ? (
+          <p className="muted mb-3 text-caption">
+            {t("err.code")} <code>{error.digest}</code>
+          </p>
+        ) : null}
+        <FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon size={18} />, onClick: reset }} />
+      </StateBody>
+    </FlowColumn>
   );
 }

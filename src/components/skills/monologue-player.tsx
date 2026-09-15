@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import type { SpeakingMonologueExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { localeOf, useTargetLang } from "./player-context";
@@ -11,7 +10,7 @@ import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { CheckIcon, MicIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
+import { DetailCard, StateBody } from "@/components/flow";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
@@ -375,53 +374,10 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       ) : null}
 
       {phase === "scoring" ? (
-        <section className="card mt-3 p-5 text-center" aria-busy>
-          <Mascot mood="think" size={72} className="mx-auto" />
-          <p className="mt-2 text-strong">{t("item.mono_scoring")}</p>
-        </section>
-      ) : null}
-
-      {phase === "result" ? (
-        /* SONUÇ DUYURULUYOR. Kayıt bitince gelen puan ve rubrik bir eylemin
-           cevabı; odak "Kaydı bitir" düğmesinde kalıyor ve ekran okuyucu
-           hiçbir şey söylemiyordu. Yükleme hâli `aria-busy` ile zaten
-           söyleniyor, sonucu söyleyen yoktu. */
-        <motion.section role="status" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="card mt-3 p-5">
-          {result ? (
-            <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
-          ) : (
-            <p className="text-body">
-              {t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
-            </p>
-          )}
-          {result ? (
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {usedTargets.map((t) => (
-                <span
-                  key={t.de}
-                  className="chip flex items-center gap-1 px-2.5 py-1 text-caption"
-                  style={t.used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
-                  lang={lang}
-                >
-                  {t.used ? <CheckIcon size={12} /> : null}
-                  {t.de}
-                </span>
-              ))}
-            </div>
-          ) : null}
-          <button
-            type="button"
-            onClick={() => setShowSample((v) => !v)}
-            className="muted mt-3 text-caption underline-offset-2 hover:underline"
-          >
-            {showSample ? t("item.mono_hide_sample") : t("item.mono_sample")}
-          </button>
-          {showSample ? (
-            <p className="mt-2 rounded-panel px-3 py-2 text-body leading-relaxed surface-2" lang={lang}>
-              {mono.sampleDe}
-            </p>
-          ) : null}
-        </motion.section>
+        /* PUANLANIYOR: durum şablonu (düşünen maskot), mobil `MonologueBody` ile aynı. */
+        <div className="mt-3" aria-busy>
+          <StateBody mood="think" title={t("item.mono_scoring")} />
+        </div>
       ) : null}
 
       <ResultCard
@@ -441,7 +397,53 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           setPassed(false);
           setChecks(mono.bulletsTr.map(() => false));
         }}
-      />
+      >
+        {phase === "result" ? (
+          /* SONUÇ ŞABLONU: bandı, XP'yi ve düğmeleri `ResultCard` çiziyor;
+             rubrik geri bildirimi bandın altındaki ayrıntı kartı.
+             SONUÇ DUYURULUYOR: puan ve rubrik bir eylemin cevabı, odak "Puanlat"
+             düğmesinde kalıyor — kart kendi `role="status"`unu taşıyor
+             (mobil `MonologueBody` aynı yerde canlı bölge). */
+          <div role="status">
+            <DetailCard title={t("skillp.mono_feedback")}>
+              {result ? (
+                <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
+              ) : (
+                <p className="text-body">
+                  {t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
+                </p>
+              )}
+              {result ? (
+                <div className="flex flex-wrap gap-1.5">
+                  {usedTargets.map((t) => (
+                    <span
+                      key={t.de}
+                      className="chip flex items-center gap-1 px-2.5 py-1 text-caption"
+                      style={t.used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
+                      lang={lang}
+                    >
+                      {t.used ? <CheckIcon size={12} /> : null}
+                      {t.de}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+              <button
+                type="button"
+                onClick={() => setShowSample((v) => !v)}
+                className="muted self-start text-caption underline-offset-2 hover:underline"
+              >
+                {showSample ? t("item.mono_hide_sample") : t("item.mono_sample")}
+              </button>
+              {showSample ? (
+                <p className="rounded-panel px-3 py-2 text-body leading-relaxed surface-2" lang={lang}>
+                  {mono.sampleDe}
+                </p>
+              ) : null}
+            </DetailCard>
+          </div>
+        ) : null}
+      </ResultCard>
     </PlayerShell>
   );
 }

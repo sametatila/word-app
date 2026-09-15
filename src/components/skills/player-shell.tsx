@@ -4,25 +4,26 @@ import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { MascotFx } from "@/components/mascot-fx";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
-import { ArrowLeftIcon, BoltIcon, FlameIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
-import { Confetti } from "@/components/celebrate";
-import { scoreBand, scoreOf } from "@/lib/score-bands";
+import { AlertIcon, ArrowLeftIcon } from "@/components/icons";
+import { FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
+import { isSkillDone, RUBRIC_PASS_PCT, scoreBand, scoreOf, SKILL_DONE_PCT } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame } from "./player-context";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatPercent } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 import { reducedMotion } from "@/lib/fx";
 
+/** `score`: bu denemenin rubrik puanı (yazma, konuşma) — sonuç bandının ana sayısı. */
 type FinishState =
   | { phase: "idle" }
-  | { phase: "saving" }
-  | { phase: "saved"; xpGained: number; currentStreak: number; repeat: boolean }
-  | { phase: "offline" };
+  | { phase: "saving"; score?: number }
+  | { phase: "saved"; xpGained: number; currentStreak: number; repeat: boolean; score?: number }
+  | { phase: "offline"; score?: number };
 
 /**
  * Egzersiz bitişini işler: sunucuda kayıt + XP/seri, cihazda önbellek, üst
@@ -43,7 +44,7 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
       if (sent.current) return;
       sent.current = true;
       recordSkillResult(exercise.id, correct, total, score);
-      setState({ phase: "saving" });
+      setState({ phase: "saving", score });
       try {
         const res = await apiFetch("/api/skills", {
           method: "POST",
@@ -75,9 +76,10 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
           xpGained: data.xpGained,
           currentStreak: data.currentStreak,
           repeat: data.repeat === true,
+          score,
         });
       } catch {
-        setState({ phase: "offline" });
+        setState({ phase: "offline", score });
       }
     },
     [exercise.id, total],
@@ -92,6 +94,13 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
 
   return { finish, state, reset };
 }
+
+/**
+ * Kabuğun egzersizi — sonuç bandının başlığı ("Okuma · A2") ve monolog ayrımı
+ * için `ResultCard` bunu okuyor. Altı oynatıcının her birine prop eklemek
+ * yerine kabuk zaten egzersizi taşıyor.
+ */
+const ShellExercise = createContext<SkillExercise | null>(null);
 
 /** Egzersiz sayfalarının ortak çerçevesi: geri dönüş, seviye, tür ve başlık. */
 export function PlayerShell({
@@ -135,140 +144,122 @@ export function PlayerShell({
           <h1 className="truncate text-h3">{exercise.title}</h1>
         </div>
       </div>
-      {children}
+      <ShellExercise.Provider value={exercise}>{children}</ShellExercise.Provider>
     </div>
   );
 }
 
-/** Bitiş kartı: skor, XP ve seri. Tam skorda küçük bir kutlama tonu taşır. */
+/**
+ * Bitiş: SONUÇ ŞABLONU (components/flow) — band → sayılar → notlar →
+ * ayrıntı (`children`, ör. monolog geri bildirimi) → sıradaki → düğmeler.
+ * Mobil karşılığı `ItemScreen` `resultHead` + `resultActions`; alanlar ve
+ * sıra birebir.
+ */
 export function ResultCard({
   correct,
   total,
   state,
   noun = "question",
   onRetry,
+  children,
 }: {
   correct: number;
   total: number;
   state: FinishState;
-  /** Sayılan şey: soru mu görev mi — çoğul ve ek dile göre sözlükten. */
+  /** Sayılan şey: soru mu görev mi. Görevler (yazma, monolog) başlığı "Görevler bitti" yapıyor. */
   noun?: "question" | "task";
   onRetry?: () => void;
+  /** Bandın altındaki ayrıntı kartları (monolog geri bildirimi). */
+  children?: ReactNode;
 }) {
   const t = useT();
-  const ref = useRef<HTMLElement>(null);
+  const lang = useLang();
+  const ref = useRef<HTMLDivElement>(null);
   const frame = usePlayerFrame();
+  const exercise = useContext(ShellExercise);
   const visible = state.phase !== "idle";
   // Sonuç sayfanın en altına eklenir; öğrenci görmeden kaçırmasın.
   useEffect(() => {
     if (visible) ref.current?.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "center" });
   }, [visible]);
-  if (!visible) return null;
-  const perfect = correct === total;
-  /* SONUÇ ANDROID'DEKİ GİBİ ÜÇ BANTLI VE KONFETİLİ.
-     Burada Erdi yalnız iki hâl biliyordu (hepsi doğruysa kutlama, değilse
-     "happy") ve konfeti hiç yoktu: %30 alan öğrenci de gülümseyen bir Erdi
-     görüyordu, yani sonuç bir GERİ BİLDİRİM taşımıyordu. Android aynı yerde
-     puan bandına bakıyor ve eşiği geçeni konfetiyle kutluyor - uygulamanın
-     kelime turlarında, etap kartlarında ve patron turunda yaptığı şey.
-     Bantlar tek kaynaktan (`lib/score-bands.ts`). */
-  const band = scoreBand(scoreOf(correct, total));
+  if (state.phase === "idle") return null;
+  const score = state.score;
+  const isMono = !!exercise && "monologue" in exercise;
+  const perfect = total > 0 && correct === total;
+  /* SONUÇ ANDROID'DEKİ GİBİ ÜÇ BANTLI VE KONFETİLİ. Bantlar tek kaynaktan
+     (`lib/score-bands.ts`); rubrikle puanlananlarda yüzde rubrik puanından —
+     monolog tek görev ve doğru/toplam ya %0 ya %100 olurdu. */
+  const pct = scoreOf(correct, total, score);
+  const band = scoreBand(pct);
+  /* Olumsuz sonuç = adım "bitti" sayılmadı: band sessizleşiyor, birincil düğme
+     "Tekrar dene". Monologda hüküm rubrik eşiği (tek görevin geçip geçmediği). */
+  const passed = isMono ? perfect : isSkillDone(pct);
+  const xp = state.phase === "saved" ? state.xpGained : 0;
+  const streak = state.phase === "saved" ? state.currentStreak : 0;
+  const title = noun === "task"
+    ? passed ? t("item.tasks_done") : t("skillp.result_retry")
+    : perfect ? t("skillp.result_perfect") : passed ? t("skillp.result_done") : t("skillp.result_retry");
+  const sub = [
+    !isMono ? t("common.n_correct", { correct, total }) : null,
+    xp > 0 ? `+${xp} XP` : null,
+    state.phase === "saving" ? t("rounds.saving") : null,
+  ].filter(Boolean).join(" · ");
+  /* KAZANILMAYAN SAYI YAZILMAZ: seri yoksa kutusu da yok (Android aynı). */
+  const stats = [
+    !isMono ? { value: `${correct}/${total}`, label: t("common.correct") } : null,
+    !isMono || score !== undefined ? { value: formatPercent(pct, lang), label: t("skillp.stat_score") } : null,
+    streak > 0 ? { value: t("profile.days", { n: streak }), label: t("summary.streak"), tone: "streak" as const } : null,
+  ].filter((x): x is NonNullable<typeof x> => x !== null);
+  const back = { label: t(frame.backLabel), href: frame.backHref };
+  const retry = onRetry ? { label: t("item.try_again"), onClick: onRetry } : null;
   return (
-    <motion.section
+    <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200, damping: 22 }}
-      /* TURUN SONUCU DUYURULUYOR. Kart soru listesinin YERINE geliyor:
-         sorular kayboluyor, yerine puan ve yargi ("gectin" / "biraz daha
-         calis") beliriyor. Sesli okuyucu kullanan biri bunu hic duymuyordu -
-         tur bitti mi, kac dogru, gecti mi, hicbiri. `role="status"` sirasini
-         bekleyerek okuyor; hata degil, sonuc. Mobil karsiligi ayni yerde
-         `accessibilityLiveRegion`. */
-      role="status"
-      className="card mt-5 p-5 text-center"
+      className="mt-5"
     >
-      {/* Sonucu söyleyen şey burada da Erdi — kelime turlarında, etap
-          kartlarında ve oyun içindeki sonuç şeridinde olduğu gibi. Beceri
-          egzersizini bitirmek de bir tur bitirmek kadar bir an; orada karakter
-          kutlarken burada onay simgesi çıkması, aynı uygulamada iki ayrı dil
-          konuşmak olurdu. */}
-      {/* `cheer` klibi mobildeki `celebrate` ile aynı dosya (bkz. mascot CLIP). */}
-      <Confetti fire={band === "good" ? 1 : 0} count={34} />
-      <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} className="mx-auto" />
-      <h2 className="mt-1 text-h3">
-        {perfect
-          ? t("skillp.perfect")
-          : t(noun === "task" ? "skillp.n_of_tasks" : "skillp.n_of_questions", { correct, total })}
-      </h2>
-      {state.phase === "saved" ? (
-        <>
-          {/*
-            KAZANILMAYAN SAYI YAZILMAZ. İki satır da koşulsuzdu: tekrar
-            edilen bir egzersizde "+0 XP", serisi olmayan öğrenciye de
-            "0 gün seri" yazıyordu — kazanılmamış iki ödülün boş çerçevesi.
-            Android'in aynı sonuç kartı ikisini de sıfırda hiç çizmiyor
-            (`ItemScreen`: `earnedXp > 0`, içinde `streak > 0`); sıfır XP'nin
-            sebebi zaten hemen altındaki not (`item.repeat_note`).
-
-            XP glifi de `SparkIcon`dan `BoltIcon`a geçti: Spark bu uygulamada
-            kombo/yapay zekâ/akış işareti, XP'nin glifi Bolt (üst bar ve
-            profil rozeti de aynı nedenle düzeltildi).
-          */}
-          {state.xpGained > 0 || state.currentStreak > 0 ? (
-            <p className="mt-2 flex items-center justify-center gap-3 text-strong">
-              {state.xpGained > 0 ? (
-                <span className="flex items-center gap-1" style={{ color: "var(--color-brand)" }}>
-                  <BoltIcon size={16} /> +{state.xpGained} XP
-                </span>
-              ) : null}
-              {state.currentStreak > 0 ? (
-                <span className="flex items-center gap-1" style={{ color: "var(--color-flame)" }}>
-                  <FlameIcon size={16} /> {t("social.days_streak", { n: state.currentStreak })}
-                </span>
-              ) : null}
-            </p>
-          ) : null}
-          {state.repeat && state.xpGained === 0 ? (
-            <p className="muted mt-1.5 text-caption">
-              {t("item.repeat_note")}
-            </p>
-          ) : null}
-        </>
-      ) : state.phase === "offline" ? (
-        <p className="muted mt-2 text-body">
-          {t("skillp.saved_offline")}
-        </p>
-      ) : (
-        <p className="muted mt-2 text-body">{t("rounds.saving")}</p>
-      )}
-      {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
-          becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
-          aramasın; "todo" burada, bitirdiği anda. */}
-      {frame.next ? (
-        <Link
-          href={frame.next.href}
-          className="mt-4 flex items-center justify-between gap-3 rounded-panel px-4 py-3 text-left surface-2"
-        >
-          <span className="min-w-0">
-            <span className="muted block text-micro uppercase tracking-eyebrow">{t("skills.next")}</span>
-            <span className="block truncate text-strong">{frame.next.title}</span>
-          </span>
-          <span className="shrink-0 text-h3" aria-hidden>
-            →
-          </span>
-        </Link>
-      ) : null}
-      <div className="mt-4 flex items-center justify-center gap-3">
-        <Link href={frame.backHref} className="btn btn-primary px-6 py-3">
-          {t(frame.backLabel)}
-        </Link>
-        {onRetry && !perfect ? (
-          <button type="button" onClick={onRetry} className="btn btn-ghost px-5 py-3">
-            {t("common.try_again")}
-          </button>
+      {/* TURUN SONUCU DUYURULUYOR: `ResultHero` `role="status"` taşıyor —
+          sorular kayboluyor, yerine puan ve yargı beliriyor. */}
+      <FlowColumn celebrate={band === "good" && passed}>
+        <ResultHero
+          eyebrow={exercise ? `${t(SKILL_LABEL_KEYS[exercise.skill])} · ${exercise.level}` : t("item.content")}
+          title={title}
+          figure={isMono && score === undefined ? null : formatPercent(pct, lang)}
+          sub={sub || null}
+          mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "sad"}
+          quiet={!passed}
+          pill={passed ? null : { text: t("skillp.pill_need", { pct: isMono ? RUBRIC_PASS_PCT : SKILL_DONE_PCT }), tone: "bad" }}
+        />
+        {stats.length ? <StatRow items={stats} /> : null}
+        {/* Bu bir UYARI, hata değil — sonuç cihazda, bağlantıyı bekliyor. */}
+        {state.phase === "offline" ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("skillp.saved_offline")} /> : null}
+        {state.phase === "saved" && state.repeat && state.xpGained === 0 ? <FlowNote text={t("item.repeat_note")} /> : null}
+        {children}
+        {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
+            becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
+            aramasın; "todo" burada, bitirdiği anda. (Mobilde bu bağlantı yok.) */}
+        {frame.next ? (
+          <Link
+            href={frame.next.href}
+            className="flex items-center justify-between gap-3 rounded-panel px-4 py-3 text-left surface-2"
+          >
+            <span className="min-w-0">
+              <span className="muted block text-micro uppercase tracking-eyebrow">{t("skills.next")}</span>
+              <span className="block truncate text-strong">{frame.next.title}</span>
+            </span>
+            <span className="shrink-0 text-h3" aria-hidden>
+              →
+            </span>
+          </Link>
         ) : null}
-      </div>
-    </motion.section>
+        {passed || !retry ? (
+          <FlowActions primary={back} secondary={retry} />
+        ) : (
+          <FlowActions primary={retry} secondary={back} />
+        )}
+      </FlowColumn>
+    </motion.div>
   );
 }

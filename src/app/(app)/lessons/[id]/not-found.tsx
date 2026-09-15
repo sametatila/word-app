@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Mascot } from "@/components/mascot";
+import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { getT } from "@/lib/i18n/server";
 
 /**
@@ -21,13 +20,16 @@ import { getT } from "@/lib/i18n/server";
  */
 export default async function LessonNotFound() {
   const t = await getT();
+  /* DURUM ŞABLONU (components/flow): üzgün maskot · başlık · tek çıkış. */
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col items-center gap-4 px-5 py-10 text-center">
-      <Mascot mood="sad" size={90} />
-      <p className="muted text-body">{t("lesson.this_lesson_wasn_t_found")}</p>
-      <Link href="/lessons" className="btn btn-ghost px-5 py-2.5 text-body">
-        {t("lesson.go_back")}
-      </Link>
+    <div className="px-4 py-8">
+      <FlowColumn>
+        <StateBody mood="sad" title={t("lesson.this_lesson_wasn_t_found")}>
+          <FlowActions
+            primary={{ label: t("lesson.go_back"), href: "/lessons" }}
+          />
+        </StateBody>
+      </FlowColumn>
     </div>
   );
 }

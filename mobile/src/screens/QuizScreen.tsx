@@ -1,21 +1,23 @@
 import React, { useMemo, useRef, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
-import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { QuestionList } from "../game/skillQuiz";
 import { markItemDone, recordPathItem } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii } from "../theme";
+import { FlowActions, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { sfx } from "../lib/sfx";
+
+/** Geçme eşiği — web `PRACTICE_PASS_PCT` (`lib/score-bands.ts`) ile aynı sayı. */
+const PASS_PCT = 60;
 
 /**
  * Ünite quiz (Tekrar) / checkpoint (Kontrol Noktası) oynatıcısı — sorular
@@ -56,14 +58,14 @@ export function QuizScreen() {
     saved.current = true;
     /* "Bitti" = GEÇTİ (web `PRACTICE_PASS_PCT` ile aynı eşik). Cihazdaki işaret
        her denemede konuyordu, yani geçemeyen öğrenci de adımı bitmiş görüyordu. */
-    if (total && Math.round((c / total) * 100) >= 60) void markItemDone(params.itemId);
+    if (total && Math.round((c / total) * 100) >= PASS_PCT) void markItemDone(params.itemId);
     if (total) void recordPathItem({ itemId: params.itemId, correct: c, total });
   }
   function retry() { saved.current = false; setFinished(false); setCorrect(0); setRound((r) => r + 1); }
 
   const total = questions.length;
   const pct = total ? Math.round((correct / total) * 100) : 0;
-  const passed = pct >= 60;
+  const passed = pct >= PASS_PCT;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -88,33 +90,46 @@ export function QuizScreen() {
         </Text>
 
         {total === 0 ? (
-          <Card padded style={{ marginTop: spacing.lg, alignItems: "center" }}>
-            <Text variant="body" color={colors.textMuted}>{t("quiz.this_unit_has_no_questions_yet")}</Text>
-          </Card>
+          /* DURUM ŞABLONU: soru yoksa boş durum (düşünen maskot) ve tek çıkış.
+             Web aynı dalı `ImmersionQuizPlayer`da çiziyor. */
+          <View style={{ marginTop: spacing.md, gap: spacing.md }}>
+            <StateBody mood="think" title={t("quiz.this_unit_has_no_questions_yet")} />
+            <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
+          </View>
         ) : (
           <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
         )}
 
-        {finished ? (
-          <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
-            <Celebrate show={!!passed} />
-            <Mascot mood={passed ? "celebrate" : "idle"} size={84} />
-            {/* TURUN SONUCU DUYURULUYOR: kart soru listesinin yerine
-                geliyor ve sesli okuyucu kullanan biri "bitti mi, kac dogru,
-                gecti mi" sorularinin hicbirini duymuyordu. Canli bolge
-                METINDE, uygulamanin kendi kalibi (`FriendRows`,
-                `ActiveSessions`); web karsiligi kabin `role="status"`u. */}
-            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2">{t("common.n_correct", { correct: correct, total: total })}</Text>
-            <Text variant="caption" color={passed ? colors.successText : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
-            <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
-              <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.text}>{t("quiz.try_again")}</Text>
-              </PressableScale>
-              <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("quiz.back_to_path")}</Text>
-              </PressableScale>
-            </View>
-          </Card>
+        {finished && total > 0 ? (
+          /*
+            SONUÇ ŞABLONU (ui/flow): band → üç sayı → düğmeler. Eskiden tek kart:
+            maskot, "x/y doğru" ve "%pct — geçtin" satırı. Geçemeyen öğrenci
+            adımın AÇIK kaldığını ve eşiği hiçbir yerde görmüyordu; şimdi band
+            sessizleşiyor, etiket "Adım açık kaldı" diyor ve birincil düğme
+            "Tekrar dene". Sonucu duyuran canlı bölge bandın kendisinde.
+          */
+          <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
+            <Celebrate show={passed} />
+            <ResultHero
+              eyebrow={`${t("common.unit")} ${params.unitIndex} · ${t(isGrammar ? "unitkind.grammar" : isCheckpoint ? "unitkind.checkpoint" : "unitkind.quiz")}`}
+              title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
+              figure={`${correct}/${total}`}
+              sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}
+              mood={passed ? "celebrate" : "sad"}
+              quiet={!passed}
+              pill={passed ? { text: t("quiz.pill_marked"), tone: "ok" } : { text: t("quiz.pill_open"), tone: "bad" }}
+            />
+            <StatRow items={[
+              { value: `${correct}/${total}`, label: t("common.correct") },
+              { value: formatPercent(pct), label: t("quiz.stat_score"), tone: passed ? "ok" : "bad" },
+              { value: formatPercent(PASS_PCT), label: t("quiz.stat_pass") },
+            ]} />
+            {passed ? (
+              <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} secondary={{ label: t("quiz.try_again"), onPress: retry }} />
+            ) : (
+              <FlowActions primary={{ label: t("quiz.try_again"), onPress: retry }} secondary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
+            )}
+          </View>
         ) : null}
       </KeyboardAwareScroll>
     </View>

@@ -75,7 +75,8 @@ export default async function ImmersionQuizPage({
        soru o yüzden ters yönde sorulur (bkz. `PatternAsk`). */
     course === "en" ? "meaning" : "production");
   }
-  if (!questions.length) notFound();
+  /* Soru yoksa 404 DEĞİL: oynatıcı "henüz soru yok" durumunu çiziyor (mobil
+     `QuizScreen` ile aynı). Ünite kimliği geçersizse yukarıda zaten 404. */
 
   return (
     <ImmersionQuizPlayer
@@ -83,6 +84,7 @@ export default async function ImmersionQuizPage({
       subtitle={`${t("common.unit")} ${brief.index} · ${brief.theme}`}
       kind={checkpoint ? "checkpoint" : "quiz"}
       itemId={`${unit}-${checkpoint ? "checkpoint" : "quiz"}1`}
+      unitNo={brief.index}
       intro={t(checkpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
       questions={questions}
     />

@@ -7,7 +7,6 @@ import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineStat
 import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 import {
   prefetchGerman,
   prefetchSegments,
@@ -18,9 +17,8 @@ import {
 } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { AlertIcon, CheckIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
-import { Confetti } from "@/components/celebrate";
+import { DetailCard, FlowActions, FlowColumn, FlowNote, ResultHero, StatRow } from "@/components/flow";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
@@ -208,7 +206,6 @@ export function LessonPlayer({
   const t = useT();
   const lang = useLang();
   const nar = useMemo(() => narFor(lang), [lang]);
-  const router = useRouter();
   const [phase, setPhase] = useState<Phase>("lecture");
 
   // ── Anlatım durumu ──
@@ -1126,6 +1123,9 @@ export function LessonPlayer({
   /* Alistirma isabeti - ozetin maskotu, konfetisi ve yuzde karosu ayni
      sayidan besleniyor (Android `Summary` `pct` ile ayni hesap). */
   const pct = scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100;
+  /* Konuşma YARIM: sunucu açıkça "sayılmadı" dediyse ya da asgari tur dolmadıysa
+     (mobil `Summary` `unfinished` ile aynı iki koşul). */
+  const unfinished = saved?.passed === false || !roleplayDone;
 
   // ─────────────────────────── görünüm ───────────────────────────
 
@@ -1146,45 +1146,48 @@ export function LessonPlayer({
       ) : null}
 
       {resumed && phase !== "summary" ? (
-        <div
-          className="flex items-center gap-2 rounded-panel px-3 py-2 text-caption"
-          style={{ background: "color-mix(in srgb, var(--color-brand) 10%, transparent)" }}
-        >
-          <span className="flex-1" style={{ color: "var(--color-brand)" }}>
-            {t("lessonp.resumed")}
-          </span>
-          <button
-            type="button"
-            onClick={() => setResumed(false)}
-            aria-label={t("common.close")}
-            /* 14px ikon, dolgusu yoktu: hedef 14x14 idi. `p-1` + `hit-8` ile
-               38 - kardesi olan dinle dugmesi de ayni kaliba baglaniyor. */
-            className="muted hit-8 shrink-0 p-1"
-          >
-            <XIcon size={14} />
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              try {
-                localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
-              } catch {
-                /* yoksay */
-              }
-              setResumed(false);
-              setTurns([]);
-              setFeed([]);
-              setCorrectCount(0);
-              attempts.current = 0;
-              setTryCount(0);
-              setPhase("lecture");
-              runStep(0);
-            }}
-            className="btn btn-ghost shrink-0 px-2 py-0.5 text-caption"
-          >
-            {t("lesson.start_over")}
-          </button>
-        </div>
+        /* KALDIĞIN YERDEN — tek satırlık not (FlowNote). Web kaydı kendiliğinden
+           sürdürüyor; mobil tam ekran soruyor (`LessonScreen` `resumeOffer`).
+           Bilinçli fark: burada ekran sohbetin kendisi ve öğrenci kaldığı yeri
+           zaten görüyor; "Baştan başla" ve kapatma notun içinde. */
+        <FlowNote
+          text={
+            <span className="flex items-center gap-2">
+              <span className="min-w-0 flex-1">{t("lessonp.resumed")}</span>
+              <button
+                type="button"
+                onClick={() => {
+                  try {
+                    localStorage.removeItem(`${RESUME_KEY}:${lesson.id}`);
+                  } catch {
+                    /* yoksay */
+                  }
+                  setResumed(false);
+                  setTurns([]);
+                  setFeed([]);
+                  setCorrectCount(0);
+                  attempts.current = 0;
+                  setTryCount(0);
+                  setPhase("lecture");
+                  runStep(0);
+                }}
+                className="btn btn-ghost shrink-0 px-2 py-0.5 text-caption"
+              >
+                {t("lesson.start_over")}
+              </button>
+              <button
+                type="button"
+                onClick={() => setResumed(false)}
+                aria-label={t("common.close")}
+                /* 14px ikon, dolgusu yoktu: hedef 14x14 idi. `p-1` + `hit-8` ile
+                   38 - kardesi olan dinle dugmesi de ayni kaliba baglaniyor. */
+                className="muted hit-8 shrink-0 p-1"
+              >
+                <XIcon size={14} />
+              </button>
+            </span>
+          }
+        />
       ) : null}
 
       <AnimatePresence mode="wait">
@@ -1653,179 +1656,118 @@ export function LessonPlayer({
         ) : null}
 
         {phase === "summary" ? (
-          <motion.section
-            key="summary"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="card relative p-5"
-          >
-            {/* KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ ANDROID'DEKİ GİBİ: dersin
-                ALIŞTIRMA İSABETİ. Web `saved?.passed`e bakıyordu ve ikisi ayrı
-                şey ölçüyor — hüküm sunucunun kararı, kutlama ise "nasıl
-                geçti"nin karşılığı. Android üç kademe kullanıyor
-                (`pct >= 80` kutla, `>= 50` sevin, altı sakin) ve konfeti de
-                aynı eşikten çıkıyor; web tek bir boolean'a bağlıydı, yani
-                %79'la biten bir ders %10'la biten dersle aynı görünüyordu.
+          <motion.section key="summary" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+            {/*
+              SONUÇ ŞABLONU (components/flow): band → üç sayı → notlar → ayrıntı
+              kartları → en çok üç düğme. Mobil `LessonScreen` `Summary` ile
+              alanlar ve sıra birebir.
 
-                İkinci fayda: `saved` null kalırsa (kayıt isteği düşerse) web
-                hiç kutlamıyor ve MASKOT "düşünüyor" moduna geçiyordu — oysa
-                kullanıcı dersi bitirdi, yalnız hüküm gelmedi. */}
-            <Confetti fire={pct >= 80 ? 1 : 0} />
-            {/* Ders kapanışında da Erdi: geçilen derste kutluyor, yarım kalanda
-                düşünüyor. Kelime turu, etap kartı, oyun içindeki sonuç şeridi ve
-                beceri egzersizi aynı karakterle kapanıyor — kapanış anını her
-                bölümde başka bir simgeyle karşılamak, aynı uygulamada birkaç
-                ayrı dil konuşmak olurdu. */}
-            <div className="flex items-center gap-2">
-              <Mascot mood={pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle"} size={54} className="-my-2 shrink-0" />
-              <div>
-                {/* BAŞLIĞIN BİLİNMEYEN HÂLİ. Web `saved?.passed` truthy
-                    değilse "konuşma bitmedi" diyordu, yani kayıt isteği
-                    DÜŞTÜĞÜNDE de öyle diyordu: kullanıcı dersi bitirmiş ama
-                    ekran ona bitirmediğini söylüyordu. Android yalnız hüküm
-                    AÇIKÇA olumsuzken öyle diyor (`passed === false`) ve
-                    bilinmeyeni "tamamlandı" sayıyor - doğrusu bu, çünkü ders
-                    yerelde gerçekten bitti. */}
-                <h2 className="text-h3">
-                  {t(saved?.passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
-                </h2>
-                <p className="muted text-caption">
-                  {lesson.title} · {lesson.titleTr}
-                </p>
-              </div>
-            </div>
+              KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ dersin ALIŞTIRMA İSABETİ (`pct >= 80`
+              kutla, `>= 50` sevin); hüküm (yarım kaldı mı) ayrı: yarım kalan
+              konuşma band sessizleşiyor ve konfeti hiç atılmıyor.
 
-            {/* ÜÇ SAYI. Web iki, Android iki gösteriyordu ama İKİNCİLERİ
-                farklıydı: webde tur sayısı, Androidde başarı yüzdesi. İkisi de
-                gerçek bir şey söylüyor (biri konuşmanın uzunluğunu, öteki
-                isabeti) ve hangisini atacağımıza karar vermek yerine ikisi de
-                iki tarafta duruyor. Yüzde sözlükteki ortak biçimden. */}
-            <dl className="mt-4 grid grid-cols-3 gap-3">
-              {/* Etiket ORTAK anahtardan. Web bu sayıya "Alıştırma" diyen
-                  kendi web-özel anahtarını kullanıyordu, Android "doğru
-                  üretim" - aynı sayının iki adı vardı. */}
-              <Stat label={t("lesson.correct_production")} value={`${correctCount} / ${scoredTotal}`} />
-              <Stat label={t("lesson.accuracy")} value={formatPercent(pct, lang)} />
-              <Stat
-                label={t("lesson.phase_roleplay")}
-                value={t("lessonp.n_turns", { n: userTurns })}
-                tone={roleplayDone ? "ok" : "warn"}
+              BAŞLIĞIN BİLİNMEYEN HÂLİ: kayıt isteği düşerse `saved` null kalır;
+              yarım sayılması için ya sunucu açıkça "sayılmadı" demeli ya da
+              asgari tur yerelde dolmamış olmalı — ders yerelde bittiyse bitti.
+            */}
+            <FlowColumn celebrate={!unfinished && pct >= 80}>
+              <ResultHero
+                eyebrow={`${t("unitkind.lesson")} · ${lesson.title}`}
+                title={t(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
+                figure={scoredTotal ? `${correctCount}/${scoredTotal}` : null}
+                sub={t("lessonp.n_turns", { n: userTurns })}
+                mood={unfinished ? "sad" : pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "sad"}
+                quiet={unfinished}
+                pill={unfinished ? { text: t("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
               />
-            </dl>
+              {/* Tur sayısı konuşmanın UZUNLUĞU, isabetten ayrı bir şey; eşikle
+                  birlikte yazılıyor. Tekrar günü aralıklı tekrar merdiveninden. */}
+              <StatRow
+                items={[
+                  { value: formatPercent(pct, lang), label: t("lesson.accuracy") },
+                  { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: t("lessonp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+                  ...(!unfinished && saved ? [{ value: t("profile.days", { n: saved.nextDays }), label: t("lessonp.stat_review") }] : []),
+                ]}
+              />
 
-            {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta
-                toplu görünmeli — Learna bunu yapmıyor, biz yapıyoruz. */}
-            <div className="mt-4">
-              <p className="muted text-caption">{t("lessonp.words_of_lesson")}</p>
-              <div className="mt-1.5 flex flex-wrap gap-1.5">
-                {lesson.vocab.map((v) => (
-                  <span key={v.de} className="chip px-2 py-1 text-caption">
-                    <b>{v.de}</b> · {v.tr}
-                  </span>
-                ))}
-              </div>
-            </div>
+              {unfinished ? (
+                <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })} />
+              ) : null}
+              {extras.cando.length ? (
+                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={`${t("lessonp.i_can")} ${extras.cando.join(" · ")}`} />
+              ) : null}
+              {!corrections.length && turns.length > 1 ? (
+                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("lessonp.no_corrections")} />
+              ) : null}
 
-            {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
-                geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. */}
-            {lesson.patterns.length && turns.length > 1 ? (
-              <div className="mt-4">
-                <p className="muted text-caption">{t("lessonp.patterns")}</p>
-                <div className="mt-1.5 flex flex-wrap gap-1.5">
+              {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
+                  geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. Konuşma
+                  hiç olmadıysa işaret yok (yanlış bir "yapmadın" damgası). */}
+              {lesson.patterns.length ? (
+                <DetailCard title={t("lesson.patterns_you_learned")}>
                   {lesson.patterns.map((pt) => {
-                    const used = patternUsed(pt.de, turns);
+                    const talked = turns.length > 1;
+                    const used = talked && patternUsed(pt.de, turns);
                     return (
-                      <span
-                        key={pt.de}
-                        className="chip px-2 py-1 text-caption"
-                        style={used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
-                      >
-                        {/* Karşılık GÖRÜNÜR: `title=` ipucu balonundaydı,
-                            dokunmatikte hiç açılmıyor. Android özetteki aynı
-                            listede "de" ve "tr"yi yan yana yazıyor. */}
-                        {used ? "✓ " : ""}
-                        {pt.de}
-                        <span className="muted"> · {pt.tr}</span>
-                      </span>
+                      <div key={pt.de} className="flex items-baseline gap-2" style={{ opacity: talked && !used ? 0.6 : 1 }}>
+                        {talked ? (
+                          <span className="w-4 shrink-0" style={{ color: "var(--color-mint)" }}>
+                            {used ? <CheckIcon size={14} /> : null}
+                          </span>
+                        ) : null}
+                        <span className="text-strong" style={used ? { color: "var(--color-mint)" } : undefined}>
+                          {pt.de}
+                        </span>
+                        <span className="muted min-w-0 flex-1 text-right text-caption">{pt.tr}</span>
+                      </div>
                     );
                   })}
-                </div>
-              </div>
-            ) : null}
-
-            {extras.cando.length ? (
-              <p className="muted mt-4 text-caption leading-relaxed">
-                <span className="font-semibold">{t("lessonp.i_can")}</span> {extras.cando.join(" · ")}
-              </p>
-            ) : null}
-
-            {corrections.length ? (
-              <div className="mt-4">
-                <p className="muted text-caption">{t("lessonp.corrections")}</p>
-                <ul className="mt-1.5 space-y-1">
-                  {corrections.map((c, i) => (
-                    <li key={i} className="text-caption leading-relaxed">
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : turns.length > 1 ? (
-              <p className="mt-4 text-caption" style={{ color: "var(--color-mint)" }}>
-                {t("lessonp.no_corrections")}
-              </p>
-            ) : null}
-
-            {!roleplayDone ? (
-              <p className="muted mt-4 text-caption leading-relaxed">
-                {t("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
-              </p>
-            ) : saved ? (
-              <p className="muted mt-4 text-caption leading-relaxed">
-                {t("lessonp.next_in_days", { n: saved.nextDays })}
-              </p>
-            ) : null}
-
-            <div className="mt-5 flex gap-2">
-              {!roleplayDone ? (
-                <button
-                  type="button"
-                  onClick={() => setPhase("roleplay")}
-                  className="btn btn-primary flex-1 py-3 text-body"
-                >
-                  {t("lessonp.back_to_conversation")}
-                </button>
+                </DetailCard>
               ) : null}
-              {roleplayDone ? (
-                <button
-                  type="button"
-                  onClick={() => router.push(`/lessons/${lesson.id}/exam`)}
-                  className="btn btn-ghost flex-1 flex-col gap-0.5 py-3 text-body"
-                >
-                  {t("lessonp.try_as_exam")}
-                  {/* İPUCU GÖRÜNÜR. `title=` balonunda duruyordu, yani
-                      dokunmatikte hiç açılmıyordu; Android aynı düğmenin
-                      altına ikinci satır olarak yazıyor (`LessonScreen`). */}
-                  <span className="muted text-micro">{t("lessonp.exam_hint")}</span>
-                </button>
+
+              {corrections.length ? (
+                <DetailCard title={t("lessonp.corrections")}>
+                  <ul className="space-y-1">
+                    {corrections.map((c, i) => (
+                      <li key={i} className="text-caption leading-relaxed">
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </DetailCard>
               ) : null}
-              {roleplayDone && extras.next ? (
-                <button
-                  type="button"
-                  onClick={() => router.push(`/lessons/${extras.next!.id}`)}
-                  className="btn btn-primary flex-1 py-3 text-body"
-                >
-                  {t("lesson.next_speaking", { title: extras.next.title })}
-                </button>
+
+              {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta toplu. */}
+              {lesson.vocab.length ? (
+                <DetailCard title={t("lessonp.words_of_lesson")}>
+                  <div className="flex flex-wrap gap-1.5">
+                    {lesson.vocab.map((v) => (
+                      <span key={v.de} className="chip px-2 py-1 text-caption">
+                        <b>{v.de}</b> · {v.tr}
+                      </span>
+                    ))}
+                  </div>
+                </DetailCard>
               ) : null}
-              <button
-                type="button"
-                onClick={() => router.push("/immersion")}
-                className={`btn flex-1 py-3 text-body ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
-              >
-                {t("lesson.back_to_path")}
-              </button>
-            </div>
+
+              {unfinished ? (
+                <FlowActions
+                  primary={{ label: t("lessonp.back_to_conversation"), onClick: () => setPhase("roleplay") }}
+                  tertiary={{ label: t("lesson.back_to_path"), href: "/immersion" }}
+                />
+              ) : (
+                <FlowActions
+                  primary={
+                    extras.next
+                      ? { label: t("lesson.next_speaking", { title: extras.next.title }), href: `/lessons/${extras.next.id}` }
+                      : { label: t("lesson.back_to_path"), href: "/immersion" }
+                  }
+                  /* İPUCU GÖRÜNÜR: düğmenin ikinci satırı (Android aynı). */
+                  secondary={turns.length > 1 ? { label: t("lessonp.try_as_exam"), hint: t("lessonp.exam_hint"), href: `/lessons/${lesson.id}/exam` } : null}
+                  tertiary={extras.next ? { label: t("lesson.back_to_path"), href: "/immersion" } : null}
+                />
+              )}
+            </FlowColumn>
           </motion.section>
         ) : null}
       </AnimatePresence>
@@ -1902,27 +1844,6 @@ function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectat
           ))}
         </p>
       ) : null}
-    </div>
-  );
-}
-
-function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok" | "warn" }) {
-  return (
-    <div className="rounded-panel px-3 py-2.5" style={{ background: "var(--surface-2)" }}>
-      <dt className="muted text-caption">{label}</dt>
-      <dd
-        className="mt-0.5 text-strong tabular-nums"
-        style={{
-          color:
-            tone === "warn"
-              ? "var(--color-flame)"
-              : tone === "ok"
-                ? "var(--color-mint)"
-                : undefined,
-        }}
-      >
-        {value}
-      </dd>
     </div>
   );
 }

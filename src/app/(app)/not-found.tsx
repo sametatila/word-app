@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { EmptyCard } from "@/components/empty-card";
-import { CompassIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { getT } from "@/lib/i18n/server";
 
 /**
@@ -21,19 +19,20 @@ import { getT } from "@/lib/i18n/server";
  */
 export default async function AppNotFound() {
   const t = await getT();
+  /* DURUM ŞABLONU (components/flow): bulunamadı = düşünen maskot, tek çıkış. */
   return (
-    <div className="mx-auto w-full max-w-md px-4 py-8">
-      <EmptyCard
-        icon={CompassIcon}
-        tint="var(--color-brand)"
-        title={t("notfound.title")}
-        text={t("notfound.sub")}
-        action={
-          <Link href="/learn" className="btn btn-primary px-5 py-2.5 text-body">
-            {t("common.back_to_learn")}
-          </Link>
-        }
-      />
+    <div className="px-4 py-8">
+      <FlowColumn>
+        <StateBody
+          mood="think"
+          title={t("notfound.title")}
+          body={t("notfound.sub")}
+        >
+          <FlowActions
+            primary={{ label: t("common.back_to_learn"), href: "/learn" }}
+          />
+        </StateBody>
+      </FlowColumn>
     </div>
   );
 }

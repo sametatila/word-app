@@ -4,6 +4,7 @@ import { View, TextInput } from "react-native";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { DetailCard, StateBody } from "../ui/flow";
 import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
@@ -336,6 +337,56 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   const mm = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
   const used = mono.targets.map((x) => ({ ...x, used: transcript.toLowerCase().includes(x.de.split(/…|\.\.\./)[0].replace(/[^\p{L}\p{N}' ]/gu, " ").trim().toLowerCase()) }));
 
+  /* PUANLANIYOR: durum şablonu (düşünen maskot), web `monologue-player` ile aynı. */
+  if (phase === "scoring") {
+    return (
+      <View style={{ marginTop: spacing.md }}>
+        <StateBody mood="think" title={t("item.mono_scoring")} />
+      </View>
+    );
+  }
+
+  if (phase === "result") {
+    /* SONUÇ DUYURULUYOR — web `monologue-player`/`speaking-player` ile
+       aynı yerde. Puan, övgü, ipucu ve düzeltilmiş metin bir eylemin
+       cevabı: kayıt bitiyor, odak düğmede kalıyor ve ekran okuyucu hiçbir
+       şey söylemiyordu. İki platform da sessizdi (§11.228 sınıfı), yani
+       karşılaştırma bunu bulamazdı.
+
+       SONUÇ ŞABLONU: bandı (`ResultHero`) `ItemScreen` çiziyor — XP, seri ve
+       düğmeler orada. Buradaki içerik bandın altındaki ayrıntı kartı. */
+    return (
+      <View accessibilityLiveRegion="polite" style={{ marginTop: spacing.md }}>
+        <DetailCard title={t("skillp.mono_feedback")} right={result ? <Text variant="bodyStrong">{formatPercent(result.overall)}</Text> : null}>
+          {result ? (
+            <>
+              {result.praise ? <Text variant="body">{result.praise}</Text> : null}
+              {result.tip ? <Text variant="caption" color={colors.textMuted}>{result.tip}</Text> : null}
+              {result.corrected ? (
+                <View style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+                  <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{t("item.mono_corrected")}</Text>
+                  <Text variant="body">{result.corrected}</Text>
+                </View>
+              ) : null}
+            </>
+          ) : (
+            <Text variant="body" color={colors.textMuted}>
+              {gateNote ? gateNote : failed ? t("item.mono_unscored") : t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
+            </Text>
+          )}
+          <PressableScale onPress={() => setShowSample((v) => !v)} style={{ alignSelf: "flex-start" }}>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t(showSample ? "item.mono_hide_sample" : "item.mono_sample")}</Text>
+          </PressableScale>
+          {showSample ? (
+            <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
+              <Text variant="body">{mono.sampleDe}</Text>
+            </View>
+          ) : null}
+        </DetailCard>
+      </View>
+    );
+  }
+
   return (
     <Card padded style={{ marginTop: spacing.md }}>
       {phase === "prep" ? (
@@ -424,44 +475,6 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
         </>
       ) : null}
 
-      {phase === "scoring" ? (
-        <Text variant="bodyStrong" style={{ textAlign: "center", paddingVertical: spacing.lg }}>{t("item.mono_scoring")}</Text>
-      ) : null}
-
-      {phase === "result" ? (
-        /* SONUÇ DUYURULUYOR — web `monologue-player`/`speaking-player` ile
-           aynı yerde. Puan, övgü, ipucu ve düzeltilmiş metin bir eylemin
-           cevabı: kayıt bitiyor, odak düğmede kalıyor ve ekran okuyucu hiçbir
-           şey söylemiyordu. İki platform da sessizdi (§11.228 sınıfı), yani
-           karşılaştırma bunu bulamazdı. */
-        <View accessibilityLiveRegion="polite">
-          {result ? (
-            <>
-              <Text variant="h2">{formatPercent(result.overall)}</Text>
-              {result.praise ? <Text variant="body" style={{ marginTop: spacing.sm }}>{result.praise}</Text> : null}
-              {result.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{result.tip}</Text> : null}
-              {result.corrected ? (
-                <View style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-                  <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{t("item.mono_corrected")}</Text>
-                  <Text variant="body">{result.corrected}</Text>
-                </View>
-              ) : null}
-            </>
-          ) : (
-            <Text variant="body" color={colors.textMuted}>
-              {gateNote ? gateNote : failed ? t("item.mono_unscored") : t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
-            </Text>
-          )}
-          <PressableScale onPress={() => setShowSample((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-            <Text variant="bodyStrong" color={colors.primaryText}>{t(showSample ? "item.mono_hide_sample" : "item.mono_sample")}</Text>
-          </PressableScale>
-          {showSample ? (
-            <View style={{ marginTop: spacing.sm, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
-              <Text variant="body">{mono.sampleDe}</Text>
-            </View>
-          ) : null}
-        </View>
-      ) : null}
     </Card>
   );
 }

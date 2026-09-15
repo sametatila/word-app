@@ -57,7 +57,9 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
       bool: mockBoolLabels(course === "en" ? "en" : "de", "truefalse"),
     });
   }
-  if (!questions.length) notFound();
+  /* Soru yoksa 404 yalnız ünite de çözülemediyse (yanlış adres). Ünite varsa
+     oynatıcı "henüz soru yok" durumunu çiziyor — mobil `QuizScreen` gibi. */
+  if (!questions.length && !brief) notFound();
 
   return (
     <ImmersionQuizPlayer
@@ -69,6 +71,7 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
          Doğru cümle yazıldı, mobil de aynısını kullanıyor. */
       kind="grammar"
       itemId={`${unit}-grammar1`}
+      unitNo={brief?.index ?? null}
       intro={t("quiz.intro_grammar")}
       questions={questions}
     />

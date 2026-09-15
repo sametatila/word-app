@@ -4,11 +4,11 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { QuestionList } from "@/components/skills/quiz";
 import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
-import { Confetti } from "@/components/celebrate";
 import { ArrowLeftIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
+import { FlowActions, FlowColumn, ResultHero, StatRow, StateBody } from "@/components/flow";
 import type { SkillQuestion } from "@/lib/skills/types";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatPercent } from "@/lib/i18n/dict";
 import { apiFetch } from "@/lib/api-fetch";
 import { PRACTICE_PASS_PCT as PASS_PCT } from "@/lib/score-bands";
 
@@ -26,6 +26,7 @@ export function ImmersionQuizPlayer({
   intro,
   kind = "quiz",
   itemId,
+  unitNo = null,
   questions,
 }: {
   title: string;
@@ -45,9 +46,13 @@ export function ImmersionQuizPlayer({
   kind?: "quiz" | "checkpoint" | "grammar";
   /** Patika öğesinin kimliği (`de-a1-u03-quiz1`) — sonucun kaydı buna yazılıyor. */
   itemId: string;
+  /** Ünite numarası — sonuç bandının başlığı ("Ünite 3 · Tekrar"). */
+  unitNo?: number | null;
+  /** Boşsa oynatıcı "henüz soru yok" durumunu çiziyor. */
   questions: SkillQuestion[];
 }) {
   const t = useT();
+  const lang = useLang();
   const [score, setScore] = useState<number | null>(null);
   /** Aynı deneme bir kez kaydedilsin; "Tekrar dene" yeni bir deneme açıyor. */
   const kaydedilenTur = useRef(-1);
@@ -66,6 +71,11 @@ export function ImmersionQuizPlayer({
   }
   /** Yeniden denemede soru listesi sıfırdan kurulsun diye taze anahtar. */
   const [round, setRound] = useState(0);
+
+  function retry() {
+    setScore(null);
+    setRound((r) => r + 1);
+  }
 
   const tint = KIND_TINT[kind];
   const pct = questions.length ? Math.round(((score ?? 0) / questions.length) * 100) : 0;
@@ -103,35 +113,48 @@ export function ImmersionQuizPlayer({
 
       {intro && score === null ? <p className="muted mb-4 text-body">{intro}</p> : null}
 
-      {score === null ? (
+      {!questions.length ? (
+        /* DURUM ŞABLONU: soru yoksa boş durum. Sayfa eskiden `notFound()`
+           atıyordu ve öğrenci "Sayfa bulunamadı" görüyordu — oysa bulunamayan
+           bir sayfa değil, henüz yazılmamış sorulardı. Mobil `QuizScreen`
+           aynı dalda aynı cümleyi ve aynı çıkışı gösteriyor. */
+        <FlowColumn>
+          <StateBody mood="think" title={t("quiz.this_unit_has_no_questions_yet")}>
+            <FlowActions primary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
+          </StateBody>
+        </FlowColumn>
+      ) : score === null ? (
         <QuestionList key={round} questions={questions} onAllAnswered={bitir} />
       ) : (
-        /* Kapanış Android'deki kartın aynısı: geçtiyse maskot kutluyor ve
-           konfeti atıyor, geçmediyse duruyor. Yüzde tek başına bir sayıydı;
-           "geçtin" / "biraz daha çalış" onu bir yargıya çeviriyor. Yeniden
-           deneme düğmesi web'de hiç yoktu - tek çıkış Patika'ya dönmekti. */
-        <div role="status" className="card relative p-6 text-center">
-          <Confetti fire={passed ? round + 1 : 0} />
-          <Mascot mood={passed ? "celebrate" : "idle"} size={84} className="mx-auto" />
-          <p className="mt-1 text-h2">{t("common.n_correct", { correct: score, total: questions.length })}</p>
-          <p className="mt-1 text-caption" style={{ color: passed ? "var(--color-mint)" : "var(--text-muted)" }}>
-            {t(passed ? "quiz.passed" : "quiz.try_more", { pct })}
-          </p>
-          <div className="mt-4 flex gap-2">
-            <button
-              className="btn btn-ghost flex-1 px-5 py-3"
-              onClick={() => {
-                setScore(null);
-                setRound((r) => r + 1);
-              }}
-            >
-              {t("quiz.try_again")}
-            </button>
-            <Link href="/immersion" className="btn btn-primary flex-1 px-5 py-3">
-              {t("quiz.back_to_path")}
-            </Link>
-          </div>
-        </div>
+        /*
+          SONUÇ ŞABLONU (components/flow): band → üç sayı → düğmeler. Geçemeyen
+          öğrenci adımın açık kaldığını ve eşiği görmüyordu; band sessizleşiyor,
+          etiket "Adım açık kaldı" diyor ve birincil düğme "Tekrar dene".
+          Konfeti yalnız geçince. Sonucu duyuran `role="status"` bandın kendisinde.
+        */
+        <FlowColumn celebrate={passed} key={`sonuc-${round}`}>
+          <ResultHero
+            eyebrow={`${unitNo != null ? `${t("common.unit")} ${unitNo} · ` : ""}${t(kind === "grammar" ? "unitkind.grammar" : kind === "checkpoint" ? "unitkind.checkpoint" : "unitkind.quiz")}`}
+            title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
+            figure={`${score}/${questions.length}`}
+            sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}
+            mood={passed ? "celebrate" : "sad"}
+            quiet={!passed}
+            pill={passed ? { text: t("quiz.pill_marked"), tone: "ok" } : { text: t("quiz.pill_open"), tone: "bad" }}
+          />
+          <StatRow
+            items={[
+              { value: `${score}/${questions.length}`, label: t("common.correct") },
+              { value: formatPercent(pct, lang), label: t("quiz.stat_score"), tone: passed ? "ok" : "bad" },
+              { value: formatPercent(PASS_PCT, lang), label: t("quiz.stat_pass") },
+            ]}
+          />
+          {passed ? (
+            <FlowActions primary={{ label: t("quiz.back_to_path"), href: "/immersion" }} secondary={{ label: t("quiz.try_again"), onClick: retry }} />
+          ) : (
+            <FlowActions primary={{ label: t("quiz.try_again"), onClick: retry }} secondary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
+          )}
+        </FlowColumn>
       )}
     </div>
   );

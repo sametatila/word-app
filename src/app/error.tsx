@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
-import { AlertIcon, RefreshIcon } from "@/components/icons";
+import { RefreshIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
 import { useT } from "@/lib/i18n/client";
@@ -22,34 +22,24 @@ export default function ErrorPage({
     track("client_error", 1, screenKey(window.location.pathname));
   }, [error]);
 
+  /* DURUM ŞABLONU (components/flow). Kök sınır uygulama kabuğunun dışında
+     ama kök düzenin İÇİNDE çiziliyor (onu değiştiren `global-error`); maskot
+     hiçbir sağlayıcıya dayanmıyor, burada da güvenle çiziliyor. */
   return (
-    <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 px-5 text-center">
-      <span
-        className="flex h-12 w-12 items-center justify-center rounded-tile"
-        style={{
-          background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)",
-          color: "var(--color-rose)",
-        }}
-      >
-        <AlertIcon size={24} />
-      </span>
-      <h1 className="text-h1">{t("crash.title")}</h1>
-      <p className="muted text-body">
-        {t("crash.body")}
-      </p>
-      {error.digest ? (
-        <p className="muted text-caption">
-          {t("err.code")} <code>{error.digest}</code>
-        </p>
-      ) : null}
-      <div className="mt-2 flex flex-wrap justify-center gap-3">
-        <button onClick={reset} className="btn btn-primary flex items-center gap-2 px-5 py-3">
-          <RefreshIcon size={18} /> {t("common.try_again")}
-        </button>
-        <Link href="/" className="btn btn-ghost px-5 py-3">
-          {t("common.home")}
-        </Link>
-      </div>
+    <div className="flex min-h-dvh items-center px-5">
+      <FlowColumn>
+        <StateBody alert mood="sad" title={t("crash.title")} body={t("crash.body")}>
+          {error.digest ? (
+            <p className="muted mb-3 text-caption">
+              {t("err.code")} <code>{error.digest}</code>
+            </p>
+          ) : null}
+          <FlowActions
+            primary={{ label: t("common.try_again"), icon: <RefreshIcon size={18} />, onClick: reset }}
+            tertiary={{ label: t("common.home"), href: "/" }}
+          />
+        </StateBody>
+      </FlowColumn>
     </div>
   );
 }
