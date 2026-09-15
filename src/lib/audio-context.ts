@@ -23,7 +23,11 @@ export function sharedAudioContext(): AudioContext | null {
     (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!Ctor) return null;
   if (!ctx) ctx = new Ctor();
-  if (ctx.state === "suspended") void ctx.resume().catch(() => {});
+  /* `suspended` YETMİYOR: iOS WebKit standart dışı bir `interrupted` durumu
+     kullanıyor (telefon çağrısı, uygulama arka plana atılınca, ses oturumu
+     kesilince). Yalnız `suspended` uyandırıldığı için kesintiden sonra bağlam
+     o oturumda bir daha hiç açılmıyordu. */
+  if (ctx.state !== "running" && ctx.state !== "closed") void ctx.resume().catch(() => {});
   return ctx;
 }
 

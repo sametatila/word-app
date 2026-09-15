@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
 import { sharedAudioContext } from "@/lib/audio-context";
+import { isAppleMobile } from "@/lib/apple-mobile";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
@@ -516,6 +517,19 @@ function playGapless(
     onStart?: () => void;
   },
 ): (() => void) | null {
+  /*
+    iPHONE/iPAD'DE WebAudio YOLU KULLANILMIYOR — ses öğesi çalıyor.
+
+    iOS, WebAudio çıkışını telefonun SESSİZ ANAHTARINA bağlıyor; `<audio>`
+    öğesini bağlamıyor. Anahtarı sessizde tutan (iPhone kullanıcılarının
+    çoğu) iOS web uygulamasında hiç ses duymuyordu: bağlam "running", sesler
+    planlanıyor, hoparlörden bir şey çıkmıyor — hata da yok, yedeğe de
+    düşülmüyor. `navigator.audioSession.type = "playback"` bunu çözüyor ama
+    aynı oturumu mikrofon da kullanıyor (konuşma alıştırmaları, cepte yürüyüş)
+    ve kaydı bozma riski var. Kaybedilen tek şey kenar sessizliklerinin
+    kırpılması; iOS'ta duyulmak boşluksuzluktan önce.
+  */
+  if (isAppleMobile()) return null;
   const ctx = sharedAudioContext();
   if (!ctx || ctx.state !== "running") return null;
   const { mine, onEnd, onFail, onStart } = opts;
@@ -922,6 +936,8 @@ function play(
     // yerine cihazın kendi sesi geliyor, cihazda Almanca ses yoksa hiç ses
     // gelmiyor. Şikâyetin kaynağı bu basamak, o yüzden ayrıca işaretleniyor.
     if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
+    // Öğe hâlâ yüklüyor olabilir (nöbetçi): geç başlayıp sentezin üstüne binmesin.
+    audio.pause();
     speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
   };
 
@@ -965,10 +981,26 @@ function play(
   // Nöbetçi: play() sözü çözülse bile ses hiç BAŞLAMAYABİLİYOR (iOS'ta
   // engellenen oynatma bazen ne reddediyor ne de `error` veriyor). Belirli bir
   // süre içinde `playing` gelmezse yedeğe düşülüyor, yoksa tur sessiz kalırdı.
-  const bekci = setTimeout(() => {
+  /*
+    YÜKLENİYORSA BEKLE. Nöbetçi 2,5 sn'de ses başlamadıysa yedeğe düşüyordu;
+    oysa ilk kez dinlenen metin sunucuda sentezleniyor ve iOS aynı sesi iki
+    aralık isteğiyle alıyor — 2,5 sn sık aşılıyordu. Öğe hâlâ ağdan okuyorsa
+    (hata yok, `NETWORK_LOADING`) indirme tavanına kadar bekleniyor; gerçekten
+    takılmış oynatma (ne hata ne yükleme) yine yedeğe düşüyor.
+  */
+  const basla = Date.now();
+  let bekci: ReturnType<typeof setTimeout>;
+  const nobet = () => {
     if (done || token !== mine) return;
-    if (audio.paused || audio.currentTime === 0) fallback();
-  }, PLAY_WATCHDOG_MS);
+    if (!audio.paused && audio.currentTime > 0) return;
+    const yukluyor = !audio.error && audio.networkState === HTMLMediaElement.NETWORK_LOADING;
+    if (yukluyor && Date.now() - basla < TTS_FETCH_TIMEOUT_MS) {
+      bekci = setTimeout(nobet, 500);
+      return;
+    }
+    fallback();
+  };
+  bekci = setTimeout(nobet, PLAY_WATCHDOG_MS);
   const iptal = () => clearTimeout(bekci);
   audio.addEventListener("playing", iptal, { once: true });
   if (onStart) audio.addEventListener("playing", () => { if (token === mine) onStart(); }, { once: true });
