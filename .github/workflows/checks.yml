@@ -60,6 +60,15 @@ jobs:
       # fark edilirdi.
       - name: Sürüm
         run: npm run version:check
+      # ÜRETİLEN İÇERİK, tip denetiminden ÖNCE. src/lib/lessons/generated/
+      # native-*.json depoda yok (.gitignore); deploy onları `npm run build`in
+      # başında üretiyor. native-server.ts bu dosyaları içe aldığı için temiz
+      # bir klonda tip denetimi, betik tipleri ve döküm bütünlüğü "Cannot find
+      # module" / ENOENT ile düşüyordu ve sonraki adımların hiçbiri koşmuyordu.
+      - name: Üretilen içerik
+        run: |
+          npm run lessons:apply
+          npm run lessons:apply-de
       - name: TypeScript
         run: npx tsc --noEmit
       # `scripts/` ana tsconfig'in `exclude`ında: uygulama derlemesi oraya hiç
