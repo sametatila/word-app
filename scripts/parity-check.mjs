@@ -2801,7 +2801,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
       "yerel yuzde=" + (/setOffline\(/.test(src) ? "var" : "yok"),
-      "bolum kirilimi=" + (/sections:\s*sections\.map\(/.test(src) ? "var" : "yok"),
+      /* Liste ADINA bakilmiyor, kirilimin kendisine: web sinavi kor kagitla
+         yapiyor (`BLIND`) ve nesnel bolumleri istemci puanlayamadigi icin
+         cevrimdisi ozetten suzuyor (`shown.map(`); mobil tum bolumleri
+         (`sections.map(`) gosteriyor. Ikisi de yuzdenin yaninda bolum kirilimi
+         ciziyor. Desen listenin adini aradiginda web'deki kirilim "yok"
+         goruluyor ve CI sahte bir ayrismayla dusuyordu. */
+      "bolum kirilimi=" + (/sections:\s*\w+\.map\(/.test(src) ? "var" : "yok"),
       "metin=" + (src.includes("exam.saved_offline") ? "var" : "yok"),
       "gecti kaldi=" + (/offline[\s\S]{0,400}?exam\.(passed|not_passed)/.test(src) ? "var" : "yok"),
     ];
