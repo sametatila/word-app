@@ -16,7 +16,7 @@ import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
-import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
+import { isPremiumRefusal, isQuotaRefusal, notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { spacing, radii, type Palette } from "../theme";
@@ -506,7 +506,11 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
  * mobilde metin hiç puanlanmadan kalıyordu (kayıt defteri §11.12).
  */
 function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: FreeTask; n: number; done: boolean; level: string; exerciseId: string; onSettle: (ok: boolean) => void; colors: Palette }) {
+  /* Misafir: tek deneme hakkı varsa değerlendirme gerçekten yapılıyor, yoksa
+     istek atılmıyor (bkz. sunucu lib/auth/guest `GUEST_AI_TRIALS`). */
   const guest = Boolean(useAuth().user?.guest);
+  const { status: premiumStatus } = usePremiumStatus();
+  const guestLocked = guest && (premiumStatus?.guestAiLeft ?? 0) <= 0;
   const [typed, setTyped] = useState("");
   const [reveal, setReveal] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -540,7 +544,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     setBusy(true);
     setNote(null);
     try {
-      if (guest) throw accountRequiredError();
+      if (guestLocked) throw accountRequiredError();
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,
@@ -577,6 +581,8 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       setReveal(true);
       setUnscored(true);
     }
+    // Misafirin deneme hakkı harcandıysa sonraki görev bunu bilsin.
+    if (guest && !guestLocked) void refreshPremium();
     setBusy(false);
   }
 

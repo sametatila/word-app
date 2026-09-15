@@ -13,6 +13,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
+import { usePremiumStatus } from "../lib/premium";
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
@@ -184,7 +185,9 @@ export function ItemScreen() {
      istiyor: "bu değerlendirmeyi yapay zekâ üretti" yerine, yazmaya ya da
      konuşmaya BAŞLAMADAN puanlanmayacağı söyleniyor (görev yine sayılıyor). */
   const guest = Boolean(useAuth().user?.guest);
-  const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.skill_ai")} /></View>;
+  const { status: premiumStatus } = usePremiumStatus();
+  const guestTrial = (premiumStatus?.guestAiLeft ?? 0) > 0;
+  const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t(guestTrial ? "guest.skill_ai_trial" : "guest.skill_ai")} /></View>;
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Item">>();

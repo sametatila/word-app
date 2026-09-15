@@ -192,7 +192,9 @@ export function SettingsScreen() {
       .then((i) => { setAiText(i.statuses.ai_text.state); setAiVoice(i.statuses.ai_voice.state); })
       .catch(() => {});
   // Yapay zekâ misafire kapalı; rıza defteri de yalnız hesaba tutuluyor (sunucu 403 dönerdi).
-  useEffect(() => { if (!guest) void yenileAi(); }, [guest]);
+  /* Misafir de rıza verebiliyor (tek deneme hakkı, bkz. sunucu lib/auth/guest):
+     verdiği rızayı geri almanın yolu da burada olmalı. */
+  useEffect(() => { void yenileAi(); }, [guest]);
   async function toggleAiText(on: boolean) {
     if (aiBusy) return;
     setAiBusy(true);
@@ -563,20 +565,13 @@ export function SettingsScreen() {
               </View>
               <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
             </View>
-            {guest ? (
-              <View style={{ paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-                <Text variant="bodyStrong">{t("guest.ai_setting")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("guest.ai_setting_sub")}</Text>
-              </View>
-            ) : (
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("aiconsent.text_title")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("aiconsent.settings_text_sub")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t(guest ? "guest.ai_setting_sub" : "aiconsent.settings_text_sub")}</Text>
               </View>
               <Switch value={aiText === "granted"} disabled={aiText === null || aiBusy} onValueChange={(v) => { void toggleAiText(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("aiconsent.text_title")} />
             </View>
-            )}
             {micConsent === null ? (
               // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
               // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
