@@ -10,8 +10,9 @@ import { MOCK_PASS_PCT } from "../data/exams";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, PodiumIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, PodiumIcon, AlertIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
+import { FlowNote } from "../ui/flow";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
 import { mockCourseOf, mockPaperById, mockSkillLabel, type MockSkill } from "../data/exams";
@@ -136,7 +137,8 @@ export function MockStatsScreen() {
             {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
             {/* Boş hâl EV KALIBINDA (`EmptyCard`) ve bir ÇIKIŞ YOLU veriyor:
                 "henüz sonucun yok" tek başına bir duvar, yanına deneme sınavı
-                listesine götüren kapı gerekiyor. */}
+                listesine götüren kapı gerekiyor. Sayfa içi boş hâl olduğu için
+                (başlık ve yarım kalanlar üstünde) durum şablonuna taşınmadı. */}
             <EmptyCard
               icon={PodiumIcon}
               tint={colors.info}
@@ -155,12 +157,12 @@ export function MockStatsScreen() {
                  almıyor, başına ekleniyor — o yüzden `polite`. Web'de aynı
                  okuma patladığında yedek YOK, orada kart içeriğin yerine
                  geçiyor ve `role="alert"` ile duyuruluyor (§320). */
-              <Card padded accessibilityLiveRegion="polite" style={{ marginBottom: spacing.md }}>
-                <Text variant="caption" color={colors.textMuted}>
-                  {t(`mockexam.fail_${err ?? "unreachable"}`)}
-                </Text>
-                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockstats.local_note")}</Text>
-              </Card>
+              <View accessibilityLiveRegion="polite" style={{ gap: spacing.sm, marginBottom: spacing.md }}>
+                {/* İki tek satırlık not (`FlowNote`): sebep bir uyarı, sayıların
+                    kaynağı nötr bilgi. */}
+                <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t(`mockexam.fail_${err ?? "unreachable"}`)} />
+                <FlowNote text={t("mockstats.local_note")} />
+              </View>
             ) : null}
             {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
 

@@ -10,6 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
+import { FlowNote } from "../ui/flow";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
@@ -177,18 +178,23 @@ export function MockExamsScreen() {
               {t("mockexams.intro")}
             </Text>
             {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
-                çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey. */}
+                çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey.
+                Tek satırlık bilgi olduğu için akış şablonunun notu (`FlowNote`),
+                kilit ikonuyla — web aynı satırı çiziyor. */}
             {access && !access.premium ? (
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
-                {t("mockpack.free_note", { n: access.freeLimit })}
-              </Text>
+              <View style={{ marginBottom: spacing.md }}>
+                <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("mockpack.free_note", { n: access.freeLimit })} />
+              </View>
             ) : null}
             {access?.premium && papers.some((p) => isLocked(p.id)) ? (
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
-                {access.unlockOnComplete
-                  ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
-                  : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
-              </Text>
+              <View style={{ marginBottom: spacing.md }}>
+                <FlowNote
+                  icon={<LockIcon color={colors.textMuted} size={16} />}
+                  text={access.unlockOnComplete
+                    ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
+                    : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
+                />
+              </View>
             ) : null}
             {papers.map((p) => (
               <PaperCard

@@ -12,6 +12,7 @@ import { mockCourseOf } from "@/lib/courses";
 import { mockAccess } from "@/lib/premium/access";
 import { ChevronRightIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
+import { FlowNote } from "@/components/flow";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent, isNativeLang } from "@/lib/i18n/dict";
 import { nativeMockText } from "@/lib/lessons/native-server";
@@ -194,16 +195,21 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       </p>
 
       {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
-          çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey. */}
+          çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey.
+          Tek satırlık bilgi: akış şablonunun notu (`FlowNote`), kilit
+          ikonuyla — mobil aynı satırı çiziyor. */}
       {access && !access.premium ? (
-        <p className="muted text-caption">{t("mockpack.free_note", { n: access.freeLimit })}</p>
+        <FlowNote icon={<LockIcon size={16} className="muted shrink-0" />} text={t("mockpack.free_note", { n: access.freeLimit })} />
       ) : null}
       {access && access.premium && papers.some((p) => isLocked(p.id)) ? (
-        <p className="muted text-caption">
-          {access.unlockOnComplete
-            ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
-            : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
-        </p>
+        <FlowNote
+          icon={<LockIcon size={16} className="muted shrink-0" />}
+          text={
+            access.unlockOnComplete
+              ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
+              : t("mockpack.unlock_hint_score", { pct: access.unlockPct })
+          }
+        />
       ) : null}
 
       {running.filter((r) => mine(r.paperId)).length ? (

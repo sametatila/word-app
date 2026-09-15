@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 import { askAiConsentUpfront, isAiConsentDeclined, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
 import { RoundExit } from "@/components/round-exit";
@@ -340,59 +340,81 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   }, [phase, result, attempt, answers, part, paper.id, fail]);
 
   const task = part.tasks[ix];
+  /* Kapakta ve sonuç bandında aynı üst satır: hangi kâğıt, hangi bölüm. */
+  const eyebrow = (
+    <>
+      {paper.level} · {t("mockexams.paper", { n: paper.no })} · <span lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</span>
+    </>
+  );
 
   if (phase === "cover") {
     const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
+    /*
+      KAPAK ŞABLONU (components/flow `CoverBody`). Eskiden tek kartta başlık,
+      yönerge, süre ve oturum kuralları tek paragraf hâlinde alt alta
+      diziliyordu. Bilgi aynı, yeri sabit: başlıkta tema, tek cümlede yönerge,
+      kurallar ikonlu tek satırlar. Mobil `MockExamScreen` `Cover` aynı alanları
+      aynı sırayla çiziyor.
+
+      "Yönergeler sesli okunur" satırı HER bölümde: web yönergeyi her bölümde
+      okuyor (`announce`), mobil yalnız dinleme ve konuşmada — satır iki yerde
+      de gerçekte olanı söylüyor.
+    */
     return (
-      <section className="card mx-auto w-full max-w-2xl p-4">
-        <p className="muted text-caption tracking-wide">{paper.level} · {t("mockexams.paper", { n: paper.no })}</p>
-        <h1 className="mt-1 text-h3" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
-        <p className="muted mt-1 text-body">{paper.theme} — {paper.themeTr}</p>
-
-        {/* İki başlık Android'in kapağında var: yönergenin nerede bittiği ve
-            kuralların nerede başladığı yalnız aralıktan okunuyordu. */}
-        <div className="mt-4 flex items-start gap-2">
-          <SpeakerIcon className="mt-1 size-4 shrink-0" />
-          <div>
-            <p className="muted text-caption tracking-wide">{t("mockexam.instructions")}</p>
-            <p className="mt-1 text-body leading-relaxed" lang={paper.course}>{part.instruction}</p>
-            <p className="muted mt-2 text-body leading-relaxed">{part.instructionTr}</p>
-          </div>
-        </div>
-
-        {/* Aynı olgu iki ekranda tek cümle: bölüm listesi ve kapak aynı
-            anahtarları kullanıyor (Android `Cover` ve `MockExamsScreen` de
-            öyle). Üç ayrı web anahtarı aynı şeyi ikinci kez yazıyordu. */}
-        <p className="muted mt-4 text-caption">
-          {points
-            ? t("mockexams.part_summary", { minutes: part.minutes, n: points })
-            : t("mockexams.part_open", { minutes: part.minutes })}
-        </p>
-        <p className="muted mt-4 text-caption tracking-wide">{t("mockexam.rules_title")}</p>
-        <p className="muted mt-1 text-caption leading-relaxed">{t("mockexam.rules_body")}</p>
-
-        <button
-          type="button"
-          className="btn btn-primary mt-5 w-full py-3 text-body"
-          disabled={busy}
-          onClick={() => { announce(`part:${part.skill}`, part.instruction); void begin(); }}
-        >
-          {t(busy ? "mockexam.starting" : "mockexam.start")}
-        </button>
-      </section>
+      <FlowColumn>
+        <CoverBody
+          icon={<ExamIcon size={28} />}
+          tint="var(--color-brand)"
+          eyebrow={eyebrow}
+          title={<span lang={paper.course}>{paper.theme}</span>}
+          pitch={<span lang={paper.course}>{part.instruction}</span>}
+          rules={[
+            {
+              icon: <ClockIcon size={16} />,
+              text: points
+                ? t("mockexams.part_summary", { minutes: part.minutes, n: points })
+                : t("mockexams.part_open", { minutes: part.minutes }),
+            },
+            /* Oturum kuralları eskiden tek paragraftı; her kural artık kendi satırı. */
+            { icon: <ArrowRightIcon size={16} />, text: t("mockexam.rule_timed") },
+            { icon: <ArrowLeftIcon size={16} />, text: t("mockexam.no_back"), tone: "bad" },
+            { icon: <SpeakerIcon size={16} />, text: t("mockexam.rule_voiced") },
+            { icon: <CheckIcon size={16} />, text: t("mockexam.rule_saved"), tone: "ok" },
+          ]}
+          /* Temanın ve yönergenin öğrencinin dilindeki karşılığı kaybolmuyor. */
+          note={
+            <>
+              <span className="block">{paper.themeTr}</span>
+              <span className="block">{part.instructionTr}</span>
+            </>
+          }
+        />
+        <FlowActions
+          primary={{
+            label: t(busy ? "mockexam.starting" : "mockexam.start"),
+            disabled: busy,
+            onClick: () => { announce(`part:${part.skill}`, part.instruction); void begin(); },
+          }}
+          tertiary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
+        />
+      </FlowColumn>
     );
   }
 
   if (phase === "result") {
     if (busy || !result) {
+      /* Puanlanırken DURUM şablonu: düşünen maskot + ilerleme çubuğu. */
       return (
-        <section className="card mx-auto w-full max-w-2xl p-4" aria-busy>
-          <p className="muted text-body">{t("mockexam.scoring")}</p>
-          <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
-        </section>
+        <FlowColumn>
+          <div aria-busy>
+            <StateBody mood="think" title={t("mockexam.scoring")}>
+              <div className="h-2 animate-pulse rounded-full surface-2" />
+            </StateBody>
+          </div>
+        </FlowColumn>
       );
     }
-    return <Result paper={paper} part={part} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
+    return <Result paper={paper} part={part} eyebrow={eyebrow} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
   }
 
   /** Cevaplanmamış kapalı uçlu madde sayısı — bırakma uyarısında geçiyor. */
@@ -450,8 +472,18 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         ))}
       </div>
 
-      {autoNext ? <p className="mt-2 text-caption" style={{ color: "var(--color-danger)" }}>{t("mockexam.auto_next")}</p> : null}
-      {resumed && ix === (attempt?.taskIx ?? 0) ? <p className="muted mt-2 text-caption">{t("mockexam.resumed")}</p> : null}
+      {/* Tek satırlık notlar şablonun `FlowNote`u: süre dolup geçilmesi bir
+          UYARI (kayıp yok, kural işledi). Mobil aynı iki notu çiziyor. */}
+      {autoNext ? (
+        <div className="mt-2">
+          <FlowNote tone="warn" icon={<ClockIcon size={16} className="shrink-0" />} text={t("mockexam.auto_next")} />
+        </div>
+      ) : null}
+      {resumed && ix === (attempt?.taskIx ?? 0) ? (
+        <div className="mt-2">
+          <FlowNote icon={<RefreshIcon size={16} className="muted shrink-0" />} text={t("mockexam.resumed")} />
+        </div>
+      ) : null}
 
       <TaskView
         key={task.id}
@@ -1038,11 +1070,35 @@ function OpenResult({ score }: { score: OpenScore }) {
 
 /* ── sonuç ────────────────────────────────────────────────────────────────── */
 
+/**
+ * Geçmek için kaç doğru daha gerekiyordu — bandın kırmızı etiketi.
+ * Eşik yüzde, puan yuvarlanıyor; söylenen şey öğrencinin sayabileceği birim:
+ * madde. Mobil `MockExamScreen` `shortBy` ile aynı hesap.
+ */
+function shortBy(score: Score): number {
+  for (let c = score.correct + 1; c <= score.total; c++) {
+    if (Math.round((100 * c) / score.total) >= MOCK_PASS_PCT) return c - score.correct;
+  }
+  return 0;
+}
+
+/**
+ * Bölüm sonucu — SONUÇ şablonu (components/flow).
+ *
+ * Band (kâğıt · bölüm · geçtin/geçemedin · yüzde · maskot) → doğru, puan,
+ * eşik → sunucu notları → ölçüm hedefleri ve yapılacaklar kartları. Eskiden
+ * maskot ve konfeti yoktu; sonuç, notlar ve bütün çözümler tek uzun sütundaydı.
+ *
+ * ÇÖZÜMLER AYRI GÖRÜNÜMDE. Bir C1 kâğıdında onlarca madde var; sonucun altına
+ * dizilince özet kayboluyordu. Birincil düğme çözümleri açıyor, "Sonuca dön"
+ * geri getiriyor. Mobil aynı iki görünümü çiziyor.
+ */
 function Result({
-  paper, part, answers, open, openScores, result, reveal, onReveal,
+  paper, part, eyebrow, answers, open, openScores, result, reveal, onReveal,
 }: {
   paper: MockPaper;
   part: MockPart;
+  eyebrow: ReactNode;
   answers: Answers;
   open: Record<string, string>;
   openScores: Record<string, OpenScore>;
@@ -1053,154 +1109,182 @@ function Result({
   const t = useT();
   const lang = useLang();
   const { score, ai, offline } = result;
-  return (
-    <section className="mx-auto w-full max-w-2xl space-y-3">
-      {offline ? (
-        <div className="card p-4">
-          <p className="text-body" style={{ color: "var(--color-danger)" }}>{t(FAIL_KEYS[offline])}</p>
-          <p className="muted mt-1 text-caption">{t("mockexam.saved_locally")}</p>
-        </div>
-      ) : null}
+  const [review, setReview] = useState(false);
+  /* Konfeti bir kez: çözümlerden sonuca dönüşte yeniden patlamasın. */
+  const [celebrated, setCelebrated] = useState(false);
+  const top = useRef<HTMLDivElement>(null);
+  const show = (on: boolean) => {
+    setReview(on);
+    if (on) setCelebrated(true);
+    top.current?.scrollIntoView({ block: "start" });
+  };
+  const graded = score.total > 0;
+  const need = graded && !score.passed ? shortBy(score) : 0;
 
-      {score.total > 0 ? (
-        <div role="status" className="card p-4">
-          <p className="muted text-caption tracking-wide">{t("mockexam.result")}</p>
-          <div className="mt-1 flex items-end justify-between">
-            <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{formatPercent(score.pct, lang)}</p>
-            <p className="text-strong">{t("mockexam.score", { correct: score.correct, total: score.total })}</p>
-          </div>
-          <p className="mt-2 text-strong" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>
-            {t(score.passed ? "mockexam.passed" : "mockexam.failed")}
-          </p>
-          <p className="muted text-caption">{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</p>
-        </div>
-      ) : (
-        <p className="card p-4 text-body leading-relaxed">{t("mockexam.not_scored")}</p>
-      )}
-
-      {score.byGoal.length ? (
-        <div className="card p-4">
-          <p className="muted text-caption tracking-wide">{t("mockexam.by_goal")}</p>
-          {score.byGoal.map((g) => {
-            const pct = g.total ? Math.round((100 * g.correct) / g.total) : 0;
-            return (
-              <div key={g.goal} className="mt-3">
-                <div className="flex justify-between text-body">
-                  <span>{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</span>
-                  <span className="font-semibold">{g.correct}/{g.total}</span>
+  if (review) {
+    return (
+      <div ref={top} className="scroll-mt-4">
+        <FlowColumn>
+          <h2 className="text-h3">{t("mockexam.review")}</h2>
+          {part.tasks.map((task) => (
+            <div key={task.id} className="space-y-2">
+              <p className="muted text-caption tracking-wide">Teil {task.no}</p>
+              {isOpenTask(task) && task.rubric ? (
+                <div className="card p-4">
+                  {(open[task.id] ?? "").trim() ? (
+                    <>
+                      <p className="muted text-caption tracking-wide">{t("mockexam.your_answer")}</p>
+                      <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{open[task.id]}</p>
+                    </>
+                  ) : null}
+                  {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
+                  <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.criteria")}</p>
+                  {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-body leading-relaxed">• {c}</p>)}
+                  {reveal[task.id] ? (
+                    <>
+                      <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.model_answer")}</p>
+                      <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
+                    </>
+                  ) : (
+                    <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => onReveal(task.id)}>{t("mockexam.show_model")}</button>
+                  )}
                 </div>
-                <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
-                  <div className="h-1 rounded-full" style={{ width: `${pct}%`, background: pct >= 70 ? "var(--color-success)" : pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      ) : null}
-
-      {ai ? (
-        <div className="card p-4">
-          <p className="muted text-caption tracking-wide">{t("mockexam.todo")}</p>
-          <p className="mt-1 text-body leading-relaxed">{ai.summary}</p>
-          {ai.strengths.length ? (
-            <p className="mt-2 text-body" style={{ color: "var(--color-success)" }}>
-              {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
-            </p>
-          ) : null}
-          {ai.todo.map((td, i) => (
-            <div key={i} className="mt-3 border-l-2 pl-3" style={{ borderColor: "var(--color-brand)" }}>
-              <p className="text-strong">{i + 1}. {td.title}</p>
-              <p className="muted mt-0.5 text-body">{td.why}</p>
-              <p className="mt-1 text-body leading-relaxed">{td.how}</p>
-            </div>
-          ))}
-          {ai.source === "rules" ? <p className="muted mt-3 text-caption">{t("mockexam.source_rules")}</p> : null}
-        </div>
-      ) : null}
-
-      <h2 className="pt-2 text-h3">{t("mockexam.review")}</h2>
-
-      {part.tasks.map((task) => (
-        <div key={task.id} className="space-y-2">
-          <p className="muted text-caption tracking-wide">Teil {task.no}</p>
-          {isOpenTask(task) && task.rubric ? (
-            <div className="card p-4">
-              {(open[task.id] ?? "").trim() ? (
-                <>
-                  <p className="muted text-caption tracking-wide">{t("mockexam.your_answer")}</p>
-                  <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{open[task.id]}</p>
-                </>
-              ) : null}
-              {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
-              <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.criteria")}</p>
-              {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-body leading-relaxed">• {c}</p>)}
-              {reveal[task.id] ? (
-                <>
-                  <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.model_answer")}</p>
-                  <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
-                </>
               ) : (
-                <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" onClick={() => onReveal(task.id)}>{t("mockexam.show_model")}</button>
+                task.items.map((it) => {
+                  const s = score.items.find((x) => x.id === it.id);
+                  const ok = s ? s.correct : isCorrect(it, answers[it.id]);
+                  return (
+                    <div key={it.id} className="card flex gap-3 p-4">
+                      <span
+                        className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
+                        style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
+                      >
+                        {ok ? <CheckIcon className="size-3.5" /> : "×"}
+                      </span>
+                      <div className="min-w-0">
+                        <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
+                        {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
+                        {it.kind === "gap" && it.cue ? (
+                          <p className="mt-1 text-strong tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
+                        ) : null}
+                        {!ok ? (
+                          <p className="muted mt-1 text-body">
+                            {t("mockexam.your_answer")}: {s?.given || t("mockexam.blank")}
+                          </p>
+                        ) : null}
+                        <p className="mt-1 text-body" style={{ color: ok ? "var(--color-success)" : undefined }}>
+                          {t("mockexam.correct_answer")}: {s?.expected ?? expected(it, task)}
+                        </p>
+                        <p className="muted mt-1 text-body leading-relaxed">{it.explain}</p>
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+
+              {/* SÖZLÜKÇE SINAVDAN SONRA. Metinlerin kilit kelimeleri içerikte
+                  duruyordu (`gloss`) ve tip de bunu "sınavdan sonra, dökümde
+                  gösterilir" diye yazıyordu ama web hiçbir yerde çizmiyordu:
+                  yazılmış içerik sessizce düşüyordu. Android ikisini de gösteriyor
+                  - dinleme dökümünün altında ve okuma metni için ayrı kartta. */}
+              {(task.texts ?? []).map((st) =>
+                st.kind === "audio" ? (
+                  <div key={st.id} className="card p-4">
+                    <p className="muted text-caption tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
+                    {st.segments.map((sg, i) => (
+                      <p key={i} className="mt-1 text-body leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
+                    ))}
+                    <Glossary gloss={st.gloss} course={paper.course} t={t} />
+                  </div>
+                ) : st.gloss?.length ? (
+                  <div key={st.id} className="card p-4">
+                    <Glossary gloss={st.gloss} course={paper.course} t={t} />
+                  </div>
+                ) : null,
               )}
             </div>
-          ) : (
-            task.items.map((it) => {
-              const s = score.items.find((x) => x.id === it.id);
-              const ok = s ? s.correct : isCorrect(it, answers[it.id]);
+          ))}
+
+          <FlowActions
+            primary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
+            tertiary={{ label: t("mockexam.back_to_result"), onClick: () => show(false) }}
+          />
+        </FlowColumn>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={top} className="scroll-mt-4">
+      {/* Konfeti YALNIZ geçilen bölümde. */}
+      <FlowColumn celebrate={graded && score.passed && !celebrated}>
+        <ResultHero
+          eyebrow={eyebrow}
+          title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}
+          figure={graded ? formatPercent(score.pct, lang) : null}
+          sub={graded ? t("mockexam.result_sub", { correct: score.correct, total: score.total, pct: MOCK_PASS_PCT }) : t("mockexam.not_scored")}
+          mood={graded ? (score.passed ? "celebrate" : "sad") : "happy"}
+          quiet={graded && !score.passed}
+          pill={need > 0 ? { text: t("mockexam.short_by", { n: need }), tone: "bad" } : null}
+        />
+        {graded ? (
+          <StatRow
+            items={[
+              { value: `${score.correct}/${score.total}`, label: t("mockexam.stat_correct") },
+              { value: formatPercent(score.pct, lang), label: t("mockexam.stat_score"), tone: score.passed ? "ok" : "bad" },
+              { value: formatPercent(MOCK_PASS_PCT, lang), label: t("mockexam.stat_threshold") },
+            ]}
+          />
+        ) : null}
+
+        {/* Sunucuya ulaşılamadı: sebep kırmızı, sonucun nerede saklandığı ayrı satır. */}
+        {offline ? <FlowNote tone="bad" icon={<AlertIcon size={16} className="shrink-0" />} text={t(FAIL_KEYS[offline])} /> : null}
+        {offline ? <FlowNote icon={<CheckIcon size={16} className="muted shrink-0" />} text={t("mockexam.saved_locally")} /> : null}
+
+        {score.byGoal.length ? (
+          <DetailCard title={t("mockexam.by_goal")}>
+            {score.byGoal.map((g) => {
+              const pct = g.total ? Math.round((100 * g.correct) / g.total) : 0;
               return (
-                <div key={it.id} className="card flex gap-3 p-4">
-                  <span
-                    className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-caption"
-                    style={{ background: ok ? "var(--color-success-soft)" : "var(--color-danger-soft)", color: ok ? "var(--color-success)" : "var(--color-danger)" }}
-                  >
-                    {ok ? <CheckIcon className="size-3.5" /> : "×"}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="whitespace-pre-line text-strong leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
-                    {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
-                    {it.kind === "gap" && it.cue ? (
-                      <p className="mt-1 text-strong tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
-                    ) : null}
-                    {!ok ? (
-                      <p className="muted mt-1 text-body">
-                        {t("mockexam.your_answer")}: {s?.given || t("mockexam.blank")}
-                      </p>
-                    ) : null}
-                    <p className="mt-1 text-body" style={{ color: ok ? "var(--color-success)" : undefined }}>
-                      {t("mockexam.correct_answer")}: {s?.expected ?? expected(it, task)}
-                    </p>
-                    <p className="muted mt-1 text-body leading-relaxed">{it.explain}</p>
+                <div key={g.goal}>
+                  <div className="flex justify-between text-body">
+                    <span>{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</span>
+                    <span className="font-semibold">{g.correct}/{g.total}</span>
+                  </div>
+                  <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
+                    <div className="h-1 rounded-full" style={{ width: `${pct}%`, background: pct >= 70 ? "var(--color-success)" : pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
                   </div>
                 </div>
               );
-            })
-          )}
+            })}
+          </DetailCard>
+        ) : null}
 
-          {/* SÖZLÜKÇE SINAVDAN SONRA. Metinlerin kilit kelimeleri içerikte
-              duruyordu (`gloss`) ve tip de bunu "sınavdan sonra, dökümde
-              gösterilir" diye yazıyordu ama web hiçbir yerde çizmiyordu:
-              yazılmış içerik sessizce düşüyordu. Android ikisini de gösteriyor
-              - dinleme dökümünün altında ve okuma metni için ayrı kartta. */}
-          {(task.texts ?? []).map((st) =>
-            st.kind === "audio" ? (
-              <div key={st.id} className="card p-4">
-                <p className="muted text-caption tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
-                {st.segments.map((sg, i) => (
-                  <p key={i} className="mt-1 text-body leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
-                ))}
-                <Glossary gloss={st.gloss} course={paper.course} t={t} />
+        {ai ? (
+          <DetailCard title={t("mockexam.todo")}>
+            <p className="text-body leading-relaxed">{ai.summary}</p>
+            {ai.strengths.length ? (
+              <p className="text-body" style={{ color: "var(--color-success)" }}>
+                {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
+              </p>
+            ) : null}
+            {ai.todo.map((td, i) => (
+              <div key={i} className="mt-1 border-l-2 pl-3" style={{ borderColor: "var(--color-brand)" }}>
+                <p className="text-strong">{i + 1}. {td.title}</p>
+                <p className="muted mt-0.5 text-body">{td.why}</p>
+                <p className="mt-1 text-body leading-relaxed">{td.how}</p>
               </div>
-            ) : st.gloss?.length ? (
-              <div key={st.id} className="card p-4">
-                <Glossary gloss={st.gloss} course={paper.course} t={t} />
-              </div>
-            ) : null,
-          )}
-        </div>
-      ))}
+            ))}
+            {ai.source === "rules" ? <p className="muted text-caption">{t("mockexam.source_rules")}</p> : null}
+          </DetailCard>
+        ) : null}
 
-      <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-body">{t("mockexam.back_to_list")}</Link>
-    </section>
+        <FlowActions
+          primary={{ label: t("mockexam.show_review"), onClick: () => show(true) }}
+          tertiary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }}
+        />
+      </FlowColumn>
+    </div>
   );
 }
 
