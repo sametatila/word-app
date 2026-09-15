@@ -7,7 +7,8 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon } from "../ui/icons";
+import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { shareRoundResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
 import { MascotFx } from "../ui/MascotFx";
@@ -413,25 +414,17 @@ export function GameScreen() {
 
   if (phase === "auth") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>{t("game.sign_in_to_save_your_progress")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("game.sign_in_to_study_your_own_words")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={colors.onPrimary}>{t("game.sign_in_sign_up")}</Text>
-        </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("game.sign_in_sign_up"), onPress: () => { nav.goBack(); nav.navigate("Auth"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="wave" title={t("game.sign_in_to_save_your_progress")} body={t("game.sign_in_to_study_your_own_words")} />
+      </FlowScreen>
     );
   }
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("game.couldn_t_load_round")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>{t("game.check_your_connection_and_try")}</Text>
-        <PressableScale onPress={() => void load()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("game.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody mood="sad" title={t("game.couldn_t_load_round")} body={t("game.check_your_connection_and_try")} />
+      </FlowScreen>
     );
   }
 
@@ -449,10 +442,10 @@ export function GameScreen() {
         total={sTotal}
         perfect={perfect}
         bestCombo={bestCombo.current}
+        xp={Math.max(0, xpEstimate.current - stageStart.current.xp)}
         remaining={rounds.length - idx}
         wagerResult={wagerResult}
         colors={colors}
-        pad={pad}
         onContinue={(bet) => {
           wagerOn.current = bet;
           setWagerResult(null);
@@ -466,37 +459,22 @@ export function GameScreen() {
 
   if (phase === "goal_done") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Mascot mood="celebrate" size={112} />
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.goal_done")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.goal_done_sub")}</Text>
-        {meta ? (
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>
-            {t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}
-          </Text>
-        ) : null}
-        <PressableScale onPress={() => void load({ extra: true })} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="h3" color={colors.onPrimary}>{t("session.continue_with_new")}</Text>
-        </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("session.continue_with_new"), onPress: () => void load({ extra: true }) }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        <StateBody
+          mood="celebrate"
+          title={t("session.goal_done")}
+          body={meta ? `${t("session.goal_done_sub")} ${t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}` : t("session.goal_done_sub")}
+        />
+      </FlowScreen>
     );
   }
 
   if (phase === "no_words") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        {/* Web aynı dalda düşünen maskotu çiziyor (`session-player`, aynı
-            anahtar ve aynı boy); burada klip yokken `idle`a düşüyordu. */}
-        <Mascot mood="think" size={104} />
-        <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
-        {/* Tek cümle: boş ekranda okunacak son şey modun nasıl çalıştığı. */}
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.review_only_mode")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Game"); }} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="h3" color={colors.onPrimary}>{t("session.back_to_mixed")}</Text>
-        </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
-      </View>
+      <FlowScreen center actions={<FlowActions primary={{ label: t("session.back_to_mixed"), onPress: () => { nav.goBack(); nav.navigate("Game"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
+        {/* Web aynı dalda düşünen maskotu çiziyor (`session-player`). */}
+        <StateBody mood="think" title={t("session.no_words_for_game", { game: gameLabel ?? "" })} body={t("session.review_only_mode")} />
+      </FlowScreen>
     );
   }
 
@@ -507,205 +485,85 @@ export function GameScreen() {
        başına yeter, yoksa dört turdan uzun ve %80 üstü bir tur gerekiyor.
        Kapanış SESİ de bu ölçütten çıkıyor (yukarıdaki etki). */
     const deserved = doneDeserved;
+    const xp = result?.xpGained ?? 0;
+    /*
+      SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
+      altta sabit düğmeler. Eskiden maskot, halka, başlık, XP, sayılar ve beş
+      ayrı renkli kutu aynı ağırlıkta alt alta diziliyordu ve "devam" en altta
+      kayboluyordu. Halka kalktı: bandın ana sayısı aynı bilgiyi veriyor.
+    */
     return (
-      <View style={pad}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
-        </View>
-        {/*
-          ÖZET KAYDIRILABİLİR.
-
-          Bütün içerik `justifyContent: "center"` verilmiş sabit bir kutudaydı
-          ve kaydırma yoktu: içerik ekrana sığmayınca ortalanıp HEM ÜSTTEN HEM
-          ALTTAN kesiliyordu — halka ve düğmeler görünmüyor, kaydırmaya da
-          çalışmıyordu. İçerik zaten uzun (maskot, halka, üç sayı, seri,
-          zorlanılan kelimeler, yarınki tekrar, dört düğme) ve küçük ekranda
-          hiçbir zaman sığmıyor.
-
-          `flexGrow: 1` + `justifyContent: "center"`: sığıyorsa ortada duruyor,
-          sığmıyorsa kaydırılıyor. Kesilme yok.
-        */}
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1, alignItems: "center", justifyContent: "center", paddingBottom: spacing.lg }} showsVerticalScrollIndicator={false}>
-          {/*
-            KUTLAMA EŞİĞİ WEB'İN KURALI. Burada `pct >= 60` yazıyordu, yani
-            neredeyse her tur konfeti patlıyordu; web aynı ekranda daha yüksek
-            ve GEREKÇELİ bir eşik kullanıyor (`session-player` `deserved`):
-            "her seferinde patlarsa değersizleşir" ve "kelime pekiştirmek,
-            oturum doğruluğunun aksine gerçekten kazanılmış bir şey". İki
-            platformun aynı anı farklı sıklıkta kutlaması bir tasarım
-            ayrışmasıydı; ölçüt tek oldu.
-          */}
-          <Celebrate show={deserved} />
-          {/* Üç hâl, webdeki gibi (`session-player` özet kartı): hak edilmiş
-              turda kutlama, geçer turda mutlu, altında ÜZGÜN. Burada ikinci
-              hâl yoktu - %59 alan öğrenci de mutlu maskot görüyordu, yani
-              maskot hiçbir şey söylemiyordu. */}
-          {/* ZAYIF NOKTA TURUNDA ERDİ KONUŞUYOR. Pratik'ten tek oyuna
-              kilitlenen tur "zayıf nokta çalışması" sayılıyor ve web özetinde
-              Erdi ona göre bir cümle söylüyor (`session-player`, `weak_done`);
-              Androidde maskot sessizdi. */}
-          {onlyGame && total > 0 ? (
-            <CoachBubble moment="weak_done" mood={pct >= 60 ? "thumbsup" : "sad"} size={72} />
-          ) : total > 0 ? <Mascot mood={deserved ? "celebrate" : pct >= 60 ? "happy" : "sad"} size={104} /> : <Mascot mood="idle" size={104} />}
-          <ProgressRing size={150} stroke={14} pct={pct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-            <Text variant="display" color={colors.primaryText}>{finalCorrect}/{total || 0}</Text>
-            <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
-          </ProgressRing>
-          {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-          <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
-            {t(total ? "game.saved" : "game.nothing_to_review")}
-          </Text>
-          {/* Kazanılan XP: webde özetin en üstündeki sayı (`session-player`
-              `+{xp} XP`). Mobilde HİÇ gösterilmiyordu - alan `SubmitResult`
-              tipinde yoktu ve sessizce düşüyordu (bkz. web-parity §11.23). */}
-          {result && result.xpGained > 0 ? (
-            <Text variant="h2" color={colors.primaryText} style={{ marginBottom: spacing.md }}>{`+${result.xpGained} XP`}</Text>
-          ) : null}
-
-          {/*
-            ÜÇ SAYI — web özetin başlığının hemen altında aynı satırı çiziyor
-            (doğruluk · kelime · seri). Mobilde halka yalnız "doğru/toplam"
-            gösteriyordu: doğruluk YÜZDESİ hiçbir yerde yazmıyordu ve turun
-            seriye ne yaptığı da görünmüyordu — seri yalnız ONARILDIYSA bir
-            satır çıkıyordu. Yüzde `formatPercent` ile, gün sayısı sözlükten
-            (`profile.days`): ikisi de üç dilde doğru biçimleniyor.
-          */}
-          {total > 0 ? (
-            <View style={{ flexDirection: "row", width: "100%", marginBottom: spacing.lg, borderTopWidth: 1, borderBottomWidth: 1, borderColor: colors.border }}>
-              <SummaryStat label={t("summary.accuracy")} value={formatPercent(pct)} colors={colors} />
-              <SummaryStat label={t("summary.words")} value={String(total)} colors={colors} divider />
-              <SummaryStat label={t("summary.streak")} value={t("profile.days", { n: result?.currentStreak ?? 0 })} colors={colors} divider />
-            </View>
-          ) : null}
-
-          {/* SON ETABIN BAHSİ. Web özetin aynı yerinde kapatıyor: etap kartı
-              gösterilmeden tur bittiği için söylenecek başka yer yok. */}
-          {wagerResult !== null ? (
-            <Text
-              variant="bodyStrong"
-              color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted}
-              style={{ marginBottom: spacing.md, textAlign: "center" }}
-            >
-              {wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")}
-            </Text>
-          ) : null}
-
-          {/* Günlük hedef çubuğu + ulaşıldıysa satırı. Web aynı kutuyu çiziyor. */}
-          {result && result.dailyGoal > 0 ? (
-            <View style={{ width: "100%", marginBottom: spacing.lg }}>
-              <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
-                <Text variant="caption" color={colors.textMuted}>{t("learn.daily_goal")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{`${result.reviewsToday} / ${result.dailyGoal}`}</Text>
-              </View>
-              <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-                <View style={{ height: "100%", width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%`, backgroundColor: colors.success, borderRadius: 4 }} />
-              </View>
-              {result.goalReached ? (
-                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, marginTop: spacing.sm }}>
-                  <FlameIcon color={colors.successText} size={16} />
-                  <Text variant="bodyStrong" color={colors.successText}>{t("session.goal_reached")}</Text>
-                </View>
-              ) : null}
-            </View>
-          ) : null}
-
-          {/* Pekişen kelime: seviye rozeti yerine gerçekten kazanılmış olan şey.
-              Mobil bu sayıyı yalnız kutlama eşiği için kullanıyor, göstermiyordu. */}
-          {mastered > 0 ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.success), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.lg }}>
-              <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center" }}>{t("sessionw.n_mastered", { n: mastered })}</Text>
-            </View>
-          ) : null}
-
-          {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart:
-              sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
-              açıklanamaz hâle getirir. Web aynı kutuyu çiziyor. */}
-          {repaired !== null ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.xxl }}>
-              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
-                <FlameIcon color={colors.streakText} size={16} />
-                <Text variant="bodyStrong" color={colors.streakText}>{t("game.streak_saved")}</Text>
-              </View>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
-            </View>
-          ) : null}
-          {/* Kutunun rengi ve simgesi webdekiyle aynı: bu bir UYARI, hata
-              değil - tur oynandı, yalnız kaydı bekliyor. Kırmızı çizmek
-              kullanıcıya turu kaybettiğini söylerdi. */}
-          {saveWarning ? (
-            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: soft(colors.streak), paddingHorizontal: spacing.md, paddingVertical: spacing.md, marginBottom: spacing.lg }}>
-              <AlertIcon color={colors.streakText} size={16} />
-              <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
-            </View>
-          ) : null}
-          {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
-              sebep. Web özetin altında aynı satırı gösteriyor. */}
-          {result && result.dueTomorrow > 0 ? (
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("sessionw.due_tomorrow", { n: result.dueTomorrow })}</Text>
-          ) : null}
-          {/*
-            ZORLANDIKLARIN. Web özetin altında o turda yanlış bilinen kelimeleri
-            listeliyor ve kelime listesine kapı açıyor; mobilde bu liste HİÇ
-            yoktu - tur bitiyor, hangi kelimede takıldığın hiçbir yerde
-            yazmıyordu. Altı satırla sınırlı: sonuç ekranı bir kelime listesine
-            dönüşmemeli, gerisi "Kelimelerim"de.
-          */}
-          {missed.current.length ? (
-            <View style={{ width: "100%", marginTop: spacing.lg }}>
-              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("session.missed_title", { n: missed.current.length })}</Text>
-              {missed.current.slice(0, 6).map((w) => (
-                <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, marginBottom: 6 }}>
-                  <Text variant="bodyStrong" style={{ flexShrink: 1 }}>{w.de}</Text>
-                  <View style={{ flexShrink: 1, alignItems: "flex-end" }}>
-                    <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{w.tr}</Text>
-                    {w.en ? <Text variant="micro" color={colors.textFaint} numberOfLines={1}>{w.en}</Text> : null}
-                  </View>
-                </View>
-              ))}
-              {missed.current.length > 6 ? (
-                <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: 2 }}>{t("session.n_more_words", { n: missed.current.length - 6 })}</Text>
-              ) : null}
-              <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.missed_note")}</Text>
-              <PressableScale onPress={() => nav.navigate("Words")} style={{ alignSelf: "center", marginTop: spacing.xs, paddingVertical: 6 }}>
-                <Text variant="bodyStrong" color={colors.primaryText}>{t("words.my_words")}</Text>
+      <FlowScreen
+        celebrate={deserved}
+        top={
+          <FlowTopBar
+            onClose={() => nav.goBack()}
+            right={total > 0 ? (
+              <PressableScale accessibilityLabel={t("common.share")} hitSlop={4} onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+                <ShareIcon color={colors.text} size={20} />
               </PressableScale>
-            </View>
-          ) : null}
-          {/*
-            DÜĞME GRUBU — web özette önce bütün içerik, sonra üç düğme
-            (devam · hayatta kalma · bitir). Mobilde "devam" içeriğin
-            ORTASINDA duruyordu: zorlandığın kelimeler ve yarınki tekrar
-            sayısı birincil düğmenin ALTINDA kalıyordu, yani turu bitiren
-            kullanıcı onları hiç görmeden devam ediyordu.
-          */}
-          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t(stoppedEarly.current ? "summary.back_to_round" : "game.continue")}</Text></PressableScale>
-          {/*
-            HAYATTA KALMA TURU — web özetin düğme grubunda aynı yerde duruyor
-            (devam · hayatta kalma · bitir). Mobilde mod vardı ama YALNIZ
-            Öğren sekmesindeki satırdan giriliyordu: kullanıcının en ısındığı
-            an (tur az önce bitti, XP ekranda) boş geçiyordu. `challenge_play`
-            de webin kendi adı — hangi kapıdan girildiği ölçülüyor.
-          */}
-          <PressableScale
-            onPress={() => { track("challenge_play"); nav.navigate("Challenge"); }}
-            style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}
+            ) : null}
+          />
+        }
+        actions={
+          <FlowActions
+            primary={{ label: t(stoppedEarly.current ? "summary.back_to_round" : "game.continue"), onPress: () => void load() }}
+            /* HAYATTA KALMA: kullanıcının en ısındığı an (tur az önce bitti).
+               `challenge_play` webin kendi adı — hangi kapıdan girildiği ölçülüyor. */
+            secondary={{ label: t("challenge.title"), icon: <FlameIcon color={colors.dangerText} size={18} />, onPress: () => { track("challenge_play"); nav.navigate("Challenge"); } }}
+            tertiary={{ label: t("common.finish"), onPress: () => nav.goBack() }}
+          />
+        }
+      >
+        <ResultHero
+          eyebrow={gameLabel ? t("game.practice_suffix", { game: gameLabel }) : t("flow.round")}
+          title={t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
+          figure={total ? `${finalCorrect}/${total}` : null}
+          sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
+          /* ZAYIF NOKTA TURUNDA Erdi bandda değil, altında konuşuyor (web `weak_done`). */
+          mood={onlyGame && total > 0 ? null : total > 0 ? (deserved ? "celebrate" : pct >= 60 ? "happy" : "sad") : "idle"}
+        />
+        {onlyGame && total > 0 ? <CoachBubble moment="weak_done" mood={pct >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
+        {total > 0 ? (
+          <StatRow items={[
+            { value: formatPercent(pct), label: t("summary.accuracy") },
+            { value: String(total), label: t("summary.words") },
+            { value: t("profile.days", { n: result?.currentStreak ?? 0 }), label: t("summary.streak") },
+          ]} />
+        ) : null}
+
+        {/* Tek satırlık notlar: kazanılan, uyarılan, kurtarılan — hepsi aynı biçimde. */}
+        {mastered > 0 ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={t("sessionw.n_mastered", { n: mastered })} /> : null}
+        {wagerResult !== null ? (
+          <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<BoltIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
+        ) : null}
+        {repaired !== null ? <FlowNote tone="warn" icon={<FlameIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
+        {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
+        {saveWarning ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
+
+        {/* ZORLANDIKLARIN — en çok altı satır; gerisi "Kelimelerim"de. */}
+        {missed.current.length ? (
+          <DetailCard
+            title={t("session.missed_title", { n: missed.current.length })}
+            right={<PressableScale hitSlop={6} onPress={() => nav.navigate("Words")}><Text variant="caption" color={colors.primaryText} style={{ fontWeight: "800" }}>{t("words.my_words")}</Text></PressableScale>}
           >
-            <FlameIcon color={colors.dangerText} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("challenge.title")}</Text>
-          </PressableScale>
-          {/* DESENLI METIN. Web ayni ekranda `ShareResult` ile kareleri,
-              seviyeyi ve istatistik satirini paylasiyor; Android tek
-              cumlelik duz metin gonderiyordu - ayni ozellik iki uygulamada
-              iki ayri sey oluyordu. Sozluk anahtarlari webden ortak kumeye
-              tasindi (`share.*`). */}
-          {total > 0 && (
-            <PressableScale onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
-              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
-            </PressableScale>
-          )}
-          <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.finish")}</Text></PressableScale>
-        </ScrollView>
-      </View>
+            {missed.current.slice(0, 6).map((w) => <DetailRow key={w.id} left={w.de} right={w.tr} />)}
+            {missed.current.length > 6 ? <Text variant="caption" color={colors.textMuted}>{t("session.n_more_words", { n: missed.current.length - 6 })}</Text> : null}
+            <Text variant="caption" color={colors.textMuted}>{result && result.dueTomorrow > 0 ? t("sessionw.due_tomorrow", { n: result.dueTomorrow }) : t("session.missed_note")}</Text>
+          </DetailCard>
+        ) : result && result.dueTomorrow > 0 ? (
+          <FlowNote icon={<RepeatIcon color={colors.textMuted} size={16} />} text={t("sessionw.due_tomorrow", { n: result.dueTomorrow })} />
+        ) : null}
+
+        {result && result.dailyGoal > 0 ? (
+          <DetailCard title={t("learn.daily_goal")} right={result.goalReached ? <Text variant="caption" color={colors.successText} style={{ fontWeight: "800" }}>{t("session.goal_reached")}</Text> : null}>
+            <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+              <View style={{ height: "100%", width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%`, backgroundColor: colors.success, borderRadius: 4 }} />
+            </View>
+            <Text variant="caption" color={colors.textMuted}>{`${result.reviewsToday} / ${result.dailyGoal}`}</Text>
+          </DetailCard>
+        ) : null}
+      </FlowScreen>
     );
   }
 
@@ -769,102 +627,87 @@ export function GameScreen() {
 }
 
 /**
- * ÖZETİN ÜÇ SAYISI — web `session-player` `Stat` karşılığı.
+ * ETAP KARTI — sonuç şablonunun küçük hâli (web `session-player` `StageCard`).
  *
- * Ayırıcı SOLDA: ilk hücrede yok, sonrakilerde var. Webde aynı iş `divide-x`
- * ile yapılıyor ve React Native'de karşılığı olmadığı için hücreye veriliyor.
+ * İki işi var. Birincisi turu bitirilebilir kılmak: her beş turda bir durma
+ * noktası, ilerleme zaten sunucuya yazılmış durumda. İkincisi bahis.
+ *
+ * BAHİS KURALI ÜÇ SONUÇ SATIRI. Eskiden tek bir uzun cümleydi ("Beşi de
+ * doğruysa etabın puanı iki katı; iki yanlışta etap puan kazandırmaz. Önceki
+ * puanına dokunulmaz.") ve bir yanlışta ne olduğunu hiç söylemiyordu. Artık
+ * anahtar kapalıyken tek satır özet, açılınca üç olası sonuç ve "önceki
+ * XP'lerin güvende" — gizli kuralı olan bir bahis, bahis değil tuzaktır.
  */
-function SummaryStat({ label, value, colors, divider }: { label: string; value: string; colors: Palette; divider?: boolean }) {
+function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, remaining, wagerResult, colors, onContinue, onStop }: {
+  stage: number; stages: number; correct: number; total: number; perfect: boolean;
+  bestCombo: number; xp: number; remaining: number; wagerResult: number | null;
+  colors: Palette; onContinue: (bet: boolean) => void; onStop: () => void;
+}) {
+  const [bet, setBet] = useState(false);
+  /* Tertemiz etap oktavla taçlanan bir ezgi, normal etap kısa bir üçlü. */
+  useEffect(() => { sfx(perfect ? "perfect" : "stage"); }, [perfect]);
   return (
-    <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.md, borderLeftWidth: divider ? 1 : 0, borderColor: colors.border }}>
-      <Text variant="bodyStrong">{value}</Text>
-      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{label}</Text>
-    </View>
+    <FlowScreen
+      celebrate={perfect}
+      actions={
+        <View style={{ gap: spacing.xs }}>
+          <FlowActions
+            primary={{ label: t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining }), onPress: () => onContinue(bet) }}
+            tertiary={{ label: t("stage.enough"), onPress: onStop }}
+          />
+          <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("stage.stop_note")}</Text>
+        </View>
+      }
+    >
+      <ResultHero
+        eyebrow={t("stage.counter", { n: stage, total: stages })}
+        title={t(perfect ? "stage.clean" : "stage.done")}
+        sub={`${correct}/${total}`}
+        mood={perfect ? "celebrate" : "happy"}
+        segments={{ done: stage, total: stages }}
+      />
+      <StatRow items={[
+        { value: `${correct}/${total}`, label: t("stage.this_stage") },
+        { value: bestCombo > 0 ? String(bestCombo) : "—", label: t("stage.best_streak") },
+        { value: `+${xp}`, label: "XP" },
+      ]} />
+      {/* Kapanan bahsin sonucu: kazanılan, berabere ve yanan üç hâl de açık. */}
+      {wagerResult !== null ? (
+        <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<BoltIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
+      ) : null}
+      <PressableScale
+        onPress={() => { setBet(!bet); haptic("tap"); }}
+        accessibilityRole="switch"
+        accessibilityState={{ checked: bet }}
+        style={{ borderRadius: radii.lg, padding: spacing.md, gap: spacing.sm, backgroundColor: bet ? soft(colors.streak) : colors.surface, borderWidth: 1.5, borderColor: bet ? colors.streak : colors.hairline }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyStrong">{t("wager.next_stage")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("wager.rules")}</Text>
+          </View>
+          <View style={{ width: 40, height: 22, borderRadius: 11, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
+            <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
+          </View>
+        </View>
+        {bet ? (
+          <View style={{ gap: 6, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>
+            <WagerLine icon={<CheckIcon color={colors.successText} size={14} />} text={t("wager.outcome_all", { n: STAGE_SIZE })} colors={colors} />
+            <WagerLine icon={<BoltIcon color={colors.textMuted} size={14} />} text={t("wager.outcome_one")} colors={colors} />
+            <WagerLine icon={<XIcon color={colors.dangerText} size={14} />} text={t("wager.outcome_two")} colors={colors} />
+            <Text variant="caption" color={colors.textMuted}>{t("wager.safe")}</Text>
+          </View>
+        ) : null}
+      </PressableScale>
+    </FlowScreen>
   );
 }
 
-/**
- * ETAP KARTI — web `session-player` `StageCard` karşılığı.
- *
- * İki işi var. Birincisi turu bitirilebilir kılmak: her beş turda bir durma
- * noktası, ilerleme zaten sunucuya yazılmış durumda, yani çıkan kullanıcı
- * hiçbir şey kaybetmiyor. İkincisi bahis: sonraki etabın hepsi doğruysa
- * etabın puanı iki katı, iki yanlışta puan yanıyor. Kural düğmenin altında
- * yazılı — gizli kuralı olan bir bahis, bahis değil tuzaktır.
- */
-function StageCard({ stage, stages, correct, total, perfect, bestCombo, remaining, wagerResult, colors, pad, onContinue, onStop }: {
-  stage: number; stages: number; correct: number; total: number; perfect: boolean;
-  bestCombo: number; remaining: number; wagerResult: number | null;
-  colors: Palette; pad: object; onContinue: (bet: boolean) => void; onStop: () => void;
-}) {
-  const [bet, setBet] = useState(false);
-  /* Etabın kendi sesi var: tertemiz geçen etap oktavla taçlanan bir ezgi,
-     normal etap kısa bir üçlü duyuruyor. Konfetiyle aynı eşik — göz ve kulak
-     aynı şeyi söylüyor. */
-  useEffect(() => { sfx(perfect ? "perfect" : "stage"); }, [perfect]);
+function WagerLine({ icon, text, colors }: { icon: React.ReactNode; text: string; colors: Palette }) {
   return (
-    <View style={pad}>
-      <Celebrate show={perfect} />
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <View style={{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline }}>
-          <View style={{ backgroundColor: colors.primary, paddingHorizontal: spacing.xl, paddingVertical: spacing.lg, alignItems: "center" }}>
-            <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
-            {/* İkincil yazı için jeton var (`onPrimaryMuted`); burada mürekkep
-                opaklıkla solduruluyordu ve koyu temada gri bir lekeye dönüyordu. */}
-            <Text variant="caption" color={colors.onPrimaryMuted} style={{ marginTop: spacing.xs }}>{t("stage.counter", { n: stage, total: stages })}</Text>
-            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
-            <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
-              {Array.from({ length: stages }, (_, i) => (
-                /* Nokta rengi DOLU YÜZEYİN mürekkebinden türüyor, soluk hâli
-                   opaklıkla. Boş noktalar sabit beyazdı; koyu temada başlık
-                   açık turuncuya dönünce beyaz-%35 neredeyse görünmüyordu. */
-                <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: colors.onPrimary, opacity: i < stage ? 1 : 0.35 }} />
-              ))}
-            </View>
-          </View>
-
-          <View style={{ flexDirection: "row" }}>
-            <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.lg }}>
-              <Text variant="h2">{correct}/{total}</Text>
-              <Text variant="micro" color={colors.textMuted}>{t("stage.this_stage")}</Text>
-            </View>
-            <View style={{ width: 1, backgroundColor: colors.hairline }} />
-            <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.lg }}>
-              <Text variant="h2">{bestCombo > 0 ? String(bestCombo) : "—"}</Text>
-              <Text variant="micro" color={colors.textMuted}>{t("stage.best_streak")}</Text>
-            </View>
-          </View>
-
-          {/* Kapanan bahsin sonucu: kazanılan, boşa giden ve yanan üç hâl de
-              açıkça söyleniyor. Sessizce eklenen puan bahsi gürültüye çevirir. */}
-          {wagerResult !== null ? (
-            <Text variant="bodyStrong" color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} style={{ textAlign: "center", paddingHorizontal: spacing.xl }}>
-              {wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")}
-            </Text>
-          ) : null}
-
-          <View style={{ padding: spacing.xl, gap: spacing.sm }}>
-            <PressableScale onPress={() => { setBet(!bet); haptic("tap"); }} accessibilityState={{ selected: bet }}
-              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: spacing.md, backgroundColor: bet ? soft(colors.streak) : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
-              <View style={{ width: 36, height: 20, borderRadius: 10, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
-                <View style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("wager.next_stage")}</Text>
-                <Text variant="micro" color={colors.textMuted}>{t("wager.rules")}</Text>
-              </View>
-            </PressableScale>
-            <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-              <Text variant="h3" color={colors.onPrimary}>{t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}</Text>
-            </PressableScale>
-            <PressableScale onPress={onStop} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.textMuted}>{t("stage.enough")}</Text>
-            </PressableScale>
-            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{t("stage.stop_note")}</Text>
-          </View>
-        </View>
-      </View>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+      {icon}
+      <Text variant="caption" color={colors.text}>{text}</Text>
     </View>
   );
 }
