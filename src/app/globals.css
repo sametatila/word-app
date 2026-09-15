@@ -752,6 +752,23 @@
     box-shadow: 0 10px 24px -12px var(--color-brand-700);
   }
   /*
+    DEVRE DIŞI BİRİNCİL DÜĞME — mobille aynı: gri zemin, soluk yazı, gölge yok.
+    Web yalnız soluklaştırıyordu (`disabled:opacity-60`) ve turuncu düğme
+    yarı saydam hâliyle hâlâ "basılabilir" okunuyordu. Android'de aynı düğme
+    `surface2` zemine ve `textFaint` yazıya geçiyor, basma katmanı da ayrıca
+    0,6'ya soluklaştırıyor (`ui/PressableScale`). Opaklık da burada: bazı web
+    düğmeleri `disabled:opacity-60` sınıfını hiç taşımıyordu.
+  */
+  .btn-primary:disabled,
+  .btn-primary[aria-disabled="true"] {
+    color: var(--text-faint);
+    background-color: var(--surface-2);
+    background-image: none;
+    box-shadow: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  /*
    * Fare imleci OLAN cihazlarda üzerine gelme vurgusu.
    *
    * Dokunmatik ekranda `:hover` bir "üzerine gelme" değil, bir KALINTI:
