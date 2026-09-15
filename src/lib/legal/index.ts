@@ -77,9 +77,13 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * uygulamasını İNCELEMEDEN ÖNCE kapsaması gerekiyor. Aynı sürüm yapay zekâ
  * rızasını, bildirim jetonunu ve mikrofonun gerçek kapsamını da metne yazdı;
  * ayrıntı LEGAL_PLATFORMS notunda ve kaydın kendisinde.
+ *
+ * 1.2 (2026-09-15) şartların cayma maddesini gerçek satın alma akışına çekti:
+ * eski metin, uygulamada hiç olmayan bir "satın alma ekranındaki onay"a
+ * dayanıyordu (mağaza ön inceleme B35).
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-14";
-export const LEGAL_VERSION = "1.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-15";
+export const LEGAL_VERSION = "1.2";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -273,6 +277,27 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: tüketici hakkının anlatımı değişti. Eski madde cayma
+      hakkının "satın alma ekranında istenen onayla" sona erdiğini söylüyordu;
+      uygulamada böyle bir onay hiç yoktu ve satışı mağaza yapıyor. Yeni madde
+      hakkı daraltmıyor, mağazanın yoluna ve yasal haklara bağlıyor.
+    */
+    version: "1.2",
+    date: "2026-09-15",
+    changes: {
+      tr: [
+        "Şartların cayma maddesi (7) gerçek satın alma akışına göre yeniden yazıldı. Eski metin cayma hakkının satın alma ekranında verilen bir onayla sona erdiğini söylüyordu, oysa uygulama böyle bir onay hiç istemiyordu. Premium'u mağaza satar: satın almayı mağazanın ödeme ekranında onaylarsın, cayma ve iade taleplerini mağazanın şartlarına göre mağaza üzerinden kullanırsın. Tüketici olarak yasal hakların saklıdır; satın alma ekranı da bunu kısaca söylüyor.",
+      ],
+      en: [
+        "The withdrawal clause of the terms (7) was rewritten to match the actual purchase flow. The old text said the right of withdrawal ended with a consent given on the purchase screen, but the app never asked for such a consent. Premium is sold by the store: you confirm the purchase on the store's payment screen and exercise withdrawal and refund requests through the store under its terms. Your statutory rights as a consumer are not affected; the purchase screen now says this briefly too.",
+      ],
+      de: [
+        "Die Widerrufsklausel der Nutzungsbedingungen (7) wurde an den tatsächlichen Kaufablauf angepasst. Der alte Text sagte, das Widerrufsrecht erlösche mit einer Zustimmung auf dem Kaufbildschirm, doch die App hat nie eine solche Zustimmung eingeholt. Premium verkauft der Store: Du bestätigst den Kauf auf dessen Zahlungsbildschirm und machst Widerruf und Erstattung über den Store nach dessen Bedingungen geltend. Deine gesetzlichen Rechte als Verbraucher bleiben unberührt; das sagt jetzt auch kurz der Kaufbildschirm.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: hak ve yükümlülük değişti. Metinler yeni bir platformu

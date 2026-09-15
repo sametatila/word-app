@@ -980,6 +980,8 @@ export const tr: Record<string, string> = {
   "paywall.pitch": "Cepte yürüyüş ve daha çok konuşma, yazma değerlendirmesi",
   "paywall.renew_cancel_appstore": "Otomatik yenilenir; App Store'dan istediğin zaman iptal",
   "paywall.renew_cancel_play": "Otomatik yenilenir; Google Play'den istediğin zaman iptal",
+  "paywall.withdrawal_appstore": "Premium satın aldığın anda açılır. İade ve cayma talepleri App Store üzerinden, Apple'ın kurallarına göre yapılır.",
+  "paywall.withdrawal_play": "Premium satın aldığın anda açılır. İade ve cayma talepleri Google Play üzerinden, Google Play'in kurallarına göre yapılır.",
   "paywall.purchase_wasn_t_completed": "Satın alma tamamlanmadı.",
   "paywall.restore_purchase": "Satın almayı geri yükle",
   "paywall.start_free_trial": "Ücretsiz denemeyi başlat",

@@ -977,6 +977,8 @@ export const deBase: Record<string, string> = {
   "paywall.pitch": "Gehmodus in der Tasche und mehr Feedback zum Sprechen und Schreiben",
   "paywall.renew_cancel_appstore": "Verlängert sich automatisch; jederzeit im App Store kündbar",
   "paywall.renew_cancel_play": "Verlängert sich automatisch; jederzeit in Google Play kündbar",
+  "paywall.withdrawal_appstore": "Premium ist sofort nach dem Kauf verfügbar. Erstattung und Widerruf laufen über den App Store nach den Regeln von Apple.",
+  "paywall.withdrawal_play": "Premium ist sofort nach dem Kauf verfügbar. Erstattung und Widerruf laufen über Google Play nach den Regeln von Google Play.",
   "paywall.purchase_wasn_t_completed": "Der Kauf wurde nicht abgeschlossen.",
   "paywall.restore_purchase": "Kauf wiederherstellen",
   "paywall.start_free_trial": "Kostenlos testen",

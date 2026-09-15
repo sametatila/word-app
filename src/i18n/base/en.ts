@@ -977,6 +977,8 @@ export const enBase: Record<string, string> = {
   "paywall.pitch": "Pocket Walking and more speaking and writing feedback",
   "paywall.renew_cancel_appstore": "Renews automatically; cancel anytime in the App Store",
   "paywall.renew_cancel_play": "Renews automatically; cancel anytime in Google Play",
+  "paywall.withdrawal_appstore": "Premium starts as soon as you buy. Refund and withdrawal requests go through the App Store, under Apple's rules.",
+  "paywall.withdrawal_play": "Premium starts as soon as you buy. Refund and withdrawal requests go through Google Play, under Google Play's rules.",
   "paywall.purchase_wasn_t_completed": "The purchase wasn't completed.",
   "paywall.restore_purchase": "Restore purchase",
   "paywall.start_free_trial": "Start free trial",

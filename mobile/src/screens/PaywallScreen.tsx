@@ -418,6 +418,13 @@ export function PaywallScreen() {
           {pkg ? priceLine(pkg, trial) : ""}
           {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
+        {/* Cayma ve iade satırı (şartlar §7, sürüm 1.2). Şartlar eskiden cayma
+            hakkının "satın alma ekranında istenen onayla" bittiğini söylüyordu ve
+            burada öyle bir onay yoktu. Satışı mağaza yapıyor; uygulama ayrı bir
+            onay istemiyor, yolu söylüyor. */}
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: 2 }}>
+          {t(Platform.OS === "ios" ? "paywall.withdrawal_appstore" : "paywall.withdrawal_play")}
+        </Text>
         {/*
           SATIN ALMA ALANINDA İKİ HUKUKİ BAĞLANTI BİRDEN. Burada yalnız
           Kullanım Şartları vardı; Apple'ın lisans sözleşmesi (Schedule 2
