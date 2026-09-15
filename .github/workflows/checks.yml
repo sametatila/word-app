@@ -464,6 +464,18 @@ jobs:
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
           TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
+      # Next'in derleme önbelleği. Önbellek yokken `next build` CI'da "No build
+      # cache found" uyarısı basıyor ve her derlemeyi sıfırdan yapıyordu.
+      # Anahtar kilit dosyası + kaynak; kaynak değişince aynı kilit dosyasının
+      # en yakın önbelleği geri yükleniyor (Next'in önerdiği düzen). İlk koşu
+      # önbelleği kuruyor, sonrakiler onu kullanıyor.
+      - name: Derleme önbelleği
+        uses: actions/cache@v6
+        with:
+          path: .next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**', 'public/**', 'next.config.ts', 'tsconfig.json') }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
       - name: next build
         run: npx next build
         env:
