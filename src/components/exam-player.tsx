@@ -1,19 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { BOSS_SECONDS } from "@/lib/lessons/boss-const";
 import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Mascot } from "@/components/mascot";
-import { Confetti } from "@/components/celebrate";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "@/components/flow";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
 import { RoundExit } from "@/components/round-exit";
@@ -453,60 +451,54 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   }
 
   if (phase === "error") {
+    /* Kâğıt ALINAMADIYSA durum şablonu; cevaplar çevrimdışı toplandıysa
+       aşağıdaki sonuç bandı. */
+    if (!offline) {
+      return (
+        /* DURUM ŞABLONU. Hata DUYURULUYOR (`alert`): ekrani kaplayan bir hata
+           metni canli bolge degilse ekran okuyucu kullanan biri hicbir sey
+           duymuyor. YERINDE TEKRAR DENEME - kagit ALINAMADIGINDA haftanin kagidi
+           gecici bir ag kesintisiyle harcanabiliyordu (Android `setAttempt`). */
+        <FlowColumn>
+          <StateBody alert mood="sad" title={t("exam.load_or_save_failed")} />
+          <FlowActions primary={{ label: t("common.try_again"), onClick: () => void start() }} tertiary={{ label: t("exam.back_to_path"), href: "/immersion" }} />
+        </FlowColumn>
+      );
+    }
+    /* SONUÇ GÖNDERİLEMEDİ AMA SINAV YAPILDI: sonuç şablonu, sessiz band.
+       Geçti/kaldı yazılmıyor (o kararı sunucu veriyor); maskot düşünüyor,
+       üzgün değil — kötü bir şey olmadı, kayıt bekliyor. Android aynı
+       durumu aynı bandla çiziyor (`ExamScreen` `offline`). */
     return (
-      /* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge degilse
-         ekran okuyucu kullanan biri hicbir sey duymuyor. */
-      <section role="alert" className="card mx-auto w-full max-w-md p-4">
-        {/* Android ayni dalda `sad` maskotu ciziyor (`ExamScreen`); webde
-            sinav oynaticisinin hicbir dalinda maskot yoktu. Cevrimdisi
-            KAYIT dalinda cizilmiyor: orada kotu bir sey olmadi, kayit
-            bekliyor. */}
-        {offline ? null : <Mascot mood="sad" size={80} className="mx-auto" />}
-        {offline ? (
-          <>
-            <p className="text-h1 tabular-nums">{formatPercent(offline.pct, lang)}</p>
-            <p className="muted mt-1 text-strong">{t("exam.saved_offline")}</p>
-            {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
-                iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
-                gitmemiş olması. Ağırlık yok - onu sunucu veriyor. Android bu
-                iki durumu baştan beri aynı biçimde çiziyor. */}
-            <ul className="mt-3 space-y-2">
-              {offline.sections.map((x) => (
-                <li key={x.id}>
-                  <div className="flex items-center justify-between text-body">
-                    <span>
-                      <span lang={course} className="font-semibold">{SECTION_TITLE_TARGET[targetLangOf(course)][x.id]}</span>
-                      <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
-                    </span>
-                    <span className="tabular-nums" style={{ color: x.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
-                      {formatPercent(x.pct, lang)}
-                    </span>
-                  </div>
-                  <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
-                    <div className="h-full rounded-full" style={{ width: `${x.pct}%`, background: x.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <p className="text-body">{t("exam.load_or_save_failed")}</p>
-        )}
-        {/* YERINDE TEKRAR DENEME - yalniz kagit ALINAMADIGINDA. Cevaplar
-            cevrimdisi kaydedildiyse tekrar denemek kagidi bastan aciyor ve o
-            kaydi cope atardi; orada tek dogru cikis Patika'ya donmek.
-            Android bu ayrimi zaten yapiyor (`ExamScreen`: `setAttempt`) ve
-            gerekcesi de orada yazili - haftanin kagidi gecici bir ag
-            kesintisiyle harcanabiliyordu. */}
-        {offline ? null : (
-          <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
-            {t("common.try_again")}
-          </button>
-        )}
-        <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-body">
-          {t("exam.back_to_path")}
-        </Link>
-      </section>
+      <FlowColumn>
+        <ResultHero eyebrow={title} title={t("exam.saved_offline")} figure={formatPercent(offline.pct, lang)} mood="think" quiet />
+        {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
+            iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
+            gitmemiş olması. Ağırlık yok - onu sunucu veriyor. */}
+        <DetailCard title={t("exam.sections")}>
+          <ul className="space-y-2">
+            {offline.sections.map((x) => (
+              <li key={x.id}>
+                <div className="flex items-center justify-between text-body">
+                  <span>
+                    <span lang={course} className="font-semibold">{SECTION_TITLE_TARGET[targetLangOf(course)][x.id]}</span>
+                    <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
+                  </span>
+                  <span className="tabular-nums" style={{ color: x.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
+                    {formatPercent(x.pct, lang)}
+                  </span>
+                </div>
+                <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
+                  <div className="h-full rounded-full" style={{ width: `${x.pct}%`, background: x.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </DetailCard>
+        {/* Cevaplar çevrimdışı kaydedildiyse tekrar denemek kâğıdı baştan
+            açıyor ve o kaydı çöpe atardı; burada tek doğru çıkış Patika. */}
+        <FlowActions primary={{ label: t("exam.back_to_path"), href: "/immersion" }} />
+      </FlowColumn>
     );
   }
 
@@ -531,28 +523,27 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const teil = list.indexOf(section) + 1;
 
   if (phase === "intro") {
+    /* ETAP ŞABLONU: sonuç bandının küçük hâli, dibinde bölüm şeridi. Band
+       CANLI BÖLGE DEĞİL: kalan süre her saniye değişiyor ve `role="status"`
+       ekran okuyucuya her saniyeyi okuturdu. */
     return (
-      <section className="card mx-auto w-full max-w-md p-4">
-        {/* uppercase YOK: Türkçe yerelde text-transform "Teil"i "TEİL" yapıyor. */}
-        {/* Kâğıdın kendi dili: "Teil" Almanca kursta, "Part" İngilizcede —
-            sabit yazılıyken İngilizce öğrenci kâğıdında Almanca görüyordu. */}
-        <p className="muted text-caption tracking-wide" lang={course}>
-          {SECTION_WORD_TARGET[targetLangOf(course)]} {teil} / {list.length}
-        </p>
-        <h2 className="mt-1 text-h1" lang={course}>
-          {SECTION_TITLE_TARGET[targetLangOf(course)][section]}
-        </h2>
-        <p className="text-h3" style={{ color: "var(--color-brand)" }}>
-          {t(SECTION_TITLE_KEYS[section])}
-        </p>
-        <p className="muted mt-3 text-body leading-relaxed">{t(SECTION_BRIEF_KEYS[section])}</p>
-        <p className="muted mt-3 text-caption">
-          {t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
-        </p>
-        <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-4 text-body">
-          {t("exam.start_section")}
-        </button>
-      </section>
+      <FlowColumn>
+        <ResultHero
+          live={false}
+          /* Kâğıdın kendi dili: "Teil" Almanca kursta, "Part" İngilizcede.
+             `lang` büyük harf dönüşümünü de doğru yapıyor: Türkçe yerelde
+             `uppercase` "Teil"i "TEİL" yapıyordu. */
+          eyebrow={<span lang={course}>{SECTION_WORD_TARGET[targetLangOf(course)]} {teil} / {list.length}</span>}
+          title={<span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>}
+          sub={t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
+          mood="think"
+          segments={{ done: teil, total: list.length }}
+        />
+        <DetailCard title={t(SECTION_TITLE_KEYS[section])}>
+          <p className="muted text-body leading-relaxed">{t(SECTION_BRIEF_KEYS[section])}</p>
+        </DetailCard>
+        <FlowActions primary={{ label: t("exam.start_section"), onClick: () => setPhase("run") }} />
+      </FlowColumn>
     );
   }
 
@@ -917,103 +908,75 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
     };
   }, [level, module]);
 
+  /*
+    KAPAK ŞABLONU: ikon karosu · sınavın adı · başlık · tek cümle · ikonlu
+    kural satırları · Başla / Vazgeç.
+
+    KÂĞIDIN KENDİ BAŞLIĞI ile UYDURULMUŞ Almanca ayrı şeyler. Kâğıt varsa
+    başlığı gerçekten hedef dilde (`cover.titleDe`) ve `lang` niteliği de onu
+    söylüyor. Kâğıt YOKSA başlık sözlükten: eskiden "Niveauprüfung",
+    "Modulprüfung" diye Almanca dizgiler KODA GÖMÜLÜYDÜ ve İngilizce kursta
+    da Almanca görünüyordu. Sınavın adı artık her durumda sözlükten, üst satırda.
+
+    KURALLAR tek paragraftı: geri dönüş, ipucu, eşik ve ağırlık aynı cümle
+    yığınında birbirini örtüyordu. Her kural kendi satırında.
+  */
+  const rules: CoverRule[] = [
+    { icon: <ClockIcon size={16} />, text: t(module === null ? "exam.rules_level" : "exam.rules_module") },
+    { icon: <LockIcon size={16} />, text: t("exam.rule_no_return") },
+    { icon: <TargetIcon size={16} />, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
+    { icon: <PenIcon size={16} />, text: t("exam.rule_weight") },
+    { icon: <AlertIcon size={16} />, text: t("exam.rule_quit") },
+  ];
   return (
-    <section className="card mx-auto w-full max-w-md p-4">
+    <FlowColumn>
       {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
-      <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-      {/*
-        KÂĞIDIN KENDİ ALMANCASI ile UYDURULMUŞ Almanca ayrı şeyler.
-        Kâğıt varsa başlığı gerçekten Almanca (`cover.titleDe`, `cover.code`)
-        ve `lang` niteliği de onu söylüyor. Kâğıt YOKSA burada "Niveauprüfung",
-        "Modulprüfung", "Prüfung A2" diye Almanca dizgiler KODA GÖMÜLÜYDÜ:
-        arayüzü Türkçe ya da İngilizce olan kullanıcı, sözlükte karşılığı
-        dururken (`exam.level_exam`, `exam.module_exam`) Almanca bir başlık
-        görüyordu. Android bu durumda sözlüğü kullanıyor (`ExamScreen`).
-      */}
-      {/* ALMANCA BASLIK YALNIZ KAGIDIN KENDI ALMANCASI VARSA. Olcut artik
-          "kapak geldi mi" degil, "kapak gercekten Almanca bir baslik tasiyor
-          mu": seviye sinavinin kapagi da geliyor ama plani yok, basligi yok.
-          Olcutu degistirmeden birakmak, seviye sinavinda sozlukteki basligin
-          yerine Almanca "Niveauprüfung" yazdirirdi. */}
-      <p className="muted text-micro uppercase tracking-eyebrow" lang={cover?.titleDe ? course : undefined}>
-        {cover?.titleDe
-          ? module === null
-            ? `${level} · Niveauprüfung`
-            : `Modulprüfung ${cover.code}`
-          : module === null
-            ? t("exam.level_exam", { level })
-            : t("exam.module_exam", { level, n: module + 1 })}
-      </p>
-      <h1 className="mt-1 text-h2 leading-tight" lang={cover?.titleDe ? course : undefined}>
-        {cover?.titleDe ?? (module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 }))}
-      </h1>
-      {cover?.titleTr ? <p className="text-h3" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
-
-      {/*
-        BÖLÜMLER VE SÜRE. "Ne kadar sürecek, neler sorulacak" sorusu sınava
-        GİRMEDEN cevaplanmalı; web kapağı yalnız başlığı ve odakları
-        gösteriyordu. Sayılar kâğıttan değil sabit plandan geliyor (uç kapağı
-        üretirken kâğıdı hazırlamıyor). Android kapağında ikisi de var.
-      */}
-      {cover?.counts ? (
-        <div className="mt-4 rounded-panel px-4 py-3 surface-2">
-          <p className="text-strong">{t("exam.sections")}</p>
-          <ul className="mt-1 space-y-0.5">
-            {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
-              <li key={id} className="muted text-caption">
-                <span lang={course} className="font-semibold">{SECTION_TITLE_TARGET[targetLangOf(course)][id]}</span> · {t(SECTION_TITLE_KEYS[id])}{" "}
-                ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
-              </li>
-            ))}
-          </ul>
-          {cover.seconds ? (
-            <p className="muted mt-1.5 text-caption">{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</p>
-          ) : null}
-        </div>
-      ) : null}
-
-      {cover?.focus.length ? (
-        <div className="mt-4">
-          <p className="muted text-caption">{t("exam.measures_these")}</p>
-          <ul className="mt-1.5 space-y-1">
+      <CoachBubble moment="exam_intro" mood="think" size={48} />
+      <CoverBody
+        icon={<ExamIcon size={28} />}
+        tint="var(--color-brand-500)"
+        eyebrow={module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 })}
+        title={cover?.titleDe ? <span lang={course}>{cover.titleDe}</span> : t(module === null ? "exam.cover_title_level" : "exam.cover_title_module")}
+        /* Deneme sınavı sertifika vermiyor: "geçersen sertifika" sözü orada
+           yanlış olurdu, yerine aşağıdaki deneme notu konuşuyor. Kapak
+           gelmeden cümle çizilmiyor ki denemede bir an görünüp kaybolmasın. */
+        pitch={cover ? (cover.titleDe ? cover.titleTr : cover.trial ? null : t("exam.cover_pitch")) : null}
+        rules={rules}
+      >
+        {/* SONUCUN SAYILMAYACAĞI BAŞLAMADAN ÖNCE SÖYLENİYOR. Web bunu yalnız
+            sonuç satırında söylüyordu, yani kullanıcı yirmi dakikayı harcadıktan
+            SONRA öğreniyordu. */}
+        {cover?.trial ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("exam.trial_notice")} /> : null}
+        {cover?.focus.length ? (
+          <DetailCard title={t("exam.measures_these")}>
             {cover.focus.map((f, i) => (
-              <li key={i} className="text-body">
-                <span className="font-semibold" lang={course}>
-                  {f.de}
-                </span>
-                <span className="muted"> — {f.tr}</span>
-              </li>
+              <DetailRow key={i} left={f.de} right={f.tr} lang={course} />
             ))}
-          </ul>
-        </div>
-      ) : null}
-
-      {/* SONUCUN SAYILMAYACAĞI BAŞLAMADAN ÖNCE SÖYLENİYOR. Web bunu yalnız
-          sonuç satırında söylüyordu, yani kullanıcı yirmi dakikayı harcadıktan
-          SONRA öğreniyordu. Android kapakta uyarıyor. */}
-      {cover?.trial ? (
-        <p
-          className="mt-4 rounded-panel px-3.5 py-3 text-caption leading-relaxed"
-          style={{ background: "var(--color-danger-soft)", color: "var(--color-danger)" }}
-        >
-          {t("exam.trial_notice")}
-        </p>
-      ) : null}
-
-      <div className="mt-4 rounded-panel px-3.5 py-3 text-caption leading-relaxed surface-2">
-        <p className="font-semibold">{t("exam.rules")}</p>
-        <p className="muted mt-1">
-          {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
-        </p>
-      </div>
-
-      <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-4 text-body">
-        {t("exam.start")}
-      </button>
-      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
-        {t("common.discard")}
-      </Link>
-    </section>
+          </DetailCard>
+        ) : null}
+        {/*
+          BÖLÜMLER VE SÜRE. "Ne kadar sürecek, neler sorulacak" sorusu sınava
+          GİRMEDEN cevaplanmalı. Sayılar kâğıttan değil sabit plandan geliyor
+          (uç kapağı üretirken kâğıdı hazırlamıyor).
+        */}
+        {cover?.counts ? (
+          <DetailCard
+            title={t("exam.sections")}
+            right={cover.seconds ? <span className="muted text-caption">{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</span> : null}
+          >
+            {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
+              <DetailRow
+                key={id}
+                left={SECTION_TITLE_TARGET[targetLangOf(course)][id]}
+                lang={course}
+                right={`${t(SECTION_TITLE_KEYS[id])} (${cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})`}
+              />
+            ))}
+          </DetailCard>
+        ) : null}
+      </CoverBody>
+      <FlowActions primary={{ label: t("exam.start"), onClick: onStart }} tertiary={{ label: t("common.discard"), href: "/immersion" }} />
+    </FlowColumn>
   );
 }
 
@@ -1201,97 +1164,100 @@ function Result({
   const course = useCourse();
   const t = useT();
   const lang = useLang();
+  /*
+    SONUÇ ŞABLONU: band → üç sayı → notlar → ayrıntı kartları → tek birincil
+    düğme. Eskiden koç balonu, yüzde, hüküm, bölüm listesi, yapabilirlik,
+    döküm ve üç düğme tek kartta aynı ağırlıkta diziliyordu.
+
+    Band `role="status"` taşıyor: TURUN SONUCU DUYURULUYOR (bkz. 11.337).
+    Sınavın TEK sonucu bu; bölüm geçişleri ayrı bir sonuç değil.
+  */
+  const rows = result.sections;
+  const byPct = [...rows].sort((a, b) => a.pct - b.pct);
+  const weakest = byPct[0];
+  const strongest = byPct[byPct.length - 1];
+  const cleared = rows.filter((s) => s.pct >= PASS_SECTION).length;
+  /* Geçilmediyse NEDEN: toplam mı eşiğin altında, yoksa tek bir bölüm mü. */
+  const pill = result.passed
+    ? result.trial
+      ? null
+      : { text: t("exam.cert_ready"), tone: "ok" as const }
+    : result.total < PASS_TOTAL
+      ? { text: t("exam.pill_total_low", { pct: formatPercent(PASS_TOTAL, lang) }), tone: "bad" as const }
+      : weakest && weakest.pct < PASS_SECTION
+        ? { text: t("exam.pill_section_low", { section: t(SECTION_TITLE_KEYS[weakest.id]), pct: formatPercent(PASS_SECTION, lang) }), tone: "bad" as const }
+        : null;
+  const certificate = result.passed && !result.trial;
+  const back = { label: t("exam.back_to_path"), href: "/immersion" };
   return (
-    /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). Sinavin TEK sonucu bu: bolum
-       gecisleri ayri bir "sonuc" degil, calisan fazin icinde bir kapak. */
-    <section role="status" className="card mx-auto w-full max-w-md p-4">
+    /* KUTLAMA yalnız geçince (Android `FlowScreen celebrate`). */
+    <FlowColumn celebrate={result.passed}>
+      <ResultHero
+        eyebrow={title}
+        title={result.passed ? t("exam.passed") : t("exam.not_passed")}
+        figure={formatPercent(result.total, lang)}
+        sub={t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
+        /* Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci maskot yok. */
+        mood={null}
+        pill={pill}
+        quiet={!result.passed}
+      />
       <CoachBubble
         moment={result.passed ? "exam_pass" : "exam_fail"}
         mood={result.passed ? "celebrate" : "sad"}
         vars={{ pct: result.total, level }}
         size={56}
-        className="mb-3"
       />
-      {/* KUTLAMA. Android sinav sonucunda gecince konfeti atiyor
-          (`ExamScreen` `Celebrate show={!!result?.passed}`); webde sinav
-          oynaticisinin hicbir yerinde kutlama yoktu - gecmek en cok kutlanmasi
-          gereken an ve iki platformda iki ayri duyguydu. */}
-      <Confetti fire={result.passed ? 1 : 0} count={40} />
-      <p className="muted text-micro uppercase tracking-eyebrow">{title}</p>
-      {/* SIRA ANDROID'DEKI GIBI: once BUYUK YUZDE, sonra hukum, sonra deneme
-          cumlesi. Web once hukmu yazip yuzdeyi "Toplam %78" diye kucuk bir
-          satira gomuyordu - ayni ekranda once okunan sey farkliydi. */}
-      <h1 className="text-h1 tabular-nums">{formatPercent(result.total, lang)}</h1>
-      <p className="mt-1 text-strong" style={{ color: result.passed ? "var(--color-success)" : "var(--text-muted)" }}>
-        {result.passed ? t("exam.passed") : t("exam.not_passed")}
-      </p>
-      {/* DENEME CUMLESI ORTAK ANAHTARDAN. Web "deneme (modul konusmalari
-          bitmeden sayilmaz)" diye toplam satirina eklenmis kisa bir parantez
-          yaziyordu; Android tam cumleyi kendi satirinda veriyor ve sebebi de
-          soyluyor (%80 esigi). Ortak olan kullaniliyor. */}
-      {result.trial ? <p className="muted mt-1 text-caption">{t("exam.trial_notice")}</p> : null}
-
-      <ul className="mt-3 space-y-1.5">
-        {result.sections.map((s) => (
-          <li key={s.id}>
-            <div className="flex items-center justify-between text-body">
-              <span>
-                <span lang={course} className="font-semibold">
-                  {SECTION_TITLE_TARGET[targetLangOf(course)][s.id]}
-                </span>
-                <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
-                <span className="muted text-caption"> {t("exam.weight", { pct: formatPercent(s.weight, lang) })}</span>
-              </span>
-              {/* Geçen bölüm YEŞİL: nötr metin rengi, geçen ve kalan bölümü
-                  yalnız kırmızının varlığıyla ayırıyordu - tarama sırasında
-                  "hangi bölümü geçtim" sorusu ancak tek tek yüzde okuyarak
-                  cevaplanıyordu. Android burada iki rengi de kullanıyor. */}
-              <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
-                {formatPercent(s.pct, lang)}
-              </span>
-            </div>
-            <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
-              <div className="h-full rounded-full" style={{ width: `${s.pct}%`, background: s.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      {cando.length ? (
-        <div className="mt-4 rounded-panel px-3.5 py-3 surface-2">
-          <p className="text-strong">{t(result.passed ? "exam.now_you_can" : "exam.this_measured")}</p>
-          <ul className="mt-2 space-y-2">
-            {cando.map((c, i) => (
-              <li key={i} className="flex gap-2 text-body">
-                <span className="mt-0.5 shrink-0" style={{ color: result.passed ? "var(--color-mint)" : "var(--text-muted)" }}>
-                  <CheckIcon size={14} />
-                </span>
-                <span>
-                  <span className="block font-semibold" lang={course}>
-                    {c.de}
-                  </span>
-                  <span className="muted block text-caption">{c.tr}</span>
-                  <span className="muted block text-caption opacity-70" lang="en">
-                    {c.en}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : focus.length ? (
-        <p className="muted mt-3 text-caption">{t("exam.structures_measured", { list: focus.map((f) => f.de).join(", ") })}</p>
+      {strongest ? (
+        <StatRow
+          items={[
+            { value: formatPercent(strongest.pct, lang), label: t(SECTION_TITLE_KEYS[strongest.id]), tone: strongest.pct >= PASS_SECTION ? "ok" : "bad" },
+            ...(weakest && weakest.id !== strongest.id
+              ? [{ value: formatPercent(weakest.pct, lang), label: t(SECTION_TITLE_KEYS[weakest.id]), tone: weakest.pct < PASS_SECTION ? ("bad" as const) : null }]
+              : []),
+            { value: `${cleared}/${rows.length}`, label: t("exam.stat_sections_cleared") },
+          ]}
+        />
       ) : null}
+      {/* DENEME CUMLESI ORTAK ANAHTARDAN; sebebi de soyluyor (%80 esigi). */}
+      {result.trial ? <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("exam.trial_notice")} /> : null}
+      {certificate ? null : <FlowNote icon={<TargetIcon size={16} />} text={t("exam.weak_section_hint")} />}
+
+      <DetailCard title={t("exam.sections")}>
+        <ul className="space-y-1.5">
+          {rows.map((s) => (
+            <li key={s.id}>
+              <div className="flex items-center justify-between text-body">
+                <span>
+                  <span lang={course} className="font-semibold">
+                    {SECTION_TITLE_TARGET[targetLangOf(course)][s.id]}
+                  </span>
+                  <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
+                  <span className="muted text-caption"> {t("exam.weight", { pct: formatPercent(s.weight, lang) })}</span>
+                </span>
+                {/* Geçen bölüm YEŞİL: nötr metin rengi, geçen ve kalan bölümü
+                    yalnız kırmızının varlığıyla ayırıyordu. */}
+                <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
+                  {formatPercent(s.pct, lang)}
+                </span>
+              </div>
+              <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
+                <div className="h-full rounded-full" style={{ width: `${s.pct}%`, background: s.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </DetailCard>
 
       {misses.length ? (
-        <div className="mt-3">
-          <button type="button" onClick={onToggleMisses} className="btn btn-ghost w-full px-4 py-2.5 text-body">
+        <DetailCard title={t("exam.misses_title")}>
+          <button type="button" onClick={onToggleMisses} className="self-start text-strong" style={{ color: "var(--color-brand)" }}>
             {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.length })}
           </button>
           {showMisses ? (
-            <ul className="mt-2 space-y-2.5">
+            <ul className="space-y-2.5">
               {misses.map((m, i) => (
-                <li key={i} className="rounded-panel px-3 py-2.5 text-body surface-2">
+                <li key={i} className="border-t pt-2 text-body" style={{ borderColor: "var(--hairline)" }}>
                   <p className="muted text-caption">
                     <span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
@@ -1314,44 +1280,56 @@ function Result({
               ))}
             </ul>
           ) : null}
-        </div>
+          {showMisses && writingSample ? (
+            <div className="rounded-panel px-3 py-2.5 text-body surface-2">
+              <p className="muted text-caption">{t("exam.writing_sample")}</p>
+              <p className="mt-1 whitespace-pre-line text-caption" lang={course}>
+                {writingSample}
+              </p>
+            </div>
+          ) : null}
+        </DetailCard>
       ) : null}
 
-      {showMisses && writingSample ? (
-        <div className="mt-2 rounded-panel px-3 py-2.5 text-body surface-2">
-          <p className="muted text-caption">{t("exam.writing_sample")}</p>
-          <p className="mt-1 whitespace-pre-line text-caption" lang={course}>
-            {writingSample}
-          </p>
-        </div>
+      {cando.length ? (
+        <DetailCard title={t(result.passed ? "exam.now_you_can" : "exam.this_measured")}>
+          <ul className="space-y-2">
+            {cando.map((c, i) => (
+              <li key={i} className="flex gap-2 text-body">
+                <span className="mt-0.5 shrink-0" style={{ color: result.passed ? "var(--color-mint)" : "var(--text-muted)" }}>
+                  <CheckIcon size={14} />
+                </span>
+                <span>
+                  <span className="block font-semibold" lang={course}>
+                    {c.de}
+                  </span>
+                  <span className="muted block text-caption">{c.tr}</span>
+                  <span className="muted block text-caption opacity-70" lang="en">
+                    {c.en}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </DetailCard>
+      ) : focus.length ? (
+        <FlowNote text={t("exam.structures_measured", { list: focus.map((f) => f.de).join(", ") })} />
       ) : null}
 
-      {result.passed && !result.trial ? (
-        <a href={`/api/certificate/${result.id}`} target="_blank" rel="noreferrer" className="btn btn-primary mt-4 w-full px-5 py-3 text-body">
-          {t("exam.open_certificate")}
-        </a>
-      ) : (
-        <p className="muted mt-3 text-caption">{t("exam.weak_section_hint")}</p>
-      )}
-      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-body">
-        {t("exam.back_to_path")}
-      </Link>
-      {/*
-        Hız turunun tek girişi burası. Eskiden yol haritasında, modül
-        sınavının hemen altındaydı ve orada ikinci bir sınav gibi okunuyordu —
-        oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR; sınav
-        revizyonunun kaldırdığı "sadece kelime" ölçümünü geri davet ediyordu.
-        Sınavdan SONRA ise yeri doğru: ölçüm bitti, bu bir oyun.
-      */}
-      {moduleIndex !== null ? (
-        <Link
-          href={`/lessons/boss/${level}/${moduleIndex}`}
-          className="muted mt-2 block text-center text-caption underline-offset-2 hover:underline"
-        >
-          {t("exam.speed_round_link", { n: BOSS_SECONDS })}
-        </Link>
-      ) : null}
-    </section>
+      <FlowActions
+        /* Sertifika yeni sekmede açılıyor (uç bir belge döndürüyor, uygulama
+           sayfası değil); `Link` istemci içi gezinmeye çalışırdı. */
+        primary={certificate ? { label: t("exam.open_certificate"), onClick: () => void window.open(`/api/certificate/${result.id}`, "_blank", "noopener,noreferrer") } : back}
+        secondary={certificate ? back : null}
+        /*
+          Hız turunun tek girişi burası. Eskiden yol haritasında, modül
+          sınavının hemen altındaydı ve orada ikinci bir sınav gibi okunuyordu —
+          oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR. Sınavdan
+          SONRA ise yeri doğru: ölçüm bitti, bu bir oyun.
+        */
+        tertiary={moduleIndex !== null ? { label: t("exam.speed_round_link", { n: BOSS_SECONDS }), href: `/lessons/boss/${level}/${moduleIndex}` } : null}
+      />
+    </FlowColumn>
   );
 }
 

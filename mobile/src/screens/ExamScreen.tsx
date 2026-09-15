@@ -11,12 +11,11 @@ import { Card } from "../ui/Card";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
-import { Mascot } from "../ui/Mascot";
 import { CoachBubble } from "../ui/CoachBubble";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
-import { Celebrate } from "../ui/Celebrate";
 import { CertificateSheet } from "../ui/CertificateSheet";
-import { XIcon, SpeakerIcon, CheckIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
+import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody, type CoverRule } from "../ui/flow";
 import { RoundView } from "../game/rounds";
 import { NoHints } from "../game/noHints";
 import { written } from "../game/skillQuiz";
@@ -354,21 +353,34 @@ export function ExamScreen() {
   const mm = Math.floor(left / 60);
   const ss = String(left % 60).padStart(2, "0");
 
-  const header = (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+  /* Sınavın adı — sonuç bandının üst satırı ve başlık çubuğu. Modül sınavında
+     kapak yoksa sözlükteki modül adı (web `exam-player` `title` ile aynı
+     kural); eskiden burada seviye sınavının adına düşüyordu. */
+  const examLabel = moduleIx === null
+    ? t("exam.level_exam", { level })
+    : paper?.cover
+      ? `${paper.cover.code} · ${paper.cover.titleTr}`
+      : t("exam.module_exam", { level, n: moduleIx + 1 });
+
+  /* Başlık çubuğu tek; iki yerde iki payla çiziliyor. Bölüm girişinde
+     `FlowScreen` güvenli alanı kendisi veriyor, soru ekranında `header`
+     veriyor. Çıkış onayı ve son iki dakikanın kırmızısı ikisinde de aynı. */
+  const headerBar = (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
       <PressableScale hitSlop={4} onPress={phase === "run" || phase === "intro" ? back.ask : () => nav.goBack()} accessibilityLabel={t(phase === "run" || phase === "intro" ? "exam.quit_title" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
       <View style={{ flex: 1 }}>
-        <Text variant="micro" color={colors.textMuted}>
-          {paper?.cover ? `${paper.cover.code} · ${paper.cover.titleTr}` : t("exam.level_exam", { level })}
-        </Text>
+        <Text variant="micro" color={colors.textMuted}>{examLabel}</Text>
         {/* Son iki dakika KIRMIZI — web sayacı aynı eşikte renklendiriyor
             (`exam-player`: `left < 120`). Androidde sayaç sonuna kadar aynı
             renkteydi, yani "süre bitiyor" uyarısı hiç verilmiyordu. */}
         <Text variant="h3" color={phase === "run" && left < 120 ? colors.dangerText : undefined}>{phase === "run" ? `${mm}:${ss}` : t("exam.title")}</Text>
       </View>
     </View>
+  );
+  const header = (
+    <View style={{ paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>{headerBar}</View>
   );
 
   /* Diyalog iki dalda da çiziliyor (bölüm girişi ve bölümün kendisi): geri
@@ -389,21 +401,20 @@ export function ExamScreen() {
 
   if (err) {
     return (
-      <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
-        <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{err}</Text>
-        {/*
-          TEKRAR DENE — ekran yalnız "geri dön" sunuyordu.
-          Sınav kâğıdı isteği geçici bir ağ kesintisiyle de düşebilir ve o
-          durumda kullanıcının tek çıkışı sınavdan ÇIKMAKTI; haftanın kâğıdı
-          böyle harcanabiliyordu. Kalıp `AchievementsScreen`den: sayaç artıyor,
-          yükleme etkisi yeniden koşuyor.
-        */}
-        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-          <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
-        </PressableScale>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.textMuted}>{t("item.go_back")}</Text></PressableScale>
-      </View>
+      /*
+        TEKRAR DENE — ekran yalnız "geri dön" sunuyordu.
+        Sınav kâğıdı isteği geçici bir ağ kesintisiyle de düşebilir ve o
+        durumda kullanıcının tek çıkışı sınavdan ÇIKMAKTI; haftanın kâğıdı
+        böyle harcanabiliyordu. Kalıp `AchievementsScreen`den: sayaç artıyor,
+        yükleme etkisi yeniden koşuyor. DURUM ŞABLONU: üzgün maskot, tek
+        cümle, tek birincil çıkış.
+      */
+      <FlowScreen
+        center
+        actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}
+      >
+        <StateBody alert mood="sad" title={err} />
+      </FlowScreen>
     );
   }
 
@@ -440,216 +451,233 @@ export function ExamScreen() {
   }
 
   if (phase === "cover") {
+    /*
+      KAPAK ŞABLONU (ui/flow): ikon karosu · sınavın adı · başlık · tek cümle ·
+      ikonlu kural satırları · altta Başla / Vazgeç.
+
+      KURALLAR. Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav
+      bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %70, her bölüm %50)
+      mobilde hiçbir yerde yazmıyordu: öğrenci neyi başarması gerektiğini
+      bilmeden sınava giriyordu. Eskiden üç cümle tek paragraftı; artık her
+      kural kendi satırında, çünkü eşik ile "yarıda bırakırsan kaydedilmez"
+      aynı paragrafta birbirini örtüyordu.
+    */
+    const rules: CoverRule[] = [
+      { icon: ClockIcon, text: t(moduleIx === null ? "exam.rules_level" : "exam.rules_module") },
+      { icon: LockIcon, text: t("exam.rule_no_return") },
+      { icon: TargetIcon, text: t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) },
+      { icon: PenIcon, text: t("exam.rule_weight") },
+      { icon: AlertIcon, text: t("exam.rule_quit") },
+    ];
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {header}
-        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
-          {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
-              aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
-          <CoachBubble moment="exam_intro" mood="think" size={48} />
-          {cover?.titleDe ? (
-            <Card padded style={{ gap: spacing.sm }}>
-              <Text accessibilityRole="header" variant="h2">{cover.titleDe}</Text>
-              <Text variant="body" color={colors.textMuted}>{cover.titleTr}</Text>
-              {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
-                  çiftler, ne oldukları söylenmeden duruyordu. */}
-              {cover.focus.length ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("exam.measures_these")}</Text> : null}
-              {cover.focus.map((f, i) => (
-                <Text key={i} variant="caption" color={colors.textMuted}>· {f.de} — {f.tr}</Text>
-              ))}
-            </Card>
-          ) : (
-            /* Kâğıdın kendi Almancası yoksa başlık SÖZLÜKTEN — web de burada
-               sözlüğe düşüyor (`exam-player` `Cover`). */
-            <Card padded style={{ gap: spacing.sm }}>
-              <Text accessibilityRole="header" variant="h2">
-                {moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
-              </Text>
-            </Card>
-          )}
+      <FlowScreen
+        top={<FlowTopBar onClose={() => nav.goBack()} />}
+        actions={
+          /* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */
+          <FlowActions
+            primary={{ label: t("exam.start"), onPress: startExam, busy: starting }}
+            tertiary={{ label: t("common.discard"), onPress: () => nav.goBack() }}
+          />
+        }
+      >
+        {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
+            aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
+        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoverBody
+          icon={ExamIcon}
+          tint={colors.primary}
+          eyebrow={moduleIx === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: moduleIx + 1 })}
+          /* Kâğıdın kendi başlığı (hedef dilde) varsa o; yoksa sözlükten —
+             uydurma Almanca değil (web `Cover` ile aynı kural). */
+          title={cover?.titleDe ?? t(moduleIx === null ? "exam.cover_title_level" : "exam.cover_title_module")}
+          /* Deneme sınavı sertifika vermiyor: "geçersen sertifika" sözü orada
+             yanlış olurdu, yerine aşağıdaki deneme notu konuşuyor. */
+          pitch={cover?.titleDe ? cover.titleTr : cover?.trial ? null : t("exam.cover_pitch")}
+          rules={rules}
+        >
+          {cover?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+          {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
+              çiftler, ne oldukları söylenmeden duruyordu. */}
+          {cover?.focus.length ? (
+            <DetailCard title={t("exam.measures_these")}>
+              {cover.focus.map((f, i) => <DetailRow key={i} left={f.de} right={f.tr} />)}
+            </DetailCard>
+          ) : null}
           {/* BÖLÜMLER VE SÜRE KAĞITTAN DEĞİL KAPAKTAN. Madde sayıları ve süre
               sabit; kâğıdı üretmeden biliniyorlar. Eskiden bu kart kâğıdı
               okuyordu, yani görmek için sınavı başlatmak gerekiyordu. */}
           {cover?.counts ? (
-            <Card padded style={{ gap: spacing.xs }}>
-              <Text variant="bodyStrong">{t("exam.sections")}</Text>
+            <DetailCard
+              title={t("exam.sections")}
+              right={cover.seconds ? <Text variant="caption" color={colors.textMuted}>{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</Text> : null}
+            >
               {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
-                <Text key={id} variant="caption" color={colors.textMuted}>
-                  {sectionFace()[id]} · {t(SECTION_KEY[id])} ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
-                </Text>
+                <DetailRow key={id} left={sectionFace()[id]} right={`${t(SECTION_KEY[id])} (${cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})`} />
               ))}
-              {cover.seconds ? (
-                <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
-                  {t("exam.minutes", { n: Math.round(cover.seconds / 60) })}
-                </Text>
-              ) : null}
-            </Card>
+            </DetailCard>
           ) : null}
-          {cover?.trial ? (
-            <Card padded><Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text></Card>
-          ) : null}
-          {/*
-            KURALLAR. Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav
-            bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %70, her bölüm %50)
-            mobilde hiçbir yerde yazmıyordu: öğrenci neyi başarması gerektiğini
-            bilmeden sınava giriyordu. Web kapakta söylüyor.
-          */}
-          <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
-            <Text variant="bodyStrong">{t("exam.rules")}</Text>
-            <Text variant="caption" color={colors.textMuted}>
-              {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
-            </Text>
-          </Card>
-          {/* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */}
-          <PressableScale onPress={startExam} disabled={starting} accessibilityState={{ disabled: starting }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t(starting ? "common.loading" : "exam.start")}</Text>
-          </PressableScale>
-        </KeyboardAwareScroll>
-      </View>
+        </CoverBody>
+      </FlowScreen>
     );
   }
 
   if (phase === "result") {
     const pct = result?.total ?? offline?.pct ?? 0;
-    return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {header}
-        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
-          <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
-            <Celebrate show={!!result?.passed} />
-            {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
-                ve mobilin KENDI rol yapma sonucu da 56. Burada 72 yaziliydi:
-                ayni an, uc yerde iki ayri boy. 72 `weak_done` balonunun boyu
-                ve o ikisinde (web+mobil) zaten 72. */}
-            <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={56} />
-            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-            <Text accessibilityRole="header" accessibilityLiveRegion="polite" variant="h1">{formatPercent(pct)}</Text>
-            <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
-              {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
-            </Text>
-            {result?.trial ? <Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text> : null}
-          </Card>
-          {/*
-            SERTİFİKA. Uç aylardır hazırdı ve yorumu "bu ucu mobil de çağırıyor"
-            diyordu, ama mobilde onu çağıran hiçbir şey yoktu: sınavı geçen
-            Android kullanıcısı ödülünü hiç görmüyordu. Web sonuç kartının
-            altında açıyor; geçilmemiş ya da deneme sınavında ise aynı yerde
-            ne yapılacağını söylüyor.
-          */}
-          {/*
-            KAÇANLARIN KIRILIMI. Sınav yalnız YÜZDE gösteriyordu: öğrenci
-            "%62" görüp neyi kaçırdığını hiç öğrenmiyordu, oysa sınavın
-            öğreten kısmı tam olarak bu. Web sonuç kartının altında her kaçan
-            maddeyi doğru cevabıyla ve verilen cevapla birlikte açıyor;
-            kapalı başlıyor ki puanın önüne geçmesin.
-          */}
-          {misses.current.length ? (
-            <>
-              <PressableScale onPress={() => setShowMisses((v) => !v)} style={{ paddingVertical: spacing.md, alignItems: "center", borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
-                <Text variant="bodyStrong" color={colors.text}>
-                  {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.current.length })}
-                </Text>
-              </PressableScale>
-              {showMisses ? misses.current.map((m, i) => (
-                <Card key={i} padded style={{ gap: spacing.xs }}>
-                  <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
-                  <Text variant="body">{m.prompt}</Text>
-                  <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
-                  {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
-                  {m.why ? <Text variant="caption" color={colors.textMuted}>{m.why}</Text> : null}
-                </Card>
-              )) : null}
-              {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç
-                  gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı
-                  tek şey buydu. Web aynı yerde açıyor. */}
-              {showMisses && paper?.sections.writing[0]?.task.sample ? (
-                <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
-                  <Text variant="micro" color={colors.textMuted}>{t("exam.writing_sample")}</Text>
-                  <Text variant="caption">{paper.sections.writing[0].task.sample}</Text>
-                </Card>
-              ) : null}
-            </>
-          ) : null}
+    const passed = !!result?.passed;
+    /*
+      SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
+      altta sabit düğmeler. Eskiden koç balonu, büyük yüzde, sertifika, yedi
+      bölüm kartı ve iki düğme aynı ağırlıkta alt alta diziliyordu ve "geri
+      dön" en altta kayboluyordu.
 
-          {result?.passed && !result.trial ? (
-            <PressableScale onPress={() => setCertOpen(true)} style={[{ backgroundColor: colors.success, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.success, 10)]}>
-              <Text variant="bodyStrong" color={colors.onFill}>{t("exam.open_certificate")}</Text>
-            </PressableScale>
-          ) : result ? (
-            <Text variant="caption" color={colors.textMuted}>{t("exam.weak_section_hint")}</Text>
-          ) : null}
-          {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
-          {result?.sections.map((s) => (
-            <Card key={s.id} padded style={{ gap: 6 }}>
-              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
-                {/* AĞIRLIK da yazıyor: geçme kuralı "her bölüm ≥ %50" diyor ama
-                    toplamı hangi bölümün taşıdığı ağırlıktan okunuyor ve alan
-                    sunucudan zaten geliyordu (`weight`). */}
-                <Text variant="body" style={{ flex: 1 }}>
-                  {sectionFace()[s.id]} · {t(SECTION_KEY[s.id])}
-                  {/* Yüzde biçimi koda gömülüydü ("%40"): Almanca "40 %", İngilizce "40%"
-                      ister ve ortak biçimleyici bunu zaten biliyor. Web aynı satırda
-                      sözlükten alıyor. */}
-                  <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: formatPercent(s.weight) })}</Text>
-                </Text>
-                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
-              </View>
-              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
-                <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
-              </View>
-            </Card>
-          ))}
-          {/* Çevrimdışı kırılım: ağırlık yok (onu sunucu veriyor), yüzde var. */}
-          {!result && offline ? offline.sections.map((s) => (
-            <Card key={s.id} padded style={{ gap: 6 }}>
-              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
-                <Text variant="body" style={{ flex: 1 }}>{sectionFace()[s.id]} · {t(SECTION_KEY[s.id])}</Text>
-                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
-              </View>
-              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
-                <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
-              </View>
-            </Card>
-          )) : null}
-          {/*
-            YAPABİLİRLİK LİSTESİ. Kâğıdın kapağı bunu taşıyor (`cover.canDo`)
-            ve mobil tipi alanı düşürdüğü için liste hiç görünmüyordu. Sonucun
-            anlamı puan değil kazanılan iş; sertifikanın gösterilme sebebi de
-            bu (bkz. `api/certificate`).
-          */}
-          {paper?.cover?.canDo?.length ? (
-            <Card padded style={{ gap: spacing.sm, backgroundColor: colors.surface2 }}>
-              <Text variant="bodyStrong">{t(result?.passed ? "exam.now_you_can" : "exam.this_measured")}</Text>
-              {paper.cover.canDo.map((c, i) => (
-                <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
-                  <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
-                  <View style={{ flex: 1 }}>
-                    <Text variant="caption">{c.de}</Text>
-                    <Text variant="micro" color={colors.textMuted}>{c.tr}</Text>
-                    <Text variant="micro" color={colors.textFaint}>{c.en}</Text>
-                  </View>
+      Kayıt DÜŞTÜYSE (`offline`) geçti/kaldı yazılmıyor — o kararı sunucu
+      veriyor. Band sessiz, maskot düşünüyor: kötü bir şey olmadı, kayıt
+      bekliyor (web `exam-player` aynı dalda).
+    */
+    const rows: { id: SectionId; pct: number; weight?: number }[] = result ? result.sections : offline?.sections ?? [];
+    const byPct = [...rows].sort((a, b) => a.pct - b.pct);
+    const weakest = byPct[0];
+    const strongest = byPct[byPct.length - 1];
+    const cleared = rows.filter((s) => s.pct >= PASS_SECTION).length;
+    /* Geçilmediyse NEDEN: toplam mı eşiğin altında, yoksa tek bir bölüm mü.
+       "Bu sefer olmadı" hangi kuralın tutmadığını söylemiyordu. */
+    const pill = !result
+      ? null
+      : passed
+        ? result.trial ? null : { text: t("exam.cert_ready"), tone: "ok" as const }
+        : result.total < PASS_TOTAL
+          ? { text: t("exam.pill_total_low", { pct: formatPercent(PASS_TOTAL) }), tone: "bad" as const }
+          : weakest && weakest.pct < PASS_SECTION
+            ? { text: t("exam.pill_section_low", { section: t(SECTION_KEY[weakest.id]), pct: formatPercent(PASS_SECTION) }), tone: "bad" as const }
+            : null;
+    const certificate = !!result?.passed && !result.trial;
+    const goBack = { label: t("item.go_back"), onPress: () => nav.goBack() };
+    return (
+      <FlowScreen
+        celebrate={passed}
+        top={<FlowTopBar onClose={() => nav.goBack()} />}
+        actions={
+          <FlowActions
+            /* SERTİFİKA. Uç aylardır hazırdı ve mobilde onu çağıran hiçbir şey
+               yoktu: sınavı geçen Android kullanıcısı ödülünü hiç görmüyordu. */
+            primary={certificate ? { label: t("exam.open_certificate"), onPress: () => setCertOpen(true) } : goBack}
+            secondary={certificate ? goBack : null}
+            /*
+              HIZ TURUNUN TEK GİRİŞİ BURASI — web ile aynı yer ve aynı sebep
+              (`components/exam-player`): patron turu yol haritasında modül
+              sınavının altındaydı ve orada ikinci bir sınav gibi okunuyordu,
+              oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR. Sınavdan
+              SONRA yeri doğru: ölçüm bitti, bu bir oyun. Yalnız MODÜL sınavında
+              var, seviye sınavında yok.
+            */
+            tertiary={moduleIx !== null ? { label: t("exam.speed_round_link", { n: BOSS_SECONDS }), onPress: () => nav.navigate("Boss", { level, moduleIndex: moduleIx }) } : null}
+          />
+        }
+      >
+        <ResultHero
+          eyebrow={examLabel}
+          title={result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
+          figure={formatPercent(pct)}
+          sub={result ? t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) : null}
+          /* Sonuçta Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci
+             bir maskot çizilmiyor. Kayıt düştüyse balon yok, maskot bandda. */
+          mood={result ? null : "think"}
+          pill={pill}
+          quiet={!passed}
+        />
+        {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
+            ve mobilin KENDI rol yapma sonucu da 56. */}
+        {result ? <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={56} /> : null}
+        {result && strongest ? (
+          <StatRow items={[
+            { value: formatPercent(strongest.pct), label: t(SECTION_KEY[strongest.id]), tone: strongest.pct >= PASS_SECTION ? "ok" : "bad" },
+            ...(weakest && weakest.id !== strongest.id ? [{ value: formatPercent(weakest.pct), label: t(SECTION_KEY[weakest.id]), tone: weakest.pct < PASS_SECTION ? ("bad" as const) : null }] : []),
+            { value: `${cleared}/${rows.length}`, label: t("exam.stat_sections_cleared") },
+          ]} />
+        ) : null}
+        {result?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+        {result && !certificate ? <FlowNote icon={<TargetIcon color={colors.textMuted} size={16} />} text={t("exam.weak_section_hint")} /> : null}
+        {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
+
+        {/* BÖLÜM DÖKÜMÜ. Çevrimdışı kırılımda ağırlık yok (onu sunucu veriyor), yüzde var. */}
+        {rows.length ? (
+          <DetailCard title={t("exam.sections")}>
+            {rows.map((s) => (
+              <View key={s.id} style={{ gap: 6 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
+                  {/* AĞIRLIK da yazıyor: geçme kuralı "her bölüm ≥ %50" diyor ama
+                      toplamı hangi bölümün taşıdığı ağırlıktan okunuyor ve alan
+                      sunucudan zaten geliyordu (`weight`). */}
+                  <Text variant="body" style={{ flex: 1 }}>
+                    {sectionFace()[s.id]} · {t(SECTION_KEY[s.id])}
+                    {/* Yüzde biçimi koda gömülüydü ("%40"): Almanca "40 %", İngilizce "40%"
+                        ister ve ortak biçimleyici bunu zaten biliyor. */}
+                    {s.weight != null ? <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: formatPercent(s.weight) })}</Text> : null}
+                  </Text>
+                  <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
                 </View>
-              ))}
-            </Card>
-          ) : null}
-          <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.go_back")}</Text>
-          </PressableScale>
-          {/*
-            HIZ TURUNUN TEK GİRİŞİ BURASI — web ile aynı yer ve aynı sebep
-            (`components/exam-player`): patron turu yol haritasında modül
-            sınavının altındaydı ve orada ikinci bir sınav gibi okunuyordu,
-            oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR. Sınavdan
-            SONRA yeri doğru: ölçüm bitti, bu bir oyun. Yalnız MODÜL sınavında
-            var, seviye sınavında yok.
-          */}
-          {moduleIx !== null ? (
-            <PressableScale onPress={() => nav.navigate("Boss", { level, moduleIndex: moduleIx })} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-              <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link", { n: BOSS_SECONDS })}</Text>
+                <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                  <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
+                </View>
+              </View>
+            ))}
+          </DetailCard>
+        ) : null}
+
+        {/*
+          KAÇANLARIN KIRILIMI. Sınav yalnız YÜZDE gösteriyordu: öğrenci
+          "%62" görüp neyi kaçırdığını hiç öğrenmiyordu, oysa sınavın
+          öğreten kısmı tam olarak bu. Kapalı başlıyor ki puanın önüne geçmesin.
+        */}
+        {misses.current.length ? (
+          <DetailCard title={t("exam.misses_title")}>
+            <PressableScale onPress={() => setShowMisses((v) => !v)} hitSlop={6} style={{ paddingVertical: spacing.xs }}>
+              <Text variant="bodyStrong" color={colors.primaryText}>
+                {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.current.length })}
+              </Text>
             </PressableScale>
-          ) : null}
-        </KeyboardAwareScroll>
-      </View>
+            {showMisses ? misses.current.map((m, i) => (
+              <View key={i} style={{ gap: spacing.xs, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: spacing.sm }}>
+                <Text variant="micro" color={colors.textMuted}>{sectionFace()[m.section]} · {t(SECTION_KEY[m.section])}</Text>
+                <Text variant="body">{m.prompt}</Text>
+                <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
+                {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
+                {m.why ? <Text variant="caption" color={colors.textMuted}>{m.why}</Text> : null}
+              </View>
+            )) : null}
+            {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç
+                gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı
+                tek şey buydu. Web aynı yerde açıyor. */}
+            {showMisses && paper?.sections.writing[0]?.task.sample ? (
+              <View style={{ gap: spacing.xs, borderRadius: radii.md, backgroundColor: colors.surface2, padding: spacing.md }}>
+                <Text variant="micro" color={colors.textMuted}>{t("exam.writing_sample")}</Text>
+                <Text variant="caption">{paper.sections.writing[0].task.sample}</Text>
+              </View>
+            ) : null}
+          </DetailCard>
+        ) : null}
+
+        {/*
+          YAPABİLİRLİK LİSTESİ. Kâğıdın kapağı bunu taşıyor (`cover.canDo`)
+          ve mobil tipi alanı düşürdüğü için liste hiç görünmüyordu. Sonucun
+          anlamı puan değil kazanılan iş; sertifikanın gösterilme sebebi de
+          bu (bkz. `api/certificate`).
+        */}
+        {paper?.cover?.canDo?.length ? (
+          <DetailCard title={t(result?.passed ? "exam.now_you_can" : "exam.this_measured")}>
+            {paper.cover.canDo.map((c, i) => (
+              <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
+                <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
+                <View style={{ flex: 1 }}>
+                  <Text variant="caption">{c.de}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{c.tr}</Text>
+                  <Text variant="micro" color={colors.textFaint}>{c.en}</Text>
+                </View>
+              </View>
+            ))}
+          </DetailCard>
+        ) : null}
+      </FlowScreen>
     );
   }
 
@@ -659,35 +687,37 @@ export function ExamScreen() {
   /*
     BÖLÜM ARASI KARTI. Mobil kapaktan doğrudan ilk soruya, bölüm bitince de
     doğrudan sonrakine geçiyordu: öğrenci hangi bölüme girdiğini yalnız
-    başlıktaki tek satırdan ("2/5 · Grammatik · Dilbilgisi") anlıyor, o
-    bölümün NE İSTEDİĞİNİ hiç okumuyordu. Web her bölümün önüne bir kart
-    koyuyor (`exam-player`): Teil sırası, Almanca ve kendi dilindeki adı,
-    bölümün ne yaptıracağı, kaç madde ve kalan süre.
+    başlıktaki tek satırdan anlıyor, o bölümün NE İSTEDİĞİNİ hiç okumuyordu.
+    Web her bölümün önüne bir kart koyuyor (`exam-player`): Teil sırası,
+    hedef dildeki ve kendi dilindeki adı, bölümün ne yaptıracağı, kaç madde
+    ve kalan süre.
+
+    ETAP ŞABLONU (ui/flow): sonuç bandının küçük hâli, bandın dibinde bölüm
+    şeridi. Band CANLI BÖLGE DEĞİL (`live={false}`): kalan süre her saniye
+    değişiyor ve ekran okuyucu her saniyeyi okurdu.
   */
   /* Buradan sonrası kâğıda bağlı: kapak ve sonuç yukarıda döndü. */
   if (!paper) return null;
 
   if (phase === "intro" && active) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {header}
-        <KeyboardAwareScroll contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
-          <Card padded style={{ gap: spacing.xs }}>
-            {/* Büyük harfe çevrilmiyor: Türkçe yerelde "Teil" → "TEİL" oluyor. */}
-            <Text variant="micro" color={colors.textMuted}>{SECTION_WORD[currentTargetLang()] ?? "Teil"} {secIdx + 1} / {list.length}</Text>
-            <Text accessibilityRole="header" variant="h1">{sectionFace()[active]}</Text>
-            <Text variant="bodyStrong" color={colors.primaryText}>{t(SECTION_KEY[active])}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t(SECTION_BRIEF_KEY[active])}</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
-              {t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
-            </Text>
-            <PressableScale onPress={() => setPhase("run")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-              <Text variant="h3" color={colors.onPrimary}>{t("exam.start_section")}</Text>
-            </PressableScale>
-          </Card>
-        </KeyboardAwareScroll>
+      <FlowScreen top={headerBar} actions={<FlowActions primary={{ label: t("exam.start_section"), onPress: () => setPhase("run") }} />}>
+        <ResultHero
+          live={false}
+          /* Önceden büyütülüyor: bandın üst satırı büyük harf ve Türkçe
+             yerelde "Teil" → "TEİL" oluyordu. JS `toUpperCase` yerelden
+             bağımsız; büyük "I" bir daha dönüşmüyor. */
+          eyebrow={`${(SECTION_WORD[currentTargetLang()] ?? "Teil").toUpperCase()} ${secIdx + 1} / ${list.length}`}
+          title={sectionFace()[active]}
+          sub={t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
+          mood="think"
+          segments={{ done: secIdx + 1, total: list.length }}
+        />
+        <DetailCard title={t(SECTION_KEY[active])}>
+          <Text variant="body" color={colors.textMuted}>{t(SECTION_BRIEF_KEY[active])}</Text>
+        </DetailCard>
         {quitDialog}
-      </View>
+      </FlowScreen>
     );
   }
 

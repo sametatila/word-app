@@ -8,10 +8,9 @@ import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, MicIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
+import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
 import { CoachBubble } from "../ui/CoachBubble";
-import { ProgressRing } from "../ui/ProgressRing";
+import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { findLesson, type Lesson } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { candoIdsForLesson } from "../game/candoMap";
@@ -27,7 +26,7 @@ import { notePremiumGate } from "../lib/premium";
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { AssessmentCard } from "../ui/AssessmentCard";
-import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -208,9 +207,15 @@ export function RoleplayExamScreen() {
 
   if (!lesson) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
-        <Text variant="body" color={colors.textMuted}>{tx("lesson.this_lesson_wasn_t_found")}</Text>
-      </View>
+      /* DURUM ŞABLONU. Burada yalnız ortada tek satır metin vardı: ne maskot
+         ne bir çıkış yolu; geri dönmenin tek yolu donanım tuşuydu. */
+      <FlowScreen
+        center
+        top={<FlowTopBar back onClose={() => nav.goBack()} />}
+        actions={<FlowActions primary={{ label: tx("item.go_back"), onPress: () => nav.goBack() }} />}
+      >
+        <StateBody mood="sad" title={tx("lesson.this_lesson_wasn_t_found")} />
+      </FlowScreen>
     );
   }
 
@@ -269,73 +274,73 @@ export function RoleplayExamScreen() {
 
   const mm = Math.floor(Math.max(0, left) / 60);
   const ss = String(Math.max(0, left) % 60).padStart(2, "0");
-  const pad = { paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.lg, paddingHorizontal: spacing.lg };
 
   if (phase === "intro") {
     return (
-      <KeyboardAwareScroll style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
-        <Back nav={nav} colors={colors} />
-        <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, padding: spacing.xl, marginTop: spacing.md }, cardShadow(colors, 10)]}>
-          {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
-              sinav girisiyle de ayni (`ExamScreen` 48). Burada 56 yaziliydi,
-              yani hem karsi platformdan hem kardes ekrandan ayrisiyordu. */}
-          <CoachBubble moment="exam_intro" mood="think" size={48} />
-          <Text accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
-          <Text variant="body" style={{ marginTop: spacing.md }}>{lesson.roleplay.scene}</Text>
-          <View style={{ marginTop: spacing.md, gap: spacing.xs }}>
-            <Rule colors={colors} text={tx("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })} />
-            <Rule colors={colors} text={tx("rpexam.rule_partner")} />
-            <Rule colors={colors} text={tx("rpexam.rule_scoring")} />
-            <Rule colors={colors} text={tx("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })} />
-          </View>
-          <PressableScale onPress={start} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("exam.start")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
-          </PressableScale>
-        </View>
-      </KeyboardAwareScroll>
+      /* KAPAK ŞABLONU (ui/flow): ikon karosu · dersin adı · sınavın adı ·
+         sahne · ikonlu kurallar · kalıplar kartı · altta Başla / Vazgeç.
+         Kurallar "·" ile başlayan soluk satırlardı ve kalıplar da o listenin
+         dördüncü "kuralı" gibi okunuyordu. */
+      <FlowScreen
+        top={<FlowTopBar back onClose={() => nav.goBack()} />}
+        actions={<FlowActions primary={{ label: tx("exam.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
+      >
+        {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
+            sinav girisiyle de ayni (`ExamScreen` 48). */}
+        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoverBody
+          icon={ChatIcon}
+          tint={colors.primary}
+          /* Dersin adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
+             "i" → "İ" oluyordu. JS `toUpperCase` yerelden bağımsız. */
+          eyebrow={`${lesson.title.toUpperCase()} · ${lesson.titleTr}`}
+          title={tx("rpexam.title")}
+          pitch={lesson.roleplay.scene}
+          rules={[
+            { icon: ClockIcon, text: tx("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: LockIcon, text: tx("rpexam.rule_partner") },
+            { icon: TargetIcon, text: tx("rpexam.rule_scoring") },
+          ]}
+        >
+          {lesson.patterns.length ? (
+            <DetailCard title={tx("rpexam.patterns_title")}>
+              {lesson.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
+            </DetailCard>
+          ) : null}
+        </CoverBody>
+      </FlowScreen>
     );
   }
 
   if (phase === "scoring") {
     return (
-      /* Puanlama beklemesi ekranin tamami ve sessizdi. */
-      <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        {/* DUSUNEN MIRKET, 80 — web ile ayni kip ve ayni boy.
-            `idle` neseli bosta-bekleme ve puanlama anini anlatmiyordu; web
-            ayni dalda `think` ciziyor (`lessons/roleplay-exam`) ve eslesen
-            her maskot yuzeyinde kip de boy da ayni (bkz. check:parity). */}
-        <Mascot mood="think" size={80} />
-        <ActivityIndicator color={colors.primary} />
-        <Text variant="h3">{tx("item.mono_scoring")}</Text>
-        <Text variant="caption" color={colors.textMuted}>{tx("rpexam.scoring_note", { n: userTurns })}</Text>
-      </View>
+      /* Puanlama beklemesi ekranin tamami ve sessizdi. DURUM ŞABLONU: DUSUNEN
+         MIRKET — `idle` neseli bosta-bekleme ve puanlama anini anlatmiyordu;
+         web ayni dalda `think` ciziyor. Ilerleme rolu ve mesgul durumu kapta. */
+      <FlowScreen center>
+        <View accessibilityRole="progressbar" accessibilityState={{ busy: true }}>
+          <StateBody mood="think" title={tx("item.mono_scoring")} body={tx("rpexam.scoring_note", { n: userTurns })}>
+            <ActivityIndicator color={colors.primary} />
+          </StateBody>
+        </View>
+      </FlowScreen>
     );
   }
 
   if (phase === "error") {
     return (
-      <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
-        <Mascot mood="sad" size={80} />
-        {/* Sıra bilinçli: `check:parity` maskot yüzeyini ondan sonraki İLK sözlük
-            anahtarıyla tanıyor ve web aynı dalda önce `rpexam.service_down` yazıyor. */}
-        <Text variant="body" style={{ textAlign: "center" }}>{!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")}</Text>
-        {/* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
-            düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani
-            ölçülmüş hiçbir şey YOK — sınav baştan başlayabilir. Tek çıkış
-            "konuşmaya dön"dü ve o, geçici bir ağ kesintisinde girişi
-            kaybettiriyordu. Aynı gerekçe sınav ekranında yazılı ve webde de
-            aynı düzeltme yapıldı. */}
-        <PressableScale onPress={restart} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
-        </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <Text variant="h3" color={colors.text}>{tx("lessonp.back_to_conversation")}</Text>
-        </PressableScale>
-      </View>
+      /* YERİNDE TEKRAR DENEME. Bu dala yalnız muhatap servisi İLK iki turda
+         düşünce giriliyor (`send`: `n >= 2` ise konuşma puanlanıyor), yani
+         ölçülmüş hiçbir şey YOK — sınav baştan başlayabilir. Tek çıkış
+         "konuşmaya dön"dü ve o, geçici bir ağ kesintisinde girişi
+         kaybettiriyordu. İzin verilmediyse servis kapalı DEĞİL: sebep kendi
+         cümlesiyle söyleniyor (bkz. `consentOff`). */
+      <FlowScreen
+        center
+        actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} tertiary={{ label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+      >
+        <StateBody alert mood="sad" title={tx("rpexam.cant_run")} body={!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")} />
+      </FlowScreen>
     );
   }
 
@@ -351,78 +356,79 @@ export function RoleplayExamScreen() {
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
     const overall = result?.score.overall ?? 0;
     const passed = overall >= EXAM_PASS_SCORE;
+    /* Eşiğin altındaysa birincil düğme "Tekrar dene". Puanlanamadıysa
+       (servis/kota) tekrar denemek aynı kapıya çarpar; orada birincil çıkış
+       konuşmaya dönmek. */
+    const retryFirst = !!result && !passed;
+    const retry = { label: tx("common.try_again"), onPress: restart };
+    const leave = { label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() };
     return (
-      <KeyboardAwareScroll style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
-        <Back nav={nav} colors={colors} />
-        <View style={{ alignItems: "center", marginTop: spacing.md }}>
-          <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: overall, level: lesson.level }} size={56} />
-          {result ? (
-            <ProgressRing size={140} stroke={13} pct={overall} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-              <Text variant="display" color={colors.primaryText}>{formatPercent(overall)}</Text>
-              <Text variant="micro" color={colors.textMuted}>{tx("assess.overall_score", { n: overall })}</Text>
-            </ProgressRing>
-          ) : null}
-          <Text accessibilityLiveRegion="polite" accessibilityRole="header" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>
-            {lesson.title} · {tx("lessonp.n_turns", { n: userTurns })}{result ? ` · ${tx(passed ? "rpexam.passed" : "rpexam.below_threshold", { n: EXAM_PASS_SCORE })}` : ""}
-          </Text>
-        </View>
+      /*
+        SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
+        altta sabit düğmeler. Halka kalktı: bandın ana sayısı aynı bilgiyi
+        veriyor. Konfeti yalnız geçince.
+      */
+      <FlowScreen
+        celebrate={passed}
+        top={<FlowTopBar back onClose={() => nav.goBack()} />}
+        actions={<FlowActions primary={retryFirst ? retry : leave} tertiary={retryFirst ? leave : retry} />}
+      >
+        <ResultHero
+          eyebrow={tx("rpexam.title")}
+          title={result ? tx(passed ? "exam.passed" : "exam.not_passed") : tx("rpexam.not_scored")}
+          figure={result ? formatPercent(overall) : null}
+          sub={`${lesson.title} · ${tx("lessonp.n_turns", { n: userTurns })}`}
+          /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
+          mood={result ? null : "sad"}
+          pill={result ? { text: tx("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
+          quiet={!passed}
+        />
+        {result ? <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: overall, level: lesson.level }} size={56} /> : null}
+        {result ? (
+          <StatRow items={[
+            { value: String(userTurns), label: tx("rpexam.stat_turns") },
+            { value: `${result.score.task}/4`, label: tx("assess.task") },
+            { value: String(result.errors.length), label: tx("rpexam.stat_errors"), tone: result.errors.length ? null : "ok" },
+          ]} />
+        ) : null}
 
-        {gateNote ? (
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{gateNote}</Text>
+        {/* Tek satırlık notlar: puanlanamama sebebi, en sık hata, yapabilirlik. */}
+        {gateNote ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={gateNote} /> : null}
+        {result ? (
+          topErrors.length ? (
+            <FlowNote icon={<AlertIcon color={colors.textMuted} size={16} />} text={`${tx("rpexam.most_common")} ${topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}`} />
+          ) : (
+            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("rpexam.no_errors")} />
+          )
+        ) : null}
+        {cando.length ? (
+          <FlowNote
+            tone={passed ? "ok" : "neutral"}
+            icon={passed ? <CheckIcon color={colors.successText} size={16} /> : <TargetIcon color={colors.textMuted} size={16} />}
+            text={`${passed ? tx("lessonp.i_can") : tx("rpexam.goal")} ${cando.join(" · ")}`}
+          />
         ) : null}
 
         {result ? (
           /* DEĞERLENDİRMENİN ÖĞRETEN KISMI DA GÖSTERİLİYOR. Burada yalnız dört
              rubrik çubuğu vardı: öğrenci "72" görüyor, neyi yanlış yaptığını
              öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
-             övgüyü ve sıradaki ipucunu da yazıyor — web aynı ekranda baştan
-             beri yazıyor. */
-          <View style={{ marginTop: spacing.lg }}>
+             övgüyü ve sıradaki ipucunu da yazıyor. */
+          <DetailCard title={tx("rpexam.assessment_title")}>
             <AssessmentCard answer={said.join("\n")} result={result} />
-          </View>
+          </DetailCard>
         ) : null}
 
         {best.length ? (
-          <View style={{ marginTop: spacing.lg }}>
-            <Text variant="micro" color={colors.textMuted}>{tx("rpexam.best_sentences")}</Text>
+          <DetailCard title={tx("rpexam.best_sentences")}>
             {best.map((s) => (
-              <View key={s} style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, marginTop: 6 }}>
+              <View key={s} style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10 }}>
                 <Text variant="body">{s}</Text>
               </View>
             ))}
-          </View>
+          </DetailCard>
         ) : null}
-
-        {result ? (
-          topErrors.length ? (
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>
-              {tx("rpexam.most_common")} {topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}
-            </Text>
-          ) : (
-            <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.lg }}>{tx("rpexam.no_errors")}</Text>
-          )
-        ) : null}
-
-        {cando.length ? (
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>
-            <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{passed ? tx("lessonp.i_can") : tx("rpexam.goal")} </Text>
-            {cando.join(" · ")}
-          </Text>
-        ) : null}
-
-        <View style={{ marginTop: spacing.xl, gap: spacing.sm }}>
-          <PressableScale
-            onPress={restart}
-            style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }}
-          >
-            <Text variant="h3" color={colors.text}>{tx("common.try_again")}</Text>
-          </PressableScale>
-          <PressableScale onPress={() => nav.goBack()} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{tx("lessonp.back_to_conversation")}</Text>
-          </PressableScale>
-        </View>
-      </KeyboardAwareScroll>
+      </FlowScreen>
     );
   }
 
@@ -506,23 +512,3 @@ export function RoleplayExamScreen() {
     </View>
   );
 }
-
-function Back({ nav, colors }: { nav: NativeStackNavigationProp<RootStackParams>; colors: Palette }) {
-  return (
-    <PressableScale onPress={() => nav.goBack()} hitSlop={6} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-      {/* GERI OKU 24, capraz 22 — uygulamanin kurali bu ve otuz alti karonun
-          hepsi ona uyuyor; yalniz burada 22 yaziliydi. */}
-      <ArrowBackIcon color={colors.text} size={24} />
-    </PressableScale>
-  );
-}
-
-function Rule({ colors, text }: { colors: Palette; text: string }) {
-  return (
-    <View style={{ flexDirection: "row", gap: 6 }}>
-      <Text variant="caption" color={colors.textFaint}>·</Text>
-      <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{text}</Text>
-    </View>
-  );
-}
-

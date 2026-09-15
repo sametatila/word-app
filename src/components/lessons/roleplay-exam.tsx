@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { AiNotice } from "@/components/ai-notice";
@@ -17,12 +16,11 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
-import { MicIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
+import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "@/components/icons";
+import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { CoachBubble } from "@/components/coach-bubble";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
-import { ScoreRing } from "@/components/score-ring";
 import { reducedMotion } from "@/lib/fx";
 
 type Turn = { role: "user" | "assistant"; content: string };
@@ -248,63 +246,71 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
 
   if (phase === "intro") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
-        <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-        <h1 className="text-h2">{t("rpexam.title")}</h1>
-        <p className="muted mt-1 text-body">
-          {lesson.title} · {lesson.titleTr}
-        </p>
-        <p className="mt-3 text-body leading-relaxed">{lesson.roleplay.scene}</p>
-        <ul className="muted mt-3 space-y-1 text-caption">
-          <li>· {t("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })}</li>
-          <li>· {t("rpexam.rule_partner")}</li>
-          <li>· {t("rpexam.rule_scoring")}</li>
-          <li>· {t("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })}</li>
-        </ul>
-        <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-4 text-h3">
-          {t("exam.start")}
-        </button>
-        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-2 w-full px-5 py-3 text-center text-body">
-          {t("common.discard")}
-        </Link>
-      </section>
+      /* KAPAK ŞABLONU: ikon karosu · dersin adı · sınavın adı · sahne · ikonlu
+         kurallar · kalıplar kartı · Başla / Vazgeç. Kurallar "·" ile başlayan
+         soluk satırlardı ve kalıplar o listenin dördüncü "kuralı" gibi okunuyordu. */
+      <FlowColumn>
+        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoverBody
+          icon={<ChatIcon size={28} />}
+          tint="var(--color-brand-500)"
+          /* `lang`: üst satır büyük harf; Türkçe yerelde "i" → "İ" olmasın. */
+          eyebrow={
+            <>
+              <span lang={lesson.course}>{lesson.title}</span> · {lesson.titleTr}
+            </>
+          }
+          title={t("rpexam.title")}
+          pitch={lesson.roleplay.scene}
+          rules={[
+            { icon: <ClockIcon size={16} />, text: t("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: <LockIcon size={16} />, text: t("rpexam.rule_partner") },
+            { icon: <TargetIcon size={16} />, text: t("rpexam.rule_scoring") },
+          ]}
+        >
+          {lesson.patterns.length ? (
+            <DetailCard title={t("rpexam.patterns_title")}>
+              {lesson.patterns.map((p) => (
+                <DetailRow key={p.de} left={p.de} right={p.tr} lang={lesson.course} />
+              ))}
+            </DetailCard>
+          ) : null}
+        </CoverBody>
+        <FlowActions primary={{ label: t("exam.start"), onClick: start }} tertiary={{ label: t("common.discard"), href: `/lessons/${lesson.id}` }} />
+      </FlowColumn>
     );
   }
 
   if (phase === "scoring") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5 text-center" aria-busy>
-        <Mascot mood="think" size={80} className="mx-auto" />
-        <p className="mt-2 text-strong">{t("item.mono_scoring")}</p>
-        <p className="muted text-caption">{t("rpexam.scoring_note", { n: userTurns })}</p>
-      </section>
+      /* DURUM ŞABLONU: düşünen maskot + dönen gösterge. Android aynı dalda
+         `ActivityIndicator` çiziyor; webde bekleme hareketsizdi. */
+      <FlowColumn>
+        <div aria-busy="true">
+          <StateBody mood="think" title={t("item.mono_scoring")} body={t("rpexam.scoring_note", { n: userTurns })}>
+            <span
+              aria-hidden
+              className="mx-auto block h-6 w-6 animate-spin rounded-full border-2 border-t-transparent"
+              style={{ borderColor: "var(--color-brand)", borderTopColor: "transparent" }}
+            />
+          </StateBody>
+        </div>
+      </FlowColumn>
     );
   }
 
   if (phase === "error") {
     return (
-      <section role="alert" className="card mx-auto w-full max-w-md p-5 text-center">
-        {/* Android ayni dalda `sad` maskotu ciziyor; webde yalniz puanlama
-            dalinda maskot vardi (`think`). */}
-        <Mascot mood="sad" size={80} className="mx-auto" />
-        {/* İzin verilmediyse servis kapalı DEĞİL: sebep kendi cümlesiyle
-            söyleniyor ve nereden açılacağı belli (bkz. `consentOff`). */}
-        <p className="mt-1 text-body">{!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")}</p>
-        {/* YERINDE TEKRAR DENEME. Bu dala yalniz muhatap servisi ILK iki turda
-            dusunce giriliyor (`send`: `n >= 2` ise konusma puanlaniyor), yani
-            olculmus hicbir sey YOK - sinav bastan baslayabilir. Tek cikis
-            "konusmaya don"du ve o, gecici bir ag kesintisinde girisi
-            kaybettiriyordu. Ayni gerekce sinav oynaticisinda yazili
-            ("haftanin kagidi gecici bir ag kesintisiyle harcanabiliyordu") ve
-            ayni duzeltme Androidde de yapildi - iki taraf ayni kusuru
-            tasidigi icin karsilastirma geciyordu. */}
-        <button type="button" onClick={restart} className="btn btn-primary mt-3 w-full px-4 py-2 text-body">
-          {t("common.try_again")}
-        </button>
-        <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-body">
-          {t("lessonp.back_to_conversation")}
-        </Link>
-      </section>
+      /* YERINDE TEKRAR DENEME. Bu dala yalniz muhatap servisi ILK iki turda
+         dusunce giriliyor (`send`: `n >= 2` ise konusma puanlaniyor), yani
+         olculmus hicbir sey YOK - sinav bastan baslayabilir. Tek cikis
+         "konusmaya don"du ve o, gecici bir ag kesintisinde girisi
+         kaybettiriyordu. İzin verilmediyse servis kapalı DEĞİL: sebep kendi
+         cümlesiyle söyleniyor (bkz. `consentOff`). Hata `alert` ile duyuruluyor. */
+      <FlowColumn>
+        <StateBody alert mood="sad" title={t("rpexam.cant_run")} body={!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")} />
+        <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} tertiary={{ label: t("lessonp.back_to_conversation"), href: `/lessons/${lesson.id}` }} />
+      </FlowColumn>
     );
   }
 
@@ -319,66 +325,70 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     for (const e of result.errors) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
     const passed = result.score.overall >= EXAM_PASS_SCORE;
+    /* Eşiğin altındaysa birincil düğme "Tekrar dene". */
+    const retry = { label: t("common.try_again"), onClick: restart };
+    const leave = { label: t("lessonp.back_to_conversation"), href: `/lessons/${lesson.id}` };
     return (
-      <section role="status" className="card mx-auto w-full max-w-md p-5">
-        <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
-        {/*
-          PUAN HALKASI. Puan başlığın içinde bir ek cümleydi ("Rol yapma
-          sınavı · %85"); Android aynı yerde halkayı çiziyor ve başlıkta
-          yalnız sınavın adı duruyor (`RoleplayExamScreen`). Sonuç ekranının
-          en önemli sayısı bir bakışta okunmuyordu.
-        */}
-        <ScoreRing id="rpexam-overall" size={140} stroke={13} pct={result.score.overall} className="mx-auto mb-3">
-          <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
-            {formatPercent(result.score.overall, lang)}
-          </span>
-          <span className="muted text-micro">{t("assess.overall_score", { n: result.score.overall })}</span>
-        </ScoreRing>
-        <h1 className="text-h2">{t("rpexam.title")}</h1>
-        <p className="muted mt-1 text-caption">
-          {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
-          {passed ? t("rpexam.passed") : t("rpexam.below_threshold", { n: EXAM_PASS_SCORE })}
-        </p>
-        <div className="mt-3">
+      /*
+        SONUÇ ŞABLONU: band → üç sayı → notlar → ayrıntı kartları → tek
+        birincil düğme. PUAN HALKASI KALKTI: bandın ana sayısı aynı bilgiyi
+        veriyor (Android aynı yerde aynı bandı çiziyor). Band `role="status"`
+        taşıyor, sonuç duyuruluyor. Konfeti yalnız geçince.
+      */
+      <FlowColumn celebrate={passed}>
+        <ResultHero
+          eyebrow={t("rpexam.title")}
+          title={t(passed ? "exam.passed" : "exam.not_passed")}
+          figure={formatPercent(result.score.overall, lang)}
+          sub={
+            <>
+              <span lang={lesson.course}>{lesson.title}</span> · {t("lessonp.n_turns", { n: userTurns })}
+            </>
+          }
+          /* Erdi bandın ALTINDA konuşuyor (koç balonu). */
+          mood={null}
+          pill={{ text: t("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
+          quiet={!passed}
+        />
+        <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} />
+        <StatRow
+          items={[
+            { value: String(userTurns), label: t("rpexam.stat_turns") },
+            { value: `${result.score.task}/4`, label: t("assess.task") },
+            { value: String(result.errors.length), label: t("rpexam.stat_errors"), tone: result.errors.length ? null : "ok" },
+          ]}
+        />
+        {topErrors.length ? (
+          <FlowNote
+            icon={<AlertIcon size={16} />}
+            text={`${t("rpexam.most_common")} ${topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}`}
+          />
+        ) : (
+          <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("rpexam.no_errors")} />
+        )}
+        {cando.length ? (
+          <FlowNote
+            tone={passed ? "ok" : "neutral"}
+            icon={passed ? <CheckIcon size={16} /> : <TargetIcon size={16} />}
+            text={`${passed ? t("lessonp.i_can") : t("rpexam.goal")} ${cando.join(" · ")}`}
+          />
+        ) : null}
+        <DetailCard title={t("rpexam.assessment_title")}>
           <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} />
-        </div>
+        </DetailCard>
         {best.length ? (
-          <div className="mt-3">
-            <p className="muted text-micro uppercase tracking-eyebrow">{t("rpexam.best_sentences")}</p>
-            <ul className="mt-1 space-y-1">
+          <DetailCard title={t("rpexam.best_sentences")}>
+            <ul className="space-y-1">
               {best.map((s) => (
                 <li key={s} className="rounded-panel px-3 py-2 text-body surface-2" lang={lesson.course}>
                   {s}
                 </li>
               ))}
             </ul>
-          </div>
+          </DetailCard>
         ) : null}
-        {topErrors.length ? (
-          <p className="muted mt-3 text-caption">
-            {t("rpexam.most_common")}{" "}
-            {topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}
-          </p>
-        ) : (
-          <p className="mt-3 text-caption" style={{ color: "var(--color-mint)" }}>
-            {t("rpexam.no_errors")}
-          </p>
-        )}
-        {cando.length ? (
-          <p className="muted mt-3 text-caption">
-            <span className="font-semibold">{passed ? `✓ ${t("lessonp.i_can")} ` : `${t("rpexam.goal")} `}</span>
-            {cando.join(" · ")}
-          </p>
-        ) : null}
-        <div className="mt-4 flex gap-2">
-          <button type="button" onClick={restart} className="btn btn-ghost flex-1 py-3 text-body">
-            {t("common.try_again")}
-          </button>
-          <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-body">
-            {t("lessonp.back_to_conversation")}
-          </Link>
-        </div>
-      </section>
+        <FlowActions primary={passed ? leave : retry} tertiary={passed ? retry : leave} />
+      </FlowColumn>
     );
   }
 
