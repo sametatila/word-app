@@ -4,7 +4,7 @@ import { forgetAccountScoped } from "./accountScope";
 import { api } from "../api/client";
 import { track } from "./track";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
-import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
+import { claimGuest, clearGuestRecord, deleteGuestData, discardGuestClaim, loadGuestRecord, previewGuestClaim, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { cancelLocalReminders, setReminderServerSync } from "./notifications";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
@@ -18,6 +18,8 @@ import { ONBOARDED_KEY } from "./onboarding";
 
 /** Misafir hesaba geçtiğinde bir kez gösterilecek not (bkz. ui/GuestClaimNotice). */
 export type ClaimNotice = "moved" | "merged";
+/** "Bu cihazdaki ilerleme hesabına eklensin mi?" sorusunun cevabı; "later" = kapatıldı, sonra yeniden sorulur. */
+export type MergeChoice = "merge" | "discard" | "later";
 
 type Ctx = {
   user: AuthUser | null;
@@ -40,6 +42,9 @@ type Ctx = {
    */
   guestGone: boolean;
   clearGuestGone: () => void;
+  /** Birleştirme sorusu açık mı (bkz. ui/GuestMergeDialog). */
+  mergeAsk: boolean;
+  answerMergeAsk: (choice: MergeChoice) => void;
   /** `captchaToken`: bot koruması açıkken zorunlu (bkz. lib/auth post). */
   signIn: (email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
   signUp: (name: string, email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
@@ -57,6 +62,8 @@ const AuthContext = createContext<Ctx>({
   clearClaimNotice: () => {},
   guestGone: false,
   clearGuestGone: () => {},
+  mergeAsk: false,
+  answerMergeAsk: () => {},
   signIn: async () => ({ ok: false, code: "", message: "" }),
   signUp: async () => ({ ok: false, code: "", message: "" }),
   signOut: async () => {},
@@ -106,6 +113,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [claimNotice, setClaimNotice] = useState<ClaimNotice | null>(null);
   const [guestGone, setGuestGone] = useState(false);
+  const [mergeAsk, setMergeAsk] = useState(false);
+  const mergeResolver = useRef<((c: MergeChoice) => void) | null>(null);
+  /** Açılışta sorulamayan (ekran henüz yok) birleştirme sorusu: yükleme bitince sorulur. */
+  const askDeferred = useRef<AuthUser | null>(null);
+  const askMerge = () => new Promise<MergeChoice>((resolve) => { mergeResolver.current = resolve; setMergeAsk(true); });
+  const answerMergeAsk = useCallback((choice: MergeChoice) => {
+    setMergeAsk(false);
+    const r = mergeResolver.current;
+    mergeResolver.current = null;
+    r?.(choice);
+  }, []);
   /** Kullanıcı ağsız açılışta cihaz kaydından mı kuruldu (bkz. provisionalGuest). */
   const provisional = useRef(false);
 
@@ -122,21 +140,45 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * bakmak yetmiyordu: e-postası sonradan doğrulanan ya da birleşmesi ağ
    * yüzünden sonraki açılışa kalan hesap adsız kalıyordu. Adı olan hesabın
    * adına dokunulmuyor.
+   *
+   * VAR OLAN VE İÇİNDE İLERLEME OLAN HESABA girişte önce SORULUYOR: "bu
+   * cihazdaki misafir ilerlemesi hesabına eklensin mi?" Sessiz birleşme başka
+   * birinin (aynı telefonu kullanan çocuğun, arkadaşın) turlarını hesaba
+   * karıştırıyordu. İki taraftan biri boşsa soracak bir şey yok. Kapatılan
+   * soru karar sayılmıyor, sonra yeniden soruluyor. `canAsk` false (açılış,
+   * ekran henüz yok) ise soru yükleme bitince soruluyor.
    */
-  const claimPendingGuest = useCallback(async (u: AuthUser, yeniHesap: boolean) => {
+  const claimPendingGuest = useCallback(async (u: AuthUser, yeniHesap: boolean, canAsk = true) => {
     if (u.guest) return;
     const rec = await loadGuestRecord();
     if (!rec || rec.id === u.id) return;
+    const afterMerge = async (hadProgress: boolean) => {
+      setClaimNotice(hadProgress ? "merged" : "moved");
+      track("guest_upgrade", 0, hadProgress ? "merged" : "moved");
+      const ad = gercekAd(u);
+      if (!ad) return;
+      const adsiz = yeniHesap && !hadProgress
+        ? true
+        : await api<{ name?: string | null }>("/api/me").then((m) => !m?.name?.trim()).catch(() => false);
+      if (adsiz) await updateProfile({ displayName: ad });
+    };
+    // Hesaba sabitlenmiş kayıt: karar zaten verilmiş, yarım kalan birleşme sürüyor.
+    if (!rec.for && !yeniHesap) {
+      const p = await previewGuestClaim(rec);
+      if (p.kind === "merged") { await afterMerge(p.hadProgress); return; }
+      if (p.kind !== "preview") return;
+      if (p.guestHasProgress && p.targetHasProgress) {
+        if (!canAsk) { askDeferred.current = u; return; }
+        const choice = await askMerge();
+        if (choice === "later") return;
+        if (choice === "discard") {
+          if ((await discardGuestClaim(rec)) === "discarded") track("guest_upgrade", 0, "discarded");
+          return;
+        }
+      }
+    }
     const out = await claimGuest(rec, u.id);
-    if (out.kind !== "merged") return;
-    setClaimNotice(out.hadProgress ? "merged" : "moved");
-    track("guest_upgrade", 0, out.hadProgress ? "merged" : "moved");
-    const ad = gercekAd(u);
-    if (!ad) return;
-    const adsiz = yeniHesap && !out.hadProgress
-      ? true
-      : await api<{ name?: string | null }>("/api/me").then((m) => !m?.name?.trim()).catch(() => false);
-    if (adsiz) await updateProfile({ displayName: ad });
+    if (out.kind === "merged") await afterMerge(out.hadProgress);
   }, []);
 
   /**
@@ -219,7 +261,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     (async () => {
       const s = await getSessionState();
       let u = s.user;
-      if (u) await claimPendingGuest(u, false);
+      if (u) await claimPendingGuest(u, false, false);
       else {
         const rec = await loadGuestRecord();
         if (rec && !rec.for) {
@@ -231,6 +273,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     })();
     return () => { alive = false; };
   }, [claimPendingGuest, restoreGuest]);
+
+  // Açılışta sorulamayan birleştirme sorusu: ekran geldi, şimdi soruluyor.
+  useEffect(() => {
+    if (loading || !user || user.guest || !askDeferred.current) return;
+    const u = askDeferred.current;
+    askDeferred.current = null;
+    void claimPendingGuest(u, false, true);
+  }, [loading, user, claimPendingGuest]);
 
   // Ağsız açılan misafir: uygulama öne gelince oturum yeniden okunuyor.
   useEffect(() => {
@@ -398,7 +448,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const clearGuestGone = useCallback(() => setGuestGone(false), []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice, guestGone, clearGuestGone }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice, guestGone, clearGuestGone, mergeAsk, answerMergeAsk }}>
       {children}
     </AuthContext.Provider>
   );

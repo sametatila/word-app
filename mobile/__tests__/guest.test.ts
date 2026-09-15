@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ApiError } from "../src/api/client";
-import { accountRequiredError, claimGuest, deleteGuestData, GUEST_KEY, isAccountRequired, loadGuestRecord, resumeGuest, startGuest } from "../src/lib/guest";
+import { accountRequiredError, claimGuest, deleteGuestData, discardGuestClaim, previewGuestClaim, GUEST_KEY, isAccountRequired, loadGuestRecord, resumeGuest, startGuest } from "../src/lib/guest";
 
 /**
  * MİSAFİR KAYDI (mağaza ön inceleme B24).
@@ -129,4 +129,31 @@ test("silme 401 alır ve geri kurma da olmazsa başarı sayılmaz", async () => 
 
 test("misafirde atılmayan çağrının hatası hesap reddiyle aynı", () => {
   expect(isAccountRequired(accountRequiredError())).toBe(true);
+});
+
+/* "HESABINA EKLENSİN Mİ?" Önizleme hiçbir şeyi değiştirmemeli; kipi tanımayan
+   eski sunucu doğrudan birleştirirse bu da doğru okunmalı. */
+test("önizleme iki tarafın ilerlemesini döndürür, kaydı silmez", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  api.mockResolvedValue({ guestHasProgress: true, targetHasProgress: true });
+  expect(await previewGuestClaim(record)).toEqual({ kind: "preview", guestHasProgress: true, targetHasProgress: true });
+  expect(JSON.parse(api.mock.calls[0][1].body)).toMatchObject({ mode: "preview" });
+  expect(await loadGuestRecord()).toMatchObject({ id: record.id });
+});
+
+test("kipi tanımayan sunucu birleştirdiyse sonuç birleşme sayılır", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  api.mockResolvedValue({ merged: true, targetHadProgress: true });
+  expect(await previewGuestClaim(record)).toEqual({ kind: "merged", hadProgress: true });
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
+});
+
+test("eklememe misafiri siler; ağ hatasında kayıt durur", async () => {
+  await AsyncStorage.setItem(GUEST_KEY, JSON.stringify(record));
+  api.mockRejectedValueOnce(new Error("network"));
+  expect(await discardGuestClaim(record)).toBe("retry");
+  expect(await loadGuestRecord()).toMatchObject({ id: record.id });
+  api.mockResolvedValueOnce({ discarded: true });
+  expect(await discardGuestClaim(record)).toBe("discarded");
+  expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
 });

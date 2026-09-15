@@ -242,7 +242,7 @@ export const EVENT_NAMES = [
   */
   "guest_start", // "Hesapsız devam et" ile misafir kimliği açıldı
   "guest_nudge", // misafire kilometre taşında hesap çağrısı gösterildi (kind = taş)
-  "guest_upgrade", // misafir hesaba geçti (kind = moved|merged)
+  "guest_upgrade", // misafir hesaba geçti (kind = moved|merged|discarded: kullanıcı eklemedi)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

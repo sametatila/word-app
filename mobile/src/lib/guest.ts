@@ -172,6 +172,49 @@ export async function claimGuest(record: GuestRecord, accountId: string): Promis
   }
 }
 
+export type ClaimPreview =
+  | { kind: "preview"; guestHasProgress: boolean; targetHasProgress: boolean }
+  /** Sunucu kipi tanımadı ve DOĞRUDAN birleştirdi (eski sürüm): sonuç bu. */
+  | { kind: "merged"; hadProgress: boolean }
+  | { kind: "gone" }
+  | { kind: "retry" };
+
+/**
+ * Birleştirmeden ÖNCE iki tarafın ilerlemesi — hiçbir şey değişmiyor
+ * (sunucu `mode: "preview"`). Var olan, içinde ilerleme olan bir hesaba
+ * girişte "bu cihazdaki ilerleme hesabına eklensin mi?" diye sorabilmek için.
+ *
+ * Kipi tanımayan eski sunucu doğrudan birleştirir; yanıtında `merged` varsa
+ * birleşme olmuştur ve kayıt siliniyor (soru soracak bir şey kalmadı).
+ */
+export async function previewGuestClaim(record: GuestRecord): Promise<ClaimPreview> {
+  try {
+    const r = await api<{ merged?: boolean; targetHadProgress?: boolean; guestHasProgress?: boolean; targetHasProgress?: boolean }>("/api/account/guest/claim", {
+      method: "POST",
+      body: JSON.stringify({ guestId: record.id, token: record.token, mode: "preview" }),
+    });
+    if (r?.merged) { await clearGuestRecord(); return { kind: "merged", hadProgress: Boolean(r.targetHadProgress) }; }
+    return { kind: "preview", guestHasProgress: Boolean(r?.guestHasProgress), targetHasProgress: Boolean(r?.targetHasProgress) };
+  } catch (e) {
+    if (e instanceof ApiError && (e.status === 400 || e.status === 404 || e.status === 409)) {
+      await clearGuestRecord();
+      return { kind: "gone" };
+    }
+    return { kind: "retry" };
+  }
+}
+
+/** Kullanıcı eklemek istemedi: misafir sunucuda ve cihazda siliniyor. */
+export async function discardGuestClaim(record: GuestRecord): Promise<"discarded" | "retry"> {
+  try {
+    await api<{ discarded?: boolean }>("/api/account/guest/claim", { method: "POST", body: JSON.stringify({ guestId: record.id, token: record.token, mode: "discard" }) });
+  } catch (e) {
+    if (!(e instanceof ApiError && e.status === 404)) return "retry";
+  }
+  await clearGuestRecord();
+  return "discarded";
+}
+
 /** Misafirin sunucudaki verisini siler (Profil › Misafir verilerini sil). */
 export async function deleteGuestData(): Promise<boolean> {
   const del = async (): Promise<"ok" | "no_session" | "failed"> => {

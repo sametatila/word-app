@@ -20,6 +20,7 @@ export function ConfirmDialog({
   destructive,
   onConfirm,
   onCancel,
+  onDismiss,
 }: {
   visible: boolean;
   title: string;
@@ -29,6 +30,12 @@ export function ConfirmDialog({
   destructive?: boolean;
   onConfirm: () => void;
   onCancel: () => void;
+  /**
+   * Geri tuşu ve arka plana dokunma. Verilmezse `onCancel`. İptalin YIKICI
+   * olduğu sorularda (ör. "ekleme" = veriyi sil) ayrı tutuluyor: yanlışlıkla
+   * kapatmak kararı vermiş sayılmamalı.
+   */
+  onDismiss?: () => void;
 }) {
   const { colors } = useTheme();
   /* Dolgu TEMAYA DUYARLI DEĞİL ve `theme/colors` `DIALOG_FILL`den geliyor:
@@ -36,8 +43,8 @@ export function ConfirmDialog({
      açık pembeye dönüyor ve beyaz yazıyla 2.06 veriyordu). */
   const accent = destructive ? DIALOG_FILL.destructive : DIALOG_FILL.primary;
   return (
-    <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onCancel}>
-      <Pressable onPress={onCancel} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
+    <Modal visible={visible} transparent animationType="fade" statusBarTranslucent onRequestClose={onDismiss ?? onCancel}>
+      <Pressable onPress={onDismiss ?? onCancel} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
         {/* EKRAN OKUYUCU İÇİN DE BİR DİYALOG. RN `Modal`i görsel olarak
             öne geliyor ama erişilebilirlik ağacında arka plan ERİŞİLEBİLİR
             kalıyordu: VoiceOver kart bitince arkadaki ekranı okumaya devam

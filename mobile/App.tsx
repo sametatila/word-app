@@ -27,6 +27,7 @@ import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
+import { GuestMergeDialog } from "./src/ui/GuestMergeDialog";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
 import { ErrorBoundary } from "./src/ui/ErrorBoundary";
 import { NavBarBackdrop } from "./src/ui/NavBarBackdrop";
@@ -282,6 +283,7 @@ function Nav() {
       {/* Misafir hesaba geçince ilerlemenin nereye gittiği — birleşme birden çok
           giriş yolundan geliyor, not bu yüzden kökte (bkz. ui/GuestClaimNotice). */}
       <GuestClaimNotice />
+      <GuestMergeDialog />
       {/* YAPAY ZEKÂ RIZASI TEK YERDE, kökte: sunucu metni ya da sesi
           sağlayıcıya göndermeden önce izin istediğinde API istemcisi bu
           ekranı açtırıyor (bkz. lib/aiConsent). Kırk çağrı yerinin her birine
