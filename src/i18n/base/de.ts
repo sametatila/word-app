@@ -67,6 +67,8 @@ export const deBase: Record<string, string> = {
   "guest.ai_exam": "In dieser Prüfung sprichst du mit der KI und wirst von ihr bewertet; beides braucht ein Konto. Dein Gastfortschritt kommt mit.",
   "guest.daily_rule": "Für die Rangliste brauchst du ein Konto",
   "guest.daily_result": "Deine Punkte stehen nicht in der Tagesrangliste: Dafür brauchst du ein Konto. Leg eins an, dein Gastfortschritt kommt mit.",
+  "guest.mock_ai_part": "Diesen Teil bewertet die KI, und dafür brauchst du ein Konto. Als Gast vergleichst du deine Antwort am Ende mit der Musterantwort.",
+  "guest.mock_ai_task": "KI-Bewertung braucht ein Konto; die Musterantwort kommt am Ende des Teils.",
   "lessonp.chat_off_account": "Freies Gespräch mit der KI braucht ein Konto; in dieser Lektion geht es mit einem vorgegebenen Gespräch weiter.",
   "auth.your_email_address": "deine E-Mail-Adresse",
   "auth.enter_your_email_and_we_ll_send": "Gib deine E-Mail-Adresse ein, wir senden dir einen Link zum Zurücksetzen.",

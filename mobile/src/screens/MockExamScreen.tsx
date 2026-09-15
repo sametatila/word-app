@@ -3,12 +3,13 @@ import { View, TextInput, ActivityIndicator } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockIcon, ArrowRightIcon, RepeatIcon, AlertIcon } from "../ui/icons";
+import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockIcon, ArrowRightIcon, RepeatIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
@@ -50,6 +51,7 @@ import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { isAccountRequired } from "../lib/guest";
+import { useAuth } from "../lib/AuthContext";
 
 /**
  * Deneme sınavı oynatıcısı — TEK BÖLÜM, dijital oturum kurallarıyla.
@@ -578,6 +580,10 @@ function Cover({
   onAnnounce: () => void;
 }) {
   const { colors } = useTheme();
+  /* MİSAFİR: yazma/konuşma görevlerini yapay zekâ puanlıyor ve uç misafire
+     kapalı (bkz. `api/mock-exam` assess). Kapak bunu baştan söylüyor —
+     rol yapma sınavının kapak notuyla aynı kalıp (`guest.ai_exam`). */
+  const guestAi = Boolean(useAuth().user?.guest) && part.tasks.some(isOpenTask);
   // Bölüm yönergesi ekrana gelir gelmez okunuyor — gerçek oturumda da
   // yönerge kayıttan gelir.
   useEffect(() => { onAnnounce(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -600,7 +606,9 @@ function Cover({
       /* Temanın ve yönergenin öğrencinin dilindeki karşılığı: kapakta
          bulunuyordu, kaybolmuyor — kuralların altında not olarak. */
       note={`${paper.themeTr}\n${part.instructionTr}`}
-    />
+    >
+      {guestAi ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
+    </CoverBody>
   );
 }
 
@@ -839,6 +847,7 @@ function WritingTask({
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [busy, setBusy] = useState(false);
   const n = words(value);
   const need = task.rubric?.minWords ?? 0;
@@ -884,6 +893,9 @@ function WritingTask({
 
       {score ? (
         <OpenResult score={score} colors={colors} />
+      ) : guest ? (
+        /* MİSAFİR: düğme kesin 403 alacaktı; yerine nedeni ve örnek cevabın yeri. */
+        <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
       ) : (
         <>
           {/* SEBEP YAZIYOR (bkz. `ExamScreen`): ustteki sayac gorevin alt
@@ -900,7 +912,7 @@ function WritingTask({
           </PressableScale>
         </>
       )}
-      {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
+      {!attemptId && !guest ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
     </Card>
   );
 }
@@ -948,6 +960,7 @@ function SpeakingTask({
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [step, setStep] = useState<"waiting" | "prep" | "speaking" | "done">("waiting");
   const [turn, setTurn] = useState(0);
   const [count, setCount] = useState(0);
@@ -1112,6 +1125,8 @@ function SpeakingTask({
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t(micOk === false ? "mockexam.mic_failed" : "mockexam.transcript_note")}</Text>
           {score ? (
             <OpenResult score={score} colors={colors} />
+          ) : guest ? (
+            <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
           ) : (
             <>
               {/* KONUSMA DOKUMUNUN DE TABANI VAR. Burada hic kapi yoktu: bos
@@ -1132,7 +1147,7 @@ function SpeakingTask({
               </PressableScale>
             </>
           )}
-          {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
+          {!attemptId && !guest ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
         </>
       )}
     </Card>
@@ -1183,6 +1198,9 @@ function ResultView({
   onReveal: (id: string) => void;
   onBack: () => void;
 }) {
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  /* MİSAFİR: açık uçlu bölüm puansız kaldı; neden ve hesap yolu sonuçta da. */
+  const guestAi = Boolean(useAuth().user?.guest) && part.tasks.some(isOpenTask);
   const [review, setReview] = useState(false);
   /* Konfeti bir kez: çözümlerden sonuca dönüşte yeniden patlamasın. */
   const [celebrated, setCelebrated] = useState(false);
@@ -1306,6 +1324,7 @@ function ResultView({
       actions={
         <FlowActions
           primary={{ label: t("mockexam.show_review"), onPress: () => { setCelebrated(true); setReview(true); } }}
+          secondary={guestAi ? { label: t("guest.create_account"), onPress: () => nav.navigate("Auth") } : null}
           tertiary={{ label: t("mockexam.back_to_list"), onPress: onBack }}
         />
       }
@@ -1327,6 +1346,7 @@ function ResultView({
         ]} />
       ) : null}
 
+      {guestAi ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
       {/* Sunucuya ulaşılamadı: sebep kırmızı, sonucun nerede saklandığı ayrı satır. */}
       {offline ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={t(`mockexam.fail_${offline}`)} /> : null}
       {offline ? <FlowNote icon={<CheckIcon color={colors.textMuted} size={16} />} text={t("mockexam.saved_locally")} /> : null}

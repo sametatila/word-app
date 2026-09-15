@@ -70,6 +70,8 @@ export const tr: Record<string, string> = {
   "guest.ai_exam": "Bu sınavda yapay zekâyla konuşuyor ve ondan puan alıyorsun; ikisi de hesap istiyor. Misafir ilerlemen hesabına taşınır.",
   "guest.daily_rule": "Sıralamada görünmek hesap ister",
   "guest.daily_result": "Puanın günün sıralamasına girmedi: sıralama hesap ister. Hesap oluşturunca misafir ilerlemen hesabına taşınır.",
+  "guest.mock_ai_part": "Bu bölümü yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak cevabını bölüm sonunda örnek cevapla karşılaştırırsın.",
+  "guest.mock_ai_task": "Yapay zekâ değerlendirmesi hesap ister; örnek cevap bölüm sonunda.",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",
