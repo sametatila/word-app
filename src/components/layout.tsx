@@ -61,7 +61,7 @@ export function WideColumn({
  * sütun matematiksel olarak sığmıyor. Medya sorgusu ya da ölçüm gerekmiyor —
  * kap ne kadar genişse o kadar; `auto-fill` gerisini hallediyor.
  *
- * Dar kapta tek sütuna düşüyor, yani telefonda düzen birebir eskisi.
+ * Dar kapta tek sütuna düşüyor ve o sütun kabı AŞMIYOR (bkz. `min(100%, …)`).
  */
 export function CardGrid({
   children,
@@ -84,7 +84,13 @@ export function CardGrid({
     <Tag
       className={`grid gap-3 ${className}`}
       style={{
-        gridTemplateColumns: `repeat(auto-fill, minmax(max(${min}px, (100% - 1.5rem) / 3), 1fr))`,
+        /* `min(100%, …)` ŞART. Alt sınır yalnız `max(min px, üçte bir)` iken
+           kap `min`den dar olduğunda (telefon: 360-400 px, Beceriler 440
+           istiyor) tek sütun kabın DIŞINA taşıyordu: kartlar ekrandan geniş
+           çiziliyor, sayfa yana kayıyor ve satırların sağı kesiliyordu.
+           Kurulu web uygulamasında (PWA) Beceriler tam olarak böyle
+           görünüyordu. */
+        gridTemplateColumns: `repeat(auto-fill, minmax(min(100%, max(${min}px, (100% - 1.5rem) / 3)), 1fr))`,
         alignItems: "start",
       }}
     >
