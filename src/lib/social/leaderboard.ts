@@ -10,6 +10,8 @@ export type FriendBoardRow = {
   userId: string;
   name: string | null;
   username: string | null;
+  /** Ham avatar JSON'u — sorgu seçiyordu ama satıra koymuyordu; tablo herkesi armayla çiziyordu. */
+  avatar: string | null;
   level: string;
   xp: number;
   streak: number;
@@ -33,7 +35,7 @@ export async function friendsLeaderboard(me: string, today: string): Promise<{ r
       .where(inArray(profiles.userId, ids)),
   ]);
   const rows = prof
-    .map((p) => ({ userId: p.userId, name: p.name, username: p.username, level: p.level, xp: weekly.get(p.userId) ?? 0, streak: p.streak, isMe: p.userId === me }))
+    .map((p) => ({ userId: p.userId, name: p.name, username: p.username, avatar: p.avatar, level: p.level, xp: weekly.get(p.userId) ?? 0, streak: p.streak, isMe: p.userId === me }))
     .sort((a, b) => b.xp - a.xp || b.streak - a.streak || (a.name ?? "").localeCompare(b.name ?? "", "tr"))
     .map((r, i) => ({ rank: i + 1, ...r }));
   return { rows, start: weekStart(today), daysLeft: daysLeftInWeek(today) };
