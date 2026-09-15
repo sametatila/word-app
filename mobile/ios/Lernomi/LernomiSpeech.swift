@@ -245,7 +245,18 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       self.stopAudioObservers()
       self.hideNowPlaying()
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+      // `playAndRecord` burada bırakılırsa tur sonrası ses kulaklık deliğine
+      // gidebiliyor ve sessiz anahtarı kuralı belirsizleşiyor: uygulamanın
+      // oynatma kategorisine dön (bkz. AppDelegate).
+      LernomiSpeech.applyPlaybackCategory()
     }
+  }
+
+  /// Uygulamanın oynatma kategorisi — sessiz anahtarında da duyulur; çalarken
+  /// başka uygulamanın sesini kısar (native `startTts` ile aynı seçim).
+  /// Oturumu etkinleştirmez.
+  static func applyPlaybackCategory() {
+    try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
   }
 
   // --- Kesinti ve toparlanma -----------------------------------------------------
@@ -1044,6 +1055,9 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     // oturumu kapatsaydı, ekran kapalıyken tur bir sonraki kelimeye geçemezdi.
     if !walkSessionHeld {
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+      // Tanıma `playAndRecord` kurmuştu; köprünün `<audio>`u sessiz anahtarına
+      // takılmasın diye oynatma kategorisine dön (bkz. AppDelegate).
+      LernomiSpeech.applyPlaybackCategory()
     }
   }
 

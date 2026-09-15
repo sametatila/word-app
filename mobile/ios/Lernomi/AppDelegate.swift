@@ -3,6 +3,7 @@ import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
 import FirebaseCore
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
       FirebaseApp.configure()
     }
+
+    // SES KATEGORİSİ: sessiz anahtarında da duyulsun.
+    //
+    // Varsayılan kategori `soloAmbient` ve SESSİZ ANAHTARINA uyuyor. Seçilen ses
+    // (Katja/Conrad) gizli bir WebView'dan `<audio>` ile çalıyor ve WKWebView
+    // uygulamanın ses oturumunu kullanıyor: anahtarı sessizde olan iPhone'da
+    // hiçbir şey duyulmuyordu. Cihaz TTS'i kendi `playback`ini kurduğu için bu
+    // uzun süre görünmedi. `playback` + `duckOthers`: native oynatıcının
+    // (`LernomiSpeech.startTts`) seçimiyle aynı — okurken müziği kısar, durdurmaz.
+    // Etkinleştirme yok, yalnız kategori; yürüyüş modu ve tanıma kendi
+    // `playAndRecord`unu kurup bitince buna geri dönüyor (LernomiSpeech).
+    LernomiSpeech.applyPlaybackCategory()
 
     let delegate = ReactNativeDelegate()
     let factory = RCTReactNativeFactory(delegate: delegate)
