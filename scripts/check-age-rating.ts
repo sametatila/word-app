@@ -148,9 +148,62 @@ const ISTISNA: Record<string, string> = {
  * `Roulette`, `Glücksspiel` gibi sözcükler İÇERİKTE görünür ve kapı orada öter.
  */
 const HAVUZ_ISTISNA: Record<string, string> = {
-  wetten: "B1 sözlük maddesi 'bahse girmek'. Uygulamada bahis mekaniği yok.",
+  wetten: "B1 sözlük maddesi 'bahse girmek'. Kelime turundaki 'Meydan okuma' şansa değil doğru cevaba bağlı bir XP çarpanı; para ya da satın alınabilir değer yok ve arayüzde bahis dili geçmiyor (bkz. ARAYUZ_KUMAR).",
   Gewalt: "B1 sözlük maddesi 'şiddet'. Kavramın karşılığını öğretmek, tasvir değil.",
 };
+
+/**
+ * ARAYÜZ METİNLERİ DE TARANIYOR (2026-09-15, mağaza ön inceleme B34).
+ *
+ * Kapı yalnız öğretilen içeriği okuyordu. Kelime turundaki XP mekaniğinin adı
+ * üç dilde "Bahis", "Bet" ve "Wette" idi ve tarama onu hiç görmedi. Mekanik
+ * şansa değil doğru cevaba bağlı ve para içermiyor, yani "Simulated Gambling:
+ * None" cevabı doğruydu; ama inceleyici ekranda "bahse gir" okuyunca beyanı
+ * sorgular. Ad "Meydan okuma", "Challenge" ve "Herausforderung" oldu; bu liste
+ * bahis dilinin arayüze geri dönmesini engelliyor.
+ *
+ * Yalnız sözlük DEĞERLERİ taranıyor: anahtar adları (`wager.*`) kullanıcıya
+ * görünmüyor. Sınırlar harf tabanlı (`\p{L}`), çünkü `\b` Türkçe harfleri
+ * sözcük saymıyor. Türkçe kalıp bilerek dar: "bahsetmek" (söz etmek) ve
+ * "bahsedilen" bahis değil.
+ */
+const ARAYUZ_KUMAR: { dil: string; dosyalar: string[]; kalip: RegExp }[] = [
+  {
+    dil: "tr",
+    dosyalar: ["mobile/src/i18n/tr.ts", "src/i18n/web/tr.ts"],
+    kalip: /(?<!\p{L})(bahis\p{L}*|bahse gir\p{L}*|kumar\p{L}*|piyango\p{L}*|şans oyun\p{L}*|jackpot)(?!\p{L})/iu,
+  },
+  {
+    dil: "en",
+    dosyalar: ["mobile/src/i18n/en.ts", "src/i18n/web/en.ts"],
+    kalip: /(?<!\p{L})(bet|bets|betting|wager\p{L}*|gambl\p{L}*|casino\p{L}*|jackpot\p{L}*|lotter\p{L}*|roulette|poker|loot ?box\p{L}*)(?!\p{L})/iu,
+  },
+  {
+    dil: "de",
+    dosyalar: ["mobile/src/i18n/de.ts", "src/i18n/web/de.ts"],
+    kalip: /(?<!\p{L})(Wette|Wetten|wetten|wettest|wettet|Glücksspiel\p{L}*|Casino\p{L}*|Kasino\p{L}*|Jackpot\p{L}*|Lotterie\p{L}*|Lotto|Roulette|Poker|Beutekiste\p{L}*)(?!\p{L})/u,
+  },
+];
+
+/** Sözlüklerde kumar dili geçen değerler: `dosya:satır  anahtar = değer`. */
+function arayuzKumarGecisleri(): string[] {
+  const out: string[] = [];
+  for (const { dosyalar, kalip } of ARAYUZ_KUMAR) {
+    for (const dosya of dosyalar) {
+      let ham: string;
+      try {
+        ham = readFileSync(path.join(ROOT, dosya), "utf8");
+      } catch {
+        continue;
+      }
+      ham.split("\n").forEach((satir, i) => {
+        const m = satir.match(/^\s*"([^"]+)":\s*"((?:[^"\\]|\\.)*)"/);
+        if (m && kalip.test(m[2])) out.push(`${dosya}:${i + 1}  ${m[1]} = ${m[2]}`);
+      });
+    }
+  }
+  return out;
+}
 
 /** Şiddet kökünden ayıklanacak yanlış eşleşmeler. */
 const YANLIS_ESLESME = [/^[Gg]ewaltig/, /^[Gg]ewaltlos/];
@@ -249,7 +302,18 @@ function main(): void {
     }
   }
 
-  console.log(hata === 0 ? `\n${KURALLAR.length} beyanın hepsi içerikle tutuyor.` : `\n${hata} beyan içerikle tutmuyor.`);
+  const arayuz = arayuzKumarGecisleri();
+  if (arayuz.length === 0) {
+    console.log(`  tamam  ${"Arayüz metinleri: bahis ve kumar dili".padEnd(42)} NONE — ${ARAYUZ_KUMAR.length} dil, geçiş yok`);
+  } else {
+    hata++;
+    console.log(`  HATA   Arayüz metinleri: bahis ve kumar dili`);
+    console.log(`         "Simulated Gambling: None" beyanı var ama arayüzde ${arayuz.length} değer bahis dili taşıyor:`);
+    for (const g of arayuz.slice(0, 8)) console.log(`           ${g}`);
+    console.log(`         Mekanik şansa ya da paraya bağlı değilse adı değişir; bağlıysa anket güncellenir (docs/appstore/listing.md §2.3).`);
+  }
+
+  console.log(hata === 0 ? `\n${KURALLAR.length} beyanın hepsi içerikle tutuyor; arayüzde bahis dili yok.` : `\n${hata} beyan içerikle tutmuyor.`);
   process.exit(hata === 0 ? 0 : 1);
 }
 
