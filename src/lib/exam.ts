@@ -1,6 +1,7 @@
 import "server-only";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { practiceWordsOf } from "@/lib/practice-words";
 import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
@@ -234,7 +235,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   const pool = await db
     .select()
     .from(words)
-    .where(and(eq(words.course, course), eq(words.niveau, level)))
+    .where(and(practiceWordsOf(course), eq(words.niveau, level)))
     .orderBy(asc(sql`coalesce(${words.rank}, 999999)`), asc(words.id))
     .limit(400);
   let candidates = pool;

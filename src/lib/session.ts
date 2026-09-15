@@ -2,6 +2,7 @@ import "server-only";
 import { courseOrDefault } from "@/lib/courses";
 import { and, asc, desc, eq, gt, gte, inArray, isNotNull, lt, lte, notInArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { practiceWordsOf } from "@/lib/practice-words";
 import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
 import { clozeTypeChance, gamesFor, isProductionGame, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
@@ -114,7 +115,7 @@ async function pickSingleGameFiller(
     and(
       eq(userWords.userId, userId),
       gt(userWords.dueAt, now),
-      eq(words.course, course),
+      practiceWordsOf(course),
       exclude.length ? notInArray(userWords.wordId, exclude) : undefined,
       sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - ${sql.raw(`interval '${rest}'`)})`,
     );
@@ -177,7 +178,7 @@ async function pickSingleGameFiller(
         and(
           eq(userWords.userId, userId),
           gt(userWords.dueAt, now),
-          eq(words.course, course),
+          practiceWordsOf(course),
           have.length ? notInArray(userWords.wordId, have) : undefined,
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
         ),
@@ -203,7 +204,7 @@ async function pickSingleGameFiller(
       .where(
         and(
           eq(userWords.userId, userId),
-          eq(words.course, course),
+          practiceWordsOf(course),
           have.length ? notInArray(userWords.wordId, have) : undefined,
         ),
       )
@@ -462,7 +463,7 @@ export async function buildSession(
       and(
         eq(userWords.userId, userId),
         lte(userWords.dueAt, now),
-        eq(words.course, course),
+        practiceWordsOf(course),
         skip.length ? notInArray(userWords.wordId, skip) : undefined,
       ),
     )
@@ -480,7 +481,7 @@ export async function buildSession(
     })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
-    .where(and(eq(userWords.userId, userId), eq(words.course, course)));
+    .where(and(eq(userWords.userId, userId), practiceWordsOf(course)));
   const dueCount = health?.due ?? 0;
 
   // 2) Kalan kontenjan kadar yeni kelime
@@ -506,7 +507,7 @@ export async function buildSession(
     })
     .from(words)
     .leftJoin(userWords, and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)))
-    .where(and(eq(words.course, course), eq(words.niveau, band.level)));
+    .where(and(practiceWordsOf(course), eq(words.niveau, band.level)));
 
   const meta: SessionPayload["meta"] = {
     dueCount,
@@ -547,7 +548,7 @@ export async function buildSession(
       .from(words)
       .where(
         and(
-          eq(words.course, course),
+          practiceWordsOf(course),
           inArray(words.niveau, band.pool),
           sql`not exists (
             select 1 from ${userWords}
@@ -577,7 +578,7 @@ export async function buildSession(
   const poolRaw = await db
     .select()
     .from(words)
-    .where(and(eq(words.course, course), inArray(words.niveau, poolLevels)))
+    .where(and(practiceWordsOf(course), inArray(words.niveau, poolLevels)))
     .orderBy(sql`random()`)
     .limit(140);
   /*
@@ -649,7 +650,7 @@ export async function buildSession(
         and(
           eq(userWords.userId, userId),
           gt(userWords.dueAt, now),
-          eq(words.course, course),
+          practiceWordsOf(course),
           sql`(${userWords.lastReviewedAt} is null or ${userWords.lastReviewedAt} < now() - interval '30 minutes')`,
           // Çeşitlilik için çekiyorsak yalnızca oturmuş kelime işe yarıyor:
           // erken çekilen bir "fresh" kelime aynı tanıma oyunlarını doğurur.
@@ -679,7 +680,7 @@ export async function buildSession(
     const synonyms = await db
       .select({ de: words.de, tr: words.tr })
       .from(words)
-      .where(and(eq(words.course, course), inArray(words.tr, [...new Set(typingTrs)])));
+      .where(and(practiceWordsOf(course), inArray(words.tr, [...new Set(typingTrs)])));
     for (const r of rounds) {
       if (r.game !== "typing") continue;
       r.alternatives = synonyms
@@ -890,7 +891,7 @@ export async function buildWalk(
       and(
         eq(userWords.userId, userId),
         lte(userWords.dueAt, now),
-        eq(words.course, course),
+        practiceWordsOf(course),
         skip.length ? notInArray(userWords.wordId, skip) : undefined,
       ),
     )
@@ -903,7 +904,7 @@ export async function buildWalk(
     .from(words)
     .where(
       and(
-        eq(words.course, course),
+        practiceWordsOf(course),
         inArray(words.niveau, band.pool),
         sql`not exists (
           select 1 from ${userWords}
@@ -2015,7 +2016,7 @@ export async function buildChallenge(
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
     .where(
-      and(eq(userWords.userId, userId), gt(userWords.reps, 0), eq(words.course, profile.course)),
+      and(eq(userWords.userId, userId), gt(userWords.reps, 0), practiceWordsOf(profile.course)),
     )
     .limit(160);
 
@@ -2044,7 +2045,7 @@ export async function buildChallenge(
     await db
       .select()
       .from(words)
-      .where(and(eq(words.course, profile.course), inArray(words.niveau, poolLevels)))
+      .where(and(practiceWordsOf(profile.course), inArray(words.niveau, poolLevels)))
       .orderBy(sql`random()`)
       .limit(140)
   ).filter((w) => hasGloss(w, native)); // anadilde karşılığı olmayan kelime şık da olamaz
@@ -2162,7 +2163,7 @@ export async function getProgress(userId: string, today: string) {
       userWords,
       and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)),
     )
-    .where(eq(words.course, profile.course))
+    .where(practiceWordsOf(profile.course))
     .groupBy(words.niveau)
     .orderBy(asc(words.niveau));
 
@@ -2181,7 +2182,7 @@ export async function getProgress(userId: string, today: string) {
       and(
         eq(userWords.userId, userId),
         lte(userWords.dueAt, new Date()),
-        eq(words.course, profile.course),
+        practiceWordsOf(profile.course),
       ),
     );
 
@@ -2193,7 +2194,7 @@ export async function getProgress(userId: string, today: string) {
       and(
         eq(userWords.userId, userId),
         gt(userWords.dueAt, new Date()),
-        eq(words.course, profile.course),
+        practiceWordsOf(profile.course),
       ),
     );
 

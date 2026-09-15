@@ -3,6 +3,7 @@ import { MIN_MASTERED } from "@/lib/weekly-const";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { and, asc, desc, eq, gt, gte, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { practiceWordsOf } from "@/lib/practice-words";
 import { exams, userWords, words } from "@/lib/db/schema";
 import { chatConfigured } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
@@ -123,7 +124,7 @@ export async function buildWeeklyExam(userId: string, course: string, level: str
       .where(
         and(
           eq(userWords.userId, userId),
-          eq(words.course, course),
+          practiceWordsOf(course),
           gt(userWords.reps, 0),
           mastered ? gte(userWords.intervalDays, MASTERED_DAYS) : lt(userWords.intervalDays, MASTERED_DAYS),
         ),
@@ -139,7 +140,7 @@ export async function buildWeeklyExam(userId: string, course: string, level: str
   const pool = await db
     .select()
     .from(words)
-    .where(and(eq(words.course, course), eq(words.niveau, level)))
+    .where(and(practiceWordsOf(course), eq(words.niveau, level)))
     .orderBy(asc(sql`coalesce(${words.rank}, 999999)`), asc(words.id))
     .limit(300);
 

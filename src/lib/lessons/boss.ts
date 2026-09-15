@@ -1,6 +1,7 @@
 import "server-only";
 import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { practiceWordsOf } from "@/lib/practice-words";
 import { moduleClears, words } from "@/lib/db/schema";
 import { ensureProfile, makeRound, toRoundWord } from "@/lib/session";
 import { LESSONS } from "./index";
@@ -120,7 +121,7 @@ export async function buildModuleBoss(
     .from(words)
     .where(
       and(
-        eq(words.course, course),
+        practiceWordsOf(course),
         inArray(sql`lower(${words.de})`, heads),
       ),
     );
@@ -133,7 +134,7 @@ export async function buildModuleBoss(
   const pool = await db
     .select()
     .from(words)
-    .where(and(eq(words.course, course), eq(words.niveau, level)))
+    .where(and(practiceWordsOf(course), eq(words.niveau, level)))
     .orderBy(sql`random()`)
     .limit(140);
 

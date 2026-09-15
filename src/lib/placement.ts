@@ -1,6 +1,7 @@
 import "server-only";
 import { and, asc, desc, eq, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { practiceWordsOf } from "@/lib/practice-words";
 import { placements, profiles, words } from "@/lib/db/schema";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -79,7 +80,7 @@ export async function buildPlacement(course: string, native: NativeLang = DEFAUL
     const rows = await db
       .select({ id: words.id, de: words.de, artikel: words.artikel, tr: words.tr, en: words.en, deGloss: words.deGloss })
       .from(words)
-      .where(and(eq(words.course, course), eq(words.niveau, level), isNotNull(words.rank)))
+      .where(and(practiceWordsOf(course), eq(words.niveau, level), isNotNull(words.rank)))
       .orderBy(sql`${words.rank} asc nulls last`, asc(words.id))
       .limit(60);
     /* Anlamı ana dilde olan kelimeler; `gloss` şıkkın metni. */
