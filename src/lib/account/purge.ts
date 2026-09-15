@@ -7,7 +7,6 @@ import {
   aiUsage,
   assessments,
   contentReports,
-  dailyScores,
   dailyStats,
   eventReactions,
   events,
@@ -82,7 +81,6 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(userSkills).where(eq(userSkills.userId, userId));
     await tx.delete(userPathItems).where(eq(userPathItems.userId, userId));
     await tx.delete(sessionState).where(eq(sessionState.userId, userId));
-    await tx.delete(dailyScores).where(eq(dailyScores.userId, userId));
     await tx.delete(questClaims).where(eq(questClaims.userId, userId));
     await tx.delete(achievements).where(eq(achievements.userId, userId));
     await tx.delete(events).where(eq(events.userId, userId));

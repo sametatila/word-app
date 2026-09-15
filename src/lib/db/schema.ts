@@ -491,41 +491,6 @@ export const sessionState = pgTable("session_state", {
 
 
 /**
- * Günün ortak turu — kullanıcı başına günde bir sonuç.
- *
- * Uygulamadaki bütün turlar kişiye özeldi: herkesin kuyruğu kendi tekrar
- * planından çıkıyordu, dolayısıyla iki kişinin skoru karşılaştırılamıyordu ve
- * paylaşılan bir sonuç kimseye bir şey ifade etmiyordu. Günün turunda aynı
- * kurs ve seviyedeki herkes **aynı kelimeleri aynı sırayla** görüyor; skor bu
- * yüzden anlamlı, tablo bu yüzden adil.
- *
- * Tek hak bilinçli: ikinci deneme, tabloyu en çok tekrar edenin kazandığı bir
- * yarışa çevirirdi. Wordle'ın günde tek bulmacası da aynı sebeple tek.
- */
-export const dailyScores = pgTable(
-  "daily_scores",
-  {
-    userId: text("user_id").notNull(),
-    day: date("day").notNull(),
-    /** Turun kimliği: aynı gün farklı seviyeler farklı turlar oynar. */
-    course: text("course").notNull(),
-    level: text("level").notNull(),
-    score: integer("score").notNull().default(0),
-    correct: integer("correct").notNull().default(0),
-    total: integer("total").notNull().default(0),
-    /** En uzun doğru serisi — paylaşılan özette ve tabloda görünür. */
-    bestCombo: integer("best_combo").notNull().default(0),
-    seconds: integer("seconds").notNull().default(0),
-    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-  },
-  (t) => [
-    primaryKey({ columns: [t.userId, t.day] }),
-    // Günün tablosu: aynı gün, aynı kurs ve seviyedekiler puana göre sıralanır.
-    index("daily_scores_board_idx").on(t.day, t.course, t.level, t.score),
-  ],
-);
-
-/**
  * Günlük görevlerin ödül kaydı.
  *
  * Yalnızca ödülü ALINMIŞ görevler yazılıyor; ilerlemenin kendisi burada

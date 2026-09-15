@@ -393,6 +393,13 @@
       "when": 1789481962489,
       "tag": "0055_two_factor_avatar",
       "breakpoints": true
+    },
+    {
+      "idx": 56,
+      "version": "7",
+      "when": 1789568362489,
+      "tag": "0056_drop_daily_scores",
+      "breakpoints": true
     }
   ]
 }

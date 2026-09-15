@@ -3,7 +3,6 @@ import { db } from "@/lib/db";
 import {
   achievements,
   activityEvents,
-  dailyScores,
   dailyStats,
   events,
   exams,
@@ -166,10 +165,6 @@ async function seedExisting() {
     { userId: T, day: d(-2), course: "de", rounds: [{ t: "hesap" }], index: 3, updatedAt: at(3000) },
     { userId: G, day: d(0), course: "en", rounds: [{ t: "misafir" }], index: 1, updatedAt: at(30) },
   ]);
-  await db.insert(dailyScores).values([
-    { userId: T, day: d(0), course: "de", level: "B1", score: 50, createdAt: at(300) },
-    { userId: G, day: d(0), course: "en", level: "A2", score: 90, createdAt: at(30) },
-  ]);
   await db.insert(questClaims).values([
     { userId: T, day: d(0), questId: "gm-q1", xp: 10 },
     { userId: G, day: d(0), questId: "gm-q1", xp: 10 },
@@ -254,9 +249,6 @@ async function mergeIntoExisting() {
 
   const states = await db.select().from(sessionState).where(inArray(sessionState.userId, [G, T]));
   check("günün tur kuyruğu: en son dokunulan (misafirinki) kaldı", states.length === 1 && states[0].userId === T && states[0].course === "en", states.map((s) => [s.userId, s.course]));
-
-  const scores = await db.select().from(dailyScores).where(inArray(dailyScores.userId, [G, T]));
-  check("günün turu: aynı gün İLK oynanan (hesabınki, 50) kaldı", scores.length === 1 && scores[0].score === 50, scores.map((s) => s.score));
 
   const claims = await db.select().from(questClaims).where(inArray(questClaims.userId, [G, T]));
   check("görev: çakışan tek kayıt + misafirin ötekisi", claims.length === 2 && claims.every((c) => c.userId === T), claims.map((c) => c.questId));

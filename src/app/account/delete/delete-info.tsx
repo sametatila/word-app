@@ -64,7 +64,7 @@ type Row = { titleKey: string; descKey: string };
  *   profil ve tercihler  `profiles` (görünen ad, avatar, seviye, kurs, hedef,
  *                        sosyal profil, hatırlatma tercihleri, saat dilimi)
  *   öğrenme verisi       `user_words`, `reviews`, `daily_stats`, `user_skills`,
- *                        `user_path_items`, `session_state`, `daily_scores`,
+ *                        `user_path_items`, `session_state`,
  *                        `quest_claims`, `achievements`, `module_clears`,
  *                        `user_lessons`, `placements`, `exams`,
  *                        `mock_exam_attempts`, `league_members`

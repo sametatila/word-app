@@ -183,15 +183,6 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
       ],
     },
     {
-      /* Günün turu günde bir kez sayılıyor: aynı gün iki sonuç varsa İLK oynanan kalıyor. */
-      table: "daily_scores",
-      statements: [
-        sql`delete from daily_scores t using daily_scores g where t.user_id = ${T} and g.user_id = ${G} and g.day = t.day and g.created_at < t.created_at`,
-        sql`delete from daily_scores g using daily_scores t where g.user_id = ${G} and t.user_id = ${T} and t.day = g.day`,
-        sql`update daily_scores set user_id = ${T} where user_id = ${G}`,
-      ],
-    },
-    {
       /* Aynı gün aynı görev iki kez alındıysa hesabınki kalıyor (XP zaten günlük istatistiğe yazıldı). */
       table: "quest_claims",
       statements: [
