@@ -3,6 +3,7 @@ import { MASTERED_DAYS } from "@/lib/srs";
 import { titleMeta } from "@/lib/page-meta";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
+import { likeContains } from "@/lib/db/like";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { WordProgress } from "@/components/progress-view";
@@ -47,8 +48,7 @@ export default async function WordsPage({
     filters.push(eq(words.course, "de"));
   }
   if (q) {
-    // %/_/\ kaçışlanır: joker karakterler LIKE'ı genişletmesin (güvenlik denetimi).
-    const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
+    const like = likeContains(q);
     // Arama İngilizceyi de kapsıyor: kelimeyi "table" diye arayan biri
     // Türkçesini bilmek zorunda kalmasın.
     const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));

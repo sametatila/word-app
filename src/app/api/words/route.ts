@@ -4,6 +4,7 @@ import { coarseStatus } from "@/lib/word-status";
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
+import { likeContains } from "@/lib/db/like";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 
@@ -34,9 +35,7 @@ export async function GET(req: Request) {
     filters.push(eq(words.course, "de"));
   }
   if (q) {
-    // %/_/\ kaçışlanır: kullanıcının joker karakterleri LIKE'ı genişletmesin
-    // (kendi araması, güvenlik denetimi — searchUsers ile aynı hijyen).
-    const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
+    const like = likeContains(q);
     const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));
     if (cond) filters.push(cond);
   }

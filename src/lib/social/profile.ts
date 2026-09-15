@@ -16,6 +16,7 @@ import { friendStreaks, type FriendStreak } from "./streaks";
 import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, normalizeBio, normalizeUsername, usernameQuery } from "./username";
 import { assignOne, ensureUsernames } from "./usernames";
 import { isGuestUser, notGuest } from "@/lib/auth/guest-user";
+import { likeContains } from "@/lib/db/like";
 import { VISIBILITIES, type FeedItem, type PublicUser, type Relation, type Visibility } from "./types";
 
 export type SocialMe = {
@@ -234,7 +235,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
   if (!rl.ok) throw new SocialError("rate_limited", 429, rl.retryAfterSec);
   const uq = usernameQuery(q);
   const blocked = [...(await blockedSet(me)), me];
-  const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
+  const like = likeContains(q);
   const rows = await db
     .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak })
     .from(profiles)
