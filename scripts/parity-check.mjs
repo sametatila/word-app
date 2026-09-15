@@ -13082,7 +13082,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Ayarlar simgesi: disli, ve ayni olcude. */
     const AYAR = [
       ["profil", "src/components/profile/profile-view.tsx", "mobile/src/screens/ProfileScreen.tsx"],
-      ["arkadaslar", "src/app/(app)/friends/page.tsx", "mobile/src/screens/FriendsScreen.tsx"],
+      ["arkadaslar", "src/components/social/friends-hub.tsx", "mobile/src/screens/FriendsScreen.tsx"],
     ];
     const webAyar = (y) => {
       const src = sil2(sil(read(y)));

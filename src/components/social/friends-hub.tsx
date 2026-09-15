@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import { EmptyCard } from "@/components/empty-card";
-import { UserPlusIcon } from "@/components/icons";
-import { Avatar } from "@/components/avatar";
+import Link from "next/link";
+import { SettingsIcon, UserPlusIcon } from "@/components/icons";
+import { MyAvatar } from "@/components/avatar";
 import { HandshakeIcon } from "@/components/icons";
 import { PersonRowSkeleton } from "@/components/skeleton";
 import { track } from "@/lib/track";
@@ -129,8 +130,21 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         etiketi ("Davet et") armanın altına düşüyordu ve kullanıcı adı —
         davetin ADRESİ, bu ekranın var oluş sebebi — kırpılıyordu.
       */}
-      <section className="card flex flex-col items-center p-5">
-        <Avatar userId={me.userId} name={me.name} avatar={me.avatar} size={64} />
+      <section className="card relative flex flex-col items-center p-5">
+        {/* Sosyal ayarlar kartın köşesinde: sekme başlığı artık diğer
+            sekmelerle aynı ve dördüncü bir düğmeye yer yok. 44 px karo +
+            22 px dişli (Android `HeaderButton`). */}
+        <Link
+          href="/friends/settings"
+          prefetch={false}
+          aria-label={t("friends.social_settings")}
+          className="pressable absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)" }}
+        >
+          <SettingsIcon size={22} />
+        </Link>
+        {/* KENDİ avatarın: yerel seçim anında görünsün (başlıktaki ile aynı kaynak). */}
+        <MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={64} />
         <p className="mt-3 text-h3">{me.name ?? t("social.unnamed")}</p>
         <p className="muted text-caption">@{me.username}</p>
         <div className="mt-3 flex gap-2">

@@ -15,11 +15,12 @@ import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { Avatar } from "../ui/Avatar";
+import { MyAvatar } from "../ui/Avatar";
+import { AppHeader } from "../ui/AppHeader";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
-import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, StatPill, TabHeader } from "../social/common";
+import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, StatPill } from "../social/common";
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { FeedList } from "../social/FeedList";
@@ -85,9 +86,9 @@ export function FriendsScreen() {
 
   if (user?.guest) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <TabHeader title={tx("friends.friends")} />
-        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
+        <AppHeader title={tx("friends.friends")} />
+        <View>
           <GuestAccountCard icon={HandshakeIcon} tint={colors.success} title={tx("guest.social_title")} text={tx("guest.social_body")} />
         </View>
       </View>
@@ -96,9 +97,9 @@ export function FriendsScreen() {
 
   if (!user) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <TabHeader title={tx("friends.friends")} />
-        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
+        <AppHeader title={tx("friends.friends")} />
+        <View>
           <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
         </View>
       </View>
@@ -108,14 +109,24 @@ export function FriendsScreen() {
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <TabHeader title={tx("friends.friends")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />} />
       {/* Alt dolgu 96: yüzen sekme çubuğunun altında kalan içerik olmasın
           (ui/Screen ile aynı ölçü). Bu ekran bir yığın ekranıyken çubuk yoktu
           ve xxl yetiyordu. */}
-      <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+      <KeyboardAwareScroll contentContainerStyle={{ paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+        {/* SEKME BAŞLIĞI — Öğren, Patika ve Beceriler ile AYNI (`AppHeader`):
+            seri, gelen kutusu, profil; `Screen` ile aynı üst dolgu. Arkadaşlar
+            sonradan sekme olduğunda kendi küçük `TabHeader`ıyla kalmıştı ve
+            sekmeler arasında başlık boyu ile sağdaki kimlik değişiyordu.
+            Sosyal ayarların dişlisi başlığa sığmıyor (dar telefonda dört düğme
+            başlığı ezer), kimlik kartının köşesinde. */}
+        <AppHeader title={tx("friends.friends")} />
         {me ? (
-          <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <View style={softShadow(colors.primary, 10)}><Avatar userId={me.userId} name={me.name} avatar={me.avatar} size={76} /></View>
+          <Card style={{ alignItems: "center", marginBottom: spacing.lg }}>
+            <View style={{ position: "absolute", top: spacing.md, right: spacing.md }}>
+              <HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />
+            </View>
+            {/* KENDİ avatarın: yerel seçim anında görünsün (başlıktaki ile aynı kaynak). */}
+            <View style={softShadow(colors.primary, 10)}><MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={76} /></View>
             <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? tx("social.unnamed")}</Text>
             <Text variant="caption" color={colors.textMuted}>@{me.username}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
@@ -126,7 +137,7 @@ export function FriendsScreen() {
           </Card>
         ) : (
           // Kimlik kartı iskeleti: arma + ad + kullanıcı adı + rozet şeridi.
-          <SkeletonCard style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
+          <SkeletonCard style={{ alignItems: "center", marginBottom: spacing.lg }}>
             <SkeletonTile size={76} radius={38} />
             <SkeletonLine variant="h2" width={168} style={{ marginTop: spacing.md }} />
             <SkeletonLine variant="caption" width={104} />
