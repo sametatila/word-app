@@ -419,6 +419,8 @@ jobs:
       # SQL cümlesi, yanlış sütun ya da unutulmuş çakışma yalnız burada görünür.
       # `test:guest-resume` çerezini kaybeden misafirin oturumunu jetonla geri
       # kuran Better Auth ucu: işleyici gerçek oturum tablosunda koşuyor.
+      # `test:guest-upgrade` misafirin yerinde hesaba dönmesi; iki kez: SMTP'siz
+      # (hemen hesap) ve SMTP'li (doğrulanana dek misafir, doğrulama çerezi tazeliyor).
       - name: Yetki ve hukuki metin (veritabanı)
         run: |
           npx tsx scripts/migrate-all.ts
@@ -428,6 +430,8 @@ jobs:
           npm run test:push-sql
           npm run test:guest-merge
           BETTER_AUTH_SECRET=ci-guest-resume-secret-0123456789abcdef BETTER_AUTH_URL=http://localhost:3000 npm run test:guest-resume
+          BETTER_AUTH_SECRET=ci-guest-resume-secret-0123456789abcdef BETTER_AUTH_URL=http://localhost:3000 npm run test:guest-upgrade
+          SMTP_HOST=127.0.0.1 SMTP_PORT=9 SMTP_USER=ci SMTP_PASS=ci BETTER_AUTH_SECRET=ci-guest-resume-secret-0123456789abcdef BETTER_AUTH_URL=http://localhost:3000 npm run test:guest-upgrade
           npm run test:legal-db
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test

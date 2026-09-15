@@ -17,8 +17,11 @@ import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 import { captchaPlugins } from "@/lib/auth/captcha";
 import { anonymous, twoFactor } from "better-auth/plugins";
-import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
+import { GUEST_EMAIL_DOMAIN, isGuestEmail } from "@/lib/auth/guest-email";
 import { guestResume } from "@/lib/auth/guest-resume";
+import { guestUpgrade } from "@/lib/auth/guest-upgrade";
+import { setSessionCookie } from "better-auth/cookies";
+import { eq } from "drizzle-orm";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
@@ -221,6 +224,17 @@ export const auth = betterAuth({
      * webde hem mobilde bir dokunuş uzakta.
      */
     expiresIn: 30 * 60,
+    /**
+     * YERİNDE YÜKSELTİLEN MİSAFİR doğrulanınca hesap oluyor (bkz.
+     * lib/auth/guest-upgrade): e-posta ve parola bağlandığı an misafir
+     * kalmıştı, bayrak burada iniyor. Misafirin kendi `.invalid` adresine
+     * doğrulama gidemediği için başka bir misafir bu yola düşmüyor.
+     */
+    afterEmailVerification: async (u) => {
+      if ((u as { isAnonymous?: boolean | null }).isAnonymous === true && !isGuestEmail(u.email)) {
+        await db.update(user).set({ isAnonymous: false }).where(eq(user.id, u.id));
+      }
+    },
     sendVerificationEmail: async ({ user: u, url }) => {
       // Kayıt anında profil henüz yok; dilin tek güvenilir kaynağı istek.
       const { subject, html, text } = verificationEmail(url, await getLang());
@@ -427,6 +441,8 @@ export const auth = betterAuth({
       /* Misafir oturumunu jetonla geri kurma (lib/auth/guest-resume): jeton
          32 karakter rastgele, yine de tahmin denemesine karşı IP başına tavan. */
       "/guest/resume": { window: 3600, max: 20 },
+      /* Misafiri yerinde hesaba çevirme: kayıtla aynı iş, kayıtla aynı sıkılık. */
+      "/guest/upgrade": { window: 60, max: 5 },
     },
   },
   advanced: {
@@ -498,6 +514,8 @@ export const auth = betterAuth({
     /* Çerezini kaybeden misafir kimliğine döner (2FA'dan vazgeçilen giriş
        denemesi); ayrıntı lib/auth/guest-resume. */
     guestResume(),
+    /* E-postayla hesap açan misafir kopyalanmadan yerinde hesap oluyor (lib/auth/guest-upgrade). */
+    guestUpgrade(),
     /**
      * İKİ ADIMLI DOĞRULAMA — isteğe bağlı, e-posta koduyla.
      *
@@ -575,7 +593,7 @@ export const auth = betterAuth({
         return;
       }
 
-      const GUARDED = ["/sign-up/email", "/reset-password", "/change-password", "/set-password"];
+      const GUARDED = ["/sign-up/email", "/guest/upgrade", "/reset-password", "/change-password", "/set-password"];
       if (!GUARDED.includes(ctx.path)) return;
       const body = (ctx.body ?? {}) as { password?: unknown; newPassword?: unknown; email?: unknown; name?: unknown };
       const password = typeof body.password === "string" ? body.password : typeof body.newPassword === "string" ? body.newPassword : "";
@@ -617,6 +635,21 @@ export const auth = betterAuth({
      * koduna bakmaktan sağlam, çünkü kancaya durum kodu gelmiyor.
      */
     after: createAuthMiddleware(async (ctx) => {
+      /*
+        DOĞRULANAN MİSAFİRİN ÇEREZİ TAZELENİYOR. `/verify-email` oturumu
+        doğrulamadan ÖNCE okunan kullanıcıyla yazıyor; çerezdeki kullanıcı
+        önbelleği (60 sn) "misafir" diye kalıyor ve web o süre boyunca yeni
+        hesabı /login'e yolluyordu. Bayrak `afterEmailVerification`da indi;
+        oturum burada taze kullanıcıyla yeniden yazılıyor.
+      */
+      if (ctx.path === "/verify-email") {
+        const fresh = ctx.context.newSession;
+        if (fresh && (fresh.user as { isAnonymous?: boolean | null }).isAnonymous === true) {
+          const now = await ctx.context.internalAdapter.findUserById(fresh.user.id);
+          if (now && (now as { isAnonymous?: boolean | null }).isAnonymous !== true) await setSessionCookie(ctx, { session: fresh.session, user: now });
+        }
+        return;
+      }
       if (ctx.path !== "/sign-in/email") return;
       const email = (ctx.body as { email?: unknown } | undefined)?.email;
       if (typeof email !== "string" || !email) return;

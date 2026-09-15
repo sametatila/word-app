@@ -60,7 +60,7 @@ export function captchaPlugins() {
     captcha({
       provider: "cloudflare-turnstile",
       secretKey,
-      endpoints: ["/sign-up/email", "/sign-in/email", "/request-password-reset"],
+      endpoints: ["/sign-up/email", "/guest/upgrade", "/sign-in/email", "/request-password-reset"],
     }),
   ];
 }

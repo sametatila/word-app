@@ -57,6 +57,7 @@
     "test:push-sql": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-push-sql.ts",
     "test:guest-merge": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-guest-merge.ts",
     "test:guest-resume": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-guest-resume.ts",
+    "test:guest-upgrade": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-guest-upgrade.ts",
     "test:push-endpoint": "tsx scripts/test-push-endpoint.ts",
     "test:prompt-fence": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-prompt-fence.ts",
     "test:legacy-redirects": "tsx scripts/test-legacy-redirects.ts",
