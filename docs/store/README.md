@@ -68,11 +68,13 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 - **iOS kareleri iOS'tan alınır.** Android karesini App Store'a yüklemek 2.3.3 ihlalidir;
   `--store ios` yalnız yerleşim provası için.
 
-## Altyazı değişikliği (2026-09-14) — kareler yeniden üretilmeli
+## Altyazı değişikliği (2026-09-14)
 
 Mağaza ön inceleme raporu (B25, B26; ücretsiz/Premium ayrımı için B21) üzerine beş altyazı
-değişti. `play/` altındaki üretilmiş kareler **eski altyazıyı taşıyor**; yüklemeden önce üç
-set de yeniden üretilmeli (ham görüntüler değişmedi, yeni çekim gerekmiyor):
+değişti. `play/` depoda değil, her makinede yerelde üretiliyor: bu tarihten önce üretilmiş
+kareler eski altyazıyı taşır ve yüklemeden önce üç set de yeniden üretilmeli (ham görüntüler
+değişmedi, yeni çekim gerekmiyor). Komut 2026-09-15'te koşuldu: yalnız bu beş kare değişti,
+farkı yalnız altyazı bölgesinde; öteki on üç kare önceki üretimle bayt bayt aynı çıktı.
 
 | Set | Kare | Eski | Yeni | Sebep |
 |---|---|---|---|---|
