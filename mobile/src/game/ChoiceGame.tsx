@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
+import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -71,7 +72,7 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
         ]}
       >
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{round.prompt}</Text>
-        <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{round.question}</Text>
+        <Text variant="display" {...promptFit(round.question)} style={{ marginTop: spacing.sm, textAlign: "center" }}>{round.question}</Text>
         <View style={{ marginTop: spacing.sm }}><SpeakButton text={round.question} size={22} /></View>
       </View>
 

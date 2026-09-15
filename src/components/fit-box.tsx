@@ -41,6 +41,12 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
  * ortalanmışken doğru sonuç veriyor; alanı dolduran kutu ortalanmıyor. Bu
  * yüzden küçültme devredeyken hizalama da başa alınıyor. İki durumda da sonuç
  * aynı: küçültülmüş içerik alanın tam üstünden başlayıp tam altında bitiyor.
+ *
+ * KAYDIRMADA DA HİZALAMA BAŞTA. Kaydırmaya geçildiğinde küçültme 1'e dönüyor
+ * ve eskiden hizalama da "ortala"ya dönüyordu. Alanından uzun, ortalanmış bir
+ * esnek çocuk HEM üstten HEM alttan taşar ve üstten taşan kısım kaydırılarak
+ * geri getirilemez: küçük telefonda soru kartındaki kelime tepeden kesik
+ * kalıyordu. Taşan içerik baştan başlamak zorunda.
  */
 export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: number }) {
   const outer = useRef<HTMLDivElement>(null);
@@ -95,7 +101,7 @@ export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: nu
       ref={outer}
       className={`flex min-h-0 flex-1 flex-col ${
         scrolls ? "overflow-y-auto overscroll-contain" : "overflow-hidden"
-      } ${scale < 1 ? "justify-start" : "justify-center"}`}
+      } ${scale < 1 || scrolls ? "justify-start" : "justify-center"}`}
     >
       <div
         ref={inner}

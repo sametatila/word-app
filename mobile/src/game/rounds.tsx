@@ -15,6 +15,7 @@ import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { Animated, Keyboard, PanResponder, Platform, ScrollView, TextInput, useWindowDimensions, View } from "react-native";
 import { Text } from "../ui/Text";
+import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
@@ -483,7 +484,7 @@ function Prompt({ label, big, sub, meta, speakText, colors }: { label: string; b
   return (
     <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
-      <Text variant={promptVariant(big)} style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
+      <Text variant={promptVariant(big)} {...promptFit(big)} style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
       {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
       {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{sub}</Text> : null}
       {meta ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
@@ -653,7 +654,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.correct")}</Text>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm }}>
-          <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+          <Text variant="display" {...promptFit(withArtikel(word))} style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
           <SpeakButton text={withArtikel(word)} colors={colors} size={22} />
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginVertical: spacing.md }}>
@@ -1345,7 +1346,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
           </PressableScale>
         ) : (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.sm }}>
-            <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+            <Text variant="display" {...promptFit(withArtikel(word))} style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
             <SpeakButton text={withArtikel(word)} colors={colors} size={24} />
           </View>
         )}

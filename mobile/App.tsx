@@ -30,6 +30,7 @@ import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
 import { ErrorBoundary } from "./src/ui/ErrorBoundary";
 import { NavBarBackdrop } from "./src/ui/NavBarBackdrop";
+import { FontMetricsProbe } from "./src/ui/fontFit";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -300,6 +301,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
+        <FontMetricsProbe />
         {/* KÖK ÇÖKME SINIRI — gezginin kendisi ya da oturum sağlayıcısı
             patlarsa. Ekran başına sınır bir düzey altta, `ContentColumn`
             içindeki `screenLayout`larda; bu ikili web'in iki `error.tsx`

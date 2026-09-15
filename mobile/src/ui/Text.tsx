@@ -1,17 +1,19 @@
 import React from "react";
 import { PixelRatio, Text as RNText, type TextProps } from "react-native";
 import { useTheme, typography, lineHeightRatio } from "../theme";
+import { useMinLineRatio } from "./fontFit";
 
 type Variant = keyof typeof typography;
 
-/** Satır kutusunun en düşük oranı — gerekçe aşağıda (Android kırpması). */
-const MIN_LINE_RATIO = 1.25;
 /**
  * Sistem yazı ölçeği korunur (erişilebilirlik) ama 1.5 katla sınırlanır: 2x'te
  * sabit yükseklikli tur kartları kırpılıyordu. Gerektiğinde prop ile aşılabilir.
  */
 export function Text({ variant = "body", color, style, maxFontSizeMultiplier = 1.5, ...rest }: TextProps & { variant?: Variant; color?: string }) {
   const { colors } = useTheme();
+  /* Satır kutusunun en düşük oranı — gerekçe aşağıda (Android kırpması);
+     cihazın yazı tipinden ölçülüyor, bkz. `fontFit`. */
+  const minLineRatio = useMinLineRatio();
   /*
    * SATIR YÜKSEKLİĞİ ÖLÇEKTEN, ÇAĞRI YERİNDEN DEĞİL.
    *
@@ -40,9 +42,10 @@ export function Text({ variant = "body", color, style, maxFontSizeMultiplier = 1
    * kelime listesi, hepsinde.
    *
    * Oran tablosuna DOKUNULMUYOR (web `--text-*--line-height` ile birebir
-   * aynı kalmalı); taban yalnız çizim anında uygulanıyor.
+   * aynı kalmalı); taban yalnız çizim anında uygulanıyor. Taban 1,25 Roboto
+   * içindi; üretici yazı tipi daha uzunsa `fontFit` onu ölçüp büyütüyor.
    */
-  const satir = Math.round(punto * Math.max(lineHeightRatio[variant], MIN_LINE_RATIO) * 10) / 10;
+  const satir = Math.round(punto * Math.max(lineHeightRatio[variant], minLineRatio) * 10) / 10;
   return (
     <RNText
       maxFontSizeMultiplier={maxFontSizeMultiplier}

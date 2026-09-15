@@ -121,7 +121,9 @@ export function GameShell({
           boşluktan anlaşılıyordu. */}
       <div className="card px-4 py-6 text-center">
         <span className="muted text-micro uppercase tracking-eyebrow">{label}</span>
-        {prompt ? <div className="mt-1.5 text-h3 sm:text-h2">{prompt}</div> : null}
+        {/* `break-words`: dar ekranda tek uzun kelime ("Anrufbeantworter") kartın
+            dışına taşıp yandan kesiliyordu; artık sarılıyor. */}
+        {prompt ? <div className="mt-1.5 break-words text-h3 sm:text-h2">{prompt}</div> : null}
         {hint ? <div className="muted mt-1 text-body">{hint}</div> : null}
       </div>
 
