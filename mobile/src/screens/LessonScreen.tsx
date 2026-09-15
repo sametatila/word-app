@@ -15,6 +15,7 @@ import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
@@ -1225,6 +1226,8 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
         {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("lessonp.i_can")} ${cando.join(" · ")}`} /> : null}
+        {/* Misafirin ilk tamamlanan dersi: kaybedecek bir şeyi olduğu ilk an. */}
+        <GuestMilestoneCard milestone="first_lesson" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("lessonp.no_corrections")} /> : null}
 
         {lesson.patterns?.length ? (

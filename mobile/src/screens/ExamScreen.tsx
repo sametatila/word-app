@@ -27,6 +27,7 @@ import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { useAuth } from "../lib/AuthContext";
+import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -601,6 +602,8 @@ export function ExamScreen() {
           ]} />
         ) : null}
         {result?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+        {/* Misafir sınavı geçti: sonuç ve sertifika misafir kimliğinde duruyor. */}
+        <GuestMilestoneCard milestone="exam_passed" when={Boolean(result?.passed && !result.trial)} />
         {result && !certificate ? <FlowNote icon={<TargetIcon color={colors.textMuted} size={16} />} text={t("exam.weak_section_hint")} /> : null}
         {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
 

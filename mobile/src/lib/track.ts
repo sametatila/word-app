@@ -57,6 +57,12 @@ export type EventName =
      mobilde vardı ama tur özetinden girilemiyordu; şimdi iki kapı da var ve
      ikisi de sayılıyor. */
   | "challenge_play"
+  /* Misafirden hesaba huni — web `lib/events` ile aynı üç ad: açıldı,
+     kilometre taşında çağrı gösterildi (kind = taş), hesaba geçti
+     (kind = moved|merged). */
+  | "guest_start"
+  | "guest_nudge"
+  | "guest_upgrade"
   /* Hangi ayar değişti (web `lib/events` ile aynı kind tablosu):
      name · daily_goal · new_per_day · level · course · voice · theme · lang ·
      remind_daily · remind_streak · remind_weekly. Sayısal ayarlarda value yeni

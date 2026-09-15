@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon } from "../ui/icons";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
 import { MascotFx } from "../ui/MascotFx";
@@ -538,6 +539,8 @@ export function GameScreen() {
           <FlowNote tone={wagerResult > 0 ? "ok" : wagerResult < 0 ? "warn" : "neutral"} icon={<BoltIcon color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} size={16} />} text={wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")} />
         ) : null}
         {repaired !== null ? <FlowNote tone="warn" icon={<FlameIcon color={colors.streakText} size={16} />} text={`${t("game.streak_saved")} · ${t("game.streak_saved_sub", { n: repaired })}`} /> : null}
+        {/* Misafirin serisi üç güne çıktı: kaybedilecek alışkanlık artık var. */}
+        <GuestMilestoneCard milestone="streak_3" when={(result?.currentStreak ?? 0) >= 3} />
         {/* Bu bir UYARI, hata değil — tur oynandı, yalnız kaydı bekliyor. */}
         {saveWarning ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")} /> : null}
 

@@ -4461,6 +4461,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "notif_prime", //   bildirim izni ONCESI hazirlik ekrani; webin karsiligi tarayici istemi (`push_optin`)
     "purchase_done", // satin alma yalniz magazada (Play/RevenueCat)
     "purchase_start",
+    "guest_start", //   misafir kimligi yalniz mobilde (web misafiri /login'e yolluyor)
+    "guest_nudge",
+    "guest_upgrade",
   ];
   /* Iki muafiyet de kendini denetliyor: (1) `notif_prime` bir CIFTIN yarisi -
      webin ucu (`push_optin`) susarsa gerekce kalmaz; (2) satin alma webe
@@ -4469,7 +4472,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const webdeOdeme = /createCheckout|stripe\.|\/api\/premium\/checkout/.test(
     ["src/app/(app)/premium/page.tsx", "src/components/premium-paywall.tsx"].map((f) => strip(read(f))).join("\n"),
   );
-  const kayitli = MOB_OZEL.filter((n) => (n === "notif_prime" ? cift : !webdeOdeme));
+  const misafirMobilde = existsSync("mobile/src/lib/guest.ts");
+  const kayitli = MOB_OZEL.filter((n) => (n === "notif_prime" ? cift : n.startsWith("guest_") ? misafirMobilde : !webdeOdeme));
   const eksik = [...mob].filter((n) => !web.has(n)).sort();
   sameSet("olcum paritesi (yalniz mobil istemcisinde)", eksik, kayitli.sort(), "bulunan", "kayitli");
 }
@@ -11445,6 +11449,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["notif_prime", ["mobil", "hatirlatma izni ekrani yalniz mobilde var", () => existsSync(new URL("../mobile/src/screens/NotifPrimeScreen.tsx", import.meta.url))]],
       ["purchase_start", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],
       ["purchase_done", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],
+      /* Misafir kimligi yalniz mobilde: web misafir oturumunu /login'e yolluyor. */
+      ["guest_start", ["mobil", "misafir modu yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/guest.ts", import.meta.url))]],
+      ["guest_nudge", ["mobil", "misafir modu yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/guest.ts", import.meta.url))]],
+      ["guest_upgrade", ["mobil", "misafir modu yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/guest.ts", import.meta.url))]],
     ]);
 
     const tekTarafli = [];

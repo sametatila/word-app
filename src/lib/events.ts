@@ -233,6 +233,16 @@ export const EVENT_NAMES = [
   "block_user", // kullanıcı engellendi
   "social_settings", // kullanıcı adı/görünürlük değişti (kind = alan)
   "league_up", // bir üst lige yükseldi (value = yeni lig, kind = lig slug'ı)
+  /*
+    Misafirden hesaba huni (yalnız mobil): misafir açıldı → kilometre taşında
+    hesap çağrısı gösterildi (kind = first_lesson|streak_3|exam_passed) →
+    misafir hesaba geçti (kind = moved: yeni hesaba taşındı | merged: var olan
+    hesapla birleşti). "Misafirlerin kaçı hesap açıyor, hangi taştan sonra"
+    sorusu ancak buradan cevaplanır.
+  */
+  "guest_start", // "Hesapsız devam et" ile misafir kimliği açıldı
+  "guest_nudge", // misafire kilometre taşında hesap çağrısı gösterildi (kind = taş)
+  "guest_upgrade", // misafir hesaba geçti (kind = moved|merged)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useRef, useSt
 import { AppState } from "react-native";
 import { forgetAccountScoped } from "./accountScope";
 import { api } from "../api/client";
+import { track } from "./track";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { claimGuest, clearGuestRecord, deleteGuestData, loadGuestRecord, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
@@ -129,6 +130,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const out = await claimGuest(rec, u.id);
     if (out.kind !== "merged") return;
     setClaimNotice(out.hadProgress ? "merged" : "moved");
+    track("guest_upgrade", 0, out.hadProgress ? "merged" : "moved");
     const ad = gercekAd(u);
     if (!ad) return;
     const adsiz = yeniHesap && !out.hadProgress
@@ -368,6 +370,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!r.ok) return r;
     provisional.current = false;
     setGuestGone(false);
+    track("guest_start");
     const u = (await getSession()) ?? provisionalGuest(r.record.id);
     setUser(u);
     await adoptAccount(u, true);
