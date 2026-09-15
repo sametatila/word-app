@@ -110,9 +110,17 @@ export async function signIn(email: string, password: string, captchaToken?: str
   }
 }
 
-export async function signUp(name: string, email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
+export async function signUp(name: string, email: string, password: string, captchaToken?: string | null, guest = false): Promise<AuthOutcome> {
+  const body = { email, password, name: name.trim() || email.split("@")[0] };
   try {
-    return await parse(await post("sign-up/email", { email, password, name: name.trim() || email.split("@")[0] }, captchaToken));
+    /* MİSAFİR YERİNDE HESAP OLUYOR (sunucu lib/auth/guest-upgrade): kimlik aynı
+       kalıyor, satır taşınmıyor; yanıt kayıtla aynı biçimde. Uç henüz yayında
+       değilse (404) eski yol: yeni hesap ve birleştirme. */
+    if (guest) {
+      const res = await post("guest/upgrade", body, captchaToken);
+      if (res.status !== 404) return await parse(res);
+    }
+    return await parse(await post("sign-up/email", body, captchaToken));
   } catch {
     return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }

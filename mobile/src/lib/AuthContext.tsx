@@ -110,6 +110,9 @@ function provisionalGuest(id: string): AuthUser {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
+  /** Geri çağrıların güncel kullanıcıyı görmesi için (bağımlılık listesini büyütmeden). */
+  const userRef = useRef<AuthUser | null>(null);
+  userRef.current = user;
   const [loading, setLoading] = useState(true);
   const [claimNotice, setClaimNotice] = useState<ClaimNotice | null>(null);
   const [guestGone, setGuestGone] = useState(false);
@@ -151,7 +154,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const claimPendingGuest = useCallback(async (u: AuthUser, yeniHesap: boolean, canAsk = true) => {
     if (u.guest) return;
     const rec = await loadGuestRecord();
-    if (!rec || rec.id === u.id) return;
+    if (!rec) return;
     const afterMerge = async (hadProgress: boolean) => {
       setClaimNotice(hadProgress ? "merged" : "moved");
       track("guest_upgrade", 0, hadProgress ? "merged" : "moved");
@@ -162,6 +165,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         : await api<{ name?: string | null }>("/api/me").then((m) => !m?.name?.trim()).catch(() => false);
       if (adsiz) await updateProfile({ displayName: ad });
     };
+    /* YERİNDE YÜKSELDİ: kayıtlı misafir bu hesabın KENDİSİ (e-postayla hesap
+       açtı, doğrulandı ya da doğrulamasız açıldı). Birleştirilecek bir şey
+       yok; kayıt kalkıyor, not ve ölçüm birleşmeyle aynı. */
+    if (rec.id === u.id) {
+      await clearGuestRecord();
+      setClaimNotice("moved");
+      track("guest_upgrade", 0, "upgraded");
+      const ad = gercekAd(u);
+      if (ad) {
+        const adsiz = await api<{ name?: string | null }>("/api/me").then((m) => !m?.name?.trim()).catch(() => false);
+        if (adsiz) await updateProfile({ displayName: ad });
+      }
+      return;
+    }
     // Hesaba sabitlenmiş kayıt: karar zaten verilmiş, yarım kalan birleşme sürüyor.
     if (!rec.for && !yeniHesap) {
       const p = await previewGuestClaim(rec);
@@ -348,7 +365,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * cihazda kalıyor, kullanıcı doğrulayıp girince devrediliyor.
    */
   const signUp = useCallback(async (name: string, email: string, password: string, captchaToken?: string | null) => {
-    const r = await apiSignUp(name, email, password, captchaToken);
+    const r = await apiSignUp(name, email, password, captchaToken, Boolean(userRef.current?.guest));
     if (r.ok && r.session) {
       const u = r.user ?? (await getSession());
       if (u) await claimPendingGuest(u, true);

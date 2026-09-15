@@ -59,7 +59,7 @@ export type EventName =
   | "challenge_play"
   /* Misafirden hesaba huni — web `lib/events` ile aynı üç ad: açıldı,
      kilometre taşında çağrı gösterildi (kind = taş), hesaba geçti
-     (kind = moved|merged|discarded). */
+     (kind = moved|merged|discarded|upgraded). */
   | "guest_start"
   | "guest_nudge"
   | "guest_upgrade"
