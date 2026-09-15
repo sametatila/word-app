@@ -70,6 +70,7 @@ export const trBase: Record<string, string> = {
   "guest.daily_result": "Puanın günün sıralamasına girmedi: sıralama hesap ister. Hesap oluşturunca misafir ilerlemen hesabına taşınır.",
   "guest.mock_ai_part": "Bu bölümü yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak cevabını bölüm sonunda örnek cevapla karşılaştırırsın.",
   "guest.mock_ai_task": "Yapay zekâ değerlendirmesi hesap ister; örnek cevap bölüm sonunda.",
+  "guest.exam_writing": "Yazma bölümünü yapay zekâ puanlıyor ve bu hesap ister. Misafir olarak bu bölüm kelime sayısından tahminle puanlanır.",
   "lessonp.chat_off_account": "Yapay zekâyla serbest konuşma hesap istiyor; bu derste senaryolu konuşmayla devam ediyorsun.",
   "auth.your_email_address": "E-postana",
   "auth.enter_your_email_and_we_ll_send": "E-postanı gir, sıfırlama bağlantısı gönderelim.",

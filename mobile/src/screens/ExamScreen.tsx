@@ -26,6 +26,7 @@ import { currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
+import { useAuth } from "../lib/AuthContext";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -154,6 +155,7 @@ const SPEAK_MAX_MS = 12000;
 
 export function ExamScreen() {
   const { colors } = useTheme();
+  const guest = Boolean(useAuth().user?.guest);
   const insets = useSafeAreaInsets();
   const nav = useNavigation<any>();
   const route = useRoute<RouteProp<RootStackParams, "Exam">>();
@@ -496,6 +498,9 @@ export function ExamScreen() {
           rules={rules}
         >
           {cover?.trial ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("exam.trial_notice")} /> : null}
+          {/* MİSAFİR: yazma bölümünü yapay zekâ puanlıyor ve bu hesap istiyor;
+              misafirde bölüm kelime sayısından tahminle puanlanıyor. */}
+          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.exam_writing")} /> : null}
           {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
               çiftler, ne oldukları söylenmeden duruyordu. */}
           {cover?.focus.length ? (
@@ -873,7 +878,7 @@ function SectionBody({
 
   const w = paper.sections.writing[0];
   return <Write w={w} level={paper.level} colors={colors} pad={pad}
-    onDone={(ok, sc) => { onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
+    onDone={(ok, sc) => { if (sc !== null) onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
 }
 
 /**
@@ -1158,7 +1163,8 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
   );
 }
 
-function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
+function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number | null) => void }) {
+  const guest = Boolean(useAuth().user?.guest);
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
   const [score, setScore] = useState<number | null>(null);
@@ -1170,6 +1176,13 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
 
   async function evaluate() {
     if (busy || wordCount < MIN_ASSESS_WORDS) return;
+    /* MİSAFİR: uç 403 account_required dönecekti; istek atılmadan hesap
+       cümlesi ve ağ yokkenki tahminle aynı yedek (bkz. aşağıdaki catch). */
+    if (guest) {
+      setGateNote(`${t("assess.fail_account")} ${t("assess.estimate_only")}`);
+      setScore(wordCount >= w.task.minWords ? 70 : 40);
+      return;
+    }
     setBusy(true);
     try {
       const d = await api<{ result: AssessmentResult }>("/api/assess", {
@@ -1235,9 +1248,17 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
             (kelime mi, karakter mi) hiçbir yerde geçmiyordu. */}
         <Text variant="caption" color={colors.textMuted}>{t("exam.word_count", { n: wordCount, min: w.task.minWords })}</Text>
         {gateNote ? (
-          // Kapı notu puanın YERİNE geçiyor: sahte bir yüzde göstermek,
-          // değerlendirmenin yapıldığını sanmaya yol açardı.
-          <Text variant="caption" color={colors.textMuted}>{gateNote}</Text>
+          /* Kapı notu puanın YERİNE geçiyor: sahte bir yüzde göstermek,
+             değerlendirmenin yapıldığını sanmaya yol açardı. BİTİR DÜĞMESİ
+             YİNE VAR: yalnız not çiziliyordu ve sınav bu bölümde kilitli
+             kalıyordu — misafirde her seferinde, ücretsiz katmanda hak
+             bitince, ağ yokken. Tahmin varsa o, yoksa bölüm puansız gidiyor. */
+          <>
+            <Text variant="caption" color={colors.textMuted}>{gateNote}</Text>
+            <PressableScale onPress={() => onDone(score !== null && score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
+            </PressableScale>
+          </>
         ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>

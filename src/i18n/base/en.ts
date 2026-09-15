@@ -70,6 +70,7 @@ export const enBase: Record<string, string> = {
   "guest.daily_result": "Your score isn't on today's ranking: the ranking needs an account. Create one and your guest progress moves with you.",
   "guest.mock_ai_part": "The AI scores this part, and that needs an account. As a guest you compare your answer with the model answer at the end.",
   "guest.mock_ai_task": "AI scoring needs an account; the model answer comes at the end of the part.",
+  "guest.exam_writing": "The AI scores the writing section, and that needs an account. As a guest this section gets an estimate from your word count.",
   "lessonp.chat_off_account": "Free conversation with the AI needs an account; in this lesson you continue with a scripted conversation.",
   "auth.your_email_address": "your email address",
   "auth.enter_your_email_and_we_ll_send": "Enter your email and we'll send you a reset link.",
