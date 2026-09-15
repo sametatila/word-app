@@ -1,6 +1,6 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
-import { rateFor, type VoiceId } from "./voices";
+import { rateFor, type Pace, type VoiceId } from "./voices";
 import { buildSsml } from "./ssml";
 
 /**
@@ -131,7 +131,7 @@ export function cleanForSpeech(text: string): string {
  * Metnin sadeleştirilmesi burada değil `synth.ts`'te yapılıyor: iki sentez
  * yolu da aynı metni almalı, yoksa yedeğe düşünce önbellek anahtarı tutmaz.
  */
-export async function synthesizeEdge(clean: string, voice: VoiceId, slow = false): Promise<Buffer> {
+export async function synthesizeEdge(clean: string, voice: VoiceId, slow: Pace | boolean = false): Promise<Buffer> {
   return connectAndSynthesize(clean, voice, browserVersion(), slow);
 }
 
@@ -139,7 +139,7 @@ function connectAndSynthesize(
   clean: string,
   voice: VoiceId,
   version: number,
-  slow: boolean,
+  slow: Pace | boolean,
 ): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     // Yerleşik WebSocket (undici) `headers` seçeneğini kabul ediyor; uç

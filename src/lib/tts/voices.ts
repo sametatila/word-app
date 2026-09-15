@@ -180,9 +180,30 @@ export function resolveVoice(course: string, voice: string | null | undefined): 
  * heceleri ayırt etmek, sonra normal hızda tekrarlamak. Bu yüzden iki
  * seçenek var, sürekli bir hız ayarı değil — ikisi de ayrı birer önbellek
  * girdisi ve seçenek sayısı arttıkça önbellek isabeti düşerdi.
+ *
+ * DİNLEME METNİ İÇİN İKİ KADEME DAHA (`listen`, `listenSlow`). Dinleme
+ * alıştırmasında bir cümle değil bir diyalog dinleniyor ve kelime turunun
+ * −%8'i orada "aşırı hızlı" duyuldu; yavaş düğmesi de mobilde hiçbir şey
+ * değiştirmiyordu. Önbellek maliyeti sınırlı: bu metinler yalnız dinleme
+ * alıştırmasında geçiyor, kelime turunun girdileri bölünmüyor.
  */
-export function rateFor(voice: VoiceId, slow = false): string {
-  if (slow) return voice.startsWith("de-CH") ? "-40%" : "-35%";
+export type Pace = "normal" | "slow" | "listen" | "listenSlow";
+
+/** URL'deki `r` değeri ↔ hız. Serbest değer yok: her değer ayrı önbellek girdisi. */
+export const PACE_PARAM: Record<Exclude<Pace, "normal">, string> = { slow: "slow", listen: "listen", listenSlow: "listen-slow" };
+
+export function paceFromParam(r: string | null): Pace {
+  const hit = (Object.keys(PACE_PARAM) as Exclude<Pace, "normal">[]).find((k) => PACE_PARAM[k] === r);
+  return hit ?? "normal";
+}
+
+/** Okuma hızı (SSML `rate`). */
+export function rateFor(voice: VoiceId, pace: Pace | boolean = "normal"): string {
+  const p: Pace = pace === true ? "slow" : pace === false ? "normal" : pace;
+  const ch = voice.startsWith("de-CH");
+  if (p === "listenSlow") return ch ? "-50%" : "-45%";
+  if (p === "listen") return ch ? "-25%" : "-20%";
+  if (p === "slow") return ch ? "-40%" : "-35%";
   // Türkçe anlatım yavaşlatılmıyor: öğrencinin ana dili, anlaşılırlık sorunu yok.
   if (voice.startsWith("tr-")) return "+0%";
   return voice.startsWith("de-CH") ? "-12%" : "-8%";

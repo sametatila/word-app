@@ -1,31 +1,24 @@
 "use client";
 
-import { stopSpeaking } from "@/components/speak-button";
-import { localeOf, useTargetLang } from "./player-context";
+import { speakGerman, stopSpeaking } from "@/components/speak-button";
+import { useTargetLang } from "./player-context";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import type { CefrLevel, ListeningExercise } from "@/lib/skills/types";
+import type { ListeningExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
 import { SpeakerIcon, XIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
-/** Seviye yükseldikçe konuşma doğal hıza yaklaşır. */
-const BASE_RATE: Record<CefrLevel, number> = {
-  A1: 0.85,
-  A2: 0.88,
-  B1: 0.92,
-  B2: 0.96,
-  C1: 1,
-};
-
-/** Konuşmacıları ton farkıyla ayırt etmek için perde değerleri. */
-const PITCHES = [1, 1.16, 0.88, 1.3];
-
 /**
- * Dinleme egzersizi: metin cihazın Almanca konuşma sentezi ile seslendirilir —
- * çevrimdışı da çalışır, ek ses dosyası gerekmez. Konuşmacılar farklı perdeyle
- * ayrışır; istenirse yavaş mod ve (önce dinlemeyi teşvik eden) metin açma vardır.
+ * Dinleme egzersizi.
+ *
+ * SES KULLANICININ SEÇTİĞİ SES. Metin eskiden tarayıcının kendi sentezine
+ * (`speechSynthesis`) veriliyordu: Ayarlar'da Katja ya da Conrad seçmiş
+ * kullanıcı burada cihazın rastgele Almanca sesini duyuyordu, hız da seviye
+ * tablosundan geliyordu. Uygulamanın geri kalanı gibi artık `speakGerman`
+ * (nöral ses, profil sesi; yalnız ağ yoksa tarayıcıya düşer) ve dinlemeye
+ * ayrılmış hız kademesi (`listen` / `listenSlow`, bkz. `rateFor`).
  */
 export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExercise; backHref?: string }) {
   const t = useT();
@@ -33,49 +26,33 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
   const [round, setRound] = useState(0);
+  /* Nöral ses her tarayıcıda çalıyor, tarayıcı sentezi yalnız yedek; "ses yok"
+     durumu artık yalnız ses öğesi de sentez de olmayan ortamda kalıyor. */
   const [available, setAvailable] = useState<boolean | null>(null);
+  /** Oynatma koşusunun kimliği — durdurulan koşunun geç gelen bitişi yok sayılır. */
+  const runRef = useRef(0);
   const [playing, setPlaying] = useState(false);
   const [segIdx, setSegIdx] = useState(-1);
   const [playCount, setPlayCount] = useState(0);
   const [slow, setSlow] = useState(false);
   const [showText, setShowText] = useState(false);
 
-  const speakers = [...new Set(exercise.segments.map((s) => s.speaker ?? ""))];
   // Gerçek kayıt (statik ses dosyası) varsa TTS yerine o çalınır.
   const hasAudio = exercise.segments.some((s) => s.audio);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const ok = typeof window !== "undefined" && "speechSynthesis" in window;
+    const ok = typeof window !== "undefined" && ("Audio" in window || "speechSynthesis" in window);
     setAvailable(ok);
-    if (!ok) {
-      if (!hasAudio) setShowText(true); // hiç ses yoksa egzersiz okumaya dönüşür
-      return;
-    }
-    // Ses listesi tembel yüklenir; şimdiden iste ki ilk çalmada doğru ses hazır olsun.
-    const synth = window.speechSynthesis;
-    synth.getVoices();
-    const warm = () => synth.getVoices();
-    synth.addEventListener?.("voiceschanged", warm);
+    if (!ok && !hasAudio) setShowText(true); // hiç ses yoksa egzersiz okumaya dönüşür
+    // Jeton bir DOM düğümü değil, sayaç: temizlikte güncel değeri artırmak doğru.
+    const runs = runRef;
     return () => {
-      synth.removeEventListener?.("voiceschanged", warm);
-      synth.cancel();
+      runs.current++;
+      stopSpeaking();
       audioRef.current?.pause();
     };
   }, [hasAudio]);
-
-  function makeUtterance(text: string, speaker: string | undefined, slowNow: boolean) {
-    const synth = window.speechSynthesis;
-    const u = new SpeechSynthesisUtterance(text);
-    // Hedef dile göre yerel: İngilizce kütüphane egzersizi Almanca sesle
-    // okunmasın. Çerçeve bağlamı rota sayfasından geliyor.
-    u.lang = localeOf(lang);
-    const voice = synth.getVoices().find((v) => v.lang.startsWith(lang)) ?? null;
-    if (voice) u.voice = voice;
-    u.rate = BASE_RATE[exercise.level] * (slowNow ? 0.78 : 1);
-    u.pitch = PITCHES[speakers.indexOf(speaker ?? "") % PITCHES.length];
-    return u;
-  }
 
   function stop() {
     /*
@@ -87,8 +64,8 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       sesi onun ÜSTÜNE biniyor ve iki ses aynı anda duyuluyor. Kullanıcının
       "yankılı" dediği şey bu.
     */
+    runRef.current++;
     stopSpeaking();
-    window.speechSynthesis?.cancel();
     if (audioRef.current) {
       audioRef.current.onended = null;
       audioRef.current.pause();
@@ -140,21 +117,19 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       playAudioFrom(0, slowNow);
       return;
     }
-    const synth = window.speechSynthesis;
     stop();
+    const run = runRef.current;
     setPlaying(true);
-    exercise.segments.forEach((seg, i) => {
-      const u = makeUtterance(seg.text, seg.speaker, slowNow);
-      u.onstart = () => setSegIdx(i);
-      if (i === exercise.segments.length - 1) {
-        u.onend = () => endOfRun();
+    const next = (i: number) => {
+      if (run !== runRef.current) return;
+      if (i >= exercise.segments.length) {
+        endOfRun();
+        return;
       }
-      u.onerror = () => {
-        setPlaying(false);
-        setSegIdx(-1);
-      };
-      synth.speak(u);
-    });
+      setSegIdx(i);
+      speakGerman(exercise.segments[i].text, () => next(i + 1), slowNow ? "listenSlow" : "listen");
+    };
+    next(0);
   }
 
   /** Transkript satırına dokununca yalnızca o bölümü tekrar dinlet. */
@@ -164,21 +139,15 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       return;
     }
     if (available === false) return;
-    const synth = window.speechSynthesis;
     stop();
+    const run = runRef.current;
     setPlaying(true);
     setSegIdx(i);
-    const seg = exercise.segments[i];
-    const u = makeUtterance(seg.text, seg.speaker, slow);
-    u.onend = () => {
+    speakGerman(exercise.segments[i].text, () => {
+      if (run !== runRef.current) return;
       setPlaying(false);
       setSegIdx(-1);
-    };
-    u.onerror = () => {
-      setPlaying(false);
-      setSegIdx(-1);
-    };
-    synth.speak(u);
+    }, slow ? "listenSlow" : "listen");
   }
 
   function toggleSlow() {
@@ -189,7 +158,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       audioRef.current.playbackRate = next ? 0.75 : 1;
       return;
     }
-    // TTS'te kuyruk hızı değiştirilemez; baştan yeni hızla başlat.
+    // Sentezlenmiş seste hız dosyanın içinde; baştan yeni hızla başlat.
     if (playing) play(next);
   }
 
@@ -306,7 +275,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
         questions={exercise.questions}
         onAllAnswered={(c) => {
           setCorrect(c);
-          window.speechSynthesis?.cancel();
+          stop();
           void finish(c);
         }}
       />

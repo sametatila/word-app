@@ -2,7 +2,7 @@ import "server-only";
 import { cleanForSpeech, synthesizeEdge, MAX_TEXT } from "./edge";
 import { azureConfigured, synthesizeAzure } from "./azure";
 import { recordAiUsage } from "@/lib/ai-usage";
-import type { VoiceId } from "./voices";
+import type { Pace, VoiceId } from "./voices";
 
 /**
  * Seslendirme zinciri.
@@ -38,7 +38,7 @@ export type SynthResult = { audio: Buffer; source: "edge" | "azure" };
 export async function synthesizeSpeech(
   text: string,
   voice: VoiceId,
-  slow = false,
+  slow: Pace | boolean = false,
   /** Muhasebe için — kim tetikledi. Arka plan işlerinde boş. */
   userId: string | null = null,
 ): Promise<SynthResult> {

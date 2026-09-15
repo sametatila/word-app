@@ -7,7 +7,7 @@ import { sharedAudioContext } from "@/lib/audio-context";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
-import { TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { PACE_PARAM, TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type Pace, type VoiceId } from "@/lib/tts/voices";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -57,8 +57,14 @@ function cleanForSpeech(text: string): string {
 }
 
 /** Seslendirme ucunun adresi — URL önbellek anahtarı olduğu için tek yerde. */
-function ttsUrl(voice: VoiceId, clean: string, slow = false): string {
-  return `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${slow ? "&r=slow" : ""}`;
+/** Hız kademesi — `true` eski "yavaş" çağrılarının kısaltması. */
+function paceOf(slow: Pace | boolean): Pace {
+  return slow === true ? "slow" : slow === false ? "normal" : slow;
+}
+
+function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false): string {
+  const pace = paceOf(slow);
+  return `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}`;
 }
 
 /**
@@ -196,7 +202,7 @@ if (typeof window !== "undefined") primeOnFirstGesture();
  * Eller serbest rol yapmada mikrofonun kendiliğinden açılması buna bağlı; hiç
  * gelmeyecek bir bitiş döngüyü kilitlerdi.
  */
-export function speakGerman(text: string, onEnd?: () => void, slow = false) {
+export function speakGerman(text: string, onEnd?: () => void, slow: Pace | boolean = false) {
   const clean = cleanForSpeech(text);
   if (!clean) {
     onEnd?.();
@@ -237,7 +243,7 @@ function speakChain(
   voice: VoiceId,
   course: string,
   onEnd?: () => void,
-  slow = false,
+  slow: Pace | boolean = false,
 ): (() => void) | null {
   const mine = ++token;
   stopActiveChain();
@@ -868,7 +874,7 @@ function play(
   voice: VoiceId,
   course: string,
   onEnd?: () => void,
-  slow = false,
+  slow: Pace | boolean = false,
 ) {
   const audio = audioElement();
   if (!audio) {
@@ -966,7 +972,7 @@ function speakWithBrowser(
   voice: VoiceId,
   course: string,
   onEnd?: () => void,
-  slow = false,
+  slow: Pace | boolean = false,
 ) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
     onEnd?.();
@@ -978,7 +984,14 @@ function speakWithBrowser(
   const gsw = course === "gsw-zh" && lang !== "tr-TR";
   const u = new SpeechSynthesisUtterance(clean);
   u.lang = gsw ? "de-CH" : lang;
-  u.rate = slow ? (gsw ? 0.55 : 0.6) : gsw ? 0.88 : lang === "tr-TR" ? 1 : 0.92;
+  // Nöral sesin kademeleriyle aynı sıra (bkz. `rateFor`): dinleme metni
+  // kelime turundan yavaş, yavaş dinleme hepsinden yavaş.
+  const pace = paceOf(slow);
+  u.rate =
+    pace === "listenSlow" ? (gsw ? 0.5 : 0.55)
+    : pace === "slow" ? (gsw ? 0.55 : 0.6)
+    : pace === "listen" ? (gsw ? 0.75 : 0.8)
+    : gsw ? 0.88 : lang === "tr-TR" ? 1 : 0.92;
   const voices = window.speechSynthesis.getVoices();
   const picked = gsw
     ? (voices.find((v) => v.lang === "de-CH") ?? voices.find((v) => v.lang.startsWith("de")))

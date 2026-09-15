@@ -1,5 +1,5 @@
 import "server-only";
-import { rateFor, type VoiceId } from "./voices";
+import { rateFor, type Pace, type VoiceId } from "./voices";
 import { buildSsml } from "./ssml";
 
 /**
@@ -30,7 +30,7 @@ export function azureConfigured(): boolean {
   return Boolean(process.env.AZURE_SPEECH_KEY && process.env.AZURE_SPEECH_REGION);
 }
 
-export async function synthesizeAzure(clean: string, voice: VoiceId, slow = false): Promise<Buffer> {
+export async function synthesizeAzure(clean: string, voice: VoiceId, slow: Pace | boolean = false): Promise<Buffer> {
   const key = process.env.AZURE_SPEECH_KEY;
   const region = process.env.AZURE_SPEECH_REGION;
   if (!key || !region) throw new Error("azure yapılandırılmadı");

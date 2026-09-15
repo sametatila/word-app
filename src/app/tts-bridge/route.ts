@@ -21,7 +21,8 @@ const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewp
   window.ttsSpeak = function (voice, text, slow) {
     try { if (a) { a.pause(); a = null; } } catch (e) {}
     if (!text) return;
-    var u = "/api/tts?v=" + encodeURIComponent(voice) + "&t=" + encodeURIComponent(text) + (slow ? "&r=slow" : "");
+    var r = slow === true ? "slow" : typeof slow === "string" ? slow : "";
+    var u = "/api/tts?v=" + encodeURIComponent(voice) + "&t=" + encodeURIComponent(text) + (r ? "&r=" + encodeURIComponent(r) : "");
     a = new Audio(u);
     a.addEventListener("ended", function () { post("end"); });
     a.addEventListener("error", function () { post("error"); });

@@ -3,7 +3,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
-import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
+import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
  * Seslendirme ucu.
@@ -62,9 +62,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const text = (url.searchParams.get("t") ?? "").trim();
   const voice = url.searchParams.get("v") ?? "";
-  // Hız yalnızca iki değer alıyor. Serbest bir sayı olsaydı her farklı hız
-  // ayrı bir önbellek girdisi açar ve isabet oranı düşerdi.
-  const slow = url.searchParams.get("r") === "slow";
+  // Hız yalnızca sabit kademeleri alıyor (bkz. `rateFor`). Serbest bir sayı
+  // olsaydı her farklı hız ayrı bir önbellek girdisi açar ve isabet düşerdi.
+  const slow = paceFromParam(url.searchParams.get("r"));
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });

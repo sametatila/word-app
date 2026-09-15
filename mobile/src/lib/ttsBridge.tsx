@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
-import type { VoiceId } from "./voices";
+import { PACE_PARAM, paceOf, type Pace, type VoiceId } from "./voices";
 import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
 import { nativeDelay } from "./stt";
 
@@ -28,9 +28,20 @@ export function bridgeReady(): boolean {
   return ready && healthy && viewRef !== null;
 }
 
-export function bridgeSpeak(voice: VoiceId, text: string, slow: boolean): void {
+/**
+ * Köprü sayfasına giden hız argümanı. `true`/`false` eski sayfa sürümüyle de
+ * uyumlu; yeni kademeler `r` değerini dizge olarak taşıyor (bkz. /tts-bridge).
+ */
+function paceArg(slow: Pace | boolean): string {
+  const pace = paceOf(slow);
+  if (pace === "normal") return "false";
+  if (pace === "slow") return "true";
+  return JSON.stringify(PACE_PARAM[pace]);
+}
+
+export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean): void {
   if (!bridgeReady() || !text) return;
-  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${slow ? "true" : "false"}); true;`;
+  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)}); true;`;
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
 
@@ -98,21 +109,29 @@ export function bridgeSfx(kind: SfxKind): void {
  * "end"/"error" gelmezse metin uzunluğuna göre bir üst sınırla yine de çözülür.
  */
 let pendingResolve: (() => void) | null = null;
+/** Bekleyen okumanın ses gerçekten BAŞLAYINCA çağrılacağı yer (köprünün "play"i). */
+let pendingStart: (() => void) | null = null;
 /** Her bekleyene bir sıra numarası: geciken emniyet ağı YENİ bekleyeni çözmesin. */
 let pendingSeq = 0;
 function finishPending(): void {
   pendingSeq++;
+  pendingStart = null;
   const r = pendingResolve;
   pendingResolve = null;
   if (r) r();
 }
-export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow = false): Promise<void> {
+export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void): Promise<void> {
   return new Promise((resolve) => {
     if (!bridgeReady() || !text) { resolve(); return; }
     finishPending(); // önceki bekleyeni serbest bırak
     pendingResolve = resolve;
+    pendingStart = onStart ?? null;
     const seq = pendingSeq;
-    const cap = Math.min(14000, Math.max(3000, text.length * 120));
+    /* Üst sınır metnin OKUNMA süresinden: yavaş kademede aynı cümle ~1,8 kat
+       uzun sürüyor ve sabit 14 sn'lik tavan uzun bir repliği yarıda kesip
+       sonrakini başlatıyordu. */
+    const stretch = paceOf(slow) === "normal" ? 1 : 1.8;
+    const cap = Math.min(14000 * stretch, Math.max(3000, text.length * 120 * stretch));
     // Emniyet ağı NATIVE gecikmeyle kuruluyor, `setTimeout` ile DEĞİL.
     //
     // Ekran kapanınca iki şey aynı anda oluyor: WebView (Chromium) ses odağını
@@ -126,7 +145,7 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow = false): 
     // kaldığı yerden devam ediyor. `nativeDelay` bu yüzden zaten vardı
     // (WalkModeScreen'deki `gap`), köprünün emniyet ağına uygulanmamıştı.
     void nativeDelay(cap).then(() => { if (pendingSeq === seq) finishPending(); });
-    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${slow ? "true" : "false"}); true;`;
+    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)}); true;`;
     try { viewRef!.injectJavaScript(js); } catch { finishPending(); }
   });
 }
@@ -160,7 +179,7 @@ export function TtsBridge() {
         onMessage={(e) => {
           const m = e.nativeEvent.data;
           if (m === "ready") { ready = true; healthy = true; errors = 0; }
-          else if (m === "play") { healthy = true; errors = 0; }
+          else if (m === "play") { healthy = true; errors = 0; const s = pendingStart; pendingStart = null; s?.(); }
           else if (m === "end") { healthy = true; errors = 0; finishPending(); } // bekleyen speak-and-wait'i çöz
           else if (m === "error") {
             // Üst üste hata → cihaz TTS'ine düş; ama köprüyü bir kez tazeleyerek (throttle'lı)

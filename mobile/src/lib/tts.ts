@@ -2,7 +2,7 @@ import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trackOnce } from "./track";
 import { navigationRef } from "./pushRoute";
-import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { type Pace, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
 
@@ -48,7 +48,7 @@ async function init(): Promise<boolean> {
     targetReady = false;
     try { (Tts as { requestInstallData?: () => void }).requestInstallData?.(); } catch { /* yut */ }
   }
-  try { await Tts.setDefaultRate(deviceRate(false)); } catch { /* yut */ }
+  await applyRate(deviceRate(false));
   try { (Tts as { setIgnoreSilentSwitch?: (v: string) => void }).setIgnoreSilentSwitch?.("ignore"); } catch { /* yut */ }
   try {
     deviceVoices = await Tts.voices();
@@ -117,6 +117,21 @@ function deviceVoiceFor(voice: VoiceId): string | null {
   return picked.id;
 }
 
+/**
+ * HIZ ANDROID'DE AYRICA KURULUYOR.
+ *
+ * `react-native-tts` Android'de `speak()`e verilen `rate` parametresini hiç
+ * okumuyor (`TextToSpeechModule.speak` yalnız ses/akış/pan alıyor); hız
+ * yalnız `setDefaultRate` ile değişiyor. Açılışta bir kez normal hız
+ * kuruluyordu ve sonra hiç değişmiyordu: dinleme ekranındaki "Yavaş" düğmesi
+ * Android'de hiçbir şey yapmıyordu. iOS `rate`i okuyor, orada zararsız.
+ */
+let appliedRate: number | null = null;
+async function applyRate(rate: number): Promise<void> {
+  if (appliedRate === rate) return;
+  try { await Tts.setDefaultRate(rate); appliedRate = rate; } catch { /* yut */ }
+}
+
 async function applyVoice(voice: VoiceId): Promise<string> {
   const lang = langOf(voice);
   try { await Tts.setDefaultLanguage(lang); } catch { /* de-CH cihazda yoksa yut */ }
@@ -160,7 +175,7 @@ export function cleanForSpeech(text: string): string {
     .trim();
 }
 
-export function speakTarget(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
+export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?: VoiceId }): void {
   const clean = cleanForSpeech(text);
   if (!clean) return;
   /* HANGİ EKRANDA SES DİNLENİYOR — ekran başına bir kez. Web aynı olayı aynı
@@ -181,6 +196,7 @@ export function speakTarget(text: string, opts?: { slow?: boolean; voice?: Voice
     try {
       Tts.stop();
       const iosVoiceId = await applyVoice(voice);
+      await applyRate(rate);
       Tts.speak(clean, {
         androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" },
         rate,
@@ -205,19 +221,20 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
  * köprüsü — web'le birebir: Türkçe ipucu Emel, Almanca cevap kullanıcının seçtiği
  * Katja/Conrad. Köprü hazır değilse cihaz TTS'ine düşer (dil sesten türetilir).
  */
-export async function speakAndWaitVoiced(text: string, voice: VoiceId): Promise<void> {
+export async function speakAndWaitVoiced(text: string, voice: VoiceId, opts?: { slow?: Pace | boolean; onStart?: () => void }): Promise<void> {
   if (!text) return;
-  if (bridgeReady()) { await bridgeSpeakAndWait(voice, text); return; }
+  if (bridgeReady()) { await bridgeSpeakAndWait(voice, text, opts?.slow ?? false, opts?.onStart); return; }
+  opts?.onStart?.();
   // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
   // yazılıydı ve İngilizce ses Almanca okunurdu.
-  await speakAndWait(text, langOf(voice));
+  await speakAndWait(text, langOf(voice), { slow: opts?.slow, voice });
 }
 
 /**
  * @param lang Okunacak yerel kod. Varsayılan, kursun hedef dili — anlatım
  * (Türkçe) için çağıran açıkça "tr-TR" geçer.
  */
-export function speakAndWait(text: string, lang: string = speechLocaleOf(currentCourse), opts?: { slow?: boolean }): Promise<void> {
+export function speakAndWait(text: string, lang: string = speechLocaleOf(currentCourse), opts?: { slow?: Pace | boolean; voice?: VoiceId }): Promise<void> {
   return new Promise((resolve) => {
     void ttsAvailable().then(async (ok) => {
       if (!ok || !text) { resolve(); return; }
@@ -232,12 +249,15 @@ export function speakAndWait(text: string, lang: string = speechLocaleOf(current
         // sabit olduğu için yalnız dil ayarlanır. Ayrım artık "de-DE mi"
         // diye değil, "anlatım dili mi" diye yapılıyor — böylece İngilizce
         // kursta da kullanıcının sesi çalıyor.
+        let iosVoiceId = "";
         if (lang !== "tr-TR") {
-          await applyVoice(currentVoice);
+          iosVoiceId = await applyVoice(opts?.voice ?? currentVoice);
         } else {
           await Tts.setDefaultLanguage(lang).catch(() => {});
         }
-        Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: deviceRate(opts?.slow), iosVoiceId: "" });
+        const rate = deviceRate(opts?.slow);
+        await applyRate(rate);
+        Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate, iosVoiceId });
       } catch { finish(); }
     });
   });

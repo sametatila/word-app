@@ -94,7 +94,25 @@ export function langOf(voice: VoiceId): string {
   return m ? m[1] : "de-DE";
 }
 
-/** Cihaz TTS okuma hızı (react-native-tts 0..1). Yavaş = telaffuz çalışması. */
-export function deviceRate(slow = false): number {
-  return slow ? 0.3 : 0.42;
+/**
+ * Hız kademesi — web `src/lib/tts/voices.ts` `Pace` ile aynı dört değer.
+ * `listen`/`listenSlow` dinleme alıştırmasının: kelime turunun hızı orada
+ * "aşırı hızlı" duyuldu (bkz. web `rateFor`).
+ */
+export type Pace = "normal" | "slow" | "listen" | "listenSlow";
+
+/** `/api/tts?r=` değeri — web `PACE_PARAM` ile aynı. */
+export const PACE_PARAM: Record<Exclude<Pace, "normal">, string> = { slow: "slow", listen: "listen", listenSlow: "listen-slow" };
+
+export function paceOf(slow: Pace | boolean | undefined): Pace {
+  return slow === true ? "slow" : slow === false || slow === undefined ? "normal" : slow;
+}
+
+/** Cihaz TTS okuma hızı (react-native-tts 0..1, 0,5 cihazın doğal hızı). Yavaş = telaffuz çalışması. */
+export function deviceRate(slow: Pace | boolean = false): number {
+  const pace = paceOf(slow);
+  if (pace === "listenSlow") return 0.26;
+  if (pace === "slow") return 0.3;
+  if (pace === "listen") return 0.36;
+  return 0.42;
 }

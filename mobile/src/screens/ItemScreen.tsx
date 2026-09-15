@@ -19,8 +19,7 @@ import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
 import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
-import { speakTarget, speakAndWait, stopSpeaking } from "../lib/tts";
-import { currentTargetLocale } from "../lib/courses";
+import { speakTarget, speakAndWaitVoiced, currentVoiceId, stopSpeaking } from "../lib/tts";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
@@ -78,7 +77,13 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
     for (let i = 0; i < segments.length; i++) {
       if (my !== run.current) return;
       setSegIdx(i);
-      await speakAndWait(segments[i].text, currentTargetLocale(), { slow });
+      /* Kullanıcının SEÇTİĞİ ses, dinlemeye ayrılmış hızla. Eskiden
+         `speakAndWait` idi: köprüyü hiç denemiyor, doğrudan cihazın kendi
+         sesine gidiyordu (iOS'ta seçilen sesi de boş kimlikle eziyordu) ve
+         Android'de hız parametresi okunmadığı için "Yavaş" hiçbir şey
+         değiştirmiyordu. Satıra dokununca (`speakTarget`) ise nöral ses
+         çalıyordu: aynı alıştırmada iki ayrı ses. */
+      await speakAndWaitVoiced(segments[i].text, currentVoiceId(), { slow: slow ? "listenSlow" : "listen" });
     }
     if (my !== run.current) return;
     setPlaying(false);
@@ -99,7 +104,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
     stopSpeaking();
     setSegIdx(-1);
     setPlaying(false);
-    speakTarget(segments[i].text, { slow });
+    speakTarget(segments[i].text, { slow: slow ? "listenSlow" : "listen" });
   }
 
   return (
