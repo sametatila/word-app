@@ -113,11 +113,14 @@ npm run release:android # Play için AAB + cihazda deneme APK'sı, üretilen do�
 npm run check:16kb   # bir .aab/.apk içindeki 64-bit .so'ların 16 KB hizası
 ```
 
-Lint betiği `ESLINT_USE_FLAT_CONFIG=false` ile başlıyor ve bu **zorunlu**: mobil
-ESLint 8 + `.eslintrc.js` kullanıyor, ama ESLint 8.57 düz (flat) yapılandırmayı üst
-dizinlerde de arayıp depo kökündeki `eslint.config.mjs`'i buluyor ve kipi
-değiştiriyor — o dosya `mobile/**`'ı yoksaydığı için lint hiçbir dosya bulamıyordu.
-Mobil ESLint 9'a geçtiğinde bayrak kalkar, yerine `mobile/eslint.config.mjs` gerekir.
+Lint ESLint 9 ve düz (flat) yapılandırmayla çalışıyor: `mobile/eslint.config.js`,
+RN'in `@react-native/eslint-config/flat` yapılandırmasının üstüne kurulu. ESLint 9
+yapılandırmayı çalıştığı dizinden yukarı doğru arıyor, yani `mobile/` içinde koşunca
+depo kökündeki `eslint.config.mjs`'e (o dosya `mobile/**`'ı yoksayıyor) ulaşmıyor.
+ESLint 8 döneminin `ESLINT_USE_FLAT_CONFIG=false` bayrağı bu yüzden kalktı.
+RN yapılandırmasının getirdiği `eslint-plugin-ft-flow` 2.x ESLint 9'da `.js`
+dosyalarında çöküyor (`context.getAllComments is not a function`);
+`package.json` › `overrides` onu ESLint 9'u resmen destekleyen 3.x'e çekiyor.
 
 `npm test` bütün ekranları yükler, dolayısıyla **her native paketin bir taklidi
 `jest.setup.js`'te olmak zorunda**; yeni paket eklerken taklidi de eklenmeli, yoksa

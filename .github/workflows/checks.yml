@@ -501,17 +501,13 @@ jobs:
       # kapatıldı, kalanı düzeltildi). 9999 kalsaydı kapı kapı olmaktan çıkardı —
       # yeni bir uyarı fark edilmeden birikirdi.
       #
-      # ESLINT_USE_FLAT_CONFIG=false ZORUNLU: mobil hâlâ ESLint 8 + .eslintrc.js
-      # kullanıyor, ama ESLint 8.57 düz (flat) yapılandırmayı ÜST DİZİNLERDE de
-      # arıyor ve depo kökündeki eslint.config.mjs'i bulup kipi değiştiriyor —
-      # o dosyanın "mobile/**" yoksayması yüzünden "all of the files matching
-      # the glob pattern 'src' are ignored" ile düşüyordu. Mobil ESLint 9'a
-      # geçince bu bayrak kalkar ve mobile/eslint.config.mjs gerekir.
+      # Mobil ESLint 9 + mobile/eslint.config.js (düz yapılandırma). ESLint 9
+      # yapılandırmayı çalıştığı dizinden yukarı arıyor; mobile/ içinde koşunca
+      # depo kökündeki eslint.config.mjs'e ulaşmıyor. ESLint 8 döneminin
+      # ESLINT_USE_FLAT_CONFIG=false bayrağı bu yüzden kalktı.
       - name: ESLint
         working-directory: mobile
         run: npx eslint src App.tsx --max-warnings 0
-        env:
-          ESLINT_USE_FLAT_CONFIG: "false"
       # Çeviri katmanını atlayan yeni Türkçe dizgi girmesin (cırcırlı taban).
       - name: i18n kapısı
         working-directory: mobile
