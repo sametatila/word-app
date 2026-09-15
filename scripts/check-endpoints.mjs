@@ -160,6 +160,8 @@ const WEB_ONLY = {
  */
 const MOBIL_ONLY = {
   "/api/account/apple-code": "Apple girisinin native kod takasi; webde akis tarayicida tamamlaniyor",
+  "/api/account/guest": "misafir verisini silme; misafir modu yalniz mobilde, web hesap istiyor (magaza on inceleme B24)",
+  "/api/account/guest/claim": "misafirin ilerlemesini hesaba birlestirme; misafir modu yalniz mobilde",
   "/api/immersion": "unite verisi; web sayfayi sunucuda cizip `lib/immersion/build`i dogrudan cagiriyor",
   "/api/config": "uzak yapilandirma; web ayni degerleri sunucuda okuyor (env + lib/config)",
   "/api/me": "oturum ozeti; web sunucu tarafinda `lib/session` ile okuyor",
@@ -173,6 +175,8 @@ const MOBIL_ONLY = {
 
 const MOBIL_ONLY_METHOD = {
   "POST /api/account/apple-code": "native Apple kod takasi",
+  "DELETE /api/account/guest": "misafir verisini silme (yalniz mobil misafir modu)",
+  "POST /api/account/guest/claim": "misafiri hesaba birlestirme (yalniz mobil misafir modu)",
   "GET /api/config": "web ayni degerleri sunucuda okuyor",
   "GET /api/immersion": "web `lib/immersion/build`i sunucuda cagiriyor",
   "GET /api/me": "web `lib/session`i sunucuda cagiriyor",

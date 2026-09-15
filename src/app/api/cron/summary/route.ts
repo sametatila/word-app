@@ -10,6 +10,7 @@ import { weeklySummary } from "@/lib/growth";
 import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
 import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
+import { purgeStaleGuests } from "@/lib/account/guest-merge";
 import { langOf } from "@/lib/social/notify";
 
 export const dynamic = "force-dynamic";
@@ -57,10 +58,20 @@ export async function GET(req: Request) {
     // Özet turuna asılı çünkü zaten günlük çalışıyor; ayrı bir zamanlayıcı
     // kurmak yerine tek yerden yürütülüyor. Hatası özeti düşürmez.
     const purged = await purgeExpiredRoleplayLogs();
-    const ozet = `hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged}`;
+    /*
+      Kullanılmayan misafir kimlikleri (gizlilik politikası: oturumu düşen
+      misafirin verisi siliniyor, bkz. lib/account/guest-merge). Misafirin
+      giriş yolu yok; oturumu 30 gün kullanılmayınca düşen misafirin verisine
+      artık kimse ulaşamaz. Hatası özeti düşürmez.
+    */
+    const guests = await purgeStaleGuests().catch((err) => {
+      console.error("[cron/summary] guest cleanup", err);
+      return 0;
+    });
+    const ozet = `hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged} · silinen misafir ${guests}`;
     console.log(`[cron/summary] ${ozet}`);
     void recordCronRun("summary", true, Date.now() - basladi, ozet);
-    return NextResponse.json({ targets: rows.length, sent, purged });
+    return NextResponse.json({ targets: rows.length, sent, purged, guests });
   } catch (err) {
     console.error("[cron/summary]", err);
     void recordCronRun("summary", false, Date.now() - basladi, String((err as Error).message ?? err));

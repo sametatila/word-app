@@ -106,6 +106,7 @@ jobs:
         run: |
           npm run check:client-boundary
           npm run check:purge
+          npm run check:guest-merge
           npm run check:key-families
           npm run check:radius
           npm run check:type
@@ -414,6 +415,8 @@ jobs:
       # gecikmeli değerlendirme kuyruğunun izin süzgeci ancak burada sınanıyor.
       # `test:push-sql` hatırlatma turunun ham SQL'i: Drizzle'ın dizi açılımı
       # sorguyu yalnız Postgres'te bozuyordu ve cron dört akşam 500 döndü.
+      # `test:guest-merge` misafirin hesaba birleşmesi: her tablonun kuralı bir
+      # SQL cümlesi, yanlış sütun ya da unutulmuş çakışma yalnız burada görünür.
       - name: Yetki ve hukuki metin (veritabanı)
         run: |
           npx tsx scripts/migrate-all.ts
@@ -421,6 +424,7 @@ jobs:
           npm run test:entitlement
           npm run test:consent
           npm run test:push-sql
+          npm run test:guest-merge
           npm run test:legal-db
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test

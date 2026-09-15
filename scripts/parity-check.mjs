@@ -16944,6 +16944,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
     const MOBIL_CIHAZ = [
       "lernomi-app-open", //           gunun ilk acilisi (telemetri)
+      "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
       "lernomi-lesson-handsfree", //   eller serbest tercihi
       "lernomi:analytics", //          analitik onayi
