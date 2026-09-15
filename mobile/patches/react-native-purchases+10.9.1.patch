@@ -1,8 +1,8 @@
 diff --git a/node_modules/react-native-purchases/android/build.gradle b/node_modules/react-native-purchases/android/build.gradle
-index 840b485..4bbbf1b 100644
+index b868b51..925e1ab 100644
 --- a/node_modules/react-native-purchases/android/build.gradle
 +++ b/node_modules/react-native-purchases/android/build.gradle
-@@ -23,6 +23,7 @@ def getExtOrIntegerDefault(name) {
+@@ -29,6 +29,7 @@ def getExtOrIntegerDefault(name) {
  }
  
  android {
