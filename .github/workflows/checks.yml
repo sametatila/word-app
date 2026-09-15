@@ -468,7 +468,10 @@ jobs:
       # cache found" uyarısı basıyor ve her derlemeyi sıfırdan yapıyordu.
       # Anahtar kilit dosyası + kaynak; kaynak değişince aynı kilit dosyasının
       # en yakın önbelleği geri yükleniyor (Next'in önerdiği düzen). İlk koşu
-      # önbelleği kuruyor, sonrakiler onu kullanıyor.
+      # önbelleği kuruyor, sonrakiler onu kullanıyor. Son yedek anahtar kilit
+      # dosyasından bağımsız: bağımlılık ya da sürüm değişiminde de önceki
+      # önbellekten başlıyor. Next bayat kayıtları kendisi doğruluyor; o anahtar
+      # olmadan kilidin her değişiminde soğuk derleme ve aynı uyarı dönüyordu.
       - name: Derleme önbelleği
         uses: actions/cache@v6
         with:
@@ -476,6 +479,7 @@ jobs:
           key: nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**', 'public/**', 'next.config.ts', 'tsconfig.json') }}
           restore-keys: |
             nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+            nextjs-${{ runner.os }}-
       - name: next build
         run: npx next build
         env:
