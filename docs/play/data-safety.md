@@ -13,8 +13,8 @@ Son güncelleme: 2026-09-14. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te
 |---|---|
 | Uygulama kullanıcı verisi topluyor ya da paylaşıyor mu | Evet |
 | Toplanan tüm veriler aktarımda şifreleniyor mu | Evet (HTTPS) |
-| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.lernomi.app/account/delete` ve uygulama içi Profil › Ayarlar › Hesap › Hesabı sil |
-| Hesap oluşturma var mı | Evet (e-posta/parola, Google, Apple) |
+| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.lernomi.app/account/delete` ve uygulama içi Profil › Ayarlar › Hesap › Hesabı sil; hesapsız (misafir) kullanımda Profil › Misafir verilerini sil |
+| Hesap oluşturma var mı | Evet (e-posta/parola, Google, Apple); İSTEĞE BAĞLI — uygulama hesapsız da kullanılıyor (misafir kimliği, 2026-09-15). Misafirde e-posta ve ad toplanmıyor; kullanıcı kimliği (rastgele), öğrenme verisi ve uygulama etkileşimi toplanıyor, hesaba birleşince ya da 30 gün kullanılmayınca siliniyor |
 | Bağımsız güvenlik incelemesi (MASA) | Hayır |
 | Aileler politikasına tabi mi | Hayır (hedef kitle 18+; şartlar hesap açmayı 18 yaşla sınırlıyor) |
 

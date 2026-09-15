@@ -4,8 +4,12 @@
 **Kopyala-yapıştır değildir:** Play'in sorduğu şey (ön plan servisi beyanı, Data Safety)
 ile Apple'ın sorduğu şey (arka plan sesi gerekçesi, App Privacy, 4.8) örtüşmüyor.
 
-Uygulamanın tüm içeriği hesap gerektirir (misafir modu yok), bu yüzden inceleme test
-kimlik bilgisi ister. Bu belgedeki hiçbir alan **doldurulmuş değil**: Apple Developer
+Uygulama hesapsız da kullanılabiliyor (2026-09-15, mağaza ön inceleme B24): giriş
+ekranındaki "Continue without an account" kelime turlarını, dersleri, becerileri, Patika'yı,
+ekran açık yürüyüş modunu ve sınavları açıyor. Sosyal özellikler, yapay zekâ değerlendirmesi,
+Premium satın alma ve hatırlatmalar hesap istiyor; o ekranlar bunu söyleyip "Create account"
+sunuyor ve misafir ilerlemesi hesaba taşınıyor. Arka plan sesini ve yapay zekâyı görebilmesi
+için inceleme yine Premium bir test hesabı ister (Sign-in required: evet). Bu belgedeki hiçbir alan **doldurulmuş değil**: Apple Developer
 hesabı henüz açılmadı (bkz. `docs/appstore/README.md` "iOS yayınından önce bitmesi
 gereken iş" §1).
 
@@ -13,7 +17,7 @@ gereken iş" §1).
 
 | Alan | Değer |
 |---|---|
-| Sign-in required | Evet |
+| Sign-in required | Evet (hesap isteyen özellikler için; çekirdek hesapsız açık) |
 | User name | `[[TEST_HESABI_E_POSTA]]` |
 | Password | `[[TEST_HESABI_PAROLA]]` |
 | Notes | Aşağıdaki İngilizce metin, olduğu gibi |
@@ -37,15 +41,16 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication.
 
 1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
-2. On the sign-in screen tap "Continue with email" and sign in with the account above.
-3. The notification permission screen has a single "Continue" button that opens the system alert; choose "Allow" or "Don't Allow" there.
-4. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
+2. No account is needed to use the app (Guideline 5.1.1(v)): on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends and leagues, AI feedback, buying Premium and reminders need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
+3. To review the account features, sign in instead: on the sign-in screen tap "Continue with email" and sign in with the account above.
+4. The notification permission screen has a single "Continue" button that opens the system alert; choose "Allow" or "Don't Allow" there.
+5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
 
-5. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
+6. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
 
-6. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be transcribed on the server while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
+7. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be transcribed on the server while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
 
-7. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account.
+8. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account. Guests delete their data under Profile › Delete guest data.
 ```
 
 Test hesabı gerçek veritabanında açılır, e-posta doğrulaması tamamlanır, seviye A1

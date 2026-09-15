@@ -347,8 +347,12 @@ Bu ayrım gizlilik politikası §3 ve §4 ile birebir aynı.
 
 ## İnceleme notları (App Review Information)
 
-Uygulamanın tamamı hesap gerektiriyor, misafir modu yok — `docs/play/console.md`'deki
-inceleme hesabı ve adımlar App Store Connect'e de girilir. Ek olarak açıklanması gereken:
+Uygulama hesapsız da kullanılabiliyor (misafir kimliği, 2026-09-15, mağaza ön inceleme B24);
+sosyal, yapay zekâ, Premium satın alma ve hatırlatmalar hesap istiyor. `docs/appstore/connect.md`'deki
+inceleme hesabı ve adımlar App Store Connect'e girilir; misafir yolu notların 2. adımında.
+Gizlilik etiketinde misafir yeni bir veri türü açmıyor: misafirde toplanan her şey (rastgele
+kullanıcı kimliği, öğrenme ve etkileşim verisi) hesapta da toplanıyor ve beyanlı (User ID,
+Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmıyor. Ek olarak açıklanması gereken:
 
 - **Mikrofon ve arka plan sesi:** yürüyüş modu kullanıcı başlattığında mikrofonu açar;
   ekran kapalıyken ses tanınmak üzere sunucuya gider ve saklanmaz. İnceleyen bunu

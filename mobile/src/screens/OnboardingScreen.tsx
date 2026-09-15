@@ -21,7 +21,8 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
  * İlk açılış akışı (§4). Sıra: anadil → karşılama → kurs → seviye → hedef. Seçimler
  * yerelde tutulur (onboardingPrefs) ve hesap açınca profile taşınır.
  *
- * Misafir modu YOK: akış sonunda hesap açmak/giriş yapmak ZORUNLU (bkz.
+ * Akış sonunda giriş ekranı açılıyor: hesap açmak, giriş yapmak ya da "Hesapsız devam et"
+ * (misafir kimliği, mağaza ön inceleme B24; bkz.
  * App.tsx kök yönlendirme, AuthScreen giriş duvarı). Seviye adımı üç yol:
  *  • "Sıfırdan" → A1 + ilk kelime çalışması (FirstPractice) → hesap
  *  • "Testle belirle" → yerleştirme sınavı (Placement) → hesap

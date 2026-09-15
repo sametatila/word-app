@@ -234,10 +234,18 @@ aranıyor, Android'de uzantısız.
 
 ---
 
-## 5. Giriş — uygulamanın tamamı hesap istiyor
+## 5. Giriş — hesapla ya da hesapsız
 
-Misafir modu yok: onboarding bittikten sonra hesap zorunlu (`mobile/App.tsx`
-`initialRoute`). Yani 6'dan öncesi burada kilitleniyor.
+Onboarding bitince giriş ekranı açılıyor; oradaki "Hesapsız devam et" misafir kimliğiyle
+uygulamaya geçiriyor (2026-09-15, mağaza ön inceleme B24). Hesap isteyen yüzeyler (sosyal,
+yapay zekâ, Premium, hatırlatmalar) misafirde "Hesap oluştur" kartı gösteriyor. 6'dan
+sonrasının çoğu hesapla koşulmalı; misafir akışı 5.0'da.
+
+### 5.0 · Hesapsız devam et
+**Önce:** 4.2
+**Yap:** Onboarding'i geç, giriş ekranında "Hesapsız devam et"e dokun. Bir kelime turu ve bir ders çöz; Profil'de "Misafir" ve hesap çağrısını gör; Arkadaşlar sekmesini aç. Sonra Profil › Hesap oluştur ile e-postayla kayıt ol.
+**Geçti:** Tur ve ders misafirde çalıştı; Arkadaşlar "Hesap oluştur" kartı gösterdi; kayıttan sonra "Misafir ilerlemen hesabına taşındı" notu çıktı ve tur/ders ilerlemesi hesapta duruyor.
+**Geçmezse:** `mobile/src/lib/AuthContext.tsx` `continueAsGuest` / `claimPendingGuest`, sunucu `src/app/api/account/guest/claim/route.ts`; ağ kaydında `/api/auth/sign-in/anonymous` ve `/api/account/guest/claim` cevaplarına bak.
 
 ### 5.1 · E-posta ile giriş
 **Önce:** 4.2

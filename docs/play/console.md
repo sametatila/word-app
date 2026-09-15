@@ -1,8 +1,10 @@
 # Google Play Console — uygulama erişimi, giriş ve inceleme notları (Lernomi, `com.lernomi.learn`)
 
-Uygulamanın tüm içeriği hesap gerektirir (misafir modu yok). Play incelemesi bu yüzden
-test kimlik bilgisi ister; Google girişi de Play'in imzaladığı sürümde ancak doğru SHA-1
-kayıtlıysa çalışır. Bu belge iki formu ve inceleme öncesi kontrolleri toplar.
+Uygulama hesapsız da kullanılabiliyor (2026-09-15, mağaza ön inceleme B24): giriş ekranındaki
+"Continue without an account" çekirdek öğrenmeyi açıyor. Sosyal özellikler, yapay zekâ
+değerlendirmesi, Premium satın alma ve hatırlatmalar hesap istiyor; Play incelemesi bu yüzden
+yine test kimlik bilgisi ister ("some functionality is restricted"). Google girişi de Play'in
+imzaladığı sürümde ancak doğru SHA-1 kayıtlıysa çalışır. Bu belge iki formu ve inceleme öncesi kontrolleri toplar.
 
 ## 1. App content › App access
 
@@ -34,15 +36,16 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall or purchase. It does not expire and needs no one-time code.
 
 1. Open the app and go through onboarding with "Continue": course German, level "From scratch", goal "Easy".
-2. On the sign-in screen tap "Continue with email" and sign in with the account above.
-3. On the notification permission screen you may tap "Maybe later".
-4. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
+2. The core app works without an account: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends and leagues, AI feedback, buying Premium and reminders need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
+3. To review the restricted features, sign in instead: on the sign-in screen tap "Continue with email" and sign in with the account above.
+4. On the notification permission screen you may tap "Maybe later".
+5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
 
-5. AI consent (User Data policy, prominent disclosure): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
+6. AI consent (User Data policy, prominent disclosure): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
 
-6. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission → notification permission (Android 13+; the walk notification is only visible with it). Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X inside the app) to end. If notification permission is denied, the walk screen says the notification will not appear and that walk mode is stopped from the app.
+7. Walk mode (microphone foreground service): Learn › Walk mode › Start → the microphone disclosure names the speech recognition providers → "I agree, start" → system microphone permission → notification permission (Android 13+; the walk notification is only visible with it). Turn the screen off with the power button: the "Walk mode is on" notification with a "Stop" button appears on the lock screen and the app keeps listening. Tap "Stop" (or X inside the app) to end. If notification permission is denied, the walk screen says the notification will not appear and that walk mode is stopped from the app.
 
-7. Account deletion: Profile › Settings › Account › Delete account (the last row; also linked at the bottom of the Profile screen). Please test deletion with a separate account, not the review account.
+8. Account deletion: Profile › Settings › Account › Delete account (the last row; also linked at the bottom of the Profile screen). Please test deletion with a separate account, not the review account. Guests delete their data under Profile › Delete guest data.
 ```
 
 Test hesabı: gerçek veritabanında `[[TEST_HESABI_E_POSTA]]` ile bir hesap açın, e-posta
