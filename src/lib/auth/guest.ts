@@ -44,4 +44,18 @@ export async function requireAccount(): Promise<string | NextResponse> {
   return who.id;
 }
 
+/**
+ * MİSAFİRİN YAPAY ZEKÂ DENEME HAKKI — kimlik başına ömür boyu.
+ *
+ * Yapay zekâ misafire tamamen kapalıyken misafir, hesap açınca neyin
+ * açılacağını hiç görmüyordu; "bir kez dene, sonrası hesap" daha iyi dönüşüyor.
+ * Hak yalnız YAZMA ve KONUŞMA değerlendirmesinde (beceri alıştırması,
+ * monolog): kelime turundaki kısa cümle hakkı bir çırpıda yakardı. Rıza
+ * kapısı hesaptakiyle aynı; misafirin rızası da deftere yazılıyor ve hesaba
+ * birleşiyor. Sohbet (rol yapma), ses tanıma ve telaffuz kapalı kalıyor.
+ * Hak işin başında alınıyor, sağlayıcı yanıt veremezse geri veriliyor.
+ */
+export const GUEST_AI_TRIALS = 1;
+export const GUEST_AI_TRIAL_KEY = "guest_ai_trial";
+
 /* Oturum okunmayan yerler (kancalar, sıralamalar, cron) için: lib/auth/guest-user. */

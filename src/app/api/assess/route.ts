@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import { requireAccount } from "@/lib/auth/guest";
+import { accountRequired, GUEST_AI_TRIAL_KEY, GUEST_AI_TRIALS } from "@/lib/auth/guest";
+import { getUserInfo } from "@/lib/auth/server";
+import { getUsage, refundUsage } from "@/lib/premium/quota";
 import { sameOrigin } from "@/lib/auth/origin";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { assess } from "@/lib/assess";
@@ -12,6 +14,8 @@ import {
   type AssessRequest,
 } from "@/lib/assess-prompts";
 import { canAiPractice } from "@/lib/premium/access";
+import { claimSkillAi } from "@/lib/premium/skill-access";
+import { getExercise } from "@/lib/skills";
 import { premiumConfig, takeUsage } from "@/lib/premium";
 import { signScore, openKey, examWritingTask } from "@/lib/exam-grade";
 import { clampDay } from "@/lib/award";
@@ -35,10 +39,13 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
-  /* HESAP İSTER: yapay zekâ değerlendirmesi misafire kapalı, 403 account_required — rıza kapısından ÖNCE, yoksa misafire açılamayacak bir izin ekranı açılırdı (bkz. lib/auth/guest). */
-  const who = await requireAccount();
-  if (who instanceof NextResponse) return who;
-  const userId = who;
+  /* HESAP İSTER — misafirin tek deneme hakkı dışında (bkz. lib/auth/guest
+     `GUEST_AI_TRIALS`). Hakkı bitmiş misafire 403 account_required RIZA
+     KAPISINDAN ÖNCE: yoksa kullanamayacağı bir izin ekranı açılırdı. */
+  const who = await getUserInfo();
+  if (!who) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const userId = who.id;
+  if (who.guest && (await getUsage(userId, GUEST_AI_TRIAL_KEY, "all")) >= GUEST_AI_TRIALS) return accountRequired();
 
   /*
     YAPAY ZEKÂ RIZASI — metin dil modeline gitmeden ÖNCE (App Store 5.1.2(i),
@@ -57,6 +64,8 @@ export async function POST(req: Request) {
 
   const parsed = parseBody(body);
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+  // Misafirin denemesi yalnız yazma ve konuşmada; kısa cümle ve sohbet hesap istiyor.
+  if (who.guest && parsed.req.kind !== "writing" && parsed.req.kind !== "speaking") return accountRequired();
   if (parsed.tooLong) return NextResponse.json({ error: "too_long", max: ASSESS_MAX_CHARS }, { status: 413 });
 
   /*
@@ -97,13 +106,25 @@ export async function POST(req: Request) {
    * bakıyor.
    *
    * AMA O UCU BUGÜN HİÇBİR İSTEMCİ ÇAĞIRMIYOR (2026-09-12 ölçüldü): ne web ne
-   * mobil. Yani tur/alıştırma başına hak HİÇ HARCANMIYOR; sayılan tek şey
+   * mobil. Yani DERS turu/alıştırması başına hak HİÇ HARCANMIYOR (Beceriler
+   * kütüphanesi 2026-09-15'ten beri aşağıda, sunucuda sayılıyor); sayılan tek şey
    * aşağıdaki `ai_assess_calls` emniyet tavanı. Kotayı gerçekten işletmek bir
    * ÜRÜN kararı (bugün ücretsiz kullanılan bir yüzeyi kilitler) ve premium
    * hâlâ pasif; kayıt `docs/plan/web-parity.md` §11.489'da.
    */
   const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "roleplay";
-  if (gated) {
+  /*
+    BECERİLER KÜTÜPHANESİ kendi kotasıyla ve GERÇEKTEN sayılarak kapılanıyor
+    (bkz. lib/premium/skill-access): hak alıştırmanın ilk değerlendirmesinde
+    düşüyor, sonraki değerlendirmeler aynı hakla geçiyor. Sınav kâğıdının
+    yazma görevi (`examVerified`) bu kapıya girmez.
+  */
+  const skillExercise = gated && !examVerified && typeof parsed.req.exerciseId === "string" ? await getExercise(parsed.req.exerciseId) : undefined;
+  const skillGate = skillExercise ? await claimSkillAi(userId, skillExercise, parsed.req.level) : null;
+  if (skillGate && !skillGate.allowed) {
+    return NextResponse.json({ error: "premium_required", reason: skillGate.reason, gate: skillGate.gate }, { status: 403 });
+  }
+  if (gated && !skillGate) {
     const kind = parsed.req.kind === "writing" ? "writing" : "speaking";
     const gate = await canAiPractice(userId, kind, "lesson", parsed.req.level);
     if (!gate.allowed) {
@@ -134,9 +155,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
   }
 
+  // Deneme hakkı ATOMİK alınıyor: eşzamanlı iki istek iki hak harcayamaz.
+  if (who.guest && !(await takeUsage(userId, GUEST_AI_TRIAL_KEY, "all", GUEST_AI_TRIALS))) return accountRequired();
+
   const outcome = await assess(userId, parsed.req, parsed.day, (r) =>
     recordAiUsage(userId, { kind: "assess", ...r }),
   );
+  // Değerlendirme olmadıysa misafirin hakkı yanmıyor.
+  if (who.guest && !outcome.ok) await refundUsage(userId, GUEST_AI_TRIAL_KEY, "all");
 
   if (outcome.ok) {
     // F7: yazma puanını imzala — AMA yalnız sınav görevine karşı puanlandıysa

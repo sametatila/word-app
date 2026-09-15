@@ -140,5 +140,21 @@ export async function takeUsage(userId: string, key: string, period: Period, lim
   }
 }
 
+/**
+ * Alınmış bir hakkı geri verir — hak işin BAŞINDA atomik alınıp iş sağlayıcı
+ * yüzünden olmadığında (servis kapalı, geçersiz yanıt). Sayaç sıfırın altına
+ * inmez.
+ */
+export async function refundUsage(userId: string, key: string, period: Period, now?: Date): Promise<void> {
+  try {
+    await db
+      .update(usageCounters)
+      .set({ count: sql`greatest(${usageCounters.count} - 1, 0)`, updatedAt: new Date() })
+      .where(and(eq(usageCounters.userId, userId), eq(usageCounters.key, key), eq(usageCounters.period, periodKey(period, now))));
+  } catch (err) {
+    console.error("[quota:refundUsage]", key, err);
+  }
+}
+
 /** Ömürlük kotalarda seviyeye bağlı anahtar: "speaking_lesson:A1". */
 export const levelKey = (base: string, level: string): string => `${base}:${level}`;

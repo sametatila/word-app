@@ -3,6 +3,8 @@ import { getUserInfo } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, resolveEntitlement } from "@/lib/premium";
 import { canPocketWalk, canWeeklyExam, canAiPractice } from "@/lib/premium/access";
 import { referralStats } from "@/lib/premium/referral";
+import { GUEST_AI_TRIAL_KEY, GUEST_AI_TRIALS } from "@/lib/auth/guest";
+import { getUsage } from "@/lib/premium/quota";
 
 export const dynamic = "force-dynamic";
 
@@ -43,6 +45,7 @@ export async function GET(req: Request) {
         plans: cfg.plans,
         copy,
         referral: null,
+        guestAiLeft: null,
         gates: null,
       },
       { headers: { "cache-control": "no-store" } },
@@ -53,7 +56,7 @@ export async function GET(req: Request) {
 
   try {
     const ent = await resolveEntitlement(userId);
-    const [walk, weekly, referral, speaking, writing] = await Promise.all([
+    const [walk, weekly, referral, speaking, writing, guestAiUsed] = await Promise.all([
       canPocketWalk(userId),
       canWeeklyExam(userId),
       /* Davet hesap istiyor (bkz. lib/auth/guest): misafire kod ÜRETİLMİYOR —
@@ -61,6 +64,7 @@ export async function GET(req: Request) {
       who?.guest ? Promise.resolve(null) : referralStats(userId).catch(() => null),
       level ? canAiPractice(userId, "speaking", "lesson", level) : Promise.resolve(null),
       level ? canAiPractice(userId, "writing", "lesson", level) : Promise.resolve(null),
+      who?.guest ? getUsage(userId, GUEST_AI_TRIAL_KEY, "all") : Promise.resolve(0),
     ]);
 
     return NextResponse.json(
@@ -75,6 +79,8 @@ export async function GET(req: Request) {
         plans: cfg.plans,
         copy,
         referral,
+        /* Misafirin kalan yapay zekâ deneme hakkı (bkz. lib/auth/guest); hesapta null. */
+        guestAiLeft: who?.guest ? Math.max(0, GUEST_AI_TRIALS - guestAiUsed) : null,
         gates: { pocket_walk: walk, weekly_exam: weekly, speaking, writing },
       },
       { headers: { "cache-control": "no-store" } },
@@ -94,6 +100,7 @@ export async function GET(req: Request) {
         plans: cfg.plans,
         copy,
         referral: null,
+        guestAiLeft: null,
         gates: null,
       },
       { status: 200, headers: { "cache-control": "no-store" } },

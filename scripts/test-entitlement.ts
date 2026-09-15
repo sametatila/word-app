@@ -33,7 +33,7 @@ import { createCodes, redeemCode } from "../src/lib/premium/promo";
 import { attachReferral, ensureReferralCode, rewardForFirstPayment } from "../src/lib/premium/referral";
 import { clearPremiumConfigCache, savePremiumConfig } from "../src/lib/premium/config";
 import type { StoreEvent } from "../src/lib/premium/ports";
-import { getUsage, takeUsage } from "../src/lib/premium/quota";
+import { getUsage, refundUsage, takeUsage } from "../src/lib/premium/quota";
 
 /**
  * ADRES `TEST_DATABASE_URL`DEN OKUNUR, `DATABASE_URL`den değil.
@@ -361,6 +361,16 @@ async function main() {
     const tomorrow = new Date(Date.now() + 86_400_000);
     check("ertesi gün sayaç yeniden açılıyor", await takeUsage(u, "ai_assess_calls", "day", limit, tomorrow));
     check("sıfır tavan hiç geçirmiyor", !(await takeUsage(u, "zero_key", "day", 0)));
+
+    /* MİSAFİRİN TEK DENEME HAKKI (api/assess): ömürlük, atomik; sağlayıcı yanıt
+       veremezse geri veriliyor ve sayaç sıfırın altına inmiyor. */
+    const trials = await Promise.all(Array.from({ length: 20 }, () => takeUsage(u, "guest_ai_trial", "all", 1)));
+    check("eşzamanlı 20 denemeden yalnız biri hak aldı", trials.filter(Boolean).length === 1, trials.filter(Boolean).length);
+    await refundUsage(u, "guest_ai_trial", "all");
+    check("geri verilen hak yeniden alınabiliyor", await takeUsage(u, "guest_ai_trial", "all", 1));
+    await refundUsage(u, "guest_ai_trial", "all");
+    await refundUsage(u, "guest_ai_trial", "all");
+    check("geri verme sayacı sıfırın altına indirmiyor", (await getUsage(u, "guest_ai_trial", "all")) === 0, await getUsage(u, "guest_ai_trial", "all"));
   }
 
   await cleanup(created);
