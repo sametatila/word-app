@@ -725,7 +725,8 @@ function chainWithElements(
       playAt(i + 1);
     };
 
-    const fallback = () => {
+    let retried = false;
+    const fallback = (err?: unknown) => {
       if (moved || token !== mine) return;
       // Arka planda tarayıcı sentezi yok: konuşmuyor ve `onend` vermiyor,
       // yani zinciri kurtarmak yerine asıyor. Parça atlanıyor.
@@ -733,8 +734,26 @@ function chainWithElements(
         next();
         return;
       }
-      // Uç düşmüş ya da dosya çalınamıyor: bu parçayı tarayıcı sentezi okusun,
-      // zincir kopmasın.
+      /*
+        Seçilen ses yerine cihaz sesi YOK (bkz. `play`): önce bu parça bir kez
+        yeniden deneniyor, olmazsa atlanıyor. Cihaz sesi yalnız çevrimdışıyken.
+        Otomatik oynatma engelinde yeniden deneme de işe yaramaz, doğrudan atla.
+      */
+      const blocked = err instanceof DOMException && err.name === "NotAllowedError";
+      const offline = typeof navigator !== "undefined" && navigator.onLine === false;
+      if (!blocked && !offline && !retried) {
+        retried = true;
+        if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "retry");
+        el.removeAttribute("src");
+        el.src = srcFor(queue[i]);
+        void el.play().catch(fallback);
+        return;
+      }
+      if (!offline) {
+        if (typeof window !== "undefined") trackOnce("tts_fallback", 0, blocked ? "blocked" : "skip");
+        next();
+        return;
+      }
       moved = true;
       disarm();
       const { voice, course } = voiceForSegment(queue[i]);
@@ -742,7 +761,7 @@ function chainWithElements(
     };
 
     el.onended = next;
-    el.onerror = fallback;
+    el.onerror = () => fallback();
 
     if (background) {
       // Önce yalnızca BAŞLAMASI bekleniyor; ses akmaya başlayınca tavan
@@ -927,18 +946,46 @@ function play(
     done = true;
     onEnd?.();
   };
-  const fallback = () => {
-    if (done || token !== mine) return;
+  const url = ttsUrl(voice, clean, slow);
+  /** Kaçıncı deneme — geç gelen olay önceki denemeye aitse yok sayılır. */
+  let attempt = 0;
+  let bekci: ReturnType<typeof setTimeout> | undefined;
+
+  /*
+    SEÇİLEN SES YERİNE CİHAZ SESİ YOK.
+
+    Nöral ses çalınamayınca (ağ hıçkırığı, 503, otomatik oynatma engeli, yavaş
+    yükleme) okuma doğrudan tarayıcı sentezine düşüyordu: kullanıcı Katja'yı
+    seçmişken bir anda iPhone'un kendi sesi konuşuyordu ("bazen iOS sesi,
+    hiç hoş değil"). Artık:
+      1. Otomatik oynatma engeli (`NotAllowedError`) → okuma atlanıyor; aynı
+         engel cihaz sesini de susturuyor, yedek bir şey kurtarmıyordu.
+      2. Başka bir hata → nöral ses BİR KEZ yeniden deneniyor (nginx önbelleği
+         ikinci denemeyi çoğu zaman anında karşılıyor).
+      3. Yine olmazsa okuma atlanıyor — sessiz bir kelime, yanlış sesle
+         okunmuş bir kelimeden iyi.
+    Cihaz sesi yalnız ÇEVRİMDIŞIYKEN: orada nöral sesin yolu hiç yok.
+  */
+  const fail = (n: number, err?: unknown) => {
+    if (done || token !== mine || n !== attempt) return;
+    if (bekci) clearTimeout(bekci);
+    const blocked = err instanceof DOMException && err.name === "NotAllowedError";
+    const offline = typeof navigator !== "undefined" && navigator.onLine === false;
+    if (!blocked && !offline && attempt === 1) {
+      if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "retry");
+      start();
+      return;
+    }
     done = true;
-    // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
-    //
-    // Ölçüm: kullanıcının DUYDUĞU ses burada değişiyor — seçtiği Katja/Conrad
-    // yerine cihazın kendi sesi geliyor, cihazda Almanca ses yoksa hiç ses
-    // gelmiyor. Şikâyetin kaynağı bu basamak, o yüzden ayrıca işaretleniyor.
-    if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
-    // Öğe hâlâ yüklüyor olabilir (nöbetçi): geç başlayıp sentezin üstüne binmesin.
+    // Öğe hâlâ yüklüyor olabilir (nöbetçi): geç başlayıp üstüne binmesin.
     audio.pause();
-    speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
+    if (offline) {
+      if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
+      speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
+      return;
+    }
+    if (typeof window !== "undefined") trackOnce("tts_fallback", 0, blocked ? "blocked" : "skip");
+    onEnd?.();
   };
 
   /*
@@ -957,54 +1004,53 @@ function play(
   stopActiveChain();
   element?.pause();
   extra?.pause();
-  audio.onended = finish;
-  audio.onerror = fallback;
-  // Öğe paylaşılıyor: yarıda kesilen bir parça zinciri kendi `onplaying`
-  // işleyicisini geride bırakmış olabilir (bkz. chainWithElements). Burada
-  // okunacak süre yok, ama eski işleyici de bu okumanın üstünde kalmamalı.
-  audio.onplaying = null;
-  audio.src = ttsUrl(voice, clean, slow);
-  // `currentTime` ataması KORUNMALI: kaynak henüz yüklenmemişken (readyState
-  // HAVE_NOTHING) Safari bunu InvalidStateError ile reddedebiliyor ve fırlayan
-  // hata bir alt satırdaki play()'e hiç sıra gelmeden çağıran işleyiciyi
-  // kırıyordu — hoparlör düğmesi hiçbir şey yapmamış gibi görünüyordu.
-  // Yeni bir kaynak zaten baştan başlar; bu satır yalnız aynı kaynağı ikinci
-  // kez çalarken anlamlı.
-  try {
-    audio.currentTime = 0;
-  } catch {
-    /* kaynak henüz açılmadı; zaten baştan başlayacak */
-  }
-  // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
-  // aynı yedeğe düşülür.
-  void audio.play().catch(fallback);
-  // Nöbetçi: play() sözü çözülse bile ses hiç BAŞLAMAYABİLİYOR (iOS'ta
-  // engellenen oynatma bazen ne reddediyor ne de `error` veriyor). Belirli bir
-  // süre içinde `playing` gelmezse yedeğe düşülüyor, yoksa tur sessiz kalırdı.
-  /*
-    YÜKLENİYORSA BEKLE. Nöbetçi 2,5 sn'de ses başlamadıysa yedeğe düşüyordu;
-    oysa ilk kez dinlenen metin sunucuda sentezleniyor ve iOS aynı sesi iki
-    aralık isteğiyle alıyor — 2,5 sn sık aşılıyordu. Öğe hâlâ ağdan okuyorsa
-    (hata yok, `NETWORK_LOADING`) indirme tavanına kadar bekleniyor; gerçekten
-    takılmış oynatma (ne hata ne yükleme) yine yedeğe düşüyor.
-  */
-  const basla = Date.now();
-  let bekci: ReturnType<typeof setTimeout>;
-  const nobet = () => {
-    if (done || token !== mine) return;
-    if (!audio.paused && audio.currentTime > 0) return;
-    const yukluyor = !audio.error && audio.networkState === HTMLMediaElement.NETWORK_LOADING;
-    if (yukluyor && Date.now() - basla < TTS_FETCH_TIMEOUT_MS) {
-      bekci = setTimeout(nobet, 500);
-      return;
+
+  function start() {
+    const n = ++attempt;
+    audio!.onended = () => {
+      if (n === attempt) finish();
+    };
+    audio!.onerror = () => fail(n);
+    // Öğe paylaşılıyor: yarıda kesilen bir parça zinciri kendi `onplaying`
+    // işleyicisini geride bırakmış olabilir (bkz. chainWithElements).
+    audio!.onplaying = () => {
+      if (n !== attempt || token !== mine) return;
+      if (bekci) clearTimeout(bekci);
+      onStart?.();
+    };
+    if (n > 1) audio!.removeAttribute("src");
+    audio!.src = url;
+    // `currentTime` ataması KORUNMALI: kaynak henüz yüklenmemişken (readyState
+    // HAVE_NOTHING) Safari bunu InvalidStateError ile reddedebiliyor ve fırlayan
+    // hata bir alt satırdaki play()'e hiç sıra gelmeden çağıran işleyiciyi
+    // kırıyordu — hoparlör düğmesi hiçbir şey yapmamış gibi görünüyordu.
+    try {
+      audio!.currentTime = 0;
+    } catch {
+      /* kaynak henüz açılmadı; zaten baştan başlayacak */
     }
-    fallback();
-  };
-  bekci = setTimeout(nobet, PLAY_WATCHDOG_MS);
-  const iptal = () => clearTimeout(bekci);
-  audio.addEventListener("playing", iptal, { once: true });
-  if (onStart) audio.addEventListener("playing", () => { if (token === mine) onStart(); }, { once: true });
-  audio.addEventListener("error", iptal, { once: true });
+    void audio!.play().catch((e) => fail(n, e));
+    /*
+      Nöbetçi: play() sözü çözülse bile ses hiç BAŞLAMAYABİLİYOR (iOS'ta
+      engellenen oynatma bazen ne reddediyor ne de `error` veriyor). Öğe hâlâ
+      ağdan okuyorsa (hata yok, `NETWORK_LOADING`) indirme tavanına kadar
+      bekleniyor: ilk kez dinlenen metin sunucuda sentezleniyor ve iOS aynı
+      sesi iki aralık isteğiyle alıyor, 2,5 sn sık aşılıyordu.
+    */
+    const basla = Date.now();
+    const nobet = () => {
+      if (done || token !== mine || n !== attempt) return;
+      if (!audio!.paused && audio!.currentTime > 0) return;
+      const yukluyor = !audio!.error && audio!.networkState === HTMLMediaElement.NETWORK_LOADING;
+      if (yukluyor && Date.now() - basla < TTS_FETCH_TIMEOUT_MS) {
+        bekci = setTimeout(nobet, 500);
+        return;
+      }
+      fail(n);
+    };
+    bekci = setTimeout(nobet, PLAY_WATCHDOG_MS);
+  }
+  start();
 }
 
 /**
