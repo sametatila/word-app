@@ -14,10 +14,10 @@ import type { QuizWeek } from "../types";
  *    sıfat `more` alır' olduğundan açıklama ayrıldı.
  *  - `w04-g5` (`deshalb möchte ich`): `weil` ile aynı anlam, farklı dizilim;
  *    İngilizce `so I want` sırası özneyi önde tutuyor.
- *  - `w04-v2` (`Lehrer werden`): `bekommen` şıkkı yalnız İngilizce varyantta
- *    anlamlı bir tuzak; tabanda `machen` 'yapmak' çevirisini temsil ediyor.
+ *  - `w04-v2` (`Lehrer werden`): İngilizce varyantta `bekommen` (`become`)
+ *    tuzağı; tabanda `Lehrer arbeiten` (`als` düşmüş 'öğretmen olarak çalışmak').
  *  - `w04-v3` (`verdienen`): 'kazanmak' Türkçede tek fiil; İngilizce
- *    `earn`/`win` ayrımı zaten var, o yüzden varyant yazılmadı.
+ *    varyantta tuzak `gewinnt` ↔ `win` ses benzerliği ve `get paid` → `bezahlt`.
  */
 export const DE_A2_W04: QuizWeek = {
   id: "de-a2-w04",
@@ -33,7 +33,7 @@ export const DE_A2_W04: QuizWeek = {
       kind: "text",
       id: "t1",
       genre: "Anzeige",
-      genreTr: "Iş ilanı",
+      genreTr: "İş ilanı",
       title: "Café am Marktplatz sucht Mitarbeiter",
       body:
         "Wir suchen ab 1. Oktober einen Mitarbeiter oder eine Mitarbeiterin für unser Café am Marktplatz. " +
@@ -48,7 +48,7 @@ export const DE_A2_W04: QuizWeek = {
       kind: "audio",
       id: "a1",
       genre: "Bewerbungsgespräch",
-      genreTr: "Iş görüşmesi",
+      genreTr: "İş görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Herr Keller", text: "Guten Tag, Frau Yıldız. Bitte setzen Sie sich. Warum möchten Sie bei uns arbeiten?" },
@@ -56,10 +56,10 @@ export const DE_A2_W04: QuizWeek = {
         { speaker: "Herr Keller", text: "Haben Sie schon im Service gearbeitet?" },
         { speaker: "Frau Yıldız", text: "Ja, zwei Jahre in einem Hotel in Izmir. Dort musste ich auch oft Englisch sprechen." },
         { speaker: "Herr Keller", text: "Sehr gut. Und seit wann sind Sie in Deutschland?" },
-        { speaker: "Frau Yıldız", text: "Seit acht Monaten. Vorher habe ich in Izmir einen Kurs in Deutsch gemacht." },
+        { speaker: "Frau Yıldız", text: "Seit acht Monaten. Vorher habe ich in Izmir Deutsch gelernt." },
         { speaker: "Herr Keller", text: "Können Sie auch am Sonntag arbeiten?" },
         { speaker: "Frau Yıldız", text: "Am Samstag ja, am Sonntag leider nicht, weil ich da auf meinen Sohn aufpasse." },
-        { speaker: "Herr Keller", text: "Kein Problem, das finden wir. Können Sie am 1. Oktober anfangen?" },
+        { speaker: "Herr Keller", text: "Kein Problem, da finden wir eine Lösung. Können Sie am 1. Oktober anfangen?" },
         { speaker: "Frau Yıldız", text: "Ja, das passt sehr gut." },
       ],
     },
@@ -124,7 +124,7 @@ export const DE_A2_W04: QuizWeek = {
       block: "listen",
       ref: "a1",
       stem: "Warum kann Frau Yıldız am Sonntag nicht arbeiten?",
-      options: ["Sie macht einen Kurs.", "Sie passt auf ihren Sohn auf.", "Sie arbeitet im Hotel.", "Das Café ist am Sonntag zu."],
+      options: ["Sie lernt Deutsch.", "Sie passt auf ihren Sohn auf.", "Sie arbeitet im Hotel.", "Das Café ist am Sonntag zu."],
       answer: 1,
       why: "Sebep `weil` yan cümlesinde ve fiil sonda: `aufpasse`. Almancada yan cümlenin anlamı çoğu zaman son sözcükte tamamlanıyor; cümlenin sonunu beklemeden dinlemeyi bırakınca sebep kaçıyor.",
       targets: ["hoeren.detail", "nebensatz.weil"],
@@ -153,7 +153,7 @@ export const DE_A2_W04: QuizWeek = {
       stem: "In meinem alten Job ___ ich jeden Tag um fünf Uhr aufstehen.",
       options: ["muss", "musste", "müsste", "habe gemusst"],
       answer: 1,
-      why: "Modal fiiller geçmişte çoğunlukla Präteritum'la söylenir ve umlautlarını kaybeder: `müssen` → `musste`. `müsste` umlautu koruyan Konjunktiv II ve 'gerekirdi' demek; tek bir nokta anlamı değiştiriyor.",
+      why: "Modal fiiller geçmişte çoğunlukla Präteritum'la söylenir ve umlautlarını kaybeder: `müssen` → `musste`. `müsste` umlautu koruyan Konjunktiv II ve 'gerekirdi' demek; iki nokta anlamı değiştiriyor.",
       targets: ["praeteritum.modal", "modal.muessen"],
       byNative: {
         en: {
@@ -233,9 +233,9 @@ export const DE_A2_W04: QuizWeek = {
       id: "de-a2-w04-v2",
       block: "vocab",
       stem: "Mein Sohn möchte später Lehrer ___.",
-      options: ["machen", "lernen", "bekommen", "werden"],
+      options: ["machen", "lernen", "arbeiten", "werden"],
       answer: 3,
-      why: "Bir mesleğe, bir duruma geçiş `werden` ile anlatılır: 'öğretmen olmak'. `machen` 'yapmak' kelime kelime çeviri; `lernen` bir şeyi öğrenmek, kişi `Lehrer` öğrenilmez.",
+      why: "Bir mesleğe geçiş `werden` ile anlatılır: 'öğretmen olmak'. `als Lehrer arbeiten` 'öğretmen olarak çalışmak' başka bir şey ve `als` olmadan kurulamaz; `lernen` bir şeyi öğrenmek, `machen` ise mesleğe bağlanmaz.",
       targets: ["verb.werden", "verb.bekommen"],
       byNative: {
         en: {
@@ -249,13 +249,13 @@ export const DE_A2_W04: QuizWeek = {
       id: "de-a2-w04-v3",
       block: "vocab",
       stem: "Wie viel Geld ___ man in diesem Job im Monat?",
-      options: ["gewinnt", "verdient", "bezahlt", "spart"],
+      options: ["gewinnt", "verdient", "bezahlt", "erreicht"],
       answer: 1,
       why: "Çalışarak para kazanmak `verdienen`; `gewinnen` bir yarışmada ya da oyunda kazanmak. Türkçe 'kazanmak' ikisini de karşıladığı için `gewinnt` seçiliyor. `bezahlen` ise ödeyen tarafın fiili.",
       targets: ["verb.verdienen"],
       byNative: {
         en: {
-          options: ["verdient", "gewinnt", "spart", "bezahlt"],
+          options: ["verdient", "gewinnt", "erreicht", "bezahlt"],
           answer: 0,
           why: "`gewinnt` İngilizce `win`e benzediği için seçiliyor ama `gewinnen` yarışmada kazanmak. `get paid` düşüncesi de `bezahlt`a çekiyor, oysa `bezahlen` ödeyen tarafın fiili. Maaş kazanmak `verdienen` (`earn`).",
         },

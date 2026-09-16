@@ -70,7 +70,7 @@ export const EN_A2_W01: QuizWeek = {
       stem: "Why did the writer miss the bus?",
       options: ["It started to rain.", "The boss called.", "The writer woke up late.", "The bus was early."],
       answer: 2,
-      why: "Metin bir sebep-sonuç zinciri kuruyor: saat çalmadı → geç uyandı → otobüsü kaçırdı. Yağmur otobüsü beklerken başladı, yani kaçırmanın sonucu, sebebi değil. `so` ve `while` olayların sırasını gösteriyor.",
+      why: "Metin bir sebep-sonuç zinciri kuruyor: saat çalmadı → geç uyandı → otobüsü kaçırdı. Yağmur otobüs kaçtıktan SONRA, beklerken başladı; sebep olamaz. `so` ve `while` olayların sırasını gösteriyor.",
       targets: ["reading.detail", "past.continuous"],
     },
     {
@@ -78,7 +78,7 @@ export const EN_A2_W01: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where did the writer have dinner?",
-      options: ["at home", "at the favourite restaurant", "at the office", "at a friend's home"],
+      options: ["at home", "at the writer's favourite restaurant", "at the office", "at a friend's home"],
       answer: 0,
       why: "`wanted to relax, so I went to…` bir planı anlatıyor, ama hemen sonraki `But it was closed!` planı bozuyor. Restorana gitmek olmuş, orada yemek olmamış; `But` ile gelen cümleyi atlayınca plan sonuç gibi okunuyor.",
       targets: ["reading.detail"],
@@ -112,7 +112,7 @@ export const EN_A2_W01: QuizWeek = {
       stem: "What happened while they were swimming?",
       options: ["It started to rain.", "Her brother found his glasses.", "Her brother lost his glasses.", "They went to the town."],
       answer: 2,
-      why: "`while we were swimming` süren arka plan eylemi, `lost` o sırada olan kısa olay. Gözlük bulunmadı (`No, he didn't`); kasabaya gidiş ise sonradan, yeni gözlük almak için.",
+      why: "`while we were swimming` süren arka plan eylemi, `lost` o sırada olan kısa olay. Yağmur ilk güne ait, kasabaya gidiş ise olaydan sonra; `while` ile bağlanan yalnız yüzme ve kayıp.",
       targets: ["listening.detail", "past.continuous"],
     },
     {
@@ -151,7 +151,7 @@ export const EN_A2_W01: QuizWeek = {
         "Did you see the film last night?",
         "Did you saw the film last night?",
         "Have you seen the film last night?",
-        "You saw the film last night?",
+        "Do you saw the film last night?",
       ],
       answer: 0,
       why: "Geçmiş zaman sorusu `did` + yalın fiil ile kurulur. Zamanı `did` taşıdığı için ana fiil ikinci kez geçmiş olmaz (`saw` değil `see`). Türkçede soru eki fiile yapıştığı için ayrı bir yardımcı fiil gereği görünmüyor.",
@@ -197,7 +197,7 @@ export const EN_A2_W01: QuizWeek = {
         de: {
           options: ["since", "for", "ago", "before"],
           answer: 2,
-          why: "Almanca `vor drei Jahren`de `vor` başta, İngilizce `ago` sonda. `since` Almanca `seit` gibi görünür ama bitmiş bir anla (`started`) gelmez; `for` da süre ölçer.",
+          why: "Almanca `vor drei Jahren`de `vor` başta, İngilizce `ago` sonda. `seit drei Jahren` → `since three years` aktarımı yanlış: `since` bir başlangıç anı ister, süre değil; süre `for three years`. Burada ise bugünden geriye sayılan an: `ago`.",
         },
       },
     },
@@ -223,9 +223,9 @@ export const EN_A2_W01: QuizWeek = {
       id: "en-a2-w01-v1",
       block: "vocab",
       stem: "We ___ a lot of photos on holiday.",
-      options: ["made", "pulled", "took", "did"],
+      options: ["drew", "pulled", "took", "did"],
       answer: 2,
-      why: "İngilizcede fotoğraf 'alınır': `take photos`. Türkçe 'çekmek'ten `pulled`, 'yapmak'tan `made` geliyor. Kalıbın fiili sözcük sözcük çeviriyle bulunmaz.",
+      why: "İngilizcede fotoğraf 'alınır': `take photos`. Türkçe 'çekmek' hem `pull` hem `draw` diye çevrildiği için `pulled` ya da `drew` geliyor. Kalıbın fiili sözcük sözcük çeviriyle bulunmaz.",
       targets: ["collocation.take"],
       byNative: {
         de: {

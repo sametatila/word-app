@@ -68,7 +68,7 @@ export const EN_A2_W05: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Why did the writer get lost on the first day?",
-      options: ["A woman showed the wrong way.", "The bus was late.", "The writer took the wrong bus.", "The writer had a cold."],
+      options: ["A woman showed the writer the wrong way.", "The bus was late.", "The writer took the wrong bus.", "The writer had a cold."],
       answer: 2,
       why: "Sebep `because` ile hemen arkasında geliyor. Kadın yolu gösterdi, yanlış yol göstermedi; soğuk algınlığı ise ikinci haftaya ait. Sebebi olayla aynı zamana bağlamadan okuyunca metindeki başka bir sorun seçiliyor.",
       targets: ["reading.detail", "past.irregular"],
@@ -93,7 +93,7 @@ export const EN_A2_W05: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "What does the writer say about the flat?",
-      options: ["It is bigger than the old one.", "It is in a noisy street.", "It is small but quiet.", "It is next to the castle."],
+      options: ["It is bigger than the old one.", "It is in a noisy street.", "It is smaller than the old one, but quiet.", "It is next to the castle."],
       answer: 2,
       why: "`smaller than my old one` bir karşılaştırma: yeni daire eskisinden küçük. `than`ın iki yanını ters okumak ('eskisi daha küçük') karşılaştırmada sık hata; `quiet street` de gürültülü seçeneğini eliyor.",
       targets: ["reading.detail", "compare.comparative"],
@@ -107,7 +107,7 @@ export const EN_A2_W05: QuizWeek = {
       stem: "Why didn't Omar see much in Edinburgh?",
       options: ["The weather was bad.", "The castle was closed.", "The train was late.", "He was ill."],
       answer: 3,
-      why: "Gerekçe ilk cevapta: `I was ill for two days`. Tren konuşmada geçiyor ama hastalığın nereden geldiğini anlatırken, gecikme olarak değil. Duyulan yer adını beklenen hikâyeyle (tren → gecikme) birleştirmek tuzak.",
+      why: "Gerekçe ilk cevapta: `I was ill for two days`. Tren konuşmada geçiyor ama hastalığın nereden geldiğini anlatırken, gecikme olarak değil. Duyulan sözcüğü (tren) beklenen hikâyeyle (tren → gecikme) birleştirmek tuzak.",
       targets: ["listening.detail", "past.was-were"],
     },
     {
@@ -167,10 +167,10 @@ export const EN_A2_W05: QuizWeek = {
     {
       id: "en-a2-w05-g3",
       block: "grammar",
-      stem: "You ___ pay for the museum. It's free on Sundays.",
+      stem: "Today is Sunday. You ___ pay to go into the museum, it's free.",
       options: ["mustn't", "don't have to", "haven't to", "don't must"],
       answer: 1,
-      why: "Ücretsiz bir yerde ödemek yasak değil, gerekmiyor: `don't have to`. `mustn't` bir şeyin yasak olduğunu söyler. Türkçe 'ödememelisin' iki anlamı da çağırdığı için yasak biçimi seçiliyor.",
+      why: "Ücretsiz bir yerde ödemek yasak değil, gerekmiyor: `don't have to`. `mustn't` bir şeyin yasak olduğunu söyler. Hata `must` = 'zorunda' ezberinden geliyor: 'zorunda değilsin' `must`un olumsuzu sanılıp `mustn't` kuruluyor.",
       targets: ["modal.have-to", "modal.must-not"],
       byNative: {
         de: {
@@ -234,9 +234,9 @@ export const EN_A2_W05: QuizWeek = {
       id: "en-a2-w05-v2",
       block: "vocab",
       stem: "I ___ a new phone for my birthday.",
-      options: ["took", "became", "made", "got"],
+      options: ["took", "gave", "made", "got"],
       answer: 3,
-      why: "Hediye, mektup ya da mesaj sana gelince `get`. Türkçe 'hediye aldım' iki anlama gelir: birinden almak `get`, dükkândan satın almak `buy`; `take` ise ikisi de değil.",
+      why: "Hediye, mektup ya da mesaj sana gelince `get`. Türkçe 'almak' `take`e, 'hediye' düşüncesi de `gave`e çekiyor; ama hediyeyi alan sensen fiil `get`.",
       targets: ["verb.get", "falsefriend.become"],
       byNative: {
         de: {

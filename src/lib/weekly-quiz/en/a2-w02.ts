@@ -12,7 +12,7 @@ import type { QuizWeek } from "../types";
  *  - `w02-g2` (`don't have to`): Almanca `muss nicht` 'gerek yok' ama
  *    `mustn't`e benziyor — anlamı tersine çeviren sahte dost.
  *  - `w02-g3`/`g4` (`for`, `have lived`): Almanca `seit` hem süre hem başlangıç
- *    ve şimdiki zamanla kuruluyor; Türkçe '-dır/-den beri' de öyle. İki öğrenci
+ *    ve şimdiki zamanla kuruluyor; Türkçe '-den beri' de öyle. İki öğrenci
  *    de `I live here since…` kuruyor.
  *  - `w02-g5` (`a headache`): Türkçede belirsiz artikel zorunlu değil; Almanca
  *    `Kopfschmerzen` artikelsiz ve çoğul. Yanlış aynı, sebep farklı.
@@ -37,11 +37,11 @@ export const EN_A2_W02: QuizWeek = {
       title: "Your appointment",
       body:
         "Dear Ms Green,\n\nThis is a reminder about your appointment with Dr Patel on Thursday, 12 March, at 10:30 in the morning. " +
-        "Please arrive a bit early and bring your ID card and a list of the pills you are taking at the moment. " +
+        "Please arrive a bit early and bring your passport and a list of the pills you are taking at the moment. " +
         "If you have a fever or a bad cough, please call us before you come. Do not come into the waiting room. " +
         "If you can't come, you have to cancel your appointment at least one day before. If you don't, you will have to pay 20 pounds. " +
-        "Our doctor's office is on the second floor. The lift is next to the pharmacy on the ground floor.\n\n" +
-        "Best wishes,\nRiverside Health Center",
+        "Dr Patel's room is on the second floor. The lift is next to the pharmacy on the ground floor.\n\n" +
+        "Best wishes,\nRiverside Health Centre",
     },
     {
       kind: "audio",
@@ -50,13 +50,13 @@ export const EN_A2_W02: QuizWeek = {
       genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
-        { speaker: "Receptionist", text: "Good morning, Riverside Health Center. How can I help you?" },
+        { speaker: "Receptionist", text: "Good morning, Riverside Health Centre. How can I help you?" },
         { speaker: "Mr Kaya", text: "Hello, I'd like to make an appointment, please. I've had a bad headache since Monday." },
         { speaker: "Receptionist", text: "I'm sorry to hear that. Have you got a temperature?" },
         { speaker: "Mr Kaya", text: "No, I haven't. But I can't sleep well." },
         { speaker: "Receptionist", text: "We have a free appointment tomorrow at nine in the morning." },
         { speaker: "Mr Kaya", text: "I'm afraid I have to work in the morning. Is there anything in the afternoon?" },
-        { speaker: "Receptionist", text: "Yes, at a quarter past four. Is that OK?" },
+        { speaker: "Receptionist", text: "Yes, tomorrow at a quarter past four. Is that OK?" },
         { speaker: "Mr Kaya", text: "Perfect. Thank you very much." },
       ],
     },
@@ -71,9 +71,9 @@ export const EN_A2_W02: QuizWeek = {
       stem: "What should Ms Green bring?",
       options: [
         "only a list of her pills",
-        "her ID card and a list of her pills",
-        "her ID card and 20 pounds for the doctor",
-        "a letter from the pharmacy and her ID card",
+        "her passport and a list of her pills",
+        "her passport and 20 pounds for the doctor",
+        "a letter from the pharmacy and her passport",
       ],
       answer: 1,
       why: "`and` iki şeyi birlikte istiyor, yalnız birini seçmek eksik kalır. 20 pound bir koşula bağlı: yalnız randevu iptal edilmezse ödeniyor. `If you don't` ile gelen bilgiyi genel talimat sanmak bu metin türünde sık hata.",
@@ -83,7 +83,7 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-r2",
       block: "read",
       ref: "t1",
-      stem: "Ms Green has a bad cough. What should she do?",
+      stem: "Ms Green has a bad cough. What should she do because of it?",
       options: ["arrive a bit early", "go to the pharmacy", "cancel her appointment", "call before she comes"],
       answer: 3,
       why: "`If you have a fever or a bad cough` koşulu onun durumuna uyuyor ve talimat hemen arkasında. Herkese verilen genel talimatı (`arrive a bit early`) seçmek, koşul cümlesini okumadan metnin başına dönmek demek.",
@@ -93,7 +93,7 @@ export const EN_A2_W02: QuizWeek = {
       id: "en-a2-w02-r3",
       block: "read",
       ref: "t1",
-      stem: "Where is the doctor's office?",
+      stem: "Where is Dr Patel's room?",
       options: ["on the ground floor", "on the second floor", "next to the pharmacy", "next to the lift"],
       answer: 1,
       why: "Metin iki konum veriyor: muayenehanenin katı ve asansörün yeri. `next to the pharmacy` asansörü tarif ediyor. `The lift is…` cümlesinin öznesini atlayınca konum yanlış şeye bağlanıyor.",
@@ -145,7 +145,7 @@ export const EN_A2_W02: QuizWeek = {
         de: {
           options: ["shall", "should", "must to", "have"],
           answer: 1,
-          why: "Almanca `sollen` → `shall` aktarımı yanıltıyor: `shall` bugün yalnız öneri sorusunda (`Shall I…?`) kullanılır. Tavsiye `should`, arkasından `to` almadan fiil.",
+          why: "Almanca `sollen` → `shall` aktarımı yanıltıyor: `shall` tavsiye bildirmez; gündelik dilde çoğunlukla öneri sorusunda (`Shall I…?`) geçer. Tavsiye `should`, arkasından `to` almadan fiil.",
         },
       },
     },
@@ -155,7 +155,7 @@ export const EN_A2_W02: QuizWeek = {
       stem: "Tomorrow is Sunday, so I ___ go to work.",
       options: ["mustn't", "don't have to", "haven't to", "not have to"],
       answer: 1,
-      why: "`don't have to` 'zorunda değilim', `mustn't` 'yasak'. Pazar günü işe gitmek yasak değil, gerekmiyor. Türkçede olumsuzluk fiile eklendiği için ('gitmemeliyim') iki anlam aynı kalıba sıkışıyor.",
+      why: "`don't have to` 'zorunda değilim', `mustn't` 'yasak'. Pazar günü işe gitmek yasak değil, gerekmiyor. Hata `must` = 'zorunda' ezberinden geliyor: 'zorunda değilim' `must`un olumsuzu sanılıp `mustn't` kuruluyor, oysa `mustn't` 'yapmamalı' demek.",
       targets: ["modal.have-to", "modal.must-not"],
       byNative: {
         de: {
@@ -171,7 +171,7 @@ export const EN_A2_W02: QuizWeek = {
       stem: "I've had this cough ___ three days.",
       options: ["since", "from", "for", "ago"],
       answer: 2,
-      why: "Süre (`three days`) `for` ile, başlangıç anı (`Monday`) `since` ile gelir. Türkçe 'üç gündür' tek ekle iki kavramı da karşıladığı için hangisinin süre, hangisinin başlangıç olduğu gözden kaçıyor.",
+      why: "Süre (`three days`) `for` ile, başlangıç anı (`Monday`) `since` ile gelir. Türkçe '-den beri' ikisini de karşıladığı için ('üç günden beri', 'pazartesiden beri') hangisinin süre, hangisinin başlangıç olduğu gözden kaçıyor.",
       targets: ["present-perfect.since-for"],
       byNative: {
         de: {
@@ -237,7 +237,7 @@ export const EN_A2_W02: QuizWeek = {
       stem: "I can't sit for long. My back ___.",
       options: ["pains", "has pain", "hurts", "makes pain"],
       answer: 2,
-      why: "Vücudun bir yeri acıdığında özne o organdır ve fiil `hurt`: `My back hurts`. `pain` bir isim; 'sırtım ağrıyor'u sözcük sözcük kurunca `pains` çıkıyor.",
+      why: "Vücudun bir yeri acıdığında özne o organdır ve fiil `hurt`: `My back hurts`. burada fiil `hurt`, `pain` ise isim olarak kullanılır; 'sırtım ağrıyor'u sözcük sözcük kurunca `pains` çıkıyor.",
       targets: ["verb.hurt"],
       byNative: {
         de: {

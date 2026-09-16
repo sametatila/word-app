@@ -10,9 +10,8 @@ import type { QuizWeek } from "../types";
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w02-g2` (`nicht dürfen`): İngilizce `must not` yasak, Almanca
  *    `nicht müssen` 'gerek yok' — anlamı tersine çeviren en tehlikeli aktarım.
- *    Türk öğrencide olumsuzluk fiile eklendiği için iki anlam aynı kalıpta.
  *  - `w02-g1` (`mir`): Türkçe 'başım' ve İngilizce `my head` iyelikle kuruluyor;
- *    iki öğrenci de `mein` seçiyor, Almanca ise acı çekeni Dativ'e koyuyor.
+ *    `Mein Kopf tut weh` da doğru, ama `der Kopf` stemde varken acı çeken Dativ.
  *  - `w02-v2` (`Rezept`): İngilizce konuşan için `receipt` sahte dostu —
  *    `Kassenzettel` şıkkı bunu yakalıyor, varyant açıklaması adını koyuyor.
  *  - `w02-v3` (`krank werden`): İngilizce varyantta `bekomme` şıkkı; A1'deki
@@ -90,7 +89,7 @@ export const DE_A2_W02: QuizWeek = {
       stem: "Sie haben Fieber. Was ist richtig?",
       options: ["Sie rufen zuerst in der Praxis an.", "Sie gehen direkt in die Praxis.", "Sie warten bis zum 15. August.", "Sie holen ein Rezept ab."],
       answer: 0,
-      why: "`nicht …, sondern …` yapısında geçerli olan, `sondern`dan sonraki kısımdır. Olumsuzlanan eylemi (`direkt in die Praxis`) talimat sanmak tipik okuma hatası; `nicht` cümlenin başında da olsa bütün öbeği iptal eder.",
+      why: "`nicht …, sondern …` yapısında geçerli olan, `sondern`dan sonraki kısımdır. Olumsuzlanan eylemi (`direkt in die Praxis`) talimat sanmak tipik okuma hatası.",
       targets: ["lesen.detail", "konnektor.sondern"],
     },
 
@@ -133,13 +132,13 @@ export const DE_A2_W02: QuizWeek = {
       stem: "Seit gestern tut ___ der Kopf weh.",
       options: ["ich", "mich", "mein", "mir"],
       answer: 3,
-      why: "`wehtun` fiilinde özne acıyan organdır (`der Kopf`), acıyı çeken kişi Dativ'de durur: `mir`. Türkçede 'başım ağrıyor' iyelikle kurulduğu için `mein`, 'ben' diye düşününce `ich` akla geliyor.",
+      why: "`Mein Kopf tut weh` da doğru; ama cümlede `der Kopf` varsa acıyı çeken kişi Dativ'le söylenir: `mir`. Türkçede 'başım ağrıyor' iyelikle kurulduğu için `mein`, 'ben' diye düşününce `ich` akla geliyor.",
       targets: ["kasus.dativ", "verb.wehtun"],
       byNative: {
         en: {
           options: ["mir", "mein", "mich", "ich"],
           answer: 0,
-          why: "İngilizcede `my head hurts` iyelikle kurulur. Almancada acı çeken Dativ'dedir: `mir tut der Kopf weh`. `mich` Akkusativ ve `wehtun` onu almaz.",
+          why: "İngilizcede `my head hurts` iyelikle kurulur; Almancada `Mein Kopf tut weh` da olur, ama `der Kopf` ile acı çeken Dativ'dedir: `mir tut der Kopf weh`. `mich` Akkusativ ve `wehtun` onu almaz.",
         },
       },
     },
@@ -212,30 +211,30 @@ export const DE_A2_W02: QuizWeek = {
     {
       id: "de-a2-w02-v1",
       block: "vocab",
-      stem: "Ich habe morgen um 10 Uhr einen ___ beim Zahnarzt.",
-      options: ["Plan", "Termin", "Datum", "Zeit"],
+      stem: "Ich habe morgen um 10 Uhr ___ beim Zahnarzt.",
+      options: ["einen Plan", "einen Termin", "ein Datum", "eine Zeit"],
       answer: 1,
       why: "Doktor, kuaför ya da bir daire için ayrılan saat `Termin`dir. `Datum` yalnız takvimdeki tarih (15.08.), `Zeit` genel olarak zaman. 'Randevu' ile 'tarih' ayrı sözcükler ama 'gün vermek' düşüncesi `Datum`a çekiyor.",
       targets: ["nomen.termin"],
       byNative: {
         en: {
-          options: ["Plan", "Datum", "Termin", "Zeit"],
+          options: ["einen Plan", "ein Datum", "einen Termin", "eine Zeit"],
           answer: 2,
-          why: "İngilizce `date` hem tarih hem buluşma demek; Almanca `Datum` yalnız tarih. Doktor randevusu `Termin`, ve `Termin` İngilizce `term` ile ilgili değil.",
+          why: "İngilizce `date` hem tarih hem buluşma demek; Almanca `Datum` yalnız tarih. Doktor randevusu `Termin`; kökü aynı olsa da anlamca İngilizce `term` değil.",
         },
       },
     },
     {
       id: "de-a2-w02-v2",
       block: "vocab",
-      stem: "Der Arzt hat mir ein ___ für die Tabletten gegeben.",
-      options: ["Formular", "Kassenzettel", "Zettel", "Rezept"],
+      stem: "Der Arzt hat mir ___ für die Tabletten gegeben.",
+      options: ["ein Formular", "einen Kassenzettel", "einen Zettel", "ein Rezept"],
       answer: 3,
       why: "Doktorun yazdığı ilaç kâğıdı `Rezept`; aynı sözcük yemek tarifi de demek. `Kassenzettel` kasadan alınan fiş, `Formular` doldurulan belge. 'Kâğıt' diye düşününce genel `Zettel` seçiliyor ama eczane onu kabul etmez.",
       targets: ["nomen.rezept"],
       byNative: {
         en: {
-          options: ["Kassenzettel", "Rezept", "Zettel", "Formular"],
+          options: ["einen Kassenzettel", "ein Rezept", "einen Zettel", "ein Formular"],
           answer: 1,
           why: "`Rezept` İngilizce `receipt` gibi görünür ama reçete ya da yemek tarifi demektir. Alışveriş fişi `Kassenzettel`; sahte dost burada ters yöne çalışıyor.",
         },
@@ -245,13 +244,13 @@ export const DE_A2_W02: QuizWeek = {
       id: "de-a2-w02-v3",
       block: "vocab",
       stem: "Mein Hals tut weh. Ich glaube, ich ___ krank.",
-      options: ["werde", "bin", "habe", "wurde"],
+      options: ["werde", "habe", "wurde", "mache"],
       answer: 0,
-      why: "Bir duruma geçiş `werden` ile anlatılır: `krank werden` 'hastalanmak'. `ich bin krank` zaten hasta olduğunu söyler; `ich glaube` bir başlangıcı sezdiriyor. `wurde` geçmiş, cümle ise şimdiyi anlatıyor.",
+      why: "Bir duruma geçiş `werden` ile anlatılır: `krank werden` 'hastalanmak'. `krank` bir sıfat, `haben` ya da `machen` ile yüklem olmaz ('hastalık yapmak' diye kurulamaz). `wurde` geçmiş, cümle ise şimdiyi anlatıyor.",
       targets: ["verb.werden", "verb.bekommen"],
       byNative: {
         en: {
-          options: ["bin", "bekomme", "werde", "wurde"],
+          options: ["habe", "bekomme", "werde", "wurde"],
           answer: 2,
           why: "`bekommen` İngilizce `become` gibi görünür ama 'almak' demektir. 'Hastalanıyorum' (`I'm getting ill`) Almancada `ich werde krank`.",
         },

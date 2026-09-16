@@ -16,7 +16,7 @@ import type { QuizWeek } from "../types";
  *    eki fiile yapıştığı için `Not be`. Şıklar aynı, açıklamalar ayrı.
  *  - `w03-v2` (`drive`/`ride`): Almanca `fahren` sürücüyü de yolcuyu da
  *    karşılıyor; Türkçede `ride` 'sürmek' diye anlaşılıyor.
- *  - `w03-v3` (`on foot`): `with` şıkkı Almanca `mit dem Bus` aktarımından;
+ *  - `w03-v3` (`by bus`/`on foot`): `with`/`to` Almanca `mit`/`zu` aktarımından;
  *    Türk öğrenci ise '-le' ekini `by`a genelleyip `by foot` kuruyor.
  */
 export const EN_A2_W03: QuizWeek = {
@@ -36,7 +36,7 @@ export const EN_A2_W03: QuizWeek = {
       genreTr: "Bilgi sayfası",
       title: "How to get to the Summer Concert",
       body:
-        "The concert is in Green Park, on the other side of the river from the city center. " +
+        "The concert is on Saturday and Sunday in Green Park, on the other side of the river from the city centre. " +
         "The easiest way to get there is by tram. Take tram number 3 from Central Station and get off at Park Road. It isn't far. " +
         "Please don't come by car. There are no parking spaces near the park, and the roads around it are closed on Saturday. " +
         "If you want to walk, go across the bridge, turn left and follow the river. It's a nice walk, but it takes almost an hour. " +
@@ -88,10 +88,10 @@ export const EN_A2_W03: QuizWeek = {
         "There is no parking, and the roads are closed.",
         "The tram is cheaper than the car.",
         "The concert is on the other side of the river.",
-        "It takes almost an hour from the city center.",
+        "It takes almost an hour from the city centre.",
       ],
       answer: 0,
-      why: "Gerekçe `Please don't come by car` cümlesinin hemen arkasında. Metindeki başka doğru bilgiler (ucuz bilet, yürüyüşün süresi) arabayla ilgili değil; doğru ama soruya cevap olmayan bir cümleyi seçmek okuma sorularında sık hata.",
+      why: "Gerekçe `Please don't come by car` cümlesinin hemen arkasında. Öteki şıklar ya metinde yok (tramvay ile arabanın fiyatı karşılaştırılmıyor) ya da arabayla ilgisiz (yürüyüşün süresi); metinden tanıdık gelen bir parçayı soruya bağlamadan seçmek sık hata.",
       targets: ["reading.detail"],
     },
     {
@@ -142,15 +142,15 @@ export const EN_A2_W03: QuizWeek = {
       id: "en-a2-w03-g1",
       block: "grammar",
       stem: "Excuse me, how do I get ___ the station?",
-      options: ["to", "at", "in", "on"],
+      options: ["to", "at", "until", "on"],
       answer: 0,
       why: "Bir yere doğru hareket `to` ile; `at` bir noktada bulunmayı anlatır (`I'm at the station`). Türkçede '-e' yön, '-de' yer eki; `at`ı '-e' diye ezberleyince yön cümlesinde de kullanılıyor.",
       targets: ["preposition.to-at"],
       byNative: {
         de: {
-          options: ["to", "at", "in", "on"],
+          options: ["to", "at", "after", "on"],
           answer: 0,
-          why: "Almancada `zum Bahnhof` ve `nach Berlin` iki ayrı edat; İngilizcede ikisi de `to`. `at` Almanca `an`/`bei` gibi yeri bildirir, yönü değil.",
+          why: "Almancada `zum Bahnhof` ve `nach Berlin` iki ayrı edat; İngilizcede ikisi de `to`. `nach` → `after` aktarımı ise zamanı anlatır, yönü değil. `at` Almanca `an`/`bei` gibi yeri bildirir, yönü değil.",
         },
       },
     },
@@ -192,7 +192,7 @@ export const EN_A2_W03: QuizWeek = {
       stem: "___ late! The last tram leaves at ten.",
       options: ["Not be", "Don't", "Be not", "Don't be"],
       answer: 3,
-      why: "Olumsuz emir `Don't` + yalın fiil ile kurulur ve `be` fiili de bu kurala girer: `Don't be late`. Türkçede olumsuzluk eki fiile yapıştığı için `Not be` kuruluyor; `Don't` tek başına fiilsiz kalır.",
+      why: "Olumsuz emir `Don't` + yalın fiil ile kurulur ve `be` fiili de bu kurala girer: `Don't be late`. Türkçede olumsuz emir ayrı bir yardımcı sözcük istemediği için ('geç kalma') olumsuzluğu tek bir `not` ile vermek yeterli sanılıyor; `Don't` tek başına ise fiilsiz kalır.",
       targets: ["imperative.negative", "question.do-support"],
       byNative: {
         de: {
@@ -208,7 +208,7 @@ export const EN_A2_W03: QuizWeek = {
       stem: "We ___ the wrong bus and got lost.",
       options: ["taked", "take", "have taken", "took"],
       answer: 3,
-      why: "`take` düzensiz: `took`. Olay bitmiş bir anlatının parçası ve `got lost` ile aynı zamanda; bağlanan iki fiil de past simple olur. `-ed` yalnız düzenli fiillere eklenir.",
+      why: "`take` düzensiz: `took`. Olay bitmiş bir anlatının parçası ve `got lost` ile art arda geliyor; bağlanan iki fiil de past simple olur. `-ed` yalnız düzenli fiillere eklenir.",
       targets: ["past.irregular", "collocation.take"],
       byNative: {
         de: {
@@ -239,7 +239,7 @@ export const EN_A2_W03: QuizWeek = {
     {
       id: "en-a2-w03-v2",
       block: "vocab",
-      stem: "My brother is a bus driver. He ___ a bus in the city center.",
+      stem: "My brother is a bus driver. He ___ a bus in the city centre.",
       options: ["rides", "drives", "goes", "takes"],
       answer: 1,
       why: "Aracı kullanan kişi `drive`, yolcu olarak binen `ride` ya da `take`. `ride` Türkçede 'at sürmek'teki gibi 'sürmek' diye anlaşıldığı için sürücü cümlesinde seçiliyor.",
@@ -255,16 +255,16 @@ export const EN_A2_W03: QuizWeek = {
     {
       id: "en-a2-w03-v3",
       block: "vocab",
-      stem: "The station isn't far, so we went there ___ foot.",
-      options: ["by", "on", "with", "in"],
-      answer: 1,
-      why: "Ulaşım aracı `by` ile söylenir (`by bus`, `by tram`), ama yürüyerek gitmek sabit kalıp: `on foot`. 'Otobüsle' ile 'yürüyerek' Türkçede farklı olsa da `by` bütün ulaşıma genelleniyor.",
+      stem: "We went to the station ___ bus and came back ___ foot.",
+      options: ["on … by", "in … by", "by … on", "with … on"],
+      answer: 2,
+      why: "Ulaşım aracı `by` ile söylenir (`by bus`, `by tram`), yürüyerek gitmek ise sabit kalıp: `on foot`. 'Otobüsle' ile 'yürüyerek' Türkçede farklı kurulsa da `by` bütün ulaşıma genelleniyor ya da iki edat yer değiştiriyor.",
       targets: ["preposition.by-on-foot"],
       byNative: {
         de: {
-          options: ["with", "by", "on", "in"],
-          answer: 2,
-          why: "Almanca `mit dem Bus` → `with the bus` ve `zu Fuß` aktarımı yanıltıyor. İngilizcede araçla `by bus`, yürüyerek `on foot`.",
+          options: ["with … on", "by … on", "by … to", "on … by"],
+          answer: 1,
+          why: "Almanca `mit dem Bus` → `with bus` ve `zu Fuß` → `to foot` aktarımı yanıltıyor. İngilizcede araçla `by bus`, yürüyerek `on foot`.",
         },
       },
     },

@@ -12,11 +12,11 @@ import type { QuizWeek } from "../types";
  *  - `w04-g3` (`had to`): Almanca `musste` geçmiş olduğu için `must` da geçmiş
  *    sanılıyor.
  *  - `w04-v1` (`got`): Almanca `bekommen` → `became`, A1 Almanca kursundaki
- *    `verb.bekommen` tuzağının ters yönü; Türk öğrenci 'almak' → `took`.
+ *    `verb.bekommen` tuzağının ters yönü; Türk öğrenci 'almak' → `took`/`bought`.
  *  - `w04-v3` (`mobile phone`): Almanca `Handy` yalnız varyantta şık — tabanda
  *    Türk öğrenci için anlamsız bir çeldirici olurdu.
- *  - `w04-g1` ve `w04-v2` varyantsız: `Have you ever…?` ve `earn`/`win` iki
- *    anadilde de aynı biçimde karışıyor, uydurma fark yazılmadı.
+ *  - `w04-g1` varyantsız: `Have you ever…?` iki anadilde de aynı biçimde
+ *    karışıyor, uydurma fark yazılmadı.
  */
 export const EN_A2_W04: QuizWeek = {
   id: "en-a2-w04",
@@ -32,7 +32,7 @@ export const EN_A2_W04: QuizWeek = {
       kind: "text",
       id: "t1",
       genre: "Job advert",
-      genreTr: "Iş ilanı",
+      genreTr: "İş ilanı",
       title: "Summer job at the Seaside Hotel",
       body:
         "We are looking for friendly people to work in our hotel restaurant from June until September. " +
@@ -48,7 +48,7 @@ export const EN_A2_W04: QuizWeek = {
       kind: "audio",
       id: "a1",
       genre: "Job interview",
-      genreTr: "Iş görüşmesi",
+      genreTr: "İş görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Ms Hill", text: "Good morning, Mr Demir. Please sit down. So, why do you want to work here?" },
@@ -142,7 +142,7 @@ export const EN_A2_W04: QuizWeek = {
       stem: "___ you ever worked in a team?",
       options: ["Did", "Were", "Have", "Do"],
       answer: 2,
-      why: "`ever` hayatın herhangi bir anındaki deneyimi sorar ve present perfect ister. Cümledeki `worked` burada fiilin üçüncü hâli ve `have` ister; `Did` ile gelseydi fiil yalın (`work`) olurdu.",
+      why: "`ever` ile deneyim sorusu genellikle present perfect ile kurulur (Amerikan İngilizcesinde `Did you ever work…?` da duyulur). Cümledeki `worked` burada fiilin üçüncü hâli ve `have` ister; `Did` ile gelseydi fiil yalın (`work`) olurdu.",
       targets: ["present-perfect.ever-never", "past.did-question"],
     },
     {
@@ -189,7 +189,7 @@ export const EN_A2_W04: QuizWeek = {
         de: {
           options: ["best", "the most good", "the better", "the best"],
           answer: 3,
-          why: "Almanca `am besten` artikelsiz kalıbı `best job` diye taşınıyor. İsimden önce superlative her zaman `the` alır: `the best job`.",
+          why: "Almancada da `der beste Job`, artikel sezgisi doğru. Tuzak `good`un düzensizliği: `the most good` ya da `the better` kurulmaz, `good`–`better`–`best`.",
         },
       },
     },
@@ -215,9 +215,9 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-v1",
       block: "vocab",
       stem: "I ___ a letter from the company yesterday.",
-      options: ["took", "became", "got", "made"],
+      options: ["took", "bought", "got", "made"],
       answer: 2,
-      why: "Mektup, mesaj ya da para sana gelince `get` (`receive`) kullanılır: 'mektup aldım' → `I got a letter`. Türkçe 'almak' `take`e çekiyor, ama `take` bir şeyi kendin gidip almak.",
+      why: "Mektup, mesaj ya da para sana gelince `get` (`receive`) kullanılır: 'mektup aldım' → `I got a letter`. Türkçe 'almak' hem `take` hem `buy` anlamına geldiği için `took` ve `bought` seçiliyor; mektup ne alınıp götürülür ne satın alınır.",
       targets: ["verb.get", "falsefriend.become"],
       byNative: {
         de: {
@@ -247,9 +247,9 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-v3",
       block: "vocab",
       stem: "Can I use your ___? I need to call the manager.",
-      options: ["phone call", "mobile phone", "phone number", "telephone box"],
+      options: ["phone call", "mobile phone", "phone number", "phone line"],
       answer: 1,
-      why: "Cep telefonu cihazı `mobile phone` (Amerikan İngilizcesinde `cell phone`). `phone call` bir arama, `phone number` numara: ikisi de kullanılacak bir nesne değil. Bileşik isimde asıl anlamı ikinci sözcük taşır.",
+      why: "Cep telefonu cihazı `mobile phone` (Amerikan İngilizcesinde `cell phone`). `phone call` bir arama, `phone number` numara: ikisi de kullanılacak bir nesne değil. Türkçe 'telefon' hem cihaz hem arama demek ('bir telefon edeyim'), o yüzden `phone call` seçiliyor; bileşik isimde anlamı ikinci sözcük taşır.",
       targets: ["noun.phone"],
       byNative: {
         de: {

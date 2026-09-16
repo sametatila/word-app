@@ -38,7 +38,7 @@ export const DE_A2_W05: QuizWeek = {
         "Am Montag bin ich mit zwei Koffern in Leipzig angekommen. Die Wohnung war kleiner als auf den Fotos, aber sehr hell. " +
         "Am Dienstag musste ich zum Bürgeramt. Ich habe den Weg nicht gefunden, weil mein Handy kaputt war. " +
         "Eine nette Frau hat mir geholfen und mich bis zur Tür gebracht. " +
-        "Am Mittwoch hatte ich dann Halsschmerzen und Fieber. Der Arzt hat gesagt, dass ich drei Tage im Bett bleiben soll. " +
+        "Am Donnerstag sollte meine neue Arbeit beginnen, aber am Mittwoch hatte ich Halsschmerzen und Fieber. Der Arzt hat gesagt, dass ich drei Tage im Bett bleiben soll. " +
         "Deshalb habe ich meinen ersten Arbeitstag verschoben. Mein neuer Chef war am Telefon sehr freundlich. " +
         "Am Samstag ging es mir endlich besser, und ich bin lange durch die Altstadt spaziert. " +
         "Jetzt freue ich mich auf Montag!",
@@ -80,9 +80,9 @@ export const DE_A2_W05: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Wann ist der erste Arbeitstag jetzt wahrscheinlich?",
-      options: ["am Mittwoch", "am Samstag", "am Dienstag", "am nächsten Montag"],
+      options: ["am Mittwoch", "am Samstag", "am Donnerstag", "am nächsten Montag"],
       answer: 3,
-      why: "`verschoben` 'ertelendi' demek: ilk iş günü artık eski tarihinde değil. Yeni tarih açıkça yazılmıyor, son cümle (`freue mich auf Montag`) ima ediyor. Ertelemeyi atlayan okuyucu eski planı seçiyor.",
+      why: "`verschoben` 'ertelendi' demek: ilk iş günü artık planlanan `Donnerstag` değil. Yeni tarih açıkça yazılmıyor, son cümle (`freue mich auf Montag`) ima ediyor. Ertelemeyi atlayan okuyucu eski planı seçiyor.",
       targets: ["lesen.inferenz"],
     },
     {
@@ -90,7 +90,7 @@ export const DE_A2_W05: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Was ist richtig über die Wohnung?",
-      options: ["Sie ist klein, aber hell.", "Sie ist größer als auf den Fotos.", "Sie ist dunkel und klein.", "Sie ist genau wie auf den Fotos."],
+      options: ["Sie ist kleiner als auf den Fotos, aber hell.", "Sie ist größer als auf den Fotos und dunkel.", "Sie ist dunkel und klein.", "Sie ist genau wie auf den Fotos."],
       answer: 0,
       why: "`kleiner als auf den Fotos` bir karşılaştırma: ev, fotoğraflarda göründüğünden küçük. `als`ın iki yanını ters okumak ('fotoğraflar daha küçük') karşılaştırmada sık hata; `aber sehr hell` de karanlık seçeneğini eliyor.",
       targets: ["lesen.detail", "vergleich.komparativ"],
@@ -181,9 +181,9 @@ export const DE_A2_W05: QuizWeek = {
       id: "de-a2-w05-g4",
       block: "grammar",
       stem: "Anna, es ist kalt! ___ bitte das Fenster zu!",
-      options: ["Machst", "Machen", "Mach", "Machst du"],
+      options: ["Machst", "Machen", "Mach", "Macht"],
       answer: 2,
-      why: "`du` emrinde özne düşer ve `-st` eki gider: `du machst` → `Mach!`. Ayrılabilir önek (`zu`) yine sona gider. `Machen` tek başına kibar emir değildir; `Sie` olmadan eksik kalır.",
+      why: "`du` emrinde özne düşer ve `-st` eki gider: `du machst` → `Mach!`. Ayrılabilir önek (`zu`) yine sona gider. `Machen` tek başına kibar emir değildir, `Sie` olmadan eksik kalır; `Macht` ise `ihr` emri, tek kişiye (Anna) söylenmez.",
       targets: ["imperativ.du", "verb.trennbar"],
     },
     {
@@ -200,14 +200,14 @@ export const DE_A2_W05: QuizWeek = {
     {
       id: "de-a2-w05-v1",
       block: "vocab",
-      stem: "Für einen neuen Ausweis brauche ich einen ___ beim Bürgeramt.",
-      options: ["Datum", "Uhrzeit", "Termin", "Plan"],
+      stem: "Für einen neuen Ausweis brauche ich ___ beim Bürgeramt.",
+      options: ["ein Datum", "eine Uhrzeit", "einen Termin", "einen Plan"],
       answer: 2,
       why: "Bir dairede, doktorda, kuaförde ayrılan saat `Termin`. Sözcük muayenehaneye özgü değil, resmî kurumda da aynı. `Datum` takvimdeki tarih, `Uhrzeit` saat bilgisi: ikisi de randevunun bir parçası, randevunun kendisi değil.",
       targets: ["nomen.termin"],
       byNative: {
         en: {
-          options: ["Termin", "Datum", "Uhrzeit", "Plan"],
+          options: ["einen Termin", "ein Datum", "eine Uhrzeit", "einen Plan"],
           answer: 0,
           why: "İngilizce `date` ve `appointment` karışıyor: Almanca `Datum` yalnız tarih. Resmî dairede ya da doktorda randevu `Termin`.",
         },
@@ -219,7 +219,7 @@ export const DE_A2_W05: QuizWeek = {
       stem: "Seit ich in Leipzig wohne, ___ mir meine Familie sehr.",
       options: ["verpasst", "fehlt", "vergisst", "verliert"],
       answer: 1,
-      why: "Özlemek `fehlen` ile kurulabilir: özlenen şey özne (`meine Familie`), özleyen kişi Dativ (`mir`). Türkçe 'özlüyorum' kişiyi özne yaptığı için fiilin `meine Familie`ye uyması gerektiği gözden kaçıyor.",
+      why: "Cümlede `mir` var: özleyen kişi Dativ'de, özlenen `meine Familie` özne. Bu yapı `fehlen` ile kurulur. 'Kaçırmak' (`verpassen`), 'unutmak' ve 'kaybetmek' özlem bildirmez; Türkçe 'özlüyorum' kişiyi özne yaptığı için `mir`in işaret ettiği yapı tanınmıyor.",
       targets: ["verb.verpassen", "kasus.dativ"],
       byNative: {
         en: {
