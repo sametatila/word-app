@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { auth } from "@/lib/auth/server";
+import { auth, AUTH_BASE_URL } from "@/lib/auth/server";
 
 /**
  * Tarayıcıda tamamlanan girişi UYGULAMAYA devreder.
@@ -26,13 +26,23 @@ import { auth } from "@/lib/auth/server";
  */
 export const dynamic = "force-dynamic";
 
+/*
+  YÖNLENDİRMELER GENEL ADRESE. `req.url` vekil sunucunun arkasında iç adres
+  (`https://localhost:3001/…`); ondan kurulan her yönlendirme telefonu
+  localhost'a yolluyordu: oturumsuz istek `/login` yerine, başarılı devir de
+  `/auth/app?ott=…` yerine localhost'a gidiyor ve App Link hiç tetiklenmiyordu.
+  Canlıda `curl` ile görüldü (2026-09-16). Kök, Better Auth'un da kullandığı
+  `BETTER_AUTH_URL`.
+*/
+const at = (path: string) => new URL(path, AUTH_BASE_URL);
+
 export async function GET(req: Request) {
   const h = await headers();
   const session = await auth.api.getSession({ headers: h });
-  if (!session) return NextResponse.redirect(new URL("/login", req.url));
+  if (!session) return NextResponse.redirect(at("/login"));
   // Tarayıcıdaki bir misafir oturumu uygulamaya devredilmez: bu yol yalnız
   // tarayıcıda tamamlanan Apple girişini taşımak için var.
-  if ((session.user as { isAnonymous?: boolean | null }).isAnonymous) return NextResponse.redirect(new URL("/login", req.url));
+  if ((session.user as { isAnonymous?: boolean | null }).isAnonymous) return NextResponse.redirect(at("/login"));
 
   let token: string;
   try {
@@ -41,10 +51,10 @@ export async function GET(req: Request) {
     console.error("[auth/handoff] generateOneTimeToken", err);
     // Token üretilemese de kullanıcı TARAYICIDA giriş yapmış durumda; onu
     // uygulamaya yollayamıyoruz ama web'de devam edebilir.
-    return NextResponse.redirect(new URL("/learn", req.url));
+    return NextResponse.redirect(at("/learn"));
   }
 
-  const to = new URL("/auth/app", req.url);
+  const to = at("/auth/app");
   to.searchParams.set("ott", token);
   /*
     Bağlama değeri (bkz. api/handoff-nonce) olduğu gibi geçiyor; uygulama
