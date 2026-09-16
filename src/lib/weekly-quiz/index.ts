@@ -1,6 +1,16 @@
 import type { QuizCourse, QuizLevel, QuizWeek } from "./types";
 import { DE_A1_W01 } from "./de/a1-w01";
 import { EN_A1_W01 } from "./en/a1-w01";
+import { DE_A2_W01 } from "./de/a2-w01";
+import { DE_A2_W02 } from "./de/a2-w02";
+import { DE_A2_W03 } from "./de/a2-w03";
+import { DE_A2_W04 } from "./de/a2-w04";
+import { DE_A2_W05 } from "./de/a2-w05";
+import { EN_A2_W01 } from "./en/a2-w01";
+import { EN_A2_W02 } from "./en/a2-w02";
+import { EN_A2_W03 } from "./en/a2-w03";
+import { EN_A2_W04 } from "./en/a2-w04";
+import { EN_A2_W05 } from "./en/a2-w05";
 
 /**
  * Haftalık quiz kataloğu.
@@ -12,7 +22,20 @@ import { EN_A1_W01 } from "./en/a1-w01";
  *
  * Sıra önemsiz; seçim `course`, `level` ve `no` ile yapılıyor.
  */
-export const QUIZ_WEEKS: QuizWeek[] = [DE_A1_W01, EN_A1_W01];
+export const QUIZ_WEEKS: QuizWeek[] = [
+  DE_A1_W01,
+  EN_A1_W01,
+  DE_A2_W01,
+  DE_A2_W02,
+  DE_A2_W03,
+  DE_A2_W04,
+  DE_A2_W05,
+  EN_A2_W01,
+  EN_A2_W02,
+  EN_A2_W03,
+  EN_A2_W04,
+  EN_A2_W05,
+];
 
 /** Bir kurs ve seviyedeki haftalar, `no` sırasıyla. */
 export function quizWeeksFor(course: QuizCourse, level: QuizLevel): QuizWeek[] {
