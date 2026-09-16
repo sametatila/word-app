@@ -462,7 +462,7 @@ export const enWeb: Record<string, string> = {
   "del.d_account": "Account and sign-in",
   "del.d_account_body": "Your email address, name, password hash, linked Google or Apple sign-in and open sessions (including IP address and device description).",
   "del.d_profile": "Profile and preferences",
-  "del.d_profile_body": "Your display name, avatar, level, course and daily goal, social profile (username, bio), reminder preferences and time zone.",
+  "del.d_profile_body": "Your display name, avatar, level, course and daily goal, social profile (username), reminder preferences and time zone.",
   "del.d_learning": "Learning data",
   "del.d_learning_body": "Your word progress and review results, streak, XP and achievements, lesson and skill progress, exam, mock exam and placement test results, and league membership.",
   "del.d_texts": "What you wrote and said",

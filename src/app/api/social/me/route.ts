@@ -15,7 +15,7 @@ export async function GET(req: Request) {
   }
 }
 
-/** Kullanıcı adı / bio / görünürlük / izinler. Alanlar tek tek doğrulanır. */
+/** Kullanıcı adı / görünürlük / izinler. Alanlar tek tek doğrulanır. */
 export async function PATCH(req: Request) {
   const user = await requireUser(req, true);
   if (typeof user !== "string") return user;

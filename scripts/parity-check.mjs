@@ -7370,12 +7370,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 182. girdi sinirlari tek kaynaktan mi ────────────────────────────────
  * Uzunluk sinirlari karsilastirildi: gorunen ad (40), iki adimli kod (ortak
- * sabit), kullanici adi (20) ve biyografi (140) - dordu de iki platformda
- * AYNI sayiydi. Kusur sayida degil, sayinin KAC YERDE yazili oldugundaydi:
- * kullanici adi uc yerde (sunucunun deseni + iki istemci), biyografi de uc
- * yerde. Ucu bugun ayniydi; biri degisse otekiler sessizce eski kalir ve
- * kullanici YAZABILDIGI bir adin reddedildigini gorurdu - istemci onu kabul
- * ediyor, sunucu geri ceviriyor.
+ * sabit) ve kullanici adi (20) - hepsi iki platformda AYNI sayiydi. Kusur
+ * sayida degil, sayinin KAC YERDE yazili oldugundaydi: kullanici adi uc
+ * yerde (sunucunun deseni + iki istemci). Ucu bugun ayniydi; biri degisse
+ * otekiler sessizce eski kalir ve kullanici YAZABILDIGI bir adin
+ * reddedildigini gorurdu - istemci onu kabul ediyor, sunucu geri ceviriyor.
+ *
+ * Biyografi (kisa tanitim) alani kaldirildi; olcusu de bu listeden dustu.
  *
  * Sunucu tarafinda desen artik sinirlardan KURULUYOR (`USERNAME_MIN/MAX`),
  * web onlari dogrudan ice aktariyor, mobil kendi tek kaynagindan okuyor ve
@@ -7389,19 +7390,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
   const sunucuAd = al(sunucu, /USERNAME_MAX = (\d+)/);
-  const sunucuBio = al(sunucu, /BIO_MAX = (\d+)/);
   sameList(
     "sosyal sinirlar",
     [
       "kullanici adi=" + al(mob, /usernameMax: (\d+)/),
-      "biyografi=" + al(mob, /bioMax: (\d+)/),
       /* Bekleme suresi de sinir: SURESI cumlenin icinde yazili degil, sayidan
          besleniyor (bkz. 185), o yuzden iki tarafta ayni olmak zorunda. */
       "bekleme=" + al(mob, /changeCooldownDays: (\d+)/),
     ],
     [
       "kullanici adi=" + sunucuAd,
-      "biyografi=" + sunucuBio,
       "bekleme=" + al(sunucu, /USERNAME_CHANGE_COOLDOWN_DAYS = (\d+)/),
     ],
     "mobil",
@@ -7413,11 +7411,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "sosyal sinirlar kaynaktan",
     [
       "mobil ad=" + (/maxLength=\{SOCIAL_LIMITS\.usernameMax\}/.test(mobsos) ? "kaynaktan" : "kendi sabiti"),
-      "mobil biyografi=" + (/slice\(0, SOCIAL_LIMITS\.bioMax\)/.test(mobsos) ? "kaynaktan" : "kendi sabiti"),
       "web ad=" + (/maxLength=\{USERNAME_MAX\}/.test(websos) ? "kaynaktan" : "kendi sabiti"),
-      "web biyografi=" + (/slice\(0, BIO_MAX\)/.test(websos) ? "kaynaktan" : "kendi sabiti"),
     ],
-    ["mobil ad=kaynaktan", "mobil biyografi=kaynaktan", "web ad=kaynaktan", "web biyografi=kaynaktan"],
+    ["mobil ad=kaynaktan", "web ad=kaynaktan"],
     "bulunan",
     "beklenen",
   );
@@ -12438,7 +12434,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["deneme acik gorev", "src/components/mock-exam-player.tsx", '"mockexam.write_here"', "mobile/src/screens/MockExamScreen.tsx", '"mockexam.write_here"', "sentences"],
       ["beceri yazma", "src/components/skills/writing-player.tsx", '"skillquiz.write_your_answer_in"', "mobile/src/game/skillQuiz.tsx", '"skillquiz.write_your_answer_in"', "sentences"],
       ["monolog dokumu", "src/components/skills/monologue-player.tsx", "value={transcript}", "mobile/src/game/skillLibrary.tsx", "value={transcript}", "sentences"],
-      ["biyografi", "src/components/social/social-settings.tsx", "value={bio}", "mobile/src/screens/SocialSettingsScreen.tsx", "value={bio}", "sentences"],
       ["kisa cevap", "src/components/skills/quiz.tsx", "value={typed}", "mobile/src/game/skillQuiz.tsx", '"skillquiz.ph_dictation"', "none"],
     ];
     /**

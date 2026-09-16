@@ -7,10 +7,9 @@ import { SkeletonLine } from "@/components/skeleton";
 import { errorText, social, type SocialMeView } from "@/lib/social/client";
 import type { PublicUser, Visibility } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
-import { courseName } from "@/lib/courses";
 /* Sınırlar sunucunun kendi kuralından: üç yerde yazılı bir sayı er geç
    ayrışır (bkz. `lib/social/username`). */
-import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, USERNAME_MAX } from "@/lib/social/username";
+import { USERNAME_CHANGE_COOLDOWN_DAYS, USERNAME_MAX } from "@/lib/social/username";
 
 const VIS: { key: Visibility; label: string; sub: string }[] = [
   { key: "public", label: "socialsettings.vis_public", sub: "socialsettings.vis_public_sub" },
@@ -29,12 +28,11 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
  * zaten "Sosyal ve gizlilik" diyor, kartın içindeki ikinci başlık onu
  * tekrarlardı.
  */
-export function SocialSettings({ initial, course = "de", bare = false }: { initial: SocialMeView; course?: string; bare?: boolean }) {
+export function SocialSettings({ initial, bare = false }: { initial: SocialMeView; bare?: boolean }) {
   const t = useT();
   const lang = useLang();
   const [me, setMe] = useState(initial);
   const [username, setUsername] = useState(initial.username);
-  const [bio, setBio] = useState(initial.bio ?? "");
   /* Mesajın TONU ayrı tutuluyor. Önce metnin içinde "aydedildi"/"üncellendi"
      aranıyordu; çeviriyle birlikte her başarı iletisi kırmızıya dönerdi. */
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
@@ -62,7 +60,6 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
   }
 
   const dirtyName = username.trim().toLowerCase() !== me.username;
-  const dirtyBio = (bio.trim() || "") !== (me.bio ?? "");
 
   return (
     <section id="social" className={`card overflow-hidden ${bare ? "" : "mt-4"}`}>
@@ -101,32 +98,6 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })}{" "}
           {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
         </p>
-      </div>
-
-      <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <label className="text-strong" htmlFor="bio">{t("socialsettings.short_bio")}</label>
-        <textarea
-          id="bio"
-          value={bio}
-          onChange={(e) => setBio(e.target.value.slice(0, BIO_MAX))}
-          rows={2}
-          /* ANA DİLDE serbest metin: cümle başı büyük ama otomatik düzeltme
-             AÇIK kalıyor — burada düzeltme yardımcı, hedef dilde yazılan
-             alanların tersine. Android'de de hiçbiri yoktu; iki taraf
-             birlikte düzeltildi. */
-          autoCapitalize="sentences"
-          placeholder={t("socialsettings.why_one_sentence_is_enough", { lang: courseName(course, lang) })}
-          className="mt-1.5 w-full rounded-tile border px-3 py-2 text-body"
-          style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
-        />
-        <div className="mt-1 flex items-center justify-between">
-          {/* Sınır SABİTTEN: sayaç 140'ı yazıyordu ve `BIO_MAX` değişse
-              sayaç yalan söylerdi. Mobilde de aynı kaçak vardı. */}
-          <span className="muted text-micro tabular-nums">{bio.length}/{BIO_MAX}</span>
-          <button className="btn btn-ghost h-8 px-3 text-caption" disabled={busy || !dirtyBio} onClick={() => void save({ bio: bio.trim() || null })}>
-            {t("common.save")}
-          </button>
-        </div>
       </div>
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>

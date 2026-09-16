@@ -12,7 +12,7 @@
  *  2) ReDoS SINIRI — uzunluk emniyet freni patolojik girdiyi regex hiç
  *     çalışmadan, sabit sürede reddediyor.
  */
-import { displayNameAllowed, bioAllowed, usernameAllowed } from "@/lib/moderation";
+import { displayNameAllowed, usernameAllowed } from "@/lib/moderation";
 
 let fail = 0;
 function check(label: string, cond: boolean): void {
@@ -28,7 +28,7 @@ for (const bad of [
   check(`engeller: "${bad}"`, displayNameAllowed(bad) === false);
 }
 check('engeller: küfür ("amk")', displayNameAllowed("amk") === false);
-check('engeller: bio içi e-posta', bioAllowed("yaz bana test@mail.com") === false);
+check('engeller: görünen adda e-posta', displayNameAllowed("yaz bana test@mail.com") === false);
 
 // 2) Gerçek/temiz adlar serbest
 for (const ok of ["Jörg Müller", "李雷", "O'Brien-Smith", "Al", "Ada Lovelace", "Zeynep Çınar"]) {
@@ -45,7 +45,6 @@ function fastReject(fn: (s: string) => boolean): boolean {
   return res === false && dt < 50;
 }
 check("displayName: dev girdi hızlı+reddedildi (<50ms)", fastReject(displayNameAllowed));
-check("bio:         dev girdi hızlı+reddedildi (<50ms)", fastReject(bioAllowed));
 check("username:    dev girdi hızlı+reddedildi (<50ms)", fastReject(usernameAllowed));
 
 // 4) Eski O(n²) tetikleyicisi (uzunluk freninin ALTINDA da makul kalmalı)

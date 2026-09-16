@@ -1,6 +1,6 @@
 /**
  * Sosyal katmanın kapalı sözlükleri. Her liste `as const`: API'ye gelen değer
- * bu listelerde yoksa 400 döner; serbest metin yalnız `bio` ve şikayet detayı.
+ * bu listelerde yoksa 400 döner; serbest metin yalnız şikayet detayı.
  * Tepkiler emoji DEĞİL adlandırılmış türdür; ikonu istemci çizer (SVG).
  */
 export const REACTION_KINDS = ["cheer", "fire", "heart", "strong", "star", "wow"] as const;

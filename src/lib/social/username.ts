@@ -26,7 +26,6 @@ const RESERVED = new Set([
 ]);
 
 export const USERNAME_CHANGE_COOLDOWN_DAYS = 14;
-export const BIO_MAX = 140;
 
 export function normalizeUsername(raw: unknown): string | null {
   if (typeof raw !== "string") return null;
@@ -64,8 +63,3 @@ export function suggestUsername(name: string | null | undefined, seed: string): 
   return `${stem}${digits}`.slice(0, 20);
 }
 
-export function normalizeBio(raw: unknown): string | null {
-  if (typeof raw !== "string") return null;
-  const b = raw.replace(/\s+/g, " ").trim();
-  return b ? b.slice(0, BIO_MAX) : null;
-}

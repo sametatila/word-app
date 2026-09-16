@@ -2,7 +2,7 @@ import { and, eq, ilike, inArray, ne, notInArray, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { achievementCount } from "@/lib/achievements";
-import { bioAllowed, usernameAllowed } from "@/lib/moderation";
+import { usernameAllowed } from "@/lib/moderation";
 import { track } from "@/lib/events";
 import { feed } from "./activity";
 import { blockedEitherWay, blockedSet } from "./blocks";
@@ -13,7 +13,7 @@ import { unreadCount } from "./notify";
 import { limited } from "./ratelimit";
 import { friendIds, weeklyXpFor } from "./stats";
 import { friendStreaks, type FriendStreak } from "./streaks";
-import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, normalizeBio, normalizeUsername, usernameQuery } from "./username";
+import { USERNAME_CHANGE_COOLDOWN_DAYS, normalizeUsername, usernameQuery } from "./username";
 import { assignOne, ensureUsernames } from "./usernames";
 import { isGuestUser, notGuest } from "@/lib/auth/guest-user";
 import { likeContains } from "@/lib/db/like";
@@ -25,7 +25,6 @@ export type SocialMe = {
   userId: string;
   name: string | null;
   username: string;
-  bio: string | null;
   level: string;
   visibility: Visibility;
   allowRequests: boolean;
@@ -68,7 +67,6 @@ export async function socialMe(userId: string): Promise<SocialMe> {
     name: p.displayName,
     username,
     avatar: p.avatar,
-    bio: p.bio,
     level: p.level,
     visibility: p.visibility as Visibility,
     allowRequests: p.allowRequests,
@@ -82,7 +80,6 @@ export async function socialMe(userId: string): Promise<SocialMe> {
 
 export type SocialPatch = {
   username?: unknown;
-  bio?: unknown;
   visibility?: unknown;
   allowRequests?: unknown;
   showInSuggestions?: unknown;
@@ -119,16 +116,9 @@ export async function updateSocialSettings(userId: string, patch: SocialPatch): 
       changed.push("username");
     }
   }
-  if (patch.bio !== undefined) {
-    if (patch.bio !== null && typeof patch.bio !== "string") throw new SocialError("bad_request", 400);
-    if (typeof patch.bio === "string" && patch.bio.length > BIO_MAX * 4) throw new SocialError("bad_request", 400);
-    const bio = normalizeBio(patch.bio);
-    // Biyografi profil sayfasında herkese açık tek serbest metin; bağlantı,
-    // e-posta, telefon ve küfür için görünen adla aynı süzgeçten geçiyor.
-    if (bio && !bioAllowed(bio)) throw new SocialError("bio_invalid", 400);
-    set.bio = bio;
-    changed.push("bio");
-  }
+  /* Kısa tanıtım (bio) KALDIRILDI. Eski istemcilerden gelen `bio` alanı
+     sessizce yok sayılıyor: hata döndürmek, güncellenmemiş bir uygulamada
+     kullanıcı adı değişikliğini de düşürürdü. */
   if (patch.visibility !== undefined) {
     if (typeof patch.visibility !== "string" || !(VISIBILITIES as readonly string[]).includes(patch.visibility)) throw new SocialError("bad_request", 400);
     set.visibility = patch.visibility;
@@ -150,7 +140,6 @@ export async function updateSocialSettings(userId: string, patch: SocialPatch): 
 
 export type PublicProfile = {
   user: PublicUser;
-  bio: string | null;
   visibility: Visibility;
   relation: Relation;
   friendshipId: number | null;
@@ -198,7 +187,6 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
   ]);
   return {
     user: { userId: uid, name: p.displayName, username, avatar: p.avatar, level: p.level },
-    bio: canSee ? p.bio : null,
     visibility,
     relation: rel.state,
     friendshipId: rel.friendshipId,

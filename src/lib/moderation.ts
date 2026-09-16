@@ -1,5 +1,5 @@
 /**
- * Başkalarına görünen kullanıcı metni için asgari moderasyon (görünen ad, kullanıcı adı, biyografi).
+ * Başkalarına görünen kullanıcı metni için asgari moderasyon (görünen ad, kullanıcı adı).
  * Amaç: bağlantı/e-posta/telefon gibi kişisel veri ve reklam, kontrol karakterleri ve
  * açık küfür/hakaret geçmesin. Liste bilerek kısa ve açık; yanlış pozitif (masum adın
  * reddi) küfürden daha kötü bir deneyim. Şüpheli durumlar kullanıcı bildirimiyle
@@ -72,13 +72,3 @@ export function usernameAllowed(username: string): boolean {
   return !abusive(username);
 }
 
-/**
- * Serbest metin (biyografi): profil sayfasında herkese görünüyor ve en kolay
- * reklam/iletişim kanalı burası. Görünen adla aynı kurallar uygulanıyor.
- */
-export function bioAllowed(text: string): boolean {
-  if (text.length > MAX_MODERATED_LEN) return false;
-  if (CONTROL.test(text)) return false;
-  if (URL_OR_CONTACT.test(text)) return false;
-  return !abusive(text);
-}

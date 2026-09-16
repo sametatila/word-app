@@ -42,7 +42,7 @@ export type QuestView = {
   invitedByMe: boolean; myXp: number; partnerXp: number; totalXp: number; pct: number; daysLeft: number; completedAt: string | null;
 };
 export type SocialMe = {
-  userId: string; name: string | null; username: string; avatar: string | null; bio: string | null; level: string; visibility: Visibility;
+  userId: string; name: string | null; username: string; avatar: string | null; level: string; visibility: Visibility;
   allowRequests: boolean; showInSuggestions: boolean; showActivity: boolean; usernameChangedAt: string | null; usernameChangeAvailableIn: number;
   counts: { friends: number; incoming: number; outgoing: number; unread: number };
 };
@@ -66,7 +66,7 @@ export function tierName(tier: number): string {
 }
 export type NotificationView = { id: number; type: string; read: boolean; createdAt: string; actor: PublicUser | null; ref: { type: string; id: number } | null; detail: Record<string, unknown> };
 export type PublicProfileView = {
-  user: PublicUser; bio: string | null; visibility: Visibility; relation: Relation; friendshipId: number | null; canRequest: boolean; mutual: number;
+  user: PublicUser; visibility: Visibility; relation: Relation; friendshipId: number | null; canRequest: boolean; mutual: number;
   friendStreak: number; joined: string;
   stats: { currentStreak: number; longestStreak: number; totalXp: number; weeklyXp: number; achievements: number; lastActiveDay: string | null } | null;
   recent: FeedItem[];
@@ -116,7 +116,6 @@ const ERROR_KEY: Record<string, string> = {
   username_invalid: "social.err_username_invalid",
   username_taken: "social.err_username_taken",
   username_cooldown: "social.err_username_cooldown",
-  bio_invalid: "social.err_bio_invalid",
   week_over: "social.err_week_over",
   bad_request: "social.err_bad_request",
   database: "social.err_database",

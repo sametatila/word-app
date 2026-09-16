@@ -23,7 +23,10 @@ export default async function SocialSettingsPage() {
   const userId = await getUserId();
   if (!userId) return null;
   try {
-    const [me, profile] = await Promise.all([socialMe(userId), ensureProfile(userId, null)]);
+    /* ensureProfile YAN ETKİSİ İÇİN duruyor: profil satırı yoksa burada
+       doğuyor. Dönen değer artık kullanılmıyor (kurs yalnız kaldırılan kısa
+       tanıtımın yer tutucusunda geçiyordu). */
+    const [me] = await Promise.all([socialMe(userId), ensureProfile(userId, null)]);
     return (
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 flex items-center gap-3">
@@ -34,7 +37,7 @@ export default async function SocialSettingsPage() {
               Datenschutz") uzun, sarılması kesilmesinden iyi. */}
           <h1 className="min-w-0 flex-1 break-words text-h2">{t("socialsettings.social_and_privacy")}</h1>
         </div>
-        <SocialSettings initial={me} course={profile.course} bare />
+        <SocialSettings initial={me} bare />
       </div>
     );
   } catch (err) {

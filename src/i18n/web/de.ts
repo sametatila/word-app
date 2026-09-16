@@ -462,7 +462,7 @@ export const deWeb: Record<string, string> = {
   "del.d_account": "Konto und Anmeldung",
   "del.d_account_body": "Deine E-Mail-Adresse, dein Name, dein Passwort-Hash, eine verknüpfte Anmeldung mit Google oder Apple und deine offenen Sitzungen (samt IP-Adresse und Gerätebezeichnung).",
   "del.d_profile": "Profil und Einstellungen",
-  "del.d_profile_body": "Dein Anzeigename, Avatar, Niveau, Kurs und Tagesziel, dein soziales Profil (Benutzername, Bio), deine Erinnerungseinstellungen und deine Zeitzone.",
+  "del.d_profile_body": "Dein Anzeigename, Avatar, Niveau, Kurs und Tagesziel, dein soziales Profil (Benutzername), deine Erinnerungseinstellungen und deine Zeitzone.",
   "del.d_learning": "Lerndaten",
   "del.d_learning_body": "Dein Wortstatus und deine Wiederholungsergebnisse, Serie, XP und Erfolge, dein Lektions- und Fähigkeitsfortschritt, Ergebnisse von Prüfungen, Probeprüfungen und Einstufungstest sowie deine Ligamitgliedschaft.",
   "del.d_texts": "Was du geschrieben und gesagt hast",

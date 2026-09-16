@@ -77,7 +77,6 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             <p className="muted text-body">
               @{u.username} · {u.level}
             </p>
-            {data.bio ? <p className="mt-2 text-body leading-snug">{data.bio}</p> : null}
             <p className="muted mt-2 flex flex-wrap gap-x-3 text-micro">
               {data.mutual > 0 ? <span>{t("social.mutual", { n: data.mutual })}</span> : null}
               {data.friendStreak > 0 ? (

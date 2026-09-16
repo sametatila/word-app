@@ -507,7 +507,7 @@ export const trWeb: Record<string, string> = {
   "del.d_account": "Hesap ve giriş",
   "del.d_account_body": "E-posta adresin, adın, parola özetin, bağlı Google ya da Apple girişin ve açık oturumların (IP adresi ve cihaz tanımıyla birlikte).",
   "del.d_profile": "Profil ve tercihler",
-  "del.d_profile_body": "Görünen adın, avatarın, seviyen, kursun ve günlük hedefin, sosyal profilin (kullanıcı adı, biyografi), hatırlatma tercihlerin ve saat dilimin.",
+  "del.d_profile_body": "Görünen adın, avatarın, seviyen, kursun ve günlük hedefin, sosyal profilin (kullanıcı adı), hatırlatma tercihlerin ve saat dilimin.",
   "del.d_learning": "Öğrenme verisi",
   "del.d_learning_body": "Kelime durumun ve tekrar sonuçların, serin, XP ve başarımların, ders ve beceri ilerlemen, sınav, deneme sınavı ve seviye testi sonuçların, lig üyeliğin.",
   "del.d_texts": "Yazdıkların ve söylediklerin",

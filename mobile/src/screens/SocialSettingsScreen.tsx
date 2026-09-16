@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t as tx, targetLangName } from "../lib/i18n";
+import { t as tx } from "../lib/i18n";
 import { Switch, TextInput, View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -40,7 +40,6 @@ export function SocialSettingsScreen() {
   const { user } = useAuth();
   const [me, setMe] = useState<SocialMe | null>(null);
   const [username, setUsername] = useState("");
-  const [bio, setBio] = useState("");
   const [msg, setMsg] = useState<string | null>(null);
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -48,7 +47,7 @@ export function SocialSettingsScreen() {
 
   useEffect(() => {
     if (!user || user.guest) return;
-    social.me().then((m) => { setMe(m); setUsername(m.username); setBio(m.bio ?? ""); }).catch((e) => setMsg(errorText(e)));
+    social.me().then((m) => { setMe(m); setUsername(m.username); }).catch((e) => setMsg(errorText(e)));
     social.blocks().then((r) => setBlocked(r.blocked)).catch(() => setBlocked([]));
   }, [user]);
 
@@ -104,19 +103,6 @@ export function SocialSettingsScreen() {
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown", { n: SOCIAL_LIMITS.changeCooldownDays })}</Text>
               <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { path: `/u/${me.username}` })}</Text>
-            </Section>
-
-            <Section title={tx("socialsettings.short_bio")} colors={colors}>
-              {/* ANA DILDE serbest metin: cumle basi buyuk ama otomatik duzeltme ACIK
-                    kaliyor - burada duzeltme yardimci, hedef dilde yazilan
-                    alanlarin tersine. Web de ayni. */}
-                <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, SOCIAL_LIMITS.bioMax))} multiline autoCapitalize="sentences" placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })}
-              accessibilityLabel={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
-              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
-                {/* Sınır SABİTTEN (bkz. web `social-settings`). */}
-                <Text variant="caption" color={colors.textMuted}>{bio.length}/{SOCIAL_LIMITS.bioMax}</Text>
-                <Pill label={tx("common.save")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
-              </View>
             </Section>
 
             {/* Gorunurluk gercek bir radyo grubu - yanindaki nokta da onu

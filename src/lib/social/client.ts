@@ -71,7 +71,6 @@ export const ERROR_KEYS: Record<string, string> = {
   // dönüyordu ama haritada yoktu: kod `failed`e düşüyor ve kullanıcı
   // "Bağlantı kurulamadı" görüyordu. Sebebini bilmeden aynı metni tekrar
   // tekrar kaydetmeye çalışıyordu. Mobil baştan beri doğru cümleyi veriyor.
-  bio_invalid: "social.err_bio_invalid",
   week_over: "social.err_week_over",
   bad_request: "social.err_bad_request",
   database: "social.err_database",
@@ -100,7 +99,6 @@ export type SocialMeView = {
   userId: string;
   name: string | null;
   username: string;
-  bio: string | null;
   level: string;
   visibility: "public" | "friends" | "private";
   allowRequests: boolean;
@@ -131,7 +129,6 @@ export type NotificationView = {
 };
 export type PublicProfileView = {
   user: PublicUser;
-  bio: string | null;
   visibility: "public" | "friends" | "private";
   relation: Relation;
   friendshipId: number | null;
