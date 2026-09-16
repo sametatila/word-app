@@ -89,15 +89,15 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 - **Premium ayrımı** `src/lib/premium/gates.ts` (`DEFAULT_PREMIUM_CONFIG`, `describeLimits`)
   ve `docs/premium/README.md` §2'den. Canlı değerler 2026-09-14'te `/api/premium/status`'tan
   okundu ve varsayılanla aynı: ücretsizde kelime turları, okuma, dinleme ve ekran açık
-  yürüyüş; seviye başına 1 deneme sınavı; haftada 1 haftalık sınav; derste ve becerilerde
+  yürüyüş; seviye başına 1 deneme sınavı; haftada 1 haftalık quiz; derste ve becerilerde
   kotalı yapay zekâ değerlendirmesi. Premium'da ekran kapalı yürüyüş, tüm kâğıtlar (üçerli
-  paketler), haftalık sınav havuzunun tamamı ve günlük adil kullanım tavanı. Metin Premium'u
+  paketler), günlük adil kullanım tavanı. Metin Premium'u
   uygulamanın paywall cümlesiyle aynı adlarla sayıyor: "Cepte yürüyüş, tüm deneme sınavları
   ve daha çok konuşma, yazma değerlendirmesi" (`paywall.pitch_exams`; en "Pocket Walking,
   every mock exam and more speaking and writing feedback", de "Gehmodus in der Tasche, alle
   Probeprüfungen und mehr Feedback zum Sprechen und Schreiben"). "Sınırsız" denmiyor:
   Premium'un da günlük adil kullanım tavanı var (şartlar §7a). Metin sayı
-  olarak yalnız "seviye başına 1 deneme sınavı" ve "haftada 1 haftalık sınav" diyor; panelde
+  olarak yalnız "seviye başına 1 deneme sınavı" ve "haftada 1 haftalık quiz" diyor; panelde
   (`/admin/premium`) bu iki değer değişirse üç dildeki "Ücretsiz ve Premium" paragrafı ve
   deneme sınavı altyazısı (`docs/store/plan/*.json`) da değişir. Öteki sınırlar "sınırlı"
   diye geçiyor ve "güncel sınırlar Premium ekranında" cümlesiyle uygulamaya bağlanıyor.
@@ -164,10 +164,10 @@ BECERİLER
 Okuma, dinleme, yazma, konuşma ve dil bilgisi alıştırmaları. İznin varsa yazdıklarını ve söylediklerini yapay zekâ değerlendirir; neyi neden düzeltmen gerektiğini görürsün. "Neler yapabilirim" ekranı hangi becerileri kanıtladığını gösterir.
 
 DENEME SINAVLARI
-Her seviyede 12 deneme sınavı; her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını iznin varsa yapay zekâ değerlendirir, ölçütler ve örnek cevap da gösterilir. Haftalık sınavla öğrendiklerini düzenli olarak ölçersin. Deneme sınavları Lernomi'nin hazırladığı alıştırmalardır; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.
+Her seviyede 12 deneme sınavı; her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını iznin varsa yapay zekâ değerlendirir, ölçütler ve örnek cevap da gösterilir. Haftalık quiz öğrendiklerini düzenli olarak ölçer: on soru, beş yetkinlik, her yanlıştan sonra açıklama. Ücretsizdir. Deneme sınavları Lernomi'nin hazırladığı alıştırmalardır; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.
 
 ÜCRETSİZ VE PREMIUM
-Kelime turları, okuma ve dinleme alıştırmaları ve ekran açıkken yürüyüş modu ücretsizdir. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, haftada 1 haftalık sınav ve derslerde ve becerilerde sınırlı sayıda yapay zekâ değerlendirmeli konuşma ve yazma alıştırması var. Premium: Cepte yürüyüş, tüm deneme sınavları ve daha çok konuşma, yazma değerlendirmesi. Deneme sınavları üçerli paketler hâlinde sırayla açılır: bir paketten yeterli puanı alınca ya da üç kâğıdı da bitirince sonraki paket açılır. Haftalık sınav havuzunun tamamı ve geçmiş haftalar da açıktır. Cepte yürüyüşte ve değerlendirmede günlük adil kullanım sınırı vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
+Kelime turları, okuma ve dinleme alıştırmaları ve ekran açıkken yürüyüş modu ücretsizdir. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, haftada 1 haftalık quiz ve derslerde ve becerilerde sınırlı sayıda yapay zekâ değerlendirmeli konuşma ve yazma alıştırması var. Premium: Cepte yürüyüş, tüm deneme sınavları ve daha çok konuşma, yazma değerlendirmesi. Deneme sınavları üçerli paketler hâlinde sırayla açılır: bir paketten yeterli puanı alınca ya da üç kâğıdı da bitirince sonraki paket açılır. Cepte yürüyüşte ve değerlendirmede günlük adil kullanım sınırı vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
 Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Google Play hesabından yönetebilir ya da iptal edebilirsin.
 
 ARKADAŞLARINLA
@@ -233,10 +233,10 @@ SKILLS
 Reading, listening, writing, speaking and grammar exercises. With your permission, AI assesses your writing and speaking, and you see what to fix and why. The "What I can do" screen shows which abilities you have demonstrated.
 
 MOCK EXAMS
-12 mock exams at every level, each with reading, listening, writing and speaking sections and a time limit for each section. Reading and listening are scored automatically; with your permission, AI assesses your writing and speaking answers, and you also see the criteria and a sample answer. A weekly quiz checks what you have learned. The mock exams are practice material written by Lernomi; they are not affiliated with any exam provider and do not replace an official certificate.
+12 mock exams at every level, each with reading, listening, writing and speaking sections and a time limit for each section. Reading and listening are scored automatically; with your permission, AI assesses your writing and speaking answers, and you also see the criteria and a sample answer. A weekly quiz checks what you have learned: ten questions, five skills, an explanation after every mistake. It is free. The mock exams are practice material written by Lernomi; they are not affiliated with any exam provider and do not replace an official certificate.
 
 FREE AND PREMIUM
-Vocabulary rounds, reading and listening exercises and walk mode with the screen on are free. The free plan also includes 1 mock exam per level, 1 weekly quiz per week and a limited number of AI-assessed speaking and writing exercises in lessons and skills. Premium: Pocket Walking, every mock exam and more speaking and writing feedback. Mock exams unlock in packs of three, one after another: score well on a pack or finish all three papers to open the next one. The whole weekly quiz pool and past weeks are open too. Pocket Walking and assessments have a daily fair-use limit; the current limits are shown on the Premium screen in the app.
+Vocabulary rounds, reading and listening exercises and walk mode with the screen on are free. The free plan also includes 1 mock exam per level, 1 weekly quiz per week and a limited number of AI-assessed speaking and writing exercises in lessons and skills. Premium: Pocket Walking, every mock exam and more speaking and writing feedback. Mock exams unlock in packs of three, one after another: score well on a pack or finish all three papers to open the next one. Pocket Walking and assessments have a daily fair-use limit; the current limits are shown on the Premium screen in the app.
 Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Google Play account.
 
 WITH FRIENDS
@@ -303,10 +303,10 @@ FÄHIGKEITEN
 Übungen zu Lesen, Hören, Schreiben, Sprechen und Grammatik. Mit deiner Erlaubnis bewertet eine KI deine Texte und gesprochenen Antworten, und du siehst, was du warum ändern solltest. Der Bildschirm „Was ich kann“ zeigt, welche Fähigkeiten du schon nachgewiesen hast.
 
 PROBEPRÜFUNGEN
-12 Probeprüfungen pro Niveau, jede mit den Teilen Lesen, Hören, Schreiben und Sprechen und einer Zeitvorgabe pro Teil. Lesen und Hören werden automatisch ausgewertet; Schreiben und Sprechen bewertet mit deiner Erlaubnis eine KI, dazu siehst du die Kriterien und eine Musterlösung. Ein Wochentest zeigt, was du gelernt hast. Die Probeprüfungen sind von Lernomi erstellte Übungen; sie stehen mit keinem Prüfungsanbieter in Verbindung und ersetzen kein offizielles Zertifikat.
+12 Probeprüfungen pro Niveau, jede mit den Teilen Lesen, Hören, Schreiben und Sprechen und einer Zeitvorgabe pro Teil. Lesen und Hören werden automatisch ausgewertet; Schreiben und Sprechen bewertet mit deiner Erlaubnis eine KI, dazu siehst du die Kriterien und eine Musterlösung. Ein Wochen-Quiz zeigt, was du gelernt hast: zehn Fragen, fünf Fertigkeiten, nach jedem Fehler eine Erklärung. Es ist kostenlos. Die Probeprüfungen sind von Lernomi erstellte Übungen; sie stehen mit keinem Prüfungsanbieter in Verbindung und ersetzen kein offizielles Zertifikat.
 
 KOSTENLOS UND PREMIUM
-Vokabelrunden, Lese- und Hörübungen und der Gehmodus bei eingeschaltetem Bildschirm sind kostenlos. Kostenlos sind außerdem 1 Probeprüfung pro Niveau, 1 Wochentest pro Woche und eine begrenzte Zahl KI-bewerteter Sprech- und Schreibübungen in Lektionen und Fähigkeiten. Premium: Gehmodus in der Tasche, alle Probeprüfungen und mehr Feedback zum Sprechen und Schreiben. Probeprüfungen werden nacheinander in Dreierpaketen freigeschaltet: Mit einem guten Ergebnis oder nach allen drei Prüfungen eines Pakets öffnet sich das nächste. Dazu kommen der gesamte Wochentest-Pool und vergangene Wochen. Für den Gehmodus in der Tasche und die Bewertungen gilt eine tägliche Fair-Use-Grenze; die aktuellen Grenzen stehen auf dem Premium-Bildschirm der App.
+Vokabelrunden, Lese- und Hörübungen und der Gehmodus bei eingeschaltetem Bildschirm sind kostenlos. Kostenlos sind außerdem 1 Probeprüfung pro Niveau, 1 Wochen-Quiz pro Woche und eine begrenzte Zahl KI-bewerteter Sprech- und Schreibübungen in Lektionen und Fähigkeiten. Premium: Gehmodus in der Tasche, alle Probeprüfungen und mehr Feedback zum Sprechen und Schreiben. Probeprüfungen werden nacheinander in Dreierpaketen freigeschaltet: Mit einem guten Ergebnis oder nach allen drei Prüfungen eines Pakets öffnet sich das nächste. Für den Gehmodus in der Tasche und die Bewertungen gilt eine tägliche Fair-Use-Grenze; die aktuellen Grenzen stehen auf dem Premium-Bildschirm der App.
 Premium ist ein automatisch verlängertes Monats- oder Jahresabo. Preis und eine eventuelle kostenlose Testphase werden vor dem Kauf in der App angezeigt. Dein Abo verwaltest oder kündigst du in deinem Google-Play-Konto.
 
 MIT FREUNDEN

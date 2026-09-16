@@ -243,6 +243,12 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
       { key: "plan.free_core" },
       { key: "plan.free_walk" },
       { key: "plan.free_mock", params: { n: free.mockPapersPerLevel } },
+      /* Haftalık quiz ÜCRETSİZ (karar 2026-09-16) ve bu satır ücretsiz
+         sütununda kalıyor. Premium sütunundaki karşılığı (`plan.pro_weekly`)
+         KALDIRILDI: "havuzun tamamı ve geçmiş haftalar" diye bir şey hiç
+         yapılmadı, yani ödeme yapan kullanıcı o satır karşılığında hiçbir şey
+         almıyordu. Vaadi silmek, teslim edilmeyen bir vaadi taşımaktan iyidir
+         (App Store 2.3.1 / 3.1.2, Play yanıltıcı beyan). */
       { key: "plan.free_weekly", params: { n: free.weeklyExams } },
       { key: "plan.free_lessons", params: { s: free.speakingLessonsPerLevel, w: free.writingLessonsPerLevel } },
       { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
@@ -251,7 +257,6 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
     premium: [
       { key: "plan.pro_pocket_walk" },
       { key: "plan.pro_mock", params: { n: mock.packSize } },
-      { key: "plan.pro_weekly" },
       { key: "plan.pro_ai", params: { n: fairUse.aiPracticePerDay } },
       { key: "plan.pro_walk_cap", params: { n: fairUse.pocketWalksPerDay } },
     ],

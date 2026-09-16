@@ -178,7 +178,7 @@ export type QuizWeek = {
 
 /** Quiz geçme çizgisi yok: bu bir sınav değil. Skor yalnız geri bildirim. */
 export const QUIZ_FEEDBACK_BANDS = [
-  { min: 90, key: "quiz.band_strong" },
-  { min: 60, key: "quiz.band_solid" },
-  { min: 0, key: "quiz.band_practice" },
+  { min: 90, key: "wquiz.band_strong" },
+  { min: 60, key: "wquiz.band_solid" },
+  { min: 0, key: "wquiz.band_practice" },
 ] as const;

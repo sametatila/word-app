@@ -4370,8 +4370,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      `check-endpoints`e "bu uc cagriliyor" diye gorunuyordu - orasi kaynak
      dosyalarda uc yolu ariyor ve burasi ucu cagirmiyor, dosyasini OKUYOR. */
   const uc = (f) => "src/app/api/" + f + "/route.ts";
-  const cagiran = [uc("premium/status"), uc("premium/consume"), uc("weekly"), uc("exam"), "src/lib/weekly.ts"]
-    .filter((f) => read(f).includes("canWeeklyExam"));
+  /* `api/weekly` SILINDI (haftalik quiz gecisi): eski uc istemcinin bildirdigi
+     dogruluga guveniyordu. Yerine gecen `api/quiz` de kilide bakmiyor cunku
+     quiz UCRETSIZ - premium vaadi paywall'dan da kaldirildi. Var olmayan
+     dosyayi okumak patliyordu; liste artik yalniz var olanlari geziyor. */
+  const cagiran = [uc("premium/status"), uc("premium/consume"), uc("quiz"), uc("exam"), "src/lib/weekly.ts"]
+    .filter((f) => existsSync(f) && read(f).includes("canWeeklyExam"));
   const MUAF = cagiran.length === 2 ? ["weekly_exam"] : [];
   const olculmeyen = gecerli.filter((g) => !mob.includes(g) && !MUAF.includes(g));
   sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
@@ -4683,9 +4687,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        sonuc sablonunun bandi yuzdeyi ana sayi olarak gosteriyor. */
     ["dogru sayisi", /weekly\.done_sub/, /weekly\.done_sub/],
     ["gonderilemedi", /weekly\.not_sent/, /weekly\.not_sent/],
-    ["kuyruga donenler", /weekly\.back_in_queue/, /weekly\.back_in_queue/],
-    ["hepsi dogru", /weekly\.all_correct/, /weekly\.all_correct/],
-    ["haftada bir", /weekly\.once_a_week/, /weekly\.once_a_week/],
+    ["yetkinlik kirilimi", /wquiz\.by_block/, /wquiz\.by_block/],
+    ["yanlislar ve nedeni", /wquiz\.review_title/, /wquiz\.review_title/],
+    ["hepsi dogru", /wquiz\.all_correct/, /wquiz\.all_correct/],
+    ["haftada bir", /wquiz\.once_a_week/, /wquiz\.once_a_week/],
     ["cikis", /weekly\.back_to_learn/, /common\.finish/],
   ];
   /* Mobilde dugmeler `FlowScreen` `actions` prop'unda: kaynakta icerikten
@@ -4695,8 +4700,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const j = src.indexOf(son, i);
     return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
   };
-  const web = dilim(read("src/components/weekly-player.tsx"), 'if (phase === "done" && result) {', "\n  const round =");
-  const mob = actionsSona(dilim(read("mobile/src/screens/WeeklyScreen.tsx"), 'if (phase === "done") {', "\n  // play"));
+  const web = dilim(read("src/components/weekly-player.tsx"), 'if (phase === "done" && score) {', "\n  return null;");
+  const mob = actionsSona(dilim(read("mobile/src/screens/WeeklyScreen.tsx"), 'if (phase === "done" && score) {', "\n  return null;"));
   const sira = (src, ix) =>
     BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
       .filter(([, i]) => i >= 0)
@@ -4939,13 +4944,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      girip bastan alabiliyor. Muafiyet kendini denetliyor: haftalik durumu
      `done: Boolean(row)` diye okuyor ve o satiri yalniz `finishWeekly`
      yaziyor; baska bir yazan cikarsa gerekce duser. */
-  const weekly = read("src/lib/weekly.ts");
-  const yazan = [...weekly.matchAll(/insert\(exams\)/g)].length;
-  const finishte = /export async function finishWeekly[\s\S]*?insert\(exams\)/.test(weekly);
+  /* YAZAN YER TASINDI. Eskiden `lib/weekly.ts` `finishWeekly` yaziyordu ve o
+     yol istemcinin bildirdigi dogruluga guveniyordu; silindi. Bugun `exams`
+     satirini yalniz `/api/quiz` POST'u yaziyor ve yalniz BITISTE — yarida
+     birakan kullanici hakkini harcamiyor. */
+  const quizRoute = read("src/app/api/quiz/route.ts");
+  const yazan = [...quizRoute.matchAll(/insert\(exams\)/g)].length;
+  const postta = /export async function POST[\s\S]*?insert\(exams\)/.test(quizRoute);
+  const weeklyLib = read("src/lib/weekly.ts");
   sameList(
     "haftalik hak yarida harcanmiyor",
-    ["exams yazan yer=" + yazan, "yazan=" + (finishte ? "finishWeekly" : "baskasi")],
-    ["exams yazan yer=1", "yazan=finishWeekly"],
+    ["exams yazan yer=" + yazan, "yazan=" + (postta ? "quiz POST" : "baskasi"), "eski yol=" + (/insert\(exams\)/.test(weeklyLib) ? "DURUYOR" : "yok")],
+    ["exams yazan yer=1", "yazan=quiz POST", "eski yol=yok"],
   );
 }
 
@@ -7605,13 +7615,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       gecis: /total:\s*PASS_TOTAL, section:\s*PASS_SECTION/,
       cagiranlar: ["src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
     },
-    {
-      ad: "haftalik pekismis esigi",
-      yer: ["{min}"],
-      anahtarlar: ["weekly.pitch_short"],
-      gecis: /min:\s*MIN_MASTERED/,
-      cagiranlar: ["src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
-    },
+    /* KALDIRILDI: "pekismis kelime esigi" haftalik SINAVIN kavramiydi ve
+       sinav quiz'e donusunce kalmadi. Quiz yazili bir havuzdan besleniyor,
+       ogrencinin pekismis kelime sayisina bakmiyor. */
     {
       ad: "hiz turu suresi",
       yer: ["{n}"],
@@ -13445,7 +13451,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       /* Ortak karo kendi adini tasiyor (`RoundExit`); adi orada olculuyor. */
       return /<RoundExit\b/.test(src) || adliCikis(src, "aria-label") ? "var" : "YOK";
     };
-    const mobilCikis = (yol) => (adliCikis(sil(read(yol)), "accessibilityLabel") ? "var" : "YOK");
+    /* `FlowTopBar` kullanan ekranda cikis karosu ortak bilesende: isaret orada
+       aranir. Ham isaretlemeyi kopyalamak yerine bileseni kullanmak dogru yon. */
+    const mobilCikis = (yol) => {
+      const kaynak = /<FlowTopBar[\s/>]/.test(read(yol)) ? "mobile/src/ui/flow.tsx" : yol;
+      return adliCikis(sil(read(kaynak)), "accessibilityLabel") ? "var" : "YOK";
+    };
 
     const EKRANLAR = [
       ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
@@ -13522,7 +13533,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* Cikis karosunun OLCUSU: Android 44x44 / 22 px simge. */
     const re = sil(read("src/components/round-exit.tsx"));
-    const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"];
+    /* `FlowTopBar` KULLANAN EKRAN icin bilesenin kendisi okunuyor. WeeklyScreen
+       cikis karosunu elle cizmeyi birakip ortak ust cubuga gecti; olcu ayni
+       olcu, yalnizca isaretin durdugu dosya degisti. Ham isaretlemeyi
+       kopyalamak yerine bileseni kullanmak DOGRU yon, kural onu cezalandirmamali. */
+    const cikisKaynak = (y) => (/<FlowTopBar[\s/>]/.test(read(y)) ? "mobile/src/ui/flow.tsx" : y);
+    const dortlu = ["mobile/src/screens/BossScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx", "mobile/src/screens/WeeklyScreen.tsx"].map(cikisKaynak);
     sameList(
       "cikis karosunun olcusu",
       [
@@ -14869,7 +14885,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/walk-player.tsx", 't("walk.preparing")'],
       ["src/components/challenge-player.tsx", 't("challenge.preparing")'],
       ["src/components/exam-player.tsx", '"exam.preparing" : "item.mono_scoring"'],
-      ["src/components/weekly-player.tsx", '"weekly.preparing" : "weekly.saving"'],
+      ["src/components/weekly-player.tsx", '"wquiz.preparing" : "wquiz.saving"'],
       ["src/components/placement/placement-test.tsx", '"plc.preparing" : "placement.calculating_your_level"'],
       ["src/components/session-player.tsx", 't("session.preparing")'],
     ];
@@ -15261,10 +15277,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil quiz=" + sonucDuyuruyor(mobQuiz, '"quiz.result_passed"', "mobil"),
         "mobil patron=" + sonucDuyuruyor(mobPatron, '"boss.passed"', "mobil"),
         "mobil meydan=" + sonucDuyuruyor(mobMeydan, 't("daily.your_score")', "mobil"),
-        "web haftalik=" + sonucDuyuruyor(webHaftalik, '"weekly.done_title"', "web"),
+        "web haftalik=" + sonucDuyuruyor(webHaftalik, '"wquiz.done_sub"', "web"),
         "web deneme=" + sonucDuyuruyor(webDeneme, '"mockexam.part_done"', "web"),
         "web rol yapma=" + sonucDuyuruyor(webRol, '"rpexam.below_threshold"', "web"),
-        "mobil haftalik=" + sonucDuyuruyor(mobHaftalik, '"weekly.done_title"', "mobil"),
+        "mobil haftalik=" + sonucDuyuruyor(mobHaftalik, '"wquiz.done_sub"', "mobil"),
         "mobil deneme=" + sonucDuyuruyor(mobDeneme, '"mockexam.part_done"', "mobil"),
         "mobil rol yapma=" + sonucDuyuruyor(mobRol, '"rpexam.below_threshold"', "mobil"),
         /* SON UC YUZEY COK DURUMLU: sinav (tek sonuc; bolum gecisleri calisan
@@ -19755,7 +19771,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return ["OKUNAMADI: " + ad];
   };
   const CIFT = [
-    ["haftalik durum", "src/lib/weekly.ts", "WeeklyStatus", "mobile/src/game/weekly.ts", "WeeklyStatus"],
+    ["haftalik quiz puani", "src/lib/weekly-quiz/scoring.ts", "QuizScore", "mobile/src/game/weekly.ts", "QuizScore"],
     ["haftalik sonuc", "src/lib/weekly.ts", "WeeklyResult", "mobile/src/game/weekly.ts", "WeeklyResult"],
     ["seviye testi", "src/lib/placement.ts", "PlacementTest", "mobile/src/game/placement.ts", "PlacementTest"],
     ["gunun gorevi", "src/lib/quests.ts", "QuestProgress", "mobile/src/game/quests.ts", "Quest"],

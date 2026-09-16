@@ -64,8 +64,10 @@ export type ClientItem = Omit<ResolvedItem, "answer" | "why">;
  * bütün kurgu anlamsızlaşırdı.
  */
 export function toClient(it: ResolvedItem): ClientItem {
-  const { answer: _answer, why: _why, ...rest } = it;
-  return rest;
+  /* Alanlar TEK TEK kopyalanıyor, ayıklanarak değil. Ayıklama (`...rest`)
+     `ResolvedItem`e yarın eklenecek bir alanı SESSİZCE istemciye taşırdı;
+     burada yeni alan eklendiğinde derleme bu satırı gösteriyor. */
+  return { id: it.id, block: it.block, ref: it.ref, stem: it.stem, options: it.options, targets: it.targets };
 }
 
 export type ScoredItem = {
@@ -88,6 +90,13 @@ export type QuizScore = {
   /** Yetkinlik kırılımı — "neye çalış" yönlendirmesi buradan çıkıyor. */
   byBlock: { block: QuizBlock; correct: number; total: number }[];
   items: ScoredItem[];
+  /**
+   * Geri bildirim bandının çeviri anahtarı.
+   *
+   * Puanın YANINDA duruyor, ayrı hesaplanmıyor: iki istemci de aynı eşiği
+   * kendi tarafında yeniden yazsaydı üç kopya olurdu ve biri kayardı.
+   */
+  band: string;
 };
 
 /**
@@ -132,6 +141,7 @@ export function scoreQuiz(
     pct: total ? Math.round((100 * correct) / total) : 0,
     byBlock: [...byBlock].map(([block, v]) => ({ block, ...v })),
     items: scored,
+    band: feedbackKey(total ? Math.round((100 * correct) / total) : 0),
   };
 }
 
@@ -155,9 +165,9 @@ export function weakestBlock(score: QuizScore): QuizBlock | null {
  * Eşik yalnız SÖZE dönüyor, kapıya değil: quiz'i "geçmek" diye bir şey yok.
  */
 export function feedbackKey(pct: number): string {
-  if (pct >= 90) return "quiz.band_strong";
-  if (pct >= 60) return "quiz.band_solid";
-  return "quiz.band_practice";
+  if (pct >= 90) return "wquiz.band_strong";
+  if (pct >= 60) return "wquiz.band_solid";
+  return "wquiz.band_practice";
 }
 
 /** Bir haftanın maddelerini kimliğe göre çözer (puanlama girişi). */

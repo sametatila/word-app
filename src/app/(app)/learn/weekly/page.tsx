@@ -6,7 +6,7 @@ import { WeeklyPlayer } from "@/components/weekly-player";
 export const generateMetadata = titleMeta("learn.weekly_quiz");
 export const dynamic = "force-dynamic";
 
-/** Haftalık kullanım sınavı (WP-42) — oynatıcı istemcide, durum ve sorular /api/weekly'den. */
+/** Haftalık quiz — oynatıcı istemcide, durum ve maddeler `/api/quiz` ucundan. */
 export default async function WeeklyPage() {
   const userId = await getUserId();
   if (!userId) redirect("/login");

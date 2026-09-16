@@ -77,7 +77,7 @@ import { candoSummary } from "../src/lib/cando-progress";
 import { nextLevel, scorePlacement, type PlacementAnswer, type PlacementStage } from "../src/lib/placement-score";
 import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement } from "../src/lib/placement";
 import type { CefrLevel } from "../src/lib/skills/types";
-import { buildWeeklyExam, finishWeekly, weeklyStatus } from "../src/lib/weekly";
+import { weeklyStatus } from "../src/lib/weekly";
 import { bandOf, computeProficiency, weakestSkill, type Evidence, type EvidenceSource, type ProficiencySkill } from "../src/lib/proficiency";
 import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
@@ -2026,36 +2026,26 @@ async function main() {
   check("kabul: profil seviyesi güncellenir", (await acceptPlacement(USER, rec.id, "B1")) === true && (await ensureProfile(USER)).level === "B1");
   check("son alma okunuyor", (await lastPlacement(USER))?.accepted === "B1");
 
-  console.log("\n38) Haftalık kullanım sınavı (WP-42)");
+  console.log("\n38) Haftalık quiz — durum okuması");
+  /*
+    ESKİ BLOK KALDIRILDI. Burada `buildWeeklyExam` ve `finishWeekly` sınanıyordu;
+    ikisi de silindi çünkü eski yazma yolu istemcinin bildirdiği doğruluğa
+    güveniyordu. Quiz'in çekirdeği (seçim, anadil çözümü, puanlama, sızıntı)
+    veritabanısız sınanıyor: `npm run test:quiz` — 45 doğrulama.
+
+    Burada kalan tek şey bu paketin gerçekten ölçebileceği şey: `exams`
+    tablosuna yazılan satırın `weeklyStatus` tarafından okunabilmesi. O satırı
+    bugün `/api/quiz` yazıyor ve gelişim grafiği ile başarımlar onu okuyor.
+  */
   await reset();
   await ensureProfile(USER, "E2E");
-  const masteredPool = await db.select().from(words).where(and(eq(words.niveau, "A1"), isNotNull(words.beispielTr))).limit(40);
-  const farPast = new Date(Date.now() - 40 * 86400000);
-  await db.insert(userWords).values(masteredPool.map((w) => ({ userId: USER, wordId: w.id, state: 2, ease: 2.5, intervalDays: 30, dueAt: new Date(Date.now() + 5 * 86400000), reps: 6, lapses: 0, correctStreak: 6, leech: false, lastReviewedAt: farPast })));
   let ws = await weeklyStatus(USER, monday);
-  check("hafta Pazartesi, yapılmadı, pekişmiş ≥ 30", ws.week === monday && !ws.done && ws.mastered >= 30 && !ws.short);
-  const exam = await buildWeeklyExam(USER, "de", "A1", monday);
-  check("15 soru, yalnız üretim oyunları", exam.rounds.length === 15 && exam.rounds.every((r) => isProductionGame(r.game) || (r.game === "cloze" && r.mode === "type")), exam.rounds.map((r) => r.game).join(","));
-  check("çeviri turları önde", exam.rounds.slice(0, 3).every((r) => r.game === "translate" || r.game === "typing"));
-  const wAns: Answer[] = exam.rounds.slice(0, 15).map((r, i) => ({ wordId: (r as { word: { id: number } }).word.id, game: r.game, correct: i % 3 !== 0, latencyMs: 4000 }));
-  const wr = await finishWeekly(USER, "A1", wAns, monday, 300);
-  check("skor ve kayıt", wr.saved && wr.total === 15 && wr.correct === 10 && wr.score === 67, JSON.stringify(wr));
-  const wrongId = wAns[0].wordId;
-  const [uwWrong] = await db.select().from(userWords).where(and(eq(userWords.userId, USER), eq(userWords.wordId, wrongId)));
-  check("yanlış bilinen pekişmiş kelime düştü (kalite 2 → lapse)", uwWrong?.lapses === 1 && uwWrong.intervalDays === 0);
-  const rightId = wAns[1].wordId;
-  const [uwRight] = await db.select().from(userWords).where(and(eq(userWords.userId, USER), eq(userWords.wordId, rightId)));
-  check("doğru bilinen kelime aralığı korudu/büyüdü", (uwRight?.intervalDays ?? 0) >= 30);
+  check("hafta Pazartesi, henüz yapılmadı", ws.week === monday && !ws.done);
+  await db.insert(exams).values({ userId: USER, kind: "weekly", week: monday, level: "A1", score: 70, correct: 7, total: 10, answers: [] });
   ws = await weeklyStatus(USER, monday);
-  check("bu hafta yapıldı, skor okunuyor", ws.done && ws.score === 67);
-  const wAgain = await finishWeekly(USER, "A1", wAns, monday, 300);
-  check("tek hak: ikinci gönderim kaydedilmez", !wAgain.saved && wAgain.score === 67);
-  const nextWeek = await buildWeeklyExam(USER, "de", "A1", shiftDay(monday, 7));
-  check("sonraki hafta aynı kelimeler sorulmuyor", nextWeek.rounds.every((r) => !wAns.some((a) => a.wordId === (r as { word: { id: number } }).word.id)));
-  const examEv = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "exam_finish")));
-  check("exam_finish kind=usage:A1", examEv.length === 1 && examEv[0].kind === "usage:A1" && examEv[0].value === 67);
+  check("yazılan satır okunuyor", ws.done && ws.score === 70 && ws.total === 10);
   const planW = await buildPlan(USER, monday, "de", "A1", 20);
-  check("plan kartında haftalık sınav öğesi (yapıldı)", planW.items.some((i) => i.id === "weekly" && i.done));
+  check("plan kartında haftalık quiz öğesi (yapıldı)", planW.items.some((i) => i.id === "weekly" && i.done));
 
   console.log("\n39) Beceri yetkinlik modeli (WP-50)");
   const nowP = new Date();

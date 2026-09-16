@@ -10,6 +10,7 @@ import { computeProficiency } from "@/lib/proficiency";
 import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
 import { nextLesson } from "@/lib/lessons/progress";
 import { weeklyStatus } from "@/lib/weekly";
+import { QUIZ_ITEMS } from "@/lib/weekly-quiz/types";
 import { weeklySummary } from "@/lib/growth";
 
 /**
@@ -177,15 +178,18 @@ export async function buildPlan(
       const ws = await weeklyStatus(userId, today);
       items.push({
         id: "weekly",
-        title: translate(lang, ws.short ? "plan.weekly_short" : "plan.weekly_exam"),
-        detail: ws.done ? `skor ${ws.score}` : "15 soru · yazarak · tek hak",
+        title: translate(lang, "plan.weekly_exam"),
+        /* HAM TÜRKÇE KALKTI. Burada "15 soru · yazarak · tek hak" yazılıydı:
+           hem çevrilmemiş bir dizge sunucu yanıtına giriyordu, hem de quiz
+           on maddeye indikten sonra sayı YANLIŞ olmuştu. */
+        detail: ws.done ? `${ws.score}%` : translate(lang, "wquiz.rule_count", { n: QUIZ_ITEMS }),
         minutes: 8,
         done: ws.done,
         href: "/learn/weekly",
       });
     }
   } catch (err) {
-    console.error("[plan] haftalık sınav okunamadı", err);
+    console.error("[plan] haftalik quiz okunamadi", err);
   }
 
   const remaining = items.filter((i) => !i.done);

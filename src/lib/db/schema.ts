@@ -925,6 +925,55 @@ export const exams = pgTable(
  * kapansa da kaldığı yerden devam edilir; `state` yarım kalanı ('running')
  * puanlanmış olandan ('done') ayırıyor.
  */
+/**
+ * Haftalık quiz denemesi.
+ *
+ * NEDEN AYRI TABLO. `exams` tablosunda (user, kind, week) BENZERSİZ ve o kısıt
+ * haftada tek hak kuralını taşıyor — doğru kural, ama orada yalnız SONUÇ var.
+ * Quiz'in manipülasyona kapalı olması için sonucun yanında ÖRNEĞİN kendisi de
+ * saklanmak zorunda: hangi maddeler soruldu, hangi sırada, hangi anadil
+ * varyantıyla. Cevap anahtarı koddan okunuyor (`weekly-quiz/index`), o yüzden
+ * burada tutulmuyor; burada tutulan şey "bu öğrenciye bu hafta TAM OLARAK
+ * ne soruldu" sorusunun cevabı.
+ *
+ * Deneme sınavlarındaki `mock_exam_attempts` ile aynı desen ve aynı gerekçe.
+ *
+ * `native` KOPYALANIYOR. Şıklar öğrencinin anadiline göre değişebiliyor
+ * (`byNative`), yani doğru şıkkın SIRASI da değişebiliyor. Profil hafta
+ * ortasında değişirse öğrenci gördüğünden başka bir anahtarla puanlanırdı;
+ * denemeyle birlikte saklanınca gördüğü şıklara göre puanlanıyor.
+ *
+ * `week` SUNUCUDAN. Eski haftalık sınavın açığı tam buradaydı: gün istemciden
+ * geliyor ve ±1 güne izin veriliyordu, yani hafta sınırında ikinci bir hak
+ * açılabiliyordu. Burada hafta `now()`dan türüyor ve (user, week) benzersiz.
+ */
+export const weeklyQuizAttempts = pgTable(
+  "weekly_quiz_attempts",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** Haftanın pazartesisi — SUNUCU gününden türetilir. */
+    week: date("week").notNull(),
+    /** Hangi paket soruldu: "de-a1-w03". */
+    quizId: text("quiz_id").notNull(),
+    /** Şıkların hangi anadile göre çözüldüğü: tr | en | de. */
+    native: text("native").notNull(),
+    /** Sorulan madde kimlikleri, SORULDUĞU sırada. */
+    itemIds: jsonb("item_ids").notNull().default([]),
+    /** Madde kimliği → seçilen şıkkın sırası. */
+    answers: jsonb("answers").notNull().default({}),
+    /** running | done */
+    state: text("state").notNull().default("running"),
+    correct: integer("correct").notNull().default(0),
+    total: integer("total").notNull().default(0),
+    /** 0–100. Geçme çizgisi yok; skor yalnız geri bildirim. */
+    score: integer("score").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    finishedAt: timestamp("finished_at", { withTimezone: true }),
+  },
+  (t) => [uniqueIndex("weekly_quiz_user_week_idx").on(t.userId, t.week)],
+);
+
 export const mockExamAttempts = pgTable(
   "mock_exam_attempts",
   {

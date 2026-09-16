@@ -407,6 +407,13 @@
       "when": 1789654762489,
       "tag": "0057_drop_profile_bio",
       "breakpoints": true
+    },
+    {
+      "idx": 58,
+      "version": "7",
+      "when": 1789741162489,
+      "tag": "0058_weekly_quiz",
+      "breakpoints": true
     }
   ]
 }

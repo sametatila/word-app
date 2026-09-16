@@ -177,8 +177,6 @@ export const enWeb: Record<string, string> = {
   "pron.pauses": "{n} pauses",
   "pron.pauses.one": "{n} pause",
   "pron.word_level_note": "word-level measurement, not a phoneme score",
-  "weekly.preparing": "Getting the quiz ready…",
-  "weekly.saving": "Saving the result…",
   "weekly.back_to_learn": "Back to Learn",
   "walk.title": "On the move",
   "walk.paused": "Paused",

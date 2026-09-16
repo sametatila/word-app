@@ -203,8 +203,6 @@ export const trWeb: Record<string, string> = {
   "pron.pauses": "{n} duraklama",
   "pron.pauses.one": "{n} duraklama",
   "pron.word_level_note": "kelime düzeyi ölçüm, fonem notu değil",
-  "weekly.preparing": "Sınav hazırlanıyor…",
-  "weekly.saving": "Sonuç kaydediliyor…",
   "weekly.back_to_learn": "Öğren'e dön",
   "walk.title": "Yürürken",
   "walk.paused": "Duraklatıldı",
