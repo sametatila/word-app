@@ -1,11 +1,23 @@
 import type { QuizWeek } from "../types";
 
 /**
- * Almanca A2, hafta 3 — seyahat ve yol tarifi.
+ * A2 · Hafta 3 · Seyahat ve yol tarifi.
  *
- * Yeni omurga: iki durumlu edat (yön Akkusativ / yer Dativ), `zu`/`nach` ayrımı,
- * ayrılabilir fiil emir kipinde. Geri dönüş: `kasus.dativ` (W2) `mit` ile,
- * `imperativ.sie` (W2) ve `partizip.trennbar` + `perfekt.sein` (W1).
+ * ÖLÇÜLEN ŞEY: yol tarifi veren bir e-postayı ve istasyon anonsunu anlamak;
+ * iki durumlu edatta yön/yer ayrımı, `zu`/`nach`, ayrılabilir fiilin emir
+ * kipinde yeri. Geri dönüş: `kasus.dativ` ve `imperativ.sie` (W2),
+ * `partizip.trennbar` + `perfekt.sein` (W1), A1'den `verb.fahren-gehen`.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w03-g1` (`in die Stadt`): Türkçede yön ve yer eklerle ayrılıyor, eki
+ *    artikele bağlamak gerekiyor; İngilizcede `the` değişmediği için fark hiç
+ *    görünmüyor. Aynı şıklar, iki farklı açıklama.
+ *  - `w03-g2` (`zum`/`nach`): Türkçe tek `-e`, İngilizce tek `to` — ikisi de
+ *    üç edata bölünen bir ayrımı tek biçimle karşılıyor.
+ *  - `w03-v1` (`verpassen`): Türk öğrenci `verlieren`e, İngilizce konuşan
+ *    `miss`in öteki anlamına (`fehlen`) kayıyor; varyant şıkları farklı.
+ *  - `w03-v2` (`fahren`): `reite` şıkkı İngilizce `ride a bike` aktarımından;
+ *    Türk öğrenci için tuzak 'gitmek'in `gehen`e çekilmesi.
  */
 export const DE_A2_W03: QuizWeek = {
   id: "de-a2-w03",
@@ -15,12 +27,13 @@ export const DE_A2_W03: QuizWeek = {
   theme: "Unterwegs: Reisen und Wege",
   themeTr: "Seyahat ve yol tarifi",
   canDo: ["A2.SPK.2", "A2.LS.1", "A2.RD.1", "A2.GR.2", "A2.GR.5"],
+
   stimuli: [
     {
       kind: "text",
-      id: "de-a2-w03-t1",
+      id: "t1",
       genre: "E-Mail",
-      genreTr: "e-posta",
+      genreTr: "E-posta",
       title: "So kommen Sie zu uns",
       body:
         "Liebe Frau Brandt,\n\nschön, dass Sie bei uns wohnen! So kommen Sie vom Bahnhof zu unserer Wohnung: " +
@@ -32,9 +45,9 @@ export const DE_A2_W03: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "de-a2-w03-a1",
+      id: "a1",
       genre: "Durchsage und Gespräch",
-      genreTr: "anons ve konuşma",
+      genreTr: "Anons ve konuşma",
       plays: 2,
       segments: [
         { speaker: "Durchsage", text: "Achtung, eine Information: Der Zug nach München hat heute 20 Minuten Verspätung. Er fährt heute nicht von Gleis 5, sondern von Gleis 7." },
@@ -48,12 +61,13 @@ export const DE_A2_W03: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "de-a2-w03-r1",
       block: "read",
-      ref: "de-a2-w03-t1",
+      ref: "t1",
       stem: "Wo steigt Frau Brandt in den Bus um?",
       options: ["am Rathaus", "am Bahnhof", "an der Ampel", "am Marktplatz"],
       answer: 3,
@@ -63,7 +77,7 @@ export const DE_A2_W03: QuizWeek = {
     {
       id: "de-a2-w03-r2",
       block: "read",
-      ref: "de-a2-w03-t1",
+      ref: "t1",
       stem: "Frau Brandt kommt an einem Sonntag an. Wie fährt sie am besten zur Wohnung?",
       options: ["mit der Straßenbahn und dem Bus", "mit dem Taxi", "mit dem Bus 12", "mit der Straßenbahn Nummer 12"],
       answer: 1,
@@ -73,18 +87,19 @@ export const DE_A2_W03: QuizWeek = {
     {
       id: "de-a2-w03-r3",
       block: "read",
-      ref: "de-a2-w03-t1",
+      ref: "t1",
       stem: "Wo bekommt Frau Brandt den Schlüssel?",
       options: ["in der Bäckerei", "im Haus neben der Bäckerei", "am Rathaus", "bei Frau Vogel am Bahnhof"],
       answer: 0,
       why: "Bäckerei metinde iki işle geçiyor: evin yerini gösteren işaret (`neben einer Bäckerei`) ve anahtarın alındığı yer (`in der Bäckerei`). `neben` yanında demek, `in` içinde; edatı okumadan sözcüğü eşleyince konum ile yer karışıyor.",
-      targets: ["lesen.detail", "praep.wechsel"],
+      targets: ["lesen.detail", "praeposition.wechsel"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "de-a2-w03-l1",
       block: "listen",
-      ref: "de-a2-w03-a1",
+      ref: "a1",
       stem: "Von welchem Gleis fährt der Zug nach München heute?",
       options: ["von Gleis 5", "von Gleis 20", "von Gleis 7", "von Gleis 12"],
       answer: 2,
@@ -94,24 +109,25 @@ export const DE_A2_W03: QuizWeek = {
     {
       id: "de-a2-w03-l2",
       block: "listen",
-      ref: "de-a2-w03-a1",
+      ref: "a1",
       stem: "Welches Problem hat Emre?",
       options: ["Er hat sein Ticket verloren.", "Er verpasst vielleicht seinen Anschluss.", "Er findet das Gleis nicht.", "Der Zug fährt heute nicht."],
       answer: 1,
       why: "Gecikme tek başına Emre'nin derdi değil; derdi gecikmenin sonucu. `Anschluss` bir sonraki bağlantı treni demek ve sonuç `dann …` ile geliyor. Yalnız duyulan olayı (gecikme) değil, konuşanın ondan çıkardığı sonucu izlemek gerekiyor.",
-      targets: ["hoeren.detail", "lex.verpassen"],
+      targets: ["hoeren.detail", "verb.verpassen"],
     },
     {
       id: "de-a2-w03-l3",
       block: "listen",
-      ref: "de-a2-w03-a1",
+      ref: "a1",
       stem: "Wo ist der Schalter?",
       options: ["oben, neben dem Café", "unten, neben Gleis 7", "oben, links", "unten, gegenüber vom Café"],
       answer: 3,
       why: "`gegenüber` karşısında, `neben` yanında demek. Tarifte `nach unten` ve `rechts` yönü veriyor, `gegenüber vom Café` hedefi. Konum edatını başka bir edatla değiştirmek insanı yanlış kapıya götürür.",
-      targets: ["hoeren.detail", "lex.wegbeschreibung"],
+      targets: ["hoeren.detail", "wortfeld.weg"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "de-a2-w03-g1",
       block: "grammar",
@@ -119,7 +135,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["der", "die", "dem", "den"],
       answer: 1,
       why: "`in` iki durumlu bir edat: yön (nereye?) Akkusativ, yer (nerede?) Dativ ister. `fahren` burada yön bildiriyor ve `Stadt` dişil: `in die`. Türkçede '-e' ve '-de' ekleri bu ayrımı taşıyor; eki artikel seçimine bağlamak gerekiyor.",
-      targets: ["praep.wechsel", "kasus.akk"],
+      targets: ["praeposition.wechsel", "artikel.akkusativ"],
       byNative: {
         en: {
           options: ["der", "dem", "den", "die"],
@@ -135,7 +151,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["zum", "nach", "zur", "in"],
       answer: 0,
       why: "Bir binaya ya da noktaya gidiş `zu` + Dativ: `der Bahnhof` → `zum`. `nach` şehir ve ülke adlarıyla gelir (`nach Berlin`), `zur` dişil isimlerle. Türkçe tek '-e' eki burada üç edata bölünüyor.",
-      targets: ["praep.zu_nach", "kasus.dativ"],
+      targets: ["praeposition.zu-nach", "kasus.dativ"],
       byNative: {
         en: {
           options: ["nach", "zum", "zur", "in"],
@@ -167,7 +183,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["die", "den", "der", "dem"],
       answer: 2,
       why: "`mit` her zaman Dativ ister; dişil `die` Dativ'de `der` olur. Türkçe '-le' eki cinsiyet ve durum taşımadığı için yalın `die` kalıyor, `dem` ise eril ve nötr isimlerin Dativ'i.",
-      targets: ["kasus.dativ", "praep.dativ"],
+      targets: ["kasus.dativ", "praeposition.dativ"],
       byNative: {
         en: {
           options: ["die", "der", "den", "dem"],
@@ -185,7 +201,8 @@ export const DE_A2_W03: QuizWeek = {
       why: "Ayrılabilir fiilde `ge-` önekle kökün arasına girer: `um-ge-stiegen`. `steigen` düzensizdir, Partizip'i `-t` değil `-en` ile biter ve kök `stieg` olur. Yardımcı fiil `sind` zaten doğru; iş Partizip'te.",
       targets: ["partizip.trennbar", "perfekt.sein"],
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "de-a2-w03-v1",
       block: "vocab",
@@ -193,7 +210,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["verloren", "vergessen", "gefehlt", "verpasst"],
       answer: 3,
       why: "Bir aracı, randevuyu ya da fırsatı kaçırmak `verpassen`. `verlieren` bir eşyayı kaybetmek, `vergessen` aklından çıkmak. Türkçe 'kaçırmak' ile 'kaybetmek' yakın düştüğü için `verloren` seçiliyor.",
-      targets: ["lex.verpassen"],
+      targets: ["verb.verpassen"],
       byNative: {
         en: {
           options: ["gefehlt", "verpasst", "verloren", "vergessen"],
@@ -209,7 +226,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["gehe", "fahre", "laufe", "reite"],
       answer: 1,
       why: "Bir araçla (araba, tren, bisiklet) gidiliyorsa `fahren`, yürüyerek `gehen` ya da `laufen`. Türkçe 'gitmek' ikisini de karşıladığı için `gehe` seçiliyor.",
-      targets: ["lex.fahren_gehen"],
+      targets: ["verb.fahren-gehen"],
       byNative: {
         en: {
           options: ["reite", "gehe", "laufe", "fahre"],
@@ -225,7 +242,7 @@ export const DE_A2_W03: QuizWeek = {
       options: ["spät", "später", "Verspätung", "Pause"],
       answer: 2,
       why: "`Verspätung haben` bir isim kalıbı: 'rötarlı olmak'. `spät` ve `später` sıfat/zarf, `haben`in nesnesi olamaz; 'geç kaldı' demek için `zu spät kommen` kullanılır.",
-      targets: ["lex.verspaetung"],
+      targets: ["nomen.verspaetung"],
     },
   ],
 };

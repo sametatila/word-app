@@ -1,11 +1,23 @@
 import type { QuizWeek } from "../types";
 
 /**
- * İngilizce A2, hafta 3 — seyahat ve yol tarifi.
+ * A2 · Hafta 3 · Seyahat ve yol tarifi (İngilizce kursu).
  *
- * Omurga: yön edatı `to`, anında karar için `will`, kısa sıfatta `-er`,
- * olumsuz emir. Geri dönüş: `past.irregular` ve `collocation.take` (W1–W2),
- * `lex.miss` (W1), `question.do_support` (W1) olumsuz emirde.
+ * ÖLÇÜLEN ŞEY: ulaşım bilgi sayfasını ve sokakta yol tarifini anlamak; yön
+ * edatı `to`, anında karar için `will`, kısa sıfatta `-er`, olumsuz emir.
+ * Geri dönüş: `past.irregular` ve `verb.miss` (W1), `collocation.take`
+ * (W1–W2), A1'den `question.do-support` olumsuz emirde.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w03-g2` (`I'll take`): Almanca `will` 'istemek' — `will to take` şıkkı
+ *    Almanca konuşan için gerçek bir aktarım, Türk öğrenci için `going to`nun
+ *    eksik kurulması.
+ *  - `w03-g4` (`Don't be`): Almanca `Sei nicht…` → `Be not`; Türkçede olumsuzluk
+ *    eki fiile yapıştığı için `Not be`. Şıklar aynı, açıklamalar ayrı.
+ *  - `w03-v2` (`drive`/`ride`): Almanca `fahren` sürücüyü de yolcuyu da
+ *    karşılıyor; Türkçede `ride` 'sürmek' diye anlaşılıyor.
+ *  - `w03-v3` (`on foot`): `with` şıkkı Almanca `mit dem Bus` aktarımından;
+ *    Türk öğrenci ise '-le' ekini `by`a genelleyip `by foot` kuruyor.
  */
 export const EN_A2_W03: QuizWeek = {
   id: "en-a2-w03",
@@ -15,12 +27,13 @@ export const EN_A2_W03: QuizWeek = {
   theme: "Travel and directions",
   themeTr: "Seyahat ve yol tarifi",
   canDo: ["A2.SPK.2", "A2.LS.5", "A2.RD.3", "A2.GR.14", "A2.GR.15"],
+
   stimuli: [
     {
       kind: "text",
-      id: "en-a2-w03-t1",
+      id: "t1",
       genre: "Information page",
-      genreTr: "bilgi sayfası",
+      genreTr: "Bilgi sayfası",
       title: "How to get to the Summer Concert",
       body:
         "The concert is in Green Park, on the other side of the river from the city center. " +
@@ -32,9 +45,9 @@ export const EN_A2_W03: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "en-a2-w03-a1",
+      id: "a1",
       genre: "Conversation in the street",
-      genreTr: "sokakta konuşma",
+      genreTr: "Sokakta konuşma",
       plays: 2,
       segments: [
         { speaker: "Ana", text: "Excuse me, can you help me? I'm looking for the train station." },
@@ -48,12 +61,13 @@ export const EN_A2_W03: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "en-a2-w03-r1",
       block: "read",
-      ref: "en-a2-w03-t1",
+      ref: "t1",
       stem: "How do you get to the concert by tram?",
       options: [
         "Take tram 3 and get off at Central Station.",
@@ -63,12 +77,12 @@ export const EN_A2_W03: QuizWeek = {
       ],
       answer: 1,
       why: "`get on` binmek, `get off` inmek demek. Central Station binilen yer, Park Road inilen yer. İki durak aynı cümlede geçince fiili (`from` / `get off at`) okumadan durak adını eşlemek yanlış yeri seçtiriyor.",
-      targets: ["reading.detail", "lex.get_on_off"],
+      targets: ["reading.detail", "verb.get-on-off"],
     },
     {
       id: "en-a2-w03-r2",
       block: "read",
-      ref: "en-a2-w03-t1",
+      ref: "t1",
       stem: "Why shouldn't you come by car?",
       options: [
         "There is no parking, and the roads are closed.",
@@ -83,45 +97,47 @@ export const EN_A2_W03: QuizWeek = {
     {
       id: "en-a2-w03-r3",
       block: "read",
-      ref: "en-a2-w03-t1",
+      ref: "t1",
       stem: "You are at the concert on Sunday evening. When must you leave to get the last tram?",
       options: ["before midnight", "after 10 pm", "before 10 pm", "at midnight"],
       answer: 2,
       why: "Genel bilgi (`until midnight`) olağan günler için. `On Sunday` ile gelen cümle bir istisna ve istisna genel kuralı ezer. İlk okunan saati hatırlayıp istisnayı atlamak bu sorunun tuzağı.",
       targets: ["reading.detail"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "en-a2-w03-l1",
       block: "listen",
-      ref: "en-a2-w03-a1",
+      ref: "a1",
       stem: "What should Ana do at the traffic lights?",
       options: ["turn left", "go straight ahead", "turn right", "go across the bridge"],
       answer: 2,
       why: "`Go straight ahead to the traffic lights` ışığa kadar olan kısım; ışıkta ne yapılacağını `then` getiriyor. Yol tarifinde her adım bir öncekinin bittiği yerde başlar, ilk duyulan yönü bütün yola yaymak hata.",
-      targets: ["listening.detail", "lex.directions"],
+      targets: ["listening.detail", "wordfield.directions"],
     },
     {
       id: "en-a2-w03-l2",
       block: "listen",
-      ref: "en-a2-w03-a1",
+      ref: "a1",
       stem: "Where is the station?",
       options: ["next to the bank", "next to the post office", "behind the bank", "opposite the post office"],
       answer: 3,
       why: "`opposite` karşısında, `next to` yanında demek. Banka yolda geçilen bir nokta (`walk past`), hedef değil. Konum edatını değiştirmek insanı yanlış binaya götürür.",
-      targets: ["listening.detail", "lex.directions"],
+      targets: ["listening.detail", "wordfield.directions"],
     },
     {
       id: "en-a2-w03-l3",
       block: "listen",
-      ref: "en-a2-w03-a1",
+      ref: "a1",
       stem: "What does the man say about the entrance?",
       options: ["It is at the front.", "It is closed.", "It is next to the bank.", "It is at the back."],
       answer: 3,
       why: "`be careful` bir uyarı getiriyor, yani beklenmedik bir bilgi. Girişler çoğu zaman önde olduğu için duyulanı değil beklenti cevabını seçmek kolay; uyarıdan sonra gelen cümle geçerli.",
       targets: ["listening.detail"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "en-a2-w03-g1",
       block: "grammar",
@@ -129,7 +145,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["to", "at", "in", "on"],
       answer: 0,
       why: "Bir yere doğru hareket `to` ile; `at` bir noktada bulunmayı anlatır (`I'm at the station`). Türkçede '-e' yön, '-de' yer eki; `at`ı '-e' diye ezberleyince yön cümlesinde de kullanılıyor.",
-      targets: ["prep.to_at"],
+      targets: ["preposition.to-at"],
       byNative: {
         de: {
           options: ["to", "at", "in", "on"],
@@ -145,7 +161,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["I going to take", "I'll take", "I taking", "I will to take"],
       answer: 1,
       why: "Konuşma anında verilen karar `will` (`I'll`) ile söylenir ve `will`den sonra fiil yalın gelir. `going to` önceden yapılmış bir plan içindir ve `I'm going to take` diye `am` ile eksiksiz kurulur.",
-      targets: ["future.will", "future.going_to"],
+      targets: ["future.will", "future.going-to"],
       byNative: {
         de: {
           options: ["I will to take", "I going to take", "I taking", "I'll take"],
@@ -170,7 +186,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["Not be", "Don't", "Be not", "Don't be"],
       answer: 3,
       why: "Olumsuz emir `Don't` + yalın fiil ile kurulur ve `be` fiili de bu kurala girer: `Don't be late`. Türkçede olumsuzluk eki fiile yapıştığı için `Not be` kuruluyor; `Don't` tek başına fiilsiz kalır.",
-      targets: ["imperative.negative", "question.do_support"],
+      targets: ["imperative.negative", "question.do-support"],
       byNative: {
         de: {
           options: ["Be not", "Don't be", "Not be", "Don't"],
@@ -195,7 +211,8 @@ export const EN_A2_W03: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "en-a2-w03-v1",
       block: "vocab",
@@ -203,7 +220,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["lose", "forget", "miss", "leave"],
       answer: 2,
       why: "Aracı kaçırmak `miss`; `lose` bir eşyayı kaybetmek. Tren, otobüs ve tramvayda fiil aynı kalır: `miss the train`, `miss the tram`.",
-      targets: ["lex.miss"],
+      targets: ["verb.miss"],
       byNative: {
         de: {
           options: ["lose", "miss", "forget", "leave"],
@@ -219,7 +236,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["rides", "drives", "goes", "takes"],
       answer: 1,
       why: "Aracı kullanan kişi `drive`, yolcu olarak binen `ride` ya da `take`. `ride` Türkçede 'at sürmek'teki gibi 'sürmek' diye anlaşıldığı için sürücü cümlesinde seçiliyor.",
-      targets: ["lex.drive_ride"],
+      targets: ["verb.drive-ride"],
       byNative: {
         de: {
           options: ["drives", "rides", "goes", "takes"],
@@ -235,7 +252,7 @@ export const EN_A2_W03: QuizWeek = {
       options: ["by", "on", "with", "in"],
       answer: 1,
       why: "Ulaşım aracı `by` ile söylenir (`by bus`, `by tram`), ama yürüyerek gitmek sabit kalıp: `on foot`. 'Otobüsle' ile 'yürüyerek' Türkçede farklı olsa da `by` bütün ulaşıma genelleniyor.",
-      targets: ["prep.by_on_foot"],
+      targets: ["preposition.by-on-foot"],
       byNative: {
         de: {
           options: ["with", "by", "on", "in"],

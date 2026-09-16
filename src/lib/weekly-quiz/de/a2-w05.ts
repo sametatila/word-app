@@ -1,13 +1,22 @@
 import type { QuizWeek } from "../types";
 
 /**
- * Almanca A2, hafta 5 — transfer.
+ * A2 · Hafta 5 · Transfer.
  *
- * Saf tekrar değil: W1–W4'ün hedefleri ve sözcükleri başka bağlamlarda
- * (yeni bir şehre taşınmak, otelde şikâyet, düğün, bürgeramt) yeniden
- * karşılaşılıyor. Aynı kural farklı bir cümlede tanınmıyorsa öğrenilmiş değil,
- * ezberlenmiştir. Bir maddede iki hedef birlikte duruyor (`sein` + `haben`,
- * `weil` + modal) çünkü transferin zor kısmı kuralların üst üste binmesi.
+ * ÖLÇÜLEN ŞEY: saf tekrar değil — W1–W4'ün hedefleri ve sözcükleri başka
+ * bağlamlarda (yeni bir şehre taşınmak, otelde şikâyet, düğün, Bürgeramt).
+ * Kural farklı bir cümlede tanınmıyorsa öğrenilmiş değil ezberlenmiştir.
+ * Bazı maddelerde iki hedef üst üste biniyor (`sein` + `haben`, `weil` +
+ * modal), çünkü transferin zor kısmı kuralların aynı cümlede buluşması.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w05-g1` (`sind … haben`): İngilizcede ikisi de `have`; Türk öğrenci ilk
+ *    yardımcıyı ikinci Partizip'e taşıyor. İki farklı yoldan aynı yanlış.
+ *  - `w05-g3` (`auf dem Tisch`): `liegen`/`legen` ayrımı, W3'teki `in die`/`in
+ *    der` kuralının bir durum fiilinde yeniden yoklanması.
+ *  - `w05-v2` (`mir fehlt`): Türkçe 'özlüyorum' kişiyi özne yapıyor; İngilizce
+ *    `miss` ise `verpassen`e çekiyor — W3'teki `verb.verpassen` burada ters
+ *    yönden sınanıyor.
  */
 export const DE_A2_W05: QuizWeek = {
   id: "de-a2-w05",
@@ -17,12 +26,13 @@ export const DE_A2_W05: QuizWeek = {
   theme: "Alles zusammen: neue Situationen",
   themeTr: "Hepsi bir arada: yeni durumlar",
   canDo: ["A2.RD.1", "A2.WR.3", "A2.LS.3", "A2.SPK.7", "A2.GR.1", "A2.GR.2", "A2.GR.3", "A2.GR.5", "A2.GR.6"],
+
   stimuli: [
     {
       kind: "text",
-      id: "de-a2-w05-t1",
+      id: "t1",
       genre: "Blog",
-      genreTr: "blog yazısı",
+      genreTr: "Blog yazısı",
       title: "Meine erste Woche in Leipzig",
       body:
         "Am Montag bin ich mit zwei Koffern in Leipzig angekommen. Die Wohnung war kleiner als auf den Fotos, aber sehr hell. " +
@@ -35,9 +45,9 @@ export const DE_A2_W05: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "de-a2-w05-a1",
+      id: "a1",
       genre: "Telefongespräch",
-      genreTr: "telefon görüşmesi",
+      genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Sara", text: "Hallo Can, bist du gut in Wien angekommen?" },
@@ -52,12 +62,13 @@ export const DE_A2_W05: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "de-a2-w05-r1",
       block: "read",
-      ref: "de-a2-w05-t1",
+      ref: "t1",
       stem: "Warum hat die Person den Weg zum Bürgeramt nicht gefunden?",
       options: ["Sie hatte Fieber.", "Eine Frau hat ihr den falschen Weg gezeigt.", "Ihr Handy ging nicht.", "Das Bürgeramt war geschlossen."],
       answer: 2,
@@ -67,7 +78,7 @@ export const DE_A2_W05: QuizWeek = {
     {
       id: "de-a2-w05-r2",
       block: "read",
-      ref: "de-a2-w05-t1",
+      ref: "t1",
       stem: "Wann ist der erste Arbeitstag jetzt wahrscheinlich?",
       options: ["am Mittwoch", "am Samstag", "am Dienstag", "am nächsten Montag"],
       answer: 3,
@@ -77,28 +88,29 @@ export const DE_A2_W05: QuizWeek = {
     {
       id: "de-a2-w05-r3",
       block: "read",
-      ref: "de-a2-w05-t1",
+      ref: "t1",
       stem: "Was ist richtig über die Wohnung?",
       options: ["Sie ist klein, aber hell.", "Sie ist größer als auf den Fotos.", "Sie ist dunkel und klein.", "Sie ist genau wie auf den Fotos."],
       answer: 0,
       why: "`kleiner als auf den Fotos` bir karşılaştırma: ev, fotoğraflarda göründüğünden küçük. `als`ın iki yanını ters okumak ('fotoğraflar daha küçük') karşılaştırmada sık hata; `aber sehr hell` de karanlık seçeneğini eliyor.",
       targets: ["lesen.detail", "vergleich.komparativ"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "de-a2-w05-l1",
       block: "listen",
-      ref: "de-a2-w05-a1",
+      ref: "a1",
       stem: "Warum ist Can erst gestern Abend angekommen?",
       options: ["Sein Zug hatte Verspätung.", "Das Hotel war voll.", "Er war krank.", "Er hat seinen Anschluss verpasst."],
       answer: 3,
       why: "Diyalogda gecikme (`Verspätung`) hiç söylenmiyor: Can aktarma trenini kaçırmış. Tren yolculuğunda 'geç varmak' deyince akla ilk gelen sözcük seçiliyor; duyulanı değil, beklenen hikâyeyi işaretlemek bu sorunun tuzağı.",
-      targets: ["hoeren.detail", "lex.verpassen"],
+      targets: ["hoeren.detail", "verb.verpassen"],
     },
     {
       id: "de-a2-w05-l2",
       block: "listen",
-      ref: "de-a2-w05-a1",
+      ref: "a1",
       stem: "Was ist das Problem mit Cans Zimmer?",
       options: ["Es ist im vierten Stock.", "Es ist zu klein.", "Es ist sehr laut.", "Es ist zu teuer."],
       answer: 2,
@@ -108,14 +120,15 @@ export const DE_A2_W05: QuizWeek = {
     {
       id: "de-a2-w05-l3",
       block: "listen",
-      ref: "de-a2-w05-a1",
+      ref: "a1",
       stem: "Was passiert morgen?",
       options: ["Can fragt an der Rezeption.", "Can bekommt ein anderes Zimmer.", "Can fährt nach Salzburg.", "Can wartet zwei Stunden."],
       answer: 1,
       why: "`Ich habe gefragt` Perfekt: soru bugün zaten soruldu. Yarına ait olan yalnız `Morgen bekomme ich …` cümlesi; Almancada gelecek çoğu zaman Präsens ve bir zaman zarfıyla söylenir, `werden` gerekmez.",
       targets: ["hoeren.detail", "perfekt.haben"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "de-a2-w05-g1",
       block: "grammar",
@@ -123,7 +136,7 @@ export const DE_A2_W05: QuizWeek = {
       options: ["haben … haben", "sind … haben", "sind … sind", "haben … sind"],
       answer: 1,
       why: "Tek cümlede iki yardımcı fiil kararı var: `fliegen` yer değiştirir → `sein`; `Fotos machen` nesneli bir eylem → `haben`. İkinci fiil birincinin yardımcısını devralmaz; her Partizip kendi yardımcısını seçer.",
-      targets: ["perfekt.sein", "perfekt.haben", "kollokation.fotos_machen"],
+      targets: ["perfekt.sein", "perfekt.haben", "kollokation.fotos-machen"],
       byNative: {
         en: {
           options: ["haben … haben", "sind … sind", "haben … sind", "sind … haben"],
@@ -155,7 +168,7 @@ export const DE_A2_W05: QuizWeek = {
       options: ["den", "der", "die", "dem"],
       answer: 3,
       why: "`liegen` bir durum bildirir (nerede?), iki durumlu `auf` o zaman Dativ ister: `der Tisch` → `dem`. `legen` olsaydı yön bildirirdi (nereye?) ve `den` gelirdi. Yol tarifindeki `in die`/`in der` ayrımının aynısı.",
-      targets: ["praep.wechsel", "kasus.dativ"],
+      targets: ["praeposition.wechsel", "kasus.dativ"],
       byNative: {
         en: {
           options: ["den", "dem", "der", "die"],
@@ -182,7 +195,8 @@ export const DE_A2_W05: QuizWeek = {
       why: "Üç ya da daha fazla şey içinde 'en' → `am …sten`. `billiger` iki şeyi karşılaştırır ve arkasında bir `als` ile ikinci şeyi ister. `mehr billig` Almancada hiç kurulmaz: sıfat her zaman ekle derecelenir.",
       targets: ["vergleich.superlativ", "vergleich.komparativ"],
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "de-a2-w05-v1",
       block: "vocab",
@@ -190,7 +204,7 @@ export const DE_A2_W05: QuizWeek = {
       options: ["Datum", "Uhrzeit", "Termin", "Plan"],
       answer: 2,
       why: "Bir dairede, doktorda, kuaförde ayrılan saat `Termin`. Sözcük muayenehaneye özgü değil, resmî kurumda da aynı. `Datum` takvimdeki tarih, `Uhrzeit` saat bilgisi: ikisi de randevunun bir parçası, randevunun kendisi değil.",
-      targets: ["lex.termin"],
+      targets: ["nomen.termin"],
       byNative: {
         en: {
           options: ["Termin", "Datum", "Uhrzeit", "Plan"],
@@ -206,7 +220,7 @@ export const DE_A2_W05: QuizWeek = {
       options: ["verpasst", "fehlt", "vergisst", "verliert"],
       answer: 1,
       why: "Özlemek `fehlen` ile kurulabilir: özlenen şey özne (`meine Familie`), özleyen kişi Dativ (`mir`). Türkçe 'özlüyorum' kişiyi özne yaptığı için fiilin `meine Familie`ye uyması gerektiği gözden kaçıyor.",
-      targets: ["lex.verpassen", "kasus.dativ"],
+      targets: ["verb.verpassen", "kasus.dativ"],
       byNative: {
         en: {
           options: ["fehlt", "verpasst", "vergisst", "verliert"],
@@ -222,7 +236,7 @@ export const DE_A2_W05: QuizWeek = {
       options: ["genommen", "getan", "gegeben", "gemacht"],
       answer: 3,
       why: "`Fotos machen` sabit bir kalıp: tatilde de düğünde de fiil aynı kalır, bağlama göre değişmez; `tun` genel 'yapmak' ama bu kalıba girmez.",
-      targets: ["kollokation.fotos_machen"],
+      targets: ["kollokation.fotos-machen"],
       byNative: {
         en: {
           options: ["gemacht", "genommen", "getan", "gegeben"],

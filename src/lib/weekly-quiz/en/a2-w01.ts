@@ -1,12 +1,21 @@
 import type { QuizWeek } from "../types";
 
 /**
- * İngilizce A2, hafta 1 — geçmişi anlatmak.
+ * A2 · Hafta 1 · Geçmişi anlatmak (İngilizce kursu).
  *
- * Omurga: past simple (düzensiz fiil, `did` ile soru), past continuous ile
- * kesilen eylem ve `ago`. Almanca anadilli için asıl tuzak Perfekt'i İngilizceye
- * taşımak (`yesterday I have met`) ve fiili başa alarak soru kurmak; Türk
- * öğrenci için düzensiz fiile `-ed` eklemek ve `önce` → `before`.
+ * ÖLÇÜLEN ŞEY: Almanca W1 ile AYNI yetkinlik — olmuş bir olayı anlatan metni
+ * ve konuşmayı anlamak; past simple (düzensiz fiil, `did` ile soru), past
+ * continuous ile kesilen eylem ve `ago`. A1'deki `question.do-support` burada
+ * geçmiş zaman sorusunda yeniden çıkıyor.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ. Bu kursta anadiller `tr` (taban) ve `de`:
+ *  - `w01-g1` (`met`): Almanca konuşan için asıl tuzak Perfekt'i taşımak
+ *    (`yesterday I have met`); Türk öğrenci için düzensiz fiile `-ed` eklemek.
+ *    Varyantta `have met` şıkkı bu yüzden öne alındı.
+ *  - `w01-g2` (`Did you see…?`): Almancada soru fiili başa alarak kuruluyor
+ *    (`Saw you…?`), Türkçede soru ekiyle. İki şık kümesi bu iki yolu gösteriyor.
+ *  - `w01-g4` (`ago`): Türkçe 'önce' → `before`, Almanca `seit` → `since`.
+ *    Aynı doğru cevaba iki farklı yanlıştan varılıyor.
  */
 export const EN_A2_W01: QuizWeek = {
   id: "en-a2-w01",
@@ -16,12 +25,13 @@ export const EN_A2_W01: QuizWeek = {
   theme: "Telling stories about the past",
   themeTr: "Geçmişi anlatmak",
   canDo: ["A2.GR.11", "A2.GR.12", "A2.LS.3"],
+
   stimuli: [
     {
       kind: "text",
-      id: "en-a2-w01-t1",
+      id: "t1",
       genre: "Blog post",
-      genreTr: "blog yazısı",
+      genreTr: "Blog yazısı",
       title: "A terrible Friday",
       body:
         "Last Friday was a terrible day. My alarm clock didn't ring, so I woke up late. " +
@@ -34,9 +44,9 @@ export const EN_A2_W01: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "en-a2-w01-a1",
+      id: "a1",
       genre: "Conversation",
-      genreTr: "sohbet",
+      genreTr: "Sohbet",
       plays: 2,
       segments: [
         { speaker: "Tom", text: "Hi Lisa! How was your holiday in Spain?" },
@@ -50,12 +60,13 @@ export const EN_A2_W01: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "en-a2-w01-r1",
       block: "read",
-      ref: "en-a2-w01-t1",
+      ref: "t1",
       stem: "Why did the writer miss the bus?",
       options: ["It started to rain.", "The boss called.", "The writer woke up late.", "The bus was early."],
       answer: 2,
@@ -65,7 +76,7 @@ export const EN_A2_W01: QuizWeek = {
     {
       id: "en-a2-w01-r2",
       block: "read",
-      ref: "en-a2-w01-t1",
+      ref: "t1",
       stem: "Where did the writer have dinner?",
       options: ["at home", "at the favourite restaurant", "at the office", "at a friend's home"],
       answer: 0,
@@ -75,18 +86,19 @@ export const EN_A2_W01: QuizWeek = {
     {
       id: "en-a2-w01-r3",
       block: "read",
-      ref: "en-a2-w01-t1",
+      ref: "t1",
       stem: "Which sentence is true?",
       options: ["The writer had an umbrella.", "The restaurant was open.", "The pizza was not good.", "The writer got wet at the bus stop."],
       answer: 3,
       why: "Metin 'ıslandım' demiyor; yağmur başladı ve şemsiye yoktu, iki bilgiyi birleştirmek gerekiyor. Öteki üç seçenek metindeki bir cümleyi tersine çeviriyor (`didn't have`, `was closed`, `really good`): olumsuzluğu atlayarak okumak tipik hata.",
       targets: ["reading.inference"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "en-a2-w01-l1",
       block: "listen",
-      ref: "en-a2-w01-a1",
+      ref: "a1",
       stem: "What did Lisa do on the first day?",
       options: ["She swam in the sea.", "She went to a museum.", "She bought new glasses.", "She stayed at the hotel."],
       answer: 1,
@@ -96,7 +108,7 @@ export const EN_A2_W01: QuizWeek = {
     {
       id: "en-a2-w01-l2",
       block: "listen",
-      ref: "en-a2-w01-a1",
+      ref: "a1",
       stem: "What happened while they were swimming?",
       options: ["It started to rain.", "Her brother found his glasses.", "Her brother lost his glasses.", "They went to the town."],
       answer: 2,
@@ -106,14 +118,15 @@ export const EN_A2_W01: QuizWeek = {
     {
       id: "en-a2-w01-l3",
       block: "listen",
-      ref: "en-a2-w01-a1",
+      ref: "a1",
       stem: "Did her brother find his glasses?",
       options: ["Yes, in the sea.", "No, he bought new ones.", "Yes, in the town.", "No, but Lisa found them."],
       answer: 1,
       why: "`No, he didn't` kısa cevabı `Did he find them?` sorusunu olumsuzluyor. `in the town` yeni gözlüğün alındığı yer, eskisinin bulunduğu yer değil; yer adını duyup soruya bağlamak tuzak.",
-      targets: ["listening.detail", "past.did_question"],
+      targets: ["listening.detail", "past.did-question"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "en-a2-w01-g1",
       block: "grammar",
@@ -121,7 +134,7 @@ export const EN_A2_W01: QuizWeek = {
       options: ["meet", "met", "meeted", "have met"],
       answer: 1,
       why: "Belli bir geçmiş zaman (`yesterday`) past simple ister ve `meet` düzensizdir: `met`. Türkçede '-di' eki her fiile aynı biçimde eklendiği için düzensiz fiile de `-ed` eklenebileceği sanılıyor.",
-      targets: ["past.irregular", "tense.past_vs_present_perfect"],
+      targets: ["past.irregular", "tense.past-vs-present-perfect"],
       byNative: {
         de: {
           options: ["have met", "meet", "met", "meeted"],
@@ -142,7 +155,7 @@ export const EN_A2_W01: QuizWeek = {
       ],
       answer: 0,
       why: "Geçmiş zaman sorusu `did` + yalın fiil ile kurulur. Zamanı `did` taşıdığı için ana fiil ikinci kez geçmiş olmaz (`saw` değil `see`). Türkçede soru eki fiile yapıştığı için ayrı bir yardımcı fiil gereği görünmüyor.",
-      targets: ["past.did_question", "question.do_support"],
+      targets: ["past.did-question", "question.do-support"],
       byNative: {
         de: {
           options: [
@@ -195,7 +208,7 @@ export const EN_A2_W01: QuizWeek = {
       options: ["was", "had", "were", "are"],
       answer: 2,
       why: "`there was/were` arkasındaki isme uyar ve `people` çoğuldur, tekil görünse de. Türkçe 'vardı' tekil ile çoğul arasında ayrım yapmadığı için `was` seçiliyor.",
-      targets: ["past.was_were"],
+      targets: ["past.was-were"],
       byNative: {
         de: {
           options: ["was", "had", "were", "are"],
@@ -204,7 +217,8 @@ export const EN_A2_W01: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "en-a2-w01-v1",
       block: "vocab",
@@ -228,7 +242,7 @@ export const EN_A2_W01: QuizWeek = {
       options: ["said", "told", "spoke", "talked"],
       answer: 1,
       why: "`tell` kime anlatıldığını doğrudan alır (`told me`), `say` almaz (`said to me`). Hikâye anlatmak da `tell a story`. Türkçede iki fiil de kişiyi '-e' ile aldığı için fark görünmüyor.",
-      targets: ["lex.say_tell"],
+      targets: ["verb.say-tell"],
       byNative: {
         de: {
           options: ["told", "said", "spoke", "talked"],
@@ -244,7 +258,7 @@ export const EN_A2_W01: QuizWeek = {
       options: ["lost", "forgot", "left", "missed"],
       answer: 3,
       why: "Bir aracı ya da fırsatı kaçırmak `miss`; `lose` bir eşyayı kaybetmek, `leave` bir yerden ayrılmak. 'Kaçırmak' ile 'kaybetmek' yakın sezildiği için `lost` seçiliyor.",
-      targets: ["lex.miss"],
+      targets: ["verb.miss"],
       byNative: {
         de: {
           options: ["lost", "missed", "forgot", "left"],

@@ -1,13 +1,20 @@
 import type { QuizWeek } from "../types";
 
 /**
- * İngilizce A2, hafta 5 — transfer.
+ * A2 · Hafta 5 · Transfer (İngilizce kursu).
  *
- * Saf tekrar değil: W1–W4'ün hedefleri ve sözcükleri yeni bağlamlarda (yeni bir
- * şehre taşınmak, yolculukta hastalanmak, müze, doğum günü) karşılanıyor.
- * Kural başka bir cümlede tanınmıyorsa ezberlenmiştir. Bazı maddeler iki kuralı
- * üst üste bindiriyor (`was riding` + `stopped`, `a … The`), çünkü transferin
- * zor kısmı kuralların aynı cümlede buluşması.
+ * ÖLÇÜLEN ŞEY: saf tekrar değil — W1–W4'ün hedefleri yeni bağlamlarda (yeni
+ * bir şehre taşınmak, yolculukta hastalanmak, müze, doğum günü). Bazı
+ * maddeler iki kuralı üst üste bindiriyor (`was riding` + `stopped`,
+ * `a … The`), çünkü transferin zor kısmı kuralların aynı cümlede buluşması.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w05-g3` (`don't have to`): W2'deki ayrım bir müzede; Almanca
+ *    `müssen nicht` → `mustn't` aktarımı yine anlamı tersine çeviriyor.
+ *  - `w05-g5` (`more expensive`): Almanca kursun W4'ündeki kuralın tersi —
+ *    Almancada sıfat uzunluğu fark etmez, İngilizcede uzun sıfat `more` ister.
+ *  - `w05-v3` (`it takes`): Almanca `braucht man` → `need`, Türkçe 'sürer' →
+ *    `last`. Aynı şıklar, iki ayrı sebep.
  */
 export const EN_A2_W05: QuizWeek = {
   id: "en-a2-w05",
@@ -17,12 +24,13 @@ export const EN_A2_W05: QuizWeek = {
   theme: "Putting it all together",
   themeTr: "Hepsi bir arada: yeni durumlar",
   canDo: ["A2.LS.3", "A2.SPK.4", "A2.GR.11", "A2.GR.12", "A2.GR.13", "A2.GR.14", "A2.GR.15", "A2.GR.16"],
+
   stimuli: [
     {
       kind: "text",
-      id: "en-a2-w05-t1",
+      id: "t1",
       genre: "Blog post",
-      genreTr: "blog yazısı",
+      genreTr: "Blog yazısı",
       title: "My first month in Dublin",
       body:
         "Last month I came to Dublin for a new job. On my first day I got lost, because I took the wrong bus. " +
@@ -35,9 +43,9 @@ export const EN_A2_W05: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "en-a2-w05-a1",
+      id: "a1",
       genre: "Phone call",
-      genreTr: "telefon görüşmesi",
+      genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Kate", text: "Hi Omar! How was your trip to Edinburgh?" },
@@ -52,12 +60,13 @@ export const EN_A2_W05: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "en-a2-w05-r1",
       block: "read",
-      ref: "en-a2-w05-t1",
+      ref: "t1",
       stem: "Why did the writer get lost on the first day?",
       options: ["A woman showed the wrong way.", "The bus was late.", "The writer took the wrong bus.", "The writer had a cold."],
       answer: 2,
@@ -67,7 +76,7 @@ export const EN_A2_W05: QuizWeek = {
     {
       id: "en-a2-w05-r2",
       block: "read",
-      ref: "en-a2-w05-t1",
+      ref: "t1",
       stem: "Which sentence is true?",
       options: [
         "The writer hasn't seen the castle yet.",
@@ -77,50 +86,52 @@ export const EN_A2_W05: QuizWeek = {
       ],
       answer: 0,
       why: "`already` olumlu cümlede 'çoktan oldu', `yet` olumsuz cümlede 'henüz olmadı' demek. Metin ikisini tek cümlede müzeler ve kale için ayrı ayrı kullanıyor; `but`un iki yanını karıştırınca müzelere ait `already` kaleye taşınıyor.",
-      targets: ["reading.detail", "present_perfect.already_yet"],
+      targets: ["reading.detail", "present-perfect.already-yet"],
     },
     {
       id: "en-a2-w05-r3",
       block: "read",
-      ref: "en-a2-w05-t1",
+      ref: "t1",
       stem: "What does the writer say about the flat?",
       options: ["It is bigger than the old one.", "It is in a noisy street.", "It is small but quiet.", "It is next to the castle."],
       answer: 2,
       why: "`smaller than my old one` bir karşılaştırma: yeni daire eskisinden küçük. `than`ın iki yanını ters okumak ('eskisi daha küçük') karşılaştırmada sık hata; `quiet street` de gürültülü seçeneğini eliyor.",
       targets: ["reading.detail", "compare.comparative"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "en-a2-w05-l1",
       block: "listen",
-      ref: "en-a2-w05-a1",
+      ref: "a1",
       stem: "Why didn't Omar see much in Edinburgh?",
       options: ["The weather was bad.", "The castle was closed.", "The train was late.", "He was ill."],
       answer: 3,
       why: "Gerekçe ilk cevapta: `I was ill for two days`. Tren konuşmada geçiyor ama hastalığın nereden geldiğini anlatırken, gecikme olarak değil. Duyulan yer adını beklenen hikâyeyle (tren → gecikme) birleştirmek tuzak.",
-      targets: ["listening.detail", "past.was_were"],
+      targets: ["listening.detail", "past.was-were"],
     },
     {
       id: "en-a2-w05-l2",
       block: "listen",
-      ref: "en-a2-w05-a1",
+      ref: "a1",
       stem: "What did Omar do when he was ill?",
       options: ["He saw a doctor.", "He called Kate.", "He went home.", "He went to a pharmacy."],
       answer: 3,
       why: "`Did you see a doctor?` → `No, but…`: doktor elendi, asıl yapılan `but`tan sonra geliyor. `did` ile sorulan soruya verilen kısa olumsuz cevabı atlayınca soru cümlesi olmuş olay gibi duyuluyor.",
-      targets: ["listening.detail", "past.did_question"],
+      targets: ["listening.detail", "past.did-question"],
     },
     {
       id: "en-a2-w05-l3",
       block: "listen",
-      ref: "en-a2-w05-a1",
+      ref: "a1",
       stem: "What is Omar's plan?",
       options: ["to see a doctor in May", "to go back to Edinburgh in May", "to visit Kate in Scotland", "to take the train with Kate"],
       answer: 1,
       why: "`I'm going to` önceden verilmiş bir kararı söyler. Kate'in gelmek istemesi yalnız bir soru (`Can I come with you?`), henüz cevaplanmış bir plan değil; soruyu kararla karıştırmak hata.",
-      targets: ["listening.detail", "future.going_to"],
+      targets: ["listening.detail", "future.going-to"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "en-a2-w05-g1",
       block: "grammar",
@@ -144,7 +155,7 @@ export const EN_A2_W05: QuizWeek = {
       options: ["for", "since", "from", "ago"],
       answer: 1,
       why: "`since` başlangıç anını verir ve bu an bir tarih değil bir olay da olabilir: `since we were children`. `for` yalnız süreyle gelir (`for twenty years`). Türkçe 'çocukluğumuzdan beri' '-den beri' ile kurulduğu için `from` seçiliyor.",
-      targets: ["present_perfect.since_for"],
+      targets: ["present-perfect.since-for"],
       byNative: {
         de: {
           options: ["for", "from", "ago", "since"],
@@ -160,7 +171,7 @@ export const EN_A2_W05: QuizWeek = {
       options: ["mustn't", "don't have to", "haven't to", "don't must"],
       answer: 1,
       why: "Ücretsiz bir yerde ödemek yasak değil, gerekmiyor: `don't have to`. `mustn't` bir şeyin yasak olduğunu söyler. Türkçe 'ödememelisin' iki anlamı da çağırdığı için yasak biçimi seçiliyor.",
-      targets: ["modal.have_to", "modal.must_not"],
+      targets: ["modal.have-to", "modal.must-not"],
       byNative: {
         de: {
           options: ["don't have to", "mustn't", "don't must", "haven't to"],
@@ -176,7 +187,7 @@ export const EN_A2_W05: QuizWeek = {
       options: ["the … A", "a … A", "a … The", "(no word) … The"],
       answer: 2,
       why: "İlk kez söz edilen şey `a` alır; aynı şeyden ikinci kez söz edilince artık bilinen bir şeydir ve `the` alır. Türkçede belirlilik çoğu zaman sıra ya da ekle anlaşılıyor; İngilizcede her seferinde artikelle işaretleniyor.",
-      targets: ["article.a_an", "article.the"],
+      targets: ["article.a-an", "article.the"],
     },
     {
       id: "en-a2-w05-g5",
@@ -194,7 +205,8 @@ export const EN_A2_W05: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "en-a2-w05-v1",
       block: "vocab",
@@ -202,7 +214,7 @@ export const EN_A2_W05: QuizWeek = {
       options: ["lose", "forget", "miss", "leave"],
       answer: 2,
       why: "`miss` iki anlam taşır: treni kaçırmak ve birini özlemek. Türkçede bunlar iki ayrı fiil; `miss`i yalnız 'kaçırmak' diye ezberleyen öğrenci özlem cümlesinde başka bir fiil arıyor.",
-      targets: ["lex.miss"],
+      targets: ["verb.miss"],
     },
     {
       id: "en-a2-w05-v2",
@@ -211,7 +223,7 @@ export const EN_A2_W05: QuizWeek = {
       options: ["took", "became", "made", "got"],
       answer: 3,
       why: "Hediye, mektup ya da mesaj sana gelince `get`. Türkçe 'hediye aldım' iki anlama gelir: birinden almak `get`, dükkândan satın almak `buy`; `take` ise ikisi de değil.",
-      targets: ["lex.get", "falsefriend.become"],
+      targets: ["verb.get", "falsefriend.become"],
       byNative: {
         de: {
           options: ["took", "got", "became", "made"],

@@ -1,11 +1,23 @@
 import type { QuizWeek } from "../types";
 
 /**
- * İngilizce A2, hafta 2 — sağlık ve randevu.
+ * A2 · Hafta 2 · Sağlık ve randevu (İngilizce kursu).
  *
- * Omurga: `should` ile tavsiye, `don't have to` / `mustn't` ayrımı, bugüne
- * uzanan durum için present perfect + `since`/`for`, hastalıkta `a`. Geri
- * dönüş: `collocation.take` (W1, `take photos` → `take a pill`).
+ * ÖLÇÜLEN ŞEY: randevu hatırlatma e-postasını ve randevu telefonunu anlamak;
+ * `should` ile tavsiye, `don't have to`/`mustn't` ayrımı, bugüne uzanan durum
+ * için present perfect + `since`/`for`, hastalıkta `a`. Geri dönüş:
+ * `collocation.take` (W1, `take photos` → `take a pill`).
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w02-g2` (`don't have to`): Almanca `muss nicht` 'gerek yok' ama
+ *    `mustn't`e benziyor — anlamı tersine çeviren sahte dost.
+ *  - `w02-g3`/`g4` (`for`, `have lived`): Almanca `seit` hem süre hem başlangıç
+ *    ve şimdiki zamanla kuruluyor; Türkçe '-dır/-den beri' de öyle. İki öğrenci
+ *    de `I live here since…` kuruyor.
+ *  - `w02-g5` (`a headache`): Türkçede belirsiz artikel zorunlu değil; Almanca
+ *    `Kopfschmerzen` artikelsiz ve çoğul. Yanlış aynı, sebep farklı.
+ *  - `w02-v1` (`appointment`): `term` şıkkı Almanca `Termin` sahte dostundan;
+ *    Türk öğrenci için tuzak 'randevu'nun `date`e çekilmesi.
  */
 export const EN_A2_W02: QuizWeek = {
   id: "en-a2-w02",
@@ -15,12 +27,13 @@ export const EN_A2_W02: QuizWeek = {
   theme: "Health and appointments",
   themeTr: "Sağlık ve randevu",
   canDo: ["A2.SPK.1", "A2.SPK.4", "A2.LS.2", "A2.RD.1", "A2.GR.13", "A2.GR.16"],
+
   stimuli: [
     {
       kind: "text",
-      id: "en-a2-w02-t1",
+      id: "t1",
       genre: "Email",
-      genreTr: "e-posta",
+      genreTr: "E-posta",
       title: "Your appointment",
       body:
         "Dear Ms Green,\n\nThis is a reminder about your appointment with Dr Patel on Thursday, 12 March, at 10:30 in the morning. " +
@@ -32,9 +45,9 @@ export const EN_A2_W02: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "en-a2-w02-a1",
+      id: "a1",
       genre: "Phone call",
-      genreTr: "telefon görüşmesi",
+      genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Receptionist", text: "Good morning, Riverside Health Center. How can I help you?" },
@@ -48,12 +61,13 @@ export const EN_A2_W02: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "en-a2-w02-r1",
       block: "read",
-      ref: "en-a2-w02-t1",
+      ref: "t1",
       stem: "What should Ms Green bring?",
       options: [
         "only a list of her pills",
@@ -68,7 +82,7 @@ export const EN_A2_W02: QuizWeek = {
     {
       id: "en-a2-w02-r2",
       block: "read",
-      ref: "en-a2-w02-t1",
+      ref: "t1",
       stem: "Ms Green has a bad cough. What should she do?",
       options: ["arrive a bit early", "go to the pharmacy", "cancel her appointment", "call before she comes"],
       answer: 3,
@@ -78,18 +92,19 @@ export const EN_A2_W02: QuizWeek = {
     {
       id: "en-a2-w02-r3",
       block: "read",
-      ref: "en-a2-w02-t1",
+      ref: "t1",
       stem: "Where is the doctor's office?",
       options: ["on the ground floor", "on the second floor", "next to the pharmacy", "next to the lift"],
       answer: 1,
       why: "Metin iki konum veriyor: muayenehanenin katı ve asansörün yeri. `next to the pharmacy` asansörü tarif ediyor. `The lift is…` cümlesinin öznesini atlayınca konum yanlış şeye bağlanıyor.",
       targets: ["reading.detail"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "en-a2-w02-l1",
       block: "listen",
-      ref: "en-a2-w02-a1",
+      ref: "a1",
       stem: "Why is Mr Kaya calling?",
       options: ["He has a temperature.", "He needs some pills.", "He has a headache.", "He can't go to work."],
       answer: 2,
@@ -99,7 +114,7 @@ export const EN_A2_W02: QuizWeek = {
     {
       id: "en-a2-w02-l2",
       block: "listen",
-      ref: "en-a2-w02-a1",
+      ref: "a1",
       stem: "When is Mr Kaya's appointment?",
       options: ["tomorrow at 9:00", "tomorrow at 4:15", "tomorrow at 3:45", "today at 4:15"],
       answer: 1,
@@ -109,14 +124,15 @@ export const EN_A2_W02: QuizWeek = {
     {
       id: "en-a2-w02-l3",
       block: "listen",
-      ref: "en-a2-w02-a1",
+      ref: "a1",
       stem: "Why can't Mr Kaya come in the morning?",
       options: ["He has to work.", "He can't sleep well.", "The doctor is busy.", "He has a headache."],
       answer: 0,
       why: "`I'm afraid` kibar bir ret açar ve gerekçe hemen arkasında: `I have to work`. Uyuyamamak ve baş ağrısı şikâyetin parçası, sabah gelememenin nedeni değil.",
-      targets: ["listening.detail", "modal.have_to"],
+      targets: ["listening.detail", "modal.have-to"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "en-a2-w02-g1",
       block: "grammar",
@@ -140,7 +156,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["mustn't", "don't have to", "haven't to", "not have to"],
       answer: 1,
       why: "`don't have to` 'zorunda değilim', `mustn't` 'yasak'. Pazar günü işe gitmek yasak değil, gerekmiyor. Türkçede olumsuzluk fiile eklendiği için ('gitmemeliyim') iki anlam aynı kalıba sıkışıyor.",
-      targets: ["modal.have_to", "modal.must_not"],
+      targets: ["modal.have-to", "modal.must-not"],
       byNative: {
         de: {
           options: ["don't have to", "mustn't", "haven't to", "not have to"],
@@ -156,7 +172,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["since", "from", "for", "ago"],
       answer: 2,
       why: "Süre (`three days`) `for` ile, başlangıç anı (`Monday`) `since` ile gelir. Türkçe 'üç gündür' tek ekle iki kavramı da karşıladığı için hangisinin süre, hangisinin başlangıç olduğu gözden kaçıyor.",
-      targets: ["present_perfect.since_for"],
+      targets: ["present-perfect.since-for"],
       byNative: {
         de: {
           options: ["since", "for", "from", "ago"],
@@ -172,7 +188,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["have lived", "live", "am living", "lived"],
       answer: 0,
       why: "`since` bugüne uzanan bir süreyi ölçüyor ve İngilizce bunu present perfect ile söyler. Türkçe '2019'dan beri yaşıyorum' şimdiki zamanla kurulduğu için `live` ya da `am living` seçiliyor.",
-      targets: ["present_perfect.since_for", "tense.present_perfect_vs_present"],
+      targets: ["present-perfect.since-for", "tense.present-perfect-vs-present"],
       byNative: {
         de: {
           options: ["live", "lived", "have lived", "am living"],
@@ -188,7 +204,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["the", "a", "an", "(no word)"],
       answer: 1,
       why: "İngilizcede sayılabilen tekil isim çıplak durmaz; ağrıların ve hafif hastalıkların çoğu `a` alır: `a headache`, `a cold`. Türkçede belirsiz artikel zorunlu olmadığı için boşluk boş bırakılıyor.",
-      targets: ["article.a_an"],
+      targets: ["article.a-an"],
       byNative: {
         de: {
           options: ["(no word)", "the", "an", "a"],
@@ -197,7 +213,8 @@ export const EN_A2_W02: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "en-a2-w02-v1",
       block: "vocab",
@@ -205,7 +222,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["date", "meeting", "appointment", "term"],
       answer: 2,
       why: "Doktor, diş hekimi ya da kuaför için alınan saat `appointment`. `date` romantik buluşma ya da takvim tarihi, `meeting` iş toplantısı. Türkçe 'randevu' üçünü de çağırıyor.",
-      targets: ["lex.appointment"],
+      targets: ["noun.appointment"],
       byNative: {
         de: {
           options: ["term", "appointment", "date", "meeting"],
@@ -221,7 +238,7 @@ export const EN_A2_W02: QuizWeek = {
       options: ["pains", "has pain", "hurts", "makes pain"],
       answer: 2,
       why: "Vücudun bir yeri acıdığında özne o organdır ve fiil `hurt`: `My back hurts`. `pain` bir isim; 'sırtım ağrıyor'u sözcük sözcük kurunca `pains` çıkıyor.",
-      targets: ["lex.hurt"],
+      targets: ["verb.hurt"],
       byNative: {
         de: {
           options: ["hurts", "pains", "does pain", "makes pain"],

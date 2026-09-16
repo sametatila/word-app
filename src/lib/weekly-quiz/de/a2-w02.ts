@@ -1,11 +1,22 @@
 import type { QuizWeek } from "../types";
 
 /**
- * Almanca A2, hafta 2 — sağlık ve randevu.
+ * A2 · Hafta 2 · Sağlık ve randevu.
  *
- * Yeni omurga: Dativ ile acı bildirmek (`mir tut … weh`), yasak ile gereksizliği
- * ayırmak (`nicht dürfen` / `nicht müssen`), kibar emir ve `weil`. Geri dönüş:
- * `perfekt.sein` (W1) `bleiben` istisnasıyla yeniden yoklanıyor.
+ * ÖLÇÜLEN ŞEY: muayenehane duyurusunu ve randevu telefonunu anlamak; acıyı
+ * Dativ ile söylemek (`mir tut … weh`), yasak ile gereksizliği ayırmak, kibar
+ * emir ve `weil`. Geri dönüş: `perfekt.sein` (W1) `bleiben` istisnasıyla.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w02-g2` (`nicht dürfen`): İngilizce `must not` yasak, Almanca
+ *    `nicht müssen` 'gerek yok' — anlamı tersine çeviren en tehlikeli aktarım.
+ *    Türk öğrencide olumsuzluk fiile eklendiği için iki anlam aynı kalıpta.
+ *  - `w02-g1` (`mir`): Türkçe 'başım' ve İngilizce `my head` iyelikle kuruluyor;
+ *    iki öğrenci de `mein` seçiyor, Almanca ise acı çekeni Dativ'e koyuyor.
+ *  - `w02-v2` (`Rezept`): İngilizce konuşan için `receipt` sahte dostu —
+ *    `Kassenzettel` şıkkı bunu yakalıyor, varyant açıklaması adını koyuyor.
+ *  - `w02-v3` (`krank werden`): İngilizce varyantta `bekomme` şıkkı; A1'deki
+ *    `verb.bekommen` hedefi seviye üstünde yeniden yoklanıyor.
  */
 export const DE_A2_W02: QuizWeek = {
   id: "de-a2-w02",
@@ -15,12 +26,13 @@ export const DE_A2_W02: QuizWeek = {
   theme: "Gesundheit und Termine",
   themeTr: "Sağlık ve randevu",
   canDo: ["A2.SPK.1", "A2.SPK.4", "A2.LS.2", "A2.LS.5", "A2.RD.3", "A2.GR.2", "A2.GR.3", "A2.GR.4", "A2.GR.5"],
+
   stimuli: [
     {
       kind: "text",
-      id: "de-a2-w02-t1",
+      id: "t1",
       genre: "Information",
-      genreTr: "bilgi duyurusu",
+      genreTr: "Bilgi duyurusu",
       title: "Praxis Dr. Weber – wichtige Informationen",
       body:
         "Unsere Praxis ist vom 4. bis 15. August geschlossen, weil wir Urlaub machen. In dieser Zeit hilft Ihnen Dr. Schulz in der Bahnhofstraße 12. " +
@@ -32,9 +44,9 @@ export const DE_A2_W02: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "de-a2-w02-a1",
+      id: "a1",
       genre: "Telefongespräch",
-      genreTr: "telefon görüşmesi",
+      genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Praxis", text: "Praxis Dr. Weber, guten Morgen. Was kann ich für Sie tun?" },
@@ -48,12 +60,13 @@ export const DE_A2_W02: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "de-a2-w02-r1",
       block: "read",
-      ref: "de-a2-w02-t1",
+      ref: "t1",
       stem: "Sie brauchen nur ein neues Rezept. Was machen Sie?",
       options: ["Sie rufen die 112 an.", "Sie kommen ohne Termin in die Praxis.", "Sie schreiben der Praxis eine E-Mail.", "Sie gehen zu Dr. Schulz."],
       answer: 2,
@@ -63,7 +76,7 @@ export const DE_A2_W02: QuizWeek = {
     {
       id: "de-a2-w02-r2",
       block: "read",
-      ref: "de-a2-w02-t1",
+      ref: "t1",
       stem: "Wann können Sie am Mittwoch zum Arzt gehen?",
       options: ["von 15 bis 18 Uhr", "von 8 bis 12 Uhr", "von 8 bis 18 Uhr", "gar nicht"],
       answer: 1,
@@ -73,18 +86,19 @@ export const DE_A2_W02: QuizWeek = {
     {
       id: "de-a2-w02-r3",
       block: "read",
-      ref: "de-a2-w02-t1",
+      ref: "t1",
       stem: "Sie haben Fieber. Was ist richtig?",
       options: ["Sie rufen zuerst in der Praxis an.", "Sie gehen direkt in die Praxis.", "Sie warten bis zum 15. August.", "Sie holen ein Rezept ab."],
       answer: 0,
       why: "`nicht …, sondern …` yapısında geçerli olan, `sondern`dan sonraki kısımdır. Olumsuzlanan eylemi (`direkt in die Praxis`) talimat sanmak tipik okuma hatası; `nicht` cümlenin başında da olsa bütün öbeği iptal eder.",
       targets: ["lesen.detail", "konnektor.sondern"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "de-a2-w02-l1",
       block: "listen",
-      ref: "de-a2-w02-a1",
+      ref: "a1",
       stem: "Warum ruft Herr Arslan an?",
       options: ["Er hat Fieber.", "Er braucht ein Rezept.", "Er kann nicht arbeiten.", "Er hat Rückenschmerzen."],
       answer: 3,
@@ -94,7 +108,7 @@ export const DE_A2_W02: QuizWeek = {
     {
       id: "de-a2-w02-l2",
       block: "listen",
-      ref: "de-a2-w02-a1",
+      ref: "a1",
       stem: "Wann hat Herr Arslan seinen Termin?",
       options: ["heute am Nachmittag", "morgen um 8:30 Uhr", "morgen um 16 Uhr", "heute um 8:30 Uhr"],
       answer: 2,
@@ -104,14 +118,15 @@ export const DE_A2_W02: QuizWeek = {
     {
       id: "de-a2-w02-l3",
       block: "listen",
-      ref: "de-a2-w02-a1",
+      ref: "a1",
       stem: "Warum kann Herr Arslan nicht morgen früh kommen?",
       options: ["Die Praxis ist voll.", "Er muss arbeiten.", "Er kann nicht lange sitzen.", "Er hat keinen Ausweis."],
       answer: 1,
       why: "`Heute ist alles voll` bugüne ait bir engel; yarın sabahı engelleyen Herr Arslan'ın kendi işi (`Morgen früh muss ich arbeiten`). `heute` ile `morgen früh` ayrımı kaçınca iki farklı gerekçe birbirine karışıyor.",
       targets: ["hoeren.detail", "modal.muessen"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "de-a2-w02-g1",
       block: "grammar",
@@ -192,7 +207,8 @@ export const DE_A2_W02: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "de-a2-w02-v1",
       block: "vocab",
@@ -200,7 +216,7 @@ export const DE_A2_W02: QuizWeek = {
       options: ["Plan", "Termin", "Datum", "Zeit"],
       answer: 1,
       why: "Doktor, kuaför ya da bir daire için ayrılan saat `Termin`dir. `Datum` yalnız takvimdeki tarih (15.08.), `Zeit` genel olarak zaman. 'Randevu' ile 'tarih' ayrı sözcükler ama 'gün vermek' düşüncesi `Datum`a çekiyor.",
-      targets: ["lex.termin"],
+      targets: ["nomen.termin"],
       byNative: {
         en: {
           options: ["Plan", "Datum", "Termin", "Zeit"],
@@ -216,7 +232,7 @@ export const DE_A2_W02: QuizWeek = {
       options: ["Formular", "Kassenzettel", "Zettel", "Rezept"],
       answer: 3,
       why: "Doktorun yazdığı ilaç kâğıdı `Rezept`; aynı sözcük yemek tarifi de demek. `Kassenzettel` kasadan alınan fiş, `Formular` doldurulan belge. 'Kâğıt' diye düşününce genel `Zettel` seçiliyor ama eczane onu kabul etmez.",
-      targets: ["lex.rezept"],
+      targets: ["nomen.rezept"],
       byNative: {
         en: {
           options: ["Kassenzettel", "Rezept", "Zettel", "Formular"],
@@ -232,7 +248,7 @@ export const DE_A2_W02: QuizWeek = {
       options: ["werde", "bin", "habe", "wurde"],
       answer: 0,
       why: "Bir duruma geçiş `werden` ile anlatılır: `krank werden` 'hastalanmak'. `ich bin krank` zaten hasta olduğunu söyler; `ich glaube` bir başlangıcı sezdiriyor. `wurde` geçmiş, cümle ise şimdiyi anlatıyor.",
-      targets: ["verb.werden", "falschfreund.bekommen"],
+      targets: ["verb.werden", "verb.bekommen"],
       byNative: {
         en: {
           options: ["bin", "bekomme", "werde", "wurde"],

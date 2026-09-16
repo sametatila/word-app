@@ -1,12 +1,22 @@
 import type { QuizWeek } from "../types";
 
 /**
- * İngilizce A2, hafta 4 — iş ve başvuru.
+ * A2 · Hafta 4 · İş ve başvuru (İngilizce kursu).
  *
- * Omurga: deneyim için `Have you ever…?`, tarihli olayda past simple, geçmiş
- * zorunluluk `had to`, `the best`, meslekten önce `a`. Geri dönüş:
- * `past.irregular` (W1), `modal.have_to` ve `article.a_an` (W2),
- * `present_perfect.since_for` (W2) dinleme maddesinde.
+ * ÖLÇÜLEN ŞEY: bir iş ilanını ve iş görüşmesini anlamak; deneyim için
+ * `Have you ever…?`, tarihli olayda past simple, geçmiş zorunluluk `had to`,
+ * `the best`, meslekten önce `a`. Geri dönüş: `past.irregular` (W1),
+ * `modal.have-to`, `article.a-an` ve `present-perfect.since-for` (W2).
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w04-g3` (`had to`): Almanca `musste` geçmiş olduğu için `must` da geçmiş
+ *    sanılıyor.
+ *  - `w04-v1` (`got`): Almanca `bekommen` → `became`, A1 Almanca kursundaki
+ *    `verb.bekommen` tuzağının ters yönü; Türk öğrenci 'almak' → `took`.
+ *  - `w04-v3` (`mobile phone`): Almanca `Handy` yalnız varyantta şık — tabanda
+ *    Türk öğrenci için anlamsız bir çeldirici olurdu.
+ *  - `w04-g1` ve `w04-v2` varyantsız: `Have you ever…?` ve `earn`/`win` iki
+ *    anadilde de aynı biçimde karışıyor, uydurma fark yazılmadı.
  */
 export const EN_A2_W04: QuizWeek = {
   id: "en-a2-w04",
@@ -16,12 +26,13 @@ export const EN_A2_W04: QuizWeek = {
   theme: "Work and looking for a job",
   themeTr: "İş ve başvuru",
   canDo: ["A2.RD.2", "A2.LS.3", "A2.GR.11", "A2.GR.13", "A2.GR.14", "A2.GR.16"],
+
   stimuli: [
     {
       kind: "text",
-      id: "en-a2-w04-t1",
+      id: "t1",
       genre: "Job advert",
-      genreTr: "iş ilanı",
+      genreTr: "Iş ilanı",
       title: "Summer job at the Seaside Hotel",
       body:
         "We are looking for friendly people to work in our hotel restaurant from June until September. " +
@@ -35,9 +46,9 @@ export const EN_A2_W04: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "en-a2-w04-a1",
+      id: "a1",
       genre: "Job interview",
-      genreTr: "iş görüşmesi",
+      genreTr: "Iş görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Ms Hill", text: "Good morning, Mr Demir. Please sit down. So, why do you want to work here?" },
@@ -53,12 +64,13 @@ export const EN_A2_W04: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "en-a2-w04-r1",
       block: "read",
-      ref: "en-a2-w04-t1",
+      ref: "t1",
       stem: "Do you need experience for this job?",
       options: ["Yes, at least one year.", "No, but you must speak Spanish.", "Yes, in a restaurant.", "No, the team will teach you."],
       answer: 3,
@@ -68,7 +80,7 @@ export const EN_A2_W04: QuizWeek = {
     {
       id: "en-a2-w04-r2",
       block: "read",
-      ref: "en-a2-w04-t1",
+      ref: "t1",
       stem: "How much does the job pay?",
       options: ["12 pounds a day", "40 pounds a week", "12 pounds an hour", "3 pounds an hour"],
       answer: 2,
@@ -78,7 +90,7 @@ export const EN_A2_W04: QuizWeek = {
     {
       id: "en-a2-w04-r3",
       block: "read",
-      ref: "en-a2-w04-t1",
+      ref: "t1",
       stem: "What should you write in your email?",
       options: [
         "how much money you want to earn",
@@ -90,38 +102,40 @@ export const EN_A2_W04: QuizWeek = {
       why: "Son cümle iki şey istiyor: kendinden biraz söz etmen ve ne zaman başlayabileceğin. Bir başvuruda mantıklı görünen ama ilanın istemediği bilgiyi seçmek, metni değil kendi beklentini okumak olur.",
       targets: ["reading.detail"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "en-a2-w04-l1",
       block: "listen",
-      ref: "en-a2-w04-a1",
+      ref: "a1",
       stem: "Where did Mr Demir work before?",
       options: ["in a hotel", "in a language school", "in a café", "in a restaurant"],
       answer: 2,
       why: "`Have you ever worked in a hotel?` sorusuna verilen `No, I haven't` oteli eliyor; asıl deneyim `But` ile geliyor. Dil okulu çalıştığı değil okuduğu yer (`studied`); fiile bakmadan yer adını eşlemek hata.",
-      targets: ["listening.detail", "present_perfect.ever_never"],
+      targets: ["listening.detail", "present-perfect.ever-never"],
     },
     {
       id: "en-a2-w04-l2",
       block: "listen",
-      ref: "en-a2-w04-a1",
+      ref: "a1",
       stem: "How long has Mr Demir lived in England?",
       options: ["for two years", "since January", "since June", "for one year"],
       answer: 1,
       why: "İki süre duyuluyor: iki yıl kafe işi (bitmiş, past simple `worked`) ve Ocak'tan beri İngiltere (present perfect `I've lived`, hâlâ sürüyor). `How long have you…?` yalnız bugün de süren durumu sorar.",
-      targets: ["listening.detail", "present_perfect.since_for"],
+      targets: ["listening.detail", "present-perfect.since-for"],
     },
     {
       id: "en-a2-w04-l3",
       block: "listen",
-      ref: "en-a2-w04-a1",
+      ref: "a1",
       stem: "When can't Mr Demir work?",
       options: ["at weekends", "in June", "in the evenings", "on Monday mornings"],
       answer: 3,
       why: "`Yes, I can. But…` kalıbında kısıt `But`tan sonra gelir. Hafta sonu sorusunun cevabı evet; ilk duyulan `Yes`i bütün cevaba yaymak, arkasından gelen istisnayı kaçırmak demek.",
       targets: ["listening.detail"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "en-a2-w04-g1",
       block: "grammar",
@@ -129,7 +143,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["Did", "Were", "Have", "Do"],
       answer: 2,
       why: "`ever` hayatın herhangi bir anındaki deneyimi sorar ve present perfect ister. Cümledeki `worked` burada fiilin üçüncü hâli ve `have` ister; `Did` ile gelseydi fiil yalın (`work`) olurdu.",
-      targets: ["present_perfect.ever_never", "past.did_question"],
+      targets: ["present-perfect.ever-never", "past.did-question"],
     },
     {
       id: "en-a2-w04-g2",
@@ -138,7 +152,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["have left", "left", "have leaved", "leave"],
       answer: 1,
       why: "Tarihi verilmiş bitmiş bir olay (`in 2023`) past simple ister; present perfect zamanı söylenmeyen ya da bugüne uzanan durum içindir. `leave` düzensiz: `left`.",
-      targets: ["tense.past_vs_present_perfect", "past.irregular"],
+      targets: ["tense.past-vs-present-perfect", "past.irregular"],
       byNative: {
         de: {
           options: ["left", "have left", "have leaved", "leave"],
@@ -154,7 +168,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["must", "have to", "had to", "musted"],
       answer: 2,
       why: "`must`ın geçmiş biçimi yok; geçmişteki zorunluluk `had to` ile anlatılır. `have to` bugünü anlatır, cümle ise `old job` ile geçmişte.",
-      targets: ["modal.have_to"],
+      targets: ["modal.have-to"],
       byNative: {
         de: {
           options: ["had to", "must", "have to", "musted"],
@@ -170,7 +184,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["the better", "the best", "best", "the most good"],
       answer: 1,
       why: "`ever` ile 'şimdiye kadarki en…' anlamı superlative ister: `the best`. `good` düzensiz (good–better–best), `most good` kurulmaz. Superlative isimden önce `the` alır; Türkçe 'en iyi iş'te artikel olmadığı için `the` düşürülüyor.",
-      targets: ["compare.superlative", "present_perfect.ever_never"],
+      targets: ["compare.superlative", "present-perfect.ever-never"],
       byNative: {
         de: {
           options: ["best", "the most good", "the better", "the best"],
@@ -186,7 +200,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["(no word)", "a", "the", "an"],
       answer: 1,
       why: "Meslek söylerken İngilizcede `a`/`an` zorunlu: `She is a nurse`, `works as a nurse`. Türkçede 'hemşire olarak' artikelsiz; ama İngilizcede tekil sayılabilen isim çıplak duramaz.",
-      targets: ["article.a_an"],
+      targets: ["article.a-an"],
       byNative: {
         de: {
           options: ["a", "(no word)", "the", "an"],
@@ -195,7 +209,8 @@ export const EN_A2_W04: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "en-a2-w04-v1",
       block: "vocab",
@@ -203,7 +218,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["took", "became", "got", "made"],
       answer: 2,
       why: "Mektup, mesaj ya da para sana gelince `get` (`receive`) kullanılır: 'mektup aldım' → `I got a letter`. Türkçe 'almak' `take`e çekiyor, ama `take` bir şeyi kendin gidip almak.",
-      targets: ["lex.get", "falsefriend.become"],
+      targets: ["verb.get", "falsefriend.become"],
       byNative: {
         de: {
           options: ["became", "got", "took", "made"],
@@ -219,7 +234,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["win", "pay", "earn", "spend"],
       answer: 2,
       why: "Çalışarak para kazanmak `earn`; `win` bir yarışmada ya da oyunda kazanmak. Türkçe 'kazanmak' ikisini de karşıladığı için `win` seçiliyor. `pay` parayı veren tarafın fiili.",
-      targets: ["lex.earn_win"],
+      targets: ["verb.earn-win"],
     },
     {
       id: "en-a2-w04-v3",
@@ -228,7 +243,7 @@ export const EN_A2_W04: QuizWeek = {
       options: ["phone call", "mobile phone", "phone number", "telephone box"],
       answer: 1,
       why: "Cep telefonu cihazı `mobile phone` (Amerikan İngilizcesinde `cell phone`). `phone call` bir arama, `phone number` numara: ikisi de kullanılacak bir nesne değil. Bileşik isimde asıl anlamı ikinci sözcük taşır.",
-      targets: ["lex.phone"],
+      targets: ["noun.phone"],
       byNative: {
         de: {
           options: ["handy", "mobile phone", "phone call", "phone number"],

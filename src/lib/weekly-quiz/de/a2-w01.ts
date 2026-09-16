@@ -1,11 +1,23 @@
 import type { QuizWeek } from "../types";
 
 /**
- * Almanca A2, hafta 1 — geçmişi anlatmak.
+ * A2 · Hafta 1 · Geçmişi anlatmak.
  *
- * A1'de Präsens vardı; burada ilk kez olmuş bir şey anlatılıyor. Omurga iki
- * karar: yardımcı fiil (`haben`/`sein`) ve Partizip biçimi. Sonraki haftalar
- * `perfekt.*`, `partizip.trennbar` ve `wortstellung.v2` hedeflerine geri dönüyor.
+ * ÖLÇÜLEN ŞEY: olmuş bir olayı anlatan bir e-postayı/konuşmayı anlamak ve
+ * Perfekt'in iki kararını vermek — yardımcı fiil (`haben`/`sein`) ve Partizip
+ * biçimi — artı `war`/`hatte` ve zamanı geriye ölçen `vor`. A1'deki Präsens,
+ * `wortstellung.v2` ve `verb.trennbar` burada geçmiş zamanda yeniden çıkıyor.
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w01-g2` (`sein` ile Perfekt): Türkçede yardımcı fiil seçimi yok,
+ *    İngilizcede tek yardımcı (`have`). İki öğrenci de `haben gefahren`
+ *    kuruyor; biri seçim olduğunu bilmediği için, öteki `have`i taşıdığı için.
+ *  - `w01-g4` (`war`): İngilizce konuşan için `bin` ↔ `been` benzerliği gerçek
+ *    bir tuzak ve `wurde` ↔ `became`; varyantta bu iki şık yan yana.
+ *  - `w01-v1` (`vor drei Tagen`): Türkçede `önce` sonda; İngilizcede `ago`
+ *    sonda ve `for` süre. İngilizce varyanta `bevor` şıkkı eklendi.
+ *  - `w01-v2` (`Fotos machen`): kalıp fiili dile göre değişiyor, İngilizceden
+ *    `nehmen` geliyor. W5'te düğün bağlamında yeniden yoklanıyor.
  */
 export const DE_A2_W01: QuizWeek = {
   id: "de-a2-w01",
@@ -15,12 +27,13 @@ export const DE_A2_W01: QuizWeek = {
   theme: "Vom Wochenende erzählen",
   themeTr: "Geçmişi anlatmak",
   canDo: ["A2.SPK.3", "A2.WR.3", "A2.GR.1", "A2.RD.1", "A2.LS.3"],
+
   stimuli: [
     {
       kind: "text",
-      id: "de-a2-w01-t1",
+      id: "t1",
       genre: "E-Mail",
-      genreTr: "e-posta",
+      genreTr: "E-posta",
       title: "Mein Wochenende",
       body:
         "Hallo Tom,\n\nwie geht es dir? Mein Wochenende war sehr schön, aber auch ein bisschen verrückt. " +
@@ -32,9 +45,9 @@ export const DE_A2_W01: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "de-a2-w01-a1",
+      id: "a1",
       genre: "Gespräch",
-      genreTr: "sohbet",
+      genreTr: "Sohbet",
       plays: 2,
       segments: [
         { speaker: "Jonas", text: "Hallo Mia! Wie war dein Wochenende?" },
@@ -48,12 +61,13 @@ export const DE_A2_W01: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "de-a2-w01-r1",
       block: "read",
-      ref: "de-a2-w01-t1",
+      ref: "t1",
       stem: "Was hat Lena in Hamburg NICHT gemacht?",
       options: ["Sie hat Kuchen gegessen.", "Sie hat ihre Schwester besucht.", "Sie hat zu Hause gekocht.", "Sie hat einen Film gesehen."],
       answer: 3,
@@ -63,7 +77,7 @@ export const DE_A2_W01: QuizWeek = {
     {
       id: "de-a2-w01-r2",
       block: "read",
-      ref: "de-a2-w01-t1",
+      ref: "t1",
       stem: "Wo haben Lena und ihre Schwester Kuchen gegessen?",
       options: ["zu Hause", "in einem Café", "im Zug", "im Kino"],
       answer: 1,
@@ -73,28 +87,29 @@ export const DE_A2_W01: QuizWeek = {
     {
       id: "de-a2-w01-r3",
       block: "read",
-      ref: "de-a2-w01-t1",
+      ref: "t1",
       stem: "Wann ist Lena in Berlin angekommen?",
       options: ["am Samstagabend", "am Sonntag um Mitternacht", "eine Stunde zu früh", "am Sonntagmorgen"],
       answer: 1,
       why: "`eine Stunde Verspätung` trenin geç kaldığı süre, varış saati değil; saat `erst um Mitternacht`. `erst` beklenenden geç demektir. Sayıyı gördüğü yerde cevap sanmak yerine, sayının neyi ölçtüğüne bakmak gerekiyor.",
-      targets: ["lesen.detail", "zeit.erst"],
+      targets: ["lesen.detail", "zeitangabe.erst"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "de-a2-w01-l1",
       block: "listen",
-      ref: "de-a2-w01-a1",
+      ref: "a1",
       stem: "Wann ist der Wagen gekommen?",
       options: ["um acht Uhr", "am Abend", "um elf Uhr", "am Sonntag"],
       answer: 2,
       why: "Mia iki saat söylüyor ama biri olumsuzlanmış: `nicht um acht` planlanan saatti. Dinlerken olumsuzlanan bilgiyi elemek gerekiyor; `erst` gerçek saatin geç olduğunu işaret ediyor.",
-      targets: ["hoeren.detail", "zeit.erst"],
+      targets: ["hoeren.detail", "zeitangabe.erst"],
     },
     {
       id: "de-a2-w01-l2",
       block: "listen",
-      ref: "de-a2-w01-a1",
+      ref: "a1",
       stem: "Was haben Mia und die Helfer am Abend gemacht?",
       options: ["Sie haben Pizza gegessen.", "Sie sind ins Restaurant gegangen.", "Sie haben die Küche aufgeräumt.", "Sie haben lange geschlafen."],
       answer: 0,
@@ -104,14 +119,15 @@ export const DE_A2_W01: QuizWeek = {
     {
       id: "de-a2-w01-l3",
       block: "listen",
-      ref: "de-a2-w01-a1",
+      ref: "a1",
       stem: "Wer hat Mia beim Umzug geholfen?",
       options: ["Jonas", "ihre Eltern", "ihr Bruder und zwei Kollegen", "niemand"],
       answer: 2,
       why: "`Wer hat euch geholfen?` sorusunu Jonas soruyor, yani kendisi yardım etmemiş. Diyalog dinlerken soruyu soranla cevabı vereni ayırmak gerekiyor; soruyu soranın adını cevaba taşımak sık yapılan hata.",
       targets: ["hoeren.detail"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "de-a2-w01-g1",
       block: "grammar",
@@ -160,7 +176,7 @@ export const DE_A2_W01: QuizWeek = {
       options: ["bin", "war", "habe", "hatte"],
       answer: 1,
       why: "`sein` ve `haben` geçmişte konuşmada da çoğunlukla Präteritum'la söylenir: `war`, `hatte`. Boşluğa tek sözcük sığıyor ve durum bildiren `krank` bir `sein` ister; `bin` şimdiki zaman kalıyor.",
-      targets: ["praeteritum.sein_haben"],
+      targets: ["sein.praeteritum"],
       byNative: {
         en: {
           options: ["bin", "war", "wurde", "hatte"],
@@ -195,7 +211,8 @@ export const DE_A2_W01: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "de-a2-w01-v1",
       block: "vocab",
@@ -203,7 +220,7 @@ export const DE_A2_W01: QuizWeek = {
       options: ["seit", "vor", "nach", "für"],
       answer: 1,
       why: "Geçmişteki bir anı bugünden geriye ölçerken `vor` + Dativ kullanılır: 'üç gün önce'. `seit` hâlâ süren bir durum içindir, bitmiş bir olayla gelmez. Türkçede 'önce' sona geldiği için edatın başa geldiği unutuluyor.",
-      targets: ["zeit.vor", "praep.dativ"],
+      targets: ["zeitangabe.vor", "praeposition.dativ"],
       byNative: {
         en: {
           options: ["für", "bevor", "seit", "vor"],
@@ -219,7 +236,7 @@ export const DE_A2_W01: QuizWeek = {
       options: ["gemacht", "getan", "genommen", "gegeben"],
       answer: 0,
       why: "Almancada fotoğraf 'yapılır': `Fotos machen`. `tun` genel bir 'yapmak' ama bu kalıpta kullanılmaz. Doğru fiil kalıbın parçasıdır ve tek tek sözcükleri çevirerek bulunamaz.",
-      targets: ["kollokation.fotos_machen"],
+      targets: ["kollokation.fotos-machen"],
       byNative: {
         en: {
           options: ["genommen", "gemacht", "getan", "gegeben"],
@@ -235,7 +252,7 @@ export const DE_A2_W01: QuizWeek = {
       options: ["sagt", "spricht", "redet", "erzählt"],
       answer: 3,
       why: "Bir olayı ya da hikâyeyi baştan sona anlatmak `erzählen`. `sagen` tek bir söz ya da bilgi aktarır, `sprechen` ve `reden` ise 'konuşmak'tır ve `Geschichten` gibi bir nesneyi bu anlamda almaz.",
-      targets: ["lex.erzaehlen"],
+      targets: ["verb.erzaehlen"],
       byNative: {
         en: {
           options: ["sagt", "erzählt", "spricht", "redet"],

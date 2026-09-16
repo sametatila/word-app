@@ -1,12 +1,23 @@
 import type { QuizWeek } from "../types";
 
 /**
- * Almanca A2, hafta 4 — iş ve başvuru.
+ * A2 · Hafta 4 · İş ve başvuru.
  *
- * Yeni omurga: `dass` yan cümlesi, modal fiilin Präteritum'u, karşılaştırma ve
- * `deshalb` sonrası devrik düzen. Geri dönüş: `wortstellung.v2` ve
- * `praeteritum.modal` (W1), `kasus.dativ` ve `verb.werden`/`bekommen` (W2),
- * `nebensatz.weil` (W2) dinleme maddesinde.
+ * ÖLÇÜLEN ŞEY: bir iş ilanını ve iş görüşmesini anlamak; `dass` yan cümlesi,
+ * modal fiilin Präteritum'u, karşılaştırma ve `deshalb` sonrası devrik düzen.
+ * Geri dönüş: `wortstellung.v2` ve `praeteritum.modal` (W1), `kasus.dativ`,
+ * `verb.werden` ve `verb.bekommen` (W2), `nebensatz.weil` (W2).
+ *
+ * ÇELDİRİCİLERİN GEREKÇESİ:
+ *  - `w04-g3` (`interessanter`): Türkçe 'daha' ve İngilizce `more` aynı yanlışı
+ *    üretiyor (`mehr interessant`), ama İngilizce konuşan için kural 'uzun
+ *    sıfat `more` alır' olduğundan açıklama ayrıldı.
+ *  - `w04-g5` (`deshalb möchte ich`): `weil` ile aynı anlam, farklı dizilim;
+ *    İngilizce `so I want` sırası özneyi önde tutuyor.
+ *  - `w04-v2` (`Lehrer werden`): `bekommen` şıkkı yalnız İngilizce varyantta
+ *    anlamlı bir tuzak; tabanda `machen` 'yapmak' çevirisini temsil ediyor.
+ *  - `w04-v3` (`verdienen`): 'kazanmak' Türkçede tek fiil; İngilizce
+ *    `earn`/`win` ayrımı zaten var, o yüzden varyant yazılmadı.
  */
 export const DE_A2_W04: QuizWeek = {
   id: "de-a2-w04",
@@ -16,12 +27,13 @@ export const DE_A2_W04: QuizWeek = {
   theme: "Arbeit und Bewerbung",
   themeTr: "İş ve başvuru",
   canDo: ["A2.RD.2", "A2.LS.3", "A2.SPK.3", "A2.GR.3", "A2.GR.4", "A2.GR.6"],
+
   stimuli: [
     {
       kind: "text",
-      id: "de-a2-w04-t1",
+      id: "t1",
       genre: "Anzeige",
-      genreTr: "iş ilanı",
+      genreTr: "Iş ilanı",
       title: "Café am Marktplatz sucht Mitarbeiter",
       body:
         "Wir suchen ab 1. Oktober einen Mitarbeiter oder eine Mitarbeiterin für unser Café am Marktplatz. " +
@@ -34,9 +46,9 @@ export const DE_A2_W04: QuizWeek = {
     },
     {
       kind: "audio",
-      id: "de-a2-w04-a1",
+      id: "a1",
       genre: "Bewerbungsgespräch",
-      genreTr: "iş görüşmesi",
+      genreTr: "Iş görüşmesi",
       plays: 2,
       segments: [
         { speaker: "Herr Keller", text: "Guten Tag, Frau Yıldız. Bitte setzen Sie sich. Warum möchten Sie bei uns arbeiten?" },
@@ -52,12 +64,13 @@ export const DE_A2_W04: QuizWeek = {
       ],
     },
   ],
+
   items: [
-    // ── Okuma ──────────────────────────────────────────────────────────
+    /* ── Okuduğunu anlama ───────────────────────────────────────────────── */
     {
       id: "de-a2-w04-r1",
       block: "read",
-      ref: "de-a2-w04-t1",
+      ref: "t1",
       stem: "Muss man schon im Service gearbeitet haben?",
       options: ["Ja, das ist notwendig.", "Ja, und man muss auch Englisch sprechen.", "Nein, aber man muss 40 Stunden arbeiten.", "Nein, das Café bildet neue Mitarbeiter aus."],
       answer: 3,
@@ -67,7 +80,7 @@ export const DE_A2_W04: QuizWeek = {
     {
       id: "de-a2-w04-r2",
       block: "read",
-      ref: "de-a2-w04-t1",
+      ref: "t1",
       stem: "Wie viel arbeitet man in dem Café?",
       options: ["20 Stunden pro Tag", "14 Stunden pro Woche", "20 Stunden pro Woche", "14 Stunden am Wochenende"],
       answer: 2,
@@ -77,18 +90,19 @@ export const DE_A2_W04: QuizWeek = {
     {
       id: "de-a2-w04-r3",
       block: "read",
-      ref: "de-a2-w04-t1",
+      ref: "t1",
       stem: "Was soll man in der Bewerbung auch schreiben?",
       options: ["wie viel Geld man möchte", "wann man anfangen kann", "wo man früher gearbeitet hat", "welche Sprachen man spricht"],
       answer: 1,
       why: "`Bitte schreiben Sie auch` cümlesi iki şey istiyor: şehirde ne zamandan beri oturduğun ve ne zaman başlayabileceğin. Bir başvuruda mantıklı görünen ama ilanın istemediği bilgiyi seçmek, metni değil kendi beklentini okumak olur.",
-      targets: ["lesen.detail", "nebensatz.indirekte_frage"],
+      targets: ["lesen.detail", "nebensatz.indirekte-frage"],
     },
-    // ── Dinleme ────────────────────────────────────────────────────────
+
+    /* ── Dinlediğini anlama ─────────────────────────────────────────────── */
     {
       id: "de-a2-w04-l1",
       block: "listen",
-      ref: "de-a2-w04-a1",
+      ref: "a1",
       stem: "Wo hat Frau Yıldız früher gearbeitet?",
       options: ["in einem Hotel", "in einem Café", "in einer Schule", "in einem Restaurant"],
       answer: 0,
@@ -98,24 +112,25 @@ export const DE_A2_W04: QuizWeek = {
     {
       id: "de-a2-w04-l2",
       block: "listen",
-      ref: "de-a2-w04-a1",
+      ref: "a1",
       stem: "Seit wann ist Frau Yıldız in Deutschland?",
       options: ["seit zwei Jahren", "seit einem Jahr", "seit Oktober", "seit acht Monaten"],
       answer: 3,
       why: "İki süre duyuluyor: iki yıl İzmir'deki otel işi (bitmiş), sekiz ay Almanya (`seit`, hâlâ sürüyor). `seit` sorusu yalnız bugün de süren durumu sorar; bitmiş işin süresi bu soruya cevap olmaz.",
-      targets: ["hoeren.detail", "zeit.seit"],
+      targets: ["hoeren.detail", "zeitangabe.seit"],
     },
     {
       id: "de-a2-w04-l3",
       block: "listen",
-      ref: "de-a2-w04-a1",
+      ref: "a1",
       stem: "Warum kann Frau Yıldız am Sonntag nicht arbeiten?",
       options: ["Sie macht einen Kurs.", "Sie passt auf ihren Sohn auf.", "Sie arbeitet im Hotel.", "Das Café ist am Sonntag zu."],
       answer: 1,
       why: "Sebep `weil` yan cümlesinde ve fiil sonda: `aufpasse`. Almancada yan cümlenin anlamı çoğu zaman son sözcükte tamamlanıyor; cümlenin sonunu beklemeden dinlemeyi bırakınca sebep kaçıyor.",
       targets: ["hoeren.detail", "nebensatz.weil"],
     },
-    // ── Dilbilgisi ─────────────────────────────────────────────────────
+
+    /* ── Dilbilgisi ─────────────────────────────────────────────────────── */
     {
       id: "de-a2-w04-g1",
       block: "grammar",
@@ -196,7 +211,8 @@ export const DE_A2_W04: QuizWeek = {
         },
       },
     },
-    // ── Sözcük ─────────────────────────────────────────────────────────
+
+    /* ── Bağlamda kelime ────────────────────────────────────────────────── */
     {
       id: "de-a2-w04-v1",
       block: "vocab",
@@ -204,7 +220,7 @@ export const DE_A2_W04: QuizWeek = {
       options: ["Stelle", "Arbeit", "Beruf", "Firma"],
       answer: 2,
       why: "`Was sind Sie von Beruf?` sabit bir kalıp: meslek `Beruf`. `Stelle` belli bir işyerindeki pozisyon, `Arbeit` yapılan iş ya da işyeri. Türkçe 'iş' sözcüğü üçünü birden karşıladığı için ayrım görünmüyor.",
-      targets: ["lex.beruf_stelle"],
+      targets: ["nomen.beruf-stelle"],
       byNative: {
         en: {
           options: ["Beruf", "Stelle", "Arbeit", "Firma"],
@@ -220,7 +236,7 @@ export const DE_A2_W04: QuizWeek = {
       options: ["machen", "lernen", "bekommen", "werden"],
       answer: 3,
       why: "Bir mesleğe, bir duruma geçiş `werden` ile anlatılır: 'öğretmen olmak'. `machen` 'yapmak' kelime kelime çeviri; `lernen` bir şeyi öğrenmek, kişi `Lehrer` öğrenilmez.",
-      targets: ["verb.werden", "falschfreund.bekommen"],
+      targets: ["verb.werden", "verb.bekommen"],
       byNative: {
         en: {
           options: ["werden", "bekommen", "machen", "lernen"],
@@ -236,7 +252,7 @@ export const DE_A2_W04: QuizWeek = {
       options: ["gewinnt", "verdient", "bezahlt", "spart"],
       answer: 1,
       why: "Çalışarak para kazanmak `verdienen`; `gewinnen` bir yarışmada ya da oyunda kazanmak. Türkçe 'kazanmak' ikisini de karşıladığı için `gewinnt` seçiliyor. `bezahlen` ise ödeyen tarafın fiili.",
-      targets: ["lex.verdienen"],
+      targets: ["verb.verdienen"],
     },
   ],
 };
