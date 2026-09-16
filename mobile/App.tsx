@@ -61,6 +61,26 @@ function Nav() {
   useLang();
 
   /*
+    AÇILIŞTAKİ OTURUM KURULUMU BEKLENİYOR (oturumu değiştiren bağlantılar için).
+
+    Uygulama bir doğrulama bağlantısıyla SOĞUK açıldığında bağlantı, misafirin
+    oturumu jetonla geri kurulmadan (`AuthContext` açılış etkisi) işlenebiliyordu.
+    O anda çerez yok; sunucu "açık oturum başka bir hesaba geçmez" kuralını
+    (bkz. sunucu `hooks.after` /verify-email) uygulayamıyor, bağlantının hesabına
+    giriş yapılıyor ve açılış etkisi misafirin ilerlemesini o hesaba
+    birleştiriyordu. Başkasının bağlantısıyla gelen saldırı tam bu yoldan
+    geçer. Kurulum bitince misafirin çerezi yerinde olduğu için kural işliyor.
+  */
+  const loadingRef = useRef(loading);
+  const authWaiters = useRef<(() => void)[]>([]);
+  useEffect(() => {
+    loadingRef.current = loading;
+    if (!loading) for (const done of authWaiters.current.splice(0)) done();
+  }, [loading]);
+  const authSettled = () =>
+    loadingRef.current ? new Promise<void>((resolve) => { authWaiters.current.push(resolve); }) : Promise.resolve();
+
+  /*
     DERİN BAĞLANTI — e-postadaki iki bağlantı uygulamada açıldığında.
 
     Sunucu yalnız uygulamanın karşılayabildiği iki yolu iddia ediyor
@@ -140,6 +160,7 @@ function Nav() {
         */
         if (!(await consumeHandoff(action.nonce))) return;
         setVerifying(true);
+        await authSettled();
         await verifyOneTimeToken(action.token);
         await refresh();
         if (alive) setVerifying(false);
@@ -149,6 +170,7 @@ function Nav() {
       // Doğrulamayı uygulama tamamlıyor: better-auth yönlendirme boyunca oturum
       // çerezini RN'in kavanozuna yazıyor, yani kullanıcı burada girmiş oluyor.
       setVerifying(true);
+      await authSettled();
       await completeEmailVerification(action.url);
       await refresh();
       if (alive) setVerifying(false);
