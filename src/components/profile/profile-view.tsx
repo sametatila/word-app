@@ -8,7 +8,7 @@ import { MyAvatar } from "@/components/avatar";
 import { MenuRow } from "@/components/menu-row";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { BackButton } from "@/components/page-back";
-import { authApi } from "@/lib/auth/api";
+import { signOutOnDevice } from "@/components/session-keeper";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
 import { useShell } from "@/components/app-shell";
@@ -73,11 +73,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
   async function signOut() {
     setConfirmOut(false);
-    try {
-      await authApi("sign-out", {});
-    } catch {
-      /* oturum zaten düşmüş olabilir; yönlendirme yine doğru yer */
-    }
+    await signOutOnDevice();
     router.push("/login");
     router.refresh();
   }

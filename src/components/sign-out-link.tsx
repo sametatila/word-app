@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { authApi } from "@/lib/auth/api";
+import { signOutOnDevice } from "@/components/session-keeper";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -26,11 +26,7 @@ export function SignOutLink({ email, className }: { email?: string | null; class
   async function out() {
     if (busy) return;
     setBusy(true);
-    try {
-      await authApi("sign-out", {});
-    } catch {
-      /* oturum zaten düşmüş olabilir; gidilecek yer yine aynı */
-    }
+    await signOutOnDevice();
     // Ana sayfaya: `/login` çıkışın hemen ardından tekrar giriş dayatır gibi
     // duruyor. Kullanıcı vazgeçtiyse vitrine dönmeli.
     router.push("/");

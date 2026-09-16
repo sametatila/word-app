@@ -116,3 +116,30 @@ export async function unsubscribeFromPush(): Promise<void> {
   });
   await sub?.unsubscribe().catch(() => null);
 }
+
+/**
+ * Çıkışta bu tarayıcının aboneliğini düşürür.
+ *
+ * `unsubscribeFromPush`tan farkı: hesabın hatırlatma tercihine dokunmuyor
+ * (sunucu `signOut` bayrağıyla yalnız bu uç noktayı siliyor). Oturum çerezi
+ * hâlâ geçerliyken çağrılmalı; çıkıştan sonra istek 401 alır.
+ *
+ * Sunucu isteği düşerse tarayıcı aboneliği yine kaldırılıyor: sunucudaki
+ * satır bir sonraki gönderimde tarayıcıdan 410 alıp temizleniyor, ekrana
+ * bildirim ise düşmüyor.
+ */
+export async function dropPushOnSignOut(): Promise<void> {
+  const sub = await currentSubscription();
+  if (!sub) return;
+  try {
+    await apiFetch("/api/push/subscribe", {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ endpoint: sub.endpoint, signOut: true }),
+      timeoutMs: 5_000,
+    });
+  } catch {
+    /* ağ yok: tarayıcı tarafı yine kapanıyor */
+  }
+  await sub.unsubscribe().catch(() => null);
+}

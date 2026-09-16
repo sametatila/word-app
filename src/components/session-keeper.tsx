@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { writeTzCookie } from "@/lib/tz-cookie";
 import { syncAvatarWithServer } from "@/lib/avatar";
+import { authApi } from "@/lib/auth/api";
+import { dropPushOnSignOut } from "@/lib/push-client";
 
 /**
  * Oturumu ayakta tutan ve hesap değişiminde cihazı temizleyen görünmez bileşen.
@@ -131,6 +133,45 @@ function forgetPreviousAccount() {
     if (key && ACCOUNT_SCOPED_PREFIXES.some((p) => key.startsWith(p))) doomed.push(key);
   }
   for (const key of doomed) localStorage.removeItem(key);
+}
+
+/**
+ * ÇIKIŞ — oturumla birlikte hesabın cihazdaki izleri de kapanıyor.
+ *
+ * Hesaba ait anahtarlar yalnız BAŞKA bir hesap giriş yaptığında siliniyordu.
+ * Ortak bilgisayarda A çıkıp kimse girmezse A'nın yazma taslakları, günün
+ * planı ve görevleri, bekleyen cevapları ve avatarı tarayıcıda kalıyordu;
+ * tarayıcıyı açan herkes geliştirici araçlarından okuyabiliyordu. Push
+ * aboneliği de A'nın hesabına bağlı kalıyor, A'nın hatırlatmaları o ekrana
+ * düşmeye devam ediyordu. Mobil ikisini de çıkışta yapıyor
+ * (`AuthContext.signOut`: `unregisterPushDevice` + `forgetAccountScoped`).
+ *
+ * Sıra: abonelik oturum AÇIKKEN düşürülüyor (sonra 401 alırdı), cihaz
+ * temizliği sunucu cevabını beklemiyor — çıkış isteği ağ yüzünden düşse de
+ * kullanıcı "çıktım" dediği için izler gitmeli.
+ *
+ * Gönderilmeyi bekleyen kuyruklar (`lernomi-answer-queue`,
+ * `lernomi-lessons-pending`) da gidiyor: çevrimiçiyken açılışta zaten
+ * boşaltılıyorlar, çevrimdışıysa çıkış isteği de ulaşmıyor. Başka bir
+ * hesaba yazılma riski kaybolma riskinden ağır (yukarıdaki listeye bak).
+ */
+export async function signOutOnDevice(): Promise<void> {
+  try {
+    await dropPushOnSignOut();
+  } catch {
+    /* bildirim tarafı çıkışı engellememeli */
+  }
+  try {
+    forgetPreviousAccount();
+    localStorage.removeItem(ACCOUNT_KEY);
+  } catch {
+    /* depolama kapalıysa silinecek kopya da yok */
+  }
+  try {
+    await authApi("sign-out", {});
+  } catch {
+    /* oturum zaten düşmüş olabilir; gidilecek yer yine aynı */
+  }
 }
 
 export function SessionKeeper({ userId, avatar }: { userId: string; avatar: string | null }) {

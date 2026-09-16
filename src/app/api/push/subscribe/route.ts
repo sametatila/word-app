@@ -18,6 +18,8 @@ type Incoming = {
   endpoint?: unknown;
   keys?: { p256dh?: unknown; auth?: unknown };
   timezone?: unknown;
+  /** Çıkış: yalnız bu tarayıcının aboneliği düşer, tercih olduğu gibi kalır (DELETE). */
+  signOut?: unknown;
 };
 
 /**
@@ -104,11 +106,34 @@ export async function DELETE(req: Request) {
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   let endpoint = "";
+  let signOut = false;
   try {
     const body = (await req.json()) as Incoming;
     if (typeof body.endpoint === "string") endpoint = body.endpoint;
+    signOut = body.signOut === true;
   } catch {
     /* gövdesiz istek: kullanıcının bütün cihazları kapatılır */
+  }
+
+  /*
+    ÇIKIŞ BİR TERCİH DEĞİL. Aşağıdaki normal yol `remindersEnabled`'ı
+    kapatıyor, çünkü kullanıcı bildirimleri kapatmayı SEÇTİ. Çıkışta ise
+    istenen tek şey bu tarayıcının artık bu hesabın bildirimlerini almaması:
+    ortak bilgisayarda A çıktıktan sonra A'nın hatırlatmaları ekrana
+    düşmemeli. Tercihi kapatmak A'nın telefonundaki hatırlatmaları da
+    susturur, gövdesiz silme de bütün cihazlarını düşürürdü; ikisi de yok.
+  */
+  if (signOut) {
+    if (!endpoint) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    try {
+      await db
+        .delete(pushSubscriptions)
+        .where(and(eq(pushSubscriptions.userId, userId), eq(pushSubscriptions.endpoint, endpoint)));
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error("[push/subscribe] çıkış silmesi", err);
+      return NextResponse.json({ error: "database" }, { status: 500 });
+    }
   }
 
   try {
