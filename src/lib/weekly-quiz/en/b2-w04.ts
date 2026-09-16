@@ -13,10 +13,10 @@ import type { QuizWeek } from "../types";
  *  - `w04-g3` (`, which`): Almanca `…, was zu Ärger führte` bütün cümleye `was`
  *    ile gönderme yapıyor → `what`; Türk öğrenci ayrı bir cümle kurup `it`
  *    ile bağlıyor (virgül ekleme hatası).
- *  - `w04-g5` (`can't have`): Almanca `muss nicht` → `mustn't have`; Türkçe
- *    '-miş olamaz' ile '-memiş olmalı' yakın düşüyor.
- *  - `w04-v2` (`real`): Almanca `aktuell`/`eventuell` → `actual`/`eventual`
- *    sahte dostları; Türkçe 'aktüel' ise 'güncel' çağrışımıyla aynı yere itiyor.
+ *  - `w04-g5` (`can't have`): Almanca `muss nicht` → `mustn't`; Türkçe '-miş
+ *    olamaz' ile '-memeli' yakın düşüyor.
+ *  - `w04-v2` (`actual` = real): Almanca `aktuell` → `current`, `eventuell` →
+ *    `possible`; Türkçe 'aktüel' de 'güncel' anlamıyla `current`e itiyor.
  */
 export const EN_B2_W04: QuizWeek = {
   id: "en-b2-w04",
@@ -188,7 +188,7 @@ export const EN_B2_W04: QuizWeek = {
       stem: "If the shops ___ free returns, many customers would never have started shopping online.",
       options: ["hadn't offered", "didn't offer", "wouldn't have offered", "haven't offered"],
       answer: 0,
-      why: "Gerçekleşmemiş geçmiş koşulda `if` tarafı past perfect ister: `hadn't offered`. `didn't offer` ikinci tip koşula kayar ve bugünü anlatır. Türkçe `-meseydi` tek ek olduğu için iki taraf ayrılmıyor.",
+      why: "Gerçekleşmemiş geçmiş koşulda `if` tarafı past perfect ister: `hadn't offered`. `didn't offer` ikinci tip koşula kayar ve bugünü anlatır. Türkçe '-meseydi' geçmişi ayrı bir yardımcıyla işaretlemediği için basit geçmiş yeterli görünüyor.",
       targets: ["conditional.third"],
       byNative: {
         de: {
@@ -244,15 +244,15 @@ export const EN_B2_W04: QuizWeek = {
       id: "en-b2-w04-g5",
       block: "grammar",
       stem: "Sales hardly changed, so the fee ___ many customers away.",
-      options: ["mustn't have driven", "shouldn't have driven", "can't have driven", "didn't must drive"],
+      options: ["mustn't drive", "shouldn't have driven", "can't have driven", "didn't must drive"],
       answer: 2,
-      why: "Kanıta dayanan olumsuz geçmiş çıkarım `can't have` ile kurulur: 'uzaklaştırmış olamaz'. `mustn't have` İngilizcede çıkarım için kullanılmaz; `shouldn't have` ise bir eleştiri. Türkçe '-miş olamaz' ile '-memiş olmalı' yakın düştüğü için `mustn't` kuruluyor.",
+      why: "Kanıta dayanan olumsuz geçmiş çıkarım `can't have` ile kurulur: 'uzaklaştırmış olamaz'. `can't have` en güvenli olumsuz çıkarım; `mustn't` İngiliz İngilizcesinde yasak anlamına kayar ve `mustn't drive` geçmişi de taşımaz. `shouldn't have` ise bir eleştiri. Türkçe '-miş olamaz' ile '-memeli' yakın düştüğü için `mustn't` seçiliyor.",
       targets: ["modal-perfect.cant-have"],
       byNative: {
         de: {
-          options: ["can't have driven", "mustn't have driven", "didn't must drive", "shouldn't have driven"],
+          options: ["can't have driven", "mustn't drive", "didn't must drive", "shouldn't have driven"],
           answer: 0,
-          why: "Almanca `kann … nicht vertrieben haben` doğru sezgiyi veriyor, ama `muss nicht` → `mustn't have` aktarımı da güçlü. İngilizcede olumsuz çıkarım yalnız `can't have`.",
+          why: "Almanca `kann … nicht vertrieben haben` doğru sezgiyi veriyor, ama `muss nicht` → `mustn't` aktarımı da güçlü. `mustn't` İngiliz İngilizcesinde yasak bildirir; güvenli olumsuz çıkarım `can't have`.",
         },
       },
     },
@@ -270,23 +270,23 @@ export const EN_B2_W04: QuizWeek = {
         de: {
           options: ["passed over", "passed out", "passed on", "passed away"],
           answer: 2,
-          why: "Almanca `weitergeben` → `pass on` doğru sezgi; tuzak `übergehen` → `pass over` (atlamak) benzerliği. Maliyeti yansıtmak `pass on`.",
+          why: "Almanca `Kosten abwälzen/überwälzen` 'üzerine yıkmak' anlamı `über-` önekiyle `pass over`a götürüyor; ama `pass over` 'atlamak, görmezden geçmek'. Maliyeti yansıtmak `pass on`.",
         },
       },
     },
     {
       id: "en-b2-w04-v2",
       block: "vocab",
-      stem: "The ___ cost of a return is often higher than the price of the item.",
-      options: ["eventual", "actually", "real", "topical"],
+      stem: "In \"The actual cost of a return is often higher than the price of the item\", what does \"actual\" mean?",
+      options: ["current", "possible", "real", "expected"],
       answer: 2,
-      why: "'Gerçek maliyet' `real cost`. `actually` bir zarf ve isimden önce sıfat yerine geçmez; `eventual` 'sonunda ortaya çıkacak', `topical` 'gündemdeki'. Türkçe 'aktüel' sözcüğünün 'güncel' anlamı `topical` ile 'gerçek' arasındaki farkı bulanıklaştırıyor.",
-      targets: ["falsefriend.actual", "falsefriend.eventually"],
+      why: "`actual` 'gerçek, fiilen olan' demek: iadenin görünen değil gerçek maliyeti. Türkçe 'aktüel' 'güncel' anlamında kullanıldığı için `current` seçiliyor.",
+      targets: ["falsefriend.actual"],
       byNative: {
         de: {
-          options: ["actually", "real", "eventual", "topical"],
-          answer: 1,
-          why: "Almanca `aktuell` 'güncel' ve `eventuell` 'olası' demek; İngilizce `actual` 'gerçek', `eventual` 'sonunda ortaya çıkan'. Aynı görünen sözcükler başka anlam taşıyor; 'gerçek maliyet' `real cost`.",
+          options: ["real", "current", "possible", "expected"],
+          answer: 0,
+          why: "Almanca `aktuell` 'güncel' (`current`), `eventuell` 'olası' (`possible`) demek. İngilizce `actual` ise 'gerçek'; benzer görünen sözcükler başka anlam taşıyor.",
         },
       },
     },

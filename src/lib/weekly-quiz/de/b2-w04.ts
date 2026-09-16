@@ -11,10 +11,10 @@ import type { QuizWeek } from "../types";
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w04-g5` (isim üslubu): fiil isimleşince nesne Genitiv'e, özne `durch`
- *    öbeğine geçer. Türk öğrenci `-me` isimleştirmesinde nesneyi yalın bırakıyor
+ *    öbeğine geçer. Türk öğrenci `-me` isimleştirmesinde nesneyi kendi durum ekiyle bırakıyor
  *    ('kurallara uyma'), İngilizce konuşan `of`/`by` edatlarını `von` diye taşıyor.
- *  - `w04-g2` (`je … desto`): Türkçe `-dıkça` tek ek; ikinci yarı da yan cümle
- *    gibi kurulup fiil sona atılıyor. İngilizce `the …, the …` ikinci yarıda
+ *  - `w04-g2` (`je … desto`): Türkçede fiil iki yarıda da sonda; ikinci yarı da
+ *    yan cümle gibi kurulup fiil sona atılıyor. İngilizce `the …, the …` ikinci yarıda
  *    özne–fiil sırasını koruyor.
  *  - `w04-g1` (`sondern`): İngilizce `but also` → `aber auch`.
  */
@@ -81,7 +81,7 @@ export const DE_B2_W04: QuizWeek = {
       stem: "Was meint der Autor mit „je niedriger der Preis ist, desto höher sind oft die Kosten“?",
       options: [
         "Günstige Kleidung wird für die Kunden am Ende immer teurer als teure Kleidung.",
-        "Den niedrigen Preis bezahlen andere, zum Beispiel Arbeiterinnen und die Umwelt.",
+        "Die eigentlichen Kosten tragen andere, zum Beispiel Arbeiterinnen und die Umwelt.",
         "Nur Kleidung mit hohen Preisen wird unter fairen Bedingungen produziert.",
         "Die Kunden bezahlen in Geschäften oft mehr, als die Kleidung wert ist.",
       ],
@@ -148,8 +148,8 @@ export const DE_B2_W04: QuizWeek = {
         "Niemand muss etwas beweisen, weil online gekauft wurde.",
       ],
       answer: 2,
-      why: "`nicht Sie …, sondern der Händler` ispat yükünü satıcıya veriyor. `nicht … sondern` cümlesinin ilk yarısını duyup bırakınca tam tersi anlaşılıyor. `müssen nicht` da 'zorunda değilsiniz' demek, 'yasak' değil.",
-      targets: ["hoeren.detail", "konnektor.nicht-nur-sondern"],
+      why: "`nicht Sie …, sondern der Händler` ispat yükünü satıcıya veriyor. `nicht … sondern` cümlesinin ilk yarısını duyup bırakınca tam tersi anlaşılıyor.",
+      targets: ["hoeren.detail"],
     },
     {
       id: "de-b2-w04-l3",
@@ -174,7 +174,7 @@ export const DE_B2_W04: QuizWeek = {
       stem: "Die Kleidung ist nicht nur günstig, ___ auch gut für die Umwelt.",
       options: ["aber", "sondern", "sowohl", "doch"],
       answer: 1,
-      why: "`nicht nur` her zaman `sondern auch` ile tamamlanır. `aber` bir karşıtlık kurar, ekleme değil. Türkçede 'sadece … değil, aynı zamanda' kalıbının yanında 'ama' da kullanılabildiği için `aber` doğal görünüyor.",
+      why: "`nicht nur`un standart eşi `sondern auch`. `aber` bir karşıtlık kurar, burada ise bir ekleme var: ucuz olmanın üstüne çevre dostu olmak. Türkçe 'ama' ile 'aynı zamanda' arasındaki fark burada da geçerli.",
       targets: ["konnektor.nicht-nur-sondern"],
       byNative: {
         en: {
@@ -195,7 +195,7 @@ export const DE_B2_W04: QuizWeek = {
         "oft schlechter sind die Arbeitsbedingungen",
       ],
       answer: 2,
-      why: "`je` yan cümlesinde fiil sonda (`ist`); `desto` ise ana cümleyi karşılaştırmayla başlatır ve fiil hemen arkasından gelir: `desto schlechter sind`. Türkçe `-dıkça` tek bir ek olduğu için ikinci yarı da yan cümle gibi kurulup fiil sona atılıyor.",
+      why: "`je` yan cümlesinde fiil sonda (`ist`); `desto` ise ana cümleyi karşılaştırmayla başlatır ve fiil hemen arkasından gelir: `desto schlechter sind`. Türkçede fiil iki yarıda da sonda ('ucuzladıkça … kötüleşir') olduğu için ikinci yarı da yan cümle gibi kurulup fiil sona atılıyor.",
       targets: ["konnektor.je-desto", "wortstellung.v2"],
       byNative: {
         en: {
@@ -216,7 +216,7 @@ export const DE_B2_W04: QuizWeek = {
       stem: "Das Start-up verkauft Kleidung, die vorher gereinigt ___.",
       options: ["geworden ist", "worden ist", "ist worden", "wurde worden"],
       answer: 1,
-      why: "Yan cümlede edilgen Perfekt `Partizip II + worden + ist` sırasıyla biter; çekimli `ist` en sona gider. `geworden` 'olmak' anlamındaki `werden`in Partizip'i. Türkçe 'temizlenmiş' tek ek olduğu için üç parçanın sırası sezilemiyor.",
+      why: "Yan cümlede edilgen Perfekt `Partizip II + worden + ist` sırasıyla biter; çekimli `ist` en sona gider. `geworden` 'olmak' anlamındaki `werden`in Partizip'i. Türkçede edilgen ve geçmiş fiile eklerle bağlandığı ve yardımcı fiil olmadığı için ('temizlenmiş') Almancadaki üç parçanın sırası sezilemiyor.",
       targets: ["passiv.perfekt"],
       byNative: {
         en: {
@@ -283,10 +283,10 @@ export const DE_B2_W04: QuizWeek = {
     {
       id: "de-b2-w04-v1",
       block: "vocab",
-      stem: "Das Unternehmen produziert ___: Es verbraucht nur so viel, wie die Natur wieder herstellen kann.",
+      stem: "Das Unternehmen produziert ___: Es verbraucht nur so viel, wie die Natur wiederherstellen kann.",
       options: ["haltbar", "nachhaltig", "dauernd", "gleichzeitig"],
       answer: 1,
-      why: "'Sürdürülebilir' `nachhaltig`. `haltbar` ürünün dayanıklılığı, `dauernd` 'sürekli', `gleichzeitig` 'aynı anda'. Türkçe 'sürdürülebilir' ile 'dayanıklı' aynı kökten geliyormuş gibi durduğu için `haltbar` seçiliyor.",
+      why: "'Sürdürülebilir' `nachhaltig`. `haltbar` ürünün dayanıklılığı, `dauernd` 'sürekli', `gleichzeitig` 'aynı anda'. Karışma Almancanın kendi içinde: `nachhaltig` ile `haltbar` aynı `halt` kökünü paylaşıyor ve ikisi de 'uzun süre dayanan' gibi duruyor.",
       targets: ["adjektiv.nachhaltig"],
       byNative: {
         en: {
@@ -318,7 +318,7 @@ export const DE_B2_W04: QuizWeek = {
       stem: "Am Ende entscheiden sich viele Kunden doch ___ das günstigere Produkt.",
       options: ["zu", "über", "für", "auf"],
       answer: 2,
-      why: "Bir seçeneği tercih etmek `sich für etwas entscheiden`. `zu` mastarlı bir yapı ister (`sich entscheiden, … zu kaufen`), `über` başkaları adına bir konuda karar vermek. Türkçe '-de karar kılmak' ya da '-e karar vermek' `auf`/`zu`ya çekiyor.",
+      why: "Bir seçeneği tercih etmek `sich für etwas entscheiden`. `zu` mastarlı bir yapı ister (`sich entscheiden, … zu kaufen`), `über etwas entscheiden` bir konuda yetkiyle karar vermek, seçeneklerden birini seçmek değil. Türkçe '-de karar kılmak' ya da '-e karar vermek' `auf`/`zu`ya çekiyor.",
       targets: ["verb.entscheiden-fuer"],
       byNative: {
         en: {

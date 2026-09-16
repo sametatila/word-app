@@ -11,10 +11,10 @@ import type { QuizWeek } from "../types";
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w02-g2` (Partizipialattribut): Türk öğrenciye yapı TANIDIK ('üniversitede
  *    yürütülen çalışma' da isimden önce), tuzak uzunlukta: araya giren tümleç
- *    sıfat ekini unutturuyor. İngilizce konuşan için yapı yabancı; Partizip
+ *    yanlış sıfat ekini seçtiriyor. İngilizce konuşan için yapı yabancı; Partizip
  *    ismin arkasına kaçıyor. Aynı madde, iki ayrı zorluk.
  *  - `w02-g1` (`gelöscht werden`): İngilizce `must be deleted` sırası
- *    `werden gelöscht` diye taşınıyor; Türkçe `-ilmeli` tek ekte birleşiyor.
+ *    `werden gelöscht` diye taşınıyor; Türkçe `silinmeli` sırası (fiil, edilgen, zorunluluk) aslında Almancaya benziyor.
  *  - `w02-g5` (`dürften`): çoğulda Konjunktiv I Indikativ'le aynı olduğu için
  *    Konjunktiv II'ye geçilir; `-miş` sezgisi geçmişe (`durften`), İngilizce
  *    sezgisi `würden`e götürüyor.
@@ -177,7 +177,7 @@ export const DE_B2_W02: QuizWeek = {
       stem: "Vor der Rückgabe müssen alle persönlichen Daten ___.",
       options: ["werden gelöscht", "gelöscht werden", "gelöscht worden", "löschen werden"],
       answer: 1,
-      why: "Modal fiilli edilgen cümlenin sonunda Partizip II + `werden` (mastar) sırasıyla biter: `müssen … gelöscht werden`. Türkçe `-ilmeli` tek ekte birleştiği için sıralama sezilemiyor. `worden` yalnız Perfekt'te `sein` ile gelir.",
+      why: "Modal fiilli edilgen cümlenin sonunda Partizip II + `werden` (mastar) sırasıyla biter: `müssen … gelöscht werden`. Türkçe 'silinmeli' sırası (fiil, edilgen, zorunluluk) Almancadaki `gelöscht werden müssen` sırasına benzer ve burada yardımcı olur; tuzak modal fiilin çekimli olarak öne, mastar `werden`in en sona gitmesi. `worden` yalnız Perfekt'te `sein` ile gelir.",
       targets: ["passiv.modal"],
       byNative: {
         en: {
@@ -198,7 +198,7 @@ export const DE_B2_W02: QuizWeek = {
         "durchgeführte an der Universität",
       ],
       answer: 1,
-      why: "Ortaçlı sıfat öbeği Türkçede de isimden önce gelir ('üniversitede yürütülen çalışma'), yani yapı tanıdık. Tuzak uzunlukta: araya giren `an der Universität` sıfat ekini unutturuyor. `die Studie` yalın hâlde, belirli artikelden sonra `-e` alır. `durchführende` ise 'yürüten', yani etken anlam verir.",
+      why: "Ortaçlı sıfat öbeği Türkçede de isimden önce gelir ('üniversitede yürütülen çalışma'), yani yapı tanıdık. Tuzak uzunlukta: araya giren `an der Universität` isimden uzaklaştırıp yanlış eki (`-en`) seçtiriyor. `die Studie` yalın hâlde, belirli artikelden sonra `-e` alır. `durchführende` ise 'yürüten', yani etken anlam verir.",
       targets: ["partizipialattribut.partizip2"],
       byNative: {
         en: {
@@ -235,7 +235,7 @@ export const DE_B2_W02: QuizWeek = {
       stem: "Das neue Verfahren ist in Versuchen bereits erfolgreich getestet ___.",
       options: ["geworden", "wurde", "worden", "werden"],
       answer: 2,
-      why: "Edilgen Perfekt'te `werden`in Partizip'i `ge-` almaz: `ist … getestet worden`. `geworden` yalnız 'olmak' anlamındaki `werden` için (`Sie ist Ärztin geworden`). Türkçede edilgen tek ekle kurulduğu için bu iki biçimin ayrı olduğu görünmüyor.",
+      why: "Edilgen Perfekt'te `werden`in Partizip'i `ge-` almaz: `ist … getestet worden`. `geworden` yalnız 'olmak' anlamındaki `werden` için (`Sie ist Ärztin geworden`). Türkçede edilgen ayrı bir yardımcı fiil değil fiile eklenen bir ek (`-il-`) olduğu için Almancada iki ayrı `werden` biçimi bulunduğu görünmüyor.",
       targets: ["passiv.perfekt"],
       byNative: {
         en: {
@@ -248,16 +248,16 @@ export const DE_B2_W02: QuizWeek = {
     {
       id: "de-b2-w02-g5",
       block: "grammar",
-      stem: "Die Kritiker sagten, die Ergebnisse ___ nicht auf alle Jugendlichen übertragen werden.",
-      options: ["dürfen", "durften", "dürften", "würden"],
+      stem: "Die Kritiker: „Die Ergebnisse dürfen nicht auf alle Jugendlichen übertragen werden.“ → Bericht: Die Kritiker sagten, die Ergebnisse ___ nicht auf alle Jugendlichen übertragen werden.",
+      options: ["dürfen", "durften", "dürften", "würden dürfen"],
       answer: 2,
       why: "Konjunktiv I çoğulda çoğunlukla bildirme kipiyle aynıdır (`sie dürfen`); aktarımı belli etmek için Konjunktiv II'ye geçilir: `dürften`. `-miş` sezgisiyle geçmişe (`durften`) kaymak aktarımı bir zaman bilgisine çeviriyor.",
       targets: ["indirekte-rede.konjunktiv1", "modal.duerfen"],
       byNative: {
         en: {
-          options: ["würden", "dürfen", "durften", "dürften"],
+          options: ["würden dürfen", "dürfen", "durften", "dürften"],
           answer: 3,
-          why: "İngilizce aktarımdaki `would` yüzünden `würden` yedek biçim sanılıyor, ama modal fiilin kendi Konjunktiv II'si var: `dürften`. Konjunktiv I (`dürfen`) burada bildirme kipiyle aynı olduğu için aktarımı göstermez.",
+          why: "İngilizce aktarımdaki `would` yüzünden `würden` eklenerek yedek biçim kuruluyor (`würden dürfen`), ama modal fiilin kendi Konjunktiv II'si var: `dürften`; ayrıca iki çekimli fiil yan yana gelmez. Konjunktiv I (`dürfen`) burada bildirme kipiyle aynı olduğu için aktarımı göstermez.",
         },
       },
     },

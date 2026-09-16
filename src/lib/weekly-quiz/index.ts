@@ -39,6 +39,16 @@ import { EN_B1_W02 } from "./en/b1-w02";
 import { EN_B1_W03 } from "./en/b1-w03";
 import { EN_B1_W04 } from "./en/b1-w04";
 import { EN_B1_W05 } from "./en/b1-w05";
+import { DE_B2_W01 } from "./de/b2-w01";
+import { DE_B2_W02 } from "./de/b2-w02";
+import { DE_B2_W03 } from "./de/b2-w03";
+import { DE_B2_W04 } from "./de/b2-w04";
+import { DE_B2_W05 } from "./de/b2-w05";
+import { EN_B2_W01 } from "./en/b2-w01";
+import { EN_B2_W02 } from "./en/b2-w02";
+import { EN_B2_W03 } from "./en/b2-w03";
+import { EN_B2_W04 } from "./en/b2-w04";
+import { EN_B2_W05 } from "./en/b2-w05";
 
 /**
  * Haftalık quiz kataloğu.
@@ -91,6 +101,16 @@ export const QUIZ_WEEKS: QuizWeek[] = [
   EN_B1_W03,
   EN_B1_W04,
   EN_B1_W05,
+  DE_B2_W01,
+  DE_B2_W02,
+  DE_B2_W03,
+  DE_B2_W04,
+  DE_B2_W05,
+  EN_B2_W01,
+  EN_B2_W02,
+  EN_B2_W03,
+  EN_B2_W04,
+  EN_B2_W05,
 ];
 
 /** Bir kurs ve seviyedeki haftalar, `no` sırasıyla. */

@@ -14,7 +14,7 @@ import type { QuizWeek } from "../types";
  *    ikinci tipe (`didn't learn`) kayılıyor; Almanca `Wenn sie … nicht gelernt
  *    hätte` koşul tarafında kip taşıdığı için `wouldn't have learnt` kuruluyor.
  *  - `w03-v2` (`grew up`): Almanca `ist aufgewachsen` Perfekt'i `sein` ile
- *    kurduğu için `is/was grown up`; Türkçe 'büyütüldü' edilgene itiyor.
+ *    kurduğu için `is/was grown up`; bu tuzak Almancaya özgü.
  *  - `w03-g5` (ölçülü dil): İngilizce resmî tartışmada iddiayı yumuşatmak
  *    bekleniyor; Almanca `muss` vurgusu İngilizcede bir çıkarım gibi okunuyor.
  */
@@ -178,7 +178,7 @@ export const EN_B2_W03: QuizWeek = {
         de: {
           options: ["which", "that", "what", "who"],
           answer: 0,
-          why: "Almanca `Ihr Roman, der …` ilgi zamirini hep aynı biçimde kurar, virgül de hep zorunlu. İngilizcede virgüllü ilgi cümlesinde `that` olmaz; `what` ise ilgi zamiri değil (`was` aktarımı).",
+          why: "Almanca tanımlayan ve tanımlamayan ilgi cümlesini aynı zamirle (`der`) ve her zaman virgülle kurar; ayrım yapmaz. İngilizcede virgüllü ilgi cümlesinde `that` olmaz; `what` ise ilgi zamiri olarak kullanılmaz.",
         },
       },
     },
@@ -194,7 +194,7 @@ export const EN_B2_W03: QuizWeek = {
         de: {
           options: ["had been working", "was working", "has been working", "is working"],
           answer: 0,
-          why: "Almanca `Sie hatte sechs Jahre an dem Buch gearbeitet` ya da `arbeitete seit sechs Jahren` bu süreyi `was working` diye taşıtıyor. İngilizcede geçmişteki bir ana kadar süren eylem `had been working`.",
+          why: "Almanca `Sie arbeitete schon seit sechs Jahren daran` Präteritum ile kurulur ve bu süreyi `was working` diye taşıtıyor. İngilizcede geçmişteki bir ana kadar süren eylem `had been working`.",
         },
       },
     },
@@ -220,13 +220,13 @@ export const EN_B2_W03: QuizWeek = {
       stem: "The painting ___ to have been painted around 1890.",
       options: ["believes", "is believing", "is believed", "has believed"],
       answer: 2,
-      why: "Kaynağı belirsiz, geçmişe dair bilgi `is believed to have been` + üçüncü hâl ile verilir: bugünkü inanç, geçmişteki olay. Türkçe '1890 civarında yapıldığı düşünülüyor' kalıbında tablo özne gibi durduğu için etken `believes` kuruluyor.",
+      why: "Kaynağı belirsiz, geçmişe dair bilgi `is believed to have been` + üçüncü hâl ile verilir: bugünkü inanç, geçmişteki olay. Türkçe '1890 civarında yapıldığı düşünülüyor' kişisiz bir yapı; İngilizcede tabloyu özne yapan kalıp tanıdık olmadığı için etken `believes` kuruluyor ve tablo inanan kişi oluyor.",
       targets: ["passive.reporting"],
       byNative: {
         de: {
           options: ["is believed", "believes", "is believing", "has believed"],
           answer: 0,
-          why: "Almanca `Das Bild soll um 1890 gemalt worden sein` modal aktarımıyla kurulur ve İngilizcede karşılığı aranırken etken yapıya kayılıyor. İngilizce kalıp `is believed to have been painted`.",
+          why: "Almanca `Man glaubt, dass das Bild um 1890 gemalt wurde` etken bir yapı; İngilizceye `believes`/`has believed` diye taşınıyor. İngilizcede tablo özne olunca kalıp edilgen: `is believed to have been painted`.",
         },
       },
     },
@@ -237,7 +237,7 @@ export const EN_B2_W03: QuizWeek = {
       options: [
         "The painting definitely belongs to this city and nowhere else.",
         "Everyone who knows anything about art knows the painting belongs here.",
-        "The painting must belong to this city, there is no question.",
+        "The painting must belong to this city. There is no question.",
         "It could be said that the painting belongs to this city.",
       ],
       answer: 3,
@@ -247,7 +247,7 @@ export const EN_B2_W03: QuizWeek = {
         de: {
           options: [
             "It could be said that the painting belongs to this city.",
-            "The painting must belong to this city, there is no question.",
+            "The painting must belong to this city. There is no question.",
             "The painting definitely belongs to this city and nowhere else.",
             "Everyone who knows anything about art knows the painting belongs here.",
           ],
@@ -264,7 +264,7 @@ export const EN_B2_W03: QuizWeek = {
       stem: "In \"It would be sensible to ask people before selling the painting\", what does \"sensible\" mean?",
       options: ["easily hurt", "reasonable", "very emotional", "very important"],
       answer: 1,
-      why: "`sensible` 'makul, mantıklı' demek. Görünüşü Türkçedeki 'sansasyonel' ve 'hassas' sözcüklerini çağırıyor, ama İngilizcede 'duygusal, hassas' anlamı başka bir sözcüğün işi (`sensitive`).",
+      why: "`sensible` 'makul, mantıklı' demek. Karışıklık İngilizcenin kendi içinde: benzer görünen `sensitive` 'hassas, kolay incinen' anlamına gelir ve iki sözcük sık karıştırılır.",
       targets: ["falsefriend.sensible"],
       byNative: {
         de: {
@@ -280,7 +280,7 @@ export const EN_B2_W03: QuizWeek = {
       stem: "Demir ___ in Izmir, but she has lived in London for twenty years.",
       options: ["was grown up", "grew up", "grew out", "is grown up"],
       answer: 1,
-      why: "Kişinin kendisi büyür: `grow up` etkendir ve edilgen olmaz. Türkçe 'büyütüldü' düşüncesi `was grown up` kurduruyor. Çocuğu büyüten kişinin fiili başkadır (`raise`).",
+      why: "`grow up` edilgen olmayan bir deyimsel fiil: kişinin kendisi büyür ve bitmiş geçmişte past simple gelir. `was grown up` kurulamaz, `grew out` ise 'büyüyüp sığmaz olmak'. Çocuğu büyüten kişinin fiili başkadır (`raise`).",
       targets: ["phrasal-verb.grow-up"],
       byNative: {
         de: {
@@ -302,7 +302,7 @@ export const EN_B2_W03: QuizWeek = {
         de: {
           options: ["stands out", "stands up", "stands by", "stands for"],
           answer: 0,
-          why: "Almanca `herausragen` ya da `auffallen` anlamı doğru sezdiriyor, ama `aufstehen` → `stand up` benzerliği de akla geliyor. Dikkat çekmek `stand out`; `stand up` ayağa kalkmak.",
+          why: "Almanca `herausragen` ya da `auffallen` anlamı doğru sezdiriyor; tuzak parçacıkta: `stand up` ayağa kalkmak, `stand for` temsil etmek. Dikkat çekmek `stand out`.",
         },
       },
     },

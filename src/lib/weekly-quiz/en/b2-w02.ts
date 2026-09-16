@@ -10,8 +10,8 @@ import type { QuizWeek } from "../types";
  * `conditional.third` (W1), `relative.non-defining` (W1), `style.verbal` (W1).
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
- *  - `w02-g1` (`is said to`): Türkçe `-miş`/`-diği söyleniyor` özneyi organizma
- *    yaptığı için etken `says` kuruluyor; Almanca `soll … produzieren` modal
+ *  - `w02-g1` (`is said to`): Türkçe 'ürettiği söyleniyor' kişisiz bir yapı; özneli
+ *    İngilizce kalıp tanıdık olmadığı için etken `says` kuruluyor; Almanca `soll … produzieren` modal
  *    aktarımı `should`a götürüyor.
  *  - `w02-g3` (virgül): Almancada ilgi cümlesinin virgülü zorunlu ve anlam
  *    ayırmıyor; İngilizcede virgül 'bütün şişeler' ile 'bazı şişeler'i ayırıyor.
@@ -39,7 +39,7 @@ export const EN_B2_W02: QuizWeek = {
       body:
         "For decades, scientists have been searching for a way to break down plastic waste without burning it. " +
         "Now a team at a university in Japan is reported to have found a promising candidate: an organism that feeds on the type of plastic used in most drinking bottles.\n\n" +
-        "The organism was discovered almost by accident. The researchers had been collecting samples outside a factory where old bottles are collected when they noticed that some bottles lying on the ground were covered in a thin layer of living cells. " +
+        "The organism was discovered almost by accident. The researchers had been collecting samples outside a place where old bottles are stored when they noticed that some bottles lying on the ground were covered in a thin layer of living cells. " +
         "Back at the university, they found that the organism produces two enzymes which, working together, turn the plastic into simple materials that can be used again.\n\n" +
         "The discovery has been widely covered in the media, and some headlines have described it as the end of the plastic problem. " +
         "The researchers themselves, however, are far more careful. The process is said to take several weeks at a temperature of around thirty degrees, which would make it too slow and too expensive for use in factories. " +
@@ -134,7 +134,7 @@ export const EN_B2_W02: QuizWeek = {
         "predicting health problems",
       ],
       answer: 1,
-      why: "`quite good at` ile `much less reliable` arasındaki karşıtlık ölçülü bir dille veriliyor. Derin uyku uygulamanın en zayıf olduğu alan. İki ölçüm aynı cevapta geçtiği için hangisinin övüldüğünü `good` ve `less reliable` ayırıyor.",
+      why: "`quite good at` ile `much less reliable` arasındaki karşıtlık ölçülü bir dille veriliyor. Derin uyku uygulamanın en zayıf olduğu alan. İki ölçüm aynı konuşma sırasında geçtiği için hangisinin övüldüğünü `good` ve `less reliable` ayırıyor.",
       targets: ["listening.detail"],
     },
     {
@@ -175,7 +175,7 @@ export const EN_B2_W02: QuizWeek = {
       stem: "The organism ___ to produce two different enzymes.",
       options: ["says", "is said", "is saying", "said"],
       answer: 1,
-      why: "Kaynağı belli olmayan bilgi edilgen bildirme kalıbıyla verilir: `is said to`. Türkçe 'ürettiği söyleniyor' ya da 'üretiyormuş' kalıbında organizma özne gibi durduğu için etken `says` kuruluyor, yani organizma bir şey söylüyormuş gibi.",
+      why: "Kaynağı belli olmayan bilgi edilgen bildirme kalıbıyla verilir: `is said to`. Türkçe 'ürettiği söyleniyor' cümlesi kişisiz; İngilizcede aynı bilgi ya `It is said that …` ya da organizmayı özne yapan `is said to` ile verilir. Etken `says` organizmayı konuşan kişi yapar.",
       targets: ["passive.reporting"],
       byNative: {
         de: {
@@ -188,7 +188,7 @@ export const EN_B2_W02: QuizWeek = {
     {
       id: "en-b2-w02-g2",
       block: "grammar",
-      stem: "Scientists ___ for a solution to plastic waste for decades.",
+      stem: "Scientists ___ for a solution to plastic waste for decades, and they are still looking.",
       options: ["are searching", "had been searching", "have been searching", "searched"],
       answer: 2,
       why: "Geçmişte başlayıp bugün de süren eylem `have been + -ing` ile anlatılır. Türkçe 'onlarca yıldır arıyorlar' şimdiki zamanla kurulduğu için `are searching` seçiliyor. `had been searching` ise bugüne değil, geçmişteki bir andan önceye kadar süreni anlatır.",
@@ -233,7 +233,7 @@ export const EN_B2_W02: QuizWeek = {
       stem: "The bottles were covered in cells, so the organism ___ there for a long time.",
       options: ["should have lived", "must live", "can't have lived", "must have lived"],
       answer: 3,
-      why: "Kanıta dayanan geçmiş çıkarım `must have` + fiilin üçüncü hâli. `should have lived` 'yaşaması gerekirdi' anlamında bir eleştiri, `can't have` ise ters yönde bir çıkarım. Türkçe '-miş olmalı' çıkarımı tek ekte taşıdığı için `must live` ile geçmiş düşüyor.",
+      why: "Kanıta dayanan geçmiş çıkarım `must have` + fiilin üçüncü hâli. `should have lived` 'yaşaması gerekirdi' anlamında bir eleştiri ya da beklenti, `can't have` ise ters yönde bir çıkarım. Türkçe 'yaşamış olmalı' yapısı doğru sezgiyi veriyor; tuzak geçmişi taşıyan `have`i düşürüp `must live` kurmak, o zaman cümle bugünkü bir çıkarıma dönüşür.",
       targets: ["modal-perfect.must-have"],
       byNative: {
         de: {
@@ -283,7 +283,7 @@ export const EN_B2_W02: QuizWeek = {
         de: {
           options: ["carried over", "carried off", "carried away", "carried out"],
           answer: 3,
-          why: "Almanca `durchführen` → `carry through`/`carry over` gibi harfiyen aktarım yanlış anlam verir. Deney yapmak `carry out`.",
+          why: "Almanca `durchführen` anlamı doğru sezdiriyor, ama parçacık tahmin ediliyor: `carry over` aktarmak, `carry off` alıp götürmek. Deney yapmak `carry out`.",
         },
       },
     },

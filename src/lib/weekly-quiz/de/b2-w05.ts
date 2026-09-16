@@ -5,16 +5,17 @@ import type { QuizWeek } from "../types";
  *
  * ÖLÇÜLEN ŞEY: saf tekrar değil. W1–W4'ün hedefleri yeni bağlamlarda ve BAŞKA
  * metin türlerinde (okur mektubu, bir yazılım ekibinin toplantısı) karşılanıyor.
- * Maddelerin çoğu iki kuralı üst üste bindiriyor (gerçek dışı geçmiş + edilgen,
+ * Birkaç madde iki kuralı üst üste bindiriyor (gerçek dışı geçmiş + edilgen,
  * modal edilgen + aktarım), çünkü B2'de transferin zor kısmı kuralların aynı
  * cümlede buluşması.
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
- *  - `w05-g1` (`gefragt worden wären`): üç parçalı zincir; Türkçe `-seydi`
- *    tek ek olduğu için ya gerçek geçmişe (`wurden`) ya `würden`e kaçılıyor,
+ *  - `w05-g1` (`gefragt worden wären`): üç parçalı zincir; Türkçede edilgen,
+ *    geçmiş ve kip yardımcısız bir fiilde toplandığı için ya `wurden` ya `würden`,
  *    İngilizce `had been` için `geworden` aranıyor.
- *  - `w05-g2` (`seien`): `-miş` sezgisi aktarımı kipsiz (`sind`) ya da geçmişle
- *    (`waren`) kurduruyor; İngilizce konuşan zaman kaydırıyor.
+ *  - `w05-g2` (`gewesen seien`): Türkçe `-miş` hem şimdiki hem geçmişi karşıladığı
+ *    için aktarımda zaman ayrımı kayboluyor (`seien`); İngilizce konuşan
+ *    `had been` → `wären gewesen` diye kaydırıyor.
  *  - `w05-g3` (Partizipialattribut, nötr `-es`): Türk öğrenciye yapı tanıdık,
  *    ek değil; İngilizce konuşan öbeği ilgi cümlesine çeviriyor.
  *  - `w05-v3` (`Gift`): sahte dost bu kez okurun beklemediği bir bağlamda.
@@ -87,7 +88,7 @@ export const DE_B2_W05: QuizWeek = {
         "Ein Einkaufszentrum sei für die Stadt nicht notwendig.",
       ],
       answer: 2,
-      why: "Belediye başkanının sözü dolaylı aktarımla veriliyor (`sei zu alt`, `würde … kosten`). Vakıf ve bağış fikri mektup yazarının kendi önerisi. Okur mektubunda yazarın görüşü ile aktardığı görüş iç içe geçiyor; ayırıcı işaret kip.",
+      why: "Belediye başkanının sözü dolaylı aktarımla veriliyor (`sei zu alt`, `würde … kosten`). Vakıf ve bağış fikri mektup yazarının kendi önerisi. Okur mektubunda yazarın görüşü ile aktardığı görüş iç içe geçiyor; yazar da Konjunktiv II kullandığı için ayırıcı işaret `wird … zitiert` ile Konjunktiv I'in birlikte gelmesi.",
       targets: ["lesen.detail", "indirekte-rede.konjunktiv1"],
     },
     {
@@ -175,7 +176,7 @@ export const DE_B2_W05: QuizWeek = {
       stem: "Wenn die Bürger rechtzeitig gefragt ___, wäre eine andere Lösung gefunden worden.",
       options: ["würden", "worden wären", "wurden", "geworden wären"],
       answer: 1,
-      why: "Gerçek dışı geçmiş edilgen üç parçadır: Partizip II + `worden` + `wären`. Türkçe 'sorulsaydı' tek ekle kurulduğu için ya gerçek geçmişe (`wurden`) ya da `würden`e kaçılıyor. `geworden` yalnız 'olmak' anlamındaki `werden`in Partizip'i.",
+      why: "Gerçek dışı geçmiş edilgen üç parçadır: Partizip II + `worden` + `wären`. Türkçe 'sorulsaydı' edilgeni, geçmişi ve kipi yardımcı fiil olmadan tek fiilde topladığı için Almancadaki üç parça görülmüyor; ya gerçek geçmişe (`wurden`) ya da `würden`e kaçılıyor. `geworden` yalnız 'olmak' anlamındaki `werden`in Partizip'i.",
       targets: ["konjunktiv2.vergangenheit", "passiv.perfekt"],
       byNative: {
         en: {
@@ -188,16 +189,16 @@ export const DE_B2_W05: QuizWeek = {
     {
       id: "de-b2-w05-g2",
       block: "grammar",
-      stem: "Das Museum teilte mit, die Übersetzungen ___ an einigen Stellen fehlerhaft.",
-      options: ["sind", "waren", "seien", "würden sein"],
-      answer: 2,
-      why: "Resmî aktarımda `sein`in Konjunktiv I'i `seien`; `sein` her kişide Konjunktiv I'i ayrı biçimle kurduğu için yedeğe gerek yok. Türkçe 'hatalıymış' kanıtsallık ekiyle kurulduğu için ya kipsiz (`sind`) ya da geçmişle (`waren`) çevriliyor; oysa aktarım zamanı değil kaynağı işaretliyor.",
-      targets: ["indirekte-rede.konjunktiv1"],
+      stem: "Das Museum: „Die alten Übersetzungen waren an einigen Stellen fehlerhaft.“ → Das Museum teilte mit, die alten Übersetzungen ___ an einigen Stellen fehlerhaft.",
+      options: ["seien", "gewesen seien", "waren", "wären gewesen"],
+      answer: 1,
+      why: "Asıl söz geçmişte (`waren`), aktarımda da geçmiş korunur: Konjunktiv I'in geçmişi `gewesen seien`. Türkçe 'hatalıymış' hem 'hatalı' hem 'hatalıydı' anlamına gelebildiği için aktarımda zaman ayrımı kayboluyor ve `seien` seçiliyor; `-miş`i Almanca geçmişle eşleyince de kipsiz `waren` kalıyor.",
+      targets: ["indirekte-rede.konjunktiv1", "indirekte-rede.vergangenheit"],
       byNative: {
         en: {
-          options: ["waren", "würden sein", "sind", "seien"],
+          options: ["waren", "wären gewesen", "seien", "gewesen seien"],
           answer: 3,
-          why: "İngilizcede `they said the translations were …` zaman kaydırması yapar, bu yüzden `waren` ya da `würden sein` kuruluyor. Almancada aktarımın işareti kip: `seien`; zaman değişmez.",
+          why: "İngilizce `they said the translations had been …` zaman kaydırması yapar; bu `wären gewesen` ya da `waren` diye taşınıyor. Almancada aktarımın işareti kip, geçmişi ise Partizip taşır: `gewesen seien`.",
         },
       },
     },
@@ -212,7 +213,7 @@ export const DE_B2_W05: QuizWeek = {
         "von der Nachbarschaft getragenes",
       ],
       answer: 3,
-      why: "Öbek uzun ama yapı tanıdık ('mahallenin sahip çıktığı kültür evi'). Tuzak ekte: `ein` + nötr isim yalın hâlde sıfata `-es` verir. `tragendes` ise etken anlam taşır ('taşıyan'); evi mahalle taşıyor, ev bir şey taşımıyor.",
+      why: "Öbek uzun ama yapı Türkçeden tanıdık ('mahallenin sahip çıktığı kültür evi'). Tuzak ekte: `ein` + nötr isim yalın hâlde sıfata `-es` verir. `tragendes` ise etken anlam taşır ('taşıyan'); evi mahalle taşıyor, ev bir şey taşımıyor.",
       targets: ["partizipialattribut.partizip2"],
       byNative: {
         en: {
@@ -249,7 +250,7 @@ export const DE_B2_W05: QuizWeek = {
       stem: "Die Übersetzungen waren fehlerhaft, ___ die Veröffentlichung verschoben werden musste.",
       options: ["damit", "um", "sodass", "obwohl"],
       answer: 2,
-      why: "Sonuç `sodass`, amaç `damit` ile. Yayının ertelenmesi hatanın sonucu, kimsenin amacı değil. Türkçe '-sın diye' ve 'bu yüzden' farklı olsa da ikisi de 'için' gibi algılandığı için `damit` seçiliyor.",
+      why: "Sonuç `sodass`, amaç `damit` ile. Yayının ertelenmesi hatanın sonucu, kimsenin amacı değil. Türkçe 'için' hem amaç ('-mek için') hem neden ('-dığı için') bildirdiğinden `damit` sonuç cümlesine de uyar sanılıyor.",
       targets: ["konnektor.sodass", "konnektor.damit", "passiv.modal"],
       byNative: {
         en: {
@@ -296,10 +297,10 @@ export const DE_B2_W05: QuizWeek = {
     {
       id: "de-b2-w05-v3",
       block: "vocab",
-      stem: "Für das Kulturhaus war der Plan des Investors reines ___.",
+      stem: "Für das Kulturhaus war der Plan des Investors reines ___, denn das Haus sollte abgerissen werden.",
       options: ["Geschenk", "Gift", "Glück", "Gewinn"],
       answer: 1,
-      why: "Mecazî anlamda bir şeye çok zarar veren şey `Gift`: 'zehir gibi'. `Geschenk` hediye, `Gewinn` kazanç; yazarın plana karşı olduğunu bilen okur olumsuz anlamı arıyor. İngilizceden `gift` = hediye bilgisi `Geschenk`i doğru gösteriyor.",
+      why: "Mecazî anlamda bir şeye çok zarar veren şey `Gift`: 'zehir gibi'. `Geschenk` hediye, `Gewinn` kazanç; cümlenin ikinci yarısı (evin yıkılacak olması) olumsuz bir anlam istiyor. İngilizceden `gift` = hediye bilgisi `Geschenk`i doğru gösteriyor.",
       targets: ["falschfreund.gift"],
       byNative: {
         en: {

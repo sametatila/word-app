@@ -14,10 +14,10 @@ import type { QuizWeek } from "../types";
  *    making of a decision"); İngilizce aynı resmîliği fiille verir. Türk
  *    öğrencide `-me/-ma` edilgen isimleştirmesi benzer bir ağırlık üretiyor.
  *  - `w01-g2` (`had checked`): Almanca `hätten … geprüft` koşul tarafında da kip
- *    taşıyor → `would have checked`; Türkçe `-seydik` tek ek.
+ *    taşıyor → `would have checked`; Türk öğrenci basit geçmişe (`checked`) kayıyor.
  *  - `w01-v1`/`v2` (`put off`, `turn out`): Türkçede karşılık yok, parçacık tahmin
  *    ediliyor; Almanca ayrılabilir önekler harfiyen eşleniyor.
- *  - `w01-v3` (`chef`): yalnız Almanca `Chef` = patron için sahte dost; Türkçe
+ *  - `w01-v3` (`chef`): Almanca `Chef` = patron için sahte dost; Türkçe
  *    'şef' de aynı yöne itiyor.
  */
 export const EN_B2_W01: QuizWeek = {
@@ -131,7 +131,7 @@ export const EN_B2_W01: QuizWeek = {
         "Mark's company forgot to place the order.",
         "Sophie's customers changed the delivery dates.",
         "The shipping costs have become too high.",
-        "A supplier has had problems with a machine for a week.",
+        "A supplier has had problems with a machine since last week.",
       ],
       answer: 3,
       why: "`has been having problems … since last week` present perfect continuous: sorun geçen hafta başladı ve hâlâ sürüyor. Nakliye masrafı sorunun nedeni değil, konuşmanın sonundaki telafi önerisi.",
@@ -191,7 +191,7 @@ export const EN_B2_W01: QuizWeek = {
       stem: "If we ___ their annual report, we would have seen the cost cuts.",
       options: ["checked", "had checked", "would have checked", "have checked"],
       answer: 1,
-      why: "Gerçekleşmemiş geçmiş koşulda `if` tarafı past perfect, sonuç tarafı `would have` alır. Türkçe `-seydik` koşulu ve kipi tek ekte taşıdığı için `would` iki tarafa birden konuyor ya da basit geçmişle (`checked`) ikinci tip koşula kayılıyor.",
+      why: "Gerçekleşmemiş geçmiş koşulda `if` tarafı past perfect, sonuç tarafı `would have` alır. Türkçe '-seydik' geçmişi ayrı bir yardımcıyla işaretlemediği için basit geçmiş (`checked`) yeterli görünüyor; ama o biçim ikinci tip koşulun, yani bugüne dair varsayımın biçimi.",
       targets: ["conditional.third"],
       byNative: {
         de: {
@@ -207,13 +207,13 @@ export const EN_B2_W01: QuizWeek = {
       stem: "We lost the client. Looking back, we ___ more carefully.",
       options: ["must have prepared", "should have prepared", "should prepare", "should prepared"],
       answer: 1,
-      why: "Geçmişte yapılmamış bir şey için eleştiri `should have` + fiilin üçüncü hâli ile kurulur. `must have prepared` bir çıkarım bildirir ('mutlaka hazırlanmışlardır'), eleştiri değil. Türkçe '-meliydik' tek ek; geçmiş anlamı `should`ya değil `have prepared`a yükleniyor.",
+      why: "Geçmişte yapılmamış bir şey için eleştiri `should have` + fiilin üçüncü hâli ile kurulur. `must have prepared` bir çıkarım bildirir ('mutlaka hazırlanmışızdır'), eleştiri değil. Türkçe '-meliydik' zamanı ve gerekliliği tek yüklemde birleştirdiği için İngilizcede geçmişin `should`ya değil `have prepared`a yüklendiği gözden kaçıyor.",
       targets: ["modal-perfect.should-have"],
       byNative: {
         de: {
-          options: ["should prepared", "should prepare", "must have prepared", "should have prepared"],
+          options: ["should have prepare", "should prepare", "must have prepared", "should have prepared"],
           answer: 3,
-          why: "Almanca `Wir hätten … vorbereiten sollen` sırasında modal fiil sonda; İngilizceye `should prepare` ya da `should prepared` diye taşınıyor. İngilizcede modal önde, geçmiş `have prepared` ile: `should have prepared`.",
+          why: "Almanca `Wir hätten … vorbereiten sollen` yapısında geçmiş ortaç yok, mastar var (Ersatzinfinitiv); bu yüzden İngilizcede de mastar korunuyor: `should prepare`, `should have prepare`. İngilizcede geçmiş `have` + üçüncü hâl ile kurulur: `should have prepared`.",
         },
       },
     },
@@ -229,7 +229,7 @@ export const EN_B2_W01: QuizWeek = {
         de: {
           options: ["who", "that", "which", "whom"],
           answer: 0,
-          why: "Almancada ilgi zamiri her ilgi cümlesinde aynı (`die`) ve virgül her zaman zorunlu, anlam ayırmıyor. İngilizcede virgüllü (tanımlamayan) ilgi cümlesinde `that` olmaz; kişi için `who`.",
+          why: "Almanca tanımlayan ve tanımlamayan ilgi cümlesini aynı zamirle (`die`) ve her zaman virgülle kurar; ayrım yapmaz. İngilizcede virgüllü (tanımlamayan) ilgi cümlesinde `that` olmaz; kişi için `who`.",
         },
       },
     },
@@ -255,7 +255,7 @@ export const EN_B2_W01: QuizWeek = {
             "A quick decision-making is needed by us.",
           ],
           answer: 1,
-          why: "Almancanın isimleştirme üslubu (`Die Entscheidungsfindung ist erforderlich`) İngilizceye taşınınca yapay cümleler çıkıyor. İngilizce aynı resmîliği fiille kurar: `We need to decide quickly`. B2'de en karakteristik aktarım hatası bu.",
+          why: "Almancanın isimleştirme üslubu (`Die Entscheidungsfindung ist erforderlich`) İngilizceye taşınınca yapay cümleler çıkıyor. İngilizce aynı resmîliği fiille kurar: `We need to decide quickly`. Bu, B2'de tipik bir aktarım hatası.",
         },
       },
     },
@@ -289,7 +289,7 @@ export const EN_B2_W01: QuizWeek = {
         de: {
           options: ["turned over", "turned out", "turned up", "turned off"],
           answer: 1,
-          why: "Almanca `sich herausstellen` ile anlam doğru seziliyor ama `auftauchen` ('ortaya çıkmak') → `turned up` aktarımı da yakın duruyor. `turn up` bir yere gelmek demek; sonradan anlaşılan durum `turn out to be`.",
+          why: "Almanca `sich herausstellen` anlamı doğru sezdiriyor; tuzak parçacıkta: `turn up` bir yere gelmek, `turn over` ters çevirmek. Sonradan anlaşılan durum `turn out to be`.",
         },
       },
     },

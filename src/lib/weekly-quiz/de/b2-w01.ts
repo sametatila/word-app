@@ -85,13 +85,13 @@ export const DE_B2_W01: QuizWeek = {
       ref: "t1",
       stem: "Warum will die Firma Berger die Preise erhöhen?",
       options: [
-        "Weil die Firma Scholz ihre Rechnungen zu spät bezahlt hat.",
+        "Weil sie selbst ihre Rechnungen zu spät bekommen hat.",
         "Weil ihre eigenen Kosten gestiegen sind.",
         "Weil der Vertrag um zwei Jahre verlängert werden soll.",
         "Weil die bestellten Mengen in den letzten Jahren gesunken sind.",
       ],
       answer: 1,
-      why: "Herr Lorenz'in gerekçesi Konjunktiv I ile aktarılıyor (`seien … gestiegen`, `könne … nicht halten`). Sözleşmeyi uzatmak onun önerisi, gerekçesi değil. Ödemeler ve sipariş miktarı ise karşı tarafın argümanı. Kimin konuştuğunu kip gösteriyor.",
+      why: "Herr Lorenz'in gerekçesi Konjunktiv I ile aktarılıyor (`seien … gestiegen`, `könne … nicht halten`). Sözleşmeyi uzatmak onun önerisi, gerekçesi değil. Ödemeler ve sipariş miktarı ise karşı tarafın argümanı ve o da kiple (`erhöht hätten`) aktarılıyor; kimin konuştuğunu kip ve özne birlikte gösteriyor.",
       targets: ["lesen.detail", "indirekte-rede.konjunktiv1"],
     },
     {
@@ -138,7 +138,7 @@ export const DE_B2_W01: QuizWeek = {
         "Er verbringt jeden Tag viel Zeit auf dem Weg zur Arbeit.",
       ],
       answer: 3,
-      why: "`Seit wir das neue Projekt haben` yalnız bir zaman işareti; asıl gerekçe yolda geçen süre (`fast zwei Stunden unterwegs`). `seit` yan cümlesini gerekçe sanınca proje sebep gibi duyuluyor.",
+      why: "Proje yolun uzamasının arka planı; Herr Brandt'ın evden çalışma gerekçesi ise yolda geçen süre (`fast zwei Stunden unterwegs`). Projeden söz edildiği için 'projede yalnız çalışıyor' gibi duyulmamış bir bilgiyi seçmek tuzak.",
       targets: ["hoeren.detail"],
     },
     {
@@ -176,7 +176,7 @@ export const DE_B2_W01: QuizWeek = {
     {
       id: "de-b2-w01-g1",
       block: "grammar",
-      stem: "Protokoll: Der Lieferant sagte, sein Unternehmen ___ die bisherigen Preise nicht halten.",
+      stem: "Der Lieferant: „Wir können die Preise nicht halten.“ → Protokoll: Der Lieferant sagte, sein Unternehmen ___ die Preise nicht halten.",
       options: ["kann", "könne", "konnte", "habe gekonnt"],
       answer: 1,
       why: "Tutanak ya da haber gibi resmî aktarımda başkasının sözü Konjunktiv I ile verilir: `es könne`. Türkçe `-miş` zaten 'söylendiğine göre' anlamı taşıdığı için Almancada geçmişe (`konnte`, `habe gekonnt`) çevrilmek isteniyor. Konjunktiv I ise zamanı değil kaynağı işaretler; söz şimdiki zamandaysa aktarımda da şimdiki zaman kalır.",
@@ -195,13 +195,13 @@ export const DE_B2_W01: QuizWeek = {
       stem: "Wenn wir das Angebot früher bekommen ___, hätten wir besser verhandeln können.",
       options: ["würden", "haben", "hätten", "wären"],
       answer: 2,
-      why: "Gerçekleşmemiş geçmiş koşul `hätte`/`wäre` + Partizip II ile kurulur ve `bekommen` `haben` alır. Türkçe `-seydi` koşulu ve geçmişi tek ekte taşıdığı için ya gerçek geçmiş (`haben`) ya da gelecek gibi duran `würden` seçiliyor.",
+      why: "Gerçekleşmemiş geçmiş koşul `hätte`/`wäre` + Partizip II ile kurulur ve `bekommen` `haben` alır. Türkçede gerçek dışılık ve geçmiş aynı fiil kümesinde toplanır ve ayrı bir yardımcı fiil yoktur ('alsaydık'); bu yüzden Almancada ya kip unutulup bildirme kipi (`haben`) ya da gelecek gibi duran `würden` seçiliyor.",
       targets: ["konjunktiv2.vergangenheit"],
       byNative: {
         en: {
-          options: ["haben", "hätten", "würden", "wären"],
+          options: ["hatten", "hätten", "würden", "wären"],
           answer: 1,
-          why: "İngilizce `if we had got` → `haben` (bildirme kipi) aktarımı. Almancada gerçek dışı geçmiş koşul tarafında da kip ister: `hätten`. İngilizce `would have`dan gelen `würden` ise koşul cümlesinde geçmişi karşılamaz.",
+          why: "İngilizce `if we had got` → `hatten` (bildirme kipinde Plusquamperfekt) aktarımı; `had` birebir `hatten` diye çevriliyor. Almancada gerçek dışı geçmiş koşul tarafında da kip ister: `hätten`. İngilizce `would have`dan gelen `würden` ise koşul cümlesinde geçmişi karşılamaz.",
         },
       },
     },

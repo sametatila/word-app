@@ -9,8 +9,8 @@ import type { QuizWeek } from "../types";
  * `nominalisierung.ung` (W1), `konnektor.obwohl` (W1), `passiv.perfekt` (W2).
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
- *  - `w03-g1` (`als wäre`): Türkçe 'sanki … gibi' bildirme kipiyle kurulduğu
- *    için Indikativ (`ist`, `war`) seçiliyor; İngilizce `as if she was`
+ *  - `w03-g1` (`als wäre`): Türkçede gerçek dışılığı fiil değil 'gibi' taşıdığı
+ *    için Almancada fiil düz bırakılıyor (`ist`, `war`); İngilizce `as if she was`
  *    aynı yanlışı başka yoldan üretiyor.
  *  - `w03-g3` (Partizip I): Türk öğrenciye '-en' ortacı tanıdık, tuzak etken
  *    (`wartend`) ile edilgen/bitmiş (`gewartet`) ortacın karışması ve ek;
@@ -56,7 +56,7 @@ export const DE_B2_W03: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Emma", text: "Und, wie hat dir das Stück gefallen?" },
-        { speaker: "Deniz", text: "Ehrlich gesagt war ich am Anfang misstrauisch. Ein Theaterstück in zwei Sprachen, ich dachte, das würde anstrengend." },
+        { speaker: "Deniz", text: "Ehrlich gesagt hatte ich am Anfang Zweifel. Ein Theaterstück in zwei Sprachen, ich dachte, das würde anstrengend werden." },
         { speaker: "Emma", text: "Mir ging es genauso. Aber die Übersetzungen über der Bühne haben ja gut funktioniert." },
         { speaker: "Deniz", text: "Die habe ich fast nie gelesen. Die Hälfte war Türkisch, das verstehe ich sowieso." },
         { speaker: "Emma", text: "Stimmt, du hattest einen Vorteil. Ich musste ständig nach oben schauen, sodass ich manche Szenen verpasst habe." },
@@ -126,13 +126,13 @@ export const DE_B2_W03: QuizWeek = {
       ref: "a1",
       stem: "Warum hat Emma einige Szenen verpasst?",
       options: [
-        "Sie war am Anfang so misstrauisch, dass sie nicht richtig zugehört hat.",
+        "Sie hatte am Anfang so viele Zweifel, dass sie nicht richtig zugehört hat.",
         "Ihr Platz war so weit hinten, dass sie die Bühne kaum sehen konnte.",
         "Sie musste ständig die Übersetzungen lesen.",
         "Das Stück war so lang, dass sie müde wurde.",
       ],
       answer: 2,
-      why: "`sodass` sonucu getiriyor: sürekli yukarıya, çevirilere bakmak → bazı sahneleri kaçırmak. Güvensizlik (`misstrauisch`) ikisinin de başlangıçtaki duygusu, sahne kaçırmanın nedeni değil. Sonuç bağlacından önceki cümle nedeni taşıyor.",
+      why: "`sodass` sonucu getiriyor: sürekli yukarıya, çevirilere bakmak → bazı sahneleri kaçırmak. Başlangıçtaki şüphe (`Zweifel`) ikisinin de duygusu, sahne kaçırmanın nedeni değil. Sonuç bağlacından önceki cümle nedeni taşıyor.",
       targets: ["hoeren.detail", "konnektor.sodass"],
     },
     {
@@ -173,13 +173,13 @@ export const DE_B2_W03: QuizWeek = {
       stem: "Sie sprach so, als ___ sie plötzlich eine andere Person.",
       options: ["ist", "wäre", "war", "würde"],
       answer: 1,
-      why: "`als` ile kurulan gerçek dışı karşılaştırmada ('sanki … gibi') çekimli fiil hemen `als`ın arkasına gelir ve Konjunktiv ister: `als wäre sie`. Türkçe 'sanki başka biriymiş gibi' bildirme kipiyle kurulduğu için `ist` ya da `war` seçiliyor. `würde` tek başına fiilsiz kalır.",
+      why: "`als` ile kurulan gerçek dışı karşılaştırmada ('sanki … gibi') çekimli fiil hemen `als`ın arkasına gelir ve Konjunktiv ister: `als wäre sie`. Türkçede gerçek dışılığı fiil değil 'gibi' sözcüğü taşıdığı için Almancada fiil düz bırakılıyor (`ist`, `war`). `würde` tek başına fiilsiz kalır.",
       targets: ["konjunktiv2.als-ob"],
       byNative: {
         en: {
           options: ["war", "würde", "wäre", "ist"],
           answer: 2,
-          why: "İngilizce `as if she was` → `war` aktarımı. Almancada `als`tan sonra fiil hemen gelir ve Konjunktiv II ister: `als wäre sie`. `würde` burada bir mastar olmadan eksik kalır.",
+          why: "İngilizce `as if she was` → `war` aktarımı. Almancada `als`tan sonra fiil hemen gelir ve Konjunktiv ister (II ya da I): `als wäre sie`. `würde` burada bir mastar olmadan eksik kalır.",
         },
       },
     },
@@ -187,9 +187,9 @@ export const DE_B2_W03: QuizWeek = {
       id: "de-b2-w03-g2",
       block: "grammar",
       stem: "___ der großen Nachfrage wird die Ausstellung bis Ende März verlängert.",
-      options: ["Obwohl", "Deshalb", "Wegen", "Trotz"],
+      options: ["Obwohl", "Weil", "Wegen", "Trotz"],
       answer: 2,
-      why: "Neden bir isim öbeğiyle verildiğinde Genitiv edatı gelir: `wegen der Nachfrage`. `obwohl` ve `deshalb` isim değil cümle bağlar; `trotz` da bir Genitiv edatı ama karşıtlık bildirir, oysa talep uzatmanın nedeni. Türkçe 'talep yüzünden' ile 'talep olduğu için' aynı şeyi söylese de Almancada biri edat, öteki bağlaç ister.",
+      why: "Neden bir isim öbeğiyle verildiğinde Genitiv edatı gelir: `wegen der Nachfrage`. `obwohl` ve `weil` isim değil yan cümle bağlar; `trotz` da bir Genitiv edatı ama karşıtlık bildirir, oysa talep uzatmanın nedeni. Türkçe 'talep yüzünden' ile 'talep olduğu için' aynı şeyi söylese de Almancada biri edat, öteki bağlaç ister.",
       targets: ["genitiv.praeposition", "konnektor.obwohl"],
       byNative: {
         en: {
@@ -209,9 +209,9 @@ export const DE_B2_W03: QuizWeek = {
       targets: ["partizipialattribut.partizip1"],
       byNative: {
         en: {
-          options: ["warteten", "wartende", "wartenden", "gewarteten"],
+          options: ["warteten", "wartend", "wartenden", "wartende"],
           answer: 2,
-          why: "İngilizce `the visitors waiting outside the museum` öbeği ismin arkasına koyar. Almancada öbek isimden önce durur ve sıfat gibi çekimlenir: `die … wartenden Besucher`. `warteten` çekimli bir fiil ve ancak bir ilgi cümlesinde (`die … warteten`) kullanılabilir.",
+          why: "İngilizce `the visitors waiting outside the museum` öbeği ismin arkasına koyar. Almancada öbek isimden önce durur ve sıfat gibi çekimlenir: `die … wartenden Besucher`. İngilizce ortaç ek almadığı için eksiz `wartend` kuruluyor; `warteten` ise çekimli bir fiil ve ancak bir ilgi cümlesinde (`die … warteten`) kullanılabilir.",
         },
       },
     },
@@ -219,13 +219,13 @@ export const DE_B2_W03: QuizWeek = {
       id: "de-b2-w03-g4",
       block: "grammar",
       stem: "Die Ausstellung ___ seit Montag wieder geöffnet.",
-      options: ["wird", "hat", "ist", "wurde"],
+      options: ["wird", "worden", "ist", "wurde"],
       answer: 2,
       why: "Bir işlemin sonucu olan durum `sein` + Partizip II ile anlatılır (Zustandspassiv): sergi açık. `wird geöffnet` açılma eylemini anlatır ve `seit` ile süren bir durumu karşılamaz. Türkçedeki 'açıldı' ile 'açık' ayrımı bunun karşılığı.",
       targets: ["passiv.zustand", "passiv.perfekt"],
       byNative: {
         en: {
-          options: ["ist", "wird", "hat", "wurde"],
+          options: ["ist", "wird", "worden", "wurde"],
           answer: 0,
           why: "İngilizce `is opened` hem eylemi hem durumu anlatabilir. Almancada ikisi ayrı: durum `ist geöffnet`, eylem `wird geöffnet`. `seit Montag` süren bir durumu işaret ediyor.",
         },
@@ -237,13 +237,13 @@ export const DE_B2_W03: QuizWeek = {
       stem: "Wenn ich die Ausstellung früher gesehen ___, hätte ich meine Großmutter mitgenommen.",
       options: ["würde", "habe", "wäre", "hätte"],
       answer: 3,
-      why: "Gerçekleşmemiş geçmiş koşul iki tarafta da Konjunktiv II ister ve `sehen` Perfekt'i `haben` ile kurar: `gesehen hätte`. Türkçe '-seydim' tek ek olduğu için koşul tarafında kip unutuluyor (`habe`) ya da `würde`ye kaçılıyor.",
+      why: "Gerçekleşmemiş geçmiş koşul iki tarafta da Konjunktiv II ister ve `sehen` Perfekt'i `haben` ile kurar: `gesehen hätte`. Türkçede gerçek dışılık ve geçmiş aynı fiil kümesinde toplandığı ve yardımcı fiil olmadığı için ('görseydim') koşul tarafında kip unutuluyor (`habe`) ya da `würde`ye kaçılıyor.",
       targets: ["konjunktiv2.vergangenheit"],
       byNative: {
         en: {
-          options: ["hätte", "habe", "würde", "wäre"],
+          options: ["hätte", "hatte", "würde", "wäre"],
           answer: 0,
-          why: "İngilizce `if I had seen` bildirme kipi gibi göründüğü için `habe` kuruluyor. Almancada koşul tarafı da Konjunktiv II ister: `gesehen hätte`.",
+          why: "İngilizce `if I had seen` → `hatte` (bildirme kipinde Plusquamperfekt) aktarımı; `had` birebir `hatte` diye çevriliyor. Almancada koşul tarafı da Konjunktiv II ister: `gesehen hätte`.",
         },
       },
     },
@@ -284,10 +284,10 @@ export const DE_B2_W03: QuizWeek = {
     {
       id: "de-b2-w03-v3",
       block: "vocab",
-      stem: "Die ___ der Fotos hat fast zwei Jahre gedauert.",
+      stem: "Die ___ enthält mehr als 3.000 Fotos von Familien.",
       options: ["Sammeln", "Sammlung", "Gesammelte", "Sammel"],
       answer: 1,
-      why: "Fiilden türeyen dişil isim `-ung` ile: `sammeln` → `die Sammlung`. `das Sammeln` nötr olduğu için `die` ile uyuşmaz. Türkçe '-me' eki her fiile eklendiği için mastar isim gibi kullanılıyor.",
+      why: "Toplama işinin sonucu olan bütün, yani 'koleksiyon' `die Sammlung`. `das Sammeln` toplama eyleminin kendisi ve nötr olduğu için `die` ile uyuşmaz; eylem fotoğraf 'içermez'. Türkçe '-me' eki her fiile eklendiği için mastar isim gibi kullanılıyor.",
       targets: ["nominalisierung.ung"],
       byNative: {
         en: {

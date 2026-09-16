@@ -12,7 +12,7 @@ import type { QuizWeek } from "../types";
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w05-g3` (`should have been pointed out`): Almanca `hätte … angesprochen
  *    werden sollen` sırası `should be`/`should had been` diye taşınıyor; Türkçe
- *    'belirtilmeliydi' tek ek.
+ *    'belirtilmeliydi' edilgeni ve gerekliliği tek yüklemde birleştiriyor.
  *  - `w05-g5` (fiil üslubu, özgeçmiş): Almanca özgeçmiş dilinin isim zinciri
  *    İngilizceye taşınıyor; dinleme parçası da aynı noktayı söylüyor, yani
  *    madde metinle konuşuyor.
@@ -33,18 +33,18 @@ export const EN_B2_W05: QuizWeek = {
       id: "t1",
       genre: "Online forum",
       genreTr: "Çevrimiçi forum",
-      title: "Our old bookstore is closing – should we have done more?",
+      title: "Our old book shop is closing – should we have done more?",
       body:
         "Posted by Clara_M\n\n" +
-        "I've just heard that Harper's, the bookstore on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
+        "I've just heard that Harper's, the book shop on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
         "I knew it had been having difficulties for a while, but I honestly hadn't realised how bad things were.\n\n" +
-        "According to the local paper, the family who run the shop are said to have tried everything: evenings with authors, a small café, even an online shop. " +
+        "The family who run the shop are said to have tried everything: evenings with authors, a small café, even an online shop. " +
         "Apparently none of it was enough. The building is going to be turned into offices for a software company, which, to be fair, will bring some jobs into the town centre.\n\n" +
         "What bothers me is that most of us must have seen this coming. How many times did we look at a book in Harper's and then order it online because it was two pounds cheaper? " +
         "I'm not blaming anyone, because I did it myself. But if more of us had bought our books there, the shop might still be open today.\n\n" +
         "I also think the town could have done something. Other towns have reduced taxes for independent shops, and it seems to have worked.\n\n" +
         "Reply from Dan_K\n\n" +
-        "I understand how you feel, but I'm not sure we should blame ourselves. Bookstores like Harper's have been closing all over the country, so it is probably a much bigger problem than one town's shopping habits. " +
+        "I understand how you feel, but I'm not sure we should blame ourselves. Book shops like Harper's have been closing all over the country, so it is probably a much bigger problem than one town's shopping habits. " +
         "That said, I agree about the town. The problem should at least have been pointed out at a public meeting before the building was sold.\n\n" +
         "The good news is that the family are apparently planning to open a smaller shop near the station. If they do, I'll definitely be buying my books there.",
     },
@@ -85,7 +85,7 @@ export const EN_B2_W05: QuizWeek = {
         "The town increased the taxes for small shops.",
       ],
       answer: 1,
-      why: "`it had been having difficulties for a while` past perfect continuous: kapanış haberinden önce süren bir zorluk. Yazılım şirketi binanın sonraki kullanıcısı; dükkânı çıkardığı söylenmiyor. Sonucu (yeni kiracı) sebep sanmak sık yapılan bir okuma hatası.",
+      why: "`it had been having difficulties for a while` past perfect continuous: kapanış haberinden önce süren bir zorluk. Yazılım şirketi binaya sonradan gelecek olan; dükkânı çıkardığı söylenmiyor. Sonucu (binanın yeni kullanımı) sebep sanmak sık yapılan bir okuma hatası.",
       targets: ["reading.detail", "tense.past-perfect-continuous"],
     },
     {
@@ -95,7 +95,7 @@ export const EN_B2_W05: QuizWeek = {
       stem: "What does Clara think about the people in her town?",
       options: [
         "They are completely to blame for the closing.",
-        "They didn't know that the shop existed.",
+        "They didn't know that the shop was there.",
         "They probably helped cause the problem by buying online.",
         "They tried very hard to save the shop.",
       ],
@@ -111,7 +111,7 @@ export const EN_B2_W05: QuizWeek = {
       options: [
         "The town should have done more.",
         "The people in the town are to blame.",
-        "The bookstore will definitely open again.",
+        "The book shop will definitely open again.",
         "The software company is bad for the town.",
       ],
       answer: 0,
@@ -179,7 +179,7 @@ export const EN_B2_W05: QuizWeek = {
         de: {
           options: ["have said", "say", "are said", "are saying"],
           answer: 2,
-          why: "Almanca `Die Familie soll alles versucht haben` modal fiille aktarır; İngilizcede bunun karşılığı `should` değil, edilgen bildirme kalıbı: `are said to have tried`.",
+          why: "Almanca `Man sagt, die Familie habe alles versucht` etken bir yapı ve `say`/`have said` kurduruyor. İngilizcede aile özne olunca kalıp edilgen: `are said to have tried`.",
         },
       },
     },
@@ -189,7 +189,7 @@ export const EN_B2_W05: QuizWeek = {
       stem: "If more of us had bought our books there, the shop ___ still open today.",
       options: ["might have been", "might be", "would have", "had been"],
       answer: 1,
-      why: "Koşul geçmişte, sonuç bugünde (`today`): karma koşul, sonuç tarafı `might/would be`. `might have been` sonucu da geçmişe taşır ve `today` ile çelişir. Türkçe '-seydik … açık olurdu' bu iki zamanı ayırmadığı için sonuç da geçmiş biçime çekiliyor.",
+      why: "Koşul geçmişte, sonuç bugünde (`today`): karma koşul, sonuç tarafı `might/would be`. `might have been` sonucu da geçmişe taşır ve `today` ile çelişir. Öğrenciyi geçmişe çeken `if` tarafındaki past perfect; sonuç tarafı ise `today` ile bugüne bağlı.",
       targets: ["conditional.mixed", "conditional.third"],
       byNative: {
         de: {
@@ -210,7 +210,7 @@ export const EN_B2_W05: QuizWeek = {
         "should had been pointed out",
       ],
       answer: 2,
-      why: "Geçmişe dönük eleştiri edilgen olunca üç parça gerekir: `should have been` + üçüncü hâl; deyimsel fiilin parçacığı da sonda kalır. Özne `the problem` belirtilen şey, belirten değil; `should have pointed out` onu etken yapar. Türkçe 'belirtilmeliydi' tek ekte birleşiyor.",
+      why: "Geçmişe dönük eleştiri edilgen olunca üç parça gerekir: `should have been` + üçüncü hâl; deyimsel fiilin parçacığı da sonda kalır. Özne `the problem` belirtilen şey, belirten değil; `should have pointed out` onu etken yapar. Türkçe 'belirtilmeliydi' edilgeni, gerekliliği ve geçmişi tek yüklemde birleştirdiği için İngilizcedeki üç parça ayrı ayrı görülmüyor.",
       targets: ["modal-perfect.should-have", "phrasal-verb.point-out"],
       byNative: {
         de: {
@@ -228,12 +228,12 @@ export const EN_B2_W05: QuizWeek = {
     {
       id: "en-b2-w05-g4",
       block: "grammar",
-      stem: "Which sentence tells you that there is only ONE bookstore in the town?",
+      stem: "Which sentence suggests that there is only ONE book shop in the town?",
       options: [
-        "The bookstore which is on Mill Street is closing.",
-        "The bookstore that is on Mill Street is closing.",
-        "The bookstore is on Mill Street which is closing.",
-        "The bookstore, which is on Mill Street, is closing.",
+        "The book shop which is on Mill Street is closing.",
+        "The book shop that is on Mill Street is closing.",
+        "The book shop is on Mill Street which is closing.",
+        "The book shop, which is on Mill Street, is closing.",
       ],
       answer: 3,
       why: "Virgüllü ilgi cümlesi yalnız ek bilgi verir: kasabada tek bir kitapçı var ve o da Mill Street'te. Virgülsüz ve `that`li cümleler kitapçıyı ötekilerden ayırır, yani başka kitapçılar da olabilir. Türkçe 'Mill Street'teki kitapçı' iki okumayı da taşıyor.",
@@ -241,10 +241,10 @@ export const EN_B2_W05: QuizWeek = {
       byNative: {
         de: {
           options: [
-            "The bookstore, which is on Mill Street, is closing.",
-            "The bookstore which is on Mill Street is closing.",
-            "The bookstore that is on Mill Street is closing.",
-            "The bookstore is on Mill Street which is closing.",
+            "The book shop, which is on Mill Street, is closing.",
+            "The book shop which is on Mill Street is closing.",
+            "The book shop that is on Mill Street is closing.",
+            "The book shop is on Mill Street which is closing.",
           ],
           answer: 0,
           why: "Almancada ilgi cümlesinden önce virgül her zaman zorunlu ve anlam ayırmaz. İngilizcede virgül, tek bir kitapçı ile birkaç kitapçıdan biri arasındaki farkı işaretliyor.",
@@ -305,9 +305,9 @@ export const EN_B2_W05: QuizWeek = {
       targets: ["falsefriend.sensible"],
       byNative: {
         de: {
-          options: ["sensibly", "sensible", "sensed", "sense"],
+          options: ["sensitive", "sensible", "reasonably", "sense"],
           answer: 1,
-          why: "Almanca `sensibel` 'hassas' demek ve bu yüzden `sensible` bu cümleye uymuyor gibi görünüyor. İngilizce `sensible` ise tam olarak 'mantıklı' (`vernünftig`); cümle bir sıfat bekliyor.",
+          why: "Almanca `sensibel` 'hassas' → `sensible` eşlemesi yüzünden 'mantıklı' için `sensible`den kaçılıp `sensitive` ya da zarf `reasonably` seçiliyor. İngilizce `sensible` tam olarak 'mantıklı' (`vernünftig`) ve cümle bir sıfat bekliyor; `sensitive` 'hassas'.",
         },
       },
     },
