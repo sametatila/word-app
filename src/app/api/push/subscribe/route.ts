@@ -131,7 +131,7 @@ export async function DELETE(req: Request) {
         .where(and(eq(pushSubscriptions.userId, userId), eq(pushSubscriptions.endpoint, endpoint)));
       return NextResponse.json({ ok: true });
     } catch (err) {
-      console.error("[push/subscribe] çıkış silmesi", err);
+      console.error("[push/subscribe] oturum kapatma silmesi", err);
       return NextResponse.json({ error: "database" }, { status: 500 });
     }
   }
