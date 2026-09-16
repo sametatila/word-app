@@ -29,7 +29,12 @@ export type DeepLinkAction =
    * yönlendiriyor). Android'de Apple girişinin dönüş yolu: token tek
    * kullanımlık ve 3 dakika yaşıyor, uygulama onu oturuma çeviriyor.
    */
-  | { kind: "auth-handoff"; token: string }
+  | {
+      kind: "auth-handoff";
+      token: string;
+      /** Cihaza bağlama değeri (bkz. lib/handoff); yoksa devir reddediliyor. */
+      nonce: string | null;
+    }
   /**
    * Paylaşılan profil — davet bağlantısının kendisi.
    *
@@ -49,8 +54,17 @@ export type DeepLinkAction =
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
 const HOSTS = new Set(["www.lernomi.app", "lernomi.app", "www.exfe.me", "exfe.me"]);
 
+/**
+ * Ana makine HAM adresten de denetleniyor. RN'in `URL`i düzenli ifadeyle
+ * çalışıyor ve `https://saldirgan.com/@www.lernomi.app/…` adresinde ana
+ * makineyi `www.lernomi.app` okuyor. Bağlantı yalnız doğrulanmış App Link
+ * olarak gelmiyor: `MainActivity` dışa açık, telefondaki herhangi bir
+ * uygulama ona açık bir `Intent` ile istediği adresi verebilir.
+ */
+const RAW_HOST = /^https:\/\/(?:www\.)?(?:lernomi\.app|exfe\.me)(?:[/?#]|$)/;
+
 export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
-  if (!raw) return null;
+  if (!raw || !RAW_HOST.test(raw)) return null;
   let url: URL;
   try {
     url = new URL(raw);
@@ -74,7 +88,7 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
       kullanıcıyı boş bir ekranda bırakırdı.
     */
     const ott = url.searchParams.get("ott");
-    return ott ? { kind: "auth-handoff", token: ott } : null;
+    return ott ? { kind: "auth-handoff", token: ott, nonce: url.searchParams.get("n") } : null;
   }
 
   if (url.pathname.startsWith("/u/")) {

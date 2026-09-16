@@ -46,5 +46,13 @@ export async function GET(req: Request) {
 
   const to = new URL("/auth/app", req.url);
   to.searchParams.set("ott", token);
+  /*
+    Bağlama değeri (bkz. api/handoff-nonce) olduğu gibi geçiyor; uygulama
+    yalnız kendi sakladığı değerle gelen devri kabul ediyor. Biçimi dar
+    tutuluyor ki adrese başka bir şey taşınamasın. Eski sürümler değer
+    göndermiyor, onlarda devir eskisi gibi çalışıyor.
+  */
+  const n = new URL(req.url).searchParams.get("n");
+  if (n && /^[A-Za-z0-9_-]{16,128}$/.test(n)) to.searchParams.set("n", n);
   return NextResponse.redirect(to);
 }

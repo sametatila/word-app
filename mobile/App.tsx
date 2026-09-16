@@ -23,6 +23,7 @@ import { flushPendingLessons, flushPendingPathItems } from "./src/game/lessonPro
 import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
+import { consumeHandoff } from "./src/lib/handoff";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
@@ -132,6 +133,12 @@ function Nav() {
         tarayıcıdan dönüyor ve uygulama bir an boş görünmemeli.
       */
       if (action.kind === "auth-handoff") {
+        /*
+          YALNIZ BU CİHAZIN BAŞLATTIĞI DEVİR. Bağlantı dışarıdan geliyor ve
+          jetonu kimin ürettiği adresten anlaşılmıyor: başkasının jetonu
+          uygulamayı sessizce o kişinin hesabına geçirirdi (bkz. lib/handoff).
+        */
+        if (!(await consumeHandoff(action.nonce))) return;
         setVerifying(true);
         await verifyOneTimeToken(action.token);
         await refresh();

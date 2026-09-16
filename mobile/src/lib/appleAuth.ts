@@ -4,6 +4,7 @@ import { signInAppleNative, updateUserName, sendAppleAuthorizationCode, signInSo
 import { API_BASE } from "../api/client";
 import { sameEmail, tokenEmail } from "./accountLinks";
 import { t } from "./i18n";
+import { beginHandoff } from "./handoff";
 import type { AuthOutcome } from "./auth";
 
 /**
@@ -151,7 +152,11 @@ export async function appleLink(expectEmail: string | null): Promise<AuthOutcome
  */
 export async function appleWebSignIn(): Promise<AuthOutcome> {
   try {
-    const url = await signInSocial("apple", `${API_BASE}/auth/handoff`);
+    /* Devir bu cihaza bağlanıyor (bkz. lib/handoff): değer alınamazsa giriş
+       başlatılmıyor, çünkü dönüşte uygulama bağlamasız devri kabul etmiyor. */
+    const nonce = await beginHandoff();
+    if (!nonce) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+    const url = await signInSocial("apple", `${API_BASE}/auth/handoff?n=${encodeURIComponent(nonce)}`);
     if (!url) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
     const can = await Linking.canOpenURL(url);
     if (!can) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
