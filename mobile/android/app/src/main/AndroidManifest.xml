@@ -113,5 +113,23 @@
            başlatmıyoruz (yalnız kanal + tetikleyici bildirim kullanıyoruz). Kullanılmayan
            bir FGS bileşeni Play tarafında gereksiz beyan ve inceleme sorusu demek. -->
       <service android:name="app.notifee.core.ForegroundService" tools:node="remove" />
+
+      <!-- Güvenlik sertleştirmesi (MobSF M2): notifee'nin dışa açık (exported) iki
+           bileşenini kapatıyoruz. İkisi de başka uygulamaya açık olmayı gerektirmiyor:
+
+           NotificationReceiverActivity'nin intent-filter'ı YOK; yalnız bizim kendi
+           PendingIntent'imizle (bildirim dokunuşu) aynı uygulama içinden açılıyor —
+           same-app başlatma exported=false ile de çalışır. Dışa açık kalması, başka
+           bir uygulamanın bu translucent aktiviteyi tetikleyebilmesi demekti.
+
+           AlarmPermissionBroadcastReceiver yalnız SCHEDULE_EXACT_ALARM izni değişince
+           (korumalı sistem yayını) tetikleniyor; ama biz exact-alarm kullanmıyoruz
+           (SCHEDULE_EXACT_ALARM yukarıda kaldırıldı), yani bu receiver zaten işlevsiz.
+           Tetikleyici bildirimlerin (trigger) ihtiyaç duyduğu NotificationAlarmReceiver
+           ve RebootBroadcastReceiver release manifest'te ZATEN exported=false, dokunulmuyor. -->
+      <activity android:name="app.notifee.core.NotificationReceiverActivity"
+        android:exported="false" tools:replace="android:exported" />
+      <receiver android:name="app.notifee.core.AlarmPermissionBroadcastReceiver"
+        android:exported="false" tools:replace="android:exported" />
     </application>
 </manifest>
