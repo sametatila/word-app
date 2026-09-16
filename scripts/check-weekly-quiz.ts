@@ -109,8 +109,46 @@ const ALWAYS_OK = new Set(
     "am", "is", "are", "was", "were", "do", "does", "did", "done",
     "a", "an", "the", "my", "your", "his", "her", "their", "our",
     "goes", "has", "says",
+    /*
+      DÜZENSİZ GEÇMİŞ ZAMAN. A2'nin teması geçmiş zaman anlatımı, yani bu
+      biçimler içerikte yoğun geçiyor ve hiçbiri gövde eşleşmesiyle
+      bulunamıyor (`go` → `went`). Sözcük listesi mastarı tutuyor; öğrenci
+      için de öğrenilecek şey zaten mastarın kendisi.
+    */
+    "went", "saw", "bought", "made", "got", "had", "took", "came", "gave",
+    "found", "left", "met", "read", "wrote", "spoke", "ate", "drank", "slept",
+    "rode", "paid", "sat", "stood", "knew", "thought", "brought", "began",
+    // kısaltmalar — apostrof korunuyor, biçimin tamamı burada
+    "don't", "doesn't", "didn't", "hasn't", "haven't", "isn't", "aren't",
+    "wasn't", "weren't", "can't", "won't", "i'm", "it's", "that's", "there's",
+    "don’t", "doesn’t", "didn’t", "hasn’t", "haven’t", "isn’t", "aren’t",
+    "woke", "swam", "rang", "said", "told", "ran", "won", "lost", "sent", "put",
+    // Almanca çekim artıkları: zamirler ve gövdesi değişen düzensiz biçimler
+    "mir", "dir", "ihm", "ihnen", "uns", "euch", "mich", "dich", "sich",
+    "vergisst", "nimmt", "gibt", "sieht", "liest", "spricht", "trifft", "fährt",
+    "läuft", "schläft", "isst", "hält", "trägt", "wäscht",
+    // sayı sözcükleri: listede yoklar ama içerikte kaçınılmazlar
+    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+    "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn",
+    // para birimi ve saat kalıbı — öğrenilecek sözcük değil
+    "euro", "euros", "pounds", "pound", "o'clock", "o’clock",
+    /*
+      SORU KÖKÜNÜN KENDİ SÖZCÜKLERİ. "Which sentence is correct?" gibi yönerge
+      cümleleri öğrenciye sorulan DİL değil, sorunun çerçevesi. Seviye bütçesine
+      girmeleri gerekmiyor; arayüz dilinde okunuyorlar.
+    */
+    "sentence", "correct", "which", "welcher", "satz", "richtig",
+    "person", "wem", "wen", "hatten", "elf", "zwölf",
+    // modal ve düzensiz gövdeler + kaynaşmış edatlar (von dem → vom)
+    "kann", "kannst", "könnt", "konnte", "tut", "tust", "ging", "gingen",
+    "muss", "musst", "müsst", "will", "willst", "wollt", "soll", "sollst",
+    "darf", "darfst", "mag", "magst", "weiß", "weißt",
+    "vom", "zum", "zur", "beim", "im", "ins", "ans", "aufs",
   ].map(fold),
 );
+
+/** `I've`, `we'll` gibi özne+yardımcı kısaltmaları — gövdesi zaten listede. */
+const CONTRACTION = /^(i|you|he|she|it|we|they)['’](m|s|re|ve|ll|d)$/i;
 
 /**
  * Gövde eşleşmesi: çekimli biçim listedeki bir sözcüğün başlangıcı mı.
@@ -120,24 +158,103 @@ const ALWAYS_OK = new Set(
  * çağırmak, doğru yazılmış bir cümleyi reddetmek değil.
  */
 function knownWord(raw: string, pool: Set<string>): boolean {
-  const token = fold(raw);
+  const token = fold(raw.toLocaleLowerCase("de-DE"));
   if (pool.has(token) || ALWAYS_OK.has(token)) return true;
+  if (CONTRACTION.test(raw)) return true;
   if (/^\d+$/.test(token)) return true;
   if (token.length < 3) return true; // tanımlık, edat, zamir artıkları
-  // Çoğul/çekim ekini soyarak birkaç gövde uzunluğu dene.
-  for (let cut = 1; cut <= 3 && token.length - cut >= 3; cut++) {
-    const stem = token.slice(0, token.length - cut);
-    for (const w of pool) if (w.startsWith(stem)) return true;
+
+  /*
+    ÇEKİM SOYMA. Sözcük listesi mastarı/yalın hâli tutuyor, metin çekimli
+    kullanıyor. Üç aile ayrı ayrı soyuluyor:
+      · Almanca ortaç: `gemacht` → `mach…`, `genommen` → `nomm…`
+      · üstünlük/sıfat eki: `billigsten` → `billig`
+      · İngilizce `-ing`: `going` → `go`, `getting` → `get` (ünsüz ikizlenmesi)
+    Hepsi GÖVDE eşleşmesine düşüyor; tam bir çözümleyici bu betiğin işi değil
+    ve gerekmiyor da — amaç yazarı bakmaya çağırmak.
+  */
+  const cands = new Set<string>([token]);
+  const ge = token.replace(/^ge/, "").replace(/(t|en)$/, "");
+  if (token.startsWith("ge") && ge.length >= 3) cands.add(ge);
+  /* Ayrılabilir fiilin ortacında `ge` ÖNEKTEN SONRA geliyor:
+     `aufstehen` → `aufgestanden`, `ankommen` → `angekommen`. */
+  const sep = token.match(/^(an|auf|ab|ein|aus|mit|vor|zu|nach|weg|her|hin)ge(.+?)(t|en)$/);
+  if (sep) {
+    cands.add(sep[1] + sep[2]);
+    cands.add(sep[2]);
+  }
+  const sup = token.replace(/(sten|ste|eren|er|es|em|en|e)$/, "");
+  if (sup.length >= 3) cands.add(sup);
+  if (token.endsWith("ing")) {
+    const ing = token.slice(0, -3);
+    if (ing.length >= 2) {
+      cands.add(ing);
+      // `getting` → `gett` → `get`: sondaki ikiz ünsüz teke iniyor.
+      if (ing.length >= 3 && ing.at(-1) === ing.at(-2)) cands.add(ing.slice(0, -1));
+      cands.add(`${ing}e`); // `making` → `make`
+    }
+  }
+
+  for (const c of cands) {
+    if (pool.has(c)) return true;
+    for (let cut = 0; cut <= 3 && c.length - cut >= 3; cut++) {
+      const stem = c.slice(0, c.length - cut);
+      for (const w of pool) if (w.startsWith(stem)) return true;
+    }
   }
   return false;
 }
 
+/**
+ * Metni sözcüklere ayırır — KESME İŞARETİNİ KORUYARAK.
+ *
+ * `don't` apostrofta bölünürse geriye `don` kalıyor ve o hiçbir listede yok:
+ * kontrol her kısaltmada yanlış alarm veriyordu. Kesme işareti sözcüğün parçası
+ * sayılıyor, kısaltmalar da listede.
+ *
+ * Büyük harf bilgisi KORUNUYOR çünkü özel adı ayırt eden tek ipucu o
+ * (bkz. `knownWord`).
+ */
 function tokens(s: string): string[] {
   return s
-    .toLocaleLowerCase("de-DE")
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/[^\p{L}\p{N}'’\s]/gu, " ")
     .split(/\s+/)
     .filter(Boolean);
+}
+
+/**
+ * Bir metin kümesindeki bütçe dışı sözcükler.
+ *
+ * ÖZEL AD SORUNU İKİ DİLDE AYRI ÇÖZÜLÜYOR ve bunun sebebi yazım kuralı:
+ *
+ *  - İNGİLİZCEDE büyük harf güvenilir bir işaret: büyük harfli bir sözcük özel
+ *    addır (Omar, Edinburgh, January, Spanish) ve öğrenilecek bir sözcük
+ *    değildir — atlanıyor. Tek istisna `I`. Cümle başı ayrıcalığı YOK, çünkü
+ *    şıklar cümle değil parça ("Jan's", "By bus") ve orada ilk sözcük de özel
+ *    ad olabiliyor. Takas: cümle başındaki seviye üstü bir sözcük kaçabilir;
+ *    karşılığında yazar her yeni ad için betiği düzenlemek zorunda kalmıyor.
+ *  - ALMANCADA bütün isimler büyük harfle yazılıyor, yani aynı işaret yok.
+ *    Orada özel adlar `ALWAYS_OK` listesinde tutuluyor; liste yavaş büyüyor
+ *    çünkü içerikteki ad sayısı az. Bu bilinçli bir takas: Almancada seviye
+ *    üstü bir ismi kaçırmamak için biraz elle bakım.
+ *
+ * Aynı sözcük bir maddede iki kez geçse bir kez uyarılıyor.
+ */
+function unknownWords(texts: string[], pool: Set<string>, course: "de" | "en", allowed: Set<string>): string[] {
+  const out = new Set<string>();
+  for (const text of texts) {
+    // Cümle başı bilgisi gerekiyor: nokta/ünlem/soru sonrası ilk sözcük.
+    for (const sentence of text.split(/[.!?]+/)) {
+      for (const raw of tokens(sentence)) {
+        const capitalized = raw[0] !== raw[0].toLocaleLowerCase("de-DE");
+        if (course === "en" && capitalized && raw !== "I") continue; // özel ad
+        const lower = raw.toLocaleLowerCase("de-DE");
+        if (allowed.has(lower)) continue; // haftanın kendi kişi adları
+        if (!knownWord(raw, pool)) out.add(lower);
+      }
+    }
+  }
+  return [...out];
 }
 
 /* ── Marka taraması ───────────────────────────────────────────────────── */
@@ -154,7 +271,7 @@ const seenItemIds = new Set<string>();
 /** Kurs+seviye → daha önceki haftalarda geçmiş hedefler (aralıklı tekrar için). */
 const targetsBefore = new Map<string, Set<string>>();
 
-function checkItem(week: QuizWeek, it: QuizItem, stimIds: Set<string>, pool: Set<string>): void {
+function checkItem(week: QuizWeek, it: QuizItem, stimIds: Set<string>, pool: Set<string>, allowed: Set<string>): void {
   const at = it.id;
 
   if (!new RegExp(`^${week.id}-[rlgv]\\d+$`).test(it.id)) {
@@ -197,9 +314,17 @@ function checkItem(week: QuizWeek, it: QuizItem, stimIds: Set<string>, pool: Set
   const blob = [it.stem, ...it.options, it.why].join(" ").toLocaleLowerCase("de-DE");
   for (const b of BRANDS) if (blob.includes(b)) err(at, `marka adı geçiyor: ${b}`);
 
-  // Sözcük bütçesi — hedef dildeki metinde (açıklama Türkçe, taranmıyor)
-  for (const t of tokens([it.stem, ...it.options].join(" "))) {
-    if (!knownWord(t, pool)) warn(at, `sözcük ${week.level} bütçesinde görünmüyor: "${t}"`);
+  /*
+    SÖZCÜK BÜTÇESİ — açıklama Türkçe olduğu için taranmıyor.
+
+    DİLBİLGİSİ MADDELERİNDE ŞIKLAR TARANMIYOR. O bloğun çeldiricileri bilerek
+    BOZUK biçimler (`habst`, `aufgestehen`, `is live`) — öğrencinin üreteceği
+    yanlışı temsil ediyorlar. Kelime listesine karşı denetlemek, maddenin
+    çalışmasını sağlayan şeyi kusur saymak olurdu. Kök cümle yine taranıyor.
+  */
+  const scan = it.block === "grammar" ? [it.stem] : [it.stem, ...it.options];
+  for (const t of unknownWords(scan, pool, week.course, allowed)) {
+    warn(at, `sözcük ${week.level} bütçesinde görünmüyor: "${t}"`);
   }
 }
 
@@ -231,7 +356,22 @@ function checkWeek(week: QuizWeek): void {
     err(week.id, "`personal` blok yazılmaz — çalışma anında SRS'ten üretiliyor");
   }
 
-  for (const it of week.items) checkItem(week, it, stimIds, pool);
+  /*
+    KİŞİ ADLARI HAFTANIN KENDİSİNDEN. Almancada bütün isimler büyük harfle
+    yazıldığı için büyük harf özel adı ayırt etmiyor (bkz. `unknownWords`).
+    Ama adlar zaten içerikte BİLDİRİLİYOR: dinleme parçasının `speaker`
+    alanları. Oradan toplanınca yazar her yeni ad için betiği düzenlemek
+    zorunda kalmıyor ve liste kendi kendini güncel tutuyor.
+  */
+  const allowed = new Set<string>();
+  for (const st of week.stimuli) {
+    if (st.kind !== "audio") continue;
+    for (const seg of st.segments) {
+      if (seg.speaker) allowed.add(seg.speaker.toLocaleLowerCase("de-DE"));
+    }
+  }
+
+  for (const it of week.items) checkItem(week, it, stimIds, pool, allowed);
 
   /* ÖLÇÜM SAĞLIĞI — doğru şık nerede duruyor.
      Hep aynı konumdaysa quiz'i çözmek için dili bilmek gerekmiyor. */
@@ -244,9 +384,13 @@ function checkWeek(week: QuizWeek): void {
   }
 
   /* Doğru şık sistematik olarak en uzunsa, uzunluk cevabı ele veriyor. */
+  /* Doğru şık en uzunla BERABERSE uzunluk hiçbir ipucu vermiyor — yalnız
+     tek başına en uzun olduğunda sayılıyor. İlk yazımda beraberlikler de
+     sayılıyordu ve ölçüt gerçekte olmayan bir kusuru bildiriyordu. */
   const longest = week.items.filter((it) => {
     const lens = it.options.map((o) => o.length);
-    return lens[it.answer] === Math.max(...lens) && new Set(lens).size > 1;
+    const max = Math.max(...lens);
+    return lens[it.answer] === max && lens.filter((l) => l === max).length === 1;
   }).length;
   const longestPct = Math.round((100 * longest) / week.items.length);
   if (longestPct > 70) err(week.id, `maddelerin %${longestPct}'inde doğru şık en uzun şık — uzunluk ipucu veriyor`);
