@@ -5,6 +5,15 @@ import { DE_A1_W03 } from "./de/a1-w03";
 import { DE_A1_W04 } from "./de/a1-w04";
 import { DE_A1_W05 } from "./de/a1-w05";
 import { DE_C1_W01 } from "./de/c1-w01";
+import { DE_C1_W02 } from "./de/c1-w02";
+import { DE_C1_W03 } from "./de/c1-w03";
+import { DE_C1_W04 } from "./de/c1-w04";
+import { DE_C1_W05 } from "./de/c1-w05";
+import { EN_C1_W01 } from "./en/c1-w01";
+import { EN_C1_W02 } from "./en/c1-w02";
+import { EN_C1_W03 } from "./en/c1-w03";
+import { EN_C1_W04 } from "./en/c1-w04";
+import { EN_C1_W05 } from "./en/c1-w05";
 import { EN_A1_W01 } from "./en/a1-w01";
 import { EN_A1_W02 } from "./en/a1-w02";
 import { EN_A1_W03 } from "./en/a1-w03";
@@ -48,6 +57,15 @@ export const QUIZ_WEEKS: QuizWeek[] = [
   DE_A1_W04,
   DE_A1_W05,
   DE_C1_W01,
+  DE_C1_W02,
+  DE_C1_W03,
+  DE_C1_W04,
+  DE_C1_W05,
+  EN_C1_W01,
+  EN_C1_W02,
+  EN_C1_W03,
+  EN_C1_W04,
+  EN_C1_W05,
   EN_A1_W01,
   EN_A1_W02,
   EN_A1_W03,

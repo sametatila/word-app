@@ -186,6 +186,19 @@ function knownWord(raw: string, pool: Set<string>): boolean {
   }
   const sup = token.replace(/(sten|ste|eren|er|es|em|en|e)$/, "");
   if (sup.length >= 3) cands.add(sup);
+  /*
+    İNGİLİZCE TÜRETME. Sözcük listesi kök biçimi tutuyor (`weak`, `afford`,
+    `test`); C1 metni türemişini kullanıyor (`weakness`, `unaffordable`,
+    `untested`). Önek ve son ek soyulunca gövde eşleşmesi kökü buluyor.
+    Üst seviyelerde uyarıların çoğu bu sınıftandı.
+  */
+  const pre = token.replace(/^(un|in|im|dis|over|under|re|non|mis)/, "");
+  if (pre.length >= 3 && pre !== token) cands.add(pre);
+  for (const base of [token, pre]) {
+    const suf = base.replace(/(ness|ability|ibility|ation|ition|ment|able|ible|ively|ive|ally|ally|ly|ity|ed|s)$/, "");
+    if (suf.length >= 3 && suf !== base) cands.add(suf);
+  }
+
   if (token.endsWith("ing")) {
     const ing = token.slice(0, -3);
     if (ing.length >= 2) {
@@ -414,13 +427,22 @@ function checkWeek(week: QuizWeek): void {
   }
 
   /* Doğru şık sistematik olarak en uzunsa, uzunluk cevabı ele veriyor. */
-  /* Doğru şık en uzunla BERABERSE uzunluk hiçbir ipucu vermiyor — yalnız
-     tek başına en uzun olduğunda sayılıyor. İlk yazımda beraberlikler de
-     sayılıyordu ve ölçüt gerçekte olmayan bir kusuru bildiriyordu. */
+  /*
+    UZUNLUK İPUCU — ÖLÇÜT İKİ KEZ İNCELTİLDİ.
+
+    1) Doğru şık en uzunla BERABERSE uzunluk hiçbir şey ele vermiyor; yalnız
+       tek başına en uzun olduğunda sayılıyor.
+    2) Tek başına en uzun olması da yetmiyor: farkın GÖRÜLEBİLİR olması
+       gerekiyor. Tam cümlelik şıklarda üç karakterlik fark kimseye ipucu
+       vermez, ama ilk ölçüt onu da sayıyordu ve C1 anlama maddelerinin
+       neredeyse tamamını işaretliyordu. Eşik ikinci en uzunun %20 üstü:
+       bu farkı sınav kurnazı bir öğrenci gerçekten kullanabilir.
+  */
   const longest = week.items.filter((it) => {
-    const lens = it.options.map((o) => o.length);
-    const max = Math.max(...lens);
-    return lens[it.answer] === max && lens.filter((l) => l === max).length === 1;
+    const lens = [...it.options.map((o) => o.length)];
+    const mine = lens[it.answer];
+    const others = lens.filter((_, i) => i !== it.answer);
+    return mine > Math.max(...others) * 1.2;
   }).length;
   const longestPct = Math.round((100 * longest) / week.items.length);
   if (longestPct > 70) err(week.id, `maddelerin %${longestPct}'inde doğru şık en uzun şık — uzunluk ipucu veriyor`);
