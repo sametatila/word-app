@@ -157,9 +157,9 @@ export const DE_B1_W01: QuizWeek = {
       ref: "a1",
       stem: "Was sagt Sara zu Davids Vorschlag?",
       options: [
-        "Sie findet ihn gut, geht aber selbst lieber samstags einkaufen.",
+        "Sie findet den Vorschlag gut, geht aber selbst lieber samstags einkaufen.",
         "Sie stimmt ihm ganz zu und ändert ihre Meinung.",
-        "Sie findet ihn schlecht und bleibt dagegen.",
+        "Sie findet den Vorschlag schlecht und bleibt dagegen.",
         "Sie möchte nicht mehr darüber sprechen.",
       ],
       answer: 0,
