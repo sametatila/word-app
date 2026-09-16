@@ -26,6 +26,26 @@ import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MI
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
 /**
+ * Yanıttaki `Set-Cookie` satırlarından verilen adlarla (ve parçalı
+ * `ad.0`… biçimleriyle) başlayanları çıkarır. Better Auth'un kendi
+ * `removeSetCookieEntries`i dışa açık değil; kancalar yerel bir kapsamda
+ * çalıştığı için hem o kapsamın hem de uç kapsamının başlıklarına bakılıyor.
+ * Çerezi `maxAge: 0` ile SİLMİYOR: istemcinin elindeki geçerli çerez kalmalı.
+ */
+function dropSessionSetCookies(ctx: { responseHeaders?: Headers; context: { responseHeaders?: Headers } }, names: string[]) {
+  const targets = new Set<Headers>();
+  if (ctx.responseHeaders) targets.add(ctx.responseHeaders);
+  if (ctx.context.responseHeaders) targets.add(ctx.context.responseHeaders);
+  for (const h of targets) {
+    const all = h.getSetCookie();
+    const keep = all.filter((entry) => !names.some((n) => entry.startsWith(`${n}=`) || entry.startsWith(`${n}.`)));
+    if (keep.length === all.length) continue;
+    h.delete("set-cookie");
+    for (const entry of keep) h.append("set-cookie", entry);
+  }
+}
+
+/**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
  * Postgres'imizde. Uçlar aynı (`/api/auth/sign-in/email`, `sign-up/email`,
  * `get-session`, `sign-out`, `sign-in/social`, `request-password-reset`) →
@@ -665,6 +685,38 @@ export const auth = betterAuth({
       */
       if (ctx.path === "/verify-email") {
         const fresh = ctx.context.newSession;
+        /*
+          DOĞRULAMA BAĞLANTISI VAR OLAN OTURUMU DEĞİŞTİRMEZ.
+
+          `autoSignInAfterVerification` bağlantıyı açanı bağlantının hesabına
+          sokuyor ve Better Auth bunu, açanın ZATEN başka bir hesapta oturumu
+          olsa da yapıyor (routes/email-verification.mjs: e-posta farklıysa
+          yeni oturum). Saldırı: saldırgan bir hesap açıp doğrulama bağlantısını
+          (30 dk geçerli) kurbana gönderir; kurban dokununca kendi hesabından
+          sessizce saldırganınkine geçer, yazdıkları ve konuşma kayıtları o
+          hesaba gider. Mobilde misafir kurbanın bütün ilerlemesi de yeni
+          hesaba birleşiyordu (yeni hesapta birleşme soru sormuyor).
+
+          Oturum açıkken ve bağlantı BAŞKA bir kimliğe aitse doğrulama yine
+          yapılıyor ama giriş yapılmıyor: açılan oturum siliniyor, yanıttaki
+          çerezler düşürülüyor, tarayıcı kendi çerezleriyle kalıyor. Misafir
+          de kapsamda: kendi yerinde yükseltmesi AYNI kimlik olduğu için
+          etkilenmiyor. Oturumsuz açılış eskisi gibi giriş yapıyor.
+
+          `ctx.context.session` uç içindeki `getSessionFromCtx`in çerezden
+          okuduğu ÖNCEKİ oturum; yeni oturum `newSession`da.
+        */
+        const prior = ctx.context.session;
+        if (fresh && prior && prior.user.id !== fresh.user.id) {
+          await ctx.context.internalAdapter.deleteSession(fresh.session.token);
+          dropSessionSetCookies(ctx, [
+            ctx.context.authCookies.sessionToken.name,
+            ctx.context.authCookies.sessionData.name,
+            ctx.context.authCookies.dontRememberToken.name,
+          ]);
+          ctx.context.setNewSession(null);
+          return;
+        }
         if (fresh && (fresh.user as { isAnonymous?: boolean | null }).isAnonymous === true) {
           const now = await ctx.context.internalAdapter.findUserById(fresh.user.id);
           if (now && (now as { isAnonymous?: boolean | null }).isAnonymous !== true) await setSessionCookie(ctx, { session: fresh.session, user: now });
