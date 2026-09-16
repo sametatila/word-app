@@ -1,0 +1,79 @@
+/**
+ * Cihaz deposunun temizliği: artık hiçbir kodun okumadığı anahtarlar ve
+ * süresi geçmiş yarım ders kayıtları.
+ *
+ * Mobil karşılığı `mobile/src/lib/storageMigration` `sweepDeviceStorage`.
+ */
+
+/** Yarım dersin saklandığı anahtarın öneki: `<önek>:<dersId>`. */
+export const LESSON_RESUME_KEY = "lernomi-lesson-progress";
+/** Yarım ders bu kadar gün sonra devam ettirilmiyor ve siliniyor. */
+export const LESSON_RESUME_DAYS = 3;
+
+/*
+  SAHİPSİZ ANAHTARLAR. Kodu silinmiş ama cihazlarda duran değerler: okuyan
+  yok, hiçbir zaman silinmeyecekler. Marka göçü (`app/layout` satır içi
+  betiği) eski `wortspiel*`/`nomi*` adlarını bunlara çeviriyor; o yüzden
+  liste yalnız `lernomi` adlarını sayıyor ve temizlik göçten SONRA çalışıyor.
+
+  Hangisinin neden gittiği git geçmişinde:
+    challenge-best/record  meydan okuma rekoru (2026-08-05, sunucuda)
+    chat-autoplay/handsfree serbest sohbet (2026-08-05, kaldırıldı)
+    game-mode              tek oyun modu seçimi (2026-09-09, kaldırıldı)
+    :session               yarım tur (2026-08-05, sunucuya taşındı)
+    skills-level/skill/tab beceri merkezi süzgeçleri (2026-08-28, sayfa kalktı)
+    mic-consent:v1         onay metni değişti, v2 yeniden soruyor (2026-09-14)
+
+  Yeni bir anahtar kaldırıldığında buraya eklenmeli: silinen kodun değeri
+  kendiliğinden gitmiyor.
+*/
+const DEAD_KEYS = [
+  "lernomi:challenge-best",
+  "lernomi:challenge-record",
+  "lernomi-chat-autoplay",
+  "lernomi-chat-handsfree",
+  "lernomi-game-mode",
+  "lernomi:session",
+  "lernomi-skills-level",
+  "lernomi-skills-skill",
+  "lernomi-skills-tab",
+  "lernomi:mic-consent:v1",
+];
+
+/**
+ * Temizliği yapar. Uygulama açılışında bir kez çağrılıyor; olmayan anahtarı
+ * silmek iş sayılmadığı için her açılışta çalışması zararsız.
+ *
+ * SÜRESİ GEÇMİŞ YARIM DERS. Ders oynatıcısı üç günden eski kaydı yok sayıyor
+ * ama silmiyordu: kullanıcının dönmediği her ders cihazda süresiz kalıyordu.
+ * Kayıt rol yapma turlarını, yani kullanıcının yazdığı konuşmanın metnini de
+ * taşıyor; sunucu aynı konuşmayı 30 günde siliyor (gizlilik politikası §9),
+ * cihazdaki kopyası hiç silinmiyordu.
+ */
+export function sweepDeviceStorage(): void {
+  let store: Storage;
+  try {
+    store = window.localStorage;
+  } catch {
+    return;
+  }
+  try {
+    for (const key of DEAD_KEYS) store.removeItem(key);
+    const cutoff = Date.now() - LESSON_RESUME_DAYS * 86400000;
+    const stale: string[] = [];
+    for (let i = 0; i < store.length; i++) {
+      const key = store.key(i);
+      if (!key || !key.startsWith(`${LESSON_RESUME_KEY}:`)) continue;
+      let at = 0;
+      try {
+        at = Number((JSON.parse(store.getItem(key) ?? "null") as { at?: unknown } | null)?.at) || 0;
+      } catch {
+        /* bozuk kayıt: okunamıyor, silinir */
+      }
+      if (at < cutoff) stale.push(key);
+    }
+    for (const key of stale) store.removeItem(key);
+  } catch {
+    /* depolama kapalı */
+  }
+}

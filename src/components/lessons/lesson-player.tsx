@@ -32,6 +32,7 @@ import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
 import { localDay } from "@/lib/day";
 import { flushPendingLessons, queueLessonResult } from "@/lib/lesson-queue";
+import { LESSON_RESUME_DAYS, LESSON_RESUME_KEY } from "@/lib/storage-hygiene";
 
 /**
  * Ders oynatıcısı — anlatım, konuşma pratiği, özet.
@@ -131,8 +132,8 @@ const PAUSE_MS = 2600;
  * adım sayacı kalıcı bir kayıt değil ve her adımda sunucuya yazmak akışa
  * bekleme eklerdi. Bedeli açık — başka cihazda devam edilemiyor.
  */
-const RESUME_KEY = "lernomi-lesson-progress";
-const RESUME_DAYS = 3;
+const RESUME_KEY = LESSON_RESUME_KEY;
+const RESUME_DAYS = LESSON_RESUME_DAYS;
 
 type Saved = {
   phase: Phase;

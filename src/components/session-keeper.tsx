@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { writeTzCookie } from "@/lib/tz-cookie";
 import { syncAvatarWithServer } from "@/lib/avatar";
+import { sweepDeviceStorage } from "@/lib/storage-hygiene";
 import { authApi } from "@/lib/auth/api";
 import { dropPushOnSignOut } from "@/lib/push-client";
 
@@ -183,6 +184,9 @@ export function SessionKeeper({ userId, avatar }: { userId: string; avatar: stri
     değeri duruyor. Gerekçenin tamamı `lib/tz-cookie`de.
   */
   useEffect(() => { writeTzCookie(); }, []);
+
+  /* Sahipsiz anahtarlar ve süresi geçmiş yarım dersler (bkz. lib/storage-hygiene). */
+  useEffect(() => { sweepDeviceStorage(); }, []);
 
   /*
     AVATAR EŞİTLEMESİ. Avatar artık hesabın: başka bir cihazda değiştirildiyse
