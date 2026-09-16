@@ -268,7 +268,7 @@ export const DE_B1_W01: QuizWeek = {
             "Wenn ist meine Tochter älter, wir sprechen noch einmal darüber.",
           ],
           answer: 2,
-          why: "Yan cümlede fiilin sonda olması Türkçeye benziyor ve genelde doğru kuruluyor. Tuzak ana cümle: Türkçede `kızım büyüyünce, biz yine konuşuruz` dizilişi doğal, ama Almancada yan cümle birinci konumu kapladığı için ana cümlenin fiili ikinci sırada, virgülün hemen arkasında olmalı.",
+          why: "Yan cümlede fiilin sonda olması Türkçeye benziyor, o kısım çoğu zaman zorlamıyor. Tuzak ana cümle: Türkçede `kızım büyüyünce, biz yine konuşuruz` dizilişi doğal, ama Almancada yan cümle birinci konumu kapladığı için ana cümlenin fiili ikinci sırada, virgülün hemen arkasında olmalı.",
         },
         en: {
           options: [

@@ -19,6 +19,7 @@
  * repoda; veritabanına bağlanmak CI'da hem yavaş hem kırılgan olurdu.
  */
 import { readFileSync } from "node:fs";
+import { CANDO } from "../src/lib/cando";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { QUIZ_PLAN, QUIZ_POOL_MIN, type QuizItem, type QuizWeek } from "../src/lib/weekly-quiz/types";
 
@@ -273,6 +274,7 @@ const BRANDS = [
 
 /* ── Denetim ──────────────────────────────────────────────────────────── */
 
+const CANDO_IDS = new Set(CANDO.map((c) => c.id));
 const seenWeekIds = new Set<string>();
 const seenItemIds = new Set<string>();
 /** Kurs+seviye → daha önceki haftalarda geçmiş hedefler (aralıklı tekrar için). */
@@ -360,6 +362,12 @@ function checkWeek(week: QuizWeek): void {
     err(week.id, "kimlik ile course/level/no alanları uyuşmuyor");
   }
   if (!week.canDo.length) err(week.id, "`canDo` boş");
+  /* Can-do kimlikleri UYDURULAMAZ. `lib/cando` kimlikleri kalıcı sözleşme;
+     olmayan bir kimlik sessizce geçerse haftanın neyi ölçtüğü yalan olur. */
+  for (const id of week.canDo) {
+    if (!CANDO_IDS.has(id)) err(week.id, `bilinmeyen can-do kimliği: ${id}`);
+    else if (!id.startsWith(`${week.level}.`)) warn(week.id, `can-do başka seviyeden: ${id}`);
+  }
 
   const stimIds = new Set(week.stimuli.map((s) => s.id));
   if (stimIds.size !== week.stimuli.length) err(week.id, "uyaran kimliği tekrar ediyor");
