@@ -30,6 +30,24 @@
 -dontwarn org.bouncycastle.**
 -dontwarn org.openjsse.**
 
+# Release'te android.util.Log çağrılarını tamamen çıkar (MobSF M4 — gizlilik/log sızıntısı).
+#
+# Konuşma modülü (LernomiSpeechModule/LernomiWalkService) yalnız operasyonel hata
+# mesajı logluyor ve içeriği zararsız (token/metin değil, en fazla "cookie var mı"
+# gibi boolean); yine de best-practice, ÜRETİM yapısında hiç log bırakmamak. R8
+# optimize açık (proguard-android-optimize.txt) olduğu için -assumenosideeffects
+# çağrıyı ve yan etkisiz argüman kurulumunu tümden atıyor; debug'da R8 koşmadığından
+# geliştirme logları aynen duruyor.
+-assumenosideeffects class android.util.Log {
+    public static *** v(...);
+    public static *** d(...);
+    public static *** i(...);
+    public static *** w(...);
+    public static *** e(...);
+    public static *** wtf(...);
+    public static boolean isLoggable(...);
+}
+
 # Fresco animasyonlu WebP çözücüsü (maskot animasyonları).
 #
 # ImagePipelineFactory çözücüyü REFLECTION ile kuruyor: sınıfı adıyla buluyor,
