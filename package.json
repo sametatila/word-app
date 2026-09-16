@@ -30,6 +30,7 @@
     "make:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/make-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
     "check:quiz": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-weekly-quiz.ts",
+    "test:quiz": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-quiz.ts",
     "test:legal": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal.ts",
     "test:exam-grade": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-exam-grade.ts",
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",

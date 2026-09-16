@@ -129,7 +129,13 @@ export type QuizNativeVariant = {
 export type QuizItem = {
   /** `<course>-<level>-w<NN>-<block><n>`, ör. `de-a1-w01-g2`. Kalıcı. */
   id: string;
-  block: Exclude<QuizBlock, "personal">;
+  /**
+   * Yazılı içerikte `personal` KULLANILMAZ — kontrol betiği reddediyor.
+   * Tipte açık kalmasının sebebi çalışma anında üretilen kişisel maddenin
+   * (bkz. `build.ts` `personalItem`) aynı biçimi taşıması: tek bir madde
+   * ortak puanlayıcının dışında kalsaydı bütün kurgu delinirdi.
+   */
+  block: QuizBlock;
   /** Hangi uyarana bağlı — `read`/`listen` maddelerinde zorunlu. */
   ref?: string;
   /** Sorunun kendisi. Hedef dilde. */

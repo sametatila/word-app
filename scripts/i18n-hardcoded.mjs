@@ -51,6 +51,13 @@ const SKIP = [
   "lib/lessons",
   "lib/skills/content",
   "lib/mock-exams",
+  /*
+    Haftalık quiz içeriği: `why`, `stem` ve şıklar öğrenciye gösterilen METİN
+    ama sözlükten gelmiyorlar — `lib/mock-exams` ve `lib/lessons` ile birebir
+    aynı durum. Türkçe yazılıp `data/**\/out/` hattıyla en/de'ye taşınıyorlar
+    (bkz. `lib/weekly-quiz/types.ts` dosya başı).
+  */
+  "lib/weekly-quiz",
   "lib/immersion/content",
   "lib/confusables.ts",
   "lib/cando.ts",
