@@ -93,7 +93,7 @@ export const DE_B1_W02: QuizWeek = {
       ref: "t1",
       stem: "Warum sind einige Leser nicht zufrieden?",
       options: [
-        "Die alte Bibliothek in ihrem Stadtteil wurde geschlossen.",
+        "Die alte Bibliothek im Stadtteil Nord wurde geschlossen.",
         "Die neue Bibliothek hat zu viel Geld gekostet.",
         "Es gibt keine Kurse für ältere Menschen.",
         "Die Bibliothek ist am Sonntag geöffnet.",
@@ -169,10 +169,10 @@ export const DE_B1_W02: QuizWeek = {
     {
       id: "de-b1-w02-g1",
       block: "grammar",
-      stem: "Das Gebäude ___ zwischen 2022 und 2024 gebaut.",
+      stem: "Die Bibliothek ist seit Samstag offen. Das Gebäude ___ in nur zwei Jahren gebaut.",
       options: ["wird", "hat", "wurde", "war"],
       answer: 2,
-      why: "Geçmişte yapılmış bir işlem Passiv Präteritum ile anlatılır: `werden`in geçmişi `wurde` + Partizip. `hat gebaut` etkendir ve inşa edeni özne ister; `war gebaut` bir işlemi değil bir DURUMU bildirir ve iki yıllık süreyle birleşmez.",
+      why: "Geçmişte yapılmış bir işlem Passiv Präteritum ile anlatılır: `werden`in geçmişi `wurde` + Partizip. `hat gebaut` etkendir ve inşa edeni özne ister; `wird gebaut` bitmiş bir inşaatı şimdiki zamana koyar; `war gebaut` ise bir işlemi değil bir DURUMU bildirir ve süren iki yıllık bir işle birleşmez.",
       targets: ["passiv.praeteritum"],
       byNative: {
         tr: {
@@ -191,13 +191,13 @@ export const DE_B1_W02: QuizWeek = {
       id: "de-b1-w02-g2",
       block: "grammar",
       stem: "Das Programm für Kinder wird ___ Studenten organisiert.",
-      options: ["mit", "durch", "bei", "von"],
+      options: ["mit", "aus", "bei", "von"],
       answer: 3,
-      why: "Edilgen cümlede işi yapan KİŞİ `von` + Dativ ile verilir. `mit` bir araç ya da birliktelik bildirir, `bei` bir yer ya da kurum; `durch` daha çok bir araç ya da süreç için kullanılır, düzenleyen kişiler için değil.",
+      why: "Edilgen cümlede işi yapan KİŞİ `von` + Dativ ile verilir. `mit` bir araç ya da birliktelik bildirir, `bei` bir yer ya da kurum, `aus` bir kaynak ya da malzeme; hiçbiri işi yapanı vermez.",
       targets: ["passiv.von", "passiv.praesens"],
       byNative: {
         en: {
-          options: ["mit", "durch", "bei", "von"],
+          options: ["mit", "aus", "bei", "von"],
           answer: 3,
           why: "İngilizcede yapan `by` ile gelir ve ses benzerliği `bei`i çağırıyor; ama `bei` bir yer ya da kurum bildirir (`bei der Stadt`). Edilgen cümlede işi yapan kişi `von` ile verilir.",
         },
@@ -239,7 +239,7 @@ export const DE_B1_W02: QuizWeek = {
       stem: "Einige Leser haben kritisiert, dass die alte Bibliothek ___.",
       options: ["wurde geschlossen", "geschlossen geworden", "hat geschlossen", "geschlossen wurde"],
       answer: 3,
-      why: "Yan cümlede çekimli fiil EN SONA gider; edilgen cümlede çekimli fiil `wurde` olduğu için Partizip ondan önce gelir. `geworden` edilgende kullanılmaz, `hat geschlossen` ise etken bir cümle.",
+      why: "Yan cümlede çekimli fiil EN SONA gider; edilgen cümlede çekimli fiil `wurde` olduğu için Partizip ondan önce gelir. `geworden` edilgende kullanılmaz. `hat geschlossen` iki yönden tutmuyor: etken bir cümle kuruyor ve çekimli fiil yine sonda değil.",
       targets: ["nebensatz.dass", "nebensatz.verbend", "passiv.praeteritum"],
       byNative: {
         en: {
@@ -282,7 +282,7 @@ export const DE_B1_W02: QuizWeek = {
       stem: "Die Zeitung ___ heute über die neue Bibliothek.",
       options: ["berichtet", "erzählt", "sagt", "spricht"],
       answer: 0,
-      why: "Bir haber organının bir olay hakkında bilgi vermesi `über etwas berichten`. `erzählen` kişisel bir anlatı ya da hikâyedir; `sagen` `über` ile birleşmez, `sprechen`in öznesi ise konuşan bir insandır, gazete değil.",
+      why: "Bir haber organının bir olay hakkında bilgi vermesi `über etwas berichten`. `erzählen` kişisel bir anlatı ya da hikâyedir; `sagt über` bir nesne olmadan eksik kalır (`sagt etwas über …`), `sprechen`in öznesi ise konuşan bir insandır, gazete değil.",
       targets: ["verb.berichten", "wortfeld.medien"],
     },
   ],

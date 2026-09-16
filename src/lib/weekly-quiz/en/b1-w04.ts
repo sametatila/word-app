@@ -255,7 +255,7 @@ export const EN_B1_W04: QuizWeek = {
         de: {
           options: ["who", "what", "which", "where"],
           answer: 2,
-          why: "Almancada `Läden, die Getränke verkaufen` ilgi zamiri `die` ve bu `who` gibi hissettiriyor. İngilizcede seçimi cinsiyet değil öncülün insan olup olmaması belirler: `shops` → `which`.",
+          why: "Almancada `Läden, die Getränke verkaufen` ilgi zamiri insan ile nesneyi ayırmıyor, o yüzden bu ölçüt İngilizcede yeni. Satış eylemi akla insanı getirince `who` seçiliyor; ama zamiri öncül belirler: `shops` → `which`.",
         },
       },
     },
@@ -276,7 +276,7 @@ export const EN_B1_W04: QuizWeek = {
       stem: "Shops want to ___ the number of plastic bags.",
       options: ["fall", "sink", "go down", "reduce"],
       answer: 3,
-      why: "Boşluktan sonra bir nesne var (`the number`), yani fiil geçişli olmalı: `reduce`. `fall`, `sink` ve `go down` geçişsizdir: bir şey kendiliğinden azalır, onu kimse `fall` edemez.",
+      why: "Boşluktan sonra bir nesne var (`the number`), yani fiil geçişli olmalı: `reduce`. `fall` ve `go down` geçişsizdir: sayı kendiliğinden azalır. `sink` ise geçişli olduğunda bir gemiyi batırmak gibi fiziksel bir anlam taşır, bir sayıyı nesne almaz.",
       targets: ["verb.reduce-fall"],
       byNative: {
         tr: {
@@ -287,7 +287,7 @@ export const EN_B1_W04: QuizWeek = {
         de: {
           options: ["fall", "sink", "go down", "reduce"],
           answer: 3,
-          why: "Almancada `sinken` ile `senken` iki benzer fiil ve `sink` akla ilk geleni. İngilizce `sink` suya batmak demek ve nesne almaz; bir sayıyı düşürmek `reduce`.",
+          why: "Almancada `sinken` ile `senken` iki benzer fiil ve `sink` akla ilk geleni. İngilizce `sink` bir sayıyı nesne olarak almaz; bir sayıyı düşürmek `reduce`.",
         },
       },
     },

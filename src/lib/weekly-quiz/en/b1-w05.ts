@@ -89,7 +89,7 @@ export const EN_B1_W05: QuizWeek = {
         "She canceled the first lesson.",
       ],
       answer: 1,
-      why: "Öğretmen hakkındaki her şey ilk paragrafta ve olumlu; `However` ikinci paragrafı, yani okulun organizasyonunu açıyor. İlk dersin iptali okula ait bir sorun. `who has worked as a photographer for 20 years` ilgi cümlesi de deneyimin az değil çok olduğunu söylüyor.",
+      why: "Öğretmen `Let's start with the good things` ile başlayan kısımda anlatılıyor ve orada her şey olumlu; `However` ile başlayan kısım okulun organizasyonunu anlatıyor. İlk dersin iptali okula ait bir sorun. `who has worked as a photographer for 20 years` ilgi cümlesi de deneyimin az değil çok olduğunu söylüyor.",
       targets: ["reading.opinion", "relative.who-which"],
     },
     {
@@ -151,7 +151,7 @@ export const EN_B1_W05: QuizWeek = {
         "on Friday",
       ],
       answer: 2,
-      why: "Üç zaman geçiyor ama yalnız biri kabul ediliyor. Yarın sabah önerildi ve Ruth `Tomorrow I'm at work` diyerek reddetti; pazartesi hiç kaydedilmemiş eski randevu. Bir teklifin kabul edilip edilmediğine cevaba bakarak karar vermek gerekiyor.",
+      why: "Birkaç zaman geçiyor ama yalnız biri kabul ediliyor. Yarın sabah önerildi ve Ruth `Tomorrow I'm at work` diyerek reddetti; pazartesi hiç kaydedilmemiş eski randevu. Bir teklifin kabul edilip edilmediğine cevaba bakarak karar vermek gerekiyor.",
       targets: ["listening.detail"],
     },
     {
@@ -287,16 +287,16 @@ export const EN_B1_W05: QuizWeek = {
     {
       id: "en-b1-w05-v2",
       block: "vocab",
-      stem: "Photography was my hobby, but it ___ my job when I started selling photos.",
-      options: ["got", "made", "became", "received"],
-      answer: 2,
-      why: "Bir şeyin başka bir şeye dönüşmesi `become`. `got` ve `received` bir şey almak demek; `made` ise `it made my job` diye bir iş yaratmak anlamına gelirdi.",
+      stem: "I ___ a letter from the university yesterday.",
+      options: ["got", "became", "made", "did"],
+      answer: 0,
+      why: "Size gönderilen bir şeyi almak `get`. `become` bir şey hâline gelmek demek ve nesnesi bir mektup olamaz; `made` ve `did` ise mektubu kişinin kendisinin yazdığını ya da yaptığını söylerdi.",
       targets: ["falsefriend.become"],
       byNative: {
         de: {
-          options: ["got", "made", "became", "received"],
-          answer: 2,
-          why: "`became` = wurde; Almanca `bekam` ise İngilizcede `got` ya da `received`. Hobinin işe DÖNÜŞMESİ `werden` anlamı taşıyor: `became`.",
+          options: ["got", "became", "made", "did"],
+          answer: 0,
+          why: "Almanca `Ich bekam einen Brief` → `I became a letter`: ses benzerliği tam burada tuzak. `become` = werden; `bekommen`in İngilizcesi `get`: `I got a letter`.",
         },
       },
     },

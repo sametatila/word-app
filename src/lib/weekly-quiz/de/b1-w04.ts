@@ -9,13 +9,13 @@ import type { QuizWeek } from "../types";
  * `trotz`/`obwohl` ayrımı, `während` + Genitiv.
  *
  * ARALIKLI TEKRAR: `w04-g1` W2'nin `passiv.praesens` hedefine modal fiille
- * dönüyor; `w04-g4` W3'ün `relativsatz.nominativ` hedefini, en yakın ismin
- * YANLIŞ öncül olduğu bir cümlede yokluyor; `w04-g2`/`w04-g5` W2'nin
+ * dönüyor; `w04-g4` W3'ün `relativsatz.nominativ` hedefini, cümle başındaki tekil
+ * ismin (`Verein`) YANLIŞ öncül olduğu bir cümlede yokluyor; `w04-g2`/`w04-g5` W2'nin
  * `genitiv.praeposition` hedefini başka iki edatla sınıyor.
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w04-g2` (`trotz`/`obwohl`): Türkçede `-e rağmen` hem isimle hem fiille
- *    aynı (`ilgiye rağmen`, `ilgi olmasına rağmen`); Almancada isim öbeği
+ *    aynı (`yağmura rağmen`, `yağmur yağmasına rağmen`); Almancada isim öbeği
  *    `trotz`, yan cümle `obwohl` ister. İngilizcede aynı ayrım
  *    (`despite`/`although`) zaten var, varyant gerekmiyor.
  *  - `w04-g1` (`verkauft werden`): İngilizce `be sold` → `sein`.
@@ -78,7 +78,7 @@ export const DE_B1_W04: QuizWeek = {
       stem: "Was war früher an diesem Ort?",
       options: ["ein Garten", "ein Parkplatz", "ein Spielplatz", "das Haus des Vereins"],
       answer: 1,
-      why: "`Auf einem alten Parkplatz, den niemand mehr benutzt hat` ilgi cümlesi yerin ESKİ hâlini anlatıyor; `wachsen jetzt` bugünü. Metnin başlığındaki `Garten` sözcüğü bugünkü duruma ait.",
+      why: "`Auf einem alten Parkplatz, den niemand mehr benutzt hat` ilgi cümlesi yerin ESKİ hâlini anlatıyor; `wachsen jetzt` bugünü. İlk cümledeki `Garten` sözcüğü bugünkü duruma ait.",
       targets: ["lesen.detail", "relativsatz.akkusativ"],
     },
     {
@@ -136,7 +136,7 @@ export const DE_B1_W04: QuizWeek = {
       options: [
         "Er ist ganz dagegen.",
         "Er ist dafür, wenn es gute Busse gibt.",
-        "Er möchte weiter ins Zentrum fahren.",
+        "Alle sollen weiter mit dem Auto ins Zentrum fahren dürfen.",
         "Er findet den Plan ohne Bedingung gut.",
       ],
       answer: 1,
@@ -179,16 +179,16 @@ export const DE_B1_W04: QuizWeek = {
     {
       id: "de-b1-w04-g2",
       block: "grammar",
-      stem: "___ des großen Interesses gibt es auch Probleme.",
-      options: ["Trotz", "Wegen", "Obwohl", "Während"],
+      stem: "___ des Regens sind viele Nachbarn zum Treffen gekommen.",
+      options: ["Trotz", "Wegen", "Obwohl", "Seit"],
       answer: 0,
-      why: "Beklentiye karşıt bir durum ve arkasından Genitiv bir isim öbeği geliyor: `trotz`. `obwohl` aynı anlamı taşır ama bir bağlaçtır ve arkasından fiili sonda bir yan cümle ister. `wegen` ise sebep bildirir, anlamı tersine çevirir.",
+      why: "Yağış insanların gelmesini beklenmedik kılıyor, yani beklentiye karşıt bir durum ve arkasından Genitiv bir isim öbeği geliyor: `trotz`. `obwohl` aynı anlamı taşır ama bir bağlaçtır ve fiili sonda bir yan cümle ister. `wegen` yağışı gelmenin SEBEBİ yapar; `seit` ise Dativ ister ve bir başlangıç noktası bildirir.",
       targets: ["genitiv.praeposition", "konnektor.obwohl-trotz"],
       byNative: {
         tr: {
-          options: ["Trotz", "Wegen", "Obwohl", "Während"],
+          options: ["Trotz", "Wegen", "Obwohl", "Seit"],
           answer: 0,
-          why: "Türkçede `-e rağmen` hem isimle hem fiille aynı kalıyor (`ilgiye rağmen`, `ilgi olmasına rağmen`). Almancada ikisi ayrı sözcük: isim öbeğinden önce `trotz` + Genitiv, fiilli bir yan cümleden önce `obwohl`.",
+          why: "Türkçede `-e rağmen` hem isimle hem fiille aynı kalıyor (`yağmura rağmen`, `yağmur yağmasına rağmen`). Almancada ikisi ayrı sözcük: isim öbeğinden önce `trotz` + Genitiv, fiilli bir yan cümleden önce `obwohl`.",
         },
       },
     },

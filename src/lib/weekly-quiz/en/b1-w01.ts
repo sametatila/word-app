@@ -37,9 +37,9 @@ export const EN_B1_W01: QuizWeek = {
       genreTr: "Görüş yazısı",
       title: "Should we all stop driving to work?",
       body:
-        "I have driven to work for almost 15 years. Last spring, my car stopped working, and for three weeks I had to take my bike. " +
+        "I drove to work for almost 15 years. Last spring, my car stopped working, and for three weeks I had to take my bike. " +
         "I expected to hate it. Actually, I loved it.\n\n" +
-        "Since then, I have used the car only at the weekend. I have saved a lot of money, and I feel healthier than I did five years ago. " +
+        "Since then, I have used the car only on weekends. I have saved a lot of money, and I feel healthier than I did five years ago. " +
         "My colleagues think I am crazy, especially in winter, but I don't agree with them.\n\n" +
         "I am not saying that everyone should sell their car. People who live far from the city or have small children often have no choice. " +
         "And I have to admit that the first cold morning in November was not much fun.\n\n" +
@@ -54,7 +54,7 @@ export const EN_B1_W01: QuizWeek = {
       genreTr: "Sohbet",
       plays: 2,
       segments: [
-        { speaker: "Maya", text: "Did you see the news? Our old school doesn't allow phones any more." },
+        { speaker: "Maya", text: "Did you see the news? Our old school doesn't allow phones anymore." },
         { speaker: "Tom", text: "Good. I think that's a great idea." },
         { speaker: "Maya", text: "Really? I'm not so sure. Lots of parents want to call their children after school." },
         { speaker: "Tom", text: "They can still do that. The phones just stay in a box during lessons." },
@@ -107,7 +107,7 @@ export const EN_B1_W01: QuizWeek = {
       stem: "What does the writer suggest to the readers?",
       options: [
         "to sell their car",
-        "to use the car only at the weekend",
+        "to use the car only on weekends",
         "to try the bike for a week if they live near work",
         "to write about their car",
       ],
@@ -181,14 +181,14 @@ export const EN_B1_W01: QuizWeek = {
         de: {
           options: ["has stopped", "is stopped", "stops", "stopped"],
           answer: 3,
-          why: "Almancada `Letzten Frühling hat mein Auto aufgehört` Perfekt'le kuruluyor, çünkü Perfekt geçmişin tamamını karşılıyor. İngilizcede `has stopped` biçimi belli bir geçmiş zamanla (`last spring`) birleşemez: past simple.",
+          why: "Almancada `Letzten Frühling hat mein Auto aufgehört zu funktionieren` Perfekt'le kuruluyor, çünkü Perfekt geçmişin tamamını karşılıyor. İngilizcede `has stopped` biçimi belli bir geçmiş zamanla (`last spring`) birleşemez: past simple.",
         },
       },
     },
     {
       id: "en-b1-w01-g2",
       block: "grammar",
-      stem: "Since then, I ___ the car only at the weekend.",
+      stem: "Since then, I ___ the car only on weekends.",
       options: ["use", "used", "have used", "am using"],
       answer: 2,
       why: "`Since then` geçmişte başlayıp BUGÜNE kadar süren bir dönemi ölçer ve present perfect ister. `used` dönemin bittiğini, `use` ve `am using` başlangıç noktası olmayan bir şimdiyi bildirir.",
@@ -218,7 +218,7 @@ export const EN_B1_W01: QuizWeek = {
         tr: {
           options: ["since", "for", "during", "from"],
           answer: 1,
-          why: "Türkçede `-dır` eki hem süreyi (`on beş yıldır`) hem başlangıcı (`2010'dan beri`) karşılayabiliyor. İngilizcede ikisi ayrı: süre `for`, başlangıç noktası `since`.",
+          why: "Türkçede süre (`on beş yıldır`) ile başlangıç (`2010'dan beri`) aynı `şimdiye kadar süren` anlamı taşıyor ve ikisi de `beri` diye öğrenilen `since`e çekiliyor. İngilizcede ikisi ayrı: süre `for`, başlangıç noktası `since`.",
         },
         de: {
           options: ["since", "for", "during", "from"],
@@ -234,7 +234,7 @@ export const EN_B1_W01: QuizWeek = {
       options: ["am not agree", "don't agree", "not agree", "am not agreeing"],
       answer: 1,
       why: "`agree` bir fiildir, sıfat değil: olumsuzu `do` yardımcısıyla kurulur. Görüş bildiren fiiller (agree, think, believe) genellikle continuous biçimde kullanılmaz.",
-      targets: ["verb.agree", "question.do-support"],
+      targets: ["verb.agree"],
       byNative: {
         tr: {
           options: ["am not agree", "don't agree", "not agree", "am not agreeing"],
@@ -251,16 +251,16 @@ export const EN_B1_W01: QuizWeek = {
     {
       id: "en-b1-w01-g5",
       block: "grammar",
-      stem: "When ___ you start going to work by bike?",
-      options: ["did", "have", "do", "were"],
+      stem: "When ___ cycling to work? – Last spring.",
+      options: ["did you start", "have you started", "do you start", "were you start"],
       answer: 0,
-      why: "`When` belli bir zamanı sorar, yani cevap bitmiş bir anı gösterecek: past simple. Present perfect zamanı sormaz; `When have you …?` kalıbı bu yüzden kurulmaz.",
+      why: "Cevap (`Last spring`) bitmiş, belli bir geçmiş an: soru past simple ile kurulur. Present perfect olayın ZAMANINI değil bugüne etkisini öne çıkarır, bu yüzden geçmişteki bir anı soran `when` ile birleşmez; `do you start` ise bir plan sorar.",
       targets: ["tense.past-vs-present-perfect", "past.did-question"],
       byNative: {
         de: {
-          options: ["did", "have", "do", "were"],
+          options: ["did you start", "have you started", "do you start", "were you start"],
           answer: 0,
-          why: "Almancada `Wann hast du angefangen?` Perfekt'le soruluyor ve `When have you started?` aktarımı geliyor. İngilizcede `when` belli bir geçmiş anı sorar ve present perfect ile birleşmez: `When did you start?`.",
+          why: "Almancada `Wann hast du angefangen?` Perfekt'le soruluyor ve `When have you started?` aktarımı geliyor. İngilizcede geçmişteki belli bir anı soran `when` present perfect ile birleşmez: `When did you start?`.",
         },
       },
     },
@@ -270,13 +270,13 @@ export const EN_B1_W01: QuizWeek = {
       id: "en-b1-w01-v1",
       block: "vocab",
       stem: "I expected to hate cycling. ___, I loved it.",
-      options: ["Actually", "Currently", "Eventually", "Recently"],
+      options: ["Actually", "Currently", "Lately", "Recently"],
       answer: 0,
-      why: "Beklentiyle çelişen gerçeği `Actually` getirir: `aslında`. `Currently` şu anda, `Recently` son zamanlarda, `Eventually` sonunda; hiçbiri beklenti ile gerçek arasında karşıtlık kurmaz.",
+      why: "Beklentiyle çelişen gerçeği `Actually` getirir: `aslında`. `Currently` şu anda, `Recently` ve `Lately` son zamanlarda; hiçbiri beklenti ile gerçek arasında karşıtlık kurmaz.",
       targets: ["falsefriend.actually"],
       byNative: {
         de: {
-          options: ["Actually", "Currently", "Eventually", "Recently"],
+          options: ["Actually", "Currently", "Lately", "Recently"],
           answer: 0,
           why: "`actually` Almanca `aktuell` DEĞİL — sahte dost. `actually` = eigentlich/tatsächlich; `aktuell` İngilizcede `currently` ya da `current`. Şıklarda ikisi yan yana duruyor.",
         },
@@ -288,7 +288,7 @@ export const EN_B1_W01: QuizWeek = {
       stem: "At first my colleagues laughed, but ___ two of them started cycling too.",
       options: ["possibly", "eventually", "probably", "currently"],
       answer: 1,
-      why: "`At first … but …` bir süreç anlatıyor ve boşluk onun sonunu işaret ediyor: `eventually` = zamanla, sonunda. `possibly` ve `probably` olasılık bildirir, olmuş bir olayı anlatan geçmiş zamanla uyuşmaz.",
+      why: "`At first … but …` bir süreç anlatıyor ve boşluk onun sonunu işaret ediyor: `eventually` = zamanla, sonunda. `possibly` ve `probably` sonucu belirsizleştirir; oysa `At first … but` kalıbı bilinen bir sonu bekliyor.",
       targets: ["falsefriend.eventually"],
       byNative: {
         de: {

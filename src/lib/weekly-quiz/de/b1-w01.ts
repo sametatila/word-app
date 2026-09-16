@@ -49,7 +49,7 @@ export const DE_B1_W01: QuizWeek = {
         "Ein einfaches Handy, mit dem man telefonieren und Nachrichten schreiben kann, reicht völlig. " +
         "Wenn meine Tochter älter ist, können wir noch einmal darüber sprechen. " +
         "Natürlich muss jede Familie selbst entscheiden, und ich verstehe auch Eltern, die ganz anders denken.\n\n" +
-        "Was würdet ihr an meiner Stelle machen? Ich bin auf eure Meinungen gespannt!",
+        "Was würdet ihr an meiner Stelle machen? Ich bin auf eure Meinungen gespannt!\n\nSandra",
     },
     {
       kind: "audio",
@@ -112,7 +112,7 @@ export const DE_B1_W01: QuizWeek = {
       options: [
         "Ihre Tochter hat jeden Tag gefragt.",
         "Alle Kinder in der Klasse haben ein Handy.",
-        "Sie konnte ihre Tochter einmal nicht erreichen.",
+        "Sie hat eine Stunde lang nicht gewusst, wo ihre Tochter war.",
         "Andere Eltern haben ihr einen Rat gegeben.",
       ],
       answer: 2,
@@ -149,7 +149,7 @@ export const DE_B1_W01: QuizWeek = {
       ],
       answer: 2,
       why: "Öneri Konjunktiv II ile geliyor: `Vielleicht wäre … ein guter Kompromiss`. `wäre` bir öneriyi yumuşatır, kesin bir planı bildirmez. Cumartesi alışverişi Sara'nın kendi tercihi, başka gün izin ise tartışmanın ortasında reddedilen bir fikir.",
-      targets: ["hoeren.detail", "konjunktiv2.wuerde"],
+      targets: ["hoeren.detail"],
     },
     {
       id: "de-b1-w01-l3",
@@ -306,7 +306,7 @@ export const DE_B1_W01: QuizWeek = {
       stem: "Du hast recht, ich bin ganz deiner ___.",
       options: ["Idee", "Gedanke", "Grund", "Meinung"],
       answer: 3,
-      why: "Katılmayı bildiren kalıp `jemandes Meinung sein`: sahiplik bildiren zamir (`deiner`) ve `sein` fiiliyle kurulur. `Idee` yeni bir düşünce ya da plan, `Grund` bir gerekçe; ikisi de bu kalıba girmez.",
+      why: "Katılmayı bildiren kalıp `jemandes Meinung sein`: sahiplik bildiren zamir (`deiner`) ve `sein` fiiliyle kurulur. `Idee` yeni bir düşünce ya da plan, `Gedanke` tek bir düşünce, `Grund` bir gerekçe; hiçbiri bu kalıba girmez.",
       targets: ["wortfeld.meinung"],
       byNative: {
         tr: {
@@ -319,16 +319,16 @@ export const DE_B1_W01: QuizWeek = {
     {
       id: "de-b1-w01-v2",
       block: "vocab",
-      stem: "Ich komme ___ etwas später, ich weiß es noch nicht genau.",
+      stem: "Ich komme ___ etwas später – oder vielleicht bin ich doch pünktlich.",
       options: ["eventuell", "endlich", "schließlich", "sicher"],
       answer: 0,
-      why: "Cümlenin ikinci yarısı belirsizlik bildiriyor, yani boşluğa bir olasılık sözcüğü gelmeli: `eventuell` = belki, muhtemelen. `endlich` ve `schließlich` sonunda demek, `sicher` ise kesinlik bildirir ve cümlenin geri kalanıyla çelişir.",
+      why: "Cümlenin ikinci yarısı geç kalmayı da açık bırakıyor (`oder vielleicht … pünktlich`), yani boşluğa bir olasılık sözcüğü gelmeli: `eventuell` = belki. `sicher` kesinlik bildirir, `endlich` ve `schließlich` ise geç kalmanın OLDUĞUNU söyler; üçü de dakik gelme ihtimaliyle çelişir.",
       targets: ["falsefriend.eventuell"],
       byNative: {
         en: {
           options: ["eventuell", "endlich", "schließlich", "sicher"],
           answer: 0,
-          why: "`eventuell` İngilizce `eventually` DEĞİL — sahte dost. `eventuell` = maybe/possibly; `eventually` Almancada `schließlich`. Şıklarda ikisi yan yana duruyor ve ikinci yarım cümle belirsizlik bildiriyor.",
+          why: "`eventuell` İngilizce `eventually` DEĞİL — sahte dost. `eventuell` = maybe/possibly; `eventually` Almancada `schließlich`. Şıklarda ikisi yan yana duruyor ve cümlenin ikinci yarısı dakik gelmeyi de mümkün sayıyor.",
         },
       },
     },
@@ -338,7 +338,7 @@ export const DE_B1_W01: QuizWeek = {
       stem: "Das ist ein gutes Argument. Da kann ich dir nur ___.",
       options: ["stimmen", "zustimmen", "bestimmen", "abstimmen"],
       answer: 1,
-      why: "Birine katılmak `jemandem zustimmen` (Dativ: `dir`). `stimmen`in öznesi kişi değil bilgidir (`Das stimmt`); `bestimmen` karar vermek, `abstimmen` oy vermek demek.",
+      why: "Birine katılmak `jemandem zustimmen` (Dativ: `dir`). `doğru olmak` anlamındaki `stimmen`in öznesi kişi değil bilgidir (`Das stimmt`) ve kişiyi Dativ'de almaz; `bestimmen` karar vermek, `abstimmen` oy vermek demek.",
       targets: ["verb.zustimmen", "wortfeld.meinung"],
     },
   ],

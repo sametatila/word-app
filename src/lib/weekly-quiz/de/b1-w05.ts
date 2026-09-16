@@ -43,7 +43,7 @@ export const DE_B1_W05: QuizWeek = {
       title: "Betreff: Heizung in Wohnung 3B",
       body:
         "Sehr geehrter Herr Wolf,\n\n" +
-        "ich schreibe Ihnen, weil die Heizung in unserer Wohnung seit zwei Wochen nicht richtig funktioniert. " +
+        "ich schreibe Ihnen als Mieter der Wohnung 3B, weil die Heizung in unserer Wohnung seit zwei Wochen nicht richtig funktioniert. " +
         "Am 3. November wurde sie von einem Handwerker kontrolliert, der uns gesagt hat, dass ein Teil bestellt werden muss. " +
         "Seitdem haben wir leider nichts mehr gehört. Ich habe Sie am 8. November auch angerufen, aber niemand hat mich zurückgerufen.\n\n" +
         "Wegen der kaputten Heizung können unsere Kinder nachts kaum schlafen, und meine Frau, die zu Hause arbeitet, " +
@@ -90,8 +90,8 @@ export const DE_B1_W05: QuizWeek = {
         "Die Familie hat eine neue Heizung bekommen.",
       ],
       answer: 1,
-      why: "`wurde … kontrolliert` edilgen geçmiş: yapılmış bir iş. `bestellt werden muss` ise yapılması GEREKEN bir şey ve yapıldığı hiçbir yerde söylenmiyor; `Seitdem … nichts mehr gehört` tam tersini gösteriyor. Modal fiilli edilgeni olmuş bir olay gibi okumak tuzak.",
-      targets: ["lesen.detail", "passiv.modal"],
+      why: "`wurde … kontrolliert` edilgen geçmiş: yapılmış bir iş. `bestellt werden muss` ise yapılması GEREKEN bir şey ve yapıldığı hiçbir yerde söylenmiyor; `Seitdem … nichts mehr gehört` da bir ilerleme olduğunu göstermiyor. Modal fiilli edilgeni olmuş bir olay gibi okumak tuzak.",
+      targets: ["lesen.detail", "passiv.modal", "passiv.praeteritum"],
     },
     {
       id: "de-b1-w05-r2",
@@ -221,7 +221,7 @@ export const DE_B1_W05: QuizWeek = {
         tr: {
           options: ["die kaputte Heizung", "der kaputten Heizung", "dem kaputten Heizung", "des kaputten Heizungs"],
           answer: 1,
-          why: "Türkçede `bozuk kalorifer yüzünden` edatı sona gelir ve isim değişmez. Almancada `wegen` önde durur ve arkasındaki öbeği Genitiv'e çeker; dişil isimde tanımlık `der` olur, bu da Nominativ'deki `der` ile aynı görünse de burada Genitiv.",
+          why: "Türkçede `bozuk kalorifer yüzünden` edatı sona gelir ve isim değişmez. Almancada `wegen` önde durur ve arkasındaki öbeği Genitiv'e çeker; dişil isimde tanımlık `der` olur, bu da Dativ'deki `der` ile aynı görünse de burada Genitiv.",
         },
       },
     },
@@ -247,7 +247,7 @@ export const DE_B1_W05: QuizWeek = {
             "Sie antworten mir bis Freitag.",
           ],
           answer: 1,
-          why: "Türkçede kibar rica `-abilir misiniz` ile şimdiki zamanda kurulur ve bu yeterince kibardır. Almanca resmî yazıda kibarlığı Konjunktiv II taşır: `Könnten Sie …?`. Noktasız `Konnten` ise geçmiş zaman.",
+          why: "Türkçede kibar rica `-abilir misiniz` ile geniş zamanda kurulur, fiilin kipi değişmez. Almanca resmî yazıda kibarlığı Konjunktiv II taşır: `Könnten Sie …?`. Noktasız `Konnten` geçmiş zaman; `bitte`siz emir kipi ise talimat gibi okunur.",
         },
         en: {
           options: [
@@ -282,10 +282,10 @@ export const DE_B1_W05: QuizWeek = {
     {
       id: "de-b1-w05-v1",
       block: "vocab",
-      stem: "Ich habe ___ am Freitag Zeit, aber ich muss noch meinen Chef fragen.",
+      stem: "Ich habe ___ am Freitag Zeit – das weiß ich erst morgen.",
       options: ["schließlich", "endlich", "eventuell", "sowieso"],
       answer: 2,
-      why: "Cümlenin ikinci yarısı sonucun henüz belli olmadığını söylüyor, yani boşluğa olasılık bildiren bir sözcük gelmeli. `sowieso` `zaten, her durumda` demek ve `aber` ile çelişir; `schließlich`/`endlich` sonunda.",
+      why: "Cümlenin ikinci yarısı sonucun henüz belli olmadığını söylüyor, yani boşluğa olasılık bildiren bir sözcük gelmeli. `sowieso` `zaten, her durumda`, `endlich` ve `schließlich` `sonunda` demek; üçü de vakti OLDUĞUNU kesinleştirir ve `erst morgen` ile çelişir.",
       targets: ["falsefriend.eventuell"],
       byNative: {
         en: {
@@ -322,7 +322,7 @@ export const DE_B1_W05: QuizWeek = {
       stem: "Die Frage, ob man von zu Hause arbeiten darf, ist gerade sehr ___.",
       options: ["aktuell", "eigentlich", "tatsächlich", "wirklich"],
       answer: 0,
-      why: "Bir konunun şu an gündemde olduğunu `aktuell` söyler. Öteki üçü cümle zarfıdır (`asında`, `gerçekten`) ve `ist sehr …` yapısında tek başına yüklem olamaz.",
+      why: "Bir konunun şu an gündemde olduğunu `aktuell` söyler. Öteki üçü burada `aslında`, `gerçekten` anlamında zarf ve `ist sehr …` yapısında yüklem olamaz.",
       targets: ["falsefriend.aktuell"],
       byNative: {
         en: {

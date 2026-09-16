@@ -61,7 +61,7 @@ export const EN_B1_W03: QuizWeek = {
       segments: [
         { speaker: "Nora", text: "Hi. I'm thinking about spending a year abroad, but I'm not sure it's worth it." },
         { speaker: "Advisor", text: "Well, students who study abroad often find jobs more quickly. What are you studying?" },
-        { speaker: "Nora", text: "Business. I've learned German for three years, so I'd like to go to Germany." },
+        { speaker: "Nora", text: "Business. I've been learning German for three years, so I'd like to go to Germany." },
         { speaker: "Advisor", text: "That's a good start. If your German is good enough, you can take normal courses there." },
         { speaker: "Nora", text: "And if it isn't?" },
         { speaker: "Advisor", text: "Then you'll do a language course first. That costs extra, but the university pays part of it." },
@@ -129,12 +129,12 @@ export const EN_B1_W03: QuizWeek = {
       stem: "Why does Nora want to go to Germany?",
       options: [
         "Her parents live there.",
-        "She has learned German for three years.",
+        "She has been learning German for three years.",
         "Business courses are cheaper there.",
         "The advisor told her it is the best country for business.",
       ],
       answer: 1,
-      why: "`I've learned German for three years, so I'd like to go to Germany`: `so` bir sonucu bağlar, sebep ondan ÖNCEKİ cümlede. Nora'nın ailesi yalnız para konusunda geçiyor.",
+      why: "`I've been learning German for three years, so I'd like to go to Germany`: `so` bir sonucu bağlar, sebep ondan ÖNCEKİ cümlede. Nora'nın ailesi yalnız para konusunda geçiyor.",
       targets: ["listening.detail", "present-perfect.since-for"],
     },
     {
@@ -223,7 +223,7 @@ export const EN_B1_W03: QuizWeek = {
         de: {
           options: ["which", "what", "who", "whose"],
           answer: 2,
-          why: "Almanca ilgi zamiri (`die`) insan ve nesne ayırmıyor, cinsiyet ayırıyor; `was` → `what` aktarımı da geliyor. İngilizcede seçimi öncülün insan olup olmaması belirler: insanlar için `who`.",
+          why: "Almanca ilgi zamiri (`die`) insan ve nesne ayırmıyor, cinsiyet ayırıyor; bu yüzden İngilizcedeki ölçüt yeni ve `which` her öncüle genelleniyor. İngilizcede seçimi öncülün insan olup olmaması belirler: insanlar için `who`.",
         },
       },
     },
@@ -277,7 +277,7 @@ export const EN_B1_W03: QuizWeek = {
       stem: "After her degree, she wants to ___ a teacher.",
       options: ["get", "become", "make", "receive"],
       answer: 1,
-      why: "Bir mesleğe girmek, bir şey hâline gelmek `become`. `get` ve `receive` bir şey almak ya da edinmek, `make` ise bir meslek adıyla bu anlamda kullanılmaz.",
+      why: "Bir mesleğe girmek, bir şey hâline gelmek `become`. `get` ve `receive` bir şey almak ya da edinmek; `make a good teacher` ise birinin iyi bir öğretmen olacağını söyler, bir mesleğe girmeyi değil.",
       targets: ["falsefriend.become"],
       byNative: {
         de: {
@@ -290,14 +290,14 @@ export const EN_B1_W03: QuizWeek = {
     {
       id: "en-b1-w03-v2",
       block: "vocab",
-      stem: "I can't ___ to study abroad without financial help.",
-      options: ["afford", "pay", "spend", "cost"],
+      stem: "I can't ___ a year abroad without financial help.",
+      options: ["afford", "pay", "buy", "cost"],
       answer: 0,
-      why: "Bir şeye paranın yetmesi `afford (to do)`. `pay` ve `spend` bir miktar ya da nesne ister ve `to` + fiil almaz; `cost`un öznesi insan değil, ücretli olan şeydir.",
+      why: "Bir şeye paranın yetmesi `afford`. `pay` bir şeyin karşılığını ödemek için `for` ister (`pay for a year abroad`), `buy` satın alınabilen bir nesneyle kullanılır; `cost`un öznesi insan değil, ücretli olan şeydir.",
       targets: ["wordfield.money"],
       byNative: {
         tr: {
-          options: ["afford", "pay", "spend", "cost"],
+          options: ["afford", "pay", "buy", "cost"],
           answer: 0,
           why: "Türkçede `yurt dışında okumayı karşılayamam` ya da `ödeyemem` deniyor ve `pay` seçiliyor. İngilizcede paranın bir şeye yetip yetmemesi ayrı bir fiille anlatılır: `can't afford to`.",
         },
@@ -309,13 +309,13 @@ export const EN_B1_W03: QuizWeek = {
       stem: "Is a year abroad really ___ it?",
       options: ["valuable", "useful", "worth", "important"],
       answer: 2,
-      why: "`be worth it` sabit bir kalıp: bir şeyin harcanan emeğe ya da paraya değmesi. `valuable`, `useful` ve `important` sıfattır ve arkalarından `it` nesnesini almazlar.",
+      why: "`be worth it` sabit bir kalıp: bir şeyin harcanan emeğe ya da paraya değmesi. `worth` arkasından bir nesne alan tek sözcük; `valuable`, `useful` ve `important` arkalarından `it` alamaz.",
       targets: ["wordfield.value"],
       byNative: {
         de: {
           options: ["valuable", "useful", "worth", "important"],
           answer: 2,
-          why: "Almanca `Lohnt es sich?` bir fiille kuruluyor ve İngilizcede bir sıfat aranıyor. Karşılığı sabit kalıp `be worth it`: sıfatların hiçbiri arkasından `it` almaz.",
+          why: "Almancada `Lohnt es sich?` bir fiille soruluyor, İngilizcede ise karşılığı olan bir fiil yok ve `useful`/`valuable` gibi sıfatlara kaçılıyor. Karşılığı sabit kalıp `be worth it`: öteki sözcüklerin hiçbiri arkasından `it` almaz.",
         },
       },
     },

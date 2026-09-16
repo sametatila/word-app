@@ -44,11 +44,11 @@ export const DE_B1_W03: QuizWeek = {
         "hatte ich das Gefühl, dass ich jeden Tag das Gleiche mache.\n\n" +
         "Eine Kollegin, die abends an der Universität studierte, hat mir dann von ihrem Studium erzählt. Ich war sofort interessiert. " +
         "Das Problem war das Geld: Wenn ich meine Stelle gekündigt hätte, hätte ich meine Wohnung nicht mehr bezahlen können. " +
-        "Deshalb arbeite ich jetzt nur noch drei Tage pro Woche und studiere an den anderen Tagen.\n\n" +
+        "Deshalb arbeite ich jetzt nur noch drei Tage pro Woche und besuche an zwei Abenden Kurse an der Uni.\n\n" +
         "Einfach ist das nicht. Die Kurse, die ich am Abend besuche, sind anstrengend, und für Freunde bleibt wenig Zeit. " +
         "Trotzdem finde ich meine Entscheidung richtig.\n\n" +
         "Allen, die auch über eine Veränderung nachdenken, möchte ich sagen: Sprecht mit Leuten, die diesen Weg schon gegangen sind. " +
-        "Und wartet nicht zu lange. Hätte ich früher angefangen, wäre ich heute schon fertig.",
+        "Und wartet nicht zu lange. Hätte ich früher angefangen, wäre ich heute schon fertig.\n\nJulia, 29",
     },
     {
       kind: "audio",
@@ -115,7 +115,7 @@ export const DE_B1_W03: QuizWeek = {
         "nur noch am Abend zu studieren",
       ],
       answer: 0,
-      why: "Tavsiye `ihr` emir kipiyle geliyor: `Sprecht mit Leuten, die …`. Yarım gün çalışmak ve akşam kursları yazarın KENDİ çözümü, başkalarına önerdiği şey değil. Anlatıdaki kişisel yolu genel bir öğütle karıştırmamak gerekiyor.",
+      why: "Tavsiye `ihr` emir kipiyle geliyor: `Sprecht mit Leuten, die …`. Haftada üç gün çalışmak ve akşam kursları yazarın KENDİ çözümü, başkalarına önerdiği şey değil. Anlatıdaki kişisel yolu genel bir öğütle karıştırmamak gerekiyor.",
       targets: ["lesen.meinung", "relativsatz.nominativ"],
     },
 
@@ -306,7 +306,7 @@ export const DE_B1_W03: QuizWeek = {
       stem: "Nach dem Studium möchte ich Lehrerin ___.",
       options: ["bekommen", "werden", "lernen", "machen"],
       answer: 1,
-      why: "Bir mesleğe girmek, bir şey hâline gelmek `werden`. `bekommen` bir şey almak demek; `lernen` bir meslekle değil bir beceriyle birleşir, `machen` ise meslek adıyla kurulmaz.",
+      why: "Bir mesleğe girmek, bir şey hâline gelmek `werden`. `bekommen` bir şey almak demek; `Koch lernen` gibi `lernen` + meslek adı yalnız çıraklıkla öğrenilen mesleklerde kullanılır ve bir eğitimi anlatır; burada sorulan eğitim değil mesleğe GİRMEK. `machen` ise meslek adıyla kurulmaz.",
       targets: ["verb.werden", "falsefriend.bekommen"],
       byNative: {
         en: {

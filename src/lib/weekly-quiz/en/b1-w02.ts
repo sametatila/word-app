@@ -49,7 +49,7 @@ export const EN_B1_W02: QuizWeek = {
         "Not everyone is happy. Some neighbors told reporters that they were worried about noise in the evenings. " +
         "Others said they would prefer a new cinema. " +
         "\"Young people in this town have nowhere to go,\" said Sara Malik, 17, who wrote to the mayor about the idea last year. " +
-        "\"This is the best news I have heard for a long time.\"\n\n" +
+        "\"This is the best news I have heard in a long time.\"\n\n" +
         "The city has promised to talk to the neighbors before the plans are finished.",
     },
     {
@@ -117,7 +117,7 @@ export const EN_B1_W02: QuizWeek = {
         "She thinks it is very good news.",
       ],
       answer: 3,
-      why: "Sara'nın görüşü tırnak içinde, kendi sözleriyle: `the best news I have heard for a long time`. Yeni sinema ve gürültü `Others`/`Some neighbors`a ait; komşularla konuşma sözünü ise şehir veriyor. Haberde her görüşün kime ait olduğunu izlemek gerekiyor.",
+      why: "Sara'nın görüşü tırnak içinde, kendi sözleriyle: `the best news I have heard in a long time`. Yeni sinema ve gürültü `Others`/`Some neighbors`a ait; komşularla konuşma sözünü ise şehir veriyor. Haberde her görüşün kime ait olduğunu izlemek gerekiyor.",
       targets: ["reading.opinion"],
     },
 
@@ -212,7 +212,7 @@ export const EN_B1_W02: QuizWeek = {
       stem: "A zoo worker said, \"We checked all the animals.\" → The worker said that they ___ all the animals.",
       options: ["checks", "had checked", "has checked", "is checking"],
       answer: 1,
-      why: "Aktarma fiili geçmişte (`said`) olunca aktarılan zaman bir basamak geriye kayar: past simple → past perfect. `has checked` ve `is checking` sözün söylendiği andan bugüne bakar, geçmişte söylenmiş bir sözü aktarmaz.",
+      why: "Aktarma fiili geçmişte (`said`) olunca aktarılan zaman genellikle bir basamak geriye kayar: past simple → past perfect. `has checked` ve `is checking` sözün söylendiği andan bugüne bakar, geçmişte söylenmiş bir sözü aktarmaz.",
       targets: ["reported.backshift"],
       byNative: {
         tr: {
@@ -277,13 +277,13 @@ export const EN_B1_W02: QuizWeek = {
       stem: "Many people only read the ___ and never the whole article.",
       options: ["channel", "program", "headline", "page"],
       answer: 2,
-      why: "Bir haberin tamamıyla karşılaştırılan kısa, büyük yazılmış satır `headline`. `channel` ve `program` televizyon ya da radyoya aittir ve okunmaz; `page` bir makaleden daha büyük bir birim.",
+      why: "Bir haberin tamamıyla karşılaştırılan kısa, büyük yazılmış satır `headline`. `channel` ve `program` televizyon ya da radyoya aittir ve okunmaz; `page` ise bir metin parçası değil, basılı bir yüzey.",
       targets: ["wordfield.media"],
     },
     {
       id: "en-b1-w02-v2",
       block: "vocab",
-      stem: "The photo looked real, but it was ___ taken two years ago.",
+      stem: "The photo looked new, but it was ___ taken two years ago.",
       options: ["actually", "currently", "recently", "eventually"],
       answer: 0,
       why: "Görünüşle çelişen gerçeği `actually` getirir: `but` karşıtlığı kuruyor. `currently` ve `recently` iki yıl önceki bir olayla çelişir; `eventually` bir sürecin sonunu bildirir.",
