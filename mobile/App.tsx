@@ -7,7 +7,7 @@ import { ThemeProvider, useTheme } from "./src/theme";
 import { AuthProvider, useAuth } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
-import { migrateLegacyKeys } from "./src/lib/storageMigration";
+import { migrateLegacyKeys, sweepDeadKeys } from "./src/lib/storageMigration";
 import { migrateReminderIds, notifPrimeNeeded } from "./src/lib/notifications";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
@@ -19,7 +19,7 @@ import { loadCoachSeen } from "./src/game/coachLines";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
-import { flushPendingLessons, flushPendingPathItems } from "./src/game/lessonProgress";
+import { flushPendingLessons, flushPendingPathItems, pruneLessonResumes } from "./src/game/lessonProgress";
 import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
@@ -218,6 +218,8 @@ function Nav() {
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
     migrateLegacyKeys()
+      // Göçten SONRA: eski adlar önce yeni adlara çevrilmiş olmalı (bkz. storageMigration).
+      .then(() => Promise.all([sweepDeadKeys(), pruneLessonResumes()]))
       .then(() => loadLang())
       // Anahtar göçünden SONRA (tercihler yeni önekten okunur) ve loadLang'den
       // SONRA (hatırlatma metni kullanıcının dilinde kurulsun).

@@ -295,6 +295,32 @@ export async function loadLessonResume(id: string): Promise<LessonResume | null>
   }
 }
 
+/**
+ * Süresi geçmiş yarım dersleri siler.
+ *
+ * `loadLessonResume` üç günden eski kaydı yok sayıyor ama silmiyordu: dönülmeyen
+ * her ders cihazda süresiz kalıyordu. Kayıt rol yapma fazında konuşmanın
+ * kendisini (`roleMsgs`, kullanıcının yazdıkları) taşıyor; sunucu aynı
+ * konuşmayı 30 günde siliyor (gizlilik politikası §9), cihazdaki kopya hiç
+ * gitmiyordu. Açılışta bir kez çağrılıyor.
+ */
+export async function pruneLessonResumes(): Promise<void> {
+  try {
+    const keys = (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(RESUME_PREFIX));
+    if (!keys.length) return;
+    const values = await AsyncStorage.getMany(keys);
+    const stale = keys.filter((k) => {
+      try {
+        const at = Number((JSON.parse(values[k] ?? "null") as { at?: unknown } | null)?.at) || 0;
+        return Date.now() - at > RESUME_TTL_MS;
+      } catch {
+        return true; // bozuk kayıt okunamıyor
+      }
+    });
+    if (stale.length) await AsyncStorage.removeMany(stale);
+  } catch { /* yut */ }
+}
+
 export async function clearLessonResume(id: string): Promise<void> {
   try { await AsyncStorage.removeItem(RESUME_PREFIX + id); } catch { /* yut */ }
 }

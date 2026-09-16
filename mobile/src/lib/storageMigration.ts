@@ -41,3 +41,28 @@ export async function migrateLegacyKeys(): Promise<void> {
     // sessiz
   }
 }
+
+/*
+  SAHİPSİZ ANAHTARLAR. Kodu silinmiş ama cihazlarda duran değerler; okuyan
+  yok, kendiliğinden hiç silinmeyecekler. Marka göçü eski adları bunlara
+  çeviriyor, o yüzden liste yalnız `lernomi` adlarını sayıyor ve temizlik
+  göçten SONRA çalışmalı. Web karşılığı `src/lib/storage-hygiene`.
+
+    lessons-done    bitirilen dersler (2026-08-30, `lernomi-items-done`e geçti)
+    mic-consent:v1  onay metni değişti, v2 yeniden soruyor (2026-09-14)
+
+  Yeni bir anahtar kaldırıldığında buraya eklenmeli.
+*/
+const DEAD_KEYS = ["lernomi-lessons-done", "lernomi:mic-consent:v1"];
+
+/**
+ * Artık okunmayan anahtarları siler. Olmayan anahtarı silmek iş sayılmadığı
+ * için her açılışta çalışması zararsız. Hata sessiz.
+ */
+export async function sweepDeadKeys(): Promise<void> {
+  try {
+    await AsyncStorage.removeMany(DEAD_KEYS);
+  } catch {
+    // sessiz
+  }
+}
