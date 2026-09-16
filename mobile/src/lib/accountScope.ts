@@ -11,7 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
  * MOBİLDE BU HİÇ YOKTU. `signOut()` sunucuya çıkış atıyor, itme jetonunu
  * siliyor, RevenueCat oturumunu ve bellekteki premium durumunu kapatıyor -
  * ama `AsyncStorage` olduğu gibi kalıyordu. Yani aynı telefonda A çıkıp B
- * girdiğinde B, A'nın avatarını, serisini, günün turu/haftalık önbelleğini,
+ * girdiğinde B, A'nın avatarını, bitirdiği öğeleri, bekleyen kuyruklarını,
  * yarım kalmış dersini ve deneme sınavı koşularını görüyordu. `AuthContext`in
  * kendi yorumu bu sorunu bellek katmanı için anlatıyor ("bir sonraki kullanıcı
  * öncekinin yetkisini görmesin"); bu, aynı sorunun KALICI katmanı.
@@ -25,8 +25,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-avatar", //             avatar aksesuarları
   "lernomi-voice", //              okuma sesi (webde de hesaba ait)
-  "lernomi-streak", //             seri önbelleği
-  "lernomi-weekly", //             haftalık sınav önbelleği
+  /* `lernomi-streak` ve `lernomi-weekly` burada DURMAZ: AsyncStorage anahtarı
+     değil, notifee bildirim kimlikleri (`notifications` ID_STREAK/ID_WEEKLY);
+     önek hiçbir anahtara uymuyordu. Bildirimler çıkışta `cancelLocalReminders`
+     ile kapanıyor. */
   "lernomi-items-done", //         bitirilen ünite öğeleri
   "lernomi-lesson-resume:", //     yarım kalmış ders
   "lernomi:mock-done", //          bitirilen deneme kâğıtları

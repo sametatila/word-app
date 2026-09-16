@@ -62,7 +62,6 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-skills",
   "lernomi-lesson-progress",
   "lernomi-draft-",
-  "lernomi-game",
   "lernomi-session-refreshed",
   // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
   // kişiye ait, ortak cihazda diğer hesaba görünmemeli.
@@ -77,8 +76,8 @@ const ACCOUNT_SCOPED_PREFIXES = [
     ilerliyor, XP'si şişiyordu. Aynı boşluk Android'de de vardı.
 
     Silmenin bedeli: A'nın o kayıtları KAYBOLUYOR. Yanlış hesaba yazmaktan
-    iyi, ve listedeki öteki yarım işler de (yarım tur `lernomi-game`, yarım
-    deneme koşusu) baştan beri aynı kuralla siliniyor.
+    iyi, ve listedeki öteki yarım işler de (yarım ders, yarım deneme koşusu)
+    aynı kuralla siliniyor.
   */
   "lernomi-answer-queue",
   "lernomi-lessons-pending",
