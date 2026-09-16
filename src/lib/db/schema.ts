@@ -234,7 +234,6 @@ export const profiles = pgTable("profiles", {
    * görsün ama yabancılara önerilmeyeyim" meşru bir istek.
    */
   username: text("username"),
-  bio: text("bio"),
   visibility: text("visibility").notNull().default("public"),
   allowRequests: boolean("allow_requests").notNull().default(true),
   showInSuggestions: boolean("show_in_suggestions").notNull().default(true),

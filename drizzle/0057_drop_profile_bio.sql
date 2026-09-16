@@ -1,0 +1,14 @@
+-- KISA TANITIM (bio) KALDIRILDI (2026-09-16, ürün sahibinin kararı).
+--
+-- Profildeki kısa tanıtım alanı iki platformdan da çıktı (074ea808); artık
+-- hiçbir kod bu sütunu okumuyor ya da yazmıyor. Canlıda şemayı deploy
+-- `drizzle-kit push --force` ile uyguladığı için sütun ilk deploy'da düşüyor;
+-- bu dosya boş veritabanından kurulumu (CI, yerel docker) aynı yere getiriyor.
+--
+-- SIRA ÖNEMLİ: kodun kaldırıldığı sürüm canlıya çıkmadan bu düşürülmemeli.
+-- Deploy şemayı ESKİ sürüm hâlâ hizmet verirken uyguluyor ve drizzle sütunları
+-- tek tek seçtiği için, sütunu erken düşürmek o pencerede profil uçlarını
+-- 500'e düşürürdü (schema-check'in kendi uyarısı da bunu söylüyor).
+--
+-- Yazılmış tanıtım metinleri bu adımda kalıcı olarak siliniyor.
+ALTER TABLE "profiles" DROP COLUMN IF EXISTS "bio";
