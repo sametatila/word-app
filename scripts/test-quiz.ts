@@ -59,7 +59,14 @@ check(
 );
 check("takvim indeksi havuzda dönüyor", quizForWeek("de", "A1", 7)?.no === 3, "(7 % 5 = 2 → 3. hafta)");
 check("negatif indeks de dönüyor", quizForWeek("de", "A1", -1)?.no === 5);
-check("olmayan seviye null", quizForWeek("de", "C1", 0) === null);
+/* Boş seviye DİNAMİK seçiliyor. Önce sabit "C1" yazılıydı ve C1 içeriği
+   gelince test kırıldı — içerik büyüdükçe kendini bozan bir ölçüt. */
+const emptyLevel = (["A1", "A2", "B1", "B2", "C1"] as const).find((l) => quizWeeksFor("de", l).length === 0);
+check(
+  "içeriği olmayan seviye null dönüyor",
+  emptyLevel ? quizForWeek("de", emptyLevel, 0) === null : true,
+  emptyLevel ? "" : "(her seviyede içerik var, atlandı)",
+);
 
 console.log("\nSeçim");
 const week = deA1[0];
