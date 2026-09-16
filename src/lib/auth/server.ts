@@ -449,6 +449,23 @@ export const auth = betterAuth({
     // Çapraz-köken gezinmelerde (e-posta/bildirim bağlantısı) çerez gitsin diye lax.
     defaultCookieAttributes: { sameSite: "lax" },
     ipAddress: { ipAddressHeaders: ["x-real-ip"] },
+    /*
+      Apple ile Giriş (web), e-posta paylaşımı istendiğinde geri dönüşü CROSS-SITE
+      POST (`response_mode=form_post`) ile yapıyor. SameSite=Lax bir çerez cross-site
+      POST'ta GÖNDERİLMEZ, bu yüzden OAuth `state`/`oauth_state` çerezleri callback'e
+      ulaşmıyor ve better-auth "state_mismatch" veriyor (state.mjs: "auth state cookie
+      not found"). Google GET-redirect ile döndüğü için Lax'ta sorunsuz.
+
+      Çözüm: YALNIZ OAuth-akış çerezlerini None+Secure yap. Oturum çerezi (session_token
+      /session_data) Lax kalır — CSRF derinlemesine-savunması korunur; ayrıca state-değiştiren
+      uçlarda sameOrigin() Origin kontrolü zaten var. None+Secure çerez HTTPS'te (ve
+      localhost güvenli-bağlamında) çalışır, Google akışını da bozmaz (None her yere gider).
+      `advanced.cookies[isim].attributes` çerez birleşiminde en yüksek önceliklidir.
+    */
+    cookies: {
+      state: { attributes: { sameSite: "none", secure: true } },
+      oauth_state: { attributes: { sameSite: "none", secure: true } },
+    },
   },
   /**
    * Bot koruması. Liste anahtarlar tanımlıyken TEK eleman, tanımsızken BOŞ —
