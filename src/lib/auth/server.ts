@@ -128,6 +128,10 @@ export const auth = betterAuth({
     BASE_URL,
     "https://lernomi.app", "https://www.lernomi.app",
     "https://exfe.me", "https://www.exfe.me",
+    // Apple ile Giriş (web): e-posta paylaşımında callback https://appleid.apple.com'dan
+    // form_post (cross-site POST) ile geliyor; Origin denetiminden geçmesi için güvenilir
+    // sayılmalı, yoksa better-auth INVALID_ORIGIN döner. Yalnız Apple'ın kendi kökeni.
+    "https://appleid.apple.com",
   ],
   /*
     ŞEMA HARİTASI EKLENTİLERİ DE KAPSAMALI. Buradaki liste better-auth'un
