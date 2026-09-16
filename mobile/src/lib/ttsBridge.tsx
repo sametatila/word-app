@@ -24,6 +24,17 @@ let ready = false;
 let healthy = true; // ses hataları (çerez/ağ) üst üste gelirse cihaz TTS'ine düş
 let errors = 0;
 
+/**
+ * Adres API ile aynı kökende mi.
+ *
+ * `URL` ile ayrıştırılmıyor: RN'in `URL`i düzenli ifadeyle çalışıyor ve
+ * `https://saldirgan.com/@www.lernomi.app/` gibi bir adreste ana makineyi
+ * `www.lernomi.app` okuyor. Sondaki "/" ile kesin önek bu tuzağa düşmüyor.
+ */
+function sameOriginAsApi(raw: string): boolean {
+  return raw === API_BASE || raw.startsWith(`${API_BASE}/`);
+}
+
 export function bridgeReady(): boolean {
   return ready && healthy && viewRef !== null;
 }
@@ -193,7 +204,11 @@ export function TtsBridge() {
         // başka bir kökene götürüp çerezi sızdırmasın. Yalnız NAVİGASYONU gate eder
         // (fetch/ses gibi alt-kaynaklar etkilenmez). thirdPartyCookies de kaldırıldı:
         // birinci-taraf sayfa için gereksiz.
-        onShouldStartLoadWithRequest={(req) => req.url.startsWith(API_BASE) || req.url.startsWith("about:")}
+        //
+        // KÖKEN KARŞILAŞTIRILIYOR, ÖNEK DEĞİL. `startsWith(API_BASE)` sonuna "/"
+        // konmamış bir adresi kıyaslıyordu: `https://www.lernomi.app.saldirgan.com`
+        // de `https://www.lernomi.app` ile başlıyor ve kilitten geçiyordu.
+        onShouldStartLoadWithRequest={(req) => req.url.startsWith("about:") || sameOriginAsApi(req.url)}
         javaScriptEnabled
         domStorageEnabled
         mediaPlaybackRequiresUserAction={false}
