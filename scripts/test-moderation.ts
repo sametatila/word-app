@@ -2,9 +2,7 @@
  * Moderasyon süzgeci testi — güvenlik denetimi #3 (ReDoS) düzeltmesinin
  * regresyon koruması.
  *
- * Çalıştır:  npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-moderation.ts
- * (package.json kirli olduğu için script olarak eklenmedi; istenirse
- *  "test:moderation": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-moderation.ts")
+ * Çalıştır:  npm run test:moderation  (CI'da "Birim testleri" adımında)
  *
  * İki şeyi kanıtlar:
  *  1) TESPİT PARİTESİ — sınırlı-nicelik regex'i eskisiyle aynı şeyleri yakalıyor

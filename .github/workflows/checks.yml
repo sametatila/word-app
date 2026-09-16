@@ -372,6 +372,7 @@ jobs:
           npm run test:pronounce
           npm run test:rules
           npm run test:match
+          npm run test:moderation
           npm run test:track
           npm run test:vad
           npm run test:walkqueue
