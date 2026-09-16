@@ -237,7 +237,7 @@ export const EN_A2_W02: QuizWeek = {
       stem: "I can't sit for long. My back ___.",
       options: ["pains", "has pain", "hurts", "makes pain"],
       answer: 2,
-      why: "Vücudun bir yeri acıdığında özne o organdır ve fiil `hurt`: `My back hurts`. burada fiil `hurt`, `pain` ise isim olarak kullanılır; 'sırtım ağrıyor'u sözcük sözcük kurunca `pains` çıkıyor.",
+      why: "Vücudun bir yeri acıdığında özne o organdır ve fiil `hurt`: `My back hurts`. Burada fiil `hurt`, `pain` ise isim olarak kullanılır; 'sırtım ağrıyor'u sözcük sözcük kurunca `pains` çıkıyor.",
       targets: ["verb.hurt"],
       byNative: {
         de: {
