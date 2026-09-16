@@ -209,16 +209,20 @@ export const EN_A1_W02: QuizWeek = {
     {
       id: "en-a1-w02-v1",
       block: "vocab",
-      stem: "I ___ breakfast at 7.",
-      options: ["have", "make", "do", "eat"],
+      /* Önceki hâli "I ___ breakfast at 7" idi ve BOZUKTU: `have` doğru
+         sayılıyordu ama `eat breakfast` da tamamen doğru İngilizce. Yerine
+         gerçekten belirleyici bir eşdizim kondu — ve bu yenisi üstelik her iki
+         anadilde de aynı hatayı üretiyor, yani ölçtüğü şey daha değerli. */
+      stem: "I ___ my homework in the morning.",
+      options: ["do", "make", "have", "take"],
       answer: 0,
-      why: "İngilizcede kahvaltı `have breakfast` kalıbıyla kurulur. `eat` dilbilgisel olarak yanlış değil ama günlük rutinin kalıbı `have`, ve sözlükte de öyle geçiyor.",
-      targets: ["collocation.have", "wordfield.routine"],
+      why: "`homework` ile kullanılan fiil `do`. Türkçe 'yapmak' hem `do` hem `make` karşıladığı için `make homework` doğru görünüyor, ama `make` bir şeyi ÜRETMEK demek — ödev üretilmez, yapılır.",
+      targets: ["collocation.do-make", "wordfield.routine"],
       byNative: {
         de: {
-          options: ["have", "make", "do", "eat"],
+          options: ["do", "make", "have", "take"],
           answer: 0,
-          why: "Almancada `frühstücken` tek bir fiil; İngilizcede iki sözcüklü kalıp var ve yardımcı fiil `have`. `make breakfast` kahvaltı HAZIRLAMAK demek, yemek değil.",
+          why: "Almanca `Hausaufgaben machen` → `make homework` aktarımı. `machen` İngilizcede ikiye ayrılıyor: üretmek `make`, bir işi yerine getirmek `do`. Ödev `do` alır.",
         },
       },
     },

@@ -231,11 +231,15 @@ export const DE_A1_W02: QuizWeek = {
     {
       id: "de-a1-w02-v3",
       block: "vocab",
-      stem: "Ich ___ acht Stunden am Tag.",
-      options: ["arbeite", "esse", "fahre", "höre"],
+      /* Önceki hâli "Ich ___ acht Stunden am Tag" idi ve BOZUKTU: `arbeite`
+         doğru sayılıyordu ama `fahre` de tamamen doğru Almanca ("günde sekiz
+         saat araba kullanıyorum"). İki şıkkı da savunulabilen bir madde ölçüm
+         yapmaz. Nesne belirleyici olacak şekilde yeniden yazıldı. */
+      stem: "Ich ___ Kaffee und esse Brot.",
+      options: ["trinke", "fahre", "lese", "stehe"],
       answer: 0,
-      why: "Saat süresiyle birlikte en doğal fiil `arbeiten`. Öteki üçü de dilbilgisel olarak kurulabilir ama günlük rutin metninde anlamlı olan bu.",
-      targets: ["verb.arbeiten", "wortfeld.alltag"],
+      why: "`Kaffee` nesnesiyle kurulan tek fiil `trinken`. Öteki üçü de çekimli ve doğru biçimde ama bu nesneyi almıyor — burada seçimi yapan dilbilgisi değil, fiilin nesnesi.",
+      targets: ["verb.trinken", "wortfeld.alltag"],
     },
   ],
 };

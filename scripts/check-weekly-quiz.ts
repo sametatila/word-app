@@ -259,6 +259,13 @@ function unknownWords(texts: string[], pool: Set<string>, course: "de" | "en", a
 
 /* ── Marka taraması ───────────────────────────────────────────────────── */
 
+/** Bkz. `checkItem` — iki doğru şıklı maddenin izi. */
+const HEDGES = [
+  "yanlış değil", "en doğal", "kurulabilir ama", "mümkün ama", "olabilir ama",
+  "teknik olarak", "dilbilgisel olarak yanlış", "da doğru", "de doğru",
+  "da olur", "de olur",
+];
+
 const BRANDS = [
   "goethe", "telc", "ösd", "testdaf", "dsh", "cambridge", "ielts", "toefl",
   "trinity", "pearson", "duolingo", "babbel", "busuu",
@@ -313,6 +320,21 @@ function checkItem(week: QuizWeek, it: QuizItem, stimIds: Set<string>, pool: Set
   // Marka
   const blob = [it.stem, ...it.options, it.why].join(" ").toLocaleLowerCase("de-DE");
   for (const b of BRANDS) if (blob.includes(b)) err(at, `marka adı geçiyor: ${b}`);
+
+  /*
+    KAÇAMAKLI AÇIKLAMA — iki doğru şıklı maddenin en güvenilir izi.
+    Yazar bir çeldiricinin aslında doğru olduğunu fark edince bunu açıklamada
+    savunmaya çalışıyor ("yanlış değil ama", "en doğal"). İki şıkkı da
+    savunulabilen bir madde ölçüm yapmaz.
+
+    UYARI, hata değil: aynı ifadeler bir çeldiricinin NEDEN yanlış olduğunu
+    anlatırken de kullanılıyor. Ölçüldü (2026-09-16, 20 paket): yedi vurgunun
+    ikisi gerçek kusurdu, beşi meşru. Karar insanın.
+  */
+  for (const [who, text] of [["taban", it.why], ...Object.entries(it.byNative ?? {}).map(([k, v]) => [k, v.why])] as [string, string][]) {
+    const hit = HEDGES.find((h) => text.toLocaleLowerCase("tr").includes(h));
+    if (hit) warn(`${at}/${who}`, `kaçamaklı açıklama ("${hit}") — şıklardan ikisi birden doğru olabilir mi?`);
+  }
 
   /*
     SÖZCÜK BÜTÇESİ — açıklama Türkçe olduğu için taranmıyor.
