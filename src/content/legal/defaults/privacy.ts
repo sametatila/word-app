@@ -63,7 +63,7 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorum
 | Sunucuya giden mikrofon ses kaydı | Mikrofon: ekran kapalıyken ya da telefon cebindeyken yürüyüş modu; web'de ayrıca telaffuz puanı ve sınavlardaki konuşma cevapları | Söylediğini yazıya çevirmek ve telaffuzunu puanlamak | Açık rıza (m.5/1 / m.6(1)(a)); uygulama içi izin ekranı, geri alınabilir | Saklanmaz; tanıma biter bitmez silinir, yalnız tanınan metin tutulur |
 | Kullanım olayları: hangi ekran açıldı, tur başladı/bitti, ekran genişliği ve platform | Uygulama | Ürünü iyileştirme (birinci taraf analitik) | Meşru menfaat (m.5/2-f / m.6(1)(f)); ayarlardan kapatılabilir | Hesap süresince |
 | IP adresi ve tarayıcı/cihaz tanımı (oturum kaydında) | Bağlantın | Oturum güvenliği, kötüye kullanım ve hız sınırı | Meşru menfaat (güvenlik) | Oturum süresince (en çok {{sessionMaxDays}} gün) |
-| Sosyal profil: kullanıcı adı, biyografi, görünürlük ve istek tercihleri | Sen | Arkadaşların ve (görünürlük "herkese açık" ise) diğer kullanıcıların seni bulması | Sözleşmenin ifası; tercihler için rıza | Hesap süresince |
+| Sosyal profil: kullanıcı adı, görünürlük ve istek tercihleri | Sen | Arkadaşların ve (görünürlük "herkese açık" ise) diğer kullanıcıların seni bulması | Sözleşmenin ifası; tercihler için rıza | Hesap süresince |
 | Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri | Sen ve arkadaşların | Arkadaşlık özellikleri, güvenlik ve moderasyon | Sözleşmenin ifası; meşru menfaat (güvenlik) | Hesap süresince; bildirimler inceleme kapanana kadar |
 | Etkinlik akışı, tepkiler, dürtmeler, ortak görevler, gelen kutusu bildirimleri | Uygulamayı kullanırken | Arkadaşlarınla ilerleme paylaşımı ve motivasyon (yalnız arkadaşlarına görünür) | Sözleşmenin ifası; "etkinliğimi göster" tercihiyle kapatılabilir | Hesap süresince |
 | Web push aboneliği (tarayıcı uç noktası ve şifreleme anahtarları) | Tarayıcın, izin verirsen | Web'de hatırlatma bildirimleri | Rıza (tarayıcı izni) | İzin geri alınana ya da uç nokta geçersizleşene kadar |
@@ -98,7 +98,7 @@ Yürüyüş modunda "Kabul ediyorum, başla"ya ya da ses izni ekranında "İzin 
 ## 4a. Sosyal özellikler ve görünürlük
 
 - Görünen adın haftalık sıralamada tüm kullanıcılara görünür; sıralamaya girmek istemiyorsan görünen adını boş bırakabilirsin ("Öğrenci" olarak görünürsün).
-- Sosyal profilin (kullanıcı adı, biyografi, seviye, seri) varsayılan olarak **herkese açık**tır; Ayarlar › Sosyal'den "yalnız arkadaşlar" ya da "gizli" yapabilir, arkadaşlık isteklerini ve önerilerde görünmeyi kapatabilirsin.
+- Sosyal profilin (kullanıcı adı, seviye, seri) varsayılan olarak **herkese açık**tır; Ayarlar › Sosyal'den "yalnız arkadaşlar" ya da "gizli" yapabilir, arkadaşlık isteklerini ve önerilerde görünmeyi kapatabilirsin.
 - Etkinlik akışı (tur tamamlama, seri kilometre taşı) yalnız arkadaşlarına görünür; "etkinliğimi göster" ile kapatılır.
 - Bir kullanıcıyı engellediğinde iki taraf birbirini görmez; bildirdiğinde kayıt insan tarafından incelenir. Engelleme ve bildirim kayıtları karşı tarafa gösterilmez.
 - Lernomi'de özel mesajlaşma yoktur; etkileşim yalnız tepkiler, dürtmeler ve ortak görevlerle olur.
@@ -234,7 +234,7 @@ The servers run on {{hosting}}; the data is stored there. The controller is not 
 | Microphone audio sent to the server | The microphone: walk mode with the screen off or the phone in your pocket; on the web also pronunciation scores and spoken answers in exams | Transcribing what you said and scoring your pronunciation | Explicit consent (Art. 5/1 / Art. 6(1)(a)); in-app consent screen, revocable | Not kept; deleted as soon as recognition finishes, only the recognised text is retained |
 | Usage events: which screen opened, round started/finished, screen width and platform | The app | Improving the product (first-party analytics) | Legitimate interest (Art. 5/2-f / Art. 6(1)(f)); can be switched off in settings | For the life of the account |
 | IP address and browser/device description (in the session record) | Your connection | Session security, abuse prevention and rate limiting | Legitimate interest (security) | For the life of the session (at most {{sessionMaxDays}} days) |
-| Social profile: username, bio, visibility and request preferences | You | Letting your friends and, if visibility is "public", other users find you | Performance of a contract; consent for the preferences | For the life of the account |
+| Social profile: username, visibility and request preferences | You | Letting your friends and, if visibility is "public", other users find you | Performance of a contract; consent for the preferences | For the life of the account |
 | Friend requests, friend list, blocks, user reports | You and your friends | Friend features, safety and moderation | Performance of a contract; legitimate interest (safety) | For the life of the account; reports until the review closes |
 | Activity feed, reactions, nudges, shared quests, inbox notifications | While you use the app | Sharing progress with your friends and motivation (visible only to your friends) | Performance of a contract; can be switched off with the "show my activity" preference | For the life of the account |
 | Web push subscription (browser endpoint and encryption keys) | Your browser, if you allow it | Reminder notifications on the web | Consent (browser permission) | Until the permission is withdrawn or the endpoint expires |
@@ -269,7 +269,7 @@ When you press "I agree, start" in walk mode, or "Allow and continue" on the voi
 ## 4a. Social features and visibility
 
 - Your display name is visible to all users on the weekly leaderboard; if you do not want to appear there, you can leave your display name empty (you then appear as "Learner").
-- Your social profile (username, bio, level, streak) is **public** by default; under Settings › Social you can set it to "friends only" or "private", and turn off friend requests and appearing in suggestions.
+- Your social profile (username, level, streak) is **public** by default; under Settings › Social you can set it to "friends only" or "private", and turn off friend requests and appearing in suggestions.
 - The activity feed (round completion, streak milestone) is visible only to your friends; it is turned off with "show my activity".
 - When you block a user, neither side sees the other; when you report someone, the record is reviewed by a human. Block and report records are not shown to the other party.
 - Lernomi has no private messaging; interaction happens only through reactions, nudges and shared quests.
@@ -405,7 +405,7 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verant
 | An den Server gesendetes Mikrofon-Audio | Mikrofon: Gehmodus bei ausgeschaltetem Bildschirm oder mit dem Telefon in der Tasche; im Web außerdem Aussprachebewertung und gesprochene Antworten in Prüfungen | Verschriftlichung des Gesagten und Bewertung der Aussprache | Ausdrückliche Einwilligung (Art. 5/1 / Art. 6 Abs. 1 lit. a); Einwilligungsbildschirm in der App, widerruflich | Wird nicht gespeichert; nach Abschluss der Erkennung gelöscht, nur der erkannte Text bleibt |
 | Nutzungsereignisse: welcher Bildschirm geöffnet wurde, Runde begonnen/beendet, Bildschirmbreite und Plattform | Die App | Verbesserung des Produkts (eigene Analyse, keine Dritten) | Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f); in den Einstellungen abschaltbar | Für die Dauer des Kontos |
 | IP-Adresse und Browser-/Gerätebezeichnung (im Sitzungsdatensatz) | Deine Verbindung | Sitzungssicherheit, Missbrauchsabwehr und Ratenbegrenzung | Berechtigtes Interesse (Sicherheit) | Für die Dauer der Sitzung (höchstens {{sessionMaxDays}} Tage) |
-| Soziales Profil: Benutzername, Bio, Sichtbarkeits- und Anfrageeinstellungen | Du | Damit deine Freunde und — bei Sichtbarkeit "öffentlich" — andere Nutzer dich finden | Erfüllung eines Vertrags; Einwilligung für die Einstellungen | Für die Dauer des Kontos |
+| Soziales Profil: Benutzername, Sichtbarkeits- und Anfrageeinstellungen | Du | Damit deine Freunde und — bei Sichtbarkeit "öffentlich" — andere Nutzer dich finden | Erfüllung eines Vertrags; Einwilligung für die Einstellungen | Für die Dauer des Kontos |
 | Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen | Du und deine Freunde | Freundesfunktionen, Sicherheit und Moderation | Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit) | Für die Dauer des Kontos; Meldungen bis zum Abschluss der Prüfung |
 | Aktivitäts-Feed, Reaktionen, Anstöße, gemeinsame Aufgaben, Posteingangs-Benachrichtigungen | Während der Nutzung der App | Teilen des Fortschritts mit deinen Freunden und Motivation (nur für deine Freunde sichtbar) | Erfüllung eines Vertrags; über die Einstellung "Aktivität zeigen" abschaltbar | Für die Dauer des Kontos |
 | Web-Push-Abonnement (Browser-Endpunkt und Verschlüsselungsschlüssel) | Dein Browser, wenn du es erlaubst | Erinnerungen im Web | Einwilligung (Browser-Berechtigung) | Bis zum Widerruf der Berechtigung oder zum Ungültigwerden des Endpunkts |
@@ -440,7 +440,7 @@ Wenn du im Gehmodus auf "Ich stimme zu, los geht's" oder auf dem Einwilligungsbi
 ## 4a. Soziale Funktionen und Sichtbarkeit
 
 - Dein Anzeigename ist für alle Nutzer in der Wochen-Rangliste sichtbar; willst du dort nicht erscheinen, kannst du den Anzeigenamen leer lassen (du erscheinst dann als "Lernende/r").
-- Dein soziales Profil (Benutzername, Bio, Niveau, Serie) ist standardmäßig **öffentlich**; unter Einstellungen › Soziales kannst du es auf "nur Freunde" oder "privat" stellen und Freundschaftsanfragen sowie das Erscheinen in Vorschlägen abschalten.
+- Dein soziales Profil (Benutzername, Niveau, Serie) ist standardmäßig **öffentlich**; unter Einstellungen › Soziales kannst du es auf "nur Freunde" oder "privat" stellen und Freundschaftsanfragen sowie das Erscheinen in Vorschlägen abschalten.
 - Der Aktivitäts-Feed (abgeschlossene Runde, Serien-Meilenstein) ist nur für deine Freunde sichtbar; er wird über "Aktivität zeigen" abgeschaltet.
 - Blockierst du eine Person, sehen sich beide Seiten nicht mehr; meldest du jemanden, wird der Vorgang von einem Menschen geprüft. Blockier- und Meldevorgänge werden der Gegenseite nicht angezeigt.
 - Lernomi hat keine privaten Nachrichten; Interaktion findet nur über Reaktionen, Anstöße und gemeinsame Aufgaben statt.

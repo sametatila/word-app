@@ -87,9 +87,13 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * güvenli depoda saklanması, e-postayla yerinde hesap ve var olan hesaba
  * girişte "eklensin mi" sorusu. Yapay zekâya gönderim misafire ilk kez
  * açıldığı için hak ve yükümlülük değişikliği sayıldı (ikinci basamak).
+ *
+ * 1.4 (2026-09-16) profildeki kısa tanıtımı (biyografi) kaldırdı: alan artık
+ * yok ve yazılmış metinler sunucudan silindi. Toplanan bir veri kategorisinin
+ * düşmesi işlemenin kapsamını değiştiriyor, o yüzden ikinci basamak.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-15";
-export const LEGAL_VERSION = "1.3";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-16";
+export const LEGAL_VERSION = "1.4";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -283,6 +287,26 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: toplanan bir veri kategorisi DÜŞTÜ. Kısa tanıtım artık
+      hiç sorulmuyor ve yazılmış metinler sunucudan silindi; kullanıcı lehine
+      bir daralma ama yine de işlemenin kapsamı değişti.
+    */
+    version: "1.4",
+    date: "2026-09-16",
+    changes: {
+      tr: [
+        "Profildeki kısa tanıtım (biyografi) kaldırıldı. Sosyal profilde artık böyle bir alan yok, daha önce yazdığın metin sunucudan kalıcı olarak silindi. Toplanan veri tablosundaki sosyal profil satırı ve herkese açık profilin anlatımı buna göre güncellendi; kullanıcı adı, seviye ve seri aynı kaldı.",
+      ],
+      en: [
+        "The short bio on your profile was removed. The social profile no longer has such a field, and any text you had written was permanently deleted from the server. The social profile row in the collected-data table and the description of the public profile were updated accordingly; username, level and streak are unchanged.",
+      ],
+      de: [
+        "Die Kurzbeschreibung (Bio) im Profil wurde entfernt. Das soziale Profil hat dieses Feld nicht mehr, und ein zuvor geschriebener Text wurde dauerhaft vom Server gelöscht. Die Zeile zum sozialen Profil in der Datentabelle und die Beschreibung des öffentlichen Profils wurden entsprechend angepasst; Benutzername, Niveau und Serie bleiben gleich.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: misafirin verisi yapay zekâ sağlayıcısına (açık rızayla,
