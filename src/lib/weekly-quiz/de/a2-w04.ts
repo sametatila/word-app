@@ -253,6 +253,13 @@ export const DE_A2_W04: QuizWeek = {
       answer: 1,
       why: "Çalışarak para kazanmak `verdienen`; `gewinnen` bir yarışmada ya da oyunda kazanmak. Türkçe 'kazanmak' ikisini de karşıladığı için `gewinnt` seçiliyor. `bezahlen` ise ödeyen tarafın fiili.",
       targets: ["verb.verdienen"],
+      byNative: {
+        en: {
+          options: ["verdient", "gewinnt", "spart", "bezahlt"],
+          answer: 0,
+          why: "`gewinnt` İngilizce `win`e benzediği için seçiliyor ama `gewinnen` yarışmada kazanmak. `get paid` düşüncesi de `bezahlt`a çekiyor, oysa `bezahlen` ödeyen tarafın fiili. Maaş kazanmak `verdienen` (`earn`).",
+        },
+      },
     },
   ],
 };

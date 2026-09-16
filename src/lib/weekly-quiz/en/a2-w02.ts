@@ -255,6 +255,13 @@ export const EN_A2_W02: QuizWeek = {
       answer: 2,
       why: "İlaç Türkçede 'içilir' ama İngilizcede `take` ile kullanılır: `take a pill`, `take medicine`. `drink` yalnız sıvılar için. Fotoğrafta olduğu gibi (`take photos`) kalıbın fiili Türkçeden çevrilemiyor.",
       targets: ["collocation.take"],
+      byNative: {
+        de: {
+          options: ["Take", "Drink", "Make", "Eat"],
+          answer: 0,
+          why: "Almancada da ilaç 'alınır' (`Tabletten nehmen`), bu sezgi İngilizcede de doğru: `take a pill`. `drink` yalnız şurup gibi sıvılar için; `make` ilacı yapmak olur.",
+        },
+      },
     },
   ],
 };

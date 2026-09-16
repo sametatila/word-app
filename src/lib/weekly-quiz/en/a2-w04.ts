@@ -235,6 +235,13 @@ export const EN_A2_W04: QuizWeek = {
       answer: 2,
       why: "Çalışarak para kazanmak `earn`; `win` bir yarışmada ya da oyunda kazanmak. Türkçe 'kazanmak' ikisini de karşıladığı için `win` seçiliyor. `pay` parayı veren tarafın fiili.",
       targets: ["verb.earn-win"],
+      byNative: {
+        de: {
+          options: ["earn", "win", "spend", "pay"],
+          answer: 0,
+          why: "Almancadaki ayrım İngilizcede aynen var: `verdienen` → `earn`, `gewinnen` → `win`. `pay` Almanca `bezahlen` gibi ödeyen tarafın fiili, `spend` ise parayı harcamak.",
+        },
+      },
     },
     {
       id: "en-a2-w04-v3",

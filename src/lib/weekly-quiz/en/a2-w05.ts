@@ -188,6 +188,13 @@ export const EN_A2_W05: QuizWeek = {
       answer: 2,
       why: "İlk kez söz edilen şey `a` alır; aynı şeyden ikinci kez söz edilince artık bilinen bir şeydir ve `the` alır. Türkçede belirlilik çoğu zaman sıra ya da ekle anlaşılıyor; İngilizcede her seferinde artikelle işaretleniyor.",
       targets: ["article.a-an", "article.the"],
+      byNative: {
+        de: {
+          options: ["a … The", "the … A", "a … A", "(no word) … The"],
+          answer: 0,
+          why: "Almancadaki `ein Laptop … Der Laptop` ayrımı aynen geçerli: ilk kez söz edilen `a`, ikinci kez `the`. İngilizcede artikel cinsiyete göre değişmediği için dikkat edilecek tek şey belirli/belirsiz ayrımı.",
+        },
+      },
     },
     {
       id: "en-a2-w05-g5",
@@ -215,6 +222,13 @@ export const EN_A2_W05: QuizWeek = {
       answer: 2,
       why: "`miss` iki anlam taşır: treni kaçırmak ve birini özlemek. Türkçede bunlar iki ayrı fiil; `miss`i yalnız 'kaçırmak' diye ezberleyen öğrenci özlem cümlesinde başka bir fiil arıyor.",
       targets: ["verb.miss"],
+      byNative: {
+        de: {
+          options: ["lose", "forget", "leave", "miss"],
+          answer: 3,
+          why: "Almancada iki ayrı fiil var: `vermissen` (özlemek) ve `verpassen` (kaçırmak); İngilizcede ikisi de `miss`. `lose` Almanca `verlieren` gibi bir şeyi kaybetmek, özlem bildirmez.",
+        },
+      },
     },
     {
       id: "en-a2-w05-v2",

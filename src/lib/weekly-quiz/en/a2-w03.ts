@@ -178,6 +178,13 @@ export const EN_A2_W03: QuizWeek = {
       answer: 2,
       why: "Tek heceli sıfatlar `-er` alır: `faster`. `more` yalnız uzun sıfatlarla kullanılır (`more expensive`) ve ikisi hiçbir zaman birlikte gelmez. Türkçe 'daha' her sıfatın önüne geldiği için `more fast` kuruluyor.",
       targets: ["compare.comparative"],
+      byNative: {
+        de: {
+          options: ["more fast", "fastest", "faster", "more faster"],
+          answer: 2,
+          why: "Almancada da kısa sıfat `-er` alır (`schneller`), sezgi doğru. Tuzak İngilizcenin kendi içinden geliyor: uzun sıfatlar `more` aldığı için `more` her sıfata yayılıyor. `more` ile `-er` hiçbir zaman birlikte gelmez.",
+        },
+      },
     },
     {
       id: "en-a2-w03-g4",
