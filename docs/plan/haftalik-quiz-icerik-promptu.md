@@ -280,6 +280,108 @@ bilgi eksikliğinden değil, anadilin yapısını hedef dile taşımaktan geliyo
 
 ---
 
+## B2 promptu
+
+B1 ile aynı iskelet; değişen tema tablosu, seviye bütçesi ve girişim tablosu.
+B2'de girişimin karakteri bir kez daha değişiyor: artık tekil kural hataları
+değil, **anadilin üslubunun** hedef dile taşınması ölçülüyor.
+
+```
+Depo: /home/linkinqark/Desktop/workspace-linux/word-app
+
+GÖREV
+Haftalık quiz için B2 seviyesinde 5 haftalık içerik yaz: kurs `de` ve kurs `en`
+için beşer paket, toplam 10 dosya:
+  src/lib/weekly-quiz/de/b2-w01.ts .. b2-w05.ts   (export const DE_B2_W01 …)
+  src/lib/weekly-quiz/en/b2-w01.ts .. b2-w05.ts   (export const EN_B2_W01 …)
+
+ÖNCE OKU — dördü de zorunlu:
+  src/lib/weekly-quiz/types.ts        şema ve her alanın gerekçesi
+  src/lib/weekly-quiz/de/a2-w01.ts    örnek paket (Almanca)
+  src/lib/weekly-quiz/en/a2-w04.ts    örnek paket (İngilizce, iyi çeldiriciler)
+  src/lib/weekly-quiz/de/b1-w01.ts    bir alt seviyenin nasıl kurulduğu
+Yazdığın her paket `QuizWeek` tipine uymak zorunda.
+
+KAYIT ZORUNLU
+Dosyaları `src/lib/weekly-quiz/index.ts` içindeki `QUIZ_WEEKS` listesine ekle.
+Kontrol betiği dizini değil bu listeyi geziyor: kaydedilmeyen paket sessizce
+denetlenmemiş kalır.
+
+BLUEPRINT (types.ts `QUIZ_PLAN`) — seviyeden bağımsız, DEĞİŞMEZ
+  read 2 · listen 2 · grammar 3 · vocab 2
+  `personal` blok YAZILMAZ. Havuz en az 14 madde; quiz 10 tanesini seçiyor.
+
+SÖZCÜK BÜTÇESİ — B2 KÜMÜLATİF
+  select de, tr, en from words where course='de' and niveau in ('A1','A2','B1','B2');
+Kurs `en` için `course='en'`. Diskte: data/app/words.json (dizi),
+data/app/words-en.json (satır başına bir nesne).
+
+B2 DİLBİLGİSİ ODAĞI
+  de: Konjunktiv II (gerçek dışı) · Passiv (tüm zamanlarda, modal ile) ·
+      obwohl/damit/sodass · Partizipialattribut · Genitiv zinciri ·
+      indirekte Rede (Konjunktiv I) · Nominalisierung
+  en: past perfect ve present perfect continuous · 3. tip koşul ·
+      modal perfect (must have been) · tanımlayan ↔ tanımlamayan ilgi cümlesi ·
+      edilgen + bildirme fiilleri (is said to) · deyimsel fiiller · ölçülü dil
+
+ÇELDİRİCİ KURALI — B2'de girişim ÜSLUP düzeyine çıkıyor
+  tr→de: indirekte Rede tuzak, çünkü Türkçede `-miş` zaten bir kanıtsallık
+         kipi ve Konjunktiv I'e YANLIŞ eşleniyor — öğrenci aktarımı kipsiz
+         kuruyor ya da `-miş` sezgisiyle yanlış yerde kullanıyor.
+         Partizipialattribut ise TANIDIK (Türkçede de ortaçlı sıfat cümlesi
+         isimden önce gelir) — orada tuzak yapı değil, uzunluk.
+         Nominalisierung Türkçedeki `-me/-ma` ile karışıyor.
+  en→de: Partizipialattribut İngilizcede YOK; öğrenci ilgi cümlesine kaçıyor.
+         Konjunktiv I'in karşılığı yok, `würde` ile karıştırılıyor.
+         Karmaşık cümlede fiilin sona gitmesi hâlâ bozuluyor.
+  tr→en: perfect görünüşleri Türkçede tek biçime düşüyor; past perfect
+         gereksiz yerde kullanılıyor ya da hiç kullanılmıyor.
+         Deyimsel fiillerin (`put off`, `bring up`) Türkçede karşılığı yok,
+         öğrenci tek sözcüklü resmî eşdeğerine kaçıyor.
+         Soyut isimlerde tanımlık (`the society` ↔ `society`).
+  de→en: NOMİNAL ÜSLUP AKTARIMI — Almancanın isimleştirme eğilimi İngilizceye
+         taşınınca ağır ve yapay cümle çıkıyor ("the realisation of the
+         implementation"); İngilizce fiil yeğler. B2'nin en karakteristik
+         hatası budur ve en az bir madde bunu ölçmeli.
+         Sahte dostlar derinleşiyor: `chef`≠Chef, `gymnasium`≠Gymnasium,
+         `konkurrenz`, `eventually`≠eventuell, `sensible`≠sensibel.
+         `since`/`for` ve modal perfect'te Almanca sırası.
+  `read`/`listen` maddelerinde `byNative` KULLANMA.
+
+B2 TEMALARI (A1 gündelik, A2 geçmiş/sağlık/seyahat/iş, B1 görüş/medya/
+eğitim/çevre — hiçbirini tekrar etme)
+  W1 İş yerinde iletişim ve müzakere   W2 Bilim ve teknoloji
+  W3 Kültür, sanat ve kimlik           W4 Ekonomi, tüketim ve etik
+  W5 Transfer (W1–W4 yeni bağlamlarda)
+
+ARALIKLI TEKRAR
+Her haftanın en az bir maddesi önceki haftaların bir hedefini yeniden yoklar;
+bağı `targets` kuruyor ve etiketler haftadan haftaya AYNI yazılmalı. W5 saf
+tekrar değil TRANSFER haftası, metin türü de bilerek değişir. Kontrol betiği
+zinciri arıyor ve kopuksa HATA veriyor.
+
+UZUNLUK
+B2'de okuma metni 220–320 sözcük, dinleme diyaloğu 10–14 replik.
+
+TESLİM — hepsi geçmeli
+  npm run check:quiz      → 0 HATA (Almanca özel ad uyarıları normal;
+                            dinleme `speaker` alanındaki adlar muaf)
+  npx tsc --noEmit        → senin dosyalarından hata olmamalı
+  npm run test:quiz       → 45/45 kalmalı
+Değişikliklerini TEK atomik commit olarak yerelde bırak, push etme.
+Son raporda: dosya listesi, export adları, hafta başına blok sayıları ve
+check:quiz çıktısının son satırı.
+
+KALİTE ÖLÇÜSÜ
+Bir madde yalnızca "öğrenci bunu bilmiyorsa hangi yanlışı yapar" sorusunun
+net bir cevabı varsa iyidir; `why` o cevabı açıklar, cevabı tekrar etmez.
+B2'de ölçülen şey kural bilgisi değil, anadilin üslubuna direnebilmek — bu
+yüzden çeldirici "yanlış seçenek" değil, öğrencinin GERÇEKTEN yazacağı cümle
+olmalı.
+```
+
+---
+
 ## Üst seviyeler için
 
 Yalnız iki şey değişir: **tema tablosu** ve **sözcük bütçesi sorgusundaki
