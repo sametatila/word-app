@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { apiFetch } from "@/lib/api-fetch";
+import { social } from "@/lib/social/client";
 import { useEffect, useState } from "react";
 import { InboxIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
- * Başlıktaki zil: okunmamış sayısı. Dakikada bir ve sekme görünür olunca
- * tazelenir; gelen kutusu açılınca `lernomi:inbox-read` ile sıfırlanır. Sayı 9'u
+ * Başlıktaki zil: okunmamış sayısı. 5 dakikada bir (yalnız sekme GÖRÜNÜRKEN)
+ * ve sekme görünür olunca tazelenir; gelen kutusu açılınca `lernomi:inbox-read`
+ * ile sıfırlanır. Sayı 9'u
  * geçince "9+" — rozet genişleyip başlığı itmesin.
  *
  * Hedefi `/inbox`: rozet gelen kutusunun sayacı ve artık gelen kutusunun kendi
@@ -22,23 +23,31 @@ import { useT } from "@/lib/i18n/client";
  * Zil ikonu ayrıca yanlış şeyi söylüyor: burası hatırlatma ayarı değil, gelen
  * kutusu.
  */
+/**
+ * YOKLAMA ARALIĞI — mobil `useUnread` ile AYNI AD ve değer (parite kapısı
+ * "ortak sayısal sabitler"). Dakikada birdi ve arka planda açık kalan tek bir
+ * sekme günde yüzlerce istek atıyordu; sosyal bildirimler zaten push ile
+ * geliyor, sekmeye dönüşte sayı hemen tazeleniyor.
+ */
+export const UNREAD_POLL_MS = 300000;
+
 export function NotificationBell({ className = "" }: { className?: string }) {
   const t = useT();
   const [unread, setUnread] = useState(0);
   useEffect(() => {
     let alive = true;
     const fetchCount = async () => {
+      // Gizli sekme yoklamıyor: görünür olunca `onVisible` zaten tazeliyor.
+      if (document.visibilityState !== "visible") return;
       try {
-        const res = await apiFetch("/api/social/notifications?cursor=", { cache: "no-store", credentials: "same-origin" });
-        if (!res.ok) return;
-        const data = (await res.json()) as { unread?: number };
+        const data = await social.unreadCount();
         if (alive) setUnread(data.unread ?? 0);
       } catch {
         /* ağ yoksa rozet eski kalır */
       }
     };
     void fetchCount();
-    const timer = setInterval(() => void fetchCount(), 60_000);
+    const timer = setInterval(() => void fetchCount(), UNREAD_POLL_MS);
     const onVisible = () => {
       if (document.visibilityState === "visible") void fetchCount();
     };

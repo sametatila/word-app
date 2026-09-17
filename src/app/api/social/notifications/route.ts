@@ -4,11 +4,26 @@ import { listNotifications, markRead, unreadCount } from "@/lib/social/notify";
 
 export const dynamic = "force-dynamic";
 
-/** Gelen kutusu: ?cursor=<id> ile sayfalı; okunmamış sayısıyla birlikte. */
+/**
+ * Gelen kutusu: ?cursor=<id> ile sayfalı; okunmamış sayısıyla birlikte.
+ *
+ * `?only=unread`: YALNIZ SAYI. Zil rozetleri (web `notification-bell`, mobil
+ * `useUnread`) listeyi hiç kullanmıyordu ama her yoklamada 30 satırlık liste
+ * sorgusunu da çalıştırıyordu; ölçümde bu uç 14 günde 10.646 istekle en yoğun
+ * API'ydi (2026-09-17).
+ */
 export async function GET(req: Request) {
   const user = await requireUser(req, false);
   if (typeof user !== "string") return user;
-  const cursor = intParam(new URL(req.url).searchParams.get("cursor"));
+  const params = new URL(req.url).searchParams;
+  if (params.get("only") === "unread") {
+    try {
+      return ok({ unread: await unreadCount(user) });
+    } catch (err) {
+      return handleError("social:notifications:unread", err);
+    }
+  }
+  const cursor = intParam(params.get("cursor"));
   try {
     const [page, unread] = await Promise.all([listNotifications(user, cursor, 30), unreadCount(user)]);
     return ok({ ...page, unread });

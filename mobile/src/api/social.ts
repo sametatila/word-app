@@ -95,6 +95,8 @@ export const social = {
   league: () => api<LeagueView>("/api/social/league"),
   leagueSeen: () => api<{ ok: true }>("/api/social/league", { method: "POST", body: j({ action: "seen" }) }),
   notifications: (cursor?: number | null) => api<{ items: NotificationView[]; nextCursor: number | null; unread: number }>(`/api/social/notifications${cursor ? `?cursor=${cursor}` : ""}`),
+  /** Yalnız okunmamış sayısı — zil rozeti için (liste sorgusu yok). */
+  unreadCount: () => api<{ unread: number }>("/api/social/notifications?only=unread"),
   markRead: (ids: number[] | "all") => api<{ ok: true; unread: number }>("/api/social/notifications", { method: "POST", body: j(ids === "all" ? { all: true } : { ids }) }),
   blocks: () => api<{ blocked: (PublicUser & { since: string })[] }>("/api/social/blocks"),
   block: (userId: string) => api<{ ok: true }>("/api/social/blocks", { method: "POST", body: j({ userId }) }),
