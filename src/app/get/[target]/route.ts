@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { appControl } from "@/lib/app-control";
-import { getUserId } from "@/lib/auth/server";
+import { AUTH_BASE_URL, getUserId } from "@/lib/auth/server";
 import { track } from "@/lib/events";
 import { cleanSource, platformOf } from "@/lib/store-link";
 
@@ -27,7 +27,10 @@ export async function GET(req: Request, ctx: { params: Promise<{ target: string 
   const url = new URL(req.url);
   const platform = platformOf(req.headers.get("user-agent"));
   const source = cleanSource(url.searchParams.get("src"));
-  const back = (q: string) => NextResponse.redirect(new URL(`/premium?${q}`, req.url));
+  /* GENEL ADRESE yönlendirme: `req.url` nginx arkasında iç adres
+     (`https://localhost:3011`) taşıyor; ilk sürüm kullanıcıyı oraya yolladı
+     (bkz. auth/handoff aynı ders). */
+  const back = (q: string) => NextResponse.redirect(new URL(`/premium?${q}`, AUTH_BASE_URL));
 
   if (target !== "premium") return back("from=get");
 

@@ -21536,6 +21536,29 @@ console.log("\n" + C.b + "248. SESLENDIRME SADELESTIRMESI VE ISTEGE BAGLI ON EK"
   );
 }
 
+/* ── 400. YONLENDIRME GENEL ADRESE ─────────────────────────────────────────
+ * Uygulama nginx'in arkasinda `localhost:30xx` uzerinde calisiyor; rota
+ * isleyicisindeki `req.url` bu IC adresi tasiyor. `new URL(yol, req.url)` ile
+ * kurulan yonlendirme kullaniciyi `https://localhost:3011/...`e yolluyor.
+ * `auth/handoff` bu dersi bir kez almisti ve yorumuna yazmisti; 2026-09-17'de
+ * iki yeni rota (`/r/<kod>` davet, `/get/premium` magaza) ayni hatayla canliya
+ * cikti ve ikisi de kirikti. Olcu mutlak: rota dosyalarinda yonlendirme tabani
+ * `req.url`/`request.url` olamaz (`AUTH_BASE_URL` ya da `SITE_URL`). */
+console.log("\n" + C.b + "400. YONLENDIRME GENEL ADRESE" + C.off);
+{
+  const gez400 = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) gez400(p, out);
+      else if (e.name === "route.ts" || e.name === "page.tsx" || e.name === "middleware.ts" || e.name === "proxy.ts") out.push(p);
+    }
+    return out;
+  };
+  const sil400 = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const bulunan = gez400("src/app").filter((f) => /redirect\(\s*new URL\([\s\S]{0,160}?,\s*(?:req|request)\.url\s*\)\s*\)/.test(sil400(read(f))));
+  sameList("ic adrese yonlendirme (req.url tabanli)", bulunan.length ? bulunan : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

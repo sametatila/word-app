@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAccountUserId } from "@/lib/auth/server";
+import { AUTH_BASE_URL, getAccountUserId } from "@/lib/auth/server";
 import { attachReferral, normalizeReferral } from "@/lib/premium/referral";
 import { track } from "@/lib/events";
 
@@ -45,7 +45,10 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
     /* ham hâliyle devam */
   }
   const code = normalizeReferral(ham);
-  const to = (q: string) => NextResponse.redirect(new URL(`/premium?ref=${q}`, req.url));
+  /* GENEL ADRESE: `req.url` nginx arkasında iç adres (`https://localhost:3011`)
+     taşıyor ve bağlantı canlıda kullanıcıyı oraya yolluyordu (2026-09-17,
+     bkz. auth/handoff aynı ders). */
+  const to = (q: string) => NextResponse.redirect(new URL(`/premium?ref=${q}`, AUTH_BASE_URL));
 
   if (!code) return to("unknown");
 
@@ -54,7 +57,7 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
     /* Kod ADRESTE taşınıyor, çerezde değil: giriş ekranı `next`i zaten
        doğruluyor (`auth-form`: yalnız kendi sitemizde, `//` ile başlamayan
        yol) ve kullanıcı girişi bitirince buraya dönüp bağı kuruyor. */
-    return NextResponse.redirect(new URL(`/login?next=${encodeURIComponent(`/r/${code}`)}`, req.url));
+    return NextResponse.redirect(new URL(`/login?next=${encodeURIComponent(`/r/${code}`)}`, AUTH_BASE_URL));
   }
 
   /* Davetin VARIŞI ölçülüyor — mobil `App.tsx` aynı olay adını yazıyor. */
