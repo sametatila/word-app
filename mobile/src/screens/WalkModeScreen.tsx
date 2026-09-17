@@ -189,11 +189,13 @@ export function WalkModeScreen() {
   // sayNative: ÖĞRETMENİN sesi (kullanıcının anadili). Eskiden sayTR adıyla
   // doğrudan TURKISH_VOICE kullanıyordu — anadili Türkçe olmayan kullanıcıya
   // anlatım yine Türkçe okunurdu. sayTarget: öğrenilen dilin sesi (kurstan).
+  const probeSay = (yol: string, txt: string) => { const t0 = Date.now(); console.log("PROBE say>", yol, JSON.stringify(txt).slice(0, 40)); return (p: Promise<unknown>) => p.then(() => { console.log("PROBE say<", yol, Date.now() - t0, "ms"); }); };
   const sayNative = (txt: string) => {
     const v = narrationVoice(currentLang());
-    return screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt).then(() => undefined) : speakAndWaitVoiced(txt, v);
+    const fin = probeSay("native", txt);
+    return fin(screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt).then(() => undefined) : speakAndWaitVoiced(txt, v)) as Promise<void>;
   };
-  const sayTarget = (txt: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt).then(() => undefined) : speakAndWaitVoiced(txt, currentVoiceId()));
+  const sayTarget = (txt: string) => { const fin = probeSay("target", txt); return fin(screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt).then(() => undefined) : speakAndWaitVoiced(txt, currentVoiceId())) as Promise<void>; };
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {
@@ -405,6 +407,7 @@ export function WalkModeScreen() {
       const sonuc = r.k === "m" ? "manual" : r.heard.length ? "ok" : listenCut.current ? "cut" : "silence";
       track("walk_listen", Math.round(saniye * 10), `${kaynak}:${sonuc}`);
     };
+    console.log("PROBE dinleme baslryor", w.de, "screenOff=", screenOffRef.current);
     let res: { k: "v"; heard: string[] } | { k: "m" };
     /* Kaynak her denemede YENİDEN seçiliyor: bekleme ya da kesinti sırasında ekran
        durumu değişmiş olabilir. Döngü en fazla bir kesinti tekrarı ve kapı
@@ -479,6 +482,7 @@ export function WalkModeScreen() {
       // ikinci argüman olarak dizinin index'ini geçirir.
       const skipped = !unheard && !ok && adaylar.some((h) => parseSkip(h));
       result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
+      console.log("PROBE karar", result, "adaylar=", JSON.stringify(adaylar), "hedef=", withArtikel(w));
     }
 
     // "Duyamadım" penceresi — üst üste sessizlikte turu durdur (web ile aynı).
