@@ -27,6 +27,7 @@ const CONTENT_REASON: Record<string, string> = {
 };
 const KIND: Record<string, string> = { roleplay: "Rol yapma yanıtı", assessment: "Değerlendirme", user: "Kullanıcı" };
 const ERROR_TR: Record<string, string> = {
+  not_found: "Şikâyet bulunamadı.",
   not_ready: "Karar tablosu canlıda yok: önce drizzle/0059_moderation_actions.sql uygulanmalı.",
   forbidden: "Yetki yok.",
   bad_input: "Geçersiz istek.",
@@ -35,7 +36,7 @@ const ERROR_TR: Record<string, string> = {
 function Person({ p }: { p: ReportedPerson }) {
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
-      <b>{p.name || p.username || "adsız"}</b>
+      <a href={`/admin/users/${encodeURIComponent(p.id)}`} className="font-bold underline-offset-2 hover:underline">{p.name || p.username || "adsız"}</a>
       {p.username ? <span className="font-mono" style={{ color: "var(--text-muted)" }}>@{p.username}</span> : null}
       <span className="font-mono text-micro" style={{ color: "var(--text-muted)" }}>{p.id.slice(0, 10)}…</span>
       {p.guest ? <span className="chip h-5 px-1.5 text-micro">misafir</span> : null}
@@ -53,11 +54,14 @@ function Actions({
   busy,
   onNote,
   onDecide,
+  onResetName,
 }: {
   note: string;
   busy: boolean;
   onNote: (v: string) => void;
   onDecide: (a: ModerationDecision) => void;
+  /** Yalnız kullanıcı şikâyetinde: hedefin görünen adını ve kullanıcı adını sıfırlar. */
+  onResetName?: () => void;
 }) {
   return (
     <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -75,6 +79,11 @@ function Actions({
       <button type="button" disabled={busy} onClick={() => onDecide("dismissed")} className="chip h-8 px-3 text-caption">
         Asılsız
       </button>
+      {onResetName ? (
+        <button type="button" disabled={busy} onClick={onResetName} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
+          Adı sıfırla + kapat
+        </button>
+      ) : null}
     </div>
   );
 }
@@ -85,7 +94,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
   const [msg, setMsg] = useState("");
   const [notes, setNotes] = useState<Record<string, string>>({});
 
-  async function decide(target: ModerationTarget, refId: number, action: ModerationDecision) {
+  async function decide(target: ModerationTarget, refId: number, action: ModerationDecision | "reset_name") {
     const key = `${target}:${refId}`;
     setBusy(key);
     setMsg("");
@@ -127,7 +136,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
         {msg ? <p className="text-caption" style={{ color: "var(--color-rose)" }} role="status">{msg}</p> : null}
       </header>
 
-      <Section title="Kullanıcı şikâyetleri" sub="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse hesabın adını değiştirmek elle yapılır.">
+      <Section title="Kullanıcı şikâyetleri" sub="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse 'Adı sıfırla' ikisini de siler ve şikâyeti kapatır.">
         {userReports.length ? (
           <div className="space-y-2">
             {userReports.map((r) => (
@@ -142,7 +151,9 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
                 </div>
                 <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Şikâyet eden: <Person p={r.reporter} /></div>
                 {r.detail ? <p className="mt-1 whitespace-pre-wrap">{r.detail}</p> : null}
-                {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} /> : null}
+                {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} onResetName={() => {
+                  if (window.confirm(`@${r.reported.username || "?"} hesabının görünen adı ve kullanıcı adı silinsin mi?`)) void decide("user_report", r.id, "reset_name");
+                }} /> : null}
               </div>
             ))}
           </div>

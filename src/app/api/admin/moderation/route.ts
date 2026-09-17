@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { adminGate } from "@/lib/admin";
 import { sameOrigin } from "@/lib/auth/origin";
-import { closeReport, type ModerationDecision, type ModerationTarget } from "@/lib/moderation-admin";
+import { closeReport, resetReportedName, type ModerationDecision, type ModerationTarget } from "@/lib/moderation-admin";
 
 export const dynamic = "force-dynamic";
 
@@ -25,10 +25,26 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
+  const note = typeof body.note === "string" ? body.note.trim().slice(0, 500) || null : null;
+
+  // Ad sıfırlama: kullanıcı şikâyetinin hedefindeki görünen ad + kullanıcı adı.
+  if (body.action === "reset_name") {
+    const refId = Number(body.refId);
+    if (!Number.isInteger(refId) || refId <= 0) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+    try {
+      const r = await resetReportedName(refId, gate.email, note);
+      if (r === "not_ready") return NextResponse.json({ error: "not_ready" }, { status: 409 });
+      if (r === "not_found") return NextResponse.json({ error: "not_found" }, { status: 404 });
+      return NextResponse.json({ ok: true });
+    } catch (err) {
+      console.error("[admin/moderation] reset_name", refId, err);
+      return NextResponse.json({ error: "failed" }, { status: 500 });
+    }
+  }
+
   const target = String(body.target ?? "") as ModerationTarget;
   const action = String(body.action ?? "") as ModerationDecision;
   const refId = Number(body.refId);
-  const note = typeof body.note === "string" ? body.note.trim().slice(0, 500) || null : null;
   if (!TARGETS.includes(target) || !DECISIONS.includes(action) || !Number.isInteger(refId) || refId <= 0) {
     return NextResponse.json({ error: "bad_input" }, { status: 400 });
   }

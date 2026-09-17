@@ -195,6 +195,8 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
             for (const j of c.cron) if (j.stale) alarms.push(`Zamanlanmış iş koşmuyor: ${j.name}${j.ageH != null ? ` (${Math.round(j.ageH)} sa)` : " (hiç)"}`);
             for (const j of c.cron) if (!j.stale && j.lastAt && !j.lastOk) alarms.push(`Son koşu başarısız: ${j.name}`);
             if (s.ops.backup.ageH == null || s.ops.backup.ageH > 26) alarms.push(`Yedek eski ya da yok${s.ops.backup.ageH != null ? ` (${Math.round(s.ops.backup.ageH)} sa)` : ""}`);
+            const api5xx = s.http.errors.filter((e) => e.route.startsWith("/api/")).reduce((a, e) => a + e.count, 0);
+            if (api5xx > 0) alarms.push(`Bugün API ${api5xx} kez 5xx döndü (Sunucu & Ops › İstek sağlığı)`);
             if (s.ops.failedUnits.length) alarms.push(`Çökmüş servis: ${s.ops.failedUnits.join(", ")}`);
             if (s.ops.certDaysLeft != null && s.ops.certDaysLeft < 21) alarms.push(`Sertifika ${s.ops.certDaysLeft} gün içinde bitiyor`);
             if (s.app.instances.some((i) => i.name.startsWith(s.app.activeColor) && !i.up)) alarms.push("Aktif renkte duran instance var");
@@ -325,6 +327,29 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
               <Kpi label="TTS önbelleği" value={`${fmt(s.ops.ttsCacheMB)} MB`} sub="nginx, 60 gün" tone={s.ops.ttsCacheMB > 900 ? "warn" : undefined} />
               <Kpi label="HTTPS sertifikası" value={s.ops.certDaysLeft != null ? `${s.ops.certDaysLeft} gün` : "?"} sub="certbot oto-yenileme" tone={s.ops.certDaysLeft == null ? undefined : s.ops.certDaysLeft < 21 ? "bad" : "ok"} />
             </div>
+          </Section>
+
+          {/* UÇTAN UCA: uygulamanın kendi kaydı değil, nginx'in gördüğü. */}
+          <Section title="İstek sağlığı (bugün, nginx)" hint={`${s.http.since ? `${s.http.since.slice(0, 17)}'den beri` : "log okunamadı"} · ${fmt(s.http.total)} istek · ${fmt(s.http.api)} API · ${fmt(s.http.s4xx)} 4xx · ${fmt(s.http.probes)} tarama`}>
+            <div className="mb-3 grid grid-cols-3 gap-2">
+              <Kpi label="5xx" value={fmt(s.http.s5xx)} tone={s.http.s5xx ? "bad" : "ok"} />
+              <Kpi label="4xx" value={fmt(s.http.s4xx)} />
+              <Kpi label="Tarama (404)" value={fmt(s.http.probes)} sub="wp-admin, .env…" />
+            </div>
+            {s.http.errors.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>5xx yok.</div> :
+              <BarList max={Math.max(1, ...s.http.errors.map((e) => e.count))} items={s.http.errors.map((e) => ({ label: `${e.status} ${e.route}`, value: e.count, tone: "#dc2626" }))} />}
+          </Section>
+
+          <Section title="En yoğun API uçları (bugün)" hint="Beklenmedik yoğunluk = istemcide sık yoklama ya da döngü.">
+            <BarList max={Math.max(1, ...s.http.topApi.map((a) => a.count))} items={s.http.topApi.map((a) => ({ label: a.route, value: a.count }))} />
+          </Section>
+
+          <Section title="Yapay zekâ kullanımı özellik başına (30g)" hint="Sağlık sağlayıcı başına üstte; burada hangi özellik ne kadar harcıyor." full>
+            <BarList max={Math.max(1, ...c.engagement.aiByKind.map((a) => a.calls))} items={c.engagement.aiByKind.map((a) => ({
+              label: a.kind, value: a.calls,
+              right: `${fmt(a.calls)} çağrı${a.errors ? ` · ${fmt(a.errors)} hata` : ""}${a.tokens ? ` · ${fmt(a.tokens)} tok` : ""}${a.audioSec ? ` · ${fmt(a.audioSec / 60)} dk ses` : ""}${a.chars ? ` · ${fmt(a.chars)} kr` : ""}`,
+              tone: a.errors ? "#d97706" : undefined,
+            }))} />
           </Section>
 
           <Section title="Deploy geçmişi" hint="GitHub push → webhook → sıfır-kesinti deploy." full>
@@ -483,6 +508,18 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
             </div>
             <BarList max={Math.max(1, ...c.learning.assessments.map((a) => a.count))} items={c.learning.assessments.map((a) => ({ label: `${a.kind} · ${a.provider}`, value: a.count }))} />
           </Section>
+          <Section title="Beceri ilerlemesi (tablo)" hint="user_skills'ten — çevrimdışı gönderilenler dahil. Beceri · seviye: kişi, egzersiz, ort. son puan.">
+            <BarList max={100} items={c.engagement.skillProgress.map((k) => ({ label: `${k.skill} · ${k.level}`, value: k.avgScore, right: `%${k.avgScore} · ${fmt(k.exercises)} · ${fmt(k.users)} kişi`, tone: k.avgScore < 60 ? "#d97706" : "#16a34a" }))} />
+          </Section>
+          <Section title="Modül sınavı (boss)" hint={`30g: ${fmt(c.engagement.bossEvents.plays)} giriş · ${fmt(c.engagement.bossEvents.clears)} geçiş. Seviye başına: kişi, geçilen modül, ort. deneme.`}>
+            <BarList max={Math.max(1, ...c.engagement.boss.map((b) => b.users))} items={c.engagement.boss.map((b) => ({ label: b.level, value: b.users, right: `${fmt(b.users)} kişi · ${fmt(b.cleared)} geçildi · ${b.avgAttempts} deneme` }))} />
+          </Section>
+          <Section title="Rozetler" hint="Kaç kişide var · son 30 günde açılan.">
+            <BarList max={Math.max(1, ...c.engagement.achievements.map((a) => a.users))} items={c.engagement.achievements.map((a) => ({ label: a.id, value: a.users, right: `${fmt(a.users)} · +${fmt(a.last30)}` }))} />
+          </Section>
+          <Section title="Günlük görevler & hayatta kalma (30g)" hint={`Hayatta kalma: ${fmt(c.engagement.challenge.plays30)} oyun · ${fmt(c.engagement.challenge.users30)} kişi · rekoru olan ${fmt(c.engagement.challenge.withBest)} · ort. ${c.engagement.challenge.avgBest} · en iyi ${c.engagement.challenge.maxBest}`}>
+            <BarList max={Math.max(1, ...c.engagement.quests.map((q) => q.claims))} items={c.engagement.quests.map((q) => ({ label: q.id, value: q.claims, right: `${fmt(q.claims)} · ${fmt(q.users)} kişi` }))} />
+          </Section>
           <Section title="Telemetri — olaylar (30g)" hint="Ada göre olay sayısı ve tekil kullanıcı." full>
             <BarList max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)} kişi` }))} />
           </Section>
@@ -536,6 +573,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               <Kpi label="Premium şu an" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye`} />
               <Kpi label="Davet" value={fmt(c.growth.referrals.total)} sub={`${fmt(c.growth.referrals.rewarded)} ödüllendi · ${fmt(c.growth.referrals.last30)} 30g`} />
+              <Kpi label="Promo kullanımı 30g" value={fmt(c.engagement.promoRedemptions30)} />
               <Kpi label="Mağaza platformu" value={c.premium.byPlatform.map((p) => `${p.key} ${p.count}`).join(" · ") || "—"} />
             </div>
           </Section>
@@ -546,6 +584,25 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
               <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Hatırlatma açık: {fmt(c.growth.remindersOn.reminders)}</span>
               <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Seri koruma: {fmt(c.growth.remindersOn.streakAlert)}</span>
               <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Haftalık sınav: {fmt(c.growth.remindersOn.weeklyReminder)}</span>
+            </div>
+          </Section>
+
+          <Section title="Gelen kutusu & akış" hint="Okunmamış sosyal bildirim birikimi (tür başına) ve son 30 günde akışa düşen olaylar.">
+            <BarList max={Math.max(1, ...c.engagement.inbox.map((i) => i.total))} items={c.engagement.inbox.map((i) => ({ label: i.type, value: i.unread, right: `${fmt(i.unread)} okunmamış / ${fmt(i.total)}`, tone: i.total && i.unread / i.total > 0.8 ? "#d97706" : undefined }))} />
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {c.engagement.feed.map((f) => <span key={f.type} className="rounded-full px-2.5 py-0.5 text-caption" style={{ background: "var(--surface-2)" }}>{f.type}: {fmt(f.count)}</span>)}
+            </div>
+          </Section>
+
+          <Section title="Giriş & güvenlik" hint="Hesap (misafir hariç), giriş yolları, iki adımlı doğrulama, açık oturum.">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <Kpi label="Hesap" value={fmt(c.auth.accounts)} />
+              <Kpi label="Doğrulanmamış" value={fmt(c.auth.unverified)} tone={c.auth.unverified ? "warn" : undefined} />
+              <Kpi label="2FA açık" value={fmt(c.auth.twoFactor)} />
+              <Kpi label="Açık oturum" value={fmt(c.auth.activeSessions)} />
+            </div>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {c.auth.providers.map((p) => <span key={p.key} className="rounded-full px-2.5 py-0.5 text-caption" style={{ background: "var(--surface-2)" }}>{p.key}: {fmt(p.count)}</span>)}
             </div>
           </Section>
 
@@ -562,7 +619,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
 
       {/* ── KULLANICILAR ── */}
       {tab === "Kullanıcılar" && (
-        <Section title={`Kullanıcılar (${d.users.length})`} hint="Ara, sütuna tıklayıp sırala. Son aktif olana göre; en fazla 500.">
+        <Section title={`Kullanıcılar (${d.users.length})`} hint="Ara (e-posta dahil), sütuna tıklayıp sırala, ada tıklayıp hesabın tüm izini aç. Son aktif olana göre; en fazla 500.">
           <UsersTable users={d.users} />
         </Section>
       )}

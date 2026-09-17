@@ -59,6 +59,27 @@ export type ServerMetrics = {
     ttsCacheMB: number;
     certDaysLeft: number | null;
   };
+  /**
+   * UÇTAN UCA İSTEK SAĞLIĞI — nginx'in bugünkü erişim logu.
+   *
+   * Panodaki her şey uygulamanın KENDİ yazdığı kayıttan okunuyordu; uygulama
+   * hiç cevap veremiyorsa (502) ya da uç hata fırlatıyorsa (500) iz yalnız
+   * nginx'te kalıyordu. 10–13 Eylül'de hatırlatma ucu dört gece 500 döndü ve
+   * bu yalnız log elle taranınca görüldü.
+   */
+  http: {
+    since: string | null;
+    total: number;
+    api: number;
+    s4xx: number;
+    s5xx: number;
+    /** Uygulamanın rotaları: 5xx veren uçlar (yol normalleştirilmiş). */
+    errors: { route: string; status: number; count: number }[];
+    /** En yoğun API uçları — polling patlamasını yakalamak için. */
+    topApi: { route: string; count: number }[];
+    /** Var olmayan yollara gelen tarama istekleri (wp-admin, .env, phpunit…). */
+    probes: number;
+  };
   generatedAt: string;
 };
 
@@ -142,6 +163,71 @@ async function certDaysLeft(): Promise<number | null> {
   }
 }
 
+/** `/api/social/users/abc123/x?y` → `/api/social/users/:id` (ilk dört parça). */
+function routeOf(path: string): string {
+  const clean = path.split("?")[0] ?? "";
+  return clean
+    .split("/")
+    .slice(0, 5)
+    .map((seg) => (/^[0-9]+$|^[0-9a-f-]{16,}$|^[A-Za-z0-9_-]{20,}$/.test(seg) ? ":id" : seg))
+    .join("/");
+}
+
+const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "(\S+) (\S+)[^"]*" (\d{3}) /;
+
+/** nginx combined log formatını okur; dosya yoksa (yerel geliştirme) boş döner. */
+async function httpHealth(): Promise<ServerMetrics["http"]> {
+  const empty: ServerMetrics["http"] = { since: null, total: 0, api: 0, s4xx: 0, s5xx: 0, errors: [], topApi: [], probes: 0 };
+  let text = "";
+  try {
+    text = await fs.readFile("/var/log/nginx/access.log", "utf8");
+  } catch {
+    return empty;
+  }
+  const errors = new Map<string, number>();
+  const api = new Map<string, number>();
+  let since: string | null = null;
+  let total = 0, apiCount = 0, s4xx = 0, s5xx = 0, probes = 0;
+  for (const line of text.split("\n")) {
+    const m = LINE.exec(line);
+    if (!m) continue;
+    const [, time, , path, statusRaw] = m;
+    const status = Number(statusRaw);
+    since ??= time;
+    total++;
+    const isApi = path.startsWith("/api/");
+    if (status >= 500) {
+      s5xx++;
+      const key = `${routeOf(path)} ${status}`;
+      errors.set(key, (errors.get(key) ?? 0) + 1);
+    } else if (status >= 400) {
+      s4xx++;
+      if (status === 404 && !isApi && !path.startsWith("/_next/")) probes++;
+    }
+    if (isApi) {
+      apiCount++;
+      const r = routeOf(path);
+      api.set(r, (api.get(r) ?? 0) + 1);
+    }
+  }
+  return {
+    since,
+    total,
+    api: apiCount,
+    s4xx,
+    s5xx,
+    errors: [...errors.entries()]
+      .map(([k, count]) => {
+        const i = k.lastIndexOf(" ");
+        return { route: k.slice(0, i), status: Number(k.slice(i + 1)), count };
+      })
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 12),
+    topApi: [...api.entries()].map(([route, count]) => ({ route, count })).sort((a, b) => b.count - a.count).slice(0, 12),
+    probes,
+  };
+}
+
 const INSTANCES = ["blue-3001", "blue-3002", "blue-3003", "green-3011", "green-3012", "green-3013"];
 
 export async function getServerMetrics(): Promise<ServerMetrics> {
@@ -157,12 +243,13 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     run("journalctl", ["-u", "lernomi-webhook", "-n", "500", "--no-pager", "-o", "short-iso"]),
     run("systemctl", ["is-active", ...INSTANCES.map((i) => `lernomi@${i}`)]),
   ]);
-  const [backup, backupResult, failedRaw, ttsDu, cert] = await Promise.all([
+  const [backup, backupResult, failedRaw, ttsDu, cert, http] = await Promise.all([
     latestBackup(),
     run("systemctl", ["show", "lernomi-backup.service", "-p", "Result", "--value"]),
     run("systemctl", ["--failed", "--plain", "--no-legend"]),
     run("du", ["-sm", "/var/cache/nginx/lernomi-tts"]),
     certDaysLeft(),
+    httpHealth(),
   ]);
 
   const mem = parseMem(meminfo);
@@ -200,6 +287,7 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
       ttsCacheMB: num(ttsDu.trim().split(/\s+/)[0]),
       certDaysLeft: cert,
     },
+    http,
     generatedAt: new Date().toISOString(),
   };
 }

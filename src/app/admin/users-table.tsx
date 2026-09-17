@@ -58,7 +58,7 @@ export function UsersTable({ users }: { users: U[] }) {
       kind === "all" ? true : kind === "guest" ? u.guest : kind === "account" ? !u.guest : u.premium,
     );
     const list = s
-      ? byKind.filter((u) => u.name.toLowerCase().includes(s) || u.userId.toLowerCase().includes(s) || u.level.toLowerCase().includes(s) || pairOf(u).includes(s))
+      ? byKind.filter((u) => u.name.toLowerCase().includes(s) || u.email.toLowerCase().includes(s) || u.userId.toLowerCase().includes(s) || u.level.toLowerCase().includes(s) || pairOf(u).includes(s))
       : byKind;
     return [...list].sort((a, b) => {
       const av = a[sort] as string | number, bv = b[sort] as string | number;
@@ -81,8 +81,8 @@ export function UsersTable({ users }: { users: U[] }) {
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Ara: ad, kimlik, seviye, çift (tr→en)…"
-        aria-label="Ara: ad, kimlik, seviye, çift"
+        placeholder="Ara: ad, e-posta, kimlik, seviye, çift (tr→en)…"
+        aria-label="Ara: ad, e-posta, kimlik, seviye, çift"
         className="mb-3 w-full rounded-tile border px-3 py-2 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
       />
@@ -119,7 +119,9 @@ export function UsersTable({ users }: { users: U[] }) {
             {filtered.slice(0, 200).map((u) => (
               <tr key={u.userId} className="border-t" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1 pr-3 font-semibold">
-                  {u.name || u.userId.slice(0, 8)}
+                  <a href={`/admin/users/${encodeURIComponent(u.userId)}`} className="underline-offset-2 hover:underline">
+                    {u.name || u.email || u.userId.slice(0, 8)}
+                  </a>
                   {u.guest ? <span className="ml-1.5 text-micro font-normal" style={{ color: "var(--text-muted)" }}>misafir</span> : null}
                   {u.premium ? <span className="ml-1.5 text-micro" style={{ color: "#16a34a" }}>premium</span> : null}
                 </td>

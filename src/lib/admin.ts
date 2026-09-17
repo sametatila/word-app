@@ -75,6 +75,8 @@ export type AdminData = {
     longest: number; xp: number; words: number; lastActive: string; joined: string;
     /** Anadil (boşsa eski hesap, Türkçe sayılır) — kurs ile birlikte çifti kurar. */
     native: string; guest: boolean; premium: boolean;
+    /** Destek e-postası geldiğinde hesabı bulmak için; pano yalnız ADMIN_EMAILS'e açık. */
+    email: string;
   }[];
   // — UX / platform / öğrenme kalitesi / ops (WP-admin genişletme) —
   platform: { key: string; count: number; users: number }[];
@@ -165,7 +167,8 @@ export async function getAdminData(): Promise<AdminData> {
              to_char(p.created_at,'YYYY-MM-DD') as joined,
              coalesce(p.native_lang,'tr') as native,
              coalesce(u."isAnonymous", false) as guest,
-             coalesce(p.premium_until > now(), false) as premium
+             coalesce(p.premium_until > now(), false) as premium,
+             coalesce(u.email, '') as email
       from profiles p
       left join "user" u on u.id = p.user_id
       left join (select user_id, count(*) as cnt from user_words where state > 0 group by user_id) w on w.user_id = p.user_id
@@ -219,7 +222,7 @@ export async function getAdminData(): Promise<AdminData> {
       userId: str(r.user_id), name: str(r.name), level: str(r.level), course: str(r.course),
       streak: num(r.streak), longest: num(r.longest), xp: num(r.xp), words: num(r.words),
       lastActive: str(r.last_active), joined: str(r.joined),
-      native: str(r.native), guest: r.guest === true, premium: r.premium === true,
+      native: str(r.native), guest: r.guest === true, premium: r.premium === true, email: str(r.email),
     })),
     platform: platform.map((r) => ({ key: str(r.k), count: num(r.c), users: num(r.u) })),
     screens: screens.map((r) => ({ screen: str(r.screen), views: num(r.views), avgSec: num(r.avg_sec) })),

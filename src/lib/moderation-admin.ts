@@ -190,3 +190,31 @@ export async function closeReport(
   }
   return "ok";
 }
+
+/**
+ * İhlalli ad/kullanıcı adını SIFIRLAR ve şikâyeti "gereği yapıldı" diye kapatır.
+ *
+ * Mağaza kuralı yalnız şikâyeti okumayı değil İÇERİĞİ KALDIRABİLMEYİ de istiyor;
+ * bu uygulamada kullanıcının başkasına görünen tek serbest metni görünen ad ve
+ * kullanıcı adı. Önceden tek yol veritabanına elle bağlanmaktı.
+ *
+ * Kullanıcı adı boşalınca kişi yenisini seçebiliyor (14 günlük bekleme sayacı
+ * değiştirilmiyor: yeni ad da süzgeçten geçecek). Eski değerler karar notuna
+ * yazılıyor ki neyin kaldırıldığı sonradan görülebilsin.
+ */
+export async function resetReportedName(
+  reportId: number,
+  actor: string | null,
+  note: string | null,
+): Promise<"ok" | "not_ready" | "not_found"> {
+  if (!(await hasActionsTable())) return "not_ready";
+  const found = await rows(sql`
+    select r.reported_id, coalesce(p.username, '') username, coalesce(p.display_name, '') display_name
+    from user_reports r left join profiles p on p.user_id = r.reported_id where r.id = ${reportId}`);
+  const row = found[0];
+  if (!row) return "not_found";
+  await db.execute(sql`update profiles set username = null, display_name = null where user_id = ${str(row.reported_id)}`);
+  const removed = `ad sıfırlandı (eski: "${str(row.display_name)}" @${str(row.username)})`;
+  await closeReport("user_report", reportId, "resolved", actor, note ? `${removed} · ${note}` : removed);
+  return "ok";
+}

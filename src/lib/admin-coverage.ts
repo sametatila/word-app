@@ -89,6 +89,27 @@ export type Coverage = {
     quota: { key: string; users: number; total: number }[];
   };
   cron: CronHealth[];
+  /**
+   * İkinci denetimde (2026-09-17) panonun HİÇ okumadığı çıkan tablolar.
+   * Beceri ilerlemesi olaydan değil tablodan: `skill_finish` yalnız POST'ta
+   * yazılıyor, çevrimdışı biriken kayıtlar PUT ile gidiyor ve olay bırakmıyor.
+   */
+  engagement: {
+    skillProgress: { skill: string; level: string; users: number; exercises: number; avgScore: number }[];
+    boss: { level: string; users: number; cleared: number; avgAttempts: number }[];
+    bossEvents: { plays: number; clears: number };
+    achievements: { id: string; users: number; last30: number }[];
+    quests: { id: string; claims: number; users: number }[];
+    challenge: { plays30: number; users30: number; withBest: number; avgBest: number; maxBest: number };
+    inbox: { type: string; unread: number; total: number }[];
+    feed: { type: string; count: number }[];
+    promoRedemptions30: number;
+    aiByKind: { kind: string; calls: number; errors: number; tokens: number; audioSec: number; chars: number }[];
+  };
+  auth: {
+    providers: { key: string; count: number }[];
+    twoFactor: number; activeSessions: number; unverified: number; accounts: number;
+  };
 };
 
 export async function getCoverage(): Promise<Coverage> {
@@ -230,6 +251,53 @@ export async function getCoverage(): Promise<Coverage> {
       from cron_runs r group by r.name`),
   ]);
 
+  const [skillProg, boss, bossEv, ach, quests, chal, inbox, feed, promo, aiKind, providers, authRow] = await Promise.all([
+    rows(sql`
+      select skill, level, count(distinct user_id)::int u, count(*)::int n, coalesce(avg(last_score), 0)::int a
+      from user_skills group by 1, 2 order by 2, 1`),
+    rows(sql`
+      select level, count(distinct user_id)::int u, count(*) filter (where cleared_at is not null)::int cleared,
+        round(coalesce(avg(attempts), 0), 1)::float att
+      from module_clears group by 1 order by 1`),
+    rows(sql`
+      select count(*) filter (where name = 'boss_play')::int plays, count(*) filter (where name = 'boss_clear')::int clears
+      from events where day >= current_date - 29 and name in ('boss_play', 'boss_clear')`),
+    rows(sql`
+      select achievement_id k, count(*)::int u, count(*) filter (where unlocked_at >= now() - interval '30 days')::int n
+      from achievements group by 1 order by 2 desc limit 20`),
+    rows(sql`
+      select quest_id k, count(*)::int n, count(distinct user_id)::int u
+      from quest_claims where day >= current_date - 29 group by 1 order by 2 desc`),
+    rows(sql`
+      select
+        (select count(*) from events where name = 'challenge_play' and day >= current_date - 29)::int plays,
+        (select count(distinct user_id) from events where name = 'challenge_play' and day >= current_date - 29)::int users,
+        (select count(*) from profiles where challenge_best > 0)::int with_best,
+        (select coalesce(avg(challenge_best) filter (where challenge_best > 0), 0) from profiles)::int avg_best,
+        (select coalesce(max(challenge_best), 0) from profiles)::int max_best`),
+    /* Okunmamış sosyal bildirim birikimi: şişiyorsa ya gelen kutusu
+       açılmıyor ya da gürültü üretiyoruz. */
+    rows(sql`select type k, count(*) filter (where not read)::int unread, count(*)::int total from social_notifications group by 1 order by 2 desc`),
+    rows(sql`select type k, count(*)::int c from activity_events where created_at >= now() - interval '30 days' group by 1 order by 2 desc`),
+    rows(sql`select count(*)::int c from promo_redemptions where created_at >= now() - interval '30 days'`),
+    /* Yapay zekâ maliyeti ÖZELLİK başına: sağlayıcı sağlığı ayrı bölümde,
+       burada "parayı hangi özellik yakıyor". */
+    rows(sql`
+      select coalesce(kind, '?') k, count(*)::int calls, count(*) filter (where not ok)::int errors,
+        coalesce(sum(coalesce(prompt_tokens, 0) + coalesce(completion_tokens, 0)), 0)::bigint tokens,
+        coalesce(sum(audio_seconds), 0)::bigint audio, coalesce(sum(chars), 0)::bigint chars
+      from ai_usage where day >= current_date - 29 group by 1 order by 2 desc`),
+    rows(sql`select "providerId" k, count(*)::int c from account group by 1 order by 2 desc`),
+    rows(sql`
+      select
+        (select count(*) from "user" where "twoFactorEnabled")::int two_factor,
+        (select count(*) from session where "expiresAt" > now())::int sessions,
+        (select count(*) from "user" where not "emailVerified" and not coalesce("isAnonymous", false))::int unverified,
+        (select count(*) from "user" where not coalesce("isAnonymous", false))::int accounts`),
+  ]);
+  const ch = chal[0] ?? {};
+  const au = authRow[0] ?? {};
+
   const g = guests[0] ?? {};
   const s = social[0] ?? {};
   const ref = refs[0] ?? {};
@@ -289,6 +357,22 @@ export async function getCoverage(): Promise<Coverage> {
       remindersOn: { reminders: num(rm.reminders), streakAlert: num(rm.streak_alert), weeklyReminder: num(rm.weekly_reminder) },
       consents: consents.map((r) => ({ purpose: str(r.purpose), granted: num(r.granted), denied: num(r.denied) })),
       quota: quota.map((r) => ({ key: str(r.k), users: num(r.u), total: num(r.c) })),
+    },
+    engagement: {
+      skillProgress: skillProg.map((r) => ({ skill: str(r.skill), level: str(r.level), users: num(r.u), exercises: num(r.n), avgScore: num(r.a) })),
+      boss: boss.map((r) => ({ level: str(r.level), users: num(r.u), cleared: num(r.cleared), avgAttempts: num(r.att) })),
+      bossEvents: { plays: num(bossEv[0]?.plays), clears: num(bossEv[0]?.clears) },
+      achievements: ach.map((r) => ({ id: str(r.k), users: num(r.u), last30: num(r.n) })),
+      quests: quests.map((r) => ({ id: str(r.k), claims: num(r.n), users: num(r.u) })),
+      challenge: { plays30: num(ch.plays), users30: num(ch.users), withBest: num(ch.with_best), avgBest: num(ch.avg_best), maxBest: num(ch.max_best) },
+      inbox: inbox.map((r) => ({ type: str(r.k), unread: num(r.unread), total: num(r.total) })),
+      feed: feed.map((r) => ({ type: str(r.k), count: num(r.c) })),
+      promoRedemptions30: num(promo[0]?.c),
+      aiByKind: aiKind.map((r) => ({ kind: str(r.k), calls: num(r.calls), errors: num(r.errors), tokens: num(r.tokens), audioSec: num(r.audio), chars: num(r.chars) })),
+    },
+    auth: {
+      providers: providers.map((r) => ({ key: str(r.k), count: num(r.c) })),
+      twoFactor: num(au.two_factor), activeSessions: num(au.sessions), unverified: num(au.unverified), accounts: num(au.accounts),
     },
     cron: cronNames.map((name) => {
       const r = cronByName.get(name);
