@@ -6,6 +6,7 @@ import type { AdminData } from "@/lib/admin";
 import type { ServerMetrics } from "@/lib/server-metrics";
 import type { Coverage } from "@/lib/admin-coverage";
 import type { Revenue } from "@/lib/premium/revenue";
+import { trendDelta, type TrendMetric } from "@/lib/admin-trends-shared";
 import { UsersTable } from "./users-table";
 
 /**
@@ -170,6 +171,35 @@ function RevenueCard({ r }: { r: Revenue }) {
   );
 }
 
+/**
+ * HAFTALIK KARŞILAŞTIRMA — son 7 tam gün / önceki 7 gün, tek satır.
+ * Renk yöne göre: kullanıcı artışı yeşil, hata artışı kırmızı (lib/admin-trends).
+ */
+function TrendRow({ trends }: { trends: TrendMetric[] }) {
+  const color = { good: "#16a34a", bad: "#dc2626", flat: "var(--text-muted)" } as const;
+  return (
+    <section className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }} aria-label="Haftalık karşılaştırma">
+      <h2 className="text-micro uppercase tracking-eyebrow">Son 7 gün · önceki 7 güne göre</h2>
+      <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 lg:grid-cols-8">
+        {trends.map((m) => {
+          const d = trendDelta(m);
+          const fmtV = (v: number) => (m.unit === "pct" ? `%${v}` : m.unit === "min" ? `${fmt(v / 60)} sa` : fmt(v));
+          return (
+            <div key={m.key} className="min-w-0">
+              <div className="text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>{m.label}</div>
+              <div className="text-h2 tabular-nums">{fmtV(m.current)}</div>
+              <div className="text-micro tabular-nums">
+                <span style={{ color: color[d.tone] }}>{d.text}</span>
+                <span style={{ color: "var(--text-muted)" }}> · önce {fmtV(m.previous)}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function Mini({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "warn" | "bad" }) {
   const color = tone === "bad" ? "#dc2626" : tone === "warn" ? "#d97706" : "var(--text)";
   return (
@@ -183,7 +213,7 @@ function Mini({ label, value, sub, tone }: { label: string; value: string; sub?:
 
 const TABS = ["Genel Bakış", "Sunucu & Ops", "Kullanıcı Deneyimi", "Öğrenme & İçerik", "Büyüme & Sosyal", "Kullanıcılar", "Loglar"] as const;
 
-export function AdminDashboard({ data: d, server: s, coverage: c, openReports, revenue: r }: { data: AdminData; server: ServerMetrics; coverage: Coverage; openReports: number; revenue: Revenue }) {
+export function AdminDashboard({ data: d, server: s, coverage: c, openReports, revenue: r, trends }: { data: AdminData; server: ServerMetrics; coverage: Coverage; openReports: number; revenue: Revenue; trends: TrendMetric[] }) {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Genel Bakış");
   const k = d.kpi;
 
@@ -228,6 +258,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports, r
       {/* ── GENEL BAKIŞ ── */}
       {tab === "Genel Bakış" && (
         <div className="space-y-6">
+          <TrendRow trends={trends} />
           <RevenueCard r={r} />
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             <Kpi label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g · ${fmt(k.guestUsers)} misafir`} />

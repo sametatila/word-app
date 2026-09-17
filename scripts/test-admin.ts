@@ -24,6 +24,7 @@ import { revenuecat } from "../src/lib/premium/providers/revenuecat";
 import { AUTH_SECRET_TABLES, USER_COLUMNS } from "../src/lib/account/export";
 import { summarizeReviews, type StoreReview } from "../src/lib/store-reviews";
 import { parseVitalsRows } from "../src/lib/android-vitals";
+import { trendDelta } from "../src/lib/admin-trends-shared";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
 import { PgTable } from "drizzle-orm/pg-core";
@@ -158,6 +159,13 @@ async function main() {
   check("son 28g değeri: ağırlıklı değeri olan en son gün", vs.latest28d === 0.006 && vs.latestDay === "2026-09-12", JSON.stringify(vs));
   check("eksik metrik null (0 değil)", vs.points[2].rate28d === null && vs.points[2].rate === 0.01);
   check("boş satırlar = veri yok", parseVitalsRows([], "a", "b").latest28d === null);
+
+  console.log("\nHaftalık karşılaştırma");
+  check("artış iyi (kullanıcı)", JSON.stringify(trendDelta({ current: 120, previous: 100, good: "up" })) === JSON.stringify({ text: "+%20", tone: "good" }));
+  check("artış kötü (hata)", trendDelta({ current: 30, previous: 20, good: "down" }).tone === "bad");
+  check("küçük tabanda yüzde değil fark", trendDelta({ current: 3, previous: 1, good: "up" }).text === "+2");
+  check("oranda puan farkı", trendDelta({ current: 55, previous: 60, good: "up", unit: "pct" }).text === "−5 puan");
+  check("değişim yoksa =", trendDelta({ current: 7, previous: 7, good: "up" }).tone === "flat");
 
   console.log("\nVeri dışa aktarma kapsamı");
   // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:
