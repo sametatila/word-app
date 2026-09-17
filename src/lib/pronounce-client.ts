@@ -65,10 +65,7 @@ export async function toWav(blob: Blob, sampleRate = 16_000): Promise<Blob> {
 }
 
 /**
- * Klibi tek kanal PCM'e çözer (varsayılan 16 kHz).
- *
- * Yürürken modu bunu ayrıca istiyor: WAV'a çevirmeden önce konuşma bölgesini
- * bulup yalnız onu gönderiyor (bkz. lib/vad).
+ * Klibi tek kanal PCM'e çözer (varsayılan 16 kHz) — `toWav`ın ilk yarısı.
  *
  * Çözme baştan sona **OfflineAudioContext** ile. Sebebi ölçülmüş bir arıza:
  * `new AudioContext()` telefon kilitliyken SUSPENDED başlıyor ve o bağlamda
@@ -76,10 +73,9 @@ export async function toWav(blob: Blob, sampleRate = 16_000): Promise<Blob> {
  * webm olarak gitti ve Azure "desteklenmeyen biçim", ötekiler "bozuk dosya"
  * dedi (`die Verfügung` ekran daha açıkken çözülüp Azure'a WAV gittiği için
  * duyulmuştu, sonrakiler değil). OfflineAudioContext donanıma bağlı değil,
- * render güdümlü — kilitli ekranda da çözüyor. Sessiz döngü sekmeyi canlı
- * tuttuğu için `startRendering` de ilerliyor.
+ * render güdümlü — kilitli ekranda da çözüyor.
  */
-export async function decodePcm(blob: Blob, sampleRate = 16_000): Promise<Float32Array> {
+async function decodePcm(blob: Blob, sampleRate = 16_000): Promise<Float32Array> {
   const OAC =
     (typeof OfflineAudioContext !== "undefined" ? OfflineAudioContext : undefined) ||
     (window as unknown as { webkitOfflineAudioContext?: typeof OfflineAudioContext }).webkitOfflineAudioContext;

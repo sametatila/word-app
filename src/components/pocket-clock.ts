@@ -19,22 +19,21 @@
  * yazılıyor ve eline geçen HER olayda vadesi gelenler işletiliyor. Olay kaynağı
  * ne kadar çeşitli olursa saat o kadar sağlam:
  *
- *   - **Çalan sesin `timeupdate`i.** En değerlisi. Medya iş parçacığından
- *     geliyor, saniyede dört kez ve sayfa gizliyken de sürüyor — cepte modu
- *     zaten sessiz bir döngü sesi çalıyor (bkz. pocket-audio), yani bu nabız
- *     bedava.
- *   - **Kaydedicinin parçaları.** Mikrofon açıkken 200 ms'de bir.
- *   - **`setTimeout`.** Sayfa görünürken en keskini; gizliyken kısılıyor ama
- *     yok olmuyor.
+ *   - **Aralık (`setInterval`).** Sayfa görünürken en keskini; gizliyken
+ *     kısılıyor ama yok olmuyor.
+ *   - **Kaydedicinin parçaları.** Kayıt yolunda mikrofon açıkken 200 ms'de
+ *     bir (bkz. pocket-mic).
  *
- * Üçü de aynı listeyi yokluyor. Biri kısılsa diğeri yetişiyor.
+ * İkisi de aynı listeyi yokluyor. Biri kısılsa diğeri yetişiyor.
+ *
+ * (Eskiden çalan sessiz döngünün `timeupdate`i de bir nabızdı; ekran kapalı
+ * cep yoluyla birlikte kaldırıldı, 2026-09-17.)
  */
 
 type Pending = { at: number; fire: () => void };
 
 const pending: Pending[] = [];
 let ticker: ReturnType<typeof setInterval> | null = null;
-let beat: HTMLAudioElement | null = null;
 
 /**
  * Aralık nabzını kurar.
@@ -51,8 +50,8 @@ function ensureTicker() {
 /** Vadesi gelenleri işletir. Her nabız kaynağı burayı çağırıyor. */
 export function tickClock() {
   if (!pending.length) {
-    // Bekleyen iş de nabız kaynağı da kalmadıysa aralık kendini kapatıyor.
-    if (!beat && ticker) {
+    // Bekleyen iş kalmadıysa aralık kendini kapatıyor.
+    if (ticker) {
       clearInterval(ticker);
       ticker = null;
     }
@@ -71,37 +70,6 @@ export function tickClock() {
       /* bir zaman aşımının hatası diğerlerini düşürmesin */
     }
   }
-}
-
-/**
- * Nabız kaynaklarını bağlar.
- *
- * `el` sessiz döngü sesi — cepte modunun zaten çaldığı öğe. Verilmezse saat
- * yalnızca aralıkla çalışır ve gizli sayfada kısılır.
- */
-export function startClock(el?: HTMLAudioElement | null) {
-  if (el && el !== beat) {
-    beat?.removeEventListener("timeupdate", tickClock);
-    beat = el;
-    beat.addEventListener("timeupdate", tickClock);
-  }
-  ensureTicker();
-}
-
-/**
- * Nabzı söker.
- *
- * Bekleyen işler SİLİNMİYOR: her biri bir sözü çözmeyi bekliyor ve silinmeleri
- * o sözleri sonsuza dek asılı bırakırdı — tam da bu dosyanın önlemek için
- * yazıldığı şey. Bekleyen kaldığı sürece aralık çalışmayı sürdürüyor ve son iş
- * bitince kendini kapatıyor (bkz. tickClock).
- */
-export function stopClock() {
-  beat?.removeEventListener("timeupdate", tickClock);
-  beat = null;
-  if (pending.length) return;
-  if (ticker) clearInterval(ticker);
-  ticker = null;
 }
 
 /** `ms` sonra çalışacak bir iş kurar; dönen işlev iptal eder. */

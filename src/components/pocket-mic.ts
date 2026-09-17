@@ -4,64 +4,51 @@ import { afterMs, tickClock } from "@/components/pocket-clock";
 import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 
 /**
- * Cepte çalışan mikrofon.
+ * Yürürken modunun KAYIT yolu — tarayıcıda konuşma tanıyıcısı yokken.
  *
- * Tarayıcının kendi konuşma tanıyıcısı (`SpeechRecognition`) yalnızca sayfa
- * GÖRÜNÜRKEN çalışıyor; telefon kilitlenince susuyor. `getUserMedia` ile
- * açılan mikrofon akışı ise arka planda yaşamaya devam ediyor — sesli not
- * uygulamalarının ekran kapalıyken kayıt yapabilmesinin sebebi bu.
+ * Ekranda asıl yol tarayıcının kendi tanıyıcısı (`SpeechRecognition`). Onu
+ * sunmayan tarayıcıda (ör. Firefox) ya da tanıyıcı oturum içinde ölünce
+ * (`walk-player` `BROWSER_DEAD`) her cevap burada kısa bir klip olarak
+ * kaydedilip `/api/stt`ye gönderiliyor.
  *
- * Bu yüzden akış oturum boyunca **bir kez** açılıp AÇIK TUTULUYOR. Her tur
- * için yeniden açmak iki şeyi birden bozardı: her açılış yarım saniyeye kadar
- * gecikme ekliyor ve daha önemlisi, akış kapalıyken sekmenin arka planda
- * canlı kalması için bir sebep kalmıyor. Açık bir yakalama, tarayıcının
- * sekmeyi dondurmamasının en güçlü güvencesi.
- *
- * Kaydedici de oturum boyunca DURMADAN çalışıyor ve cevaplar halka tampondan
- * kesiliyor. Sebebi ölçüldü: önceki sürüm her cevap için `MediaRecorder`
- * kurup başlatıyordu ve arada bir kalkış gecikmesi vardı. Kullanıcı Türkçeyi
- * duyar duymaz konuşmaya başladığı için kelimenin BAŞI kayda girmiyordu.
- *
- * Whisper'a başı kesik ses vermek en kötü girdi: baştan okuyor, baş yoksa
- * uyduruyor. Aynı seslerle yapılan deney bunu birebir gösterdi —
+ * Mikrofon ilk cevapta açılıyor ve kaydedici tur boyunca DURMADAN çalışıyor;
+ * her cevap için tampon sıfırlanıp o cevabın parçaları kesintisiz alınıyor
+ * (`recordAnswerClip`). Sebebi ölçüldü: cevap başına `MediaRecorder` kurup
+ * başlatmanın bir kalkış gecikmesi vardı ve kullanıcı soruyu duyar duymaz
+ * konuşmaya başladığı için kelimenin BAŞI kayda girmiyordu. Başı kesik ses
+ * tanıyıcıya en kötü girdi: baştan okuyor, baş yoksa uyduruyor —
  *
  *   tam ses          → "Der Weg", "Die Katze", "der Großvater"   (6/6)
  *   sonu kesik ses   → "Der Weg", "Die Katze", "der Großvater"   (6/6)
  *   BAŞI kesik ses   → "Vielen Dank.", "Vielen Dank.", "Krater"
  *
- * Gerçek kullanımda görülen "der Weg → Ja, das ist", "Großvater →
- * Wolfsfatter" tam olarak üçüncü satır. Sağlayıcının suçu değil: doğru sesle
- * Groq 6/6 ve 130 ms.
+ * Konuşmanın bittiği, WebAudio'ya dayanmadan parça bayt boyutundan
+ * anlaşılıyor ve kayıt o an kapanıyor.
  *
- * Sürekli kayıtta kalkış gecikmesi yok; üstelik ön-pay ile okumanın bitişinden
- * biraz ÖNCESİ de alınabiliyor, yani erken başlayan cevap da tam giriyor.
- *
- * Sunucuya giden şey kesilen pencere değil, içindeki KONUŞMA. Pencere PCM'e
- * çözülüp konuşma bölgesi bulunuyor (lib/vad) ve yalnız o parça gidiyor;
- * konuşma yoksa istek hiç atılmıyor. Sebep kota: cep yolunun ana hattı Azure
- * ve ücretsiz katmanı ayda beş saat. Ölçüldü — 6 saniyelik pencereler 1–1,4
- * saniyeye indi, güven düşmedi; uzun sessizlik doğruluğu bile bozuyordu.
+ * (Eskiden burada ekran KAPALIYKEN çalışan cep yolu da vardı: halka tampondan
+ * geriye kesme, PCM üstünde konuşma bölgesi bulma. Ekran kapanınca sistemin
+ * mikrofonu susturduğu cihaz testinde görülünce kaldırıldı, 2026-09-17.)
  */
 
 let stream: MediaStream | null = null;
 let recorder: MediaRecorder | null = null;
 /**
- * Halka tampon.
+ * Bu cevabın parçaları.
  *
- * `t` parçanın ELİMİZE geçtiği an. Dilim sınırları bu damgalara göre
- * seçiliyor; 200 ms'lik parçalarda hata payı da o kadar.
+ * `t` parçanın ELİMİZE geçtiği an; işaret körlüğü bu damgaya göre.
  */
 let chunks: { t: number; data: Blob }[] = [];
 /**
- * İlk parça ayrı tutuluyor: webm başlığı yalnızca onda var. Ortadan alınan
- * bir dilim tek başına geçerli bir dosya değil, başına bu eklenmek zorunda.
+ * İlk parça ayrı tutuluyor: webm başlığı yalnızca onda var. Sonraki
+ * cevapların parçaları tek başına geçerli bir dosya değil, başına bu
+ * eklenmek zorunda.
  */
 let header: Blob | null = null;
 let mime = "";
 
-/** Parça uzunluğu — dilim çözünürlüğü bu. */
+/** Parça uzunluğu — konuşma bitişi algısının çözünürlüğü bu. */
 const SLICE_MS = 200;
-/** Tamponda tutulan en fazla süre; gerisi düşüyor. */
+/** Tamponda tutulan en fazla süre; cevaplar arasında birikmesin, gerisi düşüyor. */
 const BUFFER_MS = 20_000;
 
 /**
@@ -80,7 +67,7 @@ const SPEECH_BYTES = 300;
 /**
  * Eşik, pencerenin GÜRÜLTÜ TABANINA göre kuruluyor.
  *
- * Önceki sürüm tabanı pencerenin İLK parçalarından ölçüyordu ve varsayımı
+ * Bir önceki sürüm tabanı pencerenin İLK parçalarından ölçüyordu ve varsayımı
  * yanlıştı: kullanıcı okumanın bitişini duyar duymaz konuşmaya başlıyor, yani
  * ilk parçalar sessizlik değil KONUŞMA oluyor. Taban konuşma seviyesine
  * kuruluyor, hiçbir parça eşiği geçemiyor ve kayıt üst sınıra kadar
@@ -117,9 +104,9 @@ const MIN_SPEECH_SLICES = 2;
 /**
  * Kayıt bu süreden önce kapanmıyor.
  *
- * Ön-pay okumanın ses kuyruğunu içeriyor ve o kuyruk eşiği geçebiliyor;
- * ardından kullanıcının düşünme sessizliği geliyor ve kayıt daha cevap
- * verilmeden kapanıyordu. Kullanıcının bildirdiği "mikrofon açıldığı gibi
+ * Kaydın başı okumanın ses kuyruğunu ya da işareti içerebiliyor ve o eşiği
+ * geçebiliyor; ardından kullanıcının düşünme sessizliği geliyor ve kayıt daha
+ * cevap verilmeden kapanıyordu. Kullanıcının bildirdiği "mikrofon açıldığı gibi
  * kapandı" tam olarak buydu. Alt sınır, konuşmaya başlamak için her koşulda
  * bir pay bırakıyor.
  */
@@ -162,15 +149,15 @@ export function micSupported(): boolean {
  * çekiyor. Sonuç, mikrofon açık kaldığı sürece çalan her şeyin bozulması —
  * Bluetooth kulaklıkta A2DP bırakılıp HFP'ye düşülüyor (16 kHz, tek kanal:
  * telefon görüşmesi sesi), hoparlörde de çıkış incelip boğuklaşıyor. Mikrofon
- * oturum boyunca açık tutulduğu için bu, turun TAMAMI boyunca sürüyordu.
+ * tur boyunca açık tutulduğu için bu, turun TAMAMI boyunca sürüyordu.
  *
  * Yankı bastırmadan vazgeçmenin bedeli burada küçük: kulaklıkta hoparlörden
  * mikrofona giden yol zaten yok, hoparlörde de kayıt okuma BİTTİKTEN sonra
  * başlıyor. Karşılığında çıkış kalitesi turun tamamında korunuyor.
  *
  * Gürültü bastırma ve kazanç denetimi KALIYOR: ikisi yazılımda çalışıyor,
- * çıkış yolunu değiştirmiyor ve cepteki telefonun kumaşa sürtünmesi ile sokak
- * gürültüsü karşısında yazıya çevirmeyi belirgin biçimde kolaylaştırıyor.
+ * çıkış yolunu değiştirmiyor ve sokak gürültüsü karşısında yazıya çevirmeyi
+ * belirgin biçimde kolaylaştırıyor.
  *
  * Sıra bir geri çekilme merdiveni: ilki yankı bastırmanın gerçekten kapalı
  * olmasını ŞART koşuyor (düz değer yalnızca "tercih" sayılır ve sessizce
@@ -184,18 +171,11 @@ const CAPTURE_TRIES: MediaTrackConstraints[] = [
 ];
 
 /**
- * Mikrofonu AÇIK ama SUSTURULMUŞ hâlde alır.
+ * Mikrofonu SUSTURULMUŞ hâlde alır; kayıt `activateMic` ile açılıyor.
  *
- * Sıra hayati: gerçek telefonda ekran kilitlendikten SONRA `getUserMedia`
- * reddediliyor. Kullanıcı ekranı kapattığında mikrofonu açmaya çalışan bir
- * akış, isteği anında düşürüp cevabı "duyamadım" yazıyordu — hem de mikrofon
- * açılma sesiyle aynı anda, çünkü hiç kayıt başlamıyordu.
- *
- * Bu yüzden akış oturum başında, ekran AÇIKKEN alınıyor. Ama tarayıcının
- * konuşma tanıyıcısıyla çekişmemesi için parçalar kapatılıyor: izin ve cihaz
- * elimizde kalıyor, ses akmıyor. Ekran kapandığında yalnızca açılması yetiyor.
+ * Kısıt merdiveni `CAPTURE_TRIES` sırasıyla deneniyor.
  */
-export async function openMic(): Promise<boolean> {
+async function openMic(): Promise<boolean> {
   if (!micSupported()) return false;
   if (stream?.active) return true;
   for (const audio of CAPTURE_TRIES) {
@@ -211,41 +191,14 @@ export async function openMic(): Promise<boolean> {
   return false;
 }
 
-/**
- * Akışın gerçekte hangi kısıtlarla açıldığı.
- *
- * İstemek ile almak aynı şey değil: `exact` dışındaki kısıtlar sessizce yok
- * sayılabiliyor ve cihazın ne yaptığı ancak buradan görülüyor. Ses kalitesi
- * şikâyetinde ilk bakılacak yer burası.
- */
-export function micSettings(): MediaTrackSettings | null {
-  return stream?.getAudioTracks()[0]?.getSettings() ?? null;
-}
-
 /** Kayıt yolunu açar: parçalar açılır ve sürekli kayıt başlar. */
-export function activateMic(): boolean {
+function activateMic(): boolean {
   if (!stream?.active) return false;
   stream.getAudioTracks().forEach((t) => (t.enabled = true));
   return startRecorder();
 }
 
-/** Kayıt yolunu kapatır ama akışı BIRAKMAZ — ekran yeniden kapanabilir. */
-export function deactivateMic() {
-  try {
-    if (recorder && recorder.state !== "inactive") {
-      recorder.onstop = null;
-      recorder.stop();
-    }
-  } catch {
-    /* zaten durmuş olabilir */
-  }
-  recorder = null;
-  header = null;
-  chunks = [];
-  stream?.getAudioTracks().forEach((t) => (t.enabled = false));
-}
-
-/** Sürekli kaydı başlatır ve halka tamponu doldurmaya başlar. */
+/** Sürekli kaydı başlatır ve tamponu doldurmaya başlar. */
 function startRecorder(): boolean {
   if (!stream?.active) return false;
   if (recorder?.state === "recording") return true;
@@ -260,11 +213,10 @@ function startRecorder(): boolean {
   header = null;
 
   recorder.ondataavailable = (e) => {
-    // Kaydedici gizli sayfada da 200 ms'de bir ateşliyor: saatin en güvenilir
-    // ikinci nabzı bu (bkz. pocket-clock).
+    // Kaydedici 200 ms'de bir ateşliyor: saate ek bir nabız (bkz. pocket-clock).
     tickClock();
     if (!e.data.size) return;
-    // İlk parça başlık: saklanıyor ve tampona girmiyor, yoksa her dilimde iki
+    // İlk parça başlık: saklanıyor ve tampona girmiyor, yoksa ilk klipte iki
     // kez yer alırdı.
     if (!header) {
       header = e.data;
@@ -299,12 +251,12 @@ function restart() {
 }
 
 /** Kayıt yolu şu anda dönüyor mu. */
-export function micOpen(): boolean {
+function micOpen(): boolean {
   return Boolean(stream?.active) && recorder?.state === "recording";
 }
 
-/** Akış elimizde mi — ekran kapanınca açılabilir mi. */
-export function micHeld(): boolean {
+/** Akış elimizde mi — yalnız kaydın açılması mı yetiyor. */
+function micHeld(): boolean {
   return Boolean(stream?.active);
 }
 
@@ -325,228 +277,27 @@ export function closeMic() {
 }
 
 /**
- * Belirtilen süre kadar kaydeder.
- *
- * `null` dönmesi "kayıt yapılamadı" demek — çağıran taraf bunu duyulmamış
- * cevaptan ayırt edebilsin diye boş bir blob dönülmüyor.
- */
-/**
- * Cevap klibi: şu andan itibaren `ms` kadar bekleyip, biraz da ÖNCESİNİ
- * alarak tampondan keser.
- *
- * Ön-pay olmasaydı, okumanın son hecesiyle birlikte konuşmaya başlayan
- * kullanıcının kelimesi başından kesilirdi — ölçümde bunun sonucu doğrudan
- * halüsinasyondu ("Vielen Dank.", "Krater"). İçine yalnızca okumanın sessiz
- * kuyruğu giriyor, o da tanımayı bozmuyor.
- *
- * `null` dönmesi "kayıt yapılamadı" demek; çağıran taraf bunu duyulmamış
- * cevaptan ayırt edebilsin diye boş blob dönülmüyor.
- *
- * `signal` iptal için: süresi dolan ya da ekranın geri açılmasıyla anlamını
- * yitiren bir dinleme kaydı sürdürmesin. Eskiden süresi dolan dinleme arkada
- * kaydı bitirip sunucuya da gönderiyordu — üretimde aynı saniyede iki çağrı
- * görüldü, saf kota israfı.
+ * `null` "kayıt yapılamadı" demek — çağıran taraf bunu duyulmamış cevaptan
+ * ayırt edebilsin diye boş bir blob dönülmüyor.
  */
 export type ClipResult = { blob: Blob; ms: number } | null;
-
-export async function recordClip(maxMs: number, preRollMs = 400, signal?: AbortSignal): Promise<ClipResult> {
-  if (signal?.aborted) return null;
-  /*
-    Algılama penceresi ön-paydan ve İŞARETTEN sonra başlıyor.
-
-    Ön-pay klibe giriyor ama "konuşma başladı" kararına karışmıyor, çünkü
-    içinde okumanın kuyruğu var. Aynısı mikrofon işareti için de gerekli ve
-    bunu gerçek yürüyüş verisi gösterdi: bip 140 ms sürüyor, yani iki dilime
-    yayılabiliyor ve "iki ardışık gürültülü dilim" koşulunu tek başına
-    karşılıyor. Ardından kullanıcı daha konuşmaya başlamadan gelen sessizlik
-    kuyruğu dolduruyor ve kayıt bir saniyede kapanıyordu — sahadaki bir
-    saniyelik ve BOŞ dönen kliplerin hepsi buydu (die Heimat, schlafen, hallo,
-    der Termin...).
-  */
-  const detectFrom = Date.now() + CUE_BLIND_MS;
-  /*
-    Kaydedici ölmüşse tur SESSİZCE bitmemeli.
-
-    İlk sürüm burada `null` dönüyordu ve sonuç ağırdı: kaydedici bir kez
-    düştüğünde (ekran kapanması, sekmenin dondurulması) sonraki HER cevap
-    "duyamadım" oluyordu. Kullanıcının gördüğü şey buydu. Artık önce
-    toparlanmaya, olmazsa tek seferlik kayda düşülüyor — bir turu kaybetmek,
-    turun tamamını kaybetmekten iyi.
-  */
-  if (!micOpen()) {
-    // Akış elimizdeyse yalnızca etkinleştirmek yetiyor; yoksa açmayı deniyoruz
-    // (ekran kapalıyken reddedilebilir, o yüzden asıl açılış oturum başında).
-    if (!micHeld() && !(await openMic())) return oneShotClip(maxMs);
-    activateMic();
-    // Başlık parçasının gelmesi için bir soluk.
-    await new Promise<void>((r) => afterMs(SLICE_MS * 3, r));
-    if (!micOpen() || !header) return oneShotClip(maxMs);
-  }
-  const from = Date.now() - preRollMs;
-  const deadline = Date.now() + maxMs;
-
-  /** Pencerenin o ana kadarki gürültü tabanı ve ondan türeyen eşik. */
-  const thresholdOf = (sizes: number[]): number => {
-    if (!sizes.length) return SPEECH_BYTES;
-    const sorted = [...sizes].sort((a, b) => a - b);
-    const floor = sorted[Math.floor(sorted.length * FLOOR_PERCENTILE)];
-    return Math.max(SPEECH_BYTES, Math.round(floor * FLOOR_FACTOR));
-  };
-
-  let threshold = SPEECH_BYTES;
-
-  return new Promise<ClipResult>((resolve) => {
-    let started = false;
-    signal?.addEventListener("abort", () => resolve(null), { once: true });
-
-    const tick = () => {
-      if (signal?.aborted) return resolve(null);
-      // Kaydedici bu arada öldüyse (ekran açıldı, akış kapandı) süre dolana
-      // kadar sessiz beklemenin anlamı yok.
-      if (!header && !micOpen()) return resolve(null);
-      const slice = chunks.filter((c) => c.t >= from);
-
-      /*
-        Pencerenin TAMAMI her turda yeniden değerlendiriliyor.
-
-        Artımlı sayım daha ucuzdu ama taban değiştiğinde eski parçaların
-        kararı sabit kalıyordu: konuşmayla başlayan bir pencerede taban önce
-        yüksek kuruluyor, sonra sessizlikle düşüyor ve o parçaların yeniden
-        bakılması gerekiyor. Otuz parçayı yeniden taramanın bedeli yok.
-      */
-      // Eşik pencerenin TAMAMINDAN (ön-pay dâhil) hesaplanıyor: gürültü tabanı
-      // ne kadar çok örnekten çıkarsa o kadar isabetli.
-      threshold = thresholdOf(slice.map((c) => c.data.size));
-
-      // Karar ise yalnızca ön-pay SONRASINDAN veriliyor.
-      const heardWindow = slice.filter((c) => c.t >= detectFrom).map((c) => c.data.size);
-
-      let quiet = 0;
-      let run = 0;
-      started = false;
-      for (const size of heardWindow) {
-        if (size >= threshold) {
-          run++;
-          if (run >= MIN_SPEECH_SLICES) {
-            started = true;
-            quiet = 0;
-          }
-        } else {
-          run = 0;
-          if (started) quiet++;
-        }
-      }
-
-      const elapsed = Date.now() - detectFrom;
-      const finished = started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS;
-      if (!finished && Date.now() < deadline) {
-        // `setTimeout` DEĞİL: sayfa gizliyken zamanlayıcılar dakikada bire
-        // kısılıyor ve bu döngü tam ekran kapalıyken, yani asıl gerekli
-        // olduğu anda duruyordu. Sonuç, cevap penceresinin hiç kapanmaması ve
-        // turun üst sınıra kadar sessiz beklemesiydi. Saat nabzını kaydedicinin
-        // kendi parçalarından da alıyor (bkz. pocket-clock).
-        afterMs(SLICE_MS, tick);
-        return;
-      }
-
-      if (!header) return resolve(null);
-
-      /*
-        Bayt eşiği YALNIZCA kırpmak için — reddetmek için değil.
-
-        İlk sürümde eşiğin altında kalan klip hiç gönderilmiyordu ve gerçek
-        cihazda sonuç "her cevap duyamadım" oldu. Eşik sentetik bir ses
-        cihazında ölçülmüştü (sessizlik 72, konuşma 3.880 bayt); gerçek
-        mikrofonun seviyesi, gürültü bastırması ve kodlayıcısı başka. Ölçüye
-        güvenip kullanıcıyı susturmaktansa, şüphede kalanı gönderip Whisper'ın
-        karar vermesi doğru.
-      */
-      const all = chunks;
-      /*
-        Pencerenin ilk parçası — klibin ASLA gerisine geçemeyeceği sınır.
-
-        Geriye yürüme buna bağlanmasa ne olduğu gerçek yürüyüş verisinde
-        görüldü: altı saniyelik pencere için 16 ve 17 SANİYELİK klipler gitti
-        ve içlerinde önceki cevaplar vardı ("dabei sein" sorulurken "der weg
-        dabei sein", "schlafen" sorulurken "wie machst schlafen" duyuldu).
-        Sebep, sokakta gürültü tabanının yüksek olması: neredeyse her parça
-        eşiği geçiyor, geriye yürüme de durmadan yirmi saniyelik tamponun
-        başına kadar gidiyordu.
-      */
-      const windowStart = all.findIndex((c) => c.t >= from);
-      if (windowStart < 0) return resolve(null);
-      const loud = all.findIndex((c) => c.t >= from && c.data.size >= threshold);
-
-      let first: number;
-      let last: number;
-      if (loud >= 0) {
-        // Konuşma bulundu: başını kaçırmamak için geriye yürünüyor. Kelimenin
-        // ilk sesi (patlamalı ünsüz) çoğu zaman eşiğin altında kalıyor —
-        // ama pencerenin gerisine ASLA geçilmiyor.
-        first = loud;
-        while (first > windowStart && all[first - 1].data.size >= threshold) first--;
-        first = Math.max(windowStart, first - 2);
-
-        /*
-          Klibin SONU da kırpılıyor.
-
-          Önceden pencerenin sonuna kadar her şey gönderiliyordu: kullanıcı
-          sustuktan sonraki sessizlik, sokak gürültüsü ve —asıl sorun— arkadan
-          gelen konuşmalar. Tanıyıcıya duyacak bir şey verilince duyuyor;
-          "arkadaki konuşmaları da algılıyor, başka dillerde kelimeler duyduğunu
-          iddia ediyor" şikâyetinin doğrudan kaynağı buydu.
-
-          Son gürültülü parçadan sonra yalnızca kuyruk payı kalıyor: kelimenin
-          sönen sonunu kesmemek için gerekli, fazlası zararlı.
-        */
-        last = all.length - 1;
-        while (last > first && all[last].data.size < threshold) last--;
-        last = Math.min(all.length - 1, last + TAIL_SLICES);
-      } else {
-        // Eşiğe takılan olmadı: pencerenin tamamı gönderiliyor. Reddetmek
-        // ölçüldü ve gerçek cihazda "her cevap duyamadım" oldu — karar
-        // tanıyıcıya bırakılıyor (bkz. aşağıdaki not).
-        first = windowStart;
-        last = all.length - 1;
-      }
-
-      const parts = all.slice(first, last + 1).map((c) => c.data);
-      if (!parts.length) return resolve(null);
-      resolve({
-        blob: new Blob([header, ...parts], { type: mime || "audio/webm" }),
-        ms: parts.length * SLICE_MS,
-      });
-    };
-
-    afterMs(SLICE_MS, tick);
-  });
-}
 
 /**
  * Bir cevabın klibi — SÜREKLİ kaydediciden, geçerli webm olarak.
  *
- * İki gerçek bunu zorunlu kıldı, ikisi de ölçüldü:
+ * Geriye yürüyerek kesmek geçerli webm VERMİYOR (ölçüldü): ortadan başlayan
+ * dilim bir küme sınırında olmuyor ve sağlayıcılar "bozuk dosya" (400)
+ * diyordu. Bu yüzden cevap başında tampon sıfırlanıyor (başlık korunuyor) ve
+ * cevabın parçaları BAŞTAN SONA kesintisiz gidiyor: başlık + ardışık küme(ler)
+ * geçerli bir dosya. Konuşma bitişi bayt boyutundan.
  *
- *   1. **Ekran kapalıyken YENİ kayıt başlatılamıyor.** Cevap başına taze
- *      `MediaRecorder` denendi (recordFreshClip); geçerli webm üretti (Deepgram
- *      artık 400 değil 200 veriyordu) AMA klip SESSİZDİ — Deepgram boş dönüyordu
- *      (`deepgram:empty`, conf 0), bitiş algısı hiç konuşma bulamıyordu. Android
- *      arka planda (ekran kapalı) yeni bir `AudioRecord` başlatmayı sessiz
- *      geçiyor; oysa ekran AÇIKKEN başlamış bir kayıt devam ediyor. O yüzden
- *      kaydedici "Cebe koy" anında (ekran açık) bir kez başlatılıp AÇIK
- *      tutuluyor (`activateMic`).
- *   2. **Halka tampondan geriye yürüyerek kesmek geçerli webm vermiyor.**
- *      `first`ten başlayan dilim bir küme sınırında olmuyor ve sağlayıcılar
- *      "bozuk dosya" (400) diyordu; istemcide WAV'a çevirmek düzeltiyordu ama
- *      o kilitli ekranda çalışmıyor (`AudioContext` askıda). Çözüm: geriye
- *      yürüme YOK — cevap başında tampon sıfırlanıyor (başlık korunuyor) ve
- *      cevabın parçaları BAŞTAN SONA kesintisiz gidiyor: başlık + ardışık
- *      küme(ler) geçerli bir dosya. Konuşma bitişi yine bayt boyutundan.
+ * `signal` iptal için: süresi dolan dinleme kaydı sürdürüp sunucuya
+ * göndermesin (üretimde aynı saniyede iki çağrı görülmüştü).
  */
 export async function recordAnswerClip(maxMs: number, signal?: AbortSignal): Promise<ClipResult> {
   if (signal?.aborted) return null;
-  // Kaydedici açık olmalı (Cebe koy'da açıldı). Değilse toparlamayı dene ama
-  // ekran kapalıyken yeni kayıt sessiz olabilir — o yüzden asıl açılış arm'da.
+  // İlk cevapta (ya da kaydedici düştüyse) mikrofon burada açılıyor; başlık
+  // parçasının gelmesi için kısa bir soluk.
   if (!micOpen()) {
     if (!micHeld() && !(await openMic())) return null;
     activateMic();
@@ -610,50 +361,6 @@ export async function recordAnswerClip(maxMs: number, signal?: AbortSignal): Pro
 }
 
 /**
- * Tek seferlik kayıt — sürekli kaydedici kurulamadığında son çare.
- *
- * Sürekli kaydın bütün avantajlarını kaybediyor (kalkış gecikmesi geri
- * geliyor), ama hiç kayıt yapamamaktan iyi.
- */
-function oneShotClip(ms: number): Promise<ClipResult> {
-  if (!stream?.active) return Promise.resolve(null);
-  const type = pickMime();
-  let rec: MediaRecorder;
-  try {
-    rec = new MediaRecorder(stream, type ? { mimeType: type } : undefined);
-  } catch {
-    return Promise.resolve(null);
-  }
-  return new Promise<ClipResult>((resolve) => {
-    const parts: BlobPart[] = [];
-    let settled = false;
-    const done = (v: ClipResult) => {
-      if (settled) return;
-      settled = true;
-      resolve(v);
-    };
-    rec.ondataavailable = (e) => {
-      if (e.data.size) parts.push(e.data);
-    };
-    rec.onstop = () =>
-      done(parts.length ? { blob: new Blob(parts, { type: type || "audio/webm" }), ms } : null);
-    rec.onerror = () => done(null);
-    try {
-      rec.start();
-    } catch {
-      return done(null);
-    }
-    afterMs(ms, () => {
-      try {
-        if (rec.state !== "inactive") rec.stop();
-      } catch {
-        done(null);
-      }
-    });
-  });
-}
-
-/**
  * Yazıya çevirmenin üst sınırı.
  *
  * Azure ve Deepgram tipik olarak bir saniyenin altında dönüyor; sekiz saniye
@@ -681,9 +388,10 @@ export type PocketHeard = {
    *
    *   network — istek gitti, sunucu hata/400 döndü.
    *   empty   — sunucu boş metin döndü (Deepgram/Azure sessizliği).
-   *   premium — sunucu 403 `premium_required` döndü: ekran kapalı yol (mode=walk)
-   *             ücretsiz katmanda kapalı. Bu bir HATA DEĞİL, bir kapı; çağıranın
-   *             onu "duyamadım" diye göstermemesi için ayrı tutuluyor.
+   *   premium — sunucu 403 `premium_required` döndü: sınav bağlamı taşımayan
+   *             sunucu STT'si ücretsiz katmanda kapalı. Bu bir HATA DEĞİL, bir
+   *             kapı; çağıranın onu "duyamadım" diye göstermemesi için ayrı
+   *             tutuluyor.
    *   consent — sesin sağlayıcıya gitmesine izin yok (`ai_voice`): klip sunucudan
    *             öteye gitmedi. O da bir kapı, "duyamadım" değil.
    */
@@ -693,16 +401,15 @@ export type PocketHeard = {
 /**
  * Kaydı sunucuya gönderip yazıya çevirir.
  *
- * Klip GEÇERLİ webm olarak gidiyor (bkz. recordFreshClip) ve sunucuda ham
- * hâliyle çözülüyor — istemcide WAV'a çevirme YOK. Sebebi ölçülmüş bir arıza:
- * çeviri `AudioContext`e dayanıyordu ve o kilitli ekranda askıya alınıyor,
- * cep yolu sahada tamamen ölüydü (`stt:decode`). webm'i Deepgram ve Groq ham
- * çözüyor; Azure webm almadığı için cep zincirinde Deepgram önde
- * (chat-providers `SttMode`).
+ * Klip GEÇERLİ webm olarak gidiyor (bkz. `recordAnswerClip`) ve sunucuda ham
+ * hâliyle çözülüyor — istemcide WAV'a çevirme YOK. webm'i Deepgram ve Groq ham
+ * çözüyor (chat-providers `SttMode`).
  *
- * Kip sayfanın görünürlüğünden: gizliyse `walk`, görünürse `default`. Sahibin
- * şartı "ekran açıkken asla Azure" böylece tek yerde ve istemcinin elinde
- * değil — görünür sayfa `walk` isteyemiyor.
+ * Kip sayfanın görünürlüğünden: gizliyse `walk`, görünürse `default`. Yürüyüş
+ * gizlenen sayfada durduğu için pratikte hep `default`; seçim yine burada,
+ * çünkü sahibin şartı "ekran açıkken asla Azure" istemcinin elinde olmamalı —
+ * görünür sayfa `walk` isteyemiyor. Yetki kararı `mode`a bağlı DEĞİL (bkz.
+ * api/stt).
  */
 export async function transcribe(
   clip: Blob,
@@ -731,9 +438,10 @@ export async function transcribe(
       // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
       timeoutMs: STT_TIMEOUT_MS,
       signal: opts.signal,
-      /* İZİN DİYALOĞU BURADA AÇILMIYOR. Bu yol ekran KAPALIYKEN yürüyor:
-         açılan bir diyaloğu gören olmaz ve tur onun cevabını beklerken
-         donardı. İzin yürüyüş başlarken, ekran açıkken soruluyor
+      /* İZİN DİYALOĞU BURADA AÇILMIYOR. Tur sesli ve ekrana bakılmadan
+         (çoğu zaman karartılmış katmanın altında) sürüyor: açılan bir
+         diyaloğu gören olmaz ve tur onun cevabını beklerken donardı. İzin
+         yürüyüş başlarken soruluyor
          (`walk-player` `begin`); burada yoksa klip gitmiyor ve sebep
          `consent` olarak dönüyor. */
       consentPrompt: false,
@@ -741,7 +449,7 @@ export async function transcribe(
     /*
       403 PREMIUM KAPISI — "ağ hatası" değil.
 
-      Ekran kapalı yol (`mode=walk`) sunucuda `canPocketWalk` ile korunuyor ve
+      Sınav bağlamı taşımayan istek sunucuda `canPocketWalk` ile korunuyor ve
       ücretsiz katmanda günlük hak sıfır, yani ücretsiz bir hesapta bu istek HER
       ZAMAN 403 döner. Burada hepsi `network`e düşüyordu ve tur onu "duyamadım"
       diye okuyordu: kullanıcı mikrofonunun bozuk olduğunu sanıyordu. Mobilde

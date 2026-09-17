@@ -662,9 +662,11 @@ yanlış cevap sayılıyordu (`der Großvater` → "Wolfsfatter", `raten` → "P
 | Süresi dolan dinleme **iptal** | Eskiden arkada kaydı bitirip sunucuya da gönderiyordu: aynı saniyede iki çağrı |
 | Her dinleme **kayda geçiyor** | `walk_listen` (yol, hata kodu, giden saniye) ve `walk_switch`; `?diag=1` son dinlemeleri ekranda gösteriyor. Teşhisin kendisi bu veriden çıktı |
 
-`npm run test:walk -- visible-only` ekran açıkken sunucuya sıfır istek gittiğini,
-`switch` "Cebe koy" sonrası kapanınca kaydın gidip açılınca bir daha gitmediğini ve turun
-tanıyıcıyla sürdüğünü ölçüyor; `npm run test:vad` kırpıcının birim testi.
+`npm run test:walk -- visible-only` ekran açıkken sunucuya sıfır istek gittiğini ölçüyor.
+(2026-09-17: ekran KAPALI cep yolu — kaydedicinin "Cebe koy"da açılması, `switch`
+senaryosu, `lib/vad` kırpıcısı ve `test:vad` — kaldırıldı; cihaz testinde HyperOS ekran
+kapanınca mikrofonu susturuyordu. "Cebe koy" artık ekranı karartıp açık tutuyor. Kayıt +
+sunucu yolu yalnız tanıyıcısı olmayan tarayıcılar için duruyor.)
 
 #### Mikrofon açıkken ses kalitesi
 
@@ -683,7 +685,6 @@ kanal); hoparlörde de çıkış voice yoluna geçiyor.
 | Yankı bastırma **kapalı** | Bedeli burada küçük: kulaklıkta hoparlörden mikrofona giden yol zaten yok, hoparlörde de kayıt okuma BİTTİKTEN sonra başlıyor. Karşılığında çıkış kalitesi turun tamamında korunuyor |
 | Gürültü bastırma ve kazanç denetimi **açık** | İkisi yazılımda çalışıyor ve çıkış yolunu değiştirmiyor; cepteki telefonun kumaşa sürtünmesi ve sokak gürültüsü karşısında yazıya çevirmeyi belirgin biçimde kolaylaştırıyor |
 | Kısıt **şart koşuluyor**, sonra gevşetiliyor | Düz değer yalnızca "tercih" sayılıyor ve sessizce yok sayılabiliyor; ilk deneme `exact` ile kapalı olmasını zorunlu kılıyor. Cihaz yapamıyorsa sırayla gevşetiliyor — hiç akış alamamak, kalitesiz akıştan kötü |
-| Ne alındığı **kaydediliyor** | İstemek ile almak aynı şey değil. Her turda `walk_capture` olayı yankı bastırmanın gerçekte açık kalıp kalmadığını yazıyor; ses şikâyetinde tahmin etmeye gerek kalmıyor |
 | Üretilen sesler **48 kHz/16 bit** | Sessiz döngü ve mikrofon bipi 8 kHz/8 bit'ti. Sessiz döngü oturum boyunca DURMADAN çalıyor: ses yolunun neden bozulduğu aranırken elenmesi gereken ilk şüphelilerden, bip de 8 bitte kaba duyuluyordu |
 
 Bluetooth kulaklıkta sorun bundan sonra da sürerse kalan tek sebep, Chrome'un
@@ -748,12 +749,9 @@ adımın takılması tamamını sessizce dondurmaya yetiyordu — ve gizli sayfa
 | Sessiz döngü **kendini toparlıyor** | Arka planın taşıyıcı direği o: durursa hem zamanlayıcılar kısılıyor hem nabız gidiyor. Gelen çağrı ya da ses odağının kaybı durdurabiliyor; `onpause` yeniden başlatıyor |
 | Durmak zorunda kalınırsa **sesle söyleniyor** | Sunucuda yazıya çevirme yoksa ekran kapalıyken cevap duyulamıyor ve tur durmak zorunda. Eskiden bu sessizce oluyordu: kullanıcı telefonu çıkarana kadar turun durduğunu bilmiyordu |
 
-Altı arıza senaryosu `npm run test:walk -- <senaryo>` ile koşuluyor (`ok`, `browser-fast`,
-`stt-off`, `stt-noise`, `stt-hang`, `stt-500`, `tts-hang`, `tts-500`). Test gerçek tarayıcıda gerçek uygulamayı
-oynatıyor ve ekran kapanmasını taklit ederken **gerçek kısıtları** kuruyor: `getUserMedia`
-gizliyken reddediliyor, zamanlayıcılar dakikada bire kısılıyor. İkisi de masaüstü Chrome'da
-kendiliğinden olmuyor; eklenmezse test yalancı bir "geçti" veriyor — bu bölümdeki hataların
-çoğu tam olarak öyle gözden kaçmıştı.
+`npm run test:walk -- <senaryo>` gerçek tarayıcıda gerçek uygulamayı oynatıyor; kalan iki
+senaryo ekran açık yolu ölçüyor (`browser-fast`, `visible-only`). Ekranı kapatan arıza
+senaryoları (`ok`, `stt-*`, `tts-*`) ekran kapalı cep yoluyla birlikte 2026-09-17'de kaldırıldı.
 
 Yazıya çevirme `/api/stt` üzerinden. Ekran kapalı yolda (`mode: walk`) sıra **deepgram**
 (`nova-3`, webm'i ham çözüyor, başı-kesikte uydurmuyor) → **groq** → cloudflare →

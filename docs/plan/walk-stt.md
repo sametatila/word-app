@@ -307,8 +307,14 @@ tsc + build + test:walkqueue + test:numbers yeşil. Deploy sahipte.
 - recordAnswerClip mikrofonu KESMEYEN bir cihazda (stok Android) doğrulanmadı; teoride doğru.
 - Deepgram kredisi biterse Groq'a düşer; `report:providers` ile izlenmeli.
 - Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilecek.
-- Ölü kod: halka tampon altyapısı (`recordClip`, `activateMic`, `oneShotClip`, `lib/vad`
-  cep tarafı) artık kullanılmıyor; ayrı bir temizlik commit'ine bırakıldı.
+- 2026-09-17: ölü cep yolu kaldırıldı — `arm`/`toPocket` (mikrofon + sürekli kayıt +
+  sessiz döngü/MediaSession + ekranın kapanmasını bekleme), halka tampon (`recordClip`,
+  `oneShotClip`, `deactivateMic`), `lib/vad` + `test:vad`, `walk_capture` olayı ve
+  `test:walk`ın ekranı kapatan senaryoları. Kalan: "Cebe koy" = karartma (`darken`, ekran
+  açık, tarayıcı tanıyıcısı); kayıt + `/api/stt` yolu (`recordAnswerClip` + `transcribe`)
+  YALNIZ tanıyıcısı olmayan ya da oturumda tanıyıcısı ölen tarayıcı için. Premium ve rıza
+  kapısının sesli söylenmesi o yolda duruyor: `/api/stt` sınav bağlamı olmayan her isteği
+  premium kapısına sokuyor.
 - Cepte de Web Speech istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş; ekran
   kipinde ekran kilidi zaten ekranı açık tutuyor, ekranı kapatmadan cebe koymak bugün çalışır.
 - Bluetooth'ta cepte kipinin okuması SCO yüzünden telefon kalitesinde olabilir; girişi telefon

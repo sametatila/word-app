@@ -1,43 +1,20 @@
 "use client";
 
-import { startClock, stopClock } from "@/components/pocket-clock";
 import { WALK_NOTES, type WalkCue } from "@/lib/sfx";
 
 /**
- * Cepte çalmayı ayakta tutan katman.
+ * Yürüyüş seslerinin `<audio>` öğesiyle çalınan hâli.
  *
- * Yürürken modunun asıl vaadi "telefon cepte kalabilir"di ama ekran
- * kapandığında tur duruyordu. Sebep tek bir yanılgıydı: ekran kilidi
- * (`Screen Wake Lock`) yalnızca BOŞTA KALMA süresini engelliyor — kullanıcı
- * güç tuşuna basıp telefonu cebine attığında ekran yine kapanıyor ve o anda
- * iki şey birden oluyor:
+ * Yürüyüş işaretleri normalde WebAudio ile çalıyor (`lib/sfx`). `AudioContext`
+ * çalışmadığında (henüz uyandırılmadı ya da askıya alındı) o yol susuyor; ses
+ * ÖĞELERİ ise çalmaya devam ediyor. Kullanıcı ekrana bakmadığı için mikrofonun
+ * açıldığını ve kapandığını yalnızca kulağıyla anlayabiliyor — işaret
+ * duyulmazsa ya boşluğa konuşuyor ya da sessizce bekliyor.
  *
- *   1. `AudioContext` askıya alınıyor, yani WebAudio ile çalan her şey
- *      susuyor. (Ses ÖĞELERİ susmuyor — podcast uygulamaları bu yüzden
- *      çalışıyor.)
- *   2. Konuşma tanıyıcı kapanıyor. Bu bir hata değil, bilinçli bir platform
- *      kararı: kilitli telefonda dinleyen bir sekme, mikrofonu görünmez
- *      biçimde açık tutmak olurdu. Web'de arka planda konuşma tanıma YOK ve
- *      olmayacak.
- *
- * Buradaki iki parça (1) için: sessiz bir döngü sesi ve MediaSession.
- *
- *   - **Sessiz döngü.** Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor"
- *     sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de
- *     başlatılabiliyor. Parçalar arasında gerçek sessizlik olduğu için buna
- *     ihtiyaç var — sesin bittiği her boşluk, sekmenin uykuya alınması için
- *     bir davet.
- *   - **MediaSession.** İşletim sistemine "burada bir oynatıcı var" demenin
- *     yolu. Kilit ekranında durdur/devam düğmeleri çıkıyor ve tarayıcı sekmeyi
- *     daha uzun süre canlı tutuyor.
- *
- * (2) için yapılabilecek bir şey yok; cepte modu bu yüzden ölçmüyor, yalnızca
- * okuyor. Ölçen kip ekran açıkken çalışıyor.
+ * (Eskiden burada ekran kapalıyken sekmeyi canlı tutan sessiz döngü ve
+ * MediaSession da vardı; ekran kapalı cep yoluyla birlikte kaldırıldı,
+ * 2026-09-17.)
  */
-
-let silent: HTMLAudioElement | null = null;
-/** Döngü bilerek mi durduruldu — `onpause` bunu ayırt edemiyor. */
-let keepAlive = false;
 
 /**
  * WAV üreteci — 48 kHz, 16 bit, tek kanal.
@@ -46,10 +23,7 @@ let keepAlive = false;
  * isteğini gereksiz kılıyor.
  *
  * Oran ve derinlik bilerek cihazın kendi oranında: önceki hâl 8 kHz/8 bit'ti
- * ve iki yerde birden kullanılıyordu — biri oturum boyunca DURMADAN çalan
- * sessiz döngü. Telefon görüşmesi oranında sürekli açık bir çıkış akışı, ses
- * yolunun neden bozulduğunu ararken elenmesi gereken ilk şüphelilerden. Bipin
- * kendisi de 8 bitte kaba duyuluyordu.
+ * ve bip 8 bitte kaba duyuluyordu.
  *
  * `fill` örneği üretir; verilmezse sessizlik.
  */
@@ -102,9 +76,8 @@ function beepUrl(freq: number, ms: number): string {
 
 let cue: HTMLAudioElement | null = null;
 
-/** Mikrofonun açıldığını kulağa söyler — ekran kapalıyken de duyulur. */
 /**
- * YÜRÜYÜŞ SESLERİNİ CEPTE ÇALAR — WebAudio değil, `<audio>` öğesiyle.
+ * YÜRÜYÜŞ SESLERİNİ `<audio>` İLE ÇALAR — WebAudio değil.
  *
  * Ekran kapalıyken `AudioContext` askıya alınıyor, yani `lib/sfx.ts`teki
  * WebAudio sentezi susuyor. Tam da bu yüzden `pocketCue` bir `<audio>` öğesiyle
@@ -112,7 +85,7 @@ let cue: HTMLAudioElement | null = null;
  *
  * Burada aynı NOTA TABLOSU (`WALK_NOTES`, mobilden birebir kopya) WAV'a
  * çiziliyor ve `<audio>` ile çalınıyor. Böylece üç yerde de tek ses var:
- * webde ekran açık (WebAudio), webde cepte (bu), mobilde (native sentez).
+ * webde WebAudio, webde `<audio>` (bu), mobilde (native sentez).
  * Kullanıcı ekrana bakmadığı için modun öğrenilmesi tamamen sese bağlı;
  * "mikrofon açıldı" işareti duruma göre değişirse mod öğrenilmiyor.
  *
@@ -178,7 +151,7 @@ function lowpass(x: Float32Array, freq: number, rate: number): void {
   }
 }
 
-/** Cepte kipinde yürüyüş sesi çalar (mobil ile aynı ses). */
+/** Yürüyüş sesini `<audio>` öğesiyle çalar (mobil ile aynı ses). */
 export function pocketWalkCue(cue: WalkCue): void {
   if (typeof window === "undefined") return;
   let el = walkCueCache.get(cue);
@@ -191,6 +164,7 @@ export function pocketWalkCue(cue: WalkCue): void {
   void el.play().catch(() => {});
 }
 
+/** Mikrofonun açıldığını kulağa söyler — kayıt yolunun kısa bipi. */
 export function pocketCue() {
   if (typeof window === "undefined") return;
   if (!cue) {
@@ -203,112 +177,4 @@ export function pocketCue() {
     /* henüz yüklenmediyse önemsiz */
   }
   void cue.play().catch(() => {});
-}
-
-export type PocketControls = {
-  onPause?: () => void;
-  onResume?: () => void;
-  onStop?: () => void;
-};
-
-/**
- * Sessiz döngüyü başlatır ve kilit ekranı bilgisini kurar.
- *
- * Kullanıcı hareketi içinde çağrılmalı: ilk `play()` bir dokunuşa bağlı
- * olmazsa tarayıcı reddediyor ve sonrasında hiçbir şey çalmıyor.
- */
-export function startPocketAudio(title: string, controls: PocketControls = {}) {
-  if (typeof window === "undefined") return;
-  keepAlive = true;
-  if (!silent) {
-    silent = new Audio(wavUrl(1000));
-    silent.loop = true;
-    silent.preload = "auto";
-    // Duyulmaması gerekiyor ama SIFIR olmamalı: bazı tarayıcılar tamamen
-    // sessiz bir öğeyi "çalmıyor" sayıp sekmeyi uykuya alıyor.
-    silent.volume = 0.01;
-  }
-  void silent.play().catch(() => {
-    /* dokunuş dışında çağrıldıysa reddedilir; mod yine çalışır, arka plan zayıflar */
-  });
-  startClock(silent);
-
-  /*
-    Döngünün DURMADIĞINDAN emin olunuyor.
-
-    Sessiz ses yalnızca "hoş olurdu" değil, arka planın taşıyıcı direği: sekme
-    "medya çalıyor" sayıldığı sürece zamanlayıcılar kısılmıyor ve `timeupdate`
-    saatin nabzını veriyor. Durursa ikisi birden gidiyor ve tur, kimsenin
-    göremediği bir yerde donuyor.
-
-    Kendiliğinden durabiliyor: gelen çağrı, başka bir uygulamanın ses odağını
-    alması, işletim sisteminin kod çözücüyü geri alması. `onpause` bunların
-    hepsini yakalıyor ve yeniden başlatıyor — kullanıcı hareketi gerekmiyor,
-    çünkü öğe bir kez serbest bırakılmış oluyor.
-  */
-  silent.onpause = () => {
-    if (!keepAlive) return;
-    void silent?.play().catch(() => {});
-  };
-
-  const nav = navigator as Navigator & {
-    mediaSession?: {
-      metadata: MediaMetadata | null;
-      playbackState: string;
-      setActionHandler: (a: string, h: (() => void) | null) => void;
-    };
-  };
-  const ms = nav.mediaSession;
-  if (!ms) return;
-  try {
-    const MD = (window as unknown as { MediaMetadata?: new (i: object) => MediaMetadata })
-      .MediaMetadata;
-    if (MD) ms.metadata = new MD({ title, artist: "Lernomi", album: pocketAlbum });
-    ms.playbackState = "playing";
-    ms.setActionHandler("pause", () => controls.onPause?.());
-    ms.setActionHandler("play", () => controls.onResume?.());
-    ms.setActionHandler("stop", () => controls.onStop?.());
-  } catch {
-    /* eski tarayıcı: kilit ekranı denetimi olmaz, çalma yine sürer */
-  }
-}
-
-/*
-  Kilit ekranındaki albüm adı. Sabit "Yürürken" yazılıydı ve bu, telefonun
-  kilit ekranında görünen tek Türkçe metindi. Modül düzeyinde bir değişken,
-  çünkü burası bir React bileşeni değil: dili çağıran veriyor.
-*/
-let pocketAlbum = "Lernomi";
-export function setPocketAlbum(label: string) {
-  pocketAlbum = label;
-}
-
-/** Kilit ekranındaki başlığı günceller — hangi kelimede olunduğu görünsün. */
-export function updatePocketTitle(title: string) {
-  const nav = navigator as Navigator & { mediaSession?: { metadata: MediaMetadata | null } };
-  const MD = (window as unknown as { MediaMetadata?: new (i: object) => MediaMetadata })
-    .MediaMetadata;
-  if (!nav.mediaSession || !MD) return;
-  try {
-    nav.mediaSession.metadata = new MD({ title, artist: "Lernomi", album: pocketAlbum });
-  } catch {
-    /* önemsiz */
-  }
-}
-
-export function stopPocketAudio() {
-  keepAlive = false;
-  stopClock();
-  silent?.pause();
-  const nav = navigator as Navigator & {
-    mediaSession?: { playbackState: string; setActionHandler: (a: string, h: null) => void };
-  };
-  try {
-    if (nav.mediaSession) {
-      nav.mediaSession.playbackState = "none";
-      for (const a of ["pause", "play", "stop"]) nav.mediaSession.setActionHandler(a, null);
-    }
-  } catch {
-    /* önemsiz */
-  }
 }

@@ -1,5 +1,5 @@
 /**
- * Cepte kipinin arıza sınaması — gerçek uygulama, gerçek tarayıcı.
+ * Yürürken modunun EKRAN AÇIK yol sınaması — gerçek uygulama, gerçek tarayıcı.
  *
  *   npm run build && npx next start -p 3011
  *   WALK_BASE=http://localhost:3011 node scripts/walk-pocket.mjs [senaryo]
@@ -7,42 +7,31 @@
  * Neden dışarıdan ölçüyor: uygulamanın kendi günlüğüne bakmak, uygulamanın
  * kendi hakkındaki iddiasına bakmaktır. Burada yalnızca DIŞARIDAN görülebilen
  * iki şey izleniyor — hangi ses çalınmaya çalışıldı (`/api/tts?t=` adresinde
- * metin duruyor) ve mikrofon kaydı sunucuya gitti mi. Tur ilerliyorsa yeni
- * metinler çalınır; donduysa akış susar.
+ * metin duruyor) ve mikrofon kaydı sunucuya gitti mi.
  *
- * Ekran kapanması taklit değil, GERÇEK kısıtlarla kuruluyor:
+ * Senaryolar: browser-fast | visible-only
  *
- *   - `getUserMedia` gizliyken reddediliyor. Telefon kilitlendikten sonra
- *     yeni mikrofon izni verilmiyor; masaüstü Chrome'da bu kısıt yok, o yüzden
- *     eklenmezse test yalancı bir "geçti" veriyor.
- *   - Zamanlayıcılar gizliyken kısılıyor (dakikada bir). Arka plan sekmesinde
- *     `setTimeout` böyle davranıyor ve zaman aşımlarını buna dayanmadan kurmak
- *     korumasız kalmak demek.
+ * `browser-fast`: doğru cevap ara sonuç olarak duyulur duyulmaz dinleme
+ * kapanmalı. Sahte tanıyıcı bilerek `onend` VERMİYOR — tur ilerliyorsa bunu
+ * yapan tek şey erken kapatmadır, yoksa zaman aşımına kadar beklenirdi.
  *
- * Senaryolar: ok | tts-hang | tts-500 | stt-hang | stt-500 | stt-off | stt-noise
- *              | browser-fast | visible-only | switch
+ * `visible-only`: tanıyıcı hiçbir şey anlamıyor. Ekran açıkken sunucuya HİÇ
+ * istek gitmemeli — boş dinleme "duyamadım"dır, yol değişmez.
  *
- * `browser-fast` EKRAN AÇIK yolu: doğru cevap ara sonuç olarak duyulur duyulmaz
- * dinleme kapanmalı. Sahte tanıyıcı bilerek `onend` VERMİYOR — tur ilerliyorsa
- * bunu yapan tek şey erken kapatmadır, yoksa zaman aşımına kadar beklenirdi.
- *
- * `stt-noise` tanıyıcının gürültüyü kelimeye çevirdiği hâl: metin geliyor ama
- * güveni düşük. Beklenen davranış onu YANLIŞ CEVAP saymak değil, duyulmamış
- * saymak — yanlış saymak kelimeyi gerçekten unutulduğu için değil arkadan
- * geçen bir konuşma yüzünden öne çekerdi.
- *
- * `stt-off` sunucuda konuşma tanıma anahtarının hiç olmadığı hâl. Cevaplar
- * duyulamıyor ama tur DONMAMALI: soru okunmalı, duyulmadığı söylenmeli ve
- * sınıra gelince sesli bir açıklamayla durulmalı.
+ * (Ekranı KAPATAN senaryolar — ok, tts-*, stt-*, switch — ekran kapalı cep
+ * yoluyla birlikte kaldırıldı, 2026-09-17: ekran kapanınca tur artık duruyor.)
  */
 import { chromium } from "playwright-core";
 
 const BASE = process.env.WALK_BASE ?? "http://localhost:3011";
-const SCENARIO = process.argv[2] ?? "ok";
+const SCENARIO = process.argv[2] ?? "browser-fast";
+if (SCENARIO !== "browser-fast" && SCENARIO !== "visible-only") {
+  console.error(`bilinmeyen senaryo: ${SCENARIO} (browser-fast | visible-only)`);
+  process.exit(2);
+}
 const RUN_MS = Number(process.env.WALK_RUN_MS ?? 70_000);
-const HIDE_AT_MS = Number(process.env.WALK_HIDE_AT ?? 6_000);
-/** `switch` senaryosunda ekranın geri açıldığı an. */
-const SHOW_AT_MS = Number(process.env.WALK_SHOW_AT ?? 32_000);
+/** Tur başladıktan sonra ölçümün başladığı an. */
+const MEASURE_AT_MS = Number(process.env.WALK_MEASURE_AT ?? 6_000);
 
 const t0 = Date.now();
 const at = () => String(Date.now() - t0).padStart(6);
@@ -69,12 +58,9 @@ function wav(ms = 400) {
   return b;
 }
 const CLIP = wav();
-const never = () => new Promise(() => {});
 
 const spoken = [];
 let sttPosts = 0;
-/** Sunucuya giden kayıtların anları — geçiş senaryosu "ne zaman" diye soruyor. */
-const sttTimes = [];
 
 /** Sahte tanıyıcının okuyacağı kelimeler — tur verisiyle aynı sıra. */
 const WORDS_FOR_FAKE = [
@@ -107,155 +93,65 @@ const ctx = await browser.newContext({
     "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Mobile Safari/537.36",
 });
 
-if (SCENARIO === "browser-fast" || SCENARIO === "visible-only" || SCENARIO === "switch") {
-  await ctx.addInitScript(({ words, scenario }) => {
-    /*
-      Sahte konuşma tanıyıcı.
+await ctx.addInitScript(({ words, scenario }) => {
+  /*
+    Sahte konuşma tanıyıcı.
 
-      Başsız tarayıcıda gerçek tanıma yok, yani "doğru cevabı duyar duymaz
-      dinlemeyi kapat" davranışı hiç sınanamıyordu. Bu sahte tanıyıcı doğru
-      cevabı ARA SONUÇ olarak veriyor ve `onend` hiç vermiyor: tur ilerliyorsa
-      bunu yapan tek şey erken kapatmadır.
+    Başsız tarayıcıda gerçek tanıma yok, yani "doğru cevabı duyar duymaz
+    dinlemeyi kapat" davranışı hiç sınanamıyordu. Bu sahte tanıyıcı doğru
+    cevabı ARA SONUÇ olarak veriyor ve `onend` hiç vermiyor: tur ilerliyorsa
+    bunu yapan tek şey erken kapatmadır.
 
-      `visible-only`: tanıyıcı hiç anlamıyor ("no-speech"). Ekran açıkken
-      sunucuya HİÇ istek gitmemeli — boş dinleme "duyamadım"dır, yol değişmez.
-
-      `switch`: tanıyıcı gerçek Android gibi davranıyor — sayfa gizlenince
-      süren dinlemeyi "aborted" ile iptal ediyor, gizliyken başlatılırsa da.
-      Ekran kapanınca cep yoluna, açılınca tanıyıcıya dönülmeli.
-    */
-    const active = new Set();
-    document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) return;
-      for (const r of [...active]) r.__abort();
-    });
-    class Fake {
-      lang = "";
-      interimResults = false;
-      maxAlternatives = 1;
-      continuous = false;
-      onresult = null;
-      onend = null;
-      onerror = null;
-      __abort() {
+    `visible-only`: tanıyıcı hiç anlamıyor ("no-speech"). Ekran açıkken
+    sunucuya HİÇ istek gitmemeli — boş dinleme "duyamadım"dır, yol değişmez.
+  */
+  const active = new Set();
+  class Fake {
+    lang = "";
+    interimResults = false;
+    maxAlternatives = 1;
+    continuous = false;
+    onresult = null;
+    onend = null;
+    onerror = null;
+    start() {
+      if (scenario === "visible-only") {
+        setTimeout(() => {
+          this.onerror?.({ error: "no-speech" });
+          this.onend?.();
+        }, 500);
+        return;
+      }
+      active.add(this);
+      /*
+        Cevap ekrandan: dinleme sırasında Türkçe soru ekranda yazıyor, sahte
+        tanıyıcı onu bulup Almancasını veriyor. Sayaçla sıra tutmak tekrar
+        sorulan kelimede kayıyordu ve her yanlış cevap sonraki turu
+        bozuyordu. Ekranda soru yoksa (onay sorusu) "evet".
+      */
+      const text = document.body.innerText;
+      const hit = words.find((w) => text.includes(w[2]));
+      const answer = hit ? `${hit[0]} ${hit[1]}` : "evet";
+      setTimeout(() => {
         if (!active.has(this)) return;
         active.delete(this);
-        this.onerror?.({ error: "aborted" });
-        this.onend?.();
-      }
-      start() {
-        if (scenario === "visible-only") {
-          setTimeout(() => {
-            this.onerror?.({ error: "no-speech" });
-            this.onend?.();
-          }, 500);
-          return;
-        }
-        if (scenario === "switch" && document.hidden) {
-          setTimeout(() => {
-            this.onerror?.({ error: "aborted" });
-            this.onend?.();
-          }, 50);
-          return;
-        }
-        active.add(this);
-        /*
-          Cevap ekrandan: dinleme sırasında Türkçe soru ekranda yazıyor, sahte
-          tanıyıcı onu bulup Almancasını veriyor. Sayaçla sıra tutmak kip
-          geçişlerinde (cebe koy → tekrar sor) kayıyordu ve her yanlış cevap
-          sonraki turu bozuyordu. Ekranda soru yoksa (onay sorusu) "evet".
-        */
-        const text = document.body.innerText;
-        const hit = words.find((w) => text.includes(w[2]));
-        const answer = hit ? `${hit[0]} ${hit[1]}` : "evet";
-        setTimeout(() => {
-          if (!active.has(this)) return;
-          active.delete(this);
-          const alt = { transcript: answer, confidence: 0.95 };
-          const res = Object.assign([alt], { length: 1, isFinal: false });
-          this.onresult?.({ results: Object.assign([res], { length: 1 }) });
-        }, 400);
-      }
-      stop() {
-        active.delete(this);
-        // Gerçek tanıyıcı `stop()`tan sonra `onend` veriyor; `browser-fast`
-        // bilerek vermiyor (erken kapatmayı ölçmek için), geçiş senaryosu veriyor.
-        if (scenario === "switch") setTimeout(() => this.onend?.(), 30);
-      }
-      abort() {
-        active.delete(this);
-      }
+        const alt = { transcript: answer, confidence: 0.95 };
+        const res = Object.assign([alt], { length: 1, isFinal: false });
+        this.onresult?.({ results: Object.assign([res], { length: 1 }) });
+      }, 400);
     }
-    Object.defineProperty(window, "webkitSpeechRecognition", { value: Fake, writable: true });
-    Object.defineProperty(window, "SpeechRecognition", { value: Fake, writable: true });
-  }, { words: WORDS_FOR_FAKE, scenario: SCENARIO });
-}
-
-await ctx.addInitScript(() => {
-  let hidden = false;
-  Object.defineProperty(document, "visibilityState", {
-    get: () => (hidden ? "hidden" : "visible"),
-    configurable: true,
-  });
-  Object.defineProperty(document, "hidden", { get: () => hidden, configurable: true });
-
-  // Gerçek telefon kısıtı: ekran kilitliyken yeni mikrofon izni verilmiyor.
-  const md = navigator.mediaDevices;
-  const gum = md.getUserMedia.bind(md);
-  md.getUserMedia = (c) =>
-    hidden
-      ? Promise.reject(new DOMException("locked screen", "NotAllowedError"))
-      : gum(c);
-
-  /*
-    Arka plan kısıtlaması: gizli sayfada zamanlayıcı geri çağrıları dakikada
-    birden sık çalışmıyor. Zaten kurulmuş olanlar da kısılıyor, o yüzden
-    kısıtlama çağrının KENDİSİNDE uygulanıyor; yalnızca kuruluş anında
-    uygulansaydı gizlenmeden önce kurulan zamanlayıcılar serbest kalır ve test
-    gerçekte olmayan bir koruma gösterirdi.
-  */
-  const THROTTLE = 60_000;
-  const wrapTimer = (orig, isInterval) =>
-    function (fn, ms, ...rest) {
-      if (typeof fn !== "function") return orig(fn, ms, ...rest);
-      let last = Date.now();
-      const guarded = (...args) => {
-        if (hidden && Date.now() - last < THROTTLE) {
-          if (!isInterval) orig(guarded, 250);
-          return;
-        }
-        last = Date.now();
-        fn(...args);
-      };
-      return orig(guarded, ms, ...rest);
-    };
-  window.setTimeout = wrapTimer(window.setTimeout.bind(window), false);
-  window.setInterval = wrapTimer(window.setInterval.bind(window), true);
-
-  /*
-    Nabız gözlemi.
-
-    Arka planda ayakta kalmanın tamamı, çalan bir sesin `timeupdate` olayına
-    dayanıyor. Bu olay durursa zaman aşımları da durur ve tur donar — yani
-    testin ölçmesi gereken ilk şey bu. Sayaç test tarafında tutuluyor,
-    uygulamaya hiçbir şey eklenmiyor.
-  */
-  window.__beats = { timeupdate: 0, players: 0 };
-  const play0 = HTMLMediaElement.prototype.play;
-  HTMLMediaElement.prototype.play = function (...a) {
-    if (!this.__watched) {
-      this.__watched = true;
-      window.__beats.players++;
-      this.addEventListener("timeupdate", () => window.__beats.timeupdate++);
+    stop() {
+      // Gerçek tanıyıcı `stop()`tan sonra `onend` veriyor; burada bilerek
+      // verilmiyor (erken kapatmayı ölçmek için).
+      active.delete(this);
     }
-    return play0.apply(this, a);
-  };
-
-  window.__setHidden = (v) => {
-    hidden = v;
-    document.dispatchEvent(new Event("visibilitychange"));
-  };
-});
+    abort() {
+      active.delete(this);
+    }
+  }
+  Object.defineProperty(window, "webkitSpeechRecognition", { value: Fake, writable: true });
+  Object.defineProperty(window, "SpeechRecognition", { value: Fake, writable: true });
+}, { words: WORDS_FOR_FAKE, scenario: SCENARIO });
 
 const page = await ctx.newPage();
 // Sayfanın hataları sessizce yutulmasın: donmanın sebebi çoğu zaman bir
@@ -270,7 +166,7 @@ page.on("console", (m) => {
 
   Gerçek veritabanına bağlanmak bu testin cevaplarını kullanıcının kendi
   ilerlemesine yazardı. Burada sınanan şey zaten sunucu
-  değil: ekran kapalıyken İSTEMCİ döngüsünün yürüyüp yürümediği. Sabit veri
+  değil: İSTEMCİ döngüsünün hangi yolu kullandığı ve yürüyüp yürümediği. Sabit veri
   aynı zamanda tekrarlanabilirlik demek — hangi kelimenin ne zaman okunması
   gerektiği baştan belli.
 */
@@ -321,22 +217,13 @@ const SESSION = {
   },
 };
 
-let progressPosts = 0;
-await page.route("**/api/session**", (route) => {
-  /*
-    İlerleme yazımı ayrıca sayılıyor.
-
-    Duyulmayan tur cevap üretmiyor ve eskiden ilerleme de yazılmıyordu; sunucu
-    turu yarım görüyor, uygulamaya her girişte AYNI yirmi tur geliyordu.
-    Dışarıdan görülebilen kanıt bu istek.
-  */
-  if (route.request().method() === "POST") progressPosts++;
-  return route.fulfill({
+await page.route("**/api/session**", (route) =>
+  route.fulfill({
     status: 200,
     contentType: "application/json",
     body: route.request().method() === "POST" ? '{"ok":true}' : JSON.stringify(SESSION),
-  });
-});
+  }),
+);
 await page.route("**/api/answers**", (route) =>
   route.fulfill({
     status: 200,
@@ -349,8 +236,6 @@ await page.route("**/api/tts**", async (route) => {
   const text = new URL(route.request().url()).searchParams.get("t") ?? "";
   spoken.push({ ms: Date.now() - t0, text });
   log("OKU:", JSON.stringify(text));
-  if (SCENARIO === "tts-hang") return never();
-  if (SCENARIO === "tts-500") return route.fulfill({ status: 500, body: "" });
   return route.fulfill({ status: 200, contentType: "audio/wav", body: CLIP });
 });
 
@@ -359,20 +244,14 @@ await page.route("**/api/stt**", async (route) => {
     return route.fulfill({
       status: 200,
       contentType: "application/json",
-      body: SCENARIO === "stt-off" ? '{"configured":false}' : '{"configured":true}',
+      body: '{"configured":true}',
     });
   sttPosts++;
-  sttTimes.push(Date.now() - t0);
   log("MİKROFON → sunucu (#" + sttPosts + ")");
-  if (SCENARIO === "stt-hang") return never();
-  if (SCENARIO === "stt-500") return route.fulfill({ status: 500, body: "" });
   return route.fulfill({
     status: 200,
     contentType: "application/json",
-    body:
-      SCENARIO === "stt-noise"
-        ? JSON.stringify({ text: "and then he said", confidence: 0.18 })
-        : JSON.stringify({ text: "der Weg", confidence: 0.96 }),
+    body: JSON.stringify({ text: "der Weg", confidence: 0.96 }),
   });
 });
 
@@ -381,144 +260,48 @@ await page.goto(`${BASE}/learn`, { waitUntil: "domcontentloaded" });
 // "Farklı bir şey dene" ızgarasındaki Yürürken döşemesi — döşemenin tamamı
 // bir düğme (bkz. components/mode-tile), adı başlık + durum satırı.
 await page.getByRole("button", { name: /Yürürken/ }).click({ timeout: 20_000 });
-await page.getByRole("button", { name: /Kulaklığı tak, başla|Devam et/ }).click({ timeout: 20_000 });
+await page.getByRole("button", { name: /Ekran açık (başla|devam et)/ }).click({ timeout: 20_000 });
 log("tur başladı (ekran açık)");
 
-/*
-  Cep yolu artık kendiliğinden değil "Cebe koy" ile kuruluyor: mikrofon ekran
-  AÇIKKEN alınıyor (kilitliyken istenemiyor) ve tutulan mikrofon tarayıcı
-  tanıyıcısını bozduğu için ekran kipinde hiç tutulmuyor. Ekranı kapatan
-  senaryolar önce buna basıyor; düğme yoksa (sunucu STT kapalı) tur ekran
-  kapanınca sesli açıklamayla durmalı.
-*/
-if (SCENARIO !== "browser-fast" && SCENARIO !== "visible-only") {
-  try {
-    await page.getByRole("button", { name: /Cebe koy/ }).click({ timeout: 8_000 });
-    log("cebe koy");
-  } catch {
-    log("cebe koy düğmesi yok (sunucu STT kapalı?)");
-  }
-}
-
-await page.waitForTimeout(HIDE_AT_MS);
-const beforeHide = spoken.length;
-const hideAt = Date.now() - t0;
-if (SCENARIO === "browser-fast" || SCENARIO === "visible-only") {
-  log("--- EKRAN AÇIK KALIYOR (tarayıcı tanıyıcısı yolu) ---");
-} else {
-  log("--- EKRAN KAPANDI ---");
-  await page.evaluate(() => window.__setHidden(true));
-}
-
-// Nabız gerçekten atıyor mu — donmanın sebebini ayırt eden tek ölçü.
-await page.waitForTimeout(4000);
-const beat0 = await page.evaluate(() => ({ ...window.__beats }));
-await page.waitForTimeout(4000);
-const beat1 = await page.evaluate(() => ({ ...window.__beats }));
-log(
-  `nabız: ${beat1.timeupdate - beat0.timeupdate} atış / 4 sn · ${beat1.players} oynatıcı`,
-);
-
-/*
-  `switch`: ekran bir süre sonra GERİ açılıyor. Beklenen: kapalıyken sunucuya
-  kayıt gitti, açıldıktan sonra (süren kaydın bitmesi için kısa bir pay
-  hariç) bir daha gitmiyor ve tur tanıyıcıyla sürüyor.
-*/
-let showAt = Infinity;
-if (SCENARIO === "switch") {
-  await page.waitForTimeout(Math.max(0, SHOW_AT_MS - HIDE_AT_MS - 8000));
-  showAt = Date.now() - t0;
-  log("--- EKRAN AÇILDI ---");
-  await page.evaluate(() => window.__setHidden(false));
-  await page.waitForTimeout(Math.max(0, RUN_MS - SHOW_AT_MS));
-} else {
-  await page.waitForTimeout(Math.max(0, RUN_MS - 8000));
-}
+await page.waitForTimeout(MEASURE_AT_MS);
+const beforeMeasure = spoken.length;
+log("--- ÖLÇÜM BAŞLADI (tarayıcı tanıyıcısı yolu) ---");
+await page.waitForTimeout(Math.max(0, RUN_MS - MEASURE_AT_MS));
 await browser.close();
 
 // ── Değerlendirme ──────────────────────────────────────────────────
-const after = spoken.slice(beforeHide);
+const after = spoken.slice(beforeMeasure);
 const uniq = [...new Set(after.map((s) => s.text))];
 console.log("\n─────────────────────────────────");
-console.log("ekran kapandıktan sonra okunan parça :", after.length);
+console.log("ölçüm boyunca okunan parça          :", after.length);
 console.log("farklı metin                        :", uniq.length);
 console.log("sunucuya giden kayıt                :", sttPosts);
-console.log("ilerleme yazımı                     :", progressPosts);
 if (after.length) {
   const gaps = after.slice(1).map((s, i) => s.ms - after[i].ms);
   console.log("en uzun sessizlik                   :", Math.max(...gaps, 0), "ms");
 }
 console.log("okunanlar:", uniq.slice(0, 12).map((t) => JSON.stringify(t)).join(" "));
 
-// Ölçüt: ekran kapalıyken tur İLERLEMİŞ olmalı. Tek bir metinde kalmak
-// donmadır; bu testin varlık sebebi de o.
 /*
-  Ölçüt senaryoya göre değişiyor.
+  Erken kapatma ölçütü (`browser-fast`): sahte tanıyıcı `onend` vermediği için
+  tur yalnızca erken kapatma sayesinde ilerleyebilir. Üstelik hızlı
+  ilerlemeli — zaman aşımıyla kurtarılsaydı her soru 21 saniye sürerdi.
 
-  `stt-off`ta cevap duyulamıyor, yani ilerlemenin bir yerde durması DOĞRU
-  davranış: duyulmayan cevaplarla yirmi turu tüketmek kullanıcıyı boşuna
-  yorardı. Aranan şey donma değil, sesli bir açıklamayla durmak.
-*/
-const explained = uniq.some((t) => t.includes("duyamıyorum"));
-/*
-  Gürültü senaryosunda ölçüt: gelen metin YANLIŞ CEVAP olarak işlenmemeli.
-  Yanlış cevapta "Doğrusu:" okunuyor, duyulmayanda "Duyamadım." — ikisi
-  dışarıdan ayırt edilebiliyor.
-*/
-const asNoise = uniq.some((t) => t.includes("Duyamadım")) && !uniq.some((t) => t.includes("Doğrusu"));
-// Duyulmayan turda ilerleme yine de yazılmalı — yoksa aynı tur geri gelir.
-const kept = progressPosts > 0;
-/*
-  Erken kapatma ölçütü: sahte tanıyıcı `onend` vermediği için tur yalnızca
-  erken kapatma sayesinde ilerleyebilir. Üstelik hızlı ilerlemeli — zaman
-  aşımıyla kurtarılsaydı her soru 21 saniye sürerdi.
+  `visible-only`: sunucuya HİÇ istek yok; tur ya "duyamadım"larla ilerler ya
+  da duyulmama sınırında sesle durur, ikisi de doğru.
 */
 const quick = after.length > 1 && Math.max(...after.slice(1).map((s2, i) => s2.ms - after[i].ms), 0) < 8000;
-/*
-  Geçiş ölçütleri (`switch`): kapalıyken sunucuya kayıt gitmiş olmalı; ekran
-  açıldıktan sonra — süren kaydın bitmesine 8 sn pay — bir daha gitmemeli; tur
-  ekran açıldıktan sonra da ilerlemeli. `visible-only`: sayfa hep görünür,
-  sunucuya HİÇ istek yok, tur "duyamadım"larla yine de ilerliyor.
-*/
-const postsHidden = sttTimes.filter((t) => t >= hideAt && t < showAt).length;
-const postsAfterShow = sttTimes.filter((t) => t > showAt + 8000).length;
-const spokenAfterShow = spoken.filter((s) => s.ms > showAt + 2000).length;
-if (SCENARIO === "switch") {
-  console.log("kapalıyken giden kayıt              :", postsHidden);
-  console.log("açıldıktan sonra giden kayıt        :", postsAfterShow);
-  console.log("açıldıktan sonra okunan parça       :", spokenAfterShow);
-}
 const ok =
   SCENARIO === "browser-fast"
     ? uniq.length >= 3 && quick
-    : SCENARIO === "visible-only"
-      // Tur ya "duyamadım"larla ilerler ya da duyulmama sınırında sesle durur;
-      // ikisi de doğru. Yanlış olan tek şey sunucuya istek gitmesi.
-      ? sttTimes.length === 0 && uniq.some((t) => t.includes("Duyamadım") || t.includes("duyamıyorum"))
-      : SCENARIO === "switch"
-        ? postsHidden > 0 && postsAfterShow === 0 && spokenAfterShow >= 2
-        : SCENARIO === "stt-off"
-          ? explained
-          : SCENARIO === "stt-noise"
-            ? uniq.length >= 3 && asNoise && kept
-            : uniq.length >= 3;
+    : sttPosts === 0 && uniq.some((t) => t.includes("Duyamadım") || t.includes("duyamıyorum"));
 console.log(
   ok
     ? SCENARIO === "browser-fast"
       ? "\nGEÇTİ — doğru cevap duyulur duyulmaz dinleme kapandı"
-      : SCENARIO === "visible-only"
-        ? "\nGEÇTİ — ekran açıkken sunucuya hiç istek gitmedi, tur duyamadımlarla sürdü"
-        : SCENARIO === "switch"
-          ? "\nGEÇTİ — kapanınca cep yoluna geçti, açılınca tanıyıcıya döndü"
-          : SCENARIO === "stt-off"
-            ? "\nGEÇTİ — donmadı, sebebini sesle söyleyip durdu"
-            : SCENARIO === "stt-noise"
-              ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı, ilerleme yine de yazıldı"
-              : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
-    : SCENARIO === "visible-only"
-      ? "\nKALDI — ekran açıkken sunucuya istek gitti ya da tur ilerlemedi"
-      : SCENARIO === "switch"
-        ? "\nKALDI — geçiş beklendiği gibi olmadı"
-        : "\nKALDI — tur ekran kapalıyken durdu",
+      : "\nGEÇTİ — ekran açıkken sunucuya hiç istek gitmedi, tur duyamadımlarla sürdü"
+    : SCENARIO === "browser-fast"
+      ? "\nKALDI — dinleme erken kapanmadı ya da tur ilerlemedi"
+      : "\nKALDI — ekran açıkken sunucuya istek gitti ya da tur ilerlemedi",
 );
 process.exit(ok ? 0 : 1);
