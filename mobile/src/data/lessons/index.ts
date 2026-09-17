@@ -1,21 +1,23 @@
 import type { DialogueTurn } from "../../lib/native";
 /**
- * Ders kataloğu — mobil paket. scripts/dump-lessons-mobile.ts üretir (web'in
- * LESSONS'ından, seviye başına bir JSON). Web dersi koddan okuyor; mobil de
- * öyle çünkü /api/lesson yalnız SONUCU kaydeder, içeriği sunmaz.
+ * Ders kataloğu — A1 İKİLİDE, gerisi iniyor.
+ *
+ * On JSON (7,2 MB) pakette duruyordu ve kullanıcı aynı anda tek seviyede
+ * çalışıyor. Artık yalnız A1 tohumu ikilide: uygulama ağ olmadan da açılıyor,
+ * ilk ders hemen başlıyor, üst seviyeler girildiğinde inip diskte kalıyor.
+ *
+ * TOHUM NEDEN A1 VE NEDEN İKİ KURS BİRDEN: ikili hangi kursun seçileceğini
+ * bilmiyor (kurs hesapta), o yüzden ikisinin de A1'i gömülü — brotli ile
+ * ~250 KB. İlk açılışın ağa bağlı olmaması bu tohuma bağlı.
+ *
+ * Kaynak yine tek: `scripts/dump-lessons-mobile` projeksiyonu hem tohumu
+ * yazıyor hem yayını besliyor (`content:publish`).
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import { nativeLesson } from "../../lib/nativeContent";
+import { ensurePack, getContentItem, listContentItems } from "../../content/store";
 import a1 from "./de-a1.json";
 import enA1 from "./en-a1.json";
-import enA2 from "./en-a2.json";
-import enB1 from "./en-b1.json";
-import enB2 from "./en-b2.json";
-import enC1 from "./en-c1.json";
-import a2 from "./de-a2.json";
-import b1 from "./de-b1.json";
-import b2 from "./de-b2.json";
-import c1 from "./de-c1.json";
 
 /**
  * Anlatım segmenti.
@@ -60,43 +62,73 @@ export type Lesson = {
 };
 
 /**
- * Paketler kurs → seviye biçiminde; yeni bir dilin paketi eklendiğinde buraya
- * bir satır giriyor, yeni bir seviye o satıra bir anahtar ekliyor.
+ * İKİLİDEKİ TOHUM — yalnız A1, iki kurs için.
+ *
+ * Seviye anahtarı olmayan ve inmemiş seviye boş dönüyor; Patika o ünitelerde
+ * "Yakında" gösteriyor ve farklı bir dilin derslerine ASLA düşmüyor
+ * (gsw-zh → de meşru, çünkü ikisinin hedefi de Almanca).
  */
-const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
-  de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
-  // İngilizce: A1'den C1'e beş seviye de tam (100'er ders).
-  // Sayılar burada TEK TEK YAZILMIYOR — güncel sayı `npm run dump:lessons en`
-  // çıktısında, yorumda bayatlıyor.
-  // Seviye anahtarı olmayan seviyeler boş döner — Patika o ünitelerde
-  // "Yakında" gösterir, Almanca derslere DÜŞMEZ (bkz. bundleFor: yalnız aynı
-  // hedef dile düşülür). Yarım seviye de aynı şekilde görünür: yazılmış
-  // modüller listelenir, kalanlar gelince dosya büyür.
-  en: { A1: enA1 as Lesson[], A2: enA2 as Lesson[], B1: enB1 as Lesson[], B2: enB2 as Lesson[], C1: enC1 as Lesson[] },
+const SEED: Record<string, Record<string, Lesson[]>> = {
+  de: { A1: a1 as Lesson[] },
+  en: { A1: enA1 as Lesson[] },
 };
 
-/**
- * Kursun ders paketi.
- *
- * Yükleyici eskiden kursu hiç bilmiyordu: "Zürih Almancası" seçen kullanıcı
- * Hochdeutsch dersleri görüyordu. Aynı hedef dili paylaşan bir kursun paketine
- * düşmek meşru (gsw-zh → de: ikisi de Almanca, lehçe farkı), ama **farklı bir
- * dile asla düşülmez** — İngilizce kursta Almanca ders göstermektense hiç ders
- * göstermemek doğrudur.
- */
-function bundleFor(course: string): Record<string, Lesson[]> | undefined {
-  const own = BY_COURSE[course];
-  if (own) return own;
-  const target = courseOrDefault(course).targetLang;
-  for (const id of Object.keys(BY_COURSE)) {
-    if (courseOrDefault(id).targetLang === target) return BY_COURSE[id];
-  }
-  return undefined;
+/** İnen seviyeler — anahtar `"<paketKursu>-<SEVİYE>"`. */
+const pools = new Map<string, Lesson[]>();
+
+/** Kursun ders paketinin kursu: hedef dile göre, kurs kimliğine göre değil. */
+function packCourse(course: string): "de" | "en" {
+  return courseOrDefault(course).targetLang === "en" ? "en" : "de";
 }
 
-const ALL: Lesson[] = Object.values(BY_COURSE).flatMap((byLevel) => Object.values(byLevel).flat());
-const INDEX: Record<string, Lesson> = {};
-for (const l of ALL) INDEX[l.id] = l;
+function packOf(course: string, level: string): string {
+  return `lessons/${packCourse(course)}-${level.toLowerCase()}`;
+}
+
+/** Kimlikten seviye: "de-b1-bewerbung" → B1, "en-c1-weight" → C1. */
+export function lessonLevelOf(id: string): string | null {
+  const part = id.split("-")[1];
+  return part && /^[abc][12]$/i.test(part) ? part.toUpperCase() : null;
+}
+
+/** Kimlikten kurs: kimliğin ilk parçası zaten paket kursu. */
+function courseOfId(id: string): "de" | "en" {
+  return id.split("-")[0] === "en" ? "en" : "de";
+}
+
+/**
+ * Seviye derslerini indirir ve belleğe alır — ekran çizmeden ÖNCE.
+ *
+ * A1 tohumdan geliyor, indirme hiç yapılmıyor. Sync okuyucular paket inmeden
+ * boş dönüyor: Patika "Yakında" gösteriyor, uydurma bir ders göstermiyor.
+ */
+export async function ensureLessons(level: string, course: string = currentCourseId()): Promise<void> {
+  const lv = level.toUpperCase();
+  const c = packCourse(course);
+  if (SEED[c]?.[lv]) return;
+  const key = `${c}-${lv}`;
+  if (pools.has(key)) return;
+  const pack = packOf(course, lv);
+  const ok = await ensurePack(pack);
+  if (!ok) return;
+  const ids = await listContentItems(pack);
+  const out: Lesson[] = [];
+  for (const id of ids) {
+    const lesson = await getContentItem<Lesson>(pack, id);
+    if (lesson) out.push(lesson);
+  }
+  /* SIRA `listContentItems`ten geliyor: paket kaynak sırasını ayrı bir
+     maddede taşıyor (bkz. `content/store` ORDER_ITEM). Kimliğe göre
+     sıralamak YANLIŞ olurdu — ölçüldü, hiçbir seviyede kaynak sırası kimlik
+     sırasıyla aynı değil ve patika üniteleri listeyi sırayla tüketiyor. */
+  pools.set(key, out);
+}
+
+function poolOf(course: string, level: string): Lesson[] {
+  const lv = level.toUpperCase();
+  const c = packCourse(course);
+  return SEED[c]?.[lv] ?? pools.get(`${c}-${lv}`) ?? [];
+}
 
 /*
   ANA DİL BURADA UYGULANIYOR, çağıranda değil.
@@ -108,10 +140,20 @@ for (const l of ALL) INDEX[l.id] = l;
   döndürüyor ve 4,62 MB'lık sözlük hiç açılmıyor.
 */
 export function lessonsForLevel(level: string, course: string = currentCourseId()): Lesson[] {
-  return (bundleFor(course)?.[level] ?? []).map(nativeLesson);
+  return poolOf(course, level).map(nativeLesson);
 }
+
+/**
+ * Dersi kimliğinden bulur — kurs ve seviye kimliğin İÇİNDE.
+ *
+ * Eskiden bütün paketlerden kurulmuş tek bir dizin vardı; paketler indiğine
+ * göre öyle bir dizin ya eksik olur ya da her şeyi indirmeyi gerektirir.
+ * Kimlik zaten "kurs-seviye-slug": doğru havuza doğrudan gidiliyor.
+ */
 export function findLesson(id: string): Lesson | undefined {
-  const l = INDEX[id];
+  const level = lessonLevelOf(id);
+  if (!level) return undefined;
+  const l = poolOf(courseOfId(id), level).find((x) => x.id === id);
   return l ? nativeLesson(l) : undefined;
 }
 

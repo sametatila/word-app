@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
@@ -9,6 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
+import { ensureLessons } from "../data/lessons";
 import { QuestionList } from "../game/skillQuiz";
 import { markItemDone, recordPathItem } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -36,19 +37,29 @@ export function QuizScreen() {
   const [round, setRound] = useState(0);
 
   const isGrammar = params.kind === "grammar";
-  const questions = useMemo(
-    () => (isGrammar
-      ? deriveGrammar(params.level, params.unitIndex)
-      /* Tekrar havuzu = BU üniteden ÖNCEKİ üniteler; soruların üçte biri
-         oradan gelir (web `immersion/quiz/[unit]` ile aynı). */
-      : deriveQuiz(
-          buildUnitBrief(params.level, params.unitIndex),
-          levelPool(params.level),
-          isCheckpoint ? 12 : 8,
-          earlierPool(params.level, params.unitIndex),
-        )),
-    [params.level, params.unitIndex, isCheckpoint, isGrammar],
-  );
+  /* Sorular derslerden türüyor ve dersler A1 dışında ikilide değil: seviye
+     paketi inmeden soru üretilemez. İndikten sonra `ready` listeyi yeniden
+     kuruyor; inene kadar ekran kendi yükleniyor durumunu gösteriyor. */
+  const [questions, setQuestions] = useState<ReturnType<typeof deriveGrammar>>([]);
+  useEffect(() => {
+    let dead = false;
+    void ensureLessons(params.level).then(() => {
+      if (dead) return;
+      setQuestions(
+        isGrammar
+          ? deriveGrammar(params.level, params.unitIndex)
+          : /* Tekrar havuzu = BU üniteden ÖNCEKİ üniteler; soruların üçte biri
+               oradan gelir (web `immersion/quiz/[unit]` ile aynı). */
+            deriveQuiz(
+              buildUnitBrief(params.level, params.unitIndex),
+              levelPool(params.level),
+              isCheckpoint ? 12 : 8,
+              earlierPool(params.level, params.unitIndex),
+            ),
+      );
+    });
+    return () => { dead = true; };
+  }, [params.level, params.unitIndex, isCheckpoint, isGrammar]);
 
   function recordAndFinish(c: number) {
     setCorrect(c);

@@ -77,8 +77,10 @@ function compare(label: string, web: Set<string>, mob: Set<string>) {
   console.error("   dokumu yenile: npm run dump:lessons / dump:skills / dump:mock-exams (ve :en surumleri)");
 }
 
-const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2", "en-b1", "en-b2", "en-c1"].map((n) => `mobile/src/data/lessons/${n}.json`);
-compare("ders", new Set(LESSONS.map((l) => l.id)), ids(lessonFiles));
+/* TOHUM KİMLİKLERİ: ikilide yalnız A1 var, gerisi yayına gidiyor. Ölçüt de
+   bu yüzden A1 ile sınırlı — üst seviyelerin doğrulayıcısı `check:lessons`. */
+const seedFiles = ["de-a1", "en-a1"].map((n) => `mobile/src/data/lessons/${n}.json`);
+compare("ders tohumu", new Set(LESSONS.filter((l) => l.level === "A1").map((l) => l.id)), ids(seedFiles));
 
 /*
   BECERİ EGZERSİZLERİ ARTIK DÖKÜLMÜYOR: iki JSON mobil paketten çıkarıldı ve
@@ -139,13 +141,18 @@ compare("ders", new Set(LESSONS.map((l) => l.id)), ids(lessonFiles));
 {
   const built: { label: string; file: string; json: string; cmd: string }[] = [];
   for (const course of ["de", "en"]) {
-    for (const pack of buildLessonDump(course))
+    /* YALNIZ A1: üst seviyeler mobil paketten çıkarıldı ve yayına gidiyor,
+       karşılaştırılacak dosyaları yok. Tohumun kaynakla birebir kalması ise
+       hâlâ önemli — ikilinin ağsız açılışı ona bağlı. */
+    for (const pack of buildLessonDump(course)) {
+      if (pack.level !== "A1") continue;
       built.push({
-        label: `ders metni ${course}-${pack.level}`,
+        label: `ders tohumu ${course}-${pack.level}`,
         file: pack.file,
         json: pack.json,
         cmd: `npm run dump:lessons -- ${course}`,
       });
+    }
   }
   let drift = 0;
   for (const b of built) {

@@ -5,6 +5,7 @@ import { useAuth } from "./AuthContext";
 import { useMe } from "./useMe";
 import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
+import { ensureLessons } from "../data/lessons";
 import { getDoneItems } from "../game/lessonProgress";
 
 /** Pratik adım — içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
@@ -124,7 +125,7 @@ async function yukle(level: string | undefined): Promise<void> {
     /* Patika beceri havuzlarını kullanıyor ve onlar artık seviye paketi
        hâlinde iniyor: kurulum ÖNCESİ paket hazır olmalı, yoksa yuvalar
        "yakında" diye boş çizilir. */
-    await ensureSkills(lv);
+    await Promise.all([ensureSkills(lv), ensureLessons(lv)]);
     yay({ data: buildLocalLearningPath(lv, done), source: "local" });
   } finally {
     yay({ loading: false });

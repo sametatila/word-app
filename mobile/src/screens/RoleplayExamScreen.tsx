@@ -11,7 +11,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
 import { CoachBubble } from "../ui/CoachBubble";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
-import { findLesson, type Lesson } from "../data/lessons";
+import { ensureLessons, findLesson, lessonLevelOf, type Lesson } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { candoIdsForLesson } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
@@ -75,7 +75,15 @@ export function RoleplayExamScreen() {
   const kbLift = useKeyboardLift(rootRef, spacing.sm);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
-  const lesson = findLesson(id) as Lesson | undefined;
+  /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/lessons`). */
+  const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(id) as Lesson | undefined);
+  useEffect(() => {
+    const level = lessonLevelOf(id);
+    if (!level) return;
+    let dead = false;
+    void ensureLessons(level).then(() => { if (!dead) setLesson(findLesson(id) as Lesson | undefined); });
+    return () => { dead = true; };
+  }, [id]);
 
   const [phase, setPhase] = useState<Phase>("intro");
   const [turns, setTurns] = useState<Turn[]>([]);

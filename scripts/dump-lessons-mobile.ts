@@ -70,17 +70,27 @@ if (process.argv[1]?.endsWith("dump-lessons-mobile.ts")) {
     console.error(`"${course}" kursu için ders yok — paket yazılmadı.`);
     process.exit(1);
   }
+  /*
+    YALNIZ A1 YAZILIYOR — ikilideki TOHUM bu.
+
+    Üst seviyeler mobil paketten çıkarıldı (7,2 MB) ve seviye paketi hâlinde
+    sunucudan iniyor. A1 ikilide kalıyor ki uygulama ağsız da açılsın ve ilk
+    ders hemen başlasın; ikili hangi kursun seçileceğini bilmediği için iki
+    kursun da A1'i gömülü.
+
+    `buildLessonDump` bütün seviyeleri üretmeye DEVAM ediyor:
+    `scripts/content-publish` yayını ondan alıyor, yani projeksiyon tek yerde.
+  */
   mkdirSync(join(process.cwd(), DIR), { recursive: true });
-  let total = 0;
-  for (const level of LEVELS) {
-    const pack = packs.find((p) => p.level === level);
-    if (!pack) {
-      console.log(level.padEnd(3), "   —  ders yok, dosya yazılmadı");
-      continue;
-    }
-    writeFileSync(join(process.cwd(), pack.file), pack.json);
-    total += pack.count;
-    console.log(level.padEnd(3), String(pack.count).padStart(4), "ders");
+  const seed = packs.find((p) => p.level === "A1");
+  if (!seed) {
+    console.error(`"${course}" kursunda A1 yok — tohum yazılamadı.`);
+    process.exit(1);
   }
-  console.log(course, "toplam", total);
+  writeFileSync(join(process.cwd(), seed.file), seed.json);
+  console.log(course, "A1 tohumu yazıldı:", seed.count, "ders");
+  for (const pack of packs) {
+    if (pack.level === "A1") continue;
+    console.log(pack.level.padEnd(3), String(pack.count).padStart(4), "ders — yayına gider, pakete değil");
+  }
 }

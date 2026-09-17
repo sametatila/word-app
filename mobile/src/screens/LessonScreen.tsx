@@ -17,7 +17,7 @@ import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, 
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
-import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
+import { ensureLessons, findLesson, lessonLevelOf, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
@@ -134,7 +134,17 @@ export function LessonScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Lesson">>();
-  const lesson = useMemo<Lesson | undefined>(() => findLesson(params.id), [params.id]);
+  /* Ders A1 dışındaysa ikilide yok, seviye paketiyle iniyor. Normalde patika
+     zaten indirmiş oluyor; bu yol bildirimle ya da derin bağlantıyla doğrudan
+     buraya gelen kullanıcı için. */
+  const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(params.id));
+  useEffect(() => {
+    const level = lessonLevelOf(params.id);
+    if (!level) { setLesson(findLesson(params.id)); return; }
+    let dead = false;
+    void ensureLessons(level).then(() => { if (!dead) setLesson(findLesson(params.id)); });
+    return () => { dead = true; };
+  }, [params.id]);
   const scrollRef = useRef<any>(null);
   /* Alt eylem alanı dipte sabit; klavye açılınca dolgusu klavyenin üstüne
      çıkacak kadar büyüyor. Eskiden hiç büyümüyordu: yazma satırı ve
