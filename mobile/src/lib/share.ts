@@ -13,15 +13,36 @@ import { t, targetLangName, formatPercent } from "./i18n";
  * Kod yoksa bağlantı yine paylaşılıyor ama ödül üretmiyor; paylaşımı büsbütün
  * engellemek daha kötü olurdu.
  *
- * `?code=` biçimi web'deki promo/davet açılış sayfasıyla aynı
- * (`/premium?code=…`): tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
+ * Adres biçimi web'deki davet bağlantısıyla AYNI (`/r/<KOD>`, bkz. sunucu
+ * `app/r/[code]`): iddia edilen bir App Link/Universal Link, yani uygulaması
+ * kurulu olanda uygulamada açılıyor ve bağı kuruyor, kurulu olmayanda webde.
  */
 const APP_URL = "https://www.lernomi.app";
+
+/**
+ * Davet bağlantısı — BİÇİM TEK YERDE.
+ *
+ * Adres iki yerde kuruluyordu (paylaşım metni ve paywall'daki kutu) ve ikisi
+ * ayrışabilirdi; ayrışan bir davet adresi, kimsenin fark etmeyeceği ölü bir
+ * bağlantı demek.
+ */
+export const inviteLink = (referralCode: string): string => `${APP_URL}/r/${referralCode}`;
 
 export async function shareInvite(referralCode?: string | null): Promise<void> {
   try {
     track("share", 0, "invite");
-    const link = referralCode ? `${APP_URL}/premium?code=${referralCode}` : APP_URL;
+    /*
+      PAYLAŞILAN ADRES `/r/<KOD>` — bağı DOKUNUŞLA kuran yol.
+
+      Eskiden `/premium?code=…` paylaşılıyordu: bağlantı paywall'ı açıyor, kodu
+      kutuya dolduruyor ve kullanıcının ayrıca "Uygula"ya basmasını bekliyordu.
+      Üstelik o kutu iOS'ta hiç çizilmiyor (Guideline 3.1.1, `PaywallScreen`
+      `OWN_PROMO_CODES`), yani davet edilen iOS kullanıcısı bağı hiç
+      kuramıyordu. `/r/<kod>` iddia edilen bir App Link/Universal Link:
+      uygulaması kurulu olanda uygulamada açılıp bağı kuruyor, kurulu
+      olmayanda webde. İki yolda da kullanıcı hiçbir şey yazmıyor.
+    */
+    const link = referralCode ? inviteLink(referralCode) : APP_URL;
     await Share.share({
       message: t("share.invite", { lang: targetLangName(), link }),
     });

@@ -522,6 +522,8 @@ export const tr: Record<string, string> = {
   "referral.explain": "Davet ettiğin kişi Premium'a abone olup ilk ödemesini yaptığında {n} gün Premium kazanırsın. Kazandığın ödüller birikir ve mevcut Premium sürene eklenir.",
   "referral.explain.one": "Davet ettiğin kişi Premium'a abone olup ilk ödemesini yaptığında {n} gün Premium kazanırsın. Kazandığın ödüller birikir ve mevcut Premium sürene eklenir.",
   "referral.reward_note": "Ödül, davet ettiğin kişinin ilk ödemesi alındığında hesabına tanımlanır. Yalnızca ücretsiz denemeyi başlatması yeterli değildir.",
+  "referral.already_linked": "Bu hesap zaten bir davetle eşleşmiş; davet bağı bir kez kurulur.",
+  "referral.pending": "Davet bağlantısı tanındı. Giriş yaptığında ya da hesap oluşturduğunda bağ kurulacak.",
   "referral.copy_link": "Bağlantıyı kopyala",
   "referral.copied": "Kopyalandı",
   "referral.invited": "{n} kişi katıldı",

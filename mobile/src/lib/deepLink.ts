@@ -3,11 +3,12 @@ import { API_BASE } from "../api/client";
 /**
  * Gelen bağlantıyı uygulamanın anladığı bir eyleme çevirir.
  *
- * Dört bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
+ * Beş bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
  *   - `/reset-password?token=…`     → uygulama içinde yeni parola ekranı
  *   - `/api/auth/verify-email?token=…` → doğrulamayı uygulama tamamlasın
  *   - `/auth/app?ott=…`             → tarayıcıda açılan girişi devral
  *   - `/u/<kullanıcıadı>`           → paylaşılan profil (davet bağlantısı)
+ *   - `/r/<KOD>`                    → davet bağını kur (kod yazmadan)
  *
  * NEDEN SADECE BUNLAR: iddia edilen her yolu uygulamanın KARŞILAMASI gerekiyor.
  * Karşılanmayan bir yol, bağlantının tarayıcıda açılmasından kötü — uygulama
@@ -49,6 +50,21 @@ export type DeepLinkAction =
       /** Bağlantı bir DAVET paylaşımından mı geldi (`?src=invite`) — bkz. App.tsx. */
       invite: boolean;
     }
+  /**
+   * Davet KODU bağlantısı (`/r/<KOD>`) — bağı yazmadan kuran yol.
+   *
+   * Davet bağı eskiden yalnız paywall'daki kod KUTUSUNA yazılarak kuruluyordu
+   * ve o kutu iOS'ta hiç çizilmiyor (Guideline 3.1.1, `PaywallScreen`
+   * `OWN_PROMO_CODES`). Kutu promo kodu için haklı olarak gizli: promo kodu
+   * gerçekten premium gün açıyor. Ama aynı kutudan girilen DAVET kodu girene
+   * hiçbir şey vermiyor — yalnız "kim kimi davet etti" satırını yazıyor, ödül
+   * davetçiye ve davet edilenin gerçek ödemesinde düşüyor. Doğru olan bir karar
+   * ilgisiz ve zararsız olan yolu da beraberinde götürmüştü.
+   *
+   * Çözüm kutuyu iOS'ta açmak değil, KUTUYU HİÇ GÖSTERMEMEK: bağ artık
+   * dokunulan bağlantıdan kuruluyor, kullanıcı hiçbir şey yazmıyor.
+   */
+  | { kind: "referral"; code: string }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -102,6 +118,25 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
        ve davet sayılmıyor. */
     const invite = url.searchParams.get("src") === "invite" || url.searchParams.has("invite");
     return username ? { kind: "profile", username, invite } : null;
+  }
+
+  if (url.pathname.startsWith("/r/")) {
+    /* Kod SUNUCUDAKİ ile aynı kurala göre sadeleştiriliyor
+       (`lib/premium/referral` `normalizeReferral`): büyük harf, harf ve rakam
+       dışı her şey atılıyor. Paylaşılan bağlantı yüzde kodlanmış gelebiliyor.
+       Boş kalırsa içeri alınmıyor — uygulamayı açıp hiçbir şey yapmasın. */
+    let ham = url.pathname.slice(3);
+    /* `decodeURIComponent` BOZUK yüzde dizisinde fırlatıyor (`/r/%`) ve bu
+       bağlantı DIŞARIDAN geliyor - `MainActivity` dışa açık, telefondaki
+       herhangi bir uygulama istediği adresi verebilir. Sarmalanmazsa
+       `parseDeepLink` fırlatır ve açılış kancası yarıda kalırdı. */
+    try {
+      ham = decodeURIComponent(ham);
+    } catch {
+      /* ham hâliyle devam */
+    }
+    const code = ham.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    return code ? { kind: "referral", code } : null;
   }
 
   if (url.pathname === "/api/auth/verify-email") {

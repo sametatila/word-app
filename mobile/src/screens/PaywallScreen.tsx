@@ -3,7 +3,7 @@ import { t, dateLocale } from "../lib/i18n";
 import { View, ActivityIndicator, AppState, Linking, Platform, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
@@ -13,7 +13,7 @@ import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, restore } from "../lib/billing";
 import { usePremiumStatus, refreshPremium } from "../lib/premium";
-import { shareInvite } from "../lib/share";
+import { inviteLink, shareInvite } from "../lib/share";
 import { api } from "../api/client";
 import { openLegal } from "../lib/legal";
 import { hasMockExams } from "../data/exams";
@@ -134,6 +134,13 @@ export function PaywallScreen() {
   */
   const guest = Boolean(useAuth().user?.guest);
   /*
+    DAVET BAĞLANTISININ SONUCU. Bağ `/r/<KOD>`a dokunulduğunda kuruluyor ve
+    kullanıcı hiçbir şey yazmıyor — sessiz bir başarı ile sessiz bir
+    başarısızlık ona aynı görünürdü. Web `/premium?ref=…` ile aynı durumlar ve
+    aynı cümleler.
+  */
+  const refResult = useRoute<{ key: string; name: string; params?: { ref?: string } }>().params?.ref ?? "";
+  /*
     `configured` = anahtar var mı; `storeOpen` = gerçekten satılacak bir şey var mı.
 
     İkisi eskiden aynıydı ve arada sessiz bir boşluk kalıyordu: anahtar dolu ama
@@ -150,6 +157,34 @@ export function PaywallScreen() {
   // Durum SUNUCUDAN: kapsam metinleri, sınırlar, davet kodu ve "zaten premium
   // miyim" sorusunun cevabı. Mağaza SDK'sı yalnız fiyat ve satın alma için.
   const { status, refresh } = usePremiumStatus();
+
+  /*
+    Cümlelerin çoğu promo kutusunda baştan beri yazılı ve aynı şeyi söylüyor
+    ("kendi kodun", "böyle bir kod yok", "uygulanamadı"): ikinci kez yazmak iki
+    metnin zamanla ayrışması demekti. Web `premium-paywall` de aynı eşlemeyi
+    yapıyor.
+  */
+  const refLine = ((): { ok: boolean; text: string } | null => {
+    switch (refResult) {
+      case "ok": return { ok: true, text: t("promo.referral_linked", { n: status?.referral?.rewardDays ?? 0 }) };
+      case "pending": return { ok: true, text: t("referral.pending") };
+      case "already": return { ok: false, text: t("referral.already_linked") };
+      case "self": return { ok: false, text: t("promo.self") };
+      case "unknown": return { ok: false, text: t("promo.not_found") };
+      case "error": return { ok: false, text: t("promo.failed") };
+      default: return null;
+    }
+  })();
+  const refNotice = refLine ? (
+    <Text
+      accessibilityLiveRegion="polite"
+      variant="caption"
+      color={refLine.ok ? colors.successText : colors.textMuted}
+      style={{ textAlign: "center", marginBottom: spacing.lg, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}
+    >
+      {refLine.text}
+    </Text>
+  ) : null;
   const [pkgs, setPkgs] = useState<PurchasesPackage[] | null>(null);
   const storeOpen = configured && (pkgs === null || pkgs.length > 0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -262,6 +297,8 @@ export function PaywallScreen() {
             ) : null}
           </View>
 
+          {refNotice}
+
           <Section title={t("paywall.what_you_get")} colors={colors}>
             {(status.copy.premium ?? []).map((l) => (
               <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
@@ -316,6 +353,8 @@ export function PaywallScreen() {
               satır sabit — "Ücretsiz hesap". */}
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t(guest ? "guest.name" : "premiumstate.free")}</Text>
         </View>
+
+        {refNotice}
 
         {/* PLANLAR ÖNCE: fiyat iki özellik listesinin arkasında kalıyordu.
             Alttaki satın alma çubuğu zaten sabit ama ne ödeneceği de
@@ -656,8 +695,24 @@ function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: 
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
-        <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center" }}>
-          <Text variant="h3" style={{ letterSpacing: 4 }}>{referral.code}</Text>
+        {/*
+          iOS'TA KOD DEĞİL BAĞLANTI GÖSTERİLİYOR.
+
+          iOS'ta kod girilecek bir yer YOK ve bilerek yok (Guideline 3.1.1,
+          bkz. `OWN_PROMO_CODES`). Çıplak kodu orada büyük büyük göstermek,
+          iOS'taki alıcının hiçbir yere giremeyeceği bir şeyi "paylaş" diye
+          sunmak olurdu — davet eden iyi niyetle kodu okur, karşı taraf
+          çıkmaza girer. Her yerde çalışan şey bağlantı.
+
+          Android'de kod DURUYOR: kutu orada çizili, yani kod uçtan uca
+          işleyen bir yol.
+        */}
+        <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center", paddingHorizontal: spacing.sm }}>
+          {OWN_PROMO_CODES ? (
+            <Text variant="h3" style={{ letterSpacing: 4 }}>{referral.code}</Text>
+          ) : (
+            <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{inviteLink(referral.code)}</Text>
+          )}
         </View>
         <PressableScale onPress={() => void shareInvite(referral.code)} accessibilityRole="button" accessibilityLabel={t("referral.copy_link")} style={{ borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11, flexDirection: "row", alignItems: "center", gap: 6 }}>
           <ShareIcon color={colors.onPrimary} size={16} />

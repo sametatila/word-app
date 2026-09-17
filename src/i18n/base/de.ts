@@ -519,6 +519,8 @@ export const deBase: Record<string, string> = {
   "referral.explain": "Wenn jemand über deine Einladung Premium abonniert und die erste Zahlung leistet, bekommst du {n} Tage Premium. Die Belohnungen summieren sich und verlängern deine laufende Premium-Zeit.",
   "referral.explain.one": "Wenn jemand über deine Einladung Premium abonniert und die erste Zahlung leistet, bekommst du {n} Tag Premium. Die Belohnungen summieren sich und verlängern deine laufende Premium-Zeit.",
   "referral.reward_note": "Die Belohnung kommt an, sobald die erste Zahlung dieser Person eingegangen ist. Nur die kostenlose Testphase zu starten reicht nicht.",
+  "referral.already_linked": "Dieses Konto ist bereits einer Einladung zugeordnet; die Zuordnung erfolgt nur einmal.",
+  "referral.pending": "Einladungslink erkannt. Die Zuordnung erfolgt, sobald du dich anmeldest oder ein Konto erstellst.",
   "referral.copy_link": "Link kopieren",
   "referral.copied": "Kopiert",
   "referral.invited": "{n} Personen beigetreten",

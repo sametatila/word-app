@@ -44,6 +44,7 @@ export function PremiumPaywall({
   fairUse,
   referral,
   prefillCode = "",
+  refResult = "",
 }: {
   source?: string;
   signedIn: boolean;
@@ -61,6 +62,15 @@ export function PremiumPaywall({
   fairUse: FairUse;
   referral: Referral;
   prefillCode?: string;
+  /**
+   * `/r/<kod>` davet bağlantısının sonucu (`?ref=`).
+   *
+   * Bağ o yolda SESSİZCE kuruluyor — kullanıcı hiçbir şey yazmıyor. Sessiz bir
+   * başarı ile sessiz bir başarısızlık kullanıcı için aynı görünür, o yüzden
+   * sonuç burada tek satırla söyleniyor. Durumlar ayrışık: "zaten davetlisin"
+   * ile "böyle bir kod yok" bambaşka iki şey.
+   */
+  refResult?: string;
 }) {
   const t = useT();
   const { course } = useShell();
@@ -96,6 +106,32 @@ export function PremiumPaywall({
     return t("premiumstate.active_until", { date: date(status.until) });
   };
 
+  /*
+    DAVET SONUCU — anahtarların çoğu zaten yazılı.
+
+    "Kendi kodun", "böyle bir kod yok" ve "uygulanamadı" cümleleri promo
+    kutusunda baştan beri duruyor ve aynı şeyi söylüyor; ikinci kez yazmak
+    iki metnin zamanla ayrışması demekti. Yalnız "zaten davetlisin" durumunun
+    karşılığı yoktu (promo'daki `already` "bu KODU zaten kullandın" diyor,
+    burada kastedilen o değil).
+  */
+  const refNotice = ((): { ok: boolean; text: string } | null => {
+    switch (refResult) {
+      case "ok":
+        return { ok: true, text: t("promo.referral_linked", { n: referral?.rewardDays ?? 0 }) };
+      case "already":
+        return { ok: false, text: t("referral.already_linked") };
+      case "self":
+        return { ok: false, text: t("promo.self") };
+      case "unknown":
+        return { ok: false, text: t("promo.not_found") };
+      case "error":
+        return { ok: false, text: t("promo.failed") };
+      default:
+        return null;
+    }
+  })();
+
   const manageLine = (): string | null => {
     if (!status?.premium || status.entSource !== "store") return null;
     if (status.storePlatform === "ios") return t("premiumstate.manage_ios");
@@ -128,6 +164,21 @@ export function PremiumPaywall({
         )}
         {manageLine() && <p className="mt-1 text-caption muted">{manageLine()}</p>}
       </header>
+
+      {/* Davet bağlantısının sonucu — `role="status"` çünkü kullanıcı bunu
+          istemedi, bağlantıya dokundu ve sayfa kendiliğinden bunu söylüyor. */}
+      {refNotice && (
+        <p
+          role="status"
+          className="mt-4 rounded-panel px-4 py-3 text-center text-body"
+          style={{
+            background: "var(--surface-2)",
+            color: refNotice.ok ? "var(--color-mint)" : "var(--text-muted)",
+          }}
+        >
+          {refNotice.text}
+        </p>
+      )}
 
       {!premium && (
         <>
@@ -399,7 +450,16 @@ function PromoBox({ prefill, rewardDays }: { prefill: string; rewardDays: number
 function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
   const t = useT();
   const [copied, setCopied] = useState(false);
-  const url = typeof window !== "undefined" ? `${window.location.origin}/premium?code=${referral.code}` : "";
+  /*
+    PAYLAŞILAN ADRES ARTIK `/r/<KOD>`.
+
+    Eskiden `/premium?code=…` paylaşılıyordu: bağlantı paywall'ı açıyor ve kodu
+    kutuya DOLDURUYORDU — bağı kurmak için kullanıcının ayrıca "Uygula"ya
+    basması gerekiyordu, üstelik o kutu iOS'ta hiç çizilmiyor (3.1.1), yani
+    davet edilen iOS kullanıcısı bağı hiç kuramıyordu. `/r/<kod>` bağı
+    DOKUNUŞLA kuruyor ve uygulaması kurulu olanda uygulamada açılıyor.
+  */
+  const url = typeof window !== "undefined" ? `${window.location.origin}/r/${referral.code}` : "";
 
   async function copy() {
     try {

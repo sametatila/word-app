@@ -52,7 +52,21 @@ export const dynamic = "force-dynamic";
  * Yol ÖNEK: kullanıcı adı değişken. Apple'ın bileşen biçiminde bu `*` ile
  * yazılıyor, Android'de `pathPrefix`, `parseDeepLink`te `startsWith`.
  */
-export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/"] as const;
+/**
+ * BEŞİNCİ YOL: DAVET KODU BAĞLANTISI. `/r/<KOD>` — davet bağını KODA DEĞİL
+ * DOKUNUŞA bağlayan adres.
+ *
+ * Bağ eskiden yalnız paywall'daki kod kutusuna yazılarak kuruluyordu ve o kutu
+ * iOS'ta hiç çizilmiyor (Guideline 3.1.1, `PaywallScreen` `OWN_PROMO_CODES`).
+ * Yani davet edilen iOS kullanıcısı bağı hiç kuramıyordu. Burada iddia edilen
+ * yol o boşluğu kapatıyor: kullanıcı hiçbir şey yazmıyor, bağlantıya dokunuyor.
+ *
+ * Yukarıdaki "yalnız karşılanabilen yol iddia edilir" kuralı burada da tutuyor:
+ * mobil taraf `parseDeepLink`te bunu tanıyor, `App.tsx` bağı kuruyor ve sonucu
+ * kullanıcıya söylüyor; girişsiz/misafir kullanıcıda kod cihazda bekletilip
+ * giriş yapılınca uygulanıyor (`lib/pendingReferral`).
+ */
+export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/", "/r/"] as const;
 
 export async function GET() {
   const team = process.env.APPLE_TEAM_ID;

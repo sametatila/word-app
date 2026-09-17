@@ -140,7 +140,6 @@ const WEB_ONLY = {
   "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/moderation": "yonetim panosu — mobilde yok, olmayacak",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
-  "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
 };
 
@@ -185,6 +184,7 @@ const MOBIL_ONLY_METHOD = {
   "GET /api/me": "web `lib/session`i sunucuda cagiriyor",
   "GET /api/skills/access": "web `lib/premium/skill-access`i sunucuda cagiriyor",
   "GET /api/premium/status": "web `lib/premium/access`i sunucuda cagiriyor",
+  "POST /api/premium/referral": "davet bagi; web `/r/[code]` rotasinda `attachReferral`i SUNUCUDA cagiriyor (sayfa zaten sunucuda, istemciye gidip gelmesi gereksiz). Mobilde sunucu yok, uc cagriliyor.",
   "POST /api/push/device": "FCM cihaz jetonu",
   "DELETE /api/push/device": "FCM cihaz jetonu",
   "GET /api/turnstile": "site anahtari sunucuda gomuluyor",

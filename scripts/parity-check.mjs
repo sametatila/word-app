@@ -10415,6 +10415,90 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "bulunan",
       "beklenen",
     );
+
+    /* -- 277b. DAVET KODU BAGLANTISI (`/r/<KOD>`) ---------------------------
+     *
+     * NEDEN BU YOL VAR. Davet bagi eskiden yalniz paywall'daki kod KUTUSUNA
+     * yazilarak kuruluyordu ve o kutu iOS'ta hic cizilmiyor (Guideline 3.1.1,
+     * `PaywallScreen` `OWN_PROMO_CODES`). Kutu PROMO kodu icin hakli olarak
+     * gizli: promo kodu gercekten premium gun aciyor. Ama ayni kutudan girilen
+     * DAVET kodu girene hicbir sey vermiyor - yalniz "kim kimi davet etti"
+     * satirini yaziyor, odul davetciye ve davet edilenin GERCEK odemesinde
+     * dusuyor. Dogru olan bir karar, ilgisiz ve zararsiz olan yolu da
+     * beraberinde goturmustu: davet edilen iOS kullanicisi bagi hic
+     * kuramiyordu (denetim 2026-09-16, bulgu 6).
+     *
+     * Cozum hakliligi savunmak degil KUTUYU HIC GOSTERMEMEK: bag artik
+     * yazilan koddan degil DOKUNULAN BAGLANTIDAN kuruluyor.
+     *
+     * ADRES BES YERDE YAZILI ve besi birden tutmali; biri kayarsa baglanti
+     * SESSIZCE olur - kimse hata gormez, yalnizca davetler hic baglanmaz:
+     *   beyan     AASA `APP_LINK_PATHS`      (iOS yolu iddia ediyor)
+     *   manifesto AndroidManifest pathPrefix (Android yolu iddia ediyor)
+     *   karsilama `parseDeepLink`            (uygulama yolu tanıyor)
+     *   paylasim  `lib/share` `inviteLink`   (paylasilan adres)
+     *   sunucu    `app/r/[code]`             (kurulu olmayanda web karsiliyor)
+     *
+     * KOD SADELESTIRME IKI TARAFTA AYNI OLMALI: sunucu `normalizeReferral`
+     * buyuk harfe cevirip harf/rakam disini atiyor. Mobil taraf ayni kurali
+     * uygulamazsa kucuk harfle paylasilan bir baglanti mobilde bulunamaz,
+     * webde bulunurdu. */
+    const share = read("mobile/src/lib/share.ts");
+    const rota = existsSync("src/app/r/[code]/route.ts") ? read("src/app/r/[code]/route.ts") : "";
+    sameList(
+      "davet kodu baglantisi bes yerde",
+      [
+        "beyan=" + (/"\/r\/"/.test(aasa) ? "var" : "YOK"),
+        "manifesto=" + (/android:pathPrefix="\/r\/"/.test(manifest) ? "var" : "YOK"),
+        "karsilanan=" + (/url\.pathname\.startsWith\("\/r\/"\)/.test(derin) ? "var" : "YOK"),
+        "paylasim=" + (/inviteLink = \(referralCode: string\): string => `\$\{APP_URL\}\/r\/\$\{referralCode\}`/.test(share) ? "var" : "YOK"),
+        "sunucu=" + (rota ? "var" : "YOK"),
+        "sadelestirme=" + (/toUpperCase\(\)\.replace\(\/\[\^A-Z0-9\]\/g, ""\)/.test(derin) ? "var" : "YOK"),
+      ],
+      ["beyan=var", "manifesto=var", "karsilanan=var", "paylasim=var", "sunucu=var", "sadelestirme=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* EYLEM GEZGINE BAGLI MI + KAYBOLMUYOR MU.
+     *
+     * Bagi kuran istek YALNIZ BIR KEZ atiliyor: bekletme yolu yalniz GEZINMEYI
+     * erteliyor (sonuc `refResult`te duruyor). Istek bekletilen eylemin icinde
+     * tasinsaydi gezgin hazir olmadiginda ikinci kez atilir ve kullanici
+     * "zaten davetlisin" gorurdu - kendi ilk isteginin yankisi.
+     *
+     * HESAP YOKSA KOD BEKLIYOR: davet edilen o anda girissiz ya da MISAFIR
+     * olabilir ve uc hesap istiyor. Vazgecilseydi davet sessizce kaybolurdu. */
+    const pend = sil(read("mobile/src/lib/pendingReferral.ts"));
+    sameList(
+      "davet bagi kayboluyor mu",
+      [
+        "handle=" + (/action\.kind === "referral"/.test(app) ? "var" : "YOK"),
+        "bekletme=" + (/p\?\.kind === "referral"/.test(app) ? "var" : "YOK"),
+        "hesap yoksa saklaniyor=" + (/savePendingReferral\(action\.code\)/.test(app) ? "var" : "YOK"),
+        "giriste uygulaniyor=" + (/applyPendingReferral\(\)/.test(app) ? "var" : "YOK"),
+        "misafir haric=" + (/!user \|\| user\.guest/.test(app) ? "var" : "YOK"),
+        "suresi var=" + (/const TTL_MS = \d/.test(pend) ? "var" : "YOK"),
+      ],
+      ["handle=var", "bekletme=var", "hesap yoksa saklaniyor=var", "giriste uygulaniyor=var", "misafir haric=var", "suresi var=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* SONUC SESSIZ KALMIYOR ve iki platformda AYNI cumlelerle soyleniyor.
+       Kullanici hicbir sey yazmadigi icin sessiz bir basari ile sessiz bir
+       basarisizlik ona ayni gorunur. */
+    const mobPay = read("mobile/src/screens/PaywallScreen.tsx");
+    const webPay = read("src/components/premium-paywall.tsx");
+    const durumlar = (src) =>
+      ["ok", "already", "self", "unknown", "error"].filter((d) => new RegExp(`case "${d}":`).test(src)).join("+");
+    sameList(
+      "davet sonucu iki platformda",
+      ["mobil=" + durumlar(mobPay), "web=" + durumlar(webPay)],
+      ["mobil=ok+already+self+unknown+error", "web=ok+already+self+unknown+error"],
+      "bulunan",
+      "beklenen",
+    );
   }
 
   /* -- 276. KAPANMIS AMA KILITLENMEMIS DORT MADDE --------------------
@@ -16788,6 +16872,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi:notif:weekly", //       haftalik sinav bildirimi anahtari
       "lernomi:onboarded", //          ilk acilis goruldu
       "lernomi:onboarding-prefs", //   misafir ilk acilis tercihleri
+      /* Davet baglantisina dokunuldu ama hesap yoktu: kod cihazda bekliyor ve
+         giris yapilinca uygulaniyor. HESABA AIT DEGIL, bilerek: kod hesaptan
+         ONCE geliyor. Cikista silinseydi "baglantiya dokun, sonra kayit ol"
+         akisi tam ortasindan kopardi (bkz. lib/pendingReferral). */
+      "lernomi:pending-referral", //   bekleyen davet kodu (7 gun)
       "lernomi:reminder", //           gunluk hatirlatma saati
       "lernomi:sound", //              ses acik/kapali
     ];

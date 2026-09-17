@@ -13,6 +13,9 @@ export const dynamic = "force-dynamic";
 /** Paywall'a nereden gelindiği — huni ölçümünde `paywall_view` kind'ı. */
 const SOURCES = new Set(["exam", "walk", "limit", "profile", "nav", "mock", "skill", "lesson"]);
 
+/** `/r/<kod>`un döndürebileceği sonuçlar — adresten gelen başka değer yok sayılır. */
+const REF_RESULTS = new Set(["ok", "already", "self", "unknown", "error"]);
+
 /**
  * Premium sayfası.
  *
@@ -25,8 +28,8 @@ const SOURCES = new Set(["exam", "walk", "limit", "profile", "nav", "mock", "ski
  * Yetki web'de de geçerli: mağazadan alınan abonelik, promo kodu ve referans
  * ödülü aynı deftere yazıldığı için üç platformda da aynı anda açılıyor.
  */
-export default async function PremiumPage({ searchParams }: { searchParams: Promise<{ from?: string; code?: string }> }) {
-  const { from, code } = await searchParams;
+export default async function PremiumPage({ searchParams }: { searchParams: Promise<{ from?: string; code?: string; ref?: string }> }) {
+  const { from, code, ref } = await searchParams;
   const source = from && SOURCES.has(from) ? from : "other";
   const userId = await getUserId();
 
@@ -74,6 +77,8 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
       referral={referral}
       /** Davet bağlantısındaki kod alanı doluysa form açık gelir. */
       prefillCode={typeof code === "string" ? code : ""}
+      /** `/r/<kod>` bağı kurup buraya yönlendirdi — sonucu tek satırla söyle. */
+      refResult={REF_RESULTS.has(ref ?? "") ? (ref as string) : ""}
     />
   );
 }

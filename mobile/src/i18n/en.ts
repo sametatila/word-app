@@ -517,6 +517,8 @@ export const en: Record<string, string> = {
   "referral.explain": "When someone you invite subscribes to Premium and makes their first payment, you earn {n} days of Premium. Rewards add up and extend the Premium time you already have.",
   "referral.explain.one": "When someone you invite subscribes to Premium and makes their first payment, you earn {n} day of Premium. Rewards add up and extend the Premium time you already have.",
   "referral.reward_note": "The reward lands when that person's first payment goes through. Starting the free trial alone is not enough.",
+  "referral.already_linked": "This account is already matched with an invite; the invite link is set only once.",
+  "referral.pending": "Invite link recognised. It will be linked once you sign in or create an account.",
   "referral.copy_link": "Copy link",
   "referral.copied": "Copied",
   "referral.invited": "{n} people joined",

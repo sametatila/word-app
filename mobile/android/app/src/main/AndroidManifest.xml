@@ -95,6 +95,13 @@
                  "Giriş yap" düğmesi gösteriyor (web de oturum istiyor, yani
                  iki taraf eşit). -->
             <data android:scheme="https" android:host="www.lernomi.app" android:pathPrefix="/u/" />
+            <!-- DAVET KODU BAĞLANTISI: bağı KODA DEĞİL DOKUNUŞA bağlıyor.
+                 Bağ eskiden yalnız paywall'daki kod kutusuna yazılarak
+                 kuruluyordu; o kutu iOS'ta 3.1.1 gerekçesiyle hiç çizilmiyor,
+                 yani davet edilen iOS kullanıcısı bağı hiç kuramıyordu.
+                 Uygulama kurulu değilse aynı adres webde bağı kuruyor.
+                 Kod değişken olduğu için `pathPrefix`. -->
+            <data android:scheme="https" android:host="www.lernomi.app" android:pathPrefix="/r/" />
         </intent-filter>
       </activity>
       <service

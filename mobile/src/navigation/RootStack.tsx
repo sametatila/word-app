@@ -62,7 +62,12 @@ export type RootStackParams = {
   Walk: undefined;
   /** Hayatta kalma turu: süre doğru cevapla kazanılıyor, yanlışta yanıyor. */
   Challenge: undefined;
-  Paywall: undefined;
+  /**
+   * `ref`: `/r/<KOD>` davet bağlantısının sonucu — bağ orada SESSİZCE kuruldu
+   * (bkz. App.tsx, lib/pendingReferral) ve kullanıcı ne olduğunu burada
+   * görüyor. Web karşılığı `/premium?ref=…`, cümleler de aynı.
+   */
+  Paywall: { ref?: string } | undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Lesson: { id: string };
   /** Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */

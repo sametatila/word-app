@@ -24,6 +24,7 @@ import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { consumeHandoff } from "./src/lib/handoff";
+import { applyPendingReferral, attachReferral, savePendingReferral, type ReferralResult } from "./src/lib/pendingReferral";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
@@ -41,6 +42,16 @@ function Nav() {
   const [verifying, setVerifying] = useState(false);
   /** Gezgin hazır olmadan gelen derin bağlantı (bkz. onReady). */
   const pending = useRef<DeepLinkAction>(null);
+  /**
+   * Davet bağının SONUCU — bekletilen gezinme onu taşısın diye ayrı duruyor.
+   *
+   * Bekletme yolu yalnız GEZİNMEYİ erteliyor, eylemi değil (aynı ayrım
+   * `profile`daki `invite` ölçümünde de yazılı): bağ bağlantı çözülür çözülmez
+   * kuruluyor. Sonuç bekletilen eylemin içinde taşınsaydı, gezgin hazır
+   * olmadığında istek ikinci kez atılır ve kullanıcı "zaten davetlisin"
+   * görürdü — kendi ilk isteğimizin yankısı.
+   */
+  const refResult = useRef<ReferralResult | "pending" | null>(null);
   const [onboarded, setOnboarded] = useState<boolean | null>(null);
   /*
     BİLDİRİM İZNİ SORUSU AÇILIŞTA DA SORULUYOR.
@@ -122,11 +133,44 @@ function Nav() {
       } catch { /* yut */ }
     };
 
+    /* Davet sonucu paywall'da söyleniyor — web `/premium?ref=…` ile AYNI yer ve
+       aynı cümleler. Ayrı bir bildirim yüzeyi açmak, aynı şeyi iki uygulamada
+       iki farklı biçimde anlatmak olurdu. */
+    const goPaywall = (ref: ReferralResult | "pending") => {
+      refResult.current = ref;
+      if (!navigationRef.isReady()) { pending.current = { kind: "referral", code: "" }; return; }
+      try {
+        (navigationRef.navigate as (n: string, p?: object) => void)("Paywall", { ref });
+      } catch { /* yut */ }
+    };
+
     const handle = async (raw: string | null | undefined) => {
       const action = parseDeepLink(raw);
       if (!action || !alive) return;
 
       if (action.kind === "reset-password") { goReset(action.token); return; }
+
+      /*
+        DAVET BAĞLANTISI — bağ KODA DEĞİL DOKUNUŞA bağlı.
+
+        Oturum kurulumu BEKLENİYOR: soğuk açılışta çerez henüz yerinde
+        olmayabiliyor ve uç hesap istiyor (`requireAccount`). Beklenmezse
+        girişli bir kullanıcının daveti "hesap yok" sanılıp bekletmeye
+        düşerdi — sonuç yanlış değil ama gereksiz bir gecikme.
+
+        Hesap gerçekten yoksa (girişsiz ya da MİSAFİR) kod cihazda bekliyor ve
+        giriş yapılınca uygulanıyor; davet sessizce kaybolmuyor.
+      */
+      if (action.kind === "referral") {
+        track("invite_open");
+        await authSettled();
+        if (!alive) return;
+        const r = await attachReferral(action.code);
+        if (r === null) await savePendingReferral(action.code);
+        if (!alive) return;
+        goPaywall(r ?? "pending");
+        return;
+      }
 
       /*
         DAVETİN VARIŞI ÖLÇÜLÜYOR — web ile aynı olay adıyla.
@@ -180,6 +224,25 @@ function Nav() {
     const sub = Linking.addEventListener("url", (e) => { void handle(e.url); });
     return () => { alive = false; sub.remove(); };
   }, [refresh]);
+
+  /*
+    BEKLEYEN DAVET, HESAP BELİRİNCE UYGULANIYOR.
+
+    Davet bağlantısına dokunan kişi o anda girişsiz ya da MİSAFİR olabiliyor;
+    uç hesap istiyor. Kod cihazda bekletiliyor (`lib/pendingReferral`) ve
+    burada, gerçek bir hesap göründüğünde uygulanıyor.
+
+    SESSİZ: kullanıcı dokunduğu anda "giriş yapınca bağlanacak" cümlesini
+    gördü, söz burada tutuluyor. Girişin hemen ardından ikinci bir bildirimle
+    kesmek, verilen sözü haber diye sunmak olurdu.
+
+    Misafir DIŞARIDA: misafir hesabı davet edilen sayılmıyor (uç da
+    reddediyor), kod yerinde kalıp hesaba geçişi bekliyor.
+  */
+  useEffect(() => {
+    if (loading || !user || user.guest) return;
+    void applyPendingReferral();
+  }, [loading, user]);
 
   /*
     Uzak bildirim dinleyicileri (FCM): jeton yenileme, ön planda gelen bildirimi
@@ -285,6 +348,13 @@ function Nav() {
         if (p?.kind === "profile") {
           try {
             (navigationRef.navigate as (n: string, o?: object) => void)("User", { username: p.username });
+          } catch { /* yut */ }
+        }
+        /* Davet bağı zaten kuruldu (bkz. `refResult`); burada yalnız SONUÇ
+           gösteriliyor, istek tekrarlanmıyor. */
+        if (p?.kind === "referral" && refResult.current) {
+          try {
+            (navigationRef.navigate as (n: string, o?: object) => void)("Paywall", { ref: refResult.current });
           } catch { /* yut */ }
         }
         /* BİLDİRİM DOKUNUŞU DA BEKLİYOR OLABİLİR. Uygulama kapalıyken
