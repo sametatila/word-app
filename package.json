@@ -120,6 +120,8 @@
     "dump:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts",
     "dump:mock-exams:en": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts en",
     "dump:native": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
+    "content:publish": "tsx --tsconfig scripts/tsconfig.ops.json scripts/content-publish.ts",
+    "test:content-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-content-db.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
     "check:en-unitvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-en-unit-vocab.ts",
