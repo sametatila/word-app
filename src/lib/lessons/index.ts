@@ -15,6 +15,13 @@ import { courseOrDefault } from "../courses";
  * mobil tohum dökümü ve yayın bakıyor. Bir rota onu içe alsaydı içerik yine
  * derlemeye girerdi.
  *
+ * BU DOSYA İSTEMCİ BİLEŞENİNDEN İÇE ALINMAMALI: `content/serve` `server-only`
+ * ve bir istemci içe alımı derlemeyi "'server-only' cannot be imported from a
+ * Client Component" diye kırıyor. Ölçülmüş bir kusur — deneme sınavı tarafında
+ * tam bu oldu ve okuyucular oradan ayrı bir dosyaya alındı
+ * (`lib/mock-exams/serve`). İstemcinin ihtiyacı olan tip ve hesap `./types`
+ * içinde.
+ *
  * OKUMALAR ASYNC ve bu kaçınılmaz: paket veritabanından geliyor. Bedeli tek
  * seferlik — `lib/content/serve` paketi süreç belleğinde sürüm anahtarıyla
  * tutuyor, yani ikinci okuma bellekten. Sürüm değişince anahtar da değişiyor,

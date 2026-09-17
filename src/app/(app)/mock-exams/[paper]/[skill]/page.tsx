@@ -5,7 +5,8 @@ import { ensureProfile } from "@/lib/session";
 import { isNativeLang } from "@/lib/i18n/dict";
 import { localiseMockPaper } from "@/lib/lessons/native-server";
 import { MockExamPlayer } from "@/components/mock-exam-player";
-import { mockPaperById, type MockPaper, type MockSkill } from "@/lib/mock-exams";
+import { type MockPaper, type MockSkill } from "@/lib/mock-exams";
+import { mockPaperById } from "@/lib/mock-exams/serve";
 
 export const generateMetadata = titleMeta("mockexams.title");
 export const dynamic = "force-dynamic";

@@ -2,7 +2,7 @@ import "server-only";
 import { and, eq, inArray, isNotNull } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts, profiles } from "@/lib/db/schema";
-import { mockPapersFor } from "@/lib/mock-exams";
+import { mockPapersFor } from "@/lib/mock-exams/serve";
 import type { MockLevel } from "@/lib/mock-exams/types";
 import { premiumConfig } from "./config";
 import { isPremiumCached } from "./entitlement";

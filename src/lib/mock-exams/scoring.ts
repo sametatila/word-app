@@ -1,4 +1,3 @@
-import { mockPaperAt } from "./index";
 import type { MockCourse, MockItem, MockPaper, MockPart, MockSkill, MockTask } from "./types";
 import { MOCK_PASS_PCT, mockBoolLabels } from "./types";
 
@@ -124,20 +123,20 @@ export function findPart(paper: MockPaper, skill: MockSkill): MockPart | null {
  * `answers` madde kimliğinden cevaba: şıklı maddede dizin ("2"), doğru/yanlış
  * maddesinde "true"/"false", eşleştirmede şık harfi, boşlukta yazılan metin.
  */
-export async function scorePart(
-  paperId: string,
+/**
+ * KÂĞIT PARAMETRE OLARAK GELİYOR, kimlikle değil.
+ *
+ * Puanlama SAF kalmak zorunda: bu dosyayı istemci oynatıcısı da içe alıyor
+ * (`foldAnswer`, `isOpenTask`) ve veritabanına bakan bir içe alım derlemeyi
+ * kırıyor. Kâğıdı çağıran getiriyor — sunucu onu denemenin sabitlenmiş
+ * sürümünden okuyor (`mockPaperAt`), yani sınav hangi kâğıtla açıldıysa
+ * onunla bitiyor.
+ */
+export function scorePart(
+  paper: MockPaper,
   skill: MockSkill,
   answers: Record<string, string>,
-  /**
-   * Denemenin açıldığı içerik sürümü — kâğıt ORADAN okunuyor.
-   *
-   * Sabitleme olmadan, sınav sürerken çıkan bir yayın cevapları başka bir
-   * kâğıt sürümüne göre puanlardı. `null` yalnız sabitlemeden önce açılmış
-   * denemeler için: onlar canlı sürümle puanlanıyor.
-   */
-  release: number | null = null,
-): Promise<MockScore | null> {
-  const paper = await mockPaperAt(release, paperId);
+): MockScore | null {
   const part = paper ? findPart(paper, skill) : null;
   if (!paper || !part) return null;
 
@@ -173,7 +172,7 @@ export async function scorePart(
   const correct = items.filter((i) => i.correct).length;
   const pct = total ? Math.round((100 * correct) / total) : 0;
   return {
-    paperId,
+    paperId: paper.id,
     level: paper.level,
     skill,
     correct,

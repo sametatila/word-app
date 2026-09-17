@@ -9,7 +9,8 @@ import { clampDay } from "@/lib/award";
 import { track } from "@/lib/events";
 import { assess } from "@/lib/assess";
 import { recordAiUsage } from "@/lib/ai-usage";
-import { mockPaperAt, mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
+import { type MockSkill, type MockTask } from "@/lib/mock-exams";
+import { mockPaperAt, mockPaperById } from "@/lib/mock-exams/serve";
 import type { MockLevel, MockPaper } from "@/lib/mock-exams/types";
 import { mockCourseOf } from "@/lib/courses";
 import { canMockPaper, mockAccess } from "@/lib/premium/access";
@@ -327,10 +328,10 @@ async function scoreWithExplains(
   lang: NativeLang,
   release: number | null,
 ) {
-  const score = await scorePart(paperId, skill, answers, release);
-  if (!score) return null;
   const source = await mockPaperAt(release, paperId);
-  if (!source) return score;
+  if (!source) return null;
+  const score = scorePart(source, skill, answers);
+  if (!score) return null;
   const localised = await localiseMockPaper(source, lang);
   const part = findPart(localised, skill);
   if (!part) return score;
@@ -515,7 +516,10 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const day = clampDay(typeof body.day === "string" ? body.day : undefined);
   const answers = cleanAnswers(body.answers) ?? {};
   const merged = { ...((row.answers ?? {}) as Record<string, string>), ...answers };
-  const score = await scorePart(row.paperId, row.skill as MockSkill, merged, row.release);
+  /* KÂĞIT DENEMENİN SABİTLENMİŞ SÜRÜMÜNDEN: sınav hangi kâğıtla açıldıysa
+     onunla bitiyor (bkz. `mock_exam_attempts.release`). */
+  const pinned = await mockPaperAt(row.release, row.paperId);
+  const score = pinned ? scorePart(pinned, row.skill as MockSkill, merged) : null;
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   /*
