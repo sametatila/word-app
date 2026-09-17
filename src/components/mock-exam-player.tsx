@@ -4,7 +4,7 @@ import { apiFetch, AI_CONSENT_DECLINED } from "@/lib/api-fetch";
 import { askAiConsentUpfront, isAiConsentDeclined, type AiConsentPurpose } from "@/lib/ai-consent-client";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { speakSegments, stopSpeaking } from "@/components/speak-button";
+import { dialogueSegments, prefetchSegments, speakSegments, stopSpeaking } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
@@ -15,6 +15,7 @@ import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
+import { castFor, type VoiceId } from "@/lib/tts/voices";
 import { useLang, useT } from "@/lib/i18n/client";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
@@ -80,8 +81,21 @@ const withBlanks = (b: string) => b.replace(/\{\{(\d+)\}\}/g, (_m, n) => ` (${n}
  * İngilizce kâğıt açtığında) yönerge yanlış dilde okunurdu. Ses artık kâğıda
  * bağlı: sınavda ne yazıyorsa o okunuyor.
  */
-function sayIn(course: MockCourse, text: string, onEnd?: () => void): void {
-  speakSegments([{ lang: course, text }], onEnd);
+function sayIn(course: MockCourse, text: string, onEnd?: () => void, voice?: VoiceId): void {
+  speakSegments([{ lang: course, text, voice }], onEnd);
+}
+
+/**
+ * Konuşma bölümünün KARŞI TARAFI — sınav anonsundan ayrı bir ses.
+ *
+ * Gerçek sözlü sınavda yönergeyi okuyan görevli ile karşındaki konuşmacı
+ * aynı kişi değil; tek sesle okununca öğrenci "bu bana mı söyleniyor yoksa
+ * sınavın yönergesi mi" ayrımını kulakla yapamıyor. Kadronun erkek sesi
+ * seçiliyor: kullanıcı tercihinden bağımsız, yani bütün kullanıcılarda tek
+ * önbellek girdisi (mobil `MockExamScreen` de aynı ayrımı yapıyor).
+ */
+function partnerVoice(course: MockCourse): VoiceId {
+  return castFor(course).male[0];
 }
 
 function isCorrect(item: MockItem, ans: string | undefined): boolean {
@@ -199,6 +213,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const [open, setOpen] = useState<Record<string, string>>({});
   const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
   const [plays, setPlays] = useState<Record<string, number>>({});
+  /** Şu an çalan dinleme metni — iki kez basmayı ve iki hakkı birden yakmayı engelliyor. */
+  const [playing, setPlaying] = useState<string | null>(null);
   const [attempt, setAttempt] = useState<Attempt | null>(null);
   const [resumed, setResumed] = useState(false);
   const [autoNext, setAutoNext] = useState(false);
@@ -498,12 +514,31 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         onAnswer={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
         onOpen={(id, v) => setOpen((o) => ({ ...o, [id]: v }))}
         onOpenScore={(id, v) => setOpenScores((s) => ({ ...s, [id]: v }))}
+        /*
+          DİNLEME — üç şey aynı anda düzeldi.
+
+          1. Diyaloğun tamamı tek dizgede birleşiyordu (`speakSegments` aynı
+             dildeki bitişik parçaları birleştiriyor) ve uç 600 karakterin
+             üstünü 400 ile reddediyor: bu kâğıtlardaki dinleme
+             diyaloglarının 171'i HİÇ ÇALMIYORDU. `dialogueSegments` replik
+             replik okuyor.
+          2. Bütün konuşmacılar tek sesti; artık konuşmacı başına ayrı ses ve
+             sıra geçişinde nefes payı var.
+          3. Hak, ses ÇALMAYA BAŞLAYINCA yanıyor. Eskiden düğmeye basıldığı
+             an düşülüyordu, yani ses gelmeyen her denemede öğrenci iki
+             hakkından birini hiçbir şey duymadan kaybediyordu — tam da
+             yukarıdaki hata yüzünden sık olan durum.
+        */
         onPlay={(st) => {
-          const used = plays[st.id] ?? 0;
-          if (used >= st.plays) return;
-          setPlays((p) => ({ ...p, [st.id]: used + 1 }));
-          speakSegments(st.segments.map((s) => ({ lang: paper.course, text: s.text })));
+          if ((plays[st.id] ?? 0) >= st.plays || playing) return;
+          setPlaying(st.id);
+          speakSegments(
+            dialogueSegments(paper.course, st.segments),
+            () => setPlaying(null),
+            () => setPlays((p) => ({ ...p, [st.id]: (p[st.id] ?? 0) + 1 })),
+          );
         }}
+        playing={playing}
       />
 
       <div className="card mt-3 p-4">
@@ -549,7 +584,7 @@ function expected(item: MockItem, task: MockTask): string {
 /* ── görev ────────────────────────────────────────────────────────────────── */
 
 function TaskView({
-  course, task, answers, open, openScores, plays, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
+  course, task, answers, open, openScores, plays, playing, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
 }: {
   course: MockCourse;
   task: MockTask;
@@ -557,6 +592,7 @@ function TaskView({
   open: Record<string, string>;
   openScores: Record<string, OpenScore>;
   plays: Record<string, number>;
+  playing: string | null;
   attemptId: number | null;
   onAnnounce: () => void;
   onAnswer: (id: string, v: string) => void;
@@ -588,7 +624,7 @@ function TaskView({
 
       {(task.texts ?? []).map((st) => (
         <div key={st.id} className="space-y-3">
-          <Stimulus course={course} st={st} plays={plays} onPlay={onPlay} />
+          <Stimulus course={course} st={st} plays={plays} playing={playing} onPlay={onPlay} />
           {grouped ? itemsOf(st.id).map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} answers={answers} onAnswer={onAnswer} />) : null}
         </div>
       ))}
@@ -604,8 +640,21 @@ function TaskView({
   );
 }
 
-function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockStimulus; plays: Record<string, number>; onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void }) {
+function Stimulus({ course, st, plays, playing, onPlay }: { course: MockCourse; st: MockStimulus; plays: Record<string, number>; playing: string | null; onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void }) {
   const t = useT();
+  /*
+    ÖN İNDİRME — görev açılır açılmaz, basılmadan önce.
+
+    Nöral ses ilk dinlemede bir-iki saniye sürüyor ve sınavda o bekleme
+    pahalı: süre işliyor, öğrenci düğmeye bir daha basıyor. Görev ekrana
+    geldiği anda indirmek o gecikmeyi tamamen görünmez yapıyor — sıra
+    geldiğinde ses zaten tarayıcı önbelleğinde. Çalmayla AYNI parçalardan
+    geçiyor, yoksa başka bir adres indirilir ve ısınan şey çalınacak ses
+    olmazdı. Hata sessizce yutuluyor: ön indirme bir iyileştirme, garanti değil.
+  */
+  useEffect(() => {
+    if (st.kind === "audio") prefetchSegments(dialogueSegments(course, st.segments));
+  }, [course, st]);
   if (st.kind === "text") {
     return (
       <div className="card p-4">
@@ -621,7 +670,13 @@ function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockS
       <p className="muted text-caption tracking-wide">{st.genre} · {st.genreTr}</p>
       {st.title ? <p className="mt-1 text-strong" lang={course}>{st.title}</p> : null}
       <p className="muted mt-1 text-body leading-relaxed">{st.situation}</p>
-      <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-body" disabled={rest <= 0} onClick={() => onPlay(st)}>
+      <button
+        type="button"
+        className="btn btn-ghost mt-3 px-4 py-2 text-body"
+        disabled={rest <= 0 || playing === st.id}
+        aria-busy={playing === st.id}
+        onClick={() => onPlay(st)}
+      >
         <SpeakerIcon className="size-4" />{" "}
         {t(rest <= 0 ? "mockexam.plays_done" : rest === st.plays ? "mockexam.listen" : "mockexam.listen_again")}
       </button>
@@ -871,7 +926,7 @@ function SpeakingTask({
       const finish = () => { if (!done) { done = true; resolve(); } };
       // Ses hiç çalmazsa görev asılı kalmasın: üst sınır konuşma uzunluğuna göre.
       const guard = setTimeout(finish, Math.min(30_000, 2500 + text.length * 90));
-      sayIn(course, text, () => { clearTimeout(guard); finish(); });
+      sayIn(course, text, () => { clearTimeout(guard); finish(); }, partnerVoice(course));
     });
 
   /** Bir turluk kayıt → `/api/stt` → düz metin. */

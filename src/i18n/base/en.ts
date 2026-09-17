@@ -2037,6 +2037,8 @@ export const enBase: Record<string, string> = {
   "wquiz.none_title": "No quiz this week",
   "wquiz.none_sub": "It will appear here once a quiz for your level and course is ready.",
   "wquiz.listen_hint": "Listen — the text is not shown",
+  "wquiz.listen_all": "Play the whole conversation",
+  "wquiz.listen_stop": "Stop",
   "wquiz.preparing": "Preparing the quiz…",
   "wquiz.saving": "Sending your answers…",
   "skillp.result_perfect": "Flawless",

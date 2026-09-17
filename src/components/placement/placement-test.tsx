@@ -4,7 +4,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { speakGerman } from "@/components/speak-button";
+import { dialogueSegments, speakSegments } from "@/components/speak-button";
 import { AlertIcon, CheckIcon, ClockIcon, ExamIcon, FlagIcon, SpeakerIcon, StackIcon, TargetIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
@@ -460,12 +460,19 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           ))}
         </div>
       ) : null}
+      {/*
+        KONUŞMACI BAŞINA AYRI SES. Etiket düğmenin üstünde zaten yazıyordu
+        ("Kundin · 1. bölüm") ama iki bölüm de aynı sesle okunuyordu; seviye
+        tespitinde ölçülen şey tam da konuşmayı takip edebilmek. Kadro kurstan
+        türetiliyor, `localStorage`tan değil — bu değer zaten kancadan geliyor,
+        yani sunucuda çizilen ilk turda da doğru.
+      */}
       {item.segments ? (
         <div className="mb-3 flex flex-wrap gap-2">
-          {item.segments.map((s, i) => (
-            <button key={i} type="button" onClick={() => speakGerman(s.text)} className="chip flex items-center gap-1.5 px-3 py-1.5 text-caption">
+          {dialogueSegments(course, item.segments).map((seg, i) => (
+            <button key={i} type="button" onClick={() => speakSegments([seg])} className="chip flex items-center gap-1.5 px-3 py-1.5 text-caption">
               <SpeakerIcon size={13} />
-              {s.speaker ? `${s.speaker} · ` : ""}{t("placement.section_n", { n: i + 1 })}
+              {item.segments?.[i]?.speaker ? `${item.segments[i].speaker} · ` : ""}{t("placement.section_n", { n: i + 1 })}
             </button>
           ))}
         </div>

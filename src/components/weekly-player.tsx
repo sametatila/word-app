@@ -4,7 +4,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { RoundExit } from "@/components/round-exit";
-import { SpeakButton } from "@/components/speak-button";
+import { COURSE_KEY, SpeakButton, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, CoverBody, StateBody } from "@/components/flow";
 import { AlertIcon, CalendarIcon, CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { track } from "@/lib/track";
@@ -308,6 +308,39 @@ export function WeeklyPlayer() {
 
 /** Okuma metni ya da dinleme diyaloğu. */
 function Stim({ stim, t }: { stim: Stimulus; t: (k: string, p?: Record<string, string | number>) => string }) {
+  /*
+    DİNLEME ARTIK KUYRUKLU VE ÇOK SESLİ.
+
+    Burada yalnızca replik başına birer hoparlör düğmesi vardı: konuşmayı
+    baştan sona dinlemenin yolu yoktu, öğrenci her satıra tek tek basıyordu.
+    Üstelik hepsi AYNI sesle okunuyordu — aşağıdaki yorum "konuşmacı değişimi
+    duyulabilsin" diyordu ama duyulan tek şey iki tıklama arasındaki
+    sessizlikti. Artık konuşmacı başına ayrı ses var (`dialogueSegments`) ve
+    tamamını sırayla çalan bir düğme eklendi; satır düğmeleri tek bir repliği
+    yeniden dinlemek için duruyor.
+  */
+  const [playing, setPlaying] = useState(false);
+  const segs = stim.kind === "audio" ? stim.segments : null;
+
+  /*
+    Kadro BAĞLANDIKTAN sonra kuruluyor, çizim sırasında değil: kurs kimliği
+    `localStorage`tan geliyor ve sunucuda çizilen ilk turda orası yok. İlk
+    boyamada kadro boş kalıyor ve satır düğmeleri profil sesine düşüyor;
+    bağlanır bağlanmaz kadro yerine oturuyor.
+  */
+  const [cast, setCast] = useState<SpeechSegment[]>([]);
+  useEffect(() => {
+    if (!segs) return;
+    const built = dialogueSegments(readLocal(COURSE_KEY) ?? "de", segs);
+    setCast(built);
+    /* Ön indirme: madde ekrana geldiği anda. Nöral ses ilk dinlemede bir-iki
+       saniye sürüyor ve burada o bekleme her replikte tekrarlanıyordu. */
+    prefetchSegments(built);
+  }, [segs]);
+
+  // Madde değişince ya da ekrandan çıkınca ses susmalı.
+  useEffect(() => () => stopSpeaking(), []);
+
   if (stim.kind === "text") {
     return (
       <div className="card flex flex-col gap-2 px-4 py-4">
@@ -323,13 +356,28 @@ function Stim({ stim, t }: { stim: Stimulus; t: (k: string, p?: Record<string, s
         <span className="text-micro uppercase tracking-eyebrow muted">{stim.genreTr || stim.genre}</span>
         <span className="text-micro muted">{t("wquiz.listen_hint")}</span>
       </div>
-      {/* Her replik ayrı çalınıyor: konuşmacı değişimi duyulabilsin ve
-          öğrenci tek bir satırı yeniden dinleyebilsin. Metin GÖRÜNMÜYOR —
-          görünse madde dinleme değil okuma ölçerdi. */}
+      <button
+        type="button"
+        className="btn btn-ghost mt-1 px-4 py-2 text-body"
+        onClick={() => {
+          if (playing) {
+            stopSpeaking();
+            setPlaying(false);
+            return;
+          }
+          setPlaying(true);
+          speakSegments(cast, () => setPlaying(false));
+        }}
+      >
+        {t(playing ? "wquiz.listen_stop" : "wquiz.listen_all")}
+      </button>
+      {/* Satır düğmeleri tek bir repliği yeniden dinletmek için — konuşmacının
+          kendi sesiyle. Metin GÖRÜNMÜYOR: görünse madde dinleme değil okuma
+          ölçerdi. */}
       <div className="flex flex-col gap-1.5">
         {stim.segments.map((seg, i) => (
           <div key={i} className="flex items-center gap-2">
-            <SpeakButton text={seg.text} size="sm" />
+            <SpeakButton text={seg.text} size="sm" voice={cast[i]?.voice} pace="listen" />
             <span className="text-caption muted">{seg.speaker ?? `${i + 1}`}</span>
           </div>
         ))}

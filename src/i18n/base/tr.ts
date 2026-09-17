@@ -2040,6 +2040,8 @@ export const trBase: Record<string, string> = {
   "wquiz.none_title": "Bu hafta quiz yok",
   "wquiz.none_sub": "Seviyene ve kursuna uygun quiz hazırlanınca burada görünecek.",
   "wquiz.listen_hint": "Dinle — metin gösterilmiyor",
+  "wquiz.listen_all": "Konuşmanın tamamını dinle",
+  "wquiz.listen_stop": "Durdur",
   "wquiz.preparing": "Quiz hazırlanıyor…",
   "wquiz.saving": "Cevapların gönderiliyor…",
   "skillp.result_perfect": "Kusursuz",

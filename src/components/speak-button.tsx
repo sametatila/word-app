@@ -1249,14 +1249,30 @@ export function SpeakButton({
   text,
   size = "md",
   className = "",
+  voice,
+  pace,
 }: {
   text: string;
   size?: "sm" | "md";
   className?: string;
+  /**
+   * Belirli bir ses — diyalogda konuşmacının kendi sesi. Verilmezse
+   * kullanıcının profil sesi kullanılıyor, yani bugüne kadarki davranış.
+   */
+  voice?: VoiceId;
+  /** Okuma hızı — dinleme metinlerinde `listen` (bkz. lib/tts/voices `Pace`). */
+  pace?: Pace;
 }) {
   const available = useSpeechAvailable();
   const t = useT();
-  const speak = useCallback(() => speakGerman(text), [text]);
+  const speak = useCallback(() => {
+    if (!voice && !pace) {
+      speakGerman(text);
+      return;
+    }
+    const lang = voice?.startsWith("en") ? "en" : voice?.startsWith("tr") ? "tr" : "de";
+    speakSegments([{ lang, text, voice, pace }]);
+  }, [text, voice, pace]);
   if (!available) return null;
   const dim = size === "sm" ? "h-7 w-7" : "h-9 w-9";
   return (

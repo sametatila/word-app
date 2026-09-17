@@ -2035,6 +2035,8 @@ export const de: Record<string, string> = {
   "wquiz.none_title": "Diese Woche kein Quiz",
   "wquiz.none_sub": "Sobald ein Quiz für dein Niveau und deinen Kurs bereit ist, erscheint es hier.",
   "wquiz.listen_hint": "Hören — der Text wird nicht angezeigt",
+  "wquiz.listen_all": "Das ganze Gespräch anhören",
+  "wquiz.listen_stop": "Stopp",
   "wquiz.preparing": "Quiz wird vorbereitet…",
   "wquiz.saving": "Antworten werden gesendet…",
   "skillp.result_perfect": "Fehlerfrei",

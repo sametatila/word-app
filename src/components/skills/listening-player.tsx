@@ -1,8 +1,8 @@
 "use client";
 
-import { speakGerman, stopSpeaking } from "@/components/speak-button";
+import { COURSE_KEY, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking } from "@/components/speak-button";
 import { useTargetLang } from "./player-context";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { ListeningExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
@@ -18,6 +18,12 @@ import { useT } from "@/lib/i18n/client";
  * tablosundan geliyordu. Uygulamanın geri kalanı gibi artık `speakGerman`
  * (nöral ses, profil sesi; yalnız ağ yoksa tarayıcıya düşer) ve dinlemeye
  * ayrılmış hız kademesi (`listen` / `listenSlow`, bkz. `rateFor`).
+ *
+ * KONUŞMACI BAŞINA AYRI SES. Metin `segments` olarak, konuşmacı etiketiyle
+ * geliyor ve etiket ekranda transkriptte gösteriliyordu — ama ses tarafında
+ * hiç okunmuyordu: iki kişilik bir konuşma tek ağızdan çalıyordu, yani
+ * dinleme alıştırmasının ölçtüğü asıl iş (kimin ne dediğini ayırmak) kulakla
+ * yapılamıyordu. Artık `dialogueSegments` kadroyu kuruyor.
  */
 export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExercise; backHref?: string }) {
   const t = useT();
@@ -41,6 +47,30 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
   // Gerçek kayıt (statik ses dosyası) varsa TTS yerine o çalınır.
   const hasAudio = exercise.segments.some((s) => s.audio);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  /*
+    Kadro ÇİZİM SIRASINDA değil, çağrıldığı anda kuruluyor: kurs kimliği
+    `localStorage`tan geliyor ve sunucuda çizilen ilk turda orası yok.
+    Zürih kursundaki kullanıcı lehçe sesini (Leni/Jan) burada da duyuyor;
+    İngilizce egzersizde kurs ne olursa olsun İngilizce kadro kullanılıyor.
+  */
+  const castNow = useCallback(
+    (slowNow: boolean) =>
+      dialogueSegments(lang === "en" ? "en" : (readLocal(COURSE_KEY) ?? "de"), exercise.segments, slowNow ? "listenSlow" : "listen"),
+    [lang, exercise.segments],
+  );
+
+  /*
+    ÖN İNDİRME — egzersiz açılır açılmaz.
+
+    Bölümler tek tek, biri bitince öteki çalınıyor (transkript satırının
+    vurgulanması buna bağlı) ve her sınırda tam bir gidiş-dönüş vardı: ilk
+    dinlemede nöral ses bir-iki saniye sürüyor ve bu bekleme HER replikte
+    tekrarlanıyordu. Ses önceden indirilince sınır duyulmaz oluyor.
+  */
+  useEffect(() => {
+    if (!hasAudio) prefetchSegments(castNow(false));
+  }, [hasAudio, castNow]);
 
   useEffect(() => {
     const ok = typeof window !== "undefined" && ("Audio" in window || "speechSynthesis" in window);
@@ -121,16 +151,20 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     }
     stop();
     const run = runRef.current;
+    const cast = castNow(slowNow);
     setStarted(false);
     setPlaying(true);
     const next = (i: number) => {
       if (run !== runRef.current) return;
-      if (i >= exercise.segments.length) {
+      if (i >= cast.length) {
         endOfRun();
         return;
       }
       setSegIdx(i);
-      speakGerman(exercise.segments[i].text, () => next(i + 1), slowNow ? "listenSlow" : "listen", () => {
+      /* Bölümler AYRI ayrı çalınıyor, hepsi tek zincirde değil: transkriptte
+         hangi satırın okunduğunu göstermek için her bölümün bitişi ayrı
+         bilinmeli. Sınırdaki bekleme ön indirmeyle kapatılıyor. */
+      speakSegments([cast[i]], () => next(i + 1), () => {
         if (run === runRef.current) setStarted(true);
       });
     };
@@ -149,14 +183,13 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     setStarted(false);
     setPlaying(true);
     setSegIdx(i);
-    speakGerman(
-      exercise.segments[i].text,
+    speakSegments(
+      [castNow(slow)[i]],
       () => {
         if (run !== runRef.current) return;
         setPlaying(false);
         setSegIdx(-1);
       },
-      slow ? "listenSlow" : "listen",
       () => {
         if (run === runRef.current) setStarted(true);
       },

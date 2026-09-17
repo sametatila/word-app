@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
-import { speakGerman, stopSpeaking } from "@/components/speak-button";
+import { COURSE_KEY, dialogueSegments, prefetchSegments, readLocal, speakGerman, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
@@ -992,12 +992,33 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
     };
   }, []);
 
+  /*
+    KONUŞMACI BAŞINA AYRI SES.
+
+    Konuşmacı etiketi zaten ekranda, her repliğin kendi düğmesinde yazıyordu
+    ("Nina", "Tarik") — ama hepsi TEK sesle okunuyordu, yani etiket okumadan
+    kimin konuştuğunu ayırmak imkânsızdı. Kadro `localStorage`taki kursa göre
+    bağlandıktan sonra kuruluyor (sunucuda çizilen ilk turda orası yok);
+    kurulana kadar profil sesi kullanılıyor.
+  */
+  const [cast, setCast] = useState<SpeechSegment[]>([]);
+  useEffect(() => {
+    const built = dialogueSegments(readLocal(COURSE_KEY) ?? "de", segments);
+    setCast(built);
+    // Bölümler tek tek çalınıyor (hangi repliğin okunduğu vurgulanıyor), o
+    // yüzden her sınırda bir gidiş-dönüş olurdu; önden indirme onu kapatıyor.
+    prefetchSegments(built);
+  }, [segments]);
+
   function playFrom(i: number) {
     if (i >= segments.length) return setAt(null);
     setAt(i);
-    speakGerman(segments[i].text, () => {
+    const done = () => {
       if (alive.current) playFrom(i + 1);
-    });
+    };
+    // Kadro henüz kurulmadıysa (ilk boyama) eski yol: ses yine çıkıyor.
+    if (cast[i]) speakSegments([cast[i]], done);
+    else speakGerman(segments[i].text, done, "listen");
   }
 
   return (
