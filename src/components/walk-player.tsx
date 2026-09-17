@@ -33,7 +33,6 @@ import {
 import {
   activateMic,
   closeMic,
-  micSettings,
   micSupported,
   openMic,
   recordAnswerClip,
@@ -636,7 +635,6 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     captureRef.current = "stt";
     setCapture("stt");
     track("walk_switch", 1, "armed");
-    track("walk_capture", micSettings()?.echoCancellation ? 1 : 0);
     note("cebe alındı");
     if (hearCtl.current && !hearCtl.current.signal.aborted) {
       reask.current = true;
