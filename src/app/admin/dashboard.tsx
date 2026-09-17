@@ -249,6 +249,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports, r
             const alarms: string[] = [];
             for (const j of c.cron) if (j.stale) alarms.push(`Zamanlanmış iş koşmuyor: ${j.name}${j.ageH != null ? ` (${Math.round(j.ageH)} sa)` : " (hiç)"}`);
             for (const j of c.cron) if (!j.stale && j.lastAt && !j.lastOk) alarms.push(`Son koşu başarısız: ${j.name}`);
+            if (s.ops.backup.offsiteAgeH == null || s.ops.backup.offsiteAgeH > 26) alarms.push("Harici (R2) yedek kopyası eski ya da yok");
             if (s.ops.backup.ageH == null || s.ops.backup.ageH > 26) alarms.push(`Yedek eski ya da yok${s.ops.backup.ageH != null ? ` (${Math.round(s.ops.backup.ageH)} sa)` : ""}`);
             const api5xx = s.http.errors.filter((e) => e.route.startsWith("/api/")).reduce((a, e) => a + e.count, 0);
             if (api5xx > 0) alarms.push(`Bugün API ${api5xx} kez 5xx döndü (Sunucu & Ops › İstek sağlığı)`);
@@ -371,12 +372,18 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports, r
           {/* GİT DIŞI İŞLETİM. Yedek, systemd, TTS önbelleği, sertifika:
               hepsi sunucuda kurulu, hiçbiri panoda görünmüyordu. */}
           <Section title="Yedek & işletim" hint={`Gecelik pg_dump · ${s.ops.backup.files} günlük kopya · TTS önbelleği ${fmt(s.ops.ttsCacheMB)} MB / 1 GB`} full>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
               <Kpi
                 label="Son yedek"
                 value={s.ops.backup.ageH != null ? `${Math.round(s.ops.backup.ageH)} sa önce` : "yok"}
                 sub={s.ops.backup.lastAt ? `${s.ops.backup.lastAt.slice(0, 16)} · ${s.ops.backup.sizeMB} MB · ${s.ops.backup.result || "?"}` : undefined}
                 tone={s.ops.backup.ageH == null || s.ops.backup.ageH > 26 || (s.ops.backup.result && s.ops.backup.result !== "success") ? "bad" : "ok"}
+              />
+              <Kpi
+                label="Harici kopya (R2)"
+                value={s.ops.backup.offsiteAgeH != null ? `${Math.round(s.ops.backup.offsiteAgeH)} sa önce` : "yok"}
+                sub="şifreli, Cloudflare R2"
+                tone={s.ops.backup.offsiteAgeH == null || s.ops.backup.offsiteAgeH > 26 ? "bad" : "ok"}
               />
               <Kpi label="Çökmüş servis" value={String(s.ops.failedUnits.length)} sub={s.ops.failedUnits.join(", ") || "systemctl --failed boş"} tone={s.ops.failedUnits.length ? "bad" : "ok"} />
               <Kpi label="TTS önbelleği" value={`${fmt(s.ops.ttsCacheMB)} MB`} sub="nginx, 60 gün" tone={s.ops.ttsCacheMB > 900 ? "warn" : undefined} />

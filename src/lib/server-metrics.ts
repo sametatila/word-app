@@ -59,7 +59,11 @@ export type ServerMetrics = {
    * Sertifika: certbot otomatik yeniliyor; yenileme susarsa ilk görünen yer burası.
    */
   ops: {
-    backup: { lastAt: string | null; ageH: number | null; sizeMB: number; files: number; result: string };
+    backup: {
+      lastAt: string | null; ageH: number | null; sizeMB: number; files: number; result: string;
+      /** Şifreli R2 kopyasının son BAŞARILI zamanı ve yaşı (saat); bekçi özetinden. */
+      offsiteAt: string | null; offsiteAgeH: number | null;
+    };
     failedUnits: string[];
     ttsCacheMB: number;
     certDaysLeft: number | null;
@@ -233,7 +237,7 @@ async function httpHealth(): Promise<ServerMetrics["http"]> {
   };
 }
 
-type OpsStatus = { at: string; backup: { lastAt: string; sizeBytes: number; files: number; result: string }; ttsCacheMB: number; certDaysLeft: number | null };
+type OpsStatus = { at: string; backup: { lastAt: string; sizeBytes: number; files: number; result: string; offsiteAt?: string }; ttsCacheMB: number; certDaysLeft: number | null };
 
 /** Bekçinin özeti; yoksa ya da 30 dakikadan eskiyse null (bayat özet yanlış güven verir). */
 async function opsStatus(): Promise<OpsStatus | null> {
@@ -311,7 +315,12 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     },
     deploys: parseDeploys(journal),
     ops: {
-      backup: { ...backup, result: backupResult.trim() },
+      backup: {
+        ...backup,
+        result: backupResult.trim(),
+        offsiteAt: status?.backup.offsiteAt || null,
+        offsiteAgeH: status?.backup.offsiteAt ? Math.round(((Date.now() - Date.parse(status.backup.offsiteAt)) / 3_600_000) * 10) / 10 : null,
+      },
       failedUnits: failedRaw.split("\n").map((l) => l.replace(/^[\s●*]+/, "").split(/\s+/)[0] ?? "").filter(Boolean),
       ttsCacheMB: status?.ttsCacheMB ?? num(ttsDu.trim().split(/\s+/)[0]),
       certDaysLeft: cert,

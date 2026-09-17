@@ -112,6 +112,11 @@ export async function collectAlerts(): Promise<Alert[]> {
       const s = await getServerMetrics();
       if (s.ops.backup.ageH == null) alerts.push({ key: "backup", level: "kritik", text: "Yedek durumu okunamadı: yedek yok ya da bekçinin özeti (/var/lib/lernomi-status/ops.json) 30 dakikadan eski." });
       else if (s.ops.backup.ageH > 26) alerts.push({ key: "backup", level: "kritik", text: `Son yedek ${Math.round(s.ops.backup.ageH)} saat önce alınmış.` });
+      /* Harici kopya: yerel yedek sunucu kaybında işe yaramaz. Bekçi özeti
+         okunabiliyorsa (lastAt dolu) R2 kopyasının yaşı da izleniyor. */
+      if (s.ops.backup.lastAt && (s.ops.backup.offsiteAgeH == null || s.ops.backup.offsiteAgeH > 26)) {
+        alerts.push({ key: "backup:offsite", level: "kritik", text: s.ops.backup.offsiteAgeH == null ? "Harici (R2) yedek kopyası son 8 günde hiç başarılı olmamış." : `Harici (R2) yedek kopyası ${Math.round(s.ops.backup.offsiteAgeH)} saattir alınamadı.` });
+      }
       if (s.ops.backup.result && s.ops.backup.result !== "success") alerts.push({ key: "backup:result", level: "kritik", text: `Yedek servisi başarısız: ${s.ops.backup.result}` });
       for (const u of s.ops.failedUnits) alerts.push({ key: `unit:${u}`, level: "kritik", text: `Çökmüş servis: ${u}` });
       if (s.disk.usedPct >= 85) alerts.push({ key: "disk", level: s.disk.usedPct >= 95 ? "kritik" : "uyari", text: `Disk %${s.disk.usedPct} dolu (${s.disk.freeGB} GB boş).` });
