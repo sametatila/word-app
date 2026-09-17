@@ -7,6 +7,9 @@ import { SttError, transcribe } from "@/lib/stt";
 import { canPocketWalk } from "@/lib/premium/access";
 import { premiumConfig, takeUsage } from "@/lib/premium";
 import { aiConsentGate } from "@/lib/ai-consent";
+import { and, eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { mockExamAttempts } from "@/lib/db/schema";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -31,6 +34,27 @@ const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
  * Sağlayıcı zinciri ve muhasebe `lib/stt.ts`'te (WP-20 ile `/api/pronounce`
  * ile ortak). Ses saklanmıyor.
  */
+/**
+ * Sunulan kimlik, BU kullanıcının ÇALIŞAN bir deneme sınavı kâğıdı mı.
+ *
+ * Doğrulama üç şeyi birden arıyor: satır var, sahibi bu kullanıcı, ve durumu
+ * `running`. Yalnız kimliğin varlığına bakmak yetmezdi — başkasının ya da
+ * bitmiş bir denemenin kimliği de bir dizgedir ve kapıyı açardı.
+ */
+async function isRunningMockAttempt(userId: string, id: number): Promise<boolean> {
+  try {
+    const [row] = await db
+      .select({ id: mockExamAttempts.id })
+      .from(mockExamAttempts)
+      .where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running")))
+      .limit(1);
+    return Boolean(row);
+  } catch {
+    /* Okunamıyorsa sınav sayılmıyor: karar KAPALI tarafa düşüyor. */
+    return false;
+  }
+}
+
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
@@ -58,6 +82,15 @@ export async function POST(req: Request) {
    * Azure kotası harcanmıyor.
    */
   let mode: SttMode = "default";
+  /**
+   * Deneme sınavı bağlamı — YETKİNİN dayanağı.
+   *
+   * Konuşma bölümünde ses sunucuda yazıya çevriliyor ve o yol cepte yürüyüş
+   * değil; ayırt edici şey istemcinin beyanı değil, ÇALIŞAN BİR DENEME
+   * KAĞIDININ kimliği olmalı. Kimlik doğrulanamazsa istek cepte yürüyüş
+   * sayılıyor ve premium kapısına giriyor (aşağıda).
+   */
+  let examId: number | null = null;
   try {
     const form = await req.formData();
     const f = form.get("audio");
@@ -67,22 +100,35 @@ export async function POST(req: Request) {
     const want = form.get("expected");
     if (typeof want === "string") expected = want.slice(0, 120);
     if (form.get("mode") === "walk") mode = "walk";
+    const ex = form.get("exam");
+    if (typeof ex === "string" && /^\d{1,12}$/.test(ex)) examId = Number(ex);
   } catch {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  /**
-   * PREMIUM KAPISI — yalnız `walk` kipinde.
-   *
-   * Burası cebe/ekran kapalı yolun tek girişi ve ürünün marjinal maliyeti
-   * taşıyan tek yeri (Azure STT). Ekran AÇIK yürüyüş buraya hiç gelmiyor
-   * (cihazın kendi tanıyıcısı kullanılıyor), bu yüzden ücretsiz katmanda
-   * yürüyüş modu sınırsız kalabiliyor: kilit özelliğin kendisinde değil,
-   * faturayı üreten yolda.
-   *
-   * Kapı SUNUCUDA çünkü istemcide duran bir kapı kapı değil: uygulama
-   * değiştirilebilir, uç doğrudan çağrılabilir.
-   */
-  if (mode === "walk") {
+  /*
+    YETKİ KARARI İSTEMCİNİN BEYANINDAN ÇIKARILDI.
+
+    Eskiden premium kapısı yalnız gövdede `mode=walk` geldiğinde çalışıyordu:
+    alanı göndermeyen bir istemci kapıyı hiç çalıştırmadan sunucu STT'sine
+    ulaşıyordu. Dosyanın kendi ilkesiyle çelişiyordu — "kapı SUNUCUDA çünkü
+    istemcide duran bir kapı kapı değil" — çünkü kapının AÇILIP AÇILMAYACAĞINA
+    istemci karar veriyordu.
+
+    Artık karar bağlamdan: çalışan ve KULLANICIYA AİT bir deneme sınavı
+    kâğıdının kimliği sunulmuşsa sınav yolu, sunulmamışsa cepte yürüyüş.
+    Varsayılan kapalı tarafta; alanı düşürmek artık kapıyı atlatmıyor, kapıya
+    SOKUYOR.
+
+    `mode` yalnız SAĞLAYICI SIRASI için kaldı (ekran açıkken asla Azure);
+    yetkiyle ilgisi yok.
+
+    EKRAN AÇIK YÜRÜYÜŞ BURAYA HİÇ GELMİYOR: o yol cihazın/tarayıcının kendi
+    tanıyıcısını kullanıyor ve bize maliyeti yok — ücretsiz katmanda sınırsız
+    kalabilmesinin sebebi bu. Kilit özelliğin kendisinde değil, faturayı
+    üreten yolda.
+  */
+  const examOk = examId !== null && (await isRunningMockAttempt(userId, examId));
+  if (!examOk) {
     const gate = await canPocketWalk(userId);
     if (!gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });

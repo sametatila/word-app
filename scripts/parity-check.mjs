@@ -4381,6 +4381,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
 }
 
+/* ── 120b. STT kapisi ISTEMCININ BEYANINA bagli olmamali ──────────────────
+ *
+ * Cepte yuruyus kapisi bir donem yalniz govdede `mode=walk` geldiginde
+ * calisiyordu: alani gondermeyen bir istemci kapiyi hic calistirmadan sunucu
+ * STT'sine ulasiyordu (denetim 2026-09-16, bulgu 3). Karar artik BAGLAMDAN
+ * turuyor — calisan ve kullaniciya ait bir deneme kagidinin kimligi.
+ *
+ * Bu kural gerilemeyi tutuyor: kapi `mode`a geri baglanirsa ya da sinav
+ * baglami dogrulanmadan kabul edilirse duser. */
+{
+  const stt = read("src/app/api/stt/route.ts");
+  const player = read("src/components/mock-exam-player.tsx");
+  sameList(
+    "stt kapisi istemcinin beyanina bagli degil",
+    [
+      "kapi mode'a bagli=" + (/if \(mode === "walk"\)[\s\S]{0,200}canPocketWalk/.test(stt) ? "EVET" : "hayir"),
+      "baglam dogrulaniyor=" + (/isRunningMockAttempt[\s\S]*?eq\(mockExamAttempts\.userId, userId\)[\s\S]*?eq\(mockExamAttempts\.state, "running"\)/.test(stt) ? "evet" : "HAYIR"),
+      "varsayilan kapali=" + (/if \(!examOk\) \{[\s\S]{0,400}canPocketWalk/.test(stt) ? "evet" : "HAYIR"),
+      "sinav baglamini gonderiyor=" + (/form\.append\("exam"/.test(player) ? "evet" : "HAYIR"),
+    ],
+    ["kapi mode'a bagli=hayir", "baglam dogrulaniyor=evet", "varsayilan kapali=evet", "sinav baglamini gonderiyor=evet"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 /* ── 121. yuruyus turunun ARASI olculuyor mu ──────────────────────────────
  * Android turun BASINI (`walk_start`) ve SONUNU (`walk_end`) yaziyordu, arasini
  * hic yazmiyordu. Web ise her dinlemeyi (`walk_listen`) ve cebe her gecisi
@@ -17769,7 +17795,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * `/api/stt`e kendisi gonderiyor (RN `fetch` arka planda takiliyor). Yani
    * sozlesme uc yerde birden yazili: ucun de ayni olmasi gerekiyor.
    *
-   *   sunucu  `form.get("audio"|"language"|"expected"|"mode")`
+   *   sunucu  `form.get("audio"|"language"|"expected"|"mode")` (+ web-ozel `exam`)
    *   Kotlin  multipart alan adlari + kayit bicimi
    *   Swift   multipart alan adlari + kayit bicimi
    *
@@ -17787,6 +17813,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const kt = read("mobile/android/app/src/main/java/com/lernomi/speech/LernomiSpeechModule.kt");
     const sw = read("mobile/ios/Lernomi/LernomiSpeech.swift");
     const sunucuAlan = [...uc.matchAll(/form\.get\("(\w+)"\)/g)].map((m) => m[1]).sort();
+    /* `exam` BILEREK YALNIZ SUNUCUDA VE WEBDE. Premium kapisi istemcinin
+       `mode` beyanina degil, sunucuda dogrulanabilen bir baglama bakiyor:
+       calisan bir deneme sinavi kaydinin kimligi. O kaydi yalnizca WEB
+       deneme sinavi konusma bolumu (`mock-exam-player.tsx`) aciyor. Native
+       taraf sadece yuruyus yolunu kullaniyor, deneme sinavi acmiyor - alan
+       onlarda YOK ve olmamali. Geri kalan dort alan uc tarafta da ayni.
+       Ayrica alanin sunucudan kaybolmasi da kusur: o zaman deneme sinavinin
+       konusma bolumu premium kapisina takilir. */
+    const SUNUCUYA_OZEL = new Set(["exam"]);
+    const ortakAlan = sunucuAlan.filter((a) => !SUNUCUYA_OZEL.has(a));
+    const webAlan = sunucuAlan.filter((a) => SUNUCUYA_OZEL.has(a));
     /* Multipart alan adlari: `name=\"x\"` (kacisli tirnak, iki dilde de oyle). */
     const alanlar = (src) => [...new Set([...src.matchAll(/name=\\"(\w+)\\"/g)].map((m) => m[1]))].sort();
     /* Kotlin gonderen alanlari dizgi olarak da ekliyor (`"language"` gibi):
@@ -17800,7 +17837,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "stt sozlesmesi iki native tarafta",
       [
-        "sunucu alan=" + sunucuAlan.join("+"),
+        "sunucu ortak alan=" + ortakAlan.join("+"),
+        "sunucu web alani=" + (webAlan.join("+") || "YOK"),
         "kotlin alan=" + gonderilen(kt).join("+"),
         "swift alan=" + gonderilen(sw).join("+"),
         "kotlin kayit orani=" + kayitOrani(kt, /private val sampleRate = (\d+)/),
@@ -17809,7 +17847,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "swift kanal=" + (/AVNumberOfChannelsKey: 1\b/.test(sw) ? "mono" : "YOK"),
       ],
       [
-        "sunucu alan=audio+expected+language+mode",
+        "sunucu ortak alan=audio+expected+language+mode",
+        "sunucu web alani=exam",
         "kotlin alan=audio+expected+language+mode",
         "swift alan=audio+expected+language+mode",
         "kotlin kayit orani=16000",

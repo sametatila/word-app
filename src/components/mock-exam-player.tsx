@@ -886,6 +886,12 @@ function SpeakingTask({
     const ext = blob.type.includes("wav") ? "wav" : blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
     form.append("audio", blob, `clip.${ext}`);
     form.append("language", course);
+    /* SINAV BAĞLAMI — yetkinin dayanağı.
+       `/api/stt` premium kapısını artık istemcinin `mode` beyanından değil
+       bağlamdan türetiyor: çalışan ve kullanıcıya ait bir kâğıdın kimliği
+       sunulmazsa istek "cepte yürüyüş" sayılıp kapıya giriyor. Konuşma bölümü
+       cepte yürüyüş değil, o yüzden kimliğini sunuyor. */
+    if (attemptId) form.append("exam", String(attemptId));
     try {
       const res = await apiFetch("/api/stt", { method: "POST", body: form });
       if (await isAiConsentDeclined(res)) {
