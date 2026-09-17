@@ -109,13 +109,35 @@ export type AttachResult = "ok" | "self" | "already" | "unknown_code";
 export async function inviterCard(code: string): Promise<{ name: string | null; avatar: string | null; userId: string } | null> {
   const c = normalizeReferral(code);
   if (!c) return null;
-  const [row] = await db
-    .select({ userId: profiles.userId, name: profiles.displayName, avatar: profiles.avatar })
-    .from(profiles)
-    .where(eq(profiles.referralCode, c))
-    .limit(1);
-  if (!row || (await isGuestUser(row.userId))) return null;
-  return row;
+  /*
+    AD İKİ SÜTUNDAN: `profiles.display_name` BOŞ OLABİLİR ve mobilden kayıt
+    olan kullanıcıda GENELDE boş — o sütunu web yerleşimi dolduruyor
+    (`ensureProfile(user.id, user.name)`), uygulamadan gelen kimse oradan
+    geçmiyor. Yalnız profil sütununa bakınca davetiye "İsimsiz öğrenci …
+    seni davet etti" diyordu; davetin en değerli parçası tam da davet edenin
+    ADI olduğu için bu, bağlantıyı işe yaramaz hâle getiriyordu (emülatörde
+    görüldü, 2026-09-17).
+
+    `coalesce` sırası projede zaten yazılı (`lib/moderation-admin`): önce
+    kişinin kendi seçtiği görünen ad, sonra kayıttaki ad. Sorgu ham SQL çünkü
+    `user` tablosu better-auth'a ait (aynı yöntem `isNewAccount` içinde de).
+  */
+  try {
+    const res = await db.execute(
+      sql`select p.user_id as "userId",
+                 nullif(coalesce(p.display_name, u.name, ''), '') as name,
+                 p.avatar as avatar,
+                 u."isAnonymous" as guest
+            from profiles p join "user" u on u.id = p.user_id
+           where p.referral_code = ${c} limit 1`,
+    );
+    const rows = (Array.isArray(res) ? res : (res as { rows?: unknown[] }).rows) ?? [];
+    const row = rows[0] as { userId?: string; name?: string | null; avatar?: string | null; guest?: boolean } | undefined;
+    if (!row?.userId || row.guest === true) return null;
+    return { userId: row.userId, name: row.name ?? null, avatar: row.avatar ?? null };
+  } catch {
+    return null;
+  }
 }
 
 /**

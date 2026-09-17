@@ -1810,7 +1810,7 @@ export const de: Record<string, string> = {
   "settings.group_privacy_about": "Datenschutz und Info",
   "settings.notifications_sub": "Erinnerungen, Serienschutz, Wochentest",
   "paywall.store_not_open": "Das Store-Abo ist noch nicht freigeschaltet",
-  "paywall.store_not_open_sub": "Premium bekommst du heute über eine Einladungsprämie oder einen Promo-Code — beides steht unten.",
+  "paywall.store_not_open_sub": "Premium bekommst du heute über einen Promo-Code — das Feld steht unten. Sobald es erhältlich ist, erscheinen hier Pläne und Preise.",
   "paywall.store_not_open_sub_ios": "Premium ist im App Store noch nicht erhältlich. Sobald es so weit ist, erscheinen hier Pläne und Preise.",
   "paywall.redeem_offer_code": "Angebotscode einlösen",
   "assess.fail_offline": "Der Bewertungsdienst ist gerade nicht erreichbar; diese Punktzahl ist eine grobe Schätzung aus der Wortzahl, keine echte Bewertung.",

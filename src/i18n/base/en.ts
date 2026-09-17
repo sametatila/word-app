@@ -1812,7 +1812,7 @@ export const enBase: Record<string, string> = {
   "settings.group_privacy_about": "Privacy and about",
   "settings.notifications_sub": "Reminders, streak saver, weekly test",
   "paywall.store_not_open": "Store subscriptions aren't open yet",
-  "paywall.store_not_open_sub": "You can get Premium today with an invite reward or a promo code — both are below.",
+  "paywall.store_not_open_sub": "You can get Premium today with a promo code — the box is below. When it goes on sale, plans and prices will appear here.",
   "paywall.store_not_open_sub_ios": "Premium isn't on sale in the App Store yet. When it is, plans and prices will appear here.",
   "paywall.redeem_offer_code": "Redeem offer code",
   "assess.fail_offline": "The assessment service is down; this score is a rough guess from your word count, not a real assessment.",
