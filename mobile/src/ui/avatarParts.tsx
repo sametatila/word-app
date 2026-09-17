@@ -31,13 +31,18 @@ function Hat({ id, color }: { id: string; color: string }) {
     </>
   );
   if (id === "party")
+    /* Koni + BANT: bant beanie'den geliyor ve iki işi birden görüyor —
+       şapkayı kafaya oturtuyor (bantsız hâli tepede asılı duruyordu) ve
+       aksesuarı aynı görsel aileye bağlıyor. Ponpon ve konfeti noktaları
+       parti şapkasını taçtan ayıran şey. */
     return (
       <>
-        <Path d="M50 12 L64 41 L36 41 Z" fill={color} />
-        <Path d="M50 12 L64 41 L36 41 Z" fill="#00000014" />
-        <Circle cx="50" cy="11" r="4" fill="#f5c542" />
-        <Circle cx="44" cy="30" r="2.4" fill="#ffffff88" />
-        <Circle cx="55" cy="35" r="2.4" fill="#ffffff88" />
+        <Path d="M50 6 L70 43 L30 43 Z" fill={color} />
+        <Rect x="28" y="40" width="44" height="6" rx="3" fill={color} />
+        <Rect x="28" y="40" width="44" height="6" rx="3" fill="#00000022" />
+        <Circle cx="50" cy="6" r="4.5" fill="#f5c542" />
+        <Circle cx="43" cy="28" r="2.6" fill="#ffffff88" />
+        <Circle cx="57" cy="35" r="2.6" fill="#ffffff88" />
       </>
     );
   if (id === "crown") return (
