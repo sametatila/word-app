@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { applyStoreEvent, applyStoreTransfer } from "@/lib/premium";
+import { recordStoreLedger } from "@/lib/premium/ledger";
 import { adapterFor, DEFAULT_ADAPTER } from "@/lib/premium/providers";
 
 export const dynamic = "force-dynamic";
@@ -55,6 +56,9 @@ export async function POST(req: Request, ctx: { params: Promise<{ provider?: str
        (gerekçe: lib/premium/referral başı). Bayrağı `applyStoreEvent`
        döndürmeye devam ediyor — "ilk ödeme" hâlâ anlamlı bir olay ve
        ölçüm/telafi için okunabilir. */
+    // Gelir defteri önce ve bağımsız: yetki yazımı hata verip yeniden denense de
+    // olay kimliği tekrarı tek satır kalıyor (lib/premium/ledger).
+    await recordStoreLedger(parsed.event);
     const { applied } = await applyStoreEvent(parsed.event);
     return NextResponse.json({ ok: true, applied });
   } catch (err) {

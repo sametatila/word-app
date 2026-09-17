@@ -6,6 +6,10 @@
 --   * pano her açılışta `reviews`i baştan sona tarıyordu;
 --   * gelir metriği için olay geçmişi yoktu (yalnız şu anki yetki durumu).
 -- Hepsi ADDİTİF: canlı kod bakmıyor, önce uygulanması güvenli.
+--
+-- UYARI (yaşandı): bu tablolar önce YALNIZ bu dosyayla canlıya uygulandı ve
+-- bir sonraki deploy'daki `drizzle-kit push --force` hepsini düşürdü, çünkü
+-- `schema.ts`e yazılmamışlardı. Tanımlar artık şemada.
 
 -- Admin işlem kaydı. Kişi silindiğinde de kalır: hedef kimliği bir
 -- kullanıcıya işaret edebilir ama kayıt yönetimin hesap verebilirliği için.

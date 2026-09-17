@@ -91,6 +91,7 @@ const SKIP = [
   "lib/client-errors.ts",
   "lib/admin-query.ts",
   "lib/admin-errors.ts",
+  "lib/premium/revenue.ts",
   // Parçalı yazılı: tam yol dizgisi `check:endpoints`te ucu "çağrılıyor" gösterirdi.
   ["app", "api", "cron", "alerts"].join("/"),
   "app/(app)/analytics",

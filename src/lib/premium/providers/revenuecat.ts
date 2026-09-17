@@ -1,6 +1,6 @@
 import "server-only";
 import { timingSafeEqual } from "node:crypto";
-import type { StoreAdapter, StoreEvent, StoreState, WebhookResult } from "../ports";
+import type { StoreAdapter, StoreEvent, StoreLedger, StoreLedgerType, StoreState, WebhookResult } from "../ports";
 
 /**
  * RevenueCat adaptörü — sağlayıcının kelime dağarcığının BİTTİĞİ yer.
@@ -33,7 +33,43 @@ type RcEvent = {
   /** Yalnız TRANSFER olayında: aboneliğin ayrıldığı ve geçtiği kimlikler. */
   transferred_from?: string[];
   transferred_to?: string[];
+  /** Gelir defteri alanları (https://www.revenuecat.com/docs/webhooks). */
+  price?: number;
+  currency?: string;
+  price_in_purchased_currency?: number;
+  event_timestamp_ms?: number;
+  is_trial_conversion?: boolean;
 };
+
+const LEDGER_TYPE: Record<string, StoreLedgerType> = {
+  INITIAL_PURCHASE: "purchase",
+  RENEWAL: "renewal",
+  PRODUCT_CHANGE: "product_change",
+  CANCELLATION: "cancellation",
+  UNCANCELLATION: "uncancellation",
+  EXPIRATION: "expiration",
+  REFUND: "refund",
+  BILLING_ISSUE: "billing_issue",
+  SUBSCRIPTION_PAUSED: "paused",
+  NON_RENEWING_PURCHASE: "one_time",
+};
+
+/** RevenueCat olayının mali ayrıntısı → sağlayıcıdan bağımsız defter satırı. */
+function ledgerOf(ev: RcEvent, type: string): StoreLedger {
+  const period = ev.period_type === "TRIAL" ? "trial" : ev.period_type === "INTRO" ? "intro" : ev.period_type === "PROMOTIONAL" ? "promo" : ev.period_type === "NORMAL" ? "normal" : null;
+  const num = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? v : null);
+  return {
+    type: LEDGER_TYPE[type] ?? "other",
+    period,
+    environment: ev.environment === "SANDBOX" ? "sandbox" : ev.environment === "PRODUCTION" ? "production" : null,
+    // RevenueCat iadeyi negatif fiyatla bildirebiliyor; defterde tutar pozitif, tür "refund".
+    priceUsd: num(ev.price) == null ? null : Math.abs(num(ev.price) as number),
+    currency: typeof ev.currency === "string" ? ev.currency.slice(0, 8) : null,
+    priceLocal: num(ev.price_in_purchased_currency) == null ? null : Math.abs(num(ev.price_in_purchased_currency) as number),
+    eventAt: num(ev.event_timestamp_ms) ? new Date(ev.event_timestamp_ms as number) : null,
+    trialConversion: ev.is_trial_conversion === true,
+  };
+}
 
 /**
  * Olay türü → bizim durumumuz.
@@ -164,6 +200,7 @@ export const revenuecat: StoreAdapter = {
       productId: ev.product_id ?? null,
       ref: ev.original_transaction_id ?? null,
       paid: !refunded && paidPeriod && state === "active",
+      ledger: ledgerOf(ev, type),
     };
     return { ok: true, event: out };
   },

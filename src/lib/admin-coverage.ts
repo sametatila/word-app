@@ -1,6 +1,6 @@
 import "server-only";
 import { sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 
 /**
  * Panonun 31 Ağustos'tan sonra gelen özelliklere bakan kısmı.
@@ -17,16 +17,6 @@ import { db } from "@/lib/db";
  */
 
 type Row = Record<string, unknown>;
-async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
-  try {
-    const r = (await db.execute(q)) as unknown;
-    if (Array.isArray(r)) return r as Row[];
-    return ((r as { rows?: Row[] }).rows ?? []) as Row[];
-  } catch (err) {
-    console.error("[admin-coverage] sorgu hatası", err);
-    return [];
-  }
-}
 const num = (v: unknown) => Number(v) || 0;
 const str = (v: unknown) => (v == null ? "" : String(v));
 
@@ -46,6 +36,9 @@ export const CRON_EXPECTED: { name: string; label: string; maxGapH: number }[] =
   { name: "streak-alert", label: "Seri koruma (her gün 17–21 UTC)", maxGapH: 26 },
   { name: "summary", label: "Haftalık özet + kayıt silme (pazartesi)", maxGapH: 24 * 7 + 6 },
   { name: "weekly-reminder", label: "Haftalık sınav çağrısı (pazar)", maxGapH: 24 * 7 + 6 },
+  /* Uyarı motorunun kendisi: 10 dakikada bir. Susarsa kendini haber veremez;
+     bunu sunucudaki bekçi yapıyor (35 dk), burada panel için. */
+  { name: "alerts", label: "Uyarı motoru (10 dakikada bir)", maxGapH: 1 },
 ];
 
 export type CronHealth = {
@@ -99,6 +92,8 @@ export type Coverage = {
     quota: { key: string; users: number; total: number }[];
   };
   cron: CronHealth[];
+  /** Başarısız sorgular (lib/admin-query). */
+  issues: QueryIssue[];
   /**
    * İkinci denetimde (2026-09-17) panonun HİÇ okumadığı çıkan tablolar.
    * Beceri ilerlemesi olaydan değil tablodan: `skill_finish` yalnız POST'ta
@@ -123,6 +118,7 @@ export type Coverage = {
 };
 
 export async function getCoverage(): Promise<Coverage> {
+  const { rows, issues } = queryRunner("kapsam");
   const [
     pairs, prem, premPlat, webFunnel, lessonEv, lessonRows, topLessons, path, pathWeak, skills, exams, mock, placements,
     rpTotals, rpModes, assessments, pron, ttsPlays, ttsFb, walkListen,
@@ -401,6 +397,7 @@ export async function getCoverage(): Promise<Coverage> {
       providers: providers.map((r) => ({ key: str(r.k), count: num(r.c) })),
       twoFactor: num(au.two_factor), activeSessions: num(au.sessions), unverified: num(au.unverified), accounts: num(au.accounts),
     },
+    issues,
     cron: cronNames.map((name) => {
       const r = cronByName.get(name);
       const exp = CRON_EXPECTED.find((c) => c.name === name);

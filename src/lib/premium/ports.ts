@@ -68,6 +68,40 @@ export type StoreEvent = {
    * hiç görmez.
    */
   paid: boolean;
+  /**
+   * Gelir defteri için olayın mali ayrıntısı (`store_events`, lib/premium/ledger).
+   * Sağlayıcıdan bağımsız sözlükle: adaptör kendi olay adlarını buraya çevirir.
+   * Yetkiyi ETKİLEMEZ; yoksa defter o olayı yazmaz.
+   */
+  ledger?: StoreLedger;
+};
+
+export type StoreLedgerType =
+  | "purchase" // ilk satın alma (deneme başlangıcı dahil; ayrım `period`de)
+  | "renewal"
+  | "product_change"
+  | "cancellation" // otomatik yenileme kapatıldı
+  | "uncancellation"
+  | "expiration"
+  | "refund"
+  | "billing_issue"
+  | "paused"
+  | "one_time"
+  | "other";
+
+export type StoreLedger = {
+  type: StoreLedgerType;
+  /** trial | intro | normal | promo */
+  period: "trial" | "intro" | "normal" | "promo" | null;
+  /** production | sandbox */
+  environment: "production" | "sandbox" | null;
+  /** Sağlayıcının USD karşılığı (iade olayında pozitif tutar). */
+  priceUsd: number | null;
+  currency: string | null;
+  priceLocal: number | null;
+  eventAt: Date | null;
+  /** Yenileme bir denemenin ÜCRETLİYE dönüşümü mü. */
+  trialConversion: boolean;
 };
 
 /**

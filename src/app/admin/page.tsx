@@ -4,6 +4,7 @@ import { getServerMetrics } from "@/lib/server-metrics";
 import { getCoverage } from "@/lib/admin-coverage";
 import { openReportCount } from "@/lib/moderation-admin";
 import { cached } from "@/lib/admin-query";
+import { revenueMetrics } from "@/lib/premium/revenue";
 import { AdminDashboard } from "./dashboard";
 
 export const metadata: Metadata = { title: "Yönetim" };
@@ -40,11 +41,11 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   */
   const fresh = (await searchParams).taze === "1";
   const { value, at } = await cached("admin:dashboard", 60_000, fresh, async () => {
-    const [data, server, coverage, openReports] = await Promise.all([getAdminData(), getServerMetrics(), getCoverage(), openReportCount()]);
-    return { data, server, coverage, openReports };
+    const [data, server, coverage, openReports, revenue] = await Promise.all([getAdminData(), getServerMetrics(), getCoverage(), openReportCount(), revenueMetrics()]);
+    return { data, server, coverage, openReports, revenue };
   });
   const ageSec = Math.round((Date.now() - at) / 1000);
-  const issues = value.data.issues;
+  const issues = [...value.data.issues, ...value.coverage.issues, ...value.revenue.issues];
   return (
     <>
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-2 px-4 pt-3 text-caption" style={{ color: "var(--text-muted)" }}>
@@ -59,7 +60,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           <ul className="mt-1 list-disc pl-5">{issues.slice(0, 6).map((i, n) => <li key={n}>{i.source}: {i.message}</li>)}</ul>
         </div>
       ) : null}
-      <AdminDashboard data={value.data} server={value.server} coverage={value.coverage} openReports={value.openReports} />
+      <AdminDashboard data={value.data} server={value.server} coverage={value.coverage} openReports={value.openReports} revenue={value.revenue} />
     </>
   );
 }

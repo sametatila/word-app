@@ -6,11 +6,13 @@
 -- Mağazaların kullanıcı içeriği kuralı (App Store 1.2, Play UGC) şikâyetin
 -- okunduğunu ve işlendiğini ister; ikisi de ancak burada izlenebilir oluyor.
 --
--- NEDEN `user_reports`'a sütun EKLENMEDİ. Deploy migration uygulamıyor ve
--- Drizzle insert'i tablodaki her sütunu adıyla yazıyor: şemaya `status`
--- eklenip bu dosya canlıya uygulanmadan push edilirse şikâyet etme ucu
--- "column does not exist" ile kırılır. Ayrı tablo bu sırayı önemsizleştiriyor
--- ve karar kaydını (kim, ne zaman, ne not düştü) da veriyor.
+-- NEDEN AYRI TABLO. Karar kaydı (kim, ne zaman, ne not düştü) şikâyet
+-- satırının bir sütunu olamayacak kadar çok alan taşıyor.
+--
+-- DÜZELTME (2026-09-17): ilk yazımda gerekçe olarak "deploy migration
+-- uygulamıyor" yazılmıştı; YANLIŞ. `deploy.sh` her dağıtımda
+-- `drizzle-kit push --force` çalıştırıyor, veritabanı `schema.ts`e ZORLA
+-- eşitleniyor. Bu dosya belgedir; kalıcılığı sağlayan şemadaki tanım.
 --
 -- Kullanıcıya bağlı DEĞİL: yalnız admin e-postası ve kayıt kimliği tutuyor.
 CREATE TABLE IF NOT EXISTS "moderation_actions" (

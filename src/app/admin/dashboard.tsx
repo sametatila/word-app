@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { AdminData } from "@/lib/admin";
 import type { ServerMetrics } from "@/lib/server-metrics";
 import type { Coverage } from "@/lib/admin-coverage";
+import type { Revenue } from "@/lib/premium/revenue";
 import { UsersTable } from "./users-table";
 
 /**
@@ -128,9 +129,60 @@ const GUEST_UPGRADE_LABEL: Record<string, string> = {
 };
 const CONSENT_LABEL: Record<string, string> = { ai_text: "Yapay zekâ · metin", ai_voice: "Yapay zekâ · ses" };
 
+/**
+ * GELİR — kompakt: tek KPI satırı + tek kırılım satırı + kaynak notu.
+ * Ayrıntılı tablo yerine sayılar yan yana: "bu ay ne kazandık, kaçı kalıyor,
+ * denemeler dönüşüyor mu, iade/ödeme sorunu var mı" tek bakışta. Kaynaklar
+ * `lib/premium/revenue` başında; tutarlar brüt USD (mağaza payı düşülmemiş).
+ */
+const usd = (v: number) => (v >= 1000 ? `$${(v / 1000).toFixed(1)}k` : `$${Math.round(v)}`);
+function RevenueCard({ r }: { r: Revenue }) {
+  const w = r.window;
+  const conv = w.trialsStarted ? Math.round((w.trialConversions / w.trialsStarted) * 100) : null;
+  const rc = r.revenuecat && !("error" in r.revenuecat) ? r.revenuecat : null;
+  const rcError = r.revenuecat && "error" in r.revenuecat ? r.revenuecat.error : null;
+  return (
+    <section className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }} aria-label="Gelir">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-micro uppercase tracking-eyebrow">Gelir · son 30 gün</h2>
+        {!r.webhookConfigured ? (
+          <span className="text-caption" style={{ color: "#dc2626" }}>Mağaza webhook&apos;u kapalı (REVENUECAT_WEBHOOK_AUTH): satın almalar kaydedilmiyor</span>
+        ) : null}
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 lg:grid-cols-7">
+        <Mini label="MRR" value={usd(rc?.mrrUsd ?? r.now.mrrUsd)} sub={rc?.mrrUsd != null ? "RevenueCat" : "defterden tahmin"} />
+        <Mini label="Net gelir" value={usd(w.netUsd)} sub={`brüt ${usd(w.grossUsd)}${w.refundsUsd ? ` · iade ${usd(w.refundsUsd)}` : ""}`} />
+        <Mini label="Aktif abone" value={String(r.now.activePaid)} sub={`${r.now.willNotRenew} yenilemeyecek${r.now.inGrace ? ` · ${r.now.inGrace} ödeme bekliyor` : ""}`} tone={r.now.willNotRenew > r.now.activePaid / 3 ? "warn" : undefined} />
+        <Mini label="Deneme" value={String(r.now.activeTrials)} sub={`${w.trialsStarted} başladı · ${w.trialConversions} dönüştü${conv != null ? ` (%${conv})` : ""}`} />
+        <Mini label="Yeni ücretli" value={String(w.newPaid)} sub={`${w.renewals} yenileme`} />
+        <Mini label="Kayıp" value={String(w.cancellations)} sub={`iptal · ${w.expirations} sona erdi`} tone={w.cancellations ? "warn" : undefined} />
+        <Mini label="Sorun" value={String(w.refunds + w.billingIssues)} sub={`${w.refunds} iade · ${w.billingIssues} ödeme sorunu`} tone={w.refunds + w.billingIssues ? "bad" : undefined} />
+      </div>
+      <p className="mt-3 text-caption" style={{ color: "var(--text-muted)" }}>
+        {r.byPlatform.length ? r.byPlatform.map((p) => `${p.platform}: ${usd(p.grossUsd)} · ${p.payments} ödeme · ${p.active} aktif`).join("  |  ") : "Henüz mağaza olayı yok."}
+        {r.byProduct.length ? `  ·  ${r.byProduct.map((p) => `${p.product} ${usd(p.grossUsd)}`).join(", ")}` : ""}
+        {rc ? `  ·  RevenueCat 28g gelir ${rc.revenue28dUsd != null ? usd(rc.revenue28dUsd) : "?"}, yeni müşteri ${rc.newCustomers28d ?? "?"}` : ""}
+        {rcError ? <span style={{ color: "#d97706" }}>  ·  {rcError}</span> : null}
+        {!r.revenuecat && !rcError ? "  ·  RevenueCat API anahtarı yok (resmi MRR kapalı)" : ""}
+      </p>
+    </section>
+  );
+}
+
+function Mini({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "warn" | "bad" }) {
+  const color = tone === "bad" ? "#dc2626" : tone === "warn" ? "#d97706" : "var(--text)";
+  return (
+    <div className="min-w-0">
+      <div className="text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>{label}</div>
+      <div className="text-h2 tabular-nums" style={{ color }}>{value}</div>
+      {sub ? <div className="text-micro" style={{ color: "var(--text-muted)" }}>{sub}</div> : null}
+    </div>
+  );
+}
+
 const TABS = ["Genel Bakış", "Sunucu & Ops", "Kullanıcı Deneyimi", "Öğrenme & İçerik", "Büyüme & Sosyal", "Kullanıcılar", "Loglar"] as const;
 
-export function AdminDashboard({ data: d, server: s, coverage: c, openReports }: { data: AdminData; server: ServerMetrics; coverage: Coverage; openReports: number }) {
+export function AdminDashboard({ data: d, server: s, coverage: c, openReports, revenue: r }: { data: AdminData; server: ServerMetrics; coverage: Coverage; openReports: number; revenue: Revenue }) {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Genel Bakış");
   const k = d.kpi;
 
@@ -175,6 +227,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
       {/* ── GENEL BAKIŞ ── */}
       {tab === "Genel Bakış" && (
         <div className="space-y-6">
+          <RevenueCard r={r} />
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             <Kpi label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g · ${fmt(k.guestUsers)} misafir`} />
             <Kpi label="Aktif DAU/WAU/MAU" value={`${fmt(k.dau)}/${fmt(k.wau)}/${fmt(k.mau)}`} sub="günlük / haftalık / aylık" />
