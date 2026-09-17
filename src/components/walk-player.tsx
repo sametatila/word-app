@@ -1438,6 +1438,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (status !== "playing") return;
     const onChange = () => {
       if (document.visibilityState === "hidden") {
+        /* TUR ZATEN BİTTİYSE HİÇBİR ŞEY. "Bitir" ya da duraklatma turu kapatıp
+           ekranı da değiştirdiğinde (sayfadan ayrılma, sekme değişimi) bu
+           dinleyici hâlâ bağlıydı ve İKİNCİ bir bitiş yazıyordu: üretimde
+           16 Eylül 21:51:15'te aynı yürüyüş için hem 6 (elle çıkıldı) hem 5
+           (ekran kapandı) var. Mobilde bu koruma baştan beri vardı (`endWalk`
+           `walkEnded`); "yürüyüş nasıl bitti" sorusunun tek cevabı olmalı. */
+        if (ended.current) return;
         /*
           Sıra önemli: önce döngü durduruluyor (yoksa yarıda kalan bir okuma
           duyuruyla çakışır), sonra sebep söyleniyor. Duyuru döngünün `say`ini
