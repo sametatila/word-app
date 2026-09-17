@@ -398,6 +398,7 @@ export const deBase: Record<string, string> = {
   "inbox.friend_requests_reactions_nudges": "Freundschaftsanfragen, Reaktionen, Anstupser und Aufgaben-News sammeln sich hier.",
   "inbox.bell": "Posteingang",
   "inbox.bell_unread": "Posteingang, {n} ungelesen",
+  "inbox.couldn_t_load": "Benachrichtigungen konnten nicht geladen werden.",
   "inbox.no_notifications": "Keine Benachrichtigungen",
   "inbox.notifications_are_tied_to_your": "Benachrichtigungen hängen an deinem Konto.",
   "inbox.inbox": "Posteingang",

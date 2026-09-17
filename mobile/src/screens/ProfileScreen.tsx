@@ -12,7 +12,7 @@ import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
 import { MyAvatar } from "../ui/Avatar";
-import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatXp } from "../lib/useMe";
@@ -43,7 +43,7 @@ export function ProfileScreen() {
   const { user, signOut } = useAuth();
   const { me, loading: meLoading } = useMe();
   // Tam durum: davet kodu da buradan geliyor (paylaşım bağlantısı onu taşıyor).
-  const { status: premiumStatus } = usePremiumStatus();
+  const { status: premiumStatus, loading: premiumLoading } = usePremiumStatus();
   const premium = !!premiumStatus?.premium;
   /* MİSAFİR (mağaza ön inceleme B24): adı ve e-postası yok; kimlik kartı
      "Misafir" diyor, kartın altında hesap oluşturma çağrısı duruyor. Hesapta
@@ -157,7 +157,24 @@ export function ProfileScreen() {
           Vaat kuralı yerinde duruyor: satın alma DÜĞMESİ hâlâ yalnız mağaza
           canlıyken çiziliyor (PaywallScreen).
         */}
-        {premium ? (
+        {/*
+          PREMIUM ÜYEYE "PREMIUM OL" GÖSTERİLMEZ. Bant yalnız `premium`
+          değerine bakıyordu, o da durum inene kadar false: soğuk açılışta
+          premium üye kendi profilinde bir an mavi "Premium ol" çağrısını
+          görüyor, sonra yeşil "Premium üye" bandına dönüyordu (durum bir kez
+          indikten sonra modülde önbellekli, yani hata yalnız ilk açılışta
+          görünüyor ve gözden kaçıyor). İki bant da aynı yükseklikte, iskelet
+          de öyle: bant yerine oturunca altındaki menü kaymıyor.
+        */}
+        {premiumLoading && !premiumStatus ? (
+          <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
+            <SkeletonTile size={46} radius={radii.md} />
+            <View style={{ flex: 1 }}>
+              <SkeletonLine variant="h3" width="46%" />
+              <SkeletonLine variant="caption" width="78%" />
+            </View>
+          </SkeletonCard>
+        ) : premium ? (
           <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
               <CrownIcon color={colors.onFill} size={26} />

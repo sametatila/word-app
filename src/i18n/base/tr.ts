@@ -398,6 +398,7 @@ export const trBase: Record<string, string> = {
   "inbox.friend_requests_reactions_nudges": "Arkadaşlık istekleri, tepkiler, dürtmeler ve görev haberleri burada toplanır.",
   "inbox.bell": "Gelen kutusu",
   "inbox.bell_unread": "Gelen kutusu, {n} okunmamış",
+  "inbox.couldn_t_load": "Bildirimler yüklenemedi.",
   "inbox.no_notifications": "Bildirim yok",
   "inbox.notifications_are_tied_to_your": "Bildirimler hesabına bağlı.",
   "inbox.inbox": "Gelen kutusu",

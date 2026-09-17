@@ -396,6 +396,7 @@ export const en: Record<string, string> = {
   "inbox.friend_requests_reactions_nudges": "Friend requests, reactions, nudges and quest news all land here.",
   "inbox.bell": "Inbox",
   "inbox.bell_unread": "Inbox, {n} unread",
+  "inbox.couldn_t_load": "Couldn't load notifications.",
   "inbox.no_notifications": "No notifications",
   "inbox.notifications_are_tied_to_your": "Notifications are tied to your account.",
   "inbox.inbox": "Inbox",

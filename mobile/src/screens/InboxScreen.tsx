@@ -54,7 +54,15 @@ export function InboxScreen() {
       setItems((prev) => (after && prev ? [...prev, ...page.items] : page.items));
       setCursor(page.nextCursor);
       if (!after && page.unread > 0) { await social.markRead("all"); setUnreadGlobal(0); }
-    } catch (e) { setErr(errorText(e)); setItems((prev) => prev ?? []); } finally { setBusy(false); }
+    } catch (e) {
+      /* AĞ HATASI "BİLDİRİM YOK" DEĞİL. Hata boş listeye çevriliyordu ve
+         ekran "Bildirim yok" kartına düşüyordu: bekleyen arkadaşlık isteği
+         olan biri, bağlantı koptuğunda gelen kutusunun boşaldığını
+         görüyordu. Liste null kalıyor, ilk sayfa hiç gelmediyse ekran hata
+         kartını gösteriyor; sonraki sayfa patlarsa eldeki liste duruyor ve
+         hata satırı altta yazıyor. */
+      setErr(errorText(e));
+    } finally { setBusy(false); }
   }
   useEffect(() => { if (user && !user.guest) void load(null); }, [user]);
 
@@ -75,6 +83,8 @@ export function InboxScreen() {
     ? <GuestAccountCard title={t("guest.social_title")} text={t("guest.social_body")} />
     : !user
     ? <EmptyCard icon={LockIcon} title={t("inbox.sign_in_required")} text={t("inbox.notifications_are_tied_to_your")} action={t("inbox.sign_in")} onAction={() => nav.navigate("Auth")} />
+    : err && items === null
+    ? <EmptyCard live="assertive" icon={InboxIcon} title={t("inbox.couldn_t_load")} text={t("social.err_offline")} action={t("common.try_again")} onAction={() => { setErr(null); void load(null); }} />
     : items === null
       ? (
         // Gerçek listeyle aynı kap: tek kart, hairline satırlar (40'lık arma).
@@ -127,7 +137,9 @@ export function InboxScreen() {
       <ScreenHeader title={t("inbox.inbox")} subtitle={t("inbox.requests_reactions_nudges_quests")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {body}
-        <ErrorText text={err} />
+        {/* Hata kartı çizildiyse aynı hata iki kez yazılmasın: bu satır yalnız
+            elde liste VARKEN (sonraki sayfa patladığında) konuşuyor. */}
+        <ErrorText text={items ? err : null} />
       </ScrollView>
     </View>
   );

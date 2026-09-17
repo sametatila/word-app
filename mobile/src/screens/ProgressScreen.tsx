@@ -198,28 +198,47 @@ export function ProgressScreen() {
       ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* seri kahramanı */}
-        {/* ZEMİN `streakDeep`. Ölçüm: beyaz yazı `streak` üstünde açık temada 2.88,
-            koyu temada 1.94 - AA'nın büyük yazı eşiği 3.0'ı bile tutmuyor. Koyu
-            kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */}
-        <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
-          <View style={{ width: 64, height: 64, borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
-            <FlameIcon color="#fff" size={34} />
+        {/*
+          SIFIR SERİ, YÜKLENİYOR DEMEK DEĞİL. Kart `me?.streak ?? 0` ile
+          çiziliyordu: okuma bitene kadar ekranın en tepesinde kocaman bir
+          "0 · gün serisi" ve suratsız maskot duruyor, sonra gerçek sayı
+          giriyordu. Serisi 40 günlük biri her açılışta bir an serisini
+          kaybetmiş gibi görüyordu — ızgara ve ustalık kartı zaten iskelet
+          çizerken yalnız bu kart uydurma veri gösteriyordu.
+        */}
+        {me ? (
+          /* ZEMİN `streakDeep`. Ölçüm: beyaz yazı `streak` üstünde açık temada 2.88,
+             koyu temada 1.94 - AA'nın büyük yazı eşiği 3.0'ı bile tutmuyor. Koyu
+             kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */
+          <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
+            <View style={{ width: 64, height: 64, borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
+              <FlameIcon color="#fff" size={34} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="display" color="#fff">{me.streak}</Text>
+              <Text variant="bodyStrong" color="#fff">{t("progress.day_streak")}</Text>
+              {/*
+                EN UZUN SERİ. Sunucu bunu zaten gönderiyor (`/api/me`) ve BAŞKASININ
+                profilinde görünüyordu (herkese açık profil satırı), ama kendi
+                ekranında hiç yoktu. Bugünkü sayı ancak kendi rekoruyla kıyaslanınca
+                bir şey söylüyor.
+              */}
+              {me.longestStreak ? (
+                <Text variant="caption" color="#ffffffe6">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
+              ) : null}
+            </View>
+            <Mascot mood={me.streak > 0 ? "happy" : "idle"} size={58} />
           </View>
-          <View style={{ flex: 1 }}>
-            <Text variant="display" color="#fff">{me?.streak ?? 0}</Text>
-            <Text variant="bodyStrong" color="#fff">{t("progress.day_streak")}</Text>
-            {/*
-              EN UZUN SERİ. Sunucu bunu zaten gönderiyor (`/api/me`) ve BAŞKASININ
-              profilinde görünüyordu (herkese açık profil satırı), ama kendi
-              ekranında hiç yoktu. Bugünkü sayı ancak kendi rekoruyla kıyaslanınca
-              bir şey söylüyor.
-            */}
-            {me?.longestStreak ? (
-              <Text variant="caption" color="#ffffffe6">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
-            ) : null}
-          </View>
-          <Mascot mood={(me?.streak ?? 0) > 0 ? "happy" : "idle"} size={58} />
-        </View>
+        ) : (
+          <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }}>
+            <SkeletonTile size={64} radius={radii.lg} />
+            <View style={{ flex: 1 }}>
+              <SkeletonLine variant="display" width={72} />
+              <SkeletonLine variant="bodyStrong" width={112} />
+            </View>
+            <SkeletonTile size={58} radius={29} />
+          </SkeletonCard>
+        )}
 
         {/* istatistik ızgarası */}
         {me ? (
