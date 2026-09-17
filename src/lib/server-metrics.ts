@@ -45,6 +45,20 @@ export type ServerMetrics = {
   pg: { total: number; active: number; idle: number; maxConn: number; dbSizeMB: number; cacheHitPct: number; topTables: { name: string; mb: number }[] };
   app: { activeColor: string; liveCommit: string; instances: { name: string; up: boolean }[] };
   deploys: { time: string; status: "ok" | "fail" | "start"; detail: string }[];
+  /**
+   * Git dışı işletim işleri — sunucuda kurulu ama panoda görünmüyordu.
+   *
+   * Yedek: gecelik `pg_dump` (`/opt/lernomi/backup.sh`). Başarısız olursa tek iz
+   * `systemctl --failed` idi. `lastAt` boşsa ya da bir günden eskiyse panoda kırmızı.
+   * TTS önbelleği: nginx'in paylaşımlı ses önbelleği (1 GB tavan).
+   * Sertifika: certbot otomatik yeniliyor; yenileme susarsa ilk görünen yer burası.
+   */
+  ops: {
+    backup: { lastAt: string | null; ageH: number | null; sizeMB: number; files: number; result: string };
+    failedUnits: string[];
+    ttsCacheMB: number;
+    certDaysLeft: number | null;
+  };
   generatedAt: string;
 };
 
@@ -93,6 +107,41 @@ function parseDeploys(journal: string): ServerMetrics["deploys"] {
   return out.slice(-14).reverse();
 }
 
+const BACKUP_DIR = "/opt/lernomi/backups/daily";
+
+/** En yeni yedek dosyası (sağlama dosyaları hariç). */
+async function latestBackup(): Promise<{ lastAt: string | null; ageH: number | null; sizeMB: number; files: number }> {
+  try {
+    const names = (await fs.readdir(BACKUP_DIR)).filter((n) => n.endsWith(".dump"));
+    const stats = await Promise.all(names.map(async (n) => ({ n, st: await fs.stat(`${BACKUP_DIR}/${n}`) })));
+    stats.sort((a, b) => b.st.mtimeMs - a.st.mtimeMs);
+    const top = stats[0];
+    if (!top) return { lastAt: null, ageH: null, sizeMB: 0, files: 0 };
+    return {
+      lastAt: top.st.mtime.toISOString(),
+      ageH: Math.round(((Date.now() - top.st.mtimeMs) / 3_600_000) * 10) / 10,
+      sizeMB: Math.round((top.st.size / 1e6) * 10) / 10,
+      files: stats.length,
+    };
+  } catch {
+    return { lastAt: null, ageH: null, sizeMB: 0, files: 0 };
+  }
+}
+
+/** Sertifikanın kalan günü; alan adı dizini değişebildiği için live/ altındaki ilk sertifika. */
+async function certDaysLeft(): Promise<number | null> {
+  try {
+    const dirs = (await fs.readdir("/etc/letsencrypt/live")).filter((d) => d !== "README");
+    if (!dirs.length) return null;
+    const out = await run("openssl", ["x509", "-enddate", "-noout", "-in", `/etc/letsencrypt/live/${dirs[0]}/cert.pem`]);
+    const m = out.match(/notAfter=(.+)/);
+    if (!m) return null;
+    return Math.floor((new Date(m[1].trim()).getTime() - Date.now()) / 86_400_000);
+  } catch {
+    return null;
+  }
+}
+
 const INSTANCES = ["blue-3001", "blue-3002", "blue-3003", "green-3011", "green-3012", "green-3013"];
 
 export async function getServerMetrics(): Promise<ServerMetrics> {
@@ -107,6 +156,13 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     fs.readFile("/opt/lernomi/active", "utf8").catch(() => ""),
     run("journalctl", ["-u", "lernomi-webhook", "-n", "500", "--no-pager", "-o", "short-iso"]),
     run("systemctl", ["is-active", ...INSTANCES.map((i) => `lernomi@${i}`)]),
+  ]);
+  const [backup, backupResult, failedRaw, ttsDu, cert] = await Promise.all([
+    latestBackup(),
+    run("systemctl", ["show", "lernomi-backup.service", "-p", "Result", "--value"]),
+    run("systemctl", ["--failed", "--plain", "--no-legend"]),
+    run("du", ["-sm", "/var/cache/nginx/lernomi-tts"]),
+    certDaysLeft(),
   ]);
 
   const mem = parseMem(meminfo);
@@ -138,6 +194,12 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
       instances: INSTANCES.map((name, i) => ({ name, up: (instStates[i] ?? "").trim() === "active" })),
     },
     deploys: parseDeploys(journal),
+    ops: {
+      backup: { ...backup, result: backupResult.trim() },
+      failedUnits: failedRaw.split("\n").map((l) => l.replace(/^[\s●*]+/, "").split(/\s+/)[0] ?? "").filter(Boolean),
+      ttsCacheMB: num(ttsDu.trim().split(/\s+/)[0]),
+      certDaysLeft: cert,
+    },
     generatedAt: new Date().toISOString(),
   };
 }

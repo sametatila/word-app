@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { AdminData } from "@/lib/admin";
 import type { ServerMetrics } from "@/lib/server-metrics";
+import type { Coverage } from "@/lib/admin-coverage";
 import { UsersTable } from "./users-table";
 
 /**
@@ -113,9 +114,22 @@ const WALK_REASON: Record<number, string> = {
 const ONB_ORDER = ["welcome", "lang", "course", "level", "goal"];
 const ONB_LABEL: Record<string, string> = { welcome: "Karşılama", lang: "Anlatım dili", course: "Kurs", level: "Seviye", goal: "Günlük hedef" };
 
-const TABS = ["Genel Bakış", "Sunucu & Ops", "Kullanıcı Deneyimi", "Öğrenme & İçerik", "Kullanıcılar", "Loglar"] as const;
+/*
+  Dil çifti etiketi. Eskiden kurs `gsw-zh` değilse "Almanca" yazılıyordu:
+  İngilizce kursun öğrencileri Almanca sayılıyordu ve anadil hiç görünmüyordu.
+*/
+const LANG_SHORT: Record<string, string> = { tr: "TR", en: "EN", de: "DE", "gsw-zh": "Zürih" };
+const pairLabel = (native: string, course: string) => `${LANG_SHORT[native] ?? native} → ${LANG_SHORT[course] ?? course}`;
 
-export function AdminDashboard({ data: d, server: s }: { data: AdminData; server: ServerMetrics }) {
+const INSTALL_LABEL: Record<string, string> = { "0": "Reddetti", "1": "Ekledi", "2": "iOS ipucu gösterildi" };
+const GUEST_UPGRADE_LABEL: Record<string, string> = {
+  moved: "Yeni hesaba taşındı", merged: "Var olan hesapla birleşti", discarded: "Misafir verisi bırakıldı", upgraded: "Yerinde hesap oldu",
+};
+const CONSENT_LABEL: Record<string, string> = { ai_text: "Yapay zekâ · metin", ai_voice: "Yapay zekâ · ses" };
+
+const TABS = ["Genel Bakış", "Sunucu & Ops", "Kullanıcı Deneyimi", "Öğrenme & İçerik", "Büyüme & Sosyal", "Kullanıcılar", "Loglar"] as const;
+
+export function AdminDashboard({ data: d, server: s, coverage: c, openReports }: { data: AdminData; server: ServerMetrics; coverage: Coverage; openReports: number }) {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Genel Bakış");
   const k = d.kpi;
 
@@ -134,6 +148,9 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
         <div className="flex flex-wrap items-center gap-2">
           {/* Ayrı sayfada duran yönetim ekranları: panonun sekmeleri okuma,
               bunlar YAZMA. Karıştırmamak için görsel olarak da ayrı. */}
+          <a href="/admin/moderation" className="chip h-8 px-3 text-caption" style={openReports ? { color: "#dc2626" } : undefined}>
+            Moderasyon{openReports ? ` (${openReports})` : ""}
+          </a>
           <a href="/admin/premium" className="chip h-8 px-3 text-caption">Premium</a>
           <a href="/admin/quiz" className="chip h-8 px-3 text-caption">Haftalık quiz</a>
           <a href="/admin/legal" className="chip h-8 px-3 text-caption">Hukuki metinler</a>
@@ -165,7 +182,29 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             <Kpi label="Doğruluk" value={pct(k.accuracy)} sub="tüm günlük istatistik" tone={k.accuracy >= 0.7 ? "ok" : "warn"} />
             <Kpi label="Çalışma (30g)" value={`${fmt(k.seconds30d / 3600)} sa`} />
             <Kpi label="Tur tamamlama" value={pct(sessRate)} sub={`${fmt(sess.done)}/${fmt(sess.started)} tur`} tone={sessRate >= 0.6 ? "ok" : "warn"} />
+            <Kpi label="Premium (şu an)" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye/davet`} />
+            <Kpi label="Ders (30g)" value={`${fmt(c.learning.lessons.finished)}/${fmt(c.learning.lessons.started)}`} sub={`bitti/başladı · ${fmt(c.learning.lessons.users)} kişi`} />
+            <Kpi label="Misafir" value={fmt(c.growth.guests.total)} sub={`${fmt(c.growth.guests.active7)} aktif 7g · ${fmt(c.growth.guests.stale20)} silinmeye yakın`} tone={c.growth.guests.stale20 > 0 ? "warn" : undefined} />
+            <Kpi label="Açık şikâyet" value={fmt(openReports)} sub="kullanıcı + içerik" tone={openReports > 0 ? "bad" : "ok"} />
           </div>
+          {/* ALARM ŞERİDİ. Sessiz kırılmalar: koşmayan zamanlanmış iş, eskiyen
+              yedek, çökmüş servis. Hepsi başka sekmede ayrıntılı; burada yalnız
+              "bir şey mi var" sorusu. */}
+          {(() => {
+            const alarms: string[] = [];
+            for (const j of c.cron) if (j.stale) alarms.push(`Zamanlanmış iş koşmuyor: ${j.name}${j.ageH != null ? ` (${Math.round(j.ageH)} sa)` : " (hiç)"}`);
+            for (const j of c.cron) if (!j.stale && j.lastAt && !j.lastOk) alarms.push(`Son koşu başarısız: ${j.name}`);
+            if (s.ops.backup.ageH == null || s.ops.backup.ageH > 26) alarms.push(`Yedek eski ya da yok${s.ops.backup.ageH != null ? ` (${Math.round(s.ops.backup.ageH)} sa)` : ""}`);
+            if (s.ops.failedUnits.length) alarms.push(`Çökmüş servis: ${s.ops.failedUnits.join(", ")}`);
+            if (s.ops.certDaysLeft != null && s.ops.certDaysLeft < 21) alarms.push(`Sertifika ${s.ops.certDaysLeft} gün içinde bitiyor`);
+            if (s.app.instances.some((i) => i.name.startsWith(s.app.activeColor) && !i.up)) alarms.push("Aktif renkte duran instance var");
+            return alarms.length ? (
+              <div className="rounded-card border p-4 text-body" style={{ borderColor: "#dc2626", background: "var(--surface)" }} role="status">
+                <div className="text-micro uppercase tracking-eyebrow" style={{ color: "#dc2626" }}>Dikkat</div>
+                <ul className="mt-1 list-disc pl-5">{alarms.map((a) => <li key={a}>{a}</li>)}</ul>
+              </div>
+            ) : null;
+          })()}
           <Section title="Aktivite trendi" hint="Günlük tekrar hacmi — son 30 gün.">
             <TrendChart trend={d.trend} />
           </Section>
@@ -187,14 +226,12 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
                 ))}
               </div>
             </Section>
-            <Section title="Seviye & kurs dağılımı">
+            <Section title="Seviye & dil çifti dağılımı" hint="Çift = anadil → kurs. Sağda: 7 günde aktif · misafir.">
               <BarList max={Math.max(1, ...d.levels.map((l) => l.count))} items={d.levels.map((l) => ({ label: l.level, value: l.count }))} />
-              <div className="mt-3 flex flex-wrap gap-2">
-                {d.courses.map((c) => (
-                  <span key={c.course} className="rounded-full px-3 py-1 text-caption" style={{ background: "var(--surface-2)" }}>
-                    {c.course === "gsw-zh" ? "Zürih Almancası" : "Almanca"}: {fmt(c.count)}
-                  </span>
-                ))}
+              <div className="mt-4">
+                <BarList max={Math.max(1, ...c.pairs.map((p) => p.users))} items={c.pairs.map((p) => ({
+                  label: pairLabel(p.native, p.course), value: p.users, right: `${fmt(p.users)} · ${fmt(p.active7)} · ${fmt(p.guests)}`,
+                }))} />
               </div>
             </Section>
           </div>
@@ -252,24 +289,42 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           </Section>
 
           {/* ZAMANLANMIŞ İŞLER. Cron'lar bir kez çağıransız kalıp aylarca hiç
-              çalışmadı; "dün çalıştı mı" sorusu artık burada cevaplanıyor.
-              Hiç koşmamış iş en kötü hâl, o yüzden ayrıca yazılıyor. */}
-          <Section title="Zamanlanmış işler (7g)" hint="denied = CRON_SECRET uyuşmadı · boş = hiç koşmadı" full>
-            {d.cron.length === 0 ? (
-              <div className="text-body" style={{ color: "#dc2626" }}>Hiçbir iş koşmamış — timer&apos;lar susmuş olabilir.</div>
-            ) : (
-              <div className="space-y-1">
-                {d.cron.map((c) => (
-                  <div key={c.name} className="flex items-center gap-2 text-caption">
-                    <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: c.lastOk ? "#16a34a" : "#dc2626" }} />
-                    <span className="w-36 shrink-0 font-mono">{c.name}</span>
-                    <span className="w-44 shrink-0 font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{c.lastAt?.slice(0, 16) ?? "hiç"}</span>
-                    <span className="shrink-0">{fmt(c.ok)} tamam{c.fail > 0 && <span style={{ color: "#dc2626" }}> · {fmt(c.fail)} hata</span>}</span>
-                    <span className="truncate" style={{ color: "var(--text-muted)" }}>{c.detail}</span>
+              çalışmadı. Liste artık BEKLENEN işlerden kuruluyor: hiç koşmamış
+              iş de satır olarak görünüyor ve beklenen aralığı aşan kırmızı. */}
+          <Section title="Zamanlanmış işler" hint="Kırmızı = beklenen aralıkta koşmadı ya da son koşu hata · denied = CRON_SECRET uyuşmadı" full>
+            <div className="space-y-1">
+              {c.cron.map((j) => {
+                const bad = j.stale || (j.lastAt != null && !j.lastOk);
+                return (
+                  <div key={j.name} className="flex flex-wrap items-center gap-x-2 text-caption">
+                    <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: bad ? "#dc2626" : "#16a34a" }} />
+                    <span className="w-32 shrink-0 font-mono">{j.name}</span>
+                    <span className="w-56 shrink-0" style={{ color: "var(--text-muted)" }}>{j.label}</span>
+                    <span className="w-40 shrink-0 font-mono tabular-nums" style={{ color: j.stale ? "#dc2626" : "var(--text-muted)" }}>
+                      {j.lastAt ? `${j.lastAt.slice(0, 16)} (${Math.round(j.ageH ?? 0)} sa)` : "hiç koşmadı"}
+                    </span>
+                    <span className="shrink-0">7g: {fmt(j.ok7)} tamam{j.fail7 > 0 && <span style={{ color: "#dc2626" }}> · {fmt(j.fail7)} hata</span>}</span>
+                    <span className="truncate" style={{ color: "var(--text-muted)" }}>{j.detail}</span>
                   </div>
-                ))}
-              </div>
-            )}
+                );
+              })}
+            </div>
+          </Section>
+
+          {/* GİT DIŞI İŞLETİM. Yedek, systemd, TTS önbelleği, sertifika:
+              hepsi sunucuda kurulu, hiçbiri panoda görünmüyordu. */}
+          <Section title="Yedek & işletim" hint={`Gecelik pg_dump · ${s.ops.backup.files} günlük kopya · TTS önbelleği ${fmt(s.ops.ttsCacheMB)} MB / 1 GB`} full>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <Kpi
+                label="Son yedek"
+                value={s.ops.backup.ageH != null ? `${Math.round(s.ops.backup.ageH)} sa önce` : "yok"}
+                sub={s.ops.backup.lastAt ? `${s.ops.backup.lastAt.slice(0, 16)} · ${s.ops.backup.sizeMB} MB · ${s.ops.backup.result || "?"}` : undefined}
+                tone={s.ops.backup.ageH == null || s.ops.backup.ageH > 26 || (s.ops.backup.result && s.ops.backup.result !== "success") ? "bad" : "ok"}
+              />
+              <Kpi label="Çökmüş servis" value={String(s.ops.failedUnits.length)} sub={s.ops.failedUnits.join(", ") || "systemctl --failed boş"} tone={s.ops.failedUnits.length ? "bad" : "ok"} />
+              <Kpi label="TTS önbelleği" value={`${fmt(s.ops.ttsCacheMB)} MB`} sub="nginx, 60 gün" tone={s.ops.ttsCacheMB > 900 ? "warn" : undefined} />
+              <Kpi label="HTTPS sertifikası" value={s.ops.certDaysLeft != null ? `${s.ops.certDaysLeft} gün` : "?"} sub="certbot oto-yenileme" tone={s.ops.certDaysLeft == null ? undefined : s.ops.certDaysLeft < 21 ? "bad" : "ok"} />
+            </div>
           </Section>
 
           <Section title="Deploy geçmişi" hint="GitHub push → webhook → sıfır-kesinti deploy." full>
@@ -311,6 +366,15 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           <Section title="Onboarding hunisi" hint="Adım başına ulaşan tekil kullanıcı — nerede düşüyorlar.">
             <BarList max={Math.max(1, ...d.onboarding.map((o) => o.users))}
               items={[...d.onboarding].sort((a, b) => ONB_ORDER.indexOf(a.step) - ONB_ORDER.indexOf(b.step)).map((o) => ({ label: ONB_LABEL[o.step] ?? o.step, value: o.users }))} />
+          </Section>
+
+          <Section title="Sesli okuma (30g)" hint={`${fmt(c.learning.tts.plays)} çalma. Nöral ses çalınamayınca düşülen basamak — artarsa TTS ucu ya da önbellek sorunlu.`}>
+            {c.learning.tts.fallbacks.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Düşüş yok.</div> :
+              <BarList max={Math.max(1, c.learning.tts.plays)} items={c.learning.tts.fallbacks.map((f) => ({ label: `yedek: ${f.key}`, value: f.count, tone: "#d97706" }))} />}
+          </Section>
+
+          <Section title="Yürüyüş dinleme sonuçları (30g)" hint="Her dinlemenin yolu ve sonucu — tanıma kalitesi burada.">
+            <BarList max={Math.max(1, ...c.learning.walkListen.map((w) => w.count))} items={c.learning.walkListen.map((w) => ({ label: w.key, value: w.count, tone: /:ok$/.test(w.key) ? "#16a34a" : /network|decode|not-allowed|deadline/.test(w.key) ? "#dc2626" : undefined }))} />
           </Section>
 
           <Section title="Yürüyüş modu sonuçları" hint="Ekransız tur nasıl bitti (cihaz/mikrofon teşhisi).">
@@ -379,13 +443,119 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             <BarList max={100} items={d.production.map((p) => ({ label: p.task, value: p.avgScore, right: `${p.avgScore}/100 · ${fmt(p.count)}`, tone: p.avgScore < 60 ? "#d97706" : "#16a34a" }))} />
           </Section>
           <Section title="En zorlanılan kelimeler" hint="En çok unutulan (lapse) / leech — içerik iyileştirme için.">
-            <BarList max={Math.max(1, ...d.hardWords.map((w) => w.lapses))} items={d.hardWords.map((w) => ({ label: `${w.de} · ${w.tr}`, value: w.lapses, right: `${w.lapses}${w.leeches ? ` · ${w.leeches} sülük` : ""}` }))} />
+            <BarList max={Math.max(1, ...d.hardWords.map((w) => w.lapses))} items={d.hardWords.map((w) => ({ label: `${LANG_SHORT[w.course] ?? w.course} · ${w.word} · ${w.gloss}`, value: w.lapses, right: `${w.lapses}${w.leeches ? ` · ${w.leeches} sülük` : ""}` }))} />
           </Section>
           <Section title="Hata tipleri" hint="Yanlış cevapların sınıflandırması.">
             <BarList max={Math.max(1, ...d.errors.map((e) => e.count))} items={d.errors.map((e) => ({ label: e.type, value: e.count }))} />
           </Section>
+          {/* ── 31 Ağustos sonrası gelen öğrenme yüzeyleri ── */}
+          <Section title="Dersler (Patika)" hint={`30g: ${fmt(c.learning.lessons.started)} başladı · ${fmt(c.learning.lessons.finished)} bitti · ${fmt(c.learning.lessons.users)} kişi. Kural tekrarı: ${fmt(c.learning.lessons.rulesTracked)} izleniyor, ${fmt(c.learning.lessons.rulesDue)} vadesi geldi · ${fmt(c.learning.lessons.roleplayDone)} konuşma fazı bitti.`}>
+            <BarList max={100} items={c.learning.topLessons.map((l) => ({ label: l.lesson, value: l.avgPct, right: `%${l.avgPct} · ${fmt(l.users)} kişi`, tone: l.avgPct < 60 ? "#d97706" : "#16a34a" }))} />
+          </Section>
+          <Section title="Patika adımları" hint={`${fmt(c.learning.path.items)} öğe · ${fmt(c.learning.path.users)} kişi · ${fmt(c.learning.path.attempts)} deneme · ${fmt(c.learning.path.passed)} geçildi · ort. en iyi %${c.learning.path.avgBest}. Aşağıda: en az 2 kişinin denediği en zayıf öğeler.`}>
+            <BarList max={100} items={c.learning.pathWeakest.map((i) => ({ label: i.item, value: i.avgBest, right: `%${i.avgBest} · geçen %${i.passRate}`, tone: i.avgBest < 60 ? "#d97706" : undefined }))} />
+          </Section>
+          <Section title="Beceri egzersizleri (30g)" hint="beceri:seviye — ortalama puan, deneme ve kişi.">
+            <BarList max={100} items={c.learning.skills.map((k) => ({ label: k.key, value: k.avg, right: `%${k.avg} · ${fmt(k.count)} · ${fmt(k.users)} kişi`, tone: k.avg < 60 ? "#d97706" : "#16a34a" }))} />
+          </Section>
+          <Section title="Sınavlar (30g)" hint="Seviye/modül/haftalık sınavlar — tür başına ortalama puan.">
+            <BarList max={100} items={c.learning.exams.map((k) => ({ label: k.key, value: k.avg, right: `%${k.avg} · ${fmt(k.count)} · ${fmt(k.users)} kişi`, tone: k.avg < 60 ? "#d97706" : "#16a34a" }))} />
+          </Section>
+          <Section title="Deneme sınavları" hint="Seviye · bölüm: başlayan → biten → geçen, bitenlerin ortalaması.">
+            {c.learning.mock.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Henüz deneme yok.</div> : (
+              <div className="space-y-1 text-caption">
+                {c.learning.mock.map((m) => (
+                  <div key={`${m.level}:${m.skill}`} className="flex items-center gap-2 tabular-nums">
+                    <span className="w-32 shrink-0 font-mono">{m.level} · {m.skill}</span>
+                    <span className="flex-1">{fmt(m.started)} → {fmt(m.finished)} → <b style={{ color: "#16a34a" }}>{fmt(m.passed)}</b></span>
+                    <span className="w-16 shrink-0 text-right">{m.finished ? `%${m.avgScore}` : "—"}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </Section>
+          <Section title="Yerleştirme testi" hint="Önerilen seviye — kaçı öneriyi kabul etti.">
+            <BarList max={Math.max(1, ...c.learning.placements.map((p) => p.count))} items={c.learning.placements.map((p) => ({ label: p.level, value: p.count, right: `${fmt(p.count)} · ${fmt(p.accepted)} kabul` }))} />
+          </Section>
+          <Section title="Konuşma & değerlendirme (30g)" hint={`Rol yapma: ${fmt(c.learning.roleplay.turns30)} tur · ${fmt(c.learning.roleplay.users30)} kişi · telaffuz ${fmt(c.learning.pronounce.count)} ölçüm, ort. %${c.learning.pronounce.avg}`}>
+            <div className="mb-3 flex flex-wrap gap-1.5">
+              {c.learning.roleplay.byMode.map((m) => <span key={m.key} className="rounded-full px-2.5 py-0.5 text-caption" style={{ background: "var(--surface-2)" }}>{m.key}: {fmt(m.count)}</span>)}
+            </div>
+            <BarList max={Math.max(1, ...c.learning.assessments.map((a) => a.count))} items={c.learning.assessments.map((a) => ({ label: `${a.kind} · ${a.provider}`, value: a.count }))} />
+          </Section>
           <Section title="Telemetri — olaylar (30g)" hint="Ada göre olay sayısı ve tekil kullanıcı." full>
             <BarList max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)} kişi` }))} />
+          </Section>
+        </div>
+      )}
+
+      {/* ── BÜYÜME & SOSYAL ── */}
+      {tab === "Büyüme & Sosyal" && (
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Section title="Misafir modu" hint="Hesapsız kullanım. 30 gün kullanılmayan misafir silinir; 20+ gün sessiz olanlar silinmeye yakın.">
+            <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <Kpi label="Toplam" value={fmt(c.growth.guests.total)} />
+              <Kpi label="Aktif 7g" value={fmt(c.growth.guests.active7)} />
+              <Kpi label="Silinmeye yakın" value={fmt(c.growth.guests.stale20)} tone={c.growth.guests.stale20 ? "warn" : undefined} />
+              <Kpi label="Başlayan 30g" value={fmt(c.growth.guests.starts30)} />
+            </div>
+            <div className="text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>Hesaba geçiş (30g)</div>
+            <div className="mt-1">
+              <BarList max={Math.max(1, c.growth.guests.starts30, ...c.growth.guests.upgrades.map((u) => u.count))} items={c.growth.guests.upgrades.map((u) => ({ label: GUEST_UPGRADE_LABEL[u.key] ?? u.key, value: u.count, tone: "#16a34a" }))} />
+            </div>
+            <div className="mt-3 text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>Hesap çağrısı gösterildi (kilometre taşı)</div>
+            <div className="mt-1">
+              <BarList max={Math.max(1, ...c.growth.guests.nudges.map((n) => n.count))} items={c.growth.guests.nudges.map((n) => ({ label: n.key, value: n.count, right: `${fmt(n.count)} · ${fmt(n.users)} kişi` }))} />
+            </div>
+          </Section>
+
+          <Section title="Giriş öncesi (30g)" hint="Hesap açmadan önceki ısınma ve kurulum istemi.">
+            <BarList max={Math.max(1, c.growth.warmup.seen)} items={[
+              { label: "Isınmayı gördü (kişi)", value: c.growth.warmup.seen },
+              { label: "Isınmayı bitirdi", value: c.growth.warmup.done, tone: "#16a34a" },
+              { label: `"Zaten hesabım var"`, value: c.growth.warmup.existingAccount },
+            ]} />
+            <div className="mt-4 text-micro uppercase tracking-eyebrow" style={{ color: "var(--text-muted)" }}>Ana ekrana ekleme</div>
+            <div className="mt-1">
+              <BarList max={Math.max(1, ...c.growth.installPrompt.map((i) => i.count))} items={c.growth.installPrompt.map((i) => ({ label: INSTALL_LABEL[i.key] ?? i.key, value: i.count }))} />
+            </div>
+          </Section>
+
+          <Section title="Sosyal" hint="Arkadaşlık, lig, dürtme, tepki. Şikâyetler Moderasyon sayfasında.">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <Kpi label="Kullanıcı adı" value={fmt(c.growth.social.usernames)} sub={`${fmt(c.growth.social.publicProfiles)} herkese açık`} />
+              <Kpi label="Arkadaşlık" value={fmt(c.growth.social.friendsAccepted)} sub={`${fmt(c.growth.social.friendsPending)} bekleyen istek`} />
+              <Kpi label="Bu hafta ligde" value={fmt(c.growth.social.leagueThisWeek)} sub={`${fmt(c.growth.social.leagueUps30)} yükselme 30g`} />
+              <Kpi label="Dürtme 30g" value={fmt(c.growth.social.nudges30)} />
+              <Kpi label="Tepki 30g" value={fmt(c.growth.social.reactions30)} sub={`${fmt(c.growth.social.feedViews30)} akış açılışı`} />
+              <Kpi label="Engelleme" value={fmt(c.growth.social.blocks)} sub={`${fmt(c.growth.social.questsActive)} aktif ortak görev`} tone={c.growth.social.blocks ? "warn" : undefined} />
+            </div>
+          </Section>
+
+          <Section title="Premium & davet" hint="Ayrıntı ve yazma işleri Premium sayfasında.">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <Kpi label="Premium şu an" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye`} />
+              <Kpi label="Davet" value={fmt(c.growth.referrals.total)} sub={`${fmt(c.growth.referrals.rewarded)} ödüllendi · ${fmt(c.growth.referrals.last30)} 30g`} />
+              <Kpi label="Mağaza platformu" value={c.premium.byPlatform.map((p) => `${p.key} ${p.count}`).join(" · ") || "—"} />
+            </div>
+          </Section>
+
+          <Section title="Bildirim erişimi" hint="Bugün bildirim alabilecek cihaz (3+ başarısız teslimli jetonlar hariç) ve açık anahtarlar.">
+            <BarList max={Math.max(1, ...c.growth.pushReach.map((p) => p.count))} items={c.growth.pushReach.map((p) => ({ label: p.key, value: p.count }))} />
+            <div className="mt-3 flex flex-wrap gap-1.5 text-caption">
+              <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Hatırlatma açık: {fmt(c.growth.remindersOn.reminders)}</span>
+              <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Seri koruma: {fmt(c.growth.remindersOn.streakAlert)}</span>
+              <span className="rounded-full px-2.5 py-0.5" style={{ background: "var(--surface-2)" }}>Haftalık sınav: {fmt(c.growth.remindersOn.weeklyReminder)}</span>
+            </div>
+          </Section>
+
+          <Section title="Rıza & kota" hint="Yapay zekâ rızası (kişi başına son karar) ve 30 günlük ücretsiz kota tüketimi.">
+            <BarList max={Math.max(1, ...c.growth.consents.map((x) => x.granted + x.denied))} items={c.growth.consents.map((x) => ({
+              label: CONSENT_LABEL[x.purpose] ?? x.purpose, value: x.granted, right: `${fmt(x.granted)} evet · ${fmt(x.denied)} hayır`, tone: "#16a34a",
+            }))} />
+            <div className="mt-4">
+              <BarList max={Math.max(1, ...c.growth.quota.map((q) => q.total))} items={c.growth.quota.map((q) => ({ label: q.key, value: q.total, right: `${fmt(q.total)} · ${fmt(q.users)} kişi` }))} />
+            </div>
           </Section>
         </div>
       )}
@@ -410,22 +580,12 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
                 <BarList max={Math.max(1, ...d.ai.map((a) => a.errors))} items={d.ai.filter((a) => a.errors > 0).map((a) => ({ label: a.provider, value: a.errors, right: `${a.errors} / ${fmt(a.calls)}`, tone: "#dc2626" }))} />}
             </Section>
           </div>
-          <Section title="İçerik bildirimleri" hint="Yapay zekâ yanıtı / değerlendirme için kullanıcı bildirimleri (açık olanlar). Play üretken yapay zekâ politikası: insan inceler.">
-            {d.reports.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Açık bildirim yok.</div> : (
-              <div className="space-y-2">
-                {d.reports.map((r) => (
-                  <div key={r.id} className="rounded-panel border p-3 text-caption" style={{ borderColor: "var(--border)" }}>
-                    <div className="flex flex-wrap gap-x-3" style={{ color: "var(--text-muted)" }}>
-                      <span className="tabular-nums">#{r.id} · {r.day}</span>
-                      <span className="font-semibold" style={{ color: "var(--text)" }}>{r.kind} · {r.reason}</span>
-                      <span className="font-mono">{r.ref}</span>
-                      <span className="font-mono">{r.userId.slice(0, 10)}…</span>
-                    </div>
-                    {r.content ? <p className="mt-1 whitespace-pre-wrap">{r.content}</p> : null}
-                  </div>
-                ))}
-              </div>
-            )}
+          {/* Şikâyetler kendi sayfasına taşındı: orada kullanıcı şikâyetleri de
+              görünüyor ve ikisi de kapatılabiliyor. */}
+          <Section title="Şikâyetler" hint="Kullanıcı şikâyetleri ve yapay zekâ içerik bildirimleri.">
+            <a href="/admin/moderation" className="chip h-8 px-3 text-caption" style={openReports ? { color: "#dc2626" } : undefined}>
+              Moderasyon sayfası · {openReports} açık
+            </a>
           </Section>
           <Section title="Son olaylar" hint="En yeni 40 telemetri olayı (ham).">
             <div className="overflow-x-auto">

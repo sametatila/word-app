@@ -58,16 +58,23 @@ export type AdminData = {
   };
   trend: { day: string; active: number; reviews: number; xp: number; newWords: number }[];
   levels: { level: string; count: number }[];
-  courses: { course: string; count: number }[];
   funnel: Funnel;
   events30: { name: string; count: number; users: number }[];
   recentEvents: { day: string; name: string; kind: string; value: number; userId: string }[];
-  hardWords: { de: string; tr: string; niveau: string; lapses: number; leeches: number }[];
+  /**
+   * En çok unutulan kelimeler, KURS BAŞINA. Eskiden `de · tr` yazıyordu: İngilizce
+   * kursun kelimesi de Almanca sanılıyordu ve iki kursun aynı yazılan kelimesi
+   * tek satırda toplanıyordu. `word` kursun hedef dilindeki biçim (`words.de`
+   * sütunu her kursta hedef dili tutuyor), `gloss` Türkçe karşılık.
+   */
+  hardWords: { course: string; word: string; gloss: string; niveau: string; lapses: number; leeches: number }[];
   errors: { type: string; count: number }[];
   games: { game: string; count: number; accuracy: number }[];
   users: {
     userId: string; name: string; level: string; course: string; streak: number;
     longest: number; xp: number; words: number; lastActive: string; joined: string;
+    /** Anadil (boşsa eski hesap, Türkçe sayılır) — kurs ile birlikte çifti kurar. */
+    native: string; guest: boolean; premium: boolean;
   }[];
   // — UX / platform / öğrenme kalitesi / ops (WP-admin genişletme) —
   platform: { key: string; count: number; users: number }[];
@@ -94,22 +101,12 @@ export type AdminData = {
    * bölümü konuldu (bkz. lib/email `mail_sent`).
    */
   mail: { kind: string; ok: number; fail: number; cap: number }[];
-  /**
-   * Zamanlanmış işlerin son durumu (7g).
-   *
-   * "Dün çalıştı mı" sorusu sorgulanabilir olmalı: cron'lar bir kez
-   * çağıransız kalıp AYLARCA hiç çalışmadı (bkz. AGENTS.md). `lastAt` boşsa
-   * iş hiç koşmamış demektir - en kötü hâl, çünkü sessiz.
-   */
-  cron: { name: string; lastAt: string | null; lastOk: boolean; ok: number; fail: number; detail: string | null }[];
   ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number }[];
-  /** İçerik bildirimleri (yapay zekâ yanıtı / değerlendirme): açık olanlar, en yeni önce. */
-  reports: { id: number; day: string; kind: string; ref: string; reason: string; content: string; userId: string }[];
   generatedAt: string;
 };
 
 export async function getAdminData(): Promise<AdminData> {
-  const [kpiRows, trend, levels, courses, funnel, events30, recent, hard, errors, games, users] = await Promise.all([
+  const [kpiRows, trend, levels, funnel, events30, recent, hard, errors, games, users] = await Promise.all([
     rows(sql`
       select
         (select count(*) from profiles)::int as total_users,
@@ -135,7 +132,6 @@ export async function getAdminData(): Promise<AdminData> {
       from daily_stats where day >= current_date - 29 group by day order by day
     `),
     rows(sql`select level, count(*)::int as count from profiles group by level order by level`),
-    rows(sql`select course, count(*)::int as count from profiles group by course order by count desc`),
     computeFunnel(),
     rows(sql`
       select name, count(*)::int as count, count(distinct user_id)::int as users
@@ -146,12 +142,14 @@ export async function getAdminData(): Promise<AdminData> {
       from events order by id desc limit 40
     `),
     rows(sql`
-      select w.de, w.tr, w.niveau,
+      -- Hedef dildeki biçim her kursta words.de sütununda (İngilizce kursta da).
+      select w.course, w.de as word,
+             coalesce(w.tr, '') as gloss, w.niveau,
              sum(uw.lapses)::int as lapses,
              count(*) filter (where uw.leech)::int as leeches
       from user_words uw join words w on w.id = uw.word_id
-      group by w.de, w.tr, w.niveau having sum(uw.lapses) > 0
-      order by sum(uw.lapses) desc limit 15
+      group by w.course, w.de, w.tr, w.niveau having sum(uw.lapses) > 0
+      order by sum(uw.lapses) desc limit 20
     `),
     rows(sql`select coalesce(error_type,'—') as type, count(*)::int as count from reviews where error_type is not null group by error_type order by count desc limit 12`),
     rows(sql`
@@ -164,20 +162,19 @@ export async function getAdminData(): Promise<AdminData> {
              p.current_streak as streak, p.longest_streak as longest, p.total_xp as xp,
              coalesce(w.cnt,0)::int as words,
              coalesce(to_char(p.last_active_day,'YYYY-MM-DD'),'') as last_active,
-             to_char(p.created_at,'YYYY-MM-DD') as joined
+             to_char(p.created_at,'YYYY-MM-DD') as joined,
+             coalesce(p.native_lang,'tr') as native,
+             coalesce(u."isAnonymous", false) as guest,
+             coalesce(p.premium_until > now(), false) as premium
       from profiles p
+      left join "user" u on u.id = p.user_id
       left join (select user_id, count(*) as cnt from user_words where state > 0 group by user_id) w on w.user_id = p.user_id
       order by p.last_active_day desc nulls last, p.total_xp desc
       limit 500
     `),
   ]);
 
-  const reports = await rows(sql`
-    select id, to_char(created_at,'YYYY-MM-DD') as day, kind, ref, reason, coalesce(content,'') as content, user_id
-    from content_reports where status = 'open' order by id desc limit 50
-  `).catch(() => [] as Record<string, unknown>[]);
-
-  const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, cron, mail, ai] = await Promise.all([
+  const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, mail, ai] = await Promise.all([
     rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - 29 group by kind order by c desc`),
     rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - 29 group by kind order by views desc limit 20`),
     /* BAŞLANGIÇ KARTI BASAMAĞI KALKTI. `/learn` hub olunca turun başlangıç
@@ -193,14 +190,6 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - 29`),
     rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - 29 group by kind order by c desc limit 8`),
     rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, coalesce(sum(value) filter (where name='push_deliver'),0)::int delivered, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
-    rows(sql`select r.name,
-        max(r.ran_at)::text last_at,
-        (array_agg(r.ok order by r.ran_at desc))[1] last_ok,
-        (array_agg(r.detail order by r.ran_at desc))[1] detail,
-        count(*) filter (where r.ok)::int ok,
-        count(*) filter (where not r.ok)::int fail
-      from cron_runs r where r.ran_at >= now() - interval '7 days'
-      group by r.name order by r.name`),
     rows(sql`select split_part(coalesce(kind,'?'),':',1) kind,
         count(*) filter (where kind like '%:ok')::int ok,
         count(*) filter (where kind like '%:fail')::int fail,
@@ -220,17 +209,17 @@ export async function getAdminData(): Promise<AdminData> {
     },
     trend: trend.map((r) => ({ day: str(r.day), active: num(r.active), reviews: num(r.reviews), xp: num(r.xp), newWords: num(r.new_words) })),
     levels: levels.map((r) => ({ level: str(r.level), count: num(r.count) })),
-    courses: courses.map((r) => ({ course: str(r.course), count: num(r.count) })),
     funnel,
     events30: events30.map((r) => ({ name: str(r.name), count: num(r.count), users: num(r.users) })),
     recentEvents: recent.map((r) => ({ day: str(r.day), name: str(r.name), kind: str(r.kind), value: num(r.value), userId: str(r.user_id) })),
-    hardWords: hard.map((r) => ({ de: str(r.de), tr: str(r.tr), niveau: str(r.niveau), lapses: num(r.lapses), leeches: num(r.leeches) })),
+    hardWords: hard.map((r) => ({ course: str(r.course), word: str(r.word), gloss: str(r.gloss), niveau: str(r.niveau), lapses: num(r.lapses), leeches: num(r.leeches) })),
     errors: errors.map((r) => ({ type: str(r.type), count: num(r.count) })),
     games: games.map((r) => ({ game: str(r.game), count: num(r.count), accuracy: num(r.accuracy) })),
     users: users.map((r) => ({
       userId: str(r.user_id), name: str(r.name), level: str(r.level), course: str(r.course),
       streak: num(r.streak), longest: num(r.longest), xp: num(r.xp), words: num(r.words),
       lastActive: str(r.last_active), joined: str(r.joined),
+      native: str(r.native), guest: r.guest === true, premium: r.premium === true,
     })),
     platform: platform.map((r) => ({ key: str(r.k), count: num(r.c), users: num(r.u) })),
     screens: screens.map((r) => ({ screen: str(r.screen), views: num(r.views), avgSec: num(r.avg_sec) })),
@@ -243,9 +232,7 @@ export async function getAdminData(): Promise<AdminData> {
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
     notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), delivered: num(notif[0]?.delivered), opened: num(notif[0]?.opened) },
     mail: mail.map((r) => ({ kind: str(r.kind), ok: num(r.ok), fail: num(r.fail), cap: num(r.cap) })),
-    cron: cron.map((r) => ({ name: str(r.name), lastAt: r.last_at ? str(r.last_at) : null, lastOk: Boolean(r.last_ok), ok: num(r.ok), fail: num(r.fail), detail: r.detail ? str(r.detail) : null })),
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
-    reports: reports.map((r) => ({ id: num(r.id), day: str(r.day), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason), content: str(r.content), userId: str(r.user_id) })),
     generatedAt: new Date().toISOString(),
   };
 }

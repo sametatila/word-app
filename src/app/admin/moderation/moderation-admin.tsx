@@ -1,0 +1,227 @@
+"use client";
+
+import { useState } from "react";
+import { apiFetch } from "@/lib/api-fetch";
+import type { ModerationData, ModerationDecision, ModerationTarget, ReportedPerson } from "@/lib/moderation-admin";
+
+/**
+ * Şikâyet kuyruğu görünümü.
+ *
+ * SIRA: önce kullanıcı şikâyetleri, çünkü onlar başka bir KİŞİYE dokunuyor
+ * (taciz, taklit) ve mağaza kuralı hızlı işlenmelerini bekliyor; yapay zekâ
+ * çıktısı bildirimleri ikinci. Her satırda "bu kişi hakkında toplam kaç şikâyet
+ * / kaç engel" yazıyor: tek bir şikâyet gürültü olabilir, beşinci değil.
+ */
+
+const USER_REASON: Record<string, string> = {
+  spam: "Spam",
+  abuse: "Taciz / hakaret",
+  impersonation: "Taklit",
+  other: "Diğer",
+};
+const CONTENT_REASON: Record<string, string> = {
+  inappropriate: "Uygunsuz",
+  offensive: "Saldırgan",
+  wrong: "Yanlış",
+  other: "Diğer",
+};
+const KIND: Record<string, string> = { roleplay: "Rol yapma yanıtı", assessment: "Değerlendirme", user: "Kullanıcı" };
+const ERROR_TR: Record<string, string> = {
+  not_ready: "Karar tablosu canlıda yok: önce drizzle/0059_moderation_actions.sql uygulanmalı.",
+  forbidden: "Yetki yok.",
+  bad_input: "Geçersiz istek.",
+};
+
+function Person({ p }: { p: ReportedPerson }) {
+  return (
+    <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
+      <b>{p.name || p.username || "adsız"}</b>
+      {p.username ? <span className="font-mono" style={{ color: "var(--text-muted)" }}>@{p.username}</span> : null}
+      <span className="font-mono text-micro" style={{ color: "var(--text-muted)" }}>{p.id.slice(0, 10)}…</span>
+      {p.guest ? <span className="chip h-5 px-1.5 text-micro">misafir</span> : null}
+      {p.joined ? <span className="text-micro" style={{ color: "var(--text-muted)" }}>katıldı {p.joined}</span> : null}
+    </span>
+  );
+}
+
+/**
+ * Karar satırı. MODÜL DÜZEYİNDE: bileşen içinde tanımlanınca her çizimde yeni
+ * tip doğuyor ve not alanı her tuşta sökülüp takılıyordu (bkz. users-table `Th`).
+ */
+function Actions({
+  note,
+  busy,
+  onNote,
+  onDecide,
+}: {
+  note: string;
+  busy: boolean;
+  onNote: (v: string) => void;
+  onDecide: (a: ModerationDecision) => void;
+}) {
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-2">
+      <input
+        value={note}
+        onChange={(e) => onNote(e.target.value)}
+        placeholder="Not (isteğe bağlı): ne yapıldı"
+        aria-label="Karar notu"
+        className="h-8 min-w-0 flex-1 rounded-tile border px-2 text-caption"
+        style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
+      />
+      <button type="button" disabled={busy} onClick={() => onDecide("resolved")} className="chip h-8 px-3 text-caption">
+        Gereği yapıldı
+      </button>
+      <button type="button" disabled={busy} onClick={() => onDecide("dismissed")} className="chip h-8 px-3 text-caption">
+        Asılsız
+      </button>
+    </div>
+  );
+}
+
+export function ModerationAdmin({ data }: { data: ModerationData }) {
+  const [gone, setGone] = useState<Set<string>>(new Set());
+  const [busy, setBusy] = useState("");
+  const [msg, setMsg] = useState("");
+  const [notes, setNotes] = useState<Record<string, string>>({});
+
+  async function decide(target: ModerationTarget, refId: number, action: ModerationDecision) {
+    const key = `${target}:${refId}`;
+    setBusy(key);
+    setMsg("");
+    try {
+      const res = await apiFetch("/api/admin/moderation", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ target, refId, action, note: notes[key] ?? "" }),
+      });
+      if (!res.ok) {
+        const code = String(((await res.json().catch(() => ({}))) as { error?: string }).error ?? res.status);
+        setMsg(ERROR_TR[code] ?? `Hata: ${code}`);
+        return;
+      }
+      setGone((s) => new Set(s).add(key));
+    } catch {
+      setMsg("Ağ hatası");
+    } finally {
+      setBusy("");
+    }
+  }
+
+  const userReports = data.userReports.filter((r) => !gone.has(`user_report:${r.id}`));
+  const contentReports = data.contentReports.filter((r) => !gone.has(`content_report:${r.id}`));
+
+  return (
+    <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6">
+      <header className="flex flex-col gap-1">
+        <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
+        <h1 className="text-h1">Moderasyon</h1>
+        <p className="muted text-body">
+          Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> içerik bildirimi. Otomatik yaptırım yok; karar burada.
+        </p>
+        {!data.ready ? (
+          <p className="text-caption" style={{ color: "var(--color-rose)" }}>
+            Karar tablosu (moderation_actions) canlıda yok: kullanıcı şikâyetleri okunabiliyor ama kapatılamıyor.
+          </p>
+        ) : null}
+        {msg ? <p className="text-caption" style={{ color: "var(--color-rose)" }} role="status">{msg}</p> : null}
+      </header>
+
+      <Section title="Kullanıcı şikâyetleri" sub="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse hesabın adını değiştirmek elle yapılır.">
+        {userReports.length ? (
+          <div className="space-y-2">
+            {userReports.map((r) => (
+              <div key={r.id} className="card px-3 py-3 text-caption">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-semibold">{USER_REASON[r.reason] ?? r.reason}</span>
+                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {r.at}</span>
+                </div>
+                <div className="mt-1">Şikâyet edilen: <Person p={r.reported} /></div>
+                <div className="mt-0.5" style={{ color: r.reportsAgainst > 1 || r.blockedBy > 1 ? "var(--color-rose)" : "var(--text-muted)" }}>
+                  Bu hesap hakkında toplam {r.reportsAgainst} şikâyet · {r.blockedBy} engel
+                </div>
+                <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Şikâyet eden: <Person p={r.reporter} /></div>
+                {r.detail ? <p className="mt-1 whitespace-pre-wrap">{r.detail}</p> : null}
+                {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} /> : null}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Empty text="Açık kullanıcı şikâyeti yok." />
+        )}
+      </Section>
+
+      <Section title="İçerik bildirimleri" sub="Yapay zekâ yanıtı ya da değerlendirme çıktısı için. Play üretken yapay zekâ politikası: insan inceler.">
+        {contentReports.length ? (
+          <div className="space-y-2">
+            {contentReports.map((r) => (
+              <div key={r.id} className="card px-3 py-3 text-caption">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-semibold">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
+                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {r.at}</span>
+                </div>
+                <div className="mt-0.5 font-mono" style={{ color: "var(--text-muted)" }}>{r.ref}</div>
+                <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Bildiren: <Person p={r.reporter} /></div>
+                {r.content ? <p className="mt-1 whitespace-pre-wrap">{r.content}</p> : null}
+                <Actions note={notes[`content_report:${r.id}`] ?? ""} busy={busy === `content_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`content_report:${r.id}`]: v }))} onDecide={(a) => decide("content_report", r.id, a)} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Empty text="Açık içerik bildirimi yok." />
+        )}
+      </Section>
+
+      <Section title="En çok engellenen hesaplar" sub="Şikâyet gelmese de bakılacak yer: engellemek şikâyet etmekten kolay.">
+        {data.mostBlocked.length ? (
+          <div className="space-y-1 text-caption">
+            {data.mostBlocked.map((b) => (
+              <div key={b.person.id} className="flex items-baseline gap-2">
+                <span className="w-10 shrink-0 text-right tabular-nums font-semibold">{b.count}</span>
+                <Person p={b.person} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Empty text="Engelleme yok." />
+        )}
+      </Section>
+
+      <Section title="Son kararlar" sub="Kim, neyi, hangi notla kapattı.">
+        {data.closed.length ? (
+          <div className="space-y-1 text-caption">
+            {data.closed.map((c) => (
+              <div key={`${c.target}:${c.refId}`} className="flex flex-wrap items-baseline gap-x-2">
+                <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{c.at}</span>
+                <span>{c.target === "user_report" ? "Kullanıcı" : "İçerik"} #{c.refId}</span>
+                <b>{c.action === "resolved" ? "gereği yapıldı" : "asılsız"}</b>
+                <span style={{ color: "var(--text-muted)" }}>{c.actor}</span>
+                {c.note ? <span>· {c.note}</span> : null}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <Empty text="Henüz karar yok." />
+        )}
+      </Section>
+    </div>
+  );
+}
+
+function Section({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) {
+  return (
+    <section className="mt-8">
+      <h2 className="text-h3">{title}</h2>
+      {sub ? <p className="muted mt-1 max-w-[70ch] text-caption">{sub}</p> : null}
+      <div className="mt-3">{children}</div>
+    </section>
+  );
+}
+
+function Empty({ text }: { text: string }) {
+  return (
+    <div className="card px-3 py-4 text-caption" style={{ color: "var(--text-muted)" }}>
+      {text}
+    </div>
+  );
+}

@@ -584,6 +584,28 @@ export const cronRuns = pgTable(
   (t) => [index("cron_runs_name_idx").on(t.name, t.ranAt)],
 );
 
+/**
+ * Şikâyet kararları — panelden kapatılan `content_reports` ve `user_reports`
+ * satırları. `user_reports`'a sütun eklemek yerine ayrı tablo: gerekçe
+ * `drizzle/0059_moderation_actions.sql` başında. Kullanıcıya bağlı değil.
+ */
+export const moderationActions = pgTable(
+  "moderation_actions",
+  {
+    id: serial("id").primaryKey(),
+    /** content_report · user_report */
+    target: text("target").notNull(),
+    refId: integer("ref_id").notNull(),
+    /** resolved · dismissed */
+    action: text("action").notNull(),
+    /** Kararı veren admin e-postası. */
+    actor: text("actor"),
+    note: text("note"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("moderation_actions_target_idx").on(t.target, t.refId)],
+);
+
 export const events = pgTable(
   "events",
   {

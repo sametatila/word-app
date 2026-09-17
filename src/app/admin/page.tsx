@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { adminGate, getAdminData } from "@/lib/admin";
 import { getServerMetrics } from "@/lib/server-metrics";
+import { getCoverage } from "@/lib/admin-coverage";
+import { openReportCount } from "@/lib/moderation-admin";
 import { AdminDashboard } from "./dashboard";
 
 export const metadata: Metadata = { title: "Yönetim" };
@@ -8,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * lernomi.app/admin — sahibin yönetim panosu. Sekmeli: Genel Bakış, Sunucu & Ops,
- * Kullanıcı Deneyimi, Öğrenme & İçerik, Kullanıcılar, Loglar. Veri sunucuda tek
+ * Kullanıcı Deneyimi, Öğrenme & İçerik, Büyüme & Sosyal, Kullanıcılar, Loglar. Veri sunucuda tek
  * seferde çekilir; erişim ADMIN_EMAILS ile sınırlı (admin olmayana ret).
  */
 export default async function AdminPage() {
@@ -30,6 +32,6 @@ export default async function AdminPage() {
     );
   }
 
-  const [data, server] = await Promise.all([getAdminData(), getServerMetrics()]);
-  return <AdminDashboard data={data} server={server} />;
+  const [data, server, coverage, openReports] = await Promise.all([getAdminData(), getServerMetrics(), getCoverage(), openReportCount()]);
+  return <AdminDashboard data={data} server={server} coverage={coverage} openReports={openReports} />;
 }

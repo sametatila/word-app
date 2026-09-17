@@ -132,11 +132,13 @@ const WEB_ONLY_METHOD = {
   "GET /api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor",
   "POST /api/admin/legal": "yonetim panosu",
   "POST /api/admin/premium": "yonetim panosu",
+  "POST /api/admin/moderation": "yonetim panosu",
 };
 
 const WEB_ONLY = {
   "/api/admin/legal": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
+  "/api/admin/moderation": "yonetim panosu — mobilde yok, olmayacak",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
   "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
