@@ -9,8 +9,13 @@ import { db } from "@/lib/db";
 /**
  * Sunucu & ops metrikleri (admin panosu "Sunucu" sekmesi).
  *
- * Uygulama kendi VPS'inde (Netcup) systemd instance'ı olarak root çalışıyor;
- * bu yüzden /proc'u okuyabilir ve systemctl/journalctl/git/df çalıştırabilir.
+ * Uygulama kendi VPS'inde (Netcup) systemd instance'ı olarak `lernomi`
+ * KULLANICISIYLA çalışıyor (root DEĞİL - bu dosya uzun süre öyle sanıyordu ve
+ * yedek, sertifika, nginx logu, TTS önbelleği ölçümleri canlıda hep boş
+ * dönüyordu). /proc, systemctl ve git okunabiliyor; nginx logu ve journal için
+ * kullanıcı `adm` ve `systemd-journal` gruplarında; root'a ait yerlerin (yedek
+ * dizini, sertifika, nginx önbelleği) özeti bekçinin yazdığı
+ * `/var/lib/lernomi-status/ops.json`dan okunuyor (watchdog.sh, 5 dk).
  * HER ölçüm hataya karşı korumalı (dosya yoksa / komut yoksa güvenli sıfır):
  * yerel geliştirmede ya da farklı bir ortamda pano yine açılır, sunucu bloğu
  * boş/sıfır görünür. Yalnız admin kapısından SONRA çağrılır (owner-only).
@@ -228,6 +233,19 @@ async function httpHealth(): Promise<ServerMetrics["http"]> {
   };
 }
 
+type OpsStatus = { at: string; backup: { lastAt: string; sizeBytes: number; files: number; result: string }; ttsCacheMB: number; certDaysLeft: number | null };
+
+/** Bekçinin özeti; yoksa ya da 30 dakikadan eskiyse null (bayat özet yanlış güven verir). */
+async function opsStatus(): Promise<OpsStatus | null> {
+  try {
+    const s = JSON.parse(await fs.readFile("/var/lib/lernomi-status/ops.json", "utf8")) as OpsStatus;
+    if (!s.at || Date.now() - Date.parse(s.at) > 30 * 60_000) return null;
+    return s;
+  } catch {
+    return null;
+  }
+}
+
 const INSTANCES = ["blue-3001", "blue-3002", "blue-3003", "green-3011", "green-3012", "green-3013"];
 
 export async function getServerMetrics(): Promise<ServerMetrics> {
@@ -243,14 +261,25 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     run("journalctl", ["-u", "lernomi-webhook", "-n", "500", "--no-pager", "-o", "short-iso"]),
     run("systemctl", ["is-active", ...INSTANCES.map((i) => `lernomi@${i}`)]),
   ]);
-  const [backup, backupResult, failedRaw, ttsDu, cert, http] = await Promise.all([
+  const [direct, backupResult, failedRaw, ttsDu, certDirect, http, status] = await Promise.all([
     latestBackup(),
     run("systemctl", ["show", "lernomi-backup.service", "-p", "Result", "--value"]),
     run("systemctl", ["--failed", "--plain", "--no-legend"]),
     run("du", ["-sm", "/var/cache/nginx/lernomi-tts"]),
     certDaysLeft(),
     httpHealth(),
+    opsStatus(),
   ]);
+  /* Önce bekçinin özeti (root'un gördüğü), yoksa doğrudan okuma (yerel ya da root). */
+  const backup = status?.backup.lastAt
+    ? {
+        lastAt: status.backup.lastAt,
+        ageH: Math.round(((Date.now() - Date.parse(status.backup.lastAt)) / 3_600_000) * 10) / 10,
+        sizeMB: Math.round((status.backup.sizeBytes / 1e6) * 10) / 10,
+        files: status.backup.files,
+      }
+    : direct;
+  const cert = status?.certDaysLeft ?? certDirect;
 
   const mem = parseMem(meminfo);
   const disk = parseDf(dfOut);
@@ -284,7 +313,7 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     ops: {
       backup: { ...backup, result: backupResult.trim() },
       failedUnits: failedRaw.split("\n").map((l) => l.replace(/^[\s●*]+/, "").split(/\s+/)[0] ?? "").filter(Boolean),
-      ttsCacheMB: num(ttsDu.trim().split(/\s+/)[0]),
+      ttsCacheMB: status?.ttsCacheMB ?? num(ttsDu.trim().split(/\s+/)[0]),
       certDaysLeft: cert,
     },
     http,

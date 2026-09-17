@@ -314,6 +314,9 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
       ],
     },
     { table: "premium_grants", statements: [sql`update premium_grants set user_id = ${T} where user_id = ${G}`] },
+    /* Mağaza olay defteri: misafir satın alamıyor ama RevenueCat misafir kimliğiyle
+       olay yollayabilir; olay hesaba taşınıyor. */
+    { table: "store_events", statements: [sql`update store_events set user_id = ${T} where user_id = ${G}`] },
     {
       table: "referrals",
       statements: [

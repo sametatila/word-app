@@ -40,6 +40,7 @@ import {
   referrals,
   usageCounters,
   userClients,
+  storeEvents,
   weeklyQuizAttempts,
   userConsents,
 } from "@/lib/db/schema";
@@ -136,6 +137,8 @@ export async function purgeUserData(userId: string): Promise<void> {
 
     // Mali kayıt ANONİMLEŞİR (politika §11): satır kalır, kişi gider.
     await tx.update(premiumGrants).set({ userId: "" }).where(eq(premiumGrants.userId, userId));
+    // Mağaza olay defteri de mali kayıt: satır kalır, kişi gider.
+    await tx.update(storeEvents).set({ userId: null }).where(eq(storeEvents.userId, userId));
     // Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
     await tx.update(referrals).set({ inviterUserId: "" }).where(eq(referrals.inviterUserId, userId));
     await tx.update(referrals).set({ inviteeUserId: "" }).where(eq(referrals.inviteeUserId, userId));

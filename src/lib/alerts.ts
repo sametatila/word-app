@@ -65,8 +65,11 @@ async function recent5xx(minutes: number): Promise<Map<string, number>> {
     } finally {
       await fh.close();
     }
-  } catch {
-    return out;
+  } catch (err) {
+    /* Okunamayan log "5xx yok" DEĞİL: uygulama kullanıcısı `adm` grubunda
+       değilse bu kontrol hiç çalışmıyordu ve sessiz kalıyordu. Fırlatınca
+       `guard` bunu uyarı olarak yazıyor. */
+    throw new Error(`nginx logu okunamadı (${(err as NodeJS.ErrnoException).code ?? "?"})`);
   }
   const since = Date.now() - minutes * 60_000;
   const LINE = /^\S+ \S+ \S+ \[([^\]]+)\] "\S+ (\/api\/[^\s?]*)[^"]*" (5\d\d) /;
@@ -107,7 +110,7 @@ export async function collectAlerts(): Promise<Alert[]> {
     }),
     guard("server", async () => {
       const s = await getServerMetrics();
-      if (s.ops.backup.ageH == null) alerts.push({ key: "backup", level: "kritik", text: "Veritabanı yedeği bulunamadı." });
+      if (s.ops.backup.ageH == null) alerts.push({ key: "backup", level: "kritik", text: "Yedek durumu okunamadı: yedek yok ya da bekçinin özeti (/var/lib/lernomi-status/ops.json) 30 dakikadan eski." });
       else if (s.ops.backup.ageH > 26) alerts.push({ key: "backup", level: "kritik", text: `Son yedek ${Math.round(s.ops.backup.ageH)} saat önce alınmış.` });
       if (s.ops.backup.result && s.ops.backup.result !== "success") alerts.push({ key: "backup:result", level: "kritik", text: `Yedek servisi başarısız: ${s.ops.backup.result}` });
       for (const u of s.ops.failedUnits) alerts.push({ key: `unit:${u}`, level: "kritik", text: `Çökmüş servis: ${u}` });

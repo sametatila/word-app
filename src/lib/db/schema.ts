@@ -347,7 +347,9 @@ export const reviews = pgTable(
     detail: text("detail"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
-  (t) => [index("reviews_user_idx").on(t.userId, t.createdAt)],
+  /* `reviews_created_idx`: panelin 30 günlük hata tipi sorgusu (0061). Şemada
+     değilse deploy'daki `drizzle-kit push --force` onu düşürüyor. */
+  (t) => [index("reviews_user_idx").on(t.userId, t.createdAt), index("reviews_created_idx").on(t.createdAt)],
 );
 
 /** Günlük özet — streak, grafik ve hedef takibi */
