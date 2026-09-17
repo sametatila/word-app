@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { recordClient } from "@/lib/app-control";
 import { CLIENT_HEADER } from "@/lib/app-control-shared";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
 
@@ -17,14 +17,30 @@ export const dynamic = "force-dynamic";
  * pekişen kelime + süre özeti: ekranların gösterdiği sayılar. Yalnız okur.
  */
 export async function GET() {
-  const userId = await getUserId();
+  /*
+    KİMLİK DEĞİL, KULLANICI OKUNUYOR — çünkü AD lazım (bkz. aşağıda).
+    `getUserInfo` aynı oturumu okuyor, ek istek yok.
+  */
+  const who = await getUserInfo();
+  const userId = who?.id ?? null;
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   try {
     /* UYGULAMA SÜRÜMÜ: mobil her istekte `x-lernomi-client` gönderiyor, açılışta
        kesin çağrılan uç bu. Yazma koşullu (build değişti ya da 6 saat geçti)
        ve beklenmiyor: sürüm kaydı özeti geciktirmesin. */
     void recordClient(userId, (await headers()).get(CLIENT_HEADER));
-    const profile = await ensureProfile(userId);
+    /*
+      AD DA VERİLİYOR. Burası MOBİLİN açılışta kesin çağırdığı uç ve
+      `ensureProfile` adsız çağrılıyordu: `profiles.display_name` boş kalıyor,
+      onu yalnız web yerleşimi dolduruyordu. Sonuç, uygulamadan kayıt olan
+      HERKESİN sosyal katmanda "İsimsiz öğrenci" görünmesiydi — arkadaş
+      listesinde, sıralamada ve davet karşılama sayfasında (emülatörde
+      görüldü, 2026-09-17).
+
+      `ensureProfile` adı yalnız BOŞSA yazıyor ve iki karakterden kısasını
+      yok sayıyor, yani kullanıcının kendi seçtiği görünen adı ezmiyor.
+    */
+    const profile = await ensureProfile(userId, who?.name ?? null);
     const today = new Date().toISOString().slice(0, 10);
     // İlerleme okunamazsa özet yine döner: kimlik/seri/XP profilde, ilerlemeye bağlı değil.
     const progress = await getProgress(userId, today).catch(() => null);
