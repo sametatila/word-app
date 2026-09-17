@@ -105,6 +105,14 @@ const SKIP = [
   // çağırıyor. Hata metinleri yayını yapan işletmecinin terminaline gidiyor,
   // hiçbir uç bunları kullanıcıya döndürmüyor.
   "lib/content/publish.ts",
+  // Bozuk madde analizinin gerekçe metinleri: `MockItemRow.why` yalnız
+  // panelde görünüyor (`admin/learning`), `lib/admin-content.ts` ile aynı
+  // sınıf. Kullanıcıya hiçbir uçtan dönmüyor.
+  "lib/content/analytics.ts",
+  // Paket okuyucusunun hata kaydı: yalnız sunucu günlüğü (`console.error`),
+  // `lib/alerts.ts` ile aynı sınıf. Okuma patlarsa uç boş liste döndürüyor,
+  // metin dönmüyor.
+  "lib/content/serve.ts",
   // Parçalı yazılı: tam yol dizgisi `check:endpoints`te ucu "çağrılıyor" gösterirdi.
   ["app", "api", "cron", "alerts"].join("/"),
   "app/(app)/analytics",
