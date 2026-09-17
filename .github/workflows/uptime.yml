@@ -22,6 +22,11 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      test:
+        description: "Telegram'a deneme mesajı gönder (gizlilerin çalıştığını doğrulamak için)"
+        type: boolean
+        default: false
 
 permissions: {}
 
@@ -56,6 +61,9 @@ jobs:
               --data-urlencode "text=Lernomi (dış izleme) — $1" \
               "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" || true
           }
+          if [ "${{ inputs.test }}" = "true" ]; then
+            send "Deneme 3/3: dış izleme (GitHub Actions). Site dışarıdan yoklanıyor; sunucu tamamen düşse de bu yol çalışır."
+          fi
           now=$(date +%s)
           down_since=$(cat uptime-state/down_since 2>/dev/null || echo "")
           last_sent=$(cat uptime-state/last_sent 2>/dev/null || echo 0)
