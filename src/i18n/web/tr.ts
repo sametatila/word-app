@@ -9,6 +9,22 @@
  * anahtar sessizce mobilden ayrışır.
  */
 export const trWeb: Record<string, string> = {
+  /*
+   * DAVETİYE — `app/r/[code]`, girişsiz ziyaretçinin gördüğü tek ekran.
+   *
+   * WEBE ÖZEL çünkü mobilde karşılığı yok ve olması da gerekmiyor: uygulaması
+   * kurulu kullanıcıda aynı adres App Link olarak uygulamada açılıyor ve bağ
+   * sessizce kuruluyor (`lib/deepLink`). Bu ekran tam olarak uygulamayı HİÇ
+   * kurmamış kişi için var.
+   */
+  "invitew.title": "{name} seni Lernomi'ye davet etti",
+  "invitew.lead": "Almanca ve İngilizceyi birlikte çalışın.",
+  "invitew.how": "Hesap oluşturduğunda {name} kişisine arkadaşlık isteği gidecek. Kabul ederse ortak seriniz başlar: aynı gün ikiniz de çalıştıkça seri büyür.",
+  "invitew.cta": "Hesap oluştur ve başla",
+  "invitew.browse": "Lernomi'ye göz at",
+  "invitew.bad_title": "Bu davet bağlantısı çalışmıyor",
+  "invitew.bad_lead": "Bağlantı eksik ya da artık geçerli değil. Seni davet eden kişiden yenisini isteyebilirsin.",
+  "invitew.pitch": "Günde birkaç dakika: kelime turları, dersler, konuşma alıştırmaları ve deneme sınavları. Ücretsiz başlıyor.",
   /* Rozet kutlamasi: mobilde "dokun", webde fare ve klavye de var. */
   "achuw.click_to_continue": "Devam etmek için tıkla",
   /*

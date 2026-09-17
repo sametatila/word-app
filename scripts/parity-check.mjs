@@ -10417,14 +10417,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      *   manifesto AndroidManifest pathPrefix (Android yolu iddia ediyor)
      *   karsilama `parseDeepLink`            (uygulama yolu tanıyor)
      *   paylasim  `lib/share` `inviteLink`   (paylasilan adres)
-     *   sunucu    `app/r/[code]`             (kurulu olmayanda web karsiliyor)
+     *   sunucu    `app/r/[code]/page`        (kurulu olmayanda web karsiliyor)
      *
      * KOD SADELESTIRME IKI TARAFTA AYNI OLMALI: sunucu `normalizeReferral`
      * buyuk harfe cevirip harf/rakam disini atiyor. Mobil taraf ayni kurali
      * uygulamazsa kucuk harfle paylasilan bir baglanti mobilde bulunamaz,
      * webde bulunurdu. */
     const share = read("mobile/src/lib/share.ts");
-    const rota = existsSync("src/app/r/[code]/route.ts") ? read("src/app/r/[code]/route.ts") : "";
+    const rota = existsSync("src/app/r/[code]/page.tsx") ? read("src/app/r/[code]/page.tsx") : "";
     sameList(
       "davet kodu baglantisi bes yerde",
       [
@@ -16703,7 +16703,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const hook = sil(read("src/app/api/premium/webhook/[[...provider]]/route.ts"));
     /* Bagi kuran UC yol; ucu de ortak yardimciyi cagirmali. `attachReferral`i
        dogrudan cagiran bir yol istegi atlamis olur. */
-    const yollar = ["src/app/r/[code]/route.ts", "src/app/api/premium/redeem/route.ts", "src/app/api/premium/referral/route.ts"];
+    const yollar = ["src/app/r/[code]/page.tsx", "src/app/api/premium/redeem/route.ts", "src/app/api/premium/referral/route.ts"];
     const dogrudan = yollar.filter((f) => /\battachReferral\(/.test(sil(read(f))));
     const ortak = yollar.filter((f) => /\bapplyReferralLink\(/.test(sil(read(f))));
     sameList(

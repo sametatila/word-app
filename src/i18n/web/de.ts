@@ -9,6 +9,22 @@
  * anahtar sessizce mobilden ayrışır.
  */
 export const deWeb: Record<string, string> = {
+  /*
+   * DAVETİYE — `app/r/[code]`, girişsiz ziyaretçinin gördüğü tek ekran.
+   *
+   * WEBE ÖZEL çünkü mobilde karşılığı yok ve olması da gerekmiyor: uygulaması
+   * kurulu kullanıcıda aynı adres App Link olarak uygulamada açılıyor ve bağ
+   * sessizce kuruluyor (`lib/deepLink`). Bu ekran tam olarak uygulamayı HİÇ
+   * kurmamış kişi için var.
+   */
+  "invitew.title": "{name} hat dich zu Lernomi eingeladen",
+  "invitew.lead": "Lernt Deutsch und Englisch gemeinsam.",
+  "invitew.how": "Sobald du ein Konto erstellst, geht eine Freundschaftsanfrage an {name}. Wird sie angenommen, beginnt eure gemeinsame Serie: Sie wächst an jedem Tag, an dem ihr beide übt.",
+  "invitew.cta": "Konto erstellen und loslegen",
+  "invitew.browse": "Lernomi ansehen",
+  "invitew.bad_title": "Dieser Einladungslink funktioniert nicht",
+  "invitew.bad_lead": "Der Link ist unvollständig oder nicht mehr gültig. Bitte die Person, die dich eingeladen hat, um einen neuen.",
+  "invitew.pitch": "Ein paar Minuten am Tag: Wortrunden, Lektionen, Sprechübungen und Probeprüfungen. Kostenlos zum Einstieg.",
   "achuw.click_to_continue": "Zum Fortfahren klicken",
   /* Kahraman kartındaki iki rozet — mobilde henüz sabit yazılı (bkz. tr.ts). */
   /* Web'e özel mod. */

@@ -10,6 +10,7 @@ import { SITE_URL } from "@/lib/site";
  * "gizli" değil, ARAMADA ANLAMSIZ olanlar:
  *
  *   /api        makine ucu
+ *   /r/         davet bağlantısı — kişiye özel, arama sonucu olarak anlamsız
  *   /admin      yönetim panosu
  *   /account    hesap silme — oturum gerektiriyor, herkese açık bir sayfa değil
  *   giriş akışı  parola sıfırlama ve doğrulama bağlantıları tek kullanımlık
@@ -33,6 +34,7 @@ export default function robots(): MetadataRoute.Robots {
         "/reset-password",
         "/verify-email",
         "/tts-bridge",
+        "/r/",
       ],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,

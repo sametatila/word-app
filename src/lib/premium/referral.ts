@@ -94,6 +94,31 @@ export async function userIdByReferralCode(code: string): Promise<string | null>
 export type AttachResult = "ok" | "self" | "already" | "unknown_code";
 
 /**
+ * Davet edenin KARTI — davet karşılama sayfası için (`app/r/[code]`).
+ *
+ * YALNIZ AD VE AVATAR. Sayfa girişsiz bir ziyaretçiye çiziliyor, yani burada
+ * dönen her alan herkese açık demek. Kullanıcının kendi paylaştığı bir
+ * bağlantıda adını göstermek beklenen şey; istatistik, kullanıcı adı ya da
+ * etkinlik göstermek değil. Sosyal katmanın görünürlük kuralları
+ * (`lib/social/profile`) bu yüzden burada geçmiyor — o kurallar "başkasının
+ * profiline bakmak" için, bu ise davet edenin kendi davetiyesi.
+ *
+ * Misafirin daveti yok: `attachReferral` da aynı kuralı uyguluyor, sayfa da
+ * boş bir davetiye çizmesin.
+ */
+export async function inviterCard(code: string): Promise<{ name: string | null; avatar: string | null; userId: string } | null> {
+  const c = normalizeReferral(code);
+  if (!c) return null;
+  const [row] = await db
+    .select({ userId: profiles.userId, name: profiles.displayName, avatar: profiles.avatar })
+    .from(profiles)
+    .where(eq(profiles.referralCode, c))
+    .limit(1);
+  if (!row || (await isGuestUser(row.userId))) return null;
+  return row;
+}
+
+/**
  * Hesap davet penceresinin içinde mi açılmış (bkz. `INVITE_WINDOW_DAYS`).
  *
  * KULLANICI SATIRI YOKSA PENCERE UYGULANMIYOR — `lib/auth/guest-user`
