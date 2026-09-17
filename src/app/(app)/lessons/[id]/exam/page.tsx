@@ -1,6 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { findLesson } from "@/lib/lessons";
+import { lessonDisabled } from "@/lib/content/read";
 import { candoForLesson } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
 import { RoleplayExam } from "@/components/lessons/roleplay-exam";
@@ -19,6 +20,8 @@ export default async function LessonExamPage({ params }: { params: Promise<{ id:
   if (!userId) redirect("/login");
   const { id } = await params;
   const source = findLesson(id);
+  /* Ders kapatıldıysa sınavı da kapalı: aynı içeriğin türevi. */
+  if (source && (await lessonDisabled(id))) notFound();
   if (!source) notFound();
 
   // Sahne, muhatap ve amaç dersin `roleplay` alanından geliyor; ekranın

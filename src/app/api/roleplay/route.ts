@@ -4,6 +4,7 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
+import { lessonDisabled } from "@/lib/content/read";
 import { streamDialogue, streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
 import { MAX_HISTORY } from "@/lib/lessons/roleplay-const";
 import { getExercise } from "@/lib/skills";
@@ -102,6 +103,10 @@ export async function POST(req: Request) {
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
   const lessonRaw = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
+  /* Kapatılmış dersin rol yapması da kapalı — içerik aynı yerden geliyor. */
+  if (lessonRaw && (await lessonDisabled(lessonRaw.id))) {
+    return NextResponse.json({ error: "unknown_lesson" }, { status: 400 });
+  }
   if (!lessonRaw && !dialogueRaw) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
 
   /**

@@ -10,6 +10,7 @@ import { candoById } from "@/lib/cando";
 import { titleMeta } from "@/lib/page-meta";
 import { localiseLesson, nativeTitle, nativeCando } from "@/lib/lessons/native-server";
 import { isNativeLang } from "@/lib/i18n/dict";
+import { lessonDisabled } from "@/lib/content/read";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +22,10 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
   const { id } = await params;
   const source = findLesson(id);
   if (!source) notFound();
+  /* KAPATILMIŞ DERS AÇILMIYOR. Panelden kapatılan madde mobilde gösterge
+     üzerinden gizleniyor; web içeriği koddan okuduğu için burada AYRICA
+     sorulmak zorunda, yoksa anahtar yarım işler (bkz. `lib/content/read`). */
+  if (await lessonDisabled(id)) notFound();
   // Karakter sunucuda hesaplanıyor: türetmesi ders kataloğunu gerektiriyor ve
   // 202 dersin tamamını istemci paketine sokmanın anlamı yok.
   const character = characterFor(source, lessonIndexInLevel(source));

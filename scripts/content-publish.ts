@@ -27,6 +27,7 @@ import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
 import { ORDER_ITEM } from "../src/lib/content/ids";
+import { lessonPack, mockIndexPack, paperPack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
 
@@ -74,7 +75,7 @@ function collect(): Map<string, PackInput> {
     for (const pack of buildLessonDump(course)) {
       const rows = JSON.parse(pack.json) as WithId[];
       if (rows.length === 0) continue;
-      packs.set(`lessons/${course}-${pack.level.toLowerCase()}`, withOrder(rows));
+      packs.set(lessonPack(course as PackCourse, pack.level), withOrder(rows));
     }
 
     /* BECERİ ALIŞTIRMALARI — seviye başına paket. Mobilde bugün tek dosya
@@ -88,12 +89,12 @@ function collect(): Map<string, PackInput> {
       if (list) list.push(row);
       else byLevel.set(level, [row]);
     }
-    for (const [level, rows] of byLevel) packs.set(`skills/${course}-${level}`, withOrder(rows));
+    for (const [level, rows] of byLevel) packs.set(skillPack(course as PackCourse, level), withOrder(rows));
 
     /* DENEME SINAVI KÂĞITLARI — kapılı. Kurs başına tek paket: kâğıt zaten
        tek tek isteniyor, seviyeye bölmenin kazancı yok. */
     const papers = JSON.parse(buildPaperDump(course).json) as (WithId & { level: string })[];
-    if (papers.length > 0) packs.set(`papers/${course}`, byId(papers));
+    if (papers.length > 0) packs.set(paperPack(course as PackCourse), byId(papers));
 
     /* KÂĞIT KÜNYELERİ — kapılı DEĞİL ve bu bilinçli.
        Liste ekranı kilitli kâğıtları da göstermek zorunda: kilidi görmeden
@@ -110,7 +111,7 @@ function collect(): Map<string, PackInput> {
     for (const [level, rows] of byLevelPapers) {
       const index: PackInput = new Map();
       for (const row of rows) index.set(row.id, catalogEntry(row));
-      packs.set(`mockindex/${course}-${level}`, index);
+      packs.set(mockIndexPack(course as PackCourse, level), index);
     }
   }
 

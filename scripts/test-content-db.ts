@@ -3,7 +3,17 @@ import { eq, inArray, like } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { disableItem, enableItem, promote, publish, type PackInput } from "@/lib/content/publish";
-import { body, invalidatePointer, manifest, pointer, readItem } from "@/lib/content/read";
+import {
+  body,
+  disabledItemsOf,
+  exerciseDisabled,
+  invalidatePointer,
+  lessonDisabled,
+  manifest,
+  paperDisabled,
+  pointer,
+  readItem,
+} from "@/lib/content/read";
 import { FULL_PACK } from "@/lib/content/ids";
 
 /**
@@ -55,6 +65,10 @@ async function restore(previousLive: number | null) {
   }
   await db.delete(contentFlags).where(like(contentFlags.pack, "tests/%"));
   await db.delete(contentFlags).where(eq(contentFlags.pack, GATED));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "lessons/%"));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "skills/%"));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "papers/%"));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "quiz/%"));
   /* Gövdeler hash adresli ve paylaşılabilir; testinkileri ancak başka hiçbir
      sürüm kullanmıyorsa siliyoruz. */
   await db.execute(
@@ -161,6 +175,33 @@ async function main() {
     check("geri alma kapatmayı açmıyor", (await pointer()).d.includes(`${FREE}:a`));
     await enableItem(FREE, "a");
     check("kapatma kaldırılabiliyor", !(await pointer()).d.includes(`${FREE}:a`));
+
+    /* 9. KAPATMA WEBDE DE İŞLİYOR.
+       Web içeriği koddan okuyor, yani kapatılan madde kendiliğinden
+       gizlenmiyor; kimlikten paketi çözen yardımcılar bu boşluğu kapatıyor.
+       Yarısı işleyen bir anahtar, hiç işlemeyenden kötü. */
+    await disableItem("lessons/de-b1", "de-b1-bewerbung", "broken", by);
+    check("kapatılan ders webde de kapalı", await lessonDisabled("de-b1-bewerbung"));
+    check("kapatılmamış ders açık", !(await lessonDisabled("de-b1-lebenslauf")));
+    await enableItem("lessons/de-b1", "de-b1-bewerbung");
+
+    await disableItem("skills/de-a1", "a1-u1-r1", "reported", by);
+    check("kapatılan egzersiz webde de kapalı", await exerciseDisabled("a1-u1-r1"));
+    await enableItem("skills/de-a1", "a1-u1-r1");
+
+    await disableItem("papers/de", "de-b1-01", "broken", by);
+    check("kapatılan kâğıt webde de kapalı", await paperDisabled("de-b1-01"));
+    await enableItem("papers/de", "de-b1-01");
+
+    /* 10. YAYINLANMAMIŞ PAKETİN MADDESİ DE KAPATILABİLİYOR.
+       Haftalık quiz içeriği yayın hattında yok ama bozuk sorusu bir sonraki
+       yayını beklemeden düşmeli; kapatma listesi sürümden bağımsız olduğu
+       için bu mümkün. */
+    await disableItem("quiz/de", "de-a1-w01-g2", "broken", by);
+    const quizOff = await disabledItemsOf("quiz/de");
+    check("yayınlanmamış paketin maddesi kapatılabiliyor", quizOff.has("de-a1-w01-g2"), [...quizOff].join(","));
+    check("başka paketin kapatması sızmıyor", !(await disabledItemsOf("quiz/en")).has("de-a1-w01-g2"));
+    await enableItem("quiz/de", "de-a1-w01-g2");
   } finally {
     await restore(previousLive);
   }

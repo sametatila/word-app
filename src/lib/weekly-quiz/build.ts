@@ -81,6 +81,15 @@ export type SelectOpts = {
   missedTargets?: readonly string[];
   /** Deterministik sıra için tohum; kullanıcı + hafta öneriliyor. */
   seed: string;
+  /**
+   * Panelden KAPATILMIŞ madde kimlikleri — havuzdan düşürülüyor.
+   *
+   * `/admin/quiz` hangi maddenin bozuk olduğunu zaten söylüyordu ama
+   * yapılacak bir şey sunmuyordu; kapatma anahtarı o eksik fiili tamamlıyor.
+   * Kapalı liste ÇAĞIRANDAN geliyor, çünkü bu işlev saf ve deterministik
+   * kalmalı: aynı girdi her koşuda aynı quizi vermeli.
+   */
+  disabled?: ReadonlySet<string>;
 };
 
 /**
@@ -95,7 +104,7 @@ export function selectItems(week: QuizWeek, opts: SelectOpts): QuizItem[] {
   const out: QuizItem[] = [];
 
   for (const [block, need] of Object.entries(QUIZ_PLAN) as [keyof typeof QUIZ_PLAN, number][]) {
-    const pool = week.items.filter((i) => i.block === block);
+    const pool = week.items.filter((i) => i.block === block && !opts.disabled?.has(i.id));
     /* Önce kaçırılan hedefi yoklayanlar, sonra ötekiler; her grup kendi
        içinde tohumlu sırada. `sort` kararlı olmadığı için gruplama ayrı
        yapılıyor — aynı girdi her koşuda aynı çıktıyı vermeli. */

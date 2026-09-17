@@ -1,4 +1,5 @@
 import "server-only";
+import { exerciseDisabled } from "@/lib/content/read";
 import { asc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { skillExercises } from "@/lib/db/schema";
@@ -91,6 +92,10 @@ export async function listExerciseMeta(course = "de"): Promise<SkillMeta[]> {
 export { isLibraryExercise };
 
 export async function getExercise(id: string): Promise<SkillExercise | undefined> {
+  /* KAPATILMIŞ EGZERSİZ VERİLMİYOR — kapı burada, çağıranlarda değil.
+     Egzersiz içeriğini okuyan her yol (sayfa, uç, değerlendirme) buradan
+     geçiyor; kapıyı çağıranlara dağıtmak birini unutmak demekti. */
+  if (await exerciseDisabled(id)) return undefined;
   try {
     const [row] = await db
       .select({ data: skillExercises.data })

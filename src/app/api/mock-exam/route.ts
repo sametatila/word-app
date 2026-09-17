@@ -16,6 +16,7 @@ import { canMockPaper, mockAccess } from "@/lib/premium/access";
 import { takeUsage } from "@/lib/premium";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { deliverPart } from "@/lib/mock-exams/deliver";
+import { paperDisabled } from "@/lib/content/read";
 import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
@@ -168,6 +169,9 @@ export async function GET(req: Request) {
     if (!SKILLS.has(skill as MockSkill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
     const source = mockPaperById(paperId);
     if (!source) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    /* Panelden kapatılmış kâğıt YOK sayılıyor — kapatma anahtarı burada da
+       işliyor, yoksa mobilde gizlenen kâğıt webde açık kalırdı. */
+    if (await paperDisabled(paperId)) return NextResponse.json({ error: "not_found" }, { status: 404 });
     const gate = await canMockPaper(userId, paperId, source.level, source.course);
     if (!gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
@@ -232,6 +236,9 @@ async function start(userId: string, body: Record<string, unknown>) {
   const paper = mockPaperById(paperId);
   const part = paper ? findPart(paper, skill) : null;
   if (!paper || !part || !SKILLS.has(skill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+  /* Kapatılmış kâğıtla sınav BAŞLAMIYOR: liste onu zaten göstermiyor ama
+     kimliği doğrudan gönderen istek de geçmemeli. */
+  if (await paperDisabled(paperId)) return NextResponse.json({ error: "not_found" }, { status: 404 });
 
   /**
    * PREMIUM KAPISI — kâğıt açık mı.

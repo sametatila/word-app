@@ -10,6 +10,8 @@ import { practiceWordsOf } from "@/lib/practice-words";
 import { track } from "@/lib/events";
 import { quizForWeek } from "@/lib/weekly-quiz";
 import { personalItem, selectItems, weekIndexOf, weekStartOf, type PersonalWord } from "@/lib/weekly-quiz/build";
+import { disabledItemsOf } from "@/lib/content/read";
+import { quizPack, packCourseOf } from "@/lib/content/packs";
 import { resolveByIds, resolveItem, scoreQuiz, toClient } from "@/lib/weekly-quiz/scoring";
 import type { QuizCourse, QuizItem, QuizLevel, QuizNative } from "@/lib/weekly-quiz/types";
 
@@ -70,7 +72,12 @@ async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, 
   const pack = quizForWeek(course, level, weekIx);
   if (!pack) return null;
   const seed = `${userId}:${week}`;
-  const items = selectItems(pack, { seed });
+  /* KAPATILMIŞ MADDELER HAVUZDAN DÜŞÜYOR.
+     Haftalık quiz içeriği yayın hattında DEĞİL (sunucuda kuruluyor, istemciye
+     paket olarak inmiyor) ama kapatma listesi sürümden bağımsız: olmayan bir
+     paketin maddesi de kapatılabiliyor. Bozuk soru böylece bir sonraki
+     yayını beklemeden düşüyor. */
+  const items = selectItems(pack, { seed, disabled: await disabledItemsOf(quizPack(packCourseOf(pack.course))) });
 
   const pool = await personalPool(userId, course);
   if (pool.length >= 3) {

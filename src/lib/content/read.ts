@@ -3,6 +3,7 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { FULL_PACK, flagKey, isGatedPack } from "./ids";
+import { lessonPack, levelOfId, packCourseOfId, paperPack, skillPack } from "./packs";
 
 /**
  * İçeriğin OKUMA tarafı — gösterge, manifest deltası ve gövde.
@@ -216,6 +217,47 @@ export async function readItem<T>(pack: string, item: string): Promise<T | null>
 export async function isDisabled(pack: string, item: string): Promise<boolean> {
   const { d } = await pointer();
   return d.includes(flagKey(pack, item));
+}
+
+/**
+ * KAPATMA ANAHTARI WEBDE DE İŞLİYOR.
+ *
+ * Kapatma göstergeye düşüyor ve mobil onu hemen gizliyor. Web içeriği hâlâ
+ * koddan okuyor, yani kapatılan madde burada KENDİLİĞİNDEN gizlenmiyordu:
+ * panelden "bu soru bozuk" denip kapatıldığında Android'de kayboluyor, webde
+ * duruyordu. Kapatma anahtarının en sinsi kırılma biçimi bu — yarısı işleyen
+ * bir anahtar, hiç işlemeyenden daha kötü, çünkü iş bitmiş sanılıyor.
+ *
+ * Üç yardımcı kimlikten paketi çözüyor (`lib/content/packs`), yani çağıranın
+ * paket adını bilmesi gerekmiyor. Gösterge yarım dakika önbellekli: bu
+ * kontroller pratikte bedava.
+ */
+export async function lessonDisabled(id: string): Promise<boolean> {
+  const level = levelOfId(id);
+  return level ? isDisabled(lessonPack(packCourseOfId(id), level), id) : false;
+}
+
+export async function exerciseDisabled(id: string): Promise<boolean> {
+  const level = levelOfId(id);
+  return level ? isDisabled(skillPack(packCourseOfId(id), level), id) : false;
+}
+
+export async function paperDisabled(id: string): Promise<boolean> {
+  return isDisabled(paperPack(packCourseOfId(id)), id);
+}
+
+/**
+ * Bir paketin kapatılmış maddeleri — havuzdan toplu düşürme için.
+ *
+ * Tek tek sormak yerine küme veriyor: haftalık quiz havuzu yüzlerce madde ve
+ * her biri için göstergeyi taramak gereksiz.
+ */
+export async function disabledItemsOf(pack: string): Promise<Set<string>> {
+  const { d } = await pointer();
+  const prefix = `${pack}:`;
+  const out = new Set<string>();
+  for (const key of d) if (key.startsWith(prefix)) out.add(key.slice(prefix.length));
+  return out;
 }
 
 /** Panelin sürüm listesi (F6) — gövde taşımıyor, yalnız künye. */
