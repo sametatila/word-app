@@ -1,0 +1,112 @@
+# DIŞ İZLEME — sunucudan BAĞIMSIZ bekçi.
+#
+# Sunucudaki uyarı motoru (lib/alerts) ve bekçi (/opt/lernomi/watchdog.sh) aynı
+# makinede çalışıyor: makine tamamen düşerse (Netcup arızası, ağ kesintisi,
+# disk) ikisi de susar ve kimse haber vermez. Bu iş GitHub'ın altyapısında
+# koşuyor ve siteyi DIŞARIDAN yokluyor.
+#
+# NE YAPIYOR (5 dakikada bir; GitHub zamanlaması yoğunlukta birkaç dakika
+# gecikebilir):
+#   - /api/config HTTP 200 mü (3 deneme, 20 sn arayla - tek hıçkırık alarm değil)
+#   - HTTPS sertifikası 10 günden az mı kaldı
+# SORUN VARSA:
+#   - Telegram'a yazar: kesinti BAŞLADIĞINDA hemen, sürerse saatte bir, düzelince
+#     bir kez. Durum (ne zamandan beri kapalı, son mesaj) Actions önbelleğinde.
+#   - İş kırmızı biter: GitHub sahibine e-posta atar (Telegram kurulmamışsa da
+#     haber alınır).
+# Gizliler: repo › Settings › Secrets › TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# (yoksa yalnız e-posta). Depo herkese açık: bu dosyada sır yok.
+name: Dış izleme
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Önceki durum
+        uses: actions/cache/restore@v4
+        with:
+          path: uptime-state
+          key: uptime-state-${{ github.run_id }}
+          restore-keys: uptime-state-
+
+      - name: Siteyi ve sertifikayı yokla
+        id: probe
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -u
+          mkdir -p uptime-state
+          send() {
+            [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ] && return 0
+            curl -sS --max-time 10 -o /dev/null \
+              --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=Lernomi (dış izleme) — $1" \
+              "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" || true
+          }
+          now=$(date +%s)
+          down_since=$(cat uptime-state/down_since 2>/dev/null || echo "")
+          last_sent=$(cat uptime-state/last_sent 2>/dev/null || echo 0)
+
+          code=000
+          for i in 1 2 3; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://www.lernomi.app/api/config || echo 000)
+            [ "$code" = "200" ] && break
+            sleep 20
+          done
+
+          problem=""
+          if [ "$code" != "200" ]; then
+            problem="[KRİTİK] Site dışarıdan erişilemiyor: /api/config HTTP $code (3 deneme)."
+          fi
+
+          end=$(echo | timeout 15 openssl s_client -servername www.lernomi.app -connect www.lernomi.app:443 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
+          if [ -n "$end" ]; then
+            days=$(( ( $(date -d "$end" +%s) - now ) / 86400 ))
+            echo "sertifika: $days gün"
+            if [ "$days" -lt 10 ]; then
+              problem="${problem:+$problem }[KRİTİK] HTTPS sertifikası $days gün içinde bitiyor."
+            fi
+          fi
+
+          if [ -n "$problem" ]; then
+            if [ -z "$down_since" ]; then
+              echo "$now" > uptime-state/down_since
+              send "$problem"
+              echo "$now" > uptime-state/last_sent
+            elif [ $(( now - last_sent )) -ge 3600 ]; then
+              send "[SÜRÜYOR $(( (now - down_since) / 60 )) dk] $problem"
+              echo "$now" > uptime-state/last_sent
+            fi
+            echo "$problem"
+            echo "failed=1" >> "$GITHUB_OUTPUT"
+          else
+            if [ -n "$down_since" ]; then
+              send "[DÜZELDİ] Site dışarıdan yeniden erişilebilir ($(( (now - down_since) / 60 )) dk sonra)."
+            fi
+            rm -f uptime-state/down_since uptime-state/last_sent
+            echo "tamam: HTTP $code"
+          fi
+
+      - name: Durumu kaydet
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: uptime-state
+          key: uptime-state-${{ github.run_id }}
+
+      - name: Sorun varsa kırmızı bit (GitHub e-postası)
+        if: steps.probe.outputs.failed == '1'
+        run: exit 1
