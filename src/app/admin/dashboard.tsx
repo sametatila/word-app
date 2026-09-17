@@ -99,8 +99,9 @@ function TrendChart({ trend }: { trend: AdminData["trend"] }) {
 
 const PLATFORM_LABEL: Record<string, string> = {
   "desktop:browser": "Masaüstü · web", "desktop:standalone": "Masaüstü · uygulama",
-  "android:browser": "Android · web", "android:standalone": "Android · uygulama",
-  "ios:browser": "iOS · web", "ios:standalone": "iOS · uygulama",
+  "android:browser": "Android · web", "android:standalone": "Android · web uygulaması",
+  "ios:browser": "iOS · web", "ios:standalone": "iOS · web uygulaması",
+  "android:native": "Android · mağaza uygulaması", "ios:native": "iOS · mağaza uygulaması",
 };
 const WALK_REASON: Record<number, string> = {
   1: "Kullanıcı bitirdi", 2: "Tur kalmadı", 3: "Duyulmama sınırı", 4: "Mikrofon yok", 5: "Ekran kapandı", 6: "Elle duraklatıldı / çıkıldı",
@@ -151,6 +152,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
           <a href="/admin/moderation" className="chip h-8 px-3 text-caption" style={openReports ? { color: "#dc2626" } : undefined}>
             Moderasyon{openReports ? ` (${openReports})` : ""}
           </a>
+          <a href="/admin/app" className="chip h-8 px-3 text-caption">Uygulama</a>
           <a href="/admin/premium" className="chip h-8 px-3 text-caption">Premium</a>
           <a href="/admin/quiz" className="chip h-8 px-3 text-caption">Haftalık quiz</a>
           <a href="/admin/legal" className="chip h-8 px-3 text-caption">Hukuki metinler</a>

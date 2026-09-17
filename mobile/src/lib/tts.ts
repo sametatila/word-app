@@ -214,7 +214,9 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
      hiç yazmıyordu, yani panelde ses kullanımı yalnız webden görünüyordu ve
      "sesi kimse kullanmıyor" gibi okunuyordu. Her kelimede değil ekran
      başına: yoksa sayı ölçüm değil gürültü olur. */
-  trackOnce("tts_play", 0, navigationRef.isReady() ? (navigationRef.getCurrentRoute()?.name ?? "?") : "?");
+  /* Rota bilinmiyorsa "unknown": "?" `kind` biçim denetiminden geçmiyor ve olay
+     etiketsiz yazılıyordu (sunucu `cleanKind`). */
+  trackOnce("tts_play", 0, navigationRef.isReady() ? (navigationRef.getCurrentRoute()?.name ?? "unknown") : "unknown");
   const voice = opts?.voice ?? currentVoice;
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse aynı ses native
   // oynatıcıdan; ikisi de yoksa ve sunucuya ulaşılamıyorsa cihaz TTS'i.

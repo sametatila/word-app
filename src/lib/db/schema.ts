@@ -606,6 +606,79 @@ export const moderationActions = pgTable(
   (t) => [uniqueIndex("moderation_actions_target_idx").on(t.target, t.refId)],
 );
 
+/**
+ * İstemci sürümü — platform başına son görülen uygulama sürümü ve build.
+ * Mobil her istekte `x-lernomi-client` başlığı gönderiyor, `/api/me` yazıyor
+ * (`lib/app-control`). Zorunlu güncellemenin kime etki edeceği buradan okunur.
+ * Gerekçe: `drizzle/0060_app_ops.sql`.
+ */
+export const userClients = pgTable(
+  "user_clients",
+  {
+    userId: text("user_id").notNull(),
+    /** ios · android */
+    platform: text("platform").notNull(),
+    appVersion: text("app_version").notNull(),
+    build: integer("build").notNull(),
+    firstSeen: timestamp("first_seen", { withTimezone: true }).notNull().defaultNow(),
+    lastSeen: timestamp("last_seen", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.platform] }), index("user_clients_build_idx").on(t.platform, t.build)],
+);
+
+/**
+ * Askıya alma. Açık bir satır (kaldırılmamış, süresi geçmemiş) varken hesap
+ * yeni oturum açamıyor (`lib/auth/server` databaseHooks); askıya alma anında
+ * mevcut oturumlar siliniyor.
+ */
+export const accountSuspensions = pgTable(
+  "account_suspensions",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** İç gerekçe — kullanıcıya gösterilmez. */
+    reason: text("reason").notNull(),
+    /** Boşsa süresiz. */
+    until: timestamp("until", { withTimezone: true }),
+    adminEmail: text("admin_email"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    liftedAt: timestamp("lifted_at", { withTimezone: true }),
+    liftedBy: text("lifted_by"),
+  },
+  (t) => [index("account_suspensions_user_idx").on(t.userId, t.liftedAt)],
+);
+
+/**
+ * Hesap silme kaydı — KİŞİSEL VERİ YOK (kimlik, e-posta, ad tutulmuyor).
+ * Yalnız kaç silmenin hangi yoldan olduğu.
+ */
+export const accountDeletions = pgTable("account_deletions", {
+  id: serial("id").primaryKey(),
+  /** self · admin · guest */
+  source: text("source").notNull(),
+  adminEmail: text("admin_email"),
+  reason: text("reason"),
+  wasGuest: boolean("was_guest").notNull().default(false),
+  ageDays: integer("age_days"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** Toplu bildirim kaydı — panelden gönderilen duyurular. */
+export const pushBroadcasts = pgTable("push_broadcasts", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  body: text("body").notNull(),
+  url: text("url"),
+  audience: jsonb("audience").notNull(),
+  adminEmail: text("admin_email"),
+  targeted: integer("targeted").notNull().default(0),
+  delivered: integer("delivered").notNull().default(0),
+  /** sending · done · failed */
+  state: text("state").notNull().default("sending"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  finishedAt: timestamp("finished_at", { withTimezone: true }),
+});
+
 export const events = pgTable(
   "events",
   {

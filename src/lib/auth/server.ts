@@ -9,6 +9,8 @@ import { user, session, account, verification, twoFactor as twoFactorTable } fro
 import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail, twoFactorCodeEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
+import { recordDeletion } from "@/lib/account/deletion-log";
+import { activeSuspension } from "@/lib/account/suspension";
 import { appleClientSecret, appleRevokeConfigured } from "@/lib/auth/apple";
 import { oneTimeToken } from "better-auth/plugins/one-time-token";
 import { APIError, createAuthMiddleware } from "better-auth/api";
@@ -408,6 +410,28 @@ export const auth = betterAuth({
       beforeDelete: async (u) => {
         await revokeAppleSignIn(u.id);
         await purgeUserData(u.id);
+        // İz: kimlik yok, yalnız yol ve hesabın yaşı (bkz. lib/account/deletion-log).
+        await recordDeletion({ source: "self", createdAt: u.createdAt });
+      },
+    },
+  },
+  /**
+   * ASKIYA ALINMIŞ HESAP OTURUM AÇAMAZ (panel › kullanıcı › askıya al).
+   *
+   * Kanca oturum SATIRI yazılmadan önce çalışıyor, yani giriş yolundan
+   * bağımsız: e-posta/parola, Google, Apple, tek kullanımlık jeton, iki adımlı
+   * doğrulamanın son adımı - hepsi buradan geçiyor. Mevcut oturumlar askıya
+   * alma anında siliniyor (`lib/account/suspension`); bu kanca yenilerini
+   * durduruyor. Hata kodu iki istemcide de çevriliyor (`auth.suspended`).
+   */
+  databaseHooks: {
+    session: {
+      create: {
+        before: async (session) => {
+          if (await activeSuspension(session.userId)) {
+            throw new APIError("FORBIDDEN", { message: "Account suspended", code: "ACCOUNT_SUSPENDED" });
+          }
+        },
       },
     },
   },

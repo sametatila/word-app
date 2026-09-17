@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
 import { getAdminUser, type Table } from "@/lib/admin-user";
+import { activeSuspension, suspensionHistory } from "@/lib/account/suspension";
+import { AccountActions } from "./account-actions";
 
 export const metadata: Metadata = { title: "Kullanıcı" };
 export const dynamic = "force-dynamic";
 
 /**
- * lernomi.app/admin/users/[id] — tek hesabın bütün izi, salt okuma.
+ * lernomi.app/admin/users/[id] — tek hesabın bütün izi.
  *
- * İstemci bileşeni yok: etkileşim gerekmiyor, veri sunucuda bir kez çiziliyor.
- * Yazma işleri kendi sayfalarında (premium, moderasyon).
+ * Sayfanın tamamı sunucuda çiziliyor; tek istemci parçası hesap işlemleri
+ * (askıya al, sil — `account-actions`). Premium ve şikâyet yazma işleri kendi
+ * sayfalarında.
  */
 
 const WORD_STATE: Record<number, string> = { 0: "yeni", 1: "öğreniliyor", 2: "tekrar", 3: "yeniden öğreniliyor" };
@@ -74,7 +77,8 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
   }
 
   const { id } = await params;
-  const u = await getAdminUser(decodeURIComponent(id));
+  const userId = decodeURIComponent(id);
+  const [u, suspension, history] = await Promise.all([getAdminUser(userId), activeSuspension(userId), suspensionHistory(userId)]);
   const title = u.profile?.display_name || u.profile?.username || u.account?.name || u.id.slice(0, 10);
 
   return (
@@ -83,6 +87,9 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
         <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
         <h1 className="text-h1">{title}</h1>
         <p className="muted font-mono text-caption">{u.id}</p>
+        {suspension ? (
+          <p className="text-caption" style={{ color: "var(--color-rose)" }}>ASKIDA: {suspension.reason}</p>
+        ) : null}
         {!u.account && !u.profile ? (
           <p className="text-caption" style={{ color: "var(--color-rose)" }}>Bu kimlikle hesap yok (silinmiş olabilir).</p>
         ) : null}
@@ -98,6 +105,26 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
           "iki adımlı doğrulama": u.account.twoFactor, "giriş yolları": u.account.providers.join(", "),
           "açık oturum": u.account.activeSessions, "son oturum hareketi": u.account.lastSeen, oluşturuldu: u.account.createdAt,
         } : null} />
+      </Section>
+
+      {u.account ? (
+        <Section title="Hesap işlemleri" sub="Askıya alma geri alınabilir; silme kalıcıdır.">
+          <AccountActions userId={u.id} suspended={suspension ? { reason: suspension.reason, until: suspension.until } : null} />
+          {history.length ? (
+            <div className="mt-3">
+              <DataTable
+                t={{
+                  columns: ["başlangıç", "gerekçe", "bitiş", "veren", "kaldırıldı", "kaldıran"],
+                  rows: history.map((h) => [h.createdAt.slice(0, 16).replace("T", " "), h.reason, h.until ? h.until.slice(0, 16).replace("T", " ") : "süresiz", h.adminEmail, h.liftedAt ? h.liftedAt.slice(0, 16).replace("T", " ") : "", h.liftedBy]),
+                }}
+              />
+            </div>
+          ) : null}
+        </Section>
+      ) : null}
+
+      <Section title="Uygulama sürümü" sub="Mobil uygulamanın bildirdiği son sürüm, platform başına.">
+        <DataTable t={u.reach.clients} empty="Sürüm bildirimi yok (web kullanıcısı ya da eski build)." />
       </Section>
 
       <Section title="Profil & ayarlar">

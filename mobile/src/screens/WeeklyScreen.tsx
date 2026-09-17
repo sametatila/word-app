@@ -272,7 +272,7 @@ export function WeeklyScreen() {
           <DetailCard title={t("wquiz.review_title")}>
             <View style={{ gap: spacing.md }}>
               {wrong.map((w) => (
-                <View key={w.itemId} style={{ gap: 4 }}>
+                <View key={w.itemId} style={{ gap: spacing.xs }}>
                   <Text variant="micro" color={colors.textMuted}>{t(BLOCK_KEY[w.block]).toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="body">{w.why}</Text>
                 </View>

@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
+import { recordClient } from "@/lib/app-control";
+import { CLIENT_HEADER } from "@/lib/app-control-shared";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
@@ -17,6 +20,10 @@ export async function GET() {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   try {
+    /* UYGULAMA SÜRÜMÜ: mobil her istekte `x-lernomi-client` gönderiyor, açılışta
+       kesin çağrılan uç bu. Yazma koşullu (build değişti ya da 6 saat geçti)
+       ve beklenmiyor: sürüm kaydı özeti geciktirmesin. */
+    void recordClient(userId, (await headers()).get(CLIENT_HEADER));
     const profile = await ensureProfile(userId);
     const today = new Date().toISOString().slice(0, 10);
     // İlerleme okunamazsa özet yine döner: kimlik/seri/XP profilde, ilerlemeye bağlı değil.

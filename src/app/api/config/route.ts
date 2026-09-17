@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { authEnabled, googleConfigured, appleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { turnstileSiteKey } from "@/lib/auth/captcha";
+import { appControl } from "@/lib/app-control";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +20,14 @@ export const dynamic = "force-dynamic";
  * widget'ı onu zaten sayfa kaynağında taşıyor.
  */
 export async function GET() {
+  /*
+    UYGULAMA DENETİMİ de buradan iniyor: en düşük/önerilen build, bakım modu,
+    mağaza bağlantıları (bkz. lib/app-control-shared). Açılışta zaten okunan
+    tek herkese açık uç bu; ikinci bir istek eklemek yerine buraya kondu.
+    Önbellek penceresi (5 dk) zorunlu güncellemenin en geç ne kadar sürede
+    yürürlüğe girdiğini belirliyor — panelde de öyle yazılı.
+  */
+  const app = await appControl();
   return NextResponse.json(
     {
       auth: authEnabled,
@@ -35,6 +44,7 @@ export async function GET() {
         appleWeb: authEnabled && appleWebConfigured,
       },
       turnstileSiteKey,
+      app,
     },
     { headers: { "cache-control": "public, max-age=300" } },
   );

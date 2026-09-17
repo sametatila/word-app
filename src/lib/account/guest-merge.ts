@@ -3,6 +3,7 @@ import { sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { shiftDay } from "@/lib/award";
 import { purgeUserData } from "@/lib/account/purge";
+import { recordDeletion } from "@/lib/account/deletion-log";
 
 /**
  * MİSAFİRİN İLERLEMESİ HESABA — mağaza ön inceleme B24.
@@ -244,6 +245,16 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     { table: "content_reports", statements: [sql`update content_reports set user_id = ${T} where user_id = ${G}`] },
     { table: "mock_exam_attempts", statements: [sql`update mock_exam_attempts set user_id = ${T} where user_id = ${G}`] },
     {
+      /* Haftalık quiz: (kullanıcı, hafta) benzersiz. Hesabın o haftada denemesi
+         yoksa misafirinki taşınıyor; varsa hesabınki kalıyor. */
+      table: "weekly_quiz_attempts",
+      statements: [
+        sql`update weekly_quiz_attempts g set user_id = ${T}
+             where g.user_id = ${G} and not exists (select 1 from weekly_quiz_attempts t where t.user_id = ${T} and t.week = g.week)`,
+        sql`delete from weekly_quiz_attempts where user_id = ${G}`,
+      ],
+    },
+    {
       /* Kota sayaçları TOPLANIYOR: birleşme bugünün tavanını sıfırlamanın yolu olmasın. */
       table: "usage_counters",
       statements: [
@@ -260,6 +271,18 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     { table: "league_members", statements: [sql`delete from league_members where user_id = ${G}`] },
     { table: "device_tokens", statements: [sql`update device_tokens set user_id = ${T} where user_id = ${G}`] },
     { table: "push_subscriptions", statements: [sql`update push_subscriptions set user_id = ${T} where user_id = ${G}`] },
+    {
+      /* Uygulama sürümü: hesabın o platformda kaydı yoksa misafirinki taşınıyor
+         (aynı telefon), varsa hesabınki daha yeni sayılıyor. */
+      table: "user_clients",
+      statements: [
+        sql`update user_clients g set user_id = ${T}
+             where g.user_id = ${G} and not exists (select 1 from user_clients t where t.user_id = ${T} and t.platform = g.platform)`,
+        sql`delete from user_clients where user_id = ${G}`,
+      ],
+    },
+    /* Askıya alma hesaba verilen bir karar; misafirde beklenmiyor, varsa taşınmaz. */
+    { table: "account_suspensions", statements: [sql`delete from account_suspensions where user_id = ${G}`] },
     {
       /* Rıza hesabın kararı: hesapta o amaç için karar varsa misafirinki taşınmıyor. */
       table: "user_consents",
@@ -433,17 +456,20 @@ export async function deleteGuest(guestId: string): Promise<boolean> {
  */
 export async function purgeStaleGuests(limit = 500): Promise<number> {
   const stale = rowsOf(await db.execute(sql`
-    select u.id from "user" u
+    select u.id, u."createdAt" created_at from "user" u
      where u."isAnonymous"
        and u."createdAt" < now() - interval '1 day'
        and not exists (select 1 from session s where s."userId" = u.id and s."expiresAt" > now())
      order by u."createdAt"
      limit ${limit}
-  `)) as { id: string }[];
+  `)) as { id: string; created_at: string }[];
   let removed = 0;
-  for (const { id } of stale) {
+  for (const { id, created_at } of stale) {
     try {
-      if (await deleteGuest(id)) removed++;
+      if (await deleteGuest(id)) {
+        removed++;
+        await recordDeletion({ source: "guest", reason: "expired", wasGuest: true, createdAt: created_at });
+      }
     } catch (err) {
       console.error("[guest:purge]", err);
     }

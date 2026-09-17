@@ -22,21 +22,62 @@ export type ServerConfig = {
    */
   providers: { google: boolean; apple: boolean; appleWeb: boolean };
   turnstileSiteKey: string;
+  /**
+   * Uygulama denetimi (panelden): zorunlu/önerilen build, bakım modu, mağaza
+   * bağlantıları. Biçim web `lib/app-control-shared` ile aynı. Eski sunucu ya
+   * da hata: `null` - kapı hiçbir şeyi engellemiyor.
+   */
+  app: AppControl | null;
 };
+
+export type AppControl = {
+  minBuild: { ios: number; android: number };
+  latestBuild: { ios: number; android: number };
+  store: { ios: { live: boolean; url: string }; android: { live: boolean; url: string } };
+  maintenance: { enabled: boolean; message: { tr: string; en: string; de: string } };
+};
+
+function appControlOf(raw: unknown): AppControl | null {
+  if (typeof raw !== "object" || raw === null) return null;
+  const o = raw as Record<string, Record<string, unknown> | undefined>;
+  const n = (v: unknown) => (typeof v === "number" && Number.isFinite(v) ? v : 0);
+  const st = (o.store ?? {}) as Record<string, Record<string, unknown> | undefined>;
+  const m = (o.maintenance ?? {}) as Record<string, unknown>;
+  const msg = (m.message ?? {}) as Record<string, unknown>;
+  const s = (v: unknown) => (typeof v === "string" ? v : "");
+  return {
+    minBuild: { ios: n(o.minBuild?.ios), android: n(o.minBuild?.android) },
+    latestBuild: { ios: n(o.latestBuild?.ios), android: n(o.latestBuild?.android) },
+    store: {
+      ios: { live: st.ios?.live === true, url: s(st.ios?.url) },
+      android: { live: st.android?.live === true, url: s(st.android?.url) },
+    },
+    maintenance: { enabled: m.enabled === true, message: { tr: s(msg.tr), en: s(msg.en), de: s(msg.de) } },
+  };
+}
 
 let cached: ServerConfig | null = null;
 
-export async function fetchServerConfig(): Promise<ServerConfig> {
-  if (cached) return cached;
+/**
+ * `fresh`: önbelleği atla. Uygulama denetimi (bakım, zorunlu güncelleme)
+ * süreç ömrü boyunca önbellekte kalırsa panelden açılan bakım, uygulamayı
+ * kapatmayan kullanıcıya hiç ulaşmaz; kapı ön plana dönüşte taze okuyor.
+ */
+export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
+  if (cached && !fresh) return cached;
   try {
     const c = await api<Partial<ServerConfig>>("/api/config");
     cached = {
       auth: c.auth !== false,
       providers: { google: Boolean(c.providers?.google), apple: Boolean(c.providers?.apple), appleWeb: Boolean(c.providers?.appleWeb) },
       turnstileSiteKey: typeof c.turnstileSiteKey === "string" ? c.turnstileSiteKey : "",
+      app: appControlOf((c as { app?: unknown }).app),
     };
   } catch {
-    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "" };
+    /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
+       ekranını kaldırıp geri getirmesin. */
+    if (fresh && cached) return cached;
+    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", app: null };
   }
   return cached;
 }

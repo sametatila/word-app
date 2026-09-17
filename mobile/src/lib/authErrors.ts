@@ -41,6 +41,8 @@ export function translateAuthError(code: string, message: string, status = 0): s
     de kullanıcı için aynı sonuç. Ayrı metin, kodun hangi sebeple düştüğünü
     söylemek olurdu.
   */
+  // Askıya alınmış hesap (web lib/auth/errors ile aynı kod).
+  if (c === "ACCOUNT_SUSPENDED") return t("auth.suspended");
   if (c === "INVALID_CODE" || c === "OTP_HAS_EXPIRED" || c === "TOO_MANY_ATTEMPTS_REQUEST_NEW_CODE")
     return t("autherror.invalid_code");
   if (c.includes("EMAIL_NOT_VERIFIED") || m.includes("email not verified"))

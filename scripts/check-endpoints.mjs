@@ -133,12 +133,16 @@ const WEB_ONLY_METHOD = {
   "POST /api/admin/legal": "yonetim panosu",
   "POST /api/admin/premium": "yonetim panosu",
   "POST /api/admin/moderation": "yonetim panosu",
+  "POST /api/admin/app": "yonetim panosu",
+  "POST /api/admin/users": "yonetim panosu",
 };
 
 const WEB_ONLY = {
   "/api/admin/legal": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/moderation": "yonetim panosu — mobilde yok, olmayacak",
+  "/api/admin/app": "yonetim panosu — mobilde yok, olmayacak",
+  "/api/admin/users": "yonetim panosu — mobilde yok, olmayacak",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
 };

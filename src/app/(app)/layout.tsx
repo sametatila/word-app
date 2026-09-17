@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { getT } from "@/lib/i18n/server";
+import { getLang, getT } from "@/lib/i18n/server";
+import { appControl } from "@/lib/app-control";
+import { adminGate } from "@/lib/admin";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { getSessionRead, authEnabled } from "@/lib/auth/server";
@@ -23,6 +25,17 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     girişsiz saydığı için (`getAccountUserId`) iki sayfa birbirine yönlendirmez.
   */
   if (user.guest) redirect("/login");
+
+  /*
+    BAKIM MODU (panel /admin/app). Mobil aynı kararı `ui/AppGate`te veriyor.
+    Admin bakımda da uygulamaya girebiliyor: bakımı açan kişi düzeltmeyi
+    canlıda deneyebilmeli. Yalnız uygulama kabuğu kapanıyor; giriş, hukuki
+    sayfalar ve panel açık kalıyor.
+  */
+  const control = await appControl();
+  if (control.maintenance.enabled && !(await adminGate()).ok) {
+    return <Maintenance message={control.maintenance.message[await getLang()] || control.maintenance.message.tr} />;
+  }
 
   let streak = 0;
   let xp = 0;
@@ -81,6 +94,20 @@ async function SessionUnavailable() {
       </p>
       <Link href="/learn" prefetch={false} className="btn btn-primary px-5 py-3">
         {t("common.try_again")}
+      </Link>
+    </div>
+  );
+}
+
+/** Bakım ekranı — paneldeki mesaj varsa o, yoksa varsayılan metin. */
+async function Maintenance({ message }: { message: string }) {
+  const t = await getT();
+  return (
+    <div role="status" className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center gap-4 px-6 text-center">
+      <h1 className="text-h2">{t("appgate.maintenance_title")}</h1>
+      <p className="muted text-body">{message || t("appgate.maintenance_body")}</p>
+      <Link href="/learn" prefetch={false} className="btn btn-primary px-5 py-3">
+        {t("appgate.check_again")}
       </Link>
     </div>
   );

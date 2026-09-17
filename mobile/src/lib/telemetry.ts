@@ -79,6 +79,10 @@ async function ilkAcilis(): Promise<void> {
   } catch {
     /* depolama kapalı: her açılış yazılır, yine de bilgi */
   }
+  /* `native`: panonun platform tablosu ÜÇ görünümü ayırıyor (browser,
+     standalone = web'in ana ekrana eklenmiş hâli, native = mağaza uygulaması).
+     Kökteki ikinci yazıcı (`App.tsx`, her açılışta `:standalone`) kaldırıldı;
+     native açılış PWA sayılıyordu ve günde iki kez yazılıyordu. */
   track("app_open", Math.round(Dimensions.get("window").width), `${Platform.OS}:native`);
 }
 

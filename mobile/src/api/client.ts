@@ -1,3 +1,6 @@
+import { Platform } from "react-native";
+import { APP_VERSION, APP_VERSION_CODE } from "../version";
+
 /**
  * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; veritabanı
  * ve tüm backend yeniden kullanılır, tek doğruluk kaynağı).
@@ -15,6 +18,16 @@
  * ve POST gövdeleri yönlendirmede bozulur).
  */
 export const API_BASE = "https://www.lernomi.app";
+
+/**
+ * İSTEMCİ SÜRÜMÜ her istekte: `x-lernomi-client: android/1.0.3/14`.
+ *
+ * Hangi kullanıcının hangi build'i kullandığı bilinmiyordu; zorunlu
+ * güncellemenin kime etki edeceği de bilinemiyordu. Sunucu `/api/me`de okuyup
+ * kullanıcı başına yazıyor (`lib/app-control` recordClient). Kişisel veri
+ * değil, teknik bilgi - analitik tercihinden bağımsız.
+ */
+export const CLIENT_HEADER_VALUE = `${Platform.OS === "ios" ? "ios" : "android"}/${APP_VERSION}/${APP_VERSION_CODE}`;
 
 export class ApiError extends Error {
   status: number;
@@ -139,7 +152,10 @@ export async function fetchWithTimeout(url: string, init?: ApiInit): Promise<Res
   const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
   let res: Response;
   try {
-    res = await fetch(url, { ...init, signal: ctl?.signal as RequestInit["signal"] });
+    /* Başlık yalnız BİZİM sunucumuza: ham `fetch` başka adreslere de gidebiliyor. */
+    const own = url.startsWith(API_BASE);
+    const headers = own ? { "x-lernomi-client": CLIENT_HEADER_VALUE, ...((init?.headers as Record<string, string>) ?? {}) } : init?.headers;
+    res = await fetch(url, { ...init, headers, signal: ctl?.signal as RequestInit["signal"] });
   } catch (e) {
     if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
     throw e;
@@ -187,6 +203,7 @@ export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T>
           `API_BASE` uygulamaya gömülü ve `trustedOrigins` listesinde.
         */
         origin: API_BASE,
+        "x-lernomi-client": CLIENT_HEADER_VALUE,
         ...(init?.body ? { "content-type": "application/json" } : {}),
         ...(init?.headers ?? {}),
       },

@@ -298,7 +298,10 @@ export function PlacementScreen() {
     /* Yerleştirme SONUCU uygulandı — web `demo-placement` ile aynı ad, aynı
        değer (yüzde) ve aynı kind biçimi. Mobil hiç yazmıyordu: kaç kişinin
        seviyesini yerleştirmeye göre ayarladığı ölçülmüyordu. */
-    track("placement_finish", total ? Math.round((correct / total) * 100) : 0, `${usingReal ? "real" : "demo"}:${String(level).toLowerCase()}`);
+    /* GERÇEK TEST SUNUCUDA SAYILIYOR (`lib/placement` placement_finish), yani
+       burada da yazılınca her gerçek test iki kez sayılıyordu. İstemci yalnız
+       sunucuya hiç gitmeyen DEMO testi yazıyor — web `demo-placement` ile aynı. */
+    if (!usingReal) track("placement_finish", total ? Math.round((correct / total) * 100) : 0, `demo:${String(level).toLowerCase()}`);
     // Onboarding'de misafir: seviye yerel prefs'e; hesap açınca profile taşınır.
     if (onboarding) await saveOnboardingPrefs({ level });
     if (user) {

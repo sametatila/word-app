@@ -52,7 +52,7 @@ export type AdminUser = {
     friends: number; pending: number; league: Record<string, string> | null;
     reportsAgainst: Table; reportsBy: number; blockedBy: number; blocking: number; unreadInbox: number;
   };
-  reach: { devices: Table; webPush: number; consents: Table; usage: Table };
+  reach: { devices: Table; webPush: number; consents: Table; usage: Table; clients: Table };
   ai: Table;
   events: Table;
   errors: Table;
@@ -62,7 +62,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
   const id = userId.slice(0, 64);
   const [
     acc, providers, sessions, prof, ent, grants, act, wordStates, lessons, path, skills, exams, mock, quiz, placements, boss,
-    ach, quests, social, league, reportsAgainst, devices, webPush, consents, usage, ai, events, errors,
+    ach, quests, social, league, reportsAgainst, devices, webPush, consents, usage, ai, events, errors, clients,
   ] = await Promise.all([
     rows(sql`select email, coalesce(name, '') name, "emailVerified" verified, coalesce("isAnonymous", false) guest,
       coalesce("twoFactorEnabled", false) two_factor, to_char("createdAt", 'YYYY-MM-DD HH24:MI') created
@@ -126,6 +126,8 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       from events where user_id = ${id} order by id desc limit 60`),
     rows(sql`select to_char(created_at, 'MM-DD HH24:MI') at, coalesce(kind, '') screen, value
       from events where user_id = ${id} and name = 'client_error' order by id desc limit 20`),
+    rows(sql`select platform, app_version, build, to_char(first_seen, 'YYYY-MM-DD') first_seen, to_char(last_seen, 'YYYY-MM-DD HH24:MI') last_seen
+      from user_clients where user_id = ${id} order by last_seen desc`),
   ]);
 
   const a = acc[0];
@@ -173,6 +175,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       webPush: num(webPush[0]?.c),
       consents: table(consents, ["purpose", "granted", "version", "platform", "decided"]),
       usage: table(usage, ["key", "period", "count"]),
+      clients: table(clients, ["platform", "app_version", "build", "first_seen", "last_seen"]),
     },
     ai: table(ai, ["kind", "provider", "calls", "errors"]),
     events: table(events, ["at", "name", "kind", "value"]),

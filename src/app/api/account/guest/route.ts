@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth, getUserInfo } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { deleteGuest } from "@/lib/account/guest-merge";
+import { recordDeletion } from "@/lib/account/deletion-log";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,7 @@ export async function DELETE(req: Request) {
   if (!who.guest) return NextResponse.json({ error: "not_guest" }, { status: 403 });
 
   try {
-    await deleteGuest(who.id);
+    if (await deleteGuest(who.id)) await recordDeletion({ source: "guest", reason: "discard", wasGuest: true });
   } catch (err) {
     console.error("[guest:delete]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });

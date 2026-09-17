@@ -66,6 +66,8 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
   const msg = message.toLowerCase();
   const t = (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
 
+  // Askıya alınmış hesap: oturum açma kancası bu kodla reddediyor (lib/account/suspension).
+  if (code === "ACCOUNT_SUSPENDED") return t("auth.suspended");
   if (code === "EMAIL_NOT_VERIFIED" || msg.includes("email not verified"))
     return t("autherror.your_email_address_is_not");
   if (code.includes("INVALID_EMAIL_OR_PASSWORD") || msg.includes("invalid email or password"))

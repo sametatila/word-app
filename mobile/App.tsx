@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { StatusBar, View, Dimensions, Platform, Linking } from "react-native";
+import { StatusBar, View, Linking } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -31,6 +31,7 @@ import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
 import { GuestMergeDialog } from "./src/ui/GuestMergeDialog";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
+import { AppGate } from "./src/ui/AppGate";
 import { ErrorBoundary } from "./src/ui/ErrorBoundary";
 import { NavBarBackdrop } from "./src/ui/NavBarBackdrop";
 import { FontMetricsProbe } from "./src/ui/fontFit";
@@ -297,13 +298,10 @@ function Nav() {
       /* Koçun "son söyledikleri" — cümle seçimi çizim sırasında ve SENKRON
          yapılıyor, o yüzden kayıt önceden belleğe alınıyor. */
       .then(() => loadCoachSeen())
-      // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
-      // Görünüm native pakette her zaman "standalone"; web tarafı (components/telemetry)
-      // aynı kalıbı display-mode'dan üretiyor ve yönetim panosu ikisini de tanıyor
-      // (app/admin/dashboard.tsx PLATFORM_LABEL: ios|android|desktop : standalone|browser).
-      // Platform sabit yazılıydı; iOS açılışları Android sayılıyordu.
-      // Analitik tercihi yüklendikten SONRA: kullanıcı kapattıysa bu olay da gitmez.
-      .then(() => track("app_open", Math.round(Dimensions.get("window").width), `${Platform.OS}:standalone`))
+      /* `app_open` BURADA YAZILMIYOR. Her açılışta `:standalone`, telemetride
+         (`lib/telemetry` ilkAcilis) günde bir `:native` diye İKİ kez yazılıyordu:
+         native açılış web uygulaması (PWA) sayılıyordu. Web kuralı "günün ilk
+         açılışı"; tek yazıcı artık telemetri. */
       /* Bildirim izni sorusu gerekiyor mu — `onboarded`DAN ÖNCE: ilk çizimi
          açan bayrak o, yani rota hesaplanırken bu yanıt hazır olmak zorunda. */
       .then(() => notifPrimeNeeded().catch(() => false))
@@ -390,6 +388,9 @@ function Nav() {
           ekranı açtırıyor (bkz. lib/aiConsent). Kırk çağrı yerinin her birine
           ayrı ekran koymak kırk yerde unutulurdu. */}
       <AiConsentHost />
+      {/* UYGULAMA KAPISI kökte ve EN ÜSTTE: bakım ve zorunlu güncelleme her
+          ekranın önüne geçmeli (bkz. ui/AppGate, panel /admin/app). */}
+      <AppGate />
       {/* Doğrulama sürerken ekranı bir an boş bırakmamak için örtü: ağ çağrısı
           ve oturum tazelemesi bitene kadar duruyor. */}
       {verifying ? (

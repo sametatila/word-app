@@ -2,6 +2,7 @@ import "server-only";
 import { and, eq, like, ne, or } from "drizzle-orm";
 import { db } from "@/lib/db";
 import {
+  accountSuspensions,
   achievements,
   activityEvents,
   aiUsage,
@@ -38,6 +39,8 @@ import {
   promoRedemptions,
   referrals,
   usageCounters,
+  userClients,
+  weeklyQuizAttempts,
   userConsents,
 } from "@/lib/db/schema";
 
@@ -91,6 +94,9 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(assessments).where(eq(assessments.userId, userId));
     await tx.delete(placements).where(eq(placements.userId, userId));
     await tx.delete(exams).where(eq(exams.userId, userId));
+    // Haftalık quiz denemeleri (cevaplar dahil). Tablo 2026-09-17'de eklendi
+    // ve buraya yazılmamıştı: hesabı silen kullanıcının denemeleri kalıyordu.
+    await tx.delete(weeklyQuizAttempts).where(eq(weeklyQuizAttempts.userId, userId));
     // İçerik bildirimleri: KAPANMIŞ olanlar silinir, AÇIK olanlar anonimleşir.
     // Hepsini silmek, hesabını kapatan kullanıcının incelenmemiş bildirimini de
     // yok ediyordu — oysa bildirim başkasının içeriği hakkında ve moderasyon
@@ -119,6 +125,10 @@ export async function purgeUserData(userId: string): Promise<void> {
     // Yapay zekâ rıza defteri: hesap yoksa işlenecek veri de yok, rızayı
     // gösterme yükü de kalmıyor.
     await tx.delete(userConsents).where(eq(userConsents.userId, userId));
+    // Uygulama sürümü (teknik iz) ve askıya alma kaydı: hesap yoksa ikisinin
+    // de öznesi yok.
+    await tx.delete(userClients).where(eq(userClients.userId, userId));
+    await tx.delete(accountSuspensions).where(eq(accountSuspensions.userId, userId));
 
     // Premium hakkı ve promosyon kullanımı: kimliğe bağlı, mali kayıt değil.
     await tx.delete(entitlements).where(eq(entitlements.userId, userId));

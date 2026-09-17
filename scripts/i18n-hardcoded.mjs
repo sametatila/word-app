@@ -78,6 +78,12 @@ const SKIP = [
   "lib/admin-coverage.ts",
   "lib/admin-user.ts",
   "lib/moderation-admin.ts",
+  "lib/admin-app.ts",
+  // Panelden yönetilen işletim: yalnız sunucu günlüğü ve panel etiketleri.
+  // Kullanıcıya giden metinler (bakım, güncelleme, duyuru) sözlükte ya da
+  // panelde üç dilde yazılıyor.
+  "lib/app-control.ts",
+  "lib/push-broadcast.ts",
   "app/(app)/analytics",
   "app/demo-games",
   "app/demo-feedback",
