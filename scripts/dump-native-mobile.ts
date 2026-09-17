@@ -24,7 +24,7 @@
  * okuyor (`ExamShape`, `MockShape`, `ExerciseShape` hep öyle yazıldı), o
  * yüzden döküm bu dört tipi kendi başına tanımlıyor.
  */
-import { readFileSync, writeFileSync, mkdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 const ROOT = process.cwd();
@@ -154,11 +154,16 @@ if (process.argv[1]?.endsWith("dump-native-mobile.ts")) {
   const out = buildNativeDump();
   mkdirSync(OUT_DIR, { recursive: true });
   writeFileSync(OUT_TS, out.ts);
-  writeFileSync(OUT_JSON, out.json);
-  writeFileSync(OUT_TS_DE, out.tsDe);
-  writeFileSync(OUT_JSON_DE, out.jsonDe);
 
-  const mb = (p: string) => (statSync(p).size / 1024 / 1024).toFixed(2);
+  writeFileSync(OUT_TS_DE, out.tsDe);
+
+
+  /* SÖZLÜKLER ARTIK YAZILMIYOR: mobil paketten çıktılar ve içerik hattından
+     iniyorlar (`content:publish` → `native/en`, `native/de`). Buradan yalnız
+     ÇÖZÜCÜLER dökülüyor; onlar kod ve pakette kalıyor.
+     `buildNativeDump` sözlükleri yine döndürüyor — `content:publish` onları
+     oradan alıyor, yani projeksiyon hâlâ tek yerde. */
+  const mb = (bytes: number) => (bytes / 1024 / 1024).toFixed(2);
   const n = (o: Record<string, unknown>) => Object.keys(o).length;
   const say = (json: string) =>
     Object.entries(JSON.parse(json) as Record<string, Record<string, unknown>>)
@@ -166,9 +171,9 @@ if (process.argv[1]?.endsWith("dump-native-mobile.ts")) {
       .join(" ·");
   console.log(
     `çözücüler yazıldı  ${NATIVE_DUMP_FILES.ts} + ${NATIVE_DUMP_FILES.tsDe}  (${out.lines} satır)\n` +
-      `sözlük yazıldı  ${NATIVE_DUMP_FILES.json}  (${mb(OUT_JSON)} MB)\n` +
+      `sözlük (yayına gider, pakete değil)  en ${mb(Buffer.byteLength(out.json))} MB\n` +
       say(out.json) +
-      `\nsözlük yazıldı  ${NATIVE_DUMP_FILES.jsonDe}  (${mb(OUT_JSON_DE)} MB)\n` +
+      `\nsözlük (yayına gider, pakete değil)  de ${mb(Buffer.byteLength(out.jsonDe))} MB\n` +
       say(out.jsonDe),
   );
 }

@@ -19,10 +19,21 @@
  *    açıklama, kalıp notu, sözlükçe karşılığı. Almanca metin sınavın ve
  *    dersin kendisidir.
  *
- * SÖZLÜK GEÇ YÜKLENİYOR. 4,62 MB + 3,45 MB ve bir kullanıcı yalnız BİRİNİ
- * açıyor; Türkçe kullanan hiçbirini. `require` gövde içinde duruyor: Metro
- * modülü ilk çağrıda çalıştırıyor, paketin başında değil. Statik `import`
- * olsaydı ikisi de her açılışta ayrıştırılırdı.
+ * SÖZLÜK ARTIK PAKETTE DEĞİL, İNDİRİLİYOR.
+ *
+ * İki sözlük ikilinin içinde duruyordu (5,6 MB + 4,9 MB = 10,5 MB ham) ve
+ * `require` gövde içinde olduğu için yalnız AYRIŞTIRMA erteleniyordu —
+ * baytlar her kullanıcının telefonuna iniyordu. Oysa çeviri yönü tek: anadili
+ * İngilizce olan yalnız `native/en`i, Almanca olan yalnız `native/de`yi
+ * kullanıyor ve anadili TÜRKÇE olan HİÇBİRİNİ (kaynağı zaten görüyor).
+ * Yani kullanıcıların çoğu için bu 10,5 MB tamamen boşunaydı.
+ *
+ * Sözlük şimdi içerik hattından iniyor (`content/store`), bir kez, diske
+ * yazılıyor ve oradan belleğe alınıyor. `ensureNativeDict()` açılışta ve dil
+ * değişince çağrılıyor.
+ *
+ * YÜKLENENE KADAR ÇEVİRİ YOK ve bu hep-ya-hiç kuralının doğal uzantısı:
+ * sözlük yoksa içerik kaynak dilinde kalıyor, yarım çevrilmiş hâlde değil.
  *
  * ÇÖZÜLEN SONUÇ ÖNBELLEKTE. Aynı ders bir oturumda onlarca kez okunuyor
  * (liste, oynatıcı, ilerleme) ve her seferinde 200 adımlık bir anlatımı
@@ -32,35 +43,75 @@ import { currentLang, onLangChange } from "./i18n";
 import {
   resolveLesson,
   resolveExercise,
-  resolveMockPaper,
   mockKey,
   type Lesson,
   type NativeDict,
 } from "./native";
 import { resolveEnLesson, type DeDict } from "./native-de";
+import { ensurePack, getContentItem, listContentItems } from "../content/store";
 
-let dict: NativeDict | null | undefined;
-let dictDe: DeDict | null | undefined;
+/** Sözlük paketleri — anadile göre en fazla biri iniyor. */
+const PACK_EN = "native/en";
+const PACK_DE = "native/de";
+
+let dict: NativeDict | null = null;
+let dictDe: DeDict | null = null;
+let loading: Promise<void> | null = null;
+let loadedFor: string | null = null;
+
+/**
+ * Paketi indirir ve belleğe kurar.
+ *
+ * Sözlük üst anahtarlarına göre madde madde yayınlanıyor (`lecture`, `vocab`,
+ * `exam`…), yani bir alanın metni değiştiğinde yalnız o alan yeniden iniyor.
+ * Burada hepsi tek nesnede birleştiriliyor — çözücüler sözlüğü bütün olarak
+ * bekliyor.
+ */
+async function loadDict(pack: string): Promise<Record<string, unknown> | null> {
+  const ok = await ensurePack(pack);
+  if (!ok) return null;
+  const keys = await listContentItems(pack);
+  if (keys.length === 0) return null;
+  const out: Record<string, unknown> = {};
+  for (const key of keys) {
+    const value = await getContentItem<unknown>(pack, key);
+    /* Eksik parça = eksik sözlük. Yarım sözlükle çevirmek, hep-ya-hiç
+       kuralını çözücünün altından delmek olurdu. */
+    if (value === null) return null;
+    out[key] = value;
+  }
+  return out;
+}
+
+/**
+ * Anadil sözlüğünü hazırlar — açılışta ve dil değişince çağrılıyor.
+ *
+ * Türkçe kullanan için hiçbir şey yapmıyor: indirme de yok, bellek de.
+ * Aynı anda iki çağrı gelirse ikincisi birincinin sözünü bekliyor.
+ */
+export function ensureNativeDict(): Promise<void> {
+  const lang = currentLang();
+  if (lang !== "en" && lang !== "de") return Promise.resolve();
+  if (loadedFor === lang) return Promise.resolve();
+  if (loading) return loading;
+  loading = (async () => {
+    const loaded = await loadDict(lang === "en" ? PACK_EN : PACK_DE);
+    if (currentLang() !== lang) return;
+    if (lang === "en") dict = (loaded as NativeDict | null) ?? null;
+    else dictDe = (loaded as DeDict | null) ?? null;
+    loadedFor = loaded ? lang : null;
+    cache.clear();
+  })().finally(() => {
+    loading = null;
+  });
+  return loading;
+}
 
 function nativeDict(): NativeDict | null {
-  if (dict !== undefined) return dict;
-  try {
-    dict = require("../data/native/en.json") as NativeDict;
-  } catch (err) {
-    console.warn("[native] dictionary load failed", err);
-    dict = null;
-  }
   return dict;
 }
 
 function deDict(): DeDict | null {
-  if (dictDe !== undefined) return dictDe;
-  try {
-    dictDe = require("../data/native/de.json") as DeDict;
-  } catch (err) {
-    console.warn("[native] German dictionary load failed", err);
-    dictDe = null;
-  }
   return dictDe;
 }
 
@@ -141,13 +192,13 @@ export function nativeExercise<T extends { id: string; course?: string }>(ex: T)
   return once(`ex:${ex.id}`, () => resolveExercise(d, ex as never) as T | null, ex);
 }
 
-export function nativeMockPaper<T extends { id: string; course?: string }>(paper: T): T {
-  const course = translatedCourse();
-  if (!course || (paper.course ?? "de") !== course) return paper;
-  const d = skillDict(course);
-  if (!d) return paper;
-  return once(`mock:${paper.id}`, () => resolveMockPaper(d, paper as never) as T | null, paper);
-}
+/*
+  `nativeMockPaper` KALDIRILDI. Deneme kâğıdı artık sunucudan ÇEVRİLMİŞ
+  iniyor (`/api/mock-exam`, `localiseMockPaper`); mobilde çevrilecek bir kâğıt
+  kalmadı. Sözlüğün `mock` alanı yalnız `nativeMockText` için duruyor —
+  liste satırındaki tema karşılığı.
+*/
+
 
 /**
  * Kâğıdın TEK bir Türkçe alanı — liste satırları için.
@@ -180,4 +231,13 @@ export function nativeLessonMeta(id: string): { title: string; summary: string }
 /* Dil değişince önbellek boşalıyor. Anahtar dili taşımıyor çünkü bir oturumda
    tek dil geçerli; taşısaydı Türkçeye dönen kullanıcının belleğinde 995
    egzersizin İngilizce kopyası asılı kalırdı. */
-onLangChange(clearNativeCache);
+onLangChange(() => {
+  /* Dil değişti: eldeki sözlük artık yanlış yönün sözlüğü. Bellekten
+     düşürülüyor ve yenisi indiriliyor — inene kadar içerik kaynak dilinde
+     kalıyor, yarım çevrilmiş değil. */
+  dict = null;
+  dictDe = null;
+  loadedFor = null;
+  clearNativeCache();
+  void ensureNativeDict();
+});

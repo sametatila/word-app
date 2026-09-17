@@ -111,10 +111,12 @@ compare(
 {
   const want = buildNativeDump();
   for (const [label, file, body] of [
+    /* SÖZLÜKLER ARTIK DÖKÜLMÜYOR: 10,5 MB'lık iki JSON mobil paketten
+       çıkarıldı ve içerik hattından iniyor (`native/en`, `native/de`).
+       Çözücüler KOD ve pakette kalıyor — onların dökümü hâlâ bayt bayt
+       karşılaştırılıyor, çünkü kaynaktan türetiliyorlar. */
     ["ana dil çözücüsü", NATIVE_DUMP_FILES.ts, want.ts],
-    ["ana dil sözlüğü", NATIVE_DUMP_FILES.json, want.json],
     ["Almanca çözücü", NATIVE_DUMP_FILES.tsDe, want.tsDe],
-    ["Almanca sözlük", NATIVE_DUMP_FILES.jsonDe, want.jsonDe],
   ] as const) {
     let have: string | null = null;
     try {

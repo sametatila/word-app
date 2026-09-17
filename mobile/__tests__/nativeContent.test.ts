@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { setLang } from "../src/lib/i18n";
-import { nativeLesson, nativeExercise, translatedCourse } from "../src/lib/nativeContent";
+import { ensureNativeDict, nativeLesson, nativeExercise, translatedCourse } from "../src/lib/nativeContent";
 import de from "../src/data/lessons/de-a1.json";
 import en from "../src/data/lessons/en-a1.json";
 
@@ -15,7 +15,26 @@ import en from "../src/data/lessons/en-a1.json";
  * Üç kural: çevirinin uygulandığı kurs anadille birlikte değişiyor,
  * Türkçe kullanan kaynağı olduğu gibi görüyor, ve karşılığı olmayan
  * içerik Türkçeye DÜŞÜYOR (yarım çeviri yok).
+ *
+ * SÖZLÜK ARTIK PAKETTE DEĞİL, İNDİRİLİYOR (10,5 MB ikiliden çıktı). Test
+ * içerik deposunu taklit edip sözlüğü KAYNAKTAN veriyor; böylece hem eski üç
+ * kural hem de yeni yükleme yolu (`ensureNativeDict`) ölçülmüş oluyor.
  */
+jest.mock("../src/content/store", () => {
+  const fs = require("node:fs") as typeof import("node:fs");
+  const path = require("node:path") as typeof import("node:path");
+  const file = (pack: string) =>
+    path.join(__dirname, "..", "..", "src", "lib", "lessons", "generated", pack === "native/de" ? "native-de.json" : "native-en.json");
+  const load = (pack: string) => JSON.parse(fs.readFileSync(file(pack), "utf8")) as Record<string, unknown>;
+  return {
+    ensurePack: jest.fn(async () => true),
+    listContentItems: jest.fn(async (pack: string) => Object.keys(load(pack))),
+    getContentItem: jest.fn(async (pack: string, item: string) => load(pack)[item] ?? null),
+    syncContentPointer: jest.fn(async () => ({ r: 1, d: [] })),
+    isContentDisabled: jest.fn(() => false),
+    contentRelease: jest.fn(() => 1),
+  };
+});
 type Lesson = { id: string; course?: string; titleTr: string; vocab: { de: string; tr: string }[] };
 const deLesson = (de as unknown as Lesson[])[0];
 const enLesson = (en as unknown as Lesson[])[0];
@@ -33,6 +52,7 @@ test("çevrilen kurs anadile göre değişiyor", async () => {
 
 test("anadili Almanca olan İngilizce dersi Almanca görüyor", async () => {
   await setLang("de");
+  await ensureNativeDict();
   const out = nativeLesson(enLesson);
   expect(out.titleTr).not.toBe(enLesson.titleTr);
   // Türkçeye özgü harf kalmamalı: kalan bir `ş` çevrilmemiş metin demek.
@@ -43,6 +63,7 @@ test("anadili Almanca olan İngilizce dersi Almanca görüyor", async () => {
 
 test("anadili İngilizce olan Almanca dersi İngilizce görüyor", async () => {
   await setLang("en");
+  await ensureNativeDict();
   const out = nativeLesson(deLesson);
   expect(out.titleTr).not.toBe(deLesson.titleTr);
   expect(nativeLesson(enLesson).titleTr).toBe(enLesson.titleTr);
@@ -50,6 +71,8 @@ test("anadili İngilizce olan Almanca dersi İngilizce görüyor", async () => {
 
 test("Türkçe kullanan kaynağı olduğu gibi görüyor", async () => {
   await setLang("tr");
+  /* Türkçe için indirme HİÇ yapılmıyor; çağrı bir şey yapmadan dönüyor. */
+  await ensureNativeDict();
   expect(nativeLesson(enLesson)).toBe(enLesson);
   expect(nativeLesson(deLesson)).toBe(deLesson);
   expect(nativeExercise({ id: "yok", course: "en" })).toEqual({ id: "yok", course: "en" });

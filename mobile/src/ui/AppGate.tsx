@@ -7,6 +7,7 @@ import { spacing, radii, useTheme } from "../theme";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
 import { syncContentPointer } from "../content/store";
+import { ensureNativeDict } from "../lib/nativeContent";
 import { APP_VERSION_CODE } from "../version";
 
 /**
@@ -49,6 +50,10 @@ export function AppGate() {
        (yarım dakika / beş dakika) ama tetiği aynı. Kendi hatalarını yutuyor:
        içerik yoklaması bakım kapısını hiçbir zaman düşürmemeli. */
     void syncContentPointer();
+    /* ANADİL SÖZLÜĞÜ de burada: artık ikilide değil, indiriliyor
+       (`lib/nativeContent`). Türkçe kullanan için hiçbir şey yapmıyor.
+       Göstergeden SONRA çağrılıyor ki paket sürümü taze olsun. */
+    void ensureNativeDict();
   }, []);
 
   useEffect(() => {
