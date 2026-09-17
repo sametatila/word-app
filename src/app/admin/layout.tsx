@@ -35,7 +35,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             ["/admin/app", "Uygulama"],
             ["/admin/errors", "Hatalar"],
             ["/admin/moderation", "Moderasyon"],
-            ["/admin/reviews", "Mağaza yorumları"],
+            ["/admin/reviews", "Mağaza"],
             ["/admin/premium", "Premium"],
             ["/admin/quiz", "Haftalık quiz"],
             ["/admin/legal", "Hukuki metinler"],

@@ -8,6 +8,7 @@ import { CRON_EXPECTED } from "@/lib/admin-coverage";
 import { appControl } from "@/lib/app-control";
 import { esc, sendTelegram, telegramConfigured } from "@/lib/telegram";
 import { storeReviews } from "@/lib/store-reviews";
+import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD } from "@/lib/android-vitals";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -194,6 +195,17 @@ export async function collectAlerts(): Promise<Alert[]> {
             alerts.push({ key: `err-review:${r.store}:${rv.id}`, level: "uyari", text: `${rv.rating}★ yeni ${r.store === "ios" ? "App Store" : "Google Play"} yorumu: ${(rv.title ? rv.title + " — " : "") + rv.body}`.slice(0, 300) });
           }
         }
+      }
+    }),
+    guard("vitals", async () => {
+      // Play kötü davranış eşikleri: %80'inde uyarı, aşınca kritik (mağazada geri plana itilme).
+      const v = await androidVitals();
+      if (v.error) alerts.push({ key: "vitals-api", level: "uyari", text: `Android vitals okunamadı: ${v.error}` });
+      for (const [name, series, threshold] of [["çökme", v.crash, CRASH_THRESHOLD], ["donma (ANR)", v.anr, ANR_THRESHOLD]] as const) {
+        const rate = series.latest28d;
+        if (rate == null) continue;
+        if (rate >= threshold) alerts.push({ key: `vitals:${name}`, level: "kritik", text: `Android fark edilen ${name} oranı %${(rate * 100).toFixed(2)}: Play eşiği %${(threshold * 100).toFixed(2)} aşıldı, uygulama mağazada geri plana itilebilir.` });
+        else if (rate >= threshold * 0.8) alerts.push({ key: `vitals:${name}`, level: "uyari", text: `Android fark edilen ${name} oranı %${(rate * 100).toFixed(2)}: Play eşiğine (%${(threshold * 100).toFixed(2)}) yaklaşıyor.` });
       }
     }),
     guard("errors", async () => {

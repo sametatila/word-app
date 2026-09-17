@@ -23,6 +23,7 @@ import { adminErrorText } from "../src/lib/admin-errors";
 import { revenuecat } from "../src/lib/premium/providers/revenuecat";
 import { AUTH_SECRET_TABLES, USER_COLUMNS } from "../src/lib/account/export";
 import { summarizeReviews, type StoreReview } from "../src/lib/store-reviews";
+import { parseVitalsRows } from "../src/lib/android-vitals";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
 import { PgTable } from "drizzle-orm/pg-core";
@@ -142,6 +143,21 @@ async function main() {
   check("son 30 gün penceresi", sum.recent === 3);
   check("cevapsız 1-2 yıldız (cevaplanan sayılmaz)", sum.lowUnanswered === 1);
   check("boş liste ortalama null", summarizeReviews([], 30, now).avg === null);
+
+  console.log("\nAndroid vitals ayrıştırması");
+  const row = (day: number, rate: string | null, w: string | null, users = "150") => ({
+    startTime: { year: 2026, month: 9, day },
+    metrics: [
+      ...(rate == null ? [] : [{ metric: "userPerceivedCrashRate", decimalValue: { value: rate } }]),
+      ...(w == null ? [] : [{ metric: "userPerceivedCrashRate28dUserWeighted", decimalValue: { value: w } }]),
+      { metric: "distinctUsers", decimalValue: { value: users } },
+    ],
+  });
+  const vs = parseVitalsRows([row(12, "0.004", "0.006"), row(10, "0.002", "0.005"), row(13, "0.010", null)], "userPerceivedCrashRate", "userPerceivedCrashRate28dUserWeighted");
+  check("günler sıralanıyor", vs.points.map((p) => p.day).join(",") === "2026-09-10,2026-09-12,2026-09-13");
+  check("son 28g değeri: ağırlıklı değeri olan en son gün", vs.latest28d === 0.006 && vs.latestDay === "2026-09-12", JSON.stringify(vs));
+  check("eksik metrik null (0 değil)", vs.points[2].rate28d === null && vs.points[2].rate === 0.01);
+  check("boş satırlar = veri yok", parseVitalsRows([], "a", "b").latest28d === null);
 
   console.log("\nVeri dışa aktarma kapsamı");
   // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:
