@@ -8,6 +8,7 @@ import { useTheme, spacing, radii } from "../theme";
 import { voicesFor, resolveVoice, type VoiceId } from "../lib/voices";
 import { courseOrDefault } from "../lib/courses";
 import { speakWithVoice } from "../lib/tts";
+import { SkeletonCard, SkeletonLine, SkeletonTile } from "./Skeleton";
 
 /**
  * Ses seçimi — web VoicePicker'ın mobil karşılığı. Kurs başına iki ses
@@ -76,6 +77,32 @@ export function VoicePicker({
           </PressableScale>
         );
       })}
+    </View>
+  );
+}
+
+/**
+ * Seçicinin yeri — kurs bilinmeden.
+ *
+ * Katalog KURSA bağlı ve kurs `/api/me` ile geliyor. Ayarlar ekranı bugüne
+ * kadar kurs inmeden seçiciyi çiziyordu, yani İngilizce öğrenen biri bir an
+ * Almanca sesleri görüyor ve birine basarsa yanlış kursun tercihini
+ * yazdırıyordu. Parçalar gerçek kartın aynısı: iki kart yan yana, başlık +
+ * hoparlör, altında iki sönük satır.
+ */
+export function VoicePickerSkeleton() {
+  return (
+    <View style={{ flexDirection: "row", gap: spacing.sm }}>
+      {[0, 1].map((i) => (
+        <SkeletonCard key={i} style={{ flex: 1, gap: spacing.xs, borderRadius: radii.lg }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+            <SkeletonLine variant="bodyStrong" width="52%" />
+            <SkeletonTile size={20} radius={10} />
+          </View>
+          <SkeletonLine variant="caption" width="40%" />
+          <SkeletonLine variant="caption" width="76%" />
+        </SkeletonCard>
+      ))}
     </View>
   );
 }

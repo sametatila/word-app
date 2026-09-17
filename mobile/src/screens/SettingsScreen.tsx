@@ -21,8 +21,8 @@ import { useAuth } from "../lib/AuthContext";
 import { PROFILE_DEFAULTS, PROFILE_LIMITS } from "../lib/profileDefaults";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
-import { VoicePicker } from "../ui/VoicePicker";
-import { SkeletonLine } from "../ui/Skeleton";
+import { VoicePicker, VoicePickerSkeleton } from "../ui/VoicePicker";
+import { SkeletonBar, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
@@ -131,7 +131,7 @@ export function SettingsScreen() {
      çağrısı ve "Misafir verilerini sil" duruyor. Öğrenme ve uygulama ayarları
      misafirde de çalışıyor (profil misafir kimliğine yazılıyor). */
   const guest = Boolean(user?.guest);
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
 
   const [name, setName] = useState(me?.name ?? user?.name ?? "");
   const [goal, setGoal] = useState<number>(me?.dailyGoal ?? PROFILE_DEFAULTS.dailyGoal);
@@ -214,9 +214,28 @@ export function SettingsScreen() {
   // ilk değeri artık güncellenmiyordu — Ayarlar'da seviye A1 görünüyordu.
   // me ilk kez gelince BİR KEZ hidrate et (kullanıcının sonraki düzenini ezme).
   const hydrated = useRef(false);
+  /*
+    HİDRASYON RENDER'A DA GÖRÜNÜYOR (referansın yanında bir state).
+
+    Referans tek başına yeterliydi çünkü yalnız EFEKT ona bakıyordu; oysa
+    öğrenme ayarlarının çizimi de bu bilgiye muhtaç: `me` inene kadar
+    kontroller yedek değerleri gösteriyordu (kurs Almanca, seviye A1, hedef
+    20) ve bu iki ayrı hatanın kaynağıydı.
+
+      1. Seviyesi B1 olan biri Ayarlar'ı her açışta bir an "A1" seçili
+         görüyordu — `useMe` önbelleksiz, yani her açılışta yeniden okuyor.
+      2. O aralıkta A1'e basan biri gerçekten A1 yazdırıyor (`patch` gidiyor),
+         ama hemen ardından `me` (eski değerle) inip hidrasyon seviyeyi B1'e
+         geri çeviriyordu: sunucuda A1, ekranda B1.
+
+    Değerler inmeden kontroller çizilmiyor. Etiketler ve notlar duruyor:
+    onlar zaten sabit metin, iskelete çevirmek yalnız ekranı titretirdi.
+  */
+  const [learningReady, setLearningReady] = useState(false);
   useEffect(() => {
     if (me && !hydrated.current) {
       hydrated.current = true;
+      setLearningReady(true);
       setName((n) => n || me.name || user?.name || "");
       setGoal(me.dailyGoal);
       setNewPerDay(me.newPerDay ?? PROFILE_DEFAULTS.newPerDay);
@@ -225,6 +244,11 @@ export function SettingsScreen() {
       void loadVoicePref(me.course ?? "de").then(setVoice);
     }
   }, [me, user]);
+  /* Okuma patladıysa (ya da misafirde uç yoksa) ekran sonsuza kadar iskelet
+     kalmasın: yükleme bittiyse kontroller yedek değerlerle çiziliyor. En
+     kötüsü kullanıcının kendi ayarını yeniden seçmesi; hiç ayar yapamaması
+     değil. */
+  const learningVisible = learningReady || !meLoading;
 
   /**
    * TEK KAYDETME MODELİ — her ayar dokunulduğu anda yazılıyor.
@@ -284,7 +308,17 @@ export function SettingsScreen() {
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Group title={t("settings.group_learning")} colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
-            {courseOptions(uiLang).map((c, i) => {
+            {!learningVisible
+              ? courseOptions(uiLang).map((c, i) => (
+                  <View key={c.key} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                    <View style={{ flex: 1 }}>
+                      <SkeletonLine variant="bodyStrong" width="42%" />
+                      <SkeletonLine variant="caption" width="64%" />
+                    </View>
+                    <SkeletonTile size={22} radius={11} />
+                  </View>
+                ))
+              : courseOptions(uiLang).map((c, i) => {
               const active = course === c.key;
               return (
                 /* SATIR ZATEN BİR RADYO HALKASI ÇİZİYOR (sağdaki daire) ama
@@ -311,7 +345,9 @@ export function SettingsScreen() {
 
           <Row label={t("settings.level")} colors={colors}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-              {LEVELS.map((l) => <Chip key={l} role="radio" label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)}
+              {learningVisible
+                ? LEVELS.map((l) => <Chip key={l} role="radio" label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)
+                : LEVELS.map((l) => <SkeletonPill key={l} width={58} height={textHeight("bodyStrong") + 21} />)}
             </View>
             {/* SEÇİLİ SEVİYENİN AÇIKLAMASI + seviyenin kendiliğinden değişmediği.
                 Dört açıklama sözlükte duruyordu (`level.*_desc`) ama mobilde
@@ -319,9 +355,13 @@ export function SettingsScreen() {
                 görünüyor, hangi seviyenin ne anlama geldiği yazmıyordu. Web
                 ikisini AYNI cümlede veriyor ("<açıklama>. Bu düğmeyi senden
                 başkası çevirmiyor") ve mobil de artık öyle. */}
-            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>
-              {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}
-            </Text>
+            {learningVisible ? (
+              <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>
+                {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}
+              </Text>
+            ) : (
+              <SkeletonLine variant="micro" width="72%" style={{ marginTop: spacing.sm }} />
+            )}
             <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
             </PressableScale>
@@ -333,27 +373,43 @@ export function SettingsScreen() {
               kelime yedi çiple seçiliyordu: yirmi kadar dokunma hedefi, tek bir
               sayıyı seçmek için. Webde aynı ayar baştan beri kaydırıcıydı.
             */}
-            <Slider
-              label={t("settings.daily_goal_short")}
-              value={goal}
-              min={PROFILE_LIMITS.dailyGoal.min}
-              max={PROFILE_LIMITS.dailyGoal.max}
-              step={5}
-              suffix={t("settings.reviews_unit")}
-              onChange={setGoal}
-              onCommit={(v) => { if (v !== (me?.dailyGoal ?? -1)) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
-            />
-            <View style={{ height: spacing.lg }} />
-            <Slider
-              label={t("settings.new_per_day")}
-              value={newPerDay}
-              min={PROFILE_LIMITS.newPerDay.min}
-              max={PROFILE_LIMITS.newPerDay.max}
-              step={1}
-              suffix={t("settings.words_unit")}
-              onChange={setNewPerDay}
-              onCommit={(v) => { if (v !== (me?.newPerDay ?? -1)) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
-            />
+            {learningVisible ? (
+              <>
+              <Slider
+                label={t("settings.daily_goal_short")}
+                value={goal}
+                min={PROFILE_LIMITS.dailyGoal.min}
+                max={PROFILE_LIMITS.dailyGoal.max}
+                step={5}
+                suffix={t("settings.reviews_unit")}
+                onChange={setGoal}
+                onCommit={(v) => { if (v !== (me?.dailyGoal ?? -1)) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
+              />
+              <View style={{ height: spacing.lg }} />
+              <Slider
+                label={t("settings.new_per_day")}
+                value={newPerDay}
+                min={PROFILE_LIMITS.newPerDay.min}
+                max={PROFILE_LIMITS.newPerDay.max}
+                step={1}
+                suffix={t("settings.words_unit")}
+                onChange={setNewPerDay}
+                onCommit={(v) => { if (v !== (me?.newPerDay ?? -1)) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
+              />
+              </>
+            ) : (
+              /* Kaydırıcı iskeleti: etiket satırı + 22 piksellik dokunma alanı
+                 (bkz. ui/Slider), yani gerçek kaydırıcıyla aynı yükseklik. */
+              [0, 1].map((i) => (
+                <View key={i} style={{ marginTop: i === 0 ? 0 : spacing.lg }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: spacing.sm }}>
+                    <SkeletonLine variant="bodyStrong" width="38%" />
+                    <SkeletonLine variant="bodyStrong" width={72} />
+                  </View>
+                  <View style={{ height: 22, justifyContent: "center" }}><SkeletonBar height={6} /></View>
+                </View>
+              ))
+            )}
             {/* Hedefi ayarlayan kişinin merak ettiği tek şey o sayının neyi
                 belirlediği; web de notu kaydırıcıların altına koyuyor. */}
             <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>{t("settings.srs_note")}</Text>
@@ -383,7 +439,9 @@ export function SettingsScreen() {
           */}
           <Row label={t("settings.sound")} colors={colors}>
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("settings.reading_voice")}</Text>
-            <VoicePicker course={course} value={voice} onChange={pickVoice} />
+            {/* Katalog KURSA bağlı, kurs da `me` ile geliyor (iskeletin
+                gerekçesi `VoicePickerSkeleton` başında yazılı). */}
+            {learningVisible ? <VoicePicker course={course} value={voice} onChange={pickVoice} /> : <VoicePickerSkeleton />}
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
