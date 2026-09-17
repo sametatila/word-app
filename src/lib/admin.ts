@@ -21,6 +21,18 @@ const ADMINS = Array.from(new Set(
 ));
 
 /**
+ * YEREL TASARIM ÖNİZLEMESİ — yalnız `next dev` + `ADMIN_PREVIEW=1`.
+ *
+ * Panelin görünüşünü ekran görüntüsüyle doğrulamak için giriş (2FA'lı admin
+ * hesabı) olmadan OKUMA sayfalarını açar. Üretimde imkânsız: `next build` /
+ * `next start` NODE_ENV'i her zaman "production" yapıyor. YAZMA kapısı
+ * (`adminWriteGate`) bundan etkilenmez; önizlemede hiçbir işlem yapılamaz.
+ */
+export function adminPreview(): boolean {
+  return process.env.NODE_ENV === "development" && process.env.ADMIN_PREVIEW === "1";
+}
+
+/**
  * Admin kapısı — hem yetki hem de tanılama için giriş e-postasını da döndürür.
  *
  * E-posta listede olmakla yetmiyor, DOĞRULANMIŞ olmalı. Doğrulama zorunluluğu
@@ -32,6 +44,7 @@ const ADMINS = Array.from(new Set(
  * yapılandırmasına değil, adresin gerçekten doğrulanmış olmasına bakıyor.
  */
 export async function adminGate(): Promise<{ ok: boolean; email: string | null }> {
+  if (adminPreview()) return { ok: true, email: "onizleme@yerel" };
   const { email, verified } = await getUserEmail();
   return { ok: !!email && verified && ADMINS.includes(email.toLowerCase()), email };
 }

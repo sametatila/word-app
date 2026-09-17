@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
+import { AdminDenied } from "../_ui/ui";
 import { listErrorGroups } from "@/lib/client-errors";
 import { ErrorsAdmin } from "./errors-admin";
 
@@ -15,14 +16,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminErrorsPage({ searchParams }: { searchParams: Promise<{ all?: string }> }) {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Hatalar</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>Yönetim yetkisi gerekiyor.</p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Hatalar" email={gate.email} />;
   const { all } = await searchParams;
   return <ErrorsAdmin groups={await listErrorGroups(all === "1")} showAll={all === "1"} />;
 }

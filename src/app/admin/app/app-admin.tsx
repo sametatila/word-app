@@ -5,6 +5,8 @@ import { apiFetch } from "@/lib/api-fetch";
 import type { AppControl } from "@/lib/app-control-shared";
 import type { AppAdminData } from "@/lib/admin-app";
 import { adminErrorText } from "@/lib/admin-errors";
+import { AdminPage, Badge, BTN, DataTable, Field, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE, when as fmtWhen } from "../_ui/ui";
+import { TwoStep } from "../_ui/two-step";
 
 /**
  * Uygulama işletimi görünümü — dört bölüm, yazma olanlar önce:
@@ -25,7 +27,7 @@ const ERROR_TR: Record<string, string> = {
 };
 const DELETE_SOURCE: Record<string, string> = { self: "Kullanıcı kendisi", admin: "Panelden", guest: "Misafir (atma/süre)" };
 
-const when = (v: string) => (v ? new Date(v).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : "");
+const when = (v: string) => (v ? fmtWhen(v) : "");
 
 async function post(body: Record<string, unknown>): Promise<{ ok: boolean; data: Record<string, unknown> }> {
   try {
@@ -49,18 +51,18 @@ export function AppAdmin({
   nextBroadcastAt: string | null;
 }) {
   const [cfg, setCfg] = useState<AppControl>(control);
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState<{ tone: "ok" | "bad"; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
 
   async function save(next: AppControl, note: string) {
     setBusy(true);
-    setMsg("");
+    setMsg(null);
     const r = await post({ action: "save_control", control: next });
     setBusy(false);
     if (r.ok && r.data.control) {
       setCfg(r.data.control as AppControl);
-      setMsg(note);
-    } else setMsg(`Kaydedilemedi: ${adminErrorText(String(r.data.error ?? ""))}`);
+      setMsg({ tone: "ok", text: note });
+    } else setMsg({ tone: "bad", text: `Kaydedilemedi: ${adminErrorText(String(r.data.error ?? ""))}` });
   }
 
   const setNum = (group: "minBuild" | "latestBuild", p: "ios" | "android", v: string) =>
@@ -71,53 +73,57 @@ export function AppAdmin({
     data.versions.filter((v) => v.platform === p && v.build < below).reduce((a, v) => a + v.users, 0);
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6">
-      <header className="flex flex-col gap-1">
-        <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
-        <h1 className="text-h1">Uygulama işletimi</h1>
-        <p className="muted text-body">Güncelleme zorunluluğu, bakım modu, mağaza bağlantıları ve toplu bildirim. Kayıt en geç 5 dakikada uygulamalara ulaşır.</p>
-        {msg ? <p role="status" className="text-caption" style={{ color: msg.startsWith("Kaydedilemedi") ? "var(--color-rose)" : "var(--color-mint)" }}>{msg}</p> : null}
-      </header>
+    <AdminPage>
+      <PageHeader
+        title="Uygulama işletimi"
+        description="Güncelleme zorunluluğu, bakım modu, mağaza bağlantıları ve toplu bildirim. Kayıt en geç 5 dakikada uygulamalara ulaşır."
+        meta={<>Bakım: <b style={{ color: cfg.maintenance.enabled ? TONE.bad : TONE.ok }}>{cfg.maintenance.enabled ? "AÇIK" : "kapalı"}</b> · Android min {cfg.minBuild.android || "—"} · iOS min {cfg.minBuild.ios || "—"}</>}
+      />
+      {data.issues.length ? (
+        <Notice tone="bad" title={`${data.issues.length} sorgu başarısız`}>
+          <span className="text-caption">{data.issues.map((i) => i.message).join(" · ").slice(0, 300)}</span>
+        </Notice>
+      ) : null}
+      {msg ? <Notice tone={msg.tone}>{msg.text}</Notice> : null}
 
-      <Section title="Güncelleme & mağaza" sub="Build = versionCode. En düşüğün altındaki uygulama açılışta güncelleme ekranında kalır; en sonun altındaki kapatılabilir şerit görür. Yalnız bu özelliği taşıyan build'lerde çalışır; daha eskiler etkilenmez.">
+      <Panel
+        title="Güncelleme ve mağaza"
+        hint="Build = versionCode. En düşüğün altındaki uygulama açılışta güncelleme ekranında kalır; en sonun altındaki kapatılabilir şerit görür. Yalnız bu özelliği taşıyan build'lerde çalışır; daha eskiler etkilenmez."
+        actions={<button type="button" disabled={busy} onClick={() => save(cfg, "Kaydedildi — en geç 5 dakikada uygulamalarda.")} className={BTN.primary}>Kaydet</button>}
+      >
         <div className="grid gap-3 sm:grid-cols-2">
           {(["android", "ios"] as const).map((p) => (
-            <div key={p} className="card space-y-2 px-3 py-3 text-caption">
-              <div className="flex items-baseline justify-between">
-                <b>{p === "ios" ? "iOS" : "Android"}</b>
+            <div key={p} className="space-y-3 rounded-tile border p-4 text-caption" style={{ borderColor: "var(--border)" }}>
+              <div className="flex items-center justify-between gap-2">
+                <b className="text-strong">{p === "ios" ? "iOS" : "Android"}</b>
                 <span className="muted">görülen en yeni build: {maxBuild(p) || "—"}</span>
               </div>
-              <label className="flex items-center justify-between gap-2">
-                <span>En düşük build (zorunlu)</span>
-                <input type="number" min={0} value={cfg.minBuild[p]} onChange={(e) => setNum("minBuild", p, e.target.value)} className="h-8 w-24 rounded-tile border px-2 text-right" style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }} />
-              </label>
-              {cfg.minBuild[p] > 0 ? <p style={{ color: "var(--color-rose)" }}>Etkilenecek: {affected(p, cfg.minBuild[p])} kullanıcı</p> : null}
-              <label className="flex items-center justify-between gap-2">
-                <span>En son build (önerilen)</span>
-                <input type="number" min={0} value={cfg.latestBuild[p]} onChange={(e) => setNum("latestBuild", p, e.target.value)} className="h-8 w-24 rounded-tile border px-2 text-right" style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }} />
-              </label>
+              <div className="grid grid-cols-2 gap-3">
+                <Field label="En düşük build (zorunlu)">
+                  <input aria-label={`${p} en düşük build`} type="number" min={0} value={cfg.minBuild[p]} onChange={(e) => setNum("minBuild", p, e.target.value)} className={`${FIELD} text-right tabular-nums`} style={FIELD_STYLE} />
+                </Field>
+                <Field label="En son build (önerilen)">
+                  <input aria-label={`${p} en son build`} type="number" min={0} value={cfg.latestBuild[p]} onChange={(e) => setNum("latestBuild", p, e.target.value)} className={`${FIELD} text-right tabular-nums`} style={FIELD_STYLE} />
+                </Field>
+              </div>
+              {cfg.minBuild[p] > 0 ? <p style={{ color: TONE.bad }}>Zorunlu güncelleme ekranı görecek: {affected(p, cfg.minBuild[p])} kullanıcı</p> : null}
               <label className="flex items-center gap-2">
                 <input type="checkbox" checked={cfg.store[p].live} onChange={(e) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], live: e.target.checked } } }))} />
                 <span>Mağazada yayında (web satın almayı buraya yönlendirir)</span>
               </label>
-              <input value={cfg.store[p].url} onChange={(e) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], url: e.target.value } } }))} aria-label={`${p} mağaza adresi`} className="h-8 w-full rounded-tile border px-2 font-mono" style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }} />
+              <Field label="Mağaza adresi">
+                <input aria-label={`${p} mağaza adresi`} value={cfg.store[p].url} onChange={(e) => setCfg((c) => ({ ...c, store: { ...c.store, [p]: { ...c.store[p], url: e.target.value } } }))} className={`${FIELD} font-mono text-caption`} style={FIELD_STYLE} />
+              </Field>
             </div>
           ))}
         </div>
-        <button type="button" disabled={busy} onClick={() => save(cfg, "Kaydedildi — en geç 5 dakikada uygulamalarda.")} className="btn btn-primary mt-3 px-4 py-2 text-caption">Kaydet</button>
-      </Section>
+      </Panel>
 
-      <Section title="Bakım modu" sub="Açıkken web uygulaması ve mobil uygulama bakım ekranı gösterir. Admin hesabı webde uygulamaya girmeye devam eder. Mesaj boşsa varsayılan metin gösterilir.">
-        <div className="card space-y-2 px-3 py-3 text-caption">
-          <p>
-            Durum: <b style={{ color: cfg.maintenance.enabled ? "var(--color-rose)" : "var(--color-mint)" }}>{cfg.maintenance.enabled ? "BAKIMDA" : "kapalı"}</b>
-          </p>
-          {LANGS.map((l) => (
-            <label key={l} className="block">
-              <span className="muted">{LANG_TR[l]} mesaj</span>
-              <input value={cfg.maintenance.message[l]} maxLength={400} onChange={(e) => setCfg((c) => ({ ...c, maintenance: { ...c.maintenance, message: { ...c.maintenance.message, [l]: e.target.value } } }))} className="mt-1 h-8 w-full rounded-tile border px-2" style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }} />
-            </label>
-          ))}
+      <Panel
+        title="Bakım modu"
+        tone={cfg.maintenance.enabled ? "bad" : undefined}
+        hint="Açıkken web uygulaması ve mobil uygulama bakım ekranı gösterir. Admin hesabı webde uygulamaya girmeye devam eder. Mesaj boşsa varsayılan metin gösterilir."
+        actions={
           <TwoStep
             label={cfg.maintenance.enabled ? "Bakımı kapat" : "Bakımı aç"}
             confirm={cfg.maintenance.enabled ? "Evet, uygulamayı aç" : "Evet, herkes için bakım ekranı"}
@@ -128,49 +134,50 @@ export function AppAdmin({
               void save(next, next.maintenance.enabled ? "Bakım AÇIK — en geç 5 dakikada herkes bakım ekranında." : "Bakım kapatıldı.");
             }}
           />
+        }
+      >
+        <div className="mb-3 flex items-center gap-2 text-caption">
+          Durum: {cfg.maintenance.enabled ? <Badge tone="bad">BAKIMDA</Badge> : <Badge tone="ok">kapalı</Badge>}
         </div>
-      </Section>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {LANGS.map((l) => (
+            <Field key={l} label={`${LANG_TR[l]} mesaj`}>
+              <input aria-label={`${LANG_TR[l]} bakım mesajı`} value={cfg.maintenance.message[l]} maxLength={400} onChange={(e) => setCfg((c) => ({ ...c, maintenance: { ...c.maintenance, message: { ...c.maintenance.message, [l]: e.target.value } } }))} className={FIELD} style={FIELD_STYLE} />
+            </Field>
+          ))}
+        </div>
+      </Panel>
 
       <Broadcaster broadcasts={broadcasts} nextAt={nextBroadcastAt} />
 
-      <Section title="Sürüm dağılımı" sub="Mobil uygulamanın her isteğinde gönderdiği sürüm bilgisinden. Bu özelliği taşımayan eski build'ler burada görünmez.">
-        {data.versions.length ? (
-          <Table
-            head={["Platform", "Sürüm", "Build", "Kullanıcı", "7 günde aktif"]}
-            rows={data.versions.map((v) => [v.platform, v.version, String(v.build), String(v.users), String(v.active7)])}
+      <div className="grid gap-5 lg:grid-cols-2">
+        <Panel title="Sürüm dağılımı" hint="Mobil uygulamanın her isteğinde gönderdiği sürüm bilgisinden. Bu özelliği taşımayan eski build'ler burada görünmez." flush>
+          <DataTable
+            empty="Henüz sürüm bildiren uygulama yok (yeni build yayımlanınca dolacak)."
+            head={["Platform", "Sürüm", { label: "Build", align: "right" }, { label: "Kullanıcı", align: "right" }, { label: "7 günde aktif", align: "right" }]}
+            rows={data.versions.map((v) => [v.platform, v.version, v.build, v.users, v.active7])}
           />
-        ) : (
-          <Empty text="Henüz sürüm bildiren uygulama yok (yeni build yayımlanınca dolacak)." />
-        )}
-      </Section>
+        </Panel>
 
-      <Section title="Hesap silmeleri" sub="Kimlik tutulmaz; yalnız yol, hesabın yaşı ve panel silmelerinde gerekçe.">
-        {data.deletions.length ? (
-          <Table
-            head={["Yol", "30 gün", "Toplam", "Ort. hesap yaşı (gün)", "Gerekçeler"]}
-            rows={data.deletions.map((d) => [DELETE_SOURCE[d.source] ?? d.source, String(d.count30), String(d.total), String(d.avgAgeDays), d.reasons || "—"])}
+        <Panel title="Hesap silmeleri" hint="Kimlik tutulmaz; yalnız yol, hesabın yaşı ve panel silmelerinde gerekçe." flush>
+          <DataTable
+            head={["Yol", { label: "30 gün", align: "right" }, { label: "Toplam", align: "right" }, { label: "Ort. yaş (gün)", align: "right" }, "Gerekçeler"]}
+            rows={data.deletions.map((d) => [DELETE_SOURCE[d.source] ?? d.source, d.count30, d.total, d.avgAgeDays, d.reasons || "—"])}
           />
-        ) : (
-          <Empty text="Kayıt yok." />
-        )}
-      </Section>
+        </Panel>
+      </div>
 
-      <Section title="Askıdaki hesaplar" sub="Askıya alma ve kaldırma kullanıcı detay sayfasından yapılır.">
-        {data.suspensions.length ? (
-          <div className="space-y-1 text-caption">
-            {data.suspensions.map((s) => (
-              <div key={s.userId} className="flex flex-wrap items-baseline gap-x-2">
-                <a href={`/admin/users/${encodeURIComponent(s.userId)}`} className="font-semibold underline-offset-2 hover:underline">{s.name || s.userId.slice(0, 10)}</a>
-                <span>{s.reason}</span>
-                <span className="muted">{s.until ? `bitiş ${when(s.until)}` : "süresiz"} · {when(s.at)} · {s.admin}</span>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <Empty text="Askıda hesap yok." />
-        )}
-      </Section>
-    </div>
+      <Panel title="Askıdaki hesaplar" hint="Askıya alma ve kaldırma kullanıcı detay sayfasından yapılır." flush>
+        <DataTable
+          empty="Askıda hesap yok."
+          head={["Hesap", "Gerekçe", "Bitiş", "Başlangıç", "Veren"]}
+          rows={data.suspensions.map((s) => [
+            <a key="n" href={`/admin/users/${encodeURIComponent(s.userId)}`} className="text-strong underline-offset-2 hover:underline">{s.name || s.userId.slice(0, 10)}</a>,
+            s.reason, s.until ? when(s.until) : "süresiz", when(s.at), s.admin,
+          ])}
+        />
+      </Panel>
+    </AdminPage>
   );
 }
 
@@ -182,7 +189,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
   const [platform, setPlatform] = useState("all");
   const [service, setService] = useState(false);
   const [counts, setCounts] = useState<Record<Lang, number> | null>(null);
-  const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState<{ tone: "ok" | "bad"; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
   const [list, setList] = useState(broadcasts);
 
@@ -197,115 +204,82 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
   }
   async function send(test: boolean) {
     setBusy(true);
-    setMsg("");
+    setMsg(null);
     const r = await post({ action: "send_broadcast", text, url, audience: audience(test) });
     setBusy(false);
     if (!r.ok) {
-      setMsg(ERROR_TR[String(r.data.error)] ?? adminErrorText(String(r.data.error ?? "")));
+      setMsg({ tone: "bad", text: ERROR_TR[String(r.data.error)] ?? adminErrorText(String(r.data.error ?? "")) });
       return;
     }
-    setMsg(test ? "Test bildirimi kendi hesabına gönderildi." : `Gönderim başladı: ${String(r.data.targeted)} kullanıcı.`);
+    setMsg({ tone: "ok", text: test ? "Test bildirimi kendi hesabına gönderildi." : `Gönderim başladı: ${String(r.data.targeted)} kullanıcı.` });
     setList((l) => [{ id: Number(r.data.id), at: new Date().toISOString(), title: text.tr.title || text.en.title || text.de.title, audience: test ? "TEST" : "yeni", targeted: Number(r.data.targeted), delivered: 0, state: "sending", admin: "" }, ...l]);
   }
 
   const reach = counts ? LANGS.filter((l) => text[l].title && text[l].body).reduce((a, l) => a + counts[l], 0) : null;
-  const field = { borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" };
 
   return (
-    <Section title="Toplu bildirim" sub="YALNIZ HİZMET DUYURUSU: bakım, güvenlik, hesabı ya da kullanımı etkileyen önemli değişiklik. Tanıtım, kampanya, indirim ve 'geri dön' mesajı gönderilmez (Elektronik Ticaret Kanunu ve App Store 4.5.4 önceden onay istiyor). Bildirim kanalı çalışan ve bildirimleri kapatmamış kullanıcılara, kendi dillerinde gider; metni boş dildekine gitmez. Önce kendine test gönder. Test dışı gönderim 12 saatte bir.">
-      <div className="card space-y-3 px-3 py-3 text-caption">
+    <Panel
+      title="Toplu bildirim"
+      hint="Bildirim kanalı çalışan ve bildirimleri kapatmamış kullanıcılara, kendi dillerinde gider; metni boş dildekine gitmez. Önce kendine test gönder. Test dışı gönderim 12 saatte bir."
+    >
+      <Notice tone="warn" title="Yalnız hizmet duyurusu">
+        Bakım, güvenlik, hesabı ya da kullanımı etkileyen önemli değişiklik. Tanıtım, kampanya, indirim ve &quot;geri dön&quot; mesajı gönderilmez (Elektronik Ticaret Kanunu ve App Store 4.5.4 önceden onay istiyor).
+      </Notice>
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
         {LANGS.map((l) => (
-          <div key={l} className="grid gap-1 sm:grid-cols-[7rem_1fr]">
-            <span className="muted pt-1.5">{LANG_TR[l]}</span>
-            <div className="space-y-1">
-              <input value={text[l].title} maxLength={60} placeholder="Başlık (60)" aria-label={`${LANG_TR[l]} başlık`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], title: e.target.value } }))} className="h-8 w-full rounded-tile border px-2" style={field} />
-              <input value={text[l].body} maxLength={180} placeholder="Metin (180)" aria-label={`${LANG_TR[l]} metin`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], body: e.target.value } }))} className="h-8 w-full rounded-tile border px-2" style={field} />
-            </div>
+          <div key={l} className="space-y-2 rounded-tile border p-3" style={{ borderColor: "var(--border)" }}>
+            <div className="text-strong">{LANG_TR[l]}</div>
+            <input value={text[l].title} maxLength={60} placeholder="Başlık (60)" aria-label={`${LANG_TR[l]} başlık`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], title: e.target.value } }))} className={FIELD} style={FIELD_STYLE} />
+            <textarea value={text[l].body} maxLength={180} rows={3} placeholder="Metin (180)" aria-label={`${LANG_TR[l]} metin`} onChange={(e) => setText((t) => ({ ...t, [l]: { ...t[l], body: e.target.value } }))} className="w-full min-w-0 rounded-tile border px-3 py-2 text-body" style={FIELD_STYLE} />
           </div>
         ))}
-        <div className="flex flex-wrap gap-2">
-          <label className="flex items-center gap-1">Açılacak yol <input value={url} onChange={(e) => setUrl(e.target.value)} aria-label="Açılacak yol" className="h-8 w-32 rounded-tile border px-2 font-mono" style={field} /></label>
-          <select value={native} onChange={(e) => { setNative(e.target.value); setCounts(null); }} aria-label="Anadil" className="h-8 rounded-tile border px-2" style={field}>
+      </div>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Field label="Açılacak yol">
+          <input aria-label="Açılacak yol" value={url} onChange={(e) => setUrl(e.target.value)} className={`${FIELD} font-mono`} style={FIELD_STYLE} />
+        </Field>
+        <Field label="Anadil">
+          <select value={native} onChange={(e) => { setNative(e.target.value); setCounts(null); }} className={FIELD} style={FIELD_STYLE}>
             <option value="">Tüm diller</option><option value="tr">tr</option><option value="en">en</option><option value="de">de</option>
           </select>
-          <select value={course} onChange={(e) => { setCourse(e.target.value); setCounts(null); }} aria-label="Kurs" className="h-8 rounded-tile border px-2" style={field}>
+        </Field>
+        <Field label="Kurs">
+          <select value={course} onChange={(e) => { setCourse(e.target.value); setCounts(null); }} className={FIELD} style={FIELD_STYLE}>
             <option value="">Tüm kurslar</option><option value="de">de</option><option value="en">en</option><option value="gsw-zh">gsw-zh</option>
           </select>
-          <select value={platform} onChange={(e) => { setPlatform(e.target.value); setCounts(null); }} aria-label="Platform" className="h-8 rounded-tile border px-2" style={field}>
+        </Field>
+        <Field label="Kanal">
+          <select value={platform} onChange={(e) => { setPlatform(e.target.value); setCounts(null); }} className={FIELD} style={FIELD_STYLE}>
             <option value="all">Tüm kanallar</option><option value="android">Android</option><option value="ios">iOS</option><option value="web">Web push</option>
           </select>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <button type="button" disabled={busy} onClick={preview} className="chip h-8 px-3 text-caption">Kaç kişiye gider?</button>
-          {counts ? <span>tr {counts.tr} · en {counts.en} · de {counts.de} → metni dolu dillerde <b>{reach}</b> kişi</span> : null}
-        </div>
-        <label className="flex items-start gap-2">
-          <input type="checkbox" checked={service} onChange={(e) => setService(e.target.checked)} className="mt-0.5" />
-          <span>Bu bir <b>hizmet duyurusudur</b>; tanıtım, kampanya, indirim ya da uygulamaya geri çağırma içermez.</span>
-        </label>
-        <div className="flex flex-wrap items-center gap-2">
-          <button type="button" disabled={busy} onClick={() => send(true)} className="chip h-8 px-3 text-caption">Kendime test gönder</button>
-          {cooling ? (
-            <span className="muted">Sonraki gönderim: {when(nextAt ?? "")}</span>
-          ) : (
-            <TwoStep label="Herkese gönder" confirm={`Evet, ${reach ?? "?"} kişiye gönder`} danger disabled={busy || !service || reach == null || reach === 0} onConfirm={() => void send(false)} />
-          )}
-        </div>
-        {msg ? <p role="status">{msg}</p> : null}
+        </Field>
       </div>
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-caption">
+        <button type="button" disabled={busy} onClick={preview} className={BTN.secondary}>Kaç kişiye gider?</button>
+        {counts ? <span>tr {counts.tr} · en {counts.en} · de {counts.de} → metni dolu dillerde <b>{reach}</b> kişi</span> : null}
+      </div>
+      <label className="mt-3 flex items-start gap-2 text-caption">
+        <input type="checkbox" checked={service} onChange={(e) => setService(e.target.checked)} className="mt-0.5" />
+        <span>Bu bir <b>hizmet duyurusudur</b>; tanıtım, kampanya, indirim ya da uygulamaya geri çağırma içermez.</span>
+      </label>
+      <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3 text-caption" style={{ borderColor: "var(--hairline)" }}>
+        <button type="button" disabled={busy} onClick={() => send(true)} className={BTN.secondary}>Kendime test gönder</button>
+        {cooling ? (
+          <span className="muted">Sonraki gönderim: {when(nextAt ?? "")}</span>
+        ) : (
+          <TwoStep label="Herkese gönder" confirm={`Evet, ${reach ?? "?"} kişiye gönder`} disabled={busy || !service || reach == null || reach === 0} onConfirm={() => void send(false)} />
+        )}
+      </div>
+      {msg ? <div className="mt-3"><Notice tone={msg.tone}>{msg.text}</Notice></div> : null}
       {list.length ? (
-        <div className="mt-3">
-          <Table head={["Zaman", "Başlık", "Kitle", "Hedef", "Ulaşan kanal", "Durum"]} rows={list.map((b) => [when(b.at), b.title, b.audience, String(b.targeted), String(b.delivered), b.state])} />
+        <div className="mt-4">
+          <div className="muted mb-1.5 text-micro uppercase tracking-eyebrow">Geçmiş</div>
+          <DataTable
+            head={["Zaman", "Başlık", "Kitle", { label: "Hedef", align: "right" }, { label: "Ulaşan kanal", align: "right" }, "Durum"]}
+            rows={list.map((b) => [when(b.at), b.title, b.audience, b.targeted, b.delivered, <Badge key="s" tone={b.state === "done" ? "ok" : b.state === "failed" ? "bad" : undefined}>{b.state}</Badge>])}
+          />
         </div>
       ) : null}
-    </Section>
+    </Panel>
   );
-}
-
-/** Yıkıcı ya da geniş etkili eylem: ilk basış silahı kurar, ikincisi yapar. Sistem kutusu yok (parite §255). */
-function TwoStep({ label, confirm, onConfirm, danger = false, disabled = false }: { label: string; confirm: string; onConfirm: () => void; danger?: boolean; disabled?: boolean }) {
-  const [armed, setArmed] = useState(false);
-  const color = danger ? { color: "var(--color-rose)" } : undefined;
-  if (!armed) {
-    return <button type="button" disabled={disabled} onClick={() => setArmed(true)} className="chip h-8 px-3 text-caption" style={color}>{label}</button>;
-  }
-  return (
-    <span className="inline-flex flex-wrap gap-2">
-      <button type="button" disabled={disabled} onClick={() => { setArmed(false); onConfirm(); }} className="chip h-8 px-3 text-caption" style={color}>{confirm}</button>
-      <button type="button" onClick={() => setArmed(false)} className="chip h-8 px-3 text-caption">Vazgeç</button>
-    </span>
-  );
-}
-
-function Table({ head, rows }: { head: string[]; rows: string[][] }) {
-  return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-caption" style={{ borderCollapse: "collapse" }}>
-        <thead>
-          <tr className="muted text-micro uppercase tracking-eyebrow">{head.map((h) => <th key={h} className="px-2 py-1.5 text-left">{h}</th>)}</tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={i} className="border-t" style={{ borderColor: "var(--hairline)" }}>
-              {r.map((v, j) => <td key={j} className="px-2 py-1.5 tabular-nums">{v}</td>)}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function Section({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-8">
-      <h2 className="text-h3">{title}</h2>
-      {sub ? <p className="muted mt-1 max-w-[70ch] text-caption">{sub}</p> : null}
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
-function Empty({ text }: { text: string }) {
-  return <div className="card px-3 py-4 text-caption" style={{ color: "var(--text-muted)" }}>{text}</div>;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
+import { AdminDenied } from "../_ui/ui";
 import { quizAdminData } from "@/lib/weekly-quiz/admin";
 import { QuizAdmin } from "./quiz-admin";
 
@@ -17,16 +18,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminQuizPage() {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Haftalık quiz</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
-          {gate.email ? `Bu hesap (${gate.email}) yönetim yetkisine sahip değil.` : "Önce admin e-postasıyla giriş yap."}
-        </p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Haftalık quiz" email={gate.email} />;
 
   const data = await quizAdminData();
   return <QuizAdmin data={data} />;

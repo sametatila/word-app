@@ -4,13 +4,13 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import type { ErrorGroup } from "@/lib/client-errors";
+import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, TONE, when } from "../_ui/ui";
 
 /**
  * Hata grupları: en son görülen önce. Her satır kapalı gelir; açınca yığın.
  * "Çözüldü" işareti grubu listeden düşürür; aynı hata yeniden gelirse işaret
  * kendiliğinden kalkar (sunucu `resolved_at = null`).
  */
-const when = (v: string) => new Date(v).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" });
 const PLATFORM: Record<string, string> = { web: "Web", android: "Android", ios: "iOS" };
 
 export function ErrorsAdmin({ groups, showAll }: { groups: ErrorGroup[]; showAll: boolean }) {
@@ -37,43 +37,48 @@ export function ErrorsAdmin({ groups, showAll }: { groups: ErrorGroup[]; showAll
   const total = list.reduce((a, g) => a + g.count, 0);
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6">
-      <header className="flex flex-col gap-1">
-        <h1 className="text-h1">Hatalar</h1>
-        <p className="muted text-body">
-          {list.length} grup · {total} olay. Web ve mobil JS hataları; native çökmeler Firebase Crashlytics&apos;te.
-        </p>
-        {msg ? <p role="status" className="text-caption" style={{ color: "var(--color-rose)" }}>{msg}</p> : null}
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-caption">
-          {["", "web", "android", "ios"].map((p) => (
-            <button key={p || "all"} type="button" aria-pressed={platform === p} onClick={() => setPlatform(p)} className="chip h-8 px-3" style={platform === p ? { background: "var(--color-brand)", color: "var(--on-fill)" } : undefined}>
-              {p ? PLATFORM[p] : "Hepsi"}
-            </button>
-          ))}
-          <a href={showAll ? "/admin/errors" : "/admin/errors?all=1"} className="chip h-8 px-3">{showAll ? "Yalnız açıklar" : "Çözülenler dahil"}</a>
-        </div>
-      </header>
-
-      <div className="mt-6 space-y-2">
-        {list.length === 0 ? (
-          <div className="card px-3 py-4 text-caption" style={{ color: "var(--text-muted)" }}>Açık hata grubu yok.</div>
-        ) : (
-          list.map((g) => (
-            <details key={g.fingerprint} className="card px-3 py-2 text-caption">
-              <summary className="flex cursor-pointer flex-wrap items-baseline gap-x-2">
-                <b className="tabular-nums" style={{ color: g.count >= 20 ? "var(--color-rose)" : undefined }}>{g.count}×</b>
-                <span className="chip h-5 px-1.5 text-micro">{PLATFORM[g.platform] ?? g.platform}</span>
-                <span className="font-semibold">{g.name ? `${g.name}: ` : ""}{g.message}</span>
-                <span className="muted">{g.screen || "—"} · son {when(g.lastSeen)} · ilk {when(g.firstSeen)}{g.appVersion ? ` · ${g.appVersion}` : ""}{g.resolved ? " · çözüldü" : ""}</span>
-              </summary>
-              {g.stack ? <pre className="mt-2 max-h-72 overflow-auto whitespace-pre-wrap rounded-tile p-2 font-mono text-micro" style={{ background: "var(--surface-2)" }}>{g.stack}</pre> : <p className="muted mt-2">Yığın yok.</p>}
-              {!g.resolved ? (
-                <button type="button" onClick={() => resolve(g.fingerprint)} className="chip mt-2 h-8 px-3 text-caption">Çözüldü olarak işaretle</button>
-              ) : null}
-            </details>
-          ))
-        )}
+    <AdminPage>
+      <PageHeader
+        title="Hatalar"
+        description="Web ve mobil JavaScript hataları, mesaj + yığın + ekran + sürümle gruplanmış. Native çökmeler Firebase Crashlytics'te."
+        meta={`${list.length} grup · ${total} olay`}
+        actions={<a href={showAll ? "/admin/errors" : "/admin/errors?all=1"} className={BTN.secondary}>{showAll ? "Yalnız açıklar" : "Çözülenler dahil"}</a>}
+      />
+      {msg ? <Notice tone="bad">{msg}</Notice> : null}
+      <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
+        {["", "web", "android", "ios"].map((p) => (
+          <button key={p || "all"} type="button" aria-pressed={platform === p} onClick={() => setPlatform(p)} className="inline-flex h-8 items-center rounded-chip px-3 text-caption"
+            style={platform === p ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" } : { color: "var(--text-muted)" }}>
+            {p ? PLATFORM[p] : "Hepsi"}
+          </button>
+        ))}
       </div>
-    </div>
+
+      <Panel flush>
+        {list.length === 0 ? (
+          <div className="px-3 pb-2"><Empty>Açık hata grubu yok.</Empty></div>
+        ) : (
+          <div>
+            {list.map((g) => (
+              <details key={g.fingerprint} className="border-t px-3 py-2.5 text-caption first:border-t-0" style={{ borderColor: "var(--hairline)" }}>
+                <summary className="flex cursor-pointer flex-wrap items-center gap-x-2 gap-y-1">
+                  <b className="w-12 shrink-0 tabular-nums" style={{ color: g.count >= 20 ? TONE.bad : undefined }}>{g.count}×</b>
+                  <Badge>{PLATFORM[g.platform] ?? g.platform}</Badge>
+                  {g.resolved ? <Badge tone="ok">çözüldü</Badge> : null}
+                  <span className="text-strong min-w-0 break-words">{g.name ? `${g.name}: ` : ""}{g.message}</span>
+                  <span className="muted w-full pl-14">{g.screen || "—"} · son {when(g.lastSeen)} · ilk {when(g.firstSeen)}{g.appVersion ? ` · ${g.appVersion}` : ""}</span>
+                </summary>
+                <div className="mt-2 pl-14">
+                  {g.stack ? <pre className="max-h-72 overflow-auto whitespace-pre-wrap rounded-tile p-3 font-mono text-micro" style={{ background: "var(--surface-2)" }}>{g.stack}</pre> : <p className="muted">Yığın yok.</p>}
+                  {!g.resolved ? (
+                    <button type="button" onClick={() => resolve(g.fingerprint)} className={`${BTN.small} mt-2`}>Çözüldü olarak işaretle</button>
+                  ) : null}
+                </div>
+              </details>
+            ))}
+          </div>
+        )}
+      </Panel>
+    </AdminPage>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { adminGate } from "@/lib/admin";
 import { listUsers, parseUsersQuery, USERS_PAGE_SIZE, type UsersQuery } from "@/lib/admin-users";
+import { AdminDenied, AdminPage, Badge, BTN, DataTable, FIELD, FIELD_STYLE, Notice, PageHeader, Panel } from "../_ui/ui";
 
 export const metadata: Metadata = { title: "Kullanıcılar" };
 export const dynamic = "force-dynamic";
@@ -26,80 +28,86 @@ function href(q: UsersQuery, patch: Partial<UsersQuery>): string {
   return `/admin/users${s ? `?${s}` : ""}`;
 }
 
+/** Bağlantılı seçim grubu: süzgeç ve sıralama. Seçili olan `aria-current` taşıyor. */
+function Segment({ items, current, to }: { items: [string, string][]; current: string; to: (k: string) => string }) {
+  return (
+    <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
+      {items.map(([k, label]) => (
+        <Link
+          key={k}
+          href={to(k)}
+          aria-current={current === k ? "page" : undefined}
+          className="inline-flex h-8 items-center rounded-chip px-3 text-caption"
+          style={current === k ? { background: "var(--surface)", color: "var(--text)", boxShadow: "var(--shadow-soft)" } : { color: "var(--text-muted)" }}
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 export default async function AdminUsersPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Kullanıcılar</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>Yönetim yetkisi gerekiyor.</p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Kullanıcılar" email={gate.email} />;
   const query = parseUsersQuery(await searchParams);
   const { rows, total, issues } = await listUsers(query);
   const pages = Math.max(1, Math.ceil(total / USERS_PAGE_SIZE));
-  const on = { background: "var(--color-brand)", color: "var(--on-fill)" };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6">
-      <h1 className="text-h1">Kullanıcılar</h1>
-      <p className="muted text-body">{total.toLocaleString("tr-TR")} kişi{query.q ? ` · "${query.q}" araması` : ""}</p>
-      {issues.length ? <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>Sorgu başarısız: {issues[0].message}</p> : null}
+    <AdminPage>
+      <PageHeader
+        title="Kullanıcılar"
+        description="Bütün hesaplar ve misafirler. Ayrıntı ve hesap işlemleri için ada tıkla."
+        meta={`${total.toLocaleString("tr-TR")} kişi${query.q ? ` · "${query.q}" araması` : ""}`}
+      />
+      {issues.length ? <Notice tone="bad">Sorgu başarısız: {issues[0].message}</Notice> : null}
 
-      <form action="/admin/users" method="get" className="mt-4 flex flex-wrap gap-2">
-        <input name="q" defaultValue={query.q} placeholder="E-posta, ad, kullanıcı adı ya da kimlik" aria-label="Kullanıcı ara" className="h-10 min-w-0 flex-1 rounded-tile border px-3 text-body" style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }} />
-        {query.kind !== "all" ? <input type="hidden" name="tur" value={query.kind} /> : null}
-        {query.sort !== "active" ? <input type="hidden" name="sira" value={query.sort} /> : null}
-        <button type="submit" className="btn btn-primary h-10 px-4">Ara</button>
-      </form>
+      <Panel>
+        <form action="/admin/users" method="get" className="flex flex-wrap gap-2">
+          <input name="q" defaultValue={query.q} placeholder="E-posta, ad, kullanıcı adı ya da kimlik" aria-label="Kullanıcı ara" className={`${FIELD} flex-1 basis-64`} style={FIELD_STYLE} />
+          {query.kind !== "all" ? <input type="hidden" name="tur" value={query.kind} /> : null}
+          {query.sort !== "active" ? <input type="hidden" name="sira" value={query.sort} /> : null}
+          <button type="submit" className={BTN.primary}>Ara</button>
+          {query.q ? <Link href={href(query, { q: "", page: 1 })} className={BTN.secondary}>Temizle</Link> : null}
+        </form>
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <Segment items={KINDS} current={query.kind} to={(k) => href(query, { kind: k as UsersQuery["kind"], page: 1 })} />
+          <span className="muted text-caption">Sırala</span>
+          <Segment items={SORTS} current={query.sort} to={(k) => href(query, { sort: k as UsersQuery["sort"], page: 1 })} />
+        </div>
+      </Panel>
 
-      <div className="mt-3 flex flex-wrap items-center gap-1.5 text-caption">
-        {KINDS.map(([k, label]) => (
-          <a key={k} href={href(query, { kind: k, page: 1 })} aria-current={query.kind === k ? "page" : undefined} className="chip h-8 px-3" style={query.kind === k ? on : undefined}>{label}</a>
-        ))}
-        <span className="mx-1 muted">·</span>
-        {SORTS.map(([k, label]) => (
-          <a key={k} href={href(query, { sort: k, page: 1 })} aria-current={query.sort === k ? "page" : undefined} className="chip h-8 px-3" style={query.sort === k ? on : undefined}>{label}</a>
-        ))}
-      </div>
+      <Panel flush>
+        <DataTable
+          empty="Eşleşme yok."
+          head={["Ad / e-posta", "Çift", "Seviye", { label: "Seri", align: "right" }, { label: "XP", align: "right" }, { label: "Kelime", align: "right" }, "Son aktif", "Katıldı"]}
+          rows={rows.map((u) => [
+            <div key="n" className="min-w-48">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <a href={`/admin/users/${encodeURIComponent(u.userId)}`} className="text-strong underline-offset-2 hover:underline">{u.name || u.username || u.email || u.userId.slice(0, 8)}</a>
+                {u.guest ? <Badge>misafir</Badge> : null}
+                {u.premium ? <Badge tone="ok">premium</Badge> : null}
+                {u.suspended ? <Badge tone="bad">askıda</Badge> : null}
+              </div>
+              {u.email ? <div className="muted">{u.email}</div> : null}
+            </div>,
+            <span key="p" className="muted font-mono">{u.pair}</span>,
+            u.level,
+            u.streak,
+            u.xp.toLocaleString("tr-TR"),
+            u.words,
+            <span key="a" className="whitespace-nowrap">{u.lastActive || "—"}</span>,
+            <span key="j" className="whitespace-nowrap">{u.joined}</span>,
+          ])}
+        />
+      </Panel>
 
-      <div className="mt-4 overflow-x-auto">
-        <table className="w-full text-left text-body">
-          <thead className="muted text-caption">
-            <tr>
-              {["Ad / e-posta", "Çift", "Seviye", "Seri", "XP", "Kelime", "Son aktif", "Katıldı"].map((h) => <th key={h} className="py-1 pr-3">{h}</th>)}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((u) => (
-              <tr key={u.userId} className="border-t" style={{ borderColor: "var(--border)" }}>
-                <td className="py-1.5 pr-3">
-                  <a href={`/admin/users/${encodeURIComponent(u.userId)}`} className="font-semibold underline-offset-2 hover:underline">{u.name || u.username || u.email || u.userId.slice(0, 8)}</a>
-                  {u.guest ? <span className="ml-1.5 text-micro muted">misafir</span> : null}
-                  {u.premium ? <span className="ml-1.5 text-micro" style={{ color: "#16a34a" }}>premium</span> : null}
-                  {u.suspended ? <span className="ml-1.5 text-micro" style={{ color: "#dc2626" }}>askıda</span> : null}
-                  {u.email ? <div className="text-caption muted">{u.email}</div> : null}
-                </td>
-                <td className="pr-3 font-mono text-caption muted">{u.pair}</td>
-                <td className="pr-3">{u.level}</td>
-                <td className="pr-3 tabular-nums">{u.streak}</td>
-                <td className="pr-3 tabular-nums">{u.xp.toLocaleString("tr-TR")}</td>
-                <td className="pr-3 tabular-nums">{u.words}</td>
-                <td className="pr-3 tabular-nums">{u.lastActive || "—"}</td>
-                <td className="tabular-nums">{u.joined}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {rows.length === 0 ? <p className="muted mt-3 text-caption">Eşleşme yok.</p> : null}
-      </div>
-
-      <nav aria-label="Sayfalar" className="mt-4 flex items-center gap-2 text-caption">
-        {query.page > 1 ? <a href={href(query, { page: query.page - 1 })} className="chip h-8 px-3">← Önceki</a> : null}
-        <span className="muted">Sayfa {query.page} / {pages}</span>
-        {query.page < pages ? <a href={href(query, { page: query.page + 1 })} className="chip h-8 px-3">Sonraki →</a> : null}
+      <nav aria-label="Sayfalar" className="flex items-center justify-center gap-3 text-caption">
+        {query.page > 1 ? <Link href={href(query, { page: query.page - 1 })} className={BTN.small}>← Önceki</Link> : null}
+        <span className="muted tabular-nums">Sayfa {query.page} / {pages}</span>
+        {query.page < pages ? <Link href={href(query, { page: query.page + 1 })} className={BTN.small}>Sonraki →</Link> : null}
       </nav>
-    </div>
+    </AdminPage>
   );
 }

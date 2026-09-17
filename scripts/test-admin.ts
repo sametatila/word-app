@@ -122,7 +122,7 @@ async function main() {
   console.log("\nMağaza defteri eşlemesi (RevenueCat)");
   process.env.REVENUECAT_WEBHOOK_AUTH = "test-sir";
   const parse = async (event: Record<string, unknown>) =>
-    revenuecat.parse(new Request("https://x/api/premium/webhook", { method: "POST", headers: { authorization: "test-sir" } }), JSON.stringify({ event }));
+    revenuecat.parse(new Request("https://x/webhook", { method: "POST", headers: { authorization: "test-sir" } }), JSON.stringify({ event }));
   const base = { id: "e1", app_user_id: "u1", product_id: "lernomi_premium_yearly", store: "PLAY_STORE", environment: "PRODUCTION", expiration_at_ms: Date.now() + 86_400_000, event_timestamp_ms: 1_789_000_000_000 };
   const trial = await parse({ ...base, type: "INITIAL_PURCHASE", period_type: "TRIAL", price: 0, currency: "TRY" });
   check("deneme başlangıcı: purchase + trial + ödeme değil", trial.ok && "event" in trial && trial.event.ledger?.type === "purchase" && trial.event.ledger.period === "trial" && trial.event.paid === false);

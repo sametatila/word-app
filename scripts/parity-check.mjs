@@ -5357,7 +5357,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 
   /* Yonetim panosu hâlâ tek dilli mi. */
-  const pano = ["src/app/admin/dashboard.tsx", "src/app/admin/users-table.tsx"].map((f) => read(f)).join("\n");
+  const pano = ["src/app/admin/dashboard.tsx", "src/app/admin/users/page.tsx"].map((f) => read(f)).join("\n");
   sameList("yonetim panosu tek dilli", [/\buseT\(|\bt\(\"/.test(pano) ? "cok dilli olmus" : "tek dilli"], ["tek dilli"], "bulunan", "beklenen");
 }
 

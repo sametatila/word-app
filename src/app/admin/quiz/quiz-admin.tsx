@@ -1,6 +1,7 @@
 "use client";
 
 import type { QuizAdminData } from "@/lib/weekly-quiz/admin";
+import { AdminPage, Badge, BarList, DataTable, Empty, PageHeader, Panel, TONE, type Tone } from "../_ui/ui";
 
 /**
  * Haftalık quiz yönetim görünümü.
@@ -25,11 +26,11 @@ const BLOCK_TR: Record<string, string> = {
   personal: "Kişisel tekrar",
 };
 
-/** Doğruluk oranına göre renk: düşük = incelenecek. */
-function tone(pct: number): string {
-  if (pct < 35) return "var(--color-rose)";
-  if (pct < 60) return "var(--color-flame)";
-  return "var(--color-mint)";
+/** Doğruluk oranına göre ton: düşük = incelenecek. */
+function tone(pct: number): Tone {
+  if (pct < 35) return "bad";
+  if (pct < 60) return "warn";
+  return "ok";
 }
 
 export function QuizAdmin({ data }: { data: QuizAdminData }) {
@@ -37,165 +38,84 @@ export function QuizAdmin({ data }: { data: QuizAdminData }) {
   const totalDone = data.weeks.reduce((a, w) => a + w.finished, 0);
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6">
-      <header className="flex flex-col gap-1">
-        <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
-        <h1 className="text-h1">Haftalık quiz</h1>
-        <p className="muted text-body">
-          Bu hafta: <b>{data.thisWeek}</b> · son 12 haftada <b>{data.scanned}</b> deneme okundu
-          {totalAttempts ? <> · <b>{totalDone}</b>/<b>{totalAttempts}</b> tamamlandı</> : null}
-        </p>
-      </header>
+    <AdminPage>
+      <PageHeader
+        title="Haftalık quiz"
+        description="Gözlem sayfası: bu hafta ne canlı, kaç kişi giriyor, hangi madde bozuk."
+        meta={<>Bu hafta: <b>{data.thisWeek}</b> · son 12 haftada <b>{data.scanned}</b> deneme okundu{totalAttempts ? <> · <b>{totalDone}</b>/<b>{totalAttempts}</b> tamamlandı</> : null}</>}
+      />
 
       {/* 1. Bu hafta canlı olan paketler */}
-      <Section title="Bu hafta canlı" sub="Takvim haftasından; herkes aynı hafta aynı paketi görüyor.">
+      <Panel title="Bu hafta canlı" hint="Takvim haftasından; herkes aynı hafta aynı paketi görüyor.">
         {data.live.length ? (
           <div className="grid gap-2 sm:grid-cols-2">
             {data.live.map((l) => (
-              <div key={l.quizId} className="card flex items-center justify-between gap-3 px-3 py-2">
+              <div key={l.quizId} className="flex items-center justify-between gap-3 rounded-tile px-3 py-2" style={{ background: "var(--surface-2)" }}>
                 <div className="min-w-0">
                   <p className="text-strong">{l.theme}</p>
                   <p className="muted font-mono text-caption">{l.quizId}</p>
                 </div>
-                <span className="chip h-7 shrink-0 px-2 text-caption">{l.course.toUpperCase()} · {l.level} · W{l.no}</span>
+                <Badge>{l.course.toUpperCase()} · {l.level} · W{l.no}</Badge>
               </div>
             ))}
           </div>
         ) : (
-          <Empty text="Bu hafta hiçbir kurs/seviye için paket bulunamadı." />
+          <Empty>Bu hafta hiçbir kurs/seviye için paket bulunamadı.</Empty>
         )}
-      </Section>
+      </Panel>
 
       {/* 4. MADDE ANALİZİ — en değerli sinyal, üstte */}
-      <Section
+      <Panel
         title="Gözden geçirilecek maddeler"
-        sub="En düşük doğruluk oranından başlayarak. Çok düşük bir oran genelde öğrencinin değil maddenin kusurudur: yanlış anahtar, belirsiz soru ya da iki savunulabilir şık. En az 3 cevap almış maddeler listeleniyor."
+        hint="En düşük doğruluk oranından başlayarak. Çok düşük bir oran genelde öğrencinin değil maddenin kusurudur: yanlış anahtar, belirsiz soru ya da iki savunulabilir şık. En az 3 cevap almış maddeler listeleniyor."
+        flush
       >
-        {data.items.length ? (
-          <div className="overflow-x-auto">
-            <table className="w-full text-caption" style={{ borderCollapse: "collapse" }}>
-              <thead>
-                <tr className="muted text-micro uppercase tracking-eyebrow">
-                  <th className="px-2 py-2 text-left">Madde</th>
-                  <th className="px-2 py-2 text-left">Blok</th>
-                  <th className="px-2 py-2 text-left">Soru</th>
-                  <th className="px-2 py-2 text-right">Doğru</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.items.map((i) => (
-                  <tr key={i.itemId} className="border-t" style={{ borderColor: "var(--hairline)" }}>
-                    <td className="px-2 py-2 font-mono whitespace-nowrap">{i.itemId}</td>
-                    <td className="px-2 py-2 whitespace-nowrap">{BLOCK_TR[i.block] ?? i.block}</td>
-                    <td className="px-2 py-2">
-                      <span className="line-clamp-2">{i.stem}</span>
-                    </td>
-                    <td className="px-2 py-2 text-right whitespace-nowrap tabular-nums">
-                      <b style={{ color: tone(i.pct) }}>%{i.pct}</b>
-                      <span className="muted"> · {i.correct}/{i.asked}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <Empty text="Henüz madde analizi için yeterli cevap yok (madde başına en az 3 cevap gerekiyor)." />
-        )}
-      </Section>
+        <DataTable
+          empty="Henüz madde analizi için yeterli cevap yok (madde başına en az 3 cevap gerekiyor)."
+          head={["Madde", "Blok", "Soru", { label: "Doğru", align: "right" }]}
+          rows={data.items.map((i) => [
+            <span key="i" className="font-mono whitespace-nowrap">{i.itemId}</span>,
+            <span key="b" className="whitespace-nowrap">{BLOCK_TR[i.block] ?? i.block}</span>,
+            <span key="s" className="line-clamp-2">{i.stem}</span>,
+            <span key="p"><b style={{ color: TONE[tone(i.pct)] }}>%{i.pct}</b><span className="muted"> · {i.correct}/{i.asked}</span></span>,
+          ])}
+        />
+      </Panel>
 
-      {/* 3. Yetkinlik kırılımı */}
-      <Section title="Yetkinliklere göre" sub="Tüm bitmiş denemelerin toplamı. Sürekli düşük kalan bir blok ya içerikte zor ya da öğretimde eksik demektir.">
-        {data.blocks.length ? (
-          <div className="flex flex-col gap-2">
-            {data.blocks.map((b) => (
-              <div key={b.block} className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-caption">{BLOCK_TR[b.block] ?? b.block}</span>
-                <div className="h-2 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-                  <div className="h-full rounded-full" style={{ width: `${b.pct}%`, background: tone(b.pct) }} />
-                </div>
-                <span className="w-24 shrink-0 text-right text-caption tabular-nums muted">%{b.pct} · {b.correct}/{b.total}</span>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <Empty text="Henüz bitmiş deneme yok." />
-        )}
-      </Section>
+      <div className="grid gap-5 lg:grid-cols-2">
+        {/* 3. Yetkinlik kırılımı */}
+        <Panel title="Yetkinliklere göre" hint="Tüm bitmiş denemelerin toplamı. Sürekli düşük kalan bir blok ya içerikte zor ya da öğretimde eksik demektir.">
+          <BarList
+            empty="Henüz bitmiş deneme yok."
+            max={100}
+            items={data.blocks.map((b) => ({ label: BLOCK_TR[b.block] ?? b.block, value: b.pct, right: `%${b.pct} · ${b.correct}/${b.total}`, tone: tone(b.pct) }))}
+          />
+        </Panel>
+
+        {/* Katalog sağlığı */}
+        <Panel title="Katalog" hint="Seviye başına kaç paket yazıldı. Takvim haftası havuzu tükettiğinde başa sarıyor — yazım temposu takvimin önünde kalmalı." flush>
+          <DataTable
+            head={["Seviye", { label: "Almanca", align: "right" }, { label: "İngilizce", align: "right" }]}
+            rows={data.catalog.map((c) => [
+              <span key="l" className="font-mono">{c.level}</span>,
+              <span key="d" style={c.de ? undefined : { color: TONE.bad }}>{c.de}</span>,
+              <span key="e" style={c.en ? undefined : { color: TONE.bad }}>{c.en}</span>,
+            ])}
+          />
+        </Panel>
+      </div>
 
       {/* 2. Haftalık katılım */}
-      <Section title="Haftalık katılım" sub="Başlayan, bitiren ve ortalama skor.">
-        {data.weeks.length ? (
-          <div className="overflow-x-auto">
-            <table className="w-full text-caption" style={{ borderCollapse: "collapse" }}>
-              <thead>
-                <tr className="muted text-micro uppercase tracking-eyebrow">
-                  <th className="px-2 py-2 text-left">Hafta</th>
-                  <th className="px-2 py-2 text-right">Başlayan</th>
-                  <th className="px-2 py-2 text-right">Bitiren</th>
-                  <th className="px-2 py-2 text-right">Ortalama</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.weeks.map((w) => (
-                  <tr key={w.week} className="border-t" style={{ borderColor: "var(--hairline)" }}>
-                    <td className="px-2 py-2 font-mono whitespace-nowrap">{w.week}</td>
-                    <td className="px-2 py-2 text-right tabular-nums">{w.started}</td>
-                    <td className="px-2 py-2 text-right tabular-nums">{w.finished}</td>
-                    <td className="px-2 py-2 text-right tabular-nums">
-                      <b style={{ color: tone(w.avgScore) }}>%{w.avgScore}</b>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <Empty text="Henüz deneme yok." />
-        )}
-      </Section>
-
-      {/* Katalog sağlığı */}
-      <Section title="Katalog" sub="Seviye başına kaç paket yazıldı. Takvim haftası havuzu tükettiğinde başa sarıyor — yazım temposu takvimin önünde kalmalı.">
-        <div className="overflow-x-auto">
-          <table className="w-full text-caption" style={{ borderCollapse: "collapse" }}>
-            <thead>
-              <tr className="muted text-micro uppercase tracking-eyebrow">
-                <th className="px-2 py-2 text-left">Seviye</th>
-                <th className="px-2 py-2 text-right">Almanca</th>
-                <th className="px-2 py-2 text-right">İngilizce</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.catalog.map((c) => (
-                <tr key={c.level} className="border-t" style={{ borderColor: "var(--hairline)" }}>
-                  <td className="px-2 py-2 font-mono">{c.level}</td>
-                  <td className="px-2 py-2 text-right tabular-nums" style={{ color: c.de ? undefined : "var(--color-rose)" }}>{c.de}</td>
-                  <td className="px-2 py-2 text-right tabular-nums" style={{ color: c.en ? undefined : "var(--color-rose)" }}>{c.en}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Section>
-    </div>
-  );
-}
-
-function Section({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-8">
-      <h2 className="text-h3">{title}</h2>
-      {sub ? <p className="muted mt-1 max-w-[70ch] text-caption">{sub}</p> : null}
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
-function Empty({ text }: { text: string }) {
-  return (
-    <div className="card px-3 py-4 text-caption" style={{ color: "var(--text-muted)" }}>
-      {text}
-    </div>
+      <Panel title="Haftalık katılım" hint="Başlayan, bitiren ve ortalama skor." flush>
+        <DataTable
+          empty="Henüz deneme yok."
+          head={["Hafta", { label: "Başlayan", align: "right" }, { label: "Bitiren", align: "right" }, { label: "Ortalama", align: "right" }]}
+          rows={data.weeks.map((w) => [
+            <span key="w" className="font-mono">{w.week}</span>, w.started, w.finished,
+            <b key="a" style={{ color: TONE[tone(w.avgScore)] }}>%{w.avgScore}</b>,
+          ])}
+        />
+      </Panel>
+    </AdminPage>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
+import { AdminDenied } from "../_ui/ui";
 import { premiumConfig } from "@/lib/premium";
 import { listCodes } from "@/lib/premium/promo";
 import { topReferrers } from "@/lib/premium/referral";
@@ -21,16 +22,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminPremiumPage() {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Premium yönetimi</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
-          {gate.email ? `Bu hesap (${gate.email}) yönetim yetkisine sahip değil.` : "Önce admin e-postasıyla giriş yap."}
-        </p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Premium yönetimi" email={gate.email} />;
 
   const [config, codes, referrers] = await Promise.all([
     premiumConfig(),

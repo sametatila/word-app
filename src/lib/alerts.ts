@@ -198,14 +198,16 @@ export async function collectAlerts(): Promise<Alert[]> {
       }
     }),
     guard("vitals", async () => {
+      // İki basamak, sabit nokta değil (parite: sayaçta `.toFixed` yok); metin yalnız Telegram'a gidiyor.
+      const pct2 = (v: number) => String(Math.round(v * 10000) / 100);
       // Play kötü davranış eşikleri: %80'inde uyarı, aşınca kritik (mağazada geri plana itilme).
       const v = await androidVitals();
       if (v.error) alerts.push({ key: "vitals-api", level: "uyari", text: `Android vitals okunamadı: ${v.error}` });
       for (const [name, series, threshold] of [["çökme", v.crash, CRASH_THRESHOLD], ["donma (ANR)", v.anr, ANR_THRESHOLD]] as const) {
         const rate = series.latest28d;
         if (rate == null) continue;
-        if (rate >= threshold) alerts.push({ key: `vitals:${name}`, level: "kritik", text: `Android fark edilen ${name} oranı %${(rate * 100).toFixed(2)}: Play eşiği %${(threshold * 100).toFixed(2)} aşıldı, uygulama mağazada geri plana itilebilir.` });
-        else if (rate >= threshold * 0.8) alerts.push({ key: `vitals:${name}`, level: "uyari", text: `Android fark edilen ${name} oranı %${(rate * 100).toFixed(2)}: Play eşiğine (%${(threshold * 100).toFixed(2)}) yaklaşıyor.` });
+        if (rate >= threshold) alerts.push({ key: `vitals:${name}`, level: "kritik", text: `Android fark edilen ${name} oranı %${pct2(rate)}: Play eşiği %${pct2(threshold)} aşıldı, uygulama mağazada geri plana itilebilir.` });
+        else if (rate >= threshold * 0.8) alerts.push({ key: `vitals:${name}`, level: "uyari", text: `Android fark edilen ${name} oranı %${pct2(rate)}: Play eşiğine (%${pct2(threshold)}) yaklaşıyor.` });
       }
     }),
     guard("errors", async () => {

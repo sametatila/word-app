@@ -33,9 +33,8 @@ const ROOT = path.join(import.meta.dirname, "..");
  * Yeni bir dosya eklenirse kapı kırmızı olur: yeni borç açmanın yolu yok.
  */
 const TABAN = {
-  /* Yönetim panosu: kullanıcı yüzeyi değil, Android karşılığı da yok.
-     Grafik çubuğunun günü/değeri orada tabloda da yazıyor. */
-  "src/app/admin/dashboard.tsx": 2,
+  /* BORÇ ÖDENDİ (2026-09-17): yönetim panosunun grafik çubukları artık
+     `role="img"` + `aria-label` taşıyor; `title` yalnız fare ipucu. */
   /* BORÇ ÖDENDİ (§11.377). Gerekçesi "gün ve değer eksende ve altındaki
      satırda da var" diye yazılıydı ve ÖLÇÜNCE YANLIŞ ÇIKTI: alttaki satır
      yalnız GÜN HARFİNİ yazıyor, başlıktaki özet de toplamı — günlük değer

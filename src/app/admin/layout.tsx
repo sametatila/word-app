@@ -1,9 +1,12 @@
-import { adminGate, adminSecurityState, ADMIN_FRESH_HOURS } from "@/lib/admin";
+import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "@/lib/admin";
+import { openReportCount } from "@/lib/moderation-admin";
+import { AdminNav } from "./_ui/nav";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Bütün yönetim sayfalarının üst şeridi: yazma güvenliği durumu.
+ * Bütün yönetim sayfalarının kabuğu: üst şerit (ad + gezinme) ve yazma
+ * güvenliği durumu.
  *
  * 2FA'sız admin paneli OKUYABİLİR ama hiçbir şey değiştiremez; hassas
  * işlemler (silme, askıya alma, toplu bildirim, bakım, premium verme) ayrıca
@@ -12,40 +15,38 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const gate = await adminGate();
-  const state = gate.ok ? await adminSecurityState() : null;
+  if (!gate.ok) return <>{children}</>;
+  const preview = adminPreview();
+  const [state, openReports] = await Promise.all([
+    preview ? null : adminSecurityState(),
+    openReportCount().catch(() => 0),
+  ]);
+  const strip = preview
+    ? { tone: "var(--color-brand)", text: "Yerel önizleme (ADMIN_PREVIEW): veri salt okunur, yazma işlemleri reddedilir." }
+    : state && !state.twoFactor
+      ? { tone: "var(--color-rose)", text: "Hesabında iki adımlı doğrulama kapalı: panel yalnız okuma kipinde. Değişiklik için Profil › Ayarlar › Güvenlik'ten aç." }
+      : state && !state.freshForSensitive
+        ? { tone: "var(--color-flame)", text: `Oturumun ${ADMIN_FRESH_HOURS} saatten eski: hassas işlemler (silme, askıya alma, toplu bildirim, bakım, premium) için çıkış yapıp yeniden gir.` }
+        : null;
+
   return (
-    <>
-      {state && !state.twoFactor ? (
-        <div role="status" className="px-4 py-2 text-center text-caption" style={{ background: "#dc2626", color: "#fff" }}>
-          Hesabında iki adımlı doğrulama kapalı: panel yalnız okuma kipinde. Değişiklik yapmak için Profil › Ayarlar › Güvenlik&apos;ten aç.
+    <div className="min-h-dvh" style={{ background: "var(--bg)" }}>
+      <header className="sticky top-0 z-30 border-b" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+        {strip ? (
+          <div role="status" className="border-b px-4 py-1.5 text-center text-caption" style={{ borderColor: strip.tone, color: strip.tone, background: `color-mix(in srgb, ${strip.tone} 8%, var(--surface))` }}>
+            {strip.text}
+          </div>
+        ) : null}
+        <div className="mx-auto w-full max-w-6xl px-4 pt-2.5 sm:px-6">
+          <div className="flex items-baseline gap-2 pb-1.5">
+            <span className="text-strong">Lernomi</span>
+            <span className="muted text-caption">Yönetim</span>
+            {gate.email ? <span className="faint ml-auto hidden truncate text-caption sm:inline">{gate.email}</span> : null}
+          </div>
+          <AdminNav openReports={openReports} />
         </div>
-      ) : state && !state.freshForSensitive ? (
-        <div role="status" className="px-4 py-2 text-center text-caption" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
-          Oturumun {ADMIN_FRESH_HOURS} saatten eski: hassas işlemler (silme, askıya alma, toplu bildirim, bakım, premium) için çıkış yapıp yeniden gir.
-        </div>
-      ) : null}
-      {gate.ok ? (
-        /* YÖNETİM GEZİNMESİ tek yerde: sayfalar çoğaldıkça bağlantılar
-           pano başlığında sıkışıyordu ve alt sayfalardan geri dönüş tek
-           "← Yönetim" bağlantısına kalmıştı. */
-        <nav aria-label="Yönetim" className="mx-auto flex w-full max-w-6xl flex-wrap gap-1.5 px-4 pt-4 text-caption">
-          {[
-            ["/admin", "Pano"],
-            ["/admin/users", "Kullanıcılar"],
-            ["/admin/app", "Uygulama"],
-            ["/admin/errors", "Hatalar"],
-            ["/admin/moderation", "Moderasyon"],
-            ["/admin/reviews", "Mağaza"],
-            ["/admin/premium", "Premium"],
-            ["/admin/quiz", "Haftalık quiz"],
-            ["/admin/legal", "Hukuki metinler"],
-            ["/admin/audit", "İşlem kaydı"],
-          ].map(([href, label]) => (
-            <a key={href} href={href} className="chip h-8 px-3">{label}</a>
-          ))}
-        </nav>
-      ) : null}
+      </header>
       {children}
-    </>
+    </div>
   );
 }

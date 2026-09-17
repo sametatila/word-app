@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
+import { AdminDenied } from "../_ui/ui";
 import { legalConfig } from "@/lib/legal/config";
 import { allLegalDocuments } from "@/lib/legal/documents";
 import { knownTokens } from "@/lib/legal/markdown";
@@ -19,16 +20,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminLegalPage() {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Hukuki metinler</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
-          {gate.email ? `Bu hesap (${gate.email}) yönetim yetkisine sahip değil.` : "Önce admin e-postasıyla giriş yap."}
-        </p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Hukuki metinler" email={gate.email} />;
   const [config, documents] = await Promise.all([legalConfig(), allLegalDocuments()]);
   return <LegalAdmin config={config} documents={documents} tokens={knownTokens()} />;
 }

@@ -4,6 +4,8 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { ModerationData, ModerationDecision, ModerationTarget, ReportedPerson } from "@/lib/moderation-admin";
 import { adminErrorText } from "@/lib/admin-errors";
+import { AdminPage, Badge, BTN, Empty, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE } from "../_ui/ui";
+import { TwoStep } from "../_ui/two-step";
 
 /**
  * Şikâyet kuyruğu görünümü.
@@ -41,11 +43,11 @@ const when = (v: string, withTime = true) =>
 function Person({ p }: { p: ReportedPerson }) {
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
-      <a href={`/admin/users/${encodeURIComponent(p.id)}`} className="font-bold underline-offset-2 hover:underline">{p.name || p.username || "adsız"}</a>
-      {p.username ? <span className="font-mono" style={{ color: "var(--text-muted)" }}>@{p.username}</span> : null}
-      <span className="font-mono text-micro" style={{ color: "var(--text-muted)" }}>{p.id.slice(0, 10)}…</span>
-      {p.guest ? <span className="chip h-5 px-1.5 text-micro">misafir</span> : null}
-      {p.joined ? <span className="text-micro" style={{ color: "var(--text-muted)" }}>katıldı {when(p.joined, false)}</span> : null}
+      <a href={`/admin/users/${encodeURIComponent(p.id)}`} className="text-strong underline-offset-2 hover:underline">{p.name || p.username || "adsız"}</a>
+      {p.username ? <span className="muted font-mono">@{p.username}</span> : null}
+      <span className="muted font-mono">{p.id.slice(0, 10)}…</span>
+      {p.guest ? <Badge>misafir</Badge> : null}
+      {p.joined ? <span className="muted">katıldı {when(p.joined, false)}</span> : null}
     </span>
   );
 }
@@ -69,38 +71,13 @@ function Actions({
   onResetName?: () => void;
 }) {
   /* Yıkıcı eylem İKİ ADIM, sistem kutusu değil (parite §255: kullanıcıya
-     açık yüzeyde `confirm()` yok). İlk basış silahı kurar, ikincisi siler. */
-  const [armed, setArmed] = useState(false);
+     açık yüzeyde `confirm()` yok). */
   return (
-    <div className="mt-2 flex flex-wrap items-center gap-2">
-      <input
-        value={note}
-        onChange={(e) => onNote(e.target.value)}
-        placeholder="Not (isteğe bağlı): ne yapıldı"
-        aria-label="Karar notu"
-        className="h-8 min-w-0 flex-1 rounded-tile border px-2 text-caption"
-        style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
-      />
-      <button type="button" disabled={busy} onClick={() => onDecide("resolved")} className="chip h-8 px-3 text-caption">
-        Gereği yapıldı
-      </button>
-      <button type="button" disabled={busy} onClick={() => onDecide("dismissed")} className="chip h-8 px-3 text-caption">
-        Asılsız
-      </button>
-      {onResetName ? (
-        armed ? (
-          <>
-            <button type="button" disabled={busy} onClick={onResetName} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
-              Evet, ad ve kullanıcı adı silinsin
-            </button>
-            <button type="button" onClick={() => setArmed(false)} className="chip h-8 px-3 text-caption">Vazgeç</button>
-          </>
-        ) : (
-          <button type="button" disabled={busy} onClick={() => setArmed(true)} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
-            Adı sıfırla + kapat
-          </button>
-        )
-      ) : null}
+    <div className="mt-3 flex flex-wrap items-center gap-2 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
+      <input value={note} onChange={(e) => onNote(e.target.value)} placeholder="Not (isteğe bağlı): ne yapıldı" aria-label="Karar notu" className={`${FIELD} flex-1 basis-56`} style={FIELD_STYLE} />
+      <button type="button" disabled={busy} onClick={() => onDecide("resolved")} className={BTN.secondary}>Gereği yapıldı</button>
+      <button type="button" disabled={busy} onClick={() => onDecide("dismissed")} className={BTN.secondary}>Asılsız</button>
+      {onResetName ? <TwoStep label="Adı sıfırla + kapat" confirm="Evet, ad ve kullanıcı adı silinsin" disabled={busy} onConfirm={onResetName} /> : null}
     </div>
   );
 }
@@ -137,117 +114,98 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
   const userReports = data.userReports.filter((r) => !gone.has(`user_report:${r.id}`));
   const contentReports = data.contentReports.filter((r) => !gone.has(`content_report:${r.id}`));
 
-  return (
-    <div className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6">
-      <header className="flex flex-col gap-1">
-        <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
-        <h1 className="text-h1">Moderasyon</h1>
-        <p className="muted text-body">
-          Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> içerik bildirimi. Otomatik yaptırım yok; karar burada.
-        </p>
-        {!data.ready ? (
-          <p className="text-caption" style={{ color: "var(--color-rose)" }}>
-            Karar tablosu (moderation_actions) canlıda yok: kullanıcı şikâyetleri okunabiliyor ama kapatılamıyor.
-          </p>
-        ) : null}
-        {msg ? <p className="text-caption" style={{ color: "var(--color-rose)" }} role="status">{msg}</p> : null}
-      </header>
+  const card = "rounded-tile border p-4 text-caption";
+  const cardStyle = { borderColor: "var(--border)" };
 
-      <Section title="Kullanıcı şikâyetleri" sub="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse 'Adı sıfırla' ikisini de siler ve şikâyeti kapatır.">
+  return (
+    <AdminPage>
+      <PageHeader
+        title="Moderasyon"
+        description="Kullanıcı şikâyetleri ve yapay zekâ içerik bildirimleri. Otomatik yaptırım yok; karar burada."
+        meta={<>Açık: <b>{userReports.length}</b> kullanıcı şikâyeti · <b>{contentReports.length}</b> içerik bildirimi</>}
+      />
+      {!data.ready ? <Notice tone="warn">Karar tablosu (moderation_actions) canlıda yok: kullanıcı şikâyetleri okunabiliyor ama kapatılamıyor.</Notice> : null}
+      {msg ? <Notice tone="bad">{msg}</Notice> : null}
+
+      <Panel title="Kullanıcı şikâyetleri" hint="Sosyal özelliklerden: bir hesap başka bir hesabı şikâyet etti. Ad/kullanıcı adı ihlalse 'Adı sıfırla' ikisini de siler ve şikâyeti kapatır.">
         {userReports.length ? (
-          <div className="space-y-2">
+          <div className="space-y-3">
             {userReports.map((r) => (
-              <div key={r.id} className="card px-3 py-3 text-caption">
+              <div key={r.id} className={card} style={cardStyle}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-semibold">{USER_REASON[r.reason] ?? r.reason}</span>
-                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {when(r.at)}</span>
+                  <span className="text-strong">{USER_REASON[r.reason] ?? r.reason}</span>
+                  <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
                 </div>
-                <div className="mt-1">Şikâyet edilen: <Person p={r.reported} /></div>
-                <div className="mt-0.5" style={{ color: r.reportsAgainst > 1 || r.blockedBy > 1 ? "var(--color-rose)" : "var(--text-muted)" }}>
+                <div className="mt-1.5">Şikâyet edilen: <Person p={r.reported} /></div>
+                <div className="mt-0.5" style={{ color: r.reportsAgainst > 1 || r.blockedBy > 1 ? TONE.bad : "var(--text-muted)" }}>
                   Bu hesap hakkında toplam {r.reportsAgainst} şikâyet · {r.blockedBy} engel
                 </div>
-                <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Şikâyet eden: <Person p={r.reporter} /></div>
-                {r.detail ? <p className="mt-1 whitespace-pre-wrap">{r.detail}</p> : null}
+                <div className="muted mt-0.5">Şikâyet eden: <Person p={r.reporter} /></div>
+                {r.detail ? <p className="mt-2 whitespace-pre-wrap rounded-tile px-3 py-2 text-body" style={{ background: "var(--surface-2)" }}>{r.detail}</p> : null}
                 {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} onResetName={() => void decide("user_report", r.id, "reset_name")} /> : null}
               </div>
             ))}
           </div>
         ) : (
-          <Empty text="Açık kullanıcı şikâyeti yok." />
+          <Empty>Açık kullanıcı şikâyeti yok.</Empty>
         )}
-      </Section>
+      </Panel>
 
-      <Section title="İçerik bildirimleri" sub="Yapay zekâ yanıtı ya da değerlendirme çıktısı için. Play üretken yapay zekâ politikası: insan inceler.">
+      <Panel title="İçerik bildirimleri" hint="Yapay zekâ yanıtı ya da değerlendirme çıktısı için. Play üretken yapay zekâ politikası: insan inceler.">
         {contentReports.length ? (
-          <div className="space-y-2">
+          <div className="space-y-3">
             {contentReports.map((r) => (
-              <div key={r.id} className="card px-3 py-3 text-caption">
+              <div key={r.id} className={card} style={cardStyle}>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-semibold">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
-                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {when(r.at)}</span>
+                  <span className="text-strong">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
+                  <span className="muted font-mono tabular-nums">#{r.id} · {when(r.at)}</span>
                 </div>
-                <div className="mt-0.5 font-mono" style={{ color: "var(--text-muted)" }}>{r.ref}</div>
-                <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Bildiren: <Person p={r.reporter} /></div>
-                {r.content ? <p className="mt-1 whitespace-pre-wrap">{r.content}</p> : null}
+                <div className="muted mt-0.5 font-mono">{r.ref}</div>
+                <div className="muted mt-0.5">Bildiren: <Person p={r.reporter} /></div>
+                {r.content ? <p className="mt-2 whitespace-pre-wrap rounded-tile px-3 py-2 text-body" style={{ background: "var(--surface-2)" }}>{r.content}</p> : null}
                 <Actions note={notes[`content_report:${r.id}`] ?? ""} busy={busy === `content_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`content_report:${r.id}`]: v }))} onDecide={(a) => decide("content_report", r.id, a)} />
               </div>
             ))}
           </div>
         ) : (
-          <Empty text="Açık içerik bildirimi yok." />
+          <Empty>Açık içerik bildirimi yok.</Empty>
         )}
-      </Section>
+      </Panel>
 
-      <Section title="En çok engellenen hesaplar" sub="Şikâyet gelmese de bakılacak yer: engellemek şikâyet etmekten kolay.">
-        {data.mostBlocked.length ? (
-          <div className="space-y-1 text-caption">
-            {data.mostBlocked.map((b) => (
-              <div key={b.person.id} className="flex items-baseline gap-2">
-                <span className="w-10 shrink-0 text-right tabular-nums font-semibold">{b.count}</span>
-                <Person p={b.person} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <Empty text="Engelleme yok." />
-        )}
-      </Section>
+      <div className="grid gap-5 lg:grid-cols-2">
+        <Panel title="En çok engellenen hesaplar" hint="Şikâyet gelmese de bakılacak yer: engellemek şikâyet etmekten kolay.">
+          {data.mostBlocked.length ? (
+            <div className="space-y-1.5 text-caption">
+              {data.mostBlocked.map((b) => (
+                <div key={b.person.id} className="flex items-baseline gap-3">
+                  <span className="w-8 shrink-0 text-right text-strong tabular-nums">{b.count}</span>
+                  <Person p={b.person} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <Empty>Engelleme yok.</Empty>
+          )}
+        </Panel>
 
-      <Section title="Son kararlar" sub="Kim, neyi, hangi notla kapattı.">
-        {data.closed.length ? (
-          <div className="space-y-1 text-caption">
-            {data.closed.map((c) => (
-              <div key={`${c.target}:${c.refId}`} className="flex flex-wrap items-baseline gap-x-2">
-                <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{when(c.at)}</span>
-                <span>{c.target === "user_report" ? "Kullanıcı" : "İçerik"} #{c.refId}</span>
-                <b>{c.action === "resolved" ? "gereği yapıldı" : "asılsız"}</b>
-                <span style={{ color: "var(--text-muted)" }}>{c.actor}</span>
-                {c.note ? <span>· {c.note}</span> : null}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <Empty text="Henüz karar yok." />
-        )}
-      </Section>
-    </div>
-  );
-}
-
-function Section({ title, sub, children }: { title: string; sub?: string; children: React.ReactNode }) {
-  return (
-    <section className="mt-8">
-      <h2 className="text-h3">{title}</h2>
-      {sub ? <p className="muted mt-1 max-w-[70ch] text-caption">{sub}</p> : null}
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
-function Empty({ text }: { text: string }) {
-  return (
-    <div className="card px-3 py-4 text-caption" style={{ color: "var(--text-muted)" }}>
-      {text}
-    </div>
+        <Panel title="Son kararlar" hint="Kim, neyi, hangi notla kapattı.">
+          {data.closed.length ? (
+            <div className="space-y-1.5 text-caption">
+              {data.closed.map((c) => (
+                <div key={`${c.target}:${c.refId}`} className="flex flex-wrap items-baseline gap-x-2">
+                  <span className="muted font-mono tabular-nums">{when(c.at)}</span>
+                  <span>{c.target === "user_report" ? "Kullanıcı" : "İçerik"} #{c.refId}</span>
+                  <Badge tone={c.action === "resolved" ? "ok" : undefined}>{c.action === "resolved" ? "gereği yapıldı" : "asılsız"}</Badge>
+                  <span className="muted">{c.actor}</span>
+                  {c.note ? <span>· {c.note}</span> : null}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <Empty>Henüz karar yok.</Empty>
+          )}
+        </Panel>
+      </div>
+    </AdminPage>
   );
 }

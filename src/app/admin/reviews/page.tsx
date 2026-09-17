@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
 import { storeReviews, summarizeReviews, type StoreReview } from "@/lib/store-reviews";
+import { AdminDenied, AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, PanelGrid, Stat, Stats, TONE } from "../_ui/ui";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD, type VitalsSeries } from "@/lib/android-vitals";
 
 export const metadata: Metadata = { title: "Mağaza" };
@@ -23,14 +24,7 @@ const starsText = (n: number) => "★".repeat(n) + "☆".repeat(Math.max(0, 5 - 
 
 export default async function AdminReviewsPage({ searchParams }: { searchParams: Promise<{ taze?: string }> }) {
   const gate = await adminGate();
-  if (!gate.ok) {
-    return (
-      <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-h1">Mağaza: kalite ve yorumlar</h1>
-        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>Yönetim yetkisi gerekiyor.</p>
-      </div>
-    );
-  }
+  if (!gate.ok) return <AdminDenied title="Mağaza" email={gate.email} />;
   const fresh = (await searchParams).taze === "1";
   const [{ results, at }, vitals] = await Promise.all([storeReviews(fresh), androidVitals(fresh)]);
   const all: StoreReview[] = results.flatMap((r) => r.reviews);
@@ -40,77 +34,73 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
   });
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6">
-      <h1 className="text-h1">Mağaza yorumları</h1>
-      <p className="muted text-caption">
-        {Math.round((Date.now() - at) / 60000)} dk önce çekildi (30 dk önbellek) · <a href="/admin/reviews?taze=1" className="underline">tazele</a> · Google Play API yalnız son 7 günün metinli yorumlarını veriyor.
-      </p>
+    <AdminPage>
+      <PageHeader
+        title="Mağaza"
+        description="App Store ve Google Play: kalite oranları ve kullanıcı yorumları. Yalnız okuma; cevap mağaza konsolundan verilir."
+        meta={`${Math.round((Date.now() - at) / 60000)} dk önce çekildi (30 dk önbellek) · Google Play API yalnız son 7 günün metinli yorumlarını veriyor`}
+        actions={<a href="/admin/reviews?taze=1" className={BTN.secondary}>Tazele</a>}
+      />
 
       {/* ANDROID VITALS - mağaza sıralamasını etkileyen iki oran (lib/android-vitals). */}
-      <section className="mt-4 rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }} aria-label="Android vitals">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="text-micro uppercase tracking-eyebrow">Android kalite (Play vitals)</h2>
-          <span className="text-caption muted">28 günlük, kullanıcı ağırlıklı · eşiği aşan uygulama Play&apos;de geri plana itilir · 6 sa önbellek</span>
-        </div>
+      <Panel title="Android kalite (Play vitals)" hint="28 günlük, kullanıcı ağırlıklı · eşiği aşan uygulama Play'de geri plana itilir · 6 sa önbellek">
         {!vitals.configured ? (
-          <p className="mt-2 text-caption muted">Yapılandırılmadı.</p>
+          <p className="muted text-caption">Yapılandırılmadı.</p>
         ) : vitals.error ? (
-          <p className="mt-2 text-caption" style={{ color: "#dc2626" }}>{vitals.error}</p>
+          <Notice tone="bad">{vitals.error}</Notice>
         ) : (
-          <div className="mt-2 grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             <VitalsCell label="Fark edilen çökme" series={vitals.crash} threshold={CRASH_THRESHOLD} />
             <VitalsCell label="Fark edilen donma (ANR)" series={vitals.anr} threshold={ANR_THRESHOLD} />
           </div>
         )}
-      </section>
+      </Panel>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+      <PanelGrid>
         {results.map((r) => {
           const s = summarizeReviews(r.reviews);
           return (
-            <section key={r.store} className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }} aria-label={STORE[r.store]}>
-              <div className="flex items-baseline justify-between gap-2">
-                <h2 className="text-micro uppercase tracking-eyebrow">{STORE[r.store]}</h2>
-                <a href={CONSOLE[r.store]} target="_blank" rel="noopener noreferrer" className="text-caption underline">konsolda cevapla</a>
-              </div>
+            <Panel key={r.store} title={STORE[r.store]} actions={<a href={CONSOLE[r.store]} target="_blank" rel="noopener noreferrer" className={BTN.small}>Konsolda cevapla ↗</a>}>
               {!r.configured ? (
-                <p className="mt-2 text-caption muted">Yapılandırılmadı: yalnız okuma yetkili anahtar sunucuda yok (bkz. lib/store-reviews).</p>
+                <p className="muted text-caption">Yapılandırılmadı: yalnız okuma yetkili anahtar sunucuda yok (bkz. lib/store-reviews).</p>
               ) : r.error ? (
-                <p className="mt-2 text-caption" style={{ color: "#dc2626" }}>{r.error}</p>
+                <Notice tone="bad">{r.error}</Notice>
               ) : (
-                <div className="mt-2 flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                  <span className="text-h1 tabular-nums">{s.avg ?? "—"}</span>
-                  <span className="text-caption muted">{s.total} yorum · {s.recent} son 30 gün</span>
-                  <span className="text-caption tabular-nums muted">{s.stars.map((n, i) => `${i + 1}★ ${n}`).join("  ")}</span>
-                  {s.lowUnanswered ? <span className="text-caption" style={{ color: "#dc2626" }}>{s.lowUnanswered} cevapsız 1-2★</span> : null}
-                </div>
+                <Stats cols={4}>
+                  <Stat label="Ortalama" value={s.avg ?? "—"} sub={`${s.total} yorum`} />
+                  <Stat label="Son 30 gün" value={s.recent} />
+                  <Stat label="Cevapsız 1-2★" value={s.lowUnanswered} tone={s.lowUnanswered ? "bad" : "ok"} />
+                  <Stat label="Dağılım" value={<span className="text-caption">{s.stars.map((n, i) => `${i + 1}★ ${n}`).join(" · ")}</span>} />
+                </Stats>
               )}
-            </section>
+            </Panel>
           );
         })}
-      </div>
+      </PanelGrid>
 
-      <div className="mt-6 space-y-2">
+      <Panel title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor.">
         {ordered.length === 0 ? (
-          <p className="muted text-caption">Gösterilecek yorum yok.</p>
+          <Empty>Gösterilecek yorum yok.</Empty>
         ) : (
-          ordered.map((r) => (
-            <article key={`${r.store}:${r.id}`} className="card px-3 py-2 text-caption">
-              <div className="flex flex-wrap items-baseline gap-x-2">
-                <b style={{ color: r.rating <= 2 ? "#dc2626" : r.rating >= 4 ? "#16a34a" : undefined }} aria-label={`${r.rating} yıldız`}>{starsText(r.rating)}</b>
-                <span className="chip h-5 px-1.5 text-micro">{STORE[r.store]}</span>
-                {r.title ? <span className="font-semibold">{r.title}</span> : null}
-                <span className="muted">
-                  {r.author || "anonim"} · {r.at ? new Date(r.at).toLocaleDateString("tr-TR") : "—"}{r.version ? ` · ${r.version}` : ""}{r.territory ? ` · ${r.territory}` : ""}
-                </span>
-                <span style={{ color: r.answered ? "#16a34a" : "var(--text-muted)" }}>{r.answered ? "cevaplandı" : "cevapsız"}</span>
-              </div>
-              {r.body ? <p className="mt-1 whitespace-pre-wrap text-body">{r.body}</p> : null}
-            </article>
-          ))
+          <div className="divide-y" style={{ borderColor: "var(--hairline)" }}>
+            {ordered.map((r) => (
+              <article key={`${r.store}:${r.id}`} className="py-3 text-caption first:pt-0 last:pb-0" style={{ borderColor: "var(--hairline)" }}>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <b style={{ color: r.rating <= 2 ? TONE.bad : r.rating >= 4 ? TONE.ok : undefined }} aria-label={`${r.rating} yıldız`}>{starsText(r.rating)}</b>
+                  <Badge>{STORE[r.store]}</Badge>
+                  {r.answered ? <Badge tone="ok">cevaplandı</Badge> : <Badge tone={r.rating <= 2 ? "bad" : undefined}>cevapsız</Badge>}
+                  {r.title ? <span className="text-strong">{r.title}</span> : null}
+                  <span className="muted">
+                    {r.author || "anonim"} · {r.at ? new Date(r.at).toLocaleDateString("tr-TR") : "—"}{r.version ? ` · ${r.version}` : ""}{r.territory ? ` · ${r.territory}` : ""}
+                  </span>
+                </div>
+                {r.body ? <p className="mt-1 whitespace-pre-wrap text-body">{r.body}</p> : null}
+              </article>
+            ))}
+          </div>
         )}
-      </div>
-    </div>
+      </Panel>
+    </AdminPage>
   );
 }
 
@@ -118,24 +108,16 @@ const pct2 = (v: number) => `%${(v * 100).toFixed(2)}`;
 
 function VitalsCell({ label, series, threshold }: { label: string; series: VitalsSeries; threshold: number }) {
   if (series.latest28d == null) {
-    return (
-      <div>
-        <div className="text-micro uppercase tracking-eyebrow muted">{label}</div>
-        <p className="text-caption muted">Henüz veri yok (Google yeterli kullanıcı birikince hesaplıyor).</p>
-      </div>
-    );
+    return <Stat label={label} value="—" sub="Henüz veri yok (Google yeterli kullanıcı birikince hesaplıyor)." />;
   }
   const v = series.latest28d;
-  const color = v >= threshold ? "#dc2626" : v >= threshold * 0.8 ? "#d97706" : "#16a34a";
   const last7 = series.points.slice(-7).map((p) => (p.rate == null ? "—" : pct2(p.rate))).join(" · ");
   return (
-    <div>
-      <div className="text-micro uppercase tracking-eyebrow muted">{label}</div>
-      <div className="flex items-baseline gap-2">
-        <span className="text-h1 tabular-nums" style={{ color }}>{pct2(v)}</span>
-        <span className="text-caption muted">eşik {pct2(threshold)} · {series.latestDay}</span>
-      </div>
-      <div className="text-micro tabular-nums muted">son 7 gün: {last7}</div>
-    </div>
+    <Stat
+      label={label}
+      value={pct2(v)}
+      tone={v >= threshold ? "bad" : v >= threshold * 0.8 ? "warn" : "ok"}
+      sub={<>eşik {pct2(threshold)} · {series.latestDay}<br />son 7 gün: {last7}</>}
+    />
   );
 }
