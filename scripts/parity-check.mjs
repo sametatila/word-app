@@ -10541,6 +10541,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
+    /* ---- KAZANILAN AKSESUARLAR: ESLEME IKI PLATFORMDA AYNI --------------
+     *
+     * Aksesuarlarin tamami herkese acikti; kilit diye bir kavram yoktu.
+     * Davetin elle tutulur karsiligi olsun diye acildi (2026-09-17): rozet
+     * kazanilinca bir aksesuar da geliyor.
+     *
+     * ESLEME IKI DOSYADA YAZILI (`lib/avatar-unlocks` ve mobil
+     * `lib/avatarUnlocks`) ve ayrisirsa bir platformda kilitli olan otekinde
+     * ACIK gorunur - kullanici oradan secer, sunucu sessizce duşurur ve
+     * secimi "kaydedilmedi" diye kaybolur. Hicbir derleyici bunu gormez.
+     *
+     * KATALOG DA AYNI OLMALI: parca iki tarafta da cizilebilmeli, yoksa ayni
+     * avatar bir platformda sapkali otekinde sapkasiz gorunur.
+     *
+     * KILIDIN KENDISI SUNUCUDA: `api/profile` kaydederken kazanilmamis
+     * parcayi eliyor. Istemcideki liste yalniz neyin gri cizilecegini
+     * biliyor; istemcide duran bir kilit kilit degildir (ayni ilke
+     * `api/stt` kapisinda da yazili). */
+    {
+      const esleme = (yol) => {
+        const src = read(yol);
+        const i = src.indexOf("PART_UNLOCKS");
+        const j = src.indexOf("};", i);
+        return [...(src.slice(i, j).match(/^\s*(\w+):\s*"([^"]+)"/gm) ?? [])].map((x) => x.trim()).sort();
+      };
+      const katalog = (yol) => {
+        const src = read(yol);
+        return ["HATS", "GLASSES", "MUSTACHES"]
+          .map((ad) => ad + "=" + ((src.match(new RegExp("const " + ad + " = \\[([^\\]]*)\\]")) ?? [])[1] ?? "YOK").replace(/[\s"]/g, ""))
+          .join(" · ");
+      };
+      sameSet(
+        "kazanilan aksesuar eslemesi",
+        esleme("mobile/src/lib/avatarUnlocks.ts"),
+        esleme("src/lib/avatar-unlocks.ts"),
+        "mobil",
+        "web",
+      );
+      sameList(
+        "aksesuar katalogu iki platformda",
+        [katalog("mobile/src/ui/avatarParts.tsx")],
+        [katalog("src/components/avatar-parts.tsx")],
+        "mobil",
+        "web",
+      );
+      /* Kilidi SUNUCU dayatiyor: istemci listesi degistiginde bu satir
+         dusmezse kilit yalniz bir suslemedir. */
+      const profil = sil(read("src/app/api/profile/route.ts"));
+      sameList(
+        "kazanilmamis aksesuar sunucuda eleniyor",
+        ["kapi=" + (/stripLockedParts\(cfg, await unlockedAchievementIds\(userId\)\)/.test(profil) ? "var" : "YOK")],
+        ["kapi=var"],
+        "bulunan",
+        "beklenen",
+      );
+    }
+
     /* 3) ROZET KUTLAMASI. Webde vardi, Androidde hic yoktu - rozet yalniz
        duvarda dolu gorunuyordu ve mobil ses kumesinde `unlock` bile yoktu. */
     const au = sil(read("mobile/src/ui/AchievementUnlock.tsx"));

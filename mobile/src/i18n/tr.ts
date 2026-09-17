@@ -136,6 +136,7 @@ export const tr: Record<string, string> = {
   "avatar.glasses": "GÖZLÜK",
   "avatar.hat": "ŞAPKA",
   "avatar.hat_color": "ŞAPKA RENGİ",
+  "avatar.locked_hint": "Davet ettiğin ilk kişi üç günlük seri yapınca açılır",
   "avatar.mustache": "BIYIK",
   "avatar.no_hat": "Şapkasız",
   "avatar.no_glasses": "Gözlüksüz",

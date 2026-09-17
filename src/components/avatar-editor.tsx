@@ -6,6 +6,8 @@ import { derivedAvatar, MascotAvatar } from "@/components/avatar";
 import { useShell } from "@/components/app-shell";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
+import { PART_UNLOCKS } from "@/lib/avatar-unlocks";
+import { LockIcon } from "@/components/icons";
 import { PageBack } from "@/components/page-back";
 import { useT } from "@/lib/i18n/client";
 
@@ -20,7 +22,14 @@ import { useT } from "@/lib/i18n/client";
  * ad listesi değil. Bir şapkanın adını okumak onun nasıl durduğunu
  * söylemiyor; kırk piksellik önizleme söylüyor.
  */
-export function AvatarEditor() {
+export function AvatarEditor({ unlocked }: { unlocked: string[] }) {
+  /* Kilitli aksesuar GİZLENMİYOR, KİLİTLİ gösteriliyor: görünmeyen bir ödül
+     kimseyi peşinden koşturmaz. Dokunulduğunda nasıl açılacağını söylüyor. */
+  const acik = new Set(unlocked);
+  const kilitli = (id: string | null) => {
+    const rozet = id ? PART_UNLOCKS[id] : undefined;
+    return !!rozet && !acik.has(rozet);
+  };
   const t = useT();
   const router = useRouter();
   /*
@@ -77,6 +86,8 @@ export function AvatarEditor() {
             preview={only({ hat: h })}
             selected={cfg.hat === h}
             label={h}
+            locked={kilitli(h)}
+            lockHint={t("avatar.locked_hint")}
             onPick={() => setCfg({ hat: h })}
           />
         ))}
@@ -115,6 +126,8 @@ export function AvatarEditor() {
             preview={only({ glasses: g })}
             selected={cfg.glasses === g}
             label={g}
+            locked={kilitli(g)}
+            lockHint={t("avatar.locked_hint")}
             onPick={() => setCfg({ glasses: g })}
           />
         ))}
@@ -128,6 +141,8 @@ export function AvatarEditor() {
             preview={only({ mustache: m })}
             selected={cfg.mustache === m}
             label={m}
+            locked={kilitli(m)}
+            lockHint={t("avatar.locked_hint")}
             onPick={() => setCfg({ mustache: m })}
           />
         ))}
@@ -153,28 +168,51 @@ function Group({ title, children }: { title: string; children: React.ReactNode }
   );
 }
 
+/**
+ * Tek seçenek. KİLİTLİ olan gizlenmiyor, kilitli çiziliyor: görünmeyen bir
+ * ödül kimseyi peşinden koşturmaz. Soluk önizleme + kilit rozeti, dokunma
+ * kapalı ve erişilebilirlik adı nasıl açılacağını söylüyor — sadece
+ * `disabled` verseydi ekran okuyucu "neden?" sorusunu cevapsız bırakırdı.
+ */
 function Opt({
   preview,
   selected,
   label,
   onPick,
+  locked = false,
+  lockHint = "",
 }: {
   preview: AvatarConfig;
   selected: boolean;
   label: string;
   onPick: () => void;
+  locked?: boolean;
+  lockHint?: string;
 }) {
   return (
     <button
       type="button"
-      onClick={onPick}
-      aria-label={label}
+      onClick={locked ? undefined : onPick}
+      disabled={locked}
+      aria-label={locked ? `${label} — ${lockHint}` : label}
+      title={locked ? lockHint : undefined}
       role="radio"
       aria-checked={selected}
-      className="pressable shrink-0 rounded-panel p-1"
+      className="pressable relative shrink-0 rounded-panel p-1"
       style={{ border: `2px solid ${selected ? "var(--color-brand-500)" : "transparent"}` }}
     >
-      <MascotAvatar config={preview} size={54} />
+      <span className="block" style={{ opacity: locked ? 0.35 : 1 }}>
+        <MascotAvatar config={preview} size={54} />
+      </span>
+      {locked && (
+        <span
+          aria-hidden
+          className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center rounded-full"
+          style={{ background: "var(--surface-2)" }}
+        >
+          <LockIcon size={12} />
+        </span>
+      )}
     </button>
   );
 }

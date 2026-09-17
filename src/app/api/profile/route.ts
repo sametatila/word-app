@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
 import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
+import { stripLockedParts } from "@/lib/avatar-unlocks";
+import { unlockedAchievementIds } from "@/lib/achievements";
 import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -75,7 +77,20 @@ export async function POST(req: Request) {
     `null` göndermek "avatarımı sıfırla" demek.
   */
   if (body.avatar !== undefined) {
-    const cfg = body.avatar === null ? null : parseAvatar(body.avatar);
+    let cfg = body.avatar === null ? null : parseAvatar(body.avatar);
+    /*
+      KAZANILMAMIŞ AKSESUAR DÜŞÜYOR.
+
+      Katalog istemcide ve düzenleme ekranı kilitliyi gri çiziyor; ama bu uca
+      doğrudan istek atılabilir. Kilit yalnız arayüzde dursaydı kilit olmazdı —
+      `api/stt` kapısındaki ilkenin aynısı: kapı sunucuda çünkü istemcide
+      duran bir kapı kapı değil.
+
+      REDDETMİYOR, DÜŞÜRÜYOR: bir üstteki `parseAvatar` da bilinmeyen parçayı
+      böyle eliyor. Kullanıcı hak ettiği şapkayı kaybetmiyor, yalnız hak
+      etmediği parça kaydedilmiyor.
+    */
+    if (cfg) cfg = stripLockedParts(cfg, await unlockedAchievementIds(userId));
     patch.avatar = cfg ? serializeAvatar(cfg) : null;
   }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, PROFILE_LIMITS.dailyGoal.min, PROFILE_LIMITS.dailyGoal.max);

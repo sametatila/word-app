@@ -133,6 +133,7 @@ export const enBase: Record<string, string> = {
   "avatar.glasses": "GLASSES",
   "avatar.hat": "HAT",
   "avatar.hat_color": "HAT COLOR",
+  "avatar.locked_hint": "Unlocks when the first person you invited reaches a three-day streak",
   "avatar.mustache": "MOUSTACHE",
   "avatar.no_hat": "No hat",
   "avatar.no_glasses": "No glasses",

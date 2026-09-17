@@ -7,7 +7,10 @@ import type { AvatarConfig } from "../lib/avatar";
  * Placeholder vektörler; Replicate aşamasında gerçek sanata dönüşecek. Katalog
  * (HATS/GLASSES/MUSTACHES) düzenleme ekranını besler.
  */
-export const HATS = ["beanie", "cap", "crown"] as const;
+/* `party` KİLİTLİ: davet rozetiyle açılıyor (bkz. lib/avatarUnlocks).
+   Katalogda duruyor çünkü çizilebilmesi gerekiyor — kimin kullanabileceğine
+   sunucu karar veriyor, liste değil. */
+export const HATS = ["beanie", "cap", "crown", "party"] as const;
 export const GLASSES = ["round", "square"] as const;
 export const MUSTACHES = ["curl", "thick"] as const;
 export const HAT_COLORS = ["#c0392b", "#2d6cdf", "#27ae60", "#8e44ad", "#e67e22", "#2c3e50"];
@@ -27,6 +30,16 @@ function Hat({ id, color }: { id: string; color: string }) {
       <Path d="M48 35 Q80 35 87 45 L48 45 Z" fill="#00000018" />
     </>
   );
+  if (id === "party")
+    return (
+      <>
+        <Path d="M50 12 L64 41 L36 41 Z" fill={color} />
+        <Path d="M50 12 L64 41 L36 41 Z" fill="#00000014" />
+        <Circle cx="50" cy="11" r="4" fill="#f5c542" />
+        <Circle cx="44" cy="30" r="2.4" fill="#ffffff88" />
+        <Circle cx="55" cy="35" r="2.4" fill="#ffffff88" />
+      </>
+    );
   if (id === "crown") return (
     <Path d="M20 43 L28 22 L40 36 L50 18 L60 36 L72 22 L80 43 Z" fill={color} stroke="#00000022" strokeWidth={1} />
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 import { AvatarOverlay, GLASSES, HAT_COLORS, HATS, MUSTACHES } from "./avatarParts";
+import { isLockedPart } from "../lib/avatarUnlocks";
 import { useAvatar, parseAvatar, type AvatarConfig } from "../lib/avatar";
 
 /**
@@ -33,16 +34,25 @@ function hash(seed: string): number {
 }
 
 /**
+ * Türetilen avatarda KİLİTLİ parça çıkmıyor — web `derivedAvatar` ile aynı.
+ * Kazanılmamış bir aksesuarı rastgele dağıtmak, kazananın rozetini
+ * değersizleştirirdi.
+ */
+const FREE_HATS = HATS.filter((h) => !isLockedPart(h));
+const FREE_GLASSES = GLASSES.filter((g) => !isLockedPart(g));
+const FREE_MUSTACHES = MUSTACHES.filter((m) => !isLockedPart(m));
+
+/**
  * Avatar seçmemiş kişinin kimliğinden türeyen maskot — web `derivedAvatar`
  * ile BİREBİR (aynı kişi telefonda ve tarayıcıda aynı şapkayla görünmeli).
  */
 export function derivedAvatar(seed: string): AvatarConfig {
   const h = hash(seed || "?");
   return {
-    hat: HATS[h % HATS.length],
+    hat: FREE_HATS[h % FREE_HATS.length],
     hatColor: HAT_COLORS[(h >>> 4) % HAT_COLORS.length],
-    glasses: (h >>> 8) % 3 === 0 ? GLASSES[(h >>> 10) % GLASSES.length] : null,
-    mustache: (h >>> 12) % 4 === 0 ? MUSTACHES[(h >>> 14) % MUSTACHES.length] : null,
+    glasses: (h >>> 8) % 3 === 0 ? FREE_GLASSES[(h >>> 10) % FREE_GLASSES.length] : null,
+    mustache: (h >>> 12) % 4 === 0 ? FREE_MUSTACHES[(h >>> 14) % FREE_MUSTACHES.length] : null,
   };
 }
 

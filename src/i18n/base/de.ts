@@ -133,6 +133,7 @@ export const deBase: Record<string, string> = {
   "avatar.glasses": "BRILLE",
   "avatar.hat": "MÜTZE",
   "avatar.hat_color": "MÜTZENFARBE",
+  "avatar.locked_hint": "Wird freigeschaltet, sobald die erste eingeladene Person eine Drei-Tage-Serie erreicht",
   "avatar.mustache": "SCHNURRBART",
   "avatar.no_hat": "Ohne Hut",
   "avatar.no_glasses": "Ohne Brille",

@@ -554,6 +554,22 @@ export async function markAchievementsSeen(userId: string, ids: string[]) {
     .where(and(eq(achievements.userId, userId), inArray(achievements.achievementId, valid)));
 }
 
+/**
+ * Kazanılmış rozet kimlikleri — kazanılan aksesuarların kapısı
+ * (`lib/avatar-unlocks`, `api/profile`).
+ *
+ * Tahtanın tamamı (`achievementBoard`) her ölçüyü yeniden hesaplıyor; burada
+ * gereken tek şey "hangileri açık". Profil kaydında o hesabı yaptırmak,
+ * avatar değiştirmeyi otuz sorguya bağlamak olurdu.
+ */
+export async function unlockedAchievementIds(userId: string): Promise<Set<string>> {
+  const rows = await db
+    .select({ id: achievements.achievementId })
+    .from(achievements)
+    .where(eq(achievements.userId, userId));
+  return new Set(rows.map((r) => r.id));
+}
+
 /** Profil başlığındaki özet — tahtanın tamamını çekmeden. */
 export async function achievementCount(userId: string): Promise<number> {
   const [row] = await db

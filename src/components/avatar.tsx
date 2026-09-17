@@ -1,6 +1,7 @@
 "use client";
 
 import { AvatarOverlay, GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
+import { isLockedPart } from "@/lib/avatar-unlocks";
 import { useAvatar } from "@/lib/avatar";
 import { parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
 
@@ -30,6 +31,18 @@ function hash(seed: string): number {
 }
 
 /**
+ * Türetilen avatarda KİLİTLİ parça çıkmıyor.
+ *
+ * Seçim yapmamış kullanıcı kimliğinden türeyen bir maskotla görünüyor ve
+ * havuz `HATS` idi; kilitli parça katalogda durduğu için türetilmiş avatarda
+ * da çıkabilirdi. Kazanılmamış bir aksesuarı rastgele dağıtmak, kazananın
+ * rozetini değersizleştirirdi.
+ */
+const FREE_HATS = HATS.filter((h) => !isLockedPart(h));
+const FREE_GLASSES = GLASSES.filter((g) => !isLockedPart(g));
+const FREE_MUSTACHES = MUSTACHES.filter((m) => !isLockedPart(m));
+
+/**
  * Avatar seçmemiş kişinin kimliğinden türeyen maskot.
  *
  * Herkese şapka (3 × 6 renk = 18 görünüm); üçte birine gözlük, dörtte birine
@@ -40,10 +53,10 @@ function hash(seed: string): number {
 export function derivedAvatar(seed: string): AvatarConfig {
   const h = hash(seed || "?");
   return {
-    hat: HATS[h % HATS.length],
+    hat: FREE_HATS[h % FREE_HATS.length],
     hatColor: HAT_COLORS[(h >>> 4) % HAT_COLORS.length],
-    glasses: (h >>> 8) % 3 === 0 ? GLASSES[(h >>> 10) % GLASSES.length] : null,
-    mustache: (h >>> 12) % 4 === 0 ? MUSTACHES[(h >>> 14) % MUSTACHES.length] : null,
+    glasses: (h >>> 8) % 3 === 0 ? FREE_GLASSES[(h >>> 10) % FREE_GLASSES.length] : null,
+    mustache: (h >>> 12) % 4 === 0 ? FREE_MUSTACHES[(h >>> 14) % FREE_MUSTACHES.length] : null,
   };
 }
 
