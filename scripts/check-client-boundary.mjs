@@ -244,6 +244,7 @@ const PUBLIC_ROUTES = new Map([
   ["src/app/api/auth/[...path]/route.ts", "better-auth'un kendi yolu: giriş, kayıt, doğrulama hepsi burada"],
   ["src/app/api/config/route.ts", "istemcinin açılışta okuduğu genel yapılandırma; sır taşımıyor"],
   ["src/app/api/turnstile/route.ts", "captcha doğrulaması: çağıran henüz giriş yapmamış olabilir"],
+  ["src/app/api/client-errors/route.ts", "hata raporu: hataların çoğu girişte ya da oturum düşmüşken; kişiye bağlanmıyor, yalnız gruplanıyor (web aynı-köken, mobil sürüm başlığı)"],
   ["src/app/api/handoff-nonce/route.ts", "giriş devrinin cihaz değeri: çağıran tanım gereği henüz girişsiz; yalnız rastgele sayı döner, veri okumuyor ya da yazmıyor"],
 ]);
 

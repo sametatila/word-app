@@ -870,6 +870,26 @@ export async function getSessionRead(): Promise<SessionRead> {
  * Doğrulama bilgisi ayrı dönüyor çünkü e-postanın kendisi sahipliği kanıtlamaz:
  * doğrulama kapalıyken kayıt, yazılan adresle anında oturum veriyor.
  */
+/**
+ * Admin yazma kapısının ihtiyaç duyduğu oturum ayrıntıları: 2FA açık mı,
+ * oturum ne zaman AÇILDI (tazelenme değil, ilk giriş). Oturum yoksa null.
+ */
+export async function getAdminSessionInfo(): Promise<{ email: string; verified: boolean; userId: string; twoFactor: boolean; sessionCreatedAt: Date } | null> {
+  try {
+    const data = await auth.api.getSession({ headers: await headers() });
+    if (!data?.user?.email) return null;
+    return {
+      email: data.user.email,
+      verified: data.user.emailVerified === true,
+      userId: data.user.id,
+      twoFactor: (data.user as { twoFactorEnabled?: boolean | null }).twoFactorEnabled === true,
+      sessionCreatedAt: new Date(data.session.createdAt),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export async function getUserEmail(): Promise<{ email: string | null; verified: boolean }> {
   try {
     const data = await auth.api.getSession({ headers: await headers() });

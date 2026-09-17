@@ -1,6 +1,6 @@
 import "server-only";
 import { sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 
 /**
  * Tek kullanıcının yönetim görünümü (/admin/users/[id]).
@@ -16,16 +16,6 @@ import { db } from "@/lib/db";
  */
 
 type Row = Record<string, unknown>;
-async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
-  try {
-    const r = (await db.execute(q)) as unknown;
-    if (Array.isArray(r)) return r as Row[];
-    return ((r as { rows?: Row[] }).rows ?? []) as Row[];
-  } catch (err) {
-    console.error("[admin-user] sorgu hatası", err);
-    return [];
-  }
-}
 const num = (v: unknown) => Number(v) || 0;
 const str = (v: unknown) => (v == null ? "" : String(v));
 
@@ -56,9 +46,11 @@ export type AdminUser = {
   ai: Table;
   events: Table;
   errors: Table;
+  issues: QueryIssue[];
 };
 
 export async function getAdminUser(userId: string): Promise<AdminUser> {
+  const { rows, issues } = queryRunner("kullanıcı");
   const id = userId.slice(0, 64);
   const [
     acc, providers, sessions, prof, ent, grants, act, wordStates, lessons, path, skills, exams, mock, quiz, placements, boss,
@@ -180,5 +172,6 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
     ai: table(ai, ["kind", "provider", "calls", "errors"]),
     events: table(events, ["at", "name", "kind", "value"]),
     errors: table(errors, ["at", "screen", "value"]),
+    issues,
   };
 }

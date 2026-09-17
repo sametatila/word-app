@@ -30,11 +30,18 @@ export default async function AdminAppPage() {
   }
   const [control, data, broadcasts, last] = await Promise.all([appControl(), appAdminData(), listBroadcasts(), lastBroadcastAt().catch(() => null)]);
   return (
+    <>
+    {data.issues.length ? (
+      <p role="alert" className="mx-auto mt-3 max-w-4xl px-4 text-caption" style={{ color: "#dc2626" }}>
+        {data.issues.length} sorgu başarısız: {data.issues.map((i) => i.message).join(" · ").slice(0, 300)}
+      </p>
+    ) : null}
     <AppAdmin
       control={control}
       data={data}
       broadcasts={broadcasts}
       nextBroadcastAt={last ? new Date(last.getTime() + BROADCAST_COOLDOWN_H * 3_600_000).toISOString() : null}
     />
+    </>
   );
 }

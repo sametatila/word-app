@@ -20,6 +20,9 @@ buildscript {
         // dosya olmadan uygulanırsa yapı çöker ve anahtarları olmayan bir
         // geliştirici hiçbir şey derleyemez.
         classpath("com.google.gms:google-services:4.4.2")
+        // Crashlytics (native çökme + ANR raporu, ücretsiz). google-services ile
+        // aynı koşula bağlı: dosya yoksa uygulanmıyor (bkz. app/build.gradle).
+        classpath("com.google.firebase:firebase-crashlytics-gradle:3.0.3")
     }
 }
 

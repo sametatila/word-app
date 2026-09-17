@@ -87,6 +87,11 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
         <a href="/admin" className="text-caption" style={{ color: "var(--text-muted)" }}>← Yönetim</a>
         <h1 className="text-h1">{title}</h1>
         <p className="muted font-mono text-caption">{u.id}</p>
+        {u.issues.length ? (
+          <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>
+            {u.issues.length} sorgu başarısız, bazı bölümler eksik: {u.issues.map((i) => i.message).join(" · ").slice(0, 300)}
+          </p>
+        ) : null}
         {suspension ? (
           <p className="text-caption" style={{ color: "var(--color-rose)" }}>ASKIDA: {suspension.reason}</p>
         ) : null}

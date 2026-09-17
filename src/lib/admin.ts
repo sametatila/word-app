@@ -1,8 +1,11 @@
 import "server-only";
 import { sql } from "drizzle-orm";
+import { NextResponse } from "next/server";
+import { getAdminSessionInfo, getUserEmail } from "@/lib/auth/server";
+import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
-import { getUserEmail } from "@/lib/auth/server";
 import { computeFunnel, type Funnel } from "@/lib/funnel";
+import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 
 /**
  * Admin panosu veri katmanı (lernomi.app/admin). Sahibin sistemi yönetmesi + tüm
@@ -33,17 +36,53 @@ export async function adminGate(): Promise<{ ok: boolean; email: string | null }
   return { ok: !!email && verified && ADMINS.includes(email.toLowerCase()), email };
 }
 
-type Row = Record<string, unknown>;
-async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
+/**
+ * ADMIN YAZMA KAPISI — okumadan daha sıkı.
+ *
+ * Panel artık hesap siliyor, askıya alıyor, herkese bildirim gönderiyor, bakım
+ * açıyor ve premium veriyor; tek bir çalınmış oturum çerezi bunların hepsine
+ * yetiyordu (eleştirel denetim 2026-09-17). İki katman:
+ *
+ *   HER YAZMA   aynı-köken + ADMIN_EMAILS + doğrulanmış e-posta + hesapta İKİ
+ *               ADIMLI DOĞRULAMA açık. 2FA'sız admin paneli OKUYABİLİR ama
+ *               hiçbir şey değiştiremez; panel bunu üstte yazıyor.
+ *   HASSAS      ayrıca oturum son 12 saatte AÇILMIŞ olmalı (tazelenmiş değil).
+ *               Uzun ömürlü bir çerezle geri alınamaz işlem yapılamasın.
+ *
+ * Her geçen yazma `admin_audit`e düşüyor (`logAdminAction`).
+ */
+export const ADMIN_FRESH_HOURS = 12;
+export type AdminWriter = { email: string; userId: string; ip: string | null };
+
+export async function adminWriteGate(req: Request, level: "normal" | "sensitive"): Promise<{ ok: true; admin: AdminWriter } | { ok: false; response: NextResponse }> {
+  const deny = (error: string, status = 403) => ({ ok: false as const, response: NextResponse.json({ error }, { status }) });
+  if (!sameOrigin(req)) return deny("forbidden");
+  const s = await getAdminSessionInfo();
+  if (!s || !s.verified || !ADMINS.includes(s.email.toLowerCase())) return deny("forbidden");
+  if (!s.twoFactor) return deny("admin_2fa_required");
+  if (level === "sensitive" && Date.now() - s.sessionCreatedAt.getTime() > ADMIN_FRESH_HOURS * 3_600_000) return deny("admin_reauth_required");
+  return { ok: true, admin: { email: s.email, userId: s.userId, ip: req.headers.get("x-real-ip") } };
+}
+
+/** Panel üst satırı için: 2FA açık mı, oturum hassas işlem için taze mi. */
+export async function adminSecurityState(): Promise<{ twoFactor: boolean; freshForSensitive: boolean }> {
+  const s = await getAdminSessionInfo();
+  return {
+    twoFactor: s?.twoFactor === true,
+    freshForSensitive: !!s && Date.now() - s.sessionCreatedAt.getTime() <= ADMIN_FRESH_HOURS * 3_600_000,
+  };
+}
+
+/** Admin işlem kaydı. Yazma hatası işlemi durdurmuyor ama loga düşüyor. */
+export async function logAdminAction(admin: AdminWriter, action: string, target: string | null, detail?: Record<string, unknown>): Promise<void> {
   try {
-    const r = (await db.execute(q)) as unknown;
-    if (Array.isArray(r)) return r as Row[];
-    return ((r as { rows?: Row[] }).rows ?? []) as Row[];
+    await db.execute(sql`insert into admin_audit (admin_email, action, target, detail, ip)
+      values (${admin.email}, ${action}, ${target}, ${detail ? JSON.stringify(detail) : null}::jsonb, ${admin.ip})`);
   } catch (err) {
-    console.error("[admin] sorgu hatası", err);
-    return [];
+    console.error("[admin-audit]", (err as Error).message);
   }
 }
+
 const num = (v: unknown) => Number(v) || 0;
 const str = (v: unknown) => (v == null ? "" : String(v));
 
@@ -105,9 +144,14 @@ export type AdminData = {
   mail: { kind: string; ok: number; fail: number; cap: number }[];
   ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number; chars: number }[];
   generatedAt: string;
+  /** Başarısız sorgular — boş değilse panel üstte kırmızı satırla söylüyor. */
+  issues: QueryIssue[];
 };
 
 export async function getAdminData(): Promise<AdminData> {
+  // Hataları yutan ama saklayan çalıştırıcı (lib/admin-query): kırılan bölüm
+  // "veri yok" diye görünmesin, sayfa başarısız sorguları listelesin.
+  const { rows, issues } = queryRunner("pano");
   const [kpiRows, trend, levels, funnel, events30, recent, hard, errors, games, users] = await Promise.all([
     rows(sql`
       select
@@ -121,7 +165,8 @@ export async function getAdminData(): Promise<AdminData> {
         (select count(distinct user_id) from daily_stats where day >= current_date - 29)::int as mau,
         (select count(*) from profiles where current_streak > 0)::int as streak_users,
         (select coalesce(sum(total_xp),0) from profiles)::bigint as total_xp,
-        (select count(*) from reviews)::bigint as total_reviews,
+        -- Özet tablodan (lib/admin-query refreshRollups): tam tarama yok.
+        (select coalesce(sum(n),0) from reviews_daily)::bigint as total_reviews,
         (select coalesce(sum(correct),0)::float / nullif(sum(reviews),0) from daily_stats) as accuracy,
         (select coalesce(avg(current_streak),0) from profiles where current_streak > 0) as avg_streak,
         (select coalesce(sum(reviews),0) from daily_stats where day >= current_date)::int as reviews1d,
@@ -153,11 +198,12 @@ export async function getAdminData(): Promise<AdminData> {
       group by w.course, w.de, w.tr, w.niveau having sum(uw.lapses) > 0
       order by sum(uw.lapses) desc limit 20
     `),
-    rows(sql`select coalesce(error_type,'—') as type, count(*)::int as count from reviews where error_type is not null group by error_type order by count desc limit 12`),
+    // Son 30 gün: `reviews_created_idx` ile; tüm geçmiş taranmıyor.
+    rows(sql`select coalesce(error_type,'—') as type, count(*)::int as count from reviews where error_type is not null and created_at >= now() - interval '30 days' group by error_type order by count desc limit 12`),
     rows(sql`
-      select game, count(*)::int as count,
-             coalesce(avg(case when correct then 1.0 else 0.0 end),0) as accuracy
-      from reviews group by game order by count desc limit 12
+      select game, sum(n)::int as count,
+             coalesce(sum(correct)::float / nullif(sum(n), 0), 0) as accuracy
+      from reviews_daily group by game order by count desc limit 12
     `),
     rows(sql`
       select p.user_id, coalesce(p.display_name,'') as name, p.level, p.course,
@@ -237,5 +283,6 @@ export async function getAdminData(): Promise<AdminData> {
     mail: mail.map((r) => ({ kind: str(r.kind), ok: num(r.ok), fail: num(r.fail), cap: num(r.cap) })),
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens), chars: num(r.chars) })),
     generatedAt: new Date().toISOString(),
+    issues,
   };
 }

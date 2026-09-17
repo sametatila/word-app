@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
+import { adminErrorText } from "@/lib/admin-errors";
 
 /**
  * Kullanıcı detay sayfasının hesap işlemleri: askıya al / kaldır, sil.
@@ -35,7 +36,7 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
     try {
       const res = await apiFetch("/api/admin/users", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ userId, ...body }) });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) setMsg(`İşlem yapılamadı: ${data.error ?? res.status}`);
+      if (!res.ok) setMsg(adminErrorText(data.error ?? res.status));
       else setDone(ok);
     } catch {
       setMsg("Ağ hatası");

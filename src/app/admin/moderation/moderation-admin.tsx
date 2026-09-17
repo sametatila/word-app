@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { ModerationData, ModerationDecision, ModerationTarget, ReportedPerson } from "@/lib/moderation-admin";
+import { adminErrorText } from "@/lib/admin-errors";
 
 /**
  * Şikâyet kuyruğu görünümü.
@@ -122,7 +123,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
       });
       if (!res.ok) {
         const code = String(((await res.json().catch(() => ({}))) as { error?: string }).error ?? res.status);
-        setMsg(ERROR_TR[code] ?? `Hata: ${code}`);
+        setMsg(ERROR_TR[code] ?? adminErrorText(code));
         return;
       }
       setGone((s) => new Set(s).add(key));

@@ -6,6 +6,7 @@ import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
 import { useT } from "@/lib/i18n/client";
+import { reportError } from "@/lib/error-report";
 
 export default function ErrorPage({
   error,
@@ -20,6 +21,8 @@ export default function ErrorPage({
     // Hata sınırına düşen ekran ölçülüyor: "bir şeyler ters gitti"yi kaç
     // kişi, hangi ekranda gördü — yoksa yalnız şikâyet edenler sayılır.
     track("client_error", 1, screenKey(window.location.pathname));
+    // Hangi hata: mesaj ve yığın gruplanarak panele (lib/error-report).
+    reportError(error, screenKey(window.location.pathname));
   }, [error]);
 
   /* DURUM ŞABLONU (components/flow). Kök sınır uygulama kabuğunun dışında

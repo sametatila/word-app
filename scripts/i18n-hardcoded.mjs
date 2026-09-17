@@ -84,6 +84,15 @@ const SKIP = [
   // panelde üç dilde yazılıyor.
   "lib/app-control.ts",
   "lib/push-broadcast.ts",
+  // İşletim uyarıları ve hata kaydı: Telegram'a giden metin ve sunucu günlüğü,
+  // kullanıcıya hiç görünmüyor.
+  "lib/alerts.ts",
+  "lib/telegram.ts",
+  "lib/client-errors.ts",
+  "lib/admin-query.ts",
+  "lib/admin-errors.ts",
+  // Parçalı yazılı: tam yol dizgisi `check:endpoints`te ucu "çağrılıyor" gösterirdi.
+  ["app", "api", "cron", "alerts"].join("/"),
   "app/(app)/analytics",
   "app/demo-games",
   "app/demo-feedback",

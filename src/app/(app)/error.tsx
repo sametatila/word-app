@@ -6,6 +6,7 @@ import { FlowColumn, FlowActions, StateBody } from "@/components/flow";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
 import { useT } from "@/lib/i18n/client";
+import { reportError } from "@/lib/error-report";
 
 /**
  * Uygulama kabuğunun İÇİNDEKİ hata sınırı.
@@ -31,6 +32,8 @@ export default function AppError({
   useEffect(() => {
     console.error("[lernomi]", error);
     track("client_error", 1, screenKey(window.location.pathname));
+    // Hangi hata: mesaj ve yığın gruplanarak panele (lib/error-report).
+    reportError(error, screenKey(window.location.pathname));
   }, [error]);
 
   /* DURUM ŞABLONU (components/flow): üzgün maskot · başlık · tek cümle ·

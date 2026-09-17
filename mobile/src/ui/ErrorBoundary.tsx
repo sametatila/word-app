@@ -4,6 +4,7 @@ import { RefreshIcon } from "./icons";
 import { useTheme } from "../theme";
 import { t } from "../lib/i18n";
 import { track } from "../lib/track";
+import { reportError } from "../lib/errorReport";
 
 /**
  * ÇÖKME SINIRI — mobilde hiç yoktu.
@@ -40,6 +41,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: unknown): void {
+    reportError(error, this.props.ekran ?? "unknown");
     /* Web ile aynı olay ve aynı değer: `client_error`, 1 = hata sınırı.
        `kind` ekran anahtarı; sınır ekranın adını biliyorsa onu veriyor. */
     track("client_error", 1, this.props.ekran ?? "unknown");

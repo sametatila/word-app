@@ -37,6 +37,7 @@ const ALLOW = {
   "/api/plan": "istemcisi parite turunda kaldırıldı (web-parity §7); e2e `buildPlan`i doğrudan deniyor",
   "/api/premium/consume": "tur başına kotayı sayan uç, çağıranı yok (web-parity §11.24)",
   "/api/cron/assess": "systemd timer (lernomi-cron-assess, her gün 04:15 UTC)",
+  "/api/cron/alerts": "systemd timer (lernomi-cron-alerts, 10 dakikada bir) — uyarı motoru",
   "/api/premium/webhook/[[...provider]]": "mağaza (Play/RevenueCat) sunucudan sunucuya çağırıyor",
 };
 

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { track, resetOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
+import { reportError } from "@/lib/error-report";
 
 /**
  * Ekran ölçümü — uygulama kabuğuna bir kez takılır (WP-80).
@@ -142,8 +143,12 @@ export function Telemetry() {
       // Uzantı ve çapraz kaynak betiklerinin "Script error." gürültüsü değil.
       if (!e.message || /^Script error/.test(e.message) || /ResizeObserver loop/.test(e.message)) return;
       report();
+      reportError(e.error ?? e.message, screen.current);
     };
-    const onReject = () => report();
+    const onReject = (e: PromiseRejectionEvent) => {
+      report();
+      reportError(e.reason, screen.current);
+    };
     window.addEventListener("error", onError);
     window.addEventListener("unhandledrejection", onReject);
     return () => {

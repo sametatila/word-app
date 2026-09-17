@@ -4,6 +4,7 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { AppControl } from "@/lib/app-control-shared";
 import type { AppAdminData } from "@/lib/admin-app";
+import { adminErrorText } from "@/lib/admin-errors";
 
 /**
  * Uygulama işletimi görünümü — dört bölüm, yazma olanlar önce:
@@ -58,7 +59,7 @@ export function AppAdmin({
     if (r.ok && r.data.control) {
       setCfg(r.data.control as AppControl);
       setMsg(note);
-    } else setMsg(`Kaydedilemedi: ${String(r.data.error ?? "")}`);
+    } else setMsg(`Kaydedilemedi: ${adminErrorText(String(r.data.error ?? ""))}`);
   }
 
   const setNum = (group: "minBuild" | "latestBuild", p: "ios" | "android", v: string) =>
@@ -198,7 +199,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
     const r = await post({ action: "send_broadcast", text, url, audience: audience(test) });
     setBusy(false);
     if (!r.ok) {
-      setMsg(ERROR_TR[String(r.data.error)] ?? `Gönderilemedi: ${String(r.data.error ?? "")}`);
+      setMsg(ERROR_TR[String(r.data.error)] ?? adminErrorText(String(r.data.error ?? "")));
       return;
     }
     setMsg(test ? "Test bildirimi kendi hesabına gönderildi." : `Gönderim başladı: ${String(r.data.targeted)} kullanıcı.`);

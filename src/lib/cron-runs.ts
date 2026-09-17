@@ -25,7 +25,7 @@ import { cronRuns } from "@/lib/db/schema";
 /** Kayıt penceresi — gizlilik politikasının yedek penceresiyle aynı sayı. */
 const KEEP_DAYS = 30;
 
-export type CronName = "reminders" | "assess" | "summary" | "streak-alert" | "weekly-reminder";
+export type CronName = "reminders" | "assess" | "summary" | "streak-alert" | "weekly-reminder" | "alerts";
 
 export async function recordCronRun(
   name: CronName,

@@ -1,6 +1,7 @@
 import { AppState, Dimensions, Platform, type AppStateStatus } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "./track";
+import { reportError } from "./errorReport";
 
 /**
  * Ekran ölçümü — web `components/telemetry` ile aynı üç soruyu cevaplıyor:
@@ -87,7 +88,9 @@ async function ilkAcilis(): Promise<void> {
 }
 
 /** Yakalanmamış hata — ekran adıyla birlikte, dakikada en çok bir. */
-function hata(): void {
+function hata(e?: unknown): void {
+  // Hangi hata: mesaj ve yığın (kendi sınırı var, sayaçtan bağımsız).
+  if (e !== undefined) reportError(e, ekran || "unknown");
   const now = Date.now();
   if (now - sonHata < ERROR_WINDOW_MS) return;
   sonHata = now;
@@ -110,7 +113,7 @@ export function attachTelemetry(): () => void {
   const eu = (globalThis as { ErrorUtils?: ErrorUtilsShape }).ErrorUtils;
   const onceki = eu?.getGlobalHandler?.();
   eu?.setGlobalHandler?.((e, fatal) => {
-    hata();
+    hata(e);
     onceki?.(e, fatal);
   });
   return () => {

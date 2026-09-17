@@ -1,23 +1,12 @@
 import "server-only";
 import { sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 
 /**
  * /admin/app sayfasının okuduğu işletim verisi: sürüm dağılımı, hesap silme
  * kaydı, yürürlükteki askılar. Her sorgu kendi hatasını yutuyor.
  */
 
-type Row = Record<string, unknown>;
-async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
-  try {
-    const r = (await db.execute(q)) as unknown;
-    if (Array.isArray(r)) return r as Row[];
-    return ((r as { rows?: Row[] }).rows ?? []) as Row[];
-  } catch (err) {
-    console.error("[admin-app] sorgu hatası", err);
-    return [];
-  }
-}
 const num = (v: unknown) => Number(v) || 0;
 const str = (v: unknown) => (v == null ? "" : String(v));
 const iso = (v: unknown) => (v ? new Date(String(v)).toISOString() : "");
@@ -26,9 +15,11 @@ export type AppAdminData = {
   versions: { platform: string; version: string; build: number; users: number; active7: number }[];
   deletions: { source: string; count30: number; total: number; avgAgeDays: number; reasons: string }[];
   suspensions: { userId: string; name: string; reason: string; until: string; admin: string; at: string }[];
+  issues: QueryIssue[];
 };
 
 export async function appAdminData(): Promise<AppAdminData> {
+  const { rows, issues } = queryRunner("uygulama");
   const [versions, deletions, suspensions] = await Promise.all([
     rows(sql`
       select platform, app_version, build, count(*)::int users,
@@ -51,6 +42,7 @@ export async function appAdminData(): Promise<AppAdminData> {
   return {
     versions: versions.map((r) => ({ platform: str(r.platform), version: str(r.app_version), build: num(r.build), users: num(r.users), active7: num(r.active7) })),
     deletions: deletions.map((r) => ({ source: str(r.source), count30: num(r.c30), total: num(r.total), avgAgeDays: num(r.avg_age), reasons: str(r.reasons) })),
+    issues,
     suspensions: suspensions.map((r) => ({ userId: str(r.user_id), name: str(r.name), reason: str(r.reason), until: iso(r.until), admin: str(r.admin), at: iso(r.created_at) })),
   };
 }

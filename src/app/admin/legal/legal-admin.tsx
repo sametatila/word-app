@@ -5,6 +5,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { LEGAL_LOCALES, type LegalLocale } from "@/lib/legal";
 import type { ConfigProcessor, LegalConfig } from "@/lib/legal/shape";
 import { LegalStyles, renderLegalBody } from "@/lib/legal/markdown";
+import { adminErrorText } from "@/lib/admin-errors";
 
 /**
  * Hukuki metin ve bilgi yönetimi.
@@ -71,7 +72,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
       const data = (await res.json()) as Record<string, unknown>;
       if (!res.ok) {
         const problems = (data.problems as Problem[] | undefined) ?? [];
-        setMsg(problems.length ? problems.map(PROBLEM_TEXT).join(" · ") : `Hata: ${String(data.error ?? res.status)}`);
+        setMsg(problems.length ? problems.map(PROBLEM_TEXT).join(" · ") : adminErrorText(String(data.error ?? res.status)));
         return null;
       }
       return data;
