@@ -22,6 +22,8 @@ import type { QuizWeek } from "../types";
  *    kişi nesnesi Türkçede `-e`, Almancada Dativ ile geliyor — `said reporters`.
  *  - `w02-v3` (`announce`): Türkçe `bildirmek`, Almanca `mitteilen/informieren`
  *    → `was informed`.
+ *
+ * EK TEKRAR: `w02-g6` W1'in `past.did-question` hedefine haber bağlamında dönüyor.
  */
 export const EN_B1_W02: QuizWeek = {
   id: "en-b1-w02",
@@ -266,6 +268,22 @@ export const EN_B1_W02: QuizWeek = {
           options: ["said", "told", "talked", "spoke"],
           answer: 1,
           why: "Almancada `sagen` kişiyi Dativ'de alır (`den Reportern sagen`), bu da `said reporters` üretiyor. İngilizcede kişi doğrudan nesne olunca fiil `tell`: `told reporters`.",
+        },
+      },
+    },
+    {
+      id: "en-b1-w02-g6",
+      block: "grammar",
+      stem: "Where ___ that story? – In a post last night.",
+      options: ["did you read", "have you read", "do you read", "were you read"],
+      answer: 0,
+      why: "Cevap bitmiş, belli bir geçmiş anı gösteriyor (`last night`): soru past simple ile kurulur. Present perfect olayın zamanını değil bugüne etkisini öne çıkarır ve belli bir geçmiş zamanla birleşmez.",
+      targets: ["past.did-question", "tense.past-vs-present-perfect"],
+      byNative: {
+        de: {
+          options: ["did you read", "have you read", "do you read", "were you read"],
+          answer: 0,
+          why: "Almancada `Wo hast du das gelesen?` Perfekt'le soruluyor ve `Where have you read that?` aktarımı geliyor. Cevap belli bir geçmiş zaman (`last night`) verdiği için İngilizcede soru past simple: `Where did you read …?`.",
         },
       },
     },

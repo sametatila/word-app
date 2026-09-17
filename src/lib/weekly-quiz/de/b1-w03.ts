@@ -21,6 +21,9 @@ import type { QuizWeek } from "../types";
  *    İngilizcede varsayım geçmiş zaman biçimiyle kuruluyor (`If I had`) ve
  *    bu yüzden `hatte` geliyor.
  *  - `w03-v2` (`werden`): İngilizce konuşan için `become` → `bekommen`.
+ *
+ * EK TEKRAR: `w03-g6` W2'nin `konnektor.sondern` hedefine kariyer bağlamında
+ * dönüyor.
  */
 export const DE_B1_W03: QuizWeek = {
   id: "de-b1-w03",
@@ -279,6 +282,27 @@ export const DE_B1_W03: QuizWeek = {
           ],
           answer: 0,
           why: "`If I were you, I would do an apprenticeship` üç yerde Almancaya uymuyor: `wenn` fiili sona iter, ana cümlede `würde` özneden önce gelir, ve `machen` nesnenin arkasına, en sona geçer.",
+        },
+      },
+    },
+    {
+      id: "de-b1-w03-g6",
+      block: "grammar",
+      stem: "Ich möchte nicht Lehrerin werden, ___ Mechanikerin.",
+      options: ["aber", "oder", "sondern", "denn"],
+      answer: 2,
+      why: "İlk kısım olumsuz (`nicht Lehrerin`) ve ikinci kısım onun YERİNE geçen şeyi söylüyor: bu düzeltme `sondern` ile yapılır. `aber` bir karşıtlık ekler ama ilk kısmı geçersiz kılmaz; `denn` sebep, `oder` seçenek bildirir.",
+      targets: ["konnektor.sondern"],
+      byNative: {
+        tr: {
+          options: ["aber", "oder", "sondern", "denn"],
+          answer: 2,
+          why: "Türkçede iki kalıp da `ama` ile söylenebiliyor (`öğretmen değil ama tamirci`), bu yüzden `aber` seçiliyor. Almancada olumsuz bir kısmın yerine bir şey konuyorsa bağlaç `sondern` (`değil, … -dir`); `aber` yalnız bir karşıtlık ekler.",
+        },
+        en: {
+          options: ["aber", "oder", "sondern", "denn"],
+          answer: 2,
+          why: "İngilizce `but` Almancada ikiye bölünür: bir karşıtlık eklemek `aber`, olumsuzlanan bir şeyin yerine başkasını koymak `sondern`. `not a teacher but a mechanic` ikinci türden: `sondern`.",
         },
       },
     },

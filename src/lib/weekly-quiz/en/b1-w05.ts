@@ -23,6 +23,9 @@ import type { QuizWeek } from "../types";
  *    kuruluyor ve `has been canceled` getiriyor; Türkçede `iptal edildi`
  *    edilgenliği ekle taşıyor ve `be` düşüyor.
  *  - `w05-g4` (`If … were`): Almanca `wäre` → `would be`.
+ *
+ * EK TEKRAR: `w05-g6` W4'ün `passive.present`, `w05-g7` W4'ün `passive.modal`
+ * hedefine müşteri hizmetleri bağlamında dönüyor.
  */
 export const EN_B1_W05: QuizWeek = {
   id: "en-b1-w05",
@@ -263,6 +266,48 @@ export const EN_B1_W05: QuizWeek = {
           options: ["Although", "Despite", "However", "Because of"],
           answer: 0,
           why: "Türkçede `kötü organize edilmesine rağmen` fiili isimleştirip `-e rağmen` ekliyor, bu da `despite`ı çağırıyor. İngilizcede cümle olduğu gibi kalır ve önüne `although` gelir; `despite` yalnız isim öbeği alır.",
+        },
+      },
+    },
+    {
+      id: "en-b1-w05-g6",
+      block: "grammar",
+      stem: "Your internet bill ___ to you by email every month.",
+      options: ["sends", "is sending", "is sent", "becomes sent"],
+      answer: 2,
+      why: "Fatura bir şey göndermiyor, gönderiliyor: edilgen gerekiyor. Düzenli tekrarlanan bir işlem için `is` + fiilin üçüncü hâli. `sends` ve `is sending` faturayı gönderen özne yapar.",
+      targets: ["passive.present"],
+      byNative: {
+        tr: {
+          options: ["sends", "is sending", "is sent", "becomes sent"],
+          answer: 2,
+          why: "Türkçede `fatura her ay gönderilir` edilgenliği bir ekle taşıyor ve ayrı yardımcı fiil yok; bu yüzden `sends` yetiyor gibi görünüyor. İngilizcede edilgen `be` olmadan kurulamaz: `is sent`.",
+        },
+        de: {
+          options: ["sends", "is sending", "is sent", "becomes sent"],
+          answer: 2,
+          why: "Almancada `Die Rechnung wird jeden Monat geschickt` ve `werden` = `become` diye öğrenildiği için `becomes sent` geliyor. İngilizce edilgenin yardımcı fiili `be`: `is sent`.",
+        },
+      },
+    },
+    {
+      id: "en-b1-w05-g7",
+      block: "grammar",
+      stem: "The visit must ___ before Thursday.",
+      options: ["book", "be booked", "been booked", "booked be"],
+      answer: 1,
+      why: "Modal fiilli edilgen: modal + `be` + fiilin üçüncü hâli. Modal fiilden sonra yalın mastar gelir, `been` değil; `book` tek başına ziyareti randevu alan özne yapar.",
+      targets: ["passive.modal"],
+      byNative: {
+        tr: {
+          options: ["book", "be booked", "been booked", "booked be"],
+          answer: 1,
+          why: "Türkçede `ziyaret ayarlanmalı` tek sözcük: edilgen ve gereklilik eki fiile yapışıyor. İngilizcede üç ayrı parça ve sabit bir sıra var: `must` + `be` + `booked`.",
+        },
+        de: {
+          options: ["book", "be booked", "been booked", "booked be"],
+          answer: 1,
+          why: "Almancada `muss vor Donnerstag gebucht werden` sırası Partizip'i yardımcı fiilden önce koyuyor ve `booked be` üretiliyor. İngilizcede sıra ters: önce `be`, sonra fiilin üçüncü hâli.",
         },
       },
     },

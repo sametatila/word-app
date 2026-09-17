@@ -24,6 +24,9 @@ import type { QuizWeek } from "../types";
  *    istek; `Konnten Sie` doğrudan bu aktarımdan geliyor.
  *  - `w05-v2` (`bekommen`): Türkçede `almak` hem `nehmen` hem `bekommen`;
  *    İngilizcede `get` doğru, `become` → `werden` yanlış.
+ *
+ * EK TEKRAR: `w05-g6` W3'ün `konjunktiv2.haette`, `w05-g7` W4'ün
+ * `konnektor.obwohl-trotz` hedefine dönüyor.
  */
 export const DE_B1_W05: QuizWeek = {
   id: "de-b1-w05",
@@ -274,6 +277,43 @@ export const DE_B1_W05: QuizWeek = {
           options: ["muss bestellt werden", "bestellt muss werden", "werden bestellt muss", "bestellt werden muss"],
           answer: 3,
           why: "İngilizcede `that a part must be ordered` ana cümleyle aynı sırada kalıyor, o yüzden `muss bestellt werden` doğru görünür. Almancada `dass` çekimli modalı en sona iter: Partizip, `werden`, en sonda `muss`.",
+        },
+      },
+    },
+    {
+      id: "de-b1-w05-g6",
+      block: "grammar",
+      stem: "Wenn wir eine Heizung ___, die funktioniert, könnten die Kinder nachts schlafen.",
+      options: ["hätten", "haben", "hatten", "würden haben"],
+      answer: 0,
+      why: "Koşul gerçek değil (ısıtıcı şu an çalışmıyor), yani `wenn` kısmı da Konjunktiv II'ye girer. `haben` için `würde` ile değil kendi biçimiyle kurulur: `hätten`. `haben` gerçek bir koşul, `hatten` düz geçmiş zaman.",
+      targets: ["konjunktiv2.haette", "relativsatz.nominativ"],
+      byNative: {
+        tr: {
+          options: ["hätten", "haben", "hatten", "würden haben"],
+          answer: 0,
+          why: "Türkçede `çalışan bir kaloriferimiz olsa` varsayımı `-sa` eki tek başına taşıyor. Almancada şart kısmında fiilin kendisi Konjunktiv II'ye girmek zorunda: `hätten`. `haben` ise `varsa` demek, gerçekleşebilecek bir koşul.",
+        },
+        en: {
+          options: ["hätten", "haben", "hatten", "würden haben"],
+          answer: 0,
+          why: "İngilizcede `If we had a heating that works` geçmiş zaman biçimiyle kuruluyor ve `hatten` birebir karşılık gibi görünüyor. Almancada `hatten` yalnız geçmiş zaman; varsayım umlautla ayrılıyor: `hätten`.",
+        },
+      },
+    },
+    {
+      id: "de-b1-w05-g7",
+      block: "grammar",
+      stem: "___ die Heizung kaputt ist, arbeitet meine Frau weiter zu Hause.",
+      options: ["Trotz", "Wegen", "Deshalb", "Obwohl"],
+      answer: 3,
+      why: "Boşluktan sonra fiili sonda bir yan cümle geliyor (`… kaputt ist`) ve `weiter` beklentiye karşıt bir durum bildiriyor: `obwohl`. `trotz` aynı anlamı taşır ama `wegen` gibi yalnız bir isim öbeği alır; `deshalb` ise zarftır ve fiili ikinci sırada ister.",
+      targets: ["konnektor.obwohl-trotz", "nebensatz.verbend"],
+      byNative: {
+        tr: {
+          options: ["Trotz", "Wegen", "Deshalb", "Obwohl"],
+          answer: 3,
+          why: "Türkçede `kalorifer bozuk olmasına rağmen` fiili isimleştirip `-e rağmen` ekliyor ve bu `trotz`u çağırıyor. Almancada fiilli yan cümle `obwohl` ile açılır; `trotz` yalnız bir isim öbeğinden önce gelir (`trotz der kaputten Heizung`).",
         },
       },
     },

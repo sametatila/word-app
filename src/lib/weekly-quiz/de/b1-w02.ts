@@ -19,6 +19,9 @@ import type { QuizWeek } from "../types";
  *    (`politikacının konuşması`); Almancada tamlayan ARKADA ve durumu tanımlık
  *    taşıyor. İngilizcenin `-'s`i ise Almancada yalnız özel adlarda var.
  *  - `w02-v1` (`aktuell`): İngilizce konuşan için `actually` sahte dostu.
+ *
+ * EK TEKRAR: `w02-g6` W1'in `konnektor.trotzdem` hedefini V2 sırasıyla birlikte
+ * yokluyor.
  */
 export const DE_B1_W02: QuizWeek = {
   id: "de-b1-w02",
@@ -246,6 +249,42 @@ export const DE_B1_W02: QuizWeek = {
           options: ["wurde geschlossen", "geschlossen geworden", "hat geschlossen", "geschlossen wurde"],
           answer: 3,
           why: "İngilizcede `that the library was closed` sırası ana cümleyle aynı, bu yüzden `wurde geschlossen` doğru görünür. Almancada `dass` çekimli fiili sona iter: önce Partizip, en sonda `wurde`.",
+        },
+      },
+    },
+    {
+      id: "de-b1-w02-g6",
+      block: "grammar",
+      stem: "Welcher Satz ist richtig?",
+      options: [
+        "Die Bibliothek war teuer. Trotzdem finden die meisten Leser sie gut.",
+        "Die Bibliothek war teuer. Trotzdem die meisten Leser finden sie gut.",
+        "Die Bibliothek war teuer. Obwohl finden die meisten Leser sie gut.",
+        "Die Bibliothek war teuer, trotzdem die meisten Leser sie gut finden.",
+      ],
+      answer: 0,
+      why: "`trotzdem` bir bağlaç değil zarftır: cümlenin birinci konumunu kendisi doldurur ve çekimli fiil hemen arkasından gelir. `obwohl` ise bir bağlaçtır, fiili sona iten bir yan cümle açar ve yeni bir ana cümlenin başında duramaz.",
+      targets: ["konnektor.trotzdem", "wortstellung.v2"],
+      byNative: {
+        tr: {
+          options: [
+            "Die Bibliothek war teuer. Trotzdem finden die meisten Leser sie gut.",
+            "Die Bibliothek war teuer. Trotzdem die meisten Leser finden sie gut.",
+            "Die Bibliothek war teuer. Obwohl finden die meisten Leser sie gut.",
+            "Die Bibliothek war teuer, trotzdem die meisten Leser sie gut finden.",
+          ],
+          answer: 0,
+          why: "Türkçede `yine de` cümlenin başına gelir ve arkasındaki sıra değişmez (`yine de okurların çoğu beğeniyor`). Almancada `trotzdem` birinci konumu kaplar, bu yüzden fiil ikinci sırada kalmak için öznenin ÖNÜNE geçer.",
+        },
+        en: {
+          options: [
+            "Die Bibliothek war teuer. Trotzdem finden die meisten Leser sie gut.",
+            "Die Bibliothek war teuer. Trotzdem die meisten Leser finden sie gut.",
+            "Die Bibliothek war teuer. Obwohl finden die meisten Leser sie gut.",
+            "Die Bibliothek war teuer, trotzdem die meisten Leser sie gut finden.",
+          ],
+          answer: 0,
+          why: "İngilizcede `Still, most readers like it` diye zarftan sonra özne gelir. Almancada `trotzdem` birinci konumu doldurur ve fiil ikinci sırada kalmak için öznenin önüne geçer: `Trotzdem finden die meisten Leser …`.",
         },
       },
     },

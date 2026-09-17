@@ -20,6 +20,9 @@ import type { QuizWeek } from "../types";
  *    (`despite`/`although`) zaten var, varyant gerekmiyor.
  *  - `w04-g1` (`verkauft werden`): İngilizce `be sold` → `sein`.
  *  - `w04-v1` (`schützen`): İngilizce `save the environment` → `sparen`.
+ *
+ * EK TEKRAR: `w04-g6` W2'nin `passiv.von` ve W3'ün `praeposition.dativ`
+ * hedeflerini aynı boşlukta yokluyor.
  */
 export const DE_B1_W04: QuizWeek = {
   id: "de-b1-w04",
@@ -260,6 +263,22 @@ export const DE_B1_W04: QuizWeek = {
           ],
           answer: 0,
           why: "`During the winter they made plans` sırası Almancaya taşınınca özne fiilden önce kalıyor. Almancada birinci konumu edat öbeği aldığında fiil hemen arkasından gelir; `während` da tanımlığı Genitiv'e çeker: `des Winters`.",
+        },
+      },
+    },
+    {
+      id: "de-b1-w04-g6",
+      block: "grammar",
+      stem: "Erde und Werkzeug wurden ___ Verein bezahlt.",
+      options: ["von einen", "mit einem", "von einem", "bei einem"],
+      answer: 2,
+      why: "Edilgen cümlede işi yapan `von` ile verilir ve `von` her zaman Dativ ister: `ein Verein` → `von einem Verein`. `mit` bir araç, `bei` bir yer ya da kurum bildirir; `einen` ise Akkusativ biçimi.",
+      targets: ["passiv.von", "passiv.praeteritum", "praeposition.dativ"],
+      byNative: {
+        en: {
+          options: ["von einen", "mit einem", "von einem", "bei einem"],
+          answer: 2,
+          why: "İngilizcede edilgenin yapanı `by` ile gelir ve ses benzerliği `bei`i çağırır; ama `bei` bir yer ya da kurum bildirir. Yapan `von` ile verilir, `von` da Dativ ister: `von einem Verein`.",
         },
       },
     },
