@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
 import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
@@ -20,7 +20,9 @@ import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
 import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
-import { speakTarget, speakAndWaitVoiced, currentVoiceId, stopSpeaking } from "../lib/tts";
+import { speakTarget, speakAndWaitVoiced, prefetchDialogue, stopSpeaking } from "../lib/tts";
+import { dialogueCast } from "../lib/speakers";
+import { currentCourseId } from "../lib/courses";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
@@ -34,6 +36,18 @@ const SKILL_KEY: Record<string, string> = { reading: "skills.reading", listening
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
+  /*
+    "SESLİ OKU" UZUN PARÇALARDA HİÇ ÇALIŞMIYORDU.
+
+    Bütün parça tek istekte gidiyordu ve uç 600 karakterin üstünü 400
+    `bad_text` ile reddediyor: 120 okuma alıştırmasının 85'i (en uzunu 2245
+    karakter) sessizdi. Zararı da bununla kalmıyordu — köprü iki hatadan sonra
+    "sağlıksız" sayılıp OTURUMUN GERİ KALANINI cihaz sesine düşürüyordu, yani
+    bir uzun metin bütün uygulamanın sesini bozuyordu.
+
+    Bölme artık `speakTarget`in içinde; burada yapılan tek ek şey paragrafı
+    parça sınırı saymak — tek dizgeye eklenseydi paragraf geçişi duyulmazdı.
+  */
   return (
     <Card style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
@@ -89,6 +103,19 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
 
   useEffect(() => () => { run.current += 1; stopSpeaking(); }, []);
 
+  /*
+    KONUŞMACI BAŞINA AYRI SES + ÖN İNDİRME.
+
+    Bütün replikler kullanıcının TEK sesiyle okunuyordu; konuşmacı etiketi
+    transkriptte yazıyor ama kulakla ayrım yoktu — oysa dinleme alıştırmasının
+    ölçtüğü asıl iş bu. Kadro `dialogueCast`ten geliyor.
+
+    Ön indirme ekran açılır açılmaz: replikler tek tek çalınıyor (hangi
+    satırın okunduğu vurgulanıyor) ve her sınırda tam bir gidiş-dönüş vardı.
+  */
+  const cast = useMemo(() => dialogueCast(currentCourseId(), segments), [segments]);
+  useEffect(() => { prefetchDialogue(currentCourseId(), segments, slow); }, [segments, slow]);
+
   async function play() {
     const my = ++run.current;
     setStarted(false);
@@ -96,13 +123,11 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
     for (let i = 0; i < segments.length; i++) {
       if (my !== run.current) return;
       setSegIdx(i);
-      /* Kullanıcının SEÇTİĞİ ses, dinlemeye ayrılmış hızla. Eskiden
-         `speakAndWait` idi: köprüyü hiç denemiyor, doğrudan cihazın kendi
-         sesine gidiyordu (iOS'ta seçilen sesi de boş kimlikle eziyordu) ve
-         Android'de hız parametresi okunmadığı için "Yavaş" hiçbir şey
-         değiştirmiyordu. Satıra dokununca (`speakTarget`) ise nöral ses
-         çalıyordu: aynı alıştırmada iki ayrı ses. */
-      await speakAndWaitVoiced(segments[i].text, currentVoiceId(), { slow: slow ? "listenSlow" : "listen", onStart: () => { if (my === run.current) setStarted(true); } });
+      /* Kadro sesi, dinlemeye ayrılmış hızla. Eskiden `speakAndWait` idi:
+         köprüyü hiç denemiyor, doğrudan cihazın kendi sesine gidiyordu
+         (iOS'ta seçilen sesi de boş kimlikle eziyordu) ve Android'de hız
+         parametresi okunmadığı için "Yavaş" hiçbir şey değiştirmiyordu. */
+      await speakAndWaitVoiced(segments[i].text, cast[i].voice, { slow: slow ? "listenSlow" : "listen", pitch: cast[i].pitch, onStart: () => { if (my === run.current) setStarted(true); } });
     }
     if (my !== run.current) return;
     setPlaying(false);
@@ -123,7 +148,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
     stopSpeaking();
     setSegIdx(-1);
     setPlaying(false);
-    speakTarget(segments[i].text, { slow: slow ? "listenSlow" : "listen" });
+    speakTarget(segments[i].text, { slow: slow ? "listenSlow" : "listen", voice: cast[i].voice, pitch: cast[i].pitch });
   }
 
   return (

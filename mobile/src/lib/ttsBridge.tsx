@@ -2,7 +2,7 @@ import React, { useSyncExternalStore } from "react";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
-import { PACE_PARAM, paceOf, type Pace, type VoiceId } from "./voices";
+import { PACE_PARAM, PITCH_PARAM, paceOf, type Pace, type Pitch, type VoiceId } from "./voices";
 import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
 import { nativeDelay } from "./stt";
 
@@ -50,9 +50,40 @@ function paceArg(slow: Pace | boolean): string {
   return JSON.stringify(PACE_PARAM[pace]);
 }
 
-export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean): void {
+/**
+ * Köprü sayfasına giden perde argümanı.
+ *
+ * Varsayılan `"mid"` sayfada boş dizgeye çevriliyor, yani URL'ye hiç
+ * yazılmıyor: perdesiz adres eski adresle birebir aynı kalmalı, yoksa bugüne
+ * kadar ısınmış bütün önbellek girdileri iskalanır.
+ */
+function pitchArg(pitch: Pitch | undefined): string {
+  return JSON.stringify(pitch && pitch !== "mid" ? PITCH_PARAM[pitch] : "mid");
+}
+
+export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean, pitch?: Pitch): void {
   if (!bridgeReady() || !text) return;
-  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)}); true;`;
+  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)}); true;`;
+  try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
+}
+
+/**
+ * Sesleri ÇALMADAN indirir — diyalog başlamadan önce.
+ *
+ * Mobilde ön indirme hiç yoktu: replikler tek tek çalınıyor ve her sınırda
+ * tam bir gidiş-dönüş oluyordu (nöral ses ilk dinlemede bir-iki saniye).
+ * İndirme köprünün İÇİNDE yapılıyor çünkü çalacak olan da o: aynı WebView'in
+ * HTTP önbelleğine yazılan cevabı `new Audio(url)` ağa hiç çıkmadan alıyor.
+ * Native tarafta `fetch` etmek aynı önbelleği ısıtmazdı.
+ *
+ * Eski köprü sayfası (`max-age=3600`, deploy'dan sonra bir saate kadar
+ * cihazda kalabiliyor) `ttsPrefetch` tanımlamıyor; `&&` koruması o durumda
+ * hiçbir şey yapmadan geçiyor.
+ */
+export function bridgePrefetch(items: { voice: VoiceId; text: string; slow?: Pace | boolean; pitch?: Pitch }[]): void {
+  if (!bridgeReady() || !items.length) return;
+  const list = items.map((i) => `[${JSON.stringify(i.voice)},${JSON.stringify(i.text)},${paceArg(i.slow ?? false)},${pitchArg(i.pitch)}]`);
+  const js = `window.ttsPrefetch && window.ttsPrefetch([${list.join(",")}]); true;`;
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
 
@@ -152,7 +183,7 @@ function finishPending(): void {
   pendingResolve = null;
   if (r) r();
 }
-export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void): Promise<void> {
+export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void, pitch?: Pitch): Promise<void> {
   return new Promise((resolve) => {
     console.log("PROBE bridgeSpeak", JSON.stringify(text).slice(0, 40), "ready=", bridgeReady());
     if (!bridgeReady() || !text) { resolve(); return; }
@@ -178,7 +209,7 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | bo
     // kaldığı yerden devam ediyor. `nativeDelay` bu yüzden zaten vardı
     // (WalkModeScreen'deki `gap`), köprünün emniyet ağına uygulanmamıştı.
     void nativeDelay(cap).then(() => { if (pendingSeq === seq) finishPending(); });
-    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)}); true;`;
+    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)}); true;`;
     try { viewRef!.injectJavaScript(js); } catch { finishPending(); }
   });
 }

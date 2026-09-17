@@ -13,8 +13,8 @@ import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockI
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
-import { speakAndWaitVoiced } from "../lib/tts";
-import { voicesFor } from "../lib/voices";
+import { prefetchDialogue, speakAndWaitVoiced, speakDialogue } from "../lib/tts";
+import { castFor } from "../lib/voices";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentCourseId, currentTargetLocale } from "../lib/courses";
 import {
@@ -195,8 +195,10 @@ export function MockExamScreen() {
   const announce = useCallback(async (key: string, text: string) => {
     if (!voiced || announced.current.has(key)) return;
     announced.current.add(key);
-    const v = voicesFor(currentCourseId())[0];
-    try { await speakAndWaitVoiced(text, v.id); } catch { /* ses yoksa sınav durmaz */ }
+    // Yönerge ANONS sesi: kadronun ilk (kadın) sesi. Konuşma bölümünde karşı
+    // taraf bilerek erkek sesle konuşuyor, ikisi karışmasın.
+    const v = castFor(currentCourseId()).female[0];
+    try { await speakAndWaitVoiced(text, v); } catch { /* ses yoksa sınav durmaz */ }
   }, [voiced]);
 
   /* ── saat: görev başına ───────────────────────────────────────────────
@@ -382,25 +384,48 @@ export function MockExamScreen() {
   }, [phase, result, part, paper, attempt, answers, fail]);
 
   /* ── dinleme ────────────────────────────────────────────────────────── */
+  /*
+    İKİ SES YETMİYORDU. Buradaki döngü konuşmacıları sırayla dolaşıyordu ama
+    `voicesFor` kurs başına yalnız İKİ ses veriyor (kullanıcının seçebildiği
+    kadın+erkek): üçüncü konuşmacı birincinin sesine sarıyor, dört kişilik bir
+    diyalogda iki kişi birebir aynı sesle konuşuyordu. Üstelik dağıtım
+    cinsiyete bakmadığı için "Kundin" erkek sesine düşebiliyordu.
+
+    `speakDialogue` kadroyu kuruyor: etiketten cinsiyet çıkarılıyor, altı
+    konuşmacıya kadar ayrı ses veriliyor (gerekirse perde kaydırmasıyla) ve
+    sıra geçişine nefes payı konuyor. Hız da dinlemeye ayrılmış kademede.
+
+    HAK ARTIK SES BAŞLAYINCA YANIYOR. Eskiden düğmeye basıldığı an
+    düşülüyordu: ses gelmeyen her denemede öğrenci iki hakkından birini
+    hiçbir şey duymadan kaybediyordu.
+  */
   const play = useCallback(
     async (st: Extract<MockStimulus, { kind: "audio" }>) => {
       if (speaking) return;
-      const used = plays[st.id] ?? 0;
-      if (used >= st.plays) return;
-      setPlays((p) => ({ ...p, [st.id]: used + 1 }));
+      if ((plays[st.id] ?? 0) >= st.plays) return;
       setSpeaking(st.id);
-      const vs = voicesFor(currentCourseId());
-      const who: string[] = [];
-      for (const seg of st.segments) if (seg.speaker && !who.includes(seg.speaker)) who.push(seg.speaker);
-      for (const seg of st.segments) {
-        if (!alive.current) break;
-        const i = seg.speaker ? who.indexOf(seg.speaker) : 0;
-        await speakAndWaitVoiced(seg.text, (vs[i % vs.length] ?? vs[0]).id);
-      }
+      await speakDialogue(currentCourseId(), st.segments, {
+        onStart: () => setPlays((p) => ({ ...p, [st.id]: (p[st.id] ?? 0) + 1 })),
+      });
       if (alive.current) setSpeaking(null);
     },
     [plays, speaking],
   );
+
+  /*
+    ÖN İNDİRME — görev ekrana gelir gelmez, basılmadan önce.
+
+    Replikler tek tek çalınıyor ve her sınırda tam bir gidiş-dönüş vardı;
+    nöral ses ilk dinlemede bir-iki saniye sürüyor ve sınavda süre işliyor.
+    İndirme köprünün İÇİNDE yapılıyor, çünkü çalacak olan da o.
+  */
+  useEffect(() => {
+    for (const task of part?.tasks ?? []) {
+      for (const st of task.texts ?? []) {
+        if (st.kind === "audio") prefetchDialogue(currentCourseId(), st.segments);
+      }
+    }
+  }, [part]);
 
   /*
     YANLIŞ SEBEP SÖYLENİYORDU. Bağlantıdaki kâğıt ya da bölüm bulunamadığında
@@ -1042,8 +1067,10 @@ function SpeakingTask({
   async function run() {
     setStep("speaking");
     const said: string[] = [];
-    const vs = voicesFor(currentCourseId());
-    const partnerVoice = (vs[1] ?? vs[0]).id;
+    /* Karşı taraf sınav anonsundan AYRI bir ses: gerçek sözlü sınavda yönergeyi
+       okuyan görevli ile karşındaki konuşmacı aynı kişi değil. Kadronun erkek
+       sesi — kullanıcı tercihinden bağımsız, yani tek önbellek girdisi. */
+    const partnerVoice = castFor(currentCourseId()).male[0];
 
     if (!exchange.length) {
       const secs = task.speakSeconds ?? 120;

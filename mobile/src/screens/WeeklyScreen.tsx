@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { t, formatPercent, dateLocale } from "../lib/i18n";
 import { ScrollView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -11,7 +11,9 @@ import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, Det
 import { fetchQuiz, submitQuiz, type Quiz, type QuizBlock, type QuizClientItem, type QuizScore, type QuizStimulus } from "../game/weekly";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
-import { speakTarget } from "../lib/tts";
+import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
+import { dialogueCast } from "../lib/speakers";
+import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
@@ -295,10 +297,26 @@ export function WeeklyScreen() {
  * Okuma metni ya da dinleme diyaloğu.
  *
  * DİNLEMEDE METİN GÖRÜNMÜYOR: görünse madde dinleme değil okuma ölçerdi.
- * Her replik ayrı çalınıyor ki konuşmacı değişimi duyulabilsin ve tek bir
- * satır yeniden dinlenebilsin.
+ *
+ * KUYRUK VE ÇOK SES. Burada yalnızca replik başına birer düğme vardı:
+ * konuşmayı baştan sona dinlemenin yolu yoktu ve hepsi AYNI sesle
+ * okunuyordu — üstteki yorum "konuşmacı değişimi duyulabilsin" diyordu ama
+ * duyulan tek şey iki dokunuş arasındaki sessizlikti. Artık konuşmacı başına
+ * ayrı ses var ve tamamını sırayla çalan bir düğme eklendi; satır düğmeleri
+ * tek bir repliği yeniden dinlemek için duruyor. Webdeki `weekly-player` ile
+ * aynı davranış.
  */
 function Stim({ stim, colors }: { stim: QuizStimulus; colors: Palette }) {
+  const [playing, setPlaying] = useState(false);
+  const segs = stim.kind === "audio" ? stim.segments : null;
+  const cast = useMemo(() => (segs ? dialogueCast(currentCourseId(), segs) : []), [segs]);
+
+  /* Ön indirme: madde ekrana geldiği anda. Nöral ses ilk dinlemede bir-iki
+     saniye sürüyor ve bu bekleme her replikte tekrarlanıyordu. */
+  useEffect(() => { if (segs) prefetchDialogue(currentCourseId(), segs); }, [segs]);
+  // Madde değişince ya da ekrandan çıkınca ses susmalı.
+  useEffect(() => () => stopSpeaking(), []);
+
   const card = {
     backgroundColor: colors.surface,
     borderRadius: radii.lg,
@@ -321,11 +339,23 @@ function Stim({ stim, colors }: { stim: QuizStimulus; colors: Palette }) {
     <View style={card}>
       <Text variant="micro" color={colors.textMuted}>{(stim.genreTr || stim.genre).toLocaleUpperCase(dateLocale())}</Text>
       <Text variant="micro" color={colors.textMuted}>{t("wquiz.listen_hint")}</Text>
+      <PressableScale
+        onPress={() => {
+          if (playing) { stopSpeaking(); setPlaying(false); return; }
+          setPlaying(true);
+          void speakDialogue(currentCourseId(), stim.segments).then(() => setPlaying(false));
+        }}
+        accessibilityRole="button"
+        style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.xs, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}
+      >
+        <SpeakerIcon color={colors.primaryText} size={18} />
+        <Text variant="caption" color={colors.primaryText}>{t(playing ? "wquiz.listen_stop" : "wquiz.listen_all")}</Text>
+      </PressableScale>
       <View style={{ gap: spacing.xs, marginTop: spacing.xs }}>
         {stim.segments.map((seg, i) => (
           <PressableScale
             key={i}
-            onPress={() => speakTarget(seg.text)}
+            onPress={() => speakTarget(seg.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch })}
             accessibilityRole="button"
             accessibilityLabel={t("speakbutton.read_aloud")}
             style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingVertical: 6 }}

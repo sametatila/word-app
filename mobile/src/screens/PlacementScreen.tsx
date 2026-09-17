@@ -30,7 +30,7 @@ import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, fillOf, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
-import { speakTarget } from "../lib/tts";
+import { speakDialogue, speakTarget } from "../lib/tts";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
@@ -101,9 +101,24 @@ const SKILL_LABEL_KEY: Record<string, string> = {
 };
 
 function StageHead({ head, colors }: { head: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean }; colors: Palette }) {
+  /*
+    BÜTÜN BÖLÜMLER TEK DİZGEDE BİRLEŞTİRİLİYORDU.
+
+    İkisi birden bozuluyordu: uzun bir dinleme aşaması 600 karakteri aşınca uç
+    400 dönüyor ve HİÇ ses çıkmıyordu; çıktığında da iki konuşmacı tek ağızdan,
+    aralarında hiç duraklama olmadan okunuyordu. Seviye tespitinde ölçülen şey
+    tam da konuşmayı takip edebilmek.
+
+    Artık konuşmacı başına ayrı ses, replik başına ayrı parça, sıra geçişinde
+    pay — webdeki `placement-test` ile aynı davranış. Tek parçalı (düz metin)
+    aşama eski yoldan gidiyor, o da artık gerektiğinde bölünüyor.
+  */
   const say = () => {
-    const parcalar = head.segments?.length ? head.segments.map((sg) => sg.text) : head.text ? [head.text] : [];
-    speakTarget(parcalar.join(" "));
+    if (head.segments?.length) {
+      void speakDialogue(currentCourseId(), head.segments);
+      return;
+    }
+    if (head.text) speakTarget(head.text, { slow: "listen" });
   };
   return (
     <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginBottom: spacing.lg }}>

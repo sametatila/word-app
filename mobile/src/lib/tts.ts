@@ -2,10 +2,12 @@ import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trackOnce } from "./track";
 import { navigationRef } from "./pushRoute";
-import { type Pace, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { cleanForSpeech, splitForSpeech } from "./ttsText";
+import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
-import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
-import { speakServerTts, stopServerTts } from "./stt";
+import { bridgePrefetch, bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
+import { nativeDelay, speakServerTts, stopServerTts } from "./stt";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 
 /**
@@ -148,6 +150,7 @@ async function applyVoice(voice: VoiceId): Promise<string> {
  */
 export function stopSpeaking(): void {
   speakSeq++;
+  dialogueSeq++;
   try { bridgeStop(); } catch { /* yut */ }
   try { stopServerTts(); } catch { /* yut */ }
   try { Tts.stop(); } catch { /* yut */ }
@@ -165,6 +168,17 @@ export function stopSpeaking(): void {
  * ulaşılamıyorsa: çevrimdışı çalışan derste sessizlikten iyi.
  */
 let speakSeq = 0;
+/**
+ * DİYALOG döngüsünün ayrı iptal jetonu.
+ *
+ * `speakSeq` tek başına yetmiyor: `speakAndWaitVoiced` kendi jetonunu alıyor
+ * (`++speakSeq`) ve onu bekleyen dış döngünün jetonunu geçersizleştiriyor.
+ * İki ayrı şey iki ayrı sayaçla izleniyor — biri TEK bir okumanın, öteki
+ * REPLİK ZİNCİRİNİN iptali. `stopSpeaking` ikisini birden artırıyor; yeni bir
+ * `speakTarget` ya da `speakDialogue` da zinciri kesiyor, çünkü ortada tek bir
+ * ses kanalı var ve araya giren okuma zaten üstüne biner.
+ */
+let dialogueSeq = 0;
 /** Native oynatıcıda süren bir okuma var mı (köprüye geçerken kesmek için). */
 let nativePlaying = false;
 let probe = { at: 0, online: true };
@@ -184,31 +198,31 @@ async function serverUnreachable(): Promise<boolean> {
  * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
  * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
  */
-/**
- * Okunacak metnin sadeleştirilmesi — web `lib/tts/edge` `cleanForSpeech`ün eşi.
- *
- * Parantezli açıklamalar (Hochdeutsch karşılıkları) ve eğik çizgiyle ayrılmış
- * seçenekler ekranda anlamlı ama sesli okunduğunda cümleyi bozuyor. Boşluk
- * doldurma çizgisi ("_____") ise düpedüz yanlış okunuyordu: motor onu "alt
- * tire alt tire alt tire" diye seslendiriyor ve cümlenin kendisi kayboluyordu.
- *
- * Kural webde baştan beri vardı, mobilde HİÇ yoktu: aynı cümle iki
- * uygulamada iki farklı şey olarak okunuyordu.
- */
-export function cleanForSpeech(text: string): string {
-  return text
-    // İsteğe bağlı ön ek birleşiyor: "(Back-)Ofen" → "Backofen", "Ofen" değil (web ile aynı).
-    .replace(/\((\p{L}+)-\)\s*(\p{L}?)/gu, (_, pre: string, head: string) => pre + head.toLowerCase())
-    .replace(/\(.*?\)/g, "")
-    .replace(/_{2,}/g, " ")
-    .replace(/[/–—]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+/* Temizleme ve BÖLME kuralı `ttsText`te, webin `lib/tts/text`iyle birebir
+   aynı kopya (parite `npm run check:tts` 4. bölümde). Burada ayrı bir kopyası
+   vardı ve `speakAndWaitVoiced` onu HİÇ çağırmıyordu: cihaz sesine düşülen her
+   okumada "_____" yeniden "alt tire alt tire alt tire" diye okunuyordu. */
+export { cleanForSpeech } from "./ttsText";
 
-export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?: VoiceId }): void {
-  const clean = cleanForSpeech(text);
-  if (!clean) return;
+export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?: VoiceId; pitch?: Pitch }): void {
+  /*
+    UZUN METİN BÖLÜNÜYOR — bu yol eskiden sessizliğe çıkıyordu.
+
+    Metin olduğu gibi tek istekte gidiyordu ve uç 600 karakterin üstünü 400
+    `bad_text` ile REDDEDİYOR, kırpmıyor. Ölçüldü: 120 okuma alıştırmasının
+    85'i (en uzunu 2245 karakter) "Sesli oku"ya basıldığında hiç ses
+    vermiyordu — üstelik zararsız da değildi: köprü iki hatadan sonra
+    "sağlıksız" sayılıp OTURUMUN GERİ KALANINI cihaz sesine düşürüyordu, yani
+    bir uzun metin bütün uygulamanın sesini bozuyordu. Ders anlatımının
+    birleştirilmiş replikleri, rol yapma cevapları ve seviye tespitinin
+    birleştirilmiş bölümleri de aynı tavana açıktı.
+
+    Kısa metinler — kelime turu, tek cümle, yani çağrıların ezici çoğunluğu —
+    tek parça kalıyor ve eski yoldan gidiyor: adres birebir aynı, ısınmış
+    önbellek girdilerinin hiçbiri boşa düşmüyor.
+  */
+  const parts = splitForSpeech(text);
+  if (!parts.length) return;
   /* HANGİ EKRANDA SES DİNLENİYOR — ekran başına bir kez. Web aynı olayı aynı
      adla yazıyor (`speak-button` `trackOnce("tts_play", 0, ekran)`); Android
      hiç yazmıyordu, yani panelde ses kullanımı yalnız webden görünüyordu ve
@@ -218,23 +232,43 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
      etiketsiz yazılıyordu (sunucu `cleanKind`). */
   trackOnce("tts_play", 0, navigationRef.isReady() ? (navigationRef.getCurrentRoute()?.name ?? "unknown") : "unknown");
   const voice = opts?.voice ?? currentVoice;
+  // Süren bir replik zinciri varsa kesiliyor: tek ses kanalı var, araya giren
+  // okuma zaten üstüne binerdi ve zincir arkasından devam ederdi.
+  dialogueSeq++;
+  if (parts.length === 1) {
+    speakOne(parts[0], voice, opts?.slow ?? false, opts?.pitch ?? "mid");
+    return;
+  }
+  // Çok parçalı metin sırayla: köprüde tek bir `Audio` nesnesi var ve ikinci
+  // çağrı birincisini keser, o yüzden parçalar beklenerek zincirleniyor.
+  const seq = ++speakSeq;
+  void (async () => {
+    for (const part of parts) {
+      if (seq !== speakSeq) return;
+      await speakChunkAndWait(part, voice, opts?.slow ?? false, opts?.pitch ?? "mid");
+    }
+  })();
+}
+
+/** Tek parçanın çalınması — köprü → native → cihaz sesi. */
+function speakOne(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pitch): void {
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse aynı ses native
   // oynatıcıdan; ikisi de yoksa ve sunucuya ulaşılamıyorsa cihaz TTS'i.
   if (bridgeReady()) {
     // Köprü hazırlanırken native yoldan başlamış bir okuma sürüyor olabilir: üst üste binmesin.
     if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-    bridgeSpeak(voice, clean, opts?.slow ?? false);
+    bridgeSpeak(voice, clean, slow, pitch);
     return;
   }
   const seq = ++speakSeq;
   nativePlaying = true;
   try { Tts.stop(); } catch { /* yut */ }
-  void speakServerTts(voice, clean, opts?.slow ?? false).then(async (played) => {
+  void speakServerTts(voice, clean, slow, pitch).then(async (played) => {
     if (seq === speakSeq) nativePlaying = false;
     if (played || seq !== speakSeq || !(await serverUnreachable())) return;
     const ok = await ttsAvailable();
     if (!ok || seq !== speakSeq) return;
-    const rate = deviceRate(opts?.slow);
+    const rate = deviceRate(slow);
     try {
       Tts.stop();
       const iosVoiceId = await applyVoice(voice);
@@ -246,6 +280,18 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
       });
     } catch { /* yut */ }
   });
+}
+
+/** Tek parçayı çalar ve BİTMESİNİ bekler — zincirleme için. */
+async function speakChunkAndWait(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pitch): Promise<void> {
+  if (bridgeReady()) {
+    if (nativePlaying) { stopServerTts(); nativePlaying = false; }
+    await bridgeSpeakAndWait(voice, clean, slow, undefined, pitch);
+    return;
+  }
+  if (await speakServerTts(voice, clean, slow, pitch)) return;
+  if (!(await serverUnreachable())) return;
+  await speakAndWait(clean, langOf(voice), { slow, voice });
 }
 
 /** Ön izleme: belirli bir sesi hemen çalar (profil seçim ekranı). */
@@ -263,21 +309,114 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
  * köprüsü — web'le birebir: Türkçe ipucu Emel, Almanca cevap kullanıcının seçtiği
  * Katja/Conrad. Köprü hazır değilse cihaz TTS'ine düşer (dil sesten türetilir).
  */
-export async function speakAndWaitVoiced(text: string, voice: VoiceId, opts?: { slow?: Pace | boolean; onStart?: () => void }): Promise<void> {
-  if (!text) return;
-  if (bridgeReady()) {
-    if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-    await bridgeSpeakAndWait(voice, text, opts?.slow ?? false, opts?.onStart);
-    return;
-  }
-  opts?.onStart?.();
-  // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
+export async function speakAndWaitVoiced(
+  text: string,
+  voice: VoiceId,
+  opts?: { slow?: Pace | boolean; onStart?: () => void; pitch?: Pitch },
+): Promise<void> {
+  /*
+    İKİ HATA BİRDEN BURADAYDI.
+
+    1. TEMİZLEME HİÇ UYGULANMIYORDU. `speakTarget` metni `cleanForSpeech`ten
+       geçiriyordu, burası geçirmiyordu. Sunucu kendi kopyasıyla yeniden
+       temizlediği için köprü ve native yollar kurtuluyordu ama CİHAZ SESİNE
+       düşülen her okumada ham metin gidiyordu: "_____" yeniden "alt tire alt
+       tire alt tire" diye okunuyordu. Dinleme oynatıcısı, deneme sınavı,
+       eller serbest ders ve yürüyüş modu bu yoldan geçiyor.
+    2. UZUNLUK SINIRI YOKTU. 600 karakterin üstü 400 dönüyor, yani ses hiç
+       çıkmıyordu; üstelik köprü iki hatadan sonra oturum boyu sağlıksız
+       sayılıyordu.
+  */
+  const parts = splitForSpeech(text);
+  if (!parts.length) return;
   const seq = ++speakSeq;
-  if (await speakServerTts(voice, text, opts?.slow ?? false)) return;
-  if (seq !== speakSeq || !(await serverUnreachable())) return;
-  // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
-  // yazılıydı ve İngilizce ses Almanca okunurdu.
-  await speakAndWait(text, langOf(voice), { slow: opts?.slow, voice });
+  for (let i = 0; i < parts.length; i++) {
+    if (seq !== speakSeq) return;
+    const first = i === 0;
+    if (bridgeReady()) {
+      if (nativePlaying) { stopServerTts(); nativePlaying = false; }
+      await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch);
+      continue;
+    }
+    if (first) opts?.onStart?.();
+    // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
+    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid")) continue;
+    if (seq !== speakSeq || !(await serverUnreachable())) return;
+    // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
+    // yazılıydı ve İngilizce ses Almanca okunurdu.
+    await speakAndWait(parts[i], langOf(voice), { slow: opts?.slow, voice });
+  }
+}
+
+/** Diyalog repliği — kadro sesiyle birlikte, `speakDialogue`ın birimi. */
+export type DialogueTurnAudio = { speaker?: string; text: string };
+
+/**
+ * Konuşmacı değişiminde bırakılan pay (ms) — sıra geçişinin duyulması için.
+ * Web karşılığı `speak-button` `SPEAKER_GAP` (0,38 sn).
+ */
+const SPEAKER_GAP_MS = 380;
+
+/**
+ * Bir diyaloğu konuşmacı başına AYRI SESLE, sırayla okur.
+ *
+ * NEDEN. İçerik modeli konuşmacıyı taşıyor (`{ speaker?, text }`) ve etiket
+ * ekranda gösteriliyordu ama ses tarafı onu okumuyordu: iki kişilik bir
+ * konuşma tek ağızdan çalıyordu, yani dinleme alıştırmasının ölçtüğü asıl iş
+ * (kimin ne dediğini ayırmak) kulakla yapılamıyordu. Deneme sınavı ekranı
+ * sesleri döndürmeyi deniyordu ama `voicesFor` kurs başına yalnız İKİ ses
+ * veriyor; üçüncü konuşmacı birincinin sesine sarıyordu. `dialogueCast` altı
+ * konuşmacıya kadar ayrı ses (gerekirse perde kaydırmasıyla) veriyor.
+ *
+ * Kadro kullanıcının ses TERCİHİNE bakmıyor — gerekçe webdekiyle aynı: sabit
+ * kadro bir diyaloğu bütün kullanıcılarda tek önbellek girdisi yapıyor.
+ *
+ * `onSegment` hangi repliğin okunduğunu bildiriyor (transkript vurgusu).
+ * Dönüş, diyalog bittiğinde ya da `stopSpeaking()` çağrıldığında çözülüyor.
+ */
+export async function speakDialogue(
+  course: string,
+  segments: DialogueTurnAudio[],
+  opts?: { slow?: boolean; onSegment?: (i: number) => void; onStart?: () => void },
+): Promise<void> {
+  const cast = dialogueCast(course, segments);
+  const pace: Pace = opts?.slow ? "listenSlow" : "listen";
+  const run = ++dialogueSeq;
+  let previous = "";
+  for (let i = 0; i < segments.length; i++) {
+    if (run !== dialogueSeq) return;
+    // Pay yalnız konuşmacı GERÇEKTEN değiştiğinde: aynı kişinin iki cümlesi
+    // arasına sıra geçişi payı koymak konuşmayı kekeletirdi.
+    const who = segments[i].speaker ?? "";
+    if (i > 0 && who !== previous) await nativeDelay(SPEAKER_GAP_MS);
+    previous = who;
+    if (run !== dialogueSeq) return;
+    opts?.onSegment?.(i);
+    await speakAndWaitVoiced(segments[i].text, cast[i].voice, {
+      slow: pace,
+      pitch: cast[i].pitch,
+      onStart: i === 0 ? opts?.onStart : undefined,
+    });
+  }
+}
+
+/**
+ * Diyaloğun seslerini ÇALMADAN indirir — ekran açılır açılmaz.
+ *
+ * Mobilde ön indirme hiç yoktu: replikler tek tek çalınıyor ve her sınırda
+ * tam bir gidiş-dönüş oluyordu. Çalmayla AYNI kadrodan ve aynı hızdan
+ * geçiyor, yoksa ısınan adres çalınacak adres olmazdı.
+ */
+export function prefetchDialogue(course: string, segments: DialogueTurnAudio[], slow = false): void {
+  const cast = dialogueCast(course, segments);
+  bridgePrefetch(
+    segments.map((seg, i) => ({
+      voice: cast[i].voice,
+      text: cleanForSpeech(seg.text),
+      slow: (slow ? "listenSlow" : "listen") as Pace,
+      pitch: cast[i].pitch,
+    })),
+  );
 }
 
 /**
