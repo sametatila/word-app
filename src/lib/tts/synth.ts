@@ -2,7 +2,7 @@ import "server-only";
 import { cleanForSpeech, synthesizeEdge, MAX_TEXT } from "./edge";
 import { azureConfigured, synthesizeAzure } from "./azure";
 import { recordAiUsage } from "@/lib/ai-usage";
-import type { Pace, VoiceId } from "./voices";
+import type { Pace, Pitch, VoiceId } from "./voices";
 
 /**
  * Seslendirme zinciri.
@@ -41,6 +41,8 @@ export async function synthesizeSpeech(
   slow: Pace | boolean = false,
   /** Muhasebe için — kim tetikledi. Arka plan işlerinde boş. */
   userId: string | null = null,
+  /** Perde kaydırma — diyalogda konuşmacı ayırmanın son çaresi (bkz. voices `Pitch`). */
+  pitch: Pitch = "mid",
 ): Promise<SynthResult> {
   // Sadeleştirme tek yerde: iki yol da birebir aynı metni seslendirmeli.
   const clean = cleanForSpeech(text).slice(0, MAX_TEXT);
@@ -53,7 +55,7 @@ export async function synthesizeSpeech(
     recordAiUsage(userId, {
       kind: "tts",
       provider,
-      model: voice,
+      model: pitch === "mid" ? voice : `${voice}@${pitch}`,
       ok,
       ms: Date.now() - basladi,
       chars: clean.length,
@@ -62,7 +64,7 @@ export async function synthesizeSpeech(
 
   const edgeBas = Date.now();
   try {
-    const audio = await synthesizeEdge(clean, voice, slow);
+    const audio = await synthesizeEdge(clean, voice, slow, pitch);
     yaz("edge", true, edgeBas);
     return { audio, source: "edge" };
   } catch (err) {
@@ -73,7 +75,7 @@ export async function synthesizeSpeech(
   if (azureConfigured()) {
     const azureBas = Date.now();
     try {
-      const audio = await synthesizeAzure(clean, voice, slow);
+      const audio = await synthesizeAzure(clean, voice, slow, pitch);
       yaz("azure", true, azureBas);
       return { audio, source: "azure" };
     } catch (err) {

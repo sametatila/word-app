@@ -19,8 +19,15 @@ export function escapeXml(text: string): string {
 /**
  * Edge ve Azure'un ikisine de giden SSML belgesi.
  *
- * `rate` çağırandan geliyor (voices.ts, rateFor): hız politikası ses
- * kataloğunun işi, belge kurmanın değil.
+ * `rate` ve `pitch` çağırandan geliyor (voices.ts, `rateFor`/`pitchFor`):
+ * hız ve perde politikası ses kataloğunun işi, belge kurmanın değil.
+ *
+ * `pitch` sabit `+0Hz` idi. Artık kaydırılabiliyor çünkü diyalogda konuşmacı
+ * ayrımı bazen sesle yapılamıyor: Zürih kursunda hedef lehçeyi konuşan
+ * yalnız iki ses var ve aynı cinsiyetten iki konuşmacı çıkınca katalog
+ * tükeniyor. Ölçüldü (Leni, aynı cümle, F0 medyanı): `+0Hz` → 228,6 Hz,
+ * `+18Hz` → ~250 Hz, `-18Hz` → ~200 Hz — yani uç kaydırmayı gerçekten
+ * uyguluyor, sessizce yok saymıyor.
  *
  * Sessizlik ayarı BİLEREK yok. Nöral seslerin MP3'lerinde ölçülen gömülü
  * sessizlikler (cümle arası ~1.05 sn, klip sonu ~1.0 sn, başı ~0.2 sn)
@@ -31,11 +38,11 @@ export function escapeXml(text: string): string {
  * sesi WebAudio ile çözüp kenar sessizliklerini kırpıyor ve uzun duraklamaları
  * sıkıştırıyor (bkz. components/speak-button, speakSegments).
  */
-export function buildSsml(clean: string, voice: string, rate: string): string {
+export function buildSsml(clean: string, voice: string, rate: string, pitch = "+0Hz"): string {
   const lang = voice.slice(0, 5);
   return (
     `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='${lang}'>` +
-    `<voice name='${voice}'><prosody rate='${rate}' pitch='+0Hz'>` +
+    `<voice name='${voice}'><prosody rate='${rate}' pitch='${pitch}'>` +
     `${escapeXml(clean)}</prosody></voice></speak>`
   );
 }

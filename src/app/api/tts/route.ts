@@ -4,7 +4,7 @@ import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
 import { parseRange } from "@/lib/http-range";
-import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
+import { CAST, paceFromParam, pitchFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
  * Seslendirme ucu.
@@ -19,7 +19,7 @@ import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/vo
  * (günlükte isteklerin ~%46'sı başka birinin istediği metnin tekrarıydı).
  * Şimdi üç katman var:
  *   1. Tarayıcı önbelleği — aynı cihazda ikinci dinleme hiç ağa çıkmıyor.
- *   2. nginx önbelleği — anahtar yalnız adres (ses, hız, metin); çerezden ve
+ *   2. nginx önbelleği — anahtar yalnız adres (ses, hız, perde, metin); çerezden ve
  *      alan adından bağımsız, 60 gün. Önbellekten dönen istek BU UCA HİÇ
  *      GELMİYOR: oturum, köken ve günlük tavan denetimi yalnız sentezlenecek
  *      yeni metinde çalışıyor. Bu bilinçli — içerik gizli değil, maliyet sentezde.
@@ -29,6 +29,10 @@ import { paceFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/vo
  *
  * `rateFor` ya da ses kataloğu değişirse nginx önbelleği BOŞALTILMALI (aynı
  * adres artık farklı bir ses demek): `rm -rf /var/cache/nginx/lernomi-tts/*`.
+ * Ölçüt "katalog büyüdü mü" değil, "VAR OLAN bir adres artık başka bir ses mi
+ * veriyor": 2026-09-18'de sekiz kadro sesi ve `p=` perde parametresi eklendi,
+ * ama eski adreslerin hiçbirinin karşılığı değişmediği (perdesiz istek hâlâ
+ * `+0Hz`) için önbellek boşaltılmadı ve boşaltılması da gerekmiyordu.
  *
  * Cevap biçimi önbelleğe uygun kalmak zorunda:
  *
@@ -52,8 +56,20 @@ export const runtime = "nodejs";
 /** Bir yıl — içerik hiç değişmiyor, bir kelimenin sesi hep aynı. */
 const MAX_AGE = 31_536_000;
 
-// Anlatım sesi listede yok (kullanıcı seçmiyor) ama uç onu da seslendirmeli.
-const VOICE_IDS = new Set<string>([...VOICES.map((v) => v.id), TURKISH_VOICE]);
+/*
+  Uç, kullanıcının SEÇEBİLDİĞİNDEN fazlasını seslendiriyor ve ikisi de ayrı
+  sebeple listede değil:
+    - anlatım sesi (`TURKISH_VOICE`) — dersin öğretmeni, alternatifi yok;
+    - kadro sesleri (`CAST`) — diyalogda ikinci/üçüncü konuşmacıyı ayırıyor,
+      seçim ekranında görünmesi anlamsız olurdu.
+  Küme katalogdan TÜRETİLİYOR: yeni bir kadro sesi eklendiğinde burayı da
+  düzenlemek gerekseydi unutulur ve o ses 400 `bad_voice` ile susardı.
+*/
+const VOICE_IDS = new Set<string>([
+  ...VOICES.map((v) => v.id),
+  TURKISH_VOICE,
+  ...Object.values(CAST).flatMap((c) => [...c.female, ...c.male]),
+]);
 
 /** Hesap başına günlük sentez tavanı — gerekçesi aşağıda, kotanın koyulduğu yerde. */
 const DAILY_TTS_CEILING = 2000;
@@ -72,6 +88,9 @@ export async function GET(req: Request) {
   // Hız yalnızca sabit kademeleri alıyor (bkz. `rateFor`). Serbest bir sayı
   // olsaydı her farklı hız ayrı bir önbellek girdisi açar ve isabet düşerdi.
   const slow = paceFromParam(url.searchParams.get("r"));
+  // Perde de hız gibi KAPALI bir küme, aynı sebeple: her değer ayrı bir
+  // önbellek girdisi ve serbest bir sayı isabeti eritirdi.
+  const pitch = pitchFromParam(url.searchParams.get("p"));
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -103,7 +122,7 @@ export async function GET(req: Request) {
    * geçmiyor; önbellek (tarayıcı + CDN) zaten çoğu isteği buraya hiç
    * getirmiyor. Yani normal kullanıcı bu tavanı göremez.
    */
-  const key = `${voice}|${slow}|${text}`;
+  const key = `${voice}|${slow}|${pitch}|${text}`;
   let hit = recent.get(key);
   if (hit) {
     // LRU: son kullanılanı sona taşı.
@@ -120,7 +139,7 @@ export async function GET(req: Request) {
 
   try {
     if (!hit) {
-      hit = await synthesizeSpeech(text, voice as VoiceId, slow, userId);
+      hit = await synthesizeSpeech(text, voice as VoiceId, slow, userId, pitch);
       remember(key, hit);
     }
     const { audio, source } = hit;

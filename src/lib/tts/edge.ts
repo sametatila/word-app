@@ -1,7 +1,13 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
-import { rateFor, type Pace, type VoiceId } from "./voices";
+import { pitchFor, rateFor, type Pace, type Pitch, type VoiceId } from "./voices";
 import { buildSsml } from "./ssml";
+
+/* Metin tavanı ve temizleme kuralı `tts/text`te — sunucu ve istemcinin
+   AYNI kopyayı kullanması şart, çünkü metin URL'ye giriyor ve URL önbellek
+   anahtarının kendisi. Buradan yeniden dışa veriliyor: çağıranların
+   (route, synth) içe aktarma yolu değişmesin. */
+export { MAX_TEXT, cleanForSpeech } from "./text";
 
 /**
  * Microsoft Edge'in okuma servisiyle konuşma sentezi.
@@ -26,9 +32,6 @@ const TRUSTED_TOKEN = "6A5AA1D4EAFF4E9FB37E23D68491D6F4";
 const OUTPUT_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
 
 const SYNTH_TIMEOUT_MS = 15_000;
-
-/** Tek seferde sentezlenecek metnin üst sınırı — en uzun örneğimiz bunun çok altında. */
-export const MAX_TEXT = 600;
 
 /**
  * Tarayıcı sürümü — bu yolun tek kırılgan noktası ve ölçülerek bulundu.
@@ -96,32 +99,6 @@ function endpoint(version: number): string {
 }
 
 /**
- * Okunacak metnin sadeleştirilmesi.
- *
- * Parantezli açıklamalar (Hochdeutsch karşılıkları) ve eğik çizgiyle ayrılmış
- * seçenekler ekranda anlamlı ama sesli okunduğunda cümleyi bozuyor. Bu kural
- * tarayıcı sentezinden devralındı; ses kaynağı değişse de gerekçesi aynı.
- */
-export function cleanForSpeech(text: string): string {
-  return text
-    /* İSTEĞE BAĞLI ÖN EK BİRLEŞİYOR, ATILMIYOR. "(Back-)Ofen" başlığında
-       parantez bir açıklama değil, kelimenin parçası: genel parantez silme
-       onu "Ofen" diye okuyordu ve "(herunter-)fahren" "fahren" oluyordu —
-       başka bir kelime. Ön ek önce kelimeye yapıştırılıyor ("Backofen", baş harf küçülür);
-       "(sich)", "(e)", "(D, CH)" gibi notlar aşağıda eskisi gibi düşüyor. */
-    .replace(/\((\p{L}+)-\)\s*(\p{L}?)/gu, (_, pre: string, head: string) => pre + head.toLowerCase())
-    .replace(/\(.*?\)/g, "")
-    /* BOŞLUK DOLDURMA ÇİZGİSİ OKUNMUYOR. Cümledeki boşluk ekranda "_____"
-       ile duruyor ve motor onu "alt tire alt tire alt tire" diye okuyordu —
-       cümlenin kendisi kaybolacak kadar. Yerine boşluk konuyor: öğrenci
-       cümleyi eksik kelimesiyle, akıcı biçimde duyuyor. */
-    .replace(/_{2,}/g, " ")
-    .replace(/[/–—]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-/**
  * Sadeleştirilmiş metni seslendirir ve MP3 baytlarını döndürür.
  *
  * Parça parça değil bütün hâlinde dönüyor: çağıran uç bunu uzun ömürlü olarak
@@ -131,8 +108,8 @@ export function cleanForSpeech(text: string): string {
  * Metnin sadeleştirilmesi burada değil `synth.ts`'te yapılıyor: iki sentez
  * yolu da aynı metni almalı, yoksa yedeğe düşünce önbellek anahtarı tutmaz.
  */
-export async function synthesizeEdge(clean: string, voice: VoiceId, slow: Pace | boolean = false): Promise<Buffer> {
-  return connectAndSynthesize(clean, voice, browserVersion(), slow);
+export async function synthesizeEdge(clean: string, voice: VoiceId, slow: Pace | boolean = false, pitch: Pitch = "mid"): Promise<Buffer> {
+  return connectAndSynthesize(clean, voice, browserVersion(), slow, pitch);
 }
 
 function connectAndSynthesize(
@@ -140,6 +117,7 @@ function connectAndSynthesize(
   voice: VoiceId,
   version: number,
   slow: Pace | boolean,
+  pitch: Pitch,
 ): Promise<Buffer> {
   return new Promise<Buffer>((resolve, reject) => {
     // Yerleşik WebSocket (undici) `headers` seçeneğini kabul ediyor; uç
@@ -201,7 +179,7 @@ function connectAndSynthesize(
           }),
       );
 
-      const ssml = buildSsml(clean, voice, rateFor(voice, slow));
+      const ssml = buildSsml(clean, voice, rateFor(voice, slow), pitchFor(pitch));
 
       ws.send(
         `X-RequestId:${randomUUID().replace(/-/g, "")}\r\n` +
