@@ -1,12 +1,21 @@
 import type { MetadataRoute } from "next";
+import { getLang } from "@/lib/i18n/server";
+import { translate } from "@/lib/i18n/dict";
 
-/** Ana ekrana eklendiğinde uygulama gibi açılması için PWA tanımı. */
-export default function manifest(): MetadataRoute.Manifest {
+/**
+ * Ana ekrana eklendiğinde uygulama gibi açılması için PWA tanımı.
+ *
+ * Ad, açıklama ve kısayollar arayüz dilinde (bkz. `layout.tsx`
+ * `generateMetadata`): sabit Türkçeydi ve İngilizce arayüzle kurulan
+ * uygulamanın kısayolları "Öğren / Patika" diye çıkıyordu.
+ */
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  const lang = await getLang();
+  const t = (key: string) => translate(lang, key);
   return {
-    name: "Lernomi — Almanca ve İngilizce Kelime",
+    name: t("meta.title"),
     short_name: "Lernomi",
-    description:
-      "A1–C1 kelimelerini on oyunla çalış; tekrarı uygulama planlar. Almanca (Hochdeutsch ve Zürih Almancası) ve İngilizce, Türkçe anlatımıyla.",
+    description: t("meta.description"),
     start_url: "/learn",
     scope: "/",
     display: "standalone",
@@ -28,12 +37,12 @@ export default function manifest(): MetadataRoute.Manifest {
      */
     background_color: "#fa7c13",
     theme_color: "#fbf7f2",
-    lang: "tr",
+    lang,
     categories: ["education"],
     // Ana ekran simgesine uzun basınca çıkan hızlı erişimler.
     shortcuts: [
-      { name: "Öğren", url: "/learn" },
-      { name: "Patika", url: "/immersion" },
+      { name: t("nav.learn"), url: "/learn" },
+      { name: t("nav.path"), url: "/immersion" },
     ],
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },

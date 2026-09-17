@@ -245,7 +245,9 @@ export function ExamScreen() {
         setCover(d.cover);
         setPhase("cover");
       })
-      .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
+      // `e.message` ham ("timeout", "api 500", sunucunun hata kodu) ve
+      // arayüz dilinde değil: ekrana her zaman sözlükteki cümle çıkıyor.
+      .catch(() => !cancelled && setErr(t("exam.could_not_load")));
     return () => { cancelled = true; };
   }, [level, moduleIx, attempt]);
 
@@ -270,7 +272,7 @@ export function ExamScreen() {
         setStarting(false);
         setPhase("intro");
       })
-      .catch((e: Error) => { setStarting(false); setErr(e.message || t("exam.could_not_load")); });
+      .catch(() => { setStarting(false); setErr(t("exam.could_not_load")); });
   }, [level, moduleIx]);
 
   /**

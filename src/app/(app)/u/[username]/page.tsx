@@ -22,7 +22,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/friends" />
-          <h1 className="text-h2">Profil</h1>
+          <h1 className="text-h2">{t("user.profile")}</h1>
         </div>
         <PublicProfile data={data} me={userId} />
       </div>

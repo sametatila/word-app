@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { getLang } from "@/lib/i18n/server";
+import { translate } from "@/lib/i18n/dict";
 
 /**
  * Paylaşılan bağlantının önizleme görseli.
@@ -9,11 +11,16 @@ import { ImageResponse } from "next/og";
  * dosyasını elle güncel tutmak, sayılar değiştikçe unutulan bir iş olurdu.
  */
 
-export const alt = "Lernomi — kelimeleri oynayarak öğren";
+// Dışa aktarılan `alt` DURAĞAN (istekten önce okunuyor), yani dile göre
+// değişemiyor: dilden bağımsız marka adı yazılı.
+export const alt = "Lernomi";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+/** Kartın yazıları ziyaretçinin arayüz dilinde (bkz. `layout.tsx` `generateMetadata`). */
+export default async function Image() {
+  const lang = await getLang();
+  const t = (key: string) => translate(lang, key);
   return new ImageResponse(
     (
       <div
@@ -75,18 +82,18 @@ export default function Image() {
             letterSpacing: -2,
           }}
         >
-          Kelimeleri oynayarak öğren
+          {t("meta.tagline")}
         </div>
 
         <div style={{ display: "flex", fontSize: 34, color: "#a79684", marginTop: 30 }}>
-          A1–C1 · 10 oyun · tekrarı kendi planlayan sistem
+          {t("meta.og_sub")}
         </div>
 
-        {/* İki kurs — ürünün eşi olmayan yanı burada duruyor. */}
+        {/* Kurslar ve anlatım dili — ürünün eşi olmayan yanı burada duruyor. */}
         <div style={{ display: "flex", gap: 16, marginTop: 44 }}>
-          {["Hochdeutsch", "Züritüütsch", "Türkçe anlatım"].map((t) => (
+          {t("meta.og_badges").split("|").map((badge) => (
             <div
-              key={t}
+              key={badge}
               style={{
                 display: "flex",
                 fontSize: 27,
@@ -97,7 +104,7 @@ export default function Image() {
                 border: "1px solid rgba(255,255,255,0.18)",
               }}
             >
-              {t}
+              {badge}
             </div>
           ))}
         </div>

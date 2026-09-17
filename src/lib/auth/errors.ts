@@ -89,7 +89,7 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     durup ne yapacağını bilemiyor. Çıkış yolu söyleniyor.
   */
   if (code.includes("ACCOUNT_NOT_LINKED") || msg.includes("account not linked"))
-    return t("autherrorw.account_not_linked");
+    return t("autherror.account_not_linked");
   if (code.includes("USER_NOT_FOUND") || msg.includes("user not found"))
     return t("autherror.no_account_was_found_for_this");
   if (code.includes("PASSWORD_TOO_COMMON")) return t("autherror.password_too_common");
@@ -100,8 +100,14 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     msg.includes("at least")
   )
     return t("autherror.password_min_length", { n: MIN_PASSWORD_LENGTH });
+  if (code.includes("PASSWORD_TOO_LONG") || msg.includes("password too long"))
+    return t("autherror.password_max_length");
+  /* Parola değiştirme ve hesap silme "taze oturum" istiyor; better-auth
+     SESSION_EXPIRED / SESSION_NOT_FRESH ile reddediyor. */
+  if (code === "SESSION_EXPIRED" || code === "SESSION_NOT_FRESH")
+    return t("autherror.fresh_login");
   if (code.includes("INVALID_TOKEN") || code.includes("TOKEN_EXPIRED") || msg.includes("token"))
-    return t("autherrorw.token_expired");
+    return t("autherror.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))
     return t("autherror.too_many");
   /*
@@ -132,7 +138,14 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     return t("autherrorw.network");
   if (msg.includes("email")) return t("autherror.enter_valid_email_address");
 
-  return message || t("autherror.something_went_wrong_try_again");
+  /*
+    HAM MESAJ EKRANA ÇIKMIYOR. Eskiden eşlenmeyen her hata `message` olarak
+    gösteriliyordu: better-auth'un İngilizce cümlesi ("Failed to create
+    session", "Password too long"), Türkçe ya da Almanca arayüzde olduğu gibi.
+    Tanınmayan hata sözlükteki genel cümleye düşüyor; yeni bir kod ekrana
+    özel metin istiyorsa yukarıya eşlemesi yazılır.
+  */
+  return t("autherror.something_went_wrong_try_again");
 }
 
 /** Giriş sırasında doğrulama bekleyen hesabı ayırt etmek için. */

@@ -154,7 +154,7 @@ export function composeReminder(input: {
   // sayı taşıyor.
   if (input.rival && input.rival.gap > 0 && input.rival.gap <= CATCHABLE_XP) {
     return {
-      title: translate(lang, "push.rem_rival_title", { who: input.rival.name }),
+      title: translate(lang, "push.rem_rival_title", { who: input.rival.name || translate(lang, "push.rival_unnamed") }),
       body: translate(lang, key("push.rem_rival_body"), vars({ gap: formatNumber(input.rival.gap, lang) })),
       url: "/learn",
       tag: "reminder",
@@ -483,7 +483,9 @@ export async function weeklyRivals(
   for (const m of members) {
     const key = `${m.tier}:${m.cohort}`;
     const list = boards.get(key) ?? [];
-    list.push({ userId: m.userId, name: m.name?.trim().split(/\s+/)[0] || "Bir öğrenci", xp: Number(m.xp) });
+    // Adsız üyenin adı BOŞ kalıyor, alıcının dilinde `composeReminder` dolduruyor:
+    // burada yazılan Türkçe yedek ("Bir öğrenci") İngilizce ve Almanca bildirime de giriyordu.
+    list.push({ userId: m.userId, name: m.name?.trim().split(/\s+/)[0] ?? "", xp: Number(m.xp) });
     boards.set(key, list);
   }
   for (const list of boards.values()) list.sort((a, b) => b.xp - a.xp);

@@ -2,6 +2,7 @@ import { SITE_URL } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getLang } from "@/lib/i18n/server";
+import { translate, type NativeLang } from "@/lib/i18n/dict";
 import { LangProvider } from "@/lib/i18n/client";
 import { MotionProvider } from "@/components/motion-provider";
 
@@ -15,41 +16,52 @@ import { MotionProvider } from "@/components/motion-provider";
  */
 const siteUrl = SITE_URL;
 
-// Tek dile kilitlenmeyen tanım: kurs listesi büyüdükçe (Almanca-İngilizce
-// paritesi) burayı yeniden yazmak gerekmesin.
-const description =
-  "A1–C1 kelimelerini on oyunla çalış; tekrarı uygulama planlar. Almanca (Hochdeutsch ve Zürih Almancası) ve İngilizce, Türkçe anlatımıyla.";
+/** Paylaşım önizlemesinin `og:locale` değeri — arayüz diliyle aynı. */
+const OG_LOCALE: Record<NativeLang, string> = { tr: "tr_TR", en: "en_US", de: "de_DE" };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Lernomi — Almanca ve İngilizce Kelime",
-  description,
-  applicationName: "Lernomi",
-  manifest: "/manifest.webmanifest",
-  openGraph: {
-    type: "website",
-    locale: "tr_TR",
-    siteName: "Lernomi",
-    title: "Lernomi — kelimeleri oynayarak öğren",
+/*
+ * KÜNYE ARAYÜZ DİLİNDE. Başlık, açıklama ve paylaşım metni sabit Türkçeydi:
+ * tarayıcısı İngilizce ya da Almanca olan ziyaretçi sekme başlığında ve
+ * paylaştığı bağlantının önizlemesinde Türkçe görüyordu. Dil, sayfanın geri
+ * kalanıyla aynı kaynaktan (`getLang`: çerez, yoksa Accept-Language) geliyor;
+ * düzen zaten onu okuduğu için sayfa bundan ötürü dinamikleşmiyor.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getLang();
+  const t = (key: string) => translate(lang, key);
+  const description = t("meta.description");
+  const shareTitle = `Lernomi — ${t("meta.tagline")}`;
+  return {
+    metadataBase: new URL(siteUrl),
+    title: t("meta.title"),
     description,
-    url: siteUrl,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lernomi — kelimeleri oynayarak öğren",
-    description,
-  },
-  appleWebApp: { capable: true, title: "Lernomi", statusBarStyle: "black-translucent" },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
-      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-  },
-  formatDetection: { telephone: false },
-};
+    applicationName: "Lernomi",
+    manifest: "/manifest.webmanifest",
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALE[lang],
+      siteName: "Lernomi",
+      title: shareTitle,
+      description,
+      url: siteUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: shareTitle,
+      description,
+    },
+    appleWebApp: { capable: true, title: "Lernomi", statusBarStyle: "black-translucent" },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+        { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    },
+    formatDetection: { telephone: false },
+  };
+}
 
 export const viewport: Viewport = {
   /*

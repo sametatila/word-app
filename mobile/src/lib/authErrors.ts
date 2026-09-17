@@ -4,7 +4,8 @@ import { MIN_PASSWORD_LENGTH } from "./passwordPolicy";
 /**
  * Better Auth hata kodlarını kullanıcının diline çevirir — web'deki
  * lib/auth/errors.ts ile aynı eşlemeler (mobil sürüm: code + message alır).
- * Sunucudan gelen ham `message` yalnız eşleşme bulunamazsa gösterilir.
+ * Sunucudan gelen ham `message` ekrana çıkmaz: yalnız eşleşmede ipucu
+ * olarak okunur, tanınmayan hata sözlükteki genel cümleye düşer.
  */
 /**
  * Doğrulama bekleyen hesap mı — web'deki `isEmailNotVerified`in eşi.
@@ -63,7 +64,19 @@ export function translateAuthError(code: string, message: string, status = 0): s
   if (c.includes("PASSWORD_CONTAINS_IDENTITY")) return t("autherror.password_contains_identity");
   if (c.includes("PASSWORD_TOO_SHORT") || m.includes("password is too short") || m.includes("too short"))
     return t("autherror.password_min_length", { n: MIN_PASSWORD_LENGTH });
+  if (c.includes("PASSWORD_TOO_LONG") || m.includes("password too long"))
+    return t("autherror.password_max_length");
+  if (c === "SESSION_EXPIRED" || c === "SESSION_NOT_FRESH") return t("autherror.fresh_login");
+  if (c.includes("INVALID_TOKEN") || c.includes("TOKEN_EXPIRED")) return t("autherror.token_expired");
+  if (c.includes("ACCOUNT_NOT_LINKED") || m.includes("account not linked"))
+    return t("autherror.account_not_linked");
   if (c.includes("INVALID_EMAIL") || m.includes("invalid email"))
     return t("autherror.enter_valid_email_address");
-  return message || t("autherror.something_went_wrong_try_again");
+  /*
+    HAM MESAJ EKRANA ÇIKMIYOR. `message` better-auth'un İngilizce cümlesi ya
+    da (gövde JSON değilse) nginx'in HTML sayfasının ilk 200 karakteri
+    olabiliyor (bkz. auth.ts `request`). Eskiden eşlenmeyen her hatada o
+    gösteriliyordu; Türkçe ve Almanca arayüzde İngilizce, bazen HTML.
+  */
+  return t("autherror.something_went_wrong_try_again");
 }

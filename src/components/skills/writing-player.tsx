@@ -780,7 +780,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
   const ok = okCount >= Math.ceil(task.fields.length * 0.7);
   return (
     <section className="card mt-4 p-5">
-      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">Formu doldur</p>
+      <p className="text-micro uppercase tracking-eyebrow text-[color:var(--color-brand)]">{t("writew.form_eyebrow")}</p>
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt}</p>
       <p className="muted mt-1 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.facts}</p>
       <div className="mt-3 space-y-2">
