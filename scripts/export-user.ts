@@ -1,9 +1,8 @@
 import { writeFileSync } from "node:fs";
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
-import { eq, getTableName, is, like, or } from "drizzle-orm";
-import { PgTable } from "drizzle-orm/pg-core";
 import * as schema from "@/lib/db/schema";
+import { buildUserExport } from "@/lib/account/export";
 
 /**
  * KVKK m.11 / GDPR m.15-20: bir kullanıcının verisinin MAKİNE OKUNUR kopyası.
@@ -43,20 +42,6 @@ import * as schema from "@/lib/db/schema";
  * havuzu kendi kurmasının maliyeti yok.
  */
 
-/** Kullanıcıya bağlı sütun adları — `check:purge` ile aynı küme. */
-const USER_COLUMNS = [
-  "userId", "fromUserId", "toUserId", "actorId", "requesterId", "addresseeId",
-  "blockerId", "blockedId", "reporterId", "reportedId", "userAId", "userBId",
-  "inviterUserId", "inviteeUserId",
-] as const;
-
-/* Tablo tanıma drizzle'ın KENDİ API'siyle: ilk yazımda `"_" in value` diye
-   bakıyordum ve HİÇBİR tablo eşleşmedi (çıktı tek tablo çıktı, fark oradan
-   anlaşıldı) — drizzle tabloyu sembolle işaretliyor, `_` alanıyla değil. */
-function isTable(v: unknown): v is Record<string, unknown> {
-  return is(v, PgTable);
-}
-
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) {
@@ -72,59 +57,16 @@ async function main() {
     process.exit(1);
   }
 
-  /* Kimliği e-postadan çöz: talep hesabın e-postasından geliyor (politika §10),
-     yani elimizde çoğu zaman userId değil e-posta var. */
-  const [row] = await db
-    .select({ id: schema.user.id, email: schema.user.email, name: schema.user.name })
-    .from(schema.user)
-    .where(or(eq(schema.user.id, who), eq(schema.user.email, who)))
-    .limit(1);
-  if (!row) {
+  // Mantık panelle ORTAK (lib/account/export): iki yol aynı kapsamı üretsin.
+  const result = await buildUserExport(db, who);
+  if (!result) {
     console.error(`Kullanıcı bulunamadı: ${who}`);
     process.exit(1);
   }
-  const userId = row.id;
-
-  const out: Record<string, unknown> = {
-    _meta: {
-      /* Üretim tarihi ve kapsam çıktının İÇİNDE: talebi cevaplayan kişi neyi
-         gönderdiğini, alıcı da neyi aldığını belgeleyebilsin. */
-      generatedAt: new Date().toISOString(),
-      userId,
-      email: row.email,
-      name: row.name,
-      note: "KVKK m.11 / GDPR m.15-20 kapsaminda makine okunur kopya.",
-    },
-  };
-
-  let tableCount = 0;
-  for (const value of Object.values(schema)) {
-    if (!isTable(value)) continue;
-    const columns = USER_COLUMNS.filter((c) => c in value);
-    if (!columns.length) continue;
-    const conditions = columns.map((c) => eq(value[c] as never, userId as never));
-    const rows = await db
-      .select()
-      .from(value as never)
-      .where(conditions.length === 1 ? conditions[0] : or(...conditions));
-    out[getTableName(value as never)] = rows;
-    tableCount++;
-  }
-
-  /* `rate_limits` kullanıcıya metin anahtarıyla bağlı, sütunla değil —
-     `check:purge` de bu istisnayı adıyla taşıyor. */
-  out["rate_limits"] = await db
-    .select()
-    .from(schema.rateLimits)
-    .where(like(schema.rateLimits.key, `%:${userId}`));
-  tableCount++;
-
+  const userId = (result.data._meta as { userId: string }).userId;
   const path = outArg ?? `user-${userId}.json`;
-  writeFileSync(path, JSON.stringify(out, null, 2));
-  const total = Object.entries(out)
-    .filter(([k]) => k !== "_meta")
-    .reduce((n, [, v]) => n + (Array.isArray(v) ? v.length : 0), 0);
-  console.log(`${path} yazıldı — ${tableCount} tablo, ${total} satır`);
+  writeFileSync(path, JSON.stringify(result.data, null, 2));
+  console.log(`${path} yazıldı — ${result.tables} tablo, ${result.rows} satır`);
   await pool.end();
 }
 

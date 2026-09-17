@@ -21,6 +21,10 @@ import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
 import { cleanSource, platformOf } from "../src/lib/store-link";
 import { adminErrorText } from "../src/lib/admin-errors";
 import { revenuecat } from "../src/lib/premium/providers/revenuecat";
+import { AUTH_SECRET_TABLES, USER_COLUMNS } from "../src/lib/account/export";
+import * as authSchema from "../src/lib/db/auth-schema";
+import { getTableName, is } from "drizzle-orm";
+import { PgTable } from "drizzle-orm/pg-core";
 
 let failures = 0;
 let total = 0;
@@ -122,6 +126,17 @@ async function main() {
   check("sandbox deftere de yetkiye de girmiyor", !sandbox.ok);
   const wrongSecret = await revenuecat.parse(new Request("https://x", { method: "POST", headers: { authorization: "yanlis" } }), JSON.stringify({ event: base }));
   check("yanlış sır 401", !wrongSecret.ok && wrongSecret.status === 401);
+
+  console.log("\nVeri dışa aktarma kapsamı");
+  // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:
+  // yeni bir auth tablosu (ör. passkey) eklenip listeye yazılmazsa sırları dışa
+  // aktarılan dosyaya girer (2026-09-17'de session/account/twoFactor böyleydi).
+  const authUserTables = Object.values(authSchema)
+    .filter((v) => is(v, PgTable))
+    .filter((v) => USER_COLUMNS.some((c) => c in (v as unknown as Record<string, unknown>)))
+    .map((v) => getTableName(v as never));
+  const leaked = authUserTables.filter((n) => !AUTH_SECRET_TABLES.has(n));
+  check(`auth şemasındaki kullanıcı tabloları dışa aktarmadan hariç (${authUserTables.join(", ")})`, authUserTables.length > 0 && leaked.length === 0, leaked.join(", "));
 
   console.log(`\n${total - failures}/${total} ${failures ? "BAŞARISIZ" : "tamam"}\n`);
   process.exit(failures ? 1 : 0);

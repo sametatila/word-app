@@ -45,6 +45,32 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
     }
   }
 
+  /* Veri dışa aktarma: sunucu JSON döndürüyor, tarayıcı dosya olarak indiriyor
+     (sunucuda dosya bırakılmıyor). */
+  async function exportData() {
+    setBusy(true);
+    setMsg("");
+    try {
+      const res = await apiFetch("/api/admin/users", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ userId, action: "export" }) });
+      const body = (await res.json().catch(() => ({}))) as { error?: string; data?: unknown; tables?: number; rows?: number };
+      if (!res.ok || !body.data) {
+        setMsg(adminErrorText(body.error ?? res.status));
+        return;
+      }
+      const blob = new Blob([JSON.stringify(body.data, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `lernomi-veri-${userId.slice(0, 8)}-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+      setMsg(`İndirildi: ${body.tables} tablo, ${body.rows} satır. Kişisel veri - yalnız talep sahibine, güvenli kanaldan gönder.`);
+    } catch {
+      setMsg(adminErrorText("network"));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   const field = { borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" };
 
   if (done === "deleted") return <p role="status" className="text-body" style={{ color: "var(--color-rose)" }}>Hesap ve bütün verisi silindi.</p>;
@@ -52,6 +78,12 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
   return (
     <div className="space-y-4 text-caption">
       {msg ? <p role="status" style={{ color: "var(--color-rose)" }}>{msg}</p> : null}
+
+      <div className="card space-y-2 px-3 py-3">
+        <b>Veri dışa aktarma (KVKK / GDPR)</b>
+        <p className="muted">Kullanıcının bütün verisi makine okunur JSON olarak. Parola özeti, oturum jetonları ve 2FA sırrı dahil değildir. İşlem kaydına düşer.</p>
+        <button type="button" disabled={busy} onClick={exportData} className="chip h-8 px-3 text-caption">Verisini indir (JSON)</button>
+      </div>
 
       <div className="card space-y-2 px-3 py-3">
         <b>Askıya alma</b>

@@ -3,6 +3,8 @@ import { adminGate, adminWriteGate, logAdminAction, type AdminWriter } from "@/l
 import { sameOrigin } from "@/lib/auth/origin";
 import { adminDeleteUser } from "@/lib/account/admin-delete";
 import { liftSuspension, suspendUser } from "@/lib/account/suspension";
+import { buildUserExport } from "@/lib/account/export";
+import { db } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -75,6 +77,14 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
         }
         await suspendUser(userId, reason, days, gate.email);
         return NextResponse.json({ ok: true });
+      }
+      /* VERİ DIŞA AKTARMA (KVKK m.11 / GDPR m.15-20). Kişisel verinin tamamı
+         olduğu için hassas seviye (2FA + taze oturum) ve işlem kaydına düşüyor.
+         Kimlik doğrulama malzemesi dahil değil (lib/account/export). */
+      case "export": {
+        const result = await buildUserExport(db, userId);
+        if (!result) return NextResponse.json({ error: "not_found" }, { status: 404 });
+        return NextResponse.json({ ok: true, tables: result.tables, rows: result.rows, data: result.data }, { headers: { "cache-control": "no-store" } });
       }
       case "lift":
         await liftSuspension(userId, gate.email);
