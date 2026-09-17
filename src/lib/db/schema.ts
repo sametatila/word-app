@@ -13,6 +13,7 @@ import {
   uniqueIndex,
   primaryKey,
   jsonb,
+  customType,
 } from "drizzle-orm/pg-core";
 
 /** Kelime havuzu (seed ile doldurulur, kullanıcıdan bağımsız). Kurs bazlıdır. */
@@ -1758,4 +1759,159 @@ export const userConsents = pgTable(
     decidedAt: timestamp("decided_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("user_consents_user_purpose_idx").on(t.userId, t.purpose, t.decidedAt)],
+);
+
+/**
+ * İÇERİK TESLİM HATTI — dört tablo (0062).
+ *
+ * Dersler, deneme sınavı kâğıtları, beceri alıştırmaları ve anadil paketleri
+ * bugün iki uygulamanın İKİLİSİNE gömülü: mobilde 27,7 MB statik `import`.
+ * Bunun üç bedeli var ve üçü de kullanıcıya çıkıyor:
+ *
+ *   1. BOYUT. Kullanıcı hiç açmayacağı içeriği indiriyor — anadili Türkçe
+ *      olan biri 10,5 MB çeviri paketi taşıyor, çünkü çeviri yönü tek ve o
+ *      kaynağı zaten görüyor.
+ *   2. GECİKME. Bare RN'de OTA yok: tek kelimelik düzeltme mağaza sürümü
+ *      bekliyor ve eski build'lere hiç ulaşmıyor.
+ *   3. SIZINTI. Deneme sınavı kâğıtları premium kapılı ama gövdeleri ücretsiz
+ *      ikilinin içinde, cevap anahtarlarıyla birlikte. `unzip` yetiyor.
+ *
+ * ÇÖZÜMÜN İLKESİ: DEĞİŞMEZ GÖVDE + KÜÇÜK GÖSTERGE. Gövde kendi içeriğinin
+ * hash'iyle adreslenir, yani bir daha asla değişmez — sonsuza kadar
+ * önbelleklenebilir ve nginx onu Node'a hiç uğratmadan servis eder (TTS
+ * önbelleğiyle aynı kalıp). Değişen tek şey küçük göstergedir: hangi sürüm
+ * canlı, hangi madde kapalı. Bir kelime düzeltildiğinde kullanıcı 27 MB değil,
+ * yeni hash'i olan o maddeyi indiriyor.
+ *
+ * İÇERİK BURADA YAZILMIYOR. Doğruluk kaynağı `data/**` ve git'te kalıyor;
+ * buraya `content:publish` yayınlıyor ve yayın `check:*` kapılarından
+ * geçmeden çalışmıyor. Panel bu tablolara İÇERİK YAZMIYOR: yalnız okuyor,
+ * `content_flags` ile tek madde kapatıyor ve `content_releases.status` ile
+ * sürüm çeviriyor. Bir CMS'in düzenleme yüzeyi bilerek yok — 70+ doğrulama
+ * betiğini ve diff/review'ı kaybetmemek için.
+ */
+
+/**
+ * Gövdeler `bytea`: sıkıştırılmış baytlar base64'e çevrilmeden duruyor.
+ * Metin sütununda base64 %33 şişirirdi ve her istekte bir çözme daha isterdi.
+ */
+const bytea = customType<{ data: Buffer; driverData: Buffer }>({
+  dataType: () => "bytea",
+});
+
+/**
+ * Değişmez gövdeler — anahtar içeriğin kendi hash'i.
+ *
+ * Aynı gövde iki pakette ya da on sürümde geçiyorsa TEK satır: kimlik burada
+ * değil, üyelik `content_release_items`te. Yeniden adlandırılan ama içeriği
+ * aynı kalan bir madde hiç yeniden indirilmiyor.
+ *
+ * İKİ SIKIŞTIRMA BİRDEN saklanıyor ve istek anında hiç sıkıştırma yapılmıyor.
+ * `br` %23 daha küçük ama her istemci çözemiyor (Android'in ağ katmanı gzip'i
+ * kendiliğinden açıyor, brotli'yi garanti etmiyor); `gz` evrensel emniyet.
+ * Cevap `Accept-Encoding`e göre seçiliyor, ikisinin toplamı ~13 MB — bir
+ * veritabanı için hiçbir şey.
+ */
+export const contentItems = pgTable("content_items", {
+  /** Ham gövdenin sha-256'sının ilk 32 hex hanesi. Adres bu. */
+  hash: text("hash").primaryKey(),
+  /** Sıkıştırılmamış uzunluk — istemci indirme bütçesini buna göre planlıyor. */
+  bytes: integer("bytes").notNull(),
+  /**
+   * Kapılı gövde — herkese açık uçlardan HİÇ servis edilmiyor.
+   *
+   * Deneme sınavı kâğıtları da bu hattan yayınlanıyor (tek üretim yolu, tek
+   * doğrulama) ama manifestte görünmüyor ve `/api/content/i/` onları
+   * reddediyor; yalnız yetki kontrolünden geçen imzalı uç veriyor. Bayrak
+   * gövdenin ÜSTÜNDE duruyor, paketin değil: gövde ucu eline yalnız bir hash
+   * alıyor ve kararı fazladan sorgu yapmadan verebilmeli.
+   *
+   * Aynı gövde hem kapılı hem açık bir pakette geçerse KAPILI kazanıyor —
+   * emniyetli taraf.
+   */
+  gated: boolean("gated").notNull().default(false),
+  br: bytea("br").notNull(),
+  gz: bytea("gz").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Yayın sürümü — panelin birimi madde metni değil, BU.
+ *
+ * `draft` yayınlanmış ama canlıya alınmamış sürüm: panelden gerçek ekranda
+ * önizlenebiliyor. `live` olan tek sürüm göstergeye yazılıyor. Geri alma bir
+ * içerik işlemi değil, göstergeyi bir önceki sürüme çevirmek — gövdeler zaten
+ * tabloda, hiçbir şey yeniden indirilmiyor.
+ *
+ * `goLiveAt` dolu bir taslak zamanlı yayın: cron onu saati gelince `live`
+ * yapıyor.
+ */
+export const contentReleases = pgTable(
+  "content_releases",
+  {
+    version: serial("version").primaryKey(),
+    /** draft | live | retired */
+    status: text("status").notNull().default("draft"),
+    /** Yayını üreten commit — sürümden içeriğin kaynağına dönülebilsin. */
+    commit: text("commit"),
+    note: text("note"),
+    publishedBy: text("published_by"),
+    /** Dolu ve gelecekteyse: saati gelince canlıya alınacak taslak. */
+    goLiveAt: timestamp("go_live_at", { withTimezone: true }),
+    liveAt: timestamp("live_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("content_releases_status_idx").on(t.status, t.version)],
+);
+
+/**
+ * Bir sürümün içindekiler — paket × madde → gövde hash'i.
+ *
+ * Manifest deltası bu tablonun iki sürümü arasındaki farkı: istemcinin elinde
+ * `since` sürümü varsa yalnız hash'i değişen maddeler ve düşenler iniyor.
+ *
+ * `item` ayrılmış bir değer taşıyor: `"*"` paketin TAMAMININ tek arşivi.
+ * Sıfırdan dolan istemci tek istekte onu alıyor, sonraki güncellemelerde
+ * madde madde delta. Arşiv de hash adresli bir gövde olduğu için ikinci bir
+ * uç gerekmiyor.
+ */
+export const contentReleaseItems = pgTable(
+  "content_release_items",
+  {
+    release: integer("release").notNull(),
+    /** "lessons/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
+    pack: text("pack").notNull(),
+    /** Paket içindeki kimlik ("de-a1-b03"), ya da "*" paket arşivi. */
+    item: text("item").notNull(),
+    hash: text("hash").notNull(),
+  },
+  (t) => [
+    primaryKey({ name: "content_release_items_pk", columns: [t.release, t.pack, t.item] }),
+    index("content_release_items_pack_idx").on(t.release, t.pack),
+    index("content_release_items_hash_idx").on(t.hash),
+  ],
+);
+
+/**
+ * Kapatılan maddeler — panelin tek "yazma" yetkisi ve SÜRÜMDEN BAĞIMSIZ.
+ *
+ * Bozuk madde kullanıcıyı şu an yaralıyor; düzeltmesi git'te yazılıp yayına
+ * girene kadar geçen süre boyunca madde görünmemeli. Kapatma göstergeye
+ * düşüyor, yani cihazda gövdesi ZATEN OLAN istemci de onu gizliyor — yeni bir
+ * indirme beklemeden.
+ *
+ * Sürümden bağımsız olması bilinçli: geri alınan ya da ilerleyen bir sürüm
+ * kapatmayı sessizce açmasın.
+ */
+export const contentFlags = pgTable(
+  "content_flags",
+  {
+    pack: text("pack").notNull(),
+    item: text("item").notNull(),
+    /** broken | reported | legal | other — panelde görünen sebep. */
+    reason: text("reason"),
+    disabledBy: text("disabled_by"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ name: "content_flags_pk", columns: [t.pack, t.item] })],
 );
