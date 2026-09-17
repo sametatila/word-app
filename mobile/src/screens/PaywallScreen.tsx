@@ -102,13 +102,18 @@ function billingPeriodOf(pkg: PurchasesPackage): BillingPeriod | null {
  */
 /* Anahtarlar DÜZ YAZILI: sözlük denetimi kodda geçen anahtarı arıyor ve
    `paywall.price_${…}` gibi kurulmuş bir ad onu ölü sanardı. */
-const TRIAL_THEN = { year: "paywall.trial_then_year", month: "paywall.trial_then_month", week: "paywall.trial_then_week", months: "paywall.trial_then_months" } as const;
-const PRICE_PER = { year: "paywall.price_year", month: "paywall.price_month", week: "paywall.price_week", months: "paywall.price_months" } as const;
+const TRIAL_THEN = { year: "paywall.trial_then_year", month: "paywall.trial_then_month", week: "paywall.trial_then_week", months: "paywall.trial_then_months", years: "paywall.trial_then_years", weeks: "paywall.trial_then_weeks" } as const;
+const PRICE_PER = { year: "paywall.price_year", month: "paywall.price_month", week: "paywall.price_week", months: "paywall.price_months", years: "paywall.price_years", weeks: "paywall.price_weeks" } as const;
 
 function priceLine(pkg: PurchasesPackage, trial: string | null): string {
   const price = pkg.product.priceString;
   const p = billingPeriodOf(pkg);
-  const kind = !p ? null : p.n === 1 ? p.unit : p.unit === "month" ? "months" : null;
+  /* ÇOK BİRİMLİ DÖNEM DE ADLANDIRILIYOR. Eskiden yalnız `n === 1` ve çok aylık
+     durum karşılanıyordu; `P2Y` ya da `P2W` gibi bir ürün `null`a düşüp
+     DÖNEMSİZ fiyat satırına iniyordu ("7 gün ücretsiz, sonra 99,99 ₺") —
+     App Store ve Play dönem bildirimini şart koşuyor. Bugünkü katalogda böyle
+     bir ürün yok; yarın eklenirse satır sessizce eksik beyan olurdu. */
+  const kind = !p ? null : p.n === 1 ? p.unit : p.unit === "month" ? "months" : p.unit === "year" ? "years" : "weeks";
   const n = p?.n ?? 1;
   if (trial) return kind ? t(TRIAL_THEN[kind], { duration: trial, price, n }) : t("paywall.free_then", { duration: trial, price });
   return kind ? t(PRICE_PER[kind], { price, n }) : t("paywall.fiyat_donem", { price });
@@ -263,7 +268,7 @@ export function PaywallScreen() {
             ))}
           </Section>
 
-          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
+          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} rewardDays={status.referral?.rewardDays ?? 0} /> : null}
           {status.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
 
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
@@ -404,7 +409,7 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
+        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} rewardDays={status?.referral?.rewardDays ?? 0} /> : null}
         {status?.referral && !guest ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </KeyboardAwareScroll>
 
@@ -420,10 +425,31 @@ export function PaywallScreen() {
           </View>
         </View>
       ) : !storeOpen ? (
-        // Mağaza kapalı: satın alma çubuğu yok ama hukuki bağlantılar kalıyor —
-        // sayfanın hukuki metne açılan tek kapısı orası.
-        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
-          <LegalLinks colors={colors} />
+        /*
+          MAĞAZA KAPALI: satın alma çubuğu yok ama GERİ YÜKLEME ve hukuki
+          bağlantılar kalıyor.
+
+          Geri yükleme eskiden bu dalda hiç çizilmiyordu ve bu bir POLİTİKA
+          açığıydı: App Store 3.1.1 geri yükleme yolunu şart koşuyor, oysa
+          düğme yalnız paket listesi doluyken görünüyordu. Offering'in boş
+          dönmesi istisna değil — mağaza kesintisinde, bozuk bir offering'de
+          ve ürünler yayına alınmadan önce hep böyle. Yani tam da incelemeye
+          girilen hâlde düğme yoktu.
+
+          Geri yükleme mağaza bağlıyken anlamlı (SDK anahtarı var), paket
+          listesinin dolu olmasına bağlı değil: kullanıcının aboneliği başka
+          bir cihazda alınmış olabilir.
+        */
+        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.xs }}>
+          {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center" }}>{error}</Text> : null}
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
+            {configured ? (
+              <PressableScale onPress={doRestore} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
+                <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
+              </PressableScale>
+            ) : null}
+            <LegalLinks colors={colors} />
+          </View>
         </View>
       ) : (
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
@@ -539,7 +565,8 @@ function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "
  * "tükendi"): üçünde de kullanıcının yapacağı şey farklı ve tek bir "geçersiz
  * kod" mesajı doğrudan destek çağrısı üretir.
  */
-function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => void }) {
+/** `rewardDays` DIŞARIDAN — bkz. web `premium-paywall` PromoBox notu. */
+function PromoBox({ colors, onRedeemed, rewardDays }: { colors: Palette; onRedeemed: () => void; rewardDays: number }) {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
@@ -555,10 +582,10 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
       });
       if (r.ok && r.kind === "referral") {
         // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor.
-        setMsg({ ok: true, text: t("promo.referral_linked") });
+        setMsg({ ok: true, text: t("promo.referral_linked", { n: rewardDays }) });
         setCode("");
       } else if (r.ok) {
-        setMsg({ ok: true, text: t("promo.success", { days: r.days ?? 0 }) });
+        setMsg({ ok: true, text: t("promo.success", { n: r.days ?? 0 }) });
         setCode("");
         void refreshPremium().then(onRedeemed);
       } else {
@@ -625,7 +652,7 @@ function promoErrorKey(reason: string | undefined): string {
 function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number; rewardDays: number } }) {
   return (
     <Section title={t("referral.title")} colors={colors}>
-      <Text variant="caption">{t("referral.explain", { days: referral.rewardDays })}</Text>
+      <Text variant="caption">{t("referral.explain", { n: referral.rewardDays })}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>

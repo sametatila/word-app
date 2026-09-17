@@ -7627,11 +7627,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     },
     {
       ad: "davet odulu",
-      yer: ["{days}"],
-      anahtarlar: ["referral.explain"],
+      /* YER TUTUCU `{n}` OLDU. Cogul motoru YALNIZ `n` adli degiskene bakiyor
+         (`lib/i18n/dict`): `{days}` ile yazilan cumle deger 1 oldugunda
+         "1 days" basiyordu. Ayni degisiklik `promo.success`, `trial_note` ve
+         `promo.referral_linked` icin de yapildi; sonuncusu zaten sabit "1
+         hafta" yaziyordu ve panelden ayar degisince yalan soyluyordu. */
+      yer: ["{n}"],
+      anahtarlar: ["referral.explain", "promo.referral_linked"],
       /* Sabit degil SUNUCU YANITI: panelden ayarlanan deger istemciye
          `referral.rewardDays` olarak iniyor. */
-      gecis: /days:\s*referral\.rewardDays/,
+      gecis: /n:\s*(referral\.rewardDays|rewardDays)/,
       cagiranlar: ["src/components/premium-paywall.tsx", "mobile/src/screens/PaywallScreen.tsx"],
     },
   ];

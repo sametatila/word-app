@@ -144,7 +144,7 @@ export function PremiumPaywall({
                 <PlanCard label={t("paywall.yearly")} price={price.yearly} savePct={price.yearlySavePct} highlight />
               </div>
               {plans.trialDays > 0 && (
-                <p className="muted mt-3 text-center text-caption">{t("paywall.trial_note", { days: plans.trialDays })}</p>
+                <p className="muted mt-3 text-center text-caption">{t("paywall.trial_note", { n: plans.trialDays })}</p>
               )}
             </section>
           )}
@@ -155,6 +155,11 @@ export function PremiumPaywall({
             {/* Vitrin fiyatının bağlayıcı olmadığı burada yazıyor: App Store
                 3.1.2 ve Play, fiyatın yanıltıcı olmamasını istiyor. */}
             <p className="mt-1 text-caption opacity-90">{t("paywall.price_note_store")}</p>
+            {/* OTOMATİK YENİLEME BEYANI webde hiç çizilmiyordu: sayfa fiyatı ve
+                "ilk 30 gün ücretsiz"i gösteriyor ama aboneliğin yenilendiğini
+                ve nereden iptal edildiğini söylemiyordu. Web satmıyor
+                (hafifletici), ama gösterdiği teklif kendi içinde eksikti. */}
+            <p className="mt-1 text-caption opacity-90">{t("paywall.renew_note_web")}</p>
           </div>
 
           {/*
@@ -195,7 +200,7 @@ export function PremiumPaywall({
         </>
       )}
 
-      {signedIn && <PromoBox prefill={prefillCode} />}
+      {signedIn && <PromoBox prefill={prefillCode} rewardDays={referral?.rewardDays ?? 0} />}
       {signedIn && referral && <ReferralBox referral={referral} />}
     </div>
   );
@@ -276,7 +281,16 @@ function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
 }
 
 /** Promo kodu — panelden üretilen kodların bozdurulduğu yer. */
-function PromoBox({ prefill }: { prefill: string }) {
+/**
+ * Promo kodu kutusu.
+ *
+ * `rewardDays` DIŞARIDAN: davet kodu tanındığında gösterilen cümle ödülün kaç
+ * gün olduğunu söylüyor ve o sayı panelden değiştirilebiliyor. Metinde sabit
+ * yazılıydı ("1 hafta") — panelde 14 gün yapıldığı anda paywall yalan
+ * söylerdi. Kardeş cümle (`referral.explain`) baştan beri değeri okuyordu,
+ * yani ayrışma tek satırdaydı.
+ */
+function PromoBox({ prefill, rewardDays }: { prefill: string; rewardDays: number }) {
   const t = useT();
   const [code, setCode] = useState(prefill);
   const [busy, setBusy] = useState(false);
@@ -296,9 +310,9 @@ function PromoBox({ prefill }: { prefill: string }) {
       if (data.ok && data.kind === "referral") {
         // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor — mesaj bunu söylemeli,
         // yoksa kullanıcı premium beklerken hiçbir şey açılmadığını görür.
-        setMsg({ ok: true, text: t("promo.referral_linked") });
+        setMsg({ ok: true, text: t("promo.referral_linked", { n: rewardDays }) });
       } else if (data.ok) {
-        setMsg({ ok: true, text: t("promo.success", { days: data.days ?? 0 }) });
+        setMsg({ ok: true, text: t("promo.success", { n: data.days ?? 0 }) });
         // Yetki değişti: sayfayı tazele ki durum ve kilitler güncellensin.
         setTimeout(() => window.location.reload(), 1200);
       } else {
@@ -399,7 +413,7 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
 
   return (
     <Section title={t("referral.title")}>
-      <p className="text-body">{t("referral.explain", { days: referral.rewardDays })}</p>
+      <p className="text-body">{t("referral.explain", { n: referral.rewardDays })}</p>
       <p className="mt-1 text-caption muted">{t("referral.reward_note")}</p>
 
       <div className="mt-3 flex items-center gap-2">
