@@ -37,6 +37,14 @@ const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır
    duruyordu; ölçüm (`walk_listen` değeri = gönderilen saniye) buna baktığı için
    tek ada bağlandı — pencere değişirse ölçü kendiliğinden onunla değişir. */
 const AZURE_WINDOW_MS = 3000;
+/* GEÇİCİ ÖLÇÜM (cihaz testi): okumanın ne zaman başlayıp bittiği loga yazılıyor.
+   Bileşenin İÇİNDE tanımlanamaz — `sayNative` ona bağlanınca her render'da yeni
+   bir işlev oluyor ve kanca kapısı (exhaustive-deps) haklı olarak düşüyor. */
+const probeSay = (yol: string, txt: string) => {
+  const t0 = Date.now();
+  console.log("PROBE say>", yol, JSON.stringify(txt).slice(0, 40));
+  return (p: Promise<unknown>) => p.then(() => { console.log("PROBE say<", yol, Date.now() - t0, "ms"); });
+};
 
 type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied" | "error";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
@@ -189,7 +197,6 @@ export function WalkModeScreen() {
   // sayNative: ÖĞRETMENİN sesi (kullanıcının anadili). Eskiden sayTR adıyla
   // doğrudan TURKISH_VOICE kullanıyordu — anadili Türkçe olmayan kullanıcıya
   // anlatım yine Türkçe okunurdu. sayTarget: öğrenilen dilin sesi (kurstan).
-  const probeSay = (yol: string, txt: string) => { const t0 = Date.now(); console.log("PROBE say>", yol, JSON.stringify(txt).slice(0, 40)); return (p: Promise<unknown>) => p.then(() => { console.log("PROBE say<", yol, Date.now() - t0, "ms"); }); };
   const sayNative = (txt: string) => {
     const v = narrationVoice(currentLang());
     const fin = probeSay("native", txt);
