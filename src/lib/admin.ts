@@ -208,7 +208,7 @@ export async function getAdminData(): Promise<AdminData> {
     rows(sql`
       select p.user_id, coalesce(p.display_name,'') as name, p.level, p.course,
              p.current_streak as streak, p.longest_streak as longest, p.total_xp as xp,
-             coalesce(w.cnt,0)::int as words,
+             (select count(*) from user_words w where w.user_id = p.user_id and w.state > 0)::int as words,
              coalesce(to_char(p.last_active_day,'YYYY-MM-DD'),'') as last_active,
              to_char(p.created_at,'YYYY-MM-DD') as joined,
              coalesce(p.native_lang,'tr') as native,
@@ -217,9 +217,10 @@ export async function getAdminData(): Promise<AdminData> {
              coalesce(u.email, '') as email
       from profiles p
       left join "user" u on u.id = p.user_id
-      left join (select user_id, count(*) as cnt from user_words where state > 0 group by user_id) w on w.user_id = p.user_id
       order by p.last_active_day desc nulls last, p.total_xp desc
-      limit 500
+      -- Panoda yalnız son aktif 50 kişi; arama ve sayfalama /admin/users'ta
+      -- (lib/admin-users). Eskiden 500 satır + bütün user_words sayımı.
+      limit 50
     `),
   ]);
 

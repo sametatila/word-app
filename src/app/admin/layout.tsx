@@ -31,6 +31,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <nav aria-label="Yönetim" className="mx-auto flex w-full max-w-6xl flex-wrap gap-1.5 px-4 pt-4 text-caption">
           {[
             ["/admin", "Pano"],
+            ["/admin/users", "Kullanıcılar"],
             ["/admin/app", "Uygulama"],
             ["/admin/errors", "Hatalar"],
             ["/admin/moderation", "Moderasyon"],

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { AdminData } from "@/lib/admin";
 import type { ServerMetrics } from "@/lib/server-metrics";
@@ -691,7 +692,8 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports, r
 
       {/* ── KULLANICILAR ── */}
       {tab === "Kullanıcılar" && (
-        <Section title={`Kullanıcılar (${d.users.length})`} hint="Ara (e-posta dahil), sütuna tıklayıp sırala, ada tıklayıp hesabın tüm izini aç. Son aktif olana göre; en fazla 500.">
+        <Section title="Son aktif 50 kullanıcı" hint="Bütün kullanıcılarda arama, süzme ve sayfalama ayrı sayfada (sunucu tarafı). Ada tıklayınca hesabın tüm izi açılır.">
+          <Link href="/admin/users" className="chip mb-3 inline-flex h-8 items-center px-3 text-caption">Tüm kullanıcılar ve arama →</Link>
           <UsersTable users={d.users} />
         </Section>
       )}
