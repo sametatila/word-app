@@ -35,12 +35,9 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { LESSONS } from "../src/lib/lessons";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { mockPapersFor } from "../src/lib/mock-exams";
-import type { MockLevel } from "../src/lib/mock-exams/types";
 import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
 import { buildLessonDump } from "./dump-lessons-mobile";
 import { buildSkillDump } from "./dump-skills-mobile";
-import { buildPaperDump } from "./dump-mock-exams-mobile";
 
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8")) as unknown;
@@ -61,7 +58,6 @@ function ids(files: string[]): Set<string> {
   return out;
 }
 
-const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 let fails = 0;
 
 function compare(label: string, web: Set<string>, mob: Set<string>) {
@@ -92,11 +88,16 @@ compare(
   ids(["mobile/src/data/skills/exercises.json", "mobile/src/data/skills/exercises-en.json"]),
 );
 
-compare(
-  "deneme kagidi",
-  new Set(LEVELS.flatMap((l) => [...mockPapersFor(l, "de"), ...mockPapersFor(l, "en")]).map((p) => p.id)),
-  ids(["mobile/src/data/exams/papers.json", "mobile/src/data/exams/papers-en.json"]),
-);
+/*
+  DENEME KÂĞITLARI ARTIK DÖKÜLMÜYOR.
+
+  `papers.json` ve `papers-en.json` mobil paketten çıkarıldı: premium kapılı
+  kâğıtlar ücretsiz ikilinin içinde, cevap anahtarlarıyla birlikte duruyordu.
+  Kâğıt artık sunucudan, yetki kontrolünden geçtikten sonra iniyor
+  (`src/lib/mock-exams/deliver`), künyeler de içerik hattından
+  (`mockindex/<kurs>-<seviye>`). Karşılaştırılacak bir dosya kalmadı; kâğıdın
+  doğrulayıcısı `npm run test:mock-exams`.
+*/
 
 /*
   ANA DİL DÖKÜMÜ — burada ölçüt KİMLİK DEĞİL, BAYT EŞİTLİĞİ.
@@ -152,14 +153,6 @@ compare(
         file: skills.file,
         json: skills.json,
         cmd: `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts ${course}`,
-      });
-    const papers = buildPaperDump(course);
-    if (papers.rows.length)
-      built.push({
-        label: `kâğıt metni ${course}`,
-        file: papers.file,
-        json: papers.json,
-        cmd: course === "de" ? "npm run dump:mock-exams" : "npm run dump:mock-exams:en",
       });
   }
   let drift = 0;

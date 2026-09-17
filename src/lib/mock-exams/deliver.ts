@@ -10,8 +10,8 @@ import type { MockPaper, MockPart, MockSkill, MockTask } from "./types";
  *
  * Bu dosya iki projeksiyon tanımlıyor ve ikisi de KAYNAKTAN AZ veriyor:
  *
- *   `deliverPart`   sınava giren kullanıcıya, yalnız çözdüğü bölüm,
- *                   `answer` ve `explain` olmadan.
+ *   `deliverPart`   sınava giren kullanıcıya, yalnız çözdüğü bölüm, cevap
+ *                   anahtarı alanları çıkarılmış hâlde.
  *   `catalogEntry`  listede görünen künye: başlık, süre, bölümler ve puan —
  *                   görevler ve maddeler HİÇ yok.
  *
@@ -20,6 +20,13 @@ import type { MockPaper, MockPart, MockSkill, MockTask } from "./types";
  * cevabın kendisidir. Gerekçe artık SONUÇLA birlikte gidiyor
  * (`MockScore.items[].explain`), yani kullanıcı kâğıdı bitirdikten sonra —
  * doğru yer zaten orası.
+ *
+ * ÜÇ ALAN ÇIKIYOR, ikisi değil: `answer` (mcq/bool/match cevabı), `accept`
+ * (boşluk doldurmanın kabul edilen yazımları — ilki kanonik cevap) ve
+ * `explain`. `accept` adı yüzünden gözden kaçmaya en açık olanı: "kabul
+ * edilenler" bir doğrulama ayrıntısı gibi duruyor ama tam olarak cevabın
+ * kendisi. Kapı `test:mock-exams` içinde: teslim edilen bölümde bu adlardan
+ * biri geçerse sınav kırılıyor.
  *
  * NEDEN `key` KALIYOR. Şıkların `key` alanı "A/B/C" harfidir, cevap değil;
  * çıkarılırsa ekran şıkları çizemez. Adı benzediği için karıştırılmaya açık,
@@ -73,11 +80,13 @@ export function catalogEntry(paper: MockPaper): MockCatalogEntry {
   };
 }
 
-/** Maddenin istemciye giden hâli: `answer` ve `explain` dışında her şey. */
+/** Cevap anahtarı sayılan alan adları — tek yerde yazılı, kapı da buna bakıyor. */
+export const MOCK_KEY_FIELDS = ["answer", "accept", "explain"] as const;
+
+/** Maddenin istemciye giden hâli: anahtar alanları dışında her şey. */
 function deliverItem(item: MockTask["items"][number]) {
-  const { answer: _answer, explain: _explain, ...rest } = item as typeof item & { answer?: unknown };
-  void _answer;
-  void _explain;
+  const rest: Record<string, unknown> = { ...(item as unknown as Record<string, unknown>) };
+  for (const field of MOCK_KEY_FIELDS) delete rest[field];
   return rest;
 }
 

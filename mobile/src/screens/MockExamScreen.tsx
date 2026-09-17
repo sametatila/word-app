@@ -20,7 +20,6 @@ import { currentCourseId, currentTargetLocale } from "../lib/courses";
 import {
   isOpenTask,
   mockBoolLabels,
-  mockPaperById,
   mockSkillLabel,
   MOCK_PASS_PCT,
   taskSeconds,
@@ -35,8 +34,7 @@ import {
   blankCount,
   failReason,
   finishAttempt,
-  isItemCorrect,
-  offlineScore,
+  fetchMockPaper,
   saveAttempt,
   startAttempt,
   type Attempt,
@@ -46,6 +44,7 @@ import {
   type OpenScore,
 } from "../game/mockExam";
 import { clearLocalRun, loadLocalRun, pushLocalResult, saveLocalRun } from "../game/mockExamLocal";
+import { heldPaper, rememberPaper, type DeliveredPaper } from "../content/mockPaper";
 import { notePremiumGate } from "../lib/premium";
 import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -133,8 +132,17 @@ export function MockExamScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<any>();
   const route = useRoute<RouteProp<RootStackParams, "MockExam">>();
-  const paper = mockPaperById(route.params.paperId);
-  const part = paper?.parts.find((p) => p.skill === route.params.skill) ?? null;
+  /*
+    KÂĞIT SUNUCUDAN. Eskiden `mockPaperById` ile paketten okunuyordu; paket
+    ikiliden çıktı (bkz. `content/mockPaper`). Kapak da kâğıdın içindeki
+    yönergeyi gösterdiği için sınav BAŞLAMADAN okunuyor: `fetchMockPaper`
+    deneme satırı açmıyor, saati işletmiyor, ama aynı premium kapısından
+    geçiyor. Oturum içinde bir kez iniyor, sonra bellekten.
+  */
+  const [paper, setPaper] = useState<DeliveredPaper | null>(() =>
+    heldPaper(route.params.paperId, route.params.skill),
+  );
+  const part = paper?.part ?? null;
   const budgets = useMemo(() => (part ? taskSeconds(part) : []), [part]);
 
   const [phase, setPhase] = useState<"kapak" | "gorev" | "sonuc">("kapak");
@@ -252,12 +260,41 @@ export function MockExamScreen() {
     return () => clearTimeout(id);
   }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  /*
+    KÂĞIDI İNDİR — ekran açılınca, sınavı başlatmadan.
+
+    Kilitli kâğıtta 403 geliyor ve ekran aynı paywall durumuna düşüyor; kilit
+    artık listede DE sınavın kapısında DA aynı yerden geliyor. Ağ yoksa kâğıt
+    da yok: deneme sınavı çevrimiçi bir iş (bkz. `content/mockPaper`).
+  */
+  useEffect(() => {
+    if (paper) return;
+    let dead = false;
+    void (async () => {
+      try {
+        const d = await fetchMockPaper(route.params.paperId, route.params.skill);
+        if (dead || !d.paper) return;
+        rememberPaper(d.paper);
+        setPaper(d.paper);
+      } catch (err) {
+        if (dead) return;
+        const why = failReason(err);
+        setFail(why);
+        if (why === "locked") notePremiumGate("mock_exam");
+      }
+    })();
+    return () => { dead = true; };
+  }, [paper, route.params.paperId, route.params.skill]);
+
   /* ── başlat / devam et ──────────────────────────────────────────────── */
   const begin = useCallback(async () => {
     if (!paper || !part || busy) return;
     setBusy(true);
     try {
       const d = await startAttempt(paper.id, part.skill);
+      /* `start` kâğıdı da döndürüyor (yarım kalan denemede de). Elimizdekiyle
+         aynı olsa bile belleğe yazılıyor: sürümü sunucununki olsun. */
+      if (d.paper) { rememberPaper(d.paper); setPaper(d.paper); }
       /* İZİN SÜRE BAŞLAMADAN (`sureVer` aşağıda). Yazma ve konuşma dökümü
          değerlendirmeye gidiyor; ses bu uygulamada cihazda yazıya çevrildiği
          için yalnız metin izni. Kâğıt açılamadıysa (kilit, ağ) sorulmuyor. */
@@ -308,16 +345,27 @@ export function MockExamScreen() {
     let cancelled = false;
     void (async () => {
       setBusy(true);
-      let final: { score: MockScore; ai: MockFeedback | null; offline: FailReason | null };
+      /*
+        PUAN YOKSA SONUÇ DA YOK.
+
+        Eskiden ağ yokken cihaz kendi puanını hesaplıyordu (`offlineScore`) —
+        cevap anahtarı pakette olduğu için mümkündü. Anahtar artık cihaza
+        inmiyor, dolayısıyla uydurulacak bir puan da yok. Bu hâlde:
+        yarım kalan kayıt SİLİNMİYOR ve yerel sonuç YAZILMIYOR, yani bölüm
+        "çözüldü" görünmüyor; kullanıcı bağlantı gelince aynı yerden bitiriyor.
+      */
+      let final: { score: MockScore; ai: MockFeedback | null; offline: FailReason | null } | null = null;
       if (attempt) {
         try {
           const d = await finishAttempt(attempt.id, answers);
           final = { score: d.score, ai: d.ai ?? null, offline: null };
         } catch (err) {
-          final = { score: offlineScore(part, answers), ai: null, offline: failReason(err) };
+          if (!cancelled) { setFail(failReason(err)); setBusy(false); }
+          return;
         }
       } else {
-        final = { score: offlineScore(part, answers), ai: null, offline: fail ?? "unreachable" };
+        if (!cancelled) { setFail(fail ?? "unreachable"); setBusy(false); }
+        return;
       }
       // Sonuç her durumda cihaza yazılıyor ve yarım kalan kayıt siliniyor:
       // liste ekranı "bu bölümü çözdüm mü" sorusunu sunucu olmadan da
@@ -573,7 +621,7 @@ function TaskBar({ part, ix, colors }: { part: MockPart; ix: number; colors: Pal
 function Cover({
   paper, part, eyebrow, voiced, onAnnounce,
 }: {
-  paper: NonNullable<ReturnType<typeof mockPaperById>>;
+  paper: DeliveredPaper;
   part: MockPart;
   eyebrow: string;
   voiced: boolean;
@@ -1253,8 +1301,10 @@ function ResultView({
               </Card>
             ) : (
               task.items.map((it) => {
-                const ok = isItemCorrect(it, answers[it.id]);
+                /* Doğruluk da gerekçe de SUNUCUDAN: cevap anahtarı cihaza
+                   inmiyor, yerelde hesaplanamaz (bkz. content/mockPaper). */
                 const scored = score.items.find((s) => s.id === it.id);
+                const ok = scored?.correct ?? false;
                 const bools = mockBoolLabels(course, task.format);
                 const given = answers[it.id];
                 const givenLabel = !given
@@ -1284,7 +1334,7 @@ function ResultView({
                         <Text variant="caption" color={ok ? colors.successText : colors.text} style={{ marginTop: spacing.xs }}>
                           {t("mockexam.correct_answer")}: {scored?.expected ?? ""}
                         </Text>
-                        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{it.explain}</Text>
+                        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{scored?.explain ?? ""}</Text>
                       </View>
                     </View>
                   </Card>

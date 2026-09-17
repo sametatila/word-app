@@ -14,7 +14,8 @@ import { FlowNote } from "../ui/flow";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
-import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockPaper, type MockSkill } from "../data/exams";
+import { mockSkillLabel, type MockLevel, type MockSkill } from "../data/exams";
+import { mockCatalogFor, type MockCatalogEntry } from "../content/mockCatalog";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
 import { fetchMockAccess, type MockAccess } from "../game/mockExam";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
@@ -63,7 +64,21 @@ export function MockExamsScreen() {
   const levelReady = !meLoading && (!!me || prefsRead);
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
-  const papers = mockPapersFor(currentCourseId(), level);
+  /*
+    KÜNYELER SUNUCUDAN — kâğıtlar ikiliden çıktı (bkz. `content/mockCatalog`).
+
+    İndirilmiş künye diskte kaldığı için liste ÇEVRİMDIŞI da açılıyor; ağ
+    yokken yalnız sınava girilemiyor. Seviye değişince yeniden okunuyor: paket
+    başına tek dosya, güncelse hiç istek atılmıyor.
+  */
+  const [papers, setPapers] = useState<MockCatalogEntry[]>([]);
+  useEffect(() => {
+    let dead = false;
+    void mockCatalogFor(currentCourseId(), level as MockLevel)
+      .then((list) => { if (!dead) setPapers(list); })
+      .catch(() => { if (!dead) setPapers([]); });
+    return () => { dead = true; };
+  }, [level]);
 
   /*
     Bölümlerin durumu: bitti mi, kaç aldın, yarım mı kaldı.
@@ -225,7 +240,7 @@ export function MockExamsScreen() {
   );
 }
 
-function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { paper: MockPaper; states: Record<string, PartState>; locked: boolean; showPlans: boolean; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void; onPlans: () => void }) {
+function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { paper: MockCatalogEntry; states: Record<string, PartState>; locked: boolean; showPlans: boolean; onOpen: (skill: MockSkill) => void; onPlans: () => void }) {
   const { colors } = useTheme();
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
@@ -244,7 +259,9 @@ function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { pape
 
       <View style={{ marginTop: spacing.sm, opacity: locked ? 0.6 : 1 }}>
         {paper.parts.map((part) => {
-          const pts = partPoints(part);
+          /* Puan künyeyle geliyor: görevleri saymak için kâğıdın tamamına
+             ihtiyaç vardı, künye onu hazır taşıyor (bkz. mock-exams/deliver). */
+          const pts = part.points;
           return (
             /* Kilitli bölüm BASILAMIYOR: dokunulabilir bırakılsaydı basan kişi
                yine sınavın içinde 403 görürdü. */

@@ -1,7 +1,4 @@
-import PAPERS from "./papers.json";
-import PAPERS_EN from "./papers-en.json";
 import { courseOrDefault, type CourseId } from "../../lib/courses";
-import { nativeMockPaper, nativeMockText, translatedCourse } from "../../lib/nativeContent";
 
 /**
  * Deneme sınavları — elle yazılmış, kendi başına duran sınav kâğıtları.
@@ -10,23 +7,21 @@ import { nativeMockPaper, nativeMockText, translatedCourse } from "../../lib/nat
  * BAŞKA YERİN içeriğiydi: beceri alıştırmalarının eksik bir kopyası ve
  * `lib/exam.ts`in ders içeriğinden ürettiği Patika türevi kâğıtlar. İkisi de
  * kaldırıldı. Buradaki kâğıtlar hiçbir yerden türetilmiyor; kaynakları
- * `src/lib/mock-exams` altında duruyor ve `npm run dump:mock-exams` ile
- * `papers.json` olarak buraya dökülüyor. Yani içerik tek yerde yazılıyor,
- * mobil onun türevi.
+ * `src/lib/mock-exams` altında duruyor.
+ *
+ * KÂĞITLAR ARTIK BU PAKETTE DEĞİL. `papers.json` ve `papers-en.json` (5,4 MB,
+ * 120 kâğıt) ikiliden çıkarıldı: premium kapılı içerik ücretsiz uygulamanın
+ * içinde duruyordu, üstelik her maddenin cevap anahtarıyla. Bu dosyada artık
+ * yalnız TİPLER, süre hesabı ve kâğıdın kendi dilindeki etiketler var.
+ *
+ *   künye (liste)   `content/mockCatalog` → `mockindex/<kurs>-<seviye>` paketi
+ *   kâğıt (sınav)   `/api/mock-exam` → yetki kontrolünden geçmiş, anahtarsız
  *
  * Hedef dile bağlanması bilinçli: Zürih Almancası kursunun hedefi de Almanca,
- * dolayısıyla aynı sınava hazırlanır. İngilizcenin kendi kâğıtları var
- * (`papers-en.json`) ve yapıları Almancadan farklı: A2'den itibaren dil
- * sistemi görevleri, B2'den itibaren kelime türetme ve anahtar sözcükle
- * dönüştürme okuma bölümünün içinde duruyor.
- *
- * İKİ AYRI SORU, İKİ AYRI FONKSİYON — karıştırılırsa ya kapı kapanır ya da
- * olmayan bir şeyin sözü verilir:
- *   supportsMockExams  kursun deneme sınavı KATALOĞU var mı → Öğren
- *                      sekmesindeki kutucuğun koşulu. Liste boşken de kapı
- *                      açık kalır; ekran o zaman dürüst boş durumunu gösterir.
- *   hasMockExams       kursta gerçekten sınav VAR mı → vaat içeren metinlerin
- *                      (paywall) koşulu. Olmayan sınavın sözü verilmez.
+ * dolayısıyla aynı sınava hazırlanır. İngilizcenin kendi kâğıtları var ve
+ * yapıları Almancadan farklı: A2'den itibaren dil sistemi görevleri, B2'den
+ * itibaren kelime türetme ve anahtar sözcükle dönüştürme okuma bölümünün
+ * içinde duruyor.
  */
 
 export type MockLevel = "A1" | "A2" | "B1" | "B2" | "C1";
@@ -58,12 +53,22 @@ export type MockStimulus =
 
 export type MockOption = { key: string; label: string; body?: string };
 
-type ItemBase = { id: string; no: number; ref?: string; explain: string };
+/*
+  CEVAP ANAHTARI BU TİPTE YOK ve olmaması bir bildirim değil, GERÇEK.
+
+  Kaynak maddede `answer` (doğru şık), `accept` (kabul edilen yazımlar) ve
+  `explain` (gerekçe) alanları var; teslim edilen gövdeden üçü de çıkarılıyor
+  (`src/lib/mock-exams/deliver`, kapı: `test:mock-exams`). Tipte bırakılsalardı
+  ekran onlara erişebilir gibi görünür, çalışma zamanında `undefined` bulurdu.
+
+  Gerekçe artık SONUÇLA geliyor: `MockScore.items[].explain`.
+*/
+type ItemBase = { id: string; no: number; ref?: string };
 export type MockItem =
-  | (ItemBase & { kind: "mcq"; text: string; options: string[]; answer: number })
-  | (ItemBase & { kind: "bool"; text: string; answer: boolean })
-  | (ItemBase & { kind: "match"; text: string; answer: string })
-  | (ItemBase & { kind: "gap"; text: string; cue?: string; accept: string[] });
+  | (ItemBase & { kind: "mcq"; text: string; options: string[] })
+  | (ItemBase & { kind: "bool"; text: string })
+  | (ItemBase & { kind: "match"; text: string })
+  | (ItemBase & { kind: "gap"; text: string; cue?: string });
 
 export type MockRubric = {
   minWords?: number;
@@ -132,9 +137,6 @@ export type MockPaper = {
   parts: MockPart[];
 };
 
-const ALL = PAPERS as unknown as MockPaper[];
-const ALL_EN = PAPERS_EN as unknown as MockPaper[];
-
 /** Geçme eşiği (yüzde) — bölüm başına. `src/lib/mock-exams/types.ts` ile aynı. */
 export const MOCK_PASS_PCT = 60;
 
@@ -181,46 +183,36 @@ export function taskSeconds(part: MockPart): number[] {
 export const isOpenTask = (t: MockTask) => t.format === "writing" || t.format === "speaking";
 
 /**
- * Hedef dile göre katalog. Kurs kimliğine göre DEĞİL: Züritüütsch'ün hedefi de
- * Almanca ve aynı kâğıtları çözüyor, ayrı bir katalog gerekmiyor.
+ * Deneme sınavı kataloğu OLAN hedef diller.
+ *
+ * Eskiden bu bilgi paketten türüyordu (`BY_TARGET`, iki JSON'un anahtarları);
+ * kâğıtlar ikiliden çıkınca türetecek bir şey kalmadı. Liste kısa ve elle
+ * yazılı: yeni bir hedef dile kâğıt yazıldığında buraya da eklenecek —
+ * eklenmezse o kursta sınav kutucuğu hiç görünmez.
+ *
+ * Kurs kimliğine göre DEĞİL hedef diline göre: Züritüütsch'ün hedefi de
+ * Almanca ve aynı kâğıtları çözüyor.
  */
-const BY_TARGET: Record<string, MockPaper[]> = { de: ALL, en: ALL_EN };
+const MOCK_TARGETS = ["de", "en"];
 
-/*
-  LİSTE ile KÂĞIT farklı davranıyor ve fark bilinçli.
-
-  `mockPapersFor` bir katalog döndürüyor: satırda Almanca tema (`theme`) ve
-  altında ana dildeki karşılığı (`themeTr`) var. Orada hep-ya-hiç kuralı
-  yanlış olurdu — bir dizesi eksik diye kâğıdı listeden gizlemek, sınavı
-  yok saymaktır. O yüzden yalnız o alan eşleniyor.
-
-  `mockPaperById` ise çözülecek kâğıdın kendisi: yönerge, durum tarifi,
-  ölçütler ve gerekçeler birlikte çevrilir ya da hiçbiri çevrilmez.
-*/
-export function mockPapersFor(course: CourseId, level?: string): MockPaper[] {
-  const list = BY_TARGET[courseOrDefault(course).targetLang] ?? [];
-  return (level ? list.filter((p) => p.level === level) : list)
-    .slice()
-    .sort((a, b) => a.no - b.no)
-    /* Süzgeç KURSA değil ANADİLE bağlı: çevrilen kurs anadille birlikte
-       değişiyor (`translatedCourse`). Sabit "de" kalsaydı anadili Almanca
-       olan kullanıcının İngilizce kâğıt listesi Türkçe kalırdı. */
-    .map((p) => (p.course === translatedCourse() ? { ...p, themeTr: nativeMockText("themeTr", p.themeTr) } : p));
-}
-
-export function mockPaperById(id: string): MockPaper | null {
-  const p = [...ALL, ...ALL_EN].find((x) => x.id === id);
-  return p ? nativeMockPaper(p) : null;
-}
 
 /** Kursun deneme sınavı KATALOĞU var mı — Öğren sekmesindeki kutucuğun koşulu. */
 export function supportsMockExams(course: CourseId): boolean {
-  return courseOrDefault(course).targetLang in BY_TARGET;
+  return MOCK_TARGETS.includes(courseOrDefault(course).targetLang);
 }
 
-/** Kursta gerçekten deneme sınavı VAR mı — vaat içeren metinlerin koşulu. */
+/**
+ * Kursta gerçekten deneme sınavı VAR mı — vaat içeren metinlerin koşulu.
+ *
+ * İKİ SORU ARTIK AYNI CEVABI VERİYOR ve bu bilinçli. Ayrım paket
+ * cihazdayken anlamlıydı: katalog var ama içi boş olabiliyordu. Künyeler
+ * sunucudan indiğine göre istemci "içi boş mu"yu ancak indirdikten sonra
+ * bilebilir; vaat metnini bir ağ isteğine bağlamak, ağ yokken paywall'ın
+ * sözünü yutması demek olurdu. Kataloğu olan hedef dilin kâğıdı da var
+ * (kapı: `test:mock-exams`).
+ */
 export function hasMockExams(course: CourseId): boolean {
-  return mockPapersFor(course).length > 0;
+  return supportsMockExams(course);
 }
 
 /**

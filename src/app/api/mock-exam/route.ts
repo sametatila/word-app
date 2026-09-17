@@ -150,7 +150,38 @@ export async function GET(req: Request) {
   }
 
   /*
-    YARIM KALAN DENEMEYİ VEREN DAL KALDIRILDI (`?paper=&skill=`).
+   * KÂĞIDIN KENDİSİ — sınavı BAŞLATMADAN.
+   *
+   * Kapak ekranı bölümün yönergesini, süresini ve görev sayısını gösteriyor;
+   * bunlar kâğıdın içinde. Kâğıt artık ikilide olmadığı için (bkz.
+   * `lib/mock-exams/deliver`) kapak da sunucudan okumak zorunda — ama kapağa
+   * bakmak sınavı başlatmamalı: `action:"start"` bir deneme satırı açıyor ve
+   * saati işletiyor. İki fiil, iki yol.
+   *
+   * KAPI BURADA DA VAR ve aynı kapı: kilitli bir kâğıdın gövdesi bu uçtan da
+   * dönmüyor. Kilidi listede görmek yetmiyordu; asıl sınav içeriğin nereden
+   * geldiği ve içerik yalnız buradan geliyor.
+   */
+  const paperId = url.searchParams.get("paper");
+  const skill = url.searchParams.get("skill");
+  if (paperId && skill) {
+    if (!SKILLS.has(skill as MockSkill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    const source = mockPaperById(paperId);
+    if (!source) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    const gate = await canMockPaper(userId, paperId, source.level, source.course);
+    if (!gate.allowed) {
+      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+    }
+    const delivered = await deliveredPaper(userId, source, skill as MockSkill);
+    if (!delivered) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    /* Kullanıcının anadiline çevrilmiş: önbelleğe alınmamalı. */
+    return NextResponse.json({ paper: delivered }, { headers: { "cache-control": "private, no-store" } });
+  }
+
+  /*
+    YARIM KALAN DENEMEYİ VEREN ESKİ DAL (`?paper=&skill=`) 2026-09-12'de
+    KALDIRILMIŞTI; yukarıdaki dal aynı parametreleri BAŞKA bir iş için
+    kullanıyor — yarım denemeyi yine `action:"start"` döndürüyor.
 
     Aynı satırı `action:"start"` zaten döndürüyor: açık bir deneme varsa onu
     `resumed: true` ile geri veriyor (aşağıdaki `start`), yani iki ayrı yol

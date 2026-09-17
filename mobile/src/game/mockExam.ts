@@ -1,58 +1,31 @@
 import { api, ApiError } from "../api/client";
 import { todayStr } from "./session";
-import { isOpenTask, type MockItem, type MockPart, type MockSkill, type MockTask } from "../data/exams";
+import { isOpenTask, type MockPart, type MockSkill } from "../data/exams";
+import type { DeliveredPaper } from "../content/mockPaper";
 
 /**
  * Deneme sınavı: puanlama kuralı ve oturum çağrıları.
  *
- * PUAN SUNUCUDA. Resmî sayı `/api/mock-exam` action:"finish"ten geliyor;
- * buradaki `localScore` yalnız iki iş için var — ekrandaki "kaç madde
- * cevaplandı" göstergesi ve ağ yokken gösterilen geçici sonuç. İstemcinin
- * hesapladığı puan hiçbir zaman istatistiğe yazılmıyor.
+ * PUAN YALNIZ SUNUCUDA. Resmî sayı `/api/mock-exam` action:"finish"ten
+ * geliyor ve başka hiçbir yerde hesaplanmıyor: cevap anahtarı cihaza inmediği
+ * için hesaplanamaz da. Ekranın kendi hesapladığı tek şey "kaç madde boş
+ * kaldı" (`blankCount`) — o da anahtara bakmıyor.
  */
 
-/**
- * Cevap karşılaştırma katlaması — `src/lib/mock-exams/scoring.ts` içindeki
- * `foldAnswer` ile AYNI kural. İkisi birlikte değişir; ayrılırlarsa öğrenci
- * ekranda doğru görünen bir cevabın sunucuda yanlış sayıldığını görür.
- *
- * Kesme işareti siliniyor, boşluğa çevrilmiyor: "don't" ile "dont" aynı cevap
- * sayılmalı. Almancada görünmeyen bir kusurdu, İngilizce boşluk doldurma ve
- * dönüştürme maddelerinde doğru cevabı yanlış sayıyordu.
- */
-export function foldAnswer(s: string): string {
-  return s
-    .toLocaleLowerCase("de-DE")
-    .replace(/ß/g, "ss")
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue")
-    .replace(/['’‘`´]/g, "")
-    .replace(/[.,!?;:"„“”()[\]{}\-–—/]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+/*
+  CEVAP KARŞILAŞTIRMASI ARTIK BURADA DEĞİL.
 
-export function isItemCorrect(item: MockItem, ans: string | undefined): boolean {
-  if (ans == null || ans.trim() === "") return false;
-  if (item.kind === "mcq") return Number(ans) === item.answer;
-  if (item.kind === "bool") return (ans === "true") === item.answer;
-  if (item.kind === "match") return ans === item.answer;
-  return item.accept.some((a) => foldAnswer(a) === foldAnswer(ans));
-}
+  `foldAnswer`, `isItemCorrect`, `localScore`, `offlineScore` ve
+  `expectedLabel` kaldırıldı: beşi de maddenin `answer`/`accept` alanlarını
+  okuyordu ve o alanlar cihaza HİÇ inmiyor (bkz. `src/lib/mock-exams/deliver`).
+  Cevap anahtarını cihazda tutmak, kâğıdı ücretsiz uygulamanın içinde
+  taşımakla aynı açığın ta kendisiydi.
 
-export function localScore(part: MockPart, answers: Record<string, string>): { correct: number; total: number; pct: number } {
-  let correct = 0;
-  let total = 0;
-  for (const task of part.tasks) {
-    if (isOpenTask(task)) continue;
-    for (const it of task.items) {
-      total++;
-      if (isItemCorrect(it, answers[it.id])) correct++;
-    }
-  }
-  return { correct, total, pct: total ? Math.round((100 * correct) / total) : 0 };
-}
+  Puanı sunucu veriyor (`finishAttempt` → `MockScore`) ve döküm de oradan
+  geliyor: hangi madde doğru (`items[].correct`), doğrusu neydi
+  (`items[].expected`), neden (`items[].explain`). Sunucuya ulaşılamıyorsa
+  puan YOK — uydurulmuş bir puan, puan olmamasından kötü.
+*/
 
 /** Bölümde boş kalan nesnel madde sayısı. */
 export function blankCount(part: MockPart, answers: Record<string, string>): number {
@@ -99,6 +72,11 @@ export type MockTodo = { title: string; why: string; how: string };
 export type MockFeedback = { summary: string; strengths: string[]; todo: MockTodo[]; source: "ai" | "rules" };
 
 export type ScoredItem = {
+  /**
+   * Maddenin gerekçesi — sunucudan, kâğıtla değil SONUÇLA geliyor.
+   * Kâğıt `explain` taşımadan iniyor; gerekçe cevabı ele verir.
+   */
+  explain?: string;
   id: string;
   no: number;
   taskId: string;
@@ -144,11 +122,28 @@ export function failReason(err: unknown): FailReason {
   return "unreachable";
 }
 
-export function startAttempt(paperId: string, skill: MockSkill): Promise<{ attempt: Attempt; resumed: boolean }> {
+export function startAttempt(
+  paperId: string,
+  skill: MockSkill,
+): Promise<{ attempt: Attempt; resumed: boolean; paper: DeliveredPaper | null }> {
   return api("/api/mock-exam", {
     method: "POST",
     body: JSON.stringify({ action: "start", paper: paperId, skill, day: todayStr() }),
   });
+}
+
+/**
+ * KÂĞIDIN KENDİSİ — sınavı başlatmadan.
+ *
+ * Kapak ekranı bölümün yönergesini ve görev sayısını gösteriyor; bunlar
+ * kâğıdın içinde ve kâğıt artık ikilide değil. Kapağa bakmak sınavı
+ * başlatmamalı, o yüzden `start` değil bu çağrılıyor: `start` bir deneme
+ * satırı açıyor ve saati işletiyor.
+ *
+ * Kilitli kâğıtta 403 dönüyor — kapı burada da aynı kapı.
+ */
+export function fetchMockPaper(paperId: string, skill: MockSkill): Promise<{ paper: DeliveredPaper }> {
+  return api(`/api/mock-exam?paper=${encodeURIComponent(paperId)}&skill=${encodeURIComponent(skill)}`);
 }
 
 /**
@@ -215,51 +210,4 @@ export function fetchMockAccess(level: string): Promise<MockAccess> {
 
 export function fetchMockStats(): Promise<MockStats> {
   return api("/api/mock-exam?stats=1");
-}
-
-/**
- * Ağ yokken kullanılan yerel sonuç — sunucu puanıyla aynı biçimde.
- *
- * `passed` burada da %60 eşiğine bakıyor ama bu sonuç KAYDEDİLMİYOR ve
- * istatistiğe girmiyor; ekran bunu ayrıca söylüyor.
- */
-export function offlineScore(part: MockPart, answers: Record<string, string>): MockScore {
-  const items: ScoredItem[] = [];
-  const byTask: MockScore["byTask"] = [];
-  const goals = new Map<string, { correct: number; total: number }>();
-  for (const task of part.tasks) {
-    if (isOpenTask(task)) continue;
-    let c = 0;
-    for (const it of task.items) {
-      const ok = isItemCorrect(it, answers[it.id]);
-      if (ok) c++;
-      const g = goals.get(task.goal) ?? { correct: 0, total: 0 };
-      g.total++;
-      if (ok) g.correct++;
-      goals.set(task.goal, g);
-      items.push({
-        id: it.id, no: it.no, taskId: task.id, taskNo: task.no, goal: task.goal,
-        correct: ok, given: answers[it.id] ?? "", expected: expectedLabel(it, task),
-      });
-    }
-    byTask.push({ taskId: task.id, taskNo: task.no, format: task.format, goal: task.goal, correct: c, total: task.items.length });
-  }
-  const total = items.length;
-  const correct = items.filter((i) => i.correct).length;
-  const pct = total ? Math.round((100 * correct) / total) : 0;
-  return {
-    correct, total, pct, passed: total > 0 && pct >= 60,
-    byGoal: [...goals.entries()].map(([goal, v]) => ({ goal, ...v })),
-    byTask, items,
-  };
-}
-
-export function expectedLabel(item: MockItem, task: MockTask): string {
-  if (item.kind === "mcq") return item.options[item.answer] ?? "";
-  if (item.kind === "bool") return item.answer ? "richtig" : "falsch";
-  if (item.kind === "match") {
-    const o = task.options?.find((x) => x.key === item.answer);
-    return o ? `${o.key}) ${o.label}` : item.answer;
-  }
-  return item.accept[0];
 }

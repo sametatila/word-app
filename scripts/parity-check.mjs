@@ -473,9 +473,22 @@ console.log("\n" + C.b + "11. DERS VE DENEME ICERIGI vs OYNATICI" + C.off);
   else if (missingExpect.length) fail("anlatim beklentisi cizilemez", missingExpect.map((k) => `${k}: LessonScreen tanimiyor`));
   else pass(`anlatim beklentileri (${[...expectKinds].sort().join(", ")})`);
 
-  const itemKinds = kinds(["mobile/src/data/exams/papers.json", "mobile/src/data/exams/papers-en.json"], (p, out) => {
-    for (const part of p.parts ?? []) for (const t of part.tasks ?? []) for (const it of t.items ?? []) if (it.kind) out.add(it.kind);
-  });
+  /*
+    MADDE TURLERI ARTIK KAYNAKTAN OKUNUYOR, paketten degil.
+
+    Kagitlar mobil paketten cikarildi (premium icerik ucretsiz ikilinin
+    icindeydi); okunacak JSON kalmadi. Kaynak zaten daha guclu bir olcut:
+    `MockItem` birlesimi turlerin TAMAMINI sayiyor, paket ise yalnizca bugun
+    kullanilanlari. Yeni bir tur tanimlanip oynaticiya eklenmediginde paket
+    surumu sessiz kalirdi, bu surum kirmizi yaniyor.
+  */
+  const itemKinds = new Set();
+  {
+    const types = read("src/lib/mock-exams/types.ts");
+    const from = types.indexOf("export type MockItem =");
+    const to = types.indexOf("export type", from + 10);
+    for (const m of types.slice(from, to > from ? to : undefined).matchAll(/kind:\s*"([a-zA-Z]+)"/g)) itemKinds.add(m[1]);
+  }
   const mockNamed = new Set([
     ...named(read("mobile/src/game/mockExam.ts"), "item\\.kind"),
     ...named(read("mobile/src/screens/MockExamScreen.tsx"), "kind"),
@@ -928,30 +941,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
-/* ── 20. deneme sinavi cevap katlamasi ─────────────────────────────────────
- * `src/lib/mock-exams/scoring.ts` ile `mobile/src/game/mockExam.ts` icindeki
- * `foldAnswer` AYNI kural olmak zorunda ve bunu iki dosya da yaziyor. Sonucu
- * mobil dosyanin yorumunda: ayrilirlarsa ogrenci EKRANDA DOGRU gorunen bir
- * cevabin sunucuda yanlis sayildigini gorur - kesme isareti kuralinin
- * eklenmesi tam bu hataydi (Ingilizce bosluk doldurmada dogru cevap yanlis
- * sayiliyordu).
+/* ── 20. deneme sinavi cevap katlamasi — KAPI KALKTI ──────────────────────
+ * `foldAnswer` iki tarafta ayni olmak zorundaydi, cunku mobil cevaplari
+ * KENDI karsilastiriyordu ve ayrisma "ekranda dogru, sunucuda yanlis"
+ * demekti.
  *
- * Kapisi yoktu. Karsilastirma yalnizca islevin GOVDESI: iki dosyanin geri
- * kalani tamamen farkli (biri sunucu puanlamasi, oteki mobil oturum
- * cagrilari). */
-{
-  const fold = (p) => {
-    const src = read(p);
-    const i = src.indexOf("export function foldAnswer");
-    if (i < 0) return ["foldAnswer bulunamadi: " + p];
-    const j = src.indexOf("\n}", i);
-    return src
-      .slice(i, j < 0 ? undefined : j + 2)
-      .split("\n")
-      .map((l) => l.trimEnd());
-  };
-  sameList("cevap katlamasi", fold("mobile/src/game/mockExam.ts"), fold("src/lib/mock-exams/scoring.ts"));
-}
+ * Artik mobil hicbir cevabi karsilastirmiyor: kagit cevap anahtari olmadan
+ * iniyor (`src/lib/mock-exams/deliver`) ve puani yalnizca sunucu veriyor.
+ * Kural tek yerde kaldi, dolayisiyla ayrisacak iki taraf da yok. Kapiyi
+ * silmek burada bir gerileme degil, kopyanin kendisinin kalkmasi. */
 
 /* ── 21. yuruyus modunun ses tablosu ───────────────────────────────────────
  * Webin `lib/sfx.ts` `WALK_NOTES` tablosu, mobil `lib/sfxNotes.ts`

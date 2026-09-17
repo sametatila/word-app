@@ -23,6 +23,7 @@
  * markası geçmemeli; geçerse bu bir hata.
  */
 import { MOCK_PAPERS } from "../src/lib/mock-exams";
+import { MOCK_KEY_FIELDS, deliverPart } from "../src/lib/mock-exams/deliver";
 import { foldAnswer } from "../src/lib/mock-exams/scoring";
 import {
   MOCK_SKILL_ORDER,
@@ -548,6 +549,33 @@ for (const course of ["de", "en"] as MockCourse[]) {
     const nos = ps.map((p) => p.no).sort((a, b) => a - b);
     if (new Set(nos).size !== nos.length) fail(`${course}/${level}`, `deneme numarası tekrar ediyor: ${nos.join(",")}`);
     if (nos[0] !== 1) warn(`${course}/${level}`, `numaralar 1'den başlamıyor: ${nos.join(",")}`);
+  }
+}
+
+/*
+  TESLİM EDİLEN KÂĞITTA CEVAP ANAHTARI KALMASIN.
+
+  Kâğıtlar artık ikilide değil, sunucudan iniyor (`lib/mock-exams/deliver`) ve
+  inen gövdeden `answer`, `accept`, `explain` çıkarılıyor. Bu kapı o
+  projeksiyonun GERÇEKTEN çalıştığını her koşuda ölçüyor — çünkü kusur sessiz:
+  bir maddeye yeni bir anahtar alanı eklendiğinde ekran çalışmaya devam eder,
+  yalnız cevaplar da kullanıcının cihazına gitmiş olur.
+
+  Arama METİN üzerinde: iç içe hangi derinlikte olursa olsun alan adı geçerse
+  yakalanıyor. `key` bilerek listede yok (şık harfi), `sample` de yok (kâğıt
+  bitince gösterilen örnek cevap) — gerekçeleri `deliver.ts`te yazılı.
+*/
+for (const paper of MOCK_PAPERS) {
+  for (const part of paper.parts) {
+    const delivered = deliverPart(paper, part.skill);
+    if (!delivered) {
+      fail(paper.id, `${part.skill} bölümü teslim edilemedi`);
+      continue;
+    }
+    const text = JSON.stringify(delivered);
+    for (const field of MOCK_KEY_FIELDS) {
+      if (text.includes(`"${field}":`)) fail(paper.id, `${part.skill}: teslim edilen gövdede "${field}" kaldı`);
+    }
   }
 }
 

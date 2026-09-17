@@ -13,8 +13,6 @@
  *
  * Kullanım: npm run dump:mock-exams
  */
-import { writeFileSync, mkdirSync } from "node:fs";
-import { dirname, join } from "node:path";
 import { MOCK_PAPERS } from "../src/lib/mock-exams";
 
 /**
@@ -33,19 +31,14 @@ export function buildPaperDump(course: string) {
   return { file, json: JSON.stringify(keep), rows: keep };
 }
 
-if (process.argv[1]?.endsWith("dump-mock-exams-mobile.ts")) {
-  const course = (process.argv[2] ?? "de").toLowerCase();
-  const { file, json, rows } = buildPaperDump(course);
-  if (!rows.length) {
-    console.error(`"${course}" kursu için deneme sınavı yok — paket yazılmadı.`);
-    process.exit(1);
-  }
-  const out = join(process.cwd(), file);
-  mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, json);
+/*
+  DÖKÜM KOLU KALDIRILDI — yazılacak dosya kalmadı.
 
-  const items = rows.reduce((a, p) => a + p.parts.reduce((b, s) => b + s.tasks.reduce((c, t) => c + t.items.length, 0), 0), 0);
-  const byLevel: Record<string, number> = {};
-  for (const p of rows) byLevel[p.level] = (byLevel[p.level] ?? 0) + 1;
-  console.log(course, "yazıldı:", rows.length, "kâğıt,", items, "madde", JSON.stringify(byLevel));
-}
+  `papers.json` ve `papers-en.json` mobil paketten çıkarıldı (premium kâğıtlar
+  ücretsiz ikilinin içinde, cevap anahtarlarıyla duruyordu). Kâğıt artık
+  sunucudan iniyor, künye de içerik hattından yayınlanıyor.
+
+  `buildPaperDump` YAŞIYOR ve tek projeksiyon olarak kalıyor:
+  `scripts/content-publish` künyeleri ondan üretiyor. İki yerde iki
+  projeksiyon olsaydı yayınlanan içerik sessizce kaynaktan ayrılırdı.
+*/

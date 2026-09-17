@@ -15,7 +15,8 @@ import { EmptyCard } from "../social/common";
 import { FlowNote } from "../ui/flow";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
-import { mockCourseOf, mockPaperById, mockSkillLabel, type MockSkill } from "../data/exams";
+import { mockCourseOf, mockSkillLabel, type MockSkill } from "../data/exams";
+import { mockCourseOfPaperId } from "../content/mockCatalog";
 import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -61,9 +62,19 @@ export function MockStatsScreen() {
   }, []);
   useEffect(() => { void load(); }, [load]);
 
+  /*
+    ETİKET KİMLİKTEN ÇÖZÜLÜYOR: `de-b1-07` → "B1 · 7. deneme".
+
+    Eskiden kâğıt bulunup içinden okunuyordu (`mockPaperById`) — yani 5,4 MB'lık
+    paket yalnız iki alan için taşınıyordu. Kimlik zaten ikisini de söylüyor;
+    çözülemeyen bir kimlikte ham hâli basılıyor.
+  */
   const label = (paperId: string) => {
-    const p = mockPaperById(paperId);
-    return p ? `${p.level} · ${t("mockexams.paper", { n: p.no })}` : paperId;
+    const [, level, no] = paperId.split("-");
+    const n = Number(no);
+    return level && Number.isFinite(n)
+      ? `${level.toUpperCase()} · ${t("mockexams.paper", { n })}`
+      : paperId;
   };
   /*
     Bölüm adı sınavın dilinde yazılır ("Lesen" / "Reading"), arayüz dilinde
@@ -72,7 +83,7 @@ export function MockStatsScreen() {
   */
   const mine = mockCourseOf(currentCourseId());
   const skillOf = (skill: string, paperId?: string) =>
-    mockSkillLabel(paperId ? mockPaperById(paperId)?.course ?? mine : mine, skill as MockSkill);
+    mockSkillLabel(paperId ? mockCourseOfPaperId(paperId) : mine, skill as MockSkill);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
