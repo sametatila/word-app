@@ -119,6 +119,7 @@
     "dump:native": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
     "content:publish": "tsx --tsconfig scripts/tsconfig.ops.json scripts/content-publish.ts",
     "test:content-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-content-db.ts",
+    "test:content-analytics": "tsx --tsconfig scripts/tsconfig.ops.json scripts/test-content-analytics.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
     "check:en-unitvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-en-unit-vocab.ts",

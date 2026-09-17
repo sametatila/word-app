@@ -29,6 +29,8 @@ import { SITE_URL } from "@/lib/site";
  * yazıyor. İki katman bilerek: kendi çöküşünü haber veremeyen izleme yok.
  */
 
+import { suspectItems } from "@/lib/content/analytics";
+
 export type Alert = { key: string; level: "kritik" | "uyari"; text: string };
 type State = Record<string, { since: string; lastSent: string; text: string; level: Alert["level"] }>;
 
@@ -228,6 +230,32 @@ export async function collectAlerts(): Promise<Alert[]> {
       for (const r of spikes) {
         alerts.push({ key: `errspike:${r.fingerprint}`, level: "uyari", text: `Sık tekrar eden hata (${r.platform}, toplam ${num(r.count)}): ${String(r.message).slice(0, 160)}` });
       }
+    }),
+    guard("content", async () => {
+      /*
+        ŞÜPHELİ İÇERİK MADDESİ.
+
+        Bozuk bir madde kimseyi uyandırmıyor: uygulama çalışır, öğrenci
+        yanlış cevap alır ve sebebini bilmez. Ölçüm zaten var
+        (`lib/content/analytics`) ama panele BAKAN biri olmadan bir şey ifade
+        etmiyordu; uyarı motoru o boşluğu kapatıyor.
+
+        "Zor" ile "bozuk" ayırt ediliyor: sinyal ayırt etme gücü, doğruluk
+        oranı değil (gerekçe analytics dosyasında). Eşik altı veri gürültü
+        sayıldığı için uyarı ancak yeterli cevap toplanınca çıkıyor.
+      */
+      const items = await suspectItems(5);
+      const bad = items.filter((i) => i.suspect);
+      if (bad.length === 0) return;
+      const worst = bad
+        .slice(0, 3)
+        .map((i) => `${i.label} (ayırt ${i.discrimination}, %${i.pct}, ${i.asked} cevap)`)
+        .join(" | ");
+      alerts.push({
+        key: "content:suspect",
+        level: "uyari",
+        text: `${bad.length} şüpheli içerik maddesi: ${worst}. Panelden kapatılabilir (/admin/content).`,
+      });
     }),
   ]);
   return alerts;
