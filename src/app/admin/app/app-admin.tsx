@@ -20,6 +20,7 @@ const ERROR_TR: Record<string, string> = {
   cooldown: "Son toplu bildirimden bu yana 12 saat geçmedi.",
   empty: "En az bir dilde başlık ve metin gerekli.",
   no_targets: "Bu filtreyle bildirim alabilecek kullanıcı yok (metni dolu dillerde).",
+  not_service: "Toplu bildirim yalnız hizmet duyurusu olabilir: onay kutusunu işaretle.",
   forbidden: "Yetki yok.",
 };
 const DELETE_SOURCE: Record<string, string> = { self: "Kullanıcı kendisi", admin: "Panelden", guest: "Misafir (atma/süre)" };
@@ -179,12 +180,13 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
   const [native, setNative] = useState("");
   const [course, setCourse] = useState("");
   const [platform, setPlatform] = useState("all");
+  const [service, setService] = useState(false);
   const [counts, setCounts] = useState<Record<Lang, number> | null>(null);
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
   const [list, setList] = useState(broadcasts);
 
-  const audience = (test: boolean) => ({ native, course, platform, test });
+  const audience = (test: boolean) => ({ native, course, platform, test, service });
   const cooling = nextAt && new Date(nextAt).getTime() > Date.now();
 
   async function preview() {
@@ -210,7 +212,7 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
   const field = { borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" };
 
   return (
-    <Section title="Toplu bildirim" sub="Yalnız bildirim kanalı çalışan ve bildirimleri kapatmamış kullanıcılara, kendi dillerinde gider. Metni boş bırakılan dildeki kullanıcıya gitmez. Önce kendine test gönder. Test dışı gönderim 12 saatte bir.">
+    <Section title="Toplu bildirim" sub="YALNIZ HİZMET DUYURUSU: bakım, güvenlik, hesabı ya da kullanımı etkileyen önemli değişiklik. Tanıtım, kampanya, indirim ve 'geri dön' mesajı gönderilmez (Elektronik Ticaret Kanunu ve App Store 4.5.4 önceden onay istiyor). Bildirim kanalı çalışan ve bildirimleri kapatmamış kullanıcılara, kendi dillerinde gider; metni boş dildekine gitmez. Önce kendine test gönder. Test dışı gönderim 12 saatte bir.">
       <div className="card space-y-3 px-3 py-3 text-caption">
         {LANGS.map((l) => (
           <div key={l} className="grid gap-1 sm:grid-cols-[7rem_1fr]">
@@ -237,12 +239,16 @@ function Broadcaster({ broadcasts, nextAt }: { broadcasts: Broadcast[]; nextAt: 
           <button type="button" disabled={busy} onClick={preview} className="chip h-8 px-3 text-caption">Kaç kişiye gider?</button>
           {counts ? <span>tr {counts.tr} · en {counts.en} · de {counts.de} → metni dolu dillerde <b>{reach}</b> kişi</span> : null}
         </div>
+        <label className="flex items-start gap-2">
+          <input type="checkbox" checked={service} onChange={(e) => setService(e.target.checked)} className="mt-0.5" />
+          <span>Bu bir <b>hizmet duyurusudur</b>; tanıtım, kampanya, indirim ya da uygulamaya geri çağırma içermez.</span>
+        </label>
         <div className="flex flex-wrap items-center gap-2">
           <button type="button" disabled={busy} onClick={() => send(true)} className="chip h-8 px-3 text-caption">Kendime test gönder</button>
           {cooling ? (
             <span className="muted">Sonraki gönderim: {when(nextAt ?? "")}</span>
           ) : (
-            <TwoStep label="Herkese gönder" confirm={`Evet, ${reach ?? "?"} kişiye gönder`} danger disabled={busy || reach == null || reach === 0} onConfirm={() => void send(false)} />
+            <TwoStep label="Herkese gönder" confirm={`Evet, ${reach ?? "?"} kişiye gönder`} danger disabled={busy || !service || reach == null || reach === 0} onConfirm={() => void send(false)} />
           )}
         </div>
         {msg ? <p role="status">{msg}</p> : null}

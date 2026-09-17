@@ -18,6 +18,16 @@ import type { NativeLang } from "@/lib/courses";
  *     boşsa o dildeki kullanıcıya hiç gitmiyor (Almanca konuşana Türkçe duyuru
  *     göndermektense göndermemek).
  *
+ * YALNIZ HİZMET DUYURUSU (2026-09-17 kararı). Türkiye'de 6563 sayılı Elektronik
+ * Ticaret Kanunu tanıtım amaçlı elektronik iletiyi önceden onaya bağlıyor;
+ * App Store 4.5.4 da pazarlama push'unu açık onaya bağlıyor. "Bildirimleri
+ * kapatmamış olmak" bu onay yerine geçmeyebilir. Bu yüzden panel yalnız
+ * HİZMET duyurusu gönderiyor (bakım, güvenlik, hesabı ya da kullanımı etkileyen
+ * önemli değişiklik) ve gönderen her seferinde "tanıtım/kampanya içermez"
+ * onayını veriyor; onaysız istek sunucuda reddediliyor (`not_service`). Tanıtım
+ * bildirimi istenirse önce ayrı, varsayılanı KAPALI bir "duyurular" izni gerekir.
+ * Hukuki görüş değildir; kesinlik için danışılmalı.
+ *
  * TEST ÖNCE: `test` hedefi yalnız gönderen adminin kendi hesabı. Panel gerçek
  * gönderimi önizleme sayısıyla ve iki adımlı onayla yapıyor.
  *
@@ -33,6 +43,8 @@ export type BroadcastAudience = {
   course: "" | "de" | "en" | "gsw-zh";
   platform: "all" | "ios" | "android" | "web";
   test: boolean;
+  /** Gönderen "hizmet duyurusudur, tanıtım içermez" onayını verdi mi. */
+  service: boolean;
 };
 export type BroadcastText = Record<NativeLang, { title: string; body: string }>;
 
@@ -48,7 +60,7 @@ export function parseAudience(raw: unknown): BroadcastAudience {
   const native = ["tr", "en", "de"].includes(String(o.native)) ? (o.native as NativeLang) : "";
   const course = ["de", "en", "gsw-zh"].includes(String(o.course)) ? (o.course as BroadcastAudience["course"]) : "";
   const platform = ["ios", "android", "web"].includes(String(o.platform)) ? (o.platform as BroadcastAudience["platform"]) : "all";
-  return { native, course, platform, test: o.test === true };
+  return { native, course, platform, test: o.test === true, service: o.service === true };
 }
 
 /** Yalnız uygulama içi yollar: panelden dışarıya yönlendiren bildirim yazılamasın. */
@@ -97,7 +109,9 @@ export async function startBroadcast(input: {
   audience: BroadcastAudience;
   adminEmail: string | null;
   adminUserId: string | null;
-}): Promise<{ id: number; targeted: number } | { error: "cooldown" | "empty" | "no_targets" }> {
+}): Promise<{ id: number; targeted: number } | { error: "cooldown" | "empty" | "no_targets" | "not_service" }> {
+  // Test (yalnız gönderenin kendisi) dışında hizmet duyurusu onayı zorunlu.
+  if (!input.audience.test && !input.audience.service) return { error: "not_service" };
   const langs = (Object.keys(input.text) as NativeLang[]).filter((l) => input.text[l].title && input.text[l].body);
   if (!langs.length) return { error: "empty" };
   if (!input.audience.test) {

@@ -100,6 +100,11 @@ async function main() {
   const a = parseAudience({ native: "fr", course: "de", platform: "sms", test: "true" });
   check("bilinmeyen dil/platform varsayılana", a.native === "" && a.platform === "all" && a.course === "de");
   check("test yalnız gerçek true", a.test === false && parseAudience({ test: true }).test === true);
+  check("hizmet duyurusu onayı yalnız gerçek true", parseAudience({ service: "true" }).service === false && parseAudience({ service: true }).service === true);
+
+  const { startBroadcast } = await import("../src/lib/push-broadcast");
+  const refused = await startBroadcast({ text: { tr: { title: "t", body: "b" }, en: { title: "", body: "" }, de: { title: "", body: "" } }, url: "/learn", audience: parseAudience({ service: false }), adminEmail: null, adminUserId: null });
+  check("hizmet onayı olmadan gönderim reddediliyor (veritabanına gitmeden)", "error" in refused && refused.error === "not_service");
 
   console.log("\nMağaza yönlendirmesi");
   check("iPhone", platformOf("Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X)") === "ios");
