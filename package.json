@@ -104,6 +104,7 @@
     "test:walkqueue": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-walk-queue.ts",
     "test:award": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-award.ts",
     "test:audio": "node scripts/audio-overlap.mjs",
+    "check:tts": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-tts.ts",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
     "db:check": "tsx scripts/schema-check.ts",

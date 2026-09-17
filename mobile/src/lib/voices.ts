@@ -16,7 +16,17 @@ export type VoiceId =
   | "de-CH-JanNeural"
   | "en-US-JennyNeural"
   | "en-US-GuyNeural"
-  | "tr-TR-EmelNeural";
+  | "tr-TR-EmelNeural"
+  /* KADRO SESLERİ — `CAST`in kullandığı, kullanıcının SEÇEMEDİĞİ sesler.
+     Diyalogda ikinci ve üçüncü konuşmacıyı ayırmak için varlar. */
+  | "de-DE-AmalaNeural"
+  | "de-DE-KillianNeural"
+  | "de-DE-SeraphinaMultilingualNeural"
+  | "de-DE-FlorianMultilingualNeural"
+  | "en-US-AriaNeural"
+  | "en-US-MichelleNeural"
+  | "en-US-AndrewNeural"
+  | "en-US-ChristopherNeural";
 
 /** Ders anlatım sesi (Türkçe) — kullanıcı seçmez, alternatifi yok. */
 export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
@@ -92,6 +102,44 @@ export function langOf(voice: VoiceId): string {
   // "de-DE" sayılıyordu — İngilizce ses eklenince Almanca okunurdu.
   const m = /^([a-z]{2}-[A-Z]{2})/.exec(voice);
   return m ? m[1] : "de-DE";
+}
+
+/**
+ * Perde kaydırma — web `src/lib/tts/voices.ts` `Pitch` ile aynı.
+ *
+ * Konuşmacıyı ayırmanın son çaresi: Zürih kursunda hedef lehçeyi konuşan
+ * yalnız iki ses var (Leni, Jan) ve aynı cinsiyetten iki konuşmacı çıkınca
+ * ses tükeniyor. Ölçüldü (Leni, aynı cümle): `+0Hz` → 228,6 Hz, `+18Hz` →
+ * ~250 Hz, `-18Hz` → ~200 Hz.
+ */
+export type Pitch = "mid" | "up" | "down";
+
+/** `/api/tts?p=` değeri — web `PITCH_PARAM` ile aynı. `mid` URL'ye yazılmıyor. */
+export const PITCH_PARAM: Record<Exclude<Pitch, "mid">, string> = { up: "up", down: "down" };
+
+/**
+ * DİYALOG KADROSU — web `src/lib/tts/voices.ts` `CAST` ile AYNI ve AYNI SIRADA.
+ *
+ * Sıra anlamlı: kadro baştan dağıtılıyor, yani iki kişilik diyalogların çoğu
+ * kullanıcının tanıdığı Katja/Conrad ikilisiyle okunuyor. Kullanıcının ses
+ * TERCİHİNE bakılmıyor — kadro sabit olunca bir diyaloğun sesi bütün
+ * kullanıcılarda tek önbellek girdisi oluyor (bkz. web `CAST`).
+ */
+export const CAST: Record<"de" | "gsw-zh" | "en", Record<"female" | "male", VoiceId[]>> = {
+  de: {
+    female: ["de-DE-KatjaNeural", "de-DE-AmalaNeural", "de-DE-SeraphinaMultilingualNeural"],
+    male: ["de-DE-ConradNeural", "de-DE-KillianNeural", "de-DE-FlorianMultilingualNeural"],
+  },
+  "gsw-zh": { female: ["de-CH-LeniNeural"], male: ["de-CH-JanNeural"] },
+  en: {
+    female: ["en-US-JennyNeural", "en-US-AriaNeural", "en-US-MichelleNeural"],
+    male: ["en-US-GuyNeural", "en-US-AndrewNeural", "en-US-ChristopherNeural"],
+  },
+};
+
+/** Kadronun kursu — tanınmayan kurs Almanca kadroya düşer. */
+export function castFor(course: string): Record<"female" | "male", VoiceId[]> {
+  return CAST[course as keyof typeof CAST] ?? CAST.de;
 }
 
 /**

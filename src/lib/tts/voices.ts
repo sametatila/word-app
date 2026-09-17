@@ -19,7 +19,21 @@ export type VoiceId =
   | "de-CH-JanNeural"
   | "en-US-JennyNeural"
   | "en-US-GuyNeural"
-  | "tr-TR-EmelNeural";
+  | "tr-TR-EmelNeural"
+  /* KADRO SESLERİ — aşağıdaki `CAST`in kullandığı, kullanıcının SEÇEMEDİĞİ
+     sesler. Diyalogda ikinci ve üçüncü konuşmacıyı ayırmak için varlar;
+     `VOICES` listesine girmiyorlar çünkü ses seçme ekranında gösterilecek
+     bir tercih değiller (bkz. `CAST`). Hepsi 2026-09-18'de Edge ucunda tek
+     tek denendi ve aynı adla Azure'da da var — yedeğe düşmek sesi
+     değiştirmiyor. */
+  | "de-DE-AmalaNeural"
+  | "de-DE-KillianNeural"
+  | "de-DE-SeraphinaMultilingualNeural"
+  | "de-DE-FlorianMultilingualNeural"
+  | "en-US-AriaNeural"
+  | "en-US-MichelleNeural"
+  | "en-US-AndrewNeural"
+  | "en-US-ChristopherNeural";
 
 /**
  * Ders anlatım sesi — Türkçe.
@@ -195,6 +209,84 @@ export const PACE_PARAM: Record<Exclude<Pace, "normal">, string> = { slow: "slow
 export function paceFromParam(r: string | null): Pace {
   const hit = (Object.keys(PACE_PARAM) as Exclude<Pace, "normal">[]).find((k) => PACE_PARAM[k] === r);
   return hit ?? "normal";
+}
+
+/**
+ * Perde kaydırma — konuşmacıyı ayırmanın SON çaresi.
+ *
+ * Diyalogda her konuşmacıya ayrı bir ses veriliyor (`CAST`), ama katalog
+ * sonsuz değil: Zürih kursunda hedef lehçeyi konuşan yalnız iki ses var
+ * (Leni, Jan) ve aynı cinsiyetten iki konuşmacı çıktığında ses tükeniyor.
+ * O noktada aynı sesi perdesi kaydırılmış hâliyle kullanmak, iki kişiyi
+ * BİREBİR aynı sesle okumaktan iyi: kulak konuşmacı değiştiğini duyuyor.
+ *
+ * Ölçüldü (2026-09-18, Leni, aynı cümle, otokorelasyonla F0 medyanı):
+ *   `+0Hz` → 228,6 Hz · `+18Hz` → ~250 Hz · `-18Hz` → ~200 Hz
+ * Yani kaydırma gerçekten sesin perdesini değiştiriyor, kabul edilip yok
+ * sayılmıyor. ±25Hz de denendi (262 / 190 Hz) ama orada ses gerginleşiyor;
+ * ±18 hem duyuluyor hem doğal kalıyor.
+ *
+ * Değerler KAPALI bir küme, tıpkı `Pace` gibi ve aynı sebeple: perde URL'ye
+ * giriyor, URL önbellek anahtarının kendisi. Serbest bir sayı her konuşmacı
+ * için ayrı bir önbellek girdisi açardı.
+ */
+export type Pitch = "mid" | "up" | "down";
+
+/** URL'deki `p` değeri ↔ perde. `mid` varsayılan, URL'ye hiç yazılmıyor. */
+export const PITCH_PARAM: Record<Exclude<Pitch, "mid">, string> = { up: "up", down: "down" };
+
+export function pitchFromParam(p: string | null): Pitch {
+  const hit = (Object.keys(PITCH_PARAM) as Exclude<Pitch, "mid">[]).find((k) => PITCH_PARAM[k] === p);
+  return hit ?? "mid";
+}
+
+/** Perde (SSML `pitch`). */
+export function pitchFor(pitch: Pitch = "mid"): string {
+  if (pitch === "up") return "+18Hz";
+  if (pitch === "down") return "-18Hz";
+  return "+0Hz";
+}
+
+/**
+ * DİYALOG KADROSU — konuşmacı başına ses.
+ *
+ * Sorun ölçüldü: içerikteki 709 diyalog bloğunun 598'i iki ya da daha çok
+ * konuşmacılı (üçü altı kişilik), ama hepsi tek sesle okunuyordu. İki kişilik
+ * bir alışveriş konuşmasını tek ses okuyunca sınavdaki asıl iş — kimin ne
+ * dediğini ayırmak — kulakla yapılamaz hâle geliyor; gerçek dinleme
+ * sınavlarında her rolü ayrı bir kişi seslendiriyor, çünkü ölçülen beceri bu.
+ *
+ * KULLANICININ SES TERCİHİNE BAKILMIYOR, bilerek. Gerekçe `lessonVoice` ile
+ * birebir aynı: kadro sabit olunca bir diyaloğun sesi bütün kullanıcılarda
+ * TEK önbellek girdisi oluyor ve kâğıdı ilk açan kişi önbelleği herkes için
+ * ısıtıyor. Tercihe saygı göstermek her sesi kullanıcı sayısı kadar
+ * çoğaltırdı — üstelik "Kundin" rolünü erkek sesi seçmiş bir kullanıcıya
+ * erkek sesle okutarak.
+ *
+ * Sıra ÖNEMLİ: kadro listenin başından dağıtılıyor, yani iki kişilik
+ * diyalogların çoğu (en sık hâl) kullanıcının zaten tanıdığı Katja/Conrad
+ * ikilisiyle okunuyor; katalogdaki öteki sesler ancak üçüncü konuşmacıda
+ * devreye giriyor. Seraphina/Florian en sonda çünkü çok dilli modeller
+ * ölçülerek daha yavaş bulundu (bkz. `VOICES`) — nadiren kullanılsınlar.
+ */
+export const CAST: Record<"de" | "gsw-zh" | "en", Record<"female" | "male", VoiceId[]>> = {
+  de: {
+    female: ["de-DE-KatjaNeural", "de-DE-AmalaNeural", "de-DE-SeraphinaMultilingualNeural"],
+    male: ["de-DE-ConradNeural", "de-DE-KillianNeural", "de-DE-FlorianMultilingualNeural"],
+  },
+  // Zürih: hedef lehçeyi konuşan başka ses YOK. de-DE sesleri eklemek
+  // kursun bütün gerekçesini bozardı (Dieth yazımını Alman aksanıyla okumak);
+  // o yüzden burada ayrım perdeyle yapılıyor.
+  "gsw-zh": { female: ["de-CH-LeniNeural"], male: ["de-CH-JanNeural"] },
+  en: {
+    female: ["en-US-JennyNeural", "en-US-AriaNeural", "en-US-MichelleNeural"],
+    male: ["en-US-GuyNeural", "en-US-AndrewNeural", "en-US-ChristopherNeural"],
+  },
+};
+
+/** Kadronun kursu — tanınmayan kurs Almanca kadroya düşer (`voicesFor` ile aynı kural). */
+export function castFor(course: string): Record<"female" | "male", VoiceId[]> {
+  return CAST[course as keyof typeof CAST] ?? CAST.de;
 }
 
 /** Okuma hızı (SSML `rate`). */
