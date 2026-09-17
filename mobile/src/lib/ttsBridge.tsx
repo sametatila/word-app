@@ -171,6 +171,23 @@ export function bridgeSfx(kind: SfxKind): void {
  * Sıralı çağrılır (aynı anda tek utterance) → tek bekleyen resolver yeterli.
  * "end"/"error" gelmezse metin uzunluğuna göre bir üst sınırla yine de çözülür.
  */
+/**
+ * Bir karakterin okunması için ayrılan süre (ms) — emniyet ağının hesabı.
+ *
+ * Gerçek hız ölçüldü: normal kademede ~57, en yavaşta ~104 ms/karakter.
+ * 120 iki katına yakın bir pay bırakıyor; ağ bir duraklarsa ses kesilmesin.
+ */
+const MS_PER_CHAR = 120;
+/**
+ * Emniyet ağının mutlak tavanı.
+ *
+ * Tek bir parça en fazla 600 karakter (`ttsText` `MAX_TEXT`) ve en yavaş
+ * kademede ~62 saniye sürüyor; 90 saniye onun da üstünde. Bu sayı sesin
+ * süresini değil, ses HİÇ GELMEDİĞİNDE zincirin ne kadar bekleyeceğini
+ * belirliyor.
+ */
+const MAX_UTTERANCE_MS = 90_000;
+
 let pendingResolve: (() => void) | null = null;
 /** Bekleyen okumanın ses gerçekten BAŞLAYINCA çağrılacağı yer (köprünün "play"i). */
 let pendingStart: (() => void) | null = null;
@@ -191,11 +208,25 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | bo
     pendingResolve = resolve;
     pendingStart = onStart ?? null;
     const seq = pendingSeq;
-    /* Üst sınır metnin OKUNMA süresinden: yavaş kademede aynı cümle ~1,8 kat
-       uzun sürüyor ve sabit 14 sn'lik tavan uzun bir repliği yarıda kesip
-       sonrakini başlatıyordu. */
+    /*
+      ÜST SINIR METNİN OKUNMA SÜRESİNDEN — ve 14 saniyelik tavan KALKTI.
+
+      Sınır `Math.min(14000 * stretch, ...)` idi: uzunlukla ölçeklenen bir
+      hesap yazılmış ama normal hızda 14 saniyelik mutlak bir tavanın altına
+      sıkıştırılmıştı, yani 120 karakterden uzun HER replik yine 14 saniyede
+      kesiliyordu. Ölçüm (~57 ms/karakter, normal hız): 368 karakterlik bir
+      replik ~21 saniye sürüyor ve 14'üncü saniyede yarıda kesilip sıradakine
+      geçiliyordu. İçerikteki en uzun tek replik tam da 368 karakter; metin
+      bölücüsü geldikten sonra parçalar 600 karaktere kadar çıkabiliyor.
+
+      Yeni hesap yalnızca uzunluktan: 120 ms/karakter gerçek okuma hızının
+      (normal ~57, en yavaş kademede ~104 ms/karakter) iki katı, yani bol
+      paylı. `stretch` yavaş kademenin ~1,8 katını ekliyor. Mutlak tavan
+      emniyet ağının kendisi için duruyor: ses hiç gelmezse zincir en geç
+      burada ilerliyor, sonsuza kadar asılı kalmıyor.
+    */
     const stretch = paceOf(slow) === "normal" ? 1 : 1.8;
-    const cap = Math.min(14000 * stretch, Math.max(3000, text.length * 120 * stretch));
+    const cap = Math.min(MAX_UTTERANCE_MS, Math.max(3000, text.length * MS_PER_CHAR * stretch));
     // Emniyet ağı NATIVE gecikmeyle kuruluyor, `setTimeout` ile DEĞİL.
     //
     // Ekran kapanınca iki şey aynı anda oluyor: WebView (Chromium) ses odağını
