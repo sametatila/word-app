@@ -163,6 +163,7 @@ const MOBIL_ONLY = {
   "/api/account/apple-code": "Apple girisinin native kod takasi; webde akis tarayicida tamamlaniyor",
   "/api/account/guest": "misafir verisini silme; misafir modu yalniz mobilde, web hesap istiyor (magaza on inceleme B24)",
   "/api/account/guest/claim": "misafirin ilerlemesini hesaba birlestirme; misafir modu yalniz mobilde",
+  "/api/handoff-nonce": "tarayicidan uygulamaya giris devrinin cihaz degeri; devri yalniz uygulama baslatiyor, webin devredecegi bir uygulama yok",
   "/api/immersion": "unite verisi; web sayfayi sunucuda cizip `lib/immersion/build`i dogrudan cagiriyor",
   "/api/config": "uzak yapilandirma; web ayni degerleri sunucuda okuyor (env + lib/config)",
   "/api/me": "oturum ozeti; web sunucu tarafinda `lib/session` ile okuyor",

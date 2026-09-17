@@ -23,6 +23,8 @@ async function rows(q: ReturnType<typeof sql>): Promise<Row[]> {
 }
 const num = (v: unknown) => Number(v) || 0;
 const str = (v: unknown) => (v == null ? "" : String(v));
+/** Zaman damgası ISO olarak iner; biçimlendirme görünümde (kullanıcının yerel saati). */
+const iso = (v: unknown) => (v instanceof Date ? v.toISOString() : v ? new Date(String(v)).toISOString() : "");
 
 export type ReportedPerson = { id: string; username: string; name: string; joined: string; guest: boolean };
 
@@ -65,7 +67,7 @@ const person = (r: Row, p: string): ReportedPerson => ({
   id: str(r[`${p}_id`]),
   username: str(r[`${p}_username`]),
   name: str(r[`${p}_name`]),
-  joined: str(r[`${p}_joined`]),
+  joined: iso(r[`${p}_joined`]),
   guest: r[`${p}_guest`] === true,
 });
 
@@ -75,7 +77,7 @@ function who(prefix: string, idCol: string) {
     ${idCol} as ${prefix}_id,
     coalesce(${prefix}p.username, '') as ${prefix}_username,
     coalesce(${prefix}p.display_name, ${prefix}u.name, '') as ${prefix}_name,
-    coalesce(to_char(${prefix}p.created_at, 'YYYY-MM-DD'), '') as ${prefix}_joined,
+    ${prefix}p.created_at as ${prefix}_joined,
     coalesce(${prefix}u."isAnonymous", false) as ${prefix}_guest`);
 }
 function joinWho(prefix: string, idCol: string) {
@@ -101,7 +103,7 @@ export async function moderationData(): Promise<ModerationData> {
 
   const [ur, cr, closed, blocked] = await Promise.all([
     rows(sql`
-      select r.id, to_char(r.created_at, 'YYYY-MM-DD HH24:MI') as at, r.reason, coalesce(r.detail, '') as detail,
+      select r.id, r.created_at as at, r.reason, coalesce(r.detail, '') as detail,
         ${who("a", "r.reporter_id")}, ${who("b", "r.reported_id")},
         (select count(*) from user_reports x where x.reported_id = r.reported_id)::int as reports_against,
         (select count(*) from user_blocks k where k.blocked_id = r.reported_id)::int as blocked_by
@@ -109,19 +111,19 @@ export async function moderationData(): Promise<ModerationData> {
       where ${openUser}
       order by r.id desc limit 100`).catch(() => [] as Row[]),
     rows(sql`
-      select r.id, to_char(r.created_at, 'YYYY-MM-DD HH24:MI') as at, r.kind, r.ref, r.reason, coalesce(r.content, '') as content,
+      select r.id, r.created_at as at, r.kind, r.ref, r.reason, coalesce(r.content, '') as content,
         ${who("a", "r.user_id")}
       from content_reports r ${joinWho("a", "r.user_id")}
       where r.status = 'open'
       order by r.id desc limit 100`).catch(() => [] as Row[]),
     ready
       ? rows(sql`select target, ref_id, action, coalesce(actor, '') as actor, coalesce(note, '') as note,
-          to_char(created_at, 'YYYY-MM-DD HH24:MI') as at from moderation_actions order by id desc limit 30`).catch(() => [] as Row[])
+          created_at as at from moderation_actions order by id desc limit 30`).catch(() => [] as Row[])
       : Promise.resolve([] as Row[]),
     rows(sql`
       select k.blocked_id as c_id, count(*)::int as n,
         coalesce(cp.username, '') as c_username, coalesce(cp.display_name, cu.name, '') as c_name,
-        coalesce(to_char(cp.created_at, 'YYYY-MM-DD'), '') as c_joined, coalesce(cu."isAnonymous", false) as c_guest
+        cp.created_at as c_joined, coalesce(cu."isAnonymous", false) as c_guest
       from user_blocks k ${joinWho("c", "k.blocked_id")}
       group by k.blocked_id, cp.username, cp.display_name, cu.name, cp.created_at, cu."isAnonymous"
       order by n desc limit 10`).catch(() => [] as Row[]),
@@ -130,16 +132,16 @@ export async function moderationData(): Promise<ModerationData> {
   return {
     ready,
     userReports: ur.map((r) => ({
-      id: num(r.id), at: str(r.at), reason: str(r.reason), detail: str(r.detail),
+      id: num(r.id), at: iso(r.at), reason: str(r.reason), detail: str(r.detail),
       reporter: person(r, "a"), reported: person(r, "b"),
       reportsAgainst: num(r.reports_against), blockedBy: num(r.blocked_by),
     })),
     contentReports: cr.map((r) => ({
-      id: num(r.id), at: str(r.at), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason),
+      id: num(r.id), at: iso(r.at), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason),
       content: str(r.content), reporter: person(r, "a"),
     })),
     closed: closed.map((r) => ({
-      target: str(r.target), refId: num(r.ref_id), action: str(r.action), actor: str(r.actor), note: str(r.note), at: str(r.at),
+      target: str(r.target), refId: num(r.ref_id), action: str(r.action), actor: str(r.actor), note: str(r.note), at: iso(r.at),
     })),
     mostBlocked: blocked.map((r) => ({ person: person(r, "c"), count: num(r.n) })),
   };

@@ -33,6 +33,10 @@ const ERROR_TR: Record<string, string> = {
   bad_input: "Geçersiz istek.",
 };
 
+/** ISO → yerel tarih/saat. Boşsa boş. */
+const when = (v: string, withTime = true) =>
+  v ? (withTime ? new Date(v).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : new Date(v).toLocaleDateString("tr-TR")) : "";
+
 function Person({ p }: { p: ReportedPerson }) {
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
@@ -40,7 +44,7 @@ function Person({ p }: { p: ReportedPerson }) {
       {p.username ? <span className="font-mono" style={{ color: "var(--text-muted)" }}>@{p.username}</span> : null}
       <span className="font-mono text-micro" style={{ color: "var(--text-muted)" }}>{p.id.slice(0, 10)}…</span>
       {p.guest ? <span className="chip h-5 px-1.5 text-micro">misafir</span> : null}
-      {p.joined ? <span className="text-micro" style={{ color: "var(--text-muted)" }}>katıldı {p.joined}</span> : null}
+      {p.joined ? <span className="text-micro" style={{ color: "var(--text-muted)" }}>katıldı {when(p.joined, false)}</span> : null}
     </span>
   );
 }
@@ -63,6 +67,9 @@ function Actions({
   /** Yalnız kullanıcı şikâyetinde: hedefin görünen adını ve kullanıcı adını sıfırlar. */
   onResetName?: () => void;
 }) {
+  /* Yıkıcı eylem İKİ ADIM, sistem kutusu değil (parite §255: kullanıcıya
+     açık yüzeyde `confirm()` yok). İlk basış silahı kurar, ikincisi siler. */
+  const [armed, setArmed] = useState(false);
   return (
     <div className="mt-2 flex flex-wrap items-center gap-2">
       <input
@@ -80,9 +87,18 @@ function Actions({
         Asılsız
       </button>
       {onResetName ? (
-        <button type="button" disabled={busy} onClick={onResetName} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
-          Adı sıfırla + kapat
-        </button>
+        armed ? (
+          <>
+            <button type="button" disabled={busy} onClick={onResetName} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
+              Evet, ad ve kullanıcı adı silinsin
+            </button>
+            <button type="button" onClick={() => setArmed(false)} className="chip h-8 px-3 text-caption">Vazgeç</button>
+          </>
+        ) : (
+          <button type="button" disabled={busy} onClick={() => setArmed(true)} className="chip h-8 px-3 text-caption" style={{ color: "var(--color-rose)" }}>
+            Adı sıfırla + kapat
+          </button>
+        )
       ) : null}
     </div>
   );
@@ -143,7 +159,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
               <div key={r.id} className="card px-3 py-3 text-caption">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="font-semibold">{USER_REASON[r.reason] ?? r.reason}</span>
-                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {r.at}</span>
+                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {when(r.at)}</span>
                 </div>
                 <div className="mt-1">Şikâyet edilen: <Person p={r.reported} /></div>
                 <div className="mt-0.5" style={{ color: r.reportsAgainst > 1 || r.blockedBy > 1 ? "var(--color-rose)" : "var(--text-muted)" }}>
@@ -151,9 +167,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
                 </div>
                 <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Şikâyet eden: <Person p={r.reporter} /></div>
                 {r.detail ? <p className="mt-1 whitespace-pre-wrap">{r.detail}</p> : null}
-                {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} onResetName={() => {
-                  if (window.confirm(`@${r.reported.username || "?"} hesabının görünen adı ve kullanıcı adı silinsin mi?`)) void decide("user_report", r.id, "reset_name");
-                }} /> : null}
+                {data.ready ? <Actions note={notes[`user_report:${r.id}`] ?? ""} busy={busy === `user_report:${r.id}`} onNote={(v) => setNotes((n) => ({ ...n, [`user_report:${r.id}`]: v }))} onDecide={(a) => decide("user_report", r.id, a)} onResetName={() => void decide("user_report", r.id, "reset_name")} /> : null}
               </div>
             ))}
           </div>
@@ -169,7 +183,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
               <div key={r.id} className="card px-3 py-3 text-caption">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="font-semibold">{KIND[r.kind] ?? r.kind} · {CONTENT_REASON[r.reason] ?? r.reason}</span>
-                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {r.at}</span>
+                  <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>#{r.id} · {when(r.at)}</span>
                 </div>
                 <div className="mt-0.5 font-mono" style={{ color: "var(--text-muted)" }}>{r.ref}</div>
                 <div className="mt-0.5" style={{ color: "var(--text-muted)" }}>Bildiren: <Person p={r.reporter} /></div>
@@ -203,7 +217,7 @@ export function ModerationAdmin({ data }: { data: ModerationData }) {
           <div className="space-y-1 text-caption">
             {data.closed.map((c) => (
               <div key={`${c.target}:${c.refId}`} className="flex flex-wrap items-baseline gap-x-2">
-                <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{c.at}</span>
+                <span className="font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{when(c.at)}</span>
                 <span>{c.target === "user_report" ? "Kullanıcı" : "İçerik"} #{c.refId}</span>
                 <b>{c.action === "resolved" ? "gereği yapıldı" : "asılsız"}</b>
                 <span style={{ color: "var(--text-muted)" }}>{c.actor}</span>

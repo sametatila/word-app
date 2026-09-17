@@ -10688,7 +10688,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   {
     const sema = sil(read("src/lib/db/schema.ts"));
     const kayit = sil(read("src/lib/cron-runs.ts"));
-    const yonetim = sil(read("src/lib/admin.ts"));
+    /* Sorgu 2026-09-17'de `lib/admin-coverage.ts`e tasindi: liste artik
+       BEKLENEN islerden (`CRON_EXPECTED`) kuruluyor, yani hic kosmamis is de
+       kendi satiriyla gorunuyor - eski "hicbir is kosmamis" tek satirindan
+       daha siki bir olcu. */
+    const yonetim = sil(read("src/lib/admin-coverage.ts"));
     const pano = sil(read("src/app/admin/dashboard.tsx"));
     const goc = existsSync(new URL("../drizzle/0051_cron_runs.sql", import.meta.url))
       ? read("drizzle/0051_cron_runs.sql")
@@ -10742,7 +10746,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "sorgu=" + (/from cron_runs r/.test(yonetim) ? "var" : "YOK"),
         "gorunum=" + (/Zamanlanmis isler|Zamanlanmış işler/.test(pano) ? "var" : "YOK"),
-        "hic kosmadi=" + (/Hiçbir iş koşmamış/.test(pano) ? "var" : "YOK"),
+        "hic kosmadi=" + (/export const CRON_EXPECTED/.test(yonetim) && /hiç koşmadı/.test(pano) ? "var" : "YOK"),
       ],
       ["sorgu=var", "gorunum=var", "hic kosmadi=var"],
       "bulunan",
@@ -16861,6 +16865,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const MOBIL_CIHAZ = [
       "lernomi-app-open", //           gunun ilk acilisi (telemetri)
       "lernomi-daily", //              gunluk hatirlatma bildiriminin OS kimligi (depo anahtari degil; Gunun turu onbellegi 2026-09-15'te kalkti)
+      "lernomi-streak", //             seri koruma bildiriminin OS kimligi (notifee; depo anahtari degil, bkz. accountScope)
+      "lernomi-weekly", //             haftalik sinav bildiriminin OS kimligi (notifee; depo anahtari degil)
+      /* Tarayicidan giris devrinin cihaz degeri: bu cihazin baslattigi girisin
+         kaniti, kisa omurlu. Hesaba ait OLAMAZ - devir tamamlanana kadar hesap
+         yok (bkz. lib/handoff). */
+      "lernomi:handoff", //            giris devri nonce'u (15 dk)
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
       "lernomi-lesson-handsfree", //   eller serbest tercihi
@@ -17124,7 +17134,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        bir dizgi yok, yani ham okumak yanlis pozitif uretmiyor. */
     const sunucu = read("src/lib/auth/server.ts");
     const blok = sunucu.slice(sunucu.indexOf("trustedOrigins:"), sunucu.indexOf("]", sunucu.indexOf("trustedOrigins:")));
-    const sunucuAdlar = [...blok.matchAll(/"https:\/\/([a-z0-9.-]+)"/g)].map((m) => m[1]).sort();
+    /* Kimlik saglayicinin KENDI kokeni (Apple web girisi form_post ile
+       appleid.apple.com'dan donuyor) guvenilen koken ama derin baglanti alan
+       adi DEGIL: uygulama o alandan baglanti acmaz. Olcu yalniz bizim alan
+       adlarimiz arasinda. */
+    const SAGLAYICI_KOKENI = new Set(["appleid.apple.com"]);
+    const sunucuAdlar = [...blok.matchAll(/"https:\/\/([a-z0-9.-]+)"/g)].map((m) => m[1]).filter((h) => !SAGLAYICI_KOKENI.has(h)).sort();
     const derin = sil(read("mobile/src/lib/deepLink.ts"));
     const hostBlok = derin.slice(derin.indexOf("const HOSTS"), derin.indexOf("]", derin.indexOf("const HOSTS")));
     const mobilAdlar = [...hostBlok.matchAll(/"([a-z0-9.-]+)"/g)].map((m) => m[1]).sort();

@@ -72,6 +72,12 @@ const SKIP = [
   // `lib/moderation.ts` ile — süzgecin konusu, arayüzün metni değil.
   "lib/auth/password-policy.ts",
   "app/admin",
+  // Yönetim panelinin veri katmanı: `app/admin` ile aynı sınıf. Panel yalnız
+  // ADMIN_EMAILS'e açık ve tek dilli; buradaki etiketler (cron adları, karar
+  // notları) son kullanıcıya hiç gitmiyor.
+  "lib/admin-coverage.ts",
+  "lib/admin-user.ts",
+  "lib/moderation-admin.ts",
   "app/(app)/analytics",
   "app/demo-games",
   "app/demo-feedback",
