@@ -312,6 +312,7 @@ export const tr: Record<string, string> = {
   "friends.invite_friend": "Arkadaşını davet et",
   "friends.friends": "Arkadaşlar",
   "friends.sign_in_for_friends": "Arkadaşlar için giriş yap",
+  "friends.couldn_t_load": "Arkadaşlar yüklenemedi.",
   "friends.count_friends": "{n} arkadaş",
   "friends.count_friends.one": "{n} arkadaş",
   "friends.count_new": "{n} yeni",

@@ -77,7 +77,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
 }
 
 /** QuestCard iskeleti — iki arma, başlık, hedef, iki paylı çubuk; aynı yükseklik. */
-export function QuestsSkeleton() {
+function QuestsSkeleton() {
   const { colors } = useTheme();
   return (
     <SkeletonCard style={{ marginBottom: spacing.md, borderWidth: 1.5, borderColor: colors.hairline }}>

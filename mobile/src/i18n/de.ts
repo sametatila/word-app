@@ -307,6 +307,7 @@ export const de: Record<string, string> = {
   "friends.invite_friend": "Freunde einladen",
   "friends.friends": "Freunde",
   "friends.sign_in_for_friends": "Für Freunde anmelden",
+  "friends.couldn_t_load": "Freunde konnten nicht geladen werden.",
   "friends.count_friends": "{n} Freunde",
   "friends.count_friends.one": "{n} Freund",
   "friends.count_new": "{n} neu",

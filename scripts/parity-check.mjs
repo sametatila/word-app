@@ -15556,43 +15556,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* ── 220. sosyal merkez: yukleme dali gercek dizilimi ciziyor mu ─────
    * Sosyal merkezin "arkadaslar" sekmesi iki platformda AYNI dizilimi
-   * cizyor ve sira bilincli: cevap bekleyen is (gelen istek), bu haftanin
-   * taahhudu (ortak gorev), sonra liste ve tablo. Bu kisim zaten esitti.
+   * ciziyor ve sira bilincli: cevap bekleyen is (gelen istek), bu haftanin
+   * taahhudu (ortak gorev), sonra liste ve tablo.
    *
-   * YUKLEME DALI esit DEGILDI. Android yuklenirken gercek dizilimin aynisini
-   * ciziyor (istek karti, gorev karti, iki kisi satiri); web yalniz UC KISI
-   * SATIRI ciziyordu ve veri gelince ilk iki kart USTTE belirip listeyi asagi
-   * itiyordu. Ayni sinif 11.329'da rozet duvarinda cikti (iskeletin
-   * duyurusu) ve mobilin baska bir ekraninda gerekcesi yazili: "icerik
-   * gelince kartlar ortadan yukari sicramiyor, olduklari yerde beliriyor".
+   * YUKLEME DALI once webde eksikti (yalniz kisi satirlari), sonra iki
+   * platform da UC PARCA cizmeye baslamisti: istek karti + gorev karti +
+   * kisi satirlari. Ikinci hali TERS yone kaydi. Iki kart da KOSULLU:
+   * gelen istek istisna (haftanin nerdeyse tamaminda hic yok) ve gorev
+   * karti ancak arkadasi olana ciziliyor. Yani yukleme bitince iki kart
+   * birden KAYBOLUYOR, altindaki siralama tablosu da o an kendi iskeletine
+   * basliyordu: ekran uzuyor, kisaliyor, yine uzuyordu.
    *
-   * Ilginc yani: `QuestsSkeleton` webde ZATEN vardi ama yalniz `Quests`in
-   * kendi yuklemesinde kullaniliyordu - merkez yuklenirken `Quests` henuz
-   * takili olmadigi icin o iskelet hic gorunmuyordu. */
+   * Simdiki kural (iki platformda ayni):
+   *   1. Yukleme dali YALNIZ kisi/arkadas satiri iskeleti cizer. Kosullu
+   *      kartlarin iskeleti CIZILMEZ — olmayan bir kartin sozunu vermek,
+   *      onu hic vaat etmemekten kotu.
+   *   2. Siralama tablosu (`FriendsBoard`) kosulun DISINDA durur: kendi
+   *      iskeletini kendi yonetiyor, o blok hic yerinden oynamiyor.
+   *   3. Ag hatasi + hic veri yok = HATA karti. Iki platform da eskiden
+   *      hatayi bos bir goruntuye ceviriyordu (`friends: []`) ve sekme
+   *      "henuz arkadasin yok" diyordu: baglanti koptugunda arkadaslari
+   *      olan kullanici onlarin silindigini goruyordu.
+   *   4. Kullanilmayan iskelet bilesenleri (`RequestCardSkeleton`) iki
+   *      tarafta da silindi: duran olu kod bir sonraki turda geri konur. */
   {
     const webMerkez = sil(read("src/components/social/friends-hub.tsx"));
     const mobMerkez = sil(read("mobile/src/screens/FriendsScreen.tsx"));
     const webIstek = sil(read("src/components/social/requests.tsx"));
+    const mobIstek = sil(read("mobile/src/social/Requests.tsx"));
     const sira = (src, adlar) => adlar.map((a) => (src.indexOf(a) >= 0 ? src.indexOf(a) : Infinity));
     const artan = (xs) => xs.every((v, i) => i === 0 || (xs[i - 1] < v && v !== Infinity));
-    const webSira = sira(webMerkez, ["<RequestCardSkeleton", "<QuestsSkeleton", "<PersonRowSkeleton"]);
-    const mobSira = sira(mobMerkez, ["<RequestCardSkeleton", "<QuestsSkeleton", "<FriendCardSkeleton"]);
+    /* Tablo kosulun disinda mi: yukleme dalinin iskeletinden SONRA ve
+       gercek listeden de sonra tek bir kez geciyor. */
+    const disarida = (src, iskelet, liste) => {
+      const b = src.indexOf("<FriendsBoard");
+      return b > src.indexOf(iskelet) && b > src.indexOf(liste) && src.split("<FriendsBoard").length === 2;
+    };
     sameList(
       "sosyal merkez yukleme dali",
       [
-        "web istek iskeleti=" + (/export function RequestCardSkeleton/.test(webIstek) ? "var" : "YOK"),
-        "web uc parca=" + (webSira.every((x) => x !== Infinity) ? "var" : "EKSIK"),
-        "web sira=" + (artan(webSira) ? "istek+gorev+liste" : "AYRI"),
-        "mobil uc parca=" + (mobSira.every((x) => x !== Infinity) ? "var" : "EKSIK"),
-        "mobil sira=" + (artan(mobSira) ? "istek+gorev+liste" : "AYRI"),
+        "web kosullu iskelet=" + (/QuestsSkeleton|RequestCardSkeleton/.test(webMerkez) ? "VAR" : "yok"),
+        "mobil kosullu iskelet=" + (/QuestsSkeleton|RequestCardSkeleton/.test(mobMerkez) ? "VAR" : "yok"),
+        "web olu iskelet=" + (/export function RequestCardSkeleton/.test(webIstek) ? "VAR" : "yok"),
+        "mobil olu iskelet=" + (/export function RequestCardSkeleton/.test(mobIstek) ? "VAR" : "yok"),
+        "web satir iskeleti=" + (webMerkez.includes("<PersonRowSkeleton rows={2}") ? "var" : "YOK"),
+        "mobil satir iskeleti=" + (mobMerkez.includes("<FriendCardSkeleton") ? "var" : "YOK"),
+        "web tablo kosul disi=" + (disarida(webMerkez, "<PersonRowSkeleton", "<FriendList friends") ? "var" : "YOK"),
+        "mobil tablo kosul disi=" + (disarida(mobMerkez, "<FriendCardSkeleton", "<FriendRows friends") ? "var" : "YOK"),
+        "web hata karti=" + (/err && data === null \? \([\s\S]{0,240}couldn_t_load/.test(webMerkez) ? "var" : "YOK"),
+        "mobil hata karti=" + (/err && \(data === null \|\| !me\) \?[\s\S]{0,240}couldn_t_load/.test(mobMerkez) ? "var" : "YOK"),
+        "web hatada bos veri=" + (/setData\(\(prev\) => prev \?\?/.test(webMerkez) ? "VAR" : "yok"),
+        "mobil hatada bos veri=" + (/setData\(\(prev\) => prev \?\?/.test(mobMerkez) ? "VAR" : "yok"),
         /* Gercek dizilim de olculuyor: yukleme dali ona benzemek zorunda. */
         "web gercek sira=" + (artan(sira(webMerkez, ["<Requests incoming", "<Quests friends", "<FriendList friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
         "mobil gercek sira=" + (artan(sira(mobMerkez, ["<Requests incoming", "<Quests friends", "<FriendRows friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
       ],
       [
-        "web istek iskeleti=var",
-        "web uc parca=var", "web sira=istek+gorev+liste",
-        "mobil uc parca=var", "mobil sira=istek+gorev+liste",
+        "web kosullu iskelet=yok", "mobil kosullu iskelet=yok",
+        "web olu iskelet=yok", "mobil olu iskelet=yok",
+        "web satir iskeleti=var", "mobil satir iskeleti=var",
+        "web tablo kosul disi=var", "mobil tablo kosul disi=var",
+        "web hata karti=var", "mobil hata karti=var",
+        "web hatada bos veri=yok", "mobil hatada bos veri=yok",
         "web gercek sira=dogru", "mobil gercek sira=dogru",
       ],
       "bulunan",
@@ -18764,8 +18789,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["cift=" + cift.length, "ayrisan=" + (ayri.length ? ayri.join("+") : "yok")],
     /* 20 -> 19 (2026-09-15): "kagit bulunamadi" (`mockexam.paper_missing`)
        iki tarafta birden DURUM SABLONUNA gecti (`StateBody`, maskotlu, tintli
-       karo yok) - renk karari o yuzeyde artik sorulmuyor. */
-    ["cift=19", "ayrisan=yok"],
+       karo yok) - renk karari o yuzeyde artik sorulmuyor.
+       19 -> 20 (2026-09-17): "arkadaslar yuklenemedi"
+       (`friends.couldn_t_load`) iki tarafta birden eklendi - sosyal merkez
+       agir hatada artik "henuz arkadasin yok" demiyor (bkz. 220). */
+    ["cift=20", "ayrisan=yok"],
     "bulunan",
     "beklenen",
   );

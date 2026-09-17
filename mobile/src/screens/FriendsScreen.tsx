@@ -24,8 +24,8 @@ import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, StatPill } from "../soc
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { FeedList } from "../social/FeedList";
-import { Quests, QuestsSkeleton } from "../social/Quests";
-import { Requests, RequestCardSkeleton } from "../social/Requests";
+import { Quests } from "../social/Quests";
+import { Requests } from "../social/Requests";
 import { Find } from "../social/Find";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 
@@ -72,8 +72,13 @@ export function FriendsScreen() {
       setData(d);
       setErr(null);
     } catch (e) {
+      /* AĞ HATASI "KİMSE YOK" DEĞİL. Hata boş bir görünüme çevriliyordu
+         (`friends: []`) ve sekme "henüz arkadaşın yok" kartına düşüyordu:
+         bağlantı koptuğunda arkadaşları olan kullanıcı onların silindiğini
+         görüyordu. Sıralama kartı aynı kararı kendi içinde veriyor
+         (`FriendsBoard`), iki yüzey artık aynı. Önceki veri varsa o kalıyor;
+         hiç yoksa sekme hata kartını gösteriyor. */
       setErr(errorText(e));
-      setData((prev) => prev ?? { friends: [], incoming: [], outgoing: [], nudgedToday: [], today: "" });
     }
   }, [user]);
   useEffect(() => { void reload(); }, [reload]);
@@ -165,26 +170,42 @@ export function FriendsScreen() {
         </ScrollView>
 
         {tab === "friends" ? (
-          data === null || !me ? (
-            <View>
-              <RequestCardSkeleton />
-              <QuestsSkeleton />
-              {[0, 1].map((i) => <FriendCardSkeleton key={i} />)}
-            </View>
-          ) : (
-            <View>
-              {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
-                  taahhüdü (ortak görev), sonra liste ve tablo. */}
-              <Requests incoming={data.incoming} outgoing={data.outgoing} side="incoming" onChanged={() => void reload()} />
-              {data.friends.length ? <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} /> : null}
-              {data.friends.length ? (
-                <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
-              ) : (
-                <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} action={tx("friends.find_friends")} onAction={() => setTab("find")} />
-              )}
-              <FriendsBoard />
-            </View>
-          )
+          <View>
+            {/*
+              İSKELET YÜKLENEN DÜZENİN KENDİSİ OLMALI.
+
+              Önce üç kart vaat ediliyordu: gelen istek kartı, ortak görev
+              kartı ve iki arkadaş kartı. Oysa gelen istek istisna (haftanın
+              neredeyse tamamında hiç yok) ve görev kartı ancak arkadaşı olana
+              çiziliyor. Yükleme bitince iki kart birden kayboluyor, altındaki
+              sıralama tablosu da o an kendi iskeletine başlıyordu: ekran
+              önce uzuyor, sonra kısalıyor, sonra yine uzuyordu.
+
+              Artık iskelet yalnız BEKLENEN düzeni çiziyor (arkadaş kartları)
+              ve sıralama tablosu iki durumda da yerinde duruyor — kendi
+              iskeletini kendisi yönetiyor, yani o blok hiç yerinden
+              oynamıyor. Koşullu kartlar için iskelet çizilmiyor: olmayan bir
+              kartın sözünü vermek, onu hiç vaat etmemekten kötü.
+            */}
+            {err && (data === null || !me) ? (
+              <EmptyCard live="assertive" icon={HandshakeIcon} tint={colors.info} title={tx("friends.couldn_t_load")} text={tx("social.err_offline")} />
+            ) : data === null || !me ? (
+              [0, 1].map((i) => <FriendCardSkeleton key={i} />)
+            ) : (
+              <>
+                {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
+                    taahhüdü (ortak görev), sonra liste. */}
+                <Requests incoming={data.incoming} outgoing={data.outgoing} side="incoming" onChanged={() => void reload()} />
+                {data.friends.length ? <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} /> : null}
+                {data.friends.length ? (
+                  <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
+                ) : (
+                  <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} action={tx("friends.find_friends")} onAction={() => setTab("find")} />
+                )}
+              </>
+            )}
+            <FriendsBoard />
+          </View>
         ) : null}
         {tab === "feed" ? <FeedList onFindFriends={() => setTab("find")} /> : null}
         {tab === "find" ? (

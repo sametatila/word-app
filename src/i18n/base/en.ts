@@ -309,6 +309,7 @@ export const enBase: Record<string, string> = {
   "friends.invite_friend": "Invite a friend",
   "friends.friends": "Friends",
   "friends.sign_in_for_friends": "Sign in for friends",
+  "friends.couldn_t_load": "Couldn't load friends.",
   "friends.count_friends": "{n} friends",
   "friends.count_friends.one": "{n} friend",
   "friends.count_new": "{n} new",
