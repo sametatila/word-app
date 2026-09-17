@@ -233,6 +233,7 @@ export const deBase: Record<string, string> = {
   "common.unit": "EINHEIT",
   "common.discard": "Verwerfen",
   "common.wrong": "Falsch",
+  "content.couldn_t_load": "Inhalt konnte nicht geladen werden.",
   "common.loading": "Wird geladen…",
   "daily.correct": "richtig",
   "daily.your_score": "Deine Punkte",

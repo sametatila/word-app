@@ -231,6 +231,7 @@ export const en: Record<string, string> = {
   "common.unit": "UNIT",
   "common.discard": "Discard",
   "common.wrong": "Wrong",
+  "content.couldn_t_load": "Couldn't download the content.",
   "common.loading": "Loading…",
   "daily.correct": "correct",
   "daily.your_score": "Your score",

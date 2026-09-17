@@ -117,25 +117,42 @@ export function SkillsScreen() {
 
   /*
     SEVİYE PAKETİ İNMEDEN LİSTE ÇİZİLMEZ. Egzersizler ikilide değil, seviye
-    paketi hâlinde iniyor (bkz. `data/skills`). İndikten sonra `tick` listeyi
-    yeniden kuruyor; inene kadar liste boş ve ekran kendi boş durumunu
-    gösteriyor. Güncel paket için istek hiç atılmıyor.
+    paketi hâlinde iniyor (bkz. `data/skills`). Güncel paket için istek hiç
+    atılmıyor.
+
+    KÜMEYLE BİRLİKTE HANGİ SEVİYEYE AİT OLDUĞU DA TUTULUYOR — iki ayrı hata
+    bunun eksikliğindendi:
+
+      1. Paket inene kadar küme boş, yani `hasExercises` false: ekran bir an
+         "bu kursta egzersiz yok" kartını gösteriyor, saniyesinde liste
+         geliyordu. Yükleniyor ile boş aynı şeye bakıyordu.
+      2. Seviye değişince eski seviyenin listesi ekranda kalıyordu; A1'den
+         B1'e basan biri kısa süre A1 egzersizlerini görüyordu.
+
+    Kümenin seviyesi `activeLevel` değilse ekran HENÜZ hazır değil: iskelet
+    çiziliyor. Boş durum kartı ancak paket gerçekten inip boş çıkınca
+    görünüyor.
   */
-  const [pools, setPools] = useState<Record<string, SkillMeta[]>>({});
+  const [pool, setPool] = useState<{ level: string; items: Record<string, SkillMeta[]>; ok: boolean } | null>(null);
   useEffect(() => {
     let dead = false;
-    void ensureSkills(activeLevel).then(() => {
+    void ensureSkills(activeLevel).then((ok) => {
       if (dead) return;
-      const out: Record<string, SkillMeta[]> = {};
-      for (const s of SKILLS) out[s.key] = listOwnSkillMeta(activeLevel, s.key);
-      setPools(out);
+      const items: Record<string, SkillMeta[]> = {};
+      for (const s of SKILLS) items[s.key] = listOwnSkillMeta(activeLevel, s.key);
+      setPool({ level: activeLevel, items, ok });
     });
     return () => { dead = true; };
   }, [activeLevel]);
+  const pools = pool?.level === activeLevel ? pool.items : null;
+  const poolsReady = pools !== null;
+  /* Paket inemediyse (ağ yok ve diskte kopya yok) "egzersiz yok" değil
+     "indirilemedi" deniyor: `ensureSkills` bu ikisini ayırt ediyor. */
+  const packFailed = poolsReady && pool?.ok === false;
 
   const lists = useMemo(
     () => SKILLS.map((s) => {
-      const items = pools[s.key] ?? [];
+      const items = pools?.[s.key] ?? [];
       const next = items.find((e) => !done.has(e.id) && !isSkillLocked(e, access)) ?? null;
       const finished = items.filter((e) => done.has(e.id)).length;
       return { ...s, items, next, finished, ratio: items.length ? finished / items.length : 1 };
@@ -158,6 +175,9 @@ export function SkillsScreen() {
     <Screen>
       <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
+      {/* SEVİYE SEKMELERİ İSKELETTEN AYRI. Liste paketle birlikte iniyor ama
+          sekmeler seviye bilinir bilinmez gerçek: aksi hâlde B1'e basan biri
+          bastığı sekmelerin iskelete dönüştüğünü görüyordu. */}
       {!levelReady ? (
         <>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
@@ -166,29 +186,6 @@ export function SkillsScreen() {
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
             {LEVELS.map((l) => <Skeleton key={l} height={20 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
           </View>
-          <CardGrid minItemWidth={440}>
-          {SKILLS.map((s) => (
-            <View key={s.key} style={{ marginBottom: spacing.xl }}>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
-                <Skeleton height={18} width={18} radius={9} />
-                <SkeletonLine variant="h3" width={92} />
-                <SkeletonLine variant="caption" width={74} />
-              </View>
-              <SkeletonCard padded style={{ paddingVertical: spacing.xs }}>
-                {[0, 1, 2].map((i) => (
-                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
-                    <Skeleton height={8} width={8} radius={4} />
-                    <View style={{ flex: 1 }}>
-                      <SkeletonLine variant="bodyStrong" width="70%" />
-                      <SkeletonLine variant="caption" width="40%" />
-                    </View>
-                    <Skeleton height={20} width={20} radius={10} />
-                  </View>
-                ))}
-              </SkeletonCard>
-            </View>
-          ))}
-          </CardGrid>
         </>
       ) : (
         <>
@@ -206,10 +203,40 @@ export function SkillsScreen() {
               );
             })}
           </View>
+        </>
+      )}
 
+      {!levelReady || !poolsReady ? (
+        <CardGrid minItemWidth={440}>
+        {SKILLS.map((s) => (
+          <View key={s.key} style={{ marginBottom: spacing.xl }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
+              <Skeleton height={18} width={18} radius={9} />
+              <SkeletonLine variant="h3" width={92} />
+              <SkeletonLine variant="caption" width={74} />
+            </View>
+            <SkeletonCard padded style={{ paddingVertical: spacing.xs }}>
+              {[0, 1, 2].map((i) => (
+                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
+                  <Skeleton height={8} width={8} radius={4} />
+                  <View style={{ flex: 1 }}>
+                    <SkeletonLine variant="bodyStrong" width="70%" />
+                    <SkeletonLine variant="caption" width="40%" />
+                  </View>
+                  <Skeleton height={20} width={20} radius={10} />
+                </View>
+              ))}
+            </SkeletonCard>
+          </View>
+        ))}
+        </CardGrid>
+      ) : (
+        <>
           {!hasExercises ? (
-            <Card padded>
-              <Text variant="body" color={colors.textMuted}>{t("skills.this_course_has_no_reading")}</Text>
+            <Card padded accessibilityLiveRegion={packFailed ? "assertive" : "polite"}>
+              <Text variant="body" color={colors.textMuted}>
+                {packFailed ? `${t("content.couldn_t_load")} ${t("social.err_offline")}` : t("skills.this_course_has_no_reading")}
+              </Text>
             </Card>
           ) : null}
 

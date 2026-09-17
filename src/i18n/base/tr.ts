@@ -233,6 +233,7 @@ export const trBase: Record<string, string> = {
   "common.unit": "ÜNİTE",
   "common.discard": "Vazgeç",
   "common.wrong": "Yanlış",
+  "content.couldn_t_load": "İçerik indirilemedi.",
   "common.loading": "Yükleniyor…",
   "daily.correct": "doğru",
   "daily.your_score": "Puanın",

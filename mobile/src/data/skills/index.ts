@@ -84,12 +84,18 @@ export function skillLevelOf(id: string): string | null {
  * Sync okuyucular (`listOwnSkillMeta`, `getExercise`) paket inmeden boş
  * dönüyor: liste ekranları boş durumu zaten çizebiliyor ve uydurma bir
  * içerik göstermektense boş göstermek doğru. İnen paket bir daha istenmiyor.
+ *
+ * @returns Havuz KULLANILABİLİR mi. Dönüş değeri var çünkü çağıran ekranın
+ * "paket inemedi" ile "paket indi, içinde bir şey yok" arasını ayırması
+ * gerekiyor: ikisi de boş liste demek ama biri ağ hatası, öteki içerik
+ * eksikliği. Karıştırıldığında ekran çevrimdışı kullanıcıya "bu kursta
+ * egzersiz yok" diyor.
  */
-export async function ensureSkills(level: string, course: string = currentCourseId()): Promise<void> {
+export async function ensureSkills(level: string, course: string = currentCourseId()): Promise<boolean> {
   const pack = packOf(course, level);
-  if (pools.has(pack)) return;
+  if (pools.has(pack)) return true;
   const ok = await ensurePack(pack);
-  if (!ok) return;
+  if (!ok) return false;
   const ids = await listContentItems(pack);
   const out: SkillExercise[] = [];
   for (const id of ids) {
@@ -97,6 +103,7 @@ export async function ensureSkills(level: string, course: string = currentCourse
     if (ex) out.push(ex);
   }
   pools.set(pack, out);
+  return true;
 }
 
 function poolFor(course: string, level: string): SkillExercise[] {
