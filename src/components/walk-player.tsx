@@ -220,8 +220,14 @@ const BROWSER_SILENCE_MS = 9000;
 const BROWSER_DEAD = new Set(["not-allowed", "service-not-allowed", "audio-capture", "language-not-supported", "start-failed"]);
 /** Kaç ardışık başarısız kayıttan sonra tur durur. */
 const CAPTURE_FAIL_LIMIT = 2;
-/** Turlar arası nefes — "aşırı hızlı" geçişleri yavaşlatır (cepte de geçerli). */
-const GAP_MS = 850;
+/**
+ * Turlar arası nefes — "aşırı hızlı" geçişleri yavaşlatır (cepte de geçerli).
+ *
+ * 850 → 450: turun her adımı zaten bir okumayı bekliyor (her cümle ayrı bir
+ * ses isteği) ve üstüne konan bu es akışı gereğinden ağır yapıyordu. Mobil
+ * karşılığı `WalkModeScreen` `gap(320)`.
+ */
+const GAP_MS = 450;
 
 /**
  * Ağ isteklerinin üst sınırı.

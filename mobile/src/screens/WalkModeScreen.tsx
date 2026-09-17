@@ -399,7 +399,7 @@ export function WalkModeScreen() {
     await sayNative(w.tr); // Türkçe ipucu (Emel)
     if (!alive()) return "ok";
 
-    await gap(150); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
+    await gap(120); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
     if (!alive()) return "ok";
     setPhase("listening");
     // Kaynak: ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama arka planda —
@@ -578,7 +578,7 @@ export function WalkModeScreen() {
         lastIntroId = -1;
         if (status === "stopped" || !alive()) return;
       }
-      await gap(550); // turlar arası nefes (web 850 → mobilde daha akıcı)
+      await gap(320); // turlar arası nefes — kısa tutuluyor, akış beklemeyle ağırlaşmasın
     }
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz
