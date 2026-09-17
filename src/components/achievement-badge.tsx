@@ -30,6 +30,7 @@ import {
   TagIcon,
   TargetIcon,
   TranslateIcon,
+  UserPlusIcon,
   TrophyIcon,
 } from "@/components/icons";
 
@@ -116,6 +117,7 @@ const ICONS: Record<string, (p: { size?: number; className?: string }) => React.
   TargetIcon,
   TranslateIcon,
   TrophyIcon,
+  UserPlusIcon,
 };
 
 export type BadgeRow = {

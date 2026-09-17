@@ -22,6 +22,7 @@ export type Group =
   | "exams"
   | "skills"
   | "rounds"
+  | "social"
   | "discovery";
 
 /**
@@ -40,6 +41,7 @@ export const GROUP_ORDER: Group[] = [
   "exams",
   "skills",
   "rounds",
+  "social",
   "discovery",
 ];
 
@@ -53,5 +55,6 @@ export const GROUP_LABEL_KEYS: Record<Group, string> = {
   exams: "achgroup.exams",
   skills: "achgroup.skills",
   rounds: "achgroup.rounds",
+  social: "achgroup.social",
   discovery: "achgroup.discovery",
 };

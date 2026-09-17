@@ -4,6 +4,7 @@ import {
   FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
   MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
   SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
+  UserPlusIcon,
 } from "./icons";
 
 /**
@@ -24,6 +25,7 @@ const ICONS: Record<string, (p: { color?: string; size?: number }) => React.Reac
   FlameIcon, GlobeIcon, GrammarIcon, HeadphonesIcon, KeyboardIcon, MapIcon, MicIcon,
   MoonIcon, MountainIcon, PenIcon, PuzzleIcon, RunIcon, SchoolIcon, SortIcon,
   SparkIcon, StackIcon, StarIcon, SunIcon, TagIcon, TargetIcon, TranslateIcon, TrophyIcon,
+  UserPlusIcon,
 };
 
 export function AchievementIcon({ name, color, size }: { name: string; color: string; size: number }) {

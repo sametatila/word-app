@@ -24,6 +24,7 @@ export const trBase: Record<string, string> = {
   "achgroup.exams": "Sınavlar",
   "achgroup.skills": "Beceriler",
   "achgroup.rounds": "Turlar",
+  "achgroup.social": "Davet",
   "achgroup.discovery": "Keşif",
   "ai.notice_character": "Yapay zekâ ile konuşuyorsun. Karşındaki gerçek bir kişi değil; söyledikleri yanlış olabilir ve tıbbi, hukuki ya da mali tavsiye yerine geçmez.",
   "ai.notice_output": "Bu değerlendirmeyi yapay zekâ üretti; puan ve düzeltmeler yanlış olabilir.",

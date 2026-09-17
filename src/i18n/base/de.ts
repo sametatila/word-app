@@ -24,6 +24,7 @@ export const deBase: Record<string, string> = {
   "achgroup.exams": "Prüfungen",
   "achgroup.skills": "Fertigkeiten",
   "achgroup.rounds": "Runden",
+  "achgroup.social": "Einladungen",
   "achgroup.discovery": "Entdeckung",
   "ai.notice_character": "Du sprichst mit einer KI. Sie ist keine echte Person; ihre Antworten können falsch sein und ersetzen keine medizinische, rechtliche oder finanzielle Beratung.",
   "ai.notice_output": "Diese Bewertung stammt von einer KI; Punktzahl und Korrekturen können falsch sein.",

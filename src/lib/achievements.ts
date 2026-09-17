@@ -15,6 +15,7 @@ import {
   reviews,
   userLessons,
   moduleClears,
+  referrals,
   userSkills,
   userWords,
   words,
@@ -83,7 +84,11 @@ export type Metric =
   | "speakings"
   | "gameTranslate"
   | "gamesPlayed"
-  | "fullQuestDays";
+  | "fullQuestDays"
+  /* Davet ettiği kaç kişi GERÇEKTEN çalışmaya başladı (üç günlük seri).
+     Ölçü davet SAYISI değil: kayıt olup bir daha açmayan biri davetçiye
+     rozet kazandırmamalı, yoksa rozet sahte hesapla üretilebilirdi. */
+  | "invitedActive";
 
 export type AchievementDef = {
   id: string;
@@ -200,6 +205,16 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "challenge1500", titleKey: "ach.challenge1500.title", hintKey: "ach.challenge1500.hint", icon: "SparkIcon", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
   { id: "challenge3000", titleKey: "ach.challenge3000.title", hintKey: "ach.challenge3000.hint", icon: "SparkIcon", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
 
+  // ——— Davet ——————————————————————————————————————————————————————
+  /*
+    ÖLÇÜ DAVET SAYISI DEĞİL, DAVET EDİLENİN KALMASI (üç günlük seri). Rozet
+    "kaç kişiye bağlantı yolladın"ı değil "kaç kişiyi gerçekten getirdin"i
+    anlatıyor; sahte hesapla üretilemez olmasının sebebi de bu.
+  */
+  { id: "invite1", titleKey: "ach.invite1.title", hintKey: "ach.invite1.hint", icon: "UserPlusIcon", tier: "bronze", group: "social", metric: "invitedActive", target: 1 },
+  { id: "invite3", titleKey: "ach.invite3.title", hintKey: "ach.invite3.hint", icon: "UserPlusIcon", tier: "silver", group: "social", metric: "invitedActive", target: 3 },
+  { id: "invite10", titleKey: "ach.invite10.title", hintKey: "ach.invite10.hint", icon: "UserPlusIcon", tier: "gold", group: "social", metric: "invitedActive", target: 10 },
+
   // ——— Keşif ——————————————————————————————————————————————————————
   { id: "night50", titleKey: "ach.night50.title", hintKey: "ach.night50.hint", icon: "MoonIcon", tier: "silver", group: "discovery", metric: "nightAnswers", target: 50 },
   { id: "early50", titleKey: "ach.early50.title", hintKey: "ach.early50.hint", icon: "SunIcon", tier: "silver", group: "discovery", metric: "earlyAnswers", target: 50 },
@@ -252,6 +267,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     examRow,
     assessRow,
     questRow,
+    inviteRow,
   ] = await Promise.all([
     db
       .select({ n: sql<number>`count(*)::int` })
@@ -365,6 +381,24 @@ async function collectMetrics(userId: string): Promise<Metrics> {
           .having(sql`count(*) >= 3`)
           .as("full_days"),
       ),
+
+    /*
+      DAVET ETTİĞİ KAÇ KİŞİ GERÇEKTEN ÇALIŞMAYA BAŞLADI.
+
+      Ölçü davet SAYISI değil, davet edilenin ÜÇ GÜNLÜK SERİSİ. Sayıya
+      bakılsaydı rozet sahte hesapla üretilebilirdi: kod paylaş, kendi açtığın
+      hesaplarla gir, rozeti al. Üç günlük seri bunu kapatıyor çünkü üç ayrı
+      günde gerçekten çalışmak gerekiyor — ve zaten rozetin ANLATTIĞI şey de
+      bu: "birini getirdin ve o kişi kaldı".
+
+      `longest_streak` seçildi, `current_streak` değil: seriyi bir kez yapıp
+      sonra ara veren davetli de sayılmalı, yoksa rozet geri alınırdı.
+    */
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(referrals)
+      .innerJoin(profiles, eq(profiles.userId, referrals.inviteeUserId))
+      .where(and(eq(referrals.inviterUserId, userId), gte(profiles.longestStreak, 3))),
   ]);
 
   const games = new Map(gameRows.map((r) => [r.game, Number(r.n)]));
@@ -401,6 +435,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     // "oynandı" saymak, keşif rozetini rastgele bir dokunuşla açardı.
     gamesPlayed: PLAYABLE_GAMES.filter((g) => (games.get(g) ?? 0) > 0).length,
     fullQuestDays: Number(questRow[0]?.n ?? 0),
+    invitedActive: Number(inviteRow[0]?.n ?? 0),
   };
 }
 

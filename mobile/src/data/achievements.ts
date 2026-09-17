@@ -18,6 +18,7 @@ export type AchGroup =
   | "exams"
   | "skills"
   | "rounds"
+  | "social"
   | "discovery";
 
 export type Achievement = {
@@ -50,6 +51,7 @@ export const GROUP_ORDER: AchGroup[] = [
   "exams",
   "skills",
   "rounds",
+  "social",
   "discovery",
 ];
 
@@ -63,5 +65,6 @@ export const GROUP_LABEL_KEY: Record<AchGroup, string> = {
   exams: "achgroup.exams",
   skills: "achgroup.skills",
   rounds: "achgroup.rounds",
+  social: "achgroup.social",
   discovery: "achgroup.discovery",
 };

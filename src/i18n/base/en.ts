@@ -24,6 +24,7 @@ export const enBase: Record<string, string> = {
   "achgroup.exams": "Exams",
   "achgroup.skills": "Skills",
   "achgroup.rounds": "Rounds",
+  "achgroup.social": "Invites",
   "achgroup.discovery": "Discovery",
   "ai.notice_character": "You are talking to an AI. It is not a real person; what it says can be wrong and is not medical, legal or financial advice.",
   "ai.notice_output": "This assessment was produced by AI; the score and corrections can be wrong.",
