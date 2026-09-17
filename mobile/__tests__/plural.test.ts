@@ -26,8 +26,23 @@ describe("tekil biçim", () => {
     expect(t("social.days_left", { n: 5 })).toBe("5 gün kaldı");
   });
 
+  /*
+    TEKİL BİÇİMİ OLMAYAN ANAHTAR temel metne düşmeli — `.one` yoksa motor
+    sessizce boş dönmemeli.
+
+    İDDİA METNİN TAMAMINI DEĞİL DAVRANIŞINI ölçüyor. Önceki hâli
+    "1 weekly exam" diye tam cümle arıyordu ve haftalık sınav haftalık QUIZ'e
+    dönünce (2026-09-17) test bayatladı: kırılan şey çoğul motoru değil,
+    testin ezberlediği cümleydi. Ölçülmesi gereken tek şey sayının yerine
+    konması ve `.one` yokluğunun sonucu boşaltmaması.
+  */
   it("tekil biçimi olmayan anahtarda temel metin kullanılır", async () => {
     await setLang("en");
-    expect(t("plan.free_weekly", { n: 1 })).toContain("1 weekly exam");
+    const bir = t("plan.free_weekly", { n: 1 });
+    expect(bir.startsWith("1 ")).toBe(true);
+    expect(bir.length).toBeGreaterThan(3);
+    /* Aynı anahtar başka sayıda da yer tutucuyu dolduruyor: cümle sabit
+       kalıyor, yalnız sayı değişiyor. */
+    expect(t("plan.free_weekly", { n: 3 })).toBe(bir.replace(/^1 /, "3 "));
   });
 });
