@@ -358,6 +358,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * bu "önce kelime, sonra cebe konuldu" sırasını veriyordu (bkz. darken/loop).
    */
   const pocketPreroll = useRef(false);
+  /** Duraklatılmış turdan dönülüyor: döngü ilk okumasında "Devam ediyoruz" der. */
+  const resumePreroll = useRef(false);
   /** Teslim işaretinin ("weiter") ne olduğu yürüyüşe girişte bir kez okunur. */
   const hintDone = useRef(false);
   /** Tur bir sebeple bitti mi — sökülürken ikinci bir `walk_end` yazılmasın. */
@@ -974,6 +976,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       //     ÖNCE, "önce kelime sonra cebe konuldu" sırası olmasın diye.
       //   • Teslim işaretinin ne olduğu ("weiter") — girişte bir kez (hintDone).
       const preroll: SpeechSegment[] = [];
+      if (resumePreroll.current) {
+        resumePreroll.current = false;
+        preroll.push({ lang, narration: true, text: t("walk.continuing") });
+      }
       if (pocketPreroll.current) {
         pocketPreroll.current = false;
         preroll.push({ lang, narration: true, text: t("walk.pocket_announce") });
@@ -1289,6 +1295,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       setDisclosure(mode);
       return;
     }
+    /* DURAKLATILMIŞ TURA DÖNÜŞ SESLE KARŞILANIYOR. Duyuru doğrudan okunmuyor,
+       döngünün ön okumasına bırakılıyor (`resumePreroll`): döngü ilk işi
+       olarak onu okuyor ve ardından kelimeyi — araya kelime karışmıyor. */
+    if (status === "paused") resumePreroll.current = true;
     if (mode === "pocket") darken();
     void start(index);
   }
@@ -1394,7 +1404,18 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (darkTaps.current.length >= 3) exitDark();
   }
 
-  function pause() {
+  /**
+   * Turu duraklatır.
+   *
+   * `announce` YALNIZ kullanıcının kendi duraklatmasında: otomatik duruşların
+   * (tanıyıcı öldü, rıza yok, mikrofon susuyor) sebebi zaten çağıran tarafından
+   * okunuyor, üstüne bir de "tur duraklatıldı" demek o cümleyi keserdi.
+   *
+   * Sıra önemli: önce döngü ve ÇALAN okuma susturuluyor (`stopAll`), sonra
+   * duyuru okunuyor. Duyuru döngünün `say`ini kullanamaz — o artık geçersiz bir
+   * jetona bağlı; ekran kapanma uyarısı da aynı sebeple doğrudan okuyor.
+   */
+  function pause(announce = false) {
     if (!ended.current) track("walk_end", 6);
     ended.current = true;
     stopAll();
@@ -1403,10 +1424,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     // yanık bırakıyor ve duraklatılmış bir turda bunun karşılığı yok.
     closeMic();
     setStatus("paused");
+    if (!announce) return;
+    speakSegments(
+      [{ lang, narration: true, text: t("walk.paused_spoken") }],
+      undefined,
+      undefined,
+      { background: typeof document !== "undefined" && document.visibilityState === "hidden" },
+    );
   }
 
   useEffect(() => {
-    pauseRef.current = pause;
+    pauseRef.current = () => pause();
   });
 
   /* Turu KAPATMAK ile ekrandan CIKMAK ayri: kenar cubugundan bir bagantiya
@@ -1845,7 +1873,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           {t("walk.pocket_darken")}
         </button>
       ) : null}
-      <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-h3`}>
+      <button onClick={() => pause(true)} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-h3`}>
         {t("walk.pause")}
       </button>
       {/* TUR ORTASINDA SORULUYOR. "Bitir" tek dokunuşta turu kapatıyordu;

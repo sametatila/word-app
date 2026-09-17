@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon } from "../ui/icons";
+import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, SpeakerIcon, SparkIcon, RepeatIcon, InboxIcon, PauseIcon } from "../ui/icons";
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, CoverBody, StateBody } from "../ui/flow";
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
@@ -46,7 +46,7 @@ const probeSay = (yol: string, txt: string) => {
   return (p: Promise<unknown>) => p.then(() => { console.log("PROBE say<", yol, Date.now() - t0, "ms"); });
 };
 
-type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied" | "error";
+type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "paused" | "stopped" | "denied" | "error";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
@@ -513,21 +513,35 @@ export function WalkModeScreen() {
     // duyamadım → "Duyamadım." + Almanca; atla → cesaret + Almanca. Kelime TEKRAR SORULMAZ.
     const target = withArtikel(w);
     setPhase("judging");
+    /* İKİ OKUMA ARASINDA DA DURULUYOR. Turu duraklatan (ya da çıkan) kullanıcı
+       için geri bildirimin ikinci yarısı artık geçersiz: eskiden "Doğrusu:"
+       okunduktan sonra tur ölmüş olsa bile Almancası yine okunuyor ve
+       duraklatma duyurusunun ÜSTÜNE biniyordu — kullanıcıya bozuk geliyordu. */
     if (result === "correct") {
       setVerdict("correct"); haptic("correct");
       await sayTarget(target);
+      if (!alive()) return "ok";
       recordSpeak(w, true);
     } else if (result === "wrong") {
       setVerdict("wrong"); haptic("wrong");
-      await sayNative(tx("walk.correct_is")); await sayTarget(target);
+      await sayNative(tx("walk.correct_is"));
+      if (!alive()) return "ok";
+      await sayTarget(target);
+      if (!alive()) return "ok";
       recordSpeak(w, false);
     } else if (result === "skip") {
       setVerdict("skip");
-      await sayNative(encourage()); await sayTarget(target);
+      await sayNative(encourage());
+      if (!alive()) return "ok";
+      await sayTarget(target);
+      if (!alive()) return "ok";
       bumpTally(false); // atla: SRS'e yazılmaz ama tur sayısına dahil (sayaç /toplam tutarlı)
     } else {
       setVerdict("unheard");
-      await sayNative(tx("walk.not_heard")); await sayTarget(target);
+      await sayNative(tx("walk.not_heard"));
+      if (!alive()) return "ok";
+      await sayTarget(target);
+      if (!alive()) return "ok";
       bumpTally(false); // duyulmadı: SRS'e yazılmaz (kelime due kalır) ama tur sayısına dahil
     }
     return "ok";
@@ -770,6 +784,40 @@ export function WalkModeScreen() {
     }
   }
 
+  /**
+   * DURAKLAT — kullanıcının düğmesi.
+   *
+   * Sıra önemli: önce döngü geçersiz kılınıyor (jeton), sonra mikrofon ve
+   * ÇALAN ses susturuluyor, en son duyuru okunuyor. Tersi olsaydı yarım kalan
+   * bir geri bildirim duyurunun üstüne binerdi ve tur bozulmuş gibi duyulurdu.
+   * Web'in `pause`ı da aynı sırayı izliyor (`walk-player`).
+   */
+  function pauseWalk() {
+    if (phase === "paused") return;
+    runToken.current++;
+    stopListening();
+    nativeListeningRef.current = false;
+    manualResolve.current = null;
+    try { bridgeStop(); } catch { /* yut */ }
+    stopServerTts();
+    setVerdict(null); setHeard("");
+    setPhase("paused");
+    void sayNative(tx("walk.paused_spoken"));
+  }
+
+  /** DEVAM — önce "Devam ediyoruz", sonra kelime BAŞTAN okunur (aynı sıradan). */
+  function resumeWalk() {
+    const my = ++runToken.current;
+    setPhase("speaking");
+    void (async () => {
+      await sayNative(tx("walk.continuing"));
+      // Duyuru okunurken kullanıcı yine duraklattıysa ya da çıktıysa tur açılmıyor.
+      if (!mounted.current || runToken.current !== my) return;
+      unheardWin.current = [];
+      void runLoop(rounds, idx);
+    })();
+  }
+
   function stopAndLeave() { endWalk(6); runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
   // Bildirimdeki "Durdur": mikrofon kapanır, biriken cevaplar yazılır, tur özeti gösterilir.
   const stopFromNotification = useRef<() => void>(() => {});
@@ -784,7 +832,7 @@ export function WalkModeScreen() {
    */
   useEffect(() => onWalkServiceFailed(() => { track("walk_switch", 1, "arm-failed"); setBgUnavailable(true); }), []);
   // Tur sürerken çıkış onaylı (donanım geri + X): mikrofon açık ve tur yarım.
-  const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "stopped";
+  const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "paused" || phase === "stopped";
   const back = useBackConfirm(inSession);
   function onBackPress() { if (inSession) back.ask(); else stopAndLeave(); }
   function skipNow() { resolveManual("skip"); }
@@ -828,6 +876,11 @@ export function WalkModeScreen() {
     </View>
   ) : null);
 
+  /* Duraklatılabilir anlar: kelime okunuyor, dinleniyor ya da karar veriliyor.
+     Tur sonu sorusunda ("devam edelim mi") duraklatmak anlamsız — orada zaten
+     tur bitmiş durumda ve cevabı bekleniyor. */
+  const canPause = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging";
+
   const topBar = (withProgress: boolean) => (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
       <PressableScale hitSlop={4} onPress={onBackPress} accessibilityLabel={tx("walkmode.exit_walk_mode")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
@@ -839,6 +892,20 @@ export function WalkModeScreen() {
             <View style={{ height: "100%", width: `${Math.round((speakStep / Math.max(1, speakTotal)) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
           </View>
           <Text variant="bodyStrong" color={colors.textMuted}>{speakStep}/{speakTotal}</Text>
+          {/* DURAKLAT — çıkışın (X) karşılığı, aynı ölçüde ve aynı çubukta.
+              Yürürken ekrana bakılmadan basılıyor, o yüzden 44 px ve kenarda.
+              Duraklamışken bu düğme çizilmiyor: orada asıl eylem "Devam et" ve
+              o, ekranın altındaki büyük düğme (bkz. phase === "paused"). */}
+          {canPause ? (
+            <PressableScale
+              hitSlop={4}
+              onPress={pauseWalk}
+              accessibilityLabel={tx("walkmode.pause")}
+              style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
+            >
+              <PauseIcon color={colors.textMuted} size={20} />
+            </PressableScale>
+          ) : null}
         </>
       ) : (
         <View style={{ flex: 1 }} />
@@ -922,6 +989,16 @@ export function WalkModeScreen() {
           ) : null}
           {noMore ? <FlowNote icon={<InboxIcon color={colors.textMuted} size={16} />} text={tx("walkmode.done_no_more_sub")} /> : null}
         </FlowScreen>
+      ) : phase === "paused" ? (
+        /* DURAKLATILDI — kullanıcının kendi kararı; "durdurdum" (stopped)
+           ekranıyla aynı şablon ama başka sebep ve başka metin. */
+        inPlayer(
+          <StateBody mood="think" title={tx("walkmode.paused_title")} body={tx("walkmode.paused_body")} />,
+          <FlowActions
+            primary={{ label: tx("walkmode.continue"), onPress: resumeWalk }}
+            tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
+          />,
+        )
       ) : phase === "stopped" ? (
         inPlayer(
           <StateBody mood="think" title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,

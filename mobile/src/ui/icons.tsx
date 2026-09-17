@@ -37,6 +37,9 @@ export const CheckIcon = ({ color = "#000", size }: P) => (
 export const StopIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Rect x="6.5" y="6.5" width="11" height="11" rx="2.5" fill={color} {...stroke(color)} /></S>
 );
+export const PauseIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="7" y="5.5" width="3.5" height="13" rx="1.5" fill={color} {...stroke(color)} /><Rect x="13.5" y="5.5" width="3.5" height="13" rx="1.5" fill={color} {...stroke(color)} /></S>
+);
 export const SpeakerIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M4 9v6h4l5 4V5L8 9H4z" {...stroke(color)} /><Path d="M16 8.5a4 4 0 010 7M18.5 6a7 7 0 010 12" {...stroke(color)} /></S>
 );
