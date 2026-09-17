@@ -10,7 +10,7 @@ import { weeklySummary } from "@/lib/growth";
 import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
 import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
-import { purgeStaleGuests } from "@/lib/account/guest-merge";
+import { purgeStaleGuests, releaseStaleGuestEmailReservations } from "@/lib/account/guest-merge";
 import { notGuest } from "@/lib/auth/guest-user";
 import { langOf } from "@/lib/social/notify";
 
@@ -68,14 +68,25 @@ export async function GET(req: Request) {
       giriş yolu yok; oturumu 30 gün kullanılmayınca düşen misafirin verisine
       artık kimse ulaşamaz. Hatası özeti düşürmez.
     */
+    /*
+      Doğrulanmamış misafir-upgrade e-posta rezervasyonlarını serbest bırak
+      (güvenlik denetimi F2, bkz. lib/account/guest-merge). PURGE'DEN ÖNCE
+      çalışıyor: canlı oturumlu bir işgalci purge'e takılmaz ama adresi burada
+      boşalır; oturumu düşmüş misafir zaten aşağıda tamamen siliniyor. Hatası
+      özeti düşürmez.
+    */
+    const releasedEmails = await releaseStaleGuestEmailReservations().catch((err) => {
+      console.error("[cron/summary] guest email release", err);
+      return 0;
+    });
     const guests = await purgeStaleGuests().catch((err) => {
       console.error("[cron/summary] guest cleanup", err);
       return 0;
     });
-    const ozet = `hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged} · silinen misafir ${guests}`;
+    const ozet = `hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged} · boşaltılan e-posta ${releasedEmails} · silinen misafir ${guests}`;
     console.log(`[cron/summary] ${ozet}`);
     void recordCronRun("summary", true, Date.now() - basladi, ozet);
-    return NextResponse.json({ targets: rows.length, sent, purged, guests });
+    return NextResponse.json({ targets: rows.length, sent, purged, releasedEmails, guests });
   } catch (err) {
     console.error("[cron/summary]", err);
     void recordCronRun("summary", false, Date.now() - basladi, String((err as Error).message ?? err));

@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { shiftDay } from "@/lib/award";
 import { purgeUserData } from "@/lib/account/purge";
 import { recordDeletion } from "@/lib/account/deletion-log";
+import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
 
 /**
  * MİSAFİRİN İLERLEMESİ HESABA — mağaza ön inceleme B24.
@@ -79,6 +80,12 @@ export function mergeStreaks(a: StreakSide, b: StreakSide): { currentStreak: num
  * kullanıcı hâlâ misafir. Süresi dolmuş oturum da kabul: jeton sahipliği
  * kanıtlıyor ve misafir, oturumu düştükten sonra hesap açarak ilerlemesini
  * kurtarabilmeli. Haftalık temizlik misafiri sildiyse satır bulunmaz.
+ *
+ * GÜVENLİK DENETİMİ F3 — BİLİNÇLİ KABUL. "Süresi geçmiş jeton hâlâ geçerli"
+ * bir açık gibi görünüyor ama jeton misafirin TEK kimlik kanıtı (başka giriş
+ * yolu yok); süre denetimi eklemek ilerleme-kurtarmayı kırar ve veri
+ * kaybettirir. Jeton cihaz-yerel bir sır, ona sahip olan zaten misafir. Terk
+ * edilen misafir purgeStaleGuests ile siliniyor. `guest-resume` de aynı gerekçe.
  */
 export async function verifyGuestToken(guestId: string, token: string): Promise<boolean> {
   const res = await db.execute(sql`
@@ -475,6 +482,71 @@ export async function purgeStaleGuests(limit = 500): Promise<number> {
     }
   }
   return removed;
+}
+
+/**
+ * Doğrulanmamış misafir-upgrade e-posta rezervasyonlarını serbest bırakır —
+ * haftalık cron (bkz. api/cron/summary). Güvenlik denetimi F2.
+ *
+ * `/guest/upgrade` misafirin satırına gerçek bir e-posta yazıp (emailVerified
+ * false) `user.email`in benzersiz slotunu HEMEN tutuyor; misafir doğrulama
+ * bağını hiç tıklamasa bile o adres rezerve kalıyor. Sahibi olmadığı bir adresi
+ * yazan biri gerçek sahibin kaydolmasını engelleyebilir (adres işgali). Zaten
+ * KAYITLI bir adresi çalamıyor (unique + findUserByEmail engelliyor), yalnız
+ * henüz kayıtsız bir adresi rezerve edebiliyor — normal kayıt akışının da
+ * paylaştığı bir özellik, ama misafir oluşturma sürtünmesiz olduğu için burada
+ * daha ucuz; misafir resume ile satırı canlı tutarak rezervasyonu süresiz de
+ * uzatabiliyor (temizlik canlı oturumlu misafiri silmiyor).
+ *
+ * Çözüm: 7 gün doğrulanmadan duran rezervasyonu geri al — e-postayı benzersiz
+ * yer tutucu misafir adresine çevir, terk edilen parola hesabını sil. İlerleme
+ * KORUNUYOR; misafir istemcisi hâlâ resume edebilir ve dilerse yeniden upgrade
+ * dener. Satır tx içinde `for update` ile kilitlenip yeniden denetleniyor:
+ * aradaki bir doğrulama ya da claim olduysa hiç dokunulmuyor. 7 gün eşiği
+ * doğrulamayı geciktiren meşru kullanıcıyı kırpmayacak kadar geniş; kırparsa
+ * yalnız yeniden upgrade gerekir, veri kaybı yok.
+ */
+export async function releaseStaleGuestEmailReservations(limit = 500): Promise<number> {
+  const stale = rowsOf(await db.execute(sql`
+    select u.id from "user" u
+     where u."isAnonymous"
+       and u."emailVerified" = false
+       and u.email not like ${`%@${GUEST_EMAIL_DOMAIN}`}
+       and u."updatedAt" < now() - interval '7 days'
+     order by u."updatedAt"
+     limit ${limit}
+  `)) as { id: string }[];
+  let released = 0;
+  for (const { id } of stale) {
+    try {
+      const done = await db.transaction(async (tx) => {
+        /* Satırı kilitle ve koşulu tx içinde yeniden doğrula: select'ten sonra
+           misafir doğrulamış ya da hesabına claim etmiş olabilir — o durumda
+           dokunmuyoruz. */
+        const still = rowsOf(await tx.execute(sql`
+          select 1 as ok from "user"
+           where id = ${id} and "isAnonymous" and "emailVerified" = false
+             and email not like ${`%@${GUEST_EMAIL_DOMAIN}`}
+           for update
+        `));
+        if (!still.length) return false;
+        /* Parola hesabı yalnız bu terk edilen upgrade için açılmıştı; misafir
+           yeniden tam anonim duruma dönüyor. */
+        await tx.execute(sql`delete from account where "userId" = ${id} and "providerId" = 'credential'`);
+        /* E-postayı benzersiz yer tutucuya çevir: id birincil anahtar, çakışmaz. */
+        await tx.execute(sql`
+          update "user"
+             set email = ${`${id}@${GUEST_EMAIL_DOMAIN}`}, name = 'guest', "updatedAt" = now()
+           where id = ${id}
+        `);
+        return true;
+      });
+      if (done) released++;
+    } catch (err) {
+      console.error("[guest:release-email]", err);
+    }
+  }
+  return released;
 }
 
 function rowsOf(res: unknown): unknown[] {
