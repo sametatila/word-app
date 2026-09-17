@@ -67,6 +67,20 @@ export type ScoredItem = {
   given: string;
   /** Doğru cevabın okunur hâli — dökümde gösterilir. */
   expected: string;
+  /**
+   * Maddenin gerekçesi — SONUÇLA BİRLİKTE gidiyor, kâğıtla değil.
+   *
+   * Eskiden istemci bunu elindeki kâğıttan okuyordu; kâğıt da ikilinin
+   * içindeydi, yani gerekçe sınav başlamadan önce de oradaydı. "B doğru,
+   * çünkü metinde saatin altıda kapandığı yazıyor" cümlesi cevabın kendisi.
+   * Artık kâğıt `answer` gibi `explain` de taşımadan iniyor (bkz. `deliver`)
+   * ve gerekçe ancak kâğıt bitince, burada geliyor.
+   *
+   * `scorePart` bunu DOLDURMUYOR: gerekçe kullanıcının anadiline çevrilmiş
+   * olmalı ve çeviri uçta yapılıyor (`localiseMockPaper`). Saf kalması,
+   * puanlamanın veritabanına ve dile bağımsız kalması demek.
+   */
+  explain?: string;
 };
 
 export type MockScore = {

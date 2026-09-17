@@ -10,15 +10,16 @@ import { track } from "@/lib/events";
 import { assess } from "@/lib/assess";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
-import type { MockLevel } from "@/lib/mock-exams/types";
+import type { MockLevel, MockPaper } from "@/lib/mock-exams/types";
 import { mockCourseOf } from "@/lib/courses";
 import { canMockPaper, mockAccess } from "@/lib/premium/access";
 import { takeUsage } from "@/lib/premium";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
+import { deliverPart } from "@/lib/mock-exams/deliver";
 import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
-import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { ensureProfile } from "@/lib/session";
 import { localiseMockPaper } from "@/lib/lessons/native-server";
 import { aiConsentGate, hasAiConsent } from "@/lib/ai-consent";
@@ -233,14 +234,55 @@ async function start(userId: string, body: Record<string, unknown>) {
     )
     .orderBy(desc(mockExamAttempts.startedAt))
     .limit(1);
-  if (open) return NextResponse.json({ attempt: shape(open), resumed: true });
+  /*
+   * KÂĞIT ARTIK CEVAPLA BİRLİKTE İNİYOR.
+   *
+   * Mobil bugüne kadar kâğıdı kendi paketinden okuyordu (5,4 MB, 120 kâğıt,
+   * cevap anahtarlarıyla) — premium kapısı yalnız görünürlüğü yönetiyordu,
+   * içerik zaten cihazdaydı. Kapı ancak içerik BURADAN inerse gerçek oluyor:
+   * bu satıra kadar `canMockPaper` geçilmiş durumda.
+   *
+   * Yalnız ÇÖZÜLEN BÖLÜM gidiyor ve `answer`/`explain` çıkarılmış hâlde
+   * (bkz. `lib/mock-exams/deliver`). Çeviri burada yapılıyor, çünkü yönerge
+   * ve komut alanları kullanıcının anadiline göre değişiyor.
+   */
+  const delivered = await deliveredPaper(userId, paper, skill);
+  if (open) return NextResponse.json({ attempt: shape(open), resumed: true, paper: delivered });
 
   const [row] = await db
     .insert(mockExamAttempts)
     .values({ userId, paperId, skill, level: paper.level, secondsLeft: part.minutes * 60 })
     .returning();
   await track(userId, "mock_exam_start", clampDay(typeof body.day === "string" ? body.day : undefined), 1, `${paper.level}:${skill}`);
-  return NextResponse.json({ attempt: shape(row), resumed: false });
+  return NextResponse.json({ attempt: shape(row), resumed: false, paper: delivered });
+}
+
+/** Kullanıcının anadiline çevrilmiş, anahtarı çıkarılmış bölüm. */
+async function deliveredPaper(userId: string, paper: MockPaper, skill: MockSkill) {
+  const profile = await ensureProfile(userId).catch(() => null);
+  const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+  const localised = await localiseMockPaper(paper, lang);
+  return deliverPart(localised, skill);
+}
+
+/**
+ * Puan + gerekçeler. Gerekçe kâğıttan değil SONUÇTAN geliyor (bkz. `deliver`).
+ *
+ * Kâğıt önce çevriliyor: `explain` kullanıcının anadilinde yazılmış bir
+ * cümle ve sonuç dökümünde olduğu gibi gösteriliyor.
+ */
+async function scoreWithExplains(paperId: string, skill: MockSkill, answers: Record<string, string>, lang: NativeLang) {
+  const score = scorePart(paperId, skill, answers);
+  if (!score) return null;
+  const source = mockPaperById(paperId);
+  if (!source) return score;
+  const localised = await localiseMockPaper(source, lang);
+  const part = findPart(localised, skill);
+  if (!part) return score;
+  const explains = new Map<string, string>();
+  for (const task of part.tasks) for (const it of task.items) explains.set(it.id, it.explain);
+  for (const it of score.items) it.explain = explains.get(it.id);
+  return score;
 }
 
 async function save(userId: string, body: Record<string, unknown>) {
@@ -422,6 +464,17 @@ async function finish(userId: string, body: Record<string, unknown>) {
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   /*
+    Geri bildirim doğrudan ekrana çıkıyor, o yüzden kullanıcının dilinde
+    üretiliyor. Dil ÇEREZDEN değil profilden: bu ucu mobil de çağırıyor ve
+    orada web çerezimiz yok.
+
+    ERKEN DÖNÜŞÜN ÜSTÜNE ALINDI: bitmiş bir kâğıdın kayıtlı sonucu da
+    gerekçeleri taşımalı ve gerekçe çevrilmiş olmalı (bkz. `scoreWithExplains`).
+  */
+  const profile = await ensureProfile(userId).catch(() => null);
+  const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+
+  /*
    * BITMIS DENEME BIR KAYITTIR, YENIDEN BITIRILEMEZ.
    *
    * Guncelleme `state` kosulu tasimiyordu: bitmis bir kagit yeni cevaplarla
@@ -436,17 +489,14 @@ async function finish(userId: string, body: Record<string, unknown>) {
    * acmiyor.
    */
   if (row.state !== "running") {
-    const kayitli = scorePart(row.paperId, row.skill as MockSkill, (row.answers ?? {}) as Record<string, string>);
+    const kayitli = await scoreWithExplains(
+      row.paperId,
+      row.skill as MockSkill,
+      (row.answers ?? {}) as Record<string, string>,
+      lang,
+    );
     return NextResponse.json({ attempt: shape(row), score: kayitli ?? score, ai: row.ai ?? null });
   }
-
-  /*
-    Geri bildirim doğrudan ekrana çıkıyor, o yüzden kullanıcının dilinde
-    üretiliyor. Dil ÇEREZDEN değil profilden: bu ucu mobil de çağırıyor ve
-    orada web çerezimiz yok.
-  */
-  const profile = await ensureProfile(userId).catch(() => null);
-  const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
 
   /* Açıklamalar geri bildirime gidiyor; kâğıttan okunuyor, istemciden değil.
      KÂĞIT ÖNCE ÇEVRİLİYOR: `explain` maddenin neden yanlış olduğunu söyleyen
@@ -458,6 +508,9 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const part = findPart(paper, row.skill as MockSkill)!;
   const explains: Record<string, string> = {};
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
+  /* Aynı gerekçeler SONUCA da yazılıyor: istemci artık onları kâğıttan
+     okuyamıyor, çünkü kâğıt `explain` taşımadan iniyor. */
+  for (const it of score.items) it.explain = explains[it.id];
   /*
     YAPAY ZEKÂ GERİ BİLDİRİMİ İZNE BAĞLI, SINAVIN BİTMESİ DEĞİL. Özet dil
     modelinde üretiliyor; izin yoksa model çağrılmıyor ve sağlayıcı kapalıyken
@@ -495,7 +548,12 @@ async function finish(userId: string, body: Record<string, unknown>) {
   if (!saved) {
     const [son] = await db.select().from(mockExamAttempts).where(and(eq(mockExamAttempts.id, id), eq(mockExamAttempts.userId, userId))).limit(1);
     if (!son) return NextResponse.json({ error: "not_found" }, { status: 404 });
-    const kayitli = scorePart(son.paperId, son.skill as MockSkill, (son.answers ?? {}) as Record<string, string>);
+    const kayitli = await scoreWithExplains(
+      son.paperId,
+      son.skill as MockSkill,
+      (son.answers ?? {}) as Record<string, string>,
+      lang,
+    );
     return NextResponse.json({ attempt: shape(son), score: kayitli ?? score, ai: son.ai ?? null });
   }
 

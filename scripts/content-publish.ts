@@ -26,11 +26,14 @@ import { buildLessonDump } from "./dump-lessons-mobile";
 import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
+import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
 
 const COURSES = ["de", "en"] as const;
 
 type WithId = { id: string };
+/** `buildPaperDump` çıktısı JSON; künye üreticisi kâğıdın kendi tipini istiyor. */
+type MockPaperRow = Parameters<typeof catalogEntry>[0];
 
 function byId(rows: WithId[]): PackInput {
   const out: PackInput = new Map();
@@ -74,8 +77,26 @@ function collect(): Map<string, PackInput> {
 
     /* DENEME SINAVI KÂĞITLARI — kapılı. Kurs başına tek paket: kâğıt zaten
        tek tek isteniyor, seviyeye bölmenin kazancı yok. */
-    const papers = JSON.parse(buildPaperDump(course).json) as WithId[];
+    const papers = JSON.parse(buildPaperDump(course).json) as (WithId & { level: string })[];
     if (papers.length > 0) packs.set(`papers/${course}`, byId(papers));
+
+    /* KÂĞIT KÜNYELERİ — kapılı DEĞİL ve bu bilinçli.
+       Liste ekranı kilitli kâğıtları da göstermek zorunda: kilidi görmeden
+       premium'un ne verdiği anlaşılmıyor. Künye başlık, süre ve puan taşıyor,
+       tek bir madde bile taşımıyor (bkz. `mock-exams/deliver` catalogEntry) —
+       kâğıt başına ~200 bayt, tamamı için ~25 KB. */
+    const byLevelPapers = new Map<string, MockPaperRow[]>();
+    for (const row of papers as unknown as MockPaperRow[]) {
+      const level = row.level.toLowerCase();
+      const list = byLevelPapers.get(level);
+      if (list) list.push(row);
+      else byLevelPapers.set(level, [row]);
+    }
+    for (const [level, rows] of byLevelPapers) {
+      const index: PackInput = new Map();
+      for (const row of rows) index.set(row.id, catalogEntry(row));
+      packs.set(`mockindex/${course}-${level}`, index);
+    }
   }
 
   /* ANADİL SÖZLÜKLERİ — çeviri yönü tek: anadili İngilizce olan `native/en`i,
