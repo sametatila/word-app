@@ -173,7 +173,9 @@ export function WalkModeScreen() {
      kez yazılıyor ki süre ekran yeniden çizildikçe kaymasın. */
   const taughtRef = useRef(0);
   const endedAt = useRef<number | null>(null);
-  const manualResolve = useRef<((v: boolean | "skip") => void) | null>(null);
+  const manualResolve = useRef<((v: boolean | "skip" | "resume") => void) | null>(null);
+  /** Kelime, premium kapısı kapalı olduğu için ekranın açılmasını bekliyor (bkz. judgeSpeak). */
+  const gateWaitRef = useRef(false);
   const pulse = useRef(new Animated.Value(0)).current;
 
   // İlerleme — walk STATELESS: cevaplar SRS'e yazılır (progress YOK). Sorulanları skip için biriktir.
@@ -289,6 +291,8 @@ export function WalkModeScreen() {
       // bekleyeni burada serbest bırakmazsak tur o utterance'ta donuyor. Serbest kalınca bir
       // sonraki cümle zaten native yola düşüyor (`say`/`sayTarget` screenOffRef'e bakıyor).
       if (off) { try { bridgeStop(); } catch { /* yut */ } }
+      // Kapı beklemesindeki kelime ekran açılınca ücretsiz yoldan yeniden soruluyor.
+      if (!off && gateWaitRef.current) resolveManual("resume");
       // Ekran kapalı yol premium'a kapalıysa SÖYLE. Tek sefer: her kelimede
       // tekrarlamak turu anlatıma çevirirdi. Ekran açıkken tur normal sürüyor,
       // mesaj da bunu söylüyor — kullanıcı çıkmaz sokakta bırakılmıyor.
@@ -333,10 +337,10 @@ export function WalkModeScreen() {
     return () => loop.stop();
   }, [phase, pulse]);
 
-  function waitManual(): Promise<boolean | "skip"> {
+  function waitManual(): Promise<boolean | "skip" | "resume"> {
     return new Promise((resolve) => { manualResolve.current = resolve; });
   }
-  function resolveManual(v: boolean | "skip") {
+  function resolveManual(v: boolean | "skip" | "resume") {
     const r = manualResolve.current; manualResolve.current = null;
     if (r) r(v);
   }
@@ -389,7 +393,6 @@ export function WalkModeScreen() {
     setPhase("listening");
     // Kaynak: ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama arka planda —
     // yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
-    const useAzure = screenOffRef.current;
     /* DİNLEMENİN SONUCU ÖLÇÜLÜYOR — web `walk-player` ile aynı biçim:
        `kaynak:sonuç`, value = gönderilen saniye × 10 (ücretsiz native yolda
        sunucuya bir şey gitmiyor, 0). Android'de tek ölçülen şey turun başı ve
@@ -401,38 +404,54 @@ export function WalkModeScreen() {
       track("walk_listen", Math.round(saniye * 10), `${kaynak}:${sonuc}`);
     };
     let res: { k: "v"; heard: string[] } | { k: "m" };
-    if (useAzure && pocketGateClosed()) {
-      // Kapı kapalıysa Azure'u HİÇ ÇAĞIRMIYORUZ: her deneme 3 saniyelik kayıt,
-      // bir yükleme ve kesin bir 403 demek. Bunun yerine kullanıcıyı bekliyoruz —
-      // ekranı açarsa tur ücretsiz native tanıyıcıyla kaldığı yerden sürüyor.
-      // Gerekçe ekran-kapandı işleyicisindeki notta; mesaj orada bir kez okunuyor.
-      res = await waitManual().then(() => ({ k: "m" as const }));
-    } else if (useAzure) {
-      // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
-      // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
-      sfx("micon");
-      res = await Promise.race([
-        azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
-        waitManual().then(() => ({ k: "m" as const })),
-      ]);
-      noteHeard("azure", res, AZURE_WINDOW_MS / 1000);
-    } else {
+    /* Kaynak her denemede YENİDEN seçiliyor: bekleme ya da kesinti sırasında ekran
+       durumu değişmiş olabilir. Döngü en fazla bir kesinti tekrarı ve kapı
+       beklemesinden dönüşler kadar sürüyor. */
+    let retried = false;
+    for (;;) {
+      if (screenOffRef.current && pocketGateClosed()) {
+        // Kapı kapalıysa Azure'u HİÇ ÇAĞIRMIYORUZ: her deneme 3 saniyelik kayıt,
+        // bir yükleme ve kesin bir 403 demek. Kullanıcıyı bekliyoruz; ekranı
+        // açınca (`onScreenState` → "resume") kelime yeniden okunup ücretsiz
+        // native tanıyıcıyla soruluyor. Eskiden bu bekleme ekran açılınca da
+        // sürüyordu: tur "atla"ya basılana kadar donuyor, basınca da kelime
+        // sorulmadan "atlandı" sayılıyordu. Mesaj ekran-kapandı işleyicisinde bir kez okunuyor.
+        gateWaitRef.current = true;
+        const v = await waitManual();
+        gateWaitRef.current = false;
+        if (v !== "resume" || !alive()) { res = { k: "m" }; break; }
+        track("walk_listen", 0, "native:resume");
+        setPhase("speaking");
+        await sayNative(w.tr); if (!alive()) return "ok";
+        await gap(150); if (!alive()) return "ok";
+        setPhase("listening");
+        continue;
+      }
+      if (screenOffRef.current) {
+        // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
+        // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
+        sfx("micon");
+        res = await Promise.race([
+          azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+          waitManual().then(() => ({ k: "m" as const })),
+        ]);
+        noteHeard("azure", res, AZURE_WINDOW_MS / 1000);
+        break;
+      }
       res = await listenNative();
       noteHeard("native", res);
       // Boş sonuç iki ayrı şey olabilir: kullanıcı susmuştur, ya da dinlemeyi biz kesmişizdir
       // (araya kesinti girdi, tanıyıcı öldü). İkincisini "duyamadım" saymak haksız — üç
-      // duyamadım turu bitiriyor. Kelimeyi bir kez daha sor: hâlâ arka plandaysak Azure ile,
-      // kullanıcı geri döndüyse yine ücretsiz native ile. iOS'ta buranın önemi büyük: orada
-      // bildirime dokunmak bile kesinti sayılıyor, yani bu dal Android'dekinden çok daha sık
-      // çalışıyor. `screenOffRef` şartı korunuyor — kesme bize ulaşmadan tanıyıcı kendi
-      // ölmüş olabilir; koşul eskisinin üstüne EKLENİYOR, hiçbir durumda daha az tekrar yok.
-      if (res.k === "v" && res.heard.length === 0 && (listenCut.current || screenOffRef.current) && alive()) {
-        await sayNative(w.tr);
-        res = screenOffRef.current
-          ? { k: "v" as const, heard: (await azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff"))) ?? [] }
-          : await listenNative();
-        noteHeard(screenOffRef.current ? "azure" : "native", res, screenOffRef.current ? AZURE_WINDOW_MS / 1000 : 0);
+      // duyamadım turu bitiriyor. Kelimeyi bir kez daha sor; kaynak döngünün başında yeniden
+      // seçiliyor (arka plandaysak Azure ya da kapı beklemesi, döndüyse native). iOS'ta buranın
+      // önemi büyük: orada bildirime dokunmak bile kesinti sayılıyor. `screenOffRef` şartı
+      // korunuyor — kesme bize ulaşmadan tanıyıcı kendi ölmüş olabilir.
+      if (!retried && res.k === "v" && res.heard.length === 0 && (listenCut.current || screenOffRef.current) && alive()) {
+        retried = true;
+        await sayNative(w.tr); if (!alive()) return "ok";
+        continue;
       }
+      break;
     }
     manualResolve.current = null;
     if (!alive()) return "ok";
@@ -539,7 +558,8 @@ export function WalkModeScreen() {
     sfx("finish"); // tamamlanma sesi
     bumpStats(); // yürüyüş bitti: XP/seri değişti
     // Güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
-    if (screenOffRef.current) { await askContinue(alive); return; }
+    // Kapı kapalıysa ekran kapalıyken cevap dinlenemez: soru sorulmuyor, tur ekrandaki gibi bitiyor.
+    if (screenOffRef.current && !pocketGateClosed()) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
     endedAt.current = Date.now();
     setPhase("done");
