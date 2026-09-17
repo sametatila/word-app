@@ -49,6 +49,16 @@ const packKey = (pack: string) => `content:pack:${pack}`;
 const bodyKey = (hash: string) => `content:body:${hash}`;
 
 /**
+ * SIRA MADDESİ — `src/lib/content/ids` `ORDER_ITEM` ile AYNI değer.
+ *
+ * Paket bir eşleme ve eşlemenin sırası taşınmıyor; sırası anlamlı içerikler
+ * (dersler, beceriler) kimlik listesini ayrı bir maddede yayınlıyor. İçerik
+ * değil, bu yüzden `listContentItems` onu süzüyor — ekranlar onu bir ders
+ * sanmasın.
+ */
+const ORDER_ITEM = "index";
+
+/**
  * Tek bir AsyncStorage değerinin tavanı.
  *
  * Android'de depo SQLite ve satır başına imleç penceresi 2 MB; o sınıra yakın
@@ -293,9 +303,19 @@ export async function getContentItem<T>(pack: string, item: string): Promise<T |
   }
 }
 
-/** Paketteki madde kimlikleri (kapatılmışlar hariç) — liste ekranları için. */
+/**
+ * Paketteki madde kimlikleri — KAYNAK SIRASINDA, kapatılmışlar hariç.
+ *
+ * Paket sıra maddesi taşıyorsa o sıra geçerli; taşımıyorsa eldeki sıra
+ * korunuyor. Sıra maddesinde olmayan bir madde (yeni eklenmiş, sıra listesi
+ * eski) sona geliyor — kaybolmasındansa sonda dursun.
+ */
 export async function listContentItems(pack: string): Promise<string[]> {
   const index = await readJson<PackIndex>(packKey(pack));
   if (!index) return [];
-  return Object.keys(index.items).filter((item) => !isContentDisabled(pack, item));
+  const have = Object.keys(index.items).filter((item) => item !== ORDER_ITEM && !isContentDisabled(pack, item));
+  const order = index.items[ORDER_ITEM] ? await getContentItem<string[]>(pack, ORDER_ITEM) : null;
+  if (!Array.isArray(order)) return have;
+  const rank = new Map(order.map((id, i) => [id, i]));
+  return have.sort((a, b) => (rank.get(a) ?? Number.MAX_SAFE_INTEGER) - (rank.get(b) ?? Number.MAX_SAFE_INTEGER));
 }

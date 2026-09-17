@@ -26,6 +26,7 @@ import { buildLessonDump } from "./dump-lessons-mobile";
 import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
+import { ORDER_ITEM } from "../src/lib/content/ids";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
 
@@ -45,6 +46,20 @@ function byId(rows: WithId[]): PackInput {
 }
 
 /**
+ * Sırası anlamlı paketler sıra maddesini de taşıyor.
+ *
+ * Ders ve beceri listeleri patika ünitelerinde SIRAYLA tüketiliyor; paket bir
+ * eşleme olduğu için sıra taşınmıyor ve delta güncellemesinde büsbütün
+ * kayboluyor. Kimlik sırasına göre sıralamak DOĞRU DEĞİL: ölçüldü, hiçbir
+ * seviyede kaynak sırası kimlik sırasıyla aynı değil.
+ */
+function withOrder(rows: WithId[]): PackInput {
+  const out = byId(rows);
+  out.set(ORDER_ITEM, rows.map((r) => r.id));
+  return out;
+}
+
+/**
  * Paketleri kurar. Boş paket YAZILMIYOR: olmayan bir seviyeyi boş bir
  * paketle yayınlamak, istemciye "bu seviye var ama içi boş" demek olurdu —
  * "bu seviye yok"tan farklı ve yanlış bir cevap.
@@ -59,7 +74,7 @@ function collect(): Map<string, PackInput> {
     for (const pack of buildLessonDump(course)) {
       const rows = JSON.parse(pack.json) as WithId[];
       if (rows.length === 0) continue;
-      packs.set(`lessons/${course}-${pack.level.toLowerCase()}`, byId(rows));
+      packs.set(`lessons/${course}-${pack.level.toLowerCase()}`, withOrder(rows));
     }
 
     /* BECERİ ALIŞTIRMALARI — seviye başına paket. Mobilde bugün tek dosya
@@ -73,7 +88,7 @@ function collect(): Map<string, PackInput> {
       if (list) list.push(row);
       else byLevel.set(level, [row]);
     }
-    for (const [level, rows] of byLevel) packs.set(`skills/${course}-${level}`, byId(rows));
+    for (const [level, rows] of byLevel) packs.set(`skills/${course}-${level}`, withOrder(rows));
 
     /* DENEME SINAVI KÂĞITLARI — kapılı. Kurs başına tek paket: kâğıt zaten
        tek tek isteniyor, seviyeye bölmenin kazancı yok. */

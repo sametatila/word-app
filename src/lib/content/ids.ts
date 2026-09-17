@@ -16,6 +16,20 @@
 /** Paketin TAMAMININ tek arşivi. Sıfırdan dolan istemci bunu indiriyor. */
 export const FULL_PACK = "*";
 
+/**
+ * SIRA MADDESİ — paketin maddelerinin KAYNAKTAKİ sırası.
+ *
+ * Paket bir eşleme (madde → gövde) ve eşlemenin sırası taşınmıyor: soğuk
+ * dolumda arşivin anahtar sırası korunuyor ama delta güncellemesinde değişen
+ * maddeler sona ekleniyor. Oysa bazı içeriklerde SIRA ANLAM taşıyor —
+ * patika üniteleri ders listesini sırayla tüketiyor, beceri havuzları da.
+ * Sıra kaybolursa hiçbir şey hata vermez; müfredat sessizce karışır.
+ *
+ * Bu yüzden sıra AÇIKÇA yayınlanıyor: paket içinde kimlik listesi taşıyan
+ * ayrılmış bir madde. İçerik değil, bu yüzden madde listelerinden süzülüyor.
+ */
+export const ORDER_ITEM = "index";
+
 /** "lessons/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
 const PACK_RE = /^[a-z]{3,12}\/[a-z0-9-]{1,24}$/;
 /** "de-a1-b03" · "de-b1-01" · "*" */
