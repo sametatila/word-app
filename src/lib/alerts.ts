@@ -7,6 +7,7 @@ import { getServerMetrics } from "@/lib/server-metrics";
 import { CRON_EXPECTED } from "@/lib/admin-coverage";
 import { appControl } from "@/lib/app-control";
 import { esc, sendTelegram, telegramConfigured } from "@/lib/telegram";
+import { storeReviews } from "@/lib/store-reviews";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -181,6 +182,19 @@ export async function collectAlerts(): Promise<Alert[]> {
     guard("mail", async () => {
       const [r] = await rows(sql`select count(*)::int c from events where name = 'mail_sent' and kind like '%:fail' and created_at >= now() - interval '1 hour'`);
       if (num(r?.c) >= 3) alerts.push({ key: "mail", level: "kritik", text: `Son 1 saatte ${num(r?.c)} e-posta gönderilemedi (doğrulama postası gitmiyorsa yeni kullanıcı hesabına giremez).` });
+    }),
+    guard("reviews", async () => {
+      // Yeni düşük puanlı mağaza yorumu (son 24 saat, cevapsız): tek seferlik
+      // anahtar (`err`le aynı ailede, "düzeldi" mesajı yok). Önbellek 30 dk.
+      const { results } = await storeReviews();
+      for (const r of results) {
+        if (r.error) alerts.push({ key: `reviews-api:${r.store}`, level: "uyari", text: `Mağaza yorumları okunamadı: ${r.error}` });
+        for (const rv of r.reviews) {
+          if (rv.rating > 0 && rv.rating <= 2 && !rv.answered && rv.at && Date.now() - Date.parse(rv.at) < 86_400_000) {
+            alerts.push({ key: `err-review:${r.store}:${rv.id}`, level: "uyari", text: `${rv.rating}★ yeni ${r.store === "ios" ? "App Store" : "Google Play"} yorumu: ${(rv.title ? rv.title + " — " : "") + rv.body}`.slice(0, 300) });
+          }
+        }
+      }
     }),
     guard("errors", async () => {
       // İstemci hata grupları (lib/client-errors): son 10 dakikada İLK KEZ görülen grup.

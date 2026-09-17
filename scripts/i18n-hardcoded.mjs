@@ -93,6 +93,7 @@ const SKIP = [
   "lib/admin-errors.ts",
   "lib/premium/revenue.ts",
   "lib/admin-users.ts",
+  "lib/store-reviews.ts",
   // İçerik yayını: yalnız `npm run content:publish` ve `test:content-db`
   // çağırıyor. Hata metinleri yayını yapan işletmecinin terminaline gidiyor,
   // hiçbir uç bunları kullanıcıya döndürmüyor.

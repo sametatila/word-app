@@ -22,6 +22,7 @@ import { cleanSource, platformOf } from "../src/lib/store-link";
 import { adminErrorText } from "../src/lib/admin-errors";
 import { revenuecat } from "../src/lib/premium/providers/revenuecat";
 import { AUTH_SECRET_TABLES, USER_COLUMNS } from "../src/lib/account/export";
+import { summarizeReviews, type StoreReview } from "../src/lib/store-reviews";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
 import { PgTable } from "drizzle-orm/pg-core";
@@ -131,6 +132,16 @@ async function main() {
   check("sandbox deftere de yetkiye de girmiyor", !sandbox.ok);
   const wrongSecret = await revenuecat.parse(new Request("https://x", { method: "POST", headers: { authorization: "yanlis" } }), JSON.stringify({ event: base }));
   check("yanlış sır 401", !wrongSecret.ok && wrongSecret.status === 401);
+
+  console.log("\nMağaza yorumları özeti");
+  const now = Date.parse("2026-09-17T12:00:00Z");
+  const rv = (rating: number, daysAgo: number, answered = false): StoreReview => ({ store: "android", id: `${rating}-${daysAgo}`, rating, title: "", body: "", author: "", at: new Date(now - daysAgo * 86_400_000).toISOString(), version: "", territory: "", answered });
+  const sum = summarizeReviews([rv(5, 1), rv(1, 2), rv(2, 40, true), rv(4, 3)], 30, now);
+  check("ortalama tek ondalık", sum.avg === 3);
+  check("yıldız dağılımı", JSON.stringify(sum.stars) === JSON.stringify([1, 1, 0, 1, 1]));
+  check("son 30 gün penceresi", sum.recent === 3);
+  check("cevapsız 1-2 yıldız (cevaplanan sayılmaz)", sum.lowUnanswered === 1);
+  check("boş liste ortalama null", summarizeReviews([], 30, now).avg === null);
 
   console.log("\nVeri dışa aktarma kapsamı");
   // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:
