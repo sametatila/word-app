@@ -596,6 +596,7 @@ export const de: Record<string, string> = {
   "mockexams.minutes": "Insgesamt {n} Minuten",
   "mockexams.minutes.one": "Insgesamt {n} Minute",
   "mockexams.none_for_level": "Für {level} ist noch kein Satz fertig. Wähle oben ein anderes Niveau, um die fertigen Sätze zu sehen.",
+  "mockexams.couldn_t_load": "Prüfungssimulationen konnten nicht geladen werden.",
   "mockexams.empty_title": "Keine Probeprüfung auf diesem Niveau",
   "mockexams.paper": "Probesatz {n}",
   "mockexams.intro": "Jeder Prüfungsteil wird einzeln bearbeitet und hat seine eigene Zeit; Sie können mit jedem Teil beginnen. Läuft die Zeit ab, geht es automatisch zur nächsten Aufgabe, und zu einer erledigten Aufgabe kommen Sie nicht zurück — wie in einer echten digitalen Prüfung.",

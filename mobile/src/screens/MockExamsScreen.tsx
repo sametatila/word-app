@@ -71,12 +71,18 @@ export function MockExamsScreen() {
     yokken yalnız sınava girilemiyor. Seviye değişince yeniden okunuyor: paket
     başına tek dosya, güncelse hiç istek atılmıyor.
   */
+  /* ÜÇ HÂL: iniyor, indi, inemedi. Liste tek bir diziydi ve üçü de boş diziye
+     düşüyordu: künye inerken ve ağ yokken ekran "bu seviyede kâğıt yok"
+     diyordu — oysa biri "henüz bilmiyorum", öteki "okuyamadım". Boş cümle
+     yalnız künye GERÇEKTEN inip boş çıkınca yazıyor. */
   const [papers, setPapers] = useState<MockCatalogEntry[]>([]);
+  const [catalog, setCatalog] = useState<"loading" | "ready" | "error">("loading");
   useEffect(() => {
     let dead = false;
+    setCatalog("loading");
     void mockCatalogFor(currentCourseId(), level as MockLevel)
-      .then((list) => { if (!dead) setPapers(list); })
-      .catch(() => { if (!dead) setPapers([]); });
+      .then((list) => { if (!dead) { setPapers(list); setCatalog("ready"); } })
+      .catch(() => { if (!dead) { setPapers([]); setCatalog("error"); } });
     return () => { dead = true; };
   }, [level]);
 
@@ -182,11 +188,19 @@ export function MockExamsScreen() {
           })}
         </View>
 
-        {!levelReady ? (
+        {!levelReady || catalog === "loading" ? (
           <Card padded>
             <SkeletonLine variant="h3" width={140} />
             <SkeletonLine variant="caption" width="70%" />
           </Card>
+        ) : catalog === "error" && !papers.length ? (
+          <EmptyCard
+            live="assertive"
+            icon={ExamIcon}
+            tint={colors.info}
+            title={t("mockexams.couldn_t_load")}
+            text={t("social.err_offline")}
+          />
         ) : papers.length ? (
           <>
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md }}>

@@ -601,6 +601,7 @@ export const tr: Record<string, string> = {
   "mockexams.minutes": "Toplam {n} dakika",
   "mockexams.minutes.one": "Toplam {n} dakika",
   "mockexams.none_for_level": "{level} için kâğıt henüz hazırlanmadı. Yukarıdaki seviyelerden birini seçerek hazır kâğıtlara bakabilirsin.",
+  "mockexams.couldn_t_load": "Deneme sınavları yüklenemedi.",
   "mockexams.empty_title": "Bu seviyede deneme sınavı yok",
   "mockexams.paper": "Deneme {n}",
   "mockexams.intro": "Her bölüm kendi başına çözülür ve kendi süresi vardır; istediğin bölümle başlayabilirsin. Süre dolunca bir sonraki göreve otomatik geçilir ve bitmiş bir göreve geri dönülemez — gerçek dijital sınav oturumlarında olduğu gibi.",

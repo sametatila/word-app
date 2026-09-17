@@ -598,6 +598,7 @@ export const enBase: Record<string, string> = {
   "mockexams.minutes": "{n} minutes in total",
   "mockexams.minutes.one": "{n} minute in total",
   "mockexams.none_for_level": "No paper has been prepared for {level} yet. Pick another level above to see the papers that are ready.",
+  "mockexams.couldn_t_load": "Couldn't load mock exams.",
   "mockexams.empty_title": "No mock exam at this level",
   "mockexams.paper": "Mock {n}",
   "mockexams.intro": "Each part is taken on its own and has its own clock; start with whichever you like. When time runs out you move to the next task automatically, and a finished task can't be revisited — just like a real digital exam sitting.",
