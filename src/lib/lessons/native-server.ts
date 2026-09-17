@@ -137,7 +137,7 @@ export async function nativeTitle(
     const de = await deDict();
     if (!de) return null;
     const { findLesson } = await import("./index");
-    const titleTr = findLesson(lessonId)?.titleTr;
+    const titleTr = (await findLesson(lessonId))?.titleTr;
     if (!titleTr) return null;
     return de.lesson[deKey("titleTr", titleTr)] ?? null;
   }

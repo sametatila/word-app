@@ -15,7 +15,7 @@
  * tarafında Türkiye kalırsa satır yazılmış ama işini yapmamış demektir.
  */
 import { readFileSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS } from "@/lib/lessons/source";
 import type { Segment } from "@/lib/lessons/types";
 import { resolveLesson, resolveSegments, type NativeDict } from "@/lib/lessons/native";
 

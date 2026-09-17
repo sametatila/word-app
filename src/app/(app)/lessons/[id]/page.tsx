@@ -20,7 +20,7 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
   const userId = await getUserId();
   if (!userId) redirect("/login");
   const { id } = await params;
-  const source = findLesson(id);
+  const source = await findLesson(id);
   if (!source) notFound();
   /* KAPATILMIŞ DERS AÇILMIYOR. Panelden kapatılan madde mobilde gösterge
      üzerinden gizleniyor; web içeriği koddan okuduğu için burada AYRICA
@@ -28,7 +28,7 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
   if (await lessonDisabled(id)) notFound();
   // Karakter sunucuda hesaplanıyor: türetmesi ders kataloğunu gerektiriyor ve
   // 202 dersin tamamını istemci paketine sokmanın anlamı yok.
-  const character = characterFor(source, lessonIndexInLevel(source));
+  const character = characterFor(source, await lessonIndexInLevel(source));
   // Özet köprüleri (WP-62): dersin can-do ifadesi ve sıradaki ders sunucuda —
   // 121 can-do ve ders tahtası istemciye inmesin. Okunamazsa köprü yok, ders açılır.
   const extras: LessonExtras = {

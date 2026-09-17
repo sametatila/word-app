@@ -38,7 +38,7 @@ import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { derivedConfusions } from "../src/lib/speech-rules";
 import { germanLexicon } from "../src/lib/speech-lexicon";
-import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
+import { LESSONS, sourceLessonsFor as lessonsFor, sourceFindLesson as findLesson } from "../src/lib/lessons/source";
 import { scoredSteps } from "../src/lib/lessons/types";
 import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
 import { MAX_HISTORY } from "../src/lib/lessons/roleplay-const";
@@ -83,7 +83,7 @@ import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
 import { growthReport } from "../src/lib/growth";
 import { buildExam, examById, examCando, examHistory, finishExam, scoreSections } from "../src/lib/exam";
-import { moduleContent } from "../src/lib/lessons/module-content";
+import { sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
@@ -1534,7 +1534,7 @@ async function main() {
   await db.delete(profiles).where(eq(profiles.userId, "e2e-onde"));
 
   console.log("\n21) Modül sınavı — patron turu");
-  const heads = moduleVocab("de", "A1", 0);
+  const heads = await moduleVocab("de", "A1", 0);
   check("modülün kelimeleri toplandı", heads.length >= 30, `(${heads.length})`);
   check("artikel ayıklandı", !heads.some((h) => /^(der|die|das)\s/.test(h)));
   check("hepsi küçük harf", heads.every((h) => h === h.toLocaleLowerCase("de-DE")));

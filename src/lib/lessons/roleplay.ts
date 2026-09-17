@@ -119,11 +119,20 @@ export function roleplayPrompt(
     mode?: RoleplayMode;
     /** Öğrencinin ana dili — yardım ve düzeltme etiketi bu dilde. */
     native?: NativeLang;
+    /**
+     * Dersin kendi seviyesindeki sırası — rol yapma karakteri buradan türüyor.
+     *
+     * DIŞARIDAN GELİYOR, çünkü katalog artık yayın hattından okunuyor ve o
+     * okuma async. İstem kurma işlevinin kendisi saf ve senkron kalmalı:
+     * doğrulama betikleri onu üst düzeyde, `await` olmadan çağırıyor
+     * (`check:lessons`, `e2e`) ve orada katalog zaten kaynaktan geliyor.
+     */
+    lessonIndex?: number;
   },
 ): string {
   const phase: RoleplayPhase = opts?.phase ?? "develop";
   const nat = nativeLang(opts?.native ?? DEFAULT_NATIVE);
-  if (opts?.mode === "exam") return examPrompt(lesson, phase, opts?.native ?? DEFAULT_NATIVE);
+  if (opts?.mode === "exam") return examPrompt(lesson, phase, opts?.native ?? DEFAULT_NATIVE, opts?.lessonIndex ?? 0);
   const tgt = targetLang(lesson.course);
   const dialect = tgt.dialect;
 
@@ -131,7 +140,7 @@ export function roleplayPrompt(
   // yabancı oluyor ve model de kendine "ich" dışında bir kimlik kuramıyordu.
   // Ad dersin katalogdaki yerinden türüyor (bkz. characters.ts) — aynı modülde
   // aynı kişi dönüyor, öğrenci onu tanıyor.
-  const who = characterFor(lesson, lessonIndexInLevel(lesson));
+  const who = characterFor(lesson, opts?.lessonIndex ?? 0);
 
   const patterns = lesson.patterns.map((p) => `- ${p.de} — ${p.tr}`).join("\n");
   const vocab = lesson.vocab.map((v) => `${v.de} (${v.tr})`).join(", ");
@@ -333,11 +342,11 @@ düzeltme satırını yine yaz.`;
  * görse de düzeltmez (puanlama sonra, bütün konuşma üstünde). Türkçe yardım
  * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
  */
-function examPrompt(lesson: Lesson, phase: RoleplayPhase, native: NativeLang): string {
+function examPrompt(lesson: Lesson, phase: RoleplayPhase, native: NativeLang, lessonIndex: number): string {
   const tgt = targetLang(lesson.course);
   const nat = nativeLang(native);
   const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : tgt.dialect;
-  const who = characterFor(lesson, lessonIndexInLevel(lesson));
+  const who = characterFor(lesson, lessonIndex);
   return `Sen bir ${tgt.name} KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
@@ -409,7 +418,7 @@ export async function* streamRoleplay(
   const limit = mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns;
   const phase: RoleplayPhase =
     userTurns >= limit ? "closing" : userTurns >= limit - 1 ? "wrapup" : userTurns <= 1 ? "open" : "develop";
-  const system = roleplayPrompt(lesson, { phase, mode, native });
+  const system = roleplayPrompt(lesson, { phase, mode, native, lessonIndex: await lessonIndexInLevel(lesson) });
   yield* streamSystem(system, messages, onMeta, report);
 }
 

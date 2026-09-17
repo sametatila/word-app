@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { and, eq, isNotNull, ne, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { words } from "@/lib/db/schema";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS } from "@/lib/lessons/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams";
 import {

@@ -27,7 +27,7 @@ import type { SkillExercise } from "../src/lib/skills/types";
 import { englishSurface } from "./lib/skill-surface";
 // Bütçe deseni: sıfıra inemeyen bulguyu yine de kapı yapar. Gerekçe `lib/budget.ts`de.
 import { butceUygula, butceBitir } from "./lib/budget";
-import { lessonsFor } from "../src/lib/lessons/index";
+import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
 import { UNIT_LESSONS } from "../src/lib/immersion/build";
 import { EN_FREE, LEVELS, measureEn, enNerede } from "./lib/en-gate";
 

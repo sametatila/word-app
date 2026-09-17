@@ -19,7 +19,7 @@ export default async function LessonExamPage({ params }: { params: Promise<{ id:
   const userId = await getUserId();
   if (!userId) redirect("/login");
   const { id } = await params;
-  const source = findLesson(id);
+  const source = await findLesson(id);
   /* Ders kapatıldıysa sınavı da kapalı: aynı içeriğin türevi. */
   if (source && (await lessonDisabled(id))) notFound();
   if (!source) notFound();

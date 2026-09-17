@@ -1,4 +1,4 @@
-import { LESSONS } from "./index";
+import { LEVEL_ORDER, lessonsForLevel } from "./index";
 import { MODULE_SIZE, moduleTheme } from "./modules";
 import { DEFAULT_NATIVE } from "@/lib/courses";
 import { foldSentence } from "@/lib/sentence-match";
@@ -195,33 +195,55 @@ export type ModuleContent = {
 };
 
 /** Modülün dersleri — katalog sırasıyla on ders. */
-export function moduleLessons(course: string, level: string, index: number): Lesson[] {
-  const inLevel = LESSONS.filter((l) => l.course === course && l.level === level);
+export async function moduleLessons(course: string, level: string, index: number): Promise<Lesson[]> {
+  const inLevel = (await lessonsForLevel(course, level)).filter((l) => l.course === course);
   return inLevel.slice(index * MODULE_SIZE, (index + 1) * MODULE_SIZE);
 }
 
 /** Kursun bir seviyesindeki modül sayısı. */
-export function moduleCount(course: string, level: string): number {
-  return Math.ceil(LESSONS.filter((l) => l.course === course && l.level === level).length / MODULE_SIZE);
+/**
+ * Kursun bir seviyesindeki modül sayısı — DERSLERDEN sayılıyor.
+ *
+ * Adı `lessons/modules` içindeki `moduleCount(level)` ile karışmasın diye
+ * ayrı: o, plandaki modül sayısını veriyor (sabit), bu ise gerçekte yazılmış
+ * ders sayısından türüyor. İkisi çoğu seviyede aynı, yarım kalmış bir
+ * seviyede değil.
+ */
+export async function lessonModuleCount(course: string, level: string): Promise<number> {
+  const inLevel = (await lessonsForLevel(course, level)).filter((l) => l.course === course);
+  return Math.ceil(inLevel.length / MODULE_SIZE);
 }
 
 /** Kursun bütün modülleri — `{ level, index }` çiftleri, katalog sırasıyla. */
-export function allModules(course: string): { level: string; index: number }[] {
+export async function allModules(course: string): Promise<{ level: string; index: number }[]> {
   const out: { level: string; index: number }[] = [];
-  const levels: string[] = [];
-  for (const l of LESSONS) if (l.course === course && !levels.includes(l.level)) levels.push(l.level);
-  for (const level of levels) for (let i = 0; i < moduleCount(course, level); i++) out.push({ level, index: i });
+  for (const level of LEVEL_ORDER) {
+    const n = await lessonModuleCount(course, level);
+    for (let i = 0; i < n; i++) out.push({ level, index: i });
+  }
   return out;
 }
 
 const CACHE = new Map<string, ModuleContent>();
 
-export function moduleContent(course: string, level: string, index: number): ModuleContent {
+export async function moduleContent(course: string, level: string, index: number): Promise<ModuleContent> {
   const key = `${course}|${level}|${index}`;
   const hit = CACHE.get(key);
   if (hit) return hit;
+  const built = buildModuleContent(course, level, index, await moduleLessons(course, level, index));
+  CACHE.set(key, built);
+  return built;
+}
 
-  const lessons = moduleLessons(course, level, index);
+/**
+ * MODÜL İÇERİĞİNİN SAF KURUCUSU — dersleri DIŞARIDAN alıyor.
+ *
+ * İki çağıranı var ve ikisi dersleri ayrı yerden getiriyor: sunucu yayın
+ * hattından (`moduleContent`), doğrulama betikleri kaynaktan
+ * (`module-content-source`). Kurucunun kendisi ikisini de tanımıyor — böylece
+ * 8,5 MB'lık ders kaynağı sunucu derlemesine girmiyor.
+ */
+export function buildModuleContent(course: string, level: string, index: number, lessons: Lesson[]): ModuleContent {
   const focus: string[] = [];
   const produce: ProduceItem[] = [];
   const judge: JudgeItem[] = [];
@@ -302,7 +324,6 @@ export function moduleContent(course: string, level: string, index: number): Mod
     words,
     scenes,
   };
-  CACHE.set(key, content);
   return content;
 }
 

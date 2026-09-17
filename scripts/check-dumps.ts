@@ -33,7 +33,7 @@
  */
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { LESSONS } from "../src/lib/lessons";
+import { LESSONS } from "../src/lib/lessons/source";
 import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
 import { buildLessonDump } from "./dump-lessons-mobile";
 

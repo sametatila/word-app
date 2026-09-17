@@ -171,7 +171,7 @@ export async function loadTrack(
   /** Ünite temasının dili (bkz. BuildTrackInput.lang). */
   lang?: NativeLang,
 ): Promise<ImmersionTrack> {
-  const lessons = lessonsFor(course).filter((l) => l.level === level);
+  const lessons = (await lessonsFor(course)).filter((l) => l.level === level);
   // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
   // Beceriler kütüphanesinin ünitesiz egzersizleri (2026-09) bu listeye
   // girseydi, dersleri biten son ünitelerin boş yuvalarına sessizce akardı —

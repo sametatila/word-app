@@ -14,7 +14,7 @@
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { lessonsFor } from "../src/lib/lessons/index";
+import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 const DIR = "mobile/src/data/lessons";

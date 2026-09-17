@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { userLessons, userSkills } from "@/lib/db/schema";
 import { CANDO, type Cando } from "@/lib/cando";
 import { candoForExercise, candoForLesson } from "@/lib/cando-map";
-import { LESSONS } from "@/lib/lessons";
+import { allLessons } from "@/lib/lessons";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
 
@@ -55,7 +55,7 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
   };
   // Kurs TAM eşleşiyor: İngilizce öğrencinin "yapabildiklerim" sayacı Almanca
   // derslerden doluyordu (bkz. lib/lessons/index `lessonsFor`).
-  for (const l of LESSONS.filter((l) => l.course === course)) bump(candoForLesson(l), passedLessons.has(l.id));
+  for (const l of (await allLessons()).filter((l) => l.course === course)) bump(candoForLesson(l), passedLessons.has(l.id));
   for (const m of metas) bump(candoForExercise(m), doneExercises.has(m.id));
 
   const items: CandoEvidence[] = CANDO.filter((c) => !c.retired).map((c) => {

@@ -10,7 +10,8 @@
  * Bu betik kâğıdı üretmeden önce üretilebilir olduğunu kanıtlıyor:
  * `npm run test:exams`.
  */
-import { allModules, moduleContent, selfAnswering } from "../src/lib/lessons/module-content";
+import { selfAnswering } from "../src/lib/lessons/module-content";
+import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
 import { MODULE_EXAMS, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";

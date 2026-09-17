@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
 import { moduleClears, words } from "@/lib/db/schema";
 import { ensureProfile, makeRound, toRoundWord } from "@/lib/session";
-import { LESSONS } from "./index";
+import { lessonsForLevel } from "./index";
 import { lessonBoard } from "./progress";
 import { MODULE_SIZE, moduleTheme } from "./modules";
 import { moduleContent } from "./module-content";
@@ -65,8 +65,8 @@ export type BossPayload = { meta: BossMeta; rounds: Round[]; pool: number };
  * de besliyor ve iki yerde ayrı ayrı hesaplanması, birinde artikel kırpma
  * kuralı değişince ikisinin sessizce ayrışması demekti.
  */
-export function moduleVocab(course: string, level: string, moduleIndex: number): string[] {
-  return moduleContent(course, level, moduleIndex).words.map((w) => w.head);
+export async function moduleVocab(course: string, level: string, moduleIndex: number): Promise<string[]> {
+  return (await moduleContent(course, level, moduleIndex)).words.map((w) => w.head);
 }
 
 export async function buildModuleBoss(
@@ -78,7 +78,7 @@ export async function buildModuleBoss(
   const course = profile.course;
   const native = nativeOf(profile.nativeLang);
 
-  const inLevel = LESSONS.filter((l) => l.course === course && l.level === level);
+  const inLevel = (await lessonsForLevel(course, level)).filter((l) => l.course === course);
   const chunk = inLevel.slice(moduleIndex * MODULE_SIZE, (moduleIndex + 1) * MODULE_SIZE);
 
   const [clear] = await db
@@ -111,7 +111,7 @@ export async function buildModuleBoss(
     bestLeft: clear?.bestLeft ?? null,
   };
 
-  const heads = moduleVocab(course, level, moduleIndex);
+  const heads = await moduleVocab(course, level, moduleIndex);
   if (!heads.length) return { meta, rounds: [], pool: 0 };
 
   // Modülün kelimeleri. Eşleşmeyen madde sessizce düşüyor: ders içeriği ile

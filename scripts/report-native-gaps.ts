@@ -16,7 +16,7 @@
  * keşfedilmesini bitirmek.
  */
 import { readFileSync, existsSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS } from "@/lib/lessons/source";
 import { CANDO } from "@/lib/cando";
 import { MODULE_EXAMS } from "@/lib/lessons/module-exam";
 import type { ModuleExamPlan } from "@/lib/lessons/module-exam/types";

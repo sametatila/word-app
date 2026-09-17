@@ -10,7 +10,7 @@
  *   npx tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts
  */
 import { FAKE_WORDS } from "./stub-db";
-import { allModules, moduleContent } from "../src/lib/lessons/module-content";
+import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
 import { foldSentence } from "../src/lib/sentence-match";
 import type { CefrLevel } from "../src/lib/skills/types";
 

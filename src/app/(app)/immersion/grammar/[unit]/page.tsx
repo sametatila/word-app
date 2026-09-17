@@ -50,7 +50,7 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
 
   let questions = authored?.grammar ?? [];
   if (!questions.length && course && LEVELS.includes(level) && Number.isInteger(index)) {
-    const dersler = lessonsFor(course).filter((l) => l.level === level);
+    const dersler = (await lessonsFor(course)).filter((l) => l.level === level);
     questions = deriveGrammar(unit, dersler.slice((index - 1) * 4, (index - 1) * 4 + 4), 8, {
       orderQuestion: t("quiz.order_question"),
       orderSentence: t("quiz.order_sentence"),

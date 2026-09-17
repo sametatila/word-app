@@ -16,7 +16,7 @@
  * görmek için: `npm run check:lessons -- --uyarilar`.
  */
 import path from "node:path";
-import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
+import { LESSONS, sourceLessonsFor as lessonsFor, sourceFindLesson as findLesson } from "../src/lib/lessons/source";
 import { scoredSteps, type Lesson } from "../src/lib/lessons/types";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { courseOrDefault } from "../src/lib/courses";

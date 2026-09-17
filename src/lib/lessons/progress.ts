@@ -2,7 +2,7 @@ import "server-only";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userLessons } from "@/lib/db/schema";
-import { LESSONS, lessonsFor, levelIndex } from "./index";
+import { allLessons, lessonsFor, levelIndex } from "./index";
 import { scoredSteps, type Lesson } from "./types";
 import { awardActivity } from "@/lib/award";
 import { xpDelta, xpForLesson } from "@/lib/xp";
@@ -54,7 +54,7 @@ export async function lessonBoard(userId: string, course: string): Promise<Lesso
   const byId = new Map(rows.map((r) => [r.lessonId, r]));
   const now = Date.now();
 
-  return lessonsFor(course).map((lesson) => {
+  return (await lessonsFor(course)).map((lesson) => {
     const row = byId.get(lesson.id);
     if (!row) return { lesson, state: null, due: false, fresh: true };
     const state: LessonState = {
@@ -225,7 +225,7 @@ export async function weakRules(userId: string, limit = 3): Promise<string[]> {
     .where(eq(userLessons.userId, userId));
   // Katalogdan çıkmış derslerin kayıtları sayılmıyor: kullanıcı o kurala artık
   // hiçbir dersten ulaşamaz, "oturmamış" diye göstermek çıkışsız bir uyarı olur.
-  const known = new Set(LESSONS.map((l) => l.id));
+  const known = new Set((await allLessons()).map((l) => l.id));
   const weak = rows
     .filter((r) => known.has(r.lessonId) && r.attempts >= 2 && r.intervalDays <= LADDER[0])
     .map((r) => r.ruleId);
@@ -233,8 +233,8 @@ export async function weakRules(userId: string, limit = 3): Promise<string[]> {
 }
 
 /** Katalogdaki toplam ders sayısı — ilerleme çubuğu için. */
-export function lessonCount(course: string): number {
+export async function lessonCount(course: string): Promise<number> {
   // Kurs TAM eşleşiyor: ilerleme paydası İngilizce öğrenci için Almanca ders
   // sayısını veriyordu (bkz. lib/lessons/index `lessonsFor`).
-  return LESSONS.filter((l) => l.course === course).length;
+  return (await lessonsFor(course)).length;
 }

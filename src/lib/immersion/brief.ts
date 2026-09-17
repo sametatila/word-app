@@ -109,7 +109,7 @@ export async function nativeUnitBriefs(
   localise: (lesson: Lesson) => Promise<Lesson>,
 ): Promise<UnitBrief[]> {
   const lessons = await Promise.all(
-    lessonsFor(course)
+    (await lessonsFor(course))
       .filter((l) => l.level === level)
       .map(localise),
   );
@@ -117,7 +117,7 @@ export async function nativeUnitBriefs(
 }
 
 /** DB'siz sarmalayıcı: seviyenin derslerini katalogdan alıp brief'leri kurar. */
-export function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): UnitBrief[] {
-  const lessons = lessonsFor(course).filter((l) => l.level === level);
+export async function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): Promise<UnitBrief[]> {
+  const lessons = (await lessonsFor(course)).filter((l) => l.level === level);
   return buildUnitBriefs(course, level, lessons, lang);
 }

@@ -12,7 +12,7 @@
  */
 import { completeChat } from "../src/lib/chat-providers";
 import { parseReply } from "../src/lib/chat-format";
-import { findLesson } from "../src/lib/lessons";
+import { sourceFindLesson as findLesson } from "../src/lib/lessons/source";
 import { roleplayPrompt, type RoleplayTurn } from "../src/lib/lessons/roleplay";
 
 const TURNS = Number(process.env.LOOP_TURNS) || 20;

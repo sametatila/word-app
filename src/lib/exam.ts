@@ -5,10 +5,11 @@ import { practiceWordsOf } from "@/lib/practice-words";
 import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
-import { LESSONS } from "@/lib/lessons";
+import { lessonsForLevel } from "@/lib/lessons";
 import { MODULE_SIZE, moduleCount } from "@/lib/lessons/modules";
 import {
   moduleContent,
+  lessonModuleCount,
   selfAnswering,
   type ProduceItem as LessonProduceItem,
 } from "@/lib/lessons/module-content";
@@ -118,7 +119,7 @@ export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | n
  * söyleyebilmek için kapak ucu da bunu soruyor (bkz. api/exam GET).
  */
 export async function modulePrereq(userId: string, course: string, level: CefrLevel, module: number): Promise<boolean> {
-  const chunk = LESSONS.filter((l) => l.course === course && l.level === level).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
+  const chunk = (await lessonsForLevel(course, level)).filter((l) => l.course === course).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
   if (!chunk.length) return false;
   const rows = await db
     .select({ lessonId: userLessons.lessonId, correct: userLessons.correct, total: userLessons.total, roleplayDone: userLessons.roleplayDone })
@@ -229,7 +230,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   /* Kâğıdın Türkçe yarısı öğrencinin ana dilinde: yönerge, durum, replik
      karşılığı ve soru kökünün altı. Almanca yarısı — ölçülen şey — sabit. */
   const plan = await localiseExam(kind === "module" ? moduleExamPlan(course, level, module!) : undefined, native);
-  const content = kind === "module" ? moduleContent(course, level, module!) : null;
+  const content = kind === "module" ? await moduleContent(course, level, module!) : null;
 
   // Kelime: modül kelimeleri (ders başlıkları) ya da seviyenin sık kelimeleri.
   const pool = await db
@@ -261,8 +262,8 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   // modülleri havuz.
   const produceSource: LessonProduceItem[] = content
     ? content.produce
-    : LESSONS.filter((l) => l.course === course && l.level === level).length
-      ? Array.from({ length: Math.ceil(LESSONS.filter((l) => l.course === course && l.level === level).length / MODULE_SIZE) }).flatMap((_, i) => moduleContent(course, level, i).produce)
+    : (await lessonsForLevel(course, level)).filter((l) => l.course === course).length
+      ? await allModuleProduce(course, level)
       : [];
   const produce = produceItems(produceSource, seed, c.produce);
 
@@ -415,4 +416,18 @@ export async function passedModuleExams(userId: string): Promise<Map<string, num
 export function examCando(course: string, level: string, module: number | null): ExamCando[] {
   if (module === null) return [];
   return moduleExamPlan(course, level, module)?.canDo ?? [];
+}
+
+/**
+ * Seviyenin BÜTÜN modüllerinin üretim adımları — seviye sınavının havuzu.
+ *
+ * Modül içeriği artık async (yayın hattından okunuyor), o yüzden döngü ayrı
+ * bir işleve alındı: ifade içinde `await` ile kurulan `Array.from` okunaksız
+ * ve tip çıkarımı da orada şaşıyor.
+ */
+async function allModuleProduce(course: string, level: string): Promise<LessonProduceItem[]> {
+  const n = await lessonModuleCount(course, level);
+  const out: LessonProduceItem[] = [];
+  for (let i = 0; i < n; i++) out.push(...(await moduleContent(course, level, i)).produce);
+  return out;
 }

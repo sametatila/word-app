@@ -27,7 +27,7 @@ import { readFileSync } from "node:fs";
 import { chatProviders, type ChatMessage, type Provider } from "../src/lib/chat-providers";
 
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
-import { findLesson } from "../src/lib/lessons";
+import { sourceFindLesson as findLesson } from "../src/lib/lessons/source";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 
 /* ─────────────── Senaryo ─────────────── */

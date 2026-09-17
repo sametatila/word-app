@@ -24,7 +24,7 @@
  * ders İngilizce açılıp altında Türkçe bir kullanım notu taşıdı.
  */
 import { readFileSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS } from "@/lib/lessons/source";
 import {
   resolveSegments,
   resolveLesson,

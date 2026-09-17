@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   }
   const { lessonId, correct, roleplayDone, day, seconds } = body as Record<string, unknown>;
 
-  const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
+  const lesson = typeof lessonId === "string" ? await findLesson(lessonId) : undefined;
   if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
   if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(lesson)) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });

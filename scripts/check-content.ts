@@ -19,7 +19,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { LESSONS } from "../src/lib/lessons";
+import { LESSONS } from "../src/lib/lessons/source";
 import { moduleExamPlan } from "../src/lib/lessons/module-exam";
 import { LESSON_ICONS } from "../src/lib/lessons/types";
 import type { DialogueTurn } from "../src/lib/dialogue";

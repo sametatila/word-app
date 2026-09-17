@@ -21,7 +21,7 @@
  * hiç bakmıyor.
  */
 import { readFileSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS } from "@/lib/lessons/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams";
 import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";

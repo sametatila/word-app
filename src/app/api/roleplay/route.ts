@@ -102,7 +102,7 @@ export async function POST(req: Request) {
   // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
-  const lessonRaw = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
+  const lessonRaw = typeof lessonId === "string" ? await findLesson(lessonId) : undefined;
   /* Kapatılmış dersin rol yapması da kapalı — içerik aynı yerden geliyor. */
   if (lessonRaw && (await lessonDisabled(lessonRaw.id))) {
     return NextResponse.json({ error: "unknown_lesson" }, { status: 400 });

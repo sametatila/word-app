@@ -32,7 +32,7 @@
 import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { lessonsFor } from "../src/lib/lessons/index";
+import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { germanSurface, englishSurface, type LooseExercise } from "./lib/skill-surface";
 import { enStems, LEVELS } from "./lib/en-gate";

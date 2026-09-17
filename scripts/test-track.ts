@@ -10,7 +10,7 @@ import { deriveGrammar, type GrammarText } from "../src/lib/immersion/grammar";
 
 /* Denetim betiği sunucu değil: metinler sabit, kural sayilari olculuyor. */
 const DENEME_METNI: GrammarText = { orderQuestion: "order?", orderSentence: "order.", bool: ["Richtig", "Falsch"] };
-import { LESSONS } from "../src/lib/lessons";
+import { LESSONS } from "../src/lib/lessons/source";
 
 let pass = 0;
 const fail: string[] = [];

@@ -131,7 +131,7 @@ async function lessonEvidence(userId: string, since: Date, until: Date): Promise
   const out: Evidence[] = [];
   for (const r of rows) {
     if (!r.total) continue;
-    const level = findLesson(r.lessonId)?.level;
+    const level = (await findLesson(r.lessonId))?.level;
     if (!level || !LEVELS.has(level)) continue;
     out.push({
       skill: "grammar",
