@@ -67,6 +67,8 @@ export const SFX_NOTES: Record<SfxKind, number[][]> = {
     [783.99, 0.06, 0.17, 0.05, 2, 0, 2400, 0.004, 0, 0],
     [783.99, 0.06, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
   ],
+  /* ÇALINMIYOR (2026-09-17): yürüyüşte mikrofon kapanışı artık sessiz, kararın
+     sesi onu da haber veriyor. Tablo duruyor ki geri açmak tek satır olsun. */
   // K2 İki aşağı: Sol–Do (G5 C5) 60 ms, A2'nin aynası, daha boğuk filtre (1800 Hz).
   micoff: [
     [783.99, 0.0, 0.17, 0.05, 2, 0, 1800, 0.004, 0, 0],

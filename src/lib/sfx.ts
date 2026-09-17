@@ -194,6 +194,9 @@ export function comboStep(): number {
  *   wave 0 sine · 1 triangle · 2 square — glide: hedef Hz (0 yok)
  *   lp: alçak geçiren kesim Hz (0 yok, Q 0.7) — hold 0: pluck · 1: tut, son `release`te in
  */
+/* `micoff` ARTIK ÇALINMIYOR (Samet, 2026-09-17): kapanış tonu hemen ardından
+   gelen doğru/yanlış sesiyle art arda düşüyordu. Tanım ve nota tablosu bilerek
+   duruyor — geri açmak tek satır (bkz. walk-player `hear`). */
 export type WalkCue = "micon" | "micoff" | "premium";
 export const WALK_NOTES: Record<WalkCue, number[][]> = {
   micon: [

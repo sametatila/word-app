@@ -112,7 +112,7 @@ function subscribeGeneration(fn: () => void) {
  * res/raw mp3 yedeği aynı tabloyu aynı zarf/filtre modeliyle üretir → üç yol birebir aynı ses.
  * Kademeli (combo) mantık YOK — correct/wrong SABİT. Marka sesleri ksilofon ailesi:
  *  - correct: Do–Mi–Sol–Do yükselen staccato · wrong: Sol–Mi♭–Do inen minör
- *  - micon/micoff: Do–Sol / Sol–Do iki nota (yürüyüş mic aç/kapa) · finish: soru–cevap jingle'ı
+ *  - micon/micoff: Do–Sol / Sol–Do iki nota (micoff bugün çalınmıyor) · finish: soru–cevap jingle'ı
  * Dosya/res-raw gerektirmez; köprü hazırsa en güvenilir yol. Tanım bir kez enjekte + çağrılır.
  */
 const SFX_DEF =

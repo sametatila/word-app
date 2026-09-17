@@ -261,14 +261,13 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
    kapalıyken Türkçe evet/hayır dinleniyor ve buraya "tr" geçiyor.
    Varsayılanı `currentTargetLang()` olduğu için tip çıkarımı onu
    `TargetLang`e daraltıyordu; açıkça `string` yazılı. */
-export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang: string = currentTargetLang()): Promise<string[] | null> {
+export async function azureListenOnce(target: string, windowMs = 3000, lang: string = currentTargetLang()): Promise<string[] | null> {
   if (!Native) return null;
   try {
     const ok = await Native.startRecording().catch(() => false);
     if (!ok) return null;
     await nativeDelay(windowMs);
     const path = await Native.stopRecording().catch(() => null);
-    onStop?.(); // mic kapandı — micoff burada (upload'dan ÖNCE; verdict'le çakışmaz)
     if (!path) return null;
     // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
     const text = await Native.uploadStt(`${API_BASE}/api/stt`, path, lang, target ?? "").catch(() => null);

@@ -763,9 +763,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         windowMs + HEAR_SLACK_MS,
         null as string[] | null,
       );
-      // Mikrofon kapandı — hangi yoldan dönülürse dönülsün burada duyuluyor.
-      // `hear` bütün dinlemelerin tek hunisi, o yüzden işaret tek yerde.
-      walkCue("micoff");
+      /* MİKROFON KAPANDI SESİ YOK (Samet, 2026-09-17). Kapanışı duyuran ton,
+         hemen ardından gelen doğru/yanlış sesiyle art arda çalıyor ve akışı
+         ağırlaştırıyordu; kararın sesi zaten kapanışı da haber veriyor.
+         Duyulmadı/teslim durumlarında sesin yerini okuma alıyor. */
       if (heard === null) {
         ctl.abort();
         /* Kind'ın biçimi ötekilerle aynı olmalı: `walk_listen` panosu adı
@@ -777,7 +778,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       }
       return heard;
     },
-    [hearOnce, walkCue],
+    [hearOnce],
   );
 
   const stopAll = useCallback(() => {

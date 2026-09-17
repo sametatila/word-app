@@ -120,9 +120,9 @@ export function sfxDurationMs(kind: SfxKind): number { return SFX_DUR[kind] ?? 3
 
 let lastKind = "";
 let lastAt = 0;
-// Sesleri SIRAYA sok — micoff (mikrofon kapanma) ile doğru/yanlış sesi üst üste binebiliyordu
-// (native STT/Azure sonucu micoff bitmeden gelince). Önceki ses bitene kadar yeniyi ötele;
-// gecikme native Handler'la (ekran-kapalı da çalışır). Böylece her koşulda tek tek çalarlar.
+// Sesleri SIRAYA sok — iki ses üst üste binebiliyor (ör. mikrofon açılışının
+// hemen ardından gelen bir karar sesi). Önceki ses bitene kadar yeniyi ötele;
+// gecikme native Handler'la (ekran-kapalı da çalışır). Böylece tek tek çalarlar.
 let busyUntil = 0;
 export function sfx(kind: SfxKind): void {
   if (!soundOn) return; // kullanıcı kapattı: efektler susuyor, konuşma sesi değil

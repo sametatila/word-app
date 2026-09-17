@@ -363,7 +363,9 @@ export function WalkModeScreen() {
     clearTimeout(miconTimer);
     nativeListeningRef.current = false;
     stopListening();
-    sfx("micoff");
+    /* KAPANMA SESİ YOK (Samet, 2026-09-17): kararın sesi (doğru/yanlış) hemen
+       ardından geliyordu ve iki ton art arda akışı ağırlaştırıyordu. Sesler
+       zaten sıraya giriyordu, yani kapanış kararı geciktiriyordu. */
     return r;
   }
 
@@ -428,11 +430,11 @@ export function WalkModeScreen() {
         continue;
       }
       if (screenOffRef.current) {
-        // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
-        // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
+        // Azure: micon HEMEN (setTimeout arka planda durur). Kapanma sesi yok;
+        // kayıttan sonra ~1 sn yükleme, sonra kararın sesi.
         sfx("micon");
         res = await Promise.race([
-          azureListenOnce(withArtikel(w), AZURE_WINDOW_MS, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+          azureListenOnce(withArtikel(w), AZURE_WINDOW_MS).then((h) => ({ k: "v" as const, heard: h ?? [] })),
           waitManual().then(() => ({ k: "m" as const })),
         ]);
         noteHeard("azure", res, AZURE_WINDOW_MS / 1000);
@@ -698,10 +700,9 @@ export function WalkModeScreen() {
     // Ekran kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
     let yanit: string[] | null;
     if (screenOffRef.current) {
-      yanit = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
+      yanit = await azureListenOnce("", 4000, "tr");
     } else {
       yanit = await listenOnce(currentTargetLocale(), CONFIRM_SILENCE_MS);
-      sfx("micoff");
     }
     if (!alive() || !yanit) return null;
     for (const s of yanit) { const c = parseConfirm(s); if (c !== null) return c; }

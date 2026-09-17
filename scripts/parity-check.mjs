@@ -8121,7 +8121,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * bildirim denetimi, ve kullaniciya gorunen metinler.
    *
    * EN PAHALI PARCA: `LernomiScreenOff`. JS o bayrakla UCRETLI yola geciyor
-   * (`WalkModeScreen` `useAzure`), yani olayin hangi durumda yayildigi
+   * (`WalkModeScreen` dinleme dongusu), yani olayin hangi durumda yayildigi
    * dogrudan FATURA demek. Android'de olay guc tusudur
    * (`ACTION_SCREEN_OFF`); iOS'ta guc tusunu haber veren genel bir API YOK ve
    * en yakin karsilik uygulamanin arka plana gecmesi. Iki fark bilerek kabul
@@ -8170,12 +8170,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* JS iki olayi TEK yerde karsiliyor ve ucretli yolun tetigi o. */
+    /* JS iki olayi TEK yerde karsiliyor ve ucretli yolun tetigi o.
+       Tetik eskiden `useAzure` adli tek bir sabitti; dinleme donguye
+       cevrilince (kaynak her denemede yeniden secilliyor) ad kalkti. Kapi
+       artik ADA degil KORUMAYA bakiyor: parali cagrinin HEPSI bir
+       `screenOffRef.current` kosulunun icinde olmali. */
+    const azureCagrilari = [...yuruyus.matchAll(/azureListenOnce\(/g)];
+    const korumali = azureCagrilari.filter((m) =>
+      /screenOffRef\.current/.test(yuruyus.slice(Math.max(0, m.index - 400), m.index)),
+    );
     sameList(
       "ucretli yolun tetigi tek yerde",
       [
         "abonelik=" + (/addListener\("LernomiScreenOff"/.test(sttJs) && /addListener\("LernomiScreenOn"/.test(sttJs) ? "tek yer" : "DAGINIK"),
-        "tetik=" + (/const useAzure = screenOffRef\.current/.test(yuruyus) ? "screenOff" : "BASKA"),
+        "tetik=" + (azureCagrilari.length && korumali.length === azureCagrilari.length ? "screenOff" : "BASKA"),
       ],
       ["abonelik=tek yer", "tetik=screenOff"],
       "bulunan",
@@ -12814,7 +12822,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * SES. On uc ses dosyasinin hepsi webde de yuklu ama `tap.mp3` yalnizca
    * ses anahtarinin onizlemesinde caliniyordu. Android onu kelime dizme,
    * harf dizme ve eslestirmede her dokunusta caliyor; webde karo hareketi
-   * SESSIZDI. `micon`/`micoff`/`premium` webde de caliniyor (`walkCue`
+   * SESSIZDI. `micon`/`premium` webde de caliniyor (`walkCue`
    * uzerinden) - ilk tarama onlari kacirmisti, cunku `play()` degil bir
    * yardimciyla cagriliyorlar. */
   {
