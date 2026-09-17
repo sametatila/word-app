@@ -144,6 +144,19 @@ export async function collectAlerts(): Promise<Alert[]> {
           alerts.push({ key: `ai:${r.provider}`, level: "uyari", text: `Yapay zekâ sağlayıcısı ${r.provider}: son 1 saatte ${errors}/${calls} çağrı başarısız${limited ? ` (${limited} hız sınırı)` : ""}.` });
         }
       }
+      /* SEYREK TRAFİKTE KALICI ARIZA. Saatlik kural 10 çağrı istiyor ve düşük
+         trafikte hiç tetiklenmiyordu: Mistral 13 gün boyunca her çağrıda 429
+         verdi ve kimse görmedi. 24 saatte en az 5 çağrının neredeyse hepsi
+         başarısızsa sağlayıcı fiilen kapalıdır (yedek devralıyor olsa bile). */
+      const daily = await rows(sql`
+        select provider, count(*)::int calls, count(*) filter (where not ok)::int errors, count(*) filter (where status = 429)::int limited
+        from ai_usage where created_at >= now() - interval '24 hours' group by 1`);
+      for (const r of daily) {
+        const calls = num(r.calls), errors = num(r.errors), limited = num(r.limited);
+        if (calls >= 5 && errors / calls >= 0.9) {
+          alerts.push({ key: `ai-down:${r.provider}`, level: "uyari", text: `Yapay zekâ sağlayıcısı ${r.provider} fiilen kapalı: son 24 saatte ${errors}/${calls} çağrı başarısız${limited === errors ? " (hepsi hız sınırı - hesap kotası kapalı olabilir)" : ""}. Yedek sağlayıcı devralıyor.` });
+        }
+      }
     }),
     guard("app", async () => {
       const control = await appControl();

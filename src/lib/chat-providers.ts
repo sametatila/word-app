@@ -199,8 +199,30 @@ const ERROR_COOLDOWN_MS = 15_000;
  */
 const cooldownUntil = new Map<ProviderName, number>();
 
+/**
+ * ART ARDA 429 → KATLANAN SOĞUMA.
+ *
+ * Sabit 60 saniyelik soğuma yalnız YOĞUN trafikte işe yarıyordu. Seyrek
+ * çağrıda (günde birkaç değerlendirme) her istek soğuma bittikten sonra
+ * geliyor ve kalıcı olarak kapalı bir sağlayıcıyı YENİDEN deniyordu: Mistral
+ * hesabının dakikalık hakkı 0'a düştüğünde (başlık `x-ratelimit-limit-req-minute: 0`)
+ * 13 gün boyunca 51 değerlendirmenin 51'i önce Mistral'den 429 yedi
+ * (2026-09-04 → 17). Art arda her 429 soğumayı ikiye katlıyor (en çok 6 saat);
+ * sağlayıcı "hakkın sıfır" diyorsa doğrudan 6 saat. İlk başarı sayacı sıfırlıyor.
+ */
+const MAX_COOLDOWN_MS = 6 * 3_600_000;
+const strikes = new Map<ProviderName, number>();
+
 function coolDown(name: ProviderName, ms: number): void {
   cooldownUntil.set(name, Date.now() + ms);
+}
+
+function rateLimited(name: ProviderName, res: Response): void {
+  const n = (strikes.get(name) ?? 0) + 1;
+  strikes.set(name, n);
+  const zeroQuota = res.headers.get("x-ratelimit-limit-req-minute") === "0";
+  const ms = zeroQuota ? MAX_COOLDOWN_MS : Math.min(retryAfterMs(res) * 2 ** (n - 1), MAX_COOLDOWN_MS);
+  coolDown(name, ms);
 }
 
 /** `Retry-After` saniye ya da HTTP tarihi olabilir; ikisi de destekleniyor. */
@@ -271,7 +293,7 @@ async function post(
   if (!res.ok) {
     // 429 ve 5xx geçici: sağlayıcıyı sıradan çıkar. 4xx kalıcı bir yapılandırma
     // hatası (yanlış anahtar, yanlış model) — onu soğutmak sorunu gizlerdi.
-    if (res.status === 429) coolDown(name, retryAfterMs(res));
+    if (res.status === 429) rateLimited(name, res);
     else if (res.status >= 500) coolDown(name, ERROR_COOLDOWN_MS);
     const detail = await res.text().catch(() => "");
     report?.({
@@ -289,6 +311,7 @@ async function post(
   // (akışta başlıklardan, akışsızda gövdeden). Süre oradan da ölçülebilsin
   // diye başlangıç anı dönülüyor.
   (res as Response & { startedAt?: number }).startedAt = startedAt;
+  strikes.delete(name);
   return res;
 }
 
