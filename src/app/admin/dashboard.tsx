@@ -6,7 +6,7 @@ import type { Coverage } from "@/lib/admin-coverage";
 import type { Revenue } from "@/lib/premium/revenue";
 import { trendDelta, type TrendMetric } from "@/lib/admin-trends-shared";
 import { alertLinks } from "@/lib/admin-links";
-import { BarList, BTN, DataTable, Dot, Empty, fmt, Notice, Panel, PanelGrid, Stat, Stats, TONE, type Tone } from "./_ui/ui";
+import { BarList, Funnel, SeriesChart, Sparkline, BTN, DataTable, Dot, fmt, Notice, Panel, PanelGrid, Stat, Stats, TONE, type Tone } from "./_ui/ui";
 
 /**
  * Yönetim panelinin VERİ BÖLÜMLERİ — Durum, Gelir, Büyüme, Deneyim, Öğrenme ve
@@ -36,30 +36,6 @@ function Gauge({ label, pctVal, detail }: { label: string; pctVal: number; detai
         <div className="h-full rounded-full" style={{ width: `${Math.max(2, pctVal)}%`, background: TONE[tone] }} />
       </div>
       <div className="muted mt-0.5 text-caption">{detail}</div>
-    </div>
-  );
-}
-
-/*
-  Çubuk kabı TAM YÜKSEKLİK: eskiden `flex-1` tek başınaydı, kabın yüksekliği
-  olmadığı için çubuğun yüzde yüksekliği sıfıra çöküyordu ve grafik boş
-  görünüyordu.
-*/
-function TrendChart({ trend }: { trend: AdminData["trend"] }) {
-  const max = Math.max(1, ...trend.map((t) => t.reviews));
-  if (!trend.length) return <Empty>Bu aralıkta etkinlik yok.</Empty>;
-  return (
-    <div>
-      <div className="flex h-36 items-stretch gap-[3px]">
-        {trend.map((t) => (
-          <div key={t.day} role="img" aria-label={`${t.day}: ${t.reviews} tekrar, ${t.active} aktif`} className="flex h-full flex-1 flex-col justify-end" title={`${t.day} · ${t.active} aktif · ${t.reviews} tekrar · ${t.xp} XP`}>
-            <div className="w-full" style={{ height: `${Math.max(2, Math.round((t.reviews / max) * 100))}%`, background: "var(--color-brand)" }} />
-          </div>
-        ))}
-      </div>
-      <div className="muted mt-1.5 flex justify-between text-caption tabular-nums">
-        <span>{trend[0]?.day ?? ""}</span><span>en yüksek {fmt(max)} tekrar/gün</span><span>{trend[trend.length - 1]?.day ?? ""}</span>
-      </div>
     </div>
   );
 }
@@ -130,13 +106,28 @@ function RevenueCard({ r, days }: { r: Revenue; days: number }) {
       ) : null}
       <Stats cols={7}>
         <Stat label="MRR" value={usd(rc?.mrrUsd ?? r.now.mrrUsd)} sub={rc?.mrrUsd != null ? "RevenueCat" : "defterden tahmin"} />
-        <Stat label="Net gelir" value={usd(w.netUsd)} sub={`brüt ${usd(w.grossUsd)}${w.refundsUsd ? ` · iade ${usd(w.refundsUsd)}` : ""}`} />
+        <Stat label="Net gelir" value={usd(w.netUsd)} sub={`brüt ${usd(w.grossUsd)}${w.refundsUsd ? ` · iade ${usd(w.refundsUsd)}` : ""}`} spark={<Sparkline tone="ok" label="Günlük brüt gelir" values={r.daily.map((x) => x.grossUsd)} />} />
         <Stat label="Aktif abone" value={String(r.now.activePaid)} sub={`${r.now.willNotRenew} yenilemeyecek${r.now.inGrace ? ` · ${r.now.inGrace} ödeme bekliyor` : ""}`} tone={r.now.willNotRenew > r.now.activePaid / 3 ? "warn" : undefined} />
         <Stat label="Deneme" value={String(r.now.activeTrials)} sub={`${w.trialsStarted} başladı · ${w.trialConversions} dönüştü${conv != null ? ` (%${conv})` : ""}`} />
         <Stat label="Yeni ücretli" value={String(w.newPaid)} sub={`${w.renewals} yenileme`} />
         <Stat label="Kayıp" value={String(w.cancellations)} sub={`iptal · ${w.expirations} sona erdi`} tone={w.cancellations ? "warn" : undefined} />
         <Stat label="Sorun" value={String(w.refunds + w.billingIssues)} sub={`${w.refunds} iade · ${w.billingIssues} ödeme sorunu`} tone={w.refunds + w.billingIssues ? "bad" : undefined} />
       </Stats>
+      {/* GÜN GÜN: toplamlar "ne oldu"yu, bu grafik "ne zaman oldu"yu söylüyor —
+          bir fiyat, paywall ya da sürüm değişikliğinin etkisi burada okunur. */}
+      <div className="mt-4 border-t pt-4" style={{ borderColor: "var(--hairline)" }}>
+        <SeriesChart
+          height={112}
+          empty="Bu aralıkta mağaza olayı yok."
+          days={r.daily.map((x) => x.day)}
+          series={[
+            { key: "gross", label: "Brüt gelir", values: r.daily.map((x) => x.grossUsd), format: (v) => usd(v) },
+            { key: "newPaid", label: "Yeni ücretli", values: r.daily.map((x) => x.newPaid) },
+            { key: "trials", label: "Deneme", values: r.daily.map((x) => x.trials) },
+            { key: "cancellations", label: "İptal", values: r.daily.map((x) => x.cancellations) },
+          ]}
+        />
+      </div>
       <p className="muted mt-4 border-t pt-3 text-caption" style={{ borderColor: "var(--hairline)" }}>
         {r.byPlatform.length ? r.byPlatform.map((p) => `${p.platform}: ${usd(p.grossUsd)} · ${p.payments} ödeme · ${p.active} aktif`).join("  |  ") : "Henüz mağaza olayı yok."}
         {r.byProduct.length ? `  ·  ${r.byProduct.map((p) => `${p.product} ${usd(p.grossUsd)}`).join(", ")}` : ""}
@@ -217,9 +208,9 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
           <Panel title="Kullanıcı ve kullanım" hint={`Tüm zamanlar; aksi yazılıysa son ${days} gün.`}>
             <Stats cols={6}>
               <Stat label="Toplam kullanıcı" value={fmt(k.totalUsers)} sub={`+${k.new1d} bugün · +${k.new7d} 7g · +${k.new30d} 30g`} />
-              <Stat label="DAU / WAU / MAU" value={`${fmt(k.dau)}/${fmt(k.wau)}/${fmt(k.mau)}`} sub="günlük / haftalık / aylık" />
+              <Stat label="DAU / WAU / MAU" value={`${fmt(k.dau)}/${fmt(k.wau)}/${fmt(k.mau)}`} sub="günlük / haftalık / aylık" spark={<Sparkline label="Günlük aktif kişi" values={d.trend.map((t) => t.active)} />} />
               <Stat label="Seri tutan" value={fmt(k.streakUsers)} sub={`ort. ${Math.round(k.avgStreak)} gün`} />
-              <Stat label="Toplam tekrar" value={fmt(k.totalReviews)} sub={`${fmt(k.reviews1d)} bugün · ${fmt(k.totalXp)} XP`} />
+              <Stat label="Toplam tekrar" value={fmt(k.totalReviews)} sub={`${fmt(k.reviews1d)} bugün · ${fmt(k.totalXp)} XP`} spark={<Sparkline label="Günlük tekrar" values={d.trend.map((t) => t.reviews)} />} />
               <Stat label="Doğruluk" value={pct(k.accuracy)} sub="tüm günlük istatistik" tone={k.accuracy >= 0.7 ? "ok" : "warn"} />
               <Stat label={`Çalışma (${days}g)`} value={`${fmt(k.seconds30d / 3600)} sa`} />
               <Stat label="Tur tamamlama" value={pct(sessRate)} sub={`${fmt(sess.done)}/${fmt(sess.started)} tur`} tone={sessRate >= 0.6 ? "ok" : "warn"} />
@@ -230,8 +221,18 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
               <Stat label="Hesap" value={fmt(c.auth.accounts)} sub={`${fmt(c.auth.twoFactor)} 2FA · ${fmt(c.auth.unverified)} doğrulanmamış`} />
             </Stats>
           </Panel>
-          <Panel title="Aktivite" hint={`Günlük tekrar hacmi, son ${days} gün.`}>
-            <TrendChart trend={d.trend} />
+          {/* Aktivite: dört günlük dizi tek grafikte, seçilebilir; seçili günün
+              değeri metin olarak yazıyor (fare, dokunma, ← → ile gün gün). */}
+          <Panel title="Aktivite" hint={`Son ${days} gün, günlük. Kesik çizgi ortalama.`}>
+            <SeriesChart
+              days={d.trend.map((t) => t.day)}
+              series={[
+                { key: "reviews", label: "Tekrar", values: d.trend.map((t) => t.reviews) },
+                { key: "active", label: "Aktif kişi", values: d.trend.map((t) => t.active) },
+                { key: "xp", label: "XP", values: d.trend.map((t) => t.xp) },
+                { key: "newWords", label: "Yeni kelime", values: d.trend.map((t) => t.newWords) },
+              ]}
+            />
           </Panel>
     </div>
   );
@@ -247,12 +248,12 @@ export function RevenueSection({ days, data: d, coverage: c, revenue: r }: Base 
               bir kez daha tabana bölünüp 100'le çarpılıyordu ve D1 %104
               gibi imkânsız değerler çıkıyordu. */}
           <Panel title="Dönüşüm hunisi ve tutma" hint={`Tutma kohort tabanı: ${d.funnel.retentionBase} kullanıcı.`}>
-            <BarList max={d.funnel.totalUsers} items={[
+            <Funnel steps={[
               { label: "Kaydolan", value: d.funnel.totalUsers },
               { label: "Aktive (ilk tur)", value: d.funnel.activated },
               { label: "Paywall gördü", value: d.funnel.paywallView },
               { label: "Satın alma başlattı", value: d.funnel.purchaseStart },
-              { label: "Satın aldı", value: d.funnel.purchaseDone, tone: "ok" },
+              { label: "Satın aldı", value: d.funnel.purchaseDone },
             ]} />
             <div className="mt-4 grid grid-cols-3 gap-2">
               {([["D1", d.funnel.d1], ["D7", d.funnel.d7], ["D30", d.funnel.d30]] as const).map(([lbl, v]) => (
@@ -264,24 +265,24 @@ export function RevenueSection({ days, data: d, coverage: c, revenue: r }: Base 
           </Panel>
 
           <Panel title={`Premium hunisi (${days}g)`} hint="Paywall → satın alma. Hangi özellik kilidi besliyor.">
-            <BarList max={Math.max(d.premium.views, d.premium.gates, 1)} items={[
-              { label: "Premium kilidi (gate)", value: d.premium.gates },
+            <Funnel unit="olay" steps={[
               { label: "Paywall gördü", value: d.premium.views },
               { label: "Satın alma başlattı", value: d.premium.starts },
-              { label: "Satın aldı", value: d.premium.done, tone: "ok" },
+              { label: "Satın aldı", value: d.premium.done },
             ]} />
+            <Sub>Kilide çarpma (premium gate): {fmt(d.premium.gates)}</Sub>
             {d.premiumGates.length > 0 && (
               <div className="mt-3"><Pills items={d.premiumGates.map((g) => ({ key: g.feature, text: `${g.feature}: ${g.count}` }))} /></div>
             )}
           </Panel>
 
           <Panel title={`Web → uygulama satın alma (${days}g, kişi)`} hint="Web satmıyor; paywall uygulamaya/mağazaya yönlendiriyor. Son basamak: web paywall'ını gördükten sonra uygulamada satın alanlar.">
-            <BarList max={Math.max(1, c.premium.webFunnel.webViews)} items={[
+            <Funnel steps={[
               { label: "Web paywall gördü", value: c.premium.webFunnel.webViews },
               { label: "Yönlendirmeye dokundu", value: c.premium.webFunnel.taps },
               { label: "Sunucu mağazaya yolladı", value: c.premium.webFunnel.redirects },
               { label: "Uygulamada paywall (web bağlantısı)", value: c.premium.webFunnel.appViews },
-              { label: "Uygulamada satın aldı", value: c.premium.webFunnel.purchases, tone: "ok" },
+              { label: "Uygulamada satın aldı", value: c.premium.webFunnel.purchases },
             ]} />
           </Panel>
 
@@ -304,9 +305,9 @@ export function GrowthSection({ days, data: d, coverage: c, deletions }: Base & 
   return (
     <PanelGrid>
         <Panel title="Seviye ve dil çifti" hint="Çift = anadil → kurs. Sağda: kişi · 7 günde aktif · misafir.">
-          <BarList max={Math.max(1, ...d.levels.map((l) => l.count))} items={d.levels.map((l) => ({ label: l.level, value: l.count }))} />
+          <BarList share max={Math.max(1, ...d.levels.map((l) => l.count))} items={d.levels.map((l) => ({ label: l.level, value: l.count }))} />
           <Sub>Dil çifti</Sub>
-          <BarList max={Math.max(1, ...c.pairs.map((p) => p.users))} items={c.pairs.map((p) => ({
+          <BarList share max={Math.max(1, ...c.pairs.map((p) => p.users))} items={c.pairs.map((p) => ({
             label: pairLabel(p.native, p.course), value: p.users, right: `${fmt(p.users)} · ${fmt(p.active7)} · ${fmt(p.guests)}`,
           }))} />
         </Panel>
@@ -346,7 +347,7 @@ export function GrowthSection({ days, data: d, coverage: c, deletions }: Base & 
         </Panel>
 
         <Panel title="Bildirim erişimi" hint="Bugün bildirim alabilecek cihaz (3+ başarısız teslimli jetonlar hariç) ve açık anahtarlar.">
-          <BarList max={Math.max(1, ...c.growth.pushReach.map((p) => p.count))} items={c.growth.pushReach.map((p) => ({ label: p.key, value: p.count }))} />
+          <BarList share max={Math.max(1, ...c.growth.pushReach.map((p) => p.count))} items={c.growth.pushReach.map((p) => ({ label: p.key, value: p.count }))} />
           <div className="mt-3">
             <Pills items={[
               { key: "r", text: `Hatırlatma açık: ${fmt(c.growth.remindersOn.reminders)}` },
@@ -400,24 +401,23 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
   return (
     <PanelGrid>
         <Panel title={`Platform dağılımı (${days}g)`} hint={`${fmt(appOpens)} açılış · %${appOpens ? Math.round((installed / appOpens) * 100) : 0} uygulama olarak (standalone).`}>
-          <BarList max={Math.max(1, ...d.platform.map((p) => p.count))} items={d.platform.map((p) => ({ label: PLATFORM_LABEL[p.key] ?? p.key, value: p.count, right: `${fmt(p.count)} · ${fmt(p.users)} kişi` }))} />
+          <BarList share max={Math.max(1, ...d.platform.map((p) => p.count))} items={d.platform.map((p) => ({ label: PLATFORM_LABEL[p.key] ?? p.key, value: p.count, right: `${fmt(p.count)} · ${fmt(p.users)} kişi` }))} />
         </Panel>
 
         <Panel title={`Tur tamamlama (${days}g)`} hint={`Tamamlama oranı %${Math.round(sessRate * 100)}.`}>
-          <BarList max={Math.max(sess.started, 1)} items={[
+          <Funnel unit="tur" steps={[
             { label: "Tur başladı", value: sess.started },
-            { label: "Tamamlandı", value: sess.done, tone: "ok" },
-            { label: `"Şimdilik yeter"`, value: sess.stopped, tone: "warn" },
+            { label: "Tamamlandı", value: sess.done },
           ]} />
+          <Sub>{`"Şimdilik yeter" ile bırakılan: ${fmt(sess.stopped)} tur (%${sess.started ? Math.round((sess.stopped / sess.started) * 100) : 0})`}</Sub>
         </Panel>
 
         <Panel title={`Ekran kullanımı (${days}g)`} hint="Görüntülenme + ortalama görünür süre. Soğuk ekranları (çok bakış, az süre) yakalar." span>
-          <BarList max={Math.max(1, ...d.screens.map((sc) => sc.views))} items={d.screens.map((sc) => ({ label: sc.screen, value: sc.views, right: `${fmt(sc.views)} · ${sc.avgSec}sn` }))} />
+          <BarList share max={Math.max(1, ...d.screens.map((sc) => sc.views))} items={d.screens.map((sc) => ({ label: sc.screen, value: sc.views, right: `${fmt(sc.views)} · ${sc.avgSec}sn` }))} />
         </Panel>
 
         <Panel title="Onboarding hunisi" hint="Adım başına ulaşan tekil kullanıcı — nerede düşüyorlar.">
-          <BarList max={Math.max(1, ...d.onboarding.map((o) => o.users))}
-            items={[...d.onboarding].sort((a, b) => ONB_ORDER.indexOf(a.step) - ONB_ORDER.indexOf(b.step)).map((o) => ({ label: ONB_LABEL[o.step] ?? o.step, value: o.users }))} />
+          <Funnel steps={[...d.onboarding].sort((a, b) => ONB_ORDER.indexOf(a.step) - ONB_ORDER.indexOf(b.step)).map((o) => ({ label: ONB_LABEL[o.step] ?? o.step, value: o.users }))} />
         </Panel>
 
         <Panel title={`Sesli okuma (${days}g)`} hint={`${fmt(c.learning.tts.plays)} çalma. Nöral ses çalınamayınca düşülen basamak — artarsa TTS ucu ya da önbellek sorunlu.`}>
@@ -425,11 +425,11 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
         </Panel>
 
         <Panel title={`Yürüyüş dinleme sonuçları (${days}g)`} hint="Her dinlemenin yolu ve sonucu — tanıma kalitesi burada.">
-          <BarList max={Math.max(1, ...c.learning.walkListen.map((w) => w.count))} items={c.learning.walkListen.map((w) => ({ label: w.key, value: w.count, tone: /:ok$/.test(w.key) ? "ok" : /network|decode|not-allowed|deadline/.test(w.key) ? "bad" : undefined }))} />
+          <BarList share max={Math.max(1, ...c.learning.walkListen.map((w) => w.count))} items={c.learning.walkListen.map((w) => ({ label: w.key, value: w.count, tone: /:ok$/.test(w.key) ? "ok" : /network|decode|not-allowed|deadline/.test(w.key) ? "bad" : undefined }))} />
         </Panel>
 
         <Panel title="Yürüyüş modu sonuçları" hint="Ekransız tur nasıl bitti (cihaz/mikrofon teşhisi).">
-          <BarList max={Math.max(1, ...d.walk.map((w) => w.count))} items={d.walk.map((w) => ({ label: WALK_REASON[w.reason] ?? `sebep ${w.reason}`, value: w.count, tone: w.reason >= 4 ? "bad" : undefined }))} />
+          <BarList share max={Math.max(1, ...d.walk.map((w) => w.count))} items={d.walk.map((w) => ({ label: WALK_REASON[w.reason] ?? `sebep ${w.reason}`, value: w.count, tone: w.reason >= 4 ? "bad" : undefined }))} />
         </Panel>
 
         {/* HUNİ ÜÇ BASAMAK. "Denendi" ile "ulaştı" arasındaki fark tam
@@ -448,6 +448,13 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
             />
             <Stat label="Bildirimden açıldı" value={fmt(d.notifications.opened)} sub={d.notifications.delivered ? pct(d.notifications.opened / d.notifications.delivered) + " CTR" : undefined} />
           </Stats>
+          <div className="mt-4">
+            <Funnel unit="bildirim" steps={[
+              { label: "Gönderim denendi", value: d.notifications.sent },
+              { label: "Cihaza ulaştı", value: d.notifications.delivered },
+              { label: "Bildirimden açıldı", value: d.notifications.opened },
+            ]} />
+          </div>
         </Panel>
 
         {/* Giden e-posta: doğrulama postası ZORUNLU bir kapı, o yüzden
@@ -462,7 +469,7 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
         </Panel>
 
         <Panel title={`Telemetri olayları (${days}g)`} hint="Ada göre olay sayısı ve tekil kullanıcı." span>
-          <BarList max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)} kişi` }))} />
+          <BarList share max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)} kişi` }))} />
         </Panel>
 
         <Panel title="Son olaylar" hint="En yeni 40 telemetri olayı (ham)." span flush>
@@ -519,18 +526,18 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
         </Panel>
 
         <Panel title="Yerleştirme testi" hint="Önerilen seviye — kaçı öneriyi kabul etti.">
-          <BarList max={Math.max(1, ...c.learning.placements.map((p) => p.count))} items={c.learning.placements.map((p) => ({ label: p.level, value: p.count, right: `${fmt(p.count)} · ${fmt(p.accepted)} kabul` }))} />
+          <BarList share max={Math.max(1, ...c.learning.placements.map((p) => p.count))} items={c.learning.placements.map((p) => ({ label: p.level, value: p.count, right: `${fmt(p.count)} · ${fmt(p.accepted)} kabul` }))} />
         </Panel>
 
         <Panel title={`Konuşma ve değerlendirme (${days}g)`} hint={`Rol yapma: ${fmt(c.learning.roleplay.turns30)} tur · ${fmt(c.learning.roleplay.users30)} kişi · telaffuz ${fmt(c.learning.pronounce.count)} ölçüm, ort. %${c.learning.pronounce.avg}`}>
           <Pills items={c.learning.roleplay.byMode.map((m) => ({ key: m.key, text: `${m.key}: ${fmt(m.count)}` }))} />
           <div className="mt-3">
-            <BarList max={Math.max(1, ...c.learning.assessments.map((a) => a.count))} items={c.learning.assessments.map((a) => ({ label: `${a.kind} · ${a.provider}`, value: a.count }))} />
+            <BarList share max={Math.max(1, ...c.learning.assessments.map((a) => a.count))} items={c.learning.assessments.map((a) => ({ label: `${a.kind} · ${a.provider}`, value: a.count }))} />
           </div>
         </Panel>
 
         <Panel title="Oyun / mekanik performansı" hint="Oyun türüne göre hacim ve doğruluk.">
-          <BarList max={Math.max(1, ...d.games.map((g) => g.count))} items={d.games.map((g) => ({ label: g.game, value: g.count, right: `${fmt(g.count)} · ${pct(g.accuracy)}`, tone: g.accuracy < 0.6 ? "warn" : undefined }))} />
+          <BarList share max={Math.max(1, ...d.games.map((g) => g.count))} items={d.games.map((g) => ({ label: g.game, value: g.count, right: `${fmt(g.count)} · ${pct(g.accuracy)}`, tone: g.accuracy < 0.6 ? "warn" : undefined }))} />
         </Panel>
 
         <Panel title={`Üretim görevleri kalitesi (${days}g)`} hint="Çeviri/dönüştürme/serbest/yazma/konuşma — ortalama puan.">
@@ -542,7 +549,7 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
         </Panel>
 
         <Panel title="Hata tipleri" hint="Yanlış cevapların sınıflandırması.">
-          <BarList max={Math.max(1, ...d.errors.map((e) => e.count))} items={d.errors.map((e) => ({ label: e.type, value: e.count }))} />
+          <BarList share max={Math.max(1, ...d.errors.map((e) => e.count))} items={d.errors.map((e) => ({ label: e.type, value: e.count }))} />
         </Panel>
 
         <Panel title="Rozetler" hint={`Kaç kişide var · son ${days} günde açılan.`}>
@@ -652,7 +659,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           <Sub>5xx dönen uçlar</Sub>
           <BarList empty="5xx yok." max={Math.max(1, ...s.http.errors.map((e) => e.count))} items={s.http.errors.map((e) => ({ label: `${e.status} ${e.route}`, value: e.count, tone: "bad" }))} />
           <Sub>En yoğun API uçları</Sub>
-          <BarList max={Math.max(1, ...s.http.topApi.map((a) => a.count))} items={s.http.topApi.map((a) => ({ label: a.route, value: a.count }))} />
+          <BarList share max={Math.max(1, ...s.http.topApi.map((a) => a.count))} items={s.http.topApi.map((a) => ({ label: a.route, value: a.count }))} />
         </Panel>
 
         <Panel id="yapay-zeka" title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme, token — sohbet ve STT/telaffuz.">
@@ -674,7 +681,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         </Panel>
 
         <Panel title={`Yapay zekâ kullanımı özellik başına (${days}g)`} hint="Hangi özellik ne kadar harcıyor.">
-          <BarList max={Math.max(1, ...c.engagement.aiByKind.map((a) => a.calls))} items={c.engagement.aiByKind.map((a) => ({
+          <BarList share max={Math.max(1, ...c.engagement.aiByKind.map((a) => a.calls))} items={c.engagement.aiByKind.map((a) => ({
             label: a.kind, value: a.calls,
             right: `${fmt(a.calls)} çağrı${a.errors ? ` · ${fmt(a.errors)} hata` : ""}${a.tokens ? ` · ${fmt(a.tokens)} tok` : ""}${a.audioSec ? ` · ${fmt(a.audioSec / 60)} dk ses` : ""}${a.chars ? ` · ${fmt(a.chars)} kr` : ""}`,
             tone: a.errors ? "warn" : undefined,
@@ -692,7 +699,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
 export function ClientErrorsByScreen({ data: d, days }: { data: AdminData; days: number }) {
   return (
       <Panel title={`İstemci hataları (${days}g)`} hint="Yakalanmamış hata — ekrana göre. Mobil + web." span>
-        <BarList empty="Hata kaydı yok." max={Math.max(1, ...d.clientErrors.map((e) => e.count))} items={d.clientErrors.map((e) => ({ label: e.screen, value: e.count, tone: "bad" }))} />
+        <BarList share empty="Hata kaydı yok." max={Math.max(1, ...d.clientErrors.map((e) => e.count))} items={d.clientErrors.map((e) => ({ label: e.screen, value: e.count, tone: "bad" }))} />
       </Panel>
   );
 }

@@ -81,7 +81,10 @@ export default async function AdminUsersPage({ searchParams }: { searchParams: P
       <Panel flush>
         <DataTable
           empty="Eşleşme yok."
-          head={["Ad / e-posta", "Çift", "Seviye", { label: "Seri", align: "right" }, { label: "XP", align: "right" }, { label: "Kelime", align: "right" }, "Son aktif", "Katıldı"]}
+          /* Sıralama SUNUCUDA (üstteki "Sırala" + sayfalama): tablo başlığıyla
+             sıralamak yalnız bu sayfanın 50 satırını dizerdi ve yanıltırdı. */
+          name="kullanicilar"
+          head={[{ label: "Ad / e-posta", sortable: false }, { label: "Çift", sortable: false }, { label: "Seviye", sortable: false }, { label: "Seri", align: "right", sortable: false }, { label: "XP", align: "right", sortable: false }, { label: "Kelime", align: "right", sortable: false }, { label: "Son aktif", sortable: false }, { label: "Katıldı", sortable: false }]}
           rows={rows.map((u) => [
             <div key="n" className="min-w-48">
               <div className="flex flex-wrap items-center gap-1.5">

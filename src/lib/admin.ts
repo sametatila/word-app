@@ -191,10 +191,13 @@ export async function getAdminData(days = 30): Promise<AdminData> {
         (select coalesce(sum(seconds),0) from daily_stats where day >= current_date - ${days - 1}::int)::bigint as seconds30d
     `),
     rows(sql`
-      select to_char(day,'YYYY-MM-DD') as day,
-             count(distinct user_id)::int as active,
-             sum(reviews)::int as reviews, sum(xp)::int as xp, sum(new_words)::int as new_words
-      from daily_stats where day >= current_date - ${days - 1}::int group by day order by day
+      -- Boş günler de satır (0): grafik gün atlamasın, ortalama doğru bölünsün.
+      select to_char(g.day,'YYYY-MM-DD') as day,
+             count(distinct d.user_id)::int as active,
+             coalesce(sum(d.reviews),0)::int as reviews, coalesce(sum(d.xp),0)::int as xp, coalesce(sum(d.new_words),0)::int as new_words
+      from generate_series(current_date - ${days - 1}::int, current_date, interval '1 day') g(day)
+      left join daily_stats d on d.day = g.day::date
+      group by g.day order by g.day
     `),
     rows(sql`select level, count(*)::int as count from profiles group by level order by level`),
     computeFunnel(),

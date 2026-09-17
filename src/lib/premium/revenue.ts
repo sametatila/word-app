@@ -28,6 +28,8 @@ export type Revenue = {
   now: { activePaid: number; activeTrials: number; willNotRenew: number; inGrace: number; mrrUsd: number };
   byPlatform: { platform: string; grossUsd: number; payments: number; active: number }[];
   byProduct: { product: string; grossUsd: number; payments: number }[];
+  /** Aralığın GÜN GÜN hâli — boş günler dahil (grafik boşluğu sıfır olarak görsün). */
+  daily: { day: string; grossUsd: number; newPaid: number; trials: number; cancellations: number }[];
   revenuecat: { mrrUsd: number | null; revenue28dUsd: number | null; activeSubscriptions: number | null; activeTrials: number | null; newCustomers28d: number | null } | { error: string } | null;
   issues: QueryIssue[];
 };
@@ -72,7 +74,7 @@ export async function revenueMetrics(days = 30): Promise<Revenue> {
   const since = sql`now() - make_interval(days => ${days})`;
   const PAID_TYPES = sql`('purchase', 'renewal', 'product_change', 'one_time')`;
 
-  const [w, now, plat, prod, rc] = await Promise.all([
+  const [w, now, plat, prod, rc, daily] = await Promise.all([
     rows(sql`
       select
         coalesce(sum(price_usd) filter (where type in ${PAID_TYPES} and coalesce(period_type, '') <> 'trial'), 0)::float gross,
@@ -116,6 +118,16 @@ export async function revenueMetrics(days = 30): Promise<Revenue> {
         and coalesce(period_type, '') <> 'trial' and coalesce(event_at, created_at) >= ${since}
       group by 1 order by 2 desc`),
     revenueCatOverview(),
+    rows(sql`
+      select to_char(g.day, 'YYYY-MM-DD') as day,
+        coalesce(sum(s.price_usd) filter (where s.type in ${PAID_TYPES} and coalesce(s.period_type, '') <> 'trial'), 0)::float gross,
+        count(s.*) filter (where s.type = 'purchase' and coalesce(s.period_type, 'normal') in ('normal', 'intro'))::int new_paid,
+        count(s.*) filter (where s.type = 'purchase' and s.period_type = 'trial')::int trials,
+        count(s.*) filter (where s.type = 'cancellation')::int cancellations
+      from generate_series(current_date - ${days - 1}::int, current_date, interval '1 day') g(day)
+      left join store_events s on coalesce(s.environment, 'production') = 'production'
+        and coalesce(s.event_at, s.created_at)::date = g.day::date
+      group by g.day order by g.day`),
   ]);
 
   const x = w[0] ?? {};
@@ -131,6 +143,7 @@ export async function revenueMetrics(days = 30): Promise<Revenue> {
     },
     now: { activePaid: i(n.active_paid), activeTrials: i(n.active_trials), willNotRenew: i(n.will_not_renew), inGrace: i(n.in_grace), mrrUsd: f(n.mrr) },
     byPlatform: plat.map((r) => ({ platform: String(r.platform), grossUsd: f(r.gross), payments: i(r.payments), active: i(r.active) })),
+    daily: daily.map((r) => ({ day: String(r.day), grossUsd: f(r.gross), newPaid: i(r.new_paid), trials: i(r.trials), cancellations: i(r.cancellations) })),
     byProduct: prod.map((r) => ({ product: String(r.product), grossUsd: f(r.gross), payments: i(r.payments) })),
     revenuecat: rc,
     issues,

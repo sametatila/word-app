@@ -124,12 +124,13 @@ export function PanelGrid({ children }: { children: ReactNode }) {
   return <div className="grid gap-5 lg:grid-cols-2">{children}</div>;
 }
 
-export function Stat({ label, value, sub, tone }: { label: string; value: ReactNode; sub?: ReactNode; tone?: Tone }) {
+export function Stat({ label, value, sub, tone, spark }: { label: string; value: ReactNode; sub?: ReactNode; tone?: Tone; spark?: ReactNode }) {
   return (
     <div className="min-w-0">
       <div className="muted text-micro uppercase tracking-eyebrow">{label}</div>
       <div className="text-h2 tabular-nums" style={tone ? { color: TONE[tone] } : undefined}>{value}</div>
       {sub ? <div className="muted text-caption">{sub}</div> : null}
+      {spark}
     </div>
   );
 }
@@ -196,63 +197,11 @@ export function Empty({ children }: { children: ReactNode }) {
   return <p className="muted rounded-tile border border-dashed px-4 py-5 text-center text-caption" style={{ borderColor: "var(--border)" }}>{children}</p>;
 }
 
-export type Column = string | { label: string; align?: "right" };
-
-/** Tablo. Hücre metin ya da düğüm; sayısal sütunlar `align: "right"`. */
-export function DataTable({ head, rows, empty = "Kayıt yok.", mono }: { head: Column[]; rows: ReactNode[][]; empty?: string; mono?: boolean }) {
-  if (!rows.length) return <Empty>{empty}</Empty>;
-  const cols = head.map((h) => (typeof h === "string" ? { label: h, align: undefined } : h));
-  return (
-    <div className="overflow-x-auto">
-      <table className={`w-full text-caption ${mono ? "font-mono" : ""}`} style={{ borderCollapse: "collapse" }}>
-        <thead>
-          <tr className="muted text-micro uppercase tracking-eyebrow">
-            {cols.map((c, i) => (
-              <th key={i} className={`whitespace-nowrap px-3 py-2 font-bold ${c.align === "right" ? "text-right" : "text-left"}`}>{c.label}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={i} className="border-t align-top" style={{ borderColor: "var(--hairline)" }}>
-              {r.map((v, j) => (
-                <td key={j} className={`px-3 py-2 tabular-nums ${cols[j]?.align === "right" ? "text-right whitespace-nowrap" : ""}`}>
-                  {v === "" || v == null ? "—" : v}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
-function Bar({ frac, tone }: { frac: number; tone?: Tone }) {
-  return (
-    <span className="relative h-2.5 min-w-10 flex-1 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-      <span className="absolute inset-y-0 left-0 rounded-full" style={{ width: `${Math.max(2, Math.min(100, Math.round(frac * 100)))}%`, background: tone ? TONE[tone] : "var(--color-brand)" }} />
-    </span>
-  );
-}
-
-export type BarItem = { label: string; value: number; right?: string; tone?: Tone };
-
-export function BarList({ items, max, unit, empty = "Henüz veri yok." }: { items: BarItem[]; max: number; unit?: string; empty?: string }) {
-  if (!items.length) return <p className="muted text-caption">{empty}</p>;
-  const top = Math.max(max, 1);
-  return (
-    <div className="space-y-2">
-      {items.map((it, i) => (
-        <div key={i} className="flex items-center gap-3 text-caption">
-          <span className="w-2/5 min-w-0 shrink-0 truncate sm:w-44">{it.label}</span>
-          <Bar frac={it.value / top} tone={it.tone} />
-          <span className="muted w-24 shrink-0 text-right tabular-nums sm:w-32">{it.right ?? fmt(it.value) + (unit ?? "")}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
+/* Tablo ve grafikler etkileşimli istemci bileşenleri (sıralama, arama,
+   dizi seçimi): `_ui/table`, `_ui/charts`. Buradan yeniden dışa veriliyor ki
+   sayfalar tek yerden içe aktarsın. */
+export { DataTable, type Column } from "./table";
+export { BarList, Funnel, SeriesChart, Sparkline, type BarItem, type FunnelStep, type Series } from "./charts";
 
 /** Alan: değer ızgarası (kullanıcı detayı). */
 export function KeyValue({ data }: { data: Record<string, string | number | boolean> | null }) {
