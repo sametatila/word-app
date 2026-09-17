@@ -249,12 +249,24 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
          yapılmadı, yani ödeme yapan kullanıcı o satır karşılığında hiçbir şey
          almıyordu. Vaadi silmek, teslim edilmeyen bir vaadi taşımaktan iyidir
          (App Store 2.3.1 / 3.1.2, Play yanıltıcı beyan). */
-      { key: "plan.free_weekly" },
+      /* SAYI ARTIK AYARDAN GELMİYOR, SABİT 1 — ve bu doğru: haftada bir quiz
+         bir kota değil, `weekly_quiz_user_week_idx` benzersiz kısıtı. Ama
+         parametre KALDIRILMIYOR: eski paketlerdeki cümle `{n}` taşıyor ve
+         parametre gelmezse ekranda literal "{n}" görünüyor (emülatörde
+         görüldü). Fazladan parametre zararsız, eksik parametre bozuk metin. */
+      { key: "plan.free_weekly", params: { n: 1 } },
       /* TEK SATIR, TEK HAVUZ. Eskiden burada iki satır vardı ("seviye başına N
          ders" + "kütüphanede N") ve bu, iki ayrı hak olduğunu ima ediyordu.
          Oysa patika ünitesindeki ve Beceriler'deki alıştırma aynı içerik, kota
          da aynı — birinci satırın karşılığı olan ayrı bir hak hiç yoktu. */
-      { key: "plan.free_practice", params: { s: free.speakingSkills, w: free.writingSkills } },
+      /* ANAHTAR YENİDEN KULLANILIYOR, YENİSİ UYDURULMUYOR. Paywall satırları
+         sunucudan ANAHTAR olarak iniyor ve çeviri istemcinin GÖMÜLÜ sözlüğünden
+         geliyor (`lib/i18n` `bul(key) ?? key`): sunucuya yeni bir anahtar
+         eklemek, o anahtarı bilmeyen kurulu sürümlerde ekrana HAM ANAHTAR
+         bastırıyor. Emülatörde görüldü (2026-09-17). `plan.free_skills` eski
+         paketlerde de var; metni değişti, anahtar durdu — eski sürüm okunur
+         bir cümle gösteriyor, yeni sürüm doğrusunu. */
+      { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
       /* KARARLILIK SATIRI. Ücretsiz katmanın kapasitesi düzenli kullanıma bağlı
          ve bunu SÖYLÜYORUZ: kilidi "paran yetmiyor" diye değil "devam edersen
          açılır" diye kurmak, hem doğru hem de kullanıcıyı uygulamada tutan şey.

@@ -163,6 +163,23 @@ jesti onu kullanıyor. Aradaki fark, bunların **otomatik bir program olmaması*
 seyrek ve kasıtlı kullanımda "askıda kalan süre" vaka bazında yönetilebilir,
 herkese vaat edilen bir mekanizmada yönetilemez.
 
+**PAYWALL SATIRLARINA YENİ ANAHTAR EKLEMEK GERİYE UYUMLU DEĞİL.** Satırlar
+sunucudan ANAHTAR + PARAMETRE olarak iniyor (`describeLimits`), çeviri
+istemcinin GÖMÜLÜ sözlüğünden geliyor ve bilinmeyen anahtar ham hâliyle
+basılıyor (`lib/i18n` `bul(key) ?? key`). Yani sunucuya yeni bir anahtar
+eklemek, o anahtarı bilmeyen KURULU sürümlerde paywall'a "plan.free_practice"
+gibi bir dizgi bastırıyor — emülatörde görüldü (2026-09-17). İki kural:
+
+- **Mümkünse var olan anahtarı yeniden kullan**, metnini değiştir. Eski sürüm
+  okunur bir cümle gösterir, yeni sürüm doğrusunu.
+- **Parametre ÇIKARMA.** Fazladan parametre zararsız (yer tutucu yoksa yok
+  sayılır), eksik parametre ekrana literal `{n}` bastırır. Bu yüzden
+  `plan.free_weekly` metni `{n}` kullanmadığı hâlde parametre almaya devam
+  ediyor.
+
+Gerçekten yeni bir satır şartsa (ör. `plan.free_streak_ai`) bunu bilerek yap:
+o satır ancak eklendikten SONRA derlenen sürümlerde görünür.
+
 **"Sınırsız" denmiyor.** Premium'un da adil kullanım tavanı var ve paywall'da
 yazılı. Tavanı olan bir şeyi sınırsız diye pazarlamak App Store 3.1.2 ve Play'in
 abonelik beyanı kurallarına aykırı.
