@@ -24,7 +24,7 @@ export default async function LessonNotFound() {
   return (
     <div className="px-4 py-8">
       <FlowColumn>
-        <StateBody mood="sad" title={t("lesson.this_lesson_wasn_t_found")}>
+        <StateBody title={t("lesson.this_lesson_wasn_t_found")}>
           <FlowActions
             primary={{ label: t("lesson.go_back"), href: "/lessons" }}
           />

@@ -955,7 +955,7 @@ export function WalkModeScreen() {
       ) : phase === "done" && noMore && tally.total === 0 ? (
         /* BUGÜNLÜK KELİME YOK — bitmiş bir tur değil, boş kuyruk: durum şablonu. */
         <FlowScreen center actions={<FlowActions primary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
-          <StateBody mood="think" title={tx("walkmode.done_no_more")} body={tx("walkmode.done_no_more_sub")} />
+          <StateBody title={tx("walkmode.done_no_more")} body={tx("walkmode.done_no_more_sub")} />
         </FlowScreen>
       ) : phase === "done" ? (
         /* SONUÇ ŞABLONU (GameScreen ile aynı dil): band → üç sayı → not →
@@ -978,7 +978,6 @@ export function WalkModeScreen() {
             title={tx("walkmode.done_title")}
             figure={`${tally.correct}/${tally.total || 0}`}
             sub={tx("walkmode.done_saved")}
-            mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"}
           />
           {tally.total > 0 ? (
             <StatRow items={[
@@ -993,7 +992,7 @@ export function WalkModeScreen() {
         /* DURAKLATILDI — kullanıcının kendi kararı; "durdurdum" (stopped)
            ekranıyla aynı şablon ama başka sebep ve başka metin. */
         inPlayer(
-          <StateBody mood="think" title={tx("walkmode.paused_title")} body={tx("walkmode.paused_body")} />,
+          <StateBody title={tx("walkmode.paused_title")} body={tx("walkmode.paused_body")} />,
           <FlowActions
             primary={{ label: tx("walkmode.continue"), onPress: resumeWalk }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
@@ -1001,7 +1000,7 @@ export function WalkModeScreen() {
         )
       ) : phase === "stopped" ? (
         inPlayer(
-          <StateBody mood="think" title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,
+          <StateBody title={tx("walkmode.i_paused_round")} body={tx("walkmode.i_haven_t_heard_you_for_while")} />,
           <FlowActions
             primary={{ label: tx("walkmode.continue"), onPress: () => { unheardWin.current = []; void runLoop(rounds, idx); } }}
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
@@ -1009,7 +1008,7 @@ export function WalkModeScreen() {
         )
       ) : phase === "error" ? (
         <FlowScreen center actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: loadQueue }} tertiary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
-          <StateBody alert mood="sad" title={tx("walk.error_title")} body={tx("walk.error_sub")} />
+          <StateBody alert title={tx("walk.error_title")} body={tx("walk.error_sub")} />
         </FlowScreen>
       ) : phase === "denied" ? (
         /* iOS'ta reddedilen izin uygulamadan YENİDEN İSTENEMİYOR: sistem penceresi
@@ -1024,7 +1023,7 @@ export function WalkModeScreen() {
             />
           }
         >
-          <StateBody mood="think" title={tx("walkmode.microphone_needed")} body={tx("walkmode.walk_mode_works_by_voice_allow")} />
+          <StateBody title={tx("walkmode.microphone_needed")} body={tx("walkmode.walk_mode_works_by_voice_allow")} />
         </FlowScreen>
       ) : greeting ? (
         <>
@@ -1033,7 +1032,7 @@ export function WalkModeScreen() {
           {notifWarning()}
           {/* Karşılama okunurken: durum şablonu, düğme yok (ses bitince tur kendiliğinden başlıyor). */}
           <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
-            <StateBody mood="wave" title={tx("walkmode.here_we_go")} body={tx("walkmode.listen_first_word_coming_up")} />
+            <StateBody title={tx("walkmode.here_we_go")} body={tx("walkmode.listen_first_word_coming_up")} />
           </View>
         </>
       ) : (

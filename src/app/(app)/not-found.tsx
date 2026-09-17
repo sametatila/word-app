@@ -24,7 +24,6 @@ export default async function AppNotFound() {
     <div className="px-4 py-8">
       <FlowColumn>
         <StateBody
-          mood="think"
           title={t("notfound.title")}
           body={t("notfound.sub")}
         >

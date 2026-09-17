@@ -13,10 +13,11 @@ maskot çizmediği için bu kipleri kimse istemiyor.
 |---|---|
 | `sleep.webp` | Öğren kahramanı (serisi kırık dönen kullanıcı), web bildirim izni kartı |
 | `think.webp` | Sınav girişleri, seviye testi, "bu oyuna kelime yok", deneme puanlaması |
+| `wave.webp` | Ana sayfa kahramanı, kurs tanıtımı, oturum süresi bitti ekranı, kutlama pop'u |
 
 Mobil ve web kopyaları bayt bayt aynıydı, o yüzden arşivde tek kopya var.
-`wave.webp` arşive GİRMEDİ: mobilde kutlama pop'u onu hâlâ kullanıyor
-(`ui/MascotPop` `CHEERS`); artık kullanmayan web kopyası silindi.
+`wave` kutlama pop'unun rastgele kümesinde de duruyordu; küme web'in kümesiyle
+hizalandı (`celebrate` + `happy` + `thumbsup`) ve klip de arşive geldi.
 
 ## Geri getirmek
 

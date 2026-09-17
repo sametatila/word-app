@@ -253,7 +253,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             hatasi kullaniciyi meydan okumadan tamamen atiyordu. Android'deki
             sira: birincil "tekrar dene", ikincil cikis (`ChallengeScreen`).
             Hata `alert` ile DUYURULUYOR. */}
-        <StateBody alert mood="sad" title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")}>
+        <StateBody alert title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")}>
           <FlowActions primary={{ label: t("common.try_again"), onClick: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
@@ -264,7 +264,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       <FlowColumn>
         {/* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
             bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */}
-        <StateBody mood="think" title={t("challenge.none_title")} body={t("challenge.none_sub")}>
+        <StateBody title={t("challenge.none_title")} body={t("challenge.none_sub")}>
           <FlowActions primary={{ label: t("common.back_to_learn"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
@@ -314,7 +314,6 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           figure={<CountUp value={score} />}
           sub={isRecord ? null : `${t("challenge.your_record")} ${outcome?.best ?? Math.max(record, score)}`}
           pill={isRecord ? { text: t("challenge.new_record", { previous }) } : null}
-          mood={isRecord ? "celebrate" : "happy"}
         />
         <StatRow
           items={[

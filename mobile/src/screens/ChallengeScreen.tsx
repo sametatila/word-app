@@ -271,7 +271,7 @@ export function ChallengeScreen() {
   if (phase === "error") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: load }} tertiary={{ label: t("common.go_back"), onPress: exit }} />}>
-        <StateBody alert mood="sad" title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")} />
+        <StateBody alert title={t("challenge.load_failed")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
   }
@@ -281,7 +281,7 @@ export function ChallengeScreen() {
       /* Boş durum düşünen maskotla: "henüz kelime yok, birkaç tur sonra" bir
          bekleyiş, hata değil (şablon kuralı: boş/bekleniyor = think). */
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.back_to_learn"), onPress: exit }} />}>
-        <StateBody mood="think" title={t("challenge.none_title")} body={t("challenge.none_sub")} />
+        <StateBody title={t("challenge.none_title")} body={t("challenge.none_sub")} />
       </FlowScreen>
     );
   }
@@ -331,7 +331,6 @@ export function ChallengeScreen() {
           figure={String(score)}
           sub={isRecord ? null : `${t("challenge.your_record")} ${outcome?.best ?? Math.max(record, score)}`}
           pill={isRecord ? { text: t("challenge.new_record", { previous }) } : null}
-          mood={isRecord ? "celebrate" : "happy"}
         />
         {/* İşaret KODA GÖMÜLÜ yazılıydı: Türkçe ve Almanca arayüzde de "85%"
             çıkıyordu; sözlüğün biçimleyicisi (`formatPercent`) dili biliyor. */}

@@ -115,7 +115,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("weekly.sign_in_sign_up"), onPress: () => nav.navigate("Auth") }} secondary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody mood="think" title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon color={colors.textMuted} size={40} />} />
+        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
   }
@@ -127,7 +127,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("weekly.try_again"), onPress: () => setAttempt((a) => a + 1) }} secondary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody alert mood="sad" title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon color={colors.dangerText} size={40} />} />
+        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon color={colors.dangerText} size={40} />} />
       </FlowScreen>
     );
   }
@@ -139,7 +139,7 @@ export function WeeklyScreen() {
         center
         actions={<FlowActions primary={{ label: t("common.close"), onPress: close }} />}
       >
-        <StateBody mood="think" title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon color={colors.textMuted} size={40} />} />
+        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon color={colors.textMuted} size={40} />} />
       </FlowScreen>
     );
   }
@@ -238,7 +238,6 @@ export function WeeklyScreen() {
           title={t(score.band)}
           figure={formatPercent(score.pct)}
           sub={t("wquiz.done_sub", { correct: score.correct, total: score.total })}
-          mood={score.pct >= 60 ? "happy" : "think"}
         />
         <StatRow
           items={[

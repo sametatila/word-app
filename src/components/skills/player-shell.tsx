@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
-import { MascotFx } from "@/components/mascot-fx";
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
@@ -118,7 +117,6 @@ export function PlayerShell({
   const back = backHref ?? frame.backHref;
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <MascotFx />
       <div className="mb-5 flex items-center gap-3">
         {/* 44 - `PageBack` ve Android'in ölçüsü; 36'da kalıyordu. */}
         <Link
@@ -228,7 +226,6 @@ export function ResultCard({
           title={title}
           figure={isMono && score === undefined ? null : formatPercent(pct, lang)}
           sub={sub || null}
-          mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "sad"}
           quiet={!passed}
           pill={passed ? null : { text: t("skillp.pill_need", { pct: isMono ? RUBRIC_PASS_PCT : SKILL_DONE_PCT }), tone: "bad" }}
         />

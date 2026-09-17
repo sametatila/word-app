@@ -319,7 +319,7 @@ export function PlacementScreen() {
   if (!user && !questions.length) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
-        <StateBody mood="think" title={t("placement.no_demo")} />
+        <StateBody title={t("placement.no_demo")} />
       </FlowScreen>
     );
   }
@@ -327,7 +327,7 @@ export function PlacementScreen() {
   if (user && !loading && loadError) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("common.close"), onPress: leave }} />}>
-        <StateBody alert mood="sad" title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
+        <StateBody alert title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
   }
@@ -346,7 +346,7 @@ export function PlacementScreen() {
   if (user && status && !status.canRetake) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("common.close"), onPress: leave }} />}>
-        <StateBody mood="think" title={t("placement.title")} body={t("placement.retake_in", { n: status.retakeDays })}>
+        <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: status.retakeDays })}>
           {status.last ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{lastTakenLine(status.last)}</Text> : null}
         </StateBody>
       </FlowScreen>
@@ -421,7 +421,6 @@ export function PlacementScreen() {
           title={t("placement.your_level", { level: String(level) })}
           figure={String(level)}
           sub={`${t("placement.result_sub", { total: answered, correct })}${usingReal ? ` · ${t("time.minutes_short", { m: minutes.current })}` : ""}`}
-          mood="happy"
         />
         {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
         {skills.length > 0 && skills.length <= 3 ? (

@@ -29,6 +29,7 @@ import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { MascotPop } from "@/components/mascot-pop";
 import { MascotFx } from "@/components/mascot-fx";
+import { Mascot, MASCOT_BAND, MASCOT_STATE } from "@/components/mascot";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
@@ -1021,16 +1022,16 @@ function LoadingCard() {
 function ErrorCard({ kind, onRetry, onClose }: { kind: ErrorKind; onRetry: () => void; onClose: () => void }) {
   const t = useT();
   const content = {
-    auth: { mood: "wave" as const, title: t("session.expired"), body: t("session.expired_sub") },
-    db: { mood: "sad" as const, title: t("session.load_failed"), body: t("session.load_failed_sub") },
-    network: { mood: "sad" as const, title: t("session.offline"), body: t("session.offline_sub") },
+    auth: { title: t("session.expired"), body: t("session.expired_sub") },
+    db: { title: t("session.load_failed"), body: t("session.load_failed_sub") },
+    network: { title: t("session.offline"), body: t("session.offline_sub") },
   }[kind];
 
   return (
     <FlowColumn>
       {/* Hata DUYURULUYOR (`alert`): ekranı kaplayan bir hata metni canlı
           bölge değilse ekran okuyucu kullanan biri hiçbir şey duymuyor. */}
-      <StateBody alert mood={content.mood} title={content.title} body={content.body}>
+      <StateBody alert title={content.title} body={content.body}>
         <FlowActions
           primary={kind === "auth" ? { label: t("auth.sign_in"), href: "/login" } : { label: t("common.try_again"), onClick: onRetry }}
           tertiary={{ label: t("common.close"), onClick: onClose }}
@@ -1063,7 +1064,7 @@ function EmptyCard({
   if (onlyGame) {
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })} body={t("session.review_only_mode")}>
+        <StateBody title={t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })} body={t("session.review_only_mode")}>
           <FlowActions primary={{ label: t("session.back_to_mixed"), onClick: onMixed }} tertiary={{ label: t("common.close"), onClick: onClose }} />
         </StateBody>
       </FlowColumn>
@@ -1075,7 +1076,7 @@ function EmptyCard({
   return (
     <FlowColumn>
       <StateBody
-        mood="celebrate"
+        icon={<Mascot mood="celebrate" size={MASCOT_STATE} className="mx-auto" />}
         title={t("session.goal_done")}
         body={
           meta
@@ -1147,7 +1148,7 @@ function StageCard({
         eyebrow={t("stage.counter", { n: stage, total: stages })}
         title={t(perfect ? "stage.clean" : "stage.done")}
         sub={`${correct}/${total}`}
-        mood={perfect ? "celebrate" : "happy"}
+        aside={<Mascot mood={perfect ? "celebrate" : "happy"} size={MASCOT_BAND} pinned className="shrink-0" />}
         segments={{ done: stage, total: stages }}
       />
       <StatRow
@@ -1312,7 +1313,7 @@ function SummaryCard({
         sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
         /* Turun nasıl geçtiğini Erdi'nin hâli söylüyor: hak edilmiş turda
            kutluyor, iyi turda gülümsüyor, kötü turda üzülüyor. */
-        mood={targeted && total > 0 ? null : total > 0 ? (deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad") : "idle"}
+        aside={targeted && total > 0 ? null : <Mascot mood={total > 0 ? (deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad") : "idle"} size={MASCOT_BAND} pinned className="shrink-0" />}
       />
       {targeted && total > 0 ? <CoachBubble moment="weak_done" mood={accuracy >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
       {total > 0 ? (

@@ -63,7 +63,7 @@ function CrashCard({ onRetry }: { onRetry: () => void }) {
   return (
     <FlowScreen center actions={<FlowActions primary={{ label: t("common.try_again"), icon: <RefreshIcon color={colors.onPrimary} size={18} />, onPress: onRetry }} />}>
       {/* Hata duyuruluyor (`alert` = assertive bölge, eskisi gibi); başlık başlık olarak okunuyor (bkz. parity 259). */}
-      <StateBody alert mood="sad" title={t("crash.title")} body={t("crash.body")} />
+      <StateBody alert title={t("crash.title")} body={t("crash.body")} />
     </FlowScreen>
   );
 }

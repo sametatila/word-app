@@ -9,7 +9,11 @@ import { claimStage, releaseStage } from "../lib/mascotStage";
  * ~2 sn sonra iner. Web MascotPop'un mobil karşılığı: ardışık doğru serisi 5'in
  * katına gelince çağrılır; rastgele ama kurallı bir kutlama modu seçilir.
  */
-const CHEERS: Mood[] = ["celebrate", "happy", "thumbsup", "wave"];
+/* Web'in kutlama kümesiyle hizalı (`mascot-pop` `CHEERS`): orada `dance`
+   var, burada yok (klibi mobile hiç kopyalanmadı); `wave` ise iki tarafta da
+   kalktı — animasyon yalnız günlük turda kalınca el sallamanın çağrılanı
+   kalmadı ve klip arşive gitti (bkz. assets-archive/mascot). */
+const CHEERS: Mood[] = ["celebrate", "happy", "thumbsup"];
 
 /** Ekranda kalma süresi — sahne kilidi de bu süre kadar alınıyor. */
 const HOLD_MS = 1900;

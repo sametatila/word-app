@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Mascot } from "@/components/mascot";
 import { CheckIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { track } from "@/lib/track";
@@ -148,9 +147,7 @@ export function FirstPractice() {
               <p className="muted mt-0.5 text-caption">{w.exTr}</p>
             </div>
           </div>
-        ) : (
-          <Mascot mood="idle" size={96} />
-        )}
+        ) : null}
       </div>
 
       <button type="button" onClick={primary} className="btn btn-primary w-full py-4">

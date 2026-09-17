@@ -246,7 +246,7 @@ export function BossPlayer({
   if (status === "error")
     return (
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("exam.could_not_load")}>
+        <StateBody alert title={t("exam.could_not_load")}>
           <FlowActions primary={{ label: t("common.try_again"), onClick: () => void load() }} tertiary={{ label: t("common.go_back"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
@@ -257,7 +257,7 @@ export function BossPlayer({
       /* "Henüz hazır değil" bir bekleyiş (think). Tekrar denemek burada
          anlamsız - aynı cevap gelir; tek çıkış çerçeveli "Geri dön". */
       <FlowColumn>
-        <StateBody alert mood="think" title={t("boss.not_ready")} body={t("boss.not_ready_sub")}>
+        <StateBody alert title={t("boss.not_ready")} body={t("boss.not_ready_sub")}>
           <FlowActions secondary={{ label: t("common.go_back"), onClick: onExit }} />
         </StateBody>
       </FlowColumn>
@@ -323,7 +323,6 @@ export function BossPlayer({
               : { text: t("boss.not_passed"), tone: "bad" }
           }
           quiet={!won}
-          mood={won ? "celebrate" : "sad"}
         />
         <StatRow
           items={[

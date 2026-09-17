@@ -80,7 +80,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
   if (!total) {
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("placement.no_demo")} />
+        <StateBody title={t("placement.no_demo")} />
         <FlowActions primary={{ label: t("common.close"), onClick: leave }} />
       </FlowColumn>
     );
@@ -97,7 +97,6 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
           title={t("placement.your_level", { level })}
           figure={level}
           sub={t("placement.result_sub", { total, correct })}
-          mood="happy"
         />
         {saved ? (
           <div role="status">

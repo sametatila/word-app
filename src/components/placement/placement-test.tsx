@@ -224,7 +224,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     if (!canRetake) {
       return (
         <FlowColumn>
-          <StateBody mood="think" title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })}>
+          <StateBody title={t("placement.title")} body={t("placement.retake_in", { n: retakeDays })}>
             {lastLine ? <p className="muted text-caption">{lastLine}</p> : null}
           </StateBody>
           <FlowActions primary={{ label: t("common.close"), href: "/profile" }} />
@@ -273,7 +273,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "error") {
     return (
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
+        <StateBody alert title={t("placement.couldn_t_load_test")} body={t("game.check_your_connection_and_try")} />
         {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici
             bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
@@ -299,7 +299,6 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           title={t("placement.your_level", { level: shown })}
           figure={shown}
           sub={`${t("placement.result_sub", { total: answered, correct: correctCount })} · ${t("time.minutes_short", { m: minutes })}`}
-          mood="happy"
         />
         {/* Dört beceri üç sayıya sığmıyor: fazlası sayı satırı yerine kartta. */}
         {skills.length > 0 && skills.length <= 3 ? (

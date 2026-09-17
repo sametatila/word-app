@@ -778,7 +778,7 @@ export function LessonScreen() {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `lessons/[id]/not-found`). */}
-        <StateBody mood="sad" alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
+        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }
@@ -863,7 +863,7 @@ export function LessonScreen() {
         */
         <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
           <View style={{ flex: 1, justifyContent: "center", gap: spacing.md }}>
-            <StateBody mood="wave" title={tx("lesson.pick_up_where_you_left_off")} body={tx("lesson.you_paused_this_lesson_pick_up")} />
+            <StateBody title={tx("lesson.pick_up_where_you_left_off")} body={tx("lesson.you_paused_this_lesson_pick_up")} />
             <DetailCard title={tx("lessonp.resume_where")}>
               <DetailRow
                 left={tx("lesson.phase_lecture")}
@@ -1232,7 +1232,6 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
           title={tx(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
           figure={total ? `${correct}/${total}` : null}
           sub={tx("lessonp.n_turns", { n: userTurns })}
-          mood={unfinished ? "sad" : pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "sad"}
           quiet={unfinished}
           pill={unfinished ? { text: tx("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
         />

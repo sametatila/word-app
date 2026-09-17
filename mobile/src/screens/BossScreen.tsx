@@ -245,7 +245,7 @@ export function BossScreen() {
         }
       >
         {/* Hazır değil = bekleyiş (think), yüklenemedi = hata (sad). */}
-        <StateBody alert mood={data ? "think" : "sad"} title={t(data ? "boss.not_ready" : "exam.could_not_load")} body={data ? t("boss.not_ready_sub") : null} />
+        <StateBody alert title={t(data ? "boss.not_ready" : "exam.could_not_load")} body={data ? t("boss.not_ready_sub") : null} />
       </FlowScreen>
     );
   }
@@ -300,7 +300,6 @@ export function BossScreen() {
             ? (isRecord ? { text: `${t("bossw.record_prefix")} ${secondsLeft} ${t("bossw.record_suffix")}` } : null)
             : { text: t("boss.not_passed"), tone: "bad" }}
           quiet={!won}
-          mood={won ? "celebrate" : "sad"}
         />
         <StatRow items={[
           { value: `${tally.correct}/${tally.total}`, label: t("common.correct"), tone: "ok" },

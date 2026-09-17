@@ -95,9 +95,20 @@ const sablonGovde = (src, ad) => {
   return src.slice(i, j < 0 ? src.length : j);
 };
 const sablonSabit = (src, ad) => Number((src.match(new RegExp("export const " + ad + " = (\\d+);")) ?? [])[1] ?? NaN);
+/*
+  MASKOT BOYU ARTIK SABLONDA DEGIL (2026-09-18). Akis sablonlari maskotu
+  kendisi cizmiyor: bant `aside` dugumu, durum `icon` dugumu aliyor ve
+  animasyon yalniz gunluk turda (bkz. 288). Olcu bu yuzden iki yerden
+  okunuyor: sabitin degeri maskotun kendi dosyasindan, KULLANILDIGI ise turu
+  cizen ekrandan. Ikisinden biri kopsa boy NaN olur ve asagidaki kapi duser.
+*/
 export const SABLON = (() => {
   const mob = read("mobile/src/ui/flow.tsx");
   const web = read("src/components/flow.tsx");
+  const mobMaskot = read("mobile/src/ui/Mascot.tsx");
+  const webMaskot = read("src/components/mascot.tsx");
+  const mobTur = read("mobile/src/screens/GameScreen.tsx");
+  const webTur = read("src/components/session-player.tsx");
   return {
     mobil: {
       /* `live={false}` verilmedikce bant "polite" duyuruyor. */
@@ -105,8 +116,8 @@ export const SABLON = (() => {
       /* `alert` hata dali "assertive", oteki durumlar "polite". */
       durumCanli: /accessibilityLiveRegion=\{alert \? "assertive" : "polite"\}/.test(sablonGovde(mob, "StateBody")),
       baslik: Object.fromEntries(["ResultHero", "CoverBody", "StateBody", "FlowTopBar"].map((ad) => [ad, /accessibilityRole="header"/.test(sablonGovde(mob, ad))])),
-      bantBoy: /<Mascot [^>]*size=\{MASCOT_BAND\}/.test(sablonGovde(mob, "ResultHero")) ? sablonSabit(mob, "MASCOT_BAND") : NaN,
-      durumBoy: /<Mascot [^>]*size=\{MASCOT_STATE\}/.test(sablonGovde(mob, "StateBody")) ? sablonSabit(mob, "MASCOT_STATE") : NaN,
+      bantBoy: /aside=\{[\s\S]{0,200}<Mascot [^>]*size=\{MASCOT_BAND\}/.test(mobTur) ? sablonSabit(mobMaskot, "MASCOT_BAND") : NaN,
+      durumBoy: /icon=\{<Mascot [^>]*size=\{MASCOT_STATE\}/.test(mobTur) ? sablonSabit(mobMaskot, "MASCOT_STATE") : NaN,
     },
     web: {
       heroCanli: /role=\{live \? "status" : undefined\}/.test(sablonGovde(web, "ResultHero")),
@@ -116,8 +127,8 @@ export const SABLON = (() => {
         CoverBody: /<h[123]\b/.test(sablonGovde(web, "CoverBody")),
         StateBody: /<h[123]\b/.test(sablonGovde(web, "StateBody")),
       },
-      bantBoy: /<Mascot [^>]*size=\{MASCOT_BAND\}/.test(sablonGovde(web, "ResultHero")) ? sablonSabit(web, "MASCOT_BAND") : NaN,
-      durumBoy: /<Mascot [^>]*size=\{MASCOT_STATE\}/.test(sablonGovde(web, "StateBody")) ? sablonSabit(web, "MASCOT_STATE") : NaN,
+      bantBoy: /aside=\{[\s\S]{0,240}<Mascot [^>]*size=\{MASCOT_BAND\}/.test(webTur) ? sablonSabit(webMaskot, "MASCOT_BAND") : NaN,
+      durumBoy: /icon=\{<Mascot [^>]*size=\{MASCOT_STATE\}/.test(webTur) ? sablonSabit(webMaskot, "MASCOT_STATE") : NaN,
     },
   };
 })();
@@ -8923,9 +8934,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *    ise `celebrate` ve Android baştan beri kipe `celebrate` diyor. Ad
    *    Android'in adina gecti (dokuz cagri yeri).
    *
+   * 2026-09-18'DEN BERI KIP LISTESI KISA: animasyon yalniz Ogren sekmesinin
+   * gunluk turunda (Samet'in karari). `sleep`, `think` ve `wave` kiplerinin
+   * cagrilani kalmadi; klipler `assets-archive/mascot/` altina alindi (silinmedi)
+   * ve iki platformun kip haritasindan cikti. Kutlama pop'unun rastgele kumesi
+   * de hizalandi.
+   *
    * Webde fazladan duran kipler belgeli: `wow` klipsiz bir TAKMA AD
-   * (lookaround'u gosteriyor, cagrilani da yok), `dance` ve `peek` ise webin
-   * kendi serbest yuzeylerinde (maskot patlamasi, kenardan dikizleme). */
+   * (lookaround'u gosteriyor) ve `dance` webin kutlama kumesinde (klibi
+   * mobile hic kopyalanmadi). */
   {
     const webMood = sil(read("src/components/mascot.tsx"));
     const mobMood = sil(read("mobile/src/ui/Mascot.tsx"));
@@ -8939,7 +8956,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Once SAYI: kip listesi okunamazsa kumeler bos kalir ve esit gorunur. */
     sameList(
       "maskot kip listesi okunuyor",
-      ["web=" + (webKipler.size >= 8 ? "okundu" : "OKUNAMADI:" + webKipler.size), "mobil=" + (mobClip.size >= 7 ? "okundu" : "OKUNAMADI:" + mobClip.size)],
+      ["web=" + (webKipler.size >= 7 ? "okundu" : "OKUNAMADI:" + webKipler.size), "mobil=" + (mobClip.size >= 5 ? "okundu" : "OKUNAMADI:" + mobClip.size)],
       ["web=okundu", "mobil=okundu"],
       "bulunan",
       "beklenen",
@@ -8970,8 +8987,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Webde fazla duran kipler SEBEBIYLE yazili; liste bayatlamiyor. */
     const WEBDE_FAZLA = new Map([
       ["wow", "klipsiz TAKMA AD: lookaround'u gosteriyor, cagrilani da yok"],
-      ["dance", "maskot patlamasinin rastgele kiplerinden (`mascot-pop`) - mobilde o yuzey yok"],
-      ["peek", "kenardan dikizleme (`mascot-fx`, WP-66) - mobilde karsiligi `AmbientPeek` ve kendi klibi yok"],
+      ["dance", "maskot patlamasinin rastgele kiplerinden (`mascot-pop`) - klibi mobile hic kopyalanmadi"],
     ]);
     const fazla = [...webKipler].filter((k) => !mobClip.has(k) && !WEBDE_FAZLA.has(k)).sort();
     sameList(
@@ -8990,17 +9006,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* `think` DOSYASI GERCEKTEN ORADA ve webinkiyle ayni boyutta. */
+    /* ARSIVLENEN KLIPLER: silinmedi, yayindan cikti.
+     *
+     * Kip haritasindan cikan klip metro tarafindan paketlenmiyor ve `public/`
+     * disinda kalinca deploy'a girmiyor - ama DOSYA duruyor, cunku uretim
+     * hatti tek seferlikti. Kapi iki yone de bakiyor: klip arsivde var ve iki
+     * platformun yayin dizinlerinde YOK. Biri geri konursa (ya da arsiv
+     * silinirse) denetim soyluyor. */
     const boy = (yol) => {
       const url = new URL("../" + yol, import.meta.url);
       return existsSync(url) ? readFileSync(url).length : -1;
     };
+    const ARSIV = ["sleep", "think", "wave"];
     sameList(
-      "dusunme klibi mobilde de var",
-      ["mobil=" + boy("mobile/src/assets/mascot/think.webp")],
-      ["mobil=" + boy("public/anim/think.webp")],
-      "mobil",
-      "web",
+      "arsivlenen klipler yayinda degil",
+      ARSIV.flatMap((k) => [
+        k + " arsivde=" + (boy(`assets-archive/mascot/${k}.webp`) > 0 ? "var" : "YOK"),
+        k + " mobilde=" + (boy(`mobile/src/assets/mascot/${k}.webp`) > 0 ? "VAR" : "yok"),
+        k + " webde=" + (boy(`public/anim/${k}.webp`) > 0 ? "VAR" : "yok"),
+      ]),
+      ARSIV.flatMap((k) => [k + " arsivde=var", k + " mobilde=yok", k + " webde=yok"]),
+      "bulunan",
+      "beklenen",
     );
 
     /* KOC BALONLARI: eslesen her dosya cifti, ayni SIRADA ayni an ve ayni boy.
@@ -9020,7 +9047,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * Olcu dosya CIFTI uzerinden, cunku balonun kimligi `moment` ve ayni
      * `moment` ikiliyi (`exam_pass`/`exam_fail`) iki ayri ekranda da
      * kullaniyor - tek basina anahtar olamiyor. Sayi olcusu de var: eslestirme
-     * bozulup listeler bosalirsa "fark yok" bos bir dogru olurdu. */
+     * bozulup listeler bosalirsa "fark yok" bos bir dogru olurdu.
+     *
+     * 2026-09-18: BALON ARTIK YALNIZ TURDA. Balon Erdi'yi ciziyor ve animasyon
+     * yalniz gunluk turda kaldi (bkz. 288 basligi). Sinav ve rol yapma
+     * ekranlari balonun CUMLESINI koruyor, maskotunu birakti: ortak
+     * `CoachLine` (mobil `ui/CoachLine`, web `components/coach-line`). Cumle
+     * animasyon degil ICERIK - kirk cumlelik tablo sozlukte (`coach.*`) ve
+     * "hazirsan baslayalim" demek ekranin isine yariyor. Kapi ikisini ayri
+     * ayri olcuyor: balon turda VAR ve sinavlarda YOK; cumle her cifte ayni
+     * anlarla ve ayni tarafta. */
     {
       const CIFT = [
         ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
@@ -9052,16 +9088,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         }
         return out;
       };
+      /* Maskotsuz cumleler: `size` almiyorlar, kimlikleri yalniz an. */
+      const cizgiler = (yol) => {
+        const src = sil(read(yol));
+        const out = [];
+        for (const m of src.matchAll(/<CoachLine\b/g)) {
+          const kes = acilisSonu(src.slice(m.index));
+          if (kes < 0) continue;
+          const etiket = src.slice(m.index, m.index + kes + 1);
+          const anlar = [...etiket.matchAll(/"(\w+)"/g)]
+            .map((x) => x[1])
+            .filter((x) => /^(exam_intro|exam_pass|exam_fail|weak_done)$/.test(x))
+            .sort();
+          out.push(anlar.join("+") || "AN YOK");
+        }
+        return out;
+      };
       const mobListe = CIFT.flatMap(([ad, , m]) => balonlar(m).map((x) => ad + ":" + x));
       const webListe = CIFT.flatMap(([ad, w]) => balonlar(w).map((x) => ad + ":" + x));
+      /* BALON YALNIZ TURDA: tur ozeti ciftinde var, oteki uc ciftte yok. */
       sameList(
-        "koc balonu sayisi",
-        ["mobil=" + (mobListe.length >= 5 ? "5+" : mobListe.length), "web=" + (webListe.length >= 5 ? "5+" : webListe.length)],
-        ["mobil=5+", "web=5+"],
+        "koc balonu yalniz gunluk turda",
+        CIFT.flatMap(([ad, w, m]) => [
+          ad + " mobil=" + balonlar(m).length,
+          ad + " web=" + balonlar(w).length,
+        ]),
+        CIFT.flatMap(([ad]) => {
+          const beklenen = ad === "tur ozeti" ? 1 : 0;
+          return [ad + " mobil=" + beklenen, ad + " web=" + beklenen];
+        }),
         "bulunan",
         "beklenen",
       );
       sameList("koc balonlarinin ani ve boyu", mobListe, webListe, "mobil", "web");
+      /* CUMLE: sinav ve rol yapma ciftlerinde, iki tarafta ayni anlarla. */
+      const mobCizgi = CIFT.flatMap(([ad, , m]) => cizgiler(m).map((x) => ad + ":" + x));
+      const webCizgi = CIFT.flatMap(([ad, w]) => cizgiler(w).map((x) => ad + ":" + x));
+      sameList(
+        "maskotsuz koc cumlesi sayisi",
+        ["mobil=" + (mobCizgi.length >= 4 ? "4+" : mobCizgi.length), "web=" + (webCizgi.length >= 4 ? "4+" : webCizgi.length)],
+        ["mobil=4+", "web=4+"],
+        "bulunan",
+        "beklenen",
+      );
+      sameList("koc cumlelerinin anlari", mobCizgi, webCizgi, "mobil", "web");
 
       /* AYNI CIFTTE ORTAK IKONUN BOYU DA AYNI.
        *
@@ -9182,9 +9252,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         for (const f of yuruTsx(kok)) {
           const src = sil(read(f));
           for (const m of src.matchAll(/<Mascot\b[^>]*?\/>/g)) {
-            const kip = (m[0].match(/mood="(\w+)"/) ?? [])[1];
-            if (!kip) continue;
-            const boy = (m[0].match(/size=\{(\d+)\}/) ?? [])[1] ?? "?";
+            /* KIP DINAMIK OLABILIR. Ilk yazim yalniz `mood="celebrate"` gibi
+               DUZ yazilmis kipleri okuyordu; sablon yuvalarina gecince (2026-09-18)
+               turun iki bandi da ucluk kosula dondu ve tarama ikisini birden
+               kaybediyor, ortak yuzey sayisi 2'den 1'e dusuyordu. Dinamik kipin
+               kimligi ifadenin METNI DEGIL, icindeki klip KUMESI: iki platform
+               ayni kosulu ayri degisken adlariyla yaziyor (`pct` / `accuracy`)
+               ve ad farki ayrisma sayilmamali. */
+            const duz = (m[0].match(/mood="(\w+)"/) ?? [])[1];
+            const ifade = (m[0].match(/mood=\{([^}]*(?:\}[^}]*)*?)\}\s/) ?? [])[1];
+            const kip = duz
+              ? duz
+              : ifade
+                ? "{" + [...new Set([...ifade.matchAll(/"(\w+)"/g)].map((x) => x[1]))].sort().join(",") + "}"
+                : null;
+            if (!kip || kip === "{}") continue;
+            const boy =
+              (m[0].match(/size=\{(\d+)\}/) ?? [])[1] ??
+              (/size=\{MASCOT_BAND\}/.test(m[0]) ? String(SABLON[kok.startsWith("mobile") ? "mobil" : "web"].bantBoy)
+               : /size=\{MASCOT_STATE\}/.test(m[0]) ? String(SABLON[kok.startsWith("mobile") ? "mobil" : "web"].durumBoy)
+               : "?");
             /* Yuzeyin kimligi: etiketten SONRAKI ilk sozluk anahtari. */
             const pencere = src.slice(m.index, m.index + 700);
             const k = (pencere.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
@@ -9217,10 +9304,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const webY = tablo("src");
       const mobY = tablo("mobile/src");
       const ortak = [...webY.keys()].filter((k) => mobY.has(k)).sort();
+      /*
+        MASKOT YALNIZ GUNLUK TURDA (2026-09-18, Samet'in karari).
+        Animasyon otuzdan fazla yuzeyde oynuyordu; artik ogrenmenin
+        KENDISINDE kaliyor. Kapi dosya duzeyinde: Erdi'yi cizen her dosya
+        asagidaki listede olmak zorunda, iki platformda da. Yeni bir sonuc
+        ekrani ya da durum sablonu maskotu geri cagirirsa denetim soyluyor —
+        gerekcesi `ui/Mascot` ve `components/mascot` dosya baslarinda yazili.
+
+        Listenin karsiliklari birebir: kutlama pop'u, koc balonu, turun kendisi
+        ve tur kartlari.
+      */
+      const IZINLI = {
+        web: ["src/components/mascot-pop.tsx", "src/components/coach-bubble.tsx", "src/components/session-player.tsx", "src/components/games/"],
+        mobil: ["mobile/src/ui/MascotPop.tsx", "mobile/src/ui/CoachBubble.tsx", "mobile/src/screens/GameScreen.tsx", "mobile/src/game/rounds.tsx"],
+      };
+      const cizenler = (kok) => {
+        const out = [];
+        for (const f of yuruTsx(kok)) {
+          if (/<Mascot\b/.test(sil(read(f)))) out.push(f);
+        }
+        return out.sort();
+      };
+      const kacak = (kok, izin) => cizenler(kok).filter((f) => !izin.some((p) => f.startsWith(p)));
+      sameList(
+        "maskot yalniz gunluk turda",
+        [
+          "web kacak=" + (kacak("src", IZINLI.web).join("+") || "yok"),
+          "mobil kacak=" + (kacak("mobile/src", IZINLI.mobil).join("+") || "yok"),
+          /* Sayi da olculuyor: tarama bozulup liste bosalirsa "kacak yok" bos
+             bir dogru olurdu. */
+          "web cizen=" + (cizenler("src").length >= 5 ? "5+" : cizenler("src").length),
+          "mobil cizen=" + (cizenler("mobile/src").length >= 4 ? "4+" : cizenler("mobile/src").length),
+        ],
+        ["web kacak=yok", "mobil kacak=yok", "web cizen=5+", "mobil cizen=4+"],
+        "bulunan",
+        "beklenen",
+      );
       sameList(
         "eslesen maskot yuzeyi sayisi",
-        ["ortak=" + (ortak.length >= 7 ? "7+" : ortak.length)],
-        ["ortak=7+"],
+        ["ortak=" + (ortak.length >= 2 ? "2+" : ortak.length)],
+        ["ortak=2+"],
         "bulunan",
         "beklenen",
       );

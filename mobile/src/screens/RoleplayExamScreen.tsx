@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
-import { CoachBubble } from "../ui/CoachBubble";
+import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { ensureLessons, findLesson, lessonLevelOf, type Lesson } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
@@ -236,7 +236,7 @@ export function RoleplayExamScreen() {
         top={<FlowTopBar back onClose={() => nav.goBack()} />}
         actions={<FlowActions primary={{ label: tx("item.go_back"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody mood="sad" alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
+        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }
@@ -313,7 +313,7 @@ export function RoleplayExamScreen() {
       >
         {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
             sinav girisiyle de ayni (`ExamScreen` 48). */}
-        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoachLine moment="exam_intro" />
         <CoverBody
           icon={ChatIcon}
           tint={colors.primary}
@@ -346,7 +346,7 @@ export function RoleplayExamScreen() {
          web ayni dalda `think` ciziyor. Ilerleme rolu ve mesgul durumu kapta. */
       <FlowScreen center>
         <View accessibilityRole="progressbar" accessibilityState={{ busy: true }}>
-          <StateBody mood="think" title={tx("item.mono_scoring")} body={tx("rpexam.scoring_note", { n: userTurns })}>
+          <StateBody title={tx("item.mono_scoring")} body={tx("rpexam.scoring_note", { n: userTurns })}>
             <ActivityIndicator color={colors.primary} />
           </StateBody>
         </View>
@@ -366,7 +366,7 @@ export function RoleplayExamScreen() {
         center
         actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} tertiary={{ label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody alert mood="sad" title={tx("rpexam.cant_run")} body={!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")} />
+        <StateBody alert title={tx("rpexam.cant_run")} body={!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")} />
       </FlowScreen>
     );
   }
@@ -406,11 +406,10 @@ export function RoleplayExamScreen() {
           figure={result ? formatPercent(overall) : null}
           sub={`${lesson.title} · ${tx("lessonp.n_turns", { n: userTurns })}`}
           /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          mood={result ? null : "sad"}
           pill={result ? { text: tx("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
           quiet={!passed}
         />
-        {result ? <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: overall, level: lesson.level }} size={56} /> : null}
+        {result ? <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: overall, level: lesson.level }} /> : null}
         {result ? (
           <StatRow items={[
             { value: String(userTurns), label: tx("rpexam.stat_turns") },

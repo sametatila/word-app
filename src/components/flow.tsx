@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Mascot, type Mood as MascotMood } from "@/components/mascot";
 import { Confetti } from "@/components/celebrate";
 
 /**
@@ -18,12 +17,8 @@ import { Confetti } from "@/components/celebrate";
  *   Sonuç  — band (tür · başlık · ana sayı · maskot) → en çok üç sayı →
  *            notlar → ayrıntı kartları → tek birincil düğme
  *   Etap   — sonucun küçük hâli (bandın dibinde etap şeridi)
- *   Durum  — maskot · başlık · tek cümle · tek çıkış yolu
+ *   Durum  — (isteğe bağlı ikon) · başlık · tek cümle · tek çıkış yolu
  */
-
-/** Maskot boyları: üç sabit ölçü (katman 40/48, bant 80, kapak/durum 96). */
-export const MASCOT_BAND = 80;
-export const MASCOT_STATE = 96;
 
 /** Şablonların sütunu — kartla aynı genişlik. */
 export function FlowColumn({ children, celebrate = false, className = "" }: { children: ReactNode; celebrate?: boolean; className?: string }) {
@@ -94,7 +89,6 @@ export function ResultHero({
   title,
   figure,
   sub,
-  mood,
   pill,
   quiet = false,
   segments,
@@ -105,12 +99,16 @@ export function ResultHero({
   title: ReactNode;
   figure?: ReactNode;
   sub?: ReactNode;
-  mood?: MascotMood | null;
   pill?: { text: ReactNode; tone?: PillTone } | null;
   quiet?: boolean;
   segments?: { done: number; total: number } | null;
   live?: boolean;
-  /** Maskotun yerine çizilecek öğe (koç balonu gibi). */
+  /**
+   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Erdi'yi kendisi
+   * çizerdi; animasyon artık yalnız günlük turda olduğu için bu şablon
+   * maskotu tanımıyor (bkz. `components/mascot` dosya başı). Turun sonuç
+   * bandı kendi Erdi'sini buraya veriyor, öteki sonuç ekranları boş bırakıyor.
+   */
   aside?: ReactNode;
 }) {
   const pillStyle = !pill
@@ -142,7 +140,7 @@ export function ResultHero({
             </span>
           ) : null}
         </div>
-        {aside ?? (mood ? <Mascot mood={mood} size={MASCOT_BAND} pinned className="shrink-0" /> : null)}
+        {aside}
       </div>
       {segments && segments.total > 1 ? (
         <div className="mt-3 flex gap-1" aria-hidden>
@@ -281,10 +279,10 @@ export function CoverBody({
 }
 
 /** Durum — boş, bitti, açılamadı, giriş gerekli: maskot · başlık · tek cümle. */
-export function StateBody({ mood, title, body, icon, children, alert = false }: { mood?: MascotMood | null; title: ReactNode; body?: ReactNode; icon?: ReactNode; children?: ReactNode; alert?: boolean }) {
+export function StateBody({ title, body, icon, children, alert = false }: { title: ReactNode; body?: ReactNode; icon?: ReactNode; children?: ReactNode; alert?: boolean }) {
   return (
     <div role={alert ? "alert" : "status"} className="card flex flex-col items-center gap-2 px-4 py-7 text-center">
-      {mood ? <Mascot mood={mood} size={MASCOT_STATE} className="mx-auto" /> : icon}
+      {icon}
       <h2 className="mt-1 text-h2">{title}</h2>
       {body ? <p className="muted max-w-[34ch] text-body">{body}</p> : null}
       {children ? <div className="mt-3 w-full">{children}</div> : null}

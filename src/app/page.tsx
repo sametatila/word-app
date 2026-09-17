@@ -3,7 +3,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { getAccountUserId } from "@/lib/auth/server";
 import { SignOutLink } from "@/components/sign-out-link";
 import { Reveal } from "@/components/reveal";
-import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
 import {
   CardsIcon,
@@ -129,13 +128,6 @@ export default async function Home() {
             <span className="muted inline-block rounded-full border px-3 py-1 text-caption" style={{ borderColor: "var(--border)" }}>
               {t("land.badge")}
             </span>
-          </Reveal>
-          {/* Erdi başlığın üstünde ve büyük. Karakter uygulamanın her kapanış
-              ekranında, oyun içindeki sonuç şeridinde ve seri kutlamasında var
-              ama ilk karşılaşılan yerde — ana sayfada — hiç yoktu; yani
-              uygulamayı açmadan önce kimse onu görmüyordu. */}
-          <Reveal delay={0.04}>
-            <Mascot mood="wave" size={132} className="mx-auto mt-6" />
           </Reveal>
           <Reveal delay={0.06}>
             <h1 className="mt-2 text-4xl font-black leading-tight sm:text-6xl">

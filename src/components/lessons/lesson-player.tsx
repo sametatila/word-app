@@ -1677,7 +1677,6 @@ export function LessonPlayer({
                 title={t(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
                 figure={scoredTotal ? `${correctCount}/${scoredTotal}` : null}
                 sub={t("lessonp.n_turns", { n: userTurns })}
-                mood={unfinished ? "sad" : pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "sad"}
                 quiet={unfinished}
                 pill={unfinished ? { text: t("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
               />

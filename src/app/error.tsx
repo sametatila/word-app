@@ -31,7 +31,7 @@ export default function ErrorPage({
   return (
     <div className="flex min-h-dvh items-center px-5">
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("crash.title")} body={t("crash.body")}>
+        <StateBody alert title={t("crash.title")} body={t("crash.body")}>
           {error.digest ? (
             <p className="muted mb-3 text-caption">
               {t("err.code")} <code>{error.digest}</code>

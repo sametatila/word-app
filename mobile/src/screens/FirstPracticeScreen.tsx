@@ -9,7 +9,6 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, CheckIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
 import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { track } from "../lib/track";
@@ -90,9 +89,7 @@ export function FirstPracticeScreen() {
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{w.exTr}</Text>
             </View>
           </View>
-        ) : (
-          <Mascot mood="idle" size={96} />
-        )}
+        ) : null}
       </View>
 
       <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.primary, 10)]}>

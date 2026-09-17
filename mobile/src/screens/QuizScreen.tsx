@@ -115,7 +115,7 @@ export function QuizScreen() {
           /* DURUM ŞABLONU: soru yoksa boş durum (düşünen maskot) ve tek çıkış.
              Web aynı dalı `ImmersionQuizPlayer`da çiziyor. */
           <View style={{ marginTop: spacing.md, gap: spacing.md }}>
-            <StateBody mood="think" alert={packFailed} title={packFailed ? t("content.couldn_t_load") : t("quiz.this_unit_has_no_questions_yet")} body={packFailed ? t("social.err_offline") : null} />
+            <StateBody alert={packFailed} title={packFailed ? t("content.couldn_t_load") : t("quiz.this_unit_has_no_questions_yet")} body={packFailed ? t("social.err_offline") : null} />
             <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
           </View>
         ) : (
@@ -137,7 +137,6 @@ export function QuizScreen() {
               title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
               figure={`${correct}/${total}`}
               sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}
-              mood={passed ? "celebrate" : "sad"}
               quiet={!passed}
               pill={passed ? { text: t("quiz.pill_marked"), tone: "ok" } : { text: t("quiz.pill_open"), tone: "bad" }}
             />

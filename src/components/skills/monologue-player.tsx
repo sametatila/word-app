@@ -376,7 +376,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "scoring" ? (
         /* PUANLANIYOR: durum şablonu (düşünen maskot), mobil `MonologueBody` ile aynı. */
         <div className="mt-3" aria-busy>
-          <StateBody mood="think" title={t("item.mono_scoring")} />
+          <StateBody title={t("item.mono_scoring")} />
         </div>
       ) : null}
 

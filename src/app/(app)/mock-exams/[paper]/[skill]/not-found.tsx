@@ -19,7 +19,7 @@ export default async function MockPaperNotFound() {
   return (
     <div className="px-4 py-6">
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("mockexam.paper_missing")} body={t("mockexam.paper_missing_sub")}>
+        <StateBody alert title={t("mockexam.paper_missing")} body={t("mockexam.paper_missing_sub")}>
           <FlowActions primary={{ label: t("mockexam.back_to_list"), href: "/mock-exams" }} />
         </StateBody>
       </FlowColumn>

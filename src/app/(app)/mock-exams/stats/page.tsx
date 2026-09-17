@@ -71,7 +71,7 @@ export default async function MockStatsPage() {
       {/* Okuma hatası sayfanın bütün gövdesinin yerine geçiyor: DURUM şablonu
           (components/flow) — üzgün maskot, `role="alert"`, tek çıkış yolu. */}
       {!data ? (
-        <StateBody alert mood="sad" title={t("common.connection_failed")} body={t("session.load_failed_sub")}>
+        <StateBody alert title={t("common.connection_failed")} body={t("session.load_failed_sub")}>
           <FlowActions primary={{ label: t("common.try_again"), href: "/mock-exams/stats" }} />
         </StateBody>
       ) : data.attempts === 0 ? (

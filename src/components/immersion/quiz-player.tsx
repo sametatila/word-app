@@ -119,7 +119,7 @@ export function ImmersionQuizPlayer({
            bir sayfa değil, henüz yazılmamış sorulardı. Mobil `QuizScreen`
            aynı dalda aynı cümleyi ve aynı çıkışı gösteriyor. */
         <FlowColumn>
-          <StateBody mood="think" title={t("quiz.this_unit_has_no_questions_yet")}>
+          <StateBody title={t("quiz.this_unit_has_no_questions_yet")}>
             <FlowActions primary={{ label: t("quiz.back_to_path"), href: "/immersion" }} />
           </StateBody>
         </FlowColumn>
@@ -138,7 +138,6 @@ export function ImmersionQuizPlayer({
             title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
             figure={`${score}/${questions.length}`}
             sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}
-            mood={passed ? "celebrate" : "sad"}
             quiet={!passed}
             pill={passed ? { text: t("quiz.pill_marked"), tone: "ok" } : { text: t("quiz.pill_open"), tone: "bad" }}
           />

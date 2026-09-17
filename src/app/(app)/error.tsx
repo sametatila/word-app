@@ -42,7 +42,6 @@ export default function AppError({
     <FlowColumn>
       <StateBody
         alert
-        mood="sad"
         title={t("crash.title")}
         body={t("crash.body")}
       >

@@ -51,13 +51,9 @@ export type Mood =
      ölçüler kip adını okuyor. */
   | "celebrate"
   | "sad"
-  | "think"
   | "wow"
-  | "sleep"
   | "thumbsup"
-  | "dance"
-  | "wave"
-  | "peek";
+  | "dance";
 
 /*
   Duygu → klip. Çoğu klip dikey tuvalde (2:3); dans geniş tuvalde üretildi
@@ -65,19 +61,22 @@ export type Mood =
   "wow" için ayrı klip yok: tetikte etrafı tarayan lookaround, şaşkınlığın
   "bu da ne?" hâlini zaten taşıyor.
 */
+/**
+ * Erdi boyları — eskiden `components/flow` içindeydi ve akış şablonları
+ * maskotu kendisi çizdiği için oraya aitti. Animasyon yalnız günlük turda
+ * kaldığı için ölçüler de animasyonun yanına taşındı.
+ */
+export const MASCOT_BAND = 80;
+export const MASCOT_STATE = 96;
+
 const CLIP: Record<Mood, { file: string; aspect: number }> = {
   idle: { file: "lookaround", aspect: 2 / 3 },
   happy: { file: "happy", aspect: 2 / 3 },
   celebrate: { file: "celebrate", aspect: 2 / 3 },
   sad: { file: "sad", aspect: 2 / 3 },
-  think: { file: "think", aspect: 2 / 3 },
   wow: { file: "lookaround", aspect: 2 / 3 },
-  sleep: { file: "sleep", aspect: 2 / 3 },
   thumbsup: { file: "thumbsup", aspect: 2 / 3 },
   dance: { file: "dance", aspect: 194 / 228 },
-  wave: { file: "wave", aspect: 2 / 3 },
-  /* Kenardan dikizleme klibi (mascot-fx ile aynı dosya) — "bak ne oldu" anı (WP-66). */
-  peek: { file: "peek", aspect: 2 / 3 },
 };
 
 /*
@@ -122,7 +121,7 @@ const IOS =
 const SWAP_MARGIN_MS = IOS ? 260 : 0;
 
 /** Idle rotasyonuna GEÇMEYEN duygular — gerekçe bileşen içindeki yorumda. */
-const STICKY: Mood[] = ["sad", "sleep"];
+const STICKY: Mood[] = ["sad"];
 
 export function Mascot({
   mood = "idle",

@@ -18,7 +18,7 @@ import { recognitionCtor, requestMicrophone, type Recognition } from "@/componen
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "@/components/flow";
-import { CoachBubble } from "@/components/coach-bubble";
+import { CoachLine } from "@/components/coach-line";
 import { track } from "@/lib/track";
 import { formatPercent } from "@/lib/i18n/dict";
 import { reducedMotion } from "@/lib/fx";
@@ -250,7 +250,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
          kurallar · kalıplar kartı · Başla / Vazgeç. Kurallar "·" ile başlayan
          soluk satırlardı ve kalıplar o listenin dördüncü "kuralı" gibi okunuyordu. */
       <FlowColumn>
-        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoachLine moment="exam_intro" />
         <CoverBody
           icon={<ChatIcon size={28} />}
           tint="var(--color-brand-500)"
@@ -287,7 +287,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
          `ActivityIndicator` çiziyor; webde bekleme hareketsizdi. */
       <FlowColumn>
         <div aria-busy="true">
-          <StateBody mood="think" title={t("item.mono_scoring")} body={t("rpexam.scoring_note", { n: userTurns })}>
+          <StateBody title={t("item.mono_scoring")} body={t("rpexam.scoring_note", { n: userTurns })}>
             <span
               aria-hidden
               className="mx-auto block h-6 w-6 animate-spin rounded-full border-2 border-t-transparent"
@@ -308,7 +308,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
          kaybettiriyordu. İzin verilmediyse servis kapalı DEĞİL: sebep kendi
          cümlesiyle söyleniyor (bkz. `consentOff`). Hata `alert` ile duyuruluyor. */
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("rpexam.cant_run")} body={!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")} />
+        <StateBody alert title={t("rpexam.cant_run")} body={!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")} />
         <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} tertiary={{ label: t("lessonp.back_to_conversation"), href: `/lessons/${lesson.id}` }} />
       </FlowColumn>
     );
@@ -346,11 +346,10 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             </>
           }
           /* Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          mood={null}
           pill={{ text: t("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
           quiet={!passed}
         />
-        <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} />
+        <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: result.score.overall, level: lesson.level }} />
         <StatRow
           items={[
             { value: String(userTurns), label: t("rpexam.stat_turns") },

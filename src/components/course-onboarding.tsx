@@ -5,7 +5,6 @@ import { apiFetch } from "@/lib/api-fetch";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mascot, type Mood } from "@/components/mascot";
 import { defaultVoice } from "@/lib/tts/voices";
 import { AlertIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
@@ -55,7 +54,7 @@ const STEP_KEYS = ["welcome", "lang", "course", "level", "goal"] as const;
 type StepKey = (typeof STEP_KEYS)[number];
 
 type Option = { key: string; label: string; sub?: string };
-type Step = { key: StepKey; mood: Mood; title: string; subtitle: string; options?: Option[] };
+type Step = { key: StepKey; title: string; subtitle: string; options?: Option[] };
 
 /**
  * Günlük hedef — mobil onboarding'in son adımıyla AYNI üç seçenek ve aynı
@@ -128,7 +127,6 @@ export function CourseOnboarding({
   const steps: Step[] = [
     {
       key: "welcome",
-      mood: "wave",
       title: t("onboarding.welcome_to_lernomi"),
       subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
     },
@@ -136,14 +134,12 @@ export function CourseOnboarding({
       // ANADİL, kurstan ÖNCE: kurs listesi ve sonraki adımların metni buna
       // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok.
       key: "lang",
-      mood: "idle",
       title: t("onboarding.which_language_should_we_teach"),
       subtitle: t("onboarding.lessons_and_hints_will_be_in"),
       options: offeredNativeLangs().map((l) => ({ key: l, label: LANG_LABEL[l] })),
     },
     {
       key: "course",
-      mood: "think",
       title: t("onboarding.which_course_shall_we_start_with"),
       subtitle: t("onboarding.languages_available_now"),
       // Kurs kayıt defterinden türüyor (lib/courses). Anadil elenir (kimse
@@ -157,7 +153,6 @@ export function CourseOnboarding({
     },
     {
       key: "level",
-      mood: "idle",
       title: t("onboarding.where_shall_we_start"),
       subtitle: t("onboarding.you_can_start_at_level_that"),
       options: [
@@ -177,7 +172,6 @@ export function CourseOnboarding({
     },
     {
       key: "goal",
-      mood: "celebrate",
       title: t("onboarding.what_s_your_daily_goal"),
       subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
       options: PACES.map((p) => ({
@@ -351,12 +345,9 @@ export function CourseOnboarding({
             exit={{ opacity: 0, x: -16 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex items-start gap-3">
-              <Mascot mood={step.mood} size={72} stage="onboarding" />
-              <div>
-                <h1 className="text-h3">{step.title}</h1>
-                <p className="muted mt-1 text-body leading-relaxed">{step.subtitle}</p>
-              </div>
+            <div>
+              <h1 className="text-h3">{step.title}</h1>
+              <p className="muted mt-1 text-body leading-relaxed">{step.subtitle}</p>
             </div>
 
             {step.options ? (

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Mascot } from "@/components/mascot";
 import { QuestCard } from "@/components/quest-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
@@ -69,9 +68,7 @@ export type LearnHubData = {
 
 export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
-  // `xp` kart kaldırıldıktan sonra da lazım: maskotun uyku hâli "puanı var ama
-  // serisi kırık" ayrımını buradan yapıyor (aşağıda).
-  const { xp, streak, dailyGoal, reviewsToday, hasToday, dueCount, newLeft } = data;
+  const { dailyGoal, reviewsToday, hasToday, dueCount, newLeft } = data;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 
   return (
@@ -124,12 +121,6 @@ export function LearnHub({ data }: { data: LearnHubData }) {
               {t("common.start")} <ArrowRightIcon size={18} />
             </span>
           </div>
-          {/*
-            Erdi'nin üç hâli: seri duruyorsa keyfi yerinde, seri KIRILMIŞSA
-            uyuyor, hiç oynamamışsa el sallıyor. Ayrım birikimde — puanı olup
-            serisi kopmuş kişi dönen kullanıcıdır, uyku klibi onun resmi.
-          */}
-          <Mascot mood={streak > 0 ? "happy" : xp > 0 ? "sleep" : "idle"} size={66} className="shrink-0" />
         </div>
 
         {/*

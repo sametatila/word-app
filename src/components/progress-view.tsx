@@ -5,7 +5,6 @@ import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
 import { BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
@@ -192,7 +191,6 @@ export function ActivityProgress({
             </span>
           ) : null}
         </span>
-        <Mascot mood={streak > 0 ? "happy" : "idle"} size={58} />
       </div>
 
       {/* Dört karo mobildekiyle aynı: öğrenilen kelime, toplam XP, bu hafta

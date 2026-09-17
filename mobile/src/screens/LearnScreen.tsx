@@ -15,7 +15,6 @@ import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
 import { supportsMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
-import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
 import { FriendPulse } from "../social/FriendPulse";
@@ -72,7 +71,6 @@ export function LearnScreen() {
   // yine çiziliyor: ekran o zaman "bu seviyede sınav yok" diyor.
   const exams = supportsMockExams(currentCourseId());
   const level = me?.level ?? "A1";
-  const streak = me?.streak ?? 0;
   const dailyGoal = me?.dailyGoal ?? 0;
   const reviewsToday = me?.reviewsToday ?? 0;
   const dueCount = me?.dueCount ?? 0;
@@ -130,7 +128,6 @@ export function LearnScreen() {
               <ArrowRightIcon color={colors.primaryText} size={18} />
             </View>
             </View>
-            <Mascot mood={streak > 0 ? "happy" : (me?.xp ?? 0) > 0 ? "sleep" : "wave"} size={66} />
           </View>
           {/* Hedef şeridi kahramanın İÇİNDE: veri gelmeden de aynı yeri kaplar,
               yoksa kart yükleme sonrası uzayıp altındaki her şeyi aşağı itiyordu. */}

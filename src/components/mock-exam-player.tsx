@@ -407,7 +407,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       return (
         <FlowColumn>
           <div aria-busy>
-            <StateBody mood="think" title={t("mockexam.scoring")}>
+            <StateBody title={t("mockexam.scoring")}>
               <div className="h-2 animate-pulse rounded-full surface-2" />
             </StateBody>
           </div>
@@ -1229,7 +1229,6 @@ function Result({
           title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}
           figure={graded ? formatPercent(score.pct, lang) : null}
           sub={graded ? t("mockexam.result_sub", { correct: score.correct, total: score.total, pct: MOCK_PASS_PCT }) : t("mockexam.not_scored")}
-          mood={graded ? (score.passed ? "celebrate" : "sad") : "happy"}
           quiet={graded && !score.passed}
           pill={need > 0 ? { text: t("mockexam.short_by", { n: need }), tone: "bad" } : null}
         />

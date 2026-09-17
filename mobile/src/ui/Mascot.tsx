@@ -3,16 +3,28 @@ import { Image, View } from "react-native";
 import { useStageOwner } from "../lib/mascotStage";
 
 /**
- * Erdi (maskot) — web ile aynı klipler (animasyonlu WebP). Android'de Fresco
- * animated-webp eklentisiyle oynar. Klipler 2:3 oranında; boy = en × 1.5.
- * Duruma göre ruh hâli: idle / happy / thumbsup (doğru) / sad (yanlış) /
- * celebrate (kutlama) / wave (selam) / sleep (hatırlatma) / think (düşünme).
+ * Erdi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
+ * eklentisiyle oynar. Klipler 2:3 oranında; boy = en × 1.5.
  *
- * `think` SONRADAN GELDİ ve gelene kadar üç yüzey yanlış klip oynatıyordu.
- * Klip listesi `CLIP[mood] ?? CLIP.idle` ile okunuyor, yani olmayan bir kip
- * sessizce `idle`a düşüyor — sınav girişinde ve "bu oyuna kelime yok"
- * ekranında web düşünen maskotu çiziyor, Android etrafı tarayanı çiziyordu.
- * Dosya webin `public/anim/think.webp`si ile birebir (md5 aynı).
+ * ANİMASYON YALNIZ GÜNLÜK TURDA (2026-09-18, Samet'in kararı).
+ *
+ * Erdi otuzdan fazla yüzeyde oynuyordu: her sonuç bandı, her durum ekranı
+ * ("bulunamadı", "bağlantı yok"), sınav girişleri, seviye testi, yürüyüş
+ * modu, gelişim kartı, hata sınırı. Karar şu: animasyon öğrenmenin
+ * KENDİSİNDE kalır, ürünün geri kalanında durur. Kalan tek yer Öğren
+ * sekmesinin günlük turu — tur kartları (`game/rounds`), turun sonuç bandı,
+ * kutlama pop'u, ortam yürüyüşü ve koç balonu.
+ *
+ * KURAL: bu dosya (ve `MascotFx`, `MascotPop`, `CoachBubble`) yalnız
+ * `screens/GameScreen` ve `game/rounds` ağacından çağrılır. Akış şablonları
+ * (`ui/flow`) maskotu artık tanımıyor: sonuç bandı `aside` düğümü alıyor,
+ * durum gövdesi `icon` alıyor. Kapı: `check:parity` "maskot yalnız günlük
+ * turda" kuralı — yeni bir yüzey Erdi'yi çağırırsa denetim kırılır.
+ *
+ * Klip listesi ARŞİVLE BİRLİKTE DÜŞÜNÜLÜR: haritadan çıkan klip ikiliye
+ * girmiyor (metro yalnız `require` edileni paketliyor) ve dosyası
+ * `assets-archive/mascot/` altına taşınıyor — silinmiyor, geri getirmek bir
+ * satır (bkz. o dizindeki README).
  */
 const CLIP = {
   idle: require("../assets/mascot/idle-sit.webp"),
@@ -20,12 +32,18 @@ const CLIP = {
   thumbsup: require("../assets/mascot/thumbsup.webp"),
   sad: require("../assets/mascot/sad.webp"),
   celebrate: require("../assets/mascot/celebrate.webp"),
-  wave: require("../assets/mascot/wave.webp"),
-  sleep: require("../assets/mascot/sleep.webp"),
-  think: require("../assets/mascot/think.webp"),
 } as const;
 
 export type Mood = keyof typeof CLIP;
+
+/**
+ * Erdi boyları — eskiden `ui/flow` içindeydi ve akış şablonları maskotu
+ * kendisi çizdiği için oraya aitti. Animasyon yalnız günlük turda kaldığı
+ * için ölçüler de buraya, animasyonun yanına taşındı: `ui/flow` artık
+ * maskot diye bir şey tanımıyor.
+ */
+export const MASCOT_BAND = 80;
+export const MASCOT_STATE = 96;
 
 export function Mascot({
   mood = "idle",

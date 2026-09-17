@@ -1536,7 +1536,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "error")
     return (
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("walk.error_title")} body={t("walk.error_sub")} />
+        <StateBody alert title={t("walk.error_title")} body={t("walk.error_sub")} />
         {/* YERİNDE TEKRAR DENEME. Tek çıkış "Geri dön"dü: geçici bir ağ
             hatası kullanıcıyı yürüyüş modundan tamamen atıyordu -- oysa
             metnin kendisi "bağlantını kontrol edip tekrar dene" diyor.
@@ -1553,7 +1553,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "empty")
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("walkmode.done_no_more")} body={t("walkmode.done_no_more_sub")} />
+        <StateBody title={t("walkmode.done_no_more")} body={t("walkmode.done_no_more_sub")} />
         <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
       </FlowColumn>
     );
@@ -1561,7 +1561,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "unsupported")
     return (
       <FlowColumn>
-        <StateBody mood="sad" title={t("walk.unsupported_title")} body={t("walk.unsupported_sub")} />
+        <StateBody title={t("walk.unsupported_title")} body={t("walk.unsupported_sub")} />
         <FlowActions primary={{ label: t("common.go_back"), onClick: leave }} />
       </FlowColumn>
     );
@@ -1572,7 +1572,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   if (status === "denied")
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("walk.denied_title")} body={t("walk.denied_sub")} />
+        <StateBody title={t("walk.denied_title")} body={t("walk.denied_sub")} />
         <FlowActions
           primary={{ label: t("common.try_again"), onClick: () => void start(index) }}
           tertiary={{ label: t("common.go_back"), onClick: leave }}
@@ -1609,7 +1609,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       <FlowColumn>
         {status === "paused" ? (
           /* DURAKLAMA — durum şablonu (bekleniyor = düşünen maskot). */
-          <StateBody mood="think" title={t("walk.paused")} body={t("walk.paused_note")} />
+          <StateBody title={t("walk.paused")} body={t("walk.paused_note")} />
         ) : (
           /* KAPAK ŞABLONU — mobil `WalkModeScreen` kapağıyla aynı kural
              satırları (eski iki paragraflık tanıtım bunlara bölündü).
@@ -1684,7 +1684,6 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           title={t("walkmode.done_title")}
           figure={`${tally.correct}/${tally.total || 0}`}
           sub={t("walkmode.done_saved")}
-          mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"}
         />
         {tally.total > 0 ? (
           <StatRow

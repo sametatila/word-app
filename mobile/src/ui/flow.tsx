@@ -4,7 +4,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
 import { Card } from "./Card";
 import { PressableScale } from "./PressableScale";
-import { Mascot, type Mood } from "./Mascot";
 import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
 import { ArrowBackIcon, XIcon } from "./icons";
@@ -27,14 +26,10 @@ import { useTheme, spacing, radii, softShadow, soft, type Palette } from "../the
  *   Sonuç     — başlık bandı (tür · başlık · ana sayı · maskot) → en çok üç sayı →
  *               ayrıntı kartları → tek birincil düğme
  *   Etap      — sonucun küçük hâli: aynı band (etap şeridiyle), aynı sayı satırı
- *   Durum     — maskot · başlık · tek cümle · tek çıkış yolu
+ *   Durum     — (isteğe bağlı ikon) · başlık · tek cümle · tek çıkış yolu
  *
  * Web karşılığı `src/components/flow.tsx` — alanlar ve sıra birebir.
  */
-
-/** Maskot boyları: üç sabit ölçü (katman 40, bant 80, kapak/durum 96). */
-export const MASCOT_BAND = 80;
-export const MASCOT_STATE = 96;
 
 /** `hint`: düğmenin altında ikinci, küçük satır (ör. "Sınav olarak dene" · "yardım yok, 5 tur"). */
 export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string };
@@ -140,12 +135,18 @@ export type PillTone = "brand" | "ok" | "bad";
  *
  * `segments`: etap kartında hangi etapta olunduğu (bandın dibinde şerit).
  */
-export function ResultHero({ eyebrow, title, figure, sub, mood, pill, quiet = false, segments, live = true }: {
+export function ResultHero({ eyebrow, title, figure, sub, aside, pill, quiet = false, segments, live = true }: {
   eyebrow: string;
   title: string;
   figure?: string | null;
   sub?: string | null;
-  mood?: Mood | null;
+  /**
+   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Erdi'yi kendisi
+   * çizerdi; animasyon artık yalnız günlük turda olduğu için bu şablon
+   * maskotu tanımıyor (bkz. ui/Mascot dosya başı). Turun sonuç bandı kendi
+   * Erdi'sini buraya veriyor, öteki on üç sonuç ekranı boş bırakıyor.
+   */
+  aside?: React.ReactNode;
   pill?: { text: string; tone?: PillTone } | null;
   quiet?: boolean;
   segments?: { done: number; total: number } | null;
@@ -176,7 +177,7 @@ export function ResultHero({ eyebrow, title, figure, sub, mood, pill, quiet = fa
             </View>
           ) : null}
         </View>
-        {mood ? <Mascot mood={mood} size={MASCOT_BAND} pinned /> : null}
+        {aside}
       </View>
       {segments && segments.total > 1 ? (
         <View style={{ flexDirection: "row", gap: spacing.xs, marginTop: spacing.md }}>
@@ -304,11 +305,11 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
  * karşılığındaki `alert` (`role="alert"`) ile aynı ad ve aynı ağırlık; hata
  * dalları şablona geçmeden önce de assertive idi.
  */
-export function StateBody({ mood, title, body, icon, children, alert = false }: { mood?: Mood | null; title: string; body?: string | null; icon?: React.ReactNode; children?: React.ReactNode; alert?: boolean }) {
+export function StateBody({ title, body, icon, children, alert = false }: { title: string; body?: string | null; icon?: React.ReactNode; children?: React.ReactNode; alert?: boolean }) {
   const { colors } = useTheme();
   return (
     <View accessibilityLiveRegion={alert ? "assertive" : "polite"} style={{ alignItems: "center", gap: spacing.md, paddingVertical: spacing.xl }}>
-      {mood ? <Mascot mood={mood} size={MASCOT_STATE} /> : icon}
+      {icon}
       <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{title}</Text>
       {body ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: 340 }}>{body}</Text> : null}
       {children}

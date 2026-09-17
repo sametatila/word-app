@@ -415,7 +415,7 @@ export function MockExamScreen() {
   if (!paper || !part) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("mockexam.back_to_list"), onPress: () => nav.goBack() }} />}>
-        <StateBody alert mood="sad" title={t("mockexam.paper_missing")} body={t("mockexam.paper_missing_sub")} />
+        <StateBody alert title={t("mockexam.paper_missing")} body={t("mockexam.paper_missing_sub")} />
       </FlowScreen>
     );
   }
@@ -456,7 +456,7 @@ export function MockExamScreen() {
          sessizdi; webin karşılığı duyuruyor (StateBody canlı bölge). */
       return (
         <FlowScreen center top={<FlowTopBar back onClose={() => nav.goBack()} />}>
-          <StateBody mood="think" title={t("mockexam.scoring")}>
+          <StateBody title={t("mockexam.scoring")}>
             <ActivityIndicator accessibilityRole="progressbar" accessibilityState={{ busy: true }} color={colors.primaryText} />
           </StateBody>
         </FlowScreen>
@@ -1384,7 +1384,6 @@ function ResultView({
         title={graded ? t(score.passed ? "mockexam.passed" : "mockexam.failed") : t("mockexam.part_done")}
         figure={graded ? formatPercent(score.pct) : null}
         sub={graded ? t("mockexam.result_sub", { correct: score.correct, total: score.total, pct: MOCK_PASS_PCT }) : t("mockexam.not_scored")}
-        mood={graded ? (score.passed ? "celebrate" : "sad") : "happy"}
         quiet={graded && !score.passed}
         pill={need > 0 ? { text: t("mockexam.short_by", { n: need }), tone: "bad" } : null}
       />

@@ -11,7 +11,7 @@ import { Card } from "../ui/Card";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
-import { CoachBubble } from "../ui/CoachBubble";
+import { CoachLine } from "../ui/CoachLine";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
@@ -418,7 +418,7 @@ export function ExamScreen() {
         center
         actions={<FlowActions primary={{ label: t("common.try_again"), onPress: () => setAttempt((n) => n + 1) }} tertiary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody alert mood="sad" title={err} />
+        <StateBody alert title={err} />
       </FlowScreen>
     );
   }
@@ -487,7 +487,7 @@ export function ExamScreen() {
       >
         {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
             aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
-        <CoachBubble moment="exam_intro" mood="think" size={48} />
+        <CoachLine moment="exam_intro" />
         <CoverBody
           icon={ExamIcon}
           tint={colors.primary}
@@ -589,13 +589,12 @@ export function ExamScreen() {
           sub={result ? t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) : null}
           /* Sonuçta Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci
              bir maskot çizilmiyor. Kayıt düştüyse balon yok, maskot bandda. */
-          mood={result ? null : "think"}
           pill={pill}
           quiet={!passed}
         />
         {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
             ve mobilin KENDI rol yapma sonucu da 56. */}
-        {result ? <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={56} /> : null}
+        {result ? <CoachLine moment={result?.passed ? "exam_pass" : "exam_fail"} vars={{ pct, level }} /> : null}
         {result && strongest ? (
           <StatRow items={[
             { value: formatPercent(strongest.pct), label: t(SECTION_KEY[strongest.id]), tone: strongest.pct >= PASS_SECTION ? "ok" : "bad" },
@@ -720,7 +719,6 @@ export function ExamScreen() {
           eyebrow={`${(SECTION_WORD[currentTargetLang()] ?? "Teil").toUpperCase()} ${secIdx + 1} / ${list.length}`}
           title={sectionFace()[active]}
           sub={t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
-          mood="think"
           segments={{ done: secIdx + 1, total: list.length }}
         />
         <DetailCard title={t(SECTION_KEY[active])}>

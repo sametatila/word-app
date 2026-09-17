@@ -18,7 +18,7 @@ export default async function SkillNotFound() {
   return (
     <div className="px-4 py-8">
       <FlowColumn>
-        <StateBody mood="sad" title={t("item.this_exercise_can_t_be_opened")}>
+        <StateBody title={t("item.this_exercise_can_t_be_opened")}>
           <FlowActions
             primary={{ label: t("item.back_to_skills"), href: "/skills" }}
           />

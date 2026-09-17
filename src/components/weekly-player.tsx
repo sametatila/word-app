@@ -142,7 +142,7 @@ export function WeeklyPlayer() {
   if (phase === "auth") {
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon size={40} />} />
+        <StateBody title={t("weekly.sign_in_for_weekly_quiz")} body={t("weekly.test_what_you_ve_learned_once")} icon={<LockIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.sign_in_sign_up"), href: "/login" }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -151,7 +151,7 @@ export function WeeklyPlayer() {
   if (phase === "error") {
     return (
       <FlowColumn>
-        <StateBody alert mood="sad" title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon size={40} />} />
+        <StateBody alert title={t("weekly.couldn_t_load_weekly_quiz")} icon={<AlertIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.try_again"), onClick: () => setAttempt((a) => a + 1) }} secondary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -160,7 +160,7 @@ export function WeeklyPlayer() {
   if (phase === "empty") {
     return (
       <FlowColumn>
-        <StateBody mood="think" title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon size={40} />} />
+        <StateBody title={t("wquiz.none_title")} body={t("wquiz.none_sub")} icon={<CalendarIcon size={40} />} />
         <FlowActions primary={{ label: t("weekly.back_to_learn"), href: "/learn" }} />
       </FlowColumn>
     );
@@ -256,7 +256,6 @@ export function WeeklyPlayer() {
           title={t(score.band)}
           figure={formatPercent(score.pct, lang)}
           sub={t("wquiz.done_sub", { correct: score.correct, total: score.total })}
-          mood={score.pct >= 60 ? "happy" : "think"}
         />
         <StatRow
           items={[

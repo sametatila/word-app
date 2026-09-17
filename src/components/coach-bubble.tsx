@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot, type Mood } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
+import { CoachLine } from "@/components/coach-line";
 import { pickCoachLine, type CoachMoment, type CoachVars } from "@/lib/coach-lines";
 import { track } from "@/lib/track";
 import { useLang } from "@/lib/i18n/client";
@@ -67,13 +68,9 @@ export function CoachBubble({
 
   if (!line) return null;
 
-  if (still) {
-    return (
-      <p role="status" className={`text-body leading-snug ${tone === "dark" ? "" : "muted"} ${className}`}>
-        {line}
-      </p>
-    );
-  }
+  /* Hareket azaltmada yalnız cümle: maskotsuz gövde ortak
+     (`components/coach-line`) — sınav ekranları da onu çiziyor. */
+  if (still) return <CoachLine moment={moment} vars={vars} text={text} tone={tone === "dark" ? "strong" : "muted"} className={className} />;
 
   const bubble =
     tone === "dark"

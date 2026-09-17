@@ -11,6 +11,7 @@ import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
+import { Mascot, MASCOT_BAND, MASCOT_STATE } from "../ui/Mascot";
 import { MascotPop } from "../ui/MascotPop";
 import { MascotFx } from "../ui/MascotFx";
 import { CoachBubble } from "../ui/CoachBubble";
@@ -413,7 +414,7 @@ export function GameScreen() {
   if (phase === "auth") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("game.sign_in_sign_up"), onPress: () => { nav.goBack(); nav.navigate("Auth"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
-        <StateBody mood="wave" title={t("game.sign_in_to_save_your_progress")} body={t("game.sign_in_to_study_your_own_words")} />
+        <StateBody title={t("game.sign_in_to_save_your_progress")} body={t("game.sign_in_to_study_your_own_words")} />
       </FlowScreen>
     );
   }
@@ -421,7 +422,7 @@ export function GameScreen() {
   if (phase === "error") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("game.try_again"), onPress: () => void load() }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
-        <StateBody alert mood="sad" title={t("game.couldn_t_load_round")} body={t("game.check_your_connection_and_try")} />
+        <StateBody alert title={t("game.couldn_t_load_round")} body={t("game.check_your_connection_and_try")} />
       </FlowScreen>
     );
   }
@@ -459,7 +460,7 @@ export function GameScreen() {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("session.continue_with_new"), onPress: () => void load({ extra: true }) }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
         <StateBody
-          mood="celebrate"
+          icon={<Mascot mood="celebrate" size={MASCOT_STATE} />}
           title={t("session.goal_done")}
           body={meta ? `${t("session.goal_done_sub")} ${t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}` : t("session.goal_done_sub")}
         />
@@ -470,8 +471,7 @@ export function GameScreen() {
   if (phase === "no_words") {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("session.back_to_mixed"), onPress: () => { nav.goBack(); nav.navigate("Game"); } }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
-        {/* Web aynı dalda düşünen maskotu çiziyor (`session-player`). */}
-        <StateBody mood="think" title={t("session.no_words_for_game", { game: gameLabel ?? "" })} body={t("session.review_only_mode")} />
+        <StateBody title={t("session.no_words_for_game", { game: gameLabel ?? "" })} body={t("session.review_only_mode")} />
       </FlowScreen>
     );
   }
@@ -519,7 +519,7 @@ export function GameScreen() {
           figure={total ? `${finalCorrect}/${total}` : null}
           sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
           /* ZAYIF NOKTA TURUNDA Erdi bandda değil, altında konuşuyor (web `weak_done`). */
-          mood={onlyGame && total > 0 ? null : total > 0 ? (deserved ? "celebrate" : pct >= 60 ? "happy" : "sad") : "idle"}
+          aside={onlyGame && total > 0 ? null : <Mascot mood={total > 0 ? (deserved ? "celebrate" : pct >= 60 ? "happy" : "sad") : "idle"} size={MASCOT_BAND} pinned />}
         />
         {onlyGame && total > 0 ? <CoachBubble moment="weak_done" mood={pct >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
         {total > 0 ? (
@@ -663,7 +663,7 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
         eyebrow={t("stage.counter", { n: stage, total: stages })}
         title={t(perfect ? "stage.clean" : "stage.done")}
         sub={`${correct}/${total}`}
-        mood={perfect ? "celebrate" : "happy"}
+        aside={<Mascot mood={perfect ? "celebrate" : "happy"} size={MASCOT_BAND} pinned />}
         segments={{ done: stage, total: stages }}
       />
       <StatRow items={[

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { kindIcon, kindFill } from "../ui/unitKind";
-import { MascotFx } from "../ui/MascotFx";
 import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
@@ -312,7 +311,7 @@ export function ItemScreen() {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış. */}
-        <StateBody mood="sad" alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
+        <StateBody alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
       </FlowScreen>
     );
   }
@@ -358,7 +357,6 @@ export function ItemScreen() {
         title={t(isTasks ? (passed ? "item.tasks_done" : "skillp.result_retry") : perfect ? "skillp.result_perfect" : passed ? "skillp.result_done" : "skillp.result_retry")}
         figure={isMono && lastScore === undefined ? null : formatPercent(pct)}
         sub={[!isMono ? t("common.n_correct", { correct, total }) : null, earnedXp > 0 ? `+${earnedXp} XP` : null].filter(Boolean).join(" · ") || null}
-        mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "sad"}
         quiet={!passed}
         pill={passed ? null : { text: t("skillp.pill_need", { pct: isMono ? RUBRIC_PASS_PCT : SKILL_DONE_PCT }), tone: "bad" }}
       />
@@ -435,10 +433,6 @@ export function ItemScreen() {
         {finished && !isMono ? resultHead : null}
         {finished ? <View style={{ marginTop: spacing.md }}>{resultActions}</View> : null}
       </KeyboardAwareScroll>
-      {/* Ortam sürprizleri: web beceri oynatıcısında da çiziyor
-          (`skills/player-shell` `<MascotFx />`), mobilde yalnız kelime
-          turlarında vardı — aynı sürpriz iki yüzeyden birinde yoktu. */}
-      <MascotFx />
     </View>
   );
 }

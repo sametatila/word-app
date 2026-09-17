@@ -5,7 +5,6 @@ import { track } from "@/lib/track";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BellIcon, CheckIcon, XIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
 import {
   currentSubscription,
   iosNeedsInstall,
@@ -132,7 +131,6 @@ export function PushOptIn({ streak }: { streak: number }) {
     <Card
       tone="brand"
       onClose={state === "ask" ? close : undefined}
-      icon={<Mascot mood="sleep" size={34} />}
     >
       <p className="text-strong">
         {streak > 0 ? t("pushw.keep_streak", { n: streak }) : t("pushw.remind_tomorrow")}

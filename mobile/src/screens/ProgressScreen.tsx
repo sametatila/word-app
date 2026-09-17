@@ -11,7 +11,6 @@ import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, LearnIcon, TrophyIcon, WriteIcon } from "../ui/icons";
-import { Mascot } from "../ui/Mascot";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthPanel } from "../ui/GrowthPanel";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
@@ -227,7 +226,6 @@ export function ProgressScreen() {
                 <Text variant="caption" color="#ffffffe6">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
               ) : null}
             </View>
-            <Mascot mood={me.streak > 0 ? "happy" : "idle"} size={58} />
           </View>
         ) : (
           <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }}>

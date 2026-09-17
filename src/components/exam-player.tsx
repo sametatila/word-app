@@ -28,7 +28,7 @@ import { targetLangOf } from "@/lib/courses";
 import { matchSentence } from "@/lib/sentence-match";
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
-import { CoachBubble } from "@/components/coach-bubble";
+import { CoachLine } from "@/components/coach-line";
 import { PronounceCard } from "@/components/feedback/pronounce-card";
 import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
 import type { PronounceScore } from "@/lib/pronounce";
@@ -460,7 +460,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
            duymuyor. YERINDE TEKRAR DENEME - kagit ALINAMADIGINDA haftanin kagidi
            gecici bir ag kesintisiyle harcanabiliyordu (Android `setAttempt`). */
         <FlowColumn>
-          <StateBody alert mood="sad" title={t("exam.load_or_save_failed")} />
+          <StateBody alert title={t("exam.load_or_save_failed")} />
           <FlowActions primary={{ label: t("common.try_again"), onClick: () => void start() }} tertiary={{ label: t("exam.back_to_path"), href: "/immersion" }} />
         </FlowColumn>
       );
@@ -471,7 +471,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
        durumu aynı bandla çiziyor (`ExamScreen` `offline`). */
     return (
       <FlowColumn>
-        <ResultHero eyebrow={title} title={t("exam.saved_offline")} figure={formatPercent(offline.pct, lang)} mood="think" quiet />
+        <ResultHero eyebrow={title} title={t("exam.saved_offline")} figure={formatPercent(offline.pct, lang)} quiet />
         {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
             iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
             gitmemiş olması. Ağırlık yok - onu sunucu veriyor. */}
@@ -536,7 +536,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           eyebrow={<span lang={course}>{SECTION_WORD_TARGET[targetLangOf(course)]} {teil} / {list.length}</span>}
           title={<span lang={course}>{SECTION_TITLE_TARGET[targetLangOf(course)][section]}</span>}
           sub={t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
-          mood="think"
           segments={{ done: teil, total: list.length }}
         />
         <DetailCard title={t(SECTION_TITLE_KEYS[section])}>
@@ -931,7 +930,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
   return (
     <FlowColumn>
       {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
-      <CoachBubble moment="exam_intro" mood="think" size={48} />
+      <CoachLine moment="exam_intro" />
       <CoverBody
         icon={<ExamIcon size={28} />}
         tint="var(--color-brand-500)"
@@ -1198,15 +1197,12 @@ function Result({
         figure={formatPercent(result.total, lang)}
         sub={t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
         /* Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci maskot yok. */
-        mood={null}
         pill={pill}
         quiet={!result.passed}
       />
-      <CoachBubble
+      <CoachLine
         moment={result.passed ? "exam_pass" : "exam_fail"}
-        mood={result.passed ? "celebrate" : "sad"}
         vars={{ pct: result.total, level }}
-        size={56}
       />
       {strongest ? (
         <StatRow

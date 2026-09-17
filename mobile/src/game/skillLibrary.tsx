@@ -352,7 +352,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   if (phase === "scoring") {
     return (
       <View style={{ marginTop: spacing.md }}>
-        <StateBody mood="think" title={t("item.mono_scoring")} />
+        <StateBody title={t("item.mono_scoring")} />
       </View>
     );
   }

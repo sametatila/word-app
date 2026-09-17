@@ -91,7 +91,7 @@ export function AppGate() {
             />
           }
         >
-          <StateBody alert mood="sad" title={t("appgate.maintenance_title")} body={custom || t("appgate.maintenance_body")} />
+          <StateBody alert title={t("appgate.maintenance_title")} body={custom || t("appgate.maintenance_body")} />
         </FlowScreen>
       </View>
     );
@@ -102,7 +102,7 @@ export function AppGate() {
     return (
       <View style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }}>
         <FlowScreen center actions={<FlowActions primary={{ label: t("appgate.update_button"), onPress: openStore }} />}>
-          <StateBody alert mood="wave" title={t("appgate.update_title")} body={t("appgate.update_body")} />
+          <StateBody alert title={t("appgate.update_title")} body={t("appgate.update_body")} />
         </FlowScreen>
       </View>
     );

@@ -1,14 +1,17 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { View, Animated, Easing } from "react-native";
 import { Text } from "./Text";
-import { Mascot } from "./Mascot";
+import { Mascot, type Mood } from "./Mascot";
+import { CoachLine } from "./CoachLine";
 import { pickCoachLine, type CoachMoment, type CoachVars } from "../game/coachLines";
 import { reduceMotion } from "../lib/reduceMotion";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
- * KOÇ BALONU — web `components/coach-bubble` karşılığı.
+ * KOÇ BALONU — web `components/coach-bubble` karşılığı. YALNIZ GÜNLÜK TURDA,
+ * çünkü Erdi'yi çiziyor (bkz. `ui/Mascot` dosya başı). Maskotsuz cümle için
+ * `ui/CoachLine` — sınav ekranları onu çiziyor.
  *
  * Erdi'nin yanında tek cümle: balon dört saniye durur, sonra kaybolur, Erdi
  * kalır. Metin bilgi değil EŞLİK — kalıcı bilgi kartın kendi metninde.
@@ -30,7 +33,7 @@ export function CoachBubble({
   tone = "card",
 }: {
   moment: CoachMoment;
-  mood: "idle" | "happy" | "thumbsup" | "sad" | "celebrate" | "wave" | "sleep" | "think";
+  mood: Mood;
   vars?: CoachVars;
   /** Verilirse listeden seçim yapılmaz, bu cümle söylenir. */
   text?: string;
@@ -66,18 +69,11 @@ export function CoachBubble({
 
   if (!line) return null;
 
-  if (still) {
-    return (
-      /* CÜMLE DUYURULUYOR. Erdi'nin cümlesi dört saniye durup kayboluyor:
-         ekran okuyucu kullanan biri onu HİÇ duymuyordu, çünkü ne odakta ne de
-         canlı bir bölgedeydi. Web aynı cümleyi `role="status"` ile duyuruyor
-         (`coach-bubble`, iki dalda da). Geçici metin, canlı bölgenin tam
-         tanımı. */
-      <Text accessibilityRole="text" accessibilityLiveRegion="polite" variant="body" color={tone === "dark" ? colors.text : colors.textMuted}>
-        {line}
-      </Text>
-    );
-  }
+  /* CÜMLE DUYURULUYOR (`ui/CoachLine`): Erdi'nin cümlesi dört saniye durup
+     kayboluyor ve ekran okuyucu kullanan biri onu HİÇ duymuyordu — ne odakta
+     ne canlı bir bölgedeydi. Web aynı cümleyi `role="status"` ile duyuruyor.
+     Gövde ortaklaştı: maskotsuz hâli sınav ekranlarının da çizdiği şey. */
+  if (still) return <CoachLine moment={moment} vars={vars} text={text} tone={tone === "dark" ? "strong" : "muted"} />;
 
   /* Koyu zeminde balon hep açık; metin rengi temadan BAĞIMSIZ koyu, yoksa
      gece temasında açık metin açık balona düşer. */
