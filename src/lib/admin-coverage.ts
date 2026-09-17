@@ -92,7 +92,7 @@ export type Coverage = {
       leagueThisWeek: number; nudges30: number; reactions30: number; blocks: number; feedViews30: number;
       questsActive: number; leagueUps30: number;
     };
-    referrals: { total: number; rewarded: number; last30: number };
+    referrals: { total: number; last30: number };
     pushReach: { key: string; count: number }[];
     remindersOn: { reminders: number; streakAlert: number; weeklyReminder: number };
     consents: { purpose: string; granted: number; denied: number }[];
@@ -240,7 +240,7 @@ export async function getCoverage(): Promise<Coverage> {
         (select count(*) from friend_quests where status = 'active')::int quests_active,
         (select count(*) from events where name = 'league_up' and day >= current_date - 29)::int league_ups30`),
     rows(sql`
-      select count(*)::int total, count(*) filter (where rewarded_at is not null)::int rewarded,
+      select count(*)::int total,
         count(*) filter (where created_at >= now() - interval '30 days')::int last30
       from referrals`),
     /* Push ULAŞABİLİRLİĞİ: mobil jetonlar platforma göre + web aboneliği.
@@ -379,7 +379,7 @@ export async function getCoverage(): Promise<Coverage> {
         reactions30: num(s.reactions30), blocks: num(s.blocks), feedViews30: num(s.feed30),
         questsActive: num(s.quests_active), leagueUps30: num(s.league_ups30),
       },
-      referrals: { total: num(ref.total), rewarded: num(ref.rewarded), last30: num(ref.last30) },
+      referrals: { total: num(ref.total), last30: num(ref.last30) },
       pushReach: pushReach.map((r) => ({ key: str(r.k), count: num(r.c) })),
       remindersOn: { reminders: num(rm.reminders), streakAlert: num(rm.streak_alert), weeklyReminder: num(rm.weekly_reminder) },
       consents: consents.map((r) => ({ purpose: str(r.purpose), granted: num(r.granted), denied: num(r.denied) })),

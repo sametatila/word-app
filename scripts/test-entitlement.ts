@@ -21,7 +21,7 @@
  * Adres `localhost`/`127.0.0.1` değilse baştan reddediyor.
  */
 import "dotenv/config";
-import { and, eq, isNotNull, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 // `@/lib/db` — göreli yol DEĞİL: e2e tsconfig'i bu takma adı `scripts/test-db.ts`e
 // yönlendiriyor. Göreli yazılsaydı test kendi sorgularını GERÇEK modülle,
 // premium modülleri ise test ikiziyle koşardı: iki ayrı havuz, iki ayrı adres.
@@ -30,8 +30,7 @@ import { entitlements, premiumGrants, profiles, promoCodes, referrals, usageCoun
 import { applyStoreEvent, applyStoreTransfer, grantBonus, resolveEntitlement, daysToMinutes } from "../src/lib/premium/entitlement";
 import { revenuecat } from "../src/lib/premium/providers/revenuecat";
 import { createCodes, redeemCode } from "../src/lib/premium/promo";
-import { attachReferral, ensureReferralCode, rewardForFirstPayment } from "../src/lib/premium/referral";
-import { clearPremiumConfigCache, savePremiumConfig } from "../src/lib/premium/config";
+import { attachReferral, ensureReferralCode } from "../src/lib/premium/referral";
 import type { StoreEvent } from "../src/lib/premium/ports";
 import { getUsage, refundUsage, takeUsage } from "../src/lib/premium/quota";
 
@@ -100,18 +99,18 @@ async function main() {
   {
     const u = uid("bonus");
     created.push(u);
-    await grantBonus(u, daysToMinutes(7), { source: "referral", ref: "x" });
+    await grantBonus(u, daysToMinutes(7), { source: "promo", ref: "x" });
     let v = await resolveEntitlement(u);
     check("bakiye pencereye çevrildi (mağaza kapsamı yok)", v.premium && v.source === "bonus", v.source);
 
     // İkinci ödül ÜSTÜNE biner: pencere sürerken bakiyeye ekleniyor.
-    await grantBonus(u, daysToMinutes(7), { source: "referral", ref: "y" });
+    await grantBonus(u, daysToMinutes(7), { source: "promo", ref: "y" });
     v = await resolveEntitlement(u);
-    check("ikinci ödül bakiyede bekliyor (pencere sürüyor)", v.bonusDaysPending === 7, v.bonusDaysPending);
+    check("ikinci hediye bakiyede bekliyor (pencere sürüyor)", v.bonusDaysPending === 7, v.bonusDaysPending);
 
     const [row] = await db.select().from(entitlements).where(eq(entitlements.userId, u));
-    check("defterde iki referans satırı var",
-      (await db.select().from(premiumGrants).where(and(eq(premiumGrants.userId, u), eq(premiumGrants.source, "referral")))).length === 2);
+    check("defterde iki hediye satırı var",
+      (await db.select().from(premiumGrants).where(and(eq(premiumGrants.userId, u), eq(premiumGrants.source, "promo")))).length === 2);
     check("bonus_until gelecekte", !!row.bonusUntil && row.bonusUntil.getTime() > Date.now());
   }
 
@@ -129,7 +128,7 @@ async function main() {
     // Aynı anda: biri pencereyi başlatıyor, öteki 7 gün daha ekliyor.
     await Promise.all([
       resolveEntitlement(u),
-      grantBonus(u, daysToMinutes(7), { source: "referral", ref: "b" }),
+      grantBonus(u, daysToMinutes(7), { source: "promo", ref: "b" }),
     ]);
     const v = await resolveEntitlement(u);
     const toplamGun = Math.round(
@@ -146,10 +145,10 @@ async function main() {
     const ev = storeEvent(u);
 
     const a = await applyStoreEvent(ev);
-    check("ilk teslimat uygulandı", a.applied && a.firstPayment);
+    check("ilk teslimat uygulandı", a.applied);
 
     const b = await applyStoreEvent(ev); // birebir aynı olay
-    check("ikinci teslimat ELENDİ", !b.applied && !b.firstPayment);
+    check("ikinci teslimat ELENDİ", !b.applied);
 
     const rows = await db.select().from(premiumGrants)
       .where(and(eq(premiumGrants.userId, u), eq(premiumGrants.source, "store")));
@@ -252,24 +251,48 @@ async function main() {
     check("davet bağlandı", (await attachReferral(invitee, code)) === "ok");
     check("ikinci kez bağlanamaz", (await attachReferral(invitee, code)) === "already");
 
-    // Ödül YALNIZ ilk ödemede.
-    const before = await resolveEntitlement(inviter);
-    check("bağ kurmak ödül VERMEDİ", !before.premium);
+    /*
+      BAĞ KURMAK PREMIUM AÇMIYOR — ve artık hiçbir koşulda açmıyor.
 
-    await applyStoreEvent(storeEvent(invitee, { eventId: "guest-trial", paid: false, state: "trial" }));
-    await rewardForFirstPayment(invitee);
-    check("deneme ödül üretmedi", !(await resolveEntitlement(inviter)).premium);
+      Davetin karşılığı 2026-09-17'ye kadar premium süresiydi (davet edilenin
+      ilk ödemesinde davetçiye 7 gün). O kurgu kaldırıldı: ödeyen bir davetçide
+      süre bakiyede bekliyor ve ancak aboneliğini bırakırsa işe yarıyordu, yani
+      teslim edilemeyen bir vaatti. Karşılık artık arkadaşlık bağı.
 
-    const paid = await applyStoreEvent(storeEvent(invitee, { eventId: "guest-paid", paid: true }));
-    check("ilk ödeme işaretlendi", paid.firstPayment);
-    await rewardForFirstPayment(invitee);
-    const after = await resolveEntitlement(inviter);
-    check("ödeme sonrası davetçi premium", after.premium, after.source);
+      Bu iddia ÖDEMEDEN SONRA da sınanıyor: eski zincirin tek tetiği oydu ve
+      geri gelirse burada düşer.
+    */
+    check("bağ kurmak premium VERMEDİ", !(await resolveEntitlement(inviter)).premium);
+    await applyStoreEvent(storeEvent(invitee, { eventId: `ref-paid-${invitee}`, paid: true }));
+    check("davet edilenin ÖDEMESİ de davetçiye premium vermiyor", !(await resolveEntitlement(inviter)).premium);
+  }
 
-    await rewardForFirstPayment(invitee);
-    const twice = await resolveEntitlement(inviter);
-    const gun = Math.round(((twice.until?.getTime() ?? 0) - Date.now()) / 86_400_000) + twice.bonusDaysPending;
-    check("ödül İKİ KEZ verilmiyor", gun <= 8, `${gun} gün`);
+  /* ─────────── 8b. Davet penceresi: yalnız YENİ hesaplar davet edilebilir ─────────── */
+  console.log("\nDavet penceresi");
+  {
+    const inviter = uid("win-inv");
+    const taze = uid("win-new");
+    const eski = uid("win-old");
+    created.push(inviter, taze, eski);
+    await db.insert(profiles).values({ userId: inviter });
+    await db.insert(profiles).values({ userId: taze });
+    await db.insert(profiles).values({ userId: eski });
+    const code = await ensureReferralCode(inviter);
+
+    /* `user` satırı testlerde yok; pencere ancak gerçek hesapta ölçülebilir,
+       o yüzden satırlar burada ELLE yazılıyor (ham SQL — tablo better-auth'a
+       ait, Drizzle şemamızda tanımlı değil). */
+    const mkUser = (id: string, days: number) =>
+      db.execute(sql`insert into "user" (id, name, email, "emailVerified", "createdAt", "updatedAt")
+        values (${id}, ${id}, ${`${id}@test.invalid`}, false, now() - make_interval(days => ${days}), now())`);
+    try {
+      await mkUser(taze, 1);
+      await mkUser(eski, 400);
+      check("bir günlük hesap davet edilebiliyor", (await attachReferral(taze, code)) === "ok");
+      check("400 günlük hesap davet EDİLEMİYOR", (await attachReferral(eski, code)) === "already");
+    } finally {
+      await db.execute(sql`delete from "user" where id in (${taze}, ${eski})`);
+    }
   }
 
   /* ───────── ABONELİK TAŞIMA: TRANSFER olayı (güvenlik denetimi, bilgi maddesi) ───────── */
@@ -296,7 +319,9 @@ async function main() {
     check("aynı TRANSFER ikinci kez uygulanmıyor", !again.applied, JSON.stringify(again));
 
     const renew = await applyStoreEvent(storeEvent(b, { eventId: `tr-renew-${b}`, paid: true, ref: `tr-sub-${a}` }));
-    check("B'nin sonraki yenilemesi 'ilk ödeme' sayılmıyor (davet ödülü tekrar tetiklenmez)", renew.applied && !renew.firstPayment, JSON.stringify(renew));
+    check("B'nin yenilemesi uygulanıyor ve ilk ödeme damgası korunuyor", renew.applied, JSON.stringify(renew));
+    const [bRow] = await db.select({ paidAt: entitlements.storePaidAt }).from(entitlements).where(eq(entitlements.userId, b));
+    check("taşınan abonelikte ilk ödeme anı sıfırlanmadı", !!bRow?.paidAt);
 
     const anon = await applyStoreTransfer({ provider: "revenuecat", eventId: `tr-anon-${b}`, from: ["$RCAnonymousID:yok"], to: b });
     check("bizde olmayan kaynaktan taşıma: kayıt var, yetki değişmedi", anon.applied && !anon.moved && (await resolveEntitlement(b)).source === "store", JSON.stringify(anon));
@@ -313,35 +338,6 @@ async function main() {
     check("birden çok hedefli TRANSFER reddediliyor", !bad.ok, JSON.stringify(bad));
     if (prevSecret === undefined) delete process.env.REVENUECAT_WEBHOOK_AUTH;
     else process.env.REVENUECAT_WEBHOOK_AUTH = prevSecret;
-  }
-
-  /* ───────── DAVET TAVANI: eşzamanlı ödemeler (güvenlik denetimi #14) ───────── */
-  console.log("\nDavet tavanı: aynı davetçinin davetlileri aynı anda ödüyor");
-  {
-    const inviter = uid("cap-inv");
-    const guests = [uid("cap-g1"), uid("cap-g2"), uid("cap-g3"), uid("cap-g4")];
-    created.push(inviter, ...guests);
-    await savePremiumConfig({ referral: { rewardDays: 7, maxRewards: 2 } }, "test");
-    try {
-      await db.insert(profiles).values({ userId: inviter });
-      const code = await ensureReferralCode(inviter);
-      for (const g of guests) {
-        await db.insert(profiles).values({ userId: g });
-        await attachReferral(g, code);
-        await applyStoreEvent(storeEvent(g, { eventId: `cap-paid-${g}`, paid: true, ref: `cap-${g}` }));
-      }
-      const results = await Promise.all(guests.map((g) => rewardForFirstPayment(g)));
-      const odul = results.filter(Boolean).length;
-      check("dört eşzamanlı ödemeden TAM tavan (2) kadarı ödül verdi", odul === 2, odul);
-      const [c] = await db
-        .select({ n: sql<number>`count(*)::int` })
-        .from(referrals)
-        .where(and(eq(referrals.inviterUserId, inviter), isNotNull(referrals.rewardedAt)));
-      check("defterde tavan kadar ödül satırı", c.n === 2, c.n);
-    } finally {
-      await savePremiumConfig({}, "test");
-      clearPremiumConfigCache();
-    }
   }
 
   /* ───────── KOTA TAVANI: paralel patlama (güvenlik denetimi #1) ───────── */

@@ -86,14 +86,6 @@ export type MockProgression = {
   unlockOnComplete: boolean;
 };
 
-/** Referans (davet) kuralları. */
-export type ReferralRules = {
-  /** Davet edilenin ilk ÖDEMESİNDE davetçiye verilen gün. Üstüste birikir. */
-  rewardDays: number;
-  /** Bir kullanıcının ödül kazanabileceği en fazla davet (0 = sınırsız). */
-  maxRewards: number;
-};
-
 /**
  * Plan kataloğu — ürün kimlikleri, deneme süresi ve GÖSTERİM fiyatları.
  *
@@ -131,7 +123,6 @@ export type PremiumConfig = {
   free: FreeLimits;
   fairUse: FairUse;
   mock: MockProgression;
-  referral: ReferralRules;
   plans: Plans;
 };
 
@@ -171,10 +162,6 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
        kâğıdı "geçti" diye işaretlenen biri sonraki paketi açamazdı. */
     unlockPct: MOCK_PASS_PCT,
     unlockOnComplete: true,
-  },
-  referral: {
-    rewardDays: 7,
-    maxRewards: 0,
   },
   plans: {
     productMonthly: "lernomi_premium_monthly",

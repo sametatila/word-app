@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { applyStoreEvent, applyStoreTransfer } from "@/lib/premium";
 import { adapterFor, DEFAULT_ADAPTER } from "@/lib/premium/providers";
-import { rewardForFirstPayment } from "@/lib/premium/referral";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -50,18 +49,13 @@ export async function POST(req: Request, ctx: { params: Promise<{ provider?: str
       const { applied, moved } = await applyStoreTransfer(parsed.transfer);
       return NextResponse.json({ ok: true, applied, moved });
     }
-    const { applied, firstPayment } = await applyStoreEvent(parsed.event);
-
-    // Referans ödülü YALNIZ ilk gerçek ödemede ve yalnız olay ilk kez
-    // işlendiğinde. Ödül zinciri webhook'u bloklamıyor: patlarsa yetki yine
-    // yazılmış olur, ödül eksik kalır ve bu geri alınabilir bir eksiklik.
-    if (applied && firstPayment) {
-      try {
-        await rewardForFirstPayment(parsed.event.userId);
-      } catch (err) {
-        console.error("[premium/webhook] referans ödülü yazılamadı", err);
-      }
-    }
+    /* `firstPayment` ARTIK OKUNMUYOR ve bu bilerek. Burada davet ödülü
+       yazılıyordu (ilk gerçek ödemede davetçiye 7 gün); ödül premium süresi
+       olmaktan çıkıp arkadaşlığa döndüğü için zincirin bu halkası kalktı
+       (gerekçe: lib/premium/referral başı). Bayrağı `applyStoreEvent`
+       döndürmeye devam ediyor — "ilk ödeme" hâlâ anlamlı bir olay ve
+       ölçüm/telafi için okunabilir. */
+    const { applied } = await applyStoreEvent(parsed.event);
     return NextResponse.json({ ok: true, applied });
   } catch (err) {
     console.error("[premium/webhook]", err);

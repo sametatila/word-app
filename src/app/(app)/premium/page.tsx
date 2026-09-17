@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic";
 const SOURCES = new Set(["exam", "walk", "limit", "profile", "nav", "mock", "skill", "lesson"]);
 
 /** `/r/<kod>`un döndürebileceği sonuçlar — adresten gelen başka değer yok sayılır. */
-const REF_RESULTS = new Set(["ok", "already", "self", "unknown", "error"]);
+const REF_RESULTS = new Set(["ok", "linked", "already", "self", "unknown", "error"]);
 
 /**
  * Premium sayfası.

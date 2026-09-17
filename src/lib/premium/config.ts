@@ -79,7 +79,6 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
   const f = o.free ?? {};
   const u = o.fairUse ?? {};
   const m = o.mock ?? {};
-  const r = o.referral ?? {};
   const pl = o.plans ?? {};
   return {
     free: {
@@ -102,10 +101,6 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
       packSize: int(m.packSize, d.mock.packSize, 1, 20),
       unlockPct: int(m.unlockPct, d.mock.unlockPct, 0, 100),
       unlockOnComplete: bool(m.unlockOnComplete, d.mock.unlockOnComplete),
-    },
-    referral: {
-      rewardDays: int(r.rewardDays, d.referral.rewardDays, 0, 365),
-      maxRewards: int(r.maxRewards, d.referral.maxRewards, 0, 10_000),
     },
     plans: {
       productMonthly: str(pl.productMonthly, d.plans.productMonthly),

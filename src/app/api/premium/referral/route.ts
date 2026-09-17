@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
-import { attachReferral, referralStats } from "@/lib/premium/referral";
+import { referralStats } from "@/lib/premium/referral";
+import { applyReferralLink } from "@/lib/referral-link";
 
 export const dynamic = "force-dynamic";
 
@@ -47,10 +48,10 @@ export async function POST(req: Request) {
   if (!code.trim()) return NextResponse.json({ error: "unknown_code" }, { status: 400 });
 
   try {
-    const r = await attachReferral(userId, code);
+    const r = await applyReferralLink(userId, code);
     // "already" ve "self" hata DEĞİL: kullanıcı yanlış bir şey yapmadı, bağ
     // kurulamadı o kadar. İstemci sessizce geçiyor.
-    return NextResponse.json({ ok: r === "ok", result: r });
+    return NextResponse.json({ ok: r === "ok" || r === "linked", result: r });
   } catch (err) {
     console.error("[premium/referral] bağ kurulamadı", err);
     return NextResponse.json({ error: "database" }, { status: 500 });

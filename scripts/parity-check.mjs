@@ -7552,13 +7552,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *         "toplam %70 ve her bolum %50" - tek cumlede IKI sayi.
  *   191 - haftalik sinavin pekismis esigi (`MIN_MASTERED`): "30'a ulasinca".
  *   192 - hiz turunun suresi (`BOSS_SECONDS`): "modulun kelimeleri, 60 sn".
- *   193 - davet odulu (`referral.rewardDays`): "sana 7 gun Premium veriyoruz".
- *         Bu, otekilerden BIR ADIM DAHA KOTU bir durumdu: sayi bir kod sabiti
- *         degil, PANELDEN ayarlanan bir deger. Iki ekran da 7'yi elle
- *         yaziyordu, yani odul panelden degistirildigi anda sunucu yeni
- *         sureyi verir, iki ekran eski sayiyi soylemeye devam ederdi - kod
- *         hic degismeden bozulan bir soz. Sayi artik `/api/premium/status`
- *         yanitindan geliyor.
  *
  * 188-192'de sayilarin dordu `server-only` modullerde ya da yalniz sunucuda
  * duruyordu; MIN_MASTERED ve BOSS_SECONDS istemciye acilan ayri dosyalara
@@ -7651,20 +7644,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       anahtarlar: ["exam.speed_round_link"],
       gecis: /n:\s*BOSS_SECONDS/,
       cagiranlar: ["src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
-    },
-    {
-      ad: "davet odulu",
-      /* YER TUTUCU `{n}` OLDU. Cogul motoru YALNIZ `n` adli degiskene bakiyor
-         (`lib/i18n/dict`): `{days}` ile yazilan cumle deger 1 oldugunda
-         "1 days" basiyordu. Ayni degisiklik `promo.success`, `trial_note` ve
-         `promo.referral_linked` icin de yapildi; sonuncusu zaten sabit "1
-         hafta" yaziyordu ve panelden ayar degisince yalan soyluyordu. */
-      yer: ["{n}"],
-      anahtarlar: ["referral.explain", "promo.referral_linked"],
-      /* Sabit degil SUNUCU YANITI: panelden ayarlanan deger istemciye
-         `referral.rewardDays` olarak iniyor. */
-      gecis: /n:\s*(referral\.rewardDays|rewardDays)/,
-      cagiranlar: ["src/components/premium-paywall.tsx", "mobile/src/screens/PaywallScreen.tsx"],
     },
   ];
 
@@ -16699,21 +16678,58 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
-  /* 193'un ikinci yarisi: cumle yanittan beslense de YANIT o alani
-     tasimiyorsa ekran bos basar. Iki istemci de alani gormeli - mobil
-     kendi tipini yaziyor (uzak uca bagli), web ortak tipi ice aliyor. */
-  sameList(
-    "davet odulu yanitta var",
-    [
-      "sunucu=" + (/rewardDays: cfg\.referral\.rewardDays/.test(sil(read("src/lib/premium/referral.ts"))) ? "donduruyor" : "DONDURMUYOR"),
-      "ortak tip=" + (/rewardDays: number/.test(sil(read("src/lib/premium/referral-types.ts"))) ? "var" : "YOK"),
-      "web=" + (/\bReferralStats\b/.test(sil(read("src/components/premium-paywall.tsx"))) ? "ortak tipten" : "kendi kopyasi"),
-      "mobil=" + (/rewardDays: number/.test(sil(read("mobile/src/lib/premium.ts"))) ? "var" : "YOK"),
-    ],
-    ["sunucu=donduruyor", "ortak tip=var", "web=ortak tipten", "mobil=var"],
-    "bulunan",
-    "beklenen",
-  );
+  /* ---- DAVETIN KARSILIGI PREMIUM SURESI DEGIL --------------------------
+   *
+   * Davet bir donem davet edilenin ilk ODEMESINDE davetciye 7 gun yaziyordu
+   * (`rewardForFirstPayment` -> `grantBonus`). Iki yerden birden kiriliyordu:
+   * odeyen bir davetcide sure bakiyede bekliyor ve ancak ABONELIGI BIRAKIRSA
+   * ise yariyordu - yani teslim edilemeyen bir vaat; ve tesvik gucu yoktu,
+   * cunku getirilen kisinin hem kurmasi hem odemesi gerekiyordu.
+   *
+   * Karsilik 2026-09-17'de BAGLANTIYA cevrildi: bag kurulunca davet edilenden
+   * davetciye arkadaslik istegi gidiyor, kabul edilince ortak seri basliyor.
+   *
+   * KURAL GERILEMEYI TUTUYOR, uc yonden:
+   *  1. Davet yolu bonus vermiyor (`grantBonus` ne referral'da ne link'te).
+   *  2. Webhook davet zincirini hic cagirmiyor (eski tetik oradaydi).
+   *  3. Bag kurulunca arkadaslik istegi GERCEKTEN gidiyor - yoksa davet
+   *     hicbir sey yapmayan bir satir yazmaktan ibaret kalir.
+   *
+   * Ucuncusu en kolay sessizce kaybolandir: `attachReferral` tek basina
+   * cagrilirsa her sey "calisiyor" gorunur, yalnizca kimse arkadas olmaz. */
+  {
+    const ref = sil(read("src/lib/premium/referral.ts"));
+    const link = sil(read("src/lib/referral-link.ts"));
+    const hook = sil(read("src/app/api/premium/webhook/[[...provider]]/route.ts"));
+    /* Bagi kuran UC yol; ucu de ortak yardimciyi cagirmali. `attachReferral`i
+       dogrudan cagiran bir yol istegi atlamis olur. */
+    const yollar = ["src/app/r/[code]/route.ts", "src/app/api/premium/redeem/route.ts", "src/app/api/premium/referral/route.ts"];
+    const dogrudan = yollar.filter((f) => /\battachReferral\(/.test(sil(read(f))));
+    const ortak = yollar.filter((f) => /\bapplyReferralLink\(/.test(sil(read(f))));
+    sameList(
+      "davetin karsiligi premium suresi degil",
+      [
+        "referral bonus vermiyor=" + (/grantBonus/.test(ref) ? "VERIYOR" : "evet"),
+        "link bonus vermiyor=" + (/grantBonus/.test(link) ? "VERIYOR" : "evet"),
+        "webhook davet cagirmiyor=" + (/referral|Referral/.test(hook) ? "CAGIRIYOR" : "evet"),
+        "istek gonderiliyor=" + (/sendRequest\(inviteeUserId, inviter\)/.test(link) ? "evet" : "HAYIR"),
+        "yeni hesap penceresi=" + (/const INVITE_WINDOW_DAYS = \d/.test(ref) ? "var" : "YOK"),
+        "ortak yardimciyi cagiran yol=" + ortak.length,
+        "dogrudan baglayan yol=" + dogrudan.length,
+      ],
+      [
+        "referral bonus vermiyor=evet",
+        "link bonus vermiyor=evet",
+        "webhook davet cagirmiyor=evet",
+        "istek gonderiliyor=evet",
+        "yeni hesap penceresi=var",
+        "ortak yardimciyi cagiran yol=3",
+        "dogrudan baglayan yol=0",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* 187'nin ikinci yarisi: cumle sabitten beslense de KARARI veren
      karsilastirma elle yazilmis bir sayiysa ikisi ayrisabilir - kullanici

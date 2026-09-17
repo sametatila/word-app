@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { redeemCode } from "@/lib/premium/promo";
-import { attachReferral } from "@/lib/premium/referral";
+import { applyReferralLink } from "@/lib/referral-link";
 import { resolveEntitlement } from "@/lib/premium";
 import { consume } from "@/lib/social/ratelimit";
 
@@ -70,12 +70,12 @@ export async function POST(req: Request) {
      * (`/premium?code=…`) ve içinde davet kodu taşıyor — burada ayrıştırılmasa
      * o bağlantıyla gelen herkes "bu kod bulunamadı" görürdü.
      *
-     * Davet ÖDÜL VERMİYOR, yalnız bağ kuruyor; ödül davet edilenin ilk
-     * ödemesinde webhook üzerinden düşüyor. Bu yüzden yanıt premium açmıyor.
+     * Davet PREMIUM AÇMIYOR: bağı kuruyor ve davetçiye arkadaşlık isteği
+     * gönderiyor (`lib/referral-link`). Bu yüzden yanıtta gün yok.
      */
     if (r.reason === "not_found") {
-      const a = await attachReferral(userId, code);
-      if (a === "ok") return NextResponse.json({ ok: true, kind: "referral" });
+      const a = await applyReferralLink(userId, code);
+      if (a === "ok" || a === "linked") return NextResponse.json({ ok: true, kind: "referral", result: a });
       // "already"/"self" kullanıcı hatası değil ama kodun da bir karşılığı yok:
       // bulunamadı demek en dürüstü, yoksa "kabul edildi" sanır.
       return NextResponse.json({ error: a === "unknown_code" ? "not_found" : a }, { status: 400 });

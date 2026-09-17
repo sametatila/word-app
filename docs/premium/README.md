@@ -113,11 +113,28 @@ tutturamayan bir **ödeme yapmış** kullanıcı hiçbir yeni kâğıt göremez 
 iadenin ve tek yıldızın en sık sebebidir. Panelden kapatılabilir; kapatılırsa
 paywall metnine "puan yetmezse paket açılmaz" cümlesi eklenmeli.
 
-**Referans ödülü ilk ÖDEMEDE düşüyor**, denemede değil: 1 aylık deneme iptal
-edilebildiği için ödül denemeye bağlansaydı sahte hesapla hafta üretmek serbest
-kalırdı. Koşulu webhook'un doğru çağırmasına bırakmıyoruz — `rewardForFirstPayment`
-`store_paid_at`i kendisi okuyor, yani elle telafi ya da geri doldurma betiği gibi
-ikinci bir çağıran da ödülü denemeden üretemiyor.
+**Davetin karşılığı premium süresi DEĞİL** (2026-09-17). Bir dönem davet
+edilenin ilk ödemesinde davetçiye 7 gün yazılıyordu; iki yerden birden
+kırılıyordu. (1) Teslim edilemiyordu: süre bakiyeye yazılıyor, ödeyen bir
+davetçide ancak aboneliğini bırakırsa işe yarıyordu — mağaza tarafında gerçekten
+teslim etmenin yolu var (Apple *extend renewal date*, Google *defer*) ama Apple
+müşteri başına yılda iki çağrıyla sınırlı ve amaç olarak iyi niyet/kesinti
+telafisi diye tarif edilmiş. (2) Teşvik gücü yoktu: 7 gün için getirilen kişinin
+hem kurması hem ödemesi gerekiyordu, beklenen değer birkaç saatlik premium ve bir
+ay gecikmeli.
+
+Karşılık artık bir **bağlantı**: bağ kurulunca davet edilenden davetçiye
+arkadaşlık isteği gidiyor, kabul edilince ortak seri başlıyor
+(`lib/referral-link`, `lib/social/streaks`). İlk günden karşılığı var, mağaza
+yüzeyi sıfır ve farm edilemiyor — değeri karşı tarafın gerçek ve aktif
+olmasından geliyor. Davet bağlantısı yalnız **yeni hesaplar** için çalışıyor
+(`INVITE_WINDOW_DAYS`); mevcut kullanıcılar birbirini arkadaş aramasından
+ekliyor.
+
+`grantBonus` duruyor ama davete bağlı değil: promo kodu, elle telafi ve destek
+jesti onu kullanıyor. Aradaki fark, bunların **otomatik bir program olmaması** —
+seyrek ve kasıtlı kullanımda "askıda kalan süre" vaka bazında yönetilebilir,
+herkese vaat edilen bir mekanizmada yönetilemez.
 
 **"Sınırsız" denmiyor.** Premium'un da adil kullanım tavanı var ve paywall'da
 yazılı. Tavanı olan bir şeyi sınırsız diye pazarlamak App Store 3.1.2 ve Play'in

@@ -1,24 +1,37 @@
 import "server-only";
 import { randomInt } from "node:crypto";
-import { and, desc, eq, isNotNull, sql } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { entitlements, profiles, referrals } from "@/lib/db/schema";
-import { grantBonus, daysToMinutes } from "./entitlement";
-import { premiumConfig } from "./config";
+import { profiles, referrals } from "@/lib/db/schema";
 import type { ReferralStats } from "./referral-types";
 import { isGuestUser } from "@/lib/auth/guest-user";
 
 /**
- * Davet zinciri — davet edilen ÖDEME YAPINCA davetçi premium kazanır.
+ * Davet zinciri — kim kimi getirdi.
  *
- * ÖDÜL NEDEN ÖDEMEDE, DENEMEDE DEĞİL. 1 aylık deneme kart isteyerek başlıyor
- * ama iptal edilebiliyor; ödül denemeye bağlansaydı sahte hesapla hafta üretmek
- * serbest kalırdı. Ödeme alındığında ödül düşüyor (karar: 2026-09-08). Bedeli
- * ödülün ~1 ay gecikmesi; karşılığı, ödülün gerçek gelire bağlı kalması.
+ * ÖDÜL ARTIK PREMIUM SÜRESİ DEĞİL (karar: 2026-09-17). Önceki kurgu davet
+ * edilenin ilk ödemesinde davetçiye 7 gün yazıyordu ve iki ayrı yerden
+ * kırılıyordu:
  *
- * ÖDÜL BİRİKİR. Süre bakiyeye ekleniyor (`grantBonus`), tarihe değil: üç davet
- * = 21 gün ve bunlar birbirinin üstüne biner. Davetçi o sırada abone ise bakiye
- * bekler, aboneliği bitince çalışmaya başlar — hediye ödenen ayın içinde yanmaz.
+ *  1. TESLİM EDİLEMİYORDU. Süre bakiyeye yazılıyor, davetçi o sırada abone ise
+ *     bakiye bekliyordu — yani ödül ancak kullanıcı ABONELİĞİNİ BIRAKIRSA
+ *     nakde dönüyordu. Ödeyen biri için hiçbir zaman görünmeyen bir vaat.
+ *     Mağaza tarafında gerçekten teslim etmenin yolu var (Apple "extend
+ *     renewal date", Google "defer") ama Apple müşteri başına YILDA 2 çağrıyla
+ *     sınırlı ve amaç olarak iyi niyet/kesinti telafisi diye tarif edilmiş.
+ *  2. TEŞVİK GÜCÜ YOKTU. Davetçinin 7 gün kazanması için getirdiği kişinin hem
+ *     kurması hem ÖDEMESİ gerekiyordu; beklenen değer birkaç saatlik premium
+ *     ve ~1 ay gecikmeli. Kimsenin arkadaşını ikna etmesini sağlamaz.
+ *
+ * YERİNE GEÇEN: davet bir TAHSİSAT değil bir BAĞLANTI. Bağ kurulunca davet
+ * edilenden davetçiye arkadaşlık isteği gidiyor; kabul edilince ortak seri
+ * (`lib/social/streaks`) aynı gün başlıyor. Karşılığı ilk günden geliyor,
+ * mağaza yüzeyi sıfır, ve en önemlisi FARM EDİLEMİYOR: ödülün değeri karşı
+ * tarafın gerçek ve aktif olmasından geliyor.
+ *
+ * `grantBonus` kaldırılmadı — promo kodu, elle telafi ve destek jesti hâlâ
+ * onu kullanıyor. Kaldırılan şey davetin OTOMATİK olarak ona bağlanmasıydı:
+ * herkese vaat edilen bir mekanizmada teslim edilemeyen bir söz taşınamaz.
  */
 
 // Karışan karakter yok; kod ağızdan söyleniyor ve elle yazılıyor.
@@ -81,10 +94,55 @@ export async function userIdByReferralCode(code: string): Promise<string | null>
 export type AttachResult = "ok" | "self" | "already" | "unknown_code";
 
 /**
+ * Hesap davet penceresinin içinde mi açılmış (bkz. `INVITE_WINDOW_DAYS`).
+ *
+ * KULLANICI SATIRI YOKSA PENCERE UYGULANMIYOR — `lib/auth/guest-user`
+ * `isGuestUser` ile aynı kural ve aynı gerekçe. Better-auth oturum açan her
+ * hesap için o satırı yazıyor, yani üretimde satırsız bir çağıran olamaz
+ * (uçlar zaten oturum istiyor). Satırsız kimlik ancak test verisi ya da
+ * silinmiş bir hesap olur; onları "eski hesap" sayıp reddetmek, kuralın
+ * korumadığı bir yerde davranış değiştirmek olurdu.
+ *
+ * Sorgu patlarsa kapı KAPALI tarafa düşüyor: okuma hatası izin gerekçesi değil.
+ */
+async function isNewAccount(userId: string): Promise<boolean> {
+  try {
+    const res = await db.execute(
+      sql`select "createdAt" > now() - make_interval(days => ${INVITE_WINDOW_DAYS}) as fresh from "user" where id = ${userId} limit 1`,
+    );
+    const rows = (Array.isArray(res) ? res : (res as { rows?: unknown[] }).rows) ?? [];
+    const row = rows[0] as { fresh?: boolean } | undefined;
+    return row === undefined || row.fresh === true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Davet penceresi — hesap bu kadar gün içinde açılmışsa "davet edilmiş" sayılır.
+ *
+ * Eskiden ölçü "henüz ödeme yapmamış" idi ve gerekçesi ödüldü: iki eski abone
+ * birbirinin kodunu girip ödül üretmesin. Ödül kalkınca o gerekçe de kalktı,
+ * ama ölçünün kendisi hâlâ gerekli — bu kez BAŞKA bir sebeple.
+ *
+ * Davet "yeni birini getirmenin" karşılığı. Ölçü ödemeye bağlı kalsaydı,
+ * yıllardır uygulamayı kullanan ama hiç ödememiş iki kişi birbirini davet
+ * etmiş sayılırdı; davete bağlanacak rozet de (bkz. `lib/achievements`) böyle
+ * sıfır emekle kazanılırdı. Hesap yaşına bakmak niyeti doğrudan söylüyor.
+ *
+ * Mevcut kullanıcılar birbirine bağlansın diye ayrı bir yol zaten var: arkadaş
+ * arama ve öneriler (`lib/social/friends`). Davet bağlantısı onun yerine
+ * geçmiyor.
+ */
+const INVITE_WINDOW_DAYS = 7;
+
+/**
  * Yeni kullanıcıyı bir davetçiye bağlar. Kayıt/ilk açılışta çağrılır.
  *
- * Ödül BURADA verilmiyor — yalnız bağ kuruluyor. Ödül davet edilenin ilk
- * ödemesinde (`rewardForFirstPayment`) düşüyor.
+ * YALNIZ BAĞ KURULUYOR, başka hiçbir şey olmuyor. Arkadaşlık isteğini çağıran
+ * gönderiyor (`app/r/[code]`, mobil `App.tsx`): bu dosya sosyal katmanı içe
+ * aktarsaydı iki katman birbirine düğümlenirdi ve bağın kurulması isteğin
+ * gitmesine bağımlı hâle gelirdi — biri patlayınca öteki de kaybolurdu.
  */
 export async function attachReferral(inviteeUserId: string, code: string): Promise<AttachResult> {
   const inviter = await userIdByReferralCode(code);
@@ -92,20 +150,11 @@ export async function attachReferral(inviteeUserId: string, code: string): Promi
   if (!inviter || (await isGuestUser(inviter))) return "unknown_code";
   if (inviter === inviteeUserId) return "self";
 
-  /**
-   * Zaten ödeme yapmış bir hesap "davet edilmiş" sayılmaz.
-   *
-   * Bağ kurulması ödülü tek başına vermiyor (ödül ilk ÖDEMEDE düşüyor), ama bu
-   * koruma olmasa uzun süredir abone olan iki kişi birbirinin kodunu girip bir
-   * sonraki yenilemede ödül üretebilirdi. Davet, YENİ müşteri getirmenin
-   * karşılığı; mevcut müşteriyi yeniden etiketlemenin değil.
-   */
-  const [ent] = await db
-    .select({ paidAt: entitlements.storePaidAt })
-    .from(entitlements)
-    .where(eq(entitlements.userId, inviteeUserId))
-    .limit(1);
-  if (ent?.paidAt) return "already";
+  /* Hesap yaşı better-auth'un `user` tablosundan ve HAM SQL ile: o tablo
+     Drizzle şemamızda tanımlı değil, kütüphaneye ait (aynı yöntem
+     `lib/auth/guest-user` içinde de kullanılıyor). Satır okunamazsa davet
+     KABUL EDİLMİYOR: bilinmeyen yaşı "yeni" saymak pencereyi anlamsız kılardı. */
+  if (!(await isNewAccount(inviteeUserId))) return "already";
 
   try {
     await db.insert(referrals).values({
@@ -121,103 +170,15 @@ export async function attachReferral(inviteeUserId: string, code: string): Promi
   }
 }
 
-/**
- * Davet edilenin İLK ödemesi alındı — davetçiye ödül yaz.
- *
- * `applyStoreEvent` `firstPayment: true` döndüğünde çağrılıyor. Tekrar
- * teslimat koruması iki katmanlı: webhook tarafında olay kimliği eleniyor,
- * burada da `rewarded_at` dolu satır ikinci kez ödüllendirilmiyor.
- *
- * @returns ödül verildiyse davetçinin kimliği
- */
-export async function rewardForFirstPayment(inviteeUserId: string): Promise<string | null> {
-  const [row] = await db.select().from(referrals).where(eq(referrals.inviteeUserId, inviteeUserId)).limit(1);
-  if (!row || row.rewardedAt) return null;
-
-  /**
-   * ÖDEMENİN GERÇEKTEN ALINDIĞINI BURASI DA DOĞRULAR.
-   *
-   * Çağıran (webhook) bunu zaten `firstPayment` bayrağıyla kapıyor, ama işlevin
-   * adı "ilk ödemede" diye söz veriyorsa sözü kendisi tutmalı: ikinci bir
-   * çağıran çıktığında (elle telafi, geri doldurma betiği, admin aracı) ödül
-   * ücretsiz DENEME için de dağıtılırdı ve bu, sahte hesapla hafta üretmenin
-   * tam olarak kapatmak istediğimiz yolu. Veritabanı testi bunu yakaladı:
-   * deneme olayından sonra doğrudan çağrılınca ödül düşüyordu.
-   *
-   * `store_paid_at` yalnız gerçek para alındığında yazılıyor (`applyStoreEvent`).
-   */
-  const [ent] = await db
-    .select({ paidAt: entitlements.storePaidAt })
-    .from(entitlements)
-    .where(eq(entitlements.userId, inviteeUserId))
-    .limit(1);
-  if (!ent?.paidAt) return null;
-
-  const cfg = await premiumConfig();
-  const days = cfg.referral.rewardDays;
-  if (days <= 0) return null;
-
-  const minutes = daysToMinutes(days);
-  /**
-   * TAVAN VE ÖDÜL AYNI KİLİT ALTINDA.
-   *
-   * Davetçi başına tavan (0 = sınırsız) panelden ayarlanıyor; kötüye kullanım
-   * ortaya çıkarsa kod değiştirmeden kısılabilsin diye. Sayım ve yazma ayrı
-   * ifadelerdi: aynı davetçinin iki davetlisi aynı anda ödeme yapınca ikisi de
-   * sayımı tavanın altında görüyor ve ikisi de ödül alıyordu (güvenlik
-   * denetimi 2026-09-14, #14). İki farklı SATIR güncellendiği için satırdaki
-   * koşul bunu kapatamıyor; davetçiye özel işlem kilidi sayım ile yazmayı
-   * sıraya sokuyor. Kilit işlem bitince kendiliğinden bırakılıyor.
-   *
-   * Koşullu güncelleme yine duruyor: aynı DAVETLİ için gelen ikinci istek
-   * (webhook yeniden teslimi) boş döner.
-   */
-  const claimed = await db.transaction(async (tx) => {
-    if (cfg.referral.maxRewards > 0) {
-      await tx.execute(sql`select pg_advisory_xact_lock(hashtextextended(${`referral:${row.inviterUserId}`}, 0))`);
-      const [c] = await tx
-        .select({ n: sql<number>`count(*)::int` })
-        .from(referrals)
-        .where(and(eq(referrals.inviterUserId, row.inviterUserId), isNotNull(referrals.rewardedAt)));
-      if ((c?.n ?? 0) >= cfg.referral.maxRewards) return [];
-    }
-    return tx
-      .update(referrals)
-      .set({ rewardedAt: new Date(), rewardMinutes: minutes })
-      .where(and(eq(referrals.id, row.id), sql`${referrals.rewardedAt} is null`))
-      .returning({ id: referrals.id });
-  });
-  if (claimed.length === 0) return null;
-
-  await grantBonus(row.inviterUserId, minutes, {
-    source: "referral",
-    ref: inviteeUserId,
-    actor: "system",
-    note: `${days} gün — davet ettiği kullanıcı ilk ödemesini yaptı`,
-  });
-  return row.inviterUserId;
-}
-
 export type { ReferralStats } from "./referral-types";
 
 export async function referralStats(userId: string): Promise<ReferralStats> {
   const code = await ensureReferralCode(userId);
   const [row] = await db
-    .select({
-      invited: sql<number>`count(*)::int`,
-      rewarded: sql<number>`count(*) filter (where ${referrals.rewardedAt} is not null)::int`,
-      minutes: sql<number>`coalesce(sum(${referrals.rewardMinutes}), 0)::int`,
-    })
+    .select({ invited: sql<number>`count(*)::int` })
     .from(referrals)
     .where(eq(referrals.inviterUserId, userId));
-  const cfg = await premiumConfig();
-  return {
-    code,
-    invited: row?.invited ?? 0,
-    rewarded: row?.rewarded ?? 0,
-    earnedDays: Math.round((row?.minutes ?? 0) / (60 * 24)),
-    rewardDays: cfg.referral.rewardDays,
-  };
+  return { code, invited: row?.invited ?? 0 };
 }
 
 /** Panel için: en çok davet üreten kullanıcılar. */
@@ -226,7 +187,6 @@ export async function topReferrers(limit = 20) {
     .select({
       userId: referrals.inviterUserId,
       invited: sql<number>`count(*)::int`,
-      rewarded: sql<number>`count(*) filter (where ${referrals.rewardedAt} is not null)::int`,
     })
     .from(referrals)
     .groupBy(referrals.inviterUserId)

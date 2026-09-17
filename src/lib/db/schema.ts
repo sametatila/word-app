@@ -663,6 +663,87 @@ export const accountDeletions = pgTable("account_deletions", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+/**
+ * ŞEMADA OLMAYAN TABLO DEPLOY'DAN SAĞ ÇIKMAZ. `deploy.sh` her dağıtımda
+ * `drizzle-kit push --force` çalıştırıyor: veritabanı bu dosyaya zorla
+ * eşitleniyor. Aşağıdaki dört tablo 2026-09-17'de yalnız migration olarak
+ * (0061) canlıya uygulandı, şemaya yazılmadı ve bir sonraki deploy hepsini
+ * düşürdü. Yeni tablo her zaman BURAYA da yazılır.
+ */
+
+/** Admin işlem kaydı — panelden yapılan her başarılı yazma (lib/admin `logAdminAction`). */
+export const adminAudit = pgTable(
+  "admin_audit",
+  {
+    id: serial("id").primaryKey(),
+    adminEmail: text("admin_email").notNull(),
+    /** ör. premium.grant_days, users.delete, app.save_control */
+    action: text("action").notNull(),
+    target: text("target"),
+    detail: jsonb("detail"),
+    ip: text("ip"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("admin_audit_created_idx").on(t.createdAt)],
+);
+
+/** İstemci hata grupları — kişisel veri yok (lib/client-errors). */
+export const clientErrorGroups = pgTable(
+  "client_error_groups",
+  {
+    fingerprint: text("fingerprint").primaryKey(),
+    /** web · android · ios */
+    platform: text("platform").notNull(),
+    name: text("name"),
+    message: text("message").notNull(),
+    stack: text("stack"),
+    screen: text("screen"),
+    appVersion: text("app_version"),
+    count: integer("count").notNull().default(1),
+    firstSeen: timestamp("first_seen", { withTimezone: true }).notNull().defaultNow(),
+    lastSeen: timestamp("last_seen", { withTimezone: true }).notNull().defaultNow(),
+    resolvedAt: timestamp("resolved_at", { withTimezone: true }),
+  },
+  (t) => [index("client_error_groups_seen_idx").on(t.lastSeen)],
+);
+
+/** Cevap özeti: gün × oyun (lib/admin-query `refreshRollups`). */
+export const reviewsDaily = pgTable(
+  "reviews_daily",
+  {
+    day: date("day").notNull(),
+    game: text("game").notNull(),
+    n: integer("n").notNull(),
+    correct: integer("correct").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.day, t.game] })],
+);
+
+/**
+ * Mağaza olay defteri — webhook'a gelen her olay (gelir metrikleri). Mali
+ * kayıt: hesap silmede satır kalır, kullanıcı kimliği boşaltılır (§11).
+ */
+export const storeEvents = pgTable(
+  "store_events",
+  {
+    id: serial("id").primaryKey(),
+    provider: text("provider").notNull(),
+    eventId: text("event_id"),
+    type: text("type").notNull(),
+    userId: text("user_id"),
+    platform: text("platform"),
+    product: text("product"),
+    periodType: text("period_type"),
+    environment: text("environment"),
+    priceUsd: real("price_usd"),
+    currency: text("currency"),
+    priceLocal: real("price_local"),
+    eventAt: timestamp("event_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("store_events_event_idx").on(t.provider, t.eventId), index("store_events_at_idx").on(t.eventAt)],
+);
+
 /** Toplu bildirim kaydı — panelden gönderilen duyurular. */
 export const pushBroadcasts = pgTable("push_broadcasts", {
   id: serial("id").primaryKey(),
@@ -1367,12 +1448,12 @@ export const entitlements = pgTable("entitlements", {
   /**
    * İlk GERÇEK ödemenin alındığı an (deneme değil).
    *
-   * Referans ödülünün tetiği bu: deneme başlangıcı ödül üretmez, yoksa sahte
-   * hesapla hafta üretmek serbest kalırdı (karar: 2026-09-08). Bir kez yazılır,
-   * sonraki yenilemelerde değişmez.
+   * Bir kez yazılır, sonraki yenilemelerde değişmez ve abonelik el
+   * değiştirdiğinde yeni sahibine kopyalanır — "bu abonelik ne zaman gerçekten
+   * ödemeye döndü" sorusunun tek cevabı bu sütun.
    */
   storePaidAt: timestamp("store_paid_at", { withTimezone: true }),
-  /** Harcanmamış bonus bakiyesi (dakika). Promo + referans + elle. */
+  /** Harcanmamış bonus bakiyesi (dakika). Promo kodu + elle verilen hediye. */
   bonusMinutes: integer("bonus_minutes").notNull().default(0),
   /** Şu an çalışan bonus penceresinin bitişi. null/geçmiş = bonus çalışmıyor. */
   bonusUntil: timestamp("bonus_until", { withTimezone: true }),
@@ -1475,9 +1556,14 @@ export const promoRedemptions = pgTable(
 /**
  * Davet zinciri. Bir satır = bir davet edilen kullanıcı.
  *
- * `invitee_user_id` BENZERSİZ: bir kişi yalnız bir kez davet edilmiş sayılır,
- * yoksa aynı hesap birden çok davetçiye ödül üretirdi. Ödül davet edilenin İLK
- * ÖDEMESİNDE düşer (`rewarded_at`), deneme başlangıcında değil.
+ * `invitee_user_id` BENZERSİZ: bir kişi yalnız bir kez davet edilmiş sayılır.
+ * İlk davetçi kazanır; sonradan gelen kod bağı değiştiremez.
+ *
+ * ÖDÜL KOLONLARI DÜŞTÜ (2026-09-17): `rewarded_at` ve `reward_minutes`,
+ * davetin premium süresiyle ödüllendirildiği döneme aitti. Karşılık artık bir
+ * tahsisat değil bir bağlantı — davet edilenden davetçiye arkadaşlık isteği
+ * gidiyor (gerekçe: lib/premium/referral başı). Kolonlar tek satır veri
+ * taşımadan düştü.
  */
 export const referrals = pgTable(
   "referrals",
@@ -1488,9 +1574,6 @@ export const referrals = pgTable(
     /** Kullanılan kod — davetçinin `profiles.referral_code`'u. */
     code: text("code").notNull(),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-    /** null = davet edilen henüz ödeme yapmadı, ödül düşmedi. */
-    rewardedAt: timestamp("rewarded_at", { withTimezone: true }),
-    rewardMinutes: integer("reward_minutes"),
   },
   (t) => [
     uniqueIndex("referrals_invitee_idx").on(t.inviteeUserId),

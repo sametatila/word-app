@@ -10,7 +10,7 @@ import { STATE_GRANTS, type StoreEvent, type StoreState, type StoreTransfer } fr
  * Yetki iki bağımsız bileşenin bileşimi:
  *
  *   MAĞAZA PENCERESİ  mutlak bitiş, sağlayıcı bildirir, her olayda üzerine yazılır.
- *   BONUS             bizim verdiğimiz süre (promo/referans/elle); bakiye olarak
+ *   BONUS             bizim verdiğimiz süre (promo kodu / elle); bakiye olarak
  *                     birikir, ancak mağaza kapsamı YOKKEN harcanmaya başlar.
  *
  * İkisinin ayrı tutulması bu tasarımın can damarı. Tek bir `premium_until`
@@ -104,8 +104,8 @@ export async function resolveEntitlement(userId: string): Promise<EntitlementVie
    * ama bakiye var.
    *
    * TEK CÜMLEDE, ATOMİK. Önce okuyup sonra hesaplanan değeri yazmak KAYIP
-   * GÜNCELLEME üretiyordu: iki istek arasına bir `grantBonus` girerse (davet
-   * ödülü, promo kodu) okuma sonrası artan bakiye, hesaplanmış sıfırla
+   * GÜNCELLEME üretiyordu: iki istek arasına bir `grantBonus` girerse (promo
+   * kodu, elle telafi) okuma sonrası artan bakiye, hesaplanmış sıfırla
    * silinirdi — kullanıcı kazandığı hediyeyi kaybederdi. Burada bakiye
    * veritabanının kendi okuduğu değerden süreye çevriliyor ve koşullar da aynı
    * cümlede: araya girecek bir yazma yok.
@@ -202,16 +202,22 @@ export async function isPremiumCached(userId: string | null): Promise<boolean> {
   }
 }
 
-export type BonusSource = "promo" | "referral" | "manual";
+export type BonusSource = "promo" | "manual";
 
 /**
- * Bonus süre ekler — promo kodu, referans ödülü, elle verilen hediye.
+ * Bonus süre ekler — promo kodu ya da elle verilen hediye.
  *
  * BAKİYEYE eklenir, tarihe değil. Kullanıcı o an ödeyen bir aboneyse süre
  * beklemeye alınır ve aboneliği bittiğinde çalışmaya başlar; böylece hediye
- * ödediği ayın üstüne binip yanmaz. İki referans ödülü üstüste biner çünkü
- * ikisi de aynı bakiyeye ekleniyor — "birikebilen ve birbirine eklenebilen"
- * şartının karşılığı tam olarak bu.
+ * ödediği ayın üstüne binip yanmaz. İki hediye üstüste biner çünkü ikisi de
+ * aynı bakiyeye ekleniyor — "birikebilen ve birbirine eklenebilen" şartının
+ * karşılığı tam olarak bu.
+ *
+ * BU YOL OTOMATİK BİR PROGRAMA BAĞLANMAZ. Davet ödülü bir dönem buraya
+ * bağlıydı ve teslim edilemiyordu: ödeyen bir kullanıcıda bakiye, ancak
+ * aboneliği bırakırsa işe yarıyordu. Seyrek ve kasıtlı kullanımda (promo,
+ * telafi) bu sorun vaka bazında yönetilebilir; herkese vaat edilen bir
+ * mekanizmada yönetilemez.
  */
 export async function grantBonus(
   userId: string,
@@ -245,16 +251,15 @@ export const daysToMinutes = (days: number): number => Math.round(days * 24 * 60
  * İki koruma var ve ikisi de gerçek olaylardan doğdu:
  *
  *  TEKRAR TESLİMAT. Sağlayıcılar webhook'u yanıt alamayınca yeniden yolluyor.
- *  Aynı olayın iki kez işlenmesi deftere iki satır yazar ve — daha kötüsü —
- *  referans ödülünü iki kez tetikleyebilirdi. `eventId` defterde aranıyor.
+ *  Aynı olayın iki kez işlenmesi deftere iki satır yazardı ve yetki penceresi
+ *  iki kez kaydedilirdi. `eventId` defterde aranıyor.
  *
  *  BONUSUN KORUNMASI. Kullanıcı hediye süresi çalışırken abone olursa kalan
  *  hediye bakiyeye GERİ DÖNÜYOR. Yoksa ödediği ay hediyenin üstüne biner ve
  *  kullanıcı hediyesini fark etmeden kaybeder.
  *
- * @returns ödül tetiklenecekse `firstPayment: true` (referans zinciri buna bakar)
  */
-export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolean; firstPayment: boolean }> {
+export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolean }> {
   const now = Date.now();
   const row = await readRow(ev.userId);
   const grants = STATE_GRANTS.has(ev.state);
@@ -262,7 +267,6 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
 
   // Yetki veren bir olayda bitiş sağlayıcıdan gelir; vermeyen olayda pencere kapanır.
   const storeUntil = grants ? ev.expiresAt : null;
-  const firstPayment = ev.paid && !row.storePaidAt;
   const storePaidAt = row.storePaidAt ?? (ev.paid ? new Date() : null);
 
   try {
@@ -288,7 +292,7 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
         })
         .onConflictDoNothing()
         .returning({ id: premiumGrants.id });
-      if (!gate) return { applied: false, firstPayment: false };
+      if (!gate) return { applied: false };
 
       // Mağaza alanları — MUTLAK yazılır, orada tek kaynak sağlayıcıdır.
       const next = {
@@ -308,7 +312,7 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
 
       // Hediye çalışırken abonelik başladıysa kalanı bakiyeye geri al (bkz. `returnRunningBonus`).
       if (grants && !wasCovered) await returnRunningBonus(tx, ev.userId);
-      return { applied: true, firstPayment };
+      return { applied: true };
     });
   } finally {
     // İŞLEMİN DIŞINDA: önbelleği tazelemek yetkiyi değiştirmiyor, ve içeride
@@ -325,8 +329,9 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
  * Hediye (bonus) bakiyesi ve çalışan hediye penceresi kişiye ait, taşınmıyor
  * ve silinmiyor. Birden çok kaynak varsa en geç biten pencere taşınıyor.
  *
- * `storePaidAt` yeni kullanıcıya KOPYALANIYOR: aynı aboneliğin sonraki
- * yenilemesi "ilk ödeme" sayılıp davet ödülünü ikinci kez tetiklemesin.
+ * `storePaidAt` yeni kullanıcıya KOPYALANIYOR: "bu abonelik için ilk gerçek
+ * ödeme ne zaman alındı" bir olgu ve abonelik el değiştirince sıfırlanmamalı —
+ * yoksa aynı aboneliğin sonraki yenilemesi ilk ödeme gibi görünürdü.
  *
  * KAPI `applyStoreEvent` ile aynı: olay kimliği deftere tekil yazılıyor,
  * çakışırsa olay zaten işlenmiş. Satırlar işlem içinde kilitleniyor; aynı
@@ -394,8 +399,8 @@ export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: 
  *
  * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye mağaza alanlarının mutlak
  * yazmasının içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook
- * satırı okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak
- * değer o ödülü üzerine yazıp silerdi.
+ * satırı okuduktan sonra araya bir promo kodu girerse, hesaplanmış mutlak
+ * değer o hediyeyi üzerine yazıp silerdi.
  *
  * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor ve
  * koşul da aynı cümlede: pencere bu arada kapandıysa hiçbir şey olmuyor.

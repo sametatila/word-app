@@ -168,7 +168,8 @@ export function PaywallScreen() {
   */
   const refLine = ((): { ok: boolean; text: string } | null => {
     switch (refResult) {
-      case "ok": return { ok: true, text: t("promo.referral_linked", { n: status?.referral?.rewardDays ?? 0 }) };
+      case "ok": return { ok: true, text: t("promo.referral_linked") };
+      case "linked": return { ok: true, text: t("referral.linked_quiet") };
       case "pending": return { ok: true, text: t("referral.pending") };
       case "already": return { ok: false, text: t("referral.already_linked") };
       case "self": return { ok: false, text: t("promo.self") };
@@ -311,7 +312,7 @@ export function PaywallScreen() {
             ))}
           </Section>
 
-          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} rewardDays={status.referral?.rewardDays ?? 0} /> : null}
+          {OWN_PROMO_CODES ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
           {status.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
 
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
@@ -454,7 +455,7 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} rewardDays={status?.referral?.rewardDays ?? 0} /> : null}
+        {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
         {status?.referral && !guest ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </KeyboardAwareScroll>
 
@@ -610,8 +611,8 @@ function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "
  * "tükendi"): üçünde de kullanıcının yapacağı şey farklı ve tek bir "geçersiz
  * kod" mesajı doğrudan destek çağrısı üretir.
  */
-/** `rewardDays` DIŞARIDAN — bkz. web `premium-paywall` PromoBox notu. */
-function PromoBox({ colors, onRedeemed, rewardDays }: { colors: Palette; onRedeemed: () => void; rewardDays: number }) {
+/** Promo kodu kutusu — bulunamayan kod DAVET kodu olabilir, uç ikisini ayırıyor. */
+function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => void }) {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
@@ -621,13 +622,13 @@ function PromoBox({ colors, onRedeemed, rewardDays }: { colors: Palette; onRedee
     setBusy(true);
     setMsg(null);
     try {
-      const r = await api<{ ok?: boolean; kind?: string; days?: number; error?: string }>("/api/premium/redeem", {
+      const r = await api<{ ok?: boolean; kind?: string; result?: string; days?: number; error?: string }>("/api/premium/redeem", {
         method: "POST",
         body: JSON.stringify({ code }),
       });
       if (r.ok && r.kind === "referral") {
         // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor.
-        setMsg({ ok: true, text: t("promo.referral_linked", { n: rewardDays }) });
+        setMsg({ ok: true, text: t(r.result === "linked" ? "referral.linked_quiet" : "promo.referral_linked") });
         setCode("");
       } else if (r.ok) {
         setMsg({ ok: true, text: t("promo.success", { n: r.days ?? 0 }) });
@@ -694,10 +695,10 @@ function promoErrorKey(reason: string | undefined): string {
  * Davet. Kod ömür boyu sabit; bağlantı web'in promo açılışıyla aynı biçimde
  * (`/premium?code=…`), yani tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
  */
-function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number; rewardDays: number } }) {
+function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number } }) {
   return (
     <Section title={t("referral.title")} colors={colors}>
-      <Text variant="caption">{t("referral.explain", { n: referral.rewardDays })}</Text>
+      <Text variant="caption">{t("referral.explain")}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
@@ -729,7 +730,7 @@ function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: 
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
         {referral.invited === 0
           ? t("referral.none_yet")
-          : `${t("referral.invited", { n: referral.invited })} · ${t("referral.rewarded", { n: referral.rewarded })}${referral.earnedDays > 0 ? ` · ${t("referral.earned", { n: referral.earnedDays })}` : ""}`}
+          : t("referral.invited", { n: referral.invited })}
       </Text>
     </Section>
   );

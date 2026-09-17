@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { AUTH_BASE_URL, getAccountUserId } from "@/lib/auth/server";
-import { attachReferral, normalizeReferral } from "@/lib/premium/referral";
+import { normalizeReferral } from "@/lib/premium/referral";
+import { applyReferralLink } from "@/lib/referral-link";
 import { track } from "@/lib/events";
 
 export const dynamic = "force-dynamic";
@@ -15,9 +16,9 @@ export const dynamic = "force-dynamic";
  * Kutu promo kodu için haklı olarak gizli — promo kodu gerçekten premium gün
  * açıyor, yani "kendi mekanizmanla kilidi açma" tarifine giriyor. Ama AYNI
  * kutudan girilen davet kodu girene HİÇBİR ŞEY vermiyor: yalnız "kim kimi
- * davet etti" satırını yazıyor, ödül davetçiye ve davet edilenin gerçek
- * ödemesinde düşüyor. Doğru olan bir karar, ilgisiz ve zararsız olan yolu da
- * beraberinde götürmüştü: iOS'ta davet edilen bağı hiç kuramıyordu.
+ * davet etti" satırını yazıyor ve davetçiye arkadaşlık isteği gönderiyor.
+ * Doğru olan bir karar, ilgisiz ve zararsız olan yolu da beraberinde
+ * götürmüştü: iOS'ta davet edilen bağı hiç kuramıyordu.
  *
  * Çözüm haklılığı savunmak değil, KUTUYU HİÇ GÖSTERMEMEK. Bağ artık yazılan
  * bir koddan değil DOKUNULAN BİR BAĞLANTIDAN kuruluyor. Uygulaması kurulu
@@ -64,8 +65,8 @@ export async function GET(req: Request, ctx: { params: Promise<{ code: string }>
   void track(userId, "invite_open", new Date().toISOString().slice(0, 10), 0, "link");
 
   try {
-    const r = await attachReferral(userId, code);
-    return to(r === "ok" ? "ok" : r === "unknown_code" ? "unknown" : r);
+    const r = await applyReferralLink(userId, code);
+    return to(r === "unknown_code" ? "unknown" : r);
   } catch (err) {
     console.error("[r/code]", err);
     return to("error");

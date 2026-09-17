@@ -16,7 +16,7 @@ type CodeRow = {
   disabledAt: string | null;
   createdAt: string;
 };
-type Referrer = { userId: string; invited: number; rewarded: number };
+type Referrer = { userId: string; invited: number };
 /** `findPremiumAccount` dönüşü — sunucudaki `PremiumAccount` ile aynı şekil. */
 type Account = {
   userId: string;
@@ -176,13 +176,13 @@ export function PremiumAdmin({
       </Card>
 
       <Card title="Referans (davet)">
-        <Grid>
-          <Num label="Ödül (gün)" v={cfg.referral.rewardDays} on={(n) => num(["referral", "rewardDays"], n)} />
-          <Num label="Kişi başı en fazla ödül (0 = sınırsız)" v={cfg.referral.maxRewards} on={(n) => num(["referral", "maxRewards"], n)} />
-        </Grid>
-        <p className="mt-2 text-caption" style={{ color: "var(--text-muted)" }}>
-          Ödül davet edilenin <b>ilk ödemesinde</b> düşer; ücretsiz deneme ödül üretmez.
-          Ödüller bakiyede birikir ve üst üste eklenir.
+        <p className="text-caption" style={{ color: "var(--text-muted)" }}>
+          Burada ayarlanacak bir şey yok. Davetin karşılığı <b>premium süresi değil</b>:
+          bağ kurulunca davet edilenden davetçiye arkadaşlık isteği gidiyor, kabul
+          edilince ortak seri başlıyor. Ödül olarak premium gün verilmesi
+          2026-09-17&apos;de kaldırıldı — ödeyen bir davetçide o süre bakiyede bekliyor
+          ve ancak aboneliği bıraktığında işe yarıyordu, yani teslim edilemeyen bir
+          vaatti. Davet sayıları <a className="underline" href="/admin/social">Sosyal</a> panelinde.
         </p>
       </Card>
 
@@ -249,7 +249,6 @@ export function PremiumAdmin({
               <tr className="text-left" style={{ color: "var(--text-muted)" }}>
                 <th className="py-1">Kullanıcı</th>
                 <th className="py-1">Davet</th>
-                <th className="py-1">Ödüllenen</th>
               </tr>
             </thead>
             <tbody>
@@ -257,7 +256,6 @@ export function PremiumAdmin({
                 <tr key={r.userId} className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1 font-mono text-caption">{r.userId.slice(0, 12)}…</td>
                   <td className="py-1">{r.invited}</td>
-                  <td className="py-1">{r.rewarded}</td>
                 </tr>
               ))}
             </tbody>

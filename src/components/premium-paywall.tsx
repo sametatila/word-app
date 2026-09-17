@@ -123,7 +123,9 @@ export function PremiumPaywall({
   const refNotice = ((): { ok: boolean; text: string } | null => {
     switch (refResult) {
       case "ok":
-        return { ok: true, text: t("promo.referral_linked", { n: referral?.rewardDays ?? 0 }) };
+        return { ok: true, text: t("promo.referral_linked") };
+      case "linked":
+        return { ok: true, text: t("referral.linked_quiet") };
       case "already":
         return { ok: false, text: t("referral.already_linked") };
       case "self":
@@ -247,7 +249,7 @@ export function PremiumPaywall({
         </>
       )}
 
-      {signedIn && <PromoBox prefill={prefillCode} rewardDays={referral?.rewardDays ?? 0} />}
+      {signedIn && <PromoBox prefill={prefillCode} />}
       {signedIn && referral && <ReferralBox referral={referral} />}
     </div>
   );
@@ -327,17 +329,14 @@ function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
   );
 }
 
-/** Promo kodu — panelden üretilen kodların bozdurulduğu yer. */
 /**
- * Promo kodu kutusu.
+ * Promo kodu kutusu — panelden üretilen kodların bozdurulduğu yer.
  *
- * `rewardDays` DIŞARIDAN: davet kodu tanındığında gösterilen cümle ödülün kaç
- * gün olduğunu söylüyor ve o sayı panelden değiştirilebiliyor. Metinde sabit
- * yazılıydı ("1 hafta") — panelde 14 gün yapıldığı anda paywall yalan
- * söylerdi. Kardeş cümle (`referral.explain`) baştan beri değeri okuyordu,
- * yani ayrışma tek satırdaydı.
+ * Bulunamayan bir kod DAVET kodu olabilir: uç ikisini ayırıyor
+ * (`api/premium/redeem`). Kullanıcı iki kod türü olduğunu bilmiyor ve bilmek
+ * zorunda da değil — eline bir kod geçiyor, giriyor.
  */
-function PromoBox({ prefill, rewardDays }: { prefill: string; rewardDays: number }) {
+function PromoBox({ prefill }: { prefill: string }) {
   const t = useT();
   const [code, setCode] = useState(prefill);
   const [busy, setBusy] = useState(false);
@@ -353,11 +352,14 @@ function PromoBox({ prefill, rewardDays }: { prefill: string; rewardDays: number
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ code }),
       });
-      const data = (await res.json()) as { ok?: boolean; kind?: string; days?: number; error?: string };
+      const data = (await res.json()) as { ok?: boolean; kind?: string; result?: string; days?: number; error?: string };
       if (data.ok && data.kind === "referral") {
-        // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor — mesaj bunu söylemeli,
-        // yoksa kullanıcı premium beklerken hiçbir şey açılmadığını görür.
-        setMsg({ ok: true, text: t("promo.referral_linked", { n: rewardDays }) });
+        /* Davet kodu premium AÇMIYOR — bağı kuruyor ve davetçiye arkadaşlık
+           isteği gönderiyor. İki cümle ayrı: istek gerçekten gittiyse onu
+           söylüyoruz, gidemediyse (davetçi istekleri kapatmış, engel, hız
+           sınırı) yalnız bağın kurulduğunu. "İstek gönderildi" demek
+           gönderilmediği hâlde, düzeltilemeyecek bir yanlış olurdu. */
+        setMsg({ ok: true, text: t(data.result === "linked" ? "referral.linked_quiet" : "promo.referral_linked") });
       } else if (data.ok) {
         setMsg({ ok: true, text: t("promo.success", { n: data.days ?? 0 }) });
         // Yetki değişti: sayfayı tazele ki durum ve kilitler güncellensin.
@@ -469,7 +471,7 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
 
   return (
     <Section title={t("referral.title")}>
-      <p className="text-body">{t("referral.explain", { n: referral.rewardDays })}</p>
+      <p className="text-body">{t("referral.explain")}</p>
       <p className="mt-1 text-caption muted">{t("referral.reward_note")}</p>
 
       <div className="mt-3 flex items-center gap-2">
@@ -495,8 +497,6 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
         ) : (
           <>
             <Chip text={t("referral.invited", { n: referral.invited })} />
-            <Chip text={t("referral.rewarded", { n: referral.rewarded })} />
-            {referral.earnedDays > 0 && <Chip text={t("referral.earned", { n: referral.earnedDays })} tone="good" />}
           </>
         )}
       </div>

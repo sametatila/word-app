@@ -17,15 +17,20 @@ import { api } from "../api/client";
  * silinseydi "bağlantıya dokun, sonra kayıt ol" akışı tam ortasından kopardı.
  *
  * SÜRESİ VAR. Aynı telefonda A bağlantıya dokunup vazgeçse ve haftalar sonra
- * B giriş yapsa, B yanlışlıkla A'nın davetçisine bağlanırdı. Bağ kimseye
- * zarar vermiyor (girene hiçbir şey vermiyor, ödül davetçiye ve ancak gerçek
- * ödemede düşüyor) ama yine de yanlış kayıt; pencere onu sınırlıyor.
+ * B giriş yapsa, B yanlışlıkla A'nın davetçisine bağlanır ve tanımadığı birine
+ * arkadaşlık isteği gönderirdi. Pencere onu sınırlıyor.
  */
 
 const KEY = "lernomi:pending-referral";
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
-export type ReferralResult = "ok" | "already" | "self" | "unknown" | "error";
+/**
+ * `ok` — bağ kuruldu VE davetçiye arkadaşlık isteği gitti.
+ * `linked` — bağ kuruldu ama istek gönderilemedi (davetçi istekleri kapatmış,
+ * engel ya da hız sınırı). Ayrı tutuluyor ki kullanıcıya gönderilmemiş bir
+ * istek "gönderildi" diye söylenmesin.
+ */
+export type ReferralResult = "ok" | "linked" | "already" | "self" | "unknown" | "error";
 
 type Pending = { code: string; at: number };
 
@@ -34,6 +39,8 @@ function toResult(raw: unknown): ReferralResult {
   switch (raw) {
     case "ok":
       return "ok";
+    case "linked":
+      return "linked";
     case "already":
       return "already";
     case "self":

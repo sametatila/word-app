@@ -584,7 +584,7 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
           <Section title="Premium & davet" hint="Ayrıntı ve yazma işleri Premium sayfasında.">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               <Kpi label="Premium şu an" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye`} />
-              <Kpi label="Davet" value={fmt(c.growth.referrals.total)} sub={`${fmt(c.growth.referrals.rewarded)} ödüllendi · ${fmt(c.growth.referrals.last30)} 30g`} />
+              <Kpi label="Davet" value={fmt(c.growth.referrals.total)} sub={`${fmt(c.growth.referrals.last30)} son 30g`} />
               <Kpi label="Promo kullanımı 30g" value={fmt(c.engagement.promoRedemptions30)} />
               <Kpi label="Mağaza platformu" value={c.premium.byPlatform.map((p) => `${p.key} ${p.count}`).join(" · ") || "—"} />
             </div>
