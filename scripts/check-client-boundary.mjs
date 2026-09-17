@@ -246,6 +246,15 @@ const PUBLIC_ROUTES = new Map([
   ["src/app/api/turnstile/route.ts", "captcha doğrulaması: çağıran henüz giriş yapmamış olabilir"],
   ["src/app/api/client-errors/route.ts", "hata raporu: hataların çoğu girişte ya da oturum düşmüşken; kişiye bağlanmıyor, yalnız gruplanıyor (web aynı-köken, mobil sürüm başlığı)"],
   ["src/app/api/handoff-nonce/route.ts", "giriş devrinin cihaz değeri: çağıran tanım gereği henüz girişsiz; yalnız rastgele sayı döner, veri okumuyor ya da yazmıyor"],
+  /* İçerik teslim hattı (F0). Üçü de BİLEREK açık: kullanıcı giriş yapmadan
+     önce de uygulamanın içerik göstergesine bakması ve dersini indirmesi
+     gerekiyor, misafir modunda oturum hiç olmayabiliyor. Buradan yalnız
+     ücretsiz çekirdek içerik geçiyor; premium gövdeler `gated` işaretiyle
+     bu uçlardan HİÇ dönmüyor (bkz. `lib/content/ids` `isGatedPack`) ve
+     kâğıtlar yetki kontrolünden geçen ayrı uçtan iniyor. */
+  ["src/app/api/content/pointer/route.ts", "içerik göstergesi: hangi sürüm canlı, hangi madde kapalı; sır taşımıyor ve girişten önce de gerekiyor"],
+  ["src/app/api/content/manifest/route.ts", "paket deltası: yalnız ücretsiz içeriğin madde listesi; kapılı paketler manifestte hiç görünmüyor"],
+  ["src/app/api/content/i/[hash]/route.ts", "içerik gövdesi: hash adresli, değişmez, önbelleklenebilir; kapılı gövdeler 404 dönüyor"],
 ]);
 
 const GATES = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cronGate\(|adminGate\(|verifyAppleNotification\(|adapter\.parse\(/;

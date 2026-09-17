@@ -179,6 +179,12 @@ const MOBIL_ONLY = {
   /* Önceden `/api/words/...` alt uçlarının web çağrıları bu ucu da "webde
      çağrılıyor" gösteriyordu (alt dizi eşleşmesi); tam yol aranınca göründü. */
   "/api/words": "kelime listesi; web sayfayi sunucuda ciziyor",
+  /* Icerik teslim hatti (F0): web ayni icerigi HTTP'siz okuyor
+     (`lib/content/read` `readItem`), cunku sayfa zaten sunucuda ciziliyor.
+     Mobilin sunucusu yok; ayni icerigi bu uclardan aliyor. */
+  "/api/content/pointer": "icerik gostergesi; web `lib/content/read` `pointer`i sunucuda cagiriyor",
+  "/api/content/manifest": "paket deltasi; webin cihaz onbellegi yok, icerigi dogrudan okuyor",
+  "/api/content/i": "icerik govdesi; web `lib/content/read` `readItem` ile dogrudan okuyor",
 };
 
 const MOBIL_ONLY_METHOD = {
@@ -197,6 +203,9 @@ const MOBIL_ONLY_METHOD = {
   "GET /api/mock-exam": "kagit katalogu; web paketi sunucuda ice aliyor (`lib/mock-exams`)",
   "GET /api/placement": "yerlestirme sorulari; web paketi sunucuda ice aliyor",
   "GET /api/words": "kelime listesi; web sayfayi sunucuda ciziyor",
+  "GET /api/content/pointer": "web `lib/content/read` `pointer`i sunucuda cagiriyor",
+  "GET /api/content/manifest": "webin cihaz onbellegi yok; delta yalniz mobil icin",
+  "GET /api/content/i": "web govdeyi `readItem` ile sunucuda cozuyor",
 };
 
 const all = routes().sort();

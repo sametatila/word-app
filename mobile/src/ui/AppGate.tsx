@@ -6,6 +6,7 @@ import { Text } from "./Text";
 import { spacing, radii, useTheme } from "../theme";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
+import { syncContentPointer } from "../content/store";
 import { APP_VERSION_CODE } from "../version";
 
 /**
@@ -42,6 +43,12 @@ export function AppGate() {
     lastRead.current = now;
     const c = await fetchServerConfig(true).catch(() => null);
     if (c) setControl(c.app);
+    /* İÇERİK GÖSTERGESİ de burada tazeleniyor: uygulama zaten "bakım var mı,
+       güncellemem gerekiyor mu" diye soruyor; "yeni içerik var mı, kapatılmış
+       madde var mı" aynı anın sorusu. Ayrı bir uç, çünkü ömrü farklı
+       (yarım dakika / beş dakika) ama tetiği aynı. Kendi hatalarını yutuyor:
+       içerik yoklaması bakım kapısını hiçbir zaman düşürmemeli. */
+    void syncContentPointer();
   }, []);
 
   useEffect(() => {
