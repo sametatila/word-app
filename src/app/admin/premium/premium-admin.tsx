@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
+import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -109,7 +109,7 @@ export function PremiumAdmin({
     <AdminPage>
       <PageHeader
         title="Premium"
-        description="Ücretsiz kotalar, adil kullanım tavanı, deneme sınavı paketleri, plan bilgisi ve promo kodları. Her değer canlıda geçerli, kod ya da mağaza sürümü gerekmez. Tek bir hesaba premium vermek o kullanıcının sayfasında."
+        description="Ücretsiz kotalar, adil kullanım tavanı, deneme sınavı paketleri, plan bilgisi ve promo kodları. Her değer canlıda geçerli, kod ya da mağaza sürümü gerekmez. Tek bir hesaba premium vermek o kullanıcının sayfasında (listeden seç: /admin/users). Gelir ve huniler: /admin/revenue"
       />
 
       {/* SINIRLAR — kaydet çubuğu yalnız bu grubun içinde yapışkan: form
@@ -193,7 +193,7 @@ export function PremiumAdmin({
               }
             }}
           />
-          {msg ? <span className="text-strong" role="status" style={{ color: bad ? TONE.bad : TONE.ok }}>{msg}</span> : null}
+          {msg ? <span className="text-strong" role="status" style={{ color: bad ? TONE.bad : TONE.ok }}><Linkify text={msg} /></span> : null}
         </div>
       </div>
 
@@ -207,7 +207,7 @@ export function PremiumAdmin({
             edilince ortak seri başlıyor. Ödül olarak premium gün verilmesi
             2026-09-17&apos;de kaldırıldı — ödeyen bir davetçide o süre bakiyede bekliyor
             ve ancak aboneliği bıraktığında işe yarıyordu, yani teslim edilemeyen bir
-            vaatti. Davet sayıları panonun <a className="underline" href="/admin">Büyüme</a> sekmesinde.
+            vaatti. Davet sayıları: <a className="underline" href="/admin/revenue">/admin/revenue</a> (Premium ve davet).
           </p>
         </Panel>
 

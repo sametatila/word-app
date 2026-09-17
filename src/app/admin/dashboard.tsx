@@ -5,7 +5,7 @@ import type { ServerMetrics } from "@/lib/server-metrics";
 import type { Coverage } from "@/lib/admin-coverage";
 import type { Revenue } from "@/lib/premium/revenue";
 import { trendDelta, type TrendMetric } from "@/lib/admin-trends-shared";
-import { alertHref } from "./alert-href";
+import { alertLinks } from "@/lib/admin-links";
 import { BarList, BTN, DataTable, Dot, Empty, fmt, Notice, Panel, PanelGrid, Stat, Stats, TONE, type Tone } from "./_ui/ui";
 
 /**
@@ -126,7 +126,7 @@ function RevenueCard({ r, days }: { r: Revenue; days: number }) {
   return (
     <Panel title={`Gelir · son ${days} gün`} hint="Brüt USD, mağaza payı düşülmemiş." actions={<a href="/admin/premium" className={BTN.small}>Premium ayarları</a>}>
       {!r.webhookConfigured ? (
-        <div className="mb-3"><Notice tone="bad">Mağaza webhook&apos;u kapalı (REVENUECAT_WEBHOOK_AUTH): satın almalar kaydedilmiyor.</Notice></div>
+        <div className="mb-3"><Notice tone="bad">{"Mağaza webhook'u kapalı: satın almalar hiçbir hesaba yazılmıyor. Sunucu /opt/lernomi/.env içinde REVENUECAT_WEBHOOK_AUTH boş; değeri RevenueCat › Integrations › Webhooks'taki Authorization ile aynı olmalı: https://app.revenuecat.com/"}</Notice></div>
       ) : null}
       <Stats cols={7}>
         <Stat label="MRR" value={usd(rc?.mrrUsd ?? r.now.mrrUsd)} sub={rc?.mrrUsd != null ? "RevenueCat" : "defterden tahmin"} />
@@ -187,14 +187,22 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
   const sessRate = sess.started ? sess.done / sess.started : 0;
   const critical = alerts.filter((a) => a.level === "kritik");
   const warning = alerts.filter((a) => a.level === "uyari");
+  /* Her uyarı NEREYE bakılacağını söylüyor: panel bölümünün adı ve adresi,
+     varsa cevabın verildiği dış konsol (`lib/admin-links`, Telegram'la aynı). */
   const list = (items: StatusAlert[]) => (
-    <ul className="space-y-1">
-      {items.map((a) => (
-        <li key={a.key} className="flex flex-wrap items-baseline justify-between gap-x-3">
-          <span className="min-w-0">{a.text}</span>
-          <a href={alertHref(a.key)} className="text-caption underline-offset-2 hover:underline">Aç →</a>
-        </li>
-      ))}
+    <ul className="space-y-2.5">
+      {items.map((a) => {
+        const l = alertLinks(a.key);
+        return (
+          <li key={a.key}>
+            <div>{a.text}</div>
+            <div className="mt-0.5 flex flex-wrap gap-x-4 gap-y-0.5 text-caption">
+              <a href={l.panel.path} className="underline underline-offset-2">→ {l.panel.label}</a>
+              {l.external ? <a href={l.external.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">↗ {l.external.label}</a> : null}
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
   return (
@@ -444,7 +452,7 @@ export function ExperienceSection({ days, data: d, coverage: c }: Base) {
 
         {/* Giden e-posta: doğrulama postası ZORUNLU bir kapı, o yüzden
             başarısızlık burada kırmızı. */}
-        <Panel title={`Giden e-posta (${days}g)`} hint="fail = SMTP reddi · cap = alıcı başına saatlik tavan" span>
+        <Panel id="e-posta" title={`Giden e-posta (${days}g)`} hint="fail = SMTP reddi · cap = alıcı başına saatlik tavan" span>
           {d.mail.length === 0 ? <p className="muted text-caption">Kayıt yok.</p> : (
             <Pills items={d.mail.map((m) => ({
               key: m.kind,
@@ -552,7 +560,7 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
 export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { server: ServerMetrics }) {
   return (
     <PanelGrid>
-        <Panel title="Yedek ve işletim" hint={`Gecelik pg_dump · ${s.ops.backup.files} günlük kopya · TTS önbelleği ${fmt(s.ops.ttsCacheMB)} MB / 1 GB`} span>
+        <Panel id="yedek" title="Yedek ve işletim" hint={`Gecelik pg_dump · ${s.ops.backup.files} günlük kopya · TTS önbelleği ${fmt(s.ops.ttsCacheMB)} MB / 1 GB`} span>
           <Stats cols={5}>
             <Stat
               label="Son yedek"
@@ -572,7 +580,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           </Stats>
         </Panel>
 
-        <Panel title="Kaynak kullanımı" hint={`${s.host.cpuCount} vCPU · yük ${s.host.load1.toFixed(2)} / ${s.host.load5.toFixed(2)} / ${s.host.load15.toFixed(2)} · uptime ${dur(s.host.uptimeSec)}`}>
+        <Panel id="kaynak" title="Kaynak kullanımı" hint={`${s.host.cpuCount} vCPU · yük ${s.host.load1.toFixed(2)} / ${s.host.load5.toFixed(2)} / ${s.host.load15.toFixed(2)} · uptime ${dur(s.host.uptimeSec)}`}>
           <div className="space-y-3">
             <Gauge label="CPU" pctVal={s.host.cpuPct} detail={`${s.host.cpuCount} çekirdek`} />
             <Gauge label="RAM" pctVal={s.mem.usedPct} detail={`${fmt(s.mem.totalMB - s.mem.availMB)} / ${fmt(s.mem.totalMB)} MB kullanımda`} />
@@ -580,7 +588,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           </div>
         </Panel>
 
-        <Panel title="Uygulama ve deploy" hint={`Aktif renk: ${s.app.activeColor} · canlı commit ${s.app.liveCommit || "?"}`}>
+        <Panel id="deploy" title="Uygulama ve deploy" hint={`Aktif renk: ${s.app.activeColor} · canlı commit ${s.app.liveCommit || "?"}`}>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {s.app.instances.map((i) => (
               <div key={i.name} className="flex items-center gap-2 rounded-tile px-2.5 py-2 text-caption" style={{ background: "var(--surface-2)" }}>
@@ -607,7 +615,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         {/* ZAMANLANMIŞ İŞLER. Cron'lar bir kez çağıransız kalıp aylarca hiç
             çalışmadı. Liste artık BEKLENEN işlerden kuruluyor: hiç koşmamış
             iş de satır olarak görünüyor ve beklenen aralığı aşan kırmızı. */}
-        <Panel title="Zamanlanmış işler" hint="Kırmızı = beklenen aralıkta koşmadı ya da son koşu hata · denied = CRON_SECRET uyuşmadı" span flush>
+        <Panel id="zamanlanmis-isler" title="Zamanlanmış işler" hint="Kırmızı = beklenen aralıkta koşmadı ya da son koşu hata · denied = CRON_SECRET uyuşmadı" span flush>
           <DataTable
             head={["", "İş", "Ne yapar", "Son koşu", { label: "7 gün", align: "right" }, "Ayrıntı"]}
             rows={c.cron.map((j) => {
@@ -624,7 +632,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           />
         </Panel>
 
-        <Panel title="PostgreSQL" hint={`Bağlantı ${s.pg.total}/${s.pg.maxConn} · veritabanı ${fmt(s.pg.dbSizeMB)} MB`}>
+        <Panel id="veritabani" title="PostgreSQL" hint={`Bağlantı ${s.pg.total}/${s.pg.maxConn} · veritabanı ${fmt(s.pg.dbSizeMB)} MB`}>
           <Stats cols={3}>
             <Stat label="Aktif" value={s.pg.active} />
             <Stat label="Boşta" value={s.pg.idle} />
@@ -635,7 +643,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
         </Panel>
 
         {/* UÇTAN UCA: uygulamanın kendi kaydı değil, nginx'in gördüğü. */}
-        <Panel title="İstek sağlığı (bugün, nginx)" hint={`${s.http.since ? `${s.http.since.slice(0, 17)}'den beri` : "log okunamadı"} · ${fmt(s.http.total)} istek · ${fmt(s.http.api)} API`}>
+        <Panel id="istek-sagligi" title="İstek sağlığı (bugün, nginx)" hint={`${s.http.since ? `${s.http.since.slice(0, 17)}'den beri` : "log okunamadı"} · ${fmt(s.http.total)} istek · ${fmt(s.http.api)} API`}>
           <Stats cols={3}>
             <Stat label="5xx" value={fmt(s.http.s5xx)} tone={s.http.s5xx ? "bad" : "ok"} />
             <Stat label="4xx" value={fmt(s.http.s4xx)} />
@@ -647,7 +655,7 @@ export function OpsSection({ days, data: d, coverage: c, server: s }: Base & { s
           <BarList max={Math.max(1, ...s.http.topApi.map((a) => a.count))} items={s.http.topApi.map((a) => ({ label: a.route, value: a.count }))} />
         </Panel>
 
-        <Panel title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme, token — sohbet ve STT/telaffuz.">
+        <Panel id="yapay-zeka" title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme, token — sohbet ve STT/telaffuz.">
           {d.ai.length === 0 ? <p className="muted text-caption">Son 7 günde AI çağrısı yok.</p> : (
             <div className="space-y-2">
               {d.ai.map((a) => (

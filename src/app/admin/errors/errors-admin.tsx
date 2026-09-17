@@ -4,6 +4,7 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import type { ErrorGroup } from "@/lib/client-errors";
+import { EXTERNAL } from "@/lib/admin-links";
 import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, TONE, when } from "../_ui/ui";
 
 /**
@@ -13,7 +14,7 @@ import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, TONE, when } f
  */
 const PLATFORM: Record<string, string> = { web: "Web", android: "Android", ios: "iOS" };
 
-export function ErrorsAdmin({ groups, showAll, top }: { groups: ErrorGroup[]; showAll: boolean; top?: React.ReactNode }) {
+export function ErrorsAdmin({ groups, showAll, top, focus = null }: { groups: ErrorGroup[]; showAll: boolean; top?: React.ReactNode; focus?: string | null }) {
   const [gone, setGone] = useState<Set<string>>(new Set());
   const [msg, setMsg] = useState("");
   const [platform, setPlatform] = useState("");
@@ -40,11 +41,14 @@ export function ErrorsAdmin({ groups, showAll, top }: { groups: ErrorGroup[]; sh
     <AdminPage>
       <PageHeader
         title="Hatalar"
-        description="Web ve mobil JavaScript hataları, mesaj + yığın + ekran + sürümle gruplanmış. Native çökmeler Firebase Crashlytics'te."
+        description={<>Web ve mobil JavaScript hataları, mesaj + yığın + ekran + sürümle gruplanmış. Native (Android/iOS) çökmeler Firebase Crashlytics&apos;te: <a className="underline" href={EXTERNAL.crashlytics} target="_blank" rel="noopener noreferrer">{EXTERNAL.crashlytics}</a></>}
         meta={`${list.length} grup · ${total} olay`}
         actions={<a href={showAll ? "/admin/errors" : "/admin/errors?all=1"} className={BTN.secondary}>{showAll ? "Yalnız açıklar" : "Çözülenler dahil"}</a>}
       />
       {msg ? <Notice tone="bad">{msg}</Notice> : null}
+      {focus && !groups.some((g) => g.fingerprint === focus) ? (
+        <Notice tone="warn">Uyarıdaki hata grubu bulunamadı (kayıt silinmiş olabilir). Bütün gruplar: <a className="underline" href="/admin/errors?all=1">/admin/errors?all=1</a></Notice>
+      ) : null}
       {top}
       <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
         {["", "web", "android", "ios"].map((p) => (
@@ -61,7 +65,7 @@ export function ErrorsAdmin({ groups, showAll, top }: { groups: ErrorGroup[]; sh
         ) : (
           <div>
             {list.map((g) => (
-              <details key={g.fingerprint} className="border-t px-3 py-2.5 text-caption first:border-t-0" style={{ borderColor: "var(--hairline)" }}>
+              <details key={g.fingerprint} id={`grup-${g.fingerprint}`} open={g.fingerprint === focus} className="scroll-mt-32 border-t px-3 py-2.5 text-caption first:border-t-0" style={g.fingerprint === focus ? { borderColor: "var(--hairline)", background: "color-mix(in srgb, var(--color-brand) 6%, var(--surface))" } : { borderColor: "var(--hairline)" }}>
                 <summary className="flex cursor-pointer flex-wrap items-center gap-x-2 gap-y-1">
                   <b className="w-12 shrink-0 tabular-nums" style={{ color: g.count >= 20 ? TONE.bad : undefined }}>{g.count}×</b>
                   <Badge>{PLATFORM[g.platform] ?? g.platform}</Badge>

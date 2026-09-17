@@ -16,12 +16,15 @@ export const dynamic = "force-dynamic";
  * iOS). Burada mesaj, yığın, ekran ve sürümle gruplanmış JS hataları; yeni
  * grup ayrıca Telegram uyarısına düşüyor (lib/alerts).
  */
-export default async function AdminErrorsPage({ searchParams }: { searchParams: Promise<{ all?: string }> }) {
+export default async function AdminErrorsPage({ searchParams }: { searchParams: Promise<{ all?: string; grup?: string }> }) {
   const gate = await adminGate();
   if (!gate.ok) return <AdminDenied title="Hatalar" email={gate.email} />;
-  const { all } = await searchParams;
-  const [groups, panel] = await Promise.all([listErrorGroups(all === "1"), loadPanel()]);
+  const { all, grup } = await searchParams;
+  /* `?grup=<parmak izi>`: uyarıdaki bağlantı doğrudan o grubu açıyor. Grup
+     çözüldü olarak işaretlenmişse listede görünsün diye çözülenler de okunuyor. */
+  const focus = grup && /^[\w-]{6,64}$/.test(grup) ? grup : null;
+  const [groups, panel] = await Promise.all([listErrorGroups(all === "1" || !!focus), loadPanel()]);
   /* Ekrana göre dağılım panonun "Olaylar" sekmesindeydi, grupların kendisi
      burada: aynı sorunun iki yüzü iki ayrı yerde okunuyordu. */
-  return <ErrorsAdmin groups={groups} showAll={all === "1"} top={<ClientErrorsByScreen data={panel.value.data} days={30} />} />;
+  return <ErrorsAdmin groups={groups} showAll={all === "1"} focus={focus} top={<ClientErrorsByScreen data={panel.value.data} days={30} />} />;
 }

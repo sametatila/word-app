@@ -83,6 +83,8 @@ const SKIP = [
   "lib/admin-trends.ts",
   // İçerik sürümü ve madde analizi: panel etiketleri ve sunucu hata metni.
   "lib/admin-content.ts",
+  // Uyarıların panel/konsol adresleri ve bölüm etiketleri: panel ve Telegram.
+  "lib/admin-links.ts",
   // Panelden yönetilen işletim: yalnız sunucu günlüğü ve panel etiketleri.
   // Kullanıcıya giden metinler (bakım, güncelleme, duyuru) sözlükte ya da
   // panelde üç dilde yazılıyor.

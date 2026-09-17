@@ -82,7 +82,7 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
 
       <Panel
         title="Madde kapat"
-        hint="Kapatma göstergeye en geç 30 saniyede düşer; cihazında gövdesi olan istemci de maddeyi gizler. Ders ve egzersizde madde kimliği dersin/egzersizin kimliği (de-a1-hallo), deneme sınavında kâğıt kimliği (de-b1-01). Hangi maddenin sorunlu olduğunu Öğrenme › Madde analizi gösteriyor."
+        hint="Kapatma göstergeye en geç 30 saniyede düşer; cihazında gövdesi olan istemci de maddeyi gizler. Ders ve egzersizde madde kimliği dersin/egzersizin kimliği (de-a1-hallo), deneme sınavında kâğıt kimliği (de-b1-01). Hangi maddenin sorunlu olduğunu madde analizi gösteriyor: /admin/learning — haftalık quiz maddeleri: /admin/quiz"
       >
         <form
           className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_10rem_auto] sm:items-end"

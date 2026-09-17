@@ -61,7 +61,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
         </Notice>
       ) : null}
       {suspension ? <Notice tone="bad" title="Hesap askıda">{suspension.reason}</Notice> : null}
-      {!u.account && !u.profile ? <Notice tone="warn">Bu kimlikle hesap yok (silinmiş olabilir).</Notice> : null}
+      {!u.account && !u.profile ? <Notice tone="warn">{"Bu kimlikle hesap yok (silinmiş olabilir). Silme kaydı: /admin/growth · işlem kaydı: /admin/audit"}</Notice> : null}
 
       <PanelGrid>
         <Panel title="Hesap" hint="Kimlik doğrulama tarafı (better-auth).">

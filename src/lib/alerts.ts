@@ -9,6 +9,8 @@ import { appControl } from "@/lib/app-control";
 import { esc, sendTelegram, telegramConfigured } from "@/lib/telegram";
 import { storeReviews } from "@/lib/store-reviews";
 import { androidVitals, ANR_THRESHOLD, CRASH_THRESHOLD } from "@/lib/android-vitals";
+import { absolute, alertLinks } from "@/lib/admin-links";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * UYARI MOTORU — panelin "bakınca konuşan" hâlini "kendisi haber veren" hâle
@@ -255,16 +257,26 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
   let sent = 0;
   let resolved = 0;
 
+  /* HER SATIR NEREYE BAKILACAĞINI URL İLE SÖYLÜYOR (`lib/admin-links`): panel
+     bölümü ve varsa cevabın verildiği dış konsol. Eskiden mesajın sonunda
+     yalnız panelin ana sayfası vardı. */
+  const where = (key: string) => {
+    const l = alertLinks(key);
+    /* Adres AÇIKÇA yazılıyor, bağlantı metninin arkasına gizlenmiyor: kopyalanıp
+       başka yere yapıştırılabilsin, nereye gidileceği tıklamadan görülsün. */
+    const panel = `→ ${esc(l.panel.label)}: ${esc(absolute(SITE_URL, l.panel.path))}`;
+    return l.external ? `${panel}\n→ ${esc(l.external.label)}: ${esc(l.external.url)}` : panel;
+  };
   const current = new Set(alerts.map((a) => a.key));
   for (const a of alerts) {
     const prev = state[a.key];
     if (!prev) {
-      lines.push(`${a.level === "kritik" ? "<b>[KRİTİK]</b>" : "<b>[UYARI]</b>"} ${esc(a.text)}`);
+      lines.push(`${a.level === "kritik" ? "<b>[KRİTİK]</b>" : "<b>[UYARI]</b>"} ${esc(a.text)}\n${where(a.key)}`);
       state[a.key] = { since: now.toISOString(), lastSent: now.toISOString(), text: a.text, level: a.level };
       sent++;
     } else if (now.getTime() - new Date(prev.lastSent).getTime() >= REMIND_MS && !a.key.startsWith("err")) {
       const hours = Math.round((now.getTime() - new Date(prev.since).getTime()) / 3_600_000);
-      lines.push(`<b>[SÜRÜYOR ${hours} sa]</b> ${esc(a.text)}`);
+      lines.push(`<b>[SÜRÜYOR ${hours} sa]</b> ${esc(a.text)}\n${where(a.key)}`);
       prev.lastSent = now.toISOString();
       prev.text = a.text;
       sent++;
@@ -283,7 +295,7 @@ export async function runAlerts(): Promise<{ active: number; sent: number; resol
   }
 
   if (lines.length && telegramConfigured()) {
-    await sendTelegram(`<b>Lernomi</b>\n${lines.join("\n")}\n\nhttps://www.lernomi.app/admin`);
+    await sendTelegram(`<b>Lernomi</b>\n${lines.join("\n\n")}\n\nGenel durum: ${esc(absolute(SITE_URL, "/admin"))}`);
   }
   await saveState(state);
   return { active: alerts.length, sent, resolved, configured: telegramConfigured() };

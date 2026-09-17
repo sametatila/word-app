@@ -67,7 +67,7 @@ export function QuizAdmin({ data }: { data: QuizAdminData }) {
       {/* 4. MADDE ANALİZİ — en değerli sinyal, üstte */}
       <Panel
         title="Gözden geçirilecek maddeler"
-        hint="En düşük doğruluk oranından başlayarak. Çok düşük bir oran genelde öğrencinin değil maddenin kusurudur: yanlış anahtar, belirsiz soru ya da iki savunulabilir şık. En az 3 cevap almış maddeler listeleniyor."
+        hint="En düşük doğruluk oranından başlayarak. Çok düşük bir oran genelde öğrencinin değil maddenin kusurudur: yanlış anahtar, belirsiz soru ya da iki savunulabilir şık. En az 3 cevap almış maddeler listeleniyor. Bozuk maddeyi kapatmak için: /admin/content (paket quiz/de ya da quiz/en, madde kimliği soldaki sütun)."
         flush
       >
         <DataTable

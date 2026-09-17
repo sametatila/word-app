@@ -122,7 +122,7 @@ export function AccountActions({ userId, suspended }: { userId: string; suspende
 
         <div className={box} style={{ borderColor: "var(--color-rose)" }}>
           <b className="text-strong" style={{ color: TONE.bad }}>Hesabı sil</b>
-          <p className="muted">Kalıcı: hesap, ilerleme, yazılar, sosyal izler silinir; mali kayıt anonimleşir (gizlilik politikası §11). Mağaza aboneliği varsa mağazada ayrıca iptal edilmesi gerekir.</p>
+          <p className="muted">Kalıcı: hesap, ilerleme, yazılar, sosyal izler silinir; mali kayıt anonimleşir (gizlilik politikası §11: <a className="underline" href="/privacy" target="_blank" rel="noopener noreferrer">/privacy</a>). Mağaza aboneliği varsa mağazada ayrıca iptal edilmesi gerekir.</p>
           <Field label="Gerekçe">
             <select value={delReason} onChange={(e) => setDelReason(e.target.value)} className={FIELD} style={FIELD_STYLE}>
               <option value="">Seç…</option>

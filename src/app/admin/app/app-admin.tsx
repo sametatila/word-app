@@ -75,7 +75,7 @@ export function AppAdmin({
     <AdminPage>
       <PageHeader
         title="Uygulama işletimi"
-        description="Güncelleme zorunluluğu, bakım modu, mağaza bağlantıları ve toplu bildirim. Kayıt en geç 5 dakikada uygulamalara ulaşır."
+        description="Güncelleme zorunluluğu, bakım modu, mağaza bağlantıları ve toplu bildirim. Kayıt en geç 5 dakikada uygulamalara ulaşır. Askıdaki hesaplar: /admin/users?tur=suspended · hesap silmeleri: /admin/growth"
         meta={<>Bakım: <b style={{ color: cfg.maintenance.enabled ? TONE.bad : TONE.ok }}>{cfg.maintenance.enabled ? "AÇIK" : "kapalı"}</b> · Android min {cfg.minBuild.android || "—"} · iOS min {cfg.minBuild.ios || "—"}</>}
       />
       {data.issues.length ? (
@@ -119,6 +119,7 @@ export function AppAdmin({
       </Panel>
 
       <Panel
+        id="bakim"
         title="Bakım modu"
         tone={cfg.maintenance.enabled ? "bad" : undefined}
         hint="Açıkken web uygulaması ve mobil uygulama bakım ekranı gösterir. Admin hesabı webde uygulamaya girmeye devam eder. Mesaj boşsa varsayılan metin gösterilir."

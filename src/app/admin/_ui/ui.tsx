@@ -78,7 +78,7 @@ export function PageHeader({ title, description, actions, meta, crumb }: {
           </a>
         ) : null}
         <h1 className="text-h1 break-words">{title}</h1>
-        {description ? <p className="muted mt-1 max-w-[75ch] text-body">{description}</p> : null}
+        {description ? <p className="muted mt-1 max-w-[75ch] text-body">{typeof description === "string" ? <Linkify text={description} /> : description}</p> : null}
         {meta ? <div className="muted mt-1 text-caption">{meta}</div> : null}
       </div>
       {actions ? <div className="flex flex-wrap items-center gap-2">{actions}</div> : null}
@@ -102,14 +102,14 @@ export function Panel({ title, hint, actions, children, span, flush, tone, id }:
   return (
     <section
       id={id}
-      className={`min-w-0 rounded-panel border ${span ? "lg:col-span-2" : ""}`}
+      className={`min-w-0 scroll-mt-32 rounded-panel border ${span ? "lg:col-span-2" : ""}`}
       style={tone ? { ...panelStyle, borderColor: TONE[tone] } : panelStyle}
     >
       {title || actions ? (
         <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2 px-4 pt-4 sm:px-5">
           <div className="min-w-0">
             {title ? <h2 className="text-h3">{title}</h2> : null}
-            {hint ? <p className="muted mt-0.5 max-w-[80ch] text-caption">{hint}</p> : null}
+            {hint ? <p className="muted mt-0.5 max-w-[80ch] text-caption">{typeof hint === "string" ? <Linkify text={hint} /> : hint}</p> : null}
           </div>
           {actions ? <div className="flex flex-wrap items-center gap-2">{actions}</div> : null}
         </div>
@@ -140,6 +140,28 @@ export function Stats({ children, cols = 4 }: { children: ReactNode; cols?: 2 | 
   return <div className={`grid grid-cols-2 gap-x-4 gap-y-4 ${lg}`}>{children}</div>;
 }
 
+/**
+ * Metindeki adresleri tıklanabilir yapar: `https://…` ve uygulama içi yollar
+ * (`/admin…`, `/profile…`, `/privacy`). Uyarı ve hata cümleleri düz metin olarak
+ * üretiliyor (sunucu hata kodları, Telegram'la ortak metinler); yönlendirme
+ * cümlede adresiyle yazılıyor ve burada bağlantıya dönüşüyor.
+ */
+const URL_RE = /(https?:\/\/[^\s<>"')]+|\/(?:admin|profile|privacy|terms|support)(?:[\/?#][^\s<>"'),]*)?)/g;
+export function Linkify({ text }: { text: string }) {
+  const parts = text.split(URL_RE);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <a key={i} href={part} className="underline underline-offset-2 break-all" {...(part.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{part}</a>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
 export function Notice({ tone = "info", title, children, role }: { tone?: Tone; title?: ReactNode; children?: ReactNode; role?: "alert" | "status" }) {
   return (
     <div
@@ -148,7 +170,7 @@ export function Notice({ tone = "info", title, children, role }: { tone?: Tone; 
       style={{ borderColor: TONE[tone], background: `color-mix(in srgb, ${TONE[tone]} 7%, var(--surface))` }}
     >
       {title ? <div className="text-strong" style={{ color: TONE[tone] }}>{title}</div> : null}
-      {children ? <div className={title ? "mt-1" : ""}>{children}</div> : null}
+      {children ? <div className={title ? "mt-1" : ""}>{typeof children === "string" ? <Linkify text={children} /> : children}</div> : null}
     </div>
   );
 }

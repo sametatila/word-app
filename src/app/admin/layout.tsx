@@ -2,6 +2,8 @@ import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "
 import { openReportCount } from "@/lib/moderation-admin";
 import { loadAlerts } from "./_data";
 import { AdminNav } from "./_ui/nav";
+import { Linkify } from "./_ui/ui";
+import { APP_LINKS } from "@/lib/admin-links";
 
 export const dynamic = "force-dynamic";
 
@@ -24,12 +26,14 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     loadAlerts().then((a) => a.value).catch(() => []),
   ]);
   const alertCount = { critical: alerts.filter((a) => a.level === "kritik").length, warning: alerts.filter((a) => a.level === "uyari").length };
+  /* Şerit yapılacak şeyi ADRESİYLE söylüyor (`Linkify` bağlantıya çeviriyor):
+     "Profil › Ayarlar › Güvenlik" tarifi yerine doğrudan o bölüm. */
   const strip = preview
     ? { tone: "var(--color-brand)", text: "Yerel önizleme (ADMIN_PREVIEW): veri salt okunur, yazma işlemleri reddedilir." }
     : state && !state.twoFactor
-      ? { tone: "var(--color-rose)", text: "Hesabında iki adımlı doğrulama kapalı: panel yalnız okuma kipinde. Değişiklik için Profil › Ayarlar › Güvenlik'ten aç." }
+      ? { tone: "var(--color-rose)", text: `Hesabında iki adımlı doğrulama kapalı: panel yalnız okuma kipinde. Açmak için: ${APP_LINKS.security.path}` }
       : state && !state.freshForSensitive
-        ? { tone: "var(--color-flame)", text: `Oturumun ${ADMIN_FRESH_HOURS} saatten eski: hassas işlemler (silme, askıya alma, toplu bildirim, bakım, premium) için çıkış yapıp yeniden gir.` }
+        ? { tone: "var(--color-flame)", text: `Oturumun ${ADMIN_FRESH_HOURS} saatten eski: hassas işlemler (silme, askıya alma, toplu bildirim, bakım, premium) için çıkış yapıp (/profile) yeniden gir.` }
         : null;
 
   return (
@@ -37,7 +41,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <header className="z-30 border-b sm:sticky sm:top-0" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
         {strip ? (
           <div role="status" className="border-b px-4 py-1.5 text-center text-caption" style={{ borderColor: strip.tone, color: strip.tone, background: `color-mix(in srgb, ${strip.tone} 8%, var(--surface))` }}>
-            {strip.text}
+            <Linkify text={strip.text} />
           </div>
         ) : null}
         <div className="mx-auto w-full max-w-6xl px-4 pt-2.5 pb-1 sm:px-6">

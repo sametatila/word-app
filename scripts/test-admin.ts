@@ -26,7 +26,7 @@ import { summarizeReviews, type StoreReview } from "../src/lib/store-reviews";
 import { parseVitalsRows } from "../src/lib/android-vitals";
 import { trendDelta } from "../src/lib/admin-trends-shared";
 import { aggregateMockItems, MIN_ANSWERS } from "../src/lib/admin-content";
-import { alertHref } from "../src/app/admin/alert-href";
+import { alertLinks } from "../src/lib/admin-links";
 import { parseRange } from "../src/app/admin/_data-shared";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
@@ -185,11 +185,17 @@ async function main() {
     check("puanlanamayan kâğıt atlanıyor", aggregateMockItems(attempts, () => null, () => "").length === 0);
   }
 
-  console.log("\nUyarı → sayfa eşlemesi");
-  check("yeni hata grubu Hatalar'a", alertHref("err:abc") === "/admin/errors" && alertHref("errspike:abc") === "/admin/errors");
-  check("mağaza ve vitals Mağaza'ya", alertHref("err-review:ios:1") === "/admin/reviews" && alertHref("vitals:çökme") === "/admin/reviews");
-  check("şikâyet Moderasyon'a, bakım Uygulama'ya", alertHref("reports") === "/admin/moderation" && alertHref("maintenance") === "/admin/app");
-  check("sunucu uyarıları Sunucu'ya", alertHref("backup:offsite") === "/admin/ops" && alertHref("cron:assess") === "/admin/ops");
+  console.log("\nUyarı → adres eşlemesi");
+  {
+    const p = (k: string) => alertLinks(k).panel.path;
+    check("yeni hata grubu doğrudan o gruba", p("err:abc123") === "/admin/errors?grup=abc123#grup-abc123" && p("errspike:abc123").startsWith("/admin/errors?grup=abc123"));
+    check("mağaza yorumu mağaza sayfasına + doğru konsol", p("err-review:ios:1") === "/admin/reviews#yorumlar" && alertLinks("err-review:ios:1").external?.url.includes("appstoreconnect") === true && alertLinks("err-review:android:1").external?.url.includes("play.google") === true);
+    check("vitals bölümüne ve Play vitals'a", p("vitals:çökme") === "/admin/reviews#vitals" && alertLinks("vitals-api").external?.url.includes("vitals") === true);
+    check("şikâyet, bakım, e-posta, webhook", p("reports") === "/admin/moderation" && p("maintenance") === "/admin/app#bakim" && p("mail") === "/admin/experience#e-posta" && p("webhook") === "/admin/revenue");
+    check("sunucu uyarıları doğru bölüme", p("backup:offsite") === "/admin/ops#yedek" && p("cron:assess") === "/admin/ops#zamanlanmis-isler" && p("cronfail:assess") === "/admin/ops#zamanlanmis-isler" && p("http5xx") === "/admin/ops#istek-sagligi" && p("ai-down:mistral") === "/admin/ops#yapay-zeka" && p("unit:x.service") === "/admin/ops#yedek" && p("disk") === "/admin/ops#kaynak" && p("pgconn") === "/admin/ops#veritabani" && p("instances") === "/admin/ops#deploy");
+    check("bilinmeyen anahtar kaybolmuyor (Sunucu)", p("check:yeni") === "/admin/ops");
+    check("etiket boş değil", ["err:a", "reports", "cron:x", "zzz"].every((k) => alertLinks(k).panel.label.length > 3));
+  }
 
   console.log("\nPanel tarih aralığı");
   check("tanınan aralıklar geçiyor", parseRange("7") === 7 && parseRange("90") === 90);

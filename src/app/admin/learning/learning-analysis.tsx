@@ -64,7 +64,7 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
       else n.delete(`${pack}:${item}`);
       return n;
     });
-    setMsg({ tone: "ok", text: disable ? `${item} kapatıldı: en geç 30 saniyede web ve mobilde görünmez.` : `${item} yeniden açıldı.` });
+    setMsg({ tone: "ok", text: disable ? `${item} kapatıldı: en geç 30 saniyede web ve mobilde görünmez. Kapalı maddeler: /admin/content` : `${item} yeniden açıldı.` });
   }
 
   const action = (pack: string, item: string) => {
@@ -94,7 +94,7 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
   return (
     <Panel
       title="Madde analizi"
-      hint={`En düşük başarıdan başlayarak; en az ${minAnswers} kişinin çalıştığı maddeler. Çok düşük oran çoğunlukla maddenin kusurudur (yanlış anahtar, belirsiz soru). Kapatmak geri alınabilir; düzeltme git'te yapılıp yayınlanır.`}
+      hint={`En düşük başarıdan başlayarak; en az ${minAnswers} kişinin çalıştığı maddeler. Çok düşük oran çoğunlukla maddenin kusurudur (yanlış anahtar, belirsiz soru). Kapatmak geri alınabilir; kapalı maddeler ve sürümler: /admin/content — düzeltme git'te yapılıp yayınlanır.`}
     >
       {/* Sekmeler — seçili olan `aria-selected` ile de söyleniyor (bkz. parity 258). */}
       <div role="tablist" aria-label="Madde türü" className="-mx-1 mb-3 flex gap-1 overflow-x-auto border-b px-1" style={{ borderColor: "var(--border)" }}>

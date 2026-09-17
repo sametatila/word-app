@@ -54,11 +54,16 @@ jobs:
         run: |
           set -u
           mkdir -p uptime-state
+          # Her mesaj nereye bakılacağını ADRESİYLE söylüyor: bu koşunun kaydı,
+          # yoklanan uç ve (site açıksa) panelin sunucu bölümü.
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          NL=$'\n'
+          WHERE="Koşu: $RUN_URL | Yoklanan: https://www.lernomi.app/api/config | Panel (açılınca): https://www.lernomi.app/admin/ops"
           send() {
             [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ] && return 0
             curl -sS --max-time 10 -o /dev/null \
               --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-              --data-urlencode "text=Lernomi (dış izleme) — $1" \
+              --data-urlencode "text=Lernomi (dış izleme) — $1${NL}${WHERE}" \
               "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" || true
           }
           if [ "${{ inputs.test }}" = "true" ]; then

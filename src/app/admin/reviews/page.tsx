@@ -43,7 +43,7 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
       />
 
       {/* ANDROID VITALS - mağaza sıralamasını etkileyen iki oran (lib/android-vitals). */}
-      <Panel title="Android kalite (Play vitals)" hint="28 günlük, kullanıcı ağırlıklı · eşiği aşan uygulama Play'de geri plana itilir · 6 sa önbellek">
+      <Panel id="vitals" title="Android kalite (Play vitals)" hint="28 günlük, kullanıcı ağırlıklı · eşiği aşan uygulama Play'de geri plana itilir · 6 sa önbellek">
         {!vitals.configured ? (
           <p className="muted text-caption">Yapılandırılmadı.</p>
         ) : vitals.error ? (
@@ -78,7 +78,7 @@ export default async function AdminReviewsPage({ searchParams }: { searchParams:
         })}
       </PanelGrid>
 
-      <Panel title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor.">
+      <Panel id="yorumlar" title="Yorumlar" hint="Önce cevapsız düşük puanlılar: mağaza sıralamasını en çok onlar etkiliyor.">
         {ordered.length === 0 ? (
           <Empty>Gösterilecek yorum yok.</Empty>
         ) : (
