@@ -95,10 +95,37 @@ yer tam burasıdır, o yüzden garanti kısıtta duruyor.
 | Yürüyüş modu **ekran açık** | sınırsız | sınırsız |
 | Yürüyüş modu **cepte / ekran kapalı** | yok | var (günlük adil kullanım tavanı) |
 | Deneme sınavı | seviye başına 1 | tamamı, 3'lü paketler hâlinde |
-| Haftalık sınav | haftada 1 | havuzun tamamı + geçmiş |
-| Konuşma/yazma dersi | seviye başına 2 | adil kullanım tavanına kadar |
-| Konuşma/yazma becerisi | 2 + 2 | adil kullanım tavanına kadar |
+| Haftalık quiz | herkese açık, haftada 1 (takvim haftası) | aynısı |
+| Konuşma/yazma alıştırması | 2 + 2 · **her 7 günlük seri +2/+2** | adil kullanım tavanına kadar |
 | Ömürlük hak bitince | haftada 2 yenilenen hak | — |
+
+**TEK HAVUZ, İKİ GİRİŞ KAPISI.** Patika ünitesindeki ve Beceriler
+kütüphanesindeki konuşma/yazma alıştırması AYNI içerik
+(`src/lib/skills/content`); kota alıştırmanın kimliğine düşüyor
+(`claimSkillAi`), hangi kapıdan açıldığına değil. Paywall bir dönem bunları iki
+ayrı satır olarak sayıyordu ("seviye başına 2 ders" + "kütüphanede 2") ve
+birincinin karşılığı olan ayrı bir hak hiç yoktu — vaat, olmayan bir yüzeyi
+anlatıyordu (2026-09-17'de tek satıra indirildi). Ders yolundan geçen tek
+gerçek yüzey **rol yapma sınavı** ve o da aynı konuşma havuzundan yiyor
+(`claimLessonAi`).
+
+**KAPASİTE KARARLILIĞA BAĞLI.** Taban hak müfredatın tadına bakmaya yetiyor,
+bitirmeye yetmiyor. Üstüne her `streakStep` (7) günlük seri kademesi
+`streakBonus` (2) kadar konuşma VE yazma hakkı açıyor, `streakMaxTiers` (5)
+kademeye kadar. Fikir deneme sınavı ilerlemesiyle aynı: hak edilen şey
+açılıyor. Kilidi "paran yetmiyor" diye değil "devam edersen açılır" diye
+kurmak hem doğru hem de kullanıcıyı uygulamada tutan şey; paywall bunu
+`plan.free_streak_ai` satırıyla söylüyor.
+
+Ölçü **`longest_streak`**, `current_streak` değil: kazanılan hak geri
+alınmıyor. Bir gün kaçıran kullanıcı elindekini kaybetseydi kilit,
+ödüllendirmek yerine cezalandıran bir şeye dönerdi.
+
+**KOTA GERÇEKTEN HARCANIYOR.** 2026-09-16 denetiminin 2. bulgusu buydu: ders
+yolu `canAiPractice` ile yalnız KONTROL ediyordu, sayaç hiç artmıyordu, yani
+kontrol her zaman geçiyordu ve duyurulan hak fiilen sınırsızdı. Birim çağrı
+değil **alıştırma**: hak ilk değerlendirmede düşüyor, aynı alıştırmayı tekrar
+puanlatmak yeni hak yakmıyor.
 
 **Yürüyüş bölmesi neden "ekran kapalı" üzerinden:** maliyetin tamamı orada.
 Ekran açıkken cihazın kendi tanıyıcısı çalışıyor ve bize hiçbir şeye mal olmuyor;
@@ -456,6 +483,7 @@ npm run test:entitlement           # 32 doğrulama
 - [ ] Promo kodu → üç platformda da aynı anda açılıyor
 - [ ] Hediye süresi çalışırken abone olmak → kalan hediye bakiyeye dönüyor
 - [ ] Ücretsiz hesapta cepte yürüyüş → 403 `premium_required`
-- [ ] Ücretsiz hesapta 2. seviye dersi sonrası → haftalık hakka düşüyor
+- [ ] Ücretsiz hesapta taban hak bitince → haftalık hakka düşüyor
+- [ ] 7 günlük seriden sonra hak sayısı artıyor (taban + kademe)
 - [ ] Kilitli deneme kâğıdının kimliğini doğrudan uca göndermek → 403
 - [ ] Abonelik bitince premium ekranlar kilitleniyor, **ilerleme silinmiyor**

@@ -132,8 +132,9 @@ export function PremiumAdmin({
           <Num label="Seviye başına deneme sınavı" v={cfg.free.mockPapersPerLevel} on={(n) => num(["free", "mockPapersPerLevel"], n)} />
           <Num label="Haftada haftalık sınav" v={cfg.free.weeklyExams} on={(n) => num(["free", "weeklyExams"], n)} />
           <Num label="Günde cepte yürüyüş turu" v={cfg.free.pocketWalksPerDay} on={(n) => num(["free", "pocketWalksPerDay"], n)} />
-          <Num label="Seviye başına konuşma dersi" v={cfg.free.speakingLessonsPerLevel} on={(n) => num(["free", "speakingLessonsPerLevel"], n)} />
-          <Num label="Seviye başına yazma dersi" v={cfg.free.writingLessonsPerLevel} on={(n) => num(["free", "writingLessonsPerLevel"], n)} />
+          <Num label="Seri adımı (gün)" v={cfg.free.streakStep} on={(n) => num(["free", "streakStep"], n)} />
+          <Num label="Kademe başına ek hak" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
+          <Num label="En fazla kademe" v={cfg.free.streakMaxTiers} on={(n) => num(["free", "streakMaxTiers"], n)} />
           <Num label="Konuşma becerisi (ömürlük)" v={cfg.free.speakingSkills} on={(n) => num(["free", "speakingSkills"], n)} />
           <Num label="Yazma becerisi (ömürlük)" v={cfg.free.writingSkills} on={(n) => num(["free", "writingSkills"], n)} />
           <Num label="Haftada yenilenen AI alıştırması" v={cfg.free.weeklyAiPractice} on={(n) => num(["free", "weeklyAiPractice"], n)} />

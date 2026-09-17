@@ -15,7 +15,7 @@
  *     anahtarı döndürüyor; bir anahtar sözlükte yoksa kullanıcı ham anahtar
  *     görür ("plan.pro_mock") ve bunu ancak üç dilde tek tek bakan biri fark eder.
  */
-import { computePacks, type PaperStat } from "../src/lib/premium/access";
+import { computePacks, earnedAiLimit, type PaperStat } from "../src/lib/premium/access";
 import { parsePremiumConfig } from "../src/lib/premium/config";
 import { DEFAULT_PREMIUM_CONFIG, describeLimits } from "../src/lib/premium/gates";
 import { trBase } from "../src/i18n/base/tr";
@@ -107,6 +107,12 @@ console.log("\nYapılandırma doğrulaması");
   const zero = parsePremiumConfig({ free: { pocketWalksPerDay: 0 } });
   check("ücretsiz kota 0 olabiliyor (premium-only)", zero.free.pocketWalksPerDay === 0);
 
+  /* Kararlılık kademesi panelden kapatılabilmeli: 0 bonus = yalnız taban. */
+  const kapali = parsePremiumConfig({ free: { streakBonus: 0 } });
+  check("kararlılık kademesi kapatılabiliyor", kapali.free.streakBonus === 0);
+  const adim = parsePremiumConfig({ free: { streakStep: 0 } });
+  check("seri adımı 1'in altına inemiyor", adim.free.streakStep === 1, `(${adim.free.streakStep})`);
+
   const bad = parsePremiumConfig({ mock: { packSize: "üç", unlockPct: 250, unlockOnComplete: "evet" } });
   check("sayı olmayan değer varsayılana düşüyor", bad.mock.packSize === d.mock.packSize);
   check("yüzde 100'e kırpılıyor", bad.mock.unlockPct === 100);
@@ -136,6 +142,29 @@ console.log("\nPaywall metinleri üç sözlükte de var");
     });
     check(`${lang}: parametreler metinde yerinde`, bad.length === 0, bad.map((b) => b.key).join(", "));
   }
+}
+
+console.log("\nKararlılığa bağlı ücretsiz kapasite");
+{
+  /*
+    ÜCRETSİZ KAPASİTE SERİYLE BÜYÜYOR (2026-09-17). Taban hak müfredatın
+    tadına bakmaya yetiyor; her yedi günlük seri kademesi iki hak daha açıyor.
+    Kilit "paran yetmiyor" değil "devam edersen açılır" diye kuruldu.
+
+    ÖLÇÜ `longest_streak`: kazanılan hak geri alınmıyor. Bir gün kaçıran
+    kullanıcı elindekini kaybetseydi kilit ödüllendirmek yerine cezalandırırdı.
+  */
+  const { streakStep: adim, streakBonus: bonus, streakMaxTiers: tavan } = DEFAULT_PREMIUM_CONFIG.free;
+  check("seri yokken yalnız taban", earnedAiLimit(2, 0, adim, bonus, tavan) === 2);
+  check("adımın altında kademe açılmıyor", earnedAiLimit(2, adim - 1, adim, bonus, tavan) === 2);
+  check("bir kademe bonus ekliyor", earnedAiLimit(2, adim, adim, bonus, tavan) === 2 + bonus);
+  check("iki kademe iki bonus", earnedAiLimit(2, adim * 2, adim, bonus, tavan) === 2 + bonus * 2);
+  /* TAVAN ŞART: seri sonsuza kadar hak üretseydi ücretsiz katman premium'un
+     yerine geçerdi. */
+  check("tavan aşılmıyor", earnedAiLimit(2, adim * (tavan + 9), adim, bonus, tavan) === 2 + bonus * tavan);
+  check("kademe kapalıyken taban duruyor", earnedAiLimit(2, adim * 3, adim, 0, tavan) === 2);
+  /* Negatif/bozuk seri tabanı bozmamalı. */
+  check("negatif seri tabana düşüyor", earnedAiLimit(2, -5, adim, bonus, tavan) === 2);
 }
 
 console.log(failures === 0 ? `\ntamam: ${total}/${total}` : `\nKALDI: ${failures}/${total} test`);

@@ -13,7 +13,7 @@ import {
   type AssessLevel,
   type AssessRequest,
 } from "@/lib/assess-prompts";
-import { canAiPractice } from "@/lib/premium/access";
+import { claimLessonAi } from "@/lib/premium/access";
 import { claimSkillAi } from "@/lib/premium/skill-access";
 import { getExercise } from "@/lib/skills";
 import { premiumConfig, takeUsage } from "@/lib/premium";
@@ -129,8 +129,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "premium_required", reason: skillGate.reason, gate: skillGate.gate }, { status: 403 });
   }
   if (gated && !skillGate) {
+    /* KONTROL ETMEKLE KALMIYOR, HARCIYOR (2026-09-17). Eskiden yalnız
+       `canAiPractice` çağrılıyordu ve sayaç hiç artmadığı için kontrol her
+       zaman geçiyordu — duyurulan hak fiilen sınırsızdı. Hak alıştırmanın ilk
+       değerlendirmesinde düşüyor; gerekçe `claimLessonAi`de. */
     const kind = parsed.req.kind === "writing" ? "writing" : "speaking";
-    const gate = await canAiPractice(userId, kind, "lesson", parsed.req.level);
+    const gate = await claimLessonAi(userId, kind, parsed.req.level, parsed.req.exerciseId);
     if (!gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
     }

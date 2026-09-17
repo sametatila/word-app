@@ -1,12 +1,12 @@
 import "server-only";
 import { and, eq, inArray, isNotNull } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { mockExamAttempts } from "@/lib/db/schema";
+import { mockExamAttempts, profiles } from "@/lib/db/schema";
 import { mockPapersFor } from "@/lib/mock-exams";
 import type { MockLevel } from "@/lib/mock-exams/types";
 import { premiumConfig } from "./config";
 import { isPremiumCached } from "./entitlement";
-import { checkQuota, levelKey, type Period, type QuotaCheck } from "./quota";
+import { bumpUsage, checkQuota, getUsage, levelKey, takeUsage, type Period, type QuotaCheck } from "./quota";
 import type { PremiumGate } from "./gates";
 
 /**
@@ -48,6 +48,44 @@ export type Access = {
    */
   counter?: { key: string; period: Period };
 };
+
+/**
+ * KARARLILIK HAKKI KAZANDIRIYOR — ücretsiz katmanın kapasitesi seriye bağlı.
+ *
+ * Taban hak (`speakingSkills`/`writingSkills`) müfredatın tadına bakmaya yetiyor,
+ * bitirmeye yetmiyor. Üstüne gelen her `streakStep` günlük seri kademesi
+ * `streakBonus` kadar hak açıyor: uygulamayı düzenli kullanan ücretsiz kullanıcı
+ * kendi kapasitesini büyütüyor.
+ *
+ * NEDEN `longestStreak`, `currentStreak` DEĞİL. Kazanılmış hak geri alınmaz:
+ * bir kez yedi gün çalışmış biri seriyi bir gün kaçırdı diye elindeki hakkı
+ * kaybetmemeli — aksi hâlde kilit, kullanıcıyı ödüllendirmek yerine cezalandıran
+ * bir şeye döner. Aynı gerekçe davet rozetinde de yazılı
+ * (`lib/achievements` `invitedActive`).
+ *
+ * TAVAN VAR: seri sonsuza kadar hak üretmemeli, yoksa ücretsiz katman
+ * premium'un yerine geçer.
+ */
+export function earnedAiLimit(base: number, longestStreak: number, step: number, bonus: number, maxTiers: number): number {
+  if (step <= 0 || bonus <= 0 || maxTiers <= 0) return base;
+  const tier = Math.min(Math.floor(Math.max(longestStreak, 0) / step), maxTiers);
+  return base + tier * bonus;
+}
+
+/**
+ * Kullanıcının en uzun serisi — kazanılan hakkın ölçüsü.
+ *
+ * Okunamazsa SIFIR sayılıyor: hata payı kullanıcının aleyhine değil tabanın
+ * lehine çalışsın diye — taban hak her hâlükârda duruyor, yalnız bonus düşüyor.
+ */
+async function longestStreakOf(userId: string): Promise<number> {
+  try {
+    const [row] = await db.select({ n: profiles.longestStreak }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
+    return row?.n ?? 0;
+  } catch {
+    return 0;
+  }
+}
 
 /** Ücretsiz kotayı önce ömürlük, sonra haftalık yenilenen haktan karşılar. */
 async function freeAiQuota(
@@ -116,16 +154,56 @@ export async function canAiPractice(
   if (await isPremiumCached(userId)) {
     return fairUse(userId, kind, "ai_practice", cfg.fairUse.aiPracticePerDay);
   }
-  const lifetimeLimit =
-    scope === "lesson"
-      ? kind === "speaking"
-        ? cfg.free.speakingLessonsPerLevel
-        : cfg.free.writingLessonsPerLevel
-      : kind === "speaking"
-        ? cfg.free.speakingSkills
-        : cfg.free.writingSkills;
+  /*
+    TEK HAVUZ, İKİ GİRİŞ KAPISI. `scope` artık hakkın BÜYÜKLÜĞÜNÜ değil yalnız
+    sayacın adını belirliyor. Patika ünitesindeki ve Beceriler kütüphanesindeki
+    alıştırma aynı içerik; ayrı bir "ders hakkı" hiç var olmamıştı (bkz.
+    `FreeLimits.speakingSkills` notu). Ders yolundan gelen tek gerçek yüzey rol
+    yapma sınavı ve o da aynı konuşma havuzundan yiyor.
+
+    KAPASİTE SERİYE BAĞLI: taban hak + her yedi günlük seri kademesi için
+    `streakBonus` kadar. Ücretsiz kullanıcı düzenli çalıştıkça kendi alanını
+    büyütüyor; hiç çalışmayanınki taban kadar kalıyor.
+  */
+  const base = kind === "speaking" ? cfg.free.speakingSkills : cfg.free.writingSkills;
+  const streak = await longestStreakOf(userId);
+  const lifetimeLimit = earnedAiLimit(base, streak, cfg.free.streakStep, cfg.free.streakBonus, cfg.free.streakMaxTiers);
   const key = scope === "lesson" ? levelKey(`${kind}_lesson`, level) : `${kind}_skill`;
   return freeAiQuota(userId, kind, key, lifetimeLimit, cfg.free.weeklyAiPractice);
+}
+
+/**
+ * DERS YOLUNUN HAK HARCAMASI — `claimSkillAi`'nin kardeşi.
+ *
+ * `canAiPractice` bu yolda yalnız KONTROL ediyordu ve sayaç hiç artmıyordu:
+ * kontrol her zaman geçiyor, yani paywall'ın duyurduğu hak fiilen sınırsızdı
+ * (denetim 2026-09-16, bulgu 2). Bu yoldan geçen tek gerçek yüzey rol yapma
+ * sınavı; konuşma havuzundan yiyor.
+ *
+ * BİRİM ÇAĞRI DEĞİL ALIŞTIRMA. Hak, alıştırmanın İLK değerlendirmesinde
+ * düşüyor; aynı sınavı tekrar puanlatmak yeni hak yakmıyor. Çağrı başına
+ * saysaydık bir kez takılan ağ hakkı yakardı ve kullanıcı neden kaybettiğini
+ * anlamazdı. `takeUsage` tek ifadede kontrol + yazma, yani eşzamanlı iki istek
+ * hakkı iki kez harcayamıyor.
+ *
+ * KİMLİK YOKSA SAYILMIYOR. Sabit bir kimlik olmadan "aynı alıştırma mı" sorusu
+ * cevaplanamaz; saymak, her denemeyi ayrı hak saymak olurdu. Kapı yine
+ * çalışıyor (hak yoksa geçmiyor), yalnız düşme olmuyor.
+ */
+export async function claimLessonAi(
+  userId: string,
+  kind: "speaking" | "writing",
+  level: string,
+  exerciseId: string | null | undefined,
+): Promise<Access> {
+  const access = await canAiPractice(userId, kind, "lesson", level);
+  if (!access.allowed || !access.counter || !exerciseId) return access;
+  const owned = `owned_lesson:${exerciseId}`;
+  if ((await getUsage(userId, owned, "all")) > 0) return access;
+  if (await takeUsage(userId, owned, "all", 1)) {
+    await bumpUsage(userId, access.counter.key, access.counter.period);
+  }
+  return access;
 }
 
 /** Haftalık sınav — ücretsizde haftada N, premium'da havuzun tamamı. */

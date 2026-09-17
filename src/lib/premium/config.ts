@@ -85,10 +85,17 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
       mockPapersPerLevel: int(f.mockPapersPerLevel, d.free.mockPapersPerLevel, 0, 50),
       weeklyExams: int(f.weeklyExams, d.free.weeklyExams, 0, 50),
       pocketWalksPerDay: int(f.pocketWalksPerDay, d.free.pocketWalksPerDay, 0, 100),
-      speakingLessonsPerLevel: int(f.speakingLessonsPerLevel, d.free.speakingLessonsPerLevel, 0, 100),
-      writingLessonsPerLevel: int(f.writingLessonsPerLevel, d.free.writingLessonsPerLevel, 0, 100),
       speakingSkills: int(f.speakingSkills, d.free.speakingSkills, 0, 100),
       writingSkills: int(f.writingSkills, d.free.writingSkills, 0, 100),
+      /* SIRA VARSAYILANLARLA AYNI OLMAK ZORUNDA: `test:premium` iki nesneyi
+         `JSON.stringify` ile karşılaştırıyor ve anahtar sırası farkı testi
+         düşürüyor — kural değil ama ucuz bir hizalama kapısı.
+
+         Kararlılık kademesi: adım en az 1 gün; bonus ve kademe sayısı panelden
+         kısılabilsin diye 0'a kadar iniyor (0 = kademe kapalı, yalnız taban). */
+      streakStep: int(f.streakStep, d.free.streakStep, 1, 365),
+      streakBonus: int(f.streakBonus, d.free.streakBonus, 0, 50),
+      streakMaxTiers: int(f.streakMaxTiers, d.free.streakMaxTiers, 0, 50),
       weeklyAiPractice: int(f.weeklyAiPractice, d.free.weeklyAiPractice, 0, 100),
     },
     fairUse: {

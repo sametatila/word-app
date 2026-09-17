@@ -34,14 +34,30 @@ export type FreeLimits = {
    * kullanabiliyor ama faturayı premium ödüyor.
    */
   pocketWalksPerDay: number;
-  /** Seviye başına ömürlük konuşma dersi hakkı. */
-  speakingLessonsPerLevel: number;
-  /** Seviye başına ömürlük yazma dersi hakkı. */
-  writingLessonsPerLevel: number;
-  /** Ömürlük konuşma becerisi hakkı (seviyeden bağımsız). */
+  /**
+   * Ömürlük konuşma hakkı — PATİKA VE BECERİLER ORTAK.
+   *
+   * İki ayrı hak değil: patika ünitesindeki ve Beceriler kütüphanesindeki
+   * alıştırma AYNI içerik (`lib/skills/content`), iki ayrı giriş kapısı.
+   * Kota alıştırmanın kimliğine düşüyor (`claimSkillAi`), hangi kapıdan
+   * açıldığına değil. Bir dönem paywall ikisini ayrı satır olarak sayıyordu
+   * (`speakingLessonsPerLevel`) ve o satırın karşılığı olan ayrı bir hak hiç
+   * yoktu — vaat, olmayan bir yüzeyi anlatıyordu (2026-09-17'de kaldırıldı).
+   */
   speakingSkills: number;
-  /** Ömürlük yazma becerisi hakkı. */
+  /** Ömürlük yazma hakkı — patika ve Beceriler ortak (bkz. üstteki not). */
   writingSkills: number;
+  /**
+   * KARARLILIK KADEMESİ. Ücretsiz kullanıcının kapasitesi uygulamadaki
+   * düzenliliğe bağlı: her `streakStep` günlük seri kademesi `streakBonus`
+   * kadar konuşma VE yazma hakkı açıyor, `streakMaxTiers` kademeye kadar.
+   *
+   * Deneme sınavı ilerlemesiyle aynı fikir (`MockProgression`): hak edilen
+   * şey açılıyor. Kazanılan geri alınmıyor — ölçü `longest_streak`.
+   */
+  streakStep: number;
+  streakBonus: number;
+  streakMaxTiers: number;
   /**
    * Ömürlük hak bittikten SONRA her hafta yenilenen konuşma+yazma hakkı.
    *
@@ -144,10 +160,11 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
     mockPapersPerLevel: 1,
     weeklyExams: 1,
     pocketWalksPerDay: 0,
-    speakingLessonsPerLevel: 2,
-    writingLessonsPerLevel: 2,
     speakingSkills: 2,
     writingSkills: 2,
+    streakStep: 7,
+    streakBonus: 2,
+    streakMaxTiers: 5,
     weeklyAiPractice: 2,
   },
   fairUse: {
@@ -237,8 +254,19 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
          almıyordu. Vaadi silmek, teslim edilmeyen bir vaadi taşımaktan iyidir
          (App Store 2.3.1 / 3.1.2, Play yanıltıcı beyan). */
       { key: "plan.free_weekly", params: { n: free.weeklyExams } },
-      { key: "plan.free_lessons", params: { s: free.speakingLessonsPerLevel, w: free.writingLessonsPerLevel } },
-      { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
+      /* TEK SATIR, TEK HAVUZ. Eskiden burada iki satır vardı ("seviye başına N
+         ders" + "kütüphanede N") ve bu, iki ayrı hak olduğunu ima ediyordu.
+         Oysa patika ünitesindeki ve Beceriler'deki alıştırma aynı içerik, kota
+         da aynı — birinci satırın karşılığı olan ayrı bir hak hiç yoktu. */
+      { key: "plan.free_practice", params: { s: free.speakingSkills, w: free.writingSkills } },
+      /* KARARLILIK SATIRI. Ücretsiz katmanın kapasitesi düzenli kullanıma bağlı
+         ve bunu SÖYLÜYORUZ: kilidi "paran yetmiyor" diye değil "devam edersen
+         açılır" diye kurmak, hem doğru hem de kullanıcıyı uygulamada tutan şey.
+         Kademe kapalıysa (panelden 0) satır hiç çizilmiyor — olmayan bir vaadi
+         anlatmamak için. */
+      ...(free.streakBonus > 0 && free.streakMaxTiers > 0
+        ? [{ key: "plan.free_streak_ai", params: { d: free.streakStep, n: free.streakBonus } }]
+        : []),
       { key: "plan.free_weekly_ai", params: { n: free.weeklyAiPractice } },
     ],
     premium: [
