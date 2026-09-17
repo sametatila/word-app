@@ -173,7 +173,7 @@ async function certDaysLeft(): Promise<number | null> {
 }
 
 /** `/api/social/users/abc123/x?y` → `/api/social/users/:id` (ilk dört parça). */
-function routeOf(path: string): string {
+export function routeOf(path: string): string {
   const clean = path.split("?")[0] ?? "";
   return clean
     .split("/")

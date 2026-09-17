@@ -399,6 +399,12 @@ jobs:
       # kullanıcıların tablosunda görülür ve geri alınamaz.
       - name: Lig kuralları
         run: npm run test:league
+      # Yönetim ve işletim katmanının saf kuralları: uygulama denetimi
+      # ayrıştırıcısı (bozuk değer herkesi güncelleme ekranına kilitleyebilir),
+      # sürüm başlığı, hata gruplama/temizleme, nginx ayrıştırıcıları (bozulursa
+      # 5xx uyarısı hiç tetiklenmez), toplu bildirim yolu, mağaza defteri.
+      - name: Yönetim kuralları
+        run: npm run test:admin
       # Sözlük kapısı + ham metin kapısı. Birincisi üç dilin anahtar kümesini ve
       # yer tutucularını karşılaştırıyor; ikincisi sözlüğe HİÇ GİRMEMİŞ Türkçe
       # metni sayıyor (cırcırlı taban, yalnız aşağı iner). İkincisi olmadan

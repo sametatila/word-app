@@ -60,16 +60,21 @@ function topFrame(stack: string | undefined): string {
   return "";
 }
 
+/** Grup anahtarı — saf, `scripts/test-admin.ts` sınıyor. */
+export function errorFingerprint(e: Pick<ClientErrorInput, "platform" | "name" | "message" | "stack">): string {
+  return createHash("sha1")
+    .update([e.platform, e.name ?? "", normalizeMessage(e.message), topFrame(e.stack)].join("|"))
+    .digest("hex")
+    .slice(0, 24);
+}
+
 const lastWrite = new Map<string, { at: number; pending: number }>();
 const WRITE_EVERY_MS = 5_000;
 
 export async function recordClientError(e: ClientErrorInput): Promise<void> {
   const message = scrub(e.message).slice(0, 500);
   if (!message) return;
-  const fingerprint = createHash("sha1")
-    .update([e.platform, e.name ?? "", normalizeMessage(e.message), topFrame(e.stack)].join("|"))
-    .digest("hex")
-    .slice(0, 24);
+  const fingerprint = errorFingerprint(e);
 
   const now = Date.now();
   const w = lastWrite.get(fingerprint);

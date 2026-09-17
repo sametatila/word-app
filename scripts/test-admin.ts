@@ -1,0 +1,130 @@
+/**
+ * Yönetim ve işletim katmanının saf kuralları — `npm run test:admin`.
+ *
+ * Veritabanı istemez. Sınanan şeylerin ortak özelliği: yanlışları DERLEMEYİ
+ * KIRMIYOR ve canlıda sessiz kalıyor.
+ *   - uygulama denetimi ayrıştırıcısı: panelden yazılan bozuk bir değer herkesi
+ *     güncelleme ekranına kilitleyebilir ya da mağaza bağlantısını dışarıya
+ *     yönlendirebilir;
+ *   - istemci sürüm başlığı: tanınmazsa zorunlu güncelleme kimseye uygulanmaz;
+ *   - hata gruplama ve temizleme: kişisel veri sızarsa ya da her hata ayrı grup
+ *     olursa panel ve Telegram gürültüye boğulur;
+ *   - nginx zaman/rota ayrıştırıcıları: bozulursa 5xx uyarısı hiç tetiklenmez;
+ *   - toplu bildirim hedefi ve yolu: dışarıya yönlendiren bildirim yazılamamalı;
+ *   - mağaza defteri eşlemesi: yanlış tür/tutar gelir kartını yanıltır.
+ */
+import { DEFAULT_APP_CONTROL, parseAppControl, parseClientHeader, updateVerdict } from "../src/lib/app-control-shared";
+import { errorFingerprint, scrub } from "../src/lib/client-errors";
+import { nginxTime } from "../src/lib/alerts";
+import { routeOf } from "../src/lib/server-metrics";
+import { cleanUrl, parseAudience } from "../src/lib/push-broadcast";
+import { cleanSource, platformOf } from "../src/lib/store-link";
+import { adminErrorText } from "../src/lib/admin-errors";
+import { revenuecat } from "../src/lib/premium/providers/revenuecat";
+
+let failures = 0;
+let total = 0;
+function check(name: string, cond: boolean, detail = "") {
+  total++;
+  if (cond) console.log(`  ✓ ${name}`);
+  else {
+    failures++;
+    console.log(`  ✗ ${name} ${detail}`);
+  }
+}
+
+async function main() {
+  console.log("\nUygulama denetimi");
+  const bad = parseAppControl({
+    minBuild: { ios: -5, android: "12" },
+    latestBuild: { ios: 3, android: 4 },
+    store: { ios: { live: "evet", url: "https://evil.example/app" }, android: { live: true, url: "https://play.google.com/store/apps/details?id=x" } },
+    maintenance: { enabled: "true", message: { tr: "  bakım  ", en: 42 } },
+  });
+  check("negatif build 0'a kırpılıyor", bad.minBuild.ios === 0);
+  check("metin sayı build sayıya çevriliyor", bad.minBuild.android === 12);
+  check("en son build en düşüğün altına inemiyor", bad.latestBuild.android === 12, JSON.stringify(bad.latestBuild));
+  check("yabancı mağaza adresi reddediliyor (varsayılana dönüyor)", bad.store.ios.url === DEFAULT_APP_CONTROL.store.ios.url);
+  check("\"evet\" canlı bayrağı sayılmıyor", bad.store.ios.live === false);
+  check("Play adresi kabul ediliyor", bad.store.android.url.startsWith("https://play.google.com/"));
+  check("bakım yalnız gerçek true ile açılıyor", bad.maintenance.enabled === false);
+  check("mesaj kırpılıyor, sayı mesaj boş", bad.maintenance.message.tr === "bakım" && bad.maintenance.message.en === "");
+  check("boş girdi = varsayılan", JSON.stringify(parseAppControl(null)) === JSON.stringify(DEFAULT_APP_CONTROL));
+
+  const c = parseAppControl({ minBuild: { android: 10 }, latestBuild: { android: 14 } });
+  check("build bilinmiyorsa karar yok", updateVerdict(c, "android", 0) === "none");
+  check("en düşüğün altı zorunlu", updateVerdict(c, "android", 9) === "required");
+  check("aradaki önerilen", updateVerdict(c, "android", 12) === "suggested");
+  // Sınır: en düşük build'in KENDİSİ desteklenir (panel "en düşük" diyor, "bundan büyük" değil).
+  check("tam en düşük build zorunlu değil", updateVerdict(c, "android", 10) === "suggested");
+  check("en son ve üstü yok", updateVerdict(c, "android", 14) === "none");
+  check("iOS ayarı yoksa iOS etkilenmiyor", updateVerdict(c, "ios", 1) === "none");
+
+  console.log("\nİstemci sürüm başlığı");
+  check("geçerli başlık", JSON.stringify(parseClientHeader("android/1.0.3/14")) === JSON.stringify({ platform: "android", version: "1.0.3", build: 14 }));
+  check("iOS", parseClientHeader(" ios/2.10.0/305 ")?.platform === "ios");
+  check("bilinmeyen platform reddediliyor", parseClientHeader("web/1.0.0/1") === null);
+  check("eksik parça reddediliyor", parseClientHeader("android/1.0/14") === null);
+  check("boş", parseClientHeader(null) === null && parseClientHeader("") === null);
+
+  console.log("\nHata gruplama ve temizleme");
+  const s = scrub("mail ali.veli@example.com ?token=abcDEF123&x=1 id 12345678 key " + "a".repeat(40));
+  check("e-posta temizleniyor", !s.includes("ali.veli") && s.includes("[email]"), s);
+  check("jeton temizleniyor", s.includes("?token=[x]"), s);
+  check("uzun sayı temizleniyor", !s.includes("12345678"), s);
+  check("uzun anahtar temizleniyor", !s.includes("a".repeat(40)), s);
+  const stackA = "TypeError: x\n    at render (webpack-internal:///node_modules/react-dom/x.js:1:2)\n    at Player (https://www.lernomi.app/_next/static/chunks/app.js:10:20)";
+  const stackB = "TypeError: x\n    at render (webpack-internal:///node_modules/react-dom/x.js:9:9)\n    at Player (https://www.lernomi.app/_next/static/chunks/app.js:99:1)";
+  const f1 = errorFingerprint({ platform: "web", name: "TypeError", message: "Cannot read 'a' of undefined (id 123)", stack: stackA });
+  const f2 = errorFingerprint({ platform: "web", name: "TypeError", message: "Cannot read 'b' of undefined (id 456)", stack: stackB });
+  check("sayı ve tırnak içi farkı aynı grup", f1 === f2);
+  check("platform farkı ayrı grup", f1 !== errorFingerprint({ platform: "android", name: "TypeError", message: "Cannot read 'a' of undefined (id 123)", stack: stackA }));
+  check("farklı kendi karesi ayrı grup", f1 !== errorFingerprint({ platform: "web", name: "TypeError", message: "Cannot read 'a' of undefined (id 123)", stack: "TypeError: x\n    at Other (https://www.lernomi.app/_next/static/chunks/b.js:1:1)" }));
+
+  console.log("\nnginx ayrıştırıcıları");
+  check("saat dilimli zaman", nginxTime("17/Sep/2026:10:49:26 +0200") === Date.UTC(2026, 8, 17, 8, 49, 26));
+  check("negatif dilim", nginxTime("01/Jan/2026:00:00:00 -0500") === Date.UTC(2026, 0, 1, 5, 0, 0));
+  check("bozuk zaman 0", nginxTime("dün") === 0);
+  check("kimlik parçası :id", routeOf("/api/social/users/0f3a9c1e-1111-2222-3333-444455556666/profile?x=1") === "/api/social/users/:id");
+  check("sayısal parça :id", routeOf("/api/certificate/123") === "/api/certificate/:id");
+  check("sorgu atılıyor", routeOf("/api/tts?v=a&t=hallo") === "/api/tts");
+
+  console.log("\nToplu bildirim");
+  check("yalnız uygulama içi yol", cleanUrl("/learn/weekly") === "/learn/weekly");
+  check("dış adres reddediliyor", cleanUrl("https://evil.example") === "/learn" && cleanUrl("//evil.example") === "/learn");
+  check("javascript: reddediliyor", cleanUrl("javascript:alert(1)") === "/learn");
+  const a = parseAudience({ native: "fr", course: "de", platform: "sms", test: "true" });
+  check("bilinmeyen dil/platform varsayılana", a.native === "" && a.platform === "all" && a.course === "de");
+  check("test yalnız gerçek true", a.test === false && parseAudience({ test: true }).test === true);
+
+  console.log("\nMağaza yönlendirmesi");
+  check("iPhone", platformOf("Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X)") === "ios");
+  check("Android", platformOf("Mozilla/5.0 (Linux; Android 15; Pixel 9)") === "android");
+  check("masaüstü", platformOf("Mozilla/5.0 (X11; Linux x86_64)") === "desktop" && platformOf(null) === "desktop");
+  check("kaynak etiketi temizleniyor", cleanSource("qr") === "qr" && cleanSource("<script>") === "paywall" && cleanSource(null) === "paywall");
+
+  console.log("\nAdmin hata metinleri");
+  check("2FA kodu anlaşılır", adminErrorText("admin_2fa_required").includes("iki adımlı"));
+  check("bilinmeyen kod görünür kalıyor", adminErrorText("xyz").includes("xyz"));
+
+  console.log("\nMağaza defteri eşlemesi (RevenueCat)");
+  process.env.REVENUECAT_WEBHOOK_AUTH = "test-sir";
+  const parse = async (event: Record<string, unknown>) =>
+    revenuecat.parse(new Request("https://x/api/premium/webhook", { method: "POST", headers: { authorization: "test-sir" } }), JSON.stringify({ event }));
+  const base = { id: "e1", app_user_id: "u1", product_id: "lernomi_premium_yearly", store: "PLAY_STORE", environment: "PRODUCTION", expiration_at_ms: Date.now() + 86_400_000, event_timestamp_ms: 1_789_000_000_000 };
+  const trial = await parse({ ...base, type: "INITIAL_PURCHASE", period_type: "TRIAL", price: 0, currency: "TRY" });
+  check("deneme başlangıcı: purchase + trial + ödeme değil", trial.ok && "event" in trial && trial.event.ledger?.type === "purchase" && trial.event.ledger.period === "trial" && trial.event.paid === false);
+  const conv = await parse({ ...base, id: "e2", type: "RENEWAL", period_type: "NORMAL", is_trial_conversion: true, price: 29.99, currency: "TRY", price_in_purchased_currency: 999 });
+  check("deneme dönüşümü işaretleniyor, tutar taşınıyor", conv.ok && "event" in conv && conv.event.ledger?.trialConversion === true && conv.event.ledger.priceUsd === 29.99 && conv.event.ledger.priceLocal === 999);
+  const refund = await parse({ ...base, id: "e3", type: "REFUND", period_type: "NORMAL", price: -29.99 });
+  check("iade: tür refund, tutar pozitif", refund.ok && "event" in refund && refund.event.ledger?.type === "refund" && refund.event.ledger.priceUsd === 29.99);
+  const sandbox = await parse({ ...base, id: "e4", type: "INITIAL_PURCHASE", environment: "SANDBOX" });
+  check("sandbox deftere de yetkiye de girmiyor", !sandbox.ok);
+  const wrongSecret = await revenuecat.parse(new Request("https://x", { method: "POST", headers: { authorization: "yanlis" } }), JSON.stringify({ event: base }));
+  check("yanlış sır 401", !wrongSecret.ok && wrongSecret.status === 401);
+
+  console.log(`\n${total - failures}/${total} ${failures ? "BAŞARISIZ" : "tamam"}\n`);
+  process.exit(failures ? 1 : 0);
+}
+
+void main();
