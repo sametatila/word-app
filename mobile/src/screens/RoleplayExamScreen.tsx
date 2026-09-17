@@ -10,7 +10,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
 import { CoachBubble } from "../ui/CoachBubble";
-import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
 import { ensureLessons, findLesson, lessonLevelOf, type Lesson } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { candoIdsForLesson } from "../game/candoMap";
@@ -77,11 +77,20 @@ export function RoleplayExamScreen() {
   const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
   /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/lessons`). */
   const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(id) as Lesson | undefined);
+  /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
+  const [packReady, setPackReady] = useState(() => !!findLesson(id));
+  /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
+  const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = lessonLevelOf(id);
-    if (!level) return;
+    if (!level) { setPackReady(true); return; }
     let dead = false;
-    void ensureLessons(level).then(() => { if (!dead) setLesson(findLesson(id) as Lesson | undefined); });
+    void ensureLessons(level).then((ok) => {
+      if (dead) return;
+      setLesson(findLesson(id) as Lesson | undefined);
+      setPackFailed(!ok);
+      setPackReady(true);
+    });
     return () => { dead = true; };
   }, [id]);
 
@@ -215,6 +224,9 @@ export function RoleplayExamScreen() {
     if (phase === "talk" && left <= 0) void score(turns);
   }, [left, phase, score, turns]);
 
+  if (!lesson && !packReady) {
+    return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
+  }
   if (!lesson) {
     return (
       /* DURUM ŞABLONU. Burada yalnız ortada tek satır metin vardı: ne maskot
@@ -224,7 +236,7 @@ export function RoleplayExamScreen() {
         top={<FlowTopBar back onClose={() => nav.goBack()} />}
         actions={<FlowActions primary={{ label: tx("item.go_back"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody mood="sad" title={tx("lesson.this_lesson_wasn_t_found")} />
+        <StateBody mood="sad" alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }

@@ -14,7 +14,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, AlertIcon } from "../ui/icons";
-import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
 import { ensureLessons, findLesson, lessonLevelOf, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
@@ -138,11 +138,20 @@ export function LessonScreen() {
      zaten indirmiş oluyor; bu yol bildirimle ya da derin bağlantıyla doğrudan
      buraya gelen kullanıcı için. */
   const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(params.id));
+  /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
+  const [packReady, setPackReady] = useState(() => !!findLesson(params.id));
+  /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
+  const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = lessonLevelOf(params.id);
-    if (!level) { setLesson(findLesson(params.id)); return; }
+    if (!level) { setLesson(findLesson(params.id)); setPackReady(true); return; }
     let dead = false;
-    void ensureLessons(level).then(() => { if (!dead) setLesson(findLesson(params.id)); });
+    void ensureLessons(level).then((ok) => {
+      if (dead) return;
+      setLesson(findLesson(params.id));
+      setPackFailed(!ok);
+      setPackReady(true);
+    });
     return () => { dead = true; };
   }, [params.id]);
   const scrollRef = useRef<any>(null);
@@ -762,11 +771,14 @@ export function LessonScreen() {
     return i >= 0 && i + 1 < list.length ? list[i + 1] : null;
   }, [lesson]);
 
+  if (!lesson && !packReady) {
+    return <FlowScreen><ContentLoadingBody /></FlowScreen>;
+  }
   if (!lesson) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `lessons/[id]/not-found`). */}
-        <StateBody mood="sad" title={tx("lesson.this_lesson_wasn_t_found")} />
+        <StateBody mood="sad" alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }

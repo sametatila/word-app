@@ -101,16 +101,20 @@ function courseOfId(id: string): "de" | "en" {
  *
  * A1 tohumdan geliyor, indirme hiç yapılmıyor. Sync okuyucular paket inmeden
  * boş dönüyor: Patika "Yakında" gösteriyor, uydurma bir ders göstermiyor.
+ *
+ * @returns Havuz KULLANILABİLİR mi (tohum ya da inen paket). Çağıran ekran
+ * "paket inemedi" ile "ders gerçekten yok" arasını buna bakarak ayırıyor;
+ * ikisi de eli boş bırakıyor ama biri ağ hatası, öteki eksik içerik.
  */
-export async function ensureLessons(level: string, course: string = currentCourseId()): Promise<void> {
+export async function ensureLessons(level: string, course: string = currentCourseId()): Promise<boolean> {
   const lv = level.toUpperCase();
   const c = packCourse(course);
-  if (SEED[c]?.[lv]) return;
+  if (SEED[c]?.[lv]) return true;
   const key = `${c}-${lv}`;
-  if (pools.has(key)) return;
+  if (pools.has(key)) return true;
   const pack = packOf(course, lv);
   const ok = await ensurePack(pack);
-  if (!ok) return;
+  if (!ok) return false;
   const ids = await listContentItems(pack);
   const out: Lesson[] = [];
   for (const id of ids) {
@@ -122,6 +126,7 @@ export async function ensureLessons(level: string, course: string = currentCours
      sıralamak YANLIŞ olurdu — ölçüldü, hiçbir seviyede kaynak sırası kimlik
      sırasıyla aynı değil ve patika üniteleri listeyi sırayla tüketiyor. */
   pools.set(key, out);
+  return true;
 }
 
 function poolOf(course: string, level: string): Lesson[] {

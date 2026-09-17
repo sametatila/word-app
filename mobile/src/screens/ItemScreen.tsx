@@ -14,7 +14,7 @@ import { XIcon, SpeakerIcon, AlertIcon, LockIcon } from "../ui/icons";
 import { ListenButton } from "../ui/ListenButton";
 import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
-import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { FlowScreen, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
@@ -197,11 +197,21 @@ export function ItemScreen() {
     buraya gelen kullanıcı için. `tick` inince yeniden çiziyor.
   */
   const [exercise, setExercise] = useState(() => getExercise(params.id));
+  /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`):
+     elde egzersiz varsa hazır, yoksa indirme bitene kadar bekliyoruz. */
+  const [packReady, setPackReady] = useState(() => !!getExercise(params.id));
+  /* Paket inemediyse "açılamıyor" değil "indirilemedi" deniyor. */
+  const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = skillLevelOf(params.id);
-    if (!level) return;
+    if (!level) { setPackReady(true); return; }
     let dead = false;
-    void ensureSkills(level).then(() => { if (!dead) setExercise(getExercise(params.id)); });
+    void ensureSkills(level).then((ok) => {
+      if (dead) return;
+      setExercise(getExercise(params.id));
+      setPackFailed(!ok);
+      setPackReady(true);
+    });
     return () => { dead = true; };
   }, [params.id]);
   const startedAt = useRef(Date.now());
@@ -295,11 +305,14 @@ export function ItemScreen() {
     setRound((r) => r + 1);
   }
 
+  if (!exercise && !packReady) {
+    return <FlowScreen><ContentLoadingBody /></FlowScreen>;
+  }
   if (!exercise) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("item.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: açılamayan egzersiz = üzgün maskot, tek çıkış. */}
-        <StateBody mood="sad" title={t("item.this_exercise_can_t_be_opened")} />
+        <StateBody mood="sad" alert title={packFailed ? t("content.couldn_t_load") : t("item.this_exercise_can_t_be_opened")} body={packFailed ? t("social.err_offline") : null} />
       </FlowScreen>
     );
   }

@@ -104,6 +104,14 @@ async function yukle(level: string | undefined): Promise<void> {
     if (!d?.units?.length) throw new Error("empty");
     // /api/immersion item ref taşımıyor → oynatıcıya gidebilmek için pakete
     // gömülü aynı-kaynak track'ten ref doldur (item id'leri birebir eşleşir).
+    /* REF YEREL TRACK'TEN OKUNUYOR, O DA SEVİYE PAKETİNDEN. Paket inmeden
+       `refIndex` boş bir eşleme döndürüyor ve her adımın ref'i null kalıyor;
+       UnitScreen ise ref'siz ders adımında hiçbir şey yapmıyor
+       (`if (it.ref) nav.navigate(...)`). Yani A1 dışındaki bir seviyede,
+       paket inmeden patikadaki ders adımına basmak SESSİZCE işe yaramıyordu.
+       Aşağıdaki yerel dal paketi zaten bekliyordu; sunucu dalı beklemiyordu.
+       İkinci çağrı ucuz: paket eldeyse `ensure*` hemen dönüyor. */
+    await Promise.all([ensureSkills(d.level), ensureLessons(d.level)]);
     const idx = refIndex(d.level);
     const enriched: LearningPath = {
       ...d,

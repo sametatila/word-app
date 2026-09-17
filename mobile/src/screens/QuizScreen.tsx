@@ -14,7 +14,7 @@ import { QuestionList } from "../game/skillQuiz";
 import { markItemDone, recordPathItem } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii } from "../theme";
-import { FlowActions, ResultHero, StatRow, StateBody } from "../ui/flow";
+import { FlowActions, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { sfx } from "../lib/sfx";
 
 /** Geçme eşiği — web `PRACTICE_PASS_PCT` (`lib/score-bands.ts`) ile aynı sayı. */
@@ -41,10 +41,19 @@ export function QuizScreen() {
      paketi inmeden soru üretilemez. İndikten sonra `ready` listeyi yeniden
      kuruyor; inene kadar ekran kendi yükleniyor durumunu gösteriyor. */
   const [questions, setQuestions] = useState<ReturnType<typeof deriveGrammar>>([]);
+  /* "Soru yok" ile "paket henüz inmedi" ayrı şeyler: kesin cümle yalnız paket
+     indikten sonra kuruluyor (bkz. ui/flow `ContentLoadingBody`). Bu ekran
+     bugüne kadar indirme boyunca "bu ünitede henüz soru yok" diyor ve tek
+     çıkışı "Patikaya dön" olan bir düğme gösteriyordu. */
+  const [packReady, setPackReady] = useState(false);
+  const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     let dead = false;
-    void ensureLessons(params.level).then(() => {
+    setPackReady(false);
+    void ensureLessons(params.level).then((ok) => {
       if (dead) return;
+      setPackReady(true);
+      setPackFailed(!ok);
       setQuestions(
         isGrammar
           ? deriveGrammar(params.level, params.unitIndex)
@@ -100,11 +109,13 @@ export function QuizScreen() {
           {t(isGrammar ? "quiz.intro_grammar" : isCheckpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
         </Text>
 
-        {total === 0 ? (
+        {total === 0 && !packReady ? (
+          <ContentLoadingBody />
+        ) : total === 0 ? (
           /* DURUM ŞABLONU: soru yoksa boş durum (düşünen maskot) ve tek çıkış.
              Web aynı dalı `ImmersionQuizPlayer`da çiziyor. */
           <View style={{ marginTop: spacing.md, gap: spacing.md }}>
-            <StateBody mood="think" title={t("quiz.this_unit_has_no_questions_yet")} />
+            <StateBody mood="think" alert={packFailed} title={packFailed ? t("content.couldn_t_load") : t("quiz.this_unit_has_no_questions_yet")} body={packFailed ? t("social.err_offline") : null} />
             <FlowActions primary={{ label: t("quiz.back_to_path"), onPress: () => nav.goBack() }} />
           </View>
         ) : (

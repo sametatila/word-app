@@ -5,6 +5,7 @@ import { Text } from "./Text";
 import { Card } from "./Card";
 import { PressableScale } from "./PressableScale";
 import { Mascot, type Mood } from "./Mascot";
+import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
 import { ArrowBackIcon, XIcon } from "./icons";
 import { t } from "../lib/i18n";
@@ -311,6 +312,39 @@ export function StateBody({ mood, title, body, icon, children, alert = false }: 
       <Text accessibilityRole="header" variant="h2" style={{ textAlign: "center" }}>{title}</Text>
       {body ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: 340 }}>{body}</Text> : null}
       {children}
+    </View>
+  );
+}
+
+/**
+ * İÇERİK İNİYOR — "bulunamadı" ile "henüz inmedi" ayrı şeyler.
+ *
+ * Ders, egzersiz ve soru havuzları A1 tohumu dışında ikilide DEĞİL; seviye
+ * paketi hâlinde sunucudan iniyor (bkz. `content/store`). Bu ekranlar paketi
+ * beklerken elleri boş kalıyor ve boş eli KESİN BİR CÜMLEYLE söylüyorlardı:
+ * "Bu ders bulunamadı", "Bu egzersiz bulunamadı", "Bu ünitede henüz soru yok"
+ * — üzgün maskotla ve tek çıkışı "Geri" olan bir düğmeyle. Paket saniyesinde
+ * inip ders açılıyordu, ama o arada "Geri"ye basan öğrenci dersinden atılmış
+ * oluyordu; bildirimden ya da derin bağlantıdan gelen (paketi hiç olmayan)
+ * kullanıcı ise dersin silindiğini sanıyordu.
+ *
+ * Bu gövde o aralığı dolduruyor. Kesin cümleler yerinde duruyor ama artık
+ * yalnız paket GERÇEKTEN indikten sonra, madde yine yoksa çiziliyor.
+ */
+export function ContentLoadingBody() {
+  return (
+    <View style={{ gap: spacing.md, paddingVertical: spacing.md }}>
+      <SkeletonLine variant="h2" width="64%" />
+      <SkeletonLine variant="caption" width="42%" />
+      <SkeletonCard label={t("common.loading")} style={{ gap: spacing.sm }}>
+        <SkeletonLine variant="body" width="94%" />
+        <SkeletonLine variant="body" width="88%" />
+        <SkeletonLine variant="body" width="66%" />
+      </SkeletonCard>
+      <View style={{ flexDirection: "row", gap: spacing.sm }}>
+        <SkeletonPill width="100%" height={44} style={{ flex: 1 }} />
+        <SkeletonPill width={96} height={44} />
+      </View>
     </View>
   );
 }
