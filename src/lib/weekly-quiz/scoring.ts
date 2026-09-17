@@ -3,12 +3,13 @@ import type { QuizBlock, QuizItem, QuizNative, QuizWeek } from "./types";
 /**
  * Quiz puanlaması — SAF ve SUNUCUDA.
  *
- * NEDEN AYRI VE SAF. Bugünkü haftalık sınavda doğruluğu İSTEMCİ bildiriyor
- * (`api/weekly/route.ts`: gelen cevapta yalnız `typeof a.correct === "boolean"`
- * denetleniyor), yani skor da SRS durumu da uydurulabiliyor. Quiz'in kurgusu
- * bunun tam tersi: istemci yalnız HANGİ ŞIKKI seçtiğini gönderiyor, doğru olup
- * olmadığına sunucu karar veriyor. Cevap anahtarı hiçbir zaman istemciye
- * inmiyor.
+ * NEDEN AYRI VE SAF. Eski haftalık sınav (`api/weekly/route.ts`, artık KALDIRILDI)
+ * doğruluğu İSTEMCİDEN alıyordu — gelen cevapta yalnız `typeof a.correct === "boolean"`
+ * denetlenip `correct` olduğu gibi yazılıyordu, yani skor da SRS durumu da
+ * uydurulabiliyordu (güvenlik denetimi F1). Quiz o ucun yerine geçti ve kurgusu
+ * bunun tam tersi: istemci yalnız HANGİ ŞIKKI seçtiğini gönderiyor (`api/quiz`
+ * POST gövdedeki `correct`i OKUMUYOR), doğru olup olmadığına sunucu karar veriyor.
+ * Cevap anahtarı hiçbir zaman istemciye inmiyor.
  *
  * Deneme sınavlarındaki `mock-exams/scoring.ts` ile aynı desen: puanlayıcı saf,
  * kâğıdı koddan okuyor, istemcinin gönderdiği tek şey cevaplar.

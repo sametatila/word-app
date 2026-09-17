@@ -10,6 +10,8 @@ import { useLang, useT } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { CrownIcon, CheckIcon } from "@/components/icons";
 import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
+import { PremiumStoreCta } from "@/components/premium-store-cta";
+import type { StoreLinks, WebPlatform } from "@/lib/store-link";
 
 type Plans = { productMonthly: string; productYearly: string; trialDays: number };
 type FairUse = { pocketWalksPerDay: number; aiPracticePerDay: number };
@@ -45,6 +47,7 @@ export function PremiumPaywall({
   referral,
   prefillCode = "",
   refResult = "",
+  storeCta,
 }: {
   source?: string;
   signedIn: boolean;
@@ -71,6 +74,8 @@ export function PremiumPaywall({
    * ile "böyle bir kod yok" bambaşka iki şey.
    */
   refResult?: string;
+  /** Mağaza yönlendirmesinin sunucuda verilen kararları (cihaz, yayındaki mağazalar, QR, hesap). */
+  storeCta: { platform: WebPlatform; stores: StoreLinks; qrSvg: string | null; account: string | null; soonNotice: boolean };
 }) {
   const t = useT();
   const { course } = useShell();
@@ -200,18 +205,9 @@ export function PremiumPaywall({
             </section>
           )}
 
-          {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
-          <div className="brand-gradient mt-4 rounded-panel px-4 py-4 text-center on-fill">
-            <p className="text-strong">{t("paywall.upgrade_in_app")}</p>
-            {/* Vitrin fiyatının bağlayıcı olmadığı burada yazıyor: App Store
-                3.1.2 ve Play, fiyatın yanıltıcı olmamasını istiyor. */}
-            <p className="mt-1 text-caption opacity-90">{t("paywall.price_note_store")}</p>
-            {/* OTOMATİK YENİLEME BEYANI webde hiç çizilmiyordu: sayfa fiyatı ve
-                "ilk 30 gün ücretsiz"i gösteriyor ama aboneliğin yenilendiğini
-                ve nereden iptal edildiğini söylemiyordu. Web satmıyor
-                (hafifletici), ama gösterdiği teklif kendi içinde eksikti. */}
-            <p className="mt-1 text-caption opacity-90">{t("paywall.renew_note_web")}</p>
-          </div>
+          {/* Web'de satın alma yok: kullanıcı uygulamaya/mağazaya yönlendiriliyor
+              (kurgu `lib/store-link`, bileşen `premium-store-cta`). */}
+          <PremiumStoreCta {...storeCta} source={source} />
 
           {/*
             KAPSAM TEK KART. "Premium'da neler var" ve "Ücretsizde ne var"

@@ -626,4 +626,18 @@ export const enWeb: Record<string, string> = {
   "email.twofactor.body": "Someone is signing in to your Lernomi account. Enter the code below on the sign-in screen.",
   "email.twofactor.note": "The code expires shortly and works only once. If you did not try to sign in, someone else has your password: change it now.",
   "email.twofactor.text": "Your Lernomi sign-in code: {code}\n\nThe code expires shortly and works only once. If you did not try to sign in, change your password now.",
+  /* Webden mağazaya satın alma yönlendirmesi (lib/store-link, components/premium-store-cta). */
+  "store.cta_title": "Get Premium in the app",
+  "store.cta_body": "Premium you buy in the app unlocks on the web for this account right away.",
+  "store.open_app": "Get Premium in the app",
+  "store.scan_qr": "Scan with your phone's camera: if the app is installed, the Premium screen opens; otherwise you go to the store.",
+  "store.app_store": "Open in the App Store",
+  "store.google_play": "Open in Google Play",
+  "store.soon_ios": "The iOS app is coming to the App Store soon.",
+  "store.soon_android": "The Android app is coming to Google Play soon.",
+  "store.none_live": "The mobile app is coming to the stores soon. You'll be able to get Premium from the app then.",
+  "store.same_account": "Sign in to the app with this account: {account}. A subscription bought with another account won't show here.",
+  "store.same_account_generic": "Sign in to the app with the account you use on the web; a subscription bought with another account won't show here.",
+  "store.auto_refresh": "After you buy, just come back to this page; Premium shows up on its own.",
+  "store.soon_notice": "The app isn't available in this device's store yet.",
 };

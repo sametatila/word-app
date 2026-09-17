@@ -151,6 +151,16 @@ function Nav() {
 
       if (action.kind === "reset-password") { goReset(action.token); return; }
 
+      /* Webdeki "uygulamada Premium'a geç" (`/get/premium`): paywall açılıyor ve
+         görüntüleme webden geldiği bilinerek sayılıyor (`from: "web"`). */
+      if (action.kind === "paywall") {
+        if (!navigationRef.isReady()) { pending.current = { kind: "paywall" }; return; }
+        try {
+          (navigationRef.navigate as (n: string, p?: object) => void)("Paywall", { from: "web" });
+        } catch { /* yut */ }
+        return;
+      }
+
       /*
         DAVET BAĞLANTISI — bağ KODA DEĞİL DOKUNUŞA bağlı.
 
@@ -350,6 +360,11 @@ function Nav() {
         }
         /* Davet bağı zaten kuruldu (bkz. `refResult`); burada yalnız SONUÇ
            gösteriliyor, istek tekrarlanmıyor. */
+        if (p?.kind === "paywall") {
+          try {
+            (navigationRef.navigate as (n: string, o?: object) => void)("Paywall", { from: "web" });
+          } catch { /* yut */ }
+        }
         if (p?.kind === "referral" && refResult.current) {
           try {
             (navigationRef.navigate as (n: string, o?: object) => void)("Paywall", { ref: refResult.current });

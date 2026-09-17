@@ -57,7 +57,17 @@ export type CronHealth = {
 export type Coverage = {
   /** Anadil → kurs çiftleri; misafirler ayrıca. */
   pairs: { native: string; course: string; users: number; guests: number; active7: number }[];
-  premium: { active: number; store: number; bonus: number; byPlatform: { key: string; count: number }[] };
+  premium: {
+    active: number; store: number; bonus: number; byPlatform: { key: string; count: number }[];
+    /**
+     * WEB → UYGULAMA HUNİSİ (30g, tekil kullanıcı). Web satmıyor; paywall'ı
+     * mağazaya/uygulamaya yönlendiriyor (lib/store-link). Basamaklar:
+     * web paywall gördü → yönlendirmeye dokundu → sunucu mağazaya yolladı →
+     * uygulamada web bağlantısıyla paywall açtı → uygulamada satın aldı
+     * (web paywall'ı daha önce görmüş olanlar).
+     */
+    webFunnel: { webViews: number; taps: number; redirects: number; appViews: number; purchases: number };
+  };
   learning: {
     lessons: { started: number; finished: number; users: number; rulesTracked: number; rulesDue: number; roleplayDone: number };
     topLessons: { lesson: string; users: number; avgPct: number }[];
@@ -114,7 +124,7 @@ export type Coverage = {
 
 export async function getCoverage(): Promise<Coverage> {
   const [
-    pairs, prem, premPlat, lessonEv, lessonRows, topLessons, path, pathWeak, skills, exams, mock, placements,
+    pairs, prem, premPlat, webFunnel, lessonEv, lessonRows, topLessons, path, pathWeak, skills, exams, mock, placements,
     rpTotals, rpModes, assessments, pron, ttsPlays, ttsFb, walkListen,
   ] = await Promise.all([
     rows(sql`
@@ -130,6 +140,19 @@ export async function getCoverage(): Promise<Coverage> {
         (select count(*) from entitlements where store_until > now())::int store,
         (select count(*) from entitlements where bonus_until > now())::int bonus`),
     rows(sql`select coalesce(store_platform, '?') k, count(*)::int c from entitlements where store_until > now() group by 1 order by 2 desc`),
+    rows(sql`
+      with w as (
+        select user_id, min(created_at) first_view from events
+        where name = 'paywall_view' and day >= current_date - 29 and coalesce(kind, '') not in ('mobile', 'web_link')
+        group by user_id
+      )
+      select
+        (select count(*) from w)::int web_views,
+        (select count(distinct user_id) from events where name = 'store_redirect' and day >= current_date - 29 and (kind like '%_tap' or kind like 'desktop:%_ios' or kind like 'desktop:%_android'))::int taps,
+        (select count(distinct user_id) from events where name = 'store_redirect' and day >= current_date - 29 and kind not like '%_tap' and kind not like 'desktop:%_ios' and kind not like 'desktop:%_android')::int redirects,
+        (select count(distinct user_id) from events where name = 'paywall_view' and kind = 'web_link' and day >= current_date - 29)::int app_views,
+        (select count(distinct e.user_id) from events e join w on w.user_id = e.user_id
+          where e.name = 'purchase_done' and e.created_at >= w.first_view)::int purchases`),
     rows(sql`
       select count(*) filter (where name = 'lesson_start')::int started,
         count(*) filter (where name = 'lesson_finish')::int finished,
@@ -317,6 +340,10 @@ export async function getCoverage(): Promise<Coverage> {
     premium: {
       active: num(pr.active), store: num(pr.store), bonus: num(pr.bonus),
       byPlatform: premPlat.map((r) => ({ key: str(r.k), count: num(r.c) })),
+      webFunnel: {
+        webViews: num(webFunnel[0]?.web_views), taps: num(webFunnel[0]?.taps), redirects: num(webFunnel[0]?.redirects),
+        appViews: num(webFunnel[0]?.app_views), purchases: num(webFunnel[0]?.purchases),
+      },
     },
     learning: {
       lessons: {

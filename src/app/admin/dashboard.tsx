@@ -422,6 +422,16 @@ export function AdminDashboard({ data: d, server: s, coverage: c, openReports }:
             )}
           </Section>
 
+          <Section title="Web → uygulama satın alma hunisi (30g, kişi)" hint="Web satmıyor; paywall uygulamaya/mağazaya yönlendiriyor. Son basamak: web paywall'ını gördükten sonra uygulamada satın alanlar.">
+            <BarList max={Math.max(1, c.premium.webFunnel.webViews)} items={[
+              { label: "Web paywall gördü", value: c.premium.webFunnel.webViews },
+              { label: "Yönlendirmeye dokundu", value: c.premium.webFunnel.taps },
+              { label: "Sunucu mağazaya yolladı", value: c.premium.webFunnel.redirects },
+              { label: "Uygulamada paywall (web bağlantısı)", value: c.premium.webFunnel.appViews },
+              { label: "Uygulamada satın aldı", value: c.premium.webFunnel.purchases, tone: "#16a34a" },
+            ]} />
+          </Section>
+
           {/* HUNİ ÜÇ BASAMAK. "Denendi" ile "ulaştı" arasındaki fark tam
               olarak görmek istediğimiz şey: abonelik ölmüş, jeton geçersiz,
               sağlayıcı reddetmiş. CTR de artık açılan/ULAŞAN. */}

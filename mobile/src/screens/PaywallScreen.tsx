@@ -139,7 +139,9 @@ export function PaywallScreen() {
     başarısızlık ona aynı görünürdü. Web `/premium?ref=…` ile aynı durumlar ve
     aynı cümleler.
   */
-  const refResult = useRoute<{ key: string; name: string; params?: { ref?: string } }>().params?.ref ?? "";
+  const routeParams = useRoute<{ key: string; name: string; params?: { ref?: string; from?: "web" } }>().params;
+  const refResult = routeParams?.ref ?? "";
+  const fromWeb = routeParams?.from === "web";
   /*
     `configured` = anahtar var mı; `storeOpen` = gerçekten satılacak bir şey var mı.
 
@@ -192,7 +194,10 @@ export function PaywallScreen() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    track("paywall_view", 0, "mobile");
+    /* Webden yönlendirilen görüntüleme ayrı etiketle: web → uygulama hunisi
+       (`store_redirect` → `paywall_view:web_link` → `purchase_done`) ancak
+       böyle ölçülebiliyor. */
+    track("paywall_view", 0, fromWeb ? "web_link" : "mobile");
     if (!configured) { setPkgs([]); return; }
     let alive = true;
     void getPackages().then((p) => {
@@ -202,7 +207,8 @@ export function PaywallScreen() {
       setSelected(sorted[0]?.identifier ?? null);
     });
     return () => { alive = false; };
-  }, [configured]);
+    /* `fromWeb` ekran açılışında sabit (rota parametresi); görüntüleme ekran başına bir kez. */
+  }, [configured, fromWeb]);
 
   const pkg = pkgs?.find((p) => p.identifier === selected);
   const trial = freeTrialOf(pkg);

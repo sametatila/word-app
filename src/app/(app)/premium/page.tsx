@@ -1,8 +1,11 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
+import QRCode from "qrcode";
+import { appControl } from "@/lib/app-control";
+import { GET_PREMIUM_PATH, platformOf } from "@/lib/store-link";
 import { priceFor, resolveRegion } from "@/lib/premium/region";
 import { TZ_COOKIE } from "@/lib/tz-cookie";
 import { titleMeta } from "@/lib/page-meta";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, premiumStatus } from "@/lib/premium";
 import { referralStats } from "@/lib/premium/referral";
 import { PremiumPaywall } from "@/components/premium-paywall";
@@ -28,18 +31,32 @@ const REF_RESULTS = new Set(["ok", "already", "self", "unknown", "error"]);
  * Yetki web'de de geçerli: mağazadan alınan abonelik, promo kodu ve referans
  * ödülü aynı deftere yazıldığı için üç platformda da aynı anda açılıyor.
  */
-export default async function PremiumPage({ searchParams }: { searchParams: Promise<{ from?: string; code?: string; ref?: string }> }) {
-  const { from, code, ref } = await searchParams;
+export default async function PremiumPage({ searchParams }: { searchParams: Promise<{ from?: string; code?: string; ref?: string; store?: string }> }) {
+  const { from, code, ref, store } = await searchParams;
   const source = from && SOURCES.has(from) ? from : "other";
-  const userId = await getUserId();
+  const who = await getUserInfo();
+  const userId = who?.id ?? null;
 
-  const [cfg, copy, status, referral, jar] = await Promise.all([
+  const [cfg, copy, status, referral, jar, control, hdr] = await Promise.all([
     premiumConfig(),
     premiumCopy(),
     premiumStatus(userId),
     userId ? referralStats(userId).catch(() => null) : Promise.resolve(null),
     cookies(),
+    appControl(),
+    headers(),
   ]);
+
+  /*
+    SATIN ALMA YÖNLENDİRMESİ (lib/store-link). Cihaz sunucuda UA'dan: telefonda
+    tek düğme, masaüstünde QR. QR sunucuda üretiliyor, istemciye kütüphane
+    gitmiyor. Adres mutlak ve SABİT alan adıyla: QR başka bir cihazda okunuyor.
+  */
+  const platform = platformOf(hdr.get("user-agent"));
+  const qrSvg =
+    platform === "desktop" && (control.store.ios.live || control.store.android.live)
+      ? await QRCode.toString(`https://www.lernomi.app${GET_PREMIUM_PATH}?src=qr`, { type: "svg", margin: 1, errorCorrectionLevel: "M" }).catch(() => null)
+      : null;
 
   /*
     TEK FİYAT, TEK BÖLGE. Sayfa üç bölgenin fiyatını yan yana listeliyordu:
@@ -79,6 +96,13 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
       prefillCode={typeof code === "string" ? code : ""}
       /** `/r/<kod>` bağı kurup buraya yönlendirdi — sonucu tek satırla söyle. */
       refResult={REF_RESULTS.has(ref ?? "") ? (ref as string) : ""}
+      storeCta={{
+        platform,
+        stores: control.store,
+        qrSvg,
+        account: who && !who.guest ? who.email : null,
+        soonNotice: store === "soon",
+      }}
     />
   );
 }

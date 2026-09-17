@@ -216,6 +216,18 @@ export const EVENT_NAMES = [
   */
   "paywall_view", // paywall açıldı (kind = kaynak)
   "premium_gate", // premium özellik kilide takıldı (kind = özellik)
+  /*
+    WEBDEN MAĞAZAYA YÖNLENDİRME. Web satmıyor (satın alma yalnız mağazada);
+    paywall kullanıcıyı `/get/premium` ile uygulamaya/mağazaya yolluyor.
+    kind = "<ios|android|desktop>:<kaynak>" (kaynak: paywall | qr | gate adı).
+    İki yazıcı, iki ayrı ölçü: istemci düğmeye DOKUNUŞU `…_tap` (masaüstünde
+    `…_ios`/`…_android` mağaza bağlantısı) diye, sunucu `/get/premium`
+    isteğini (uygulama kurulu değil ya da iOS aynı alan adında Universal Link'i
+    açmadı) ekisiz yazıyor.
+    Huni: paywall_view (web) → store_redirect → paywall_view:web_link (mobil)
+    → purchase_done (mobil), aynı hesapta.
+  */
+  "store_redirect",
   "purchase_start", // satın alma başladı (kind = plan)
   "purchase_done", // satın alma tamamlandı (kind = plan, value = aylık kuruş)
   /*

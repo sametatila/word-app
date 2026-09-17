@@ -66,7 +66,13 @@ export const dynamic = "force-dynamic";
  * kullanıcıya söylüyor; girişsiz/misafir kullanıcıda kod cihazda bekletilip
  * giriş yapılınca uygulanıyor (`lib/pendingReferral`).
  */
-export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/", "/r/"] as const;
+/**
+ * ALTINCI YOL: WEBDEN SATIN ALMA YÖNLENDİRMESİ. `/get/premium` - web satmıyor
+ * (satın alma yalnız mağazada), paywall'ı uygulamaya yolluyor. Uygulama
+ * kuruluysa paywall'ı açıyor (`parseDeepLink` kind "paywall"), değilse aynı
+ * adres sunucuda mağaza sayfasına yönlendiriyor (`app/get/[target]`).
+ */
+export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/", "/r/", "/get/premium"] as const;
 
 export async function GET() {
   const team = process.env.APPLE_TEAM_ID;

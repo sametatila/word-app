@@ -2239,6 +2239,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "install_prompt", //        PWA kurulum onerisi
     "panel_open", //            tarayici olcum katmani
     "walk_capture", //          tarayicinin getUserMedia kisiti; native kaydedicide karsiligi yok
+    "store_redirect", //        webden magazaya satin alma yonlendirmesi; uygulama zaten magazada satiyor
   ];
   /* `feedback_why_opened` MUAF cunku webde de HIC yazilmiyor: olay kural
      bagina dokunuldugunda yaziliyor, bag ise iki tarafta da her zaman null
@@ -11491,6 +11492,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["panel_open", ["web", "katlanan bolum webe ozel bir yuzey", () => web.has("panel_open")]],
       ["feedback_why_opened", ["web", "gerekce §118'de yazili", () => true]],
       ["walk_capture", ["web", "gerekce §119'da yazili", () => true]],
+      /* Web satmiyor, uygulamaya/magazaya yonlendiriyor (lib/store-link). Mobilin
+         karsiligi `paywall_view:web_link` - yonlendirmenin VARIS tarafi. */
+      ["store_redirect", ["web", "web satin almayi magazaya yonlendiriyor, uygulama kendisi satiyor", () => existsSync(new URL("../src/app/get/[target]/route.ts", import.meta.url))]],
       ["notif_prime", ["mobil", "hatirlatma izni ekrani yalniz mobilde var", () => existsSync(new URL("../mobile/src/screens/NotifPrimeScreen.tsx", import.meta.url))]],
       ["purchase_start", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],
       ["purchase_done", ["mobil", "magaza satin alimi yalniz mobilde", () => existsSync(new URL("../mobile/src/lib/billing.ts", import.meta.url))]],

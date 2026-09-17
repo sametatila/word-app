@@ -65,6 +65,13 @@ export type DeepLinkAction =
    * dokunulan bağlantıdan kuruluyor, kullanıcı hiçbir şey yazmıyor.
    */
   | { kind: "referral"; code: string }
+  /**
+   * WEBDEN SATIN ALMA YÖNLENDİRMESİ (`/get/premium`). Web satmıyor; paywall'ı
+   * uygulamaya yolluyor. Uygulama kuruluysa bu adres uygulamayı açıp doğrudan
+   * paywall'a getiriyor, kurulu değilse sunucu mağazaya yönlendiriyor
+   * (`src/app/get/[target]`). Satın alma hesaba yazıldığı için web de açılıyor.
+   */
+  | { kind: "paywall" }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -138,6 +145,8 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
     const code = ham.toUpperCase().replace(/[^A-Z0-9]/g, "");
     return code ? { kind: "referral", code } : null;
   }
+
+  if (url.pathname === "/get/premium") return { kind: "paywall" };
 
   if (url.pathname === "/api/auth/verify-email") {
     if (!token) return null;

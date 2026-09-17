@@ -102,6 +102,10 @@
                  Uygulama kurulu değilse aynı adres webde bağı kuruyor.
                  Kod değişken olduğu için `pathPrefix`. -->
             <data android:scheme="https" android:host="www.lernomi.app" android:pathPrefix="/r/" />
+            <!-- WEBDEN SATIN ALMA YÖNLENDİRMESİ: web satmıyor, paywall'ı uygulamaya
+                 yolluyor. Kuruluysa uygulamada paywall açılır, değilse sunucu
+                 mağazaya yönlendirir (src/app/get/[target]). -->
+            <data android:scheme="https" android:host="www.lernomi.app" android:path="/get/premium" />
         </intent-filter>
       </activity>
       <service

@@ -673,4 +673,18 @@ export const trWeb: Record<string, string> = {
   "email.twofactor.body": "Lernomi hesabına giriş yapılıyor. Aşağıdaki kodu giriş ekranına yaz.",
   "email.twofactor.note": "Kod kısa sürede geçersiz olur ve yalnız bir kez kullanılabilir. Giriş yapmayı sen denemediysen parolan başkasının elinde demektir: hemen değiştir.",
   "email.twofactor.text": "Lernomi giriş kodun: {code}\n\nKod kısa sürede geçersiz olur ve yalnız bir kez kullanılabilir. Giriş yapmayı sen denemediysen parolanı hemen değiştir.",
+  /* Webden mağazaya satın alma yönlendirmesi (lib/store-link, components/premium-store-cta). */
+  "store.cta_title": "Premium'a uygulamadan geç",
+  "store.cta_body": "Uygulamada aldığın Premium bu hesapta webde de hemen açılır.",
+  "store.open_app": "Uygulamada Premium'a geç",
+  "store.scan_qr": "Telefonunun kamerasıyla okut: uygulama kuruluysa Premium ekranı açılır, değilse mağazaya gidersin.",
+  "store.app_store": "App Store'da aç",
+  "store.google_play": "Google Play'de aç",
+  "store.soon_ios": "iOS uygulaması yakında App Store'da.",
+  "store.soon_android": "Android uygulaması yakında Google Play'de.",
+  "store.none_live": "Mobil uygulama yakında mağazalarda. Premium'a o zaman uygulamadan geçebileceksin.",
+  "store.same_account": "Uygulamada bu hesapla giriş yap: {account}. Başka bir hesapla alınan abonelik burada görünmez.",
+  "store.same_account_generic": "Uygulamada bu webde kullandığın hesapla giriş yap; başka bir hesapla alınan abonelik burada görünmez.",
+  "store.auto_refresh": "Satın aldıktan sonra bu sayfaya dönmen yeterli, Premium kendiliğinden görünür.",
+  "store.soon_notice": "Uygulama bu cihazın mağazasında henüz yayında değil.",
 };
