@@ -25,6 +25,8 @@ import { AUTH_SECRET_TABLES, USER_COLUMNS } from "../src/lib/account/export";
 import { summarizeReviews, type StoreReview } from "../src/lib/store-reviews";
 import { parseVitalsRows } from "../src/lib/android-vitals";
 import { trendDelta } from "../src/lib/admin-trends-shared";
+import { aggregateMockItems, MIN_ANSWERS } from "../src/lib/admin-content";
+import { alertHref } from "../src/app/admin/alert-href";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
 import { PgTable } from "drizzle-orm/pg-core";
@@ -166,6 +168,27 @@ async function main() {
   check("küçük tabanda yüzde değil fark", trendDelta({ current: 3, previous: 1, good: "up" }).text === "+2");
   check("oranda puan farkı", trendDelta({ current: 55, previous: 60, good: "up", unit: "pct" }).text === "−5 puan");
   check("değişim yoksa =", trendDelta({ current: 7, previous: 7, good: "up" }).tone === "flat");
+
+  console.log("\nMadde analizi (deneme sınavı)");
+  {
+    // Her deneme iki madde: m1'i herkes bilir, m2'yi kimse. m3 yalnız 2 kez sorulmuş.
+    const attempts = Array.from({ length: 4 }, (_, i) => ({ paperId: "de-b1-01", skill: "reading", answers: { n: String(i) } }));
+    const rows = aggregateMockItems(
+      attempts,
+      (_p, _s, a) => [{ id: "m1", correct: true }, { id: "m2", correct: false }, ...(Number(a.n) < 2 ? [{ id: "m3", correct: false }] : [])],
+      (_p, id) => `soru ${id}`,
+    );
+    check("en düşük başarı önce", rows[0]?.itemId === "m2" && rows[0].pct === 0, JSON.stringify(rows.map((r) => r.itemId)));
+    check(`en az ${MIN_ANSWERS} cevabı olmayan madde düşüyor`, !rows.some((r) => r.itemId === "m3"));
+    check("oran ve sayılar doğru", rows.find((r) => r.itemId === "m1")?.pct === 100 && rows[0].asked === 4 && rows[0].label === "soru m2");
+    check("puanlanamayan kâğıt atlanıyor", aggregateMockItems(attempts, () => null, () => "").length === 0);
+  }
+
+  console.log("\nUyarı → sayfa eşlemesi");
+  check("yeni hata grubu Hatalar'a", alertHref("err:abc") === "/admin/errors" && alertHref("errspike:abc") === "/admin/errors");
+  check("mağaza ve vitals Mağaza'ya", alertHref("err-review:ios:1") === "/admin/reviews" && alertHref("vitals:çökme") === "/admin/reviews");
+  check("şikâyet Moderasyon'a, bakım Uygulama'ya", alertHref("reports") === "/admin/moderation" && alertHref("maintenance") === "/admin/app");
+  check("sunucu uyarıları Sunucu'ya", alertHref("backup:offsite") === "/admin/ops" && alertHref("cron:assess") === "/admin/ops");
 
   console.log("\nVeri dışa aktarma kapsamı");
   // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:

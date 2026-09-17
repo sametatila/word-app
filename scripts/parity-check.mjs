@@ -12102,7 +12102,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
 
     /* MUTLAK: yonetici panosunun iki seridi de sekme. */
-    const YONETICI = ["src/app/admin/dashboard.tsx", "src/app/admin/legal/legal-admin.tsx"];
+    /* Pano sekmeleri 2026-09-17'de menü gruplarına (bağlantı, `aria-current`)
+       dönüştü; kalan sekme şeritleri hukuki metinler ve madde analizi. */
+    const YONETICI = ["src/app/admin/learning/learning-analysis.tsx", "src/app/admin/legal/legal-admin.tsx"];
     sameList(
       "yonetici seritleri sekme",
       YONETICI.map((y) => y.split("/").pop() + "=" + (/role="tablist"/.test(sil(read(y))) && /role="tab"/.test(sil(read(y))) ? "sekme" : "ROL YOK")),

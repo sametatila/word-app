@@ -257,7 +257,7 @@ const PUBLIC_ROUTES = new Map([
   ["src/app/api/content/i/[hash]/route.ts", "içerik gövdesi: hash adresli, değişmez, önbelleklenebilir; kapılı gövdeler 404 dönüyor"],
 ]);
 
-const GATES = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cronGate\(|adminGate\(|verifyAppleNotification\(|adapter\.parse\(/;
+const GATES = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cronGate\(|adminGate\(|adminWriteGate\(|verifyAppleNotification\(|adapter\.parse\(/;
 const apiFiles = walk("src/app/api");
 const ungated = new Set();
 for (const file of apiFiles) {

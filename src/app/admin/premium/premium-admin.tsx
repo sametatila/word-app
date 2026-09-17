@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { ADMIN_TZ, AdminPage, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
+import { AdminPage, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -20,22 +20,6 @@ type CodeRow = {
   createdAt: string;
 };
 type Referrer = { userId: string; invited: number };
-/** `findPremiumAccount` dönüşü — sunucudaki `PremiumAccount` ile aynı şekil. */
-type Account = {
-  userId: string;
-  email: string;
-  name: string;
-  displayName: string | null;
-  premium: boolean;
-  until: string | null;
-  source: "store" | "bonus" | null;
-  store: { state: string | null; platform: string | null; product: string | null; provider: string | null; until: string | null } | null;
-  bonusDaysPending: number;
-  bonusUntil: string | null;
-  cachedUntil: string | null;
-  grants: { source: string; minutes: number | null; actor: string | null; note: string | null; at: string }[];
-};
-
 /**
  * Sunucu hata kodları → okunur cümle.
  *
@@ -125,7 +109,7 @@ export function PremiumAdmin({
     <AdminPage>
       <PageHeader
         title="Premium"
-        description="Ücretsiz kotalar, adil kullanım tavanı, deneme sınavı paketleri, plan bilgisi; tek hesaba premium verme ve promo kodları. Her değer canlıda geçerli, kod ya da mağaza sürümü gerekmez."
+        description="Ücretsiz kotalar, adil kullanım tavanı, deneme sınavı paketleri, plan bilgisi ve promo kodları. Her değer canlıda geçerli, kod ya da mağaza sürümü gerekmez. Tek bir hesaba premium vermek o kullanıcının sayfasında."
       />
 
       {/* SINIRLAR — kaydet çubuğu yalnız bu grubun içinde yapışkan: form
@@ -213,8 +197,6 @@ export function PremiumAdmin({
         </div>
       </div>
 
-      <AccountSection post={post} busy={busy} />
-
       <CodesSection codes={codes} post={post} busy={busy} />
 
       <div className="grid gap-5 lg:grid-cols-2">
@@ -251,141 +233,8 @@ export function PremiumAdmin({
   }
 }
 
-/**
- * Tek hesabın yetkisi — bul, gör, ver, kaldır.
- *
- * NEDEN VAR. Uçlar (`grant_days`, `revoke`) baştan beri duruyordu ama düğmesi
- * yoktu: elle premium vermenin tek yolu promo kodu üretip o hesapla giriş
- * yapıp kodu kullanmaktı. Mağaza inceleme hesabı, destek talebi, hediye —
- * hepsi için üç adımlı bir tur atmak gerekiyordu.
- *
- * GÜN EKLENİR, TARİH YAZILMAZ. Sunucu tarafı bilerek böyle (`grantPremiumDays`):
- * mutlak bir tarih yazmak mağaza penceresiyle bonusu aynı sütunda karıştırır ve
- * bir sonraki yenileme onu silerdi. Süreyi kısaltmak isteyen "yetkiyi kaldır"
- * deyip yeniden verir — defterde ikisi de görünür.
- */
-function AccountSection({
-  post,
-  busy,
-}: {
-  post: (b: Record<string, unknown>) => Promise<Record<string, unknown> | null>;
-  busy: boolean;
-}) {
-  const [query, setQuery] = useState("");
-  const [acc, setAcc] = useState<Account | null>(null);
-  const [days, setDays] = useState(365);
-  const [note, setNote] = useState("");
-
-  function take(r: Record<string, unknown> | null) {
-    if (r?.account) {
-      setAcc(r.account as Account);
-    }
-  }
-
-  /*
-    `?q=` ile doğrudan bir hesaba bağlanılabiliyor — destek talebinde ya da
-    mağaza incelemesinde adres çubuğuna yapıştırılan e-posta, sayfa açılır
-    açılmaz aranıyor.
-
-    `useSearchParams` yerine `window.location`: bu bileşen kendi başına bir
-    Suspense sınırı istemesin diye. Sayfa zaten `force-dynamic`, okunacak şey
-    de tek seferlik bir başlangıç değeri.
-  */
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("q")?.trim();
-    if (!q) return;
-    setQuery(q);
-    void (async () => {
-      const r = await post({ action: "find_user", query: q });
-      if (r?.account) setAcc(r.account as Account);
-    })();
-    // Yalnız ilk çizimde: sonraki aramaları yönetici kendisi yapıyor.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return (
-    <Panel title="Hesap yetkisi" hint={<>E-posta ya da kullanıcı kimliğiyle ara. Verilen süre <b>bonus</b> olarak yazılır: mağaza alanlarına dokunulmaz, hesap RevenueCat/Play/Apple tarafında abone görünmez. Her işlem <code>premium_grants</code> defterine kimin yaptığıyla birlikte düşer.</>}>
-      <form
-        className="flex flex-wrap items-end gap-2"
-        onSubmit={async (e) => {
-          e.preventDefault();
-          if (!query.trim()) return;
-          setAcc(null);
-          take(await post({ action: "find_user", query }));
-        }}
-      >
-        <Field label="E-posta ya da kullanıcı kimliği" className="flex-1 basis-64">
-          <input aria-label="E-posta ya da kullanıcı kimliği" value={query} onChange={(e) => setQuery(e.target.value)} className={FIELD} style={FIELD_STYLE} />
-        </Field>
-        <button type="submit" disabled={busy || !query.trim()} className={BTN.primary}>Bul</button>
-      </form>
-
-      {acc && (
-        <>
-          <div className="mt-4 rounded-tile p-3" style={{ background: "var(--surface-2)" }}>
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <a href={`/admin/users/${encodeURIComponent(acc.userId)}`} className="text-strong underline-offset-2 hover:underline">{acc.displayName || acc.name}</a>
-              <span className="text-caption" style={{ color: "var(--text-muted)" }}>{acc.email}</span>
-              <span className="font-mono text-caption" style={{ color: "var(--text-muted)" }}>{acc.userId}</span>
-            </div>
-            <p className="mt-2 text-strong" style={{ color: acc.premium ? TONE.ok : "var(--text-muted)" }}>
-              {acc.premium ? `Premium · ${when(acc.until)} tarihine kadar` : "Ücretsiz"}
-              {acc.premium && acc.source ? ` · kaynak: ${acc.source === "store" ? "mağaza aboneliği" : "bonus"}` : ""}
-            </p>
-            {acc.store && (
-              <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
-                Mağaza: {acc.store.provider ?? "?"} · {acc.store.platform ?? "?"} · {acc.store.product ?? "?"} ·
-                durum {acc.store.state ?? "?"} · {when(acc.store.until)}
-              </p>
-            )}
-            {acc.bonusDaysPending > 0 && (
-              <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
-                Bekleyen bonus: {acc.bonusDaysPending} gün — pencere, kullanıcının yetkisi ilk okunduğunda başlar.
-              </p>
-            )}
-            <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
-              Sıcak yol önbelleği (<code>profiles.premium_until</code>): {when(acc.cachedUntil)}
-            </p>
-          </div>
-
-          <div className="mt-3 flex flex-wrap items-end gap-2">
-            <Num label="Kaç gün eklensin" v={days} on={setDays} />
-            <Field label="Not (deftere yazılır)" className="flex-1 basis-56">
-              <input aria-label="Not" value={note} onChange={(e) => setNote(e.target.value)} className={FIELD} style={FIELD_STYLE} />
-            </Field>
-            <button
-              type="button"
-              disabled={busy || days <= 0}
-              onClick={async () => take(await post({ action: "grant_days", userId: acc.userId, days, note }))}
-              className={BTN.primary}
-            >
-              {days} gün premium ver
-            </button>
-            <TwoStep label="Yetkiyi kaldır" confirm="Evet, yetkiyi kaldır" disabled={busy} onConfirm={async () => take(await post({ action: "revoke", userId: acc.userId, note }))} />
-          </div>
-
-          {acc.grants.length > 0 && (
-            <div className="mt-4">
-              <DataTable
-                head={["Tarih", "Kaynak", "Süre", "Kim", "Not"]}
-                rows={acc.grants.map((g) => [when(g.at), g.source, g.minutes ? `${Math.round(g.minutes / (24 * 60))} gün` : "—", <span key="a" className="muted">{g.actor ?? "—"}</span>, <span key="n" className="muted">{g.note ?? "—"}</span>])}
-              />
-            </div>
-          )}
-        </>
-      )}
-    </Panel>
-  );
-}
-
 const noSubscribe = () => () => {};
 
-/** Tarihi yöneticinin okuyacağı biçimde yazar; boşsa tire. */
-function when(iso: string | null): string {
-  if (!iso) return "—";
-  const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? "—" : d.toLocaleString("tr-TR", { dateStyle: "medium", timeStyle: "short", timeZone: ADMIN_TZ });
-}
 
 /** Kod üretimi ve listesi. */
 function CodesSection({

@@ -25,7 +25,6 @@ const ERROR_TR: Record<string, string> = {
   not_service: "Toplu bildirim yalnız hizmet duyurusu olabilir: onay kutusunu işaretle.",
   forbidden: "Yetki yok.",
 };
-const DELETE_SOURCE: Record<string, string> = { self: "Kullanıcı kendisi", admin: "Panelden", guest: "Misafir (atma/süre)" };
 
 const when = (v: string) => (v ? fmtWhen(v) : "");
 
@@ -150,33 +149,20 @@ export function AppAdmin({
 
       <Broadcaster broadcasts={broadcasts} nextAt={nextBroadcastAt} />
 
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Panel title="Sürüm dağılımı" hint="Mobil uygulamanın her isteğinde gönderdiği sürüm bilgisinden. Bu özelliği taşımayan eski build'ler burada görünmez." flush>
-          <DataTable
-            empty="Henüz sürüm bildiren uygulama yok (yeni build yayımlanınca dolacak)."
-            head={["Platform", "Sürüm", { label: "Build", align: "right" }, { label: "Kullanıcı", align: "right" }, { label: "7 günde aktif", align: "right" }]}
-            rows={data.versions.map((v) => [v.platform, v.version, v.build, v.users, v.active7])}
-          />
-        </Panel>
-
-        <Panel title="Hesap silmeleri" hint="Kimlik tutulmaz; yalnız yol, hesabın yaşı ve panel silmelerinde gerekçe." flush>
-          <DataTable
-            head={["Yol", { label: "30 gün", align: "right" }, { label: "Toplam", align: "right" }, { label: "Ort. yaş (gün)", align: "right" }, "Gerekçeler"]}
-            rows={data.deletions.map((d) => [DELETE_SOURCE[d.source] ?? d.source, d.count30, d.total, d.avgAgeDays, d.reasons || "—"])}
-          />
-        </Panel>
-      </div>
-
-      <Panel title="Askıdaki hesaplar" hint="Askıya alma ve kaldırma kullanıcı detay sayfasından yapılır." flush>
+      <Panel
+        title="Sürüm dağılımı"
+        hint="Mobil uygulamanın her isteğinde gönderdiği sürüm bilgisinden: zorunlu güncellemenin kimi etkileyeceği buradan okunur. Bu özelliği taşımayan eski build'ler görünmez."
+        flush
+      >
         <DataTable
-          empty="Askıda hesap yok."
-          head={["Hesap", "Gerekçe", "Bitiş", "Başlangıç", "Veren"]}
-          rows={data.suspensions.map((s) => [
-            <a key="n" href={`/admin/users/${encodeURIComponent(s.userId)}`} className="text-strong underline-offset-2 hover:underline">{s.name || s.userId.slice(0, 10)}</a>,
-            s.reason, s.until ? when(s.until) : "süresiz", when(s.at), s.admin,
-          ])}
+          empty="Henüz sürüm bildiren uygulama yok (yeni build yayımlanınca dolacak)."
+          head={["Platform", "Sürüm", { label: "Build", align: "right" }, { label: "Kullanıcı", align: "right" }, { label: "7 günde aktif", align: "right" }]}
+          rows={data.versions.map((v) => [v.platform, v.version, v.build, v.users, v.active7])}
         />
       </Panel>
+      {/* Hesap silmeleri Büyüme sayfasına, askıdaki hesaplar Kullanıcılar ›
+          "Askıda" süzgecine taşındı: burada ikisi de işletim kararının değil
+          kullanıcı tabanının bilgisiydi ve ikincisi süzgecin kopyasıydı. */}
     </AdminPage>
   );
 }

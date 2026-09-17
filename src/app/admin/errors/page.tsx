@@ -3,6 +3,8 @@ import { adminGate } from "@/lib/admin";
 import { AdminDenied } from "../_ui/ui";
 import { listErrorGroups } from "@/lib/client-errors";
 import { ErrorsAdmin } from "./errors-admin";
+import { loadPanel } from "../_data";
+import { ClientErrorsByScreen } from "../dashboard";
 
 export const metadata: Metadata = { title: "Hatalar" };
 export const dynamic = "force-dynamic";
@@ -18,5 +20,8 @@ export default async function AdminErrorsPage({ searchParams }: { searchParams: 
   const gate = await adminGate();
   if (!gate.ok) return <AdminDenied title="Hatalar" email={gate.email} />;
   const { all } = await searchParams;
-  return <ErrorsAdmin groups={await listErrorGroups(all === "1")} showAll={all === "1"} />;
+  const [groups, panel] = await Promise.all([listErrorGroups(all === "1"), loadPanel()]);
+  /* Ekrana göre dağılım panonun "Olaylar" sekmesindeydi, grupların kendisi
+     burada: aynı sorunun iki yüzü iki ayrı yerde okunuyordu. */
+  return <ErrorsAdmin groups={groups} showAll={all === "1"} top={<ClientErrorsByScreen data={panel.value.data} />} />;
 }

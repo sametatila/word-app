@@ -81,6 +81,8 @@ const SKIP = [
   "lib/admin-app.ts",
   // Panonun haftalık karşılaştırma etiketleri: yalnız panelde görünüyor.
   "lib/admin-trends.ts",
+  // İçerik sürümü ve madde analizi: panel etiketleri ve sunucu hata metni.
+  "lib/admin-content.ts",
   // Panelden yönetilen işletim: yalnız sunucu günlüğü ve panel etiketleri.
   // Kullanıcıya giden metinler (bakım, güncelleme, duyuru) sözlükte ya da
   // panelde üç dilde yazılıyor.

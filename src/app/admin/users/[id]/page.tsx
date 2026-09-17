@@ -3,6 +3,8 @@ import { adminGate } from "@/lib/admin";
 import { getAdminUser, type Table } from "@/lib/admin-user";
 import { activeSuspension, suspensionHistory } from "@/lib/account/suspension";
 import { AccountActions } from "./account-actions";
+import { PremiumActions } from "./premium-actions";
+import { findPremiumAccount } from "@/lib/premium";
 import { AdminDenied, AdminPage, Badge, BTN, DataTable, KeyValue, Notice, PageHeader, Panel, PanelGrid } from "../../_ui/ui";
 
 export const metadata: Metadata = { title: "Kullanıcı" };
@@ -29,7 +31,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
 
   const { id } = await params;
   const userId = decodeURIComponent(id);
-  const [u, suspension, history] = await Promise.all([getAdminUser(userId), activeSuspension(userId), suspensionHistory(userId)]);
+  const [u, suspension, history, premium] = await Promise.all([getAdminUser(userId), activeSuspension(userId), suspensionHistory(userId), findPremiumAccount(userId).catch(() => null)]);
   const title = u.profile?.display_name || u.profile?.username || u.account?.name || u.id.slice(0, 10);
   const premiumUntil = u.profile?.premium_until ? Date.parse(u.profile.premium_until.replace(" ", "T")) : 0;
   const stamp = (v: string) => v.slice(0, 16).replace("T", " ");
@@ -49,7 +51,6 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
         meta={<span className="font-mono">{u.id}{u.account?.email ? ` · ${u.account.email}` : ""}</span>}
         actions={
           <>
-            <a href={`/admin/premium?q=${encodeURIComponent(u.id)}`} className={BTN.secondary}>Premium ver / al</a>
             <a href="/admin/moderation" className={BTN.secondary}>Moderasyon</a>
           </>
         }
@@ -97,9 +98,12 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
 
         <Panel title="Profil ve ayarlar"><KeyValue data={u.profile} /></Panel>
 
-        <Panel title="Premium" hint="Hak defteri ve kim ne zaman verdi.">
-          <KeyValue data={u.premium.entitlement} />
-          <div className="mt-3"><T t={u.premium.grants} empty="Elle/kodla verilmiş premium yok." /></div>
+        <Panel title="Premium" hint="Yetki, kaynağı ve defter. Verilen süre bonus olarak yazılır; mağaza aboneliğine dokunulmaz. Hepsi işlem kaydına düşer." span>
+          {premium ? <PremiumActions account={premium} /> : <p className="muted text-caption">Premium hesabı okunamadı (hesap yok ya da silinmiş).</p>}
+          <details className="mt-3">
+            <summary className="muted cursor-pointer text-caption">Ham hak satırı (entitlements)</summary>
+            <div className="mt-2"><KeyValue data={u.premium.entitlement} /></div>
+          </details>
         </Panel>
 
         <Panel title="Uygulama sürümü" hint="Mobil uygulamanın bildirdiği son sürüm, platform başına." span>

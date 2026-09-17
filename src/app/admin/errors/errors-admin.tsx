@@ -13,7 +13,7 @@ import { AdminPage, Badge, BTN, Empty, Notice, PageHeader, Panel, TONE, when } f
  */
 const PLATFORM: Record<string, string> = { web: "Web", android: "Android", ios: "iOS" };
 
-export function ErrorsAdmin({ groups, showAll }: { groups: ErrorGroup[]; showAll: boolean }) {
+export function ErrorsAdmin({ groups, showAll, top }: { groups: ErrorGroup[]; showAll: boolean; top?: React.ReactNode }) {
   const [gone, setGone] = useState<Set<string>>(new Set());
   const [msg, setMsg] = useState("");
   const [platform, setPlatform] = useState("");
@@ -45,6 +45,7 @@ export function ErrorsAdmin({ groups, showAll }: { groups: ErrorGroup[]; showAll
         actions={<a href={showAll ? "/admin/errors" : "/admin/errors?all=1"} className={BTN.secondary}>{showAll ? "Yalnız açıklar" : "Çözülenler dahil"}</a>}
       />
       {msg ? <Notice tone="bad">{msg}</Notice> : null}
+      {top}
       <div className="inline-flex flex-wrap gap-0.5 rounded-tile p-0.5" style={{ background: "var(--surface-2)" }}>
         {["", "web", "android", "ios"].map((p) => (
           <button key={p || "all"} type="button" aria-pressed={platform === p} onClick={() => setPlatform(p)} className="inline-flex h-8 items-center rounded-chip px-3 text-caption"

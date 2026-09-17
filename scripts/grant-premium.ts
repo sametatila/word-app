@@ -4,7 +4,7 @@
  *   npm run grant:premium -- <e-posta|kimlik> <gün> [--yes] [--note "..."]
  *   npm run grant:premium -- <e-posta|kimlik> revoke --yes
  *
- * NEDEN VAR. Günlük kullanım paneldedir (`/admin/premium` → "Hesap yetkisi");
+ * NEDEN VAR. Günlük kullanım paneldedir (`/admin/users/<kimlik>` → "Premium");
  * orası tarayıcıdan, admin oturumuyla çalışıyor. Bu araç tarayıcı oturumu
  * OLMADAN, doğrudan sunucuda çalıştırmak için: mağaza inceleme hesabını
  * hazırlamak gibi kurulum işleri, ya da panelin kendisine ulaşılamadığı an.
