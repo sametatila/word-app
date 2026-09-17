@@ -128,14 +128,75 @@ function scanEnv(file, entry, depth) {
   }
   for (const m of src.matchAll(/import\s*(?:\{[^}]*\}|[\w*]+)?\s*from\s*["']([^"']+)["']/g)) {
     const target = resolve(file, m[1]);
-    /* `server-only` modülüne dalmıyoruz: oraya bir istemci dalından gelinmesi
-       zaten Next'in derleme hatası ve bu kapının işi değil. */
+    /* `server-only` modülüne dalmıyoruz — ama o dalın VARLIĞI aşağıdaki
+       dördüncü sınırda ayrıca ölçülüyor. */
     if (!target || isServerOnly(target) || !target.startsWith("src/")) continue;
     scanEnv(target, entry, depth + 1);
   }
 }
 
 for (const e of clientEntries) scanEnv(e, e, 0);
+
+/**
+ * DÖRDÜNCÜ SINIR: istemci dalından `server-only` modüle ulaşmak.
+ *
+ * ÖLÇÜLEN KUSUR, TAHMİN DEĞİL. Deneme sınavı kâğıtları yayın hattına
+ * taşınırken okuyucular `lib/mock-exams/index`e konuldu; o modülü İSTEMCİ
+ * oynatıcısı da içe alıyor ve Turbopack derlemede
+ * "'server-only' cannot be imported from a Client Component" diye kırıldı.
+ * Kusur yereldeki `tsc`den, `lint`ten ve öteki üç sınırdan geçti; ancak
+ * SUNUCUDA, deploy sırasında göründü. Sıfır-kesinti koruması çalıştı ama
+ * hattı bir tur boşa harcadı.
+ *
+ * Bu kapı aynı şeyi saniyeler içinde yerelde söylüyor: bir `"use client"`
+ * modülünden başlayan içe alım zinciri `import "server-only"` taşıyan bir
+ * dosyaya varıyorsa, zinciri olduğu gibi basıyor.
+ *
+ * YALNIZ ÇALIŞMA ZAMANI İÇE ALIMLARI sayılıyor: `import type` ve tüm
+ * belirteçleri `type` önekli olan içe alımlar derlemede siliniyor, yani
+ * istemci grafiğine hiç girmiyorlar. Onları saymak kapıyı yanlış yere
+ * kırmızı yakardı — tip paylaşmak meşru ve yaygın.
+ */
+const serverLeaks = new Set();
+const serverSeen = new Set();
+
+/** Tümüyle tip olan içe alım derlemede siliniyor: sınırı ihlal etmiyor. */
+function typeOnly(stmt) {
+  if (/^import\s+type\b/.test(stmt)) return true;
+  const braces = stmt.match(/\{([^}]*)\}/);
+  if (!braces) return false;
+  const parts = braces[1].split(",").map((x) => x.trim()).filter(Boolean);
+  return parts.length > 0 && parts.every((x) => /^type\s/.test(x));
+}
+
+function scanServerOnly(file, entry, chain, depth) {
+  if (depth > 8 || serverSeen.has(entry + "|" + file)) return;
+  serverSeen.add(entry + "|" + file);
+  for (const m of read(file).matchAll(/import\s+[^;'"]*from\s*["']([^"']+)["']/g)) {
+    if (typeOnly(m[0])) continue;
+    const target = resolve(file, m[1]);
+    if (!target || !target.startsWith("src/")) continue;
+    if (isServerOnly(target)) {
+      serverLeaks.add(`${entry}
+      ${[...chain, file, target].join("\n      -> ")}`);
+      continue;
+    }
+    scanServerOnly(target, entry, [...chain, file], depth + 1);
+  }
+}
+
+for (const e of clientEntries) scanServerOnly(e, e, [], 0);
+
+if (serverLeaks.size) {
+  console.error("\nİSTEMCİ DALINDAN server-only MODÜLE ULAŞILIYOR:\n");
+  for (const x of serverLeaks) console.error("  " + x + "\n");
+  console.error(
+    "Bu zincir derlemede kırılıyor (\"'server-only' cannot be imported from a Client\n" +
+      "Component\"). Sunucu okumasını ayrı bir dosyaya al ve istemcinin ihtiyacı olan\n" +
+      "tip/hesabı saf bir modülde bırak — örnek: lib/mock-exams/{types,index,serve}.\n",
+  );
+  process.exit(1);
+}
 
 /**
  * ÜÇÜNCÜ SINIR: sunucudan istemciye SERİ HÂLE GELMEYEN prop.
