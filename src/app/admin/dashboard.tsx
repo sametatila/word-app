@@ -135,6 +135,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           {/* Ayrı sayfada duran yönetim ekranları: panonun sekmeleri okuma,
               bunlar YAZMA. Karıştırmamak için görsel olarak da ayrı. */}
           <a href="/admin/premium" className="chip h-8 px-3 text-caption">Premium</a>
+          <a href="/admin/quiz" className="chip h-8 px-3 text-caption">Haftalık quiz</a>
           <a href="/admin/legal" className="chip h-8 px-3 text-caption">Hukuki metinler</a>
           <span className="text-caption" style={{ color: "var(--text-muted)" }}>{new Date(d.generatedAt).toLocaleString("tr-TR")}</span>
         </div>
