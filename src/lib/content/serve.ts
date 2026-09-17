@@ -42,6 +42,35 @@ function remember(key: string, value: unknown[]): void {
   }
 }
 
+const objects = new Map<string, Record<string, unknown>>();
+
+/**
+ * Paketin maddelerini kimliğiyle eşler — EKSİK PARÇA VARSA null.
+ *
+ * Hep-ya-hiç: yarım bir sözlükle çevirmek, içinde tek bir Türkçe cümle kalmış
+ * bir İngilizce ders demek — çalışıyor görünen en kötü biçim.
+ */
+async function loadPackObject(release: number, pack: string): Promise<Record<string, unknown> | null> {
+  const rows = await db
+    .select({ item: contentReleaseItems.item, hash: contentReleaseItems.hash })
+    .from(contentReleaseItems)
+    .where(and(eq(contentReleaseItems.release, release), eq(contentReleaseItems.pack, pack)));
+  if (rows.length === 0) return null;
+  const { gunzipSync } = await import("node:zlib");
+  const out: Record<string, unknown> = {};
+  for (const row of rows) {
+    if (row.item === FULL_PACK || row.item === ORDER_ITEM) continue;
+    const found = await body(row.hash);
+    if (!found) return null;
+    try {
+      out[row.item] = JSON.parse(gunzipSync(found.gz).toString("utf8"));
+    } catch {
+      return null;
+    }
+  }
+  return Object.keys(out).length ? out : null;
+}
+
 async function loadPack(release: number, pack: string): Promise<unknown[]> {
   const rows = await db
     .select({ item: contentReleaseItems.item, hash: contentReleaseItems.hash })
@@ -117,6 +146,35 @@ export async function packItems<T>(pack: string): Promise<T[]> {
        bir kesinti paketi süreç ömrü boyunca boş bırakırdı. */
     console.error("[content] paket okunamadı", pack, err);
     return [];
+  }
+}
+
+/**
+ * Paketi NESNE olarak verir: madde kimliği → gövde.
+ *
+ * Anadil sözlükleri böyle: paket maddeleri sözlüğün üst anahtarları
+ * (`lecture`, `vocab`, `exam`…) ve çözücüler sözlüğü bütün bir nesne olarak
+ * bekliyor. Diziye çevirip yeniden kurmak anahtarları kaybetmek olurdu.
+ */
+export async function packObject<T>(pack: string): Promise<Record<string, T> | null> {
+  const { r } = await pointer();
+  if (!r) return null;
+  const key = `obj:${r}:${pack}`;
+  const hit = objects.get(key);
+  if (hit) return hit as Record<string, T>;
+  try {
+    const built = await loadPackObject(r, pack);
+    if (!built) return null;
+    objects.set(key, built);
+    while (objects.size > MAX_PACKS) {
+      const oldest = objects.keys().next();
+      if (oldest.done) break;
+      objects.delete(oldest.value);
+    }
+    return built as Record<string, T>;
+  } catch (err) {
+    console.error("[content] paket nesnesi okunamadı", pack, err);
+    return null;
   }
 }
 

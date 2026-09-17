@@ -13,6 +13,7 @@ import {
 } from "./native";
 import { resolveEnLesson, deKey, type DeDict } from "./native-de";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
+import { packObject } from "@/lib/content/serve";
 
 /**
  * Anlatım sözlüğünü SUNUCUDA, yalnız gerektiğinde yükler.
@@ -32,15 +33,25 @@ import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
  */
 let cache: NativeDict | null | undefined;
 
+/**
+ * SÖZLÜK YAYIN HATTINDAN — 4,9 MB statik içe alım kalktı.
+ *
+ * Sözlük `native/en` paketi olarak yayınlanıyor ve üst anahtarları (lecture,
+ * vocab, exam…) paketin maddeleri. Mobil de aynı paketi indiriyor: tek kaynak.
+ *
+ * Önbellek süreç ömrü boyunca duruyor ama `packObject` sürüm anahtarı
+ * kullandığı için yeni yayın kendiliğinden yeni bir nesne veriyor; buradaki
+ * `cache` yalnız aynı istek dizisinde tekrar okumayı önlüyor.
+ */
 async function nativeDict(): Promise<NativeDict | null> {
   if (cache !== undefined) return cache;
-  try {
-    const mod = await import("./generated/native-en.json");
-    cache = (mod.default ?? mod) as unknown as NativeDict;
-  } catch (err) {
-    console.error("[native] sözlük yüklenemedi — `npm run lessons:apply` çalıştırıldı mı?", err);
+  const built = await packObject<unknown>("native/en");
+  if (!built) {
+    console.error("[native] sözlük yayında yok — `content:publish` çalıştırıldı mı?");
     cache = null;
+    return cache;
   }
+  cache = built as unknown as NativeDict;
   return cache;
 }
 
@@ -59,13 +70,13 @@ let cacheDe: DeDict | null | undefined;
 
 async function deDict(): Promise<DeDict | null> {
   if (cacheDe !== undefined) return cacheDe;
-  try {
-    const mod = await import("./generated/native-de.json");
-    cacheDe = (mod.default ?? mod) as unknown as DeDict;
-  } catch (err) {
-    console.error("[native] Almanca sözlük yüklenemedi — `npm run lessons:apply-de` çalıştırıldı mı?", err);
+  const built = await packObject<unknown>("native/de");
+  if (!built) {
+    console.error("[native] Almanca sözlük yayında yok — `content:publish` çalıştırıldı mı?");
     cacheDe = null;
+    return cacheDe;
   }
+  cacheDe = built as unknown as DeDict;
   return cacheDe;
 }
 
