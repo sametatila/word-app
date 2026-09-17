@@ -34,10 +34,8 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { LESSONS } from "../src/lib/lessons";
-import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
 import { buildLessonDump } from "./dump-lessons-mobile";
-import { buildSkillDump } from "./dump-skills-mobile";
 
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8")) as unknown;
@@ -82,11 +80,11 @@ function compare(label: string, web: Set<string>, mob: Set<string>) {
 const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2", "en-b1", "en-b2", "en-c1"].map((n) => `mobile/src/data/lessons/${n}.json`);
 compare("ders", new Set(LESSONS.map((l) => l.id)), ids(lessonFiles));
 
-compare(
-  "beceri egzersizi",
-  new Set(BUNDLED_EXERCISES.map((e) => e.id)),
-  ids(["mobile/src/data/skills/exercises.json", "mobile/src/data/skills/exercises-en.json"]),
-);
+/*
+  BECERİ EGZERSİZLERİ ARTIK DÖKÜLMÜYOR: iki JSON mobil paketten çıkarıldı ve
+  içerik hattından seviye paketi hâlinde iniyor. Karşılaştırılacak dosya yok;
+  egzersizlerin doğrulayıcısı `npm run skills:check`.
+*/
 
 /*
   DENEME KÂĞITLARI ARTIK DÖKÜLMÜYOR.
@@ -147,14 +145,6 @@ compare(
         file: pack.file,
         json: pack.json,
         cmd: `npm run dump:lessons -- ${course}`,
-      });
-    const skills = buildSkillDump(course);
-    if (skills.rows.length)
-      built.push({
-        label: `beceri metni ${course}`,
-        file: skills.file,
-        json: skills.json,
-        cmd: `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts ${course}`,
       });
   }
   let drift = 0;

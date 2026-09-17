@@ -1,8 +1,13 @@
 /**
- * Beceri egzersizi kataloğu — mobil paket (`scripts/dump-skills-mobile`,
- * web'deki tek kaynaktan: `src/lib/skills/content/`). İçerik statik ve
- * derlemeye gömülü (web'de de öyle: "veritabanı gerektirmez, PWA'da
- * çevrimdışı çalışır").
+ * Beceri egzersizi kataloğu — SEVİYE PAKETLERİ hâlinde sunucudan iniyor.
+ *
+ * İki JSON ikilinin içindeydi (2,4 MB + 2,4 MB) ve kullanıcı aynı anda tek
+ * seviyede çalışıyor: A1'deki biri C1'in egzersizlerini de taşıyordu. Paket
+ * artık seviye başına (`skills/<kurs>-<seviye>`), girildiğinde iniyor ve
+ * diskte kalıyor — inen seviye çevrimdışı çalışmaya devam ediyor.
+ *
+ * Kaynak yine tek: `src/lib/skills/content/`, döküm projeksiyonu yine
+ * `scripts/dump-skills-mobile` (`content:publish` onu kullanıyor).
  *
  * İki kurs, iki dosya ve İKİSİ AYNI ŞEY DEĞİL (ölçüm, 2026-09-11):
  * Almanca paket 995 egzersiz taşıyor, 870'i bir Patika ünitesine bağlı ve
@@ -17,8 +22,7 @@
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import { nativeExercise } from "../../lib/nativeContent";
-import all from "./exercises.json";
-import allEn from "./exercises-en.json";
+import { ensurePack, getContentItem, listContentItems } from "../../content/store";
 
 export type Gloss = { de: string; tr: string; en?: string; hd?: string; note?: string };
 export type SkillQuestion = {
@@ -44,33 +48,59 @@ export type SkillExercise = {
   dialogue?: unknown[];
 };
 
-const ALL = all as SkillExercise[];
-const ALL_EN = allEn as SkillExercise[];
-
 /**
- * Havuzlar kursa göre. Almanca paketin id'leri kurs öneksiz ("a1-r1", üretici
- * `course` alanını düşürüyor); İngilizce paket bu yüzden kurs önekli
- * ("en-a1-r1") — aynı id iki kursta birden var olsaydı tek bir dizin ikisini
- * birbirine karıştırırdı. Dersler zaten kurs önekli, beceriler de öyle kalmalı.
+ * İNEN SEVİYE PAKETLERİ — anahtar paket kimliği, değer o seviyenin havuzu.
  *
- * İngilizce paketi 2026-09'dan beri web'den dökülüyor (tek kaynak
- * `src/lib/skills/content/library/`): A1/A2'nin 94 egzersizi ve her seviyenin
- * kütüphane egzersizleri orada.
+ * Almanca paketin id'leri kurs öneksiz ("a1-u1-r1", üretici `course` alanını
+ * düşürüyor); İngilizce paket kurs önekli ("en-a1-u1-r1") — aynı id iki
+ * kursta birden var olsaydı tek dizin ikisini karıştırırdı.
  */
-const BY_COURSE: Record<string, SkillExercise[]> = { de: ALL, en: ALL_EN };
+const pools = new Map<string, SkillExercise[]>();
 
 /**
- * Kursun egzersiz havuzu. Ders yükleyicisiyle aynı kural: aynı hedef dili
- * paylaşan kursa düşmek meşru (gsw-zh → de), farklı dile ASLA düşülmez.
+ * Kursun paket adı. Ders yükleyicisiyle aynı kural: aynı hedef dili paylaşan
+ * kursa düşmek meşru (gsw-zh → de), farklı dile ASLA düşülmez.
  */
-function poolFor(course: string): SkillExercise[] {
-  const own = BY_COURSE[course];
-  if (own) return own;
+function packOf(course: string, level: string): string {
   const target = courseOrDefault(course).targetLang;
-  for (const id of Object.keys(BY_COURSE)) {
-    if (courseOrDefault(id).targetLang === target) return BY_COURSE[id];
+  return `skills/${target === "en" ? "en" : "de"}-${level.toLowerCase()}`;
+}
+
+/**
+ * Kimlikten seviye: "a1-u1-r1" → A1, "de-a1-lib-r1" → A1, "en-c1-u2-w1" → C1.
+ *
+ * Üç biçim de dolaşıyor ve hiçbiri seviyeyi sabit bir konumda tutmuyor; kapalı
+ * bir kalıp aramak (`^[abc][12]$`) konuma güvenmekten sağlam. Egzersizi
+ * kimliğiyle isteyen ekran hangi paketi indireceğini böyle biliyor.
+ */
+export function skillLevelOf(id: string): string | null {
+  for (const part of id.split("-")) if (/^[abc][12]$/.test(part)) return part.toUpperCase();
+  return null;
+}
+
+/**
+ * Seviye paketini indirir ve belleğe alır — ekran çizmeden ÖNCE çağrılıyor.
+ *
+ * Sync okuyucular (`listOwnSkillMeta`, `getExercise`) paket inmeden boş
+ * dönüyor: liste ekranları boş durumu zaten çizebiliyor ve uydurma bir
+ * içerik göstermektense boş göstermek doğru. İnen paket bir daha istenmiyor.
+ */
+export async function ensureSkills(level: string, course: string = currentCourseId()): Promise<void> {
+  const pack = packOf(course, level);
+  if (pools.has(pack)) return;
+  const ok = await ensurePack(pack);
+  if (!ok) return;
+  const ids = await listContentItems(pack);
+  const out: SkillExercise[] = [];
+  for (const id of ids) {
+    const ex = await getContentItem<SkillExercise>(pack, id);
+    if (ex) out.push(ex);
   }
-  return [];
+  pools.set(pack, out);
+}
+
+function poolFor(course: string, level: string): SkillExercise[] {
+  return pools.get(packOf(course, level)) ?? [];
 }
 
 /*
@@ -80,7 +110,9 @@ function poolFor(course: string): SkillExercise[] {
   öğrenilen dilde.
 */
 export function getExercise(id: string, course: string = currentCourseId()): SkillExercise | undefined {
-  const e = poolFor(course).find((x) => x.id === id);
+  const level = skillLevelOf(id);
+  if (!level) return undefined;
+  const e = poolFor(course, level).find((x) => x.id === id);
   return e ? nativeExercise(e) : undefined;
 }
 
@@ -125,7 +157,7 @@ function listMeta(
   course: string,
   keep: (e: SkillExercise) => boolean,
 ): SkillMeta[] {
-  return poolFor(course).filter((e) => e.level === level && e.skill === skill && keep(e)).map(metaOf);
+  return poolFor(course, level).filter((e) => e.level === level && e.skill === skill && keep(e)).map(metaOf);
 }
 
 /** Patika üretici havuzu — yalnız bir üniteye bağlı egzersizler. */

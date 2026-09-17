@@ -14,6 +14,8 @@
  * geçmiyor, boş liste olarak KALIYOR.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 const ESC = String.fromCharCode(27);
 
@@ -409,8 +411,17 @@ console.log("\n" + C.b + "10. BECERI ICERIGI vs OYNATICI" + C.off);
    * HER örneğinde bulunmak zorundadır. Yazmada varsayılan `FreeCard` ve
    * `minWords` ister; soruda varsayılan şıklı dal ve `options` ister.
    */
-  const dump = ["mobile/src/data/skills/exercises.json", "mobile/src/data/skills/exercises-en.json"]
-    .flatMap((f) => JSON.parse(read(f)));
+  /* KAYNAKTAN okunuyor, mobil paketten değil: egzersizler ikiliden çıktı ve
+     seviye paketi hâlinde sunucudan iniyor. Düz JS TypeScript kaynağını içe
+     alamadığı için küçük bir yardımcı JSON basıyor (`scripts/skills-json.ts`);
+     denetim böylece dökümden ÖNCEKİ hâli görüyor. */
+  const dump = JSON.parse(
+    execFileSync("npx", ["tsx", "--tsconfig", "scripts/tsconfig.ops.json", "scripts/skills-json.ts"], {
+      cwd: fileURLToPath(new URL("..", import.meta.url)),
+      encoding: "utf8",
+      maxBuffer: 64 * 1024 * 1024,
+    }),
+  );
   const quiz = read("mobile/src/game/skillQuiz.tsx");
 
   const taskNamed = named(quiz, "t\\.kind");
@@ -2236,7 +2247,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "feedback_why_opened", //   kural bagi (`why.href`) IKI TARAFTA da hep null; asagida denetleniyor
     "install_prompt", //        PWA kurulum onerisi
     "panel_open", //            tarayici olcum katmani
-    "walk_capture", //          tarayicinin getUserMedia kisiti; native kaydedicide karsiligi yok
     "store_redirect", //        webden magazaya satin alma yonlendirmesi; uygulama zaten magazada satiyor
   ];
   /* `feedback_why_opened` MUAF cunku webde de HIC yazilmiyor: olay kural
@@ -4437,13 +4447,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const gecis = [...new Set([...src.matchAll(/track\("walk_switch", ([^,]+),/g)].flatMap((m) => m[1].match(/\d/g) ?? []))].sort();
     return [...adlar.sort(), "bicim=" + bicim, "gecis degerleri=" + gecis.join("/")];
   };
-  /* MUAF: `walk_capture` tarayicinin getUserMedia kisitini (echoCancellation)
-     yaziyor - native kaydedicide boyle bir dugme YOK, karsiligi olmayan bir
-     olay. Muafiyet kendini denetliyor: web o cagriyi `micSettings` disinda bir
-     seyden besler hâle gelirse gerekce duser. */
-  const webSrc = read("src/components/walk-player.tsx");
-  const MUAF = /track\("walk_capture", micSettings\(\)/.test(webSrc) ? ["walk_capture"] : [];
-  const web = yuruyus(["src/components/walk-player.tsx"]).filter((x) => !MUAF.includes(x));
+  /* `walk_capture` (tarayicinin getUserMedia kisiti) eskiden burada MUAFTI;
+     yalniz ekran kapali cep yolunun kurulusunda yaziliyordu ve o yolla
+     birlikte kalkti (2026-09-17). */
+  const web = yuruyus(["src/components/walk-player.tsx"]);
   const mob = yuruyus(["mobile/src/screens/WalkModeScreen.tsx"]);
   sameList("yuruyus turu olcumu", mob, web);
 }
@@ -11525,7 +11532,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["install_prompt", ["web", "PWA kurulum istemi tarayiciya ait", () => /beforeinstallprompt/.test(sil(read("src/components/install-prompt.tsx")))]],
       ["panel_open", ["web", "katlanan bolum webe ozel bir yuzey", () => web.has("panel_open")]],
       ["feedback_why_opened", ["web", "gerekce §118'de yazili", () => true]],
-      ["walk_capture", ["web", "gerekce §119'da yazili", () => true]],
       /* Web satmiyor, uygulamaya/magazaya yonlendiriyor (lib/store-link). Mobilin
          karsiligi `paywall_view:web_link` - yonlendirmenin VARIS tarafi. */
       ["store_redirect", ["web", "web satin almayi magazaya yonlendiriyor, uygulama kendisi satiyor", () => existsSync(new URL("../src/app/get/[target]/route.ts", import.meta.url))]],

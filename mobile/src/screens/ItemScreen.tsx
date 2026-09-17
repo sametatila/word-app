@@ -16,7 +16,7 @@ import { useAuth } from "../lib/AuthContext";
 import { usePremiumStatus } from "../lib/premium";
 import { FlowScreen, FlowActions, FlowNote, ResultHero, StatRow, StateBody } from "../ui/flow";
 import { KIND_KEY, type ItemKind } from "../data/unit";
-import { getExercise, type ListeningSegment } from "../data/skills";
+import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
@@ -191,7 +191,19 @@ export function ItemScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Item">>();
-  const exercise = getExercise(params.id);
+  /*
+    Egzersizin seviye paketi inmemişse burada iniyor. Normalde liste ekranı
+    zaten indirmiş oluyor; bu yol derin bağlantıyla ya da bildirimle doğrudan
+    buraya gelen kullanıcı için. `tick` inince yeniden çiziyor.
+  */
+  const [exercise, setExercise] = useState(() => getExercise(params.id));
+  useEffect(() => {
+    const level = skillLevelOf(params.id);
+    if (!level) return;
+    let dead = false;
+    void ensureSkills(level).then(() => { if (!dead) setExercise(getExercise(params.id)); });
+    return () => { dead = true; };
+  }, [params.id]);
   const startedAt = useRef(Date.now());
   const saved = useRef(false);
   const [correct, setCorrect] = useState(0);

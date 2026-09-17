@@ -15,7 +15,7 @@ import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon
 import { FlowNote } from "../ui/flow";
 import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, type SkillAccess } from "../lib/skillAccess";
 import { useMe } from "../lib/useMe";
-import { listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
+import { ensureSkills, listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
 import { getDoneItems, getItemScores, syncItemProgress } from "../game/lessonProgress";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, type Palette } from "../theme";
@@ -115,14 +115,32 @@ export function SkillsScreen() {
   // ekranı boyundan boyuna değiştiriyordu (kayan konteynerlerin kaynağı).
   const levelReady = !!level || (!meLoading && (!!me || prefsRead));
 
+  /*
+    SEVİYE PAKETİ İNMEDEN LİSTE ÇİZİLMEZ. Egzersizler ikilide değil, seviye
+    paketi hâlinde iniyor (bkz. `data/skills`). İndikten sonra `tick` listeyi
+    yeniden kuruyor; inene kadar liste boş ve ekran kendi boş durumunu
+    gösteriyor. Güncel paket için istek hiç atılmıyor.
+  */
+  const [pools, setPools] = useState<Record<string, SkillMeta[]>>({});
+  useEffect(() => {
+    let dead = false;
+    void ensureSkills(activeLevel).then(() => {
+      if (dead) return;
+      const out: Record<string, SkillMeta[]> = {};
+      for (const s of SKILLS) out[s.key] = listOwnSkillMeta(activeLevel, s.key);
+      setPools(out);
+    });
+    return () => { dead = true; };
+  }, [activeLevel]);
+
   const lists = useMemo(
     () => SKILLS.map((s) => {
-      const items = listOwnSkillMeta(activeLevel, s.key);
+      const items = pools[s.key] ?? [];
       const next = items.find((e) => !done.has(e.id) && !isSkillLocked(e, access)) ?? null;
       const finished = items.filter((e) => done.has(e.id)).length;
       return { ...s, items, next, finished, ratio: items.length ? finished / items.length : 1 };
     }),
-    [activeLevel, done, access],
+    [pools, done, access],
   );
   const hasExercises = lists.some((l) => l.items.length > 0);
   const totalCount = lists.reduce((n, l) => n + l.items.length, 0);

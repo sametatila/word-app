@@ -10,8 +10,6 @@
  *
  * Kullanım: npx tsx scripts/dump-skills-mobile.ts [kurs]   (varsayılan "de")
  */
-import { writeFileSync } from "node:fs";
-import { join } from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 // Beş beceri: konuşma ve dil bilgisi Beceriler kütüphanesiyle (2026-09)
@@ -38,16 +36,11 @@ export function buildSkillDump(course: string) {
   return { file, json: JSON.stringify(keep), rows: keep };
 }
 
-if (process.argv[1]?.endsWith("dump-skills-mobile.ts")) {
-  const course = (process.argv[2] ?? "de").toLowerCase();
-  const { file, json, rows } = buildSkillDump(course);
-  if (!rows.length) {
-    console.error(`"${course}" kursu için egzersiz yok — paket yazılmadı.`);
-    process.exit(1);
-  }
-  writeFileSync(join(process.cwd(), file), json);
+/*
+  DÖKÜM KOLU KALDIRILDI — yazılacak dosya kalmadı.
 
-  const by: Record<string, number> = {};
-  for (const e of rows) by[`${e.level}/${e.skill}`] = (by[`${e.level}/${e.skill}`] ?? 0) + 1;
-  console.log(course, "yazıldı", rows.length, JSON.stringify(by));
-}
+  `exercises.json` ve `exercises-en.json` (2,4 + 2,4 MB) mobil paketten
+  çıkarıldı; egzersizler seviye paketi hâlinde iniyor
+  (`skills/<kurs>-<seviye>`). `buildSkillDump` YAŞIYOR ve tek projeksiyon
+  olarak kalıyor: `scripts/content-publish` yayını ondan üretiyor.
+*/
