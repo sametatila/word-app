@@ -4,7 +4,7 @@ import { useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { ModerationData, ModerationDecision, ModerationTarget, ReportedPerson } from "@/lib/moderation-admin";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Badge, BTN, Empty, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE } from "../_ui/ui";
+import { AdminPage, Badge, when as fmtWhen, BTN, Empty, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 /**
@@ -37,8 +37,7 @@ const ERROR_TR: Record<string, string> = {
 };
 
 /** ISO → yerel tarih/saat. Boşsa boş. */
-const when = (v: string, withTime = true) =>
-  v ? (withTime ? new Date(v).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : new Date(v).toLocaleDateString("tr-TR")) : "";
+const when = (v: string, withTime = true) => (v ? fmtWhen(v, withTime) : "");
 
 function Person({ p }: { p: ReportedPerson }) {
   return (

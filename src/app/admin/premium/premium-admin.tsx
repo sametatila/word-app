@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
+import { ADMIN_TZ, AdminPage, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -378,11 +378,13 @@ function AccountSection({
   );
 }
 
+const noSubscribe = () => () => {};
+
 /** Tarihi yöneticinin okuyacağı biçimde yazar; boşsa tire. */
 function when(iso: string | null): string {
   if (!iso) return "—";
   const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? "—" : d.toLocaleString("tr-TR", { dateStyle: "medium", timeStyle: "short" });
+  return Number.isNaN(d.getTime()) ? "—" : d.toLocaleString("tr-TR", { dateStyle: "medium", timeStyle: "short", timeZone: ADMIN_TZ });
 }
 
 /** Kod üretimi ve listesi. */
@@ -402,7 +404,10 @@ function CodesSection({
   const [made, setMade] = useState<string[]>([]);
   const [rows, setRows] = useState(codes);
 
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  /* Alan adı yalnız tarayıcıda bilinir. Doğrudan `window` okumak sunucu
+     çizimiyle (boş) istemcinin ilk çizimini ayırıyordu: React #418. Sunucu
+     anlık görüntüsü boş, hidrasyondan sonra gerçek değer geliyor. */
+  const origin = useSyncExternalStore(noSubscribe, () => window.location.origin, () => "");
 
   return (
     <Panel title="Promo kodları" hint={<>Kod üç platformda da geçerli ve mağazadan bağımsız. Dağıtım bağlantısı: <code>{origin}/premium?code=KOD</code> — bağlantıya tıklayan kullanıcıda kod alanı dolu gelir.</>}>

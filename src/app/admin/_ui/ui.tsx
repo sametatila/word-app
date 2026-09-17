@@ -40,12 +40,19 @@ export function fmt(n: number): string {
   return String(Math.round(n));
 }
 
-/** ISO → "17.09.2026 14:05". Boşsa tire. */
+/**
+ * Panelin saat dilimi SABİT. İstemci bileşenleri önce sunucuda (UTC) sonra
+ * tarayıcıda çiziliyor; dilim verilmezse iki çizim farklı saat yazıyor ve
+ * React hidrasyonu metin uyuşmazlığıyla bozuluyor (#418).
+ */
+export const ADMIN_TZ = "Europe/Istanbul";
+
+/** ISO → "17.09.2026 14:05" (İstanbul saati). Boşsa tire. */
 export function when(iso: string | null | undefined, withTime = true): string {
   if (!iso) return "—";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return "—";
-  return withTime ? d.toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : d.toLocaleDateString("tr-TR");
+  return withTime ? d.toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short", timeZone: ADMIN_TZ }) : d.toLocaleDateString("tr-TR", { timeZone: ADMIN_TZ });
 }
 
 /** Sayfa gövdesi: bütün yönetim sayfaları aynı genişlikte. */
