@@ -22,7 +22,7 @@
  * yazıldı, hiçbiri bir kurumun sınavı değil. Hiçbir alanda kurum ya da sınav
  * markası geçmemeli; geçerse bu bir hata.
  */
-import { MOCK_PAPERS } from "../src/lib/mock-exams";
+import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { MOCK_KEY_FIELDS, deliverPart } from "../src/lib/mock-exams/deliver";
 import { foldAnswer } from "../src/lib/mock-exams/scoring";
 import {

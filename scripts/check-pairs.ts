@@ -5,7 +5,7 @@ import { db } from "@/lib/db";
 import { words } from "@/lib/db/schema";
 import { LESSONS } from "@/lib/lessons/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { MOCK_PAPERS } from "@/lib/mock-exams";
+import { MOCK_PAPERS } from "@/lib/mock-exams/source";
 import {
   resolveLesson,
   resolveExercise,

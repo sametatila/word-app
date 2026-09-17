@@ -30,7 +30,7 @@
  * Çıkış kodu: ağır bulgu (1, 2, 4) varsa 1, yoksa 0.
  */
 import { createRequire } from "node:module";
-import { MOCK_PAPERS, taskSeconds } from "../src/lib/mock-exams";
+import { MOCK_PAPERS, taskSeconds } from "../src/lib/mock-exams/source";
 import { isOpenTask } from "../src/lib/mock-exams/scoring";
 import type { MockItem, MockPaper, MockPart, MockStimulus, MockTask } from "../src/lib/mock-exams/types";
 

@@ -52,7 +52,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
   const level = (LEVELS.includes(q as MockLevel) ? q : LEVELS.includes(profile.level as MockLevel) ? profile.level : "A1") as MockLevel;
 
   const course = mockCourseOf(profile.course);
-  const papers = mockPapersFor(level, course);
+  const papers = await mockPapersFor(level, course);
 
   /* TEMANIN ana dildeki karşılığı. Burada hep-ya-hiç YOK: satırın kimliği
      Almanca tema ve o yanında zaten duruyor, karşılığı bulunamayan bir alt

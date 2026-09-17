@@ -13,7 +13,7 @@
  * Yarım çevrilmiş bir sınav kâğıdı, çevrilmemişinden kötüdür.
  */
 import { readFileSync } from "node:fs";
-import { MOCK_PAPERS } from "@/lib/mock-exams";
+import { MOCK_PAPERS } from "@/lib/mock-exams/source";
 import {
   resolveMockPaper,
   mockKey,

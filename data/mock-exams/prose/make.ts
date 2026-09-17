@@ -21,7 +21,7 @@
  * kâğıt ölçtüğü şeyi ölçmez.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
-import { MOCK_PAPERS } from "@/lib/mock-exams";
+import { MOCK_PAPERS } from "@/lib/mock-exams/source";
 
 const DIR = new URL(".", import.meta.url).pathname;
 

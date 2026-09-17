@@ -3,7 +3,6 @@ import { titleMeta } from "@/lib/page-meta";
 import { PageBack } from "@/components/page-back";
 import { getUserId } from "@/lib/auth/server";
 import { mockStats } from "@/lib/mock-exams/stats";
-import { mockPaperById } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockSkillLabel, type MockCourse, type MockSkill } from "@/lib/mock-exams/types";
 import { ChevronRightIcon, PodiumIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
@@ -42,12 +41,15 @@ export default async function MockStatsPage() {
     değil — mobilde de öyle. Tek satırlık bir denemede dil kâğıttan çözülüyor;
     toplam kırılımda kâğıt yok, orada varsayılan kurs esas alınıyor.
   */
+  /* ETİKET KİMLİKTEN: "de-b1-07" → "B1 · 7. deneme". Kâğıdı okumak yalnız iki
+     alan için tüm paketi çekmek olurdu; kimlik ikisini de söylüyor. */
   const paperLabel = (id: string) => {
-    const p = mockPaperById(id);
-    return p ? `${p.level} · ${t("mockexams.paper", { n: p.no })}` : id;
+    const [, lvl, no] = id.split("-");
+    const n = Number(no);
+    return lvl && Number.isFinite(n) ? `${lvl.toUpperCase()} · ${t("mockexams.paper", { n })}` : id;
   };
   const skillLabel = (skill: string, paperId?: string) => {
-    const course = (paperId ? mockPaperById(paperId)?.course : null) ?? "de";
+    const course = paperId?.split("-")[0] === "en" ? "en" : "de";
     return mockSkillLabel(course as MockCourse, skill as MockSkill);
   };
 

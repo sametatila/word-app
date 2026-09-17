@@ -17,7 +17,7 @@ export default async function MockExamPartPage({ params }: { params: Promise<{ p
   const userId = await getUserId();
   if (!userId) redirect("/login");
   const { paper: paperId, skill } = await params;
-  const source = mockPaperById(paperId);
+  const source = await mockPaperById(paperId);
   if (!source || !SKILLS.includes(skill as MockSkill)) notFound();
 
   /* YÖNERGE, DURUM VE GEREKÇE öğrencinin dilinde. Metinlerin gövdesi, madde

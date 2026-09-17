@@ -9,14 +9,14 @@ import { clampDay } from "@/lib/award";
 import { track } from "@/lib/events";
 import { assess } from "@/lib/assess";
 import { recordAiUsage } from "@/lib/ai-usage";
-import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
+import { mockPaperAt, mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
 import type { MockLevel, MockPaper } from "@/lib/mock-exams/types";
 import { mockCourseOf } from "@/lib/courses";
 import { canMockPaper, mockAccess } from "@/lib/premium/access";
 import { takeUsage } from "@/lib/premium";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { deliverPart } from "@/lib/mock-exams/deliver";
-import { paperDisabled } from "@/lib/content/read";
+import { paperDisabled, pointer } from "@/lib/content/read";
 import { mockFeedback, rulesFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
@@ -167,7 +167,7 @@ export async function GET(req: Request) {
   const skill = url.searchParams.get("skill");
   if (paperId && skill) {
     if (!SKILLS.has(skill as MockSkill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
-    const source = mockPaperById(paperId);
+    const source = await mockPaperById(paperId);
     if (!source) return NextResponse.json({ error: "not_found" }, { status: 404 });
     /* Panelden kapatılmış kâğıt YOK sayılıyor — kapatma anahtarı burada da
        işliyor, yoksa mobilde gizlenen kâğıt webde açık kalırdı. */
@@ -233,7 +233,7 @@ export async function POST(req: Request) {
 async function start(userId: string, body: Record<string, unknown>) {
   const paperId = String(body.paper ?? "");
   const skill = String(body.skill ?? "") as MockSkill;
-  const paper = mockPaperById(paperId);
+  const paper = await mockPaperById(paperId);
   const part = paper ? findPart(paper, skill) : null;
   if (!paper || !part || !SKILLS.has(skill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
   /* Kapatılmış kâğıtla sınav BAŞLAMIYOR: liste onu zaten göstermiyor ama
@@ -289,7 +289,18 @@ async function start(userId: string, body: Record<string, unknown>) {
 
   const [row] = await db
     .insert(mockExamAttempts)
-    .values({ userId, paperId, skill, level: paper.level, secondsLeft: part.minutes * 60 })
+    /* SÜRÜM BURADA SABİTLENİYOR. Deneme hangi kâğıtla açıldıysa onunla
+       bitecek: `save`, `assess` ve `finish` kâğıdı bu sürümden okuyor. Arada
+       çıkan bir yayın öğrencinin cevaplarını başka bir sürüme göre
+       puanlayamıyor (bkz. `mock_exam_attempts.release`). */
+    .values({
+      userId,
+      paperId,
+      skill,
+      level: paper.level,
+      release: (await pointer()).r || null,
+      secondsLeft: part.minutes * 60,
+    })
     .returning();
   await track(userId, "mock_exam_start", clampDay(typeof body.day === "string" ? body.day : undefined), 1, `${paper.level}:${skill}`);
   return NextResponse.json({ attempt: shape(row), resumed: false, paper: delivered });
@@ -309,10 +320,16 @@ async function deliveredPaper(userId: string, paper: MockPaper, skill: MockSkill
  * Kâğıt önce çevriliyor: `explain` kullanıcının anadilinde yazılmış bir
  * cümle ve sonuç dökümünde olduğu gibi gösteriliyor.
  */
-async function scoreWithExplains(paperId: string, skill: MockSkill, answers: Record<string, string>, lang: NativeLang) {
-  const score = scorePart(paperId, skill, answers);
+async function scoreWithExplains(
+  paperId: string,
+  skill: MockSkill,
+  answers: Record<string, string>,
+  lang: NativeLang,
+  release: number | null,
+) {
+  const score = await scorePart(paperId, skill, answers, release);
   if (!score) return null;
-  const source = mockPaperById(paperId);
+  const source = await mockPaperAt(release, paperId);
   if (!source) return score;
   const localised = await localiseMockPaper(source, lang);
   const part = findPart(localised, skill);
@@ -410,7 +427,7 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
   const oncekiler = (row.openScores ?? {}) as Record<string, unknown>;
   if (oncekiler[taskId] !== undefined) return NextResponse.json({ result: oncekiler[taskId] });
 
-  const paper = mockPaperById(row.paperId);
+  const paper = await mockPaperAt(row.release, row.paperId);
   const part = paper ? findPart(paper, row.skill as MockSkill) : null;
   const task = part?.tasks.find((t) => t.id === taskId);
   if (!paper || !task || !isOpenTask(task)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
@@ -498,7 +515,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const day = clampDay(typeof body.day === "string" ? body.day : undefined);
   const answers = cleanAnswers(body.answers) ?? {};
   const merged = { ...((row.answers ?? {}) as Record<string, string>), ...answers };
-  const score = scorePart(row.paperId, row.skill as MockSkill, merged);
+  const score = await scorePart(row.paperId, row.skill as MockSkill, merged, row.release);
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   /*
@@ -532,6 +549,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
       row.skill as MockSkill,
       (row.answers ?? {}) as Record<string, string>,
       lang,
+      row.release,
     );
     return NextResponse.json({ attempt: shape(row), score: kayitli ?? score, ai: row.ai ?? null });
   }
@@ -541,7 +559,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
      cümledir ve modele GEREKÇE olarak veriliyor. Kaynaktan okunsaydı
      İngilizce konuşan kullanıcının geri bildirimi Türkçe gerekçeler üstüne
      kurulurdu — cevabın dili doğru olur, dayanağı yabancı kalırdı. */
-  const source = mockPaperById(row.paperId)!;
+  const source = (await mockPaperAt(row.release, row.paperId))!;
   const paper = await localiseMockPaper(source, lang);
   const part = findPart(paper, row.skill as MockSkill)!;
   const explains: Record<string, string> = {};
@@ -591,6 +609,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
       son.skill as MockSkill,
       (son.answers ?? {}) as Record<string, string>,
       lang,
+      son.release,
     );
     return NextResponse.json({ attempt: shape(son), score: kayitli ?? score, ai: son.ai ?? null });
   }

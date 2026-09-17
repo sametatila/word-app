@@ -23,7 +23,7 @@
 import { readFileSync } from "node:fs";
 import { LESSONS } from "@/lib/lessons/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { MOCK_PAPERS } from "@/lib/mock-exams";
+import { MOCK_PAPERS } from "@/lib/mock-exams/source";
 import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";
 import { candoForLesson } from "@/lib/cando-map";
 import {

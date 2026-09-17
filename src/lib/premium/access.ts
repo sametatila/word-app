@@ -252,7 +252,7 @@ export type MockAccess = {
  */
 export async function mockAccess(userId: string | null, level: MockLevel, course: string): Promise<MockAccess> {
   const cfg = await premiumConfig();
-  const papers = mockPapersFor(level, course).map((p) => p.id);
+  const papers = (await mockPapersFor(level, course)).map((p) => p.id);
   const premium = await isPremiumCached(userId);
   const freeLimit = cfg.free.mockPapersPerLevel;
 

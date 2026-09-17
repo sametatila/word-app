@@ -1,4 +1,4 @@
-import { mockPaperById } from "./index";
+import { mockPaperAt } from "./index";
 import type { MockCourse, MockItem, MockPaper, MockPart, MockSkill, MockTask } from "./types";
 import { MOCK_PASS_PCT, mockBoolLabels } from "./types";
 
@@ -124,8 +124,20 @@ export function findPart(paper: MockPaper, skill: MockSkill): MockPart | null {
  * `answers` madde kimliğinden cevaba: şıklı maddede dizin ("2"), doğru/yanlış
  * maddesinde "true"/"false", eşleştirmede şık harfi, boşlukta yazılan metin.
  */
-export function scorePart(paperId: string, skill: MockSkill, answers: Record<string, string>): MockScore | null {
-  const paper = mockPaperById(paperId);
+export async function scorePart(
+  paperId: string,
+  skill: MockSkill,
+  answers: Record<string, string>,
+  /**
+   * Denemenin açıldığı içerik sürümü — kâğıt ORADAN okunuyor.
+   *
+   * Sabitleme olmadan, sınav sürerken çıkan bir yayın cevapları başka bir
+   * kâğıt sürümüne göre puanlardı. `null` yalnız sabitlemeden önce açılmış
+   * denemeler için: onlar canlı sürümle puanlanıyor.
+   */
+  release: number | null = null,
+): Promise<MockScore | null> {
+  const paper = await mockPaperAt(release, paperId);
   const part = paper ? findPart(paper, skill) : null;
   if (!paper || !part) return null;
 

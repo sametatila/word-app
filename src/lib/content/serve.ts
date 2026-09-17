@@ -79,7 +79,29 @@ async function loadPack(release: number, pack: string): Promise<unknown[]> {
   return out;
 }
 
-/** Paketin tamamı, kaynak sırasında. Yayın yoksa boş dizi. */
+/**
+ * BELİRLİ BİR SÜRÜMDEN okuma — sürümü sabitlenmiş işler için.
+ *
+ * Deneme sınavı bunu kullanıyor: sınav hangi kâğıtla açıldıysa onunla
+ * bitmeli, arada çıkan bir yayın öğrencinin cevaplarını başka bir sürüme göre
+ * puanlamamalı (bkz. `mock_exam_attempts.release`).
+ */
+export async function packItemsAt<T>(release: number, pack: string): Promise<T[]> {
+  if (!release) return [];
+  const key = `${release}:${pack}`;
+  const hit = packs.get(key);
+  if (hit) return hit.value as T[];
+  try {
+    const value = await loadPack(release, pack);
+    remember(key, value);
+    return value as T[];
+  } catch (err) {
+    console.error("[content] paket okunamadı", pack, err);
+    return [];
+  }
+}
+
+/** Paketin tamamı, kaynak sırasında, CANLI sürümden. Yayın yoksa boş dizi. */
 export async function packItems<T>(pack: string): Promise<T[]> {
   const { r } = await pointer();
   if (!r) return [];

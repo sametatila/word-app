@@ -13,7 +13,7 @@
  *
  * Kullanım: npm run dump:mock-exams
  */
-import { MOCK_PAPERS } from "../src/lib/mock-exams";
+import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 
 /**
  * Kursun mobil paketi: dosya yolu + yazılacak JSON.

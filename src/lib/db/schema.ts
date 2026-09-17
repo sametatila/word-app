@@ -1160,6 +1160,19 @@ export const mockExamAttempts = pgTable(
     userId: text("user_id").notNull(),
     /** "de-b1-01" */
     paperId: text("paper_id").notNull(),
+    /**
+     * Denemenin açıldığı İÇERİK SÜRÜMÜ — puanlama buna göre yapılıyor.
+     *
+     * Kâğıtlar artık yayın hattından okunuyor (`content_releases`) ve yayın
+     * sınav sürerken değişebiliyor. Sürüm sabitlenmezse öğrencinin cevapları
+     * BAŞKA bir kâğıt sürümüne göre puanlanabilir: soru kayar, doğru şık
+     * değişir, öğrenci hatayı asla göremez. Sabitleme bunu kapatıyor —
+     * deneme hangi kâğıtla açıldıysa onunla bitiyor.
+     *
+     * NULL: sürüm sabitlemesinden ÖNCE açılmış denemeler. Onlar canlı sürümle
+     * puanlanıyor, çünkü başka bir doğru cevap yok.
+     */
+    release: integer("release"),
     /** reading | listening | writing | speaking */
     skill: text("skill").notNull(),
     level: text("level").notNull(),
