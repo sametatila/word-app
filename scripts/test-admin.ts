@@ -172,16 +172,55 @@ async function main() {
 
   console.log("\nMadde analizi (deneme sınavı)");
   {
-    // Her deneme iki madde: m1'i herkes bilir, m2'yi kimse. m3 yalnız 2 kez sorulmuş.
-    const attempts = Array.from({ length: 4 }, (_, i) => ({ paperId: "de-b1-01", skill: "reading", answers: { n: String(i) } }));
+    /*
+      SIRALAMA DOĞRULUK ORANINA GÖRE DEĞİL, AYIRT ETME GÜCÜNE GÖRE.
+
+      Fikstür iki maddeyi karşı karşıya koyuyor:
+        zor    doğruluk %25 ama doğru yapanlar kâğıtta iyi (90), yapamayanlar
+               zayıf (40) — madde AYIRIYOR, işini görüyor.
+        bozuk  doğruluk %75 ama yanlış yapanlar kâğıtta iyi (95), doğru
+               yapanlar zayıf (45) — yanlış anahtar imzası.
+
+      Doğruluk oranına göre sıralayan bir liste "zor"u başa koyar ve
+      müfredatın en öğretici sorusunu kapatmaya davet eder. Doğru liste
+      "bozuk"u başa koyuyor.
+    */
+    const mk = (n: number, score: number, zorOk: boolean, bozukOk: boolean) =>
+      Array.from({ length: n }, () => ({
+        paperId: "de-b1-01",
+        skill: "reading",
+        release: 3 as number | null,
+        score,
+        answers: { zor: zorOk ? "1" : "0", bozuk: bozukOk ? "1" : "0" },
+      }));
+    const attempts = [
+      ...mk(5, 90, true, false),   // iyi öğrenci: zoru bilir, bozuğu "yanlış" yapar
+      ...mk(15, 40, false, true),  // zayıf öğrenci: zoru bilemez, bozuğu "doğru" yapar
+    ];
     const rows = aggregateMockItems(
       attempts,
-      (_p, _s, a) => [{ id: "m1", correct: true }, { id: "m2", correct: false }, ...(Number(a.n) < 2 ? [{ id: "m3", correct: false }] : [])],
+      (_p, _s, _r, a) => [
+        { id: "zor", correct: a.zor === "1" },
+        { id: "bozuk", correct: a.bozuk === "1" },
+      ],
       (_p, id) => `soru ${id}`,
     );
-    check("en düşük başarı önce", rows[0]?.itemId === "m2" && rows[0].pct === 0, JSON.stringify(rows.map((r) => r.itemId)));
-    check(`en az ${MIN_ANSWERS} cevabı olmayan madde düşüyor`, !rows.some((r) => r.itemId === "m3"));
-    check("oran ve sayılar doğru", rows.find((r) => r.itemId === "m1")?.pct === 100 && rows[0].asked === 4 && rows[0].label === "soru m2");
+    const zor = rows.find((r) => r.itemId === "zor")!;
+    const bozuk = rows.find((r) => r.itemId === "bozuk")!;
+    check("bozuk madde listenin başında", rows[0]?.itemId === "bozuk", JSON.stringify(rows.map((r) => r.itemId)));
+    check("zor madde şüpheli sayılmıyor", !zor.suspect, `ayırt ${zor.discrimination}, %${zor.pct}`);
+    check("bozuk madde şüpheli", bozuk.suspect, bozuk.why);
+    check("zorun ayırt etme gücü pozitif", zor.discrimination > 0, String(zor.discrimination));
+    check("bozuğun ayırt etme gücü negatif", bozuk.discrimination < 0, String(bozuk.discrimination));
+    check("doğruluk oranı sıralamayı belirlemiyor", zor.pct < bozuk.pct, `zor %${zor.pct} < bozuk %${bozuk.pct}`);
+
+    // Eşik: iki cevaplı madde hiç listelenmiyor.
+    const az = aggregateMockItems(
+      mk(2, 70, true, true),
+      (_p, _s, _r, a) => [{ id: "tek", correct: a.zor === "1" }],
+      () => "",
+    );
+    check(`en az ${MIN_ANSWERS} cevabı olmayan madde düşüyor`, az.length === 0, String(az.length));
     check("puanlanamayan kâğıt atlanıyor", aggregateMockItems(attempts, () => null, () => "").length === 0);
   }
 

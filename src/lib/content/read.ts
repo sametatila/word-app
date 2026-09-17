@@ -294,6 +294,65 @@ export async function releasePacks(version: number) {
     .orderBy(contentReleaseItems.pack);
 }
 
+/**
+ * İKİ SÜRÜM ARASINDAKİ FARK — geri alma kararının dayanağı.
+ *
+ * Panel sürüm listesini gösteriyordu ama "bu sürümde NE değişti" sorusunun
+ * cevabı yoktu; geri alma düğmesine basan kişi neyi geri aldığını
+ * bilmiyordu. Fark paket paket veriliyor, çünkü karar de öyle veriliyor:
+ * "B1 derslerinde üç madde değişmiş" cümlesi eyleme dönüşebilir, "yedi madde
+ * değişmiş" cümlesi dönüşmez.
+ *
+ * Gövde İÇERİĞİ karşılaştırılmıyor, hash'i karşılaştırılıyor: hash zaten
+ * içeriğin kimliği, iki metni satır satır karşılaştırmak hem pahalı hem
+ * gereksiz.
+ */
+export type ReleaseDiff = {
+  pack: string;
+  added: string[];
+  changed: string[];
+  removed: string[];
+};
+
+export async function releaseDiff(from: number, to: number): Promise<ReleaseDiff[]> {
+  if (!from || !to || from === to) return [];
+  const load = async (release: number) => {
+    const rows = await db
+      .select({ pack: contentReleaseItems.pack, item: contentReleaseItems.item, hash: contentReleaseItems.hash })
+      .from(contentReleaseItems)
+      .where(eq(contentReleaseItems.release, release));
+    const out = new Map<string, Map<string, string>>();
+    for (const r of rows) {
+      if (r.item === FULL_PACK) continue;
+      const pack = out.get(r.pack) ?? new Map<string, string>();
+      pack.set(r.item, r.hash);
+      out.set(r.pack, pack);
+    }
+    return out;
+  };
+  const [a, b] = await Promise.all([load(from), load(to)]);
+
+  const packs = new Set([...a.keys(), ...b.keys()]);
+  const diff: ReleaseDiff[] = [];
+  for (const pack of [...packs].sort()) {
+    const before = a.get(pack) ?? new Map<string, string>();
+    const after = b.get(pack) ?? new Map<string, string>();
+    const added: string[] = [];
+    const changed: string[] = [];
+    const removed: string[] = [];
+    for (const [item, hash] of after) {
+      const old = before.get(item);
+      if (old === undefined) added.push(item);
+      else if (old !== hash) changed.push(item);
+    }
+    for (const item of before.keys()) if (!after.has(item)) removed.push(item);
+    if (added.length || changed.length || removed.length) {
+      diff.push({ pack, added: added.sort(), changed: changed.sort(), removed: removed.sort() });
+    }
+  }
+  return diff;
+}
+
 /** Hash'leri verilen gövdelerin var olup olmadığı — yayın betiği bunu soruyor. */
 export async function existingHashes(hashes: string[]): Promise<Set<string>> {
   if (hashes.length === 0) return new Set();

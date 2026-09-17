@@ -3,6 +3,7 @@ import { cronGate } from "@/lib/cron-auth";
 import { recordCronRun } from "@/lib/cron-runs";
 import { runAlerts } from "@/lib/alerts";
 import { refreshRollups } from "@/lib/admin-query";
+import { promoteDueDrafts } from "@/lib/content/publish";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -21,8 +22,17 @@ export async function GET(req: Request) {
   try {
     // Özet tablo tazeleme de bu koşuda: panelin okuduğu `reviews_daily` en çok 10 dk geride.
     await refreshRollups().catch((err) => console.error("[cron/alerts] özet tablo", err));
+    /* ZAMANLI İÇERİK YAYINI da bu koşuda: `content_releases.goLiveAt` alanı
+       panelde görünüyordu ama onu canlıya alan hiçbir şey yoktu. Ayrı bir
+       timer hak edecek kadar sık değil — gecikme en fazla on dakika. */
+    const due = await promoteDueDrafts().catch((err) => {
+      console.error("[cron/alerts] zamanlı içerik yayını", err);
+      return { promoted: null as number | null };
+    });
     const result = await runAlerts();
-    const ozet = `aktif ${result.active} · gönderilen ${result.sent} · düzelen ${result.resolved}${result.configured ? "" : " · telegram kapalı"}`;
+    const ozet =
+      `aktif ${result.active} · gönderilen ${result.sent} · düzelen ${result.resolved}` +
+      `${result.configured ? "" : " · telegram kapalı"}${due.promoted ? ` · içerik sürüm ${due.promoted} canlıya alındı` : ""}`;
     void recordCronRun("alerts", true, Date.now() - basladi, ozet);
     return NextResponse.json(result);
   } catch (err) {

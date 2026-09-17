@@ -169,6 +169,38 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
         />
       </Panel>
 
+      {/* GERİ ALMANIN DAYANAĞI. Sürüm listesi "geri al" düğmesini veriyordu
+          ama neyin geri alınacağını söylemiyordu; neyi geri aldığını bilmeden
+          basılan bir düğme, olmayan düğmeden kötü. */}
+      <Panel
+        title="Canlı sürümde ne değişti"
+        hint={
+          data.diff.from
+            ? `v${data.diff.from} → v${data.diff.to}. "Geri al" bu farkı tersine çeviriyor.`
+            : "Karşılaştırılacak önceki sürüm yok."
+        }
+        flush
+      >
+        <DataTable
+          empty={data.diff.from ? "Bu sürümde içerik değişmedi." : "İlk yayın: karşılaştırılacak sürüm yok."}
+          head={["Paket", { label: "Eklendi", align: "right" }, { label: "Değişti", align: "right" }, { label: "Düştü", align: "right" }, "Maddeler"]}
+          rows={data.diff.packs.map((d) => [
+            <span key="p" className="font-mono">{d.pack}</span>,
+            d.added.length || "—",
+            d.changed.length || "—",
+            d.removed.length ? <b key="r" style={{ color: TONE.bad }}>{d.removed.length}</b> : "—",
+            /* İlk beş madde adıyla: karar "hangi maddeler" sorusuna dayanıyor,
+               yalnız sayıya değil. Gerisi sayı olarak söyleniyor. */
+            <span key="i" className="font-mono line-clamp-2">
+              {[...d.changed, ...d.added, ...d.removed].slice(0, 5).join(", ")}
+              {[...d.changed, ...d.added, ...d.removed].length > 5
+                ? ` +${[...d.changed, ...d.added, ...d.removed].length - 5}`
+                : ""}
+            </span>,
+          ])}
+        />
+      </Panel>
+
       <Panel title="Canlı sürümün paketleri" flush>
         <DataTable
           empty="Canlı sürüm yok."

@@ -2,7 +2,7 @@ import "dotenv/config";
 import { eq, inArray, like } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentReleaseItems, contentReleases } from "@/lib/db/schema";
-import { disableItem, enableItem, promote, publish, type PackInput } from "@/lib/content/publish";
+import { disableItem, enableItem, promote, promoteDueDrafts, publish, type PackInput } from "@/lib/content/publish";
 import {
   body,
   disabledItemsOf,
@@ -11,6 +11,7 @@ import {
   lessonDisabled,
   manifest,
   paperDisabled,
+  releaseDiff,
   pointer,
   readItem,
 } from "@/lib/content/read";
@@ -202,6 +203,39 @@ async function main() {
     check("yayınlanmamış paketin maddesi kapatılabiliyor", quizOff.has("de-a1-w01-g2"), [...quizOff].join(","));
     check("başka paketin kapatması sızmıyor", !(await disabledItemsOf("quiz/en")).has("de-a1-w01-g2"));
     await enableItem("quiz/de", "de-a1-w01-g2");
+
+    /* 11. SÜRÜM FARKI — geri alma kararının dayanağı.
+       first: a,b,c · second: b değişti · third: c düştü */
+    const d12 = await releaseDiff(first.version, second.version);
+    const free12 = d12.find((x) => x.pack === FREE);
+    check("fark değişen maddeyi buluyor", free12?.changed.join() === "b", JSON.stringify(free12));
+    check("fark ekleme/düşme uydurmuyor", (free12?.added.length ?? 0) === 0 && (free12?.removed.length ?? 0) === 0);
+    const d23 = await releaseDiff(second.version, third.version);
+    const free23 = d23.find((x) => x.pack === FREE);
+    check("fark düşen maddeyi buluyor", free23?.removed.join() === "c", JSON.stringify(free23));
+    check("aynı sürümün farkı boş", (await releaseDiff(first.version, first.version)).length === 0);
+
+    /* 12. ZAMANLI YAYIN — panelde görünen `goLiveAt` gerçekten işliyor mu. */
+    const future = await publish(new Map([[FREE, pack({ a: { t: "bir" }, b: { t: "ÜÇ" } })]]), {
+      by,
+      note: "gelecek taslak",
+      live: false,
+      goLiveAt: new Date(Date.now() + 60 * 60 * 1000),
+    });
+    const liveBefore = (await pointer()).r;
+    check("saati gelmeyen taslak canlıya alınmıyor", (await promoteDueDrafts(by)).promoted === null);
+    invalidatePointer();
+    check("gösterge değişmedi", (await pointer()).r === liveBefore, `${liveBefore} -> ${(await pointer()).r}`);
+
+    await db
+      .update(contentReleases)
+      .set({ goLiveAt: new Date(Date.now() - 60 * 1000) })
+      .where(eq(contentReleases.version, future.version));
+    const due = await promoteDueDrafts(by);
+    check("saati geçen taslak canlıya alınıyor", due.promoted === future.version, JSON.stringify(due));
+    invalidatePointer();
+    check("gösterge yeni sürümü işaret ediyor", (await pointer()).r === future.version);
+    check("alınacak taslak kalmadı", (await promoteDueDrafts(by)).promoted === null);
   } finally {
     await restore(previousLive);
   }

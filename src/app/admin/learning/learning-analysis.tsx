@@ -112,10 +112,21 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
       {tab === "Beceri egzersizleri" ? <DataTable head={unitHead} rows={unitRows(skills)} empty="Analiz için yeterli egzersiz sonucu yok." /> : null}
       {tab === "Deneme sınavı soruları" ? (
         <>
-          <p className="muted mb-2 text-caption">{mockScanned} bitmiş okuma/dinleme bölümü okundu. Kapatma birimi kâğıt.</p>
+          <p className="muted mb-2 text-caption">
+            {mockScanned} bitmiş okuma/dinleme bölümü okundu. Kapatma birimi <b>kâğıt</b>: bir soru için kâğıdın tamamı yayından kalkıyor.
+          </p>
+          {/* Sıralamanın ölçütü doğruluk oranı DEĞİL — %30'da kalan bir madde zor
+              olabilir. "Ayırt", maddeyi doğru cevaplayanların kâğıt puanı
+              ortalaması eksi yanlış cevaplayanların ortalaması: negatifse
+              sınavın geri kalanında iyi olanlar burada yanılıyor, yani sorun
+              öğrencide değil maddede (bkz. lib/content/analytics). */}
+          <p className="muted mb-2 text-caption">
+            Sıra <b>ayırt etme gücüne</b> göre: negatif olan, sınavın geri kalanında iyi olanların yanıldığı madde — yanlış anahtar imzası.
+            Düşük doğruluk tek başına bozukluk göstergesi değil.
+          </p>
           <DataTable
             empty="Analiz için yeterli deneme cevabı yok."
-            head={["Kâğıt · bölüm", "Soru", { label: "Doğru", align: "right" }, ""]}
+            head={["Kâğıt · bölüm", "Soru", { label: "Doğru", align: "right" }, { label: "Ayırt", align: "right" }, ""]}
             rows={mockItems.map((m) => [
               <div key="p" className="whitespace-nowrap">
                 <div className="font-mono">{m.paperId}</div>
@@ -124,6 +135,12 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
               </div>,
               <span key="l" className="line-clamp-2">{m.label || "—"}</span>,
               <span key="c">{pctCell(m.pct)}<span className="muted"> · {m.correct}/{m.asked}</span></span>,
+              <span key="d" className="whitespace-nowrap">
+                <b style={{ color: m.suspect ? TONE.bad : TONE.ok }}>
+                  {m.discrimination > 0 ? `+${m.discrimination}` : m.discrimination}
+                </b>
+                {m.why ? <div className="muted line-clamp-2">{m.why}</div> : null}
+              </span>,
               <span key="a">{action(m.pack, m.paperId)}</span>,
             ])}
           />

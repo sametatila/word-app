@@ -1,7 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import { brotliCompressSync, constants, gzipSync } from "node:zlib";
-import { and, eq, inArray, ne, sql } from "drizzle-orm";
+import { and, eq, inArray, lte, ne, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { FULL_PACK, isGatedPack, isItemId, isPackId } from "./ids";
@@ -282,6 +282,34 @@ export async function disableItem(
       set: { reason, disabledBy: by, createdAt: new Date() },
     });
   invalidatePointer();
+}
+
+/**
+ * ZAMANI GELEN TASLAĞI CANLIYA ALIR — zamanlı yayının tek uygulayıcısı.
+ *
+ * `content_releases.goLiveAt` alanı baştan beri vardı ve panel onu
+ * gösteriyordu, ama hiçbir şey ona BAKMIYORDU: "pazartesi 09:00'da yayına
+ * girecek" yazan bir satır o saat geldiğinde hiçbir şey yapmıyordu. Gösterilen
+ * ama işlemeyen bir alan, hiç olmayan alandan kötü — kullanıcı ona güveniyor.
+ *
+ * Birden çok taslağın saati geçmişse EN YENİSİ canlıya alınıyor: sürüm
+ * numarası zaman sırasını izliyor ve arada kalan taslakları tek tek canlıya
+ * alıp hemen üzerine yazmak, göstergeyi boşuna kaç kez çevirmek olurdu.
+ *
+ * Çağıran: `/api/cron/alerts` (on dakikada bir). Kendi zamanlayıcısını hak
+ * edecek kadar sık ya da kritik değil; gecikme en fazla on dakika ve zamanlı
+ * yayın dakika hassasiyeti istemiyor.
+ */
+export async function promoteDueDrafts(by = "schedule"): Promise<{ promoted: number | null }> {
+  const [due] = await db
+    .select({ version: contentReleases.version })
+    .from(contentReleases)
+    .where(and(eq(contentReleases.status, "draft"), lte(contentReleases.goLiveAt, new Date())))
+    .orderBy(sql`${contentReleases.version} desc`)
+    .limit(1);
+  if (!due) return { promoted: null };
+  const ok = await promote(due.version, by);
+  return { promoted: ok ? due.version : null };
 }
 
 export async function enableItem(pack: string, item: string): Promise<void> {
