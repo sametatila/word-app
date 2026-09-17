@@ -8,7 +8,9 @@ import { isAppleMobile } from "@/lib/apple-mobile";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
-import { PACE_PARAM, TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type Pace, type VoiceId } from "@/lib/tts/voices";
+import { PACE_PARAM, PITCH_PARAM, TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type Pace, type Pitch, type VoiceId } from "@/lib/tts/voices";
+import { cleanForSpeech, splitForSpeech } from "@/lib/tts/text";
+import { dialogueCast } from "@/lib/tts/speakers";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -31,31 +33,10 @@ export function readLocal(key: string): string | null {
   }
 }
 
-/**
- * Okunacak metnin sadeleştirilmesi.
- *
- * Sunucudaki `cleanForSpeech` ile aynı kural. Burada da uygulanıyor çünkü bu
- * metin URL'ye giriyor ve URL önbellek anahtarının kendisi: aynı cümlenin iki
- * farklı yazımı iki ayrı önbellek girdisi, yani iki ayrı sentez demek olurdu.
- */
-function cleanForSpeech(text: string): string {
-  return text
-    /* İSTEĞE BAĞLI ÖN EK BİRLEŞİYOR, ATILMIYOR. "(Back-)Ofen" başlığında
-       parantez bir açıklama değil, kelimenin parçası: genel parantez silme
-       onu "Ofen" diye okuyordu ve "(herunter-)fahren" "fahren" oluyordu —
-       başka bir kelime. Ön ek önce kelimeye yapıştırılıyor ("Backofen", baş harf küçülür);
-       "(sich)", "(e)", "(D, CH)" gibi notlar aşağıda eskisi gibi düşüyor. */
-    .replace(/\((\p{L}+)-\)\s*(\p{L}?)/gu, (_, pre: string, head: string) => pre + head.toLowerCase())
-    .replace(/\(.*?\)/g, "")
-    /* BOŞLUK DOLDURMA ÇİZGİSİ OKUNMUYOR. Cümledeki boşluk ekranda "_____"
-       ile duruyor ve motor onu "alt tire alt tire alt tire" diye okuyordu —
-       cümlenin kendisi kaybolacak kadar. Yerine boşluk konuyor: öğrenci
-       cümleyi eksik kelimesiyle, akıcı biçimde duyuyor. */
-    .replace(/_{2,}/g, " ")
-    .replace(/[/–—]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+/* `cleanForSpeech` ve `splitForSpeech` artik `lib/tts/text`te ve SUNUCUYLA
+   AYNI kopya. Burada ayri bir kopyasi vardi; ayrismalari sessizdi cunku metin
+   URL'ye giriyor ve URL onbellek anahtarinin kendisi — ayni cumlenin iki
+   farkli yazimi iki ayri sentez demekti. */
 
 /** Seslendirme ucunun adresi — URL önbellek anahtarı olduğu için tek yerde. */
 /** Hız kademesi — `true` eski "yavaş" çağrılarının kısaltması. */
@@ -63,9 +44,16 @@ function paceOf(slow: Pace | boolean): Pace {
   return slow === true ? "slow" : slow === false ? "normal" : slow;
 }
 
-function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false): string {
+function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid"): string {
   const pace = paceOf(slow);
-  return `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}`;
+  // Varsayilanlar URL'ye YAZILMIYOR: `r`siz ve `p`siz adres eski adresle
+  // birebir ayni kalmali, yoksa bugune kadar isinmis butun onbellek girdileri
+  // (tarayici + nginx, 60 gun) bir anda iskalanir.
+  return (
+    `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}` +
+    (pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`) +
+    (pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`)
+  );
 }
 
 /**
@@ -210,8 +198,21 @@ export function speakGerman(
   /** Ses gerçekten başlayınca, bir kez (dinleme düğmesinin "yükleniyor"u buna bakıyor). */
   onStart?: () => void,
 ) {
-  const clean = cleanForSpeech(text);
-  if (!clean) {
+  /*
+    UZUN METİN BÖLÜNÜYOR — bu yol eskiden sessizliğe çıkıyordu.
+
+    Uç 600 karakterin üstünü 400 `bad_text` ile REDDEDİYOR, kırpmıyor; burası
+    ise metni olduğu gibi tek istekte gönderiyordu. Ölçüldü: okuma
+    alıştırmalarının 120'sinden 85'i (en uzunu 2245 karakter) bu yüzden hiç
+    seslendirilemiyordu, üstelik hata sessizdi. Rol yapma cevapları ve ders
+    anlatımının birleştirilmiş replikleri de aynı tavana açıktı.
+
+    Kısa metinler — kelime turu, tek cümle, yani çağrıların ezici çoğunluğu —
+    tek parça kalıyor ve eski yoldan gidiyor: adres birebir aynı, yani bugüne
+    kadar ısınmış önbellek girdilerinin hiçbiri boşa düşmüyor.
+  */
+  const parts = splitForSpeech(text);
+  if (!parts.length) {
     onStart?.();
     onEnd?.();
     return;
@@ -232,7 +233,16 @@ export function speakGerman(
         onStart();
       }
     : undefined;
-  speakChain(clean, voice, course, onEnd, slow, startOnce);
+  if (parts.length === 1) {
+    speakChain(parts[0], voice, course, onEnd, slow, startOnce);
+    return;
+  }
+  const lang = voice.startsWith("en") ? "en" : voice.startsWith("tr") ? "tr" : "de";
+  speakSegments(
+    parts.map((text) => ({ lang, text, voice, pace: paceOf(slow) }) as SpeechSegment),
+    onEnd,
+    startOnce,
+  );
 }
 
 /**
@@ -361,6 +371,32 @@ export type SpeechSegment = {
    * işaretsizler bugünkü davranışla okunuyor.
    */
   narration?: boolean;
+  /**
+   * Bu parçanın SESİ — diyalogda konuşmacı başına atanıyor (bkz.
+   * `dialogueSegments`). Verilmezse ses dilden türetiliyor, yani bugüne
+   * kadarki davranış.
+   */
+  voice?: VoiceId;
+  /** Perde kaydırma — kadro tükenince konuşmacıyı ayırmanın son çaresi. */
+  pitch?: Pitch;
+  /**
+   * Bu parçanın okuma HIZI.
+   *
+   * Parça başına olmasının sebebi diyalog: dinleme metni `listen` hızında
+   * okunuyor (bir cümle değil bir konuşma dinleniyor ve kelime turunun hızı
+   * orada "aşırı hızlı" duyuldu) ama aynı zincirdeki yönerge anlatımı normal
+   * hızda kalmalı.
+   */
+  pace?: Pace;
+  /**
+   * Bu parçadan ÖNCE bırakılacak sessizlik, saniye.
+   *
+   * Konuşmacı değişimi için: iki replik arasına insan konuşmasındaki sıra
+   * geçişi kadar pay konmazsa iki kişi tek bir akış gibi duyuluyor — ayrı
+   * sesler verilse bile. Yalnızca boşluksuz WebAudio yolunda anlamlı; ses
+   * öğesi yolunda dosyaların kendi kenar sessizlikleri zaten duruyor.
+   */
+  gapBefore?: number;
 };
 
 /**
@@ -372,39 +408,67 @@ export type SpeechSegment = {
  * yerlerde geçerli olmayı sürdürüyor.
  */
 function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
+  // Parça kendi sesini söylüyorsa tartışma yok: diyalog kadrosu böyle çalışıyor.
+  if (seg.voice) return { voice: seg.voice, course: seg.lang === "en" ? "en" : "de" };
   // Anlatım: ses kullanıcının ARAYÜZ dilinden. Çerez tek istemci kaynağı —
   // bu fonksiyon bir bileşen değil, kancadan okuyamaz.
   if (seg.narration) return { voice: narrationVoice(seg.lang), course: "de" };
   if (seg.lang === "tr") return { voice: TURKISH_VOICE, course: "de" };
+  /*
+    PARÇANIN DİLİ KURSTAN ÖNCE GELİYOR.
+
+    Burada yalnız `COURSE_KEY` okunuyordu, yani `seg.lang` sessizce atılıyordu.
+    Sonucu şuydu: cihazında Almanca kurs kayıtlı bir kullanıcı İNGİLİZCE deneme
+    sınavı açtığında bütün dinleme metni Katja'ya, yani Almanca sese gidiyordu
+    (`mock-exam-player` tam bunu önlemek için `lang: paper.course` geçiriyordu
+    ve değer kullanılmıyordu). Kurs yalnızca parçanın dili kursun diliyle
+    uyuştuğunda belirleyici — Zürih'te lehçe sesi seçilebilsin diye.
+  */
   const course = readLocal(COURSE_KEY) ?? "de";
-  return { voice: lessonVoice(course), course };
+  if (seg.lang === "en") return { voice: lessonVoice("en"), course: "en" };
+  return { voice: lessonVoice(course === "en" ? "de" : course), course: course === "en" ? "de" : course };
 }
 
 /**
- * Parçaların okunmaya hazırlanması: temizle, birleştir, sadeleştir.
+ * Parçaların okunmaya hazırlanması: temizle, birleştir, BÖL.
  *
- * İki iş yapılıyor ve ikisi de duraklamayla ilgili:
+ * Üç iş yapılıyor:
  *
- *   1. AYNI dildeki bitişik parçalar tek parçaya birleşiyor. Her parça ayrı
- *      bir sentez ve ayrı bir ses dosyası demek; "Türkçesi 'su' demek." ile
- *      "Lütfen" arasına dosya sınırı koymak cümlenin ortasına bekleme koymak
- *      oluyor. Sınır yalnızca dil GERÇEKTEN değiştiğinde kalıyor — orada ses
- *      de değişmek zorunda.
+ *   1. AYNI sesle okunacak bitişik parçalar tek parçaya birleşiyor. Her parça
+ *      ayrı bir sentez ve ayrı bir ses dosyası demek; "Türkçesi 'su' demek."
+ *      ile "Lütfen" arasına dosya sınırı koymak cümlenin ortasına bekleme
+ *      koymak oluyor. Sınır yalnızca ses GERÇEKTEN değiştiğinde kalıyor —
+ *      dil, anlatım bayrağı, kadro sesi, perde ya da hız değişiyorsa.
  *   2. Üç nokta ("…") atılıyor. İçerikte kalıbın devamını gösteriyor
  *      ("Ich möchte …") ama nöral ses onu uzun bir duraklama olarak okuyor;
  *      ekranda anlamlı, kulakta delik.
+ *   3. Birleşen metin TAVANI AŞARSA cümle sınırından bölünüyor. Bu adım
+ *      olmadan uzun metin hiç çalmıyordu: uç 600 karakterin üstünü 400
+ *      `bad_text` ile reddediyor, kırpmıyor. Bölme birleştirmeden SONRA
+ *      olmak zorunda — önce olsaydı parçalar yeniden birleştirilip aynı
+ *      duvara çarpardı.
  *
- * Önden indirme de aynı birleştirmeden geçmek ZORUNDA: önbellek anahtarı
- * metnin kendisi, farklı bölünmüş metin ayrı girdi demek olur.
+ * Bölme bu işlevin İÇİNDE çünkü önden indirme de aynı yoldan geçiyor:
+ * önbellek anahtarı metnin kendisi, başka türlü bölünmüş metin başka (ve
+ * boşuna) bir girdi olurdu.
  */
 function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
-  const out: SpeechSegment[] = [];
+  const merged: SpeechSegment[] = [];
+  const sameVoice = (a: SpeechSegment, b: SpeechSegment) =>
+    a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace;
   for (const seg of segments) {
     const text = cleanForSpeech(seg.text.replace(/…|\.{3}/g, " "));
     if (!text) continue;
-    const last = out[out.length - 1];
-    if (last && last.lang === seg.lang && last.narration === seg.narration) last.text = `${last.text} ${text}`;
-    else out.push({ lang: seg.lang, text, narration: seg.narration });
+    const last = merged[merged.length - 1];
+    // Kendi payı istenen bir parça birleşmiyor: pay ancak parça sınırında var.
+    if (last && sameVoice(last, seg) && !seg.gapBefore) last.text = `${last.text} ${text}`;
+    else merged.push({ ...seg, text });
+  }
+
+  const out: SpeechSegment[] = [];
+  for (const seg of merged) {
+    const parts = splitForSpeech(seg.text);
+    parts.forEach((text, i) => out.push(i === 0 ? { ...seg, text } : { ...seg, text, gapBefore: undefined }));
   }
   return out;
 }
@@ -515,6 +579,13 @@ function playGapless(
      * indirme/çözme gecikmesi kullanıcıya hiç görünmüyor.
      */
     onStart?: () => void;
+    /**
+     * Parça başına, ÖNCESİNE bırakılacak sessizlik (saniye). Verilmeyen
+     * parçalar `SEGMENT_GAP` alıyor. Diyalogda konuşmacı değişimi için var:
+     * iki replik arasına sıra geçişi payı konmazsa ayrı seslerle okunsalar
+     * bile tek bir akış gibi duyuluyorlar.
+     */
+    gaps?: number[];
   },
 ): (() => void) | null {
   /*
@@ -532,7 +603,7 @@ function playGapless(
   if (isAppleMobile()) return null;
   const ctx = sharedAudioContext();
   if (!ctx || ctx.state !== "running") return null;
-  const { mine, onEnd, onFail, onStart } = opts;
+  const { mine, onEnd, onFail, onStart, gaps } = opts;
 
   const sources: AudioBufferSourceNode[] = [];
   let cancelled = false;
@@ -579,7 +650,8 @@ function playGapless(
       // İlk parça bilerek 150 ms ileriye planlanıyor: `onStart` şimdi
       // çağrılınca metin sesten önce ekranda oluyor.
       if (i === 0) onStart?.();
-      let at = Math.max(tail + (i ? SEGMENT_GAP : 0), ctx.currentTime + (i ? 0.03 : 0.15));
+      const gap = i ? (gaps?.[i] ?? SEGMENT_GAP) : 0;
+      let at = Math.max(tail + gap, ctx.currentTime + (i ? 0.03 : 0.15));
       for (const run of speechRuns(buf)) {
         const src = ctx.createBufferSource();
         src.buffer = buf;
@@ -689,7 +761,10 @@ function chainWithElements(
   b.pause();
   const els = [a, b];
 
-  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text);
+  /* Adres parçanın hızını ve perdesini de taşımak ZORUNDA: taşımasaydı
+     WebAudio yolundan bu yola düşen bir diyalog aynı metni başka bir adresle
+     ister, yani önbelleği ıskalar ve konuşmacılar tek sese dönerdi. */
+  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid");
   /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
   const preload = (i: number) => {
     const el = els[i % 2];
@@ -868,11 +943,12 @@ export function speakSegments(
     };
   }
 
-  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text));
+  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid"));
   const cancel = playGapless(urls, {
     mine,
     onEnd,
     onStart: startOnce,
+    gaps: queue.map((seg) => seg.gapBefore ?? SEGMENT_GAP),
     onFail: (i) => chainWithElements(queue, i, onEnd, mine, startOnce),
   });
   if (cancel) activeChainStop = cancel;
@@ -885,6 +961,48 @@ export function speakSegments(
     element?.pause();
     extra?.pause();
   };
+}
+
+/** Konuşmacı değişiminde bırakılan pay, saniye — sıra geçişinin duyulması için. */
+const SPEAKER_GAP = 0.38;
+
+/**
+ * Bir diyaloğu okunabilir parçalara çevirir — konuşmacı başına ayrı ses.
+ *
+ * Dinleme içeriğinin dört ayrı modeli (deneme sınavı, haftalık quiz, beceri
+ * dinlemesi, modül sınavı) aynı `{ speaker?, text }` biçimini taşıyor, o
+ * yüzden dönüştürme tek yerde. Çağıran taraf sonucu hem `speakSegments`e hem
+ * `prefetchSegments`e verebiliyor: ikisi de aynı adresleri üretiyor, yani
+ * önden indirilen ses çalınacak sesin ta kendisi.
+ *
+ * ÜÇ ŞEY BİRDEN ÇÖZÜLÜYOR ve üçü de aynı çağrıda olmak zorunda:
+ *   - Konuşmacı başına ses (`dialogueCast`).
+ *   - Replik başına parça: diyaloğun tamamı tek dizgede birleştirilince 600
+ *     karakter tavanını aşıyor ve uç 400 dönüyordu — 672 diyalog bloğunun
+ *     347'sinin toplamı tavanın üstünde.
+ *   - Konuşmacı değişiminde nefes payı: ayrı sesler bile araya pay konmadan
+ *     tek bir akış gibi duyuluyor.
+ *
+ * Hız varsayılan olarak `listen`: dinleme alıştırmasında bir cümle değil bir
+ * konuşma dinleniyor ve kelime turunun hızı orada "aşırı hızlı" duyuldu
+ * (bkz. lib/tts/voices, `Pace`).
+ */
+export function dialogueSegments(
+  course: string,
+  segments: { speaker?: string; text: string }[],
+  pace: Pace = "listen",
+): SpeechSegment[] {
+  const cast = dialogueCast(course, segments);
+  const lang = course === "en" ? "en" : "de";
+  let previous = "";
+  return segments.map((seg, i) => {
+    const who = seg.speaker ?? "";
+    // Pay yalnız konuşmacı GERÇEKTEN değiştiğinde: aynı kişinin iki cümlesi
+    // arasına sıra geçişi payı koymak konuşmayı kekeletirdi.
+    const gapBefore = i > 0 && who !== previous ? SPEAKER_GAP : undefined;
+    previous = who;
+    return { lang, text: seg.text, voice: cast[i].voice, pitch: cast[i].pitch, pace, gapBefore } as SpeechSegment;
+  });
 }
 
 /**
@@ -913,7 +1031,7 @@ export function stopSpeaking() {
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
   for (const seg of mergeForSpeech(segments)) {
-    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text), {
+    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid"), {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */

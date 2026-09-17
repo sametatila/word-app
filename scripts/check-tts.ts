@@ -16,7 +16,11 @@
  *      hepsi tek ağızdan okunuyordu.
  *   3. AYRIŞMA. Aynı kurallar web ve mobilde iki ayrı kopya hâlinde yaşıyor.
  *
- * Bu betik üçünü de ölçüyor. Kapı KIRILDIĞINDA bir şey duyulmuyor demektir.
+ * Bu betik dördünü ölçüyor — üstteki üçüne BÖLÜCÜnün kendisi ekleniyor, çünkü
+ * uzunluk sorununun çözümü bölmek ve kötü bir bölücü sorunu sessiz bir içerik
+ * kaybına çevirir: düşen bir cümle sınavda hiç duyulmaz ve dinlemede metin
+ * ekranda görünmediği için kimse fark etmez. Kapı KIRILDIĞINDA bir şey
+ * duyulmuyor ya da yanlış duyuluyor demektir.
  */
 import { readFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
@@ -166,9 +170,48 @@ console.log("\n2. Konuşmacı");
   console.log(`   çok konuşmacılı blok: ${multi}/${blocks.length} · ses çakışması: ${clash}`);
 }
 
-/* ── 3. AYRIŞMA — web ile mobil aynı kuralları taşımalı ────────────────── */
+/* ── 3. BÖLÜCÜ — hiçbir şey kaybolmamalı ───────────────────────────────── */
 
-console.log("\n3. Web ↔ mobil paritesi");
+console.log("\n3. Bölücü");
+{
+  /* EN ÖNEMLİ ÖZELLİK BU. Bölme sessiz bir içerik kaybına dönüşebilir: bir
+     cümleyi düşüren bölücü sınavda o cümleyi hiç duyurmaz ve kimse fark
+     etmez — metin ekranda görünmüyor bile (dinlemede transkript gizli).
+     Parçaların birleşimi temizlenmiş metnin BİREBİR aynısı olmak zorunda. */
+  let lost = 0;
+  let over = 0;
+  let split = 0;
+  const all = [...prose.map((p) => p.text), ...blocks.flatMap((b) => b.segments.map((s) => s.text))];
+  for (const text of all) {
+    const clean = cleanForSpeech(text);
+    const parts = splitForSpeech(text);
+    if (parts.length > 1) split++;
+    if (parts.join(" ") !== clean) {
+      lost++;
+      if (lost <= 3) err("bölücü", `parçalar metni geri vermiyor (${clean.length} karakter): ${clean.slice(0, 60)}…`);
+    }
+    for (const p of parts) if (p.length > MAX_TEXT) over++;
+  }
+  console.log(`   ${all.length} metin denendi · bölünen ${split} · kayıp ${lost} · tavan aşımı ${over}`);
+  if (over) err("bölücü", `${over} parça tavanı aşıyor`);
+
+  /* ETKİSİZLİK: bölünmüş bir parçayı yeniden bölmek onu değiştirmemeli.
+     `mergeForSpeech` önce birleştirip sonra bölüyor; bu özellik olmasaydı
+     aynı metin iki farklı çağrıda iki farklı adrese, yani iki ayrı sentez ve
+     iki ayrı önbellek girdisine düşerdi. */
+  let unstable = 0;
+  for (const text of all) {
+    for (const p of splitForSpeech(text)) {
+      if (splitForSpeech(p).join(" ") !== p) unstable++;
+    }
+  }
+  if (unstable) err("bölücü", `${unstable} parça yeniden bölündüğünde değişiyor — önbellek anahtarı kararsız`);
+  else console.log("   yeniden bölme kararlı (önbellek anahtarı sabit)");
+}
+
+/* ── 4. AYRIŞMA — web ile mobil aynı kuralları taşımalı ────────────────── */
+
+console.log("\n4. Web ↔ mobil paritesi");
 {
   const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
   /**
