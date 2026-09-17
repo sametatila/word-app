@@ -206,17 +206,6 @@ export async function claimLessonAi(
   return access;
 }
 
-/** Haftalık sınav — ücretsizde haftada N, premium'da havuzun tamamı. */
-export async function canWeeklyExam(userId: string): Promise<Access> {
-  const cfg = await premiumConfig();
-  if (await isPremiumCached(userId)) return { allowed: true, reason: "premium", gate: "weekly_exam" };
-  const limit = cfg.free.weeklyExams;
-  if (limit <= 0) return { allowed: false, reason: "premium_only", gate: "weekly_exam" };
-  const q = await checkQuota(userId, "weekly_exam", "week", limit);
-  return q.allowed
-    ? { allowed: true, reason: "free_quota", gate: "weekly_exam", quota: q, counter: { key: "weekly_exam", period: "week" } }
-    : { allowed: false, reason: "quota_spent", gate: "weekly_exam", quota: q };
-}
 
 /* ───────────────────────── Deneme sınavı ilerlemesi ───────────────────────── */
 

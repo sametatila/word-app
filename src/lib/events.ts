@@ -22,11 +22,6 @@ export const EVENT_NAMES = [
   "session_stop", // etap sonunda "şimdilik yeter"
   "challenge_play", // hayatta kalma turu oynandı
   "walk_start", // yürürken (ekransız) modu başlatıldı (value = kaçıncı turdan)
-  // Mikrofon gerçekte hangi kısıtlarla açıldı (value = yankı bastırma açık mı).
-  // İstemek ile almak aynı şey değil: cihaz kısıtı sessizce yok sayabiliyor ve
-  // yankı bastırma açık kalırsa Android ses ÇIKIŞINI konuşma yoluna alıyor,
-  // yani turun tamamı bozuk duyuluyor. Ses kalitesi şikâyetinde bakılacak yer.
-  "walk_capture",
   /*
     Yürüyüş NASIL bitti (value = sebep).
 
@@ -209,7 +204,7 @@ export const EVENT_NAMES = [
     kilide takıldığı an — paywall'ı hangi kısıt besliyor, oradan görülür.
 
     KIND SUNUCUNUN KENDİ SÖZLÜĞÜNDEN: `lib/premium/gates` `PremiumGate` —
-    mock_exam · weekly_exam · pocket_walk · speaking · writing. Burada önce
+    mock_exam · pocket_walk · speaking · writing. Burada önce
     uydurma bir liste yazılıydı (speaking|exam_full|unlimited_tour) ve olay
     ZATEN hiç gönderilmiyordu: iki platform da adı kayıt defterine yazmış,
     çağırmayı unutmuştu (bkz. web-parity §11.211).

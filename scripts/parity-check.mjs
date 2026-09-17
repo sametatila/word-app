@@ -4370,23 +4370,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     .match(/"\w+"/g)?.map((x) => x.slice(1, -1)).sort() ?? [];
   sameList("premium kilidi sozlugu (mobil yardimci)", birlik, gecerli, "mobil", "sunucu");
 
-  /* MUAF: `weekly_exam` sozlukte var ama HIC UYGULANMIYOR - `canWeeklyExam`i
-     yalnizca `premium/status` (bilgi) ve `premium/consume` (cagirani yok,
-     bkz. web-parity §11.24) okuyor, `/api/weekly` kilide hic bakmiyor. Reddin
-     olmadigi yerde olculecek an da yok. Muafiyetin kendisi olculuyor: ucuncu
-     bir cagiran cikarsa kilit uygulanmaya baslamis demektir ve bu satir duser. */
-  /* Yollar PARCADAN kuruluyor: tam uc yolunu duz dizgi yazmak
-     `check-endpoints`e "bu uc cagriliyor" diye gorunuyordu - orasi kaynak
-     dosyalarda uc yolu ariyor ve burasi ucu cagirmiyor, dosyasini OKUYOR. */
-  const uc = (f) => "src/app/api/" + f + "/route.ts";
-  /* `api/weekly` SILINDI (haftalik quiz gecisi): eski uc istemcinin bildirdigi
-     dogruluga guveniyordu. Yerine gecen `api/quiz` de kilide bakmiyor cunku
-     quiz UCRETSIZ - premium vaadi paywall'dan da kaldirildi. Var olmayan
-     dosyayi okumak patliyordu; liste artik yalniz var olanlari geziyor. */
-  const cagiran = [uc("premium/status"), uc("premium/consume"), uc("quiz"), uc("exam"), "src/lib/weekly.ts"]
-    .filter((f) => existsSync(f) && read(f).includes("canWeeklyExam"));
-  const MUAF = cagiran.length === 2 ? ["weekly_exam"] : [];
-  const olculmeyen = gecerli.filter((g) => !mob.includes(g) && !MUAF.includes(g));
+  /* MUAFIYET KALKTI (2026-09-17). `weekly_exam` kilidi sozlukten de, karardan
+     da (`canWeeklyExam`) silindi: haftalik quiz herkese acik ve "haftada bir"
+     olmasi bir KOTA degil, `weekly_quiz_user_week_idx` benzersiz kisiti. Kota
+     olarak durdugu surece panelden ayarlanabilir gorunuyordu ama hicbir sey
+     onu okumuyordu - olculmeyen degil, OLMAYAN bir kilitti.
+
+     Liste artik istisnasiz: sozlukteki her kilit mobilde de olculuyor. */
+  const olculmeyen = gecerli.filter((g) => !mob.includes(g));
   sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
 }
 
@@ -20232,11 +20223,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *      sormadi. Kabul kalkti; sutun eski kayitlar icin duruyor.
  *   2) `/api/premium/consume` ucunun HIC CAGIRANI YOK. Tasarim: gated bir
  *      etkinligin basinda istemci bir hak harciyor, ozellik uclari yalniz
- *      "hakki var mi" diye bakiyor. Bugun tur/alistirma basina haklar
- *      (`ai_practice_*`, `weekly_exam`, `pocket_walk`) HIC harcanmiyor;
- *      sayilan tek sey ozellik uclarindaki emniyet tavanlari. Uc SILINMEDI -
- *      kotayi isletmek bir urun karari (bugun ucretsiz kullanilan yuzeyleri
- *      kilitler, premium hala pasif). Kayit §11.489'da.
+ *      "hakki var mi" diye bakiyor.
+ *
+ *      ARADAN GECEN KARAR (2026-09-17): konusma/yazma hakki artik SUNUCUDA,
+ *      ozellik ucunun kendi icinde harcaniyor (`claimSkillAi`,
+ *      `claimLessonAi`) - birim cagri degil ALISTIRMA, yani istemcinin
+ *      "basliyorum" demesine gerek kalmadi. Bu ucun karsiligi olan tek yer
+ *      cepte yuruyus turu kaldi ve o da ucretsizde kapali. Uc SILINMEDI: tur
+ *      basina sayimin dogru yeri hala burasi.
  *
  * Olcu: (1) `goal` kabulu geri gelmedi, (2) `consume`un cagirani hala yok VE
  * bunu soyleyen yorumlar yerinde (kayit bayatlamasin), (3) gercekten sayilan

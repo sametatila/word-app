@@ -22,8 +22,6 @@ import { MOCK_PASS_PCT } from "@/lib/mock-exams/types";
 export type FreeLimits = {
   /** Seviye başına ücretsiz deneme sınavı kâğıdı sayısı. */
   mockPapersPerLevel: number;
-  /** Haftada ücretsiz çözülebilen haftalık sınav sayısı. */
-  weeklyExams: number;
   /**
    * Cebe/ekran kapalı yürüyüş turu — 0 = ücretsizde hiç yok.
    *
@@ -158,7 +156,6 @@ export type PremiumConfig = {
 export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
   free: {
     mockPapersPerLevel: 1,
-    weeklyExams: 1,
     pocketWalksPerDay: 0,
     speakingSkills: 2,
     writingSkills: 2,
@@ -216,7 +213,6 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
  */
 export const PREMIUM_GATES = {
   mock_exam: "Deneme sınavları",
-  weekly_exam: "Haftalık sınav",
   pocket_walk: "Cepte yürüyüş (ekran kapalı)",
   speaking: "Konuşma alıştırmaları",
   writing: "Yazma alıştırmaları",
@@ -253,7 +249,7 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
          yapılmadı, yani ödeme yapan kullanıcı o satır karşılığında hiçbir şey
          almıyordu. Vaadi silmek, teslim edilmeyen bir vaadi taşımaktan iyidir
          (App Store 2.3.1 / 3.1.2, Play yanıltıcı beyan). */
-      { key: "plan.free_weekly", params: { n: free.weeklyExams } },
+      { key: "plan.free_weekly" },
       /* TEK SATIR, TEK HAVUZ. Eskiden burada iki satır vardı ("seviye başına N
          ders" + "kütüphanede N") ve bu, iki ayrı hak olduğunu ima ediyordu.
          Oysa patika ünitesindeki ve Beceriler'deki alıştırma aynı içerik, kota

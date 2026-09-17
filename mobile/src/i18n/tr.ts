@@ -485,7 +485,7 @@ export const tr: Record<string, string> = {
   "plan.free_walk": "Yürüyüş modu (ekran açıkken) — sınırsız",
   "plan.free_mock": "Her seviyede {n} deneme sınavı",
   "plan.free_mock.one": "Her seviyede {n} deneme sınavı",
-  "plan.free_weekly": "Haftada {n} haftalık quiz — ücretsiz",
+  "plan.free_weekly": "Haftalık quiz — herkese açık",
   "plan.free_weekly.one": "Haftada {n} haftalık quiz — ücretsiz",
   "plan.free_practice": "{s} konuşma, {w} yazma alıştırması — patika ve Beceriler ortak",
   "plan.free_streak_ai": "Her {d} günlük seri {n} alıştırma daha açıyor",

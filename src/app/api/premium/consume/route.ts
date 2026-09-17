@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
 import { bumpUsage } from "@/lib/premium";
-import { canAiPractice, canPocketWalk, canWeeklyExam } from "@/lib/premium/access";
+import { canAiPractice, canPocketWalk } from "@/lib/premium/access";
 
 export const dynamic = "force-dynamic";
 
@@ -13,17 +13,18 @@ export const dynamic = "force-dynamic";
   harcıyor; özellik uçları (`/api/assess`, `/api/stt`, `/api/tts`) yalnız
   "hakkı var mı" diye bakıyor ve kendi emniyet tavanlarını sayıyor.
 
-  ÖLÇÜM (2026-09-12): ne web ne mobil bu ucu çağırıyor. Yani tur/alıştırma
-  başına haklar (`ai_practice_*`, `weekly_exam`, `pocket_walk`) HİÇ
-  harcanmıyor; sayılan tek şey özellik uçlarındaki tavanlar
-  (`ai_assess_calls`, `pocket_walk_words`, `tts_calls`). Paywall metni
-  kotaları yine duyuruyor (`describeLimits`), çünkü metin yapılandırmadan
-  üretiliyor.
+  ÖLÇÜM (2026-09-12): ne web ne mobil bu ucu çağırıyor.
 
-  SİLİNMEDİ: kotayı gerçekten işletmek bir ÜRÜN kararı — bugün ücretsiz
-  kullanılan yüzeyleri kilitler ve premium hâlâ pasif. Karar verildiğinde
-  çağıran taraf burayı kullanacak; ucu silmek o kararı da silmek olurdu.
-  Kapı bu durumu ölçüyor (§346) ki kayıt sessizce bayatlamasın.
+  ARADAN GEÇEN KARAR (2026-09-17): konuşma/yazma hakkı artık SUNUCUDA, özellik
+  ucunun kendi içinde harcanıyor (`claimSkillAi`, `claimLessonAi`) — birim
+  çağrı değil alıştırma, yani istemcinin "başlıyorum" demesine gerek kalmadı.
+  Bu ucun karşılığı olan tek yer cepte yürüyüş turu kaldı; o da ücretsizde
+  kapalı (`pocketWalksPerDay: 0`), yani bugün sayacak bir şeyi yok.
+
+  SİLİNMEDİ: tur başına sayımın doğru yeri hâlâ burası. Yürüyüş ücretsize
+  açılırsa ya da "N tur" diye duyurulan başka bir şey gelirse çağıran taraf
+  burayı kullanacak; ucu silmek o tasarımı da silmek olurdu. Kapı bu durumu
+  ölçüyor (§346) ki kayıt sessizce bayatlamasın.
 */
 /**
  * Kotalı bir eylemin BAŞLANGICI — kontrol eder ve sayar.
@@ -37,7 +38,7 @@ export const dynamic = "force-dynamic";
  * SAYMA KONTROLDEN SONRA. Hak yoksa sayaç artmıyor — yoksa kilide çarpan
  * kullanıcı kendi hakkını yakardı.
  */
-const GATES = ["pocket_walk", "weekly_exam", "speaking", "writing"] as const;
+const GATES = ["pocket_walk", "speaking", "writing"] as const;
 type Gate = (typeof GATES)[number];
 
 export async function POST(req: Request) {
@@ -62,11 +63,7 @@ export async function POST(req: Request) {
 
   try {
     const access =
-      gate === "pocket_walk"
-        ? await canPocketWalk(userId)
-        : gate === "weekly_exam"
-          ? await canWeeklyExam(userId)
-          : await canAiPractice(userId, gate, scope, level);
+      gate === "pocket_walk" ? await canPocketWalk(userId) : await canAiPractice(userId, gate, scope, level);
 
     if (!access.allowed) return NextResponse.json({ ok: false, ...access }, { status: 403 });
 

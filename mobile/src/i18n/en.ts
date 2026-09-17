@@ -480,7 +480,7 @@ export const en: Record<string, string> = {
   "plan.free_walk": "Walk mode (screen on) — unlimited",
   "plan.free_mock": "{n} mock exams at every level",
   "plan.free_mock.one": "{n} mock exam at every level",
-  "plan.free_weekly": "{n} weekly quiz per week — free",
+  "plan.free_weekly": "Weekly quiz — free for everyone",
   "plan.free_weekly.one": "{n} weekly quiz per week — free",
   "plan.free_practice": "{s} speaking, {w} writing exercises — shared across Path and Skills",
   "plan.free_streak_ai": "Every {d}-day streak opens {n} more exercises",

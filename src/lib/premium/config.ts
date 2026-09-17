@@ -83,7 +83,6 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
   return {
     free: {
       mockPapersPerLevel: int(f.mockPapersPerLevel, d.free.mockPapersPerLevel, 0, 50),
-      weeklyExams: int(f.weeklyExams, d.free.weeklyExams, 0, 50),
       pocketWalksPerDay: int(f.pocketWalksPerDay, d.free.pocketWalksPerDay, 0, 100),
       speakingSkills: int(f.speakingSkills, d.free.speakingSkills, 0, 100),
       writingSkills: int(f.writingSkills, d.free.writingSkills, 0, 100),

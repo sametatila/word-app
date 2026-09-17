@@ -42,7 +42,7 @@ export type PremiumStatus = {
   referral: { code: string; invited: number } | null;
   /** Misafirin kalan yapay zekâ deneme hakkı (sunucu lib/auth/guest); hesapta null, eski sunucuda yok. */
   guestAiLeft?: number | null;
-  gates: { pocket_walk: GateInfo; weekly_exam: GateInfo; speaking: GateInfo; writing: GateInfo } | null;
+  gates: { pocket_walk: GateInfo; speaking: GateInfo; writing: GateInfo } | null;
 };
 
 let cached: PremiumStatus | null = null;
@@ -147,9 +147,9 @@ export async function awaitPremiumAfterPurchase(tries = 6): Promise<boolean> {
  * gerekçesi de duruyordu ("paywall'ı hangi kısıt besliyor, oradan görülür")
  * ama HİÇBİRİ göndermiyordu: paywall'ı görenler sayılıyor, oraya iten kilit
  * sayılmıyordu. Tür adları sunucunun kendi sözlüğünden (`lib/premium/gates`
- * `PremiumGate`): mock_exam · weekly_exam · pocket_walk · speaking · writing.
+ * `PremiumGate`): mock_exam · pocket_walk · speaking · writing.
  */
-export function notePremiumGate(gate: "mock_exam" | "weekly_exam" | "pocket_walk" | "speaking" | "writing"): void {
+export function notePremiumGate(gate: "mock_exam" | "pocket_walk" | "speaking" | "writing"): void {
   track("premium_gate", 0, gate);
 }
 

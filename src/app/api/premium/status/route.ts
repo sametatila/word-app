@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, resolveEntitlement } from "@/lib/premium";
-import { canPocketWalk, canWeeklyExam, canAiPractice } from "@/lib/premium/access";
+import { canPocketWalk, canAiPractice } from "@/lib/premium/access";
 import { referralStats } from "@/lib/premium/referral";
 import { GUEST_AI_TRIAL_KEY, GUEST_AI_TRIALS } from "@/lib/auth/guest";
 import { getUsage } from "@/lib/premium/quota";
@@ -56,9 +56,8 @@ export async function GET(req: Request) {
 
   try {
     const ent = await resolveEntitlement(userId);
-    const [walk, weekly, referral, speaking, writing, guestAiUsed] = await Promise.all([
+    const [walk, referral, speaking, writing, guestAiUsed] = await Promise.all([
       canPocketWalk(userId),
-      canWeeklyExam(userId),
       /* Davet hesap istiyor (bkz. lib/auth/guest): misafire kod ÜRETİLMİYOR —
          üretilseydi o kodla ödeyen birinin ödülü misafire Premium yazardı. */
       who?.guest ? Promise.resolve(null) : referralStats(userId).catch(() => null),
@@ -81,7 +80,7 @@ export async function GET(req: Request) {
         referral,
         /* Misafirin kalan yapay zekâ deneme hakkı (bkz. lib/auth/guest); hesapta null. */
         guestAiLeft: who?.guest ? Math.max(0, GUEST_AI_TRIALS - guestAiUsed) : null,
-        gates: { pocket_walk: walk, weekly_exam: weekly, speaking, writing },
+        gates: { pocket_walk: walk, speaking, writing },
       },
       { headers: { "cache-control": "no-store" } },
     );

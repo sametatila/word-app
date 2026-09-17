@@ -130,7 +130,6 @@ export function PremiumAdmin({
         </p>
         <Grid>
           <Num label="Seviye başına deneme sınavı" v={cfg.free.mockPapersPerLevel} on={(n) => num(["free", "mockPapersPerLevel"], n)} />
-          <Num label="Haftada haftalık sınav" v={cfg.free.weeklyExams} on={(n) => num(["free", "weeklyExams"], n)} />
           <Num label="Günde cepte yürüyüş turu" v={cfg.free.pocketWalksPerDay} on={(n) => num(["free", "pocketWalksPerDay"], n)} />
           <Num label="Seri adımı (gün)" v={cfg.free.streakStep} on={(n) => num(["free", "streakStep"], n)} />
           <Num label="Kademe başına ek hak" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />

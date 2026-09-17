@@ -480,7 +480,7 @@ export const de: Record<string, string> = {
   "plan.free_walk": "Gehmodus (Bildschirm an) — unbegrenzt",
   "plan.free_mock": "{n} Prüfungssimulationen pro Niveau",
   "plan.free_mock.one": "{n} Prüfungssimulation pro Niveau",
-  "plan.free_weekly": "{n} Wochen-Quiz pro Woche — kostenlos",
+  "plan.free_weekly": "Wochen-Quiz — für alle kostenlos",
   "plan.free_weekly.one": "{n} Wochen-Quiz pro Woche — kostenlos",
   "plan.free_practice": "{s} Sprech-, {w} Schreibübungen — gemeinsam für Pfad und Fähigkeiten",
   "plan.free_streak_ai": "Jede {d}-Tage-Serie schaltet {n} weitere Übungen frei",
