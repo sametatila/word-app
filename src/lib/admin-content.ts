@@ -6,9 +6,8 @@ import { flagKey } from "@/lib/content/ids";
 import { lessonPack, levelOfId, packCourseOfId, paperPack, skillPack } from "@/lib/content/packs";
 import { packItems } from "@/lib/content/serve";
 import type { Lesson } from "@/lib/lessons/types";
-import { mockPaperById } from "@/lib/mock-exams";
-import { scorePart } from "@/lib/mock-exams/scoring";
-import type { MockSkill } from "@/lib/mock-exams/types";
+import { isItemCorrect, isOpenTask } from "@/lib/mock-exams/scoring";
+import type { MockPaper } from "@/lib/mock-exams/types";
 
 /**
  * PANELİN İÇERİK YÜZÜ — sürüm, kapatma ve madde analizi.
@@ -137,16 +136,31 @@ export function aggregateMockItems(
     .sort((a, b) => a.pct - b.pct || b.asked - a.asked);
 }
 
-function mockItemLabel(paperId: string, itemId: string): string {
-  const paper = mockPaperById(paperId);
-  if (!paper) return "";
-  for (const part of paper.parts) {
-    for (const task of part.tasks) {
-      const it = task.items?.find((x) => x.id === itemId);
-      if (it) return `Teil ${task.no} · ${"text" in it && it.text ? it.text : ""}`.slice(0, 160);
+/**
+ * Kâğıtlar YAYIN PAKETİNDEN okunuyor (`papers/<kurs>`), `lib/mock-exams`in
+ * arama işlevlerinden değil: o katman kâğıdı koddan yayın hattına taşıyor ve
+ * arayüzü (senkron → asenkron) değişiyor. Panel paketi doğrudan okuyup
+ * maddeleri paylaşılan `isItemCorrect` ile puanlıyor, yani ikisinin geçişinden
+ * etkilenmiyor. Açık görevler (yazma, konuşma) nesnel puan taşımadığı için dışarıda.
+ */
+function paperScorer(papers: Map<string, MockPaper>) {
+  return (paperId: string, skill: string, answers: Record<string, string>) => {
+    const part = papers.get(paperId)?.parts.find((x) => x.skill === skill);
+    if (!part) return null;
+    return part.tasks.filter((task) => !isOpenTask(task)).flatMap((task) => task.items.map((it) => ({ id: it.id, correct: isItemCorrect(it, answers[it.id]) })));
+  };
+}
+
+function paperLabeler(papers: Map<string, MockPaper>) {
+  return (paperId: string, itemId: string): string => {
+    for (const part of papers.get(paperId)?.parts ?? []) {
+      for (const task of part.tasks) {
+        const it = task.items?.find((x) => x.id === itemId);
+        if (it) return `Teil ${task.no} · ${"text" in it && it.text ? it.text : ""}`.slice(0, 160);
+      }
     }
-  }
-  return "";
+    return "";
+  };
 }
 
 export async function learningAnalysis(): Promise<LearningAnalysis> {
@@ -189,10 +203,14 @@ export async function learningAnalysis(): Promise<LearningAnalysis> {
   };
 
 
+  const paperPacks = [...new Set(mockRows.map((r) => paperPack(packCourseOfId(String(r.paper_id)))))];
+  const papers = new Map(
+    (await Promise.all(paperPacks.map((pk) => packItems<MockPaper>(pk).catch(() => [] as MockPaper[])))).flat().map((pp) => [pp.id, pp]),
+  );
   const mockItems = aggregateMockItems(
     mockRows.map((r) => ({ paperId: String(r.paper_id), skill: String(r.skill), answers: (r.answers ?? {}) as Record<string, string> })),
-    (paperId, skill, answers) => scorePart(paperId, skill as MockSkill, answers)?.items ?? null,
-    mockItemLabel,
+    paperScorer(papers),
+    paperLabeler(papers),
   )
     .slice(0, 80)
     .map((m) => {

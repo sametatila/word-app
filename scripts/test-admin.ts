@@ -27,6 +27,7 @@ import { parseVitalsRows } from "../src/lib/android-vitals";
 import { trendDelta } from "../src/lib/admin-trends-shared";
 import { aggregateMockItems, MIN_ANSWERS } from "../src/lib/admin-content";
 import { alertHref } from "../src/app/admin/alert-href";
+import { parseRange } from "../src/app/admin/_data-shared";
 import * as authSchema from "../src/lib/db/auth-schema";
 import { getTableName, is } from "drizzle-orm";
 import { PgTable } from "drizzle-orm/pg-core";
@@ -189,6 +190,10 @@ async function main() {
   check("mağaza ve vitals Mağaza'ya", alertHref("err-review:ios:1") === "/admin/reviews" && alertHref("vitals:çökme") === "/admin/reviews");
   check("şikâyet Moderasyon'a, bakım Uygulama'ya", alertHref("reports") === "/admin/moderation" && alertHref("maintenance") === "/admin/app");
   check("sunucu uyarıları Sunucu'ya", alertHref("backup:offsite") === "/admin/ops" && alertHref("cron:assess") === "/admin/ops");
+
+  console.log("\nPanel tarih aralığı");
+  check("tanınan aralıklar geçiyor", parseRange("7") === 7 && parseRange("90") === 90);
+  check("bilinmeyen ya da boş aralık 30'a düşüyor (sınırsız tarama yok)", parseRange("365") === 30 && parseRange(undefined) === 30 && parseRange("abc") === 30);
 
   console.log("\nVeri dışa aktarma kapsamı");
   // Kimlik doğrulama şemasında kullanıcıya bağlı HER tablo dışarıda bırakılmalı:

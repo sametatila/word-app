@@ -7,6 +7,9 @@ import { cached } from "@/lib/admin-query";
 import { revenueMetrics } from "@/lib/premium/revenue";
 import { weeklyTrends } from "@/lib/admin-trends";
 import { collectAlerts, type Alert } from "@/lib/alerts";
+import { PANEL_RANGES, parseRange, type PanelRange } from "./_data-shared";
+
+export { PANEL_RANGES, parseRange, type PanelRange };
 
 /**
  * Panelin ORTAK veri yükü — Durum, Gelir, Büyüme, Deneyim, Öğrenme ve Sunucu
@@ -17,9 +20,9 @@ import { collectAlerts, type Alert } from "@/lib/alerts";
  * çalıştırması gezinmeyi yavaşlatırdı. 60 saniyelik önbellek (`cached`) tek
  * hesaplamayı paylaştırıyor; `?taze=1` atlıyor.
  */
-export async function loadPanel(fresh = false) {
-  return cached("admin:dashboard", 60_000, fresh, async () => {
-    const [data, server, coverage, openReports, revenue, trends] = await Promise.all([getAdminData(), getServerMetrics(), getCoverage(), openReportCount(), revenueMetrics(), weeklyTrends()]);
+export async function loadPanel(fresh = false, days: PanelRange = 30) {
+  return cached(`admin:dashboard:${days}`, 60_000, fresh, async () => {
+    const [data, server, coverage, openReports, revenue, trends] = await Promise.all([getAdminData(days), getServerMetrics(), getCoverage(days), openReportCount(), revenueMetrics(days), weeklyTrends()]);
     return { data, server, coverage, openReports, revenue, trends };
   });
 }

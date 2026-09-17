@@ -23,5 +23,5 @@ export default async function AdminErrorsPage({ searchParams }: { searchParams: 
   const [groups, panel] = await Promise.all([listErrorGroups(all === "1"), loadPanel()]);
   /* Ekrana göre dağılım panonun "Olaylar" sekmesindeydi, grupların kendisi
      burada: aynı sorunun iki yüzü iki ayrı yerde okunuyordu. */
-  return <ErrorsAdmin groups={groups} showAll={all === "1"} top={<ClientErrorsByScreen data={panel.value.data} />} />;
+  return <ErrorsAdmin groups={groups} showAll={all === "1"} top={<ClientErrorsByScreen data={panel.value.data} days={30} />} />;
 }

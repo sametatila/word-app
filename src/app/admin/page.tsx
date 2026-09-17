@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { adminGate } from "@/lib/admin";
-import { loadAlerts, loadPanel, panelIssues } from "./_data";
+import { loadAlerts, loadPanel, panelIssues, parseRange } from "./_data";
 import { StatusSection } from "./dashboard";
 import { AdminDenied } from "./_ui/ui";
 import { PanelPage } from "./_ui/panel-page";
@@ -15,14 +15,16 @@ export const dynamic = "force-dynamic";
  * karşılaştırma, temel sayılar ve etkinlik. Ayrıntı menünün gruplarında
  * (Kullanıcılar, Gelir, İçerik, İşletim). Erişim ADMIN_EMAILS ile sınırlı.
  */
-export default async function AdminHomePage({ searchParams }: { searchParams: Promise<{ taze?: string }> }) {
+export default async function AdminHomePage({ searchParams }: { searchParams: Promise<{ taze?: string; aralik?: string }> }) {
   const gate = await adminGate();
   if (!gate.ok) return <AdminDenied title="Yönetim paneli" email={gate.email} />;
-  const fresh = (await searchParams).taze === "1";
-  const [{ value, at }, alerts] = await Promise.all([loadPanel(fresh), loadAlerts(fresh)]);
+  const sp = await searchParams;
+  const fresh = sp.taze === "1";
+  const days = parseRange(sp.aralik);
+  const [{ value, at }, alerts] = await Promise.all([loadPanel(fresh, days), loadAlerts(fresh)]);
   return (
-    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), son 7 gün, temel sayılar." href="/admin" at={at} issues={panelIssues(value)}>
-      <StatusSection data={value.data} coverage={value.coverage} openReports={value.openReports} trends={value.trends.metrics} alerts={alerts.value} />
+    <PanelPage title="Genel durum" description="Uyarılar (Telegram'la aynı kaynak), son 7 gün, temel sayılar." href="/admin" at={at} issues={panelIssues(value)} days={days}>
+      <StatusSection days={days} data={value.data} coverage={value.coverage} openReports={value.openReports} trends={value.trends.metrics} alerts={alerts.value} />
     </PanelPage>
   );
 }
