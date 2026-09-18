@@ -195,20 +195,34 @@ console.log("\n3. Bölücü");
      etmez — metin ekranda görünmüyor bile (dinlemede transkript gizli).
      Parçaların birleşimi temizlenmiş metnin BİREBİR aynısı olmak zorunda. */
   let lost = 0;
+  let midWord = 0;
   let over = 0;
   let split = 0;
   const all = [...prose.map((p) => p.text), ...blocks.flatMap((b) => b.segments.map((s) => s.text))];
+  const bare = (x: string) => x.replace(/\s/g, "");
   for (const text of all) {
     const clean = cleanForSpeech(text);
     const parts = splitForSpeech(text);
     if (parts.length > 1) split++;
     if (parts.join(" ") !== clean) {
-      lost++;
-      if (lost <= 3) err("bölücü", `parçalar metni geri vermiyor (${clean.length} karakter): ${clean.slice(0, 60)}…`);
+      /* İKİ AYRI DURUM, iki ayrı sonuç.
+
+         Boşlukla birleştirince metni geri vermemek TEK BAŞINA kayıp demek
+         değil: 600 karakteri boşluksuz aşan bir dizge (gerçekte olmuyor ama
+         bir bağlantı adresi yapıştırılırsa olur) kelime ORTASINDAN kesiliyor
+         ve araya olmayan bir boşluk giriyor. Karakterler yerinde. Bunu kayıp
+         saymak yanlış alarm olurdu; saymamak da gerçek kaybı gizlerdi. */
+      if (bare(parts.join("")) === bare(clean)) {
+        midWord++;
+      } else {
+        lost++;
+        if (lost <= 3) err("bölücü", `parçalar metni geri vermiyor (${clean.length} karakter): ${clean.slice(0, 60)}…`);
+      }
     }
     for (const p of parts) if (p.length > MAX_TEXT) over++;
   }
   console.log(`   ${all.length} metin denendi · bölünen ${split} · kayıp ${lost} · tavan aşımı ${over}`);
+  if (midWord) warn("bölücü", `${midWord} metinde kelime ortasından kesim var — 600 karakteri boşluksuz aşan bir dizge`);
   if (over) err("bölücü", `${over} parça tavanı aşıyor`);
 
   /* ETKİSİZLİK: bölünmüş bir parçayı yeniden bölmek onu değiştirmemeli.

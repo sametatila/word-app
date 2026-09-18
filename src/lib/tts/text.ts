@@ -118,10 +118,15 @@ function hardSplit(text: string, hard: number): string[] {
       continue;
     }
     if (buf) out.push(buf);
-    // Tek bir "kelime" tavandan uzunsa (gerçekte olmuyor ama bir bağlantı
-    // adresi yapıştırılırsa olur) harften kesiliyor — susmaktan iyi.
+    /* Tek bir "kelime" tavandan uzunsa (gerçekte olmuyor ama bir bağlantı
+       adresi yapıştırılırsa olur) harften kesiliyor — susmaktan iyi. Kesim
+       DENGELİ: düz `i += hard` 601 karakteri [600, 1] diye bölüyordu, yani
+       ikinci istek tek bir harfi seslendirmek için ağa çıkıyordu. Önce kaç
+       parça gerektiği bulunup uzunluk eşit dağıtılıyor: [301, 300]. */
     if (w.length > hard) {
-      for (let i = 0; i < w.length; i += hard) out.push(w.slice(i, i + hard));
+      const n = Math.ceil(w.length / hard);
+      const size = Math.ceil(w.length / n);
+      for (let i = 0; i < w.length; i += size) out.push(w.slice(i, i + size));
       buf = "";
     } else {
       buf = w;
