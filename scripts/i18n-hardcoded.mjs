@@ -67,6 +67,15 @@ const SKIP = [
   "lib/assess-prompts.ts",
   "lib/numbers.ts",
   "lib/moderation.ts",
+  /*
+    Konuşmacı sözlüğü: Almanca rol adları (Verkäuferin, Ärztin), İngilizce
+    karşılıkları ve içerikte geçen ilk adlar. Hiçbiri EKRANA basılmıyor —
+    tablonun tek işi bir konuşmacı etiketini cinsiyete çözüp ona bir ses
+    vermek (bkz. `lib/tts/speakers`). Çevrilmeleri anlamsız olurdu: "Kundin"i
+    İngilizceye çevirmek onu içerikteki etiketle eşleşmez hâle getirirdi ve
+    o konuşmacı sesini kaybederdi.
+  */
+  "lib/tts/speakers.ts",
   // Yaygın parola listesi: `şifre`, `türkiye`, `galatasaray` gibi dizeler
   // kullanıcıya GÖSTERİLEN metin değil, REDDEDİLEN parolalar. Aynı sınıf
   // `lib/moderation.ts` ile — süzgecin konusu, arayüzün metni değil.

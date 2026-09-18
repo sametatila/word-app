@@ -93,6 +93,14 @@ const SKIP_CONTENT = [
   // dosya aynı biçimde duruyor (`src/lib/confusables.ts`, o da web
   // tarayıcısının SKIP listesinde). Kapısı: `check:parity` "karistirma ciftleri".
   "lib/confusables.ts",
+  // Konuşmacı sözlüğü — Almanca/İngilizce rol adları ve içerikte geçen ilk
+  // adlar. Hiçbiri EKRANA basılmıyor: tablonun tek işi bir konuşmacı
+  // etiketini cinsiyete çözüp ona bir ses vermek. Çevrilmeleri anlamsız
+  // olurdu — "Kundin"i İngilizceye çevirmek onu içerikteki etiketle
+  // eşleşmez yapar ve o konuşmacı sesini kaybederdi. Webde aynı dosya aynı
+  // biçimde duruyor (`src/lib/tts/speakers.ts`, o da web tarayıcısının SKIP
+  // listesinde). Kapısı: `npm run check:tts` (4. bölüm, sözlükler dizge dizge).
+  "lib/speakers.ts",
   // Kural parçacıklarının ALMANCA örnekleri ("Ich bin müde.") — kuralın metni
   // sözlükte (`whyrule.*`), örnek cümle içerik. Webde de `lib/why-rules.ts`
   // SKIP listesinde. Kapısı: `check:parity` "kural parcaciklari".
