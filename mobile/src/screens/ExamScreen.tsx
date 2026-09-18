@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { BOSS_SECONDS, MIN_ASSESS_WORDS, MIN_FREE_WORDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
 import { View, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
@@ -19,10 +19,11 @@ import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, Det
 import { RoundView } from "../game/rounds";
 import { NoHints } from "../game/noHints";
 import { written } from "../game/skillQuiz";
-import { speakTarget } from "../lib/tts";
+import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
+import { dialogueCast } from "../lib/speakers";
 import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
-import { currentTargetLocale, currentTargetLang } from "../lib/courses";
+import { currentCourseId, currentTargetLocale, currentTargetLang } from "../lib/courses";
 import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
@@ -1016,6 +1017,23 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
   const [answers, setAnswers] = useState<(number | null)[]>(() => it.questions.map(() => null));
   const allAnswered = answers.every((a) => a !== null);
   const correctRef = answers.filter((a, i) => a === it.questions[i].answer).length;
+
+  /*
+    KONUŞMACI BAŞINA AYRI SES + "TAMAMINI DİNLE".
+
+    Konuşmacı etiketi zaten satırın başında yazıyordu ama bütün replikler
+    kullanıcının TEK sesiyle okunuyordu: kimin konuştuğunu ayırmak ancak
+    yazıyı okuyarak mümkündü — oysa dinleme bölümünde ölçülen şey tam da
+    bunu KULAKLA yapabilmek. Diyaloğu baştan sona dinlemenin yolu da yoktu,
+    satırlara tek tek basılıyordu. İkisi de webdeki `exam-player`
+    `DialogPlayer` ile aynı hâle geldi.
+  */
+  const segs = it.segments ?? null;
+  const [playing, setPlaying] = useState(false);
+  const cast = useMemo(() => (segs ? dialogueCast(currentCourseId(), segs) : []), [segs]);
+  useEffect(() => { if (segs) prefetchDialogue(currentCourseId(), segs); }, [segs]);
+  useEffect(() => () => stopSpeaking(), []);
+
   return (
     <KeyboardAwareScroll contentContainerStyle={pad}>
       <Card padded style={{ gap: spacing.xs }}>
@@ -1025,9 +1043,23 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
         {/* DINLE DUGMESI IKI YERDE DE AYNI: 20 px ikon + hitSlop 8 (etkili 36).
             Biri 18+6 (30), oteki 20+6 (32) idi - ayni ekranda ayni denetim iki
             boyda ve ikisi de `check:hit` esiginin altinda. */}
+        {segs ? (
+          <PressableScale
+            accessibilityRole="button"
+            onPress={() => {
+              if (playing) { stopSpeaking(); setPlaying(false); return; }
+              setPlaying(true);
+              void speakDialogue(currentCourseId(), segs).then(() => setPlaying(false));
+            }}
+            style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, marginTop: spacing.xs, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}
+          >
+            <SpeakerIcon color={colors.primaryText} size={18} />
+            <Text variant="caption" color={colors.primaryText}>{t(playing ? "wquiz.listen_stop" : "wquiz.listen_all")}</Text>
+          </PressableScale>
+        ) : null}
         {it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
-            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text)} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
+            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text, { slow: "listen", voice: cast[i]?.voice, pitch: cast[i]?.pitch })} hitSlop={8}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
             <Text variant="body" style={{ flex: 1 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
           </View>
         ))}

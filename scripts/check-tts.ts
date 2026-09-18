@@ -51,7 +51,7 @@ const prose: { where: string; text: string }[] = [];
 for (const paper of MOCK_PAPERS) {
   for (const part of paper.parts) {
     for (const task of part.tasks) {
-      for (const st of task.stimuli ?? []) {
+      for (const st of task.texts ?? []) {
         if (st.kind === "audio") blocks.push({ where: `${paper.id}·${st.id}`, course: paper.course, segments: st.segments });
         else if (st.kind === "text") prose.push({ where: `${paper.id}·${st.id}`, text: st.body });
       }
@@ -74,9 +74,13 @@ for (const ex of BUNDLED_EXERCISES) {
   if (ex.skill === "reading") prose.push({ where: ex.id, text: ex.text });
 }
 
+/* Modül sınavları bugün yalnız Almanca kursunda var (`COURSE_PLANS` tek
+   anahtarlı); plan kendi kursunu taşımıyor, o yüzden burada sabit. İkinci bir
+   kurs eklendiğinde bu satır da genişler — `check:tts` o gün ses dağıtımını
+   yanlış kursla ölçmesin. */
 for (const plan of MODULE_EXAMS) {
   const turns = plan.listening?.turns;
-  if (turns) blocks.push({ where: `modül·${plan.course}-${plan.level}-${plan.index}`, course: plan.course, segments: turns.map((t) => ({ speaker: t.speaker, text: t.de })) });
+  if (turns) blocks.push({ where: `modül·de-${plan.level}-${plan.index}`, course: "de", segments: turns.map((t) => ({ speaker: t.speaker, text: t.de })) });
 }
 
 /* ── 1. UZUNLUK — hiçbir istek tavanı aşmamalı ─────────────────────────── */
@@ -84,16 +88,27 @@ for (const plan of MODULE_EXAMS) {
 console.log(`\n1. Uzunluk — tavan ${MAX_TEXT} karakter`);
 {
   let overSegments = 0;
+  let worstSegment = 0;
   let overBlocks = 0;
   let worstBlock = 0;
   for (const b of blocks) {
     for (const seg of b.segments) {
       const c = cleanForSpeech(seg.text);
-      // Tek bir konuşma sırası tavanı aşarsa bölünmek ZORUNDA; bölünen bir
-      // replik konuşmacı değişmeden ikiye ayrılıyor, yani duyulabilir.
+      worstSegment = Math.max(worstSegment, c.length);
+      /* TEK REPLİĞİN tavanı aşması hata DEĞİL, ölçü.
+
+         Bunlar diyalog değil monolog: bir haber bülteni ya da ders anlatımı
+         tek konuşmacının altmış saniyelik kaydı olarak yazılıyor. Bölücü
+         onları cümle sınırından ayırıyor, yani ses çıkıyor — ama bölünme
+         konuşmacı DEĞİŞMEDEN oluyor ve o sınır (küçük de olsa) duyulabilir.
+         Sayı burada görünsün ki içerik tarafında sessizce büyümesin.
+
+         Gerçek hata bölünememek olurdu; onu 3. bölüm ölçüyor. */
       if (c.length > MAX_TEXT) {
         overSegments++;
-        err(b.where, `tek replik ${c.length} karakter — tavanın üstünde`);
+        for (const part of splitForSpeech(seg.text)) {
+          if (part.length > MAX_TEXT) err(b.where, `bölme sonrası replik parçası ${part.length} karakter`);
+        }
       }
     }
     const total = b.segments.reduce((a, s) => a + cleanForSpeech(s.text).length, 0);
@@ -101,7 +116,8 @@ console.log(`\n1. Uzunluk — tavan ${MAX_TEXT} karakter`);
     worstBlock = Math.max(worstBlock, total);
   }
   console.log(`   ${blocks.length} diyalog bloğu, ${blocks.reduce((a, b) => a + b.segments.length, 0)} replik`);
-  console.log(`   tavanı aşan tek replik: ${overSegments}`);
+  console.log(`   tavanı aşan tek replik: ${overSegments} (en uzunu ${worstSegment}) — monolog kayıtları, bölücü hepsini çalınabilir yapıyor`);
+  if (overSegments) warn("uzunluk", `${overSegments} replik konuşmacı değişmeden bölünüyor — sınır duyulabilir`);
   console.log(`   toplamı tavanı aşan blok: ${overBlocks} (en uzunu ${worstBlock}) — replik replik okunduğu için sorun değil`);
 
   // Serbest metinler: bölücü olmadan çalamazlar, bölücüyle çalmalılar.

@@ -147,7 +147,7 @@ const NEUTRAL = [
  * sayıyor; kapı kırılmıyor (ses yine veriliyor) ama sayı görünür oluyor.
  */
 const FIRST_F = [
-  "Ada", "Alev", "Alina", "Amal", "Amina", "Ana", "Anneke", "Anouk", "Aslı", "Astrid", "Ava", "Ayça", "Ayla",
+  "Ada", "Aisha", "Alev", "Alina", "Amal", "Amina", "Ana", "Anneke", "Anouk", "Aslı", "Astrid", "Ava", "Ayça", "Ayla",
   "Ayse", "Ayşe", "Ayşen", "Aylin", "Bade", "Bahar", "Bea", "Beren", "Berna", "Berrak", "Beyza", "Bilge",
   "Britta", "Carla", "Cemre", "Ceren", "Ceyda", "Clara", "Dalia", "Defne", "Derya", "Dilek", "Duru", "Ecem",
   "Eda", "Ela", "Elena", "Elif", "Ella", "Emma", "Esin", "Eva", "Eylül", "Farah", "Fatma", "Fenna", "Ferda", "Freja",
