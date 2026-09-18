@@ -30,6 +30,7 @@ import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
+import { useDailyRound } from "./dailyRound";
 import { useTheme, spacing, radii, softShadow, cardShadow, soft, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -348,6 +349,7 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
  */
 function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
   const { isDark } = useTheme();
+  const tur = useDailyRound();
   const tone = data.tone ?? (data.correct ? "ok" : "bad");
   const bandBg = tone === "ok" ? colors.successSoft : tone === "bad" ? colors.dangerSoft : tone === "near" ? soft(colors.streak) : colors.surface2;
   const ink = tone === "ok" ? colors.successText : tone === "bad" ? colors.dangerText : tone === "near" ? colors.streakText : colors.text;
@@ -371,8 +373,10 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
     <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(dot, 16)]}>
       <ScrollView style={{ maxHeight: height * 0.5 }} contentContainerStyle={{ gap: spacing.sm }} showsVerticalScrollIndicator={false} bounces={false}>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: bandBg, borderRadius: radii.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm }}>
-          {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de görünür. */}
-          <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned />
+          {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de
+              görünür. Günlük tur dışında hiç çizilmiyor: `Mascot` null dönerdi
+              ama satırın boşluğu (`gap`) kalırdı. */}
+          {tur ? <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned /> : null}
           <View style={{ flex: 1, gap: 2 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
               <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: dot, alignItems: "center", justifyContent: "center" }}>
@@ -452,6 +456,11 @@ function useAutoSpeak(text: string | null | undefined, key: string | number) {
 /** Ortadaki maskot — soru ile şıklar arasını doldurur; cevaba göre mood.
  *  Cevaplanınca gizlenir ama BOŞLUĞU korur ki şıklar yerinden zıplamasın. */
 function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
+  /* Tur kartı dört ekrandan çiziliyor ama Erdi yalnız günlük turda: öteki
+     üçünde boşluk da AYRILMIYOR, yoksa kartın ortasında 72 piksellik sebepsiz
+     bir delik kalırdı (bkz. `game/dailyRound`). */
+  const tur = useDailyRound();
+  if (!tur) return null;
   if (hidden) return <View style={{ flex: 1, minHeight: spacing.md }} />;
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 72 }}>

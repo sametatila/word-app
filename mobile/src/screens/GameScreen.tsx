@@ -16,6 +16,7 @@ import { MascotPop } from "../ui/MascotPop";
 import { MascotFx } from "../ui/MascotFx";
 import { CoachBubble } from "../ui/CoachBubble";
 import { RoundView } from "../game/rounds";
+import { DailyRound } from "../game/dailyRound";
 import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult, type MissedWord } from "../game/session";
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
@@ -49,7 +50,25 @@ const STAGE_SIZE = 5;
  * (kullanıcının kendi kelimeleri + SRS zamanlaması), oynatır, /api/answers'a
  * yazar (SRS/XP/seri güncellenir). Oturum yoksa girişe yönlendirir. Demo yok.
  */
+/**
+ * GÜNLÜK TUR — animasyonun kaldığı tek ağaç.
+ *
+ * Sağlayıcı BURADA, çünkü Erdi'yi çizen şeylerin bir kısmı paylaşımlı: tur
+ * kartı (`game/rounds` `RoundView`) patron turundan, meydan okumadan ve
+ * seviye sınavından da çağrılıyor. Sınır ağaç düzeyinde olmasa maskot o üç
+ * ekranda da oynardı (bkz. `game/dailyRound`). Ekranın bütün dalları —
+ * yükleniyor, oturum yok, hata, kelime yok, tur, sonuç — sarmalayıcının
+ * içinde kalsın diye bileşen ikiye ayrıldı.
+ */
 export function GameScreen() {
+  return (
+    <DailyRound>
+      <GameRound />
+    </DailyRound>
+  );
+}
+
+function GameRound() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();

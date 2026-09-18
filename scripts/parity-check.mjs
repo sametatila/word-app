@@ -9316,13 +9316,75 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         ve tur kartlari.
       */
       const IZINLI = {
-        web: ["src/components/mascot-pop.tsx", "src/components/coach-bubble.tsx", "src/components/session-player.tsx", "src/components/games/"],
-        mobil: ["mobile/src/ui/MascotPop.tsx", "mobile/src/ui/CoachBubble.tsx", "mobile/src/screens/GameScreen.tsx", "mobile/src/game/rounds.tsx"],
+        web: ["src/components/mascot.tsx", "src/components/mascot-fx.tsx", "src/components/mascot-pop.tsx", "src/components/coach-bubble.tsx", "src/components/session-player.tsx", "src/components/games/"],
+        mobil: ["mobile/src/ui/Mascot.tsx", "mobile/src/ui/MascotFx.tsx", "mobile/src/ui/MascotPop.tsx", "mobile/src/ui/CoachBubble.tsx", "mobile/src/screens/GameScreen.tsx", "mobile/src/game/rounds.tsx"],
       };
+      /*
+        DOSYA LISTESI YETMEZ — TUR BILESENLERI PAYLASIMLI.
+
+        Ilk yazim yalniz "Erdi'yi hangi dosya ciziyor" diye bakiyordu ve bir
+        deligi vardi: tur kartlari dort/dokuz yerden cagriliyor. Mobilde
+        `RoundView` patron turundan, meydan okumadan ve seviye sinavindan;
+        webde `games/*` ayrica yuruyus modundan, seviye tespiti denemesinden,
+        beceri quizinden, kelime listesinden ve demo sayfasindan. Yani izinli
+        dosya listesi TEMIZ gorunurken maskot sekiz yuzeyde daha oynuyordu.
+
+        Sinir bu yuzden AGAC duzeyinde: `DailyRound` saglayicisini yalniz
+        gunluk tur kuruyor ve Erdi'yi cizen her sey `useDailyRound()`a bakiyor.
+        Kapi ucunu birden olcuyor:
+          1. Saglayici TEK kokten kuruluyor (gunluk tur ekrani).
+          2. Maskot bileseni kancaya bakip disarida null donuyor.
+          3. Paylasimli cizim yerleri (tur karti, kabuk, geri bildirim bandi)
+             de bakiyor — yoksa maskot gitse bile ayirdigi bosluk kalirdi.
+      */
+      const SINIR = {
+        web: {
+          saglayici: "src/components/daily-round.tsx",
+          kok: "src/components/session-player.tsx",
+          kanca: ["src/components/mascot.tsx", "src/components/games/game-shell.tsx", "src/components/games/round-sheet.tsx", "src/components/games/intro-game.tsx"],
+        },
+        mobil: {
+          saglayici: "mobile/src/game/dailyRound.tsx",
+          kok: "mobile/src/screens/GameScreen.tsx",
+          kanca: ["mobile/src/ui/Mascot.tsx", "mobile/src/game/rounds.tsx"],
+        },
+      };
+      const sinirOlcu = (platform, kok) => {
+        const { saglayici, kok: kokDosya, kanca } = SINIR[platform];
+        const kuranlar = yuruTsx(kok).filter((f) => /<DailyRound>/.test(sil(read(f)))).sort();
+        return [
+          platform + " saglayici=" + (/useDailyRound|createContext/.test(sil(read(saglayici))) ? "var" : "YOK"),
+          platform + " kuran=" + (kuranlar.join("+") || "YOK"),
+          platform + " kancasiz=" + (kanca.filter((f) => !/useDailyRound\(\)/.test(sil(read(f)))).join("+") || "yok"),
+          platform + " beklenen kok=" + kokDosya,
+        ];
+      };
+      sameList(
+        "maskot sinirini agac veriyor",
+        [...sinirOlcu("web", "src"), ...sinirOlcu("mobil", "mobile/src")],
+        [
+          "web saglayici=var", "web kuran=" + SINIR.web.kok, "web kancasiz=yok", "web beklenen kok=" + SINIR.web.kok,
+          "mobil saglayici=var", "mobil kuran=" + SINIR.mobil.kok, "mobil kancasiz=yok", "mobil beklenen kok=" + SINIR.mobil.kok,
+        ],
+        "bulunan",
+        "beklenen",
+      );
+      /*
+        CIZIM IKI YOLDAN OLUYOR — ikisi de sayiliyor.
+
+        Ilk yazim yalniz `<Mascot>` ariyordu ve bir sizinti kacirdi: webin
+        cevap seridini surukleyerek getiren Erdi, maskot bileseninden DEGIL
+        klip adresinden ciziliyor (`useClipUrl("pull-left")` → `<motion.img>`).
+        Bilesene konan sinir onu gormuyordu; tur disinda hem klip goruntude
+        kaliyor hem `holdRound` tur kapanisini gorunmeyen bir animasyon icin
+        bekletiyordu. Mobil tarafta ayni sinif `MascotFx` (klipleri `require`
+        ile dogrudan ciziyor).
+      */
+      const CIZIM = /<Mascot\b|useClipUrl\(|assets\/mascot\//;
       const cizenler = (kok) => {
         const out = [];
         for (const f of yuruTsx(kok)) {
-          if (/<Mascot\b/.test(sil(read(f)))) out.push(f);
+          if (CIZIM.test(sil(read(f)))) out.push(f);
         }
         return out.sort();
       };

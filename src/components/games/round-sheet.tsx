@@ -12,6 +12,7 @@ import { useCourse } from "@/components/app-shell";
 import { useStill } from "@/lib/use-still";
 import { holdRound } from "@/lib/mascot-hold";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
+import { useDailyRound } from "@/components/daily-round";
 import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
 import { useLang, useT } from "@/lib/i18n/client";
 import { whyLabel, type Why } from "@/lib/why";
@@ -274,6 +275,7 @@ const PULL_LINGER_MS = 900;
  * aynı sırayla çiziyor.
  */
 function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
+  const tur = useDailyRound();
   const still = useStill();
   const t = useT();
   const lang = useLang();
@@ -308,13 +310,18 @@ function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
   /* "right": şerit sağdan gelir, mirket solunda (pull-left: sağa dönük, geri
      geri sola yürür). "left": şerit soldan gelir, mirket sağında (pull-right:
      sola dönük, geri geri sağa yürür). İki yön de eşit olasılıkta. */
+  /* ÇEKME KOREOGRAFİSİ DE YALNIZ TURDA. Buradaki Erdi `<Mascot>` üzerinden
+     değil, klip adresiyle doğrudan çiziliyor (`useClipUrl` → `pull-left/right`);
+     yani maskot bileşenine konan sınır bunu görmüyordu. Tur dışında hem klip
+     görünüyor hem `holdRound` tur kapanışını görünmeyen bir animasyon için
+     bekletiyordu (bkz. `components/daily-round`). */
   const fx = useMemo<"right" | "left" | null>(() => {
-    if (still || !pull) return null;
+    if (!tur || still || !pull) return null;
     if (Math.random() >= 0.25) return null;
     // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
     if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
     return Math.random() < 0.5 ? "right" : "left";
-  }, [still, pull]);
+  }, [tur, still, pull]);
 
   useEffect(() => {
     if (!fx) return;
@@ -372,7 +379,9 @@ function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
             className="shrink-0"
           >
             {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
-            <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned />
+            {/* Günlük tur dışında hiç çizilmiyor: `Mascot` null dönerdi ama
+                satırın boşluğu kalırdı (`components/daily-round`). */}
+            {tur ? <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned /> : null}
           </motion.span>
           <div className="flex min-w-0 flex-1 flex-col gap-0.5">
             <div className="flex items-center gap-1.5">

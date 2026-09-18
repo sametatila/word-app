@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
 import { useStageOwner } from "@/lib/mascot-stage";
 import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
+import { useDailyRound } from "@/components/daily-round";
 
 /**
  * Erdi — uygulamanın mirketi.
@@ -146,6 +147,12 @@ export function Mascot({
    */
   pinned?: boolean;
 }) {
+  /* Günlük turun ağacı dışında Erdi yok — gerekçe `components/daily-round`
+     ve bu dosyanın başı. Kural kodda, yorumda değil: tur bileşenleri
+     (`games/*`) dokuz yerden çağrılıyor.
+     Dönüş HOOK'LARDAN SONRA: burada erken çıkmak `useStill` ve ardındaki
+     yedi hook'u koşullu hâle getiriyordu (hook sırası kuralı). */
+  const tur = useDailyRound();
   const still = useStill();
   const stageOwner = useStageOwner();
   /* Sahne başkasınınsa bu Erdi burada değil: kutu yerinde kalır, içi boşalır. */
@@ -219,6 +226,8 @@ export function Mascot({
     }
     lastUrl.current = url;
   }, [url]);
+
+  if (!tur) return null;
 
   return (
     <motion.div

@@ -10,6 +10,7 @@ import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
 import { Mascot } from "@/components/mascot";
+import { useDailyRound } from "@/components/daily-round";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
@@ -24,6 +25,7 @@ const ARTIKEL_TONE: Record<string, string> = {
 export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const tx = useT();
   const lang = useLang();
+  const tur = useDailyRound();
   const { word } = round;
   const [revealed, setRevealed] = useState(false);
   const [skipping, setSkipping] = useState(false);
@@ -57,7 +59,11 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         okunurken şaşkın, anlam belirince gülümsüyor. Kelimeyi ilk kez gören
         birinin sırası da bu.
       */
-      prompt={<Mascot mood={revealed ? "happy" : "wow"} size={64} className="mx-auto" />}
+      /* Tur dışında Erdi çizilmiyor (`components/daily-round`) ve `prompt`
+         BOŞ bir düğüme dönüyordu: kartın üstünde sebepsiz bir boşluk kalırdı.
+         Kelime listesinden ya da demo sayfasından açılan intro turu artık
+         prompt'suz çiziliyor — etiket tek başına, eskiden de öyleydi. */
+      prompt={tur ? <Mascot mood={revealed ? "happy" : "wow"} size={64} className="mx-auto" /> : undefined}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}

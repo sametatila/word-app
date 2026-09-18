@@ -31,6 +31,7 @@ import { MascotPop } from "@/components/mascot-pop";
 import { MascotFx } from "@/components/mascot-fx";
 import { Mascot, MASCOT_BAND, MASCOT_STATE } from "@/components/mascot";
 import { CoachBubble } from "@/components/coach-bubble";
+import { DailyRound } from "@/components/daily-round";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
@@ -107,7 +108,26 @@ function sessionKey(game: PlayableGame | null): string {
  * `leaderboard` propu kalktı: sıralama oyunun başlangıç kartında duruyordu,
  * artık Öğren merkezinde (`components/learn/learn-hub`).
  */
+/**
+ * GÜNLÜK TUR — animasyonun kaldığı tek ağaç.
+ *
+ * Sağlayıcı BURADA, çünkü Erdi'yi çizen şeylerin bir kısmı paylaşımlı: tur
+ * bileşenleri (`games/*`) patron turundan, meydan okumadan, seviye sınavından,
+ * yürüyüş modundan, seviye tespiti denemesinden, beceri quizinden, kelime
+ * listesinden ve demo sayfasından da çağrılıyor. Sınır ağaç düzeyinde olmasa
+ * maskot o sekiz yüzeyde de oynardı (bkz. `components/daily-round`). Bileşen
+ * ikiye ayrıldı ki bütün dallar — yükleniyor, hata, kelime yok, tur, sonuç —
+ * sarmalayıcının içinde kalsın.
+ */
 export function SessionPlayer() {
+  return (
+    <DailyRound>
+      <SessionRound />
+    </DailyRound>
+  );
+}
+
+function SessionRound() {
   const t = useT();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");

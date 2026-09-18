@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { Mascot } from "@/components/mascot";
 import { RoundSheet, type SheetData } from "./round-sheet";
+import { useDailyRound } from "@/components/daily-round";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -113,6 +114,7 @@ export function GameShell({
    */
   onContinue?: () => void;
 }) {
+  const tur = useDailyRound();
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col md:block">
       {/* SORU KARTI — mobil `rounds.tsx` › `Prompt` ile aynı: kendi yüzeyi,
@@ -136,8 +138,11 @@ export function GameShell({
         ve uzun ekranda soru kartı dibe çöküyordu; mobilde soru en üstte kalır,
         esneyen tek yer bu orta bölge (`MascotMid`, `flex: 1`).
       */}
+      {/* Erdi yalnız günlük turda (`components/daily-round`): patron turu,
+          meydan okuma, sınav, yürüyüş ve quiz aynı kabuğu çiziyor ve orada bu
+          orta bölge esneyen BOŞ bir alan olarak kalırdı. */}
       <div aria-hidden={sheet != null} className="flex min-h-5 grow items-center justify-center md:hidden">
-        {sheet == null ? <Mascot mood="idle" size={72} /> : null}
+        {tur && sheet == null ? <Mascot mood="idle" size={72} /> : null}
       </div>
 
       <div className="md:mt-5">{children}</div>
