@@ -24,6 +24,14 @@ export { MAX_TEXT, cleanForSpeech } from "./text";
  *
  * Protokol WebSocket: önce yapılandırma çerçevesi, sonra SSML, karşılığında
  * ikili ses çerçeveleri ve `turn.end` ile bitiş.
+ *
+ * UÇ HIZLI ARDIŞIK BAĞLANTIYI SINIRLIYOR. Yerelde denerken ölçüldü
+ * (2026-09-18): arka arkaya ~30 bağlantıdan sonra yenileri açılmıyor ve
+ * "sentez zaman aşımı" ya da "sentez bağlantısı kapandı" diye düşüyor;
+ * aralara ~1 saniye koyunca hepsi geçiyor. Canlıda görünmüyor çünkü istekler
+ * zaten dağınık ve çoğu önbellekten dönüyor — ama bir betikle toplu deneme
+ * yapan biri bunu "Edge kırıldı" diye okuyabilir. Öyle değil: bekle ve
+ * yeniden dene.
  */
 
 const TRUSTED_TOKEN = "6A5AA1D4EAFF4E9FB37E23D68491D6F4";
