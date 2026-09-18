@@ -194,16 +194,17 @@ async function serverUnreachable(): Promise<boolean> {
   return !online;
 }
 
-/**
- * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
- * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
- */
 /* Temizleme ve BÖLME kuralı `ttsText`te, webin `lib/tts/text`iyle birebir
    aynı kopya (parite `npm run check:tts` 4. bölümde). Burada ayrı bir kopyası
    vardı ve `speakAndWaitVoiced` onu HİÇ çağırmıyordu: cihaz sesine düşülen her
    okumada "_____" yeniden "alt tire alt tire alt tire" diye okunuyordu. */
 export { cleanForSpeech } from "./ttsText";
 
+/**
+ * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden;
+ * `opts.voice` verilirse onu kullanır (ön izleme ve diyalog kadrosu),
+ * `opts.slow` telaffuz için yavaşlatır, `opts.pitch` konuşmacıyı ayırır.
+ */
 export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?: VoiceId; pitch?: Pitch }): void {
   /*
     UZUN METİN BÖLÜNÜYOR — bu yol eskiden sessizliğe çıkıyordu.
