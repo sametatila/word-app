@@ -538,6 +538,13 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
              an düşülüyordu, yani ses gelmeyen her denemede öğrenci iki
              hakkından birini hiçbir şey duymadan kaybediyordu — tam da
              yukarıdaki hata yüzünden sık olan durum.
+
+             iPHONE/iPAD'DE HÂLÂ İYİMSER. Orada boşluksuz WebAudio yolu
+             kullanılmıyor (bkz. `speak-button`, `playGapless`) ve ses öğesi
+             zincirinin sesin gerçekten başladığını bildiren bir olayı yok:
+             `onStart` çalma denemesinden hemen önce çağrılıyor. Platformun
+             verdiği bir sinyal olmadığı için düzeltilemiyor; kazanç yine de
+             duruyor, çünkü eskisi "basılır basılmaz"dı.
         */
         onPlay={(st) => {
           if ((plays[st.id] ?? 0) >= st.plays || playing) return;
