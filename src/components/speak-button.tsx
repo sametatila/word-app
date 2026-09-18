@@ -333,16 +333,23 @@ export function speakWithVoice(text: string, voice: VoiceId) {
 const TTS_FETCH_TIMEOUT_MS = 8_000;
 
 export function prefetchGerman(text: string) {
-  const clean = cleanForSpeech(text);
-  if (!clean || typeof fetch === "undefined") return;
+  if (typeof fetch === "undefined") return;
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
-  void fetch(ttsUrl(voice, clean), {
-    // Öncelik düşük: açık bir isteğin önüne geçmemeli.
-    priority: "low",
-  } as RequestInit).catch(() => {
-    /* önden indirme başarısızsa normal akış zaten çalışıyor */
-  });
+  /* ÇALMA NEYİ İSTİYORSA O İNDİRİLİYOR. Burada yalnız `cleanForSpeech`
+     uygulanıyordu; `speakGerman` ise uzun metni bölüyor. Bugünkü çağıranların
+     hepsi kelime ve tek cümle, yani fark görünmüyor — ama uzun bir metinle
+     çağrıldığı gün ısınan adres hiç istenmeyen bir adres olurdu (üstelik uç
+     onu 400 ile reddedeceği için istek de boşa giderdi). İkisi aynı bölmeden
+     geçsin ki ayrışmasınlar. */
+  for (const clean of splitForSpeech(text)) {
+    void fetch(ttsUrl(voice, clean), {
+      // Öncelik düşük: açık bir isteğin önüne geçmemeli.
+      priority: "low",
+    } as RequestInit).catch(() => {
+      /* önden indirme başarısızsa normal akış zaten çalışıyor */
+    });
+  }
 }
 
 /** Telaffuz çalışması için yavaş okuma — önce heceleri ayırt et, sonra tekrarla. */

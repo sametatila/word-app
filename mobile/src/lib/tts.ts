@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trackOnce } from "./track";
 import { navigationRef } from "./pushRoute";
 import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
-import { cleanForSpeech, splitForSpeech } from "./ttsText";
+import { splitForSpeech } from "./ttsText";
 import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgePrefetch, bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
@@ -240,15 +240,11 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
     speakOne(parts[0], voice, opts?.slow ?? false, opts?.pitch ?? "mid");
     return;
   }
-  // Çok parçalı metin sırayla: köprüde tek bir `Audio` nesnesi var ve ikinci
-  // çağrı birincisini keser, o yüzden parçalar beklenerek zincirleniyor.
-  const seq = ++speakSeq;
-  void (async () => {
-    for (const part of parts) {
-      if (seq !== speakSeq) return;
-      await speakChunkAndWait(part, voice, opts?.slow ?? false, opts?.pitch ?? "mid");
-    }
-  })();
+  /* Çok parçalı metin `speakAndWaitVoiced`e devrediliyor: köprüde tek bir
+     `Audio` nesnesi var ve ikinci çağrı birincisini keser, yani parçalar
+     beklenerek zincirlenmek ZORUNDA — ve o işlev zaten tam bunu yapıyor.
+     Burada ikinci bir zincir yazmak aynı mantığın iki kopyası olurdu. */
+  void speakAndWaitVoiced(text, voice, { slow: opts?.slow, pitch: opts?.pitch });
 }
 
 /** Tek parçanın çalınması — köprü → native → cihaz sesi. */
@@ -281,18 +277,6 @@ function speakOne(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pi
       });
     } catch { /* yut */ }
   });
-}
-
-/** Tek parçayı çalar ve BİTMESİNİ bekler — zincirleme için. */
-async function speakChunkAndWait(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pitch): Promise<void> {
-  if (bridgeReady()) {
-    if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-    await bridgeSpeakAndWait(voice, clean, slow, undefined, pitch);
-    return;
-  }
-  if (await speakServerTts(voice, clean, slow, pitch)) return;
-  if (!(await serverUnreachable())) return;
-  await speakAndWait(clean, langOf(voice), { slow, voice });
 }
 
 /** Ön izleme: belirli bir sesi hemen çalar (profil seçim ekranı). */
@@ -346,7 +330,37 @@ export async function speakAndWaitVoiced(
   */
   const parts = splitForSpeech(text);
   if (!parts.length) return;
+  /*
+    ÇOK PARÇALI METİN PEŞİN İNDİRİLİYOR.
+
+    Mobilde boru hattı yok: parça i bitmeden i+1 istenmiyor, yani her sınır
+    tam bir gidiş-dönüş. Sekiz parçalık bir okuma parçasında bu, metnin
+    içine serpiştirilmiş beş saniyelik bir bekleme demek. Hepsini baştan
+    indirmek o beklemeyi tamamen kaldırıyor — indirme köprünün İÇİNDE, yani
+    çalacak olan `Audio` ile aynı HTTP önbelleğine yazılıyor.
+
+    Tek parçalık metinde çağrılmıyor: zaten hemen çalınacak olan tek adresi
+    bir de ayrıca istemek işi hızlandırmaz, yalnız ikinci bir istek açardı.
+  */
+  if (parts.length > 1 && !opts?.native) {
+    bridgePrefetch(parts.map((t) => ({ voice, text: t, slow: opts?.slow ?? false, pitch: opts?.pitch })));
+  }
   const seq = ++speakSeq;
+  /*
+    DÜŞEN BİR PARÇA ZİNCİRİN KALANINI İPTAL ETMİYOR — ama sonsuza kadar da
+    denemiyor.
+
+    Bölme gelmeden önce bir metin TEK istekti: ya çalardı ya çalmazdı. Şimdi
+    N istek var ve herhangi biri düşerse "kalanı da boş ver" demek, tek bir
+    ağ hıçkırığının bütün okuma parçasını susturması demek olurdu. Web'in
+    ses öğesi zinciri de düşen parçayı atlayıp devam ediyor
+    (`chainWithElements` → `next()`), yani bu aynı zamanda parite.
+
+    Üst üste iki düşüşte bırakılıyor: native oynatıcının tavanı 8 saniye ve
+    her parçayı ayrı ayrı denemek (örneğin oturum düştüyse hepsi düşer)
+    kullanıcıyı dakikalarca sessizlikte bekletirdi.
+  */
+  let ardarda = 0;
   for (let i = 0; i < parts.length; i++) {
     if (seq !== speakSeq) return;
     const first = i === 0;
@@ -357,11 +371,16 @@ export async function speakAndWaitVoiced(
     }
     if (first) opts?.onStart?.();
     // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
-    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid")) continue;
-    if (seq !== speakSeq || !(await serverUnreachable())) return;
-    // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
-    // yazılıydı ve İngilizce ses Almanca okunurdu.
-    await speakAndWait(parts[i], langOf(voice), { slow: opts?.slow, voice });
+    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid")) { ardarda = 0; continue; }
+    if (seq !== speakSeq) return;
+    if (await serverUnreachable()) {
+      // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
+      // yazılıydı ve İngilizce ses Almanca okunurdu.
+      await speakAndWait(parts[i], langOf(voice), { slow: opts?.slow, voice });
+      ardarda = 0;
+      continue;
+    }
+    if (++ardarda >= 2) return;
   }
 }
 
@@ -426,13 +445,20 @@ export async function speakDialogue(
  */
 export function prefetchDialogue(course: string, segments: DialogueTurnAudio[], slow = false): void {
   const cast = dialogueCast(course, segments);
+  const pace = (slow ? "listenSlow" : "listen") as Pace;
+  /*
+    BÖLME ÖN İNDİRMEYE DE UYGULANIYOR.
+
+    Burada metin yalnız `cleanForSpeech`ten geçiyordu ve uzun bir replik
+    (içerikte 25 tane var, en uzunu 1 301 karakter) TEK parça olarak
+    ısıtılıyordu — oysa çalma onu böler. Isınan adres hiç istenmeyen bir
+    adres olurdu; üstelik uç onu 400 ile reddettiği için istek de boşa
+    giderdi. Çalma neyi istiyorsa ön indirme de onu istemek zorunda.
+  */
   bridgePrefetch(
-    segments.map((seg, i) => ({
-      voice: cast[i].voice,
-      text: cleanForSpeech(seg.text),
-      slow: (slow ? "listenSlow" : "listen") as Pace,
-      pitch: cast[i].pitch,
-    })),
+    segments.flatMap((seg, i) =>
+      splitForSpeech(seg.text).map((text) => ({ voice: cast[i].voice, text, slow: pace, pitch: cast[i].pitch })),
+    ),
   );
 }
 
