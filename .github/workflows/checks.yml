@@ -130,8 +130,19 @@ jobs:
       # taşındığını, `radius`/`type`/`hit`/`selection`/`loading`/`title` ise
       # yarıçap, tipografi ölçeği, dokunma hedefi, seçim durumu, iskelet ve
       # başlık kurallarını. Hepsi saf statik; ne veritabanı ne ağ istiyor.
+      # `check:tts` bunlara 2026-09-18'de katıldı ve ölçtüğü şey SESSİZ bir
+      # sınıf: seslendirmenin bozulma biçimlerinin hiçbiri tip hatası vermiyor,
+      # günlüğe düşmüyor, yalnız öğrencinin hiçbir şey duymamasıyla ortaya
+      # çıkıyor. Kurulduğu gün üçü canlıydı — uç 600 karakterin üstünü
+      # REDDETTİĞİ için deneme sınavındaki dinleme diyaloglarının 171'i ve
+      # okuma alıştırmalarının 85'i hiç çalmıyordu, ve çok konuşmacılı 800
+      # diyalogun hepsi tek ağızdan okunuyordu. Kapı dört şeyi ölçüyor:
+      # uzunluk, konuşmacı çözümü ve blok içi ses çakışması, bölme kaybı
+      # (parçaların birleşimi metnin birebir aynısı olmalı) ve web↔mobil
+      # paritesi. Saf statik; ne veritabanı ne ağ istiyor.
       - name: Tasarım ve kod kapıları
         run: |
+          npm run check:tts
           npm run check:client-boundary
           npm run check:purge
           npm run check:guest-merge
