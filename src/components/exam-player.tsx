@@ -1003,6 +1003,12 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
   */
   const [cast, setCast] = useState<SpeechSegment[]>([]);
   useEffect(() => {
+    /* Yeni diyalog geldiğinde VURGU da sıfırlanmalı. Bu bileşen maddeler
+       arasında yeniden kurulmuyor (anahtarı yok), ve `speakGerman`in bitiş
+       geri çağrısı okuma başka bir okumayla kesildiğinde hiç çağrılmıyor —
+       ikisi birleşince önceki maddenin repliği vurgulu kalıyor ve düğme
+       "Durdur" yazıyordu. */
+    setAt(null);
     const built = dialogueSegments(readLocal(COURSE_KEY) ?? "de", segments);
     setCast(built);
     // Bölümler tek tek çalınıyor (hangi repliğin okunduğu vurgulanıyor), o

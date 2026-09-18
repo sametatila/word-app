@@ -264,6 +264,16 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
 
   const advance = useCallback((auto: boolean) => {
     stopSpeaking();
+    /*
+      ÇALMA BAYRAĞI GÖREVLE BİRLİKTE SIFIRLANMALI.
+
+      `speakSegments`in `onEnd`i, okuma başka bir okumayla kesildiğinde HİÇ
+      çağrılmıyor (jeton değişiyor, zincir sessizce duruyor) — ve bir sonraki
+      görevin yönergesi okunduğu anda tam bu oluyor. Bayrak temizlenmeseydi
+      `playing` eski metnin kimliğinde takılı kalır ve sonraki görevde "Dinle"
+      düğmesi bir daha hiç açılmazdı: dinleme hakkı duruyor ama basılamıyor.
+    */
+    setPlaying(null);
     setAutoNext(auto);
     if (ix >= part.tasks.length - 1) { setPhase("result"); return; }
     const next = ix + 1;
