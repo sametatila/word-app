@@ -436,6 +436,41 @@ export async function speakDialogue(
   }
 }
 
+/** Paragraflar arasına konan pay (ms) — web `reading-player` ile aynı (0,5 sn). */
+const PARAGRAPH_GAP_MS = 500;
+
+/**
+ * Uzun bir okuma parçasını PARAGRAF PARAGRAF okur — web `reading-player`in eşi.
+ *
+ * `speakTarget(text)` ile aynı şey değil ve olmamalı, çünkü webdeki düğme üç
+ * şeyi birden yapıyor: paragrafı parça sınırı sayıyor (tek dizgeye eklenseydi
+ * paragraf geçişi hiç duyulmazdı), dinleme hızını kullanıyor ve sesi metnin
+ * dilinden SABİT seçiyor. Mobil yalnız `speakTarget(text)` çağırıyordu: hız
+ * varsayılan (−%8 yerine −%20 olmalı) ve bölme sınırları farklıydı — yani aynı
+ * parça iki platformda hiç kesişmeyen iki önbellek kümesi üretiyordu
+ * (2 245 karakterlik bir metinde ~8+8 ayrı sentez).
+ *
+ * Ses kullanıcı tercihinden bağımsız (`defaultVoice`, webde `lessonVoice`):
+ * okuma parçası uzun, yani pahalı bir sentez ve sabit ses onu bütün
+ * kullanıcılar için tek önbellek girdisi yapıyor.
+ */
+export async function speakPassage(text: string, course: string, opts?: { slow?: boolean }): Promise<void> {
+  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  if (!paragraphs.length) return;
+  const voice = defaultVoice(course);
+  const pace: Pace = opts?.slow ? "listenSlow" : "listen";
+  // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir
+  // gidiş-dönüş olurdu.
+  bridgePrefetch(paragraphs.flatMap((para) => splitForSpeech(para).map((t) => ({ voice, text: t, slow: pace }))));
+  const run = ++dialogueSeq;
+  for (let i = 0; i < paragraphs.length; i++) {
+    if (run !== dialogueSeq) return;
+    if (i > 0) await nativeDelay(PARAGRAPH_GAP_MS);
+    if (run !== dialogueSeq) return;
+    await speakAndWaitVoiced(paragraphs[i], voice, { slow: pace });
+  }
+}
+
 /**
  * Diyaloğun seslerini ÇALMADAN indirir — ekran açılır açılmaz.
  *

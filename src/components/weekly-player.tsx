@@ -366,7 +366,7 @@ function Stim({ stim, t }: { stim: Stimulus; t: (k: string, p?: Record<string, s
             return;
           }
           setPlaying(true);
-          speakSegments(cast, () => setPlaying(false));
+          speakSegments(cast, () => setPlaying(false), undefined, { onCancelled: () => setPlaying(false) });
         }}
       >
         {t(playing ? "wquiz.listen_stop" : "wquiz.listen_all")}
@@ -377,7 +377,7 @@ function Stim({ stim, t }: { stim: Stimulus; t: (k: string, p?: Record<string, s
       <div className="flex flex-col gap-1.5">
         {stim.segments.map((seg, i) => (
           <div key={i} className="flex items-center gap-2">
-            <SpeakButton text={seg.text} size="sm" voice={cast[i]?.voice} pace="listen" />
+            <SpeakButton text={seg.text} size="sm" voice={cast[i]?.voice} pace="listen" pitch={cast[i]?.pitch} />
             <span className="text-caption muted">{seg.speaker ?? `${i + 1}`}</span>
           </div>
         ))}

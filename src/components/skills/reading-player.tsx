@@ -55,6 +55,10 @@ export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercis
             speakSegments(
               exercise.text.split("\n\n").map((para, i) => ({ lang, text: para, pace: "listen" as const, gapBefore: i ? 0.5 : undefined })),
               () => setReading(false),
+              undefined,
+              /* Aynı ekrandaki sözlükçe düğmesine dokunulursa okuma kesiliyor
+                 ve `onEnd` hiç gelmiyordu: düğme "Durdur" hâlinde kalıyordu. */
+              { onCancelled: () => setReading(false) },
             );
           }}
         >

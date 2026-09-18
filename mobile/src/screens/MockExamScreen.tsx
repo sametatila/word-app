@@ -13,10 +13,10 @@ import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, ExamIcon, ClockI
 import { FlowScreen, FlowTopBar, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "../ui/flow";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MIN_ASSESS_WORDS } from "../lib/learningRules";
-import { prefetchDialogue, speakAndWaitVoiced, speakDialogue } from "../lib/tts";
+import { prefetchDialogue, speakAndWaitVoiced, speakDialogue, stopSpeaking } from "../lib/tts";
 import { castFor } from "../lib/voices";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
-import { currentCourseId, currentTargetLocale } from "../lib/courses";
+import { currentTargetLocale } from "../lib/courses";
 import {
   isOpenTask,
   mockBoolLabels,
@@ -143,6 +143,10 @@ export function MockExamScreen() {
     heldPaper(route.params.paperId, route.params.skill),
   );
   const part = paper?.part ?? null;
+  /* Kâğıdın kursu — ses kadrosunun kaynağı. `paper` yüklenene kadar null
+     olabiliyor; o anda seslendirilecek bir şey de yok, o yüzden Almanca
+     varsayılanı yalnız tipi daraltıyor. */
+  const course = paper?.course ?? "de";
   const budgets = useMemo(() => (part ? taskSeconds(part) : []), [part]);
 
   const [phase, setPhase] = useState<"kapak" | "gorev" | "sonuc">("kapak");
@@ -180,7 +184,13 @@ export function MockExamScreen() {
   const [autoNext, setAutoNext] = useState(false);
   const scroller = useRef<React.ComponentRef<typeof KeyboardAwareScroll> | null>(null);
   const alive = useRef(true);
-  useEffect(() => () => { alive.current = false; stopListening(); }, []);
+  /* `stopSpeaking()` EKLENDİ. Eski dinleme döngüsü her replikten önce
+     `alive.current`e bakıp kendi kendini kesiyordu; `speakDialogue`e
+     devredilince o denetim kalktı ve iptalin tek yolu `stopSpeaking()` oldu —
+     ama temizlik onu çağırmıyordu. Sonuç: dinleme çalarken geri tuşuna
+     basılınca diyalog bir sonraki ekranın üstünde sonuna kadar okumaya devam
+     ediyordu. Aynı diffteki `ExamScreen` ve `WeeklyScreen` bunu yapıyor. */
+  useEffect(() => () => { alive.current = false; stopListening(); stopSpeaking(); }, []);
 
   /* ── sesli yönerge ──────────────────────────────────────────────────────
    * YALNIZ dinleme ve konuşmada. Gerçek sınavda okuma ve yazma yönergesi
@@ -197,9 +207,9 @@ export function MockExamScreen() {
     announced.current.add(key);
     // Yönerge ANONS sesi: kadronun ilk (kadın) sesi. Konuşma bölümünde karşı
     // taraf bilerek erkek sesle konuşuyor, ikisi karışmasın.
-    const v = castFor(currentCourseId()).female[0];
+    const v = castFor(course).female[0];
     try { await speakAndWaitVoiced(text, v); } catch { /* ses yoksa sınav durmaz */ }
-  }, [voiced]);
+  }, [voiced, course]);
 
   /* ── saat: görev başına ───────────────────────────────────────────────
    *
@@ -404,28 +414,40 @@ export function MockExamScreen() {
       if (speaking) return;
       if ((plays[st.id] ?? 0) >= st.plays) return;
       setSpeaking(st.id);
-      await speakDialogue(currentCourseId(), st.segments, {
+      /* KADRO KÂĞIDIN KURSUNDAN, cihazınkinden DEĞİL. `currentCourseId()`
+         kullanılıyordu: Almanca kursa kayıtlı biri İngilizce kâğıt açtığında
+         bütün dinleme metni Almanca kadroya (Katja/Conrad) gidiyordu — web
+         tarafında düzeltilen hatanın (`voiceForSegment` parçanın dilini
+         atıyordu) mobildeki aynısı. Zürih kullanıcısının açtığı Almanca
+         kâğıt da iki sesle okunuyor ve webdekinden bambaşka bir önbellek
+         kümesi oluşturuyordu. */
+      await speakDialogue(course, st.segments, {
         onStart: () => setPlays((p) => ({ ...p, [st.id]: (p[st.id] ?? 0) + 1 })),
       });
       if (alive.current) setSpeaking(null);
     },
-    [plays, speaking],
+    [plays, speaking, course],
   );
 
   /*
-    ÖN İNDİRME — görev ekrana gelir gelmez, basılmadan önce.
+    ÖN İNDİRME — YALNIZ GÖRÜNÜR GÖREVİN metinleri.
 
     Replikler tek tek çalınıyor ve her sınırda tam bir gidiş-dönüş vardı;
     nöral ses ilk dinlemede bir-iki saniye sürüyor ve sınavda süre işliyor.
     İndirme köprünün İÇİNDE yapılıyor, çünkü çalacak olan da o.
+
+    Kapsam önce BÖLÜMÜN TAMAMIYDI ve bu fazlaydı: en yüklü bölümde
+    (`de-a2-04/listening`) 12 sesli metin, 57 replik var; ekran açılır açılmaz
+    57 istek birden gidiyordu. Edge ucu arka arkaya ~30 bağlantıdan sonra
+    yenilerini açmıyor (bkz. `lib/tts/edge`), yani soğuk bir kâğıtta ön indirme
+    tam da hızlandırmak istediği şeyi yavaşlatabilirdi. Web karşılığı da
+    yalnız görünür görevi ısıtıyor.
   */
   useEffect(() => {
-    for (const task of part?.tasks ?? []) {
-      for (const st of task.texts ?? []) {
-        if (st.kind === "audio") prefetchDialogue(currentCourseId(), st.segments);
-      }
+    for (const st of part?.tasks[ix]?.texts ?? []) {
+      if (st.kind === "audio") prefetchDialogue(course, st.segments);
     }
-  }, [part]);
+  }, [part, ix, course]);
 
   /*
     YANLIŞ SEBEP SÖYLENİYORDU. Bağlantıdaki kâğıt ya da bölüm bulunamadığında
@@ -754,7 +776,7 @@ function TaskView({
       {task.format === "writing" ? (
         <WritingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} colors={colors} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : task.format === "speaking" ? (
-        <SpeakingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} colors={colors} onOpen={onOpen} onOpenScore={onOpenScore} />
+        <SpeakingTask task={task} course={course} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} colors={colors} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : null}
     </View>
   );
@@ -1023,9 +1045,11 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
  * ilerler; gerçek dijital oturumda da fazlar otomatik akar.
  */
 function SpeakingTask({
-  task, value, score, attemptId, colors, onOpen, onOpenScore,
+  task, course, value, score, attemptId, colors, onOpen, onOpenScore,
 }: {
   task: MockTask;
+  /** Kâğıdın kursu — karşı tarafın sesi buradan (cihazdaki kurstan DEĞİL). */
+  course: string;
   value: string;
   score?: OpenScore;
   attemptId: number | null;
@@ -1041,7 +1065,8 @@ function SpeakingTask({
   const [micOk, setMicOk] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
   const alive = useRef(true);
-  useEffect(() => () => { alive.current = false; stopListening(); }, []);
+  // Görevden çıkınca karşı tarafın sesi de sussun (bkz. üstteki not).
+  useEffect(() => () => { alive.current = false; stopListening(); stopSpeaking(); }, []);
 
   const exchange = task.exchange ?? [];
   const prep = task.prepSeconds ?? 60;
@@ -1070,7 +1095,7 @@ function SpeakingTask({
     /* Karşı taraf sınav anonsundan AYRI bir ses: gerçek sözlü sınavda yönergeyi
        okuyan görevli ile karşındaki konuşmacı aynı kişi değil. Kadronun erkek
        sesi — kullanıcı tercihinden bağımsız, yani tek önbellek girdisi. */
-    const partnerVoice = castFor(currentCourseId()).male[0];
+    const partnerVoice = castFor(course).male[0];
 
     if (!exchange.length) {
       const secs = task.speakSeconds ?? 120;

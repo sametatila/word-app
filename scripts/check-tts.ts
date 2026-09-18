@@ -28,7 +28,7 @@ import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { MODULE_EXAMS } from "../src/lib/lessons/module-exam";
 import { MAX_TEXT, cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
-import { dialogueCast, genderOf, speakerKey, speakerKnown } from "../src/lib/tts/speakers";
+import { dialogueCast, genderOf, rolePairs, speakerKey, speakerKnown } from "../src/lib/tts/speakers";
 
 let errors = 0;
 let warnings = 0;
@@ -150,6 +150,20 @@ console.log("\n2. Konuşmacı");
      boş koltuk) ve yeni içerik yazan kişinin önü kesilmiyor. Ama sayı burada
      görünüyor: sessizce büyürse bir sonraki bakışta fark edilir. */
   if (unknown.length) warn("sözlük", `${unknown.length} etiket tanınmıyor — sıradaki ses veriliyor: ${unknown.slice(0, 20).join(", ")}${unknown.length > 20 ? " …" : ""}`);
+
+  /* ROL TABLOSU ASİMETRİK OLMAMALI.
+
+     `genderOf` önce `NEUTRAL`a bakıyor; oraya yazılan bir sözcük aynı yazımdaki
+     Almanca rol adını GÖLGELİYOR. Kurulurken tam bu olmuştu: "Student"
+     İngilizce diye cinsiyetsiz listeye yazılmıştı ve Almanca tarafta eril
+     çözülmüyordu — ama dişili ("Studentin") türetildiği için kadın
+     çözülüyordu. Sonuç: erkek bir öğrenci kadın sesine düşebiliyordu.
+     Hiçbir tip hatası vermez, yalnız yanlış sesle duyulur. */
+  for (const { male, female } of rolePairs()) {
+    if (genderOf(male, "de") !== "male") err("sözlük", `"${male}" eril çözülmüyor (${genderOf(male, "de") ?? "cinsiyetsiz"}) — büyük olasılıkla NEUTRAL gölgeliyor`);
+    if (female && genderOf(female, "de") !== "female") err("sözlük", `"${female}" dişil çözülmüyor (${genderOf(female, "de") ?? "cinsiyetsiz"})`);
+  }
+  console.log(`   rol çifti: ${rolePairs().length} · eril/dişil simetrisi tam`);
 
   /* ÇAKIŞMA: aynı blokta iki AYRI konuşmacı aynı ses+perde alırsa diyalog
      yine tek ağızdan duyulur ve bütün işin amacı kaybolur. */

@@ -20,7 +20,7 @@ import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
 import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
-import { speakTarget, speakAndWaitVoiced, prefetchDialogue, stopSpeaking } from "../lib/tts";
+import { speakTarget, speakAndWaitVoiced, prefetchDialogue, speakPassage, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
 import { currentCourseId } from "../lib/courses";
 import { API_BASE, fetchWithTimeout } from "../api/client";
@@ -35,7 +35,7 @@ import { sfx } from "../lib/sfx";
 const SKILL_KEY: Record<string, string> = { reading: "skills.reading", listening: "skills.listening", writing: "skills.writing", speaking: "skills.speaking", grammar: "skills.grammar" };
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
-function ReadingText({ text, colors }: { text: string; colors: Palette }) {
+function ReadingText({ text, course, colors }: { text: string; course: string; colors: Palette }) {
   /*
     "SESLİ OKU" UZUN PARÇALARDA HİÇ ÇALIŞMIYORDU.
 
@@ -45,13 +45,15 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
     "sağlıksız" sayılıp OTURUMUN GERİ KALANINI cihaz sesine düşürüyordu, yani
     bir uzun metin bütün uygulamanın sesini bozuyordu.
 
-    Bölme artık `speakTarget`in içinde; burada yapılan tek ek şey paragrafı
-    parça sınırı saymak — tek dizgeye eklenseydi paragraf geçişi duyulmazdı.
+    Bölme artık ortak yolda. `speakPassage` ayrıca paragrafı parça sınırı
+    sayıyor, dinleme hızını kullanıyor ve sesi metnin dilinden sabit seçiyor —
+    üçü de web `reading-player` ile birebir, yoksa aynı parça iki platformda
+    hiç kesişmeyen iki önbellek kümesi üretirdi.
   */
   return (
     <Card style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
-        <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel={t("item.read_text_aloud")}
+        <PressableScale onPress={() => void speakPassage(text, course)} hitSlop={8} accessibilityLabel={t("item.read_text_aloud")}
           style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 6 }}>
           <SpeakerIcon color={colors.primaryText} size={18} />
           <Text variant="caption" color={colors.primaryText}>{t("item.read_aloud")}</Text>
@@ -423,7 +425,7 @@ export function ItemScreen() {
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>{exercise.intro}</Text>
 
-        {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} colors={colors} /> : null}
+        {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} course={exercise.id.startsWith("en-") ? "en" : currentCourseId()} colors={colors} /> : null}
         {exercise.skill === "listening" && exercise.segments ? <ListeningBody segments={exercise.segments} colors={colors} /> : null}
         {exercise.skill === "grammar" && exercise.explanation ? (
           <GrammarBody focus={exercise.focus ?? ""} blocks={exercise.explanation} colors={colors} />

@@ -1,6 +1,6 @@
 "use client";
 
-import { COURSE_KEY, dialogueSegments, prefetchSegments, readLocal, speakSegments, stopSpeaking } from "@/components/speak-button";
+import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakSegments, stopSpeaking } from "@/components/speak-button";
 import { useTargetLang } from "./player-context";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ListeningExercise } from "@/lib/skills/types";
@@ -69,7 +69,9 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
     tekrarlanıyordu. Ses önceden indirilince sınır duyulmaz oluyor.
   */
   useEffect(() => {
-    if (!hasAudio) prefetchSegments(castNow(false));
+    /* TEK TEK, birleştirmeden: burada çalma da replik replik
+       (`speakSegments([cast[i]])`) ve birleştirilmiş adres hiç istenmiyor. */
+    if (!hasAudio) prefetchEachSegment(castNow(false));
   }, [hasAudio, castNow]);
 
   useEffect(() => {
@@ -166,7 +168,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
          bilinmeli. Sınırdaki bekleme ön indirmeyle kapatılıyor. */
       speakSegments([cast[i]], () => next(i + 1), () => {
         if (run === runRef.current) setStarted(true);
-      });
+      }, { onCancelled: () => { if (run === runRef.current) stop(); } });
     };
     next(0);
   }
@@ -193,6 +195,9 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       () => {
         if (run === runRef.current) setStarted(true);
       },
+      /* Araya başka bir okuma girerse (aynı ekrandaki sözlükçe düğmesi)
+         `onEnd` hiç gelmiyor ve düğme "çalıyor" hâlinde takılı kalıyordu. */
+      { onCancelled: () => { if (run === runRef.current) stop(); } },
     );
   }
 

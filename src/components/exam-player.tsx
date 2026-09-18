@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
-import { COURSE_KEY, dialogueSegments, prefetchSegments, readLocal, speakGerman, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
+import { COURSE_KEY, dialogueSegments, prefetchEachSegment, readLocal, speakGerman, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "@/components/icons";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
@@ -1011,9 +1011,9 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
     setAt(null);
     const built = dialogueSegments(readLocal(COURSE_KEY) ?? "de", segments);
     setCast(built);
-    // Bölümler tek tek çalınıyor (hangi repliğin okunduğu vurgulanıyor), o
-    // yüzden her sınırda bir gidiş-dönüş olurdu; önden indirme onu kapatıyor.
-    prefetchSegments(built);
+    /* TEK TEK, birleştirmeden: çalma da replik replik (hangi repliğin
+       okunduğu vurgulanıyor), yani birleştirilmiş adres hiç istenmiyor. */
+    prefetchEachSegment(built);
   }, [segments]);
 
   function playFrom(i: number) {
@@ -1023,7 +1023,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
       if (alive.current) playFrom(i + 1);
     };
     // Kadro henüz kurulmadıysa (ilk boyama) eski yol: ses yine çıkıyor.
-    if (cast[i]) speakSegments([cast[i]], done);
+    if (cast[i]) speakSegments([cast[i]], done, undefined, { onCancelled: () => { if (alive.current) setAt(null); } });
     else speakGerman(segments[i].text, done, "listen");
   }
 

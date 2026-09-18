@@ -64,6 +64,14 @@ export function cleanForSpeech(text: string): string {
          ile duruyor ve motor onu "alt tire alt tire alt tire" diye okuyordu —
          cümlenin kendisi kaybolacak kadar. Yerine boşluk konuyor: öğrenci
          cümleyi eksik kelimesiyle, akıcı biçimde duyuyor. */
+      /* ÜÇ NOKTA ATILIYOR. İçerikte kalıbın devamını gösteriyor ("Ich möchte
+         …") ama nöral ses onu uzun bir duraklama olarak okuyor: ekranda
+         anlamlı, kulakta delik. Kural WEB İSTEMCİSİNDE, `mergeForSpeech`in
+         içindeydi — yani yalnız parça yolundan geçen metne uygulanıyordu:
+         mobil hiç uygulamıyor, web'in `speakGerman`i de uygulamıyordu. Aynı
+         cümle üç ayrı yazımla üç ayrı önbellek girdisi oluyordu. Buraya
+         taşındı, çünkü adres üreten herkesin aynı metni görmesi şart. */
+      .replace(/…|\.{3}/g, " ")
       .replace(/_{2,}/g, " ")
       .replace(/[/–—]/g, " ")
       .replace(/\s+/g, " ")

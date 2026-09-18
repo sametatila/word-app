@@ -82,6 +82,33 @@ let extra: HTMLAudioElement | null = null;
 /** Bitişi hangi okumaya ait olduğunu ayırt etmek için — öğe paylaşıldığı için gerekli. */
 let token = 0;
 
+/**
+ * Süren okumanın "kesildim" bildirimi.
+ *
+ * SORUN: `onEnd` yalnız okuma KENDİ BİTTİĞİNDE çağrılıyor. Araya başka bir
+ * okuma girdiğinde jeton değişiyor ve zincir sessizce duruyor — hiçbir geri
+ * çağrı gelmiyor. Arayüzde "çalıyor" bayrağını yalnız `onEnd`de sıfırlayan
+ * her yüzey o noktada takılı kalıyordu: haftalık quiz'de düğme "Durdur"
+ * yazmaya devam ediyor, okuma parçasında durdur simgesi kalıyor, deneme
+ * sınavında (görev değişiminde ayrıca sıfırlanmasaydı) düğme bir daha hiç
+ * açılmıyordu.
+ *
+ * `onEnd`i kesilmede de çağırmak YANLIŞ olurdu: bazı çağıranlar onu bir
+ * SONRAKİ parçaya geçmek için kullanıyor (beceri dinlemesi, modül sınavı) ve
+ * kesilen bir okuma kendiliğinden ilerlerdi. Bu yüzden ayrı bir bildirim var
+ * ve yalnız arayüz durumunu temizleyenler abone oluyor.
+ */
+let activeStop: (() => void) | null = null;
+
+/** Jeton artışının TEK yeri — kesilen okumanın bildirimi burada gidiyor. */
+function bumpToken(): number {
+  const notify = activeStop;
+  activeStop = null;
+  token++;
+  notify?.();
+  return token;
+}
+
 function audioElement(): HTMLAudioElement | null {
   if (typeof Audio === "undefined") return null;
   if (!element) element = new Audio();
@@ -274,7 +301,7 @@ function speakChain(
   slow: Pace | boolean = false,
   onStart?: () => void,
 ): (() => void) | null {
-  const mine = ++token;
+  const mine = bumpToken();
   stopActiveChain();
   element?.pause();
   extra?.pause();
@@ -464,7 +491,8 @@ function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
   const sameVoice = (a: SpeechSegment, b: SpeechSegment) =>
     a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace;
   for (const seg of segments) {
-    const text = cleanForSpeech(seg.text.replace(/…|\.{3}/g, " "));
+    // Üç nokta artık `cleanForSpeech`in içinde (tek kopya, iki platform).
+    const text = cleanForSpeech(seg.text);
     if (!text) continue;
     const last = merged[merged.length - 1];
     // Kendi payı istenen bir parça birleşmiyor: pay ancak parça sınırında var.
@@ -758,7 +786,10 @@ function chainWithElements(
         return;
       }
       const { voice, course } = voiceForSegment(queue[i]);
-      speakWithBrowser(queue[i].text, voice, course, () => step(i + 1));
+      // Hız da geçiyor: parça başına `pace` bu çalışmada eklendi ama bu yola
+      // hiç ulaşmıyordu, yani çevrimdışı bir dinleme diyaloğu `listen`
+      // kademesi yerine normal hızda okunuyordu.
+      speakWithBrowser(queue[i].text, voice, course, () => step(i + 1), queue[i].pace ?? false);
     };
     step(startIndex);
     return;
@@ -839,7 +870,7 @@ function chainWithElements(
       moved = true;
       disarm();
       const { voice, course } = voiceForSegment(queue[i]);
-      speakWithBrowser(queue[i].text, voice, course, () => playAt(i + 1));
+      speakWithBrowser(queue[i].text, voice, course, () => playAt(i + 1), queue[i].pace ?? false);
     };
 
     el.onended = next;
@@ -918,7 +949,15 @@ export function speakSegments(
    * baştan seçiyor; boşluksuzluk orada zaten ikinci derecede, çünkü parçalar
    * arasında bilerek sessizlik var.
    */
-  opts?: { background?: boolean },
+  opts?: {
+    background?: boolean;
+    /**
+     * Okuma ARAYA GİREN başka bir okumayla kesildiğinde çağrılır (kendi
+     * bitişinde değil — o `onEnd`). Yalnız arayüz durumunu temizlemek için:
+     * bir sonraki parçaya geçmek gibi bir iş buraya yazılmamalı.
+     */
+    onCancelled?: () => void;
+  },
 ): () => void {
   const queue = mergeForSpeech(segments);
   if (!queue.length) {
@@ -927,7 +966,8 @@ export function speakSegments(
     return () => {};
   }
 
-  const mine = ++token;
+  const mine = bumpToken();
+  activeStop = opts?.onCancelled ?? null;
   stopActiveChain();
   element?.pause();
   extra?.pause();
@@ -943,7 +983,7 @@ export function speakSegments(
     chainWithElements(queue, 0, onEnd, mine, startOnce, true);
     return () => {
       if (token !== mine) return;
-      token++;
+      bumpToken();
       stopActiveChain();
       element?.pause();
       extra?.pause();
@@ -963,7 +1003,9 @@ export function speakSegments(
 
   return () => {
     if (token !== mine) return;
-    token++;
+    // Çağıran zaten kendi durumunu biliyor: iptali kendi istedi.
+    activeStop = null;
+    bumpToken();
     stopActiveChain();
     element?.pause();
     extra?.pause();
@@ -1020,7 +1062,7 @@ export function dialogueSegments(
  * hiçbir şeyi tetiklemiyor — eller serbest döngü kendi kendine açılmıyor.
  */
 export function stopSpeaking() {
-  token++;
+  bumpToken();
   stopActiveChain();
   element?.pause();
   extra?.pause();
@@ -1046,6 +1088,22 @@ export function prefetchSegments(segments: SpeechSegment[]) {
   }
 }
 
+/**
+ * Parçaları TEK TEK ön indirir — birleştirmeden.
+ *
+ * `prefetchSegments` aynı sesle okunacak bitişik parçaları birleştiriyor,
+ * çünkü onu çağıranların çoğu diyaloğu tek zincirde çalıyor ve çalma da aynı
+ * birleştirmeden geçiyor. Ama iki yüzey replik replik çalıyor — beceri
+ * dinlemesi ve modül sınavı, transkriptte hangi satırın okunduğunu
+ * göstermek için — ve onlarda birleştirilmiş adres HİÇ istenmiyor: ısınan
+ * şey çalınacak şey olmuyor, üstelik gereksiz bir istek de gidiyor.
+ * Ölçüldü: beceri dinlemesinin 614 egzersizinden 298'i ardışık aynı
+ * konuşmacı içeriyor, yani ön indirme yarısında boşa gidiyordu.
+ */
+export function prefetchEachSegment(segments: SpeechSegment[]) {
+  for (const seg of segments) prefetchSegments([seg]);
+}
+
 function play(
   clean: string,
   voice: VoiceId,
@@ -1061,8 +1119,9 @@ function play(
   }
 
   // Bu okumanın kimliği: öğe paylaşıldığı için, kesilen okumanın geç gelen
-  // olayı yenisinin bitişi sanılmamalı.
-  const mine = ++token;
+  // olayı yenisinin bitişi sanılmamalı. (Buraya yalnız `speakChain` üzerinden
+  // geliniyor, yani bildirim zaten gitti — `bumpToken` burada sessiz.)
+  const mine = bumpToken();
   stopActiveChain();
   let done = false;
 
@@ -1258,6 +1317,7 @@ export function SpeakButton({
   className = "",
   voice,
   pace,
+  pitch,
 }: {
   text: string;
   size?: "sm" | "md";
@@ -1269,17 +1329,26 @@ export function SpeakButton({
   voice?: VoiceId;
   /** Okuma hızı — dinleme metinlerinde `listen` (bkz. lib/tts/voices `Pace`). */
   pace?: Pace;
+  /**
+   * Perde — kadro tükendiğinde konuşmacıyı ayıran şey.
+   *
+   * Taşınmazsa iki şey birden bozuluyor: adres "tümünü dinle"nin istediğinden
+   * farklı oluyor (önbellek ıskası) VE Zürih'te aynı cinsiyetten iki konuşmacı
+   * satır düğmelerinde birebir aynı sese düşüyor — yani düzeltilen şeyin
+   * kendisi geri geliyor.
+   */
+  pitch?: Pitch;
 }) {
   const available = useSpeechAvailable();
   const t = useT();
   const speak = useCallback(() => {
-    if (!voice && !pace) {
+    if (!voice && !pace && !pitch) {
       speakGerman(text);
       return;
     }
     const lang = voice?.startsWith("en") ? "en" : voice?.startsWith("tr") ? "tr" : "de";
-    speakSegments([{ lang, text, voice, pace }]);
-  }, [text, voice, pace]);
+    speakSegments([{ lang, text, voice, pace, pitch }]);
+  }, [text, voice, pace, pitch]);
   if (!available) return null;
   const dim = size === "sm" ? "h-7 w-7" : "h-9 w-9";
   return (

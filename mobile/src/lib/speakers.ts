@@ -92,6 +92,8 @@ const ROLE_IRREGULAR: Record<string, string | null> = {
   Junge: "Mädchen",
   Herr: "Dame",
   Chef: "Chefin",
+  // Umlaut alıyor: `-in` eklemek "Staatsanwaltin" verirdi.
+  Staatsanwalt: "Staatsanwältin",
   // Dişili olmayanlar: rol cinsiyetten bağımsız, eril de sayılmıyor.
   Gast: null,
   Fahrgast: null,
@@ -108,7 +110,7 @@ const ROLE_REGULAR = [
   "Leiter", "Personalleiter", "Personaler", "Referent", "Bibliothekar", "Sekretär", "Friseur", "Bäcker",
   "Schaffner", "Kontrolleur", "Postbote", "Bote", "Passant", "Besucher", "Anrufer", "Bürger", "Zeuge",
   "Klient", "Patient", "Schuhmacher", "Händler", "Kassierer", "Gastgeber", "Arzthelfer", "Verteidiger",
-  "Staatsanwalt", "Zuhörer", "Freund", "Tourist",
+  "Zuhörer", "Freund", "Tourist",
 ];
 
 /** Cinsiyeti tek başına belli olan, rol tablolarına sığmayan etiketler. */
@@ -142,13 +144,30 @@ const NEUTRAL = [
   "Announcement", "Voice message", "Voicemail", "Podcast host", "Presenter", "Narrator", "Operator",
   "Neighbour", "Resident", "Staff", "Receptionist", "Cashier", "Assistant", "Agent", "Manager", "Officer",
   "Seller", "Baker", "Chemist", "Owner", "Engineer", "Planner", "Researcher", "Author", "Lecturer", "Tutor",
-  "Trainer", "Teacher", "Doctor", "Nurse", "Reporter", "Journalist", "Student", "Tourist", "Patient", "Guide",
+  "Teacher", "Doctor", "Nurse", "Guide",
   // Türkçe — bu sözcüklerin hiçbiri cinsiyet taşımıyor.
   "Muhabir", "Sözcü", "Aşçı", "Hasta", "Eczacı", "Öğretmen", "Yardımcı", "Kullanıcı", "Destek", "Aday",
   "Öğrenci", "Görevli", "Danışman", "Satıcı", "Müşteri", "Komşu", "Sunucu", "Anons",
   // Türkçede iki cinsiyette de kullanılan adlar: tanınıyor, cinsiyeti yok.
   "Ilkay", "İlkay", "Yağız", "Umay",
 ];
+
+/**
+ * YALNIZ İNGİLİZCEDE cinsiyetsiz olan etiketler.
+ *
+ * Bu altı sözcüğün İngilizce ve Almanca yazımı BİREBİR aynı ama cinsiyetleri
+ * değil: İngilizce "student" cinsiyet söylemez, Almanca "Student" erildir
+ * (dişili "Studentin"). Hepsi `ROLE_REGULAR`da duruyor, yani Almanca tarafı
+ * zaten çözülüyordu — ama bu liste `NEUTRAL` içindeyken onu GÖLGELİYORDU:
+ * `genderOf` önce `NEUTRAL`a bakıyor ve "Student" cinsiyetsiz dönüyordu.
+ * Sonuç asimetrikti — "Studentin" kadın, "Student" cinsiyetsiz — ve cinsiyetsiz
+ * konuşmacı boş koltuğa oturduğu için erkek bir öğrenci kadın sesiyle
+ * okunabiliyordu ("Herr Wolf" erkek koltuğu aldıktan sonra sıra kadına gelir).
+ *
+ * Ayrım artık DİLDEN: kâğıdın kursu İngilizceyse cinsiyetsiz, Almancaysa
+ * `ROLE_REGULAR`ın verdiği eril. Etiketin dilini bilen tek yer çağıran taraf.
+ */
+const NEUTRAL_EN_ONLY = ["Student", "Patient", "Reporter", "Journalist", "Tourist", "Trainer"];
 
 /**
  * İlk adlar.
@@ -214,6 +233,10 @@ function derived(): { female: Set<string>; male: Set<string> } {
 
 const TABLE = derived();
 const NEUTRAL_SET = new Set(NEUTRAL);
+const NEUTRAL_EN_SET = new Set(NEUTRAL_EN_ONLY);
+
+/** Cinsiyet söylemeyen ama geçerli olan hitaplar — bkz. `genderOf`. */
+const TITLE_ONLY = /^(Dr\.|Prof\.|Dipl\.|Ing\.|Pfr\.|RA\.)(\s|$)/;
 
 /** Etiketin karşılaştırma biçimi — boşluk ve sondaki iki nokta önemsiz. */
 export function speakerKey(label: string | undefined | null): string {
@@ -226,7 +249,7 @@ export function speakerKey(label: string | undefined | null): string {
  * `null` bir hata değil: "Dr. Weber" ya da "Rezeption" gerçekten cinsiyet
  * söylemiyor. Çağıran taraf o konuşmacıya sıradaki boş sesi veriyor.
  */
-export function genderOf(label: string | undefined | null): Gender | null {
+export function genderOf(label: string | undefined | null, lang: "de" | "en" = "de"): Gender | null {
   const s = speakerKey(label);
   if (!s) return null;
   // 1. Hitap. "Frau Dr. Kern", "Frau Prof. Nolte" de buraya düşüyor.
@@ -239,6 +262,8 @@ export function genderOf(label: string | undefined | null): Gender | null {
   // 2-3. Tam etiket, sonra ilk sözcük ("Frau Prof." dışı bileşikler için).
   const head = s.split(" ")[0];
   if (NEUTRAL_SET.has(s) || NEUTRAL_SET.has(head)) return null;
+  // Yalnız İngilizce içerikte cinsiyetsiz olanlar; Almancada eril (bkz. üstte).
+  if (lang === "en" && (NEUTRAL_EN_SET.has(s) || NEUTRAL_EN_SET.has(head))) return null;
   if (TABLE.female.has(s) || TABLE.female.has(head)) return "female";
   if (TABLE.male.has(s) || TABLE.male.has(head)) return "male";
   return null;
@@ -250,11 +275,9 @@ export function speakerKnown(label: string | undefined | null): boolean {
   if (!s) return true; // tek sesli metinde konuşmacı yok, sorun da yok
   if (genderOf(s)) return true;
   if (TITLE_ONLY.test(s)) return true;
-  return NEUTRAL_SET.has(s) || NEUTRAL_SET.has(s.split(" ")[0]);
+  const head = s.split(" ")[0];
+  return NEUTRAL_SET.has(s) || NEUTRAL_SET.has(head) || NEUTRAL_EN_SET.has(s) || NEUTRAL_EN_SET.has(head);
 }
-
-/** Cinsiyet söylemeyen ama geçerli olan hitaplar — bkz. `genderOf`. */
-const TITLE_ONLY = /^(Dr\.|Prof\.|Dipl\.|Ing\.|Pfr\.|RA\.)(\s|$)/;
 
 /** Kadronun perde sırası: önce düz, ses tükenince yukarı, sonra aşağı. */
 const PITCHES: Pitch[] = ["mid", "up", "down"];
@@ -287,10 +310,13 @@ export function dialogueCast(course: string, segments: { speaker?: string }[]): 
     return { voice: list[n % list.length], pitch: PITCHES[Math.floor(n / list.length) % PITCHES.length] };
   };
 
+  // Etiketin dili kâğıdın kursundan: İngilizce kâğıtta "Student" cinsiyetsiz,
+  // Almancada eril (bkz. `NEUTRAL_EN_ONLY`).
+  const lang = course === "en" ? "en" : "de";
   const chosen = new Map<string, SpeakerVoice>();
   // Önce cinsiyeti bilinenler — sıralarını korusunlar.
   for (const k of order) {
-    const g = genderOf(k);
+    const g = genderOf(k, lang);
     if (g) chosen.set(k, seat(g));
   }
   // Sonra bilinmeyenler: hangi havuzda daha az koltuk dolduysa oradan.
@@ -299,6 +325,7 @@ export function dialogueCast(course: string, segments: { speaker?: string }[]): 
     chosen.set(k, seat(taken.female <= taken.male ? "female" : "male"));
   }
 
-  const fallback: SpeakerVoice = { voice: pool.female[0], pitch: "mid" };
-  return segments.map((seg) => chosen.get(speakerKey(seg.speaker)) ?? fallback);
+  /* `order` her etiketi topluyor ve iki döngü hepsine koltuk veriyor, yani
+     `chosen` eksiksiz — yine de `??` duruyor ki tip daralsın. */
+  return segments.map((seg) => chosen.get(speakerKey(seg.speaker)) ?? { voice: pool.female[0], pitch: "mid" });
 }
