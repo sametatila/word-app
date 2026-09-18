@@ -12,11 +12,11 @@ import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
-import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
+import { bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate } from "../lib/premium";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
-import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -197,12 +197,25 @@ export function WalkModeScreen() {
   // sayNative: ÖĞRETMENİN sesi (kullanıcının anadili). Eskiden sayTR adıyla
   // doğrudan TURKISH_VOICE kullanıyordu — anadili Türkçe olmayan kullanıcıya
   // anlatım yine Türkçe okunurdu. sayTarget: öğrenilen dilin sesi (kurstan).
+  /*
+    İKİ YOL DA `speakAndWaitVoiced`TEN GEÇİYOR.
+
+    Ekran kapalı dal eskiden `speakServerTts`i DOĞRUDAN çağırıyordu ve o yol
+    metni ne temizliyor ne bölüyordu: ham metin adrese giriyor (aynı cümle
+    için ikinci bir önbellek girdisi, üstelik "_____" gibi işaretlerle) ve
+    600 karakteri aşan bir anlatım 400 ile reddedilip SESSİZ kalıyordu — tam
+    da ekranın kapalı olduğu, yani sessizliğin en pahalı olduğu yerde.
+    `native` bayrağı köprüyü atlamayı sürdürüyor, geri kalan her şey ortak.
+  */
   const sayNative = (txt: string) => {
     const v = narrationVoice(currentLang());
     const fin = probeSay("native", txt);
-    return fin(screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt).then(() => undefined) : speakAndWaitVoiced(txt, v)) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, v, { native: screenOffRef.current })) as Promise<void>;
   };
-  const sayTarget = (txt: string) => { const fin = probeSay("target", txt); return fin(screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt).then(() => undefined) : speakAndWaitVoiced(txt, currentVoiceId())) as Promise<void>; };
+  const sayTarget = (txt: string) => {
+    const fin = probeSay("target", txt);
+    return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: screenOffRef.current })) as Promise<void>;
+  };
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {

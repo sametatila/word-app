@@ -312,7 +312,23 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
 export async function speakAndWaitVoiced(
   text: string,
   voice: VoiceId,
-  opts?: { slow?: Pace | boolean; onStart?: () => void; pitch?: Pitch },
+  opts?: {
+    slow?: Pace | boolean;
+    onStart?: () => void;
+    pitch?: Pitch;
+    /**
+     * Köprüyü ATLA, doğrudan native oynatıcıya git.
+     *
+     * Ekran kapalıyken WebView ses odağını bırakıp duraklıyor: köprü "hazır"
+     * diyor ama hiçbir şey çalmıyor ve "end" mesajı da gelmiyor. Yürüyüş
+     * modu bu yüzden ekran kapalıyken `speakServerTts`i DOĞRUDAN çağırıyordu
+     * — ve o yol temizlemeyi de bölmeyi de atlıyordu: ham metin adrese
+     * giriyor (aynı cümle için ikinci bir önbellek girdisi) ve 600 karakteri
+     * aşan bir anlatım 400 ile reddedilip sessiz kalıyordu. Tam da ekranın
+     * kapalı olduğu, yani sessizliğin en pahalı olduğu yerde.
+     */
+    native?: boolean;
+  },
 ): Promise<void> {
   /*
     İKİ HATA BİRDEN BURADAYDI.
@@ -333,7 +349,7 @@ export async function speakAndWaitVoiced(
   for (let i = 0; i < parts.length; i++) {
     if (seq !== speakSeq) return;
     const first = i === 0;
-    if (bridgeReady()) {
+    if (!opts?.native && bridgeReady()) {
       if (nativePlaying) { stopServerTts(); nativePlaying = false; }
       await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch);
       continue;
