@@ -32,10 +32,33 @@ import { isOpenTask, taskSeconds, type MockPart, type MockSkill } from "../src/d
 // Ekran açılır açılmaz yönergeyi sesli okuyor ve konuşma görevinde mikrofonu
 // açıyor. İkisi de gerçek cihaz işi; testte sahtesi kullanılıyor, yoksa
 // tanıyıcının ve sentezleyicinin zamanlayıcıları testten sonra da yaşıyor.
+/*
+  SES KATMANI SAHTE — ve sahte TAM, eksiği kapatacak kadar değil.
+
+  Sahte üç işlevle yazılmıştı (`speakAndWaitVoiced`, `speakTarget`,
+  `ttsAvailable`) ve ağacın o gün çağırdığı şey buydu. Seslendirme çekirdeği
+  gelince (konuşmacı başına ses, kuyruk, ön indirme) `MockExamScreen`
+  `prefetchDialogue` çağırmaya başladı ve test "is not a function" ile düştü:
+  ekranla ilgisi olmayan bir eksik, sahtenin kendisindeydi.
+
+  Bu yüzden liste modülün TAMAMINI karşılıyor (`lib/tts` ne ihraç ediyorsa),
+  ekranın bugün çağırdığını değil. Böylece ses katmanına yeni bir işlev
+  eklenmesi bu testi kırmıyor — sahte zaten onu da tanıyor. Dönüş biçimleri
+  anlamlı: `ttsAvailable` false (cihazda ses yok), `loadVoicePref` geçerli bir
+  ses kimliği, geri kalanı sessiz.
+*/
 jest.mock("../src/lib/tts", () => ({
-  speakAndWaitVoiced: jest.fn(async () => {}),
-  speakTarget: jest.fn(),
   ttsAvailable: jest.fn(async () => false),
+  loadVoicePref: jest.fn(async () => "de-DE-KatjaNeural"),
+  setVoicePref: jest.fn(async () => {}),
+  currentVoiceId: jest.fn(() => "de-DE-KatjaNeural"),
+  stopSpeaking: jest.fn(),
+  speakTarget: jest.fn(),
+  speakWithVoice: jest.fn(),
+  speakAndWaitVoiced: jest.fn(async () => {}),
+  speakDialogue: jest.fn(async () => {}),
+  prefetchDialogue: jest.fn(),
+  speakAndWait: jest.fn(async () => {}),
 }));
 jest.mock("../src/lib/stt", () => ({
   ensureMicPermission: jest.fn(async () => false),
