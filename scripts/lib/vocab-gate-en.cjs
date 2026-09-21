@@ -4,7 +4,7 @@
  * NEDEN AYRI DOSYA. `vocab-gate.cjs` Almancaya özgü ve parametrelenemez:
  * havuzu `data/app/words.json`, sözcük regexleri `[a-zäöüß]`, biçimbilimi
  * ayrılabilen önek / ge-…-t ortacı / da-bileşiği üzerine kurulu ve kümülatif
- * kümesini `mobile/src/data/lessons/de-*.json` dosyalarından alıyor. Her
+ * kümesini Almanca ders kaynağından alıyor. Her
  * kuralı başka bir dilin kuralı; içine bir `if (dil === "en")` koymak iki
  * dilin morfolojisini tek gövdede tutmak olurdu ve ikisi de okunmaz hale
  * gelirdi.
@@ -33,11 +33,9 @@ const pool = fs
   .split("\n")
   .map((l) => JSON.parse(l));
 
-/** Ders sözlükçesi yalnız A1 ve A2 için var; üst seviyelerde havuz tek kaynak. */
-const dersler = (lv) => {
-  const f = `${R}/mobile/src/data/lessons/en-${lv}.json`;
-  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, "utf8")) : [];
-};
+/** Seviyenin dersleri; dersi olmayan seviyede havuz tek kaynak. */
+const { dersPaketi } = require("./lesson-packs.cjs");
+const dersler = (lv) => dersPaketi("en", lv);
 
 /* ── serbest sözcükler ────────────────────────────────────────────────── */
 

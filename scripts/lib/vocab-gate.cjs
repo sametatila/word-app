@@ -12,7 +12,6 @@
  * Kesin bir kapı DEĞİL: çekimli biçim ve özel ad yanlış alarm üretebilir.
  * Amaç oranı görmek ve gözden kaçan ağır kelimeyi yakalamak.
  */
-const fs = require("fs");
 const R = process.cwd();
 
 /* Çok sık işlev sözcükleri + sayı + selam: her ünitede serbest.
@@ -152,7 +151,8 @@ const DA_RE = /^(?:da|dar|wo|wor)(?:zu|für|mit|von|bei|an|auf|in|über|unter|na
 const TR_ISARET = /[ışğİıŞĞ]|\w+yor\b|\b(ne|neden|neye|neyi|neyden|nasıl|hangi|nedir|demek|sorusu|için|değil|yok|kaç|kim|kime|nerede|var|hasta|kişi)\b/i;
 const türkçeMi = (s) => TR_ISARET.test(String(s || ""));
 
-const dersler = (lv) => JSON.parse(fs.readFileSync(`${R}/mobile/src/data/lessons/de-${lv}.json`, "utf8"));
+const { dersPaketi } = require("./lesson-packs.cjs");
+const dersler = (lv) => dersPaketi("de", lv);
 const ekle = (acc, ls) => {
   for (const l of ls) {
     for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);
@@ -429,8 +429,7 @@ const dersUniteBellek = new Map();
 function dersUnite(lv) {
   if (dersUniteBellek.has(lv)) return dersUniteBellek.get(lv);
   const m = new Map();
-  let L = [];
-  try { L = dersler(lv); } catch { L = []; }
+  const L = dersler(lv);
   L.forEach((l, i) => {
     const u = Math.ceil((i + 1) / 4);
     const koy = (w) => { if (w && !m.has(w)) m.set(w, u); };
