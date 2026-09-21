@@ -30,6 +30,9 @@ import { api } from "../api/client";
  */
 export const CHANNEL_ID = "reminder";
 
+/** Bildirim vurgu rengi — `res/values/colors.xml` `notification_accent` ile aynı. */
+const NOTIF_COLOR = "#E8650F";
+
 /**
  * SUNUCUDAKİ AYNI TERCİH DE YAZILIYOR.
  *
@@ -243,7 +246,7 @@ async function schedule(id: string, body: string, timestamp: number, freq: Repea
      kendiliğinden uygulanıyor. */
   if (hasPushDevice()) return;
   await notifee.createTriggerNotification(
-    { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } }, ios: IOS_SES },
+    { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", color: NOTIF_COLOR, pressAction: { id: "default" } }, ios: IOS_SES },
     { type: TriggerType.TIMESTAMP, timestamp, repeatFrequency: freq },
   );
 }
@@ -375,7 +378,7 @@ export async function showTestNotification(): Promise<boolean> {
   await notifee.displayNotification({
     title: "Lernomi",
     body: t("notif.test_body"),
-    android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } },
+    android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", color: NOTIF_COLOR, pressAction: { id: "default" } },
     ios: IOS_SES,
   });
   return true;

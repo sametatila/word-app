@@ -128,6 +128,13 @@
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
         android:resource="@drawable/ic_notification" />
+      <!-- Vurgu rengi de yerel hatırlatmalarla aynı. react-native-firebase_messaging
+           firebase.json yokken burayı `@color/white` ile dolduruyor: uzak push'ta ikon
+           dairesi beyaz, açık panelde ikon neredeyse görünmez çıkıyordu. -->
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_color"
+        android:resource="@color/notification_accent"
+        tools:replace="android:resource" />
 
       <!-- notifee kendi ön plan servisini (shortService) manifest'e ekliyor; biz onu hiç
            başlatmıyoruz (yalnız kanal + tetikleyici bildirim kullanıyoruz). Kullanılmayan

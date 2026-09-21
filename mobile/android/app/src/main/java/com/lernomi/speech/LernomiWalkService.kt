@@ -12,6 +12,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import com.lernomi.R
 
 /**
@@ -83,6 +84,7 @@ class LernomiWalkService : Service() {
       .setContentText(getString(R.string.walk_notification_text))
       .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.walk_notification_text)))
       .setSmallIcon(R.drawable.ic_notification)
+      .setColor(ContextCompat.getColor(this, R.color.notification_accent))
       .setContentIntent(content)
       .addAction(0, getString(R.string.walk_stop), stop)
       .setOngoing(true)

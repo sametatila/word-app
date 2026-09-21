@@ -31,7 +31,10 @@ self.addEventListener("push", (event) => {
     self.registration.showNotification(data.title || "Lernomi", {
       body: data.body || "",
       icon: "/icon-192.png",
-      badge: "/icon-192.png",
+      // Rozet TEK RENK olmalı: Android Chrome onu durum çubuğunda yalnız
+      // alfasıyla çiziyor. Renkli uygulama ikonu burada dolu bir kareye
+      // dönüşüyordu; bu dosya bildirim ikonuyla aynı Erdi silüeti.
+      badge: "/badge-96.png",
       // Aynı etiket öncekinin yerine geçer: kaçırılan günler kilit
       // ekranında üst üste yığılmasın.
       tag: data.tag || "lernomi",

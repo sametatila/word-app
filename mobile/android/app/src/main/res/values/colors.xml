@@ -4,4 +4,9 @@
     <!-- Pencere zemini: JS tema zeminiyle aynı (theme/colors.ts bg) — açılışta ve tema geçişinde
          beyaz/siyah flaş olmasın. Koyu değer values-night'ta. -->
     <color name="window_bg">#FBF7F2</color>
+    <!-- Bildirim vurgu rengi: panelde küçük ikonun ve uygulama adının rengi, Android 12+
+         ikon dairesinin zemini. Tek değer, values-night'ta karşılığı YOK: sistem açık/koyu
+         panelde metin kontrastını bu rengin üstünden kendisi ayarlıyor, beyaz ikon da
+         bu tonda iki temada okunuyor. JS kopyası `lib/notifications` NOTIF_COLOR. -->
+    <color name="notification_accent">#E8650F</color>
 </resources>
