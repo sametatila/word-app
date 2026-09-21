@@ -85,6 +85,11 @@ import { enA2P7 } from "./en-a2-p7";
 import { enA2P8 } from "./en-a2-p8";
 import { enA2P9 } from "./en-a2-p9";
 import { enA2P10 } from "./en-a2-p10";
+import { enB1P6 } from "./en-b1-p6";
+import { enB1P7 } from "./en-b1-p7";
+import { enB1P8 } from "./en-b1-p8";
+import { enB1P9 } from "./en-b1-p9";
+import { enB1P10 } from "./en-b1-p10";
 
 /**
  * BECERİLER KÜTÜPHANESİ — Patika'dan bağımsız, öğrencinin kendi seçtiği içerik.
@@ -207,4 +212,9 @@ export const library: SkillExercise[] = [
   ...enA2P8,
   ...enA2P9,
   ...enA2P10,
+  ...enB1P6,
+  ...enB1P7,
+  ...enB1P8,
+  ...enB1P9,
+  ...enB1P10,
 ];
