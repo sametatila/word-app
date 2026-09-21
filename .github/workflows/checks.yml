@@ -45,7 +45,7 @@ jobs:
           POSTGRES_INITDB_ARGS: "--auth-local=trust --auth-host=scram-sha-256"
         ports: ["5432:5432"]
         options: >-
-          --health-cmd pg_isready --health-interval 5s
+          --health-cmd "pg_isready -U postgres" --health-interval 5s
           --health-timeout 5s --health-retries 10
     steps:
       # v7: node24 çalışma zamanı. v4 Node 20 hedefliyordu ve GitHub her job'da
@@ -543,6 +543,15 @@ jobs:
       - name: iOS paket denetimi
         working-directory: mobile
         run: npm run ios:check
+      # `nativeContent` testi anadil sözlüğünü KAYNAKTAN okuyor:
+      # src/lib/lessons/generated/native-{en,de}.json. Dosyalar depoda yok
+      # (.gitignore) ve web job'u onları kendi makinesinde üretiyor; bu job
+      # üretmeyince test ENOENT ile düşüyordu. Üretici betiklerin hiçbir npm
+      # bağımlılığı yok, kök `npm ci` gerekmiyor.
+      - name: Üretilen içerik
+        run: |
+          npm run lessons:apply
+          npm run lessons:apply-de
       - name: Jest
         working-directory: mobile
         run: npx jest --silent
