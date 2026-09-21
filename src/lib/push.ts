@@ -2,8 +2,9 @@ import "server-only";
 import webpush from "web-push";
 import { and, eq, inArray, lte, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, deviceTokens, leagueMembers, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
+import { dailyStats, deviceTokens, leagueMembers, profiles, pushSubscriptions, userWords, weeklyQuizAttempts } from "@/lib/db/schema";
 import { weekStart } from "@/lib/session";
+import { weekStartOf } from "@/lib/weekly-quiz/build";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
 import { deviceTokensFor, fcmEnabled, sendFcm, sendFcmRows } from "@/lib/fcm";
@@ -624,13 +625,21 @@ export async function runStreakAlerts(limit = 500) {
 }
 
 /**
- * HAFTALIK SINAV ÇAĞRISI — mobildeki üçüncü anahtar.
+ * HAFTALIK QUIZ ÇAĞRISI — mobildeki üçüncü anahtar.
  *
  * Haftada bir, pazar akşamı. Günlük bütçeyi o da paylaşıyor: haftanın bir
  * gününde iki bildirim göndermek, kapatılan izinlerin en ucuz sebebi.
+ *
+ * QUIZ'İ BU HAFTA BİTİRENE GİTMİYOR. Eski haftalık sınavın bir "yapıldı"
+ * kaydı yoktu ve çağrı herkese gidiyordu; quiz'in haftalık defteri var
+ * (`weekly_quiz_attempts`, hafta = SUNUCU gününün pazartesisi, `/api/quiz`
+ * ile aynı kural). Pazar akşamı "quiz'in hazır" demek, onu çarşamba bitirmiş
+ * birine yanlış bir şey söylemek.
  */
 export async function runWeeklyReminders(limit = 500) {
   if (!pushEnabled && !fcmEnabled) return { targets: 0, sent: 0 };
+
+  const quizWeek = weekStartOf(new Date().toISOString().slice(0, 10));
 
   const localDay = sql`(now() at time zone ${profiles.timezone})::date`;
   const localHour = sql`extract(hour from (now() at time zone ${profiles.timezone}))`;
@@ -653,6 +662,8 @@ export async function runWeeklyReminders(limit = 500) {
         // hatırlatma, hangi yoldan gittiğine göre yedi saat arayla geliyordu.
         sql`${localHour} >= 18`,
         sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
+        sql`not exists (select 1 from ${weeklyQuizAttempts} q
+            where q.user_id = ${profiles.userId} and q.week = ${quizWeek} and q.state = 'done')`,
         // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
         // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
         // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.

@@ -1816,7 +1816,7 @@ export const de: Record<string, string> = {
   "settings.group_learning": "Lernen",
   "settings.group_app": "App",
   "settings.group_privacy_about": "Datenschutz und Info",
-  "settings.notifications_sub": "Erinnerungen, Serienschutz, Wochentest",
+  "settings.notifications_sub": "Erinnerungen, Serienschutz, Wochen-Quiz",
   "paywall.store_not_open": "Das Store-Abo ist noch nicht freigeschaltet",
   "paywall.store_not_open_sub": "Premium bekommst du heute über einen Promo-Code — das Feld steht unten. Sobald es erhältlich ist, erscheinen hier Pläne und Preise.",
   "paywall.store_not_open_sub_ios": "Premium ist im App Store noch nicht erhältlich. Sobald es so weit ist, erscheinen hier Pläne und Preise.",

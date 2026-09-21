@@ -23,7 +23,7 @@ const HOURS = REMINDER_HOURS;
  * sorusu "ne kadar sık" — o cümle onu cevaplıyor.
  *
  * ÜÇ ANAHTAR DA MOBİLDEKİLER: günlük hatırlatma (açıkken saat çipleri), seri
- * koruma, haftalık sınav. Mobilde bunlar cihazda kurulan yerel bildirimler;
+ * koruma, haftalık quiz. Mobilde bunlar cihazda kurulan yerel bildirimler;
  * web'de sunucudan gidiyor, o yüzden tercih `profiles`ta duruyor ve iki
  * tarayıcıda aynı görünüyor.
  *

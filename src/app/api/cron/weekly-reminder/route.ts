@@ -8,12 +8,12 @@ export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
 export const maxDuration = 60;
 
 /**
- * Haftalık sınav çağrısı — pazar akşamı. Mobilde cihazda kurulan üçüncü
- * hatırlatma (`NotificationsScreen` › "Haftalık sınav").
+ * Haftalık quiz çağrısı — pazar akşamı. Mobilde cihazda kurulan üçüncü
+ * hatırlatma (`NotificationsScreen` › "Haftalık quiz").
  *
  * Zamanlayıcı sunucuda: `lernomi-cron-weekly` (bkz. AGENTS.md). Pazartesi
  * sabahki `lernomi-cron-summary` ile karıştırılmamalı — o haftalık ÖZETİ
- * yazıyor, bu sınava çağırıyor.
+ * yazıyor, bu quiz'e çağırıyor.
  */
 export async function GET(req: Request) {
   const basladi = Date.now();

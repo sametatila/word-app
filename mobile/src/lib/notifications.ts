@@ -11,7 +11,7 @@ import { api } from "../api/client";
  * diğerini iptal etmesin:
  *  - daily  : günlük hatırlatma (kullanıcının seçtiği saat, her gün)
  *  - streak : seri koruma (akşam, her gün) — "bugün henüz çalışmadıysan"
- *  - weekly : haftalık sınav (her Pazar)
+ *  - weekly : haftalık quiz (her Pazar)
  * Tercihler AsyncStorage'da; notifee tekrarlayan TIMESTAMP tetikleyici.
  */
 /**
@@ -308,7 +308,7 @@ export async function getWeeklyReminder(): Promise<boolean> {
   try { return (await AsyncStorage.getItem(KEY_WEEKLY)) === "1"; } catch { return false; }
 }
 
-/** Haftalık sınav hatırlatması (her Pazar). İzin reddedilirse false. */
+/** Haftalık quiz hatırlatması (her Pazar). İzin reddedilirse false. */
 export async function setWeeklyReminder(on: boolean): Promise<boolean> {
   if (on) {
     if (!(await requirePermission())) return false;

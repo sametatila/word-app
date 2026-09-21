@@ -472,7 +472,7 @@ export function SettingsScreen() {
 
           {/*
             BİLDİRİMLER PROFİLDEN BURAYA. Ekranın içeriği bir ayar: hatırlatma
-            saati, seri koruma, haftalık test. Profil menüsünde durduğu sürece
+            saati, seri koruma, haftalık quiz. Profil menüsünde durduğu sürece
             kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
             satırının hemen altında, neredeyse aynı adla duruyordu.
           */}
