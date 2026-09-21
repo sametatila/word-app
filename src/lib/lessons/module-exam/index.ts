@@ -6,6 +6,7 @@ import { C1_EXAMS } from "./c1";
 import { EN_A1_EXAMS } from "./en/a1";
 import { EN_A2_EXAMS } from "./en/a2";
 import { EN_B1_EXAMS } from "./en/b1";
+import { EN_B2_EXAMS } from "./en/b2";
 import type { ModuleExamPlan } from "./types";
 
 export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types";
@@ -30,7 +31,7 @@ export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types"
  */
 const COURSE_PLANS: Record<string, ModuleExamPlan[]> = {
   de: [...A1_EXAMS, ...A2_EXAMS, ...B1_EXAMS, ...B2_EXAMS, ...C1_EXAMS],
-  en: [...EN_A1_EXAMS, ...EN_A2_EXAMS, ...EN_B1_EXAMS],
+  en: [...EN_A1_EXAMS, ...EN_A2_EXAMS, ...EN_B1_EXAMS, ...EN_B2_EXAMS],
 };
 
 /**
