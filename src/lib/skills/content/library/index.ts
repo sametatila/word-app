@@ -95,6 +95,11 @@ import { enB2P7 } from "./en-b2-p7";
 import { enB2P8 } from "./en-b2-p8";
 import { enB2P9 } from "./en-b2-p9";
 import { enB2P10 } from "./en-b2-p10";
+import { enC1P6 } from "./en-c1-p6";
+import { enC1P7 } from "./en-c1-p7";
+import { enC1P8 } from "./en-c1-p8";
+import { enC1P9 } from "./en-c1-p9";
+import { enC1P10 } from "./en-c1-p10";
 
 /**
  * BECERİLER KÜTÜPHANESİ — Patika'dan bağımsız, öğrencinin kendi seçtiği içerik.
@@ -109,8 +114,18 @@ import { enB2P10 } from "./en-b2-p10";
  *
  * NE VAR. Kurs × seviye × parti başına bir dosya; her dosyada beş beceri
  * (okuma, dinleme, yazma, konuşma, dil bilgisi). Parti 1 `<kurs>-<seviye>.ts`,
- * sonrakiler `<kurs>-<seviye>-pN.ts`. Hedef: hücre başına beş egzersiz, yani
- * kurs × seviye × beceri için 5 (kurs başına 125).
+ * sonrakiler `<kurs>-<seviye>-pN.ts`.
+ *
+ * HEDEF 2026-09-21'DE BEŞTEN ONA ÇIKTI: kurs × seviye × beceri hücresi başına
+ * on egzersiz. Almanca kurs tam 250; İngilizce kursta A1 ve A2'nin okuma,
+ * dinleme ve yazma hücreleri `en-mobile-2026.ts` yüzünden onun üstünde ve
+ * öyle bırakıldı — hedef alt sınır, tavan değil.
+ *
+ * İNGİLİZCE PARTİLERDE İKİ KURAL FARKI: `de` alanı hedef dil (İngilizce)
+ * metnini taşır ve sözlükçede `en` aranmaz; doğru/yanlış şıkları „True“ ve
+ * „False“ olur. Ayrıca aynı söyleyiş ya da dil bilgisi konusu iki seviyede
+ * tekrarlanmaz — A1'e yazılan yedi konu ilk turda A2'dekilerle çakıştığı için
+ * yeniden yazıldı.
  *
  * KİMLİK. `<kurs>-<seviye>-lib-<r|l|w|s|g><n>` — "lib" kütüphane; eski
  * Beceriler kimlikleri (`a1-r1`) ve ünite kimlikleri (`a1-u1-r1`) ile
@@ -227,4 +242,9 @@ export const library: SkillExercise[] = [
   ...enB2P8,
   ...enB2P9,
   ...enB2P10,
+  ...enC1P6,
+  ...enC1P7,
+  ...enC1P8,
+  ...enC1P9,
+  ...enC1P10,
 ];
