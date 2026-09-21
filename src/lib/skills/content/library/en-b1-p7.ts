@@ -381,7 +381,7 @@ export const enB1P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I think she ___ like it. (tahmin)",
+        text: "I think she ___ like it. (a prediction)",
         options: [],
         answer: 0,
         accept: ["will", "'ll"],

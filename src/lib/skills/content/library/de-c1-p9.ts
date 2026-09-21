@@ -393,7 +393,7 @@ export const deC1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Das gilt ___ für alle. (güçlü olumsuzlama)",
+        text: "Das gilt ___ für alle. (starke Verneinung)",
         options: [],
         answer: 0,
         accept: ["keineswegs"],

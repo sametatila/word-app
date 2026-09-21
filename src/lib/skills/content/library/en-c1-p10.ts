@@ -409,7 +409,7 @@ export const enC1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "You ___ have waited — I was already on my way. (need, olumsuz)",
+        text: "You ___ have waited — I was already on my way. (need + not)",
         options: [],
         answer: 0,
         accept: ["needn't", "need not"],

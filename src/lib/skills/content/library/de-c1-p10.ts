@@ -402,7 +402,7 @@ export const deC1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Angaben blieben ___. (klar, olumsuz)",
+        text: "Die Angaben blieben ___. (klar, verneint)",
         options: [],
         answer: 0,
         accept: ["unklar"],

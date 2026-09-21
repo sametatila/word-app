@@ -166,7 +166,7 @@ export const enA1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ ticket is this? (sahibi soruluyor)",
+        text: "___ ticket is this? (the owner)",
         options: [],
         answer: 0,
         accept: ["Whose", "whose"],

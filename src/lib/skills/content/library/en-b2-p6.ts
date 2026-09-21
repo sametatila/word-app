@@ -387,7 +387,7 @@ export const enB2P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He works in sales, ___ she works in design. (fark)",
+        text: "He works in sales, ___ she works in design. (a comparison)",
         options: [],
         answer: 0,
         accept: ["whereas"],

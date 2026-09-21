@@ -377,7 +377,7 @@ export const enB2P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ residents have outside space. (genel, artikelsiz)",
+        text: "___ residents have outside space. (general, no article)",
         options: [],
         answer: 0,
         accept: ["Most", "most"],

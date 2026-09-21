@@ -123,7 +123,7 @@ export const enA2P7: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "You ___ see a doctor. (tavsiye)",
+        text: "You ___ see a doctor. (advice)",
         options: ["must", "should", "have to"],
         answer: 1,
         explain: "Tavsiye „should“ ile verilir.",
@@ -162,7 +162,7 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "You ___ drive so fast. (olumsuz tavsiye)",
+        text: "You ___ drive so fast. (should + not)",
         options: [],
         answer: 0,
         accept: ["shouldn't", "should not"],
@@ -170,7 +170,7 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "All visitors ___ wear a helmet. (kural)",
+        text: "All visitors ___ wear a helmet. (a written rule)",
         options: [],
         answer: 0,
         accept: ["must"],

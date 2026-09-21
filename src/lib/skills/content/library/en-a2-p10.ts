@@ -162,7 +162,7 @@ export const enA2P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "If you see him, ___ him to wait. (emir)",
+        text: "If you see him, ___ him to wait. (an order)",
         options: [],
         answer: 0,
         accept: ["tell"],

@@ -385,7 +385,7 @@ export const enB2P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "She warned me ___ to quote the headline. (olumsuz mastar)",
+        text: "She warned me ___ to quote the headline. (not + to + verb)",
         options: [],
         answer: 0,
         accept: ["not"],

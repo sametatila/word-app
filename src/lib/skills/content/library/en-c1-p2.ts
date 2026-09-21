@@ -429,7 +429,7 @@ export const enC1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "“It is argued that the effect is small.” — Bu ifade akademik kayda uygun mudur?",
+        text: "“It is argued that the effect is small.” — Bu ifade akademik kayıt için uygun mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "İddiayı kaynağını söylemeden ve ölçülü biçimde taşır; akademik kayıtta yerleşik bir kalıptır.",

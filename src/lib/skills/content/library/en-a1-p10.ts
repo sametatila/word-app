@@ -158,7 +158,7 @@ export const enA1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ you like to sit down? (kibar teklif)",
+        text: "___ you like to sit down? (polite offer)",
         options: [],
         answer: 0,
         accept: ["Would", "would"],

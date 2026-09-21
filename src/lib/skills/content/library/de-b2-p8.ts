@@ -363,7 +363,7 @@ export const deB2P8: SkillExercise[] = [
         explain: "„nachdem“ bağlacı „nach“ edatına karşılık gelir.",
       },
       {
-        text: "„Weil es sich verzögert hat, fällt der Termin aus.“ — Isim üslubu hangisi?",
+        text: "„Weil es sich verzögert hat, fällt der Termin aus.“ — Welche Fassung ist der Nominalstil?",
         options: [
           "Trotz der Verzögerung fällt der Termin aus.",
           "Wegen der Verzögerung fällt der Termin aus.",

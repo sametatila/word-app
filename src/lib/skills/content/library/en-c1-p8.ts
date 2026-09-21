@@ -394,7 +394,7 @@ export const enC1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The meeting was ___ until June. (put off → resmî)",
+        text: "The meeting was ___ until June. (put off → formal)",
         options: [],
         answer: 0,
         accept: ["postponed"],
@@ -418,7 +418,7 @@ export const enC1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "After ___ of the request, the panel refused it. (consider → isim)",
+        text: "After ___ of the request, the panel refused it. (consider → noun)",
         options: [],
         answer: 0,
         accept: ["consideration"],

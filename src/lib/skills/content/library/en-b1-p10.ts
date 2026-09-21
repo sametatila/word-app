@@ -356,7 +356,7 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         text: "___ children learn languages fast.",
-        options: ["The", "A", "— (hiçbiri)"],
+        options: ["The", "A", "— (no article)"],
         answer: 2,
         explain: "Genel bir ifade; çoğul isim artikel almaz.",
       },

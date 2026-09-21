@@ -146,7 +146,7 @@ export const enA1P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ got any money. (olumsuz)",
+        text: "I ___ got any money. (have + not)",
         options: [],
         answer: 0,
         accept: ["haven't", "have not"],
@@ -170,7 +170,7 @@ export const enA1P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He ___ got a phone. (olumsuz)",
+        text: "He ___ got a phone. (have + not)",
         options: [],
         answer: 0,
         accept: ["hasn't", "has not"],

@@ -415,7 +415,7 @@ export const enC1P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I've read both versions; ___ convinced me. (hiçbiri)",
+        text: "I've read both versions; ___ convinced me. (not one of the two)",
         options: [],
         answer: 0,
         accept: ["neither"],
