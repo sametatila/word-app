@@ -1,0 +1,1795 @@
+{
+ "packet": "e-003",
+ "words": [
+  {
+   "tr": "Medya ve teknoloji",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Media and technology"
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "Müzakere masasında",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "At the bargaining table"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "ne kadar yol aldım",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Present perfect vs past simple"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Park günü programı",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Park day"
+   ],
+   "ctx": [
+    "A1.8 Free time"
+   ]
+  },
+  {
+   "tr": "Rakam …-den alındı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The figure was taken from …"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Resmî bilgi yazısı",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Residence permit — what you need"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Resmî cevap yazısı",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Answer to your complaint"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "Saat …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It starts at … o'clock."
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saat …'de yiyoruz.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "We eat at … o'clock."
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sonra …'e taşındım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Then I moved to …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "söyleneni aktarmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Reported speech"
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "yapılanı bildirmek",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "I have already filled in the form"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "…-de başlayabilirim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I can start on …"
+   ],
+   "ctx": [
+    "A2.5 Working life · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "ağırlığı sona atmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Fronting and end-weight"
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "anlamadan önce olan",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Past perfect"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "aynı hedefin üç adı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in naming a target"
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "aynı kararın üç adı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in naming a measure"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "aynı kesimin üç adı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in naming"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "aynı rakamın üç adı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in naming a number"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "aynı savın üç kaydı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift between stylistic levels"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Aynı sokağın üç adı",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Three names for one street"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Banyodaki sorun ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the problem in the bathroom?"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · dinleme sorusu"
+   ],
+   "options": [
+    "There is a leak",
+    "The heating is broken",
+    "The window is broken",
+    "The light doesn't work"
+   ]
+  },
+  {
+   "tr": "demands that … be …",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Subjunctive in claims of equality"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Fonlanmayan şey ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has not been funded?"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · okuma sorusu"
+   ],
+   "options": [
+    "The promised green space",
+    "The new residential area",
+    "The draft law",
+    "The measurement"
+   ]
+  },
+  {
+   "tr": "Fotoğrafta kim var?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Who is in the photo?"
+   ],
+   "ctx": [
+    "A1.2 Family and people · dinleme sorusu"
+   ],
+   "options": [
+    "Ahmet's family",
+    "Lena's parents",
+    "Ahmet's friends",
+    "Ahmet's club"
+   ]
+  },
+  {
+   "tr": "Gelmek ister misin?",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Would you like to come?"
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Günüm …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My day begins at …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hâlâ garantisi var.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It's still under warranty."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hasta ne getirmeli?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What should the patient bring?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · dinleme sorusu"
+   ],
+   "options": [
+    "A thermometer",
+    "The insurance card",
+    "The tablets",
+    "Nothing"
+   ]
+  },
+  {
+   "tr": "Hasta neden arıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why does the patient call?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · dinleme sorusu"
+   ],
+   "options": [
+    "To cancel the appointment",
+    "To change the appointment",
+    "To ask for a medicine",
+    "To ask about the bill"
+   ]
+  },
+  {
+   "tr": "If we had talked, …",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Third conditional"
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "İki telefon teklifi",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Two offers for your phone"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "İtiraz edilen hesap",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "The disputed account"
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Kerem neyi bitirdi?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has Kerem already finished?"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · dinleme sorusu"
+   ],
+   "options": [
+    "The course",
+    "The first year",
+    "The second year",
+    "Nothing"
+   ]
+  },
+  {
+   "tr": "Kira ayda ne kadar?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How much is the rent every month?"
+   ],
+   "ctx": [
+    "A1.7 Home and living · okuma sorusu"
+   ],
+   "options": [
+    "140",
+    "620",
+    "760",
+    "1 May"
+   ]
+  },
+  {
+   "tr": "Kiralık daire ilanı",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Apartment for rent"
+   ],
+   "ctx": [
+    "A1.7 Home and living"
+   ]
+  },
+  {
+   "tr": "Kişi önce ne yiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the person eat first?"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · dinleme sorusu"
+   ],
+   "options": [
+    "The rice",
+    "The soup",
+    "Bread",
+    "Cheese"
+   ]
+  },
+  {
+   "tr": "kural ve zorunluluk",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "must / mustn't"
+   ],
+   "ctx": [
+    "A1.7 Home and living"
+   ]
+  },
+  {
+   "tr": "Müzakere ve şikâyet",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Claims and complaints"
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Ne getireceğini sor",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.3 At the doctor's · yazma"
+   ]
+  },
+  {
+   "tr": "Ne pişireceğini yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.3 Food and drink · yazma"
+   ]
+  },
+  {
+   "tr": "Planda …, sicilde …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the plan it is …; in the register, …"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Randevu değiştirmek",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Changing an appointment"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's"
+   ]
+  },
+  {
+   "tr": "Sandalyenin yanında",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It's next to the chair."
+   ],
+   "ctx": [
+    "A1.7 Home and living · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "sayı, yaş ve numara",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Numbers 1–100"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Tahlil …-de yapıldı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The test was taken on …"
+   ],
+   "ctx": [
+    "B1.8 The health system · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Telefonda sorun ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the problem with the phone?"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · dinleme sorusu"
+   ],
+   "options": [
+    "The screen is damaged",
+    "It is too expensive",
+    "The size is wrong",
+    "It arrived late"
+   ]
+  },
+  {
+   "tr": "Yeşil alan komitesi",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "The green space committee"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "yol yapılmadan önce",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Past perfect"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Zamanaşımı dolmadan",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Before the limitation period ends"
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "…-i sürükleyen şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What drives … is …"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "„bir …'im var“ demek",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "have got / have"
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "„revitalized indeed“",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Understatement about renewal"
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "aynı olay üç metinde",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in legal texts"
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "aynı tarlanın üç adı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Register shift in naming land"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Bayan X …-i belirtti",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Ms X noted that …"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Dairede kaç oda var?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How many rooms are there in the apartment?"
+   ],
+   "ctx": [
+    "A1.7 Home and living · dinleme sorusu"
+   ],
+   "options": [
+    "One room",
+    "Two rooms",
+    "Three rooms",
+    "Four rooms"
+   ]
+  },
+  {
+   "tr": "Doğrusu …, olsa da …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Granted, …, albeit …"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Doğrusu …; yine de …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Admittedly …; nonetheless, …"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Duygular ve hayaller",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Feelings and dreams"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "düzenli geçmiş zaman",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Past simple: -ed"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch"
+   ]
+  },
+  {
+   "tr": "En güçlü yanınız ne?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "And what is your greatest strength?"
+   ],
+   "ctx": [
+    "A2.5 Working life · Manager"
+   ]
+  },
+  {
+   "tr": "fiille başlayan soru",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Yes-no questions"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "geçmişte soru sormak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Did you …?"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch"
+   ]
+  },
+  {
+   "tr": "Hatırladığım bir gün",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "A day I remember"
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "Kayıp bildiriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.10 Offices and official business · konuşma"
+   ]
+  },
+  {
+   "tr": "Kişinin şikâyeti ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the problem?"
+   ],
+   "ctx": [
+    "A1.9 Health and the body · dinleme sorusu"
+   ],
+   "options": [
+    "A toothache",
+    "A headache",
+    "A bad hand",
+    "A cold"
+   ]
+  },
+  {
+   "tr": "Kursiyer ne yapacak?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the student going to do?"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · dinleme sorusu"
+   ],
+   "options": [
+    "Revise every evening",
+    "Repeat the module",
+    "Write a new plan with the tutor",
+    "Stop the course"
+   ]
+  },
+  {
+   "tr": "Nasıl ödeyebilirsin?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How can you pay?"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · okuma sorusu"
+   ],
+   "options": [
+    "Only in cash",
+    "By card or in cash",
+    "Only by card",
+    "With a cheque"
+   ]
+  },
+  {
+   "tr": "Nerede buluşuyorlar?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Where do they meet?"
+   ],
+   "ctx": [
+    "A1.4 My day · dinleme sorusu"
+   ],
+   "options": [
+    "At the office",
+    "At the library",
+    "At the meeting",
+    "In the building"
+   ]
+  },
+  {
+   "tr": "Neye katıldığını yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma"
+   ]
+  },
+  {
+   "tr": "Neyi beğendiğini yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma"
+   ]
+  },
+  {
+   "tr": "olumsuz cümle kurmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "don't / doesn't"
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "Otele nasıl gelirim?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "How do I get to the hotel?"
+   ],
+   "ctx": [
+    "A2.7 Travelling · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Oyunun yaptığı şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the play does is …"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "plan, niyet ve karar",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Future forms"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Profesyonel iletişim",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Professional communication"
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Projeyi ne kurtardı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What saved the project?"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · dinleme sorusu"
+   ],
+   "options": [
+    "The deadline extension",
+    "The supplementary agreement",
+    "The file number",
+    "The reminder"
+   ]
+  },
+  {
+   "tr": "Rahatsız ettim ama …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Sorry to bother you, but …"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saat …'de kalkıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I get up at …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sinemaya gidelim mi?",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Shall we go to the cinema?"
+   ],
+   "ctx": [
+    "A1.8 Free time"
+   ]
+  },
+  {
+   "tr": "Sonunda bir soru sor",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma"
+   ]
+  },
+  {
+   "tr": "Sürecin otomasyonu …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The automation of the process …"
+   ],
+   "ctx": [
+    "B2.5 Science and method · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şefin eleştirisi ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the manager's criticism?"
+   ],
+   "ctx": [
+    "B1.1 My career so far · dinleme sorusu"
+   ],
+   "options": [
+    "Two reports were late",
+    "The client was not called",
+    "The target was too low",
+    "The team was not supportive"
+   ]
+  },
+  {
+   "tr": "Şehir ve resmî işler",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Offices and official business"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Tabii, kabin şurada.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Yes, the fitting room is there."
+   ],
+   "ctx": [
+    "A1.5 Shopping · Shop assistant"
+   ]
+  },
+  {
+   "tr": "Teslim neden gecikti",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Why the delivery was late"
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "„cam salı toplanıyor“",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Passive voice"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "„olsaydım, söylerdim“",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Second conditional"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Adın nasıl yazılıyor?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "How do you spell your name?"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · Marco"
+   ]
+  },
+  {
+   "tr": "Adını ve soyadını yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma"
+   ]
+  },
+  {
+   "tr": "aidiyetin söylemediği",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Ellipsis in talk about belonging"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Ardından düğmeye bas.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "After that, press the button."
+   ],
+   "ctx": [
+    "A2.9 Media and technology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir koşul koyuyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.3 Reason and result · konuşma"
+   ]
+  },
+  {
+   "tr": "Cevabınızı bekliyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I look forward to your reply."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Çevre ve şehir yaşamı",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "The city and the environment"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Değiştirebilir miyim?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Can I change it?"
+   ],
+   "ctx": [
+    "A1.5 Shopping · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Denemede …, raporda …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the essay it was …; in the report, …"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "düzensiz geçmiş zaman",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Past simple: irregular verbs"
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "fiyat ve miktar sorma",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "How much is it?"
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "haber ve öneri sormak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Have you seen / heard …?"
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "hangi park, hangi yol",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Relative clauses"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "hayat deneyimi sormak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Present perfect: Have you ever …?"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "Hediye seçebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can choose a present."
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "her gün yapılan işler",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Present simple"
+   ],
+   "ctx": [
+    "A1.4 My day"
+   ]
+  },
+  {
+   "tr": "Hiç alınmayan şey ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What was never given?"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · dinleme sorusu"
+   ],
+   "options": [
+    "The consent for the name",
+    "The methodology",
+    "The correction",
+    "The database entry"
+   ]
+  },
+  {
+   "tr": "İkinci el satış ilanı",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "For sale: the desk that everyone asks about"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "İkinci perdeden sonra",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "After the second act"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "İlaç kullanma bilgisi",
+   "kind": "reading.title",
+   "n": 1,
+   "de": [
+    "Medicine for a headache"
+   ],
+   "ctx": [
+    "A1.9 Health and the body"
+   ]
+  },
+  {
+   "tr": "İş ne zaman başlıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "When does the job start?"
+   ],
+   "ctx": [
+    "A2.5 Working life · okuma sorusu"
+   ],
+   "options": [
+    "On 15 March",
+    "On 1 April",
+    "Next year",
+    "Immediately"
+   ]
+  },
+  {
+   "tr": "Kanıt, yargı ve seçim",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Evidence, judgement and choice"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "karşı görüşü aktarmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Reported speech"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Karşılaştırma tablosu",
+   "kind": "reading.genre",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.6 Shopping and services · okuma türü"
+   ]
+  },
+  {
+   "tr": "kendini tanıtma fiili",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "am / is / are"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Kiralar ve yeni kanun",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "Rents and the new law"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Müşteri neyi seçiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the customer choose?"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · dinleme sorusu"
+   ],
+   "options": [
+    "A repair",
+    "A refund",
+    "A bigger phone",
+    "A new charger"
+   ]
+  },
+  {
+   "tr": "nazik şikâyet ve rica",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Could you …, please?"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood"
+   ]
+  },
+  {
+   "tr": "Öğretmen ne öneriyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the tutor advise?"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · dinleme sorusu"
+   ],
+   "options": [
+    "Checking the last paragraph twice",
+    "Listening to more podcasts",
+    "Taking the exam later",
+    "Changing the level"
+   ]
+  },
+  {
+   "tr": "Sabah bilgilendirmesi",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "The morning briefing"
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "savın sırasını kurmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Fronting in building an argument"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Son danışma görüşmesi",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "The last supervision"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "söylenmeyeni bırakmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Ellipsis and substitution"
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "Sözcümüz …-i belirtti",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Our spokesperson stated that …"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şükür, ciddi değildi.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Luckily, it wasn't serious."
+   ],
+   "ctx": [
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Teslim neden gecikti?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why was the delivery late?"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · dinleme sorusu"
+   ],
+   "options": [
+    "The train stopped for two hours",
+    "The driver was ill",
+    "The client changed the day",
+    "The order was wrong"
+   ]
+  },
+  {
+   "tr": "Toprak, gıda ve tarım",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Land, food and the soil"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Zam neden reddedildi?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why was the raise refused?"
+   ],
+   "ctx": [
+    "B2.8 Money and career · dinleme sorusu"
+   ],
+   "options": [
+    "For operational reasons",
+    "Because the file was missing",
+    "Because of the works council",
+    "Because the contract ended"
+   ]
+  },
+  {
+   "tr": "…-mesine karar verildi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It was decided that …"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "„musluğu kapatırsan …“",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "First and second conditional"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "„nasıl çalışıyor“ dili",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Passive voice"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "Alışveriş ve hizmetler",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Shopping and services"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "beğenmek ve beğenmemek",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "I like it / I don't like it"
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "Bilgisayarım çok yavaş",
+   "kind": "listening.title",
+   "n": 1,
+   "de": [
+    "My computer is very slow"
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "Bugün işe gelemiyorum.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I can't come to work today."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bütçe izin verseydi, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If the budget had allowed it, …"
+   ],
+   "ctx": [
+    "B2.8 Money and career · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Büyükanne kaç yaşında?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How old is the grandma?"
+   ],
+   "ctx": [
+    "A1.2 Family and people · okuma sorusu"
+   ],
+   "options": [
+    "Eighteen",
+    "Twenty",
+    "Eighty",
+    "Two"
+   ]
+  },
+  {
+   "tr": "By June we will have …",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Future perfect and future continuous"
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Dairede neye izin yok?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is not allowed in the apartment?"
+   ],
+   "ctx": [
+    "A1.7 Home and living · okuma sorusu"
+   ],
+   "options": [
+    "Children",
+    "Animals",
+    "Friends",
+    "Music"
+   ]
+  },
+  {
+   "tr": "Emre ne zaman dönüyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "When does Emre travel home?"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · okuma sorusu"
+   ],
+   "options": [
+    "On Friday",
+    "On Saturday",
+    "On the first of May",
+    "Yesterday"
+   ]
+  },
+  {
+   "tr": "enjoy -ing / decide to",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Gerund or infinitive"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Göç, aidiyet ve kültür",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Belonging and its words"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Hukuk ve sözleşme dili",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Legal and contract language"
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "iddiayı ölçülü tartmak",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Hedging: plausible / questionable"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "iğneli cevap ve sınırı",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Irony in dispute"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  },
+  {
+   "tr": "iş yazışması kalıpları",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Formal email phrases"
+   ],
+   "ctx": [
+    "A2.5 Working life"
+   ]
+  },
+  {
+   "tr": "Jonas neden gelemiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why can't Jonas come?"
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · dinleme sorusu"
+   ],
+   "options": [
+    "He is ill",
+    "He is away this week",
+    "He doesn't like weddings",
+    "He has no present"
+   ]
+  },
+  {
+   "tr": "Kaç odası olduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.7 Home and living · yazma"
+   ]
+  },
+  {
+   "tr": "Kişi neyi zaten yaptı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has the visitor already done?"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · dinleme sorusu"
+   ],
+   "options": [
+    "Made a copy",
+    "Filled in the form",
+    "Paid the fine",
+    "Called the office"
+   ]
+  },
+  {
+   "tr": "Medya ve aktarılan söz",
+   "kind": "plan.title",
+   "n": 1,
+   "de": [
+    "Media and reported speech"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Ne kadar sürdüğünü yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.6 In town · yazma"
+   ]
+  }
+ ]
+}

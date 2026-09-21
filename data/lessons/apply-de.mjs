@@ -89,7 +89,14 @@ for (const r of read(`${DIR}../mock-exams/prose/out-de/`)) mock[r.kind + SEP + r
 const cando = {};
 for (const r of read(`${DIR}cando-de/out/`)) cando[r.id] = value(r);
 
-const data = { lesson, prose, task, mock, cando };
+/* MODÜL SINAVI KÂĞITLARI, düz `tr` anahtarıyla — kardeş hattın (`exam/out/`)
+   biçimiyle birebir aynı, o yüzden `resolveExamDe` ikinci bir çözücü
+   istemiyor. İngilizce kursun kâğıtları 2026-09-21'de yazıldı; o güne kadar
+   modül sınavı yalnız Almanca kursta olduğu için bu tablo hiç yoktu. */
+const exam = {};
+for (const r of read(`${DIR}exam-de/out/`)) exam[r.tr] = value(r);
+
+const data = { lesson, prose, task, mock, cando, exam };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-de.json`, `${JSON.stringify(data)}\n`);
@@ -98,5 +105,5 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-de.json yazıldı\n" +
     `  ders düzyazısı ${n(lesson)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · ` +
-    `deneme kâğıdı ${n(mock)} · can-do ${n(cando)}`,
+    `deneme kâğıdı ${n(mock)} · can-do ${n(cando)} · modül sınavı ${n(exam)}`,
 );

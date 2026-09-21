@@ -24,12 +24,15 @@ import { readFileSync } from "node:fs";
 import { LESSONS } from "@/lib/lessons/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams/source";
+import { courseExams } from "@/lib/lessons/module-exam";
 import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";
 import { candoForLesson } from "@/lib/cando-map";
 import {
   resolveExercise,
+  resolveExamDe,
   resolveMockPaper,
   isTurkishStem,
+  type ExamShape,
   type ExerciseShape,
   type MockShape,
   type NativeDict,
@@ -140,6 +143,23 @@ for (const p of papers) {
   } else H(`[kâğıt] çözülemedi: ${p.id}`);
 }
 
+/* ---- 3b. Modül sınavı kâğıtları ---------------------------------------- */
+/* YALNIZ İNGİLİZCE KURSUN KÂĞITLARI: Almanca kursu anadili Almanca olan biri
+   almıyor. Hattın kendi kapısı (`check:lessons-exam-de`) YAZILANI ölçüyor —
+   çıkarıcının bulduğu her dizenin karşılığı var mı; bu tarama tersini
+   soruyor, üretilmiş sözlükle çözücüyü gerçek kâğıtlar üzerinde
+   çalıştırıyor. İkisi ayrı iş: deneme kâğıdı hattında 6.627 dize yazılmıştı,
+   `apply.mjs` dizini okumuyordu ve yazılanı ölçen kapı bunu göremiyordu. */
+const exams = courseExams("en") as unknown as (ExamShape & { code: string })[];
+let examOk = 0;
+for (const p of exams) {
+  const out = resolveExamDe(asNative, p);
+  if (out) {
+    examOk++;
+    walk(out, `sınav ${p.code}`);
+  } else H(`[sınav] çözülemedi: ${p.code}`);
+}
+
 if (leftover.size) {
   H(`[tarama] çözülen içerikte ${leftover.size} Türkçe dize kaldı`);
   for (const [t, id] of [...leftover].slice(0, 10)) H(`    ${id}: ${JSON.stringify(t.slice(0, 60))}`);
@@ -172,8 +192,10 @@ if (errors.length) {
 }
 console.log(
   `\nözet: ders ${lessonOk}/${lessons.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
-    `kâğıt ${paperOk}/${papers.length} · can-do ${candoOk}/${candoIds.length} · taranan dize ${strings}\n` +
+    `kâğıt ${paperOk}/${papers.length} · modül sınavı ${examOk}/${exams.length} · ` +
+    `can-do ${candoOk}/${candoIds.length} · taranan dize ${strings}\n` +
     `sözlük: ders ${Object.keys(dict.lesson).length} · beceri ${Object.keys(dict.prose).length} · ` +
-    `kâğıt ${Object.keys(dict.mock).length} · can-do ${Object.keys(dict.cando).length}`,
+    `kâğıt ${Object.keys(dict.mock).length} · sınav ${Object.keys(dict.exam).length} · ` +
+    `can-do ${Object.keys(dict.cando).length}`,
 );
 process.exit(errors.length ? 1 : 0);

@@ -40,6 +40,15 @@ export type DeDict = {
   task: Record<string, string>;
   /** Deneme kâğıtları — anahtar `mockKey` ile aynı. */
   mock: Record<string, string>;
+  /**
+   * Modül sınavı kâğıtları — anahtar DÜZ `tr` (`exam-de/out/`).
+   *
+   * Kardeş sözlükteki `exam` ile aynı biçim, ters yön: orası Almanca kursun
+   * Türkçesini İngilizceye, burası İngilizce kursun Türkçesini Almancaya
+   * bağlıyor. Aynı biçimde olması bilinçli — `resolveExamDe` `NativeDict`
+   * bekliyor ve `DeDict` bu alanla olduğu gibi verilebiliyor.
+   */
+  exam: Record<string, string>;
   /** Can-do ifadeleri — anahtar `id` (`A1.SPK.1`). ÇÖZÜCÜDEN GEÇMİYOR:
    *  ders sayfasının altındaki köprü bunu ayrı okuyor (`nativeCando`). */
   cando: Record<string, string>;

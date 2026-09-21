@@ -41,7 +41,18 @@ export type ExamRow = {
   options?: string[];
 };
 
-export function extractExam(): ExamRow[] {
+/**
+ * Çıkarıcı KURSA GÖRE — iki yön de aynı gövdeyi kullanıyor.
+ *
+ * `exam/` Almanca kursun Türkçesini İNGİLİZCEYE bağlıyor; kardeşi
+ * `exam-de/` İngilizce kursun Türkçesini ALMANCAYA. Alanlar, anahtar biçimi
+ * ve sıralama kuralı ikisinde de aynı; değişen yalnız hangi kursun kâğıtları
+ * taranıyor ve `de` alanının hangi dili taşıdığı (adı tarihsel: "ölçülen
+ * dildeki eş", bkz. `module-exam/en/a1.ts` başlığı). İkinci bir kopya
+ * yazmak, iki çıkarıcının ayrı ayrı eskimesi demekti — sözlükçe hattında
+ * tam bu olmuştu.
+ */
+export function extractExamFor(course: string, withGlosses = false): ExamRow[] {
   const rows = new Map<string, ExamRow>();
   const add = (kind: string, tr: string | undefined, de: string | null, ctx: string, options?: string[]) => {
     if (typeof tr !== "string" || !tr.trim()) return;
@@ -53,15 +64,27 @@ export function extractExam(): ExamRow[] {
     rows.set(tr, r);
   };
 
-  /* YALNIZ ALMANCA KURSUN KÂĞITLARI. Bu hat Türkçeyi İNGİLİZCEYE çeviriyor,
-     yani okuyucusu anadili İngilizce olan kullanıcı — o da yalnız Almanca
-     kursu alıyor. İngilizce kursun kâğıtları (2026-09-21) buraya girseydi
-     hiç okunmayacak ~1.500 dize hem sözlüğe hem `check.ts` kapsam kapısına
-     binerdi. Onların Almanca karşılığı kardeş hatta: `data/lessons/exam-de/`. */
-  for (const p of courseExams("de") as ModuleExamPlan[]) {
+  /* TEK KURSUN KÂĞITLARI. Bu hat Türkçeyi İNGİLİZCEYE çeviriyor, yani
+     okuyucusu anadili İngilizce olan kullanıcı — o da yalnız Almanca kursu
+     alıyor (`PAIR_READY.en`). İngilizce kursun kâğıtları buraya girseydi hiç
+     okunmayacak ~1.500 dize hem sözlüğe hem kapsam kapısına binerdi; onların
+     Almanca karşılığı kardeş hatta: `data/lessons/exam-de/`. */
+  for (const p of courseExams(course) as ModuleExamPlan[]) {
     const at = `${p.code} ${p.titleDe}`;
     add("plan.title", p.titleTr, p.titleDe, at);
     for (const f of p.focus) add("focus", f.tr, f.de, at);
+    /* `canDo` VE `writing.phrases` YALNIZ BİR YÖNDE ÇIKARILIYOR.
+       Almanca kursun kâğıtlarında iki alanın da `en` karşılığı ZATEN dolu
+       (290'ın 290'ı), yani İngilizceye çevirmek için sözlük gerekmiyor ve
+       yazdırmak iki ayrı doğruluk kaynağı olurdu. İngilizce kursta ise `en`
+       alanı hedef dilin kendisi (`de` ile aynı dize), yani Almanca okur için
+       bir karşılık YOK — o yüzden bu yönde ikisi de sözlüğe giriyor.
+       `resolveExam` hep-ya-hiç: biri eksik kalırsa kâğıt tümden Türkçeye
+       düşer. */
+    if (withGlosses) {
+      for (const c of p.canDo) add("cando", c.tr, c.de, at);
+      for (const g of p.writing.phrases) add("phrase", g.tr, g.de, `${at} · yazma kalıbı`);
+    }
     add("listening.title", p.listening.titleTr, p.listening.title, at);
     add("listening.situation", p.listening.situation, null, `${at} · dinleme`);
     for (const t of p.listening.turns) add("turn", t.tr, t.de, `${at} · ${t.speaker}`);
@@ -84,7 +107,15 @@ export function extractExam(): ExamRow[] {
   );
 }
 
-if (process.argv[1]?.endsWith("make.ts")) {
+/** Bu hattın yönü: Almanca kursun kâğıtları → İngilizce sözlük. */
+export function extractExam(): ExamRow[] {
+  return extractExamFor("de");
+}
+
+/* Yol SONUNA KADAR karşılaştırılıyor: kardeş hat bu modülü içe alıyor ve
+   yalnız "make.ts" ile biten bir kontrol iki çıkarıcıyı birden çalıştırıp
+   ötekinin paketlerini de yeniden yazıyordu. */
+if (process.argv[1]?.endsWith("exam/make.ts")) {
   const rows = extractExam();
   mkdirSync(`${DIR}in`, { recursive: true });
   mkdirSync(`${DIR}out`, { recursive: true });

@@ -1,0 +1,1658 @@
+{
+ "packet": "g-101",
+ "words": [
+  {
+   "tr": "… tarihli yazınıza atıfla",
+   "kind": "phrase",
+   "n": 2,
+   "de": [
+    "With reference to your letter of …"
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints · yazma kalıbı",
+    "B2.10 Formal correspondence · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Önce … Sonra … Ardından …",
+   "kind": "phrase",
+   "n": 2,
+   "de": [
+    "First … Then … After that …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı",
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir daveti nazikçe reddedebiliyorum.",
+   "kind": "cando",
+   "n": 2,
+   "de": [
+    "I can say no to an invitation politely."
+   ],
+   "ctx": [
+    "A1.8 Free time",
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Adım …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My name is …"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Akşam …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the evening …"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olan o",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It is the one which …"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'im yok",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I haven't got a …"
+   ],
+   "ctx": [
+    "A1.2 Family and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hastayım.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm ill."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yaparken",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "While I was …"
+   ],
+   "ctx": [
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'e gittim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I went to …"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bu benim …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "This is my …"
+   ],
+   "ctx": [
+    "A1.2 Family and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Dümdüz git",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Go straight ahead."
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Mesleğim …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm a … ."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… kaç para?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "How much is …?"
+   ],
+   "ctx": [
+    "A1.5 Shopping · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'de doğdum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I was born in …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'i severim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I like …"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Akşamları …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the evening …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bu yüzden …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Therefore, …"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İki oda var",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "There are two rooms."
+   ],
+   "ctx": [
+    "A1.7 Home and living · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Üç gündür …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have had … for three days."
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yer misin?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Do you eat …?"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir …'im var",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have got a …"
+   ],
+   "ctx": [
+    "A1.2 Family and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Çok güzeldi.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It was very nice."
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "O … yaşında.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "He / She is … years old."
+   ],
+   "ctx": [
+    "A1.2 Family and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… pişiriyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm cooking …"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yapabiliriz",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "We can …"
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yaşındayım.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm … years old."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Çok eğlendim.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I had a lot of fun."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Öte yandan, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "On the other hand, …"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saygılarımla,",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Best regards,"
+   ],
+   "ctx": [
+    "A2.5 Working life · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… ister misin?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Would you like …?"
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… ülkesindenim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm from …"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'de buluşalım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Let's meet at …"
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Başım ağrıyor.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have a headache."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir … arıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'm looking for a …"
+   ],
+   "ctx": [
+    "A1.5 Shopping · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Final … olmalı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The ending must have been …"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İki gün önce …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Two days ago …"
+   ],
+   "ctx": [
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Önce … Sonra …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "First … Then …"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… otobüsüne bin",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Take the bus to …"
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-de su sızıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "There's a leak in the …"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…, oysa öteki …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "…, whereas the other one …"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'da oturuyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I live in …"
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… doğru; ancak …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It is true that …; however, …"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… için tebrikler",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Congratulations on …"
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-de inşa edildi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It was built in …"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-den beri … var",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have had … since …"
+   ],
+   "ctx": [
+    "B1.8 The health system · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Asıl kıran şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What really hurt was …"
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ayrıca bir … var",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "There is also a …"
+   ],
+   "ctx": [
+    "A1.7 Home and living · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bence …, çünkü …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In my view …, because …"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Eksik olan şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What is missing is …"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "En güçlü yanım …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My greatest strength is …"
+   ],
+   "ctx": [
+    "A2.5 Working life · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hayalim … yapmak",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My dream is to …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İş …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Work starts at …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… günü boş musun?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Are you free on …?"
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… masanın üstünde",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The … is on the table."
+   ],
+   "ctx": [
+    "A1.7 Home and living · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yapıyordum ki …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I was …-ing when …"
+   ],
+   "ctx": [
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-den beri … idin",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "You have been … since …"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-e kadar evdeyim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I am at home until …"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'i ziyaret ettim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I visited …"
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir kupon ektedir",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "A voucher is enclosed."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Evim …'in yanında",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My place is next to …"
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ne zaman geliyor?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "When does it arrive?"
+   ],
+   "ctx": [
+    "A1.5 Shopping · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sebebi … olabilir",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The reason might be …"
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olduğu için oldu",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It happened because …"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-de bir sorun var",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "There's a problem with …"
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Belge …-de sunuldu",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The document was submitted on …"
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bence çok faydalı.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I think it is very useful."
+   ],
+   "ctx": [
+    "A2.9 Media and technology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Burası …-dığım yer",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "This is the place where …"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Eskiden … yapardım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I used to …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Rakam …-den alındı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The figure was taken from …"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saat …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It starts at … o'clock."
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saat …'de yiyoruz.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "We eat at … o'clock."
+   ],
+   "ctx": [
+    "A1.3 Food and drink · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sonra …'e taşındım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Then I moved to …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-de başlayabilirim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I can start on …"
+   ],
+   "ctx": [
+    "A2.5 Working life · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Günüm …'de başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My day begins at …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hâlâ garantisi var.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It's still under warranty."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Planda …, sicilde …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the plan it is …; in the register, …"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sandalyenin yanında",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It's next to the chair."
+   ],
+   "ctx": [
+    "A1.7 Home and living · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Tahlil …-de yapıldı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The test was taken on …"
+   ],
+   "ctx": [
+    "B1.8 The health system · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-i sürükleyen şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What drives … is …"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bayan X …-i belirtti",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Ms X noted that …"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Doğrusu …, olsa da …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Granted, …, albeit …"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Doğrusu …; yine de …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Admittedly …; nonetheless, …"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Otele nasıl gelirim?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "How do I get to the hotel?"
+   ],
+   "ctx": [
+    "A2.7 Travelling · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Oyunun yaptığı şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the play does is …"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Rahatsız ettim ama …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Sorry to bother you, but …"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Saat …'de kalkıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I get up at …"
+   ],
+   "ctx": [
+    "A1.4 My day · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sürecin otomasyonu …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The automation of the process …"
+   ],
+   "ctx": [
+    "B2.5 Science and method · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ardından düğmeye bas.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "After that, press the button."
+   ],
+   "ctx": [
+    "A2.9 Media and technology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Cevabınızı bekliyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I look forward to your reply."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Değiştirebilir miyim?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Can I change it?"
+   ],
+   "ctx": [
+    "A1.5 Shopping · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Denemede …, raporda …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the essay it was …; in the report, …"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Hediye seçebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can choose a present."
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "Sözcümüz …-i belirtti",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Our spokesperson stated that …"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şükür, ciddi değildi.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Luckily, it wasn't serious."
+   ],
+   "ctx": [
+    "A2.1 What happened? · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-mesine karar verildi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It was decided that …"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bugün işe gelemiyorum.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I can't come to work today."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bütçe izin verseydi, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If the budget had allowed it, …"
+   ],
+   "ctx": [
+    "B2.8 Money and career · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şimdiki bilgiye göre …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "According to present knowledge …"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yürüyerek gidebilirsin",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "You can go on foot."
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olduğu iddia ediliyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It is claimed that …"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olsa da, …-den eminim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Although …, I am confident that …"
+   ],
+   "ctx": [
+    "B1.1 My career so far · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…'e gitmek ister misin?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Would you like to go to …?"
+   ],
+   "ctx": [
+    "A1.8 Free time · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ailemi tanıtabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can introduce my family."
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "Bir sonraki toplantı: …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Next meeting: …"
+   ],
+   "ctx": [
+    "B2.1 Professional communication · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Davet için teşekkürler.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Thank you for the invitation."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Haberin savunduğu şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the report argues is …"
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Nerede inmem gerekiyor?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Where do I get off?"
+   ],
+   "ctx": [
+    "A1.6 In town · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Üç haftadır bekliyorum.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have waited for three weeks."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yakında yine buluşalım.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Let's meet again soon."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ben vardığımda … olmuştu",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "By the time I arrived, … had …"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Cihaz … kez tamir edildi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The device has been repaired … times."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Daha önce konuşsaydık, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If we had talked earlier, …"
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Gecikmeye yol açan şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What caused the delay was …"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Gerekli tedbirler alındı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The necessary measures were initiated."
+   ],
+   "ctx": [
+    "C1.1 Register and tone · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Planın söylemediği şey …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the plan leaves unsaid is …"
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şifreni değiştirmelisin.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "You should change your password."
+   ],
+   "ctx": [
+    "A2.9 Media and technology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şu anda çöp … toplanıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "At the moment the rubbish is collected …"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yanımda ne getirmeliyim?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What should I bring with me?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yarın daha iyi olacağım.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'll be better tomorrow."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yerinde olsam … yapardım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If I were you, I would …"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… yıldır …-de çalışıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have worked at … for … years."
+   ],
+   "ctx": [
+    "A2.5 Working life · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Belediye ağaç dikseydi, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "If the council planted trees, …"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Ben anladığımda … olmuştu",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "By the time I understood, … had …"
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Doktora gitmem gerekiyor.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I must go to the doctor."
+   ],
+   "ctx": [
+    "A1.9 Health and the body · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Döngü … olmadan dönebilir",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The cycle may well turn before …"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Evimi tarif edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe my apartment."
+   ],
+   "ctx": [
+    "A1.7 Home and living"
+   ]
+  },
+  {
+   "tr": "Fiyata kahvaltı dahil mi?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Does the price include breakfast?"
+   ],
+   "ctx": [
+    "A2.7 Travelling · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İlaç … tarafından yazıldı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The medicine was prescribed by …"
+   ],
+   "ctx": [
+    "B1.8 The health system · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Özünde … yapmak istiyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In essence, I would like to …"
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sınavdan önce … yapacağım",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I am going to … before the exam."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-in ölçümü … ile başlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The measurement of … begins with …"
+   ],
+   "ctx": [
+    "B2.6 Society and the economy · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Belgeleri zaten gönderdim.",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have already sent the documents."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Birine öğüt verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give someone advice."
+   ],
+   "ctx": [
+    "A1.9 Health and the body"
+   ]
+  },
+  {
+   "tr": "Birini davet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can invite someone."
+   ],
+   "ctx": [
+    "A1.8 Free time"
+   ]
+  },
+  {
+   "tr": "Daha erken bir şey var mı?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Do you have anything earlier?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Deney … üzerinde yürütüldü",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The experiment was carried out on …"
+   ],
+   "ctx": [
+    "B2.5 Science and method · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "O zaman söylemem gerekirdi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I should have said it at the time."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Otele giriş yapabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can check in at a hotel."
+   ],
+   "ctx": [
+    "A2.7 Travelling"
+   ]
+  },
+  {
+   "tr": "Önce …'i aç, sonra …'i seç",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "First open …, then choose …"
+   ],
+   "ctx": [
+    "A2.9 Media and technology · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Sızıntı geçen yıl onarıldı",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The leak was repaired last year."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olduğu için gezmeye değer",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "It is worth visiting, because …"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… sakinleri adına yazıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I am writing on behalf of the residents of …"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… süredir burada oturuyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I have lived here for …"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Başka bir nokta çıkmazsa, …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Provided that no further point arises, …"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Benim için en önemli olan …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What matters most to me is …"
+   ],
+   "ctx": [
+    "B2.8 Money and career · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Broşürde …, imar planında …",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the brochure it is …; in the zoning plan, …"
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Kombi …-den beri çalışmıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The boiler has not worked since …"
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "… olduğu sürece yine denerim",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I will try again as long as …"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-i görsem de plan … kalıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Much as I see …, the plan stays …"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · yazma kalıbı"
+   ]
+  }
+ ]
+}

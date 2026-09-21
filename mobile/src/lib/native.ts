@@ -416,6 +416,27 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
  * yönergeye güvenemediği bir kâğıttır.
  */
 export function resolveExam<T extends ExamShape>(dict: NativeDict, plan: T): T | null {
+  return resolveExamWith(dict, plan, "field");
+}
+
+/**
+ * ALMANCA YÖN — `canDo` ve `writing.phrases` de SÖZLÜKTEN.
+ *
+ * Kardeşinde o iki alanın karşılığı kaynakta duruyor (`Gloss.en`) ve doğru
+ * olan onu kullanmaktı: Almanca kursun kâğıtlarında 290 satırın 290'ı dolu.
+ * İngilizce kursta aynı alan hedef dilin KENDİSİ — `de` ile aynı dize — yani
+ * Almanca okur için bir karşılık taşımıyor. Bu yüzden bu yönde ikisi de
+ * `exam` tablosundan geliyor (`data/lessons/exam-de/`).
+ *
+ * Hep-ya-hiç kuralı değişmiyor: bir satır bile eksikse kâğıt tümden Türkçe
+ * kalıyor — yarı Almanca bir sınav kâğıdı, öğrencinin yönergeye
+ * güvenemediği bir kâğıttır.
+ */
+export function resolveExamDe<T extends ExamShape>(dict: NativeDict, plan: T): T | null {
+  return resolveExamWith(dict, plan, "dict");
+}
+
+function resolveExamWith<T extends ExamShape>(dict: NativeDict, plan: T, glosses: "field" | "dict"): T | null {
   let failed = false;
   const t = (s: string): string => {
     const en = dict.exam[s];
@@ -423,6 +444,7 @@ export function resolveExam<T extends ExamShape>(dict: NativeDict, plan: T): T |
     return en ?? s;
   };
   const en = (g: { en?: string; tr: string }): string => {
+    if (glosses === "dict") return t(g.tr);
     if (!g.en?.trim()) failed = true;
     return g.en ?? g.tr;
   };

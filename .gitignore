@@ -29,6 +29,7 @@ dist/
 !data/lessons/cando/out/
 !data/lessons/script/out/
 !data/lessons/exam/out/
+!data/lessons/exam-de/out/
 !data/skills/prose/out/
 !data/skills/task/out/
 !data/mock-exams/prose/out/

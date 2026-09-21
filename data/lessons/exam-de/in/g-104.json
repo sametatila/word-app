@@ -1,0 +1,511 @@
+{
+ "packet": "g-104",
+ "words": [
+  {
+   "tr": "Bir oyunun ya da filmin ne yaptığını söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what a play or a film actually does."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Düzenleyici açıklamanın eksiksiz olmasını talep ediyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The regulator demands that the disclosure be complete."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Kapıyı açık bırakan bir kapanış cümlesi yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a closing line that leaves the door open."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "Alanımda kariyeri neyin belirlediğini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what decides a career in my field."
+   ],
+   "ctx": [
+    "B2.8 Money and career"
+   ]
+  },
+  {
+   "tr": "Bir kanun tasarısını ve uygulanmasını tartışabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can discuss a draft law and its enforcement."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Bir yerde ne zamandan beri oturduğumu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how long I have lived or worked somewhere."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "Değerlendirmede şefimin söylediklerini aktarabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report what my manager said in an appraisal."
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Eşitsizlik raporunu okuyup ölçüsünü adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read a report about inequality and name its measure."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Günümü „first, then, after that“ ile sıralayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can put my day in order with first, then and after that."
+   ],
+   "ctx": [
+    "A1.4 My day"
+   ]
+  },
+  {
+   "tr": "Şikâyetimin ne zamandan beri olduğunu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how long I have had a problem."
+   ],
+   "ctx": [
+    "A2.3 At the doctor's"
+   ]
+  },
+  {
+   "tr": "Aynı şeyi üç ayrı kayıtta söyleyip birini seçebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say the same thing in three registers and choose one."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "Bir arızaya ne yol açmış olabileceğini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what must have caused a fault."
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "Bir etiketi arkasındaki raporla birlikte okuyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read a label against the report behind it."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Bir maliyet raporunu okuyup eksiğini adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read a cost report and name what is missing."
+   ],
+   "ctx": [
+    "B2.8 Money and career"
+   ]
+  },
+  {
+   "tr": "Bir metnin bir kesime hangi adı seçtiğini duyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can hear which name a text chooses for a group."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Bir sözleşme süresini ve ihbar süresini anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand a contract term and a notice period."
+   ],
+   "ctx": [
+    "B2.8 Money and career"
+   ]
+  },
+  {
+   "tr": "Bozuk bir siparişi şikâyet edip değişim isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can complain about a faulty order and ask for a replacement."
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "Daha büyük bir örneklemden ne çıkardı, söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what would have followed from a larger sample."
+   ],
+   "ctx": [
+    "B2.5 Science and method"
+   ]
+  },
+  {
+   "tr": "Emir verme yetkisinin kimde olduğunu adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can name who holds the authority to give orders."
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "Yeşil aklamayı açık suçlama yapmadan adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can name greenwashing without an open charge."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Belirtileri ve ne zamandan beri olduğunu anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe symptoms and say how long I have had them."
+   ],
+   "ctx": [
+    "B1.8 The health system"
+   ]
+  },
+  {
+   "tr": "Bir pişmanlığı ve öncesinde ne yaptığımı anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about a regret and what I had done before."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Bir savı ağırlığı sona düşecek biçimde sıralayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can order an argument so that the weight falls at the end."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Yolculuk aksiliğini bildirebiliyorum: rötar, kayıp bagaj.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report a travel problem: a delay or lost luggage."
+   ],
+   "ctx": [
+    "A2.7 Travelling"
+   ]
+  },
+  {
+   "tr": "Bir metinde anlatıcının nerede durduğunu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say where the narrator stands in a text."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation"
+   ]
+  },
+  {
+   "tr": "Geri dönülemezlik gerçek olduğunda tutarlı bir plan yetmez",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Where irreversibility is real, a coherent plan is not enough."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Kullanılan kayıtta gerilemeyi durgunluktan ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a downturn from a stagnation in the register used."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Meslektaşımın kullanabileceği bir devir notu yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a handover note that a colleague can use."
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Bir kararda ironinin neden yeri olmadığını söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say why irony has no place in a ruling."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "Birine teşekkür edip neden değer verdiğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can thank someone and say why I appreciate them."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Neyi bitirdiğimi, neyi henüz bitirmediğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I have already finished and what I haven't done yet."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "Adımı, nereli olduğumu ve nerede oturduğumu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say my name, where I am from and where I live."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Bir duyguyu adlandırıp ne zaman başladığını söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can name a feeling and say when it started."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Kayıt gerektirdiğinde bir sözcüğü söylemeden bırakabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can leave a word out where the register asks for it."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "Bir toplantıyı okurun işine yarayacak biçimde aktarabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report a meeting so that a reader can act on it."
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "Neyin kontrol edildiğini, neyin edilmediğini bildirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report what was checked and what was not."
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "Geç kaldığımda ya da bir şeyi unuttuğumda özür dileyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say sorry when I am late or forget something."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Gecikmeye neyin yol açtığını kişiyi suçlamadan söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what caused a delay without blaming a person."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "„must, might, can't“ ile ne kadar emin olduğumu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how sure I am with must, might and can't."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Bir katalog künyesini okuyup neyi savunduğunu adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read a catalogue entry and name what it claims."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Bir toprak sözcüğünün hangi çıkara hizmet ettiğini duyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can hear which interest a land word serves."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Bir iddiayı kurup tam olarak neye itiraz ettiğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can state a claim and say what exactly I contest."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Bir maddenin neyi bağladığını, neyi açık bıraktığını ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell what a clause binds and what it leaves open."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "Bir düzeltmenin neyi kabul ettiğini, neyi etmediğini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what a correction does and does not admit."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Verimlilik kazancı ile işin yoğunlaşması arasındaki farkı duyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can hear the difference between an efficiency gain and work intensification."
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "İroninin nerede yardım ettiğini, nerede zarar verdiğini kestirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can judge when irony helps and when it damages."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  }
+ ]
+}

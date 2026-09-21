@@ -3,6 +3,7 @@ import type { Lesson } from "./types";
 import {
   resolveLesson,
   resolveExam,
+  resolveExamDe,
   resolveExercise,
   resolveMockPaper,
   mockKey,
@@ -80,10 +81,11 @@ async function deDict(): Promise<DeDict | null> {
   return cacheDe;
 }
 
-/* `resolveExercise` ve `resolveMockPaper` `NativeDict` bekliyor ama yalnız
-   `prose` ile `mock` alanlarına dokunuyorlar; `DeDict`in o iki alanı aynı
-   adı ve aynı anahtar biçimini taşıyor, eksik alanlar hiç okunmuyor.
-   Kapı bunu gerçek içerik üzerinde ölçüyor: `scripts/check-native-de.ts`. */
+/* `resolveExercise`, `resolveMockPaper` ve `resolveExamDe` `NativeDict`
+   bekliyor ama yalnız `prose`, `mock` ve `exam` alanlarına dokunuyorlar;
+   `DeDict`in o üç alanı aynı adı ve aynı anahtar biçimini taşıyor, eksik
+   alanlar hiç okunmuyor. Kapı bunu gerçek içerik üzerinde ölçüyor:
+   `scripts/check-native-de.ts`. */
 const asNative = (dict: DeDict): NativeDict => dict as unknown as NativeDict;
 
 /**
@@ -211,19 +213,33 @@ export async function nativeCandoText(
 /**
  * Modül sınavı kâğıdını ana dile çevirir; çeviremezse kâğıdı OLDUĞU GİBİ döner.
  *
- * Ders çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt
- * Almancayı ölçmeye devam ediyor — çevrilen yalnız yönergeler, durumlar ve
- * soru köklerinin altındaki karşılık.
+ * Ders çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt hedef
+ * dili ölçmeye devam ediyor — çevrilen yalnız yönergeler, durumlar ve soru
+ * köklerinin altındaki karşılık.
+ *
+ * İKİ YÖN, İKİ SÖZLÜK. Anadili İngilizce olan kullanıcı Almanca kursu alıyor
+ * ve o kâğıtları `native/en` çözüyor; anadili Almanca olan kullanıcı
+ * İngilizce kursu alıyor ve onunkileri `native/de`. Almanca dal 2026-09-21'de
+ * açıldı: o güne kadar modül sınavı yalnız Almanca kursta vardı, yani Almanca
+ * okurun önüne hiç kâğıt gelmiyordu ve buradaki yorum bunu gerekçe
+ * gösteriyordu. İngilizce kursun elli kâğıdıyla o gerekçe düştü.
  */
 export async function localiseExam<T extends ExamShape>(
   plan: T | undefined,
   lang: NativeLang | null | undefined,
 ): Promise<T | undefined> {
-  /* ALMANCA DALI YOK ve bu bir eksik değil: modül sınavı yalnız Almanca
-     kursta var (`hasModuleExams`, kurs `en` ise false). Anadili Almanca
-     olan kullanıcı yalnız İngilizce kursu alıyor, yani buraya bir plan
-     hiç gelmiyor. Gelirse Türkçe kalıyor — kardeşleriyle aynı geri düşüş. */
-  if (!plan || !lang || lang === DEFAULT_NATIVE || lang !== "en") return plan;
+  if (!plan || !lang || lang === DEFAULT_NATIVE) return plan;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return plan;
+    const out = resolveExamDe(asNative(de), plan);
+    if (!out) {
+      console.warn("[native] sınav kâğıdı Almancaya çevrilemedi, Türkçe kalıyor");
+      return plan;
+    }
+    return out;
+  }
+  if (lang !== "en") return plan;
   const dict = await nativeDict();
   if (!dict) return plan;
   const out = resolveExam(dict, plan);
@@ -247,8 +263,15 @@ export async function localiseExam<T extends ExamShape>(
 export async function nativeExamText(
   lang: NativeLang | null | undefined,
 ): Promise<(tr: string) => string> {
-  /* `localiseExam` ile aynı gerekçe: modül sınavı Almanca kursa ait. */
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return (tr) => tr;
+  /* `localiseExam` ile aynı iki yön: `en` Almanca kursun kâğıtlarını,
+     `de` İngilizce kursunkileri çözüyor. */
+  if (!lang || lang === DEFAULT_NATIVE) return (tr) => tr;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return (tr) => tr;
+    return (tr) => de.exam[tr] ?? tr;
+  }
+  if (lang !== "en") return (tr) => tr;
   const dict = await nativeDict();
   if (!dict) return (tr) => tr;
   return (tr) => dict.exam[tr] ?? tr;

@@ -1,0 +1,1655 @@
+{
+ "packet": "g-103",
+ "words": [
+  {
+   "tr": "İlaç kutusundaki uyarıyı anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand a warning on a medicine pack."
+   ],
+   "ctx": [
+    "B1.8 The health system"
+   ]
+  },
+  {
+   "tr": "Kariyerimi ve deneyimimi anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe my career and my experience."
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Kayıt yapıp başvurumu takip edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can register and follow an application."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
+   ]
+  },
+  {
+   "tr": "„used to“ ile çocukluğumu anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about my childhood with used to."
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "Abartmadan geçici bir sonuç yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a tentative conclusion without overstating it."
+   ],
+   "ctx": [
+    "B2.5 Science and method"
+   ]
+  },
+  {
+   "tr": "Bir iddiayı aktarmak onu çürütmek değildir",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "To report a claim is not to falsify it."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir ölçümü ve sınırlarını anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a measurement and its limits."
+   ],
+   "ctx": [
+    "B2.5 Science and method"
+   ]
+  },
+  {
+   "tr": "Birinin nasıl göründüğünü anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what someone looks like."
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "Eski hâlimle bugünü karşılaştırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can compare my life before and now."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "Formu doldurup her bölümü anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can fill in a form and understand every section."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
+   ]
+  },
+  {
+   "tr": "Hayatımda neler yaptığımı anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I have done in my life."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "İzin isteyip gerekçesini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for a day off and give a reason."
+   ],
+   "ctx": [
+    "A2.5 Working life"
+   ]
+  },
+  {
+   "tr": "Konuşsaydık ne olacağını söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what would have happened if we had talked."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "Savın kuruluşunun yaptığı şey …-i gizlemek",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the line of argument does is hide …"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Talebimden vazgeçmeden ödün verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can make a concession without withdrawing my demand."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Uzun bir denemeyi bir arada tutabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can hold a long essay together."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation"
+   ]
+  },
+  {
+   "tr": "Yol sorabiliyor ve tarifi anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for the way and understand directions."
+   ],
+   "ctx": [
+    "A1.6 In town"
+   ]
+  },
+  {
+   "tr": "Bir okur bağlamlandırıyor, öteki parçalıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "One reader contextualizes it; another dissects it."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir temsili ve eksiklerini anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a performance and its shortcomings."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Cümlenin ağırlığını sonuna taşıyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can move the weight of a sentence to its end."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "Eşitlik ilkesi …-in … olmasını gerektiriyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The principle of equality demands that … be …"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Göç sözlüğünü tam yerinde kullanabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can use the vocabulary of migration precisely."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Kafede ve restoranda sipariş verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can order in a café and in a restaurant."
+   ],
+   "ctx": [
+    "A1.3 Food and drink"
+   ]
+  },
+  {
+   "tr": "Kısa mesaj yazıp birini davet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a short message and invite someone."
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch"
+   ]
+  },
+  {
+   "tr": "Kısmen katılıp nazikçe karşı çıkabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can agree partly and disagree politely."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Kira ve faturalar hakkında konuşabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about the rent and the bills."
+   ],
+   "ctx": [
+    "A1.7 Home and living"
+   ]
+  },
+  {
+   "tr": "Madde hangi süre içinde olduğunu söylemiyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The clause does not state within what period."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Müzakere masasında bir talep koyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can put a demand at the bargaining table."
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  },
+  {
+   "tr": "Nazikçe istifa edip işimi devredebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can resign politely and hand over my work."
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Sözlü kaydı yazılı kayıttan ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a spoken register from a written one."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation"
+   ]
+  },
+  {
+   "tr": "Şehrimin nasıl değiştiğini anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe how my town has changed."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Temelli olsa da model tek tarafa sesleniyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Albeit well-founded, the model is addressed to one side."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Yazılı bir gerekliliğe işaret edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can point to a written requirement."
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "Belgelerimi ekliyorum, cevabınızı bekliyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I enclose my documents and look forward to your reply."
+   ],
+   "ctx": [
+    "B1.1 My career so far · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir taraf … iddia ediyor; öteki … kanıtlıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "One party alleges …; another proves …"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Daireyi, kirayı ve depozitoyu sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask about a flat, the rent and the deposit."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "Gürültüyü kabalaşmadan şikâyet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can complain about noise without being rude."
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood"
+   ]
+  },
+  {
+   "tr": "Kişiyi suçlamadan olay raporu yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write an incident report without blaming a person."
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "Oda ayırtıp rezervasyonu teyit edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can book a room and confirm a reservation."
+   ],
+   "ctx": [
+    "A2.7 Travelling"
+   ]
+  },
+  {
+   "tr": "Rakibi adil aktarıp yine de çürütebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can quote an opponent fairly and still refute them."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  },
+  {
+   "tr": "Şeffaflığı resmî kayıtta talep edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can demand disclosure in the formal register."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Talep içeren resmî bir mektup yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a formal letter with a request."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
+   ]
+  },
+  {
+   "tr": "Telefon numaramı ve yaşımı söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give my phone number and my age."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Ailemden ve arkadaşlarımdan bahsedebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about my family and my friends."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Bir bilgilendirmeyi açıp amacı koyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can open a briefing and set the objective."
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Bir çarpıtmayı bir bedahetten ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a distortion from a truism."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Bir dilekçeyi beklenen kayıtta yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a petition in the register that is expected."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "Bir eleştiriye incelikle karşı çıkabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can disagree with a review with tact."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Bir eşyanın nerede olduğunu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say where something is."
+   ],
+   "ctx": [
+    "A1.7 Home and living"
+   ]
+  },
+  {
+   "tr": "Bir haber başlığını eleştirel okuyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read a headline critically."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Bir ilişkiyi onaran bir mektup yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a letter that repairs a relationship."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "Bir karara süresi içinde itiraz edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can appeal against a decision within the period."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "Bir şeye neden kaydolduğumu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say why I signed up for something."
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "Bir tahminin kesinliğini işaretleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can mark how certain a forecast is."
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Biri bir savı savunur; öteki yalnızca onaylar",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "One advocates a claim; another merely affirms it."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Süre tanıyan resmî bir şikâyet yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a formal complaint with a deadline."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Şehir ile kır yaşamını karşılaştırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can compare city life and life in the country."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Tanık ifadesini doğru fiille aktarabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report testimony with the right verb."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language"
+   ]
+  },
+  {
+   "tr": "Zararı rakamla belirtip iade isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can quantify a loss and ask to be reimbursed."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Bir kilo, bir şişe, bir dilim isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for a kilo, a bottle or a piece of something."
+   ],
+   "ctx": [
+    "A1.3 Food and drink"
+   ]
+  },
+  {
+   "tr": "Bir şeyin garantisi var mı diye sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask if something is still under warranty."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "Birine adını ve nereli olduğunu sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask someone their name and where they are from."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Bu yüzden …-i reddediyor ve …-i talep ediyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I therefore decline … and demand …"
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Grup çalışmasında bir görevi paylaşabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can organise a task with a partner in a group."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "İki taraf arasında arabuluculuk yapabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can mediate between two sides."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "Kendimi aldatmadan kendimden söz edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can speak about myself without self-deception."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Kısa bir toplantıda görüşümü söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say my opinion in a short meeting."
+   ],
+   "ctx": [
+    "A2.5 Working life"
+   ]
+  },
+  {
+   "tr": "Koşulları yazılı olarak müzakere edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can negotiate conditions in writing."
+   ],
+   "ctx": [
+    "B2.8 Money and career"
+   ]
+  },
+  {
+   "tr": "Mülakatta sıradan soruları cevaplayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can answer the usual questions in an interview."
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Öğretmenimin geri bildirimini aktarabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report the feedback that my tutor gave me."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Siparişimi takip edip teslimatı sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can track an order and ask about the delivery."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "Tanık …-i ifade etti, idare ise …-i iddia etti",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The witness stated that …, whereas the office alleged …"
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Umutlarımdan ve planlarımdan bahsedebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about my hopes and plans."
+   ],
+   "ctx": [
+    "A2.2 My story, then and now"
+   ]
+  },
+  {
+   "tr": "… sözcüğünün ardında sayılmış bir rakam duruyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Behind the word … stands a counted figure."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "„when“ ve „while“ ile iki işi bağlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can use when and while in one sentence."
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "Aile hekimine kaydolup belgeleri sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can register at a practice and ask about the papers."
+   ],
+   "ctx": [
+    "B1.8 The health system"
+   ]
+  },
+  {
+   "tr": "Enerji ve su tasarrufu için öğüt verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give advice about saving energy and water."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Ev arkadaşlarımla ev işlerini paylaşabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can agree on the chores with my flatmates."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "Hasarlı bir ürünü nazikçe şikâyet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can complain about a damaged item politely."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "İhtiyat ilkesi …-in önce gelmesini gerektiriyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The precautionary principle demands that … be prior."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İki teklifi karşılaştırıp birini seçebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can compare two offers and choose one."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "İklim dilinde dengeyi etiketten ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a balance from a label in climate language."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "İklim nötrlüğü bir denge; iklim-nötr bir etiket",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Climate neutrality is a balance; climate-neutral is a label."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İlerlememi ve kalan boşlukları anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe my progress and the gaps that are left."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Rapor … konusunda ayrıntılı, … konusunda sessiz",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The report is thorough on … and silent on …"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Rapor isteyip devamsızlığımı açıklayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for a sick note and explain my absence."
+   ],
+   "ctx": [
+    "B1.8 The health system"
+   ]
+  },
+  {
+   "tr": "Süre uzatımı isteyip gerekçesini verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for a deadline extension and give a reason."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "Şifre ve güvenlik konusunda öğüt verebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give advice about passwords and safety."
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "am, is, are ile evet-hayır sorusu sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask a yes-no question with am, is and are."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Bir sigortanın neyi kapsadığını anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand what a policy covers."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
+   ]
+  },
+  {
+   "tr": "Bir şey olduğunda ne yaptığımı söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I was doing when something happened."
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "Bir şeyi ne sıklıkta yaptığımı söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how often I do something."
+   ],
+   "ctx": [
+    "A1.4 My day"
+   ]
+  },
+  {
+   "tr": "Bir şikâyeti cevaplayıp dosyayı kapatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can answer a complaint and close the file."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "Bir ürünü iade edip para iadesi isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can return a product and ask for a refund."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services"
+   ]
+  },
+  {
+   "tr": "Erken öğüt vermeden birini teselli edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can cheer someone up without giving advice too early."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Gıda egemenliği reformun … olmasını gerektiriyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Food sovereignty demands that the reform be …"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İki seçeneği karşılaştırıp birini seçebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can compare two options and choose one."
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "my, your, his, her ekini doğru kullanabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can use my, your, his and her correctly."
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "Neyin hoşuma gidip gitmediğini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I like and what I don't like."
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "Özette … olarak, görüşmelerde … olarak görünüyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "In the summary it appears as …; in the interviews, as …"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Su sızıntısını bildirip tamirci isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report a leak and ask for a plumber."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "„unless“ ve „as long as“ ile koşul koyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can set a condition with unless and as long as."
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "Bir eşitlik talebini resmî kayıtta kurabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can state a claim of equality in the formal register."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Bir fiyatı neyin sürüklediğini açıklayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can explain what drives a price."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Bir hayali ve gerçekçi bir adımı anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a dream and a realistic next step."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams"
+   ]
+  },
+  {
+   "tr": "Bir iddiayı arkasındaki yöntemle sınayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can check a claim against the method behind it."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Bir tartışmanın söylemediğini adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can name what a debate leaves unsaid."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Bir uygulamayı ölçülü ifadeyle eleştirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can criticise a practice through understatement."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Birinin bir şeyi nereden okuduğunu sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask where someone read something."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Ev sahibine bir arızayı nazikçe bildirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report a problem to the landlord politely."
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood"
+   ]
+  },
+  {
+   "tr": "Geçmişi sorabiliyorum: nerede, kiminle, ne kadar.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask about the past: where, who, how long."
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "İşe telefon edip hasta olduğumu bildirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can phone work and say that I am ill."
+   ],
+   "ctx": [
+    "A1.9 Health and the body"
+   ]
+  },
+  {
+   "tr": "Kararları ve itirazları tutanağa geçirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can record decisions and objections in the minutes."
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Kimlerin olduğunu ve olmadığını söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say who I have and who I don't have."
+   ],
+   "ctx": [
+    "A1.2 Family and people"
+   ]
+  },
+  {
+   "tr": "Bilgisayar ya da telefon sorunumu anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a problem with my computer or phone."
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "Bir plana duruşmanın kaydında itiraz edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can object to a plan in the register of the hearing."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "Bir tedbirden kimin etkilendiğini anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe who is affected by a measure."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  },
+  {
+   "tr": "Birini başkası tanıyacak kadar tarif edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a person so that others recognise them."
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "Hükmü aktarma fiilinin kendisinde taşıyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can carry a verdict in the reporting verb itself."
+   ],
+   "ctx": [
+    "C1.1 Register and tone"
+   ]
+  },
+  {
+   "tr": "Uzun bir savı ölçülü bir yargıyla kapatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can close a long case with a measured judgement."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Aynı savı üç ayrı üslup düzeyinde söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say the same claim at three stylistic levels."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Bir anlaşmazlığın nasıl büyüdüğünü anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe how a conflict grew."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "Bir çalışmanın nasıl yürütüldüğünü anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can explain how a study was carried out."
+   ],
+   "ctx": [
+    "B2.5 Science and method"
+   ]
+  },
+  {
+   "tr": "Bir filmi ya da kitabı gerekçesiyle önerebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can recommend a film or a book and say why."
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding"
+   ]
+  },
+  {
+   "tr": "Bir haber hakkında ne düşündüğümü söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I think about a news story."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Bir kurumda kayıt yapıp sıra numarası alabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can register at an office and take a number."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Bir şehirde nelerin gezilebileceğini sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask what there is to see in a town."
+   ],
+   "ctx": [
+    "A1.6 In town"
+   ]
+  },
+  {
+   "tr": "Dışarıda kalan tarafı cümlenin başına alabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can put the excluded side first in a sentence."
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words"
+   ]
+  },
+  {
+   "tr": "Kira sözleşmesinin ana maddelerini anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand the main clauses of a lease."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "Neyi sevdiğimi, ne yiyip içtiğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I like to eat and drink."
+   ],
+   "ctx": [
+    "A1.3 Food and drink"
+   ]
+  },
+  {
+   "tr": "Neyin başka yapılması gerektiğini söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what should have been done differently."
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Teknoloji hakkında ne düşündüğümü söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I think about technology."
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "Verinin gösterdiğini ima ettiğinden ayırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can separate what the data shows from what it implies."
+   ],
+   "ctx": [
+    "B2.5 Science and method"
+   ]
+  },
+  {
+   "tr": "Adımı harf harf söyleyip bir formu doldurabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can spell my name and fill in a form."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you"
+   ]
+  },
+  {
+   "tr": "Bir benlik imgesi kendini bilmekten uzun yaşayabilir",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "A self-image may well outlive self-knowledge."
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir formu doldurup adımı harf harf söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can fill in a form and spell my name."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Bir olayın parçalarını doğru sırada anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell the parts of a story in the right order."
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "Çıkış kontrolünden sonra depozitomu isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for my deposit back after the inspection."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving"
+   ]
+  },
+  {
+   "tr": "Karşı tarafı köşeye sıkıştırmadan zam sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask about a raise without putting the other side in a corner."
+   ],
+   "ctx": [
+    "B2.8 Money and career"
+   ]
+  },
+  {
+   "tr": "Mahalle projesine katılıp dilekçe imzalayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can take part in a local project and sign a petition."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "Randevumu değiştirebiliyor ya da iptal edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can change or cancel an appointment."
+   ],
+   "ctx": [
+    "A2.3 At the doctor's"
+   ]
+  },
+  {
+   "tr": "Bir modelin ne kadar kesin olduğunu söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how certain a model is."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "Bir süreci edilgen yapıyla adım adım anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe a process step by step in the passive."
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "Bir şeyi beğenmediğimi kabalaşmadan söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say that I disliked something without being rude."
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Dosya numarasıyla ve doğru resmî tonla yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write with a file number and the right register."
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence"
+   ]
+  },
+  {
+   "tr": "İhtiyat ilkesini bir yükümlülük olarak kurabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can state the precautionary principle as an obligation."
+   ],
+   "ctx": [
+    "C1.8 Climate and the city"
+   ]
+  },
+  {
+   "tr": "Niyet mektubu yazıp güçlü yanlarımı söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a cover letter and mention my strengths."
+   ],
+   "ctx": [
+    "B1.1 My career so far"
+   ]
+  },
+  {
+   "tr": "Olguyu iddiadan ayıran bir basın özeti yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can write a press summary that separates fact and claim."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Bir duyguyu genel değil tam olarak adlandırabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can name a feeling precisely instead of generally."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology"
+   ]
+  },
+  {
+   "tr": "Bir kesim hakkında genelleme yapmadan konuşabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can speak about a group without a generalisation."
+   ],
+   "ctx": [
+    "B2.6 Society and the economy"
+   ]
+  }
+ ]
+}

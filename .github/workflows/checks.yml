@@ -299,6 +299,7 @@ jobs:
           npm run check:lessons-word
           npm run check:lessons-script
           npm run check:lessons-exam
+          npm run check:lessons-exam-de
           npm run check:skills-prose
           npm run test:content
       # Sınav üretiminin testleri. `test:exams` ile `test:mock-exams` kâğıtları,

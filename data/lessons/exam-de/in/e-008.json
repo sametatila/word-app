@@ -1,0 +1,1753 @@
+{
+ "packet": "e-008",
+ "words": [
+  {
+   "tr": "Deniz aradığında müşteri ne yapmıştı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What had the client done by the time Deniz called?"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · dinleme sorusu"
+   ],
+   "options": [
+    "They had noticed the problem",
+    "They had cancelled the order",
+    "They had paid the bill",
+    "They had written a letter"
+   ]
+  },
+  {
+   "tr": "Eleştirmen konuşmayı nasıl kapatıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How does the critic close the conversation?"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts · dinleme sorusu"
+   ],
+   "options": [
+    "With moderation: worth seeing but not timeless",
+    "By calling the play a failure",
+    "By agreeing with the jury",
+    "By refusing to judge"
+   ]
+  },
+  {
+   "tr": "Geçmiş olsun. Yarın saat on uygun mu?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I'm sorry. Is tomorrow at ten o'clock good for you?"
+   ],
+   "ctx": [
+    "A1.9 Health and the body · Receptionist"
+   ]
+  },
+  {
+   "tr": "Görüşümü gerekçeyle söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can give my opinion and support it with a reason."
+   ],
+   "ctx": [
+    "B1.7 Opinion and debate"
+   ]
+  },
+  {
+   "tr": "Hangi gün ve saatin sana uyduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.3 At the doctor's · yazma"
+   ]
+  },
+  {
+   "tr": "Hastanın ağrısı ne zamandan beri var?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How long has the patient had the pain?"
+   ],
+   "ctx": [
+    "B1.8 The health system · dinleme sorusu"
+   ],
+   "options": [
+    "Since March",
+    "Since Monday",
+    "For a week",
+    "Since April"
+   ]
+  },
+  {
+   "tr": "Kesin süre tebligattan itibaren işler",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The cut-off period runs from the service of documents."
+   ],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Kursiyerin yapması gerekmeyen şey ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does a learner not have to do?"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · okuma sorusu"
+   ],
+   "options": [
+    "Buy the book",
+    "Bring a notebook",
+    "Present a task",
+    "Take the first test"
+   ]
+  },
+  {
+   "tr": "may well / might have / would tend to",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Modal nuance about oneself"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice"
+   ]
+  },
+  {
+   "tr": "Meslektaş ikramiye yerine ne istiyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the colleague ask for instead of a bonus?"
+   ],
+   "ctx": [
+    "B2.8 Money and career · dinleme sorusu"
+   ],
+   "options": [
+    "Flextime and a permanent position",
+    "A longer notice period",
+    "An interest-free loan",
+    "A new personnel file"
+   ]
+  },
+  {
+   "tr": "Mülakatta deneyimimi anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can talk about my experience in an interview."
+   ],
+   "ctx": [
+    "A2.5 Working life"
+   ]
+  },
+  {
+   "tr": "Ne yapmam gerektiğini söyler misiniz?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Could you tell me what I should do?"
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Neden söylemedin? Daha önce gelirdim.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Why didn't you tell me? I would have come earlier."
+   ],
+   "ctx": [
+    "B1.10 Feelings and dreams · Ela"
+   ]
+  },
+  {
+   "tr": "Önceki iş verenim bana referans verdi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "My previous employer gave me a reference."
+   ],
+   "ctx": [
+    "B1.1 My career so far · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Polise kayıp cüzdan bildirebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report a lost wallet to the police."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business"
+   ]
+  },
+  {
+   "tr": "Sert bir mektubu nazik tutabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can keep a firm letter polite."
+   ],
+   "ctx": [
+    "B2.2 Claims and complaints"
+   ]
+  },
+  {
+   "tr": "Sert bir sınır koyup ödün veriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.2 Claims and complaints · konuşma"
+   ]
+  },
+  {
+   "tr": "Sözleşme ne zamana kadar imzalanmalı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "When must the contract be signed?"
+   ],
+   "ctx": [
+    "B1.1 My career so far · okuma sorusu"
+   ],
+   "options": [
+    "Before the end of April",
+    "On 18 March",
+    "In May",
+    "On 3 March"
+   ]
+  },
+  {
+   "tr": "Toplantıda kararı kayda geçiriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.1 Professional communication · konuşma"
+   ]
+  },
+  {
+   "tr": "Uçuşum rötarlı ve aktarmamı kaçırdım.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "My flight is delayed and I have missed my connection."
+   ],
+   "ctx": [
+    "A2.7 Travelling · konuşma"
+   ]
+  },
+  {
+   "tr": "Yalnızca bir taraftan istenen şey ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is asked of one side only?"
+   ],
+   "ctx": [
+    "C1.5 Belonging and its words · dinleme sorusu"
+   ],
+   "options": [
+    "Adaptability",
+    "The adaptation course",
+    "The counted number",
+    "The heritage language"
+   ]
+  },
+  {
+   "tr": "…-deki randevumu değiştirmek istiyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I'd like to change my appointment on …"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Aynı tedbirin iki adını gösteriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.6 Work and the bargaining table · konuşma"
+   ]
+  },
+  {
+   "tr": "Bana kopyanın yeterli olacağı söylendi",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I was told that a copy would be enough."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bir daireyi ve kirasını sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask about a flat and its rent."
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood"
+   ]
+  },
+  {
+   "tr": "Bir kent planına itiraz dilekçesi yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.8 Climate and the city · yazma"
+   ]
+  },
+  {
+   "tr": "Bir konuk akşam yemeği sipariş ediyor.",
+   "kind": "listening.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.3 Food and drink · dinleme"
+   ]
+  },
+  {
+   "tr": "Bir ödün ver („Albeit …“, „Much as …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.4 Literature and interpretation · yazma"
+   ]
+  },
+  {
+   "tr": "Çalışma planı yapıp uygulayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can make a study plan and keep to it."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Çöp sahası kapandığından beri ne oldu?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What has happened since the landfill was closed?"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · okuma sorusu"
+   ],
+   "options": [
+    "The waste has been recycled in a new plant",
+    "The cost has grown",
+    "The bins are emptied later",
+    "The paper day was moved"
+   ]
+  },
+  {
+   "tr": "Daha büyük bir örneklemden ne çıkardı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What would have followed from a larger sample?"
+   ],
+   "ctx": [
+    "B2.5 Science and method · dinleme sorusu"
+   ],
+   "options": [
+    "The finding could have been generalized",
+    "The software would have failed",
+    "The catalyst would have changed",
+    "The trial would have stopped"
+   ]
+  },
+  {
+   "tr": "Dilek kipiyle bir şeffaflık talebi koy",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma"
+   ]
+  },
+  {
+   "tr": "Evet, bodrumdaki depo da kiraya dahil.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Yes, and the storage in the basement is included in the rent."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · Agent"
+   ]
+  },
+  {
+   "tr": "Fiyatları anlayıp ödeme yapabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand prices and pay."
+   ],
+   "ctx": [
+    "A1.5 Shopping"
+   ]
+  },
+  {
+   "tr": "Geçirgen olsa da sınır …-i kaldırmıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Albeit permeable, the border does not remove …"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Güç yapısının yaptığı şey …-i gizlemek",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "What the power structure does is hide …"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İki somut koşulla ve bir süreyle kapat",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.8 Money and career · yazma"
+   ]
+  },
+  {
+   "tr": "Kâğıdı satan şirket o çeyreğe ne dedi?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What did the firm that sold the paper call the quarter?"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast · okuma sorusu"
+   ],
+   "options": [
+    "A healthy correction",
+    "A downturn",
+    "A stagnation",
+    "A market failure"
+   ]
+  },
+  {
+   "tr": "Kalorifer ne zamandan beri çalışmıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How long hasn't the heating worked?"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · dinleme sorusu"
+   ],
+   "options": [
+    "Since Monday",
+    "For three days",
+    "For a week",
+    "Since the morning"
+   ]
+  },
+  {
+   "tr": "Kliniğe bir şey getirmem gerekiyor mu?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Do I have to bring anything to the clinic?"
+   ],
+   "ctx": [
+    "B1.8 The health system · Patient"
+   ]
+  },
+  {
+   "tr": "Konu hangi koşulda çözülmüş sayılıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Under what condition is the matter settled?"
+   ],
+   "ctx": [
+    "B2.10 Formal correspondence · okuma sorusu"
+   ],
+   "options": [
+    "Provided that no further point arises",
+    "Provided that the voucher is used",
+    "Only after 30 April",
+    "Only if the return is claimed"
+   ]
+  },
+  {
+   "tr": "Never has a defeat caused such outrage",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Inversion"
+   ],
+   "ctx": [
+    "B2.7 Culture and the arts"
+   ]
+  },
+  {
+   "tr": "Neyi önerdiğini ve nerede olduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.9 The city and the environment · yazma"
+   ]
+  },
+  {
+   "tr": "Parselin fiyatının ardında ne duruyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What stands behind the price of the parcel?"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · okuma sorusu"
+   ],
+   "options": [
+    "The expectation of a change of use",
+    "The world market price",
+    "The producer price",
+    "The origin labelling"
+   ]
+  },
+  {
+   "tr": "Rahatsız ettim ama banyoda su sızıyor.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Sorry to bother you, but there's a leak in the bathroom."
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · Resident"
+   ]
+  },
+  {
+   "tr": "Raporun kendisi hakkındaki bulgusu ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the report's own finding about itself?"
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table · okuma sorusu"
+   ],
+   "options": [
+    "Its vocabulary, not its argument, holds it together",
+    "Its figures are wrong",
+    "It was written too late",
+    "It repeats section 1"
+   ]
+  },
+  {
+   "tr": "Saati söyleyebiliyor ve sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell the time and ask for it."
+   ],
+   "ctx": [
+    "A1.4 My day"
+   ]
+  },
+  {
+   "tr": "Sensör kontrol edildi ve kayıt düşüldü",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The sensor was checked and the entry was made."
+   ],
+   "ctx": [
+    "B2.3 Process and passive · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Şehrin nasıl değiştiğini anlatıyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.9 The city and the environment · konuşma"
+   ]
+  },
+  {
+   "tr": "Tamam, o zaman üç buçukta buluşuyoruz.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Fine, then we meet at half past three."
+   ],
+   "ctx": [
+    "A1.4 My day · Sara"
+   ]
+  },
+  {
+   "tr": "Telefonda konuşup not bırakabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can make a phone call and leave a message."
+   ],
+   "ctx": [
+    "A1.10 Keeping in touch"
+   ]
+  },
+  {
+   "tr": "Uzun bir savı bir arada tutabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can hold a long argument together."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  },
+  {
+   "tr": "Yabancı bir şehirde yol sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask the way in a foreign city."
+   ],
+   "ctx": [
+    "A2.7 Travelling"
+   ]
+  },
+  {
+   "tr": "Yağmur başladığında Onur ne yapıyordu?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What was Onur doing when it started to rain?"
+   ],
+   "ctx": [
+    "A2.1 What happened? · dinleme sorusu"
+   ],
+   "options": [
+    "He was cooking",
+    "He was waiting for the bus",
+    "He was sleeping",
+    "He was playing football"
+   ]
+  },
+  {
+   "tr": "Yazarın meslektaşın savına itirazı ne?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What is the author's objection to the colleague's claim?"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · dinleme sorusu"
+   ],
+   "options": [
+    "She does not substantiate it",
+    "She never made it",
+    "She quoted it wrongly",
+    "She agreed too quickly"
+   ]
+  },
+  {
+   "tr": "Bir çalışmanın geçici sonuç notunu yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.5 Science and method · yazma"
+   ]
+  },
+  {
+   "tr": "Bir güvenlik öğüdü yaz („You should …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.9 Media and technology · yazma"
+   ]
+  },
+  {
+   "tr": "Bir karara kanıtla itiraz edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can appeal against a decision and give evidence."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications"
+   ]
+  },
+  {
+   "tr": "Bir kiracı apartman görevlisini arıyor.",
+   "kind": "listening.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.4 Home and neighbourhood · dinleme"
+   ]
+  },
+  {
+   "tr": "Bir koşul cümlesi kur („if …, would …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.9 The city and the environment · yazma"
+   ]
+  },
+  {
+   "tr": "Bir maddenin sessiz kaldığı yeri göster",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma"
+   ]
+  },
+  {
+   "tr": "Bir önergeyi resmî kayıtta söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.2 Dissent without rupture · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir yetişkin şurubu ne sıklıkta almalı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How often should an adult take the syrup?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · okuma sorusu"
+   ],
+   "options": [
+    "Once a day",
+    "Twice a day",
+    "Three times a day",
+    "After every meal"
+   ]
+  },
+  {
+   "tr": "Bu yüzden …-in önemi gözden geçirilmeli",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "The relevance of … should therefore be reviewed."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bu yüzden karara itiraz etmek istiyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I would therefore like to appeal against the decision."
+   ],
+   "ctx": [
+    "B1.5 Offices and applications · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Bugün kolun daha iyi olmasına sevindim.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I'm happy your arm is better today."
+   ],
+   "ctx": [
+    "A2.1 What happened? · Ela"
+   ]
+  },
+  {
+   "tr": "Davet cümlesi kur („Would you like …?“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.3 Food and drink · yazma"
+   ]
+  },
+  {
+   "tr": "demands that the disclosure be complete",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Subjunctive in demands for disclosure"
+   ],
+   "ctx": [
+    "C1.9 Money and the forecast"
+   ]
+  },
+  {
+   "tr": "Depozito ne kadar ve ne zaman ödeniyor?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "How much is the deposit, and when is it paid?"
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · Resident"
+   ]
+  },
+  {
+   "tr": "Dilek kipiyle bir talep ya da öneri yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.6 Work and the bargaining table · yazma"
+   ]
+  },
+  {
+   "tr": "E-L-I-F. Bir de yirmi sekiz yaşındayım.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "E-L-I-F. And I'm twenty-eight years old."
+   ],
+   "ctx": [
+    "A1.1 Nice to meet you · Elif"
+   ]
+  },
+  {
+   "tr": "Evet, numara aldım. Formu da doldurdum.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Yes, I have already taken a number. And I have already filled in the form."
+   ],
+   "ctx": [
+    "A2.10 Offices and official business · Visitor"
+   ]
+  },
+  {
+   "tr": "Evimi ve eşyalarımı tarif edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can describe my home and my furniture."
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood"
+   ]
+  },
+  {
+   "tr": "Gıda egemenliği talebini kurabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can state a demand for food sovereignty."
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil"
+   ]
+  },
+  {
+   "tr": "Hangi daire ve hangi arıza olduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.2 Renting and moving · yazma"
+   ]
+  },
+  {
+   "tr": "Hastanın öksürüğü ne zamandan beri var?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How long has the patient had a cough?"
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · dinleme sorusu"
+   ],
+   "options": [
+    "For two days",
+    "For five days",
+    "Since Friday",
+    "For a week"
+   ]
+  },
+  {
+   "tr": "Having filtered …, Being loaded first …",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Participle clauses in instructions"
+   ],
+   "ctx": [
+    "B2.3 Process and passive"
+   ]
+  },
+  {
+   "tr": "İkinci kattaki daire hakkında yazıyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I am writing about the flat on the second floor."
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "İroniyi en çok bir kez ve ölçülü kullan",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.2 Dissent without rupture · yazma"
+   ]
+  },
+  {
+   "tr": "İyi günler. Bu telefonda bir sorun var.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Good afternoon. There's a problem with this smartphone."
+   ],
+   "ctx": [
+    "A2.6 Shopping and services · Customer"
+   ]
+  },
+  {
+   "tr": "Kısa bir haber metnini anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand a short news report."
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "Konuklar ne zamana kadar cevap vermeli?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Until when should the guests answer?"
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people · okuma sorusu"
+   ],
+   "options": [
+    "Until 1 June",
+    "Until 18 June",
+    "Until Saturday",
+    "Until midnight"
+   ]
+  },
+  {
+   "tr": "Meslektaşa göre kariyeri ne belirliyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What decides a career, according to the colleague?"
+   ],
+   "ctx": [
+    "B2.8 Money and career · dinleme sorusu"
+   ],
+   "options": [
+    "The chance of promotion",
+    "The hourly wage",
+    "The bonus",
+    "The notice period"
+   ]
+  },
+  {
+   "tr": "Ne zaman başlayabileceğini ve ekini yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.1 My career so far · yazma"
+   ]
+  },
+  {
+   "tr": "Özür dilerim. Hemen havlu göndereceğim.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "I'm sorry. I'll send some towels immediately."
+   ],
+   "ctx": [
+    "A2.7 Travelling · Receptionist"
+   ]
+  },
+  {
+   "tr": "Sara, Tom'u arıyor ve buluşmak istiyor.",
+   "kind": "listening.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.4 My day · dinleme"
+   ]
+  },
+  {
+   "tr": "Üç buçukta. Önce kütüphaneye gideceğim.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "At half past three. First I'm going to visit the library."
+   ],
+   "ctx": [
+    "A1.4 My day · Tom"
+   ]
+  },
+  {
+   "tr": "Yazar dönem hakkında neyi kabul ediyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the author admit about the term?"
+   ],
+   "ctx": [
+    "C1.10 Evidence, judgement and choice · dinleme sorusu"
+   ],
+   "options": [
+    "He merely affirmed claims instead of advocating them",
+    "He misrepresented a study",
+    "He never read the doctrine",
+    "He changed his school of thought"
+   ]
+  },
+  {
+   "tr": "Yazara göre odadaki doktrine ne oluyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the writer say happens to a doctrine in the room?"
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture · okuma sorusu"
+   ],
+   "options": [
+    "Everyone walks around it and nobody moves it",
+    "It is refuted at once",
+    "It is written into the minutes",
+    "It is quoted by the board"
+   ]
+  },
+  {
+   "tr": "Yazarı yeniden kaydolmaya ne ikna eder?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What would make the writer sign up again?"
+   ],
+   "ctx": [
+    "B1.3 Reason and result · okuma sorusu"
+   ],
+   "options": [
+    "A small evening group",
+    "A cheaper price",
+    "A different tutor",
+    "A shorter term"
+   ]
+  },
+  {
+   "tr": "„There is / There are“ ile bir cümle kur",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.7 Home and living · yazma"
+   ]
+  },
+  {
+   "tr": "Aldığınız cihazı tarif edebilir misiniz?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Could you describe the device that you received?"
+   ],
+   "ctx": [
+    "B1.4 Describing and deciding · Assistant"
+   ]
+  },
+  {
+   "tr": "Araştırmacıya göre model ne kadar kesin?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How certain is the model, according to the researcher?"
+   ],
+   "ctx": [
+    "C1.8 Climate and the city · dinleme sorusu"
+   ],
+   "options": [
+    "It is volatile, so the conclusion is cautious",
+    "It is proven",
+    "It cannot be tested",
+    "It was rejected"
+   ]
+  },
+  {
+   "tr": "Arkadaşına kardeşlerinden bahsediyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.2 Family and people · konuşma"
+   ]
+  },
+  {
+   "tr": "Asıl kıran şey karar değil, dışlanmaktı.",
+   "kind": "speaking",
+   "n": 1,
+   "de": [
+    "What really hurt was not the decision but the exclusion."
+   ],
+   "ctx": [
+    "B2.9 Relationships and psychology · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir alıntıyı kaynağına bağlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can attribute a quotation to its source."
+   ],
+   "ctx": [
+    "B2.4 Media and reported speech"
+   ]
+  },
+  {
+   "tr": "Bir dilekçeyi resmî kayıtta söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.3 Legal and contract language · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir edilgen cümle kur („it was built …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.4 Describing and deciding · yazma"
+   ]
+  },
+  {
+   "tr": "Bir eksiği ölçülü bir tonla söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.1 Professional communication · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir metnin söylemediğini okuyabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can read what a text leaves out."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation"
+   ]
+  },
+  {
+   "tr": "Bir strateji raporunun bir bölümünü yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.9 Money and the forecast · yazma"
+   ]
+  },
+  {
+   "tr": "Bir yarma cümlesiyle asıl önceliğini koy",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.8 Money and career · yazma"
+   ]
+  },
+  {
+   "tr": "Bir yorumu benimsemeden aktarabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can report an interpretation without adopting it."
+   ],
+   "ctx": [
+    "C1.4 Literature and interpretation"
+   ]
+  },
+  {
+   "tr": "Birini bir kutlamaya davet edebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can invite someone to a celebration."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Birini tebrik edip şans dileyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can congratulate someone and wish them luck."
+   ],
+   "ctx": [
+    "A2.8 Celebrations and people"
+   ]
+  },
+  {
+   "tr": "Bu şehirde ne zamandan beri oturuyorsun?",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "How long have you lived in this city?"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · Merve"
+   ]
+  },
+  {
+   "tr": "Doğru olsa da bu sözcük … ile bağdaşıyor",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Albeit accurate, the word is compatible with …"
+   ],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Doktor Weber'in muayenehanesi, günaydın.",
+   "kind": "turn",
+   "n": 1,
+   "de": [
+    "Doctor Weber's office, good morning."
+   ],
+   "ctx": [
+    "A2.3 At the doctor's · Assistant"
+   ]
+  },
+  {
+   "tr": "Dosya numarasıyla ve resmî hitapla başla",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.3 Legal and contract language · yazma"
+   ]
+  },
+  {
+   "tr": "First / Then / In the evening ile sırala",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.10 Keeping in touch · yazma"
+   ]
+  },
+  {
+   "tr": "Geçmişte olan bir olayı anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can tell a story in the past."
+   ],
+   "ctx": [
+    "A2.1 What happened?"
+   ]
+  },
+  {
+   "tr": "Gürültücü komşuyla nazikçe konuşuyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.4 Home and neighbourhood · konuşma"
+   ]
+  },
+  {
+   "tr": "Hangi araçla gittiğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how I travel."
+   ],
+   "ctx": [
+    "A1.6 In town"
+   ]
+  },
+  {
+   "tr": "Havaalanında bir aksiliği bildiriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.7 Travelling · konuşma"
+   ]
+  },
+  {
+   "tr": "İki ayrı adı ve kaynaklarını karşılaştır",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.5 Belonging and its words · yazma"
+   ]
+  },
+  {
+   "tr": "İlişkiyi koparmadan karşı çıkabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can disagree without breaking the relationship."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  },
+  {
+   "tr": "İlk hafta neden kısa bir test yapılıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "Why is a short test taken in the first week?"
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · okuma sorusu"
+   ],
+   "options": [
+    "To check the gap between the levels",
+    "To decide the price",
+    "To choose the tutor",
+    "To divide the group"
+   ]
+  },
+  {
+   "tr": "Kerem şehirde ne zamandan beri oturuyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "How long has Kerem lived in the city?"
+   ],
+   "ctx": [
+    "A2.2 My story, then and now · dinleme sorusu"
+   ],
+   "options": [
+    "For three months",
+    "For three years",
+    "Since university",
+    "For two years"
+   ]
+  },
+  {
+   "tr": "Kiracılar saat ondan sonra ne yapmamalı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What mustn't the residents do after ten o'clock?"
+   ],
+   "ctx": [
+    "A2.4 Home and neighbourhood · okuma sorusu"
+   ],
+   "options": [
+    "Make noise",
+    "Use the lift",
+    "Clean the stairs",
+    "Park a bike"
+   ]
+  },
+  {
+   "tr": "Koşulları müzakere eden bir e-posta yaz.",
+   "kind": "writing.prompt",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.8 Money and career · yazma"
+   ]
+  },
+  {
+   "tr": "Markus işten sonra her zaman ne yapıyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does Markus always do after work?"
+   ],
+   "ctx": [
+    "A1.4 My day · okuma sorusu"
+   ],
+   "options": [
+    "He sleeps",
+    "He visits the library",
+    "He starts work",
+    "He has lunch"
+   ]
+  },
+  {
+   "tr": "Metin kişisel veriler hakkında ne diyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What does the text say about personal data?"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · okuma sorusu"
+   ],
+   "options": [
+    "They were not affected according to the checks so far",
+    "They were lost",
+    "They were deleted",
+    "Nothing is said about them"
+   ]
+  },
+  {
+   "tr": "Ne istediğini yaz (rapor, sevk, randevu)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B1.8 The health system · yazma"
+   ]
+  },
+  {
+   "tr": "Nereli olduğunu ve nerede oturduğunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.1 Nice to meet you · yazma"
+   ]
+  },
+  {
+   "tr": "Neyi iyi yapabildiğimi söyleyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say what I can do well and what I can't."
+   ],
+   "ctx": [
+    "A1.8 Free time"
+   ]
+  },
+  {
+   "tr": "Selin ekibe katılmadan önce ne yapmıştı?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What did Selin do before she joined the team?"
+   ],
+   "ctx": [
+    "B1.1 My career so far · dinleme sorusu"
+   ],
+   "options": [
+    "She had finished her training",
+    "She had worked for the client",
+    "She had written two reports",
+    "She had left another company"
+   ]
+  },
+  {
+   "tr": "Sert bir mesajı tonla yumuşatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can soften a hard message with tone and nuance."
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "tutanak dili: the assignment of the task",
+   "kind": "focus",
+   "n": 1,
+   "de": [
+    "Nominalisation"
+   ],
+   "ctx": [
+    "B2.1 Professional communication"
+   ]
+  },
+  {
+   "tr": "Yazılı bir gerekliliğe işaret ediyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.3 Process and passive · konuşma"
+   ]
+  },
+  {
+   "tr": "Yolu bulamayınca yardım isteyebiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can ask for help when I am lost."
+   ],
+   "ctx": [
+    "A1.6 In town"
+   ]
+  },
+  {
+   "tr": "Zam görüşmesinde önceliğini söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.8 Money and career · konuşma"
+   ]
+  },
+  {
+   "tr": "… yapmayı seviyorum ama …-i zor buluyorum",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "I enjoy …-ing, but I find … difficult."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-den önce sizi yeniden bilgilendireceğiz",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "We will inform you again before …"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "…-den önce tamirci ayarlayabilir misiniz?",
+   "kind": "phrase",
+   "n": 1,
+   "de": [
+    "Could you arrange a plumber before …?"
+   ],
+   "ctx": [
+    "B1.2 Renting and moving · yazma kalıbı"
+   ]
+  },
+  {
+   "tr": "Açık kalan bir noktayı ve sorumlusunu yaz",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "B2.1 Professional communication · yazma"
+   ]
+  },
+  {
+   "tr": "Aynı kararı iki ayrı kayıtta söylüyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.1 Register and tone · konuşma"
+   ]
+  },
+  {
+   "tr": "Aynı şeyin iki ya da üç adını karşılaştır",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.7 Land, food and the soil · yazma"
+   ]
+  },
+  {
+   "tr": "Bayan Neuhaus'a göre kaydı ne belirliyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What, according to Ms. Neuhaus, sets the register?"
+   ],
+   "ctx": [
+    "C1.1 Register and tone · dinleme sorusu"
+   ],
+   "options": [
+    "The salutation alone",
+    "The length of the note",
+    "The figure in the second line",
+    "The name of the sender"
+   ]
+  },
+  {
+   "tr": "Bilet alabiliyor ve peronu sorabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can buy a ticket and ask about the platform."
+   ],
+   "ctx": [
+    "A1.6 In town"
+   ]
+  },
+  {
+   "tr": "Bir adlandırmanın bedelini gösteriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.5 Belonging and its words · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir adlandırmanın çıkarını gösteriyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "C1.7 Land, food and the soil · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir arkadaşını kutlamaya davet ediyorsun.",
+   "kind": "speaking.situation",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A2.8 Celebrations and people · konuşma"
+   ]
+  },
+  {
+   "tr": "Bir olumsuz cümle kur („I haven't got …“)",
+   "kind": "writing.checklist",
+   "n": 1,
+   "de": [],
+   "ctx": [
+    "A1.2 Family and people · yazma"
+   ]
+  },
+  {
+   "tr": "Bir önergeyi resmî kayıtta yazabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can put a motion in the formal register."
+   ],
+   "ctx": [
+    "C1.2 Dissent without rupture"
+   ]
+  },
+  {
+   "tr": "Bir sebebi ve sonucunu açıklayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can explain a reason and its result."
+   ],
+   "ctx": [
+    "B1.3 Reason and result"
+   ]
+  },
+  {
+   "tr": "Bir şerit kaldırılınca sokakta ne oluyor?",
+   "kind": "question",
+   "n": 1,
+   "de": [
+    "What happens to the street when one lane is removed?"
+   ],
+   "ctx": [
+    "B1.9 The city and the environment · dinleme sorusu"
+   ],
+   "options": [
+    "The route becomes quieter",
+    "The bus stop is closed",
+    "The traffic grows",
+    "The cycle lane is removed"
+   ]
+  },
+  {
+   "tr": "Bir uygulamayı adım adım anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can explain how to use an app step by step."
+   ],
+   "ctx": [
+    "A2.9 Media and technology"
+   ]
+  },
+  {
+   "tr": "Çöpün nasıl toplandığını anlayabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can understand how the rubbish is collected."
+   ],
+   "ctx": [
+    "B1.9 The city and the environment"
+   ]
+  },
+  {
+   "tr": "En iyi nasıl öğrendiğimi anlatabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can say how I learn best."
+   ],
+   "ctx": [
+    "B1.6 Learning and progress"
+   ]
+  },
+  {
+   "tr": "Esnekliği güvencesizlikle tartabiliyorum.",
+   "kind": "cando",
+   "n": 1,
+   "de": [
+    "I can weigh flexibility against status insecurity."
+   ],
+   "ctx": [
+    "C1.6 Work and the bargaining table"
+   ]
+  }
+ ]
+}
