@@ -16,13 +16,15 @@ import type { ModuleExamPlan } from "../types";
  * yalnızca bilgi değil kuruluş da gerekiyor — giriş, gerekçe, çekince,
  * öneri, kapanış.
  *
- * TEMALAR DERSLERİN KENDİSİNDEN. `MODULE_THEMES` seviye başına tek liste
- * tutuyor ve iki kurs onu paylaşıyor; A1–B2'de bu doğru (İngilizce dersler
- * Almanca temalara oturuyor) ama C1'de ayrışıyor: Almanca C1.3 "Retorik ve
- * sunum sanatı", İngilizce C1.3'ün on dersi ise hukuk ve sözleşme dili.
- * Kâğıdın ölçtüğü şey modülün KENDİSİ olmak zorunda olduğu için `titleTr`
- * derslerin gerçek temasını söylüyor. Patika'nın ünite kartı hâlâ
- * `MODULE_THEMES`i basıyor; o ayrı bir kusur ve ayrıca bildirildi.
+ * TEMALAR DERSLERİN KENDİSİNDEN. İki kursun C1 müfredatı ayrışıyor: Almanca
+ * C1.3 "Retorik ve sunum sanatı", İngilizce C1.3'ün on dersi ise hukuk ve
+ * sözleşme dili. Kâğıdın ölçtüğü şey modülün KENDİSİ olmak zorunda olduğu
+ * için `titleTr` derslerin gerçek temasını söylüyor.
+ *
+ * Bu kâğıtlar yazıldığında Patika'nın ünite kartı hâlâ tek bir seviye
+ * listesini basıyordu, yani on ünitede de Almanca dersin adını. 2026-09-21'de
+ * `MODULE_THEMES` kursa göre bölündü ve İngilizce C1 temaları buradaki
+ * `titleTr` satırlarıyla aynı dersleri anlatıyor — ikisi birlikte değişir.
  */
 export const EN_C1_EXAMS: ModuleExamPlan[] = [
   {

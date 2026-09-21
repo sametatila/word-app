@@ -328,9 +328,11 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
       /* Havuz KÂĞITLARIN KENDİSİNDEN kuruluyor, sayarak değil.
          Önce `moduleExamPlan(course, level, i + 1)` ile index'leniyordu ve iki
          ayrı kusuru vardı: `i + 1` sıfır tabanlı index'i kaydırdığı için
-         seviyenin BİRİNCİ kâğıdı havuza hiç girmiyordu, `moduleCount(level)`
-         ise kursu bilmiyor (`MODULE_THEMES` seviye anahtarlı, Almanca kursun
-         ölçüsü) — İngilizce B1'de on kâğıt için on sekiz kez soruluyordu.
+         seviyenin BİRİNCİ kâğıdı havuza hiç girmiyordu, `moduleCount` ise o
+         gün kursu bilmiyordu (tablo yalnız seviyeye göre anahtarlıydı ve
+         ölçü Almanca kursundu) — İngilizce B1'de on kâğıt için on sekiz kez
+         soruluyordu. Tablo sonradan kursa göre bölündü; havuzun kâğıtları
+         doğrudan okuması yine de doğrusu, çünkü aradaki sayı bir varsayım.
          `moduleExamPlan` yoksa `undefined` döndüğü ve `flatMap` onu düşürdüğü
          için ikisi de hiçbir yerde hata vermiyordu; biri bir kâğıdı sessizce
          hiç sormuyor, öteki boşuna sekiz kez arıyordu. */

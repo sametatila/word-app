@@ -204,10 +204,10 @@ export async function moduleLessons(course: string, level: string, index: number
 /**
  * Kursun bir seviyesindeki modül sayısı — DERSLERDEN sayılıyor.
  *
- * Adı `lessons/modules` içindeki `moduleCount(level)` ile karışmasın diye
- * ayrı: o, plandaki modül sayısını veriyor (sabit), bu ise gerçekte yazılmış
- * ders sayısından türüyor. İkisi çoğu seviyede aynı, yarım kalmış bir
- * seviyede değil.
+ * Adı `lessons/modules` içindeki `moduleCount(course, level)` ile karışmasın
+ * diye ayrı: o, plandaki modül sayısını veriyor (sabit), bu ise gerçekte
+ * yazılmış ders sayısından türüyor. İkisi çoğu seviyede aynı, yarım kalmış
+ * bir seviyede değil.
  */
 export async function lessonModuleCount(course: string, level: string): Promise<number> {
   const inLevel = (await lessonsForLevel(course, level)).filter((l) => l.course === course);
