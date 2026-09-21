@@ -50,6 +50,11 @@ import { enC1P2 } from "./en-c1-p2";
 import { enC1P3 } from "./en-c1-p3";
 import { enC1P4 } from "./en-c1-p4";
 import { enC1P5 } from "./en-c1-p5";
+import { deA1P6 } from "./de-a1-p6";
+import { deA1P7 } from "./de-a1-p7";
+import { deA1P8 } from "./de-a1-p8";
+import { deA1P9 } from "./de-a1-p9";
+import { deA1P10 } from "./de-a1-p10";
 
 /**
  * BECERİLER KÜTÜPHANESİ — Patika'dan bağımsız, öğrencinin kendi seçtiği içerik.
@@ -135,4 +140,11 @@ export const library: SkillExercise[] = [
   ...enC1P3,
   ...enC1P4,
   ...enC1P5,
+  // Parti 6–10: hücre başına ONA tamamlayan setler (2026-09-21 kararı).
+  // Kimlik sonu yine dosyanın parti numarasıyla aynı (de-a1-lib-r6 → de-a1-p6.ts).
+  ...deA1P6,
+  ...deA1P7,
+  ...deA1P8,
+  ...deA1P9,
+  ...deA1P10,
 ];
