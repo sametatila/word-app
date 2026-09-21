@@ -22,7 +22,7 @@
  * şeye çevrilebilirdi.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
-import { MODULE_EXAMS } from "@/lib/lessons/module-exam";
+import { courseExams } from "@/lib/lessons/module-exam";
 import type { ModuleExamPlan } from "@/lib/lessons/module-exam/types";
 
 const DIR = new URL(".", import.meta.url).pathname;
@@ -53,7 +53,12 @@ export function extractExam(): ExamRow[] {
     rows.set(tr, r);
   };
 
-  for (const p of Object.values(MODULE_EXAMS).flat() as ModuleExamPlan[]) {
+  /* YALNIZ ALMANCA KURSUN KÂĞITLARI. Bu hat Türkçeyi İNGİLİZCEYE çeviriyor,
+     yani okuyucusu anadili İngilizce olan kullanıcı — o da yalnız Almanca
+     kursu alıyor. İngilizce kursun kâğıtları (2026-09-21) buraya girseydi
+     hiç okunmayacak ~1.500 dize hem sözlüğe hem `check.ts` kapsam kapısına
+     binerdi. Onların Almanca karşılığı kardeş hatta: `data/lessons/exam-de/`. */
+  for (const p of courseExams("de") as ModuleExamPlan[]) {
     const at = `${p.code} ${p.titleDe}`;
     add("plan.title", p.titleTr, p.titleDe, at);
     for (const f of p.focus) add("focus", f.tr, f.de, at);

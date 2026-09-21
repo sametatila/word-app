@@ -24,15 +24,41 @@ export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types"
  * başlıklı sınavlar demekti ve tek çare kursu adıyla dışarıda bırakmaktı
  * (`hasModuleExams` içinde `course !== "en"`). Artık ayrım VERİDE: bir kursun
  * kâğıdı yoksa o kursta modül sınavı da yok, kod kurs adı saymıyor.
- *
- * İngilizce kâğıtlar yazıldığında buraya `en:` anahtarı eklenecek; Patika
- * zaten planı olmayan modülü elemeye hazır (`immersion/page.tsx`).
  */
 const COURSE_PLANS: Record<string, ModuleExamPlan[]> = {
   de: [...A1_EXAMS, ...A2_EXAMS, ...B1_EXAMS, ...B2_EXAMS, ...C1_EXAMS],
 };
 
+/**
+ * Bütün kâğıtlar, kursları KARIŞMIŞ hâlde.
+ *
+ * Kursu önemsemeyen işler için: uzunluk ölçen, sayan, tarayan betikler.
+ * Kursu önemseyen her yer `MODULE_EXAM_ENTRIES` okumalı — kâğıdın kendisi
+ * kursunu SÖYLEMİYOR ve bu bilerek böyle: kurs, planın bir alanı olsaydı
+ * anahtarla ayrışabilirdi ve hangisinin doğru olduğu bilinemezdi.
+ */
 export const MODULE_EXAMS: ModuleExamPlan[] = Object.values(COURSE_PLANS).flat();
+
+/**
+ * Kâğıtlar KURSUYLA birlikte — tek doğruluk kaynağı `COURSE_PLANS` anahtarı.
+ *
+ * İkinci bir kurs (İngilizce, 2026-09-21) eklenene kadar bu ihtiyaç
+ * görünmüyordu: kâğıt taşıyan tek kurs Almanca olduğu için kursu soran
+ * betikler sabit yazmıştı (`const COURSE = "de"`, `course: "de"`). Sabit
+ * kalanları İngilizce kâğıtlar sessizce Almanca sayardı — İngilizce diyaloğu
+ * Almanca kadroyla seslendirmek ya da Almanca sözlükte aramak gibi.
+ */
+export const MODULE_EXAM_ENTRIES: { course: string; plan: ModuleExamPlan }[] = Object.entries(
+  COURSE_PLANS,
+).flatMap(([course, plans]) => plans.map((plan) => ({ course, plan })));
+
+/** Kâğıdı olan kurslar — denetim betikleri bu listeyi dolaşıyor. */
+export const EXAM_COURSES: string[] = Object.keys(COURSE_PLANS);
+
+/** Bir kursun bütün kâğıtları (kurs bilmiyorsa boş). */
+export function courseExams(course: string): ModuleExamPlan[] {
+  return COURSE_PLANS[course] ?? [];
+}
 
 const BY_KEY = new Map<string, ModuleExamPlan>(
   Object.entries(COURSE_PLANS).flatMap(([course, plans]) =>

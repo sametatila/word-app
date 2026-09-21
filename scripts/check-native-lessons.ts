@@ -33,7 +33,7 @@ import {
   type ExamShape,
   type NativeDict,
 } from "@/lib/lessons/native";
-import { MODULE_EXAMS } from "@/lib/lessons/module-exam";
+import { courseExams } from "@/lib/lessons/module-exam";
 import type { Segment } from "@/lib/lessons/types";
 
 const dict = JSON.parse(
@@ -118,8 +118,14 @@ for (const l of lessons) {
    okuyor. Ama BUGÜNE KADAR hiçbir kapı `resolveExam`i çalıştırmıyordu —
    hattın kendi kapısı (`check:lessons-exam`) yalnız yazılanı ölçüyor.
    Ölçüldü: 58 kâğıt, 6.728 dize, 0 reddedilen, 0 Türkçe. Yani bugün temiz;
-   tarama bunun ÖYLE KALDIĞINI ölçüyor. */
-for (const p of MODULE_EXAMS) {
+   tarama bunun ÖYLE KALDIĞINI ölçüyor.
+
+   YALNIZ ALMANCA KURSUN KÂĞITLARI, kardeş hatlarla aynı gerekçeyle: bu
+   sözlük Türkçeyi İNGİLİZCEYE çeviriyor ve anadili İngilizce olan kullanıcı
+   yalnız Almanca kursu alıyor (`PAIR_READY.en`). İngilizce kursun kâğıtları
+   (2026-09-21) buraya girseydi hep-ya-hiç kuralı 50 kâğıdı birden
+   reddederdi; onların Almanca karşılığı `check:native-de`de ölçülüyor. */
+for (const p of courseExams("de")) {
   const id = `sınav ${p.level}:${p.index}`;
   const out = resolveExam(dict, p as unknown as ExamShape);
   if (!out) rejected.push(id);
@@ -128,8 +134,8 @@ for (const p of MODULE_EXAMS) {
 
 console.log(
   `ders ${lessons.length} · tr parça ${segs} · çözülen ${ok} · ` +
-    `modül sınavı ${MODULE_EXAMS.length} · ` +
-    `çözülen ${lessons.length + MODULE_EXAMS.length - rejected.length} · taranan dize ${strings}`,
+    `modül sınavı ${courseExams("de").length} · ` +
+    `çözülen ${lessons.length + courseExams("de").length - rejected.length} · taranan dize ${strings}`,
 );
 if (misses.size) {
   const total = [...misses.values()].reduce((a, m) => a + m.n, 0);

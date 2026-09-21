@@ -26,7 +26,7 @@ import { readFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { MODULE_EXAMS } from "../src/lib/lessons/module-exam";
+import { MODULE_EXAM_ENTRIES } from "../src/lib/lessons/module-exam";
 import { MAX_TEXT, cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
 import { dialogueCast, genderOf, rolePairs, speakerKey, speakerKnown } from "../src/lib/tts/speakers";
 
@@ -74,13 +74,15 @@ for (const ex of BUNDLED_EXERCISES) {
   if (ex.skill === "reading") prose.push({ where: ex.id, text: ex.text });
 }
 
-/* Modül sınavları bugün yalnız Almanca kursunda var (`COURSE_PLANS` tek
-   anahtarlı); plan kendi kursunu taşımıyor, o yüzden burada sabit. İkinci bir
-   kurs eklendiğinde bu satır da genişler — `check:tts` o gün ses dağıtımını
-   yanlış kursla ölçmesin. */
-for (const plan of MODULE_EXAMS) {
+/* Modül sınavı kâğıtları KURSUYLA birlikte okunuyor (`MODULE_EXAM_ENTRIES`).
+   Kurs bir dönem sabit yazılıydı ve o gün doğruydu — kâğıt taşıyan tek kurs
+   Almancaydı. İngilizce kâğıtlar (2026-09-21) eklenince sabit, İngilizce
+   diyaloğu Almanca kadroyla ölçmek demek olurdu: etiketin cinsiyeti Almanca
+   kurallarıyla çözülür ("Student" eril sayılır, oysa İngilizcede cinsiyetsiz)
+   ve blok içi ses çakışması yanlış yerde aranırdı. */
+for (const { course, plan } of MODULE_EXAM_ENTRIES) {
   const turns = plan.listening?.turns;
-  if (turns) blocks.push({ where: `modül·de-${plan.level}-${plan.index}`, course: "de", segments: turns.map((t) => ({ speaker: t.speaker, text: t.de })) });
+  if (turns) blocks.push({ where: `modül·${course}-${plan.level}-${plan.index}`, course, segments: turns.map((t) => ({ speaker: t.speaker, text: t.de })) });
 }
 
 /* ── 1. UZUNLUK — hiçbir istek tavanı aşmamalı ─────────────────────────── */

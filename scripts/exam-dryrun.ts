@@ -10,31 +10,44 @@
  *   npx tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts
  */
 import { FAKE_WORDS } from "./stub-db";
+import { EXAM_COURSES } from "../src/lib/lessons/module-exam";
 import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
 import { foldSentence } from "../src/lib/sentence-match";
 import type { CefrLevel } from "../src/lib/skills/types";
 
-const COURSE = "de";
+/**
+ * KAĞIT TAŞIYAN HER KURS — sabit `"de"` değil.
+ *
+ * Kuru prova tek kurs varken yazıldı. İngilizce kâğıtlar (2026-09-21)
+ * eklenince sabit, kurucunun İngilizce kursta hiç denenmemesi demek oldu:
+ * kâğıdı KURAN yol (`buildExam`) kursa göre dallanıyor (banka süzgeci, kadro,
+ * konuşma havuzu) ve o dalların hiçbiri ölçülmüyordu.
+ */
+const COURSES = EXAM_COURSES;
 
-// Kelime havuzu: her modülün başlıkları + seviye dolgusu.
+// Kelime havuzu: her modülün başlıkları + seviye dolgusu. Kurs sütunu da
+// doğru yazılıyor, çünkü `buildExam` havuzu kursa göre süzüyor
+// (`practiceWordsOf`); tek kurs varken bu ayrım görünmüyordu.
 let wid = 1;
-for (const m of allModules(COURSE)) {
-  for (const w of moduleContent(COURSE, m.level, m.index).words) {
-    FAKE_WORDS.push({
-      id: wid++,
-      de: w.head,
-      artikel: /^(der|die|das) /i.test(w.de) ? w.de.split(" ")[0].toLowerCase() : null,
-      tr: w.tr,
-      en: null,
-      formen: null,
-      typ: /^(der|die|das) /i.test(w.de) ? "Nomen" : "Verb",
-      niveau: m.level,
-      beispiel: `Das ist ${w.head}.`,
-      beispielTr: `Bu ${w.tr}.`,
-      beispielEn: null,
-      rank: wid,
-      course: COURSE,
-    });
+for (const course of COURSES) {
+  for (const m of allModules(course)) {
+    for (const w of moduleContent(course, m.level, m.index).words) {
+      FAKE_WORDS.push({
+        id: wid++,
+        de: w.head,
+        artikel: /^(der|die|das) /i.test(w.de) ? w.de.split(" ")[0].toLowerCase() : null,
+        tr: w.tr,
+        en: null,
+        formen: null,
+        typ: /^(der|die|das) /i.test(w.de) ? "Nomen" : "Verb",
+        niveau: m.level,
+        beispiel: `Das ist ${w.head}.`,
+        beispielTr: `Bu ${w.tr}.`,
+        beispielEn: null,
+        rank: wid,
+        course,
+      });
+    }
   }
 }
 
@@ -49,11 +62,11 @@ async function main() {
   const { scoreSections, SECTION_ORDER } = await import("../src/lib/exam-types");
   console.log(`Kelime havuzu: ${FAKE_WORDS.length} satır.\n`);
 
-  for (const m of allModules(COURSE)) {
-    const where = `${m.level}.${m.index + 1}`;
-    const paper = await buildExam("dry", COURSE, m.level as CefrLevel, m.index, "2026-08-24");
+  for (const { course, m } of COURSES.flatMap((course) => allModules(course).map((m) => ({ course, m })))) {
+    const where = `${course}·${m.level}.${m.index + 1}`;
+    const paper = await buildExam("dry", course, m.level as CefrLevel, m.index, "2026-08-24");
     const s = paper.sections;
-    const lessons = moduleContent(COURSE, m.level, m.index).lessons.map((l) => l.id);
+    const lessons = moduleContent(course, m.level, m.index).lessons.map((l) => l.id);
 
     if (s.vocab.length !== 6) fail(where, `kelime ${s.vocab.length} (6 olmalı)`);
     // Dilbilgisi bölümü 2026-08'de BİLEREK kaldırıldı (`exam.ts`: "cheatsheet
@@ -66,7 +79,7 @@ async function main() {
     if (s.produce.length !== 5) fail(where, `cümle kurma ${s.produce.length} (5 olmalı)`);
     if (s.reading.length !== 1 || s.reading[0].questions.length !== 2) fail(where, "okuma bölümü eksik");
     if (s.listening.length !== 1 || s.listening[0].questions.length !== 3) fail(where, "dinleme bölümü eksik");
-    if (!paper.cover || paper.cover.code !== where) fail(where, `kapak yok ya da yanlış: ${paper.cover?.code}`);
+    if (!paper.cover || paper.cover.code !== `${m.level}.${m.index + 1}`) fail(where, `kapak yok ya da yanlış: ${paper.cover?.code}`);
     if (paper.seconds !== 1500) fail(where, `süre ${paper.seconds}`);
 
     if (s.grammar.length) {
@@ -107,10 +120,11 @@ async function main() {
     if (Math.abs(weightSum - 100) > 2) fail(where, `ağırlık toplamı ${weightSum}`);
 
     const modes = s.produce.map((p) => p.mode).join(",");
-    console.log(`${where.padEnd(6)} ${paper.cover?.titleDe.padEnd(32)} bölümler ${SECTION_ORDER.filter((id) => (id === "reading" ? s.reading.length : id === "listening" ? s.listening.length : id === "speaking" ? s.speaking.length : id === "writing" ? s.writing.length : id === "vocab" ? s.vocab.length : id === "grammar" ? s.grammar.length : s.produce.length) > 0).length} · üretim [${modes}]`);
+    console.log(`${where.padEnd(10)} ${paper.cover?.titleDe.padEnd(34)} bölümler ${SECTION_ORDER.filter((id) => (id === "reading" ? s.reading.length : id === "listening" ? s.listening.length : id === "speaking" ? s.speaking.length : id === "writing" ? s.writing.length : id === "vocab" ? s.vocab.length : id === "grammar" ? s.grammar.length : s.produce.length) > 0).length} · üretim [${modes}]`);
   }
 
-  console.log(`\n${errors ? `✗ ${errors} hata` : `✓ ${allModules(COURSE).length} modülün kâğıdı kuruldu, hata yok`}.`);
+  const total = COURSES.reduce((a, c) => a + allModules(c).length, 0);
+  console.log(`\n${errors ? `✗ ${errors} hata` : `✓ ${COURSES.length} kursta ${total} modülün kâğıdı kuruldu, hata yok`}.`);
   process.exit(errors ? 1 : 0);
 }
 

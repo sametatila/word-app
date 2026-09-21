@@ -18,7 +18,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { LESSONS } from "@/lib/lessons/source";
 import { CANDO } from "@/lib/cando";
-import { MODULE_EXAMS } from "@/lib/lessons/module-exam";
+import { courseExams } from "@/lib/lessons/module-exam";
 import type { ModuleExamPlan } from "@/lib/lessons/module-exam/types";
 import type { Segment } from "@/lib/lessons/types";
 import { resolveSegments, type NativeDict } from "@/lib/lessons/native";
@@ -78,7 +78,10 @@ const uniq = (xs: Iterable<string | undefined | null>) => {
 
 // ── Modül sınavı ──────────────────────────────────────────────────────
 {
-  const plans = Object.values(MODULE_EXAMS).flat() as ModuleExamPlan[];
+  /* Yalnız Almanca kursun kâğıtları: bu rapor Türkçe→İngilizce boşluğunu
+     sayıyor ve İngilizce kursun kâğıtları o yöne hiç girmiyor (bkz.
+     `check-native-lessons.ts`). */
+  const plans = courseExams("de") as ModuleExamPlan[];
   const texts: string[] = [];
   let candoEn = 0;
   for (const p of plans) {

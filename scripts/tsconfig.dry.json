@@ -4,6 +4,7 @@
     "paths": {
       "server-only": ["./empty-module.ts"],
       "@/lib/db": ["./stub-db.ts"],
+      "@/lib/content/serve": ["./stub-content.ts"],
       "@/*": ["../src/*"]
     }
   }

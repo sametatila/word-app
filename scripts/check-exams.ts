@@ -10,13 +10,23 @@
  * Bu betik kâğıdı üretmeden önce üretilebilir olduğunu kanıtlıyor:
  * `npm run test:exams`.
  */
+import { targetLangOf } from "../src/lib/courses";
 import { selfAnswering } from "../src/lib/lessons/module-content";
 import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
-import { MODULE_EXAMS, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
+import { courseExams, EXAM_COURSES, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
-const COURSE = "de";
+/**
+ * KAĞIT TAŞIYAN HER KURS — sabit `"de"` değil.
+ *
+ * Betik tek kurs denerken yazıldı ve o gün doğruydu: kâğıt yalnız Almanca
+ * kursta vardı. İngilizce kâğıtlar (2026-09-21) eklenince sabit iki yerde
+ * yanlış oldu — modül döngüsü İngilizce kursu hiç denemiyordu, "fazladan
+ * plan" taraması ise İngilizce planı Almanca modülle eşleştirip yanlışlıkla
+ * geçiriyordu (seviye ve dizin aynı, kurs farklı).
+ */
+const COURSES = EXAM_COURSES;
 /** Kâğıdın istediği en az madde sayısı (bkz. COUNTS, lib/exam.ts). */
 const NEED = { produce: 5, judge: 3, cell: 3, words: 6 };
 
@@ -43,12 +53,23 @@ function checkQuestion(where: string, q: ExamQuestion) {
   if (q.options.some((o) => !o.trim())) fail(where, "boş şık var");
 }
 
-function checkPlan(plan: ModuleExamPlan) {
-  const w = plan.code;
+/**
+ * Yapabilirlik satırının HEDEF DİLDEKİ öneki.
+ *
+ * Sertifikaya basılan cümle bu; kalıbın dışına çıkan bir satır listenin
+ * ortasında sırıtıyor. Önek Almancada "Ich kann", İngilizcede "I can" —
+ * kontrol kâğıdın kursuna göre, çünkü `canDo[].de` alanı hedef dili taşıyor,
+ * adı ne olursa olsun (bkz. `module-exam/en/a1.ts` başlığı).
+ */
+const CANDO_PREFIX: Record<string, string> = { de: "Ich kann", en: "I can" };
+
+function checkPlan(course: string, plan: ModuleExamPlan) {
+  const w = `${course}·${plan.code}`;
+  const prefix = CANDO_PREFIX[targetLangOf(course)] ?? "";
   if (plan.focus.length < 3) fail(w, `odak sayısı ${plan.focus.length} (en az 3)`);
   if (plan.canDo.length < 4) fail(w, `yapabilirlik satırı ${plan.canDo.length} (en az 4)`);
   for (const c of plan.canDo) {
-    if (!c.de.startsWith("Ich kann")) warn(w, `yapabilirlik Almancası "Ich kann" ile başlamıyor: ${c.de}`);
+    if (prefix && !c.de.startsWith(prefix)) warn(w, `yapabilirlik satırı "${prefix}" ile başlamıyor: ${c.de}`);
     if (!c.tr.trim() || !c.en.trim()) fail(w, `yapabilirlik satırında eksik dil: ${c.de}`);
   }
 
@@ -89,31 +110,34 @@ function checkPlan(plan: ModuleExamPlan) {
 
 /* ------------------------------------------------------------------ modüller */
 
-const modules = allModules(COURSE);
-console.log(`Kurs "${COURSE}": ${modules.length} modül, ${MODULE_EXAMS.length} plan.\n`);
+for (const course of COURSES) {
+  const modules = allModules(course);
+  console.log(`Kurs "${course}": ${modules.length} modül, ${courseExams(course).length} plan.\n`);
 
-for (const m of modules) {
-  const where = `${m.level}.${m.index + 1}`;
-  const content = moduleContent(COURSE, m.level, m.index);
-  const plan = moduleExamPlan(COURSE, m.level, m.index);
+  for (const m of modules) {
+    const where = `${course}·${m.level}.${m.index + 1}`;
+    const content = moduleContent(course, m.level, m.index);
+    const plan = moduleExamPlan(course, m.level, m.index);
 
-  if (!plan) {
-    fail(where, "modülün sınav planı yok (src/lib/lessons/module-exam)");
-    continue;
+    if (!plan) {
+      fail(where, "modülün sınav planı yok (src/lib/lessons/module-exam)");
+      continue;
+    }
+    if (plan.level !== m.level || plan.index !== m.index) fail(where, `plan başka modülü gösteriyor: ${plan.code}`);
+    if (plan.code !== `${m.level}.${m.index + 1}`) fail(where, `plan kodu beklenenden farklı: ${plan.code}`);
+    checkPlan(course, plan);
+
+    // Türetilen maddeler kâğıdı doldurabiliyor mu?
+    const produce = content.produce.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
+    if (produce.length < NEED.produce) fail(where, `üretim maddesi ${produce.length} (en az ${NEED.produce})`);
+    if (content.judge.length < NEED.judge) fail(where, `hüküm maddesi ${content.judge.length} (en az ${NEED.judge})`);
+    if (content.words.length < NEED.words) fail(where, `kelime ${content.words.length} (en az ${NEED.words})`);
+
+    console.log(
+      `${where.padEnd(10)} ${plan.titleDe.padEnd(34)} üretim ${String(produce.length).padStart(2)} · hüküm ${String(content.judge.length).padStart(2)} · kelime ${content.words.length}`,
+    );
   }
-  if (plan.level !== m.level || plan.index !== m.index) fail(where, `plan başka modülü gösteriyor: ${plan.code}`);
-  if (plan.code !== `${m.level}.${m.index + 1}`) fail(where, `plan kodu beklenenden farklı: ${plan.code}`);
-  checkPlan(plan);
-
-  // Türetilen maddeler kâğıdı doldurabiliyor mu?
-  const produce = content.produce.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
-  if (produce.length < NEED.produce) fail(where, `üretim maddesi ${produce.length} (en az ${NEED.produce})`);
-  if (content.judge.length < NEED.judge) fail(where, `hüküm maddesi ${content.judge.length} (en az ${NEED.judge})`);
-  if (content.words.length < NEED.words) fail(where, `kelime ${content.words.length} (en az ${NEED.words})`);
-
-  console.log(
-    `${where.padEnd(6)} ${plan.code.padEnd(6)} ${plan.titleDe.padEnd(32)} üretim ${String(produce.length).padStart(2)} · hüküm ${String(content.judge.length).padStart(2)} · kelime ${content.words.length}`,
-  );
+  console.log("");
 }
 
 // Seviye sınavı beceri bankasından soru çeker (exam.ts, pickTexts). Sınav kâğıdı
@@ -123,26 +147,38 @@ for (const m of modules) {
 // süzgeçten sonra HER seviyede yeterli malzeme kaldığını doğruluyoruz, yoksa
 // düzeltme sessizce boş bir sınav bölümü üretir.
 const EXAM_MIN_TEXTS = 2;
-for (const level of ["A1", "A2", "B1", "B2", "C1"] as const) {
-  for (const skill of ["reading", "listening"] as const) {
-    const list = BUNDLED_EXERCISES.filter(
-      (e) => (e.course ?? "de") === "de" && e.level === level && e.skill === skill,
-    );
-    const usable = list.filter(
-      (e) => ("questions" in e ? e.questions : []).filter((q) => Array.isArray(q.options) && q.options.length >= 2).length > 0,
-    );
-    const where = `${level}/${skill}`;
-    if (usable.length < EXAM_MIN_TEXTS) {
-      fail(where, `sınavda kullanılabilir metin ${usable.length} (en az ${EXAM_MIN_TEXTS}) — şıklı sorusu olan egzersiz yok`);
+/* Banka da KURSUN KENDİSİNDEN süzülüyor (`exam.ts` içindeki süzgecin aynısı).
+   Sabit `"de"` yazılıyken İngilizce kursun seviye sınavı hiç ölçülmüyordu —
+   oysa aynı açık orada da var: şıksız bir egzersiz kâğıda girerse sınav o
+   soruda kilitleniyor. */
+for (const course of COURSES) {
+  for (const level of ["A1", "A2", "B1", "B2", "C1"] as const) {
+    for (const skill of ["reading", "listening"] as const) {
+      const list = BUNDLED_EXERCISES.filter(
+        (e) => (e.course ?? "de") === course && e.level === level && e.skill === skill,
+      );
+      const usable = list.filter(
+        (e) => ("questions" in e ? e.questions : []).filter((q) => Array.isArray(q.options) && q.options.length >= 2).length > 0,
+      );
+      const where = `${course}·${level}/${skill}`;
+      if (usable.length < EXAM_MIN_TEXTS) {
+        fail(where, `sınavda kullanılabilir metin ${usable.length} (en az ${EXAM_MIN_TEXTS}) — şıklı sorusu olan egzersiz yok`);
+      }
+      const empty = list.length - usable.length;
+      console.log(`${where.padEnd(18)} sınav havuzu ${String(usable.length).padStart(3)}/${String(list.length).padStart(3)} metin${empty ? ` · ${empty} egzersizin şıklı sorusu yok` : ""}`);
     }
-    const empty = list.length - usable.length;
-    console.log(`${where.padEnd(14)} sınav havuzu ${String(usable.length).padStart(3)}/${String(list.length).padStart(3)} metin${empty ? ` · ${empty} egzersizin şıklı sorusu yok` : ""}`);
   }
 }
 
-// Fazladan plan (modülü olmayan) da bir tutarsızlık.
-for (const plan of MODULE_EXAMS) {
-  if (!modules.some((m) => m.level === plan.level && m.index === plan.index)) fail(plan.code, "plana karşılık gelen modül yok");
+// Fazladan plan (modülü olmayan) da bir tutarsızlık. KURS İÇİNDE karşılaştırılıyor:
+// iki kursun modülleri aynı seviye ve dizinde durduğu için kurssuz bir
+// karşılaştırma İngilizce planı Almanca modülle eşleştirip geçirirdi.
+for (const course of COURSES) {
+  const modules = allModules(course);
+  for (const plan of courseExams(course)) {
+    if (!modules.some((m) => m.level === plan.level && m.index === plan.index))
+      fail(`${course}·${plan.code}`, "plana karşılık gelen modül yok");
+  }
 }
 
 console.log(`\n${errors ? `✗ ${errors} hata` : "✓ hata yok"}${warnings ? `, ${warnings} uyarı` : ""}.`);
