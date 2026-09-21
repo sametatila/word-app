@@ -29,7 +29,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Beklemenizin sakıncası var mı?",
         hint: "„would you“ tek parça olur: WU-cu. d ile y birleşip c sesi verir.",
         confusions: [
-          { heard: ["Would | you mind waiting"], fix: "İki kelimeyi ayırmak resmî ve yavaş duyulur; birleştir.", expected: "would you" },
+          { heard: [], fix: "İki kelimeyi ayırmak resmî ve yavaş duyulur; birleştir.", expected: "would you" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Gördün mü?",
         hint: "„did you“ = Dİ-cu. Aynı kural: d + y = c.",
         confusions: [
-          { heard: ["Did | you see it"], fix: "Günlük konuşmada bu iki kelime her zaman kaynaşır.", expected: "did you" },
+          { heard: [], fix: "Günlük konuşmada bu iki kelime her zaman kaynaşır.", expected: "did you" },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Ne demek istiyorsun?",
         hint: "„what do you“ üçü birden erir: WO-cu-miin. „do“ neredeyse kaybolur.",
         confusions: [
-          { heard: ["What | do | you | mean"], fix: "Dört ayrı kelime gibi söylemek cümleyi yapay gösterir.", expected: "what do you" },
+          { heard: [], fix: "Dört ayrı kelime gibi söylemek cümleyi yapay gösterir.", expected: "what do you" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Seninle geçen yıl tanışmıştım, değil mi?",
         hint: "„met you“ = ME-çu (t + y = ç). „didn't I“ = Dİ-dı-nay.",
         confusions: [
-          { heard: ["I met | you last year"], fix: "t ile y karşılaşınca ç çıkar; bu bir hata değil kuraldır.", expected: "met you" },
+          { heard: [], fix: "t ile y karşılaşınca ç çıkar; bu bir hata değil kuraldır.", expected: "met you" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Daha erken gelemez misin?",
         hint: "„can't you“ = KAAN-çu. Olumsuzun uzun ünlüsü korunur ama t ile y birleşir.",
         confusions: [
-          { heard: ["Can | you come earlier"], fix: "Kaynaşsa bile olumsuzun uzun ünlüsü duyulmalı, yoksa anlam döner.", expected: "can't you" },
+          { heard: ["Can you come earlier"], fix: "Kaynaşsa bile olumsuzun uzun ünlüsü duyulmalı, yoksa anlam döner.", expected: "can't you" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA2P10: SkillExercise[] = [
         tr: "Sanırım mesajımı aldın.",
         hint: "„expect you“ = iks-PEK-çu, „got my“ = GO-may. İki ayrı kaynaşma bir cümlede.",
         confusions: [
-          { heard: ["I expect | you got | my message"], fix: "Kelimeler arasındaki sınırlar konuşmada erir; anlam yine açık kalır.", expected: "expect you" },
+          { heard: [], fix: "Kelimeler arasındaki sınırlar konuşmada erir; anlam yine açık kalır.", expected: "expect you" },
         ],
       },
     ],

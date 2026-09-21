@@ -247,7 +247,7 @@ export const deA1P7: SkillExercise[] = [
         hint: "„Bruder“ içinde iki r var: ilki ünsüzden sonra duyulur, sondaki -er ise a gibi okunur (BRUU-da).",
         confusions: [
           {
-            heard: ["Mein Bruder wohnt in Bremen", "Mein BrudeR wohnt in Bremen"],
+            heard: [],
             fix: "Sondaki -er'i r diye söyleme; kısa, gevşek bir a sesi yeterlidir.",
             expected: "Bruder",
           },
@@ -283,7 +283,7 @@ export const deA1P7: SkillExercise[] = [
         hint: "Üç r üç ayrı yerde: „Lehrer“ sonu a gibi, „erklärt“ başı boğazdan, „Regel“ baştaki tam r.",
         confusions: [
           {
-            heard: ["Der Lehrer erklärt die Regel", "Der Lehra erklärt die Regel"],
+            heard: ["Der Lehra erklärt die Regel"],
             fix: "„Lehrer“ iki heceli: LEE-ra. Ama ilk r yazıda da seste de duruyor, atlanmaz.",
             expected: "Lehrer",
           },

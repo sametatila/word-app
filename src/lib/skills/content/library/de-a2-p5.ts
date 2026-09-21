@@ -252,7 +252,7 @@ export const deA2P5: SkillExercise[] = [
         tr: "Seni sonra ararım.",
         hint: "Ayrılabilen ön ek vurguyu taşır: cümlenin sonundaki „AN“ güçlü söylenir.",
         confusions: [
-          { heard: ["Ich RUFE dich später an", "Ich rufe dich später AN?"], fix: "Vurgu fiil kökünde değil, sondaki ön ekte: … şpeeta AN.", expected: "an" },
+          { heard: [], fix: "Vurgu fiil kökünde değil, sondaki ön ekte: … şpeeta AN.", expected: "an" },
         ],
       },
       {
@@ -300,7 +300,7 @@ export const deA2P5: SkillExercise[] = [
         tr: "Lütfen biraz daha erken kalk.",
         hint: "Emir cümlesinde de ayrılan ön ek sonda ve vurgulu kalır: … früher AUF.",
         confusions: [
-          { heard: ["STEH bitte etwas früher auf", "aufsteh bitte"], fix: "Ön ek fiile geri yapışmaz ve vurgu onda kalır: şteh … AUF.", expected: "auf" },
+          { heard: ["aufsteh bitte"], fix: "Ön ek fiile geri yapışmaz ve vurgu onda kalır: şteh … AUF.", expected: "auf" },
         ],
       },
     ],

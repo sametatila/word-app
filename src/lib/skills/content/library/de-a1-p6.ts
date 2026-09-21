@@ -264,7 +264,7 @@ export const deA1P6: SkillExercise[] = [
         hint: "ü, i, e, ä ve ünsüzden sonra ch YUMUŞAK: KÜ-şı gibi değil, KÜ-hı gibi ince bir sürtünme.",
         confusions: [
           {
-            heard: ["Die Kuche ist sehr klein", "Die Küşe ist sehr klein"],
+            heard: ["Die Kuche ist sehr klein", "Die Küsche ist sehr klein"],
             fix: "ch Türkçedeki ş değildir; dil öne gelir ama dudaklar yuvarlanmaz.",
             expected: "Küche",
           },

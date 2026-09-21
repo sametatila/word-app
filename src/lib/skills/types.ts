@@ -230,7 +230,16 @@ export type WritingExercise = ExerciseBase & {
  * eu=oy, ei=ay, ie=uzun i, uzun/kısa ünlü.
  */
 export type SpeechConfusion = {
-  /** Tanıyıcıdan çıkması beklenen yanlış biçim(ler). */
+  /**
+   * Tanıyıcıdan çıkması beklenen yanlış biçim(ler).
+   *
+   * TANIYICININ YAZDIĞI ŞEY: hedef dilin alfabesiyle, gerçekten çıkabilecek
+   * sözcükler. Tek sözcük jetona, boşluklu girdi tüm transkripte bakılarak
+   * aranır (`lib/pronounce`). Vurgu ve ezgi yazıya geçmediği için o
+   * derslerde girdi YOK — dizi boş bırakılır ve `fix` düşük puanda zaten
+   * gösterilir. Hedef cümlenin kendisini yazmak girdiyi ölü yapar: doğru
+   * okuyan öğrenciye de eşleşirdi.
+   */
   heard: string[];
   /** Ne olduğu ve nasıl düzeltileceği — Türkçe, tek cümle. */
   fix: string;

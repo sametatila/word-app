@@ -29,7 +29,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Hazırsın.",
         hint: "Düz cümlede ses son hecede İNER. Tonu aşağı bırak.",
         confusions: [
-          { heard: ["You're ready?"], fix: "Sonda yükseltirsen aynı sözcükler soruya dönüşür.", expected: "ready" },
+          { heard: [], fix: "Sonda yükseltirsen aynı sözcükler soruya dönüşür.", expected: "ready" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Hazır mısın?",
         hint: "Soru sözcüğü yok, fiil de başa geçmedi: türü yalnız ezgi söylüyor. Sonda tonu YÜKSELT.",
         confusions: [
-          { heard: ["You're ready."], fix: "Bu biçimde soru işaretini yalnız ses taşır.", expected: "ready" },
+          { heard: [], fix: "Bu biçimde soru işaretini yalnız ses taşır.", expected: "ready" },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Kahve ister misin?",
         hint: "Evet-hayır sorusunda ton sonda yükselir: KO-fi↗.",
         confusions: [
-          { heard: ["Would you like some coffee."], fix: "Ton düz kalırsa teklif emir gibi duyulur.", expected: "coffee" },
+          { heard: [], fix: "Ton düz kalırsa teklif emir gibi duyulur.", expected: "coffee" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Nerede oturuyorsun?",
         hint: "Soru sözcüğü varsa ton sonda İNER, çünkü türü zaten „where“ söylemiştir.",
         confusions: [
-          { heard: ["Where do you live?↗"], fix: "W- sorularında ezgi düz cümledeki gibi iner; yükseltmek tereddüt duyulur.", expected: "live" },
+          { heard: [], fix: "W- sorularında ezgi düz cümledeki gibi iner; yükseltmek tereddüt duyulur.", expected: "live" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Lütfen otur ve bekle.",
         hint: "Ricada ton inmelidir ama sert değil; „please“ ile başlayıp sakin bitir.",
         confusions: [
-          { heard: ["Please sit down and wait?↗"], fix: "Yükselen ton ricayı belirsiz ve sabırsız gösterir.", expected: "wait" },
+          { heard: [], fix: "Yükselen ton ricayı belirsiz ve sabırsız gösterir.", expected: "wait" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA1P10: SkillExercise[] = [
         tr: "Adresin Green Street, değil mi?",
         hint: "Ek soruda („right?“, „isn't it?“) ton yükselirse gerçekten soruyorsun, inerse onay bekliyorsun.",
         confusions: [
-          { heard: ["Your address is Green Street right."], fix: "Ek soruyu aynı tonla söyleme; sonda küçük bir yükselme gerekir.", expected: "right" },
+          { heard: [], fix: "Ek soruyu aynı tonla söyleme; sonda küçük bir yükselme gerekir.", expected: "right" },
         ],
       },
     ],

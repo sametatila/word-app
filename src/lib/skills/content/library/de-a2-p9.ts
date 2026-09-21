@@ -291,7 +291,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "„beantworte“ kelimesinin ORTASINDA da vuruş var: be | ANT-vor-te. Ön ek ile kök ayrılır.",
         confusions: [
           {
-            heard: ["Bitte beantworte meine E-Mail", "Bitte benantworte meine E-Mail"],
+            heard: ["Bitte benantworte meine E-Mail"],
             fix: "be- ile -antworten arasında kısa bir kesme duyulur; sesler kaynaşmaz.",
             expected: "beantworte",
           },

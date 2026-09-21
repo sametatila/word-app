@@ -50,6 +50,15 @@ const TR_HINT = /[ıİğĞşŞçÇ]|\b(ve|bir|bu|şu|için|ile|ne|nasıl|hangi|y
  * Almanca isim) sınavdan çıkarılıyor; kalanında Türkçe harf hata.
  */
 const trLetters = (text: string) => TR_LETTER.test(text.replace(/(^|[\s„"(])[A-ZÄÖÜİ][^\s.,;:!?„"()]*/g, "$1"));
+/** Söyleyiş sapmasının yazılabileceği harfler — kursun hedef dili. */
+const SPEECH_ALPHABET: Record<string, RegExp> = {
+  de: /^[a-zäöüß0-9\s.,!?;:'"„“()\-–—_]+$/i,
+  en: /^[a-z0-9\s.,!?;:'"„“()\-–—_]+$/i,
+  "gsw-zh": /^[a-zäöü0-9\s.,!?;:'"„“()\-–—_]+$/i,
+};
+/** Kaba cümle katlaması: harf ve rakam dışı her şey boşluk. */
+const foldSentence = (t: string) => String(t).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+
 const READING_WORDS: Record<string, [number, number]> = { A1: [60, 120], A2: [100, 180], B1: [150, 260], B2: [200, 350], C1: [250, 450] };
 
 const errors: string[] = [];
@@ -448,7 +457,22 @@ function checkSkills(list: SkillExercise[]) {
         for (const t of e.tasks) {
           if (!t.de?.trim() || !t.tr?.trim()) E(w, `konuşma görevi eksik: ${JSON.stringify(t).slice(0, 60)}`);
           if (wc(t.de) > 12) W(w, `konuşma cümlesi ${wc(t.de)} kelime (> 12): "${t.de}"`);
-          for (const c of t.confusions ?? []) if (!c.heard?.length || !c.fix?.trim()) E(w, `confusion eksik: ${t.de}`);
+          /* `heard` TANIYICI ÇIKTISIDIR, insan notasyonu değil.
+             İki kural da ölçümden doğdu (2026-09-21, 424 girdi taranmış):
+             - Hedef dilin alfabesi dışına çıkan girdi ("Fenşter", "…?↗")
+               tanıyıcıdan asla çıkmaz; ipucu hiç ateşlenmez.
+             - Hedef cümlenin kendisi girdi olamaz: vurgu ve ezgi yazıya
+               geçmediği için doğru okuyan öğrenciye de eşleşirdi. Otuz
+               girdi böyleydi ve ezgi/vurgu derslerinde dizi boşaltıldı;
+               o derslerde `fix` düşük puanda zaten gösteriliyor. */
+          const alphabet = SPEECH_ALPHABET[e.course ?? "de"] ?? SPEECH_ALPHABET.de;
+          for (const c of t.confusions ?? []) {
+            if (!c.fix?.trim()) E(w, `confusion: fix boş — ${t.de}`);
+            for (const h of c.heard ?? []) {
+              if (!alphabet.test(h)) E(w, `confusion "heard" hedef dilin alfabesi dışında: ${JSON.stringify(h)}`);
+              if (foldSentence(h) === foldSentence(t.de)) E(w, `confusion "heard" hedef cümlenin kendisi: ${JSON.stringify(h)}`);
+            }
+          }
         }
       }
     }

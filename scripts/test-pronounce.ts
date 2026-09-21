@@ -15,6 +15,14 @@ assert.equal(near.words[4].status, "near");
 assert.ok(near.words[4].hint?.includes("ŞTAT"), "sapma ipucu bağlanmalı");
 assert.ok(near.overall < 100 && near.overall >= 70, `yakın kelime kısmi puan: ${near.overall}`);
 
+/* Öbek sapması: `heard` tek sözcük değil, tanıyıcının döndürdüğü SIRA.
+   Tek sözcük karşılaştırması bunu hiç yakalamıyordu. */
+const phrase = scorePronunciation("Can't you come earlier?", "can you come earlier", {
+  lang: "en",
+  confusions: [{ heard: ["can you come earlier"], fix: "Olumsuzun uzun ünlüsü duyulmalı: KAANT.", expected: "can't you" }],
+});
+assert.ok(phrase.words.some((w) => w.hint?.includes("KAANT")), "öbek sapması ipucu bağlanmalı");
+
 const missing = scorePronunciation("Die Tür ist offen.", "die ist offen");
 assert.equal(missing.words[1].status, "missing");
 assert.ok(missing.completeness === 75, `bütünlük 3/4: ${missing.completeness}`);

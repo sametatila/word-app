@@ -75,10 +75,24 @@ export function scorePronunciation(
   }
   const m = matchSentence(text, target, [], opts.lang ?? "de");
   const heardTokens = m.typed.map((t) => t.text);
+  /* SAPMA ÖBEK OLABİLİR. Eşleşme yalnız TEK SÖZCÜK karşılaştırıyordu:
+     `heard` girdisi tanıyıcının bir jetonuna birebir eşit olmak zorundaydı.
+     Kütüphanedeki 424 girdinin çoğu ise öbek ("Die Küsche ist sehr klein",
+     "can you come earlier") ve bunlar hiç ateşlenmiyordu — ipucu yazıldığı
+     hâlde kelimenin altına hiç düşmüyordu. Ölçüt artık girdinin kendisine
+     bakıyor: boşluklu girdi TÜM transkriptte aranıyor, tek sözcüklü girdi
+     eskisi gibi jetonla karşılaştırılıyor. */
+  const heardLine = fold(heardTokens.join(" "));
+  const hits = (c: { heard: string[] }): boolean =>
+    c.heard.some((h) => {
+      const f = fold(h).trim();
+      if (!f) return false;
+      return f.includes(" ") ? heardLine.includes(f) : heardTokens.some((x) => fold(x) === f);
+    });
   const words: WordScore[] = m.target.map((t, i) => {
     const status = statusOf(t.mark);
     const heard = status === "near" ? heardTokens.find((h) => fold(h) !== fold(t.text) && closeEnough(h, t.text)) : undefined;
-    const conf = status !== "ok" ? (opts.confusions ?? []).find((c) => c.heard.some((h) => heardTokens.some((x) => fold(x) === fold(h)))) : undefined;
+    const conf = status !== "ok" ? (opts.confusions ?? []).find(hits) : undefined;
     return { word: t.text, status, heard: heard ?? (status === "missing" ? undefined : heardTokens[i]), hint: conf?.fix };
   });
   const extra = m.typed.filter((t) => t.mark === "extra").map((t) => t.text);

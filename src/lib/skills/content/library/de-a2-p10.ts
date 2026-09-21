@@ -264,7 +264,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "Karşıtlık varsa vurgu karşılaştırılan sözcüğe gider: MORgen ve HEUte güçlü, geri kalanı zayıf.",
         confusions: [
           {
-            heard: ["ICH komme morgen, nicht heute"],
+            heard: [],
             fix: "Burada kişi değil GÜN karşılaştırılıyor; özneyi vurgulamak yanlış bilgi verir.",
             expected: "morgen",
           },
@@ -276,7 +276,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "Şimdi kişi karşılaştırılıyor: İH ve BRUU-der vurgulu.",
         confusions: [
           {
-            heard: ["Ich KOMme, nicht mein Bruder"],
+            heard: [],
             fix: "Fiili vurgulamak „geliyorum ama başka şey yapmıyorum“ demek olur; karşıtlık kişide.",
             expected: "Ich",
           },
@@ -288,7 +288,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "Yeni bilgi cümlenin sonunda: DİİNS-taag en güçlü. Almancada yeni bilgi genelde sona konur.",
         confusions: [
           {
-            heard: ["Der KURS beginnt am Dienstag"],
+            heard: [],
             fix: "Kursun ne olduğu zaten biliniyorsa vurgu yeni bilgiye, yani güne gider.",
             expected: "Dienstag",
           },
@@ -300,7 +300,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "Olumsuzlama vurgulu: NİHT güçlü söylenir, gerisi düz.",
         confusions: [
           {
-            heard: ["Das habe ICH nicht gesagt"],
+            heard: [],
             fix: "Özneyi vurgularsan „başkası söylemiş olabilir“ anlamı çıkar; burada eylem yalanlanıyor.",
             expected: "nicht",
           },
@@ -312,7 +312,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "Uzun kelimenin kendi vurgusu da var: wie-der-HOO-len, üçüncü hecede.",
         confusions: [
           {
-            heard: ["Können Sie das bitte WIEderholen"],
+            heard: [],
             fix: "Ayrılmayan wieder- ön eki vurgusuzdur; vurgu köke düşer.",
             expected: "wiederholen",
           },
@@ -324,7 +324,7 @@ export const deA2P10: SkillExercise[] = [
         hint: "„aber“ öncesi ve sonrası iki vurgu taşır: RİH-tih ve KURTS.",
         confusions: [
           {
-            heard: ["Die ANTwort war richtig, aber zu kurz"],
+            heard: [],
             fix: "Karşıtlık iki sıfat arasında; vurgu onlara gider, özneye değil.",
             expected: "kurz",
           },

@@ -276,7 +276,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Odadaki pencere bozuk.",
         hint: "Burada st kelimenin ORTASINDA: FENS-ter, şt değil.",
         confusions: [
-          { heard: ["Fenschter", "Fenşter"], fix: "Ortadaki st şt olmaz; normal s + t: fenster.", expected: "Fenster" },
+          { heard: ["Fenschter"], fix: "Ortadaki st şt olmaz; normal s + t: fenster.", expected: "Fenster" },
         ],
       },
       {
@@ -284,7 +284,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Şimdiden evde misin?",
         hint: "Burada st kelimenin SONUNDA: BİST, yine şt değil.",
         confusions: [
-          { heard: ["Bischt du", "Bişt du"], fix: "Kelime sonundaki st normal kalır: bist.", expected: "Bist" },
+          { heard: ["Bischt du"], fix: "Kelime sonundaki st normal kalır: bist.", expected: "Bist" },
         ],
       },
     ],

@@ -237,7 +237,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "Düz cümle: ses son hecede DÜŞER. Sonuna doğru tonu indir.",
         confusions: [
           {
-            heard: ["Du kommst morgen?"],
+            heard: [],
             fix: "Sonda ton yükselirse aynı sözcükler soruya dönüşür; burada düşürmen gerekiyor.",
             expected: "morgen",
           },
@@ -249,7 +249,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "Soru sözcüğü yok, fiil de başa geçmedi: türü yalnız ezgi söylüyor, son hecede tonu YÜKSELT.",
         confusions: [
           {
-            heard: ["Du kommst morgen."],
+            heard: [],
             fix: "Bu biçimde soru işaretini ses taşır; ton düz kalırsa karşı taraf soru olduğunu anlamaz.",
             expected: "morgen",
           },
@@ -261,7 +261,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "W-sorusunda ton sonda DÜŞER, çünkü soru sözcüğü türü zaten söylemiştir.",
         confusions: [
           {
-            heard: ["Wie viel kostet das Zimmer"],
+            heard: [],
             fix: "Soru sözcüğü varsa ezgi düz cümledeki gibi iner; yükseltmek tereddüt gibi duyulur.",
             expected: "Zimmer",
           },
@@ -273,7 +273,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "Evet-hayır sorusu: fiil başta ve ton sonda YÜKSELİR.",
         confusions: [
           {
-            heard: ["Kann ich hier bezahlen."],
+            heard: [],
             fix: "Fiil başa geçtiğinde de ezgi yükselmeli; iki işaret birlikte çalışır.",
             expected: "bezahlen",
           },
@@ -285,7 +285,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "Virgülde ton hafif yükselir, cümle sonunda düşer — iki parça tek nefeste söylenir.",
         confusions: [
           {
-            heard: ["Ich komme gleich. Kein Problem."],
+            heard: [],
             fix: "Virgülde tam durma; ses biraz askıda kalır ve cümle devam eder.",
             expected: "gleich",
           },
@@ -297,7 +297,7 @@ export const deA1P10: SkillExercise[] = [
         hint: "„Entschuldigung“ sonunda ton askıda kalır, soru sonunda yükselir.",
         confusions: [
           {
-            heard: ["Entschuldigung ist hier frei"],
+            heard: [],
             fix: "Hitap ile soru arasında kısa bir duraklama olur; sonda ses yükselir.",
             expected: "frei",
           },

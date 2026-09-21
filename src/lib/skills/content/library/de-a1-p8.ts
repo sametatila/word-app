@@ -301,7 +301,7 @@ export const deA1P8: SkillExercise[] = [
         hint: "„können“ kısa ö, „später“ uzun ä ve sondaki -er bir a gibi: ŞPEE-ta.",
         confusions: [
           {
-            heard: ["Konnen wir spater fahren", "Können wir späteR fahren"],
+            heard: ["Konnen wir spater fahren"],
             fix: "Sondaki -er'i r diye söyleme; gevşek bir a yeterlidir.",
             expected: "später",
           },
