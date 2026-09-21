@@ -21,7 +21,7 @@ import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessm
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
-import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, SECTION_WORD_TARGET } from "@/lib/exam-types";
+import { DIALOG_WORD_TARGET, SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, SECTION_WORD_TARGET } from "@/lib/exam-types";
 import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
@@ -982,6 +982,9 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
 /** Dinleme diyaloğu: tek düğme bütün replikleri sırayla çalar. */
 function DialogPlayer({ segments }: { segments: { speaker?: string; text: string }[] }) {
   const t = useT();
+  /* Düğmenin ve konuşmacısız repliğin etiketi KÂĞIDIN DİLİNDE — kâğıdın geri
+     kalanıyla aynı kural (`SECTION_TITLE_TARGET`). İkisi de sabit Almancaydı. */
+  const target = targetLangOf(useCourse());
   const [at, setAt] = useState<number | null>(null);
   const alive = useRef(true);
   useEffect(() => {
@@ -1035,7 +1038,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
         className="btn btn-primary flex items-center justify-center gap-2 px-4 py-2.5 text-body"
       >
         <SpeakerIcon size={16} />
-        {at === null ? `Dialog abspielen · ${t("exam.listen_dialog")}` : t("exam.stop")}
+        {at === null ? `${DIALOG_WORD_TARGET[target]} · ${t("exam.listen_dialog")}` : t("exam.stop")}
       </button>
       <div className="flex flex-wrap gap-1.5">
         {segments.map((s, i) => (
@@ -1046,7 +1049,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
             className="chip px-2.5 py-1 text-caption"
             style={at === i ? { borderColor: "var(--color-brand)", color: "var(--color-brand)" } : undefined}
           >
-            {s.speaker ?? `Teil ${i + 1}`}
+            {s.speaker ?? `${SECTION_WORD_TARGET[target]} ${i + 1}`}
           </button>
         ))}
       </div>

@@ -76,6 +76,20 @@ export const SECTION_TITLE_DE = SECTION_TITLE_TARGET.de;
 export const SECTION_WORD_TARGET: Record<"de" | "en", string> = { de: "Teil", en: "Part" };
 
 /**
+ * Dinleme diyaloğunun çalma düğmesi, kâğıdın kendi dilinde.
+ *
+ * Sabit "Dialog abspielen" yazılıydı ve iki kurs varken bile yanlıştı: seviye
+ * sınavı İngilizce kursta da çalışıyor, yani İngilizce öğrenen öğrenci
+ * dinleme bölümünde Almanca bir düğme görüyordu. Modül sınavı İngilizce
+ * kursta açıldığında (2026-09-21) aynı düğme elli kâğıtta daha çıktı.
+ * Altındaki karşılık zaten öğrencinin kendi dilinde (`exam.listen_dialog`).
+ */
+export const DIALOG_WORD_TARGET: Record<"de" | "en", string> = {
+  de: "Dialog abspielen",
+  en: "Play the dialogue",
+};
+
+/**
  * Bölümün toplam puandaki payı (yüzde).
  *
  * Kâğıtta bulunmayan bölüm (AI ya da STT sağlayıcısı yoksa) payını
