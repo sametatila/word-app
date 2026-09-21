@@ -1,0 +1,802 @@
+[
+  {
+    "tr": "İki örnekle sına",
+    "kind": "monologue.bulletsTr",
+    "de": "Prüfe sie an zwei Beispielen"
+  },
+  {
+    "tr": "Uygulamayı somutla",
+    "kind": "monologue.bulletsTr",
+    "de": "Mach die Umsetzung konkret"
+  },
+  {
+    "tr": "Somut bir öneri ver",
+    "kind": "monologue.bulletsTr",
+    "de": "Mach einen konkreten Vorschlag"
+  },
+  {
+    "tr": "Bir örnekle destekle",
+    "kind": "monologue.bulletsTr",
+    "de": "Stütze es mit einem Beispiel"
+  },
+  {
+    "tr": "Kendi sonucunu bağla",
+    "kind": "monologue.bulletsTr",
+    "de": "Binde deinen eigenen Schluss"
+  },
+  {
+    "tr": "Kısa bir kapanış yap",
+    "kind": "monologue.bulletsTr",
+    "de": "Mach einen kurzen Abschluss"
+  },
+  {
+    "tr": "Bir tavsiye ile bitir",
+    "kind": "monologue.bulletsTr",
+    "de": "Schließe mit einem Rat"
+  },
+  {
+    "tr": "Bir öncelik sırası öner",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage eine Reihenfolge der Prioritäten vor"
+  },
+  {
+    "tr": "Ne yapılabileceğini öner",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage vor, was möglich ist"
+  },
+  {
+    "tr": "Nasıl uygulanacağını öner",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage vor, wie es umzusetzen wäre"
+  },
+  {
+    "tr": "Gerçekçi bir başlangıç öner",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage einen realistischen Anfang vor"
+  },
+  {
+    "tr": "Kimin kaybettiğini adlandır",
+    "kind": "monologue.bulletsTr",
+    "de": "Benenne, wer dabei verliert"
+  },
+  {
+    "tr": "Bir tasarım önerisiyle bitir",
+    "kind": "monologue.bulletsTr",
+    "de": "Schließe mit einem Vorschlag zur Ausgestaltung"
+  },
+  {
+    "tr": "Bir tasarım önerisiyle kapat",
+    "kind": "monologue.bulletsTr",
+    "de": "Beende es mit einem Vorschlag zur Ausgestaltung"
+  },
+  {
+    "tr": "Uygulanabilir bir kural öner",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage eine umsetzbare Regel vor"
+  },
+  {
+    "tr": "Kimin için işlemediğini söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Sag, für wen es nicht funktioniert"
+  },
+  {
+    "tr": "Bir varsayılan öner ve tanımla",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage eine Grundhaltung vor und definiere sie"
+  },
+  {
+    "tr": "Fazla değer gördüğü yeri anlat",
+    "kind": "monologue.bulletsTr",
+    "de": "Beschreibe, wo sie überschätzt wird"
+  },
+  {
+    "tr": "İstenmeyen bir sonucu adlandır",
+    "kind": "monologue.bulletsTr",
+    "de": "Benenne eine unerwünschte Folge"
+  },
+  {
+    "tr": "Konumunun zayıf yanını kabul et",
+    "kind": "monologue.bulletsTr",
+    "de": "Gib die schwache Seite deiner Position zu"
+  },
+  {
+    "tr": "Olası bir itirazı yaz ve cevapla",
+    "kind": "monologue.bulletsTr",
+    "de": "Schreib einen möglichen Einwand und antworte darauf"
+  },
+  {
+    "tr": "Kendi konumunun bedelini kabul et",
+    "kind": "monologue.bulletsTr",
+    "de": "Gib den Preis deiner eigenen Position zu"
+  },
+  {
+    "tr": "Sorunun cevabını tek cümleyle ver",
+    "kind": "monologue.bulletsTr",
+    "de": "Beantworte die Frage in einem Satz"
+  },
+  {
+    "tr": "En güçlü karşı argümanı kendin kur",
+    "kind": "monologue.bulletsTr",
+    "de": "Baue das stärkste Gegenargument selbst auf"
+  },
+  {
+    "tr": "Hangi koşulların gerektiğini anlat",
+    "kind": "monologue.bulletsTr",
+    "de": "Beschreibe, welche Bedingungen nötig sind"
+  },
+  {
+    "tr": "Bu tavsiyenin kime uymadığını söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Sag, wem dieser Rat nicht passt"
+  },
+  {
+    "tr": "Karşı tarafın en iyi argümanını kur",
+    "kind": "monologue.bulletsTr",
+    "de": "Baue das beste Argument der Gegenseite auf"
+  },
+  {
+    "tr": "Görüşünün işlemediği bir durumu söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Nenne einen Fall, in dem deine Meinung nicht gilt"
+  },
+  {
+    "tr": "Bir dağılım öner ve tek cümleyle tanımla",
+    "kind": "monologue.bulletsTr",
+    "de": "Schlage eine Verteilung vor und definiere sie in einem Satz"
+  },
+  {
+    "tr": "Karşı tarafın haklı olduğu noktayı söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Nenne den Punkt, in dem die Gegenseite recht hat"
+  },
+  {
+    "tr": "Kendi deneyiminden somut bir örnek anlat",
+    "kind": "monologue.bulletsTr",
+    "de": "Erzähl ein konkretes Beispiel aus deiner Erfahrung"
+  },
+  {
+    "tr": "Hangi konuların öğretileceğini somutlaştır",
+    "kind": "monologue.bulletsTr",
+    "de": "Mach konkret, welche Themen unterrichtet würden"
+  },
+  {
+    "tr": "Ölçütünün başarısız olacağı durumu kabul et",
+    "kind": "monologue.bulletsTr",
+    "de": "Gib einen Fall zu, in dem dein Kriterium versagt"
+  },
+  {
+    "tr": "Varsayılanın ne zaman geri alınacağını söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Sag, wann die Grundhaltung zurückzunehmen ist"
+  },
+  {
+    "tr": "Kolay tavsiyenin neden yetersiz olduğunu anlat",
+    "kind": "monologue.bulletsTr",
+    "de": "Erkläre, warum der einfache Rat nicht reicht"
+  },
+  {
+    "tr": "Kuralının kötüye kullanılabileceği durumu söyle",
+    "kind": "monologue.bulletsTr",
+    "de": "Nenne den Fall, in dem deine Regel missbraucht werden kann"
+  },
+  {
+    "tr": "Tutarlılığın gerçekten değerli olduğu yeri adlandır",
+    "kind": "monologue.bulletsTr",
+    "de": "Benenne, wo Konsequenz wirklich wertvoll ist"
+  },
+  {
+    "tr": "Sebep basitçe şu: …",
+    "kind": "monologue.targets.tr",
+    "de": "Der Grund ist einfach der: …"
+  },
+  {
+    "tr": "Tutunacağım ayrım …",
+    "kind": "monologue.targets.tr",
+    "de": "Die Unterscheidung, an der ich festhalte, ist …"
+  },
+  {
+    "tr": "Buna iyi bir örnek …",
+    "kind": "monologue.targets.tr",
+    "de": "Ein gutes Beispiel dafür ist …"
+  },
+  {
+    "tr": "Belli olan risk şu: …",
+    "kind": "monologue.targets.tr",
+    "de": "Das offensichtliche Risiko ist: …"
+  },
+  {
+    "tr": "Konumumun zayıf yanı …",
+    "kind": "monologue.targets.tr",
+    "de": "Die schwache Seite meiner Position ist …"
+  },
+  {
+    "tr": "Gerçekçi bir ilk adım …",
+    "kind": "monologue.targets.tr",
+    "de": "Ein realistischer erster Schritt wäre …"
+  },
+  {
+    "tr": "Pratikte bunu … koyardım",
+    "kind": "monologue.targets.tr",
+    "de": "In der Praxis würde ich das … ansetzen"
+  },
+  {
+    "tr": "Gerçekten kuracağım şey …",
+    "kind": "monologue.targets.tr",
+    "de": "Was ich wirklich aufbauen würde, ist …"
+  },
+  {
+    "tr": "Ölçütüm samimiyet değil …",
+    "kind": "monologue.targets.tr",
+    "de": "Mein Kriterium ist nicht die Aufrichtigkeit, sondern …"
+  },
+  {
+    "tr": "Pratikte isteyeceğim şey …",
+    "kind": "monologue.targets.tr",
+    "de": "Was ich in der Praxis verlangen würde, ist …"
+  },
+  {
+    "tr": "… için bir güvence isterdim",
+    "kind": "monologue.targets.tr",
+    "de": "Für … hätte ich gern eine Absicherung"
+  },
+  {
+    "tr": "Biri … diye itiraz edebilir",
+    "kind": "monologue.targets.tr",
+    "de": "Jemand könnte einwenden, dass …"
+  },
+  {
+    "tr": "Gerçekten öğreteceğim şey …",
+    "kind": "monologue.targets.tr",
+    "de": "Was ich wirklich unterrichten würde, ist …"
+  },
+  {
+    "tr": "Sebep adalet olmaktan çok …",
+    "kind": "monologue.targets.tr",
+    "de": "Der Grund ist weniger Gerechtigkeit als …"
+  },
+  {
+    "tr": "Benim durumumda değişen şey …",
+    "kind": "monologue.targets.tr",
+    "de": "Was sich in meinem Fall geändert hat, ist …"
+  },
+  {
+    "tr": "Buna … diyerek cevap verirdim",
+    "kind": "monologue.targets.tr",
+    "de": "Darauf würde ich antworten, dass …"
+  },
+  {
+    "tr": "Buna karşı en güçlü argüman …",
+    "kind": "monologue.targets.tr",
+    "de": "Das stärkste Argument dagegen ist …"
+  },
+  {
+    "tr": "Gerçekten önemli olduğu yer …",
+    "kind": "monologue.targets.tr",
+    "de": "Wirklich wichtig ist es dort, wo …"
+  },
+  {
+    "tr": "Konumumun dürüst bedeli şu: …",
+    "kind": "monologue.targets.tr",
+    "de": "Der ehrliche Preis meiner Position ist: …"
+  },
+  {
+    "tr": "Yani birine şunu söylerdim: …",
+    "kind": "monologue.targets.tr",
+    "de": "Ich würde also jemandem sagen: …"
+  },
+  {
+    "tr": "İşliyor ama yalnız … olduğunda",
+    "kind": "monologue.targets.tr",
+    "de": "Es funktioniert, aber nur, wenn …"
+  },
+  {
+    "tr": "Seçmek zorunda kalsam … derdim",
+    "kind": "monologue.targets.tr",
+    "de": "Müsste ich mich entscheiden, würde ich … sagen"
+  },
+  {
+    "tr": "Bunun kötüye kullanıldığı yer …",
+    "kind": "monologue.targets.tr",
+    "de": "Missbraucht wird das dort, wo …"
+  },
+  {
+    "tr": "Tasarlayan ben olsam … yapardım",
+    "kind": "monologue.targets.tr",
+    "de": "Würde ich es entwerfen, würde ich … machen"
+  },
+  {
+    "tr": "Yani sonuçta iş şuna geliyor: …",
+    "kind": "monologue.targets.tr",
+    "de": "Am Ende läuft es also auf … hinaus"
+  },
+  {
+    "tr": "Benim deneyimime göre bu … bağlı",
+    "kind": "monologue.targets.tr",
+    "de": "Nach meiner Erfahrung hängt das von … ab"
+  },
+  {
+    "tr": "Karşı konumun en iyi gerekçesi …",
+    "kind": "monologue.targets.tr",
+    "de": "Die beste Begründung der Gegenposition ist …"
+  },
+  {
+    "tr": "Kuracağım ayrım … ile … arasında",
+    "kind": "monologue.targets.tr",
+    "de": "Ich würde zwischen … und … unterscheiden"
+  },
+  {
+    "tr": "O yüzden bir güvence eklerdim: …",
+    "kind": "monologue.targets.tr",
+    "de": "Deshalb würde ich eine Absicherung einbauen: …"
+  },
+  {
+    "tr": "… olan insanlar için hiç işlemiyor",
+    "kind": "monologue.targets.tr",
+    "de": "Für Menschen, die …, funktioniert es gar nicht"
+  },
+  {
+    "tr": "Benim durumumda belirleyici olan …",
+    "kind": "monologue.targets.tr",
+    "de": "Ausschlaggebend war in meinem Fall …"
+  },
+  {
+    "tr": "Bunu gerçekten … olduğunda anladım",
+    "kind": "monologue.targets.tr",
+    "de": "Wirklich verstanden habe ich das, als …"
+  },
+  {
+    "tr": "Lehindeki gerekçe … üzerine kurulu",
+    "kind": "monologue.targets.tr",
+    "de": "Die Begründung dafür stützt sich auf …"
+  },
+  {
+    "tr": "Bunu en açık … olduğunda fark ettim",
+    "kind": "monologue.targets.tr",
+    "de": "Am deutlichsten ist mir das aufgefallen, als …"
+  },
+  {
+    "tr": "Düşüncenin yerine geçirildiği yer …",
+    "kind": "monologue.targets.tr",
+    "de": "An die Stelle des Denkens tritt sie dort, wo …"
+  },
+  {
+    "tr": "… olan insanları gerçekten anlıyorum",
+    "kind": "monologue.targets.tr",
+    "de": "Ich verstehe die Leute wirklich, die …"
+  },
+  {
+    "tr": "O argümanın işlemeyi bıraktığı yer …",
+    "kind": "monologue.targets.tr",
+    "de": "Dieses Argument hört dort auf zu tragen, wo …"
+  },
+  {
+    "tr": "Varsayılan … olduğunda geri alınmalı",
+    "kind": "monologue.targets.tr",
+    "de": "Die Grundhaltung sollte zurückgenommen werden, wenn …"
+  },
+  {
+    "tr": "Gerçekten savunabileceğim bir kural …",
+    "kind": "monologue.targets.tr",
+    "de": "Eine Regel, die ich wirklich verteidigen könnte, wäre …"
+  },
+  {
+    "tr": "Doğrusu, karşı taraf … konusunda haklı",
+    "kind": "monologue.targets.tr",
+    "de": "Ehrlich gesagt hat die Gegenseite in … recht"
+  },
+  {
+    "tr": "Maliyet … seçen kimdeyse orada durmalı",
+    "kind": "monologue.targets.tr",
+    "de": "Die Kosten sollten dort liegen, wo … entschieden wird"
+  },
+  {
+    "tr": "Bunun işlemediği durumlar var, örneğin …",
+    "kind": "monologue.targets.tr",
+    "de": "Es gibt Fälle, in denen das nicht funktioniert, zum Beispiel …"
+  },
+  {
+    "tr": "Konumum: vermeliler, önemli bir sınırla.",
+    "kind": "monologue.targets.tr",
+    "de": "Meine Position: sie sollten sie geben, mit einer wichtigen Grenze."
+  },
+  {
+    "tr": "Deneyimime göre gerçekten işe yarayan şey …",
+    "kind": "monologue.targets.tr",
+    "de": "Nach meiner Erfahrung hilft wirklich …"
+  },
+  {
+    "tr": "Karar …'de olmalı, hem de … olduğu için değil",
+    "kind": "monologue.targets.tr",
+    "de": "Die Entscheidung sollte bei … liegen, und zwar nicht, weil …"
+  },
+  {
+    "tr": "Soru genelde … gibi soruluyor, oysa aslında …",
+    "kind": "monologue.targets.tr",
+    "de": "Die Frage wird meist gestellt, als ginge es um …, dabei geht es um …"
+  },
+  {
+    "tr": "Evet derim ama genelde verilen sebepten değil.",
+    "kind": "monologue.targets.tr",
+    "de": "Ich sage ja, aber nicht aus dem Grund, der meist genannt wird."
+  },
+  {
+    "tr": "İnsanlara bisiklete bin demek yerine … yapardım",
+    "kind": "monologue.targets.tr",
+    "de": "Statt den Leuten zu sagen, sie sollen Rad fahren, würde ich … machen"
+  },
+  {
+    "tr": "Ölçütün başarısız olacağı bir durum görüyorum: …",
+    "kind": "monologue.targets.tr",
+    "de": "Ich sehe einen Fall, in dem das Kriterium versagt: …"
+  },
+  {
+    "tr": "Genelde söylenmeyen şey bedeli kimin üstlendiği: …",
+    "kind": "monologue.targets.tr",
+    "de": "Was meist unausgesprochen bleibt, ist, wer die Kosten trägt: …"
+  },
+  {
+    "tr": "Bu yüzden … üzerinden değerlendirilmeyi tercih ederim",
+    "kind": "monologue.targets.tr",
+    "de": "Deshalb würde ich es vorziehen, an … gemessen zu werden"
+  },
+  {
+    "tr": "Bence öğretmeli ama insanların düşündüğü biçimde değil.",
+    "kind": "monologue.targets.tr",
+    "de": "Ich finde, sie sollten es unterrichten, aber nicht so, wie man sich das vorstellt."
+  },
+  {
+    "tr": "Varsayılanım evet olurdu; sebebi saygı değil pratiklik.",
+    "kind": "monologue.targets.tr",
+    "de": "Meine Grundhaltung wäre ja; der Grund ist nicht Respekt, sondern Praktikabilität."
+  },
+  {
+    "tr": "Kolay tavsiye — sadece çalış — şunu görmezden geliyor: …",
+    "kind": "monologue.targets.tr",
+    "de": "Der einfache Rat — üb einfach mehr — übersieht Folgendes: …"
+  },
+  {
+    "tr": "Sahip olma hakkından çok talep etme hakkını desteklerim.",
+    "kind": "monologue.targets.tr",
+    "de": "Ich bin eher für ein Recht, es zu verlangen, als für ein Recht, es zu haben."
+  },
+  {
+    "tr": "Evet değiştiriyor, ama genelde anlatıldığı biçimde değil.",
+    "kind": "monologue.targets.tr",
+    "de": "Ja, es verändert etwas, aber nicht so, wie meist erzählt wird."
+  },
+  {
+    "tr": "İki duruma karşı sınandığında makul biçimde ayakta kalıyor.",
+    "kind": "monologue.targets.tr",
+    "de": "An zwei Fällen geprüft, hält die Unterscheidung einigermaßen stand."
+  },
+  {
+    "tr": "Bunu … konumundan söylemenin daha kolay olduğunun farkındayım",
+    "kind": "monologue.targets.tr",
+    "de": "Mir ist klar, dass sich das aus der Position … leichter sagen lässt"
+  },
+  {
+    "tr": "Bence bir yerde doğru değerleniyor, başka bir yerde fazlasıyla.",
+    "kind": "monologue.targets.tr",
+    "de": "Ich finde, an einer Stelle wird sie richtig bewertet, an einer anderen deutlich zu hoch."
+  },
+  {
+    "tr": "Sıram şöyle olurdu: önce varsayılanlar, sonra sürtünme, en son insanlar.",
+    "kind": "monologue.targets.tr",
+    "de": "Meine Reihenfolge wäre: erst die Voreinstellungen, dann die Reibung, zuletzt die Menschen."
+  },
+  {
+    "tr": "Hazırsın.",
+    "kind": "drill.tr",
+    "de": "Du bist fertig."
+  },
+  {
+    "tr": "Gördün mü?",
+    "kind": "drill.tr",
+    "de": "Hast du es gesehen?"
+  },
+  {
+    "tr": "Cevap sonda.",
+    "kind": "drill.tr",
+    "de": "Die Antwort steht am Ende."
+  },
+  {
+    "tr": "Hazır mısın?",
+    "kind": "drill.tr",
+    "de": "Bist du fertig?"
+  },
+  {
+    "tr": "Otobüs dolu.",
+    "kind": "drill.tr",
+    "de": "Der Bus ist voll."
+  },
+  {
+    "tr": "Araba şurada.",
+    "kind": "drill.tr",
+    "de": "Das Auto steht dort."
+  },
+  {
+    "tr": "Unutmayacağım.",
+    "kind": "drill.tr",
+    "de": "Ich werde es nicht vergessen."
+  },
+  {
+    "tr": "Henüz bilmiyor.",
+    "kind": "drill.tr",
+    "de": "Sie weiß es noch nicht."
+  },
+  {
+    "tr": "Öbürü daha iyi.",
+    "kind": "drill.tr",
+    "de": "Das andere ist besser."
+  },
+  {
+    "tr": "Seni duyamıyor.",
+    "kind": "drill.tr",
+    "de": "Er kann dich nicht hören."
+  },
+  {
+    "tr": "Kolay sanmıştım.",
+    "kind": "drill.tr",
+    "de": "Ich dachte, es wäre einfach."
+  },
+  {
+    "tr": "Okul bu caddede.",
+    "kind": "drill.tr",
+    "de": "Die Schule ist in dieser Straße."
+  },
+  {
+    "tr": "Zor bir karardı.",
+    "kind": "drill.tr",
+    "de": "Es war eine schwere Entscheidung."
+  },
+  {
+    "tr": "Tren bugün yavaş.",
+    "kind": "drill.tr",
+    "de": "Der Zug ist heute langsam."
+  },
+  {
+    "tr": "Zaten söz verdin.",
+    "kind": "drill.tr",
+    "de": "Du hast es schon versprochen."
+  },
+  {
+    "tr": "Gece uçuşu uzundu.",
+    "kind": "drill.tr",
+    "de": "Der Nachtflug war lang."
+  },
+  {
+    "tr": "Kahve ister misin?",
+    "kind": "drill.tr",
+    "de": "Möchtest du Kaffee?"
+  },
+  {
+    "tr": "Lütfen kapıyı çek.",
+    "kind": "drill.tr",
+    "de": "Zieh bitte die Tür zu."
+  },
+  {
+    "tr": "O iyi bir öğrenci.",
+    "kind": "drill.tr",
+    "de": "Sie ist eine gute Schülerin."
+  },
+  {
+    "tr": "Seni sonra ararım.",
+    "kind": "drill.tr",
+    "de": "Ich rufe dich später an."
+  },
+  {
+    "tr": "Lütfen yavaş konuş.",
+    "kind": "drill.tr",
+    "de": "Sprich bitte langsam."
+  },
+  {
+    "tr": "Nerede oturuyorsun?",
+    "kind": "drill.tr",
+    "de": "Wo wohnst du?"
+  },
+  {
+    "tr": "Ne demek istiyorsun?",
+    "kind": "drill.tr",
+    "de": "Was meinst du?"
+  },
+  {
+    "tr": "Lütfen otur ve bekle.",
+    "kind": "drill.tr",
+    "de": "Setz dich bitte und warte."
+  },
+  {
+    "tr": "Kız kardeşim öğretmen.",
+    "kind": "drill.tr",
+    "de": "Meine Schwester ist Lehrerin."
+  },
+  {
+    "tr": "Kitap masanın üstünde.",
+    "kind": "drill.tr",
+    "de": "Das Buch liegt auf dem Tisch."
+  },
+  {
+    "tr": "Manzaralı bir oda seç.",
+    "kind": "drill.tr",
+    "de": "Nimm ein Zimmer mit Aussicht."
+  },
+  {
+    "tr": "Yemek masanın üstünde.",
+    "kind": "drill.tr",
+    "de": "Das Essen steht auf dem Tisch."
+  },
+  {
+    "tr": "Arabam kapının yanında.",
+    "kind": "drill.tr",
+    "de": "Mein Auto steht neben der Tür."
+  },
+  {
+    "tr": "Bir saat sonra dönerim.",
+    "kind": "drill.tr",
+    "de": "Ich bin in einer Stunde zurück."
+  },
+  {
+    "tr": "Bu kitap iyi görünüyor.",
+    "kind": "drill.tr",
+    "de": "Dieses Buch sieht gut aus."
+  },
+  {
+    "tr": "Sanırım mesajımı aldın.",
+    "kind": "drill.tr",
+    "de": "Ich glaube, du hast meine Nachricht bekommen."
+  },
+  {
+    "tr": "Bunu bana kızım öğretti.",
+    "kind": "drill.tr",
+    "de": "Das hat mir meine Tochter beigebracht."
+  },
+  {
+    "tr": "Soru bir çözümle ilgili.",
+    "kind": "drill.tr",
+    "de": "Die Frage betrifft eine Lösung."
+  },
+  {
+    "tr": "Yeterince yemek getirdi.",
+    "kind": "drill.tr",
+    "de": "Sie hat genug Essen mitgebracht."
+  },
+  {
+    "tr": "Yine de bu zor bir soru.",
+    "kind": "drill.tr",
+    "de": "Trotzdem ist das eine schwere Frage."
+  },
+  {
+    "tr": "Burada dört sandalye var.",
+    "kind": "drill.tr",
+    "de": "Hier stehen vier Stühle."
+  },
+  {
+    "tr": "Daha erken gelemez misin?",
+    "kind": "drill.tr",
+    "de": "Kannst du nicht früher kommen?"
+  },
+  {
+    "tr": "İlkbahar martta başlıyor.",
+    "kind": "drill.tr",
+    "de": "Der Frühling beginnt im März."
+  },
+  {
+    "tr": "Pencereyi açabilir misin?",
+    "kind": "drill.tr",
+    "de": "Kannst du das Fenster öffnen?"
+  },
+  {
+    "tr": "Tartışma eğitim üzerineydi.",
+    "kind": "drill.tr",
+    "de": "Die Diskussion ging um Bildung."
+  },
+  {
+    "tr": "Yarın sana yardım edebilir.",
+    "kind": "drill.tr",
+    "de": "Sie kann dir morgen helfen."
+  },
+  {
+    "tr": "İstasyon danışmanın yanında.",
+    "kind": "drill.tr",
+    "de": "Der Bahnhof ist neben der Auskunft."
+  },
+  {
+    "tr": "Kusura bakma, bugün gelemem.",
+    "kind": "drill.tr",
+    "de": "Tut mir leid, heute kann ich nicht kommen."
+  },
+  {
+    "tr": "Onlar geldi, biz geç kaldık.",
+    "kind": "drill.tr",
+    "de": "Sie sind gekommen, wir waren zu spät."
+  },
+  {
+    "tr": "Su lütfen. Bugün daha sıcak.",
+    "kind": "drill.tr",
+    "de": "Wasser, bitte. Heute ist es wärmer."
+  },
+  {
+    "tr": "Uzun bir gün oldu, değil mi?",
+    "kind": "drill.tr",
+    "de": "Das war ein langer Tag, nicht wahr?"
+  },
+  {
+    "tr": "Gelecekte sıcaklık ne olacak?",
+    "kind": "drill.tr",
+    "de": "Wie wird die Temperatur in Zukunft sein?"
+  },
+  {
+    "tr": "Beklemenizin sakıncası var mı?",
+    "kind": "drill.tr",
+    "de": "Macht es Ihnen etwas aus zu warten?"
+  },
+  {
+    "tr": "Bilet aldım ve trene yetiştim.",
+    "kind": "drill.tr",
+    "de": "Ich habe ein Ticket gekauft und den Zug erreicht."
+  },
+  {
+    "tr": "Adresin Green Street, değil mi?",
+    "kind": "drill.tr",
+    "de": "Deine Adresse ist Green Street, nicht wahr?"
+  },
+  {
+    "tr": "Altıda buluşabiliriz, değil mi?",
+    "kind": "drill.tr",
+    "de": "Wir können uns um sechs treffen, nicht wahr?"
+  },
+  {
+    "tr": "Bir havuzun yakınında oturuyoruz.",
+    "kind": "drill.tr",
+    "de": "Wir wohnen in der Nähe eines Schwimmbads."
+  },
+  {
+    "tr": "Bu resim kışın doğayı gösteriyor.",
+    "kind": "drill.tr",
+    "de": "Dieses Bild zeigt die Natur im Winter."
+  },
+  {
+    "tr": "Adını harf harf söyleyebilir misin?",
+    "kind": "drill.tr",
+    "de": "Kannst du deinen Namen buchstabieren?"
+  },
+  {
+    "tr": "Onun erkek kardeşi burada çalışıyor.",
+    "kind": "drill.tr",
+    "de": "Ihr Bruder arbeitet hier."
+  },
+  {
+    "tr": "Asıl cevap, herhangi bir cevap değil.",
+    "kind": "drill.tr",
+    "de": "Die eigentliche Antwort, nicht irgendeine."
+  },
+  {
+    "tr": "Yüzebiliyorum ama araba kullanamıyorum.",
+    "kind": "drill.tr",
+    "de": "Ich kann schwimmen, aber nicht Auto fahren."
+  },
+  {
+    "tr": "Seninle geçen yıl tanışmıştım, değil mi?",
+    "kind": "drill.tr",
+    "de": "Ich habe dich letztes Jahr kennengelernt, nicht wahr?"
+  },
+  {
+    "tr": "Üniversitenin yanındaki ofiste çalışıyor.",
+    "kind": "drill.tr",
+    "de": "Sie arbeitet in dem Büro neben der Universität."
+  },
+  {
+    "tr": "„did you“ = Dİ-cu. Aynı kural: d + y = c.",
+    "kind": "drill.hint",
+    "de": "„did you“ = DI-dschu. Dieselbe Regel: d + y = dsch."
+  },
+  {
+    "tr": "Evet-hayır sorusunda ton sonda yükselir: KO-fi↗.",
+    "kind": "drill.hint",
+    "de": "Bei einer Ja-Nein-Frage steigt der Ton am Ende: KO-fi geht nach oben."
+  },
+  {
+    "tr": "Düz cümlede ses son hecede İNER. Tonu aşağı bırak.",
+    "kind": "drill.hint",
+    "de": "Im Aussagesatz FÄLLT die Stimme auf der letzten Silbe. Lass den Ton nach unten."
+  }
+]
