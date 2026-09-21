@@ -1,0 +1,752 @@
+[
+  {
+    "tr": "Imperativ: du, ihr ve Sie biçimleri",
+    "kind": "focus",
+    "en": "Imperativ: the du, ihr and Sie forms"
+  },
+  {
+    "tr": "Genitiv: sahiplik, edatlar ve -s eki",
+    "kind": "focus",
+    "en": "Genitiv: possession, prepositions and the -s ending"
+  },
+  {
+    "tr": "Dolaylı sorular: ob ve soru sözcüğüyle",
+    "kind": "focus",
+    "en": "Indirect questions: with ob and with a question word"
+  },
+  {
+    "tr": "Dativ isteyen edatlar ve artikel biçimleri",
+    "kind": "focus",
+    "en": "Prepositions that take the Dativ and the article forms"
+  },
+  {
+    "tr": "Edatlı fiiller ve wo(r)- / da(r)- biçimleri",
+    "kind": "focus",
+    "en": "Prepositional verbs and the wo(r)- / da(r)- forms"
+  },
+  {
+    "tr": "Odak parçacıkları ve olumsuzlamanın kapsamı",
+    "kind": "focus",
+    "en": "Focus particles and the scope of negation"
+  },
+  {
+    "tr": "Sıfat çekimi: belirli, belirsiz ve artikelsiz",
+    "kind": "focus",
+    "en": "Adjective endings: definite, indefinite and without an article"
+  },
+  {
+    "tr": "Dativ ve Akkusativ nesneler ve sıralama kuralı",
+    "kind": "focus",
+    "en": "Dativ and Akkusativ objects and the order rule"
+  },
+  {
+    "tr": "Präteritum: düzenli, düzensiz ve karma fiiller",
+    "kind": "focus",
+    "en": "Präteritum: regular, irregular and mixed verbs"
+  },
+  {
+    "tr": "Nebensatz: weil ve dass ile fiilin sona gitmesi",
+    "kind": "focus",
+    "en": "Nebensatz: the verb to the end with weil and dass"
+  },
+  {
+    "tr": "Cümle dizilişi: fiil ikinci sırada, soruda başta",
+    "kind": "focus",
+    "en": "Word order: verb second, first in a question"
+  },
+  {
+    "tr": "Öznel modal fiiller: tahmin ve kesinlik derecesi",
+    "kind": "focus",
+    "en": "Subjective modal verbs: guessing and degrees of certainty"
+  },
+  {
+    "tr": "Possessivartikel ve olumsuzlama: kein ya da nicht",
+    "kind": "focus",
+    "en": "Possessivartikel and negation: kein or nicht"
+  },
+  {
+    "tr": "Konjunktiv II der Vergangenheit ve gerçekdışı koşul",
+    "kind": "focus",
+    "en": "Konjunktiv II der Vergangenheit and unreal conditions"
+  },
+  {
+    "tr": "Adlaştırma ve fiilleştirme: Nominalstil ↔ Verbalstil",
+    "kind": "focus",
+    "en": "Nominalisation and verbalisation: Nominalstil ↔ Verbalstil"
+  },
+  {
+    "tr": "Sözcük yapımı: ön ekler, son ekler ve anlam kaymaları",
+    "kind": "focus",
+    "en": "Word formation: prefixes, suffixes and shifts of meaning"
+  },
+  {
+    "tr": "Zaman yan cümleleri: wenn, als ve tekrar eden olaylar",
+    "kind": "focus",
+    "en": "Clauses of time: wenn, als and repeated events"
+  },
+  {
+    "tr": "Personalpronomen im Akkusativ: mich, dich, ihn, sie, es",
+    "kind": "focus",
+    "en": "Personalpronomen im Akkusativ: mich, dich, ihn, sie, es"
+  },
+  {
+    "tr": "Dönüşlü fiiller: sich freuen, sich waschen, sich treffen",
+    "kind": "focus",
+    "en": "Reflexive verbs: sich freuen, sich waschen, sich treffen"
+  },
+  {
+    "tr": "Edilgen yerine geçen biçimler: sich lassen, sein + zu, man",
+    "kind": "focus",
+    "en": "Substitutes for the passive: sich lassen, sein + zu, man"
+  },
+  {
+    "tr": "Genişletilmiş ilgi cümleleri: Genitiv, was ve yer ilgi zamirleri",
+    "kind": "focus",
+    "en": "Extended relative clauses: Genitiv, was and relative pronouns of place"
+  },
+  {
+    "tr": "Tartışma bağlaçları: zwar … aber, zumal, insofern, geschweige denn",
+    "kind": "focus",
+    "en": "Connectors for argument: zwar … aber, zumal, insofern, geschweige denn"
+  },
+  {
+    "tr": "Genişletilmiş niteleyiciler: Partizip I ve II ile erweiterte Attribute",
+    "kind": "focus",
+    "en": "Extended attributes: erweiterte Attribute with Partizip I and II"
+  },
+  {
+    "tr": "İşlev fiili öbekleri (Funktionsverbgefüge) ve karşılık gelen tek fiiller",
+    "kind": "focus",
+    "en": "Funktionsverbgefüge and the single verbs that match them"
+  },
+  {
+    "tr": "Tam liste",
+    "kind": "explanation.heading",
+    "en": "The full list"
+  },
+  {
+    "tr": "Kime ve neyi",
+    "kind": "explanation.heading",
+    "en": "To whom and what"
+  },
+  {
+    "tr": "Sabit edatlar",
+    "kind": "explanation.heading",
+    "en": "Fixed prepositions"
+  },
+  {
+    "tr": "Kesinlik ölçeği",
+    "kind": "explanation.heading",
+    "en": "A scale of certainty"
+  },
+  {
+    "tr": "Aynı fiil, iki iş",
+    "kind": "explanation.heading",
+    "en": "Same verb, two jobs"
+  },
+  {
+    "tr": "Edat fiile aittir",
+    "kind": "explanation.heading",
+    "en": "The preposition belongs to the verb"
+  },
+  {
+    "tr": "haben mi, sein mi?",
+    "kind": "explanation.heading",
+    "en": "haben or sein?"
+  },
+  {
+    "tr": "İki parça, iki yer",
+    "kind": "explanation.heading",
+    "en": "Two parts, two places"
+  },
+  {
+    "tr": "kein mi, nicht mi?",
+    "kind": "explanation.heading",
+    "en": "kein or nicht?"
+  },
+  {
+    "tr": "Nerede kullanılır?",
+    "kind": "explanation.heading",
+    "en": "Where is it used?"
+  },
+  {
+    "tr": "sein + zu + mastar",
+    "kind": "explanation.heading",
+    "en": "sein + zu + infinitive"
+  },
+  {
+    "tr": "Hangisini ne zaman?",
+    "kind": "explanation.heading",
+    "en": "Which one when?"
+  },
+  {
+    "tr": "man ve Alternativen",
+    "kind": "explanation.heading",
+    "en": "man and the alternatives"
+  },
+  {
+    "tr": "Zamir nereye gider?",
+    "kind": "explanation.heading",
+    "en": "Where does the pronoun go?"
+  },
+  {
+    "tr": "Düzenli fiiller: -te",
+    "kind": "explanation.heading",
+    "en": "Regular verbs: -te"
+  },
+  {
+    "tr": "ihr ve Sie biçimleri",
+    "kind": "explanation.heading",
+    "en": "The ihr and Sie forms"
+  },
+  {
+    "tr": "İki isim: Dativ önce",
+    "kind": "explanation.heading",
+    "en": "Two nouns: Dativ first"
+  },
+  {
+    "tr": "sich lassen + mastar",
+    "kind": "explanation.heading",
+    "en": "sich lassen + infinitive"
+  },
+  {
+    "tr": "Zamir fiilin parçası",
+    "kind": "explanation.heading",
+    "en": "The pronoun is part of the verb"
+  },
+  {
+    "tr": "als: geçmişte BİR kez",
+    "kind": "explanation.heading",
+    "en": "als: ONCE in the past"
+  },
+  {
+    "tr": "Hangi edat ne söyler?",
+    "kind": "explanation.heading",
+    "en": "Which preposition says what?"
+  },
+  {
+    "tr": "kein aynı çekimi alır",
+    "kind": "explanation.heading",
+    "en": "kein takes the same endings"
+  },
+  {
+    "tr": "Soruda fiil öne çıkar",
+    "kind": "explanation.heading",
+    "en": "In a question the verb moves forward"
+  },
+  {
+    "tr": "wo ve edatlı biçimler",
+    "kind": "explanation.heading",
+    "en": "wo and the forms with a preposition"
+  },
+  {
+    "tr": "Yan cümle ↔ isim öbeği",
+    "kind": "explanation.heading",
+    "en": "Subordinate clause ↔ noun phrase"
+  },
+  {
+    "tr": "Yan cümle önde durursa",
+    "kind": "explanation.heading",
+    "en": "When the subordinate clause comes first"
+  },
+  {
+    "tr": "Zamir varsa zamir önce",
+    "kind": "explanation.heading",
+    "en": "If there is a pronoun, the pronoun first"
+  },
+  {
+    "tr": "Genitiv isteyen edatlar",
+    "kind": "explanation.heading",
+    "en": "Prepositions that take the Genitiv"
+  },
+  {
+    "tr": "İnsan için edat + zamir",
+    "kind": "explanation.heading",
+    "en": "For people: preposition + pronoun"
+  },
+  {
+    "tr": "Liste kapalı, kural yok",
+    "kind": "explanation.heading",
+    "en": "A closed list, no rule"
+  },
+  {
+    "tr": "Ön ekler anlamı çevirir",
+    "kind": "explanation.heading",
+    "en": "Prefixes turn the meaning around"
+  },
+  {
+    "tr": "Partizip nasıl kurulur?",
+    "kind": "explanation.heading",
+    "en": "How is the Partizip built?"
+  },
+  {
+    "tr": "weil: sebep, fiil sonda",
+    "kind": "explanation.heading",
+    "en": "weil: reason, verb at the end"
+  },
+  {
+    "tr": "nicht nur … sondern auch",
+    "kind": "explanation.heading",
+    "en": "nicht nur … sondern auch"
+  },
+  {
+    "tr": "dessen ve deren: sahiplik",
+    "kind": "explanation.heading",
+    "en": "dessen and deren: possession"
+  },
+  {
+    "tr": "Düzensiz ve karma fiiller",
+    "kind": "explanation.heading",
+    "en": "Irregular and mixed verbs"
+  },
+  {
+    "tr": "Edat ve artikel donmuştur",
+    "kind": "explanation.heading",
+    "en": "Preposition and article are frozen"
+  },
+  {
+    "tr": "Gerçekdışı koşul: iki yan",
+    "kind": "explanation.heading",
+    "en": "Unreal condition: both halves"
+  },
+  {
+    "tr": "Tek bir geçmiş biçimi var",
+    "kind": "explanation.heading",
+    "en": "There is only one past form"
+  },
+  {
+    "tr": "Zamir ismin cinsini taşır",
+    "kind": "explanation.heading",
+    "en": "The pronoun carries the noun's gender"
+  },
+  {
+    "tr": "Anlam isimde, çekim fiilde",
+    "kind": "explanation.heading",
+    "en": "Meaning in the noun, endings on the verb"
+  },
+  {
+    "tr": "Aynı kök, ayrılan anlamlar",
+    "kind": "explanation.heading",
+    "en": "Same stem, meanings that part"
+  },
+  {
+    "tr": "bitte ve düzensiz iki fiil",
+    "kind": "explanation.heading",
+    "en": "bitte and two irregular verbs"
+  },
+  {
+    "tr": "Eşya için wo(r)- ve da(r)-",
+    "kind": "explanation.heading",
+    "en": "wo(r)- and da(r)- for things"
+  },
+  {
+    "tr": "Özel adlar ve konuşma dili",
+    "kind": "explanation.heading",
+    "en": "Proper names and spoken language"
+  },
+  {
+    "tr": "Sık kullanılan kaynaşmalar",
+    "kind": "explanation.heading",
+    "en": "Common contractions"
+  },
+  {
+    "tr": "insofern ve geschweige denn",
+    "kind": "explanation.heading",
+    "en": "insofern and geschweige denn"
+  },
+  {
+    "tr": "Zamir cümlede nereye gider?",
+    "kind": "explanation.heading",
+    "en": "Where does the pronoun go in the sentence?"
+  },
+  {
+    "tr": "Okuma stratejisi: sondan başa",
+    "kind": "explanation.heading",
+    "en": "A reading strategy: from the end backwards"
+  },
+  {
+    "tr": "zumal: gerekçeyi ağırlaştırır",
+    "kind": "explanation.heading",
+    "en": "zumal: it makes the reason heavier"
+  },
+  {
+    "tr": "Ayrılabilen fiil ve modal fiil",
+    "kind": "explanation.heading",
+    "en": "Separable verb and modal verb"
+  },
+  {
+    "tr": "Hangi bağlaç hangi edata gider",
+    "kind": "explanation.heading",
+    "en": "Which conjunction goes with which preposition"
+  },
+  {
+    "tr": "Son ekler sözcük türünü söyler",
+    "kind": "explanation.heading",
+    "en": "Suffixes tell you the word class"
+  },
+  {
+    "tr": "Soru sözcüğü varsa bağlaç odur",
+    "kind": "explanation.heading",
+    "en": "If there is a question word, that is the conjunction"
+  },
+  {
+    "tr": "Odak parçacığı neyi vurguluyor?",
+    "kind": "explanation.heading",
+    "en": "What is the focus particle stressing?"
+  },
+  {
+    "tr": "was: bütün bir cümleye gönderme",
+    "kind": "explanation.heading",
+    "en": "was: pointing at a whole clause"
+  },
+  {
+    "tr": "wenn: tekrar eden ya da gelecek",
+    "kind": "explanation.heading",
+    "en": "wenn: repeated or in the future"
+  },
+  {
+    "tr": "Evet-hayır sorusu „ob“ ile girer",
+    "kind": "explanation.heading",
+    "en": "A yes-no question comes in with „ob“"
+  },
+  {
+    "tr": "Geçmiş için: mastar + haben/sein",
+    "kind": "explanation.heading",
+    "en": "For the past: infinitive + haben/sein"
+  },
+  {
+    "tr": "İkinci sıra, ikinci kelime değil",
+    "kind": "explanation.heading",
+    "en": "Second position, not second word"
+  },
+  {
+    "tr": "Başa ne gelirse özne arkaya geçer",
+    "kind": "explanation.heading",
+    "en": "Whatever comes first, the subject moves behind"
+  },
+  {
+    "tr": "dass: cümlenin kendisi nesne olur",
+    "kind": "explanation.heading",
+    "en": "dass: the clause itself becomes the object"
+  },
+  {
+    "tr": "İlgi cümlesi niteleyiciye dönüşür",
+    "kind": "explanation.heading",
+    "en": "A relative clause turns into an attribute"
+  },
+  {
+    "tr": "Karışık zamanlar ve modal fiiller",
+    "kind": "explanation.heading",
+    "en": "Mixed tenses and modal verbs"
+  },
+  {
+    "tr": "Perfekt ve modal fiil yan cümlede",
+    "kind": "explanation.heading",
+    "en": "Perfekt and modal verb in a subordinate clause"
+  },
+  {
+    "tr": "du biçimi: özne düşer, ek de düşer",
+    "kind": "explanation.heading",
+    "en": "The du form: the subject goes, the ending goes too"
+  },
+  {
+    "tr": "İyelik sözcüğü ismin cinsine bakar",
+    "kind": "explanation.heading",
+    "en": "The possessive word looks at the noun's gender"
+  },
+  {
+    "tr": "stehen ↔ stellen: durum ve değişim",
+    "kind": "explanation.heading",
+    "en": "stehen ↔ stellen: state and change"
+  },
+  {
+    "tr": "Sahiplik: isim ismin arkasına geçer",
+    "kind": "explanation.heading",
+    "en": "Possession: the noun moves behind the noun"
+  },
+  {
+    "tr": "zwar … aber: önce kabul, sonra itiraz",
+    "kind": "explanation.heading",
+    "en": "zwar … aber: first the concession, then the objection"
+  },
+  {
+    "tr": "„ein“ bazı yerlerde susar, sıfat konuşur",
+    "kind": "explanation.heading",
+    "en": "„ein“ falls silent in places and the adjective speaks"
+  },
+  {
+    "tr": "Artikel bilgiyi taşıyorsa sıfat dinlenir",
+    "kind": "explanation.heading",
+    "en": "If the article carries the information, the adjective rests"
+  },
+  {
+    "tr": "Olumsuzlamanın kapsamı ve güçlü biçimler",
+    "kind": "explanation.heading",
+    "en": "The scope of negation and the strong forms"
+  },
+  {
+    "tr": "Partizip I ile Partizip II arasındaki fark",
+    "kind": "explanation.heading",
+    "en": "The difference between Partizip I and Partizip II"
+  },
+  {
+    "tr": "Artikel hiç yoksa sıfat artikelin işini yapar",
+    "kind": "explanation.heading",
+    "en": "If there is no article at all, the adjective does the article's job"
+  },
+  {
+    "tr": "İki nesne de İSİM ise kişi (Dativ) önce, eşya (Akkusativ) sonra gelir. Bu sıra Türkçedekiyle aynıdır ve kolay akılda kalır.",
+    "kind": "explanation.tr",
+    "en": "If BOTH objects are NOUNS, the person (Dativ) comes first and the thing (Akkusativ) second. English does the same in „I gave my brother the book“, so the order is easy to remember."
+  },
+  {
+    "tr": "Nesnelerden biri ZAMİR ise o öne geçer. İkisi de zamirse sıra TERSİNE döner: önce Akkusativ, sonra Dativ. Kısa kural: „kısa olan öne“.",
+    "kind": "explanation.tr",
+    "en": "If one of the objects is a PRONOUN, it moves forward. If both are pronouns the order is REVERSED: Akkusativ first, then Dativ. The short rule: „the short one first“."
+  },
+  {
+    "tr": "Geçmişte TEKRAR TEKRAR olan bir şey için ya da şimdiki ve gelecek zaman için „wenn“ kullanılır. Tekrarı belli etmek için genellikle „immer“ eklenir.",
+    "kind": "explanation.tr",
+    "en": "„wenn“ is used for something that happened AGAIN AND AGAIN in the past, and for the present and the future. To make the repetition clear, „immer“ is usually added."
+  },
+  {
+    "tr": "Zamir, yerini tuttuğu ismin durduğu yerde kalır: fiilden sonra. Ayrılabilen fiillerde ön ek yine cümlenin sonunda durur, zamir onun önünde yer alır.",
+    "kind": "explanation.tr",
+    "en": "The pronoun stays where the noun it replaces stood: after the verb. With separable verbs the prefix still stands at the end of the sentence and the pronoun goes in front of it."
+  },
+  {
+    "tr": "Nesne bir EŞYA ya da durumsa soru „wo“ + edat, işaret ise „da“ + edat ile kurulur. Edat ünlüyle başlıyorsa araya bir r girer: worauf, darauf, worüber, darüber.",
+    "kind": "explanation.tr",
+    "en": "If the object is a THING or a situation, the question is built with „wo“ + preposition and the pointing form with „da“ + preposition. If the preposition begins with a vowel an r is inserted: worauf, darauf, worüber, darüber."
+  },
+  {
+    "tr": "Dönüşlü zamir genellikle çekimli fiilin hemen ARKASINDA durur. Özne fiilden sonra geldiyse zamir özneden sonra gelir. Yan cümlede ise özneden hemen sonra yer alır.",
+    "kind": "explanation.tr",
+    "en": "The reflexive pronoun usually stands directly AFTER the finite verb. If the subject follows the verb, the pronoun comes after the subject. In a subordinate clause it stands right after the subject."
+  },
+  {
+    "tr": "„bitte“ ricayı yumuşatır ve genellikle fiilden hemen sonra ya da cümle sonunda durur. „sein“ düzensizdir: sei / seid / seien Sie. „haben“ ise du biçiminde „hab“ olur.",
+    "kind": "explanation.tr",
+    "en": "„bitte“ softens a request and usually stands directly after the verb or at the end of the sentence. „sein“ is irregular: sei / seid / seien Sie. „haben“ becomes „hab“ in the du form."
+  },
+  {
+    "tr": "„weil“ bir sebep cümlesi başlatır ve o cümlenin çekimli fiili EN SONA gider. Ana cümledeki kural değişmez: orada fiil hâlâ ikinci sıradadır. İki cümleyi virgül ayırır.",
+    "kind": "explanation.tr",
+    "en": "„weil“ opens a clause of reason and the finite verb of that clause goes to the VERY END. The rule in the main clause does not change: there the verb is still second. A comma separates the two clauses."
+  },
+  {
+    "tr": "Konuşmada bazı edatlar artikelle birleşir: bei dem → beim, von dem → vom, zu dem → zum, zu der → zur. Bunlar kısaltma değil, normal biçimdir; yazıda da böyle kullanılır.",
+    "kind": "explanation.tr",
+    "en": "In speech some prepositions merge with the article: bei dem → beim, von dem → vom, zu dem → zum, zu der → zur. These are not abbreviations but the normal forms; they are used in writing too."
+  },
+  {
+    "tr": "„der/die/das“ ismin cinsini ve hâlini zaten söyler. O yüzden sıfat yalnız iki ek alır: yalın tekilde -e, geri kalan her yerde -en. Buna zayıf çekim denir ve en kolay tablodur.",
+    "kind": "explanation.tr",
+    "en": "„der/die/das“ already tells you the gender and the case of the noun. That is why the adjective takes only two endings: -e in the nominative singular and -en everywhere else. This is called the weak declension and it is the easiest table."
+  },
+  {
+    "tr": "„du“ için emir biçimi, fiilin „du“ çekiminden -st ekinin atılmasıyla kurulur ve özne söylenmez. Kök ünlüsü e → i değişen fiillerde bu değişim KALIR, ama a → ä değişimi KALKAR.",
+    "kind": "explanation.tr",
+    "en": "The imperative for „du“ is built by dropping the -st ending from the du form of the verb, and the subject is not said. In verbs whose stem vowel changes e → i the change REMAINS, but the change a → ä DISAPPEARS."
+  },
+  {
+    "tr": "Zaman cümlesi başa geçebilir. O zaman ana cümlenin çekimli fiili virgülden HEMEN sonra gelir ve özne arkaya düşer: fiil yine ikinci ögedir, çünkü birinci öge koca yan cümledir.",
+    "kind": "explanation.tr",
+    "en": "A clause of time can come first. The finite verb of the main clause then comes IMMEDIATELY after the comma and the subject drops behind it: the verb is still the second element, because the first element is the whole subordinate clause."
+  },
+  {
+    "tr": "„dass“ bir cümleyi başka bir cümlenin nesnesi yapar: „Biliyorum ki …“, „Sanıyorum ki …“. Kural aynı: „dass“tan sonra fiil sona gider. Türkçedeki „-diğini“ yapısının karşılığıdır.",
+    "kind": "explanation.tr",
+    "en": "„dass“ makes one clause the object of another — Turkish says „Biliyorum ki …“, „Sanıyorum ki …“ and English „I know that …“. The rule is the same: after „dass“ the verb goes to the end. English may leave its „that“ out; German never may."
+  },
+  {
+    "tr": "Yan cümlede ÇEKİMLİ fiil sona gider — Perfekt'te bu yardımcı fiildir, modal yapıda modal fiildir. Yani Partizip ya da mastar ondan ÖNCE durur: „… gearbeitet hat“, „… kommen kann“.",
+    "kind": "explanation.tr",
+    "en": "In a subordinate clause the FINITE verb goes to the end — in the Perfekt that is the auxiliary, in a modal construction the modal verb. So the Partizip or the infinitive stands BEFORE it: „… gearbeitet hat“, „… kommen kann“."
+  },
+  {
+    "tr": "„kein“ tam olarak „ein“ gibi çekilir ve isimleri olumsuzlar: bir isim „ein/eine“ ile ya da artikelsiz duruyorsa, olumsuzu „kein/keine“ olur. Çoğulda „ein“ yoktur ama „keine“ vardır.",
+    "kind": "explanation.tr",
+    "en": "„kein“ is declined exactly like „ein“ and negates nouns: if a noun stands with „ein/eine“ or without an article, its negation is „kein/keine“. There is no „ein“ in the plural, but there is „keine“."
+  },
+  {
+    "tr": "„ihr“ biçimi normal çekimle aynıdır, yalnız özne düşer. „Sie“ biçiminde ise özne KALIR ve fiilden sonra gelir; bu, kibar biçimi soru cümlesinden ayıran tek şeydir — sondaki noktalama.",
+    "kind": "explanation.tr",
+    "en": "The „ihr“ form is the same as the normal conjugation, only the subject drops. In the „Sie“ form the subject STAYS and comes after the verb; the only thing that separates the polite form from a question is the punctuation at the end."
+  },
+  {
+    "tr": "„sein + zu + mastar“ da edilgen anlam verir ve bağlama göre „können“ ya da „müssen“ taşır. Resmî yazıda çok sık geçer: „Der Antrag ist bis Juni einzureichen“ — yani verilmesi GEREKİR.",
+    "kind": "explanation.tr",
+    "en": "„sein + zu + infinitive“ also carries a passive meaning and, depending on the context, „können“ or „müssen“. It is very common in official writing: „Der Antrag ist bis Juni einzureichen“ — that is, it MUST be submitted."
+  },
+  {
+    "tr": "Geçmişte bir kez olmuş, tek seferlik bir olay anlatılıyorsa „als“ kullanılır. Bu, Türkçede „…dığında“ ile çevrilir ama Almancada seçim zorunludur. Yan cümle olduğu için fiil sona gider.",
+    "kind": "explanation.tr",
+    "en": "„als“ is used when a single, one-off event in the past is being told. English uses „when“ for both cases, but in German the choice is compulsory. Because it is a subordinate clause, the verb goes to the end."
+  },
+  {
+    "tr": "Türkçede iyelik ek olarak kelimenin sonuna gelir. Almancada ise ismin ÖNÜNE gelir ve o ismin cinsine göre biçim alır: eril ve nötr isimlerde ek yok, dişil ve çoğul isimlerde -e eklenir.",
+    "kind": "explanation.tr",
+    "en": "In English the possessive word also stands in front of the noun, but it never changes: „my book“, „my books“. In German it takes an ending according to the gender of the noun: no ending with masculine and neuter nouns, -e with feminine and plural ones."
+  },
+  {
+    "tr": "Cümleye zaman, yer ya da bir nesne ile başlarsan özne fiilin ARKASINA geçer. Bu bir seçim değil zorunluluk: fiilin ikinci sırası korunmak zorundadır. „Heute ich arbeite“ bu yüzden yanlıştır.",
+    "kind": "explanation.tr",
+    "en": "If you begin the sentence with a time, a place or an object, the subject moves BEHIND the verb. This is not a choice but a rule: the second position of the verb has to be kept. „Heute ich arbeite“ is wrong for exactly this reason."
+  },
+  {
+    "tr": "İsmi olumsuzluyorsan „kein“, başka her şeyi olumsuzluyorsan „nicht“ kullanılır. Belirli artikelli („der/die/das“) ya da iyelikli bir isim de „nicht“ ister, çünkü orada isim zaten belirlidir.",
+    "kind": "explanation.tr",
+    "en": "If you are negating a noun you use „kein“; for everything else you use „nicht“. A noun with a definite article („der/die/das“) or with a possessive also takes „nicht“, because there the noun is already definite."
+  },
+  {
+    "tr": "Yalın hâlden belirtme hâline yalnız üç biçim değişir: ich → mich, du → dich, er → ihn. „wir“ → uns ve „ihr“ → euch de değişir; „sie“ ve „es“ aynı kalır. Kibar „Sie“ her iki hâlde de Sie'dir.",
+    "kind": "explanation.tr",
+    "en": "Only three forms change from the nominative to the accusative: ich → mich, du → dich, er → ihn. „wir“ → uns and „ihr“ → euch change too; „sie“ and „es“ stay the same. The polite „Sie“ is Sie in both cases."
+  },
+  {
+    "tr": "Yan cümlede ayrılabilen fiil BİRLEŞİR: „Wann fährt der Zug ab?“ → „… wann der Zug abfährt.“ Modal yapıda ve Perfekt'te ise çekimli fiil en sona gider, mastar ya da Partizip onun önünde durur.",
+    "kind": "explanation.tr",
+    "en": "In a subordinate clause a separable verb JOINS UP again: „Wann fährt der Zug ab?“ → „… wann der Zug abfährt.“ In a modal construction and in the Perfekt the finite verb goes right to the end and the infinitive or the Partizip stands in front of it."
+  },
+  {
+    "tr": "„Das kann gemacht werden“ yerine yazıda sık sık „Das lässt sich machen“ denir. Yapı etken görünür ama anlamı edilgendir ve içinde bir „können“ taşır. Özne, yapılan şeydir; yapan kişi söylenmez.",
+    "kind": "explanation.tr",
+    "en": "Instead of „Das kann gemacht werden“, writing often says „Das lässt sich machen“. The structure looks active but the meaning is passive and it carries a „können“ inside it. The subject is the thing that is done; who does it is not said."
+  },
+  {
+    "tr": "Nesne bir KİŞİ ise bu biçimler kullanılmaz. Soru „edat + wen/wem“, işaret ise „edat + zamir“ olur: „Auf wen wartest du?“ — „Auf ihn.“ Bu ayrım Almancada zorunludur ve Türkçede karşılığı yoktur.",
+    "kind": "explanation.tr",
+    "en": "These forms are not used when the object is a PERSON. The question becomes „preposition + wen/wem“ and the pointing form „preposition + pronoun“: „Auf wen wartest du?“ — „Auf ihn.“ English keeps the preposition too, but German never allows wo(r)- for a person."
+  },
+  {
+    "tr": "Bu edatlar her durumda Dativ ister; anlamına bakmaya gerek yoktur. Dativ'de artikeller şöyle olur: der → dem, das → dem, die → der, çoğul → den (+ isme -n). „ein“ ise einem / einem / einer olur.",
+    "kind": "explanation.tr",
+    "en": "These prepositions always take the Dativ; there is no need to look at the meaning. In the Dativ the articles are: der → dem, das → dem, die → der, plural → den (+ -n on the noun). „ein“ becomes einem / einem / einer."
+  },
+  {
+    "tr": "Koşul da sonuç da geçmişteyse iki yanda da geçmiş biçim gelir. „wenn“ atılabilir; o zaman yan cümle FİİLLE başlar ve virgülden sonra ana cümle gelir. Bu, yazıda çok kullanılan zarif bir biçimdir.",
+    "kind": "explanation.tr",
+    "en": "If both the condition and the result are in the past, the past form appears on both sides. „wenn“ can be dropped; the subordinate clause then begins with the VERB and the main clause follows the comma. This is an elegant form, much used in writing."
+  },
+  {
+    "tr": "Präteritum yazılı anlatımın zamanıdır: haber, hikâye, masal, rapor, biyografi. Konuşmada ise Perfekt kullanılır — tek istisna „sein“, „haben“ ve modal fiillerdir; onlar konuşmada da Präteritum'la gelir.",
+    "kind": "explanation.tr",
+    "en": "The Präteritum is the tense of written narrative: news, stories, fairy tales, reports, biographies. In speech the Perfekt is used — the only exceptions are „sein“, „haben“ and the modal verbs; those come in the Präteritum in speech too."
+  },
+  {
+    "tr": "İlgi zamiri tek bir isme değil ÖNCEKİ CÜMLENİN TAMAMINA gönderme yapıyorsa „was“ kullanılır. Ayrıca „alles“, „nichts“, „etwas“, „das“ ve üstünlük sıfatlarından sonra da „was“ gelir — „der/die/das“ değil.",
+    "kind": "explanation.tr",
+    "en": "„was“ is used when the relative pronoun points not at a single noun but at THE WHOLE PRECEDING CLAUSE. „was“ also follows „alles“, „nichts“, „etwas“, „das“ and superlatives — not „der/die/das“."
+  },
+  {
+    "tr": "Çoğullarda ve sayılamayan isimlerde artikel düşebilir. O zaman sıfat, belirli artikelin ekini alır: „gute Pläne“, „frisches Brot“, „mit gutem Willen“. Ek listesi belirli artikelin son harfleriyle aynıdır.",
+    "kind": "explanation.tr",
+    "en": "In the plural and with uncountable nouns the article can drop. The adjective then takes the ending of the definite article: „gute Pläne“, „frisches Brot“, „mit gutem Willen“. The list of endings is the same as the last letters of the definite article."
+  },
+  {
+    "tr": "Resmî metinlerde yan cümleler sık sık isim öbeğine dönüşür. Bağlaç bir edata, fiil bir isme dönüşür: „nachdem er angekommen ist“ → „nach seiner Ankunft“. İçerik aynı kalır, üslup değişir ve cümle kısalır.",
+    "kind": "explanation.tr",
+    "en": "In official texts subordinate clauses often turn into noun phrases. The conjunction becomes a preposition and the verb a noun: „nachdem er angekommen ist“ → „nach seiner Ankunft“. The content stays the same, the register changes and the sentence gets shorter."
+  },
+  {
+    "tr": "„geben, schenken, zeigen, erklären, schicken, bringen“ gibi fiiller iki nesne alır: kişi Dativ'de (kime), eşya Akkusativ'de (neyi). Türkçede bu ayrım „-e“ ve „-i“ ekleriyle yapılır; Almancada artikel değişir.",
+    "kind": "explanation.tr",
+    "en": "Verbs such as „geben, schenken, zeigen, erklären, schicken, bringen“ take two objects: the person in the Dativ (to whom) and the thing in the Akkusativ (what). English shows the difference by word order or by „to“; German changes the article."
+  },
+  {
+    "tr": "Türkçede geçmiş zaman tek ekle kurulur. Almancada ise iki parça vardır: çekimli yardımcı fiil İKİNCİ sırada durur, asıl fiilin geçmiş biçimi (Partizip II) cümlenin EN SONUNA gider. Arada ne varsa ortada kalır.",
+    "kind": "explanation.tr",
+    "en": "English builds its perfect from two parts as well, but they stay together: „have written“. In German the finite auxiliary stands SECOND and the past form of the main verb (Partizip II) goes to the VERY END of the sentence. Whatever else there is stays in the middle."
+  },
+  {
+    "tr": "„Wann fährt der Zug?“ sorusu bir cümlenin içine girdiğinde soru sözcüğü aynı kalır ama fiil yan cümlenin SONUNA gider ve soru işareti yalnız ana cümleye bakar. Bu, hem kibarlık hem de yazı dili için temel yapıdır.",
+    "kind": "explanation.tr",
+    "en": "When the question „Wann fährt der Zug?“ goes inside a sentence, the question word stays the same but the verb goes to the END of the subordinate clause, and the question mark looks only at the main clause. This is a basic structure both for politeness and for written language."
+  },
+  {
+    "tr": "İlgi cümlesinde „onun …“ demek için Genitiv ilgi zamiri kullanılır: eril ve nötr isimlerde „dessen“, dişil ve çoğulda „deren“. Arkasından gelen isim ARTİKELSİZ kalır ve hâlini ilgi cümlesi içindeki göreviyle alır.",
+    "kind": "explanation.tr",
+    "en": "To say „whose …“ in a relative clause the genitive relative pronoun is used: „dessen“ for masculine and neuter nouns, „deren“ for feminine and plural ones. The noun that follows stays WITHOUT an article and takes the case of its job inside the relative clause."
+  },
+  {
+    "tr": "Düzenli fiiller köke -te ekler ve kişi eklerini onun üstüne alır: ich sagte, du sagtest, er sagte, wir sagten. Birinci ve üçüncü tekil kişi AYNIDIR. Kökü -t ya da -d ile bitenlerde araya -e girer: arbeitete, redete.",
+    "kind": "explanation.tr",
+    "en": "Regular verbs add -te to the stem and take the personal endings on top of it: ich sagte, du sagtest, er sagte, wir sagten. The first and third person singular are THE SAME. Verbs whose stem ends in -t or -d insert an -e: arbeitete, redete."
+  },
+  {
+    "tr": "Türkçede tamlayan önce gelir: „patronun arabası“. Almancada Genitiv'de sıra TERSİNE döner: „das Auto des Chefs“. Eril ve nötr isimler -s ya da -es alır; dişil ve çoğul isimler ek almaz, yalnız artikel değişir (der).",
+    "kind": "explanation.tr",
+    "en": "English can put the owner first: „the boss's car“. In the German Genitiv the order is the other way round: „das Auto des Chefs“. Masculine and neuter nouns take -s or -es; feminine and plural nouns take no ending, only the article changes (der)."
+  },
+  {
+    "tr": "Özel adlarda Genitiv adın SONUNA gelir: „Annas Bruder“, „Berlins Museen“. Konuşmada ise Genitiv'in yerini çoğu zaman „von + Dativ“ alır: „das Auto von meinem Chef“. İkisi de doğrudur ama yazıda Genitiv daha uygundur.",
+    "kind": "explanation.tr",
+    "en": "With proper names the Genitiv goes on the END of the name: „Annas Bruder“, „Berlins Museen“. In speech the Genitiv is mostly replaced by „von + Dativ“: „das Auto von meinem Chef“. Both are correct, but in writing the Genitiv fits better."
+  },
+  {
+    "tr": "Türkçede nesne zamiri tektir: „onu“. Almancada ise zamir, yerini tuttuğu ismin cinsini korur. Eril isim → ihn, dişil isim → sie, nötr isim → es, çoğul → sie. Yani „onu“ demek için önce ismin artikelini bilmek gerekir.",
+    "kind": "explanation.tr",
+    "en": "In English the object pronoun follows natural gender: „him“ and „her“ for people, „it“ for things. In German the pronoun keeps the GRAMMATICAL gender of the noun it replaces. Masculine noun → ihn, feminine → sie, neuter → es, plural → sie. So you have to know the article before you can say „it“."
+  },
+  {
+    "tr": "Eşleşmeler kapalı bir listedir: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (bu ikisinde biçim aynı, hâl değişir). Edatların çoğu Genitiv ister.",
+    "kind": "explanation.tr",
+    "en": "The pairs are a closed list: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (in this last pair the form stays and the case changes). Most of these prepositions take the Genitiv."
+  },
+  {
+    "tr": "Yazılı dilde sık geçen dört edat Genitiv ister: „wegen“ (yüzünden), „trotz“ (rağmen), „während“ (sırasında), „statt“ (yerine). Konuşmada bunların Dativ ile kullanıldığını da duyarsın; sınavda ve yazıda Genitiv beklenir.",
+    "kind": "explanation.tr",
+    "en": "Four prepositions common in written language take the Genitiv: „wegen“ (because of), „trotz“ (despite), „während“ (during), „statt“ (instead of). In speech you will also hear them with the Dativ; in an exam and in writing the Genitiv is expected."
+  },
+  {
+    "tr": "Evet-hayır sorusunda çekimli fiil BİRİNCİ sıraya geçer ve özne hemen arkasından gelir. W-sorusunda ise soru sözcüğü birinci, fiil yine ikinci sıradadır. Yani fiil ya birinci ya ikinci sıradadır; üçüncü sırada asla durmaz.",
+    "kind": "explanation.tr",
+    "en": "In a yes-no question the finite verb moves to FIRST position and the subject comes right after it. In a w-question the question word is first and the verb is still second. So the verb is either first or second; it never stands third."
+  },
+  {
+    "tr": "„sich freuen“, „sich beeilen“ gibi fiiller sözlükte „sich“ ile yazılır ve cümlede bu zamir özneye göre değişir: mich, dich, sich, uns, euch, sich. Türkçede karşılığı çoğu zaman yoktur, ama Almancada atlanırsa cümle bozulur.",
+    "kind": "explanation.tr",
+    "en": "Verbs like „sich freuen“ and „sich beeilen“ are written with „sich“ in the dictionary, and in the sentence this pronoun changes with the subject: mich, dich, sich, uns, euch, sich. English mostly has nothing in this place, but in German leaving it out breaks the sentence."
+  },
+  {
+    "tr": "Fiillerin çoğu „haben“ ister. „sein“ yalnız iki grupta gelir: yer değiştiren fiiller (gehen, fahren, kommen, fliegen) ve durum değiştirenler (aufstehen, einschlafen, werden). „sein“ ve „bleiben“ de kendileri bu gruba girer.",
+    "kind": "explanation.tr",
+    "en": "Most verbs take „haben“. „sein“ appears with only two groups: verbs of moving from place to place (gehen, fahren, kommen, fliegen) and verbs of changing state (aufstehen, einschlafen, werden). „sein“ and „bleiben“ belong to this group themselves."
+  },
+  {
+    "tr": "„nicht nur … sondern auch“ iki öğeyi ekler ve ağırlığı İKİNCİSİNE verir. „sondern“ burada düzeltme değil ekleme bildirir, bu yüzden arkasından „auch“ gelir. „nicht … sondern“ (auch'suz) ise düzeltmedir: birincisi reddedilir.",
+    "kind": "explanation.tr",
+    "en": "„nicht nur … sondern auch“ adds two items together and puts the weight on the SECOND. „sondern“ here signals an addition, not a correction, which is why „auch“ follows it. „nicht … sondern“ (without auch) is a correction: the first item is rejected."
+  },
+  {
+    "tr": "Düz cümlede çekimli fiil her zaman İKİNCİ ögedir. Birinci öge tek bir kelime olmak zorunda değil: „Am nächsten Montag“ tek ögedir. Türkçede fiil sona gider; Almancada yeri sabittir ve geri kalan ögeler onun etrafında dizilir.",
+    "kind": "explanation.tr",
+    "en": "In a statement the finite verb is always the SECOND element. The first element does not have to be a single word: „Am nächsten Montag“ is one element. In English the verb follows the subject and hardly moves; in German its place is fixed and the other elements line up around it."
+  },
+  {
+    "tr": "Koşul geçmişte, sonuç BUGÜNDE olabilir: „Hätte ich damals zugesagt, wäre ich heute in Berlin.“ Modal fiilli geçmişte ise Partizip yerine MASTAR gelir ve iki mastar yan yana durur: „hätte fragen müssen“, „hätte kommen können“.",
+    "kind": "explanation.tr",
+    "en": "The condition can be in the past and the result TODAY: „Hätte ich damals zugesagt, wäre ich heute in Berlin.“ In the past with a modal verb an INFINITIVE comes instead of the Partizip and two infinitives stand side by side: „hätte fragen müssen“, „hätte kommen können“."
+  },
+  {
+    "tr": "Yer bildiren isimlerden sonra „in dem / an dem“ yerine „wo“ kullanılabilir ve daha doğaldır. Edat gerekiyorsa eşyalarda „wo(r)- + edat“ biçimi de vardır: „worüber“, „womit“. Kişilerde bu yapılmaz; orada edat + ilgi zamiri gelir.",
+    "kind": "explanation.tr",
+    "en": "After nouns of place „wo“ can be used instead of „in dem / an dem“, and it sounds more natural. If a preposition is needed, things also have the form „wo(r)- + preposition“: „worüber“, „womit“. This is not done with people; there a preposition + relative pronoun comes."
+  },
+  {
+    "tr": "Tahmin geçmişe bakıyorsa modal fiil ŞİMDİKİ zamanda kalır ve arkasına Partizip + „haben“ ya da „sein“ gelir: „muss gewusst haben“, „dürfte abgefahren sein“. Modal fiilin kendisi geçmişe çekilmez — „musste gewusst haben“ yanlıştır.",
+    "kind": "explanation.tr",
+    "en": "If the guess looks back at the past, the modal verb stays in the PRESENT and a Partizip + „haben“ or „sein“ follows it: „muss gewusst haben“, „dürfte abgefahren sein“. The modal verb itself is not put into the past — „musste gewusst haben“ is wrong."
+  },
+  {
+    "tr": "„ein“ eril yalın ve nötr yalın/belirtme hâlinde ek almaz, yani cinsi söylemez. Orada bilgiyi sıfat taşır: eril -er, nötr -es. Geri kalan yerlerde tablo yine zayıf çekimle aynıdır. Aynısı „kein“ ve iyelik sözcükleri için de geçerli.",
+    "kind": "explanation.tr",
+    "en": "„ein“ takes no ending in the masculine nominative and in the neuter nominative and accusative, so it does not tell you the gender. There the adjective carries the information: -er for masculine, -es for neuter. Everywhere else the table is the same as the weak declension. The same holds for „kein“ and the possessive words."
+  },
+  {
+    "tr": "„zumal“ zaten verilmiş bir gerekçenin üstüne EK ve daha ağır bir gerekçe koyar — „hele ki“, „üstelik“. Yan cümle kurar, yani fiil sona gider. „weil“ ile karıştırılmaz: „weil“ ilk gerekçeyi verir, „zumal“ ikinciyi ve daha güçlüsünü.",
+    "kind": "explanation.tr",
+    "en": "„zumal“ puts an EXTRA and heavier reason on top of one already given — „especially as“, „all the more so since“. It opens a subordinate clause, so the verb goes to the end. It is not to be confused with „weil“: „weil“ gives the first reason, „zumal“ the second and stronger one."
+  }
+]

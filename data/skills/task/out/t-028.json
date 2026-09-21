@@ -1,0 +1,802 @@
+[
+  {
+    "tr": "Tarih hâlâ tartışmaya açık.",
+    "kind": "explanation.examples.tr",
+    "en": "The date is still open for discussion."
+  },
+  {
+    "tr": "Tarihi tartışmaya açıyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm putting the date up for discussion."
+  },
+  {
+    "tr": "Tren çoktan kalkmış olmalı.",
+    "kind": "explanation.examples.tr",
+    "en": "The train must have left long ago."
+  },
+  {
+    "tr": "Neyi bekliyorsun? — Otobüsü.",
+    "kind": "explanation.examples.tr",
+    "en": "What are you waiting for? — The bus."
+  },
+  {
+    "tr": "Sorun sayı değil, gerekçesi.",
+    "kind": "explanation.examples.tr",
+    "en": "The problem is not the number but the reason."
+  },
+  {
+    "tr": "Taze fikirlerle çalışıyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We work with fresh ideas."
+  },
+  {
+    "tr": "toplantıda konuşan meslektaş",
+    "kind": "explanation.examples.tr",
+    "en": "the colleague speaking at the meeting"
+  },
+  {
+    "tr": "Uyulmaması hâlinde ceza var.",
+    "kind": "explanation.examples.tr",
+    "en": "If it is not kept to, there is a penalty."
+  },
+  {
+    "tr": "Uzun süre telefonda konuştu.",
+    "kind": "explanation.examples.tr",
+    "en": "He was on the phone for a long time."
+  },
+  {
+    "tr": "Yarın çalıştığını biliyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I know you're working tomorrow."
+  },
+  {
+    "tr": "Yönetimi olmayan bir dernek.",
+    "kind": "explanation.examples.tr",
+    "en": "an association with no board."
+  },
+  {
+    "tr": "Arkadaşına bir kart yolluyor.",
+    "kind": "explanation.examples.tr",
+    "en": "She's sending her friend a card."
+  },
+  {
+    "tr": "Bu iyi bir çalışmanın sonucu.",
+    "kind": "explanation.examples.tr",
+    "en": "This is the result of good work."
+  },
+  {
+    "tr": "Daireleri yenilenen sakinler.",
+    "kind": "explanation.examples.tr",
+    "en": "the residents whose flats are being renovated."
+  },
+  {
+    "tr": "Hava yüzünden evde kalıyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We're staying at home because of the weather."
+  },
+  {
+    "tr": "İçeriği bilinmeyen bir poşet.",
+    "kind": "explanation.examples.tr",
+    "en": "a bag whose contents are unknown."
+  },
+  {
+    "tr": "Tatili dört gözle bekliyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm looking forward to the holiday."
+  },
+  {
+    "tr": "Çalışırken telefonla konuşmam.",
+    "kind": "explanation.examples.tr",
+    "en": "I don't talk on the phone during work."
+  },
+  {
+    "tr": "Fotoğrafı bana gösterir misin?",
+    "kind": "explanation.examples.tr",
+    "en": "Can you show me the photo?"
+  },
+  {
+    "tr": "Gazete nerede? — Onu okuyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "Where's the newspaper? — I'm reading it."
+  },
+  {
+    "tr": "Her akşam bir masal anlatırdı.",
+    "kind": "explanation.examples.tr",
+    "en": "She used to tell a story every evening."
+  },
+  {
+    "tr": "İfade olsa olsa bir tahmindir.",
+    "kind": "explanation.examples.tr",
+    "en": "The statement is at best a guess."
+  },
+  {
+    "tr": "Kimi bekliyorsun? — Kardeşimi.",
+    "kind": "explanation.examples.tr",
+    "en": "Who are you waiting for? — For my brother."
+  },
+  {
+    "tr": "Seni sekizde almaya geliyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm coming to pick you up at eight."
+  },
+  {
+    "tr": "Trenin gecikeceğini düşünüyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He thinks the train will be late."
+  },
+  {
+    "tr": "Yağmur olursa antrenman iptal.",
+    "kind": "explanation.examples.tr",
+    "en": "If it rains, the training is cancelled."
+  },
+  {
+    "tr": "Bir yıldır Almanca öğreniyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I've been learning German for a year."
+  },
+  {
+    "tr": "Bize her sabah ekmek getirirdi.",
+    "kind": "explanation.examples.tr",
+    "en": "He used to bring us bread every morning."
+  },
+  {
+    "tr": "Bu, konuşmamız gereken bir şey.",
+    "kind": "explanation.examples.tr",
+    "en": "That's something we have to talk about."
+  },
+  {
+    "tr": "Gecikme yüzünden randevu iptal.",
+    "kind": "explanation.examples.tr",
+    "en": "The appointment is cancelled because of the delay."
+  },
+  {
+    "tr": "Hava iyi olursa denize gideriz.",
+    "kind": "explanation.examples.tr",
+    "en": "If the weather is good we'll go to the sea."
+  },
+  {
+    "tr": "Konuştuğum iş arkadaşı tatilde.",
+    "kind": "explanation.examples.tr",
+    "en": "The colleague I spoke to is on holiday."
+  },
+  {
+    "tr": "Viyana'ya gece treniyle gittik.",
+    "kind": "explanation.examples.tr",
+    "en": "We went to Vienna on the night train."
+  },
+  {
+    "tr": "Yeni çözümle daha hızlı oluyor.",
+    "kind": "explanation.examples.tr",
+    "en": "With the new solution it goes faster."
+  },
+  {
+    "tr": "Altı yaşındayken okula başladım.",
+    "kind": "explanation.examples.tr",
+    "en": "I started school when I was six."
+  },
+  {
+    "tr": "Bazen akşamları yemek pişiririm.",
+    "kind": "explanation.examples.tr",
+    "en": "Sometimes I cook in the evening."
+  },
+  {
+    "tr": "Çocuk küçükken burada otururduk.",
+    "kind": "explanation.examples.tr",
+    "en": "We lived here when the child was small."
+  },
+  {
+    "tr": "Çözüm kısa vadede uygulanabilir.",
+    "kind": "explanation.examples.tr",
+    "en": "The solution can be applied in the short term."
+  },
+  {
+    "tr": "Gelmiyor çünkü çalışmak zorunda.",
+    "kind": "explanation.examples.tr",
+    "en": "He isn't coming because he has to work."
+  },
+  {
+    "tr": "Gitmeden önce her şeyi halletti.",
+    "kind": "explanation.examples.tr",
+    "en": "He settled everything before he left."
+  },
+  {
+    "tr": "Hata güçlükle fark edilebilirdi.",
+    "kind": "explanation.examples.tr",
+    "en": "The mistake was hard to notice."
+  },
+  {
+    "tr": "Sık sık kız kardeşini düşünüyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He often thinks about his sister."
+  },
+  {
+    "tr": "Tablo herkesin kullanımına açık.",
+    "kind": "explanation.examples.tr",
+    "en": "The table is available to everybody."
+  },
+  {
+    "tr": "Taşındığımızda yağmur yağıyordu.",
+    "kind": "explanation.examples.tr",
+    "en": "It was raining when we moved."
+  },
+  {
+    "tr": "Taze bir sonuca ihtiyacımız var.",
+    "kind": "explanation.examples.tr",
+    "en": "We need a fresh result."
+  },
+  {
+    "tr": "Anneme bir kitap hediye ediyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm giving my mother a book."
+  },
+  {
+    "tr": "Hamburg'da kız kardeşim oturuyor.",
+    "kind": "explanation.examples.tr",
+    "en": "My sister lives in Hamburg."
+  },
+  {
+    "tr": "O zamanlar iki kişi çalışıyorduk.",
+    "kind": "explanation.examples.tr",
+    "en": "In those days two of us worked here."
+  },
+  {
+    "tr": "Pazar günü sizi ziyaret ediyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We're visiting you on Sunday."
+  },
+  {
+    "tr": "Yalnız dinlemedi, itiraz da etti.",
+    "kind": "explanation.examples.tr",
+    "en": "He not only listened, he objected as well."
+  },
+  {
+    "tr": "Yarın gelip gelemeyeceğini söyle.",
+    "kind": "explanation.examples.tr",
+    "en": "Say whether you can come tomorrow."
+  },
+  {
+    "tr": "Eleştiriye rağmen plan aynı kaldı.",
+    "kind": "explanation.examples.tr",
+    "en": "The plan stayed the same despite the criticism."
+  },
+  {
+    "tr": "Yapabileceğin en iyi şey beklemek.",
+    "kind": "explanation.examples.tr",
+    "en": "The best thing you can do is wait."
+  },
+  {
+    "tr": "Büronun nerede olduğunu bilmiyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I don't know where the office is."
+  },
+  {
+    "tr": "Hafta sonunu dört gözle bekliyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm looking forward to the weekend."
+  },
+  {
+    "tr": "Yağmur yağdığı için evde kalıyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We're staying at home because it's raining."
+  },
+  {
+    "tr": "Hasta olmalı, yoksa asla evde olmaz.",
+    "kind": "explanation.examples.tr",
+    "en": "He must be ill, otherwise he'd never be at home."
+  },
+  {
+    "tr": "Hiçbir şey bilmediğini iddia ediyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He claims he knows nothing."
+  },
+  {
+    "tr": "Maalesef iptal etmek zorunda kaldık.",
+    "kind": "explanation.examples.tr",
+    "en": "Unfortunately we had to cancel."
+  },
+  {
+    "tr": "Bu ağır basıyor, üstelik tekrarlandı.",
+    "kind": "explanation.examples.tr",
+    "en": "This weighs heavily, all the more so since it happened again."
+  },
+  {
+    "tr": "O zamanlar küçük bir köyde otururduk.",
+    "kind": "explanation.examples.tr",
+    "en": "In those days we lived in a small village."
+  },
+  {
+    "tr": "Paket nerede? — Onu almaya gidiyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "Where's the parcel? — I'm going to collect it."
+  },
+  {
+    "tr": "Ne zaman vaktim olsa yüzmeye giderdim.",
+    "kind": "explanation.examples.tr",
+    "en": "Whenever I had time I went swimming."
+  },
+  {
+    "tr": "Otobüs birazdan gelir, onu bekliyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "The bus is coming soon, I'm waiting for it."
+  },
+  {
+    "tr": "Öğretmen kuralı öğrencilere açıklıyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The teacher explains the rule to the students."
+  },
+  {
+    "tr": "Beklemeliyiz, hele ki veriler eksikken.",
+    "kind": "explanation.examples.tr",
+    "en": "We should wait, especially as the data are incomplete."
+  },
+  {
+    "tr": "Bu sayılar kolayca karşılaştırılabilir.",
+    "kind": "explanation.examples.tr",
+    "en": "These figures can easily be compared."
+  },
+  {
+    "tr": "Otobüsün ne zaman geleceğini soruyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm asking when the bus comes."
+  },
+  {
+    "tr": "Yer kalıp kalmadığını sorabilir misiniz?",
+    "kind": "explanation.examples.tr",
+    "en": "Could you ask whether there are any places left?"
+  },
+  {
+    "tr": "Başvuru haziran ayına kadar verilmelidir.",
+    "kind": "explanation.examples.tr",
+    "en": "The application must be submitted by June."
+  },
+  {
+    "tr": "henüz açıklığa kavuşturulması gereken soru",
+    "kind": "explanation.examples.tr",
+    "en": "the question that still has to be cleared up"
+  },
+  {
+    "tr": "Poşet çoktan gitmişti, bu da canımı sıktı.",
+    "kind": "explanation.examples.tr",
+    "en": "The bag had already gone, which annoyed me."
+  },
+  {
+    "tr": "Daha erken yola çıksaydın treni yakalardın.",
+    "kind": "explanation.examples.tr",
+    "en": "If you had set off earlier you would have caught the train."
+  },
+  {
+    "tr": "Eleştiri geçerli ama bir şey değiştirmiyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The criticism is valid but it changes nothing."
+  },
+  {
+    "tr": "Maliyetler ancak sonra karşılaştırılabilir.",
+    "kind": "explanation.examples.tr",
+    "en": "The costs can only be compared afterwards."
+  },
+  {
+    "tr": "Bu hiçbir şekilde herkes için geçerli değil.",
+    "kind": "explanation.examples.tr",
+    "en": "This is in no way true for everybody."
+  },
+  {
+    "tr": "uzun tartışmadan sonra karara bağlanan önlem",
+    "kind": "explanation.examples.tr",
+    "en": "the measure decided on after a long discussion"
+  },
+  {
+    "tr": "Belgeleri inceledikten sonra karar veriyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We decide after we have examined the documents."
+  },
+  {
+    "tr": "Pazartesi süpermarketten alışveriş yapıyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "On Monday I do the shopping at the supermarket."
+  },
+  {
+    "tr": "Büronun bugün açık olup olmadığını bilmiyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I don't know whether the office is open today."
+  },
+  {
+    "tr": "Bütün belgeler ulaşır ulaşmaz karar veriyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We decide as soon as all the documents arrive."
+  },
+  {
+    "tr": "O zaman kabul etseydim bugün Berlin'de olurdum.",
+    "kind": "explanation.examples.tr",
+    "en": "If I had accepted then, I would be in Berlin today."
+  },
+  {
+    "tr": "Toplantı sırasında hiçbir şeye karar verilmedi.",
+    "kind": "explanation.examples.tr",
+    "en": "Nothing was decided during the meeting."
+  },
+  {
+    "tr": "Trenin ne zaman kalktığını söyleyebilir misiniz?",
+    "kind": "explanation.examples.tr",
+    "en": "Could you tell me when the train left?"
+  },
+  {
+    "tr": "İtiraz haklı, üstelik belgeler bu konuda susuyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The objection is justified, all the more so since the documents say nothing about it."
+  },
+  {
+    "tr": "Karar, bütün belgeler ulaştıktan sonra veriliyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The decision is taken after all the documents have arrived."
+  },
+  {
+    "tr": "Randevuyu iptal ediyoruz çünkü çocuğun ateşi var.",
+    "kind": "explanation.examples.tr",
+    "en": "We're cancelling the appointment because the child has a fever."
+  },
+  {
+    "tr": "Karşılaştırma şu ölçüde yanlış: olaylar aynı değil.",
+    "kind": "explanation.examples.tr",
+    "en": "The comparison is wrong to this extent: the cases are not the same."
+  },
+  {
+    "tr": "Başvuruyu okumadı bile, gerekçelendirmek şöyle dursun.",
+    "kind": "explanation.examples.tr",
+    "en": "He didn't even read the application, let alone give reasons for it."
+  },
+  {
+    "tr": "Bu yalnız sayıları değil, gerekçeyi de ilgilendiriyor.",
+    "kind": "explanation.examples.tr",
+    "en": "This concerns not only the numbers but the reason as well."
+  },
+  {
+    "tr": "Sayılar doğru; ama önlem bununla gerekçelenmiş olmuyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The numbers are right; but that does not justify the measure."
+  },
+  {
+    "tr": "değişim",
+    "kind": "explanation.examples.note",
+    "en": "change"
+  },
+  {
+    "tr": "du → dich",
+    "kind": "explanation.examples.note",
+    "en": "du → dich"
+  },
+  {
+    "tr": "sınırlama",
+    "kind": "explanation.examples.note",
+    "en": "a limitation"
+  },
+  {
+    "tr": "ich → mich",
+    "kind": "explanation.examples.note",
+    "en": "ich → mich"
+  },
+  {
+    "tr": "hat → sonda",
+    "kind": "explanation.examples.note",
+    "en": "hat → at the end"
+  },
+  {
+    "tr": "konuşma dili",
+    "kind": "explanation.examples.note",
+    "en": "spoken language"
+  },
+  {
+    "tr": "ön ek yine sonda",
+    "kind": "explanation.examples.note",
+    "en": "the prefix still at the end"
+  },
+  {
+    "tr": "durum",
+    "kind": "explanation.examples.note",
+    "en": "state"
+  },
+  {
+    "tr": "ekleme",
+    "kind": "explanation.examples.note",
+    "en": "addition"
+  },
+  {
+    "tr": "mümkün",
+    "kind": "explanation.examples.note",
+    "en": "possible"
+  },
+  {
+    "tr": "gelecek",
+    "kind": "explanation.examples.note",
+    "en": "future"
+  },
+  {
+    "tr": "= an dem",
+    "kind": "explanation.examples.note",
+    "en": "= an dem"
+  },
+  {
+    "tr": "das → es",
+    "kind": "explanation.examples.note",
+    "en": "das → es"
+  },
+  {
+    "tr": "düzeltme",
+    "kind": "explanation.examples.note",
+    "en": "correction"
+  },
+  {
+    "tr": "iki fiil",
+    "kind": "explanation.examples.note",
+    "en": "two verbs"
+  },
+  {
+    "tr": "aynı sıra",
+    "kind": "explanation.examples.note",
+    "en": "the same order"
+  },
+  {
+    "tr": "denken an",
+    "kind": "explanation.examples.note",
+    "en": "denken an"
+  },
+  {
+    "tr": "der → ihn",
+    "kind": "explanation.examples.note",
+    "en": "der → ihn"
+  },
+  {
+    "tr": "die → sie",
+    "kind": "explanation.examples.note",
+    "en": "die → sie"
+  },
+  {
+    "tr": "güçlü ret",
+    "kind": "explanation.examples.note",
+    "en": "a strong denial"
+  },
+  {
+    "tr": "resmî dil",
+    "kind": "explanation.examples.note",
+    "en": "official language"
+  },
+  {
+    "tr": "wir → uns",
+    "kind": "explanation.examples.note",
+    "en": "wir → uns"
+  },
+  {
+    "tr": "yazı dili",
+    "kind": "explanation.examples.note",
+    "en": "written language"
+  },
+  {
+    "tr": "yer başta",
+    "kind": "explanation.examples.note",
+    "en": "place first"
+  },
+  {
+    "tr": "ek gerekçe",
+    "kind": "explanation.examples.note",
+    "en": "an extra reason"
+  },
+  {
+    "tr": "fiil sonda",
+    "kind": "explanation.examples.note",
+    "en": "verb at the end"
+  },
+  {
+    "tr": "ihr → euch",
+    "kind": "explanation.examples.note",
+    "en": "ihr → euch"
+  },
+  {
+    "tr": "iki mastar",
+    "kind": "explanation.examples.note",
+    "en": "two infinitives"
+  },
+  {
+    "tr": "kibar rica",
+    "kind": "explanation.examples.note",
+    "en": "a polite request"
+  },
+  {
+    "tr": "nötr → -es",
+    "kind": "explanation.examples.note",
+    "en": "neuter → -es"
+  },
+  {
+    "tr": "odak: kişi",
+    "kind": "explanation.examples.note",
+    "en": "focus: the person"
+  },
+  {
+    "tr": "tek bir an",
+    "kind": "explanation.examples.note",
+    "en": "a single moment"
+  },
+  {
+    "tr": "-bar sıfatı",
+    "kind": "explanation.examples.note",
+    "en": "a -bar adjective"
+  },
+  {
+    "tr": "alles → was",
+    "kind": "explanation.examples.note",
+    "en": "alles → was"
+  },
+  {
+    "tr": "bin → sonda",
+    "kind": "explanation.examples.note",
+    "en": "bin → at the end"
+  },
+  {
+    "tr": "çoğul Dativ",
+    "kind": "explanation.examples.note",
+    "en": "plural Dativ"
+  },
+  {
+    "tr": "Dativ → -en",
+    "kind": "explanation.examples.note",
+    "en": "Dativ → -en"
+  },
+  {
+    "tr": "e → i kalır",
+    "kind": "explanation.examples.note",
+    "en": "e → i stays"
+  },
+  {
+    "tr": "eril → mein",
+    "kind": "explanation.examples.note",
+    "en": "masculine → mein"
+  },
+  {
+    "tr": "haben → hab",
+    "kind": "explanation.examples.note",
+    "en": "haben → hab"
+  },
+  {
+    "tr": "ist → sonda",
+    "kind": "explanation.examples.note",
+    "en": "ist → at the end"
+  },
+  {
+    "tr": "kommen kann",
+    "kind": "explanation.examples.note",
+    "en": "kommen kann"
+  },
+  {
+    "tr": "nötr → kein",
+    "kind": "explanation.examples.note",
+    "en": "neuter → kein"
+  },
+  {
+    "tr": "resmî üslup",
+    "kind": "explanation.examples.note",
+    "en": "official register"
+  },
+  {
+    "tr": "tek bir gün",
+    "kind": "explanation.examples.note",
+    "en": "a single day"
+  },
+  {
+    "tr": "ver-: kayıp",
+    "kind": "explanation.examples.note",
+    "en": "ver-: loss"
+  },
+  {
+    "tr": "a → ä kalkar",
+    "kind": "explanation.examples.note",
+    "en": "a → ä goes"
+  },
+  {
+    "tr": "bir kez oldu",
+    "kind": "explanation.examples.note",
+    "en": "happened once"
+  },
+  {
+    "tr": "da + r + auf",
+    "kind": "explanation.examples.note",
+    "en": "da + r + auf"
+  },
+  {
+    "tr": "fiil → nicht",
+    "kind": "explanation.examples.note",
+    "en": "a verb → nicht"
+  },
+  {
+    "tr": "seit + Dativ",
+    "kind": "explanation.examples.note",
+    "en": "seit + Dativ"
+  },
+  {
+    "tr": "wo + r + auf",
+    "kind": "explanation.examples.note",
+    "en": "wo + r + auf"
+  },
+  {
+    "tr": "zu der → zur",
+    "kind": "explanation.examples.note",
+    "en": "zu der → zur"
+  },
+  {
+    "tr": "= entscheiden",
+    "kind": "explanation.examples.note",
+    "en": "= entscheiden"
+  },
+  {
+    "tr": "abgesagt habe",
+    "kind": "explanation.examples.note",
+    "en": "abgesagt habe"
+  },
+  {
+    "tr": "arbeiten muss",
+    "kind": "explanation.examples.note",
+    "en": "arbeiten muss"
+  },
+  {
+    "tr": "çoğul → deine",
+    "kind": "explanation.examples.note",
+    "en": "plural → deine"
+  },
+  {
+    "tr": "çoğul → deren",
+    "kind": "explanation.examples.note",
+    "en": "plural → deren"
+  },
+  {
+    "tr": "çoğul → keine",
+    "kind": "explanation.examples.note",
+    "en": "plural → keine"
+  },
+  {
+    "tr": "dişil → keine",
+    "kind": "explanation.examples.note",
+    "en": "feminine → keine"
+  },
+  {
+    "tr": "dişil → meine",
+    "kind": "explanation.examples.note",
+    "en": "feminine → meine"
+  },
+  {
+    "tr": "fahren → fuhr",
+    "kind": "explanation.examples.note",
+    "en": "fahren → fuhr"
+  },
+  {
+    "tr": "güçlü çıkarım",
+    "kind": "explanation.examples.note",
+    "en": "a strong inference"
+  },
+  {
+    "tr": "her seferinde",
+    "kind": "explanation.examples.note",
+    "en": "every time"
+  },
+  {
+    "tr": "karma: wusste",
+    "kind": "explanation.examples.note",
+    "en": "mixed: wusste"
+  },
+  {
+    "tr": "kişi → an sie",
+    "kind": "explanation.examples.note",
+    "en": "a person → an sie"
+  },
+  {
+    "tr": "kommen → sein",
+    "kind": "explanation.examples.note",
+    "en": "kommen → sein"
+  },
+  {
+    "tr": "kommen kannst",
+    "kind": "explanation.examples.note",
+    "en": "kommen kannst"
+  },
+  {
+    "tr": "araya -e girer",
+    "kind": "explanation.examples.note",
+    "en": "an -e is inserted"
+  }
+]

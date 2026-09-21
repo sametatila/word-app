@@ -1,0 +1,702 @@
+[
+  {
+    "tr": "Kayıt formunu Selin için doldur.",
+    "kind": "form.prompt",
+    "en": "Fill in the registration form for Selin."
+  },
+  {
+    "tr": "Selin Kara, 24 yaşında, Türkiye'den; Köln'de Gartenstraße 8'de oturuyor; voleybol oynamak istiyor.",
+    "kind": "form.facts",
+    "en": "Selin Kara, 24 years old, from Turkey; she lives at Gartenstraße 8 in Köln; she would like to play volleyball."
+  },
+  {
+    "tr": "Spor kulübüne kısa bir mesaj yaz: kim olduğunu söyle, hangi sporu yapmak istediğini yaz, hangi günler vaktin olduğunu belirt ve aidatı sor.",
+    "kind": "free.prompt",
+    "en": "Write a short message to the sports club: say who you are, write which sport you would like to do, say which days you have time and ask about the membership fee."
+  },
+  {
+    "tr": "Muayenehaneye kısa bir e-posta yaz: kim olduğunu ve randevunun ne zaman olduğunu söyle, neden gelemediğini yaz, yeni bir tarih iste ve kibarca bitir.",
+    "kind": "free.prompt",
+    "en": "Write a short email to the practice: say who you are and when your appointment is, write why you cannot come, ask for a new date and end politely."
+  },
+  {
+    "tr": "Kısa bir deneme yaz: yaygın açıklamayı tanıt, onu sorgula, kendi açıklamanı kur ve bir gözleme dayandır, karşı okumaya yer ver ve sonucu bir cümleyle bağla.",
+    "kind": "free.prompt",
+    "en": "Write a short essay: introduce the common explanation, question it, build your own explanation and base it on an observation, allow for the opposite reading and tie the conclusion up in one sentence."
+  },
+  {
+    "tr": "Foruma bir katkı yaz: tartışmaya kısaca bağlan, kendi kuralını söyle, nereden geldiğini anlat, kuralının sınırını dürüstçe yaz ve başkalarına bir soru bırak.",
+    "kind": "free.prompt",
+    "en": "Write a contribution to the forum: tie in briefly with the discussion, state your own rule, say where it comes from, write its limit honestly and leave a question for the others."
+  },
+  {
+    "tr": "Sınıf öğretmenine kısa bir mazeret notu yaz: kimden söz ettiğini ve hangi sınıfta olduğunu söyle, neden gelemediğini yaz, kaç gün süreceğini belirt ve kibarca bitir.",
+    "kind": "free.prompt",
+    "en": "Write a short note of excuse to the class teacher: say who it is about and which class they are in, write why they cannot come, say how many days it will last and end politely."
+  },
+  {
+    "tr": "Küçük bir anketin raporunu yaz: anketin konusunu ve kaç kişinin katıldığını söyle, iki sonucu sayılarla ver, dikkat çeken bir ayrıntıyı yorumla ve bir öneriyle bitir.",
+    "kind": "free.prompt",
+    "en": "Write the report of a small survey: say what the survey was about and how many people took part, give two results with numbers, comment on a striking detail and end with a proposal."
+  },
+  {
+    "tr": "Bir satış ilanı yaz: neyi sattığını ve ne kadar süredir kullandığını söyle, durumunu dürüstçe anlat (iyi ve kötü yanlarıyla), fiyatı yaz ve nasıl ulaşılacağını belirt.",
+    "kind": "free.prompt",
+    "en": "Write a for-sale advert: say what you are selling and how long you have used it, describe its condition honestly (the good and the bad), write the price and say how to get in touch."
+  },
+  {
+    "tr": "Apartman grubuna bir mesaj yaz: konuyu bir cümlede söyle, mevcut durumu kısaca anlat, somut öneriyi yaz, itirazı olabilecek komşuları düşün ve nasıl karar verileceğini söyle.",
+    "kind": "free.prompt",
+    "en": "Write a message to the building's group: say the matter in one sentence, describe the present situation briefly, write the concrete proposal, think of the neighbours who might object and say how the decision will be made."
+  },
+  {
+    "tr": "Apartman yönetimine bir metin yaz: kim olduğunu ve hangi dairede oturduğunu söyle, sorunun ne olduğunu ve ne zaman olduğunu anlat, şimdiye kadar ne yaptığını yaz ve bir çözüm öner.",
+    "kind": "free.prompt",
+    "en": "Write a text to the building management: say who you are and which flat you live in, describe what the problem is and when it happens, write what you have done so far and propose a solution."
+  },
+  {
+    "tr": "Tamir kafesi için bir değerlendirme yaz: ne zaman gittiğini ve neyi tamir ettirdiğini söyle, süreci anlat, iyi ve kötü yanlarını yaz, kime uygun olduğunu söyle ve bir öneride bulun.",
+    "kind": "free.prompt",
+    "en": "Write a review of a repair café: say when you went and what you had repaired, describe the process, write the good and the bad sides, say whom it suits and make a suggestion."
+  },
+  {
+    "tr": "Ev ilanına kısa bir cevap yaz: kendini tanıt, ne iş yaptığını ya da nerede okuduğunu söyle, nasıl biri olduğunu anlat, ne zaman taşınabileceğini yaz ve odayı görmek istediğini belirt.",
+    "kind": "free.prompt",
+    "en": "Write a short reply to a flat advert: introduce yourself, say what you do or where you study, describe what sort of person you are, write when you could move in and say that you would like to see the room."
+  },
+  {
+    "tr": "İlana kısa bir başvuru yaz: hangi ilana yazdığını söyle, kim olduğunu tanıt, hangi deneyimin olduğunu yaz, hangi günler müsait olduğunu belirt ve görüşmeye çağrılmayı istediğini söyle.",
+    "kind": "free.prompt",
+    "en": "Write a short application to the advert: say which advert you are writing about, introduce yourself, write what experience you have, say which days you are free and say that you would like to be invited to an interview."
+  },
+  {
+    "tr": "Mahalle forumuna kısa bir ilan yaz: kim olduğunu ve nerede oturduğunu söyle, neye ihtiyacın olduğunu ve ne yapacağını yaz, ne zaman geri vereceğini belirt ve nasıl ulaşılacağını söyle.",
+    "kind": "free.prompt",
+    "en": "Write a short notice for the neighbourhood forum: say who you are and where you live, write what you need and what you will do with it, say when you will give it back and how to get in touch."
+  },
+  {
+    "tr": "Bir hizmeti değerlendir: ne olduğunu ve nasıl çalıştığını kısaca anlat, beklentini ve gerçekleşeni karşılaştır, iki ölçütte somut ol, kime uygun olduğunu söyle ve puanını gerekçelendir.",
+    "kind": "free.prompt",
+    "en": "Review a service: describe briefly what it is and how it works, compare what you expected with what happened, be concrete on two criteria, say whom it suits and give reasons for your score."
+  },
+  {
+    "tr": "Dört günlük çalışma haftası üzerine bir yorum yaz: konuyu kısaca tanıt, iki gerekçeyle görüşünü savun, karşı tarafın en güçlü itirazını yaz ve ona cevap ver, sonunda kendi sonucunu söyle.",
+    "kind": "free.prompt",
+    "en": "Write a comment on the four-day week: introduce the subject briefly, defend your view with two reasons, write the other side's strongest objection and answer it, and give your own conclusion at the end."
+  },
+  {
+    "tr": "Okul yönetimine bir mektup yaz: kim olduğunu ve hangi sınıfla ilgili yazdığını söyle, önerini açıkça anlat, iki gerekçe ver, olası bir itirazı öngörüp cevapla ve somut bir sonraki adım öner.",
+    "kind": "free.prompt",
+    "en": "Write a letter to the school management: say who you are and which class you are writing about, set out your proposal clearly, give two reasons, anticipate a possible objection and answer it, and propose a concrete next step."
+  },
+  {
+    "tr": "Eski bir iş arkadaşına mektup yaz: kendi durumundaki değişikliği anlat, geriye dönüp baktığında neyi farklı yapardın söyle, karşındakinin durumunu sor, somut bir tavsiye iste ve buluşma öner.",
+    "kind": "free.prompt",
+    "en": "Write a letter to a former colleague: describe the change in your own situation, say what you would do differently looking back, ask how they are, ask for a concrete piece of advice and propose meeting up."
+  },
+  {
+    "tr": "Kaldığın pansiyon için bir değerlendirme yaz: ne zaman ve kaç gece kaldığını söyle, iyi bulduğun iki şeyi yaz, rahatsız olduğun bir şeyi dürüstçe anlat ve sonunda tavsiye edip etmediğini söyle.",
+    "kind": "free.prompt",
+    "en": "Write a review of the guesthouse you stayed at: say when you were there and for how many nights, write two things you liked, describe honestly one thing that bothered you and say at the end whether you recommend it."
+  },
+  {
+    "tr": "İki seçeneği karşılaştıran kısa bir rapor yaz: raporun amacını söyle, üç ölçüt belirle, her seçeneği bu ölçütlere göre değerlendir, hangi bilginin eksik olduğunu yaz ve gerekçeli bir tavsiye ver.",
+    "kind": "free.prompt",
+    "en": "Write a short report comparing two options: say what the report is for, set three criteria, judge each option by them, write which information is missing and give a reasoned recommendation."
+  },
+  {
+    "tr": "Bir kılavuz yaz: hangi durumu kapsadığını söyle, üç adımı sırayla ve gerekçesiyle ver, hangi adımın atlanabileceğini belirt, kılavuzun neyi vaat etmediğini dürüstçe yaz ve bir kapanış cümlesiyle bitir.",
+    "kind": "free.prompt",
+    "en": "Write a guide: say which situation it covers, give three steps in order and with reasons, say which step can be skipped, write honestly what the guide does not promise and finish with a closing sentence."
+  },
+  {
+    "tr": "Dernek bülteni için mahalle şenliğini anlat: ne zaman ve nerede olduğunu yaz, kaç kişi geldiğini ve neler yapıldığını söyle, bir aksaklıktan söz et, gelirin nereye gittiğini yaz ve yardım edenlere teşekkür et.",
+    "kind": "free.prompt",
+    "en": "Describe the street festival for the association's newsletter: write when and where it was, say how many people came and what was done, mention one thing that went wrong, write where the money went and thank those who helped."
+  },
+  {
+    "tr": "Bir forum tartışmasına katkı yaz: hangi iki konuma yanıt verdiğini söyle, tartışmayı ilerleten bir ayrım getir, ayrımı bir örnekle göster, karşı tarafa hak verdiğin noktayı kabul et ve tartışmaya bir soru bırak.",
+    "kind": "free.prompt",
+    "en": "Write a contribution to a forum discussion: say which two positions you are answering, bring a distinction that moves the discussion on, show the distinction with an example, admit the point where the other side is right and leave a question for the discussion."
+  },
+  {
+    "tr": "Bir tartışmanın tutanağını yaz: konuyu ve katılanları belirt, iki tarafın konumunu tarafsızca aktar, anlaşılan noktayı ve süren görüş ayrılığını ayır, kararı ve sorumluyu yaz, sonunda kendi önerini ayrı bir bölümde ekle.",
+    "kind": "free.prompt",
+    "en": "Write the minutes of a discussion: name the subject and who took part, report both positions neutrally, separate what was agreed from what is still disputed, write the decision and who is responsible, and add your own proposal in a separate section at the end."
+  },
+  {
+    "tr": "Bir plana resmî itiraz yaz: hangi belgeye ve hangi süreye atıf yaptığını söyle, planın kabul ettiğin yanını adlandır, itirazını tek bir noktada topla ve gerekçelendir, olası karşı argümanı kendin kur ve yanıtla, somut bir istekle bitir.",
+    "kind": "free.prompt",
+    "en": "Write a formal objection to a plan: say which document and which deadline you are referring to, name the part of the plan you accept, gather your objection into a single point and give reasons for it, build the possible counter-argument yourself and answer it, and end with a concrete request."
+  },
+  {
+    "tr": "Görevi devralan kişiye mektup yaz: neyi devrettiğini kısaca söyle, işin yazılmamış üç kuralını adlandır ve nereden geldiklerini açıkla, hangisine uymamanı tavsiye ettiğini yaz, kendi yanılgılarından birini kabul et ve yardım önerisiyle bitir.",
+    "kind": "free.prompt",
+    "en": "Write a letter to the person taking over from you: say briefly what you are handing over, name three unwritten rules of the job and explain where they come from, write which one you advise not following, admit one of your own mistakes and end by offering help."
+  },
+  {
+    "tr": "Kendini tanıt",
+    "kind": "free.checklist",
+    "en": "Introduce yourself"
+  },
+  {
+    "tr": "İki gerekçe ver",
+    "kind": "free.checklist",
+    "en": "Give two reasons"
+  },
+  {
+    "tr": "Öğretmene hitap et",
+    "kind": "free.checklist",
+    "en": "Address the teacher"
+  },
+  {
+    "tr": "Nasıl biri olduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Write what sort of person you are"
+  },
+  {
+    "tr": "Sınırını dürüstçe söyle",
+    "kind": "free.checklist",
+    "en": "State your limit honestly"
+  },
+  {
+    "tr": "İki sonucu sayılarla ver",
+    "kind": "free.checklist",
+    "en": "Give two results with numbers"
+  },
+  {
+    "tr": "Somut bir öneriyle bitir",
+    "kind": "free.checklist",
+    "en": "End with a concrete proposal"
+  },
+  {
+    "tr": "Teşekkür et ve adını yaz",
+    "kind": "free.checklist",
+    "en": "Say thank you and write your name"
+  },
+  {
+    "tr": "Aidatı sor ve teşekkür et",
+    "kind": "free.checklist",
+    "en": "Ask about the fee and say thank you"
+  },
+  {
+    "tr": "Ayrımı bir örnekle göster",
+    "kind": "free.checklist",
+    "en": "Show the distinction with an example"
+  },
+  {
+    "tr": "Neden gelemediğini açıkla",
+    "kind": "free.checklist",
+    "en": "Explain why you cannot come"
+  },
+  {
+    "tr": "Başkalarına bir soru bırak",
+    "kind": "free.checklist",
+    "en": "Leave a question for the others"
+  },
+  {
+    "tr": "Belgeye ve süreye atıf yap",
+    "kind": "free.checklist",
+    "en": "Refer to the document and the deadline"
+  },
+  {
+    "tr": "Bir ayrım getir ve tanımla",
+    "kind": "free.checklist",
+    "en": "Bring a distinction and define it"
+  },
+  {
+    "tr": "En az iki ölçütte somut ol",
+    "kind": "free.checklist",
+    "en": "Be concrete on at least two criteria"
+  },
+  {
+    "tr": "Karşı tarafın durumunu sor",
+    "kind": "free.checklist",
+    "en": "Ask how the other person is"
+  },
+  {
+    "tr": "Mevcut durumu kısaca anlat",
+    "kind": "free.checklist",
+    "en": "Describe the present situation briefly"
+  },
+  {
+    "tr": "İyi bulduğun iki şeyi anlat",
+    "kind": "free.checklist",
+    "en": "Describe two things you liked"
+  },
+  {
+    "tr": "Kabul ettiğin yanı adlandır",
+    "kind": "free.checklist",
+    "en": "Name the part you accept"
+  },
+  {
+    "tr": "Hangi ilana başvurduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Write which advert you are applying to"
+  },
+  {
+    "tr": "Kendini tanıt ve daireni yaz",
+    "kind": "free.checklist",
+    "en": "Introduce yourself and write your flat"
+  },
+  {
+    "tr": "Konuyu ilk cümlede net söyle",
+    "kind": "free.checklist",
+    "en": "Say the matter clearly in the first sentence"
+  },
+  {
+    "tr": "Çocuğun adını ve sınıfını yaz",
+    "kind": "free.checklist",
+    "en": "Write the child's name and class"
+  },
+  {
+    "tr": "Karar yöntemini ve süreyi yaz",
+    "kind": "free.checklist",
+    "en": "Write how the decision is made and by when"
+  },
+  {
+    "tr": "Rahatsız olduğun bir şeyi yaz",
+    "kind": "free.checklist",
+    "en": "Write one thing that bothered you"
+  },
+  {
+    "tr": "Randevunun gün ve saatini yaz",
+    "kind": "free.checklist",
+    "en": "Write the day and time of the appointment"
+  },
+  {
+    "tr": "Gerekçeli bir tavsiyeyle bitir",
+    "kind": "free.checklist",
+    "en": "End with a reasoned recommendation"
+  },
+  {
+    "tr": "Ne zaman geri vereceğini söyle",
+    "kind": "free.checklist",
+    "en": "Say when you will give it back"
+  },
+  {
+    "tr": "Sürecin nasıl işlediğini anlat",
+    "kind": "free.checklist",
+    "en": "Describe how the process works"
+  },
+  {
+    "tr": "Şimdiye kadar ne yaptığını yaz",
+    "kind": "free.checklist",
+    "en": "Write what you have done so far"
+  },
+  {
+    "tr": "Bir çözüm öner ve kibarca bitir",
+    "kind": "free.checklist",
+    "en": "Propose a solution and end politely"
+  },
+  {
+    "tr": "Kuralın nereden geldiğini anlat",
+    "kind": "free.checklist",
+    "en": "Explain where the rule comes from"
+  },
+  {
+    "tr": "Ne zaman taşınabileceğini söyle",
+    "kind": "free.checklist",
+    "en": "Say when you could move in"
+  },
+  {
+    "tr": "Ne zaman ve nerede olduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Write when and where it was"
+  },
+  {
+    "tr": "Görüşünü iki gerekçeyle destekle",
+    "kind": "free.checklist",
+    "en": "Support your view with two reasons"
+  },
+  {
+    "tr": "Hangi sporu yapmak istediğini yaz",
+    "kind": "free.checklist",
+    "en": "Write which sport you would like to do"
+  },
+  {
+    "tr": "İki konumu tarafsız biçimde aktar",
+    "kind": "free.checklist",
+    "en": "Report both positions neutrally"
+  },
+  {
+    "tr": "Kendi sonucunu bir cümleyle bağla",
+    "kind": "free.checklist",
+    "en": "Tie your own conclusion up in one sentence"
+  },
+  {
+    "tr": "Kibarca hitap et ve kendini tanıt",
+    "kind": "free.checklist",
+    "en": "Address them politely and introduce yourself"
+  },
+  {
+    "tr": "Neyi vaat etmediğini yaz ve kapat",
+    "kind": "free.checklist",
+    "en": "Write what it does not promise and close"
+  },
+  {
+    "tr": "Sorunu ve ne zaman olduğunu anlat",
+    "kind": "free.checklist",
+    "en": "Describe the problem and when it happens"
+  },
+  {
+    "tr": "Dikkat çeken bir ayrıntıyı yorumla",
+    "kind": "free.checklist",
+    "en": "Comment on a striking detail"
+  },
+  {
+    "tr": "En az bir iyi ve bir kötü yanı yaz",
+    "kind": "free.checklist",
+    "en": "Write at least one good and one bad side"
+  },
+  {
+    "tr": "Hangi günler vaktin olduğunu söyle",
+    "kind": "free.checklist",
+    "en": "Say which days you have time"
+  },
+  {
+    "tr": "Kılavuzun kapsadığı durumu tanımla",
+    "kind": "free.checklist",
+    "en": "Define the situation the guide covers"
+  },
+  {
+    "tr": "Ne zaman ve kaç gece kaldığını yaz",
+    "kind": "free.checklist",
+    "en": "Write when you were there and for how many nights"
+  },
+  {
+    "tr": "Hangi adımın atlanabileceğini söyle",
+    "kind": "free.checklist",
+    "en": "Say which step can be skipped"
+  },
+  {
+    "tr": "Hangi bilginin eksik olduğunu söyle",
+    "kind": "free.checklist",
+    "en": "Say which information is missing"
+  },
+  {
+    "tr": "Hangi konumlara yanıt verdiğini yaz",
+    "kind": "free.checklist",
+    "en": "Write which positions you are answering"
+  },
+  {
+    "tr": "Kendi durumundaki değişikliği anlat",
+    "kind": "free.checklist",
+    "en": "Describe the change in your own situation"
+  },
+  {
+    "tr": "Raporun amacını ve iki seçeneği yaz",
+    "kind": "free.checklist",
+    "en": "Write what the report is for and name the two options"
+  },
+  {
+    "tr": "Hangisine uymaması gerektiğini söyle",
+    "kind": "free.checklist",
+    "en": "Say which one not to follow"
+  },
+  {
+    "tr": "Konuyu, tarihi ve katılanları belirt",
+    "kind": "free.checklist",
+    "en": "Name the subject, the date and who took part"
+  },
+  {
+    "tr": "Neye ihtiyacın olduğunu ve niçin yaz",
+    "kind": "free.checklist",
+    "en": "Write what you need and what for"
+  },
+  {
+    "tr": "Öneriyi tek cümleyle net biçimde yaz",
+    "kind": "free.checklist",
+    "en": "Write the proposal clearly in one sentence"
+  },
+  {
+    "tr": "Üç adımı sırayla ve gerekçesiyle ver",
+    "kind": "free.checklist",
+    "en": "Give three steps in order and with reasons"
+  },
+  {
+    "tr": "Yeni bir randevu iste ve teşekkür et",
+    "kind": "free.checklist",
+    "en": "Ask for a new appointment and say thank you"
+  },
+  {
+    "tr": "Beklenti ile gerçekleşeni karşılaştır",
+    "kind": "free.checklist",
+    "en": "Compare what you expected with what happened"
+  },
+  {
+    "tr": "Bir noktada hak ver ve bir soru bırak",
+    "kind": "free.checklist",
+    "en": "Concede one point and leave a question"
+  },
+  {
+    "tr": "Karşı okumaya yer ver ve sonucu bağla",
+    "kind": "free.checklist",
+    "en": "Allow for the opposite reading and tie up the conclusion"
+  },
+  {
+    "tr": "Kendini tanıt: ad, yaş, iş ya da okul",
+    "kind": "free.checklist",
+    "en": "Introduce yourself: name, age, job or studies"
+  },
+  {
+    "tr": "Bir aksaklığı ve nasıl çözüldüğünü yaz",
+    "kind": "free.checklist",
+    "en": "Write one thing that went wrong and how it was sorted out"
+  },
+  {
+    "tr": "Deneyimini ve neden uygun olduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Write your experience and why you are suitable"
+  },
+  {
+    "tr": "Fiyatı ve pazarlık olup olmadığını yaz",
+    "kind": "free.checklist",
+    "en": "Write the price and whether it is negotiable"
+  },
+  {
+    "tr": "Kendini tanıt ve neden yazdığını söyle",
+    "kind": "free.checklist",
+    "en": "Introduce yourself and say why you are writing"
+  },
+  {
+    "tr": "Kendini tanıt ve nerede oturduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Introduce yourself and write where you live"
+  },
+  {
+    "tr": "Nasıl ulaşılacağını yaz ve teşekkür et",
+    "kind": "free.checklist",
+    "en": "Write how to get in touch and say thank you"
+  },
+  {
+    "tr": "Odayı görmek istediğini yaz ve vedalaş",
+    "kind": "free.checklist",
+    "en": "Write that you would like to see the room and say goodbye"
+  },
+  {
+    "tr": "Somut bir tavsiye iste ve buluşma öner",
+    "kind": "free.checklist",
+    "en": "Ask for a concrete piece of advice and propose meeting up"
+  },
+  {
+    "tr": "Anlaşılan nokta ile süren ayrılığı ayır",
+    "kind": "free.checklist",
+    "en": "Separate what was agreed from what is still disputed"
+  },
+  {
+    "tr": "Kendi yanılgını kabul et ve yardım öner",
+    "kind": "free.checklist",
+    "en": "Admit your own mistake and offer help"
+  },
+  {
+    "tr": "Kendini tanıt: ad, yaş, şu anki durumun",
+    "kind": "free.checklist",
+    "en": "Introduce yourself: name, age, what you are doing now"
+  },
+  {
+    "tr": "Tartışmaya bağlan ve kendi kuralını yaz",
+    "kind": "free.checklist",
+    "en": "Tie in with the discussion and write your own rule"
+  },
+  {
+    "tr": "Üç ölçüt belirle ve ikisini karşılaştır",
+    "kind": "free.checklist",
+    "en": "Set three criteria and compare the two by them"
+  },
+  {
+    "tr": "Durumu dürüstçe anlat, kusurunu da söyle",
+    "kind": "free.checklist",
+    "en": "Describe the condition honestly, faults included"
+  },
+  {
+    "tr": "Geçmişe bakarak neyi farklı yapardın yaz",
+    "kind": "free.checklist",
+    "en": "Write what you would do differently looking back"
+  },
+  {
+    "tr": "Hizmeti ve nasıl çalıştığını kısaca anlat",
+    "kind": "free.checklist",
+    "en": "Describe the service and how it works briefly"
+  },
+  {
+    "tr": "Neyi devrettiğini ve mektubun amacını yaz",
+    "kind": "free.checklist",
+    "en": "Write what you are handing over and what the letter is for"
+  },
+  {
+    "tr": "Somut öneriyi ve neyi değiştireceğini yaz",
+    "kind": "free.checklist",
+    "en": "Write the concrete proposal and what it would change"
+  },
+  {
+    "tr": "Anketin konusunu ve katılımcı sayısını yaz",
+    "kind": "free.checklist",
+    "en": "Write what the survey was about and how many took part"
+  },
+  {
+    "tr": "En güçlü karşı görüşü yaz ve ona cevap ver",
+    "kind": "free.checklist",
+    "en": "Write the strongest counter-view and answer it"
+  },
+  {
+    "tr": "Kaç kişi geldiğini ve neler olduğunu anlat",
+    "kind": "free.checklist",
+    "en": "Describe how many people came and what happened"
+  },
+  {
+    "tr": "Kime uygun olduğunu söyle ve bir öneri ver",
+    "kind": "free.checklist",
+    "en": "Say whom it suits and give a suggestion"
+  },
+  {
+    "tr": "Ne zaman gittiğini ve neyi getirdiğini yaz",
+    "kind": "free.checklist",
+    "en": "Write when you went and what you brought"
+  },
+  {
+    "tr": "Neyi sattığını ve kaç yaşında olduğunu yaz",
+    "kind": "free.checklist",
+    "en": "Write what you are selling and how old it is"
+  },
+  {
+    "tr": "Gelirin nereye gittiğini yaz ve teşekkür et",
+    "kind": "free.checklist",
+    "en": "Write where the money went and say thank you"
+  },
+  {
+    "tr": "İtirazını tek noktada topla ve gerekçelendir",
+    "kind": "free.checklist",
+    "en": "Gather your objection into one point and give reasons"
+  },
+  {
+    "tr": "Neden gelemediğini ve kaç gün süreceğini yaz",
+    "kind": "free.checklist",
+    "en": "Write why they cannot come and how many days it will last"
+  },
+  {
+    "tr": "Olası bir itirazı yaz ve somut bir adım öner",
+    "kind": "free.checklist",
+    "en": "Write a possible objection and propose a concrete step"
+  },
+  {
+    "tr": "Kendi açıklamanı kur ve bir gözlemle destekle",
+    "kind": "free.checklist",
+    "en": "Build your own explanation and back it with an observation"
+  },
+  {
+    "tr": "Nasıl ulaşılacağını ve nereden alınacağını yaz",
+    "kind": "free.checklist",
+    "en": "Write how to get in touch and where to collect it"
+  },
+  {
+    "tr": "Konuyu bir iki cümleyle tanıt ve görüşünü söyle",
+    "kind": "free.checklist",
+    "en": "Introduce the subject in a sentence or two and give your view"
+  },
+  {
+    "tr": "Onu sorgula ve neye dayanarak sorguladığını yaz",
+    "kind": "free.checklist",
+    "en": "Question it and write on what grounds"
+  },
+  {
+    "tr": "Ne zaman başlayabileceğini söyle ve kibarca bitir",
+    "kind": "free.checklist",
+    "en": "Say when you could start and end politely"
+  },
+  {
+    "tr": "Üç yazılmamış kuralı adlandır ve kaynağını açıkla",
+    "kind": "free.checklist",
+    "en": "Name three unwritten rules and explain where they come from"
+  },
+  {
+    "tr": "Kime uygun olduğunu söyle ve puanını gerekçelendir",
+    "kind": "free.checklist",
+    "en": "Say whom it suits and give reasons for your score"
+  },
+  {
+    "tr": "Tavsiye edip etmediğini ve kime uygun olduğunu söyle",
+    "kind": "free.checklist",
+    "en": "Say whether you recommend it and whom it suits"
+  },
+  {
+    "tr": "Kararı, sorumluyu ve süreyi yaz; öneriyi ayrı bölümde ver",
+    "kind": "free.checklist",
+    "en": "Write the decision, who is responsible and by when; put the proposal in a separate section"
+  },
+  {
+    "tr": "Karşı argümanı kendin kur, yanıtla ve somut istekle bitir",
+    "kind": "free.checklist",
+    "en": "Build the counter-argument yourself, answer it and end with a concrete request"
+  },
+  {
+    "tr": "Yaygın açıklamayı tanıt ve neden inandırıcı göründüğünü söyle",
+    "kind": "free.checklist",
+    "en": "Introduce the common explanation and say why it sounds convincing"
+  },
+  {
+    "tr": "Buna rağmen yine gelirim.",
+    "kind": "build.tr",
+    "en": "All the same, I'll come again."
+  },
+  {
+    "tr": "Yarın yine derste olacak.",
+    "kind": "build.tr",
+    "en": "He'll be in the lesson again tomorrow."
+  },
+  {
+    "tr": "Bir matkaba ihtiyacım var.",
+    "kind": "build.tr",
+    "en": "I need a drill."
+  },
+  {
+    "tr": "Bu ifade söz konusu değil.",
+    "kind": "build.tr",
+    "en": "This statement is out of the question."
+  },
+  {
+    "tr": "Ekim ayında taşınabilirim.",
+    "kind": "build.tr",
+    "en": "I could move in in October."
+  },
+  {
+    "tr": "Bisikleti üç yıl önce aldım.",
+    "kind": "build.tr",
+    "en": "I bought the bike three years ago."
+  },
+  {
+    "tr": "İlanınızı internette gördüm.",
+    "kind": "build.tr",
+    "en": "I saw your advert on the internet."
+  },
+  {
+    "tr": "Yaklaşık iki yüz kişi geldi.",
+    "kind": "build.tr",
+    "en": "About two hundred people came."
+  },
+  {
+    "tr": "Yazar metni okumamış olmalı.",
+    "kind": "build.tr",
+    "en": "The author can't have read the text."
+  },
+  {
+    "tr": "Yarınki randevuma gelemiyorum.",
+    "kind": "build.tr",
+    "en": "I can't come to my appointment tomorrow."
+  },
+  {
+    "tr": "İki yıl bir çiçekçide çalıştım.",
+    "kind": "build.tr",
+    "en": "I worked in a florist's for two years."
+  },
+  {
+    "tr": "Kurum tabloyu kamuoyuna açıyor.",
+    "kind": "build.tr",
+    "en": "The organisation is publishing the table."
+  },
+  {
+    "tr": "Zaten iki kez onlarla konuştum.",
+    "kind": "build.tr",
+    "en": "I've already spoken to them twice."
+  }
+]
