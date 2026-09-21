@@ -414,6 +414,48 @@
       "when": 1789741162489,
       "tag": "0058_weekly_quiz",
       "breakpoints": true
+    },
+    {
+      "idx": 59,
+      "version": "7",
+      "when": 1789827562489,
+      "tag": "0059_moderation_actions",
+      "breakpoints": true
+    },
+    {
+      "idx": 60,
+      "version": "7",
+      "when": 1789913962489,
+      "tag": "0060_app_ops",
+      "breakpoints": true
+    },
+    {
+      "idx": 61,
+      "version": "7",
+      "when": 1790000362489,
+      "tag": "0061_admin_ops",
+      "breakpoints": true
+    },
+    {
+      "idx": 62,
+      "version": "7",
+      "when": 1790086762489,
+      "tag": "0062_content",
+      "breakpoints": true
+    },
+    {
+      "idx": 63,
+      "version": "7",
+      "when": 1790173162489,
+      "tag": "0063_mock_attempt_release",
+      "breakpoints": true
+    },
+    {
+      "idx": 64,
+      "version": "7",
+      "when": 1790259562489,
+      "tag": "0064_drop_referral_reward_columns",
+      "breakpoints": true
     }
   ]
 }
