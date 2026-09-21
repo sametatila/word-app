@@ -3,8 +3,8 @@ import { currentLang } from "../lib/i18n";
 
 /**
  * Patika modül temaları — her 10 dersin ortak başlığı ("Tanışma ve ben",
- * "Bürokrasi"…). Kursun MÜFREDATINI anlatır, arayüz metni değil: Almanca kursunun
- * modül sırası bu.
+ * "Bürokrasi"…). Kursun MÜFREDATINI anlatır, arayüz metni değil: hangi on
+ * dersin bir arada durduğunu söyler ve ders listesiyle birlikte değişir.
  *
  * İki yerde birebir kopyalanmış duruyordu (immersionTrack ve immersionQuiz);
  * ünite başlığı ile o ünitenin quiz'i aynı listeden gelmek zorunda, kopya ikisinin
@@ -27,27 +27,33 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
     B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
     C1: ["Zarif iş iletişimi", "Kip parçacıkları", "Retorik ve sunum sanatı", "Deyimler ve mecazlar", "Basın ve akademik aktarım", "Hukuk ve sözleşme dili", "Karmaşık yapılar", "Toplumsal tartışma", "Mizah, ironi ve incelik", "Ustalık sahneleri"],
   },
-  // İngilizce kursu A1'de 100 ders = 10 tam modül. Sıra derslerin dizi sırasıyla
-  // birebir aynı (mobile/src/data/lessons/en-a1.json); ders eklerken modülün
-  // 10'luk sınırı korunmazsa ünite başlığı ile içeriği ayrışır.
+  /* İngilizce kurs — BEŞ SEVİYE.
+     Önce yalnız A1 ve A2 vardı ("A2 henüz yalnız ilk modül" notuyla) ve o gün
+     doğruydu. Kurs 2026-09-21'de elli modüle çıkınca eksik kalan otuz ünite
+     Patika'da adını bulamayıp "B1 Ünite 3" gibi jenerik etikete düşüyordu.
+     A1-B2 bugün Almanca kursla aynı temalara oturuyor (ders ders ölçüldü);
+     C1 ayrışıyor, çünkü Almanca C1 dilin kendisini konu ediyor ("Kip
+     parçacıkları"), İngilizce C1 ise alanları (hukuk, göç, tarım, iklim).
+     Liste GERÇEK içerik kadar uzun: olmayan modüle tema yazmak, dersler
+     eklenirken sıranın kaymasıyla başlığın içeriğinden ayrılması demek. */
   en: {
     A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
-    // A2 henüz yalnız ilk modül. Liste GERÇEK içerik kadar uzun tutuluyor:
-    // olmayan modüle tema yazmak, dersler eklenirken sıranın kaymasıyla
-    // başlığın içeriğinden ayrılmasına yol açar.
     A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
+    B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
+    B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
+    C1: ["Üslup ve kayıt", "Tartışma ve karşı çıkma", "Hukuk ve sözleşme dili", "Edebiyat ve yorum", "Göç, aidiyet ve kültür", "Çalışma dünyası ve toplu sözleşme", "Toprak, gıda ve tarım", "İklim ve kent", "Ekonomi ve finans", "Kanıt, yargı ve seçim"],
   },
 };
 
 /**
  * Temaların ANA DİLDEKİ karşılığı — anahtar Türkçe metnin kendisi.
  *
- * Web'de aynı çeviriler paralel DİZİ olarak duruyor (`lib/lessons/modules.ts`),
- * burada metne göre anahtarlı: mobil tablo kursa göre bölünmüş ve aynı tema
- * iki kursta birden geçiyor (`de` ve `en` A1/A2 listeleri birebir aynı).
- * Metne göre anahtarlamak o tekrarı bir kez yazdırıyor ve çağrı yerlerine
- * hiç dokunmuyor. Ölçüldü: iki tablodaki Türkçe tema kümesi birebir aynı,
- * 58 = 58.
+ * Metne göre anahtarlı, çünkü tablo kursa göre bölünmüş ve aynı tema iki
+ * kursta birden geçiyor (`de` ve `en` A1-B2 listelerinin kırk teması birebir
+ * aynı). Paralel dizi bunları dört kez yazdırırdı — iki kurs × iki dil — ve
+ * dördünün sırası ayrı ayrı kayabilirdi. Web 2026-09-21'de aynı şekle geçti
+ * (`lib/lessons/modules.ts`): iki tablodaki Türkçe tema kümesi birebir aynı,
+ * 67 = 67.
  *
  * Eksik çeviride başlık KAYBOLMUYOR, Türkçe kalıyor — kartın kimliği o
  * başlık. Kapı: `__tests__/moduleThemes.test.ts`.
@@ -112,6 +118,17 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "Toplumsal tartışma": "Public debate",
     "Mizah, ironi ve incelik": "Humour, irony and nuance",
     "Ustalık sahneleri": "Mastery scenes",
+    // İngilizce kursun C1 temaları (2026-09-21). Almanca kursta karşılığı
+    // yok: iki müfredat C1'de ayrışıyor.
+    "Üslup ve kayıt": "Register and tone",
+    "Tartışma ve karşı çıkma": "Debate and dissent",
+    "Edebiyat ve yorum": "Literature and interpretation",
+    "Göç, aidiyet ve kültür": "Migration, belonging and culture",
+    "Çalışma dünyası ve toplu sözleşme": "Working life and collective bargaining",
+    "Toprak, gıda ve tarım": "Land, food and farming",
+    "İklim ve kent": "Climate and the city",
+    "Ekonomi ve finans": "Economy and finance",
+    "Kanıt, yargı ve seçim": "Evidence, judgement and choice",
   },
   de: {
     "Tanışma ve ben": "Vorstellen und ich",
@@ -172,6 +189,17 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "Toplumsal tartışma": "Gesellschaftliche Debatte",
     "Mizah, ironi ve incelik": "Humor, Ironie und Feinheit",
     "Ustalık sahneleri": "Meisterszenen",
+    // İngilizce kursun C1 temaları (2026-09-21). Almanca kursta karşılığı
+    // yok: iki müfredat C1'de ayrışıyor.
+    "Üslup ve kayıt": "Register und Ton",
+    "Tartışma ve karşı çıkma": "Debatte und Widerspruch",
+    "Edebiyat ve yorum": "Literatur und Deutung",
+    "Göç, aidiyet ve kültür": "Migration, Zugehörigkeit und Kultur",
+    "Çalışma dünyası ve toplu sözleşme": "Arbeitswelt und Tarifverhandlungen",
+    "Toprak, gıda ve tarım": "Boden, Ernährung und Landwirtschaft",
+    "İklim ve kent": "Klima und Stadt",
+    "Ekonomi ve finans": "Wirtschaft und Finanzen",
+    "Kanıt, yargı ve seçim": "Beweis, Urteil und Wahl",
   },
 };
 

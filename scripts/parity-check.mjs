@@ -932,11 +932,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── modul temalari ─────────────────────────────────────────────────────────
    Patika ünitelerinin adı. İki kopya elle tutuluyor: webde
-   `lib/lessons/modules.ts` `MODULE_THEMES` (seviyeye göre), mobilde
-   `data/moduleThemes.ts` (kursa VE seviyeye göre). Webin tablosu Almanca
-   kursu anlatıyor, o yüzden karşılaştırma mobilin `de` dalıyla.
+   `lib/lessons/modules.ts` `MODULE_THEMES`, mobilde `data/moduleThemes.ts`.
+   İkisi de 2026-09-21'den beri KURSA VE SEVİYEYE göre anahtarlı, o yüzden
+   karşılaştırma kurs kurs. O güne kadar webin tablosu yalnız seviyeye göreydi
+   ve iki kurs onu paylaşıyordu: İngilizce C1'in on ünitesi Patika'da Almanca
+   müfredatın adını taşıyordu.
 
-   Ölçülen sessiz ayrışma buydu: web B1'i 2026-09-05'te on sekiz modüle
+   Ölçülen ilk sessiz ayrışma şuydu: web B1'i 2026-09-05'te on sekiz modüle
    genişletti, mobil listede on tema kaldı. `de-b1.json` 180 ders taşıyor
    (18 modül), yani Patika'nın 11-18. üniteleri adını bulamayıp jenerik
    etikete düşüyordu - içerik yerindeydi, adı yoktu. */
@@ -952,14 +954,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const j = src.indexOf(end, i + start.length);
     return src.slice(i, j < 0 ? undefined : j);
   };
-  const webBlock = cut(web, "export const MODULE_THEMES", "\n};");
-  const mobDe = cut(mob, "  de: {", "\n  },");
+  const webBlock = cut(web, "export const MODULE_THEMES:", "\nexport const MODULE_THEMES_NATIVE");
+  const mobBlock = cut(mob, "const BY_COURSE", "\nconst NATIVE");
+  /* Kursun bloğu: `\n  <kurs>: {` ile başlar, ilk `\n  },` ile biter. İki
+     dosyada da aynı girinti var, o yüzden tek kesici ikisine de yetiyor. */
+  const courseBlock = (src, id) => {
+    const i = src.indexOf("\n  " + id + ": {");
+    return i < 0 ? "" : src.slice(i, src.indexOf("\n  },", i));
+  };
   const arr = (src, level) => {
     const m = new RegExp(level + ":\\s*\\[([\\s\\S]*?)\\]").exec(src);
     return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : [];
   };
-  for (const level of ["A1", "A2", "B1", "B2", "C1"]) {
-    sameList("modul temalari " + level, arr(mobDe, level), arr(webBlock, level));
+  for (const course of ["de", "en"]) {
+    const w = courseBlock(webBlock, course);
+    const m = courseBlock(mobBlock, course);
+    for (const level of ["A1", "A2", "B1", "B2", "C1"]) {
+      sameList(`modul temalari ${course} ${level}`, arr(m, level), arr(w, level));
+    }
   }
 }
 

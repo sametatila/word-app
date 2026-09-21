@@ -16,9 +16,10 @@ import { setLang } from "../src/lib/i18n";
  *
  * İki ölçüt:
  *
- * 1. **Türkçe listeler birebir aynı.** Karşılaştırma Almanca kursun listesi
- *    üzerinden: mobil tablo kursa göre bölünmüş, web yalnız seviyeye göre ve
- *    web listesi Almanca kursun müfredatı.
+ * 1. **Türkçe listeler birebir aynı** — KURS KURS. Karşılaştırma 2026-09-21'e
+ *    kadar yalnız Almanca kurs üzerindendi, çünkü webin tablosu yalnız
+ *    seviyeye göre anahtarlıydı; o gün web de kursa göre bölündü ve iki
+ *    tablo artık aynı şekle sahip.
  * 2. **Her temanın iki çevirisi var.** Eksik çeviri ekranı bozmuyor (başlık
  *    Türkçe kalıyor, kaybolmuyor) ve tam bu yüzden sessiz: yalnız o dili
  *    kullanan görüyor.
@@ -35,14 +36,22 @@ function levels(source: string): Record<string, string[]> {
   return out;
 }
 
-/** Web'in Türkçe tablosu — `MODULE_THEMES_NATIVE` başlayınca biter. */
-const webTr = levels(WEB.slice(WEB.indexOf("export const MODULE_THEMES:"), WEB.indexOf("MODULE_THEMES_NATIVE")));
-/** Mobilin Almanca kurs tablosu — İngilizce kursun bölümü başlayınca biter. */
-const mobDe = levels(MOB.slice(MOB.indexOf("  de: {"), MOB.indexOf("  en: {")));
+/** Bir kursun bloğu: `  <kurs>: {` ile başlar, ilk `\n  },` ile biter. */
+function course(source: string, id: string): Record<string, string[]> {
+  const i = source.indexOf(`\n  ${id}: {`);
+  if (i < 0) return {};
+  return levels(source.slice(i, source.indexOf("\n  },", i)));
+}
 
-test("web ile mobil Türkçe tema listeleri birebir aynı", () => {
-  expect(Object.keys(mobDe).sort()).toEqual(Object.keys(webTr).sort());
-  for (const level of Object.keys(webTr)) expect(mobDe[level]).toEqual(webTr[level]);
+const webTable = WEB.slice(WEB.indexOf("export const MODULE_THEMES:"), WEB.indexOf("MODULE_THEMES_NATIVE"));
+const mobTable = MOB.slice(MOB.indexOf("const BY_COURSE"), MOB.indexOf("const NATIVE"));
+
+test.each(["de", "en"])("web ile mobil Türkçe tema listeleri birebir aynı: %s", (id) => {
+  const web = course(webTable, id);
+  const mob = course(mobTable, id);
+  expect(Object.keys(web).length).toBeGreaterThan(0);
+  expect(Object.keys(mob).sort()).toEqual(Object.keys(web).sort());
+  for (const level of Object.keys(web)) expect(mob[level]).toEqual(web[level]);
 });
 
 test("her temanın İngilizcesi ve Almancası var", () => {
@@ -52,8 +61,8 @@ test("her temanın İngilizcesi ve Almancası var", () => {
     const body = native.slice(start, native.indexOf("},", start));
     return new Map([...body.matchAll(/"([^"]+)":\s*"([^"]+)"/g)].map((m) => [m[1], m[2]] as const));
   };
-  const all = new Set([...Object.values(webTr).flat()]);
-  expect(all.size).toBe(58);
+  const all = new Set(["de", "en"].flatMap((id) => Object.values(course(webTable, id)).flat()));
+  expect(all.size).toBe(67);
   for (const lang of ["en", "de"] as const) {
     const map = dict(lang);
     const missing = [...all].filter((t) => !map.get(t)?.trim());
@@ -62,6 +71,15 @@ test("her temanın İngilizcesi ve Almancası var", () => {
     const copied = [...all].filter((t) => /[ışğİŞĞ]/.test(map.get(t) ?? ""));
     expect({ lang, copied }).toEqual({ lang, copied: [] });
   }
+});
+
+// İngilizce C1 müfredatı Almancadan ayrışıyor; tablo kursa göre bölünmeseydi
+// bu on ünite Patika'da başka bir dersin adını taşırdı.
+test("kurs ayrımı gerçek: İngilizce C1 Almancadan farklı", () => {
+  const de = course(mobTable, "de").C1;
+  const en = course(mobTable, "en").C1;
+  expect(en).toHaveLength(10);
+  expect(en.filter((t, i) => t === de[i])).toEqual([]);
 });
 
 test("çözücü dile göre karar veriyor", async () => {

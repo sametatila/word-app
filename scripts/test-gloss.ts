@@ -1,5 +1,5 @@
 import { NATIVE_LANGS, type NativeLang } from "@/lib/courses";
-import { MODULE_THEMES, MODULE_THEMES_NATIVE, moduleTheme } from "@/lib/lessons/modules";
+import { MODULE_THEMES, MODULE_THEMES_NATIVE, moduleCount, moduleTheme } from "@/lib/lessons/modules";
 import { exampleGlossFor, glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 
 /**
@@ -76,32 +76,46 @@ for (const l of NATIVE_LANGS as NativeLang[]) {
  * İngilizce ya da Almanca olan kullanıcı ekranın ortasında Türkçe bir başlık
  * görüyordu — en→de paritesi açıkken de böyleydi.
  *
- * Ölçüt İKİ TANE. Uzunluk: çeviri listesi Türkçesiyle aynı boyda olmalı,
- * yoksa `moduleTheme` son modüllerde sessizce Türkçeye düşer (B1 on sekize
- * çıktığında mobil listede tam bu oldu, sekiz ünite adsız kaldı). Harf:
- * Türkçeye özgü bir harf kalmışsa o satır çevrilmemiş, kopyalanmıştır.
+ * Ölçüt ÜÇ TANE. Kapsam: her kursun her temasının iki çevirisi olmalı, yoksa
+ * `moduleTheme` sessizce Türkçeye düşer (B1 on sekize çıktığında mobil
+ * listede tam bu oldu, sekiz ünite adsız kaldı). Harf: Türkçeye özgü bir harf
+ * kalmışsa o satır çevrilmemiş, kopyalanmıştır. Ölü satır: sözlükte hiçbir
+ * kursta geçmeyen bir tema varsa ya bir liste kısalmıştır ya da anahtar
+ * yanlış yazılmıştır — ikisi de ekranda Türkçe başlık demek.
+ *
+ * Sözlük METNE göre anahtarlı (paralel dizi değil), çünkü tablo 2026-09-21'de
+ * kursa göre bölündü ve iki kursun kırk teması birebir aynı.
  */
 console.log("\nModül temaları üç dilde");
 const TR_LETTER = /[ışğİŞĞ]/;
+const ALL_THEMES = new Set(
+  Object.values(MODULE_THEMES).flatMap((byLevel) => Object.values(byLevel).flat()),
+);
+for (const [course, byLevel] of Object.entries(MODULE_THEMES)) {
+  const sizes = Object.entries(byLevel).map(([l, rows]) => `${l} ${rows.length}`).join(" · ");
+  check(`${course}: ${sizes}`, Object.values(byLevel).every((rows) => rows.length > 0));
+}
 for (const lang of ["en", "de"] as const) {
-  const table = MODULE_THEMES_NATIVE[lang] ?? {};
-  for (const [level, tr] of Object.entries(MODULE_THEMES)) {
-    const list = table[level] ?? [];
-    check(`${lang} ${level}: ${tr.length} tema`, list.length === tr.length, `${list.length} yazılmış`);
-    const bad = list.filter((x) => !x.trim() || TR_LETTER.test(x));
-    check(`${lang} ${level}: hepsi çevrilmiş`, bad.length === 0, bad.join(" · "));
-  }
-  check(
-    `${lang}: fazladan seviye yok`,
-    Object.keys(table).every((l) => l in MODULE_THEMES),
-    Object.keys(table).filter((l) => !(l in MODULE_THEMES)).join(" · "),
-  );
+  const dict = MODULE_THEMES_NATIVE[lang] ?? {};
+  const missing = [...ALL_THEMES].filter((t) => !dict[t]?.trim());
+  check(`${lang}: ${ALL_THEMES.size} temanın hepsi çevrilmiş`, missing.length === 0, missing.join(" · "));
+  const copied = [...ALL_THEMES].filter((t) => TR_LETTER.test(dict[t] ?? ""));
+  check(`${lang}: hiçbiri kopyalanmamış`, copied.length === 0, copied.join(" · "));
+  const dead = Object.keys(dict).filter((t) => !ALL_THEMES.has(t));
+  check(`${lang}: sözlükte ölü satır yok`, dead.length === 0, dead.join(" · "));
 }
 /* Çözücü de ölçülüyor, tablo değil: `tr` kendi kaynağını, ötekiler çeviriyi
-   döndürmeli ve bilinmeyen dilim üçünde de boş. */
-check("tr → kaynak", moduleTheme("A1", 0, "tr") === MODULE_THEMES.A1[0]);
-check("de → çeviri", moduleTheme("A1", 0, "de") === MODULE_THEMES_NATIVE.de?.A1[0]);
-check("taşan dilim boş", moduleTheme("A1", 99, "en") === "");
+   döndürmeli, bilinmeyen dilim üçünde de boş ve KURS ayrımı gerçekten
+   yapılmalı — İngilizce C1'in on teması Almancasıyla aynı değil. */
+check("tr → kaynak", moduleTheme("de", "A1", 0, "tr") === MODULE_THEMES.de.A1[0]);
+check("de → çeviri", moduleTheme("de", "A1", 0, "de") === MODULE_THEMES_NATIVE.de?.[MODULE_THEMES.de.A1[0]]);
+check("taşan dilim boş", moduleTheme("de", "A1", 99, "en") === "");
+check("bilinmeyen kurs boş değil (hedef dile düşüyor)", moduleTheme("gsw-zh", "A1", 0, "tr") === MODULE_THEMES.de.A1[0]);
+check(
+  "kurs ayrımı: İngilizce C1 Almancadan farklı",
+  MODULE_THEMES.en.C1.every((t, i) => t !== MODULE_THEMES.de.C1[i]),
+);
+check("kurs ayrımı: modül sayısı kursa göre", moduleCount("de", "B1") === 18 && moduleCount("en", "B1") === 10);
 
 console.log(fails === 0 ? `\ntamam: hepsi geçti` : `\nKALDI: ${fails}`);
 process.exit(fails === 0 ? 0 : 1);

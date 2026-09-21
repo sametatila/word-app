@@ -48,12 +48,13 @@ const SKILL_TITLE_KEY: Record<"read" | "listen" | "write", string> = {
 
 /** Ünite teması — ilk dersinin düştüğü modülden; taşarsa seviye+sıra. */
 function unitTheme(
+  course: string,
   level: CefrLevel,
   firstLessonIndex: number,
   fallback: string,
   lang: NativeLang,
 ): string {
-  const theme = moduleTheme(level, Math.floor(firstLessonIndex / MODULE_SIZE), lang);
+  const theme = moduleTheme(course, level, Math.floor(firstLessonIndex / MODULE_SIZE), lang);
   return theme || fallback;
 }
 
@@ -151,7 +152,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       group: Math.floor(u / groupSize),
       level,
       course,
-      theme: unitTheme(level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`, lang),
+      theme: unitTheme(course, level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`, lang),
       moduleIndex: Math.floor((u * UNIT_LESSONS) / MODULE_SIZE),
       topics: unitLessons.map((l) => l.title),
       items,

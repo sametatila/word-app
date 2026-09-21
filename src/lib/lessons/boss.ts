@@ -105,7 +105,7 @@ export async function buildModuleBoss(
   const meta: BossMeta = {
     level,
     moduleIndex,
-    title: moduleTheme(level, moduleIndex, native),
+    title: moduleTheme(course, level, moduleIndex, native),
     lessonsDone: chunk.filter((l) => done.has(l.id)).length,
     lessonsTotal: chunk.length,
     bestLeft: clear?.bestLeft ?? null,

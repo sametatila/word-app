@@ -69,7 +69,7 @@ export function buildUnitBriefs(
     const index = u + 1;
     const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
     const theme =
-      moduleTheme(level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE), lang) ||
+      moduleTheme(course, level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE), lang) ||
       `${level} · ${UNIT_WORD[lang]} ${index}`;
     briefs.push({
       unitId: `${course}-${levelLower}-u${String(index).padStart(2, "0")}`,

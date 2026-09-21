@@ -315,7 +315,7 @@ export function buildModuleContent(course: string, level: string, index: number,
        tüketicisi yok ve modül içeriği dile göre önbelleklenmiyor. Kaynak
        dilde bırakılıyor — ekranda görünen tema `buildTrack` tarafında
        öğrencinin diline çevriliyor. */
-    theme: moduleTheme(level, index, DEFAULT_NATIVE),
+    theme: moduleTheme(course, level, index, DEFAULT_NATIVE),
     lessons,
     focus,
     produce,
