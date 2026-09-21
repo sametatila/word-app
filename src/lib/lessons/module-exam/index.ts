@@ -3,6 +3,7 @@ import { A2_EXAMS } from "./a2";
 import { B1_EXAMS } from "./b1";
 import { B2_EXAMS } from "./b2";
 import { C1_EXAMS } from "./c1";
+import { EN_A1_EXAMS } from "./en/a1";
 import type { ModuleExamPlan } from "./types";
 
 export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types";
@@ -27,6 +28,7 @@ export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types"
  */
 const COURSE_PLANS: Record<string, ModuleExamPlan[]> = {
   de: [...A1_EXAMS, ...A2_EXAMS, ...B1_EXAMS, ...B2_EXAMS, ...C1_EXAMS],
+  en: [...EN_A1_EXAMS],
 };
 
 /**
