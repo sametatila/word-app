@@ -6,14 +6,14 @@ import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { lessonsForLevel } from "@/lib/lessons";
-import { MODULE_SIZE, moduleCount } from "@/lib/lessons/modules";
+import { MODULE_SIZE } from "@/lib/lessons/modules";
 import {
   moduleContent,
   lessonModuleCount,
   selfAnswering,
   type ProduceItem as LessonProduceItem,
 } from "@/lib/lessons/module-content";
-import { moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
+import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
 import { localiseExam } from "@/lib/lessons/native-server";
 import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
@@ -325,15 +325,20 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
       /* Seviye sınavının konuşma maddeleri modül kâğıtlarından geliyor, yani
          `plan` boşken de ana dile çevrilmeleri gerekiyor — yukarıdaki tek
          kâğıtlık çeviri buraya ulaşmıyor. */
-      /* DİZİN SIFIR TABANLI. `i + 1` yazılıydı: seviyenin BİRİNCİ modülünün
-         (index 0) konuşma cümleleri havuza hiç girmiyor, karşılığında var
-         olmayan bir index sorgulanıyordu — on modüllü bir seviyede havuz on
-         değil dokuz kâğıttı. `moduleExamPlan` yoksa `undefined` döndüğü ve
-         `flatMap` onu düşürdüğü için hiçbir yerde hata vermiyordu; yalnızca
-         bir kâğıdın cümleleri sessizce hiç sorulmuyordu. */
+      /* Havuz KÂĞITLARIN KENDİSİNDEN kuruluyor, sayarak değil.
+         Önce `moduleExamPlan(course, level, i + 1)` ile index'leniyordu ve iki
+         ayrı kusuru vardı: `i + 1` sıfır tabanlı index'i kaydırdığı için
+         seviyenin BİRİNCİ kâğıdı havuza hiç girmiyordu, `moduleCount(level)`
+         ise kursu bilmiyor (`MODULE_THEMES` seviye anahtarlı, Almanca kursun
+         ölçüsü) — İngilizce B1'de on kâğıt için on sekiz kez soruluyordu.
+         `moduleExamPlan` yoksa `undefined` döndüğü ve `flatMap` onu düşürdüğü
+         için ikisi de hiçbir yerde hata vermiyordu; biri bir kâğıdı sessizce
+         hiç sormuyor, öteki boşuna sekiz kez arıyordu. */
       const havuz = (
         await Promise.all(
-          Array.from({ length: moduleCount(level) }, (_, i) => localiseExam(moduleExamPlan(course, level, i), native)),
+          courseExams(course)
+            .filter((p) => p.level === level)
+            .map((p) => localiseExam(p, native)),
         )
       ).flatMap((p) => (p ? p.speaking.map((sp, i) => ({ ...sp, code: p.code, i })) : []));
       for (const sp of seededShuffle(havuz, `${seed}|speaking`)) {
