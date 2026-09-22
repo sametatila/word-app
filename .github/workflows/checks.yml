@@ -2,9 +2,18 @@
 # yine de doğru makineye konuyor: bunların hiçbiri macOS istemiyor.
 name: Kontroller
 
+# TETİKLEYİCİ DAR (2026-09-23, Samet: Actions kotası dolmasın). Eskiden her
+# dalda her push'ta koşuyordu. Artık yalnız main'e push ve PR; yalnız belge
+# değişen push'ta hiç koşmuyor. Depo public iken dakika ücretsiz ama private'a
+# geçildiğinde kota ayda 2.000 dk ve bu iş koşu başına ~7 dk (web ~6, mobil ~1).
+# İstisna: parite kapısı docs/plan/ios-parity.md'yi okuyor; o değişirse koşar.
+# Elle: gh workflow run Kontroller --ref <dal>
 on:
   push:
+    branches: [main]
+    paths-ignore: ["docs/**", "reports/**", "**/*.md", "!docs/plan/ios-parity.md"]
   pull_request:
+    paths-ignore: ["docs/**", "reports/**", "**/*.md", "!docs/plan/ios-parity.md"]
   workflow_dispatch:
 
 concurrency:
