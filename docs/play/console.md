@@ -64,13 +64,20 @@ anahtarıyla imzalandığı için o anahtarın SHA-1'i de kayıtlı olmalı; yok
 Google Cloud › APIs & Services › Credentials › Create credentials › OAuth client ID › Android.
 
 Bir Android istemcisi **tek** paket adı + **tek** SHA-1 taşır, yani her anahtar için
-ayrı bir istemci gerekir. Üçünde de paket adı `com.lernomi.learn`:
+ayrı bir istemci gerekir. Hepsinde paket adı `com.lernomi.learn`.
+
+Play imzasının SHA-1'leri Play'in ürettiği evrensel APK'dan okundu (`generatedApks`
+indir + `apksigner verify --print-certs`). V3.2 "Hybrid Classical Signer" yalnız
+minSdk 37'de devrede: Play anahtar döndürmesi ekledi ve Android 17 cihazda sistem
+paketin imzası olarak döndürülmüş sertifikayı bildiriyor. İkisi de kayıtlı olmazsa
+Google girişi yalnız bir Android sürüm aralığında çalışır.
 
 | Console'daki ad | Anahtar | SHA-1 | Durum |
 |---|---|---|---|
 | `lernomi-android` | debug (`android/app/debug.keystore`, repoda) | `5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25` | açık (2026-09-09) |
 | `lernomi-android-upload` | yayın anahtarı (`android/app/release.keystore`) | `2F:2F:57:45:C3:8D:F9:3B:2E:F2:7E:FB:17:42:2A:3F:13:30:9F:3F` | açık (2026-09-09) |
-| *(henüz yok)* | Play App Signing — Google'ın kendi anahtarı | Console › Test and release › Setup › App signing › "App signing key certificate" | **ilk AAB yüklendikten sonra** |
+| *(açılacak)* `lernomi-android-play` | Play App Signing — Google'ın anahtarı (Android ≤16'da görünen) | `4C:8A:3D:7A:02:17:51:E9:A7:3E:3E:6D:B7:F8:E5:54:A4:F8:56:34` | ilk AAB 2026-09-23'te yüklendi (v4, iç test); istemci **açılmadı** |
+| *(açılacak)* `lernomi-android-play-37` | Play'in Android 17+ için eklediği hibrit (PQC) döndürülmüş imza — Android 17 cihaz uygulamayı BU sertifikayla tanıyor | `06:24:10:14:01:86:77:F8:96:3C:8B:29:08:D2:B7:2C:B9:8E:04:56` | istemci **açılmadı** |
 
 Üçüncüsü Play'den **indirilen** her kurulumu kapsıyor ve testçiler davet edilmeden önce
 açılmalı: Play App Signing devrede olduğu için Google yüklediğin AAB'yi kendi anahtarıyla
