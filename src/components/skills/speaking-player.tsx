@@ -170,13 +170,16 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
           <p className="mt-3 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.hint}</p>
         ) : null}
 
+        {/* Düğmenin dikey dolgusu yoktu ve `.btn` yalnız yazı boyunda
+            (24 px) çiziliyordu: ekranın TEK eylemi dokunma hedefinin yarısıydı.
+            `py-4` diğer birincil düğmelerle aynı dolguyu veriyor (iki platformda 16). */}
         {phase === "idle" || phase === "failed" ? (
-          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void startRec()}>
+          <button type="button" className="btn btn-primary mt-4 min-h-11 w-full py-4" onClick={() => void startRec()}>
             {t(phase === "failed" ? "common.try_again" : "speakp.record_and_read")}
           </button>
         ) : null}
         {phase === "rec" ? (
-          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void stopRec()}>
+          <button type="button" className="btn btn-primary mt-4 min-h-11 w-full py-4" onClick={() => void stopRec()}>
             {t("common.finish")}
           </button>
         ) : null}

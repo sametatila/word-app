@@ -68,7 +68,10 @@ export function PageBack({
     <div className="mb-4 flex items-center gap-3">
       <BackButton fallback={fallback} label={label} />
       <div className="min-w-0 flex-1">
-        <h1 className="truncate text-h2">{title}</h1>
+        {/* İki satıra kadar sarılıyor: sağda bir eylem düğmesi varken
+            ("Sınav İstatistiği") 320 pikselde başlığa ~96 piksel kalıyor ve
+            "Deneme Sınavları" "Deneme…" oluyordu. */}
+        <h1 className="line-clamp-2 break-words text-h2">{title}</h1>
         {subtitle ? <p className="muted truncate text-caption">{subtitle}</p> : null}
       </div>
       {children}

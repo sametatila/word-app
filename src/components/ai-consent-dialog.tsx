@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import { CheckIcon, MicIcon, SparkIcon } from "@/components/icons";
+import { CheckIcon, ChevronIcon, MicIcon, SparkIcon } from "@/components/icons";
 import { SkeletonLine } from "@/components/skeleton";
 import { legalPath } from "@/lib/legal";
 import { useLang, useT } from "@/lib/i18n/client";
@@ -112,6 +112,32 @@ function AiConsentDialog({
   const [attempt, setAttempt] = useState(0);
   const [busy, setBusy] = useState<"allow" | "decline" | null>(null);
   const [saveFailed, setSaveFailed] = useState(false);
+  /*
+   * AŞAĞIDA DAHA FAZLASI VAR İŞARETİ.
+   *
+   * 320×568'de kaydırılan alana ~175 piksel kalıyor: simge, başlık ve açıklama
+   * sığıyor, metnin gönderileceği SAĞLAYICILARIN listesi ise iki büyük
+   * düğmenin altında, görünmeyen bir kaydırmada kalıyordu. Rıza verilen şeyin
+   * kendisi görünmeden "İzin ver"e basılabiliyordu ve kaydırılabildiğine dair
+   * hiçbir iz yoktu. Kaydırılacak içerik varken alanın dibinde bir solma ve
+   * "kaydır" oku çiziliyor; dibe inilince kalkıyor.
+   */
+  const govde = useRef<HTMLDivElement>(null);
+  const [asagi, setAsagi] = useState(false);
+  const olcAsagi = useCallback(() => {
+    const el = govde.current;
+    if (!el) return;
+    setAsagi(el.scrollHeight - el.scrollTop - el.clientHeight > 8);
+  }, []);
+  useEffect(() => {
+    const el = govde.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    olcAsagi();
+    const ro = new ResizeObserver(olcAsagi);
+    ro.observe(el);
+    if (el.firstElementChild) ro.observe(el.firstElementChild);
+    return () => ro.disconnect();
+  }, [olcAsagi, processors]);
 
   useEffect(() => {
     const el = ref.current;
@@ -208,10 +234,12 @@ function AiConsentDialog({
           `<dialog>`u da görünür yapardı. Dolgu da iç kaplarda: diyaloğun
           kendi dolgusu önyüz sıfırlamasıyla zaten 0. */}
       <div className="flex max-h-[calc(100dvh-3rem)] flex-col">
-        <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-5">
+        <div className="relative flex min-h-0 flex-1 flex-col">
+        <div ref={govde} onScroll={olcAsagi} className="min-h-0 flex-1 overflow-y-auto px-5 pt-5 short:pt-4">
           <div className="flex flex-col items-center gap-3 text-center">
+            {/* Simge süs: kısa ekranda yerini sağlayıcı listesine bırakıyor. */}
             <span
-              className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill glow-tint"
+              className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill glow-tint short:hidden"
               style={{ background: "var(--color-brand)", "--tint-fill": "var(--color-brand)" } as React.CSSProperties}
             >
               <Icon size={36} />
@@ -258,8 +286,18 @@ function AiConsentDialog({
             {t("micdisclosure.read_privacy_policy")}
           </Link>
         </div>
+          {asagi ? (
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 flex h-12 items-end justify-center pb-1"
+              style={{ background: "linear-gradient(to bottom, transparent, var(--surface))" }}
+            >
+              <ChevronIcon size={18} className="muted" />
+            </div>
+          ) : null}
+        </div>
 
-        <div className="border-t px-5 pb-5 pt-3" style={{ borderColor: "var(--hairline)" }}>
+        <div className="border-t px-5 pb-5 pt-3 short:pb-4" style={{ borderColor: "var(--hairline)" }}>
           {saveFailed ? (
             <p role="alert" className="mb-2 text-center text-caption" style={{ color: "var(--color-danger)" }}>
               {t("aiconsent.save_failed")}
@@ -270,7 +308,7 @@ function AiConsentDialog({
             onClick={() => void allow()}
             disabled={!canAllow}
             aria-busy={busy === "allow"}
-            className="btn btn-primary w-full px-5 py-4 disabled:opacity-60"
+            className="btn btn-primary w-full px-5 py-4 short:py-3 disabled:opacity-60"
           >
             {t("aiconsent.allow")}
           </button>

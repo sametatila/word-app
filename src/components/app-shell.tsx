@@ -473,9 +473,9 @@ export function AppShell({
         {showTabs ? (
           <div
             ref={navRef}
-            className="safe-bottom pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center px-4 md:hidden"
+            className="safe-bottom pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center px-4 max-[359px]:px-2 md:hidden"
           >
-            <nav className="pointer-events-auto flex w-full max-w-lg gap-1 rounded-float border p-[7px] shadow-soft-lg"
+            <nav className="pointer-events-auto flex w-full max-w-lg gap-1 rounded-float border p-[7px] shadow-soft-lg max-[359px]:gap-0.5 max-[359px]:p-1"
               style={{ borderColor: "var(--hairline)", background: "var(--surface)" }}
             >
               {NAV.map((item) => {
@@ -497,17 +497,19 @@ export function AppShell({
                       />
                     )}
                     <item.Icon size={23} className="relative" />
-                    {/* ETİKET TEK SATIRDA. Dört sekmeyle 320 pikselde etiket
-                        başına ~72 piksel kalıyor ve Almanca "Fähigkeiten" iki
-                        satıra kırılıyordu: çubuğun yüksekliği sekmeye göre
-                        değişiyor, ikonlar kayıyordu. Android aynı yerde tek
-                        satırda tutup gerekirse punto küçültüyor
-                        (`numberOfLines={1} adjustsFontSizeToFit`); webde onun
-                        karşılığı `clamp` — dar ekranda küçülür, geniş ekranda
-                        normal boyda kalır. */}
+                    {/* ETİKET TEK SATIRDA ve 12 PİKSEL. Dört sekmeyle 320
+                        pikselde etiket başına ~65 piksel kalıyor; Almanca
+                        "Fähigkeiten" iki satıra kırılınca çubuğun yüksekliği
+                        sekmeye göre değişip ikonlar kayıyordu. Önceki çözüm
+                        puntoyu `clamp(9px, 2.7vw, …)` ile küçültmekti ve bu
+                        320'de 9, 375'te 10 piksel demekti — okunmayan bir
+                        gezinme. Yer artık düzenden açılıyor: 360'tan dar
+                        ekranda hapın dış ve iç dolgusu daralıyor (yukarıda),
+                        harf aralığı kalkıyor; punto sabit 12. `truncate` son
+                        emniyet: sığmayan bir çeviri taşmak yerine kısalıyor. */}
                     <span
-                      className="relative whitespace-nowrap"
-                      style={{ fontSize: "clamp(9px, 2.7vw, var(--text-micro))" }}
+                      className="relative max-w-full truncate px-0.5 tracking-normal"
+                      style={{ fontSize: "0.75rem" }}
                     >
                       {t(item.labelKey)}
                     </span>

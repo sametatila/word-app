@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
@@ -26,6 +27,7 @@ import { judgeSpeech } from "@/lib/speech";
 import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
+import { RoundExit } from "@/components/round-exit";
 import { LESSON_TRY_CEILING } from "@/lib/lessons/roleplay-const";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf, targetLangOf } from "@/lib/courses";
@@ -416,6 +418,27 @@ export function LessonPlayer({
     });
     return () => cancelAnimationFrame(id);
   }, [feed, turns, phase, awaiting, error, typing]);
+
+  /**
+   * KLAVYE AÇILINCA DA DİBE. Yazarak cevaplarken klavye düzen alanını
+   * kısaltıyor (`interactive-widget=resizes-content`) ve sohbet kabı küçülüyor;
+   * kabın kaydırma konumu ise olduğu yerde kalıyordu, yani öğretmenin son
+   * cümlesi — cevap verilen soru — görünür alanın ALTINDA kalıyordu. Kap
+   * boyu değiştiğinde yeniden dibe iniliyor. Anında (smooth değil): klavye
+   * animasyonuyla yarışan bir kaydırma yarı yolda kalıyor.
+   */
+  useEffect(() => {
+    const el = scroller.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    let last = el.clientHeight;
+    const ro = new ResizeObserver(() => {
+      if (el.clientHeight === last) return;
+      last = el.clientHeight;
+      el.scrollTop = el.scrollHeight;
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [phase]);
 
   /**
    * Sesler önceden iniyor: geçerli adım ve sonraki iki adım, her biri
@@ -1139,11 +1162,29 @@ export function LessonPlayer({
       : (hint ?? t("lessonp.tap_to_speak"));
 
   return (
-    <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4">
-      <Steps phase={phase} />
+    /* KISA EKRANDA SIKIŞAN DÜZEN. 320×568'de adım sekmeleri, ilerleme
+       çizgisi, kart başlığı ve mikrofon paneli yüksekliğin üçte ikisini
+       yiyor, sohbete ~150 piksel kalıyordu; klavye açıkken (`kb`) sohbet
+       tamamen kayboluyor ve öğrenci neye cevap yazdığını göremiyordu. Artık
+       aralıklar `short`ta daralıyor, sohbet dışındaki her şey `kb`de
+       kalkıyor (bkz. globals.css yükseklik kırılımları). */
+    <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4 short:gap-2">
+      {/* ÇIKIŞ. Ders ekranında hiçbir çıkış düğmesi yoktu: alt sekmeler bu
+          ekranda gizli, kenar çubuğu yalnız masaüstünde. Telefonda tek yol
+          tarayıcının geri düğmesiydi — ana ekrana eklenmiş uygulamada o da
+          yok. Yarıda çıkmak emek kaybı değil: ders kaldığı yeri yerel
+          depoya yazıyor ve dönüşte "kaldığın yerden" notuyla açılıyor. */}
+      <div className="flex shrink-0 items-center gap-3 kb:hidden">
+        <LessonExit />
+        <div className="min-w-0 flex-1">
+          <Steps phase={phase} />
+        </div>
+      </div>
 
       {phase === "lecture" ? (
-        <LectureProgress at={stepIndex} steps={lesson.lecture} />
+        <div className="shrink-0 short:hidden">
+          <LectureProgress at={stepIndex} steps={lesson.lecture} />
+        </div>
       ) : null}
 
       {resumed && phase !== "summary" ? (
@@ -1200,7 +1241,7 @@ export function LessonPlayer({
             exit={{ opacity: 0 }}
             className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
-            <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+            <div className="shrink-0 border-b px-4 py-3 short:py-2 kb:hidden" style={{ borderColor: "var(--border)" }}>
               <div className="flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <p className="truncate text-strong">{lesson.title}</p>
@@ -1242,7 +1283,7 @@ export function LessonPlayer({
             {/* Cevap alanı beklentiye göre şekil değiştiriyor: onayda tek
                 düğme, doğru/yanlışta iki düğme, Almanca hedefte mikrofon.
                 Düğmeler mikrofona alternatif — konuşmak her zaman mümkün. */}
-            <div className="shrink-0 border-t p-4" style={{ borderColor: "var(--border)" }}>
+            <div className="shrink-0 border-t p-4 short:p-3" style={{ borderColor: "var(--border)" }}>
               {awaiting && expect?.kind === "confirm" ? (
                 <div className="flex flex-col items-center gap-2">
                   <button
@@ -1300,6 +1341,10 @@ export function LessonPlayer({
                 </div>
               ) : null}
 
+              {/* YAZARKEN MİKROFON KALKIYOR. 64 piksellik düğme ve altındaki ipucu
+                  yazma kipinde de duruyordu; kısa ekranda klavyeyle birlikte
+                  sohbete hiç yer bırakmıyordu. Konuşmaya dönmek tek dokunuş:
+                  "Yazmayı kapat" çipi yerinde kalıyor. */}
               {expect && expect.kind !== "confirm" && asrAvailable ? (
                 <div className="flex flex-col items-center gap-2">
                   <motion.button
@@ -1321,7 +1366,7 @@ export function LessonPlayer({
                       void capture(langFor(expect), (a) => evaluate(a), false);
                     }}
                     aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
-                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg"
+                    className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg short:h-14 short:w-14`}
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
@@ -1334,7 +1379,7 @@ export function LessonPlayer({
                     </motion.span>
                   </motion.button>
                   <p
-                    className="text-center text-caption"
+                    className={`${typing ? "hidden" : ""} text-center text-caption`}
                     style={{
                       color:
                         hint && !listening ? "var(--color-flame)" : "var(--text-muted)",
@@ -1408,13 +1453,13 @@ export function LessonPlayer({
                     spellCheck={false}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    className="input max-h-28 flex-1 resize-none py-2 text-body"
+                    className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
                   />
                   <button
                     type="button"
                     onClick={submitTyped}
                     disabled={!draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-60"
+                    className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
                   >
                     {t("common.send")}
                   </button>
@@ -1442,7 +1487,7 @@ export function LessonPlayer({
             exit={{ opacity: 0 }}
             className="card flex min-h-0 flex-1 flex-col overflow-hidden"
           >
-            <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+            <div className="shrink-0 border-b px-4 py-3 short:py-2 kb:hidden" style={{ borderColor: "var(--border)" }}>
               <p className="text-strong">
                 {character.name}
                 <span className="muted ml-1.5 font-semibold">· {lesson.roleplay.partner}</span>
@@ -1552,7 +1597,7 @@ export function LessonPlayer({
               </div>
             ) : null}
 
-            <div className="shrink-0 border-t p-4" style={{ borderColor: "var(--border)" }}>
+            <div className="shrink-0 border-t p-4 short:p-3" style={{ borderColor: "var(--border)" }}>
               {asrAvailable ? (
                 <div className="flex flex-col items-center gap-2">
                   <motion.button
@@ -1569,7 +1614,7 @@ export function LessonPlayer({
                     }}
                     disabled={busy}
                     aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
-                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60"
+                    className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60 short:h-14 short:w-14`}
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
@@ -1582,7 +1627,7 @@ export function LessonPlayer({
                     </motion.span>
                   </motion.button>
                   <p
-                    className="text-center text-caption"
+                    className={`${typing ? "hidden" : ""} text-center text-caption`}
                     style={{
                       color:
                         hint && !listening && !busy
@@ -1630,13 +1675,13 @@ export function LessonPlayer({
                     spellCheck={false}
                     placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    className="input max-h-28 flex-1 resize-none py-2 text-body"
+                    className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
                   />
                   <button
                     type="button"
                     onClick={() => void send(draft)}
                     disabled={busy || !draft.trim()}
-                    className="btn btn-primary h-10 shrink-0 px-4 text-body disabled:opacity-60"
+                    className="btn btn-primary h-11 shrink-0 px-4 text-body disabled:opacity-60"
                   >
                     {t("common.send")}
                   </button>
@@ -1780,6 +1825,34 @@ export function LessonPlayer({
         onClose={() => setReported(null)}
       />
     </div>
+  );
+}
+
+/**
+ * Dersten çıkış — geldiği yere döner (birim sayfası, patika, bildirim).
+ *
+ * "Geri" yalnız bir önceki kayıt BU SİTEDEYSE: `history.length` başka
+ * sitelerin kayıtlarını da sayıyor ve dersi bir aramadan ya da paylaşılan bir
+ * bağlantıdan açan kullanıcıyı uygulamanın dışına atardı. Navigation API
+ * (`navigation.canGoBack`) yalnız aynı kökenin kayıtlarına bakıyor; olmayan
+ * tarayıcıda aynı kökenli `referrer` yedek ölçü. İkisi de yoksa patikaya:
+ * dersin evi orası.
+ */
+function LessonExit() {
+  const router = useRouter();
+  return (
+    <RoundExit
+      labelKey="common.close"
+      onExit={() => {
+        const nav = (window as Window & { navigation?: { canGoBack?: boolean } }).navigation;
+        const canBack =
+          typeof nav?.canGoBack === "boolean"
+            ? nav.canGoBack
+            : document.referrer.startsWith(window.location.origin);
+        if (canBack) router.back();
+        else router.push("/immersion");
+      }}
+    />
   );
 }
 

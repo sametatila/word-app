@@ -377,7 +377,12 @@ function Tile({
       </span>
       {/* Kartın adı ÜNİTENİN KENDİ DERSLERİ: tema grubun başlığında (bkz.
           `moduleGroups`); kartta tekrar edince yan yana üç kart aynı adı taşıyordu. */}
-      <span className="mt-2 line-clamp-2 text-strong" lang={course}>{unit.topics.join(" · ")}</span>
+      {/* `w-full break-words hyphens-auto`: fayans 320 pikselde 138 piksel ve
+          "Informationsschalter" gibi tek parça bir Almanca sözcük satıra
+          sığmıyordu. Kutu içeriğine göre genişleyip fayansın DIŞINA taşıyor,
+          patika sayfası yana 16 piksel kayıyordu. Genişlik fayansa sabitlenince
+          sözcük tireyle (`lang` sayesinde Almanca heceleme) bölünüyor. */}
+      <span className="mt-2 line-clamp-2 w-full break-words hyphens-auto text-strong" lang={course}>{unit.topics.join(" · ")}</span>
       <span className="mt-auto block w-full pt-2">
         {unit.locked ? null : <StepBar unit={unit} size="sm" />}
         <span
@@ -467,7 +472,9 @@ function ModuleExamRow({ level, exam }: { level: CefrLevel; exam: { index: numbe
   return (
     <Link href={`/exam/${level}/${exam.index}`} prefetch={false} className="card pressable mt-3 flex items-center gap-3 px-4 py-3">
       <span className="min-w-0 flex-1">
-        <span className="block truncate text-strong">
+        {/* İki satıra kadar: "Modül 10 sınavı · İletişim ve geçmişe ilişkin…"
+            modülün adını dar ekranda (ve masaüstünde bile) kesiyordu. */}
+        <span className="line-clamp-2 block text-strong">
           {t("path.module_exam_n", { n: exam.index + 1 })} · {exam.titleTr}
         </span>
         {/* `titleDe` adıyla Almanca: modül sınavı planı kursa bağlı değil. */}

@@ -1,124 +1,52 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 /**
- * İçeriği kalan dikey alana sığdırır.
+ * Oyun ekranının kalan dikey alanı — KÜÇÜLTMEDEN, akışla.
  *
- * Oyun ekranlarında kaydırma istemiyoruz: uzun kelimeler, sekiz kartlı
- * eşleştirme ya da küçük ekranlı telefonlar yüzünden içerik taşarsa burada
- * kademeli olarak küçültülür. Sığıyorsa hiçbir şey yapılmaz, yani normal
- * ekranlarda tipografi hiç bozulmaz.
+ * ## Neden artık ölçek yok
  *
- * Küçültmenin bir alt sınırı var (okunaksız hâle gelmemeli) ve o sınırda bile
- * sığmayan içerik olabiliyor. Eskiden bu durumda içerik `overflow-hidden` ile
- * kırpılıyordu: taşan kısım hem görünmüyor hem de ulaşılamıyordu, çünkü
- * kaydırma da yoktu. Artık sığmadığında küçültme bırakılıp kaydırmaya izin
- * veriliyor — küçültülmüş ama yine de kesik bir ekran, tam boyutlu ama
- * kaydırılabilir bir ekrandan kötü.
+ * Bu kutu eskiden içeriği `transform: scale()` ile alana sığdırıyordu. Küçük
+ * telefonda bunun bedeli ağırdı: 320×568'de yeni kelime kartı 0,68'e, dinleme
+ * sorusu 0,74'e iniyordu; 375×667'de bile 0,82. Ölçek her şeyi birlikte
+ * küçültüyordu — 11 piksellik etiketler 7-8 piksele, düğmeler 31 piksel
+ * yüksekliğe (dokunma hedefinin altına) iniyor, kart ekranın ortasında 197
+ * piksellik bir adaya dönüşüyordu. Cevaptan sonra ölçek yeniden hesaplandığı
+ * için (0,74 → 0,80) düzen bir de zıplıyordu. Yani "sığdırmak" okunaklılığı
+ * ve dokunulabilirliği feda ediyordu; ikisi de oyunun kendisi.
+ *
+ * Artık düzen gerçek boyutta kalıyor ve sığmayan içerik KAYIYOR. Kısa ekranda
+ * yer açmak ölçeğin işi değil, düzenin işi: süs öğeleri (maskot, geniş
+ * boşluklar) yükseklik sorgularıyla kısa ekranda kalkıyor, soru kartı
+ * sıkışıyor — bunlar oyun kabuğunda (games/game-shell) ve oyunların kendisinde.
  *
  * ## Boşluğu kim paylaştırıyor
  *
  * Telefonda artan boşluk BURADA paylaştırılmıyor — içeriğe bırakılıyor. Oyun
  * kartı kendi içinde okuma ve dokunma bölgelerine ayrılıyor ve boşluğu o iki
  * bölge arasında dağıtıyor (bkz. games/game-shell). Bunun için içeriğin kalan
- * alanı GÖRMESİ gerekiyor: iç kutuya `min-height: 100%` veriliyor.
+ * alanı GÖRMESİ gerekiyor: iç kutuya `min-height: 100%` veriliyor. `min-height`
+ * — `flex-1` değil: esneyen kutu içerik taşsa da alan boyunda kalır ve taşan
+ * kısım kaydırma alanına hiç girmezdi; `min-height` yalnızca alt sınır, taşan
+ * içerikte kutu içerikle birlikte büyüyor ve dış kutu onu kaydırıyor.
  *
- * `min-height` — `flex-1` DEĞİL, ve fark ölçümde. Esneyen bir kutu her zaman
- * alan boyunda olur; içerik taşsa bile kutunun kendi yüksekliği değişmez ve
- * `scrollHeight` "tam sığıyor" demeye devam eder. Denendi: küçük ekranlarda
- * küçültme hiç devreye girmiyor, şıklar sessizce kırpılıyordu — 320×480'de
- * dört şıkkın üçü ekran dışında kalıyordu. `min-height` ise yalnızca ALT
- * sınır koyuyor: içerik sığıyorsa kutu alanı dolduruyor (kart boşluğu
- * paylaştırabiliyor), taşıyorsa kutu içerikle birlikte büyüyor ve ölçüm
- * taşmayı olduğu gibi görüyor.
+ * `shrink-0` şart: açık bir `min-height` yazmak, esnek kutunun içeriğin altına
+ * inmesini engelleyen otomatik en-az-boyutu devre dışı bırakıyor; onsuz kutu
+ * alan boyuna kadar EZİLİP içerik kaydırılamadan taşardı.
  *
- * `md`den itibaren bu alt sınır kalkıyor: kutu yine içerik boyunda ve
- * `justify-center` ile ortalanıyor. Masaüstünde ulaşım diye bir sorun yok,
- * ikiye bölünmüş bir kart yalnızca dağınık görünürdü.
+ * ## Ortalama
  *
- * Küçültme kutunun TEPESİNDEN uygulanıyor. Ortadan uygulamak yalnızca kutu da
- * ortalanmışken doğru sonuç veriyor; alanı dolduran kutu ortalanmıyor. Bu
- * yüzden küçültme devredeyken hizalama da başa alınıyor. İki durumda da sonuç
- * aynı: küçültülmüş içerik alanın tam üstünden başlayıp tam altında bitiyor.
- *
- * KAYDIRMADA DA HİZALAMA BAŞTA. Kaydırmaya geçildiğinde küçültme 1'e dönüyor
- * ve eskiden hizalama da "ortala"ya dönüyordu. Alanından uzun, ortalanmış bir
- * esnek çocuk HEM üstten HEM alttan taşar ve üstten taşan kısım kaydırılarak
- * geri getirilemez: küçük telefonda soru kartındaki kelime tepeden kesik
- * kalıyordu. Taşan içerik baştan başlamak zorunda.
+ * `md`den itibaren alt sınır kalkıyor ve kart ortalanıyor — ama
+ * `justify-center` ile DEĞİL, `my-auto` ile. Alanından uzun, `justify-center`
+ * ile ortalanmış bir çocuk hem üstten hem alttan taşar ve üstten taşan kısım
+ * kaydırılarak geri getirilemez. Otomatik kenar payı ise yalnızca ARTAN boşluğu
+ * paylaştırıyor; içerik uzunsa pay sıfıra iniyor ve içerik baştan başlıyor.
  */
-export function FitBox({ children, min = 0.62 }: { children: ReactNode; min?: number }) {
-  const outer = useRef<HTMLDivElement>(null);
-  const inner = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-  /** Alt sınırda bile sığmıyorsa küçültmek yerine kaydırmaya geçiliyor. */
-  const [scrolls, setScrolls] = useState(false);
-
-  // scrollHeight dönüşümden etkilenmediği için ölçüm kendi kendini tetiklemez.
-  const measure = useCallback(() => {
-    const o = outer.current;
-    const i = inner.current;
-    if (!o || !i) return;
-    const avail = o.clientHeight;
-    const need = i.scrollHeight;
-    if (!avail || !need) return;
-    if (need <= avail) {
-      setScale(1);
-      setScrolls(false);
-      return;
-    }
-    const wanted = avail / need;
-    if (wanted >= min) {
-      // Küçülterek sığıyor: kaydırma gerekmiyor.
-      setScale(wanted);
-      setScrolls(false);
-    } else {
-      // Sığmıyor. Küçültülmüş içeriği kaydırmak ölçüyü de bozardı (dönüşüm
-      // yerleşim yüksekliğini değiştirmiyor, altta boşluk kalırdı), o yüzden
-      // küçültme tamamen bırakılıyor.
-      setScale(1);
-      setScrolls(true);
-    }
-  }, [min]);
-
-  useEffect(() => {
-    measure();
-    const ro = new ResizeObserver(measure);
-    if (outer.current) ro.observe(outer.current);
-    if (inner.current) ro.observe(inner.current);
-    window.addEventListener("resize", measure);
-    window.addEventListener("orientationchange", measure);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-      window.removeEventListener("orientationchange", measure);
-    };
-  }, [measure]);
-
+export function FitBox({ children }: { children: ReactNode }) {
   return (
-    <div
-      ref={outer}
-      className={`flex min-h-0 flex-1 flex-col ${
-        scrolls ? "overflow-y-auto overscroll-contain" : "overflow-hidden"
-      } ${scale < 1 || scrolls ? "justify-start" : "justify-center"}`}
-    >
-      <div
-        ref={inner}
-        // `shrink-0` şart: açık bir `min-height` yazmak, esnek kutunun içeriğin
-        // altına inmesini engelleyen otomatik en-az-boyutu devre dışı bırakıyor.
-        // Onsuz kutu alan boyuna kadar EZİLİYOR, içerik sessizce taşıyor ve
-        // `scrollHeight` yine "tam sığıyor" diyor — küçültme hiç devreye
-        // girmiyordu.
-        className="flex min-h-full shrink-0 flex-col md:min-h-0"
-        style={{
-          transform: scale < 1 ? `scale(${scale})` : undefined,
-          transformOrigin: "top center",
-          transition: "transform .2s ease-out",
-        }}
-      >
-        {children}
-      </div>
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain">
+      <div className="flex min-h-full shrink-0 flex-col md:my-auto md:min-h-0">{children}</div>
     </div>
   );
 }

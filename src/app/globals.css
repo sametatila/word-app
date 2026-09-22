@@ -1,6 +1,28 @@
 @import "tailwindcss";
 
 /*
+ * YÜKSEKLİK KIRILIMLARI — genişlik kırılımlarının (`sm`, `md`) dikey karşılığı.
+ *
+ * Tailwind yalnız genişliğe göre kırılım veriyor; oysa telefonda asıl dar olan
+ * çoğu zaman YÜKSEKLİK. 320×568'de ya da klavye açıkken (`viewport` meta'sı
+ * `interactive-widget=resizes-content`: klavye düzen alanını gerçekten
+ * kısaltıyor) ekrana sığmayan şey içeriği küçültmekle değil, süsü kaldırıp
+ * düzeni sıkıştırmakla çözülüyor. İki eşik:
+ *
+ *   short — 600 pikselden kısa: 320×568 gibi eski/küçük telefonlar ve tarayıcı
+ *           çubukları düşülmüş 360×640. Maskot, geniş boşluklar, ikincil
+ *           ilerleme göstergeleri burada kalkıyor.
+ *   kb    — 440 pikselden kısa: pratikte yalnız yazılım klavyesi açıkken. Soru
+ *           ve cevap alanı dışındaki her şey kalkıyor; klavye kapanınca geri
+ *           geliyor.
+ *
+ * Bilerek `max-height`: varsayılan (uzun ekran) düzen değişmiyor, yalnız kısa
+ * ekrana kural EKLENİYOR.
+ */
+@custom-variant short (@media (max-height: 600px));
+@custom-variant kb (@media (max-height: 440px));
+
+/*
  * ══════════════════════════════════════════════════════════════════════════
  * TASARIM DİLİ — palet, tipografi, yarıçap, gölge
  * ══════════════════════════════════════════════════════════════════════════
@@ -294,6 +316,88 @@
    */
   --press-motion: 0.12s cubic-bezier(0.2, 0, 0.2, 1);
 
+}
+
+/*
+ * ══════════════════════════════════════════════════════════════════════════
+ * AKIŞKAN YOĞUNLUK — küçük telefonda ölçek, büyük telefonda bugünkü hâli
+ * ══════════════════════════════════════════════════════════════════════════
+ *
+ * Yukarıdaki ölçek büyük bir telefona (390×844) göre kurulu ve 320–375
+ * piksellik telefonda da AYNEN uygulanıyordu: 32 piksellik ekran başlığı,
+ * 20 piksellik kart dolgusu, 26 piksellik kart yarıçapı. Sonuç her şeyin
+ * biraz "büyük" durması, başlıkların üç noktaya gitmesi ve dikeyde hiçbir
+ * şeyin sığmaması oldu. Bu katman aynı ölçeği küçük ekranda orantılı olarak
+ * sıkıştırıyor. Mobil uygulama aynı kararı `density` ölçeğiyle veriyor
+ * (390×844'te 1.0, iPhone SE yüksekliğinde boşlukta ~0.8).
+ *
+ * ── Tek değişken: `--fluid-t` ─────────────────────────────────────────────
+ *
+ * 0 en sıkı, 1 bugünkü hâl. İki yönden okunuyor ve KÜÇÜK olan kazanıyor:
+ *
+ *   genişlik  320 → 390 px   (320'de 0, 390'da 1)
+ *   yükseklik 667 → 844 px   (iPhone SE ve altı 0, iPhone 14 ve üstü 1)
+ *
+ * Birimli tutuluyor (0px–1px), çünkü `calc` bir uzunluğu uzunluğa bölüp
+ * birimsiz sayı üretemiyor; her ölçü `EN_KÜÇÜK + fark × t` olarak
+ * yazılıyor ve `fark` birimsiz bir sayı.
+ *
+ * ── Kapsam: yalnız 390 pikselden dar ekranlar ─────────────────────────────
+ *
+ * Blok `max-width: 389.98px` içinde. 390 ve üstü (büyük telefonlar, tablet,
+ * masaüstü) bu dosyanın yukarısındaki sabit değerleri kullanmaya devam ediyor
+ * — kısa bir masaüstü penceresi de dahil. Yükseklik yalnız dar ekranda devreye
+ * giriyor; orada da `dvh`: klavye açılınca ölçek zaten en sıkıya iniyor.
+ *
+ * ── Ne akışkan, ne değil ──────────────────────────────────────────────────
+ *
+ *   yazı      display 32→26, h1 26→22, h2 20→18, h3 16→15,
+ *             body/strong 15→14, caption 12.5→12. Gövde 14'ün, etiket 12'nin
+ *             altına inmiyor. micro (11) HİÇ küçülmüyor: zaten en küçük basamak.
+ *   boşluk    `--spacing` (Tailwind'in p-/m-/gap-/h-/w- çarpanı) 4 → 3.2 px.
+ *   yarıçap   card 26→20, panel 20→16, float 34→28, tile 14→12.
+ *
+ * `--spacing` h-/w- ölçülerini de sürüyor, yani dokunma hedeflerini de. O
+ * yüzden aşağıda DENETİMLER için taban var: düğme, bağlantı ve form alanında
+ * h-9…h-12 / w-9…w-12 / min-h-9…min-h-12 bugünkü piksel ölçüsünün altına
+ * inmiyor (44 piksellik geri düğmesi 44 kalıyor). Süs karoları ve boşluklar
+ * sıkışıyor, dokunulan yüzey küçülmüyor.
+ */
+@media (max-width: 389.98px) {
+  :root {
+    --fluid-t: clamp(0px, min((100vw - 320px) / 70, (100dvh - 667px) / 177), 1px);
+
+    --text-display: calc(1.625rem + var(--fluid-t) * 6);
+    --text-h1: calc(1.375rem + var(--fluid-t) * 4);
+    --text-h2: calc(1.125rem + var(--fluid-t) * 2);
+    --text-h3: calc(0.9375rem + var(--fluid-t) * 1);
+    --text-body: calc(0.875rem + var(--fluid-t) * 1);
+    --text-strong: calc(0.875rem + var(--fluid-t) * 1);
+    --text-caption: calc(0.75rem + var(--fluid-t) * 0.5);
+
+    --spacing: calc(0.2rem + var(--fluid-t) * 0.8);
+
+    --radius-tile: calc(0.75rem + var(--fluid-t) * 2);
+    --radius-panel: calc(1rem + var(--fluid-t) * 4);
+    --radius-card: calc(1.25rem + var(--fluid-t) * 6);
+    --radius-float: calc(1.75rem + var(--fluid-t) * 6);
+  }
+
+  /* Dokunma hedefi tabanı — yukarıdaki nota bakın. `:is()` yalnız denetimleri
+     seçiyor; aynı sınıfı taşıyan ikon karosu ve süs daireleri sıkışabiliyor. */
+  :is(button, a, input, select, textarea, [role="button"]):is(.h-9, .min-h-9) { min-height: 2.25rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.h-10, .min-h-10) { min-height: 2.5rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.h-11, .min-h-11) { min-height: 2.75rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.h-12, .min-h-12) { min-height: 3rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.w-9, .min-w-9) { min-width: 2.25rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.w-10, .min-w-10) { min-width: 2.5rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.w-11, .min-w-11) { min-width: 2.75rem; }
+  :is(button, a, input, select, textarea, [role="button"]):is(.w-12, .min-w-12) { min-width: 3rem; }
+
+  /* Birincil düğmenin yüksekliği dolgudan geliyor (`py-2.5`…`py-4`) ve dolgu
+     `--spacing` ile sıkışıyor: "Başla" 43'ten 37 piksele iniyordu. Birincil
+     eylem 44'ün altına inmiyor; hayalet ve metin düğmeleri serbest. */
+  .btn-primary { min-height: 2.75rem; }
 }
 
 /*

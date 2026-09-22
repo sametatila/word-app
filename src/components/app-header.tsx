@@ -51,7 +51,12 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
     <header className="mb-4 flex items-center justify-between gap-3">
       <div className="min-w-0 flex-1">
         <p className="muted truncate text-caption">{subtitle ?? " "}</p>
-        <h1 className="truncate text-display">{title}</h1>
+        {/* SARILIYOR, KESİLMİYOR. `truncate` 320-375 piksellik telefonda
+            başlığı "Almanca ö…" ya da seri rozeti görününce "Almanca…"ya
+            indiriyordu — ekranın adı, yani en önemli sözcük, üç noktaya
+            gidiyordu. Sağdaki düğmeler sabit genişlikte; başlık onlara yer
+            bırakıp ikinci satıra iniyor. */}
+        <h1 className="text-display text-balance break-words">{title}</h1>
       </div>
       <div className="flex shrink-0 items-center gap-2">
         {/*

@@ -462,7 +462,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
                 : t("lesson.type_in", { lang: targetName })
           }
           disabled={busy}
-          className="input max-h-24 flex-1 resize-none py-2 text-body"
+          className="input max-h-24 min-w-0 flex-1 resize-none py-2 text-body"
         />
         <button type="button" onClick={() => void send(draft)} disabled={busy || !draft.trim()} className="btn btn-primary px-3.5 py-2.5 text-body">
           {t("common.send")}

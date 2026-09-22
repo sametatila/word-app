@@ -90,13 +90,21 @@ export default async function Home() {
         style={{ background: "radial-gradient(circle, var(--color-brand), transparent 65%)" }}
       />
 
-      <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
-        <div className="flex items-center gap-2">
+      {/* 320 PİKSELDE BAŞLIK SIĞMIYORDU: logo + ad (~130 px) ile tema düğmesi,
+          "Giriş yap" ve "Başla" (~206 px) 280 piksellik alana giriyordu. Tema
+          düğmesi 29 piksele eziliyor, "Giriş yap" iki satıra kırılıyordu.
+          Artık 360'tan dar ekranda tema düğmesi başlıktan kalkıyor (tema
+          varsayılan olarak sistemi izliyor; giriş sonrası Ayarlar'da da var),
+          düğmeler kırılmıyor ve kenar payı daralıyor. */}
+      <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-5 max-[359px]:px-4 short:py-3">
+        <div className="flex min-w-0 items-center gap-2">
           <LogoMark size={36} />
           <span className="text-h3">Lernomi</span>
         </div>
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        <div className="flex shrink-0 items-center gap-2">
+          <div className="contents max-[359px]:hidden">
+            <ThemeToggle />
+          </div>
           {/*
             ÇIKIŞ BAŞLIKTA. Önce yalnız altbilgiye konmuştu ve bu yetmedi:
             çıkmak isteyen kullanıcının uzun bir vitrin sayfasını sonuna kadar
@@ -112,18 +120,20 @@ export default async function Home() {
               onboarding'i, bilinçli), yani hesabı olan kullanıcının kendi
               hesabına dönecek hiçbir kapısı kalmıyordu.
             */
-            <Link href="/login" className="btn btn-ghost px-3 py-2.5 text-body">
+            <Link href="/login" className="btn btn-ghost whitespace-nowrap px-3 py-2.5 text-body">
               {t("auth.sign_in")}
             </Link>
           )}
-          <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-body">
+          <Link href={startHref} className="btn btn-primary whitespace-nowrap px-4 py-2.5 text-body">
             {t(signedIn ? "land.cta_continue" : "common.start")}
           </Link>
         </div>
       </header>
 
       <main className="relative mx-auto w-full max-w-6xl px-5 pb-24">
-        <section className="py-14 text-center sm:py-20">
+        {/* Kısa ekranda (`short`) kahraman bölümünün dikey payı daralıyor:
+            320×568'de "Ücretsiz başla" düğmesi ilk ekranın altında kalıyordu. */}
+        <section className="py-14 text-center short:py-6 sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-caption" style={{ borderColor: "var(--border)" }}>
               {t("land.badge")}

@@ -320,8 +320,8 @@ export function CourseOnboarding({
       bir "Çıkış yap" şeridi çiziyor (app/setup/page.tsx) ve logo satırı onun
       altından geçmeli.
     */
-    <main className={`mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 pb-10 ${signedIn ? "pt-20" : "pt-10"}`}>
-      <div className="mb-7 flex items-center gap-3">
+    <main className={`mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 pb-6 ${signedIn ? "pt-20" : "pt-10 short:pt-6"}`}>
+      <div className="mb-7 flex items-center gap-3 short:mb-4">
         <LogoMark size={32} />
         {/* İlerleme şeridi: geçilen adımlar dolu, bulunduğun adım geniş —
             "kaçtayım" ve "daha ne kadar var" tek bakışta. */}
@@ -425,7 +425,16 @@ export function CourseOnboarding({
         </AnimatePresence>
       </div>
 
-      <div className="mt-8 flex gap-2">
+      {/* EYLEM ŞERİDİ YAPIŞKAN. "Seviyeni seç" açılınca A1–C1 seçicisi
+          altına ekleniyor ve 320×568'de "Devam et" ekranın dışına (590–644)
+          itiliyordu; seçimi yapan kullanıcı düğmeyi göremiyor, sayfanın
+          kaydığını da fark etmiyordu. Şerit artık akışta kalıyor ama sayfa
+          uzadığında görünüm alanının dibine yapışıyor; zemini sayfanın zemini,
+          altından kayan içerik görünmüyor. */}
+      <div
+        className="sticky bottom-0 z-10 -mx-4 mt-8 flex gap-2 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 short:mt-4"
+        style={{ background: "var(--bg)" }}
+      >
         {i > 0 ? (
           <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-3 text-body">
             {t("common.back")}

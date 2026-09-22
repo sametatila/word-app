@@ -162,7 +162,13 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
             }
       }
       prompt={
-        <span className="text-h1 sm:text-display">
+        /* KLAVYE AÇIKKEN (`kb`, bkz. globals.css) soru küçülüyor, tür çipi ve
+           özel harf satırı kalkıyor. 320×568'de klavye düzen alanını ~310
+           piksele indiriyor; soru kartı, alan, ä/ö/ü/ß satırı ve düğmeler
+           ~390 piksel istiyordu ve öğrenci ya soruyu ya "Kontrol et"i
+           kaydırarak arıyordu. Özel harfler klavyenin kendisinde uzun basışla
+           var; klavye kapanınca satır geri geliyor. */
+        <span className="text-h1 kb:text-h2 sm:text-display">
           {meaningOf(word, lang)}
           {word.en ? (
             <span className="block text-body opacity-60" lang="en">
@@ -178,7 +184,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
          cevabı aynı kalitede sayıyordu. İpucu iskeleti iki tarafta da düğmenin
          arkasında ve orası ceza kaydediyor. */
       hint={
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 kb:hidden">
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-micro uppercase tracking-eyebrow">
             {typLabel(word.typ, meaningOf(word, lang), lang)}
           </span>
@@ -190,7 +196,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           e.preventDefault();
           submit();
         }}
-        className="flex flex-col gap-3"
+        className="flex flex-col gap-3 kb:gap-2"
       >
         <input
           ref={inputRef}
@@ -208,7 +214,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
         />
 
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center gap-2 kb:hidden">
           {SPECIAL_CHARS.map((char) => (
             <button
               key={char}

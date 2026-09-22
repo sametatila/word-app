@@ -217,11 +217,16 @@ function WrittenInput({
           spellCheck={false}
           placeholder={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
           aria-label={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
-          className="input flex-1 py-2 text-body"
+          /* `min-w-0` ŞART: bir `input`un kendiliğinden genişliği ~20 karakter
+             (~220 px) ve esnek kutuda bunun altına İNMİYOR. 320 piksellik
+             ekranda kartın içinde 254 piksel kalıyor; alan küçülmeyince
+             "Kontrol" düğmesi kartın ve ekranın dışına taşıyor, sayfa yana
+             kayıyordu. */
+          className="input min-w-0 flex-1 py-2 text-body"
           style={done ? { borderColor: ok ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
         />
         {!done ? (
-          <button type="button" onClick={check} disabled={!typed.trim()} className="btn btn-primary px-3.5 py-2 text-body">
+          <button type="button" onClick={check} disabled={!typed.trim()} className="btn btn-primary min-h-11 shrink-0 px-3.5 py-2 text-body">
             {t("skillquiz.check")}
           </button>
         ) : null}

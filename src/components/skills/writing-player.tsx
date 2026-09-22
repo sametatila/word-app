@@ -799,7 +799,10 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
                    başı büyütme yok. */
                 autoCapitalize="none"
                 autoCorrect="off"
-                className="input flex-1 py-2 text-body"
+                /* `min-w-0`: girdinin kendiliğinden ~220 px genişliği esnek
+                   satırda küçülmüyor ve dar ekranda yanındaki cevabı taşırıyordu
+                   (bkz. skills/quiz). */
+                className="input min-w-0 flex-1 py-2 text-body"
                 style={checked ? { borderColor: results[i] ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
               />
               {checked ? (

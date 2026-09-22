@@ -287,6 +287,32 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     if (phase === "run" && left === 0) advance(true);
   }, [left, phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  /*
+   * YENİ GÖREV EN BAŞTAN AÇILIYOR.
+   *
+   * Uygulama kabuğunda kaydıran şey pencere değil `main` (bkz. app-shell) ve
+   * görev değişince onun kaydırma konumu olduğu yerde kalıyordu. "Sonraki
+   * görev" düğmesi sayfanın DİBİNDE; basınca yeni görev de dibinden açılıyor,
+   * öğrenci son maddeleri ve yine bir "Sonraki görev" düğmesi görüyordu.
+   * Geri dönüşü olmayan, süreli bir sınavda ikinci bir dokunuş koca bir
+   * görevi atlatıyordu. Bölüme başlarken de aynısı: kapaktaki "Bölüme başla"
+   * küçük ekranda kaydırılarak bulunuyor ve görev o konumdan, sayaç ve yönerge
+   * ekranın üstünde kalmış hâlde açılıyordu. Görev ve evre her değiştiğinde
+   * en yakın kaydırılabilir ata başa sarılıyor.
+   */
+  const kok = useRef<HTMLElement>(null);
+  useEffect(() => {
+    // Sonuç ve kapak ekranları başka bir kök çiziyor; onlarda kabuğun `main`i.
+    let el: HTMLElement | null = kok.current?.parentElement ?? document.querySelector("main");
+    while (el && el !== document.body) {
+      const oy = getComputedStyle(el).overflowY;
+      if ((oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight) break;
+      el = el.parentElement;
+    }
+    if (el && el !== document.body) el.scrollTop = 0;
+    else window.scrollTo(0, 0);
+  }, [ix, phase]);
+
   // Anlık kayıt: her değişiklikten iki saniye sonra.
   useEffect(() => {
     if (phase !== "run") return;
@@ -450,7 +476,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   );
 
   return (
-    <section className="mx-auto w-full max-w-2xl">
+    <section ref={kok} className="mx-auto w-full max-w-2xl">
       <header className="card flex items-center justify-between gap-3 p-4">
         <div>
           <p className="muted text-caption tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
