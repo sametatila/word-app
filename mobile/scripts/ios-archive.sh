@@ -40,6 +40,15 @@ python3 scripts/check-ios.py || {
   exit 2
 }
 
+# Xcode IPA'yı paketlerken PATH'teki rsync'i çağırıyor. Homebrew rsync 3.x önde
+# olursa dışa aktarım "exportArchive Copy failed" ile düşüyor (günlükte
+# "rsync error: syntax or usage error"). Sistem rsync'i öne alınıyor.
+export PATH="/usr/bin:/bin:$PATH"
+
+# Otomatik imza arşivi GELİŞTİRME profiliyle imzalıyor ve o profil takımda en az
+# bir kayıtlı cihaz ister; yoksa "Your team has no devices" hatası çıkıyor.
+# İlk kayıt 2026-09-22'de yapıldı (Samet'in iPhone SE'si). Dağıtım imzası
+# dışa aktarımda veriliyor.
 rm -rf "$ARCHIVE" "$EXPORT"
 mkdir -p "$BUILD"
 
