@@ -6457,8 +6457,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* Alt sekme etiketi de tek satirda kalmali: dort sekmede 320 pikselde
      Almanca "Fähigkeiten" kiriliyor ve cubugun yuksekligi degisiyordu.
-     Androidde `numberOfLines={1} adjustsFontSizeToFit`, webde `nowrap` +
-     `clamp()` punto. */
+     Androidde `numberOfLines={1} adjustsFontSizeToFit`, webde tek satir
+     (`truncate` ya da `whitespace-nowrap`). Web punto artik sabit 12
+     (2026-09-22 kucuk ekran isi): `clamp()` 320'de 9 piksele iniyordu; yer
+     dolgudan aciliyor. Olculen kural TEK SATIR, punto yontemi degil. */
   const tek = (yol, re) => (re.test(strip(read(yol)).replace(/\s+/g, " ")) ? "tek satir" : "sarmaliyor");
   sameList(
     "sekme etiketi",
@@ -6469,7 +6471,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
   sameList(
     "sekme etiketi (web)",
-    ["web=" + tek("src/components/app-shell.tsx", /whitespace-nowrap"[^<]*fontSize: "clamp\(/)],
+    ["web=" + tek("src/components/app-shell.tsx", /className="[^"]*\b(?:truncate|whitespace-nowrap)\b[^"]*"\s*style=\{\{ fontSize: /)],
     ["web=tek satir"],
     "bulunan",
     "beklenen",
@@ -13054,7 +13056,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "unite kartinin ad butcesi",
       ["butce=" + (/numberOfLines=\{2\}>\{u\.topics\.length \? u\.topics\.join\(" · "\)/.test(pm) ? "2" : "?")],
-      ["butce=" + (/line-clamp-2 text-strong" lang=\{course\}>\{unit\.topics\.join\(" · "\)\}/.test(pw) ? "2" : "?")],
+      ["butce=" + (/line-clamp-2[^"]*text-strong" lang=\{course\}>\{unit\.topics\.join\(" · "\)\}/.test(pw) ? "2" : "?")],
       "mobil",
       "web",
     );
@@ -21396,7 +21398,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      dugmesi (44/md/surface2) ve ilk eslesmeye bakan yazim onu okuyordu;
      karo, ZIL ikonunun hemen ustundeki kap. */
   const zil = mobBildirim.indexOf("BellIcon color={colors.onFill}");
-  const mobKaro = mobBildirim.slice(Math.max(0, zil - 400), zil).match(/width: (\d+), height: \d+, borderRadius: radii\.(\w+)[^}]*backgroundColor: colors\.(\w+)/);
+  const mobKaro = mobBildirim.slice(Math.max(0, zil - 400), zil).match(/width: (?:ds\()?(\d+)\)?, height: (?:ds\()?\d+\)?, borderRadius: radii\.(\w+)[^}]*backgroundColor: colors\.(\w+)/);
   const mobIkon = mobBildirim.match(/BellIcon color=\{colors\.(\w+)\} size=\{(\d+)\}/);
   sameList(
     "bildirim karosu",
@@ -21434,7 +21436,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "aralik=" + (/mb-4 flex items-center gap-3/.test(webBaslik) ? "12" : "BASKA"),
       "geri kutusu=44/" + (/h-11 w-11 shrink-0 items-center justify-center rounded-tile/.test(webBaslik) ? "md" : "YOK") + "/" + (/background: "var\(--surface-2\)"/.test(webBaslik) ? "surface2" : "YOK"),
       "ok=" + ((webBaslik.match(/ArrowLeftIcon size=\{(\d+)\}/) ?? [])[1] ?? "YOK"),
-      "baslik=" + (/<h1 className="truncate text-h2">/.test(webBaslik) ? "h2" : "BASKA"),
+      "baslik=" + (/<h1 className="(?:truncate|line-clamp-2[^"]*) text-h2">/.test(webBaslik) ? "h2" : "BASKA"),
       "alt satir=" + (/muted truncate text-caption/.test(webBaslik) ? "caption" : "BASKA"),
     ],
     "mobil",

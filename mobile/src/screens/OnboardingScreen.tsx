@@ -17,6 +17,7 @@ import { t, currentLang, setLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { useLayout } from "../lib/useLayout";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * İlk açılış akışı (§4). Sıra: anadil → karşılama → kurs → seviye → hedef. Seçimler
@@ -242,7 +243,7 @@ export function OnboardingScreen() {
         showsVerticalScrollIndicator={false}
         // Seviye çipleri seçenek listesinin ALTINDA açılıyor; kısa ekranda
         // görünür alana getirilmezse kullanıcı açıldıklarını fark etmiyor.
-        onContentSizeChange={() => { if (step.key === "level" && chosen === "pick") scroll.current?.scrollToEnd({ animated: true }); }}
+        onContentSizeChange={() => { if (step.key === "level" && chosen === "pick") scroll.current?.scrollToEnd({ animated: !reduceMotion() }); }}
       >
         {/* Süs: kısa ekranda küçülüyor, en kısada tamamen çekiliyor — yer seçeneklerin. */}
         {heightClass !== "short" && (

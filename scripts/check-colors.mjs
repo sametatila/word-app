@@ -61,7 +61,6 @@ const MOBILE_SKIP = [
 
 /** Paletin dışında kalması KABUL EDİLEN değerler, sebepleriyle. */
 const MOBILE_ALLOW = new Map([
-  ["#2b1d12", "koç balonunun KOYU zemindeki metni: balon orada sabit beyaza yakın (rgba(255,255,255,0.94)), yani zemin temayla değişmiyor — jetondan gelen metin gece temasında açık kalıp okunmazdı. Web `coach-bubble` aynı değeri aynı sebeple yazıyor"],
   ["#c0392b", "varsayılan şapka rengi: kullanıcının seçtiği aksesuar, palet değil"],
   ["#E8650F", "Android bildirim vurgu rengi (`lib/notifications` `NOTIF_COLOR`): sistem bildirim gölgesinde çiziliyor, uygulamanın teması orada yok; `res/values/colors.xml` `notification_accent` ile birebir aynı kalmalı"],
   /* Konfeti kimlik listesi - web `components/celebrate.tsx` `COLORS` ile birebir. */
