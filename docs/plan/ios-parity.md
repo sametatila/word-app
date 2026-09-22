@@ -98,12 +98,12 @@ Kanıt sütunundaki yollar depo köküne göredir. `M/` = `mobile/`.
 > | E4 | `M/README.md` gerçek belge |
 > | O1 | `ios-archive.sh` var |
 > | O2 | `.github/workflows/`: `checks.yml`, `ios-build.yml` |
+> | P8 | `Podfile.lock` depoda (2026-09-22, Mac mini'de ilk `pod install`) |
 >
 > **Açık kalanlar:**
 >
 > | # | Durum | Kimin |
 > |---|---|---|
-> | P8 | `Podfile.lock` depoda **yok** ve gitignore'da da değil; pod çözümü makineden makineye değişebilir. Android `gradlew` + wrapper jar'ı sabitliyor, iOS'ta karşılığı eksik | Mac'te `pod install` sonrası commit |
 > | C6 | RevenueCat anahtarları boş — **iki platformda da**; iOS'ta ayrıca IAP yetkisi + App Store Connect ürünleri gerekiyor | Samet |
 > | — | `LernomiUITests.swift` diskte var ama pbxproj'da **yok** (`grep -c LernomiUITests` = 0); eklemek için `scripts/ios-add-uitest-target.rb` yazılmış | Mac'te |
 > | §5 | Cihazda sınanacaklar listesi — Mac gerektiriyor (Şerit S) | Mac'te |
@@ -127,7 +127,7 @@ sessizce yoktur.
 | P5 | `MARKETING_VERSION = 1.0`, `CURRENT_PROJECT_VERSION = 1` | `project.pbxproj:260,268` | Android 1.0.11 / 13. `M/src/version.ts` sürümü "build.gradle ile elle eşitlenir" diyor; iOS üçüncü bir kaynak olarak sarkıyor |
 | P6 | `DEVELOPMENT_TEAM` / `CODE_SIGN_STYLE` yok; `CODE_SIGN_IDENTITY` şablonun "iPhone Developer" değeri | `project.pbxproj:341,414` | Arşiv alınamaz, TestFlight'a çıkılamaz |
 | P7 | Scheme olmayan bir test hedefini gösteriyor: `NomiTests.xctest` (eski marka adı) | `M/ios/.../xcschemes/Lernomi.xcscheme:36` | Şemadan test koşulamaz; eski ad artığı (Nomi döneminden kalma) |
-| P8 | `Podfile.lock` depoda yok | `git ls-files mobile/ios` | Android `gradle-wrapper.jar` + `gradlew`'u sabitliyor; iOS'ta pod çözümü her makinede değişebilir |
+| P8 | ~~`Podfile.lock` depoda yok~~ **Kapandı 2026-09-22** | `git ls-files mobile/ios` | Android `gradle-wrapper.jar` + `gradlew`'u sabitliyor; iOS'ta pod çözümü her makinede değişebilir |
 
 ### 1.2 Native modül parite açığı
 

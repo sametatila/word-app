@@ -8115,11 +8115,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const uiTest = /\bLernomiUITests\b/.test(pbx);
     sameList(
       "acik listesi bayat degil",
-      [
-        "P8 podfile kilidi=" + (podKilidi ? "GELDI (belge guncellensin)" : "yok"),
-        "ui test hedefi=" + (uiTest ? "GELDI (belge guncellensin)" : "yok"),
-      ],
-      ["P8 podfile kilidi=yok", "ui test hedefi=yok"],
+      ["ui test hedefi=" + (uiTest ? "GELDI (belge guncellensin)" : "yok")],
+      ["ui test hedefi=yok"],
+      "bulunan",
+      "beklenen",
+    );
+    /* P8 2026-09-22'de kapandi (Mac'te ilk pod install): kilit depoda kalir. */
+    sameList(
+      "podfile kilidi depoda",
+      ["P8 podfile kilidi=" + (podKilidi ? "var" : "YOK")],
+      ["P8 podfile kilidi=var"],
       "bulunan",
       "beklenen",
     );
@@ -8463,7 +8468,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "ios zemin kaynaklari okunuyor",
       [
-        "pencere=" + (/window\?\.backgroundColor = UIColor\(named: "WindowBackground"\)/.test(appDelegate) ? "var" : "YOK"),
+        "pencere=" + (/window\??\.backgroundColor = UIColor\(named: "WindowBackground"\)/.test(appDelegate) ? "var" : "YOK"),
         "kok gorunum=" + (/rootView\.backgroundColor = UIColor\(named: "WindowBackground"\)/.test(appDelegate) ? "var" : "YOK"),
         "acilis ekrani=" + (/backgroundColor" name="LaunchBackground"/.test(storyboard) ? "var" : "YOK"),
       ],
