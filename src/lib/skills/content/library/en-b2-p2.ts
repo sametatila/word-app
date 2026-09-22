@@ -29,6 +29,13 @@ export const enB2P2: SkillExercise[] = [
       { de: "concrete", tr: "beton" },
       { de: "enlarge", tr: "büyütmek" },
       { de: "accounting", tr: "muhasebe" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "ugly", tr: "çirkin" },
+      { de: "solid", tr: "katı" },
+      { de: "dare", tr: "cesaret etmek" },
+      { de: "conversion", tr: "dönüşüm" },
+      { de: "dislike", tr: "hoşlanmama" },
+      { de: "architect", tr: "mimar" },
     ],
     minutes: 9,
     text:
@@ -124,6 +131,8 @@ export const enB2P2: SkillExercise[] = [
       { de: "bottleneck", tr: "darboğaz" },
       { de: "tick", tr: "işaretlemek" },
       { de: "renew", tr: "yenilemek" },
+      { de: "organ", tr: "organ bağışı" },
+      { de: "donation", tr: "organ bağışı" },
     ],
     minutes: 9,
     segments: [

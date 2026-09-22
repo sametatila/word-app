@@ -26,6 +26,7 @@ export const enB1P10: SkillExercise[] = [
       { de: "instalment", tr: "taksit" },
       { de: "to owe", tr: "borçlu olmak" },
       { de: "account", tr: "hesap" },
+      { de: "responsible", tr: "sorumlu" },
     ],
     minutes: 6,
     text:
@@ -119,6 +120,7 @@ export const enB1P10: SkillExercise[] = [
       { de: "to track", tr: "takip etmek" },
       { de: "to set aside", tr: "ayırmak" },
       { de: "arithmetic", tr: "aritmetik" },
+      { de: "math", tr: "matematik" },
     ],
     minutes: 6,
     segments: [
@@ -198,6 +200,7 @@ export const enB1P10: SkillExercise[] = [
       { de: "to sign", tr: "imzalamak" },
       { de: "contract", tr: "sözleşme" },
       { de: "to afford", tr: "gücü yetmek" },
+      { de: "advertisement", tr: "ilan" },
     ],
     minutes: 12,
     tasks: [

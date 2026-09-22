@@ -247,11 +247,19 @@ function checkSkills(list: SkillExercise[]) {
     // gereksiz; aranmaz. Sözlükçe kapsaması da Almanca morfolojisiyle değil
     // düz küçük harf aramasıyla yapılır (İngilizce çekim ekleri kısa: -s, -ed, -ing).
     const english = e.course === "en";
+    /* Soru metinleri de öğrencinin OKUDUĞU yüzeydir (2026-09-22). Okuma ve
+       dinlemede sözlükçe maddesi yalnız gövdede aranıyordu; soru kökünde,
+       şıkta ya da kabul listesinde geçen bir madde "metinde yok" uyarısı
+       veriyordu. Yazma/konuşma bilerek dışarıda kaldı: oradaki yüzeyi
+       ölçüme sokmak 78 eski maddeyi birden uyarıya çeviriyor (denendi) ve
+       o ayrı bir iş. */
+    const soruYuzey = (e as { questions?: { text?: string; options?: string[]; accept?: string[] }[] }).questions
+      ?.flatMap((q) => [q.text ?? "", ...(q.options ?? []), ...(q.accept ?? [])]).join(" ") ?? "";
     const text =
       e.skill === "reading"
-        ? e.text
+        ? `${e.text} ${soruYuzey}`
         : e.skill === "listening"
-          ? e.segments.map((s) => s.text).join(" ")
+          ? `${e.segments.map((s) => s.text).join(" ")} ${soruYuzey}`
           : e.skill === "grammar"
             ? [...e.explanation.flatMap((b) => (b.examples ?? []).map((x) => x.de)), ...e.questions.flatMap((q) => [q.text, ...(q.options ?? []), ...(q.accept ?? []), ...(q.items ?? [])])].join(" ")
             : "";

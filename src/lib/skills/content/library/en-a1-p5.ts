@@ -27,6 +27,7 @@ export const enA1P5: SkillExercise[] = [
       { de: "pay", tr: "ödemek" },
       { de: "start", tr: "başlamak" },
       { de: "near", tr: "yakın" },
+      { de: "brown", tr: "kahverengi" },
     ],
     minutes: 4,
     text:

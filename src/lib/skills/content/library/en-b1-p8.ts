@@ -25,6 +25,8 @@ export const enB1P8: SkillExercise[] = [
       { de: "to give up", tr: "vazgeçmek" },
       { de: "puncture", tr: "patlak lastik" },
       { de: "employer", tr: "işveren" },
+      { de: "lazy", tr: "tembel" },
+      { de: "annoyed", tr: "sinirlenmek" },
     ],
     minutes: 6,
     text:
@@ -118,6 +120,9 @@ export const enB1P8: SkillExercise[] = [
       { de: "budget", tr: "bütçe" },
       { de: "to book", tr: "yer ayırtmak" },
       { de: "insurance", tr: "sigorta" },
+      { de: "roof", tr: "çatı" },
+      { de: "sheet", tr: "çarşaf" },
+      { de: "cyclist", tr: "bisikletçi" },
     ],
     minutes: 6,
     segments: [
@@ -199,6 +204,10 @@ export const enB1P8: SkillExercise[] = [
       { de: "spare part", tr: "yedek parça" },
       { de: "honest", tr: "dürüst" },
       { de: "to recommend", tr: "tavsiye etmek" },
+      { de: "wheel", tr: "tekerlek" },
+      { de: "gear", tr: "vites" },
+      { de: "gears", tr: "vites değiştirmek" },
+      { de: "slip", tr: "yerinden kaymak" },
     ],
     minutes: 12,
     tasks: [

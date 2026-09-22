@@ -191,6 +191,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "measured", tr: "ölçülen" },
       { de: "a hectare", tr: "hektar" },
       { de: "reversed", tr: "geri döndürülen" },
+      { de: "boundaries", tr: "sınır koymak" },
     ],
     minutes: 12,
     text:

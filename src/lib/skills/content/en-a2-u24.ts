@@ -46,6 +46,7 @@ export const enA2U24: SkillExercise[] = [
       { de: "a broken button", tr: "kırık düğme" },
       { de: "at about", tr: "civarında" },
       { de: "stood", tr: "durdu" },
+      { de: "brown", tr: "kahverengi" },
     ],
     minutes: 5,
     text:

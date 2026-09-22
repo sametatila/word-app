@@ -27,6 +27,7 @@ export const enA2P4: SkillExercise[] = [
       { de: "packet", tr: "paket" },
       { de: "date", tr: "tarih" },
       { de: "volunteer", tr: "gönüllü" },
+      { de: "mill", tr: "öğütmek" },
     ],
     minutes: 5,
     text:
@@ -105,6 +106,7 @@ export const enA2P4: SkillExercise[] = [
       { de: "soil", tr: "toprak" },
       { de: "sign", tr: "imzalamak" },
       { de: "card", tr: "kart" },
+      { de: "bake", tr: "fırında pişirmek" },
     ],
     minutes: 5,
     segments: [

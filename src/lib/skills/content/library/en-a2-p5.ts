@@ -27,6 +27,7 @@ export const enA2P5: SkillExercise[] = [
       { de: "worth it", tr: "değer" },
       { de: "completely", tr: "tamamen" },
       { de: "second-hand", tr: "ikinci el" },
+      { de: "forum", tr: "forum" },
     ],
     minutes: 5,
     text:

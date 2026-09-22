@@ -28,6 +28,7 @@ export const enB2P3: SkillExercise[] = [
       { de: "delay", tr: "gecikme" },
       { de: "in advance", tr: "peşin" },
       { de: "settle", tr: "çözmek" },
+      { de: "skip", tr: "dersi asmak" },
     ],
     minutes: 9,
     text:
@@ -122,6 +123,10 @@ export const enB2P3: SkillExercise[] = [
       { de: "assume", tr: "varsaymak" },
       { de: "lock", tr: "kilit" },
       { de: "owner", tr: "sahip" },
+      { de: "bit", tr: "azıcık" },
+      { de: "wheel", tr: "tekerlek" },
+      { de: "theft", tr: "hırsızlık" },
+      { de: "sharp", tr: "keskin" },
     ],
     minutes: 9,
     segments: [

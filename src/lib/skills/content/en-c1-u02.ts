@@ -167,6 +167,7 @@ export const enC1U02: SkillExercise[] = [
       { de: "a report", tr: "rapor" },
       { de: "three deep", tr: "üç kat" },
       { de: "a remark", tr: "söz" },
+      { de: "genuine", tr: "hakiki" },
     ],
     minutes: 11,
     text:

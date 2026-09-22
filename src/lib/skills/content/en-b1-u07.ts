@@ -127,6 +127,7 @@ export const enB1U07: SkillExercise[] = [
       { de: "inside", tr: "içinde" },
       { de: "pocket", tr: "cep" },
       { de: "sentence", tr: "cümle" },
+      { de: "brown", tr: "kahverengi" },
     ],
     minutes: 7,
     text:

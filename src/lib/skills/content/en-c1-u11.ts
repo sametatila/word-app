@@ -189,6 +189,7 @@ export const enC1U11: SkillExercise[] = [
       { de: "honest", tr: "dürüst" },
       { de: "a name", tr: "ad" },
       { de: "the cost", tr: "bedel" },
+      { de: "inherit", tr: "miras almak" },
     ],
     minutes: 12,
     text:
@@ -505,6 +506,7 @@ export const enC1U11: SkillExercise[] = [
       { de: "acculturation", tr: "kültürleşme" },
       { de: "assimilation", tr: "asimilasyon" },
       { de: "hybridity", tr: "melezlik" },
+      { de: "fade", tr: "solmak" },
     ],
     minutes: 10,
     tasks: [

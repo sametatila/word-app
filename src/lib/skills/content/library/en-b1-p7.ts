@@ -25,6 +25,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "colleague", tr: "iş arkadaşı" },
       { de: "to admit", tr: "itiraf etmek" },
       { de: "to expect", tr: "beklemek" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 6,
     text:
@@ -122,6 +123,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "canteen", tr: "yemekhane" },
       { de: "probation", tr: "deneme süresi" },
       { de: "handbook", tr: "el kitabı" },
+      { de: "basic", tr: "temel araştırma" },
     ],
     minutes: 6,
     segments: [

@@ -79,6 +79,7 @@ export const enC1U23: SkillExercise[] = [
       { de: "the thread", tr: "ip" },
       { de: "a paper", tr: "makale" },
       { de: "a hundred writers", tr: "yüz yazar" },
+      { de: "signal", tr: "sinyal" },
     ],
     minutes: 12,
     text:

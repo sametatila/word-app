@@ -403,6 +403,7 @@ export const enB1U08: SkillExercise[] = [
       { de: "must", tr: "zorundasın" },
       { de: "permission", tr: "izin" },
       { de: "ever", tr: "hiç" },
+      { de: "lead", tr: "liderlik etmek" },
     ],
     minutes: 8,
     tasks: [

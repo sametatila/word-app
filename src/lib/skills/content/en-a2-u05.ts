@@ -249,6 +249,7 @@ export const enA2U05: SkillExercise[] = [
       { de: "career", tr: "kariyer" },
       { de: "goal", tr: "hedef" },
       { de: "success", tr: "başarı" },
+      { de: "hop", tr: "zıplamak" },
     ],
     minutes: 4,
     segments: [

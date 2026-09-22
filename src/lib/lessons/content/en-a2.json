@@ -18220,8 +18220,8 @@
     "tr": "daha iyi"
    },
    {
-    "de": "feeling",
-    "tr": "his"
+    "de": "seem",
+    "tr": "görünmek"
    },
    {
     "de": "be afraid",
@@ -18478,20 +18478,20 @@
      },
      {
       "lang": "en",
-      "text": "feeling"
+      "text": "seem"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: his. Lütfen tekrar et:"
+      "text": "Türkçesi: görünmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "feeling"
+      "text": "seem"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "feeling"
+     "target": "seem"
     }
    },
    {
@@ -39366,8 +39366,8 @@
     "tr": "teyit etmek"
    },
    {
-    "de": "reservation",
-    "tr": "rezervasyon"
+    "de": "large",
+    "tr": "büyük"
    },
    {
     "de": "double room",
@@ -39775,20 +39775,20 @@
      },
      {
       "lang": "en",
-      "text": "reservation"
+      "text": "large"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: rezervasyon. Lütfen tekrar et:"
+      "text": "Türkçesi: büyük. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "reservation"
+      "text": "large"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "reservation"
+     "target": "large"
     }
    },
    {
@@ -41396,8 +41396,8 @@
     "tr": "yön"
    },
    {
-    "de": "across",
-    "tr": "karşıdan karşıya; boydan boya"
+    "de": "central",
+    "tr": "merkezî"
    }
   ],
   "patterns": [
@@ -41638,20 +41638,20 @@
      },
      {
       "lang": "en",
-      "text": "across"
+      "text": "central"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: karşıdan karşıya; boydan boya. Lütfen tekrar et:"
+      "text": "Türkçesi: merkezî. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "across"
+      "text": "central"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "across"
+     "target": "central"
     }
    },
    {
@@ -47702,8 +47702,8 @@
     "tr": "gelenek"
    },
    {
-    "de": "family",
-    "tr": "aile"
+    "de": "glad",
+    "tr": "memnun"
    },
    {
     "de": "special",
@@ -48334,20 +48334,20 @@
      },
      {
       "lang": "en",
-      "text": "family"
+      "text": "glad"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: aile. Lütfen tekrar et:"
+      "text": "Türkçesi: memnun. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "family"
+      "text": "glad"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "family"
+     "target": "glad"
     }
    },
    {
@@ -53934,8 +53934,8 @@
     "tr": "izlemek"
    },
    {
-    "de": "boring",
-    "tr": "sıkıcı"
+    "de": "score",
+    "tr": "puan"
    },
    {
     "de": "recommend",
@@ -54443,20 +54443,20 @@
      },
      {
       "lang": "en",
-      "text": "boring"
+      "text": "score"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sıkıcı. Lütfen tekrar et:"
+      "text": "Türkçesi: puan. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "boring"
+      "text": "score"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "boring"
+     "target": "score"
     }
    },
    {
@@ -56418,8 +56418,8 @@
     "tr": "oluşturmak"
    },
    {
-    "de": "careful",
-    "tr": "dikkatli"
+    "de": "dangerous",
+    "tr": "tehlikeli"
    },
    {
     "de": "safety",
@@ -56628,7 +56628,7 @@
      },
      {
       "lang": "en",
-      "text": "careful"
+      "text": "dangerous"
      },
      {
       "lang": "tr",
@@ -56636,12 +56636,12 @@
      },
      {
       "lang": "en",
-      "text": "careful"
+      "text": "dangerous"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "careful"
+     "target": "dangerous"
     }
    },
    {
@@ -59409,8 +59409,8 @@
     "tr": "sıra"
    },
    {
-    "de": "number",
-    "tr": "numara"
+    "de": "build",
+    "tr": "inşa etmek"
    },
    {
     "de": "counter",
@@ -59946,20 +59946,20 @@
      },
      {
       "lang": "en",
-      "text": "number"
+      "text": "build"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: numara. Lütfen tekrar et:"
+      "text": "Türkçesi: inşa etmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "number"
+      "text": "build"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "number"
+     "target": "build"
     }
    },
    {
@@ -61971,8 +61971,8 @@
     "tr": "iade etmek / iade"
    },
    {
-    "de": "fine",
-    "tr": "para cezası"
+    "de": "drop",
+    "tr": "bırakmak"
    },
    {
     "de": "quiet",
@@ -62637,20 +62637,20 @@
      },
      {
       "lang": "en",
-      "text": "fine"
+      "text": "drop"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: para cezası. Lütfen tekrar et:"
+      "text": "Türkçesi: bırakmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "fine"
+      "text": "drop"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "fine"
+     "target": "drop"
     }
    },
    {
@@ -64069,8 +64069,8 @@
     "tr": "çıktı almak"
    },
    {
-    "de": "several",
-    "tr": "birtakım"
+    "de": "disappear",
+    "tr": "kaybolmak"
    },
    {
     "de": "exactly",
@@ -64492,20 +64492,20 @@
      },
      {
       "lang": "en",
-      "text": "several"
+      "text": "disappear"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: birtakım. Lütfen tekrar et:"
+      "text": "Türkçesi: kaybolmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "several"
+      "text": "disappear"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "several"
+     "target": "disappear"
     }
    },
    {

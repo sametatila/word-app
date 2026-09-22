@@ -28,6 +28,10 @@ export const enA2: SkillExercise[] = [
       { de: "scared", tr: "korkmuş" },
       { de: "owner", tr: "sahip" },
       { de: "carry", tr: "taşımak" },
+      { de: "bowl", tr: "kase" },
+      { de: "romantic", tr: "romantik" },
+      { de: "blanket", tr: "battaniye" },
+      { de: "brown", tr: "kahverengi" },
     ],
     minutes: 5,
     text:

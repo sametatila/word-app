@@ -393,6 +393,7 @@ export const enB1U24: SkillExercise[] = [
       { de: "who hugged me", tr: "bana sarılan" },
       { de: "where I smiled", tr: "gülümsediğim yer" },
       { de: "follow", tr: "izlemek" },
+      { de: "strange", tr: "tuhaf" },
     ],
     minutes: 8,
     tasks: [

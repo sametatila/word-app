@@ -176,6 +176,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "unpaid", tr: "ödenmemiş" },
       { de: "counted", tr: "sayılan" },
       { de: "honest", tr: "dürüst" },
+      { de: "sharp", tr: "keskin" },
     ],
     minutes: 12,
     text:
@@ -498,6 +499,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "relativism", tr: "görecelik" },
       { de: "a commandment", tr: "buyruk" },
       { de: "altruism", tr: "özgecilik" },
+      { de: "untouched", tr: "el değmemiş" },
     ],
     minutes: 10,
     tasks: [

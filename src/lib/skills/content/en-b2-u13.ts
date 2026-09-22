@@ -405,6 +405,7 @@ export const enB2U13: SkillExercise[] = [
       { de: "is expected to", tr: "olması bekleniyor" },
       { de: "is thought to", tr: "olduğu düşünülüyor" },
       { de: "the measurement", tr: "ölçülmesi" },
+      { de: "rise", tr: "yükselmek" },
     ],
     minutes: 9,
     tasks: [
@@ -459,6 +460,7 @@ export const enB2U13: SkillExercise[] = [
       { de: "would remain valid", tr: "geçerli kalırdı" },
       { de: "the documentation", tr: "belgelenmesi" },
       { de: "the reduction", tr: "azaltılması" },
+      { de: "generation", tr: "kuşak" },
     ],
     minutes: 9,
     tasks: [

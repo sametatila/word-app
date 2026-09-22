@@ -181,6 +181,7 @@ export const enC1U22: SkillExercise[] = [
       { de: "a note", tr: "not" },
       { de: "a year later", tr: "bir yıl sonra" },
       { de: "read back", tr: "geri okunan" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 12,
     text:
@@ -440,6 +441,7 @@ export const enC1U22: SkillExercise[] = [
       { de: "an economy of scale", tr: "ölçek ekonomisi" },
       { de: "accounting fraud", tr: "muhasebe sahtekarlığı" },
       { de: "embezzlement", tr: "zimmete geçirme" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 10,
     tasks: [

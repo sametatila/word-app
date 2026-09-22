@@ -28,6 +28,7 @@ export const enA2P2: SkillExercise[] = [
       { de: "field", tr: "tarla" },
       { de: "hive", tr: "kovan" },
       { de: "worried", tr: "endişeli" },
+      { de: "roof", tr: "çatı" },
     ],
     minutes: 5,
     text:

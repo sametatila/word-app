@@ -25,6 +25,15 @@ export const enB2P6: SkillExercise[] = [
       { de: "liability", tr: "hukuki sorumluluk" },
       { de: "to shortlist", tr: "kısa listeye almak" },
       { de: "template", tr: "şablon" },
+      { de: "hire", tr: "işe almak" },
+      { de: "current", tr: "mevcut" },
+      { de: "specific", tr: "özel önleme" },
+      { de: "general", tr: "genel" },
+      { de: "sheet", tr: "çarşaf" },
+      { de: "match", tr: "eşleştirmek" },
+      { de: "lazy", tr: "tembel" },
+      { de: "relationship", tr: "ilişki" },
+      { de: "caution", tr: "tedbir" },
     ],
     minutes: 8,
     text:
@@ -119,6 +128,8 @@ export const enB2P6: SkillExercise[] = [
       { de: "defensible", tr: "savunulabilir" },
       { de: "to backfire", tr: "geri tepmek" },
       { de: "precedent", tr: "emsal" },
+      { de: "presentation", tr: "sunum" },
+      { de: "concern", tr: "kaygı" },
     ],
     minutes: 8,
     segments: [
@@ -204,6 +215,8 @@ export const enB2P6: SkillExercise[] = [
       { de: "strength", tr: "güçlü yan" },
       { de: "to encourage", tr: "yüreklendirmek" },
       { de: "vacancy", tr: "açık pozisyon" },
+      { de: "sheet", tr: "çarşaf" },
+      { de: "presentation", tr: "sunum" },
     ],
     minutes: 14,
     tasks: [

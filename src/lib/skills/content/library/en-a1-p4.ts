@@ -171,6 +171,8 @@ export const enA1P4: SkillExercise[] = [
       { de: "coat", tr: "palto" },
       { de: "warm", tr: "sıcak tutan" },
       { de: "pick up", tr: "gelip almak" },
+      { de: "brown", tr: "kahverengi" },
+      { de: "boot", tr: "çizme" },
     ],
     minutes: 8,
     tasks: [

@@ -372,6 +372,7 @@ export const enC1U17: SkillExercise[] = [
       { de: "a seller", tr: "satıcı" },
       { de: "free", tr: "ücretsiz" },
       { de: "an invoice", tr: "fatura" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 8,
     segments: [
@@ -513,6 +514,8 @@ export const enC1U17: SkillExercise[] = [
       { de: "soil erosion", tr: "toprak erozyonu" },
       { de: "to overfertilize", tr: "aşırı gübrelemek" },
       { de: "to pollinate", tr: "tozlaştırmak" },
+      { de: "assume", tr: "varsaymak" },
+      { de: "generation", tr: "kuşak" },
     ],
     minutes: 10,
     tasks: [

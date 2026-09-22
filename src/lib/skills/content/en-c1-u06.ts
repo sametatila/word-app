@@ -251,6 +251,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "a reading", tr: "okuma" },
       { de: "an acceptance", tr: "kabul" },
       { de: "an adjective", tr: "sıfat" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 8,
     segments: [

@@ -28,6 +28,9 @@ export const enB1P3: SkillExercise[] = [
       { de: "sort", tr: "ayırmak" },
       { de: "load", tr: "yüklemek" },
       { de: "return", tr: "geri vermek" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "contain", tr: "içermek" },
+      { de: "rubber", tr: "kauçuk" },
     ],
     minutes: 7,
     text:
@@ -117,6 +120,9 @@ export const enB1P3: SkillExercise[] = [
       { de: "sample", tr: "numune" },
       { de: "soft", tr: "yumuşak" },
       { de: "pump", tr: "pompalamak" },
+      { de: "sand", tr: "kum" },
+      { de: "iron", tr: "ütülemek" },
+      { de: "engineer", tr: "mühendis" },
     ],
     minutes: 7,
     segments: [

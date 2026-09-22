@@ -109,6 +109,7 @@ export const enA2U22: SkillExercise[] = [
       { de: "stupid", tr: "basit" },
       { de: "the meaning", tr: "anlamı" },
       { de: "press", tr: "basmak" },
+      { de: "install", tr: "takmak" },
     ],
     minutes: 6,
     text:

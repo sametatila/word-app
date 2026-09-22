@@ -65,6 +65,7 @@ export const enB2U20: SkillExercise[] = [
       { de: "beyond", tr: "ötesinde" },
       { de: "a clause", tr: "cümlecik" },
       { de: "missing", tr: "eksik" },
+      { de: "loan", tr: "kredi" },
     ],
     minutes: 9,
     text:
@@ -402,6 +403,7 @@ export const enB2U20: SkillExercise[] = [
       { de: "enough to pay off", tr: "ödeyecek kadar" },
       { de: "will be watching", tr: "izliyor olacak" },
       { de: "must have warned", tr: "uyarmış olmalı" },
+      { de: "loan", tr: "kredi" },
     ],
     minutes: 9,
     tasks: [

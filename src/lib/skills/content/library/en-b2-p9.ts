@@ -124,6 +124,9 @@ export const enB2P9: SkillExercise[] = [
       { de: "to schedule", tr: "programlamak" },
       { de: "corridor", tr: "koridor" },
       { de: "deliberate", tr: "bilinçli" },
+      { de: "entire", tr: "tüm" },
+      { de: "definition", tr: "kavram tanımı" },
+      { de: "profession", tr: "meslek" },
     ],
     minutes: 8,
     segments: [
@@ -212,6 +215,9 @@ export const enB2P9: SkillExercise[] = [
       { de: "practical", tr: "uygulanabilir" },
       { de: "assumption", tr: "varsayım" },
       { de: "trade-off", tr: "takas" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "pick", tr: "gidip almak" },
+      { de: "mandate", tr: "aşı zorunluluğu" },
     ],
     minutes: 14,
     tasks: [

@@ -197,6 +197,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "standing", tr: "ayakta" },
       { de: "an author", tr: "yazar" },
       { de: "allowed to notice", tr: "fark etmesine izin verilen" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 12,
     text:

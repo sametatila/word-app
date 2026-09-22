@@ -271,6 +271,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "the same data", tr: "aynı veri" },
       { de: "a press office", tr: "basın bürosu" },
       { de: "a correction", tr: "düzeltme" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 8,
     segments: [

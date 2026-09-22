@@ -248,6 +248,7 @@ export const enB2U14: SkillExercise[] = [
       { de: "underneath", tr: "altta" },
       { de: "a district", tr: "semt" },
       { de: "moved out", tr: "taşındı" },
+      { de: "passive", tr: "pasif" },
     ],
     minutes: 7,
     segments: [

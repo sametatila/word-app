@@ -28,6 +28,7 @@ export const enB1P4: SkillExercise[] = [
       { de: "vote", tr: "oy" },
       { de: "loan", tr: "kredi" },
       { de: "alternative", tr: "seçenek" },
+      { de: "advertisement", tr: "ilan" },
     ],
     minutes: 7,
     text:
@@ -120,6 +121,9 @@ export const enB1P4: SkillExercise[] = [
       { de: "fee", tr: "aidat" },
       { de: "fair", tr: "adil" },
       { de: "roof", tr: "çatı" },
+      { de: "practical", tr: "pratik" },
+      { de: "reduce", tr: "azaltmak" },
+      { de: "hire", tr: "işe almak" },
     ],
     minutes: 7,
     segments: [

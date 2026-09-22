@@ -26,6 +26,13 @@ export const enB1P6: SkillExercise[] = [
       { de: "staff", tr: "çalışanlar" },
       { de: "to renew", tr: "süre uzatmak" },
       { de: "quiet", tr: "sessiz" },
+      { de: "judge", tr: "hâkim" },
+      { de: "search", tr: "arama yapmak" },
+      { de: "log", tr: "oturumu kapatmak" },
+      { de: "pick", tr: "gidip almak" },
+      { de: "enter", tr: "girmek" },
+      { de: "stupid", tr: "aptal" },
+      { de: "basic", tr: "temel araştırma" },
     ],
     minutes: 6,
     text:
@@ -113,6 +120,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "to extend", tr: "uzatmak" },
       { de: "receipt", tr: "makbuz" },
       { de: "to waive", tr: "affetmek" },
+      { de: "unpaid", tr: "ödenmemiş" },
     ],
     minutes: 6,
     segments: [
@@ -199,6 +207,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "to close down", tr: "kapatmak" },
       { de: "service", tr: "hizmet" },
       { de: "to replace", tr: "yerini almak" },
+      { de: "mill", tr: "öğütmek" },
     ],
     minutes: 12,
     tasks: [

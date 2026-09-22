@@ -245,6 +245,7 @@ export const enB2U11: SkillExercise[] = [
       { de: "an ending", tr: "ek" },
       { de: "a preposition", tr: "edat" },
       { de: "a number", tr: "sayı" },
+      { de: "invent", tr: "icat etmek" },
     ],
     minutes: 7,
     segments: [

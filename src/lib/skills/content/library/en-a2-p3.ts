@@ -113,6 +113,7 @@ export const enA2P3: SkillExercise[] = [
       { de: "offer", tr: "önermek" },
       { de: "highway", tr: "otoyol" },
       { de: "road sign", tr: "trafik levhası" },
+      { de: "theory", tr: "teori" },
     ],
     minutes: 5,
     segments: [
@@ -183,6 +184,7 @@ export const enA2P3: SkillExercise[] = [
       { de: "empty", tr: "boş" },
       { de: "calendar", tr: "takvim" },
       { de: "tired", tr: "yorgun" },
+      { de: "bit", tr: "azıcık" },
     ],
     minutes: 9,
     tasks: [

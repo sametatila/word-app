@@ -108,6 +108,7 @@ export const enB1: SkillExercise[] = [
       { de: "silly", tr: "saçma" },
       { de: "apology", tr: "özür" },
       { de: "honest", tr: "dürüst" },
+      { de: "bake", tr: "fırında pişirmek" },
     ],
     minutes: 5,
     segments: [

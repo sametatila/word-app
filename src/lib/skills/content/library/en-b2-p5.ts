@@ -28,6 +28,8 @@ export const enB2P5: SkillExercise[] = [
       { de: "insist", tr: "ısrar etmek" },
       { de: "skip", tr: "atlamak" },
       { de: "buyer", tr: "alıcı" },
+      { de: "contain", tr: "içermek" },
+      { de: "total", tr: "toplam tutar" },
     ],
     minutes: 9,
     text:
@@ -125,6 +127,11 @@ export const enB2P5: SkillExercise[] = [
       { de: "honest", tr: "dürüst" },
       { de: "role", tr: "rol" },
       { de: "rarely", tr: "nadiren" },
+      { de: "practical", tr: "pratik" },
+      { de: "event", tr: "etkinlik" },
+      { de: "exit", tr: "çıkış" },
+      { de: "panel", tr: "panel" },
+      { de: "departure", tr: "yola çıkış" },
     ],
     minutes: 9,
     segments: [
@@ -213,6 +220,9 @@ export const enB2P5: SkillExercise[] = [
       { de: "amend", tr: "değiştirmek" },
       { de: "exempt", tr: "muaf tutmak" },
       { de: "slot", tr: "zaman dilimi" },
+      { de: "household", tr: "hane büyüklüğü" },
+      { de: "provide", tr: "temin etmek" },
+      { de: "bulky", tr: "hacimli" },
     ],
     minutes: 12,
     tasks: [

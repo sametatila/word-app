@@ -38,6 +38,17 @@ export const LEVELS = ["a1", "a2", "b1", "b2", "c1"];
  * `whereby`, `therefore` — bunlar söylem bağlayıcısı, yani B2/C1'de
  * ÖĞRETİLEN sözcükler; Almanca tarafın `trotzdem`/`sondern`/`sogar`
  * bulgularının karşılığı ve raporda görünmeleri doğru.
+ *
+ * SON ÜÇ SATIR 2026-09-22'DE EKLENDİ — aynı ölçütün üç yarım kalmış dizisi,
+ * patika boşluğu raporunda ortaya çıktı:
+ *   edat   `inside`/`outside` (zaten `into`, `over`, `under` serbest),
+ *          `except`, `apart` (apart from), `among` (zaten `between`),
+ *          `per`, `according` (according to), `via`, `versus`, `plus`, `minus`
+ *   dönüşlü zamir  `myself`…`themselves` — kişi zamirlerinin tamamı zaten
+ *          serbestti, dönüşlü dizi eksikti (`themselves` B2'de ×7 bulgu)
+ *   derece belirteci  `quite`, `rather`, `enough`, `almost`, `nearly`,
+ *          `instead` — kardeşleri (`very`, `really`, `too`, `only`) serbest
+ * Söylem bağlayıcıları yine dışarıda: yukarıdaki kural değişmedi.
  */
 export const EN_FREE = new Set(`a an the and or but so because if when while as than that this these those there here
 i you he she it we they me him her us them my your his its our their mine yours
@@ -58,6 +69,9 @@ somebody anybody everybody
 metre metres meter meters km kg cm litre litres liter liters kilo kilos minutes hours euro
 children men women people feet teeth
 behind against above below beside onto toward towards
+inside outside except apart among per according via versus plus minus
+myself yourself himself herself itself ourselves yourselves themselves oneself
+quite rather enough almost nearly instead
 neither either none nor whether
 whoever whatever wherever whenever whichever`.split(/\s+/).filter(Boolean));
 
@@ -131,14 +145,48 @@ function enContraction(w: string): string | null {
   return m[1];
 }
 
+/**
+ * AMERİKAN ↔ İNGİLİZ YAZIM ÇİFTLERİ. Hat İngiliz İngilizcesi yazıyor
+ * (`data/lessons/spelling.mjs` ölçümü), havuz ise iki yazımı da taşıyor:
+ * `neighbor` ve `neighbour`, `defense` ve `defence` ayrı kayıtlar. Ölçüm
+ * bunları ayrı sözcük saydığı sürece patika "neighbour" öğretse de havuzun
+ * "neighbor" kaydı öğretilmemiş görünüyordu — sözcük değil yazım farkı.
+ * Liste dar: yalnız düzenli ve tartışmasız olan dönüşümler.
+ */
+function yazimVaryant(w: string): string[] {
+  const v: string[] = [];
+  if (w.endsWith("or")) v.push(w.slice(0, -2) + "our");
+  if (w.endsWith("our")) v.push(w.slice(0, -3) + "or");
+  if (w.endsWith("ize")) v.push(w.slice(0, -3) + "ise");
+  if (w.endsWith("ise")) v.push(w.slice(0, -3) + "ize");
+  if (w.endsWith("ization")) v.push(w.slice(0, -7) + "isation");
+  if (w.endsWith("isation")) v.push(w.slice(0, -7) + "ization");
+  if (w.endsWith("yze")) v.push(w.slice(0, -3) + "yse");
+  if (w.endsWith("yse")) v.push(w.slice(0, -3) + "yze");
+  if (w.endsWith("ense")) v.push(w.slice(0, -4) + "ence");
+  if (w.endsWith("ence")) v.push(w.slice(0, -4) + "ense");
+  if (w.endsWith("er")) v.push(w.slice(0, -2) + "re");
+  if (w.endsWith("re")) v.push(w.slice(0, -2) + "er");
+  if (w.endsWith("og")) v.push(w + "ue");
+  if (w.endsWith("ogue")) v.push(w.slice(0, -2));
+  return v;
+}
+
 export function enStems(w: string): string[] {
   const out = [w];
+  for (const v of yazimVaryant(w)) out.push(v);
   const irr = EN_IRREGULAR[w];
   if (irr) out.push(irr);
   const con = enContraction(w);
   if (con) {
-    out.push(con, EN_IRREGULAR[con] ?? con);
+    /* "n't" ÖNCE n'siz kökü veriyor. Kesme işaretinden bölünce "haven't" →
+       "haven" çıkıyor ve bu havuzda GERÇEK bir sözcük (liman); çağıranlar ilk
+       havuz isabetini aldığı için 25 "haven't" geçişi C1'de "haven" borcu diye
+       görünüyordu (kapının başında "bilinen gürültü" diye yazılıydı). Doğru kök
+       "have"; "can't" gibi tek heceliler için n'li biçim de listede kalıyor
+       ("ca" havuzda yok, "can" var). */
     if (w.endsWith("n't")) out.push(w.slice(0, -3), EN_IRREGULAR[w.slice(0, -3)] ?? w.slice(0, -3));
+    out.push(con, EN_IRREGULAR[con] ?? con);
   }
   /* İYELİK EKİ GÖVDEYİ GİZLİYOR. "writer's" → "writer" → "write": ilk
      adım yetmiyor, çünkü türetme ekleri yalnız ham belirtece uygulanıyordu
@@ -152,6 +200,11 @@ export function enStems(w: string): string[] {
     if (base.endsWith("s")) out.push(base.slice(0, -1));
   }
   if (w.endsWith("ies")) out.push(w.slice(0, -3) + "y");
+  /* -ier/-iest: "easier" → "easy", "happiest" → "happy". Aşağıdaki genel
+     -er/-est kuralı yalnız "easi"/"easie" üretiyordu ve karşılaştırma biçimleri
+     havuzda ayrı kayıt oldukları için öğretilmemiş görünüyorlardı. */
+  if (w.endsWith("ier")) out.push(w.slice(0, -3) + "y");
+  if (w.endsWith("iest")) out.push(w.slice(0, -4) + "y");
   if (w.endsWith("es")) out.push(w.slice(0, -2));
   if (w.endsWith("s")) out.push(w.slice(0, -1));
   if (w.endsWith("ed")) out.push(w.slice(0, -2), w.slice(0, -1));

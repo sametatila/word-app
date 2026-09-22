@@ -465,6 +465,7 @@ export const enC1U03: SkillExercise[] = [
       { de: "refutes", tr: "çürütüyor" },
       { de: "substantiate", tr: "belgelemek" },
       { de: "leeway", tr: "manevra alanı" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 10,
     tasks: [

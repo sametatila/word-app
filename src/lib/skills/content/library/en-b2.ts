@@ -29,6 +29,8 @@ export const enB2: SkillExercise[] = [
       { de: "sample", tr: "örneklem" },
       { de: "punish", tr: "cezalandırmak" },
       { de: "dishonest", tr: "dürüst olmayan" },
+      { de: "precise", tr: "kesin" },
+      { de: "deliberately", tr: "kasten" },
     ],
     minutes: 9,
     text:
@@ -129,6 +131,9 @@ export const enB2: SkillExercise[] = [
       { de: "external", tr: "dışarıdan" },
       { de: "assumption", tr: "varsayım" },
       { de: "advertise", tr: "ilan vermek" },
+      { de: "hire", tr: "işe almak" },
+      { de: "search", tr: "arama yapmak" },
+      { de: "advertisement", tr: "ilan" },
     ],
     minutes: 9,
     segments: [

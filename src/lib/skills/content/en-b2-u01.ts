@@ -335,6 +335,7 @@ export const enB2U01: SkillExercise[] = [
       { de: "the ninth", tr: "ayın dokuzu" },
       { de: "the tenth", tr: "ayın onu" },
       { de: "tell apart", tr: "ayırt etmek" },
+      { de: "passive", tr: "pasif" },
     ],
     minutes: 7,
     segments: [

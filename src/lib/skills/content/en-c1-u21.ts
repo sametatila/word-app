@@ -274,6 +274,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "later", tr: "sonra" },
       { de: "too late", tr: "çok geç" },
       { de: "a committee", tr: "kurul" },
+      { de: "average", tr: "ortalama" },
     ],
     minutes: 8,
     segments: [

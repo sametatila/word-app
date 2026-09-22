@@ -101,6 +101,7 @@ export const enA1P2: SkillExercise[] = [
       { de: "keep", tr: "saklamak" },
       { de: "clean", tr: "temizlemek" },
       { de: "close", tr: "kapanmak" },
+      { de: "pair", tr: "çift" },
     ],
     minutes: 4,
     segments: [

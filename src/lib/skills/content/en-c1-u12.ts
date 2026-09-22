@@ -363,6 +363,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "a grandchild", tr: "torun" },
       { de: "a room", tr: "oda" },
       { de: "the loser", tr: "yitiren" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 8,
     segments: [
@@ -504,6 +505,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "venerable", tr: "saygıdeğer" },
       { de: "opulent", tr: "şatafatlı" },
       { de: "deviance", tr: "normdan sapma" },
+      { de: "assume", tr: "varsaymak" },
     ],
     minutes: 10,
     tasks: [

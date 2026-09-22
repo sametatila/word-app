@@ -119,6 +119,9 @@ export const enB1P5: SkillExercise[] = [
       { de: "cash", tr: "nakit" },
       { de: "book", tr: "rezerve etmek" },
       { de: "policy", tr: "poliçe" },
+      { de: "assistance", tr: "idari yardım" },
+      { de: "consulate", tr: "konsolosluk" },
+      { de: "agent", tr: "emlakçı" },
     ],
     minutes: 7,
     segments: [
@@ -203,6 +206,8 @@ export const enB1P5: SkillExercise[] = [
       { de: "worry", tr: "endişelenmek" },
       { de: "copy", tr: "kopya" },
       { de: "separate", tr: "ayrı" },
+      { de: "ugly", tr: "çirkin" },
+      { de: "annoying", tr: "sinir bozucu" },
     ],
     minutes: 10,
     tasks: [

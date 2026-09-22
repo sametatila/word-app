@@ -202,6 +202,7 @@ export const enB1U15: SkillExercise[] = [
       { de: "whole", tr: "bütün" },
       { de: "least", tr: "en az" },
       { de: "editing", tr: "düzeltme" },
+      { de: "lead", tr: "liderlik etmek" },
     ],
     minutes: 6,
     segments: [

@@ -508,6 +508,7 @@ export const enC1U15: SkillExercise[] = [
       { de: "plagiarism", tr: "intihal" },
       { de: "a structural change", tr: "yapısal değişim" },
       { de: "a performance indicator", tr: "performans göstergesi" },
+      { de: "fund", tr: "sağlık sigortası kurumu" },
     ],
     minutes: 10,
     tasks: [

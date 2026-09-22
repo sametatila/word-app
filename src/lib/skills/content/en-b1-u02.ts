@@ -129,6 +129,7 @@ export const enB1U02: SkillExercise[] = [
       { de: "instead", tr: "onun yerine" },
       { de: "somewhere", tr: "bir yere" },
       { de: "neither of us", tr: "ikimiz de değil" },
+      { de: "hire", tr: "işe almak" },
     ],
     minutes: 7,
     text:
@@ -199,6 +200,7 @@ export const enB1U02: SkillExercise[] = [
       { de: "survives", tr: "atlatan" },
       { de: "handover", tr: "devir teslim" },
       { de: "a system", tr: "sistem" },
+      { de: "hire", tr: "işe almak" },
     ],
     minutes: 6,
     segments: [

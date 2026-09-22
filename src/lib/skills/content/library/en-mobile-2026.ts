@@ -54,7 +54,9 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "in front of",
         "tr": "önünde"
-      }
+      },
+        { "de": "comedy", "tr": "komedi" },
+        { "de": "poor", "tr": "fakir" },
     ],
     "minutes": 4,
     "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Cinema. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the cinema.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
@@ -356,7 +358,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "soup",
         "tr": "çorba"
-      }
+      },
+        { "de": "toast", "tr": "kadeh kaldırmak" },
     ],
     "minutes": 4,
     "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have got a 10% discount. Please show your student card.\nThere is free water on every table.\nWe have not got Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here at the weekend. He can help you in English.",
@@ -461,7 +464,9 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "exam",
         "tr": "sınav"
-      }
+      },
+        { "de": "science", "tr": "bilim" },
+        { "de": "math", "tr": "matematik" },
     ],
     "minutes": 4,
     "text": "Tuesday, 14 March\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favourite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a film.\nI go to bed at eleven. Tomorrow is Wednesday and I have got a maths exam!",
@@ -561,7 +566,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "cash",
         "tr": "nakit"
-      }
+      },
+        { "de": "brown", "tr": "kahverengi" },
     ],
     "minutes": 4,
     "text": "BIG SUMMER SALE\nMango Street Shop - 24 Green Road\n\nOur sale starts on Friday at 9 a.m. Everything is cheap this week!\n\nT-shirts: red, blue and white. Sizes S, M and L. Only 12 dollars.\nJeans: 30 dollars. Sizes 36 to 44.\nShoes: black or brown. 45 dollars.\nBags: 20 dollars. We have got big bags and small bags.\n\nThere are 200 new dresses in the shop. They are yellow, green and pink.\n\nDo you want a different size? Ask Elif. She works at the front desk and she is very friendly.\n\nWe are open from 9 a.m. to 8 p.m. every day. On Sunday we close at 6 p.m.\nYou can pay with cash or card.",
@@ -770,7 +776,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "interested",
         "tr": "ilgilenen"
-      }
+      },
+        { "de": "pet", "tr": "evcil hayvan" },
     ],
     "minutes": 4,
     "text": "ROOM FOR RENT — CITY CENTRE\n\nThere is a nice room in a big flat. The flat is on Green Street, near the train station.\n\nThe room has got a bed, a desk and a small wardrobe. There is a big window. The kitchen and the bathroom are shared.\n\nTwo people live here: Mert and Anna. Mert is a student. Anna works in a hospital.\n\nPrice: 320 pounds a month. Water and electricity are not in the price.\n\nThe room is free from 1 October.\n\nNo smoking. Small pets are OK.\n\nAre you interested? Call Anna on 07700 900412 after 6 p.m. You can also send a message.",
@@ -1080,7 +1087,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "bring",
         "tr": "getirmek"
-      }
+      },
+        { "de": "mill", "tr": "öğütmek" },
     ],
     "minutes": 4,
     "text": "GREEN PARK HEALTH CENTRE\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Miller\nDate: Tuesday, 14 October\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
@@ -1429,7 +1437,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "Nice to meet you.",
         "tr": "Tanıştığımıza memnun oldum."
-      }
+      },
+        { "de": "french", "tr": "parmak patates" },
     ],
     "minutes": 3,
     "segments": [
@@ -1802,7 +1811,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "How much …?",
         "tr": "Ne kadar?"
-      }
+      },
+        { "de": "salon", "tr": "güzellik salonu" },
     ],
     "minutes": 3,
     "segments": [
@@ -3077,7 +3087,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "together",
         "tr": "birlikte"
-      }
+      },
+        { "de": "brown", "tr": "kahverengi" },
     ],
     "minutes": 7,
     "tasks": [
@@ -3772,7 +3783,9 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "noon",
         "tr": "öğle vakti"
-      }
+      },
+        { "de": "hate", "tr": "nefret etmek" },
+        { "de": "poor", "tr": "fakir" },
     ],
     "minutes": 5,
     "text": "Elif, 10:14\nHi Kerem! How was your weekend? I called you on Saturday but you never answered.\n\nKerem, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family travelled together.\n\nElif, 10:22\nWow, a wedding! Did you dance?\n\nKerem, 10:25\nOf course. The music was louder than last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nElif, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbours.\n\nKerem, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nElif, 10:31\nHave you finished your report yet?\n\nKerem, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nElif, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
@@ -4078,7 +4091,9 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "washing machine",
         "tr": "çamaşır makinesi"
-      }
+      },
+        { "de": "pet", "tr": "evcil hayvan" },
+        { "de": "oven", "tr": "fırın" },
     ],
     "minutes": 5,
     "text": "FLAT FOR RENT — 14 Green Street, Brighton\n\nRent: £850 a month. Bills are extra.\nDeposit: one month's rent.\nYou can move in on 1 October.\n\nThe flat is on the third floor of a quiet building. There is no lift, so you must use the stairs. It has two bedrooms, a small kitchen and a big living room with a balcony. In the afternoon the living room is sunnier than the bedrooms.\n\nWe put a new heater in last winter, and we painted the walls in July. The kitchen has a fridge and an oven, but there is no washing machine.\n\nRules:\n- No smoking inside.\n- Small pets are fine, but dogs are not.\n- You should tell us two months before you leave.\n\nThe bus stop is two minutes away. Students have lived here since 2019 and they have never had problems with noise.\n\nCall Deniz on 07700 900412 after 6 p.m. I have already shown the flat to three people, so please call today. We do not answer emails.",
@@ -4279,7 +4294,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "customers",
         "tr": "müşteriler"
-      }
+      },
+        { "de": "electronics", "tr": "elektronik aksam" },
     ],
     "minutes": 5,
     "text": "NOTICE — RETURNS AND EXCHANGES\n\nDear customers,\n\nWe changed our returns policy last month, so please read this notice.\n\nYou can bring an item back within 30 days. You must show the receipt. Without a receipt we cannot give your money back, but we can offer an exchange or a store card.\n\nCLOTHES: please keep the label on the item. We have already helped hundreds of shoppers this year, and the label makes everything faster.\n\nSHOES: you must not wear them outside. We only accept shoes in the original box.\n\nSALE ITEMS: these things are cheaper, so the rules are stricter. We exchange them, but we never give money back for them.\n\nELECTRONICS: you have 14 days. Please bring the box, the cable and the charger.\n\nThe returns desk is on the second floor, next to the coffee shop. It opens at 10:00 every day and closes at 19:00. On Sundays it closes earlier, at 17:00.\n\nElif Demir, our new manager, will answer your questions on Saturday morning.\n\nThank you!",
@@ -4384,7 +4400,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "helpful",
         "tr": "yardımsever"
-      }
+      },
+        { "de": "popular", "tr": "popüler" },
     ],
     "minutes": 5,
     "text": "THREE DAYS IN EDINBURGH - GROUP PROGRAMME\n\nDAY 1 (Friday)\n14:00 Arrival at the hotel. Leave your bags at reception.\n16:30 Walk to the Old Town with our guide, Emma.\n19:00 Dinner on Rose Street. This restaurant is quieter than the one we used last year.\n\nDAY 2 (Saturday)\n08:00 Breakfast in the hotel.\n09:30 Bus to the castle. It is the most popular place in the city, so we will go early.\n13:00 Free time in the shops. You must be back at the bus stop before 16:00.\n20:00 Music evening. Deniz is going to play the guitar for us.\n\nDAY 3 (Sunday)\n07:30 Breakfast.\n09:00 Boat trip. Bring a warm coat! Last year it rained all morning and everybody was cold.\n12:00 Lunch near the harbour.\n15:00 Bus to the airport.\n\nNOTES\nSome of you have not sent us your passport number yet. Please do it today.\nWe have worked with this hotel since 2019 and the staff are very helpful.\nYou should bring comfortable shoes because we are going to walk a lot.",
@@ -4490,7 +4507,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "garden",
         "tr": "bahçe"
-      }
+      },
+        { "de": "pretty", "tr": "şirin" },
     ],
     "minutes": 5,
     "text": "WEDDING INVITATION\n\nElif Yilmaz & Daniel Brooks\nare getting married!\n\nSaturday, 12 September\nCeremony: 4:00 p.m.\nDinner and dancing: 6:30 p.m.\n\nRosewood Garden Hotel\n45 Lake Road, Brighton\n\nPlease answer before 20 August.\nCall Elif: 0555 214 88 90\n\n------------------------------\n\nHi Marta,\n\nHere is our invitation! We have known each other since 2019, so we really want you at our wedding.\n\nMy parents used to live in Brighton, and we chose this hotel because the garden is prettier than any other garden in the city.\n\nThe ceremony will start at four, but please come earlier. We are going to take photos in the garden at half past three.\n\nYou should bring a jacket. September evenings are colder than you think, and the dinner is outside.\n\nI have already booked a room for you at the hotel. You must not pay for it. It is our present.\n\nPlease write to me soon. I haven't heard from you since June!\n\nLove,\nElif",
@@ -4590,7 +4608,9 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "enough",
         "tr": "yeterli"
-      }
+      },
+        { "de": "chart", "tr": "grafik" },
+        { "de": "alarm", "tr": "çalar saat" },
     ],
     "minutes": 5,
     "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Deniz K. — 2 March\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — 28 February\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — 26 February\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
@@ -4695,7 +4715,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "busy",
         "tr": "yoğun"
-      }
+      },
+        { "de": "mill", "tr": "öğütmek" },
     ],
     "minutes": 5,
     "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - 12 March\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Mill Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From 1 April we are going to send all bills by email. Please give us your email address before 25 March. Email is faster and cheaper than post.\n\nThe new building is bigger than the old one, but the car park is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
@@ -4800,7 +4821,10 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "car park",
         "tr": "otopark"
-      }
+      },
+        { "de": "mill", "tr": "öğütmek" },
+        { "de": "stone", "tr": "taş" },
+        { "de": "lorry", "tr": "kamyon" },
     ],
     "minutes": 5,
     "text": "RIVERTON DAILY — Local News\n\nOld Mill Bridge Opens Again\nBy Clara Novak, 12 May\n\nThe Old Mill Bridge opened again on Saturday morning after six months of repair work. More than three hundred people came to the small park next to the river at nine o'clock.\n\nThe mayor, Deniz Yalın, cut the red ribbon. \"This bridge is safer and wider than the old one,\" she said. \"Children can walk to school here now.\"\n\nThe bridge closed last November because heavy rain damaged the stone under it. While the workers were fixing it, people used the bus or drove ten kilometres to the next bridge. Many shops near the river lost money.\n\n\"I have lived here for thirty years, and I have never seen the bridge closed before,\" said Mr Owens, who sells bread on Green Street. \"My customers are already coming back.\"\n\nThe town spent 1.2 million euros on the project. The council will plant fifty new trees along the river path next spring. Visitors should use the free car park behind the library.",
@@ -4901,7 +4925,10 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "nearest",
         "tr": "en yakın"
-      }
+      },
+        { "de": "total", "tr": "toplam tutar" },
+        { "de": "cancellation", "tr": "iptal" },
+        { "de": "confirmation", "tr": "teyit" },
     ],
     "minutes": 5,
     "text": "BOOKING CONFIRMATION\nSeaside Park Hotel, Brighton\nReference: SPH-4471\n\nDear Ms. Elif Aydin,\n\nThank you for your booking. We have already received your deposit of £60.\n\nCheck-in: Friday, 12 June, after 15:00\nCheck-out: Monday, 15 June, before 11:00\nRoom: double room, second floor, sea view\nGuests: 2 adults\nTotal price: £240 (breakfast included)\n\nYour room is quieter than the rooms next to the road. Breakfast is from 07:30 to 10:00 in the Garden Room. You can leave your bags at reception before check-in. The hotel car park is free, but you must tell us your car number when you arrive. The nearest bus stop is 200 metres from the hotel.\n\nCANCELLATION\nYou can cancel for free until 5 June. After that date we will keep your deposit. Late guests must call reception before 20:00.\n\nReception is open 24 hours. Our number is 01273 555 108.\n\nWe are looking forward to seeing you.\n\nMarco Rossi\nFront Desk Manager",
@@ -5006,7 +5033,10 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "until",
         "tr": "-e kadar"
-      }
+      },
+        { "de": "bit", "tr": "azıcık" },
+        { "de": "match", "tr": "eşleştirmek" },
+        { "de": "noon", "tr": "öğleyin" },
     ],
     "minutes": 3,
     "segments": [
@@ -7047,7 +7077,8 @@ export const enMobile2026: SkillExercise[] = [
       {
         "de": "complaint",
         "tr": "şikâyet"
-      }
+      },
+        { "de": "hole", "tr": "delik" },
     ],
     "minutes": 8,
     "tasks": [

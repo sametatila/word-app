@@ -279,6 +279,7 @@ export const enB1U16: SkillExercise[] = [
       { de: "system", tr: "sistem" },
       { de: "matters", tr: "önemli" },
       { de: "themselves", tr: "kendileri" },
+      { de: "verdict", tr: "mahkeme kararı" },
     ],
     minutes: 6,
     segments: [

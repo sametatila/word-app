@@ -26,6 +26,11 @@ export const enB2P10: SkillExercise[] = [
       { de: "process", tr: "süreç" },
       { de: "careless", tr: "dikkatsiz" },
       { de: "friction", tr: "sürtünme" },
+      { de: "visible", tr: "görünür" },
+      { de: "caution", tr: "tedbir" },
+      { de: "eventually", tr: "en sonunda" },
+      { de: "harmful", tr: "zararlı" },
+      { de: "compete", tr: "rekabet etmek" },
     ],
     minutes: 8,
     text:
@@ -120,6 +125,9 @@ export const enB2P10: SkillExercise[] = [
       { de: "to review", tr: "gözden geçirmek" },
       { de: "deadline", tr: "son tarih" },
       { de: "wording", tr: "ifade biçimi" },
+      { de: "visible", tr: "görünür" },
+      { de: "lead", tr: "liderlik etmek" },
+      { de: "lawyer", tr: "avukat" },
     ],
     minutes: 8,
     segments: [
@@ -204,6 +212,8 @@ export const enB2P10: SkillExercise[] = [
       { de: "to enforce", tr: "uygulatmak" },
       { de: "in hindsight", tr: "sonradan bakınca" },
       { de: "to revise", tr: "gözden geçirmek" },
+      { de: "intend", tr: "niyetinde olmak" },
+      { de: "anyway", tr: "zaten" },
     ],
     minutes: 14,
     tasks: [

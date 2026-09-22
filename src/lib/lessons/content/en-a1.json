@@ -20673,8 +20673,8 @@
     "tr": "sabah"
    },
    {
-    "de": "next",
-    "tr": "sonraki"
+    "de": "winter",
+    "tr": "kış"
    },
    {
     "de": "usual",
@@ -21028,20 +21028,20 @@
      },
      {
       "lang": "en",
-      "text": "next"
+      "text": "winter"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: sonraki. Lütfen tekrar et:"
+      "text": "Türkçesi: kış. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "next"
+      "text": "winter"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "next"
+     "target": "winter"
     }
    },
    {
@@ -21965,8 +21965,8 @@
     "tr": "asla"
    },
    {
-    "de": "every",
-    "tr": "her"
+    "de": "run",
+    "tr": "koşmak"
    },
    {
     "de": "all",
@@ -22175,20 +22175,20 @@
      },
      {
       "lang": "en",
-      "text": "every"
+      "text": "run"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: her. Lütfen tekrar et:"
+      "text": "Türkçesi: koşmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "every"
+      "text": "run"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "every"
+     "target": "run"
     }
    },
    {
@@ -28475,8 +28475,8 @@
     "tr": "kusursuz"
    },
    {
-    "de": "really",
-    "tr": "gerçekten"
+    "de": "jeans",
+    "tr": "kot pantolon"
    }
   ],
   "patterns": [
@@ -28789,20 +28789,20 @@
      },
      {
       "lang": "en",
-      "text": "really"
+      "text": "jeans"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: gerçekten. Lütfen tekrar et:"
+      "text": "Türkçesi: kot pantolon. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "really"
+      "text": "jeans"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "really"
+     "target": "jeans"
     }
    },
    {
@@ -36705,8 +36705,8 @@
     "tr": "patika"
    },
    {
-    "de": "someone",
-    "tr": "biri"
+    "de": "coat",
+    "tr": "palto"
    },
    {
     "de": "public",
@@ -37089,20 +37089,20 @@
      },
      {
       "lang": "en",
-      "text": "someone"
+      "text": "coat"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: biri. Lütfen tekrar et:"
+      "text": "Türkçesi: palto. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "someone"
+      "text": "coat"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "someone"
+     "target": "coat"
     }
    },
    {
@@ -50695,8 +50695,8 @@
     "tr": "bir şeyler yapmak"
    },
    {
-    "de": "so",
-    "tr": "bu kadar; bu yüzden"
+    "de": "fly",
+    "tr": "uçmak"
    }
   ],
   "patterns": [
@@ -51098,20 +51098,20 @@
      },
      {
       "lang": "en",
-      "text": "so"
+      "text": "fly"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: bu kadar; bu yüzden. Lütfen tekrar et:"
+      "text": "Türkçesi: uçmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "so"
+      "text": "fly"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "so"
+     "target": "fly"
     }
    },
    {

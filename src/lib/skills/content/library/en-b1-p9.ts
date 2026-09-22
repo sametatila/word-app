@@ -26,6 +26,9 @@ export const enB1P9: SkillExercise[] = [
       { de: "to taste", tr: "tatmak" },
       { de: "onion", tr: "soğan" },
       { de: "pan", tr: "tencere" },
+      { de: "smell", tr: "kokmak" },
+      { de: "ingredients", tr: "malzemeler" },
+      { de: "brown", tr: "kahverengi" },
     ],
     minutes: 6,
     text:
@@ -118,6 +121,8 @@ export const enB1P9: SkillExercise[] = [
       { de: "to weigh", tr: "tartmak" },
       { de: "break", tr: "teneffüs" },
       { de: "timetable", tr: "ders programı" },
+      { de: "average", tr: "ortalama" },
+      { de: "hire", tr: "işe almak" },
     ],
     minutes: 6,
     segments: [

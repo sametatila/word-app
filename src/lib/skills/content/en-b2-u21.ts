@@ -330,6 +330,8 @@ export const enB2U21: SkillExercise[] = [
       { de: "afterwards", tr: "sonradan" },
       { de: "backwards", tr: "tersinden" },
       { de: "catches", tr: "yakalıyor" },
+      { de: "passive", tr: "pasif" },
+      { de: "active", tr: "aktif" },
     ],
     minutes: 7,
     segments: [

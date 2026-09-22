@@ -242,6 +242,7 @@ export const enB2U24: SkillExercise[] = [
       { de: "a step", tr: "adım" },
       { de: "preparatory", tr: "hazırlık" },
       { de: "one after another", tr: "arka arkaya" },
+      { de: "active", tr: "aktif" },
     ],
     minutes: 7,
     segments: [

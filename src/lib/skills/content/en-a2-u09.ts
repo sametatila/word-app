@@ -107,6 +107,7 @@ export const enA2U09: SkillExercise[] = [
       { de: "stairs", tr: "merdiven" },
       { de: "carried", tr: "taşıdılar" },
       { de: "In the end", tr: "sonunda" },
+      { de: "furniture", tr: "mobilya" },
     ],
     minutes: 6,
     text:
@@ -185,6 +186,7 @@ export const enA2U09: SkillExercise[] = [
       { de: "shelves", tr: "raflar" },
       { de: "papers", tr: "kâğıtlar" },
       { de: "Later", tr: "sonra" },
+      { de: "furniture", tr: "mobilya" },
     ],
     minutes: 5,
     segments: [

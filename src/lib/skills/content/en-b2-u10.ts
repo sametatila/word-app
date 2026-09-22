@@ -63,6 +63,7 @@ export const enB2U10: SkillExercise[] = [
       { de: "look up", tr: "bakıp bulmak" },
       { de: "an ending", tr: "ek" },
       { de: "a nominalisation", tr: "adlaştırma" },
+      { de: "sharp", tr: "keskin" },
     ],
     minutes: 9,
     text:
@@ -404,6 +405,7 @@ export const enB2U10: SkillExercise[] = [
       { de: "the distinction", tr: "ayrım" },
       { de: "the contrast", tr: "karşıtlık" },
       { de: "consent", tr: "rıza" },
+      { de: "sharp", tr: "keskin" },
     ],
     minutes: 9,
     tasks: [

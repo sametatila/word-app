@@ -26,6 +26,12 @@ export const enB2P8: SkillExercise[] = [
       { de: "fortnightly", tr: "iki haftada bir" },
       { de: "consultation", tr: "görüş alma" },
       { de: "to reject", tr: "geri çevirmek" },
+      { de: "current", tr: "mevcut" },
+      { de: "contain", tr: "içermek" },
+      { de: "household", tr: "hane büyüklüğü" },
+      { de: "object", tr: "nesne" },
+      { de: "property", tr: "mülk" },
+      { de: "tin", tr: "teneke kutu" },
     ],
     minutes: 8,
     text:
@@ -123,6 +129,10 @@ export const enB2P8: SkillExercise[] = [
       { de: "shopper", tr: "alışveriş yapan" },
       { de: "incentive", tr: "teşvik" },
       { de: "kerbside", tr: "kapı önü" },
+      { de: "household", tr: "hane büyüklüğü" },
+      { de: "anyway", tr: "zaten" },
+      { de: "calculate", tr: "hesaplamak" },
+      { de: "tray", tr: "tepsi" },
     ],
     minutes: 8,
     segments: [
@@ -200,6 +210,9 @@ export const enB2P8: SkillExercise[] = [
       { de: "container", tr: "kutu" },
       { de: "helpline", tr: "danışma hattı" },
       { de: "improvement", tr: "iyileşme" },
+      { de: "genuine", tr: "hakiki" },
+      { de: "household", tr: "hane büyüklüğü" },
+      { de: "contaminate", tr: "kirletmek" },
     ],
     minutes: 14,
     tasks: [

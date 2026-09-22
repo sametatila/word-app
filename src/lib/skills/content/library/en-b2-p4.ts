@@ -28,6 +28,11 @@ export const enB2P4: SkillExercise[] = [
       { de: "gutter", tr: "oluk" },
       { de: "coincidence", tr: "tesadüf" },
       { de: "leak", tr: "sızıntı" },
+      { de: "current", tr: "mevcut" },
+      { de: "edge", tr: "kenar" },
+      { de: "wind", tr: "rüzgâr" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "roof", tr: "çatı" },
     ],
     minutes: 9,
     text:
@@ -121,6 +126,10 @@ export const enB2P4: SkillExercise[] = [
       { de: "body clock", tr: "biyolojik saat" },
       { de: "supervise", tr: "gözetmek" },
       { de: "pupil", tr: "öğrenci" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "genuine", tr: "hakiki" },
+      { de: "slight", tr: "ufak" },
+      { de: "teenager", tr: "ergen" },
     ],
     minutes: 9,
     segments: [
@@ -205,6 +214,9 @@ export const enB2P4: SkillExercise[] = [
       { de: "cause", tr: "neden" },
       { de: "likely", tr: "muhtemel" },
       { de: "log", tr: "kayıt defteri" },
+      { de: "appear", tr: "bizzat gitmek" },
+      { de: "genuine", tr: "hakiki" },
+      { de: "uniform", tr: "üniforma" },
     ],
     minutes: 12,
     tasks: [

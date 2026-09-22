@@ -114,41 +114,55 @@ function ders(kurs: Kurs): Map<string, string> {
  * seviye değil. Soru "bu sözcük öğrenciye hiç görünüyor mu"; A1 havuzundaki
  * bir sözcük B2 metninde geçiyorsa da öğretilmemiş olması bir boşluktur.
  * Ölçüldü ve doğrulandı: `Text*` kurs genelinde 230, A1 metinlerinde 0.
+ *
+ * EGZERSİZİN KENDİ SÖZLÜKÇESİ AYRI SAYILIYOR (2026-09-22). Ünite kapılarının
+ * ikisi de — `check-en-unit-vocab` `allowed()`, `check-unit-vocab` — egzersizin
+ * `gloss` listesini havuza ekliyor, gerekçesi orada tek cümle: "Egzersizin
+ * kendi sözlükçesi öğrenciye VERİLMİŞTİR." Burada o ayrım yoktu: sözlükçede
+ * karşılığı verilen bir sözcük de "öğrenci bunu desteksiz görüyor" sayılıyordu.
+ * Artık iki sayı birden dönüyor; bütçe `sozluksuz` olanı sayıyor, yani borç
+ * "patika öğretmiyor VE hiçbir yerde karşılığı verilmiyor" demek. Yazma
+ * görevinin `phrases`/`words` listeleri de sözlükçe sayılıyor (ünite kapısı
+ * öyle sayıyor: öğrenci o sözcükleri görevin içinde karşılığıyla alıyor).
  */
-function kullanim(kurs: Kurs): Map<string, number> {
-  const m = new Map<string, number>();
+type Kullanim = { toplam: Map<string, number>; sozluksuz: Map<string, number> };
+function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
+  const toplam = new Map<string, number>();
+  const sozluksuz = new Map<string, number>();
   const onek = kurs === "en" ? /^en-(a1|a2|b1|b2|c1)-/ : /^(a1|a2|b1|b2|c1)-/;
+  const kendi = new Map<string, string>();
+  for (const w of hv.keys()) kendi.set(w, w);
+  const kokBul = (t: string) => (kurs === "en" ? enStems(t).find((st) => hv.has(st)) : kokAra(kendi, t));
   for (const e of BUNDLED_EXERCISES as unknown as LooseExercise[]) {
     if (!onek.test(e.id)) continue;
+    /* Egzersizin sözlükçesi: `gloss` + yazma görevinin kalıp/sözcük listeleri. */
+    const sozluk = new Set<string>();
+    const ekle = (raw?: string) => {
+      if (!raw) return;
+      for (const w of raw.toLowerCase().split(/[\s/,-]+/)) {
+        const c = w.replace(/^'+|'+$/g, "");
+        if (c.length < 2) continue;
+        const kok = kokBul(c);
+        if (kok) sozluk.add(kok);
+      }
+    };
+    for (const g of e.gloss ?? []) ekle(g.de);
+    for (const t of e.tasks ?? []) {
+      for (const g of t.phrases ?? []) ekle(g.de);
+      for (const g of t.words ?? []) ekle(g.de);
+    }
     const metin = kurs === "en" ? englishSurface(e as unknown as SkillExercise) : germanSurface(e);
     const tok = kurs === "en"
       ? (metin.toLowerCase().match(/[\p{L}'-]{2,}/gu) ?? [])
       : (metin.toLowerCase().match(/[a-zäöüßéèêáàóúï]{2,}/g) ?? []);
-    for (const w of tok) m.set(w, (m.get(w) ?? 0) + 1);
+    for (const w of tok) {
+      const kok = kokBul(w);
+      if (!kok) continue;
+      toplam.set(kok, (toplam.get(kok) ?? 0) + 1);
+      if (!sozluk.has(kok)) sozluksuz.set(kok, (sozluksuz.get(kok) ?? 0) + 1);
+    }
   }
-  return m;
-}
-
-/**
- * Belirteç → havuz sözcüğü, sonra havuz sözcüğü → toplam geçiş.
- *
- * İLK YAZIMDA TERS YÖNE BAKIYORDUM — her havuz sözcüğü için "hangi
- * belirteçler buna indirgeniyor" diye, tek anahtarlı bir haritayla. Felaketti:
- * tek anahtarla kapının eşleştiricisi (son iki harf serbest) `bitte`yi
- * `bitter`a bağladı ve A1'in en acil boşluğu "bitter×204" çıktı. Doğru yön bu:
- * her belirteç havuzun TAMAMINA karşı bir kez çözülüyor, yani `bitte` kendi
- * kaydına gidiyor ve `bitter`ı şişirmiyor.
- */
-function kokSayimi(kurs: Kurs, kul: Map<string, number>, hv: Map<string, string>): Map<string, number> {
-  const kendi = new Map<string, string>();
-  for (const w of hv.keys()) kendi.set(w, w);
-  const out = new Map<string, number>();
-  for (const [t, c] of kul) {
-    const kok = kurs === "en" ? enStems(t).find((st) => hv.has(st)) : kokAra(kendi, t);
-    if (!kok) continue;
-    out.set(kok, (out.get(kok) ?? 0) + c);
-  }
-  return out;
+  return { toplam, sozluksuz };
 }
 
 /**
@@ -209,22 +223,29 @@ for (const kurs of kurslar) {
   const ogretiliyor = (w: string) =>
     kurs === "en" ? enStems(w).some((st) => ds.has(st)) : ds.has(w);
   /* Serbest sözcük listesi kursun kendi listesi: başlıktaki (1) numaralı not. */
-  const serbest = (w: string) => (kurs === "en" ? EN_FREE.has(w) : SERBEST.has(w));
-  const kul = kokSayimi(kurs, kullanim(kurs), hv);
+  /* Serbest listesi de GÖVDEYE bakıyor: `sunday` serbestse `sundays` da öyle,
+     yoksa çoğul biçim "hiç öğretilmeyen" diye borca yazılıyordu. */
+  const serbest = (w: string) => (kurs === "en" ? enStems(w).some((st) => EN_FREE.has(st)) : SERBEST.has(w));
+  const { toplam: kul, sozluksuz } = kullanim(kurs, hv);
   console.log(`\n=== ${kurs.toUpperCase()} kursu — patika boşluğu ===`);
   for (const lv of LEVELS) {
     const seviyeHavuz = [...hv].filter(([, l]) => l === lv).map(([w]) => w);
     if (!seviyeHavuz.length) continue;
     const ogretilen = seviyeHavuz.filter(ogretiliyor);
     const bosluk = seviyeHavuz.filter((w) => !ogretiliyor(w) && !serbest(w));
+    /* BORCA SAYILAN: karşılığı hiçbir yerde verilmeden geçen sözcük. Sözlükçeli
+       geçişler ayrı sayılıyor ve raporda gösteriliyor — yazarın işi orada
+       "derse al" değil, zaten yapılmış. */
     const kullanilan = bosluk
-      .map((w) => [w, kul.get(w) ?? 0] as const)
+      .map((w) => [w, sozluksuz.get(w) ?? 0] as const)
       .filter(([, n]) => n > 0)
       .sort((a, b) => b[1] - a[1]);
+    const sozlukluKapanan = bosluk.filter((w) => (kul.get(w) ?? 0) > 0 && !(sozluksuz.get(w) ?? 0)).length;
     const kapsam = Math.round((ogretilen.length / seviyeHavuz.length) * 100);
     console.log(
       `  ${lv.toUpperCase()}  havuz ${String(seviyeHavuz.length).padStart(4)} · patika öğretiyor ${String(ogretilen.length).padStart(4)} (%${kapsam})` +
-      ` · hiç öğretilmeyen ${String(bosluk.length).padStart(4)}, bunların ${kullanilan.length}'i kurs metinlerinde GEÇİYOR`,
+      ` · hiç öğretilmeyen ${String(bosluk.length).padStart(4)}, bunların ${kullanilan.length}'i metinlerde SÖZLÜKÇESİZ geçiyor` +
+      ` (${sozlukluKapanan} tanesi geçtiği her yerde sözlükçeli)`,
     );
     /* İki ölçü, iki yön. `bosluk` bir BORÇ: metinde geçip hiç öğretilmeyen
        sözcük sayısı büyüyemez. `kapsam` bir KAZANÇ: patikanın havuzu öğretme
@@ -233,7 +254,7 @@ for (const kurs of kurslar) {
     sayim.set(`${kurs} ${lv} bosluk`, kullanilan.length);
     sayim.set(`${kurs} ${lv} kapsam`, kapsam);
     if (kullanilan.length) {
-      console.log(`      önce bunlar (sayım kurs geneli): ${kullanilan.slice(0, 15).map(([w, n]) => `${w}×${n}`).join(" · ")}`);
+      console.log(`      önce bunlar (sözlükçesiz geçiş, kurs geneli): ${kullanilan.slice(0, 15).map(([w, n]) => `${w}×${n}`).join(" · ")}`);
     }
   }
   yuvaMuhasebesi(kurs);

@@ -25,6 +25,10 @@ export const enB2P7: SkillExercise[] = [
       { de: "clarity", tr: "anlaşılırlık" },
       { de: "to hesitate", tr: "duraksamak" },
       { de: "structure", tr: "yapı" },
+      { de: "judge", tr: "hâkim" },
+      { de: "resist", tr: "direnmek" },
+      { de: "explanation", tr: "açıklama" },
+      { de: "communication", tr: "iletişim" },
     ],
     minutes: 8,
     text:
@@ -121,6 +125,10 @@ export const enB2P7: SkillExercise[] = [
       { de: "transcript", tr: "yazılı döküm" },
       { de: "to replicate", tr: "yinelemek" },
       { de: "headline", tr: "başlık" },
+      { de: "practical", tr: "pratik" },
+      { de: "participant", tr: "katılımcı" },
+      { de: "unfamiliar", tr: "tanıdık olmayan" },
+      { de: "poor", tr: "fakir" },
     ],
     minutes: 8,
     segments: [
@@ -201,6 +209,8 @@ export const enB2P7: SkillExercise[] = [
       { de: "sample", tr: "örneklem" },
       { de: "cautious", tr: "temkinli" },
       { de: "conclusion", tr: "sonuç" },
+      { de: "participant", tr: "katılımcı" },
+      { de: "unfamiliar", tr: "tanıdık olmayan" },
     ],
     minutes: 14,
     tasks: [

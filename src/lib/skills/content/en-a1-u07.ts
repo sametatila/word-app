@@ -38,6 +38,7 @@ export const enA1U07: SkillExercise[] = [
       { de: "big", tr: "büyük" },
       { de: "prefer … to …", tr: "… yerine …'i tercih etmek" },
       { de: "In a sale", tr: "indirimde" },
+      { de: "hate", tr: "nefret etmek" },
     ],
     minutes: 4,
     text:
@@ -182,6 +183,7 @@ export const enA1U07: SkillExercise[] = [
       { de: "drink", tr: "içmek" },
       { de: "better", tr: "daha iyi" },
       { de: "Not yet", tr: "henüz değil" },
+      { de: "hate", tr: "nefret etmek" },
     ],
     minutes: 4,
     segments: [

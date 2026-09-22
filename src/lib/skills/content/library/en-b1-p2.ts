@@ -28,6 +28,8 @@ export const enB1P2: SkillExercise[] = [
       { de: "upwards", tr: "yukarı doğru" },
       { de: "cover", tr: "kapak" },
       { de: "waste", tr: "israf etmek" },
+      { de: "engineer", tr: "mühendis" },
+      { de: "sky", tr: "gökyüzü" },
     ],
     minutes: 7,
     text:
@@ -117,6 +119,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "bored", tr: "sıkılmış" },
       { de: "electrician", tr: "elektrikçi" },
       { de: "opposite", tr: "zıt" },
+      { de: "host", tr: "davet sahibi" },
     ],
     minutes: 7,
     segments: [
@@ -193,6 +196,8 @@ export const enB1P2: SkillExercise[] = [
       { de: "railing", tr: "korkuluk" },
       { de: "quiet hours", tr: "sessizlik saatleri" },
       { de: "instalment", tr: "taksit" },
+      { de: "roof", tr: "çatı" },
+      { de: "shade", tr: "renk tonu" },
     ],
     minutes: 10,
     tasks: [
