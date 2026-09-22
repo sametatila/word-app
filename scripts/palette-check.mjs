@@ -117,9 +117,16 @@ const raw = await readFile(CSS, "utf8");
 const css = raw.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " "));
 
 /** Bir blok içindeki `--ad: değer;` çiftlerini toplar. */
+/*
+ * YALNIZ ÜST DÜZEYDEKİ kural: seçici satır başında ve arkasından `{` geliyor.
+ * Küçük ekran ölçeği (`@media (max-width: 389.98px) { :root { … } }`) yalnız
+ * yazı/boşluk tokenlarını ezen İÇ İÇE bir `:root` ekledi; o, gerçek `:root`tan
+ * önce geldiği için ilk eşleşme ona düşüyor ve renkler tanımsız kalıyordu.
+ */
 function block(selector) {
-  const i = css.indexOf(selector);
-  if (i < 0) throw new Error(`globals.css içinde ${selector} yok`);
+  const esc = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const i = css.search(new RegExp(`^${esc}\\s*\\{`, "m"));
+  if (i < 0) throw new Error(`globals.css içinde üst düzey ${selector} yok`);
   const open = css.indexOf("{", i);
   let depth = 0, end = open;
   for (let j = open; j < css.length; j++) {
