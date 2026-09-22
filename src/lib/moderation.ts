@@ -160,12 +160,15 @@ const COMPOUND_INSULTS = [
 ];
 
 /**
- * Sözcük düzeyi eşlemeden muaf tutulan gerçek adlar. Kısa tutuluyor: her girdi
- * ölçülmüş bir yanlış pozitifi karşılıyor (Bitchell ⊃ bitch, Nigeria/Nigar ⊃
- * nigger, Amina ⊃ amına). Muafiyet YALNIZ sözcük düzeyindedir; birleşik metinde
- * arama yine tüm sözcükler üzerinden yapılır, yoksa "amina koyayim" kaçardı.
+ * Sözcük düzeyi eşlemeden muaf tutulan gerçek adlar ve masum sözcükler. Kısa
+ * tutuluyor: her girdi ölçülmüş bir yanlış pozitifi karşılıyor (Bitchell ⊃
+ * bitch, Nigeria/Nigar ⊃ nigger, Amina ⊃ amına, eksiktir ⊃ siktir — başlıktaki
+ * "karmaşıktır" örneğinin Türkçe harfle yazılmış hâli; ders içeriğinde geçiyor
+ * ve `test:moderation`ın içerik taraması 2026-09-22'de yakaladı). Muafiyet
+ * YALNIZ sözcük düzeyindedir; birleşik metinde arama yine tüm sözcükler
+ * üzerinden yapılır, yoksa "amina koyayim" kaçardı.
  */
-const ALLOWLIST = new Set(["bitchell", "nigeria", "nigar", "amina"]);
+const ALLOWLIST = new Set(["bitchell", "nigeria", "nigar", "amina", "eksiktir"]);
 
 /* ------------------------------------------------------------------ */
 /* Eşleme                                                              */
@@ -221,6 +224,12 @@ function matches(kept: string[], all: string[], layer: Layer): boolean {
 function abusive(text: string): boolean {
   const all = words(text);
   if (!all.length) return false;
+  /* Girdinin TAMAMI beyaz listedeki tek bir sözcükse burada biter. Sözcük
+     düzeyi muafiyet tek başına yetmiyordu: birleşik metin araması (`joined`)
+     bilerek süzülmemiş hâl üzerinden yapılıyor ve "eksiktir" ⊃ "siktir"
+     infix'ine takılıyordu. Kaçamaklar etkilenmiyor — "amina koyayim" iki
+     sözcük, birleşiği beyaz listede değil, yakalanmaya devam ediyor. */
+  if (all.length === 1 && ALLOWLIST.has(asciiFold(all[0]))) return false;
   const ascii = all.map(asciiFold);
   const trKept = all.filter((w) => !ALLOWLIST.has(asciiFold(w)));
   const asciiKept = ascii.filter((w) => !ALLOWLIST.has(w));
