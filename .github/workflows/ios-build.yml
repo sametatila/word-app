@@ -38,7 +38,10 @@ concurrency:
 jobs:
   build:
     runs-on: macos-15
-    timeout-minutes: 60
+    # 60 yetmiyordu (koşu 35771234165): derleme ~16 dk + kare matrisi ~41 dk,
+    # üstüne XCUITest turu kendi 16 dk bütçesiyle. Depo private olursa macOS
+    # dakikası kotada 10 kat sayılır; o gün bu iş yeniden düşünülmeli.
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
 
