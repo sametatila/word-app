@@ -9254,63 +9254,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         }
         return out;
       };
-      const tablo = (kok) => {
-        const out = new Map();
-        for (const f of yuruTsx(kok)) {
-          const src = sil(read(f));
-          for (const m of src.matchAll(/<Mascot\b[^>]*?\/>/g)) {
-            /* KIP DINAMIK OLABILIR. Ilk yazim yalniz `mood="celebrate"` gibi
-               DUZ yazilmis kipleri okuyordu; sablon yuvalarina gecince (2026-09-18)
-               turun iki bandi da ucluk kosula dondu ve tarama ikisini birden
-               kaybediyor, ortak yuzey sayisi 2'den 1'e dusuyordu. Dinamik kipin
-               kimligi ifadenin METNI DEGIL, icindeki klip KUMESI: iki platform
-               ayni kosulu ayri degisken adlariyla yaziyor (`pct` / `accuracy`)
-               ve ad farki ayrisma sayilmamali. */
-            const duz = (m[0].match(/mood="(\w+)"/) ?? [])[1];
-            const ifade = (m[0].match(/mood=\{([^}]*(?:\}[^}]*)*?)\}\s/) ?? [])[1];
-            const kip = duz
-              ? duz
-              : ifade
-                ? "{" + [...new Set([...ifade.matchAll(/"(\w+)"/g)].map((x) => x[1]))].sort().join(",") + "}"
-                : null;
-            if (!kip || kip === "{}") continue;
-            const boy =
-              (m[0].match(/size=\{(\d+)\}/) ?? [])[1] ??
-              (/size=\{MASCOT_BAND\}/.test(m[0]) ? String(SABLON[kok.startsWith("mobile") ? "mobil" : "web"].bantBoy)
-               : /size=\{MASCOT_STATE\}/.test(m[0]) ? String(SABLON[kok.startsWith("mobile") ? "mobil" : "web"].durumBoy)
-               : "?");
-            /* Yuzeyin kimligi: etiketten SONRAKI ilk sozluk anahtari. */
-            const pencere = src.slice(m.index, m.index + 700);
-            const k = (pencere.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
-            if (!k || out.has(k)) continue;
-            out.set(k, kip + "/" + boy);
-          }
-          /* SABLON YUZEYLERI (2026-09-15). Maskot artik `<ResultHero mood=…>`
-             (bant, `MASCOT_BAND`) ve `<StateBody mood=…>` (durum,
-             `MASCOT_STATE`) icinde ciziliyor; ciplak `<Mascot>` arayan tarama
-             yedi ortak yuzeyin hepsini kaybetti. Kip etiketten, boy SABLONUN
-             KENDI dosyasindan okunuyor (`SABLON`). Yuzeyin kimligi `title=`
-             prop'undaki ilk sozluk anahtari: bandin ilk anahtari ust satir
-             (`flow.round` gibi) ve cok ekranda ortak. */
-          const platform = kok.startsWith("mobile") ? "mobil" : "web";
-          for (const m of src.matchAll(/<(ResultHero|StateBody)\b/g)) {
-            const son = acilisSonu(src.slice(m.index));
-            if (son < 0) continue;
-            const etiket = src.slice(m.index, m.index + son + 1);
-            const kip = (etiket.match(/\smood="(\w+)"/) ?? [])[1];
-            if (!kip) continue;
-            const boy = m[1] === "StateBody" ? SABLON[platform].durumBoy : SABLON[platform].bantBoy;
-            const baslik = etiket.slice(Math.max(0, etiket.search(/\stitle=\{/)));
-            const k = (baslik.match(/["`]([a-z][a-zA-Z0-9_]*\.[a-zA-Z0-9_]+)["`]/) ?? [])[1];
-            if (!k || out.has(k)) continue;
-            out.set(k, kip + "/" + boy);
-          }
-        }
-        return out;
-      };
-      const webY = tablo("src");
-      const mobY = tablo("mobile/src");
-      const ortak = [...webY.keys()].filter((k) => mobY.has(k)).sort();
+      /* YUZEY TABLOSU KALKTI (2026-09-22). Maskotu cizen yerleri tarayip
+         iki platformda eslestiren bir tablo vardi (yedi ortak yuzey: sonuc
+         bandi, durum ekrani, kart ortasi…). Bugun yuzey TEK: Ogren
+         ekranindaki gunluk tur kutusu. Esleme yerine dogrudan kutunun
+         etiketi okunuyor (asagida "kutudaki maskotun kipi ve boyu"). */
       /*
         MASKOT YALNIZ OGREN EKRANININ GUNLUK TUR KUTUSUNDA
         (2026-09-22, Samet'in karari).
