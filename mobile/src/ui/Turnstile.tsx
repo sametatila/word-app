@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { View } from "react-native";
+import { Linking, View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
 import { useTheme } from "../theme";
@@ -56,6 +56,21 @@ export function Turnstile({
         javaScriptEnabled
         domStorageEnabled
         scrollEnabled={false}
+        // Turnstile sınamayı `about:srcdoc` çerçevesinde koşuyor. Kütüphane
+        // listeye kendiliğinden yalnız `about:blank` ekliyor; listede olmayan
+        // adresi engelleyip Linking ile dışarıda açmaya çalışıyor. iOS'ta widget
+        // bu yüzden "Doğrulanıyor"da sonsuza kadar dönüyordu (TestFlight build 2).
+        // Cloudflare'in mobil belgesi de about:blank + about:srcdoc istiyor.
+        originWhitelist={["https://*", "about:*"]}
+        // Alt çerçeveler (Cloudflare'in kendi iframe'leri) serbest. Ana çerçeve
+        // yalnız widget sayfasında kalabilir; "Gizlilik/Yardım" gibi bağlantılar
+        // 74 pt'lik kutunun içinde değil tarayıcıda açılsın.
+        onShouldStartLoadWithRequest={(req) => {
+          if (req.isTopFrame === false || req.url.startsWith("about:")) return true;
+          if (req.url.startsWith(`${API_BASE}/api/turnstile`)) return true;
+          Linking.openURL(req.url).catch(() => {});
+          return false;
+        }}
         // Sayfa saydam; uygulamanın kendi zemini görünsün.
         style={{ backgroundColor: "transparent" }}
         // Android'de varsayılan beyaz zemin saydamlığı eziyor.
