@@ -1,0 +1,3 @@
+# Satir sonlari: depo LF. .bat dosyalari (gradlew.bat) oldugu gibi, CRLF kalir.
+* text=auto eol=lf
+*.bat -text
