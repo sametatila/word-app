@@ -134,15 +134,25 @@ Genel ilkeler (her WP için):
 
 **Süre.** 2 gün. **Bağımlılık.** WP-60, WP-41, WP-52.
 
-**Güncelleme (2026-09-18 ve 2026-09-22) — yukarıdaki "anlar" listesi artık geçerli
-değil.** Maskot yalnız Öğren sekmesinin GÜNLÜK turunda: plan kartı, sınav girişi,
-haftalık özet ve durum ekranları dahil ürünün geri kalanında Erdi yok; koçun
-CÜMLESİ maskotsuz ortak gövdeye taşındı (`ui/CoachLine`, `components/coach-line`).
-22 Eylül'de sınır bir adım daha daraldı: aynı tur ekranı Pratik ekranından, zayıf
-nokta kartından ve günlük plandan da açılıyor ve orada oturum tek oyuna kilitli
-(`?game=…` / `route.params.game`). Bu HEDEFLİ çalışma tur sayılmıyor — tur =
-karışık tur. Kapılar: `check:parity` "maskot yalnız günlük turda" (çizen dosya
-listesi) ve "maskot sınırını ağaç veriyor" (sağlayıcı tek kökten kuruluyor, kanca
-okunuyor, hedefli oturumda değer kapalı).
+**Güncelleme (2026-09-18 → 2026-09-22) — yukarıdaki "anlar" listesi artık
+geçerli değil.** Karar iki adımda daraldı ve son yerine oturdu:
+
+1. 18 Eylül: Erdi ürünün geri kalanından çekildi, yalnız günlük turda kaldı.
+   Koçun CÜMLESİ maskotsuz ortak gövdeye taşındı (`ui/CoachLine`,
+   `components/coach-line`).
+2. 22 Eylül: maskot TURUN İÇİNDE de kalmadı. Tek yeri **Öğren ekranındaki
+   günlük tur kutusu** (`components/learn/learn-hub`, `screens/LearnScreen`) —
+   davetin parçası; tur başlayınca ekranda görünmüyor.
+
+Bu yüzden silindiler: gün turu sağlayıcısı (`daily-round.tsx`,
+`game/dailyRound.tsx`), kutlama pop'u, ortam yürüyüşü, koç balonu, cevap
+şeridini çekme koreografisi (`lib/mascot-hold`) ve tek-Erdi sahne kilidi
+(`lib/mascot-stage`). Çağrılanı kalmayan sekiz klip arşive alındı
+(`assets-archive/mascot/`), mobil paketten çıktı.
+
+Kapı: `check:parity` "maskot yalnız günlük tur kutusunda" — Erdi'yi çizen
+dosya listesi iki satır (bileşen + kutu, her platformda) ve kutunun kendisi
+ölçülüyor, yani maskot ne başka yere sızabilir ne de sessizce kaybolabilir.
+Boy tek sabitte: `MASCOT_CARD`.
 
 **Durum (2026-08-25).** Adım 1–3 bitti. `src/components/coach-bubble.tsx` (`moment`, `mood`, `vars`, `hold` 4000, `tone` card/dark, `role=status`; balon kapanır, Erdi kalır; hareket azaltmada yalnız metin), `src/lib/coach-lines.ts` (8 an × 5 = 40 cümle; `pickCoachLine` cihazda son söylenenleri dışlar, `fillCoachLine` isim yoksa virgülüyle düşürür, `planMoment` saat → sabah/gün/akşam). Bağlanan anlar: plan kartı selamı (`wave`, ada göre), haftalık özet Pzt–Sal (`peek`, "bak ne oldu"), sınav girişi (`think`), sınav sonucu (`cheer`/`sad` + puan ve seviye), hedefli tur özeti (`thumbsup`/`sad`, `/learn?game=` ile açılan tur). `Mood`'a `peek` eklendi (klip `peek.webp`). Birim test `npm run test:coach-lines` (mevcut `test:coach` AI koç değerlendirmesiydi, ad çakışmasın diye). Kanıt: `reports/shots/wp66-coach-{plan,exam-intro,exam-result,targeted-start,weak-done}.png`.

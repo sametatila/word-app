@@ -1,9 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Mascot } from "@/components/mascot";
 import { RoundSheet, type SheetData } from "./round-sheet";
-import { useDailyRound } from "@/components/daily-round";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -81,7 +79,6 @@ export function GameShell({
   children,
   footer,
   sheet = null,
-  pull = true,
   onContinue,
 }: {
   label: string;
@@ -101,8 +98,6 @@ export function GameShell({
    * düzen `round-sheet`te tek yerde — mobil `FeedbackFooter` ile aynı.
    */
   sheet?: SheetData | null;
-  /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
-  pull?: boolean;
   /**
    * "Devam" — cevaptan sonra turu KULLANICI kapatır.
    *
@@ -114,7 +109,6 @@ export function GameShell({
    */
   onContinue?: () => void;
 }) {
-  const tur = useDailyRound();
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col md:block">
       {/* SORU KARTI — mobil `rounds.tsx` › `Prompt` ile aynı: kendi yüzeyi,
@@ -130,20 +124,13 @@ export function GameShell({
       </div>
 
       {/*
-        İki bölge arası — boşluğu Erdi dolduruyor (mobil `MascotMid`).
-        Cevaptan sonra gizleniyor ama YERİNİ koruyor: şıklar zıplamasın.
-        Sebebi tek Erdi kuralı: aynı anda hem burada hem katmanda duramaz.
-
-        ARTAN BOŞLUK BURADA TOPLANIYOR, sorunun ÜSTÜNDE değil. Önce üstteydi
-        ve uzun ekranda soru kartı dibe çöküyordu; mobilde soru en üstte kalır,
-        esneyen tek yer bu orta bölge (`MascotMid`, `flex: 1`).
+        İKİ BÖLGE ARASI — ARTAN BOŞLUK BURADA TOPLANIYOR, sorunun ÜSTÜNDE
+        değil. Önce üstteydi ve uzun ekranda soru kartı dibe çöküyordu;
+        mobilde soru en üstte kalır, esneyen tek yer bu orta bölge.
+        Bir süre boşluğu Erdi dolduruyordu; maskot 2026-09-22'de turun
+        içinden de kalktı (yalnız Öğren ekranının günlük tur kutusunda).
       */}
-      {/* Erdi yalnız günlük turda (`components/daily-round`): patron turu,
-          meydan okuma, sınav, yürüyüş ve quiz aynı kabuğu çiziyor ve orada bu
-          orta bölge esneyen BOŞ bir alan olarak kalırdı. */}
-      <div aria-hidden={sheet != null} className="flex min-h-5 grow items-center justify-center md:hidden">
-        {tur && sheet == null ? <Mascot mood="idle" size={72} /> : null}
-      </div>
+      <div aria-hidden={sheet != null} className="min-h-5 grow md:hidden" />
 
       <div className="md:mt-5">{children}</div>
       {footer ? <div className="mt-4">{footer}</div> : null}
@@ -152,7 +139,7 @@ export function GameShell({
           sıkışık ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
-      <RoundSheet sheet={sheet} pull={pull} onContinue={onContinue} />
+      <RoundSheet sheet={sheet} onContinue={onContinue} />
     </div>
   );
 }

@@ -11,12 +11,8 @@ import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon, CheckIcon, RepeatIcon
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { shareRoundResult } from "../lib/share";
-import { Mascot, MASCOT_BAND, MASCOT_STATE } from "../ui/Mascot";
-import { MascotPop } from "../ui/MascotPop";
-import { MascotFx } from "../ui/MascotFx";
-import { CoachBubble } from "../ui/CoachBubble";
+import { CoachLine } from "../ui/CoachLine";
 import { RoundView } from "../game/rounds";
-import { DailyRound } from "../game/dailyRound";
 import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult, type MissedWord } from "../game/session";
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
@@ -61,15 +57,7 @@ const STAGE_SIZE = 5;
  * içinde kalsın diye bileşen ikiye ayrıldı.
  */
 export function GameScreen() {
-  /* HEDEFLİ ÇALIŞMA TUR DEĞİL: `game` parametresi varsa ekran Pratik'ten ya da
-     zayıf nokta kartından açılmış, tek oyuna kilitli. Erdi yalnız karışık
-     günlük turda oynuyor (bkz. `game/dailyRound`). */
-  const route = useRoute<RouteProp<RootStackParams, "Game">>();
-  return (
-    <DailyRound value={!route.params?.game}>
-      <GameRound />
-    </DailyRound>
-  );
+  return <GameRound />;
 }
 
 function GameRound() {
@@ -116,7 +104,6 @@ function GameRound() {
   /** Turun türü — `session_start` ve `session_done` aynı `kind`i taşısın diye. */
   const sessionKind = useRef("mixed");
   const [wagerResult, setWagerResult] = useState<number | null>(null);
-  const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
   const startedAt = useRef(0);
   const roundStart = useRef(0);
@@ -317,7 +304,6 @@ function GameRound() {
     }
     roundsSeen.current += 1;
     if (ok) roundsRight.current += 1;
-    if (ok && (combo + 1) % 5 === 0) setPop((x) => x + 1);
     const nextCombo = ok ? combo + 1 : 0;
     bestCombo.current = Math.max(bestCombo.current, nextCombo);
     setCombo(nextCombo);
@@ -483,7 +469,6 @@ function GameRound() {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("session.continue_with_new"), onPress: () => void load({ extra: true }) }} tertiary={{ label: t("common.close"), onPress: () => nav.goBack() }} />}>
         <StateBody
-          icon={<Mascot mood="celebrate" size={MASCOT_STATE} />}
           title={t("session.goal_done")}
           body={meta ? `${t("session.goal_done_sub")} ${t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}` : t("session.goal_done_sub")}
         />
@@ -542,9 +527,8 @@ function GameRound() {
           figure={total ? `${finalCorrect}/${total}` : null}
           sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
           /* ZAYIF NOKTA TURUNDA Erdi bandda değil, altında konuşuyor (web `weak_done`). */
-          aside={onlyGame && total > 0 ? null : <Mascot mood={total > 0 ? (deserved ? "celebrate" : pct >= 60 ? "happy" : "sad") : "idle"} size={MASCOT_BAND} pinned />}
         />
-        {onlyGame && total > 0 ? <CoachBubble moment="weak_done" mood={pct >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
+        {onlyGame && total > 0 ? <CoachLine moment="weak_done" /> : null}
         {total > 0 ? (
           <StatRow items={[
             { value: formatPercent(pct), label: t("summary.accuracy") },
@@ -626,8 +610,6 @@ function GameRound() {
       </View>
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { game: gameLabel })}</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
-      <MascotFx />
-      <MascotPop trigger={pop} />
       <ConfirmDialog
         visible={back.visible}
         title={t("game.quit_round_2")}
@@ -686,7 +668,6 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, xp, rema
         eyebrow={t("stage.counter", { n: stage, total: stages })}
         title={t(perfect ? "stage.clean" : "stage.done")}
         sub={`${correct}/${total}`}
-        aside={<Mascot mood={perfect ? "celebrate" : "happy"} size={MASCOT_BAND} pinned />}
         segments={{ done: stage, total: stages }}
       />
       <StatRow items={[

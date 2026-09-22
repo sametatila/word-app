@@ -9,8 +9,6 @@ import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
-import { Mascot } from "@/components/mascot";
-import { useDailyRound } from "@/components/daily-round";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
@@ -25,7 +23,6 @@ const ARTIKEL_TONE: Record<string, string> = {
 export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   const tx = useT();
   const lang = useLang();
-  const tur = useDailyRound();
   const { word } = round;
   const [revealed, setRevealed] = useState(false);
   const [skipping, setSkipping] = useState(false);
@@ -52,18 +49,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
       label={tx("rounds.new_word")}
       /* Tanıtım kartında doğru/yanlış diye bir şey yok: sonuç katmanı hiç
          kurulmuyor ve yeri de ayrılmıyor. İki düğme kartın kendi akışında. */
-      /*
-        Kabuğun okuma bölgesi bu turda boştu: tanıtım kartında sorulan bir soru
-        yok, dolayısıyla `prompt` da yoktu ve etiket tek başına duruyordu.
-        Erdi oraya oturuyor ve ifadesi kartın açılışını izliyor: kelime sesli
-        okunurken şaşkın, anlam belirince gülümsüyor. Kelimeyi ilk kez gören
-        birinin sırası da bu.
-      */
-      /* Tur dışında Erdi çizilmiyor (`components/daily-round`) ve `prompt`
-         BOŞ bir düğüme dönüyordu: kartın üstünde sebepsiz bir boşluk kalırdı.
-         Kelime listesinden ya da demo sayfasından açılan intro turu artık
-         prompt'suz çiziliyor — etiket tek başına, eskiden de öyleydi. */
-      prompt={tur ? <Mascot mood={revealed ? "happy" : "wow"} size={64} className="mx-auto" /> : undefined}
+      /* Okuma bölgesi bu turda BOŞ: tanıtım kartında sorulan bir soru yok.
+         Bir süre Erdi oraya oturuyordu; maskot artık yalnız Öğren ekranının
+         günlük tur kutusunda (2026-09-22), kart yine prompt'suz çiziliyor. */
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.94 }}

@@ -3,9 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
-import { useStageOwner } from "@/lib/mascot-stage";
 import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
-import { useDailyRound } from "@/components/daily-round";
 
 /**
  * Erdi — uygulamanın mirketi.
@@ -63,12 +61,13 @@ export type Mood =
   "bu da ne?" hâlini zaten taşıyor.
 */
 /**
- * Erdi boyları — eskiden `components/flow` içindeydi ve akış şablonları
- * maskotu kendisi çizdiği için oraya aitti. Animasyon yalnız günlük turda
- * kaldığı için ölçüler de animasyonun yanına taşındı.
+ * Erdi'nin boyu — TEK sayı, çünkü Erdi'nin tek yeri var: Öğren ekranının
+ * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `components/flow`
+ * içindeydi (şablonlar maskotu kendisi çiziyordu), sonra iki sayı olarak
+ * buraya taşındı (sonuç bandı 80, durum ekranı 96); tur içindeki bütün
+ * yüzeyler kalkınca geriye kutu kaldı. Mobil ikizi `ui/Mascot`.
  */
-export const MASCOT_BAND = 80;
-export const MASCOT_STATE = 96;
+export const MASCOT_CARD = 96;
 
 const CLIP: Record<Mood, { file: string; aspect: number }> = {
   idle: { file: "lookaround", aspect: 2 / 3 },
@@ -128,35 +127,12 @@ export function Mascot({
   mood = "idle",
   size = 132,
   className = "",
-  stage,
-  pinned = false,
 }: {
   mood?: Mood;
   size?: number;
   className?: string;
-  /**
-   * Bu örneğin ait olduğu sahne kilidi (bkz. lib/mascot-stage). Verilmezse
-   * örnek "yerleşik"tir: sahne başkasınınken görünmez olur — tek Erdi kuralı.
-   * Sahneyi alan gezici sarmalayıcılar (pop, çekme) kendi kimliğini verir.
-   */
-  stage?: string;
-  /**
-   * Tek Erdi kuralından MUAF: sahne başkasınınken de görünür. Cevap şeridinin
-   * baş parmağı/üzülmesi için — o, süs değil, cevabın kendisi; yürüyüş ya da
-   * çekme sürerken bile gizlenmez.
-   */
-  pinned?: boolean;
 }) {
-  /* Günlük turun ağacı dışında Erdi yok — gerekçe `components/daily-round`
-     ve bu dosyanın başı. Kural kodda, yorumda değil: tur bileşenleri
-     (`games/*`) dokuz yerden çağrılıyor.
-     Dönüş HOOK'LARDAN SONRA: burada erken çıkmak `useStill` ve ardındaki
-     yedi hook'u koşullu hâle getiriyordu (hook sırası kuralı). */
-  const tur = useDailyRound();
   const still = useStill();
-  const stageOwner = useStageOwner();
-  /* Sahne başkasınınsa bu Erdi burada değil: kutu yerinde kalır, içi boşalır. */
-  const away = !pinned && stageOwner !== null && stageOwner !== stage;
   const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
   /*
     Duygu bir SELAMLAMA, kalıcı bir durum değil: klip bir tur oynadıktan sonra
@@ -227,8 +203,6 @@ export function Mascot({
     lastUrl.current = url;
   }, [url]);
 
-  if (!tur) return null;
-
   return (
     <motion.div
       className={`pointer-events-none relative select-none ${className}`}
@@ -241,7 +215,6 @@ export function Mascot({
       style={{ height: size * 1.5, width: size * 1.5 * (inIdle ? 2 / 3 : clip.aspect), overflow: "visible" }}
       aria-hidden="true"
       initial={false}
-      animate={{ opacity: away ? 0 : 1, scale: away ? 0.9 : 1 }}
       transition={{ duration: 0.25 }}
     >
       {/* Yer gölgesi — karakteri havada asılı olmaktan kurtarıyor. */}

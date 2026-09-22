@@ -6,6 +6,7 @@ import { QuestCard } from "@/components/quest-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
+import { Mascot, MASCOT_CARD } from "@/components/mascot";
 import { useT } from "@/lib/i18n/client";
 import {
   ArrowRightIcon,
@@ -121,6 +122,16 @@ export function LearnHub({ data }: { data: LearnHubData }) {
               {t("common.start")} <ArrowRightIcon size={18} />
             </span>
           </div>
+          {/*
+            ERDİ'NİN TEK YERİ (2026-09-22, Samet'in kararı). Maskot ürünün
+            hiçbir yerinde oynamıyor — turun içinde de değil; yalnız bu kutuda.
+            Kutunun kendisi zaten "günlük tur" demek, yani karakter davetin
+            parçası; tur başlayınca ekranda kalmıyor.
+            `aria-hidden` gerekmiyor: `Mascot` süs olduğunu kendi içinde
+            söylüyor. Kart metni dar telefonda daralmasın diye maskot
+            `shrink-0` ve yalnız orta boy ekrandan itibaren görünüyor.
+          */}
+          <Mascot mood="idle" size={MASCOT_CARD} className="hidden shrink-0 sm:block" />
         </div>
 
         {/*

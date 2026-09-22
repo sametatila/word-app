@@ -79,7 +79,6 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     <GameShell
       label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName(lang) }) : tx("rounds.ask_target", { target: targetName(lang) })}
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
-      pull={false}
       onContinue={pending ? () => onDone([pending]) : undefined}
       /* Katman doğruda da doluyor: cevabı görmek kadar onu bir kez daha
          okumak da turun işi. Cevap satırı yönden bağımsız hep kelimenin

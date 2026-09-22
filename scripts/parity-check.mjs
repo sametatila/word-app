@@ -96,19 +96,22 @@ const sablonGovde = (src, ad) => {
 };
 const sablonSabit = (src, ad) => Number((src.match(new RegExp("export const " + ad + " = (\\d+);")) ?? [])[1] ?? NaN);
 /*
-  MASKOT BOYU ARTIK SABLONDA DEGIL (2026-09-18). Akis sablonlari maskotu
-  kendisi cizmiyor: bant `aside` dugumu, durum `icon` dugumu aliyor ve
-  animasyon yalniz gunluk turda (bkz. 288). Olcu bu yuzden iki yerden
-  okunuyor: sabitin degeri maskotun kendi dosyasindan, KULLANILDIGI ise turu
-  cizen ekrandan. Ikisinden biri kopsa boy NaN olur ve asagidaki kapi duser.
+  MASKOT BOYU ARTIK SABLONDA DEGIL (2026-09-18, 2026-09-22'de daraldi). Akis
+  sablonlari maskotu kendisi cizmiyor: bant `aside`, durum `icon` dugumu
+  aliyor. 22 Eylul'den beri maskot TURUN ICINDE de yok; tek yeri Ogren
+  ekranindaki gunluk tur kutusu (bkz. 288). Olcu iki yerden okunuyor:
+  sabitin degeri (`MASCOT_CARD`) maskotun kendi dosyasindan, KULLANILDIGI ise
+  kutudan. Ikisinden biri kopsa boy NaN olur ve asagidaki kapi duser.
 */
 export const SABLON = (() => {
   const mob = read("mobile/src/ui/flow.tsx");
   const web = read("src/components/flow.tsx");
   const mobMaskot = read("mobile/src/ui/Mascot.tsx");
   const webMaskot = read("src/components/mascot.tsx");
-  const mobTur = read("mobile/src/screens/GameScreen.tsx");
-  const webTur = read("src/components/session-player.tsx");
+  /* 2026-09-22: maskot turdan da kalkti, tek yeri Ogren ekranindaki gunluk
+     tur kutusu. Boy olcusu bu yuzden kutunun dosyasindan okunuyor. */
+  const mobKutu = read("mobile/src/screens/LearnScreen.tsx");
+  const webKutu = read("src/components/learn/learn-hub.tsx");
   return {
     mobil: {
       /* `live={false}` verilmedikce bant "polite" duyuruyor. */
@@ -116,8 +119,7 @@ export const SABLON = (() => {
       /* `alert` hata dali "assertive", oteki durumlar "polite". */
       durumCanli: /accessibilityLiveRegion=\{alert \? "assertive" : "polite"\}/.test(sablonGovde(mob, "StateBody")),
       baslik: Object.fromEntries(["ResultHero", "CoverBody", "StateBody", "FlowTopBar"].map((ad) => [ad, /accessibilityRole="header"/.test(sablonGovde(mob, ad))])),
-      bantBoy: /aside=\{[\s\S]{0,200}<Mascot [^>]*size=\{MASCOT_BAND\}/.test(mobTur) ? sablonSabit(mobMaskot, "MASCOT_BAND") : NaN,
-      durumBoy: /icon=\{<Mascot [^>]*size=\{MASCOT_STATE\}/.test(mobTur) ? sablonSabit(mobMaskot, "MASCOT_STATE") : NaN,
+      kartBoy: /<Mascot [^>]*size=\{MASCOT_CARD\}/.test(mobKutu) ? sablonSabit(mobMaskot, "MASCOT_CARD") : NaN,
     },
     web: {
       heroCanli: /role=\{live \? "status" : undefined\}/.test(sablonGovde(web, "ResultHero")),
@@ -127,8 +129,7 @@ export const SABLON = (() => {
         CoverBody: /<h[123]\b/.test(sablonGovde(web, "CoverBody")),
         StateBody: /<h[123]\b/.test(sablonGovde(web, "StateBody")),
       },
-      bantBoy: /aside=\{[\s\S]{0,240}<Mascot [^>]*size=\{MASCOT_BAND\}/.test(webTur) ? sablonSabit(webMaskot, "MASCOT_BAND") : NaN,
-      durumBoy: /icon=\{<Mascot [^>]*size=\{MASCOT_STATE\}/.test(webTur) ? sablonSabit(webMaskot, "MASCOT_STATE") : NaN,
+      kartBoy: /<Mascot [^>]*size=\{MASCOT_CARD\}/.test(webKutu) ? sablonSabit(webMaskot, "MASCOT_CARD") : NaN,
     },
   };
 })();
@@ -3916,14 +3917,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "zayif nokta=" + (ekran.match(/"weak_done"/g) ?? []).length,
     ];
   };
+  /* BALON GITTI, CUMLE KALDI (2026-09-22). Koc balonu Erdi + balon demekti;
+     maskot yalniz Ogren ekraninin gunluk tur kutusunda kalinca balon da
+     kalkti. Olculen sey cumlenin KENDISI (`CoachLine` / `ui/CoachLine`) ve
+     hangi anlarda soylendigi — o degismedi. */
   sameList(
-    "koc balonu",
+    "koc cumlesi",
     koc(
-      ["mobile/src/game/coachLines.ts", "mobile/src/ui/CoachBubble.tsx"],
+      ["mobile/src/game/coachLines.ts", "mobile/src/ui/CoachLine.tsx"],
       ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/GameScreen.tsx"],
     ),
     koc(
-      ["src/lib/coach-lines.ts", "src/components/coach-bubble.tsx"],
+      ["src/lib/coach-lines.ts", "src/components/coach-line.tsx"],
       ["src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx", "src/components/session-player.tsx"],
     ),
   );
@@ -5911,8 +5916,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList(
     "kocun cumlesi duyuruluyor",
-    ["cumleyi cizen etiket=" + cumleDuyuruyor("mobile/src/ui/CoachBubble.tsx", /accessibilityLiveRegion="polite"/)],
-    ["cumleyi cizen etiket=" + cumleDuyuruyor("src/components/coach-bubble.tsx", /role="status"/)],
+    ["cumleyi cizen etiket=" + cumleDuyuruyor("mobile/src/ui/CoachLine.tsx", /accessibilityLiveRegion="polite"/)],
+    ["cumleyi cizen etiket=" + cumleDuyuruyor("src/components/coach-line.tsx", /role="status"/)],
   );
 
   const CIFT = [
@@ -9086,25 +9091,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            Check 16); esik 3'te kaldi. Kapi yeni cifte balon eklemiyor. */
         ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
       ];
-      /* Balonlari SIRAYLA cikar: her biri "<an kumesi>/<boy>". An kumesi
-         etiketteki `moment` dizgilerinin sirali birlesimi - ucluk ternary de
-         boylece tek bir kimlige donuyor. */
-      const balonlar = (yol) => {
-        const src = sil(read(yol));
-        const out = [];
-        for (const m of src.matchAll(/<CoachBubble\b/g)) {
-          const kes = acilisSonu(src.slice(m.index));
-          if (kes < 0) continue;
-          const etiket = src.slice(m.index, m.index + kes + 1);
-          const anlar = [...etiket.matchAll(/"(\w+)"/g)]
-            .map((x) => x[1])
-            .filter((x) => /^(exam_intro|exam_pass|exam_fail|weak_done)$/.test(x))
-            .sort();
-          const boy = (etiket.match(/size=\{(\d+)\}/) ?? [])[1] ?? "?";
-          out.push((anlar.join("+") || "AN YOK") + "/" + boy);
-        }
-        return out;
-      };
       /* Maskotsuz cumleler: `size` almiyorlar, kimlikleri yalniz an. */
       const cizgiler = (yol) => {
         const src = sil(read(yol));
@@ -9121,23 +9107,27 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         }
         return out;
       };
-      const mobListe = CIFT.flatMap(([ad, , m]) => balonlar(m).map((x) => ad + ":" + x));
-      const webListe = CIFT.flatMap(([ad, w]) => balonlar(w).map((x) => ad + ":" + x));
-      /* BALON YALNIZ TURDA: tur ozeti ciftinde var, oteki uc ciftte yok. */
+      /* BALON KALMADI (2026-09-22). Koc balonu Erdi + balon demekti ve maskot
+         artik yalnizca Ogren ekraninin gunluk tur kutusunda; balon iki
+         platformdan da silindi (`coach-bubble.tsx`, `ui/CoachBubble.tsx`).
+         Kapi bunu olcuyor: hicbir dosyada `<CoachBubble` gecmeyecek — geri
+         gelirse maskot da geri gelmis demektir. */
+      const yuruBalon = (d, out = []) => {
+        for (const e of readdirSync(d, { withFileTypes: true })) {
+          const yol = d + "/" + e.name;
+          if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuruBalon(yol, out); }
+          else if (/\.tsx$/.test(e.name)) out.push(yol);
+        }
+        return out;
+      };
+      const balonSayisi = (kok) => yuruBalon(kok).filter((f) => /<CoachBubble\b/.test(sil(read(f)))).length;
       sameList(
-        "koc balonu yalniz gunluk turda",
-        CIFT.flatMap(([ad, w, m]) => [
-          ad + " mobil=" + balonlar(m).length,
-          ad + " web=" + balonlar(w).length,
-        ]),
-        CIFT.flatMap(([ad]) => {
-          const beklenen = ad === "tur ozeti" ? 1 : 0;
-          return [ad + " mobil=" + beklenen, ad + " web=" + beklenen];
-        }),
+        "koc balonu kalmadi",
+        ["mobil=" + balonSayisi("mobile/src"), "web=" + balonSayisi("src")],
+        ["mobil=0", "web=0"],
         "bulunan",
         "beklenen",
       );
-      sameList("koc balonlarinin ani ve boyu", mobListe, webListe, "mobil", "web");
       /* CUMLE: sinav ve rol yapma ciftlerinde, iki tarafta ayni anlarla. */
       const mobCizgi = CIFT.flatMap(([ad, , m]) => cizgiler(m).map((x) => ad + ":" + x));
       const webCizgi = CIFT.flatMap(([ad, w]) => cizgiler(w).map((x) => ad + ":" + x));
@@ -9322,95 +9312,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       const mobY = tablo("mobile/src");
       const ortak = [...webY.keys()].filter((k) => mobY.has(k)).sort();
       /*
-        MASKOT YALNIZ GUNLUK TURDA (2026-09-18, Samet'in karari).
-        Animasyon otuzdan fazla yuzeyde oynuyordu; artik ogrenmenin
-        KENDISINDE kaliyor. Kapi dosya duzeyinde: Erdi'yi cizen her dosya
-        asagidaki listede olmak zorunda, iki platformda da. Yeni bir sonuc
-        ekrani ya da durum sablonu maskotu geri cagirirsa denetim soyluyor —
-        gerekcesi `ui/Mascot` ve `components/mascot` dosya baslarinda yazili.
+        MASKOT YALNIZ OGREN EKRANININ GUNLUK TUR KUTUSUNDA
+        (2026-09-22, Samet'in karari).
 
-        Listenin karsiliklari birebir: kutlama pop'u, koc balonu, turun kendisi
-        ve tur kartlari.
+        Karar iki adimda daraldi. 18 Eylul'de Erdi otuzdan fazla yuzeyden
+        cekilip yalniz gunluk tura birakildi; sinir once DOSYA listesiydi,
+        sonra AGAC oldu (`DailyRound` saglayicisi), cunku tur bilesenleri
+        paylasimli. 22 Eylul'de sinir son yerine oturdu: animasyon TURUN
+        ICINDE de yok. Erdi yalnizca Ogren sekmesindeki gunluk tur KUTUSUNDA
+        duruyor — davetin parcasi; tur baslayinca ekranda kalmiyor.
+
+        Bu yuzden agac makinesi de kalkti: saglayici (`daily-round.tsx`,
+        `game/dailyRound.tsx`), kutlama pop'u, ortam yuruyusu, koc balonu,
+        seridi cekme koreografisi ve sahne kilidi silindi. Geriye TEK bir
+        cizim yeri kaldi, yani dosya listesi yeniden yeterli — ve liste iki
+        satir:
+
+          web   `components/mascot.tsx` (bilesenin kendisi)
+                `components/learn/learn-hub.tsx` (kutu)
+          mobil `ui/Mascot.tsx`
+                `screens/LearnScreen.tsx`
+
+        Kapi iki yonu birden olcuyor: listeden KACAN yok (yeni bir ekran
+        Erdi'yi geri cagiramaz) ve kutuda VAR (sessizce kaybolamaz).
       */
       const IZINLI = {
-        web: ["src/components/mascot.tsx", "src/components/mascot-fx.tsx", "src/components/mascot-pop.tsx", "src/components/coach-bubble.tsx", "src/components/session-player.tsx", "src/components/games/"],
-        mobil: ["mobile/src/ui/Mascot.tsx", "mobile/src/ui/MascotFx.tsx", "mobile/src/ui/MascotPop.tsx", "mobile/src/ui/CoachBubble.tsx", "mobile/src/screens/GameScreen.tsx", "mobile/src/game/rounds.tsx"],
+        web: ["src/components/mascot.tsx", "src/components/learn/learn-hub.tsx"],
+        mobil: ["mobile/src/ui/Mascot.tsx", "mobile/src/screens/LearnScreen.tsx"],
       };
-      /*
-        DOSYA LISTESI YETMEZ — TUR BILESENLERI PAYLASIMLI.
-
-        Ilk yazim yalniz "Erdi'yi hangi dosya ciziyor" diye bakiyordu ve bir
-        deligi vardi: tur kartlari dort/dokuz yerden cagriliyor. Mobilde
-        `RoundView` patron turundan, meydan okumadan ve seviye sinavindan;
-        webde `games/*` ayrica yuruyus modundan, seviye tespiti denemesinden,
-        beceri quizinden, kelime listesinden ve demo sayfasindan. Yani izinli
-        dosya listesi TEMIZ gorunurken maskot sekiz yuzeyde daha oynuyordu.
-
-        Sinir bu yuzden AGAC duzeyinde: `DailyRound` saglayicisini yalniz
-        gunluk tur kuruyor ve Erdi'yi cizen her sey `useDailyRound()`a bakiyor.
-        Kapi ucunu birden olcuyor:
-          1. Saglayici TEK kokten kuruluyor (gunluk tur ekrani).
-          2. Maskot bileseni kancaya bakip disarida null donuyor.
-          3. Paylasimli cizim yerleri (tur karti, kabuk, geri bildirim bandi)
-             de bakiyor — yoksa maskot gitse bile ayirdigi bosluk kalirdi.
-      */
-      /* Hedefli bayragi sunucuda okunuyor: adresi istemcide okumak ilk
-         boyamada Erdi'yi bir an gosterirdi. */
-      const SAYFA = { web: "src/app/(app)/learn/game/page.tsx" };
-      const SINIR = {
-        web: {
-          saglayici: "src/components/daily-round.tsx",
-          kok: "src/components/session-player.tsx",
-          kanca: ["src/components/mascot.tsx", "src/components/games/game-shell.tsx", "src/components/games/round-sheet.tsx", "src/components/games/intro-game.tsx"],
-        },
-        mobil: {
-          saglayici: "mobile/src/game/dailyRound.tsx",
-          kok: "mobile/src/screens/GameScreen.tsx",
-          kanca: ["mobile/src/ui/Mascot.tsx", "mobile/src/game/rounds.tsx"],
-        },
-      };
-      const sinirOlcu = (platform, kok) => {
-        const { saglayici, kok: kokDosya, kanca } = SINIR[platform];
-        const kuranlar = yuruTsx(kok).filter((f) => /<DailyRound[\s>]/.test(sil(read(f)))).sort();
-        /* HEDEFLI CALISMA TUR DEGIL (2026-09-22). Kok tek ama oraya giden yol
-           tek degil: ayni ekran Pratik ekranindan, zayif nokta kartindan ve
-           gunluk plandan da aciliyor ve orada oturum TEK OYUNA kilitli
-           (`?game=` / route param). Saglayici kosulsuz `true` verdigi surece
-           Erdi o ucunde de oynuyordu. Kapi artik degeri de olcuyor: kok
-           bayragi veriyor mu, bayrak kilitli oyuna bagli mi. */
-        const kokMetni = sil(read(kokDosya));
-        const bayrak = platform === "web"
-          ? /<DailyRound value=\{!targeted\}>/.test(kokMetni) && /targeted=\{[^}]*game/.test(sil(read(SAYFA.web)))
-          : /<DailyRound value=\{!route\.params\?\.game\}>/.test(kokMetni);
-        return [
-          platform + " saglayici=" + (/useDailyRound|createContext/.test(sil(read(saglayici))) ? "var" : "YOK"),
-          platform + " kuran=" + (kuranlar.join("+") || "YOK"),
-          platform + " kancasiz=" + (kanca.filter((f) => !/useDailyRound\(\)/.test(sil(read(f)))).join("+") || "yok"),
-          platform + " hedefli oturum tur degil=" + (bayrak ? "evet" : "HAYIR"),
-          platform + " beklenen kok=" + kokDosya,
-        ];
-      };
-      sameList(
-        "maskot sinirini agac veriyor",
-        [...sinirOlcu("web", "src"), ...sinirOlcu("mobil", "mobile/src")],
-        [
-          "web saglayici=var", "web kuran=" + SINIR.web.kok, "web kancasiz=yok", "web hedefli oturum tur degil=evet", "web beklenen kok=" + SINIR.web.kok,
-          "mobil saglayici=var", "mobil kuran=" + SINIR.mobil.kok, "mobil kancasiz=yok", "mobil hedefli oturum tur degil=evet", "mobil beklenen kok=" + SINIR.mobil.kok,
-        ],
-        "bulunan",
-        "beklenen",
-      );
-      /*
-        CIZIM IKI YOLDAN OLUYOR — ikisi de sayiliyor.
-
-        Ilk yazim yalniz `<Mascot>` ariyordu ve bir sizinti kacirdi: webin
-        cevap seridini surukleyerek getiren Erdi, maskot bileseninden DEGIL
-        klip adresinden ciziliyor (`useClipUrl("pull-left")` → `<motion.img>`).
-        Bilesene konan sinir onu gormuyordu; tur disinda hem klip goruntude
-        kaliyor hem `holdRound` tur kapanisini gorunmeyen bir animasyon icin
-        bekletiyordu. Mobil tarafta ayni sinif `MascotFx` (klipleri `require`
-        ile dogrudan ciziyor).
-      */
+      /* Kutunun kendisi: Erdi'nin TEK yeri sessizce bosalmasin. */
+      const KUTU = { web: "src/components/learn/learn-hub.tsx", mobil: "mobile/src/screens/LearnScreen.tsx" };
       const CIZIM = /<Mascot\b|useClipUrl\(|assets\/mascot\//;
       const cizenler = (kok) => {
         const out = [];
@@ -9420,31 +9351,46 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         return out.sort();
       };
       const kacak = (kok, izin) => cizenler(kok).filter((f) => !izin.some((p) => f.startsWith(p)));
+      /* Kutuda Erdi VAR MI: `<Mascot` etiketi kutunun dosyasinda gecmeli.
+         Yalnizca "kacak yok" olculseydi maskotu bustun silmek de kapiyi
+         yesil birakirdi. */
+      const kutuda = (yol) => (/<Mascot\b/.test(sil(read(yol))) ? "var" : "YOK");
       sameList(
-        "maskot yalniz gunluk turda",
+        "maskot yalniz gunluk tur kutusunda",
         [
           "web kacak=" + (kacak("src", IZINLI.web).join("+") || "yok"),
           "mobil kacak=" + (kacak("mobile/src", IZINLI.mobil).join("+") || "yok"),
           /* Sayi da olculuyor: tarama bozulup liste bosalirsa "kacak yok" bos
-             bir dogru olurdu. */
-          "web cizen=" + (cizenler("src").length >= 5 ? "5+" : cizenler("src").length),
-          "mobil cizen=" + (cizenler("mobile/src").length >= 4 ? "4+" : cizenler("mobile/src").length),
+             bir dogru olurdu. Bugun iki tarafta da iki dosya: bilesen + kutu. */
+          "web cizen=" + cizenler("src").length,
+          "mobil cizen=" + cizenler("mobile/src").length,
+          "web kutuda=" + kutuda(KUTU.web),
+          "mobil kutuda=" + kutuda(KUTU.mobil),
         ],
-        ["web kacak=yok", "mobil kacak=yok", "web cizen=5+", "mobil cizen=4+"],
+        ["web kacak=yok", "mobil kacak=yok", "web cizen=2", "mobil cizen=2", "web kutuda=var", "mobil kutuda=var"],
         "bulunan",
         "beklenen",
       );
+      /* TEK YUZEY, IKI PLATFORM: kutudaki Erdi'nin kipi ve boyu ayni olmali.
+         Eskiden yedi ortak yuzey vardi ve tablo onlari eslestiriyordu; bugun
+         yuzey bir tane, o yuzden dogrudan etiket okunuyor. Boy SAYIYLA degil
+         SABITLE veriliyor (`MASCOT_CARD`), sabitin degeri de karsilastiriliyor
+         — iki tarafta ayri sayi yazilabilirdi. */
+      const kutuEtiketi = (yol) => {
+        const src = sil(read(yol));
+        const i = src.search(/<Mascot\b/);
+        if (i < 0) return "YOK";
+        const son = acilisSonu(src.slice(i));
+        const etiket = son < 0 ? src.slice(i, i + 200) : src.slice(i, i + son + 1);
+        const kip = (etiket.match(/mood="(\w+)"/) ?? [])[1] ?? "?";
+        const boy = (etiket.match(/size=\{(\w+)\}/) ?? [])[1] ?? "?";
+        return kip + "/" + boy;
+      };
+      const kartBoyu = (yol) => (sil(read(yol)).match(/MASCOT_CARD = (\d+)/) ?? [])[1] ?? "?";
       sameList(
-        "eslesen maskot yuzeyi sayisi",
-        ["ortak=" + (ortak.length >= 2 ? "2+" : ortak.length)],
-        ["ortak=2+"],
-        "bulunan",
-        "beklenen",
-      );
-      sameList(
-        "eslesen maskot yuzeylerinde kip ve boy",
-        ortak.map((k) => k + "=" + mobY.get(k)),
-        ortak.map((k) => k + "=" + webY.get(k)),
+        "kutudaki maskotun kipi ve boyu",
+        ["etiket=" + kutuEtiketi(KUTU.mobil), "sabit=" + kartBoyu("mobile/src/ui/Mascot.tsx")],
+        ["etiket=" + kutuEtiketi(KUTU.web), "sabit=" + kartBoyu("src/components/mascot.tsx")],
         "mobil",
         "web",
       );
@@ -12179,9 +12125,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web baslik=" + ["ResultHero", "CoverBody", "StateBody"].filter((ad) => !SABLON.web.baslik[ad]).join("+"),
         "mobil canli=" + (SABLON.mobil.heroCanli && SABLON.mobil.durumCanli ? "bant+durum" : "EKSIK"),
         "web canli=" + (SABLON.web.heroCanli && SABLON.web.durumCanli ? "bant+durum" : "EKSIK"),
-        "maskot boyu=" + [SABLON.mobil.bantBoy, SABLON.web.bantBoy, SABLON.mobil.durumBoy, SABLON.web.durumBoy].join("/"),
+        "maskot boyu=" + [SABLON.mobil.kartBoy, SABLON.web.kartBoy].join("/"),
       ],
-      ["mobil baslik=", "web baslik=", "mobil canli=bant+durum", "web canli=bant+durum", "maskot boyu=80/80/96/96"],
+      ["mobil baslik=", "web baslik=", "mobil canli=bant+durum", "web canli=bant+durum", "maskot boyu=96/96"],
       "bulunan",
       "beklenen",
     );
@@ -16212,18 +16158,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "sohbet balonunun bicimi",
       [
-        webBalon("web koc", "src/components/coach-bubble.tsx", "bl"),
         webBalon("web ders", "src/components/lessons/lesson-player.tsx", "bl"),
         webBalon("web rol yapma", "src/components/lessons/roleplay-exam.tsx", "bl"),
-        mobBalon("mobil koc", "mobile/src/ui/CoachBubble.tsx", "borderBottomLeftRadius"),
         mobBalon("mobil ders", "mobile/src/screens/LessonScreen.tsx", "borderBottomLeftRadius"),
         mobBalon("mobil rol yapma", "mobile/src/screens/RoleplayExamScreen.tsx", "borderBottomLeftRadius"),
       ],
       [
-        "web koc=panel+chip",
         "web ders=panel+chip",
         "web rol yapma=panel+chip",
-        "mobil koc=panel+chip",
         "mobil ders=panel+chip",
         "mobil rol yapma=panel+chip",
       ],
@@ -17624,14 +17566,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       }
     }
     /* Sablonla kurulan adlar: sebebi + genislemesi. */
-    const SABLON = [
-      {
-        yer: "src/components/mascot-fx.tsx",
-        kalip: "`${walk.kind}-${walk.dir === \"ltr\" ? \"right\" : \"left\"}`",
-        genisleme: ["walk-left", "walk-right", "stroll-left", "stroll-right"],
-        sebep: "gezinen mirketin yonu ve yurume bicimi calisma aninda seciliyor",
-      },
-    ];
+    /* SABLONLA KURULAN AD KALMADI (2026-09-22). Tek ornek `mascot-fx`teki
+       gezinen mirketti (`walk-left`…`stroll-right`); ortam yuruyusu maskotla
+       birlikte silindi, klipleri de arsive alindi. Liste bilerek duruyor:
+       yeniden sablonla ad kurulursa yeri belli. */
+    const SABLON = [];
     const bayatSablon = [];
     for (const t of SABLON) {
       if (!sil(read(t.yer)).includes(t.kalip)) bayatSablon.push(t.yer);
@@ -17668,9 +17607,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web olu dosya=" + (oluDosya.join(", ") || "yok"),
         "mobil olu dosya=" + (mobOlu.join(", ") || "yok"),
         "bayat sablon=" + (bayatSablon.join(", ") || "yok"),
-        "web ad=" + (adlar.size >= 25 ? "25+" : adlar.size),
+        "web ad=" + (adlar.size >= 17 ? "17+" : adlar.size),
       ],
-      ["web eksik dosya=yok", "web olu dosya=yok", "mobil olu dosya=yok", "bayat sablon=yok", "web ad=25+"],
+      ["web eksik dosya=yok", "web olu dosya=yok", "mobil olu dosya=yok", "bayat sablon=yok", "web ad=17+"],
       "bulunan",
       "beklenen",
     );
@@ -19147,165 +19086,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
-/* -------------------- 331. TEK ERDI KURALI VE ORTAM DIKIZLEMESI IKI TARAFTA
+/* -------------------- 331. TEK ERDI KURALI KALKTI (2026-09-22)
  *
- * Bir tane mirket var. Ekranin kenarindan dikizlerken cevap seridinde de
- * belirmesi, kosede kutlarken seritte de bas parmak gostermesi karakteri
- * ikiye boluyor. Web bunu bir kusur olarak bulup SAHNE kurdu
- * (`lib/mascot-stage`): gezici hareketler sahneyi sureli kilitliyor, sahne
- * baskasinin oldugu surece oteki her Erdi ornegi gorunmez oluyor; cevap
- * seridinin maskotu MUAF (`pinned`) cunku o sus degil cevabin kendisi.
+ * Kural "ayni anda iki Erdi gorunmesin" diyordu ve bir sahne kilidi
+ * (`lib/mascot-stage` / `lib/mascotStage`) ile uygulaniyordu: gezici
+ * hareketler — ortam dikizlemesi, kutlama pop'u, seridi cekme — sahneyi
+ * sureli aliyor, oteki ornekler o sirada gorunmez oluyordu.
  *
- * MOBILDE SAHNE HIC YOKTU: ortam dikizlemesi, kutlama pop'u ve seridin
- * maskotu birbirinden habersiz ciziliyordu, yani ayni ekranda iki (bazen uc)
- * Erdi gorunebiliyordu. Referans platform bu kez geride kalan taraftı.
- *
- * Dikizlemenin kendisi de uc noktada ayrisiyordu:
- *   - "Hareketi azalt": web MascotFx'i HIC cizmiyor (`useStill`), mobil
- *     maskotu yerinde gosteriyordu ve o dalda BIR SONRAKI RANDEVU DA
- *     KURULMUYORDU (`schedule(false)` erken donusun arkasinda kaliyordu) -
- *     tercih acik olan kullanici bir kez dikizleme gorup sonra hic gormuyordu.
- *   - Zamanlama: web ilk randevuyu 60-150 sn, sonrakileri klip suresi +
- *     150-330 sn arasina koyuyor; mobil 20-60 ve 90-210 yaziyordu, yani ayni
- *     surpriz Android'de iki kat sik geliyordu.
- *   - Kenar: web iki yandan, mobil yalniz sagdan.
- *
- * ACIK KALAN ve BILEREK OLCULMEYEN: webin EKRANIN ALTINDAN GECEN yuruyusu
- * (`Walker`) mobilde yok ve pakete kopyalanmamis dort klip istiyor
- * (`walk-*`, `stroll-*`). Bugunku durumu sabitleyen bir olcu, onu duzeltmeye
- * calisan kisiye kirmizi verirdi. */
-{
-  const silE = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
-  const webSahne = silE(read("src/lib/mascot-stage.ts"));
-  const mobSahne = silE(read("mobile/src/lib/mascotStage.ts"));
-  const API = ["claimStage", "releaseStage", "stageOwner", "useStageOwner"];
-  sameList(
-    "erdi sahnesinin api'si",
-    API.map((a) => a + "=" + (new RegExp("export function " + a + "\\(").test(mobSahne) ? "var" : "YOK")),
-    API.map((a) => a + "=" + (new RegExp("export function " + a + "\\(").test(webSahne) ? "var" : "YOK")),
-    "mobil",
-    "web",
-  );
-  const webPop = silE(read("src/components/mascot-pop.tsx"));
-  const mobPop = silE(read("mobile/src/ui/MascotPop.tsx"));
-  const webFx = silE(read("src/components/mascot-fx.tsx"));
-  const mobFx = silE(read("mobile/src/ui/MascotFx.tsx"));
-  const webMask = silE(read("src/components/mascot.tsx"));
-  const mobMask = silE(read("mobile/src/ui/Mascot.tsx"));
-  const pinnedSayi = (kok, desen) => {
-    const yuru = (d, out = []) => {
-      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
-        const yol = d + "/" + e.name;
-        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuru(yol, out); }
-        else if (/\.tsx$/.test(e.name)) out.push(yol);
-      }
-      return out;
-    };
-    return yuru(kok).reduce((a, f) => a + (silE(read(f)).match(desen) ?? []).length, 0);
-  };
-  sameList(
-    "tek erdi kuralinin katilimcilari",
-    [
-      "pop sahne aliyor=" + (/claimStage\("pop", /.test(mobPop) ? "evet" : "HAYIR"),
-      "pop birakiyor=" + (/releaseStage\("pop"\)/.test(mobPop) ? "evet" : "HAYIR"),
-      "dikizleme sahne aliyor=" + (/claimStage\("peek", PEEK_MS \+ 400\)/.test(mobFx) ? "evet" : "HAYIR"),
-      "dikizleme birakiyor=" + (/releaseStage\("peek"\)/.test(mobFx) ? "evet" : "HAYIR"),
-      "maskot kurali=" + (/const away = !pinned && owner !== null && owner !== stage/.test(mobMask) ? "var" : "YOK"),
-      "muaf cagri=" + pinnedSayi("mobile/src", /<Mascot [^>]*\bpinned\b/g),
-    ],
-    [
-      "pop sahne aliyor=" + (/claimStage\("pop", hold \+ 400\)/.test(webPop) ? "evet" : "HAYIR"),
-      "pop birakiyor=" + (/releaseStage\("pop"\)/.test(webPop) ? "evet" : "HAYIR"),
-      "dikizleme sahne aliyor=" + (/claimStage\("peek", PEEK_MS \+ 400\)/.test(webFx) ? "evet" : "HAYIR"),
-      "dikizleme birakiyor=" + (/releaseStage\("peek"\)/.test(webFx) ? "evet" : "HAYIR"),
-      "maskot kurali=" + (/const away = !pinned && stageOwner !== null && stageOwner !== stage/.test(webMask) ? "var" : "YOK"),
-      "muaf cagri=" + pinnedSayi("src", /<Mascot [^>]*\bpinned\b/g),
-    ],
-    "mobil",
-    "web",
-  );
-  /* Dikizlemenin sayilari: ilk randevu penceresi, sonraki pencere ve sure. */
-  const pencere = (src, ad) => {
-    const m = src.match(new RegExp(ad + "\\((\\d[\\d_]*), (\\d[\\d_]*)\\)"));
-    return m ? m[1].replace(/_/g, "") + "-" + m[2].replace(/_/g, "") : "YOK";
-  };
-  const ilk = (src, ad) => {
-    const i = src.indexOf("peekNextAt === 0");
-    return i < 0 ? "YOK" : pencere(src.slice(i, i + 120), ad);
-  };
-  const sonra = (src, ad) => {
-    const i = src.indexOf("peekNextAt = Date.now() + PEEK_MS");
-    return i < 0 ? "YOK" : pencere(src.slice(i, i + 120), ad);
-  };
-  /* YURUYUS: adim hizi, gorsel yukseklik, randevu pencereleri, yon ve cesit
-     secimi, ve suresinin EKRAN GENISLIGINDEN turetildigi. Son olcu onemli:
-     sabit sureli bir yuruyus dar telefonda kosar, tablette surunur. */
-  sameList(
-    "ortam yuruyusunun olculeri",
-    [
-      "hiz=" + ((mobFx.match(/WALK_SPEED = (\d+)/) ?? [])[1] ?? "YOK"),
-      "yukseklik=" + ((mobFx.match(/WALK_H = (\d+)/) ?? [])[1] ?? "YOK"),
-      "ilk randevu=" + pencere(mobFx.slice(mobFx.indexOf("walkNextAt === 0"), mobFx.indexOf("walkNextAt === 0") + 120), "rastgele"),
-      "sonraki=" + pencere(mobFx.slice(mobFx.indexOf("walkNextAt = Date.now() + dur"), mobFx.indexOf("walkNextAt = Date.now() + dur") + 140), "rastgele"),
-      "yon=" + (/Math\.random\(\) < 0\.5 \? "ltr" : "rtl"/.test(mobFx) ? "rastgele" : "SABIT"),
-      "cesit=" + (/Math\.random\(\) < 0\.35 \? "stroll" : "walk"/.test(mobFx) ? "0.35 stroll" : "FARKLI"),
-      "sure genislikten=" + (/const dur = \(w \+ 2 \* 140\) \/ WALK_SPEED;/.test(mobFx) ? "evet" : "HAYIR"),
-      "sahne aliyor=" + (/claimStage\("walk", dur \* 1000 \+ 400\)/.test(mobFx) ? "evet" : "HAYIR"),
-    ],
-    [
-      "hiz=" + ((webFx.match(/WALK_SPEED = (\d+)/) ?? [])[1] ?? "YOK"),
-      "yukseklik=" + ((webFx.match(/WALK_H = (\d+)/) ?? [])[1] ?? "YOK"),
-      "ilk randevu=" + pencere(webFx.slice(webFx.indexOf("walkNextAt === 0"), webFx.indexOf("walkNextAt === 0") + 120), "rand"),
-      "sonraki=" + pencere(webFx.slice(webFx.indexOf("walkNextAt = Date.now() + dur"), webFx.indexOf("walkNextAt = Date.now() + dur") + 140), "rand"),
-      "yon=" + (/Math\.random\(\) < 0\.5 \? "ltr" : "rtl"/.test(webFx) ? "rastgele" : "SABIT"),
-      "cesit=" + (/Math\.random\(\) < 0\.35 \? "stroll" : "walk"/.test(webFx) ? "0.35 stroll" : "FARKLI"),
-      "sure genislikten=" + (/const dur = \(w \+ 2 \* 140\) \/ WALK_SPEED;/.test(webFx) ? "evet" : "HAYIR"),
-      "sahne aliyor=" + (/claimStage\("walk", dur \* 1000 \+ 400\)/.test(webFx) ? "evet" : "HAYIR"),
-    ],
-    "mobil",
-    "web",
-  );
-  /* Ortam surprizlerinin CIZILDIGI yuzeyler: web iki oynaticida da ciziyor
-     (kelime turlari + beceri egzersizi), mobilde yalniz kelime turlarinda
-     vardi. Sayi olculuyor, cunku bir yuzeyin dusmesi sessiz kalirdi. */
-  const fxMount = (kok, desen) => {
-    const yuru = (d, out = []) => {
-      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
-        const yol = d + "/" + e.name;
-        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + yol)) yuru(yol, out); }
-        else if (/\.tsx$/.test(e.name)) out.push(yol);
-      }
-      return out;
-    };
-    return yuru(kok).reduce((a, f) => a + (silE(read(f)).match(desen) ?? []).length, 0);
-  };
-  sameList(
-    "ortam surprizlerinin yuzeyleri",
-    ["yuzey=" + fxMount("mobile/src", /<MascotFx \/>/g)],
-    ["yuzey=" + fxMount("src", /<MascotFx \/>/g)],
-    "mobil",
-    "web",
-  );
-  sameList(
-    "ortam dikizlemesinin zamanlamasi",
-    [
-      "ilk randevu=" + ilk(mobFx, "rastgele"),
-      "sonraki=" + sonra(mobFx, "rastgele"),
-      "sure=" + ((mobFx.match(/PEEK_MS = (\d+)/) ?? [])[1] ?? "YOK"),
-      "iki kenar=" + (/Math\.random\(\) < 0\.5 \? "left" : "right"/.test(mobFx) ? "evet" : "TEK KENAR"),
-      "hareket azaltmada=" + (/export function MascotFx\(\) \{\s*if \(reduceMotion\(\)\) return null;/.test(mobFx) ? "cizilmiyor" : "CIZILIYOR"),
-    ],
-    [
-      "ilk randevu=" + ilk(webFx, "rand"),
-      "sonraki=" + sonra(webFx, "rand"),
-      "sure=" + ((webFx.match(/PEEK_MS = (\d+)/) ?? [])[1] ?? "YOK"),
-      "iki kenar=" + (/Math\.random\(\) < 0\.5 \? "left" : "right"/.test(webFx) ? "evet" : "TEK KENAR"),
-      "hareket azaltmada=" + (/const still = useStill\(\);\s*if \(still\) return null;/.test(webFx) ? "cizilmiyor" : "CIZILIYOR"),
-    ],
-    "mobil",
-    "web",
-  );
-}
+ * Maskot artik YALNIZ Ogren ekranindaki gunluk tur kutusunda (Samet'in
+ * karari, bkz. 288). Ekranda tek bir Erdi var ve gezici hareketlerin hepsi
+ * silindi, yani kilidin koruyacagi bir sey kalmadi; sahne modulu de silindi.
+ * Bugun kuralin yerini "maskot yalniz gunluk tur kutusunda" olcusu tutuyor:
+ * Erdi'yi cizen dosya listesi iki satir ve kutunun kendisi olculuyor.
+ */
 
 /* ----------------------- 332. PUAN HALKASI: DORT SONUC EKRANINDA DA VAR
  *
@@ -21142,33 +20935,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
-  /* (2) Maskotun bekleme suresi ve sahne kilidinin ayni sayidan beslenmesi. */
-  const mobPop = silM(read("mobile/src/ui/MascotPop.tsx"));
-  const webPop = silM(read("src/components/mascot-pop.tsx"));
-  const mobBekle = (mobPop.match(/HOLD_MS = (\d+)/) ?? [])[1] ?? "YOK";
-  const webBekle = (webPop.match(/hold = (\d+)/) ?? [])[1] ?? "YOK";
-  const kilit = (x) => (/claimStage\("pop", (?:HOLD_MS|hold) \+ 400\)/.test(x) ? "hold+400" : "BASKA");
-  sameList(
-    "maskot sahnesinin suresi",
-    ["bekleme=" + mobBekle, "sahne kilidi=" + kilit(mobPop)],
-    ["bekleme=" + webBekle, "sahne kilidi=" + kilit(webPop)],
-    "mobil",
-    "web",
-  );
-  /* Maskotun GIRIS YONU: Android alt kenardan yukari kaldiriyor
-     (`translateY` 240 -> 0), web yandan kaydirip 12 derece egiyordu. Olcu
-     mesafenin kendisi + webde yatay/donme bileseninin kalmamis olmasi. */
-  const mobMesafe = (mobPop.match(/toValue: (\d+), duration/) ?? [])[1] ?? "YOK";
-  const webMesafe = (webPop.match(/lift = still \? 0 : (\d+)/) ?? [])[1] ?? "YOK";
-  const yatay = (webPop.match(/rotate:|x: from|x: [-\d]/g) ?? []).length;
-  sameList(
-    "maskotun giris yonu",
-    ["mesafe=" + mobMesafe + " yatay/donme=0"],
-    ["mesafe=" + webMesafe + " yatay/donme=" + yatay],
-    "mobil",
-    "web",
-  );
-
+  /* (2) ve (3) KALKTI (2026-09-22): kutlama pop'unun bekleme suresi, kalkis
+     mesafesi ve sahne kilidi olculuyordu; maskot yalniz Ogren ekranindaki
+     gunluk tur kutusunda kalinca pop da sahne de silindi. */
   /* (3) Basarim acilisinin dort suresi - ADIYLA, iki tarafta da. */
   const sure = (src, ad) => ((silM(src).match(new RegExp("(?<![A-Z_])" + ad + " = (\\d+)")) ?? [])[1] ?? "YOK");
   const ADLAR = ["SOLO_MS", "BATCH_MS", "FIRST_MS", "DEBOUNCE_MS"];
@@ -21185,8 +20954,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* (4) Koc balonu ve meydan okuma parlamasi - olculdu, esitti; kayarsa
      gorunsun diye kapidalar. Mobil parlama uc parcadan olusuyor
      (160 + 780 + 160), web tek sayidan (1100): toplam karsilastiriliyor. */
-  const mobKoc = (silM(read("mobile/src/ui/CoachBubble.tsx")).match(/duration: (\d+)/) ?? [])[1] ?? "YOK";
-  const webKoc = (silM(read("src/components/coach-bubble.tsx")).match(/duration: ([\d.]+) \}/) ?? [])[1] ?? "YOK";
+  /* Koc balonunun suresi olculuyordu; balon 2026-09-22'de silindi (cumle
+     maskotsuz kaldi, `CoachLine`). Geriye basari parlamasi kaldi. */
   const mobFlash = silM(read("mobile/src/screens/ChallengeScreen.tsx"));
   const parcalar = [...mobFlash.matchAll(/duration: (\d+), easing|Animated\.delay\((\d+)\)|toValue: 0, duration: (\d+)/g)]
     .map((m) => Number(m[1] ?? m[2] ?? m[3] ?? 0));
@@ -21194,8 +20963,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const webFlash = (silM(read("src/components/celebrate.tsx")).match(/setShown\(null\), (\d+)\)/) ?? [])[1] ?? "YOK";
   sameList(
     "koc balonu ve parlama sureleri",
-    ["koc=" + mobKoc, "parlama=" + mobToplam],
-    ["koc=" + Math.round(Number(webKoc) * 1000), "parlama=" + webFlash],
+    ["parlama=" + mobToplam],
+    ["parlama=" + webFlash],
     "mobil",
     "web",
   );

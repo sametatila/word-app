@@ -148,7 +148,6 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
     <GameShell
       label={tx("games.free_sentence")}
       onContinue={status === "done" && result ? finish : undefined}
-      pull={false}
       /* DEĞERLENDİRME DE SONUÇ KATMANINDA — öteki turlarla aynı yer, aynı
          düzen. Sonuç dokunma bölgesinde uzun bir kart olarak açılıyordu ve
          turu kapatan "Devam" ondan ayrı, dipteki katmandaydı. Katman kısa

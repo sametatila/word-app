@@ -18,7 +18,6 @@ import { Text } from "../ui/Text";
 import { promptFit } from "../ui/fontFit";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
-import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
 import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
@@ -30,7 +29,6 @@ import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
-import { useDailyRound } from "./dailyRound";
 import { useTheme, spacing, radii, softShadow, cardShadow, soft, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -349,7 +347,6 @@ function SheetLayer({ children }: { children: React.ReactNode }) {
  */
 function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
   const { isDark } = useTheme();
-  const tur = useDailyRound();
   const tone = data.tone ?? (data.correct ? "ok" : "bad");
   const bandBg = tone === "ok" ? colors.successSoft : tone === "bad" ? colors.dangerSoft : tone === "near" ? soft(colors.streak) : colors.surface2;
   const ink = tone === "ok" ? colors.successText : tone === "bad" ? colors.dangerText : tone === "near" ? colors.streakText : colors.text;
@@ -373,10 +370,6 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
     <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(dot, 16)]}>
       <ScrollView style={{ maxHeight: height * 0.5 }} contentContainerStyle={{ gap: spacing.sm }} showsVerticalScrollIndicator={false} bounces={false}>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, backgroundColor: bandBg, borderRadius: radii.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm }}>
-          {/* `pinned`: cevabın kendisi — dikizleme ya da kutlama sürerken de
-              görünür. Günlük tur dışında hiç çizilmiyor: `Mascot` null dönerdi
-              ama satırın boşluğu (`gap`) kalırdı. */}
-          {tur ? <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned /> : null}
           <View style={{ flex: 1, gap: 2 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
               <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: dot, alignItems: "center", justifyContent: "center" }}>
@@ -453,21 +446,6 @@ function useAutoSpeak(text: string | null | undefined, key: string | number) {
   }, [key]);
 }
 
-/** Ortadaki maskot — soru ile şıklar arasını doldurur; cevaba göre mood.
- *  Cevaplanınca gizlenir ama BOŞLUĞU korur ki şıklar yerinden zıplamasın. */
-function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
-  /* Tur kartı dört ekrandan çiziliyor ama Erdi yalnız günlük turda: öteki
-     üçünde boşluk da AYRILMIYOR, yoksa kartın ortasında 72 piksellik sebepsiz
-     bir delik kalırdı (bkz. `game/dailyRound`). */
-  const tur = useDailyRound();
-  if (!tur) return null;
-  if (hidden) return <View style={{ flex: 1, minHeight: spacing.md }} />;
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 72 }}>
-      <Mascot mood={mood ?? "idle"} size={78} />
-    </View>
-  );
-}
 
 /** Soru kartı — ortak üst blok. */
 /**
@@ -603,7 +581,6 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
       <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
@@ -627,7 +604,6 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.which_article")} big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
-      <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
@@ -673,7 +649,6 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
         </View>
         <Text variant="h2" style={{ textAlign: "center" }}>{round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)}</Text>
       </View>
-      <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: tx("common.correct") }, { v: false, l: tx("common.wrong") }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
@@ -810,7 +785,6 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         cevabı vermiyor, hangi biçimin beklendiğini söylüyor.
       */}
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} meta={typLabel(word.typ, word.tr)} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
 }
@@ -1130,7 +1104,6 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
       </View>
-      <MascotMid mood={picked ? (fb?.correct ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       {/* Yazarak modda şıklar ÇİZİLMİYOR: web de öyle yapıyor, şıkları
           göstermek zorlaştırmanın kendisini geri alırdı. Şıklar yine
           sunucudan geliyor çünkü basamak inişi onlara dönüyor. Yazma kutusu
@@ -1164,7 +1137,6 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "plural", picked))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.plural")} big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
@@ -1239,7 +1211,6 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
           <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
         </View>
       ) : null}
-      <MascotMid mood={reveal ? "happy" : "idle"} />
     </RoundShell>
   );
 }
@@ -1360,7 +1331,6 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
           </View>
         )}
       </View>
-      <MascotMid mood={picked ? (picked === word.tr ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
@@ -1479,7 +1449,6 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => (
@@ -1555,7 +1524,6 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail, currentTargetLang()), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => (
@@ -1734,7 +1702,6 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   return (
     <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, payload())} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.translate_into", { lang: targetLangName() })} big={s.tr} sub={s.en} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
 }
@@ -1834,7 +1801,6 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { batch })} colors={colors} /> : undefined}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>{tx("rounds.match")}</Text>
-      <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1, gap: spacing.sm }}>
           {words.map((w) => {

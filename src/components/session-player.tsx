@@ -27,11 +27,7 @@ import { track } from "@/lib/track";
 import { FitBox } from "@/components/fit-box";
 import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
-import { MascotPop } from "@/components/mascot-pop";
-import { MascotFx } from "@/components/mascot-fx";
-import { Mascot, MASCOT_BAND, MASCOT_STATE } from "@/components/mascot";
-import { CoachBubble } from "@/components/coach-bubble";
-import { DailyRound } from "@/components/daily-round";
+import { CoachLine } from "@/components/coach-line";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, BoltIcon, CheckIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
 import { DetailCard, DetailRow, FlowActions, FlowColumn, FlowNote, ResultHero, StateBody, StatRow } from "@/components/flow";
@@ -109,28 +105,17 @@ function sessionKey(game: PlayableGame | null): string {
  * artık Öğren merkezinde (`components/learn/learn-hub`).
  */
 /**
- * GÜNLÜK TUR — animasyonun kaldığı tek ağaç.
+ * Kelime turu — MASKOTSUZ (2026-09-22, Samet'in kararı).
  *
- * Sağlayıcı BURADA, çünkü Erdi'yi çizen şeylerin bir kısmı paylaşımlı: tur
- * bileşenleri (`games/*`) patron turundan, meydan okumadan, seviye sınavından,
- * yürüyüş modundan, seviye tespiti denemesinden, beceri quizinden, kelime
- * listesinden ve demo sayfasından da çağrılıyor. Sınır ağaç düzeyinde olmasa
- * maskot o sekiz yüzeyde de oynardı (bkz. `components/daily-round`). Bileşen
- * ikiye ayrıldı ki bütün dallar — yükleniyor, hata, kelime yok, tur, sonuç —
- * sarmalayıcının içinde kalsın.
+ * 18 Eylül'de Erdi ürünün geri kalanından çekilip yalnız bu tura bırakılmıştı;
+ * karar bir adım daha gitti: animasyon turun İÇİNDE de yok, yalnız Öğren
+ * ekranının günlük tur KUTUSUNDA duruyor (`components/learn/learn-hub`).
+ * Bu yüzden `DailyRound` sağlayıcısı, kutlama pop'u, ortam yürüyüşü ve koç
+ * balonu buradan kalktı; koçun CÜMLESİ kaldı (o animasyon değil içerik,
+ * `components/coach-line`).
  */
-export function SessionPlayer({ targeted = false }: { targeted?: boolean }) {
-  /* HEDEFLİ ÇALIŞMA TUR DEĞİL. Aynı adres (`/learn/game`) üç yerden daha
-     açılıyor: Pratik ekranının oyun karoları, zayıf nokta kartı ve günlük
-     plan — hepsi `?game=` ile tek oyuna kilitliyor. Bayrak SUNUCUDAN geliyor
-     (sayfa `searchParams`ı okuyor), çünkü adresi burada okumak sunucu
-     çiziminde `null`, istemcide dolu olur ve Erdi ilk boyamada bir an
-     görünürdü. */
-  return (
-    <DailyRound value={!targeted}>
-      <SessionRound />
-    </DailyRound>
-  );
+export function SessionPlayer() {
+  return <SessionRound />;
 }
 
 function SessionRound() {
@@ -220,8 +205,6 @@ function SessionRound() {
    * deneyen kullanıcı en sadık kullanıcı çıktı.
    */
   const [combo, setCombo] = useState(0);
-  /** Erdi'nin kutlama çıkışını tetikleyen sayaç — değeri değil, değişmesi önemli. */
-  const [cheer, setCheer] = useState(0);
   const bestCombo = useRef(0);
   /** Etap özetinde gösterilecek: bu etaba girerken neredeydik. */
   const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
@@ -288,7 +271,6 @@ function SessionRound() {
     missed.current = [];
     marks.current = [];
     setCombo(0);
-    setCheer(0);
     // Basamak her turda sıfırdan: hafifletme o oturuma ait bir karar.
     setEased(false);
     missStreak.current = 0;
@@ -661,12 +643,6 @@ function SessionRound() {
         if (running > bestCombo.current) bestCombo.current = running;
       }
       setCombo(running);
-      // Erdi beşin katlarında kenardan uzanıp kutluyor. Eşik combo rozetinin
-      // eşiğinden (üç) yüksek: rozet "seri sürüyor" diyor ve her doğruda
-      // güncelleniyor, kutlama ise bir OLAY olmalı — her üç cevapta bir çıkan
-      // karakter kutlama olmaktan çıkıp trafiğe dönüşürdü.
-      if (running >= 5 && running % 5 === 0) setCheer(running);
-
       const rounds = session?.rounds.length ?? 0;
       const isLast = index >= rounds - 1;
       const nextIndex = isLast ? rounds : index + 1;
@@ -860,8 +836,6 @@ function SessionRound() {
 
   return (
     <Screen fills>
-    <MascotPop trigger={cheer} />
-    <MascotFx />
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
       <ConfirmDialog
         open={confirmExit || ayril.pending !== null}
@@ -1102,7 +1076,6 @@ function EmptyCard({
   return (
     <FlowColumn>
       <StateBody
-        icon={<Mascot mood="celebrate" size={MASCOT_STATE} className="mx-auto" />}
         title={t("session.goal_done")}
         body={
           meta
@@ -1174,7 +1147,6 @@ function StageCard({
         eyebrow={t("stage.counter", { n: stage, total: stages })}
         title={t(perfect ? "stage.clean" : "stage.done")}
         sub={`${correct}/${total}`}
-        aside={<Mascot mood={perfect ? "celebrate" : "happy"} size={MASCOT_BAND} pinned className="shrink-0" />}
         segments={{ done: stage, total: stages }}
       />
       <StatRow
@@ -1337,11 +1309,8 @@ function SummaryCard({
         title={t(total ? (partial ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
         figure={total ? `${tally.correct}/${total}` : null}
         sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
-        /* Turun nasıl geçtiğini Erdi'nin hâli söylüyor: hak edilmiş turda
-           kutluyor, iyi turda gülümsüyor, kötü turda üzülüyor. */
-        aside={targeted && total > 0 ? null : <Mascot mood={total > 0 ? (deserved ? "celebrate" : accuracy >= 60 ? "happy" : "sad") : "idle"} size={MASCOT_BAND} pinned className="shrink-0" />}
       />
-      {targeted && total > 0 ? <CoachBubble moment="weak_done" mood={accuracy >= 60 ? "thumbsup" : "sad"} size={72} /> : null}
+      {targeted && total > 0 ? <CoachLine moment="weak_done" /> : null}
       {total > 0 ? (
         <StatRow
           items={[

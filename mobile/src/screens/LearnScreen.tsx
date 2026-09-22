@@ -6,6 +6,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
+import { Mascot, MASCOT_CARD } from "../ui/Mascot";
 import { Skeleton, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
@@ -128,6 +129,14 @@ export function LearnScreen() {
               <ArrowRightIcon color={colors.primaryText} size={18} />
             </View>
             </View>
+            {/*
+              ERDİ'NİN TEK YERİ (2026-09-22, Samet'in kararı). Maskot ürünün
+              hiçbir yerinde oynamıyor — turun içinde de değil; yalnız bu
+              kutuda. Kutu zaten "günlük tur" demek, yani karakter davetin
+              parçası; tur başlayınca ekranda kalmıyor. Web ikizi
+              `components/learn/learn-hub`.
+            */}
+            <Mascot mood="idle" size={MASCOT_CARD} />
           </View>
           {/* Hedef şeridi kahramanın İÇİNDE: veri gelmeden de aynı yeri kaplar,
               yoksa kart yükleme sonrası uzayıp altındaki her şeyi aşağı itiyordu. */}

@@ -1,19 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { RuleLink } from "@/components/feedback/feedback-line";
 import { CharMarked, Chip, DiffLines, MarkedSentence, type MarkedToken } from "@/components/feedback/marked";
 import { CheckIcon, XIcon } from "@/components/icons";
-import { Mascot } from "@/components/mascot";
 import { SpeakButton } from "@/components/speak-button";
 import { useCourse } from "@/components/app-shell";
 import { useStill } from "@/lib/use-still";
-import { holdRound } from "@/lib/mascot-hold";
-import { claimStage, releaseStage } from "@/lib/mascot-stage";
-import { useDailyRound } from "@/components/daily-round";
-import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
 import { useLang, useT } from "@/lib/i18n/client";
 import { whyLabel, type Why } from "@/lib/why";
 
@@ -146,12 +141,10 @@ export function sheetTone(data: SheetData): SheetTone {
 
 export function RoundSheet({
   sheet,
-  pull,
   onContinue,
 }: {
   /** Cevaptan sonraki katman verisi. `null` iken katman kapalı. */
   sheet: SheetData | null;
-  pull: boolean;
   onContinue?: () => void;
 }) {
   const { host, fixed } = useSheetHost();
@@ -159,21 +152,6 @@ export function RoundSheet({
   const open = sheet != null;
   const tone = sheet ? sheetTone(sheet) : "ok";
 
-  /*
-    Katmanın klipleri, katman GÖRÜNMEDEN indiriliyor.
-
-    Cevap verildiği ana kadar beklenirse geç kalıyor: thumbsup 1,3 MB, sad
-    1,1 MB. Yavaş bir bağlantıda ilk cevaplarda kutunun içi boş görünüyordu —
-    öğe yerinde, yeri ayrılmış, ama klip henüz çözülmemiş.
-
-    Burada tetiklemenin sebebi yer: katmanı kim kullanıyorsa klipleri de o
-    kullanacak, yani hiçbir oyun bunu ayrıca hatırlamak zorunda kalmıyor.
-    Aynı dosya iki kez indirilmiyor (bkz. lib/mascot-clips). `happy` nötr ton
-    (eşleştirmede karıştırılan kelime) için.
-  */
-  useEffect(() => {
-    preloadClips(["thumbsup", "sad", "happy"]);
-  }, []);
 
   if (!host) return null;
 
@@ -202,7 +180,7 @@ export function RoundSheet({
           {/* Genişlik kartla aynı (`max-w-md`): katman ekranın dibinde ayrı bir
               yüzey ama içindeki metin ve düğme kartın kolonunda kalıyor. */}
           <div className="mx-auto flex w-full max-w-md flex-col gap-2" style={{ minHeight: BODY_FULL }}>
-            <SheetBody data={sheet} pull={pull} />
+            <SheetBody data={sheet} />
             {onContinue ? <ContinueButton tone={tone} onContinue={onContinue} /> : null}
           </div>
         </motion.div>
@@ -263,8 +241,6 @@ function ContinueButton({ tone, onContinue }: { tone: SheetTone; onContinue: () 
 }
 
 /** Şeridin sürüklenerek gelme süresi ve mirketin ardından oyalanıp kaybolma payı (ms). */
-const PULL_MS = 2600;
-const PULL_LINGER_MS = 900;
 
 /**
  * Katmanın gövdesi — hüküm bandı + etiketli satırlar.
@@ -274,9 +250,7 @@ const PULL_LINGER_MS = 900;
  * kayıyor; "Devam" hep görünür kalıyor. Mobil `FeedbackFooter` aynı alanları
  * aynı sırayla çiziyor.
  */
-function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
-  const tur = useDailyRound();
-  const still = useStill();
+function SheetBody({ data }: { data: SheetData }) {
   const t = useT();
   const lang = useLang();
   const course = useCourse();
@@ -290,76 +264,19 @@ function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
     !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
   const showWhy = wrong && !!data.why;
 
-  /*
-    Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
-    şeridi Erdi'nin kendisi sağdan sürükleyerek getiriyor. Kliplerdeki
-    duruş: pull-left sağa dönük, geri geri sola yürüyor, sağındaki şeridi
-    çekiyor — yani şeridin solunda durur. İtme koreografisi denendi ve
-    inandırıcı olmadı; yalnız çekme kaldı.
-
-    Katman aşağıdan gelirken şerit yandan geliyor: iki hareket birbirini
-    örtmüyor, çünkü katman 0,3 saniyede oturuyor, çekme ağır çekimde
-    (2,6 sn) sürüyor. Tur bu sürede kapanmasın diye şerit kurulurken kapanış
-    saati ileri alınıyor (lib/mascot-hold). Zar, şerit her yeniden kurulduğunda
-    bir kez atılır.
-
-    Çekilen şey artık gövdenin tamamı (band + satırlar): gövde kendi içinde
-    kaydığı için taşan her şeyi kırpıyor, çeken Erdi o yüzden kayan kabın
-    DIŞINDA, kaymayan sarmalayıcıda duruyor.
-  */
-  /* "right": şerit sağdan gelir, mirket solunda (pull-left: sağa dönük, geri
-     geri sola yürür). "left": şerit soldan gelir, mirket sağında (pull-right:
-     sola dönük, geri geri sağa yürür). İki yön de eşit olasılıkta. */
-  /* ÇEKME KOREOGRAFİSİ DE YALNIZ TURDA. Buradaki Erdi `<Mascot>` üzerinden
-     değil, klip adresiyle doğrudan çiziliyor (`useClipUrl` → `pull-left/right`);
-     yani maskot bileşenine konan sınır bunu görmüyordu. Tur dışında hem klip
-     görünüyor hem `holdRound` tur kapanışını görünmeyen bir animasyon için
-     bekletiyordu (bkz. `components/daily-round`). */
-  const fx = useMemo<"right" | "left" | null>(() => {
-    if (!tur || still || !pull) return null;
-    if (Math.random() >= 0.25) return null;
-    // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
-    if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
-    return Math.random() < 0.5 ? "right" : "left";
-  }, [tur, still, pull]);
-
-  useEffect(() => {
-    if (!fx) return;
-    holdRound(PULL_MS + PULL_LINGER_MS);
-    return () => releaseStage("pull");
-  }, [fx]);
-  const pullUrl = useClipUrl(fx ? (fx === "right" ? "pull-left" : "pull-right") : null);
+  /* ÇEKME KOREOGRAFİSİ KALDIRILDI (2026-09-22). Şeridi Erdi sürükleyerek
+     getiriyordu (`pull-left`/`pull-right` klipleri, sahne kilidi ve
+     `holdRound` ile tur kapanışını bekletme). Maskot artık yalnız Öğren
+     ekranının günlük tur kutusunda; sürükleyen olmayınca kayarak giren bir
+     şeridin de sebebi kalmadı, şerit olduğu yerde beliriyor. */
 
   return (
     <motion.div
-      /* Ekran okuyucu sonucu duyurur: renk, ikon ve maskot yalnız görene bir şey söyler. */
+      /* Ekran okuyucu sonucu duyurur: renk ve simge yalnız görene bir şey söyler. */
       role="status"
       aria-live="polite"
-      initial={fx ? { x: fx === "right" ? "110%" : "-110%" } : false}
-      animate={fx ? { x: 0 } : undefined}
-      transition={fx ? { duration: PULL_MS / 1000, ease: "easeInOut" } : undefined}
       className="relative text-left"
     >
-      {fx && pullUrl && (
-        /* Şeridi çekerek getiren Erdi — şeridin geldiği kenarın karşı
-           tarafında, şeritle birlikte kayar; şerit oturunca işini bitirip
-           kaybolur. Boy bandı aşıyor (70px): sürükleyen karakter bandın
-           içindeki maskottan büyük olmalı ki "getiren" o olsun. */
-        <motion.img
-          src={pullUrl}
-          alt=""
-          aria-hidden
-          draggable={false}
-          className="pointer-events-none absolute -top-1.5 w-auto"
-          style={{ height: 70, ...(fx === "right" ? { left: -76 } : { right: -76 }) }}
-          initial={{ opacity: 1 }}
-          animate={{ opacity: [1, 1, 0] }}
-          transition={{
-            duration: (PULL_MS + PULL_LINGER_MS) / 1000,
-            times: [0, PULL_MS / (PULL_MS + PULL_LINGER_MS), 1],
-          }}
-        />
-      )}
       <div className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto overflow-x-hidden overscroll-contain">
         <div
           className="verdict flex min-h-[3.75rem] items-start gap-2 p-2"
@@ -367,22 +284,6 @@ function SheetBody({ data, pull }: { data: SheetData; pull: boolean }) {
             background: palette.fill ? `color-mix(in srgb, ${palette.fill} 14%, var(--surface))` : "var(--surface-2)",
           }}
         >
-          {/*
-            Banddaki tepki Erdi'nin kendisi: renk ve simge "doğru/yanlış"
-            diyor, karakterin yüzü turun duygusunu taşıyor. Nötr tonda
-            (eşleştirmede karıştırılan kelime) mutlu — ceza değil, özet.
-          */}
-          <motion.span
-            initial={{ scale: 0.4, y: 14 }}
-            animate={{ scale: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 420, damping: 16, delay: 0.04 }}
-            className="shrink-0"
-          >
-            {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
-            {/* Günlük tur dışında hiç çizilmiyor: `Mascot` null dönerdi ama
-                satırın boşluğu kalırdı (`components/daily-round`). */}
-            {tur ? <Mascot mood={tone === "bad" ? "sad" : tone === "neutral" ? "happy" : "thumbsup"} size={40} pinned /> : null}
-          </motion.span>
           <div className="flex min-w-0 flex-1 flex-col gap-0.5">
             <div className="flex items-center gap-1.5">
               <span

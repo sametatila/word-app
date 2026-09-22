@@ -1,7 +1,5 @@
 import React from "react";
 import { Image, View } from "react-native";
-import { useStageOwner } from "../lib/mascotStage";
-import { useDailyRound } from "../game/dailyRound";
 
 /**
  * Erdi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
@@ -42,46 +40,26 @@ const CLIP = {
 export type Mood = keyof typeof CLIP;
 
 /**
- * Erdi boyları — eskiden `ui/flow` içindeydi ve akış şablonları maskotu
- * kendisi çizdiği için oraya aitti. Animasyon yalnız günlük turda kaldığı
- * için ölçüler de buraya, animasyonun yanına taşındı: `ui/flow` artık
- * maskot diye bir şey tanımıyor.
+ * Erdi'nin boyu — TEK sayı, çünkü Erdi'nin tek yeri var: Öğren ekranının
+ * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `ui/flow` içindeydi
+ * (şablonlar maskotu kendisi çiziyordu), sonra iki sayı olarak buraya taşındı
+ * (sonuç bandı 80, durum ekranı 96); tur içindeki bütün yüzeyler kalkınca
+ * geriye kutu kaldı. Web ikizi `components/mascot`.
  */
-export const MASCOT_BAND = 80;
-export const MASCOT_STATE = 96;
+export const MASCOT_CARD = 96;
 
 export function Mascot({
   mood = "idle",
   size = 88,
-  stage,
-  pinned = false,
 }: {
   mood?: Mood;
   size?: number;
-  /**
-   * TEK ERDİ KURALI (`lib/mascotStage`). Sahneyi alan gezici sarmalayıcılar
-   * (kutlama pop'u, ortam dikizlemesi) kendi kimliğini buraya veriyor; sahne
-   * başkasınınken bu örnek görünmez olur. Kutu yerinde kalır, içi boşalır —
-   * yoksa düzen zıplar.
-   */
-  stage?: string;
-  /**
-   * Tek Erdi kuralından MUAF: sahne başkasınınken de görünür. Cevap şeridinin
-   * baş parmağı/üzülmesi için — o, süs değil cevabın kendisi.
-   */
-  pinned?: boolean;
 }) {
-  const tur = useDailyRound();
-  const owner = useStageOwner();
-  /* Günlük turun ağacı dışında Erdi yok — dosya başındaki kural. */
-  if (!tur) return null;
-  /* Sahne başkasınınsa bu Erdi burada değil (web `mascot.tsx` `away`). */
-  const away = !pinned && owner !== null && owner !== stage;
   return (
     <View style={{ width: size, height: size * 1.5, alignItems: "center", justifyContent: "flex-end" }}>
       <Image
         source={CLIP[mood] ?? CLIP.idle}
-        style={{ width: size, height: size * 1.5, opacity: away ? 0 : 1 }}
+        style={{ width: size, height: size * 1.5 }}
         resizeMode="contain"
         fadeDuration={0}
       />
