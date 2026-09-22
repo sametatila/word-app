@@ -37,6 +37,7 @@ export const b1U06: SkillExercise[] = [
       { de: "unterstützen", tr: "desteklemek", en: "to support" },
       { de: "rechtzeitig", tr: "zamanında", en: "on time" },
       { de: "gelingen", tr: "başarılı olmak", en: "to succeed" },
+      { de: "die Notiz", tr: "not", en: "note" },
     ],
     text:
       "Der Kurs „Deutsch im Büro“ beginnt im Oktober. Der Zweck ist einfach: Sie sollen bei " +
@@ -228,6 +229,7 @@ export const b1U06: SkillExercise[] = [
       { de: "die Erkältung", tr: "soğuk algınlığı", en: "cold" },
       { de: "nämlich", tr: "çünkü / şöyle ki", en: "namely" },
       { de: "der Zufall", tr: "tesadüf", en: "coincidence" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
       { text: "Schau mal, das Foto. Weißt du noch?" },
@@ -346,6 +348,8 @@ export const b1U06: SkillExercise[] = [
       { de: "jedes Mal", tr: "her seferinde", en: "every time" },
       { de: "das Erlebnis", tr: "yaşantı", en: "experience" },
       { de: "irgendwann", tr: "bir zaman", en: "at some point" },
+      { de: "der Schnee", tr: "kar", en: "snow" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
     ],
     tasks: [
       {

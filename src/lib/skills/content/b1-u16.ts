@@ -42,6 +42,10 @@ export const b1U16: SkillExercise[] = [
       { de: "einerseits", tr: "bir yandan", en: "on the one hand" },
       { de: "der Bildschirm", tr: "ekran", en: "screen" },
       { de: "verursachen", tr: "yol açmak", en: "to cause" },
+      { de: "das Spielzeug", tr: "oyuncak", en: "toy" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Soll man die Zeit vor dem Bildschirm reduzieren? Darüber wird viel " +
@@ -108,6 +112,9 @@ export const b1U16: SkillExercise[] = [
       { de: "behaupten", tr: "iddia etmek", en: "to claim" },
       { de: "der Ton", tr: "üslup", en: "tone" },
       { de: "offensichtlich", tr: "besbelli", en: "obviously" },
+      { de: "der Artikel", tr: "makale", en: "article" },
+      { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     text:
       "Leserbrief 1: Ich stimme dem Artikel zu. Es ist offensichtlich, dass wir " +
@@ -176,6 +183,7 @@ export const b1U16: SkillExercise[] = [
       { de: "miteinander", tr: "birbiriyle", en: "with each other" },
       { de: "durcheinander", tr: "karmakarışık", en: "in disarray" },
       { de: "der Teilnehmer", tr: "katılımcı", en: "participant" },
+      { de: "sammeln", tr: "toplamak", en: "to collect" },
     ],
     segments: [
       { text: "Wir reden seit einer Stunde und alles ist durcheinander." },
@@ -238,6 +246,9 @@ export const b1U16: SkillExercise[] = [
       { de: "reduzieren", tr: "azaltmak", en: "to reduce" },
       { de: "die Werbung", tr: "reklam", en: "advertising" },
       { de: "das Magazin", tr: "dergi", en: "magazine" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     segments: [
       { text: "Ich lese seit einem Monat nur noch morgens Nachrichten." },
@@ -301,6 +312,7 @@ export const b1U16: SkillExercise[] = [
       { de: "der Nachteil", tr: "dezavantaj", en: "disadvantage" },
       { de: "der Vergleich", tr: "karşılaştırma", en: "comparison" },
       { de: "daher", tr: "bu nedenle", en: "therefore" },
+      { de: "sich bessern", tr: "düzelmek", en: "to improve" },
     ],
     tasks: [
       {
@@ -355,6 +367,8 @@ export const b1U16: SkillExercise[] = [
       { de: "die Überzeugung", tr: "kanaat", en: "conviction" },
       { de: "bewusst", tr: "bilinçli", en: "conscious" },
       { de: "kritisieren", tr: "eleştirmek", en: "to criticise" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "teilweise", tr: "kısmen", en: "partly" },
     ],
     tasks: [
       {

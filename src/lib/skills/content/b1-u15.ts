@@ -41,6 +41,8 @@ export const b1U15: SkillExercise[] = [
       { de: "zusehen", tr: "izlemek", en: "to watch" },
       { de: "bedienen", tr: "kullanmak / hizmet etmek", en: "to operate" },
       { de: "die Aushilfe", tr: "yardımcı eleman", en: "temporary help" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:
       "Am Montag bin ich um sieben mit dem Rad in den Betrieb gefahren. " +
@@ -107,6 +109,10 @@ export const b1U15: SkillExercise[] = [
       { de: "sinnlos", tr: "anlamsız", en: "pointless" },
       { de: "sich anstrengen", tr: "çabalamak", en: "to make an effort" },
       { de: "erleichtern", tr: "kolaylaştırmak", en: "to make easier" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "der Text", tr: "metin", en: "text" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     text:
       "Es gibt keine Methode, die für alle passt. Aber es gibt Methoden, die " +
@@ -174,6 +180,7 @@ export const b1U15: SkillExercise[] = [
       { de: "peinlich", tr: "utandırıcı", en: "embarrassing" },
       { de: "hinweisen", tr: "dikkat çekmek", en: "to point out" },
       { de: "einverstanden", tr: "hemfikir", en: "in agreement" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     segments: [
       { text: "Du, in der Abrechnung von gestern sind zwei Zahlen falsch." },
@@ -236,6 +243,7 @@ export const b1U15: SkillExercise[] = [
       { de: "die Empfehlung", tr: "tavsiye", en: "recommendation" },
       { de: "der Standpunkt", tr: "bakış açısı", en: "point of view" },
       { de: "die Richtung", tr: "yön", en: "direction" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     segments: [
       { text: "Ich begleite dich jetzt seit sechs Monaten. Wie siehst du das?" },
@@ -299,6 +307,8 @@ export const b1U15: SkillExercise[] = [
       { de: "beobachten", tr: "gözlemlemek", en: "to observe" },
       { de: "darstellen", tr: "anlatmak / göstermek", en: "to present" },
       { de: "die Unterstützung", tr: "destek", en: "support" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
       {
@@ -353,6 +363,8 @@ export const b1U15: SkillExercise[] = [
       { de: "die Rücksicht", tr: "anlayış", en: "consideration" },
       { de: "Ratschlag", tr: "öğüt", en: "piece of advice" },
       { de: "der Humor", tr: "mizah", en: "humour" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

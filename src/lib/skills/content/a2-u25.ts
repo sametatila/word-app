@@ -43,6 +43,11 @@ export const a2U25: SkillExercise[] = [
       { de: "der Buchhalter", tr: "muhasebeci", en: "accountant" },
       { de: "der Berater", tr: "danışman", en: "adviser" },
       { de: "unerfahren", tr: "deneyimsiz", en: "inexperienced" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "verdienen", tr: "para kazanmak", en: "to earn" },
+      { de: "dumm", tr: "aptal", en: "stupid" },
+      { de: "sich bessern", tr: "düzelmek", en: "to improve" },
     ],
     minutes: 4,
     text:
@@ -114,6 +119,11 @@ export const a2U25: SkillExercise[] = [
       { de: "anständig", tr: "düzgün / dürüst", en: "decent" },
       { de: "zudem", tr: "ayrıca", en: "moreover" },
       { de: "pro", tr: "başına", en: "per" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     minutes: 4,
     text:
@@ -181,6 +191,8 @@ export const a2U25: SkillExercise[] = [
       { de: "tagelang", tr: "günlerce", en: "for days" },
       { de: "schläfrig", tr: "uykulu", en: "sleepy" },
       { de: "schwierig", tr: "zor", en: "difficult" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 3,
     segments: [
@@ -250,6 +262,9 @@ export const a2U25: SkillExercise[] = [
       { de: "außerdem", tr: "ayrıca", en: "besides" },
       { de: "fast", tr: "neredeyse", en: "almost" },
       { de: "selbst", tr: "kendisi / bizzat", en: "myself" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "vorbei", tr: "bitmiş", en: "over" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     minutes: 3,
     segments: [
@@ -360,6 +375,8 @@ export const a2U25: SkillExercise[] = [
       { de: "immerhin", tr: "hiç değilse", en: "at least" },
       { de: "das Ziel", tr: "hedef", en: "goal" },
       { de: "erstaunt", tr: "şaşırmış", en: "astonished" },
+      { de: "das Gesuch", tr: "dilekçe", en: "petition" },
+      { de: "leicht", tr: "hafif", en: "light" },
     ],
     minutes: 10,
     tasks: [

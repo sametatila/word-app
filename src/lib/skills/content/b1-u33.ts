@@ -44,6 +44,10 @@ export const b1U33: SkillExercise[] = [
       { de: "der Alarm", tr: "alarm", en: "alarm" },
       { de: "der Transport", tr: "nakil", en: "transport" },
       { de: "der Sitz", tr: "koltuk", en: "seat" },
+      { de: "der Apparat", tr: "aygıt", en: "device" },
+      { de: "heraus", tr: "dışarı", en: "out" },
+      { de: "hilflos", tr: "çaresiz", en: "helpless" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Wenn Sie einen Notfall melden, sagen Sie zuerst WO, dann WAS. " +
@@ -112,6 +116,7 @@ export const b1U33: SkillExercise[] = [
       { de: "die Infektion", tr: "enfeksiyon", en: "infection" },
       { de: "das Schmerzmittel", tr: "ağrı kesici", en: "painkiller" },
       { de: "brechen", tr: "kırmak", en: "to break" },
+      { de: "heilen", tr: "iyileşmek", en: "to heal" },
     ],
     text:
       "Die meisten kleinen Wunden heilen allein. Waschen Sie die Stelle mit " +
@@ -179,6 +184,7 @@ export const b1U33: SkillExercise[] = [
       { de: "der Ozean", tr: "okyanus", en: "ocean" },
       { de: "das Lager", tr: "kamp", en: "camp" },
       { de: "der Stern", tr: "yıldız", en: "star" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Erzähl noch mal von der Nacht am Ozean." },
@@ -304,6 +310,7 @@ export const b1U33: SkillExercise[] = [
       { de: "die Nase", tr: "burun", en: "nose" },
       { de: "der Fall", tr: "düşme / vaka", en: "fall / case" },
       { de: "der Nerv", tr: "sinir", en: "nerve" },
+      { de: "bluten", tr: "kanamak", en: "to bleed" },
     ],
     tasks: [
       {
@@ -359,6 +366,7 @@ export const b1U33: SkillExercise[] = [
       { de: "der Blitz", tr: "şimşek", en: "lightning" },
       { de: "der Mond", tr: "ay", en: "moon" },
       { de: "die Fotografie", tr: "fotoğrafçılık", en: "photography" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

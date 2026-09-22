@@ -40,6 +40,7 @@ export const b1U13: SkillExercise[] = [
       { de: "das Original", tr: "asıl nüsha", en: "original" },
       { de: "die Urkunde", tr: "belge / senet", en: "certificate" },
       { de: "verlangen", tr: "talep etmek", en: "to demand" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "Wer selbst nicht kommen kann, lässt sich vertreten. Dafür braucht der " +
@@ -107,6 +108,10 @@ export const b1U13: SkillExercise[] = [
       { de: "die Freiheit", tr: "özgürlük", en: "freedom" },
       { de: "abstimmen", tr: "oy vermek", en: "to vote" },
       { de: "die Tradition", tr: "gelenek", en: "tradition" },
+      { de: "die Sprachkenntnisse", tr: "dil becerileri", en: "language skills" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Nach elf Jahren habe ich vor, den Antrag zu stellen. Die Bedingungen kenne " +
@@ -175,6 +180,7 @@ export const b1U13: SkillExercise[] = [
       { de: "kopieren", tr: "kopyalamak", en: "to copy" },
       { de: "sich weigern", tr: "reddetmek", en: "to refuse" },
       { de: "überreden", tr: "ikna etmek", en: "to persuade" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     segments: [
       { text: "Ich muss am Freitag arbeiten. Kannst du mich beim Amt vertreten?" },
@@ -355,6 +361,7 @@ export const b1U13: SkillExercise[] = [
       { de: "erreichen", tr: "ulaşmak", en: "to reach" },
       { de: "die Planung", tr: "planlama", en: "planning" },
       { de: "erfolgreich", tr: "başarılı", en: "successful" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     tasks: [
       {

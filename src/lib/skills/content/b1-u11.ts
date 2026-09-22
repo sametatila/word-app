@@ -39,6 +39,7 @@ export const b1U11: SkillExercise[] = [
       { de: "betreten", tr: "girmek", en: "to enter" },
       { de: "verbieten", tr: "yasaklamak", en: "to forbid" },
       { de: "offiziell", tr: "resmî", en: "official" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     text:
       "In diesem Gebäude gelten offizielle Vorschriften. Sie werden nicht gemacht, " +
@@ -105,6 +106,7 @@ export const b1U11: SkillExercise[] = [
       { de: "genehmigen", tr: "onaylamak", en: "to approve" },
       { de: "der Bescheid", tr: "resmî yanıt", en: "official notice" },
       { de: "ablaufen", tr: "süresi dolmak", en: "to expire" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     text:
       "Im März habe ich bei der Behörde ein neues Visum beantragt. Mein Visum " +
@@ -171,6 +173,8 @@ export const b1U11: SkillExercise[] = [
       { de: "benötigen", tr: "gerekmek", en: "to require" },
       { de: "das Dokument", tr: "belge", en: "document" },
       { de: "die Dauer", tr: "süre", en: "duration" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     segments: [
       { text: "Guten Tag. Ich möchte ein neues Visum beantragen." },
@@ -233,6 +237,7 @@ export const b1U11: SkillExercise[] = [
       { de: "begründen", tr: "gerekçelendirmek", en: "to justify" },
       { de: "der Beweis", tr: "kanıt", en: "evidence" },
       { de: "entschlossen", tr: "kararlı", en: "determined" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Der Bescheid ist da. Mein Antrag wurde abgelehnt." },

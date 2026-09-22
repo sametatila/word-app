@@ -42,6 +42,7 @@ export const a2U12: SkillExercise[] = [
       { de: "meinen", tr: "demek istemek", en: "to think" },
       { de: "auf jeden Fall", tr: "kesinlikle", en: "definitely" },
       { de: "dass", tr: "ki", en: "that" },
+      { de: "der Start", tr: "start", en: "start" },
     ],
     minutes: 4,
     text:
@@ -105,6 +106,7 @@ export const a2U12: SkillExercise[] = [
       { de: "das Tablett", tr: "tepsi", en: "tray" },
       { de: "die Kaffeepause", tr: "kahve molası", en: "coffee break" },
       { de: "das Mittagessen", tr: "öğle yemeği", en: "lunch" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     minutes: 4,
     text:
@@ -229,6 +231,10 @@ export const a2U12: SkillExercise[] = [
       { de: "die Geschäftsreise", tr: "iş seyahati", en: "business trip" },
       { de: "der Kalender", tr: "takvim", en: "calendar" },
       { de: "notfalls", tr: "gerekirse", en: "if necessary" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 3,
     segments: [
@@ -331,6 +337,8 @@ export const a2U12: SkillExercise[] = [
       { de: "vereinbaren", tr: "kararlaştırmak", en: "to agree on" },
       { de: "die Geschäftsreise", tr: "iş seyahati", en: "business trip" },
       { de: "dass", tr: "ki", en: "that" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     minutes: 8,
     tasks: [

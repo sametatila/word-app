@@ -44,6 +44,7 @@ export const b1U29: SkillExercise[] = [
       { de: "abheben", tr: "para çekmek", en: "to withdraw" },
       { de: "das Bargeld", tr: "nakit", en: "cash" },
       { de: "die Einzahlung", tr: "para yatırma", en: "deposit" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     text:
       "Für ein Girokonto brauchen Sie einen Ausweis und eine Meldebestätigung. " +
@@ -176,6 +177,7 @@ export const b1U29: SkillExercise[] = [
       { de: "elegant", tr: "şık", en: "elegant" },
       { de: "die Wolle", tr: "yün", en: "wool" },
       { de: "der Stoff", tr: "kumaş", en: "fabric" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { text: "Ich suche ein Kostüm für eine Feier. Nicht zu elegant." },
@@ -238,6 +240,8 @@ export const b1U29: SkillExercise[] = [
       { de: "das Plastik", tr: "plastik", en: "plastic" },
       { de: "das Holz", tr: "ahşap", en: "wood" },
       { de: "der Stecker", tr: "fiş", en: "plug" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Diese Schüssel gibt es aus Holz, aus Metall und aus Plastik." },
@@ -357,6 +361,8 @@ export const b1U29: SkillExercise[] = [
       { de: "die Bedienungsanleitung", tr: "kullanma kılavuzu", en: "instruction manual" },
       { de: "die Mahnung", tr: "ihtar", en: "reminder" },
       { de: "der Schein", tr: "banknot", en: "note" },
+      { de: "per", tr: "yoluyla", en: "by" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     tasks: [
       {

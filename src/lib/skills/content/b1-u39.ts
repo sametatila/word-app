@@ -45,6 +45,7 @@ export const b1U39: SkillExercise[] = [
       { de: "die Entlassung", tr: "işten çıkarma", en: "dismissal" },
       { de: "der Angestellte", tr: "çalışan", en: "employee" },
       { de: "die Tätigkeit", tr: "faaliyet / iş", en: "activity" },
+      { de: "außen", tr: "dıştan", en: "on the outside" },
     ],
     text:
       "Wenn es im Betrieb Streit gibt, geht ein Angestellter zuerst zum " +
@@ -111,6 +112,9 @@ export const b1U39: SkillExercise[] = [
       { de: "das Institut", tr: "enstitü", en: "institute" },
       { de: "die Forschung", tr: "araştırma", en: "research" },
       { de: "die Fachleute", tr: "uzmanlar", en: "specialists" },
+      { de: "raten", tr: "tahmin etmek", en: "to guess" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Wer einen Experten fragt, bekommt eine bessere Antwort, wenn er " +
@@ -239,6 +243,7 @@ export const b1U39: SkillExercise[] = [
       { de: "vorschlagen", tr: "önermek", en: "to suggest" },
       { de: "leiten", tr: "yönetmek", en: "to lead" },
       { de: "anstellen", tr: "işe almak", en: "to employ" },
+      { de: "interessant", tr: "ilginç", en: "interesting" },
     ],
     segments: [
       { text: "Sie wollten mir etwas vorschlagen?" },
@@ -357,6 +362,9 @@ export const b1U39: SkillExercise[] = [
       { de: "die Leitung", tr: "yönetim", en: "management" },
       { de: "mitteilen", tr: "bildirmek", en: "to inform" },
       { de: "einsetzen", tr: "görevlendirmek", en: "to deploy" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
+      { de: "mehrere", tr: "birden fazla", en: "several" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
       {

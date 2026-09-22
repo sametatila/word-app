@@ -44,6 +44,10 @@ export const a2U18: SkillExercise[] = [
       { de: "die Kette", tr: "kolye", en: "necklace" },
       { de: "die Kosmetik", tr: "kozmetik", en: "cosmetics" },
       { de: "das Wechselgeld", tr: "para üstü", en: "change" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "passend", tr: "uygun", en: "suitable" },
+      { de: "das Café", tr: "kafe", en: "café" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -239,6 +243,8 @@ export const a2U18: SkillExercise[] = [
       { de: "der Besuch", tr: "misafir / ziyaret", en: "visitors" },
       { de: "organisieren", tr: "organize etmek", en: "to organise" },
       { de: "leihen", tr: "ödünç vermek", en: "to lend" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],
     minutes: 3,
     segments: [

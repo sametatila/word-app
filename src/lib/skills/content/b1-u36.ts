@@ -43,6 +43,10 @@ export const b1U36: SkillExercise[] = [
       { de: "einschalten", tr: "açmak", en: "to switch on" },
       { de: "der Lautsprecher", tr: "hoparlör", en: "loudspeaker" },
       { de: "die Anleitung", tr: "kılavuz", en: "manual" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
+      { de: "meiste", tr: "çoğu", en: "most" },
+      { de: "kaputtgehen", tr: "bozulmak", en: "to break" },
     ],
     text:
       "Lesen Sie die Anleitung, bevor Sie etwas anschließen. Das klingt " +
@@ -108,6 +112,9 @@ export const b1U36: SkillExercise[] = [
       { de: "löschen", tr: "silmek", en: "to delete" },
       { de: "die Festplatte", tr: "sabit disk", en: "hard drive" },
       { de: "der Klick", tr: "tıklama", en: "click" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Wenn die Daten weg sind, sind sie meistens nicht wirklich weg. " +
@@ -174,6 +181,7 @@ export const b1U36: SkillExercise[] = [
       { de: "unterbrechen", tr: "kesmek", en: "to interrupt" },
       { de: "verbinden", tr: "bağlamak", en: "to connect" },
       { de: "weshalb", tr: "bu yüzden / neden", en: "which is why" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     segments: [
       { text: "Seit heute Morgen habe ich keine Verbindung." },
@@ -299,6 +307,7 @@ export const b1U36: SkillExercise[] = [
       { de: "die Klimaanlage", tr: "klima", en: "air conditioning" },
       { de: "technisch", tr: "teknik", en: "technical" },
       { de: "die Mühe", tr: "zahmet", en: "effort" },
+      { de: "geschlossen sein", tr: "kapalı olmak", en: "to be closed" },
     ],
     tasks: [
       {

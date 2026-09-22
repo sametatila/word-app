@@ -491,6 +491,22 @@ const ara = (m, w) => {
     govde.push(cur);
   }
   for (const g of govde) { r = dene(g); if (r !== undefined) return r; }
+  /* GEÇMİŞ ZAMAN ORTACI — `ge-…-t` / `ge-…-en`. Kural yokken ortaç en gevşek
+     adıma düşüyor ve yanlış kayda bağlanıyordu: `gebucht` → `die Bucht` (koy),
+     `gestiegen` → `die Stiege` (merdiven), `gezahlt` → `die Zahl` (sayı).
+     Üçünün de doğrusu fiil: buchen, steigen, zahlen. Önce mastar adayları
+     denenir; düzensiz fiilin ablautunu `DUZENSIZ_TERS` zaten taşıyor. */
+  for (const g of [w, ...govde]) {
+    const mo = /^ge(.{3,})(t|en)$/.exec(g);
+    if (!mo) continue;
+    const kok = mo[1];
+    for (const aday of [kok + "en", kok.replace(/e$/, "") + "en", kok]) {
+      r = dene(aday);
+      if (r !== undefined) return r;
+      const im = DUZENSIZ_TERS.get("ge" + kok + mo[2]);
+      if (im) { r = dene(im); if (r !== undefined) return r; }
+    }
+  }
   // En gevşek adım en sonda: sorguyu dört harfe kadar kısaltmak.
   for (const g of [w, ...govde]) { r = kisalt(g); if (r !== undefined) return r; }
   return undefined;

@@ -98,6 +98,7 @@ export const a1U13: SkillExercise[] = [
       { de: "die Lieferung", tr: "teslimat", en: "delivery" },
       { de: "kostenlos", tr: "ücretsiz", en: "free" },
       { de: "das Paket", tr: "kargo paketi", en: "parcel" },
+      { de: "klicken", tr: "tıklamak", en: "to click" },
     ],
     minutes: 3,
     text:
@@ -150,6 +151,7 @@ export const a1U13: SkillExercise[] = [
     gloss: [
       { de: "links", tr: "sol", en: "left" },
       { de: "rechts", tr: "sağ", en: "right" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 2,
     segments: [

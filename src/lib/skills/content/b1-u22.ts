@@ -43,6 +43,9 @@ export const b1U22: SkillExercise[] = [
       { de: "sich beteiligen", tr: "katılmak", en: "to take part" },
       { de: "verteilen", tr: "paylaştırmak", en: "to distribute" },
       { de: "die Gemeinschaft", tr: "topluluk", en: "community" },
+      { de: "leeren", tr: "boşaltmak", en: "to empty" },
+      { de: "egal", tr: "fark etmez", en: "doesn't matter" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     text:
       "Hinter dem Haus liegt seit Jahren eine leere Fläche. Ab April machen " +
@@ -108,6 +111,7 @@ export const b1U22: SkillExercise[] = [
       { de: "sich verändern", tr: "değişmek", en: "to change" },
       { de: "die Vergangenheit", tr: "geçmiş", en: "past" },
       { de: "steigen", tr: "yükselmek", en: "to rise" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "In der Vergangenheit war dieses Viertel vor allem ein Ort zum Arbeiten. " +
@@ -174,6 +178,8 @@ export const b1U22: SkillExercise[] = [
       { de: "die Temperatur", tr: "sıcaklık", en: "temperature" },
       { de: "zunehmen", tr: "artmak", en: "to increase" },
       { de: "die Wettervorhersage", tr: "hava tahmini", en: "forecast" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     segments: [
       { text: "Hast du die Wettervorhersage gesehen? Es wird noch heißer." },
@@ -299,6 +305,8 @@ export const b1U22: SkillExercise[] = [
       { de: "das Klima", tr: "iklim", en: "climate" },
       { de: "zunehmen", tr: "artmak", en: "to increase" },
       { de: "das Zeichen", tr: "işaret", en: "sign" },
+      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     tasks: [
       {
@@ -353,6 +361,8 @@ export const b1U22: SkillExercise[] = [
       { de: "die Vergangenheit", tr: "geçmiş", en: "past" },
       { de: "städtisch", tr: "kentsel", en: "urban" },
       { de: "sich verändern", tr: "değişmek", en: "to change" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     tasks: [
       {

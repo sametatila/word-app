@@ -42,6 +42,8 @@ export const a2U13: SkillExercise[] = [
       { de: "der Anhang", tr: "ek", en: "attachment" },
       { de: "verschicken", tr: "yollamak", en: "to send" },
       { de: "das Fieber", tr: "ateş", en: "fever" },
+      { de: "die Krankmeldung", tr: "hastalık bildirimi", en: "sick note" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 4,
     text:
@@ -106,6 +108,9 @@ export const a2U13: SkillExercise[] = [
       { de: "das Einkaufszentrum", tr: "alışveriş merkezi", en: "shopping centre" },
       { de: "der Schlussverkauf", tr: "sezon sonu indirimi", en: "end-of-season sale" },
       { de: "beliebt", tr: "sevilen", en: "popular" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
+      { de: "niedrig", tr: "düşük", en: "low" },
     ],
     minutes: 4,
     text:
@@ -226,6 +231,8 @@ export const a2U13: SkillExercise[] = [
       { de: "der Stammkunde", tr: "sürekli müşteri", en: "regular customer" },
       { de: "reduziert", tr: "indirimli", en: "reduced" },
       { de: "die Qualität", tr: "kalite", en: "quality" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     minutes: 3,
     segments: [
@@ -327,6 +334,7 @@ export const a2U13: SkillExercise[] = [
       { de: "verschicken", tr: "yollamak", en: "to send" },
       { de: "ansteckend", tr: "bulaşıcı", en: "contagious" },
       { de: "die Migräne", tr: "migren", en: "migraine" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 8,
     tasks: [

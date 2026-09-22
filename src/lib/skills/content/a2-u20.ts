@@ -39,6 +39,8 @@ export const a2U20: SkillExercise[] = [
       { de: "humorvoll", tr: "espritüel", en: "humorous" },
       { de: "modisch", tr: "modaya uygun", en: "fashionable" },
       { de: "lässig", tr: "rahat / havalı", en: "casual" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -101,6 +103,11 @@ export const a2U20: SkillExercise[] = [
       { de: "mailen", tr: "e-posta atmak", en: "to email" },
       { de: "die Umarmung", tr: "sarılma", en: "hug" },
       { de: "zusammenhalten", tr: "birbirine kenetlenmek", en: "to stick together" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "die Stirn", tr: "alın", en: "forehead" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Text", tr: "metin", en: "text" },
+      { de: "geweint", tr: "ağlamış", en: "cried" },
     ],
     minutes: 4,
     text:
@@ -239,6 +246,8 @@ export const a2U20: SkillExercise[] = [
       { de: "die Unterstützung", tr: "destek", en: "support" },
       { de: "verringern", tr: "azaltmak", en: "to reduce" },
       { de: "machbar", tr: "yapılabilir", en: "doable" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     minutes: 3,
     segments: [
@@ -350,6 +359,7 @@ export const a2U20: SkillExercise[] = [
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
       { de: "gemein", tr: "kırıcı / kötü", en: "mean" },
       { de: "die Umarmung", tr: "sarılma", en: "hug" },
+      { de: "lustig", tr: "komik", en: "funny" },
     ],
     minutes: 8,
     tasks: [

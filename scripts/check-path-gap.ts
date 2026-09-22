@@ -61,16 +61,27 @@ import { enStems, EN_FREE, LEVELS } from "./lib/en-gate";
 import { butceUygula, butceBitir } from "./lib/budget";
 
 const require = createRequire(import.meta.url);
-const { kokAra, SERBEST } = require("./lib/vocab-gate.cjs") as {
+const { kokAra, SERBEST, olc } = require("./lib/vocab-gate.cjs") as {
   kokAra: <T>(m: Map<string, T>, w: string) => T | undefined;
   SERBEST: Set<string>;
+  olc: (ham: string, unit: number, ekIzin: string[], seviye: string) => { tok: string[]; disi: string[] };
 };
 
 /* Tek harfli parça atılıyor: havuz kaydı "U-turn" tirede bölününce "u" diye
    bir sözcük uyduruyor ve `enStems` "us"u ona indirgeyip B1 boşluğunun
    başına "u×120" yazıyordu. */
 const kelime = (raw: string) =>
-  raw.toLowerCase().replace(/\(.*?\)/g, "").split(/[\s/,-]+/).map((w) => w.replace(/^'+|'+$/g, "")).filter((w) => w.length >= 2);
+  raw
+    .toLowerCase()
+    .replace(/\(.*?\)/g, "")
+    .split(/[\s/,-]+/)
+    /* NOKTALAMA DA DÜŞER (2026-09-22). Yalnız kesme işareti kırpılıyordu ve
+       ders KALIPLARI cümle: "Was kann man hier sehen?" → `sehen?`. Böyle bir
+       belirteç havuzun `sehen` kaydıyla eşleşmiyor ve kalıpta öğretilen sözcük
+       "patika hiç öğretmiyor" diye sayılıyordu — Almanca listede `lesen`,
+       `sehen`, `genau`, `rechnen` bu yüzden borç görünüyordu. */
+    .map((w) => w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+    .filter((w) => w.length >= 2);
 
 type Kurs = "de" | "en";
 
@@ -152,9 +163,34 @@ function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
       for (const g of t.words ?? []) ekle(g.de);
     }
     const metin = kurs === "en" ? englishSurface(e as unknown as SkillExercise) : germanSurface(e);
-    const tok = kurs === "en"
-      ? (metin.toLowerCase().match(/[\p{L}'-]{2,}/gu) ?? [])
-      : (metin.toLowerCase().match(/[a-zäöüßéèêáàóúï]{2,}/g) ?? []);
+    /* ALMANCADA BELİRTEÇ SÜZGECİ KAPININ KENDİSİNDEN (2026-09-22). Ham
+       belirteçle çalışmak özel adı sözcük sanıyordu: "Berger" soyadı
+       `kokAra` ile `bergen` fiiline bağlanıyor ve A1'de "hiç öğretilmeyen"
+       borcu diye görünüyordu. `olc` özel adı, sayıyı, takvim sözcüğünü ve
+       Türkçe harfli belirteci zaten ayıklıyor; ünite penceresini geniş
+       (99) veriyoruz, çünkü buradaki soru ünite değil kurs geneli. */
+    const seviye = /^(?:en-)?(a1|a2|b1|b2|c1)-/.exec(e.id)?.[1] ?? "a1";
+    if (kurs === "de") {
+      /* Almancada hem belirteç süzgeci hem SÖZLÜKÇE KREDİSİ kapının kendi
+         işi: `olc`un `ekIzin`i sözlükçeyi havuza katıyor ve bileşik/çekimli
+         biçimi de tanıyor ("die Krankenkasse" sözlükçedeyse metindeki
+         "Krankenkassen" de biliniyor sayılıyor). Aynı soruyu iki kez, biri
+         sözlükçesiz biri sözlükçeli soruyoruz. */
+      const sozlukSozcukleri = [
+        ...(e.gloss ?? []).map((g) => g.de ?? ""),
+        ...(e.tasks ?? []).flatMap((t) => [...(t.phrases ?? []), ...(t.words ?? [])].map((g) => g.de ?? "")),
+      ].filter(Boolean);
+      for (const w of olc(metin, 99, [], seviye).disi) {
+        const kok = kokBul(w);
+        if (kok) toplam.set(kok, (toplam.get(kok) ?? 0) + 1);
+      }
+      for (const w of olc(metin, 99, sozlukSozcukleri, seviye).disi) {
+        const kok = kokBul(w);
+        if (kok) sozluksuz.set(kok, (sozluksuz.get(kok) ?? 0) + 1);
+      }
+      continue;
+    }
+    const tok = metin.toLowerCase().match(/[\p{L}'-]{2,}/gu) ?? [];
     for (const w of tok) {
       const kok = kokBul(w);
       if (!kok) continue;

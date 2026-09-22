@@ -42,6 +42,11 @@ export const b1U43: SkillExercise[] = [
       { de: "eintreten", tr: "savunmak", en: "to stand up for" },
       { de: "die Aktivität", tr: "etkinlik", en: "activity" },
       { de: "vergeblich", tr: "boşuna", en: "in vain" },
+      { de: "der Chor", tr: "koro", en: "choir" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "böse", tr: "kızgın", en: "angry" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Unser Verein hat neunzig Mitglieder. Der Beitrag ist klein, aber " +
@@ -176,6 +181,7 @@ export const b1U43: SkillExercise[] = [
       { de: "das Orchester", tr: "orkestra", en: "orchestra" },
       { de: "die Eröffnung", tr: "açılış", en: "opening" },
       { de: "die Flöte", tr: "flüt", en: "flute" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Hast du das Programm gesehen? Was spielen sie zuerst?" },
@@ -238,6 +244,9 @@ export const b1U43: SkillExercise[] = [
       { de: "das Unglück", tr: "kaza / talihsizlik", en: "misfortune" },
       { de: "der Friede", tr: "barış", en: "peace" },
       { de: "traditionell", tr: "geleneksel", en: "traditional" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "sammeln", tr: "toplamak", en: "to collect" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Die Bilder von der Katastrophe sind schwer zu sehen. So ein Unglück trifft immer die Ärmsten." },
@@ -301,6 +310,9 @@ export const b1U43: SkillExercise[] = [
       { de: "die Galerie", tr: "balkon", en: "gallery" },
       { de: "der Zuhörer", tr: "dinleyici", en: "listener" },
       { de: "eröffnen", tr: "açmak", en: "to open" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Halle", tr: "salon", en: "hall" },
     ],
     tasks: [
       {
@@ -355,6 +367,9 @@ export const b1U43: SkillExercise[] = [
       { de: "streiken", tr: "grev yapmak", en: "to strike" },
       { de: "unterscheiden", tr: "ayırt etmek", en: "to distinguish" },
       { de: "die Aktivität", tr: "etkinlik", en: "activity" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "böse", tr: "kızgın", en: "angry" },
+      { de: "der Chor", tr: "koro", en: "choir" },
     ],
     tasks: [
       {

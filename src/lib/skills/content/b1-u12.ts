@@ -40,6 +40,10 @@ export const b1U12: SkillExercise[] = [
       { de: "überholen", tr: "sollamak", en: "to overtake" },
       { de: "beweisen", tr: "kanıtlamak", en: "to prove" },
       { de: "die Aufnahme", tr: "kayıt / çekim", en: "recording" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
+      { de: "die Notiz", tr: "not", en: "note" },
     ],
     text:
       "Ein Strafzettel kommt fast immer mit einem Foto. Darauf sieht man das Auto, " +
@@ -171,6 +175,8 @@ export const b1U12: SkillExercise[] = [
       { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
       { de: "bestätigen", tr: "teyit etmek", en: "to confirm" },
       { de: "der Feiertag", tr: "resmî tatil", en: "public holiday" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
       { text: "Guten Tag, hier Praxis Berger. Ihr Termin morgen fällt leider aus. Wir müssen ihn absagen." },
@@ -296,6 +302,8 @@ export const b1U12: SkillExercise[] = [
       { de: "entstehen", tr: "meydana gelmek", en: "to arise" },
       { de: "der Zeuge", tr: "tanık", en: "witness" },
       { de: "bremsen", tr: "fren yapmak", en: "to brake" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

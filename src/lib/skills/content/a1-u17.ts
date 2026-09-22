@@ -35,6 +35,7 @@ export const a1U17: SkillExercise[] = [
       { de: "der Müll", tr: "çöp", en: "rubbish" },
       { de: "leise", tr: "sessiz", en: "quiet" },
       { de: "dürfen", tr: "izinli olmak", en: "to be allowed" },
+      { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },
     ],
     minutes: 3,
     text:
@@ -95,6 +96,7 @@ export const a1U17: SkillExercise[] = [
       { de: "die Nebenkosten", tr: "aidat", en: "utility costs" },
       { de: "überweisen", tr: "havale etmek", en: "to transfer" },
       { de: "der Vermieter", tr: "ev sahibi", en: "landlord" },
+      { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },
     ],
     minutes: 3,
     text:
@@ -305,6 +307,7 @@ export const a1U17: SkillExercise[] = [
       { de: "der Umzug", tr: "taşınma", en: "move" },
       { de: "packen", tr: "paketlemek", en: "to pack" },
       { de: "umziehen", tr: "taşınmak", en: "to move house" },
+      { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
     ],
     minutes: 7,
     tasks: [

@@ -44,6 +44,9 @@ export const b1U30: SkillExercise[] = [
       { de: "der Hersteller", tr: "üretici", en: "manufacturer" },
       { de: "die Konkurrenz", tr: "rekabet", en: "competition" },
       { de: "der Export", tr: "ihracat", en: "export" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     text:
       "Die Fabrik am Rand des Ortes gehört seit zwei Jahren einem anderen " +
@@ -110,6 +113,12 @@ export const b1U30: SkillExercise[] = [
       { de: "der Gewinn", tr: "kâr", en: "profit" },
       { de: "der Faktor", tr: "etken", en: "factor" },
       { de: "knapp", tr: "az kalsın / kıt", en: "barely" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "der Blick", tr: "bakış", en: "look" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     text:
       "In jeder Statistik stehen zwei Arten von Zahlen, und sie werden oft " +
@@ -177,6 +186,8 @@ export const b1U30: SkillExercise[] = [
       { de: "die Überschrift", tr: "başlık", en: "headline" },
       { de: "die Einzelheit", tr: "ayrıntı", en: "detail" },
       { de: "die Broschüre", tr: "broşür", en: "brochure" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
     ],
     segments: [
       { text: "Schau mal diese Annonce. Klingt gut, oder?" },
@@ -239,6 +250,8 @@ export const b1U30: SkillExercise[] = [
       { de: "der Ordner", tr: "klasör", en: "folder" },
       { de: "die Mappe", tr: "dosya", en: "file" },
       { de: "der Stempel", tr: "kaşe", en: "stamp" },
+      { de: "drucken", tr: "yazdırmak", en: "to print" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Ich suche die Mappe des Kollegen aus dem Export." },
@@ -302,6 +315,8 @@ export const b1U30: SkillExercise[] = [
       { de: "der Gewinn", tr: "kâr", en: "profit" },
       { de: "die Statistik", tr: "istatistik", en: "statistics" },
       { de: "der Import", tr: "ithalat", en: "import" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     tasks: [
       {
@@ -356,6 +371,7 @@ export const b1U30: SkillExercise[] = [
       { de: "besorgen", tr: "temin etmek", en: "to obtain" },
       { de: "die Vertretung", tr: "temsilcilik", en: "agency" },
       { de: "das Detail", tr: "ayrıntı", en: "detail" },
+      { de: "zurücktreten", tr: "istifa etmek", en: "to resign" },
     ],
     tasks: [
       {

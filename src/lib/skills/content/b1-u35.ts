@@ -41,6 +41,10 @@ export const b1U35: SkillExercise[] = [
       { de: "das Altenheim", tr: "huzurevi", en: "care home" },
       { de: "die Badewanne", tr: "küvet", en: "bathtub" },
       { de: "der Halt", tr: "tutamak / destek", en: "support" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "rund", tr: "yuvarlak", en: "round" },
+      { de: "der Anfänger", tr: "yeni başlayan", en: "beginner" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Die meisten Menschen wollen zu Hause bleiben, nicht ins Altenheim. " +
@@ -106,6 +110,8 @@ export const b1U35: SkillExercise[] = [
       { de: "das Suchtmittel", tr: "bağımlılık yapan madde", en: "addictive substance" },
       { de: "sich verstecken", tr: "saklanmak", en: "to hide" },
       { de: "das Opfer", tr: "kurban", en: "victim" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "Ich war zwanzig Jahre Raucher. Ich habe viermal mit dem Rauchen " +
@@ -297,6 +303,7 @@ export const b1U35: SkillExercise[] = [
       { de: "der Nichtraucher", tr: "içmeyen", en: "non-smoker" },
       { de: "das Suchtmittel", tr: "bağımlılık maddesi", en: "addictive substance" },
       { de: "die Drogerie", tr: "kozmetik market", en: "drugstore" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
     ],
     tasks: [
       {

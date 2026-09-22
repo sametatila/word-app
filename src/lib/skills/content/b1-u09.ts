@@ -39,6 +39,7 @@ export const b1U09: SkillExercise[] = [
       { de: "das Grundstück", tr: "arsa", en: "plot" },
       { de: "sich leisten", tr: "gücü yetmek", en: "to afford" },
       { de: "sich befinden", tr: "bulunmak", en: "to be located" },
+      { de: "egal", tr: "fark etmez", en: "doesn't matter" },
     ],
     text:
       "Jeder träumt von etwas. Das Haus, von dem ich träume, ist nicht groß. " +
@@ -106,6 +107,12 @@ export const b1U09: SkillExercise[] = [
       { de: "verzeihen", tr: "affetmek", en: "to forgive" },
       { de: "der Charakter", tr: "karakter", en: "character" },
       { de: "enttäuschen", tr: "hayal kırıklığına uğratmak", en: "to disappoint" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "der Text", tr: "metin", en: "text" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     text:
       "Es gibt Menschen, denen man sofort vertraut, und man weiß nicht genau warum. " +
@@ -350,6 +357,9 @@ export const b1U09: SkillExercise[] = [
       { de: "der Rat", tr: "öğüt", en: "advice" },
       { de: "sich verhalten", tr: "davranmak", en: "to behave" },
       { de: "akzeptieren", tr: "kabul etmek", en: "to accept" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
       {

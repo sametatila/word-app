@@ -40,6 +40,8 @@ export const b1U23: SkillExercise[] = [
       { de: "die Öffentlichkeit", tr: "kamuoyu", en: "the public" },
       { de: "sich einsetzen", tr: "mücadele etmek", en: "to campaign" },
       { de: "der Streik", tr: "grev", en: "strike" },
+      { de: "vorbei", tr: "bitmiş", en: "over" },
+      { de: "beraten", tr: "danışmanlık yapmak", en: "to advise" },
     ],
     text:
       "Am Samstag haben etwa dreitausend Menschen dafür protestiert, dass das alte " +
@@ -106,6 +108,8 @@ export const b1U23: SkillExercise[] = [
       { de: "füttern", tr: "beslemek", en: "to feed" },
       { de: "treu", tr: "sadık", en: "loyal" },
       { de: "beißen", tr: "ısırmak", en: "to bite" },
+      { de: "bellen", tr: "havlamak", en: "to bark" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     text:
       "Nero ist sieben Jahre alt und seit acht Monaten bei uns. Er ist groß, " +
@@ -172,6 +176,7 @@ export const b1U23: SkillExercise[] = [
       { de: "das Wunder", tr: "mucize", en: "miracle" },
       { de: "das Boot", tr: "tekne", en: "boat" },
       { de: "das Vergnügen", tr: "keyif", en: "pleasure" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
     ],
     segments: [
       { text: "Was würdest du machen, wenn du plötzlich reich wärst?" },
@@ -234,6 +239,7 @@ export const b1U23: SkillExercise[] = [
       { de: "sich entschließen", tr: "karar vermek", en: "to decide" },
       { de: "die Änderung", tr: "değişiklik", en: "change" },
       { de: "das Geheimnis", tr: "sır", en: "secret" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
       { text: "Ich habe mich entschlossen. Ab Januar arbeite ich nur noch vier Tage." },
@@ -351,6 +357,9 @@ export const b1U23: SkillExercise[] = [
       { de: "reichen", tr: "yetmek", en: "to be enough" },
       { de: "ewig", tr: "sonsuza dek", en: "forever" },
       { de: "zukünftig", tr: "bundan böyle", en: "in future" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "leicht", tr: "hafif", en: "light" },
     ],
     tasks: [
       {

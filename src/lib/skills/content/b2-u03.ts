@@ -42,6 +42,11 @@ export const b2U03: SkillExercise[] = [
       { de: "der Arbeitsablauf", tr: "iş akışı", en: "workflow" },
       { de: "koordinieren", tr: "koordine etmek", en: "to coordinate" },
       { de: "freistellen", tr: "izinli saymak", en: "to release from duty" },
+      { de: "beruhen", tr: "dayanmak", en: "to be based on" },
+      { de: "der Umfang", tr: "kapsam", en: "scope" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "höchstens", tr: "en fazla", en: "at most" },
     ],
     minutes: 6,
     text:
@@ -112,6 +117,13 @@ export const b2U03: SkillExercise[] = [
       { de: "der Ansprechpartner", tr: "muhatap", en: "contact person" },
       { de: "mahnen", tr: "ihtar etmek", en: "to send a reminder" },
       { de: "unzumutbar", tr: "kabul edilemez", en: "unreasonable" },
+      { de: "gesamt", tr: "bütün", en: "entire" },
+      { de: "per", tr: "yoluyla", en: "by" },
+      { de: "das Einschreiben", tr: "taahhütlü mektup", en: "registered letter" },
+      { de: "die Verzögerung", tr: "gecikme", en: "delay" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
+      { de: "die Verbraucherzentrale", tr: "tüketici danışma merkezi", en: "consumer advice center" },
+      { de: "der Absender", tr: "gönderen", en: "sender" },
     ],
     minutes: 6,
     text:
@@ -182,6 +194,8 @@ export const b2U03: SkillExercise[] = [
       { de: "die Fachsprache", tr: "uzmanlık dili", en: "technical language" },
       { de: "die Kompetenz", tr: "yetkinlik", en: "competence" },
       { de: "das Selbstvertrauen", tr: "özgüven", en: "self-confidence" },
+      { de: "einzige", tr: "tek", en: "only" },
+      { de: "solche", tr: "böyle", en: "such" },
     ],
     minutes: 5,
     segments: [
@@ -256,6 +270,7 @@ export const b2U03: SkillExercise[] = [
       { de: "zusichern", tr: "taahhüt etmek", en: "to guarantee" },
       { de: "unterbieten", tr: "altına inmek", en: "to undercut" },
       { de: "überteuert", tr: "fahiş fiyatlı", en: "overpriced" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     minutes: 5,
     segments: [
@@ -330,6 +345,7 @@ export const b2U03: SkillExercise[] = [
       { de: "der Preisnachlass", tr: "fiyat indirimi", en: "discount" },
       { de: "die Stellungnahme", tr: "görüş bildirme", en: "statement" },
       { de: "der Austausch", tr: "fikir alışverişi", en: "exchange" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
     ],
     minutes: 9,
     tasks: [
@@ -381,6 +397,10 @@ export const b2U03: SkillExercise[] = [
       { de: "der Nachweis", tr: "kanıt", en: "proof" },
       { de: "unzumutbar", tr: "kabul edilemez", en: "unreasonable" },
       { de: "der Ansprechpartner", tr: "muhatap", en: "contact person" },
+      { de: "per", tr: "yoluyla", en: "by" },
+      { de: "das Einschreiben", tr: "taahhütlü mektup", en: "registered letter" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
+      { de: "sowie", tr: "ve ayrıca", en: "as well as" },
     ],
     minutes: 12,
     tasks: [

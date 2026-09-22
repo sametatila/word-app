@@ -43,6 +43,9 @@ export const a2U21: SkillExercise[] = [
       { de: "der Star", tr: "yıldız oyuncu", en: "star" },
       { de: "der Fan", tr: "hayran", en: "fan" },
       { de: "total", tr: "tamamen", en: "totally" },
+      { de: "die Erklärung", tr: "açıklama", en: "explanation" },
+      { de: "der Text", tr: "metin", en: "text" },
+      { de: "leicht", tr: "hafif", en: "light" },
     ],
     minutes: 4,
     text:
@@ -114,6 +117,10 @@ export const a2U21: SkillExercise[] = [
       { de: "wahrscheinlich", tr: "muhtemelen", en: "probably" },
       { de: "mitbekommen", tr: "duymak / farkına varmak", en: "to catch wind of" },
       { de: "herausfinden", tr: "öğrenmek / ortaya çıkarmak", en: "to find out" },
+      { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
+      { de: "heraus", tr: "dışarı", en: "out" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "aller", tr: "hepsinden", en: "of all" },
     ],
     minutes: 4,
     text:
@@ -180,6 +187,9 @@ export const a2U21: SkillExercise[] = [
       { de: "einige", tr: "birkaç", en: "some" },
       { de: "manche", tr: "bazıları", en: "some people" },
       { de: "irgendwie", tr: "bir şekilde", en: "somehow" },
+      { de: "vormittags", tr: "öğleden önce", en: "before noon" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 3,
     segments: [
@@ -251,6 +261,9 @@ export const a2U21: SkillExercise[] = [
       { de: "der Chat", tr: "sohbet", en: "chat" },
       { de: "echt", tr: "gerçek / gerçekten", en: "real, really" },
       { de: "online", tr: "çevrimiçi", en: "online" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 3,
     segments: [
@@ -358,6 +371,8 @@ export const a2U21: SkillExercise[] = [
       { de: "gelegentlich", tr: "ara sıra", en: "occasionally" },
       { de: "verringern", tr: "azaltmak", en: "to reduce" },
       { de: "machbar", tr: "yapılabilir", en: "doable" },
+      { de: "das Glück", tr: "şans", en: "luck" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     minutes: 8,
     tasks: [

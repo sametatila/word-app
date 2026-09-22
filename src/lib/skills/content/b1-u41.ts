@@ -110,6 +110,9 @@ export const b1U41: SkillExercise[] = [
       { de: "allgemein", tr: "genel", en: "general" },
       { de: "der Einfluss", tr: "etki", en: "influence" },
       { de: "die Reform", tr: "reform", en: "reform" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Eine Mehrheit ist keine Wahrheit. Das ist einfach, wird aber " +
@@ -176,6 +179,10 @@ export const b1U41: SkillExercise[] = [
       { de: "die Personalien", tr: "kimlik bilgileri", en: "personal details" },
       { de: "der Zivilstand", tr: "medeni hâl", en: "marital status" },
       { de: "anerkennen", tr: "tanımak", en: "to recognise" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
+      { de: "ledig", tr: "bekâr", en: "single" },
+      { de: "geschieden", tr: "boşanmış", en: "divorced" },
+      { de: "teilweise", tr: "kısmen", en: "partly" },
     ],
     segments: [
       { text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft. Das Konsulat verlangt sie." },
@@ -238,6 +245,8 @@ export const b1U41: SkillExercise[] = [
       { de: "das Alphabet", tr: "alfabe", en: "alphabet" },
       { de: "das Wörterbuch", tr: "sözlük", en: "dictionary" },
       { de: "verwandt", tr: "akraba / ilişkili", en: "related" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     segments: [
       { text: "Im Kurs duzen sich alle. Im Betrieb nicht. Warum eigentlich?" },
@@ -301,6 +310,7 @@ export const b1U41: SkillExercise[] = [
       { de: "die Zweitsprache", tr: "ikinci dil", en: "second language" },
       { de: "die Aussprache", tr: "telaffuz", en: "pronunciation" },
       { de: "der Dialekt", tr: "lehçe", en: "dialect" },
+      { de: "gerne", tr: "memnuniyetle", en: "with pleasure" },
     ],
     tasks: [
       {

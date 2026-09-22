@@ -40,6 +40,9 @@ export const b1U18: SkillExercise[] = [
       { de: "die Wirkung", tr: "etki", en: "effect" },
       { de: "der Ausdruck", tr: "ifade", en: "expression" },
       { de: "ähnlich", tr: "benzer", en: "similar" },
+      { de: "die Notiz", tr: "not", en: "note" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "die Erklärung", tr: "açıklama", en: "explanation" },
     ],
     text:
       "Bis Ende Mai stellt das Museum am Fluss vierzig Werke einer Künstlerin " +
@@ -107,6 +110,11 @@ export const b1U18: SkillExercise[] = [
       { de: "die Untersuchung", tr: "muayene", en: "examination" },
       { de: "verschreiben", tr: "reçete etmek", en: "to prescribe" },
       { de: "leiden", tr: "acı çekmek", en: "to suffer" },
+      { de: "der Hausarzt", tr: "aile hekimi", en: "family doctor" },
+      { de: "meiste", tr: "çoğu", en: "most" },
+      { de: "besondere", tr: "özel", en: "special" },
+      { de: "der Facharzt", tr: "uzman doktor", en: "specialist" },
+      { de: "monatelang", tr: "aylarca", en: "for months" },
     ],
     text:
       "Wer krank ist, geht zuerst zum Hausarzt. Er behandelt das meiste selbst " +
@@ -173,6 +181,11 @@ export const b1U18: SkillExercise[] = [
       { de: "die Tatsache", tr: "olgu", en: "fact" },
       { de: "zusammenfassen", tr: "özetlemek", en: "to summarise" },
       { de: "feststellen", tr: "tespit etmek", en: "to establish" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "schließen", tr: "kapatmak", en: "to close" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     segments: [
       { text: "Ich begrüße Sie zur zweiten Runde. Jeder hat zwei Minuten." },
@@ -235,6 +248,9 @@ export const b1U18: SkillExercise[] = [
       { de: "die Krankenschwester", tr: "hemşire", en: "nurse" },
       { de: "atmen", tr: "nefes almak", en: "to breathe" },
       { de: "das Herz", tr: "kalp", en: "heart" },
+      { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
+      { de: "der Hausarzt", tr: "aile hekimi", en: "family doctor" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     segments: [
       { text: "Guten Morgen. Die Operation ist für morgen um acht geplant." },
@@ -298,6 +314,7 @@ export const b1U18: SkillExercise[] = [
       { de: "der Atem", tr: "nefes", en: "breath" },
       { de: "die Untersuchung", tr: "muayene", en: "examination" },
       { de: "leiden", tr: "acı çekmek", en: "to suffer" },
+      { de: "der Facharzt", tr: "uzman doktor", en: "specialist" },
     ],
     tasks: [
       {
@@ -353,6 +370,9 @@ export const b1U18: SkillExercise[] = [
       { de: "die Tatsache", tr: "olgu", en: "fact" },
       { de: "erstens", tr: "birincisi", en: "firstly" },
       { de: "zusammenfassen", tr: "özetlemek", en: "to summarise" },
+      { de: "der Facharzt", tr: "uzman doktor", en: "specialist" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
+      { de: "gestiegen", tr: "yükselmiş", en: "risen" },
     ],
     tasks: [
       {

@@ -40,6 +40,9 @@ export const b1U20: SkillExercise[] = [
       { de: "die Krise", tr: "kriz", en: "crisis" },
       { de: "die Beratung", tr: "danışmanlık", en: "counselling" },
       { de: "die Therapie", tr: "terapi", en: "therapy" },
+      { de: "vorkommen", tr: "olmak", en: "to occur" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Jeder ist manchmal traurig oder wütend. Das gehört dazu. Die Frage ist " +
@@ -106,6 +109,8 @@ export const b1U20: SkillExercise[] = [
       { de: "sich verletzen", tr: "yaralanmak", en: "to injure oneself" },
       { de: "der Verdacht", tr: "şüphe", en: "suspicion" },
       { de: "der Knochen", tr: "kemik", en: "bone" },
+      { de: "heil", tr: "sağlam", en: "intact" },
+      { de: "heben", tr: "kaldırmak", en: "to lift" },
     ],
     text:
       "Am Samstagabend ist meine Mutter auf der Treppe gestürzt. Sie hat sich " +
@@ -172,6 +177,7 @@ export const b1U20: SkillExercise[] = [
       { de: "schützen", tr: "korumak", en: "to protect" },
       { de: "auftreten", tr: "ortaya çıkmak", en: "to occur" },
       { de: "die Haut", tr: "cilt", en: "skin" },
+      { de: "die Impfung", tr: "aşı", en: "vaccination" },
     ],
     segments: [
       { text: "Sie bekommen heute die Impfung. Haben Sie noch Fragen?" },
@@ -234,6 +240,7 @@ export const b1U20: SkillExercise[] = [
       { de: "die Besserung", tr: "iyileşme", en: "recovery" },
       { de: "aufmuntern", tr: "neşelendirmek", en: "to cheer up" },
       { de: "die Kraft", tr: "güç", en: "strength" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     segments: [
       { text: "Gute Besserung! Wir haben dir etwas zu lesen mitgebracht." },
@@ -297,6 +304,7 @@ export const b1U20: SkillExercise[] = [
       { de: "die Verletzung", tr: "yaralanma", en: "injury" },
       { de: "der Notruf", tr: "acil çağrı", en: "emergency call" },
       { de: "die Kontrolle", tr: "kontrol", en: "check-up" },
+      { de: "besetzt", tr: "dolu", en: "occupied" },
     ],
     tasks: [
       {
@@ -351,6 +359,7 @@ export const b1U20: SkillExercise[] = [
       { de: "aufmuntern", tr: "neşelendirmek", en: "to cheer up" },
       { de: "der Besuch", tr: "ziyaret", en: "visit" },
       { de: "zumindest", tr: "hiç değilse", en: "at least" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     tasks: [
       {

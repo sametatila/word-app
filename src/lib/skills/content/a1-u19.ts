@@ -38,6 +38,7 @@ export const a1U19: SkillExercise[] = [
       { de: "joggen", tr: "koşu yapmak", en: "to jog" },
       { de: "das Fitnessstudio", tr: "spor salonu", en: "gym" },
       { de: "zweimal", tr: "iki kez", en: "twice" },
+      { de: "der Sportverein", tr: "spor kulübü", en: "sports club" },
     ],
     minutes: 3,
     text:

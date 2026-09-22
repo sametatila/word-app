@@ -45,6 +45,9 @@ export const b1U21: SkillExercise[] = [
       { de: "der Abfall", tr: "atık", en: "waste" },
       { de: "das Pfand", tr: "depozito", en: "deposit" },
       { de: "entsorgen", tr: "atmak / bertaraf etmek", en: "to dispose of" },
+      { de: "braun", tr: "kahverengi", en: "brown" },
+      { de: "verschmutzt", tr: "kirlenmiş", en: "polluted" },
+      { de: "abgeben", tr: "teslim etmek", en: "to hand in" },
     ],
     text:
       "Im Hof stehen vier Tonnen. Wer den Abfall richtig sortiert, hilft mehr " +
@@ -111,6 +114,10 @@ export const b1U21: SkillExercise[] = [
       { de: "die Wärme", tr: "ısı", en: "warmth" },
       { de: "das Kraftwerk", tr: "santral", en: "power plant" },
       { de: "elektrisch", tr: "elektrikli", en: "electric" },
+      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "kippen", tr: "yana yatırmak", en: "to tilt" },
+      { de: "kühl", tr: "serin", en: "cool" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],
     text:
       "Die meisten glauben, dass elektrische Geräte den größten Teil " +
@@ -178,6 +185,7 @@ export const b1U21: SkillExercise[] = [
       { de: "der Radfahrer", tr: "bisikletli", en: "cyclist" },
       { de: "die Strecke", tr: "güzergâh", en: "route" },
       { de: "die Ausfahrt", tr: "çıkış", en: "exit" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     segments: [
       { text: "Seit Mai ist die Marktstraße eine Fußgängerzone. Wie finden Sie das?" },
@@ -240,6 +248,10 @@ export const b1U21: SkillExercise[] = [
       { de: "regional", tr: "yöresel", en: "regional" },
       { de: "der Bauernhof", tr: "çiftlik", en: "farm" },
       { de: "vermeiden", tr: "kaçınmak", en: "to avoid" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
+      { de: "sich strecken", tr: "gerinmek", en: "to stretch" },
+      { de: "die Chemie", tr: "kimya", en: "chemistry" },
     ],
     segments: [
       { text: "Entschuldigung, woher kommen diese Kartoffeln?" },
@@ -357,6 +369,7 @@ export const b1U21: SkillExercise[] = [
       { de: "die Strecke", tr: "güzergâh", en: "route" },
       { de: "regional", tr: "yöresel", en: "regional" },
       { de: "die Ware", tr: "mal / ürün", en: "goods" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     tasks: [
       {

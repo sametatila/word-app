@@ -40,6 +40,8 @@ export const b1U25: SkillExercise[] = [
       { de: "der Vorwurf", tr: "suçlama", en: "reproach" },
       { de: "schweigen", tr: "susmak", en: "to be silent" },
       { de: "der Respekt", tr: "saygı", en: "respect" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Die meisten Konflikte werden nicht gelöst, sondern nur verschoben. " +
@@ -107,6 +109,9 @@ export const b1U25: SkillExercise[] = [
       { de: "die Entfernung", tr: "uzaklık", en: "distance" },
       { de: "hierher", tr: "buraya", en: "to here" },
       { de: "dorthin", tr: "oraya", en: "to there" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Ich bin vor elf Jahren hierhergekommen. Am Anfang habe ich jede Woche " +
@@ -174,6 +179,7 @@ export const b1U25: SkillExercise[] = [
       { de: "starten", tr: "başlamak", en: "to start" },
       { de: "kämpfen", tr: "mücadele etmek", en: "to fight" },
       { de: "der Meister", tr: "usta", en: "master" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Du redest seit Jahren von deiner Werkstatt. Wann startest du?" },
@@ -299,6 +305,7 @@ export const b1U25: SkillExercise[] = [
       { de: "der Vorwurf", tr: "suçlama", en: "reproach" },
       { de: "schuldig", tr: "suçlu", en: "guilty" },
       { de: "fair", tr: "adil", en: "fair" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     tasks: [
       {
@@ -353,6 +360,9 @@ export const b1U25: SkillExercise[] = [
       { de: "der Angehörige", tr: "yakın", en: "relative", note: "akraba anlamında" },
       { de: "die Trennung", tr: "ayrılık", en: "separation" },
       { de: "erinnern", tr: "hatırlamak", en: "to remember" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
     ],
     tasks: [
       {

@@ -42,6 +42,10 @@ export const a2U09: SkillExercise[] = [
       { de: "vorne", tr: "önde", en: "at the front" },
       { de: "drinnen", tr: "içeride", en: "inside" },
       { de: "irgendwo", tr: "bir yerde", en: "somewhere" },
+      { de: "der Ersatzschlüssel", tr: "yedek anahtar", en: "spare key" },
+      { de: "die Papiere", tr: "belgeler", en: "documents" },
+      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 4,
     text:
@@ -105,6 +109,8 @@ export const a2U09: SkillExercise[] = [
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
       { de: "außerhalb", tr: "dışında", en: "outside" },
       { de: "parken", tr: "park etmek", en: "to park" },
+      { de: "der Kinderwagen", tr: "bebek arabası", en: "stroller" },
+      { de: "leicht", tr: "hafif", en: "light" },
     ],
     minutes: 4,
     text:
@@ -222,6 +228,8 @@ export const a2U09: SkillExercise[] = [
       { de: "der Bürgersteig", tr: "kaldırım", en: "pavement" },
       { de: "drüben", tr: "karşıda", en: "over there" },
       { de: "parken", tr: "park etmek", en: "to park" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
     ],
     minutes: 3,
     segments: [
@@ -323,6 +331,7 @@ export const a2U09: SkillExercise[] = [
       { de: "nebenan", tr: "yan tarafta", en: "next door" },
       { de: "drüben", tr: "karşıda", en: "over there" },
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
+      { de: "das Glück", tr: "şans", en: "luck" },
     ],
     minutes: 8,
     tasks: [

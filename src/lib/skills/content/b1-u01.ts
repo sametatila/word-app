@@ -40,6 +40,11 @@ export const b1U01: SkillExercise[] = [
       { de: "die Abteilung", tr: "departman", en: "department" },
       { de: "zuständig", tr: "sorumlu / yetkili", en: "responsible for" },
       { de: "die Zusammenarbeit", tr: "iş birliği", en: "cooperation" },
+      { de: "bieten", tr: "sağlamak", en: "to provide" },
+      { de: "die Notiz", tr: "not", en: "note" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
     ],
     text:
       "Wir suchen eine Kollegin oder einen Kollegen für unsere kleine Abteilung im Zentrum von Bremen. " +
@@ -110,6 +115,8 @@ export const b1U01: SkillExercise[] = [
       { de: "der Abschluss", tr: "diploma / mezuniyet", en: "degree" },
       { de: "die Karriere", tr: "kariyer", en: "career" },
       { de: "die Herausforderung", tr: "zorlu görev", en: "challenge" },
+      { de: "der Einkauf", tr: "alışveriş", en: "shopping" },
+      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
     ],
     text:
       "Markus Bauer wurde 1990 in Kassel geboren. Nach der Schule machte er eine Ausbildung als Koch. " +
@@ -180,6 +187,7 @@ export const b1U01: SkillExercise[] = [
       { de: "die Erfahrung", tr: "deneyim", en: "experience" },
       { de: "die Motivation", tr: "motivasyon", en: "motivation" },
       { de: "bereit", tr: "hazır", en: "ready" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
       { text: "Guten Tag, Frau Demir. Sie haben sich bei uns beworben. Haben Sie kurz Zeit?" },
@@ -365,6 +373,7 @@ export const b1U01: SkillExercise[] = [
       { de: "begeistert", tr: "hevesli", en: "enthusiastic" },
       { de: "abgeschlossen", tr: "tamamlanmış", en: "completed" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     tasks: [
       {

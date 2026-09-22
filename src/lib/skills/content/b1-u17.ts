@@ -42,6 +42,8 @@ export const b1U17: SkillExercise[] = [
       { de: "verdächtig", tr: "şüpheli", en: "suspicious" },
       { de: "veröffentlichen", tr: "yayımlamak", en: "to publish" },
       { de: "der Kanal", tr: "kanal", en: "channel" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Jeden Tag lesen wir Meldungen, von denen wir nicht wissen, woher sie " +
@@ -110,6 +112,10 @@ export const b1U17: SkillExercise[] = [
       { de: "die Autorin", tr: "yazar", en: "author", note: "kadın biçimi" },
       { de: "der Leser", tr: "okur", en: "reader" },
       { de: "die Buchhandlung", tr: "kitapçı", en: "bookshop" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
     ],
     text:
       "Unser Buchclub trifft sich jeden ersten Montag in der Buchhandlung am " +
@@ -177,6 +183,8 @@ export const b1U17: SkillExercise[] = [
       { de: "die Fortsetzung", tr: "devam", en: "sequel" },
       { de: "überraschen", tr: "şaşırtmak", en: "to surprise" },
       { de: "die Stimmung", tr: "atmosfer / hava", en: "mood" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { text: "Und? Wie fandest du die letzte Folge?" },
@@ -239,6 +247,7 @@ export const b1U17: SkillExercise[] = [
       { de: "die Bühne", tr: "sahne", en: "stage" },
       { de: "die Stimme", tr: "ses", en: "voice" },
       { de: "wunderschön", tr: "harikulade", en: "beautiful" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     segments: [
       { text: "Der Auftritt gestern war wunderschön." },
@@ -302,6 +311,7 @@ export const b1U17: SkillExercise[] = [
       { de: "die Figur", tr: "karakter", en: "character" },
       { de: "die Serie", tr: "dizi", en: "series" },
       { de: "die Heldin", tr: "kadın kahraman", en: "heroine" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     tasks: [
       {
@@ -357,6 +367,11 @@ export const b1U17: SkillExercise[] = [
       { de: "das Kapitel", tr: "bölüm", en: "chapter" },
       { de: "die Überraschung", tr: "sürpriz", en: "surprise" },
       { de: "der Verlag", tr: "yayınevi", en: "publisher" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
+      { de: "heraus", tr: "dışarı", en: "out" },
     ],
     tasks: [
       {

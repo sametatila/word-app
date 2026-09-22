@@ -42,6 +42,11 @@ export const a2U11: SkillExercise[] = [
       { de: "die Bewerbung", tr: "iş başvurusu", en: "application" },
       { de: "das Bewerbungsgespräch", tr: "iş görüşmesi", en: "job interview" },
       { de: "der Nebenjob", tr: "ek iş", en: "side job" },
+      { de: "das Café", tr: "kafe", en: "café" },
+      { de: "der Service", tr: "hizmet", en: "service" },
+      { de: "bieten", tr: "sağlamak", en: "to provide" },
+      { de: "per", tr: "yoluyla", en: "by" },
+      { de: "das Anschreiben", tr: "ön yazı", en: "cover letter" },
     ],
     minutes: 4,
     text:
@@ -104,6 +109,9 @@ export const a2U11: SkillExercise[] = [
       { de: "aussprechen", tr: "telaffuz etmek", en: "to pronounce" },
       { de: "übersetzen", tr: "tercüme etmek", en: "to translate" },
       { de: "sich informieren", tr: "bilgi almak", en: "to find out about" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "kompliziert", tr: "karmaşık", en: "complicated" },
+      { de: "nicken", tr: "baş sallamak", en: "to nod" },
     ],
     minutes: 4,
     text:
@@ -164,6 +172,8 @@ export const a2U11: SkillExercise[] = [
       { de: "mitfahren", tr: "birlikte gitmek", en: "to ride along" },
       { de: "die Nachtschicht", tr: "gece vardiyası", en: "night shift" },
       { de: "stressig", tr: "stresli", en: "stressful" },
+      { de: "komplett", tr: "eksiksiz", en: "complete" },
+      { de: "das Meeting", tr: "toplantı", en: "meeting" },
     ],
     minutes: 3,
     segments: [
@@ -325,6 +335,9 @@ export const a2U11: SkillExercise[] = [
       { de: "der Nebenjob", tr: "ek iş", en: "side job" },
       { de: "das Bewerbungsgespräch", tr: "iş görüşmesi", en: "job interview" },
       { de: "weil", tr: "çünkü", en: "because" },
+      { de: "der Service", tr: "hizmet", en: "service" },
+      { de: "bieten", tr: "sağlamak", en: "to provide" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 8,
     tasks: [

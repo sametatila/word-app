@@ -304,6 +304,7 @@ export const a1U15: SkillExercise[] = [
       { de: "die Sehenswürdigkeit", tr: "turistik yer", en: "sight" },
       { de: "das Museum", tr: "müze", en: "museum" },
       { de: "überall", tr: "her yerde", en: "everywhere" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 7,
     tasks: [

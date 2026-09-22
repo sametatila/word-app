@@ -43,6 +43,7 @@ export const b1U32: SkillExercise[] = [
       { de: "die Saison", tr: "sezon", en: "season" },
       { de: "der Tourismus", tr: "turizm", en: "tourism" },
       { de: "die Rundfahrt", tr: "tur", en: "round trip" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     text:
       "In der Saison ist eine Übernachtung an der Küste zweimal so teuer " +
@@ -109,6 +110,10 @@ export const b1U32: SkillExercise[] = [
       { de: "der Wohnort", tr: "ikamet yeri", en: "place of residence" },
       { de: "die Rückkehr", tr: "geri dönüş", en: "return" },
       { de: "die Region", tr: "bölge", en: "region" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "der Blick", tr: "bakış", en: "look" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "schließen", tr: "kapatmak", en: "to close" },
     ],
     text:
       "Vor drei Jahren sind wir aus der Metropole in einen Vorort gezogen. " +
@@ -176,6 +181,7 @@ export const b1U32: SkillExercise[] = [
       { de: "die Fähre", tr: "feribot", en: "ferry" },
       { de: "der Turm", tr: "kule", en: "tower" },
       { de: "das Denkmal", tr: "anıt", en: "monument" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Die Fähre fährt um zehn. Sollen wir vorher an den Hafen gehen?" },
@@ -238,6 +244,8 @@ export const b1U32: SkillExercise[] = [
       { de: "das Tal", tr: "vadi", en: "valley" },
       { de: "der Nebel", tr: "sis", en: "fog" },
       { de: "der Sturm", tr: "fırtına", en: "storm" },
+      { de: "umschlagen", tr: "tersine dönmek", en: "to swing around" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Im Gebirge kann das Wetter in einer Stunde umschlagen." },
@@ -355,6 +363,9 @@ export const b1U32: SkillExercise[] = [
       { de: "das Quartier", tr: "semt", en: "quarter" },
       { de: "der Vorort", tr: "banliyö", en: "suburb" },
       { de: "die Zone", tr: "bölge", en: "zone" },
+      { de: "stürmen", tr: "fırtına esmek", en: "to storm" },
+      { de: "schließen", tr: "kapatmak", en: "to close" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     tasks: [
       {

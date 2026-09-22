@@ -37,6 +37,7 @@ export const b1U07: SkillExercise[] = [
       { de: "der Stau", tr: "trafik sıkışıklığı", en: "traffic jam" },
       { de: "inzwischen", tr: "bu arada", en: "meanwhile" },
       { de: "seitdem", tr: "o zamandan beri", en: "since then" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     text:
       "Früher fuhr ich mit dem Auto. Nachdem ich zweimal eine Stunde im Stau gestanden hatte, " +
@@ -100,6 +101,10 @@ export const b1U07: SkillExercise[] = [
       { de: "die Ursache", tr: "sebep", en: "cause" },
       { de: "deswegen", tr: "bu yüzden", en: "for that reason" },
       { de: "wert", tr: "değer", en: "worth" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "böse", tr: "kızgın", en: "angry" },
     ],
     text:
       "Im Frühling bekam ich ein Angebot: mehr Lohn, ein größeres Büro, eine neue Abteilung. " +
@@ -165,6 +170,7 @@ export const b1U07: SkillExercise[] = [
       { de: "gleichzeitig", tr: "aynı anda", en: "at the same time" },
       { de: "dabei", tr: "bu sırada / yanında", en: "with it" },
       { de: "etwa", tr: "yaklaşık", en: "about" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "Wann wollen wir los?" },
@@ -227,6 +233,7 @@ export const b1U07: SkillExercise[] = [
       { de: "völlig", tr: "tamamen", en: "completely" },
       { de: "jemals", tr: "hiçbir zaman", en: "ever", note: "olumsuz ve soru cümlelerinde" },
       { de: "interessiert", tr: "ilgili", en: "interested" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     segments: [
       { text: "Sag mal, wirst du jemals völlig flüssig sprechen?" },
@@ -345,6 +352,9 @@ export const b1U07: SkillExercise[] = [
       { de: "tatsächlich", tr: "gerçekten", en: "actually" },
       { de: "die Vorstellung", tr: "tasavvur / fikir", en: "idea" },
       { de: "sich unterhalten", tr: "sohbet etmek", en: "to converse" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     tasks: [
       {

@@ -44,6 +44,8 @@ export const b1U42: SkillExercise[] = [
       { de: "die Zeugin", tr: "tanık", en: "witness", note: "kadın biçimi" },
       { de: "verurteilen", tr: "mahkûm etmek", en: "to convict" },
       { de: "die Begründung", tr: "gerekçe", en: "reasoning" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "zum Beispiel", tr: "örneğin", en: "for example" },
     ],
     text:
       "Ein Prozess beginnt nicht mit dem Urteil, sondern mit den Fragen. " +
@@ -111,6 +113,10 @@ export const b1U42: SkillExercise[] = [
       { de: "strafbar", tr: "cezalandırılabilir", en: "punishable" },
       { de: "behindern", tr: "engellemek", en: "to obstruct" },
       { de: "erforderlich", tr: "gerekli", en: "required" },
+      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "zum Beispiel", tr: "örneğin", en: "for example" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     text:
       "Eine angemeldete Versammlung ist erlaubt, auch wenn die Mehrheit " +
@@ -177,6 +183,8 @@ export const b1U42: SkillExercise[] = [
       { de: "das Ereignis", tr: "olay", en: "incident" },
       { de: "der Verbrecher", tr: "suçlu", en: "criminal" },
       { de: "die Kriminalpolizei", tr: "asayiş şubesi", en: "criminal police" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
     ],
     segments: [
       { text: "Guten Tag. Ich möchte etwas melden." },
@@ -239,6 +247,7 @@ export const b1U42: SkillExercise[] = [
       { de: "die Wirklichkeit", tr: "gerçeklik", en: "reality" },
       { de: "gerecht", tr: "adil", en: "just" },
       { de: "die Reaktion", tr: "tepki", en: "reaction" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "In der Theorie ist das neue Gesetz gerecht." },
@@ -356,6 +365,9 @@ export const b1U42: SkillExercise[] = [
       { de: "untersagt", tr: "yasak", en: "prohibited" },
       { de: "ausschließen", tr: "dışlamak", en: "to exclude" },
       { de: "die Versammlung", tr: "toplanma", en: "assembly" },
+      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
+      { de: "abstellen", tr: "koymak", en: "to set down" },
+      { de: "behindert", tr: "engelli", en: "disabled" },
     ],
     tasks: [
       {

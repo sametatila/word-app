@@ -41,6 +41,8 @@ export const b1U34: SkillExercise[] = [
       { de: "das Vitamin", tr: "vitamin", en: "vitamin" },
       { de: "der Schnupfen", tr: "nezle", en: "cold" },
       { de: "indem", tr: "-erek / -arak", en: "by (doing)" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Man bleibt gesund, indem man kleine Dinge regelmäßig macht — nicht, " +
@@ -174,6 +176,8 @@ export const b1U34: SkillExercise[] = [
       { de: "die Geburt", tr: "doğum", en: "birth" },
       { de: "der Nachwuchs", tr: "yeni gelen", en: "offspring", note: "aileye katılan bebek" },
       { de: "die Erziehung", tr: "çocuk yetiştirme", en: "upbringing" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "sich abwechseln", tr: "sırayla yapmak", en: "to take turns" },
     ],
     segments: [
       { text: "Wie geht es dir in der Schwangerschaft?" },
@@ -299,6 +303,7 @@ export const b1U34: SkillExercise[] = [
       { de: "das Vitamin", tr: "vitamin", en: "vitamin" },
       { de: "fest", tr: "sıkı / kesin", en: "firm" },
       { de: "sowieso", tr: "zaten", en: "anyway" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     tasks: [
       {
@@ -353,6 +358,7 @@ export const b1U34: SkillExercise[] = [
       { de: "das Ehepaar", tr: "evli çift", en: "married couple" },
       { de: "die Scheidung", tr: "boşanma", en: "divorce" },
       { de: "die Enkelin", tr: "torun", en: "granddaughter", note: "kız biçimi" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

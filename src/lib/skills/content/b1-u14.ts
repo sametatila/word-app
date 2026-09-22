@@ -40,6 +40,9 @@ export const b1U14: SkillExercise[] = [
       { de: "verständlich", tr: "anlaşılır", en: "comprehensible" },
       { de: "die Nachhilfe", tr: "özel ders", en: "tutoring" },
       { de: "ausgebildet", tr: "eğitimli", en: "trained" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "zuschauen", tr: "izlemek", en: "to watch" },
+      { de: "die Erklärung", tr: "açıklama", en: "explanation" },
     ],
     text:
       "Bei uns gibt es zwei Wege zum gleichen Ziel. Der Intensivkurs läuft vier " +
@@ -106,6 +109,8 @@ export const b1U14: SkillExercise[] = [
       { de: "zweifeln", tr: "kuşku duymak", en: "to doubt" },
       { de: "achten", tr: "dikkat etmek", en: "to pay attention" },
       { de: "der Trick", tr: "püf noktası", en: "trick" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:
       "Vor der Prüfung habe ich mich furchtbar aufgeregt. Ich war sicher, dass " +
@@ -173,6 +178,8 @@ export const b1U14: SkillExercise[] = [
       { de: "finanzieren", tr: "finanse etmek", en: "to fund" },
       { de: "sich lohnen", tr: "değmek", en: "to be worth it" },
       { de: "die Teilzeit", tr: "yarı zamanlı", en: "part-time" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Ich überlege, ob ich die Weiterbildung machen soll." },
@@ -235,6 +242,8 @@ export const b1U14: SkillExercise[] = [
       { de: "sich erkundigen", tr: "bilgi almak", en: "to enquire" },
       { de: "das Semester", tr: "dönem", en: "semester" },
       { de: "das Referat", tr: "sunum ödevi", en: "presentation" },
+      { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     segments: [
       { text: "Guten Tag, ich möchte mich über das Studium erkundigen." },
@@ -352,6 +361,8 @@ export const b1U14: SkillExercise[] = [
       { de: "das Semester", tr: "dönem", en: "semester" },
       { de: "beschließen", tr: "karar vermek", en: "to decide" },
       { de: "die Wissenschaft", tr: "bilim", en: "science" },
+      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
+      { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
     ],
     tasks: [
       {

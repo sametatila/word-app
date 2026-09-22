@@ -42,6 +42,7 @@ export const a1U22: SkillExercise[] = [
       { de: "das Rezept", tr: "reçete", en: "prescription" },
       { de: "die Tablette", tr: "hap", en: "tablet" },
       { de: "die Drogerie", tr: "kozmetik marketi", en: "drugstore", note: "ilaç satmaz" },
+      { de: "der Freitag", tr: "cuma", en: "Friday" },
     ],
     minutes: 3,
     text:

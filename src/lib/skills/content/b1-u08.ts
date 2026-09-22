@@ -40,6 +40,9 @@ export const b1U08: SkillExercise[] = [
       { de: "vegetarisch", tr: "etsiz", en: "vegetarian" },
       { de: "dagegen", tr: "buna karşılık", en: "on the other hand" },
       { de: "eher", tr: "daha çok", en: "rather" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "die Notiz", tr: "not", en: "note" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
     ],
     text:
       "Ab Montag gibt es bei uns täglich zwei Gerichte: entweder ein Gericht mit Fleisch " +
@@ -105,6 +108,10 @@ export const b1U08: SkillExercise[] = [
       { de: "verschwinden", tr: "kaybolmak", en: "to disappear" },
       { de: "die Wahrheit", tr: "gerçek", en: "truth" },
       { de: "die Tat", tr: "eylem", en: "deed" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
+      { de: "die Papiere", tr: "belgeler", en: "documents" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Stiege", tr: "merdiven", en: "staircase" },
     ],
     text:
       "Es geschah an einem Dienstag im November. Eine Frau, die jeden Morgen den gleichen " +
@@ -171,6 +178,7 @@ export const b1U08: SkillExercise[] = [
       { de: "genauso", tr: "aynı şekilde", en: "just as" },
       { de: "eher", tr: "daha çok", en: "rather" },
       { de: "der Eindruck", tr: "izlenim", en: "impression" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "Also, entweder gehen wir heute ins Kino oder wir lassen es ganz." },
@@ -233,6 +241,7 @@ export const b1U08: SkillExercise[] = [
       { de: "die Szene", tr: "sahne", en: "scene" },
       { de: "berühren", tr: "duygulandırmak", en: "to move" },
       { de: "das Publikum", tr: "seyirci", en: "audience" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     segments: [
       { text: "Und? Wie fandest du das Stück?" },
@@ -351,6 +360,8 @@ export const b1U08: SkillExercise[] = [
       { de: "auffallen", tr: "dikkat çekmek", en: "to stand out" },
       { de: "höflich", tr: "kibar", en: "polite" },
       { de: "neugierig", tr: "meraklı", en: "curious" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Verstand", tr: "zihin", en: "mind" },
     ],
     tasks: [
       {

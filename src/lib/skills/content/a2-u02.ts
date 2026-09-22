@@ -38,6 +38,9 @@ export const a2U02: SkillExercise[] = [
       { de: "nass", tr: "ıslak", en: "wet" },
       { de: "hektisch", tr: "telaşlı", en: "hectic" },
       { de: "schrecklich", tr: "korkunç", en: "terrible" },
+      { de: "schief", tr: "eğri", en: "crooked" },
+      { de: "komplett", tr: "eksiksiz", en: "complete" },
+      { de: "das Glück", tr: "şans", en: "luck" },
     ],
     minutes: 3,
     text:
@@ -100,6 +103,7 @@ export const a2U02: SkillExercise[] = [
       { de: "der Wagen", tr: "otomobil", en: "car" },
       { de: "jahrelang", tr: "yıllarca", en: "for years" },
       { de: "verschieden", tr: "farklı", en: "different" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     minutes: 3,
     text:
@@ -159,6 +163,7 @@ export const a2U02: SkillExercise[] = [
       { de: "verpassen", tr: "kaçırmak", en: "to miss" },
       { de: "nass", tr: "ıslak", en: "wet" },
       { de: "erleichtert", tr: "içi rahatlamış", en: "relieved" },
+      { de: "komplett", tr: "eksiksiz", en: "complete" },
     ],
     minutes: 3,
     segments: [
@@ -217,6 +222,7 @@ export const a2U02: SkillExercise[] = [
       { de: "verspielt", tr: "oyunbaz", en: "playful" },
       { de: "das Gesicht", tr: "yüz", en: "face" },
       { de: "fotografieren", tr: "fotoğraf çekmek", en: "to photograph" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 3,
     segments: [
@@ -317,6 +323,7 @@ export const a2U02: SkillExercise[] = [
       { de: "die Erfahrung", tr: "deneyim", en: "experience" },
       { de: "erleichtert", tr: "içi rahatlamış", en: "relieved" },
       { de: "der Führerschein", tr: "ehliyet", en: "driving licence" },
+      { de: "egal", tr: "fark etmez", en: "doesn't matter" },
     ],
     minutes: 8,
     tasks: [

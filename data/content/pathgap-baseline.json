@@ -1,13 +1,13 @@
 {
-  "de a1 bosluk": 88,
-  "de a1 kapsam": 84,
-  "de a2 bosluk": 151,
+  "de a1 bosluk": 0,
+  "de a1 kapsam": 85,
+  "de a2 bosluk": 0,
   "de a2 kapsam": 62,
-  "de b1 bosluk": 151,
+  "de b1 bosluk": 0,
   "de b1 kapsam": 80,
-  "de b2 bosluk": 211,
+  "de b2 bosluk": 0,
   "de b2 kapsam": 43,
-  "de c1 bosluk": 103,
+  "de c1 bosluk": 0,
   "de c1 kapsam": 26,
   "en a1 bosluk": 0,
   "en a1 kapsam": 99,
@@ -16,7 +16,7 @@
   "en b1 bosluk": 0,
   "en b1 kapsam": 51,
   "en b2 bosluk": 0,
-  "en b2 kapsam": 46,
+  "en b2 kapsam": 47,
   "en c1 bosluk": 0,
   "en c1 kapsam": 55
 }

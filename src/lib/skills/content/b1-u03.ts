@@ -33,6 +33,8 @@ export const b1U03: SkillExercise[] = [
       { de: "die Bedingung", tr: "şart", en: "condition" },
       { de: "das Verhältnis", tr: "ilişki", en: "relationship" },
       { de: "entlassen", tr: "işten çıkarmak", en: "to dismiss" },
+      { de: "die Unterschrift", tr: "imza", en: "signature" },
+      { de: "böse", tr: "kızgın", en: "angry" },
     ],
     text:
       "Wer die Stelle wechseln will, muss zwei Dinge beachten: die Frist und die Form. " +
@@ -105,6 +107,11 @@ export const b1U03: SkillExercise[] = [
       { de: "der Zustand", tr: "durum / hâl", en: "condition" },
       { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
       { de: "heizen", tr: "ısıtmak", en: "to heat" },
+      { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
+      { de: "die Notiz", tr: "not", en: "note" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:
       "Wohnung A: zweite Etage, Fläche fünfundfünfzig Quadratmeter, guter Zustand, " +
@@ -176,6 +183,9 @@ export const b1U03: SkillExercise[] = [
       { de: "die Visitenkarte", tr: "kartvizit", en: "business card" },
       { de: "ansprechen", tr: "konuşmaya başlamak", en: "to approach" },
       { de: "sich beschäftigen", tr: "bir işle uğraşmak", en: "to work on" },
+      { de: "interessant", tr: "ilginç", en: "interesting" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     segments: [
       { text: "Entschuldigung, darf ich Sie kurz ansprechen? Ich bin Nuri Öz." },
@@ -238,6 +248,8 @@ export const b1U03: SkillExercise[] = [
       { de: "der Flur", tr: "hol", en: "hallway" },
       { de: "der Boden", tr: "zemin", en: "floor" },
       { de: "zusätzlich", tr: "ek olarak", en: "in addition" },
+      { de: "herein", tr: "içeri", en: "in" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Kommen Sie herein. Der Flur ist etwas eng, aber die Zimmer sind hell." },
@@ -358,6 +370,7 @@ export const b1U03: SkillExercise[] = [
       { de: "der Zustand", tr: "durum / hâl", en: "condition" },
       { de: "nötig", tr: "gerekli", en: "necessary" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     tasks: [
       {

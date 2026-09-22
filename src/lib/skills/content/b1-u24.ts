@@ -105,6 +105,9 @@ export const b1U24: SkillExercise[] = [
       { de: "vertraut", tr: "içten / tanıdık", en: "familiar" },
       { de: "schätzen", tr: "değer vermek", en: "to appreciate" },
       { de: "verbringen", tr: "geçirmek", en: "to spend", note: "zaman için" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     text:
       "Ich kenne meine beste Freundin seit zwanzig Jahren. Seit sechs davon " +
@@ -173,6 +176,7 @@ export const b1U24: SkillExercise[] = [
       { de: "die Sicherheit", tr: "güvenlik", en: "security" },
       { de: "das Risiko", tr: "risk", en: "risk" },
       { de: "ernsthaft", tr: "ciddi ciddi", en: "seriously" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Denkst du manchmal ernsthaft über die nächsten zehn Jahre nach?" },
@@ -235,6 +239,7 @@ export const b1U24: SkillExercise[] = [
       { de: "der Mut", tr: "cesaret", en: "courage" },
       { de: "verliebt", tr: "âşık", en: "in love" },
       { de: "lächeln", tr: "gülümsemek", en: "to smile" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "Und? Hat er es gesagt?" },
@@ -352,6 +357,7 @@ export const b1U24: SkillExercise[] = [
       { de: "pflegen", tr: "sürdürmek", en: "to maintain" },
       { de: "versprechen", tr: "söz vermek", en: "to promise" },
       { de: "die Ehe", tr: "evlilik", en: "marriage" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     tasks: [
       {

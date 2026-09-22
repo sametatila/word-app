@@ -41,6 +41,9 @@ export const a2U07: SkillExercise[] = [
       { de: "die Tube", tr: "tüp", en: "tube" },
       { de: "schlucken", tr: "yutmak", en: "to swallow" },
       { de: "die Kopfschmerzen", tr: "baş ağrısı", en: "headache" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "der Service", tr: "hizmet", en: "service" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 4,
     text:
@@ -103,6 +106,7 @@ export const a2U07: SkillExercise[] = [
       { de: "privat", tr: "özel", en: "private" },
       { de: "die Vereinbarung", tr: "anlaşma", en: "agreement" },
       { de: "die Versichertenkarte", tr: "sigorta kartı", en: "health insurance card" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
     ],
     minutes: 4,
     text:
@@ -164,6 +168,8 @@ export const a2U07: SkillExercise[] = [
       { de: "röntgen", tr: "röntgen çekmek", en: "to X-ray" },
       { de: "der Gips", tr: "alçı", en: "plaster cast" },
       { de: "die Erste Hilfe", tr: "ilk yardım", en: "first aid" },
+      { de: "rutschig", tr: "kaygan", en: "slippery" },
+      { de: "ausgerutscht", tr: "kaymış", en: "slipped" },
     ],
     minutes: 3,
     segments: [
@@ -224,6 +230,9 @@ export const a2U07: SkillExercise[] = [
       { de: "das Kinn", tr: "çene", en: "chin" },
       { de: "zittern", tr: "titremek", en: "to shake" },
       { de: "ansonsten", tr: "aksi takdirde", en: "otherwise" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
+      { de: "schieben", tr: "itmek", en: "to push" },
+      { de: "das Wartezimmer", tr: "bekleme odası", en: "waiting room" },
     ],
     minutes: 3,
     segments: [

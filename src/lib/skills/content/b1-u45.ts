@@ -45,6 +45,10 @@ export const b1U45: SkillExercise[] = [
       { de: "steil", tr: "dik", en: "steep" },
       { de: "trocknen", tr: "kurutmak", en: "to dry" },
       { de: "wild", tr: "vahşi", en: "wild" },
+      { de: "kühl", tr: "serin", en: "cool" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "zugehen", tr: "kapanmak", en: "to shut" },
+      { de: "weiterzugehen", tr: "devam etmek", en: "to continue" },
     ],
     text:
       "Wenn Sie Donner hören und das Wetter wild wird, gehen Sie nicht " +
@@ -111,6 +115,11 @@ export const b1U45: SkillExercise[] = [
       { de: "zurechtkommen", tr: "başa çıkmak", en: "to cope" },
       { de: "endgültig", tr: "kesin", en: "final" },
       { de: "durchschnittlich", tr: "ortalama", en: "on average" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "der Text", tr: "metin", en: "text" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "B1 heißt nicht, dass Sie fertig sind. Es heißt, dass Sie im Alltag " +
@@ -180,6 +189,7 @@ export const b1U45: SkillExercise[] = [
       { de: "giftig", tr: "zehirli", en: "poisonous" },
       { de: "fressen", tr: "yemek", en: "to eat", note: "hayvanlar için" },
       { de: "entdecken", tr: "keşfetmek", en: "to discover" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Ich habe gestern hinter dem Haus eine Schlange entdeckt." },
@@ -242,6 +252,8 @@ export const b1U45: SkillExercise[] = [
       { de: "jederzeit", tr: "her zaman", en: "any time" },
       { de: "nochmals", tr: "bir kez daha", en: "once again" },
       { de: "gleichfalls", tr: "size de", en: "likewise" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "weiterlesen", tr: "okumaya devam etmek", en: "to read on" },
     ],
     segments: [
       { text: "Das war die letzte Stunde. Wie geht es bei euch weiter?" },
@@ -305,6 +317,7 @@ export const b1U45: SkillExercise[] = [
       { de: "künstlich", tr: "yapay", en: "artificial" },
       { de: "quer", tr: "çapraz", en: "across" },
       { de: "maximal", tr: "en çok", en: "at most" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
     ],
     tasks: [
       {
@@ -359,6 +372,11 @@ export const b1U45: SkillExercise[] = [
       { de: "erfüllen", tr: "yerine getirmek", en: "to fulfil" },
       { de: "optimistisch", tr: "iyimser", en: "optimistic" },
       { de: "endgültig", tr: "kesin", en: "final" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "die Schicht", tr: "toplumsal katman", en: "social stratum" },
+      { de: "monatelang", tr: "aylarca", en: "for months" },
+      { de: "mehrere", tr: "birden fazla", en: "several" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

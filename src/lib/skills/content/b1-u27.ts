@@ -41,6 +41,8 @@ export const b1U27: SkillExercise[] = [
       { de: "der Ofen", tr: "fırın", en: "oven" },
       { de: "mager", tr: "yağsız", en: "lean" },
       { de: "die Scheibe", tr: "dilim", en: "slice" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "Bei uns zu Hause gab es sonntags immer den gleichen Braten. Meine Mutter " +
@@ -107,6 +109,11 @@ export const b1U27: SkillExercise[] = [
       { de: "der Fleck", tr: "leke", en: "stain" },
       { de: "salzig", tr: "tuzlu", en: "salty" },
       { de: "übrig", tr: "artan", en: "left over" },
+      { de: "unhöflich", tr: "nezaketsiz", en: "impolite" },
+      { de: "tauschen", tr: "takas etmek", en: "to swap" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     text:
       "In einer Gaststätte etwas zu sagen ist keine Unhöflichkeit. " +
@@ -174,6 +181,7 @@ export const b1U27: SkillExercise[] = [
       { de: "die Büchse", tr: "kutu", en: "tin" },
       { de: "die Tüte", tr: "poşet", en: "bag" },
       { de: "roh", tr: "çiğ", en: "raw" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     segments: [
       { text: "Wir haben viel zu viel gekocht. Was machen wir mit dem Rest? So viel bleibt übrig." },
@@ -236,6 +244,10 @@ export const b1U27: SkillExercise[] = [
       { de: "der Imbiss", tr: "büfe", en: "snack bar" },
       { de: "die Semmel", tr: "sandviç ekmeği", en: "bread roll" },
       { de: "der Konsum", tr: "tüketim", en: "consumption" },
+      { de: "mittags", tr: "öğlenleri", en: "at noon" },
+      { de: "nirgends", tr: "hiçbir yerde", en: "nowhere" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     segments: [
       { text: "Isst du mittags immer in der Mensa?" },
@@ -299,6 +311,7 @@ export const b1U27: SkillExercise[] = [
       { de: "der Grill", tr: "ızgara", en: "grill" },
       { de: "das Schnitzel", tr: "şnitzel", en: "schnitzel" },
       { de: "die Anzahl", tr: "sayı / adet", en: "number" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     tasks: [
       {

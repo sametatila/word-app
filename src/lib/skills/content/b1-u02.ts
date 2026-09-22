@@ -32,6 +32,9 @@ export const b1U02: SkillExercise[] = [
       { de: "das Personal", tr: "personel", en: "staff" },
       { de: "die Kommunikation", tr: "iletişim", en: "communication" },
       { de: "unsicher", tr: "emin olmayan", en: "unsure" },
+      { de: "das Glück", tr: "şans", en: "luck" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     text:
       "Heute war mein erster Arbeitstag und ich war den ganzen Morgen unsicher. " +
@@ -104,6 +107,9 @@ export const b1U02: SkillExercise[] = [
       { de: "das Pech", tr: "şanssızlık", en: "bad luck" },
       { de: "aufgeben", tr: "pes etmek", en: "to give up" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "die Notiz", tr: "not", en: "note" },
     ],
     text:
       "Sehr geehrte Frau Aydin,\n\n" +
@@ -177,6 +183,8 @@ export const b1U02: SkillExercise[] = [
       { de: "flexibel", tr: "esnek", en: "flexible" },
       { de: "die Vollzeit", tr: "tam zamanlı çalışma", en: "full-time" },
       { de: "regelmäßig", tr: "düzenli", en: "regular" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     segments: [
       { text: "Du fängst immer so früh an. Arbeitest du flexibel?" },
@@ -239,6 +247,8 @@ export const b1U02: SkillExercise[] = [
       { de: "erhöhen", tr: "artırmak", en: "to increase" },
       { de: "das Einkommen", tr: "gelir", en: "income" },
       { de: "die Steuer", tr: "vergi", en: "tax" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "bieten", tr: "sağlamak", en: "to provide" },
     ],
     segments: [
       { text: "Kommen wir zum Gehalt. Was stellen Sie sich vor?" },
@@ -360,6 +370,8 @@ export const b1U02: SkillExercise[] = [
       { de: "melden", tr: "haber vermek", en: "to get in touch" },
       { de: "die Enttäuschung", tr: "hayal kırıklığı", en: "disappointment" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "lesen", tr: "okumak", en: "to read" },
     ],
     tasks: [
       {

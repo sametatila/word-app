@@ -43,6 +43,7 @@ export const b1U26: SkillExercise[] = [
       { de: "das Gewürz", tr: "baharat", en: "spice" },
       { de: "der Essig", tr: "sirke", en: "vinegar" },
       { de: "die Zwiebel", tr: "soğan", en: "onion" },
+      { de: "braun", tr: "kahverengi", en: "brown" },
     ],
     text:
       "Zutaten für vier Personen: drei Zwiebeln, zwei Karotten, zweihundert " +
@@ -107,6 +108,9 @@ export const b1U26: SkillExercise[] = [
       { de: "das Menü", tr: "menü", en: "set menu" },
       { de: "das Trinkgeld", tr: "bahşiş", en: "tip" },
       { de: "der Kellner", tr: "garson", en: "waiter" },
+      { de: "das Hauptgericht", tr: "ana yemek", en: "main course" },
+      { de: "unhöflich", tr: "nezaketsiz", en: "impolite" },
+      { de: "mittags", tr: "öğlenleri", en: "at noon" },
     ],
     text:
       "In einem kleinen Gasthaus reicht meistens ein Anruf am Vormittag. " +
@@ -173,6 +177,7 @@ export const b1U26: SkillExercise[] = [
       { de: "der Pilz", tr: "mantar", en: "mushroom" },
       { de: "wiegen", tr: "tartmak", en: "to weigh" },
       { de: "das Sonderangebot", tr: "özel fiyat", en: "special offer" },
+      { de: "reif", tr: "olgun", en: "ripe" },
     ],
     segments: [
       { text: "Guten Morgen. Was kostet das Kilo Pflaumen?" },
@@ -235,6 +240,9 @@ export const b1U26: SkillExercise[] = [
       { de: "die Nachspeise", tr: "tatlı", en: "dessert" },
       { de: "die Sahne", tr: "krema", en: "cream" },
       { de: "die Kanne", tr: "demlik", en: "pot" },
+      { de: "herein", tr: "içeri", en: "in" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "das Hauptgericht", tr: "ana yemek", en: "main course" },
     ],
     segments: [
       { text: "Kommt herein! Stellt die Sachen einfach auf den Tisch." },
@@ -352,6 +360,7 @@ export const b1U26: SkillExercise[] = [
       { de: "die Karotte", tr: "havuç", en: "carrot" },
       { de: "die Dose", tr: "konserve kutusu", en: "tin" },
       { de: "das Nahrungsmittel", tr: "gıda maddesi", en: "food item" },
+      { de: "Früchte", tr: "meyve", en: "fruit" },
     ],
     tasks: [
       {

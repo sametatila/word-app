@@ -33,6 +33,7 @@ export const a1U07: SkillExercise[] = [
       { de: "das Kilo", tr: "kilo", en: "kilo" },
       { de: "die Flasche", tr: "şişe", en: "bottle" },
       { de: "das Stück", tr: "tane", en: "piece" },
+      { de: "tschüss", tr: "güle güle", en: "bye-bye" },
     ],
     minutes: 3,
     text:

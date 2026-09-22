@@ -43,6 +43,10 @@ export const a2U22: SkillExercise[] = [
       { de: "erneut", tr: "yeniden", en: "again" },
       { de: "nerven", tr: "sinir etmek", en: "to annoy" },
       { de: "sich absprechen", tr: "sözleşmek / kararlaştırmak", en: "to coordinate" },
+      { de: "scharf", tr: "keskin", en: "sharp" },
+      { de: "die Information", tr: "bilgi", en: "information" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -115,6 +119,9 @@ export const a2U22: SkillExercise[] = [
       { de: "plaudern", tr: "çene çalmak", en: "to chat away" },
       { de: "erwähnen", tr: "anmak / değinmek", en: "to mention" },
       { de: "stundenlang", tr: "saatlerce", en: "for hours" },
+      { de: "der Busfahrer", tr: "otobüs şoförü", en: "bus driver" },
+      { de: "die Waschmaschine", tr: "çamaşır makinesi", en: "washing machine" },
+      { de: "solche", tr: "böyle", en: "such" },
     ],
     minutes: 4,
     text:
@@ -185,6 +192,9 @@ export const a2U22: SkillExercise[] = [
       { de: "die Software", tr: "yazılım", en: "software" },
       { de: "anschalten", tr: "açmak", en: "to turn on" },
       { de: "herunterladen", tr: "indirmek", en: "to download" },
+      { de: "installieren", tr: "yüklemek", en: "to install" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 3,
     segments: [
@@ -257,6 +267,9 @@ export const a2U22: SkillExercise[] = [
       { de: "blättern", tr: "sayfa çevirmek", en: "to flick through" },
       { de: "köstlich", tr: "nefis", en: "delicious" },
       { de: "lebendig", tr: "canlı", en: "lively" },
+      { de: "der Hut", tr: "şapka", en: "hat" },
+      { de: "das Gefälle", tr: "fark", en: "disparity" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 3,
     segments: [
@@ -364,6 +377,7 @@ export const a2U22: SkillExercise[] = [
       { de: "erneut", tr: "yeniden", en: "again" },
       { de: "geduldig", tr: "sabırlı", en: "patient" },
       { de: "sich absprechen", tr: "kararlaştırmak", en: "to coordinate" },
+      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
     ],
     minutes: 8,
     tasks: [

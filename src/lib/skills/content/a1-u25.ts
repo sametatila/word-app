@@ -343,6 +343,7 @@ export const a1U25: SkillExercise[] = [
       { de: "weiter", tr: "devam", en: "further" },
       { de: "die Prüfung", tr: "sınav", en: "exam" },
       { de: "der Start", tr: "başlangıç", en: "start" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 8,
     tasks: [

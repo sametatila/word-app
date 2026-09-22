@@ -38,6 +38,9 @@ export const a2U08: SkillExercise[] = [
       { de: "sich entspannen", tr: "rahatlamak", en: "to relax" },
       { de: "sich ausschlafen", tr: "uykusunu almak", en: "to catch up on sleep" },
       { de: "die Massage", tr: "masaj", en: "massage" },
+      { de: "das Gehirn", tr: "beyin", en: "brain" },
+      { de: "das Signal", tr: "sinyal", en: "signal" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -99,6 +102,10 @@ export const a2U08: SkillExercise[] = [
       { de: "die Lunge", tr: "akciğer", en: "lung" },
       { de: "impfen", tr: "aşılamak", en: "to vaccinate" },
       { de: "fit sein", tr: "formda olmak", en: "to be fit" },
+      { de: "die Vorsorge", tr: "koruyucu bakım", en: "preventive care" },
+      { de: "messen", tr: "ölçmek", en: "to measure" },
+      { de: "nüchtern", tr: "aç karnına", en: "on an empty stomach" },
+      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
     ],
     minutes: 4,
     text:
@@ -219,6 +226,9 @@ export const a2U08: SkillExercise[] = [
       { de: "der Handschuh", tr: "eldiven", en: "glove" },
       { de: "die Mütze", tr: "bere", en: "hat" },
       { de: "der Kopfhörer", tr: "kulaklık", en: "headphones" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
+      { de: "braun", tr: "kahverengi", en: "brown" },
+      { de: "der Beamte", tr: "memur", en: "civil servant" },
     ],
     minutes: 3,
     segments: [
@@ -321,6 +331,7 @@ export const a2U08: SkillExercise[] = [
       { de: "sich hinlegen", tr: "uzanmak", en: "to lie down" },
       { de: "unruhig", tr: "huzursuz", en: "restless" },
       { de: "sich ausschlafen", tr: "uykusunu almak", en: "to catch up on sleep" },
+      { de: "monatelang", tr: "aylarca", en: "for months" },
     ],
     minutes: 8,
     tasks: [

@@ -42,6 +42,9 @@ export const a2U14: SkillExercise[] = [
       { de: "dünn", tr: "ince", en: "thin" },
       { de: "bequem", tr: "rahat", en: "comfortable" },
       { de: "hässlich", tr: "çirkin", en: "ugly" },
+      { de: "ebenso", tr: "aynı şekilde", en: "likewise" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -104,6 +107,9 @@ export const a2U14: SkillExercise[] = [
       { de: "abgenutzt", tr: "yıpranmış", en: "worn out" },
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "verärgert", tr: "kızgın", en: "annoyed" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
+      { de: "der Artikel", tr: "makale", en: "article" },
+      { de: "tauschen", tr: "takas etmek", en: "to swap" },
     ],
     minutes: 4,
     text:
@@ -165,6 +171,7 @@ export const a2U14: SkillExercise[] = [
       { de: "sich kämmen", tr: "saçını taramak", en: "to comb one's hair" },
       { de: "glänzend", tr: "parlak", en: "shiny" },
       { de: "gepflegt", tr: "bakımlı", en: "well-groomed" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 3,
     segments: [
@@ -225,6 +232,8 @@ export const a2U14: SkillExercise[] = [
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "anprobieren", tr: "üstünde denemek", en: "to try on" },
       { de: "der Reißverschluss", tr: "fermuar", en: "zip" },
+      { de: "kompliziert", tr: "karmaşık", en: "complicated" },
+      { de: "unkompliziert", tr: "basit", en: "uncomplicated" },
     ],
     minutes: 3,
     segments: [
@@ -327,6 +336,11 @@ export const a2U14: SkillExercise[] = [
       { de: "die Rückgabe", tr: "iade", en: "return" },
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
       { de: "zerbrochen", tr: "kırık", en: "broken" },
+      { de: "die Reklamation", tr: "reklamasyon", en: "complaint" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "innerhalb", tr: "içinde", en: "within" },
+      { de: "tauschen", tr: "takas etmek", en: "to swap" },
+      { de: "der Service", tr: "hizmet", en: "service" },
     ],
     minutes: 8,
     tasks: [

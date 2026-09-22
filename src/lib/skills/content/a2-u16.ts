@@ -43,6 +43,11 @@ export const a2U16: SkillExercise[] = [
       { de: "der Hinweg", tr: "gidiş yolu", en: "the way there" },
       { de: "die Unterkunft", tr: "konaklama", en: "accommodation" },
       { de: "die Abreise", tr: "dönüş / ayrılış", en: "departure" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "die Bucht", tr: "koy", en: "bay" },
+      { de: "gebucht", tr: "rezerve edilmiş", en: "booked" },
     ],
     minutes: 4,
     text:
@@ -105,6 +110,9 @@ export const a2U16: SkillExercise[] = [
       { de: "aufbewahren", tr: "saklamak", en: "to keep, store" },
       { de: "die Wäsche", tr: "çamaşır", en: "laundry" },
       { de: "reservieren", tr: "yer ayırtmak", en: "to reserve" },
+      { de: "die Rezeption", tr: "resepsiyon", en: "reception" },
+      { de: "schließen", tr: "kapatmak", en: "to close" },
+      { de: "außen", tr: "dıştan", en: "on the outside" },
     ],
     minutes: 4,
     text:
@@ -169,6 +177,7 @@ export const a2U16: SkillExercise[] = [
       { de: "einchecken", tr: "giriş yapmak", en: "to check in" },
       { de: "das Doppelbett", tr: "çift kişilik yatak", en: "double bed" },
       { de: "die Abreise", tr: "ayrılış", en: "departure" },
+      { de: "das Doppelzimmer", tr: "çift kişilik oda", en: "double room" },
     ],
     minutes: 3,
     segments: [
@@ -332,6 +341,9 @@ export const a2U16: SkillExercise[] = [
       { de: "das Doppelbett", tr: "çift kişilik yatak", en: "double bed" },
       { de: "einchecken", tr: "giriş yapmak", en: "to check in" },
       { de: "die Anreise", tr: "geliş", en: "arrival" },
+      { de: "voraus", tr: "önden", en: "ahead" },
+      { de: "das Einzelzimmer", tr: "tek kişilik oda", en: "single room" },
+      { de: "der Parkplatz", tr: "otopark", en: "parking lot" },
     ],
     minutes: 8,
     tasks: [

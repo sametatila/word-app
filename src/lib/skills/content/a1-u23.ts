@@ -101,6 +101,8 @@ export const a1U23: SkillExercise[] = [
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
       { de: "Sehr geehrte …", tr: "Sayın …", en: "Dear … (formal)", note: "resmî hitap" },
       { de: "ändern", tr: "değiştirmek", en: "to change" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Freitag", tr: "cuma", en: "Friday" },
     ],
     minutes: 3,
     text:
@@ -283,6 +285,8 @@ export const a1U23: SkillExercise[] = [
       { de: "das Wiederhören", tr: "tekrar duyma", en: "hearing again", note: "telefonda vedalaşma" },
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },
       { de: "der Gruß", tr: "selam", en: "greeting" },
+      { de: "chic/schick", tr: "şık", en: "stylish" },
+      { de: "schick", tr: "şık", en: "stylish" },
     ],
     minutes: 6,
     tasks: [
@@ -321,6 +325,7 @@ export const a1U23: SkillExercise[] = [
       { de: "möchten", tr: "istemek", en: "would like", note: "kibar" },
       { de: "die E-Mail", tr: "e-posta", en: "email" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
+      { de: "der Freitag", tr: "cuma", en: "Friday" },
     ],
     minutes: 7,
     tasks: [

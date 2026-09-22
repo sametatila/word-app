@@ -116,6 +116,7 @@ export const a1U24: SkillExercise[] = [
       { de: "gestern", tr: "dün", en: "yesterday" },
       { de: "geblieben", tr: "kalmış", en: "stayed", note: "bleiben fiilinden" },
       { de: "gefahren", tr: "gitmiş", en: "went (by vehicle)", note: "araçla" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 3,
     text:
@@ -173,6 +174,8 @@ export const a1U24: SkillExercise[] = [
     gloss: [
       { de: "verschieben", tr: "ertelemek", en: "to postpone" },
       { de: "das Datum", tr: "tarih", en: "date" },
+      { de: "der Freitag", tr: "cuma", en: "Friday" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 2,
     segments: [

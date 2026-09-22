@@ -108,6 +108,9 @@ export const b1U44: SkillExercise[] = [
       { de: "unentschieden", tr: "berabere", en: "drawn" },
       { de: "das Tor", tr: "gol / kale", en: "goal" },
       { de: "der Rekord", tr: "rekor", en: "record" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     text:
       "Das Spiel am Sonntag endete unentschieden, eins zu eins. " +
@@ -174,6 +177,7 @@ export const b1U44: SkillExercise[] = [
       { de: "das Hallenbad", tr: "kapalı havuz", en: "indoor pool" },
       { de: "tauchen", tr: "dalmak", en: "to dive" },
       { de: "klettern", tr: "tırmanmak", en: "to climb" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
     ],
     segments: [
       { text: "Ich will wieder anfangen, aber ich weiß nicht welche Sportart." },
@@ -236,6 +240,9 @@ export const b1U44: SkillExercise[] = [
       { de: "das Feld", tr: "tarla", en: "field" },
       { de: "der Rasen", tr: "çimen", en: "lawn" },
       { de: "blühen", tr: "çiçek açmak", en: "to bloom" },
+      { de: "verboten", tr: "yasak", en: "forbidden" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     segments: [
       { text: "Wollen wir am Wochenende zelten?" },
@@ -353,6 +360,7 @@ export const b1U44: SkillExercise[] = [
       { de: "sich vergnügen", tr: "eğlenmek", en: "to have fun" },
       { de: "vergnügt", tr: "neşeli", en: "cheerful" },
       { de: "der Hof", tr: "avlu / çiftlik", en: "yard" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

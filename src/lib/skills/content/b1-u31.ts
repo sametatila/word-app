@@ -43,6 +43,13 @@ export const b1U31: SkillExercise[] = [
       { de: "der Perron", tr: "peron", en: "platform" },
       { de: "der Aufenthalt", tr: "mola / bekleme", en: "stopover" },
       { de: "die Rückfahrt", tr: "dönüş", en: "return journey" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "sich strecken", tr: "gerinmek", en: "to stretch" },
+      { de: "aussteigen", tr: "inmek", en: "to get off" },
+      { de: "großzügig", tr: "cömert", en: "generous" },
+      { de: "sammeln", tr: "toplamak", en: "to collect" },
     ],
     text:
       "Wer mit der Bahn fährt, kauft das Billett am besten vorher. " +
@@ -109,6 +116,8 @@ export const b1U31: SkillExercise[] = [
       { de: "der Gehsteig", tr: "kaldırım", en: "pavement" },
       { de: "die Einbahnstraße", tr: "tek yön", en: "one-way street" },
       { de: "überqueren", tr: "karşıdan karşıya geçmek", en: "to cross" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
+      { de: "die Breite", tr: "genişlik", en: "width" },
     ],
     text:
       "Die wichtigste Regel steht auf keinem Schild: wer unsicher ist, " +
@@ -175,6 +184,8 @@ export const b1U31: SkillExercise[] = [
       { de: "der Passagier", tr: "yolcu", en: "passenger" },
       { de: "die Kabine", tr: "kabin", en: "cabin" },
       { de: "der Notausgang", tr: "acil çıkış", en: "emergency exit" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     segments: [
       { text: "Meine Damen und Herren, wir beginnen mit der Landung." },
@@ -237,6 +248,7 @@ export const b1U31: SkillExercise[] = [
       { de: "das Benzin", tr: "benzin", en: "petrol" },
       { de: "der Gang", tr: "vites", en: "gear" },
       { de: "losfahren", tr: "yola çıkmak", en: "to set off" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     segments: [
       { text: "Hörst du das? Die Bremse macht seit der Kurve ein Geräusch." },
@@ -354,6 +366,8 @@ export const b1U31: SkillExercise[] = [
       { de: "landen", tr: "inmek", en: "to land" },
       { de: "die Umleitung", tr: "yol değişikliği", en: "diversion" },
       { de: "das Fahrzeug", tr: "araç", en: "vehicle" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "ausgeruht", tr: "dinlenmiş", en: "rested" },
     ],
     tasks: [
       {

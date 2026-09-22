@@ -143,6 +143,7 @@ export const a1U11: SkillExercise[] = [
       { de: "suchen", tr: "aramak", en: "to look for" },
       { de: "anprobieren", tr: "denemek", en: "to try on" },
       { de: "die Umkleide", tr: "soyunma kabini", en: "changing room" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 2,
     segments: [

@@ -30,6 +30,7 @@ export const a1U05: SkillExercise[] = [
       { de: "aussehen", tr: "görünmek", en: "to look" },
       { de: "sympathisch", tr: "sempatik", en: "likeable" },
       { de: "oft", tr: "sık sık", en: "often" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 3,
     text:
@@ -89,6 +90,7 @@ export const a1U05: SkillExercise[] = [
       { de: "die Hochzeit", tr: "düğün", en: "wedding" },
       { de: "feiern", tr: "kutlamak", en: "to celebrate" },
       { de: "schenken", tr: "hediye etmek", en: "to give a gift" },
+      { de: "tschüss", tr: "güle güle", en: "bye-bye" },
     ],
     minutes: 3,
     text:
@@ -141,6 +143,7 @@ export const a1U05: SkillExercise[] = [
     gloss: [
       { de: "tragen", tr: "giymek", en: "to wear" },
       { de: "das Haar", tr: "saç", en: "hair" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 2,
     segments: [
@@ -293,6 +296,7 @@ export const a1U05: SkillExercise[] = [
       { de: "der Glückwunsch", tr: "tebrik", en: "congratulation" },
       { de: "feiern", tr: "kutlamak", en: "to celebrate" },
       { de: "zusammen", tr: "birlikte", en: "together" },
+      { de: "tschüss", tr: "güle güle", en: "bye-bye" },
     ],
     minutes: 7,
     tasks: [

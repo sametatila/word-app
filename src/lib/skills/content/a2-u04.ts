@@ -40,6 +40,8 @@ export const a2U04: SkillExercise[] = [
       { de: "auswendig", tr: "ezbere", en: "by heart" },
       { de: "fleißig", tr: "çalışkan", en: "hard-working" },
       { de: "das Zeugnis", tr: "karne", en: "school report" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     minutes: 4,
     text:
@@ -101,6 +103,8 @@ export const a2U04: SkillExercise[] = [
       { de: "bislang", tr: "şimdiye kadar", en: "so far" },
       { de: "die Wohnungssuche", tr: "ev arayışı", en: "flat hunting" },
       { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
+      { de: "komplett", tr: "eksiksiz", en: "complete" },
+      { de: "anzeigen", tr: "ihbar etmek", en: "to report" },
     ],
     minutes: 4,
     text:
@@ -321,6 +325,7 @@ export const a2U04: SkillExercise[] = [
       { de: "charmant", tr: "sevimli", en: "charming" },
       { de: "sich vertragen", tr: "iyi geçinmek", en: "to get along" },
       { de: "seit", tr: "-den beri", en: "since" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 8,
     tasks: [

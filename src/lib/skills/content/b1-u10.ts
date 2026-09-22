@@ -39,6 +39,13 @@ export const b1U10: SkillExercise[] = [
       { de: "der Inhalt", tr: "içerik", en: "contents" },
       { de: "auffällig", tr: "dikkat çekici", en: "conspicuous" },
       { de: "erkennen", tr: "tanımak", en: "to recognise" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
+      { de: "braun", tr: "kahverengi", en: "brown" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     text:
       "Wer etwas verliert, meldet den Verlust am besten sofort. Im Fundbüro liegen " +
@@ -104,6 +111,9 @@ export const b1U10: SkillExercise[] = [
       { de: "genießen", tr: "tadını çıkarmak", en: "to enjoy" },
       { de: "entlang", tr: "boyunca", en: "along" },
       { de: "sich verlaufen", tr: "yolunu kaybetmek", en: "to get lost" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
+      { de: "das Gesuch", tr: "dilekçe", en: "petition" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "Mein Lieblingsort liegt zwanzig Minuten von meiner Wohnung. Man geht die " +
@@ -231,6 +241,7 @@ export const b1U10: SkillExercise[] = [
       { de: "mischen", tr: "karıştırmak", en: "to mix" },
       { de: "die Pfanne", tr: "tava", en: "pan" },
       { de: "der Geschmack", tr: "tat", en: "taste" },
+      { de: "leicht", tr: "hafif", en: "light" },
     ],
     segments: [
       { text: "Du hast doch dieses Gericht gemacht. Wie geht das?" },
@@ -294,6 +305,9 @@ export const b1U10: SkillExercise[] = [
       { de: "die Brieftasche", tr: "cüzdan", en: "wallet" },
       { de: "die Marke", tr: "marka", en: "brand" },
       { de: "der Inhalt", tr: "içerik", en: "contents" },
+      { de: "braun", tr: "kahverengi", en: "brown" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     tasks: [
       {

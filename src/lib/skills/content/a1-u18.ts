@@ -94,6 +94,7 @@ export const a1U18: SkillExercise[] = [
       { de: "kaputt", tr: "bozuk", en: "broken" },
       { de: "funktionieren", tr: "çalışmak", en: "to work" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 3,
     text:
@@ -146,6 +147,8 @@ export const a1U18: SkillExercise[] = [
     gloss: [
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 2,
     segments: [
@@ -299,6 +302,7 @@ export const a1U18: SkillExercise[] = [
       { de: "kaputt", tr: "bozuk", en: "broken" },
       { de: "der Hausmeister", tr: "apartman görevlisi", en: "caretaker" },
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 7,
     tasks: [

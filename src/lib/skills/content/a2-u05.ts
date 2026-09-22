@@ -38,6 +38,9 @@ export const a2U05: SkillExercise[] = [
       { de: "unzufrieden", tr: "memnuniyetsiz", en: "dissatisfied" },
       { de: "entspannt", tr: "rahatlamış", en: "relaxed" },
       { de: "weiterkommen", tr: "ilerlemek", en: "to make progress" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "das Fach", tr: "ders", en: "subject" },
     ],
     minutes: 4,
     text:
@@ -99,6 +102,8 @@ export const a2U05: SkillExercise[] = [
       { de: "großziehen", tr: "büyütmek", en: "to raise" },
       { de: "reich", tr: "zengin", en: "rich" },
       { de: "erben", tr: "miras almak", en: "to inherit" },
+      { de: "einzige", tr: "tek", en: "only" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     minutes: 4,
     text:
@@ -158,6 +163,9 @@ export const a2U05: SkillExercise[] = [
       { de: "die Situation", tr: "durum", en: "situation" },
       { de: "gestehen", tr: "itiraf etmek", en: "to confess" },
       { de: "auslachen", tr: "alay etmek", en: "to laugh at" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "fremd", tr: "yabancı", en: "unfamiliar" },
+      { de: "reagieren", tr: "tepki vermek", en: "to react" },
     ],
     minutes: 3,
     segments: [
@@ -217,6 +225,8 @@ export const a2U05: SkillExercise[] = [
       { de: "versuchen", tr: "denemek", en: "to try" },
       { de: "bewundern", tr: "hayran olmak", en: "to admire" },
       { de: "geschickt", tr: "becerikli", en: "skilful" },
+      { de: "die Trainerin", tr: "kadın antrenör", en: "female coach" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     minutes: 3,
     segments: [
@@ -318,6 +328,7 @@ export const a2U05: SkillExercise[] = [
       { de: "weitermachen", tr: "devam etmek", en: "to carry on" },
       { de: "versuchen", tr: "denemek", en: "to try" },
       { de: "der Wettbewerb", tr: "yarışma", en: "competition" },
+      { de: "riesig", tr: "kocaman", en: "huge" },
     ],
     minutes: 8,
     tasks: [

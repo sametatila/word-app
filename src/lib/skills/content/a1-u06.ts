@@ -32,6 +32,7 @@ export const a1U06: SkillExercise[] = [
     gloss: [
       { de: "die Speisekarte", tr: "yemek listesi", en: "menu" },
       { de: "das Getränk", tr: "içecek", en: "drink" },
+      { de: "das Café", tr: "kafe", en: "café" },
     ],
     minutes: 3,
     text:
@@ -88,6 +89,7 @@ export const a1U06: SkillExercise[] = [
     gloss: [
       { de: "das Frühstück", tr: "kahvaltı", en: "breakfast" },
       { de: "der Hunger", tr: "açlık", en: "hunger" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     minutes: 3,
     text:
@@ -140,6 +142,7 @@ export const a1U06: SkillExercise[] = [
     gloss: [
       { de: "bestellen", tr: "sipariş etmek", en: "to order" },
       { de: "die Rechnung", tr: "hesap", en: "bill" },
+      { de: "außer", tr: "hariç", en: "except" },
     ],
     minutes: 2,
     segments: [

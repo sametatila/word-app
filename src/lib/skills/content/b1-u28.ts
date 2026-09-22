@@ -106,6 +106,12 @@ export const b1U28: SkillExercise[] = [
       { de: "das Schaufenster", tr: "vitrin", en: "shop window" },
       { de: "der Durchschnitt", tr: "ortalama", en: "average" },
       { de: "wertlos", tr: "değersiz", en: "worthless" },
+      { de: "das Schild", tr: "tabela", en: "sign" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Ein Rabatt von vierzig Prozent klingt gut, sagt aber allein gar " +
@@ -172,6 +178,7 @@ export const b1U28: SkillExercise[] = [
       { de: "die Verabredung", tr: "buluşma sözü", en: "arrangement" },
       { de: "der Treffpunkt", tr: "buluşma yeri", en: "meeting point" },
       { de: "das Picknick", tr: "piknik", en: "picnic" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "So, das war ein schöner Abend. Aber es ist kein richtiger Abschied." },
@@ -234,6 +241,7 @@ export const b1U28: SkillExercise[] = [
       { de: "der Beleg", tr: "fiş", en: "receipt" },
       { de: "die Garantie", tr: "garanti", en: "guarantee" },
       { de: "der Ersatz", tr: "yedek / ikame", en: "replacement" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     segments: [
       { text: "Guten Tag, ich möchte das hier umtauschen." },
@@ -297,6 +305,9 @@ export const b1U28: SkillExercise[] = [
       { de: "der Händler", tr: "satıcı", en: "dealer" },
       { de: "wertvoll", tr: "değerli", en: "valuable" },
       { de: "der Durchschnitt", tr: "ortalama", en: "average" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
     ],
     tasks: [
       {

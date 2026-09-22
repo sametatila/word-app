@@ -34,6 +34,13 @@ export const b1U05: SkillExercise[] = [
       { de: "die Höhe", tr: "yükseklik / tutar", en: "level" },
       { de: "die Summe", tr: "toplam", en: "total" },
       { de: "das Recht", tr: "hak", en: "right" },
+      { de: "die Reinigung", tr: "kuru temizlemeci", en: "dry cleaner" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "böse", tr: "kızgın", en: "angry" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
     ],
     text:
       "Einmal im Jahr kommt die Abrechnung für Heizung, Wasser und die Reinigung im Haus. " +
@@ -105,6 +112,8 @@ export const b1U05: SkillExercise[] = [
       { de: "die Wahl", tr: "seçim", en: "choice" },
       { de: "trotzdem", tr: "yine de", en: "nevertheless" },
       { de: "zwar", tr: "gerçi", en: "admittedly" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Frage: Ich komme für ein Jahr in die Stadt. Soll ich möbliert oder leer mieten?\n\n" +
@@ -176,6 +185,7 @@ export const b1U05: SkillExercise[] = [
       { de: "erledigen", tr: "halletmek", en: "to get done" },
       { de: "solange", tr: "-dığı sürece", en: "as long as" },
       { de: "schließlich", tr: "en sonunda", en: "finally" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "Also, morgen um acht. Was machen wir zuerst?" },
@@ -238,6 +248,8 @@ export const b1U05: SkillExercise[] = [
       { de: "der Sessel", tr: "koltuk", en: "armchair" },
       { de: "die Decke", tr: "battaniye / tavan", en: "blanket" },
       { de: "das Regal", tr: "raf", en: "shelf" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Das Zimmer ist möbliert. Bett, Regal und ein Sessel sind da." },
@@ -302,6 +314,7 @@ export const b1U05: SkillExercise[] = [
       { de: "der Grund", tr: "sebep", en: "reason" },
       { de: "die Zahlung", tr: "ödeme", en: "payment" },
       { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
       {
@@ -359,6 +372,10 @@ export const b1U05: SkillExercise[] = [
       { de: "der Teppich", tr: "halı", en: "carpet" },
       { de: "die Wand", tr: "duvar", en: "wall" },
       { de: "bestimmt", tr: "kesinlikle", en: "certainly" },
+      { de: "die Untermiete", tr: "alt kiracılık", en: "sublease" },
+      { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     tasks: [
       {

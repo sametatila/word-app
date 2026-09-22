@@ -35,6 +35,8 @@ export const a1U02: SkillExercise[] = [
       { de: "die Nummer", tr: "numara", en: "number" },
       { de: "mindestens", tr: "en az", en: "at least" },
       { de: "die Seite", tr: "sayfa", en: "page" },
+      { de: "der Anfänger", tr: "yeni başlayan", en: "beginner" },
+      { de: "die Information", tr: "bilgi", en: "information" },
     ],
     minutes: 3,
     text:

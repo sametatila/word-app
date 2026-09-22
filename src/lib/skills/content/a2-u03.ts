@@ -39,6 +39,9 @@ export const a2U03: SkillExercise[] = [
       { de: "durchgehen", tr: "gözden geçirmek", en: "to go through" },
       { de: "der Rest", tr: "kalan", en: "the rest" },
       { de: "wenigstens", tr: "en azından", en: "at least" },
+      { de: "das Meeting", tr: "toplantı", en: "meeting" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "das Glück", tr: "şans", en: "luck" },
     ],
     minutes: 3,
     text:
@@ -102,6 +105,9 @@ export const a2U03: SkillExercise[] = [
       { de: "die Kenntnisse", tr: "bilgi birikimi", en: "knowledge" },
       { de: "auskommen", tr: "geçinmek", en: "to get along" },
       { de: "die Übersetzung", tr: "çeviri", en: "translation" },
+      { de: "einzige", tr: "tek", en: "only" },
+      { de: "fremd", tr: "yabancı", en: "unfamiliar" },
+      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
     ],
     minutes: 4,
     text:
@@ -220,6 +226,7 @@ export const a2U03: SkillExercise[] = [
       { de: "begabt", tr: "kabiliyetli", en: "talented" },
       { de: "berühmt", tr: "ünlü", en: "famous" },
       { de: "träumen", tr: "hayal kurmak", en: "to dream" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     minutes: 3,
     segments: [

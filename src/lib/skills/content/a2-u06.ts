@@ -40,6 +40,9 @@ export const a2U06: SkillExercise[] = [
       { de: "husten", tr: "öksürmek", en: "to cough" },
       { de: "die Krankheit", tr: "hastalık", en: "illness" },
       { de: "vorsichtig", tr: "dikkatli", en: "careful" },
+      { de: "geschlossen sein", tr: "kapalı olmak", en: "to be closed" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     minutes: 4,
     text:
@@ -102,6 +105,7 @@ export const a2U06: SkillExercise[] = [
       { de: "heiß", tr: "sıcak", en: "hot" },
       { de: "lauwarm", tr: "ılık", en: "lukewarm" },
       { de: "der Tipp", tr: "tavsiye", en: "tip" },
+      { de: "das Hausmittel", tr: "ev çaresi", en: "home remedy" },
     ],
     minutes: 4,
     text:
@@ -162,6 +166,7 @@ export const a2U06: SkillExercise[] = [
       { de: "die Grippe", tr: "grip", en: "flu" },
       { de: "sich anstecken", tr: "hastalık kapmak", en: "to catch an illness" },
       { de: "schlimm", tr: "fena", en: "bad" },
+      { de: "blass", tr: "solgun", en: "pale" },
     ],
     minutes: 3,
     segments: [
@@ -220,6 +225,7 @@ export const a2U06: SkillExercise[] = [
       { de: "harmlos", tr: "zararsız", en: "harmless" },
       { de: "fett", tr: "yağlı", en: "fatty" },
       { de: "der Magen", tr: "mide", en: "stomach" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     minutes: 3,
     segments: [
@@ -321,6 +327,7 @@ export const a2U06: SkillExercise[] = [
       { de: "die Zitrone", tr: "limon", en: "lemon" },
       { de: "der Tipp", tr: "tavsiye", en: "tip" },
       { de: "die Sprechstunde", tr: "muayene saati", en: "consultation hours" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 8,
     tasks: [

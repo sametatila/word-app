@@ -43,6 +43,10 @@ export const b1U38: SkillExercise[] = [
       { de: "der Übersetzer", tr: "çevirmen", en: "translator" },
       { de: "der Sozialarbeiter", tr: "sosyal hizmet uzmanı", en: "social worker" },
       { de: "der Metzger", tr: "kasap", en: "butcher" },
+      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "verdienen", tr: "para kazanmak", en: "to earn" },
+      { de: "offen", tr: "açık", en: "open" },
+      { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
     ],
     text:
       "Frau Berger ist Architektin. Sie hat studiert, sechs Jahre lang, und " +
@@ -110,6 +114,12 @@ export const b1U38: SkillExercise[] = [
       { de: "der Lehrling", tr: "çırak", en: "apprentice" },
       { de: "das Abitur", tr: "lise bitirme sınavı", en: "school-leaving exam" },
       { de: "die Fortbildung", tr: "mesleki eğitim", en: "further training" },
+      { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
+      { de: "verdienen", tr: "para kazanmak", en: "to earn" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
+      { de: "beste", tr: "en iyi", en: "best" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "offen", tr: "açık", en: "open" },
     ],
     text:
       "Nach dem Abitur denken viele nur an ein Studium. Dabei ist eine " +
@@ -240,6 +250,7 @@ export const b1U38: SkillExercise[] = [
       { de: "abhängig", tr: "bağımlı", en: "dependent" },
       { de: "beeinflussen", tr: "etkilemek", en: "to influence" },
       { de: "kritisch", tr: "eleştirel", en: "critical" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Ich finde, die neue Technologie macht uns abhängig." },
@@ -303,6 +314,7 @@ export const b1U38: SkillExercise[] = [
       { de: "der Maler", tr: "ressam / boyacı", en: "painter" },
       { de: "der Musiker", tr: "müzisyen", en: "musician" },
       { de: "das Zertifikat", tr: "sertifika", en: "certificate" },
+      { de: "das Fach", tr: "ders", en: "subject" },
     ],
     tasks: [
       {
@@ -357,6 +369,9 @@ export const b1U38: SkillExercise[] = [
       { de: "die Matura", tr: "olgunluk sınavı", en: "school-leaving exam" },
       { de: "das Diplom", tr: "diploma", en: "diploma" },
       { de: "die Fortbildung", tr: "mesleki eğitim", en: "further training" },
+      { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
+      { de: "verdienen", tr: "para kazanmak", en: "to earn" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     tasks: [
       {

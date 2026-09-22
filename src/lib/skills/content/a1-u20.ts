@@ -39,6 +39,7 @@ export const a1U20: SkillExercise[] = [
       { de: "der Spielplatz", tr: "oyun alanı", en: "playground" },
       { de: "der See", tr: "göl", en: "lake" },
       { de: "der Baum", tr: "ağaç", en: "tree" },
+      { de: "das Café", tr: "kafe", en: "café" },
     ],
     minutes: 3,
     text:
@@ -152,6 +153,7 @@ export const a1U20: SkillExercise[] = [
       { de: "der Eintritt", tr: "giriş ücreti", en: "admission" },
       { de: "das Handtuch", tr: "havlu", en: "towel" },
       { de: "tief", tr: "derin", en: "deep" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     minutes: 2,
     segments: [
@@ -271,6 +273,7 @@ export const a1U20: SkillExercise[] = [
       { de: "leider", tr: "maalesef", en: "unfortunately" },
       { de: "klappen", tr: "denk gelmek", en: "to work out" },
       { de: "schade", tr: "yazık", en: "what a pity" },
+      { de: "sehen", tr: "görmek", en: "to see" },
     ],
     minutes: 6,
     tasks: [

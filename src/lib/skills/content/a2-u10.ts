@@ -41,6 +41,7 @@ export const a2U10: SkillExercise[] = [
       { de: "aushelfen", tr: "yardıma gitmek", en: "to help out" },
       { de: "die Türklingel", tr: "kapı zili", en: "doorbell" },
       { de: "die Werkstatt", tr: "tamirhane", en: "workshop" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
     ],
     minutes: 4,
     text:
@@ -106,6 +107,8 @@ export const a2U10: SkillExercise[] = [
       { de: "die Haustür", tr: "sokak kapısı", en: "front door" },
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },
       { de: "austragen", tr: "dağıtmak", en: "to deliver" },
+      { de: "der Absender", tr: "gönderen", en: "sender" },
+      { de: "zustellen", tr: "tebliğ etmek", en: "to deliver" },
     ],
     minutes: 4,
     text:
@@ -167,6 +170,7 @@ export const a2U10: SkillExercise[] = [
       { de: "die Ruhe", tr: "sessizlik", en: "quiet" },
       { de: "nachts", tr: "geceleri", en: "at night" },
       { de: "sich beklagen", tr: "şikâyet etmek", en: "to complain" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 3,
     segments: [
@@ -225,6 +229,9 @@ export const a2U10: SkillExercise[] = [
       { de: "der Klempner", tr: "tesisatçı", en: "plumber" },
       { de: "der Elektriker", tr: "elektrikçi", en: "electrician" },
       { de: "die Glühbirne", tr: "ampul", en: "light bulb" },
+      { de: "die Tropfen", tr: "damla", en: "drops" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 3,
     segments: [
@@ -327,6 +334,8 @@ export const a2U10: SkillExercise[] = [
       { de: "der Klempner", tr: "tesisatçı", en: "plumber" },
       { de: "der Wasserhahn", tr: "musluk", en: "tap" },
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },
+      { de: "die Tropfen", tr: "damla", en: "drops" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 8,
     tasks: [

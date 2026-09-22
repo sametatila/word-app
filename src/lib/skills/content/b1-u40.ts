@@ -43,6 +43,10 @@ export const b1U40: SkillExercise[] = [
       { de: "das Vorstellungsgespräch", tr: "iş görüşmesi", en: "job interview" },
       { de: "die Bestätigung", tr: "teyit", en: "confirmation" },
       { de: "üblich", tr: "alışılmış", en: "customary" },
+      { de: "automatisch", tr: "otomatik", en: "automatic" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "die Anzeige", tr: "ilan", en: "ad" },
     ],
     text:
       "Zwischen Brief und Vertrag liegen meistens vier Wochen. Wer nach " +
@@ -110,6 +114,9 @@ export const b1U40: SkillExercise[] = [
       { de: "insgesamt", tr: "toplamda", en: "in total" },
       { de: "gering", tr: "düşük", en: "low" },
       { de: "anstrengend", tr: "yorucu", en: "exhausting" },
+      { de: "interessant", tr: "ilginç", en: "interesting" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Eine Umfrage hat achthundert Angestellte gefragt. Die Studie zeigt: " +
@@ -179,6 +186,8 @@ export const b1U40: SkillExercise[] = [
       { de: "garantieren", tr: "garanti etmek", en: "to guarantee" },
       { de: "weltweit", tr: "dünya çapında", en: "worldwide" },
       { de: "die Aktion", tr: "kampanya", en: "campaign" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     segments: [
       { text: "Wie lange habe ich morgen für die Präsentation?" },
@@ -241,6 +250,7 @@ export const b1U40: SkillExercise[] = [
       { de: "nebenbei", tr: "yan iş olarak", en: "on the side" },
       { de: "fällig", tr: "vadesi gelmiş", en: "due" },
       { de: "sich bemühen", tr: "çabalamak", en: "to make an effort" },
+      { de: "klug", tr: "akıllı", en: "smart" },
     ],
     segments: [
       { text: "Ich überlege, im Frühling etwas Eigenes zu gründen." },
@@ -304,6 +314,8 @@ export const b1U40: SkillExercise[] = [
       { de: "die Langeweile", tr: "can sıkıntısı", en: "boredom" },
       { de: "angenehm", tr: "hoş", en: "pleasant" },
       { de: "körperlich", tr: "bedensel", en: "physical" },
+      { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },
+      { de: "interessant", tr: "ilginç", en: "interesting" },
     ],
     tasks: [
       {
@@ -359,6 +371,8 @@ export const b1U40: SkillExercise[] = [
       { de: "analysieren", tr: "çözümlemek", en: "to analyse" },
       { de: "enthalten", tr: "içermek", en: "to contain" },
       { de: "häufig", tr: "sık", en: "frequently" },
+      { de: "langweilig", tr: "sıkıcı", en: "boring" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     tasks: [
       {

@@ -44,6 +44,7 @@ export const a2U19: SkillExercise[] = [
       { de: "die Messe", tr: "fuar", en: "trade fair" },
       { de: "die Veranstaltung", tr: "etkinlik", en: "event" },
       { de: "das Weihnachtsgeld", tr: "yılbaşı ikramiyesi", en: "Christmas bonus" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     minutes: 4,
     text:
@@ -109,6 +110,9 @@ export const a2U19: SkillExercise[] = [
       { de: "gastfreundlich", tr: "misafirperver", en: "hospitable" },
       { de: "die Pünktlichkeit", tr: "dakiklik", en: "punctuality" },
       { de: "schenken", tr: "hediye etmek", en: "to give as a gift" },
+      { de: "leeren", tr: "boşaltmak", en: "to empty" },
+      { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
+      { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
     text:
@@ -170,6 +174,10 @@ export const a2U19: SkillExercise[] = [
       { de: "anstoßen", tr: "kadeh kaldırmak", en: "to toast" },
       { de: "die Schwiegermutter", tr: "kaynana", en: "mother-in-law" },
       { de: "feierlich", tr: "tören havasında", en: "solemn, festive" },
+      { de: "lustig", tr: "komik", en: "funny" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "vorhin", tr: "az önce", en: "a little while ago" },
+      { de: "geweint", tr: "ağlamış", en: "cried" },
     ],
     minutes: 3,
     segments: [
@@ -233,6 +241,7 @@ export const a2U19: SkillExercise[] = [
       { de: "stattdessen", tr: "onun yerine", en: "instead" },
       { de: "enttäuscht", tr: "hayal kırıklığına uğramış", en: "disappointed" },
       { de: "zusammenkommen", tr: "bir araya gelmek", en: "to get together" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
     ],
     minutes: 3,
     segments: [
@@ -339,6 +348,7 @@ export const a2U19: SkillExercise[] = [
       { de: "stattdessen", tr: "onun yerine", en: "instead" },
       { de: "zusammenkommen", tr: "bir araya gelmek", en: "to get together" },
       { de: "der Gastgeber", tr: "ev sahibi", en: "host" },
+      { de: "die Schicht", tr: "toplumsal katman", en: "social stratum" },
     ],
     minutes: 8,
     tasks: [

@@ -43,6 +43,7 @@ export const b1U37: SkillExercise[] = [
       { de: "gründlich", tr: "iyice", en: "thoroughly" },
       { de: "feucht", tr: "nemli", en: "damp" },
       { de: "das Waschmittel", tr: "deterjan", en: "detergent" },
+      { de: "sich abwechseln", tr: "sırayla yapmak", en: "to take turns" },
     ],
     text:
       "Wir haben lange diskutiert und dann einen Plan gemacht. Er hängt " +
@@ -109,6 +110,9 @@ export const b1U37: SkillExercise[] = [
       { de: "stehlen", tr: "çalmak", en: "to steal" },
       { de: "der Täter", tr: "fail", en: "perpetrator" },
       { de: "sichtbar", tr: "görünür", en: "visible" },
+      { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
+      { de: "die Papiere", tr: "belgeler", en: "documents" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
       "Wenn bei Ihnen eingebrochen wurde, gehen Sie nicht sofort in die Wohnung. " +
@@ -175,6 +179,10 @@ export const b1U37: SkillExercise[] = [
       { de: "die Darstellung", tr: "gösterim", en: "representation" },
       { de: "das Symbol", tr: "simge", en: "symbol" },
       { de: "vergrößern", tr: "büyütmek", en: "to enlarge" },
+      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "bedeuten", tr: "anlamına gelmek", en: "to mean" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     segments: [
       { text: "Können Sie die Grafik kurz vergrößern? Ich sehe die Zeilen nicht." },
@@ -237,6 +245,7 @@ export const b1U37: SkillExercise[] = [
       { de: "der Sender", tr: "radyo istasyonu", en: "station" },
       { de: "der Hörer", tr: "dinleyici", en: "listener" },
       { de: "mittlerweile", tr: "artık", en: "by now" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     segments: [
       { text: "Im Keller stehen noch zwei Kisten mit Kassetten." },
@@ -354,6 +363,8 @@ export const b1U37: SkillExercise[] = [
       { de: "gründlich", tr: "iyice", en: "thoroughly" },
       { de: "die Couch", tr: "kanepe", en: "couch" },
       { de: "glatt", tr: "kaygan / düz", en: "smooth" },
+      { de: "sich abwechseln", tr: "sırayla yapmak", en: "to take turns" },
+      { de: "wischen", tr: "paspaslamak", en: "to mop" },
     ],
     tasks: [
       {

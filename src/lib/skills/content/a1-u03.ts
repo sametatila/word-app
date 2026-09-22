@@ -94,6 +94,8 @@ export const a1U03: SkillExercise[] = [
       { de: "der Familienstand", tr: "medeni hâl", en: "marital status" },
       { de: "unterschreiben", tr: "imzalamak", en: "to sign" },
       { de: "ankreuzen", tr: "işaretlemek", en: "to tick" },
+      { de: "verheiratet", tr: "evli", en: "married" },
+      { de: "die Unterschrift", tr: "imza", en: "signature" },
     ],
     minutes: 3,
     text:
@@ -264,6 +266,7 @@ export const a1U03: SkillExercise[] = [
       { de: "der Familienstand", tr: "medeni hâl", en: "marital status" },
       { de: "das Alter", tr: "yaş", en: "age" },
       { de: "geboren", tr: "doğmuş", en: "born" },
+      { de: "verheiratet", tr: "evli", en: "married" },
     ],
     minutes: 6,
     tasks: [

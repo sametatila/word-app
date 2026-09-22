@@ -35,6 +35,8 @@ export const b1U04: SkillExercise[] = [
       { de: "die Kündigung", tr: "fesih bildirimi", en: "termination" },
       { de: "regeln", tr: "düzenlemek", en: "to regulate" },
       { de: "übernehmen", tr: "devralmak", en: "to take over" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Im Mietvertrag wird geregelt, was der Mieter und was der Vermieter machen muss. " +
@@ -106,6 +108,8 @@ export const b1U04: SkillExercise[] = [
       { de: "der Ärger", tr: "sıkıntı / dert", en: "trouble" },
       { de: "aufmerksam", tr: "dikkatli", en: "considerate" },
       { de: "der Hausmeister", tr: "kapıcı", en: "caretaker" },
+      { de: "die Notiz", tr: "not", en: "note" },
+      { de: "böse", tr: "kızgın", en: "angry" },
     ],
     text:
       "Zettel 1: Der Lärm nachts muss aufhören! Ich habe genug und beschwere mich beim Vermieter. " +
@@ -176,6 +180,7 @@ export const b1U04: SkillExercise[] = [
       { de: "reinigen", tr: "temizlemek", en: "to clean" },
       { de: "das Haustier", tr: "evcil hayvan", en: "pet" },
       { de: "gemeinsam", tr: "ortak / birlikte", en: "together" },
+      { de: "die Länge", tr: "uzunluk", en: "length" },
     ],
     segments: [
       { text: "Schön, dass du da bist. Wir sind zu dritt in der WG." },

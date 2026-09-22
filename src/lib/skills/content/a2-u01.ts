@@ -35,6 +35,7 @@ export const a2U01: SkillExercise[] = [
       { de: "losgehen", tr: "yola çıkmak", en: "to set off" },
       { de: "zurückkommen", tr: "geri gelmek", en: "to come back" },
       { de: "fantastisch", tr: "muhteşem", en: "fantastic" },
+      { de: "verlobt", tr: "nişanlı", en: "engaged" },
     ],
     minutes: 3,
     text:
@@ -156,6 +157,7 @@ export const a2U01: SkillExercise[] = [
       { de: "vorbeikommen", tr: "uğramak", en: "to drop by" },
       { de: "weglaufen", tr: "kaçmak", en: "to run away" },
       { de: "zurückkommen", tr: "geri gelmek", en: "to come back" },
+      { de: "das Gesuch", tr: "dilekçe", en: "petition" },
     ],
     minutes: 3,
     segments: [
@@ -213,6 +215,7 @@ export const a2U01: SkillExercise[] = [
       { de: "zurückbringen", tr: "geri götürmek", en: "to take back" },
       { de: "aufwecken", tr: "uyandırmak", en: "to wake up" },
       { de: "zuhören", tr: "dinlemek", en: "to listen" },
+      { de: "die Bibliothek", tr: "kütüphane", en: "library" },
     ],
     minutes: 3,
     segments: [
@@ -268,6 +271,7 @@ export const a2U01: SkillExercise[] = [
       { de: "unternehmen", tr: "bir şeyler yapmak", en: "to do something" },
       { de: "ausschalten", tr: "kapatmak", en: "to switch off" },
       { de: "verlieren", tr: "kaybetmek", en: "to lose" },
+      { de: "bergen", tr: "enkazdan çıkarmak", en: "to recover" },
     ],
     minutes: 6,
     tasks: [

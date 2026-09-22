@@ -41,6 +41,8 @@ export const a1U21: SkillExercise[] = [
       { de: "der Termin", tr: "randevu", en: "appointment" },
       { de: "dringend", tr: "acil", en: "urgent" },
       { de: "möglich", tr: "mümkün", en: "possible" },
+      { de: "der Freitag", tr: "cuma", en: "Friday" },
+      { de: "das Wartezimmer", tr: "bekleme odası", en: "waiting room" },
     ],
     minutes: 3,
     text:

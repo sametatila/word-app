@@ -42,6 +42,10 @@ export const a2U17: SkillExercise[] = [
       { de: "das Gewitter", tr: "gök gürültülü sağanak", en: "thunderstorm" },
       { de: "schneien", tr: "kar yağmak", en: "to snow" },
       { de: "die Wolke", tr: "bulut", en: "cloud" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
+      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "kühlen", tr: "soğutmak", en: "to cool" },
+      { de: "bergen", tr: "enkazdan çıkarmak", en: "to recover" },
     ],
     minutes: 4,
     text:
@@ -164,6 +168,9 @@ export const a2U17: SkillExercise[] = [
       { de: "bummeln", tr: "gezinmek", en: "to stroll" },
       { de: "der Zoo", tr: "hayvanat bahçesi", en: "zoo" },
       { de: "die Raststätte", tr: "dinlenme tesisi", en: "motorway services" },
+      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
     ],
     minutes: 3,
     segments: [
@@ -230,6 +237,7 @@ export const a2U17: SkillExercise[] = [
       { de: "angeln", tr: "balık tutmak", en: "to fish" },
       { de: "braten", tr: "kızartmak", en: "to fry, grill" },
       { de: "die Feuerstelle", tr: "ateş yeri", en: "fire pit" },
+      { de: "verboten", tr: "yasak", en: "forbidden" },
     ],
     minutes: 3,
     segments: [
@@ -333,6 +341,10 @@ export const a2U17: SkillExercise[] = [
       { de: "die Eintrittskarte", tr: "giriş bileti", en: "entrance ticket" },
       { de: "der Freizeitpark", tr: "lunapark", en: "amusement park" },
       { de: "bewölkt", tr: "bulutlu", en: "cloudy" },
+      { de: "Grad", tr: "derece", en: "degree" },
+      { de: "vormittags", tr: "öğleden önce", en: "before noon" },
+      { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },
+      { de: "also", tr: "yani", en: "so" },
     ],
     minutes: 8,
     tasks: [

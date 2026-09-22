@@ -38,6 +38,9 @@ export const a2U15: SkillExercise[] = [
       { de: "das WLAN", tr: "kablosuz internet", en: "wifi" },
       { de: "der Router", tr: "modem", en: "router" },
       { de: "telefonieren", tr: "telefonla konuşmak", en: "to phone" },
+      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "extra", tr: "fazladan", en: "extra" },
     ],
     minutes: 4,
     text:
@@ -100,6 +103,8 @@ export const a2U15: SkillExercise[] = [
       { de: "der Hocker", tr: "tabure", en: "stool" },
       { de: "einzeln", tr: "tek tek / ayrı", en: "individually" },
       { de: "die Menge", tr: "miktar / yığın", en: "amount" },
+      { de: "das Geschirr", tr: "bulaşık", en: "dishes" },
+      { de: "beste", tr: "en iyi", en: "best" },
     ],
     minutes: 4,
     text:
@@ -160,6 +165,11 @@ export const a2U15: SkillExercise[] = [
       { de: "sparen", tr: "biriktirmek", en: "to save" },
       { de: "der Kredit", tr: "kredi", en: "loan" },
       { de: "das Sparbuch", tr: "tasarruf hesabı cüzdanı", en: "savings book" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "normal", tr: "normal", en: "normal" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "extra", tr: "fazladan", en: "extra" },
+      { de: "per", tr: "yoluyla", en: "by" },
     ],
     minutes: 3,
     segments: [
@@ -221,6 +231,8 @@ export const a2U15: SkillExercise[] = [
       { de: "die Waage", tr: "terazi", en: "scales" },
       { de: "das Gramm", tr: "gram", en: "gram" },
       { de: "abschicken", tr: "göndermek", en: "to send off" },
+      { de: "also", tr: "yani", en: "so" },
+      { de: "normal", tr: "normal", en: "normal" },
     ],
     minutes: 3,
     segments: [
@@ -323,6 +335,9 @@ export const a2U15: SkillExercise[] = [
       { de: "der Hocker", tr: "tabure", en: "stool" },
       { de: "das Brettspiel", tr: "kutu oyunu", en: "board game" },
       { de: "abholen", tr: "gelip almak", en: "to pick up" },
+      { de: "lesen", tr: "okumak", en: "to read" },
+      { de: "stabil", tr: "dayanıklı", en: "sturdy" },
+      { de: "wackelig", tr: "sallanan", en: "wobbly" },
     ],
     minutes: 8,
     tasks: [

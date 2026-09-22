@@ -40,6 +40,7 @@ export const b1U19: SkillExercise[] = [
       { de: "die Salbe", tr: "merhem", en: "ointment" },
       { de: "warnen", tr: "uyarmak", en: "to warn" },
       { de: "harmlos", tr: "zararsız", en: "harmless" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     text:
       "Nehmen Sie die Pille zweimal am Tag ein, morgens und abends, mit etwas " +
@@ -105,6 +106,8 @@ export const b1U19: SkillExercise[] = [
       { de: "die Kantine", tr: "yemekhane", en: "canteen" },
       { de: "die Portion", tr: "porsiyon", en: "portion" },
       { de: "satt", tr: "tok", en: "full" },
+      { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },
+      { de: "sich konzentrieren", tr: "konsantre olmak", en: "to concentrate" },
     ],
     text:
       "Ich habe ein Jahr lang jeden Mittag in der Kantine gegessen, ohne " +
@@ -172,6 +175,8 @@ export const b1U19: SkillExercise[] = [
       { de: "die Übung", tr: "egzersiz", en: "exercise" },
       { de: "sich ausruhen", tr: "dinlenmek", en: "to rest" },
       { de: "entspannend", tr: "rahatlatıcı", en: "relaxing" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
+      { de: "besonders", tr: "özellikle", en: "especially" },
     ],
     segments: [
       { text: "Seit zwei Wochen tut mir der Rücken weh, vor allem morgens." },
@@ -234,6 +239,8 @@ export const b1U19: SkillExercise[] = [
       { de: "der Wecker", tr: "çalar saat", en: "alarm clock" },
       { de: "erschöpft", tr: "bitkin", en: "exhausted" },
       { de: "die Laune", tr: "keyif / ruh hâli", en: "mood" },
+      { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
+      { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     segments: [
       { text: "Ich wache jede Nacht um drei auf und bin dann eine Stunde wach." },
@@ -351,6 +358,9 @@ export const b1U19: SkillExercise[] = [
       { de: "die Energie", tr: "enerji", en: "energy" },
       { de: "abnehmen", tr: "kilo vermek", en: "to lose weight" },
       { de: "vermutlich", tr: "muhtemelen", en: "presumably" },
+      { de: "nachmittags", tr: "öğleden sonraları", en: "in the afternoons" },
+      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "morgens", tr: "sabahları", en: "in the morning" },
     ],
     tasks: [
       {
