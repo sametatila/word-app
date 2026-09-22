@@ -18,7 +18,7 @@ import { googleSignIn } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { Skeleton } from "../ui/Skeleton";
 import { StateBody } from "../ui/flow";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 /** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
 function losses(guest = false): string[] {
@@ -151,7 +151,7 @@ export function DeleteAccountScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, justifyContent: "center", paddingHorizontal: spacing.lg }}>
         <StateBody
           alert
-          icon={<View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}><CheckIcon color={colors.successText} size={34} /></View>}
+          icon={<View style={{ width: ds(72), height: ds(72), borderRadius: radii.pill, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}><CheckIcon color={colors.successText} size={34} /></View>}
           title={tx(guest ? "guest.deleted_title" : "deleteaccount.your_account_is_deleted")}
           body={tx(guest ? "guest.deleted_body" : "deleteaccount.your_data_is_gone_it_was_good_to")}
         />

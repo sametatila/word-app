@@ -14,7 +14,7 @@ import {
   type AiConsentProcessor,
   type AiConsentPurpose,
 } from "../lib/aiConsent";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 /**
  * Yapay zekâ işleme rızası ekranı — web `components/ai-consent-dialog`in karşılığı.
@@ -145,7 +145,7 @@ export function AiConsentSheet({ purpose, onDone }: { purpose: AiConsentPurpose 
     <Modal visible animationType="slide" statusBarTranslucent onRequestClose={() => onDone(false)}>
       <View accessibilityViewIsModal accessibilityRole="alert" accessibilityLabel={copy.title} style={{ flex: 1, backgroundColor: colors.bg }}>
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + spacing.xxl, paddingHorizontal: spacing.xl, paddingBottom: spacing.xl, gap: spacing.lg, maxWidth: 640, width: "100%", alignSelf: "center" }} showsVerticalScrollIndicator={false}>
-          <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
+          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <Icon color={colors.onPrimary} size={36} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ textAlign: "center" }}>{copy.title}</Text>

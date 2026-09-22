@@ -12,7 +12,7 @@ import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
 import { PART_UNLOCKS } from "../lib/avatarUnlocks";
 import { api } from "../api/client";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 /**
  * Bir aksesuar seçeneği — o aksesuarı taşıyan mini avatar önizlemesi + seçili
@@ -41,7 +41,7 @@ function OptTile({ preview, selected, onPress, colors, label, locked = false, lo
         onPress={locked ? undefined : onPress}
         style={{ padding: spacing.xs, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent", opacity: locked ? 0.35 : 1 }}
       >
-        <MascotAvatar config={preview} size={54} />
+        <MascotAvatar config={preview} size={ds(54)} />
       </PressableScale>
       {locked ? (
         <View pointerEvents="none" style={{ position: "absolute", right: 2, bottom: 2, width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
@@ -124,7 +124,7 @@ export function AvatarScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* canlı önizleme */}
         <View style={{ alignItems: "center", marginVertical: spacing.lg }}>
-          <View style={softShadow(colors.primary, 12)}><MascotAvatar config={cfg} size={140} /></View>
+          <View style={softShadow(colors.primary, 12)}><MascotAvatar config={cfg} size={ds(140)} /></View>
         </View>
 
         <Group title={t("avatar.hat")} colors={colors}>

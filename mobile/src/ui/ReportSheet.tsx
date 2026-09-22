@@ -5,7 +5,7 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { CheckIcon } from "./icons";
 import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "../lib/report";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 
 /**
  * "Bu içeriği bildir" alt kartı — ConfirmDialog ile aynı dil (karartılmış zemin,
@@ -44,7 +44,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
             /* Sonuç duyuruluyor — web `report-dialog` içindeki nota bak:
                kutu açık kalıyor, içi yerinde değişiyor. */
             <View accessibilityLiveRegion="polite" style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
-              <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
+              <View style={{ width: ds(56), height: ds(56), borderRadius: radii.pill, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                 <CheckIcon color={colors.successText} size={28} />
               </View>
               <Text variant="h3">{t("reportsheet.reported")}</Text>

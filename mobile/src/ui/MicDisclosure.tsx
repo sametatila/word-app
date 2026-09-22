@@ -8,7 +8,7 @@ import { MicIcon, CheckIcon } from "./icons";
 import { openLegal } from "../lib/legal";
 import { ProcessorList } from "./AiConsentSheet";
 import type { AiConsentProcessor } from "../lib/aiConsent";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 /**
  * Ekranın üç kullanımı — iki mağazanın kuralı birbirinin TERSİ olduğu için.
@@ -105,7 +105,7 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
         style={{ flex: 1, backgroundColor: colors.bg }}
       >
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + spacing.xxl, paddingHorizontal: spacing.xl, paddingBottom: spacing.xl, gap: spacing.lg }} showsVerticalScrollIndicator={false}>
-          <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
+          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <MicIcon color={colors.onPrimary} size={36} />
           </View>
           <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.microphone_and_voice_data")}</Text>

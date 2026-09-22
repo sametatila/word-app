@@ -1,8 +1,52 @@
-import { Platform, type TextStyle } from "react-native";
+import { Dimensions, Platform, type TextStyle } from "react-native";
 import type { Palette } from "./colors";
 
-export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 20, xxl: 28, xxxl: 40 } as const;
-export const radii = { sm: 10, md: 14, lg: 20, xl: 26, xxl: 34, pill: 999 } as const;
+/**
+ * YOĞUNLUK ÖLÇEĞİ — ekran küçüldükçe düzen orantılı sıkılaşsın.
+ *
+ * Bütün ölçüler 390×844'lük bir telefona göre yazıldı ve her ekranda aynı
+ * kalıyordu: iPhone SE'de (375×667) ve 360×640dp Android'de kartlar, dolgular,
+ * ikonlar ve başlıklar büyük telefondaki boylarıyla çizildi, ekranın yarısı
+ * süse gitti (2026-09-22 küçük ekran incelemesi). Yazıyı tek tek küçültmek
+ * değil, ölçeğin kendisini ekrana bağlamak gerekiyordu; tokenlar tek kaynak
+ * olduğu için buradan bütün ekranlara yayılıyor.
+ *
+ * İki eksen ayrı: BOŞLUK dikey ritmi taşıdığı için yüksekliğe de bakıyor (SE'nin
+ * sorunu genişlik değil, boy); YAZI okunaklılık için yalnız yarı oranda iniyor.
+ * Tablet (kısa kenar ≥ 600) ölçeğin dışında: orada fazlalık var, eksik yok.
+ *
+ * Değer açılışta BİR KEZ hesaplanıyor: telefon dikeye kilitli (bkz.
+ * lib/useLayout `landscape`), pencere çalışırken değişmiyor. Modül sabiti
+ * olması `StyleSheet`lerin ve yüzlerce çağrı yerinin olduğu gibi kalmasını
+ * sağlıyor.
+ */
+const win = Dimensions.get("window");
+const kisaKenar = Math.min(win.width, win.height);
+const uzunKenar = Math.max(win.width, win.height);
+const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+const oran = kisaKenar >= 600 || kisaKenar === 0 ? 1 : Math.min(kisaKenar / 390, uzunKenar / 844, 1);
+/** Boşluk/boyut katsayısı: 390×844'te 1, SE'de ~0.8, 320×533'te 0.72. */
+export const density = clamp(oran, 0.72, 1);
+/** Yazı katsayısı: boşluğun yarısı kadar iner (SE'de ~0.9). */
+export const typeDensity = 1 - (1 - density) * 0.5;
+
+/** Bileşen içi sabit ölçüler (ikon kutusu, avatar, düğme yüksekliği) için. */
+export function ds(n: number): number {
+  return Math.round(n * density);
+}
+const ts = (n: number, taban: number) => Math.max(taban, Math.round(n * typeDensity * 2) / 2);
+
+/*
+  TABAN DEĞERLER DÜZ SAYI OLARAK YAZILI, ölçek AŞAĞIDA üzerlerine uygulanıyor.
+  Sebep: `check:tokens`, `check:radius`, `check:type`, `check:hit` bu dosyayı
+  metin olarak okuyup web ile eşliği ve ölçeği denetliyor; `bosluk(4)` gibi
+  bir çağrıyı NaN görüyorlardı. Yazılı sayı = 390×844 tabanı = web'in 390px
+  ve üstündeki değeri; kapıların denetlediği de o.
+*/
+export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 20, xxl: 28, xxxl: 40 };
+export const radii = { sm: 10, md: 14, lg: 20, xl: 26, xxl: 34, pill: 999 };
+for (const k of Object.keys(spacing) as (keyof typeof spacing)[]) spacing[k] = Math.max(2, Math.round(spacing[k] * density));
+for (const k of Object.keys(radii) as (keyof typeof radii)[]) if (k !== "pill") radii[k] = ds(radii[k]);
 
 const family = Platform.select({ ios: "System", default: "sans-serif" });
 const familyBold = Platform.select({ ios: "System", android: "sans-serif", default: "sans-serif" });
@@ -16,6 +60,12 @@ export const typography = {
   caption: { fontFamily: family, fontSize: 12.5, fontWeight: "600" } as TextStyle,
   micro: { fontFamily: family, fontSize: 11, fontWeight: "700", letterSpacing: 0.4 } as TextStyle,
 };
+/** Punto tabanları: yoğunlukla inen punto okunaklılık için bunların altına
+ *  düşmez (iOS HIG gövde için 14'ün altını önermiyor; etiket 10.5'te okunuyor). */
+const PUNTO_TABANI: Record<keyof typeof typography, number> = { display: 24, h1: 21, h2: 17, h3: 15, body: 14, bodyStrong: 14, caption: 12, micro: 10.5 };
+for (const k of Object.keys(typography) as (keyof typeof typography)[]) {
+  typography[k] = { ...typography[k], fontSize: ts(typography[k].fontSize as number, PUNTO_TABANI[k]) };
+}
 
 /**
  * SATIR YÜKSEKLİĞİ ORANLARI — ölçeğin eksik yarısıydı.

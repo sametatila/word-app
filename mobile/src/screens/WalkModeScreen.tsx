@@ -24,7 +24,7 @@ import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
-import { useTheme, spacing, radii, softShadow, fillOf } from "../theme";
+import { useTheme, spacing, radii, softShadow, fillOf, ds } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { MicDisclosure, type MicDisclosureMode } from "../ui/MicDisclosure";
@@ -1064,17 +1064,17 @@ export function WalkModeScreen() {
 
             {/* orta: kelime + mikrofon + durum */}
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.xxl }}>
-              <View style={{ alignItems: "center", gap: 6, minHeight: 96, justifyContent: "center" }}>
+              <View style={{ alignItems: "center", gap: 6, minHeight: ds(96), justifyContent: "center" }}>
                 <Text variant="display" color={colors.text} style={{ textAlign: "center" }}>{reveal ? withArtikel(curWord) : curWord.tr}</Text>
                 {/* İngilizce gloss — diğer oyunlardaki gibi (kısa/belirsiz kelimede hangi Almanca beklendiğini netleştirir). */}
                 {!reveal && curWord.en ? <Text variant="h3" color={colors.textFaint} style={{ textAlign: "center" }}>{curWord.en}</Text> : null}
                 {reveal ? <Text variant="h3" color={colors.textMuted} style={{ textAlign: "center" }}>{curWord.en ? `${curWord.tr} · ${curWord.en}` : curWord.tr}</Text> : null}
               </View>
 
-              <View style={{ alignItems: "center", justifyContent: "center", minHeight: 104 }}>
-                {listening ? <Animated.View style={{ position: "absolute", width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
+              <View style={{ alignItems: "center", justifyContent: "center", minHeight: ds(104) }}>
+                {listening ? <Animated.View style={{ position: "absolute", width: ds(96), height: ds(96), borderRadius: radii.pill, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
                 <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
-                  <View style={[{ width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
+                  <View style={[{ width: ds(96), height: ds(96), borderRadius: radii.pill, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
                     {verdict === "correct" ? <CheckIcon color="#fff" size={42} /> : verdict === "wrong" ? <XIcon color="#fff" size={42} /> : <MicIcon color={listening ? "#fff" : colors.textFaint} size={42} />}
                   </View>
                 </Animated.View>

@@ -14,7 +14,7 @@ import { track } from "../lib/track";
 import { prefetchDialogue, speakDialogue, speakTarget, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
 import { currentCourseId } from "../lib/courses";
-import { useTheme, spacing, radii, type Palette } from "../theme";
+import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
@@ -252,7 +252,7 @@ export function WeeklyScreen() {
           <View style={{ gap: spacing.sm }}>
             {score.byBlock.map((b) => (
               <View key={b.block} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <Text variant="caption" color={colors.textMuted} style={{ width: 96 }}>{t(BLOCK_KEY[b.block])}</Text>
+                <Text variant="caption" color={colors.textMuted} style={{ width: ds(96) }}>{t(BLOCK_KEY[b.block])}</Text>
                 <View style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
                   <View
                     style={{

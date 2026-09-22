@@ -17,7 +17,7 @@ import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Ske
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
 import { EmptyCard } from "../social/common";
-import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft, ds } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
 
@@ -210,7 +210,7 @@ export function ProgressScreen() {
              koyu temada 1.94 - AA'nın büyük yazı eşiği 3.0'ı bile tutmuyor. Koyu
              kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
-            <View style={{ width: 64, height: 64, borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
+            <View style={{ width: ds(64), height: ds(64), borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
               <FlameIcon color="#fff" size={34} />
             </View>
             <View style={{ flex: 1 }}>
@@ -229,12 +229,12 @@ export function ProgressScreen() {
           </View>
         ) : (
           <SkeletonCard style={{ borderRadius: radii.xl, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <SkeletonTile size={64} radius={radii.lg} />
+            <SkeletonTile size={ds(64)} radius={radii.lg} />
             <View style={{ flex: 1 }}>
               <SkeletonLine variant="display" width={72} />
               <SkeletonLine variant="bodyStrong" width={112} />
             </View>
-            <SkeletonTile size={58} radius={29} />
+            <SkeletonTile size={ds(58)} radius={29} />
           </SkeletonCard>
         )}
 

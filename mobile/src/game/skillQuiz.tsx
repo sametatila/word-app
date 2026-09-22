@@ -19,7 +19,7 @@ import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { isAiConsentDeclined } from "../lib/aiConsent";
-import { spacing, radii, type Palette } from "../theme";
+import { spacing, radii, type Palette, ds } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
 import { accountRequiredError, isAccountRequired } from "../lib/guest";
@@ -336,7 +336,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{tx("rounds.hint")}: {t.hint}</Text>
       ) : null}
 
-      <View style={{ marginTop: spacing.md, minHeight: 52, borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
+      <View style={{ marginTop: spacing.md, minHeight: ds(52), borderRadius: radii.md, borderWidth: 1.5, borderColor: phase === "correct" ? colors.success : phase === "revealed" ? colors.danger : colors.border, backgroundColor: colors.surface, paddingHorizontal: spacing.sm, paddingVertical: spacing.sm, flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
         {chosen.length === 0 ? (
           <Text variant="caption" color={colors.textFaint}>{tx("exam.tap_chunks")}</Text>
         ) : chosen.map((ti, pos) => (
@@ -630,7 +630,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
         placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })}
         accessibilityLabel={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-        style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
+        style={{ marginTop: spacing.md, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
         {!done && !reveal ? (

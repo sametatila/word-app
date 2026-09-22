@@ -41,7 +41,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
   const pct = a.target ? Math.min(100, Math.round((a.done / a.target) * 100)) : 0;
   return (
     <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
-      <View style={[{ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
+      <View style={[{ width: 46, height: 46, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
         {/* Rozetin KENDİ ikonu (sunucu `icon` alanında veriyor): eskiden hepsi
             kupaydı ve iki rozeti ayıran tek şey kademe rengiydi. Web baştan
             beri her rozeti kendi ikonuyla çiziyor. */}

@@ -12,6 +12,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, soft } from "../theme";
 import { InboxBell } from "../social/InboxBell";
+import { useLayout } from "../lib/useLayout";
 
 /**
  * Sekmeler arası ortak üst başlık (Learn / Patika / Beceriler): solda başlık
@@ -24,16 +25,29 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
   const { user } = useAuth();
   const { me } = useMe();
   const streak = me?.streak ?? 0;
+  const { compactWidth } = useLayout();
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, minWidth: 0, marginRight: spacing.sm }}>
         {/* Alt satır her zaman ayrılır (boşsa da) ki başlık yüksekliği ve sağdaki
             seri/profil konumu Learn, Patika ve Beceriler'de birebir aynı hizada olsun. */}
         <Text variant="caption" color={colors.textMuted}>{subtitle ?? " "}</Text>
         {/* BAŞLIK BAŞLIK OLARAK OKUNUYOR — TalkBack'in "başlıklara göre gez"
             kipi mobilde hiçbir şey bulamıyordu; web'de aynı başlık `<h1>`
             (bkz. parity 259). */}
-        <Text accessibilityRole="header" variant="display">{title}</Text>
+        {/* DAR EKRANDA TEK SATIR. 375pt'de sağdaki seri + gelen kutusu + avatar
+            başlığa ~180pt bırakıyor; "Almanca öğren" iki satıra kırılıp üst
+            şeridi iki katına çıkarıyordu (iPhone SE, 2026-09-22). Başlık bir
+            kademe küçülüyor, gerekirse sığdırmak için %80'e kadar iniyor. */}
+        <Text
+          accessibilityRole="header"
+          variant={compactWidth ? "h1" : "display"}
+          numberOfLines={compactWidth ? 1 : undefined}
+          adjustsFontSizeToFit={compactWidth}
+          minimumFontScale={0.8}
+        >
+          {title}
+        </Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {streak > 0 && (

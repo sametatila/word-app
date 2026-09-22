@@ -11,7 +11,7 @@ import { useStatsBump } from "../lib/statsSignal";
 import { navigationRef } from "../lib/pushRoute";
 import { track } from "../lib/track";
 import type { Achievement, Tier } from "../data/achievements";
-import { useTheme, spacing, radii, softShadow, TIER_COLOR } from "../theme";
+import { useTheme, spacing, radii, softShadow, TIER_COLOR, ds } from "../theme";
 
 /**
  * Rozet açılış kutlaması — mobilde HİÇ YOKTU.
@@ -197,7 +197,7 @@ export function AchievementUnlock() {
                 {t("achu.n_unlocked", { n: view.items.length })}
               </Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg, marginBottom: spacing.md }}>
-                {view.items.slice(0, BATCH_SHOWN).map((it) => <Badge key={it.id} a={it} size={52} />)}
+                {view.items.slice(0, BATCH_SHOWN).map((it) => <Badge key={it.id} a={it} size={ds(52)} />)}
               </View>
               {/* Başlıktaki sayı ile gösterilen rozet sayısı ayrışmamalı:
                   "9 rozet açıldı" deyip sekiz tane göstermek, sayının yanlış
@@ -214,7 +214,7 @@ export function AchievementUnlock() {
               <Text variant="micro" color={TIER_COLOR[solo.tier] ?? TIER_COLOR.legend} style={{ textTransform: "uppercase", letterSpacing: 1 }}>
                 {t("achu.tier_unlocked", { tier: t(TIER_LABEL_KEY[solo.tier] ?? "tier.bronze") })}
               </Text>
-              <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}><Badge a={solo} size={92} /></View>
+              <View style={{ marginTop: spacing.lg, marginBottom: spacing.md }}><Badge a={solo} size={ds(92)} /></View>
               <Text variant="h2" style={{ textAlign: "center" }}>{solo.title}</Text>
               <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{solo.hint}</Text>
               {view.kind === "solo" && view.queue.length > 1 ? (

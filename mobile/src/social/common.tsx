@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
-import { useTheme, spacing, radii, softShadow, onTint, soft as softOf } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint, soft as softOf, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
 
@@ -123,7 +123,7 @@ export function EmptyCard({ icon, tint, title, text, action, onAction, live }: {
   const t = tint ?? colors.primary;
   return (
     <Card padded accessibilityLiveRegion={live} style={{ alignItems: "center", gap: spacing.sm }}>
-      <IconTile icon={icon} tint={t} size={52} solid />
+      <IconTile icon={icon} tint={t} size={ds(52)} solid />
       <Text variant="h3" style={{ textAlign: "center", marginTop: spacing.xs }}>{title}</Text>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{text}</Text>
       {action && onAction ? <View style={{ marginTop: spacing.sm }}><Pill label={action} onPress={onAction} /></View> : null}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { t, dateLocale } from "../lib/i18n";
 import { View, ActivityIndicator, AppState, Linking, Platform, TextInput } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
+import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
@@ -18,7 +19,7 @@ import { api } from "../api/client";
 import { openLegal } from "../lib/legal";
 import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { useAuth } from "../lib/AuthContext";
 
 /**
@@ -133,6 +134,13 @@ export function PaywallScreen() {
     Promosyon kodu ve davet de hesap istiyor.
   */
   const guest = Boolean(useAuth().user?.guest);
+  const { compactHeight } = useLayout();
+  const guestPitch = (
+    <View style={{ gap: spacing.sm, marginTop: compactHeight ? spacing.lg : 0 }}>
+      <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.premium_body")}</Text>
+    </View>
+  );
   /*
     DAVET BAĞLANTISININ SONUCU. Bağ `/r/<KOD>`a dokunulduğunda kuruluyor ve
     kullanıcı hiçbir şey yazmıyor — sessiz bir başarı ile sessiz bir
@@ -292,7 +300,7 @@ export function PaywallScreen() {
       */}
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
           <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+            <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
               <CrownIcon color={colors.onPrimary} size={44} />
             </View>
             <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
@@ -345,7 +353,7 @@ export function PaywallScreen() {
       {close}
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
-          <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+          <View style={[{ width: ds(84), height: ds(84), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <CrownIcon color={colors.onPrimary} size={44} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
@@ -457,12 +465,16 @@ export function PaywallScreen() {
 
         {OWN_PROMO_CODES && !guest ? <PromoBox colors={colors} onRedeemed={refresh} /> : null}
         {status?.referral && !guest ? <ReferralBox colors={colors} referral={status.referral} /> : null}
+        {/* Kısa ekranda misafir açıklaması kaydırılan alana iniyor (aşağıda). */}
+        {guest && compactHeight ? guestPitch : null}
       </KeyboardAwareScroll>
 
       {guest ? (
+        /* Misafir alt alanı: başlık + açıklama + düğme + bağlantılar 320dp'de
+           ekranın yarısını kaplıyor, faydalar listesine ~180dp kalıyordu. Kısa
+           ekranda yapışık kalan yalnız EYLEM; açıklama içeriğin sonunda. */
         <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, gap: spacing.sm }}>
-          <Text variant="h3" style={{ textAlign: "center" }}>{t("guest.premium_title")}</Text>
-          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.premium_body")}</Text>
+          {compactHeight ? null : guestPitch}
           <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 12)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("guest.create_account")}</Text>
           </PressableScale>

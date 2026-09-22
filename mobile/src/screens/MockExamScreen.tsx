@@ -48,7 +48,7 @@ import { heldPaper, rememberPaper, type DeliveredPaper } from "../content/mockPa
 import { notePremiumGate } from "../lib/premium";
 import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, type Palette } from "../theme";
+import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 import { isAccountRequired } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
 
@@ -980,7 +980,7 @@ function WritingTask({
         placeholder={t("mockexam.write_here")}
         accessibilityLabel={t("mockexam.write_here")}
         placeholderTextColor={colors.textFaint}
-        style={{ marginTop: spacing.md, minHeight: 180, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
+        style={{ marginTop: spacing.md, minHeight: ds(180), borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
       />
       <Text variant="micro" color={need && n < need ? colors.textMuted : colors.successText} style={{ marginTop: spacing.xs }}>
         {need ? `${n} / ${need} ${t("mockexam.words_unit")}` : `${n} ${t("mockexam.words_unit")}`}
@@ -1217,7 +1217,7 @@ function SpeakingTask({
             placeholder={t("mockexam.transcript_placeholder")}
             accessibilityLabel={t("mockexam.transcript_placeholder")}
             placeholderTextColor={colors.textFaint}
-            style={{ marginTop: spacing.xs, minHeight: 120, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
+            style={{ marginTop: spacing.xs, minHeight: ds(120), borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
           />
           {/* Mikrofon açılamadıysa sebebi ve çıkış yolu ayrı söyleniyor —
               genel döküm notu o durumda yanlış şeyi anlatıyor. Web aynı ayrımı

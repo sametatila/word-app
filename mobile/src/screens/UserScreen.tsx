@@ -14,7 +14,7 @@ import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Sk
 import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import { useLayout } from "../lib/useLayout";
 import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
@@ -74,7 +74,7 @@ export function UserScreen() {
     <>
       {/* Kimlik kartı + istatistik ızgarası: gerçek düzenin ölçüleriyle. */}
       <SkeletonCard style={{ alignItems: "center" }}>
-        <SkeletonTile size={76} radius={38} />
+        <SkeletonTile size={ds(76)} radius={38} />
         <SkeletonLine variant="h2" width={172} style={{ marginTop: spacing.md }} />
         <SkeletonLine variant="caption" width={198} />
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
@@ -102,7 +102,7 @@ export function UserScreen() {
       <ScreenHeader title={t("user.profile")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-          <View style={softShadow(friends ? colors.success : colors.primary, 10)}><Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={76} ring={friends ? colors.success : null} /></View>
+          <View style={softShadow(friends ? colors.success : colors.primary, 10)}><Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={ds(76)} ring={friends ? colors.success : null} /></View>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString(dateLocale(), { month: "short", year: "numeric" })}</Text>
           {(data.mutual > 0 || data.friendStreak > 0) ? (

@@ -32,7 +32,7 @@ import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 /* ── sunucu sözleşmesi (src/lib/exam-types.ts ile aynı) ────────────────── */
 
@@ -992,7 +992,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
             submitBehavior="submit" returnKeyType="done" onSubmitEditing={() => { if (hazir) onDone(ok, answer); }}
             placeholder={t("exam.write_sentence")}
             accessibilityLabel={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
-            style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+            style={{ minHeight: ds(52), backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         )}
         {it.mode !== "order" && yazilanKelime < MIN_FREE_WORDS ? (
           <Text variant="caption" color={colors.textMuted}>{t("assess.gate_min_words", { n: MIN_FREE_WORDS })}</Text>
@@ -1278,7 +1278,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         <TextInput value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
           placeholder={t("exam.write_text")}
           accessibilityLabel={t("exam.write_text")} placeholderTextColor={colors.textFaint}
-          style={{ minHeight: 140, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+          style={{ minHeight: ds(140), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {/* BİRİMİ YAZILI: sayaç "12 / 40" diyordu ve neyin sayıldığı
             (kelime mi, karakter mi) hiçbir yerde geçmiyordu. */}
         <Text variant="caption" color={colors.textMuted}>{t("exam.word_count", { n: wordCount, min: w.task.minWords })}</Text>

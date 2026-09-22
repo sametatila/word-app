@@ -75,7 +75,39 @@ export function contentWidthFor(windowWidth: number): number {
   return LARGE_TABLET_COLUMN;
 }
 
+/**
+ * YÜKSEKLİK kademesi — genişlik kırılımlarının dikey eşi.
+ *
+ * Düzen yalnız tableti biliyordu; kısa telefon diye bir kavram yoktu. iPhone SE
+ * (667pt) ve 640dp'lik Android'de onboarding seçenekleri alttaki düğmenin
+ * ARKASINA düşüyor, kelime turunda maskot şıkları ekranın dışına itiyordu
+ * (2026-09-22 küçük ekran incelemesi). Çözüm yazıyı küçültmek değil, düzeni
+ * değiştirmek: kısa ekranda süs geri çekilir, içerik kaydırılır, eylem yapışık
+ * kalır. Kararı veren bu kademe.
+ *
+ *   short    < 620  (320×533dp Android, yatay telefon)
+ *   compact  < 740  (iPhone SE/8 667pt, 360×640dp Android)
+ *   regular  ≥ 740  (çentikli iPhone'lar, çoğu Android)
+ */
+export type HeightClass = "short" | "compact" | "regular";
+export function heightClassFor(windowHeight: number): HeightClass {
+  if (windowHeight < 620) return "short";
+  if (windowHeight < 740) return "compact";
+  return "regular";
+}
+/** Dar ekran: yan yana dizilenlerin alt alta geçtiği genişlik (320dp sınıfı). */
+export const NARROW_MAX_WIDTH = 360;
+
 export type Layout = {
+  /** Pencere yüksekliğinin kademesi — bkz. `heightClassFor`. */
+  heightClass: HeightClass;
+  /** `heightClass !== "regular"`: süsün geri çekildiği yükseklik. */
+  compactHeight: boolean;
+  /** Genişlik 360dp'den az: satırlar alt alta dizilir. */
+  narrow: boolean;
+  /** Genişlik 400dp'den az (SE, 360dp Android): başlık şeritlerindeki ikincil
+   *  etiketler ikona iner, başlığa yer kalsın. */
+  compactWidth: boolean;
   /** Metin ağırlıklı içeriğin sütunu (px değil dp) — satır ölçüsü için sınırlı. */
   contentWidth: number;
   /** Izgara ağırlıklı içeriğin kabı: yatay tablette genişler, başka yerde eşittir. */
@@ -106,7 +138,12 @@ export function useLayout(): Layout {
   const contentWidth = contentWidthFor(width);
   const wideContentWidth = wideContentWidthFor(width);
   const gridColumns = gridColumnsFor(wideContentWidth);
+  const heightClass = heightClassFor(height);
   return {
+    heightClass,
+    compactHeight: heightClass !== "regular",
+    narrow: width < NARROW_MAX_WIDTH,
+    compactWidth: width < 400,
     contentWidth,
     wideContentWidth,
     wide: width >= 600,

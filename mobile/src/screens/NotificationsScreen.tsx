@@ -16,7 +16,7 @@ import {
 import { pushPermissionDenied } from "../lib/pushDevice";
 import { track } from "../lib/track";
 import { PROFILE_DEFAULTS, REMINDER_HOURS } from "../lib/profileDefaults";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { useAuth } from "../lib/AuthContext";
 import { FlowNote } from "../ui/flow";
 
@@ -129,7 +129,7 @@ export function NotificationsScreen() {
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.md, marginBottom: spacing.lg }}>
-          <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
+          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
             <BellIcon color={colors.onFill} size={36} />
           </View>
           <Text accessibilityRole="header" variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>

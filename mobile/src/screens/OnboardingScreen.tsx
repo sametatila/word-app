@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { View, BackHandler } from "react-native";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { View, BackHandler, ScrollView, type ScrollViewInstance } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -16,6 +16,7 @@ import { hasFirstWords } from "../data/firstWords";
 import { t, currentLang, setLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useLayout } from "../lib/useLayout";
 
 /**
  * İlk açılış akışı (§4). Sıra: anadil → karşılama → kurs → seviye → hedef. Seçimler
@@ -125,6 +126,8 @@ function steps(course: string): Step[] {
 export function OnboardingScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { heightClass, compactHeight } = useLayout();
+  const scroll = useRef<ScrollViewInstance>(null);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
@@ -215,8 +218,8 @@ export function OnboardingScreen() {
   );
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: spacing.xxl }}>
+    <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + (compactHeight ? spacing.sm : spacing.lg), paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + (compactHeight ? spacing.sm : spacing.lg) }}>
+      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: compactHeight ? spacing.md : spacing.xxl }}>
         <View style={{ flexDirection: "row", gap: 6 }}>
           {allSteps.map((_, n) => (
             <View key={n} style={{ height: 6, width: n === i ? 22 : 6, borderRadius: 3, backgroundColor: n === i ? colors.primary : colors.surface2 }} />
@@ -224,19 +227,38 @@ export function OnboardingScreen() {
         </View>
       </View>
 
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 12)]}>
-          <step.icon color={colors.onPrimary} size={44} />
-        </View>
-        <Text accessibilityRole="header" variant="display">{step.title}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, marginBottom: spacing.xl }}>{step.subtitle}</Text>
+      {/*
+        KAYDIRILABİLİR ORTA ALAN, yapışık alt eylem. İçerik sığıyorsa ortada
+        duruyor (flexGrow + center), sığmıyorsa kayıyor. Eskiden sabit bir
+        `flex:1, justifyContent:center` kutusuydu: 320×533dp'de seçenekler
+        yukarı ve aşağı taşıp alttaki "Devam" ve "Giriş yap"ın ARKASINA
+        düşüyordu — "Deutsch"a dokunan giriş ekranına gidiyor, seviye çipleri
+        hiç erişilemiyordu (2026-09-22 küçük ekran incelemesi).
+      */}
+      <ScrollView
+        ref={scroll}
+        style={{ flex: 1 }}
+        contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingBottom: spacing.md }}
+        showsVerticalScrollIndicator={false}
+        // Seviye çipleri seçenek listesinin ALTINDA açılıyor; kısa ekranda
+        // görünür alana getirilmezse kullanıcı açıldıklarını fark etmiyor.
+        onContentSizeChange={() => { if (step.key === "level" && chosen === "pick") scroll.current?.scrollToEnd({ animated: true }); }}
+      >
+        {/* Süs: kısa ekranda küçülüyor, en kısada tamamen çekiliyor — yer seçeneklerin. */}
+        {heightClass !== "short" && (
+          <View style={[{ width: compactHeight ? 60 : 88, height: compactHeight ? 60 : 88, borderRadius: compactHeight ? radii.lg : radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, marginBottom: compactHeight ? spacing.md : spacing.xl }, softShadow(colors.primary, 12)]}>
+            <step.icon color={colors.onPrimary} size={compactHeight ? 30 : 44} />
+          </View>
+        )}
+        <Text accessibilityRole="header" variant={compactHeight ? "h1" : "display"}>{step.title}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, marginBottom: compactHeight ? spacing.lg : spacing.xl }}>{step.subtitle}</Text>
 
         {step.options && (
-          <View style={{ gap: spacing.md }}>
+          <View style={{ gap: compactHeight ? spacing.sm : spacing.md }}>
             {step.options.map((o) => {
               const active = chosen === o.key;
               return (
-                <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: chosen === o.key }} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg }}>
+                <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: chosen === o.key }} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: compactHeight ? spacing.md : spacing.lg }}>
                   <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                     {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
                   </View>
@@ -267,7 +289,7 @@ export function OnboardingScreen() {
             ) : null}
           </View>
         )}
-      </View>
+      </ScrollView>
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
         <Text variant="h3" color={canNext ? colors.onPrimary : colors.textFaint}>{t("common.continue_2")}</Text>
@@ -275,7 +297,7 @@ export function OnboardingScreen() {
 
       {/* Kayıtlı kullanıcının çıkışı — her adımda duruyor: soruların hangisinde
           "bu bana sorulmamalı" dediği baştan belli değil. */}
-      <PressableScale onPress={() => void zatenHesabimVar()} style={{ alignItems: "center", paddingTop: spacing.lg, paddingBottom: spacing.xs }}>
+      <PressableScale onPress={() => void zatenHesabimVar()} style={{ alignItems: "center", paddingTop: compactHeight ? spacing.md : spacing.lg, paddingBottom: spacing.xs }}>
         <Text variant="body" color={colors.textMuted}>
           {t("auth.already_have_account")}
           <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.sign_in")}</Text>

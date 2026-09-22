@@ -26,7 +26,7 @@ import { notePremiumGate } from "../lib/premium";
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { AssessmentCard } from "../ui/AssessmentCard";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 import { reduceMotion } from "../lib/reduceMotion";
@@ -504,7 +504,7 @@ export function RoleplayExamScreen() {
             onPress={() => void listen()}
             disabled={busy || listening}
             accessibilityLabel={tx("lesson.mic_talk")}
-            style={[{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
+            style={[{ width: 48, height: 48, borderRadius: radii.pill, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
           >
             <MicIcon color={colors.onPrimary} size={20} />
           </PressableScale>
@@ -525,7 +525,7 @@ export function RoleplayExamScreen() {
           placeholder={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
-          style={{ flex: 1, maxHeight: 96, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
+          style={{ flex: 1, maxHeight: ds(96), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
         />
         <PressableScale
           onPress={() => void send(draft)}

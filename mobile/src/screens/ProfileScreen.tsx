@@ -19,7 +19,7 @@ import { useMe, formatXp } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
 import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
-import { useTheme, spacing, radii, softShadow, type Palette, soft } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, soft, ds } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
@@ -72,7 +72,7 @@ export function ProfileScreen() {
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.edit_your_avatar")} style={softShadow(colors.primary, 10)}>
-            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={76} />
+            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={ds(76)} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{guest ? t("guest.subline") : user?.email ?? t("profile.not_signed_in")}</Text>

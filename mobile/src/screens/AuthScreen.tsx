@@ -22,7 +22,7 @@ import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { isEmailNotVerified, translateAuthError } from "../lib/authErrors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { PROFILE_LIMITS } from "../lib/profileDefaults";
 
 type Mode = "signin" | "signup";
@@ -390,7 +390,7 @@ export function AuthScreen() {
 
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
-          <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <BoltIcon color={colors.onPrimary} size={38} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>

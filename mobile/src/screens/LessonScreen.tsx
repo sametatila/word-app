@@ -4,6 +4,7 @@ import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput, ActivityIndicator } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useKeyboardLift } from "../lib/useKeyboardHeight";
+import { useLayout } from "../lib/useLayout";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -35,7 +36,7 @@ import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
 import { candoIdsForLesson } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
 import { LESSON_TRY_CEILING } from "../lib/learningRules";
 import { track } from "../lib/track";
@@ -132,6 +133,7 @@ const LISTEN_CEILING_MS = 12000;
 export function LessonScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { compactWidth } = useLayout();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Lesson">>();
   /* Ders A1 dışındaysa ikilide yok, seviye paketiyle iniyor. Normalde patika
@@ -258,6 +260,18 @@ export function LessonScreen() {
      Web ayni ayrimi yapiyor (`behavior: reducedMotion() ? "auto" : "smooth"`). */
   const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: !reduceMotion() }), 60);
   const push = (b: BubbleData) => setFeed((f) => [...f, { ...b, id: bubbleId.current++ }]);
+  /* Görünür alan KÜÇÜLÜNCE sohbeti SONA indir. Kaydırma yalnız içerik
+     büyüdüğünde tetikleniyordu; klavye içerik eklemiyor, alanı küçültüyor —
+     360dp Android'de ve iPhone SE'de "Yazarak cevapla"dan sonra ekranda eski
+     balonlar kalıyor, cevap beklenen soru görünmüyordu (2026-09-22). Klavye
+     olayına bağlamak yetmedi: cevap alanı klavyeden SONRA büyüyor (bkz.
+     `useKeyboardLift`), o anda kaydırılan liste ardından yine kısalıyordu.
+     Ölçü alanın kendi yüksekliği. */
+  const sohbetBoyu = useRef(0);
+  const onSohbetLayout = (h: number) => {
+    if (sohbetBoyu.current > 0 && h < sohbetBoyu.current) scrollDown();
+    sohbetBoyu.current = h;
+  };
 
   // Tanıyıcı bu cihazda/dilde var mı — bir kez sorulur, cevabı ekran boyunca geçerli.
   // Ekrandan çıkarken mikrofon bırakılır: açık kalan oturum sonraki ekranda
@@ -805,12 +819,16 @@ export function LessonScreen() {
             accessibilityRole="switch"
             accessibilityState={{ checked: handsFree }}
             accessibilityLabel={tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
-            style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: 10, paddingVertical: spacing.sm, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
+            style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: compactWidth ? spacing.md : 10, paddingVertical: spacing.sm, minHeight: 36, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
           >
-            <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={14} />
-            <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
-              {tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
-            </Text>
+            <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={compactWidth ? 18 : 14} />
+            {/* Dar ekranda yalnız ikon: etiket başlığı "Irregular …"a kadar
+                kesiyordu. Durum rengi ve erişilebilirlik adı yine taşıyor. */}
+            {!compactWidth && (
+              <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
+                {tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+              </Text>
+            )}
           </PressableScale>
         ) : null}
       </View>
@@ -882,7 +900,7 @@ export function LessonScreen() {
         </View>
       ) : (
         <>
-          <KeyboardAwareScroll ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>
+          <KeyboardAwareScroll ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })} onLayout={(e) => onSohbetLayout(e.nativeEvent.layout.height)}>
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
@@ -1015,8 +1033,8 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
         /* Enter = Gönder. `multiline` tek başına Enter'ı alt satıra
            çeviriyor ve `onSubmitEditing` hiç çağrılmıyordu. */
         submitBehavior="submit" returnKeyType="send"
-        style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
-      <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
+        style={{ flex: 1, maxHeight: ds(120), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, color: colors.text, fontSize: 16 }} />
+      <PressableScale accessibilityLabel={tx("common.send")} onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
         <ArrowRightIcon color={dolu ? colors.onPrimary : colors.textFaint} size={22} />
       </PressableScale>
     </View>

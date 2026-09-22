@@ -12,7 +12,7 @@ import { BoltIcon } from "../ui/icons";
 import { resetPassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 
 /**
  * Parola sıfırlama — e-postadaki bağlantı UYGULAMADA açıldığında.
@@ -68,7 +68,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
         keyboardShouldPersistTaps="handled"
       >
         <View style={{ alignItems: "center", marginBottom: spacing.xl }}>
-          <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+          <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <BoltIcon color={colors.onPrimary} size={38} />
           </View>
           <Text accessibilityRole="header" variant="display" style={{ marginTop: spacing.md }}>{t("resetpw.title")}</Text>

@@ -18,7 +18,7 @@ import { useAuth } from "../lib/AuthContext";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
-import { spacing, radii, softShadow, type Palette } from "../theme";
+import { spacing, radii, softShadow, type Palette, ds } from "../theme";
 import type { Gloss } from "../data/skills";
 import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 
@@ -429,7 +429,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             <Text variant="bodyStrong">{mm(seconds)} / {mm(mono.maxSeconds)}</Text>
           </View>
           {mono.bulletsTr.map((b, i) => <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>· {b}</Text>)}
-          <View style={{ marginTop: spacing.md, minHeight: 60, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+          <View style={{ marginTop: spacing.md, minHeight: ds(60), backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="body" color={transcript ? colors.text : colors.textMuted}>
               {transcript || t(sttOk === false ? "item.mono_recording" : "item.mono_listening")}
             </Text>
@@ -454,7 +454,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                   satirindan geliyor (web `monologue-player` de ayni ipucunu
                   yaziyor). */}
               <TextInput value={transcript} onChangeText={setTranscript} multiline autoCapitalize="sentences" autoCorrect={false} accessibilityLabel={t("item.mono_transcript_hint")}
-                style={{ marginTop: spacing.sm, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
+                style={{ marginTop: spacing.sm, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.sm }}>
                 {used.map((x) => (
                   <View key={x.de} style={{ backgroundColor: x.used ? colors.successSoft : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>

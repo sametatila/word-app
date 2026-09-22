@@ -8,7 +8,7 @@ import { SkeletonCard, SkeletonLine, SkeletonPill } from "./Skeleton";
 import { Celebrate } from "./Celebrate";
 import { ArrowBackIcon, XIcon } from "./icons";
 import { t } from "../lib/i18n";
-import { useTheme, spacing, radii, softShadow, soft, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, soft, type Palette, ds } from "../theme";
 
 /**
  * AKIŞ ŞABLONLARI — kapak, sonuç, etap kartı ve durum ekranı tek dilde.
@@ -271,7 +271,7 @@ export function CoverBody({ icon: Icon, tint, eyebrow, title, pitch, rules = [],
   const { colors } = useTheme();
   return (
     <View style={{ gap: spacing.md, paddingTop: spacing.md }}>
-      <View style={[{ width: 56, height: 56, borderRadius: radii.lg, backgroundColor: tint, alignItems: "center", justifyContent: "center" }, softShadow(tint, 8)]}>
+      <View style={[{ width: ds(56), height: ds(56), borderRadius: radii.lg, backgroundColor: tint, alignItems: "center", justifyContent: "center" }, softShadow(tint, 8)]}>
         <Icon color="#fff" size={28} />
       </View>
       <View style={{ gap: spacing.xs }}>

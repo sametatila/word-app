@@ -17,7 +17,7 @@ import { UnitPane } from "./UnitScreen";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { api } from "../api/client";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   lesson: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
@@ -38,7 +38,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
   return (
     <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 2 }}>
       <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
-        <View style={[{ width: 54, height: 54, borderRadius: radii.md, backgroundColor: unit.complete ? colors.success : colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}>
+        <View style={[{ width: ds(54), height: ds(54), borderRadius: radii.md, backgroundColor: unit.complete ? colors.success : colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}>
           {unit.complete ? <CheckIcon color={colors.onPrimary} size={26} /> : <Text variant="h1" color={colors.onPrimary}>{unit.index}</Text>}
         </View>
         <View style={{ flex: 1 }}>
@@ -188,7 +188,7 @@ export function PathScreen() {
         <SkeletonLine variant="caption" width="55%" style={{ marginBottom: spacing.lg }} />
         <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 2, borderColor: colors.hairline }}>
           <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
-            <SkeletonTile size={54} />
+            <SkeletonTile size={ds(54)} />
             <View style={{ flex: 1 }}>
               <SkeletonLine variant="micro" width={128} />
               <SkeletonLine variant="h2" width="70%" />
@@ -280,7 +280,7 @@ export function PathScreen() {
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
               {g.units.map((u) => (
                 <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
-                  <Card padded style={{ minHeight: 132, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
+                  <Card padded style={{ minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
                     <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                       {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
                     </View>

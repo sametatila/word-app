@@ -16,10 +16,11 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { MyAvatar } from "../ui/Avatar";
+import { useLayout } from "../lib/useLayout";
 import { AppHeader } from "../ui/AppHeader";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, StatPill } from "../social/common";
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
@@ -54,6 +55,7 @@ const TAB_KEYS: { key: Tab; label: string }[] = [
 export function FriendsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
+  const { compactHeight } = useLayout();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const route = useRoute<RouteProp<RootTabParams, "Friends">>();
   const { user } = useAuth();
@@ -125,13 +127,31 @@ export function FriendsScreen() {
             Sosyal ayarların dişlisi başlığa sığmıyor (dar telefonda dört düğme
             başlığı ezer), kimlik kartının köşesinde. */}
         <AppHeader title={tx("friends.friends")} />
-        {me ? (
+        {/* KISA EKRANDA KİMLİK KARTI YATAY: avatar solda, ad ve rozetler sağda.
+            Dikey yığın (76'lık avatar + ad + kullanıcı adı + rozetler) davet
+            şeridiyle birlikte iPhone SE'nin bütün ekranını dolduruyor, sekmenin
+            asıl içeriği (arkadaş listesi) hiç görünmüyordu (2026-09-22). */}
+        {me && compactHeight ? (
+          <Card style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.md }}>
+            <View style={softShadow(colors.primary, 8)}><MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={ds(56)} /></View>
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <Text variant="h3" numberOfLines={1}>{me.name ?? tx("social.unnamed")}</Text>
+              <Text variant="caption" color={colors.textMuted} numberOfLines={1}>@{me.username}</Text>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs, marginTop: spacing.xs }}>
+                <StatPill icon={HandshakeIcon} label={tx("friends.count_friends", { n: me.counts.friends })} tint={colors.success} soft={colors.successSoft} />
+                {incoming > 0 ? <StatPill icon={UserPlusIcon} label={tx("friends.count_requests", { n: incoming })} tint={colors.streak} /> : null}
+                {me.counts.unread > 0 ? <StatPill icon={InboxIcon} label={tx("friends.count_new", { n: me.counts.unread })} tint={colors.primary} soft={colors.primarySoft} /> : null}
+              </View>
+            </View>
+            <HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />
+          </Card>
+        ) : me ? (
           <Card style={{ alignItems: "center", marginBottom: spacing.lg }}>
             <View style={{ position: "absolute", top: spacing.md, right: spacing.md }}>
               <HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />
             </View>
             {/* KENDİ avatarın: yerel seçim anında görünsün (başlıktaki ile aynı kaynak). */}
-            <View style={softShadow(colors.primary, 10)}><MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={76} /></View>
+            <View style={softShadow(colors.primary, 10)}><MyAvatar userId={me.userId} name={me.name} serverAvatar={me.avatar} size={ds(76)} /></View>
             <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? tx("social.unnamed")}</Text>
             <Text variant="caption" color={colors.textMuted}>@{me.username}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
@@ -143,7 +163,7 @@ export function FriendsScreen() {
         ) : (
           // Kimlik kartı iskeleti: arma + ad + kullanıcı adı + rozet şeridi.
           <SkeletonCard style={{ alignItems: "center", marginBottom: spacing.lg }}>
-            <SkeletonTile size={76} radius={38} />
+            <SkeletonTile size={ds(76)} radius={38} />
             <SkeletonLine variant="h2" width={168} style={{ marginTop: spacing.md }} />
             <SkeletonLine variant="caption" width={104} />
             <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
@@ -153,13 +173,14 @@ export function FriendsScreen() {
           </SkeletonCard>
         )}
 
-        <PressableScale onPress={() => void share()} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
+        <PressableScale onPress={() => void share()} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: compactHeight ? spacing.md : spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
           <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
             <ShareIcon color="#fff" size={24} />
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="h3" color="#fff">{tx("friends.invite_friend")}</Text>
-            <Text variant="caption" color="#ffffffcc">{tx("friends.send_your_profile_link_and_study")}</Text>
+            {/* Kısa ekranda şerit tek satır: açıklama başlığın söylediğini tekrarlıyor. */}
+            {compactHeight ? null : <Text variant="caption" color="#ffffffcc">{tx("friends.send_your_profile_link_and_study")}</Text>}
           </View>
           <ChevronRightIcon color="#fff" size={22} />
         </PressableScale>
