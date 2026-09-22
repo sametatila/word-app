@@ -1298,8 +1298,8 @@
     "tr": "meydana gelmek / olmak"
    },
    {
-    "de": "meet",
-    "tr": "buluşmak / karşılaşmak"
+    "de": "middle",
+    "tr": "ortada"
    },
    {
     "de": "leave",
@@ -1831,20 +1831,20 @@
      },
      {
       "lang": "en",
-      "text": "meet"
+      "text": "middle"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: buluşmak, karşılaşmak. Lütfen tekrar et:"
+      "text": "Türkçesi: ortada. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "meet"
+      "text": "middle"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "meet"
+     "target": "middle"
     }
    },
    {
@@ -1913,8 +1913,8 @@
     "tr": "geçen hafta"
    },
    {
-    "de": "month",
-    "tr": "ay"
+    "de": "spend",
+    "tr": "harcamak"
    },
    {
     "de": "year",
@@ -2524,20 +2524,20 @@
      },
      {
       "lang": "en",
-      "text": "month"
+      "text": "spend"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: ay. Lütfen tekrar et:"
+      "text": "Türkçesi: harcamak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "month"
+      "text": "spend"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "month"
+     "target": "spend"
     }
    },
    {
@@ -7705,8 +7705,8 @@
     "tr": "bilmek / tanımak"
    },
    {
-    "de": "work",
-    "tr": "çalışmak"
+    "de": "belong",
+    "tr": "ait olmak"
    },
    {
     "de": "long",
@@ -8297,20 +8297,20 @@
      },
      {
       "lang": "en",
-      "text": "work"
+      "text": "belong"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: çalışmak. Lütfen tekrar et:"
+      "text": "Türkçesi: ait olmak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "work"
+      "text": "belong"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "work"
+     "target": "belong"
     }
    },
    {
@@ -26701,8 +26701,8 @@
     "tr": "yıl"
    },
    {
-    "de": "learn",
-    "tr": "öğrenmek"
+    "de": "actually",
+    "tr": "aslında"
    },
    {
     "de": "skill",
@@ -27032,20 +27032,20 @@
      },
      {
       "lang": "en",
-      "text": "learn"
+      "text": "actually"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: öğrenmek. Lütfen tekrar et:"
+      "text": "Türkçesi: aslında. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "learn"
+      "text": "actually"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "learn"
+     "target": "actually"
     }
    },
    {
@@ -37351,8 +37351,8 @@
     "tr": "şarj etmek"
    },
    {
-    "de": "ready",
-    "tr": "hazır"
+    "de": "sound",
+    "tr": "ses"
    },
    {
     "de": "spare part",
@@ -37764,20 +37764,20 @@
      },
      {
       "lang": "en",
-      "text": "ready"
+      "text": "sound"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: hazır. Lütfen tekrar et:"
+      "text": "Türkçesi: ses. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "ready"
+      "text": "sound"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "ready"
+     "target": "sound"
     }
    },
    {
@@ -38080,8 +38080,8 @@
     "tr": "indirim"
    },
    {
-    "de": "choose",
-    "tr": "seçim yapmak"
+    "de": "least",
+    "tr": "en azından"
    },
    {
     "de": "advantage",
@@ -38597,20 +38597,20 @@
      },
      {
       "lang": "en",
-      "text": "choose"
+      "text": "least"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: seçim yapmak. Lütfen tekrar et:"
+      "text": "Türkçesi: en azından. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "choose"
+      "text": "least"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "choose"
+     "target": "least"
     }
    },
    {
@@ -38747,8 +38747,8 @@
     "tr": "değiştirmek / yerine koymak"
    },
    {
-    "de": "free",
-    "tr": "ücretsiz"
+    "de": "fit",
+    "tr": "uymak"
    },
    {
     "de": "law",
@@ -39104,20 +39104,20 @@
      },
      {
       "lang": "en",
-      "text": "free"
+      "text": "fit"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: ücretsiz. Lütfen tekrar et:"
+      "text": "Türkçesi: uymak. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "free"
+      "text": "fit"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "free"
+     "target": "fit"
     }
    },
    {
@@ -45841,8 +45841,8 @@
     "tr": "özür dilerim / kusura bakma"
    },
    {
-    "de": "maybe",
-    "tr": "belki"
+    "de": "somewhere",
+    "tr": "bir yerde"
    },
    {
     "de": "invitation",
@@ -46266,20 +46266,20 @@
      },
      {
       "lang": "en",
-      "text": "maybe"
+      "text": "somewhere"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: belki. Lütfen tekrar et:"
+      "text": "Türkçesi: bir yerde. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "maybe"
+      "text": "somewhere"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "maybe"
+     "target": "somewhere"
     }
    },
    {

@@ -28,6 +28,27 @@
  * ölçünün aynısı, yani iki rapor aynı sözcük için aynı cevabı veriyor.
  * Bilinen gürültü: İngilizcede kısaltma soyma `haven't`ı `haven` sözcüğüne
  * bağlıyor (C1'de ×25). Sayılar önceliklendirme içindir, bütçe için değil.
+ *
+ * "AYNI CEVAP" İKİ YERDE TUTMUYORDU (2026-09-22'de ölçüldü ve düzeltildi).
+ * İngilizce kurs, ünite kapısının (`check-en-unit-vocab`) iki kuralını
+ * atlıyordu ve boşluğu olduğundan büyük sayıyordu:
+ *
+ *   1. SERBEST SÖZCÜKLER. Burada her iki kursa da Almanca `SERBEST` listesi
+ *      uygulanıyordu; İngilizcenin kendi listesi `EN_FREE` hiç okunmuyordu.
+ *      Ünite kapısı havuzunu `new Set(EN_FREE)` ile kuruyor. Fark İngilizce
+ *      kapalı sınıflarda görünüyordu: `either`, `neither`, `nor`, `below`,
+ *      `around`, `during`, `except`, `toward` — hepsi `en-gate`de gerekçesiyle
+ *      serbest ("temel edat listesi dilbilgisidir, öğretilecek sözcük değil")
+ *      ama burada "hiç öğretilmeyen" diye sayılıyordu.
+ *   2. GÖVDE. Kullanım tarafı `enStems` ile eşleşiyor, ders tarafı BİREBİR
+ *      eşleşiyordu: patika `child` öğretse de havuzun `children` kaydı
+ *      öğretilmemiş sayılıyordu. Ünite kapısı belirteci
+ *      `enStems(w).some((st) => pool.has(st))` ile ölçüyor; buradaki ders
+ *      kümesi de artık aynı soruyu soruyor. Etkisi (EN): a2 133→109,
+ *      b1 229→179, b2 182→147, c1 43→35; kapsam a2 %68→71, b1 %43→50.
+ *
+ * Almanca tarafa dokunulmadı: oradaki `kokAra` zaten iki yönü de gövdeyle
+ * eşliyor ve `SERBEST` o kursun kendi listesi.
  */
 import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
@@ -35,7 +56,7 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { germanSurface, englishSurface, type LooseExercise } from "./lib/skill-surface";
-import { enStems, LEVELS } from "./lib/en-gate";
+import { enStems, EN_FREE, LEVELS } from "./lib/en-gate";
 // Bütçe deseni: iki yön birden — borç büyüyemez, kapsam düşemez. Gerekçe `lib/budget.ts`de.
 import { butceUygula, butceBitir } from "./lib/budget";
 
@@ -180,13 +201,22 @@ const sayim = new Map<string, number>();
 for (const kurs of kurslar) {
   const hv = havuz(kurs);
   const ds = ders(kurs);
+  /* "Patika bunu öğretiyor mu" sorusu, ünite kapısının sorduğu biçimde:
+     İngilizcede havuz kaydının GÖVDELERİ ders kümesine karşı denenir
+     (`children` → `child`). Almanca birebir kalıyor — oradaki morfoloji
+     `kokAra`da ve onu bu yöne çevirmek Almanca sayıları da oynatırdı;
+     ayrı ölçülmesi gereken ayrı bir iş. Başlıktaki (2) numaralı not. */
+  const ogretiliyor = (w: string) =>
+    kurs === "en" ? enStems(w).some((st) => ds.has(st)) : ds.has(w);
+  /* Serbest sözcük listesi kursun kendi listesi: başlıktaki (1) numaralı not. */
+  const serbest = (w: string) => (kurs === "en" ? EN_FREE.has(w) : SERBEST.has(w));
   const kul = kokSayimi(kurs, kullanim(kurs), hv);
   console.log(`\n=== ${kurs.toUpperCase()} kursu — patika boşluğu ===`);
   for (const lv of LEVELS) {
     const seviyeHavuz = [...hv].filter(([, l]) => l === lv).map(([w]) => w);
     if (!seviyeHavuz.length) continue;
-    const ogretilen = seviyeHavuz.filter((w) => ds.has(w));
-    const bosluk = seviyeHavuz.filter((w) => !ds.has(w) && !SERBEST.has(w));
+    const ogretilen = seviyeHavuz.filter(ogretiliyor);
+    const bosluk = seviyeHavuz.filter((w) => !ogretiliyor(w) && !serbest(w));
     const kullanilan = bosluk
       .map((w) => [w, kul.get(w) ?? 0] as const)
       .filter(([, n]) => n > 0)
