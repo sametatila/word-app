@@ -1,3 +1,4 @@
 /* System-Berechtigungsdialoge. Die Oberflaeche ist dreisprachig; diese Texte auch. */
 "NSMicrophoneUsageDescription" = "Mikrofonzugriff wird benötigt, damit du laut antworten kannst.";
 "NSSpeechRecognitionUsageDescription" = "Die Spracherkennung wandelt Gesprochenes in Text um, damit deine Antwort bewertet werden kann.";
+"NSPhotoLibraryUsageDescription" = "Lernomi greift nicht auf deine Fotos zu. Diese Berechtigung wird nie angefragt; sie ist nur eine Angabe, die eine verwendete Bibliothek erfordert.";
