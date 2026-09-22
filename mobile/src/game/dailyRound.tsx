@@ -16,9 +16,18 @@ import React, { createContext, useContext } from "react";
  */
 const Ctx = createContext(false);
 
-/** Günlük turun kökü — yalnız `screens/GameScreen` kuruyor. */
-export function DailyRound({ children }: { children: React.ReactNode }) {
-  return <Ctx.Provider value={true}>{children}</Ctx.Provider>;
+/**
+ * Günlük turun kökü — yalnız `screens/GameScreen` kuruyor.
+ *
+ * `value` NEDEN VAR (2026-09-22). Kök tek ama oraya giden yol tek değil:
+ * `Game` ekranı hem günlük turdan (`LearnScreen`) hem de Pratik ekranından ve
+ * zayıf nokta kartından açılıyor; ikincisi `game` parametresiyle tek oyuna
+ * kilitli HEDEFLİ çalışma. Sağlayıcı koşulsuz `true` verdiği sürece Erdi orada
+ * da oynuyordu. Tur = KARIŞIK tur; kilitli oturum tur değil (web ikizi
+ * `components/daily-round`).
+ */
+export function DailyRound({ children, value = true }: { children: React.ReactNode; value?: boolean }) {
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 
 /** Bu ağaç günlük tur mu? Erdi'yi çizen her şey buna bakıyor. */

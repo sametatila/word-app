@@ -9354,6 +9354,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
           3. Paylasimli cizim yerleri (tur karti, kabuk, geri bildirim bandi)
              de bakiyor — yoksa maskot gitse bile ayirdigi bosluk kalirdi.
       */
+      /* Hedefli bayragi sunucuda okunuyor: adresi istemcide okumak ilk
+         boyamada Erdi'yi bir an gosterirdi. */
+      const SAYFA = { web: "src/app/(app)/learn/game/page.tsx" };
       const SINIR = {
         web: {
           saglayici: "src/components/daily-round.tsx",
@@ -9368,11 +9371,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       };
       const sinirOlcu = (platform, kok) => {
         const { saglayici, kok: kokDosya, kanca } = SINIR[platform];
-        const kuranlar = yuruTsx(kok).filter((f) => /<DailyRound>/.test(sil(read(f)))).sort();
+        const kuranlar = yuruTsx(kok).filter((f) => /<DailyRound[\s>]/.test(sil(read(f)))).sort();
+        /* HEDEFLI CALISMA TUR DEGIL (2026-09-22). Kok tek ama oraya giden yol
+           tek degil: ayni ekran Pratik ekranindan, zayif nokta kartindan ve
+           gunluk plandan da aciliyor ve orada oturum TEK OYUNA kilitli
+           (`?game=` / route param). Saglayici kosulsuz `true` verdigi surece
+           Erdi o ucunde de oynuyordu. Kapi artik degeri de olcuyor: kok
+           bayragi veriyor mu, bayrak kilitli oyuna bagli mi. */
+        const kokMetni = sil(read(kokDosya));
+        const bayrak = platform === "web"
+          ? /<DailyRound value=\{!targeted\}>/.test(kokMetni) && /targeted=\{[^}]*game/.test(sil(read(SAYFA.web)))
+          : /<DailyRound value=\{!route\.params\?\.game\}>/.test(kokMetni);
         return [
           platform + " saglayici=" + (/useDailyRound|createContext/.test(sil(read(saglayici))) ? "var" : "YOK"),
           platform + " kuran=" + (kuranlar.join("+") || "YOK"),
           platform + " kancasiz=" + (kanca.filter((f) => !/useDailyRound\(\)/.test(sil(read(f)))).join("+") || "yok"),
+          platform + " hedefli oturum tur degil=" + (bayrak ? "evet" : "HAYIR"),
           platform + " beklenen kok=" + kokDosya,
         ];
       };
@@ -9380,8 +9394,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "maskot sinirini agac veriyor",
         [...sinirOlcu("web", "src"), ...sinirOlcu("mobil", "mobile/src")],
         [
-          "web saglayici=var", "web kuran=" + SINIR.web.kok, "web kancasiz=yok", "web beklenen kok=" + SINIR.web.kok,
-          "mobil saglayici=var", "mobil kuran=" + SINIR.mobil.kok, "mobil kancasiz=yok", "mobil beklenen kok=" + SINIR.mobil.kok,
+          "web saglayici=var", "web kuran=" + SINIR.web.kok, "web kancasiz=yok", "web hedefli oturum tur degil=evet", "web beklenen kok=" + SINIR.web.kok,
+          "mobil saglayici=var", "mobil kuran=" + SINIR.mobil.kok, "mobil kancasiz=yok", "mobil hedefli oturum tur degil=evet", "mobil beklenen kok=" + SINIR.mobil.kok,
         ],
         "bulunan",
         "beklenen",

@@ -61,8 +61,12 @@ const STAGE_SIZE = 5;
  * içinde kalsın diye bileşen ikiye ayrıldı.
  */
 export function GameScreen() {
+  /* HEDEFLİ ÇALIŞMA TUR DEĞİL: `game` parametresi varsa ekran Pratik'ten ya da
+     zayıf nokta kartından açılmış, tek oyuna kilitli. Erdi yalnız karışık
+     günlük turda oynuyor (bkz. `game/dailyRound`). */
+  const route = useRoute<RouteProp<RootStackParams, "Game">>();
   return (
-    <DailyRound>
+    <DailyRound value={!route.params?.game}>
       <GameRound />
     </DailyRound>
   );

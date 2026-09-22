@@ -19,9 +19,18 @@ import { createContext, useContext, type ReactNode } from "react";
  */
 const Ctx = createContext(false);
 
-/** Günlük turun kökü — yalnız `components/session-player` kuruyor. */
-export function DailyRound({ children }: { children: ReactNode }) {
-  return <Ctx.Provider value={true}>{children}</Ctx.Provider>;
+/**
+ * Günlük turun kökü — yalnız `components/session-player` kuruyor.
+ *
+ * `value` NEDEN VAR (2026-09-22). Kök tek ama oraya giden yol tek değil:
+ * `/learn/game` adresi hem günlük turu hem de Pratik ekranından, zayıf nokta
+ * kartından ve günlük plandan gelen HEDEFLİ çalışmayı (`?game=…`) açıyor.
+ * Sağlayıcı koşulsuz `true` verdiği sürece Erdi o üç yolda da oynuyordu —
+ * kullanıcının gördüğü "kelimeleri çalış yaptığımda her yerde maskot var"
+ * tam olarak buydu. Tur = KARIŞIK tur; tek oyuna kilitli oturum tur değil.
+ */
+export function DailyRound({ children, value = true }: { children: ReactNode; value?: boolean }) {
+  return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 
 /** Bu ağaç günlük tur mu? Erdi'yi çizen her şey buna bakıyor. */

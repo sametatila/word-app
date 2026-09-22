@@ -119,9 +119,15 @@ function sessionKey(game: PlayableGame | null): string {
  * ikiye ayrıldı ki bütün dallar — yükleniyor, hata, kelime yok, tur, sonuç —
  * sarmalayıcının içinde kalsın.
  */
-export function SessionPlayer() {
+export function SessionPlayer({ targeted = false }: { targeted?: boolean }) {
+  /* HEDEFLİ ÇALIŞMA TUR DEĞİL. Aynı adres (`/learn/game`) üç yerden daha
+     açılıyor: Pratik ekranının oyun karoları, zayıf nokta kartı ve günlük
+     plan — hepsi `?game=` ile tek oyuna kilitliyor. Bayrak SUNUCUDAN geliyor
+     (sayfa `searchParams`ı okuyor), çünkü adresi burada okumak sunucu
+     çiziminde `null`, istemcide dolu olur ve Erdi ilk boyamada bir an
+     görünürdü. */
   return (
-    <DailyRound>
+    <DailyRound value={!targeted}>
       <SessionRound />
     </DailyRound>
   );

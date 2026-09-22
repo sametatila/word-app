@@ -16,6 +16,14 @@ export const dynamic = "force-dynamic";
  * oyuna kilitleniyor (Pratik ekranı, zayıf nokta kartı ve günlük plan buradan
  * geçiyor).
  */
-export default function GamePage() {
-  return <SessionPlayer />;
+export default async function GamePage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  /* `?game=` varsa oturum tek oyuna kilitli: Pratik, zayıf nokta ya da günlük
+     plan. Bu bir "hedefli çalışma", günlük tur değil — maskot orada oynamıyor
+     (bkz. `components/daily-round`). */
+  const game = (await searchParams)?.game;
+  return <SessionPlayer targeted={typeof game === "string" && game.length > 0} />;
 }
