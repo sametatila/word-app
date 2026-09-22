@@ -8,6 +8,12 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+# react-native-firebase Firebase'i varsayılan olarak SPM'den çekiyor; SPM ürünleri
+# statik bağlamada her RNFB pod'una ayrı kopya gömüp bağlamada çift sembol
+# üretiyor ve `pod install` bunu baştan reddediyor. Proje statik kitaplık
+# kullandığı için Firebase CocoaPods'tan gelir.
+$RNFirebaseDisableSPM = true
+
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -28,6 +34,9 @@ target 'Lernomi' do
   # olarak açılıyor.
   pod 'GoogleUtilities', :modular_headers => true
   pod 'RecaptchaInterop', :modular_headers => true
+  # Firebase Crashlytics/Sessions (Swift) aynı sebeple bu ikisini istiyor.
+  pod 'GoogleDataTransport', :modular_headers => true
+  pod 'nanopb', :modular_headers => true
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -36,11 +45,30 @@ target 'Lernomi' do
   )
 
   post_install do |installer|
+    # Bu adım pod'ların gizlilik beyanlarını Lernomi/PrivacyInfo.xcprivacy'ye
+    # birleştirir ve dosyayı YENİDEN YAZAR: içindeki XML yorumları her pod
+    # install'da silinir, o yüzden gerekçeler burada duruyor.
+    # - NSPrivacyCollectedDataTypeDeviceID: uzak bildirim (FCM) 2026-09-10'da
+    #   açıldı; cihaz başına kayıt jetonu (`device_tokens`) saklanıyor ve
+    #   Google'a gidiyor. Play'in tanımı Firebase installation ID'yi bu kutuya
+    #   yazdığı için iki mağaza aynı şeyi söylesin diye burada da beyan ediliyor.
+    #   Reklam kimliği toplanmıyor.
     react_native_post_install(
       installer,
       config[:reactNativePath],
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Xcode 27 iOS 15'ten eski dağıtım hedefini hata sayıyor; bazı pod'lar
+    # (GoogleSignIn, RevenueCat, nanopb ve _Privacy kaynak paketleri) hâlâ 9-13
+    # istiyor. Uygulamanın kendi hedefi 15.1, altındakiler ona çekilir.
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |bc|
+        if bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 15.1
+          bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.1'
+        end
+      end
+    end
   end
 end

@@ -7,6 +7,9 @@ import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  /// Pencereyi SceneDelegate kuruyor ama buraya da yazıyor: React Native ve bazı
+  /// kütüphaneler hâlâ `UIApplication.shared.delegate.window`u okuyor; özellik
+  /// yokken açılışta "unrecognized selector … window" ile çöküyordu.
   var window: UIWindow?
 
   var reactNativeDelegate: ReactNativeDelegate?
@@ -45,21 +48,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     reactNativeDelegate = delegate
     reactNativeFactory = factory
 
-    window = UIWindow(frame: UIScreen.main.bounds)
+    return true
+  }
+}
+
+/// Pencere ve React Native kökü burada kuruluyor, AppDelegate'te değil.
+///
+/// iOS 27 SDK ile derlenen uygulama UIScene yaşam döngüsünü benimsemezse açılışta
+/// "UIScene life cycle is required for apps built with this SDK" ile kapanıyor
+/// (Xcode 27, 2026-09-22'de Mac mini'de görüldü). Sahne Info.plist'teki
+/// UIApplicationSceneManifest ile bu sınıfa bağlı; tek sahne, çoklu pencere yok.
+/// Fabrika AppDelegate'te kuruluyor (Firebase ve ses kategorisiyle aynı yerde),
+/// burada yalnız pencereye bağlanıyor.
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+  var window: UIWindow?
+
+  func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
+    guard let windowScene = scene as? UIWindowScene,
+          let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+          let factory = appDelegate.reactNativeFactory else { return }
+
+    let window = UIWindow(windowScene: windowScene)
     // Açılış ekranı kapandıktan sonra JS ilk kareyi çizene kadar pencere görünür kalır;
     // varsayılanı sistem zemini (koyu temada siyah, açıkta beyaz) olduğu için tema
     // renginin dışında bir flaş çakıyor. Android'de bunu AppTheme yapıyor
     // (values/styles.xml → android:windowBackground = @color/window_bg); aynı iki değer
     // Images.xcassets/WindowBackground.colorset içinde (açık #FBF7F2 / koyu #17120E).
-    window?.backgroundColor = UIColor(named: "WindowBackground") ?? .systemBackground
+    window.backgroundColor = UIColor(named: "WindowBackground") ?? .systemBackground
+    self.window = window
+    appDelegate.window = window
 
-    factory.startReactNative(
-      withModuleName: "Lernomi",
-      in: window,
-      launchOptions: launchOptions
-    )
-
-    return true
+    factory.startReactNative(withModuleName: "Lernomi", in: window, launchOptions: nil)
   }
 }
 
