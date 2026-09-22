@@ -66,7 +66,9 @@ esac
 # shellcheck disable=SC2086
 unzip -qo "$TARGET" $LIB_GLOB -d "$WORK" || true
 
-mapfile -t LIBS < <(find "$WORK" -name "*.so" | sort)
+# `mapfile` yok: macOS'un bash'i 3.2 (geliştirme 2026-09-22'de Mac'e geçti).
+LIBS=()
+while IFS= read -r so; do LIBS+=("$so"); done < <(find "$WORK" -name "*.so" | sort)
 if [ ${#LIBS[@]} -eq 0 ]; then
   echo "HATA: $TARGET içinde native kitaplık yok. Doğru dosya mı?" >&2
   exit 2
