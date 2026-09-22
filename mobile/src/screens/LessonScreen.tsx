@@ -1027,7 +1027,7 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
   const dolu = !!value.trim() && !disabled;
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-      <TextInput value={value} onChangeText={onChange} placeholder={placeholder}
+      <TextInput autoCorrect={false} spellCheck={false} value={value} onChangeText={onChange} placeholder={placeholder}
       accessibilityLabel={placeholder} placeholderTextColor={colors.textFaint}
         editable={!disabled} multiline autoCapitalize="sentences" onSubmitEditing={onSubmit}
         /* Enter = Gönder. `multiline` tek başına Enter'ı alt satıra

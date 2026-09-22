@@ -160,7 +160,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
             `<form onSubmit>` icinde, yani Enter kontrol ediyor; mobilde tus
             hicbir sey yapmiyordu ve kullanici klavyeyi kapatip dugmeye
             basmak zorundaydi. Handler dugmenin ta kendisi. */}
-        <TextInput value={typed} onChangeText={setTyped} editable={!done} autoCapitalize="none" spellCheck={false}
+        <TextInput autoCorrect={false} value={typed} onChangeText={setTyped} editable={!done} autoCapitalize="none" spellCheck={false}
           returnKeyType="done" onSubmitEditing={() => { if (typed.trim()) onSettle(written(typed, accept)); }}
           placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
           accessibilityLabel={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
@@ -414,7 +414,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
         <Text variant="body" color={colors.text}>{t.source}</Text>
       </View>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
+        <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
           /* Tek cümle: Enter = Kontrol et (uzun metin görevleri alt satıra inmeye devam ediyor). */
           submitBehavior="submit" returnKeyType="done" onSubmitEditing={check}
           placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })}
@@ -465,7 +465,7 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
               <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 3 }}>{f.label}</Text>
               {/* Form alanlari KISA CEVAP: ad, tarih, tek sozcuk. Cumle basi
                   buyutme yok (web ayni). */}
-              <TextInput value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done} autoCapitalize="none" autoCorrect={false}
+              <TextInput spellCheck={false} value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done} autoCapitalize="none" autoCorrect={false}
                 placeholder={f.label}
                 accessibilityLabel={f.label} placeholderTextColor={colors.textFaint}
                 style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
@@ -627,7 +627,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           </View>
         </View>
       ) : null}
-      <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
+      <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
         placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })}
         accessibilityLabel={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: ds(100), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />

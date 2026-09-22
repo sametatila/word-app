@@ -23,6 +23,7 @@ import { MIN_FREE_WORDS } from "../lib/learningRules";
 import { sfx, sfxDurationMs } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardInset, useKeyboardLift } from "../lib/useKeyboardHeight";
+import { useLayout } from "../lib/useLayout";
 import { whyFor, whyLabel, type Why } from "./why";
 import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
@@ -262,6 +263,17 @@ const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
  * sonradan eklenen bir dip payı esneyen boşlukları kısar ve tam cevap anında
  * her şeyi yukarı kaydırırdı — düzeltilmek istenen kaymanın ta kendisi.
  */
+/**
+ * Klavye açık mı — soru kartı buna bakıp KOMPAKT çiziliyor.
+ *
+ * Yazma ve çeviri turlarında klavye açılınca cevap alanı yukarı kalkıyor ve
+ * kaydırılan alan ~150pt'ye iniyor; tam boy kart (kalın dolgu + tür satırı)
+ * orada kesiliyordu, iPhone SE'de çevrilecek cümlenin ikinci satırı ve 320dp
+ * Android'de kelimenin kendisi görünmüyordu (2026-09-22 küçük ekran
+ * incelemesi). Yazarken gereken tek şey sorunun kendisi; süs geri çekiliyor.
+ */
+const KeyboardOpen = React.createContext(false);
+
 function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
   /*
     TUR KAPANIRKEN SES SUSUYOR. "Devam"a basıp bir sonraki tura geçildiğinde
@@ -282,6 +294,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
   const lift = useKeyboardLift(shellRef, spacing.md);
   const kbOpen = useKeyboardInset() > 0;
   return (
+    <KeyboardOpen.Provider value={kbOpen}>
     <View ref={shellRef} collapsable={false} style={{ flex: 1 }}>
       {scroll ? (
         <ScrollView
@@ -300,6 +313,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
       {footer ? <View pointerEvents={sheet ? "none" : "auto"} style={{ marginBottom: lift, paddingTop: kbOpen ? spacing.sm : spacing.md, opacity: sheet ? 0 : 1 }}>{footer}</View> : null}
       {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
+    </KeyboardOpen.Provider>
   );
 }
 
@@ -428,9 +442,13 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
 
 /** Katmanın etiketli satırı: solda küçük büyük harf etiket, sağda içerik. */
 function SheetRow({ label, colors, children }: { label: string; colors: Palette; children: React.ReactNode }) {
+  const { narrow } = useLayout();
   return (
-    <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" }}>
-      <Text variant="micro" color={colors.textMuted} style={{ width: 58, textTransform: "uppercase", letterSpacing: 1, paddingTop: 3 }}>{label}</Text>
+    /* Etiket sütunu SABİT GENİŞLİK DEĞİL, en az 58: "FARKLAR" 58pt'ye sığmayıp
+       "FARKLA / R" diye bölünüyordu (iPhone SE), Almancası "UNTERSCHIEDE" daha
+       uzun. Etiket kendi boyunu alıyor ve hiç bölünmüyor; dar ekranda üstte. */
+    <View style={{ flexDirection: narrow ? "column" : "row", gap: narrow ? 2 : spacing.sm, alignItems: "flex-start" }}>
+      <Text variant="micro" color={colors.textMuted} numberOfLines={1} style={{ minWidth: 58, flexShrink: 0, textTransform: "uppercase", letterSpacing: 1, paddingTop: narrow ? 0 : 3 }}>{label}</Text>
       <View style={{ flex: 1 }}>{children}</View>
     </View>
   );
@@ -468,13 +486,14 @@ function promptVariant(text: string): "display" | "h1" | "h2" {
 }
 
 function Prompt({ label, big, sub, meta, speakText, colors }: { label: string; big: string; sub?: string | null; meta?: string | null; speakText?: string | null; colors: Palette }) {
+  const kompakt = React.useContext(KeyboardOpen);
   return (
-    <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
-      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
-      <Text variant={promptVariant(big)} {...promptFit(big)} style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
-      {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
-      {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{sub}</Text> : null}
-      {meta ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
+    <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: kompakt ? spacing.md : spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: kompakt ? spacing.sm : spacing.md }, cardShadow(colors, 10)]}>
+      {kompakt ? null : <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>}
+      <Text variant={promptVariant(big)} {...promptFit(big)} style={{ marginTop: kompakt ? 0 : spacing.sm, textAlign: "center" }}>{big}</Text>
+      {speakText && !kompakt ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
+      {sub ? <Text variant={kompakt ? "caption" : "body"} color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>{sub}</Text> : null}
+      {meta && !kompakt ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{meta}</Text> : null}
     </View>
   );
 }

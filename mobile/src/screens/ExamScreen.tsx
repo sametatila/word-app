@@ -987,7 +987,7 @@ function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx
             </View>
           </>
         ) : (
-          <TextInput value={typed} onChangeText={setTyped} multiline autoCapitalize="sentences"
+          <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} multiline autoCapitalize="sentences"
             /* Tek cümle: Enter = cevapla (uzun yazma bölümü alt satıra inmeye devam ediyor). */
             submitBehavior="submit" returnKeyType="done" onSubmitEditing={() => { if (hazir) onDone(ok, answer); }}
             placeholder={t("exam.write_sentence")}
@@ -1275,7 +1275,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         {w.task.checklist.map((c, i) => (
           <Text key={i} variant="caption" color={colors.textMuted}>· {c}</Text>
         ))}
-        <TextInput value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
+        <TextInput autoCorrect={false} spellCheck={false} value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
           placeholder={t("exam.write_text")}
           accessibilityLabel={t("exam.write_text")} placeholderTextColor={colors.textFaint}
           style={{ minHeight: ds(140), textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
