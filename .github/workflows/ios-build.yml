@@ -58,6 +58,22 @@ jobs:
         working-directory: mobile
         run: npx tsc --noEmit
 
+      # GoogleService-Info.plist repoda yok (mobile/.gitignore) ama pbxproj onu
+      # Resources fazında istiyor; yoksa derleme "Build input file cannot be
+      # found" ile düşüyor. Gizli değişken dosyanın base64'ü:
+      #   base64 -i mobile/ios/Lernomi/GoogleService-Info.plist | gh secret set IOS_GOOGLE_SERVICE_INFO_PLIST
+      - name: Firebase yapılandırması
+        working-directory: mobile/ios/Lernomi
+        env:
+          PLIST_B64: ${{ secrets.IOS_GOOGLE_SERVICE_INFO_PLIST }}
+        run: |
+          if [ -z "$PLIST_B64" ]; then
+            echo "::error::IOS_GOOGLE_SERVICE_INFO_PLIST gizlisi tanımlı değil (yukarıdaki yoruma bak)"
+            exit 1
+          fi
+          echo "$PLIST_B64" | base64 --decode > GoogleService-Info.plist
+          plutil -lint GoogleService-Info.plist
+
       - name: Pods önbelleği
         uses: actions/cache@v4
         with:
