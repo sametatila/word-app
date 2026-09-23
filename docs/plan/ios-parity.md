@@ -19,15 +19,16 @@
 >
 > **Kodda kalan tek fark yok.** Açık kalanlar kod değil, hesap/kimlik ve cihaz işi:
 >
-> 1. **Google iOS istemcisi** (C4) — Google Cloud'da iOS OAuth istemcisi henüz
->    açılmadı; `ios:check` bunu "KAPALI" diye raporluyor ve Android etkilenmiyor.
-> 2. **RevenueCat anahtarları** (C6) — `billingConfig.ts` içinde ikisi de boş.
->    Bu iOS'a özgü DEĞİL, iki platformun ortak eksiği.
+> 1. ~~**Google iOS istemcisi** (C4)~~ → **kapandı**: iOS OAuth istemcisi açıldı,
+>    `googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki ters şema dolu.
+> 2. ~~**RevenueCat anahtarları** (C6)~~ → **kapandı**: `billingConfig.ts`te iki
+>    platformun anahtarı dolu, sunucuda `REVENUECAT_*` dolu (2026-09-23).
 > 3. ~~**`LEGAL_PLATFORMS.ios = false`**~~ → **açıldı** (2026-09-14, `LEGAL_VERSION` 1.1):
 >    gizlilik politikası, şartlar ve destek sayfası iOS'u **gönderimden önce** kapsıyor,
 >    çünkü App Review üçünü de incelemede okuyor. §6'daki kapılar artık bayrağın değil
 >    **yayının** kapıları; gerekçe `src/lib/legal/index.ts` › `LEGAL_PLATFORMS` notunda.
-> 4. **Mac'te derleme ve cihaz koşusu** (Şerit S) — `docs/plan/ios-device-runbook.md`.
+> 4. **Cihaz koşusu** (Şerit S) — `docs/plan/ios-device-runbook.md`. Mac'te derleme
+>    2026-09-22'den beri yapılıyor (Mac mini); TestFlight'ta build 2-4 var.
 >
 > Aşağısı tarihsel kayıt olarak duruyor: hangi eksiğin neden kapatıldığı ve
 > şeritlerin nasıl bölündüğü oradan okunur.
@@ -43,10 +44,14 @@ karşılığı), `docs/plan/walk-stt.md` (yürüyüş modu tasarımı).
 
 ---
 
-## 0. Kısıt: bu makinede iOS derlenemez
+## 0. Kısıt (TARİHSEL, 2026-09-22'de kalktı): o makinede iOS derlenemiyordu
 
-Geliştirme makinesi Linux. macOS ve Xcode yok, `pod install` çalıştırılamaz, Swift
-derlenmez, simülatör/cihaz yok. Bu planın **tüm şeritleri "derlenmemiş kod" üretir.**
+> 2026-09-22'de geliştirme Linux'tan Mac mini'ye taşındı: Xcode, `pod install`,
+> simülatör ve TestFlight yüklemesi artık yerelde. Aşağısı planın yazıldığı günün
+> kısıtını anlatıyor; "derlenmemiş kod" notları o dönemden.
+
+Geliştirme makinesi Linux'tu. macOS ve Xcode yoktu, `pod install` çalıştırılamıyordu, Swift
+derlenmiyordu, simülatör/cihaz yoktu. Bu planın **tüm şeritleri "derlenmemiş kod" üretti.**
 
 Sonuçları:
 

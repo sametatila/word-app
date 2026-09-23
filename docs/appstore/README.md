@@ -13,32 +13,30 @@ Klasörde üç belge var, `docs/play/`in üçüne karşılık geliyor:
 | `connect.md` | `console.md` | İnceleme hesabı, giriş sağlayıcılarının kurulumu, yayın öncesi kontrol |
 | `listing.md` | `listing.md` | Yaş derecelendirmesi ve mağaza vitrini (üç dilde metinler, görseller) |
 
-## Durum (2026-09-09)
+## Durum (2026-09-23)
 
-iOS **yayında değil**, ama artık "derlenmemiş kod" da değil. Ayrım önemli çünkü
+iOS **yayında değil**; App Store Connect kaydı ve TestFlight hazır. Ayrım önemli çünkü
 belgenin geri kalanındaki her "DOĞRULANMADI" notunun anlamı buna bağlı:
 
 | | Durum |
 |---|---|
-| **Derleniyor mu** | ✅ Evet. `.github/workflows/ios-build.yml` macos-15'te Release yapılandırmasıyla derliyor, `pod install` çözülüyor, UI test hedefi üretiliyor ve dokuz akış karesi iniyor (koşu `33920804380`). |
-| **Cihazda koşuldu mu** | ❌ Hayır. Mikrofon, konuşma tanıma, arka planda ses, kilit ekranı denetimi, haptik ve satın alma yalnız gerçek cihazda ölçülebiliyor. |
+| **Derleniyor mu** | ✅ Evet. CI (`.github/workflows/ios-build.yml`, macos-15) ve 2026-09-22'den beri yerel Mac mini (Xcode). |
+| **Mağazaya yüklendi mi** | ✅ App Store Connect'te uygulama kaydı (`6810593275`) ve TestFlight'ta build 2, 3, 4 (`VALID`); sürüm kaydına henüz build bağlı değil (denetim IOS-1). Android: Play dahili test kanalında `1.0.0 (4)`. |
+| **Cihazda koşuldu mu** | Bu belgede kayıtlı bir cihaz koşusu yok. Mikrofon, konuşma tanıma, arka planda ses, kilit ekranı denetimi, haptik ve satın alma yalnız gerçek cihazda (TestFlight) ölçülebiliyor; liste `docs/plan/ios-device-runbook.md`'de. |
 
-Yani bugünkü doğru cümle: **derlendi, cihazda koşulmadı.** Geliştirme makinesi hâlâ
-Linux; derlemeyi yapan CI'daki macOS koşucusu. Cihazda sınanacakların listesi
-`docs/plan/ios-device-runbook.md`'de.
+Yani bugünkü doğru cümle: **derlendi ve TestFlight'ta; cihaz koşusu bu belgede
+kayıtlı değil.** Geliştirme makinesi 2026-09-22'de Linux'tan Mac mini'ye geçti.
 
-> Bu bölüm 4 Eylül'de yazıldı ve "bir satır kodu bile derlenmedi" diyordu. O gün
-> doğruydu; iş akışı 5 Eylül'de kurulunca yanlış oldu ve gereğinden karamsar bir
-> tablo çizmeye devam etti. Aşağıdaki tek tek maddelerde geçen "(derlenmedi)"
-> notları da aynı sebeple eskidir — hepsi **derlendi**, hiçbiri **cihazda
-> koşulmadı**.
+> Aşağıdaki tek tek maddelerde geçen "(derlenmedi)" ve "bu makinede Xcode yok"
+> notları eskidir (Linux dönemi) — hepsi **derlendi**; cihaz sonucu olarak
+> yazılmış bir şey yoksa cihazda doğrulandığı da varsayılmamalı.
 
 Bugün kapanan boşluklar (hepsi DOĞRULANMADI): şablon bundle kimliği `app.lernomi.ios`
 oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uygulama ikonu
 ve markalı açılış ekranı geldi, Apple ile Giriş kuruldu, Google girişi iOS'ta
 kurulabilir hâle getirildi. Açık kalanlar aşağıdaki tabloda.
 
-Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**): `src/lib/legal/index.ts`
+Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**; güncel sürüm **1.5**, 2026-09-23): `src/lib/legal/index.ts`
 içindeki `LEGAL_PLATFORMS.ios` `true`. Bayrak açıkken şunlar basılıyor:
 
 - şartlarda "13a. Apple App Store için ek koşullar" (Apple'ın özel EULA için istediği
@@ -75,17 +73,17 @@ de açık (`/api/config` → `"apple":true,"appleWeb":true`), yani bu alıcı iO
 
 | # | İş | Neden |
 |---|---|---|
-| 1 | Apple Developer Program hesabı | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
+| 1 | ~~Apple Developer Program hesabı~~ → **açık** (ASC kaydı `6810593275`, TestFlight build 4) | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
 | 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlendi, cihazda denenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
-| 3 | ~~**Apple ile Giriş**~~ → **kod ve yetki yazıldı**, Apple Developer hesabı bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
+| 3 | ~~**Apple ile Giriş**~~ → **kod, yetki ve sunucu değerleri yerinde** (`/api/config` → `apple:true`); cihazda doğrulama runbook'ta | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
 | 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlendi, cihazda denenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir; 2026-09-23'te Diagnostics satırları eklendi, Connect formu ve `PrivacyInfo.xcprivacy` buna göre güncellenmeli |
 | 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
-| 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
+| 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi, kod yazıldı ve derleniyor; TestFlight build'iyle cihazda denenecek (aşağıya bak) |
 | 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlendi, cihazda denenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
 | 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · ~~`APPLE_BUNDLE_ID` değeri~~ → **sunucuda dolu** (2026-09-14: canlı `/api/config` → `"apple":true,"appleWeb":true`) | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. iOS'ta cihazda henüz denenmedi |
-| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **Google Console'da iOS istemcisi açmak** | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
+| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** · ~~Google Console'da iOS istemcisi~~ → **açıldı ve yazıldı** (`googleAuth.ts` › `IOS_CLIENT_ID` dolu) | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
 | 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu — kare betiği ikisini de üretiyor (aşağıda "Cihaz ailesi") |
 | 13 | ~~Cihaz ailesi kararı~~ → **iPhone + iPad, beyan sabitlendi** (2026-09-05) | Aşağıda |
 
@@ -120,7 +118,7 @@ Yapılanlar:
   iddiası incelemede karşılıksız kalıyordu.
 - `startWalkService` yeniden çağrılmaya dayanıklı (kesinti sonrası aynı yola düşüyor).
 
-**Cihazda doğrulanmadı.** Kod CI'da (macos-15) derleniyor; aşağıdakiler yalnız gerçek cihazda ölçülebilir.
+**Cihazda doğrulandığı kayıtlı değil.** Kod CI'da ve Mac mini'de derleniyor, TestFlight'ta; aşağıdakiler yalnız gerçek cihazda ölçülebilir.
 Cihazda sınanacak beş şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
 (2) kelimeler arası boşlukta uygulama askıya alınıyor mu, (3) kilit ekranında mikrofon
 göstergesi ve Now Playing denetimi görünüyor mu, (4) telefon çağrısı gelip bittiğinde
@@ -148,7 +146,8 @@ puanı için" diye anlatıyor (denetim LEG-6) — Connect'te güncellenmesi Same
 
 ## Apple ile Giriş (Şerit A — 2026-09-04)
 
-**Yapıldı.** Kod yazıldı, DERLENMEDİ (bu makinede Xcode yok).
+**Yapıldı.** Kod yazıldı ve derleniyor (CI + Mac mini, TestFlight build'lerinde). Aşağıdaki
+"Doğrulanmadı" listesinin 2. ve 3. maddeleri 2026-09-23 itibarıyla kapandı.
 
 Guidelines 4.8 üçüncü taraf girişi sunan uygulamadan Apple ile Giriş'i de istiyor;
 Google sunulduğu için bu bir yayın engeliydi. Kurulan yol Google'ınkinin birebir eşi:
@@ -199,11 +198,10 @@ dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
 1. Apple Developer hesabında **Sign in with Apple** yetkisi (capability) açılacak ve
    `Lernomi.entitlements` derlemeye girecek — Şerit P'ye yazılı verildi
    (`docs/plan/ios-parity-A-teslim.md`). Yetki olmadan istek `1000`/`1004` ile düşer.
-2. `APPLE_BUNDLE_ID` üç env dosyasında da **boş**. Gerçek bundle kimliği (P4) belli
-   olunca yerel ve sunucu `.env`'e yazılacak; `.env.example` placeholder kalır.
-3. Hata metinlerinin i18n anahtarları (`autherror.apple_failed`,
-   `autherror.no_apple_token`) Şerit T'ye verildi; sözlüğe girene kadar `t()` anahtarın
-   kendisini basar.
+2. ~~`APPLE_BUNDLE_ID` üç env dosyasında da boş~~ → sunucuda dolu (canlı `/api/config`
+   → `"apple":true,"appleWeb":true`).
+3. ~~Hata metinlerinin i18n anahtarları~~ → `autherror.apple_failed` ve
+   `autherror.no_apple_token` üç dilde sözlükte.
 4. **Gizli aktarma adresi (Private Email Relay):** giden posta Resend üzerinden
    (SMTP ile, `smtp.resend.com`) `noreply@lernomi.app` adresinden çıkıyor.
    Gönderen kaydedilmezse `@privaterelay.appleid.com` adreslerine giden posta
@@ -387,8 +385,8 @@ Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmı
 - **Yapay zekâ içeriği:** rol yapma bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
   değil" bildirimi ekranda kalıcı ve her yanıtın altında "Bildir" var (Guidelines 1.2 ve
   üretken içerik beklentileri).
-- **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad, kullanıcı adı ve
-  biyografi moderasyondan geçiyor (filtreleme), her yapay zekâ yanıtının altında ve
+- **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad ve kullanıcı adı
+  moderasyondan geçiyor (filtreleme; biyografi 2026-09-16'da kaldırıldı), her yapay zekâ yanıtının altında ve
   profillerde **Bildir**, profillerde **Engelle**, ve **yayımlanmış iletişim bilgisi**
   olarak `https://www.lernomi.app/support`. Özel mesajlaşma yok. Şartlar §4/§5 1.5'ten
   beri "sıfır tolerans, bildirimler 24 saat içinde incelenir, bildirene sonuç iletilir"
@@ -405,4 +403,4 @@ Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmı
 
 Vergi tarafı iOS'ta da aynı: GVK mükerrer m.20/B istisnası "elektronik uygulama paylaşım
 ve satış platformları" diyor, App Store da bunun içinde. Yayıncı Türkiye'de yerleşik
-gerçek kişi olmaya devam ediyor (bkz. `src/lib/legal.ts` kimlik notu).
+gerçek kişi olmaya devam ediyor (bkz. `src/lib/legal/index.ts` kimlik notu).

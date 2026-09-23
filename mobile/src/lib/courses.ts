@@ -134,7 +134,7 @@ export const COURSES: Course[] = [
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,
-    // A1 ve A2 tam (100+100 ders, 12/12/8 beceri); B1–C1 sonraya bırakıldı.
+    // A1–C1 ders içeriği tam (seviye başına 100 ders, `data/lessons`).
     enabled: true,
     offeredToNewUsers: true,
   },

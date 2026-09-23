@@ -39,8 +39,9 @@ Sonrasında **`ios/Lernomi.xcworkspace`** açılır, `.xcodeproj` değil — pod
 workspace'te bağlı. `Podfile.lock` gitignore'da **değil**: pod sürümlerini sabitlemesi
 için, üretildiği gün commit edilir (Android'de karşılığı `gradle-wrapper`).
 
-Bu makinede (Linux) iOS derlenemez. `ios/` altındaki her şey **derlenmemiş kod**
-sayılır; iddia listesi ve cihazda sınanacaklar `docs/plan/ios-parity.md` §5'te.
+iOS 2026-09-22'den beri yerelde (Mac mini, Xcode) derleniyor ve TestFlight'a
+yükleniyor; önceki Linux döneminde `ios/` altı "derlenmemiş kod"du. Cihazda
+sınanacakların sıralı listesi `docs/plan/ios-device-runbook.md`'de.
 
 ## Sürüm: tek kaynak, üç hedef, bir kapı
 

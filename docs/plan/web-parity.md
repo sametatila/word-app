@@ -768,8 +768,8 @@ ilerleme paneli, ilk kelimeler ve ilerleme grafiği. Taban 185 → 180.
 
 | # | Ne | Durum |
 |---|---|---|
-| 1 | Google iOS OAuth istemcisi | **açık** — Google Cloud'da açılacak (hesap işi) |
-| 2 | RevenueCat anahtarları | **açık** — iki platformda da boş (hesap işi) |
+| 1 | Google iOS OAuth istemcisi | **bitti** — açıldı, `mobile/src/lib/googleAuth.ts` › `IOS_CLIENT_ID` dolu (2026-09-23'te doğrulandı) |
+| 2 | RevenueCat anahtarları | **bitti** — `mobile/src/lib/billingConfig.ts`te iki platformda dolu, sunucuda `REVENUECAT_*` dolu (2026-09-23) |
 | 3 | Sözlük taşıması | **bitti**, §10.5. Üç dosyalık kalıntı orada yazılı |
 | 4 | `boss-player.tsx` sayacındaki "{n} sn" | **bitti** — `challenge.seconds` yeniden kullanıldı |
 | 5 | `monow.*` dört anahtarı | **bitti** — `item.mono_*`a çekildi |

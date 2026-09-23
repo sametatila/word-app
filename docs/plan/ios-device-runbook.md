@@ -6,9 +6,11 @@ modu denenemez, entitlements gerçek bir hesaba bağlanmadan Apple girişi denen
 ekranına bakmak için önce turun başlaması gerekir. Burada aynı maddeler **koşulabilir
 sıraya** dizili.
 
-Bugüne kadar iOS tarafında yazılan hiçbir şey cihazda denenmedi (geliştirme makinesi
-Linux, bkz. `ios-parity.md` §0). `.github/workflows/ios-build.yml` her push'ta macos-15'te
-**derliyor** — yani "derleniyor mu" sorusu CI'da yanıtlanıyor, "çalışıyor mu" sorusu
+Bu runbook yazıldığında iOS tarafında yazılan hiçbir şey cihazda denenmemişti
+(geliştirme makinesi Linux'tu, bkz. `ios-parity.md` §0). 2026-09-22'den beri geliştirme
+Mac mini'de ve TestFlight'ta build 2-4 var; bir adımın cihazda geçtiği ancak burada
+sonucu yazılıysa kabul edilir. `.github/workflows/ios-build.yml` her push'ta macos-15'te
+**derliyor** — "derleniyor mu" sorusu CI'da yanıtlanıyor, "çalışıyor mu" sorusu
 burada.
 
 ## Nasıl kullanılır

@@ -27,7 +27,7 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 | Şiddet, cinsellik, kumar, kaba dil içeriği | Hayır | ÖLÇÜLDÜ (2026-09-10): cinsellik ve şiddet tasviri sıfır; `Gewalt` yalnız B1 hırsızlık ünitesinde kelime maddesi, silah geçişleri mecaz. Kumar yok: kelime turundaki "Meydan okuma" doğru cevaba bağlı bir XP çarpanı, şans ve para içermiyor; eski adı "Bahis" 2026-09-15'te değişti ve `check:age-rating` arayüzü de tarıyor |
 | Alkol, tütün, uyuşturucu ATFI | **Evet, seyrek** | 8.707 kelimenin 14'ü: `Bier`, `Wein`, `rauchen`, `Zigarette` (A1), `Alkohol`, `Kneipe`, `Droge` (B1). IARC bu soruyu ayrı soruyor; App Store'da aynı cevap dereceyi 4+'tan 13+'a çekti |
 | Kullanıcılar birbiriyle etkileşiyor mu | **Evet, sınırlı** | Haftalık sıralamada görünen ad; arkadaşlık, tepki, dürtme; özel mesajlaşma yok |
-| Kullanıcı üretimi içerik başkalarına görünüyor mu | Evet (görünen ad, kullanıcı adı, biyografi) | Moderasyon: ad filtresi, bildir/engelle, insan incelemesi |
+| Kullanıcı üretimi içerik başkalarına görünüyor mu | Evet (görünen ad, kullanıcı adı; biyografi 2026-09-16'da kaldırıldı) | Moderasyon: ad filtresi, bildir/engelle, insan incelemesi |
 | Kişisel bilgi paylaşımı | Kullanıcı isterse görünen ad | Konum paylaşımı yok |
 | Konum paylaşımı | Hayır | Konum izni yok |
 | Dijital satın alma | **Evet** (abonelik) | Manifest zaten `com.android.vending.BILLING` taşıyor (react-native-purchases) ve premium ürünün parçası; bkz. aşağıdaki karar |
@@ -37,7 +37,8 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 
 
 > **Karar (2026-09-09):** premium ilk sürümde AÇIK sayılıyor. Abonelik satın alma
-> RevenueCat bağlanınca gelecek, ama ürün premium'lu bir ürün olarak yayımlanıyor:
+> artık bağlı (2026-09-23: RevenueCat iki platformda kurulu, Play abonelikleri ve
+> `lernomi_default` offering hazır) ve ürün premium'lu bir ürün olarak yayımlanıyor:
 > ücretsiz katmanın sınırları uygulanıyor, paywall erişilebilir, promo kodu ve davet
 > ödülü bugün gerçek premium veriyor. Beyanlar buna göre doldurulur — sonradan
 > "aslında satın alma da varmış" demek, mağaza gözünde beyanın düzeltilmesi değil
@@ -171,7 +172,7 @@ Kelime turları, okuma ve dinleme alıştırmaları ve ekran açıkken yürüyü
 Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Google Play hesabından yönetebilir ya da iptal edebilirsin.
 
 ARKADAŞLARINLA
-Haftalık lig ve sıralama, arkadaş ekleme, tepkiler ve bir arkadaşınla haftalık ortak görev. Özel mesajlaşma yoktur. Görünen ad, kullanıcı adı ve biyografi süzgeçten geçer; diğer kullanıcıları bildirebilir ve engelleyebilirsin.
+Haftalık lig ve sıralama, arkadaş ekleme, tepkiler ve bir arkadaşınla haftalık ortak görev. Özel mesajlaşma yoktur. Görünen ad ve kullanıcı adı süzgeçten geçer; diğer kullanıcıları bildirebilir ve engelleyebilirsin.
 
 GİZLİLİK
 Reklam yok, reklam amaçlı izleme yok, veri satışı yok. Mikrofon yalnız konuşarak cevap verdiğinde açılır; sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yapay zekâya bir şey gönderilmeden önce iznin istenir. Hesabını uygulamanın içinden silebilirsin.
@@ -240,7 +241,7 @@ Vocabulary rounds, reading and listening exercises and walk mode with the screen
 Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Google Play account.
 
 WITH FRIENDS
-A weekly league and leaderboard, friends, reactions and a weekly shared quest with a friend. There is no private messaging. Display names, usernames and bios are filtered, and you can report and block other users.
+A weekly league and leaderboard, friends, reactions and a weekly shared quest with a friend. There is no private messaging. Display names and usernames are filtered, and you can report and block other users.
 
 PRIVACY
 No ads, no ad tracking, no data selling. The microphone opens only when you answer by speaking; your audio reaches the server only with your permission, and the recording is not kept. The app asks for your permission before anything is sent to AI. You can delete your account from inside the app.
@@ -310,7 +311,7 @@ Vokabelrunden, Lese- und Hörübungen und der Gehmodus bei eingeschaltetem Bilds
 Premium ist ein automatisch verlängertes Monats- oder Jahresabo. Preis und eine eventuelle kostenlose Testphase werden vor dem Kauf in der App angezeigt. Dein Abo verwaltest oder kündigst du in deinem Google-Play-Konto.
 
 MIT FREUNDEN
-Wöchentliche Liga und Rangliste, Freundschaften, Reaktionen und eine gemeinsame Wochenaufgabe mit einer befreundeten Person. Private Nachrichten gibt es nicht. Anzeigename, Benutzername und Bio werden gefiltert; andere Nutzer kannst du melden und blockieren.
+Wöchentliche Liga und Rangliste, Freundschaften, Reaktionen und eine gemeinsame Wochenaufgabe mit einer befreundeten Person. Private Nachrichten gibt es nicht. Anzeigename und Benutzername werden gefiltert; andere Nutzer kannst du melden und blockieren.
 
 DATENSCHUTZ
 Keine Werbung, kein Werbe-Tracking, kein Datenverkauf. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest; Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Bevor etwas an eine KI geht, fragt die App um Erlaubnis. Dein Konto kannst du in der App löschen.

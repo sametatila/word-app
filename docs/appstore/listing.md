@@ -72,10 +72,10 @@ Play tarafında **hedef kitle "yalnız 18 ve üzeri"** seçildi (`docs/play/list
 Gerekçe `03cfbc1`'de yazılı ve iki ayaklı:
 
 1. **Metin böyle diyor.** Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor; gizlilik
-   politikası §12 de aynı yaşı söylüyor. Kodda yaş kapısı yok, yani doğruyu yalnız metin
+   politikası §12 de aynı yaşı söylüyor. Kodda yaş kapısı yok (kayıtta ve misafir girişinde yalnız 18 yaş beyanını içeren bir kabul satırı var; onay kutusu ya da doğum tarihi yok), yani doğruyu yalnız metin
    taşıyor — beyanların birbirini tutması şart.
 2. **16-17 eklemek uygulamayı Play'in Aileler politikası kapsamına alırdı.** Açık uçlu
-   yapay zekâ sohbeti, serbest metinli biyografi ve lider tablosu o kapsamda ek
+   yapay zekâ sohbeti, kullanıcılar arası sosyal katman (görünen ad, kullanıcı adı; biyografi 2026-09-16'da kaldırıldı) ve lider tablosu o kapsamda ek
    gereklilik doğuruyor.
 
 Buna karşılık Play'in **IARC içerik derecelendirmesi** düşük çıkıyor (beklenen: PEGI 3 /
@@ -105,9 +105,9 @@ tahminle değil, içerik TARANARAK verildi — üç tanesi bu yüzden ilk taslak
 
 | Soru | Cevap | Dayanak |
 |---|---|---|
-| Parental Controls / Age Assurance | Hayır | Kodda yaş kapısı yok; şartlardaki 18 sınırı sözleşme koşulu |
+| Parental Controls / Age Assurance | Hayır | Doğrulayan bir yaş kapısı yok (yalnız kayıt ve misafir girişinde 18 yaş beyan satırı); şartlardaki 18 sınırı sözleşme koşulu |
 | Sınırsız web erişimi | **Hayır** | Uygulama içi tarayıcı yok. Hukuki sayfalar `Linking.openURL` ile SİSTEM tarayıcısında; tek WebView `${API_BASE}/tts-bridge` ve gezinme yüzeyi değil |
-| Kullanıcı üretimi içerik | **Evet** | Görünen ad, kullanıcı adı ve biyografi başkalarına dağıtılıyor (sıralama, profil). Süzgeç + bildir/engelle + insan incelemesi var |
+| Kullanıcı üretimi içerik | **Evet** | Görünen ad ve kullanıcı adı başkalarına dağıtılıyor (sıralama, profil; biyografi 2026-09-16'da kaldırıldı). Süzgeç + bildir/engelle + insan incelemesi var |
 | **Social Media** | **Hayır** | Apple'ın tanımı "kullanıcı içeriğinin bir akış üzerinden yayılması". `activity_events` YALNIZ sistem olayları taşıyor (`streak_milestone`, `achievement`, `friend_joined`, `quest_completed`, `weekly_top`, `friend_streak`); tepkiler altı sabit türden, serbest metin yok |
 | Kullanıcılar arası mesajlaşma | **Hayır** | Özel mesajlaşma yok; arkadaşlık, tepki ve dürtme sabit biçimli |
 | Reklam | Hayır | Reklam SDK'sı yok |
@@ -140,7 +140,7 @@ düzeltilecek bir şey değil.
 Hesaplanan derece içeriğin sertliğini ölçüyor ve 13+ o ölçüme göre doğru. Ama hesap
 açmak **şartlar §3 gereği 18 yaş ve üzeri** ve Play'de hedef kitle de 18+. Üç beyandan
 biri ötekileri tutmayınca hem inceleyene açıklama borcu doğuyor hem de gerçek bir açık
-kalıyor: kodda yaş kapısı yok, yani 13+ diyen bir vitrin on dört yaşındaki birini
+kalıyor: doğrulayan bir yaş kapısı yok (yalnız beyan satırı), yani 13+ diyen bir vitrin on dört yaşındaki birini
 kurmaya davet ediyor ve o kişinin sesi konuşma tanıma sağlayıcılarına, yazdığı metin dil
 modellerine gidiyor — KVKK ve GDPR'da veli onayı gerektiren bir akış.
 
@@ -257,7 +257,7 @@ Kelime turları, okuma ve dinleme alıştırmaları ve ekran açıkken yürüyü
 Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Apple hesabının abonelik ayarlarından yönetebilir ya da iptal edebilirsin.
 
 ARKADAŞLARINLA
-Haftalık lig ve sıralama, arkadaş ekleme, tepkiler ve bir arkadaşınla haftalık ortak görev. Özel mesajlaşma yoktur. Görünen ad, kullanıcı adı ve biyografi süzgeçten geçer; diğer kullanıcıları bildirebilir ve engelleyebilirsin.
+Haftalık lig ve sıralama, arkadaş ekleme, tepkiler ve bir arkadaşınla haftalık ortak görev. Özel mesajlaşma yoktur. Görünen ad ve kullanıcı adı süzgeçten geçer; diğer kullanıcıları bildirebilir ve engelleyebilirsin.
 
 GİZLİLİK
 Reklam yok, reklam amaçlı izleme yok, veri satışı yok. Mikrofon yalnız konuşarak cevap verdiğinde açılır; sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz. Yapay zekâya bir şey gönderilmeden önce iznin istenir. Hesabını uygulamanın içinden silebilirsin.
@@ -346,7 +346,7 @@ Vocabulary rounds, reading and listening exercises and walk mode with the screen
 Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Apple Account subscription settings.
 
 WITH FRIENDS
-A weekly league and leaderboard, friends, reactions and a weekly shared quest with a friend. There is no private messaging. Display names, usernames and bios are filtered, and you can report and block other users.
+A weekly league and leaderboard, friends, reactions and a weekly shared quest with a friend. There is no private messaging. Display names and usernames are filtered, and you can report and block other users.
 
 PRIVACY
 No ads, no ad tracking, no data selling. The microphone opens only when you answer by speaking; your audio reaches the server only with your permission, and the recording is not kept. The app asks for your permission before anything is sent to AI. You can delete your account from inside the app.
@@ -437,7 +437,7 @@ Vokabelrunden, Lese- und Hörübungen und der Gehmodus bei eingeschaltetem Bilds
 Premium ist ein automatisch verlängertes Monats- oder Jahresabo. Preis und eine eventuelle kostenlose Testphase werden vor dem Kauf in der App angezeigt. Dein Abo verwaltest oder kündigst du in den Abo-Einstellungen deines Apple Accounts.
 
 MIT FREUNDEN
-Wöchentliche Liga und Rangliste, Freundschaften, Reaktionen und eine gemeinsame Wochenaufgabe mit einer befreundeten Person. Private Nachrichten gibt es nicht. Anzeigename, Benutzername und Bio werden gefiltert; andere Nutzer kannst du melden und blockieren.
+Wöchentliche Liga und Rangliste, Freundschaften, Reaktionen und eine gemeinsame Wochenaufgabe mit einer befreundeten Person. Private Nachrichten gibt es nicht. Anzeigename und Benutzername werden gefiltert; andere Nutzer kannst du melden und blockieren.
 
 DATENSCHUTZ
 Keine Werbung, kein Werbe-Tracking, kein Datenverkauf. Das Mikrofon öffnet sich nur, wenn du sprechend antwortest; Audio geht nur mit deiner Erlaubnis an den Server, und die Aufnahme wird nicht gespeichert. Bevor etwas an eine KI geht, fragt die App um Erlaubnis. Dein Konto kannst du in der App löschen.

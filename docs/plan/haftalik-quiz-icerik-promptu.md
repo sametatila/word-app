@@ -16,7 +16,7 @@ repodaki `data/**/SPEC.md` dosyalarının var oluş sebebiyle aynı sebep.
 ## Prompt (olduğu gibi kopyalanır)
 
 ```
-Depo: /home/linkinqark/Desktop/workspace-linux/word-app
+Depo: /Users/linkinqark/Workspace/word-app
 
 GÖREV
 Haftalık quiz için A2 seviyesinde 5 haftalık içerik yaz: kurs `de` ve kurs `en`
@@ -80,7 +80,7 @@ A1 içeriği yazılmadan A2 ajanını başlatmak gerekirse bu kullanılır. Tek 
 DOKUNMUYOR — paralel çalışan iki ajan aynı dosyayı düzenlerse biri ötekini ezer.
 
 ```
-Depo: /home/linkinqark/Desktop/workspace-linux/word-app
+Depo: /Users/linkinqark/Workspace/word-app
 
 GÖREV
 Haftalık quiz için A2 seviyesinde 5 haftalık içerik yaz: kurs `de` ve kurs `en`
@@ -190,7 +190,7 @@ zorunlu hâle geldi (betik dizini değil **kataloğu** geziyor — kaydedilmeyen
 dosya denetlenmemiş kalır).
 
 ```
-Depo: /home/linkinqark/Desktop/workspace-linux/word-app
+Depo: /Users/linkinqark/Workspace/word-app
 
 GÖREV
 Haftalık quiz için B1 seviyesinde 5 haftalık içerik yaz: kurs `de` ve kurs `en`
@@ -287,7 +287,7 @@ B2'de girişimin karakteri bir kez daha değişiyor: artık tekil kural hatalar�
 değil, **anadilin üslubunun** hedef dile taşınması ölçülüyor.
 
 ```
-Depo: /home/linkinqark/Desktop/workspace-linux/word-app
+Depo: /Users/linkinqark/Workspace/word-app
 
 GÖREV
 Haftalık quiz için B2 seviyesinde 5 haftalık içerik yaz: kurs `de` ve kurs `en`
