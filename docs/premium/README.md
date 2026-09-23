@@ -286,6 +286,12 @@ abonelik beyanı kurallarına aykırı.
 
 ### 3.3 RevenueCat panosu
 
+> **DURUM (2026-09-23): kuruldu (API v2 ile).** Play ürünleri (`…:monthly-autorenew`,
+> `…:yearly-autorenew`) `lernomi_premium` entitlement'ına ve geçerli offering
+> **`lernomi_default`**'un `$rc_monthly` / `$rc_annual` paketlerine iOS ürünlerinin
+> yanına bağlandı. Dikkat: geçerli offering `default` DEĞİL `lernomi_default`.
+> Webhook ortamı yalnız production; sandbox için önce sunucu tarafı (IAP-1).
+
 > **Pano 2025–26'da yeniden tasarlandı.** Dikey menüye geçildi, projeler üst
 > düzeye çıktı ve **Product catalog** diye birleşik bir bölüm geldi (Products,
 > Offerings, Entitlements, Virtual Currencies). API anahtarları ve entegrasyonlar
