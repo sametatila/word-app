@@ -76,16 +76,22 @@ minSdk 37'de devrede: Play anahtar döndürmesi ekledi ve Android 17 cihazda sis
 paketin imzası olarak döndürülmüş sertifikayı bildiriyor. İkisi de kayıtlı olmazsa
 Google girişi yalnız bir Android sürüm aralığında çalışır.
 
-| Console'daki ad | Anahtar | SHA-1 | Durum |
-|---|---|---|---|
-| `lernomi-android` | debug (`android/app/debug.keystore`, repoda) | `5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25` | açık (2026-09-09) |
-| `lernomi-android-upload` | yayın anahtarı (`android/app/release.keystore`) | `2F:2F:57:45:C3:8D:F9:3B:2E:F2:7E:FB:17:42:2A:3F:13:30:9F:3F` | açık (2026-09-09) |
-| `lernomi-android-play` | Play App Signing — Google'ın anahtarı (Android ≤16'da görünen) | `4C:8A:3D:7A:02:17:51:E9:A7:3E:3E:6D:B7:F8:E5:54:A4:F8:56:34` | açık (2026-09-23) · ilk AAB aynı gün yüklendi (v4, iç test) |
-| `lernomi-android-play-37` | Play'in Android 17+ için eklediği hibrit (PQC) döndürülmüş imza — Android 17 cihaz uygulamayı BU sertifikayla tanıyor | `06:24:10:14:01:86:77:F8:96:3C:8B:29:08:D2:B7:2C:B9:8E:04:56` | açık (2026-09-23) |
+| Console'daki ad | Anahtar | SHA-1 | SHA-256 (assetlinks) | Durum |
+|---|---|---|---|---|
+| `lernomi-android` | debug (`android/app/debug.keystore`, repoda) | `5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25` | `FA:C6:17:45:…:91:03:3B:9C` (assetlinks'te bilerek yok) | açık (2026-09-09) |
+| `lernomi-android-upload` | yayın anahtarı (`android/app/release.keystore`) | `2F:2F:57:45:C3:8D:F9:3B:2E:F2:7E:FB:17:42:2A:3F:13:30:9F:3F` | `D5:44:55:91:…:2C:9D:2D:E1` | açık (2026-09-09) |
+| `lernomi-android-play` | Play App Signing — Google'ın anahtarı (Android ≤16'da görünen) | `4C:8A:3D:7A:02:17:51:E9:A7:3E:3E:6D:B7:F8:E5:54:A4:F8:56:34` | `2E:6D:8D:12:…:E9:74:F9:07` | açık (2026-09-23) · ilk AAB aynı gün yüklendi (v4, iç test) |
+| `lernomi-android-play-37` | Play'in Android 17+ için eklediği hibrit (PQC) döndürülmüş imza — Android 17 cihaz uygulamayı BU sertifikayla tanıyor | `06:24:10:14:01:86:77:F8:96:3C:8B:29:08:D2:B7:2C:B9:8E:04:56` | `DE:E8:55:BD:…:46:75:2A:35` | açık (2026-09-23) |
 
 Üçüncüsü Play'den **indirilen** her kurulumu kapsıyor ve testçiler davet edilmeden önce
 açılmalı: Play App Signing devrede olduğu için Google yüklediğin AAB'yi kendi anahtarıyla
 yeniden imzalıyor, yani kullanıcının telefonundaki uygulama upload anahtarını taşımıyor.
+
+SHA-256 sütunu App Links içindir: sunucu `.env`'deki `ANDROID_CERT_SHA256` virgülle bu üçünü
+(Play, Play-37, yükleme) taşıyor ve `/.well-known/assetlinks.json` onu yayımlıyor. Play yeni bir
+imza eklerse (APK'da yeni `Signer` satırı) hem buraya hem o env'e girmeli; yoksa `/g/` gibi
+bağlantılar o Android sürümünde uygulama yerine tarayıcıda açılır. APK'daki "Hybrid PQC Signer"
+(SHA-1 `97:82:6B:80:…`) ve "Source Stamp" sertifikaları uygulama kimliği değil, eklenmez.
 
 SHA-1'ler sır değil (herhangi bir APK'dan çıkarılabilir); buraya yazılmalarının sebebi
 `DEVELOPER_ERROR` ayıklarken karşılaştırılacak referansın elde olması.
