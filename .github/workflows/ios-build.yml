@@ -157,7 +157,9 @@ jobs:
       - name: Ekran görüntüleri
         working-directory: mobile
         # Takılan bir simctl çağrısı işin tamamını yiyordu (bkz. betikteki sim()).
+        # Kareler kanıt, kapı değil: süre dolsa da asıl kapı olan XCUITest koşsun.
         timeout-minutes: 45
+        continue-on-error: true
         run: bash scripts/ios-screenshots.sh
 
       # Onboarding'i tıklayarak geçer ve akışın karelerini alır. continue-on-error

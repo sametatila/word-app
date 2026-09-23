@@ -53,6 +53,12 @@ LANGS=("tr|tr_TR" "en|en_US" "de|de_DE")
 
 APPEARANCES=(light dark)
 
+# Tablette yalnız bu diller. CI makinesinde iPad simülatöründe kare başına ~6 dk
+# gidiyor (koşu 35876419844: altı karenin üçünde 45 dk doldu). Dil değişimi
+# düzeni iPhone'da zaten gösteriyor; iPad'de sınanan genişlik. Hepsi için:
+# TABLET_LANGS="tr en de".
+TABLET_LANGS=${TABLET_LANGS:-tr}
+
 # Açılıştan sonra ilk kareye kadar beklenen süre. Üç ayrı an denendi (3/9/15sn)
 # ve kareler bayt bayt aynı çıktı — ekran ilerlemediği için tek an yetiyor.
 # Ama sabit bekleme TEK BAŞINA yetmiyor: 12 karelik bir koşuda iPad'in bir karesi
@@ -166,6 +172,9 @@ for ENTRY in "${DEVICES[@]}"; do
   for LANG_ENTRY in "${LANGS[@]}"; do
     LANG_CODE=${LANG_ENTRY%%|*}
     LOCALE=${LANG_ENTRY#*|}
+    case "$DEV_NAME" in
+      iPad*) case " $TABLET_LANGS " in *" $LANG_CODE "*) ;; *) continue ;; esac ;;
+    esac
     for APPEARANCE in "${APPEARANCES[@]}"; do
       # Tema DEĞİŞİMİ önce ve tek başına: sistem genelinde yeniden çizim
       # tetikliyor, hemen ardından gelen terminate/launch onunla yarışıyordu.
