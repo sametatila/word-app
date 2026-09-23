@@ -20,14 +20,14 @@ import { spacing } from "../theme";
  */
 export function CardGrid({
   children,
-  minItemWidth = 420,
+  minItemWidth = 400,
 }: {
   children: React.ReactNode;
   /** Bir kartın altına düşmemesi gereken genişlik (dp). */
   minItemWidth?: number;
 }) {
-  const { wideContentWidth } = useLayout();
-  const sutun = Math.min(3, Math.max(1, Math.floor(wideContentWidth / minItemWidth)));
+  const { contentWidth } = useLayout();
+  const sutun = Math.min(3, Math.max(1, Math.floor(contentWidth / minItemWidth)));
   if (sutun < 2) return <>{children}</>;
   const genislik = gridItemWidthFor(sutun as 2 | 3);
   return (

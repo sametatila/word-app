@@ -211,7 +211,7 @@ export function LearnScreen() {
 
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
-      <CardGrid minItemWidth={380}>
+      <CardGrid>
         <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={fillOf("primary")} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
         <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={fillOf("success")} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
         {/* HAYATTA KALMA. Web'de `/learn/challenge` olarak baştan beri vardı,

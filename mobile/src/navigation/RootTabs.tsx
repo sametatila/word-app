@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TabBar } from "./TabBar";
-import { contentColumnLayout, wideColumnLayout } from "../ui/ContentColumn";
+import { contentColumnLayout } from "../ui/ContentColumn";
 import { t, useLang } from "../lib/i18n";
 import { LearnScreen } from "../screens/LearnScreen";
 import { PathScreen } from "../screens/PathScreen";
@@ -50,13 +50,13 @@ export function RootTabs() {
    */
   useLang();
   return (
-    // `screenLayout` yalnız EKRAN içeriğini sarmalıyor; `tabBar` dışarıda kaldığı
-    // için sekme çubuğu geniş ekranda tam genişlikte duruyor.
+    // `screenLayout` yalnız EKRAN içeriğini sarmalıyor; `tabBar` dışarıda kalıyor
+    // ve kolona kendisi hizalanıyor (bkz. TabBar).
     <Tab.Navigator tabBar={renderTabBar} screenOptions={{ headerShown: false }} screenLayout={contentColumnLayout}>
-      <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} layout={wideColumnLayout} />
-      <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} layout={wideColumnLayout} />
-      <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} layout={wideColumnLayout} />
-      <Tab.Screen name="Friends" component={FriendsScreen} options={{ title: t("nav.friends") }} layout={wideColumnLayout} />
+      <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} />
+      <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} />
+      <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} />
+      <Tab.Screen name="Friends" component={FriendsScreen} options={{ title: t("nav.friends") }} />
     </Tab.Navigator>
   );
 }

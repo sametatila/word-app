@@ -8635,7 +8635,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "yonelim esigi duzen esigiyle ayni",
       ["esik=" + androidEsik],
-      ["esik=" + ((layout.match(/windowWidth < (\d+)\) return dar/) ?? [])[1] ?? "YOK")],
+      ["esik=" + ((layout.match(/TABLET_MIN_WIDTH = (\d+);/) ?? [])[1] ?? "YOK")],
       "android",
       "duzen",
     );
@@ -11949,7 +11949,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * IKI DUZEY, webdeki gibi:
    *   - EKRAN BASINA sinir: gezginin duzen sarmalayicilarinda
-   *     (`contentColumnLayout` / `wideColumnLayout`). Sekme cubugu ve
+   *     (`contentColumnLayout`). Sekme cubugu ve
    *     gezinme ayakta kaliyor. Web karsiligi `app/(app)/error.tsx`.
    *   - KOK sinir: `App.tsx`, tema saglayicisinin icinde. Web karsiligi
    *     `app/error.tsx`.

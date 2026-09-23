@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { NavigatorScreenParams } from "@react-navigation/native";
-import { contentColumnLayout, wideColumnLayout } from "../ui/ContentColumn";
+import { contentColumnLayout } from "../ui/ContentColumn";
 import { RootTabs, type RootTabParams } from "./RootTabs";
 import { GameScreen } from "../screens/GameScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
@@ -128,31 +128,31 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
           (RootTabs). Burada sarmalansaydı sekme çubuğu da sütuna girer ve geniş
           ekranda ortada asılı kalırdı. */}
       <Stack.Screen name="Tabs" component={RootTabs} />
-      {/* Varsayılan: dar (okunabilir) sütun. `layout` ile ezilen ekranlar ızgara
-          sistemine girmiş olanlar — yatay tablette geniş kaba çıkıyorlar. */}
+      {/* Bütün ekranlar AYNI kolonda (bkz. ui/ContentColumn): ekran başına
+          genişlik yok, menüden içeriğe geçerken kenar zıplamıyor. */}
       <Stack.Group screenLayout={contentColumnLayout}>
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="FirstPractice" component={FirstPracticeScreen} />
       <Stack.Screen name="NotifPrime" component={NotifPrimeScreen} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
-      <Stack.Screen name="Profile" component={ProfileScreen} layout={wideColumnLayout} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="MockExams" component={MockExamsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="MockExam" component={MockExamScreen} options={{ gestureEnabled: false }} layout={contentColumnLayout} />
-      <Stack.Screen name="MockStats" component={MockStatsScreen} layout={contentColumnLayout} />
+      <Stack.Screen name="MockExams" component={MockExamsScreen} />
+      <Stack.Screen name="MockExam" component={MockExamScreen} options={{ gestureEnabled: false }} />
+      <Stack.Screen name="MockStats" component={MockStatsScreen} />
       <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
-      <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom" }} layout={contentColumnLayout} />
+      <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="RoleplayExam" component={RoleplayExamScreen} options={{ animation: "slide_from_bottom" }} layout={contentColumnLayout} />
+      <Stack.Screen name="RoleplayExam" component={RoleplayExamScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Quiz" component={QuizScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Words" component={WordsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="Achievements" component={AchievementsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
+      <Stack.Screen name="Words" component={WordsScreen} />
+      <Stack.Screen name="Achievements" component={AchievementsScreen} />
+      <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
@@ -161,10 +161,10 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
-      <Stack.Screen name="Cando" component={CandoScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="Writings" component={WritingsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="User" component={UserScreen} layout={wideColumnLayout} />
+      <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Cando" component={CandoScreen} />
+      <Stack.Screen name="Writings" component={WritingsScreen} />
+      <Stack.Screen name="User" component={UserScreen} />
       <Stack.Screen name="Inbox" component={InboxScreen} />
       <Stack.Screen name="SocialSettings" component={SocialSettingsScreen} />
       </Stack.Group>

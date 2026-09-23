@@ -215,7 +215,7 @@ export function WritingsScreen() {
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
-          <CardGrid minItemWidth={420}>
+          <CardGrid>
             {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} onDelete={askDelete} />)}
           </CardGrid>
         </ScrollView>

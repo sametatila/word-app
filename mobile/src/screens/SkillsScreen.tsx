@@ -207,7 +207,7 @@ export function SkillsScreen() {
       )}
 
       {!levelReady || !poolsReady ? (
-        <CardGrid minItemWidth={440}>
+        <CardGrid>
         {SKILLS.map((s) => (
           <View key={s.key} style={{ marginBottom: spacing.xl }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
@@ -275,7 +275,7 @@ export function SkillsScreen() {
           {/* Geniş ekranda beceri bölümleri yan yana: tek sütunda okuma bitmeden
               dinlemeyi görmek için kaydırmak gerekiyordu. Telefonda ve dar
               kapta CardGrid hiç sarmalamıyor, düzen birebir eskisi. */}
-          <CardGrid minItemWidth={440}>
+          <CardGrid>
           {lists.map((s) => {
             if (!s.items.length) return null;
             const tint = colors[s.tint] as string;

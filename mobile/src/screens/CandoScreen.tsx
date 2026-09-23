@@ -215,7 +215,7 @@ export function CandoScreen() {
               );
             })}
           </Card>
-          <CardGrid minItemWidth={440}>
+          <CardGrid>
           {LEVELS.filter((lv) => byLevel[lv]?.length).map((lv) => (
             <View key={lv} style={{ marginBottom: spacing.lg }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.xs, marginLeft: spacing.xs }}>{lv}</Text>

@@ -115,8 +115,10 @@ function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: strin
   );
 }
 
-/** İki panelin açıldığı en küçük kap genişliği (dp). */
-const IKI_PANEL_MIN = 900;
+/** İki panelin açıldığı en küçük kolon genişliği (dp). Kolonun tavanı 840
+ *  (bkz. `contentWidthFor`): yatay iPad'lerin hepsi ona ulaşıyor, Split View
+ *  gibi dar pencereler ulaşmıyor. */
+const IKI_PANEL_MIN = 800;
 
 export function PathScreen() {
   const { colors } = useTheme();
@@ -130,10 +132,10 @@ export function PathScreen() {
     duruyor. Telefonda ve DİKEY tablette hiçbir şey değişmiyor — orada yan yana
     iki panele yer yok, akış eskisi gibi yönlendirmeyle.
 
-    Izgara sütunu, kabın tamamına değil SOL PANELİN genişliğine göre sayılıyor:
-    1100'lük kaba dört kart sığıyor ama onun %45'ine iki kart sığıyor.
+    Izgara sütunu, kolonun tamamına değil SOL PANELİN genişliğine göre
+    sayılıyor: 840'lık kolona üç kart sığıyor ama onun %45'ine iki kart.
   */
-  const { wideContentWidth, landscape } = useLayout();
+  const { contentWidth, landscape } = useLayout();
   /*
     Kapı yalnız "yatay + geniş" DEĞİL, kabın gerçekten iki panel taşıyacak
     kadar geniş olması. Çoklu pencerede (iPad Split View, Android serbest
@@ -141,10 +143,10 @@ export function PathScreen() {
     iki panel açmak iki tarafı da kullanılmaz ederdi. Eşik ızgaranın dörde
     çıktığı genişlikle aynı: o noktada sol panele iki kart rahat sığıyor.
   */
-  const ikiPanel = landscape && wideContentWidth >= IKI_PANEL_MIN;
-  const solPanel = Math.round((wideContentWidth - spacing.lg) * 0.45);
-  const sagPanel = wideContentWidth - spacing.lg - solPanel;
-  const solGenislik = ikiPanel ? solPanel : wideContentWidth;
+  const ikiPanel = landscape && contentWidth >= IKI_PANEL_MIN;
+  const solPanel = Math.round((contentWidth - spacing.lg) * 0.45);
+  const sagPanel = contentWidth - spacing.lg - solPanel;
+  const solGenislik = ikiPanel ? solPanel : contentWidth;
   const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
 

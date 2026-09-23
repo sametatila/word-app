@@ -13338,7 +13338,7 @@ Android için eksikti ve bunu kimse fark edemezdi.
 
 | Düzey | Web | Mobil |
 |---|---|---|
-| Ekran başına (kabuk ayakta kalır) | `app/(app)/error.tsx` | düzen sarmalayıcıları (`contentColumnLayout` / `wideColumnLayout`) |
+| Ekran başına (kabuk ayakta kalır) | `app/(app)/error.tsx` | düzen sarmalayıcısı (`contentColumnLayout`) |
 | Kök (kabuk da patlarsa) | `app/error.tsx` | `App.tsx`, tema sağlayıcısının içinde |
 
 Sınırın **düzen sarmalayıcılarına** konmasının sebebi teknik ve yazılı: React

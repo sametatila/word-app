@@ -4,7 +4,8 @@ import { useLayout } from "../lib/useLayout";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 /**
- * İçerik sütunu — geniş ekranda okunabilir genişlikte ve ortalı.
+ * İçerik kolonu — geniş ekranda ortalı ve HER EKRANDA AYNI genişlikte
+ * (tek kaynak `useLayout` › `contentWidthFor`).
  *
  * NEDEN EKRAN BAŞINA, UYGULAMANIN TAMAMINA DEĞİL: sütun eskiden kökte, tüm
  * gezginin çevresindeydi. Sonucu şuydu: yatay tablette (1366dp) SEKME ÇUBUĞU da
@@ -16,11 +17,11 @@ import { ErrorBoundary } from "./ErrorBoundary";
  * Telefonda hiçbir şey değişmiyor: sütun üst sınırı (520dp) en geniş telefondan
  * da geniş, yani `maxWidth` orada hiç bağlamıyor.
  */
-export function ContentColumn({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
-  const { contentWidth, wideContentWidth } = useLayout();
+export function ContentColumn({ children }: { children: React.ReactNode }) {
+  const { contentWidth } = useLayout();
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
-      <View style={{ flex: 1, width: "100%", maxWidth: wide ? wideContentWidth : contentWidth }}>{children}</View>
+      <View style={{ flex: 1, width: "100%", maxWidth: contentWidth }}>{children}</View>
     </View>
   );
 }
@@ -41,22 +42,5 @@ export function ContentColumn({ children, wide = false }: { children: React.Reac
 export const contentColumnLayout = ({ children }: { children: React.ReactNode }) => (
   <ErrorBoundary>
     <ContentColumn>{children}</ContentColumn>
-  </ErrorBoundary>
-);
-
-/**
- * IZGARA ekranlarının düzeni — yatay tablette dar sütundan çıkar.
- *
- * Kartların satır ölçüsü yok: 1280dp'lik bir ekranda ızgarayı 720'de tutmak
- * ekranın yarısını zemine bırakıyordu, oysa aynı yerde bir sıraya dört kart
- * sığıyor. Yalnız ızgara sistemine girmiş ekranlara veriliyor; metin ağırlıklı
- * ekranlar dar sütunda kalıyor, orada genişlik okunaklık kaybı demek.
- *
- * Dikeyde ve telefonda `contentColumnLayout` ile aynı sonucu verir. Çökme
- * sınırı ondaki gibi burada da (bkz. yukarıdaki not).
- */
-export const wideColumnLayout = ({ children }: { children: React.ReactNode }) => (
-  <ErrorBoundary>
-    <ContentColumn wide>{children}</ContentColumn>
   </ErrorBoundary>
 );

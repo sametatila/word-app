@@ -18,19 +18,17 @@ const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactE
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const { wideContentWidth } = useLayout();
+  const { contentWidth } = useLayout();
   return (
-    // Çubuk artık ekran kadar geniş bir alanın içinde duruyor (sütun kökten
-    // kaldırıldı, bkz. ui/ContentColumn). Yüzen hap serbest bırakılsaydı yatay
-    // tablette 1300dp'ye yayılır, üç sekme birbirinden avuç içi kadar uzağa
-    // düşerdi. GENİŞ kaba göre ölçülüyor: üç sekmenin üçü de (Öğren, Patika,
-    // Beceriler) geniş kapta, yani sekme değiştikçe sıçrama olmuyor. Dar kaba
-    // göre ölçüldüğünde tablette çubuk içeriğin çok altında kalıp öksüz
-    // duruyordu — içerik ekranın %90'ı, çubuk %54'ü.
-    // Telefonda ölçü birebir eskisi: sütun bağlamıyor, yatay dolgu eski
+    // Çubuk ekran kadar geniş bir alanın içinde duruyor (kolon kökte değil,
+    // bkz. ui/ContentColumn). Yüzen hap serbest bırakılsaydı yatay tablette
+    // 1300dp'ye yayılır, sekmeler birbirinden avuç içi kadar uzağa düşerdi.
+    // İçerikle AYNI kolona göre ölçülüyor: hap, üstündeki kartlarla aynı
+    // kenarlarda duruyor ve hiçbir ekranda ondan geniş ya da dar değil.
+    // Telefonda ölçü birebir eskisi: kolon bağlamıyor, yatay dolgu eski
     // left/right kenar boşluğunun yerini alıyor.
     <View style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + spacing.sm, alignItems: "center" }}>
-      <View style={{ width: "100%", maxWidth: wideContentWidth, paddingHorizontal: spacing.lg }}>
+      <View style={{ width: "100%", maxWidth: contentWidth, paddingHorizontal: spacing.lg }}>
       <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xxl, padding: 7, borderWidth: 1, borderColor: colors.hairline }, cardShadow(colors, 16)]}>
         {state.routes.map((route, i) => {
           const focused = state.index === i;

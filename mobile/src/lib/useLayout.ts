@@ -1,78 +1,54 @@
 import { useWindowDimensions } from "react-native";
 
 /**
- * İçerik sütununun genişliği.
+ * İÇERİK KOLONU — uygulamanın TEK genişlik standardı.
  *
- * Uygulama telefon önceliklidir ve düzen ortalı tek bir sütuna sığar; yoksa
+ * Uygulama telefon önceliklidir ve düzen ortalı tek bir kolona sığar; yoksa
  * tablette kartlar ve metin tüm genişliğe yayılıp satır ölçüsü okunmaz olur.
- * Sütun sabit 520 idi: 1280dp'lik bir tablette ekranın %41'i. Artık ekranla
- * birlikte büyüyor ama satır ölçüsünü bozacak kadar değil.
  *
- * Eşikler Android'in "en küçük genişlik" (sw) kırılımlarıyla aynı: 600dp
- * tablet/katlanabilir, 840dp geniş tablet.
+ * Eskiden İKİ kademe vardı: metin ekranları 640/720'lik dar sütunda, sekme
+ * kökleri ve ızgaralar "ekran eksi 96" kadar geniş kapta. Sonuç iPad'de
+ * (2026-09-23, Samet): menüden bir derse, tura, paywall'a girince içerik
+ * kenarı yatay 13"te 64'ten 344'e zıplıyordu; her ekran başka bir standart
+ * gibi görünüyordu. Şimdi kural tek ve her ekran aynı kenarları görüyor:
+ *
+ *   telefon (< 600)  →  PHONE_MAX_WIDTH; en geniş telefondan da geniş, yani
+ *                        `maxWidth` hiç bağlamıyor, düzen birebir eskisi
+ *   tablet  (≥ 600)  →  ekran eksi iki yanda SIDE_GUTTER, en çok CONTENT_MAX
+ *
+ * CONTENT_MAX 840: Android'in "geniş" (sw840) kırılımı ve Material'ın gövde
+ * üst sınırı. Paragraf bu ölçüde hâlâ okunuyor (~100 karakter), kart ızgarası
+ * üç sütun taşıyor. Tavanı değiştirmek bütün uygulamayı birlikte değiştirir —
+ * istenen de bu, ekran başına genişlik yok.
  */
 export const PHONE_MAX_WIDTH = 520;
-const TABLET_COLUMN = 640;
-const LARGE_TABLET_COLUMN = 720;
+/** Tabletin başladığı genişlik — Android'in sw600dp kırılımı. Yönelim kilidi
+ *  (`MainActivity`) de aynı sayıya bakıyor; `check:parity` ikisini karşılaştırıyor. */
+export const TABLET_MIN_WIDTH = 600;
+/** Tablette kolonun iki yanında bırakılan pay (dp, tek taraf). */
+export const SIDE_GUTTER = 48;
+/** Tablette kolonun tavanı (dp). */
+export const CONTENT_MAX = 840;
 
-/** Izgaraların iki yerine üç sütuna geçtiği içerik genişliği. */
-const THREE_COLUMN_MIN = 600;
-/** Dört ve beş sütuna geçilen genişlikler. */
-const FOUR_COLUMN_MIN = 900;
-const FIVE_COLUMN_MIN = 1200;
-
-/**
- * Izgara/kart ağırlıklı ekranların kabı — metin sütunundan AYRI.
- *
- * `contentWidthFor` satır ölçüsünü koruyor ve 720'de duruyor; doğrusu da bu,
- * paragraf 720'nin ötesinde okunmaz oluyor. Ama yatay tablette (1280–1366dp)
- * bir KART IZGARASINI da 720'de tutmak ekranın yarısını zemine bırakıyor —
- * kartların satır ölçüsü yok, genişlikten yalnızca kazanıyorlar.
- *
- * Bu yüzden iki kademe var: metin ekranları dar sütunda kalıyor, ızgara
- * ekranları yatayda genişliyor (bkz. ui/ContentColumn, `wideColumnLayout` ve
- * onu kullanan altı ekran). Dikeyde ikisi aynı: dikey tablette zaten fazlalık
- * genişlik yok.
- */
-/**
- * Kabın iki yanında bırakılan boşluk (dp, tek taraf) — kap kenara yapışmasın.
- */
-const SIDE_GUTTER = 48;
-
-/**
- * Izgara/kart ağırlıklı ekranların kabı — metin sütunundan AYRI ve ekranı
- * gerçekten kullanıyor.
- *
- * İlk sürüm yalnız YATAYDA genişliyordu ve 1100dp'de duruyordu; ikisi de
- * yanlıştı. Dikey tablet de dar kalıyordu (iPad Pro 13" dikeyde 1024dp ekranda
- * 720dp içerik, yani ekranın üçte biri zemin) ve 1100 uydurma bir tavandı —
- * kartın satır ölçüsü yok, genişlikten yalnız kazanıyor.
- *
- * Şimdi kural tek: tablette kap = ekran eksi kenar payı. Telefon değişmiyor.
- */
-export function wideContentWidthFor(windowWidth: number): number {
-  const dar = contentWidthFor(windowWidth);
-  if (windowWidth < 600) return dar;
-  return Math.max(dar, windowWidth - 2 * SIDE_GUTTER);
+export function contentWidthFor(windowWidth: number): number {
+  if (windowWidth < TABLET_MIN_WIDTH) return PHONE_MAX_WIDTH;
+  // Taban telefon ölçüsü: 600'ün hemen üstünde kolon 599'dakinden dar olmasın.
+  return Math.min(CONTENT_MAX, Math.max(PHONE_MAX_WIDTH, windowWidth - 2 * SIDE_GUTTER));
 }
 
-/** Kabın genişliğine göre ızgara sütunu sayısı. */
-export function gridColumnsFor(containerWidth: number): 2 | 3 | 4 | 5 {
-  if (containerWidth >= FIVE_COLUMN_MIN) return 5;
-  if (containerWidth >= FOUR_COLUMN_MIN) return 4;
-  if (containerWidth >= THREE_COLUMN_MIN) return 3;
-  return 2;
+/** Izgaraların iki yerine üç sütuna geçtiği kolon genişliği. */
+const THREE_COLUMN_MIN = 600;
+/** Satır listelerinin (FlatList) iki sütuna bölündüğü kolon genişliği. */
+const TWO_LIST_COLUMN_MIN = 800;
+
+/** Kolonun genişliğine göre ızgara sütunu sayısı. */
+export function gridColumnsFor(containerWidth: number): 2 | 3 {
+  return containerWidth >= THREE_COLUMN_MIN ? 3 : 2;
 }
 
 /** Sütun sayısına düşen kart genişliği — aradaki boşluk düşülmüş. */
-export function gridItemWidthFor(columns: 2 | 3 | 4 | 5): string {
-  return columns === 5 ? "18.6%" : columns === 4 ? "23.5%" : columns === 3 ? "31.7%" : "47.5%";
-}
-
-export function contentWidthFor(windowWidth: number): number {
-  if (windowWidth < 600) return PHONE_MAX_WIDTH;
-  if (windowWidth < 840) return TABLET_COLUMN;
-  return LARGE_TABLET_COLUMN;
+export function gridItemWidthFor(columns: 2 | 3): string {
+  return columns === 3 ? "31.7%" : "47.5%";
 }
 
 /**
@@ -108,10 +84,8 @@ export type Layout = {
   /** Genişlik 400dp'den az (SE, 360dp Android): başlık şeritlerindeki ikincil
    *  etiketler ikona iner, başlığa yer kalsın. */
   compactWidth: boolean;
-  /** Metin ağırlıklı içeriğin sütunu (px değil dp) — satır ölçüsü için sınırlı. */
+  /** İçerik kolonunun genişliği (dp) — her ekran için aynı, bkz. `contentWidthFor`. */
   contentWidth: number;
-  /** Izgara ağırlıklı içeriğin kabı: yatay tablette genişler, başka yerde eşittir. */
-  wideContentWidth: number;
   /** Geniş ekran mı (sw >= 600dp): tablet ya da açık katlanabilir. */
   wide: boolean;
   /** Ekran yatay mı — tablette serbest, telefonda dikeye kilitli
@@ -119,8 +93,8 @@ export type Layout = {
    *  değişemediği için beyan orada değil; iOS karşılığı `Info.plist`
    *  `UISupportedInterfaceOrientations` + `~ipad`). */
   landscape: boolean;
-  /** Kart ızgarasının sütun sayısı — GENİŞ kaba göre, ızgaralar orada duruyor. */
-  gridColumns: 2 | 3 | 4 | 5;
+  /** Kart ızgarasının sütun sayısı — kolona göre (bkz. ui/CardGrid). */
+  gridColumns: 2 | 3;
   /**
    * SATIR listelerinin (FlatList) sütun sayısı — en çok iki.
    *
@@ -136,8 +110,7 @@ export type Layout = {
 export function useLayout(): Layout {
   const { width, height } = useWindowDimensions();
   const contentWidth = contentWidthFor(width);
-  const wideContentWidth = wideContentWidthFor(width);
-  const gridColumns = gridColumnsFor(wideContentWidth);
+  const gridColumns = gridColumnsFor(contentWidth);
   const heightClass = heightClassFor(height);
   return {
     heightClass,
@@ -145,11 +118,10 @@ export function useLayout(): Layout {
     narrow: width < NARROW_MAX_WIDTH,
     compactWidth: width < 400,
     contentWidth,
-    wideContentWidth,
-    wide: width >= 600,
+    wide: width >= TABLET_MIN_WIDTH,
     landscape: width > height,
     gridColumns,
-    listColumns: wideContentWidth >= FOUR_COLUMN_MIN ? 2 : 1,
+    listColumns: contentWidth >= TWO_LIST_COLUMN_MIN ? 2 : 1,
     gridItemWidth: gridItemWidthFor(gridColumns),
   };
 }
